@@ -22,6 +22,7 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using Content.Server.Cargo.Components;
 using Content.Server.Construction;
@@ -55,7 +56,6 @@ public sealed partial class CargoSystem
     private void OnTelepadFulfillCargoOrder(ref FulfillCargoOrderEvent args)
     {
         var query = EntityQueryEnumerator<CargoTelepadComponent, TransformComponent>();
-
         while (query.MoveNext(out var uid, out var tele, out var xform))
         {
             if (tele.CurrentState != CargoTelepadState.Idle)
@@ -68,9 +68,8 @@ public sealed partial class CargoSystem
                 continue;
 
             // todo cannot be fucking asked to figure out device linking rn but this shouldn't just default to the first port.
-            if (!TryComp<DeviceLinkSinkComponent>(uid, out var sinkComponent)
-                || sinkComponent.LinkedSources.FirstOrNull() is not { } console
-                || console != args.OrderConsole.Owner)
+            if (!TryGetLinkedConsole((uid, tele), out var console)
+                || console != args.OrderConsole)
                 continue;
 
             for (var i = 0; i < args.Order.OrderQuantity; i++)
@@ -84,13 +83,26 @@ public sealed partial class CargoSystem
         }
     }
 
+    private bool TryGetLinkedConsole(Entity<CargoTelepadComponent> ent,
+        [NotNullWhen(true)] out Entity<CargoOrderConsoleComponent>? console)
+    {
+        console = null;
+        if (!TryComp<DeviceLinkSinkComponent>(ent, out var sinkComponent) ||
+            sinkComponent.LinkedSources.FirstOrNull() is not { } linked)
+            return false;
+
+        if (!TryComp<CargoOrderConsoleComponent>(linked, out var consoleComp))
+            return false;
+
+        console = (linked, consoleComp);
+        return true;
+    }
+
     private void UpdateTelepad(float frameTime)
     {
         var query = EntityQueryEnumerator<CargoTelepadComponent>();
         while (query.MoveNext(out var uid, out var comp))
         {
-            
-
             // Don't EntityQuery for it as it's not required.
             TryComp<AppearanceComponent>(uid, out var appearance);
 
@@ -114,7 +126,7 @@ public sealed partial class CargoSystem
 
             if (FulfillOrder(currentOrder, xform.Coordinates, comp.PrinterOutput))
             {
-                _audio.PlayPvs(_audio.GetSound(comp.TeleportSound), uid, AudioParams.Default.WithVolume(-8f));
+                _audio.PlayPvs(_audio.ResolveSound(comp.TeleportSound), uid, AudioParams.Default.WithVolume(-8f));
 
                 if (_station.GetOwningStation(uid) is { } station)
                     UpdateOrders(station);
