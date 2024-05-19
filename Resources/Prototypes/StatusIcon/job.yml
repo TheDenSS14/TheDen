@@ -460,3 +460,10 @@
     sprite: /Textures/Interface/Misc/job_icons.rsi
     state: Visitor
   jobName: job-name-visitor
+
+- type: statusIcon
+  parent: JobIcon
+  id: JobIconAdmin
+  icon:
+    sprite: /Textures/Interface/Misc/job_icons.rsi
+    state: Admin

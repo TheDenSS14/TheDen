@@ -1209,3 +1209,27 @@
     heldPrefix: silver
   - type: PresetIdCard
     job: AdministrativeAssistant
+
+- type: entity
+  parent: IDCardStandard
+  id: UniversalIDCard
+  name: admin ID card
+  suffix: Admin
+  description: An ID card that gives you access beyond your wildest dreams.
+  components:
+  - type: Sprite
+    layers:
+    - state: centcom
+    - state: departmenthead
+      color: "#094D2D"
+    - state: subdepartment
+      color: "#094D2D"
+    - state: assistant
+  - type: Item
+    heldPrefix: blue
+  - type: IdCard
+    jobTitle: Admin
+    jobIcon: JobIconAdmin
+  - type: Access
+    groups:
+    - AllAccess
