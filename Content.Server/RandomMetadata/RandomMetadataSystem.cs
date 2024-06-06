@@ -47,11 +47,25 @@ public sealed class RandomMetadataSystem : EntitySystem
     [PublicAPI]
     public string GetRandomFromSegments(List<ProtoId<LocalizedDatasetPrototype>> segments, LocId format)
     {
-        _outputSegments.Clear();
-        for (var i = 0; i < segments.Count; ++i)
+        var outputSegments = new List<string>();
+        foreach (var segment in segments)
         {
-            var localizedProto = _prototype.Index(segments[i]);
-            _outputSegments.Add(($"part{i}", _random.Pick(localizedProto)));
+            if (_prototype.TryIndex<LocalizedDatasetPrototype>(segment, out var localizedProto))
+            {
+                outputSegments.Add(_random.Pick(localizedProto));
+            }
+            else if (_prototype.TryIndex<DatasetPrototype>(segment, out var proto))
+            {
+                var random = _random.Pick(proto.Values);
+                if (Loc.TryGetString(random, out var localizedSegment))
+                    outputSegments.Add(localizedSegment);
+                else
+                    outputSegments.Add(random);
+            }
+            else if (Loc.TryGetString(segment, out var localizedSegment))
+                outputSegments.Add(localizedSegment);
+            else
+                outputSegments.Add(segment);
         }
 
         return Loc.GetString(format, _outputSegments.ToArray());
