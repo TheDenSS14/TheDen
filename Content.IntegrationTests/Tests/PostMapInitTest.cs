@@ -71,6 +71,7 @@ namespace Content.IntegrationTests.Tests
             "Meta",
             "Baikal",
             "Box"
+            "Ovni" //DeltaV
         };
 
         /// <summary>
