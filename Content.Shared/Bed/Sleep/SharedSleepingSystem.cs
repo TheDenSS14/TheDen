@@ -100,3 +100,4 @@ public sealed class SleepStateChangedEvent : EntityEventArgs
         FellAsleep = fellAsleep;
     }
 }
+
