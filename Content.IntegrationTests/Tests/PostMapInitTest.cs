@@ -64,6 +64,7 @@ using Robust.Shared.Prototypes;
 using Robust.Shared.EntitySerialization;
 using Robust.Shared.EntitySerialization.Systems;
 using Robust.Shared.IoC;
+using Content.Shared.Station.Components;
 using Robust.Shared.Utility;
 using YamlDotNet.RepresentationModel;
 

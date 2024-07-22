@@ -18,6 +18,7 @@ using Content.Shared.Cargo.Components;
 using Content.Shared.CCVar;
 using Content.Shared.Random.Helpers;
 using Content.Shared.Shuttles.Components;
+using Content.Shared.Station.Components;
 using Robust.Shared.Collections;
 using Robust.Shared.Map;
 using Robust.Shared.Map.Components;
