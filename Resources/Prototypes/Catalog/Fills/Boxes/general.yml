@@ -547,3 +547,28 @@
     layers:
       - state: box
       - state: darts
+  - type: StorageFill
+    contents:
+      - id: Dart
+        amount: 2
+      - id: DartBlue
+        amount: 2
+      - id: DartPurple
+        amount: 2
+      - id: DartYellow
+        amount: 2
+
+- type: entity
+  name: envelope box
+  parent: BoxCardboard
+  id: BoxEnvelope
+  description: A box filled with envelopes.
+  components:
+  - type: Sprite
+    layers:
+      - state: box
+      - state: envelope
+  - type: StorageFill
+    contents:
+      - id: Envelope
+        amount: 9
