@@ -188,7 +188,7 @@
     sprite: Clothing/Uniforms/Jumpskirt/hop.rsi
 
 - type: entity
-  parent: ClothingUniformSkirtBase
+  parent: [ClothingUniformSkirtFoldableBase, BaseCommandContraband] # DeltaV - add foldable jumpsuits
   id: ClothingUniformJumpskirtHoS
   name: head of security's jumpskirt
   description: A standard Station Security uniform, adorned with gold emblems and commander's epaulettes.
@@ -395,7 +395,7 @@
     sprite: Clothing/Uniforms/Jumpskirt/roboticist.rsi
 
 - type: entity
-  parent: ClothingUniformSkirtBase
+  parent: [ClothingUniformSkirtFoldableBase, BaseRestrictedContraband] # DeltaV - add foldable jumpsuits
   id: ClothingUniformJumpskirtSec
   name: security jumpskirt
   description: A charcoal skirt and a dull red shirt, the standard-issue uniform of the infamous Station Security Department. # DeltaV - improved description
@@ -406,15 +406,15 @@
     sprite: DeltaV/Clothing/Uniforms/Jumpskirt/security.rsi # DeltaV - resprite
 
 - type: entity
-  parent: ClothingUniformSkirtBase
+  parent: [ClothingUniformSkirtFoldableBase, BaseRestrictedContraband] # DeltaV - add foldable jumpsuits
   id: ClothingUniformJumpskirtWarden
   name: warden's jumpskirt # DeltaV - renamed to mirror other security uniforms
   description: Red shirt on a charcoal skirt, with white markings and epaulettes that denote a warden's rank. # DeltaV - improved description
   components:
   - type: Sprite
-    sprite: DeltaV/Clothing/Uniforms/Jumpskirt/warden.rsi # DeltaV - resprite
+    sprite: DeltaV/Clothing/Uniforms/Jumpskirt/armourer.rsi # DeltaV - resprite
   - type: Clothing
-    sprite: DeltaV/Clothing/Uniforms/Jumpskirt/warden.rsi # DeltaV - resprite
+    sprite: DeltaV/Clothing/Uniforms/Jumpskirt/armourer.rsi # DeltaV - resprite
 
 - type: entity
   parent: ClothingUniformSkirtBase
@@ -698,7 +698,7 @@
     sprite: Clothing/Uniforms/Jumpskirt/senior_officer.rsi
 
 - type: entity
-  parent: ClothingUniformSkirtBase
+  parent: [ClothingUniformSkirtFoldableBase, BaseRestrictedContraband] # DeltaV - add foldable jumpsuits
   id: ClothingUniformJumpskirtSecGrey
   name: grey security jumpskirt
   description: A light grey shirt with bright red highlights, for dedicated and responsive security officers. # DeltaV - improved description
