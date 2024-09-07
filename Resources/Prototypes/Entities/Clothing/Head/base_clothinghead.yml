@@ -168,7 +168,8 @@
     highPressureMultiplier: 0.6
     lowPressureMultiplier: 1000
   - type: TemperatureProtection
-    coefficient: 0.2
+    heatingCoefficient: 0.2
+    coolingCoefficient: 0.2
   - type: IgniteFromGasImmunity
     parts:
     - Head
@@ -200,7 +201,8 @@
     highPressureMultiplier: 0.6
     lowPressureMultiplier: 1000
   - type: TemperatureProtection
-    coefficient: 0.2
+    heatingCoefficient: 0.2
+    coolingCoefficient: 0.2
   - type: IgniteFromGasImmunity
     parts:
     - Head
@@ -240,7 +242,8 @@
     highPressureMultiplier: 0.3
     lowPressureMultiplier: 1000
   - type: TemperatureProtection
-    coefficient: 0.1
+    heatingCoefficient: 0.1
+    coolingCoefficient: 0.1
   - type: FireProtection
     reduction: 0.2
   - type: IgniteFromGasImmunity
@@ -303,7 +306,8 @@
     highPressureMultiplier: 0.6
     lowPressureMultiplier: 1000
   - type: TemperatureProtection
-    coefficient: 0.2
+    heatingCoefficient: 0.2
+    coolingCoefficient: 0.2
   - type: IngestionBlocker
   - type: Tag
     tags:
@@ -496,7 +500,8 @@
     quickEquip: false
     slots: [ HEAD ]
   - type: TemperatureProtection
-    coefficient: 0.7
+    heatingCoefficient: 1.05
+    coolingCoefficient: 0.7
   - type: GroupExamine
   - type: HideLayerClothing
     slots:
