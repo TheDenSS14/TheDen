@@ -68,6 +68,7 @@ using Content.Server.IoC;
 using Content.Server.Players.JobWhitelist;
 using Content.Server.Maps;
 using Content.Server.NodeContainer.NodeGroups;
+using Content.Server.Objectives;
 using Content.Server.Players;
 using Content.Server.Players.JobWhitelist;
 using Content.Server.Players.PlayTimeTracking;
