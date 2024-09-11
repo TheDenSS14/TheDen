@@ -4,12 +4,18 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 using Content.Shared.Inventory;
+using Content.Shared.StepTrigger.Systems;
 using Robust.Shared.GameStates;
 
 namespace Content.Shared.StepTrigger.Components;
 
 /// <summary>
-/// This is used for marking step trigger events that require the user to wear shoes, such as for glass shards.
+/// This is used for cancelling preventable step trigger events if the user is wearing clothing in a valid slot or if the user itself has the component.
 /// </summary>
 [RegisterComponent, NetworkedComponent]
-public sealed partial class ClothingRequiredStepTriggerComponent : Component;
+[Access(typeof(StepTriggerImmuneSystem))]
+public sealed partial class ProtectedFromStepTriggersComponent : Component, IClothingSlots
+{
+    [DataField]
+    public SlotFlags Slots { get; set; } = SlotFlags.FEET;
+}
