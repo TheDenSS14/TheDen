@@ -32,13 +32,12 @@
 - type: startingGear
   id: BlueshieldOfficerGear
   equipment:
-    jumpsuit: ClothingUniformJumpsuitColorBlue
-    back: ClothingBackpackCaptainFilled
-    shoes: ClothingShoesBootsCombatFilled
-    head: ClothingHeadHelmetBasic
-    eyes: ClothingEyesGlassesSecurity
+    back: ClothingBackpack
+    jumpsuit: ClothingUniformJumpsuitBlueshieldOfficer
+    shoes: ClothingShoesBootsJackFilled
+    eyes: ClothingEyesGlassesMedical
     gloves: ClothingHandsGlovesCombat
-    outerClothing: ClothingOuterArmorCaptainCarapace
+    outerClothing: ClothingBlueshieldArmourVest
     id: ERTSecurityPDA
     ears: ClothingHeadsetAltCommand
     belt: ClothingBeltSecurityFilled
