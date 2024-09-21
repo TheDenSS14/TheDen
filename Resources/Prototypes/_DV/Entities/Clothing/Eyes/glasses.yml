@@ -31,10 +31,10 @@
   - type: EyeProtection
 
 - type: entity
-  parent: [ClothingEyesBase, ShowSecurityIcons, ShowMedicalIcons]
+  parent: [ClothingEyesBase, ShowMedicalIcons]
   id: ClothingEyesGlassesCorpsman
   name: corpsman glasses
-  description: Security glasses designed for the Corpsman for medical and security needs. Now with a cool blue hue!
+  description: Security glasses designed for the Corpsman for medical needs. Now with a cool blue hue!
   components:
   - type: Sprite
     sprite: _DV/Clothing/Eyes/Glasses/corpsglasses.rsi
