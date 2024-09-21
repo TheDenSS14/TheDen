@@ -1,0 +1,69 @@
+- type: loadout
+  id: LoadoutCargoTechnicianUniformSuitLight
+  category: JobsLogisticsCargoTechnician
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutCargoTechnicianUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - CargoTechnician
+  items:
+    - ClothingUniformJumpsuitCargoLight
+
+- type: loadout
+  id: LoadoutCargoTechnicianUniformSuitDark
+  category: JobsLogisticsCargoTechnician
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutCargoTechnicianUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - CargoTechnician
+  items:
+    - ClothingUniformJumpsuitCargoDark
+
+- type: loadout
+  id: LoadoutCargoTechnicianUniformSkirtLight
+  category: JobsLogisticsCargoTechnician
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutCargoTechnicianUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - CargoTechnician
+  items:
+    - ClothingUniformJumpskirtCargoLight
+
+- type: loadout
+  id: LoadoutCargoTechnicianUniformSkirtDark
+  category: JobsLogisticsCargoTechnician
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutCargoTechnicianUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - CargoTechnician
+  items:
+    - ClothingUniformJumpskirtCargoDark
+
+- type: loadout
+  id: LoadoutCargoTechnicianBootsSteel
+  category: JobsLogisticsCargoTechnician
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutCargoTechnicianShoes
+    - !type:CharacterJobRequirement
+      jobs:
+        - CargoTechnician
+  items:
+    - ClothingShoesBootsSteel
