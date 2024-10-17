@@ -45,6 +45,7 @@ using Content.Client.JoinQueue;
 using Content.Client.DebugMon;
 using Content.Client.Eui;
 using Content.Client.Fullscreen;
+using Content.Client.GameTicking.Managers;
 using Content.Client.GhostKick;
 using Content.Client.Guidebook;
 using Content.Client.Launcher;
@@ -100,6 +101,7 @@ namespace Content.Client.IoC
             collection.Register<NanoChatSystem>();
             collection.Register<MappingManager>();
             collection.Register<DebugMonitorManager>();
+            collection.Register<TitleWindowManager>();
         }
     }
 }

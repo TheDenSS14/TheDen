@@ -133,4 +133,11 @@ public sealed partial class CCVars : CVars
     /// </summary>
     public static readonly CVarDef<bool> DebugPow3rDisableParallel =
         CVarDef.Create("debug.pow3r_disable_parallel", true, CVar.SERVERONLY);
+
+    /// <summary>
+    /// Should the clients window show the server hostname in the title?
+    /// </summary>
+    public static readonly CVarDef<bool> GameHostnameInTitlebar =
+        CVarDef.Create("game.hostname_in_titlebar", true, CVar.SERVER | CVar.REPLICATED);
+
 }

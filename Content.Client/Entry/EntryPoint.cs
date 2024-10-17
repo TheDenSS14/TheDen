@@ -84,6 +84,7 @@ using Content.Client.DebugMon;
 using Content.Client.Eui;
 using Content.Client.Flash;
 using Content.Client.Fullscreen;
+using Content.Client.GameTicking.Managers;
 using Content.Client.GhostKick;
 using Content.Client.Guidebook;
 using Content.Client.Input;
@@ -229,6 +230,12 @@ namespace Content.Client.Entry
             _configManager.SetCVar("interface.resolutionAutoScaleMinimum", 0.5f);
         }
 
+        public override void Shutdown()
+        {
+            base.Shutdown();
+            _titleWindowManager.Shutdown();
+        }
+
         public override void PostInit()
         {
             base.PostInit();
@@ -253,6 +260,7 @@ namespace Content.Client.Entry
             _documentParsingManager.Initialize();
             _joinQueue.Initialize();
             _discordAuth.Initialize();
+            _titleWindowManager.Initialize();
 
             _baseClient.RunLevelChanged += (_, args) =>
             {
