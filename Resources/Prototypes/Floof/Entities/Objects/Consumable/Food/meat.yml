@@ -1,0 +1,17 @@
+- type: entity
+  name: meatwheat clump
+  parent: FoodMeatBase
+  id: FoodMeatWheat
+  description: This doesn't look like meat, but your standards aren't that high to begin with.
+  components:
+  - type: FlavorProfile
+    flavors:
+      - falsemeat
+  - type: Sprite
+    state: clump
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        reagents:
+        - ReagentId: UncookedAnimalProteins
+          Quantity: 1
