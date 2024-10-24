@@ -6,3 +6,21 @@
   physicalDesc: reagent-physical-desc-sticky
   flavor: sweet
   color: "#660C21"
+
+- type: reagent
+  id: JuiceCherry
+  name: reagent-name-juice-cherry
+  parent: BaseJuice
+  desc: reagent-desc-juice-cherry
+  physicalDesc: reagent-physical-desc-sweet
+  flavor: cherry
+  color: "#84031a"
+
+- type: reagent
+  id: JuiceBluePumpkin
+  name: reagent-name-juice-blue-pumpkin
+  parent: BaseJuice
+  desc: reagent-desc-juice-blue-pumpkin
+  physicalDesc: reagent-physical-desc-strong-smelling
+  flavor: bluepumpkin
+  color: "#00BFFF"
