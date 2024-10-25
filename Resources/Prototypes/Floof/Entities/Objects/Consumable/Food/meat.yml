@@ -9,6 +9,10 @@
       - falsemeat
   - type: Sprite
     state: clump
+  - type: Butcherable
+    butcheringType: Knife
+    spawned:
+    - id: FoodMeat
   - type: SolutionContainerManager
     solutions:
       food:
