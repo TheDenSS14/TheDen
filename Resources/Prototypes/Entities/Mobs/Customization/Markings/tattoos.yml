@@ -25,6 +25,12 @@
   id: TattooHiveChest
   bodyPart: Chest
   markingCategory: Chest
+  sexRestriction: [Male] #DeltaV: Splitting the scars and tattoos
+  coloring:
+    default:
+      type:
+        !type:TattooColoring
+      fallbackColor: "#666666"
   sprites:
   - sprite: Mobs/Customization/tattoos.rsi
     state: tattoo_hive_chest
@@ -34,8 +40,14 @@
   id: TattooNightlingChest
   bodyPart: Chest
   markingCategory: Chest
+  sexRestriction: [Male] #DeltaV: Splitting the scars and tattoos
+  coloring:
+    default:
+      type:
+        !type:TattooColoring
+      fallbackColor: "#666666"
   sprites:
-  - sprite: Mobs/Customization/tattoos.rsi
+  - sprite: DeltaV/Mobs/Customization/tattoos.rsi #DeltaV: Splitting the scars and tattoos
     state: tattoo_nightling
 
 - type: marking

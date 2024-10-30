@@ -11,7 +11,7 @@
 marking-TattooHiveChest-tattoo_hive_chest = Back Tattoo (Hive)
 marking-TattooHiveChest = Back Tattoo (Hive)
 
-marking-TattooNightlingChest-tattoo_nightling = Chest Tattoo (nightling)
+marking-TattooNightlingChest-tattoo_nightling = Chest Tattoo (Nightling)
 marking-TattooNightlingChest = Chest Tattoo (Nightling)
 
 marking-TattooNanotrasenChest-tattoo_nanotrasen_chest = Chest Tattoo (Nanotrasen)

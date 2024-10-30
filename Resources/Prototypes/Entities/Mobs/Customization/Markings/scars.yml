@@ -62,7 +62,9 @@
   bodyPart: Chest
   markingCategory: Chest
   speciesRestriction: [Human, Dwarf, Felinid, Oni, SlimePerson, Arachne, Lamia, Tajaran, Feroxi, Canid, Kitsune] # Einstein Engines - Tajaran - DeltaV - Feroxi; The Den - Canid
+  sexRestriction: [Male] #DeltaV: Splitting the scars and tattoos
   followSkinColor: true
   sprites:
   - sprite: Mobs/Customization/scars.rsi
     state: scar_chest
+
