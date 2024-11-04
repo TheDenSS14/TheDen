@@ -3,7 +3,7 @@
   name: seeds-meatwheat-name
   noun: seeds-noun-seeds
   displayName: seeds-meatwheat-display-name
-  plantRsi: Objects/Specific/Hydroponics/meatwheat.rsi
+  plantRsi: Floof/Objects/Specific/Hydroponics/meatwheat.rsi
   packetPrototype: MeatwheatSeeds
   productPrototypes:
     - MeatwheatBushel
@@ -18,11 +18,11 @@
     Nutriment:
       Min: 1
       Max: 20
-      PotencyDivisor: 20
+      potencyDivisor: 20
     UncookedAnimalProteins:
       Min: 5
       Max: 20
-      PotencyDivisor: 20
+      potencyDivisor: 20
 
 - type: seed
   id: extradimensionalOrange
@@ -44,22 +44,22 @@
     Haloperidol:
       Min: 1
       Max: 5
-      PotencyDivisor: 20
+      potencyDivisor: 20
     Nutriment:
       Min: 1
       Max: 5
-      PotencyDivisor: 20
+      potencyDivisor: 20
     Vitamin:
       Min: 1
       Max: 4
-      PotencyDivisor: 25
+      potencyDivisor: 25
 
 - type: seed
   id: teaPlant
   name: seeds-teaplant-name
   noun: seeds-noun-seeds
   displayName: seeds-teaplant-display-name
-  plantRsi: Objects/Specific/Hydroponics/tea_plant.rsi
+  plantRsi: Floof/Objects/Specific/Hydroponics/tea_plant.rsi
   packetPrototype: TeaPlantSeeds
   productPrototypes:
     - LeavesTea
@@ -77,14 +77,14 @@
     Vitamin:
       Min: 1
       Max: 5
-      PotencyDivisor: 20
+      potencyDivisor: 20
 
 - type: seed
   id: papercane
   name: seeds-papercane-name
   noun: seeds-noun-seeds
   displayName: seeds-papercane-display-name
-  plantRsi: Objects/Specific/Hydroponics/papercane.rsi
+  plantRsi: Floof/Objects/Specific/Hydroponics/papercane.rsi
   packetPrototype: PapercaneSeeds
   productPrototypes:
     - Papercane
@@ -119,15 +119,15 @@
     Nutriment:
       Min: 1
       Max: 10
-      PotencyDivisor: 10
+      potencyDivisor: 10
     Vitamin:
       Min: 1
       Max: 4
-      PotencyDivisor: 25
+      potencyDivisor: 25
     DoctorsDelight:
       Min: 3
       Max: 13
-      PotencyDivisor: 10
+      potencyDivisor: 10
 
 - type: seed
   id: fakeCapfruit
@@ -149,11 +149,11 @@
     Nutriment:
       Min: 1
       Max: 5
-      PotencyDivisor: 20
+      potencyDivisor: 20
     Sulfur:
       Min: 1
       Max: 5
-      PotencyDivisor: 20
+      potencyDivisor: 20
 
 - type: seed
   id: realCapfruit
@@ -175,11 +175,11 @@
     Nutriment:
       Min: 1
       Max: 5
-      PotencyDivisor: 20
+      potencyDivisor: 20
     Sulfur:
       Min: 1
       Max: 5
-      PotencyDivisor: 20
+      potencyDivisor: 20
 
 - type: seed
   id: holymelon
@@ -200,15 +200,15 @@
     Nutriment:
       Min: 1
       Max: 10
-      PotencyDivisor: 10
-    HolyWater: # DeltaV - use our holy water
+      potencyDivisor: 10
+    HolyWater:
       Min: 1
       Max: 10
-      PotencyDivisor: 10
+      potencyDivisor: 10
     Vitamin:
       Min: 1
       Max: 5
-      PotencyDivisor: 20
+      potencyDivisor: 20
 
 - type: seed
   id: worldPea
@@ -233,15 +233,15 @@
     Happiness:
       Min: 1
       Max: 3
-      PotencyDivisor: 25
+      potencyDivisor: 25
     Nutriment:
       Min: 1
       Max: 3
-      PotencyDivisor: 20
+      potencyDivisor: 20
     Pax:
       Min: 1
       Max: 2
-      PotencyDivisor: 50
+      potencyDivisor: 50
 
 - type: seed
   id: bluePumpkin
@@ -263,15 +263,15 @@
     Ammonia:
       Min: 1
       Max: 15
-      PotencyDivisor: 3
+      potencyDivisor: 3
     Chlorine:
       Min: 1
       Max: 5
-      PotencyDivisor: 5
+      potencyDivisor: 5
     Vitamin:
       Min: 1
       Max: 10
-      PotencyDivisor: 3
+      potencyDivisor: 3
 
 - type: seed
   id: anomalyBerry
@@ -294,15 +294,15 @@
     Artifexium:
       Min: 1
       Max: 1
-      PotencyDivisor: 4
+      potencyDivisor: 4
     Nutriment:
       Min: 1
       Max: 2
-      PotencyDivisor: 30
+      potencyDivisor: 30
     Vitamin:
       Min: 1
       Max: 2
-      PotencyDivisor: 40
+      potencyDivisor: 40
 
 - type: seed
   id: cherry
@@ -324,8 +324,8 @@
     Nutriment:
       Min: 1
       Max: 3
-      PotencyDivisor: 30
+      potencyDivisor: 30
     Vitamin:
       Min: 1
       Max: 3
-      PotencyDivisor: 40
+      potencyDivisor: 40
