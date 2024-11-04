@@ -12,15 +12,6 @@ public sealed partial class PsionicHypnoComponent : Component
     public float UseDelay = 10f;
 
     [DataField]
-    public float Subjects = 0;
-
-    [DataField]
-    public float MaxSubjects = 1;
-
-    [DataField]
-    public bool ByPassMindShield = false;
-
-    [DataField]
     public DoAfterId? DoAfter;
 
     [DataField]
