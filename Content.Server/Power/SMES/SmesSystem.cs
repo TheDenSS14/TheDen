@@ -70,7 +70,7 @@ internal sealed class SmesSystem : EntitySystem
 
         return (netBattery.CurrentSupply - netBattery.CurrentReceiving) switch
         {
-            > 0 => ChargeState.Discharging,
+            > 0 => ChargeState.Charging,
             < 0 => ChargeState.Charging,
             _ => ChargeState.Still
         };
