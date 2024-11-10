@@ -25,6 +25,7 @@
       - id: ClothingLongcoatLO # Floofstation
       - id: LunchboxCommandFilledRandom # Delta-V Lunchboxes!
         prob: 0.3
+      - id: CargoTechFabCircuitboard # Floof - port to EE if possible
 
 - type: entity
   id: LockerCaptainFilledHardsuit
@@ -116,6 +117,7 @@
       - id: AccessConfigurator
       - id: LunchboxCommandFilledRandom # Delta-V Lunchboxes!
         prob: 0.3
+      - id: ServiceTechFabCircuitboard # Floof - port to ee if possible
 
 - type: entity
   id: LockerChiefEngineerFilledHardsuit
@@ -144,6 +146,7 @@
       - id: CEIDCard # Delta-V
       - id: LunchboxCommandFilledRandom # Delta-V Lunchboxes!
         prob: 0.3
+      - id: EngineeringTechFabCircuitboard # Floofstation - port to ee if possible
 
 - type: entity
   id: LockerChiefEngineerFilled
@@ -169,6 +172,7 @@
       - id: RCDAmmo
       - id: LunchboxCommandFilledRandom # Delta-V Lunchboxes!
         prob: 0.3
+      - id: EngineeringTechFabCircuitboard # Floofstation - port to ee if possible
 
 - type: entity
   id: LockerChiefMedicalOfficerFilledHardsuit
