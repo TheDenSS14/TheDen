@@ -32,6 +32,12 @@ public sealed partial class SleepingComponent : Component
     public EntityUid? WakeAction;
 
     /// <summary>
+    ///     The moment this entity went to sleep. Initialized on MapInit.
+    /// </summary>
+    [DataField]
+    public TimeSpan SleepingSince;
+
+    /// <summary>
     /// Sound to play when another player attempts to wake this entity.
     /// </summary>
     [DataField]

@@ -115,7 +115,8 @@ public sealed partial class SleepingSystem : EntitySystem
     private void OnMapInit(Entity<SleepingComponent> ent, ref MapInitEvent args)
     {
         var ev = new SleepStateChangedEvent(true);
-        RaiseLocalEvent(ent, ref ev);
+        
+        RaiseLocalEvent(ent, ev);
         _blindableSystem.UpdateIsBlind(ent.Owner);
         _actionsSystem.AddAction(ent, ref ent.Comp.WakeAction, WakeActionId, ent);
 
@@ -232,8 +233,11 @@ public sealed partial class SleepingSystem : EntitySystem
         RemComp<SleepingComponent>(ent);
         _actionsSystem.RemoveAction(ent, ent.Comp.WakeAction);
 
-        var ev = new SleepStateChangedEvent(false);
-        RaiseLocalEvent(ent, ref ev);
+        var ev = new SleepStateChangedEvent(false)
+        {
+            TimeSlept = _gameTiming.CurTime - ent.Comp.SleepingSince
+        };
+        RaiseLocalEvent(ent, ev);
 
         _blindableSystem.UpdateIsBlind(ent.Owner);
     }
@@ -310,5 +314,18 @@ public sealed partial class WakeActionEvent : InstantActionEvent;
 /// <summary>
 /// Raised on an entity when they fall asleep or wake up.
 /// </summary>
-[ByRefEvent]
-public record struct SleepStateChangedEvent(bool FellAsleep);
+public sealed class SleepStateChangedEvent : EntityEventArgs
+{
+    public bool FellAsleep = false;
+
+    /// <summary>
+    ///     The amount of time this entity slept for. Null if <see cref="FellAsleep"/> is true.
+    /// </summary>
+    public TimeSpan? TimeSlept;
+
+    public SleepStateChangedEvent(bool fellAsleep)
+    {
+        FellAsleep = fellAsleep;
+    }
+}
+
