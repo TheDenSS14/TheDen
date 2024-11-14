@@ -18,6 +18,7 @@ using Content.Shared.Traits.Assorted.Systems;
 using Content.Shared.UserInterface;
 using Content.Shared.Zombies;
 using Robust.Shared.Player;
+using Content.Shared.Bed.Sleep;
 using Robust.Shared.Prototypes;
 
 namespace Content.Server.Traits.Assorted;

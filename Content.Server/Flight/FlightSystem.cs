@@ -10,6 +10,7 @@ using Content.Shared.Standing;
 using Content.Shared.Stunnable;
 using Content.Shared.Zombies;
 using Robust.Shared.Audio.Systems;
+using Content.Shared.Bed.Sleep;
 
 namespace Content.Server.Flight;
 public sealed class FlightSystem : SharedFlightSystem
