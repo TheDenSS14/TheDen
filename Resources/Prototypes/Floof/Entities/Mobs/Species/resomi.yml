@@ -35,6 +35,14 @@
   - type: Body
     prototype: Resomi
     requiredLegs: 2
+  - type: Speech
+    speechVerb: Parrot
+    speechSounds: MaleAvali
+  - type: Vocal
+    sounds:
+      Male: MaleAvali
+      Unsexed: MaleAvali
+      Female: FemaleAvali
   - type: Hands
     handDisplacement:
       sizeMaps:
