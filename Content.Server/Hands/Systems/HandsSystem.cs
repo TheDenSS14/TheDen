@@ -233,7 +233,7 @@ namespace Content.Server.Hands.Systems
             var distance = Math.Clamp(length, minDistance, hands.ThrowRange);
             direction *= distance / length;
 
-            var throwStrength = hands.ThrowForceMultiplier;
+            var throwStrength = hands.BaseThrowspeed;
 
             // Let other systems change the thrown entity (useful for virtual items)
             // or the throw strength.

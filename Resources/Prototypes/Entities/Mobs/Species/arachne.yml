@@ -35,14 +35,6 @@
       color: "#e8b59b"
       sprite: Mobs/Species/Human/parts.rsi
       state: l_arm
-    - shader: StencilClear
-      sprite: Mobs/Species/Human/parts.rsi
-      state: l_leg
-    - shader: StencilMask
-      map: [ "enum.HumanoidVisualLayers.StencilMask" ]
-      sprite: Mobs/Customization/anytaur_masking_helpers.rsi
-      state: unisex_full
-      visible: false
     - map: [ "jumpsuit" ]
     - map: [ "enum.HumanoidVisualLayers.LHand" ]
       color: "#e8b59b"
@@ -104,6 +96,12 @@
     speechSounds: Alto
   - type: Inventory
     templateId: anytaur
+    femaleDisplacements:
+      jumpsuit:
+        sizeMaps:
+          32:
+            sprite: Mobs/Species/Human/displacement.rsi
+            state: jumpsuit-female
   - type: Tag
     tags:
     - CanPilot
@@ -226,5 +224,11 @@
       visible: false
   - type: Inventory
     templateId: anytaur
+    femaleDisplacements:
+      jumpsuit:
+        sizeMaps:
+          32:
+            sprite: Mobs/Species/Human/displacement.rsi
+            state: jumpsuit-female
   - type: HumanoidAppearance
     species: Arachne
