@@ -46,19 +46,6 @@
   - type: Clothing
     sprite: DeltaV/Clothing/Uniforms/Jumpskirt/security_blue.rsi
 
-# Detective uniform
-
-- type: entity
-  parent: ClothingUniformSkirtFoldableBase
-  id: ClothingUniformJumpskirtForensicSpec
-  name: detective's jumpskirt
-  description: A white shirt and slate skirt, for forensic specialists.
-  components:
-  - type: Sprite
-    sprite: DeltaV/Clothing/Uniforms/Jumpskirt/detective.rsi
-  - type: Clothing
-    sprite: DeltaV/Clothing/Uniforms/Jumpskirt/detective.rsi
-
 # Corpsman alt uniforms
 
 - type: entity
