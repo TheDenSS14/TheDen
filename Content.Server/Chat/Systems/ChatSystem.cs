@@ -923,9 +923,6 @@ public sealed partial class ChatSystem : SharedChatSystem
         var color = DefaultSpeakColor;
         if (language.SpeechOverride.Color is { } colorOverride)
             color = Color.InterpolateBetween(color, colorOverride, colorOverride.A);
-        var languageDisplay = language.IsVisibleLanguage
-            ? $"{language.ChatName} | "
-            : "";
 
         return Loc.GetString(wrapId,
             ("color", color),
@@ -933,8 +930,7 @@ public sealed partial class ChatSystem : SharedChatSystem
             ("verb", Loc.GetString(verbId)),
             ("fontType", language.SpeechOverride.FontId ?? speech.FontId),
             ("fontSize", language.SpeechOverride.FontSize ?? speech.FontSize),
-            ("message", message),
-            ("language", languageDisplay));
+            ("message", message));
     }
 
     /// <summary>
