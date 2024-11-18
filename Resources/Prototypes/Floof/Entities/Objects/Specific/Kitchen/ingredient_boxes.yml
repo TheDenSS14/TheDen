@@ -1,0 +1,33 @@
+- type: entity
+  parent: BaseAmmoProvider
+  id: BoxChocolateBar
+  name: chocolate bar dispenser
+  description: Dispenses 10 chocolate bars, extremely useful for the chef.
+  components:
+  - type: Sprite
+    layers:
+    - state: boxwide
+    - state: chocolatebar
+  - type: BallisticAmmoProvider
+    whitelist:
+      tags:
+      - FoodSnack
+    proto: FoodSnackChocolateBar
+    capacity: 10
+
+- type: entity
+  parent: BaseAmmoProvider
+  id: BoxRaisins
+  name: raisin box dispenser
+  description: Dispenses 10 raisin boxes, extremely useful for the chef.
+  components:
+  - type: Sprite
+    layers:
+    - state: boxwide
+    - state: raisins
+  - type: BallisticAmmoProvider
+    whitelist:
+      tags:
+      - FoodSnack
+    proto: FoodSnackRaisins
+    capacity: 10
