@@ -94,7 +94,6 @@ namespace Content.Server.Atmos.EntitySystems
             else
                 component.LastPosition = null;
             component.Enabled = true;
-
             Dirty(uid, component);
             UpdateAppearance(uid, component);
             EnsureComp<ActiveGasAnalyzerComponent>(uid);
@@ -107,7 +106,7 @@ namespace Content.Server.Atmos.EntitySystems
         /// </summary>
         private void OnDropped(EntityUid uid, GasAnalyzerComponent component, DroppedEvent args)
         {
-            if(args.User is var userId && component.Enabled)
+            if (args.User is var userId && component.Enabled)
                 _popup.PopupEntity(Loc.GetString("gas-analyzer-shutoff"), userId, userId);
             DisableAnalyzer(uid, component, args.User);
         }
@@ -123,7 +122,7 @@ namespace Content.Server.Atmos.EntitySystems
             _userInterface.CloseUi(uid, GasAnalyzerUiKey.Key, user);
 
             component.Enabled = false;
-            Dirty(component);
+            Dirty(uid, component);
             UpdateAppearance(uid, component);
             RemCompDeferred<ActiveGasAnalyzerComponent>(uid);
         }

@@ -8,7 +8,7 @@ whitelist-playercount-invalid = {$min ->
        *[other] -> players and below {$max} players, so you may be able to join later.
     }
 }
-whitelist-not-whitelisted-rp = You are not whitelisted. To become whitelisted, visit our Discord (which can be found at https://spacestation14.io) and check the #rp-whitelist channel.
+whitelist-not-whitelisted-rp = You are not whitelisted. To become whitelisted, visit our Discord (which can be found at https://denstation.net) and check the #whitelist-info channel.
 
 cmd-whitelistadd-desc = Adds the player with the given username to the server whitelist.
 cmd-whitelistadd-help = Usage: whitelistadd <username>

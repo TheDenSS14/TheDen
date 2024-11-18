@@ -3,7 +3,7 @@
   id: ArachnicTranslatorImplant
   name: Arachnic translator implant
   description: A translator implant that sadly doesn't help you communicate with space spiders. It does allow you to communicate with Arachnid people!
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: TranslatorImplant
     understood:

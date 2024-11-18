@@ -59,7 +59,7 @@
 - type: entity
   id: StripperPoleInit
   parent: BaseStructure
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   name: stripper pole base
   description: The base of a stripper pole.
   placement:

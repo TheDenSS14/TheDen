@@ -271,7 +271,7 @@
 - type: entity
   parent: ClothingHeadHatHoodWinterBase
   id: ClothingHeadHatHoodEpiChaplainHood
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   name: chaplain mantle hood
   components:
   - type: Sprite

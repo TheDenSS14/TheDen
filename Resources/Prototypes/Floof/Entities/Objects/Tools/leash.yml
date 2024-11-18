@@ -3,7 +3,7 @@
   parent: BaseItem
   name: leash
   description: Helps keep your animals or friends close to you. Attach to supported objects or clothing (such as collars) to use. You can pull attached entities while holding the leash.
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
     sprite: Floof/Objects/Tools/leash.rsi

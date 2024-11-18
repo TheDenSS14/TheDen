@@ -2,7 +2,7 @@
   id: ActionHypno
   name: action-name-hypno
   description: action-description-hypno
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
     - type: EntityTargetAction
       icon: Floof/Interface/Actions/hypno.png
