@@ -448,6 +448,15 @@
   components:
   - type: Sprite
     state: butter
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 18
+        reagents:
+        - ReagentId: Butter
+          Quantity: 15
+  - type: Extractable
+    grindableSolutionName: food
 
 - type: entity
   name: stick of cannabis butter
