@@ -58,39 +58,6 @@
   - type: AllowSuitStorage
 
 - type: entity
-  parent: ClothingOuterStasecSweater
-  id: ClothingOuterCoatStasec
-  name: station security coat
-  description: A warm and comfortable winter coat, reinforced with durathread and compliant with Station Security uniform standards.
-  components:
-  - type: Sprite
-    sprite: DeltaV/Clothing/OuterClothing/WinterCoats/staseccoat.rsi
-  - type: Clothing
-    sprite: DeltaV/Clothing/OuterClothing/WinterCoats/staseccoat.rsi
-
-- type: entity
-  parent: ClothingOuterStasecSweater
-  id: ClothingOuterCoatStasecHoS
-  name: head of security's coat
-  description: A warm and comfortable winter coat, reinforced with durathread and compliant with Station Security uniform standards. Bears HoS arm flashes.
-  components:
-  - type: Sprite
-    sprite: DeltaV/Clothing/OuterClothing/WinterCoats/hoscoat.rsi
-  - type: Clothing
-    sprite: DeltaV/Clothing/OuterClothing/WinterCoats/hoscoat.rsi
-
-- type: entity
-  parent: ClothingOuterStasecSweater
-  id: ClothingOuterCoatStasecWarden
-  name: warden's coat
-  description: A warm and comfortable winter coat, reinforced with durathread and compliant with Station Security uniform standards. Sports warden arm flashes.
-  components:
-  - type: Sprite
-    sprite: DeltaV/Clothing/OuterClothing/WinterCoats/armourercoat.rsi
-  - type: Clothing
-    sprite: DeltaV/Clothing/OuterClothing/WinterCoats/armourercoat.rsi
-
-- type: entity
   parent: ClothingOuterStorageFoldableBase
   id: ClothingOuterGreatcoatStasec
   name: station security greatcoat
