@@ -389,10 +389,10 @@
   name: engineering jumpsuit
   description: If this suit was non-conductive, maybe engineers would actually do their damn job.
   components:
-  - type: Sprite
-    sprite: Clothing/Uniforms/Jumpsuit/engineering.rsi
-  - type: Clothing
-    sprite: Clothing/Uniforms/Jumpsuit/engineering.rsi
+    - type: Sprite
+      sprite: Clothing/Uniforms/Jumpsuit/engineering.rsi
+    - type: Clothing
+      sprite: Clothing/Uniforms/Jumpsuit/engineering.rsi
 
 - type: entity
   parent: ClothingUniformBase
@@ -624,7 +624,6 @@
 
 - type: entity
   parent: ClothingUniformFoldableBase # DeltaV - add foldable jumpsuits
-  parent: ClothingUniformFoldableBase # DeltaV - add foldable jumpsuits
   id: ClothingUniformJumpsuitBrigmedic
   name: corpsman jumpsuit # DeltaV - rename brigmedic to corpsman
   description: This uniform is issued to qualified personnel who have been trained. No one cares that the training took half a day.
@@ -765,7 +764,6 @@
 
 - type: entity
   parent: ClothingUniformFoldableBase # DeltaV - add foldable jumpsuits
-  parent: ClothingUniformFoldableBase # DeltaV - add foldable jumpsuits
   id: ClothingUniformJumpsuitSecBlue
   name: blue security jumpsuit # DeltaV - renamed to mirror other security uniforms
   description: A cool blue shirt over charcoal trousers, for the calm and collected security officer. # DeltaV - improved description
@@ -794,9 +792,7 @@
   components:
   - type: Sprite
     sprite: DeltaV/Clothing/Uniforms/Jumpsuit/armourer.rsi # DeltaV - resprite
-    sprite: DeltaV/Clothing/Uniforms/Jumpsuit/armourer.rsi # DeltaV - resprite
   - type: Clothing
-    sprite: DeltaV/Clothing/Uniforms/Jumpsuit/armourer.rsi # DeltaV - resprite
     sprite: DeltaV/Clothing/Uniforms/Jumpsuit/armourer.rsi # DeltaV - resprite
 
 - type: entity
