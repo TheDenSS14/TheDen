@@ -1,4 +1,3 @@
-Order: 1
 Entries:
 - author: sleepyapril
   changes:
@@ -211,3 +210,20 @@ Entries:
   id: 25
   time: '2024-11-17T20:57:16.0000000+00:00'
   url: https://github.com/TheDenSS14/TheDen/pull/50
+- author: sleepyyapril
+  changes:
+    - type: Fix
+      message: >-
+        Fixed chair visuals drawing depth wrongly if you sat in a north-facing
+        chair.
+    - type: Fix
+      message: Fixed buckling doing several buckles each time you did one.
+    - type: Fix
+      message: Fixed the magic mirror.
+    - type: Fix
+      message: Fixed beds re-positioning you every few seconds.
+    - type: Fix
+      message: Fixed E not opening containers that are in another container.
+  id: 26
+  time: '2024-11-20T21:34:56.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/56
