@@ -105,6 +105,8 @@ public sealed class CargoTest
         var mapManager = server.ResolveDependency<IMapManager>();
         var protoManager = server.ResolveDependency<IPrototypeManager>();
 
+        await server.WaitForTicks(15);
+
         await server.WaitAssertion(() =>
         {
             var mapId = testMap.MapId;
