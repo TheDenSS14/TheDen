@@ -1,13 +1,76 @@
+- type: soundCollection
+  id: AvaliScreams
+  files:
+    - /Audio/Floof/Voice/Avali/avali_scream.ogg
+
 - type: emoteSounds
-  id: UnisexAvali
+  id: MaleAvali
+  params:
+    variation: 0.125
   sounds:
     Scream:
-      path: /Audio/Floof/Voice/Avali/avali_scream.ogg
+      collection: AvaliScreams
+    Laugh:
+      collection: MaleLaugh
+    Sneeze:
+      collection: MaleSneezes
+    Cough:
+      collection: MaleCoughs
+    CatMeow:
+      collection: CatMeows
+    CatHisses:
+      collection: CatHisses
+    MonkeyScreeches:
+      collection: MonkeyScreeches
+    RobotBeep:
+      collection: RobotBeeps
+    Yawn:
+      collection: MaleYawn
+    Snore:
+      collection: Snores
+    Honk:
+      collection: BikeHorn
+    Sigh:
+      collection: MaleSigh
+    Crying:
+      collection: MaleCry
+    Whistle:
+      collection: Whistles
+    Weh:
+      collection: Weh
 
 - type: emoteSounds
-  parent: [UnisexAvali, MaleHuman]
-  id: MaleAvali
-
-- type: emoteSounds
-  parent: [UnisexAvali, FemaleHuman]
   id: FemaleAvali
+  params:
+    variation: 0.125
+  sounds:
+    Scream:
+      collection: AvaliScreams
+    Laugh:
+      collection: FemaleLaugh
+    Sneeze:
+      collection: FemaleSneezes
+    Cough:
+      collection: FemaleCoughs
+    CatMeow:
+      collection: CatMeows
+    CatHisses:
+      collection: CatHisses
+    MonkeyScreeches:
+      collection: MonkeyScreeches
+    RobotBeep:
+      collection: RobotBeeps
+    Yawn:
+      collection: FemaleYawn
+    Snore:
+      collection: Snores
+    Honk:
+      collection: CluwneHorn
+    Sigh:
+      collection: FemaleSigh
+    Crying:
+      collection: FemaleCry
+    Whistle:
+      collection: Whistles
+    Weh:
+      collection: Weh
