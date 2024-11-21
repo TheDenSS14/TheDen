@@ -5,6 +5,11 @@
   id: BaseMobResomi
   abstract: true
   components:
+  - type: LanguageKnowledge
+    speaks:
+      - TauCetiBasic
+    understands:
+      - TauCetiBasic
   - type: Fixtures
     fixtures:
       fix1:

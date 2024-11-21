@@ -365,6 +365,7 @@
         - Human
         - Oni
         - SlimePerson
+        - Resomi # Floofstation
     - !type:CharacterTraitRequirement
       inverted: true
       traits:
@@ -395,6 +396,7 @@
       species:
         - Human # Entirely arbitrary, I've decided I want a trait unique to humans. Since they don't normally get anything exciting.
                 # When we get the Character Records system in, I also want to make this require certain Backgrounds.
+        - Resomi # Floofstation.
     - !type:CharacterTraitRequirement
       inverted: true
       traits:
@@ -514,6 +516,11 @@
         - description: examine-dermal-armor-message
           fontSize: 12
           requireDetailRange: true
+        - Gladiator # Floof
+    - !type:CharacterSpeciesRequirement
+      species:
+        - Human
+        - Resomi
 
 - type: trait
   id: CyberEyes
