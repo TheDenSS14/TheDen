@@ -83,7 +83,7 @@ public sealed partial class ConsentWindow : FancyWindow
 
         var name = new Label
         {
-            Text = Loc.GetString($"consent-{prototype.ID}-name") ?? Loc.GetString("generic-error"),
+            Text = Loc.GetString($"consent-{prototype.ID}-name"),
             HorizontalExpand = true
         };
 
@@ -117,7 +117,7 @@ public sealed partial class ConsentWindow : FancyWindow
 
         var desc = new Label
         {
-            Text = Loc.GetString($"consent-{prototype.ID}-desc") ?? Loc.GetString("generic-error"),
+            Text = Loc.GetString($"consent-{prototype.ID}-desc"),
         };
 
         container.AddChild(desc);
