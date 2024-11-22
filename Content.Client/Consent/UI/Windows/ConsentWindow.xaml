@@ -31,33 +31,10 @@
         <Control MinSize="0 10" />
         <Label Text="{Loc consent-window-toggles-label}" />
 
-        <!-- TODO: Generate these in code by iterating prototypes? -->
-        <!-- Example Consent Toggle -->
-        <PanelContainer HorizontalExpand="True" MinWidth="200">
-            <PanelContainer.PanelOverride>
-                <gfx:StyleBoxFlat BackgroundColor="#1B1B1E" />
-            </PanelContainer.PanelOverride>
-            <BoxContainer Orientation="Vertical" HorizontalExpand="True" Margin="5">
-                <BoxContainer Orientation="Horizontal" Margin="5">
-                    <Label Text="{Loc consent-example1}" />
-                    <Control HorizontalExpand="True" />
-                    <Button
-                        Name="ConsentToggleExample1Off"
-                        ToggleMode="True"
-                        Access="Public"
-                        Text="Off"
-                        StyleClasses="OpenRight" />
-                    <Button
-                        Name="ConsentToggleExample1On"
-                        ToggleMode="True"
-                        Access="Public"
-                        Text="On"
-                        StyleClasses="OpenLeft" />
-                </BoxContainer>
-                <Label Text="{Loc consent-example1-desc}" />
+        <ScrollContainer HorizontalExpand="True" VerticalExpand="True" HScrollEnabled="False" VScrollEnabled="True" MinHeight="50">
+            <BoxContainer Name="ConsentList" Access="Public" HorizontalExpand="True" SeparationOverride="2" Orientation="Vertical">
+                <!-- The rest here is generated programmatically -->
             </BoxContainer>
-        </PanelContainer>
-
-
+        </ScrollContainer>
     </BoxContainer>
 </controls:FancyWindow>
