@@ -119,16 +119,20 @@ namespace Content.Server.Disposal.Unit.EntitySystems
             // We're purposely iterating over all the holder's children
             // because the holder might have something teleported into it,
             // outside the usual container insertion logic.
+
+            //TODO: APRIL FIX
             var children = holderTransform.ChildEnumerator;
             while (children.MoveNext(out var entity))
             {
                 RemComp<BeingDisposedComponent>(entity);
 
                 var meta = _metaQuery.GetComponent(entity);
+
                 if (holder.Container.Contains(entity))
                     _containerSystem.Remove((entity, null, meta), holder.Container, reparent: false, force: true);
 
                 var xform = _xformQuery.GetComponent(entity);
+
                 if (xform.ParentUid != uid)
                     continue;
 
@@ -138,7 +142,7 @@ namespace Content.Server.Disposal.Unit.EntitySystems
                 {
                     _xformSystem.AttachToGridOrMap(entity, xform);
 
-                    if (holder.PreviousDirection != Direction.Invalid && gridUid != null && _xformQuery.TryGetComponent(gridUid, out var parentXform))
+                    if (holder.PreviousDirection != Direction.Invalid && _xformQuery.TryGetComponent(gridUid, out var parentXform))
                     {
                         var direction = holder.CurrentDirection.ToAngle();
                         direction += _xformSystem.GetWorldRotation(parentXform);
@@ -148,9 +152,7 @@ namespace Content.Server.Disposal.Unit.EntitySystems
             }
 
             if (disposalId != null && duc != null)
-            {
                 _disposalUnitSystem.TryEjectContents(disposalId.Value, duc);
-            }
 
             if (_atmosphereSystem.GetContainingMixture(uid, false, true) is { } environment)
             {
