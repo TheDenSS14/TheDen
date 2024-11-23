@@ -8,7 +8,7 @@
     Resizable="False">
     <BoxContainer Orientation="Vertical" HorizontalExpand="True" Margin="5">
         <Label Text="{Loc consent-window-text}" />
-        <BoxContainer Orientation="Horizontal" Margin="5">
+        <BoxContainer Orientation="Horizontal" Margin="10">
             <Label Name="SaveLabel" FontColorOverride="Red" Access="Public" />
             <Control HorizontalExpand="True" />
             <Button
@@ -33,30 +33,30 @@
 
         <!-- TODO: Generate these in code by iterating prototypes? -->
         <!-- Example Consent Toggle -->
-        <PanelContainer HorizontalExpand="True" MinWidth="200">
-            <PanelContainer.PanelOverride>
-                <gfx:StyleBoxFlat BackgroundColor="#1B1B1E" />
-            </PanelContainer.PanelOverride>
-            <BoxContainer Orientation="Vertical" HorizontalExpand="True" Margin="5">
-                <BoxContainer Orientation="Horizontal" Margin="5">
-                    <Label Text="{Loc consent-example1}" />
-                    <Control HorizontalExpand="True" />
-                    <Button
-                        Name="ConsentToggleExample1Off"
-                        ToggleMode="True"
-                        Access="Public"
-                        Text="Off"
-                        StyleClasses="OpenRight" />
-                    <Button
-                        Name="ConsentToggleExample1On"
-                        ToggleMode="True"
-                        Access="Public"
-                        Text="On"
-                        StyleClasses="OpenLeft" />
-                </BoxContainer>
-                <Label Text="{Loc consent-example1-desc}" />
-            </BoxContainer>
-        </PanelContainer>
+<!--        <PanelContainer HorizontalExpand="True" MinWidth="200"> -->
+<!--            <PanelContainer.PanelOverride> -->
+<!--                <gfx:StyleBoxFlat BackgroundColor="#1B1B1E" /> -->
+<!--            </PanelContainer.PanelOverride> -->
+<!--            <BoxContainer Orientation="Vertical" HorizontalExpand="True" Margin="5"> -->
+<!--                <BoxContainer Orientation="Horizontal" Margin="5"> -->
+<!--                    <Label Text="{Loc consent-example1}" /> -->
+<!--                    <Control HorizontalExpand="True" /> -->
+<!--                    <Button -->
+<!--                        Name="ConsentToggleExample1Off" -->
+<!--                        ToggleMode="True" -->
+<!--                        Access="Public" -->
+<!--                        Text="Off" -->
+<!--                        StyleClasses="OpenRight" /> -->
+<!--                    <Button -->
+<!--                        Name="ConsentToggleExample1On" -->
+<!--                        ToggleMode="True" -->
+<!--                        Access="Public" -->
+<!--                        Text="On" -->
+<!--                        StyleClasses="OpenLeft" /> -->
+<!--                </BoxContainer> -->
+<!--                <Label Text="{Loc consent-example1-desc}" /> -->
+<!--            </BoxContainer> -->
+<!--        </PanelContainer> -->
 
 
     </BoxContainer>
