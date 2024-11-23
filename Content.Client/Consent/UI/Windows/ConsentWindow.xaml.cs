@@ -145,7 +145,8 @@ public sealed partial class ConsentWindow : FancyWindow
 
         ConsentFreetext.TextRope = new Rope.Leaf(consent.Freetext);
 
-        // ConsentList.RemoveAllChildren();
+        if (ConsentList.ChildCount > 0)
+            ConsentList.RemoveAllChildren();
         _entries.Clear();
 
         var consentprototypelist = _protoManager.EnumeratePrototypes<ConsentTogglePrototype>();
