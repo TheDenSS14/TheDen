@@ -23,7 +23,8 @@ public sealed partial class ConsentWindow : FancyWindow
         RobustXamlLoader.Load(this);
         IoCManager.InjectDependencies(this);
 
-        SaveConsentSettings.OnPressed += _ => {
+        SaveConsentSettings.OnPressed += _ =>
+        {
             SaveConsentSettings.Disabled = true;
             _consentManager.UpdateConsent(GetSettings());
         };
@@ -144,14 +145,14 @@ public sealed partial class ConsentWindow : FancyWindow
 
         ConsentFreetext.TextRope = new Rope.Leaf(consent.Freetext);
 
+        if (ConsentList != null)
+            ConsentList.RemoveAllChildren();
+
         _entries.Clear();
-        ConsentList.RemoveAllChildren();
 
         var consentprototypelist = _protoManager.EnumeratePrototypes<ConsentTogglePrototype>();
         foreach (var prototype in consentprototypelist)
-        {
             AddConsentEntry(prototype);
-        }
 
         SaveConsentSettings.Disabled = true;
         SaveLabel.Text = "";
