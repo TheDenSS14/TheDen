@@ -139,14 +139,19 @@ public sealed partial class ConsentWindow : FancyWindow
         UnsavedChanges();
     }
 
+    private void ClearOldConsentList()
+    {
+        ConsentList.RemoveAllChildren();
+    }
+
     public void UpdateUi()
     {
         var consent = _consentManager.GetConsent();
 
         ConsentFreetext.TextRope = new Rope.Leaf(consent.Freetext);
 
-        if (ConsentList.ChildCount > 0)
-            ConsentList.RemoveAllChildren();
+        ClearOldConsentList();
+
         _entries.Clear();
 
         var consentprototypelist = _protoManager.EnumeratePrototypes<ConsentTogglePrototype>();
