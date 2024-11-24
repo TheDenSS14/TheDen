@@ -37,6 +37,14 @@ public sealed partial class ConsentWindow : FancyWindow
         ConsentFreetext.OnTextChanged += _ => UnsavedChanges();
     }
 
+    protected override void Dispose(bool disposing)
+    {
+        base.Dispose(disposing);
+
+        if (disposing)
+            _consentManager.OnServerDataLoaded -= UpdateUi;
+    }
+
     private PlayerConsentSettings GetSettings()
     {
         var text = Rope.Collapse(ConsentFreetext.TextRope);
@@ -139,18 +147,13 @@ public sealed partial class ConsentWindow : FancyWindow
         UnsavedChanges();
     }
 
-    private void ClearOldConsentList()
-    {
-        ConsentList.RemoveAllChildren();
-    }
-
     public void UpdateUi()
     {
         var consent = _consentManager.GetConsent();
 
         ConsentFreetext.TextRope = new Rope.Leaf(consent.Freetext);
 
-        ClearOldConsentList();
+        ConsentList.RemoveAllChildren();
 
         _entries.Clear();
 
