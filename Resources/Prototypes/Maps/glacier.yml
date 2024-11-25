@@ -8,6 +8,8 @@
     Glacier:
       stationProto: StandardNanotrasenStation
       components:
+      - type: StationEmergencyShuttle #floofstation
+        emergencyShuttlePath: /Maps/Shuttles/DeltaV/NTES_Delta.yml #floofstation
       - type: StationNameSetup
         mapNameTemplate: '{0} Glacier Station {1}'
         nameGenerator:
