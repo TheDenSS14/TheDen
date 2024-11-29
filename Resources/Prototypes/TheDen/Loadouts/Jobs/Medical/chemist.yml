@@ -1,0 +1,14 @@
+- type: loadout
+  id: LoadoutMedicalOuterWinterChem
+  category: JobsMedicalChemist
+  cost: 0
+  exclusive: true
+  customColorTint: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutChemistOuter
+    - !type:CharacterJobRequirement
+      jobs:
+        - Chemist
+  items:
+    - ClothingOuterWinterChem

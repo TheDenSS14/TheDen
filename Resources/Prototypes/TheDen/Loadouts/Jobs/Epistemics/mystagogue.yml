@@ -1,0 +1,12 @@
+- type: loadout
+  id: LoadoutCommandRDOuterLongCoat
+  category: JobsEpistemicsMystagogue
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMystagogueOuter
+    - !type:CharacterJobRequirement
+      jobs:
+        - ResearchDirector
+  items:
+    - ClothingLongcoatRD

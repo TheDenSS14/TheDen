@@ -1,0 +1,12 @@
+- type: loadout
+  id: JobsCommandCaptainLongCoat
+  category: JobsCommandCaptain
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutCaptainOuter
+    - !type:CharacterJobRequirement
+      jobs:
+        - Captain
+  items:
+    - ClothingLongcoatCap

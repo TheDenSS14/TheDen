@@ -1,0 +1,11 @@
+- type: loadout
+  id: LoadoutClothingOuterWinterCoat
+  category: JobsServiceMusician
+  cost: 0
+  exclusive: true
+  items:
+  - ClothingOuterWinterMusician
+  requirements:
+  - !type:CharacterJobRequirement
+    jobs:
+    - Musician

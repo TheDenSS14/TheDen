@@ -1,0 +1,47 @@
+- type: loadout
+  id: LoadoutMedicalOuterWinter
+  category: JobsMedicalAUncategorized
+  cost: 0
+  exclusive: true
+  customColorTint: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMedicalOuter
+    - !type:CharacterJobRequirement
+      jobs:
+        - MedicalDoctor
+        - Chemist
+  items:
+    - ClothingOuterWinterMed
+
+- type: loadout
+  id: LoadoutMedicalOuterWinterGen
+  category: JobsMedicalAUncategorized
+  cost: 0
+  exclusive: true
+  customColorTint: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMedicalOuter
+    - !type:CharacterJobRequirement
+      jobs:
+        - MedicalDoctor
+        - Chemist
+  items:
+    - ClothingOuterWinterGen
+
+- type: loadout
+  id: LoadoutMedicalOuterWinterViro
+  category: JobsMedicalAUncategorized
+  cost: 0
+  exclusive: true
+  customColorTint: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMedicalOuter
+    - !type:CharacterJobRequirement
+      jobs:
+        - MedicalDoctor
+        - Chemist
+  items:
+    - ClothingOuterWinterViro

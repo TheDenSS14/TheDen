@@ -1,0 +1,13 @@
+- type: loadout
+  id: LoadoutServiceOuterChefWinter
+  category: JobsServiceChef
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutChefOuter
+    - !type:CharacterJobRequirement
+      jobs:
+        - Chef
+  items:
+    - ClothingOuterWinterChef

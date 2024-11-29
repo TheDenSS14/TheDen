@@ -1,0 +1,13 @@
+- type: loadout
+  id: LoadoutAtmosphericTechnicianOuterWinter
+  category: JobsEngineeringAtmosphericTechnician
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutAtmosphericTechnicianOuter
+    - !type:CharacterJobRequirement
+      jobs:
+        - AtmosphericTechnician
+  items:
+    - ClothingOuterWinterAtmos

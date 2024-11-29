@@ -1,0 +1,42 @@
+# Outer
+- type: loadout
+  id: LoadoutCommandCEOuterLongCoat
+  category: JobsEngineeringChiefEngineer
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutChiefEngineerOuter
+    - !type:CharacterJobRequirement
+      jobs:
+        - ChiefEngineer
+  items:
+    - ClothingLongcoatCE
+
+# Uniform
+- type: loadout
+  id: LoadoutChiefEngineerUniformTurtleSkirt
+  category: JobsEngineeringChiefEngineer
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutChiefEngineerUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - ChiefEngineer
+  items:
+    - ClothingUniformJumpskirtChiefEngineerTurtle
+
+- type: loadout
+  id: LoadoutChiefEngineerUniformTurtleSuit
+  category: JobsEngineeringChiefEngineer
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutChiefEngineerUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - ChiefEngineer
+  items:
+    - ClothingUniformJumpsuitChiefEngineerTurtle

@@ -1,0 +1,13 @@
+- type: loadout
+  id: LoadoutScienceOuterWinterCoat
+  category: JobsEpistemicsGolemancer
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutGolemancerOuter
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Epistemics
+  items:
+    - ClothingOuterWinterRobo

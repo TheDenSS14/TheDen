@@ -1,0 +1,13 @@
+- type: loadout
+  id: LoadoutJanitorOuterWinterCoat
+  category: JobsServiceJanitor
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutJanitorUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - Janitor
+  items:
+    - ClothingOuterWinterJani
