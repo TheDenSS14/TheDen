@@ -55,10 +55,14 @@
 #  maxItems: 1
 #  items:
 #
-#- type: characterItemGroup
-#  id: LoadoutLogisticsOfficerOuter
-#  maxItems: 1
-#  items:
+- type: characterItemGroup
+  id: LoadoutLogisticsOfficerOuter
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutCommandQMOuterWinterCoat
+    - type: loadout
+      id: LoadoutCommandQMOuterLongCoat
 #
 - type: characterItemGroup
   id: LoadoutLogisticsOfficerShoes

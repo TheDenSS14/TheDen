@@ -8,9 +8,9 @@
       group: LoadoutCourierUniforms
     - !type:CharacterJobRequirement
       jobs:
-        - MailCarrier
+      - MailCarrier
   items:
-    - ClothingUniformCourier
+  - ClothingUniformCourier
 
 - type: loadout
   id: LoadoutCourierUniformJumpskirt
@@ -21,35 +21,35 @@
       group: LoadoutCourierUniforms
     - !type:CharacterJobRequirement
       jobs:
-        - MailCarrier
+      - MailCarrier
   items:
-    - ClothingUniformSkirtCourier
+  - ClothingUniformSkirtCourier
 
 - type: loadout
   id: LoadoutMailCarrierUniformJumpsuit
   category: JobsLogisticsCourier
   cost: 0
+  items:
+  - ClothingUniformMailCarrier
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutCourierUniforms
     - !type:CharacterJobRequirement
       jobs:
-        - MailCarrier
-  items:
-    - ClothingUniformMailCarrier
+      - MailCarrier
 
 - type: loadout
   id: LoadoutMailCarrierUniformJumpskirt
   category: JobsLogisticsCourier
   cost: 0
+  items:
+  - ClothingUniformSkirtMailCarrier
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutCourierUniforms
     - !type:CharacterJobRequirement
       jobs:
-        - MailCarrier
-  items:
-    - ClothingUniformSkirtMailCarrier
+      - MailCarrier
 
 # (so no) Head
 
@@ -57,27 +57,27 @@
   id: LoadoutCourierHeadCap
   category: JobsLogisticsCourier
   cost: 0
+  items:
+  - ClothingHeadCourier
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutCourierHead
     - !type:CharacterJobRequirement
       jobs:
-        - MailCarrier
-  items:
-    - ClothingHeadCourier
+      - MailCarrier
 
 - type: loadout
   id: LoadoutMailCarrierHeadCap
   category: JobsLogisticsCourier
   cost: 0
+  items:
+  - ClothingHeadMailCarrier
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutCourierHead
     - !type:CharacterJobRequirement
       jobs:
-        - MailCarrier
-  items:
-    - ClothingHeadMailCarrier
+      - MailCarrier
 
 # Outer (i hardly know 'er)
 
@@ -85,42 +85,42 @@
   id: LoadoutCourierOuterWinter
   category: JobsLogisticsCourier
   cost: 0
+  items:
+  - ClothingOuterWinterCoatMail
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutCourierOuter
     - !type:CharacterJobRequirement
       jobs:
-        - MailCarrier
-  items:
-    - ClothingOuterWinterCoatMail
--
+      - MailCarrier
+  
 # Belt (heavy is the hips that wear the strap)
 
 - type: loadout
   id: LoadoutCourierBeltCourier
   category: JobsLogisticsCourier
   cost: 0
+  items:
+  - CourierBag
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutCourierBelt
     - !type:CharacterJobRequirement
       jobs:
-        - MailCarrier
-  items:
-    - CourierBag
+      - MailCarrier
 
 - type: loadout
   id: LoadoutCourierBeltMail
   category: JobsLogisticsCourier
   cost: 0
+  items:
+  - MailBag
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutCourierBelt
     - !type:CharacterJobRequirement
       jobs:
-        - MailCarrier
-  items:
-    - MailBag
+      - MailCarrier
 
 # Shoes
 
@@ -129,52 +129,52 @@
   category: JobsLogisticsCourier
   cost: 0
   exclusive: true
-  requirements:
-  - !type:CharacterSpeciesRequirement
-    inverted: true
-    species:
-    - Diona
-    - Harpy
-  - !type:CharacterItemGroupRequirement
-    group: LoadoutCourierShoes 
-  - !type:CharacterJobRequirement
-    jobs:
-    - MailCarrier
   items:
-    - ClothingShoesSkates
+  - ClothingShoesSkates
+  requirements:
+    - !type:  
+      inverted: true
+      species:
+      - Diona
+      - Harpy
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutCourierShoes 
+    - !type:CharacterJobRequirement
+      jobs:
+      - MailCarrier
 
 - type: loadout
   id: LoadoutCourierShoesCourier
   category: JobsLogisticsCourier
   cost: 0
-  requirements:
-  - !type:CharacterSpeciesRequirement
-    inverted: true
-    species:
-    - Diona
-    - Harpy
-  - !type:CharacterItemGroupRequirement
-    group: LoadoutCourierShoes 
-  - !type:CharacterJobRequirement
-    jobs:
-    - MailCarrier
   items:
-    - ClothingShoesColorBrown
+  - ClothingShoesColorBrown
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+      - Diona
+      - Harpy
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutCourierShoes 
+    - !type:CharacterJobRequirement
+      jobs:
+      - MailCarrier
 
 - type: loadout
   id: LoadoutCourierShoesMail
   category: JobsLogisticsCourier
   cost: 0
-  requirements:
-  - !type:CharacterSpeciesRequirement
-    inverted: true
-    species:
-    - Diona
-    - Harpy
-  - !type:CharacterItemGroupRequirement
-    group: LoadoutCourierShoes 
-  - !type:CharacterJobRequirement
-    jobs:
-    - MailCarrier
   items:
-    - ClothingShoesColorBlue
+  - ClothingShoesColorBlue
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+      - Diona
+      - Harpy
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutCourierShoes 
+    - !type:CharacterJobRequirement
+      jobs:
+      - MailCarrier

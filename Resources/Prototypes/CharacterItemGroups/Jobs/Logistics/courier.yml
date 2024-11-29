@@ -4,10 +4,14 @@
 #  maxItems: 1
 #  items:
 #
-#- type: characterItemGroup
-#  id: LoadoutCourierBelt
-#  maxItems: 1
-#  items:
+- type: characterItemGroup
+  id: LoadoutCourierBelt
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutCourierBeltCourier
+    - type: loadout
+      id: LoadoutCourierBeltMail
 #
 #- type: characterItemGroup
 #  id: LoadoutCourierEars
@@ -29,10 +33,14 @@
 #  maxItems: 1
 #  items:
 #
-#- type: characterItemGroup
-#  id: LoadoutCourierHead
-#  maxItems: 1
-#  items:
+- type: characterItemGroup
+  id: LoadoutCourierHead
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutCourierHeadCap
+    - type: loadout
+      id: LoadoutMailCarrierHeadCap
 #
 #- type: characterItemGroup
 #  id: LoadoutCourierId
@@ -49,17 +57,33 @@
 #  maxItems: 1
 #  items:
 #
-#- type: characterItemGroup
-#  id: LoadoutCourierOuter
-#  maxItems: 1
-#  items:
+- type: characterItemGroup
+  id: LoadoutCourierOuter
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutCourierOuterWinter
 #
-#- type: characterItemGroup
-#  id: LoadoutCourierShoes
-#  maxItems: 1
-#  items:
+- type: characterItemGroup
+  id: LoadoutCourierShoes
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutCourierShoesSkates
+    - type: loadout
+      id: LoadoutCourierShoesCourier
+    - type: loadout
+      id: LoadoutCourierShoesMail
 #
-#- type: characterItemGroup
-#  id: LoadoutCourierUniforms
-#  maxItems: 1
-#  items:
+- type: characterItemGroup
+  id: LoadoutCourierUniforms
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutCourierUniformJumpsuit
+    - type: loadout
+      id: LoadoutCourierUniformJumpskirt
+    - type: loadout
+      id: LoadoutCourierUniformJumpsuit
+    - type: loadout
+      id: LoadoutCourierUniformJumpsuit
