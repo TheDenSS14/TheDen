@@ -258,3 +258,178 @@ Entries:
   id: 29
   time: '2024-11-21T06:33:42.0000000+00:00'
   url: https://github.com/TheDenSS14/TheDen/pull/60
+- author: Juniper
+  changes:
+    - type: Add
+      message: '[Asterisk] Added Vendomat to Epi'
+    - type: Add
+      message: '[Core] Added Vendomat to Epi'
+    - type: Add
+      message: '[Pebble] Added Vendomat to Epi'
+    - type: Add
+      message: '[Asterisk] Added plasma to Chem at roundstart'
+    - type: Add
+      message: '[Edge] Added centrifuge and electrolysis machine boards to Chem locker'
+    - type: Add
+      message: '[Edge] Added a cozy room for recreation'
+    - type: Add
+      message: '[Lighthouse] Added Autolathe to epi'
+    - type: Add
+      message: '[Lighthouse] Added sink and drain to Chem'
+    - type: Add
+      message: '[Pebble] Added sink and drain to Chem'
+    - type: Remove
+      message: '[Lighthouse] Removed Atmospherics piping'
+    - type: Remove
+      message: '[Pebble] Removed Atmospherics piping'
+    - type: Remove
+      message: '[Asterisk] Removed darkness tiles'
+    - type: Remove
+      message: '[Core] Removed darkness tiles'
+    - type: Remove
+      message: '[Edge] Removed darkness tiles'
+    - type: Remove
+      message: '[Lighthouse] Removed darkness tiles'
+    - type: Remove
+      message: '[Pebble] Removed darkness tiles'
+  id: 30
+  time: '2024-11-21T18:16:50.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/61
+- author: sleepyyapril
+  changes:
+    - type: Add
+      message: Ported Ghetto Surgery from Deltanedas!
+    - type: Add
+      message: Ported fishops organs from Deltanedas!
+    - type: Add
+      message: Added different step durations to each surgery step.
+    - type: Add
+      message: Added a T2 research for advanced surgical tools
+    - type: Add
+      message: Added a T3 research for an omnitool for surgery.
+    - type: Add
+      message: Added Surgical and Advanced Surgical modules for Mediborgs
+    - type: Add
+      message: Mediborgs can now perform surgery!
+    - type: Add
+      message: Added lobotomies as an operation. Godspeed you psychopaths.
+    - type: Add
+      message: Added cybernetic arms, legs and eyes.
+    - type: Add
+      message: >-
+        Added EMP weaknesses to all cybernetic parts (the day of reckoning will
+        come for IPCs soon)
+    - type: Add
+      message: Losing your eyes now blinds you.
+    - type: Fix
+      message: Fixed harpy lungs not being usable in surgeries.
+    - type: Fix
+      message: >-
+        Fixed biosynthetic and other printable parts not allowing you to attach
+        body parts to them.
+    - type: Fix
+      message: Fixed fire being able to delimb you.
+    - type: Fix
+      message: >-
+        Fixed entities being able to take over your body by just inserting a
+        brain or another head on top of you.
+    - type: Fix
+      message: Fixed some shitcode that didnt let rejuvenate or godmode work properly.
+    - type: Fix
+      message: >-
+        Fixed bionic arm, and cybernetic eyes traits not working properly due to
+        shitty networking.
+    - type: Tweak
+      message: >-
+        Increased tend wounds's speed by double, and bumped up the values on its
+        calculations. DEATH TO TOPICALS, LEAVE THOSE TO TIDERS.
+    - type: Tweak
+      message: >-
+        Beheading an entity now doesnt let it move, speak, and forces it to the
+        ground immediately (literally 1984!!11!!)
+    - type: Tweak
+      message: Changed sprites on most surgical tools to now use /tg/ sprites.
+    - type: Tweak
+      message: >-
+        Unbound shitmed targeting doll keybinds by default (did you know we have
+        those).
+  id: 31
+  time: '2024-11-24T00:46:55.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/63
+- author: sleepyyapril
+  changes:
+    - type: Tweak
+      message: >-
+        Tweaked IPCs to not be able to take the Singer trait due to a bug where
+        they can\'t use it anyway.
+  id: 32
+  time: '2024-11-24T01:07:11.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/64
+- author: sleepyyapril
+  changes:
+    - type: Fix
+      message: Fixed voice masks.
+    - type: Fix
+      message: Fixed Nanotrasen Block Game
+  id: 33
+  time: '2024-11-24T01:37:06.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/59
+- author: sleepyyapril
+  changes:
+    - type: Tweak
+      message: Tweaked mime masks to be for everyone in the items tab.
+  id: 34
+  time: '2024-11-25T13:26:48.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/66
+- author: sleepyyapril
+  changes:
+    - type: Add
+      message: Added oni masks and the double dildo to loadouts.
+    - type: Tweak
+      message: Tweaked Marish description.
+  id: 35
+  time: '2024-11-26T13:30:57.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/67
+- author: sleepyyapril
+  changes:
+    - type: Tweak
+      message: The Singer trait now costs 0 points.
+    - type: Tweak
+      message: IPCs can now take the Singer trait again.
+    - type: Fix
+      message: Fixed IPCs being unable to open the midi instrument menu.
+  id: 36
+  time: '2024-11-27T05:14:36.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/68
+- author: sleepyyapril
+  changes:
+    - type: Tweak
+      message: >-
+        Tweaked Marish so it now requires that you have the Latent Psychic
+        trait.
+  id: 37
+  time: '2024-11-27T05:37:11.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/69
+- author: sleepyyapril
+  changes:
+    - type: Fix
+      message: Fixed the inventory issue relating to having an opened inventory.
+  id: 38
+  time: '2024-11-29T11:36:23.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/72
+- author: Juniper
+  changes:
+    - type: Fix
+      message: >-
+        [Asterisk] Fixed wiring in engineering at roundstart. (no more powerless
+        bridge and grav)
+  id: 39
+  time: '2024-11-30T02:26:43.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/74
+- author: sleepyyapril
+  changes:
+    - type: Fix
+      message: IPCs can now interact with things again
+  id: 40
+  time: '2024-11-30T03:36:56.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/75

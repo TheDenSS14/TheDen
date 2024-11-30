@@ -8,7 +8,7 @@ namespace Content.Client.Storage;
 public sealed class StorageBoundUserInterface : BoundUserInterface
 {
     [Dependency] private readonly IEntityManager _entManager = default!;
-
+    [Obsolete] public override bool DeferredClose => false;
     private readonly StorageSystem _storage;
 
     public StorageBoundUserInterface(EntityUid owner, Enum uiKey) : base(owner, uiKey)

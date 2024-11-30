@@ -30,13 +30,13 @@ loadout-category-JobsEngineeringTechnicalAssistant = Technical Assistant
 # Epistemics
 loadout-category-JobsEpistemics = Epistemics
 loadout-category-JobsEpistemicsAAUncategorized = All Epistemiologists
-loadout-category-JobsEpistemicsAcolyte = Acolyte
-loadout-category-JobsEpistemicsCataloger = Cataloger
+loadout-category-JobsEpistemicsAcolyte = Scientist
+loadout-category-JobsEpistemicsCataloger = Cataloguer
 loadout-category-JobsEpistemicsChaplain = Chaplain
-loadout-category-JobsEpistemicsGolemancer = Golemancer
+loadout-category-JobsEpistemicsGolemancer = Roboticist
 loadout-category-JobsEpistemicsMystagogue = Mystagogue
-loadout-category-JobsEpistemicsMystic = Mystic
-loadout-category-JobsEpistemicsNoviciate = Noviciate
+loadout-category-JobsEpistemicsMystic = Senior Researcher
+loadout-category-JobsEpistemicsNoviciate = Research Assistant
 loadout-category-JobsEpistemicsPsionicMantis = Psionic Mantis
 
 # Logistics

@@ -263,6 +263,9 @@ public sealed class DisposalUnitSystem : SharedDisposalUnitSystem
 
     private void OnActivate(EntityUid uid, SharedDisposalUnitComponent component, ActivateInWorldEvent args)
     {
+        if (args.Handled || !args.Complex)
+            return;
+
         if (!TryComp(args.User, out ActorComponent? actor))
         {
             return;
@@ -517,7 +520,7 @@ public sealed class DisposalUnitSystem : SharedDisposalUnitSystem
             return false;
 
         var coords = xform.Coordinates;
-        var entry = _sharedMapSystem.GetLocal(uid, grid, coords)
+        var entry = _sharedMapSystem.GetLocal((EntityUid) xform.GridUid, grid, coords)
             .FirstOrDefault(HasComp<DisposalEntryComponent>);
 
         if (entry == default || component is not DisposalUnitComponent sDisposals)

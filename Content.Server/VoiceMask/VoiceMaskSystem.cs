@@ -92,7 +92,7 @@ public sealed partial class VoiceMaskSystem : EntitySystem
         if (!TryComp<VoiceMaskComponent>(maskEntity, out var voiceMaskComp))
             return;
 
-        if (!_uiSystem.HasUi(maskEntity.Value, VoiceMaskUIKey.Key))
+        if (_uiSystem.HasUi(maskEntity.Value, VoiceMaskUIKey.Key))
             return;
 
         _uiSystem.OpenUi(maskEntity.Value, VoiceMaskUIKey.Key, ev.Performer);

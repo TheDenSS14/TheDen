@@ -149,6 +149,9 @@
   category: TraitsSpeechLanguages
   points: -2
   requirements:
+    - !type:CharacterTraitRequirement
+          traits:
+            - LatentPsychic
     - !type:CharacterItemGroupRequirement
       group: TraitsLanguagesRacial
     - !type:CharacterSpeciesRequirement

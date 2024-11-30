@@ -1,0 +1,73 @@
+# Mime masks
+- type: loadout
+  id: LoadoutServiceMimeMaskSad
+  category: Items
+  cost: 0
+  exclusive: true
+  customColorTint: true
+  canBeHeirloom: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMimeMask
+  items:
+    - ClothingMaskSadMime
+
+- type: loadout
+  id: LoadoutServiceMimeMaskScared
+  category: Items
+  cost: 0
+  exclusive: true
+  customColorTint: true
+  canBeHeirloom: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMimeMask
+  items:
+    - ClothingMaskScaredMime
+
+- type: loadout
+  id: LoadoutServiceMimeMaskSexy
+  category: Items
+  cost: 0
+  exclusive: true
+  customColorTint: true
+  canBeHeirloom: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMimeMask
+  items:
+    - ClothingMaskSexyMime
+
+# Oni masks
+
+- type: loadout
+  id: LoadoutItemOniMaskRed
+  category: Items
+  cost: 0
+  canBeHeirloom: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutGroupOniMask
+  items:
+    - ClothingMaskOniRed
+
+- type: loadout
+  id: LoadoutItemOniMaskBlue
+  category: Items
+  cost: 0
+  canBeHeirloom: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutGroupOniMask
+  items:
+    - ClothingMaskOniBlue
+
+# Other
+
+- type: loadout
+  id: LoadoutNetworkConfigurator
+  category: Items
+  cost: 0
+  exclusive: true
+  items:
+    - NetworkConfigurator
