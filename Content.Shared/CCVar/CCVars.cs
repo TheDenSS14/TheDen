@@ -2488,14 +2488,14 @@ namespace Content.Shared.CCVar
         ///    Whether glimmer is enabled.
         /// </summary>
         public static readonly CVarDef<bool> GlimmerEnabled =
-            CVarDef.Create("glimmer.enabled", false, CVar.REPLICATED);
+            CVarDef.Create("glimmer.enabled", true, CVar.REPLICATED);
 
         /// <summary>
         ///     Passive glimmer drain per second.
         ///     Note that this is randomized and this is an average value.
         /// </summary>
         public static readonly CVarDef<float> GlimmerLostPerSecond =
-            CVarDef.Create("glimmer.passive_drain_per_second", 0.1f, CVar.SERVERONLY);
+            CVarDef.Create("glimmer.passive_drain_per_second", 0.025f, CVar.SERVERONLY);
 
         /// <summary>
         ///     Whether random rolls for psionics are allowed.
@@ -2699,7 +2699,11 @@ namespace Content.Shared.CCVar
         #region Mood System
 
         public static readonly CVarDef<bool> MoodEnabled =
+        #if RELEASE
             CVarDef.Create("mood.enabled", true, CVar.SERVER);
+        #else
+            CVarDef.Create("mood.enabled", false, CVar.SERVER);
+        #endif
 
         public static readonly CVarDef<bool> MoodIncreasesSpeed =
             CVarDef.Create("mood.increases_speed", true, CVar.SERVER);
