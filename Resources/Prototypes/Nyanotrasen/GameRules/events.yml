@@ -123,20 +123,20 @@
     maximumGlimmer: 1000
     report: glimmer-event-report-signatures
 
-- type: entity
-  id: GlimmerWispSpawn
-  parent: BaseGlimmerSignaturesEvent
-  categories: [ HideSpawnMenu ]
-  components:
-  - type: GlimmerMobRule
-    mobPrototype: MobGlimmerWisp
+#- type: entity
+#  id: GlimmerWispSpawn
+#  parent: BaseGlimmerSignaturesEvent
+#  categories: [ HideSpawnMenu ]
+#  components:
+#  - type: GlimmerMobRule
+#    mobPrototype: MobGlimmerWisp
 
-- type: entity
-  parent: BaseGlimmerSignaturesEvent
-  id: FreeProber
-  categories: [ HideSpawnMenu ]
-  components:
-  - type: FreeProberRule
+#- type: entity
+#  parent: BaseGlimmerSignaturesEvent
+#  id: FreeProber
+#  categories: [ HideSpawnMenu ]
+#  components:
+#  - type: FreeProberRule
 
 ## converted upstream events
 - type: entity
