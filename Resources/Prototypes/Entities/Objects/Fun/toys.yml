@@ -1965,3 +1965,13 @@
     - type: Sprite
       sprite: Objects/Fun/toys.rsi
       state: shadowkin
+
+- type: entity
+  parent: BasePlushie
+  id: PlushieGrim
+  name: grimble plushie
+  description: A stuffed toy that resembles a Grimble!
+  components:
+  - type: Sprite
+    sprite: Objects/Fun/toys.rsi
+    state: plushie_grim
