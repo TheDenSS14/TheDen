@@ -9,6 +9,17 @@
     - !type:CharacterItemGroupRequirement
       group: LoadoutNeck2
 
+- type: loadout
+  id: LoadoutItemsNeckRedHood
+  category: Neck
+  cost: 1
+  exclusive: true
+  items:
+    - ClothingNeckCloakRedHood
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutNeck2
+
 # Generic collars
 - type: loadout
   id: LoadoutItemsNeckBlueCollar

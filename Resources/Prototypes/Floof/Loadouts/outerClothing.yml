@@ -87,3 +87,13 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutOuter2
+
+- type: loadout
+  id: LoadoutClothingOuterSuitWitchRobes
+  category: Outer
+  cost: 1
+  items:
+    - ClothingOuterSuitWitchRobes
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutOuter2
