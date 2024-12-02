@@ -4,6 +4,10 @@ using Content.Shared.Inventory.Events;
 using Content.Shared.Storage;
 using Robust.Shared.Containers;
 using Robust.Shared.Prototypes;
+using Robust.Shared.Utility;
+
+// Shitmed Change
+using Content.Shared.Random;
 using Robust.Shared.Serialization.Manager;
 using Robust.Shared.Utility;
 using System.Diagnostics.CodeAnalysis;
@@ -14,6 +18,8 @@ public partial class InventorySystem : EntitySystem
 {
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
     [Dependency] private readonly IViewVariablesManager _vvm = default!;
+    [Dependency] private readonly RandomHelperSystem _randomHelper = default!; // Shitmed Change
+
     [Dependency] private readonly RandomHelperSystem _randomHelper = default!;
     [Dependency] private readonly ISerializationManager _serializationManager = default!;
     private void InitializeSlots()
@@ -276,6 +282,7 @@ public partial class InventorySystem : EntitySystem
                 var i = _nextIdx++;
                 slot = _slots[i];
 
+                if ((slot.SlotFlags & _flags) == 0)
                 if ((slot.SlotFlags & _flags) == 0)
                     continue;
 
