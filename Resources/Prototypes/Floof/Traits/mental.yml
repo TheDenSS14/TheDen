@@ -3,8 +3,9 @@
   category: Mental
   points: -2
   functions:
-    psionicPowers:
-    - HypnosisPower
+    - !type:TraitAddPsionics
+      psionicPowers:
+      - HypnosisPower
   requirements:
     - !type:CharacterLogicOrRequirement
       requirements:
