@@ -6,13 +6,13 @@
   requirements:
     - !type:DepartmentTimeRequirement
       department: Command
-      time: 54000 # 15 hours
+      min: 54000 # 15 hours
     - !type:DepartmentTimeRequirement
       department: Medical
-      time: 54000 # 15 hours
+      min: 54000 # 15 hours
     - !type:DepartmentTimeRequirement
       department: Security
-      time: 54000 # 15 hours
+      min: 54000 # 15 hours
   weight: 20
   startingGear: BlueshieldOfficerGear
   icon: "JobIconNanotrasen"
@@ -34,7 +34,7 @@
   equipment:
     back: ClothingBackpack
     jumpsuit: ClothingUniformJumpsuitBlueshieldOfficer
-    shoes: ClothingShoesBootsJackFilled
+    shoes: ClothingShoesBootsCombatFilled
     eyes: ClothingEyesGlassesMedical
     gloves: ClothingHandsGlovesCombat
     outerClothing: ClothingBlueshieldArmourVest
