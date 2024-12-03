@@ -98,6 +98,39 @@
   metamorphicFillBaseName: fill-
   metamorphicChangeColor: true
   fizziness: 0
+  # Floof region
+  metabolisms:
+    Drink:
+      effects:
+      - !type:SatiateThirst
+        factor: 1.5
+      - !type:ChemAddMoodlet
+        moodPrototype: IceCreamBenefit
+        conditions:
+        - !type:ReagentThreshold
+          reagent: IceCream
+          min: 5
+      - !type:ChemAddMoodlet
+        moodPrototype: IceCreamBrainFreeze
+        conditions:
+        - !type:ReagentThreshold
+          reagent: IceCream
+          min: 20
+      - !type:HealthChange
+        scaleByQuantity: true
+        ignoreResistances: false
+        damage:
+          types:
+            Cold: 0.1
+        conditions:
+        - !type:ReagentThreshold
+          min: 20
+      - !type:AdjustTemperature
+        conditions:
+        - !type:Temperature
+          min: 298.15 # Floof
+        amount: -1000
+  # Floof region end
 
 - type: reagent
   id: LemonLime

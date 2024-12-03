@@ -18,5 +18,5 @@ consent-examine-verb = Consent Info
 consent-examine-not-set = This player has no consent preferences set. Ask for consent first before engaging in any erotic roleplay.
 
 # Consent toggles
-consent-example1 = Example Consent Toggle
-consent-example1-desc = This is just here as an example for how to add consent toggles.
+consent-Example-name = Example Consent Toggle
+consent-Example-desc = This is just here as an example for how to add consent toggles.

@@ -7,6 +7,8 @@
   packetPrototype: WheatSeeds
   productPrototypes:
     - WheatBushel
+  mutationPrototypes:
+    - meatwheat # Floof - Botany Additions
   lifespan: 25
   maturation: 6
   production: 3
@@ -258,6 +260,8 @@
   packetPrototype: OrangeSeeds
   productPrototypes:
     - FoodOrange
+  mutationPrototypes:
+    - extradimensionalOrange # Floof - Botany Additions
   harvestRepeat: Repeat
   lifespan: 55
   maturation: 6
@@ -339,8 +343,10 @@
   displayName: seeds-sugarcane-display-name
   plantRsi: Objects/Specific/Hydroponics/sugarcane.rsi
   packetPrototype: SugarcaneSeeds
-  productPrototypes:
+  productPrototypes: 
     - Sugarcane
+  mutationPrototypes: 
+    - papercane # Floof - Botany Additions
   harvestRepeat: Repeat
   lifespan: 60
   maturation: 6
@@ -479,6 +485,8 @@
   packetPrototype: BloodTomatoSeeds
   productPrototypes:
     - FoodBloodTomato
+  mutationPrototypes:
+    - killertomato # Floof - Botany Additions
   harvestRepeat: Repeat
   lifespan: 25
   maturation: 8
@@ -592,6 +600,8 @@
   packetPrototype: AppleSeeds
   productPrototypes:
     - FoodApple
+  mutationPrototypes:
+    - goldenApple # Floof - Botany Additions
   harvestRepeat: Repeat
   lifespan: 55
   maturation: 6
@@ -915,6 +925,7 @@
     - FoodChiliPepper
   mutationPrototypes:
     - chilly
+    - GhostPepper # Floof - Botany Additions from DeltaV
   harvestRepeat: Repeat
   lifespan: 25
   maturation: 6
@@ -1186,6 +1197,8 @@
   packetPrototype: GalaxythistleSeeds
   productPrototypes:
     - FoodGalaxythistle
+  mutationPrototypes:
+    - CrystalThistle # Floof - Botany Additions from Delta-V
   lifespan: 25
   maturation: 10
   production: 3
@@ -1235,6 +1248,9 @@
   packetPrototype: GatfruitSeeds
   productPrototypes:
     - FoodGatfruit
+  mutationPrototypes: # Floof - Botany Additions
+    - fakeCapfruit
+    - realCapfruit
   lifespan: 65
   maturation: 25
   production: 25
@@ -1392,6 +1408,8 @@
   packetPrototype: WatermelonSeeds
   productPrototypes:
     - FoodWatermelon
+  mutationPrototypes:
+    - holymelon # Floof - Botany Additions
   lifespan: 55
   maturation: 12
   production: 3
@@ -1535,6 +1553,8 @@
   packetPrototype: PumpkinSeeds
   productPrototypes:
     - FoodPumpkin
+  mutationPrototypes:
+    - bluePumpkin # Floof - Botany Additions
   lifespan: 55
   maturation: 10
   production: 4

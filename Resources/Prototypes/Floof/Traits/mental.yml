@@ -1,0 +1,27 @@
+- type: trait
+  id: HypnoticGaze
+  category: Mental
+  points: -2
+  functions:
+    - !type:TraitAddPsionics
+      psionicPowers:
+      - HypnosisPower
+  requirements:
+    - !type:CharacterLogicOrRequirement
+      requirements:
+        - !type:CharacterTraitRequirement
+          traits:
+            - LatentPsychic
+        - !type:CharacterJobRequirement
+          jobs:
+            - Chaplain
+            - Librarian
+    - !type:CharacterLogicOrRequirement
+      requirements:
+        - !type:CharacterSpeciesRequirement
+          inverted: true
+          species:
+            - IPC
+        - !type:CharacterTraitRequirement
+          traits:
+            - AnomalousPositronics
