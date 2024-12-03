@@ -47,3 +47,14 @@
     - !type:TraitAddComponent
       components:
         - type: MobsterAccent
+- type: trait
+  id: IrishAccent
+  category: TraitsSpeechAccents
+  points: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: TraitsAccents
+  functions:
+    - !type:TraitAddComponent
+      components:
+        - type: IrishAccent
