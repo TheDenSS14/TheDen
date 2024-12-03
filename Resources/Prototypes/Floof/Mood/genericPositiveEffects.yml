@@ -19,3 +19,13 @@
   id: LostHypnosis
   moodChange: -3
   timeout: 120
+
+- type: moodEffect
+  id: IceCreamBenefit
+  moodChange: 2
+  timeout: 180 #3 minutes
+
+- type: moodEffect
+  id: IceCreamBrainFreeze
+  moodChange: -15
+  timeout: 30 #30 second

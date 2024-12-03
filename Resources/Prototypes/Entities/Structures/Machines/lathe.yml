@@ -197,7 +197,6 @@
       - HandheldStationMap
       - ClothingHeadHatWelding
       - ShockCollar # FloofStation
-      - CustomDrinkJug # FloofStation
       - LeashBasic # FloofStation
       - ShortLeash # FloofStation
   - type: EmagLatheRecipes
@@ -497,6 +496,7 @@
       - SolarTrackerElectronics
       - TurboItemRechargerCircuitboard
       - PowerComputerCircuitboard
+      - AlertsComputerCircuitboard # Floof - port to EE if possible
       - AutolatheHyperConvectionMachineCircuitboard
       - ProtolatheHyperConvectionMachineCircuitboard
       - CircuitImprinterHyperConvectionMachineCircuitboard
@@ -831,6 +831,8 @@
       - MagazineBoxSpecialPractice
       - SpeedLoaderSpecial
       - MagazinePistolSpecial
+      - HandheldGPSBasic # Floof - port to EE
+      - HandheldStationMap # Floof - port to EE
     dynamicRecipes:
       - BolaEnergy
       - BoxBeanbag
@@ -918,6 +920,17 @@
       - MagazineBoxSpecialMindbreaker
       - SecurityCyberneticEyes
       - MedicalCyberneticEyes
+      - WeaponGrapplingGun
+      # Floof section - port to EE later
+      - JawsOfLife
+      - HandHeldMassScanner
+      - HoloprojectorField
+      - RadarConsoleCircuitboard
+      - SurveillanceCameraRouterCircuitboard
+      - SurveillanceCameraMonitorCircuitboard
+      - SurveillanceWirelessCameraMonitorCircuitboard
+      - SurveillanceCameraWirelessRouterCircuitboard
+      # Floof section end
   - type: MaterialStorage
     whitelist:
       tags:
@@ -1040,6 +1053,8 @@
       - Hemostat
       - ClothingEyesGlassesChemical
       - WhiteCane
+      - HandheldGPSBasic # Floof - port to EE
+      - HandheldStationMap # Floof - port to EE
     dynamicRecipes:
       - ChemicalPayload
       - CryostasisBeaker
@@ -1054,10 +1069,241 @@
       - OmnimedTool
       - MedicalCyberneticEyes
       - HypoMini # Floof
+      # Floof section - port to EE later
+      - HandHeldMassScanner
+      - ClothingHeadHelmetInsulated
+      - CloningConsoleComputerCircuitboard
+      - CloningPodMachineCircuitboard
+      - MetempsychoticMachineCircuitboard
+      - MedicalScannerMachineCircuitboard
+      - VaccinatorMachineCircuitboard
+      - DiagnoserMachineCircuitboard
+      - StasisBedMachineCircuitboard
+      - CryoPodMachineCircuitboard
+      - BiomassReclaimerMachineCircuitboard
+      - BiofabricatorMachineCircuitboard
+      - ReagentGrinderIndustrialMachineCircuitboard
+      - FatExtractorMachineCircuitboard
+      - CrewMonitoringComputerCircuitboard
+      # Floof section end
   - type: Machine
     board: MedicalTechFabCircuitboard
   - type: StealTarget
     stealGroup: MedicalTechFabCircuitboard
+
+# THIS ENTIRE SECTION BELONGS TO FLOOF - port to EE if possible
+# ===
+
+- type: entity
+  id: EngineeringTechFab
+  parent: Autolathe
+  name: engineering techfab
+  description: An improved version of the autolathe, capable of printing various tools used by engineers.
+  components:
+  - type: Sprite
+    sprite: Structures/Machines/techfab.rsi
+    layers:
+    - state: icon
+      map: ["enum.LatheVisualLayers.IsRunning"]
+    - state: engi
+    - state: unlit
+      shader: unshaded
+      map: ["enum.PowerDeviceVisualLayers.Powered"]
+    - state: inserting
+      map: ["enum.MaterialStorageVisualLayers.Inserting"]
+    - state: panel
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+  - type: Machine
+    board: EngineeringTechFabCircuitboard
+  - type: Lathe
+    idleState: icon
+    runningState: icon
+    # Static recipes are inherited from the autolathe. This only adds some dynamic ones.
+    dynamicRecipes:
+      # Machines and computers
+      - TurboItemRechargerCircuitboard
+      - SheetifierMachineCircuitboard
+      - PortableGeneratorPacmanMachineCircuitboard
+      - PortableGeneratorSuperPacmanMachineCircuitboard
+      - PortableGeneratorJrPacmanMachineCircuitboard
+      - AutolatheHyperConvectionMachineCircuitboard
+      - SolarControlComputerCircuitboard
+      - SolarTrackerElectronics # Actual solar panels are not manufacturable
+      - EmitterCircuitboard
+      # Atmos machines
+      - ThermomachineFreezerMachineCircuitBoard
+      - HellfireFreezerMachineCircuitBoard
+      - PortableScrubberMachineCircuitBoard
+      # Tools
+      - PowerCellHigh
+      - PowerCellMicroreactor
+      - SignallerAdvanced
+      - HolofanProjector
+      - HoloprojectorField
+      - WelderExperimental
+      - PowerDrill # Can make two of the three advanced tools - jaws of life are too OP to give them away
+      - WeaponParticleDecelerator
+      - ClothingMaskWeldingGas
+      - ClothingShoesBootsMagSci
+      # Routers and monitors
+      - PowerComputerCircuitboard
+      - AlertsComputerCircuitboard
+      - SurveillanceCameraRouterCircuitboard
+      - SurveillanceCameraMonitorCircuitboard
+      - SurveillanceWirelessCameraMonitorCircuitboard
+      - SurveillanceCameraWirelessRouterCircuitboard
+      - TelecomServerCircuitboard
+      # Shuttle building
+      - ShuttleConsoleCircuitboard
+      - RadarConsoleCircuitboard
+      - ThrusterMachineCircuitboard
+      - GyroscopeMachineCircuitboard
+      - MiniGravityGeneratorCircuitboard
+      - ShuttleGunKineticCircuitboard
+  - type: MaterialStorage
+    whitelist:
+      tags:
+      - Sheet
+      - RawMaterial
+      - Ingot
+
+
+- type: entity
+  id: CargoTechFab
+  parent: Autolathe
+  name: logistics techfab
+  description: An improved version of the autolathe, capable of printing various tools used by salvage and cargo technicians.
+  components:
+  - type: Sprite
+    sprite: Structures/Machines/techfab.rsi
+    layers:
+    - state: icon
+      map: ["enum.LatheVisualLayers.IsRunning"]
+    - state: cargo
+    - state: unlit
+      shader: unshaded
+      map: ["enum.PowerDeviceVisualLayers.Powered"]
+    - state: inserting
+      map: ["enum.MaterialStorageVisualLayers.Inserting"]
+    - state: panel
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+  - type: Machine
+    board: CargoTechFabCircuitboard
+  - type: Lathe
+    idleState: icon
+    runningState: icon
+    # Static recipes are inherited from the autolathe. This only adds some dynamic ones.
+    dynamicRecipes:
+    # Weapons and tools
+    - WeaponGrapplingGun
+    - WeaponTetherGun
+    - WeaponForceGun
+    - WeaponProtoKineticAccelerator
+    - MiningDrill
+    - HandHeldMassScanner
+    # Shuttle building
+    - ShuttleConsoleCircuitboard
+    - RadarConsoleCircuitboard
+    - ThrusterMachineCircuitboard
+    - GyroscopeMachineCircuitboard
+    - MiniGravityGeneratorCircuitboard
+    - ShuttleGunKineticCircuitboard
+    # Machines and computers
+    - CargoTelepadMachineCircuitboard
+    - OreProcessorMachineCircuitboard
+    # NOTE: advanced tools, industrial ore processor, expeds board are not added here as those are the very few things epi provides for cargo
+  - type: MaterialStorage
+    whitelist:
+      tags:
+      - Sheet
+      - RawMaterial
+      - Ingot
+
+
+- type: entity
+  id: ServiceTechFab
+  parent: BaseLatheLube
+  name: service techfab
+  description: A specialized techfab used for printing various quality-of-life tools.
+  components:
+  - type: Sprite
+    sprite: Structures/Machines/techfab.rsi
+    layers:
+    - state: icon
+      map: ["enum.LatheVisualLayers.IsRunning"]
+    - state: service
+    - state: unlit
+      shader: unshaded
+      map: ["enum.PowerDeviceVisualLayers.Powered"]
+    - state: inserting
+      map: ["enum.MaterialStorageVisualLayers.Inserting"]
+    - state: panel
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+  - type: Machine
+    board: ServiceTechFabCircuitboard
+  - type: Lathe
+    idleState: icon
+    runningState: icon
+    staticRecipes:
+    - HandheldStationMap
+    - ShockCollar
+    - CustomDrinkJug
+    - LeashBasic
+    - ShortLeash
+    - CellRechargerCircuitboard
+    - WeaponCapacitorRechargerCircuitboard
+    - Beaker
+    - LargeBeaker
+    - Syringe
+    - HandLabeler
+    - Signaller
+    - SprayBottle
+    - MopItem
+    - Bucket
+    - Holoprojector
+    dynamicRecipes:
+    # Tools
+    - ClothingShoesBootsSpeed
+    - BluespaceBeaker
+    - AdvMopItem
+    - WeaponSprayNozzle
+    - ClothingBackpackWaterTank
+    - MegaSprayBottle
+    # Machines and computers
+    - SeedExtractorMachineCircuitboard
+    - HydroponicsTrayMachineCircuitboard
+    - ReagentGrinderIndustrialMachineCircuitboard
+    - ComputerTelevisionCircuitboard
+    - SynthesizerInstrument
+    - DawInstrumentMachineCircuitboard
+    - MassMediaCircuitboard
+    - JukeboxCircuitBoard
+    - FatExtractorMachineCircuitboard
+    # Translators
+    - CanilunztTranslator
+    - BubblishTranslator
+    - NekomimeticTranslator
+    - DraconicTranslator
+    - SolCommonTranslator
+    - RootSpeakTranslator
+    - BasicGalaticCommonTranslatorImplanter
+    - MofficTranslator
+    - ArachnicTranslator
+    # Tiles
+    - FauxTileAstroGrass
+    - FauxTileMowedAstroGrass
+    - FauxTileJungleAstroGrass
+    - FauxTileAstroIce
+    - FauxTileAstroSnow
+  - type: MaterialStorage
+    whitelist:
+      tags:
+      - Sheet
+      - RawMaterial
+      - Ingot
+
+# ===
+# Floof section end
 
 - type: entity
   parent: BaseLathe

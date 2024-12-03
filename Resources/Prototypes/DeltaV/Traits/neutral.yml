@@ -1,3 +1,5 @@
+# Language accents
+
 - type: trait
   id: ScottishAccent
   category: TraitsSpeechAccents
@@ -9,3 +11,65 @@
     - !type:TraitAddComponent
       components:
         - type: ScottishAccent
+
+# "New" Accents for more character variety
+
+- type: trait
+  id: FrenchAccent
+  category: TraitsSpeechAccents
+  points: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: TraitsAccents
+  functions:
+    - !type:TraitAddComponent
+      components:
+        - type: FrenchAccent
+
+- type: trait
+  id: SpanishAccent
+  category: TraitsSpeechAccents
+  points: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: TraitsAccents
+  functions:
+    - !type:TraitAddComponent
+      components:
+        - type: SpanishAccent
+
+- type: trait
+  id: MobsterAccent
+  category: TraitsSpeechAccents
+  points: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: TraitsAccents
+  functions:
+    - !type:TraitAddComponent
+      components:
+        - type: MobsterAccent
+
+- type: trait
+  id: IrishAccent
+  category: TraitsSpeechAccents
+  points: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: TraitsAccents
+  functions:
+    - !type:TraitAddComponent
+      components:
+        - type: IrishAccent
+
+- type: trait
+  id: RussianAccent
+  category: TraitsSpeechAccents
+  points: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: TraitsAccents
+  functions:
+    - !type:TraitAddComponent
+      components:
+        - type: RussianAccent
