@@ -1,3 +1,5 @@
+# Language accents
+
 - type: trait
   id: ScottishAccent
   category: TraitsSpeechAccents
@@ -59,3 +61,15 @@
     - !type:TraitAddComponent
       components:
         - type: IrishAccent
+
+- type: trait
+  id: RussianAccent
+  category: TraitsSpeechAccents
+  points: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: TraitsAccents
+  functions:
+    - !type:TraitAddComponent
+      components:
+        - type: RussianAccent

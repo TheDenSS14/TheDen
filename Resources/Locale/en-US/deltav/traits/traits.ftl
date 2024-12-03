@@ -10,6 +10,9 @@ trait-description-SpanishAccent = Your Epanish traditions shine through, get tho
 trait-name-MobsterAccent = Mobster accent
 trait-description-MobsterAccent = Fugeddaboutit! Yous talk numhallly, capiche?
 
+trait-name-RussianAccent = Russian accent
+trait-description-RussianAccent = Comrade, you have any vodka?
+
 trait-name-IrishAccent = Irish accent
 trait-description-IrishAccent = Ya sap! Seems you got a pet hate fer rubbish!
 
