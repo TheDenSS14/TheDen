@@ -54,11 +54,11 @@ namespace Content.Server.Abilities.Psionics
                 || _mobState.IsCritical(args.Target, mob))
                 return;
 
-            // if (_consent.HasConsent(args.Target, "Hypnosis")) // TODO This need to be updated when system is done.
-            // {
-            //     _popups.PopupEntity(Loc.GetString("has-no-consent"), uid, uid, PopupType.Large);
-            //     return;
-            // }
+            if (!_consent.HasConsent(args.Target, "Hypno"))
+            {
+                _popups.PopupEntity(Loc.GetString("has-no-consent"), uid, uid, PopupType.Large);
+                return;
+            }
 
             if (HasComp<HypnotizedComponent>(args.Target))
             {

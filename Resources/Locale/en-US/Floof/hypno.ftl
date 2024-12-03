@@ -20,14 +20,14 @@ hypno-success = {CAPITALIZE($target)} stares into your eyes, lost in them, lost 
 mood-effect-BeingHypnotized = It's nice to not think, to be mindless... I love to obey.
 mood-effect-LostHypnosis = It was nice to not think, I miss that.
 
-hypnotized = [bold][color=red]You are hypnotized!
-    You are now completely hypnotized by {CAPITALIZE($entity)}.
-    Warning: You are not allowed to join them if they are an antag, do not do antagonist activities because you were hypnotized, (unless yourself are an antag).
-    You are still allow to deny and enforce your preference, if you wish to break hypnosis at anytime use the verb on yourself.[/color][/bold]
+hypnotized = [bold][color=red]You have been HYPNOTISED by {CAPITALIZE($entity)}!
+    Warning: You are not an antag, and still cannot help antags. THIS IS NOT AN ANTAGONIST ROLE.
+    Standard server rules apply, this is just for ROLEPLAY intents
+    If this was done against your preferences, AHELP "Adminhelp", otherwise, enjoy![/color][/bold]
 
-hypnotist = [bold][color=red]You have completely hypnotized {CAPITALIZE($entity)}.
-    Warning: This does not allow you to break their consent or preference, They not allowed to join you if your an antag
-    or do any antagonist activities, Make sure to follow server rules at all times, They may break from hypno at anytime using a verb.[/color][/bold]
+hypnotist = [bold][color=red]You have enthralled {CAPITALIZE($entity)}!
+    Have then serve your will, and do what you desire!
+    "in accordinace to server rules, of course."[/color][/bold]
 
 stophypno = [bold][color=red]You are no longer hypnotized!
     You are no longer hypnotized by {CAPITALIZE($entity)}, you are now thinking properly again.[/color][/bold]
