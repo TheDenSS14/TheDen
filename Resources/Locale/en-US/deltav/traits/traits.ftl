@@ -10,8 +10,8 @@ trait-description-SpanishAccent = Your Epanish traditions shine through, get tho
 trait-name-MobsterAccent = Mobster accent
 trait-description-MobsterAccent = Fugeddaboutit! Yous talk numhallly, capiche?
 
-trait-irish-accent-name = Irish accent
-trait-irish-accent-desc = Ya sap! Seems you got a pet hate fer rubbish!
+trait-name-IrishAccent = Irish accent
+trait-description-IrishAccent = Ya sap! Seems you got a pet hate fer rubbish!
 
 trait-name-UltraVision = Ultraviolet Vision
 trait-description-UltraVision = Whether through custom bionic eyes, random mutation,
