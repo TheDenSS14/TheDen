@@ -1016,9 +1016,7 @@ INSERT INTO player_round (players_id, rounds_id) VALUES ({players[player]}, {id}
                 .SingleOrDefaultAsync();
 
             if (consentSettings is null)
-            {
                 return;
-            }
 
             db.ConsentSettings.Remove(consentSettings);
         }
@@ -1048,7 +1046,7 @@ INSERT INTO player_round (players_id, rounds_id) VALUES ({players[player]}, {id}
             }
 
             currentConsentSettings.ConsentFreetext = consentSettings.Freetext;
-            Dictionary<ProtoId<ConsentTogglePrototype>, string> currentConsentToggles = currentConsentSettings.ConsentToggles.ToDictionary(
+            var currentConsentToggles = currentConsentSettings.ConsentToggles.ToDictionary(
                 keySelector: t => new ProtoId<ConsentTogglePrototype>(t.ToggleProtoId),
                 elementSelector: t => t.ToggleProtoState
             );
@@ -1057,13 +1055,9 @@ INSERT INTO player_round (players_id, rounds_id) VALUES ({players[player]}, {id}
             foreach (var toggle in currentConsentToggles)
             {
                 if (consentSettings.Toggles.TryGetValue(toggle.Key, out var toggleState))
-                {
-                    currentConsentSettings.ConsentToggles.Where(t => t.ToggleProtoId == toggle.Key).First().ToggleProtoState = toggleState;
-                }
+                    currentConsentSettings.ConsentToggles.First(t => t.ToggleProtoId == toggle.Key).ToggleProtoState = toggleState;
                 else
-                {
                     currentConsentSettings.ConsentToggles.RemoveAll(t => t.ToggleProtoId == toggle.Key);
-                }
             }
             // Add new toggles
             foreach (var toggle in consentSettings.Toggles)

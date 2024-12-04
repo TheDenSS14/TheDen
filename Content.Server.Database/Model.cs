@@ -15,13 +15,12 @@ namespace Content.Server.Database
 {
     public abstract class ServerDbContext : DbContext
     {
-        protected ServerDbContext(DbContextOptions options) : base(options)
-        {
-        }
+        protected ServerDbContext(DbContextOptions options) : base(options) { }
 
         public DbSet<Preference> Preference { get; set; } = null!;
         public DbSet<Profile> Profile { get; set; } = null!;
         public DbSet<ConsentSettings> ConsentSettings { get; set; } = null!;
+        public DbSet<ConsentAccess> ConsentAccess { get; set; } = null!;
         public DbSet<AssignedUserId> AssignedUserId { get; set; } = null!;
         public DbSet<Player> Player { get; set; } = default!;
         public DbSet<Admin> Admin { get; set; } = null!;
@@ -62,6 +61,14 @@ namespace Content.Server.Database
 
             modelBuilder.Entity<ConsentToggle>()
                 .HasIndex(c => new { c.ConsentSettingsId, c.ToggleProtoId })
+                .IsUnique();
+
+            modelBuilder.Entity<ConsentAccess>()
+                .HasIndex(c => c.UserId)
+                .IsUnique();
+
+            modelBuilder.Entity<ConsentAccessTarget>()
+                .HasIndex(c => c.CharacterName)
                 .IsUnique();
 
             modelBuilder.Entity<Antag>()
@@ -377,6 +384,25 @@ namespace Content.Server.Database
         public int PreferenceId { get; set; }
         public Preference Preference { get; set; } = null!;
     }
+
+    public class ConsentAccess
+    {
+        [Key] public Guid UserId { get; set; }
+
+        // The list of people this player has set as not-neutral.
+        public List<ConsentAccessTarget> Targets { get; set; } = new();
+    }
+
+    public class ConsentAccessTarget
+    {
+        [Key] public Guid TargetId { get; set; }
+
+        public bool IsForCharacter { get; set; } = false;
+        public string? CharacterName { get; set; } = null!;
+
+        public bool Value { get; set; } = false;
+    }
+
     public class ConsentSettings
     {
         public int Id { get; set; }
