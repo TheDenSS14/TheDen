@@ -155,17 +155,17 @@
     maximumGlimmer: 1000
   - type: GlimmerRandomSentienceRule
 
-#- type: entity
-#  parent: BaseGlimmerSignaturesEvent
-#  id: GlimmerRevenantSpawn
-#  categories: [ HideSpawnMenu ]
-#  components:
-#    - type: GlimmerEvent
-#      minimumGlimmer: 450
-#      maximumGlimmer: 900
-#      glimmerBurnLower: 50
-#      glimmerBurnUpper: 100 # Gives epi a chance to recover
-#    - type: GlimmerRevenantRule
+- type: entity
+  parent: BaseGlimmerSignaturesEvent
+  id: GlimmerRevenantSpawn
+  categories: [ HideSpawnMenu ]
+  components:
+    - type: GlimmerEvent
+      minimumGlimmer: 450
+      maximumGlimmer: 900
+      glimmerBurnLower: 50
+      glimmerBurnUpper: 100 # Gives epi a chance to recover
+    - type: GlimmerRevenantRule
 
 - type: entity
   parent: BaseGlimmerSignaturesEvent

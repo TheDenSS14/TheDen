@@ -106,18 +106,18 @@
     minimumPlayers: 30 # Floof
   - type: NinjaSpawnRule
 
-#- type: entity
-#  parent: BaseGameRule
-#  id: RevenantSpawn
-#  categories: [ HideSpawnMenu ]
-#  components:
-#  - type: StationEvent
-#    weight: 7.5
-#    duration: 1
-#    earliestStart: 45
-#    minimumPlayers: 20
-#  - type: RandomSpawnRule
-#    prototype: MobRevenant
+- type: entity
+  parent: BaseGameRule
+  id: RevenantSpawn
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: StationEvent
+    weight: 7.5
+    duration: 1
+    earliestStart: 45
+    minimumPlayers: 20
+  - type: RandomSpawnRule
+    prototype: MobRevenant
 
 # disabled until event is rewritten to be more interesting
 #- type: entity

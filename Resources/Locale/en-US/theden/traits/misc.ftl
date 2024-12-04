@@ -1,0 +1,1 @@
+examine-hypnotist-message = {CAPITALIZE(POSS-ADJ($entity))} eyes hold the secrets of your mind.

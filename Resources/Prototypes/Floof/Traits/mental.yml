@@ -6,6 +6,11 @@
     - !type:TraitAddPsionics
       psionicPowers:
       - HypnosisPower
+    - !type:TraitPushDescription
+      descriptionExtensions:
+        - description: examine-hypnotist-message
+          fontSize: 12
+          requireDetailRange: true
   requirements:
     - !type:CharacterLogicOrRequirement
       requirements:

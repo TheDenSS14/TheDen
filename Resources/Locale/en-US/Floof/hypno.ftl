@@ -20,19 +20,19 @@ hypno-success = {CAPITALIZE($target)} stares into your eyes, lost in them, lost 
 mood-effect-BeingHypnotized = It's nice to not think, to be mindless... I love to obey.
 mood-effect-LostHypnosis = It was nice to not think, I miss that.
 
-hypnotized = [bold][color=red]You have been HYPNOTISED by {CAPITALIZE($entity)}!
-    Warning: You are not an antag, and still cannot help antags. THIS IS NOT AN ANTAGONIST ROLE.
-    Standard server rules apply, this is just for ROLEPLAY intents
-    If this was done against your preferences, AHELP "Adminhelp", otherwise, enjoy![/color][/bold]
+hypnotized = [bold][color=red]You have been hypnotized by {CAPITALIZE($entity)}!
+    Warning: You are not an antag, and still can only help antags if it falls under rule 0.
+    Standard server rules apply, this is just for roleplay intent.
+    If this was done against your preferences, please AHelp![/color][/bold]
 
 hypnotist = [bold][color=red]You have enthralled {CAPITALIZE($entity)}!
-    Have then serve your will, and do what you desire!
-    "in accordinace to server rules, of course."[/color][/bold]
+    Have {POSS-ADJ($entity)} submit to your will, and do what you desire!
+    Ensure you follow server rules.[/color][/bold]
 
 stophypno = [bold][color=red]You are no longer hypnotized!
-    You are no longer hypnotized by {CAPITALIZE($entity)}, you are now thinking properly again.[/color][/bold]
+    You are no longer hypnotized by {CAPITALIZE($entity)}.[/color][/bold]
 
-has-no-consent = I cannot enter his mind.
+has-no-consent = I cannot enter {POSS-ADJ($target)} mind.
 
 trait-name-HypnoticGaze = Hypnotic Gaze
 trait-description-HypnoticGaze =
