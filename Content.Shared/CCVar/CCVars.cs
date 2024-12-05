@@ -2495,7 +2495,7 @@ namespace Content.Shared.CCVar
         ///     Note that this is randomized and this is an average value.
         /// </summary>
         public static readonly CVarDef<float> GlimmerLostPerSecond =
-            CVarDef.Create("glimmer.passive_drain_per_second", 0.025f, CVar.SERVERONLY);
+            CVarDef.Create("glimmer.passive_drain_per_second", 0.2f, CVar.SERVERONLY);
 
         /// <summary>
         ///     Whether random rolls for psionics are allowed.
