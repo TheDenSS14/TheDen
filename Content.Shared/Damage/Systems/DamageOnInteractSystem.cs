@@ -7,7 +7,7 @@ using Content.Shared.Popups;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Network;
 using Robust.Shared.Timing;
-using Content.Shared._Shitmed.Targeting; // Shitmed Change
+using Content.Shared.Targeting; // Shitmed Change
 using Content.Shared.Hands.Components; // Shitmed Change
 
 namespace Content.Shared.Damage.Systems;

@@ -14,7 +14,7 @@ using Robust.Shared.Audio.Systems;
 using Robust.Shared.Configuration;
 using Robust.Shared.Player;
 using Robust.Shared.Serialization;
-using Content.Shared._Shitmed.Targeting; // Shitmed Change
+using Content.Shared.Targeting; // Shitmed Change
 
 namespace Content.Shared.Climbing.Systems;
 

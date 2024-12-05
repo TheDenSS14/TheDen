@@ -349,27 +349,6 @@ public partial class SharedBodySystem
         PartRemoveDamage(bodyEnt, partEnt);
     }
 
-    protected virtual void DropPart(Entity<BodyPartComponent> partEnt)
-    {
-        ChangeSlotState(partEnt, true);
-        // I don't know if this can cause issues, since any part that's being detached HAS to have a Body.
-        // though I really just want the compiler to shut the fuck up.
-        var body = partEnt.Comp.Body.GetValueOrDefault();
-        if (TryComp(partEnt, out TransformComponent? transform) && _gameTiming.IsFirstTimePredicted)
-        {
-            var enableEvent = new BodyPartEnableChangedEvent(false);
-            RaiseLocalEvent(partEnt, ref enableEvent);
-            var droppedEvent = new BodyPartDroppedEvent(partEnt);
-            RaiseLocalEvent(body, ref droppedEvent);
-            SharedTransform.AttachToGridOrMap(partEnt, transform);
-            _randomHelper.RandomOffset(partEnt, 0.5f);
-        }
-
-    }
-
-    private void OnAmputateAttempt(Entity<BodyPartComponent> partEnt, ref AmputateAttemptEvent args) =>
-        DropPart(partEnt);
-
     private void AddLeg(Entity<BodyPartComponent> legEnt, Entity<BodyComponent?> bodyEnt)
     {
         if (!Resolve(bodyEnt, ref bodyEnt.Comp, logMissing: false))
@@ -397,40 +376,6 @@ public partial class SharedBodySystem
         }
     }
 
-    // TODO: Refactor this crap.
-    private void RemovePartEffect(Entity<BodyPartComponent> partEnt, Entity<BodyComponent?> bodyEnt)
-    {
-        if (TerminatingOrDeleted(bodyEnt)
-            || !Resolve(bodyEnt, ref bodyEnt.Comp, logMissing: false))
-            return;
-
-        RemovePartChildren(partEnt, bodyEnt, bodyEnt.Comp);
-    }
-
-    protected void RemovePartChildren(Entity<BodyPartComponent> partEnt, EntityUid bodyEnt, BodyComponent? body = null)
-    {
-        if (!Resolve(bodyEnt, ref body, logMissing: false))
-            return;
-
-        if (partEnt.Comp.Children.Any())
-        {
-            foreach (var slotId in partEnt.Comp.Children.Keys)
-            {
-                if (Containers.TryGetContainer(partEnt, GetPartSlotContainerId(slotId), out var container) &&
-                    container is ContainerSlot slot &&
-                    slot.ContainedEntity is { } childEntity &&
-                    TryComp(childEntity, out BodyPartComponent? childPart))
-                {
-                    var ev = new BodyPartEnableChangedEvent(false);
-                    RaiseLocalEvent(childEntity, ref ev);
-                    DropPart((childEntity, childPart));
-                }
-            }
-
-            Dirty(bodyEnt, body);
-        }
-    }
-
     private void PartRemoveDamage(Entity<BodyComponent?> bodyEnt, Entity<BodyPartComponent> partEnt)
     {
         if (!Resolve(bodyEnt, ref bodyEnt.Comp, logMissing: false))
@@ -443,54 +388,6 @@ public partial class SharedBodySystem
         {
             var damage = new DamageSpecifier(Prototypes.Index<DamageTypePrototype>("Bloodloss"), partEnt.Comp.VitalDamage);
             Damageable.TryChangeDamage(bodyEnt, damage, partMultiplier: 0f);
-        }
-    }
-
-    private void OnPartEnableChanged(Entity<BodyPartComponent> partEnt, ref BodyPartEnableChangedEvent args)
-    {
-        if (!partEnt.Comp.CanEnable && args.Enabled)
-            return;
-
-        partEnt.Comp.Enabled = args.Enabled;
-
-        if (args.Enabled)
-        {
-            EnablePart(partEnt);
-            if (partEnt.Comp.Body is { Valid: true } bodyEnt)
-                RaiseLocalEvent(partEnt, new BodyPartComponentsModifyEvent(bodyEnt, true));
-        }
-        else
-        {
-            DisablePart(partEnt);
-            if (partEnt.Comp.Body is { Valid: true } bodyEnt)
-                RaiseLocalEvent(partEnt, new BodyPartComponentsModifyEvent(bodyEnt, false));
-        }
-
-        Dirty(partEnt, partEnt.Comp);
-    }
-    private void EnablePart(Entity<BodyPartComponent> partEnt)
-    {
-        if (!TryComp(partEnt.Comp.Body, out BodyComponent? body))
-            return;
-
-        // I hate having to hardcode these checks so much.
-        if (partEnt.Comp.PartType == BodyPartType.Leg)
-            AddLeg(partEnt, (partEnt.Comp.Body.Value, body));
-
-        if (partEnt.Comp.PartType == BodyPartType.Arm)
-        {
-            var hand = GetBodyChildrenOfType(partEnt.Comp.Body.Value, BodyPartType.Hand, symmetry: partEnt.Comp.Symmetry).FirstOrDefault();
-            if (hand != default)
-            {
-                var ev = new BodyPartEnabledEvent(hand);
-                RaiseLocalEvent(partEnt.Comp.Body.Value, ref ev);
-            }
-        }
-
-        if (partEnt.Comp.PartType == BodyPartType.Hand)
-        {
-            var ev = new BodyPartEnabledEvent(partEnt);
-            RaiseLocalEvent(partEnt.Comp.Body.Value, ref ev);
         }
     }
 
@@ -514,31 +411,6 @@ public partial class SharedBodySystem
             }
         }
 
-    }
-
-    private void DisablePart(Entity<BodyPartComponent> partEnt)
-    {
-        if (!TryComp(partEnt.Comp.Body, out BodyComponent? body))
-            return;
-
-        if (partEnt.Comp.PartType == BodyPartType.Leg)
-            RemoveLeg(partEnt, (partEnt.Comp.Body.Value, body));
-
-        if (partEnt.Comp.PartType == BodyPartType.Arm)
-        {
-            var hand = GetBodyChildrenOfType(partEnt.Comp.Body.Value, BodyPartType.Hand, symmetry: partEnt.Comp.Symmetry).FirstOrDefault();
-            if (hand != default)
-            {
-                var ev = new BodyPartDisabledEvent(hand);
-                RaiseLocalEvent(partEnt.Comp.Body.Value, ref ev);
-            }
-        }
-
-        if (partEnt.Comp.PartType == BodyPartType.Hand)
-        {
-            var ev = new BodyPartDisabledEvent(partEnt);
-            RaiseLocalEvent(partEnt.Comp.Body.Value, ref ev);
-        }
     }
 
     /// <summary>
@@ -1269,40 +1141,6 @@ public partial class SharedBodySystem
 
         comps = null;
         return false;
-    }
-
-    private bool TryGetPartSlotContainerName(BodyPartType partType, out HashSet<string> containerNames)
-    {
-        containerNames = partType switch
-        {
-            BodyPartType.Hand => new() { "gloves" },
-            BodyPartType.Foot => new() { "shoes" },
-            BodyPartType.Head => new() { "eyes", "ears", "head", "mask" },
-            _ => new()
-        };
-        return containerNames.Count > 0;
-    }
-
-    public int GetBodyPartCount(EntityUid bodyId, BodyPartType partType, BodyComponent? body = null)
-    {
-        if (!Resolve(bodyId, ref body, logMissing: false))
-            return 0;
-
-        int count = 0;
-        foreach (var part in GetBodyChildren(bodyId, body))
-        {
-            if (part.Component.PartType == partType)
-                count++;
-        }
-        return count;
-    }
-
-    public string GetSlotFromBodyPart(BodyPartComponent part)
-    {
-        if (part.Symmetry != BodyPartSymmetry.None)
-            return $"{part.Symmetry.ToString().ToLower()} {part.PartType.ToString().ToLower()}";
-        else
-            return part.PartType.ToString().ToLower();
     }
 
     #endregion
