@@ -71,6 +71,10 @@ namespace Content.Shared.Damage
             return false;
         }
 
+        /// <inheritdoc cref="AnyPositive"/>
+        [Obsolete]
+        public bool Any() => AnyPositive();
+
         /// <summary>
         ///     Whether this damage specifier has any entries.
         /// </summary>
