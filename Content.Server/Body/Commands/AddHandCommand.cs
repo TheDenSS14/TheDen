@@ -134,13 +134,20 @@ namespace Content.Server.Body.Commands
                 attachAt = bodySystem.GetBodyChildren(entity, body).First();
 
             // Shitmed Change Start
-            var slotId = $"{part.Symmetry.ToString().ToLower()} {part.GetHashCode().ToString()}";
-            part.SlotId = part.GetHashCode().ToString();
+            var slotId = "";
+            var symmetry = part.Symmetry;
+            
+            if (part.Symmetry != BodyPartSymmetry.None)
+                slotId = $"{symmetry.ToString().ToLower()} {part.GetHashCode().ToString()}";
+            else
+                slotId = $"{part.GetHashCode().ToString()}";
+
+            bodySystem.SetSlotId((hand, part), slotId);
             // Shitmed Change End
 
-            if (!bodySystem.TryCreatePartSlotAndAttach(attachAt.Id, slotId, hand, BodyPartType.Hand, attachAt.Component, part))
+            if (!bodySystem.TryCreatePartSlotAndAttach(attachAt.Id, part.SlotId, hand, BodyPartType.Hand, attachAt.Component, part))
             {
-                shell.WriteError($"Couldn't create a slot with id {slotId} on entity {_entManager.ToPrettyString(entity)}");
+                shell.WriteError($"Couldn't create a slot with id {part.SlotId} on entity {_entManager.ToPrettyString(entity)}");
                 return;
             }
 
