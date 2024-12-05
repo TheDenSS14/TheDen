@@ -4,6 +4,10 @@ using Content.Shared.Inventory.Events;
 using Content.Shared.Storage;
 using Robust.Shared.Containers;
 using Robust.Shared.Prototypes;
+using Robust.Shared.Utility;
+
+// Shitmed Change
+using Content.Shared.Random;
 using Robust.Shared.Serialization.Manager;
 using Robust.Shared.Utility;
 using System.Diagnostics.CodeAnalysis;
@@ -14,6 +18,7 @@ public partial class InventorySystem : EntitySystem
 {
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
     [Dependency] private readonly IViewVariablesManager _vvm = default!;
+
     [Dependency] private readonly RandomHelperSystem _randomHelper = default!;
     [Dependency] private readonly ISerializationManager _serializationManager = default!;
     private void InitializeSlots()
@@ -34,7 +39,7 @@ public partial class InventorySystem : EntitySystem
     /// <summary>
     /// Tries to find an entity in the specified slot with the specified component.
     /// </summary>
-    public bool TryGetInventoryEntity<T>(Entity<InventoryComponent?> entity, out EntityUid targetUid)
+    public bool TryGetInventoryEntity<T>(Entity<InventoryComponent?> entity, out Entity<T?> target)
         where T : IComponent, IClothingSlots
     {
         if (TryGetContainerSlotEnumerator(entity.Owner, out var containerSlotEnumerator))
@@ -47,12 +52,12 @@ public partial class InventorySystem : EntitySystem
                 if ((((IClothingSlots) required).Slots & slot.SlotFlags) == 0x0)
                     continue;
 
-                targetUid = item;
+                target = (item, required);
                 return true;
             }
         }
 
-        targetUid = EntityUid.Invalid;
+        target = EntityUid.Invalid;
         return false;
     }
 
@@ -277,6 +282,7 @@ public partial class InventorySystem : EntitySystem
                 slot = _slots[i];
 
                 if ((slot.SlotFlags & _flags) == 0)
+                if ((slot.SlotFlags & _flags) == 0)
                     continue;
 
                 var container = _containers[i];
@@ -292,4 +298,31 @@ public partial class InventorySystem : EntitySystem
             return false;
         }
     }
+
+    // Shitmed Change Start
+    public void DropSlotContents(EntityUid uid, string slotName, InventoryComponent? inventory = null)
+    {
+        if (!Resolve(uid, ref inventory))
+            return;
+
+        foreach (var slot in inventory.Slots)
+        {
+            if (slot.Name != slotName)
+                continue;
+
+            if (!TryGetSlotContainer(uid, slotName, out var container, out _, inventory))
+                break;
+
+            if (container.ContainedEntity is { } entityUid && TryComp(entityUid, out TransformComponent? transform) && _gameTiming.IsFirstTimePredicted)
+            {
+                _transform.AttachToGridOrMap(entityUid, transform);
+                _randomHelper.RandomOffset(entityUid, 0.5f);
+            }
+
+            break;
+        }
+
+        Dirty(uid, inventory);
+    }
+    // Shitmed Change End
 }

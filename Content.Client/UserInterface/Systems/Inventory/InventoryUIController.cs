@@ -136,7 +136,7 @@ public sealed class InventoryUIController : UIController, IOnStateEntered<Gamepl
         }
         foreach (var (_, data) in clientInv.SlotData)
         {
-            if (!data.ShowInWindow || data.SlotDef.Disabled || !_slotGroups.TryGetValue(data.SlotGroup, out var container))
+            if (!data.ShowInWindow || !_slotGroups.TryGetValue(data.SlotGroup, out var container))
                 continue;
 
             if (!container.TryGetButton(data.SlotName, out var button))

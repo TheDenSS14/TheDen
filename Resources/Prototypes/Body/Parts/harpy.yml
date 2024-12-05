@@ -127,6 +127,11 @@
     partType: Arm
     symmetry: Right
     toolName: "a right arm"
+    onAdd:
+    - type: Flight
+      isLayerAnimated: true
+      layer: "/Textures/Mobs/Customization/Harpy/harpy_wings.rsi"
+      animationKey: "Flap"
 
 - type: entity
   id: LeftHandHarpy

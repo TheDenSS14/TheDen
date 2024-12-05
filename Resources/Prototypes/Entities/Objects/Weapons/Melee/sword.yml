@@ -205,8 +205,8 @@
   - type: DisarmMalus
 
 - type: entity
-  name: The Throngler
-  parent: BaseItem
+  name: Throngler
+  parent: BaseSword
   id: Throngler
   description: Why would someone make this?
   components:
@@ -238,3 +238,6 @@
       size: Ginormous
       sprite: Objects/Weapons/Melee/Throngler-in-hand.rsi
     - type: DisarmMalus
+    - type: Grammar
+      attributes:
+        proper: true
