@@ -392,28 +392,6 @@ public partial class SharedBodySystem
     }
 
     /// <summary>
-    /// This function handles disabling or enabling equipment slots when an entity is
-    /// missing all of a given part type, or they get one added to them.
-    /// It is called right before dropping a part, or right after adding one.
-    /// </summary>
-    public void ChangeSlotState(Entity<BodyPartComponent> partEnt, bool disable)
-    {
-        if (partEnt.Comp.Body is not null
-            && TryComp<InventoryComponent>(partEnt.Comp.Body, out var inventory)
-            && GetBodyPartCount(partEnt.Comp.Body.Value, partEnt.Comp.PartType) == 1
-            && TryGetPartSlotContainerName(partEnt.Comp.PartType, out var containerNames))
-        {
-            foreach (var containerName in containerNames)
-            {
-                _inventorySystem.SetSlotStatus(partEnt.Comp.Body.Value, containerName, disable, inventory);
-                var ev = new RefreshInventorySlotsEvent(containerName);
-                RaiseLocalEvent(partEnt.Comp.Body.Value, ev);
-            }
-        }
-
-    }
-
-    /// <summary>
     /// Tries to get the parent body part to this if applicable.
     /// Doesn't validate if it's a part of body system.
     /// </summary>
