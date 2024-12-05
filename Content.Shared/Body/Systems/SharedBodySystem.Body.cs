@@ -465,12 +465,6 @@ public partial class SharedBodySystem
             EnsureComp<BodyPartAppearanceComponent>(part.Id);
     }
 
-    private void OnStandAttempt(Entity<BodyComponent> ent, ref StandAttemptEvent args)
-    {
-        if (ent.Comp.LegEntities.Count == 0)
-            args.Cancel();
-    }
-
     private void OnBeingEquippedAttempt(Entity<BodyComponent> ent, ref IsEquippingAttemptEvent args)
     {
         if (!TryComp(args.EquipTarget, out BodyComponent? targetBody)
