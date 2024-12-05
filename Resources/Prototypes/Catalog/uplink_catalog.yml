@@ -403,6 +403,7 @@
     Telecrystal: 40
   categories:
   - UplinkMisc
+  - UplinkMisc
   conditions:
   - !type:StoreWhitelistCondition
     whitelist:
@@ -423,6 +424,7 @@
     Telecrystal: 6
   categories:
   - UplinkMisc
+  - UplinkMisc
   saleLimit: 1
 
 - type: listing
@@ -433,6 +435,7 @@
   cost:
     Telecrystal: 5
   categories:
+  - UplinkMisc
   - UplinkMisc
   saleLimit: 1
 
@@ -445,6 +448,7 @@
     Telecrystal: 4
   categories:
   - UplinkMisc
+  - UplinkMisc
   saleLimit: 1
 
 - type: listing
@@ -455,6 +459,7 @@
   cost:
     Telecrystal: 4
   categories:
+  - UplinkMisc
   - UplinkMisc
   saleLimit: 1
 
@@ -467,6 +472,7 @@
     Telecrystal: 12
   categories:
   - UplinkMisc
+  - UplinkMisc
   saleLimit: 1
 
 - type: listing
@@ -478,6 +484,7 @@
     Telecrystal: 2
   categories:
   - UplinkMisc
+  - UplinkMisc
 
 - type: listing
   id: UplinkMedsBundle
@@ -487,6 +494,7 @@
   cost:
     Telecrystal: 20
   categories:
+  - UplinkMisc
   - UplinkMisc
   conditions:
     - !type:StoreWhitelistCondition
@@ -510,6 +518,7 @@
     Telecrystal: 3
   categories:
   - UplinkUtility
+  - UplinkUtility
 
 - type: listing
   id: UplinkStealthBox
@@ -519,6 +528,7 @@
   cost:
     Telecrystal: 5
   categories:
+  - UplinkUtility
   - UplinkUtility
 
 - type: listing
@@ -530,6 +540,7 @@
     Telecrystal: 7
   categories:
   - UplinkUtility
+  - UplinkUtility
 
 - type: listing
   id: UplinkCyberpen
@@ -539,6 +550,7 @@
   cost:
     Telecrystal: 1
   categories:
+  - UplinkUtility
   - UplinkUtility
 
 - type: listing
@@ -550,6 +562,7 @@
     Telecrystal: 1
   categories:
   - UplinkUtility
+  - UplinkUtility
 
 - type: listing
   id: UplinkUltrabrightLantern
@@ -559,6 +572,7 @@
   cost:
     Telecrystal: 2
   categories:
+  - UplinkUtility
   - UplinkUtility
 
 - type: listing
@@ -570,6 +584,7 @@
     Telecrystal: 4
   categories:
     - UplinkUtility
+    - UplinkUtility
 
 # - type: listing
 #   id: UplinkGigacancerScanner
@@ -579,6 +594,7 @@
 #   cost:
 #     Telecrystal: 5
 #   categories:
+#   - UplinkUtility
 #   - UplinkUtility
 
 - type: listing

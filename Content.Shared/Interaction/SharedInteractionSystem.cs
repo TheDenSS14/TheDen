@@ -973,7 +973,7 @@ namespace Content.Shared.Interaction
             bool checkCanInteract = true,
             bool checkCanUse = true)
         {
-            if ((IsDeleted(user) || IsDeleted(used) || IsDeleted(target)))
+            if (IsDeleted(user) || IsDeleted(used) || IsDeleted(target))
                 return;
 
             if (checkCanInteract && !_actionBlockerSystem.CanInteract(user, target))
@@ -1002,10 +1002,10 @@ namespace Content.Shared.Interaction
         ///     Used when clicking on an entity resulted in no other interaction. Used for low-priority interactions.
         /// </summary>
         public void InteractDoAfter(
-            EntityUid user, 
-            EntityUid used, 
-            EntityUid? target, 
-            EntityCoordinates clickLocation, 
+            EntityUid user,
+            EntityUid used,
+            EntityUid? target,
+            EntityCoordinates clickLocation,
             bool canReach,
             bool checkDeletion = false
         )
@@ -1095,10 +1095,6 @@ namespace Content.Shared.Interaction
             // Check if interacted entity is in the same container, the direct child, or direct parent of the user.
             // This is bypassed IF the interaction happened through an item slot (e.g., backpack UI)
             if (checkAccess && !_containerSystem.IsInSameOrParentContainer(user, used) && !CanAccessViaStorage(user, used))
-                return false;
-
-            // Does the user have hands?
-            if (!HasComp<HandsComponent>(user))
                 return false;
 
             complexInteractions ??= SupportsComplexInteractions(user);
