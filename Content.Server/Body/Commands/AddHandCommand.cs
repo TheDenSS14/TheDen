@@ -136,7 +136,7 @@ namespace Content.Server.Body.Commands
             // Shitmed Change Start
             var slotId = "";
             var symmetry = part.Symmetry;
-            
+
             if (part.Symmetry != BodyPartSymmetry.None)
                 slotId = $"{symmetry.ToString().ToLower()} {part.GetHashCode().ToString()}";
             else

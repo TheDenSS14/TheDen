@@ -158,8 +158,7 @@ public partial class SharedBodySystem
     // Because fuck set accessors.
     public void SetSlotId(Entity<BodyPartComponent> partEnt, string newSlotId)
     {
-        if (TerminatingOrDeleted(partEnt)
-            || !Resolve(partEnt, ref partEnt.Comp!, logMissing: false))
+        if (TerminatingOrDeleted(partEnt))
             return;
 
         var part = partEnt.Comp;
