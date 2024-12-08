@@ -518,7 +518,6 @@
     Telecrystal: 3
   categories:
   - UplinkUtility
-  - UplinkUtility
 
 - type: listing
   id: UplinkStealthBox
@@ -528,7 +527,6 @@
   cost:
     Telecrystal: 5
   categories:
-  - UplinkUtility
   - UplinkUtility
 
 - type: listing
@@ -540,7 +538,6 @@
     Telecrystal: 7
   categories:
   - UplinkUtility
-  - UplinkUtility
 
 - type: listing
   id: UplinkCyberpen
@@ -550,7 +547,6 @@
   cost:
     Telecrystal: 1
   categories:
-  - UplinkUtility
   - UplinkUtility
 
 - type: listing
@@ -562,7 +558,6 @@
     Telecrystal: 1
   categories:
   - UplinkUtility
-  - UplinkUtility
 
 - type: listing
   id: UplinkUltrabrightLantern
@@ -572,7 +567,6 @@
   cost:
     Telecrystal: 2
   categories:
-  - UplinkUtility
   - UplinkUtility
 
 - type: listing
@@ -584,7 +578,6 @@
     Telecrystal: 4
   categories:
     - UplinkUtility
-    - UplinkUtility
 
 # - type: listing
 #   id: UplinkGigacancerScanner
@@ -594,7 +587,6 @@
 #   cost:
 #     Telecrystal: 5
 #   categories:
-#   - UplinkUtility
 #   - UplinkUtility
 
 - type: listing
@@ -1804,19 +1796,4 @@
   conditions:
   - !type:ListingLimitedStockCondition
     stock: 1
-
-
-
-# Floof
-# Looks like it wont show up if it isnt in this folder, Probably why the socks arent showing up either.
-
-- type: listing
-  id: UplinkCryoinjector
-  name: uplink-Cryptobiolininjector-name
-  description: uplink-Cryptobiolininjector-desc
-  icon: { sprite: Objects/Specific/Medical/medipen.rsi, state: penacid }
-  productEntity: CryptobiolinInjector
-  cost:
-    Telecrystal: 2
-  categories:
-  - UplinkUtility
+    
