@@ -142,7 +142,7 @@ public sealed class ThrowingSystem : EntitySystem
         // TODO: This is a bandaid, don't do this.
         // if you want to force landtime have the caller handle it or add a new method.
         // did we launch this with something stronger than our hands?
-        if (TryComp<HandsComponent>(comp.Thrower, out var hands) && strength > hands.ThrowForceMultiplier)
+        if (TryComp<HandsComponent>(comp.Thrower, out var hands) && strength > hands.BaseThrowspeed)
             comp.LandTime = comp.ThrownTime + TimeSpan.FromSeconds(time);
         else
             comp.LandTime = time < FlyTime ? default : comp.ThrownTime + TimeSpan.FromSeconds(time - FlyTime);
