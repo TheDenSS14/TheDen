@@ -69,9 +69,8 @@ namespace Content.Server.Abilities.Psionics
             _doAfterSystem.TryStartDoAfter(new DoAfterArgs(EntityManager, uid, component.UseDelay, new PsionicHypnosisDoAfterEvent(1), uid, target: args.Target)
             {
                 Hidden = true,
-                BreakOnTargetMove = true,
+                BreakOnMove = true,
                 BreakOnDamage = true,
-                BreakOnUserMove = true
             }, out var doAfterId);
 
             component.DoAfter = doAfterId;
@@ -153,9 +152,8 @@ namespace Content.Server.Abilities.Psionics
                 _doAfterSystem.TryStartDoAfter(new DoAfterArgs(EntityManager, uid, component.UseDelay, new PsionicHypnosisDoAfterEvent(2), uid, target: args.Target)
                 {
                     Hidden = true,
-                    BreakOnTargetMove = true,
-                    BreakOnDamage = true,
-                    BreakOnUserMove = true
+                    BreakOnMove = true,
+                    BreakOnDamage = true
                 }, out var doAfterId);
                 component.DoAfter = doAfterId;
             }
@@ -166,9 +164,8 @@ namespace Content.Server.Abilities.Psionics
                 _doAfterSystem.TryStartDoAfter(new DoAfterArgs(EntityManager, uid, component.UseDelay, new PsionicHypnosisDoAfterEvent(3), uid, target: args.Target)
                 {
                     Hidden = true,
-                    BreakOnTargetMove = true,
-                    BreakOnDamage = true,
-                    BreakOnUserMove = true
+                    BreakOnMove = true,
+                    BreakOnDamage = true
                 }, out var doAfterId);
                 component.DoAfter = doAfterId;
             }
