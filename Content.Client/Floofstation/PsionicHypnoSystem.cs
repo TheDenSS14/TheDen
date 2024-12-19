@@ -21,7 +21,7 @@ public sealed class PsionicHypnoSystem : EquipmentHudSystem<PsionicHypnoComponen
 
     private void OnGetStatusIconsEvent(EntityUid uid, HypnotizedComponent component, ref GetStatusIconsEvent args)
     {
-        if (!IsActive || args.InContainer)
+        if (!IsActive)
             return;
 
         if (_playerManager.LocalEntity is not { Valid: true } player
@@ -29,7 +29,7 @@ public sealed class PsionicHypnoSystem : EquipmentHudSystem<PsionicHypnoComponen
             || component.Master != player)
             return;
 
-        if (_prototype.TryIndex<FactionIconPrototype>(hypnoComp.SubjectIcon, out var iconPrototype))
+        if (_prototype.TryIndex(hypnoComp.SubjectIcon, out var iconPrototype))
             args.StatusIcons.Add(iconPrototype);
     }
 }

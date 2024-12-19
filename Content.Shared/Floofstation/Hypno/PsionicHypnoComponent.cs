@@ -1,6 +1,9 @@
 using Content.Shared.DoAfter;
+using Content.Shared.StatusIcon;
 using Robust.Shared.Serialization;
 using Robust.Shared.GameStates;
+using Robust.Shared.Prototypes;
+
 
 namespace Content.Shared.Floofstation.Hypno;
 
