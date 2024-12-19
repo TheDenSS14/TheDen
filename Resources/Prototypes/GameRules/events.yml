@@ -195,6 +195,8 @@
   - type: StationEvent
     weight: 8
     duration: 35
+  - type: PrecognitionResult # DeltaV - Precogniton
+    message: psionic-power-precognition-anomoly-spawn-result-message
   - type: AnomalySpawnRule
 
 - type: entity
@@ -205,6 +207,8 @@
   - type: StationEvent
     weight: 8
     duration: 35
+  - type: PrecognitionResult # DeltaV - Precogniton
+    message: psionic-power-precognition-bluespace-artifact-result-message
   - type: BluespaceArtifactRule
 
 - type: entity
@@ -217,6 +221,8 @@
     reoccurrenceDelay: 5
     earliestStart: 1
     duration: 1
+  - type: PrecognitionResult # DeltaV - Precogniton
+    message: psionic-power-precognition-bluespace-locker-result-message
   - type: BluespaceLockerRule
 
 - type: entity
@@ -228,6 +234,8 @@
     weight: 7
     duration: 1
     minimumPlayers: 15
+  - type: PrecognitionResult # DeltaV - Precogniton
+    message: psionic-power-precognition-breaker-flip-result-message
   - type: BreakerFlipRule
 
 - type: entity
@@ -240,6 +248,8 @@
     minimumPlayers: 25
     weight: 5 # Den
     duration: 1
+  - type: PrecognitionResult # DeltaV - Precogniton
+    message: psionic-power-precognition-bureaucratic-error-result-message
   - type: BureaucraticErrorRule
 
 - type: entity
@@ -252,6 +262,8 @@
     minimumPlayers: 15
     weight: 5
     duration: 1
+  - type: PrecognitionResult # DeltaV - Precogniton
+    message: psionic-power-precognition-clerical-error-result-message
   - type: ClericalErrorRule
 
 - type: entity
@@ -263,6 +275,8 @@
     weight: 5
     duration: 1
     minimumPlayers: 10
+  - type: PrecognitionResult # DeltaV - Precogniton
+    message: psionic-power-precognition-closet-skeleton-result-message
   - type: RandomEntityStorageSpawnRule
     prototype: MobSkeletonCloset
 
@@ -277,6 +291,8 @@
     reoccurrenceDelay: 60 # Den
     minimumPlayers: 30
     duration: null
+  - type: PrecognitionResult # DeltaV - Precogniton
+    message: psionic-power-precognition-dragon-spawn-result-message
   - type: SpaceSpawnRule
     spawnDistance: 0
   - type: AntagSpawner
@@ -307,6 +323,8 @@
     earliestStart: 90 # Floof
     reoccurrenceDelay: 60 # Floof
     minimumPlayers: 30 # Floof
+  - type: PrecognitionResult # DeltaV - Precogniton
+    message: psionic-power-precognition-ninja-spawn-result-message
   - type: SpaceSpawnRule
   - type: AntagLoadProfileRule
   - type: AntagObjectives
@@ -377,7 +395,9 @@
 #     duration: 1
 #     earliestStart: 45
 #     minimumPlayers: 20
-#   - type: RandomSpawnRule
+#   - type: PrecognitionResult # DeltaV - Precogniton
+#    message: psionic-power-precognition-revenant-spawn-result-message
+#  - type: RandomSpawnRule
 #     prototype: MobRevenant
 
 # disabled until event is rewritten to be more interesting
@@ -402,6 +422,8 @@
     endAnnouncement: true
     weight: 8
     startDelay: 20
+  - type: PrecognitionResult # DeltaV - Precogniton
+    message: psionic-power-precognition-gas-leak-result-message
   - type: GasLeakRule
 
 - type: entity
@@ -415,6 +437,8 @@
     weight: 7
     startDelay: 50
     duration: 240
+  - type: PrecognitionResult # DeltaV - Precogniton
+    message: psionic-power-precognition-kudzu-growth-result-message
   - type: KudzuGrowthRule
 
 - type: entity
@@ -431,6 +455,9 @@
     duration: null #ending is handled by MeteorSwarmRule
     startDelay: 30
   - type: MeteorSwarmRule
+  - type: NextEvent # DeltaV: Queue Event
+  - type: GameRule
+  - type: BasicStationEventScheduler
 
 - type: entity
   id: BaseVentCritterSpawn
@@ -490,6 +517,8 @@
 #    specialEntries:
 #    - id: SpawnPointGhostRatKing
 #      prob: 0.001
+  - type: PrecognitionResult # DeltaV - Precogniton
+    message: psionic-power-precognition-mouse-migration-result-message
 
 - type: entity
   id: RoingusMigration
@@ -525,6 +554,8 @@
         weight: 0.7
       - id: MobMothroach
         weight: 0.3
+  - type: PrecognitionResult # DeltaV - Precogniton
+    message: psionic-power-precognition-cockroach-migration-result-message
 
 - type: entity
   id: SnailMigrationLowPop
@@ -543,6 +574,8 @@
         weight: 0.7
       - id: MobSnailMoth
         weight: 0.3
+  - type: PrecognitionResult # DeltaV - Precogniton
+    message: psionic-power-precognition-snail-migration-result-message
 
 - type: entity
   id: SnailMigration
@@ -566,6 +599,8 @@
         weight: 0.3
       # - id: MobSnailInstantDeath
       #   prob: 0.00001 #  ~ 1:2000 snails
+  - type: PrecognitionResult # DeltaV - Precogniton
+    message: psionic-power-precognition-snail-migration-result-message
 
 - type: entity
   id: PowerGridCheck
@@ -580,6 +615,8 @@
     duration: 60
     maxDuration: 120
     reoccurrenceDelay: 20 # Floof
+  - type: PrecognitionResult # DeltaV - Precogniton
+    message: psionic-power-precognition-power-grid-check-result-message
   - type: PowerGridCheckRule
 
 - type: entity
@@ -595,6 +632,8 @@
   - type: RandomSentienceRule
     minSentiences: 2
     maxSentiences: 5
+  - type: PrecognitionResult # DeltaV - Precogniton
+    message: psionic-power-precognition-random-sentience-result-message
 
 - type: entity
   parent: BaseGameRule
@@ -607,6 +646,8 @@
     endAnnouncement: true
     duration: 120
     maxDuration: 240
+  - type: PrecognitionResult # DeltaV - Precogniton
+    message: psionic-power-precognition-solar-flare-result-message
   - type: SolarFlareRule
     onlyJamHeadsets: true
     affectedChannels:
@@ -635,6 +676,8 @@
     weight: 5
     startDelay: 50
     duration: 60
+  - type: PrecognitionResult # DeltaV - Precogniton
+    message: psionic-power-precognition-vent-clog-result-message
   - type: VentClogRule
 
 - type: entity
@@ -649,6 +692,8 @@
     minimumPlayers: 15
     weight: 7
     duration: 30 # DeltaV: was 60, used as a delay now
+  - type: PrecognitionResult # DeltaV - Precogniton
+    message: psionic-power-precognition-slimes-spawn-result-message
   - type: VentCrittersRule
     sound: /Audio/_DEN/VentCritters/vent_slime.ogg #Den
     table: !type:GroupSelector # DeltaV: EntityTable instead of spawn entries
@@ -710,6 +755,8 @@
     minimumPlayers: 15
     weight: 7
     duration: 30 # DeltaV: was 60, used as a delay now
+  - type: PrecognitionResult # DeltaV - Precogniton
+    message: psionic-power-precognition-snake-spawn-result-message
   - type: VentCrittersRule
     table: !type:GroupSelector # DeltaV: EntityTable instead of spawn entries
       children:
@@ -729,6 +776,8 @@
     minimumPlayers: 15
     weight: 7
     duration: 30 # DeltaV: was 60, used as a delay now
+  - type: PrecognitionResult # DeltaV - Precogniton
+    message: psionic-power-precognition-spider-spawn-result-message
   - type: VentCrittersRule
     table: !type:GroupSelector # DeltaV: EntityTable instead of spawn entries
       children:
@@ -745,6 +794,8 @@
     minimumPlayers: 30 # DeltaV - was 20
     weight: 2 # DeltaV - was 1.5
     duration: 30 # DeltaV: was 60, used as a delay now
+  - type: PrecognitionResult # DeltaV - Precogniton
+    message: psionic-power-precognition-spider-clown-spawn-result-message
   - type: VentCrittersRule
     table: !type:GroupSelector # DeltaV: EntityTable instead of spawn entries
       children:
@@ -794,6 +845,8 @@
     minimumPlayers: 40
     weight: 1 # Zombies was happening basically every single survival round, so now it's super rare
     duration: 1
+  - type: PrecognitionResult # DeltaV - Precogniton
+    message: psionic-power-precognition-zombie-outbreak-result-message
   - type: ZombieRule
   - type: AntagSelection
     definitions:
@@ -828,6 +881,8 @@
     weight: 4.5 # Den
     minimumPlayers: 20
     duration: null # LoneOpsSpawn needs an infinite duration so that it inherits the NukeOpsRule things of an actually appropriate end screen (not always "Neutral outcome!") and... ending the game if the station is nuked.
+  - type: PrecognitionResult # DeltaV - Precogniton
+    message: psionic-power-precognition-lone-ops-spawn-result-message
   - type: RuleGrids
   - type: LoadMapRule
     gridPath: /Maps/Shuttles/ShuttleEvent/striker.yml
@@ -862,6 +917,8 @@
     earliestStart: 25
     weight: 9 # Den
     minimumPlayers: 15
+  - type: PrecognitionResult # DeltaV - Precogniton
+    message: psionic-power-precognition-sleeper-agents-result-message
     reoccurrenceDelay: 30
     startAnnouncement: false
 # - type: AlertLevelInterceptionRule - Disable setting to blue with sleeper agents. Uncomment to enable.
@@ -888,6 +945,8 @@
     duration: 150
     maxDuration: 300
     reoccurrenceDelay: 30
+  - type: PrecognitionResult # DeltaV - Precogniton
+    message: psionic-power-precognition-mass-hallucinations-result-message
   - type: MassHallucinationsRule
     minTimeBetweenIncidents: 0.1
     maxTimeBetweenIncidents: 300
@@ -907,6 +966,8 @@
 #     earliestStart: 45
 #     minimumPlayers: 20
 #   - type: ImmovableRodRule
+#   - type: PrecognitionResult #DeltaV - Precognition
+#     message: psionic-power-precognition-immovable-rod-spawn-result-message
 
 - type: entity
   categories: [ HideSpawnMenu ]
@@ -917,6 +978,8 @@
     weight: 12 # Den
     reoccurrenceDelay: 20
     duration: 1
+  - type: PrecognitionResult # DeltaV - Precogniton
+    message: psionic-power-precognition-ion-storm-result-message
   - type: IonStormRule
 
 - type: entity
@@ -930,6 +993,8 @@
       maxOccurrences: 1 # this event has diminishing returns on interesting-ness, so we cap it
       weight: 5
     - type: MobReplacementRule
+    - type: PrecognitionResult #TheDen
+      message: psionic-power-precognition-mimic-vendor-result-message
 
 # - type: entity
 #   id: AirlockVirusRule
@@ -942,6 +1007,7 @@
 #       maxOccurrences: 1
 #       weight: 3
 #     - type: AirlockVirusRule
+# NOTE: Needs precognition message if re-added
 
 # - type: entity
 #  parent: BaseGameRule
@@ -955,6 +1021,7 @@
 #    weight: 10
 #  - type: RandomSpawnRule
 #    prototype: RandomSatchelSpawner
+# NOTE: Needs precognition message if re-added
 
 - type: entity
   parent: BaseGameRule
@@ -977,6 +1044,8 @@
       min: 1
       max: 1
       pickPlayer: false
+  - type: PrecognitionResult #TheDen
+    message: psionic-power-precognition-derelict-cyborg-result-message
 
 - type: entity
   parent: BaseGameRule
@@ -999,6 +1068,8 @@
       min: 1
       max: 1
       pickPlayer: false
+  - type: PrecognitionResult #TheDen
+    message: psionic-power-precognition-derelict-cyborg-result-message
 
 - type: entity
   parent: BaseGameRule
@@ -1021,6 +1092,8 @@
       min: 1
       max: 1
       pickPlayer: false
+  - type: PrecognitionResult #TheDen
+    message: psionic-power-precognition-derelict-cyborg-result-message
 
 - type: entity
   parent: BaseGameRule
@@ -1043,6 +1116,8 @@
       min: 1
       max: 1
       pickPlayer: false
+  - type: PrecognitionResult #TheDen
+    message: psionic-power-precognition-derelict-cyborg-result-message
 
 - type: entity
   parent: BaseGameRule
@@ -1065,6 +1140,8 @@
       min: 1
       max: 1
       pickPlayer: false
+  - type: PrecognitionResult #TheDen
+    message: psionic-power-precognition-derelict-cyborg-result-message
 
 - type: entity
   parent: BaseGameRule
@@ -1087,3 +1164,5 @@
       min: 1
       max: 1
       pickPlayer: false
+  - type: PrecognitionResult #TheDen
+    message: psionic-power-precognition-derelict-cyborg-result-message
