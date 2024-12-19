@@ -21,7 +21,7 @@ public sealed class HypnotizedSystem : EquipmentHudSystem<HypnotizedComponent>
 
     private void OnGetStatusIconsEvent(EntityUid uid, PsionicHypnoComponent component, ref GetStatusIconsEvent args)
     {
-        if (!IsActive || args.InContainer)
+        if (!IsActive)
             return;
 
         if (_playerManager.LocalEntity is not { Valid: true } player

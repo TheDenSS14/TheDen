@@ -49,9 +49,8 @@ namespace Content.Server.Abilities.Psionics
             _doAfterSystem.TryStartDoAfter(new DoAfterArgs(EntityManager, args.Performer, component.UseDelay, new MindSwapPowerDoAfterEvent(), args.Performer, target: args.Target)
             {
                 Hidden = true,
-                BreakOnTargetMove = true,
+                BreakOnMove = true,
                 BreakOnDamage = true,
-                BreakOnUserMove = true
             }, out var doAfterId);
 
             if (TryComp<PsionicComponent>(uid, out var magic))
