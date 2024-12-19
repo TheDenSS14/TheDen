@@ -15,10 +15,10 @@ public sealed partial class PsionicHypnoComponent : Component
     public DoAfterId? DoAfter;
 
     [DataField]
-    public string MasterIcon = "HypnoMaster";
+    public ProtoId<FactionIconPrototype> MasterIcon = "HypnoMaster";
 
     [DataField]
-    public string SubjectIcon = "HypnoSubject";
+    public ProtoId<FactionIconPrototype> SubjectIcon = "HypnoSubject";
 }
 
 [Serializable, NetSerializable]

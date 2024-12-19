@@ -224,9 +224,8 @@ public sealed class LewdTraitSystem : EntitySystem
 
         var doargs = new DoAfterArgs(EntityManager, userUid, 5, new CummingDoAfterEvent(), lewd, lewd, used: containerUid)
         {
-            BreakOnUserMove = true,
+            BreakOnMove = true,
             BreakOnDamage = true,
-            BreakOnTargetMove = true,
             MovementThreshold = 1.0f,
         };
 
@@ -240,9 +239,8 @@ public sealed class LewdTraitSystem : EntitySystem
 
         var doargs = new DoAfterArgs(EntityManager, userUid, 5, new MilkingDoAfterEvent(), lewd, lewd, used: containerUid)
         {
-            BreakOnUserMove = true,
+            BreakOnMove = true,
             BreakOnDamage = true,
-            BreakOnTargetMove = true,
             MovementThreshold = 1.0f,
         };
 
@@ -256,9 +254,8 @@ public sealed class LewdTraitSystem : EntitySystem
 
         var doargs = new DoAfterArgs(EntityManager, userUid, 5, new SquirtingDoAfterEvent(), lewd, lewd, used: containerUid)
         {
-            BreakOnUserMove = true,
+            BreakOnMove = true,
             BreakOnDamage = true,
-            BreakOnTargetMove = true,
             MovementThreshold = 1.0f,
         };
 
