@@ -249,7 +249,7 @@ public sealed class LeashSystem : EntitySystem
         var pulledCoords = Transform(pulled).Coordinates;
         var pullDir = _xform.ToMapCoordinates(playerCoords).Position - _xform.ToMapCoordinates(pulledCoords).Position;
 
-        _throwing.TryThrow(pulled, pullDir * 0.5f, user: player, pushbackRatio: 1f, strength: 3f, animated: false, recoil: false, playSound: false, doSpin: false);
+        _throwing.TryThrow(pulled, pullDir * 0.5f, user: player, pushbackRatio: 1f, baseThrowSpeed: 3f, animated: false, recoil: false, playSound: false, doSpin: false);
 
         leashComp.NextPull = _timing.CurTime + leashComp.PullInterval;
         return true;
@@ -343,8 +343,7 @@ public sealed class LeashSystem : EntitySystem
         var doAfter = new DoAfterArgs(EntityManager, user, leash.Comp.AttachDelay, new LeashAttachDoAfterEvent(), anchor, leashTarget, leash)
         {
             BreakOnDamage = true,
-            BreakOnUserMove = true,
-            BreakOnTargetMove = true,
+            BreakOnMove = true,
             BreakOnWeightlessMove = true,
             NeedHand = true
         };
@@ -374,8 +373,7 @@ public sealed class LeashSystem : EntitySystem
         var doAfter = new DoAfterArgs(EntityManager, user, delay, new LeashDetachDoAfterEvent(), leashed.Owner, leashed)
         {
             BreakOnDamage = true,
-            BreakOnUserMove = true,
-            BreakOnTargetMove = true,
+            BreakOnMove = true,
             BreakOnWeightlessMove = true,
             NeedHand = true
         };
