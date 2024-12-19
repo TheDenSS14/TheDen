@@ -1712,6 +1712,12 @@ namespace Content.Shared.CCVar
             CVarDef.Create("shuttle.cooldown", 10f, CVar.SERVERONLY);
 
         /// <summary>
+        ///     Should all players who spawn at arrivals have godmode until they leave the map?
+        /// </summary>
+        public static readonly CVarDef<bool> GodmodeArrivals =
+            CVarDef.Create("shuttle.godmode_arrivals", false, CVar.SERVERONLY);
+
+        /// <summary>
         /// The maximum <see cref="PhysicsComponent.Mass"/> a grid can have before it becomes unable to FTL.
         /// Any value equal to or less than zero will disable this check.
         /// </summary>
