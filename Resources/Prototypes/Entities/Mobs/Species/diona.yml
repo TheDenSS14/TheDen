@@ -87,6 +87,12 @@
           - MobLayer
   - type: Inventory
     templateId: diona
+    femaleDisplacements:
+      jumpsuit:
+        sizeMaps:
+          32:
+            sprite: Mobs/Species/Human/displacement.rsi
+            state: jumpsuit-female
   - type: Speech
     speechVerb: Plant
   - type: Vocal
@@ -131,5 +137,11 @@
   components:
   - type: Inventory
     templateId: diona
+    femaleDisplacements:
+      jumpsuit:
+        sizeMaps:
+          32:
+            sprite: Mobs/Species/Human/displacement.rsi
+            state: jumpsuit-female
   - type: HumanoidAppearance
     species: Diona
