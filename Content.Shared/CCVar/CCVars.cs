@@ -381,6 +381,13 @@ namespace Content.Shared.CCVar
         public static readonly CVarDef<int> GameTraitsDefaultPoints =
             CVarDef.Create("game.traits_default_points", 10, CVar.REPLICATED);
 
+        /// <summary>
+        ///     Whether the game will SMITE people who used cheat engine to spawn with all of the traits.
+        ///     Illegal trait totals will still be logged even if this is disabled.
+        ///     If you are intending to decrease the trait points availability, or modify the costs of traits, consider temporarily disabling this.
+        /// </summary>
+        public static readonly CVarDef<bool> TraitsPunishCheaters =
+            CVarDef.Create("game.traits_punish_cheaters", true, CVar.REPLICATED);
 
         /// <summary>
         ///     Whether to allow characters to select loadout items.
@@ -2800,6 +2807,17 @@ namespace Content.Shared.CCVar
         /// Requires auto voting to be enabled.
         public static readonly CVarDef<bool> PresetAutoVoteEnabled =
             CVarDef.Create("vote.preset_autovote_enabled", true, CVar.SERVERONLY);
+
+        #region Psionics
+
+        /// <summary>
+        ///     When mindbroken, permanently eject the player from their own body, and turn their character into an NPC.
+        ///     Congratulations, now they *actually* aren't a person anymore.
+        ///     For people who complained that it wasn't obvious enough from the text that Mindbreaking is a form of Murder.
+        /// </summary>
+        public static readonly CVarDef<bool> ScarierMindbreaking =
+            CVarDef.Create("psionics.scarier_mindbreaking", false, CVar.SERVERONLY);
+        #endregion
 
         /// <summary>
         /// Set to true to enable the dynamic hostname system.
