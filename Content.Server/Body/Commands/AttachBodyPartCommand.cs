@@ -107,7 +107,7 @@ namespace Content.Server.Body.Commands
             else
                 slotId = $"{part.GetHashCode().ToString()}";
 
-            bodySystem.SetSlotId((partUid.Value, part), part.GetHashCode().ToString());
+            bodySystem.SetSlotId(ref part, part.GetHashCode().ToString());
             // Shitmed Change End
             // ReSharper disable once ConditionIsAlwaysTrueOrFalseAccordingToNullableAPIContract
             if (body.RootContainer.ContainedEntity != null)

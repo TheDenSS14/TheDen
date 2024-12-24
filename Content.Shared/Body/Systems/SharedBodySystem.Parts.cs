@@ -156,14 +156,8 @@ public partial class SharedBodySystem
     }
 
     // Because fuck set accessors.
-    public void SetSlotId(Entity<BodyPartComponent> partEnt, string newSlotId)
-    {
-        if (TerminatingOrDeleted(partEnt))
-            return;
-
-        partEnt.Comp.SlotId = newSlotId;
-        Dirty(partEnt);
-    }
+    public void SetSlotId(ref BodyPartComponent part, string newSlotId) =>
+        part.SlotId = newSlotId;
 
     // TODO: Refactor this crap. I hate it so much.
     private void RemovePartEffect(Entity<BodyPartComponent> partEnt, Entity<BodyComponent?> bodyEnt)
