@@ -1726,7 +1726,7 @@
   components:
   - type: MachineBoard
     prototype: OperatingTable
-    stackRequirements:
-      Cable: 3
+    materialRequirements:
       Silver: 2
       Steel: 4
+      Cable: 3
