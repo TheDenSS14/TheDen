@@ -2076,3 +2076,13 @@
       path: /Audio/Items/vegaheyy.ogg
       params:
         variation: 0.05
+
+- type: entity
+  parent: BasePlushie
+  id: PlushieAlice
+  name: alice plushie
+  description: This plushie was produced as part of central commands "cuddle command" propaganda plushie line. This one speaks in an unintelligible dialect whenever someone squeezes it.
+  components:
+    - type: Sprite
+      sprite: Objects/Fun/toys.rsi
+      state: aliceplush
