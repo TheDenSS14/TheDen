@@ -161,8 +161,8 @@ public partial class SharedBodySystem
         if (TerminatingOrDeleted(partEnt))
             return;
 
-        var part = partEnt.Comp;
-        part.SlotId = newSlotId;
+        partEnt.Comp.SlotId = newSlotId;
+        Dirty(partEnt);
     }
 
     // TODO: Refactor this crap. I hate it so much.
