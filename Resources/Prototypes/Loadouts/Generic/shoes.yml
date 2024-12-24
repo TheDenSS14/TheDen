@@ -57,17 +57,6 @@
     - ClothingShoesBootsJackFake
 
 - type: loadout
-  id: LoadoutShoesBootsJackFake
-  category: Shoes
-  cost: 1
-  exclusive: true
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutShoes
-  items:
-    - ClothingShoesBootsJackFake
-
-- type: loadout
   id: LoadoutShoesBootsLaceup
   category: Shoes
   cost: 1
