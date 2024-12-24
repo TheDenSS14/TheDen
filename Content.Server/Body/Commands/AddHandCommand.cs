@@ -142,7 +142,7 @@ namespace Content.Server.Body.Commands
             else
                 slotId = $"{part.GetHashCode().ToString()}";
 
-            bodySystem.SetSlotId((hand, part), slotId);
+            bodySystem.SetSlotId(ref part, slotId);
             // Shitmed Change End
 
             if (!bodySystem.TryCreatePartSlotAndAttach(attachAt.Id, part.SlotId, hand, BodyPartType.Hand, attachAt.Component, part))
