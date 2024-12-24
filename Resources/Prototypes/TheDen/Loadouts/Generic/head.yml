@@ -1,0 +1,11 @@
+# Hats
+- type: loadout
+  id: LoadoutHeadFeatheredCap
+  category: Head
+  cost: 1
+  exclusive: true
+  items:
+    - ClothingHeadHatFeatheredCap
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutHead2

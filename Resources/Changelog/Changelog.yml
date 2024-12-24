@@ -8361,3 +8361,277 @@ Entries:
   id: 6553
   time: '2024-12-02T16:47:10.0000000+00:00'
   url: https://github.com/Simple-Station/Einstein-Engines/pull/1303
+- author: Skubman
+  changes:
+    - type: Add
+      message: >-
+        The lobotomy procedure makes the target clumsy like the clown. This
+        makes them bonk when climbing tables and makes guns they're shooting
+        blow up on their face.
+    - type: Tweak
+      message: The lobotomy step now requires a scalpel instead of a drill.
+    - type: Fix
+      message: >-
+        Enabled the "Mend brain tissue" surgical procedure on a lobotomized
+        target. 
+    - type: Fix
+      message: >-
+        The lobotomized effect is now stored in the brain instead of the body.
+        The same brain stays lobotomized throughout brain transplants, and
+        transferring a normal brain to a body where a lobotomy occurred no
+        longer applies the lobotomized effect.
+    - type: Fix
+      message: >-
+        The lobotomy procedure now shows the proper popup during the
+        lobotomization step.
+    - type: Fix
+      message: Removed the ability to perform lobotomies on bodies without a brain.
+    - type: Fix
+      message: >-
+        The "Remove organ" surgery step on the UI now properly shows the
+        retractor sprite instead of the hemostat.
+  id: 6554
+  time: '2024-12-03T23:31:22.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1306
+- author: Erisfiregamer1
+  changes:
+    - type: Add
+      message: You can now shove people into deep fryers by drag-dropping them onto it.
+  id: 6555
+  time: '2024-12-03T23:33:01.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1279
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: Added the EMP Flashlight to Syndicate Uplinks.
+  id: 6556
+  time: '2024-12-04T00:11:13.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1189
+- author: Ichaie
+  changes:
+    - type: Add
+      message: added a new map called "Europa" to rotation
+  id: 6557
+  time: '2024-12-04T00:12:59.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1152
+- author: zelezniciar
+  changes:
+    - type: Tweak
+      message: >-
+        Atmospheric Alerts Computer now displays colored zones corresponding to
+        air alarm status on the station map
+    - type: Fix
+      message: Atmospheric Alerts Computer board is printable in a circuit imprinter
+  id: 6558
+  time: '2024-12-05T00:13:35.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1313
+- author: sleepyyapril
+  changes:
+    - type: Fix
+      message: You can pick up mobs again with left click.
+    - type: Fix
+      message: No more mob jug spill, including you revenants.
+    - type: Fix
+      message: Set the Gloves of the North Star to the proper attack speed.
+    - type: Fix
+      message: Medibots will no longer try to heal borgs.
+  id: 6559
+  time: '2024-12-05T07:39:32.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1311
+- author: DmitriTheDemon
+  changes:
+    - type: Tweak
+      message: The ChemMaster is now sorted.
+  id: 6560
+  time: '2024-12-05T09:11:27.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1310
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: Added Shipyards.
+  id: 6561
+  time: '2024-12-06T03:13:08.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1314
+- author: zelezniciar
+  changes:
+    - type: Add
+      message: 'TEG components now be ordered from Logistics and assembled on station. '
+  id: 6562
+  time: '2024-12-06T15:42:27.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1316
+- author: rbertoche
+  changes:
+    - type: Fix
+      message: >-
+        Several small fixes to Europa map, namely to cargo dock, SM and atmos
+        piping and wires, adds autolathe to cargo and crew monitor to med
+  id: 6563
+  time: '2024-12-06T16:12:44.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1319
+- author: VMSolidus
+  changes:
+    - type: Fix
+      message: Server rules work again.
+  id: 6564
+  time: '2024-12-06T20:30:45.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1321
+- author: fenndragon
+  changes:
+    - type: Tweak
+      message: Moved the uplink deception category into utility.
+  id: 6565
+  time: '2024-12-07T13:31:16.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1309
+- author: Remuchi
+  changes:
+    - type: Add
+      message: >-
+        Reintroduced 3 traitors objectives: steal Ian's meat, Die Glorious Death
+        and Hijack Evacuation Shuttle
+  id: 6566
+  time: '2024-12-07T14:46:48.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1323
+- author: Skubman
+  changes:
+    - type: Add
+      message: >-
+        The Throwing Update is here. You can throw most melee weapons at the
+        cost of stamina to deal damage from afar.
+    - type: Add
+      message: >-
+        Dozens of throwable weapons, mainly sharp weapons will now embed on
+        throw and deal damage every second until they're manually removed or
+        naturally fall off after some time.
+    - type: Add
+      message: >-
+        Examining the damage values of an item now shows its throwing damage,
+        throwing stamina cost, whether or not it embeds on a throw, and if the
+        embed deals damage over time. 
+    - type: Add
+      message: Examining an embedded item now shows what body part it's embedded in.
+    - type: Tweak
+      message: >-
+        The traits High Adrenaline, Adrenal Dysfunction, Masochism and Low Pain
+        Tolerance now affect throwing attacks just like melee attacks.
+    - type: Tweak
+      message: >-
+        The default time to remove embedded items has been increased from 3 to 5
+        seconds, and both the remover and the target with the embedded item need
+        to stand still during the removal.
+    - type: Tweak
+      message: >-
+        The time to pry up a floor tile with a crowbar and other tools has been
+        decreased from 1 second to 0.5 seconds. The throwing damage of floor
+        tiles has been increased. Go figure.
+    - type: Fix
+      message: >-
+        Attempting to throw a Blood Cultist item without being a cultist will
+        stun you and drop the item you're holding properly.
+  id: 6567
+  time: '2024-12-08T03:30:08.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1307
+- author: dge21
+  changes:
+    - type: Fix
+      message: 'Fixed melee weapons. '
+  id: 6568
+  time: '2024-12-10T00:43:13.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1330
+- author: stellar-novas
+  changes:
+    - type: Tweak
+      message: Flashes are bright again!
+  id: 6569
+  time: '2024-12-10T19:13:47.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1331
+- author: VMSolidus
+  changes:
+    - type: Add
+      message: Added a large number of mapping assets from Nuclear14
+  id: 6570
+  time: '2024-12-11T22:45:57.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1315
+- author: sleepyyapril
+  changes:
+    - type: Add
+      message: Spin, flip, and jump emotes have been added.
+  id: 6571
+  time: '2024-12-11T22:52:53.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1318
+- author: Skubman
+  changes:
+    - type: Fix
+      message: >-
+        Fixed an issue where players could not craft clown hardsuits and mime
+        hardsuits on the crafting menu.
+    - type: Fix
+      message: >-
+        Fixed an issue where clowns did not have their signature silly snore
+        sound when sleeping.
+  id: 6572
+  time: '2024-12-11T23:12:43.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1324
+- author: Remuchi
+  changes:
+    - type: Add
+      message: In-game guide book to kickstart your sinister activities.
+    - type: Add
+      message: Constructs now have abilities.
+    - type: Add
+      message: >-
+        Rending rune and apocalypse rune now should only be placed in the
+        specific spots on maps. Needs to be mapped.
+    - type: Add
+      message: Veil Shifter now displays how much charges it has when examining.
+    - type: Add
+      message: >-
+        Cult runes now have descriptions. Also stating how much invokers
+        required for each rune.
+    - type: Add
+      message: Blood rites can now be dropped&deleted.
+    - type: Add
+      message: Blood rites now suck... blood in 0.5 tiles radius.
+    - type: Remove
+      message: Non-cultists can no longer examine runes.
+    - type: Fix
+      message: >-
+        Fixed Cult Objective Target selection. You can (and should) sacrifice
+        your own people now.
+    - type: Fix
+      message: Non cultists can no longer use veil shifter.
+    - type: Fix
+      message: Teleport spell is no more a cheap rip-off and now actually teleports.
+    - type: Fix
+      message: Timed Factories can't no more produce infinite number of entities.
+    - type: Fix
+      message: Offering rune should now properly convert someone.
+    - type: Fix
+      message: >-
+        Sacrificing body with mind now properly transfers their mind to soul
+        shard.
+    - type: Fix
+      message: Shadow Shackles now cuffs the target instead of the caster (lmao).
+  id: 6573
+  time: '2024-12-11T23:19:30.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1276
+- author: Skubman
+  changes:
+    - type: Add
+      message: >-
+        Pistol-whipping has been added. You can press right click with a gun to
+        perform a Light Attack. Most guns will deal Blunt damage, apart from the
+        Kardashev-Mosin dealing Piercing/Slash damage with its bayonet. Weaving
+        bullets and melee attacks correctly will give you the upper hand in
+        combat.
+    - type: Add
+      message: Guns can now be thrown to deal the same damage as their melee damage.
+  id: 6574
+  time: '2024-12-11T23:26:33.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1335
+- author: Kyoth25f
+  changes:
+    - type: Fix
+      message: Hydraulic clamps now drop entities correctly
+  id: 6575
+  time: '2024-12-14T04:22:17.0000000+00:00'
+  url: https://github.com/Simple-Station/Einstein-Engines/pull/1344

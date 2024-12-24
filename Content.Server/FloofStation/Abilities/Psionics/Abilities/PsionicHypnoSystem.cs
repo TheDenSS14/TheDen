@@ -161,7 +161,7 @@ namespace Content.Server.Abilities.Psionics
             }
             else if (args.Phase == 2)
             {
-                _popups.PopupEntity(Loc.GetString("hypno-phase-3"), args.Target.Value, args.Target.Value, PopupType.Medium);
+                _popups.PopupEntity(Loc.GetString("hypno-phase-3", ("target", uid)), args.Target.Value, args.Target.Value, PopupType.Medium);
 
                 _doAfterSystem.TryStartDoAfter(new DoAfterArgs(EntityManager, uid, component.UseDelay, new PsionicHypnosisDoAfterEvent(3), uid, target: args.Target)
                 {

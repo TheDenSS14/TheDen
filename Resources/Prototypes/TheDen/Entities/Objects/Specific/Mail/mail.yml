@@ -1,0 +1,10 @@
+- type: entity
+  categories: [ HideSpawnMenu ]
+  parent: BaseMail
+  id: MailFeatheredCap
+  suffix: feathered cap
+  components:
+  - type: Mail
+    contents:
+    - id: ClothingHeadHatFeatheredCap
+      amount: 1
