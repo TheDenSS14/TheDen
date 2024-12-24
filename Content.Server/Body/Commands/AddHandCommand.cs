@@ -134,15 +134,10 @@ namespace Content.Server.Body.Commands
                 attachAt = bodySystem.GetBodyChildren(entity, body).First();
 
             // Shitmed Change Start
-            var slotId = "";
             var symmetry = part.Symmetry;
+            var slotId = $"{symmetry.ToString().ToLower()} {part.GetHashCode().ToString()}";
 
-            if (part.Symmetry != BodyPartSymmetry.None)
-                slotId = $"{symmetry.ToString().ToLower()} {part.GetHashCode().ToString()}";
-            else
-                slotId = $"{part.GetHashCode().ToString()}";
-
-            bodySystem.SetSlotId(ref part, slotId);
+            bodySystem.SetSlotId(ref part, part.GetHashCode().ToString());
             // Shitmed Change End
 
             if (!bodySystem.TryCreatePartSlotAndAttach(attachAt.Id, part.SlotId, hand, BodyPartType.Hand, attachAt.Component, part))
