@@ -101,18 +101,17 @@ namespace Content.Server.Body.Commands
             // Shitmed Change Start
             var slotId = "";
             var symmetry = part.Symmetry;
+
             if (part.Symmetry != BodyPartSymmetry.None)
                 slotId = $"{symmetry.ToString().ToLower()} {part.GetHashCode().ToString()}";
             else
                 slotId = $"{part.GetHashCode().ToString()}";
 
-            bodySystem.SetSlotId((partUid.Value, part), slotId);
+            bodySystem.SetSlotId((partUid.Value, part), part.GetHashCode().ToString());
             // Shitmed Change End
             // ReSharper disable once ConditionIsAlwaysTrueOrFalseAccordingToNullableAPIContract
             if (body.RootContainer.ContainedEntity != null)
-            {
                 bodySystem.AttachPartToRoot(bodyId, partUid.Value, body, part);
-            }
             else
             {
                 var (rootPartId, rootPart) = bodySystem.GetRootPartOrNull(bodyId, body)!.Value;
