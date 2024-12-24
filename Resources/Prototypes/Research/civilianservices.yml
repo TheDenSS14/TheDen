@@ -195,6 +195,19 @@
   - WeaponSprayNozzle
   - ClothingBackpackWaterTank
 
+## not implemented
+#- type: technology
+#  id: MedicalDefense
+#  name: research-technology-medical-defense
+#  icon:
+#    sprite: _Goobstation/Objects/Weapons/Guns/Cannons/syringe_gun.rsi
+#    state: rapid-syringe-gun
+#  discipline: CivilianServices
+#  tier: 2
+#  cost: 10000
+#  recipeUnlocks:
+#  - RapidSyringeGun
+
 - type: technology
   id: BluespaceCargoTransport
   name: research-technology-bluespace-cargo-transport

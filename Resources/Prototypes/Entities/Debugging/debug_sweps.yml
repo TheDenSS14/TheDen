@@ -177,3 +177,38 @@
     damage:
       types:
         Slash: 200
+
+- type: entity
+  name: bang burner
+  parent: BaseItem
+  id: MeleeDebugBurner
+  description: burn yer parts
+  suffix: DEBUG
+  components:
+  - type: Tag
+    tags:
+      - Debug
+  - type: Sprite
+    sprite: Objects/Weapons/Melee/debug.rsi
+    state: icon
+  - type: MeleeWeapon
+    damage:
+      types:
+        Heat: 20000
+    clickPartDamageMultiplier: 10
+  - type: Item
+    size: Tiny
+    sprite: Objects/Weapons/Melee/debug.rsi
+
+- type: entity
+  name: bang burner 200dmg
+  parent: MeleeDebugBurner
+  id: MeleeDebugBurner200
+  components:
+  - type: Tag
+    tags:
+      - Debug
+  - type: MeleeWeapon
+    damage:
+      types:
+        Heat: 200
