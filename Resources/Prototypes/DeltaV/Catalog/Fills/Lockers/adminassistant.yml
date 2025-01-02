@@ -1,0 +1,15 @@
+- type: entity
+  id: LockerAdministrativeAssistantFilled
+  suffix: Filled
+  parent: LockerAdministrativeAssistant
+  components:
+  - type: StorageFill
+    contents:
+    - id: DrinkCoffeeJug # Gotta keep command awake during the greenshifts
+    - id: BoxFolderBlue
+    - id: ClothingUniformJumpsuitAdminAssistant
+    - id: ClothingUniformJumpskirtAdminAssistant
+    - id: ClothingHeadsetAltAdminAssistant
+    - id: AdminAssistantIDCard
+    - id: LunchboxCommandFilledRandom # Delta-V Lunchboxes!
+      prob: 0.3
