@@ -9,11 +9,15 @@
     sprite: Floof/Objects/Tools/leash.rsi
     layers:
     - state: icon
+    scale: 0.7, 0.7
   - type: Leash
     pullInterval: 0.75
     leashSprite:
       sprite: Floof/Objects/Tools/leash-rope.rsi
       state: rope
+  - type: Anchorable
+    delay: 3
+    snap: false # The first ever entity to set this field to false! However, this doesn't seem to work :c
 
 - type: entity
   id: LeashBasic
@@ -21,22 +25,10 @@
   components:
   - type: Leash
     length: 3
+    lengthConfigs: [1.5, 2.25, 3]
     maxDistance: 6
     attachDelay: 4
     detachDelay: 4
-    selfDetachDelay: 10
-
-# TODO this should be named LeashShort...
-- type: entity
-  id: ShortLeash
-  parent: BaseLeash
-  name: short leash
-  components:
-  - type: Leash
-    length: 1.5
-    maxDistance: 3
-    attachDelay: 4.5
-    detachDelay: 3
     selfDetachDelay: 10
 
 - type: entity
@@ -45,6 +37,7 @@
   name: advanced leash
   components:
   - type: Leash
+    lengthConfigs: [1, 1.5, 2.25, 3]
     maxJoints: 3
     attachDelay: 2.5
     detachDelay: 2
@@ -58,9 +51,10 @@
   suffix: DEBUG, DO NOT MAP
   components:
   - type: Leash
-    maxDistance: 100
-    maxJoints: 25
-    attachDelay: 0
-    detachDelay: 10000 # will still be instant for admin ghosts or whatever with instant doafters tag
-    selfDetachDelay: 10000
+    lengthConfigs: [1, 1.5, 2.25, 3, 5, 10]
+    maxDistance: 20
+    maxJoints: 10
+    attachDelay: 2.5
+    detachDelay: 5
+    selfDetachDelay: 20
     pullInterval: 0.1

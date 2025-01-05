@@ -30,15 +30,3 @@
   requirements:
   - !type:CharacterItemGroupRequirement
     group: LoadoutFun
-
-- type: loadout
-  id: LoadoutItemLeashShort
-  category: Items
-  cost: 2
-  exclusive: true
-  items:
-  - ShortLeash
-  requirements:
-  - !type:CharacterItemGroupRequirement
-    group: LoadoutFun
-

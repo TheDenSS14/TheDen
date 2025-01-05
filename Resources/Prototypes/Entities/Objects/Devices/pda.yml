@@ -390,6 +390,12 @@
   - type: Pda
     id: QuartermasterIDCard
     state: pda-qmnano
+    penSlot:
+      startingItem: PenLo
+      priority: -1
+      whitelist:
+        tags:
+        - Write
   - type: PdaBorderColor
     borderColor: "#e39751"
     accentVColor: "#a23e3e"
@@ -413,6 +419,12 @@
   - type: Pda
     id: CargoIDCard
     state: pda-cargo
+    penSlot:
+      startingItem: PenLo
+      priority: -1
+      whitelist:
+        tags:
+        - Write
   - type: PdaBorderColor
     borderColor: "#e39751"
   - type: Icon
@@ -629,6 +641,12 @@
   - type: Pda
     id: CEIDCard
     state: pda-ce
+    penSlot:
+        startingItem: PenCe
+        priority: -1
+        whitelist:
+          tags:
+          - Write
   - type: PdaBorderColor
     borderColor: "#949137"
     accentHColor: "#447987"
@@ -644,6 +662,12 @@
   - type: Pda
     id: CEIDCard
     state: pda-cenano
+    penSlot:
+      startingItem: PenCe
+      priority: -1
+      whitelist:
+        tags:
+        - Write
   - type: PdaBorderColor
     borderColor: "#949137"
     accentHColor: "#447987"
@@ -784,6 +808,12 @@
   - type: Pda
     id: RDIDCard
     state: pda-rd
+    penSlot:
+      startingItem: PenRd
+      priority: -1
+      whitelist:
+        tags:
+        - Write
   - type: PdaBorderColor
     borderColor: "#d7d7d0"
     accentHColor: "#447987"
@@ -807,6 +837,12 @@
   - type: Pda
     id: RDIDCard
     state: pda-rdnano
+    penSlot:
+      startingItem: PenRd
+      priority: -1
+      whitelist:
+        tags:
+        - Write
   - type: PdaBorderColor
     borderColor: "#d7d7d0"
     accentHColor: "#447987"
@@ -867,6 +903,12 @@
   - type: Pda
     id: HoSIDCard
     state: pda-hos
+    penSlot:
+      startingItem: PenHos
+      priority: -1
+      whitelist:
+        tags:
+        - Write
   - type: PdaBorderColor
     borderColor: "#A32D26"
     accentHColor: "#447987"
@@ -891,6 +933,12 @@
   - type: Pda
     id: HoSIDCard
     state: pda-hosnano
+    penSlot:
+      startingItem: PenHos
+      priority: -1
+      whitelist:
+        tags:
+        - Write
   - type: PdaBorderColor
     borderColor: "#A32D26"
     accentHColor: "#447987"

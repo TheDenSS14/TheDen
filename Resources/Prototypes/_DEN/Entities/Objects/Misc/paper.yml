@@ -1,0 +1,43 @@
+- type: entity
+  name: ce's fountain pen
+  parent: PenEmbeddable
+  id: PenCe
+  description: 'A luxurious fountain pen for the chief engineer of the station. Has anti-static grips.'
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Misc/bureaucracy.rsi
+    state: pen_ce
+
+- type: entity
+  name: hos' fountain pen
+  parent: PenEmbeddable
+  id: PenHos
+  description: 'A luxurious fountain pen for the head of security of the station. Sharper than normal pens.'
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Misc/bureaucracy.rsi
+    state: pen_hos
+  - type: DamageOtherOnHit
+    damage:
+      types:
+        Piercing: 8
+
+- type: entity
+  name: lo's fountain pen
+  parent: PenEmbeddable
+  id: PenLo
+  description: 'A luxurious fountain pen for the logistics officer of the station. Smells like bounties to be written.'
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Misc/bureaucracy.rsi
+    state: pen_lo
+
+- type: entity
+  name: mystagogue's fountain pen
+  parent: PenEmbeddable
+  id: PenRd
+  description: 'A luxurious fountain pen for the mystagogue of the station. More explosive resistant than normal pens.'
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Misc/bureaucracy.rsi
+    state: pen_rd

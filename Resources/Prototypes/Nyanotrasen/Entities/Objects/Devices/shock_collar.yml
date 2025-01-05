@@ -1,5 +1,5 @@
 - type: entity
-  parent: ClothingNeckBase
+  parent: ClothingNeckCollarBase # Floof - reparented
   id: ShockCollar
   name: shock collar
   description: Shocking. # DeltaV: sprite is fine
@@ -22,4 +22,3 @@
   - type: DeviceLinkSink
     ports:
       - Trigger
-  - type: LeashAnchor # floofstation
