@@ -22,8 +22,11 @@ namespace Content.Server.Eye.Blinding.EyeProtection
             SubscribeLocalEvent<EyeProtectionComponent, InventoryRelayedEvent<GetEyeProtectionEvent>>(OnGetRelayedProtection);
         }
 
-        private void OnGetRelayedProtection(EntityUid uid, EyeProtectionComponent component,
-            InventoryRelayedEvent<GetEyeProtectionEvent> args)
+        private void OnGetRelayedProtection(
+            EntityUid uid,
+            EyeProtectionComponent component,
+            InventoryRelayedEvent<GetEyeProtectionEvent> args
+            )
         {
             OnGetProtection(uid, component, args.Args);
         }
@@ -52,8 +55,12 @@ namespace Content.Server.Eye.Blinding.EyeProtection
             // how much damage they already accumulated.
             _blindingSystem.AdjustEyeDamage((args.User, blindable), 1);
             var statusTimeSpan = TimeSpan.FromSeconds(time * MathF.Sqrt(blindable.EyeDamage));
-            _statusEffectsSystem.TryAddStatusEffect(args.User, TemporaryBlindnessSystem.BlindingStatusEffect,
-                statusTimeSpan, false, TemporaryBlindnessSystem.BlindingStatusEffect);
+            _statusEffectsSystem.TryAddStatusEffect(
+                args.User,
+                TemporaryBlindnessSystem.BlindingStatusEffect,
+                statusTimeSpan,
+                false,
+                TemporaryBlindnessSystem.BlindingStatusEffect);
         }
         private void OnWelderToggled(EntityUid uid, RequiresEyeProtectionComponent component, ItemToggledEvent args)
         {

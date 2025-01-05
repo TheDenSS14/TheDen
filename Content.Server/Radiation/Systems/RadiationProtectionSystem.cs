@@ -21,8 +21,7 @@ public sealed class RadiationProtectionSystem : EntitySystem
             return;
         var buffComp = EnsureComp<DamageProtectionBuffComponent>(uid);
         // add the damage modifier if it isn't in the dict yet
-        if (!buffComp.Modifiers.ContainsKey(component.RadiationProtectionModifierSetId))
-            buffComp.Modifiers.Add(component.RadiationProtectionModifierSetId, modifier);
+        buffComp.Modifiers.TryAdd(component.RadiationProtectionModifierSetId, modifier);
     }
 
     private void OnShutdown(EntityUid uid, RadiationProtectionComponent component, ComponentShutdown args)

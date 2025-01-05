@@ -16,9 +16,9 @@ public sealed partial class NanoChatUi : UIFragment
 
     public override void Setup(BoundUserInterface userInterface, EntityUid? fragmentOwner)
     {
-        _fragment = new NanoChatUiFragment();
+        _fragment = new();
 
-        _fragment.OnMessageSent += (type, number, content, job) =>
+        _fragment.ActionSendUiMessage += (type, number, content, job) =>
         {
             SendNanoChatUiMessage(type, number, content, job, userInterface);
         };

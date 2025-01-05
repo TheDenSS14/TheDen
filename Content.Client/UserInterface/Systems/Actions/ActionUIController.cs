@@ -351,7 +351,9 @@ public sealed class ActionUIController : UIController, IOnStateChanged<GameplayS
         if (_actionsSystem == null ||
             !_actions.TryGetValue(index, out var actionId) ||
             !_actionsSystem.TryGetActionData(actionId, out var baseAction))
+        {
             return;
+        }
 
         if (baseAction is BaseTargetActionComponent action)
             ToggleTargeting(actionId.Value, action);
@@ -363,7 +365,9 @@ public sealed class ActionUIController : UIController, IOnStateChanged<GameplayS
     {
         if (_actionsSystem == null ||
             !_actionsSystem.TryGetActionData(actionId, out var action))
+        {
             return;
+        }
 
         // if the action is toggled when we add it, start targeting
         if (action is BaseTargetActionComponent targetAction && action.Toggled)
@@ -389,6 +393,10 @@ public sealed class ActionUIController : UIController, IOnStateChanged<GameplayS
     private void OnActionsUpdated()
     {
         QueueWindowUpdate();
+
+        // TODO ACTIONS allow buttons to persist across state applications
+        // Then we don't have to interrupt drags any time the buttons get rebuilt.
+        _menuDragHelper.EndDrag();
 
         if (_actionsSystem != null)
             _container?.SetActionData(_actionsSystem, _actions.ToArray());
@@ -737,7 +745,9 @@ public sealed class ActionUIController : UIController, IOnStateChanged<GameplayS
         _actionsSystem?.UnlinkAllActions();
 
         if (ActionsBar == null)
+        {
             return;
+        }
 
         if (_window != null)
         {
@@ -765,7 +775,9 @@ public sealed class ActionUIController : UIController, IOnStateChanged<GameplayS
         _window.FilterButton.OnItemSelected += OnFilterSelected;
 
         if (ActionsBar == null)
+        {
             return;
+        }
 
         RegisterActionContainer(ActionsBar.ActionsContainer);
 
@@ -797,7 +809,9 @@ public sealed class ActionUIController : UIController, IOnStateChanged<GameplayS
 
         _actions.Clear();
         foreach (var assign in assignments)
+        {
             _actions.Add(assign.ActionId);
+        }
 
         _container?.SetActionData(_actionsSystem, _actions.ToArray());
     }

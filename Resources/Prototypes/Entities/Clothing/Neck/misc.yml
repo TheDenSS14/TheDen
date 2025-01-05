@@ -81,7 +81,7 @@
     priority: -1
 
 - type: entity
-  parent: ClothingNeckBase
+  parent: ClothingNeckCollarBase # Floof - reparented
   id: ClothingNeckBellCollar
   name: bell collar
   description: A way to inform others about your presence, or just to annoy everyone around you!
@@ -93,4 +93,3 @@
   - type: EmitsSoundOnMove
     soundCollection:
       collection: FootstepJester
-  - type: LeashAnchor # Floofstation, silly bell collar can be leashed :3

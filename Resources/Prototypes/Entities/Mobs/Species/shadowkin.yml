@@ -221,18 +221,20 @@
     - type: Speech
       allowedEmotes: ['Mars', 'Wurble']
     - type: Shadowkin
-      blackeyeSpawn: true
+    - type: Respirator
+      damage:
+       types:
+        Asphyxiation: 1.0
+      damageRecovery:
+        types:
+          Asphyxiation: -1.0
     - type: Psionic
       canReroll: false
       mindbreakingFeedback: shadowkin-blackeye
       manaGain: 0.25
-      mana: 150
-      maxMana: 250
+      mana: 100
+      maxMana: 200
       noMana: shadowkin-tired
-      removable: false
-    - type: InnatePsionicPowers
-      powersToAdd:
-        - ShadowkinPowers
     - type: LanguageKnowledge
       speaks:
         - TauCetiBasic
