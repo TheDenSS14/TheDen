@@ -138,9 +138,6 @@ public sealed class ShadowkinSystem : EntitySystem
         magic.ManaGain = 0.25f;
         magic.MindbreakingFeedback = "shadowkin-blackeye";
         magic.NoMana = "shadowkin-tired";
-
-        if (_prototypeManager.TryIndex<PsionicPowerPrototype>("ShadowkinPowers", out var shadowkinPowers))
-            _psionicAbilitiesSystem.InitializePsionicPower(uid, shadowkinPowers);
     }
 
     // FloofStation Edit
