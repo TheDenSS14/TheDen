@@ -63,35 +63,3 @@
   materials:
     Steel: 25 # 25 [Steel per empty mag]
     Plastic: 120 # 8 [bullets] * 15 [Plastic per bullet]
-
-- type: latheRecipe
-  id: MagazineBoxLightRifleRubber
-  parent: BaseAmmoRecipe
-  result: MagazineBoxLightRifleRubber
-  materials:
-    Steel: 300
-    Plastic: 600
-
-- type: latheRecipe
-  id: MagazineBoxMagnumRubber
-  parent: BaseAmmoRecipe
-  result: MagazineBoxMagnumRubber
-  materials:
-    Steel: 80
-    Plastic: 160
-
-- type: latheRecipe
-  id: MagazineBoxPistolRubber
-  parent: BaseAmmoRecipe
-  result: MagazineBoxPistolRubber
-  materials:
-    Steel: 200
-    Plastic: 400
-
-- type: latheRecipe
-  id: MagazineBoxRifleRubber
-  parent: BaseAmmoRecipe
-  result: MagazineBoxRifleRubber
-  materials:
-    Steel: 250
-    Plastic: 500
