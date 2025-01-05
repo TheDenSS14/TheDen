@@ -63,3 +63,21 @@
   materials:
     Steel: 25 # 25 [Steel per empty mag]
     Plastic: 120 # 8 [bullets] * 15 [Plastic per bullet]
+
+- type: latheRecipe
+  id: WeaponRifleNovaliteC1
+  parent: BaseWeaponRecipeLong
+  result: WeaponRifleNovaliteC1
+  materials:
+    Steel: 2500
+    Plasteel: 1200
+    Plastic: 1500
+
+- type: latheRecipe
+  id: WeaponRifleGestio
+  parent: BaseWeaponRecipeLong
+  result: WeaponRifleGestio
+  materials:
+    Steel: 2500
+    Plasteel: 1200
+    Plastic: 1500
