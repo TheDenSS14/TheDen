@@ -391,9 +391,9 @@
       inverted: true
       jobs:
         - Prisoner # Bionics should be "Confiscated" from long term prisoners.
-    - !type:CharacterSpeciesRequirement
-      species:
-        - Human # Entirely arbitrary, I've decided I want a trait unique to humans. Since they don't normally get anything exciting.
+    #- !type:CharacterSpeciesRequirement
+    #  species:
+    #    - Human # Entirely arbitrary, I've decided I want a trait unique to humans. Since they don't normally get anything exciting.
                 # When we get the Character Records system in, I also want to make this require certain Backgrounds.
     - !type:CharacterTraitRequirement
       inverted: true
@@ -408,6 +408,21 @@
         - !type:CharacterJobRequirement
           jobs:
             - Boxer
+    - !type:CharacterLogicOrRequirement
+      requirements:
+        - !type:CharacterSpeciesRequirement
+          inverted: true
+          species:
+            - Arachne
+            - Harpy
+            - Felinid
+            - Reptilian
+            - Shadowkin
+            - Rodentia
+        - !type:CharacterTraitRequirement
+          traits:
+            - NaturalWeaponRemoval
+            - MartialArtist
   functions:
     - !type:TraitReplaceComponent
       components:

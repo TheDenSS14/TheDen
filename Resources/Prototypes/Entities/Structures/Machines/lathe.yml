@@ -198,7 +198,6 @@
       - ClothingHeadHatWelding
       - ShockCollar # FloofStation
       - LeashBasic # FloofStation
-      - ShortLeash # FloofStation
   - type: EmagLatheRecipes
     emagStaticRecipes:
       - BoxLethalshot
@@ -802,6 +801,7 @@
       - MagazineBoxPistolPractice
       - MagazineBoxRifle
       - MagazineBoxRiflePractice
+      - MagazineBoxLightRifle
       - MagazineLightRifle
       - MagazineLightRifleEmpty
       - MagazinePistol
@@ -838,6 +838,14 @@
       - MagazinePistolSpecial
       - HandheldGPSBasic # Floof - port to EE
       - HandheldStationMap # Floof - port to EE
+      - MagazineNovaliteC1Empty
+      - MagazineNovaliteC1
+      - MagazineLightRifleLowCapacityEmpty
+      - MagazineLightRifleLowCapacity
+      - SpeedLoaderRifleHeavy
+      - SpeedLoaderRifleHeavyEmpty
+      - WeaponRifleNovaliteC1
+      - WeaponRifleGestio
     dynamicRecipes:
       - BolaEnergy
       - BoxBeanbag
@@ -1255,7 +1263,6 @@
     - ShockCollar
     - CustomDrinkJug
     - LeashBasic
-    - ShortLeash
     - CellRechargerCircuitboard
     - WeaponCapacitorRechargerCircuitboard
     - Beaker

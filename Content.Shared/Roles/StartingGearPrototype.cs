@@ -1,3 +1,4 @@
+using System.Linq;
 using Content.Shared.Preferences;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype.Array;
@@ -47,10 +48,12 @@ public sealed partial class StartingGearPrototype : IPrototype, IInheritingProto
     {
         if (profile != null)
         {
+            var forceSkirt = new[] { "Harpy", "Lamia" };
+
             switch (slot)
             {
                 case "jumpsuit" when profile.Clothing == ClothingPreference.Jumpskirt && !string.IsNullOrEmpty(InnerClothingSkirt):
-                case "jumpsuit" when profile.Species == "Harpy" && !string.IsNullOrEmpty(InnerClothingSkirt):
+                case "jumpsuit" when forceSkirt.Contains(profile.Species) && !string.IsNullOrEmpty(InnerClothingSkirt):
                     return InnerClothingSkirt;
                 case "back" when profile.Backpack == BackpackPreference.Satchel && !string.IsNullOrEmpty(Satchel):
                     return Satchel;

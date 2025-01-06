@@ -21,7 +21,7 @@ public sealed partial class ShuttleSystem
     private void OnSetInertiaDampening(EntityUid uid, ShuttleConsoleComponent component, SetInertiaDampeningRequest args)
     {
         // Ensure that the entity requested is a valid shuttle (stations should not be togglable)
-        if (!EntityManager.TryGetComponent(uid, out TransformComponent? transform) ||
+        if (!EntityManager.TryGetComponent(GetEntity(args.ShuttleEntityUid), out TransformComponent? transform) ||
             !transform.GridUid.HasValue ||
             !EntityManager.TryGetComponent(transform.GridUid, out PhysicsComponent? physicsComponent) ||
             !EntityManager.TryGetComponent(transform.GridUid, out ShuttleComponent? shuttleComponent))

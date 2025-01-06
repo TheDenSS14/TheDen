@@ -20,6 +20,12 @@ public sealed partial class LeashComponent : Component
     public float Length = 3.5f;
 
     /// <summary>
+    ///     List of possible lengths this leash may be assigned to be the user. If null, the length cannot be changed.
+    /// </summary>
+    [DataField, AutoNetworkedField]
+    public float[]? LengthConfigs;
+
+    /// <summary>
     ///     Maximum distance between the anchor and the puller beyond which the leash will break.
     /// </summary>
     [DataField, AutoNetworkedField]
