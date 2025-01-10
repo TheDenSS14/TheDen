@@ -98,7 +98,6 @@
   name: logistics winter coat # DeltaV - Logistics Department replacing Cargo
   components:
   - type: Sprite
-    sprite: Clothing/OuterClothing/WinterCoats/coatcargo.rsi
     sprite: _CD/Clothing/OuterClothing/WinterCoats/coat.rsi # CD drip 2
     layers:
     - state: CARGO-icon
@@ -109,7 +108,6 @@
       right:
       - state: CARGO-inhand-right
   - type: Clothing
-    sprite: Clothing/OuterClothing/WinterCoats/coatcargo.rsi
     sprite: _CD/Clothing/OuterClothing/WinterCoats/coat.rsi # CD drip 2
     clothingVisuals:
       outerClothing:
