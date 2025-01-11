@@ -33,3 +33,13 @@
     stealGroup: RubberStampNotary
     verifyMapExistence: true
     owner: job-name-clerk
+
+- type: entity # Mystagogue steal objective
+  parent: BaseTraitorStealObjective
+  id: RdClipboardStealObjective
+  components:
+  - type: NotJobRequirement
+    job: ResearchDirector
+  - type: StealCondition
+    stealGroup: BoxFolderRdClipboard
+    # owner: job-name-rd

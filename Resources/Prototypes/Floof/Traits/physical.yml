@@ -94,10 +94,10 @@
     inverted: true
     species:
     - Felinid # They don't need to be lighter
-    - IPC
+    - Rodentia
   functions:
     - !type:TraitAddComponent
       components:
-        - type: StaminaCritModifier
-          critThresholdModifier: -50
-
+        - type: FixtureDensityModifier
+          min: 100
+          factor: 0.6
