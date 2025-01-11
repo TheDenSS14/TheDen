@@ -1,0 +1,20 @@
+- type: trait
+  id: Heavyweight
+  category: Physical
+  points: -2 # Has pros and cons, not sure
+  requirements:
+  - !type:CharacterJobRequirement
+    inverted: true
+    jobs:
+    - Borg
+    - MedicalBorg
+  - !type:CharacterSpeciesRequirement
+    inverted: true
+    species:
+    - Oni
+  functions:
+    - !type:TraitAddComponent
+      components:
+        - type: FixtureDensityModifier
+          min: 100
+          factor: 1.3
