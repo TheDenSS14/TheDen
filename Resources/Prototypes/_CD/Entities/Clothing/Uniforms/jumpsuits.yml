@@ -49,3 +49,14 @@
     sprite: _CD/Clothing/Uniforms/Jumpsuit/salvage_operator.rsi
   - type: Clothing
     sprite: _CD/Clothing/Uniforms/Jumpsuit/salvage_operator.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitSalvageSpecialistOveralls
+  name: salvage specialist's jumpsuit
+  description: It's a snappy jumpsuit with a sturdy set of overalls. It's very dirty.
+  components:
+  - type: Sprite
+    sprite: _CD/Clothing/Uniforms/Jumpsuit/salvage.rsi # CD
+  - type: Clothing
+    sprite: _CD/Clothing/Uniforms/Jumpsuit/salvage.rsi # CD

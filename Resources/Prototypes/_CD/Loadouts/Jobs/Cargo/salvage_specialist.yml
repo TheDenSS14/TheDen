@@ -11,3 +11,17 @@
         - SalvageSpecialist
   items:
     - ClothingUniformJumpsuitSalvageOperator
+
+- type: loadout
+  id: LoadoutSalvageSpecialistUniformSalvageSpecialistOveralls
+  category: JobsLogisticsSalvageSpecialist
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSalvageSpecialistUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - SalvageSpecialist
+  items:
+    - ClothingUniformJumpsuitSalvageSpecialistOveralls
