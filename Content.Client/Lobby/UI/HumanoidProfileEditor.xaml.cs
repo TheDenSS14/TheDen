@@ -179,7 +179,7 @@ namespace Content.Client.Lobby.UI
                 SetGender((Gender) args.Id);
 
                 if (Profile?.DisplayPronouns == null)
-                    DisplayPronounsNameEdit.Text = label;
+                    UpdateDisplayPronounsControls();
             };
 
             #endregion Gender
@@ -1397,7 +1397,10 @@ namespace Content.Client.Lobby.UI
             var label = GetFormattedPronounsFromGender();
 
             if (Profile.DisplayPronouns == null)
-                DisplayPronounsNameEdit.Text = label;
+            {
+                DisplayPronounsNameEdit.PlaceHolder = label;
+                DisplayPronounsNameEdit.Text = string.Empty;
+            }
             else
                 DisplayPronounsNameEdit.Text = Profile.DisplayPronouns;
         }
