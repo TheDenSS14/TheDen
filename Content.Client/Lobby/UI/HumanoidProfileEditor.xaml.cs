@@ -173,14 +173,13 @@ namespace Content.Client.Lobby.UI
 
             PronounsButton.OnItemSelected += args =>
             {
-                var gender = (Gender) args.Id;
-                var genderName = Enum.GetName(typeof(Gender), gender) ?? "epicene";
+                var label = GetFormattedPronounsFromGender();
 
                 PronounsButton.SelectId(args.Id);
-                SetGender(gender);
+                SetGender((Gender) args.Id);
 
                 if (Profile?.DisplayPronouns == null)
-                    DisplayPronounsNameEdit.Text = Loc.GetString($"humanoid-profile-editor-pronouns-{genderName}-text");
+                    DisplayPronounsNameEdit.Text = label;
             };
 
             #endregion Gender
@@ -1161,9 +1160,22 @@ namespace Content.Client.Lobby.UI
 
         private void SetDisplayPronouns(string? displayPronouns)
         {
+            if (displayPronouns == GetFormattedPronounsFromGender())
+                displayPronouns = null;
+
             Profile = Profile?.WithDisplayPronouns(displayPronouns);
             ReloadPreview();
             IsDirty = true;
+        }
+
+        private string GetFormattedPronounsFromGender()
+        {
+            if (Profile == null)
+                return "they/them";
+
+            var genderName = Enum.GetName(typeof(Gender), Profile.Gender) ?? "Epicene";
+            var label = Loc.GetString($"humanoid-profile-editor-pronouns-{genderName.ToLower()}-text");
+            return label.Replace(" ", string.Empty).ToLower();
         }
 
         private void SetSpecies(string newSpecies)
@@ -1382,8 +1394,7 @@ namespace Content.Client.Lobby.UI
             if (Profile == null)
                 return;
 
-            var genderName = Enum.GetName(typeof(Gender), Profile.Gender) ?? "Epicene";
-            var label = Loc.GetString($"humanoid-profile-editor-pronouns-{genderName.ToLower()}-text");
+            var label = GetFormattedPronounsFromGender();
 
             if (Profile.DisplayPronouns == null)
                 DisplayPronounsNameEdit.Text = label;
