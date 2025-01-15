@@ -1395,12 +1395,10 @@ namespace Content.Client.Lobby.UI
                 return;
 
             var label = GetFormattedPronounsFromGender();
+            DisplayPronounsNameEdit.PlaceHolder = label;
 
             if (Profile.DisplayPronouns == null)
-            {
-                DisplayPronounsNameEdit.PlaceHolder = label;
                 DisplayPronounsNameEdit.Text = string.Empty;
-            }
             else
                 DisplayPronounsNameEdit.Text = Profile.DisplayPronouns;
         }
