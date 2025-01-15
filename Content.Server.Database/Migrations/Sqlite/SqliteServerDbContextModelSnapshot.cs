@@ -858,6 +858,10 @@ namespace Content.Server.Database.Migrations.Sqlite
                         .HasColumnType("TEXT")
                         .HasColumnName("custom_specie_name");
 
+                    b.Property<string>("DisplayPronouns")
+                        .HasColumnType("TEXT")
+                        .HasColumnName("display_pronouns");
+
                     b.Property<string>("EyeColor")
                         .IsRequired()
                         .HasColumnType("TEXT")
