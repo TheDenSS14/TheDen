@@ -288,6 +288,21 @@
     jobs:
     - Janitor
 
+- type: loadout
+  id: LoadoutClothingNeckCloakJanitor
+  category: JobsServiceAUncategorized
+  cost: 2
+  exclusive: true
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - Janitor
+    - !type:CharacterPlaytimeRequirement
+      tracker: JobJanitor
+      min: 36000 # 10 hours
+  items:
+  - ClothingNeckCloakJanitor
+
 #TO BE ADDED - Botanist
 #TO BE ADDED - Reporter
 

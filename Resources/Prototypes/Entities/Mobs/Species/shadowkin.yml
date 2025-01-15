@@ -5,6 +5,7 @@
     - MobAtmosStandard
     - MobFlammable
     - BaseMobSpecies
+    - MobRespirator
   id: MobShadowkinBase
   name: Urist McShadow
   abstract: true
@@ -153,6 +154,7 @@
         - map: ["enum.HumanoidVisualLayers.Snout"]
         - map: ["enum.HumanoidVisualLayers.Eyes"]
           shader: unshaded
+        - map: ["enum.HumanoidVisualLayers.Face"]
         - map: ["enum.HumanoidVisualLayers.RArm"]
         - map: ["enum.HumanoidVisualLayers.LArm"]
         - map: ["enum.HumanoidVisualLayers.RLeg"]
@@ -182,6 +184,8 @@
         - map: ["gloves"]
         - map: ["shoes"]
         - map: ["ears"]
+        - map: ["innerBelt"]
+        - map: ["innerNeck"]
         - map: ["outerClothing"]
         - map: ["eyes"]
         - map: ["belt"]
@@ -242,6 +246,12 @@
       understands:
         - TauCetiBasic
         - Marish
+    - type: Tag
+      tags:
+      - CanPilot
+      - FootstepSound
+      - DoorBumpOpener
+      - ShadowkinEmotes
 
 - type: entity
   save: false
@@ -263,6 +273,7 @@
         - map: ["enum.HumanoidVisualLayers.Snout"]
         - map: ["enum.HumanoidVisualLayers.Eyes"]
           shader: unshaded
+        - map: ["enum.HumanoidVisualLayers.Face"]
         - map: ["enum.HumanoidVisualLayers.RArm"]
         - map: ["enum.HumanoidVisualLayers.LArm"]
         - map: ["enum.HumanoidVisualLayers.RLeg"]
@@ -292,6 +303,8 @@
         - map: ["gloves"]
         - map: ["shoes"]
         - map: ["ears"]
+        - map: ["innerBelt"]
+        - map: ["innerNeck"]
         - map: ["outerClothing"]
         - map: ["eyes"]
         - map: ["belt"]

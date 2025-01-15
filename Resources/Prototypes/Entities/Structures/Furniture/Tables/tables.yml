@@ -54,6 +54,7 @@
   - type: Construction
     graph: Table
     node: TableFrame
+  - type: Climbable # Floof - making table frames climbable
 
 - type: entity
   id: CounterWoodFrame
@@ -109,6 +110,7 @@
   - type: Construction
     graph: Table
     node: CounterWoodFrame
+  - type: Climbable # Floof - making table frames climbable
 
 - type: entity
   id: CounterMetalFrame

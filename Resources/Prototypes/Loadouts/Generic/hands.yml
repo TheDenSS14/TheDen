@@ -170,3 +170,14 @@
     - !type:CharacterItemGroupRequirement
       group: LoadoutGloves2
 
+- type: loadout
+  id: LoadoutHandsGlovesEvening
+  category: Hands
+  cost: 0
+  exclusive: true
+  customColorTint: true
+  items:
+    - ClothingHandsGlovesEvening
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutGloves

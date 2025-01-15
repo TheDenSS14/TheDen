@@ -5,6 +5,7 @@
   description: Just add capitalism!
   abstract: true
   components:
+  - type: StationAiWhitelist
   - type: AmbientOnPowered
   - type: AmbientSound
     volume: -9
@@ -100,6 +101,7 @@
   - type: Actions
   - type: SentienceTarget
     flavorKind: station-event-random-sentience-flavor-mechanical
+    weight: 0.025 # fuck you in particular (it now needs 40 vending machines to be as likely as 1 interesting animal)
   - type: StaticPrice
     price: 100
   - type: Appearance
@@ -1825,7 +1827,7 @@
   - type: SpeakOnUIClosed
     pack: GenericVendGoodbyes
   - type: Sprite
-    sprite: Structures/Machines/VendingMachines/cargodrobe.rsi
+    sprite: _CD/Structures/Machines/VendingMachines/cargodrobe.rsi # CD drip 2
     layers:
     - state: "off"
       map: ["enum.VendingMachineVisualLayers.Base"]

@@ -1,6 +1,6 @@
 - type: entity
   id: Ashtray
-  parent: BaseItem
+  parent: BaseStorageItem # Floof - reparented
   name: ashtray
   description: Proven by scientists to improve the smoking experience by 37%!
   components:
@@ -22,9 +22,6 @@
     maxItemSize: Tiny
     grid:
     - 0,0,9,0
-  - type: ContainerContainer
-    containers:
-      storagebase: !type:Container
   - type: StorageFillVisualizer
     fillBaseName: icon
     maxFillLevels: 10

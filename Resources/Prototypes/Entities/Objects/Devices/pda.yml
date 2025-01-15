@@ -57,7 +57,6 @@
     - idcard
     - Belt
   - type: UnpoweredFlashlight
-  - type: EtherealLight
   - type: PointLight
     enabled: false
     radius: 1.5
@@ -68,6 +67,7 @@
     deviceNetId: Wireless
     receiveFrequencyId: PDA
     prefix: device-address-prefix-console
+    savableAddress: false
   - type: WirelessNetworkConnection
     range: 500
   - type: CartridgeLoader
@@ -113,6 +113,15 @@
     damage:
       types:
         Blunt: 4
+  - type: SentienceTarget # sentient PDA = pAI lite
+    flavorKind: station-event-random-sentience-flavor-mechanical
+    weight: 0.001 # 1,000 PDAs = as likely to be picked as 1 regular animal
+  - type: BlockMovement
+    blockInteraction: false # lets the PDA toggle its own flashlight
+  - type: TypingIndicator
+    proto: robot
+  - type: Speech
+    speechVerb: Robotic
 
 - type: entity
   parent: BasePDA
@@ -193,7 +202,7 @@
     accentVColor: "#A32D26"
   - type: Icon
     state: pda-interncadet
-  - type: CartridgeLoader # DeltaV - Crime Assist
+  - type: CartridgeLoader # DeltaV - Crime Assist + SecWatch
     preinstalled:
       - CrewManifestCartridge
       - NotekeeperCartridge
@@ -245,6 +254,8 @@
     borderColor: "#d7d7d0"
   - type: Icon
     state: pda-cook
+  - type: ReplacementAccent # for random sentience event
+    accent: italian
 
 - type: entity
   parent: BasePDA
@@ -329,6 +340,7 @@
     accentHColor: "#333333"
   - type: Icon
     state: pda-mime
+  - type: Muted # for random sentience event
 
 - type: entity
   name: chaplain PDA
@@ -520,7 +532,7 @@
     borderColor: "#6f6192"
   - type: Icon
     state: pda-lawyer
-  - type: CartridgeLoader # DeltaV - Crime Assist
+  - type: CartridgeLoader # DeltaV - Crime Assist + SecWatch
     preinstalled:
       - CrewManifestCartridge
       - NotekeeperCartridge
@@ -914,7 +926,7 @@
     accentHColor: "#447987"
   - type: Icon
     state: pda-hos
-  - type: CartridgeLoader # DeltaV - Crime Assist
+  - type: CartridgeLoader # DeltaV - Crime Assist + SecWatch
     preinstalled:
     - CrewManifestCartridge
     - NotekeeperCartridge
@@ -967,7 +979,7 @@
     accentVColor: "#949137"
   - type: Icon
     state: pda-warden
-  - type: CartridgeLoader # DeltaV - Crime Assist
+  - type: CartridgeLoader # DeltaV - Crime Assist + SecWatch
     preinstalled:
       - CrewManifestCartridge
       - NotekeeperCartridge
@@ -989,7 +1001,7 @@
     borderColor: "#A32D26"
   - type: Icon
     state: pda-security
-  - type: CartridgeLoader # DeltaV - Crime Assist
+  - type: CartridgeLoader # DeltaV - Crime Assist + SecWatch
     preinstalled:
       - CrewManifestCartridge
       - NotekeeperCartridge
@@ -1330,7 +1342,7 @@
     borderColor: "#774705"
   - type: Icon
     state: pda-detective
-  - type: CartridgeLoader # DeltaV - Crime Assist
+  - type: CartridgeLoader # DeltaV - Crime Assist + SecWatch
     preinstalled:
     - CrewManifestCartridge
     - NotekeeperCartridge
@@ -1361,7 +1373,7 @@
     accentVColor: "#d7d7d0"
   - type: Icon
     state: pda-brigmedic
-  - type: CartridgeLoader # DeltaV - Crime Assist
+  - type: CartridgeLoader # DeltaV - Crime Assist + SecWatch
     preinstalled:
     - CrewManifestCartridge
     - NotekeeperCartridge
@@ -1460,7 +1472,7 @@
     accentVColor: "#DFDFDF"
   - type: Icon
     state: pda-seniorofficer
-  - type: CartridgeLoader # DeltaV - Crime Assist
+  - type: CartridgeLoader # DeltaV - Crime Assist + SecWatch
     preinstalled:
       - CrewManifestCartridge
       - NotekeeperCartridge

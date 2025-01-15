@@ -21,7 +21,7 @@ public sealed class FoldableSystem : EntitySystem
         SubscribeLocalEvent<FoldableComponent, GetVerbsEvent<AlternativeVerb>>(AddFoldVerb);
         SubscribeLocalEvent<FoldableComponent, AfterAutoHandleStateEvent>(OnHandleState);
 
-        SubscribeLocalEvent<FoldableComponent, ComponentInit>(OnFoldableInit);
+        SubscribeLocalEvent<FoldableComponent, MapInitEvent>(OnFoldableInit);
         SubscribeLocalEvent<FoldableComponent, ContainerGettingInsertedAttemptEvent>(OnInsertEvent);
         SubscribeLocalEvent<FoldableComponent, StoreMobInItemContainerAttemptEvent>(OnStoreThisAttempt);
         SubscribeLocalEvent<FoldableComponent, StorageOpenAttemptEvent>(OnFoldableOpenAttempt);
@@ -34,7 +34,7 @@ public sealed class FoldableSystem : EntitySystem
         SetFolded(uid, component, component.IsFolded);
     }
 
-    private void OnFoldableInit(EntityUid uid, FoldableComponent component, ComponentInit args)
+    private void OnFoldableInit(EntityUid uid, FoldableComponent component, MapInitEvent args)
     {
         SetFolded(uid, component, component.IsFolded);
     }

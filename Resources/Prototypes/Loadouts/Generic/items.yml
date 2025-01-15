@@ -689,18 +689,6 @@
     - PersonalAI
 
 - type: loadout
-  id: LoadoutItemWaistbag
-  category: Items
-  cost: 2
-  items:
-    - ClothingBeltStorageWaistbag
-  requirements:
-    - !type:CharacterJobRequirement
-       inverted: true
-       jobs:
-         - Prisoner
-
-- type: loadout
   id: LoadoutItemCrayonBox
   category: Items
   cost: 4
@@ -767,12 +755,20 @@
   items:
     - DrinkVacuumFlask
 
+- type: loadout
+  id: LoadoutItemCaneBlind
+  category: Items
+  cost: 0 # It shouldnt cost points to be able to function.
+  items:
+    - WhiteCane
+
 # Pets
 - type: loadout
   id: LoadoutItemPetMouse
   category: Items
   cost: 2
   canBeHeirloom: true
+  customColorTint: true # Unethical hair dyes!
   items:
     - MobMousePet
   requirements:
@@ -786,6 +782,7 @@
   category: Items
   cost: 2
   canBeHeirloom: true
+  customColorTint: true
   items:
     - MobHamsterPet
   requirements:
@@ -799,6 +796,7 @@
   category: Items
   cost: 2
   canBeHeirloom: true
+  customColorTint: true
   items:
     - MobMothroachPet
   requirements:
@@ -812,6 +810,7 @@
   category: Items
   cost: 2
   canBeHeirloom: true
+  customColorTint: true
   items:
     - MobCockroachPet
   requirements:

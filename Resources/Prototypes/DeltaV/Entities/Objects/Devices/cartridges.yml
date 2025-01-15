@@ -17,7 +17,6 @@
     icon:
       sprite: DeltaV/Icons/cri.rsi
       state: cri
-  - type: CrimeAssistCartridge
 
 - type: entity
   parent: BaseItem
@@ -31,14 +30,14 @@
   - type: Icon
     sprite: DeltaV/Objects/Devices/cartridge.rsi
     state: cart-cri
-  # - type: UIFragment
-  #   ui: !type:SecWatchUi
-  # - type: Cartridge
-  #   programName: sec-watch-program-name
-  #   icon:
-  #     sprite: Objects/Weapons/Melee/stunbaton.rsi
-  #     state: stunbaton_on
-  # - type: SecWatchCartridge
+  - type: UIFragment
+    ui: !type:SecWatchUi
+  - type: Cartridge
+    programName: sec-watch-program-name
+    icon:
+      sprite: Objects/Weapons/Melee/stunbaton.rsi
+      state: stunbaton_on
+  - type: SecWatchCartridge
 
 - type: entity
   parent: BaseItem

@@ -23,3 +23,6 @@ consent-example1-desc = This is just here as an example for how to add consent t
 
 consent-Hypno-name = Hypnosis
 consent-Hypno-desc = Allow yourself to be hypnotized.
+
+consent-NoClone-name = Disallow Paradox Anomaly
+consent-NoClone-desc = Disallow yourself to be the target of a paradox anomaly clone.

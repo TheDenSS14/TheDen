@@ -144,6 +144,16 @@ public abstract partial class SharedToolSystem
         }
     }
 
+    // Floof - for some reason, wizden impl lacked this.
+    private void OnWelderUseAttempt(Entity<WelderComponent> entity, ref ToolUseAttemptEvent args)
+    {
+        if (ItemToggle.IsActivated(entity.Owner))
+            return;
+
+        _popup.PopupPredicted(Loc.GetString("welder-component-welder-not-lit-message"), entity, args.User);
+        args.Cancel();
+    }
+
     private void OnWelderDoAfter(Entity<WelderComponent> ent, ref ToolDoAfterEvent args)
     {
         if (args.Cancelled)

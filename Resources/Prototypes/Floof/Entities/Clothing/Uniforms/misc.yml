@@ -1,15 +1,15 @@
 - type: entity
   parent: ClothingUniformBase
-  id: ClothingUniformLoinCloth
-  name: loin cloth
-  description: A piece of cloth wrapped around the waist.
+  id: ClothingUniformNudityPermit
+  name: public nudity permit
+  description: This permit entitles the bearer to conduct their duties without a uniform. Normally issued to furred crewmembers or those with nothing to hide.
   components:
   - type: Item
     size: Small
   - type: Sprite
-    sprite: Floof/Clothing/Uniforms/loincloth.rsi
+    sprite: Floof/Clothing/Uniforms/nuditypermit.rsi
   - type: Clothing
-    sprite: Floof/Clothing/Uniforms/loincloth.rsi
+    sprite: Floof/Clothing/Uniforms/nuditypermit.rsi
     equipDelay: 0
     unequipDelay: 0
   - type: Tag #DeltaV, needed for species with nonhuman legs/can only wear skirts

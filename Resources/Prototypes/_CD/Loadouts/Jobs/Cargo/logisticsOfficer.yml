@@ -1,0 +1,28 @@
+# Jumpsuit
+- type: loadout
+  id: LoadoutCommandQMUniformForeman
+  category: JobsLogisticsLogisticsOfficer
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutLogisticsOfficerUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - Quartermaster
+  items:
+    - ClothingUniformJumpsuitForeman
+
+- type: loadout
+  id: LoadoutCommandQMOuterCoatCargoForeman
+  category: JobsLogisticsLogisticsOfficer
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutLogisticsOfficerOuter
+    - !type:CharacterJobRequirement
+      jobs:
+        - Quartermaster
+  items:
+    - ClothingOuterCoatCargoForeman

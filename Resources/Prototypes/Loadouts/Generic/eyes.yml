@@ -10,6 +10,30 @@
       group: LoadoutEyes2
 
 - type: loadout
+  id: LoadoutEyesEyepatchColor
+  category: Eyes
+  cost: 0
+  canBeHeirloom: true
+  customColorTint: true
+  items:
+    - ClothingEyesEyepatchColor
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutEyes
+
+- type: loadout
+  id: LoadoutEyesEyepatchColorFlipped
+  category: Eyes
+  cost: 0
+  canBeHeirloom: true
+  customColorTint: true
+  items:
+    - ClothingEyesEyepatchColorFlipped
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutEyes
+
+- type: loadout
   id: LoadoutEyesGlasses
   category: Eyes
   cost: 0
@@ -33,6 +57,53 @@
       group: LoadoutEyes2
 
 - type: loadout
+  id: LoadoutEyesGlasses3D
+  category: Eyes
+  cost: 1
+  exclusive: true
+  items:
+    - ClothingEyesGlasses3D
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutEyes
+
+- type: loadout
+  id: LoadoutEyesGlassesHipster
+  category: Eyes
+  cost: 0
+  exclusive: true
+  customColorTint: true
+  items:
+    - ClothingEyesGlassesHipster
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutEyes
+
+- type: loadout
+  id: LoadoutEyesGlassesMonocle
+  category: Eyes
+  cost: 1
+  exclusive: true
+  customColorTint: true
+  items:
+    - ClothingEyesGlassesMonocle
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutEyes
+
+- type: loadout
+  id: LoadoutEyesGlassesPanto
+  category: Eyes
+  cost: 0
+  exclusive: true
+  customColorTint: true
+  items:
+    - ClothingEyesGlassesPanto
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutEyes
+
+- type: loadout
   id: LoadoutEyesGlassesJensen
   category: Eyes
   cost: 1
@@ -54,6 +125,17 @@
       group: LoadoutEyes2
 
 - type: loadout
+  id: LoadoutEyesBlindfoldColor
+  category: Eyes
+  cost: 0
+  customColorTint: true
+  items:
+    - ClothingEyesBlindfoldColor
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutEyes
+
+- type: loadout
   id: LoadoutItemCheapSunglasses
   category: Eyes
   cost: 1
@@ -63,6 +145,40 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutEyes2
+
+- type: loadout
+  id: LoadoutEyesGlassesCheapSunglassesAviator
+  category: Eyes
+  cost: 1
+  exclusive: true
+  customColorTint: true
+  items:
+    - ClothingEyesGlassesCheapSunglassesAviator
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutEyes
+
+- type: loadout
+  id: LoadoutEyesGlassesCheapSunglassesBig
+  category: Eyes
+  cost: 1
+  exclusive: true
+  items:
+    - ClothingEyesGlassesCheapSunglassesBig
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutEyes
+
+- type: loadout
+  id: LoadoutEyesGlassesCheapSunglassesVisor
+  category: Eyes
+  cost: 1
+  exclusive: true
+  items:
+    - ClothingEyesGlassesCheapSunglassesVisor
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutEyes
 
 - type: loadout
   id: LoadoutItemSunglasses
@@ -76,6 +192,40 @@
       group: LoadoutEyes2
 
 - type: loadout
+  id: LoadoutEyesGlassesSunglassesAviator
+  category: Eyes
+  cost: 3
+  exclusive: true
+  customColorTint: true
+  items:
+    - ClothingEyesGlassesSunglassesAviator
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutEyes
+
+- type: loadout
+  id: LoadoutEyesGlassesSunglassesBig
+  category: Eyes
+  cost: 3
+  exclusive: true
+  items:
+    - ClothingEyesGlassesSunglassesBig
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutEyes
+
+- type: loadout
+  id: LoadoutEyesGlassesSunglassesVisor
+  category: Eyes
+  cost: 3
+  exclusive: true
+  items:
+    - ClothingEyesGlassesSunglassesVisor
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutEyes
+
+- type: loadout
   id: LoadoutItemBlindfoldFake
   category: Eyes
   cost: 0
@@ -85,3 +235,14 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutEyes2
+
+- type: loadout
+  id: LoadoutEyesBlindfoldFakeColor
+  category: Eyes
+  cost: 0
+  customColorTint: true
+  items:
+    - ClothingEyesBlindfoldFakeColor
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutEyes

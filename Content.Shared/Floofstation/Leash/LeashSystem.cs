@@ -1,6 +1,7 @@
 using System.Linq;
 using Content.Shared.Clothing.Components;
 using Content.Shared.DoAfter;
+using Content.Shared.Examine;
 using Content.Shared.Floofstation.Leash.Components;
 using Content.Shared.Hands.Components;
 using Content.Shared.Input;
@@ -50,6 +51,7 @@ public sealed class LeashSystem : EntitySystem
         SubscribeLocalEvent<LeashedComponent, JointRemovedEvent>(OnJointRemoved, after: [typeof(SharedJointSystem)]);
         SubscribeLocalEvent<LeashedComponent, GetVerbsEvent<InteractionVerb>>(OnGetLeashedVerbs);
 
+        SubscribeLocalEvent<LeashComponent, ExaminedEvent>(OnLeashExamined);
         SubscribeLocalEvent<LeashComponent, EntGotInsertedIntoContainerMessage>(OnLeashInserted);
         SubscribeLocalEvent<LeashComponent, EntGotRemovedFromContainerMessage>(OnLeashRemoved);
         SubscribeLocalEvent<LeashComponent, GetVerbsEvent<AlternativeVerb>>(OnGetLeashVerbs);
@@ -185,7 +187,7 @@ public sealed class LeashSystem : EntitySystem
 
     private void OnGetLeashVerbs(Entity<LeashComponent> ent, ref GetVerbsEvent<AlternativeVerb> args)
     {
-        if (ent.Comp.LengthConfigs is not { } configurations)
+        if (!args.CanAccess || !args.CanInteract || ent.Comp.LengthConfigs is not { } configurations)
             return;
 
         // Add a menu listing each length configuration
@@ -229,6 +231,12 @@ public sealed class LeashSystem : EntitySystem
         });
     }
 
+    private void OnLeashExamined(Entity<LeashComponent> ent, ref ExaminedEvent args)
+    {
+        var length = ent.Comp.Length;
+        args.PushMarkup(Loc.GetString("leash-length-examine-text", ("length", length)));
+    }
+
     private void OnLeashInserted(Entity<LeashComponent> ent, ref EntGotInsertedIntoContainerMessage args)
     {
         if (!_net.IsClient)
@@ -261,7 +269,8 @@ public sealed class LeashSystem : EntitySystem
 
     private bool OnRequestPullLeash(ICommonSession? session, EntityCoordinates targetCoords, EntityUid uid)
     {
-        if (session?.AttachedEntity is not { } player
+        if (_net.IsClient
+            || session?.AttachedEntity is not { } player
             || !player.IsValid()
             || !TryComp<HandsComponent>(player, out var hands)
             || hands.ActiveHandEntity is not {} leash
@@ -371,14 +380,6 @@ public sealed class LeashSystem : EntitySystem
     public bool TryLeash(Entity<LeashAnchorComponent> anchor, Entity<LeashComponent> leash, EntityUid user, bool popup = true)
     {
         if (!CanLeash(anchor, leash) || !TryGetLeashTarget(anchor!, out var leashTarget))
-            return false;
-
-        // We reuse pulling attempt here because eugh it already exists
-        var attempt = new PullAttemptEvent(leash, anchor);
-        RaiseLocalEvent(anchor, attempt);
-        RaiseLocalEvent(leash, attempt);
-
-        if (attempt.Cancelled)
             return false;
 
         var doAfter = new DoAfterArgs(EntityManager, user, leash.Comp.AttachDelay, new LeashAttachDoAfterEvent(), anchor, leashTarget, leash)
@@ -509,6 +510,7 @@ public sealed class LeashSystem : EntitySystem
     {
         leash.Comp.Length = length;
         RefreshJoints(leash);
+        _popups.PopupPredicted(Loc.GetString("leash-set-length-popup", ("length", length)), leash.Owner, null);
     }
 
     /// <summary>

@@ -6,7 +6,7 @@
     - ClothingOuterPlagueSuit
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutOuter2
+      group: LoadoutOuter
 
 - type: loadout
   id: LoadoutOuterRedRacoon
@@ -16,7 +16,7 @@
     - ClothingOuterRedRacoon
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutOuter2
+      group: LoadoutOuter
 
 - type: loadout # Science is for everyone, not just science
   id: LoadoutOuterCoatLab
@@ -26,7 +26,7 @@
     - ClothingOuterCoatLab
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutOuter2
+      group: LoadoutOuter
 
 - type: loadout
   id: LoadoutClothingOuterRoboOveralls
@@ -36,7 +36,7 @@
     - ClothingOuterRoboOveralls
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutOuter2
+      group: LoadoutOuter
 
 - type: loadout
   id: LoadoutClothingOuterPlainOveralls
@@ -46,7 +46,7 @@
     - ClothingOuterPlainOveralls
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutOuter2
+      group: LoadoutOuter
 
 - type: loadout
   id: LoadoutClothingOuterMarsHoodie
@@ -56,7 +56,7 @@
     - ClothingOuterMarsHoodie
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutOuter2
+      group: LoadoutOuter
 
 - type: loadout
   id: LoadoutClothingOuterCyberJacketYellow
@@ -66,7 +66,7 @@
     - ClothingOuterCyberJacketYellow
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutOuter2
+      group: LoadoutOuter
 
 - type: loadout
   id: LoadoutClothingOuterCyberJacketPurple
@@ -76,7 +76,7 @@
     - ClothingOuterCyberJacketPurple
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutOuter2
+      group: LoadoutOuter
 
 - type: loadout
   id: LoadoutClothingOuterCyberJacketWhite
@@ -84,6 +84,26 @@
   cost: 0
   items:
     - ClothingOuterCyberJacketWhite
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutOuter
+
+- type: loadout
+  id: LoadoutClothingOuterSuitWitchRobes
+  category: Outer
+  cost: 1
+  items:
+    - ClothingOuterSuitWitchRobes
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutOuter2
+
+- type: loadout
+  id: LoadoutClothingOuterShackles
+  category: Outer
+  cost: 1
+  items:
+    -  ClothingOuterShackles
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutOuter2

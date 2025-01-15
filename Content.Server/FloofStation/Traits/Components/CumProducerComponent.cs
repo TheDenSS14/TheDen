@@ -21,7 +21,7 @@ public sealed partial class CumProducerComponent : Component
     [DataField]
     public FixedPoint2 MaxVolume = FixedPoint2.New(25);
 
-    [DataField]
+    [ViewVariables]
     public Entity<SolutionComponent>? Solution = null;
 
     [DataField]

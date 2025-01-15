@@ -1,7 +1,7 @@
 - type: gameMap
   id: Shoukou
   mapName: 'Shōkō'
-  mapPath: /Maps/TheDen/shoukou.yml # FloofStation
+  mapPath: /Maps/shoukou.yml # FloofStation
   minPlayers: 0
   maxPlayers: 60
   stations:
@@ -35,6 +35,9 @@
             Musician: [ 1, 1]
             Mime: [ 1, 1 ]
             Captain: [ 1, 1 ]
+            BlueshieldOfficer: [ 1, 1]
+            NanotrasenRepresentative: [ 1, 1 ]
+            AdministrativeAssistant: [ 1, 1 ]
             HeadOfPersonnel: [ 1, 1 ]
           #Engineering
             ChiefEngineer: [ 1, 1 ]
@@ -68,4 +71,5 @@
             SalvageSpecialist: [ 2, 4 ]
             MailCarrier: [ 1, 2 ]
             CargoTechnician: [ 2, 3 ]
-
+          # Silicon
+            StationAi: [ 1, 1 ]

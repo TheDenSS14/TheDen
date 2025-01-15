@@ -1,7 +1,7 @@
 - type: gameMap
   id: Tortuga
   mapName: 'Tortuga'
-  mapPath: /Maps/Floof/tortuga.yml # FloofStation
+  mapPath: /Maps/tortuga.yml
   minPlayers: 50
   stations:
     Tortuga:
@@ -25,6 +25,9 @@
             Librarian: [ 1, 1 ]
           #command
             Captain: [ 1, 1 ]
+            BlueshieldOfficer: [ 1, 1]
+            NanotrasenRepresentative: [ 1, 1 ]
+            AdministrativeAssistant: [ 1, 1 ]
           #engineering
             AtmosphericTechnician: [ 2, 3 ]
             ChiefEngineer: [ 1, 1 ]
@@ -71,3 +74,5 @@
             CargoTechnician: [ 2, 4 ]
             SalvageSpecialist: [ 3, 4 ]
             MailCarrier: [ 2, 2 ]
+          # Silicon
+            StationAi: [ 1, 1 ]

@@ -77,9 +77,11 @@
       smokable:
         maxVol: 40
         reagents:
-          - ReagentId: Nicotine
-            Quantity: 10
-          - ReagentId: Omnizine
+          - ReagentId: Iron # Floof - Herbals aren't nicotine
+            Quantity: 5
+          - ReagentId: Omnizine # Floof - Herbals aren't nicotine
+            Quantity: 5
+          - ReagentId: Dylovene # Floof - Herbals aren't nicotine
             Quantity: 5
 
 - type: entity

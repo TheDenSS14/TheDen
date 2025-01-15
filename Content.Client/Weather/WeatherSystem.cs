@@ -29,95 +29,96 @@ public sealed class WeatherSystem : SharedWeatherSystem
     {
         base.Run(uid, weather, weatherProto, frameTime);
 
-        var ent = _playerManager.LocalEntity;
+        // var ent = _playerManager.LocalEntity;
 
-        if (ent == null)
-            return;
+        // if (ent == null)
+        //     return;
 
-        var mapUid = Transform(uid).MapUid;
-        var entXform = Transform(ent.Value);
+        // var mapUid = Transform(uid).MapUid;
+        // var entXform = Transform(ent.Value);
 
-        // Maybe have the viewports manage this?
-        if (mapUid == null || entXform.MapUid != mapUid)
-        {
-            weather.Stream = _audio.Stop(weather.Stream);
-            return;
-        }
+        // // Maybe have the viewports manage this?
+        // if (mapUid == null || entXform.MapUid != mapUid)
+        // {
+        //     weather.Stream = _audio.Stop(weather.Stream);
+        //     return;
+        // }
 
-        if (!Timing.IsFirstTimePredicted || weatherProto.Sound == null)
-            return;
+        // if (!Timing.IsFirstTimePredicted || weatherProto.Sound == null
+        //     || weather.Stream is not null) // Don't ever generate more than one weather sound.
+        //     return;
 
-        var playStream = _audio.PlayGlobal(weatherProto.Sound, Filter.Local(), true);
-        weather.Stream ??= playStream!.Value.Entity;
+        // var playStream = _audio.PlayGlobal(weatherProto.Sound, Filter.Local(), true);
+        // weather.Stream ??= playStream!.Value.Entity;
 
-        var stream = weather.Stream.Value;
-        var comp = Comp<AudioComponent>(stream);
-        var occlusion = 0f;
+        // var stream = weather.Stream.Value;
+        // var comp = Comp<AudioComponent>(stream);
+        // var occlusion = 0f;
 
-        // Work out tiles nearby to determine volume.
-        if (TryComp<MapGridComponent>(entXform.GridUid, out var grid))
-        {
-            var gridId = entXform.GridUid.Value;
-            // Floodfill to the nearest tile and use that for audio.
-            var seed = _mapSystem.GetTileRef(gridId, grid, entXform.Coordinates);
-            var frontier = new Queue<TileRef>();
-            frontier.Enqueue(seed);
-            // If we don't have a nearest node don't play any sound.
-            EntityCoordinates? nearestNode = null;
-            var visited = new HashSet<Vector2i>();
+        // // Work out tiles nearby to determine volume.
+        // if (TryComp<MapGridComponent>(entXform.GridUid, out var grid))
+        // {
+        //     var gridId = entXform.GridUid.Value;
+        //     // Floodfill to the nearest tile and use that for audio.
+        //     var seed = _mapSystem.GetTileRef(gridId, grid, entXform.Coordinates);
+        //     var frontier = new Queue<TileRef>();
+        //     frontier.Enqueue(seed);
+        //     // If we don't have a nearest node don't play any sound.
+        //     EntityCoordinates? nearestNode = null;
+        //     var visited = new HashSet<Vector2i>();
 
-            while (frontier.TryDequeue(out var node))
-            {
-                if (!visited.Add(node.GridIndices))
-                    continue;
+        //     while (frontier.TryDequeue(out var node))
+        //     {
+        //         if (!visited.Add(node.GridIndices))
+        //             continue;
 
-                if (!CanWeatherAffect(grid, node))
-                {
-                    // Add neighbors
-                    // TODO: Ideally we pick some deterministically random direction and use that
-                    // We can't just do that naively here because it will flicker between nearby tiles.
-                    for (var x = -1; x <= 1; x++)
-                    {
-                        for (var y = -1; y <= 1; y++)
-                        {
-                            if (Math.Abs(x) == 1 && Math.Abs(y) == 1 ||
-                                x == 0 && y == 0 ||
-                                (new Vector2(x, y) + node.GridIndices - seed.GridIndices).Length() > 3)
-                            {
-                                continue;
-                            }
+        //         if (!CanWeatherAffect(grid, node))
+        //         {
+        //             // Add neighbors
+        //             // TODO: Ideally we pick some deterministically random direction and use that
+        //             // We can't just do that naively here because it will flicker between nearby tiles.
+        //             for (var x = -1; x <= 1; x++)
+        //             {
+        //                 for (var y = -1; y <= 1; y++)
+        //                 {
+        //                     if (Math.Abs(x) == 1 && Math.Abs(y) == 1 ||
+        //                         x == 0 && y == 0 ||
+        //                         (new Vector2(x, y) + node.GridIndices - seed.GridIndices).Length() > 3)
+        //                     {
+        //                         continue;
+        //                     }
 
-                            frontier.Enqueue(_mapSystem.GetTileRef(gridId, grid, new Vector2i(x, y) + node.GridIndices));
-                        }
-                    }
+        //                     frontier.Enqueue(_mapSystem.GetTileRef(gridId, grid, new Vector2i(x, y) + node.GridIndices));
+        //                 }
+        //             }
 
-                    continue;
-                }
+        //             continue;
+        //         }
 
-                nearestNode = new EntityCoordinates(entXform.GridUid.Value,
-                    node.GridIndices + grid.TileSizeHalfVector);
-                break;
-            }
+        //         nearestNode = new EntityCoordinates(entXform.GridUid.Value,
+        //             node.GridIndices + grid.TileSizeHalfVector);
+        //         break;
+        //     }
 
-            // Get occlusion to the targeted node if it exists, otherwise set a default occlusion.
-            if (nearestNode != null)
-            {
-                var entPos = _transform.GetMapCoordinates(entXform);
-                var nodePosition = nearestNode.Value.ToMap(EntityManager, _transform).Position;
-                var delta = nodePosition - entPos.Position;
-                var distance = delta.Length();
-                occlusion = _audio.GetOcclusion(entPos, delta, distance);
-            }
-            else
-            {
-                occlusion = 3f;
-            }
-        }
+        //     // Get occlusion to the targeted node if it exists, otherwise set a default occlusion.
+        //     if (nearestNode != null)
+        //     {
+        //         var entPos = _transform.GetMapCoordinates(entXform);
+        //         var nodePosition = nearestNode.Value.ToMap(EntityManager, _transform).Position;
+        //         var delta = nodePosition - entPos.Position;
+        //         var distance = delta.Length();
+        //         occlusion = _audio.GetOcclusion(entPos, delta, distance);
+        //     }
+        //     else
+        //     {
+        //         occlusion = 3f;
+        //     }
+        // }
 
-        var alpha = GetPercent(weather, uid);
-        alpha *= SharedAudioSystem.VolumeToGain(weatherProto.Sound.Params.Volume);
-        _audio.SetGain(stream, alpha, comp);
-        comp.Occlusion = occlusion;
+        // var alpha = GetPercent(weather, uid);
+        // alpha *= SharedAudioSystem.VolumeToGain(weatherProto.Sound.Params.Volume);
+        // _audio.SetGain(stream, alpha, comp);
+        // comp.Occlusion = occlusion;
     }
 
     protected override bool SetState(EntityUid uid, WeatherState state, WeatherComponent comp, WeatherData weather, WeatherPrototype weatherProto)

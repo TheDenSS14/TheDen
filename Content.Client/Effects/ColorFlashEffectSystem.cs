@@ -45,7 +45,9 @@ public sealed class ColorFlashEffectSystem : SharedColorFlashEffectSystem
             sprite.Color = component.Color;
         }
 
-        RemCompDeferred<ColorFlashEffectComponent>(uid);
+        // Floof - commented this out due to a race condition. It's quite complicated to explain;
+        // in short terms, don't do deferred component removal when dealing with concurrent tasks concerning the same component.
+        // RemCompDeferred<ColorFlashEffectComponent>(uid);
     }
 
     private Animation? GetDamageAnimation(EntityUid uid, Color color, SpriteComponent? sprite = null)
@@ -107,10 +109,11 @@ public sealed class ColorFlashEffectSystem : SharedColorFlashEffectSystem
                 continue;
             }
 
-            if (TryComp<ColorFlashEffectComponent>(ent, out var effect))
-            {
-                sprite.Color = effect.Color;
-            }
+            // Floof - commented out. This is handled by the animation complete event.
+            // if (TryComp<ColorFlashEffectComponent>(ent, out var effect))
+            // {
+            //     sprite.Color = effect.Color;
+            // }
 
             var animation = GetDamageAnimation(ent, color, sprite);
 

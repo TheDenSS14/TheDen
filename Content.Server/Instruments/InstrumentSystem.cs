@@ -252,7 +252,8 @@ public sealed partial class InstrumentSystem : SharedInstrumentSystem
             // Maybe a bit expensive but oh well GetBands is queued and has a timer anyway.
             // Make sure the instrument is visible, uses the Opaque collision group so this works across windows etc.
             if (!_interactions.InRangeUnobstructed(uid, entity, MaxInstrumentBandRange,
-                    CollisionGroup.Opaque, e => e == playerUid || e == originPlayer))
+                    CollisionGroup.Opaque,
+                    e => e == playerUid || e == originPlayer || !HasComp<OccluderComponent>(e))) // Floof - added the occluder check.
                 continue;
 
             if (!metadataQuery.TryGetComponent(playerUid, out var playerMetadata)

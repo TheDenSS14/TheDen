@@ -548,7 +548,7 @@ public sealed partial class DeepFryerSystem : SharedDeepfryerSystem
             if (!_containerSystem.Remove(removedItem, component.Storage))
                 return;
 
-            var user = EntityManager.GetEntity(args.Entity);
+            var user =  args.Actor; // Floof - fix;
 
             _handsSystem.TryPickupAnyHand(user, removedItem);
 
@@ -601,7 +601,7 @@ public sealed partial class DeepFryerSystem : SharedDeepfryerSystem
 
     private void OnScoopVat(EntityUid uid, DeepFryerComponent component, DeepFryerScoopVatMessage args)
     {
-        var user = EntityManager.GetEntity(args.Entity);
+        var user = args.Actor; // Floof - fix
 
         if (!TryGetActiveHandSolutionContainer(uid, user, out var heldItem, out var heldSolution,
                 out var transferAmount))
@@ -622,7 +622,7 @@ public sealed partial class DeepFryerSystem : SharedDeepfryerSystem
 
     private void OnClearSlagStart(EntityUid uid, DeepFryerComponent component, DeepFryerClearSlagMessage args)
     {
-        var user = EntityManager.GetEntity(args.Entity);
+        var user = args.Actor; // Floof - fix
 
         if (!TryGetActiveHandSolutionContainer(uid, user, out var heldItem, out var heldSolution,
                 out var transferAmount))
@@ -662,7 +662,7 @@ public sealed partial class DeepFryerSystem : SharedDeepfryerSystem
 
         _containerSystem.EmptyContainer(component.Storage);
 
-        var user = EntityManager.GetEntity(args.Entity);
+        var user = args.Actor; // Floof - fix
 
         _adminLogManager.Add(LogType.Action, LogImpact.Low,
             $"{ToPrettyString(user)} removed all items from {ToPrettyString(uid)}.");

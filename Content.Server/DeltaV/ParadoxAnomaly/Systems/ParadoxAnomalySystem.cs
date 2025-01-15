@@ -17,6 +17,8 @@ using Content.Shared.Roles.Jobs;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using System.Diagnostics.CodeAnalysis;
+using Content.Server.Consent;
+
 
 namespace Content.Server.DeltaV.ParadoxAnomaly.Systems;
 
@@ -26,6 +28,7 @@ namespace Content.Server.DeltaV.ParadoxAnomaly.Systems;
 /// </summary>
 public sealed class ParadoxAnomalySystem : EntitySystem
 {
+    [Dependency] private readonly ConsentSystem _consent = default!;
     [Dependency] private readonly GenericAntagSystem _genericAntag = default!;
     [Dependency] private readonly GhostRoleSystem _ghostRole = default!;
     [Dependency] private readonly IPrototypeManager _proto = default!;
@@ -79,6 +82,9 @@ public sealed class ParadoxAnomalySystem : EntitySystem
                 continue;
 
             if (_role.MindIsAntagonist(mindId))
+                continue;
+
+            if (_consent.HasConsent(uid, "NoClone"))
                 continue;
 
             // TODO: when metempsychosis real skip whoever has Karma

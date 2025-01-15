@@ -1,7 +1,7 @@
 - type: gameMap
   id: Pebble
   mapName: 'Pebble'
-  mapPath: /Maps/TheDen/pebble.yml # The Den
+  mapPath: /Maps/pebble.yml
   minPlayers: 0
   maxPlayers: 30
   stations:
@@ -21,6 +21,9 @@
           availableJobs:
           #service
             Captain: [ 1, 1 ]
+            BlueshieldOfficer: [ 1, 1]
+            NanotrasenRepresentative: [ 1, 1 ]
+            AdministrativeAssistant: [ 1, 1 ]
             HeadOfPersonnel: [ 1, 1 ]
             AdminAssistant: [ 1, 1 ]
             NanotrasenRepresentative: [ 1, 1 ]
@@ -76,3 +79,5 @@
             CargoTechnician: [ 2, 3 ]
           #civilian
             Passenger: [ -1, -1 ]
+          # Silicon
+            StationAi: [ 1, 1 ]
