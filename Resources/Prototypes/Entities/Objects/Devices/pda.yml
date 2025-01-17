@@ -379,6 +379,12 @@
   - type: Pda
     id: QuartermasterIDCard
     state: pda-qm
+    penSlot:
+      startingItem: PenLo
+      priority: -1
+      whitelist:
+        tags:
+        - Write
   - type: PdaBorderColor
     borderColor: "#e39751"
     accentVColor: "#a23e3e"
@@ -431,12 +437,6 @@
   - type: Pda
     id: CargoIDCard
     state: pda-cargo
-    penSlot:
-      startingItem: PenLo
-      priority: -1
-      whitelist:
-        tags:
-        - Write
   - type: PdaBorderColor
     borderColor: "#e39751"
   - type: Icon
