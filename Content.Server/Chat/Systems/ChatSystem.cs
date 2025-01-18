@@ -79,7 +79,7 @@ public sealed partial class ChatSystem : SharedChatSystem
     public const string DefaultAnnouncementSound = "/Audio/Announcements/announce.ogg";
     public const float DefaultObfuscationFactor = 0.2f; // Percentage of symbols in a whispered message that can be seen even by "far" listeners
     public readonly Color DefaultSpeakColor = Color.White;
-    public readonly string DefaultSubtleColor = "#856efa";
+    public readonly string DefaultSubtleColor = "#7dc2fa";
 
     private bool _loocEnabled = true;
     private bool _deadLoocEnabled;
