@@ -163,12 +163,21 @@
     - id: WeaponTurretXeno
       prob: 0.01
       orGroup: Weapons
+    - id: WeaponBaguette
+      prob: 0.01
+      orGroup: Weapons
     #clothing
     - id: ClothingUniformJumpsuitFamilyGuy
       prob: 0.05
       orGroup: Clothes
     - id: ClothingOuterHardsuitCBURN
       prob: 0.001
+      orGroup: Clothes
+    - id: ClothingOuterHardsuitSyndieReverseEngineered
+      prob: 0.001
+      orGroup: Clothes
+    - id: ClothingOuterHardsuitJuggernautReverseEngineered
+      prob: 0.0001
       orGroup: Clothes
     - id: ClothingOuterHardsuitBasic
       prob: 0.001
@@ -307,6 +316,15 @@
     - id: PlushieArachind
       prob: 0.01
       orGroup: Plushies
+    - id: PlushieGrim # TheDen
+      prob: 0.01
+      orGroup: Plushies
+    - id: PlushieVega # TheDen
+      prob: 0.01
+      orGroup: Plushies
+    - id: PlushieAlice # TheDen
+      prob: 0.01
+      orGroup: Plushies
     #useful
     - id: AmeJar
       prob: 0.01
@@ -344,6 +362,24 @@
     - id: FloraTreeLarge05
       prob: 0.01
       orGroup: Useful
+    - id: PenCentcom
+      prob: 0.001
+      orGroup: Useful
+    - id: OrganCobraHeart
+      prob: 0.001
+      orGroup: Useful
+    - id: OrganDragonLungs
+      prob: 0.001
+      orGroup: Useful
+    - id: OrganGoliathHeart
+      prob: 0.001
+      orGroup: Useful
+    - id: OrganLaserEyes
+      prob: 0.001
+      orGroup: Useful
+    - id: ClothingEyesGlassesThermal
+      prob: 0.001
+      orGroup: Useful
     #notuseful
     - id: LidSalami
       prob: 0.01
@@ -352,6 +388,15 @@
       prob: 0.01
       orGroup: NotUseful
     - id: MobLaserRaptor
+      prob: 0.01
+      orGroup: NotUseful
+    - id: MobCluwne
+      prob: 0.01
+      orGroup: NotUseful
+    - id: MobCobraSpace
+      prob: 0.01
+      orGroup: NotUseful
+    - id: LandMineModular
       prob: 0.01
       orGroup: NotUseful
     - id: DrinkNothing
