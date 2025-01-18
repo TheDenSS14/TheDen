@@ -1,7 +1,7 @@
 - type: trait
   id: HypnoticGaze
   category: Mental
-  points: -2
+  points: 0
   functions:
     - !type:TraitAddPsionics
       psionicPowers:
@@ -21,6 +21,7 @@
           jobs:
             - Chaplain
             - Librarian
+            - ForensicMantis
     - !type:CharacterLogicOrRequirement
       requirements:
         - !type:CharacterSpeciesRequirement
