@@ -38,9 +38,9 @@ chat-manager-entity-me-wrap-message = [italic]{ PROPER($entity) ->
      [true] {$entityName} {$message}[/italic]
     }
 
-chat-manager-entity-subtle-wrap-message = [italic]{ PROPER($entity) ->
-    *[false] the {$entityName} subtly {$message}[/italic]
-     [true] {$entityName} subtly {$message}[/italic]
+chat-manager-entity-subtle-wrap-message = [italic][color={$color}]{ PROPER($entity) ->
+    *[false] the {$entityName} {$message}[/color][/italic]
+     [true] {$entityName} {$message}[/color][/italic]
     }
 
 chat-manager-entity-looc-wrap-message = LOOC: {$entityName}: {$message}

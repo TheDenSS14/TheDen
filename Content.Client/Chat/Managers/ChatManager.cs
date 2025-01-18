@@ -61,6 +61,10 @@ namespace Content.Client.Chat.Managers
                     _consoleHost.ExecuteCommand($"subtle \"{CommandParsing.Escape(str)}\"");
                     break;
 
+                case ChatSelectChannel.SubtleOOC: // Den
+                    _consoleHost.ExecuteCommand($"subtleooc \"{CommandParsing.Escape(str)}\"");
+                    break;
+
                 case ChatSelectChannel.Dead:
                     if (_systems.GetEntitySystemOrNull<GhostSystem>() is {IsGhost: true})
                         goto case ChatSelectChannel.Local;

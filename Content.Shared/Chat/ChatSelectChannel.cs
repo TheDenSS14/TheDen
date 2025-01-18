@@ -47,6 +47,11 @@
         Subtle = ChatChannel.Subtle,
 
         /// <summary>
+        ///     Subtle - Floofstation
+        /// </summary>
+        SubtleOOC = ChatChannel.SubtleOOC,
+
+        /// <summary>
         ///     Deadchat
         /// </summary>
         Dead = ChatChannel.Dead,
