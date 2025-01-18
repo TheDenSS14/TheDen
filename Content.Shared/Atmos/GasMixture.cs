@@ -28,6 +28,7 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
+using System.Collections;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Runtime.CompilerServices;
@@ -43,7 +44,7 @@ namespace Content.Shared.Atmos
     /// </summary>
     [Serializable]
     [DataDefinition]
-    public sealed partial class GasMixture : IEquatable<GasMixture>, ISerializationHooks
+    public sealed partial class GasMixture : IEquatable<GasMixture>, ISerializationHooks, IEnumerable<(Gas gas, float moles)>
     {
         public static GasMixture SpaceGas => new() {Volume = Atmospherics.CellVolume, Temperature = Atmospherics.TCMB, Immutable = true};
 
@@ -279,6 +280,16 @@ namespace Content.Shared.Atmos
             return new GasMixtureStringRepresentation(TotalMoles, Temperature, Pressure, molesPerGas);
         }
 
+        GasEnumerator GetEnumerator()
+        {
+            return new GasEnumerator(this);
+        }
+
+        IEnumerator<(Gas gas, float moles)> IEnumerable<(Gas gas, float moles)>.GetEnumerator()
+        {
+            return GetEnumerator();
+        }
+
         public override bool Equals(object? obj)
         {
             if (obj is GasMixture mix)
@@ -319,6 +330,11 @@ namespace Content.Shared.Atmos
             return hashCode.ToHashCode();
         }
 
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return GetEnumerator();
+        }
+
         public GasMixture Clone()
         {
             if (Immutable)
@@ -331,6 +347,29 @@ namespace Content.Shared.Atmos
                 Volume = Volume,
             };
             return newMixture;
+        }
+
+        public struct GasEnumerator(GasMixture mixture) : IEnumerator<(Gas gas, float moles)>
+        {
+            private int _idx = -1;
+
+            public void Dispose()
+            {
+                // Nada.
+            }
+
+            public bool MoveNext()
+            {
+                return ++_idx < Atmospherics.TotalNumberOfGases;
+            }
+
+            public void Reset()
+            {
+                _idx = -1;
+            }
+
+            public (Gas gas, float moles) Current => ((Gas)_idx, mixture.Moles[_idx]);
+            object? IEnumerator.Current => Current;
         }
     }
 }
