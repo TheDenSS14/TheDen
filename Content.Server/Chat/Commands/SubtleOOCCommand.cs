@@ -38,7 +38,7 @@ namespace Content.Server.Chat.Commands
                 return;
 
             IoCManager.Resolve<IEntitySystemManager>().GetEntitySystem<ChatSystem>()
-                .TrySendInGameICMessage(playerEntity, "ooc: " + message, InGameICChatType.Subtle, ChatTransmitRange.NoGhosts, false, shell, player);
+                .TrySendInGameICMessage(playerEntity, "ooc: " + message, InGameICChatType.Subtle, ChatTransmitRange.NoGhosts, false, shell, player, color: "#7da0fa");
         }
     }
 }

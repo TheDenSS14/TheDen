@@ -186,7 +186,8 @@ public sealed partial class ChatSystem : SharedChatSystem
         string? nameOverride = null,
         bool checkRadioPrefix = true,
         bool ignoreActionBlocker = false,
-        LanguagePrototype? languageOverride = null
+        LanguagePrototype? languageOverride = null,
+        string? color = null
         )
     {
         if (HasComp<GhostComponent>(source))
@@ -280,7 +281,7 @@ public sealed partial class ChatSystem : SharedChatSystem
                 SendEntitySubtle(source, message, range, nameOverride, hideLog: hideLog, ignoreActionBlocker: ignoreActionBlocker);
                 break;
             case InGameICChatType.SubtleOOC:
-                SendEntitySubtle(source, $"ooc: {message}", range, nameOverride, hideLog: hideLog, ignoreActionBlocker: ignoreActionBlocker);
+                SendEntitySubtle(source, $"ooc: {message}", range, nameOverride, hideLog: hideLog, ignoreActionBlocker: ignoreActionBlocker, color: color);
                 break;
             //Nyano - Summary: case adds the telepathic chat sending ability.
             case InGameICChatType.Telepathic:
@@ -617,9 +618,13 @@ public sealed partial class ChatSystem : SharedChatSystem
         string? nameOverride,
         bool hideLog = false,
         bool ignoreActionBlocker = false,
-        NetUserId? author = null
+        NetUserId? author = null,
+        string? color = null
         )
     {
+        if (color == null)
+            color = DefaultSubtleColor;
+
         if (!_actionBlocker.CanEmote(source) && !ignoreActionBlocker)
             return;
 
@@ -631,7 +636,7 @@ public sealed partial class ChatSystem : SharedChatSystem
         var wrappedMessage = Loc.GetString("chat-manager-entity-subtle-wrap-message",
             ("entityName", name),
             ("entity", ent),
-            ("color", DefaultSubtleColor),
+            ("color", color),
             ("message", FormattedMessage.RemoveMarkup(action)));
 
         foreach (var (session, data) in GetRecipients(source, WhisperClearRange))
