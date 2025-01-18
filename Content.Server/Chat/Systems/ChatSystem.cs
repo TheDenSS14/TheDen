@@ -79,7 +79,6 @@ public sealed partial class ChatSystem : SharedChatSystem
     public const string DefaultAnnouncementSound = "/Audio/Announcements/announce.ogg";
     public const float DefaultObfuscationFactor = 0.2f; // Percentage of symbols in a whispered message that can be seen even by "far" listeners
     public readonly Color DefaultSpeakColor = Color.White;
-    public readonly string DefaultSubtleColor = "#7dc2fa";
 
     private bool _loocEnabled = true;
     private bool _deadLoocEnabled;
@@ -278,7 +277,7 @@ public sealed partial class ChatSystem : SharedChatSystem
                 SendEntityEmote(source, message, range, nameOverride, language, hideLog: hideLog, ignoreActionBlocker: ignoreActionBlocker);
                 break;
             case InGameICChatType.Subtle:
-                SendEntitySubtle(source, message, range, nameOverride, hideLog: hideLog, ignoreActionBlocker: ignoreActionBlocker);
+                SendEntitySubtle(source, message, range, nameOverride, hideLog: hideLog, ignoreActionBlocker: ignoreActionBlocker, color: color);
                 break;
             case InGameICChatType.SubtleOOC:
                 SendEntitySubtle(source, $"ooc: {message}", range, nameOverride, hideLog: hideLog, ignoreActionBlocker: ignoreActionBlocker, color: color);
@@ -622,9 +621,6 @@ public sealed partial class ChatSystem : SharedChatSystem
         string? color = null
         )
     {
-        if (color == null)
-            color = DefaultSubtleColor;
-
         if (!_actionBlocker.CanEmote(source) && !ignoreActionBlocker)
             return;
 
@@ -636,8 +632,8 @@ public sealed partial class ChatSystem : SharedChatSystem
         var wrappedMessage = Loc.GetString("chat-manager-entity-subtle-wrap-message",
             ("entityName", name),
             ("entity", ent),
-            ("color", color),
-            ("message", FormattedMessage.RemoveMarkup(action)));
+            ("color", color ?? DefaultSpeakColor.ToHex()),
+            ("message", FormattedMessage.RemoveMarkupPermissive(action)));
 
         foreach (var (session, data) in GetRecipients(source, WhisperClearRange))
         {

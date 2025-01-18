@@ -13,6 +13,8 @@ namespace Content.Server.Chat.Commands
         public string Description => "Perform an subtle action.";
         public string Help => "subtleooc <text>";
 
+        private const string SubtleOOCColor = "#ff7782";
+
         public void Execute(IConsoleShell shell, string argStr, string[] args)
         {
             if (shell.Player is not { } player)
@@ -38,7 +40,7 @@ namespace Content.Server.Chat.Commands
                 return;
 
             IoCManager.Resolve<IEntitySystemManager>().GetEntitySystem<ChatSystem>()
-                .TrySendInGameICMessage(playerEntity, "ooc: " + message, InGameICChatType.Subtle, ChatTransmitRange.NoGhosts, false, shell, player, color: "#7da0fa");
+                .TrySendInGameICMessage(playerEntity, message, InGameICChatType.SubtleOOC, ChatTransmitRange.NoGhosts, false, shell, player, color: SubtleOOCColor);
         }
     }
 }

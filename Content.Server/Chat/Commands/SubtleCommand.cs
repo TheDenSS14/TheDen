@@ -13,6 +13,8 @@ namespace Content.Server.Chat.Commands
         public string Description => "Perform an subtle action.";
         public string Help => "subtle <text>";
 
+        private const string SubtleColor = "#d3d3ff";
+
         public void Execute(IConsoleShell shell, string argStr, string[] args)
         {
             if (shell.Player is not { } player)
@@ -38,7 +40,7 @@ namespace Content.Server.Chat.Commands
                 return;
 
             IoCManager.Resolve<IEntitySystemManager>().GetEntitySystem<ChatSystem>()
-                .TrySendInGameICMessage(playerEntity, message, InGameICChatType.Subtle, ChatTransmitRange.NoGhosts, false, shell, player);
+                .TrySendInGameICMessage(playerEntity, message, InGameICChatType.Subtle, ChatTransmitRange.NoGhosts, false, shell, player, color: SubtleColor);
         }
     }
 }
