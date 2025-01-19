@@ -133,7 +133,6 @@ public sealed class CargoTest
                 }
                 catch (Exception e)
                 {
-                    Log.Info($"Prototype {proto} failed to spawn! Is your configuration invalid?");
                     return;
                 }
 
