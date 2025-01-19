@@ -2084,6 +2084,96 @@
   name: alice plushie
   description: This plushie was produced as part of central commands "cuddle command" propaganda plushie line. This one speaks in an unintelligible dialect whenever someone squeezes it.
   components:
-    - type: Sprite
-      sprite: Objects/Fun/toys.rsi
-      state: aliceplush
+  - type: Sprite
+    sprite: Objects/Fun/toys.rsi
+    state: aliceplush
+  - type: StaminaDamageOnHit
+    damage: 0.8
+  - type: EmitSoundOnActivate
+    sound:
+      path: /Audio/Items/alice1.ogg
+      params:
+        variation: 0.05
+  - type: EmitSoundOnUse
+    sound:
+      path: /Audio/Items/alice1.ogg
+  - type: EmitSoundOnCollide
+    sound:
+      path: /Audio/Items/alice3.ogg
+      params:
+        variation: 0.05
+  - type: EmitSoundOnLand
+    sound: 
+      path: /Audio/Items/alice3.ogg
+      params:
+        variation: 0.05
+  - type: UseDelay
+    delay: 1.5
+  - type: MeleeWeapon
+    wideAnimationRotation: -135
+    attackRate: 0.5
+    damage:
+      types:
+        Blunt: 0
+    soundHit:
+      path: /Audio/Items/alice3.ogg
+      params:
+        variation: 0.05
+    soundSwing:
+      path: /Audio/Items/alice3.ogg
+      params:
+        variation: 0.05
+    soundNoDamage:
+      path: /Audio/Items/alice3.ogg
+      params:
+        variation: 0.05
+
+- type: entity
+  parent: BasePlushie
+  id: PlushieTabi
+  name: tabi plushie
+  description: This plushie was produced as part of central commands "cuddle command" propaganda plushie line. Smells like carrots and pacifism implants.
+  components:
+  - type: Sprite
+    sprite: Objects/Fun/toys.rsi
+    state: tabiplushie
+  - type: StaminaDamageOnHit
+    damage: 0.8
+  - type: EmitSoundOnActivate
+    sound:
+      path: /Audio/Items/tabiwaow.ogg
+      params:
+        variation: 0.05
+  - type: EmitSoundOnUse
+    sound:
+      path: /Audio/Items/tabiwaow.ogg
+  - type: EmitSoundOnCollide
+    sound:
+      path: /Audio/Items/tabieep2.ogg
+      params:
+        variation: 0.05
+  - type: EmitSoundOnLand
+    sound: 
+      path: /Audio/Items/tabieep2.ogg
+      params:
+        variation: 0.05
+  - type: UseDelay
+    delay: 0.8
+  - type: MeleeWeapon
+    wideAnimationRotation: -135
+    attackRate: 0.5
+    damage:
+      types:
+        Blunt: 0
+    soundHit:
+      path: /Audio/Items/tabieep2.ogg
+      params:
+        variation: 0.05
+    soundSwing:
+      path: /Audio/Items/tabieep2.ogg
+      params:
+        variation: 0.05
+    soundNoDamage:
+      path: /Audio/Items/tabieep.ogg
+      params:
+        variation: 0.05

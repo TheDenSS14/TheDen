@@ -58,9 +58,6 @@ public sealed class ElectrocutionHUDVisualizerSystem : VisualizerSystem<Electroc
             if (!AppearanceSystem.TryGetData<bool>(uid, ElectrifiedVisuals.IsElectrified, out var electrified, appearanceComp))
                 continue;
 
-            if (!spriteComp.LayerExists(ElectrifiedLayers.HUD))
-                continue;
-
             if (electrified)
                 spriteComp.LayerSetVisible(ElectrifiedLayers.HUD, true);
             else
@@ -75,7 +72,6 @@ public sealed class ElectrocutionHUDVisualizerSystem : VisualizerSystem<Electroc
         var electrifiedQuery = AllEntityQuery<ElectrocutionHUDVisualsComponent, AppearanceComponent, SpriteComponent>();
         while (electrifiedQuery.MoveNext(out var uid, out var _, out var appearanceComp, out var spriteComp))
         {
-
             spriteComp.LayerSetVisible(ElectrifiedLayers.HUD, false);
         }
     }

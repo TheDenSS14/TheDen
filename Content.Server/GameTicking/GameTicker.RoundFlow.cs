@@ -578,7 +578,7 @@ namespace Content.Server.GameTicking
 
             DisallowLateJoin = false;
             _playerGameStatuses.Clear();
-            
+
             foreach (var session in _playerManager.Sessions)
                 _playerGameStatuses[session.UserId] = LobbyEnabled ? PlayerGameStatus.NotReadyToPlay : PlayerGameStatus.ReadyToPlay;
         }
@@ -650,8 +650,17 @@ namespace Content.Server.GameTicking
                 if (_webhookIdentifier == null)
                     return;
 
-                var mapName = _gameMapManager.GetSelectedMap()?.MapName ?? Loc.GetString("discord-round-notifications-unknown-map");
-                var content = Loc.GetString("discord-round-notifications-started", ("id", RoundId), ("map", mapName));
+                var mapName = _gameMapManager.GetSelectedMap()?.MapName ?? Loc.GetString("discord-round-notifications-unknown");
+                var preset = Loc.GetString(Preset?.ModeTitle ?? "discord-round-notifications-unknown");
+                var content = Loc.GetString(
+                    "discord-round-notifications-started",
+                    ("id", RoundId),
+                    ("map", mapName),
+                    ("preset", preset),
+                    ("players", _playerManager.PlayerCount),
+                    ("characters", PlayersJoinedRoundNormally))
+                    .Replace("\"", string.Empty);
+
 
                 var payload = new WebhookPayload { Content = content };
 

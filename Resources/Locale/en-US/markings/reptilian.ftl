@@ -106,6 +106,9 @@ marking-LizardHornsFloppyKoboldEars = Lizard Ears (Floppy Kobold)
 marking-LizardChestUnderbelly-body_underbelly = Lizard Chest (Underbelly)
 marking-LizardChestUnderbelly = Lizard Chest (Underbelly)
 
+marking-LizardFloofNeckfull = Neck Floof (Full)
+marking-LizardFloofNeckfull-floof_neckfull = Neck Floof
+
 marking-LizardChestBackspikes-body_backspikes = Lizard Back spikes (Four)
 marking-LizardChestBackspikes = Lizard Back spikes (Four)
 

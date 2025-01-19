@@ -928,6 +928,9 @@
       - SpeedLoaderMagnumRubber
       - SpeedLoaderMagnumIncendiary
       - SpeedLoaderMagnumUranium
+      - SpeedLoaderRifleHeavyRubber
+      - SpeedLoaderRifleHeavyIncendiary
+      - SpeedLoaderRifleHeavyUranium
       - TelescopicShield
       - TimerTrigger
       - Truncheon
@@ -1095,6 +1098,7 @@
     - HandheldGPSBasic # Floof - port to EE
     - HandheldStationMap # Floof - port to EE
     dynamicRecipes:
+    - HypoMini
     - ChemicalPayload
     - CryostasisBeaker
     - BluespaceBeaker
