@@ -13,11 +13,11 @@ reagent-desc-appleberryfizz = A sweet, delightful little drink.
 reagent-name-bande = b&e
 reagent-desc-bande = A mischevious, dark drink, with a splash of bodily fluids.
 
-reagent-name-bethanyscumlust = bethany's cum-lust
-reagent-desc-bethanyscumlust = Named after a very particularly fiesty member of the crew within the Floof sector.
+# reagent-name-bethanyscumlust = bethany's cum-lust
+# reagent-desc-bethanyscumlust = Named after a very particularly fiesty member of the crew within the Floof sector.
 
-reagent-name-bethanyssluttycumlust = bethany's slutty cum-lust
-reagent-desc-bethanyssluttycumlust = For those looking for an even more intense version.
+# reagent-name-bethanyssluttycumlust = bethany's slutty cum-lust
+# reagent-desc-bethanyssluttycumlust = For those looking for an even more intense version.
 
 reagent-name-blueballer = blue baller
 reagent-desc-blueballer = For those love-shy workers.

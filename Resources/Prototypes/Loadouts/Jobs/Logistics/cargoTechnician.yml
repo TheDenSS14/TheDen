@@ -34,20 +34,6 @@
   items:
     - ClothingOuterWinterCargo
 
-- type: loadout
-  id: LoadoutCargoOuterCoatCargoBomber
-  category: JobsLogisticsAUncategorized
-  cost: 1
-  exclusive: true
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutCargoTechnicianOuter
-    - !type:CharacterJobRequirement
-      jobs:
-        - CargoTechnician
-  items:
-    - ClothingOuterCoatCargoBomber
-
 # Shoes
 - type: loadout
   id: LoadoutCargoShoesBootsWinterCargo

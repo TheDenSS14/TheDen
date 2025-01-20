@@ -4,6 +4,7 @@ using Content.Client.Chat.Managers;
 using Content.Client.DiscordAuth;
 using Content.Client.Consent;
 using Content.Client.JoinQueue;
+using Content.Client.DebugMon;
 using Content.Client.Eui;
 using Content.Client.Flash;
 using Content.Client.Fullscreen;
@@ -37,6 +38,7 @@ using Robust.Shared.Configuration;
 using Robust.Shared.ContentPack;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Replays;
+using Robust.Shared.Timing;
 
 namespace Content.Client.Entry
 {
@@ -74,6 +76,8 @@ namespace Content.Client.Entry
         [Dependency] private readonly ILogManager _logManager = default!;
         [Dependency] private readonly JoinQueueManager _joinQueue = default!;
         [Dependency] private readonly DiscordAuthManager _discordAuth = default!;
+        [Dependency] private readonly ContentReplayPlaybackManager _replayMan = default!;
+        [Dependency] private readonly DebugMonitorManager _debugMonitorManager = default!;
 
         public override void Init()
         {
@@ -214,6 +218,14 @@ namespace Content.Client.Entry
             else
             {
                 _stateManager.RequestStateChange<MainScreen>();
+            }
+        }
+
+        public override void Update(ModUpdateLevel level, FrameEventArgs frameEventArgs)
+        {
+            if (level == ModUpdateLevel.FramePreEngine)
+            {
+                _debugMonitorManager.FrameUpdate();
             }
         }
     }

@@ -15,6 +15,8 @@ chat-language-RobotTalk-name = Binary
 chat-language-ValyrianStandard-name = Valyrian
 chat-language-Sign-name = Sign
 chat-language-Marish-name = Marish
+chat-language-ScugSign-name = Scug Sign
+chat-language-Arachnic-name = Arachnic
 
 # Animal Languages
 

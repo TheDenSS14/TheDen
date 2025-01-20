@@ -98,6 +98,7 @@ marking-HumanHairKusanagi = Kusanagi Hair
 marking-HumanHairLong = Long Hair 1
 marking-HumanHairLong2 = Long Hair 2
 marking-HumanHairLong3 = Long Hair 3
+marking-HumanHairLongBow = Long (Bow)
 marking-HumanHairLongWithBundles = Long With Bundles
 marking-HumanHairLongovereye = Long Over Eye
 marking-HumanHairLbangs = Long Bangs
