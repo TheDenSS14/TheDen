@@ -369,6 +369,14 @@
   - type: Icon
     sprite: DeltaV/Objects/Devices/pda.rsi # DeltaV - Give Chaplain PDA Epistemics colors
     state: pda-chaplain
+  - type: CartridgeLoader # Nyanotrasen - Glimmer Monitor
+    preinstalled:
+      - CrewManifestCartridge
+      - NotekeeperCartridge
+      - NewsReaderCartridge
+      - GlimmerMonitorCartridge
+      - NanoChatCartridge # DeltaV
+      - PsiWatchCartridge
 
 - type: entity
   name: logistics officer PDA # DeltaV - Logistics Department replacing Cargo
@@ -512,6 +520,7 @@
       - NewsReaderCartridge
       - GlimmerMonitorCartridge
       - NanoChatCartridge
+      - PsiWatchCartridge
 
 - type: entity
   parent: BasePDA
@@ -839,6 +848,7 @@
       - NewsReaderCartridge
       - GlimmerMonitorCartridge
       - NanoChatCartridge # DeltaV
+      - PsiWatchCartridge
 
 - type: entity
   parent: BasePDA
@@ -868,6 +878,7 @@
       - NewsReaderCartridge
       - GlimmerMonitorCartridge
       - NanoChatCartridge
+      - PsiWatchCartridge
 
 - type: entity
   parent: BasePDA
@@ -1060,6 +1071,7 @@
       - SecWatchCartridge # DeltaV: SecWatch replaces WantedList
       - StockTradingCartridge # Delta-V
       - NanoChatCartridge # DeltaV
+      - PsiWatchCartridge
 
 - type: entity
   parent: CentcomPDA
@@ -1435,6 +1447,9 @@
     accentVColor: "#8900c9"
   - type: Icon
     state: pda-seniorresearcher
+  - type: CartridgeLoader
+    preinstalled:
+    - PsiWatchCartridge
 
 - type: entity
   parent: BaseMedicalPDA
