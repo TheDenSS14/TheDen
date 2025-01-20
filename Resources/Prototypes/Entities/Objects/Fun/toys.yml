@@ -1998,21 +1998,15 @@
   - type: EmitSoundOnActivate
     sound:
       collection: Grimble
-      params:
-        variation: 0.05
   - type: EmitSoundOnUse
     sound:
       path: /Audio/Items/Toys/grimbleactive.ogg
   - type: EmitSoundOnCollide
     sound:
       collection: Grimble
-      params:
-        variation: 0.05
   - type: EmitSoundOnLand
     sound:
       collection: Grimble
-      params:
-        variation: 0.05
   - type: UseDelay
     delay: 1.5
   - type: MeleeWeapon
@@ -2023,16 +2017,10 @@
         Blunt: 0
     soundHit:
       collection: Grimble
-      params:
-        variation: 0.05
     soundSwing:
       collection: Grimble
-      params:
-        variation: 0.05
     soundNoDamage:
       collection: Grimble
-      params:
-        variation: 0.05
 
 - type: entity
   parent: BasePlushie
@@ -2058,21 +2046,15 @@
   - type: EmitSoundOnActivate
     sound:
       path: /Audio/Items/vegawoag.ogg
-      params:
-        variation: 0.05
   - type: EmitSoundOnUse
     sound:
       path: /Audio/Items/vegawoag.ogg
   - type: EmitSoundOnCollide
     sound:
       path: /Audio/Items/vegaheyy.ogg
-      params:
-        variation: 0.05
   - type: EmitSoundOnLand
     sound: 
       path: /Audio/Items/vegaheyy.ogg
-      params:
-        variation: 0.05
   - type: UseDelay
     delay: 1.5
   - type: MeleeWeapon
@@ -2083,16 +2065,10 @@
         Blunt: 0
     soundHit:
       path: /Audio/Items/vegaheyy.ogg
-      params:
-        variation: 0.05
     soundSwing:
       path: /Audio/Items/vegaheyy.ogg
-      params:
-        variation: 0.05
     soundNoDamage:
       path: /Audio/Items/vegaheyy.ogg
-      params:
-        variation: 0.05
 
 - type: entity
   parent: BasePlushie
@@ -2108,21 +2084,15 @@
   - type: EmitSoundOnActivate
     sound:
       path: /Audio/Items/alice1.ogg
-      params:
-        variation: 0.05
   - type: EmitSoundOnUse
     sound:
       path: /Audio/Items/alice1.ogg
   - type: EmitSoundOnCollide
     sound:
       path: /Audio/Items/alice3.ogg
-      params:
-        variation: 0.05
   - type: EmitSoundOnLand
     sound: 
       path: /Audio/Items/alice3.ogg
-      params:
-        variation: 0.05
   - type: UseDelay
     delay: 1.5
   - type: MeleeWeapon
@@ -2133,16 +2103,10 @@
         Blunt: 0
     soundHit:
       path: /Audio/Items/alice3.ogg
-      params:
-        variation: 0.05
     soundSwing:
       path: /Audio/Items/alice3.ogg
-      params:
-        variation: 0.05
     soundNoDamage:
       path: /Audio/Items/alice3.ogg
-      params:
-        variation: 0.05
 
 - type: entity
   parent: BasePlushie
@@ -2158,21 +2122,15 @@
   - type: EmitSoundOnActivate
     sound:
       path: /Audio/Items/tabiwaow.ogg
-      params:
-        variation: 0.05
   - type: EmitSoundOnUse
     sound:
       path: /Audio/Items/tabiwaow.ogg
   - type: EmitSoundOnCollide
     sound:
       path: /Audio/Items/tabieep2.ogg
-      params:
-        variation: 0.05
   - type: EmitSoundOnLand
     sound: 
       path: /Audio/Items/tabieep2.ogg
-      params:
-        variation: 0.05
   - type: UseDelay
     delay: 1.5
   - type: MeleeWeapon
@@ -2183,13 +2141,7 @@
         Blunt: 0
     soundHit:
       path: /Audio/Items/tabieep2.ogg
-      params:
-        variation: 0.05
     soundSwing:
       path: /Audio/Items/tabieep2.ogg
-      params:
-        variation: 0.05
     soundNoDamage:
       path: /Audio/Items/tabieep2.ogg
-      params:
-        variation: 0.05
