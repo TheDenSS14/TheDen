@@ -4,8 +4,8 @@ flavor-complex-anisette = like sweet anise
 flavor-complex-appleberryfizz = sweet and fizzy
 flavor-complex-bande = dark, devious, and sinful
 # sometimes i wish i got paid compensation for psychic damage
-flavor-complex-bethanyscumlust = like a cum slut's desires
-flavor-complex-bethanyssluttycumlust =  like a cum slut's wet dream
+# flavor-complex-bethanyscumlust = like a cum slut's desires
+# flavor-complex-bethanyssluttycumlust =  like a cum slut's wet dream
 flavor-complex-blooddrop = crimson lust
 flavor-complex-blueballer = like fruit and unrequited love
 flavor-complex-cafedecacao = sweet, chocolatey, and like coffee

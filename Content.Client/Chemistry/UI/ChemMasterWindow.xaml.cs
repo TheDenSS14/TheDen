@@ -27,13 +27,15 @@ namespace Content.Client.Chemistry.UI
         [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
         public event Action<BaseButton.ButtonEventArgs, ReagentButton, int>? OnReagentButtonPressed;
         public event Action<int>? OnSortMethodChanged;
+        public event Action<int>? OnTransferAmountChanged;
         public readonly Button[] PillTypeButtons;
 
         private Dictionary<string, ReagentCached> _reagents;
+        private const string TransferringAmountColor = "#ffa500";
         private ReagentSortMethod _currentSortMethod = ReagentSortMethod.Alphabetical;
         private ChemMasterBoundUserInterfaceState? _lastState;
         private string _lastAmountText = "50";
-        private int _amount = 50;
+        private int _transferAmount = 50;
 
 
         private const string PillsRsiPath = "/Textures/Objects/Specific/Chemistry/pills.rsi";
@@ -49,11 +51,9 @@ namespace Content.Client.Chemistry.UI
 
             _reagents = new();
 
-            InputAmountLineEdit.OnTextChanged += args => Validate(args.Text);
             InputAmountLineEdit.OnTextEntered += SetAmount;
             InputAmountLineEdit.OnFocusExit += SetAmount;
 
-            OutputAmountLineEdit.OnTextChanged += args => Validate(args.Text);
             OutputAmountLineEdit.OnTextEntered += SetAmount;
             OutputAmountLineEdit.OnFocusExit += SetAmount;
 
@@ -123,7 +123,6 @@ namespace Content.Client.Chemistry.UI
             var buttons = BufferInfo.Children
                 .Where(c => c is Button)
                 .Cast<Button>();
-            
             foreach (var button in buttons)
             {
                 var text = BufferTransferButton.Pressed ? "transfer" : "discard";
@@ -155,31 +154,36 @@ namespace Content.Client.Chemistry.UI
             UpdatePanelInfo(_lastState);
         }
 
-        private bool Validate(string newText)
+        private bool ValidateAmount(string newText)
         {
             if (string.IsNullOrWhiteSpace(newText) || !int.TryParse(newText, out int amount))
             {
-                InputAmountLineEdit.SetText(_lastAmountText);
-                OutputAmountLineEdit.SetText(_lastAmountText);
+                InputAmountLineEdit.SetText(string.Empty);
+                OutputAmountLineEdit.SetText(string.Empty);
                 return false;
             }
 
             _lastAmountText = newText;
-            _amount = amount;
+            _transferAmount = amount;
+            OnTransferAmountChanged?.Invoke(amount);
             return true;
         }
 
-        private void SetAmount(LineEdit.LineEditEventArgs args)
-        {
-            if (!Validate(args.Text))
-                return;
-
-            SetAmountText(_amount.ToString());
-        }
+        private void SetAmount(LineEdit.LineEditEventArgs args) =>
+            SetAmountText(args.Text);
 
         private void SetAmountText(string newText)
         {
-            var localizedAmount = Loc.GetString("chem-master-window-transferring-label", ("quantity", newText));
+            if (newText == _lastAmountText)
+                return;
+
+            if (!ValidateAmount(newText))
+                return;
+
+            var localizedAmount = Loc.GetString(
+                "chem-master-window-transferring-label",
+                ("quantity", newText),
+                ("color", TransferringAmountColor));
 
             InputAmountLabel.Text = localizedAmount;
             OutputAmountLabel.Text = localizedAmount;
@@ -192,7 +196,7 @@ namespace Content.Client.Chemistry.UI
         {
             var reagentTransferButton = new ReagentButton(text, id, isBuffer);
             reagentTransferButton.OnPressed += args
-                => OnReagentButtonPressed?.Invoke(args, reagentTransferButton, _amount);
+                => OnReagentButtonPressed?.Invoke(args, reagentTransferButton, _transferAmount);
             return reagentTransferButton;
         }
         /// <summary>
@@ -231,6 +235,7 @@ namespace Content.Client.Chemistry.UI
             // Ensure the Panel Info is updated, including UI elements for Buffer Volume, Output Container and so on
             UpdatePanelInfo(castState);
             HandleSortMethodChange(castState.SortMethod);
+            SetAmountText(castState.TransferringAmount.ToString());
 
             BufferCurrentVolume.Text = $" {castState.BufferCurrentVolume?.Int() ?? 0}u";
 
