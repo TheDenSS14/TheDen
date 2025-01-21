@@ -1,5 +1,18 @@
 # Mime masks
 - type: loadout
+  id: LoadoutServiceMimeMask
+  category: Items
+  cost: 0
+  exclusive: true
+  customColorTint: true
+  canBeHeirloom: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMimeMask
+  items:
+    - ClothingMaskMime
+
+- type: loadout
   id: LoadoutServiceMimeMaskSad
   category: Items
   cost: 0
