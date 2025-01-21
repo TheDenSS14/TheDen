@@ -42,9 +42,7 @@ public sealed class ShadowkinSystem : EntitySystem
     {
         base.Initialize();
         SubscribeLocalEvent<ShadowkinComponent, ComponentStartup>(OnInit);
-        SubscribeLocalEvent<ShadowkinComponent, ExaminedEvent>(OnExamined);
         SubscribeLocalEvent<ShadowkinComponent, OnMindbreakEvent>(OnMindbreak);
-        SubscribeLocalEvent<ShadowkinComponent, OnManaUpdateEvent>(OnManaUpdate);
         SubscribeLocalEvent<ShadowkinComponent, RejuvenateEvent>(OnRejuvenate);
         SubscribeLocalEvent<ShadowkinComponent, EyeColorInitEvent>(OnEyeColorChange);
         SubscribeLocalEvent<ShadowkinComponent, MobStateChangedEvent>(OnMobStateChanged); // Floofstation Edit
@@ -64,43 +62,6 @@ public sealed class ShadowkinSystem : EntitySystem
         component.OldEyeColor = humanoid.EyeColor;
         humanoid.EyeColor = component.BlackEyeColor;
         Dirty(uid, humanoid);
-    }
-
-    private void OnExamined(EntityUid uid, ShadowkinComponent component, ExaminedEvent args)
-    {
-        if (!args.IsInDetailsRange
-            || !TryComp<PsionicComponent>(uid, out var magic)
-            || HasComp<MindbrokenComponent>(uid))
-            return;
-
-        var severity = "shadowkin-power-" + ContentHelpers.RoundToLevels(magic.Mana, magic.MaxMana, 6);
-        var powerType = Loc.GetString(severity);
-
-        if (args.Examined == args.Examiner)
-            args.PushMarkup(Loc.GetString("shadowkin-power-examined-self",
-                ("power", Math.Floor(magic.Mana)),
-                ("powerMax", Math.Floor(magic.MaxMana)),
-                ("powerType", powerType)
-            ));
-        else
-            args.PushMarkup(Loc.GetString("shadowkin-power-examined-other",
-                ("target", uid),
-                ("powerType", powerType)
-            ));
-    }
-
-    private void OnManaUpdate(EntityUid uid, ShadowkinComponent component, ref OnManaUpdateEvent args)
-    {
-        if (!TryComp<PsionicComponent>(uid, out var magic))
-            return;
-
-        if (component.SleepManaRegen
-            && TryComp<SleepingComponent>(uid, out var sleep))
-            magic.ManaGainMultiplier = component.SleepManaRegenMultiplier;
-        else
-            magic.ManaGainMultiplier = 1;
-
-        Dirty(uid, magic); // Update Shadowkin Overlay.
     }
 
     private void OnMindbreak(EntityUid uid, ShadowkinComponent component, ref OnMindbreakEvent args)
@@ -132,57 +93,8 @@ public sealed class ShadowkinSystem : EntitySystem
             Dirty(uid, humanoid);
         }
 
-        EnsureComp<PsionicComponent>(uid, out var magic);
-        magic.Mana = 200;
-        magic.MaxMana = 200;
-        magic.ManaGain = 0.25f;
-        magic.MindbreakingFeedback = "shadowkin-blackeye";
-        magic.NoMana = "shadowkin-tired";
-    }
-
-    // FloofStation Edit
-    private void OnMobStateChanged(EntityUid uid, ShadowkinComponent component, MobStateChangedEvent args)
-    {
-        if (HasComp<MindbrokenComponent>(uid))
-            return;
-
-        if (args.NewMobState == MobState.Critical || args.NewMobState == MobState.Dead)
-        {
-            if (TryComp<InventoryComponent>(uid, out var inventoryComponent) && _inventorySystem.TryGetSlots(uid, out var slots))
-                foreach (var slot in slots)
-                    _inventorySystem.TryUnequip(uid, slot.Name, true, true, false, inventoryComponent);
-
-            SpawnAtPosition("ShadowkinShadow", Transform(uid).Coordinates);
-            SpawnAtPosition("EffectFlashShadowkinDarkSwapOff", Transform(uid).Coordinates);
-
-            var query = EntityQueryEnumerator<DarkHubComponent>();
-            while (query.MoveNext(out var target, out var portal))
-            {
-                var coords = Transform(target).Coordinates;
-                var newCoords = coords.Offset(_random.NextVector2(5));
-                for (var i = 0; i < MaxRandomTeleportAttempts; i++)
-                {
-                    var randVector = _random.NextVector2(5);
-                    newCoords = coords.Offset(randVector);
-                    if (!_lookup.GetEntitiesIntersecting(newCoords.ToMap(EntityManager, _transform), LookupFlags.Static).Any())
-                        break;
-                }
-
-                _joints.RecursiveClearJoints(uid);
-
-                _transform.SetCoordinates(uid, newCoords);
-                continue;
-            }
-
-            SpawnAtPosition("ShadowkinShadow", Transform(uid).Coordinates);
-            SpawnAtPosition("EffectFlashShadowkinDarkSwapOn", Transform(uid).Coordinates);
-
-            RaiseLocalEvent(uid, new RejuvenateEvent());
-            if (TryComp<PsionicComponent>(uid, out var magic))
-            {
-                magic.Mana = 0;
-                EnsureComp<ForcedSleepingComponent>(uid);
-            }
-        }
+        EnsureComp<PsionicComponent>(uid, out _);
+        if (_prototypeManager.TryIndex<PsionicPowerPrototype>("ShadowkinPowers", out var shadowkinPowers))
+            _psionicAbilitiesSystem.InitializePsionicPower(uid, shadowkinPowers);
     }
 }
