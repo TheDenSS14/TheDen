@@ -45,7 +45,6 @@ public sealed class ShadowkinSystem : EntitySystem
         SubscribeLocalEvent<ShadowkinComponent, OnMindbreakEvent>(OnMindbreak);
         SubscribeLocalEvent<ShadowkinComponent, RejuvenateEvent>(OnRejuvenate);
         SubscribeLocalEvent<ShadowkinComponent, EyeColorInitEvent>(OnEyeColorChange);
-        SubscribeLocalEvent<ShadowkinComponent, MobStateChangedEvent>(OnMobStateChanged); // Floofstation Edit
     }
 
     private void OnInit(EntityUid uid, ShadowkinComponent component, ComponentStartup args)
