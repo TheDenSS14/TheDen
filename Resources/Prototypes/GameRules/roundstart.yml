@@ -273,9 +273,8 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: RampingStationEventScheduler
-    startingChaosRatio: 0.01
-    chaosModifier: 1
-    shiftLengthModifier: 0.25
+    startingChaosRatio: 0.02
+    shiftLengthModifier: 0.3
 
 - type: entity
   id: HellshiftStationEventScheduler
