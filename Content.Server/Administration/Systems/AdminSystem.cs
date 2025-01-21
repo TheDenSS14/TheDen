@@ -120,12 +120,14 @@ public sealed class AdminSystem : EntitySystem
         Subs.CVar(_config, CCVars.BabyJailMaxOverallHours, OnBabyJailMaxOverallHoursChanged, true);
         Subs.CVar(_config, CCVars.PanicBunkerMinOverallHours, OnPanicBunkerMinOverallHoursChanged, true);
 
-        SubscribeLocalEvent<IdentityChangedEvent>(OnIdentityChanged);
         SubscribeLocalEvent<PlayerAttachedEvent>(OnPlayerAttached);
         SubscribeLocalEvent<PlayerDetachedEvent>(OnPlayerDetached);
         SubscribeLocalEvent<RoleAddedEvent>(OnRoleEvent);
         SubscribeLocalEvent<RoleRemovedEvent>(OnRoleEvent);
         SubscribeLocalEvent<RoundRestartCleanupEvent>(OnRoundRestartCleanup);
+
+        SubscribeLocalEvent<ActorComponent, EntityRenamedEvent>(OnPlayerRenamed);
+        SubscribeLocalEvent<ActorComponent, IdentityChangedEvent>(OnIdentityChanged);
     }
 
     private void OnRoundRestartCleanup(RoundRestartCleanupEvent ev)
@@ -174,12 +176,9 @@ public sealed class AdminSystem : EntitySystem
         return value ?? null;
     }
 
-    private void OnIdentityChanged(ref IdentityChangedEvent ev)
+    private void OnIdentityChanged(Entity<ActorComponent> ent, ref IdentityChangedEvent ev)
     {
-        if (!TryComp<ActorComponent>(ev.CharacterEntity, out var actor))
-            return;
-
-        UpdatePlayerList(actor.PlayerSession);
+        UpdatePlayerList(ent.Comp.PlayerSession);
     }
 
     private void OnRoleEvent(RoleEvent ev)
