@@ -1,0 +1,28 @@
+- type: entity
+  name: soul-shatter
+  parent: BaseWeaponShotgun
+  id: WeaponShotgunSoulshatter
+  description: A flashy, pocket-sized shotgun with a marble style grip. Provides no tactical advantage. Uses .50 shotgun shells.
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Weapons/Guns/Shotguns/soulshatter.rsi
+  - type: Clothing
+    sprite: _DEN/Objects/Weapons/Guns/Shotguns/soulshatter.rsi
+    slots:
+    - Back
+    - suitStorage
+  - type: Item
+    size: Small
+  - type: Gun
+    fireRate: 4
+    fireOnDropChance: 0.5
+  - type: BallisticAmmoProvider
+    capacity: 2
+    proto: null
+  - type: MeleeWeapon
+    attackRate: 1.2
+    damage:
+      types:
+        Blunt: 7.5
+  - type: DamageOtherOnHit
+    staminaCost: 6
