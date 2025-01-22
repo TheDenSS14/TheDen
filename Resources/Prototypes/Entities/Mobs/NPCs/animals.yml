@@ -2417,6 +2417,9 @@
     - Xeno
     understands:
     - Xeno
+  - type: FootstepModifier # Spider multi-step noise // TheDen
+    footstepSoundCollection:
+      collection: FootstepSpider
   - type: InteractionPopup
     successChance: 0.5
     interactSuccessString: petting-success-tarantula

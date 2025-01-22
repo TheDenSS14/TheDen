@@ -135,6 +135,9 @@
   - type: MovementSpeedModifier
     baseWalkSpeed : 3.0
     baseSprintSpeed : 5.0
+  - type: FootstepModifier # Spider multi-step noise // TheDen
+    footstepSoundCollection:
+      collection: FootstepSpider
   - type: FireVisuals
     sprite: Mobs/Effects/onfire.rsi
     normalState: Generic_mob_burning
