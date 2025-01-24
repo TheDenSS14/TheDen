@@ -63,7 +63,7 @@
       points: 2
       required: false
     Chest:
-      points: 1
+      points: 4 # imp 1<4
       required: false
     Genitals:
       points: 1
@@ -105,7 +105,7 @@
 - type: humanoidBaseSprite
   id: MobSlimeMarkingFollowSkin
   markingsMatchSkin: true
-  layerAlpha: 0.5
+  layerAlpha: 0.75 # imp 0.5<0.75
 
 - type: humanoidBaseSprite
   id: MobSlimeHead
