@@ -70,7 +70,7 @@ namespace Content.IntegrationTests.Tests
             "Europa",
             "Meta",
             "Baikal",
-            "Box"
+            "Box",
             "Ovni" //DeltaV
         };
 
