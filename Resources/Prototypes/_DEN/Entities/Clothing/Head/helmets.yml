@@ -1,0 +1,10 @@
+- type: entity
+  parent: ClothingHeadHelmetBasic
+  id: ClothingHeadHelmetSecurityCombat
+  name: security combat helmet
+  description: A repainted tactical helmet commonly used by mercenaries around the sol system, it has a distinct jungle smell.
+  components:
+  - type: Sprite
+    sprite: _DEN/Clothing/Head/Helmets/securitycombathelmet.rsi
+  - type: Clothing
+    sprite: _DEN/Clothing/Head/Helmets/securitycombathelmet.rsi
