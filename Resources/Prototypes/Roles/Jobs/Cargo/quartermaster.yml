@@ -9,8 +9,14 @@
   #    role: JobCargoTechnician
   #    time: 21600 #6 hrs
     - !type:CharacterPlaytimeRequirement
-      tracker: JobSalvageSpecialist # DeltaV - Logistics Department replacing Cargo
-      min: 7200 # The Den - 2 hour
+      tracker: JobSalvageSpecialist
+      min: 10800 #3 hrs
+    - !type:CharacterPlaytimeRequirement # DeltaV - Courier role time requirement
+      tracker: JobMailCarrier
+      min: 7200 # 2 hours
+    - !type:CharacterDepartmentTimeRequirement
+      department: Logistics # DeltaV - Logistics Department replacing Cargo
+      min: 43200 #DeltaV 12 hours
   weight: 10
   startingGear: QuartermasterGear
   icon: "JobIconQuarterMaster"
@@ -32,9 +38,14 @@
   - !type:AddComponentSpecial
     components:
       - type: CommandStaff
+  afterLoadoutSpecial:
+  - !type:ModifyEnvirosuitSpecial
+    charges: 8
 
 - type: startingGear
   id: QuartermasterGear
+  subGear:
+  - QuartermasterPlasmamanGear
   equipment:
     head: ClothingHeadHatBeretLogi
     jumpsuit: ClothingUniformJumpsuitQM
@@ -47,3 +58,11 @@
   innerClothingSkirt: ClothingUniformJumpskirtQM
   satchel: ClothingBackpackSatchelQuartermasterFilled
   duffelbag: ClothingBackpackDuffelQuartermasterFilled
+
+- type: startingGear
+  id: QuartermasterPlasmamanGear
+  parent: BasePlasmamanGear
+  equipment:
+    jumpsuit: ClothingUniformEnvirosuitQM
+    head: ClothingHeadEnvirohelmQM
+    gloves: ClothingHandsGlovesEnviroglovesCargo

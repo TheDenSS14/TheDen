@@ -42,6 +42,8 @@
 
 - type: startingGear
   id: ForensicMantisGear
+  subGear:
+  - ForensicMantisPlasmamanGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitMantis
     back: ClothingBackpackMantisFilled
@@ -57,3 +59,11 @@
   innerClothingSkirt: ClothingUniformSkirtMantis
   satchel: ClothingBackpackSatchelMantisFilled
   duffelbag: ClothingBackpackDuffelMantisFilled
+
+- type: startingGear
+  id: ForensicMantisPlasmamanGear
+  parent: BasePlasmamanGear
+  equipment:
+    jumpsuit: ClothingUniformEnvirosuitMantis
+    head: ClothingHeadEnvirohelmMantis
+    gloves: ClothingHandsGlovesEnviroglovesWhite

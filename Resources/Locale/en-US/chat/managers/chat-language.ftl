@@ -12,11 +12,13 @@ chat-language-Elyran-name = Elyran
 chat-language-Canilunzt-name = Canilunzt
 chat-language-Moffic-name = Moffic
 chat-language-RobotTalk-name = Binary
+chat-language-Calcic-name = Calcic
 chat-language-ValyrianStandard-name = Valyrian
 chat-language-Sign-name = Sign
 chat-language-Marish-name = Marish
 chat-language-ScugSign-name = Scug Sign
 chat-language-Arachnic-name = Arachnic
+chat-language-Chittin-name = Chittin
 
 # Animal Languages
 

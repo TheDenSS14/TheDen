@@ -1,6 +1,7 @@
 using Content.Shared.Species.Components;
 using Content.Shared.Actions;
 using Content.Shared.DoAfter;
+using Content.Shared.Humanoid;
 using Content.Shared.Popups;
 using Content.Shared.Stunnable;
 using Content.Shared.Mind;
@@ -22,6 +23,7 @@ public sealed partial class ReformSystem : EntitySystem
     [Dependency] private readonly SharedStunSystem _stunSystem = default!;
     [Dependency] private readonly IGameTiming _gameTiming = default!;
     [Dependency] private readonly SharedMindSystem _mindSystem = default!;
+    [Dependency] private readonly IEntityManager _ent = default!;
 
     public override void Initialize()
     {
@@ -43,6 +45,9 @@ public sealed partial class ReformSystem : EntitySystem
             return;
 
         _actionsSystem.AddAction(uid, ref comp.ActionEntity, out var reformAction, comp.ActionPrototype);
+
+        if (TryComp<HumanoidAppearanceComponent>(uid, out var appearance))
+            comp.Appearance = appearance;
 
         // See if the action should start with a delay, and give it that starting delay if so.
         if (comp.StartDelayed && reformAction != null && reformAction.UseDelay != null)
@@ -90,7 +95,32 @@ public sealed partial class ReformSystem : EntitySystem
 
         // Spawn a new entity
         // This is, to an extent, taken from polymorph. I don't use polymorph for various reasons- most notably that this is permanent.
+        var appearance = comp.Appearance;
         var child = Spawn(comp.ReformPrototype, Transform(uid).Coordinates);
+        var childAppearance = EnsureComp<HumanoidAppearanceComponent>(child);
+        childAppearance.Species = appearance.Species;
+        childAppearance.Age = appearance.Age;
+        childAppearance.Height = appearance.Height;
+        childAppearance.DisplayPronouns = appearance.DisplayPronouns;
+        childAppearance.Width = appearance.Width;
+        childAppearance.Height = appearance.Height;
+        childAppearance.Gender = appearance.Gender;
+        childAppearance.CyborgName = appearance.CyborgName;
+        childAppearance.StationAiName = appearance.StationAiName;
+        childAppearance.DisplayPronouns = appearance.DisplayPronouns;
+        childAppearance.BaseLayers = appearance.BaseLayers;
+        childAppearance.HiddenLayers = appearance.HiddenLayers;
+        childAppearance.EyeColor = appearance.EyeColor;
+        childAppearance.CachedFacialHairColor = appearance.CachedFacialHairColor;
+        childAppearance.MarkingSet = appearance.MarkingSet;
+        childAppearance.PermanentlyHidden = appearance.PermanentlyHidden;
+        childAppearance.ClientOldMarkings = appearance.ClientOldMarkings;
+        childAppearance.SkinColor = appearance.SkinColor;
+        childAppearance.CustomSpecieName = appearance.CustomSpecieName;
+        childAppearance.LastProfileLoaded = appearance.LastProfileLoaded;
+        childAppearance.CustomBaseLayers = appearance.CustomBaseLayers;
+        childAppearance.HideLayersOnEquip = appearance.HideLayersOnEquip;
+        Dirty(uid, childAppearance);
 
         // This transfers the mind to the new entity
         if (_mindSystem.TryGetMind(uid, out var mindId, out var mind))
@@ -106,7 +136,7 @@ public sealed partial class ReformSystem : EntitySystem
     }
 
     public sealed partial class ReformEvent : InstantActionEvent { }
-    
+
     [Serializable, NetSerializable]
     public sealed partial class ReformDoAfterEvent : SimpleDoAfterEvent { }
 }

@@ -1,3 +1,4 @@
+    using Content.Shared.Humanoid;
     using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype;
 using Robust.Shared.GameStates;
@@ -13,7 +14,7 @@ public sealed partial class ReformComponent : Component
     [DataField(required: true)]
     public EntProtoId ActionPrototype = default!;
 
-    [DataField, AutoNetworkedField] 
+    [DataField, AutoNetworkedField]
     public EntityUid? ActionEntity;
 
     /// <summary>
@@ -45,4 +46,10 @@ public sealed partial class ReformComponent : Component
     /// </summary>
     [DataField(required: true)]
     public EntProtoId ReformPrototype { get; private set; }
+
+    /// <summary>
+    /// The humanoid appearance that the Diona reform will take on.
+    /// </summary>
+    [DataField]
+    public HumanoidAppearanceComponent Appearance;
 }
