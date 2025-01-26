@@ -2165,16 +2165,16 @@
     damage: 0.8
   - type: EmitSoundOnActivate
     sound:
-      path: /Audio/Items/Toys/Plushie/PlushieJenn/jennplushuse1.ogg
+      path: /Audio/Items/Toys/Plushie/PlushieJenn/jennplushuse.ogg
   - type: EmitSoundOnUse
     sound:
-      path: /Audio/Items/Toys/Plushie/PlushieJenn/jennplushuse1.ogg
+      path: /Audio/Items/Toys/Plushie/PlushieJenn/jennplushuse.ogg
   - type: EmitSoundOnCollide
     sound:
-      path: /Audio/Items/Toys/Plushie/PlushieJenn/jennplushthrow1.ogg
+      path: /Audio/Items/Toys/Plushie/PlushieJenn/jennplushthrow.ogg
   - type: EmitSoundOnLand
     sound:
-      path: /Audio/Items/Toys/Plushie/PlushieJenn/jennplushthrow1.ogg
+      path: /Audio/Items/Toys/Plushie/PlushieJenn/jennplushthrow.ogg
   - type: UseDelay
     delay: 1.5
   - type: MeleeWeapon
@@ -2184,8 +2184,8 @@
       types:
         Blunt: 0
     soundHit:
-      path: /Audio/Items/Toys/Plushie/PlushieJenn/jennplushthrow1.ogg
+      path: /Audio/Items/Toys/Plushie/PlushieJenn/jennplushthrow.ogg
     soundSwing:
-      path: /Audio/Items/Toys/Plushie/PlushieJenn/jennplushthrow1.ogg
+      path: /Audio/Items/Toys/Plushie/PlushieJenn/jennplushthrow.ogg
     soundNoDamage:
-      path: /Audio/Items/Toys/Plushie/PlushieJenn/jennplushthrow1.ogg
+      path: /Audio/Items/Toys/Plushie/PlushieJenn/jennplushthrow.ogg
