@@ -372,6 +372,7 @@
       species:
         - Harpy # Harpies already have talons
         - Arachnid # Apparently they have a "piercing" bite
+        - Chitinid # They've got the bites too
     - !type:CharacterTraitRequirement
       inverted: true
       traits:
@@ -497,11 +498,14 @@
           inverted: true
           species:
             - Arachne
+            - Arachnid
             - Harpy
             - Felinid
             - Reptilian
             - Shadowkin
             - Rodentia
+            - Chitinid
+            - Tajaran
         - !type:CharacterTraitRequirement
           traits:
             - NaturalWeaponRemoval
