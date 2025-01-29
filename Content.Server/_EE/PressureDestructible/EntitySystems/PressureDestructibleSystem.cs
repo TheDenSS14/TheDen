@@ -78,8 +78,6 @@ public sealed class PressureDestructibleSystem : EntitySystem
                 if (tilePressure == 0)
                     continue;
 
-                Log.Info($"{tilePressure}");
-
                 if (difference > greatestDifference)
                     greatestDifference = difference;
 
