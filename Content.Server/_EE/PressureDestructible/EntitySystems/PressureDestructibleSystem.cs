@@ -11,16 +11,16 @@ namespace Content.Server._EE.PressureDestructible.EntitySystems;
 
 
 /// <summary>
-/// This handles destroying objects based on pressure if it has a PressureDestructible component
+/// This handles destroying entities based on pressure if it has a PressureDestructible component
 /// </summary>
 public sealed class PressureDestructibleSystem : EntitySystem
 {
-    [Robust.Shared.IoC.Dependency] private TransformSystem _transform = default!;
-    [Robust.Shared.IoC.Dependency] private AtmosphereSystem _atmosphere = default!;
-    [Robust.Shared.IoC.Dependency] private DamageableSystem _damageable = default!;
-    [Robust.Shared.IoC.Dependency] private IGameTiming _gameTiming = default!;
+    [Dependency] private TransformSystem _transform = default!;
+    [Dependency] private AtmosphereSystem _atmosphere = default!;
+    [Dependency] private DamageableSystem _damageable = default!;
+    [Dependency] private IGameTiming _gameTiming = default!;
 
-    private FixedPoint2 _maxDamage = FixedPoint2.New(50);
+    private FixedPoint2 _maxDamage = FixedPoint2.New(20);
 
     public override void Update(float frameTime)
     {
@@ -49,7 +49,7 @@ public sealed class PressureDestructibleSystem : EntitySystem
                 continue;
 
             var adjacentTiles = new HashSet<TileAtmosphere>();
-            var directionsToCheck = new AtmosDirection[] {AtmosDirection.North, AtmosDirection.East, AtmosDirection.South, AtmosDirection.West};
+            var directionsToCheck = new[] { AtmosDirection.North, AtmosDirection.East, AtmosDirection.South, AtmosDirection.West };
 
             foreach (var direction in directionsToCheck)
             {
