@@ -53,7 +53,7 @@
   - type: RadiationBlocker
     resistance: 10
   - type: PressureDestructible
-    maxWithstandingPressure: 75000.0
+    maxPressureDifferential: 75000.0
 
 - type: entity
   id: UraniumReinforcedWindowDirectional
@@ -103,7 +103,7 @@
   - type: StaticPrice
     price: 70
   - type: PressureDestructible
-    maxWithstandingPressure: 7500.0
+    maxPressureDifferential: 7500.0
 
 - type: entity
   parent: ReinforcedUraniumWindow
