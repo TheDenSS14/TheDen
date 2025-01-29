@@ -20,7 +20,7 @@ public sealed class PressureDestructibleSystem : EntitySystem
     [Dependency] private DamageableSystem _damageable = default!;
     [Dependency] private IGameTiming _gameTiming = default!;
 
-    private FixedPoint2 _maxDamage = FixedPoint2.New(20);
+    private FixedPoint2 _maxDamage = FixedPoint2.New(5);
 
     public override void Update(float frameTime)
     {
