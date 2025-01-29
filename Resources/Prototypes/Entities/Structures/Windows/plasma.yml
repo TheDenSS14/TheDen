@@ -52,6 +52,8 @@
     price: 60
   - type: RadiationBlocker
     resistance: 4
+  - type: PressureDestructible
+    maxPressureDifferential: 3000
 
 - type: entity
   id: PlasmaWindowDirectional
