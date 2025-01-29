@@ -91,7 +91,7 @@
     allowedVerbs:
     - KnockOn
   - type: PressureDestructible
-    maxWithstandPressure: 2000.0
+    maxPressureDifferential: 2000.0
 
 - type: entity
   id: WindowRCDResistant
