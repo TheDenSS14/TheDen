@@ -26,5 +26,5 @@ public sealed partial class PressureDestructibleComponent : Component
     public TimeSpan NextUpdate { get; set; }
 
     [DataField]
-    public TimeSpan CheckInterval { get; set; } = TimeSpan.FromSeconds(3);
+    public TimeSpan CheckInterval { get; set; } = TimeSpan.FromSeconds(10);
 }

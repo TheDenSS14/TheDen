@@ -20,7 +20,7 @@ public sealed class PressureDestructibleSystem : EntitySystem
     [Dependency] private DamageableSystem _damageable = default!;
     [Dependency] private IGameTiming _gameTiming = default!;
 
-    private FixedPoint2 _maxDamage = FixedPoint2.New(5);
+    private FixedPoint2 _damage = FixedPoint2.New(5);
 
     public override void Update(float frameTime)
     {
@@ -88,12 +88,10 @@ public sealed class PressureDestructibleSystem : EntitySystem
             if (greatestDifference < pressureDestructible.MaxPressureDifferential || HasComp<PressureDestructibleImmuneComponent>(uid))
                 continue;
 
-            var damageMultiplier = greatestDifference != 0 ? greatestDifference / pressureDestructible.MaxPressureDifferential : 1f;
-            var damage = _maxDamage * damageMultiplier;
             var damageSpecifier = damageable.Damage;
             var currentDamage = damageSpecifier["Blunt"];
 
-            damageSpecifier.DamageDict["Blunt"] = currentDamage + damage * FixedPoint2.New(damageMultiplier);
+            damageSpecifier.DamageDict["Blunt"] = currentDamage + _damage;
             _damageable.SetDamage(uid, damageable, damageSpecifier);
         }
     }
