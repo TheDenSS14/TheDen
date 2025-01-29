@@ -87,9 +87,7 @@ public sealed class PressureDestructibleSystem : EntitySystem
                     largestPressureTile = tileAtmos;
             }
 
-            Log.Info($"Greatest difference: {greatestDifference}");
-            Log.Info($"Max pressure differential: {pressureDestructible.MaxPressureDifferential}");
-            if (greatestDifference < pressureDestructible.MaxPressureDifferential)
+            if (greatestDifference < pressureDestructible.MaxPressureDifferential || HasComp<PressureDestructibleImmuneComponent>(uid))
                 continue;
 
             var damageMultiplier = greatestDifference != 0 ? greatestDifference / pressureDestructible.MaxPressureDifferential : 1f;
@@ -98,7 +96,6 @@ public sealed class PressureDestructibleSystem : EntitySystem
             var currentDamage = damageSpecifier["Blunt"];
 
             damageSpecifier.DamageDict["Blunt"] = currentDamage + damage * FixedPoint2.New(damageMultiplier);
-            Log.Info($"new damage: {damageSpecifier.GetTotal()}");
             _damageable.SetDamage(uid, damageable, damageSpecifier);
         }
     }
