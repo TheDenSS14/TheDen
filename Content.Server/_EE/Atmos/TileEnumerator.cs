@@ -15,18 +15,16 @@ public struct TileEnumerator
         Tiles = tiles;
     }
 
-    public bool MoveNext([NotNullWhen(true)] out TileAtmosphere? tileAtmosphere, [NotNullWhen(true)] out int? index)
+    public bool MoveNext([NotNullWhen(true)] out TileAtmosphere? tileAtmosphere)
     {
         while (Index < Tiles.Length)
         {
             tileAtmosphere = Tiles[Index++];
-            index = Index;
 
             if (tileAtmosphere != null)
                 return true;
         }
 
-        index = null;
         tileAtmosphere = null;
         return false;
     }

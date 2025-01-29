@@ -55,6 +55,8 @@
     trackAllDamage: true
     damageOverlay:
       sprite: Structures/Windows/cracks.rsi
+  - type: PressureDestructible
+    maxPressureDifferential: 30000.0
 
 - type: entity
   parent: ReinforcedWindow

@@ -1,7 +1,7 @@
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom;
 
 
-namespace Content.Server._EE.PressureDestructible;
+namespace Content.Server._EE.PressureDestructible.Components;
 
 
 /// <summary>
