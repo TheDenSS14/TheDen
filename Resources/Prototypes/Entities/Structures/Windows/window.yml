@@ -192,6 +192,8 @@
   - type: InteractionVerbs
     allowedVerbs:
     - KnockOn
+  - type: PressureDestructible
+    maxWithstandingPressure: 3000.0
 
 - type: entity
   id: WindowDirectionalRCDResistant
