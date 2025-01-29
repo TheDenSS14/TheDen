@@ -20,11 +20,11 @@ public sealed partial class PressureDestructibleComponent : Component
     ///     How much damage, as a percentage, will the entity take?
     /// </summary>
     [DataField]
-    public float DamagePercentage { get; set; } = 0.3f;
+    public int Damage { get; set; } = 20;
 
     [DataField("nextUpdate", customTypeSerializer: typeof(TimeOffsetSerializer))]
     public TimeSpan NextUpdate { get; set; }
 
     [DataField]
-    public TimeSpan CheckInterval { get; set; } = TimeSpan.FromSeconds(10);
+    public TimeSpan CheckInterval { get; set; } = TimeSpan.FromSeconds(5);
 }

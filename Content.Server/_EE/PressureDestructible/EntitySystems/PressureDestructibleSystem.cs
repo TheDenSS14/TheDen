@@ -20,8 +20,6 @@ public sealed class PressureDestructibleSystem : EntitySystem
     [Dependency] private DamageableSystem _damageable = default!;
     [Dependency] private IGameTiming _gameTiming = default!;
 
-    private FixedPoint2 _damage = FixedPoint2.New(5);
-
     public override void Update(float frameTime)
     {
         base.Update(frameTime);
@@ -91,7 +89,7 @@ public sealed class PressureDestructibleSystem : EntitySystem
             var damageSpecifier = damageable.Damage;
             var currentDamage = damageSpecifier["Blunt"];
 
-            damageSpecifier.DamageDict["Blunt"] = currentDamage + _damage;
+            damageSpecifier.DamageDict["Blunt"] = currentDamage + pressureDestructible.Damage;
             _damageable.SetDamage(uid, damageable, damageSpecifier);
         }
     }
