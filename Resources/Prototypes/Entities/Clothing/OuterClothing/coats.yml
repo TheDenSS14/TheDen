@@ -8,6 +8,8 @@
     sprite: Clothing/OuterClothing/Coats/bomber.rsi
   - type: Clothing
     sprite: Clothing/OuterClothing/Coats/bomber.rsi
+  - type: TemperatureProtection
+    coefficient: 0.1
 
 - type: entity
   parent: [ClothingOuterStorageBase, AllowSuitStorageClothing]
@@ -23,6 +25,8 @@
     contents:
     - id: SmokingPipeFilledTobacco
     - id: FlippoEngravedLighter
+  - type: TemperatureProtection
+    coefficient: 0.1
   - type: Armor #same as regular sec armor
     modifiers:
       coefficients:
@@ -61,6 +65,8 @@
     sprite: Clothing/OuterClothing/Coats/cap_trenchcoat.rsi
   - type: Clothing
     sprite: Clothing/OuterClothing/Coats/cap_trenchcoat.rsi
+  - type: TemperatureProtection
+    coefficient: 0.1
 
 - type: entity
   abstract: true
