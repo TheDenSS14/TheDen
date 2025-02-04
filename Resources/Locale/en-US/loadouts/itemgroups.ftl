@@ -798,3 +798,7 @@ character-item-group-LoadoutReporterUniforms = Reporter Uniforms
 character-item-group-TraitsLanguagesBasic = Basic Languages
 character-item-group-TraitsLanguagesRacial = Racial Languages
 character-item-group-TraitsAccents = Accents
+
+# Traits - Mind Or Machine
+character-item-group-TraitsMind = Mind Over Machine
+character-item-group-TraitsMachine = Machine Over Mind
