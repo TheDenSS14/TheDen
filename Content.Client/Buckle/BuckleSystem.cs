@@ -3,6 +3,7 @@ using Content.Shared.Buckle;
 using Content.Shared.Buckle.Components;
 using Content.Shared.Rotation;
 using Robust.Client.GameObjects;
+using Robust.Client.Player;
 using Robust.Shared.GameStates;
 using Robust.Shared.Timing;
 
@@ -26,7 +27,19 @@ internal sealed class BuckleSystem : SharedBuckleSystem
         SubscribeLocalEvent<BuckleComponent, UnbuckledEvent>(OnUnbuckledEvent);
     }
 
-     /// <summary>
+    // Floof section - update the draw depths of all buckled entities
+    public override void FrameUpdate(float frameTime)
+    {
+        var query = EntityQueryEnumerator<StrapComponent>();
+        while (query.MoveNext(out var uid, out var strap))
+        {
+            UpdateBucklesDrawDepth(uid, strap);
+        }
+        query.Dispose();
+    }
+    // Floof section end
+
+    /// <summary>
     /// Is the strap entity already rotated north? Lower the draw depth of the buckled entity.
     /// </summary>
     private void OnBuckledEvent(Entity<BuckleComponent> ent, ref BuckledEvent args)
@@ -35,7 +48,7 @@ internal sealed class BuckleSystem : SharedBuckleSystem
             !TryComp<SpriteComponent>(ent.Owner, out var buckledSprite))
             return;
 
-        if (Transform(args.Strap.Owner).LocalRotation.GetCardinalDir() == Direction.North)
+        if (GetEntityOrientation(args.Strap.Owner) == Direction.North)  // Floof - replaced with a method call
         {
             ent.Comp.OriginalDrawDepth ??= buckledSprite.DrawDepth;
             buckledSprite.DrawDepth = strapSprite.DrawDepth - 1;
@@ -53,7 +66,8 @@ internal sealed class BuckleSystem : SharedBuckleSystem
         if (ent.Comp.OriginalDrawDepth.HasValue)
         {
             buckledSprite.DrawDepth = ent.Comp.OriginalDrawDepth.Value;
-            ent.Comp.OriginalDrawDepth = null;
+            // Floof - do not reset original draw depth here because prediction FUCKING SUCKS
+            // ent.Comp.OriginalDrawDepth = null;
         }
     }
 
@@ -69,6 +83,11 @@ internal sealed class BuckleSystem : SharedBuckleSystem
         if (args.NewRotation == args.OldRotation)
             return;
 
+        // Floof - everything that was below was separated into that method in order to allow calling it from other places
+        UpdateBucklesDrawDepth(uid, component);
+    }
+
+    private void UpdateBucklesDrawDepth(EntityUid uid, StrapComponent component) {
         if (!TryComp<SpriteComponent>(uid, out var strapSprite))
             return;
 
