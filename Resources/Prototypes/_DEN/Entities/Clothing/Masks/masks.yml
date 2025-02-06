@@ -8,3 +8,21 @@
     sprite: _DEN/Clothing/Mask/securitycombatgasmask.rsi
   - type: Clothing
     sprite: _DEN/Clothing/Mask/securitycombatgasmask.rsi
+
+- type: entity
+  parent: ClothingMaskGas
+  id: ClothingMaskGasDrone
+  name: rubber gas mask
+  description: A gas mask made of dark rubber with a tinted visor, comes with a hood to hide other features.
+  components:
+  - type: Sprite
+    sprite: _DEN/Clothing/Mask/dronegasmask.rsi
+  - type: Clothing
+    sprite: _DEN/Clothing/Mask/dronegasmask.rsi
+  - type: HideLayerClothing
+    slots:
+    - Hair
+    - HeadTop
+    - HeadSide
+    - Snout
+    hideOnToggle: true
