@@ -89,13 +89,7 @@ public sealed class ColorFlashEffectSystem : SharedColorFlashEffectSystem
                 continue;
             }
 
-            if (!TryComp(ent, out AnimationPlayerComponent? player))
-            {
-                player = (AnimationPlayerComponent) _factory.GetComponent(typeof(AnimationPlayerComponent));
-                player.Owner = ent;
-                player.NetSyncEnabled = false;
-                AddComp(ent, player);
-            }
+            var player = EnsureComp<AnimationPlayerComponent>(ent);
 
             // Need to stop the existing animation first to ensure the sprite color is fixed.
             // Otherwise we might lerp to a red colour instead.
@@ -109,24 +103,20 @@ public sealed class ColorFlashEffectSystem : SharedColorFlashEffectSystem
                 continue;
             }
 
-            // Floof - commented out. This is handled by the animation complete event.
-            // if (TryComp<ColorFlashEffectComponent>(ent, out var effect))
-            // {
-            //     sprite.Color = effect.Color;
-            // }
+            // having to check lifestage because trycomp is special needs and may return a component which was shut down via RemCompDeferred.
+            // EnsureComp isn't, but we want to get the Color value stored in the component, and EnsureComp would overwrite it with the default value.
+            if (TryComp<ColorFlashEffectComponent>(ent, out var effect) && effect.LifeStage <= ComponentLifeStage.Running)
+            {
+                sprite.Color = effect.Color;
+            }
+
 
             var animation = GetDamageAnimation(ent, color, sprite, ev.AnimationLength);
 
-            if (animation == null)
+            if (animation == null)  
                 continue;
 
-            if (!TryComp(ent, out ColorFlashEffectComponent? comp))
-            {
-                comp = (ColorFlashEffectComponent) _factory.GetComponent(typeof(ColorFlashEffectComponent));
-                comp.Owner = ent;
-                comp.NetSyncEnabled = false;
-                AddComp(ent, comp);
-            }
+            var comp = EnsureComp<ColorFlashEffectComponent>(ent);
 
             comp.Color = sprite.Color;
             _animation.Play((ent, player), animation, AnimationKey);

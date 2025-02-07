@@ -174,7 +174,7 @@ namespace Content.Server.Carrying
             // Also check if the interacted-with entity is on the carrier and cancel the event if not
             var targetParent = Transform(args.Target.Value).ParentUid;
             if (args.Target.Value != component.Carrier && targetParent != component.Carrier && targetParent != uid)
-                args.Cancelled = true;
+                args.Cancel();
         }
 
         /// <summary>

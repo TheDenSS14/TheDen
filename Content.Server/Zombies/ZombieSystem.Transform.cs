@@ -71,7 +71,7 @@ namespace Content.Server.Zombies
         /// </summary>
         private void OnDamageChanged(EntityUid uid, ZombifyOnDeathComponent component, MobStateChangedEvent args)
         {
-            if (args.NewMobState == MobState.Dead)
+            if (args.IsDead())
             {
                 ZombifyEntity(uid, args.Component);
             }
@@ -142,7 +142,7 @@ namespace Content.Server.Zombies
             melee.Angle = 0.0f;
             melee.SoundHit = zombiecomp.BiteSound;
 
-            if (mobState.CurrentState == MobState.Alive)
+            if (mobState.CurrentState.IsAlive())
             {
                 // Groaning when damaged
                 EnsureComp<EmoteOnDamageComponent>(target);
