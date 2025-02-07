@@ -87,6 +87,44 @@
   items:
     - WeaponLeverChester
 
+- type: loadout
+  id: LoadoutMagazineMagnumMagnumLeverRifle
+  category: JobsCommandBlueshieldOfficer
+  cost: 2
+  exclusive: true
+  requirements:
+    - !type:CharacterDepartmentTimeRequirement
+      department: Security
+      min: 3600 # 1 hours
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSecurityEquipment
+    - !type:CharacterJobRequirement
+      jobs:
+        - BlueshieldOfficer
+    - !type:CharacterAgeRequirement
+      min: 21
+  items:
+    - MagazineMagnumLeverRifle
+
+- type: loadout
+  id: LoadoutMagazineMagnumMagnumLeverRifleSpare
+  category: JobsCommandBlueshieldOfficer
+  cost: 4
+  exclusive: true
+  requirements:
+    - !type:CharacterDepartmentTimeRequirement
+      department: Security
+      min: 3600 # 1 hours
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSecurityEquipment
+    - !type:CharacterJobRequirement
+      jobs:
+        - BlueshieldOfficer
+    - !type:CharacterAgeRequirement
+      min: 21
+  items:
+    - MagazineMagnumLeverRifle
+
 # Eyes
 
 # Gloves
