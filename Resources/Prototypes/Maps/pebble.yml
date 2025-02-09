@@ -21,7 +21,7 @@
           availableJobs:
           #service
             Captain: [ 1, 1 ]
-            BlueshieldOfficer: [ 1, 1]
+            BlueshieldOfficer: [ 1, 1 ]
             NanotrasenRepresentative: [ 1, 1 ]
             AdministrativeAssistant: [ 1, 1 ]
             HeadOfPersonnel: [ 1, 1 ]
@@ -30,7 +30,7 @@
             Boxer: [ 2, 2 ]
             Chef: [ 2 , 2 ]
             Clown: [ 1, 1 ]
-            Lawyer: [ 1, 1 ]
+            Lawyer: [ 1, 2 ]
             Musician: [ 1, 1 ]
             Janitor: [ 1, 2 ]
             Mime: [ 1, 1 ]
@@ -38,7 +38,7 @@
             ServiceWorker: [ 1, 2 ]
           #engineering
             ChiefEngineer: [ 1, 1 ]
-            AtmosphericTechnician: [ 1, 2]
+            AtmosphericTechnician: [ 1, 2 ]
             StationEngineer: [ 2, 3 ]
             SeniorEngineer: [ 1, 1 ]
             TechnicalAssistant: [ 2, 2 ]
@@ -76,5 +76,8 @@
             CargoTechnician: [ 2, 3 ]
           #civilian
             Passenger: [ -1, -1 ]
+          #justice
+            ChiefJustice: [ 1, 1 ]
+            Clerk: [ 1, 1 ]
           # Silicon
             StationAi: [ 1, 1 ]
