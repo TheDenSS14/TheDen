@@ -18,7 +18,7 @@
     wideAnimationRotation: -90
     soundHit:
       path: "/Audio/Items/drill_hit.ogg"
-    attackRate: .75 # 4 seconds between each attack for a drill seemed too much
+    attackRate: 0.25 # 4 seconds between each attack for a drill seemed too much
     damage:
       groups:
         Brute: 9
@@ -45,7 +45,7 @@
     wideAnimationRotation: -90
     soundHit:
       path: "/Audio/Items/drill_hit.ogg"
-    attackRate: 4
+    attackRate: 0.25
     damage:
       groups:
         Brute: 18

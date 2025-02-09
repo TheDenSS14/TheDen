@@ -66,7 +66,7 @@
       path: "/Audio/Items/drill_hit.ogg"
     attackRate: 0.25
     range: 1.5
-    heavyStaminaCost: 0.7
+    heavyStaminaCost: 0.4
     damage:
       groups:
         Brute: 3
@@ -97,7 +97,7 @@
     wideAnimationRotation: -90
     soundHit:
       path: "/Audio/Items/drill_hit.ogg"
-    heavyStaminaCost: 0.55 # More efficient so less stamina needed to use
+    heavyStaminaCost: 0.2 # More efficient so less stamina needed to use
     damage:
       groups:
         Brute: 6

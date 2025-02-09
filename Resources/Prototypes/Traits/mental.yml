@@ -285,6 +285,15 @@
         - !type:CharacterTraitRequirement
           traits:
             - AnomalousPositronics
+    - !type:CharacterLogicOrRequirement
+      requirements:
+        - !type:CharacterSpeciesRequirement
+          species:
+            - Shadowkin
+        - !type:CharacterTraitRequirement
+          traits:
+          inverted: true
+            - ShadowkinBlackeye
     - !type:CharacterJobRequirement
       inverted: true
       jobs:
@@ -317,6 +326,15 @@
         - !type:CharacterTraitRequirement
           traits:
             - AnomalousPositronics
+    - !type:CharacterLogicOrRequirement
+      requirements:
+        - !type:CharacterSpeciesRequirement
+          species:
+            - Shadowkin
+        - !type:CharacterTraitRequirement
+          traits:
+          inverted: true
+            - ShadowkinBlackeye
     - !type:CharacterJobRequirement
       inverted: true
       jobs:
@@ -352,6 +370,15 @@
         - !type:CharacterTraitRequirement
           traits:
             - AnomalousPositronics
+    - !type:CharacterLogicOrRequirement
+      requirements:
+        - !type:CharacterSpeciesRequirement
+          species:
+            - Shadowkin
+        - !type:CharacterTraitRequirement
+          traits:
+          inverted: true
+            - ShadowkinBlackeye
     - !type:CharacterJobRequirement
       inverted: true
       jobs:
@@ -387,6 +414,15 @@
         - !type:CharacterTraitRequirement
           traits:
             - AnomalousPositronics
+    - !type:CharacterLogicOrRequirement
+      requirements:
+        - !type:CharacterSpeciesRequirement
+          species:
+            - Shadowkin
+        - !type:CharacterTraitRequirement
+          traits:
+          inverted: true
+            - ShadowkinBlackeye
   functions:
     - !type:TraitAddPsionics
       psionicPowers:
