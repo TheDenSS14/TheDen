@@ -26,3 +26,7 @@ consent-Hypno-desc = Allow yourself to be hypnotized.
 
 consent-NoClone-name = Disallow Paradox Anomaly
 consent-NoClone-desc = Disallow yourself to be the target of a paradox anomaly clone.
+
+consent-MindSwap-name = Mind Swap
+consent-MindSwap-desc = Should mind swap effect you?
+consent-MindSwap-no-consent = { CAPITALIZE(POSS-ADJ($target)) } mind rejects your advances.

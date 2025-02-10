@@ -1,3 +1,4 @@
+using Content.Server.Consent;
 using Content.Shared.Actions;
 using Content.Shared.Abilities.Psionics;
 using Content.Shared.Speech;
@@ -13,7 +14,10 @@ using Content.Server.GameTicking;
 using Content.Shared.Mind;
 using Content.Shared.Actions.Events;
 using Content.Server.DoAfter;
+using Content.Shared.Consent;
 using Content.Shared.DoAfter;
+using Robust.Shared.Prototypes;
+
 
 namespace Content.Server.Abilities.Psionics
 {
@@ -26,6 +30,9 @@ namespace Content.Server.Abilities.Psionics
         [Dependency] private readonly MindSystem _mindSystem = default!;
         [Dependency] private readonly MetaDataSystem _metaDataSystem = default!;
         [Dependency] private readonly DoAfterSystem _doAfterSystem = default!;
+        [Dependency] private readonly ConsentSystem _consentSystem = default!;
+
+        private ProtoId<ConsentTogglePrototype> _mindSwapConsent = "MindSwap";
 
         public override void Initialize()
         {
@@ -45,6 +52,15 @@ namespace Content.Server.Abilities.Psionics
             if (!_psionics.OnAttemptPowerUse(args.Performer, "mind swap")
                 || !(TryComp<DamageableComponent>(args.Target, out var damageable) && damageable.DamageContainerID == "Biological"))
                 return;
+
+            if (!_consentSystem.HasConsent(args.Target, _mindSwapConsent))
+            {
+                _popupSystem.PopupEntity(
+                    Loc.GetString("consent-MindSwap-no-consent",
+                        ("target", args.Target)),
+                    args.Performer);
+                return;
+            }
 
             _doAfterSystem.TryStartDoAfter(new DoAfterArgs(EntityManager, args.Performer, component.UseDelay, new MindSwapPowerDoAfterEvent(), args.Performer, target: args.Target)
             {
