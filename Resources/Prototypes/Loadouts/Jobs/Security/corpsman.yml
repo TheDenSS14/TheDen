@@ -91,6 +91,34 @@
   items:
     - ClothingHandsGlovesNitrile
 
+- type: loadout
+  id: LoadoutClothingHandsGlovesLatex
+  category: JobsSecurityCorpsman
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutCorpsmanGloves
+    - !type:CharacterJobRequirement
+      jobs:
+        - Brigmedic
+  items:
+    - ClothingHandsGlovesLatex
+
+- type: loadout
+  id: LoadoutClothingHandsGlovesChemist
+  category: JobsSecurityCorpsman
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutCorpsmanGloves
+    - !type:CharacterJobRequirement
+      jobs:
+        - Brigmedic
+  items:
+    - ClothingHandsGlovesChemist
+
 # Head
 - type: loadout
   id: LoadoutClothingHeadHatBeretBrigmedic
@@ -137,7 +165,62 @@
   items:
     - BedsheetBrigmedic
 
+- type: loadout
+  id: LoadoutClothingNeckStethoscope
+  category: JobsSecurityCorpsman
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutCorpsmanNeck
+    - !type:CharacterJobRequirement
+      jobs:
+        - Brigmedic
+  items:
+    - ClothingNeckStethoscope
+
 # Mask
+- type: loadout
+  id: LoadoutClothingMaskGasSecurity
+  category: JobsSecurityCorpsman
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutCorpsmanMask
+    - !type:CharacterJobRequirement
+      jobs:
+        - Brigmedic
+  items:
+    - ClothingMaskGasSecurity
+
+- type: loadout
+  id: LoadoutClothingMaskSterile
+  category: JobsSecurityCorpsman
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutCorpsmanMask
+    - !type:CharacterJobRequirement
+      jobs:
+        - Brigmedic
+  items:
+    - ClothingMaskSterile
+
+- type: loadout
+  id: LoadoutClothingMaskBreathMedical
+  category: JobsSecurityCorpsman
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutCorpsmanMask
+    - !type:CharacterJobRequirement
+      jobs:
+        - Brigmedic
+  items:
+    - ClothingMaskBreathMedical
 
 # Outer
 

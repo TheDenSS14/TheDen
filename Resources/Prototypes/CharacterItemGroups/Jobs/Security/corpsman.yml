@@ -38,6 +38,10 @@
   items:
     - type: loadout
       id: LoadoutClothingHandsGlovesNitrile
+    - type: loadout
+      id: LoadoutClothingHandsGlovesLatex
+    - type: loadout
+      id: LoadoutClothingHandsGlovesChemist
 
 - type: characterItemGroup
   id: LoadoutCorpsmanHead
@@ -59,12 +63,19 @@
   items:
     - type: loadout
       id: LoadoutBedsheetBrigmedic
+    - type: loadout
+      id: LoadoutClothingNeckStethoscope
 
-#- type: characterItemGroup
-#  id: LoadoutCorpsmanMask
-#  maxItems: 1
-#  items:
-#
+- type: characterItemGroup
+  id: LoadoutCorpsmanMask
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutClothingMaskGasSecurity
+    - type: loadout
+      id: LoadoutClothingMaskSterile
+    - type: loadout
+      id: LoadoutClothingMaskBreathMedical
 #- type: characterItemGroup
 #  id: LoadoutCorpsmanOuter
 #  maxItems: 1

@@ -348,7 +348,7 @@
 - type: trait
   id: XenoglossyPower
   category: Mental
-  points: -10
+  points: -7
   requirements:
     - !type:CharacterLogicOrRequirement
       requirements:
@@ -387,6 +387,48 @@
     - !type:TraitAddPsionics
       psionicPowers:
         - XenoglossyPower
+
+- type: trait
+  id: MindSwapPower
+  category: Mental
+  points: -6
+  requirements:
+    - !type:CharacterLogicOrRequirement
+      requirements:
+        - !type:CharacterTraitRequirement
+          traits:
+            - LatentPsychic
+        - !type:CharacterJobRequirement
+          jobs:
+            - Chaplain
+            - ResearchDirector
+            - ForensicMantis
+    - !type:CharacterLogicOrRequirement
+      requirements:
+        - !type:CharacterSpeciesRequirement
+          inverted: true
+          species:
+            - IPC
+        - !type:CharacterTraitRequirement
+          traits:
+            - AnomalousPositronics
+    - !type:CharacterLogicOrRequirement
+      requirements:
+        - !type:CharacterSpeciesRequirement
+          species:
+            - Shadowkin
+        - !type:CharacterTraitRequirement
+          inverted: true
+          traits:
+            - ShadowkinBlackeye
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Librarian
+  functions:
+    - !type:TraitAddPsionics
+      psionicPowers:
+        - MindSwapPower
 
 - type: trait
   id: PsychognomyPower
