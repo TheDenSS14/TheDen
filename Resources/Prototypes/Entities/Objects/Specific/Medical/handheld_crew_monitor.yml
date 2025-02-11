@@ -89,6 +89,11 @@
     useRate: 10
   - type: StaticPrice
     price: 750
+  - type: Tag
+    tags: []
+  - type: CrewMonitoringConsole # DeltaV - disable crew crit / dead beeping alerts
+    alertsEnabled: false
+
 
 - type: entity
   id: SpyCrewMonitorEmpty
@@ -113,6 +118,8 @@
     sprite: Objects/Specific/Medical/syndihandheldcrewmonitor.rsi
   - type: PowerCellDraw
     useRate: 40
+  - type: CrewMonitoringConsole # DeltaV - disable crew crit / dead beeping alerts
+    alertsEnabled: false
 
 - type: entity
   id: SyndiCrewMonitorEmpty
