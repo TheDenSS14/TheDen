@@ -13,3 +13,25 @@
       departments:
         - Security
         - Command
+
+- type: loadout
+  id: LoadoutClothingUniformJumpsuitCatsuit
+  category: Uniform
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingUniformJumpsuitCatsuit
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutUniformsCivilian2
+
+- type: loadout
+  id: LoadoutClothingUniformJumpsuitCatsuitShiny
+  category: Uniform
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingUniformJumpsuitCatsuitShiny
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutUniformsCivilian2
