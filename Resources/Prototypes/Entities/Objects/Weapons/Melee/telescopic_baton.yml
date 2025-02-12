@@ -56,6 +56,11 @@
         enum.TelescopicBatonVisuals.Layer:
           True: { state: icon }
           False: { state: icon-off }
+  - type: InteractionVerbs
+    allowedVerbs:
+    - HugObject
+    - KissObject
+    - LickObject
 
 - type: entity
   parent: TelescopicBaton

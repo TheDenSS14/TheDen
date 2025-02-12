@@ -43,6 +43,11 @@
     sprite: Objects/Weapons/Melee/pickaxe.rsi
     storedRotation: -45
   - type: UseDelay
+  - type: InteractionVerbs
+    allowedVerbs:
+    - HugObject
+    - KissObject
+    - LickObject
 
 - type: entity
   name: mining drill
@@ -81,6 +86,11 @@
         Structural: 15
   - type: ThrowingAngle
     angle: 270
+  - type: InteractionVerbs
+    allowedVerbs:
+    - HugObject
+    - KissObject
+    - LickObject
 
 - type: entity
   name: diamond tipped mining drill
@@ -123,6 +133,11 @@
     color: "#ffeead"
     enabled: false
     radius: 4
+  - type: InteractionVerbs
+    allowedVerbs:
+    - HugObject
+    - KissObject
+    - LickObject
 
 - type: entity
   parent: BaseWeaponCrusher

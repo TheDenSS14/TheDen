@@ -46,6 +46,11 @@
       path: /Audio/Medical/Surgery/scalpel1.ogg
     endSound:
       path: /Audio/Medical/Surgery/scalpel2.ogg
+  - type: InteractionVerbs
+    allowedVerbs:
+    - HugObject
+    - KissObject
+    - LickObject
 
 - type: entity
   name: kitchen knife

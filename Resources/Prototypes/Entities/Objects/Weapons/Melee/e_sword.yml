@@ -104,6 +104,11 @@
       path: /Audio/Weapons/eblade1.ogg
       params:
         variation: 0.250
+  - type: InteractionVerbs
+    allowedVerbs:
+    - HugObject
+    - KissObject
+    - LickObject
 
 - type: entity
   name: antique energy sword

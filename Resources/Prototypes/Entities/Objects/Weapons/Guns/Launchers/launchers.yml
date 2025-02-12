@@ -34,6 +34,11 @@
   - type: DamageOtherOnHit
     staminaCost: 14
   - type: Execution
+  - type: InteractionVerbs
+    allowedVerbs:
+    - HugObject
+    - KissObject
+    - LickObject
 
 - type: entity
   name: china lake
