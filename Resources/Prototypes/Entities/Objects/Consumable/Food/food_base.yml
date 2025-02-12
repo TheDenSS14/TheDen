@@ -14,6 +14,10 @@
   - type: Sprite
   - type: StaticPrice
     price: 0
+  - type: InteractionVerbs
+    allowedVerbs:
+    - KissObject
+    - LickObject
 
 # This base type is used to cover all of the "obvious" things that should be doable to open-package food.
 # Practically this means injection.
@@ -47,3 +51,7 @@
           True: {state: "icon-open"}
           False: {state: "icon"}
   - type: Openable
+  - type: InteractionVerbs
+    allowedVerbs:
+    - KissObject
+    - LickObject

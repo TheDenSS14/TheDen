@@ -213,6 +213,10 @@
     group: Glass
   - type: RadiationBlocker
     resistance: 1
+  - type: InteractionVerbs
+    allowedVerbs:
+    - KnockOn
+    - LickObject
   - type: Tag
     tags:
       - GlassAirlock

@@ -26,6 +26,11 @@
         Blunt: 3
   - type: UseDelay
     delay: 1
+  - type: InteractionVerbs
+    allowedVerbs:
+    - HugObject
+    - KissObject
+    - LickObject
 
 - type: entity
   name: cane blade
@@ -52,6 +57,11 @@
     tags:
       - CaneBlade
   - type: DisarmMalus
+  - type: InteractionVerbs
+    allowedVerbs:
+    - HugObject
+    - KissObject
+    - LickObject
 
 - type: entity
   parent: Cane

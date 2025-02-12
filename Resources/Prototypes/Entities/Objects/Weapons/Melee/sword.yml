@@ -17,6 +17,11 @@
   - type: Utensil
     types:
       - Knife
+  - type: InteractionVerbs
+    allowedVerbs:
+    - HugObject
+    - KissObject
+    - LickObject
 
 - type: entity
   name: captain's sabre
