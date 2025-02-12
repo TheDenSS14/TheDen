@@ -65,6 +65,6 @@ public sealed class DebrainedSystem : EntitySystem
     // Floofstation
     private void OnConsciousAttempt(Entity<DebrainedComponent> ent, ref ConsciousAttemptEvent args)
     {
-        args.Cancel();
+        args.Cancelled = true;
     }
 }
