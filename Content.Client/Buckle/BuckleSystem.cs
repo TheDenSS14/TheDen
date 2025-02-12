@@ -3,13 +3,19 @@ using Content.Shared.Buckle;
 using Content.Shared.Buckle.Components;
 using Content.Shared.Rotation;
 using Robust.Client.GameObjects;
+using Robust.Client.Player;
 using Robust.Shared.GameStates;
+using Robust.Shared.Timing;
+
 
 namespace Content.Client.Buckle;
 
 internal sealed class BuckleSystem : SharedBuckleSystem
 {
     [Dependency] private readonly RotationVisualizerSystem _rotationVisualizerSystem = default!;
+    [Dependency] private readonly IPlayerManager _player = default!; // Floof
+    [Dependency] private readonly IGameTiming _timing = default!; // Floof
+    [Dependency] private readonly SharedTransformSystem _xform = default!; // Floof
 
     public override void Initialize()
     {
@@ -21,7 +27,19 @@ internal sealed class BuckleSystem : SharedBuckleSystem
         SubscribeLocalEvent<BuckleComponent, UnbuckledEvent>(OnUnbuckledEvent);
     }
 
-     /// <summary>
+    // Floof section - update the draw depths of all buckled entities
+    public override void FrameUpdate(float frameTime)
+    {
+        var query = EntityQueryEnumerator<StrapComponent>();
+        while (query.MoveNext(out var uid, out var strap))
+        {
+            UpdateBucklesDrawDepth(uid, strap);
+        }
+        query.Dispose();
+    }
+    // Floof section end
+
+    /// <summary>
     /// Is the strap entity already rotated north? Lower the draw depth of the buckled entity.
     /// </summary>
     private void OnBuckledEvent(Entity<BuckleComponent> ent, ref BuckledEvent args)
@@ -30,7 +48,7 @@ internal sealed class BuckleSystem : SharedBuckleSystem
             !TryComp<SpriteComponent>(ent.Owner, out var buckledSprite))
             return;
 
-        if (Transform(args.Strap.Owner).LocalRotation.GetCardinalDir() == Direction.North)
+        if (GetEntityOrientation(args.Strap.Owner) == Direction.North)  // Floof - replaced with a method call
         {
             ent.Comp.OriginalDrawDepth ??= buckledSprite.DrawDepth;
             buckledSprite.DrawDepth = strapSprite.DrawDepth - 1;
@@ -48,7 +66,8 @@ internal sealed class BuckleSystem : SharedBuckleSystem
         if (ent.Comp.OriginalDrawDepth.HasValue)
         {
             buckledSprite.DrawDepth = ent.Comp.OriginalDrawDepth.Value;
-            ent.Comp.OriginalDrawDepth = null;
+            // Floof - do not reset original draw depth here because prediction FUCKING SUCKS
+            // ent.Comp.OriginalDrawDepth = null;
         }
     }
 
@@ -64,10 +83,19 @@ internal sealed class BuckleSystem : SharedBuckleSystem
         if (args.NewRotation == args.OldRotation)
             return;
 
+        // Floof - everything that was below was separated into that method in order to allow calling it from other places
+        UpdateBucklesDrawDepth(uid, component);
+    }
+
+    private void UpdateBucklesDrawDepth(EntityUid uid, StrapComponent component) {
         if (!TryComp<SpriteComponent>(uid, out var strapSprite))
             return;
 
-        var isNorth = Transform(uid).LocalRotation.GetCardinalDir() == Direction.North;
+        // Floof - man, fuck prediction.
+        if (!_timing.IsFirstTimePredicted)
+            return;
+
+        var isNorth = GetEntityOrientation(uid) == Direction.North; // Floof - replaced with a method call
         foreach (var buckledEntity in component.BuckledEntities)
         {
             if (!TryComp<BuckleComponent>(buckledEntity, out var buckle))
@@ -100,4 +128,22 @@ internal sealed class BuckleSystem : SharedBuckleSystem
         // TODO: Dump this when buckle is better
         _rotationVisualizerSystem.AnimateSpriteRotation(uid, args.Sprite, rotVisuals.HorizontalRotation, 0.125f);
     }
+
+    // Floof section - method for getting the direction of an entity perceived by the local player
+    private Direction GetEntityOrientation(EntityUid uid)
+    {
+        var xform = Transform(uid);
+        var ownRotation = xform.LocalRotation;
+        var eyeRotation =
+            TryComp<EyeComponent>(_player.LocalEntity, out var eye) ? eye.Eye.Rotation : Angle.Zero;
+
+        // This is TOTALLY dumb, but the eye stores camera rotation relative to the WORLD, so we need to convert it to local rotation as well
+        // Cameras are also relative to grids (NOT direct parents), so we cannot just GetWorldRotation of the entity or something similar.
+        if (xform.GridUid is { Valid: true } grid)
+            eyeRotation += _xform.GetWorldRotation(grid);
+
+        // Note: we subtract instead of adding because e.g. rotating an eye +90° visually rotates all entities in vision by -90°
+        return (ownRotation + eyeRotation).GetCardinalDir();
+    }
+    // Floof section end
 }

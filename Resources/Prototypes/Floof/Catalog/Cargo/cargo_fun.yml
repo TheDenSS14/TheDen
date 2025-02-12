@@ -7,3 +7,23 @@
   cost: 5000
   category: cargoproduct-category-name-fun
   group: market
+
+- type: cargoProduct
+  id: FunPlushieCrate
+  icon:
+    sprite: Objects/Fun/toys.rsi
+    state: plushie_h
+  product: CrateFunPlushie
+  cost: 3500
+  category: cargoproduct-category-name-fun
+  group: market
+  
+- type: cargoProduct
+  id: FunLizardPlushieCrate
+  icon:
+    sprite: Objects/Fun/toys.rsi
+    state: plushie_lizard
+  product: CrateFunLizardPlushieBulk
+  cost: 2500
+  category: cargoproduct-category-name-fun
+  group: market
