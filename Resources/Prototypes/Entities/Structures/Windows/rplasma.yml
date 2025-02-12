@@ -55,6 +55,8 @@
       sprite: Structures/Windows/cracks.rsi
   - type: StaticPrice
     price: 132
+  - type: PressureDestructible
+    maxPressureDifferential: 0.0
 
 - type: entity
   id: PlasmaReinforcedWindowDirectional

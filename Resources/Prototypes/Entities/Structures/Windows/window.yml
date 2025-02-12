@@ -90,6 +90,8 @@
   - type: InteractionVerbs
     allowedVerbs:
     - KnockOn
+  - type: PressureDestructible
+    maxPressureDifferential: 2000.0
 
 - type: entity
   id: WindowRCDResistant
@@ -192,6 +194,8 @@
   - type: InteractionVerbs
     allowedVerbs:
     - KnockOn
+  - type: PressureDestructible
+    maxPressureDifferential: 3000.0
 
 - type: entity
   id: WindowDirectionalRCDResistant
