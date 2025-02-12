@@ -54703,26 +54703,12 @@ entities:
     - type: Transform
       pos: 37.5,12.5
       parent: 2
-- proto: LockerChiefJusticeFilled
-  entities:
-  - uid: 11635
-    components:
-    - type: Transform
-      pos: -37.5,0.5
-      parent: 2
 - proto: LockerChiefMedicalOfficerFilled
   entities:
   - uid: 2455
     components:
     - type: Transform
       pos: 37.25989,-20.5
-      parent: 2
-- proto: LockerClerkFilled
-  entities:
-  - uid: 1905
-    components:
-    - type: Transform
-      pos: -37.5,-2.5
       parent: 2
 - proto: LockerClown
   entities:
@@ -63388,12 +63374,34 @@ entities:
     - type: Transform
       pos: -35.5,-21.5
       parent: 2
+- proto: SpawnPointAdminAssistant
+  entities:
+  - uid: 10892
+    components:
+    - type: Transform
+      pos: 49.5,-12.5
+      parent: 2
 - proto: SpawnPointAtmos
   entities:
   - uid: 10897
     components:
     - type: Transform
       pos: 39.5,8.5
+      parent: 2
+  - uid: 10991
+    components:
+    - type: Transform
+      pos: 22.5,5.5
+      parent: 2
+  - uid: 10995
+    components:
+    - type: Transform
+      pos: 23.5,14.5
+      parent: 2
+  - uid: 11005
+    components:
+    - type: Transform
+      pos: 25.5,14.5
       parent: 2
   - uid: 11534
     components:
@@ -63458,6 +63466,18 @@ entities:
     - type: Transform
       pos: 13.5,-19.5
       parent: 2
+- proto: SpawnPointBoxer
+  entities:
+  - uid: 11090
+    components:
+    - type: Transform
+      pos: -43.5,-26.5
+      parent: 2
+  - uid: 11176
+    components:
+    - type: Transform
+      pos: -42.5,-27.5
+      parent: 2
 - proto: SpawnPointBrigmedic
   entities:
   - uid: 9984
@@ -63506,6 +63526,11 @@ entities:
     - type: Transform
       pos: -39.5,-10.5
       parent: 2
+  - uid: 11182
+    components:
+    - type: Transform
+      pos: -42.5,-10.5
+      parent: 2
 - proto: SpawnPointChef
   entities:
   - uid: 9974
@@ -63542,26 +63567,12 @@ entities:
     - type: Transform
       pos: 48.5,-9.5
       parent: 2
-- proto: SpawnPointChiefJustice
-  entities:
-  - uid: 11655
-    components:
-    - type: Transform
-      pos: 49.5,-11.5
-      parent: 2
 - proto: SpawnPointChiefMedicalOfficer
   entities:
   - uid: 2296
     components:
     - type: Transform
       pos: 48.5,-12.5
-      parent: 2
-- proto: SpawnPointClerk
-  entities:
-  - uid: 11632
-    components:
-    - type: Transform
-      pos: -38.5,-1.5
       parent: 2
 - proto: SpawnPointClown
   entities:
@@ -63656,6 +63667,23 @@ entities:
     - type: Transform
       pos: -43.5,-0.49999997
       parent: 2
+- proto: SpawnPointLibrarian
+  entities:
+  - uid: 1905
+    components:
+    - type: Transform
+      pos: -51.5,-20.5
+      parent: 2
+  - uid: 10889
+    components:
+    - type: Transform
+      pos: -50.5,-20.5
+      parent: 2
+  - uid: 11224
+    components:
+    - type: Transform
+      pos: -49.5,-20.5
+      parent: 2
 - proto: SpawnPointLocationMidRoundAntag
   entities:
   - uid: 4655
@@ -63702,6 +63730,20 @@ entities:
     components:
     - type: Transform
       pos: -12.5,14.5
+      parent: 2
+- proto: SpawnPointMagistrate
+  entities:
+  - uid: 8973
+    components:
+    - type: Transform
+      pos: 49.5,-11.5
+      parent: 2
+- proto: SpawnPointMailCarrier
+  entities:
+  - uid: 10888
+    components:
+    - type: Transform
+      pos: 1.5,17.5
       parent: 2
 - proto: SpawnPointMedicalDoctor
   entities:
@@ -63759,12 +63801,22 @@ entities:
     - type: Transform
       pos: 1.5,-27.5
       parent: 2
+  - uid: 11271
+    components:
+    - type: Transform
+      pos: -2.5,-27.5
+      parent: 2
 - proto: SpawnPointMusician
   entities:
   - uid: 10007
     components:
     - type: Transform
       pos: 2.5,-28.5
+      parent: 2
+  - uid: 11263
+    components:
+    - type: Transform
+      pos: 5.5,-26.5
       parent: 2
 - proto: SpawnPointNanotrasenRepresentative
   entities:
@@ -63961,13 +64013,6 @@ entities:
     - type: Transform
       pos: -34.5,16.5
       parent: 2
-- proto: SpawnPointProsecutor
-  entities:
-  - uid: 11633
-    components:
-    - type: Transform
-      pos: -39.5,0.5
-      parent: 2
 - proto: SpawnPointQuartermaster
   entities:
   - uid: 2389
@@ -63981,6 +64026,11 @@ entities:
     components:
     - type: Transform
       pos: -11.5,-18.5
+      parent: 2
+  - uid: 11281
+    components:
+    - type: Transform
+      pos: -12.5,-18.5
       parent: 2
 - proto: SpawnPointResearchAssistant
   entities:
@@ -64095,6 +64145,84 @@ entities:
     components:
     - type: Transform
       pos: -30.5,7.5
+      parent: 2
+- proto: SpawnPointSeniorEngineer
+  entities:
+  - uid: 11633
+    components:
+    - type: Transform
+      pos: 35.5,4.5
+      parent: 2
+  - uid: 11635
+    components:
+    - type: Transform
+      pos: 36.5,4.5
+      parent: 2
+  - uid: 11655
+    components:
+    - type: Transform
+      pos: 37.5,4.5
+      parent: 2
+  - uid: 11656
+    components:
+    - type: Transform
+      pos: 38.5,4.5
+      parent: 2
+  - uid: 11953
+    components:
+    - type: Transform
+      pos: 39.5,4.5
+      parent: 2
+- proto: SpawnPointSeniorOfficer
+  entities:
+  - uid: 11601
+    components:
+    - type: Transform
+      pos: -32.5,5.5
+      parent: 2
+  - uid: 11602
+    components:
+    - type: Transform
+      pos: -31.5,5.5
+      parent: 2
+  - uid: 11632
+    components:
+    - type: Transform
+      pos: -30.5,6.5
+      parent: 2
+- proto: SpawnPointSeniorPhysician
+  entities:
+  - uid: 11954
+    components:
+    - type: Transform
+      pos: 36.5,-9.5
+      parent: 2
+  - uid: 11966
+    components:
+    - type: Transform
+      pos: 36.5,-10.5
+      parent: 2
+  - uid: 11967
+    components:
+    - type: Transform
+      pos: 36.5,-11.5
+      parent: 2
+  - uid: 12141
+    components:
+    - type: Transform
+      pos: 36.5,-12.5
+      parent: 2
+- proto: SpawnPointSeniorResearcher
+  entities:
+  - uid: 11286
+    components:
+    - type: Transform
+      pos: -28.5,-22.5
+      parent: 2
+  - uid: 11515
+    components:
+    - type: Transform
+      pos: -28.5,-21.5
       parent: 2
 - proto: SpawnPointServiceWorker
   entities:
@@ -67576,6 +67704,13 @@ entities:
     components:
     - type: Transform
       pos: 44.5,-8.5
+      parent: 2
+- proto: UniqueLockerMagistrateFilled
+  entities:
+  - uid: 2363
+    components:
+    - type: Transform
+      pos: -37.5,0.5
       parent: 2
 - proto: UniqueLockerNanorepFilled
   entities:
