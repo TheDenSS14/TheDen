@@ -27,6 +27,8 @@
     Hair: MobHumanoidAnyMarking
     FacialHair: MobHumanoidAnyMarking
     Snout: MobHumanoidAnyMarking
+    Underwear: MobHumanoidAnyMarking
+    Undershirt: MobHumanoidAnyMarking
     Chest: MobRodentiaTorso
     HeadTop: MobHumanoidAnyMarking
     HeadSide: MobHumanoidAnyMarking
@@ -93,6 +95,12 @@
       required: false
     Chest:
       points: 2
+      required: false
+    Underwear:
+      points: 1
+      required: false
+    Undershirt:
+      points: 1
       required: false
 
 - type: humanoidBaseSprite
