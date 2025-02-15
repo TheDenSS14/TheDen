@@ -35,3 +35,15 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutUniformsCivilian2
+
+- type: loadout
+  id: LoadoutClothingUniformJumpsuitCatsuitBlank
+  category: Uniform
+  cost: 0
+  exclusive: true
+  customColorTint: true
+  items:
+    - ClothingUniformJumpsuitCatsuitBlank
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutUniformsCivilian2
