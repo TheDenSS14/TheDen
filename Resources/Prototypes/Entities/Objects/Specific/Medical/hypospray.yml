@@ -160,7 +160,7 @@
   - type: Tag
     tags: []
 
-- type: entity
+- type: entity # Funkychem
   name: poison auto-injector
   parent: ChemicalMedipen
   id: AntiPoisonMedipen
@@ -255,11 +255,11 @@
   - type: Tag
     tags: []
 
-- type: entity
+- type: entity # Funkychem
   name: rad auto-injector
   parent: ChemicalMedipen
   id: RadAutoInjector
-  description: A rapid dose of anti-radiation. Contains arithrazine and bicaridine.
+  description: A rapid dose of anti-radiation. Contains arithrazine and libital.
   components:
   - type: Sprite
     sprite: Objects/Specific/Medical/medipen.rsi
@@ -282,7 +282,7 @@
         reagents:
         - ReagentId: Arithrazine
           Quantity: 15
-        - ReagentId: Bicaridine
+        - ReagentId: Libital
           Quantity: 5
   - type: Tag
     tags: []

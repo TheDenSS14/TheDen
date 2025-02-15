@@ -60,6 +60,24 @@ guide-entry-forensics = Forensics
 guide-entry-defusal = Large Bomb Defusal
 guide-entry-criminal-records = Criminal Records
 guide-entry-species = Species
+guide-entry-yourfirstcharacter = Your First Character
+guide-entry-controls = Controls
+guide-entry-radio = Radio and Speech
+
+guide-entry-references = Tables & References
+guide-entry-drinks = Drinks
+guide-entry-foodrecipes = Food Recipes
+guide-entry-chemicals = Chemicals
+guide-entry-elements = Elements
+guide-entry-narcotics = Narcotics
+guide-entry-pyrotechnics = Pyrotechnic
+guide-entry-toxins = Toxins
+guide-entry-foods = Foods
+guide-entry-biological = Biological
+guide-entry-botanical = Botanicals
+guide-entry-others = Others
+# funky station
+guide-entry-exotic = Exotic
 
 guide-entry-antagonists = Antagonists
 guide-entry-nuclear-operatives = Nuclear Operatives
