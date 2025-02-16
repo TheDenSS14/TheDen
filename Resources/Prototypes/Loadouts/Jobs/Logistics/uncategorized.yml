@@ -53,6 +53,20 @@
 # Gloves
 
 # Head
+- type: loadout
+  id: LoadoutClothingHeadHatBeretLogi
+  category: JobsLogisticsAUncategorized
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingHeadHatBeretLogi
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutLogisticsHead
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Logistics
+
 
 # Id
 

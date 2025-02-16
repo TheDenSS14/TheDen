@@ -265,8 +265,36 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutEngineeringUniforms
-    - !type:CharacterJobRequirement
-      jobs:
-        - StationEngineer
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Engineering
   items:
     - ClothingUniformJumpsuitEngineeringHazard
+
+- type: loadout
+  id: LoadoutClothingUniformJumpsuitRepairmanNT
+  category: JobsEngineeringAAUncategorized
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutEngineeringUniforms
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Engineering
+  items:
+    - ClothingUniformJumpsuitRepairmanNT
+
+- type: loadout
+  id: LoadoutClothingUniformJumpsuitRepairmanCybersun
+  category: JobsEngineeringAAUncategorized
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutEngineeringUniforms
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Engineering
+  items:
+    - ClothingUniformJumpsuitRepairmanCybersun

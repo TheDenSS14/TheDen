@@ -51,3 +51,31 @@
         - Paramedic
   items:
     - ClothingUniformJumpskirtParamedic
+
+- type: loadout
+  id: LoadoutClothingUniformJumpsuitParamedicNT
+  category: JobsMedicalParamedic
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutParamedicUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - Paramedic
+  items:
+    - ClothingUniformJumpsuitParamedicNT
+
+- type: loadout
+  id: LoadoutClothingUniformJumpsuitParamedicCybersun
+  category: JobsMedicalParamedic
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutParamedicUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - Paramedic
+  items:
+    - ClothingUniformJumpsuitParamedicCybersun

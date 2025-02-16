@@ -34,12 +34,14 @@
 #  id: LoadoutLogisticsGloves
 #  maxItems: 1
 #  items:
-#
-#- type: characterItemGroup
-#  id: LoadoutLogisticsHead
-#  maxItems: 1
-#  items:
-#
+
+- type: characterItemGroup
+  id: LoadoutLogisticsHead
+  maxItems: 1
+  items:
+      - type: loadout
+        id: LoadoutClothingHeadHatBeretLogi
+
 #- type: characterItemGroup
 #  id: LoadoutLogisticsId
 #  maxItems: 1
