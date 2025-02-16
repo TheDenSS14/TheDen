@@ -7482,11 +7482,6 @@ entities:
     - type: Transform
       pos: -16.5,2.5
       parent: 2
-  - uid: 8061
-    components:
-    - type: Transform
-      pos: -18.5,-2.5
-      parent: 2
   - uid: 8299
     components:
     - type: Transform
@@ -38742,6 +38737,18 @@ entities:
     components:
     - type: Transform
       pos: -17.83732,-18.364643
+      parent: 2
+- proto: DrinkCreamCarton
+  entities:
+  - uid: 8061
+    components:
+    - type: Transform
+      pos: -1.5905256,1.987834
+      parent: 2
+  - uid: 12987
+    components:
+    - type: Transform
+      pos: -1.4809003,1.8310323
       parent: 2
 - proto: DrinkEnergyDrinkCan
   entities:
