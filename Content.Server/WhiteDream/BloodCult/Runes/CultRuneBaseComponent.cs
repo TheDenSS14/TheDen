@@ -36,7 +36,7 @@ public sealed partial class CultRuneBaseComponent : Component
     [DataField]
     public bool CanBeErased = true;
 
-    public ProtoId<ReagentPrototype> HolyWaterPrototype = "HolyWater";
+    public ProtoId<ReagentPrototype> HolyWaterPrototype = "Holywater";
 }
 
 public sealed class TryInvokeCultRuneEvent(EntityUid user, HashSet<EntityUid> invokers) : CancellableEntityEventArgs
