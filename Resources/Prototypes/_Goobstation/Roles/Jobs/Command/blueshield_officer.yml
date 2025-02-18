@@ -21,16 +21,7 @@
   supervisors: job-supervisors-centcom
   canBeAntag: false
   access:
-  - Security
-  - Brig
-  - External
-  - Cryogenics
-  - Maintenance
-  - Engineering
-  - Medical
-  - Research
-  - Cargo
-  - Command
+  - BasicAllAccess
   - CentralCommand
   - BlueshieldOfficer
   special:
