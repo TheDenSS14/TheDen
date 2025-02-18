@@ -45,6 +45,3 @@ reagent-desc-ardthyrnkole = A pyrogenics chemical used to treat severe frostbite
 
 reagent-name-natusixadone = natusixadone
 reagent-desc-natusixadone = A pyrogenics chemical that burns away cancerous cells, regardless of if they are alive or dead.
-
-reagent-name-pielovene = pielovene
-reagent-desc-pielovene = A honk-spectrum anti-toxin, which treats a broad variety of damage in clowns. Harmful to mimes.
