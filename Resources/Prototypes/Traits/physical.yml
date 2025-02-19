@@ -872,8 +872,6 @@
     - !type:CharacterSpeciesRequirement
       species:
         - IPC
-    - !type:CharacterItemGroupRequirement
-      group: TraitsMind
   functions: # TODO: Code Platelet factories as an actual obtainable implant, and replace this with TraitAddImplant
     - !type:TraitReplaceComponent
       components:
@@ -897,8 +895,6 @@
       inverted: true
       jobs:
         - Prisoner # Bionics should be "Confiscated" from long term prisoners.
-    - !type:CharacterItemGroupRequirement
-      group: TraitsMind
   functions:
     - !type:TraitAddComponent
       components:
@@ -950,8 +946,6 @@
       inverted: true
       traits:
         - OmniEyesModule
-    - !type:CharacterItemGroupRequirement
-      group: TraitsMind
   functions:
     - !type:TraitAddComponent
       components:
@@ -976,8 +970,6 @@
       traits:
         - DiagnosticEyesModule
         - OmniEyesModule
-    - !type:CharacterItemGroupRequirement
-      group: TraitsMind
   functions:
     - !type:TraitAddComponent
       components:
@@ -1005,8 +997,6 @@
       traits:
         - MedicalEyesModule
         - OmniEyesModule
-    - !type:CharacterItemGroupRequirement
-      group: TraitsMind
   functions:
     - !type:TraitAddComponent
       components:
@@ -1036,8 +1026,6 @@
         - MedicalEyesModule
         - DiagnosticEyesModule
         - SecurityEyesModule
-    - !type:CharacterItemGroupRequirement
-      group: TraitsMind
   functions:
     - !type:TraitAddComponent
       components:
@@ -1065,8 +1053,6 @@
     - !type:CharacterSpeciesRequirement
       species:
         - IPC
-    - !type:CharacterItemGroupRequirement
-      group: TraitsMind
   functions:
     - !type:TraitAddComponent
       components:
@@ -1084,8 +1070,6 @@
     - !type:CharacterSpeciesRequirement
       species:
         - IPC
-    - !type:CharacterItemGroupRequirement
-      group: TraitsMind
   functions:
     - !type:TraitAddComponent
       components:
