@@ -11958,16 +11958,31 @@ entities:
     - type: Transform
       pos: -6.5,-16.5
       parent: 2
+    - type: DeviceLinkSink
+      links:
+      - 12259
+    - type: MaterialSiloUtilizer
+      silo: 12259
   - uid: 585
     components:
     - type: Transform
       pos: 4.5,-11.5
       parent: 2
+    - type: DeviceLinkSink
+      links:
+      - 12259
+    - type: MaterialSiloUtilizer
+      silo: 12259
   - uid: 13304
     components:
     - type: Transform
       pos: 22.5,-14.5
       parent: 2
+    - type: DeviceLinkSink
+      links:
+      - 12259
+    - type: MaterialSiloUtilizer
+      silo: 12259
 - proto: AutolatheMachineCircuitboard
   entities:
   - uid: 586
@@ -43930,12 +43945,6 @@ entities:
     - type: Transform
       pos: 1.5,38.5
       parent: 2
-  - uid: 5871
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: 21.38911,-5.868959
-      parent: 2
   - uid: 5872
     components:
     - type: Transform
@@ -44138,6 +44147,12 @@ entities:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: -52.279182,40.491642
+      parent: 2
+  - uid: 19023
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 21.459806,-5.4531603
       parent: 2
   - uid: 19946
     components:
@@ -44521,6 +44536,11 @@ entities:
     - type: Transform
       pos: -36.5,29.5
       parent: 2
+    - type: DeviceLinkSink
+      links:
+      - 12259
+    - type: MaterialSiloUtilizer
+      silo: 12259
 - proto: CircuitImprinterMachineCircuitboard
   entities:
   - uid: 5967
@@ -47531,6 +47551,13 @@ entities:
     components:
     - type: Transform
       pos: 16.5,-20.5
+      parent: 2
+- proto: DefaultStationBeaconDorms
+  entities:
+  - uid: 13080
+    components:
+    - type: Transform
+      pos: 53.5,-2.5
       parent: 2
 - proto: DefaultStationBeaconEngineering
   entities:
@@ -89324,6 +89351,33 @@ entities:
     - type: Transform
       pos: -3.2246723,35.358982
       parent: 2
+- proto: MaterialSilo
+  entities:
+  - uid: 12259
+    components:
+    - type: Transform
+      pos: -3.5,44.5
+      parent: 2
+    - type: DeviceLinkSource
+      linkedPorts:
+        11905:
+        - MaterialSilo: MaterialSiloUtilizer
+        585:
+        - MaterialSilo: MaterialSiloUtilizer
+        5966:
+        - MaterialSilo: MaterialSiloUtilizer
+        12661:
+        - MaterialSilo: MaterialSiloUtilizer
+        1243:
+        - MaterialSilo: MaterialSiloUtilizer
+        583:
+        - MaterialSilo: MaterialSiloUtilizer
+        13304:
+        - MaterialSilo: MaterialSiloUtilizer
+        14710:
+        - MaterialSilo: MaterialSiloUtilizer
+        11959:
+        - MaterialSilo: MaterialSiloUtilizer
 - proto: Mattress
   entities:
   - uid: 11886
@@ -89415,6 +89469,11 @@ entities:
     - type: Transform
       pos: 8.5,10.5
       parent: 2
+    - type: DeviceLinkSink
+      links:
+      - 12259
+    - type: MaterialSiloUtilizer
+      silo: 12259
 - proto: MedkitAdvancedFilled
   entities:
   - uid: 11908
@@ -89843,6 +89902,11 @@ entities:
     - type: Transform
       pos: 11.5,-28.5
       parent: 2
+    - type: DeviceLinkSink
+      links:
+      - 12259
+    - type: MaterialSiloUtilizer
+      silo: 12259
 - proto: OreProcessorMachineCircuitboard
   entities:
   - uid: 11960
@@ -94517,6 +94581,11 @@ entities:
     - type: Transform
       pos: -37.5,29.5
       parent: 2
+    - type: DeviceLinkSink
+      links:
+      - 12259
+    - type: MaterialSiloUtilizer
+      silo: 12259
 - proto: ProtolatheMachineCircuitboard
   entities:
   - uid: 12662
@@ -94695,12 +94764,6 @@ entities:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: -2.5,44.5
-      parent: 2
-  - uid: 12259
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: -3.5,44.5
       parent: 2
   - uid: 12309
     components:
@@ -99113,10 +99176,11 @@ entities:
       parent: 2
 - proto: ResearchAndDevelopmentServerMachineCircuitboard
   entities:
-  - uid: 19023
+  - uid: 20000
     components:
     - type: Transform
-      pos: -3.5977168,44.427246
+      rot: -1.5707963267948966 rad
+      pos: -4.6591663,42.47763
       parent: 2
 - proto: ReverseEngineeringMachine
   entities:
@@ -99402,6 +99466,11 @@ entities:
     - type: Transform
       pos: -43.5,1.5
       parent: 2
+    - type: DeviceLinkSink
+      links:
+      - 12259
+    - type: MaterialSiloUtilizer
+      silo: 12259
 - proto: SeedExtractor
   entities:
   - uid: 13484
@@ -108086,10 +108155,10 @@ entities:
       parent: 2
 - proto: ToolboxGoldFilled
   entities:
-  - uid: 13080
+  - uid: 20001
     components:
     - type: Transform
-      pos: -3.5002203,44.617207
+      pos: -4.499043,42.74136
       parent: 2
 - proto: ToolboxMechanicalFilled
   entities:
@@ -108468,11 +108537,21 @@ entities:
       parent: 2
 - proto: UniformPrinter
   entities:
+  - uid: 5871
+    components:
+    - type: Transform
+      pos: 21.5,-6.5
+      parent: 2
   - uid: 14710
     components:
     - type: Transform
       pos: -3.5,36.5
       parent: 2
+    - type: DeviceLinkSink
+      links:
+      - 12259
+    - type: MaterialSiloUtilizer
+      silo: 12259
 - proto: UniqueLockerBlueshieldOfficerFilled
   entities:
   - uid: 12630
@@ -121661,6 +121740,13 @@ entities:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: -32.5,-6.5
+      parent: 2
+- proto: WarpPointDorms
+  entities:
+  - uid: 20002
+    components:
+    - type: Transform
+      pos: 53.5,-2.5
       parent: 2
 - proto: WarpPointSecurity
   entities:
