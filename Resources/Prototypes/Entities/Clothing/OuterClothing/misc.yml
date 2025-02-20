@@ -139,6 +139,8 @@
     sprite: Clothing/OuterClothing/Misc/chaplain_hoodie.rsi
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHatHoodChaplainHood
+  - type: TemperatureProtection
+    coefficient: 0.1
 
 - type: entity
   parent: ClothingOuterBase
@@ -152,6 +154,8 @@
     sprite: Clothing/OuterClothing/Misc/classicponcho.rsi
   - type: AddAccentClothing
     accent: SpanishAccent
+  - type: TemperatureProtection
+    coefficient: 0.1
 
 - type: entity
   parent: ClothingOuterBase
@@ -187,6 +191,8 @@
     sprite: Clothing/OuterClothing/Misc/poncho.rsi
   - type: AddAccentClothing
     accent: SpanishAccent
+  - type: TemperatureProtection
+    coefficient: 0.1
 
 - type: entity
   parent: ClothingOuterBase
@@ -198,6 +204,8 @@
     sprite: Clothing/OuterClothing/Misc/santa.rsi
   - type: Clothing
     sprite: Clothing/OuterClothing/Misc/santa.rsi
+  - type: TemperatureProtection
+    coefficient: 0.1
 
 - type: entity
   abstract: true
@@ -487,6 +495,8 @@
     sprite: Clothing/OuterClothing/Misc/cardigan_sweater.rsi
   - type: Clothing
     sprite: Clothing/OuterClothing/Misc/cardigan_sweater.rsi
+  - type: TemperatureProtection
+    coefficient: 0.1
 
 - type: entity
   parent: [ClothingOuterFoldableBaseOpened, ClothingOuterCardiganSweater]
@@ -562,6 +572,8 @@
     sprite: Clothing/OuterClothing/Misc/blazer_long.rsi
   - type: Clothing
     sprite: Clothing/OuterClothing/Misc/blazer_long.rsi
+  - type: TemperatureProtection
+    coefficient: 0.1
 
 - type: entity
   parent: [ClothingOuterFoldableBaseOpened, ClothingOuterBlazerLong]
