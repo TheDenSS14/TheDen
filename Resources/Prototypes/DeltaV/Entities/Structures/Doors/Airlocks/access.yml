@@ -163,6 +163,16 @@
       path: /Maps/Shuttles/DeltaV/sub_escape_pod.yml
 
 - type: entity
+  parent: AirlockRobotics
+  id: AirlockRoboticsLocked
+  suffix: Robotics, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsRobotics ]
+
+#Add airlocks from upstream roles
+- type: entity
   parent: Airlock
   id: AirlockBoxerLocked
   suffix: Boxer, Locked
@@ -325,6 +335,15 @@
     containers:
       board: [ DoorElectronicsPsychologist ]
 
+- type: entity
+  parent: AirlockRoboticsGlass
+  id: AirlockRoboticsGlassLocked
+  suffix: Robotics, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsRobotics ]
+
 # Maintenance Hatches
 - type: entity
   parent: AirlockMaint
@@ -406,6 +425,15 @@
   - type: ContainerFill
     containers:
       board: [ DoorElectronicsSecurityLawyer ]
+
+- type: entity
+  parent: AirlockMaintRnDLocked
+  id: AirlockMaintRoboticsLocked
+  suffix: Robotics, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsRobotics ]
 
 # Command-locked External airlocks. These don't exist upstream for some reason.
 - type: entity
