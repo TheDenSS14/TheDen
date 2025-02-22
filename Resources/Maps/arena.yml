@@ -129136,23 +129136,6 @@ entities:
             Quantity: 10
     - type: Physics
       canCollide: False
-  - uid: 17316
-    components:
-    - type: Transform
-      parent: 17308
-    - type: SolutionContainerManager
-      solutions:
-        food:
-          temperature: 293.15
-          canReact: True
-          maxVol: 25
-          name: null
-          reagents:
-          - data: null
-            ReagentId: Codeine
-            Quantity: 15
-    - type: Physics
-      canCollide: False
 - proto: PillCanister
   entities:
   - uid: 17308
