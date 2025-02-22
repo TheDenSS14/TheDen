@@ -18,7 +18,7 @@ trait-description-ZeroGTraining =
     Either through training or just through personal experience of the Gravity Generator being blown up over and over again,
     you are proficient in the ways of floating in zero gravity. You gain an increased speed manuvering in Zero-G environments.
 
-trait-name-ZeroGTAverse = Zero G Averse
+trait-name-ZeroGAverse = Zero G Averse
 trait-description-ZeroGTAverse =
     You very much prefer to have your boots on the ground and/or are terrified of the feeling of weightlessness. While under
     the effects of Zero-G you are significantly slower than the normal spessman
