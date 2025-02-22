@@ -47436,10 +47436,10 @@ entities:
           occludes: True
           ents:
           - 6158
-        toggleable-clothing: !type:ContainerSlot
+        toggleable-clothing: !type:Container
           showEnts: False
           occludes: True
-          ent: null
+          ents: []
   - uid: 6244
     components:
     - type: Transform
