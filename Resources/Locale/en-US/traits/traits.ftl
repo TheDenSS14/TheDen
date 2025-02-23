@@ -92,6 +92,9 @@ trait-description-FrenchAccent = You speak with a French accent.
 trait-name-ItalianAccent = Italian accent
 trait-description-ItalianAccent = You speak with a Italian accent.
 
+trait-name-MobsterAccent = Mobster accent
+trait-description-MobsterAccent = Fugeddaboutit! Yous talk numhallly, capiche?
+
 trait-name-SpanishAccent = Spanish accent
 trait-description-SpanishAccent = You speak with a Spanish accent.
 
