@@ -81,3 +81,14 @@
        inverted: true
        jobs:
          - Prisoner
+
+- type: loadout
+  id: LoadoutClothingBeltMartialBlack
+  category: Belt
+  cost: 0
+  customColorTint: true
+  items:
+    - ClothingBeltMartialBlack
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBelt

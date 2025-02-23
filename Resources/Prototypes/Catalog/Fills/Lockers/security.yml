@@ -12,7 +12,6 @@
       - id: Flash
       - id: ClothingEyesGlassesSunglasses
       - id: ClothingHeadsetAltSecurity
-      - id: ClothingHandsGlovesCombat
       - id: ClothingShoesBootsJack
       - id: ClothingOuterCoatWarden
       - id: ClothingOuterWinterWarden
@@ -43,7 +42,6 @@
       - id: Flash
       - id: ClothingEyesGlassesSunglasses
       - id: ClothingHeadsetAltSecurity
-      - id: ClothingHandsGlovesCombat
       - id: ClothingShoesBootsJack
       - id: ClothingOuterCoatWarden
       - id: ClothingOuterWinterWarden
@@ -125,11 +123,7 @@
 ##        prob: 0.1
       - id: ClothingLongcoatBrigmedic # Floofstation
       - id: HandheldGPSBasic # Delta V - added it for tracking the implant tracker pop up.
-      - id: MedkitFilled
-      - id: MedkitCombatFilled
-        prob: 0.6
-      - id: MedkitAdvancedFilled
-        prob: 0.4
+      - id: MedkitCombatFilled #for when maps don't map in combat kits :<
       - id: MedkitOxygenFilled
         prob: 0.3
       - id: MedkitBruteFilled
@@ -161,11 +155,7 @@
       - id: ClothingUniformJumpskirtBrigmedic
       - id: ClothingLongcoatBrigmedic # Floofstation
       - id: HandheldGPSBasic # Added GPS because I just think it should be there tbh.
-      - id: MedkitFilled
-      - id: MedkitCombatFilled
-        prob: 0.6
-      - id: MedkitAdvancedFilled
-        prob: 0.4
+      - id: MedkitCombatFilled #for when maps don't map in combat kits :<
       - id: MedkitOxygenFilled
         prob: 0.3
       - id: MedkitBruteFilled
