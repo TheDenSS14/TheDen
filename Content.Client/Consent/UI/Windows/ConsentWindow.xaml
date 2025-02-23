@@ -6,9 +6,9 @@
     MinSize="620 670"
     Title="{Loc consent-window-title}"
     Resizable="False">
-    <BoxContainer Orientation="Vertical" HorizontalExpand="True" Margin="5">
-        <Label Text="{Loc consent-window-text}" />
+    <BoxContainer Orientation="Vertical" Margin="5">
         <BoxContainer Orientation="Horizontal" Margin="5">
+            <Label Text="{Loc consent-window-text}" />
             <Label Name="SaveLabel" FontColorOverride="Red" Access="Public" />
             <Control HorizontalExpand="True" />
             <Button
@@ -17,24 +17,47 @@
                 Text="Save"
                 Disabled="True" />
         </BoxContainer>
-        <Label Text="{Loc consent-window-freetext-label}" />
-        <PanelContainer HorizontalExpand="True" VerticalExpand="True" MinWidth="200">
-            <PanelContainer.PanelOverride>
-                <gfx:StyleBoxFlat BackgroundColor="#1B1B1E" />
-            </PanelContainer.PanelOverride>
-            <TextEdit
-                Name="ConsentFreetext"
-                Access="Public"
-                MinHeight="100"
-                VerticalExpand="True" />
-        </PanelContainer>
-        <Control MinSize="0 10" />
-        <Label Text="{Loc consent-window-toggles-label}" />
-
-        <ScrollContainer HorizontalExpand="True" VerticalExpand="True" HScrollEnabled="False" VScrollEnabled="True" MinHeight="50">
-            <BoxContainer Name="ConsentList" Access="Public" HorizontalExpand="True" SeparationOverride="2" Orientation="Vertical">
-                <!-- The rest here is generated programmatically -->
+        <TabContainer Name="CTabContainer" VerticalExpand="True">
+            <BoxContainer Name="Freetext" Orientation="Vertical" HorizontalExpand="True" Margin="5">
+                <Label Text="{Loc consent-window-freetext-label}" />
+                <PanelContainer HorizontalExpand="True" VerticalExpand="True" MinWidth="200">
+                    <PanelContainer.PanelOverride>
+                        <gfx:StyleBoxFlat BackgroundColor="#1B1B1E" />
+                    </PanelContainer.PanelOverride>
+                    <TextEdit
+                        Name="ConsentFreetext"
+                        Access="Public"
+                        MinHeight="100"
+                        VerticalExpand="True" />
+                </PanelContainer>
+                <Control MinSize="0 10" />
             </BoxContainer>
-        </ScrollContainer>
+            <BoxContainer Name="Mechanics" Orientation="Vertical" HorizontalExpand="True" Margin="5">
+                <Label Text="{Loc consent-window-toggles-label}" />
+                <ScrollContainer HorizontalExpand="True" VerticalExpand="True" HScrollEnabled="False" VScrollEnabled="True" MinHeight="50">
+                    <BoxContainer Name="ConsentList" Access="Public" HorizontalExpand="True" SeparationOverride="2" Orientation="Vertical">
+                        <!-- The rest here is generated programmatically -->
+                    </BoxContainer>
+                </ScrollContainer>
+            </BoxContainer>
+            <BoxContainer Name="Players" Orientation="Horizontal" HorizontalExpand="True" Margin="5">
+                <Label Text="{Loc consent-window-players-label}" />
+                <BoxContainer VerticalExpand="True">
+                    <controls:PlayerListControl Name="ConsentPlayers" />
+                </BoxContainer>
+                <BoxContainer VerticalExpand="True" Orientation="Horizontal">
+                    <Button Access="Public" Name="Add" Text="{Loc consent-window-add-label}" HorizontalExpand="True" StyleClasses="OpenRight" />
+                    <Button Access="Public" Name="Remove" Text="{Loc consent-window-remove-label}" HorizontalExpand="True" StyleClasses="OpenLeft" />
+                </BoxContainer>
+            </BoxContainer>
+            <BoxContainer Name="Permissions" Orientation="Vertical" HorizontalExpand="True" Margin="5">
+                <Label Text="{Loc consent-window-permissions-label}" />
+                <ScrollContainer HorizontalExpand="True" VerticalExpand="True" HScrollEnabled="False" VScrollEnabled="True" MinHeight="50">
+                    <BoxContainer Name="PermissionsList" Access="Public" HorizontalExpand="True" SeparationOverride="2" Orientation="Vertical">
+                        <!-- The rest here is generated programmatically -->
+                    </BoxContainer>
+                </ScrollContainer>
+            </BoxContainer>
+        </TabContainer>
     </BoxContainer>
 </controls:FancyWindow>
