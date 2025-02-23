@@ -25,6 +25,19 @@
   items:
     - ClothingHeadHatQMsoft
 
+- type: loadout
+  id: LoadoutCommandClothingHeadHatBeretQM
+  category: JobsLogisticsLogisticsOfficer
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutLogisticsOfficerHead
+    - !type:CharacterJobRequirement
+      jobs:
+        - Quartermaster
+  items:
+    - ClothingHeadHatBeretQM
+
 # Id
 - type: loadout
   id: LoadoutLogisticsOfficerNTPDA

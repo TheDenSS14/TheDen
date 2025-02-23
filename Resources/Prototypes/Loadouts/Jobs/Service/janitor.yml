@@ -32,7 +32,33 @@
         - Janitor
   items:
     - ClothingOuterWinterJani
+
 # Shoes
+- type: loadout
+  id: LoadoutClothingShoesGaloshes
+  category: JobsServiceJanitor
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutJanitorShoes
+    - !type:CharacterJobRequirement
+      jobs:
+        - Janitor
+  items:
+    - ClothingShoesGaloshes
+
+- type: loadout
+  id: LoadoutClothingShoesPurpleGaloshes
+  category: JobsServiceJanitor
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutJanitorOuter
+    - !type:CharacterJobRequirement
+      jobs:
+        - Janitor
+  items:
+    - ClothingShoesPurpleGaloshes
 
 # Uniforms
 - type: loadout
