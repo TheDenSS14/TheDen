@@ -936,14 +936,11 @@
       inverted: true
       jobs:
         - Prisoner # Bionics should be "Confiscated" from long term prisoners.
-    - !type:CharacterLogicOrRequirement
-      requirements:
-        - !type:CharacterDepartmentRequirement
-          departments:
-            - Security
-        - !type:CharacterJobRequirement
-          jobs:
-            - BlueshieldOfficer
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Security
+        - Dignitary
+        - Command
     - !type:CharacterSpeciesRequirement
       species:
         - IPC
@@ -1019,14 +1016,11 @@
       inverted: true
       jobs:
         - Prisoner # Bionics should be "Confiscated" from long term prisoners.
-    - !type:CharacterLogicOrRequirement
-      requirements:
-        - !type:CharacterDepartmentRequirement
-          departments:
-            - Security
-        - !type:CharacterJobRequirement
-          jobs:
-            - BlueshieldOfficer
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Security
+        - Dignitary
+        - Command
     - !type:CharacterSpeciesRequirement
       species:
         - IPC
