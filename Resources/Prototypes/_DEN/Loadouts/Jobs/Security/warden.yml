@@ -1,0 +1,16 @@
+- type: loadout
+  id: LoadoutWardenGreatsword
+  category: JobsSecurityWarden
+  cost: 5
+  exclusive: true
+  canBeHeirloom: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutWardenWeapons
+    - !type:CharacterJobRequirement
+      jobs:
+        - Warden
+    - !type:CharacterAgeRequirement
+      min: 18
+  items:
+    - Greatsword

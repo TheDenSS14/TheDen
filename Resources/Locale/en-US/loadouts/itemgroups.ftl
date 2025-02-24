@@ -633,6 +633,7 @@ character-item-group-LoadoutWardenBackpacks = Warden Backpacks
 character-item-group-LoadoutWardenBelt = Warden Belt
 character-item-group-LoadoutWardenEars = Warden Ears
 character-item-group-LoadoutWardenEquipment = Warden Equipment
+character-item-group-LoadoutWardenWeapons = Warden's Antique Weapon Collection
 character-item-group-LoadoutWardenEyes = Warden Eyewear
 character-item-group-LoadoutWardenGloves = Warden Gloves
 character-item-group-LoadoutWardenHead = Warden Headgear
