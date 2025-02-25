@@ -13,26 +13,27 @@
     range: 1.85
     damage:
       types:
-        Slash: 10
+        Slash: 25
         Blunt: 10
-        Structural: 20
+        Structural: 30
     bluntStaminaDamageFactor: 25.0
     heavyRateModifier: 2
     heavyRangeModifier: 1
     heavyDamageBaseModifier: 1
     heavyStaminaCost: 15
     maxTargets: 10
-    angle: 200
+    angle: 120
     soundHit:
       collection: MetalThud
   - type: DamageOtherOnHit
-    staminaCost: 18
+    staminaCost: 30
   - type: MeleeRequiresWield
   - type: EmbeddableProjectile
   - type: EmbedPassiveDamage
+  - type: Wieldable
   - type: MeleeThrowOnHit
     speed: 30
-    lifetime: 1
+    lifetime: 0.2
   - type: Reflect
     reflectProb: .25
     spread: 90
