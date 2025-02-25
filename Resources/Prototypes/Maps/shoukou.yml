@@ -30,7 +30,7 @@
             Chef: [ 1, 2 ]
             Clown: [ 1, 1 ]
             Janitor: [ 1, 2 ]
-            Musician: [ 1, 1]
+            Musician: [ 1, 1 ]
             Mime: [ 1, 1 ]
             Captain: [ 1, 1 ]
             BlueshieldOfficer: [ 1, 1 ]
@@ -40,11 +40,13 @@
             HeadOfPersonnel: [ 1, 1 ]
           #Engineering
             ChiefEngineer: [ 1, 1 ]
+            SeniorEngineer: [ 2, 2 ]
             StationEngineer: [ 2, 5 ]
             TechnicalAssistant: [ 2, 3 ]
             AtmosphericTechnician: [ 1, 2 ]
           #Medical
             ChiefMedicalOfficer: [ 1, 1 ]
+            SeniorPhysician: [ 2, 2 ]
             Paramedic: [ 1, 2 ]
             MedicalDoctor: [ 3, 3 ]
             Chemist: [ 1, 2 ]
@@ -52,6 +54,7 @@
             Psychologist: [ 1, 1 ]
           #Security
             HeadOfSecurity: [ 1, 1 ]
+            SeniorOfficer: [ 2, 2 ]
             SecurityOfficer: [ 2, 4 ]
             Detective: [ 1, 1 ]
             Warden: [ 1, 1 ]
@@ -60,8 +63,10 @@
             Prisoner: [ 2, 2 ]
           #Science
             ResearchDirector: [ 1, 1 ]
+            SeniorResearcher: [ 2, 2 ]
             Scientist: [ 2, 4 ]
             ResearchAssistant: [ 2, 3 ]
+            Roboticist: [ 2, 2 ]
             Chaplain: [ 1, 1 ]
             ForensicMantis: [ 1, 1 ]
             Borg: [ 2, 2 ]
