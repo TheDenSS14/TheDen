@@ -24,3 +24,111 @@
         - type: FixtureDensityModifier
           min: 100
           factor: 1.33
+
+- type: trait
+  id: UltraHeavyweight
+  category: Physical
+  points: -4 # Has pros and cons, not sure
+  requirements:
+  - !type:CharacterJobRequirement
+    inverted: true
+    jobs:
+    - Borg
+    - MedicalBorg
+  - !type:CharacterSpeciesRequirement
+    inverted: true
+    species:
+    - Oni
+    - Diona
+    - Chitinid
+  - !type:CharacterTraitRequirement
+    inverted: true
+    traits:
+    - Lightweight
+    - Heavyweight
+  functions:
+    - !type:TraitAddComponent
+      components:
+        - type: FixtureDensityModifier
+          min: 100
+          factor: 2
+
+- type: trait
+  id: UltraLightweight
+  category: Physical
+  points: -4 # Has pros and cons, not sure
+  requirements:
+  - !type:CharacterJobRequirement
+    inverted: true
+    jobs:
+    - Borg
+    - MedicalBorg
+  - !type:CharacterSpeciesRequirement # TODO if lamia gets merged, ensure it is added too
+    inverted: true
+    species:
+    - Felinid # They don't need to be lighter
+    - Rodentia
+    - Tajaran
+    - Harpy
+  - !type:CharacterTraitRequirement
+    inverted: true
+    traits:
+    - Heavyweight
+    - UltraHeavyweight
+    - Lightweight
+  functions:
+    - !type:TraitAddComponent
+      components:
+        - type: FixtureDensityModifier
+          min: 100
+          factor: 0.33
+
+- type: trait
+  id: ZeroGTraining
+  category: Physical
+  points: -2 # Suggested value, tweak as appropriate
+  requirements:
+  - !type:CharacterJobRequirement
+    inverted: true
+    jobs:
+    - Borg
+    - MedicalBorg
+  - !type:CharacterSpeciesRequirement
+    inverted: true
+    species:
+    - Moth
+    - Harpy
+  - !type:CharacterTraitRequirement
+    inverted: true
+    traits:
+    - ZeroGAverse
+  functions:
+    - !type:TraitReplaceComponent
+      components:
+        - type: MovementSpeedModifier
+          weightlessAcceleration: 2.5
+
+- type: trait
+  id: ZeroGAverse
+  category: Physical
+  points: 2 # Suggested value, tweak as appropriate
+  requirements:
+  - !type:CharacterJobRequirement
+    inverted: true
+    jobs:
+    - Borg
+    - MedicalBorg
+  - !type:CharacterSpeciesRequirement
+    inverted: true
+    species:
+    - Moth
+    - Harpy
+  - !type:CharacterTraitRequirement
+    inverted: true
+    traits:
+    - ZeroGTraining
+  functions:
+    - !type:TraitReplaceComponent
+      components:
+        - type: MovementSpeedModifier
+          weightlessAcceleration: 0.35

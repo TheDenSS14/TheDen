@@ -5,6 +5,7 @@ using Content.Server.Administration.Logs;
 using Content.Server.Administration.Managers;
 using Content.Server.Chat.Managers;
 using Content.Server.GameTicking;
+using Content.Server.Ghost;
 using Content.Server.Players.RateLimiting;
 using Content.Server.Language;
 using Content.Server.Speech.Components;
@@ -72,6 +73,7 @@ public sealed partial class ChatSystem : SharedChatSystem
     [Dependency] private readonly LanguageSystem _language = default!;
     [Dependency] private readonly TelepathicChatSystem _telepath = default!;
     [Dependency] private readonly EntityWhitelistSystem _whitelistSystem = default!;
+    [Dependency] private readonly GhostSystem _ghost = default!;
 
     public const int VoiceRange = 10; // how far voice goes in world units
     public const int WhisperClearRange = 2; // how far whisper goes while still being understandable, in world units
@@ -518,7 +520,8 @@ public sealed partial class ChatSystem : SharedChatSystem
 
         foreach (var (session, data) in GetRecipients(source, Transform(source).GridUid == null ? 0.3f : WhisperMuffledRange))
         {
-            if (session.AttachedEntity is not { Valid: true } listener)
+            if (session.AttachedEntity is not { Valid: true } listener
+                || session.AttachedEntity.HasValue && HasComp<GhostComponent>(session.AttachedEntity.Value))
                 continue;
 
             if (Transform(session.AttachedEntity.Value).GridUid != Transform(source).GridUid
@@ -643,7 +646,8 @@ public sealed partial class ChatSystem : SharedChatSystem
 
         foreach (var (session, data) in GetRecipients(source, WhisperClearRange))
         {
-            if (session.AttachedEntity is not { Valid: true } listener)
+            if (session.AttachedEntity is not { Valid: true } listener
+                || session.AttachedEntity.HasValue && HasComp<GhostComponent>(session.AttachedEntity.Value))
                 continue;
 
             if (MessageRangeCheck(session, data, range) == MessageRangeCheckResult.Disallowed)

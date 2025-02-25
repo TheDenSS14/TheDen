@@ -1,5 +1,46 @@
 # Botanist
 # Backpacks
+- type: loadout
+  id: LoadoutServiceBotanistHydroponics
+  category: JobsServiceBotanist
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingBackpackHydroponics
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBotanistBackpacks
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Civilian
+
+- type: loadout
+  id: LoadoutServiceBotanistDuffelHydroponics
+  category: JobsServiceBotanist
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingBackpackDuffelHydroponics
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBotanistBackpacks
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Civilian
+
+- type: loadout
+  id: LoadoutServiceBotanistSatchelHydroponics
+  category: JobsServiceBotanist
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingBackpackSatchelHydroponics
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBotanistBackpacks
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Civilian
 
 # Belt
 

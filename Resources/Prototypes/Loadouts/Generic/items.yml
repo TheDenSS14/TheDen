@@ -891,3 +891,10 @@
     - !type:CharacterDepartmentRequirement
        departments:
          - Command
+
+- type: loadout
+  id: LoadoutItemFoodLollipop
+  category: Items
+  cost: 0
+  items:
+    - FoodLollipop

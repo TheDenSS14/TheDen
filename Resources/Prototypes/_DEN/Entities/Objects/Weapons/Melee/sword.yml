@@ -1,0 +1,63 @@
+- type: entity
+  name: antique greatsword
+  parent: BaseSword
+  id: Greatsword
+  description: A massive blade more akin to a hunk of well forged metal on a stick, enhanced with bluespace tech, there are tally marks etched onto the base of the blade.
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Weapons/Melee/shieldblade.rsi
+    state: icon
+  - type: MeleeWeapon
+    wideAnimationRotation: -135
+    attackRate: 1.50
+    range: 1.85
+    damage:
+      types:
+        Slash: 25
+        Blunt: 10
+        Structural: 30
+    bluntStaminaDamageFactor: 25.0
+    heavyRateModifier: 2
+    heavyRangeModifier: 1
+    heavyDamageBaseModifier: 1
+    heavyStaminaCost: 15
+    maxTargets: 10
+    angle: 120
+    soundHit:
+      collection: MetalThud
+  - type: DamageOtherOnHit
+    staminaCost: 30
+  - type: MeleeRequiresWield
+  - type: EmbeddableProjectile
+  - type: EmbedPassiveDamage
+  - type: Wieldable
+  - type: MeleeThrowOnHit
+    speed: 30
+    lifetime: 0.2
+  - type: Reflect
+    reflectProb: .25
+    spread: 90
+  - type: ThrowingAngle
+    angle: 225
+  - type: Item
+    size: Large
+  - type: Clothing
+    sprite: _DEN/Objects/Weapons/Melee/shieldblade.rsi
+    slots:
+    - Back
+    - suitStorage
+
+- type: entity
+  name: greatsword
+  parent: Greatsword
+  id: GreatswordBlueshield
+  description: A massive blade more akin to a hunk of well forged metal on a stick, enhanced with bluespace technology.
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Weapons/Melee/shieldbladeblue.rsi
+    state: icon
+  - type: Clothing
+    sprite: _DEN/Objects/Weapons/Melee/shieldbladeblue.rsi
+    slots:
+    - Back
+    - suitStorage

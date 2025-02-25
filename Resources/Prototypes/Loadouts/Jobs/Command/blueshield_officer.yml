@@ -157,6 +157,23 @@
     - EnergyShield
 
 - type: loadout
+  id: LoadoutBSOGreatsword
+  category: JobsCommandBlueshieldOfficer
+  cost: 4
+  canBeHeirloom: true
+  guideEntry: SecurityWeapons
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBlueshieldOfficerPrimary
+    - !type:CharacterJobRequirement
+      jobs:
+        - BlueshieldOfficer
+    - !type:CharacterAgeRequirement
+      min: 18
+  items:
+    - GreatswordBlueshield
+
+- type: loadout
   id: LoadoutBSOMedkitCombatFilled
   category: JobsCommandBlueshieldOfficer
   cost: 2
