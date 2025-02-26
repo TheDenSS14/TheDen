@@ -5901,10 +5901,6 @@ entities:
       parent: 2
     - type: DeviceLinkSink
       invokeCounter: 1
-    - type: DeviceLinkSource
-      linkedPorts:
-        invalid:
-        - DoorStatus: DoorBolt
 - proto: AirlockSecurityLawyerLocked
   entities:
   - uid: 289
@@ -6701,6 +6697,16 @@ entities:
     components:
     - type: Transform
       pos: -17.5,-40.5
+      parent: 2
+    - type: DeviceLinkSink
+      links:
+      - 9004
+    - type: MaterialSiloUtilizer
+      silo: 9004
+  - uid: 2101
+    components:
+    - type: Transform
+      pos: -29.5,-27.5
       parent: 2
     - type: DeviceLinkSink
       links:
@@ -36114,18 +36120,6 @@ entities:
       parent: 5762
     - type: Physics
       canCollide: False
-- proto: EngineeringTechFab
-  entities:
-  - uid: 2101
-    components:
-    - type: Transform
-      pos: -29.5,-27.5
-      parent: 2
-    - type: DeviceLinkSink
-      links:
-      - 9004
-    - type: MaterialSiloUtilizer
-      silo: 9004
 - proto: ExosuitFabricator
   entities:
   - uid: 5764
@@ -37114,7 +37108,7 @@ entities:
       pos: -36.5,-22.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -80274.39
+      secondsUntilStateChange: -80467.75
       state: Closing
   - uid: 5912
     components:
@@ -70548,11 +70542,6 @@ entities:
       rot: 1.5707963267948966 rad
       pos: 16.5,-16.5
       parent: 2
-    - type: DeviceLinkSource
-      linkedPorts:
-        invalid:
-        - Pressed: Open
-        - Pressed: Close
 - proto: SignalSwitch
   entities:
   - uid: 10958
@@ -73110,6 +73099,89 @@ entities:
     components:
     - type: Transform
       pos: 20.5,-10.5
+      parent: 2
+- proto: SpawnPointSeniorEngineer
+  entities:
+  - uid: 11185
+    components:
+    - type: Transform
+      pos: -34.5,-35.5
+      parent: 2
+  - uid: 13576
+    components:
+    - type: Transform
+      pos: -30.5,-40.5
+      parent: 2
+  - uid: 13788
+    components:
+    - type: Transform
+      pos: -31.5,-40.5
+      parent: 2
+  - uid: 13789
+    components:
+    - type: Transform
+      pos: -33.5,-40.5
+      parent: 2
+- proto: SpawnPointSeniorOfficer
+  entities:
+  - uid: 13790
+    components:
+    - type: Transform
+      pos: 26.5,-19.5
+      parent: 2
+  - uid: 13791
+    components:
+    - type: Transform
+      pos: 26.5,-18.5
+      parent: 2
+  - uid: 13792
+    components:
+    - type: Transform
+      pos: 26.5,-17.5
+      parent: 2
+- proto: SpawnPointSeniorPhysician
+  entities:
+  - uid: 9416
+    components:
+    - type: Transform
+      pos: 3.5,-36.5
+      parent: 2
+  - uid: 9823
+    components:
+    - type: Transform
+      pos: 4.5,-36.5
+      parent: 2
+  - uid: 9824
+    components:
+    - type: Transform
+      pos: 6.5,-36.5
+      parent: 2
+  - uid: 10014
+    components:
+    - type: Transform
+      pos: 5.5,-36.5
+      parent: 2
+- proto: SpawnPointSeniorResearcher
+  entities:
+  - uid: 13793
+    components:
+    - type: Transform
+      pos: -34.5,-8.5
+      parent: 2
+  - uid: 13794
+    components:
+    - type: Transform
+      pos: -34.5,-7.5
+      parent: 2
+  - uid: 13795
+    components:
+    - type: Transform
+      pos: -34.5,-9.5
+      parent: 2
+  - uid: 13796
+    components:
+    - type: Transform
+      pos: -34.5,-10.5
       parent: 2
 - proto: SpawnPointServiceWorker
   entities:
