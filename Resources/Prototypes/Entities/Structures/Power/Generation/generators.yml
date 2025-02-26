@@ -320,3 +320,14 @@
             max: 5
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
+
+- type: entity
+  parent: GeneratorRTG
+  id: GeneratorRTGBluespace
+  name: experimental bluespace generator
+  description: An experimental power generation method, used in the event that the station has no engineering crew.
+  components:
+  - type: PowerSupplier
+    supplyRate: 3000000
+    supplyRampRate: 500000
+    supplyRampTolerance: 500000

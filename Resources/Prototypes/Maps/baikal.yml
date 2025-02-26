@@ -1,7 +1,7 @@
 - type: gameMap
   id: Baikal
   mapName: 'Baikal'
-  mapPath: /Maps/TheDen/baikal.yml # The Den
+  mapPath: /Maps/TheDen/baikal.yml
   minPlayers: 20
   maxPlayers: 80
   stations:
@@ -12,7 +12,7 @@
           mapNameTemplate: '{0} Baikal Station {1}'
           nameGenerator:
             !type:NanotrasenNameGenerator
-            prefixCreator: 'DV'
+            prefixCreator: 'TD'
         - type: StationEmergencyShuttle
           emergencyShuttlePath: /Maps/Shuttles/emergency.yml
         - type: StationJobs

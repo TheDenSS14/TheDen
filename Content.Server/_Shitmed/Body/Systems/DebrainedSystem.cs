@@ -3,6 +3,7 @@ using Content.Shared._Shitmed.Body.Organ;
 using Content.Shared.Body.Systems;
 using Content.Shared.Mind;
 using Content.Server.Popups;
+using Content.Shared.Interaction.Events;
 using Content.Shared.Speech;
 using Content.Shared.Standing;
 using Content.Shared.Stunnable;
@@ -26,6 +27,7 @@ public sealed class DebrainedSystem : EntitySystem
         SubscribeLocalEvent<DebrainedComponent, ComponentRemove>(OnComponentRemove);
         SubscribeLocalEvent<DebrainedComponent, SpeakAttemptEvent>(OnSpeakAttempt);
         SubscribeLocalEvent<DebrainedComponent, StandAttemptEvent>(OnStandAttempt);
+        SubscribeLocalEvent<DebrainedComponent, ConsciousAttemptEvent>(OnConsciousAttempt); // Floofstation
     }
 
     private void OnComponentInit(EntityUid uid, DebrainedComponent _, ComponentInit args)
@@ -58,5 +60,11 @@ public sealed class DebrainedSystem : EntitySystem
     private void OnStandAttempt(EntityUid uid, DebrainedComponent _, StandAttemptEvent args)
     {
         args.Cancel();
+    }
+
+    // Floofstation
+    private void OnConsciousAttempt(Entity<DebrainedComponent> ent, ref ConsciousAttemptEvent args)
+    {
+        args.Cancelled = true;
     }
 }

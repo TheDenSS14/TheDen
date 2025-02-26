@@ -118,6 +118,11 @@
   - type: SolutionContainerVisuals
     maxFillLevels: 1
     fillBaseName: spear
+  - type: InteractionVerbs
+    allowedVerbs:
+    - HugObject
+    - KissObject
+    - LickObject
 
 - type: entity
   name: reinforced spear
@@ -288,3 +293,8 @@
   - type: SolutionContainerVisuals
     maxFillLevels: 1
     fillBaseName: spear
+  - type: InteractionVerbs
+    allowedVerbs:
+    - HugObject
+    - KissObject
+    - LickObject

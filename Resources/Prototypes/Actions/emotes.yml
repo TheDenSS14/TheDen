@@ -20,6 +20,11 @@
   chatTriggers:
   - spin
   - spins
+  - chases tail
+  - chases their tail
+  - chases her tail
+  - chases his tail
+  - chases its tail
   event: !type:AnimationSpinEmoteEvent
 
 - type: emote
@@ -32,4 +37,6 @@
   chatTriggers:
   - jump
   - jumps
+  - hop # TheDen
+  - hops # TheDen
   event: !type:AnimationJumpEmoteEvent

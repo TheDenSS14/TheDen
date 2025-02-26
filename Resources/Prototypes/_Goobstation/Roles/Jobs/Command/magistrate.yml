@@ -17,15 +17,9 @@
   joinNotifyCrew: true
   supervisors: job-supervisors-centcom
   canBeAntag: false
+  accessGroups:
+  - BasicAllAccess
   access:
-  - Security
-  - Brig
-  - External
-  - Cryogenics
-  - Maintenance
-  - Detective
-  - Corpsman
-  - Command
   - CentralCommand
   - Magistrate
   special:

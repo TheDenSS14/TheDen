@@ -185,21 +185,21 @@ public sealed partial class AnomalyComponent : Component
     /// The minimum amount of research points generated per second
     /// </summary>
     [DataField("minPointsPerSecond")]
-    public int MinPointsPerSecond = 10;
+    public int MinPointsPerSecond = 40;
 
     /// <summary>
     /// The maximum amount of research points generated per second
     /// This doesn't include the point bonus for being unstable.
     /// </summary>
     [DataField("maxPointsPerSecond")]
-    public int MaxPointsPerSecond = 70;
+    public int MaxPointsPerSecond = 150;
 
     /// <summary>
     /// The multiplier applied to the point value for the
     /// anomaly being above the <see cref="GrowthThreshold"/>
     /// </summary>
     [DataField("growingPointMultiplier")]
-    public float GrowingPointMultiplier = 1.5f;
+    public float GrowingPointMultiplier = 2.0f;
     #endregion
 
     /// <summary>

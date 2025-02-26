@@ -48,6 +48,12 @@
     lifetime: 180
   - type: Airtight
     noAirWhenFullyAirBlocked: false
+  - type: EmitSoundOnSpawn
+    sound: 
+      path: /Audio/_DEN/holofan_sound.ogg
+      params:
+        maxDistance: 5
+        volume: 2
 
 - type: entity
   id: HolosignSecurity

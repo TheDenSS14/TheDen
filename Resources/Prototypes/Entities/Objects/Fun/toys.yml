@@ -639,6 +639,17 @@
     equippedPrefix: mouse
     slots:
     - HEAD
+  # Begin DeltaV additions: make cats attack mouse toys to play with them
+  - type: Damageable
+    damageContainer: StructuralInorganic # not actually destructible, just lets it be attacked
+  - type: MobState
+  - type: MobThresholds
+    thresholds:
+      0: Alive # always be considered alive
+  - type: NpcFactionMember
+    factions:
+    - Mouse
+  # End DeltaV additions
 
 - type: entity
   parent: BasePlushie
@@ -1085,7 +1096,7 @@
 
 - type: entity
   parent: PlushieVulp
-  id: PlushieTrystan
+  id: PlushieDignifiedVulp
   name: office vulp plushie
   description: The ones who yeeps!
   components:

@@ -62,29 +62,29 @@
   id: FoodCosmicRevenant
   description: Is this even a pepper? Looks... Haunted.
   components:
-  - type: FlavorProfile
-    flavors:
-    - spicy
-    - spooky
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxVol: 41
-        reagents:
-        - ReagentId: Nutriment
-          Quantity: 8
-        - ReagentId: CapsaicinOil
-          Quantity: 20
-        - ReagentId: Vitamin
-          Quantity: 8
-        - ReagentId: Ectoplasm
-          Quantity: 5
-  - type: TileFrictionModifier
-    modifier: 0.0001
-  - type: Sprite
-    sprite: DeltaV/Objects/Specific/Hydroponics/Cosmic_Revenant.rsi
-  - type: Produce
-    seedId: CosmicRevenant
-  - type: Tag
-    tags:
-    - Vegetable
+    - type: FlavorProfile
+      flavors:
+        - spicy
+        - spooky
+    - type: SolutionContainerManager
+      solutions:
+        food:
+          maxVol: 41
+          reagents:
+            - ReagentId: Nutriment
+              Quantity: 8
+            - ReagentId: CapsaicinOil
+              Quantity: 20
+            - ReagentId: Vitamin
+              Quantity: 8
+            - ReagentId: Ectoplasm
+              Quantity: 5
+    - type: TileFrictionModifier
+      modifier: 0.0001
+    - type: Sprite
+      sprite: DeltaV/Objects/Specific/Hydroponics/Cosmic_Revenant.rsi
+    - type: Produce
+      seedId: CosmicRevenant
+    - type: Tag
+      tags:
+      - Vegetable

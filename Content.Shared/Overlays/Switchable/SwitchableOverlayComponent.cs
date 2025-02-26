@@ -1,3 +1,4 @@
+using System.Dynamic;
 using Robust.Shared.Audio;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization;
@@ -18,9 +19,6 @@ public abstract partial class SwitchableOverlayComponent : BaseOverlayComponent
     [DataField]
     public bool IsEquipment;
 
-    /// <summary>
-    /// If it is greater than 0, overlay isn't toggled but pulsed instead
-    /// </summary>
     [DataField]
     public float PulseTime;
 

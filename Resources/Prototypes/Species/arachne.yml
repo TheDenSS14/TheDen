@@ -32,6 +32,9 @@
     Chest:
       points: 1
       required: false
+    Undershirt:
+      points: 1
+      required: false
     RightArm:
       points: 2
       required: false
@@ -56,6 +59,7 @@
     FacialHair: MobHumanoidAnyMarking
     Snout: MobHumanoidAnyMarking
     Chest: MobHumanTorso
+    Undershirt: MobHumanoidAnyMarking
     Eyes: MobArachneEyes
     LArm: MobHumanLArm
     RArm: MobHumanRArm

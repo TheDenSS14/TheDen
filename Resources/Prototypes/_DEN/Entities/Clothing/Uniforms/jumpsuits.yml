@@ -19,3 +19,55 @@
     sprite: _DEN/Clothing/Uniforms/Jumpsuit/seniortrooper.rsi
   - type: Clothing
     sprite: _DEN/Clothing/Uniforms/Jumpsuit/seniortrooper.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitCatsuit
+  name: latex catsuit
+  description: A catsuit made of latex, usually worn under hardsuits or coats, quite the fashion statement.
+  components:
+  - type: Sprite
+    sprite: _DEN/Clothing/Uniforms/Jumpsuit/latexcatsuit.rsi
+  - type: Clothing
+    sprite: _DEN/Clothing/Uniforms/Jumpsuit/latexcatsuit.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitCatsuitShiny
+  name: latex catsuit
+  description: A catsuit made of latex, usually worn under hardsuits or coats, quite the fashion statement. This one's polished beforehand.
+  components:
+  - type: Sprite
+    sprite: _DEN/Clothing/Uniforms/Jumpsuit/latexcatsuitshiny.rsi
+  - type: Clothing
+    sprite: _DEN/Clothing/Uniforms/Jumpsuit/latexcatsuitshiny.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitCatsuitBlank
+  name: latex catsuit
+  description: A catsuit made of latex, usually worn under hardsuits or coats, quite the fashion statement. This one's polished beforehand.
+  components:
+  - type: Sprite
+    sprite: _DEN/Clothing/Uniforms/Jumpsuit/latexcatsuitblank.rsi
+  - type: Clothing
+    sprite: _DEN/Clothing/Uniforms/Jumpsuit/latexcatsuitblank.rsi
+
+# grabbed from ship_vs_ship.yml
+- type: entity
+  parent: ClothingUniformJumpsuitRepairmanSyndie
+  id: ClothingUniformJumpsuitRepairmanCybersun
+  name: cybersun repairman jumpsuit
+  description: Functional, fashionable, and badass. Nanotrasen's engineers wish they could look as good as this.
+
+- type: entity
+  parent: ClothingUniformJumpsuitParamedicSyndie
+  id: ClothingUniformJumpsuitParamedicCybersun
+  name: cybersun paramedic jumpsuit
+  description: For some reason, wearing this makes you feel like you're awfully close to violating the Geneva Convention.
+
+- type: entity
+  parent: ClothingUniformJumpsuitChiefEngineerSyndie
+  id: ClothingUniformJumpsuitChiefEngineerCybersun
+  name: cybersun chief engineer jumpsuit
+  description: An evil-looking jumpsuit with a reflective vest & red undershirt.

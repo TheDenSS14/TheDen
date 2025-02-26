@@ -41,6 +41,28 @@
     - !type:TraitAddComponent
       components:
         - type: SouthernAccent
+        
+- type: trait
+  id: GermanAccent
+  category: TraitsSpeechAccents
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: TraitsAccents
+  functions:
+    - !type:TraitAddComponent
+      components:
+        - type: GermanAccent
+        
+- type: trait
+  id: ItalianAccent
+  category: TraitsSpeechAccents
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: TraitsAccents
+  functions:
+    - !type:TraitAddComponent
+      components:
+        - type: MobsterAccent
 
 - type: trait
   id: SkeletonAccent

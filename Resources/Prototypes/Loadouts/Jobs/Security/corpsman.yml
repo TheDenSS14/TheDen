@@ -60,8 +60,31 @@
 # Ears
 
 # Equipment
+- type: loadout
+  id: LoadoutCrewMonitor
+  category: JobsSecurityCorpsman
+  cost: 6
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - Brigmedic
+  items:
+    - HandheldCrewMonitor
 
 # Eyes
+- type: loadout
+  id: LoadoutClothingEyesGlassesCorpsman
+  category: JobsSecurityAUncategorized
+  cost: 2
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSecurityEyes
+    - !type:CharacterJobRequirement
+      jobs:
+        - Brigmedic
+  items:
+    - ClothingEyesGlassesCorpsman
 
 # Gloves
 - type: loadout
@@ -77,6 +100,34 @@
         - Brigmedic
   items:
     - ClothingHandsGlovesNitrile
+
+- type: loadout
+  id: LoadoutClothingHandsGlovesLatex
+  category: JobsSecurityCorpsman
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutCorpsmanGloves
+    - !type:CharacterJobRequirement
+      jobs:
+        - Brigmedic
+  items:
+    - ClothingHandsGlovesLatex
+
+- type: loadout
+  id: LoadoutClothingHandsGlovesChemist
+  category: JobsSecurityCorpsman
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutCorpsmanGloves
+    - !type:CharacterJobRequirement
+      jobs:
+        - Brigmedic
+  items:
+    - ClothingHandsGlovesChemist
 
 # Head
 - type: loadout
@@ -124,7 +175,62 @@
   items:
     - BedsheetBrigmedic
 
+- type: loadout
+  id: LoadoutClothingNeckStethoscope
+  category: JobsSecurityCorpsman
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutCorpsmanNeck
+    - !type:CharacterJobRequirement
+      jobs:
+        - Brigmedic
+  items:
+    - ClothingNeckStethoscope
+
 # Mask
+- type: loadout
+  id: LoadoutClothingMaskGasSecurity
+  category: JobsSecurityCorpsman
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutCorpsmanMask
+    - !type:CharacterJobRequirement
+      jobs:
+        - Brigmedic
+  items:
+    - ClothingMaskGasSecurity
+
+- type: loadout
+  id: LoadoutClothingMaskSterile
+  category: JobsSecurityCorpsman
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutCorpsmanMask
+    - !type:CharacterJobRequirement
+      jobs:
+        - Brigmedic
+  items:
+    - ClothingMaskSterile
+
+- type: loadout
+  id: LoadoutClothingMaskBreathMedical
+  category: JobsSecurityCorpsman
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutCorpsmanMask
+    - !type:CharacterJobRequirement
+      jobs:
+        - Brigmedic
+  items:
+    - ClothingMaskBreathMedical
 
 # Outer
 

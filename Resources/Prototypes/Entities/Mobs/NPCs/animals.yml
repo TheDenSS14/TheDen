@@ -2436,7 +2436,7 @@
   - type: Speech
     speechVerb: Arachnid
     speechSounds: Arachnid
-    allowedEmotes: ['Click', 'Chitter']
+    allowedEmotes: ['Click', 'Chitter', 'Hiss'] #DeltaV added Hiss
   - type: Vocal
     sounds:
       Male: UnisexArachnid
@@ -2507,7 +2507,7 @@
 
 - type: entity
   name: tarantula
-  parent: MobSpiderBase
+  parent: MobSpiderAngryBase
   id: MobGiantSpider
   description: Widely recognized to be the literal worst thing in existence.
   components:
@@ -3086,6 +3086,12 @@
   - type: RandomBark
     barkType: cat
   - type: LeashAnchor # Floofstation
+  - type: HTN # DeltaV - make all cats eat mice
+    rootTask:
+      task: SimpleHostileCompound
+  - type: NpcFactionMember # DeltaV - give cats faction so they fight mice
+    factions:
+    - Cat
 
 - type: entity
   name: calico cat

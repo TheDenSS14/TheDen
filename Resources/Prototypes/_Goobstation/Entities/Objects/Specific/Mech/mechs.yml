@@ -115,7 +115,9 @@
       state: paper
   - type: FootstepModifier
     footstepSoundCollection:
-      path: /Audio/Mecha/sound_mecha_powerloader_step.ogg
+      path: /Audio/_DEN/sound_mecha_tracked_00.ogg
+      params:
+        playOffsetSeconds: 0.54
   - type: Mech
     baseState: clarke
     openState: clarke-open
@@ -186,7 +188,7 @@
       state: paper
   - type: FootstepModifier
     footstepSoundCollection:
-      path: /Audio/Mecha/sound_mecha_powerloader_step.ogg
+      path: /Audio/_DEN/sound_mecha_powerloader_step_02.ogg
   - type: Mech
     baseState: gygax
     openState: gygax-open
@@ -245,7 +247,7 @@
       state: paper
   - type: FootstepModifier
     footstepSoundCollection:
-      path: /Audio/Mecha/sound_mecha_powerloader_step.ogg
+      path: /Audio/_DEN/sound_mecha_powerloader_step_01.ogg
   - type: Mech
     baseState: durand
     openState: durand-open

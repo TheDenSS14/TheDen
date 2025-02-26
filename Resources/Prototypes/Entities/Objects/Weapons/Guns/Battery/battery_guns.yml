@@ -55,6 +55,11 @@
   - type: SurgeryTool
     endSound:
       path: /Audio/Weapons/Guns/Gunshots/laser.ogg
+  - type: InteractionVerbs
+    allowedVerbs:
+    - HugObject
+    - KissObject
+    - LickObject
 
 - type: entity
   id: BaseWeaponPowerCell
@@ -114,6 +119,11 @@
   - type: SurgeryTool
     endSound:
       path: /Audio/Weapons/Guns/Gunshots/laser.ogg
+  - type: InteractionVerbs
+    allowedVerbs:
+    - HugObject
+    - KissObject
+    - LickObject
 
 - type: entity
   id: BaseWeaponBatterySmall

@@ -59,3 +59,8 @@
       path: /Audio/Weapons/chainsawwield.ogg
     endSound:
       path: /Audio/Weapons/chainsaw.ogg
+  - type: InteractionVerbs
+    allowedVerbs:
+    - HugObject
+    - KissObject
+    - LickObject

@@ -90,6 +90,7 @@
   - type: InteractionVerbs
     allowedVerbs:
     - KnockOn
+    - LickObject
   - type: PressureDestructible
     maxPressureDifferential: 2000.0
 
@@ -194,6 +195,7 @@
   - type: InteractionVerbs
     allowedVerbs:
     - KnockOn
+    - LickObject
   - type: PressureDestructible
     maxPressureDifferential: 3000.0
 

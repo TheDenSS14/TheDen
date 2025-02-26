@@ -10,11 +10,6 @@
   description: A miserable pile of scales.
   components:
   - type: CombatMode
-  - type: InteractionPopup
-    successChance: 1
-    interactSuccessString: hugging-success-generic
-    interactSuccessSound: /Audio/Effects/thudswoosh.ogg
-    messagePerceivedByOthers: hugging-success-generic-others
   - type: Mind
   - type: Input
     context: "human"

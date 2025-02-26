@@ -18,7 +18,7 @@
     CorgiMeatStealObjective: 1
     MantisKnifeStealObjective: 1 # Nyanotrasen - ForensicMantis steal objective, see Resources/Prototypes/Nyanotrasen/Objectives/traitor.yml
     ClipboardStealObjective: 1
-    RdClipboardStealObjective: 1 # DeltaV - Mysta steal Objective see Resources/Prototypes/DeltaV/Objectives/traitor.yml
+    #RdClipboardStealObjective: 1 # DeltaV - Mysta steal Objective see Resources/Prototypes/DeltaV/Objectives/traitor.yml
     CaptainGunStealObjective: 0.5
     CaptainJetpackStealObjective: 0.5
     HandTeleporterStealObjective: 0.5
@@ -31,9 +31,9 @@
 - type: weightedRandom
   id: TraitorObjectiveGroupKill
   weights:
-    KillRandomPersonObjective: 1
-    TeachLessonRandomPersonObjective: 0.25
-    KillRandomHeadObjective: 0.25
+#    KillRandomPersonObjective: 1
+    TeachLessonRandomPersonObjective: 1
+#    KillRandomHeadObjective: 0.25
 
 - type: weightedRandom
   id: TraitorObjectiveGroupState

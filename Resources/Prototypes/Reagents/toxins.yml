@@ -55,6 +55,7 @@
   physicalDesc: reagent-physical-desc-nondescript
   metabolisms:
     Poison:
+      metabolismRate: 0.25 # DeltaV: chloral hydrate should last longer for surgery
       effects:
       - !type:Emote
         emote: Yawn
@@ -69,14 +70,15 @@
         time: 4
         type: Add
         refresh: false
-      - !type:HealthChange
+      - !type:GenericStatusEffect
         conditions:
         - !type:ReagentThreshold
           reagent: ChloralHydrate
-          min: 20
-        damage:
-          types:
-            Poison: 1.5
+          min: 25
+        key: ForcedSleep
+        component: ForcedSleeping
+        refresh: false
+        type: Add
 
 - type: reagent
   id: GastroToxin

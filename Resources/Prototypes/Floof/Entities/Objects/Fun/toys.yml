@@ -129,3 +129,124 @@
       path: /Audio/Weapons/Xeno/alien_spitacid.ogg
     angle: 0
     animation: WeaponArcBite # Rrrr!
+
+- type: entity
+  parent: BasePlushie
+  id: PlushieDragon
+  name:
+  description:
+  components:
+  - type: Sprite
+    sprite: Floof/Objects/Fun/floof_plush.rsi
+    state: dragon
+    color: "#ff0000"
+  - type: PhysicalComposition
+    materialComposition:
+      Plastic: 100
+  - type: StaticPrice
+    price: 75
+  - type: UseDelay
+    delay: 3.0
+  - type: EmitSoundOnUse
+    sound:
+      path: /Audio/Animals/space_dragon_roar.ogg
+      params:
+        volume: 1
+  - type: EmitSoundOnLand
+    sound:
+      path: /Audio/Animals/space_dragon_roar.ogg
+  - type: EmitSoundOnActivate
+    sound:
+      path: /Audio/Animals/space_dragon_roar.ogg
+      params:
+        volume: 1
+  - type: EmitSoundOnCollide
+    sound:
+      collection: ToyFall
+      params:
+        variation: 0.03
+        volume: 3
+  - type: MeleeWeapon
+    soundHit:
+      collection: ToyFall
+      params:
+        variation: 0.05
+        volume: 4
+
+- type: entity
+  parent: BasePlushie
+  id: PlushieDino
+  name: dino plushie
+  suffix: DO NOT MAP
+  description: It'S just a generic dino, nothing to see here.
+  components:
+  - type: Sprite
+    sprite: Floof/Objects/Fun/floof_plush.rsi
+    state: dino
+  - type: PhysicalComposition
+    materialComposition:
+      Plastic: 100
+  - type: StaticPrice
+    price: 75
+  - type: UseDelay
+    delay: 3.0
+  - type: EmitSoundOnUse
+    sound:
+      path: /Audio/Animals/space_dragon_roar.ogg
+      params:
+        volume: 1
+  - type: EmitSoundOnLand
+    sound:
+      path: /Audio/Animals/space_dragon_roar.ogg
+  - type: EmitSoundOnActivate
+    sound:
+      path: /Audio/Animals/space_dragon_roar.ogg
+      params:
+        volume: 1
+  - type: EmitSoundOnCollide
+    sound:
+      collection: ToyFall
+      params:
+        variation: 0.03
+        volume: 3
+  - type: MeleeWeapon
+    soundHit:
+      collection: ToyFall
+      params:
+        variation: 0.05
+        volume: 4
+
+- type: entity
+  parent: PlushieHuman
+  id: PlushieChillHuman
+  name: chill human plushie
+  description: It's just a chill lill dude.
+  components:
+  - type: Sprite
+    sprite: Floof/Objects/Fun/floof_plush.rsi
+    state: chill
+
+- type: entity
+  parent: PlushieHuman
+  id: PlushieSlimeTider
+  name: slime tider plushie
+  description: A generic tider, this one seems to be particularly slimy. The label reads 'Product not insulated'
+  components:
+  - type: Sprite
+    sprite: Floof/Objects/Fun/floof_plush.rsi
+    state: slime
+  - type: UseDelay
+    delay: 3.0
+  - type: EmitSoundOnUse
+    sound:
+      path: /Audio/Voice/Slime/slime_squish.ogg
+      params:
+        volume: 1
+  - type: EmitSoundOnLand
+    sound:
+      path: /Audio/Voice/Slime/slime_squish.ogg
+  - type: EmitSoundOnActivate
+    sound:
+      path: /Audio/Voice/Slime/slime_squish.ogg
+      params:
+        volume: 1

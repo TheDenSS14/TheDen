@@ -475,7 +475,7 @@
   components:
   - type: Appearance
   - type: AccessReader
-    access: [["Theatre"]]
+    access: [["Clown"]] # Floof
   - type: EntityStorageVisuals
     stateBaseClosed: clown
     stateDoorOpen: clown_open
@@ -489,7 +489,7 @@
   components:
   - type: Appearance
   - type: AccessReader
-    access: [["Theatre"]]
+    access: [["Mime"]] # Floof
   - type: EntityStorageVisuals
     stateBaseClosed: mime
     stateDoorOpen: mime_open

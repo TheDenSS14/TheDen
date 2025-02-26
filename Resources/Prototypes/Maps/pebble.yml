@@ -14,14 +14,19 @@
           mapNameTemplate: '{0} Pebble Station {1}'
           nameGenerator:
             !type:NanotrasenNameGenerator
-            prefixCreator: 'DV'
+            prefixCreator: 'NYA'
+#        - type: GridSpawn
+#          groups:
+#            AISAT:
+#              paths:
+#              - /Maps/Shuttles/AISAT.yml
         - type: StationJobs
           overflowJobs:
             - Passenger
           availableJobs:
           #service
             Captain: [ 1, 1 ]
-            BlueshieldOfficer: [ 1, 1]
+            BlueshieldOfficer: [ 1, 1 ]
             NanotrasenRepresentative: [ 1, 1 ]
             AdministrativeAssistant: [ 1, 1 ]
             HeadOfPersonnel: [ 1, 1 ]
@@ -30,7 +35,7 @@
             Boxer: [ 2, 2 ]
             Chef: [ 2 , 2 ]
             Clown: [ 1, 1 ]
-            Lawyer: [ 1, 1 ]
+            Lawyer: [ 1, 2 ]
             Musician: [ 1, 1 ]
             Janitor: [ 1, 2 ]
             Mime: [ 1, 1 ]
@@ -38,15 +43,15 @@
             ServiceWorker: [ 1, 2 ]
           #engineering
             ChiefEngineer: [ 1, 1 ]
-            AtmosphericTechnician: [ 1, 2]
+            AtmosphericTechnician: [ 1, 2 ]
             StationEngineer: [ 2, 3 ]
             SeniorEngineer: [ 1, 1 ]
             TechnicalAssistant: [ 2, 2 ]
           #medical
             ChiefMedicalOfficer: [ 1, 1 ]
             Chemist: [ 1, 1 ]
-            MedicalDoctor: [ 2, 3 ]
             SeniorPhysician: [ 1, 1 ]
+            MedicalDoctor: [ 2, 3 ]
             MedicalBorg: [ 1, 1 ]
             MedicalIntern: [ 2, 2 ]
             Paramedic: [ 1, 1 ]
@@ -55,8 +60,8 @@
             ResearchDirector: [ 1, 1 ]
             Chaplain: [ 1, 1 ]
             ForensicMantis: [ 1, 1 ]
-            Scientist: [ 2, 3 ]
             SeniorResearcher: [ 1, 1 ]
+            Scientist: [ 2, 3 ]
             ResearchAssistant: [ 2, 2 ]
             Roboticist: [ 1, 1 ]
             Borg: [ 1, 1 ]
@@ -65,7 +70,6 @@
             Warden: [ 1, 1 ]
             Detective: [ 1, 1 ]
             SecurityOfficer: [ 2, 3 ]
-            SeniorOfficer: [ 1, 1 ]
             SecurityCadet: [ 1, 3 ]
             Brigmedic: [ 1, 1 ]
             Prisoner: [ 1, 2 ]
@@ -76,5 +80,8 @@
             CargoTechnician: [ 2, 3 ]
           #civilian
             Passenger: [ -1, -1 ]
+          #justice
+            ChiefJustice: [ 1, 1 ]
+            Clerk: [ 1, 1 ]
           # Silicon
             StationAi: [ 1, 1 ]

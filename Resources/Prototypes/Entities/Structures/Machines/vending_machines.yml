@@ -177,9 +177,10 @@
 
 - type: entity
   parent: VendingMachine
-  id: VendingMachineBooze
+  id: VendingMachineBoozeUnlocked
   name: Booze-O-Mat
   description: A technological marvel, supposedly able to mix just the mixture you'd like to drink the moment you ask for one.
+  suffix: Unlocked
   components:
   - type: VendingMachine
     pack: BoozeOMatInventory
@@ -203,11 +204,17 @@
       shader: unshaded
     - state: panel
       map: ["enum.WiresVisualLayers.MaintenancePanel"]
-  - type: AccessReader
-    access: [["Bar"]]
   - type: GuideHelp
     guides:
     - Bartender
+
+- type: entity
+  parent: VendingMachineBoozeUnlocked
+  id: VendingMachineBooze
+  suffix: Bar
+  components:
+  - type: AccessReader
+    access: [["Bar"]]
 
 - type: entity
   parent: VendingMachine
@@ -1723,7 +1730,7 @@
     - state: panel
       map: ["enum.WiresVisualLayers.MaintenancePanel"]
   - type: AccessReader
-    access: [["Lawyer"]]
+    access: [["Justice"]]
 
 - type: entity
   parent: VendingMachine
@@ -2323,7 +2330,7 @@
     brokenState: broken
     normalState: normal
     denyState: deny
-    ejectDelay: 2
+    ejectDelay: 0.5
   - type: Sprite
     sprite: Structures/Machines/VendingMachines/chemvend.rsi
     layers:
@@ -2351,7 +2358,7 @@
     brokenState: broken
     normalState: normal
     denyState: deny
-    ejectDelay: 2
+    ejectDelay: 0.5
   - type: AccessReader
     access: [["SyndicateAgent"]]
 

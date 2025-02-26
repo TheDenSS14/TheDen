@@ -56,11 +56,15 @@
     - type: loadout
       id: LoadoutServiceWinterCoatJanitor
 #
-#- type: characterItemGroup
-#  id: LoadoutJanitorShoes
-#  maxItems: 1
-#  items:
-#
+- type: characterItemGroup
+  id: LoadoutJanitorShoes
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutClothingShoesGaloshes
+    - type: loadout
+      id: LoadoutClothingShoesPurpleGaloshes
+
 - type: characterItemGroup
   id: LoadoutJanitorUniforms
   maxItems: 1

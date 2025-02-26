@@ -16,6 +16,9 @@
       path: /Audio/_Shitmed/Medical/Surgery/retractor1.ogg
     endSound:
       path: /Audio/_Shitmed/Medical/Surgery/hemostat1.ogg
+  - type: InteractionVerbs
+    allowedVerbs:
+    - LickObject
 
 - type: entity
   parent: UtensilBase
@@ -112,6 +115,11 @@
     angle: 180
   - type: Shovel
     speedModifier: 0.1 # you can try
+  - type: ReactionMixer
+    mixMessage: "spoon-mixing-success"
+    timeToMix: 0.5
+    reactionTypes:
+    - Stir
 
 - type: entity
   parent: UtensilBasePlastic
@@ -128,6 +136,11 @@
     - Spoon
   - type: Shovel
     speedModifier: 0.1 # you can try
+  - type: ReactionMixer
+    mixMessage: "spoon-mixing-success"
+    timeToMix: 0.5
+    reactionTypes:
+    - Stir
 
 - type: entity
   parent: UtensilBasePlastic
@@ -162,6 +175,11 @@
   - type: Utensil
     types:
     - Spoon
+  - type: ReactionMixer
+    mixMessage: "spoon-mixing-success"
+    timeToMix: 0.5
+    reactionTypes:
+    - Stir
   - type: MeleeWeapon
     wideAnimationRotation: 180
     attackRate: .5

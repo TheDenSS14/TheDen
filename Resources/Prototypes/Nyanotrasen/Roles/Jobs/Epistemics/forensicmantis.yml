@@ -25,8 +25,8 @@
   startingGear: ForensicMantisGear
   icon: "JobIconForensicMantis"
   supervisors: job-supervisors-rd
-  antagAdvantage: 5
-  canBeAntag: true
+  canBeAntag: true # DeltaV - Mantis is no longer a Detective
+  # whitelistRequired: true
   access:
   - Research
   - Maintenance

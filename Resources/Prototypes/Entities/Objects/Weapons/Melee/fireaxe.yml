@@ -47,6 +47,7 @@
     quickEquip: false
     slots:
     - back
+    - suitStorage
   - type: Tool
     qualities:
       - Prying
@@ -67,6 +68,11 @@
   - type: SurgeryTool
     startSound:
       path: /Audio/Medical/Surgery/saw.ogg
+  - type: InteractionVerbs
+    allowedVerbs:
+    - HugObject
+    - KissObject
+    - LickObject
 
 - type: entity
   id: FireAxeFlaming

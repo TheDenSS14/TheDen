@@ -568,3 +568,31 @@
         - ChiefEngineer
   items:
     - ClothingUniformJumpskirtChiefEngineerTurtle
+
+- type: loadout
+  id: LoadoutClothingUniformJumpsuitChiefEngineerNT
+  category: JobsEngineeringChiefEngineer
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutChiefEngineerUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - ChiefEngineer
+  items:
+    - ClothingUniformJumpsuitChiefEngineerNT
+
+- type: loadout
+  id: LoadoutClothingUniformJumpsuitChiefEngineerCybersun
+  category: JobsEngineeringChiefEngineer
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutChiefEngineerUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - ChiefEngineer
+  items:
+    - ClothingUniformJumpsuitChiefEngineerCybersun

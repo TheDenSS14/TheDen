@@ -7,7 +7,6 @@
   - !type:CharacterDepartmentTimeRequirement
     department: Engineering
     min: 14400 # The Den - 8 hours
-  antagAdvantage: 10 # DeltaV - Reduced TC: External Access + Fireaxe + Free Hardsuit
   startingGear: AtmosphericTechnicianGear
   icon: "JobIconAtmosphericTechnician"
   supervisors: job-supervisors-ce
@@ -20,7 +19,8 @@
 - type: startingGear
   id: AtmosphericTechnicianGear
   subGear:
-  - AtmosphericTechnicianPlasmamanGear
+  - AtmosphericTechnicianPlasmamanGear
+
   equipment:
     jumpsuit: ClothingUniformJumpsuitAtmos
     back: ClothingBackpackAtmospherics

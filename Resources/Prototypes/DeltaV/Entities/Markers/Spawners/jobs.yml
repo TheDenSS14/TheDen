@@ -54,19 +54,6 @@
       state: prosecutor
 
 - type: entity
-  id: SpawnPointCourier
-  parent: SpawnPointJobBase
-  name: courier
-  components:
-  - type: SpawnPoint
-    job_id: Courier
-  - type: Sprite
-    layers:
-    - state: green
-    - sprite: DeltaV/Markers/jobs.rsi
-      state: courier
-
-- type: entity
   id: SpawnPointAdminAssistant
   parent: SpawnPointJobBase
   name: administrative assistant
@@ -78,3 +65,16 @@
       - state: green
       - sprite: DeltaV/Markers/jobs.rsi
         state: adminassistant
+
+- type: entity
+  parent: SpawnPointJobBase
+  id: SpawnPointRoboticist
+  name: roboticist
+  components:
+  - type: SpawnPoint
+    job_id: Roboticist
+  - type: Sprite
+    layers:
+    - state: green
+    - sprite: DeltaV/Markers/jobs.rsi
+      state: roboticist

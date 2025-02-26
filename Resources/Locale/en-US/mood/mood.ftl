@@ -70,6 +70,10 @@ mood-effect-NicotineBenefit =
     I feel as if I have been standing my entire life and I just sat down.
 mood-effect-NicotineWithdrawal =
     I could really go for a smoke right now.
+mood-effect-NicotineWithdrawal2 =
+    I should... get another smoke shouldn't I?
+mood-effect-NicotineWithdrawal3 =
+    I can handle not getting another smoke, even through the itch... right?
 
 # Surgery
 mood-effect-SurgeryPain = The surgery hurts.

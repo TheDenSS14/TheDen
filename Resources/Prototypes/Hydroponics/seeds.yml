@@ -408,7 +408,7 @@
   displayName: seeds-sugarcane-display-name
   plantRsi: Objects/Specific/Hydroponics/sugarcane.rsi
   packetPrototype: SugarcaneSeeds
-  productPrototypes: 
+  productPrototypes:
     - Sugarcane
   mutationPrototypes:
     - papercane
@@ -1040,7 +1040,7 @@
     - FoodChiliPepper
   mutationPrototypes:
     - chilly
-    - GhostPepper # Floof - Botany Additions from DeltaV
+    - GhostPepper #Delta-V
   harvestRepeat: Repeat
   lifespan: 25
   maturation: 6
@@ -1117,7 +1117,7 @@
       Min: 1
       Max: 2
       PotencyDivisor: 50
-    Bicaridine:
+    SalicylicAcid:
       Min: 1
       Max: 20
       PotencyDivisor: 5
@@ -1143,7 +1143,7 @@
       Min: 1
       Max: 10
       PotencyDivisor: 10
-    Dermaline:
+    Aiuri:
       Min: 1
       Max: 10
       PotencyDivisor: 10
@@ -1171,7 +1171,7 @@
       Min: 1
       Max: 2
       PotencyDivisor: 50
-    Bicaridine:
+    SalicylicAcid:
       Min: 1
       Max: 20
       PotencyDivisor: 5
@@ -1193,7 +1193,7 @@
   growthStages: 3
   waterConsumption: 0.60
   chemicals:
-    Ultravasculine:
+    PenteticAcid:
       Min: 1
       Max: 20
       PotencyDivisor: 5
@@ -1225,11 +1225,11 @@
       Min: 1
       Max: 2
       PotencyDivisor: 10
-    Bicaridine:
+    Probital:
       Min: 1
       Max: 5
       PotencyDivisor: 20
-    Kelotane:
+    Lenturi:
       Min: 1
       Max: 5
       PotencyDivisor: 20
@@ -1286,7 +1286,7 @@
   productPrototypes:
     - FoodGalaxythistle
   mutationPrototypes:
-    - glasstle
+    - CrystalThistle #Delta-V
   lifespan: 25
   maturation: 10
   production: 3
@@ -1612,7 +1612,7 @@
       Min: 1
       Max: 10
       PotencyDivisor: 10
-    HolyWater:
+    Holywater:
       Min: 1
       Max: 10
       PotencyDivisor: 10

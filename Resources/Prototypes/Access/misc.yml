@@ -47,7 +47,39 @@
   - Justice # DeltaV - Add Justice dept access
   - ChiefJustice # DeltaV - Add Chief Justice access
   - Prosecutor # DeltaV - Add Prosecutor access
+  - Clerk # DeltaV - Add Clerk access
+  - Robotics # DeltaV: Robotics access
   - Corpsman # DeltaV - Add Corpsman access
   - BlueshieldOfficer # Goobstation - Add BSO Access
   - NanotrasenRepresentative # Goobstation - Add NTR Access
   - Magistrate # Goobstation - Add Magistrate Access
+
+- type: accessGroup
+  id: BasicAllAccess
+  tags:
+  - EmergencyShuttleRepealAll
+  - Command
+  - Cryogenics
+  - Security
+  - Armory
+  #- Brig #Delta V Removed
+  - Lawyer
+  - Engineering
+  - Medical
+  - Salvage
+  - Cargo
+  - Research
+  - Service
+  - Maintenance
+  - External
+  - Janitor
+  - Theatre
+  - Bar
+  - Chemistry
+  - Kitchen
+  - Chapel
+  - Hydroponics
+  - Atmospherics
+  - Library # DeltaV - Add Library access
+  - Justice # DeltaV - Add Justice dept access
+  - Robotics # DeltaV: Robotics access

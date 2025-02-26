@@ -101,6 +101,23 @@
         color: "#59b23a"
 
 - type: entity
+  id: ReagentSlimeIceCream
+  parent: ReagentSlime
+  suffix: IceCream
+  components:
+  - type: Bloodstream
+    bloodReagent: IceCream
+  - type: PointLight
+    color: "#fffbd6"
+  - type: Sprite
+    drawdepth: Mobs
+    sprite: Mobs/Aliens/elemental.rsi
+    layers:
+    - map: [ "enum.DamageStateVisualLayers.Base" ]
+      state: alive
+      color: "#fffbd6"
+
+- type: entity
   id: ReagentCognizine
   parent: ReagentSlime
   suffix: Cognizine
@@ -240,8 +257,6 @@
     - id: ReagentSlimeNocturine
       prob: 0.001
     - id: ReagentSlimeTHC
-      prob: 0.002
-    - id: ReagentSlimeBicaridine
       prob: 0.002
     - id: ReagentSlimeToxin
       prob: 0.002

@@ -7,6 +7,7 @@
   - type: Sprite
     layers:
     - state: closed
+      map: ["closeLayer"]
     - state: open
       map: ["openLayer"]
       visible: false
@@ -75,6 +76,7 @@
   - type: Sprite
     layers:
     - state: closed
+      map: ["closeLayer"]
     - state: open
       map: ["openLayer"]
       visible: false
@@ -182,7 +184,7 @@
   id: CigPackSyndicate
   parent: CigPackBase
   name: Interdyne herbals packet
-  description: Premium medicinal cigarettes from the Interdyne Corporation. Not endorsed by the Terra-Gov Surgeon General.
+  description: Elite cigarettes for elite syndicate agents. Infused with medicine for when you need to do more than calm your nerves.
   components:
   - type: Sprite
     sprite: Objects/Consumable/Smokeables/Cigarettes/Packs/syndicate.rsi
@@ -191,7 +193,7 @@
   - type: StorageFill
     contents:
     - id: CigaretteSyndicate
-      amount: 5
+      amount: 10
 
 - type: entity
   id: CigPackMixedMedical
@@ -208,10 +210,10 @@
     contents:
     - id: CigaretteIron
     - id: CigaretteTricordrazine
-    - id: CigaretteDylovene
-    - id: CigaretteDermaline
+    - id: CigaretteMultiver
+    - id: CigaretteAiuri
     - id: CigaretteArithrazine
-    - id: CigaretteBicaridine
+    - id: CigaretteSalicylicAcid
     - id: CigaretteIpecac
     - id: CigaretteOmnizine
       prob: 0.25

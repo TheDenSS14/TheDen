@@ -6,8 +6,7 @@
   requirements:
     - !type:CharacterPlaytimeRequirement
       tracker: JobCargoTechnician # DeltaV - Logistics Department replacing Cargo
-      min: 7200 # The Den - 2 hour
-  antagAdvantage: 3 # DeltaV - Reduced TC: External Access + Free hardsuit and weapons
+      min: 7200 # The Den - 2 hour # DeltaV - Reduced TC: External Access + Free hardsuit and weapons
   icon: "JobIconShaftMiner"
   startingGear: SalvageSpecialistGear
   supervisors: job-supervisors-qm

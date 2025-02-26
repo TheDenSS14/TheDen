@@ -1490,3 +1490,81 @@
       - !type:AdjustReagent
         reagent: Ethanol
         amount: 0.06
+
+- type: reagent
+  id: Eggnog
+  name: reagent-name-eggnog
+  parent: BaseAlcohol
+  desc: reagent-desc-eggnog
+  physicalDesc: reagent-physical-desc-creamy
+  flavor: eggnog
+  color: "#F1E0A1"
+  metamorphicSprite:
+    sprite: Floof/Objects/Consumable/Drinks/eggnog.rsi
+    state: icon_empty
+  metamorphicMaxFillLevels: 3
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: false
+  metabolisms:
+    Drink:
+      effects:
+      - !type:SatiateThirst
+        factor: 1
+      - !type:AdjustReagent
+        reagent: Pomelustine
+        amount: 0.1
+
+- type: reagent
+  id: SyndicateEggnog
+  name: reagent-name-syndicate-eggnog
+  parent: BaseAlcohol
+  desc: reagent-desc-syndicate-eggnog
+  physicalDesc: reagent-physical-desc-creamy
+  flavor: syndicate-eggnog
+  color: "#d8c990"
+  metamorphicSprite:
+    sprite: Floof/Objects/Consumable/Drinks/syndicate_eggnog.rsi
+    state: icon_empty
+  metamorphicMaxFillLevels: 3
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: false
+  metabolisms:
+    Drink:
+      effects:
+      - !type:SatiateThirst
+        factor: 1
+      - !type:AdjustReagent
+        reagent: Ethanol
+        amount: 0.08
+
+- type: entity
+  parent: DrinkGlass
+  id: DrinkEggnogGlass
+  suffix: eggnog
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 30
+        reagents:
+        - ReagentId: Eggnog
+          Quantity: 30
+  - type: Icon
+    sprite: Floof/Objects/Consumable/Drinks/eggnog.rsi
+    state: icon
+
+- type: entity
+  parent: DrinkGlass
+  id: DrinkSyndicateEggnogGlass
+  suffix: eggnog
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 30
+        reagents:
+        - ReagentId: SyndicateEggnog
+          Quantity: 30
+  - type: Icon
+    sprite: Floof/Objects/Consumable/Drinks/syndicate_eggnog.rsi
+    state: icon

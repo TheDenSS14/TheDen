@@ -95,6 +95,8 @@
     species:
     - Felinid # They don't need to be lighter
     - Rodentia
+    - Tajaran
+    - Harpy
   - !type:CharacterTraitRequirement
     inverted: true
     traits:
@@ -104,4 +106,4 @@
       components:
         - type: FixtureDensityModifier
           min: 100
-          factor: 0.6
+          factor: 0.66

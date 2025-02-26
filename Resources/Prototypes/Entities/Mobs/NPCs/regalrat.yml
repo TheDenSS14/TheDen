@@ -10,9 +10,9 @@
     baseSprintSpeed : 5.00
   - type: InputMover
   - type: MobMover
-#  - type: HTN
-#    rootTask:
-#      task: SimpleHostileCompound
+  # - type: HTN
+  #   rootTask:
+  #     task: SimpleHostileCompound
   - type: Reactive
     groups:
       Flammable: [Touch]
@@ -20,7 +20,7 @@
   - type: NpcFactionMember
     factions:
     - Passive
-#    - SimpleHostile
+    # - SimpleHostile
   - type: Sprite
     drawdepth: SmallMobs
     sprite: Mobs/Animals/regalrat.rsi

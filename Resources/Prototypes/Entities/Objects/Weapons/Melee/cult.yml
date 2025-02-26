@@ -47,3 +47,8 @@
     - back
   - type: UseDelay
     delay: 1
+  - type: InteractionVerbs
+    allowedVerbs:
+    - HugObject
+    - KissObject
+    - LickObject

@@ -11,11 +11,11 @@ using Content.Shared.Tag;
 using Robust.Shared.Containers;
 using Robust.Shared.Map;
 using Robust.Shared.Map.Components;
-using Robust.Shared.Physics.Components;
 using Robust.Shared.Physics.Events;
-using Robust.Shared.Physics.Systems;
 using Robust.Shared.Timing;
 using Content.Shared.Abilities.Psionics;
+using Robust.Server.GameObjects;
+using Robust.Shared.Physics.Components; //Nyano - Summary: for the telegnostic projection.
 
 namespace Content.Server.Singularity.EntitySystems;
 
@@ -31,12 +31,13 @@ public sealed class EventHorizonSystem : SharedEventHorizonSystem
     [Dependency] private readonly IMapManager _mapMan = default!;
     [Dependency] private readonly IAdminLogManager _adminLogger = default!;
     [Dependency] private readonly SharedContainerSystem _containerSystem = default!;
-    [Dependency] private readonly SharedPhysicsSystem _physics = default!;
     [Dependency] private readonly SharedTransformSystem _xformSystem = default!;
     [Dependency] private readonly TagSystem _tagSystem = default!;
+    [Dependency] private readonly PhysicsSystem _physics = default!;
     #endregion Dependencies
 
     private EntityQuery<PhysicsComponent> _physicsQuery;
+    private const float CosmicSpeedLimit = 20f;
 
     public override void Initialize()
     {
@@ -125,24 +126,17 @@ public sealed class EventHorizonSystem : SharedEventHorizonSystem
     /// </summary>
     public void ConsumeEntity(EntityUid hungry, EntityUid morsel, EventHorizonComponent eventHorizon, BaseContainer? outerContainer = null)
     {
-        if (!EntityManager.IsQueuedForDeletion(morsel) // I saw it log twice a few times for some reason?
-        && (HasComp<MindContainerComponent>(morsel)
+        if (EntityManager.IsQueuedForDeletion(morsel)) // already handled, and we're substepping
+            return;
+
+        if (HasComp<MindContainerComponent>(morsel)
             || _tagSystem.HasTag(morsel, "HighRiskItem")
-            || HasComp<ContainmentFieldGeneratorComponent>(morsel)))
+            || HasComp<ContainmentFieldGeneratorComponent>(morsel))
         {
             _adminLogger.Add(LogType.EntityDelete, LogImpact.Extreme, $"{ToPrettyString(morsel)} entered the event horizon of {ToPrettyString(hungry)} and was deleted");
         }
 
         EntityManager.QueueDeleteEntity(morsel);
-
-        if (eventHorizon.InheritMomentum && TryComp<PhysicsComponent>(hungry, out var thisPhysics) && TryComp<PhysicsComponent>(morsel, out var otherPhysics))
-        {
-            var impulse = (otherPhysics.LinearVelocity - thisPhysics.LinearVelocity)
-                * otherPhysics.FixturesMass
-                * thisPhysics.FixturesMass / (thisPhysics.FixturesMass + otherPhysics.FixturesMass); // Accounts for the expected mass change from consuming the object
-            _physics.ApplyLinearImpulse(hungry, impulse, body: thisPhysics);
-        }
-
         var evSelf = new EntityConsumedByEventHorizonEvent(morsel, hungry, eventHorizon, outerContainer);
         var evEaten = new EventHorizonConsumedEntityEvent(morsel, hungry, eventHorizon, outerContainer);
         RaiseLocalEvent(hungry, ref evSelf);

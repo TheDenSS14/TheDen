@@ -75,6 +75,11 @@
         Blunt: 2.5
   - type: DamageOtherOnHit
     staminaCost: 8
+  - type: InteractionVerbs
+    allowedVerbs:
+    - HugObject
+    - KissObject
+    - LickObject
 
 - type: entity
   name: Atreides

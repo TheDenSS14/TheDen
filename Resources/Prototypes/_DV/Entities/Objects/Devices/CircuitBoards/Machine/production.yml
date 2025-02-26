@@ -1,0 +1,12 @@
+- type: entity
+  parent: MicrowaveMachineCircuitboard
+  id: AdvancedMicrowaveMachineCircuitBoard
+  name: advanced microwave machine board
+  components:
+  - type: MachineBoard
+    prototype: AdvancedMicrowave
+    requirements:
+      Capacitor: 2
+    materialRequirements:
+      Glass: 4
+      Cable: 5

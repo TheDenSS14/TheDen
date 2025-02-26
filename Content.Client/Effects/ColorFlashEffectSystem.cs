@@ -89,13 +89,7 @@ public sealed class ColorFlashEffectSystem : SharedColorFlashEffectSystem
                 continue;
             }
 
-            if (!TryComp(ent, out AnimationPlayerComponent? player))
-            {
-                player = (AnimationPlayerComponent) _factory.GetComponent(typeof(AnimationPlayerComponent));
-                player.Owner = ent;
-                player.NetSyncEnabled = false;
-                AddComp(ent, player);
-            }
+            var player = EnsureComp<AnimationPlayerComponent>(ent);
 
             // Need to stop the existing animation first to ensure the sprite color is fixed.
             // Otherwise we might lerp to a red colour instead.
@@ -115,18 +109,13 @@ public sealed class ColorFlashEffectSystem : SharedColorFlashEffectSystem
             //     sprite.Color = effect.Color;
             // }
 
+
             var animation = GetDamageAnimation(ent, color, sprite, ev.AnimationLength);
 
-            if (animation == null)
+            if (animation == null)  
                 continue;
 
-            if (!TryComp(ent, out ColorFlashEffectComponent? comp))
-            {
-                comp = (ColorFlashEffectComponent) _factory.GetComponent(typeof(ColorFlashEffectComponent));
-                comp.Owner = ent;
-                comp.NetSyncEnabled = false;
-                AddComp(ent, comp);
-            }
+            var comp = EnsureComp<ColorFlashEffectComponent>(ent);
 
             comp.Color = sprite.Color;
             _animation.Play((ent, player), animation, AnimationKey);

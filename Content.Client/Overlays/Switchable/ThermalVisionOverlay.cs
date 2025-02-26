@@ -64,7 +64,7 @@ public sealed class ThermalVisionOverlay : Overlay
             return;
 
         var accumulator = Math.Clamp(Comp.PulseAccumulator, 0f, Comp.PulseTime);
-        var alpha = Comp.PulseTime <= 0f ? 1f : float.Lerp(1f, 0f, accumulator / Comp.PulseTime);
+        var alpha = Comp.PulseTime <= 0 ? 1f : float.Lerp(1f, 0f, accumulator / Comp.PulseTime);
 
         // Thermal vision grants some night vision (clientside light)
         if (LightRadius > 0)

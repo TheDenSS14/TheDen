@@ -119,7 +119,6 @@
       - id: RubberStampApproved
       - id: BoxEncryptionKeyPassenger
       - id: BoxEncryptionKeyService
-      - id: AccessConfigurator
       - id: LunchboxCommandFilledRandom # Delta-V Lunchboxes!
         prob: 0.3
       - id: ServiceTechFabCircuitboard # Floof - port to ee if possible
@@ -255,13 +254,17 @@
       - id: BoxEncryptionKeyScience
       - id: BoxPDAScience # Delta-V
       - id: RDIDCard # Delta-V
-      - id: BoxFolderRdClipboard # Delta-V
       - id: ClothingHeadsetAltScience
       - id: EncryptionKeyBinary
       - id: Intellicard
       - id: LunchboxCommandFilledRandom # Delta-V Lunchboxes!
         prob: 0.3
       - id: PsiWatchCartridge
+      - id: StationAiUploadCircuitboard
+      - id: AsimovCircuitBoard
+      - id: AugustineCircuitBoard
+      - id: CrewsimovCircuitBoard
+      - id: AntimovCircuitBoard
 
 - type: entity
   id: LockerResearchDirectorFilled
@@ -281,12 +284,16 @@
       - id: BoxEncryptionKeyScience
       - id: BoxPDAScience # Delta-V
       - id: RDIDCard # Delta-V
-      - id: BoxFolderRdClipboard # Delta-V
       - id: ClothingHeadsetAltScience
       - id: EncryptionKeyBinary
       - id: LunchboxCommandFilledRandom # Delta-V Lunchboxes!
         prob: 0.3
       - id: PsiWatchCartridge
+      - id: StationAiUploadCircuitboard
+      - id: AsimovCircuitBoard
+      - id: AugustineCircuitBoard
+      - id: CrewsimovCircuitBoard
+      - id: AntimovCircuitBoard
 
 - type: entity
   id: LockerHeadOfSecurityFilledHardsuit

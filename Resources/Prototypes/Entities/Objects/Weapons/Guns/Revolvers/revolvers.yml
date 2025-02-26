@@ -63,6 +63,11 @@
       collection: MetalThud
   - type: DamageOtherOnHit
     staminaCost: 5
+  - type: InteractionVerbs
+    allowedVerbs:
+    - HugObject
+    - KissObject
+    - LickObject
 
 - type: entity
   name: Deckard

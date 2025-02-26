@@ -24,7 +24,21 @@
 
 - type: moodEffect
   id: NicotineWithdrawal
-  moodChange: -7 #No timeout
+  moodChange: -7
+  timeout: 1020 #17 minutes
+  moodletOnEnd: NicotineWithdrawal2
+  category: "NicotineAddiction"
+
+- type: moodEffect
+  id: NicotineWithdrawal2
+  moodChange: -5
+  timeout: 1020 #17 minutes
+  moodletOnEnd: NicotineWithdrawal3
+  category: "NicotineAddiction"
+
+- type: moodEffect
+  id: NicotineWithdrawal3
+  moodChange: -3 #No timeout
   category: "NicotineAddiction"
 
 # Non-Addictive Drugs

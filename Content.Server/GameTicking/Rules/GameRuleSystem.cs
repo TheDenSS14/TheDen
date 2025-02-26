@@ -42,10 +42,10 @@ public abstract partial class GameRuleSystem<T> : EntitySystem where T : ICompon
                 continue;
 
             ChatManager.SendAdminAnnouncement(Loc.GetString("preset-not-enough-ready-players",
-                ("readyPlayersCount", args.Players.Length),
-                ("minimumPlayers", minPlayers),
-                ("presetName", ToPrettyString(uid))));
-            args.Cancel();
+                     ("readyPlayersCount", args.Players.Length),
+                     ("minimumPlayers", minPlayers),
+                     ("presetName", ToPrettyString(uid))));
+                 args.Cancel();
         }
     }
 

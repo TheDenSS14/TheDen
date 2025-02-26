@@ -35,6 +35,11 @@
       collection: MetalThud
   - type: DamageOtherOnHit
     staminaCost: 16
+  - type: InteractionVerbs
+    allowedVerbs:
+    - HugObject
+    - KissObject
+    - LickObject
 
 - type: entity
   name: minigun

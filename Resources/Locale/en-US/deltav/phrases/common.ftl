@@ -103,3 +103,4 @@ phrase-call = Call
 phrase-this = This
 phrase-actiondrink = Drink
 phrase-know = Know
+phrase-is = is

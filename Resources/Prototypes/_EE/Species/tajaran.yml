@@ -16,7 +16,7 @@
   maleFirstNames: names_tajaran_first
   femaleFirstNames: names_tajaran_first
   lastNames: names_tajaran_last
-  
+
 
 - type: markingPoints
   id: MobTajaranMarkingLimits
@@ -36,6 +36,12 @@
       required: true
       defaultMarkings: [ TajaranEarsBasic ]
     Chest:
+      points: 1
+      required: false
+    Underwear:
+      points: 1
+      required: false
+    Undershirt:
       points: 1
       required: false
     RightLeg:
@@ -73,6 +79,8 @@
     FacialHair: MobHumanoidAnyMarking
     Snout: MobHumanoidAnyMarking
     Chest: MobTajaranTorso
+    Underwear: MobHumanoidAnyMarking
+    Undershirt: MobHumanoidAnyMarking
     Eyes: MobTajaranEyes
     LArm: MobTajaranLArm
     RArm: MobTajaranRArm

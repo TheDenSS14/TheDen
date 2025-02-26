@@ -18,17 +18,26 @@
 #  id: LoadoutWardenEquipment
 #  maxItems: 1
 #  items:
-#
+
+- type: characterItemGroup
+  maxItems: 1
+  id: LoadoutWardenWeapons
+  items:
+    - type: loadout
+      id: LoadoutWardenGreatsword
+
 #- type: characterItemGroup
 #  id: LoadoutWardenEyes
 #  maxItems: 1
 #  items:
 #
-#- type: characterItemGroup
-#  id: LoadoutWardenGloves
-#  maxItems: 1
-#  items:
-#
+- type: characterItemGroup
+  id: LoadoutWardenGloves
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutClothingHandsGlovesCombat
+
 - type: characterItemGroup
   id: LoadoutWardenHead
   maxItems: 1

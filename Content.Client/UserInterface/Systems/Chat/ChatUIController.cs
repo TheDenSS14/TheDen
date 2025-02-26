@@ -536,7 +536,6 @@ public sealed class ChatUIController : UIController
         {
             // can always hear local / radio / emote / notifications when in the game
             FilterableChannels |= ChatChannel.Local;
-            FilterableChannels |= ChatChannel.Whisper;
             FilterableChannels |= ChatChannel.Radio;
             FilterableChannels |= ChatChannel.Emotes;
             FilterableChannels |= ChatChannel.Notifications;
@@ -547,6 +546,7 @@ public sealed class ChatUIController : UIController
             {
                 FilterableChannels |= ChatChannel.Subtle;
                 FilterableChannels |= ChatChannel.SubtleOOC;
+                FilterableChannels |= ChatChannel.Whisper;
 
                 CanSendChannels |= ChatSelectChannel.Local;
                 CanSendChannels |= ChatSelectChannel.Whisper;
@@ -562,12 +562,6 @@ public sealed class ChatUIController : UIController
         {
             FilterableChannels |= ChatChannel.Dead;
             CanSendChannels |= ChatSelectChannel.Dead;
-        }
-
-        if (_admin.HasFlag(AdminFlags.Pii) && _ghost is { IsGhost: true })
-        {
-            FilterableChannels |= ChatChannel.Subtle;
-            FilterableChannels |= ChatChannel.SubtleOOC;
         }
 
         // only admins can see / filter asay

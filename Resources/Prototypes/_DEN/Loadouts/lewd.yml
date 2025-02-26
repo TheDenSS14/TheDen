@@ -8,3 +8,25 @@
   requirements:
   - !type:CharacterItemGroupRequirement
     group: LoadoutLewd
+
+- type: loadout
+  id: LoadoutItemDroneMask
+  category: ItemsLewd
+  cost: 0
+  exclusive: true
+  items:
+  - ClothingMaskGasDrone
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutLewd
+
+- type: loadout
+  id: LoadoutItemDroneMaskHoodless
+  category: ItemsLewd
+  cost: 0
+  exclusive: true
+  items:
+  - ClothingMaskGasDroneHoodless
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutLewd

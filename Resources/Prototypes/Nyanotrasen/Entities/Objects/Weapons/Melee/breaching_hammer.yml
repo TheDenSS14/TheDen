@@ -20,6 +20,7 @@
     soundHit:
       path: /Audio/Nyanotrasen/Weapons/club.ogg
     bluntStaminaDamageFactor: 1.50 # 15 stamina damage
+    heavyStaminaCost: 20
 #  - type: MeleeStaminaCost
 #    swing: 10
 #    wieldCoefficient: 0.5 #if wielded you will only consume 5
@@ -48,3 +49,4 @@
     quickEquip: false
     slots:
     - back
+    - suitStorage

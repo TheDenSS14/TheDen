@@ -87,6 +87,7 @@ character-item-group-LoadoutHeadOfPersonnelUniforms = Head of Personnel Uniforms
 character-item-group-LoadoutBlueshieldOfficerBackpacks = Blueshield Officer Backpacks
 character-item-group-LoadoutBlueshieldOfficerVests = Blueshield Officer Vests
 character-item-group-LoadoutBlueshieldOfficerUniforms = Blueshield Officer Uniforms
+character-item-group-LoadoutBlueshieldOfficerPrimary = Blueshield Officer Primary Weapon
 
 # Dignitary - Magistrate
 character-item-group-LoadoutMagistrateHead = Magistrate Headgear
@@ -632,6 +633,7 @@ character-item-group-LoadoutWardenBackpacks = Warden Backpacks
 character-item-group-LoadoutWardenBelt = Warden Belt
 character-item-group-LoadoutWardenEars = Warden Ears
 character-item-group-LoadoutWardenEquipment = Warden Equipment
+character-item-group-LoadoutWardenWeapons = Warden's Antique Weapon Collection
 character-item-group-LoadoutWardenEyes = Warden Eyewear
 character-item-group-LoadoutWardenGloves = Warden Gloves
 character-item-group-LoadoutWardenHead = Warden Headgear
@@ -798,3 +800,7 @@ character-item-group-LoadoutReporterUniforms = Reporter Uniforms
 character-item-group-TraitsLanguagesBasic = Basic Languages
 character-item-group-TraitsLanguagesRacial = Racial Languages
 character-item-group-TraitsAccents = Accents
+
+# Traits - Mind Or Machine
+character-item-group-TraitsMind = Mind Over Machine
+character-item-group-TraitsMachine = Machine Over Mind

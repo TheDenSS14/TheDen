@@ -1,0 +1,31 @@
+
+- type: marking
+  id: LizardFloofNeckfull
+  bodyPart: HeadSide
+  markingCategory: HeadSide
+  speciesRestriction: [Reptilian, Human]
+  sprites:
+  - sprite: Mobs/Customization/reptilian_parts.rsi
+    state: floof_neckfull
+
+- type: marking
+  id: LizardFinTop
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  speciesRestriction: [Reptilian, Human]
+  sprites:
+  - sprite: Floof/Mobs/Customization/Reptilian/fin.rsi
+    state: primary
+  - sprite: Floof/Mobs/Customization/Reptilian/fin.rsi
+    state: secondary
+
+- type: marking
+  id: LizardCrestLargeTop
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  speciesRestriction: [Reptilian, Human]
+  sprites:
+  - sprite: Floof/Mobs/Customization/Reptilian/crest_large.rsi
+    state: primary
+  - sprite: Floof/Mobs/Customization/Reptilian/crest_large.rsi
+    state: secondary

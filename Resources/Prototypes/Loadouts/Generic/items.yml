@@ -419,6 +419,13 @@
       group: LoadoutWritables
 
 - type: loadout
+  id: LoadoutItemBoxFolderClipboard
+  category: Items
+  cost: 0
+  items:
+    - BoxFolderClipboard
+
+- type: loadout
   id: LoadoutBookRandom
   category: Items
   cost: 1
@@ -723,6 +730,13 @@
     - CrayonBox
 
 - type: loadout
+  id: LoadoutItemCrayonMagic
+  category: Items
+  cost: 8
+  items:
+    - CrayonMagic
+
+- type: loadout
   id: LoadoutItemBarberScissors
   category: Items
   cost: 4
@@ -877,3 +891,10 @@
     - !type:CharacterDepartmentRequirement
        departments:
          - Command
+
+- type: loadout
+  id: LoadoutItemFoodLollipop
+  category: Items
+  cost: 0
+  items:
+    - FoodLollipop
