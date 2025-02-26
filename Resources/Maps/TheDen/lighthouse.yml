@@ -109718,7 +109718,7 @@ entities:
     - type: Transform
       pos: -5.5,61.5
       parent: 100
-- proto: SpawnMobArcticFoxSiobhan
+- proto: SpawnMobArcticFoxSeb
   entities:
   - uid: 11473
     components:
@@ -110698,6 +110698,84 @@ entities:
     components:
     - type: Transform
       pos: 9.5,43.5
+      parent: 100
+- proto: SpawnPointSeniorEngineer
+  entities:
+  - uid: 20912
+    components:
+    - type: Transform
+      pos: 12.5,-42.5
+      parent: 100
+  - uid: 20913
+    components:
+    - type: Transform
+      pos: 11.5,-42.5
+      parent: 100
+  - uid: 20914
+    components:
+    - type: Transform
+      pos: 9.5,-45.5
+      parent: 100
+  - uid: 20915
+    components:
+    - type: Transform
+      pos: 11.5,-45.5
+      parent: 100
+- proto: SpawnPointSeniorOfficer
+  entities:
+  - uid: 20902
+    components:
+    - type: Transform
+      pos: 8.5,34.5
+      parent: 100
+  - uid: 20903
+    components:
+    - type: Transform
+      pos: 10.5,34.5
+      parent: 100
+  - uid: 20904
+    components:
+    - type: Transform
+      pos: 11.5,43.5
+      parent: 100
+  - uid: 20905
+    components:
+    - type: Transform
+      pos: 11.5,44.5
+      parent: 100
+- proto: SpawnPointSeniorPhysician
+  entities:
+  - uid: 20906
+    components:
+    - type: Transform
+      pos: -6.5,43.5
+      parent: 100
+  - uid: 20907
+    components:
+    - type: Transform
+      pos: -6.5,45.5
+      parent: 100
+  - uid: 20908
+    components:
+    - type: Transform
+      pos: -8.5,45.5
+      parent: 100
+- proto: SpawnPointSeniorResearcher
+  entities:
+  - uid: 20909
+    components:
+    - type: Transform
+      pos: -10.5,-11.5
+      parent: 100
+  - uid: 20910
+    components:
+    - type: Transform
+      pos: -17.5,-12.5
+      parent: 100
+  - uid: 20911
+    components:
+    - type: Transform
+      pos: -20.5,-10.5
       parent: 100
 - proto: SpawnPointServiceWorker
   entities:
