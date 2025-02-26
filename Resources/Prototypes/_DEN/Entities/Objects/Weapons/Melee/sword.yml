@@ -19,8 +19,8 @@
     bluntStaminaDamageFactor: 25.0
     heavyRateModifier: 2
     heavyRangeModifier: 1
-    heavyDamageBaseModifier: 1
-    heavyStaminaCost: 15
+    heavyDamageBaseModifier: 1.2
+    heavyStaminaCost: 30
     maxTargets: 10
     angle: 120
     soundHit:
@@ -32,7 +32,7 @@
   - type: EmbedPassiveDamage
   - type: Wieldable
   - type: MeleeThrowOnHit
-    speed: 30
+    speed: 10
     lifetime: 0.2
   - type: Reflect
     reflectProb: .25
@@ -40,8 +40,15 @@
   - type: ThrowingAngle
     angle: 225
   - type: Item
-    size: Large
+    size: Ginormous
+  - type: ClothingSpeedModifier
+    walkModifier: 0.85
+    sprintModifier: 0.85
+  - type: Tool
+    qualities:
+    - Axing #Funny
   - type: Clothing
+    quickEquip: false
     sprite: _DEN/Objects/Weapons/Melee/shieldblade.rsi
     slots:
     - Back
@@ -57,6 +64,7 @@
     sprite: _DEN/Objects/Weapons/Melee/shieldbladeblue.rsi
     state: icon
   - type: Clothing
+    quickEquip: false
     sprite: _DEN/Objects/Weapons/Melee/shieldbladeblue.rsi
     slots:
     - Back

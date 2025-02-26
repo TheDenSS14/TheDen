@@ -29,6 +29,12 @@
     size: Large
   - type: Tool
     speedModifier: 0.5 # it's very heavy, it rolls slower than a wooden bat
+  - type: Clothing
+    sprite: Objects/Weapons/Melee/home_run_bat.rsi
+    quickEquip: false
+    slots:
+    - back
+    - suitStorage
   - type: UseDelay
     delay: 2
   - type: PhysicalComposition

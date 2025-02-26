@@ -37,9 +37,11 @@
     - Rolling
     speedModifier: 0.75 # a bit unwieldly but does the job
   - type: Clothing
+    sprite: Objects/Weapons/Melee/baseball_bat.rsi
     quickEquip: false
     slots:
     - back
+    - suitStorage
   - type: Construction
     graph: WoodenBat
     node: bat

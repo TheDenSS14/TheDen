@@ -62,6 +62,11 @@
   parent: BaseBola
   description: An advanced hardlight criminal entangling tool. Otherwise known as an expensive piece of string.
   components:
+  - type: Tag
+    tags:
+      - SecBeltEquip
+  - type: Item
+    size: Small
   - type: Sprite
     sprite: Objects/Weapons/Throwable/energy_bola.rsi
   - type: DamageOnLand
@@ -72,8 +77,8 @@
     destroyOnRemove: true
     freeTime: 2.0
     breakoutTime: 3.5 #all bola should generally be fast to remove
-    walkSpeed: 0.7 #makeshift bola shouldn't slow too much
-    sprintSpeed: 0.7
+    walkSpeed: 0.5 #makeshift bola shouldn't slow too much
+    sprintSpeed: 0.5
     staminaDamage: 55 # Sudden weight increase sapping stamina
     canThrowTrigger: true
     canMoveBreakout: true

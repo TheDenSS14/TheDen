@@ -36,6 +36,7 @@
     quickEquip: false
     slots:
     - back
+    - suitStorage
     sprite: Objects/Fun/Instruments/eguitar.rsi
   - type: Tag
     tags:
@@ -80,6 +81,7 @@
     quickEquip: false
     slots:
     - back
+    - suitStorage
     sprite: Objects/Fun/Instruments/bassguitar.rsi
   - type: Tag
     tags:
@@ -131,6 +133,7 @@
     quickEquip: false
     slots:
     - back
+    - suitStorage
     sprite: Objects/Fun/Instruments/rockguitar.rsi
   - type: Tag
     tags:
@@ -161,6 +164,7 @@
     quickEquip: false
     slots:
     - back
+    - suitStorage
     sprite: Objects/Fun/Instruments/guitar.rsi
   - type: Wieldable
   - type: Damageable # Smash it! Does 20 damage a hit, but breaks after 1 hit.
