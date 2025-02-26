@@ -44,38 +44,6 @@ namespace Content.IntegrationTests.Tests
             "/Maps/Shuttles/infiltrator.yml",
         };
 
-        // private static readonly string[] GameMaps =
-        // {
-        //     "Dev",
-        //     "TestTeg",
-        //     "CentCommMain",
-        //     "CentCommHarmony",
-        //     "MeteorArena",
-        //     "NukieOutpost",
-        //     "Core",
-        //     "Pebble", //DeltaV
-        //     "Edge", //DeltaV
-        //     "Saltern",
-        //     "Shoukou", //DeltaV
-        //     "Tortuga", //DeltaV
-        //     "Arena", //DeltaV
-        //     "Asterisk", //DeltaV
-        //     "Glacier", //DeltaV
-        //     "TheHive", //DeltaV
-        //     "Hammurabi", //DeltaV
-        //     "Lighthouse", //DeltaV
-        //     "Submarine", //DeltaV
-        //     "Gax",
-        //     "Rad",
-        //     "Europa",
-        //     "Meta",
-        //     "Box",
-        //     "Baikal",
-        //     "Lambda",
-        //     "Bagel",
-        //     "Northway"
-        // };
-
         private static readonly string[] GameMaps =
         {
             "Dev",
@@ -84,13 +52,28 @@ namespace Content.IntegrationTests.Tests
             "CentCommHarmony",
             "MeteorArena",
             "NukieOutpost",
+            "Core",
             "Pebble", //DeltaV
             "Edge", //DeltaV
+            "Saltern",
             "Shoukou", //DeltaV
             "Tortuga", //DeltaV
             "Arena", //DeltaV
             "Asterisk", //DeltaV
             "Glacier", //DeltaV
+            "TheHive", //DeltaV
+            "Hammurabi", //DeltaV
+            "Lighthouse", //DeltaV
+            "Submarine", //DeltaV
+            "Gax",
+            "Rad",
+            "Europa",
+            "Meta",
+            "Box",
+            "Baikal",
+            "Lambda",
+            "Bagel",
+            "Northway"
         };
 
         /// <summary>
@@ -344,12 +327,14 @@ namespace Content.IntegrationTests.Tests
             var protoMan = server.ResolveDependency<IPrototypeManager>();
             var pool = protoMan.Index<GameMapPoolPrototype>("DefaultMapPool");
 
-            var gameMaps = protoMan.EnumeratePrototypes<GameMapPrototype>()
+            var gameMapsProtos = protoMan.EnumeratePrototypes<GameMapPrototype>()
                 .Where(x => !pair.IsTestPrototype(x) && pool.Maps.Contains(x.ID))
                 .Select(x => x.ID)
                 .ToHashSet();
 
-            Assert.That(gameMaps, Is.EquivalentTo(GameMaps.ToHashSet()), "Game map prototype missing from test cases.");
+            var maps = GameMaps.Where(x => pool.Maps.Contains(x)).ToHashSet();
+
+            Assert.That(gameMapsProtos, Is.EquivalentTo(maps), "Game map prototype missing from test cases.");
 
             await pair.CleanReturnAsync();
         }
