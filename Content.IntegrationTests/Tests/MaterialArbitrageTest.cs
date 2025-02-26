@@ -57,6 +57,11 @@ public sealed class MaterialArbitrageTest
         Dictionary<string, List<LatheRecipePrototype>> latheRecipes = new();
         foreach (var proto in protoManager.EnumeratePrototypes<LatheRecipePrototype>())
         {
+            if (proto.Result == null)
+            {
+                Assert.Fail($"{proto.ID} has no result.");
+            }
+
             latheRecipes.GetOrNew(proto.Result).Add(proto);
         }
 
