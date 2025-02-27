@@ -16,13 +16,13 @@
         Slash: 25
         Blunt: 10
         Structural: 30
-    bluntStaminaDamageFactor: 25.0
+    bluntStaminaDamageFactor: 1
     heavyRateModifier: 2
     heavyRangeModifier: 1
     heavyDamageBaseModifier: 1.2
     heavyStaminaCost: 30
     maxTargets: 10
-    angle: 120
+    angle: 90
     soundHit:
       collection: MetalThud
   - type: DamageOtherOnHit
@@ -32,8 +32,8 @@
   - type: EmbedPassiveDamage
   - type: Wieldable
   - type: MeleeThrowOnHit
-    speed: 10
-    lifetime: 0.2
+    speed: 5
+    lifetime: 0.05
   - type: Reflect
     reflectProb: .25
     spread: 90

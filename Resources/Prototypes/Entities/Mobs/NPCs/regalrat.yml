@@ -19,7 +19,7 @@
       Extinguish: [Touch]
   - type: NpcFactionMember
     factions:
-    - Passive
+    - Mouse
     # - SimpleHostile
   - type: Sprite
     drawdepth: SmallMobs
@@ -208,7 +208,7 @@
       Extinguish: [Touch]
   - type: NpcFactionMember
     factions:
-    - SimpleHostile
+    - Mouse
   - type: Sprite
     drawdepth: SmallMobs
     sprite: Mobs/Animals/rat.rsi
