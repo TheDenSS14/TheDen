@@ -9,7 +9,7 @@
       stationProto: StandardNanotrasenStation
       components:
       - type: StationEmergencyShuttle #floofstation
-        emergencyShuttlePath: /Maps/Shuttles/DeltaV/NTES_Delta.yml #floofstation
+        emergencyShuttlePath: /Maps/Shuttles/DeltaV/NTES_BC20.yml
       - type: StationNameSetup
         mapNameTemplate: '{0} Glacier Station {1}'
         nameGenerator:
@@ -46,6 +46,7 @@
           AtmosphericTechnician: [ 1, 2 ]
           StationEngineer: [ 2, 3 ]
           TechnicalAssistant: [ 2, 2 ]
+          SeniorEngineer: [ 1, 1 ]
         #justice added by FloofStation
           ChiefJustice: [ 1, 1 ] #FloofStation
           Clerk: [ 1, 1 ] #FloofStation
@@ -59,6 +60,7 @@
           MedicalDoctor: [ 2, 3 ]
           MedicalIntern: [ 2, 2 ]
           MedicalBorg: [ 1, 2 ]
+          SeniorPhysician: [ 1, 1 ]
         #science
           ResearchDirector: [ 1, 1 ]
           Chaplain: [ 1, 1 ]
@@ -67,15 +69,16 @@
           ResearchAssistant: [ 2, 2 ]
           Borg: [ 2, 3 ]
           Librarian: [ 1, 1 ]
+          SeniorResearcher: [ 1, 1 ]
         #security
           HeadOfSecurity: [ 1, 1 ]
           Warden: [ 1, 1 ]
           Detective: [ 1, 1 ]
-          SecurityOfficer: [ 3, 4 ]
+          SecurityOfficer: [ 2, 3 ]
           SecurityCadet: [ 1, 2 ]
           Brigmedic: [ 1, 1 ]
           Prisoner: [ 2, 3 ]
-#         Lawyer: [ 2, 2 ]
+          SeniorOfficer: [ 1, 2 ]
         #logistics
           Quartermaster: [ 1, 1 ]
           MailCarrier: [ 2, 3 ]
