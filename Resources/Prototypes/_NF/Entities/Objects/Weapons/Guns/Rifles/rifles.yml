@@ -1,41 +1,63 @@
-# SPDX-FileCopyrightText: 2020 AJCM-git <60196617+AJCM-git@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2020 Hugo Laloge <hugo.laloge@gmail.com>
-# SPDX-FileCopyrightText: 2020 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
-# SPDX-FileCopyrightText: 2020 Swept <sweptwastaken@protonmail.com>
-# SPDX-FileCopyrightText: 2020 Víctor Aguilera Puerto <6766154+Zumorica@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2020 Víctor Aguilera Puerto <zddm@outlook.es>
-# SPDX-FileCopyrightText: 2020 py01 <pyronetics01@gmail.com>
-# SPDX-FileCopyrightText: 2021 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2021 Galactic Chimp <GalacticChimpanzee@gmail.com>
-# SPDX-FileCopyrightText: 2021 Paul Ritter <ritter.paul1@googlemail.com>
-# SPDX-FileCopyrightText: 2022 Kara <lunarautomaton6@gmail.com>
-# SPDX-FileCopyrightText: 2022 Peptide90 <78795277+Peptide90@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2022 Rane <60792108+Elijahrane@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2022 Scribbles0 <91828755+Scribbles0@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2022 Visne <39844191+Visne@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2022 keronshb <54602815+keronshb@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2022 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2023 IProduceWidgets <107586145+IProduceWidgets@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2023 TaralGit <76408146+TaralGit@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2023 and_a <and_a@DESKTOP-RJENGIR>
-# SPDX-FileCopyrightText: 2023 lzk <124214523+lzk228@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT <77995199+DEATHB4DEFEAT@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 Debug <49997488+DebugOk@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 Skubman <ba.fallaria@gmail.com>
-# SPDX-FileCopyrightText: 2024 nikthechampiongr <32041239+nikthechampiongr@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 Rosycup <benjho049@gmail.com>
-# SPDX-FileCopyrightText: 2025 VMSolidus <evilexecutive@gmail.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <flyingkarii@gmail.com>
-#
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# Upstream
+- type: entity
+  name: Lecter
+  parent: WeaponRifleLecter
+  id: WeaponRifleLecterRubber
+  suffix: Non-lethal
+  components:
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: MagazineRifleRubber
+        insertSound: /Audio/Weapons/Guns/MagIn/ltrifle_magin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/ltrifle_magout.ogg
+        priority: 2
+        whitelist:
+          tags:
+            - MagazineRifle
+        whitelistFailPopup: gun-magazine-whitelist-fail
+      gun_chamber:
+        name: Chamber
+        startingItem: CartridgeRifleRubber
+        priority: 1
+        whitelist:
+          tags:
+            - CartridgeRifle
+
+#Delta-V
+- type: entity
+  name: Vulcan
+  parent: WeaponRifleVulcan
+  id: WeaponRifleVulcanRubber
+  suffix: Non-lethal
+  components:
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: MagazineLightRifleRubber
+        insertSound: /Audio/Weapons/Guns/MagIn/ltrifle_magin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/ltrifle_magout.ogg
+        priority: 2
+        whitelist:
+          tags:
+            - MagazineLightRifle
+        whitelistFailPopup: gun-magazine-whitelist-fail
+      gun_chamber:
+        name: Chamber
+        startingItem: CartridgeLightRifleRubber
+        priority: 1
+        whitelist:
+          tags:
+            - CartridgeLightRifle
 
 # Frontier
 - type: entity
   name: Gestio
   parent: BaseWeaponRifle
   id: WeaponRifleGestio
-  description: An old prototype burst-fire NanoTrasen marksman rifle. Manufactured by Silver Industries. It never left the trials. Given its antiquity it is considered a civilian grade weapon.  Uses .30 rifle ammo.
+  description: An old burst-fire rifle made by Silver Industries that never left trials. Accepts low capacity .30 rifle magazines.
   components:
   - type: Sprite
     sprite: _NF/Objects/Weapons/Guns/Rifles/gestio.rsi
@@ -47,12 +69,11 @@
   - type: Clothing
     sprite: _NF/Objects/Weapons/Guns/Rifles/gestio.rsi
   - type: Gun
-    fireRate: 1.5
+    fireRate: 3.8
     projectileSpeed: 30
-    angleDecay: 4 #in testing 3 was more balanced
-    angleIncrease: 6
-    minAngle: 21 #generally meant to be 1 when used properly
-    maxAngle: 30 #generally meant to be 5 when used properly
+    burstFireRate: 8
+    shotsPerBurst: 2
+    burstCooldown: 0.4
     selectedMode: Burst
     availableModes:
       - Burst
@@ -60,12 +81,6 @@
       path: /Audio/_NF/Weapons/Guns/Gunshots/rifle.ogg
       params:
         volume: -5
-  - type: Wieldable
-  - type: GunWieldBonus
-    minAngle: -20
-    maxAngle: -25
-    angleDecay: 4 #in testing 3 was more balanced
-    angleIncrease: -3
   - type: ItemSlots
     slots:
       gun_magazine:
@@ -76,7 +91,8 @@
         priority: 2
         whitelist:
           tags:
-            - MagazineLightRifle
+            - MagazineLightRifleLowCapacity
+        whitelistFailPopup: gun-magazine-whitelist-fail
       gun_chamber:
         name: Chamber
         startingItem: CartridgeLightRifle
@@ -109,7 +125,8 @@
         priority: 2
         whitelist:
           tags:
-            - MagazineLightRifle
+            - MagazineLightRifleLowCapacity
+        whitelistFailPopup: gun-magazine-whitelist-fail
       gun_chamber:
         name: Chamber
         startingItem: CartridgeLightRifleRubber
@@ -183,6 +200,7 @@
         whitelist:
           tags:
             - MagazineNovaliteC1
+        whitelistFailPopup: gun-magazine-whitelist-fail
       gun_chamber:
         name: Chamber
         startingItem: CartridgeRifle
@@ -216,6 +234,7 @@
         whitelist:
           tags:
             - MagazineNovaliteC1
+        whitelistFailPopup: gun-magazine-whitelist-fail
       gun_chamber:
         name: Chamber
         startingItem: CartridgeRifleRubber
@@ -294,7 +313,8 @@
         priority: 2
         whitelist:
           tags:
-            - MagazineLightRifle
+            - MagazineLightRifleLowCapacity
+        whitelistFailPopup: gun-magazine-whitelist-fail
       gun_chamber:
         name: Chamber
         startingItem: CartridgeLightRifle
