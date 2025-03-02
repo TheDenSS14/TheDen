@@ -1,0 +1,69 @@
+- type: marking
+  id: NipplesBase
+  bodyPart: Chest
+  markingCategory: Chest
+  speciesRestriction: [Felinid, Oni, Arachne, SlimePerson, Rodentia, Human, HumanHybrid]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+        color: "#FFFFFF"
+  sprites:
+  - sprite: \_DEN\Mobs\Customization\Body\nipples.rsi
+    state: nipples
+
+- type: marking
+  id: NipplesLarge
+  bodyPart: Chest
+  markingCategory: Chest
+  speciesRestriction: [Felinid, Oni, Arachne, SlimePerson, Rodentia, Human, HumanHybrid]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+        color: "#FFFFFF"
+  sprites:
+  - sprite: \_DEN\Mobs\Customization\Body\nipples.rsi
+    state: nippleslarge
+
+- type: marking
+  id: NipplesBaseVulp
+  bodyPart: Chest
+  markingCategory: Chest
+  speciesRestriction: [Vulpkanin]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+        color: "#FFFFFF"
+  sprites:
+  - sprite: \_DEN\Mobs\Customization\Body\nipples.rsi
+    state: nipplesvulp
+
+- type: marking
+  id: NipplesMale
+  bodyPart: Chest
+  markingCategory: Chest
+  speciesRestriction: [Vulpkanin, Felinid, Oni, Arachne, SlimePerson, Rodentia, Human, HumanHybrid, Tajaran]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+        color: "#FFFFFF"
+  sprites:
+  - sprite: \_DEN\Mobs\Customization\Body\nipples.rsi
+    state: nipplesvulp
+
+- type: marking
+  id: NipplesLargeVulp
+  bodyPart: Chest
+  markingCategory: Chest
+  speciesRestriction: [Vulpkanin]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+        color: "#FFFFFF"
+  sprites:
+  - sprite: \_DEN\Mobs\Customization\Body\nipples.rsi
+    state: nippleslargevulp
