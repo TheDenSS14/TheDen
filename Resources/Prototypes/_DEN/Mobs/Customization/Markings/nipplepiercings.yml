@@ -207,3 +207,45 @@
   sprites:
   - sprite: _DEN/Mobs/Customization/Body/piercings.rsi
     state: vertvulp
+
+- type: marking
+  id: PiercingRings
+  bodyPart: Chest
+  markingCategory: Chest
+  speciesRestriction: [Felinid, Oni, Arachne, SlimePerson, Rodentia, Human, HumanHybrid]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+        color: "#FFFFFF"
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Body/piercings.rsi
+    state: ring
+
+- type: marking
+  id: PiercingRingsVulp
+  bodyPart: Chest
+  markingCategory: Chest
+  speciesRestriction: [Vulpkanin]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+        color: "#FFFFFF"
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Body/piercings.rsi
+    state: ringvulp
+
+- type: marking
+  id: PiercingRingsMale
+  bodyPart: Chest
+  markingCategory: Chest
+  speciesRestriction: [Felinid, Oni, Arachne, SlimePerson, Rodentia, Human, HumanHybrid]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+        color: "#FFFFFF"
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Body/piercings.rsi
+    state: ringvulp

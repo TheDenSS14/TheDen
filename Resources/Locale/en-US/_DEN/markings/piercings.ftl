@@ -42,3 +42,12 @@ marking-PiercingVertVulp = Nipple Piercing (Vertical)
 
 marking-PiercingVertMale-piercings = Chest
 marking-PiercingVertMale = Nipple Piercing (Male, Vertical)
+
+marking-PiercingRings-piercings = Chest
+marking-PiercingRings = Nipple Piercing (Rings)
+
+marking-PiercingRingsVulp-piercings = Chest
+marking-PiercingRingsVulp = Nipple Piercing (Rings)
+
+marking-PiercingRingsMale-piercings = Chest
+marking-PiercingRingsMale = Nipple Piercing (Male, Rings)
