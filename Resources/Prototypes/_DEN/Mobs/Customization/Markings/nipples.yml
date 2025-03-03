@@ -13,6 +13,48 @@
     state: nipples
 
 - type: marking
+  id: Nipples6
+  bodyPart: Chest
+  markingCategory: Chest
+  speciesRestriction: [Felinid, Rodentia, HumanHybrid]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+        color: "#FFFFFF"
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Body/nipples.rsi
+    state: nipples6
+
+- type: marking
+  id: Nipples6Vulp
+  bodyPart: Chest
+  markingCategory: Chest
+  speciesRestriction: [Vulpkanin]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+        color: "#FFFFFF"
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Body/nipples.rsi
+    state: nipples6vulp
+
+- type: marking
+  id: Nipples6Male
+  bodyPart: Chest
+  markingCategory: Chest
+  speciesRestriction: [Felinid, Rodentia, HumanHybrid]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+        color: "#FFFFFF"
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Body/nipples.rsi
+    state: nipples6vulp
+
+- type: marking
   id: NipplesLarge
   bodyPart: Chest
   markingCategory: Chest
