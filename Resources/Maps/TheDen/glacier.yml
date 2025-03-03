@@ -417,7 +417,7 @@ entities:
           version: 6
         5,0:
           ind: 5,0
-          tiles: AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAYQAAAAAAYQAAAAAAYAAAAAAAYAAAAAAAYAAAAAAAYQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAYQAAAAAAYQAAAAAAYQAAAAAAYQAAAAAAYQAAAAAAYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAYAAAAAAAYAAAAAAAAAAAAAAAYAAAAAAAYQAAAAAAYQAAAAAAYQAAAAAAYQAAAAAAYQAAAAAAYQAAAAAAYQAAAAAAYQAAAAAACwAAAAAADAAAAAAAYQAAAAAAYQAAAAAAYQAAAAAAYAAAAAAAYAAAAAAAYQAAAAAAYQAAAAAAYQAAAAAAYQAAAAAAYQAAAAAAYQAAAAAAYAAAAAAAAAAAAAAAAAAAAAAACwAAAAAAYAAAAAAADAAAAAAAYQAAAAAAYAAAAAAAYAAAAAAAYAAAAAAAYAAAAAAAYQAAAAAAYQAAAAAAYAAAAAAAYAAAAAAAYAAAAAAAYQAAAAAAYAAAAAAAYAAAAAAADAAAAAAAYAAAAAAAYQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+          tiles: AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAYQAAAAAAYQAAAAAAYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAYQAAAAAAYQAAAAAAYQAAAAAAYQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAYAAAAAAAYAAAAAAAAAAAAAAAYAAAAAAAYQAAAAAAYQAAAAAAYQAAAAAAYQAAAAAAYQAAAAAAYQAAAAAAYQAAAAAAYQAAAAAAYQAAAAAADAAAAAAAYQAAAAAAYQAAAAAAYQAAAAAAYAAAAAAAYAAAAAAAYQAAAAAAYQAAAAAAYQAAAAAAYQAAAAAAYQAAAAAAYQAAAAAAYQAAAAAAYQAAAAAAYQAAAAAAYQAAAAAAYAAAAAAADAAAAAAAYQAAAAAAYAAAAAAAYAAAAAAAYAAAAAAAYAAAAAAAYQAAAAAAYQAAAAAAYAAAAAAAYAAAAAAAYAAAAAAAYQAAAAAAYAAAAAAAYAAAAAAADAAAAAAAYAAAAAAAYQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
           version: 6
         6,0:
           ind: 6,0
@@ -12211,6 +12211,13 @@ entities:
     - type: Transform
       pos: 17.5,20.5
       parent: 2
+- proto: AirlockBlueshieldOfficerCommandLocked
+  entities:
+  - uid: 17105
+    components:
+    - type: Transform
+      pos: -61.5,11.5
+      parent: 2
 - proto: AirlockCaptainGlassLocked
   entities:
   - uid: 49
@@ -12326,15 +12333,6 @@ entities:
     - type: Transform
       pos: 10.5,53.5
       parent: 2
-- proto: AirlockChiefJusticeLocked
-  entities:
-  - uid: 16593
-    components:
-    - type: MetaData
-      name: Chief Justice's Office
-    - type: Transform
-      pos: -65.5,11.5
-      parent: 2
 - proto: AirlockChiefMedicalOfficerGlassLocked
   entities:
   - uid: 63
@@ -12343,15 +12341,6 @@ entities:
       name: CMO's Office
     - type: Transform
       pos: 16.5,-9.5
-      parent: 2
-- proto: AirlockClerkGlassLocked
-  entities:
-  - uid: 16570
-    components:
-    - type: MetaData
-      name: Clerk
-    - type: Transform
-      pos: -60.5,15.5
       parent: 2
 - proto: AirlockClownLocked
   entities:
@@ -13152,14 +13141,19 @@ entities:
     - type: Transform
       pos: -64.5,15.5
       parent: 2
-- proto: AirlockLawyerGlassLocked
+- proto: AirlockJusticeLocked
   entities:
-  - uid: 16627
+  - uid: 214
     components:
-    - type: MetaData
-      name: Attorney's Office
     - type: Transform
       pos: -69.5,11.5
+      parent: 2
+- proto: AirlockMagistrateCommandGlassLocked
+  entities:
+  - uid: 130
+    components:
+    - type: Transform
+      pos: -60.5,15.5
       parent: 2
 - proto: AirlockMailGlassLocked
   entities:
@@ -13641,6 +13635,13 @@ entities:
     - type: Transform
       pos: 54.5,39.5
       parent: 2
+- proto: AirlockNanotrasenRepresentativeCommandLocked
+  entities:
+  - uid: 16569
+    components:
+    - type: Transform
+      pos: -65.5,11.5
+      parent: 2
 - proto: AirlockParamedicGlassLocked
   entities:
   - uid: 6407
@@ -13649,15 +13650,6 @@ entities:
       name: Paramedic's Room
     - type: Transform
       pos: 4.5,-9.5
-      parent: 2
-- proto: AirlockProsecutorGlassLocked
-  entities:
-  - uid: 16626
-    components:
-    - type: MetaData
-      name: Prosecutor's Office
-    - type: Transform
-      pos: -61.5,11.5
       parent: 2
 - proto: AirlockPsychologistLocked
   entities:
@@ -13701,29 +13693,6 @@ entities:
       name: Mystagogue's Office
     - type: Transform
       pos: 26.5,-30.5
-      parent: 2
-- proto: AirlockRoboticsGlassLocked
-  entities:
-  - uid: 129
-    components:
-    - type: MetaData
-      name: Robotics
-    - type: Transform
-      pos: 44.5,-19.5
-      parent: 2
-  - uid: 130
-    components:
-    - type: MetaData
-      name: Robotics
-    - type: Transform
-      pos: 43.5,-19.5
-      parent: 2
-  - uid: 214
-    components:
-    - type: MetaData
-      name: Robotics
-    - type: Transform
-      pos: 40.5,-22.5
       parent: 2
 - proto: AirlockSalvageGlassLocked
   entities:
@@ -16660,13 +16629,6 @@ entities:
     - type: Transform
       pos: -1.5,49.5
       parent: 2
-- proto: Biogenerator
-  entities:
-  - uid: 6400
-    components:
-    - type: Transform
-      pos: 27.5,2.5
-      parent: 2
 - proto: BiomassReclaimer
   entities:
   - uid: 709
@@ -16888,17 +16850,11 @@ entities:
     - type: Transform
       pos: 45.5,-19.5
       parent: 2
-    - type: DeviceLinkSink
-      links:
-      - 5814
   - uid: 12687
     components:
     - type: Transform
       pos: 46.5,-19.5
       parent: 2
-    - type: DeviceLinkSink
-      links:
-      - 5814
 - proto: BlockGameArcade
   entities:
   - uid: 735
@@ -48512,15 +48468,6 @@ entities:
     - type: DeviceLinkSink
       links:
       - 14666
-  - uid: 6199
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: 84.5,3.5
-      parent: 2
-    - type: DeviceLinkSink
-      links:
-      - 12384
   - uid: 6331
     components:
     - type: Transform
@@ -48649,24 +48596,6 @@ entities:
     - type: DeviceLinkSink
       links:
       - 14666
-  - uid: 14474
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: 83.5,3.5
-      parent: 2
-    - type: DeviceLinkSink
-      links:
-      - 12384
-  - uid: 14515
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: 82.5,3.5
-      parent: 2
-    - type: DeviceLinkSink
-      links:
-      - 12384
   - uid: 17232
     components:
     - type: Transform
@@ -49507,6 +49436,13 @@ entities:
     - type: Transform
       pos: 24.5,42.5
       parent: 2
+- proto: CurtainsGreenOpen
+  entities:
+  - uid: 14474
+    components:
+    - type: Transform
+      pos: -60.5,11.5
+      parent: 2
 - proto: CurtainsOrange
   entities:
   - uid: 10067
@@ -49758,13 +49694,6 @@ entities:
     - type: Transform
       pos: 22.5,-1.5
       parent: 2
-- proto: DefaultStationBeaconChiefJustice
-  entities:
-  - uid: 16594
-    components:
-    - type: Transform
-      pos: -65.5,8.5
-      parent: 2
 - proto: DefaultStationBeaconCMORoom
   entities:
   - uid: 3994
@@ -49953,13 +49882,6 @@ entities:
     components:
     - type: Transform
       pos: 24.5,-27.5
-      parent: 2
-- proto: DefaultStationBeaconProsecutor
-  entities:
-  - uid: 16697
-    components:
-    - type: Transform
-      pos: -61.5,9.5
       parent: 2
 - proto: DefaultStationBeaconPsychologist
   entities:
@@ -55631,7 +55553,7 @@ entities:
       pos: -64.5,8.5
       parent: 2
     - type: FaxMachine
-      name: Chief Justice
+      name: NT Rep
   - uid: 16705
     components:
     - type: Transform
@@ -55645,7 +55567,7 @@ entities:
       pos: -60.5,10.5
       parent: 2
     - type: FaxMachine
-      name: Prosecutor's Office
+      name: Blueshield
 - proto: FaxMachineCaptain
   entities:
   - uid: 5439
@@ -76988,13 +76910,6 @@ entities:
     - type: Transform
       pos: -65.5,9.5
       parent: 2
-- proto: HolopadJusticeClerk
-  entities:
-  - uid: 18056
-    components:
-    - type: Transform
-      pos: -60.5,18.5
-      parent: 2
 - proto: HolopadMedicalChemistry
   entities:
   - uid: 18054
@@ -77532,12 +77447,6 @@ entities:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: 80.5,6.5
-      parent: 2
-  - uid: 17243
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: 84.5,3.5
       parent: 2
   - uid: 17244
     components:
@@ -78260,19 +78169,6 @@ entities:
         - Pressed: Toggle
         730:
         - Pressed: Toggle
-- proto: LockableButtonRobotics
-  entities:
-  - uid: 5814
-    components:
-    - type: Transform
-      pos: 47.5,-19.5
-      parent: 2
-    - type: DeviceLinkSource
-      linkedPorts:
-        12687:
-        - Pressed: Toggle
-        12146:
-        - Pressed: Toggle
 - proto: LockableButtonSalvage
   entities:
   - uid: 4805
@@ -78447,26 +78343,12 @@ entities:
     - type: Transform
       pos: 11.5,40.5
       parent: 2
-- proto: LockerChiefJusticeFilled
-  entities:
-  - uid: 16619
-    components:
-    - type: Transform
-      pos: -66.5,7.5
-      parent: 2
 - proto: LockerChiefMedicalOfficerFilledHardsuit
   entities:
   - uid: 9255
     components:
     - type: Transform
       pos: 20.5,-10.5
-      parent: 2
-- proto: LockerClerkFilled
-  entities:
-  - uid: 16569
-    components:
-    - type: Transform
-      pos: -61.5,16.5
       parent: 2
 - proto: LockerClown
   entities:
@@ -93094,6 +92976,26 @@ entities:
       rot: 1.5707963267948966 rad
       pos: 50.5,15.5
       parent: 2
+  - uid: 16571
+    components:
+    - type: Transform
+      pos: 83.5,3.5
+      parent: 2
+  - uid: 16619
+    components:
+    - type: Transform
+      pos: 84.5,4.5
+      parent: 2
+  - uid: 16626
+    components:
+    - type: Transform
+      pos: 85.5,4.5
+      parent: 2
+  - uid: 16642
+    components:
+    - type: Transform
+      pos: 87.5,4.5
+      parent: 2
   - uid: 17094
     components:
     - type: Transform
@@ -93147,15 +93049,10 @@ entities:
     - type: Transform
       pos: 82.5,2.5
       parent: 2
-  - uid: 17105
-    components:
-    - type: Transform
-      pos: 83.5,2.5
-      parent: 2
   - uid: 17106
     components:
     - type: Transform
-      pos: 84.5,2.5
+      pos: 86.5,4.5
       parent: 2
   - uid: 17107
     components:
@@ -96201,15 +96098,6 @@ entities:
     - type: DeviceLinkSink
       links:
       - 14593
-  - uid: 14692
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: 83.5,3.5
-      parent: 2
-    - type: DeviceLinkSink
-      links:
-      - 12384
 - proto: RegenerativeMesh
   entities:
   - uid: 13135
@@ -98958,26 +98846,6 @@ entities:
       linkedPorts:
         12646:
         - Status: Toggle
-  - uid: 12384
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 85.5,2.5
-      parent: 2
-    - type: DeviceLinkSource
-      linkedPorts:
-        6199:
-        - On: Forward
-        - Off: Off
-        14474:
-        - On: Forward
-        - Off: Off
-        14515:
-        - On: Forward
-        - Off: Off
-        14692:
-        - On: Forward
-        - Off: Off
   - uid: 12435
     components:
     - type: Transform
@@ -99921,12 +99789,6 @@ entities:
     - type: Transform
       pos: 85.5,5.5
       parent: 2
-  - uid: 17136
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 85.5,3.5
-      parent: 2
   - uid: 17137
     components:
     - type: Transform
@@ -100414,6 +100276,18 @@ entities:
     - type: Transform
       pos: 15.5,22.5
       parent: 2
+- proto: SpawnPointBlueshieldOfficer
+  entities:
+  - uid: 16702
+    components:
+    - type: Transform
+      pos: -62.5,8.5
+      parent: 2
+  - uid: 16703
+    components:
+    - type: Transform
+      pos: -60.5,8.5
+      parent: 2
 - proto: SpawnPointBorg
   entities:
   - uid: 16491
@@ -100606,11 +100480,6 @@ entities:
     components:
     - type: Transform
       pos: -62.5,13.5
-      parent: 2
-  - uid: 16568
-    components:
-    - type: Transform
-      pos: -60.5,17.5
       parent: 2
 - proto: SpawnPointClown
   entities:
@@ -100847,6 +100716,23 @@ entities:
     - type: Transform
       pos: 57.5,-13.5
       parent: 2
+- proto: SpawnPointMagistrate
+  entities:
+  - uid: 14515
+    components:
+    - type: Transform
+      pos: -60.5,17.5
+      parent: 2
+  - uid: 14692
+    components:
+    - type: Transform
+      pos: -60.5,18.5
+      parent: 2
+  - uid: 16627
+    components:
+    - type: Transform
+      pos: -60.5,16.5
+      parent: 2
 - proto: SpawnPointMailCarrier
   entities:
   - uid: 13932
@@ -100983,6 +100869,23 @@ entities:
     components:
     - type: Transform
       pos: 55.5,41.5
+      parent: 2
+- proto: SpawnPointNanotrasenRepresentative
+  entities:
+  - uid: 129
+    components:
+    - type: Transform
+      pos: -65.5,9.5
+      parent: 2
+  - uid: 17133
+    components:
+    - type: Transform
+      pos: -65.5,8.5
+      parent: 2
+  - uid: 17136
+    components:
+    - type: Transform
+      pos: -65.5,7.5
       parent: 2
 - proto: SpawnPointObserver
   entities:
@@ -101244,15 +101147,20 @@ entities:
       parent: 2
 - proto: SpawnPointProsecutor
   entities:
-  - uid: 16702
+  - uid: 6199
     components:
     - type: Transform
-      pos: -61.5,9.5
+      pos: -65.5,13.5
       parent: 2
-  - uid: 16703
+  - uid: 6400
     components:
     - type: Transform
-      pos: -62.5,9.5
+      pos: -65.5,14.5
+      parent: 2
+  - uid: 12384
+    components:
+    - type: Transform
+      pos: -64.5,14.5
       parent: 2
 - proto: SpawnPointPsychologist
   entities:
@@ -105786,6 +105694,41 @@ entities:
     - type: Transform
       pos: -15.216659,-16.486279
       parent: 2
+- proto: UniqueLockerBlueshieldOfficerFilled
+  entities:
+  - uid: 16570
+    components:
+    - type: Transform
+      pos: -62.5,10.5
+      parent: 2
+- proto: UniqueLockerMagistrateFilled
+  entities:
+  - uid: 16594
+    components:
+    - type: Transform
+      pos: -61.5,16.5
+      parent: 2
+- proto: UniqueLockerNanorepFilled
+  entities:
+  - uid: 16593
+    components:
+    - type: Transform
+      pos: -66.5,7.5
+      parent: 2
+- proto: UniqueMarkerBlueshieldLocker
+  entities:
+  - uid: 5814
+    components:
+    - type: Transform
+      pos: -62.5,10.5
+      parent: 2
+- proto: UniqueMarkerMagistrateLocker
+  entities:
+  - uid: 16697
+    components:
+    - type: Transform
+      pos: -61.5,16.5
+      parent: 2
 - proto: Vaccinator
   entities:
   - uid: 14606
@@ -106057,11 +106000,6 @@ entities:
     components:
     - type: Transform
       pos: -71.5,10.5
-      parent: 2
-  - uid: 16642
-    components:
-    - type: Transform
-      pos: -62.5,10.5
       parent: 2
 - proto: VendingMachineMedical
   entities:
@@ -110847,11 +110785,6 @@ entities:
     - type: Transform
       pos: 87.5,-27.5
       parent: 2
-  - uid: 17133
-    components:
-    - type: Transform
-      pos: 85.5,2.5
-      parent: 2
 - proto: WallRockBasalt
   entities:
   - uid: 15462
@@ -115620,16 +115553,6 @@ entities:
       rot: 1.5707963267948966 rad
       pos: 19.5,0.5
       parent: 2
-- proto: WindoorSecureClerkLocked
-  entities:
-  - uid: 16571
-    components:
-    - type: MetaData
-      name: Clerk
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: -60.5,18.5
-      parent: 2
 - proto: WindoorSecureCommandLocked
   entities:
   - uid: 16330
@@ -115854,7 +115777,7 @@ entities:
       lastSignals:
         DoorStatus: True
     - type: Door
-      secondsUntilStateChange: -8243.752
+      secondsUntilStateChange: -8632.426
       state: Opening
   - uid: 13197
     components:
@@ -115871,7 +115794,7 @@ entities:
       lastSignals:
         DoorStatus: True
     - type: Door
-      secondsUntilStateChange: -8243.186
+      secondsUntilStateChange: -8631.859
       state: Opening
   - uid: 15893
     components:
@@ -115894,7 +115817,7 @@ entities:
       lastSignals:
         DoorStatus: True
     - type: Door
-      secondsUntilStateChange: -8242.719
+      secondsUntilStateChange: -8631.393
       state: Opening
   - uid: 16355
     components:
@@ -115911,7 +115834,7 @@ entities:
       lastSignals:
         DoorStatus: True
     - type: Door
-      secondsUntilStateChange: -8244.252
+      secondsUntilStateChange: -8632.926
       state: Opening
   - uid: 16357
     components:
@@ -116595,6 +116518,12 @@ entities:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: -67.5,16.5
+      parent: 2
+  - uid: 16568
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: -60.5,18.5
       parent: 2
   - uid: 16572
     components:
