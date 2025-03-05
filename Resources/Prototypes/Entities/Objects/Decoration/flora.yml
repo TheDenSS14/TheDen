@@ -557,6 +557,9 @@
   - type: Sprite
     sprite: Objects/Decoration/Flora/flora_treeslight.rsi
     state: tree01
+  - type: Psionic
+    removable: false
+    roller: false
   - type: Destructible
     thresholds:
     - trigger:
