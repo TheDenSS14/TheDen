@@ -51,3 +51,5 @@ marking-PiercingRingsVulp = Nipple Piercing (Rings)
 
 marking-PiercingRingsMale-piercings = Nipples
 marking-PiercingRingsMale = Nipple Piercing (Male, Rings)
+
+markings-category-Nipples = Nipples
