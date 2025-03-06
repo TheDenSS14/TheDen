@@ -1,5 +1,5 @@
-marking-pubesUpper-pubes = Chest
+marking-pubesUpper-pubes = Genitals
 marking-pubesUpper = Pubic Hair (high)
 
-marking-pubesLower-pubes = Chest
+marking-pubesLower-pubes = Genitals
 marking-pubesLower = Pubic Hair (low)
