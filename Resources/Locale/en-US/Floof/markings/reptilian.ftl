@@ -8,3 +8,9 @@ marking-LizardFinTop-secondary = Aquatic Fin secondary
 marking-LizardCrestLargeTop = Crest (Large)
 marking-LizardCrestLargeTop-primary = Crest (Large) primary
 marking-LizardCrestLargeTop-secondary = Crest (Large) secondary
+
+marking-SnoutEasternDNW = Eastern Dragon (No Whiskers)
+marking-SnoutEasternDNW-primary = Eastern Dragon (No Whiskers) primary
+marking-SnoutEasternDNW-secondary = Eastern Dragon (No Whiskers) secondary
+
+marking-SnoutEasternDW = Eastern Dragon (Whiskers)
