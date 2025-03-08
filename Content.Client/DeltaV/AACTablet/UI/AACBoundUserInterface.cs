@@ -1,5 +1,6 @@
 using Content.Shared.DeltaV.AACTablet;
 using Content.Shared.DeltaV.QuickPhrase;
+using Robust.Client.UserInterface;
 using Robust.Shared.Prototypes;
 
 namespace Content.Client.DeltaV.AACTablet.UI;
@@ -17,21 +18,12 @@ public sealed class AACBoundUserInterface : BoundUserInterface
     {
         base.Open();
         _window?.Close();
-        _window = new AACWindow();
-        _window.OpenCentered();
-
+        _window = this.CreateWindow<AACWindow>();
         _window.PhraseButtonPressed += OnPhraseButtonPressed;
-        _window.OnClose += Close;
     }
 
     private void OnPhraseButtonPressed(ProtoId<QuickPhrasePrototype> phraseId)
     {
         SendMessage(new AACTabletSendPhraseMessage(phraseId));
-    }
-
-    protected override void Dispose(bool disposing)
-    {
-        base.Dispose(disposing);
-        _window?.Orphan();
     }
 }
