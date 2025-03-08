@@ -26,8 +26,8 @@
       state: icon
     - type: RandomMetadata
       nameSegments:
-        - NamesFirstMilitaryLeader
-        - NamesLastMilitary
+        - NamesMilitaryFirstLeader
+        - NamesMilitaryLast
     - type: RandomHumanoidSpawner
       settings: DeathSquad
 
@@ -51,8 +51,8 @@
       prototypes: [ DeathSquadGear ]
     - type: RandomMetadata
       nameSegments:
-        - NamesFirstMilitaryLeader
-        - NamesLastMilitary
+        - NamesMilitaryFirstLeader
+        - NamesMilitaryLast
 
 
 ## ERT Leader
@@ -67,8 +67,8 @@
       state: ertleader
     - type: RandomMetadata
       nameSegments:
-      - NamesFirstMilitaryLeader
-      - NamesLastMilitary
+      - NamesMilitaryFirstLeader
+      - NamesMilitaryLast
     - type: RandomHumanoidSpawner
       settings: ERTLeader
 
@@ -90,8 +90,8 @@
       prototypes: [ ERTLeaderGear ]
     - type: RandomMetadata
       nameSegments:
-      - NamesFirstMilitaryLeader
-      - NamesLastMilitary
+      - NamesMilitaryFirstLeader
+      - NamesMilitaryLast
 
 - type: entity
   id: RandomHumanoidSpawnerERTLeaderEVA
@@ -154,8 +154,8 @@
       state: chaplain #needs an ERT variant once a good suit it made.
     - type: RandomMetadata
       nameSegments:
-      - NamesFirstMilitary
-      - NamesLastMilitary
+      - NamesMilitaryFirst
+      - NamesMilitaryLast
     - type: RandomHumanoidSpawner
       settings: ERTChaplain
 
@@ -172,8 +172,8 @@
     - type: GhostTakeoverAvailable
     - type: RandomMetadata
       nameSegments:
-      - NamesFirstMilitary
-      - NamesLastMilitary
+      - NamesMilitaryFirst
+      - NamesMilitaryLast
     - type: Loadout
       prototypes: [ ERTChaplainGear ]
 
@@ -216,8 +216,8 @@
       state: ertjanitor
     - type: RandomMetadata
       nameSegments:
-      - NamesFirstMilitary
-      - NamesLastMilitary
+      - NamesMilitaryFirst
+      - NamesMilitaryLast
     - type: RandomHumanoidSpawner
       settings: ERTJanitor
 
@@ -234,8 +234,8 @@
     - type: GhostTakeoverAvailable
     - type: RandomMetadata
       nameSegments:
-      - NamesFirstMilitary
-      - NamesLastMilitary
+      - NamesMilitaryFirst
+      - NamesMilitaryLast
     - type: Loadout
       prototypes: [ ERTJanitorGear ]
 
@@ -278,8 +278,8 @@
       state: ertengineer
     - type: RandomMetadata
       nameSegments:
-      - NamesFirstMilitary
-      - NamesLastMilitary
+      - NamesMilitaryFirst
+      - NamesMilitaryLast
     - type: RandomHumanoidSpawner
       settings: ERTEngineer
 
@@ -296,8 +296,8 @@
     - type: GhostTakeoverAvailable
     - type: RandomMetadata
       nameSegments:
-      - NamesFirstMilitary
-      - NamesLastMilitary
+      - NamesMilitaryFirst
+      - NamesMilitaryLast
     - type: Loadout
       prototypes: [ ERTEngineerGear ]
 
@@ -340,8 +340,8 @@
       state: ertsecurity
     - type: RandomMetadata
       nameSegments:
-      - NamesFirstMilitary
-      - NamesLastMilitary
+      - NamesMilitaryFirst
+      - NamesMilitaryLast
     - type: RandomHumanoidSpawner
       settings: ERTSecurity
 
@@ -358,8 +358,8 @@
     - type: GhostTakeoverAvailable
     - type: RandomMetadata
       nameSegments:
-      - NamesFirstMilitary
-      - NamesLastMilitary
+      - NamesMilitaryFirst
+      - NamesMilitaryLast
     - type: Loadout
       prototypes: [ ERTSecurityGear ]
 
@@ -424,8 +424,8 @@
       state: ertmedical
     - type: RandomMetadata
       nameSegments:
-      - NamesFirstMilitary
-      - NamesLastMilitary
+      - NamesMilitaryFirst
+      - NamesMilitaryLast
     - type: RandomHumanoidSpawner
       settings: ERTMedical
 
@@ -442,8 +442,8 @@
     - type: GhostTakeoverAvailable
     - type: RandomMetadata
       nameSegments:
-      - NamesFirstMilitary
-      - NamesLastMilitary
+      - NamesMilitaryFirst
+      - NamesMilitaryLast
     - type: Loadout
       prototypes: [ ERTMedicalGear ]
 
@@ -504,8 +504,8 @@
     - type: GhostTakeoverAvailable
     - type: RandomMetadata
       nameSegments:
-      - NamesFirstMilitary
-      - NamesLastMilitary
+      - NamesMilitaryFirst
+      - NamesMilitaryLast
 ## Central Command
 
 - type: entity
@@ -545,7 +545,7 @@
       sprite: Mobs/Species/Human/parts.rsi
       state: full
     - type: RandomMetadata
-      nameSegments: [ names_death_commando ]
+      nameSegments: [ NamesDeathCommando ]
     - type: RandomHumanoidSpawner
       settings: SyndicateAgent
 
