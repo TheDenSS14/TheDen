@@ -35,6 +35,10 @@
   suffix: Human, NukeOps
   components:
     - type: NukeOperative
+    - type: RandomMetadata
+    nameSegments:
+    - nukeops-role-operator
+    - NamesSyndicateNormal
 
 # Nuclear Operative
 - type: entity
@@ -62,7 +66,7 @@
     - type: RandomMetadata
       nameSegments:
       - SyndicateNamesPrefix
-      - SyndicateNamesNormal
+      - NamesSyndicateNormal
     - type: NpcFactionMember
       factions:
       - Syndicate
