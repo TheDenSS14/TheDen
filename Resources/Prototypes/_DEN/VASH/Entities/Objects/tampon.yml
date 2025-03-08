@@ -1,0 +1,41 @@
+- type: entity
+  parent: BaseItem
+  id: BaseVASHBlood #Copied from BaseHealingItem, just-- wouldn't work, so here's my copy. B) - KekaniCreates (KC)
+  abstract: true
+  components:
+  - type: Sprite
+    sprite: _DEN/Vash/Objects/bloodyboyes.rsi #I thought it'd be funny lol #KC
+  - type: Item
+    size: Small
+    sprite: _DEN/Vash/Objects/bloodyboyes.rsi
+    heldPrefix: tampon
+  # Inherited
+  - type: StaticPrice
+    price: 0
+
+
+- type: entity
+  name: tampon applicator
+  description: dude im boutta bust lmao
+  parent: BaseVASHBlood
+  id: tampon
+  components:
+  - type: Tag
+    tags:
+    - Gauze
+  - type: Sprite
+    state: tampon
+  - type: Item
+    size: Small
+    sprite: _DEN/VASH/Objects/tampon.rsi
+    state: tampon
+  - type: Construction
+    graph: Gauze
+    node: gauze
+  - type: Healing
+    damageContainers:
+    - Biological
+    damage:
+      types:
+        Piercing: -15 # you can jam one in a hole, but helping out a gaping wound is sort of a stretch.
+    bloodlossModifier: -10
