@@ -39,6 +39,10 @@
       types:
         Piercing: -4 # you can jam one in a hole, but helping out a gaping wound is sort of a stretch. originally -15, nerfed to 4 to emphasize "for emergencies." -KC
     bloodlossModifier: -2 # Not intended to be in a medical kit or anything. It's intended for your vagina, not your bullet wound, but it helps. -KC
+  - type: InteractionVerbs # For the weirdos. -KC
+    allowedVerbs:
+    - KissObject
+    - LickObject
 
 - type: entity
   name: menstrual pad
@@ -65,6 +69,10 @@
       types:
         Slash: -3.5 # originally -7.5, nerfed to emphasize for emergencies.
     bloodlossModifier: -4 # Better than a tampon, worse than gauze. If you can, make/use bandages, but if you're stuck in maints-- you got your pad!
+  - type: InteractionVerbs # For the weirdos. -KC
+    allowedVerbs:
+      - KissObject
+      - LickObject
 
 - type: entity
   name: panty liner
@@ -91,3 +99,7 @@
       types:
         Slash: -1.5 # It's really, REALLY not intended to be used for more than it's intended purpose. Oops, should've brought pads! -KC
     bloodlossModifier: -3 # Better than a tampon, worse than a pad. If you can, make/use bandages, but if you're stuck in maints-- you got your liners! -KC
+  - type: InteractionVerbs # For the weirdos. -KC
+    allowedVerbs:
+    - KissObject
+    - LickObject
