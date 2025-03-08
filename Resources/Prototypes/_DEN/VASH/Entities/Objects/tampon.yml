@@ -16,7 +16,7 @@
 
 - type: entity
   name: tampon applicator
-  description: dude im boutta bust lmao
+  description: A small plastic device which is intended to deploy a soft cotton tampon into the vaginal canal with the intention to stop bleeding.
   parent: BaseVASHBlood
   id: tampon
   components:
@@ -27,7 +27,7 @@
     state: tampon
   - type: Item
     size: Small
-    sprite: _DEN/VASH/Objects/tampon.rsi
+    sprite: _DEN/VASH/Objects/bloodyboyes.rsi
     state: tampon
   - type: Construction
     graph: Gauze
