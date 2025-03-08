@@ -11,7 +11,7 @@
   id: TailEasternDragon
   bodyPart: Tail
   markingCategory: Tail
-  speciesRestriction: [Reptilian, SlimePerson, HumanHybrid]
+  speciesRestriction: [Reptilian, SlimePerson, HumanHybrid, IPC]
   sprites:
     - sprite: SimpleStation14/Mobs/Customization/tails32x32.rsi
       state: easternd_primary
@@ -46,7 +46,7 @@
   id: TailMaw
   bodyPart: Tail
   markingCategory: Tail
-  speciesRestriction: [SlimePerson, Vulpkanin, HumanHybrid]
+  speciesRestriction: [SlimePerson, Vulpkanin, HumanHybrid, IPC]
   sprites:
     - sprite: SimpleStation14/Mobs/Customization/tails32x32.rsi
       state: maw
@@ -64,7 +64,7 @@
   id: TailSuccubus
   bodyPart: Tail
   markingCategory: Tail
-  speciesRestriction: [SlimePerson, HumanHybrid, Oni]
+  speciesRestriction: [SlimePerson, HumanHybrid, Oni, IPC]
   sprites:
     - sprite: SimpleStation14/Mobs/Customization/tails32x32.rsi
       state: succubus
@@ -73,7 +73,7 @@
   id: TailTentacle
   bodyPart: Tail
   markingCategory: Tail
-  speciesRestriction: [SlimePerson, HumanHybrid]
+  speciesRestriction: [SlimePerson, HumanHybrid, IPC]
   sprites:
     - sprite: SimpleStation14/Mobs/Customization/tails32x32.rsi
       state: tentacle
