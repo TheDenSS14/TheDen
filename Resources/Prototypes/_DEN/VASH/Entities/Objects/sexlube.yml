@@ -9,10 +9,10 @@
   - type: SolutionContainerManager
     solutions:
       drink:
-        maxVol: 15 #it probably doesn't need to be that big. If you want more, go ask the Chemist or get a Toybox.
+        maxVol: 20 #it probably doesn't need to be that big. If you want more, go ask the Chemist or get a Toybox.-KC
         reagents:
         - ReagentId: SpaceLube
-          Quantity: 15
+          Quantity: 20
   - type: Drink
   - type: Sprite
     sprite: _Den/VASH/Objects/bottlelube.rsi
@@ -30,7 +30,7 @@
     inHandsFillBaseName: -fill-
   - type: Openable
     closeable: true #this ain't a packet, you should be able to reseal it.
-  - type: InteractionVerbs # For the weirdos. -KC
+  - type: InteractionVerbs
     allowedVerbs:
       - KissObject
       - LickObject

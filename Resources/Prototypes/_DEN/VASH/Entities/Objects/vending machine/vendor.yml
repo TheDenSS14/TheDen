@@ -1,0 +1,33 @@
+- type: entity #copied from Entities/Structures/Machines/vending_machines.yml
+  parent: VendingMachine
+  id: VASHVendor
+  name: VASHVend
+  description: If it belongs behind closed doors, you'll find it here!
+  components:
+  - type: VendingMachine
+    pack: VASHVendingInventory
+    offState: off
+    brokenState: broken
+    normalState: normal-unshaded
+    ejectState: eject-unshaded
+  - type: Sprite
+    sprite: _DEN/VASH/Machines/SexVend.rsi
+    drawdepth: SmallObjects
+    layers:
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.Base"]
+    - state: "off"
+      map: [ "enum.VendingMachineVisualLayers.BaseUnshaded" ]
+      shader: unshaded
+    - state: panel
+      map: [ "enum.WiresVisualLayers.MaintenancePanel" ]
+  - type: PointLight
+    radius: 2
+    energy: 1.6
+    color: "#ffd9d9"
+    mask: /Textures/Effects/LightMasks/cone.png
+    autoRot: true
+  - type: Advertise
+    pack: VASHVendingAds
+  - type: SpeakOnUIClosed
+    pack: VASHVendingBye

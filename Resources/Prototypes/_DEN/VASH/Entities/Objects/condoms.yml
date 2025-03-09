@@ -15,12 +15,16 @@
   - type: Sprite
     sprite: _DEN/VASH/Objects/condoms.rsi
     state: condom
+  - type: InteractionVerbs
+    allowedVerbs:
+    - KissObject
+    - LickObject
 
 - type: entity #copied from Entities/Objects/Specific/rehydrateable.yml
   parent: BaseItem
   id: CondomUnwrapped
   name: condom
-  description: Remember The safest sex is no sex! #hehehehee it's funny, right? -KC
+  description: Have fun!
   components:
   - type: Item
     size: Tiny
@@ -29,5 +33,9 @@
     state: condomout
   - type: EmitSoundOnUse
     sound: /Audio/Effects/Fluids/blood2.ogg # I don't feel confident trying to find a rubber sound free of copyright. This should be just fine. -KC
+  - type: InteractionVerbs # For the weirdos. -KC
+    allowedVerbs:
+    - KissObject
+    - LickObject
 #when consulted with the council, it was frowned upon to make the condom a container, mostly from the consent violations it could/would cause. -KC
 #need a component to make the condom delete itself after use, and a component to display "you put on the condom" when it's used.
