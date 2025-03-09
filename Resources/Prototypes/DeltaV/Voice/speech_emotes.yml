@@ -168,3 +168,12 @@
   chatMessages: [awoos.]
   chatTriggers:
     - awoos
+
+- type: emote  #if it's this simple ill cry
+  id: Squeak
+  category: Vocal
+  chatMessages: [ "chat-emote-msg-squeak" ]
+  chatTriggers:
+  - squeak
+  - squeaks
+  - squeaked
