@@ -5,7 +5,7 @@
   description: Pushed by Phil's Pharmaceuticals, this little pill will get you shoved on the bed before ya know it. #company name pending
   components:
   - type: Sprite
-    sprite: _Den/VASH/Objects/pills.rsi
+    sprite: _DEN/VASH/Objects/pills.rsi
     state: aphrodesiac
   - type: SolutionContainerManager
     solutions:
@@ -29,7 +29,7 @@
       food:
         maxVol: 1
         reagents:
-        - ReagentId: Nicotine #Just a placeholder, as we don't have pregnancy, and this will improve your mood a bit.
+        - ReagentId: Sugar #Just a placeholder, as we don't have pregnancy.
           Quantity: 1
 
 - type: entity #Copied from Entities/Objects/Specific/chemistry-bottles.yml
