@@ -168,22 +168,3 @@
   chatMessages: [awoos.]
   chatTriggers:
     - awoos
-
-#let rodentia squeak?
-- type: emote
-  id: Squeak
-  name: chat-emote-name-squeak
-  category: Vocal
-  available: false
-  icon: Interface/Emotes/squeak.png
-  whitelist:
-    components:
-      - Vocal
-  blacklist:
-    components:
-    - BorgChassis
-  chatMessages: ["chat-emote-msg-squeak"]
-  chatTriggers:
-   - squeak
-   - squeaks
-   - squeaked

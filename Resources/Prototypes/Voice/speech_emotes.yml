@@ -139,6 +139,24 @@
   chatTriggers:
    - clicks
 
+- type: emote #will this let rodentia squeak?
+  id: Squeak
+  name: chat-emote-name-squeak
+  category: Vocal
+  available: false
+  icon: Interface/Emotes/squeak.png
+  whitelist:
+    components:
+      - Vocal
+  blacklist:
+    components:
+    - BorgChassis
+  chatMessages: ["chat-emote-msg-squeak"]
+  chatTriggers:
+   - squeak
+   - squeaks
+   - squeaked
+
 # hand emotes
 - type: emote
   id: Clap
