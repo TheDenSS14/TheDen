@@ -1,7 +1,7 @@
 - type: entity # Pretty much a copy of the Water Bottle, shifted all sex-lube like. Copied from Entities/Objects/Consumable/Drinks/drinks_bottles.yml
   parent: [DrinkBottleVisualsOpenable, DrinkBottlePlasticBaseFull]
   id: SexLube
-  name: Sexual Lubricant
+  name: sexual lubricant
   description: A bottle of synthetic lubricant to help with sexual activity. #Too straight to the point, although I'm not sure what else you use lube for than sex lmao -KC
   components:
   - type: Item
@@ -13,7 +13,6 @@
         reagents:
         - ReagentId: SpaceLube
           Quantity: 20
-  - type: Drink
   - type: Sprite
     sprite: _Den/VASH/Objects/bottlelube.rsi
     layers:
