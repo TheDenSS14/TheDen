@@ -517,12 +517,12 @@
     - !type:TraitModifyUnarmed
       flatDamageIncrease:
         types:
-          Blunt: 1
+          Blunt: 2
 
 - type: trait
   id: Spinarette
   category: Physical
-  points: -4
+  points: -3
   requirements:
     - !type:CharacterJobRequirement
       inverted: true
@@ -542,7 +542,7 @@
           action: ActionSericulture
           productionLength: 2
           entityProduced: MaterialWebSilk1
-          hungerCost: 4
+          hungerCost: 1 
 
 - type: trait
   id: BionicArm
@@ -586,7 +586,7 @@
           allowedStates:
           - Alive
           - Critical
-          damageCap: 200
+          damageCap: 400
           damage:
             groups:
               Brute: -0.3
@@ -623,6 +623,10 @@
       inverted: true
       jobs:
         - Prisoner # Bionics should be "Confiscated" from long term prisoners.
+    - !type:CharacterSpeciesRequirement
+        inverted: true
+        species:
+          - IPC
     - !type:CharacterTraitRequirement
       inverted: true
       traits:
@@ -843,7 +847,7 @@
 - type: trait
   id: ThermographicVision
   category: Physical
-  points: -8
+  points: -4
   requirements:
     - !type:CharacterJobRequirement
       inverted: true
@@ -884,7 +888,7 @@
           - Alive
           - Critical
           - Dead
-          damageCap: 200
+          damageCap: 250
           damage:
             groups:
               Brute: -0.3
@@ -900,11 +904,11 @@
       jobs:
         - Prisoner # Bionics should be "Confiscated" from long term prisoners.
   functions:
-    - !type:TraitAddComponent
+    - !type:TraitReplaceComponent
       components:
-      - type: MovementBodyPart
-        walkSpeed: 3.125
-        sprintSpeed: 5.625
+      - type: TraitSpeedModifier
+        sprintModifier: 1.300
+        walkModifier: 1.125
     - !type:TraitPushDescription
       descriptionExtensions:
         - description: examine-bionic-leg-message
@@ -1029,6 +1033,9 @@
     - !type:CharacterTraitRequirement
       inverted: true
       traits:
+        - Photophobia
+        - Blindness
+        - Nearsighted
         - MedicalEyesModule
         - DiagnosticEyesModule
         - SecurityEyesModule
@@ -1067,7 +1074,7 @@
 - type: trait
   id: ThermographicVisionModule
   category: Physical
-  points: -8
+  points: -4
   requirements:
     - !type:CharacterJobRequirement
       inverted: true

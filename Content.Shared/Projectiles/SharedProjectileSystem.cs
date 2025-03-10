@@ -167,7 +167,7 @@ public abstract partial class SharedProjectileSystem : EntitySystem
             && projectile.Shooter.HasValue
             && projectile.Weapon.HasValue)
         {
-            var ev = new ProjectileEmbedEvent(projectile.Shooter.Value, projectile.Weapon.Value, args.Target);
+            var ev = new ProjectileEmbedEvent(projectile.Shooter, projectile.Weapon!.Value, args.Target);
             RaiseLocalEvent(uid, ref ev);
         }
     }
