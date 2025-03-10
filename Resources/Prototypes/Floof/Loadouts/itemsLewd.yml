@@ -179,3 +179,26 @@
   requirements:
   - !type:CharacterItemGroupRequirement
     group: LoadoutLewd
+
+# VASH
+- type: loadout
+  id: LoadoutVASHHygiene
+  category: ItemsLewd
+  cost: 3 #totally bullshitting the number cost, but that's a lot of stop-bleeding items.
+  exclusive: true
+  items:
+  - VASHBox
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutLewd
+
+- type: loadout
+  id: LoadoutVASHSex
+  category: ItemsLewd
+  cost: 1 #totally bullshitting the number cost, but that's a lot of roleplay items. Has space lube, though.
+  exclusive: true
+  items:
+  - SexBox
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutLewd

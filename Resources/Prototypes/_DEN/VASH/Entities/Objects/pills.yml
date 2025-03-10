@@ -1,0 +1,91 @@
+- type: entity
+  name: phil's popup
+  parent: Pill
+  id: HornyPill
+  description: Pushed by Phil's Pharmaceuticals, this little pill will get you shoved on the bed before ya know it. #company name pending
+  components:
+  - type: Sprite
+    sprite: _DEN/VASH/Objects/pills.rsi
+    state: aphrodesiac
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 15
+        reagents:
+        - ReagentId: Philterex #not a ton, but enough that would, reasonably, get you kickstarted.
+          Quantity: 15
+
+- type: entity
+  name: birth control
+  parent: Pill
+  id: BirthControl
+  description: All the fun, with none of the consequence! #I am NOT coding pregnancy dude -KC
+  components:
+  - type: Sprite
+    sprite: Objects/Specific/Chemistry/pills.rsi
+    state: pill8
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 1
+        reagents:
+        - ReagentId: Sugar #Just a placeholder, as we don't have pregnancy.
+          Quantity: 1
+
+- type: entity #Copied from Entities/Objects/Specific/chemistry-bottles.yml
+  name: phil's lovebox #It spawns with two pills, so might as well make it a thing. -KC
+  id: PhilCanister #hehehehe get it? -KC
+  parent: BaseStorageItem
+  description: Contains two pills of aphrodesiacs to help you and your partner get things going.
+  components:
+  - type: StorageFill
+    contents:
+    - id: HornyPill
+      amount: 2
+  - type: Item
+    size: Tiny
+    sprite: _DEN/VASH/Objects/pills.rsi
+  - type: Sprite
+    sprite: _DEN/VASH/Objects/pills.rsi
+    state: lovebottle
+  - type: Tag
+    tags:
+    - PillCanister
+  - type: Storage
+    grid:
+    - 0,0,0,1
+    quickInsert: true
+    areaInsert: true
+    areaInsertRadius: 1
+    storageInsertSound: /Audio/Effects/pill_insert.ogg
+    storageRemoveSound: /Audio/Effects/pill_remove.ogg
+  - type: Dumpable
+
+- type: entity #Copied from above.
+  name: bottle of birth control #Functionally useless, but nice for RP.
+  id: BirthControlCanister #hehehehe get it? -KC
+  parent: BaseStorageItem
+  description: Contains a full set of birth control pills.
+  components:
+  - type: StorageFill
+    contents:
+    - id: BirthControl
+      amount: 10 #probably could be less, but it's a typical pill size.
+  - type: Item
+    size: Tiny
+    sprite: Objects/Specific/Chemistry/pills_canister.rsi
+  - type: Sprite
+    sprite: Objects/Specific/Chemistry/pills_canister.rsi
+    state: pill_canister
+  - type: Tag
+    tags:
+    - PillCanister
+  - type: Storage
+    grid:
+    - 0,0,4,1
+    quickInsert: true
+    areaInsert: true
+    areaInsertRadius: 1
+    storageInsertSound: /Audio/Effects/pill_insert.ogg
+    storageRemoveSound: /Audio/Effects/pill_remove.ogg
+  - type: Dumpable
