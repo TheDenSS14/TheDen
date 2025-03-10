@@ -1396,3 +1396,10 @@
   sprites:
   - sprite: Objects/Consumable/Food/burger.rsi
     state: x
+
+- type: foodSequenceElement
+  id: MothBurg
+  name: food-sequence-burger-content-mothburg
+  sprites:
+  - sprite: Objects/Consumable/Food/burger.rsi
+    state: mothroach
