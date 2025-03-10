@@ -5,6 +5,8 @@
   components:
   - type: Clickable
   - type: InteractionOutline
+  - type: PressureDestructible
+    maxPressureDifferential: 12500.0
   - type: Sprite
     sprite: Objects/Misc/inflatable_wall.rsi
     state: inflatable_wall
@@ -47,6 +49,8 @@
   components:
   - type: Clickable
   - type: InteractionOutline
+  - type: PressureDestructible
+    maxPressureDifferential: 12500.0
   - type: Sprite
     sprite: Objects/Misc/inflatable_door.rsi
     state: closed
