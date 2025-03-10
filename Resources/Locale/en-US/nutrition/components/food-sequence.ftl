@@ -78,6 +78,7 @@ food-sequence-content-berries = berries
 food-sequence-content-spacemans-trumpet = spacemans trupmet
 food-sequence-content-cherry = cherry
 food-sequence-content-snail = snail
+food-sequence-content-cig = cigarette
 
 # BURGERS
 
@@ -129,6 +130,37 @@ food-sequence-burger-content-berries = berri
 food-sequence-burger-content-spacemans-trumpet = spacetrump
 food-sequence-burger-content-extradimensional-orange = 3d
 food-sequence-burger-content-world-pea = peace
+food-sequence-burger-content-cig = cig
+food-sequence-burger-content-appendixburg = appendi
+food-sequence-burger-content-baconburg = bacon
+food-sequence-burger-content-baseballburg = homerun
+food-sequence-burger-content-bearburg = meaty
+food-sequence-burger-content-bigburg = meaty
+food-sequence-burger-content-brainburg = brain
+food-sequence-burger-content-catburg = cat
+food-sequence-burger-content-cheeseburg = cheese
+food-sequence-burger-content-chickenburg = chicken
+food-sequence-burger-content-clownburg = clown
+food-sequence-burger-content-corgiburg = validhunting
+food-sequence-burger-content-crabburg = crab
+food-sequence-burger-content-crazyburg = crazy
+food-sequence-burger-content-duckburg = duck
+food-sequence-burger-content-powerburg = plasma
+food-sequence-burger-content-carpburg = carp
+food-sequence-burger-content-fiveburg = five alarm
+food-sequence-burger-content-ghostburg = ghost
+food-sequence-burger-content-humanburg = human
+food-sequence-burger-content-mcguffinburg = mcguffin
+food-sequence-burger-content-mcribburg = mcrib
+food-sequence-burger-content-mimeburg = mime
+food-sequence-burger-content-plainburg = burger
+food-sequence-burger-content-ratburg = rat
+food-sequence-burger-content-robotburg = robot
+food-sequence-burger-content-soy = soy
+food-sequence-burger-content-spellburg = spell
+food-sequence-burger-content-superburg = meaty
+food-sequence-burger-content-tofuburg = tofu
+food-sequence-burger-content-xenoburg = xeno
 
 # TACO
 
