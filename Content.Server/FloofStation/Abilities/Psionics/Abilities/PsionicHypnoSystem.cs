@@ -54,7 +54,7 @@ namespace Content.Server.Abilities.Psionics
                 || _mobState.IsCritical(args.Target, mob))
                 return;
 
-            if (!_consent.HasConsent(args.Target, "Hypno"))
+            if (!_consent.HasConsent(args.Target, uid, "Hypno"))
             {
                 _popups.PopupEntity(Loc.GetString("has-no-consent"), uid, uid, PopupType.Large);
                 return;
