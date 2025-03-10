@@ -6,7 +6,7 @@
   requirements:
     - !type:CharacterPlaytimeRequirement # DeltaV - JobSecurityOfficer time requirement. Make them experienced in proper officer work.
       tracker: JobDetective
-      min: 7200 # Floofstation - 1 hour
+      min: 7200 # Floofstation - 2 hour
   startingGear: WardenGear
   icon: "JobIconWarden"
   supervisors: job-supervisors-hos
