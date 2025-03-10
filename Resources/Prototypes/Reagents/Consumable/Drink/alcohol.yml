@@ -133,9 +133,9 @@
   flavor: blue-curacao #Delta-V Flavor additions
   color: "#0099FF"
   metamorphicSprite:
-    sprite: Objects/Consumable/Drinks/thin_glass.rsi
+    sprite: Objects/Consumable/Drinks/curacaoglass.rsi
     state: icon_empty
-  metamorphicMaxFillLevels: 5
+  metamorphicMaxFillLevels: 4
   metamorphicFillBaseName: fill-
   metamorphicChangeColor: true
   metabolisms:
@@ -385,9 +385,9 @@
   flavor: watermelon
   color: "#00FF33"
   metamorphicSprite:
-    sprite: Objects/Consumable/Drinks/thin_glass.rsi
+    sprite: Objects/Consumable/Drinks/emeraldglass.rsi
     state: icon_empty
-  metamorphicMaxFillLevels: 5
+  metamorphicMaxFillLevels: 4
   metamorphicFillBaseName: fill-
   metamorphicChangeColor: true
   metabolisms:
@@ -990,7 +990,10 @@
   color: "#cccbc8"
   metamorphicSprite:
     sprite: Objects/Consumable/Drinks/coconutrum.rsi
-    state: icon
+    state: icon_empty
+  metamorphicMaxFillLevels: 4
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: false
   metabolisms:
     Drink:
       effects:
@@ -1010,7 +1013,10 @@
   color: "#f73030"
   metamorphicSprite:
     sprite: Objects/Consumable/Drinks/cosmopolitan.rsi
-    state: icon
+    state: icon_empty
+  metamorphicMaxFillLevels: 3
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: false
   metabolisms:
     Drink:
       effects:
@@ -1668,7 +1674,10 @@
   color: "#e6cb47"
   metamorphicSprite:
     sprite: Objects/Consumable/Drinks/painkiller.rsi
-    state: icon
+    state: icon_empty
+  metamorphicMaxFillLevels: 6
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: false
   metabolisms:
     Drink:
       effects:
@@ -1710,12 +1719,11 @@
   flavor: red-mead #Delta-V Flavor additions
   color: "#bc5550"
   metamorphicSprite:
-    sprite: Objects/Consumable/Drinks/beerstein.rsi
+    sprite: Objects/Consumable/Drinks/red_meadglass.rsi
     state: icon_empty
   metamorphicMaxFillLevels: 5
   metamorphicFillBaseName: fill-
-  metamorphicChangeColor: true
-  fizziness: 0.4
+  metamorphicChangeColor: false
   metabolisms:
     Drink:
       effects:
@@ -1723,7 +1731,7 @@
         factor: 2
       - !type:AdjustReagent
         reagent: Ethanol
-        amount: 0.0175
+        amount: 0.2 
 
 - type: reagent
   id: PinaColada
@@ -1735,7 +1743,10 @@
   color: "#e8dba4"
   metamorphicSprite:
     sprite: Objects/Consumable/Drinks/pinacolada.rsi
-    state: icon
+    state: icon_empty
+  metamorphicMaxFillLevels: 6
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: false
   metabolisms:
     Drink:
       effects:
@@ -1743,7 +1754,7 @@
         factor: 2
       - !type:AdjustReagent
         reagent: Ethanol
-        amount: 0.0415
+        amount: 0.2  
 
 - type: reagent
   id: Sbiten
@@ -2063,9 +2074,9 @@
   flavor: vodka-tonic #Delta-V Flavor additions
   color: "#0064C8"
   metamorphicSprite:
-    sprite: Objects/Consumable/Drinks/gintonicglass.rsi # they look the same
+    sprite: Objects/Consumable/Drinks/vodkatonicglass.rsi
     state: icon_empty
-  metamorphicMaxFillLevels: 6
+  metamorphicMaxFillLevels: 5
   metamorphicFillBaseName: fill-
   metamorphicChangeColor: false
   metabolisms:
@@ -2352,3 +2363,26 @@
           time: 1.0
           type: Remove
   fizziness: 0.25
+
+- type: reagent
+  id: ZombieCocktail
+  name: reagent-name-zombiecocktail
+  parent: BaseAlcohol
+  desc: reagent-desc-zombiecocktail
+  physicalDesc: reagent-physical-desc-strong-smelling
+  flavor: zombiecocktail
+  color: "#d17844"
+  metamorphicSprite:
+    sprite: Objects/Consumable/Drinks/zombiecocktail.rsi
+    state: icon_empty
+  metamorphicMaxFillLevels: 4
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: false
+  metabolisms:
+    Drink:
+      effects:
+        - !type:SatiateThirst
+          factor: 1
+        - !type:AdjustReagent
+          reagent: Ethanol
+          amount: 0.25
