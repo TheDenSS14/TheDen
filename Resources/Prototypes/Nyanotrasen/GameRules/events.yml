@@ -123,13 +123,16 @@
     maximumGlimmer: 1000
     report: glimmer-event-report-signatures
 
-#- type: entity
-#  id: GlimmerWispSpawn
-#  parent: BaseGlimmerSignaturesEvent
-#  categories: [ HideSpawnMenu ]
-#  components:
-#  - type: GlimmerMobRule
-#    mobPrototype: MobGlimmerWisp
+- type: entity
+  id: GlimmerWispSpawn
+  parent: BaseGlimmerSignaturesEvent
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: GlimmerEvent
+    minimumGlimmer: 700
+    maximumGlimmer: 1000
+  - type: GlimmerMobRule
+    mobPrototype: MobGlimmerWisp
 
 - type: entity
   parent: BaseGlimmerSignaturesEvent
@@ -176,7 +179,7 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: GlimmerEvent
-    minimumGlimmer: 700
+    minimumGlimmer: 620
     maximumGlimmer: 900
     glimmerBurnLower: 50
     glimmerBurnUpper: 250

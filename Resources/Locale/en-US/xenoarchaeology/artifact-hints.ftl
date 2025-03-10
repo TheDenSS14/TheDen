@@ -40,6 +40,8 @@ artifact-trigger-hint-regular-gases = Standard atmospheric gases
 artifact-trigger-hint-plasma = Gaseous plasma
 artifact-trigger-hint-land = Active deceleration
 artifact-trigger-hint-examine = Examination
+# Funkychem
+artifact-trigger-hint-medical = Reaction with medicinal fluid
 
 # Psionic Effects
 artifact-effect-hint-psionic = Noöspheric disturbance

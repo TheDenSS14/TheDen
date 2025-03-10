@@ -86,6 +86,12 @@
   - type: Tag
     tags:
       - FootstepSound
+  - type: Psionic
+    removable: false
+    roller: false
+    assayFeedback:
+      - living-light-feedback
+  - type: Dispellable
   - type: Destructible
     thresholds:
       - trigger:

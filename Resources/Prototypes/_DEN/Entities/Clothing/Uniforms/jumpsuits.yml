@@ -53,6 +53,17 @@
   - type: Clothing
     sprite: _DEN/Clothing/Uniforms/Jumpsuit/latexcatsuitblank.rsi
 
+- type: entity
+  parent: ClothingUniformSkirtBase
+  id: ClothingUniformShorts
+  name: shorts
+  description: These are shorts, not boxers.
+  components:
+  - type: Sprite
+    sprite: _DEN/Clothing/Uniforms/Jumpsuit/shorts.rsi
+  - type: Clothing
+    sprite: _DEN/Clothing/Uniforms/Jumpsuit/shorts.rsi
+
 # grabbed from ship_vs_ship.yml
 - type: entity
   parent: ClothingUniformJumpsuitRepairmanSyndie

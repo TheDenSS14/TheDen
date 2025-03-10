@@ -868,6 +868,20 @@
     - !type:LoadoutMakeFollower
 
 - type: loadout
+  id: LoadoutItemPetRoingus
+  category: Items
+  cost: 2
+  canBeHeirloom: true
+  customColorTint: true
+  items:
+    - MobRoingusPet
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutPets
+  functions:
+    - !type:LoadoutMakeFollower
+
+- type: loadout
   id: LoadoutItemBlackDeck
   category: Items
   cost: 3

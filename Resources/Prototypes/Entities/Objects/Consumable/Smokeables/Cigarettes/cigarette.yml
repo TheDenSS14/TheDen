@@ -21,6 +21,10 @@
   - type: Construction
     graph: smokeableCigarette
     node: cigarette
+  - type: FoodSequenceElement
+    entries:
+      Taco: Cig
+      Burger: CigBurger
 
 - type: entity
   id: SoakedCigarette

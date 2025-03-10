@@ -276,7 +276,7 @@
   tags:
   - Cooked
   - Meat
-  
+
 # Snail meat
 
 - type: foodSequenceElement
@@ -1152,3 +1152,254 @@
   sprites:
   - sprite: Objects/Consumable/Food/Baked/cake.rsi
     state: suppermatter-shard
+
+# Cigarette
+
+- type: foodSequenceElement
+  id: Cig
+  name: food-sequence-content-cig
+  sprites:
+  - sprite: Objects/Consumable/Smokeables/Cigarettes/cigarette.rsi
+    state: unlit-icon
+
+- type: foodSequenceElement
+  id: CigBurger
+  name: food-sequence-burger-content-cig
+  sprites:
+  - sprite: Objects/Consumable/Smokeables/Cigarettes/cigarette.rsi
+    state: unlit-icon
+
+# Hamster
+
+- type: foodSequenceElement
+  id: HamsterTaco
+  name: food-sequence-content-hamster
+  sprites:
+  - sprite: Mobs/Animals/hamster.rsi
+    state: hamster-0
+
+- type: foodSequenceElement
+  id: HamsterBurger
+  name: food-sequence-burger-content-hamster
+  sprites:
+  - sprite: Mobs/Animals/hamster.rsi
+    state: hamster-0
+
+# Burgerception
+
+- type: foodSequenceElement
+  id: AppendixBurg
+  name: food-sequence-burger-content-appendixburg
+  sprites:
+  - sprite: Objects/Consumable/Food/burger.rsi
+    state: appendix
+
+- type: foodSequenceElement
+  id: BaconBurg
+  name: food-sequence-burger-content-baconburg
+  sprites:
+  - sprite: Objects/Consumable/Food/burger.rsi
+    state: bacon
+
+- type: foodSequenceElement
+  id: BaseballBurg
+  name: food-sequence-burger-content-baseballburg
+  sprites:
+  - sprite: Objects/Consumable/Food/burger.rsi
+    state: baseball
+
+- type: foodSequenceElement
+  id: BearBurg
+  name: food-sequence-burger-content-bearburg
+  sprites:
+  - sprite: Objects/Consumable/Food/burger.rsi
+    state: bearger
+
+- type: foodSequenceElement
+  id: BigBurg
+  name: food-sequence-burger-content-bigburg
+  sprites:
+  - sprite: Objects/Consumable/Food/burger.rsi
+    state: bigbite
+
+- type: foodSequenceElement
+  id: BrainBurg
+  name: food-sequence-burger-content-brainburg
+  sprites:
+  - sprite: Objects/Consumable/Food/burger.rsi
+    state: brain
+
+- type: foodSequenceElement
+  id: CatBurg
+  name: food-sequence-burger-content-catburg
+  sprites:
+  - sprite: Objects/Consumable/Food/burger.rsi
+    state: cat
+
+- type: foodSequenceElement
+  id: CheeseBurg
+  name: food-sequence-burger-content-cheeseburg
+  sprites:
+  - sprite: Objects/Consumable/Food/burger.rsi
+    state: cheese
+
+- type: foodSequenceElement
+  id: ChickenBurg
+  name: food-sequence-burger-content-chickenburg
+  sprites:
+  - sprite: Objects/Consumable/Food/burger.rsi
+    state: chicken
+
+- type: foodSequenceElement
+  id: ClownBurg
+  name: food-sequence-burger-content-clownburg
+  sprites:
+  - sprite: Objects/Consumable/Food/burger.rsi
+    state: clown
+
+- type: foodSequenceElement
+  id: CorgiBurg
+  name: food-sequence-burger-content-corgiburg
+  sprites:
+  - sprite: Objects/Consumable/Food/burger.rsi
+    state: ian
+
+- type: foodSequenceElement
+  id: CrabBurg
+  name: food-sequence-burger-content-crabburg
+  sprites:
+  - sprite: Objects/Consumable/Food/burger.rsi
+    state: crab
+
+- type: foodSequenceElement
+  id: CrazyBurg
+  name: food-sequence-burger-content-crazyburg
+  sprites:
+  - sprite: Objects/Consumable/Food/burger.rsi
+    state: crazy
+
+- type: foodSequenceElement
+  id: DuckBurg
+  name: food-sequence-burger-content-duckburg
+  sprites:
+  - sprite: Objects/Consumable/Food/burger.rsi
+    state: chicken
+
+- type: foodSequenceElement
+  id: PowerBurg
+  name: food-sequence-burger-content-powerburg
+  sprites:
+  - sprite: Objects/Consumable/Food/burger.rsi
+    state: empowered
+
+- type: foodSequenceElement
+  id: CarpBurg
+  name: food-sequence-burger-content-carpburg
+  sprites:
+  - sprite: Objects/Consumable/Food/burger.rsi
+    state: fish
+
+- type: foodSequenceElement
+  id: FiveBurg
+  name: food-sequence-burger-content-fiveburg
+  sprites:
+  - sprite: Objects/Consumable/Food/burger.rsi
+    state: fivealarm
+
+- type: foodSequenceElement
+  id: GhostBurg
+  name: food-sequence-burger-content-ghostburg
+  sprites:
+  - sprite: Objects/Consumable/Food/burger.rsi
+    state: ghost
+
+- type: foodSequenceElement
+  id: HumanBurg
+  name: food-sequence-burger-content-humanburg
+  sprites:
+  - sprite: Objects/Consumable/Food/burger.rsi
+    state: human
+
+- type: foodSequenceElement
+  id: McguffinBurg
+  name: food-sequence-burger-content-mcguffinburg
+  sprites:
+  - sprite: Objects/Consumable/Food/burger.rsi
+    state: mcguffin
+
+- type: foodSequenceElement
+  id: McribBurg
+  name: food-sequence-burger-content-mcribburg
+  sprites:
+  - sprite: Objects/Consumable/Food/burger.rsi
+    state: mcrib
+
+- type: foodSequenceElement
+  id: MimeBurg
+  name: food-sequence-burger-content-mimeburg
+  sprites:
+  - sprite: Objects/Consumable/Food/burger.rsi
+    state: mime
+
+- type: foodSequenceElement
+  id: PlainBurg
+  name: food-sequence-burger-content-plainburg
+  sprites:
+  - sprite: Objects/Consumable/Food/burger.rsi
+    state: plain
+
+- type: foodSequenceElement
+  id: RatBurg
+  name: food-sequence-burger-content-ratburg
+  sprites:
+  - sprite: Objects/Consumable/Food/burger.rsi
+    state: rat
+
+- type: foodSequenceElement
+  id: RobotBurg
+  name: food-sequence-burger-content-robotburg
+  sprites:
+  - sprite: Objects/Consumable/Food/burger.rsi
+    state: ro
+
+- type: foodSequenceElement
+  id: SoyBurg
+  name: food-sequence-burger-content-soyburg
+  sprites:
+  - sprite: Objects/Consumable/Food/burger.rsi
+    state: soylent
+
+- type: foodSequenceElement
+  id: SpellBurg
+  name: food-sequence-burger-content-spellburg
+  sprites:
+  - sprite: Objects/Consumable/Food/burger.rsi
+    state: spell
+
+- type: foodSequenceElement
+  id: SuperBurg
+  name: food-sequence-burger-content-superburg
+  sprites:
+  - sprite: Objects/Consumable/Food/burger.rsi
+    state: superbite
+
+- type: foodSequenceElement
+  id: TofuBurg
+  name: food-sequence-burger-content-tofuburg
+  sprites:
+  - sprite: Objects/Consumable/Food/burger.rsi
+    state: tofu
+
+- type: foodSequenceElement
+  id: XenoBurg
+  name: food-sequence-burger-content-xenoburg
+  sprites:
+  - sprite: Objects/Consumable/Food/burger.rsi
+    state: x
+
+- type: foodSequenceElement
+  id: MothBurg
+  name: food-sequence-burger-content-mothburg
+  sprites:
+  - sprite: Objects/Consumable/Food/burger.rsi
+    state: mothroach

@@ -13,7 +13,9 @@
     - MASK
   - type: Mask
   - type: IngestionBlocker
+    enabled: true
   - type: IdentityBlocker
+    enabled: true
     coverage: MOUTH
   - type: Sprite
     layers:

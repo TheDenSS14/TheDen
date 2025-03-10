@@ -201,6 +201,7 @@ oracle-feedback = WHY DO YOU BOTHER ME SEEKER? HAVE I NOT MADE MY DESIRES CLEAR?
 orecrab-feedback = Heralds of the Lord of Earth, summoned to this realm from Grome's kingdom
 reagent-slime-feedback = Heralds of the Lord of Water, summoned to this realm from Straasha's kingdom.
 flesh-golem-feedback = Abominations pulled from dead realms, twisted amalgamations of those fallen to the influence of primordial Chaos
+living-light-feedback = Luminous creatures formed deceitfully beautiful and bright, bringing their music to lure and consume.
 glimmer-mite-feedback = A semi-corporeal parasite native to the dreamlight, its presence here brings forth the screams of dead stars.
 anomaly-pyroclastic-feedback = A small mirror to the plane of Gehenna, truth lies within the Secret of Fire
 anomaly-gravity-feedback = Violet and crimson, blue of blue, impossibly dark yet greater than the whitest of white, a black star shines weakly at the end of it all

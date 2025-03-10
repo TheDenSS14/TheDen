@@ -3554,6 +3554,10 @@
     sprite: Mobs/Effects/onfire.rsi
     normalState: Mouse_burning
   - type: LeashAnchor # Floofstation
+  - type: FoodSequenceElement
+    entries:
+      Taco: HamsterTaco
+      Burger: HamsterBurger
 
 - type: entity
   parent: MobHamster

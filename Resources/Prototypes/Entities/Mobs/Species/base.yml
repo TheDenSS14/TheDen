@@ -27,11 +27,11 @@
     - map: ["enum.HumanoidVisualLayers.LHand"]
     - map: ["enum.HumanoidVisualLayers.RHand"]
     - map: [ "gloves" ]
-    - map: [ "shoes" ]
     - map: [ "ears" ]
     - map: [ "innerBelt" ]
     - map: [ "innerNeck" ]
     - map: [ "outerClothing" ]
+    - map: [ "shoes" ]
     - map: [ "eyes" ]
     - map: [ "belt" ]
     - map: [ "id" ]
@@ -240,6 +240,7 @@
   - type: Targeting
   - type: SurgeryTarget
   - type: FootPrints
+  - type: Wagging
 
 - type: entity
   save: false
@@ -375,11 +376,11 @@
       state: body-overlay-2
       visible: false
     - map: [ "gloves" ]
-    - map: [ "shoes" ]
     - map: [ "ears" ]
     - map: [ "innerBelt" ]
     - map: [ "innerNeck" ]
     - map: [ "outerClothing" ]
+    - map: [ "shoes" ]
     - map: [ "eyes" ]
     - map: [ "belt" ]
     - map: [ "id" ]
