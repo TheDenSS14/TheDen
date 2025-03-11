@@ -2,7 +2,7 @@
   id: TailAxolotl
   bodyPart: Tail
   markingCategory: Tail
-  speciesRestriction: [Reptilian, SlimePerson, HumanHybrid]
+  speciesRestriction: [Reptilian, SlimePerson, HumanHybrid, Human]
   sprites:
     - sprite: SimpleStation14/Mobs/Customization/tails32x32.rsi
       state: axolotl
@@ -11,7 +11,7 @@
   id: TailEasternDragon
   bodyPart: Tail
   markingCategory: Tail
-  speciesRestriction: [Reptilian, SlimePerson, HumanHybrid, IPC]
+  speciesRestriction: [Reptilian, SlimePerson, HumanHybrid, Human, IPC]
   sprites:
     - sprite: SimpleStation14/Mobs/Customization/tails32x32.rsi
       state: easternd_primary
@@ -22,7 +22,7 @@
   id: TailFish
   bodyPart: Tail
   markingCategory: Tail
-  speciesRestriction: [Reptilian, SlimePerson, HumanHybrid]
+  speciesRestriction: [Reptilian, SlimePerson, HumanHybrid, Human]
   sprites:
     - sprite: SimpleStation14/Mobs/Customization/tails32x32.rsi
       state: fish_primary
@@ -33,7 +33,7 @@
   id: TailGecko
   bodyPart: Tail
   markingCategory: Tail
-  speciesRestriction: [Reptilian, SlimePerson, HumanHybrid]
+  speciesRestriction: [Reptilian, SlimePerson, HumanHybrid, Human]
   sprites:
     - sprite: SimpleStation14/Mobs/Customization/tails32x32.rsi
       state: gecko_primary
@@ -46,7 +46,7 @@
   id: TailMaw
   bodyPart: Tail
   markingCategory: Tail
-  speciesRestriction: [SlimePerson, Vulpkanin, HumanHybrid, IPC]
+  speciesRestriction: [SlimePerson, Vulpkanin, HumanHybrid, Human, IPC]
   sprites:
     - sprite: SimpleStation14/Mobs/Customization/tails32x32.rsi
       state: maw
@@ -55,7 +55,7 @@
   id: TailSnake
   bodyPart: Tail
   markingCategory: Tail
-  speciesRestriction: [Reptilian, SlimePerson, HumanHybrid]
+  speciesRestriction: [Reptilian, SlimePerson, HumanHybrid, Human]
   sprites:
     - sprite: SimpleStation14/Mobs/Customization/tails32x32.rsi
       state: snake
@@ -64,7 +64,7 @@
   id: TailSuccubus
   bodyPart: Tail
   markingCategory: Tail
-  speciesRestriction: [SlimePerson, HumanHybrid, Oni, IPC]
+  speciesRestriction: [SlimePerson, HumanHybrid, Human, Oni, IPC]
   sprites:
     - sprite: SimpleStation14/Mobs/Customization/tails32x32.rsi
       state: succubus
@@ -73,7 +73,7 @@
   id: TailTentacle
   bodyPart: Tail
   markingCategory: Tail
-  speciesRestriction: [SlimePerson, HumanHybrid, IPC]
+  speciesRestriction: [SlimePerson, HumanHybrid, Human, IPC]
   sprites:
     - sprite: SimpleStation14/Mobs/Customization/tails32x32.rsi
       state: tentacle
