@@ -29,3 +29,14 @@
     tags:
     - ClothMade
     - WhitelistChameleon
+
+- type: entity # oops need to stick this in for scarves
+  abstract: true
+  parent: ClothingNeckBase
+  id: ClothingScarfBase
+  components:
+  - type: Tag
+    tags:
+    - Scarf
+    - ClothMade
+    - WhitelistChameleon
