@@ -78,6 +78,7 @@ food-sequence-content-berries = berries
 food-sequence-content-spacemans-trumpet = spacemans trupmet
 food-sequence-content-cherry = cherry
 food-sequence-content-snail = snail
+food-sequence-content-cig = cigarette
 
 # BURGERS
 
@@ -129,6 +130,38 @@ food-sequence-burger-content-berries = berri
 food-sequence-burger-content-spacemans-trumpet = spacetrump
 food-sequence-burger-content-extradimensional-orange = 3d
 food-sequence-burger-content-world-pea = peace
+food-sequence-burger-content-cig = cig
+food-sequence-burger-content-appendixburg = appendix
+food-sequence-burger-content-baconburg = bacon
+food-sequence-burger-content-baseballburg = homerun
+food-sequence-burger-content-bearburg = bearger
+food-sequence-burger-content-bigburg = bigburg
+food-sequence-burger-content-brainburg = brainburg
+food-sequence-burger-content-catburg = cat
+food-sequence-burger-content-cheeseburg = cheeseburg
+food-sequence-burger-content-chickenburg = chicken
+food-sequence-burger-content-clownburg = clown
+food-sequence-burger-content-corgiburg = validhunting
+food-sequence-burger-content-crabburg = crab
+food-sequence-burger-content-crazyburg = crazy
+food-sequence-burger-content-duckburg = duck
+food-sequence-burger-content-powerburg = plasma
+food-sequence-burger-content-carpburg = carp
+food-sequence-burger-content-fiveburg = five alarm
+food-sequence-burger-content-ghostburg = ghost
+food-sequence-burger-content-humanburg = human
+food-sequence-burger-content-mcguffinburg = mcguffin
+food-sequence-burger-content-mcribburg = mcrib
+food-sequence-burger-content-mimeburg = mime
+food-sequence-burger-content-plainburg = burger
+food-sequence-burger-content-ratburg = ratburg
+food-sequence-burger-content-robotburg = robot
+food-sequence-burger-content-soyburg = soyburg
+food-sequence-burger-content-spellburg = spells
+food-sequence-burger-content-superburg = superburg
+food-sequence-burger-content-tofuburg = tofuburg
+food-sequence-burger-content-xenoburg = xeno
+food-sequence-burger-content-mothburg = moth
 
 # TACO
 
