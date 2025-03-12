@@ -29,7 +29,7 @@
   - type: Item
     size: Tiny #applicators may be long, but they're not very big. Plus, bleeding isn't helped all that much.-KC
     sprite: _DEN/VASH/Objects/bloodyboyes.rsi
-    state: tampon
+    heldPrefix: tampon
   - type: Construction
     graph: Gauze
     node: gauze
@@ -56,11 +56,11 @@
     - Gauze
   - type: Sprite
     sprite: _DEN/VASH/Objects/bloodyboyes.rsi
-    state: pad
+    heldPrefix: pad
   - type: Item
     size: Small
     sprite: _DEN/VASH/Objects/bloodyboyes.rsi
-    state: pad
+    heldPrefix: pad
   - type: Construction
     graph: Gauze
     node: gauze
@@ -87,11 +87,11 @@
     - Gauze
   - type: Sprite
     sprite: _DEN/VASH/Objects/bloodyboyes.rsi
-    state: liner
+    heldPrefix: liner
   - type: Item
     size: Tiny
     sprite: _DEN/VASH/Objects/bloodyboyes.rsi
-    state: liner
+    heldPrefix: liner
   - type: Construction
     graph: Gauze
     node: gauze
