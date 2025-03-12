@@ -1257,3 +1257,59 @@
     tags:
     - Meat
     - Soup
+
+- type: entity
+  name: uszka borscht
+  parent: FoodBowlBase
+  id: FoodSoupBorscht
+  description: A favourite among the Space Polish-Scottish.
+  components:
+  - type: FlavorProfile
+    flavors:
+    - sweet
+    - tart
+    - love
+  - type: Sprite
+    layers:
+    - state: bowl
+    - state: uszka-borscht
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 20
+        reagents:
+          - ReagentId: Nutriment
+            Quantity: 5
+          - ReagentId: Vitamin
+            Quantity: 5
+          - ReagentId: Water
+            Quantity: 5
+
+- type: entity
+  name: zurek
+  parent: FoodBowlBase
+  id: FoodSoupZurek
+  description: For when you want to make your full english breakfast Polish - aka liquified with a dash sour.
+  components:
+  - type: FlavorProfile
+    flavors:
+    - smokey
+    - meaty
+    - sour
+  - type: Sprite
+    layers:
+    - state: bowl
+    - state: zurek
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 45
+        reagents:
+          - ReagentId: Nutriment
+            Quantity: 25
+          - ReagentId: Vitamin
+            Quantity: 15
+          - ReagentId: Protein
+            Quantity: 15
+          - ReagentId: Water
+            Quantity: 5
