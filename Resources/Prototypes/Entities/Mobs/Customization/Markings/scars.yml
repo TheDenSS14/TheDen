@@ -2,7 +2,7 @@
   id: ScarEyeRight
   bodyPart: Head
   markingCategory: Head
-  speciesRestriction: [Human, HumanHybrid, Dwarf, Felinid, Harpy, Oni, Arachne, Rodentia, SlimePerson, Lamia, Tajaran] # Delta V - Felinid, Oni, Harpy, Rodentia
+  speciesRestriction: [Human, HumanHybrid, Dwarf, Felinid, Harpy, Oni, Arachne, Rodentia, Feroxi, SlimePerson, Lamia, Tajaran] # Delta V - Felinid, Oni, Harpy, Rodentia, Feroxi
   followSkinColor: true
   sprites:
   - sprite: Mobs/Customization/scars.rsi
@@ -12,7 +12,7 @@
   id: ScarEyeLeft
   bodyPart: Head
   markingCategory: Head
-  speciesRestriction: [Human, HumanHybrid, Dwarf, Felinid, Harpy, Oni, Arachne, Rodentia, SlimePerson, Lamia, Tajaran] # Delta V - Felinid, Oni, Harpy, Rodentia
+  speciesRestriction: [Human, HumanHybrid, Dwarf, Felinid, Harpy, Oni, Arachne, Rodentia, Feroxi, SlimePerson, Lamia, Tajaran] # Delta V - Felinid, Oni, Harpy, Rodentia, Feroxi
   followSkinColor: true
   sprites:
   - sprite: Mobs/Customization/scars.rsi
@@ -22,7 +22,7 @@
   id: ScarTopSurgeryShort
   bodyPart: Chest
   markingCategory: Chest
-  speciesRestriction: [Human, HumanHybrid, Dwarf, Felinid, Oni, SlimePerson, Arachne, Lamia, Tajaran] # Einstein Engines - Tajaran
+  speciesRestriction: [Human, HumanHybrid, Dwarf, Felinid, Oni, SlimePerson, Arachne, Lamia, Tajaran, Feroxi] # Einstein Engines - Tajaran - DeltaV Feroxi
   sexRestriction: [Male]
   followSkinColor: true
   sprites:
@@ -33,7 +33,7 @@
   id: ScarTopSurgeryLong
   bodyPart: Chest
   markingCategory: Chest
-  speciesRestriction: [Human, HumanHybrid, Dwarf, Felinid, Oni, SlimePerson, Arachne, Lamia, Tajaran]
+  speciesRestriction: [Human, HumanHybrid, Dwarf, Felinid, Oni, SlimePerson, Arachne, Lamia, Tajaran, Feroxi] # DeltaV Feroxi
   sexRestriction: [Male]
   followSkinColor: true
   sprites:
@@ -44,7 +44,7 @@
   id: ScarChest
   bodyPart: Chest
   markingCategory: Chest
-  speciesRestriction: [Human, HumanHybrid, Dwarf, Felinid, Oni, SlimePerson, Arachne, Lamia, Tajaran] # Einstein Engines - Tajaran
+  speciesRestriction: [Human, HumanHybrid, Dwarf, Felinid, Oni, SlimePerson, Arachne, Lamia, Tajaran, Feroxi] # Einstein Engines - Tajaran - DeltaV - Feroxi
   followSkinColor: true
   sprites:
   - sprite: Mobs/Customization/scars.rsi
