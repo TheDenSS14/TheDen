@@ -12,9 +12,9 @@
     - id: CondomUnwrapped
     sound:
       path: /Audio/Effects/unwrap.ogg
-  - type: Tag
-    tags:
-    - Condom
+#  - type: Tag
+#    tags:
+#    - Condom
   - type: Sprite
     sprite: _DEN/VASH/Objects/condoms.rsi
     state: condom
@@ -33,9 +33,9 @@
     consumePopup: use-condom
   - type: Item
     size: Tiny
-  - type: Tag
-    tags:
-    - Condom
+#  - type: Tag
+#    tags:
+#    - Condom
   - type: Sprite
     sprite: _DEN/VASH/Objects/condoms.rsi
     state: condomout
