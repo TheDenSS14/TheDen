@@ -20,10 +20,10 @@
   parent: BaseVASHBlood
   id: tampon
   components:
-  - type: Tag
-    tags:
-    - Gauze
-#    - Tampon - Deemed too invasive. Kept for reference.
+#  - type: Tag - Unnecessary for gameplay.
+#    tags:
+#    - Gauze
+#    - Tampon
   - type: Sprite
     sprite: _DEN/VASH/Objects/bloodyboyes.rsi
     state: tampon
@@ -52,10 +52,10 @@
   parent: BaseVASHBlood
   id: pad
   components:
-  - type: Tag
-    tags:
-    - Gauze
-#    - Pad - Deemed too invasive. Kept for reference.
+#  - type: Tag - Unnecessary for gameplay.
+#    tags:
+#    - Gauze
+#    - Pad
   - type: Sprite
     sprite: _DEN/VASH/Objects/bloodyboyes.rsi
     heldPrefix: pad
@@ -85,10 +85,10 @@
   parent: BaseVASHBlood
   id: liner
   components:
-  - type: Tag
-    tags:
-    - Gauze
-#    - Liner - Deemed too invasive. Kept for reference.
+#  - type: Tag - Unnecessary for gameplay.
+#    tags:
+#    - Gauze
+#    - Liner
   - type: Sprite
     sprite: _DEN/VASH/Objects/bloodyboyes.rsi
     heldPrefix: liner
