@@ -23,6 +23,7 @@
   - type: Tag
     tags:
     - Gauze
+    - Tampon
   - type: Sprite
     sprite: _DEN/VASH/Objects/bloodyboyes.rsi
     state: tampon
@@ -54,9 +55,11 @@
   - type: Tag
     tags:
     - Gauze
+    - Pad
   - type: Sprite
     sprite: _DEN/VASH/Objects/bloodyboyes.rsi
     heldPrefix: pad
+    state: pad
   - type: Item
     size: Small
     sprite: _DEN/VASH/Objects/bloodyboyes.rsi
@@ -85,9 +88,11 @@
   - type: Tag
     tags:
     - Gauze
+    - Liner
   - type: Sprite
     sprite: _DEN/VASH/Objects/bloodyboyes.rsi
     heldPrefix: liner
+    state: liner
   - type: Item
     size: Tiny
     sprite: _DEN/VASH/Objects/bloodyboyes.rsi

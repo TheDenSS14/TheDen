@@ -190,7 +190,7 @@
   - VASHBox
   requirements:
   - !type:CharacterItemGroupRequirement
-    group: LoadoutLewd
+    group: LoadoutVASH
 
 - type: loadout
   id: LoadoutVASHSex
@@ -201,4 +201,45 @@
   - SexBox
   requirements:
   - !type:CharacterItemGroupRequirement
-    group: LoadoutLewd
+    group: LoadoutVASH
+
+- type: loadout
+  id: LoadoutTampon
+  category: ItemsLewd
+  cost: 0
+  items:
+  - tampon
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutVASH
+
+- type: loadout
+  id: LoadoutCondom
+  category: ItemsLewd
+  cost: 0 #currently functionless. No need for a cost.
+  items:
+  - CondomWrapped
+#  requirements:  Condom is currently an RP item, so exlusivity is not important.
+#  - !type:CharacterItemGroupRequirement
+#    group: LoadoutVASH
+
+
+- type: loadout
+  id: LoadoutPad
+  category: ItemsLewd
+  cost: 2 #Stops a decent amount of healing..
+  items:
+  - pad
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutVASH
+
+- type: loadout
+  id: LoadoutLiner
+  category: ItemsLewd
+  cost: 0
+  items:
+  - liner
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutVASH
