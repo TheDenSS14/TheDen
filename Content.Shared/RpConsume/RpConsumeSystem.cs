@@ -2,6 +2,7 @@
 using Content.Shared.IdentityManagement;
 using Content.Shared.Interaction.Events;
 using Content.Shared.Popups;
+using Robust.Shared.Network;
 
 
 namespace Content.Shared.RpConsume;
@@ -11,6 +12,7 @@ public sealed class RpConsumeSystem : EntitySystem
 {
     [Dependency] private readonly SharedPopupSystem _popupSystem = default!;
     [Dependency] private readonly SharedDoAfterSystem _doAfter = default!;
+    [Dependency] private readonly INetManager _net = default!;
 
     public override void Initialize()
     {
@@ -24,7 +26,7 @@ public sealed class RpConsumeSystem : EntitySystem
         if (args.Handled || args.Cancelled)
             return;
 
-        // if (args.Used != null)
+        if (!_net.IsClient)
             QueueDel(entity);
         args.Handled = true;
     }
