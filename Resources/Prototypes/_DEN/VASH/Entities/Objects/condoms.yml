@@ -29,6 +29,8 @@
   name: condom
   description: Have fun!
   components:
+  - type: RpConsume # Makes it so the object deletes itself on use.
+    consumePopup: use-condom
   - type: Item
     size: Tiny
   - type: Tag
@@ -44,6 +46,3 @@
     - KissObject
     - LickObject
 #when consulted with the council, it was frowned upon to make the condom a container, mostly from the consent violations it could/would cause. -KC
-
-#TODO: Add a component for putting on the condom, and having it display 'you put on the condom' text, along with the item deleting itself. Bonus points for
-# a condom actually being put on the character.
