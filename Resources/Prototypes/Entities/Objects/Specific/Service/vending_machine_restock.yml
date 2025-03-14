@@ -494,19 +494,19 @@
       shader: unshaded
     - state: refill_medical
 
-- type: entity #VASH
-  parent: BaseVendingMachineRestock
-  id: VASHRestock
-  name: VASH restock box
-  description: A box filled with feminine hygiene and sexual products. Slot into the back of the VASH machine.
-  components:
-  - type: VendingMachineRestock
-    canRestock:
-    - VASHVendingInventory
-  - type: Sprite
-    layers:
-    - state: base
-    - state: green_bit
-      shader: unshaded
-    - state: refill_medical
+#- type: entity #VASH
+#  parent: BaseVendingMachineRestock
+#  id: VASHRestock
+#  name: VASH restock box
+#  description: A box filled with feminine hygiene and sexual products. Slot into the back of the VASH machine.
+#  components:
+#  - type: VendingMachineRestock
+#    canRestock:
+#    - VASHVendingInventory
+#  - type: Sprite
+#    layers:
+#    - state: base
+#    - state: green_bit
+#      shader: unshaded
+#    - state: refill_medical
 
