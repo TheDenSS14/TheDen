@@ -15,3 +15,5 @@ station-event-space-vents-announcement = Confirmed sightings of hostile wildlife
 # Weak
 station-event-slimes-spawn-weak-announcement = Attention. A moderate influx of unknown life forms have been detected residing within the station's ventilation systems. Please be rid of these creatures before it begins to affect productivity.
 station-event-spider-spawn-weak-announcement = Attention. A moderate influx of unknown life forms have been detected residing within the station's ventilation systems. Please be rid of these creatures before it begins to affect productivity.
+station-event-argocyte-vents-weak-announcement = Suspected signatures of hostile alien wildlife detected on the station. Personnel are advised to arm themselves, barricade doors, and defend themselves if necessary. Security is advised to eradicate the threat as soon as possible.
+station-event-carp-vents-weak-announcement = Suspected signatures of hostile alien wildlife detected on the station. Personnel are advised to arm themselves, barricade doors, and defend themselves if necessary. Security is advised to eradicate the threat as soon as possible.

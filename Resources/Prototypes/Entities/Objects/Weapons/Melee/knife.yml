@@ -106,7 +106,7 @@
   # Shitmed Change
   - type: Scalpel
     speed: 0.3
-  - type: BoneSaw 
+  - type: BoneSaw
     speed: 0.5
 
 - type: entity
@@ -239,7 +239,9 @@
     sprite: Objects/Weapons/Melee/shiv.rsi
     state: icon
   - type: MeleeWeapon
-    attackRate: .57
+    attackRate: .9
+    heavyRateModifier: 1.5
+    heavyDamageBaseModifier: 1.1
     range: 1.4
     damage:
       types:

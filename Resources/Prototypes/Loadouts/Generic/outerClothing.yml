@@ -839,3 +839,14 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutOuter
+
+- type: loadout
+  id: LoadoutOuterCoatExpensive
+  category: Outer
+  cost: 4
+  customColorTint: true
+  items:
+    - ClothingOuterCoatExpensive
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutOuter

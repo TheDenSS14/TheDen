@@ -40,10 +40,10 @@
       path: /Audio/SimpleStation14/Weapons/Melee/rapierhit.ogg
     damage:
       types:
-        Slash: 15
+        Slash: 18
     heavyRateModifier: 1.25
     heavyRangeModifier: 1
-    heavyDamageBaseModifier: 1
+    heavyDamageBaseModifier: 1.1
     heavyStaminaCost: 5
     maxTargets: 7
     angle: 80
@@ -54,7 +54,7 @@
   - type: ThrowingAngle
     angle: 225
   - type: Reflect
-    reflectProb: .1
+    reflectProb: .2
     spread: 90
   - type: Item
     size: Normal
@@ -88,11 +88,11 @@
       path: /Audio/SimpleStation14/Weapons/Melee/rapierhit.ogg
     damage:
       types:
-        Slash: 12
-    heavyRateModifier: 2
+        Slash: 17
+    heavyRateModifier: 1.5
     heavyRangeModifier: 2.75 #Superior Japanese folded steel
     heavyDamageBaseModifier: 1.25
-    heavyStaminaCost: 15
+    heavyStaminaCost: 7.5
     maxTargets: 1
     angle: 20
   - type: DamageOtherOnHit
@@ -164,6 +164,7 @@
     heavyRangeModifier: 1.25
     heavyDamageBaseModifier: 1.2
     heavyStaminaCost: 7.5
+    maxTargets: 3
     angle: 80
     soundHit:
         path: /Audio/Weapons/bladeslice.ogg
@@ -195,12 +196,12 @@
         Slash: 19
         Blunt: 1
     bluntStaminaDamageFactor: 25.0
-    heavyRateModifier: 2
+    heavyRateModifier: 1.5
     heavyRangeModifier: 1
     heavyDamageBaseModifier: 1
     heavyStaminaCost: 15
     maxTargets: 10
-    angle: 200
+    angle: 120
     soundHit:
         path: /Audio/Weapons/bladeslice.ogg
   - type: DamageOtherOnHit
@@ -215,6 +216,7 @@
     sprite: Objects/Weapons/Melee/claymore.rsi
     slots:
     - back
+    - suitStorage
 
 - type: entity
   name: cutlass
@@ -234,6 +236,7 @@
     damage:
       types:
         Slash: 12
+        Piercing: 3
     heavyRateModifier: 1.25
     heavyRangeModifier: 1.2
     heavyDamageBaseModifier: 1.2

@@ -21,6 +21,7 @@
   - type: Speech
     speechVerb: Rodentia
     speechSounds: Squeak
+    allowedEmotes: ['Squeak']
   - type: Fixtures
     fixtures: # TODO: This needs a second fixture just for mob collisions.
       fix1:
@@ -36,6 +37,8 @@
   - type: Sprite
     scale: 0.8, 0.8
     layers:
+      - map: [ "enum.HumanoidVisualLayers.Nipples" ]
+      - map: [ "enum.HumanoidVisualLayers.Genitals" ]
       - map: [ "enum.HumanoidVisualLayers.Chest" ]
       - map: [ "enum.HumanoidVisualLayers.Head" ]
       - map: [ "enum.HumanoidVisualLayers.Snout" ]

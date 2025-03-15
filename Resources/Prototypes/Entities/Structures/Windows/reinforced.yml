@@ -55,6 +55,8 @@
     trackAllDamage: true
     damageOverlay:
       sprite: Structures/Windows/cracks.rsi
+  - type: PressureDestructible
+    maxPressureDifferential: 100000.0
 
 - type: entity
   parent: ReinforcedWindow
@@ -134,6 +136,8 @@
         acts: [ "Destruction" ]
   - type: StaticPrice
     price: 22
+  - type: PressureDestructible
+    maxPressureDifferential: 5000.0
 
 - type: entity
   parent: ReinforcedWindow

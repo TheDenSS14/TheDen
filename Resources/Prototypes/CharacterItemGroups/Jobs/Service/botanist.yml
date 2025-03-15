@@ -1,8 +1,13 @@
-#- type: characterItemGroup
-#  id: LoadoutBotanistBackpacks
-#  maxItems: 1
-#  items:
-#
+- type: characterItemGroup
+  id: LoadoutBotanistBackpacks
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutServiceBotanistHydroponics
+    - type: loadout
+      id: LoadoutServiceBotanistDuffelHydroponics
+    - type: loadout
+      id: LoadoutServiceBotanistSatchelHydroponics
 #- type: characterItemGroup
 #  id: LoadoutBotanistBelt
 #  maxItems: 1

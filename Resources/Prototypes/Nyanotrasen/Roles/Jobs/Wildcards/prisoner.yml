@@ -21,10 +21,6 @@
         - !type:CharacterTraitRequirement
           traits:
             - ShadowkinBlackeye
-  special:
-  - !type:AddComponentSpecial
-    components:
-      - type: Pacified
   afterLoadoutSpecial:
   - !type:ModifyEnvirosuitSpecial
     charges: 3 # Poor prisoners with not a lot of self-extinguishes.

@@ -3,7 +3,7 @@
   mapName: 'The Hive'
   mapPath: /Maps/TheDen/hive.yml
   minPlayers: 15
-  #maxPlayers: 80 Temporary maybe
+  maxPlayers: 80
   stations:
     TheHive:
       stationProto: StandardNanotrasenStation
@@ -14,7 +14,7 @@
             !type:NanotrasenNameGenerator
             prefixCreator: 'DV'
         - type: StationEmergencyShuttle
-          emergencyShuttlePath: /Maps/Shuttles/DeltaV/NTES_Seal.yml
+          emergencyShuttlePath: /Maps/Shuttles/DeltaV/NTES_Vertex.yml
         - type: StationJobs
           overflowJobs:
             - Passenger

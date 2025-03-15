@@ -493,6 +493,8 @@
         - !type:CharacterJobRequirement
           jobs:
             - Boxer
+            - MartialArtist
+            - Gladiator
     - !type:CharacterLogicOrRequirement
       requirements:
         - !type:CharacterSpeciesRequirement
@@ -587,11 +589,11 @@
           damageCap: 200
           damage:
             groups:
-              Brute: -0.07
-              Burn: -0.07
-              Airloss: -0.07
-              Toxin: -0.07
-              Genetic: -0.07
+              Brute: -0.3
+              Burn: -0.3
+              Airloss: -0.3
+              Toxin: -0.3
+              Genetic: -0.3
 
 - type: trait
   id: DermalArmor
@@ -747,6 +749,8 @@
     - !type:CharacterDepartmentRequirement
       departments:
         - Security
+        - Dignitary
+        - Command
     - !type:CharacterTraitRequirement
       traits:
         - CyberEyes
@@ -883,8 +887,8 @@
           damageCap: 200
           damage:
             groups:
-              Brute: -0.9
-              Burn: -0.9
+              Brute: -0.3
+              Burn: -0.3
 
 - type: trait
   id: BionicLeg
@@ -937,6 +941,8 @@
     - !type:CharacterDepartmentRequirement
       departments:
         - Security
+        - Dignitary
+        - Command
     - !type:CharacterSpeciesRequirement
       species:
         - IPC
@@ -1015,6 +1021,8 @@
     - !type:CharacterDepartmentRequirement
       departments:
         - Security
+        - Dignitary
+        - Command
     - !type:CharacterSpeciesRequirement
       species:
         - IPC

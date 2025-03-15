@@ -24,6 +24,7 @@
         Piercing: 3
     bluntStaminaDamageFactor: 2.0
     heavyDamageBaseModifier: 1.75
+    heavyStaminaCost: 7.5
     maxTargets: 5
     angle: 80
   - type: DamageOtherOnHit
@@ -71,7 +72,7 @@
       path: "/Audio/Items/drill_hit.ogg"
     attackRate: 0.25
     range: 1.5
-    heavyStaminaCost: 0.4
+    heavyStaminaCost: 0
     damage:
       groups:
         Brute: 3
@@ -107,7 +108,7 @@
     wideAnimationRotation: -90
     soundHit:
       path: "/Audio/Items/drill_hit.ogg"
-    heavyStaminaCost: 0.2 # More efficient so less stamina needed to use
+    heavyStaminaCost: 0
     damage:
       groups:
         Brute: 6
@@ -176,7 +177,7 @@
     damage:
       types:
         Blunt: 8
-        Slash: 4
+        Slash: 5
     bluntStaminaDamageFactor: 2.0
     heavyRateModifier: 0.75
     heavyDamageBaseModifier: 1.2
@@ -190,8 +191,8 @@
   - type: IncreaseDamageOnWield
     damage:
       types:
-        Blunt: 2.5
-        Slash: 2.5
+        Blunt: 5
+        Slash: 5
         Structural: 30
   - type: GunRequiresWield
   - type: Item
@@ -201,6 +202,11 @@
     qualities:
       - Prying
   - type: Prying
+  - type: Clothing
+    quickEquip: false
+    slots:
+    - back
+    - suitStorage
 
 - type: entity
   parent: BaseWeaponCrusher
@@ -214,11 +220,11 @@
   - type: MeleeWeapon
     autoAttack: true
     wideAnimationRotation: -135
-    attackRate: 1.25
+    attackRate: 1
     range: 1.4
     damage:
       types:
-        Slash: 9
+        Slash: 12
     heavyRateModifier: 0.9
     heavyDamageBaseModifier: 1.2
     maxTargets: 2
@@ -249,6 +255,12 @@
       groups:
         Brute: -21
   - type: MeleeWeapon
+  - type: IncreaseDamageOnWield
+    damage:
+      types:
+        Blunt: 5
+        Slash: 10
+        Structural: 30
   - type: EmbeddableProjectile
   - type: EmbedPassiveDamage
   - type: ThrowingAngle
@@ -256,3 +268,8 @@
   - type: Tag
     tags:
       - Pickaxe
+  - type: Clothing
+    quickEquip: false
+    slots:
+    - back
+    - suitStorage

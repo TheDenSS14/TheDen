@@ -158,7 +158,7 @@ marking-VulpTailOtie = Vulpkanin Otie
 marking-VulpTailFluffy-fluffy = Fluffy tail
 marking-VulpTailFluffy = Vulpkanin Fluffy
 
-marking-VulpTailCorgi-corgi = Crogi tail
+marking-VulpTailCorgi-corgi = Corgi tail
 marking-VulpTailCorgi = Vulpkanin Corgi
 marking-VulpTailCorgiAnimated = Vulpkanin Corgi (animated)
 

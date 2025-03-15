@@ -1,0 +1,28 @@
+- type: marking
+  id: pubesUpper
+  bodyPart: Chest
+  markingCategory: Genitals
+  speciesRestriction: [Felinid, Oni, Arachne, SlimePerson, Rodentia, Human, HumanHybrid, Vulpkanin, Shadowkin, Arachnid, MothPerson, Vox, Unathi, Tajaran]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+        color: "#FFFFFF"
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Body/pubes.rsi
+    state: upper
+
+- type: marking
+  id: pubesLower
+  bodyPart: Chest
+  markingCategory: Genitals
+  speciesRestriction: [Felinid, Oni, Arachne, SlimePerson, Rodentia, Human, HumanHybrid, Vulpkanin, Shadowkin, Arachnid, MothPerson, Vox, Unathi, Tajaran]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+        color: "#FFFFFF"
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Body/pubes.rsi
+    state: lower
+

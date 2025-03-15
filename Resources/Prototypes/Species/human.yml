@@ -7,7 +7,7 @@
   defaultSkinTone: "#c0967f"
   markingLimits: MobHumanMarkingLimits
   dollPrototype: MobHumanDummy
-  skinColoration: HumanToned
+  skinColoration: HumanAnimal
   customName: true
 
 # The lack of a layer means that
@@ -62,7 +62,13 @@
       points: 4
       required: false
     Chest:
+      points: 2
+      required: false
+    Genitals:
       points: 1
+      required: false
+    Nipples:
+      points: 2
       required: false
     Underwear:
       points: 1

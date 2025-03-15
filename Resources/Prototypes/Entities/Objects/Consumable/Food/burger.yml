@@ -31,10 +31,10 @@
   id: FoodBreadBunBottom
   parent: FoodBreadSliceBase
   name: bottom bun
-  description: It's time to start building the burger tower. 
+  description: It's time to start building the burger tower.
   components:
   - type: Item
-    size: Normal #patch until there is an adequate resizing system in place 
+    size: Normal #patch until there is an adequate resizing system in place
   - type: Food
   - type: Sprite
     drawdepth: Mobs
@@ -83,7 +83,7 @@
   - type: FoodSequenceElement
     entries:
       Burger: BunTopBurger
-  
+
 # Base
 
 - type: entity
@@ -158,6 +158,9 @@
   - type: Tag
     tags:
     - Meat
+  - type: FoodSequenceElement
+    entries:
+      Burger: AppendixBurg
 # Tastes like bun, grass.
 
 - type: entity
@@ -184,6 +187,9 @@
   - type: Tag
     tags:
     - Meat
+  - type: FoodSequenceElement
+    entries:
+      Burger: BaconBurg
 # Tastes like bun, bacon.
 
 - type: entity
@@ -212,6 +218,9 @@
   - type: Tag
     tags:
     - Meat
+  - type: FoodSequenceElement
+    entries:
+      Burger: BaseballBurg
 
 - type: entity
   name: bearger
@@ -239,6 +248,9 @@
   - type: Tag
     tags:
     - Meat
+  - type: FoodSequenceElement
+    entries:
+      Burger: BearBurg
 
 - type: entity
   name: big bite burger
@@ -265,6 +277,9 @@
   - type: Tag
     tags:
     - Meat
+  - type: FoodSequenceElement
+    entries:
+      Burger: BigBurg
 # Tastes like bun, silver, magic.
 
 - type: entity
@@ -293,6 +308,9 @@
   - type: Tag
     tags:
     - Meat
+  - type: FoodSequenceElement
+    entries:
+      Burger: BrainBurg
 # Tastes like bun, brains.
 
 - type: entity
@@ -322,6 +340,9 @@
   - type: Tag
     tags:
     - Meat
+  - type: FoodSequenceElement
+    entries:
+      Burger: CatBurg
 
 - type: entity
   name: cheese burger
@@ -350,6 +371,9 @@
   - type: Tag
     tags:
     - Meat
+  - type: FoodSequenceElement
+    entries:
+      Burger: CheeseBurg
 # TODO: Make this work.
   # - type: Sprite
   #   state: plate
@@ -388,6 +412,9 @@
   - type: Tag
     tags:
     - Meat
+  - type: FoodSequenceElement
+    entries:
+      Burger: ChickenBurg
 # Tastes like bun, chicken.
 
 - type: entity
@@ -416,6 +443,9 @@
   - type: Tag
     tags:
     - Meat
+  - type: FoodSequenceElement
+    entries:
+      Burger: ClownBurg
 
 - type: entity
   name: corger #not curger
@@ -441,6 +471,9 @@
   - type: Tag
     tags:
     - Meat
+  - type: FoodSequenceElement
+    entries:
+      Burger: CorgiBurg
 
 - type: entity
   name: crab burger
@@ -468,6 +501,9 @@
   - type: Tag
     tags:
     - Meat
+  - type: FoodSequenceElement
+    entries:
+      Burger: CrabBurg
 
 - type: entity
   name: crazy hamburger # Burger for you euro-cucks
@@ -499,6 +535,9 @@
   - type: Tag
     tags:
     - Meat
+  - type: FoodSequenceElement
+    entries:
+      Burger: CrazyBurg
 
 - type: entity
   name: duck sandwich # Burger for you sick bastards
@@ -526,6 +565,9 @@
   - type: Tag
     tags:
     - Meat
+  - type: FoodSequenceElement
+    entries:
+      Burger: DuckBurg
 # Tastes like bun, duck.
 
 - type: entity
@@ -549,6 +591,9 @@
           Quantity: 8
         - ReagentId: Licoxide
           Quantity: 5
+  - type: FoodSequenceElement
+    entries:
+      Burger: PowerBurg
 # Tastes like bun, pure electricity.
 
 - type: entity
@@ -566,6 +611,9 @@
   - type: Tag
     tags:
     - Meat
+  - type: FoodSequenceElement
+    entries:
+      Burger: CarpBurg
 # Tastes like bun, fish.
 
 - type: entity
@@ -593,6 +641,9 @@
           Quantity: 5
         - ReagentId: Vitamin
           Quantity: 1
+  - type: FoodSequenceElement
+    entries:
+      Burger: FiveBurg
 
 # Tastes like bun, HEAT.
 
@@ -621,6 +672,9 @@
     tags:
       - ClothMade
       - Meat
+  - type: FoodSequenceElement
+    entries:
+      Burger: GhostBurg
 # Tastes like bun, ectoplasm.
 
 - type: entity
@@ -649,6 +703,9 @@
   - type: Tag
     tags:
     - Meat
+  - type: FoodSequenceElement
+    entries:
+      Burger: HumanBurg
 
 - type: entity
   name: McGuffin
@@ -676,6 +733,9 @@
   - type: Tag
     tags:
     - Meat
+  - type: FoodSequenceElement
+    entries:
+      Burger: McguffinBurg
 
 - type: entity
   name: BBQ Rib Sandwich
@@ -684,7 +744,7 @@
   description: An elusive rib shaped burger with limited availability across the galaxy. Not as good as you remember it.
   components:
   - type: Food
-    trash: 
+    trash:
     - FoodKebabSkewer
   - type: FlavorProfile
     flavors:
@@ -708,6 +768,9 @@
   - type: Tag
     tags:
     - Meat
+  - type: FoodSequenceElement
+    entries:
+      Burger: McribBurg
 # Tastes like bun, pork patty.
 
 - type: entity
@@ -735,6 +798,9 @@
           Quantity: 4
         - ReagentId: Nothing
           Quantity: 1
+  - type: FoodSequenceElement
+    entries:
+      Burger: MimeBurg
 # Tastes like  .
 
 - type: entity
@@ -763,6 +829,9 @@
   - type: Tag
     tags:
     - Meat
+  - type: FoodSequenceElement
+    entries:
+      Burger: PlainBurg
 
 - type: entity
   name: rat burger
@@ -790,6 +859,9 @@
   - type: Tag
     tags:
     - Meat
+  - type: FoodSequenceElement
+    entries:
+      Burger: RatBurg
 # Tastes like bun, HEAT.
 
 - type: entity
@@ -817,6 +889,9 @@
   - type: Tag
     tags:
     - Meat
+  - type: FoodSequenceElement
+    entries:
+      Burger: RobotBurg
 # Tastes like bun, lettuce, sludge.
 
 - type: entity
@@ -842,6 +917,9 @@
           Quantity: 6
         - ReagentId: Vitamin
           Quantity: 4
+  - type: FoodSequenceElement
+    entries:
+      Burger: SoyBurg
 # Tastes like bun, redditors.
 
 - type: entity
@@ -867,6 +945,9 @@
           Quantity: 5
         - ReagentId: Vitamin
           Quantity: 10
+  - type: FoodSequenceElement
+    entries:
+      Burger: SpellBurg
 # Tastes like bun, silver.
 
 - type: entity
@@ -898,6 +979,9 @@
   - type: Tag
     tags:
     - Meat
+  - type: FoodSequenceElement
+    entries:
+      Burger: SuperBurg
 # Tastes like bun, diabetes.
 
 - type: entity
@@ -923,6 +1007,9 @@
           Quantity: 6
         - ReagentId: Vitamin
           Quantity: 3
+  - type: FoodSequenceElement
+    entries:
+      Burger: TofuBurg
 # Tastes like bun, tofu.
 
 - type: entity
@@ -952,6 +1039,9 @@
   - type: Tag
     tags:
     - Meat
+  - type: FoodSequenceElement
+    entries:
+      Burger: XenoBurg
 # Tastes like bun, acid.
 
 # Note: I would put a bunch of colored burgers here as listed in the tg .dm but
@@ -984,4 +1074,7 @@
   - type: Tag
     tags:
     - Meat
-    
+  - type: FoodSequenceElement
+    entries:
+      Burger: MothBurg
+

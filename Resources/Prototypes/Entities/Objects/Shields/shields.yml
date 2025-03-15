@@ -465,6 +465,13 @@
         right:
           - state: inhand-right-shield
     - type: Appearance
+    - type: PointLight
+      netsync: false
+      enabled: false
+      radius: 0
+      energy: 0
+      color: black
+    - type: ItemTogglePointLight
     - type: Destructible
       thresholds:
         - trigger:

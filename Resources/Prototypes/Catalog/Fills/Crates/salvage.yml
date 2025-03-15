@@ -23,7 +23,6 @@
       - id: OreBag
       - id: ClothingBeltSalvageWebbing
       - id: ClothingNeckSalvager # DeltaV - salvage cloak
-        prob: 0.8
 
 - type: entity
   id: CrateSalvageAssortedGoodies
@@ -49,6 +48,8 @@
       - id: ResearchDisk
         prob: 0.1
       - id: SheetUranium
+        prob: 0.1
+      - id: ClothingNeckSalvager
         prob: 0.1
         #  - Service
       - id: CrayonBox

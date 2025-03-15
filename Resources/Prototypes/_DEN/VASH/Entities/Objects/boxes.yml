@@ -1,0 +1,47 @@
+- type: entity #Copied from Catalog/Fills/Boxes/emergency.yml
+  name: Hygiene Box
+  parent: BoxCardboard
+  id: VASHBox
+  description: A box containing all you'd need in the event of a blood moon.
+  components:
+  - type: Storage
+    grid:
+    - 0,0,5,1
+  - type: StorageFill
+    contents:
+    - id: BirthControlCanister
+    - id: pad
+    - id: pad
+    - id: liner
+    - id: tampon
+    - id: DrinkWaterBottleFull
+    - id: RagItem
+  - type: Sprite
+    sprite: _DEN/VASH/Objects/boxes.rsi
+    state: hygiene
+
+# Menstrual Box ^
+# Sex Box V
+
+- type: entity #Copied from above.
+  name: Lewd Box #Feels necessary, but might not be good for the image of the server? Advise -KC
+  parent: BoxCardboard
+  id: SexBox
+  description: In case you're here for the freakier stuff.
+  components:
+  - type: Storage
+    grid:
+    - 0,0,4,1
+  - type: StorageFill
+    contents:
+    - id: CondomWrapped
+    - id: CondomWrapped
+    - id: BirthControlCanister
+    - id: PhilCanister
+    - id: SexLube
+    - id: DrinkWaterBottleFull
+    - id: RagItem
+  - type: Sprite
+    sprite: _DEN/VASH/Objects/boxes.rsi
+    state: sex
+# No toys, as that seems like it would undercut the VASHVend.

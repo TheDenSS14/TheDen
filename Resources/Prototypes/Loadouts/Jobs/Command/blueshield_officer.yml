@@ -62,10 +62,26 @@
     - !type:CharacterJobRequirement
       jobs:
         - BlueshieldOfficer
-    - !type:CharacterAgeRequirement
-      min: 21
   items:
     - WeaponEnergyRevolverSecurity
+
+- type: loadout
+  id: LoadoutBSOMace
+  category: JobsCommandBlueshieldOfficer
+  cost: 0
+  canBeHeirloom: true
+  guideEntry: SecurityWeapons
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSecurityWeapons
+    - !type:CharacterDepartmentTimeRequirement
+      department: Security
+      min: 18000 # 5 hours
+    - !type:CharacterJobRequirement
+      jobs:
+        - BlueshieldOfficer
+  items:
+    - BlueshieldMace
 
 - type: loadout
   id: LoadoutBSORifleChester
@@ -79,8 +95,6 @@
     - !type:CharacterJobRequirement
       jobs:
         - BlueshieldOfficer
-    - !type:CharacterAgeRequirement
-      min: 21
   items:
     - WeaponLeverChester
 
@@ -98,8 +112,6 @@
     - !type:CharacterJobRequirement
       jobs:
         - BlueshieldOfficer
-    - !type:CharacterAgeRequirement
-      min: 21
   items:
     - MagazineMagnumLeverRifle
 
@@ -117,8 +129,6 @@
     - !type:CharacterJobRequirement
       jobs:
         - BlueshieldOfficer
-    - !type:CharacterAgeRequirement
-      min: 21
   items:
     - MagazineMagnumLeverRifle
 
@@ -134,13 +144,11 @@
     - !type:CharacterJobRequirement
       jobs:
         - BlueshieldOfficer
-    - !type:CharacterAgeRequirement
-      min: 21
   items:
-    - WeaponSubMachineGunBRDIR25
+    - WeaponSubMachineGunBRDIR25BSO # The Den sprites
 
 - type: loadout
-  id: LoadoutBSOEnergyShield
+  id: LoadoutBSOShield
   category: JobsCommandBlueshieldOfficer
   cost: 0
   canBeHeirloom: true
@@ -151,10 +159,23 @@
     - !type:CharacterJobRequirement
       jobs:
         - BlueshieldOfficer
-    - !type:CharacterAgeRequirement
-      min: 21
   items:
-    - EnergyShield
+    - BlueShieldShield
+
+- type: loadout
+  id: LoadoutBSOGreatsword
+  category: JobsCommandBlueshieldOfficer
+  cost: 4
+  canBeHeirloom: true
+  guideEntry: SecurityWeapons
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBlueshieldOfficerPrimary
+    - !type:CharacterJobRequirement
+      jobs:
+        - BlueshieldOfficer
+  items:
+    - GreatswordBlueshield
 
 - type: loadout
   id: LoadoutBSOMedkitCombatFilled

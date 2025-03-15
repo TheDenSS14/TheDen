@@ -1873,3 +1873,29 @@
       Min: 1
       Max: 3
       PotencyDivisor: 40
+
+- type: seed
+  id: beetroot
+  name: seeds-beetroot-name
+  noun: seeds-noun-seeds
+  displayName: seeds-beetroot-display-name
+  plantRsi: Objects/Specific/Hydroponics/beetroot.rsi
+  packetPrototype: BeetrootSeeds
+  productPrototypes:
+    - FoodBeetroot
+  lifespan: 30
+  maturation: 10
+  production: 3
+  yield: 2
+  potency: 10
+  growthStages: 3
+  waterConsumption: 0.60
+  chemicals:
+    Nutriment:
+      Min: 1
+      Max: 10
+      PotencyDivisor: 15
+    Vitamin:
+      Min: 1
+      Max: 4
+      PotencyDivisor: 35
