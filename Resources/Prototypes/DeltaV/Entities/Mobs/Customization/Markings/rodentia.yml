@@ -147,7 +147,7 @@
   id: RodentiaSnoutBatCounter
   markingCategory: Snout
   bodyPart: Snout
-  speciesRestriction: [Rodentia, SlimePerson]
+  speciesRestriction: [Rodentia, SlimePerson, HumanHybrid]
   sprites:
     - sprite: DeltaV/Mobs/Customization/Rodentia/snout_markings.rsi
       state: bat
@@ -160,7 +160,7 @@
   id: RodentiaSnoutFlat
   markingCategory: Snout
   bodyPart: Snout
-  speciesRestriction: [Rodentia, SlimePerson]
+  speciesRestriction: [Rodentia, SlimePerson, HumanHybrid]
   sprites:
     - sprite: DeltaV/Mobs/Customization/Rodentia/snout_markings.rsi
       state: flat
@@ -171,7 +171,7 @@
   id: RodentiaSnoutFlatCounter
   markingCategory: Snout
   bodyPart: Snout
-  speciesRestriction: [Rodentia, SlimePerson]
+  speciesRestriction: [Rodentia, SlimePerson, HumanHybrid]
   sprites:
     - sprite: DeltaV/Mobs/Customization/Rodentia/snout_markings.rsi
       state: flat
@@ -184,7 +184,7 @@
   id: RodentiaSnoutRound
   markingCategory: Snout
   bodyPart: Snout
-  speciesRestriction: [Rodentia, SlimePerson]
+  speciesRestriction: [Rodentia, SlimePerson, HumanHybrid]
   sprites:
     - sprite: DeltaV/Mobs/Customization/Rodentia/snout_markings.rsi
       state: round
@@ -195,7 +195,7 @@
   id: RodentiaSnoutRoundCounter
   markingCategory: Snout
   bodyPart: Snout
-  speciesRestriction: [Rodentia, SlimePerson]
+  speciesRestriction: [Rodentia, SlimePerson, HumanHybrid]
   sprites:
     - sprite: DeltaV/Mobs/Customization/Rodentia/snout_markings.rsi
       state: round
@@ -210,7 +210,7 @@
   id: RodentiaCheeksRound
   markingCategory: HeadSide
   bodyPart: HeadSide
-  speciesRestriction: [Rodentia, SlimePerson]
+  speciesRestriction: [Rodentia, SlimePerson, HumanHybrid]
   sprites:
     - sprite: DeltaV/Mobs/Customization/Rodentia/cheek_markings.rsi
       state: cheeks
@@ -219,7 +219,7 @@
   id: RodentiaCheeksRoundCounter
   markingCategory: HeadSide
   bodyPart: HeadSide
-  speciesRestriction: [Rodentia, SlimePerson]
+  speciesRestriction: [Rodentia, SlimePerson, HumanHybrid]
   sprites:
     - sprite: DeltaV/Mobs/Customization/Rodentia/cheek_markings.rsi
       state: cheeks
@@ -230,7 +230,7 @@
   id: RodentiaCheeksFluff
   markingCategory: HeadSide
   bodyPart: HeadSide
-  speciesRestriction: [Rodentia, SlimePerson]
+  speciesRestriction: [Rodentia, SlimePerson, HumanHybrid]
   sprites:
     - sprite: DeltaV/Mobs/Customization/Rodentia/cheek_markings.rsi
       state: fluff
@@ -239,7 +239,7 @@
   id: RodentiaCheeksFluffCounter
   markingCategory: HeadSide
   bodyPart: HeadSide
-  speciesRestriction: [Rodentia, SlimePerson]
+  speciesRestriction: [Rodentia, SlimePerson, HumanHybrid]
   sprites:
     - sprite: DeltaV/Mobs/Customization/Rodentia/cheek_markings.rsi
       state: fluff
@@ -250,7 +250,7 @@
   id: RodentiaCheeksFluffAlt
   markingCategory: HeadSide
   bodyPart: HeadSide
-  speciesRestriction: [Rodentia, SlimePerson]
+  speciesRestriction: [Rodentia, SlimePerson, HumanHybrid]
   sprites:
     - sprite: DeltaV/Mobs/Customization/Rodentia/cheek_markings.rsi
       state: fluff_alt
@@ -259,7 +259,7 @@
   id: RodentiaCheeksFluffAltCounter
   markingCategory: HeadSide
   bodyPart: HeadSide
-  speciesRestriction: [Rodentia, SlimePerson]
+  speciesRestriction: [Rodentia, SlimePerson], HumanHybrid
   sprites:
     - sprite: DeltaV/Mobs/Customization/Rodentia/cheek_markings.rsi
       state: fluff_alt
@@ -270,7 +270,7 @@
   id: RodentiaCheeksWhiskers
   markingCategory: Head # for no-cost markings
   bodyPart: HeadTop # for layering
-  speciesRestriction: [Rodentia]
+  speciesRestriction: [Rodentia, HumanHybrid]
   sprites:
     - sprite: DeltaV/Mobs/Customization/Rodentia/cheek_markings.rsi
       state: whiskers
