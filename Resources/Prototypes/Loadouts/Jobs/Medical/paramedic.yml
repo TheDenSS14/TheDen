@@ -12,6 +12,19 @@
 # Gloves
 
 # Head
+- type: loadout
+  id: LoadoutMedicalHeadHatParamedicsoft
+  category: JobsMedicalParamedic
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutParamedicHead
+    - !type:CharacterJobRequirement
+      jobs:
+        - Paramedic
+  items:
+    - ClothingHeadHatParamedicsoft
 
 # Id
 
@@ -20,8 +33,34 @@
 # Mask
 
 # Outer
+- type: loadout
+  id: LoadoutMedicalOuterWinterPara
+  category: JobsMedicalParamedic
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutParamedicOuter
+    - !type:CharacterJobRequirement
+      jobs:
+        - Paramedic
+  items:
+    - ClothingOuterWinterPara
 
 # Shoes
+- type: loadout
+  id: LoadoutMedicalShoesBootsWinterParamedic
+  category: JobsMedicalParamedic
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutParamedicShoes
+    - !type:CharacterJobRequirement
+      jobs:
+        - Paramedic
+  items:
+    - ClothingShoesBootsWinterParamedic
 
 # Uniforms
 - type: loadout
