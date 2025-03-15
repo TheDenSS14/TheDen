@@ -932,6 +932,35 @@
     FoodButter: 1
     FoodMeatSnailCooked: 1
 
+- type: microwaveMealRecipe
+  id: RecipeUszkaBorscht
+  name: uszka borscht recipe
+  result: FoodSoupBorscht
+  time: 25
+  reagents:
+    Water: 10
+  solids:
+    FoodBowlBig: 1
+    FoodBeetroot: 1
+    FoodBakedDumplings: 1
+    FoodLemon: 1
+    FoodCarrot: 1
+
+- type: microwaveMealRecipe
+  id: RecipeZurek
+  name: zurek recipe
+  result: FoodSoupZurek
+  time: 25
+  reagents:
+    Water: 10
+    Flour: 10
+    Enzyme: 5
+  solids:
+    FoodBowlBig: 1
+    FoodMeatSausage: 1
+    FoodEgg: 1
+    FoodMeatBacon: 1
+    FoodCarrot: 1
 #Pies
 
 - type: microwaveMealRecipe
@@ -1932,3 +1961,15 @@
     FoodCroissantRaw: 1
     FoodButterSlice: 1
     ShardGlass: 1
+
+- type: microwaveMealRecipe
+  id: RecipeSausage
+  name: sausage recipe
+  result: FoodMeatSausage
+  time: 15
+  reagents:
+    TableSalt: 5
+    UncookedAnimalProteins: 6
+  solids:
+    FoodGarlic: 1
+    OrganHumanAppendix: 1

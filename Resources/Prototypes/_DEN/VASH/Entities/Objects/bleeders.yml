@@ -1,0 +1,113 @@
+- type: entity
+  parent: BaseItem
+  id: BaseVASHBlood #Copied from BaseHealingItem, just-- wouldn't work, so here's my copy. B) - KekaniCreates (KC)
+  abstract: true
+  components:
+  - type: Sprite
+    sprite: _DEN/VASH/Objects/bloodyboyes.rsi #I thought it'd be funny lol -KC
+  - type: Item
+    size: Small
+    sprite: _DEN/VASH/Objects/bloodyboyes.rsi
+    heldPrefix: tampon
+  # Inherited from the copy. idk.-KC
+  - type: StaticPrice
+    price: 0
+
+
+- type: entity
+  name: tampon applicator
+  description: A small plastic device which is intended to deploy a soft cotton tampon into the vaginal canal with the intention to stop bleeding. #Incredibly medical, may change to casual for later -KC
+  parent: BaseVASHBlood
+  id: tampon
+  components:
+#  - type: Tag - Unnecessary for gameplay.
+#    tags:
+#    - Gauze
+#    - Tampon
+  - type: Sprite
+    sprite: _DEN/VASH/Objects/bloodyboyes.rsi
+    state: tampon
+  - type: Item
+    size: Tiny #applicators may be long, but they're not very big. Plus, bleeding isn't helped all that much.-KC
+    sprite: _DEN/VASH/Objects/bloodyboyes.rsi
+    heldPrefix: tampon
+  - type: Construction
+    graph: Gauze
+    node: gauze
+  - type: Healing
+    damageContainers:
+    - Biological
+    damage:
+      types:
+        Piercing: -4 # you can jam one in a hole, but helping out a gaping wound is sort of a stretch. originally -15, nerfed to 4 to emphasize "for emergencies." -KC
+    bloodlossModifier: -2 # Not intended to be in a medical kit or anything. It's intended for your vagina, not your bullet wound, but it helps. -KC
+  - type: InteractionVerbs # For the weirdos. -KC
+    allowedVerbs:
+    - KissObject
+    - LickObject
+
+- type: entity
+  name: menstrual pad
+  description: An absorbant pad used to absorb the flow of blood from the vagina. #feels REALLY weird. Refine? -KC
+  parent: BaseVASHBlood
+  id: pad
+  components:
+#  - type: Tag - Unnecessary for gameplay.
+#    tags:
+#    - Gauze
+#    - Pad
+  - type: Sprite
+    sprite: _DEN/VASH/Objects/bloodyboyes.rsi
+    heldPrefix: pad
+    state: pad
+  - type: Item
+    size: Small
+    sprite: _DEN/VASH/Objects/bloodyboyes.rsi
+    heldPrefix: pad
+  - type: Construction
+    graph: Gauze
+    node: gauze
+  - type: Healing
+    damageContainers:
+    - Biological
+    damage:
+      types:
+        Slash: -3.5 # originally -7.5, nerfed to emphasize for emergencies.
+    bloodlossModifier: -4 # Better than a tampon, worse than gauze. If you can, make/use bandages, but if you're stuck in maints-- you got your pad!
+  - type: InteractionVerbs # For the weirdos. -KC
+    allowedVerbs:
+      - KissObject
+      - LickObject
+
+- type: entity
+  name: panty liner
+  description: An absorbant pad used to absorb the flow of blood from the vagina. Much smaller than a pad, it's intended on stopping residual flow more than anything else.
+  parent: BaseVASHBlood
+  id: liner
+  components:
+#  - type: Tag - Unnecessary for gameplay.
+#    tags:
+#    - Gauze
+#    - Liner
+  - type: Sprite
+    sprite: _DEN/VASH/Objects/bloodyboyes.rsi
+    heldPrefix: liner
+    state: liner
+  - type: Item
+    size: Tiny
+    sprite: _DEN/VASH/Objects/bloodyboyes.rsi
+    heldPrefix: liner
+  - type: Construction
+    graph: Gauze
+    node: gauze
+  - type: Healing
+    damageContainers:
+    - Biological
+    damage:
+      types:
+        Slash: -1.5 # It's really, REALLY not intended to be used for more than it's intended purpose. Oops, should've brought pads! -KC
+    bloodlossModifier: -3 # Better than a tampon, worse than a pad. If you can, make/use bandages, but if you're stuck in maints-- you got your liners! -KC
+  - type: InteractionVerbs # For the weirdos. -KC
+    allowedVerbs:
+    - KissObject
+    - LickObject

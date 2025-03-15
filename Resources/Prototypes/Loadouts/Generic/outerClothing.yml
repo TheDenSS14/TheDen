@@ -850,3 +850,14 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutOuter
+
+- type: loadout
+  id: LoadoutOuterCoatSpaceAsshole
+  category: Outer
+  cost: 8
+  customColorTint: true
+  items:
+    - ClothingOuterCoatSpaceAsshole
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutOuter

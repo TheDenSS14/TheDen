@@ -1,0 +1,35 @@
+- type: entity # Pretty much a copy of the Water Bottle, shifted all sex-lube like. Copied from Entities/Objects/Consumable/Drinks/drinks_bottles.yml
+  parent: [DrinkBottleVisualsOpenable, DrinkBottlePlasticBaseFull]
+  id: SexLube
+  name: sexual lubricant
+  description: A bottle of synthetic lubricant to help with sexual activity. #Too straight to the point, although I'm not sure what else you use lube for than sex lmao -KC
+  components:
+  - type: Item
+    size: Small
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 20 #it probably doesn't need to be that big. If you want more, go ask the Chemist or get a Toybox.-KC
+        reagents:
+        - ReagentId: SpaceLube
+          Quantity: 20
+  - type: Sprite
+    sprite: _DEN/VASH/Objects/bottlelube.rsi
+    layers:
+    - state: icon
+      map: ["enum.OpenableVisuals.Layer"]
+    - state: icon-1
+      map: ["enum.SolutionContainerLayers.Fill"]
+      visible: false
+  - type: Appearance
+  - type: SolutionContainerVisuals
+    maxFillLevels: 5
+    fillBaseName: icon-
+    inHandsMaxFillLevels: 2
+    inHandsFillBaseName: -fill-
+  - type: Openable
+    closeable: true #this ain't a packet, you should be able to reseal it.
+  - type: InteractionVerbs
+    allowedVerbs:
+      - KissObject
+      - LickObject

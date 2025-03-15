@@ -98,8 +98,10 @@
   description: A ballistic riot shield built for withstanding bullets, but not much else.
   components:
     - type: Sprite
+      sprite: _Goobstation/Objects/Shields/riotshield.rsi
       state: riot_bullet-icon
     - type: Item
+      sprite: _Goobstation/Objects/Shields/riotshield.rsi
       heldPrefix: riot_bullet
     - type: Blocking
       passiveBlockModifier:
