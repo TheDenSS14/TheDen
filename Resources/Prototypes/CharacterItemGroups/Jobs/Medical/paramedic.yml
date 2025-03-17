@@ -29,10 +29,12 @@
 #  maxItems: 1
 #  items:
 #
-#- type: characterItemGroup
-#  id: LoadoutParamedicHead
-#  maxItems: 1
-#  items:
+- type: characterItemGroup
+  id: LoadoutParamedicHead
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutMedicalHeadHatParamedicsoft
 #
 #- type: characterItemGroup
 #  id: LoadoutParamedicId
@@ -49,16 +51,20 @@
 #  maxItems: 1
 #  items:
 #
-#- type: characterItemGroup
-#  id: LoadoutParamedicOuter
-#  maxItems: 1
-#  items:
-#
-#- type: characterItemGroup
-#  id: LoadoutParamedicShoes
-#  maxItems: 1
-#  items:
-#
+- type: characterItemGroup
+  id: LoadoutParamedicOuter
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutMedicalOuterWinterPara
+
+- type: characterItemGroup
+  id: LoadoutParamedicShoes
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutMedicalShoesBootsWinterParamedic
+
 - type: characterItemGroup
   id: LoadoutParamedicUniforms
   maxItems: 1

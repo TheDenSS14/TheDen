@@ -716,3 +716,13 @@
       seedId: bluePumpkin
     - type: Sprite
       sprite: Floof/Objects/Specific/Hydroponics/blue_pumpkin.rsi
+
+- type: entity
+  parent: SeedBase
+  name: packet of beetroot seeds
+  id: BeetrootSeeds
+  components:
+    - type: Seed
+      seedId: beetroot
+    - type: Sprite
+      sprite: Objects/Specific/Hydroponics/beetroot.rsi

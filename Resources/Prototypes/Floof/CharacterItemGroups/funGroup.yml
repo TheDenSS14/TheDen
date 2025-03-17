@@ -6,6 +6,22 @@
     - type: loadout
       id: LoadoutItemLeashShort
 
+- type: characterItemGroup
+  id: LoadoutVASH
+  items:
+  - type: loadout
+    id: LoadoutVASHHygiene
+  - type: loadout
+    id: LoadoutVASHSex
+  - type: loadout
+    id: LoadoutTampon
+#  - type: loadout Currently an RP item, so it's not really necessary to have be exclusive.
+#    id: LoadoutCondom
+  - type: loadout
+    id: LoadoutLiner
+  - type: loadout
+    id: LoadoutPad
+
 # If you are ever going to add more: open regex101; in list mode, find "id: (.+)", replace with "- type: loadout\n  id: $1\n", paste the result here
 - type: characterItemGroup
   id: LoadoutLewd

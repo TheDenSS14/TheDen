@@ -6,6 +6,24 @@
   solids:
     FoodDoughSlice: 1 # one third of a standard bread dough recipe
 
+#Bagels
+- type: microwaveMealRecipe
+  id: RecipeBagel
+  name: bagel recipe
+  result: FoodBagel
+  time: 5
+  solids:
+    FoodDoughRope: 1 # created by rolling a dough slice.
+
+- type: microwaveMealRecipe
+  id: RecipeBagelPoppy
+  name: poppyseed bagel recipe
+  result: FoodBagelPoppy
+  time: 5
+  solids:
+    FoodDoughRope: 1
+    PoppySeeds: 1
+
 #Burgers
 
 - type: microwaveMealRecipe
@@ -586,6 +604,17 @@
     FoodCheeseSlice: 1
     FoodTomato: 1
 
+- type: microwaveMealRecipe
+  id: RecipeUraniumPizza
+  name: spicy rock pizza recipe
+  result: FoodPizzaUranium
+  time: 30
+  solids:
+    FoodDoughFlat: 1
+    FoodChiliPepper: 2
+    FoodTomato: 2
+    SheetUranium1: 2
+
 #Italian
 - type: microwaveMealRecipe
   id: RecipeBoiledSpaghetti
@@ -932,6 +961,35 @@
     FoodButter: 1
     FoodMeatSnailCooked: 1
 
+- type: microwaveMealRecipe
+  id: RecipeUszkaBorscht
+  name: uszka borscht recipe
+  result: FoodSoupBorscht
+  time: 25
+  reagents:
+    Water: 10
+  solids:
+    FoodBowlBig: 1
+    FoodBeetroot: 1
+    FoodBakedDumplings: 1
+    FoodLemon: 1
+    FoodCarrot: 1
+
+- type: microwaveMealRecipe
+  id: RecipeZurek
+  name: zurek recipe
+  result: FoodSoupZurek
+  time: 25
+  reagents:
+    Water: 10
+    Flour: 10
+    Enzyme: 5
+  solids:
+    FoodBowlBig: 1
+    FoodMeatSausage: 1
+    FoodEgg: 1
+    FoodMeatBacon: 1
+    FoodCarrot: 1
 #Pies
 
 - type: microwaveMealRecipe
@@ -1218,7 +1276,8 @@
   id: RecipeCookie
   name: cookie recipe
   result: FoodBakedCookie
-  time: 5
+  resultCount: 3 # Frontier
+  time: 10 # Frontier - 5<10
   reagents:
     Flour: 5
     Sugar: 5
@@ -1230,7 +1289,8 @@
   id: RecipeSugarCookie
   name: sugar cookie recipe
   result: FoodBakedCookieSugar
-  time: 5
+  resultCount: 2 # Frontier
+  time: 10 # Frontier - 5<10
   reagents:
     Flour: 5
     Sugar: 10
@@ -1241,18 +1301,21 @@
   id: RecipeRaisinCookie
   name: raisin cookie recipe
   result: FoodBakedCookieRaisin
-  time: 5
+  resultCount: 2 # Frontier
+  time: 10 # Frontier - 5<10
   reagents:
     Flour: 5
     Sugar: 5
-  solids:
-    FoodSnackRaisins: 1
+    Raisins: 10 # Frontier
+  # solids: # Frontier
+    # FoodSnackRaisins: 1 # Frontier
 
 - type: microwaveMealRecipe
   id: RecipeCookieOatmeal
   name: oatmeal cookie recipe
   result: FoodBakedCookieOatmeal
-  time: 5
+  resultCount: 2 # Frontier
+  time: 10 # Frontier - 5<10
   reagents:
     Oats: 5
     Sugar: 5
@@ -1417,10 +1480,11 @@
   time: 15
   reagents:
     Milk: 15
+    Raisins: 10 # Frontier
     Cognizine: 5
   solids:
     FoodCakePlain: 1
-    FoodSnackRaisins: 1
+    # FoodSnackRaisins: 1 # Frontier
     OrganAnimalHeart: 1
 
 - type: microwaveMealRecipe
@@ -1932,3 +1996,15 @@
     FoodCroissantRaw: 1
     FoodButterSlice: 1
     ShardGlass: 1
+
+- type: microwaveMealRecipe
+  id: RecipeSausage
+  name: sausage recipe
+  result: FoodMeatSausage
+  time: 15
+  reagents:
+    TableSalt: 5
+    UncookedAnimalProteins: 6
+  solids:
+    FoodGarlic: 1
+    OrganHumanAppendix: 1

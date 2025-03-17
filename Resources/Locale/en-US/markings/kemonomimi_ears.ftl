@@ -14,3 +14,13 @@ marking-FoxEars-foxears = Ears
 marking-GoatHorns = Goat Ears & Horns
 marking-GoatHorns-goathornstone1 = Ears
 marking-GoatHorns-goathornstone2 = Horns
+
+marking-LambHorns = Lamb Ears & Horns
+marking-LambHorns-lambhornstone1 = Ears
+marking-LambHorns-lambhornstone2 = Horns
+
+marking-GoatHornsNoEars = Goat Horns
+marking-GoatHornsNoEars-goathornstone2 = Horns
+
+marking-LambHornsNoEars = Lamb Horns
+marking-LambHornsNoEars-lambhornstone2 = Horns

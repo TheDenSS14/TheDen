@@ -139,6 +139,7 @@
                             <Label Text="{Loc 'humanoid-profile-editor-skin-color-label'}" />
                             <Slider HorizontalExpand="True" Name="Skin" MinValue="0" MaxValue="100" Value="20" />
                             <BoxContainer Name="RgbSkinColorContainer" Visible="False" Orientation="Vertical" HorizontalExpand="True"></BoxContainer>
+                            <Button Name="SkinFurToggle" ToggleMode="True" Text="{Loc 'humanoid-profile-editor-skin-toggle'}" HorizontalAlignment="Right" />
                         </BoxContainer>
                         <!-- Hair -->
                         <BoxContainer Margin="10" Orientation="Horizontal">

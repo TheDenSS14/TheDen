@@ -10,6 +10,8 @@
   components:
   - type: Sprite
     layers:
+    - map: [ "enum.HumanoidVisualLayers.Nipples" ]
+    - map: [ "enum.HumanoidVisualLayers.Genitals" ]
     - map: [ "enum.HumanoidVisualLayers.Chest" ]
     - map: [ "enum.HumanoidVisualLayers.Head" ]
     - map: [ "enum.HumanoidVisualLayers.Snout" ]
@@ -240,7 +242,6 @@
   - type: Targeting
   - type: SurgeryTarget
   - type: FootPrints
-  - type: Wagging
 
 - type: entity
   save: false
@@ -354,6 +355,8 @@
     noRot: true
     # TODO BODY Turn these into individual body parts?
     layers:
+    - map: [ "enum.HumanoidVisualLayers.Genitals" ]
+    - map: [ "enum.HumanoidVisualLayers.Nipples" ]
     - map: [ "enum.HumanoidVisualLayers.Chest" ]
     - map: [ "enum.HumanoidVisualLayers.Head" ]
     - map: [ "enum.HumanoidVisualLayers.Snout" ]
