@@ -8,13 +8,13 @@ trait-description-HollowFangs =
     Whether through implantation, genetic modification, or evolution, you have a pair of hollow, sharp fangs used to drink iron-based blood from the beings that contain it.
 
 trait-name-CumProducer = Cock
-trait-description-CumProducer = You have a schlong between your legs.
+trait-description-CumProducer = You're ready to bust at a moment's notice.
 
 trait-name-MilkProducer = Boobs
-trait-description-MilkProducer = You have a pair of large mammaries.
+trait-description-MilkProducer = You use hunger to produce milk. Lovely!
 
 trait-name-SquirtProducer = Pussy
-trait-description-SquirtProducer = You have a slit between your legs.
+trait-description-SquirtProducer = Woah, they're a squirter!
 
 trait-name-Weakness = Weakness
 trait-description-Weakness = You are naturally more vulnerable to fatigue. Your stamina pool is halved, making you greately vulnerable to shoving and stunning attacks.

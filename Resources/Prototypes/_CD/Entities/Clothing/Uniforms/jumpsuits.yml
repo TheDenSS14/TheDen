@@ -1,7 +1,7 @@
 # cargo variants
 
 - type: entity
-  parent: ClothingUniformBase
+  parent: [ClothingUniformBase, ClothingUniformFoldableBase]
   id: ClothingUniformJumpsuitCargoLight
   name: cargo tech jumpsuit
   description: A sturdy jumpsuit, issued to members of the Cargo department.
@@ -13,7 +13,7 @@
     sprite: _CD/Clothing/Uniforms/Jumpsuit/cargotech_light.rsi
 
 - type: entity
-  parent: ClothingUniformBase
+  parent: [ClothingUniformBase, ClothingUniformFoldableBase]
   id: ClothingUniformJumpsuitCargoDark
   name: cargo tech jumpsuit
   suffix: dark
