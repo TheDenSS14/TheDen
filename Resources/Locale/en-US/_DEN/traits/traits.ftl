@@ -24,4 +24,4 @@ trait-description-ZeroGAverse =
     the effects of Zero-G you are significantly slower than the normal spessman
 
 trait-name-HoneyProducer = Honey Stomach
-trait-description-SquirtProducer = Your abdomen contains an extra stomach that processes nutrients into honey.
+trait-description-HoneyProducer = Your abdomen contains an extra stomach that processes nutrients into honey.
