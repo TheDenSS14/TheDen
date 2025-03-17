@@ -32,20 +32,20 @@ public sealed class LewdTraitSystem : EntitySystem
         SubscribeLocalEvent<CumProducerComponent, ComponentStartup>(OnComponentInitCum);
         SubscribeLocalEvent<MilkProducerComponent, ComponentStartup>(OnComponentInitMilk);
         SubscribeLocalEvent<SquirtProducerComponent, ComponentStartup>(OnComponentInitSquirt);
-        SubscribeLocalEvent<SquirtProducerComponent, ComponentStartup>(OnComponentInitHoney);
+        SubscribeLocalEvent<HoneyProducerComponent, ComponentStartup>(OnComponentInitHoney);
 
         //Verbs
         SubscribeLocalEvent<CumProducerComponent, GetVerbsEvent<InnateVerb>>(AddCumVerb);
         SubscribeLocalEvent<MilkProducerComponent, GetVerbsEvent<InnateVerb>>(AddMilkVerb);
         SubscribeLocalEvent<SquirtProducerComponent, GetVerbsEvent<InnateVerb>>(AddSquirtVerb);
-        SubscribeLocalEvent<SquirtProducerComponent, GetVerbsEvent<InnateVerb>>(AddHoneyVerb);
+        SubscribeLocalEvent<HoneyProducerComponent, GetVerbsEvent<InnateVerb>>(AddHoneyVerb);
 
 
         //Events
         SubscribeLocalEvent<CumProducerComponent, CummingDoAfterEvent>(OnDoAfterCum);
         SubscribeLocalEvent<MilkProducerComponent, MilkingDoAfterEvent>(OnDoAfterMilk);
         SubscribeLocalEvent<SquirtProducerComponent, SquirtingDoAfterEvent>(OnDoAfterSquirt);
-        SubscribeLocalEvent<SquirtProducerComponent, HoneyingDoAfterEvent>(OnDoAfterHoney);
+        SubscribeLocalEvent<HoneyProducerComponent, HoneyingDoAfterEvent>(OnDoAfterHoney);
     }
 
     #region event handling
@@ -73,12 +73,12 @@ public sealed class LewdTraitSystem : EntitySystem
         solutionSquirt.AddReagent(entity.Comp.ReagentId, entity.Comp.MaxVolume - solutionSquirt.Volume);
     }
 
-    private void OnComponentInitHoney(Entity<SquirtProducerComponent> entity, ref ComponentStartup args)
+    private void OnComponentInitHoney(Entity<HoneyProducerComponent> entity, ref ComponentStartup args)
     {
-        var solutionSquirt = _solutionContainer.EnsureSolution(entity.Owner, entity.Comp.SolutionName);
-        solutionSquirt.MaxVolume = entity.Comp.MaxVolume;
+        var solutionHoney = _solutionContainer.EnsureSolution(entity.Owner, entity.Comp.SolutionName);
+        solutionHoney.MaxVolume = entity.Comp.MaxVolume;
 
-        solutionSquirt.AddReagent(entity.Comp.ReagentId, entity.Comp.MaxVolume - solutionSquirt.Volume);
+        solutionHoney.AddReagent(entity.Comp.ReagentId, entity.Comp.MaxVolume - solutionHoney.Volume);
     }
 
     public void AddCumVerb(Entity<CumProducerComponent> entity, ref GetVerbsEvent<InnateVerb> args)
@@ -146,7 +146,7 @@ public sealed class LewdTraitSystem : EntitySystem
         args.Verbs.Add(verbSquirt);
     }
 
-    public void AddHoneyVerb(Entity<SquirtProducerComponent> entity, ref GetVerbsEvent<InnateVerb> args)
+    public void AddHoneyVerb(Entity<HoneyProducerComponent> entity, ref GetVerbsEvent<InnateVerb> args)
     {
         if (args.Using == null ||
              !args.CanInteract ||
@@ -327,7 +327,7 @@ public sealed class LewdTraitSystem : EntitySystem
         if (!HasComp<HoneyProducerComponent>(userUid))
             return;
 
-        var doargs = new DoAfterArgs(EntityManager, userUid, 5, new HoneyDoAfterEvent(), lewd, lewd, used: containerUid)
+        var doargs = new DoAfterArgs(EntityManager, userUid, 5, new HoneyingDoAfterEvent(), lewd, lewd, used: containerUid)
         {
             BreakOnMove = true,
             BreakOnDamage = true,
@@ -436,10 +436,10 @@ public sealed class LewdTraitSystem : EntitySystem
                 //_hunger.ModifyHunger(uid, -containerMilk.HungerUsage, hunger);
             }
 
-            if (!_solutionContainer.ResolveSolution(uid, containerSquirt.SolutionName, ref containerSquirt.Solution))
+            if (!_solutionContainer.ResolveSolution(uid, containerHoney.SolutionName, ref containerHoney.Solution))
                 continue;
 
-            _solutionContainer.TryAddReagent(containerSquirt.Solution.Value, containerSquirt.ReagentId, containerSquirt.QuantityPerUpdate, out _);
+            _solutionContainer.TryAddReagent(containerHoney.Solution.Value, containerHoney.ReagentId, containerHoney.QuantityPerUpdate, out _);
         }
     }
     #endregion
