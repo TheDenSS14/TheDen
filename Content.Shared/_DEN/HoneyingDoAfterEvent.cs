@@ -3,6 +3,6 @@ using Robust.Shared.Serialization;
 
 namespace Content.Shared.FloofStation.Traits.Events;
 
-public sealed partial class MilkingDoAfterEvent : SimpleDoAfterEvent
+public sealed partial class HoneyingDoAfterEvent : SimpleDoAfterEvent
 {
 }

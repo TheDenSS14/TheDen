@@ -327,7 +327,7 @@ public sealed class LewdTraitSystem : EntitySystem
         if (!HasComp<HoneyProducerComponent>(userUid))
             return;
 
-        var doargs = new DoAfterArgs(EntityManager, userUid, 5, new SquirtingDoAfterEvent(), lewd, lewd, used: containerUid)
+        var doargs = new DoAfterArgs(EntityManager, userUid, 5, new HoneyDoAfterEvent(), lewd, lewd, used: containerUid)
         {
             BreakOnMove = true,
             BreakOnDamage = true,
