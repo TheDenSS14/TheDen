@@ -101,6 +101,9 @@
   id: HoneyProducer
   category: Physical
   requirements:
+    - !type:CharacterSpeciesRequirement
+      species:
+        - Chitinid
     - !type:CharacterJobRequirement
       inverted: true
       jobs:

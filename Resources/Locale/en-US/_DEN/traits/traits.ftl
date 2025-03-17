@@ -22,3 +22,6 @@ trait-name-ZeroGAverse = Zero G Averse
 trait-description-ZeroGAverse =
     You very much prefer to have your boots on the ground and/or are terrified of the feeling of weightlessness. While under
     the effects of Zero-G you are significantly slower than the normal spessman
+
+trait-name-HoneyProducer = Honey Stomach
+trait-description-SquirtProducer = Your abdomen contains an extra stomach that processes nutrients into honey.
