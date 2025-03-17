@@ -1,0 +1,49 @@
+- type: entity #copied from Entities/Objects/Misc/monkeycubes.yml
+  parent: BaseItem
+  name: wrapped condom
+  suffix: Wrapped
+  id: CondomWrapped
+  description: Make sure to check it for holes! #teehee it's funny. Not sure if it should be funny or serious, so let's start with funny. -KC
+  components:
+  - type: Item
+    size: Tiny
+  - type: SpawnItemsOnUse
+    items:
+    - id: CondomUnwrapped
+    sound:
+      path: /Audio/Effects/unwrap.ogg
+#  - type: Tag
+#    tags:
+#    - Condom
+  - type: Sprite
+    sprite: _DEN/VASH/Objects/condoms.rsi
+    state: condom
+  - type: InteractionVerbs
+    allowedVerbs:
+    - KissObject
+    - LickObject
+
+- type: entity #copied from Entities/Objects/Specific/rehydrateable.yml
+  parent: BaseItem
+  id: CondomUnwrapped
+  name: condom
+  description: Have fun!
+  components:
+  - type: RpConsume # Makes it so the object deletes itself on use.
+    consumePopup: use-condom
+  - type: Item
+    size: Tiny
+#  - type: Tag
+#    tags:
+#    - Condom
+  - type: Sprite
+    sprite: _DEN/VASH/Objects/condoms.rsi
+    state: condomout
+  - type: EmitSoundOnUse
+    sound: /Audio/Effects/Fluids/blood2.ogg # I don't feel confident trying to find a rubber sound free of copyright. This should be just fine. -KC
+  - type: InteractionVerbs # For the weirdos. -KC
+    allowedVerbs:
+    - KissObject
+    - LickObject
+# when consulted with the council, it was frowned upon to make the condom a container, mostly from the consent violations it could/would cause. -KC
+# when consulted with the council, leaving behind a used condom was frowned upon, so it just vanishes. -KC

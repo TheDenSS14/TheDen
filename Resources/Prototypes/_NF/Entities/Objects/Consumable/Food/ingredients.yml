@@ -1,4 +1,21 @@
 - type: entity
+  parent: ReagentPacketBase
+  id: ReagentContainerRaisin
+  name: raisin bag
+  description: A big bag of raisins. Good for baking!
+  components:
+  - type: Sprite
+    sprite: DeltaV/Objects/Consumable/Food/ingredients.rsi
+    state: raisin-big
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 50
+        reagents:
+        - ReagentId: Raisins
+          Quantity: 50
+
+- type: entity
   name: raw coffee beans
   parent: FoodProduceBase
   id: FoodCoffeeBeansRaw
@@ -96,4 +113,26 @@
   - type: Construction
     graph: Coffee
     node: dark roasted coffee
-    defaultTarget: null
+    defaultTarget: Null # Overwriting light target
+
+- type: entity
+  parent: [ReagentPacketBase, ItemHeftyBase]
+  id: ReagentContainerHoney
+  name: honey bottle
+  description: A big squeeze bottle of honey. Great for sweetening up your day!
+  components:
+  - type: Sprite
+    sprite: _NF/Objects/Consumable/Food/ingredients.rsi
+    state: honeybottle
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 30
+        reagents:
+        - ReagentId: Honey
+          Quantity: 30
+  - type: Drink
+    solution: food
+    useSound:
+      path: /Audio/Items/eating_1.ogg
+

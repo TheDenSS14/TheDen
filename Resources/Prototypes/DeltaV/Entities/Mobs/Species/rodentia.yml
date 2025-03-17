@@ -37,6 +37,8 @@
   - type: Sprite
     scale: 0.8, 0.8
     layers:
+      - map: [ "enum.HumanoidVisualLayers.Nipples" ]
+      - map: [ "enum.HumanoidVisualLayers.Genitals" ]
       - map: [ "enum.HumanoidVisualLayers.Chest" ]
       - map: [ "enum.HumanoidVisualLayers.Head" ]
       - map: [ "enum.HumanoidVisualLayers.Snout" ]

@@ -2571,3 +2571,35 @@
     seedId: cherry
   - type: SpaceGarbage
   - type: BadFood
+
+- type: entity
+  name: beetroot
+  parent: FoodProduceBase
+  id: FoodBeetroot
+  description: A deep red beetroot, peeling it with bare hands will make you look like you committed a murder.
+  components:
+  - type: FlavorProfile
+    flavors:
+      - beetroot
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 16
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 12
+        - ReagentId: Vitamin
+          Quantity: 4
+  - type: Sprite
+    sprite: Objects/Specific/Hydroponics/beetroot.rsi
+  - type: Produce
+    seedId: beetroot
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: JuiceBeetroot
+        Quantity: 10
+  - type: Tag
+    tags:
+    - Beetroot
+    - Vegetable

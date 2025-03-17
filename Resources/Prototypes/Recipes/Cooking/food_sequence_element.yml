@@ -1153,6 +1153,27 @@
   - sprite: Objects/Consumable/Food/Baked/cake.rsi
     state: suppermatter-shard
 
+# Beetroot
+
+- type: foodSequenceElement
+  id: Beetroot
+  name: food-sequence-content-beetroot
+  sprites:
+  - sprite: Objects/Specific/Hydroponics/beetroot.rsi
+    state: produce
+  tags:
+  - Vegetable
+
+# Sausage
+- type: foodSequenceElement
+  id: Sausage
+  sprites:
+  - sprite: Objects/Consumable/Food/meat.rsi
+    state: sausage
+  tags:
+  - Cooked
+  - Meat
+
 # Cigarette
 
 - type: foodSequenceElement

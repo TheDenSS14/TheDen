@@ -275,6 +275,7 @@ namespace Content.Client.Lobby.UI
             Skin.OnValueChanged += _ => { OnSkinColorOnValueChanged(); };
             RgbSkinColorContainer.AddChild(_rgbSkinColorSelector = new());
             _rgbSkinColorSelector.OnColorChanged += _ => { OnSkinColorOnValueChanged(); };
+            SkinFurToggle.OnToggled += _ => { SetProfile(Profile, CharacterSlot); };
 
             #endregion
 
@@ -688,6 +689,12 @@ namespace Content.Client.Lobby.UI
 
             PreviewDummy = _controller.LoadProfileEntity(Profile, ShowClothes.Pressed, ShowLoadouts.Pressed);
             SpriteView.SetEntity(PreviewDummy);
+            if (_prototypeManager.Index<SpeciesPrototype>(Profile.Species).SkinColoration != HumanoidSkinColor.HumanAnimal)
+            {
+                SkinFurToggle.Visible = false;
+            }
+            else { SkinFurToggle.Visible = true; }
+
         }
 
         /// Reloads the dummy entity's clothes for preview
@@ -747,6 +754,7 @@ namespace Content.Client.Lobby.UI
             RefreshFlavorText();
             ReloadPreview();
 
+
             if (Profile != null)
                 PreferenceUnavailableButton.SelectId((int) Profile.PreferenceUnavailable);
         }
@@ -765,6 +773,12 @@ namespace Content.Client.Lobby.UI
                 // Reapply the hidden layers set from clothing
                 appearanceSystem.SetLayersVisibility(PreviewDummy, hiddenLayers, false, humanoid: humanoid);
             }
+
+            if (_prototypeManager.Index<SpeciesPrototype>(Profile.Species).SkinColoration != HumanoidSkinColor.HumanAnimal)
+            {
+                SkinFurToggle.Visible = false;
+            }
+            else { SkinFurToggle.Visible = true; }
 
             SetPreviewRotation(_previewRotation);
             TraitsTabs.UpdateTabMerging();
@@ -1192,6 +1206,27 @@ namespace Content.Client.Lobby.UI
                         Profile = Profile.WithCharacterAppearance(Profile.Appearance.WithSkinColor(color));
                         break;
                 }
+                case HumanoidSkinColor.HumanAnimal:
+                {
+                    SkinFurToggle.Visible = true;
+                    if(!SkinFurToggle.Pressed)
+                    {
+                        Skin.Visible = false;
+                        RgbSkinColorContainer.Visible = true;
+                        Markings.CurrentSkinColor = _rgbSkinColorSelector.Color;
+                        Profile = Profile.WithCharacterAppearance(Profile.Appearance.WithSkinColor(_rgbSkinColorSelector.Color));
+                    }
+                    else
+                    {
+                        Skin.Visible = true;
+                        RgbSkinColorContainer.Visible = false;
+                        var color = SkinColor.HumanSkinTone((int) Skin.Value);
+                        Markings.CurrentSkinColor = color;
+                        Profile = Profile.WithCharacterAppearance(Profile.Appearance.WithSkinColor(color));
+                        }
+
+                    break;
+                }
             }
 
             SetDirty();
@@ -1470,6 +1505,25 @@ namespace Content.Client.Lobby.UI
 
                         break;
                 }
+                case HumanoidSkinColor.HumanAnimal:
+                    {
+                        SkinFurToggle.Visible = true;
+                        if (!SkinFurToggle.Pressed)
+                        {
+                            Skin.Visible = false;
+                            RgbSkinColorContainer.Visible = true;
+                            _rgbSkinColorSelector.Color = Profile.Appearance.SkinColor;
+
+                        }
+                        else
+                        {
+                            Skin.Visible = true;
+                            RgbSkinColorContainer.Visible = false;
+                            Skin.Value = SkinColor.HumanSkinToneFromColor(Profile.Appearance.SkinColor);
+
+                        }
+                        break;
+                    }
             }
         }
 

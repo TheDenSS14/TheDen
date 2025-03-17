@@ -266,6 +266,22 @@
       prob: 0.001
 
 - type: entity
+  id: RoingusMigration
+  parent: BaseGameRule
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: StationEvent
+    startAnnouncement: true
+    startDelay: 10
+    earliestStart: 15
+    weight: 6
+    duration: 50
+  - type: VentCrittersRule
+    entries:
+    - id: MobRoingus
+      prob: 0.02
+
+- type: entity
   id: CockroachMigration
   parent: BaseGameRule
   categories: [ HideSpawnMenu ]

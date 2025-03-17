@@ -79,6 +79,7 @@ food-sequence-content-spacemans-trumpet = spacemans trupmet
 food-sequence-content-cherry = cherry
 food-sequence-content-snail = snail
 food-sequence-content-cig = cigarette
+food-sequence-content-beetroot = beetroot
 
 # BURGERS
 
