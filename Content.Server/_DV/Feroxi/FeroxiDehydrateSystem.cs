@@ -1,6 +1,5 @@
 using Content.Server.Body.Components;
 using Content.Server.Body.Systems;
-using Content.Shared.Body.Events;
 using Content.Shared.Nutrition.Components;
 
 namespace Content.Server._DV.Feroxi;
@@ -34,9 +33,9 @@ public sealed class FeroxiDehydrateSystem : EntitySystem
     {
         ent.Comp.Dehydrated = shouldBeDehydrated;
 
-        foreach (var entity in _body.GetBodyOrganComponents<LungComponent>(ent.Owner))
+        foreach (var entity in _body.GetBodyOrganEntityComps<LungComponent>(ent.Owner))
         {
-            if (!TryComp<MetabolizerComponent>(ent, out var metabolizer) || metabolizer.MetabolizerTypes == null)
+            if (!TryComp<MetabolizerComponent>(entity, out var metabolizer) || metabolizer.MetabolizerTypes == null)
             {
                 continue;
             }

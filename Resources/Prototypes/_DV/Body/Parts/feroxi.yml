@@ -1,58 +1,161 @@
 - type: entity
-  parent: [ BasePart ]
+  parent: BaseItem
   abstract: true
   id: PartFeroxiBase
   name: feroxi body part
   components:
-    - type: Sprite
-      sprite: _DV/Mobs/Species/Feroxi/parts.rsi
+  - type: Sprite
+    sprite: _DV/Mobs/Species/Feroxi/parts.rsi
+  - type: Icon
+    sprite: _DV/Mobs/Species/Feroxi/parts.rsi
+  - type: Damageable
+    damageContainer: Biological
+  - type: BodyPart
+  - type: ContainerContainer
+    containers:
+      bodypart: !type:Container
+        ents: []
+  - type: StaticPrice #DynamicPrice
+    price: 100
+  - type: Tag
+    tags:
+      - Trash
 
 - type: entity
-  parent: [ PartFeroxiBase, BaseTorso ]
+  parent: PartFeroxiBase
   id: TorsoFeroxi
   name: feroxi torso
+  components:
+  - type: Sprite
+    state: "torso_m"
+  - type: Icon
+    state: "torso_m"
+  - type: BodyPart
+    partType: Torso
 
 - type: entity
-  parent: [ PartFeroxiBase, BaseHead ]
+  parent: PartFeroxiBase
   id: HeadFeroxi
   name: feroxi head
+  components:
+  - type: Sprite
+    state: "head_m"
+  - type: Icon
+    state: "head_m"
+  - type: BodyPart
+    partType: Head
+    vital: true
+  - type: Input
+    context: "ghost"
+  - type: InputMover
+  - type: GhostOnMove
+  - type: Tag
+    tags:
+      - Head
 
 - type: entity
-  parent: [ PartFeroxiBase, BaseLeftArm ]
+  parent: PartFeroxiBase
   id: LeftArmFeroxi
   name: left feroxi arm
+  components:
+  - type: Sprite
+    state: "l_arm"
+  - type: Icon
+    state: "l_arm"
+  - type: BodyPart
+    partType: Arm
+    symmetry: Left
 
 - type: entity
-  parent: [ PartFeroxiBase, BaseRightArm ]
+  parent: PartFeroxiBase
   id: RightArmFeroxi
   name: right feroxi arm
+  components:
+  - type: Sprite
+    state: "r_arm"
+  - type: Icon
+    state: "r_arm"
+  - type: BodyPart
+    partType: Arm
+    symmetry: Right
 
 - type: entity
-  parent: [ PartFeroxiBase, BaseLeftHand ]
+  parent: PartFeroxiBase
   id: LeftHandFeroxi
   name: left feroxi hand
+  components:
+  - type: Sprite
+    state: "l_hand"
+  - type: Icon
+    state: "l_hand"
+  - type: BodyPart
+    partType: Hand
+    symmetry: Left
 
 - type: entity
-  parent: [ PartFeroxiBase, BaseRightHand ]
+  parent: PartFeroxiBase
   id: RightHandFeroxi
   name: right feroxi hand
+  components:
+  - type: Sprite
+    state: "r_hand"
+  - type: Icon
+    state: "r_hand"
+  - type: BodyPart
+    partType: Hand
+    symmetry: Right
 
 - type: entity
-  parent: [ PartFeroxiBase, BaseLeftLeg ]
+  parent: PartFeroxiBase
   id: LeftLegFeroxi
   name: left feroxi leg
+  components:
+  - type: Sprite
+    state: "l_leg"
+  - type: Icon
+    state: "l_leg"
+  - type: BodyPart
+    partType: Leg
+    symmetry: Left
+  - type: MovementBodyPart
 
 - type: entity
-  parent: [ PartFeroxiBase, BaseRightLeg ]
+  parent: PartFeroxiBase
   id: RightLegFeroxi
   name: right feroxi leg
+  components:
+  - type: Sprite
+    state: "r_leg"
+  - type: Icon
+    state: "r_leg"
+  - type: BodyPart
+    partType: Leg
+    symmetry: Right
+  - type: MovementBodyPart
 
 - type: entity
-  parent: [ PartFeroxiBase, BaseLeftFoot ]
+  parent: PartFeroxiBase
   id: LeftFootFeroxi
   name: left feroxi foot
+  components:
+  - type: Sprite
+    state: "l_foot"
+  - type: Icon
+    state: "l_foot"
+  - type: BodyPart
+    partType: Foot
+    symmetry: Left
 
 - type: entity
-  parent: [ PartFeroxiBase, BaseRightFoot ]
+  parent: PartFeroxiBase
   id: RightFootFeroxi
   name: right feroxi foot
+  components:
+  - type: Sprite
+    state: "r_foot"
+  - type: Icon
+    state: "r_foot"
+  - type: BodyPart
+    partType: Foot
+    symmetry: Right
+
