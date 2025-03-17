@@ -96,3 +96,25 @@
 #           reagents:
 #           - ReagentId: NaturalLubricant
 #             Quantity: 25
+
+- type: trait
+  id: HoneyProducer
+  category: Physical
+  requirements:
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Borg
+        - MedicalBorg
+  functions:
+    - !type:TraitAddComponent
+      components:
+        - type: HoneyProducer
+          solutionname: honeystomach
+    - !type:TraitAddSolutionContainer
+      solutions:
+        vagina:
+          maxVol: 50
+          reagents:
+          - ReagentId: Honey
+            Quantity: 50
