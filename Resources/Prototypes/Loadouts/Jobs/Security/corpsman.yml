@@ -237,3 +237,16 @@
 # Shoes
 
 # Uniforms
+- type: loadout
+  id: LoadoutUniformJumpsuitCorpsmanSummer
+  category: JobsSecurityCorpsman
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutCorpsmanUniform
+    - !type:CharacterJobRequirement
+      jobs:
+        - Brigmedic
+  items:
+    - ClothingUniformJumpsuitCorpsmanSummer

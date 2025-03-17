@@ -22,6 +22,17 @@
 
 - type: entity
   parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitCorpsmanSummer
+  name: Summer Corpsman Uniform
+  description: Finally, now the Corpsman can stay cool while staying in their colours. Comes with a holographic arm band to let people know who to come to when they're bleeding out in a firefight!
+  components:
+  - type: Sprite
+    sprite: _DEN/Clothing/Uniforms/Jumpsuit/summercorpsman.rsi
+  - type: Clothing
+    sprite: _DEN/Clothing/Uniforms/Jumpsuit/summercorpsman.rsi
+
+- type: entity
+  parent: ClothingUniformBase
   id: ClothingUniformJumpsuitCatsuit
   name: latex catsuit
   description: A catsuit made of latex, usually worn under hardsuits or coats, quite the fashion statement.
