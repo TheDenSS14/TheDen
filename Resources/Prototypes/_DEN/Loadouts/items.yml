@@ -131,3 +131,24 @@
   canBeHeirloom: true
   items:
     - Clicker
+
+# Survival boxes
+- type: loadout
+  id: LoadoutItemBoxSurvival
+  category: Items
+  cost: 0
+  items:
+    - BoxSurvival
+  requirements:
+    - !type:CharacterDepartmentRequirement
+       inverted: true
+       departments:
+         - Security
+         - Medical
+         - Engineering
+    - !type:CharacterJobRequirement
+       inverted: true
+       jobs:
+         - Clown
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBoxKits

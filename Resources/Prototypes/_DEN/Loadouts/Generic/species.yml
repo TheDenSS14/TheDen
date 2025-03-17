@@ -1,0 +1,38 @@
+- type: loadout
+  id: LoadoutSpeciesEmergencyWaterVaporTank
+  category: Species
+  cost: 0
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      species:
+        - Feroxi
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutAirTank
+  items:
+    - EmergencyWaterVaporTankFilled
+
+- type: loadout
+  id: LoadoutSpeciesExtendedEmergencyWaterVaporTank
+  category: Species
+  cost: 1
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      species:
+        - Feroxi
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutAirTank
+  items:
+    - ExtendedEmergencyWaterVaporTankFilled
+
+- type: loadout
+  id: LoadoutSpeciesDoubleEmergencyWaterVaporTank
+  category: Species
+  cost: 2
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      species:
+        - Feroxi
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutAirTank
+  items:
+    - DoubleEmergencyWaterVaporTankFilled
