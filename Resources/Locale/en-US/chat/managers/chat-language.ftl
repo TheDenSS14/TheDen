@@ -19,6 +19,7 @@ chat-language-Marish-name = Marish
 chat-language-ScugSign-name = Scug Sign
 chat-language-Arachnic-name = Arachnic
 chat-language-Chittin-name = Chittin
+chat-language-Nehina-name = Nēhina
 
 # Animal Languages
 
