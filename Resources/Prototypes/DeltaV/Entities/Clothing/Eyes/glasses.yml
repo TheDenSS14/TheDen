@@ -37,11 +37,18 @@
   - type: Construction
     graph: GlassesCorpsHUD
     node: glassesCorps
+  - type: ShowHealthBars
+    damageContainers:
+    - Biological
+  - type: ShowHealthIcons
+    damageContainers:
+    - Biological
   - type: Tag
     tags:
     - HamsterWearable
     - WhitelistChameleon
     - SecDogWearable
+    - HudMedical
   - type: GuideHelp
     guides:
     - Security

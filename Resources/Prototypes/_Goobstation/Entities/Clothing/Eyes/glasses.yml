@@ -1,7 +1,7 @@
 - type: entity
   parent: [ClothingEyesBase, ShowSecurityIcons, ShowMedicalIcons]
   id: ClothingEyesGlassesMedSec
-  name: medsecglasses
+  name: BSO Glasses
   description: Sunglasses with a medical and security hud
   components:
   - type: Sprite
@@ -23,4 +23,4 @@
   - type: ShowHealthIcons
     damageContainers:
     - Biological
-    
+
