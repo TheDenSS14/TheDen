@@ -1467,6 +1467,10 @@
     state: pda-seniorresearcher
   - type: CartridgeLoader
     preinstalled:
+    - CrewManifestCartridge
+    - NotekeeperCartridge
+    - NewsReaderCartridge
+    - NanoChatCartridge
     - PsiWatchCartridge
 
 - type: entity

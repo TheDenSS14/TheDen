@@ -80,6 +80,9 @@
   - type: SliceableFood
     count: 5
     slice: FoodMealCarpSushiSlice
+  - type: Tag
+    tags:
+    - Meat
 
 - type: entity
   name: carp sushi
@@ -107,3 +110,6 @@
           Quantity: 1
         - ReagentId: CucumberWater
           Quantity: .4
+  - type: Tag
+    tags:
+    - Meat
