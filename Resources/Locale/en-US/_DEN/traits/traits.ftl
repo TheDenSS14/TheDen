@@ -25,3 +25,8 @@ trait-description-ZeroGAverse =
 
 trait-name-HoneyProducer = Honey Stomach
 trait-description-HoneyProducer = Your abdomen contains an extra stomach that processes nutrients into honey.
+
+trait-name-TailWag = Tail Wag
+trait-description-TailWag =
+    Your species has the innate ability to wag their tails, often used as an avenue to express untold emotions.
+    Note: [color=red]This will only work if the tail marking your character uses has wagging animations available.[/color]
