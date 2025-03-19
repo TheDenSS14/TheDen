@@ -446,6 +446,9 @@ trait-description-Marish = A language consisting of pure emotion, learnable only
 trait-name-Arachnic = Arachnic
 trait-description-Arachnic = The language of arachnids is composed of mostly clicks and hisses, it almost has a rhythmic character to it at times.
 
+trait-name-Nehina = Nēhina
+trait-description-Nehina =  A language spoken by the Feroxi, well adapted to speaking under the waters of ocean planets.
+
 trait-name-LowPotential = Low Psi-Potential
 trait-description-LowPotential =
     You possess an unusually weak connection to the noösphere, which makes it more difficult to obtain new psionic powers.
