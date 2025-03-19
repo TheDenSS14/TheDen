@@ -45,12 +45,9 @@
   category: JobsLogisticsAUncategorized
   cost: 1
   requirements:
-  - !type:CharacterJobRequirement
-    jobs:
-    - CargoTechnician
-    - SalvageSpecialist
-    - Quartermaster
-    - MailCarrier
+  - !type:CharacterDepartmentRequirement
+    departments:
+    - Logistics
   items:
   - ClothingNeckCollarLogi
 

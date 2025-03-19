@@ -6,7 +6,7 @@
   cost: 0
   exclusive: true
   items:
-    - ClothingBackpackSatchelChemistry
+    - ClothingBackpackChemistry
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutChemistBackpacks
@@ -300,7 +300,7 @@
 # Shoes
 - type: loadout
   id: LoadoutMedicalShoesEnclosedChem
-  category: JobsMedicalAUncategorized
+  category: JobsMedicalChemist
   cost: 0
   exclusive: true
   requirements:

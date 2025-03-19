@@ -7,12 +7,9 @@
   items:
   - ClothingHandsEpiWarmers
   requirements:
-  - !type:CharacterJobRequirement
-    jobs:
-    - Scientist
-    - ResearchAssistant
-    - ResearchDirector
-    - ForensicMantis
+  - !type:CharacterDepartmentRequirement
+    departments:
+    - Epistemics
 
 - type: loadout
   id: LoadoutClothingUnderSocksEpi
@@ -27,12 +24,9 @@
     species:
     - Diona
     - Harpy
-  - !type:CharacterJobRequirement
-    jobs:
-    - Scientist
-    - ResearchAssistant
-    - ResearchDirector
-    - ForensicMantis
+  - !type:CharacterDepartmentRequirement
+    departments:
+    - Epistemics
 
 - type: loadout
   id: LoadoutClothingUniformEpiThong
@@ -42,23 +36,18 @@
   items:
   - ClothingUniformEpiThong
   requirements:
-  - !type:CharacterJobRequirement
-    jobs:
-    - Scientist
-    - ResearchAssistant
-    - ResearchDirector
-    - ForensicMantis
+  - !type:CharacterDepartmentRequirement
+    departments:
+    - Epistemics
 
 - type: loadout
   id: LoadoutScienceNeckCollar
   category: JobsEpistemicsAAUncategorized
   cost: 1
   requirements:
-  - !type:CharacterJobRequirement
-    jobs:
-    - Scientist
-    - ResearchAssistant
-    - ResearchDirector
+  - !type:CharacterDepartmentRequirement
+    departments:
+    - Epistemics
   items:
   - ClothingNeckCollarEpi
 

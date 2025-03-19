@@ -10,9 +10,9 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutBotanistBackpacks
-    - !type:CharacterDepartmentRequirement
-      departments:
-        - Civilian
+    - !type:CharacterJobRequirement
+      jobs:
+        - Botanist
 
 - type: loadout
   id: LoadoutServiceBotanistDuffelHydroponics
@@ -24,9 +24,9 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutBotanistBackpacks
-    - !type:CharacterDepartmentRequirement
-      departments:
-        - Civilian
+    - !type:CharacterJobRequirement
+      jobs:
+        - Botanist
 
 - type: loadout
   id: LoadoutServiceBotanistSatchelHydroponics
@@ -38,9 +38,9 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutBotanistBackpacks
-    - !type:CharacterDepartmentRequirement
-      departments:
-        - Civilian
+    - !type:CharacterJobRequirement
+      jobs:
+        - Botanist
 
 # Belt
 

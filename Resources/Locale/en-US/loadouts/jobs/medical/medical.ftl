@@ -17,3 +17,7 @@ loadout-name-LoadoutSeniorPhysicianBeltMedical = medical belt (empty)
 loadout-name-LoadoutSeniorPhysicianBeltMedicalAdvancedFilled = medical belt (filled, advanced)
 loadout-description-LoadoutSeniorPhysicianBeltMedicalAdvancedFilled =
     The standard alotment of topical medicines in this pouch have been replaced with their advanced varieties, such as medicated sutures and regenerative mesh.
+
+# The Den additions (Loadout fixes)
+loadout-name-LoadoutMedicalInternBeltMedical = medical belt (empty)
+loadout-name-LoadoutMedicalInternBeltMedicalFilled = medical belt (filled)

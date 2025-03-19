@@ -7,13 +7,9 @@
   items:
   - ClothingHandsSecurityWarmers
   requirements:
-  - !type:CharacterJobRequirement
-    jobs:
-    - SecurityOfficer
-    - SecurityCadet
-    - Warden
-    - Detective
-    - HeadOfSecurity
+  - !type:CharacterDepartmentRequirement
+    departments:
+    - Security
 
 - type: loadout
   id: LoadoutClothingUnderSocksSecurity
@@ -28,13 +24,9 @@
     species:
     - Diona
     - Harpy
-  - !type:CharacterJobRequirement
-    jobs:
-    - SecurityOfficer
-    - SecurityCadet
-    - Warden
-    - Detective
-    - HeadOfSecurity
+  - !type:CharacterDepartmentRequirement
+    departments:
+    - Security
 
 - type: loadout
   id: LoadoutClothingUniformSecurityThong
@@ -44,24 +36,18 @@
   items:
   - ClothingUniformSecurityThong
   requirements:
-  - !type:CharacterJobRequirement
-    jobs:
-    - SecurityOfficer
-    - SecurityCadet
-    - Warden
-    - Detective
-    - HeadOfSecurity
+  - !type:CharacterDepartmentRequirement
+    departments:
+    - Security
 
 - type: loadout
   id: LoadoutSecurityNeckCollar
   category: JobsSecurityAUncategorized
   cost: 1
   requirements:
-  - !type:CharacterJobRequirement
-    jobs:
-    - SecurityOfficer
-    - Warden
-    - HeadOfSecurity
+  - !type:CharacterDepartmentRequirement
+    departments:
+    - Security
   items:
   - ClothingNeckCollarSec
 

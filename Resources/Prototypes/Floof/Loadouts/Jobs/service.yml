@@ -7,14 +7,15 @@
   items:
   - ClothingHandsServiceWarmers
   requirements:
-  - !type:CharacterJobRequirement
-    jobs:
-    - Bartender
-    - Botanist
-    - Reporter
-    - Musician
-    - Chef
-    - ServiceWorker
+  - !type:CharacterLogicAndRequirement
+    requirements:
+    - !type:CharacterDepartmentRequirement
+      departments:
+      - Civilian
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+      - Passenger
 
 - type: loadout
   id: LoadoutClothingUnderSocksService
@@ -29,14 +30,15 @@
     species:
     - Diona
     - Harpy
-  - !type:CharacterJobRequirement
-    jobs:
-    - Bartender
-    - Botanist
-    - Reporter
-    - Musician
-    - Chef
-    - ServiceWorker
+  - !type:CharacterLogicAndRequirement
+    requirements:
+    - !type:CharacterDepartmentRequirement
+      departments:
+      - Civilian
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+      - Passenger
 
 - type: loadout
   id: LoadoutClothingUniformServiceThong
@@ -46,14 +48,15 @@
   items:
   - ClothingUniformServiceThong
   requirements:
-  - !type:CharacterJobRequirement
-    jobs:
-    - Bartender
-    - Botanist
-    - Reporter
-    - Musician
-    - Chef
-    - ServiceWorker
+  - !type:CharacterLogicAndRequirement
+    requirements:
+    - !type:CharacterDepartmentRequirement
+      departments:
+      - Civilian
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+      - Passenger
 
 - type: loadout
   id: LoadoutClothingUniformServiceUni
@@ -63,14 +66,15 @@
   items:
   - ClothingUniformServiceUni
   requirements:
-  - !type:CharacterJobRequirement
-    jobs:
-    - Bartender
-    - Botanist
-    - Reporter
-    - Musician
-    - Chef
-    - ServiceWorker
+  - !type:CharacterLogicAndRequirement
+    requirements:
+    - !type:CharacterDepartmentRequirement
+      departments:
+      - Civilian
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+      - Passenger
 
 #Bartender
 - type: loadout
@@ -290,7 +294,7 @@
 
 - type: loadout
   id: LoadoutClothingNeckCloakJanitor
-  category: JobsServiceAUncategorized
+  category: JobsServiceJanitor
   cost: 2
   exclusive: true
   requirements:

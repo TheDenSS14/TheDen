@@ -7,13 +7,9 @@
   items:
   - ClothingHandsMedicWarmers
   requirements:
-  - !type:CharacterJobRequirement
-    jobs:
-    - MedicalDoctor
-    - Paramedic
-    - ChiefMedicalOfficer
-    - MedicalIntern
-    - Chemist
+  - !type:CharacterDepartmentRequirement
+    departments:
+    - Medical
 
 - type: loadout
   id: LoadoutClothingUnderSocksMedic
@@ -28,13 +24,9 @@
     species:
     - Diona
     - Harpy
-  - !type:CharacterJobRequirement
-    jobs:
-    - MedicalDoctor
-    - Paramedic
-    - ChiefMedicalOfficer
-    - MedicalIntern
-    - Chemist
+  - !type:CharacterDepartmentRequirement
+    departments:
+    - Medical
 
 - type: loadout
   id: LoadoutClothingUniformMedicThong
@@ -44,26 +36,23 @@
   items:
   - ClothingUniformMedicThong
   requirements:
-  - !type:CharacterJobRequirement
-    jobs:
-    - MedicalDoctor
-    - Paramedic
-    - ChiefMedicalOfficer
-    - MedicalIntern
-    - Chemist
+  - !type:CharacterDepartmentRequirement
+    departments:
+    - Medical
 
 - type: loadout
   id: LoadoutMedicalNeckCollar
   category: JobsMedicalAUncategorized
   cost: 1
   requirements:
-  - !type:CharacterJobRequirement
-    jobs:
-    - MedicalDoctor
-    - Paramedic
-    - ChiefMedicalOfficer
-    - MedicalIntern
-    - Brigmedic
+  - !type:CharacterLogicXorRequirement
+    requirements:
+    - !type:CharacterDepartmentRequirement
+      departments:
+      - Medical
+    - !type:CharacterJobRequirement
+      jobs:
+      - Brigmedic
   items:
   - ClothingNeckCollarMed
 

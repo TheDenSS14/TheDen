@@ -10,9 +10,9 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutPsychologistBackpacks
-    - !type:CharacterDepartmentRequirement
-      departments:
-        - Medical
+    - !type:CharacterJobRequirement
+      jobs:
+        - Psychologist
 
 - type: loadout
   id: LoadoutPsychologistBackpackSatchel
@@ -24,9 +24,9 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutPsychologistBackpacks
-    - !type:CharacterDepartmentRequirement
-      departments:
-        - Medical
+    - !type:CharacterJobRequirement
+      jobs:
+        - Psychologist
 
 - type: loadout
   id: LoadoutPsychologistBackpackDuffel
@@ -38,9 +38,9 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutPsychologistBackpacks
-    - !type:CharacterDepartmentRequirement
-      departments:
-        - Medical
+    - !type:CharacterJobRequirement
+      jobs:
+        - Psychologist
 
 # Belt
 
@@ -132,15 +132,16 @@
   items:
     - ClothingUniformJumpsuitPsychologist
 
-- type: loadout
-  id: LoadoutPsychologistJumpskirt
-  category: JobsMedicalPsychologist
-  cost: 0
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutPsychologistUniforms
-    - !type:CharacterJobRequirement
-      jobs:
-        - Psychologist
-  items:
-    - ClothingUniformJumpsuitPsychologist
+# psychologist jumpskirt doesnt exist
+#- type: loadout
+#  id: LoadoutPsychologistJumpskirt
+#  category: JobsMedicalPsychologist
+#  cost: 0
+#  requirements:
+#    - !type:CharacterItemGroupRequirement
+#      group: LoadoutPsychologistUniforms
+#    - !type:CharacterJobRequirement
+#      jobs:
+#        - Psychologist
+#  items:
+#    - ClothingUniformJumpskirtPsychologist
