@@ -1,5 +1,6 @@
 using Content.Server.Administration.Logs;
 using Content.Server.Chemistry.Containers.EntitySystems;
+using Content.Server.Chemistry.TileReactions;
 using Content.Server.DoAfter;
 using Content.Server.Fluids.Components;
 using Content.Server.Spreader;
@@ -389,23 +390,46 @@ public sealed partial class PuddleSystem : SharedPuddleSystem
     private void UpdateSlip(EntityUid entityUid, PuddleComponent component, Solution solution)
     {
         var isSlippery = false;
+        var isSuperSlippery = false;
         // The base sprite is currently at 0.3 so we require at least 2nd tier to be slippery or else it's too hard to see.
         var amountRequired = FixedPoint2.New(component.OverflowVolume.Float() * LowThreshold);
         var slipperyAmount = FixedPoint2.Zero;
 
+        var launchForwardsMultiplier = SlipperyComponent.DefaultLaunchForwardsMultiplier;
+        var paralyzeTime = SlipperyComponent.DefaultParalyzeTime;
+        var requiredSlipSpeed = StepTriggerComponent.DefaultRequiredTriggeredSpeed;
+
+
+        // Looping through every reagent in the puddle
         foreach (var (reagent, quantity) in solution.Contents)
         {
             var reagentProto = _prototypeManager.Index<ReagentPrototype>(reagent.Prototype);
 
-            if (reagentProto.Slippery)
-            {
-                slipperyAmount += quantity;
+            // If you're not slippery, skip.
+            if (!reagentProto.Slippery)
+                continue;
+            // Total up how much slippery stuff is in the puddle.
+            slipperyAmount += quantity;
 
-                if (slipperyAmount > amountRequired)
-                {
-                    isSlippery = true;
-                    break;
-                }
+            // If there's no slippery, who gives a fuck, skipple.
+            if (slipperyAmount <= amountRequired)
+                continue;
+
+            // There IS enough slippery for us to care!
+            isSlippery = true;
+
+            // Check Tile Reactions for each reagent.
+            foreach (var tileReaction in reagentProto.TileReactions)
+            {
+                // We ONLY care about SpillTileReaction. If there isn't, skip.
+                if (tileReaction is not SpillTileReaction spillTileReaction)
+                    continue;
+                // If the tile's super slippery, so are we!
+                isSuperSlippery = spillTileReaction.SuperSlippery;
+                // Use the HIGHEST slipperiness of whatever's in the puddle.
+                launchForwardsMultiplier = launchForwardsMultiplier < spillTileReaction.LaunchForwardsMultiplier ? spillTileReaction.LaunchForwardsMultiplier : launchForwardsMultiplier;
+                paralyzeTime = paralyzeTime < spillTileReaction.ParalyzeTime ? spillTileReaction.ParalyzeTime : paralyzeTime;
+                requiredSlipSpeed = requiredSlipSpeed > spillTileReaction.RequiredSlipSpeed ?  spillTileReaction.RequiredSlipSpeed : requiredSlipSpeed;
             }
         }
 
@@ -415,6 +439,18 @@ public sealed partial class PuddleSystem : SharedPuddleSystem
             _stepTrigger.SetActive(entityUid, true, comp);
             var friction = EnsureComp<TileFrictionModifierComponent>(entityUid);
             _tile.SetModifier(entityUid, TileFrictionController.DefaultFriction * 0.5f, friction);
+
+            // If we HAVE a SlipperyComponent, get it.
+            if (!TryComp<SlipperyComponent>(entityUid, out var slipperyComponent))
+                return;
+            // If our contents ARE SuperSlippery, set our component to SuperSlippery
+            slipperyComponent.SuperSlippery = isSuperSlippery;
+            // Update Our Slipperiness to match our contents!
+            _stepTrigger.SetRequiredTriggerSpeed(entityUid, requiredSlipSpeed);
+            slipperyComponent.LaunchForwardsMultiplier = launchForwardsMultiplier;
+            slipperyComponent.ParalyzeTime = paralyzeTime;
+            // Updates the client on the changed slipperiness.
+            Dirty(entityUid,slipperyComponent);
         }
         else if (TryComp<StepTriggerComponent>(entityUid, out var comp))
         {
