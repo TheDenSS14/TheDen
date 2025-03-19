@@ -23,8 +23,9 @@
   accessGroups:
   - BasicAllAccess
   access:
-  - CentralCommand
   - BlueshieldOfficer
+  - CentralCommand
+  - Corpsman
   special:
   - !type:AddImplantSpecial
     implants: [ MindShieldImplant ]
