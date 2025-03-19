@@ -242,6 +242,19 @@
   items:
     - ClothingOuterCoatHoSTrench
 
+- type: loadout
+  id: LoadoutCommandHOSOuterArmorHosSamurai
+  category: JobsSecurityHeadOfSecurity
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutHeadOfSecurityOuter
+    - !type:CharacterJobRequirement
+      jobs:
+        - HeadOfSecurity
+  items:
+    - ClothingOuterArmorHosSamurai
+
 # Shoes
 - type: loadout
   id: LoadoutCommandHOSShoesBootsWinter
