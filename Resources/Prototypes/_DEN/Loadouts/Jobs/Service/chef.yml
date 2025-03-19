@@ -1,0 +1,27 @@
+- type: loadout
+  id: LoadoutServiceJumpsuitChef
+  category: JobsServiceChef
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutChefUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - Chef
+  items:
+    - ClothingUniformJumpsuitChef
+
+- type: loadout
+  id: LoadoutServiceJumpskirtChef
+  category: JobsServiceChef
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutChefUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - Chef
+  items:
+    - ClothingUniformJumpskirtChef

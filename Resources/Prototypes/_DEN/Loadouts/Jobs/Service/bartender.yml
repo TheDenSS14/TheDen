@@ -1,0 +1,27 @@
+- type: loadout
+  id: LoadoutServiceBartenderUniformSuit
+  category: JobsServiceBartender
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBartenderUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - Bartender
+  items:
+    - ClothingUniformJumpsuitBartender
+
+- type: loadout
+  id: LoadoutServiceBartenderUniformSkirt
+  category: JobsServiceBartender
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBartenderUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - Bartender
+  items:
+    - ClothingUniformJumpskirtBartender

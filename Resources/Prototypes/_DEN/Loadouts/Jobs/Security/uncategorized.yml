@@ -67,3 +67,31 @@
         - Security
   items:
     - ClothingMaskGasSecurityBallistic
+
+- type: loadout
+  id: LoadoutSecurityUniformJumpsuit
+  category: JobsSecurityAUncategorized
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSecurityUniforms
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Security
+  items:
+    - ClothingUniformJumpsuitSec
+
+- type: loadout
+  id: LoadoutSecurityUniformJumpskirt
+  category: JobsSecurityAUncategorized
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSecurityUniforms
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Security
+  items:
+    - ClothingUniformJumpskirtSec

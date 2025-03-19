@@ -63,7 +63,15 @@
 #  maxItems: 1
 #  items:
 #
-#- type: characterItemGroup
-#  id: LoadoutDetectiveUniforms
-#  maxItems: 1
-#  items:
+- type: characterItemGroup
+  id: LoadoutDetectiveUniforms
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutUniformJumpsuitDetective
+    - type: loadout
+      id: LoadoutUniformJumpskirtDetective
+    - type: loadout
+      id: LoadoutUniformJumpsuitDetectiveGrey
+    - type: loadout
+      id: LoadoutUniformJumpskirtDetectiveGrey

@@ -12,3 +12,31 @@
         - Warden
   items:
     - Greatsword
+
+- type: loadout
+  id: LoadoutUniformJumpsuitWarden
+  category: JobsSecurityWarden
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutWardenUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - Warden
+  items:
+    - ClothingUniformJumpsuitWarden
+
+- type: loadout
+  id: LoadoutUniformJumpskirtWarden
+  category: JobsSecurityWarden
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutWardenUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - Warden
+  items:
+    - ClothingUniformJumpskirtWarden

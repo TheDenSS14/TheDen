@@ -77,7 +77,11 @@
     - type: loadout
       id: LoadoutServiceMimeShoesBootsWinter
 
-#- type: characterItemGroup
-#  id: LoadoutMimeUniforms
-#  maxItems: 1
-#  items:
+- type: characterItemGroup
+  id: LoadoutMimeUniforms
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutServiceJumpsuitMime
+    - type: loadout
+      id: LoadoutServiceJumpskirtMime

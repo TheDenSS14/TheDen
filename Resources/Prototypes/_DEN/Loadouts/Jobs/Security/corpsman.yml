@@ -1,0 +1,27 @@
+- type: loadout
+  id: LoadoutUniformJumpsuitCorpsman
+  category: JobsSecurityCorpsman
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutCorpsmanUniform
+    - !type:CharacterJobRequirement
+      jobs:
+        - Brigmedic
+  items:
+    - ClothingUniformJumpsuitBrigmedic
+
+- type: loadout
+  id: LoadoutUniformJumpskirtCorpsman
+  category: JobsSecurityCorpsman
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutCorpsmanUniform
+    - !type:CharacterJobRequirement
+      jobs:
+        - Brigmedic
+  items:
+    - ClothingUniformJumpskirtBrigmedic

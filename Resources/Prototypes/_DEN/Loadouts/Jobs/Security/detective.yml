@@ -1,0 +1,55 @@
+- type: loadout
+  id: LoadoutUniformJumpsuitDetective
+  category: JobsSecurityDetective
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutDetectiveUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - Detective
+  items:
+    - ClothingUniformJumpsuitDetective
+
+- type: loadout
+  id: LoadoutUniformJumpskirtDetective
+  category: JobsSecurityDetective
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutDetectiveUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - Detective
+  items:
+    - ClothingUniformJumpskirtDetective
+
+- type: loadout
+  id: LoadoutUniformJumpsuitDetectiveGrey
+  category: JobsSecurityDetective
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutDetectiveUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - Detective
+  items:
+    - ClothingUniformJumpsuitDetectiveGrey
+
+- type: loadout
+  id: LoadoutUniformJumpskirtDetectiveGrey
+  category: JobsSecurityDetective
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutDetectiveUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - Detective
+  items:
+    - ClothingUniformJumpskirtDetectiveGrey

@@ -1,0 +1,27 @@
+- type: loadout
+  id: LoadoutServiceJumpsuitHydroponics
+  category: JobsServiceBotanist
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBotanistUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - Botanist
+  items:
+    - ClothingUniformJumpsuitHydroponics
+
+- type: loadout
+  id: LoadoutServiceJumpskirtHydroponics
+  category: JobsServiceBotanist
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBotanistUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - Botanist
+  items:
+    - ClothingUniformJumpskirtHydroponics

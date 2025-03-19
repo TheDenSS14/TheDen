@@ -1,0 +1,27 @@
+- type: loadout
+  id: LoadoutServiceJumpsuitMime
+  category: JobsServiceMime
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMimeUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - Mime
+  items:
+    - ClothingUniformJumpsuitMime
+
+- type: loadout
+  id: LoadoutServiceJumpskirtMime
+  category: JobsServiceMime
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMimeUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - Mime
+  items:
+    - ClothingUniformJumpskirtMime
