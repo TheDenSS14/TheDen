@@ -9,7 +9,7 @@
     - ClothingEyesGlassesThermalBudget
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutEyes2
+      group: LoadoutEyes
 
 - type: loadout
   id: LoadoutEyesChemicalBudget
@@ -20,7 +20,7 @@
     - ClothingEyesGlassesChemicalBudget
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutEyes2
+      group: LoadoutEyes
 
 - type: loadout
   id: LoadoutEyesMesonBudget
@@ -31,4 +31,4 @@
     - ClothingEyesGlassesMesonBudget
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutEyes2
+      group: LoadoutEyes
