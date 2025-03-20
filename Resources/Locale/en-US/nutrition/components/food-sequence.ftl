@@ -80,7 +80,6 @@ food-sequence-content-cherry = cherry
 food-sequence-content-snail = snail
 food-sequence-content-cig = cigarette
 food-sequence-content-beetroot = beetroot
-food-sequence-content-dragon = dragon
 
 # BURGERS
 
