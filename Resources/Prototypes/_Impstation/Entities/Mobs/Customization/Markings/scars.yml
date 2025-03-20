@@ -1,8 +1,8 @@
 - type: marking
   id: ArmProstheticLeft
   bodyPart: LArm
-  markingCategory: Arms
-  speciesRestriction: [Human, Dwarf, Reptilian, SlimePerson, Arachnid, Oni, Goblin, Felinid] # Frontier: add Oni, Goblin, Felinid
+  markingCategory: LeftArm
+  speciesRestriction: [Human, Dwarf, Reptilian, SlimePerson, Arachnid, Felinid] # Frontier: add Felinid
   followSkinColor: false
   coloring:
     default:
@@ -16,8 +16,8 @@
 - type: marking
   id: ArmTwistingLeft
   bodyPart: LArm
-  markingCategory: Arms
-  speciesRestriction: [Human, Dwarf, Reptilian, SlimePerson, Arachnid, Oni, Goblin, Felinid] # Frontier: add Oni, Goblin, Felinid
+  markingCategory: LeftArm
+  speciesRestriction: [Human, Dwarf, Reptilian, SlimePerson, Arachnid, Felinid] # Frontier: add Felinid
   followSkinColor: false
   sprites:
   - sprite: _Impstation/Mobs/Customization/scars.rsi
@@ -25,9 +25,9 @@
 
 - type: marking
   id: ArmProstheticRight
-  bodyPart: RArm
-  markingCategory: Arms
-  speciesRestriction: [Human, Dwarf, Reptilian, SlimePerson, Arachnid, Oni, Goblin, Felinid] # Frontier: add Oni, Goblin, Felinid
+  bodyPart: LArm
+  markingCategory: RightArm
+  speciesRestriction: [Human, Dwarf, Reptilian, SlimePerson, Arachnid, Felinid] # Frontier: add Felinid
   followSkinColor: false
   coloring:
     default:
@@ -40,9 +40,9 @@
 
 - type: marking
   id: ArmTwistingRight
-  bodyPart: RArm
-  markingCategory: Arms
-  speciesRestriction: [Human, Dwarf, Reptilian, SlimePerson, Arachnid, Oni, Goblin, Felinid] # Frontier: add Oni, Goblin, Felinid
+  bodyPart: LArm
+  markingCategory: RightArm
+  speciesRestriction: [Human, Dwarf, Reptilian, SlimePerson, Arachnid, Felinid] # Frontier: add Felinid
   followSkinColor: false
   sprites:
   - sprite: _Impstation/Mobs/Customization/scars.rsi
@@ -52,7 +52,7 @@
   id: ChestBackstabbed
   bodyPart: Chest
   markingCategory: Chest
-  speciesRestriction: [Human, Dwarf, Reptilian, SlimePerson, Oni, Goblin, Felinid] # Frontier: add Oni, Goblin, Felinid
+  speciesRestriction: [Human, Dwarf, Reptilian, SlimePerson, Felinid] # Frontier: add Felinid
   followSkinColor: false
   sprites:
   - sprite: _Impstation/Mobs/Customization/scars.rsi
@@ -62,7 +62,7 @@
   id: ChestTwistingLeft
   bodyPart: Chest
   markingCategory: Chest
-  speciesRestriction: [Human, Dwarf, Reptilian, SlimePerson, Oni, Goblin, Felinid] # Frontier: add Oni, Goblin, Felinid
+  speciesRestriction: [Human, Dwarf, Reptilian, SlimePerson, Felinid] # Frontier: add Felinid
   followSkinColor: false
   sprites:
   - sprite: _Impstation/Mobs/Customization/scars.rsi
@@ -72,7 +72,7 @@
   id: ChestTwistingRight
   bodyPart: Chest
   markingCategory: Chest
-  speciesRestriction: [Human, Dwarf, Reptilian, SlimePerson, Oni, Goblin, Felinid] # Frontier: add Oni, Goblin, Felinid
+  speciesRestriction: [Human, Dwarf, Reptilian, SlimePerson, Felinid] # Frontier: add Felinid
   followSkinColor: false
   sprites:
   - sprite: _Impstation/Mobs/Customization/scars.rsi
@@ -82,7 +82,7 @@
   id: ChestStar
   bodyPart: Chest
   markingCategory: Chest
-  speciesRestriction: [Human, Dwarf, Reptilian, SlimePerson, Arachnid, Oni, Goblin, Felinid] # Frontier: add Oni, Goblin, Felinid
+  speciesRestriction: [Human, Dwarf, Reptilian, SlimePerson, Arachnid, Felinid] # Frontier: add Felinid
   followSkinColor: false
   sprites:
   - sprite: _Impstation/Mobs/Customization/scars.rsi
@@ -91,8 +91,8 @@
 - type: marking
   id: FootProstheticLeft
   bodyPart: LFoot
-  markingCategory: Legs
-  speciesRestriction: [Human, Dwarf, SlimePerson, Arachnid, Oni, Goblin, Felinid] # Frontier: add Oni, Goblin, Felinid
+  markingCategory: LeftFoot
+  speciesRestriction: [Human, Dwarf, SlimePerson, Arachnid, Felinid] # Frontier: add Felinid
   followSkinColor: false
   coloring:
     default:
@@ -106,8 +106,8 @@
 - type: marking
   id: FootProstheticRight
   bodyPart: RFoot
-  markingCategory: Legs
-  speciesRestriction: [Human, Dwarf, SlimePerson, Arachnid, Oni, Goblin, Felinid] # Frontier: add Oni, Goblin, Felinid
+  markingCategory: RightFoot
+  speciesRestriction: [Human, Dwarf, SlimePerson, Arachnid, Felinid] # Frontier: add Felinid
   followSkinColor: false
   coloring:
     default:
@@ -121,8 +121,8 @@
 - type: marking
   id: HandProstheticLeft
   bodyPart: LHand
-  markingCategory: Arms
-  speciesRestriction: [Human, Dwarf, Reptilian, SlimePerson, Arachnid, Oni, Goblin, Felinid] # Frontier: add Oni, Goblin, Felinid
+  markingCategory: LeftHand
+  speciesRestriction: [Human, Dwarf, Reptilian, SlimePerson, Arachnid, Felinid] # Frontier: add Felinid
   followSkinColor: false
   coloring:
     default:
@@ -136,8 +136,8 @@
 - type: marking
   id: HandTwistingLeft
   bodyPart: LHand
-  markingCategory: Arms
-  speciesRestriction: [Human, Dwarf, Reptilian, SlimePerson, Arachnid, Oni, Goblin, Felinid] # Frontier: add Oni, Goblin, Felinid
+  markingCategory: LeftHand
+  speciesRestriction: [Human, Dwarf, Reptilian, SlimePerson, Arachnid, Felinid] # Frontier: add Felinid
   followSkinColor: false
   sprites:
   - sprite: _Impstation/Mobs/Customization/scars.rsi
@@ -146,8 +146,8 @@
 - type: marking
   id: HandProstheticRight
   bodyPart: RHand
-  markingCategory: Arms
-  speciesRestriction: [Human, Dwarf, Reptilian, SlimePerson, Arachnid, Oni, Goblin, Felinid] # Frontier: add Oni, Goblin, Felinid
+  markingCategory: RightHand
+  speciesRestriction: [Human, Dwarf, Reptilian, SlimePerson, Arachnid, Felinid] # Frontier: add Felinid
   followSkinColor: false
   coloring:
     default:
@@ -161,8 +161,8 @@
 - type: marking
   id: HandTwistingRight
   bodyPart: RHand
-  markingCategory: Arms
-  speciesRestriction: [Human, Dwarf, Reptilian, SlimePerson, Arachnid, Oni, Goblin, Felinid] # Frontier: add Oni, Goblin, Felinid
+  markingCategory: RightHand
+  speciesRestriction: [Human, Dwarf, Reptilian, SlimePerson, Arachnid, Felinid] # Frontier: add Felinid
   followSkinColor: false
   sprites:
   - sprite: _Impstation/Mobs/Customization/scars.rsi
@@ -172,7 +172,7 @@
   id: SmileScars
   bodyPart: Head
   markingCategory: Head
-  speciesRestriction: [Human, Dwarf, SlimePerson, Oni, Goblin, Felinid] # Frontier: add Oni, Goblin, Felinid
+  speciesRestriction: [Human, Dwarf, SlimePerson, Felinid] # Frontier: add Felinid
   followSkinColor: false
   sprites:
   - sprite: _Impstation/Mobs/Customization/scars.rsi
@@ -182,7 +182,7 @@
   id: HeadTwisting
   bodyPart: Head
   markingCategory: Head
-  speciesRestriction: [Human, Dwarf, SlimePerson, Oni, Goblin, Felinid] # Frontier: add Oni, Goblin, Felinid
+  speciesRestriction: [Human, Dwarf, SlimePerson, Felinid] # Frontier: add Felinid
   followSkinColor: false
   sprites:
   - sprite: _Impstation/Mobs/Customization/scars.rsi
@@ -191,8 +191,8 @@
 - type: marking
   id: LegProstheticLeft
   bodyPart: LLeg
-  markingCategory: Legs
-  speciesRestriction: [Human, Dwarf, SlimePerson, Arachnid, Oni, Goblin, Felinid] # Frontier: add Oni, Goblin, Felinid
+  markingCategory: LeftLeg
+  speciesRestriction: [Human, Dwarf, SlimePerson, Arachnid, Felinid] # Frontier: add Felinid
   followSkinColor: false
   coloring:
     default:
@@ -206,8 +206,8 @@
 - type: marking
   id: LegTwistingLeft
   bodyPart: LLeg
-  markingCategory: Legs
-  speciesRestriction: [Human, Dwarf, Reptilian, SlimePerson, Arachnid, Oni, Goblin, Felinid] # Frontier: add Oni, Goblin, Felinid
+  markingCategory: LeftLeg
+  speciesRestriction: [Human, Dwarf, Reptilian, SlimePerson, Arachnid, Felinid] # Frontier: add Felinid
   followSkinColor: false
   sprites:
   - sprite: _Impstation/Mobs/Customization/scars.rsi
@@ -216,8 +216,8 @@
 - type: marking
   id: LegProstheticRight
   bodyPart: RLeg
-  markingCategory: Legs
-  speciesRestriction: [Human, Dwarf, SlimePerson, Arachnid, Oni, Goblin, Felinid] # Frontier: add Oni, Goblin, Felinid
+  markingCategory: RightLeg
+  speciesRestriction: [Human, Dwarf, SlimePerson, Arachnid, Felinid] # Frontier: add Felinid
   followSkinColor: false
   coloring:
     default:
@@ -231,8 +231,8 @@
 - type: marking
   id: LegTwistingRight
   bodyPart: RLeg
-  markingCategory: Legs
-  speciesRestriction: [Human, Dwarf, Reptilian, SlimePerson, Arachnid, Oni, Goblin, Felinid] # Frontier: add Oni, Goblin, Felinid
+  markingCategory: RightLeg
+  speciesRestriction: [Human, Dwarf, Reptilian, SlimePerson, Arachnid, Felinid] # Frontier: add Felinid
   followSkinColor: false
   sprites:
   - sprite: _Impstation/Mobs/Customization/scars.rsi
@@ -242,7 +242,7 @@
   id: TorsoIncision
   bodyPart: Chest
   markingCategory: Chest
-  speciesRestriction: [Human, Dwarf, Reptilian, SlimePerson, Arachnid, Oni, Goblin, Felinid] # Frontier: add Oni, Goblin, Felinid
+  speciesRestriction: [Human, Dwarf, Reptilian, SlimePerson, Arachnid, Felinid] # Frontier: add Felinid
   followSkinColor: false
   sprites:
   - sprite: _Impstation/Mobs/Customization/scars.rsi

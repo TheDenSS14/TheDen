@@ -2,7 +2,7 @@
   id: ChestCutHere
   bodyPart: Chest
   markingCategory: Chest
-  speciesRestriction: [Human, Dwarf, Arachnid, SlimePerson, Reptilian, Oni, Goblin, Felinid] # Frontier: add Oni, Goblin, Felinid
+  speciesRestriction: [Human, Dwarf, Arachnid, SlimePerson, Reptilian, Felinid] # Frontier: add Felinid
   coloring:
     default:
       type:
@@ -15,8 +15,8 @@
 - type: marking
   id: ArmDollJointsTattooLeft
   bodyPart: LArm
-  markingCategory: Arms
-  speciesRestriction: [Human, Dwarf, Arachnid, SlimePerson, Reptilian, Oni, Goblin, Felinid] # Frontier: add Oni, Goblin, Felinid
+  markingCategory: LeftArm
+  speciesRestriction: [Human, Dwarf, Arachnid, SlimePerson, Reptilian, Felinid] # Frontier: add Felinid
   coloring:
     default:
       type:
@@ -29,8 +29,8 @@
 - type: marking
   id: ArmDollJointsTattooRight
   bodyPart: RArm
-  markingCategory: Arms
-  speciesRestriction: [Human, Dwarf, Arachnid, SlimePerson, Reptilian, Oni, Goblin, Felinid] # Frontier: add Oni, Goblin, Felinid
+  markingCategory: RightArm
+  speciesRestriction: [Human, Dwarf, Arachnid, SlimePerson, Reptilian, Felinid] # Frontier: add Felinid
   coloring:
     default:
       type:
@@ -43,8 +43,8 @@
 - type: marking
   id: HandDollJointsTattooLeft
   bodyPart: LHand
-  markingCategory: Arms
-  speciesRestriction: [Human, Dwarf, Arachnid, SlimePerson, Reptilian, Oni, Goblin, Felinid] # Frontier: add Oni, Goblin, Felinid
+  markingCategory: LeftHand
+  speciesRestriction: [Human, Dwarf, Arachnid, SlimePerson, Reptilian, Felinid] # Frontier: add Felinid
   coloring:
     default:
       type:
@@ -57,8 +57,8 @@
 - type: marking
   id: HandDollJointsTattooRight
   bodyPart: RHand
-  markingCategory: Arms
-  speciesRestriction: [Human, Dwarf, Arachnid, SlimePerson, Reptilian, Oni, Goblin, Felinid] # Frontier: add Oni, Goblin, Felinid
+  markingCategory: RightHand
+  speciesRestriction: [Human, Dwarf, Arachnid, SlimePerson, Reptilian, Felinid] # Frontier: add Felinid
   coloring:
     default:
       type:
@@ -71,8 +71,8 @@
 - type: marking
   id: LegDollJointsTattooLeft
   bodyPart: LLeg
-  markingCategory: Legs
-  speciesRestriction: [Human, Dwarf, Arachnid, SlimePerson, Reptilian, Oni, Goblin, Felinid] # Frontier: add Oni, Goblin, Felinid
+  markingCategory: LeftLeg
+  speciesRestriction: [Human, Dwarf, Arachnid, SlimePerson, Reptilian, Felinid] # Frontier: add Felinid
   coloring:
     default:
       type:
@@ -85,8 +85,8 @@
 - type: marking
   id: LegDollJointsTattooRight
   bodyPart: RLeg
-  markingCategory: Legs
-  speciesRestriction: [Human, Dwarf, Arachnid, SlimePerson, Reptilian, Oni, Goblin, Felinid] # Frontier: add Oni, Goblin, Felinid
+  markingCategory: Rightleg
+  speciesRestriction: [Human, Dwarf, Arachnid, SlimePerson, Reptilian, Felinid] # Frontier: add Felinid
   coloring:
     default:
       type:
@@ -99,8 +99,8 @@
 - type: marking
   id: FootDollJointsTattooLeft
   bodyPart: LFoot
-  markingCategory: Legs
-  speciesRestriction: [Human, Dwarf, Arachnid, SlimePerson, Oni, Goblin, Felinid] # Frontier: add Oni, Goblin, Felinid
+  markingCategory: LeftFoot
+  speciesRestriction: [Human, Dwarf, Arachnid, SlimePerson, Felinid] # Frontier: add Felinid
   coloring:
     default:
       type:
@@ -113,7 +113,7 @@
 - type: marking
   id: FootDollJointsTattooRight
   bodyPart: RFoot
-  markingCategory: Legs
+  markingCategory: RightFoot
   speciesRestriction: [Human, Dwarf, Arachnid, SlimePerson, Oni, Goblin, Felinid] # Frontier: add Oni, Goblin, Felinid
   coloring:
     default:
