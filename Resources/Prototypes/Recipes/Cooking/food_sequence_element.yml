@@ -1424,3 +1424,25 @@
   sprites:
   - sprite: Objects/Consumable/Food/burger.rsi
     state: mothroach
+
+# Dragon Flesh
+
+- type: foodSequenceElement
+  id: Dragon
+  name: food-sequence-content-dragon
+  sprites:
+  - sprite: Objects/Consumable/Food/meat.rsi
+    state: dragon
+  tags:
+  - Raw
+  - Meat
+
+- type: foodSequenceElement
+  id: DragonBurger
+  name: food-sequence-burger-content-dragon
+  sprites:
+  - sprite: Objects/Consumable/Food/meat.rsi
+    state: dragon
+  tags:
+  - Raw
+  - Meat

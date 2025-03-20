@@ -80,6 +80,7 @@ food-sequence-content-cherry = cherry
 food-sequence-content-snail = snail
 food-sequence-content-cig = cigarette
 food-sequence-content-beetroot = beetroot
+food-sequence-content-dragon = dragon
 
 # BURGERS
 
@@ -163,6 +164,7 @@ food-sequence-burger-content-superburg = superburg
 food-sequence-burger-content-tofuburg = tofuburg
 food-sequence-burger-content-xenoburg = xeno
 food-sequence-burger-content-mothburg = moth
+food-sequence-burger-content-dragon = dragon
 
 # TACO
 

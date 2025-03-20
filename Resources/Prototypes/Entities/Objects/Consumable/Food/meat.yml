@@ -382,6 +382,10 @@
       reagents:
       - ReagentId: Ichor
         Quantity: 10
+  - type: FoodSequenceElement
+    entries:
+      Taco: Dragon
+      Burger: DragonBurger
 
 - type: entity
   name: raw rat meat
