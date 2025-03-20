@@ -7,7 +7,7 @@
     - ClothingUniformJumpsuitLederhosen
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutUniformsCivilian2
+      group: LoadoutUniformsCivilian
     - !type:CharacterDepartmentRequirement
       inverted: true
       departments:
@@ -23,7 +23,7 @@
     - ClothingUniformJumpsuitCatsuit
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutUniformsCivilian2
+      group: LoadoutUniformsCivilian
 
 - type: loadout
   id: LoadoutClothingUniformJumpsuitCatsuitShiny
@@ -34,7 +34,7 @@
     - ClothingUniformJumpsuitCatsuitShiny
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutUniformsCivilian2
+      group: LoadoutUniformsCivilian
 
 - type: loadout
   id: LoadoutClothingUniformJumpsuitCatsuitBlank
@@ -46,7 +46,7 @@
     - ClothingUniformJumpsuitCatsuitBlank
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutUniformsCivilian2
+      group: LoadoutUniformsCivilian
 
 - type: loadout
   id: LoadoutClothingUniformShorts
@@ -58,4 +58,4 @@
     - ClothingUniformShorts
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutUniformsCivilian2
+      group: LoadoutUniformsCivilian
