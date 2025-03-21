@@ -1,4 +1,4 @@
-using Content.Server.CriminalRecords.Systems;
+        using Content.Server.CriminalRecords.Systems;
 using Content.Server.GameTicking;
 using Content.Server.KillTracking;
 using Content.Server.Objectives.Components;
@@ -80,7 +80,7 @@ public sealed class KillPersonConditionSystem : EntitySystem
 
         // Floofstation Edit Start
         foreach (var mind in allHumans)
-            if (_job.MindTryGetJob(mind, out _, out var prototype) && !prototype.CanBeAntagTarget)
+            if (_job.MindTryGetJob(mind, out var prototype) && !prototype.CanBeAntagTarget)
                 allHumans.Remove(mind);
         // Floofstation Edit End
 
@@ -112,7 +112,7 @@ public sealed class KillPersonConditionSystem : EntitySystem
         foreach (var mind in allHumans)
         {
             // RequireAdminNotify used as a cheap way to check for command department
-            if (_job.MindTryGetJob(mind, out _, out var prototype) && prototype.RequireAdminNotify)
+            if (_job.MindTryGetJob(mind, out var prototype) && prototype.RequireAdminNotify)
                 allHeads.Add(mind);
         }
 

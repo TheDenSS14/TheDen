@@ -32,12 +32,12 @@ public sealed class EventHorizonSystem : SharedEventHorizonSystem
     [Dependency] private readonly IAdminLogManager _adminLogger = default!;
     [Dependency] private readonly SharedContainerSystem _containerSystem = default!;
     [Dependency] private readonly SharedTransformSystem _xformSystem = default!;
+    [Dependency] private readonly SharedMapSystem _mapSystem = default!;
     [Dependency] private readonly TagSystem _tagSystem = default!;
     [Dependency] private readonly PhysicsSystem _physics = default!;
     #endregion Dependencies
 
     private EntityQuery<PhysicsComponent> _physicsQuery;
-    private const float CosmicSpeedLimit = 20f;
 
     public override void Initialize()
     {
@@ -258,7 +258,7 @@ public sealed class EventHorizonSystem : SharedEventHorizonSystem
 
         var ev = new TilesConsumedByEventHorizonEvent(tiles, gridId, grid, hungry, eventHorizon);
         RaiseLocalEvent(hungry, ref ev);
-        grid.SetTiles(tiles);
+        _mapSystem.SetTiles(gridId, grid, tiles);
     }
 
     /// <summary>
@@ -311,7 +311,7 @@ public sealed class EventHorizonSystem : SharedEventHorizonSystem
         foreach (var grid in grids)
         {
             // TODO: Remover grid.Owner when this iterator returns entityuids as well.
-            AttemptConsumeTiles(uid, grid.Comp.GetTilesIntersecting(circle), grid, grid, eventHorizon);
+            AttemptConsumeTiles(uid, _mapSystem.GetTilesIntersecting(grid.Owner, grid.Comp, circle), grid, grid, eventHorizon);
         }
     }
 
