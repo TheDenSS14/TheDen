@@ -10,8 +10,13 @@ consent-window-freetext-placeholder = Put your ERP info here, such as:
     Which gender(s) you want your partners to be
     Likes and dislikes
 consent-window-toggles-label = Mechanics toggles
+consent-window-permissions-label = Permissions
+consent-window-players-label = Permissions
 consent-window-unsaved-changes = You have unsaved changes
 consent-window-char-limit-warning = Character limit exceeded ({$length} / {$maxLength})
+
+consent-window-add-label = Add
+consent-window-remove-label = Remove
 
 # Verb
 consent-examine-verb = Consent Info
@@ -22,11 +27,11 @@ consent-example1 = Example Consent Toggle
 consent-example1-desc = This is just here as an example for how to add consent toggles.
 
 consent-Hypno-name = Hypnosis
-consent-Hypno-desc = Allow yourself to be hypnotized.
+consent-Hypno-desc = Do you want to allow yourself to be hypnotized?
 
-consent-NoClone-name = Disallow Paradox Anomaly
-consent-NoClone-desc = Disallow yourself to be the target of a paradox anomaly clone.
+consent-ParadoxAnomaly-name = Paradox Anomaly
+consent-ParadoxAnomaly-desc = Do you want to allow yourself to be a target for paradox anomalies?
 
 consent-MindSwap-name = Mind Swap
-consent-MindSwap-desc = Should mind swap effect you?
+consent-MindSwap-desc = Do you want to allow the 'Mind Swap' power to work on you?
 consent-MindSwap-no-consent = { CAPITALIZE(POSS-ADJ($target)) } mind rejects your advances.

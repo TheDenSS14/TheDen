@@ -88,7 +88,7 @@ public sealed class ServerConsentManager : IServerConsentManager
         }
 
         // A player that has disconnected does not consent to anything.
-        return new PlayerConsentSettings();
+        return new();
     }
 
     private static bool ShouldStoreInDb(LoginType loginType)
