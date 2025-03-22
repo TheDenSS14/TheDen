@@ -61,6 +61,7 @@ flavor-complex-honey = like honey
 # Condiments
 
 flavor-complex-ketchunaise = like tomatoes and mayonnaise
+flavor-complex-honeymustard = like honey and mustard
 flavor-complex-mayonnaise = like mayonnaise
 flavor-complex-mustard = like mustard
 

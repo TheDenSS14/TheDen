@@ -243,6 +243,16 @@
     Ketchunaise: 2
 
 - type: reaction
+  id: CookingHoneyMustard
+  reactants:
+    Honey:
+      amount: 1
+    Mustard:
+      amount: 1
+  products:
+    HoneyMustard: 2
+
+- type: reaction
   id: CookingBbqSauce
   reactants:
     Ketchup:
