@@ -1,7 +1,7 @@
 # cargo variants
 
 - type: entity
-  parent: ClothingUniformSkirtBase
+  parent: [ ClothingUniformSkirtBase, ClothingUniformFoldableBase ]
   id: ClothingUniformJumpskirtCargoLight
   name: cargo tech jumpskirt
   description: A sturdy jumpskirt, issued to members of the Cargo department.
@@ -13,7 +13,7 @@
     sprite: _CD/Clothing/Uniforms/Jumpskirt/cargotech_light.rsi
 
 - type: entity
-  parent: ClothingUniformSkirtBase
+  parent: [ ClothingUniformSkirtBase, ClothingUniformFoldableBase ]
   id: ClothingUniformJumpskirtCargoDark
   name: cargo tech jumpskirt
   description: A sturdy jumpskirt, issued to members of the Cargo department.

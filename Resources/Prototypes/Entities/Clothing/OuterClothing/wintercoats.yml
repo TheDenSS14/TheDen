@@ -369,7 +369,7 @@
     clothingPrototype: ClothingHeadHatHoodWinterPara
 
 - type: entity
-  parent: ClothingOuterWinterCoatToggleable
+  parent: [ ClothingOuterWinterCoatToggleable, ClothingUniformFoldableBase ]
   id: ClothingOuterWinterQM
   name: logistics officer's winter coat # DeltaV - Logistics Department replacing Cargo
   components:
