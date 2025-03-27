@@ -41,8 +41,9 @@ character-item-group-LoadoutCommandBackpacks = Command Backpacks
 character-item-group-LoadoutCommandBelt = Command Belt
 character-item-group-LoadoutCommandEars = Command Ears
 character-item-group-LoadoutCommandEquipment = Command Equipment
+character-item-group-LoadoutSelfDefense = Command Self Defense Gear
 character-item-group-LoadoutCommandEyes = Command Eyewear
-character-item-group-LoadoutCommandloves = Command Gloves
+character-item-group-LoadoutCommandGloves = Command Gloves
 character-item-group-LoadoutCommandHead = Command Headgear
 character-item-group-LoadoutCommandId = Command Id
 character-item-group-LoadoutCommandNeck = Command Neckwear
@@ -97,7 +98,11 @@ character-item-group-LoadoutMagistrateUniforms = Magistrate Uniforms
 
 # Dignitary - Nanotrasen Representative
 character-item-group-LoadoutNanorepBackpacks = Nanotrasen Representative Backpacks
-character-tiem-group-LoadoutNanorepUniforms = Nanotrasen Representative Uniforms
+character-item-group-LoadoutNanorepUniforms = Nanotrasen Representative Uniforms
+
+# Dignitary - Nanotrasen Representative
+character-item-group-LoadoutAdminAssistantUniforms= Administrative Assistant Uniforms
+character-item-group-LoadoutAdminAssistantGloves= Administrative Assistant Gloves
 
 # Engineering
 character-item-group-LoadoutEngineeringBackpacks = Engineering Backpacks
