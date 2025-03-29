@@ -10,6 +10,7 @@
   - !type:CharacterDepartmentTimeRequirement # DeltaV - Security dept time requirement
     department: Security
     min: 14400 # Floofstation - 4 hours
+  guides: [ NuclearOperatives ]
 
 - type: antag
   id: NukeopsMedic
@@ -23,6 +24,7 @@
   - !type:CharacterDepartmentTimeRequirement # DeltaV - Medical dept time requirement
     department: Medical
     min: 14400 # Floofstation - 4 hours
+  guides: [ NuclearOperatives ]
 
 - type: antag
   id: NukeopsCommander
@@ -40,6 +42,7 @@
     department: Command
     min: 14400 # Floofstation - 4 hours
   - !type:CharacterWhitelistRequirement
+  guides: [ NuclearOperatives ]
 
 #Lone Operative Gear
 - type: startingGear

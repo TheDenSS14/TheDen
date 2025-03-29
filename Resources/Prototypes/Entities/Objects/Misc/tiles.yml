@@ -18,6 +18,7 @@
     soundHit:
       collection: MetalThud
   - type: Stack
+    stackType: FloorTileSteel
     count: 1
   - type: Tag
     tags:
@@ -890,6 +891,22 @@
       - FloorBlueCircuit
   - type: Stack
     stackType: FloorTileBCircuit
+
+- type: entity
+  name: red circuit floor
+  parent: FloorTileItemBase
+  id: FloorTileItemRCircuit
+  components:
+  - type: Sprite
+    state: rcircuit
+  - type: Item
+    heldPrefix: rcircuit
+  - type: FloorTile
+    outputs:
+      - Plating
+      - FloorRedCircuit
+  - type: Stack
+    stackType: FloorTileRCircuit
 
 # Circuits stacks
 
