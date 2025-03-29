@@ -627,6 +627,28 @@ namespace Content.Server.Database.Migrations.Postgres
                         });
                 });
 
+            modelBuilder.Entity("Content.Server.Database.ConsentPermissionsEntry", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer")
+                        .HasColumnName("consent_permissions_entry_id");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<Guid>("UserId")
+                        .HasColumnType("uuid")
+                        .HasColumnName("user_id");
+
+                    b.HasKey("Id")
+                        .HasName("PK_consent_permissions_entry");
+
+                    b.HasIndex("Id", "UserId")
+                        .IsUnique();
+
+                    b.ToTable("consent_permissions_entry", (string)null);
+                });
+
             modelBuilder.Entity("Content.Server.Database.ConsentSettings", b =>
                 {
                     b.Property<int>("Id")
@@ -652,6 +674,44 @@ namespace Content.Server.Database.Migrations.Postgres
                         .IsUnique();
 
                     b.ToTable("consent_settings", (string)null);
+                });
+
+            modelBuilder.Entity("Content.Server.Database.ConsentTarget", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer")
+                        .HasColumnName("consent_target_id");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<int?>("ConsentPermissionsEntryId")
+                        .HasColumnType("integer")
+                        .HasColumnName("consent_permissions_entry_id");
+
+                    b.Property<string>("TargetConsent")
+                        .IsRequired()
+                        .HasColumnType("text")
+                        .HasColumnName("target_consent");
+
+                    b.Property<bool>("TargetHasConsent")
+                        .HasColumnType("boolean")
+                        .HasColumnName("target_has_consent");
+
+                    b.Property<Guid>("TargetId")
+                        .HasColumnType("uuid")
+                        .HasColumnName("target_id");
+
+                    b.HasKey("Id")
+                        .HasName("PK_consent_target");
+
+                    b.HasIndex("ConsentPermissionsEntryId")
+                        .HasDatabaseName("IX_consent_target_consent_permissions_entry_id");
+
+                    b.HasIndex("Id", "TargetId")
+                        .IsUnique();
+
+                    b.ToTable("consent_target", (string)null);
                 });
 
             modelBuilder.Entity("Content.Server.Database.ConsentToggle", b =>
@@ -1714,6 +1774,14 @@ namespace Content.Server.Database.Migrations.Postgres
                     b.Navigation("Server");
                 });
 
+            modelBuilder.Entity("Content.Server.Database.ConsentTarget", b =>
+                {
+                    b.HasOne("Content.Server.Database.ConsentPermissionsEntry", null)
+                        .WithMany("ConsentTargets")
+                        .HasForeignKey("ConsentPermissionsEntryId")
+                        .HasConstraintName("FK_consent_target_consent_permissions_entry_consent_permission~");
+                });
+
             modelBuilder.Entity("Content.Server.Database.ConsentToggle", b =>
                 {
                     b.HasOne("Content.Server.Database.ConsentSettings", "ConsentSettings")
@@ -2024,6 +2092,11 @@ namespace Content.Server.Database.Migrations.Postgres
             modelBuilder.Entity("Content.Server.Database.ConnectionLog", b =>
                 {
                     b.Navigation("BanHits");
+                });
+
+            modelBuilder.Entity("Content.Server.Database.ConsentPermissionsEntry", b =>
+                {
+                    b.Navigation("ConsentTargets");
                 });
 
             modelBuilder.Entity("Content.Server.Database.ConsentSettings", b =>
