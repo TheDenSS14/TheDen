@@ -116,6 +116,24 @@
   id: BorgHead
 
 - type: Tag
+  id: BorgLArm
+
+- type: Tag
+  id: BorgLLeg
+
+- type: Tag
+  id: BorgRArm
+
+- type: Tag
+  id: BorgRLeg
+
+- type: Tag
+  id: BorgTorso
+
+- type: Tag
+  id: BorgLeg
+
+- type: Tag
   id: BorgJanitorHead
 
 - type: Tag
@@ -126,9 +144,6 @@
 
 - type: Tag
   id: BorgJanitorTorso
-
-- type: Tag
-  id: BorgLeg
 
 - type: Tag
   id: BorgMedicalHead
@@ -191,6 +206,9 @@
   id: BorgModuleSyndicateAssault
 
 - type: Tag
+  id: Bot
+
+- type: Tag
   id: BorgServiceHead
 
 - type: Tag
@@ -222,6 +240,12 @@
 
 - type: Tag
   id: BoxCardboard
+
+- type: Tag
+  id: MaterialCardboard
+
+- type: Tag
+  id: MaterialPaper
 
 - type: Tag
   id: BoxHug
@@ -360,6 +384,9 @@
 
 - type: Tag
   id: CartridgeHeavyRifle
+
+- type: Tag
+  id: CartridgeMinigun
 
 - type: Tag
   id: CartridgeLightRifle
@@ -837,6 +864,9 @@
 - type: Tag
   id: IntercomElectronics
 
+- type: Tag # Goobstation
+  id: JanicartKeys
+
 - type: Tag
   id: JawsOfLife
 
@@ -904,6 +934,9 @@
 
 - type: Tag
   id: MagazineHeavyRifleBox
+
+- type: Tag
+  id: MagazineBoxRifleMinigun
 
 - type: Tag
   id: MagazineLightRifle
@@ -1029,6 +1062,9 @@
   id: Oneirophage
 
 - type: Tag
+  id: Oni
+
+- type: Tag
   id: Ore
 
 - type: Tag
@@ -1059,10 +1095,16 @@
   id: PetWearable
 
 - type: Tag
+  id: HardHat
+
+- type: Tag
   id: MonkeyWearable
 
 - type: Tag
   id: Pickaxe
+
+- type: Tag
+  id: ItemPickaxe
 
 - type: Tag
   id: Pie
@@ -1092,6 +1134,9 @@
   id: PlantSampleTaker
 
 - type: Tag
+  id: HydroponicsToolClippers
+
+- type: Tag
   id: PlasmaGlassShard
 
 - type: Tag
@@ -1108,6 +1153,9 @@
 
 - type: Tag
   id: SiliconMob
+
+- type: Tag
+  id: WeldbotFixableStructure
 
 - type: Tag
   id: PlushieSharkBlue
@@ -1197,6 +1245,9 @@
 
 - type: Tag
   id: RollingPin
+
+- type: Tag
+  id: RPD
 
 - type: Tag
   id: SaltShaker
@@ -1376,6 +1427,12 @@
   id: Truncheon
 
 - type: Tag
+  id: TurretCompatibleWeapon # Used in the construction of sentry turrets
+
+- type: Tag
+  id: TurretControlElectronics # Used in the construction of sentry turret control panels
+
+- type: Tag
   id: Unimplantable
 
 - type: Tag
@@ -1386,6 +1443,9 @@
 
 - type: Tag
   id: Vegetable
+
+- type: Tag # Goobstation
+  id: VehicleKey
 
 - type: Tag
   id: VimPilot

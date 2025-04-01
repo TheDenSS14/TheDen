@@ -228,6 +228,9 @@ namespace Content.Server.Database
                 profile.FlavorText,
                 profile.Species,
                 profile.CustomSpecieName,
+                profile.Nationality,
+                profile.Employer,
+                profile.Lifepath,
                 profile.Height,
                 profile.Width,
                 profile.Age,
@@ -275,6 +278,9 @@ namespace Content.Server.Database
             profile.FlavorText = humanoid.FlavorText;
             profile.Species = humanoid.Species;
             profile.CustomSpecieName = humanoid.Customspeciename;
+            profile.Nationality = humanoid.Nationality;
+            profile.Employer = humanoid.Employer;
+            profile.Lifepath = humanoid.Lifepath;
             profile.Age = humanoid.Age;
             profile.Sex = humanoid.Sex.ToString();
             profile.Gender = humanoid.Gender.ToString();

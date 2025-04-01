@@ -8,8 +8,8 @@ namespace Content.Shared.Stacks
     public sealed partial class StackComponent : Component
     {
         [ViewVariables(VVAccess.ReadWrite)]
-        [DataField("stackType", required: true, customTypeSerializer: typeof(PrototypeIdSerializer<StackPrototype>))]
-        public string StackTypeId { get; private set; } = default!;
+        [DataField("stackType", customTypeSerializer: typeof(PrototypeIdSerializer<StackPrototype>))]
+        public string StackTypeId { get; private set; } = "FloorTileSteel";
 
         /// <summary>
         ///     Current stack count.

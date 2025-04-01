@@ -80,7 +80,7 @@ public sealed class ParadoxAnomalySystem : EntitySystem
             if (!_proto.TryIndex<SpeciesPrototype>(humanoid.Species, out var species))
                 continue;
 
-            if (_mind.GetMind(uid, mindContainer) is not {} mindId || !HasComp<JobComponent>(mindId))
+            if (_mind.GetMind(uid, mindContainer) is not {} mindId || !HasComp<JobRoleComponent>(mindId))
                 continue;
 
             if (_role.MindIsAntagonist(mindId))
@@ -105,7 +105,7 @@ public sealed class ParadoxAnomalySystem : EntitySystem
             return null;
 
         var (uid, mindId, species, profile) = _random.Pick(candidates);
-        var jobId = Comp<JobComponent>(mindId).Prototype;
+        var jobId = Comp<JobRoleComponent>(mindId).Prototype;
         var job = _proto.Index<JobPrototype>(jobId!);
 
         // Find a suitable spawn point.

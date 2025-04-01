@@ -31,28 +31,6 @@
     state: secondary
 
 - type: marking
-  id: SnoutEasternDNW
-  bodyPart: Snout
-  markingCategory: Snout
-  speciesRestriction: [Reptilian]
-  sprites:
-    - sprite: SimpleStation14/Mobs/Customization/snouts.rsi
-      state: easterndnw_primary
-    - sprite: SimpleStation14/Mobs/Customization/snouts.rsi
-      state: easterndnw_secondary
-
-- type: marking
-  id: SnoutEasternDW
-  bodyPart: Snout
-  markingCategory: Snout
-  speciesRestriction: [Reptilian]
-  sprites:
-    - sprite: SimpleStation14/Mobs/Customization/snouts.rsi
-      state: easterndw_primary
-    - sprite: SimpleStation14/Mobs/Customization/snouts.rsi
-      state: easterndnw_secondary
-
-- type: marking
   id: SnoutMagusSkull
   bodyPart: Snout
   markingCategory: Snout

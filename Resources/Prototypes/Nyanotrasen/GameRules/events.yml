@@ -129,7 +129,7 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: GlimmerEvent
-    minimumGlimmer: 700
+    minimumGlimmer: 600
     maximumGlimmer: 1000
   - type: GlimmerMobRule
     mobPrototype: MobGlimmerWisp
@@ -167,7 +167,7 @@
   categories: [ HideSpawnMenu ]
   components:
     - type: GlimmerEvent
-      minimumGlimmer: 750
+      minimumGlimmer: 650
       maximumGlimmer: 900
       glimmerBurnLower: 120
       glimmerBurnUpper: 200

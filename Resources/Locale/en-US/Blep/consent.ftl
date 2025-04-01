@@ -30,3 +30,6 @@ consent-NoClone-desc = Disallow yourself to be the target of a paradox anomaly c
 consent-MindSwap-name = Mind Swap
 consent-MindSwap-desc = Should mind swap effect you?
 consent-MindSwap-no-consent = { CAPITALIZE(POSS-ADJ($target)) } mind rejects your advances.
+
+consent-ChangelingTarget-name = Changeling Target
+consent-ChangelingTarget-desc = Should your body be allowed to be stolen by changelings?
