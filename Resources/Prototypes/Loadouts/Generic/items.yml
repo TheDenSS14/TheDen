@@ -1140,6 +1140,10 @@
   category: GeneralToys
   cost: 100
   canBeHeirloom: true
+  requirements:
+    - !type:CharacterJobRequirement
+       jobs:
+         - DeathSquad
   items:
     - ThronglerToy
 
