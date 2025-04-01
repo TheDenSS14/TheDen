@@ -1,8 +1,49 @@
+# Mime masks
+- type: loadout
+  id: LoadoutMimeMask
+  category: Mask
+  cost: 0
+  exclusive: true
+  customColorTint: true
+  canBeHeirloom: true
+  items:
+    - ClothingMaskMime
+
+- type: loadout
+  id: LoadoutServiceMimeMaskSad
+  category: Mask
+  cost: 0
+  exclusive: true
+  customColorTint: true
+  canBeHeirloom: true
+  items:
+    - ClothingMaskSadMime
+
+- type: loadout
+  id: LoadoutMimeMaskScared
+  category: Mask
+  cost: 0
+  exclusive: true
+  customColorTint: true
+  canBeHeirloom: true
+  items:
+    - ClothingMaskScaredMime
+
+- type: loadout
+  id: LoadoutMimeMaskSexy
+  category: Mask
+  cost: 0
+  exclusive: true
+  customColorTint: true
+  canBeHeirloom: true
+  items:
+    - ClothingMaskSexyMime
+
 # Oni masks
 
 - type: loadout
   id: LoadoutItemOniMaskRed
-  category: Items
+  category: Mask
   cost: 0
   canBeHeirloom: true
   requirements:
@@ -13,7 +54,7 @@
 
 - type: loadout
   id: LoadoutItemOniMaskBlue
-  category: Items
+  category: Mask
   cost: 0
   canBeHeirloom: true
   requirements:
