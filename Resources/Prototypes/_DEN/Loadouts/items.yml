@@ -1,53 +1,49 @@
 # Mime masks
 - type: loadout
   id: LoadoutServiceMimeMask
-  category: Items
+  category: Mask
   cost: 0
-  exclusive: true
   customColorTint: true
   canBeHeirloom: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutMimeMask
+      group: LoadoutMasks2
   items:
     - ClothingMaskMime
 
 - type: loadout
   id: LoadoutServiceMimeMaskSad
-  category: Items
+  category: Mask
   cost: 0
-  exclusive: true
   customColorTint: true
   canBeHeirloom: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutMimeMask
+      group: LoadoutMasks2
   items:
     - ClothingMaskSadMime
 
 - type: loadout
   id: LoadoutServiceMimeMaskScared
-  category: Items
+  category: Mask
   cost: 0
-  exclusive: true
   customColorTint: true
   canBeHeirloom: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutMimeMask
+      group: LoadoutMasks2
   items:
     - ClothingMaskScaredMime
 
 - type: loadout
   id: LoadoutServiceMimeMaskSexy
-  category: Items
+  category: Mask
   cost: 0
-  exclusive: true
   customColorTint: true
   canBeHeirloom: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutMimeMask
+      group: LoadoutMasks2
   items:
     - ClothingMaskSexyMime
 
@@ -55,23 +51,23 @@
 
 - type: loadout
   id: LoadoutItemOniMaskRed
-  category: Items
+  category: Mask
   cost: 0
   canBeHeirloom: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutGroupOniMask
+      group: LoadoutMasks2
   items:
     - ClothingMaskOniRed
 
 - type: loadout
   id: LoadoutItemOniMaskBlue
-  category: Items
+  category: Mask
   cost: 0
   canBeHeirloom: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutGroupOniMask
+      group: LoadoutMasks2
   items:
     - ClothingMaskOniBlue
 
@@ -79,14 +75,14 @@
 
 - type: loadout
   id: LoadoutNetworkConfigurator
-  category: Items
+  category: GeneralItems
   cost: 0
   items:
     - NetworkConfigurator
 
 - type: loadout
   id: LoadoutPlushieGrim
-  category: Items
+  category: GeneralToys
   cost: 0
   canBeHeirloom: true
   items:
@@ -94,7 +90,7 @@
 
 - type: loadout
   id: LoadoutPlushieVega
-  category: Items
+  category: GeneralToys
   cost: 0
   canBeHeirloom: true
   items:
@@ -102,7 +98,7 @@
 
 - type: loadout
   id: LoadoutPlushieAlice
-  category: Items
+  category: GeneralToys
   cost: 0
   canBeHeirloom: true
   items:
@@ -110,7 +106,7 @@
 
 - type: loadout
   id: LoadoutPlushieTabi
-  category: Items
+  category: GeneralToys
   cost: 0
   canBeHeirloom: true
   items:
@@ -118,7 +114,7 @@
 
 - type: loadout
   id: LoadoutPlushieJenn
-  category: Items
+  category: GeneralToys
   cost: 0
   canBeHeirloom: true
   items:
@@ -126,16 +122,8 @@
 
 - type: loadout
   id: LoadoutClicker
-  category: Items
+  category: GeneralItems
   cost: 0
   canBeHeirloom: true
   items:
     - Clicker
-
-- type: loadout
-  id: LoadoutGoldenRing
-  category: Items
-  cost: 0
-  canBeHeirloom: true
-  items:
-    - ClothingHandsGoldenRing

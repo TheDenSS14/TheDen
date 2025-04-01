@@ -1,20 +1,26 @@
 - type: loadout
   id: LoadoutItemSuspendersBlack
-  category: Items
+  category: Belt
   cost: 0
   items:
-    - ClothingBeltSuspendersBlack
+    - ClothingBeltSuspendersBlack 
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBelt
 
 - type: loadout
   id: LoadoutItemSuspenders
-  category: Items
+  category: Belt
   cost: 0
   items:
     - ClothingBeltSuspenders
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBelt
 
 - type: loadout
   id: LoadoutItemRemoteSignaller
-  category: Items
+  category: GeneralItems
   cost: 1
   items:
     - RemoteSignaller
@@ -22,7 +28,7 @@
 # Leashes
 - type: loadout
   id: LoadoutItemLeashBasic
-  category: Items
+  category: GeneralItems
   cost: 2
   exclusive: true
   items:
