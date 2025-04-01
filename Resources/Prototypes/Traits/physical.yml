@@ -1148,43 +1148,43 @@
           fontSize: 12
           requireDetailRange: true
 
-- type: trait
-  id: Bulky
-  category: Physical
-  points: -6
-  requirements:
-    - !type:CharacterTraitRequirement
-      inverted: true
-      traits:
-        - Featherweight
-  functions:
-    - !type:TraitModifyDensity
-      densityModifier: 55
-      multiply: false
-    - !type:TraitPushDescription
-      descriptionExtensions:
-        - description: examine-bulky-message
-          fontSize: 12
-          requireDetailRange: true
+# - type: trait
+#   id: Bulky
+#   category: Physical
+#   points: -6
+#   requirements:
+#     - !type:CharacterTraitRequirement
+#       inverted: true
+#       traits:
+#         - Featherweight
+#   functions:
+#     - !type:TraitModifyDensity
+#       densityModifier: 55
+#       multiply: false
+#     - !type:TraitPushDescription
+#       descriptionExtensions:
+#         - description: examine-bulky-message
+#           fontSize: 12
+#           requireDetailRange: true
 
-- type: trait
-  id: Featherweight
-  category: Physical
-  points: 3
-  requirements:
-    - !type:CharacterTraitRequirement
-      inverted: true
-      traits:
-        - Bulky
-  functions:
-    - !type:TraitModifyDensity
-      densityModifier: 0.5
-      multiply: true
-    - !type:TraitPushDescription
-      descriptionExtensions:
-        - description: examine-featherweight-message
-          fontSize: 12
-          requireDetailRange: true
+# - type: trait
+#   id: Featherweight
+#   category: Physical
+#   points: 3
+#   requirements:
+#     - !type:CharacterTraitRequirement
+#       inverted: true
+#       traits:
+#         - Bulky
+#   functions:
+#     - !type:TraitModifyDensity
+#       densityModifier: 0.5
+#       multiply: true
+#     - !type:TraitPushDescription
+#       descriptionExtensions:
+#         - description: examine-featherweight-message
+#           fontSize: 12
+#           requireDetailRange: true
 
 - type: trait
   id: Bodybuilder

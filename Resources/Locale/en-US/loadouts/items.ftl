@@ -37,6 +37,7 @@ loadout-name-LoadoutItemBoxSurvivalSecurity = survival box (security)
 loadout-name-LoadoutItemBoxSurvivalBrigmedic = survival box (corpsman)
 loadout-name-LoadoutItemBoxSurvivalMedical = survival box (medical)
 loadout-name-LoadoutItemBoxHug = box of hugs (clown)
+loadout-name-LoadoutItemBoxMime = survival box (mime)
 
 loadout-name-LoadoutItemLighter = lighter (colorable)
 loadout-name-LoadoutItemLighterCheap = cheap lighter (colorable)

@@ -41,7 +41,7 @@
 
 - type: entity
   id: SyringeCognizine
-  parent: Syringe
+  parent: BaseSyringe
   name: cognizine syringe
   components:
   - type: SolutionContainerManager
@@ -54,16 +54,16 @@
 
 - type: entity
   id: SyringeOpporozidone
-  parent: Syringe
+  parent: BaseSyringe
   name: opporozidone syringe
   components:
   - type: SolutionContainerManager
     solutions:
       drink:
         maxVol: 15
-#        reagents: # TODO: we don't have that yet. Guess the people will receive an empty syringe instead.
-#        - ReagentId: Opporozidone
-#          Quantity: 15
+        reagents: # TODO: we don't have that yet. Guess the people will receive an empty syringe instead.
+        - ReagentId: Opporozidone
+          Quantity: 15
 
 - type: entity
   id: NecrosolChemistryBottle

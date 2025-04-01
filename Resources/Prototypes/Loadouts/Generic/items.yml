@@ -1,7 +1,7 @@
 #Smokes
 - type: loadout
   id: LoadoutItemCig
-  category: Items
+  category: GeneralItems
   cost: 0
   items:
     - Cigarette
@@ -11,7 +11,7 @@
 
 - type: loadout
   id: LoadoutItemCigsGreen
-  category: Items
+  category: GeneralItems
   cost: 0
   items:
     - CigPackGreen
@@ -21,7 +21,7 @@
 
 - type: loadout
   id: LoadoutItemCigsRed
-  category: Items
+  category: GeneralItems
   cost: 0
   items:
     - CigPackRed
@@ -31,7 +31,7 @@
 
 - type: loadout
   id: LoadoutItemCigsBlue
-  category: Items
+  category: GeneralItems
   cost: 0
   items:
     - CigPackBlue
@@ -41,7 +41,7 @@
 
 - type: loadout
   id: LoadoutItemCigsBlack
-  category: Items
+  category: GeneralItems
   cost: 0
   items:
     - CigPackBlack
@@ -51,7 +51,7 @@
 
 - type: loadout
   id: LoadoutItemCigsMixed
-  category: Items
+  category: GeneralItems
   cost: 1
   items:
     - CigPackMixed
@@ -61,7 +61,7 @@
 
 - type: loadout
   id: LoadoutItemCigsSyndicate
-  category: Items
+  category: GeneralItems
   cost: 2
   items:
     - CigPackSyndicate
@@ -71,7 +71,7 @@
 
 - type: loadout
   id: LoadoutItemLighter
-  category: Items
+  category: GeneralItems
   cost: 1
   customColorTint: true
   items:
@@ -82,7 +82,7 @@
 
 - type: loadout
   id: LoadoutItemLighterCheap
-  category: Items
+  category: GeneralItems
   cost: 0
   customColorTint: true
   items:
@@ -93,7 +93,7 @@
 
 - type: loadout
   id: LoadoutItemLighterFlippo
-  category: Items
+  category: GeneralItems
   cost: 2
   customColorTint: true
   items:
@@ -104,7 +104,7 @@
 
 - type: loadout
   id: LoadoutItemSmokingPipeFilledTobacco
-  category: Items
+  category: GeneralItems
   cost: 0
   items:
     - SmokingPipeFilledTobacco
@@ -114,7 +114,7 @@
 
 - type: loadout
   id: LoadoutItemBlunt
-  category: Items
+  category: GeneralItems
   cost: 0
   items:
     - Blunt
@@ -124,7 +124,7 @@
 
 - type: loadout
   id: LoadoutItemJoint
-  category: Items
+  category: GeneralItems
   cost: 0
   items:
     - Joint
@@ -135,7 +135,7 @@
 # Instruments
 - type: loadout
   id: LoadoutItemMicrophoneInstrument
-  category: Items
+  category: GeneralInstruments
   cost: 2
   items:
     - MicrophoneInstrument
@@ -149,7 +149,7 @@
 
 - type: loadout
   id: LoadoutItemKalimbaInstrument
-  category: Items
+  category: GeneralInstruments
   cost: 2
   items:
     - KalimbaInstrument
@@ -163,7 +163,7 @@
 
 - type: loadout
   id: LoadoutItemTrumpetInstrument
-  category: Items
+  category: GeneralInstruments
   cost: 4
   items:
     - TrumpetInstrument
@@ -177,7 +177,7 @@
 
 - type: loadout
   id: LoadoutItemElectricGuitar
-  category: Items
+  category: GeneralInstruments
   cost: 5
   items:
     - ElectricGuitarInstrument
@@ -191,7 +191,7 @@
 
 - type: loadout
   id: LoadoutItemBassGuitar
-  category: Items
+  category: GeneralInstruments
   cost: 5
   items:
     - BassGuitarInstrument
@@ -205,7 +205,7 @@
 
 - type: loadout
   id: LoadoutItemRockGuitar
-  category: Items
+  category: GeneralInstruments
   cost: 5
   items:
     - RockGuitarInstrument
@@ -219,7 +219,7 @@
 
 - type: loadout
   id: LoadoutItemAcousticGuitar
-  category: Items
+  category: GeneralInstruments
   cost: 5
   items:
     - AcousticGuitarInstrument
@@ -233,7 +233,7 @@
 
 - type: loadout
   id: LoadoutItemViolin
-  category: Items
+  category: GeneralInstruments
   cost: 4
   items:
     - ViolinInstrument
@@ -247,7 +247,7 @@
 
 - type: loadout
   id: LoadoutItemHarmonica
-  category: Items
+  category: GeneralInstruments
   cost: 1
   items:
     - HarmonicaInstrument
@@ -261,7 +261,7 @@
 
 - type: loadout
   id: LoadoutItemAccordion
-  category: Items
+  category: GeneralInstruments
   cost: 4
   items:
     - AccordionInstrument
@@ -275,7 +275,7 @@
 
 - type: loadout
   id: LoadoutItemFlute
-  category: Items
+  category: GeneralInstruments
   cost: 2
   items:
     - FluteInstrument
@@ -289,7 +289,7 @@
 
 - type: loadout
   id: LoadoutItemOcarina
-  category: Items
+  category: GeneralInstruments
   cost: 1
   items:
     - OcarinaInstrument
@@ -301,10 +301,80 @@
       jobs:
         - Musician
 
+- type: loadout
+  id: LoadoutItemRickenbacker
+  category: GeneralInstruments
+  cost: 10
+  items:
+    - Rickenbacker4003Instrument
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutInstrumentsAny
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Musician
+
+- type: loadout
+  id: LoadoutItemBagpipe
+  category: GeneralInstruments
+  cost: 4
+  items:
+    - BagpipeInstrument
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutInstrumentsAny
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Musician
+
+- type: loadout
+  id: LoadoutItemBanjo
+  category: GeneralInstruments
+  cost: 4
+  items:
+    - BanjoInstrument
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutInstrumentsAny
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Musician
+
+- type: loadout
+  id: LoadoutItemClarinet
+  category: GeneralInstruments
+  cost: 4
+  items:
+    - ClarinetInstrument
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutInstrumentsAny
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Musician
+
+- type: loadout
+  id: LoadoutItemSax
+  category: GeneralInstruments
+  cost: 4
+  items:
+    - SaxophoneInstrument
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutInstrumentsAny
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Musician
+
 # Survival Kit
 - type: loadout
   id: LoadoutItemsEmergencyOxygenTank
-  category: Items
+  category: GeneralItems
   cost: 0
   items:
     - EmergencyOxygenTankFilled
@@ -318,7 +388,7 @@
 
 - type: loadout
   id: LoadoutItemsExtendedEmergencyOxygenTank
-  category: Items
+  category: GeneralItems
   cost: 1
   items:
     - ExtendedEmergencyOxygenTankFilled
@@ -332,7 +402,7 @@
 
 - type: loadout
   id: LoadoutItemsDoubleEmergencyOxygenTank
-  category: Items
+  category: GeneralItems
   cost: 2
   items:
     - DoubleEmergencyOxygenTankFilled
@@ -346,14 +416,14 @@
 
 - type: loadout
   id: LoadoutItemClothingMaskBreath
-  category: Items
+  category: GeneralItems
   cost: 0
   items:
     - ClothingMaskBreath
 
 - type: loadout
   id: LoadoutItemsEmergencyCrowbar
-  category: Items
+  category: GeneralItems
   cost: 3
   canBeHeirloom: true
   items:
@@ -361,35 +431,35 @@
 
 - type: loadout
   id: LoadoutItemFireExtinguisher
-  category: Items
+  category: GeneralItems
   cost: 3
   items:
     - FireExtinguisher
 
 - type: loadout
   id: LoadoutItemFlashlightLantern
-  category: Items
+  category: GeneralItems
   cost: 2
   items:
     - FlashlightLantern
 
 - type: loadout
   id: LoadoutItemFlare
-  category: Items
+  category: GeneralItems
   cost: 1
   items:
     - Flare
 
 - type: loadout
   id: LoadoutEmergencyMedipen
-  category: Items
+  category: GeneralItems
   cost: 1
   items:
     - EmergencyMedipen
 
 - type: loadout
   id: LoadoutSpaceMedipen
-  category: Items
+  category: GeneralItems
   cost: 1
   items:
     - SpaceMedipen
@@ -397,7 +467,7 @@
 # Paperwork
 - type: loadout
   id: LoadoutItemPapers
-  category: Items
+  category: GeneralItems
   cost: 0
   items:
     - Paper
@@ -410,7 +480,7 @@
 
 - type: loadout
   id: LoadoutItemBoxFolderGrey
-  category: Items
+  category: GeneralItems
   cost: 0
   items:
     - BoxFolderGrey
@@ -420,14 +490,14 @@
 
 - type: loadout
   id: LoadoutItemBoxFolderClipboard
-  category: Items
+  category: GeneralItems
   cost: 0
   items:
     - BoxFolderClipboard
 
 - type: loadout
   id: LoadoutBookRandom
-  category: Items
+  category: GeneralItems
   cost: 1
   items:
     - BookRandom
@@ -437,7 +507,7 @@
 
 - type: loadout
   id: LoadoutPen
-  category: Items
+  category: GeneralItems
   cost: 0
   items:
     - Pen
@@ -448,7 +518,7 @@
 # Food and drink
 - type: loadout
   id: LoadoutDrinkWaterBottleFull
-  category: Items
+  category: GeneralItems
   cost: 1
   items:
     - DrinkWaterBottleFull
@@ -460,7 +530,7 @@
 
 - type: loadout
   id: LoadoutItemLunchboxGenericFilledRandom
-  category: Items
+  category: GeneralItems
   cost: 3
   items:
     - LunchboxGenericFilledRandom
@@ -472,7 +542,7 @@
 
 - type: loadout
   id: LoadoutItemDrinkMREFlask
-  category: Items
+  category: GeneralItems
   cost: 2
   items:
     - DrinkMREFlask
@@ -485,7 +555,7 @@
 # Survival boxes
 - type: loadout
   id: LoadoutItemBoxSurvival
-  category: Items
+  category: GeneralItems
   cost: 0
   items:
     - BoxSurvival
@@ -500,12 +570,11 @@
        inverted: true
        jobs:
          - Clown
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutBoxKits
+         - Mime 
 
 - type: loadout
   id: LoadoutItemBoxSurvivalEngineering
-  category: Items
+  category: GeneralItems
   cost: 0
   items:
     - BoxSurvivalEngineering
@@ -513,12 +582,10 @@
     - !type:CharacterDepartmentRequirement
        departments:
          - Engineering
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutBoxKits
 
 - type: loadout
   id: LoadoutItemBoxSurvivalSecurity
-  category: Items
+  category: GeneralItems
   cost: 0
   items:
     - BoxSurvivalSecurity
@@ -530,12 +597,10 @@
        inverted: true
        jobs:
          - Brigmedic
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutBoxKits
 
 - type: loadout
   id: LoadoutItemBoxSurvivalBrigmedic
-  category: Items
+  category: GeneralItems
   cost: 0
   items:
     - BoxSurvivalBrigmedic
@@ -543,12 +608,10 @@
     - !type:CharacterJobRequirement
        jobs:
          - Brigmedic
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutBoxKits
 
 - type: loadout
   id: LoadoutItemBoxSurvivalMedical
-  category: Items
+  category: GeneralItems
   cost: 0
   items:
     - BoxSurvivalMedical
@@ -556,12 +619,10 @@
     - !type:CharacterDepartmentRequirement
        departments:
          - Medical
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutBoxKits
 
 - type: loadout
   id: LoadoutItemBoxHug
-  category: Items
+  category: GeneralItems
   cost: 0
   items:
     - BoxHug
@@ -569,13 +630,22 @@
     - !type:CharacterJobRequirement
        jobs:
          - Clown
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutBoxKits
+
+- type: loadout # TheDen
+  id: LoadoutItemBoxMime
+  category: GeneralItems
+  cost: 0
+  items:
+    - BoxMime
+  requirements:
+    - !type:CharacterJobRequirement
+       jobs:
+         - Mime
 
 # Medkits
 - type: loadout
   id: LoadoutMedkitFilled
-  category: Items
+  category: GeneralItems
   cost: 2
   items:
     - MedkitFilled
@@ -585,109 +655,115 @@
 
 - type: loadout
   id: LoadoutMedkitBruteFilled
-  category: Items
+  category: GeneralItems
   cost: 2
   items:
     - MedkitBruteFilled
-  requirements:
+  requirements: #TheDen
+  - !type:CharacterLogicXorRequirement
+    requirements:
+    - !type:CharacterDepartmentRequirement
+      departments:
+      - Medical
     - !type:CharacterJobRequirement
       jobs:
-        - MedicalDoctor
-        - Paramedic
-        - ChiefMedicalOfficer
-        - MedicalIntern
-        - Brigmedic
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutBoxKits
+      - Brigmedic
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutBoxKits
 
 - type: loadout
   id: LoadoutMedkitBurnFilled
-  category: Items
+  category: GeneralItems
   cost: 2
   items:
     - MedkitBurnFilled
-  requirements:
+  requirements: #TheDen
+  - !type:CharacterLogicXorRequirement
+    requirements:
+    - !type:CharacterDepartmentRequirement
+      departments:
+      - Medical
     - !type:CharacterJobRequirement
       jobs:
-        - MedicalDoctor
-        - Paramedic
-        - ChiefMedicalOfficer
-        - MedicalIntern
-        - Brigmedic
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutBoxKits
+      - Brigmedic
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutBoxKits
 
 - type: loadout
   id: LoadoutMedkitToxinFilled
-  category: Items
+  category: GeneralItems
   cost: 2
   items:
     - MedkitToxinFilled
-  requirements:
+  requirements: #TheDen
+  - !type:CharacterLogicXorRequirement
+    requirements:
+    - !type:CharacterDepartmentRequirement
+      departments:
+      - Medical
     - !type:CharacterJobRequirement
       jobs:
-        - MedicalDoctor
-        - Paramedic
-        - ChiefMedicalOfficer
-        - MedicalIntern
-        - Brigmedic
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutBoxKits
+      - Brigmedic
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutBoxKits
 
 - type: loadout
   id: LoadoutMedkitOxygenFilled
-  category: Items
+  category: GeneralItems
   cost: 2
   items:
     - MedkitOxygenFilled
-  requirements:
+  requirements: #TheDen
+  - !type:CharacterLogicXorRequirement
+    requirements:
+    - !type:CharacterDepartmentRequirement
+      departments:
+      - Medical
     - !type:CharacterJobRequirement
       jobs:
-        - MedicalDoctor
-        - Paramedic
-        - ChiefMedicalOfficer
-        - MedicalIntern
-        - Brigmedic
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutBoxKits
+      - Brigmedic
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutBoxKits
 
 - type: loadout
   id: LoadoutMedkitRadiationFilled
-  category: Items
+  category: GeneralItems
   cost: 2
   items:
     - MedkitRadiationFilled
-  requirements:
+  requirements: #TheDen
+  - !type:CharacterLogicXorRequirement
+    requirements:
+    - !type:CharacterDepartmentRequirement
+      departments:
+      - Medical
     - !type:CharacterJobRequirement
       jobs:
-        - MedicalDoctor
-        - Paramedic
-        - ChiefMedicalOfficer
-        - MedicalIntern
-        - Brigmedic
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutBoxKits
+      - Brigmedic
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutBoxKits
 
 - type: loadout
   id: LoadoutMedkitAdvancedFilled
-  category: Items
+  category: GeneralItems
   cost: 3
   items:
     - MedkitAdvancedFilled
-  requirements:
+  requirements: #TheDen
+  - !type:CharacterLogicXorRequirement
+    requirements:
+    - !type:CharacterDepartmentRequirement
+      departments:
+      - Medical
     - !type:CharacterJobRequirement
       jobs:
-        - MedicalDoctor
-        - Paramedic
-        - ChiefMedicalOfficer
-        - MedicalIntern
-        - Brigmedic
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutBoxKits
+      - Brigmedic
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutBoxKits
 
 - type: loadout
   id: LoadoutMedkitCombatFilled
-  category: Items
+  category: GeneralItems
   cost: 3
   items:
     - MedkitCombatFilled
@@ -699,10 +775,10 @@
     - !type:CharacterItemGroupRequirement
       group: LoadoutBoxKits
 
-#Misc Items
+#Misc GeneralItems
 - type: loadout
   id: LoadoutCivilianDisabler
-  category: Items
+  category: GeneralItems
   cost: 5
   canBeHeirloom: true
   requirements:
@@ -715,7 +791,7 @@
 
 - type: loadout
   id: LoadoutItemFlash
-  category: Items
+  category: GeneralItems
   cost: 1
   items:
     - Flash
@@ -730,7 +806,7 @@
  # 5 zillion ghostroles, more people will take them if theyre less common.
  # - type: loadout
  # id: LoadoutItemPAI
- # category: Items
+ # category: GeneralItems
  # cost: 3
  # canBeHeirloom: true
  # items:
@@ -738,56 +814,56 @@
 
 - type: loadout
   id: LoadoutItemCrayonBox
-  category: Items
+  category: GeneralItems
   cost: 4
   items:
     - CrayonBox
 
 - type: loadout
   id: LoadoutItemCrayonMagic
-  category: Items
+  category: GeneralItems
   cost: 8
   items:
     - CrayonMagic
 
 - type: loadout
   id: LoadoutItemBarberScissors
-  category: Items
+  category: GeneralItems
   cost: 4
   items:
     - BarberScissors
 
 - type: loadout
   id: LoadoutSolCommonTranslator
-  category: Items
+  category: GeneralItems
   cost: 3
   items:
     - SolCommonTranslator
 
 - type: loadout
   id: LoadoutHandLabeler
-  category: Items
+  category: GeneralItems
   cost: 3
   items:
     - HandLabeler
 
 - type: loadout
   id: LoadoutItemHandheldStationMap
-  category: Items
+  category: GeneralItems
   cost: 2
   items:
     - HandheldStationMap
 
 - type: loadout
   id: LoadoutItemLantern
-  category: Items
+  category: GeneralItems
   cost: 2
   items:
     - Lantern
 
 - type: loadout
   id: LoadoutItemDrinkShinyFlask
-  category: Items
+  category: GeneralItems
   cost: 1
   customColorTint: true
   canBeHeirloom: true
@@ -796,7 +872,7 @@
 
 - type: loadout
   id: LoadoutItemDrinkLithiumFlask
-  category: Items
+  category: GeneralItems
   cost: 1
   customColorTint: true
   items:
@@ -804,7 +880,7 @@
 
 - type: loadout
   id: LoadoutItemDrinkVacuumFlask
-  category: Items
+  category: GeneralItems
   cost: 1
   customColorTint: true
   items:
@@ -812,14 +888,14 @@
 
 - type: loadout
   id: LoadoutItemAACTablet
-  category: Items
+  category: GeneralItems
   cost: 2
   items:
     - AACTablet
 
 - type: loadout
   id: LoadoutItemCaneBlind
-  category: Items
+  category: GeneralItems
   cost: 0 # It shouldnt cost points to be able to function.
   items:
     - WhiteCane
@@ -827,7 +903,7 @@
 # Pets
 - type: loadout
   id: LoadoutItemPetMouse
-  category: Items
+  category: GeneralItems
   cost: 2
   canBeHeirloom: true
   customColorTint: true # Unethical hair dyes!
@@ -841,7 +917,7 @@
 
 - type: loadout
   id: LoadoutItemPetHamster
-  category: Items
+  category: GeneralItems
   cost: 2
   canBeHeirloom: true
   customColorTint: true
@@ -855,7 +931,7 @@
 
 - type: loadout
   id: LoadoutItemPetMothroach
-  category: Items
+  category: GeneralItems
   cost: 2
   canBeHeirloom: true
   customColorTint: true
@@ -869,7 +945,7 @@
 
 - type: loadout
   id: LoadoutItemPetCockroach
-  category: Items
+  category: GeneralItems
   cost: 2
   canBeHeirloom: true
   customColorTint: true
@@ -883,7 +959,7 @@
 
 - type: loadout
   id: LoadoutItemPetRoingus
-  category: Items
+  category: GeneralItems
   cost: 2
   canBeHeirloom: true
   customColorTint: true
@@ -897,7 +973,7 @@
 
 - type: loadout
   id: LoadoutItemBlackDeck
-  category: Items
+  category: GeneralItems
   cost: 3
   canBeHeirloom: false
   items:
@@ -908,7 +984,7 @@
 
 - type: loadout
   id: LoadoutItemNTDeck
-  category: Items
+  category: GeneralItems
   cost: 3
   canBeHeirloom: false
   items:
@@ -922,14 +998,14 @@
 
 - type: loadout
   id: LoadoutItemFoodLollipop
-  category: Items
+  category: GeneralItems
   cost: 0
   items:
     - FoodLollipop
 
 - type: loadout
   id: LuxuryPen
-  category: Items
+  category: GeneralItems
   cost: 2
   canBeHeirloom: true
   items:
@@ -940,166 +1016,347 @@
 
 - type: loadout
   id: PlushieSharkBlue
-  category: Items
+  category: GeneralToys
   cost: 1
   canBeHeirloom: true
   items:
     - PlushieSharkBlue
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutPlushie
 
 - type: loadout
   id: PlushieSharkPink
-  category: Items
+  category: GeneralToys
   cost: 1
   canBeHeirloom: true
   items:
     - PlushieSharkPink
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutPlushie
 
 
 - type: loadout
   id: PlushieSharkGrey
-  category: Items
+  category: GeneralToys
   cost: 1
   canBeHeirloom: true
   items:
     - PlushieSharkGrey
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutPlushie
 
 - type: loadout
   id: PlushieLizard
-  category: Items
+  category: GeneralToys
   cost: 1
   canBeHeirloom: true
   items:
     - PlushieLizard
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutPlushie
 
 - type: loadout
   id: PlushieArachind
-  category: Items
+  category: GeneralToys
   cost: 1
   canBeHeirloom: true
   items:
     - PlushieArachind
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutPlushie
 
 - type: loadout
   id: PlushieMoth
-  category: Items
+  category: GeneralToys
   cost: 1
   canBeHeirloom: true
   items:
     - PlushieMoth
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutPlushie
 
 - type: loadout
   id: PlushieHampter
-  category: Items
+  category: GeneralToys
   cost: 1
   canBeHeirloom: true
   items:
     - PlushieHampter
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutPlushie
 
 - type: loadout
   id: PlushieRouny
-  category: Items
+  category: GeneralToys
   cost: 1
   canBeHeirloom: true
   items:
     - PlushieRouny
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutPlushie
 
 - type: loadout
   id: PlushieCarp
-  category: Items
+  category: GeneralToys
   cost: 1
   canBeHeirloom: true
   items:
     - PlushieCarp
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutPlushie
 
 - type: loadout
   id: PlushieSlime
-  category: Items
+  category: GeneralToys
   cost: 1
   canBeHeirloom: true
   items:
     - PlushieSlime
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutPlushie
 
 - type: loadout
   id: PlushieVox
-  category: Items
+  category: GeneralToys
   cost: 1
   canBeHeirloom: true
   items:
     - PlushieVox
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutPlushie
 
 - type: loadout
   id: PlushieHuman
-  category: Items
+  category: GeneralToys
   cost: 1
   canBeHeirloom: true
   items:
     - PlushieHuman
-  requirements:
-     - !type:CharacterItemGroupRequirement
-       group: LoadoutPlushie
 
 - type: loadout
   id: PlushieArachne
-  category: Items
+  category: GeneralToys
   cost: 1
   canBeHeirloom: true
   items:
     - PlushieArachne
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutPlushie
 
 - type: loadout
   id: PlushieVulp
-  category: Items
+  category: GeneralToys
   cost: 1
   canBeHeirloom: true
   items:
     - PlushieVulp
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutPlushie
 
 - type: loadout
   id: PlushieShadowkin
-  category: Items
+  category: GeneralToys
   cost: 1
   canBeHeirloom: true
   items:
     - PlushieShadowkin
+
+- type: loadout #TheDen
+  id: ToyThrongler
+  category: GeneralToys
+  cost: 100
+  canBeHeirloom: true
   requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutPlushie
+    - !type:CharacterJobRequirement
+       jobs:
+         - DeathSquad
+  items:
+    - ThronglerToy
+
+- type: loadout #TheDen
+  id: ToyAmongPequeno
+  category: GeneralToys
+  cost: 1
+  canBeHeirloom: true
+  items:
+    - ToyAmongPequeno
+
+- type: loadout #TheDen
+  id: PlushieCorgi
+  category: GeneralToys
+  cost: 1
+  canBeHeirloom: true
+  items:
+    - PlushieCorgi
+
+- type: loadout #TheDen
+  id: PlushieGirlyCorgi
+  category: GeneralToys
+  cost: 1
+  canBeHeirloom: true
+  items:
+    - PlushieGirlyCorgi
+
+- type: loadout #TheDen
+  id: PlushieRobotCorgi
+  category: GeneralToys
+  cost: 1
+  canBeHeirloom: true
+  items:
+    - PlushieRobotCorgi
+
+- type: loadout #TheDen
+  id: PlushieMothBartender
+  category: GeneralToys
+  cost: 1
+  canBeHeirloom: true
+  items:
+    - PlushieMothBartender
+
+- type: loadout #TheDen
+  id: PlushieMothMusician
+  category: GeneralToys
+  cost: 1
+  canBeHeirloom: true
+  items:
+    - PlushieMothMusician
+
+- type: loadout #TheDen
+  id: PlushieMort
+  category: GeneralToys
+  cost: 1
+  canBeHeirloom: true
+  items:
+    - PlushieMort
+
+- type: loadout #TheDen
+  id: PlushieXeno
+  category: GeneralToys
+  cost: 1
+  canBeHeirloom: true
+  items:
+    - PlushieXeno
+
+- type: loadout #TheDen
+  id: PlushieCatBlack
+  category: GeneralToys
+  cost: 1
+  canBeHeirloom: true
+  items:
+    - PlushieCatBlack
+
+- type: loadout #TheDen
+  id: PlushieCatGrey
+  category: GeneralToys
+  cost: 1
+  canBeHeirloom: true
+  items:
+    - PlushieCatGrey
+
+- type: loadout #TheDen
+  id: PlushieCatOrange
+  category: GeneralToys
+  cost: 1
+  canBeHeirloom: true
+  items:
+    - PlushieCatOrange
+
+- type: loadout #TheDen
+  id: PlushieCatSiames
+  category: GeneralToys
+  cost: 1
+  canBeHeirloom: true
+  items:
+    - PlushieCatSiames
+
+- type: loadout #TheDen
+  id: PlushieCatTabby
+  category: GeneralToys
+  cost: 1
+  canBeHeirloom: true
+  items:
+    - PlushieCatTabby
+
+- type: loadout #TheDen
+  id: PlushieCatTuxedo
+  category: GeneralToys
+  cost: 1
+  canBeHeirloom: true
+  items:
+    - PlushieCatTuxedo
+
+- type: loadout #TheDen
+  id: PlushieCatWhite
+  category: GeneralToys
+  cost: 1
+  canBeHeirloom: true
+  items:
+    - PlushieCatWhite
+
+- type: loadout #TheDen
+  id: PlushieBlackFox
+  category: GeneralToys
+  cost: 1
+  canBeHeirloom: true
+  items:
+    - PlushieBlackFox
+
+- type: loadout #TheDen
+  id: PlushieBlueFox
+  category: GeneralToys
+  cost: 1
+  canBeHeirloom: true
+  items:
+    - PlushieBlueFox
+
+- type: loadout #TheDen
+  id: PlushieCoffeeFox
+  category: GeneralToys
+  cost: 1
+  canBeHeirloom: true
+  items:
+    - PlushieCoffeeFox
+
+- type: loadout #TheDen
+  id: PlushieCrimsonFox
+  category: GeneralToys
+  cost: 1
+  canBeHeirloom: true
+  items:
+    - PlushieCrimsonFox
+
+- type: loadout #TheDen
+  id: PlushieMarbleFox
+  category: GeneralToys
+  cost: 1
+  canBeHeirloom: true
+  items:
+    - PlushieMarbleFox
+
+- type: loadout #TheDen
+  id: PlushieOrangeFox
+  category: GeneralToys
+  cost: 1
+  canBeHeirloom: true
+  items:
+    - PlushieOrangeFox
+
+- type: loadout #TheDen
+  id: PlushiePinkFox
+  category: GeneralToys
+  cost: 1
+  canBeHeirloom: true
+  items:
+    - PlushiePinkFox
+
+- type: loadout #TheDen
+  id: PlushiePurpleFox
+  category: GeneralToys
+  cost: 1
+  canBeHeirloom: true
+  items:
+    - PlushiePurpleFox
+
+- type: loadout #TheDen
+  id: PlushieRedFox
+  category: GeneralToys
+  cost: 1
+  canBeHeirloom: true
+  items:
+    - PlushieRedFox
+
+- type: loadout #TheDen
+  id: PlushieDeer
+  category: GeneralToys
+  cost: 1
+  canBeHeirloom: true
+  items:
+    - PlushieDeer
+
+- type: loadout #TheDen
+  id: MysteryFigureBox
+  category: GeneralToys
+  cost: 1
+  items:
+    - MysteryFigureBox
+
+- type: loadout #TheDen
+  id: PrizeBall
+  category: GeneralToys
+  cost: 1
+  items:
+    - PrizeBall
