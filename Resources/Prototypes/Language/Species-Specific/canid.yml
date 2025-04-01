@@ -1,0 +1,13 @@
+# A horrifying mix of Sol Common and Calinuzt, the language is loosely remembles sol with alot more yapping, snarling, and growling. The emotions are expressed both through words, and through extensive ear movement
+# TODO: Replace this with a much better language.
+- type: language
+  id: Alaseta
+  isVisibleLanguage: true
+  speech:
+    color: "#64FFD0"
+  obfuscation:
+    !type:SyllableObfuscation
+    minSyllables: 1
+    maxSyllables: 1
+    replacement:
+    - Wuff
