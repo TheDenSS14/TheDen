@@ -1,0 +1,88 @@
+- type: entity
+  save: false
+  name: Urist McCanid
+  parent: BaseMobHuman
+  id: MobCanidBase
+  abstract: true
+  components:
+  - type: Sprite
+    scale: 0.8, 0.8
+  - type: HumanoidAppearance
+    species: Canid
+  - type: Fixtures
+    fixtures: # TODO: This needs a second fixture just for mob collisions.
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.28
+        density: 140
+        restitution: 0.0
+        mask:
+        - MobMask
+        layer:
+        - MobLayer
+  - type: Body
+    prototype: Canid
+  - type: Damageable
+    damageModifierSet: Canid
+  - type: SlowOnDamage
+    speedModifierThresholds:
+      60: 0.85  # 0.7 is base speed.
+      80: 0.75  # 0.5 is base speed.
+  - type: MeleeWeapon
+    soundHit:
+      collection: Punch
+    animation: WeaponArcClaw
+    damage:
+      types:
+        Blunt: 3
+        Slash: 2
+  - type: Speech
+    speechSounds: Vulpkanin
+    speechVerb: Vulpkanin
+  - type: Stamina
+    critThreshold: 85
+    decay: 2.55 # 3 base decay multiplied by 0.85 = 2.55
+  - type: PseudoItem
+    storedOffset: 0,17
+    shape:
+      - 0,0,1,4
+      - 0,2,3,4
+      - 4,0,5,4
+  - type: Vocal
+    sounds:
+      Male: MaleVulpkanin
+      Female: FemaleVulpkanin
+      Unsexed: MaleVulpkanin
+  - type: NoShoesSilentFootsteps
+  - type: LanguageKnowledge
+    speaks:
+    - TauCetiBasic
+    - Canid Langauge Here
+    understands:
+    - TauCetiBasic
+    - Canid Langauge Here
+  - type: StepTriggerImmune
+    whitelist:
+      types:
+        - Shard
+        - Landmine
+        - Mousetrap
+        - SlipEntity
+  - type: Tag
+    tags:
+    - CanPilot
+    - FootstepSound
+    - DoorBumpOpener
+    - CanidEmotes
+
+- type: entity
+  save: false
+  name: Urist McHands
+  parent: MobHumanDummy
+  id: MobCanidDummy
+  categories: [ HideSpawnMenu ]
+  description: A dummy canid meant to be used in character setup.
+  components:
+  - type: HumanoidAppearance
+    species: Canid
