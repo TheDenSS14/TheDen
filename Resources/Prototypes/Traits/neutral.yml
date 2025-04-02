@@ -41,7 +41,7 @@
     - !type:TraitAddComponent
       components:
         - type: SouthernAccent
-        
+
 - type: trait
   id: GermanAccent
   category: TraitsSpeechAccents
@@ -52,7 +52,7 @@
     - !type:TraitAddComponent
       components:
         - type: GermanAccent
-        
+
 - type: trait
   id: ItalianAccent
   category: TraitsSpeechAccents
@@ -86,6 +86,7 @@
       species:
         - Harpy
         - Vulpkanin
+        - Canid
   functions:
     - !type:TraitRemoveComponent
       components:
