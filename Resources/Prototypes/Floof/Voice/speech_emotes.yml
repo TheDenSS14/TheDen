@@ -2,6 +2,10 @@
   id: Gekker
   name: chat-emote-name-gekker
   category: Vocal
+  whitelist:
+    tags:
+    - VulpEmotes
+    - HarpyEmotes
   chatMessages: [ gekkers ]
   chatTriggers:
   - gekkers
@@ -10,6 +14,10 @@
   id: Yip
   name: chat-emote-name-yip
   category: Vocal
+  whitelist:
+    tags:
+    - VulpEmotes
+    - HarpyEmotes
   chatMessages: [ yips ]
   chatTriggers:
   - yip
