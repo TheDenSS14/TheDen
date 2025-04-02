@@ -33,3 +33,6 @@ trait-description-TailWag =
 
 trait-name-FastMetabolism = Fast Metabolism
 trait-description-FastMetabolism = You naturally have a faster metabolism, burning through calories faster than average, requiring more food to satisfy your hunger.
+
+trait-name-Alaseta = Alaseta
+trait-description-Alaseta = A horrifying mix of Sol Common and Canilunzt, the language is loosely remembles the structure Sol Common with alot more yapping, snarling, and growling.
