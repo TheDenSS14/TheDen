@@ -124,10 +124,11 @@ marking-FeroxiTorsoStripesBlitz-feroxi-torso-stripes-blitz = Stripes
 marking-FeroxiTorsoStripesTiger = Full Stripes
 marking-FeroxiTorsoStripesTiger-feroxi-torso-stripes-tiger = Stripes
 
-marking-FeroxiTorsoCountershadingF = Countershading (Feminine)
+# The Den - Remove indicators from the gender of the countershading
+marking-FeroxiTorsoCountershadingF = Countershading
 marking-FeroxiTorsoCountershadingF-feroxi-torso-countershading-f = Countershading
 
-marking-FeroxiTorsoCountershadingM = Countershading (Masculine)
+marking-FeroxiTorsoCountershadingM = Countershading
 marking-FeroxiTorsoCountershadingM-feroxi-torso-countershading-m = Countershading
 
 marking-FeroxiLeftLegStripesBlitz = Left Calf Stripes
