@@ -6,7 +6,7 @@
   abstract: true
   components:
   - type: Sprite
-    scale: 0.8, 0.8
+    scale: 0.9, 0.9
   - type: HumanoidAppearance
     species: Canid
   - type: Fixtures
@@ -14,8 +14,8 @@
       fix1:
         shape:
           !type:PhysShapeCircle
-          radius: 0.28
-        density: 140
+          radius: 0.315
+        density: 162.5
         restitution: 0.0
         mask:
         - MobMask
@@ -25,30 +25,12 @@
     prototype: Canid
   - type: Damageable
     damageModifierSet: Canid
-  - type: SlowOnDamage
-    speedModifierThresholds:
-      60: 0.85  # 0.7 is base speed.
-      80: 0.75  # 0.5 is base speed.
-  - type: MeleeWeapon
-    soundHit:
-      collection: Punch
-    animation: WeaponArcClaw
-    damage:
-      types:
-        Blunt: 3
-        Slash: 2
   - type: Speech
     speechSounds: Vulpkanin
     speechVerb: Vulpkanin
   - type: Stamina
-    critThreshold: 85
-    decay: 2.55 # 3 base decay multiplied by 0.85 = 2.55
-  - type: PseudoItem
-    storedOffset: 0,17
-    shape:
-      - 0,0,1,4
-      - 0,2,3,4
-      - 4,0,5,4
+    critThreshold: 90
+    decay: 2.7 # 3 base decay multiplied by 0.9 = 2.7
   - type: Vocal
     sounds:
       Male: MaleVulpkanin
@@ -74,7 +56,7 @@
     - CanPilot
     - FootstepSound
     - DoorBumpOpener
-    - CanidEmotes
+    - VulpEmotes
 
 - type: entity
   save: false
