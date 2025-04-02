@@ -166,6 +166,21 @@
     - WeaponSubMachineGunBRDIR25BSO # The Den sprites
 
 - type: loadout
+  id: LoadoutWeaponRiflBSOAk
+  category: JobsCommandBlueshieldOfficer
+  cost: 6 # upgrade over the chester, but a lot less subtle than the brdi
+  canBeHeirloom: true
+  guideEntry: SecurityWeapons
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBlueshieldOfficerPrimary
+    - !type:CharacterJobRequirement
+      jobs:
+        - BlueshieldOfficer
+  items:
+    - WeaponRiflBSOAk
+
+- type: loadout
   id: LoadoutBSOShield
   category: JobsCommandBlueshieldOfficer
   cost: 0
