@@ -1,0 +1,24 @@
+# A horrifying mix of Sol Common and Canilunzt, the language is loosely remembles the structure Sol Common with alot more yapping, snarling, and growling.
+# TODO: Replace this with a much better language.
+- type: language
+  id: Alaseta
+  isVisibleLanguage: true
+  speech:
+    color: "#64FFD0"
+  obfuscation:
+    !type:SyllableObfuscation
+    minSyllables: 2
+    maxSyllables: 3
+    replacement:
+    - wuff
+    - awuff
+    - bow
+    - wow
+    - ahwa
+    - grr
+    - awf
+    - rrr
+    - shna
+    - yhi
+    - yip
+    - bau
