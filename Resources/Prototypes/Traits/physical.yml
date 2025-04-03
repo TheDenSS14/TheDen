@@ -921,6 +921,10 @@
       jobs:
         - Prisoner # Bionics should be "Confiscated" from long term prisoners.
   functions:
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - WheelchairBound
     - !type:TraitPushDescription
       descriptionExtensions:
         - description: examine-bionic-leg-message
