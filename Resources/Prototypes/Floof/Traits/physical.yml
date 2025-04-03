@@ -53,7 +53,7 @@
 - type: trait
   id: Lightweight
   category: Physical
-  points: -2 # Has pros and cons, not sure
+  points: 2 # Has pros and cons, not sure
   requirements:
   - !type:CharacterJobRequirement
     inverted: true
@@ -71,6 +71,8 @@
     inverted: true
     traits:
     - Heavyweight
+    - UltraLightweight
+    - UltraHeavyweight
   functions:
     - !type:TraitAddComponent
       components:
