@@ -2,14 +2,12 @@
 - type: emote
   id: Gnash
   name: delta-chat-emote-name-gnash
-  category: Vocal
+  category: Visual
   available: false
   whitelist:
-    components:
-    - Vocal
-  blacklist:
-    components:
-    - BorgChassis
+    tags:
+    - FeroxiEmotes
+    - HarpyEmotes
   chatMessages: [gnashes.]
   chatTriggers:
     - gnash
