@@ -821,6 +821,7 @@ character-item-group-LoadoutPrisonerUniforms = Prisoner Uniforms
 character-item-group-TraitsLanguagesBasic = Basic Languages
 character-item-group-TraitsLanguagesRacial = Racial Languages
 character-item-group-TraitsAccents = Accents
+character-item-group-TraitsLanguagesTajaran = Tajaran Languages
 
 # Traits - Mind Or Machine
 character-item-group-TraitsMind = Mind Over Machine
