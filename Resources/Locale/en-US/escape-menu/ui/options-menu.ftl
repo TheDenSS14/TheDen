@@ -177,8 +177,12 @@ ui-options-function-target-head = Target head
 ui-options-function-target-torso = Target torso
 ui-options-function-target-left-arm = Target left arm
 ui-options-function-target-right-arm = Target right arm
+ui-options-function-target-left-hand = Target left hand
+ui-options-function-target-right-hand = Target right hand
 ui-options-function-target-left-leg = Target left leg
 ui-options-function-target-right-leg = Target right leg
+ui-options-function-target-left-foot = Target left foot
+ui-options-function-target-right-foot = Target right foot
 
 ui-options-function-focus-chat-input-window = Focus chat
 ui-options-function-focus-local-chat-window = Focus chat (IC)
