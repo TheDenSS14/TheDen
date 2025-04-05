@@ -163,7 +163,7 @@ entities:
           version: 6
         -3,-4:
           ind: -3,-4
-          tiles: AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAfgAAAAAAfgAAAAAAfgAAAAAAfgAAAAAAfgAAAAAAfgAAAAAAfgAAAAAAfgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAfgAAAAAAfgAAAAAAfgAAAAAAfgAAAAAAfgAAAAAAfgAAAAAAfgAAAAAAfgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAfgAAAAAAfgAAAAAAfgAAAAAAAAAAAAAAAAAAAAAAfgAAAAAAAAAAAAAAfgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAfgAAAAAAfgAAAAAAfgAAAAAAAAAAAAAAAAAAAAAAfgAAAAAAfgAAAAAAfgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAfgAAAAAAfgAAAAAAfgAAAAAAfgAAAAAAfgAAAAAAfgAAAAAAfgAAAAAAfgAAAAAAfgAAAAAAfgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAfgAAAAAAfgAAAAAAfgAAAAAAfgAAAAAAfgAAAAAAfgAAAAAAfgAAAAAAfgAAAAAAfgAAAAAAfgAAAAAAfgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAfgAAAAAAfgAAAAAAfgAAAAAAfgAAAAAAfgAAAAAAfgAAAAAAfgAAAAAAfgAAAAAAfgAAAAAAfgAAAAAAfgAAAAAAfgAAAAAAfgAAAAAAfgAAAAAAfgAAAAAAfgAAAAAAfgAAAAAAfgAAAAAAfgAAAAAAfgAAAAAAfgAAAAAAAAAAAAAAfgAAAAAAfgAAAAAAfgAAAAAAfgAAAAAAfgAAAAAAfgAAAAAAfgAAAAAAfgAAAAAAfgAAAAAAfgAAAAAAfgAAAAAAfgAAAAAAfgAAAAAAfgAAAAAAfgAAAAAAfgAAAAAAfgAAAAAAfgAAAAAAfgAAAAAAfgAAAAAAfgAAAAAAfgAAAAAAfgAAAAAAfgAAAAAAfgAAAAAAfgAAAAAAfgAAAAAAfgAAAAAAfgAAAAAAfgAAAAAAfgAAAAAAAAAAAAAAfgAAAAAAAAAAAAAAAAAAAAAAfgAAAAAAAAAAAAAAfgAAAAAAfgAAAAAAfgAAAAAAfgAAAAAAfgAAAAAAfgAAAAAAfgAAAAAAfgAAAAAAfgAAAAAAfgAAAAAAfgAAAAAAfgAAAAAAfgAAAAAAfgAAAAAAfgAAAAAAfgAAAAAAfgAAAAAAfgAAAAAAfgAAAAAAfgAAAAAAfgAAAAAAfgAAAAAAfgAAAAAAfwAAAAAAfwAAAAAAfwAAAAAAfwAAAAAAfwAAAAAAfwAAAAAAfwAAAAAAfgAAAAAAfgAAAAAAfgAAAAAAfgAAAAAAfgAAAAAAfgAAAAAAfgAAAAAAfgAAAAAAfgAAAAAAfwAAAAAAfwAAAAAAfwAAAAAAbgAAAAAAbgAAAAAAbgAAAAAAfwAAAAAAUAAAAAAAUAAAAAAAUAAAAAAAfwAAAAAAfwAAAAAAUAAAAAAAUAAAAAAAUAAAAAAAUAAAAAAAfwAAAAAAfwAAAAAAfwAAAAAAIAAAAAACIAAAAAAAIAAAAAACUAAAAAAAIAAAAAADIAAAAAADIAAAAAADfgAAAAAAUAAAAAAAfwAAAAAAfwAAAAAAfwAAAAAAfwAAAAAAfwAAAAAAfwAAAAAAfwAAAAAAIAAAAAADTwAAAAADIAAAAAAAbQAAAAAAIAAAAAACfwAAAAAAIAAAAAAAfgAAAAAAUAAAAAAAfwAAAAAAfwAAAAAAfwAAAAAAfwAAAAAAfwAAAAAAfwAAAAAAfwAAAAAAIAAAAAAAIAAAAAAAIAAAAAADUAAAAAAAIAAAAAABfwAAAAAAIAAAAAAB
+          tiles: AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAfgAAAAAAfgAAAAAAfgAAAAAAfgAAAAAAfgAAAAAAfgAAAAAAfgAAAAAAfgAAAAAAfgAAAAAAfgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAfgAAAAAAfgAAAAAAfgAAAAAAfgAAAAAAfgAAAAAAfgAAAAAAfgAAAAAAfgAAAAAAfgAAAAAAfgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAfgAAAAAAfgAAAAAAfgAAAAAAfgAAAAAAfgAAAAAAAAAAAAAAAAAAAAAAfgAAAAAAAAAAAAAAfgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAfgAAAAAAfgAAAAAAfgAAAAAAfgAAAAAAfgAAAAAAAAAAAAAAAAAAAAAAfgAAAAAAfgAAAAAAfgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAfgAAAAAAfgAAAAAAfgAAAAAAfgAAAAAAfgAAAAAAfgAAAAAAfgAAAAAAfgAAAAAAfgAAAAAAfgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAfgAAAAAAfgAAAAAAfgAAAAAAfgAAAAAAfgAAAAAAfgAAAAAAfgAAAAAAfgAAAAAAfgAAAAAAfgAAAAAAfgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAfgAAAAAAfgAAAAAAfgAAAAAAfgAAAAAAfgAAAAAAfgAAAAAAfgAAAAAAfgAAAAAAfgAAAAAAfgAAAAAAfgAAAAAAfgAAAAAAfgAAAAAAfgAAAAAAfgAAAAAAfgAAAAAAfgAAAAAAfgAAAAAAfgAAAAAAfgAAAAAAfgAAAAAAAAAAAAAAfgAAAAAAfgAAAAAAfgAAAAAAfgAAAAAAfgAAAAAAfgAAAAAAfgAAAAAAfgAAAAAAfgAAAAAAfgAAAAAAfgAAAAAAfgAAAAAAfgAAAAAAfgAAAAAAfgAAAAAAfgAAAAAAfgAAAAAAfgAAAAAAfgAAAAAAfgAAAAAAfgAAAAAAfgAAAAAAfgAAAAAAfgAAAAAAfgAAAAAAfgAAAAAAfgAAAAAAfgAAAAAAfgAAAAAAfgAAAAAAfgAAAAAAAAAAAAAAfgAAAAAAAAAAAAAAAAAAAAAAfgAAAAAAAAAAAAAAfgAAAAAAfgAAAAAAfgAAAAAAfgAAAAAAfgAAAAAAfgAAAAAAfgAAAAAAfgAAAAAAfgAAAAAAfgAAAAAAfgAAAAAAfgAAAAAAfgAAAAAAfgAAAAAAfgAAAAAAfgAAAAAAfgAAAAAAfgAAAAAAfgAAAAAAfgAAAAAAfgAAAAAAfgAAAAAAfgAAAAAAfwAAAAAAfwAAAAAAfwAAAAAAfwAAAAAAfwAAAAAAfwAAAAAAfwAAAAAAfgAAAAAAfgAAAAAAfgAAAAAAfgAAAAAAfgAAAAAAfgAAAAAAfgAAAAAAfgAAAAAAfgAAAAAAfwAAAAAAfwAAAAAAfwAAAAAAbgAAAAAAbgAAAAAAbgAAAAAAfwAAAAAAUAAAAAAAUAAAAAAAUAAAAAAAfwAAAAAAfwAAAAAAUAAAAAAAUAAAAAAAUAAAAAAAUAAAAAAAfwAAAAAAfwAAAAAAfwAAAAAAIAAAAAACIAAAAAAAIAAAAAACUAAAAAAAIAAAAAADIAAAAAADIAAAAAADfgAAAAAAUAAAAAAAfwAAAAAAfwAAAAAAfwAAAAAAfwAAAAAAfwAAAAAAfwAAAAAAfwAAAAAAIAAAAAADTwAAAAADIAAAAAAAbQAAAAAAIAAAAAACfwAAAAAAIAAAAAAAfgAAAAAAUAAAAAAAfwAAAAAAfwAAAAAAfwAAAAAAfwAAAAAAfwAAAAAAfwAAAAAAfwAAAAAAIAAAAAAAIAAAAAAAIAAAAAADUAAAAAAAIAAAAAABfwAAAAAAIAAAAAAB
           version: 6
         -4,-4:
           ind: -4,-4
@@ -3548,13 +3548,13 @@ entities:
             2: 3
           -10,-10:
             0: 63232
-            6: 14
+            4: 14
           -10,-12:
             0: 14
             3: 3584
           -10,-11:
-            4: 14
-            5: 3584
+            5: 14
+            6: 3584
           -10,-13:
             0: 61166
           -9,-13:
@@ -4371,6 +4371,21 @@ entities:
           temperature: 293.15
           moles:
           - 0
+          - 6666.982
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+        - volume: 2500
+          temperature: 293.15
+          moles:
+          - 0
           - 0
           - 0
           - 6666.982
@@ -4387,21 +4402,6 @@ entities:
           moles:
           - 6666.982
           - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-        - volume: 2500
-          temperature: 293.15
-          moles:
-          - 0
-          - 6666.982
           - 0
           - 0
           - 0
@@ -6437,7 +6437,7 @@ entities:
       pos: 24.5,16.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -11383.509
+      secondsUntilStateChange: -12745.74
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -6857,7 +6857,7 @@ entities:
       pos: 15.5,8.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -25042.125
+      secondsUntilStateChange: -26404.357
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -7329,7 +7329,7 @@ entities:
       pos: 18.5,-7.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -251756.31
+      secondsUntilStateChange: -253118.55
       state: Opening
     - type: DeviceLinkSink
       links:
@@ -9633,6 +9633,31 @@ entities:
     - type: Transform
       pos: 3.541511,-3.4283895
       parent: 2
+- proto: BookBase
+  entities:
+  - uid: 16276
+    components:
+    - type: MetaData
+      name: old dusty notebook
+    - type: Transform
+      pos: -58.76593,-48.885014
+      parent: 2
+    - type: Paper
+      stampedBy:
+      - stampedColor: '#2F4F4FFF'
+        stampedName: The Garden of Union
+      content: >-
+        A note for the esteemed and curious -
+
+        Since this room is insecure, you may want to label the chutes for entering this where you came from. That way, if you have any... naughty... activities going on in this super secret ingenious engineering back room on the couch or in the (now ruined and crystalline) bed, people at least have some sense of fore-warning. You are also welcome to un-anchor the chutes leading to the area, though that is an engineering task and could lead to a workplace accident - after all, the pipes to enter this room weave through the walls and we wouldn't want someone stuck in the girders to suffocate and die, would we?
+
+
+        Thank you for reading this.
+
+        Regards, from one engineer to whoever uses this place,
+    - type: Physics
+      angularDamping: 0
+      linearDamping: 0
 - proto: BookEngineersHandbook
   entities:
   - uid: 611
@@ -30377,11 +30402,6 @@ entities:
     - type: Transform
       pos: 50.5,-41.5
       parent: 2
-  - uid: 4218
-    components:
-    - type: Transform
-      pos: 51.5,-40.5
-      parent: 2
   - uid: 4219
     components:
     - type: Transform
@@ -30416,6 +30436,12 @@ entities:
     components:
     - type: Transform
       pos: 18.5,19.5
+      parent: 2
+  - uid: 16270
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 51.5,-40.5
       parent: 2
 - proto: CartridgeMagnum
   entities:
@@ -36434,6 +36460,126 @@ entities:
     - type: Transform
       pos: 7.0981836,13.422745
       parent: 2
+- proto: ClothingOuterHardsuitCombatAdvanced
+  entities:
+  - uid: 16271
+    components:
+    - type: Transform
+      pos: 33.266556,-9.405495
+      parent: 2
+    - type: GroupExamine
+      group:
+      - hoverMessage: ""
+        contextText: verb-examine-group-other
+        icon: /Textures/Interface/examine-star.png
+        components:
+        - Armor
+        - ClothingSpeedModifier
+        entries:
+        - message: This decreases your speed by [color=yellow]20%[/color].
+          priority: 0
+          component: ClothingSpeedModifier
+        - message: >-
+            It provides the following protection:
+
+            - [color=yellow]Blunt[/color] damage reduced by [color=lightblue]50%[/color].
+
+            - [color=yellow]Slash[/color] damage reduced by [color=lightblue]50%[/color].
+
+            - [color=yellow]Piercing[/color] damage reduced by [color=lightblue]50%[/color].
+
+            - [color=yellow]Radiation[/color] damage reduced by [color=lightblue]25%[/color].
+
+            - [color=yellow]Caustic[/color] damage reduced by [color=lightblue]25%[/color].
+
+            - [color=yellow]Heat[/color] damage reduced by [color=lightblue]25%[/color].
+
+            - [color=aqua]Stamina[/color] damage reduced by [color=lightblue]25%[/color].
+
+            - [color=orange]Explosion[/color] damage reduced by [color=lightblue]60%[/color].
+          priority: 0
+          component: Armor
+        title: null
+- proto: ClothingOuterHardsuitCombatRiot
+  entities:
+  - uid: 16273
+    components:
+    - type: Transform
+      pos: 33.516556,-9.54743
+      parent: 2
+    - type: GroupExamine
+      group:
+      - hoverMessage: ""
+        contextText: verb-examine-group-other
+        icon: /Textures/Interface/examine-star.png
+        components:
+        - Armor
+        - ClothingSpeedModifier
+        entries:
+        - message: This decreases your speed by [color=yellow]40%[/color].
+          priority: 0
+          component: ClothingSpeedModifier
+        - message: >-
+            It provides the following protection:
+
+            - [color=yellow]Blunt[/color] damage reduced by [color=lightblue]50%[/color].
+
+            - [color=yellow]Slash[/color] damage reduced by [color=lightblue]50%[/color].
+
+            - [color=yellow]Piercing[/color] damage reduced by [color=lightblue]60%[/color].
+
+            - [color=yellow]Radiation[/color] damage reduced by [color=lightblue]30%[/color].
+
+            - [color=yellow]Caustic[/color] damage reduced by [color=lightblue]30%[/color].
+
+            - [color=yellow]Heat[/color] damage reduced by [color=lightblue]60%[/color].
+
+            - [color=aqua]Stamina[/color] damage reduced by [color=lightblue]25%[/color].
+
+            - [color=orange]Explosion[/color] damage reduced by [color=lightblue]60%[/color].
+          priority: 0
+          component: Armor
+        title: null
+- proto: ClothingOuterHardsuitCombatStandard
+  entities:
+  - uid: 16274
+    components:
+    - type: Transform
+      pos: 33.672806,-9.45368
+      parent: 2
+    - type: GroupExamine
+      group:
+      - hoverMessage: ""
+        contextText: verb-examine-group-other
+        icon: /Textures/Interface/examine-star.png
+        components:
+        - Armor
+        - ClothingSpeedModifier
+        entries:
+        - message: This decreases your speed by [color=yellow]25%[/color].
+          priority: 0
+          component: ClothingSpeedModifier
+        - message: >-
+            It provides the following protection:
+
+            - [color=yellow]Blunt[/color] damage reduced by [color=lightblue]40%[/color].
+
+            - [color=yellow]Slash[/color] damage reduced by [color=lightblue]40%[/color].
+
+            - [color=yellow]Piercing[/color] damage reduced by [color=lightblue]40%[/color].
+
+            - [color=yellow]Radiation[/color] damage reduced by [color=lightblue]25%[/color].
+
+            - [color=yellow]Caustic[/color] damage reduced by [color=lightblue]25%[/color].
+
+            - [color=yellow]Heat[/color] damage reduced by [color=lightblue]25%[/color].
+
+            - [color=aqua]Stamina[/color] damage reduced by [color=lightblue]25%[/color].
+
+            - [color=orange]Explosion[/color] damage reduced by [color=lightblue]50%[/color].
+          priority: 0
+          component: Armor
+        title: null
 - proto: ClothingOuterHoodieBlack
   entities:
   - uid: 5203
@@ -46131,7 +46277,7 @@ entities:
       pos: 24.5,16.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -11389.809
+      secondsUntilStateChange: -12752.04
       state: Closing
     - type: DeviceNetwork
       deviceLists:
@@ -48185,6 +48331,37 @@ entities:
       parent: 2
     - type: AtmosPipeColor
       color: '#FF0000FF'
+  - uid: 16256
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 51.5,-44.5
+      parent: 2
+    - type: AtmosPipeColor
+      color: '#FF0000FF'
+  - uid: 16257
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 52.5,-43.5
+      parent: 2
+    - type: AtmosPipeColor
+      color: '#3F3FFFFF'
+  - uid: 16263
+    components:
+    - type: Transform
+      pos: 56.5,-44.5
+      parent: 2
+    - type: AtmosPipeColor
+      color: '#FF0000FF'
+  - uid: 16264
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 56.5,-43.5
+      parent: 2
+    - type: AtmosPipeColor
+      color: '#3F3FFFFF'
 - proto: GasPipeFourway
   entities:
   - uid: 5423
@@ -59282,14 +59459,6 @@ entities:
       parent: 2
     - type: AtmosPipeColor
       color: '#FF0000FF'
-  - uid: 8217
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: 51.5,-40.5
-      parent: 2
-    - type: AtmosPipeColor
-      color: '#FF0000FF'
   - uid: 8218
     components:
     - type: Transform
@@ -60461,11 +60630,10 @@ entities:
   - uid: 8381
     components:
     - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: 52.5,-39.5
+      pos: 51.5,-41.5
       parent: 2
     - type: AtmosPipeColor
-      color: '#3F3FFFFF'
+      color: '#FF0000FF'
   - uid: 8383
     components:
     - type: Transform
@@ -61726,8 +61894,107 @@ entities:
       parent: 2
     - type: AtmosPipeColor
       color: '#990000FF'
+  - uid: 16252
+    components:
+    - type: Transform
+      pos: 51.5,-42.5
+      parent: 2
+    - type: AtmosPipeColor
+      color: '#FF0000FF'
+  - uid: 16253
+    components:
+    - type: Transform
+      pos: 52.5,-40.5
+      parent: 2
+    - type: AtmosPipeColor
+      color: '#3F3FFFFF'
+  - uid: 16254
+    components:
+    - type: Transform
+      pos: 52.5,-41.5
+      parent: 2
+    - type: AtmosPipeColor
+      color: '#3F3FFFFF'
+  - uid: 16255
+    components:
+    - type: Transform
+      pos: 52.5,-42.5
+      parent: 2
+    - type: AtmosPipeColor
+      color: '#3F3FFFFF'
+  - uid: 16258
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 51.5,-43.5
+      parent: 2
+    - type: AtmosPipeColor
+      color: '#FF0000FF'
+  - uid: 16259
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 52.5,-44.5
+      parent: 2
+    - type: AtmosPipeColor
+      color: '#FF0000FF'
+  - uid: 16260
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 53.5,-44.5
+      parent: 2
+    - type: AtmosPipeColor
+      color: '#FF0000FF'
+  - uid: 16261
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 54.5,-44.5
+      parent: 2
+    - type: AtmosPipeColor
+      color: '#FF0000FF'
+  - uid: 16262
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 55.5,-44.5
+      parent: 2
+    - type: AtmosPipeColor
+      color: '#FF0000FF'
+  - uid: 16265
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 55.5,-43.5
+      parent: 2
+    - type: AtmosPipeColor
+      color: '#3F3FFFFF'
+  - uid: 16266
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 54.5,-43.5
+      parent: 2
+    - type: AtmosPipeColor
+      color: '#3F3FFFFF'
+  - uid: 16267
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 53.5,-43.5
+      parent: 2
+    - type: AtmosPipeColor
+      color: '#3F3FFFFF'
 - proto: GasPipeTJunction
   entities:
+  - uid: 4218
+    components:
+    - type: Transform
+      pos: 51.5,-40.5
+      parent: 2
+    - type: AtmosPipeColor
+      color: '#FF0000FF'
   - uid: 4420
     components:
     - type: Transform
@@ -61823,6 +62090,13 @@ entities:
       parent: 2
     - type: AtmosPipeColor
       color: '#FF0000FF'
+  - uid: 8217
+    components:
+    - type: Transform
+      pos: 52.5,-39.5
+      parent: 2
+    - type: AtmosPipeColor
+      color: '#3F3FFFFF'
   - uid: 8487
     components:
     - type: Transform
@@ -65764,6 +66038,13 @@ entities:
       parent: 2
     - type: AtmosPipeColor
       color: '#3F3FFFFF'
+  - uid: 16268
+    components:
+    - type: Transform
+      pos: 56.5,-42.5
+      parent: 2
+    - type: AtmosPipeColor
+      color: '#3F3FFFFF'
 - proto: GasVentScrubber
   entities:
   - uid: 529
@@ -67152,6 +67433,14 @@ entities:
       parent: 2
     - type: AtmosPipeColor
       color: '#990000FF'
+  - uid: 16269
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 56.5,-45.5
+      parent: 2
+    - type: AtmosPipeColor
+      color: '#FF0000FF'
 - proto: GasVolumePump
   entities:
   - uid: 9111
@@ -76377,6 +76666,13 @@ entities:
     - type: Transform
       pos: 16.5,-11.5
       parent: 2
+- proto: PosterLegitAnatomyPoster
+  entities:
+  - uid: 16275
+    components:
+    - type: Transform
+      pos: -54.5,-47.5
+      parent: 2
 - proto: PosterLegitBarDrinks
   entities:
   - uid: 10407
@@ -79323,6 +79619,11 @@ entities:
     components:
     - type: Transform
       pos: -44.5,7.5
+      parent: 2
+  - uid: 16272
+    components:
+    - type: Transform
+      pos: 33.5,-9.5
       parent: 2
 - proto: RadioHandheld
   entities:
