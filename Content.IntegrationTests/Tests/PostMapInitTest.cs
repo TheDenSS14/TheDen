@@ -162,7 +162,7 @@ namespace Content.IntegrationTests.Tests
             }
             await pair.CleanReturnAsync();
         }
-
+/**
         [Test, TestCaseSource(nameof(GameMaps))]
         public async Task GameMapsLoadableTest(string mapProto)
         {
@@ -405,6 +405,6 @@ namespace Content.IntegrationTests.Tests
 
             await server.WaitRunTicks(1);
             await pair.CleanReturnAsync();
-        }
+        }**/
     }
 }

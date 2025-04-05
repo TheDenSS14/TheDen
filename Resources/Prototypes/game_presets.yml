@@ -9,6 +9,7 @@
     - RampingStationEventScheduler
     - BasicRoundstartVariation
     - SubGamemodesRule
+    - LavalandStormScheduler # Lavaland Change
 
 - type: gamePreset
   id: SurvivalHellshift
@@ -21,6 +22,7 @@
     - HellshiftStationEventScheduler
     - BasicRoundstartVariation
     - SubGamemodesRule
+    - LavalandStormScheduler # Lavaland Change
 
 - type: gamePreset
   id: SurvivalIrregular
@@ -32,6 +34,7 @@
     - IrregularStationEventScheduler
     - BasicRoundstartVariation
     - SubGamemodesRule
+    - LavalandStormScheduler # Lavaland Change
 
 - type: gamePreset
   id: SurvivalIrregularExtended
@@ -43,6 +46,7 @@
     - IrregularExtendedStationEventScheduler
     - BasicRoundstartVariation
     - SubGamemodesRule
+    - LavalandStormScheduler # Lavaland Change
 
 - type: gamePreset
   id: AllAtOnce
@@ -55,6 +59,7 @@
     - Revolutionary
     - Zombie
     - RampingStationEventScheduler
+    - LavalandStormScheduler # Lavaland Change
 
 - type: gamePreset
   id: Extended
@@ -68,6 +73,7 @@
   - BasicStationEventScheduler
   - BasicRoundstartVariation
   - SubGamemodesRule
+  - LavalandStormScheduler # Lavaland Change
 
 - type: gamePreset
   id: Greenshift
@@ -75,10 +81,10 @@
   - greenshift
   - shittersafarideluxeedition
   name: greenshift-title
-  showInVote: true #4boring4vote
+  showInVote: true
   description: greenshift-description
   rules:
-  - BasicRoundstartVariation
+  - LavalandStormScheduler # Lavaland Change
 
 - type: gamePreset
   id: Secret
@@ -90,6 +96,8 @@
   description: secret-description
   rules:
     - Secret
+    - LavalandStormScheduler # Lavaland Change
+
 
 - type: gamePreset
   id: SecretExtended #For Admin Use: Runs Extended but shows "Secret" in lobby.
@@ -101,6 +109,7 @@
   rules:
     - BasicStationEventScheduler
     - SubGamemodesRule
+    - LavalandStormScheduler # Lavaland Change
 
 - type: gamePreset
   id: SecretGreenshift #For Admin Use: Runs Greenshift but shows "Secret" in lobby.
@@ -109,6 +118,8 @@
   name: secret-title
   showInVote: false #Admin Use
   description: secret-description
+  rules:
+  - LavalandStormScheduler # Lavaland Change
 
 - type: gamePreset
   id: Sandbox
@@ -120,6 +131,7 @@
   maxPlayers: 5
   rules:
     - Sandbox
+    - LavalandStormScheduler # Lavaland Change
 
 - type: gamePreset
   id: Traitor
@@ -133,6 +145,7 @@
     - SubGamemodesRule
     - BasicStationEventScheduler
     - BasicRoundstartVariation
+    - LavalandStormScheduler # Lavaland Change
 
 - type: gamePreset
   id: Deathmatch
@@ -159,6 +172,7 @@
     - SubGamemodesRule
     - BasicStationEventScheduler
     - BasicRoundstartVariation
+    - LavalandStormScheduler # Lavaland Change
 
 - type: gamePreset
   id: Revolutionary
@@ -174,6 +188,7 @@
     - SubGamemodesRule
     - BasicStationEventScheduler
     - BasicRoundstartVariation
+    - LavalandStormScheduler # Lavaland Change
 
 - type: gamePreset
   id: Zombie
@@ -190,3 +205,21 @@
   - Zombie
   - BasicStationEventScheduler
   - BasicRoundstartVariation
+  - LavalandStormScheduler # Lavaland Change
+
+- type: gamePreset
+  id: Changeling
+  alias:
+  - Changeling
+  - Changelings
+  - Ling
+  - Lings
+  name: changeling-gamemode-title
+  description: changeling-gamemode-description
+  showInVote: false
+  rules:
+  - Changeling
+  - SubGamemodesRule
+  - BasicStationEventScheduler
+  - BasicRoundstartVariation
+  - LavalandStormScheduler # Lavaland Change

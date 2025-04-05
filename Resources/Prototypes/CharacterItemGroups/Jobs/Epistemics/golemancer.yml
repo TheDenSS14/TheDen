@@ -35,12 +35,14 @@
 #  id: LoadoutGolemancerEyes
 #  maxItems: 1
 #  items:
-#
-#- type: characterItemGroup
-#  id: LoadoutGolemancerGloves
-#  maxItems: 1
-#  items:
-#
+
+- type: characterItemGroup # TheDen
+  id: LoadoutGolemancerGloves
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutScienceHandsGlovesRobohands
+
 #- type: characterItemGroup
 #  id: LoadoutGolemancerHead
 #  maxItems: 1
@@ -67,6 +69,10 @@
   items:
     - type: loadout
       id: LoadoutScienceUniformWinterCoatRoboticist
+    - type: loadout
+      id: LoadoutScienceUniformLabcoatRobo # TheDen
+    - type: loadout
+      id: LoadoutClothingOuterRoboOveralls # TheDen
 #
 #- type: characterItemGroup
 #  id: LoadoutGolemancerShoes

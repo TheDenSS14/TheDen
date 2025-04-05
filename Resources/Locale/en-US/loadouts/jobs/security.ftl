@@ -34,6 +34,8 @@ loadout-name-LoadoutSecurityRevolverFitzNonlethal = Fitz (non-lethal)
 loadout-name-LoadoutSecurityRevolverPython = Python (lethal)
 loadout-name-LoadoutSecurityRevolverPythonNonlethal = Python (non-lethal)
 loadout-name-LoadoutSecurityPistolEnergyRevolver = EG-4 Energy Revolver
+loadout-name-LoadoutSecurityArgenti = Argenti (lethal)
+loadout-name-LoadoutSecurityArgentiNonLethal = Argenti (non-lethal)
 
 # Duty Melee
 loadout-name-LoadoutSecurityEquipmentTruncheon = Truncheon

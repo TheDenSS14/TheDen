@@ -1,0 +1,70 @@
+- type: entity
+  save: false
+  name: Urist McCanid
+  parent: BaseMobHuman
+  id: MobCanidBase
+  abstract: true
+  components:
+  - type: Sprite
+    scale: 0.9, 0.9
+  - type: HumanoidAppearance
+    species: Canid
+  - type: Fixtures
+    fixtures: # TODO: This needs a second fixture just for mob collisions.
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.315
+        density: 162.5
+        restitution: 0.0
+        mask:
+        - MobMask
+        layer:
+        - MobLayer
+  - type: Body
+    prototype: Canid
+  - type: Damageable
+    damageModifierSet: Canid
+  - type: Speech
+    speechSounds: Vulpkanin
+    speechVerb: Vulpkanin
+  - type: Stamina
+    critThreshold: 90
+    decay: 2.7 # 3 base decay multiplied by 0.9 = 2.7
+  - type: Vocal
+    sounds:
+      Male: MaleVulpkanin
+      Female: FemaleVulpkanin
+      Unsexed: MaleVulpkanin
+  - type: LanguageKnowledge
+    speaks:
+    - TauCetiBasic
+    - Alaseta
+    understands:
+    - TauCetiBasic
+    - Alaseta
+  - type: StepTriggerImmune
+    whitelist:
+      types:
+        - Shard
+        - Landmine
+        - Mousetrap
+        - SlipEntity
+  - type: Tag
+    tags:
+    - CanPilot
+    - FootstepSound
+    - DoorBumpOpener
+    - VulpEmotes
+  - type: ScentTracker
+
+- type: entity
+  save: false
+  name: Urist McHands
+  parent: MobHumanDummy
+  id: MobCanidDummy
+  categories: [ HideSpawnMenu ]
+  description: A dummy canid meant to be used in character setup.
+  components:
+  - type: HumanoidAppearance
+    species: Canid

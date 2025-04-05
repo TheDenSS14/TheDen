@@ -34,7 +34,7 @@
     sprite: Clothing/Uniforms/Jumpskirt/captain.rsi
 
 - type: entity
-  parent: ClothingUniformSkirtBase
+  parent: [ ClothingUniformSkirtBase, ClothingUniformFoldableBase ]
   id: ClothingUniformJumpskirtCargo
   name: cargo tech jumpskirt
   description: A sturdy jumpskirt, issued to members of the Logistics department. # DeltaV - Logistics Department replacing Cargo
@@ -340,7 +340,7 @@
     - Skirt # Delta-V - Skirt Tag so Harpies can wear it.
 
 - type: entity
-  parent: ClothingUniformSkirtBase
+  parent: [ ClothingUniformSkirtBase, ClothingUniformFoldableBase ]
   id: ClothingUniformJumpskirtQM
   name: logistics officer's jumpskirt # DeltaV - Logistics Department replacing Cargo
   description: 'What can brown do for you?'
@@ -351,7 +351,7 @@
     sprite: Clothing/Uniforms/Jumpskirt/qm.rsi
 
 - type: entity
-  parent: ClothingUniformSkirtBase
+  parent: [ ClothingUniformSkirtBase, ClothingUniformFoldableBase ]
   id: ClothingUniformJumpskirtQMTurtleneck
   name: logistics officer's turtleneck # DeltaV - Logistics Department replacing Cargo
   description: A sharp turtleneck made for the hardy work environment of supply.

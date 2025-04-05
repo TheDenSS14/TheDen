@@ -1,0 +1,63 @@
+- type: entity
+  name: lasagne
+  parent: FoodMealBase
+  id: FoodLasagne
+  description: Layered sheets of pasta with meat and cheese fillings. Makes you hate the mondays.
+  components:
+  - type: FlavorProfile
+    flavors:
+      - pasta
+      - meaty
+      - cheesy
+  - type: Sprite
+    sprite: _DEN/Objects/Consumable/Food/meals.rsi
+    state: redlasagne
+  - type: Food
+    trash:
+    - FoodPlate
+  - type: SliceableFood
+    count: 6
+    slice: FoodLasagneSlice
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 30
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 18
+        - ReagentId: Protein
+          Quantity: 6
+        - ReagentId: Vitamin
+          Quantity: 6
+  - type: Tag
+    tags:
+    - Meat
+
+- type: entity
+  name: lasagne
+  parent: FoodMealBase
+  id: FoodLasagneSlice
+  description: A slice of meaty, cheesy lasagne.
+  components:
+  - type: FlavorProfile
+    flavors:
+      - pasta
+      - meaty
+      - cheesy
+  - type: Sprite
+    sprite: _DEN/Objects/Consumable/Food/meals.rsi
+    state: redlasagne-slice
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 6
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 3
+        - ReagentId: Protein
+          Quantity: 1
+        - ReagentId: Vitamin
+          Quantity: 1
+  - type: Tag
+    tags:
+    - Meat

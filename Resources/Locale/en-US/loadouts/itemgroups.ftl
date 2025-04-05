@@ -16,10 +16,11 @@ character-item-group-LoadoutAirTank = Emergency Air Tanks
 character-item-group-LoadoutLighters = Lighters
 character-item-group-LoadoutInstrumentsAny = Musical Instruments (Non-Musician)
 character-item-group-LoadoutSmokes = Smokeables
-character-item-group-LoadoutBoxKits = Survival Kits
+character-item-group-LoadoutBoxKits = Medkits
 character-item-group-LoadoutWritables = Writing Tools
 character-item-group-LoadoutPets = Pets
 character-item-group-LoadoutCards = Playing Cards
+character-item-group-LoadoutPlushie = Plushies
 
 # Job Specific Template
 character-item-group-LoadoutJOBBackpacks = JOB Backpacks
@@ -41,8 +42,9 @@ character-item-group-LoadoutCommandBackpacks = Command Backpacks
 character-item-group-LoadoutCommandBelt = Command Belt
 character-item-group-LoadoutCommandEars = Command Ears
 character-item-group-LoadoutCommandEquipment = Command Equipment
+character-item-group-LoadoutSelfDefense = Command Self Defense Gear
 character-item-group-LoadoutCommandEyes = Command Eyewear
-character-item-group-LoadoutCommandloves = Command Gloves
+character-item-group-LoadoutCommandGloves = Command Gloves
 character-item-group-LoadoutCommandHead = Command Headgear
 character-item-group-LoadoutCommandId = Command Id
 character-item-group-LoadoutCommandNeck = Command Neckwear
@@ -97,7 +99,11 @@ character-item-group-LoadoutMagistrateUniforms = Magistrate Uniforms
 
 # Dignitary - Nanotrasen Representative
 character-item-group-LoadoutNanorepBackpacks = Nanotrasen Representative Backpacks
-character-tiem-group-LoadoutNanorepUniforms = Nanotrasen Representative Uniforms
+character-item-group-LoadoutNanorepUniforms = Nanotrasen Representative Uniforms
+
+# Dignitary - Nanotrasen Representative
+character-item-group-LoadoutAdminAssistantUniforms= Administrative Assistant Uniforms
+character-item-group-LoadoutAdminAssistantGloves= Administrative Assistant Gloves
 
 # Engineering
 character-item-group-LoadoutEngineeringBackpacks = Engineering Backpacks
@@ -795,6 +801,21 @@ character-item-group-LoadoutReporterMask = Reporter Masks
 character-item-group-LoadoutReporterOuter = Reporter Outerwear
 character-item-group-LoadoutReporterShoes = Reporter Shoes
 character-item-group-LoadoutReporterUniforms = Reporter Uniforms
+
+# Misc - Prisoner
+character-item-group-LoadoutPrisonerBackpacks = Prisoner Backpacks
+character-item-group-LoadoutPrisonerBelt = Prisoner Belt
+character-item-group-LoadoutPrisonerEars = Prisoner Ears
+character-item-group-LoadoutPrisonerEquipment = Prisoner Equipment
+character-item-group-LoadoutPrisonerEyes = Prisoner Eyewear
+character-item-group-LoadoutPrisonerloves = Prisoner Gloves
+character-item-group-LoadoutPrisonerHead = Prisoner Headgear
+character-item-group-LoadoutPrisonerId = Prisoner Id
+character-item-group-LoadoutPrisonerNeck = Prisoner Neckwear
+character-item-group-LoadoutPrisonerMask = Prisoner Masks
+character-item-group-LoadoutPrisonerOuter = Prisoner Outerwear
+character-item-group-LoadoutPrisonerShoes = Prisoner Shoes
+character-item-group-LoadoutPrisonerUniforms = Prisoner Uniforms
 
 # Traits - Languages
 character-item-group-TraitsLanguagesBasic = Basic Languages

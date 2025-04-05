@@ -60,6 +60,16 @@
       id: LoadoutItemFlute
     - type: loadout
       id: LoadoutItemOcarina
+    - type: loadout
+      id: LoadoutItemRickenbacker
+    - type: loadout
+      id: LoadoutItemBagpipe
+    - type: loadout
+      id: LoadoutItemBanjo
+    - type: loadout
+      id: LoadoutItemClarinet
+    - type: loadout
+      id: LoadoutItemSax
 
 - type: characterItemGroup
   id: LoadoutAirTank
@@ -80,18 +90,6 @@
 - type: characterItemGroup
   id: LoadoutBoxKits
   items:
-    - type: loadout
-      id: LoadoutItemBoxSurvival
-    - type: loadout
-      id: LoadoutItemBoxSurvivalEngineering
-    - type: loadout
-      id: LoadoutItemBoxSurvivalSecurity
-    - type: loadout
-      id: LoadoutItemBoxSurvivalBrigmedic
-    - type: loadout
-      id: LoadoutItemBoxSurvivalMedical
-    - type: loadout
-      id: LoadoutItemBoxHug
     - type: loadout
       id: LoadoutMedkitFilled
     - type: loadout
@@ -121,6 +119,8 @@
       id: LoadoutBookRandom
     - type: loadout
       id: LoadoutPen
+    - type: loadout
+      id: LuxuryPen
 
 - type: characterItemGroup
   id: LoadoutPets
@@ -143,3 +143,92 @@
       id: LoadoutItemBlackDeck
     - type: loadout
       id: LoadoutItemNTDeck
+
+- type: characterItemGroup
+  id: LoadoutPlushie
+  items:
+    - type: loadout
+      id: PlushieSharkBlue
+    - type: loadout
+      id: PlushieSharkGrey
+    - type: loadout
+      id: PlushieLizard
+    - type: loadout
+      id: PlushieArachind
+    - type: loadout
+      id: PlushieMoth
+    - type: loadout
+      id: PlushieHampter
+    - type: loadout
+      id: PlushieRouny
+    - type: loadout
+      id: PlushieCarp
+    - type: loadout
+      id: PlushieSlime
+    - type: loadout
+      id: PlushieVox
+    - type: loadout
+      id: PlushieHuman
+    - type: loadout
+      id: PlushieArachne
+    - type: loadout
+      id: PlushieVulp
+    - type: loadout
+      id: PlushieShadowkin
+    - type: loadout
+      id: ToyThrongler
+    - type: loadout
+      id: ToyAmongPequeno
+    - type: loadout
+      id: PlushieCorgi
+    - type: loadout
+      id: PlushieGirlyCorgi
+    - type: loadout
+      id: PlushieRobotCorgi
+    - type: loadout
+      id: PlushieMothBartender
+    - type: loadout
+      id: PlushieMothMusician
+    - type: loadout
+      id: PlushieMort
+    - type: loadout
+      id: PlushieXeno
+    - type: loadout
+      id: PlushieCatBlack
+    - type: loadout
+      id: PlushieCatGrey
+    - type: loadout
+      id: PlushieCatOrange
+    - type: loadout
+      id: PlushieCatSiames
+    - type: loadout
+      id: PlushieCatTabby
+    - type: loadout
+      id: PlushieCatTuxedo
+    - type: loadout
+      id: PlushieCatWhite
+    - type: loadout
+      id: PlushieBlackFox
+    - type: loadout
+      id: PlushieBlueFox
+    - type: loadout
+      id: PlushieCoffeeFox
+    - type: loadout
+      id: PlushieCrimsonFox
+    - type: loadout
+      id: PlushieMarbleFox
+    - type: loadout
+      id: PlushieOrangeFox
+    - type: loadout
+      id: PlushiePinkFox
+    - type: loadout
+      id: PlushiePurpleFox
+    - type: loadout
+      id: PlushieRedFox
+    - type: loadout
+      id: PlushieDeer
+    - type: loadout
+      id: MysteryFigureBox
+    - type: loadout
+      id: PrizeBall
+

@@ -1,4 +1,5 @@
 using Content.Shared.Access;
+using Content.Shared.Guidebook;
 using Content.Shared.Customization.Systems;
 using Content.Shared.Dataset;
 using Content.Shared.Players.PlayTimeTracking;
@@ -152,6 +153,14 @@ namespace Content.Shared.Roles
 
         [DataField]
         public bool CanBeAntagTarget = true; // Floofstation Edit
+
+        /// <summary>
+        /// Optional list of guides associated with this role. If the guides are opened, the first entry in this list
+        /// will be used to select the currently selected guidebook.
+        /// </summary>
+        [DataField]
+        public List<ProtoId<GuideEntryPrototype>>? Guides;
+
     }
 
     /// <summary>
@@ -171,6 +180,7 @@ namespace Content.Shared.Roles
         /// </summary>
         [DataField(required: true)]
         public ProtoId<StartingGearPrototype> Id { get; private set; }
+
     }
 
     /// <summary>

@@ -471,11 +471,11 @@
       - WallSpawnAsteroidUraniumCrab
     - settings:
         spawnOnSuperCritical: true
-        minAmount: 6
-        maxAmount: 10
+        minAmount: 3
+        maxAmount: 5
         maxRange: 5
       spawns:
-      - MobSpawnCrabUranium
+      - MobSpawnUraniumGolem
 
 - type: entity
   id: AnomalyRockQuartz
@@ -521,11 +521,11 @@
       - WallSpawnAsteroidQuartzCrab
     - settings:
         spawnOnSuperCritical: true
-        minAmount: 6
-        maxAmount: 10
+        minAmount: 3
+        maxAmount: 5
         maxRange: 5
       spawns:
-      - MobSpawnCrabQuartz
+      - MobSpawnQuartzGolem
 
 - type: entity
   id: AnomalyRockSilver
@@ -571,11 +571,11 @@
       - WallSpawnAsteroidSilverCrab
     - settings:
         spawnOnSuperCritical: true
-        minAmount: 6
-        maxAmount: 10
+        minAmount: 3
+        maxAmount: 5
         maxRange: 5
       spawns:
-      - MobSpawnCrabSilver
+      - MobSpawnSilverGolem
 
 - type: entity
   id: AnomalyRockIron
@@ -621,11 +621,11 @@
       - WallSpawnAsteroidIronCrab
     - settings:
         spawnOnSuperCritical: true
-        minAmount: 6
-        maxAmount: 10
+        minAmount: 3
+        maxAmount: 5
         maxRange: 5
       spawns:
-      - MobSpawnCrabIron
+      - MobSpawnIronGolem
 
 - type: entity
   id: AnomalyFlora

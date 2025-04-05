@@ -6,7 +6,12 @@ loadout-category-Backpacks = Backpacks
 loadout-category-Eyes = Eyes
 loadout-category-Hands = Hands
 loadout-category-Head = Head
+
+# Items
 loadout-category-Items = Items
+loadout-category-GeneralItems = General
+loadout-category-GeneralToys = Toys
+loadout-category-GeneralInstruments = Instruments
 
 # Jobs
 loadout-category-Jobs = Jobs
@@ -85,6 +90,11 @@ loadout-category-JobsServiceLawyer = Lawyer
 loadout-category-JobsServiceMime = Mime
 loadout-category-JobsServiceMusician = Musician
 loadout-category-JobsServiceReporter = Reporter
+
+# Misc
+loadout-category-JobsZMisc = Misc
+loadout-category-JobsZMiscAUncategorized = All Misc
+loadout-category-JobsZMiscPrisoner = Prisoner
 
 loadout-category-Mask = Mask
 loadout-category-Neck = Neck

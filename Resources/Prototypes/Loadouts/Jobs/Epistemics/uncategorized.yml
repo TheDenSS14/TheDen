@@ -108,15 +108,15 @@
 
 - type: loadout
   id: LoadoutScienceHandsGlovesRobohands
-  category: JobsEpistemicsAAUncategorized
+  category: JobsEpistemicsGolemancer
   cost: 0
   exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutEpistemicsGloves
-    - !type:CharacterDepartmentRequirement
-      departments:
-        - Epistemics
+      group: LoadoutGolemancerGloves
+    - !type:CharacterJobRequirement
+      jobs:
+        - Roboticist
   items:
     - ClothingHandsGlovesRobohands
 
@@ -151,7 +151,7 @@
 
 - type: loadout
   id: LoadoutHeadHoodTechPriest
-  category: Head
+  category: JobsEpistemicsAAUncategorized # TheDen - Wrong category
   cost: 0
   exclusive: true
   items:
@@ -243,15 +243,15 @@
 
 - type: loadout
   id: LoadoutScienceOuterCoatRobo
-  category: JobsEpistemicsAAUncategorized
+  category: JobsEpistemicsGolemancer
   cost: 0
   exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutEpistemicsOuter
-    - !type:CharacterDepartmentRequirement
-      departments:
-        - Epistemics
+      group: LoadoutGolemancerOuter
+    - !type:CharacterJobRequirement
+      jobs:
+        - Roboticist
   items:
     - ClothingOuterCoatRobo
 
@@ -286,7 +286,7 @@
 
 - type: loadout
   id: LoadoutOuterRobeTechPriest
-  category: Outer
+  category: JobsEpistemicsAAUncategorized # TheDen - Wrong category
   cost: 0
   items:
     - ClothingOuterRobeTechPriest

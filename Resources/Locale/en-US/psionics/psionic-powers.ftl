@@ -9,7 +9,7 @@ dispel-power-metapsionic-feedback = {CAPITALIZE($entity)} is a mighty stone, sta
 # Mass Sleep
 mass-sleep-power-description = Put targets in a small area to sleep.
 mass-sleep-initialization-feedback = Reaching out to the minds around me, I have located the words that can send others to the realm of dreams.
-mass-sleep-metapsionic-feedback = {CAPITALIZE($entity)} bears the indelible mark of a dream thief.
+mass-sleep-power-metapsionic-feedback = {CAPITALIZE($entity)} bears the indelible mark of a dream thief.
 
 # Mind Swap
 mind-swap-power-description = Swap minds with the target. Either can change back after 20 seconds.
@@ -94,7 +94,6 @@ xenoglossy-power-description = You understand all languages.
 xenoglossy-power-initialization-feedback =
     I feel an empathy with all creation, so that I may understand them and be understood.
     The barrier between thought and expressions is permeable to me.
-
 psionic-language-power-metapsionic-feedback = The noösphere flows freely through {CAPITALIZE($entity)}, who seems to digest it and pass it back out undisturbed.
 
 # Psychognomy
@@ -102,12 +101,14 @@ psychognomy-power-description = You have some vague sense of the form of the sou
 psychognomy-power-initialization-feedback =
     I have pierced the veil, and I know I'm not alone. More concerning, the piercing I made seems to be still indefinitely permeable.
     When energy passes through the perforations in the noösphere, I get a faint glimpse of the material origin.
+psychognomy-power-metapsionic-feedback = {CAPITALIZE($entity)} senses aspects of the source of the thoughts they receive from the noösphere.
 
 # Telepathy
 telepathy-power-description = You are capable of both sending and receiving telepathic messages.
 telepathy-power-initialization-feedback =
     The voices I've heard all my life begin to clear, yet they do not leave me. Before, they were as incoherent whispers,
     now my senses broaden, I come to a realization that they are part of a communal shared hallucination. Behind every voice is a glimmering sentience.
+telepathy-power-metapsionic-feedback = {CAPITALIZE($entity)} can project their thoughts into the noösphere, passing it along to other minds that are connected.
 
 # Shadeskip
 action-name-shadeskip = Shadeskip
@@ -129,7 +130,7 @@ action-description-telekinetic-pulse =
 telekinetic-pulse-power-description = { action-description-telekinetic-pulse }
 telekinetic-pulse-power-initialization-feedback =
     As I reach through the veil with my psyche, I discover a wellspring of pure kinetic energy. It courses through me, but I seem to lack fine control over it.
-telekinetic-pulse-power-metapsionic-feedback = {CAPITALIZE($entity)} has the essence of pure kinesis flowing through him.
+telekinetic-pulse-power-metapsionic-feedback = {CAPITALIZE($entity)} has the essence of pure kinesis flowing through them.
 
 # Pyrokinetic Flare
 action-name-pyrokinetic-flare = Pyrokinetic Flare
@@ -140,7 +141,7 @@ pyrokinetic-flare-power-initialization-feedback =
     My gaze is briefly filled with a flash of immense light and head, and for a single moment I can see a glimpse of a realm
     of fire and pain, of hunger and suffering. Just as soon as I glimpse it, the vision fades. But the memory of that flash lingers within my mind.
     I can recall it still, a glimpse of the fires of Gehenna.
-pyrokinetic-flare-power-metapsionic-feedback = Guh these don't even matter because nobody can read this line in-game and I don't know when I'm ever bringing back Narrow Pulse
+pyrokinetic-flare-power-metapsionic-feedback = {CAPITALIZE($entity)} can draw out the spark within them into a fleeting burst of light.
 
 # Summon Imp
 action-name-summon-imp = Summon Imp
@@ -191,6 +192,14 @@ assay-power-initialization-feedback =
     I descend into the dreamlight once more, there I drink more fully of the cup of knowledge. The touch of the noosphere upon others becomes known to me,
     I can cast my will upon them, divining the inner nature of others.
 assay-power-metapsionic-feedback = {CAPITALIZE($entity)} bears a spark of the divine's judgment, they have drunk deeply of the cup of knowledge.
+
+# Anoigo Power
+action-name-anoigo = Anoigo
+action-description-anoigo = Open locked and bolted doors.
+anoigo-power-initialization-feedback=
+    Knowledge arrived to me in a bottle alongside the shores of Entropy.
+    Gatekeepers of riches and secrets can be persuaded if you speak their tongue.
+anoigo-power-metapsionic-feedback = {CAPITALIZE($entity)} possesses the Gatekeeper's tongue.
 
 # Entity Specific Feedback Messages
 ifrit-feedback = A spirit of Gehenna, bound by the will of a powerful psychic
