@@ -5,11 +5,9 @@
   category: Vocal
   available: false
   whitelist:
-    components:
-    - Vocal
-  blacklist:
-    components:
-    - BorgChassis
+    tags:
+    - FeroxiEmotes
+    - HarpyEmotes
   chatMessages: [gnashes.]
   chatTriggers:
     - gnash
