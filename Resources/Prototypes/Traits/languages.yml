@@ -45,10 +45,6 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: TraitsLanguagesBasic
-    - !type:CharacterSpeciesRequirement
-      inverted: true
-      species:
-        - Harpy
   functions:
     - !type:TraitModifyLanguages
       languagesSpoken:
@@ -94,7 +90,7 @@
   points: -2
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: TraitsLanguagesBasic
+      group: TraitsLanguagesRacial
     - !type:CharacterNationalityRequirement
       inverted: true
       nationalities:
