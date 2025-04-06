@@ -367,8 +367,9 @@
   components:
   - type: RandomMetadata
     nameSegments:
-    - book_hint_appearance
-    - book_type
+    - BookHintAppearances
+    - BookTypes
+    nameFormat: name-format-book
   - type: RandomSprite
     available:
       - cover:

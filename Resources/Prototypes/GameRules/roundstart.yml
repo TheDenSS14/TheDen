@@ -72,6 +72,7 @@
     nameSegments:
     - NamesOperationPrefix
     - NamesOperationSuffix
+    nameFormat: name-format-nuclear-operation
   - type: NukeopsRule
   - type: RuleGrids
   - type: AntagSelection
@@ -97,8 +98,9 @@
       - type: NukeOperative
       - type: RandomMetadata
         nameSegments:
-        - nukeops-role-commander
+        - NamesNukieFirstCommander
         - NamesSyndicateElite
+        nameFormat: name-format-nukie-commander
       - type: NpcFactionMember
         factions:
         - Syndicate
@@ -112,8 +114,9 @@
       - type: NukeOperative
       - type: RandomMetadata
         nameSegments:
-        - nukeops-role-agent
+        - NamesNukieFirstAgent
         - NamesSyndicateNormal
+        nameFormat: name-format-nukie-agent
       - type: NpcFactionMember
         factions:
         - Syndicate
@@ -129,8 +132,9 @@
       - type: NukeOperative
       - type: RandomMetadata
         nameSegments:
-        - nukeops-role-operator
+        - NamesNukieFirstOperator
         - NamesSyndicateNormal
+        nameFormat: name-format-nukie-operator
       - type: NpcFactionMember
         factions:
         - Syndicate

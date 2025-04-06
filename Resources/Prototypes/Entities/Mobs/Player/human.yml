@@ -34,11 +34,14 @@
   id: MobHumanSyndicateAgentNukeops # Reinforcement exclusive to nukeops uplink
   suffix: Human, NukeOps
   components:
-    - type: NukeOperative
-    - type: RandomMetadata
-      nameSegments:
-      - nukeops-role-operator
-      - NamesSyndicateNormal
+  - type: NukeOperative
+  - type: RandomMetadata
+    nameSegments:
+    - NamesNukieFirstOperator
+    - NamesSyndicateNormal
+    nameFormat: name-format-nukie-operator
+  - type: Loadout
+    prototypes: [SyndicateOperativeGearFullNoUplink]
 
 # Nuclear Operative
 - type: entity
@@ -67,6 +70,7 @@
       nameSegments:
       - NamesSyndicatePrefix
       - NamesSyndicateNormal
+      nameFormat: name-format-nukie-generic
     - type: NpcFactionMember
       factions:
       - Syndicate
