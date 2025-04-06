@@ -37,9 +37,10 @@
   - type: NukeOperative
   - type: RandomMetadata
     nameSegments:
-    - NamesNukieFirstOperator
     - NamesSyndicateNormal
     nameFormat: name-format-nukie-operator
+  - type: Loadout
+    prototypes: [SyndicateOperativeGearFullNoUplink]
 
 # Nuclear Operative
 - type: entity
@@ -59,18 +60,18 @@
   id: MobHumanLoneNuclearOperative
   name: Lone Operative
   components:
-    - type: RandomHumanoidAppearance
-      randomizeName: false
-    - type: NukeOperative
-    - type: Loadout
-      prototypes: [SyndicateOperativeGearFull]
-    - type: RandomMetadata
-      nameSegments:
-      - NamesSyndicatePrefix
-      - NamesSyndicateNormal
-      nameFormat: name-format-nukie-generic
-    - type: NpcFactionMember
-      factions:
-      - Syndicate
-    - type: Psionic
-      powerRollMultiplier: 7
+  - type: RandomHumanoidAppearance
+    randomizeName: false
+  - type: NukeOperative
+  - type: Loadout
+    prototypes: [SyndicateOperativeGearFull]
+  - type: RandomMetadata
+    nameSegments:
+    - NamesSyndicatePrefix
+    - NamesSyndicateNormal
+    nameFormat: name-format-nukie-generic
+  - type: NpcFactionMember
+    factions:
+    - Syndicate
+  - type: Psionic
+    powerRollMultiplier: 7
