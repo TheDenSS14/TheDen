@@ -60,13 +60,6 @@
     jobs:
     - Borg
     - MedicalBorg
-  - !type:CharacterSpeciesRequirement # TODO if lamia gets merged, ensure it is added too
-    inverted: true
-    species:
-    - Felinid # They don't need to be lighter
-    - Rodentia
-    - Tajaran
-    - Harpy
   - !type:CharacterTraitRequirement
     inverted: true
     traits:
