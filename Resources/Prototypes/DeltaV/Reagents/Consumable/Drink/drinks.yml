@@ -19,7 +19,7 @@
         factor: 2
       - !type:AdjustReagent
         reagent: Ethanol
-        amount: 0.336
+        amount: 0.3869
       - !type:PopupMessage
         conditions:
         - !type:ReagentThreshold
@@ -55,7 +55,7 @@
         factor: 2
       - !type:AdjustReagent
         reagent: Ethanol
-        amount: 0.133
+        amount: 0.166
     Poison:
       effects:
       - !type:HealthChange
@@ -83,7 +83,7 @@
         factor: 2
       - !type:AdjustReagent
         reagent: Ethanol
-        amount: 0.16
+        amount: 0.2
 
 - type: reagent
   id: GreenGrass
@@ -209,7 +209,7 @@
         factor: 2
       - !type:AdjustReagent
         reagent: Ethanol
-        amount: 0.126
+        amount: 0.1386
     Poison:
       effects:
       - !type:Jitter

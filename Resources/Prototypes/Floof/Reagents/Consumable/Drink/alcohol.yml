@@ -20,6 +20,9 @@
       - !type:AdjustReagent
         reagent: Pomelustine
         amount: 0.5
+      - !type:AdjustReagent
+        reagent: Ethanol
+        amount: 0.18
 
 - type: reagent
   id: A.B.Lustine
@@ -59,7 +62,7 @@
         factor: 2
       - !type:AdjustReagent
         reagent: Ethanol
-        amount: 0.02
+        amount: 0.1975
 
 - type: reagent
   id: AppleberryFizz
@@ -102,56 +105,56 @@
         factor: 2
       - !type:AdjustReagent
         reagent: Ethanol
-        amount: 0.06
+        amount: 0.222
+# honestly i hate these ones naming wise. The player who asked me to originally make them isn't even in The Den soooooo
+# - type: reagent
+#   id: BethanysCumLust
+#   name: reagent-name-bethanyscumlust
+#   parent: BaseAlcohol
+#   desc: reagent-desc-bethanyscumlust
+#   physicalDesc: reagent-physical-desc-gloopy
+#   flavor: bethanyscumlust
+#   color: "#c977b5"
+#   metamorphicSprite:
+#     sprite: Floof/Objects/Consumable/Drinks/bethanyscumlust.rsi
+#     state: icon_empty
+#   metamorphicMaxFillLevels: 4
+#   metamorphicFillBaseName: fill-
+#   metamorphicChangeColor: false
+#   metabolisms:
+#     Drink:
+#       effects:
+#       - !type:SatiateThirst
+#         factor: 3
+#       - !type:AdjustReagent
+#         reagent: Pomelustine
+#         amount: 0.5
 
-- type: reagent
-  id: BethanysCumLust
-  name: reagent-name-bethanyscumlust
-  parent: BaseAlcohol
-  desc: reagent-desc-bethanyscumlust
-  physicalDesc: reagent-physical-desc-gloopy
-  flavor: bethanyscumlust
-  color: "#c977b5"
-  metamorphicSprite:
-    sprite: Floof/Objects/Consumable/Drinks/bethanyscumlust.rsi
-    state: icon_empty
-  metamorphicMaxFillLevels: 4
-  metamorphicFillBaseName: fill-
-  metamorphicChangeColor: false
-  metabolisms:
-    Drink:
-      effects:
-      - !type:SatiateThirst
-        factor: 3
-      - !type:AdjustReagent
-        reagent: Pomelustine
-        amount: 0.5
-
-- type: reagent
-  id: BethanysSluttyCumLust
-  name: reagent-name-bethanyssluttycumlust
-  parent: BaseAlcohol
-  desc: reagent-desc-bethanyssluttycumlust
-  physicalDesc: reagent-physical-desc-gloopy
-  flavor: bethanyssluttycumlust
-  color: "#c977b5"
-  metamorphicSprite:
-    sprite: Floof/Objects/Consumable/Drinks/bethanyssluttycumlust.rsi
-    state: icon_empty
-  metamorphicMaxFillLevels: 4
-  metamorphicFillBaseName: fill-
-  metamorphicChangeColor: false
-  metabolisms:
-    Drink:
-      effects:
-      - !type:SatiateThirst
-        factor: 3
-      - !type:AdjustReagent
-        reagent: Pomelustine
-        amount: 0.5
-      - !type:AdjustReagent
-        reagent: Philterex
-        amount: 0.5
+# - type: reagent
+#   id: BethanysSluttyCumLust
+#   name: reagent-name-bethanyssluttycumlust
+#   parent: BaseAlcohol
+#   desc: reagent-desc-bethanyssluttycumlust
+#   physicalDesc: reagent-physical-desc-gloopy
+#   flavor: bethanyssluttycumlust
+#   color: "#c977b5"
+#   metamorphicSprite:
+#     sprite: Floof/Objects/Consumable/Drinks/bethanyssluttycumlust.rsi
+#     state: icon_empty
+#   metamorphicMaxFillLevels: 4
+#   metamorphicFillBaseName: fill-
+#   metamorphicChangeColor: false
+#   metabolisms:
+#     Drink:
+#       effects:
+#       - !type:SatiateThirst
+#         factor: 3
+#       - !type:AdjustReagent
+#         reagent: Pomelustine
+#         amount: 0.5
+#       - !type:AdjustReagent
+#         reagent: Philterex
+#         amount: 0.5
 
 - type: reagent
   id: BlueBaller
@@ -174,7 +177,7 @@
         factor: 2
       - !type:AdjustReagent
         reagent: Ethanol
-        amount: 0.06
+        amount: 0.083
       - !type:AdjustReagent
         reagent: Pomelustine
         amount: 0.5
@@ -200,7 +203,7 @@
         factor: 3
       - !type:AdjustReagent
         reagent: Ethanol
-        amount: 0.04
+        amount: 0.083
 
 - type: reagent
   id: CalicoSunrise
@@ -243,7 +246,7 @@
         factor: 2
       - !type:AdjustReagent
         reagent: Ethanol
-        amount: 0.04
+        amount: 0.25
 
 - type: reagent
   id: DeadMansDraught
@@ -266,7 +269,7 @@
         factor: 2
       - !type:AdjustReagent
         reagent: Ethanol
-        amount: 0.4
+        amount: 0.345
 
 - type: reagent
   id: DarkOasis
@@ -289,7 +292,7 @@
         factor: 2
       - !type:AdjustReagent
         reagent: Ethanol
-        amount: 0.08
+        amount: 0.11
 
 - type: reagent
   id: DemonSeed
@@ -312,7 +315,7 @@
         factor: 2
       - !type:AdjustReagent
         reagent: Ethanol
-        amount: 0.07
+        amount: 0.083
       - !type:AdjustReagent
         reagent: Pomelustine
         amount: 1
@@ -338,7 +341,7 @@
         factor: 2
       - !type:AdjustReagent
         reagent: Ethanol
-        amount: 0.07
+        amount: 0.133
 
 - type: reagent
   id: DoubleCreamBlaster
@@ -381,7 +384,7 @@
         factor: 2
       - !type:AdjustReagent
         reagent: Ethanol
-        amount: 0.05
+        amount: 0.026
 
 - type: reagent
   id: DragonsBreath
@@ -404,7 +407,7 @@
         factor: 2
       - !type:AdjustReagent
         reagent: Ethanol
-        amount: 0.07
+        amount: 0.183
 
 - type: reagent
   id: DragonsSeed
@@ -424,10 +427,7 @@
     Drink:
       effects:
       - !type:SatiateThirst
-        factor: 2
-      - !type:AdjustReagent
-        reagent: Ethanol
-        amount: 0.07
+        factor: 3
 
 - type: reagent
   id: EmeraldSwinger
@@ -450,7 +450,7 @@
         factor: 2
       - !type:AdjustReagent
         reagent: Ethanol
-        amount: 0.04
+        amount: 0.084
 
 - type: reagent
   id: Eminence
@@ -473,7 +473,7 @@
         factor: 2
       - !type:AdjustReagent
         reagent: Ethanol
-        amount: 0.3
+        amount: 0.49258
 
 - type: reagent
   id: GoldbloomSpecial
@@ -496,7 +496,7 @@
         factor: 2
       - !type:AdjustReagent
         reagent: Ethanol
-        amount: 0.06
+        amount: 0.19
 
 - type: reagent
   id: GrandNavy
@@ -519,7 +519,7 @@
         factor: 2
       - !type:AdjustReagent
         reagent: Ethanol
-        amount: 0.06
+        amount: 0.1646
 
 - type: reagent
   id: HeartbreakMountain
@@ -585,10 +585,7 @@
     Drink:
       effects:
       - !type:SatiateThirst
-        factor: 2
-      - !type:AdjustReagent
-        reagent: Ethanol
-        amount: 0.06
+        factor: 3
       - !type:AdjustReagent
         reagent: Libidozenithizine
         amount: 0.5
@@ -651,7 +648,7 @@
     Drink:
       effects:
       - !type:SatiateThirst
-        factor: 2
+        factor: 3
       - !type:AdjustReagent
         conditions:
         - !type:ReagentThreshold
@@ -712,7 +709,7 @@
         factor: 2
       - !type:AdjustReagent
         reagent: Ethanol
-        amount: 0.03
+        amount: 0.073
       - !type:AdjustReagent
         reagent: Pomelustine
         amount: 0.5
@@ -761,7 +758,7 @@
         factor: 2
       - !type:AdjustReagent
         reagent: Ethanol
-        amount: 0.06
+        amount: 0.13
 
 - type: reagent
   id: MossBloodShot
@@ -784,7 +781,7 @@
         factor: 2
       - !type:AdjustReagent
         reagent: Ethanol
-        amount: 0.03
+        amount: 0.2
 
 - type: reagent
   id: NumberOne
@@ -807,7 +804,7 @@
         factor: 2
       - !type:AdjustReagent
         reagent: Ethanol
-        amount: 0.06
+        amount: 0.16
 
 - type: reagent
   id: OpsShine
@@ -840,7 +837,7 @@
         factor: 2
       - !type:AdjustReagent
         reagent: Ethanol
-        amount: 0.5
+        amount: 0.355
 
 - type: reagent
   id: OrgasmOnTheBeach
@@ -863,7 +860,7 @@
         factor: 2
       - !type:AdjustReagent
         reagent: Ethanol
-        amount: 0.05
+        amount: 0.1
 
 - type: reagent
   id: Pomonade
@@ -906,7 +903,7 @@
         factor: 2
       - !type:AdjustReagent
         reagent: Ethanol
-        amount: 0.03
+        amount: 0.083
 
 - type: reagent
   id: PomTwist
@@ -952,7 +949,7 @@
         factor: 2
       - !type:AdjustReagent
         reagent: Ethanol
-        amount: 0.04
+        amount: 0.083
 
 - type: reagent
   id: PrisonWine
@@ -1042,7 +1039,7 @@
         factor: 2
       - !type:AdjustReagent
         reagent: Ethanol
-        amount: 0.06
+        amount: 0.083
 
 - type: reagent
   id: SalvagersDelight
@@ -1065,7 +1062,7 @@
         factor: 2
       - !type:AdjustReagent
         reagent: Ethanol
-        amount: 0.4
+        amount: 0.028
 
 - type: reagent
   id: SemenBomb
@@ -1088,8 +1085,9 @@
         factor: 2
       - !type:AdjustReagent
         reagent: Ethanol
-        amount: 0.04
+        amount: 0.026
 
+# fun fact! this is a real drink from a real cocktail book that you can find online
 - type: reagent
   id: SemenHemorrhage
   name: reagent-name-semenhemorrhage
@@ -1108,10 +1106,7 @@
     Drink:
       effects:
       - !type:SatiateThirst
-        factor: 2
-      - !type:AdjustReagent
-        reagent: Ethanol
-        amount: 0.03
+        factor: 3
 
 - type: reagent
   id: SilverStallion
@@ -1131,10 +1126,7 @@
     Drink:
       effects:
       - !type:SatiateThirst
-        factor: 2
-      - !type:AdjustReagent
-        reagent: Ethanol
-        amount: 0.05
+        factor: 3
 
 - type: reagent
   id: SlimesDelight
@@ -1160,10 +1152,7 @@
             type: Slime # Feeds Slimes
             shouldHave: true
       - !type:SatiateThirst
-        factor: 2
-      - !type:AdjustReagent
-        reagent: Ethanol
-        amount: 0.2
+        factor: 3
       - !type:HealthChange
         conditions:
         - !type:ReagentThreshold
@@ -1239,7 +1228,7 @@
         factor: 2
       - !type:AdjustReagent
         reagent: Ethanol
-        amount: 0.08
+        amount: 0.2415
 
 - type: reagent
   id: TripleCitrus
@@ -1282,7 +1271,10 @@
         factor: 2
       - !type:AdjustReagent
         reagent: Ethanol
-        amount: 0.08
+        amount: 0.2496
+      - !type:AdjustReagent
+        reagent: Theobromine
+        amount: 0.0083
 
 - type: reagent
   id: WakeUpJuice
@@ -1325,7 +1317,7 @@
         factor: 2
       - !type:AdjustReagent
         reagent: Ethanol
-        amount: 0.07
+        amount: 0.1
 
 - type: reagent
   id: TheWaterslide
@@ -1348,7 +1340,7 @@
         factor: 2
       - !type:AdjustReagent
         reagent: Ethanol
-        amount: 0.07
+        amount: 0.016
 
 - type: reagent
   id: WhiskeySour
@@ -1371,7 +1363,7 @@
         factor: 2
       - !type:AdjustReagent
         reagent: Ethanol
-        amount: 0.06
+        amount: 0.186
 
 - type: reagent
   id: YeOlHandy
@@ -1394,7 +1386,7 @@
         factor: 2
       - !type:AdjustReagent
         reagent: Ethanol
-        amount: 0.05
+        amount: 0.08
 
 - type: reagent
   id: TheCuteCaptain
@@ -1443,7 +1435,7 @@
         amount: 0.5
       - !type:AdjustReagent
         reagent: Ethanol
-        amount: 0.1
+        amount: 0.193
 
 - type: reagent
   id: JennTonic
@@ -1466,7 +1458,7 @@
         factor: 2
       - !type:AdjustReagent
         reagent: Ethanol
-        amount: 0.08
+        amount: 0.13
 
 - type: reagent
   id: Hallelujah
@@ -1489,5 +1481,4 @@
         factor: 5
       - !type:AdjustReagent
         reagent: Ethanol
-        amount: 0.06
-        
+        amount: 0.036

@@ -9,6 +9,11 @@
     sprite: Objects/Consumable/Drinks/lean.rsi
     state: icon
   metabolisms:
+    Drink:
+      effects:
+      - !type:AdjustReagent
+        reagent: Ethanol
+        amount: 0.0415
     Narcotic:
       effects:
       - !type:GenericStatusEffect

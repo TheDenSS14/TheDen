@@ -250,6 +250,7 @@
   flavor: starkistsoda
   color: "#9F3400"
 
+# still has vodka in it, so, added alcohol to this
 - type: reagent
   id: FourteenLoko
   name: reagent-name-fourteen-loko
@@ -266,6 +267,9 @@
       - !type:AdjustReagent
         reagent: Theobromine
         amount: 0.1
+      - !type:AdjustReagent
+        reagent: Ethanol
+        amount: 0.166
     Poison:
       effects:
       - !type:HealthChange
