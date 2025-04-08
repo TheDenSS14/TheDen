@@ -211,11 +211,11 @@
     autoRot: true
   - type: StepTriggerImmune
     whitelist:
-    types:
-      - Shard
-      - Landmine
-      - Mousetrap
-      - SlipEntity
+      types:
+        - Shard
+        - Landmine
+        - Mousetrap
+        - SlipEntity
   - type: InputMover
   - type: MobMover
   - type: ContentEye
