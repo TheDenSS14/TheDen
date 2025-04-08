@@ -65,7 +65,7 @@
         factor: 2
       - !type:AdjustReagent
         reagent: Ethanol
-        amount: 0.1
+        amount: 0.125
 
 - type: reagent
   id: Silverjack
@@ -88,7 +88,7 @@
         factor: 2
       - !type:AdjustReagent
         reagent: Ethanol
-        amount: 0.1375
+        amount: 0.15
 
 - type: reagent
   id: Brainbomb
@@ -118,7 +118,7 @@
         factor: 2
       - !type:AdjustReagent
         reagent: Ethanol
-        amount: 0.13
+        amount: 0.161
       - !type:AdjustReagent
         reagent: THC
         amount: 0.33
@@ -147,7 +147,7 @@
         factor: 2
       - !type:AdjustReagent
         reagent: Ethanol
-        amount: 0.08
+        amount: 0.055
 
 - type: reagent
   id: CircusJuice
@@ -170,7 +170,7 @@
         factor: 2
       - !type:AdjustReagent
         reagent: Ethanol
-        amount: 0.12
+        amount: 0.1375
       - !type:Emote #It's very funny
         emote: Laugh
         probability: 0.15

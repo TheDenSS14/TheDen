@@ -36,3 +36,10 @@
           - !type:ReagentThreshold
             min: 60
         probability: 0.2
+    Drink:
+      effects:
+      - !type:SatiateThirst
+        factor: 2
+      - !type:AdjustReagent
+        reagent: Ethanol
+        amount: 0.04

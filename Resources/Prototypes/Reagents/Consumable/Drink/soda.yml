@@ -279,6 +279,10 @@
       - !type:AdjustReagent
         reagent: Theobromine
         amount: 0.1
+        # it is made with vodka after all
+      - !type:AdjustReagent
+        reagent: Ethanol
+        amount: 0.16
     Poison:
       effects:
       - !type:HealthChange
