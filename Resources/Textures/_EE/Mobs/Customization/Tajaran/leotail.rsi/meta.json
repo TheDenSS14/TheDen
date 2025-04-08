@@ -1,17 +1,19 @@
 {
-    "version": 1,
-    "license": "GNU AGPL V3",
-    "copyright": "Taken from Skyat-TG Repo, original owner unknown - https://github.com/Skyrat-SS13/Skyrat-tg.",
-    "size": {
-        "x": 32,
-        "y": 32
+  "version": 1,
+  "license": "GNU AGPL V3",
+  "copyright": "Taken from Skyat-TG Repo, original owner unknown - https://github.com/Skyrat-SS13/Skyrat-tg.",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "leopard_primary",
+      "directions": 4
     },
-    "states": [
-        {
-            "name": "leopard_primary"
-        },
-        {
-            "name": "leopard_tertiary"
-        }
-    ]
+    {
+      "name": "leopard_tertiary",
+      "directions": 4
+    }
+  ]
 }
