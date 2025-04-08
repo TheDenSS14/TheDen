@@ -40,6 +40,17 @@
   - sprite: _EE/Mobs/Customization/Tajaran/tail_markings.rsi
     state: tail_anim_rings
 
+- type: marking
+  id: TajaranLeoTailNoAnim
+  bodyPart: Tail
+  markingCategory: Tail
+  speciesRestriction: [Tajaran]
+  sprites:
+  - sprite: _EE/Mobs/Customization/Tajaran/leotail.rsi
+    state: leopard_primary
+  - sprite: _EE/Mobs/Customization/Tajaran/leotail.rsi
+    state: leopard_tertiary
+
 # Tajaran Ears
 
 - type: marking

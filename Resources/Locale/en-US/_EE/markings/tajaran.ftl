@@ -38,6 +38,7 @@ marking-TajaranTailRetro-tail = Tail
 marking-TajaranTailRetroRings = Classic Tail (Rings)
 marking-TajaranTailRetroRings-tail = Tail
 marking-TajaranTailRetroRings-tail_rings = Rings
+marking-TajaranLeoTailNoAnim = Leopard Tail
 marking-TajaranOverlayPatch = Patches
 marking-TajaranOverlayPatch-patch = Patches
 marking-TajaranOverlayPoints = Points
