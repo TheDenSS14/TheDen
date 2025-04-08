@@ -19,7 +19,7 @@
         factor: 2
       - !type:AdjustReagent
         reagent: Ethanol
-        amount: 0.336
+        amount: 0.3858
       - !type:PopupMessage
         conditions:
         - !type:ReagentThreshold
@@ -55,7 +55,7 @@
         factor: 2
       - !type:AdjustReagent
         reagent: Ethanol
-        amount: 0.133
+        amount: 0.16
     Poison:
       effects:
       - !type:HealthChange
@@ -83,7 +83,7 @@
         factor: 2
       - !type:AdjustReagent
         reagent: Ethanol
-        amount: 0.16
+        amount: 0.2
 
 - type: reagent
   id: GreenGrass
@@ -186,7 +186,7 @@
         factor: 2
       - !type:AdjustReagent
         reagent: Ethanol
-        amount: 0.015
+        amount: 0.01
 
 - type: reagent
   id: Mothamphetamine
@@ -209,7 +209,7 @@
         factor: 2
       - !type:AdjustReagent
         reagent: Ethanol
-        amount: 0.126
+        amount: 0.136
     Poison:
       effects:
       - !type:Jitter
