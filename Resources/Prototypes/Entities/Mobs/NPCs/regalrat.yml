@@ -144,6 +144,8 @@
     deactivateSound: null
   - type: Hands
   - type: ComplexInteraction
+  - type: Puller
+    needsHands: false
 
 - type: entity
   id: MobRatKingBuff
