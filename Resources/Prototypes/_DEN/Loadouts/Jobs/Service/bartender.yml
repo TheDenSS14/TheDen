@@ -25,3 +25,17 @@
         - Bartender
   items:
     - ClothingUniformJumpskirtBartender
+
+- type: loadout
+  id: LoadoutServiceUniformJumpsuitBartenderGrey
+  category: JobsServiceBartender
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingUniformJumpsuitBartenderGrey
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBartenderUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - Bartender

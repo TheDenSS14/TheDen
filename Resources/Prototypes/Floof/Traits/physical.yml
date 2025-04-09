@@ -53,24 +53,19 @@
 - type: trait
   id: Lightweight
   category: Physical
-  points: -2 # Has pros and cons, not sure
+  points: 2 # Has pros and cons, not sure
   requirements:
   - !type:CharacterJobRequirement
     inverted: true
     jobs:
     - Borg
     - MedicalBorg
-  - !type:CharacterSpeciesRequirement # TODO if lamia gets merged, ensure it is added too
-    inverted: true
-    species:
-    - Felinid # They don't need to be lighter
-    - Rodentia
-    - Tajaran
-    - Harpy
   - !type:CharacterTraitRequirement
     inverted: true
     traits:
     - Heavyweight
+    - UltraLightweight
+    - UltraHeavyweight
   functions:
     - !type:TraitAddComponent
       components:

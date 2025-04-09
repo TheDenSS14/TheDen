@@ -274,11 +274,16 @@
   id: Chirp
   name: chat-emote-name-chirp
   category: Vocal
+  available: false
   icon: Interface/Emotes/chirp.png
   whitelist:
     requireAll: false
     components:
     - Nymph
+    - Vocal
+  blacklist:
+    components:
+    - BorgChassis
     tags:
     - HarpyEmotes
   chatMessages: ["chat-emote-msg-chirp"]

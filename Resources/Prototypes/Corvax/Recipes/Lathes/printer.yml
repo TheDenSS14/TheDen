@@ -91,7 +91,7 @@
 - type: latheRecipe
   id: PrintedDocumentApplicationAppointmentInterimRecipe
   result: PrintedDocumentApplicationAppointmentInterim
-  category: Statements
+  category: Requests
   completetime: 2
   applyMaterialDiscount: false
   materials:
@@ -100,7 +100,7 @@
 - type: latheRecipe
   id: PrintedDocumentApplicationEmploymentRecipe
   result: PrintedDocumentApplicationEmployment
-  category: Statements
+  category: Requests
   completetime: 2
   applyMaterialDiscount: false
   materials:
@@ -109,7 +109,7 @@
 - type: latheRecipe
   id: PrintedDocumentLetterResignationRecipe
   result: PrintedDocumentLetterResignation
-  category: Statements
+  category: Reports
   completetime: 2
   applyMaterialDiscount: false
   materials:
@@ -118,7 +118,7 @@
 - type: latheRecipe
   id: PrintedDocumentApplicationAccessRecipe
   result: PrintedDocumentApplicationAccess
-  category: Statements
+  category: Requests
   completetime: 2
   applyMaterialDiscount: false
   materials:
@@ -127,7 +127,7 @@
 - type: latheRecipe
   id: PrintedDocumentApplicationEquipmentRecipe
   result: PrintedDocumentApplicationEquipment
-  category: Statements
+  category: Requests
   completetime: 2
   applyMaterialDiscount: false
   materials:
@@ -145,7 +145,7 @@
 - type: latheRecipe
   id: PrintedDocumentEvacuationShuttleRequestRecipe
   result: PrintedDocumentEvacuationShuttleRequest
-  category: InquiriesAndAppeals
+  category: Requests
   completetime: 2
   applyMaterialDiscount: false
   materials:
@@ -154,7 +154,7 @@
 - type: latheRecipe
   id: PrintedDocumentShuttleRegistrationRequestRecipe
   result: PrintedDocumentShuttleRegistrationRequest
-  category: InquiriesAndAppeals
+  category: Requests
   completetime: 2
   applyMaterialDiscount: false
   materials:
@@ -190,7 +190,7 @@
 - type: latheRecipe
   id: PrintedDocumentRequestForNonlistedEmploymentRecipe
   result: PrintedDocumentRequestForNonlistedEmployment
-  category: InquiriesAndAppeals
+  category: Requests
   completetime: 2
   applyMaterialDiscount: false
   materials:
@@ -199,7 +199,7 @@
 - type: latheRecipe
   id: PrintedDocumentRequestForPromotionRecipe
   result: PrintedDocumentRequestForPromotion
-  category: InquiriesAndAppeals
+  category: Requests
   completetime: 2
   applyMaterialDiscount: false
   materials:
@@ -208,7 +208,7 @@
 - type: latheRecipe
   id: PrintedDocumentRequestDocumentsRecipe
   result: PrintedDocumentRequestDocuments
-  category: InquiriesAndAppeals
+  category: Requests
   completetime: 2
   applyMaterialDiscount: false
   materials:
@@ -217,7 +217,7 @@
 - type: latheRecipe
   id: PrintedDocumentRequestEuthanasiaRecipe
   result: PrintedDocumentRequestEuthanasia
-  category: InquiriesAndAppeals
+  category: Orders
   completetime: 2
   applyMaterialDiscount: false
   materials:
@@ -226,7 +226,7 @@
 - type: latheRecipe
   id: PrintedDocumentRequestConstructionWorkRecipe
   result: PrintedDocumentRequestConstructionWork
-  category: InquiriesAndAppeals
+  category: Requests
   completetime: 2
   applyMaterialDiscount: false
   materials:
@@ -235,7 +235,7 @@
 - type: latheRecipe
   id: PrintedDocumentRequestModernizationRecipe
   result: PrintedDocumentRequestModernization
-  category: InquiriesAndAppeals
+  category: Requests
   completetime: 2
   applyMaterialDiscount: false
   materials:
@@ -253,7 +253,7 @@
 - type: latheRecipe
   id: PrintedDocumentComplaintOffenseRecipe
   result: PrintedDocumentComplaintOffense
-  category: Complaints
+  category: Reports
   completetime: 2
   applyMaterialDiscount: false
   materials:
@@ -280,7 +280,7 @@
 - type: latheRecipe
   id: PrintedDocumentSearchPermissionRecipe
   result: PrintedDocumentSearchPermission
-  category: Permissions
+  category: Orders
   completetime: 2
   applyMaterialDiscount: false
   materials:
@@ -307,7 +307,7 @@
 - type: latheRecipe
   id: PrintedDocumentPermissionDisposeBodyRecipe
   result: PrintedDocumentPermissionDisposeBody
-  category: Permissions
+  category: Orders
   completetime: 2
   applyMaterialDiscount: false
   materials:
@@ -334,7 +334,7 @@
 - type: latheRecipe
   id: PrintedDocumentOrderDismissalRecipe
   result: PrintedDocumentOrderDismissal
-  category: OrdersAndInstructions
+  category: Orders
   completetime: 2
   applyMaterialDiscount: false
   materials:
@@ -343,7 +343,7 @@
 - type: latheRecipe
   id: PrintedDocumentOrderDeprivationAccessRecipe
   result: PrintedDocumentOrderDeprivationAccess
-  category: OrdersAndInstructions
+  category: Orders
   completetime: 2
   applyMaterialDiscount: false
   materials:
@@ -352,7 +352,7 @@
 - type: latheRecipe
   id: PrintedDocumentOrderEncouragementRecipe
   result: PrintedDocumentOrderEncouragement
-  category: OrdersAndInstructions
+  category: Statements
   completetime: 2
   applyMaterialDiscount: false
   materials:
@@ -361,7 +361,7 @@
 - type: latheRecipe
   id: PrintedDocumentOrderParolePrisonerRecipe
   result: PrintedDocumentOrderParolePrisoner
-  category: OrdersAndInstructions
+  category: Orders
   completetime: 2
   applyMaterialDiscount: false
   materials:
@@ -370,7 +370,7 @@
 - type: latheRecipe
   id: PrintedDocumentOrderRecognizingSentienceCreatureRecipe
   result: PrintedDocumentOrderRecognizingSentienceCreature
-  category: OrdersAndInstructions
+  category: Orders
   completetime: 2
   applyMaterialDiscount: false
   materials:
@@ -379,7 +379,7 @@
 - type: latheRecipe
   id: PrintedDocumentOrderMedicalInterventionRecipe
   result: PrintedDocumentOrderMedicalIntervention
-  category: OrdersAndInstructions
+  category: Orders
   completetime: 2
   applyMaterialDiscount: false
   materials:
@@ -388,7 +388,7 @@
 - type: latheRecipe
   id: PrintedDocumentProductManufacturingOrderRecipe
   result: PrintedDocumentProductManufacturingOrder
-  category: Orders
+  category: Requests
   completetime: 2
   applyMaterialDiscount: false
   materials:
@@ -433,7 +433,7 @@
 - type: latheRecipe
   id: PrintedDocumentCertificateAdvancedTrainingRecipe
   result: PrintedDocumentCertificateAdvancedTraining
-  category: Evidence
+  category: Statements
   completetime: 2
   applyMaterialDiscount: false
   materials:
@@ -460,7 +460,7 @@
 - type: latheRecipe
   id: PrintedDocumentMarriageCertificateRecipe
   result: PrintedDocumentMarriageCertificate
-  category: Evidence
+  category: Statements
   completetime: 2
   applyMaterialDiscount: false
   materials:
@@ -478,7 +478,7 @@
 - type: latheRecipe
   id: PrintedDocumentClosingIndictmentRecipe
   result: PrintedDocumentClosingIndictment
-  category: ConclusionsAndDecisions
+  category: Evidence
   completetime: 2
   applyMaterialDiscount: false
   materials:
@@ -487,7 +487,7 @@
 - type: latheRecipe
   id: PrintedDocumentSentenceRecipe
   result: PrintedDocumentSentence
-  category: ConclusionsAndDecisions
+  category: Evidence
   completetime: 2
   applyMaterialDiscount: false
   materials:
@@ -496,7 +496,7 @@
 - type: latheRecipe
   id: PrintedDocumentJudgmentRecipe
   result: PrintedDocumentJudgment
-  category: ConclusionsAndDecisions
+  category: Evidence
   completetime: 2
   applyMaterialDiscount: false
   materials:
@@ -505,7 +505,7 @@
 - type: latheRecipe
   id: PrintedDocumentStatementHealtheRecipe
   result: PrintedDocumentStatementHealth
-  category: ConclusionsAndDecisions
+  category: Evidence
   completetime: 2
   applyMaterialDiscount: false
   materials:
@@ -514,7 +514,7 @@
 - type: latheRecipe
   id: PrintedDocumentDecisionToStartTrialRecipe
   result: PrintedDocumentDecisionToStartTrial
-  category: ConclusionsAndDecisions
+  category: Evidence
   completetime: 2
   applyMaterialDiscount: false
   materials:

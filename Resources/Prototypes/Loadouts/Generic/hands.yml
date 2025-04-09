@@ -120,13 +120,16 @@
 
 - type: loadout
   id: LoadoutHandsGlovesLeather
-  category: Hands
+  category: JobsServiceBotanist #they are called botonist's gloves
   cost: 0
   items:
     - ClothingHandsGlovesLeather
   requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutGloves2
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutBotanistGloves
+  - !type:CharacterJobRequirement
+    jobs:
+    - Botanist
 
 - type: loadout
   id: LoadoutHandsGlovesPowerglove

@@ -20,6 +20,7 @@ chat-emote-name-cough = Cough
 chat-emote-name-monkeyscreeches = Monkey Screeches
 chat-emote-name-yawn = Yawn
 chat-emote-name-snore = Snore
+chat-emote-name-cowmoo = Moo
 # Silicon
 chat-emote-name-boop = Boop
 chat-emote-name-whirr = Whirr
