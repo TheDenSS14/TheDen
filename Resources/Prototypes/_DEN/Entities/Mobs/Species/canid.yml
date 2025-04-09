@@ -36,7 +36,6 @@
       Male: MaleVulpkanin
       Female: FemaleVulpkanin
       Unsexed: MaleVulpkanin
-  - type: NoShoesSilentFootsteps
   - type: LanguageKnowledge
     speaks:
     - TauCetiBasic
@@ -57,6 +56,7 @@
     - FootstepSound
     - DoorBumpOpener
     - VulpEmotes
+  - type: ScentTracker
 
 - type: entity
   save: false

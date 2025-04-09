@@ -7,6 +7,11 @@
   - type: Speech
     speechSounds: Baritone
     speechVerb: Oni
+  - type: Vocal
+    sounds:
+      Male: MaleOni
+      Female: FemaleOni
+      Unsexed: MaleOni 
   - type: HumanoidAppearance
     species: Oni
   - type: Sprite
@@ -48,6 +53,12 @@
     - Nekomimetic
   - type: PotentiaModifier
     potentiaMultiplier: 0.5
+  - type: Tag
+    tags:
+    - OniEmotes
+    - CanPilot
+    - FootstepSound
+    - DoorBumpOpener
 
 - type: entity
   save: false

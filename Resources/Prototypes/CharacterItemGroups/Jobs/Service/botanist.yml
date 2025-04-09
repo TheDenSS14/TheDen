@@ -27,12 +27,14 @@
 #  id: LoadoutBotanistEyes
 #  maxItems: 1
 #  items:
-#
-#- type: characterItemGroup
-#  id: LoadoutBotanistGloves
-#  maxItems: 1
-#  items:
-#
+
+- type: characterItemGroup # The Den literally their own gloves
+  id: LoadoutBotanistGloves
+  maxItems: 1
+  items:
+  - type: loadout
+    id: LoadoutHandsGlovesLeather
+
 #- type: characterItemGroup
 #  id: LoadoutBotanistHead
 #  maxItems: 1

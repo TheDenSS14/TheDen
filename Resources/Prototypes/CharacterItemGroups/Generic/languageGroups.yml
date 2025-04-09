@@ -1,6 +1,6 @@
 - type: characterItemGroup
   id: TraitsLanguagesBasic
-  maxItems: 1
+  maxItems: 2
   items:
     - type: trait
       id: SignLanguage
@@ -14,12 +14,9 @@
       id: Freespeak
     - type: trait
       id: Elyran
-    - type: trait
-      id: Azaziba
 
 - type: characterItemGroup
   id: TraitsLanguagesRacial
-  maxItems: 1
   items:
     - type: trait
       id: ValyrianStandard
@@ -47,14 +44,6 @@
       id: Azaziba
     - type: trait
       id: SiikMaas
-    - type: trait
-      id: NalRasan
-    - type: trait
-      id: SiikTajr
-    - type: trait
-      id: YaSsa
-    - type: trait
-      id: Delvahii
     - type: trait
       id: Nehina
 
@@ -86,3 +75,16 @@
       id: MobsterAccent
     - type: trait
       id: SkeletonAccent
+
+- type: characterItemGroup
+  id: TraitsLanguagesTajaran
+  maxItems: 1
+  items:
+    - type: trait
+      id: NalRasan
+    - type: trait
+      id: SiikTajr
+    - type: trait
+      id: YaSsa
+    - type: trait
+      id: Delvahii

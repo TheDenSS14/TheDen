@@ -552,7 +552,7 @@
 - type: trait
   id: BionicArm
   category: Physical
-  points: -10
+  points: -6
   requirements:
     - !type:CharacterJobRequirement
       inverted: true
@@ -907,9 +907,9 @@
           damageCap: 250
           damage:
             groups:
-              Brute: -0.6
-              Burn: -0.6
-              Electronic : -0.6
+              Brute: -0.3
+              Burn: -0.3
+              Electronic : -0.3
 
 - type: trait
   id: BionicLeg
@@ -920,6 +920,10 @@
       inverted: true
       jobs:
         - Prisoner # Bionics should be "Confiscated" from long term prisoners.
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - WheelchairBound
   functions:
     - !type:TraitPushDescription
       descriptionExtensions:

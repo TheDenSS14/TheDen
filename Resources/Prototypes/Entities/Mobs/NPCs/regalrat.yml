@@ -142,6 +142,9 @@
     color: "#808080"
     activateSound: null
     deactivateSound: null
+  - type: ComplexInteraction
+  - type: Puller
+    needsHands: false
 
 - type: entity
   id: MobRatKingBuff

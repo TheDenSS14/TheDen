@@ -86,10 +86,11 @@ public class SharedPassportSystem : EntitySystem
                 || !_storage.CanInsert(item.Value, passportEntity, out _, inventory, itemComp)
                 || !_storage.Insert(item.Value, passportEntity, out _, playSound: false))
             {
-                _entityManager.System<SharedAdminLogSystem>().Add(
+                /** _entityManager.System<SharedAdminLogSystem>().Add(
                     LogType.EntitySpawn,
                     LogImpact.Low,
                     $"Passport for {ev.Profile.Name} was spawned on the floor due to missing bag space");
+                    **/
             }
         }
     }

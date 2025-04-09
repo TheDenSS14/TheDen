@@ -210,6 +210,12 @@
     mask: /Textures/Effects/LightMasks/cone.png
     autoRot: true
   - type: StepTriggerImmune
+    whitelist:
+      types:
+        - Shard
+        - Landmine
+        - Mousetrap
+        - SlipEntity
   - type: InputMover
   - type: MobMover
   - type: ContentEye

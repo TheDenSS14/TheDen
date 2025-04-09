@@ -8,16 +8,12 @@
     jobs:
     - Borg
     - MedicalBorg
-  - !type:CharacterSpeciesRequirement
-    inverted: true
-    species:
-    - Oni
-    - Diona
-    - Chitinid
   - !type:CharacterTraitRequirement
     inverted: true
     traits:
     - Lightweight
+    - UltraHeavyweight
+    - UltraLightweight
   functions:
     - !type:TraitAddComponent
       components:
@@ -35,17 +31,12 @@
     jobs:
     - Borg
     - MedicalBorg
-  - !type:CharacterSpeciesRequirement
-    inverted: true
-    species:
-    - Oni
-    - Diona
-    - Chitinid
   - !type:CharacterTraitRequirement
     inverted: true
     traits:
     - Lightweight
     - Heavyweight
+    - UltraLightweight
   functions:
     - !type:TraitAddComponent
       components:
@@ -56,20 +47,13 @@
 - type: trait
   id: UltraLightweight
   category: Physical
-  points: -4 # Has pros and cons, not sure
+  points: 4 # Has pros and cons, not sure
   requirements:
   - !type:CharacterJobRequirement
     inverted: true
     jobs:
     - Borg
     - MedicalBorg
-  - !type:CharacterSpeciesRequirement # TODO if lamia gets merged, ensure it is added too
-    inverted: true
-    species:
-    - Felinid # They don't need to be lighter
-    - Rodentia
-    - Tajaran
-    - Harpy
   - !type:CharacterTraitRequirement
     inverted: true
     traits:
@@ -102,6 +86,7 @@
     inverted: true
     traits:
     - ZeroGAverse
+    - WheelchairBound
   functions:
     - !type:TraitReplaceComponent
       components:
@@ -127,6 +112,7 @@
     inverted: true
     traits:
     - ZeroGTraining
+    - WheelchairBound
   functions:
     - !type:TraitReplaceComponent
       components:

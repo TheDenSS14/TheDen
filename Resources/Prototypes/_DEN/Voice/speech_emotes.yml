@@ -1,0 +1,18 @@
+- type: emote
+  id: CowMoo
+  name: chat-emote-name-cowmoo
+  category: Vocal
+  icon: Interface/Emotes/caw.png
+  whitelist:
+    tags:
+    - HarpyEmotes
+    - SiliconEmotes
+    - OniEmotes
+    - HumanEmotes
+  blacklist:
+    components:
+    - BorgChassis
+  chatMessages: [ moos ]
+  chatTriggers:
+    - moos
+    - moo
