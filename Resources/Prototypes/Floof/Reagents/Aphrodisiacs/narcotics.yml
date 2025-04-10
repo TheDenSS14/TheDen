@@ -8,7 +8,7 @@
   color: "#c90084"
   metabolisms:
     Narcotic:
-      metabolismRate : 0.03
+      metabolismRate : 0.1
       effects:
       - !type:PopupMessage
         type: Local
@@ -24,7 +24,7 @@
       - !type:HealthChange
         conditions:
         - !type:ReagentThreshold
-          min: 10.0
+          min: 30
         damage:
           types:
             Poison: 0.05
@@ -39,7 +39,7 @@
         - reagent-effect-aphrodisiac-strongoverdose4
         conditions:
         - !type:ReagentThreshold
-          min: 10.0
+          min: 10
       - !type:PopupMessage
         type: Local
         visualType: Small

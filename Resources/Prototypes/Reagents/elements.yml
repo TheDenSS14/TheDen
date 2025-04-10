@@ -12,24 +12,12 @@
     Medicine:
       effects:
       - !type:AdjustReagent
-        conditions:
-        - !type:ReagentThreshold
-          reagent: Pomelustine
-          min: 1
         reagent: Pomelustine
         amount: -5
       - !type:AdjustReagent
-        conditions:
-        - !type:ReagentThreshold
-          reagent: Philterex
-          min: 1
         reagent: Philterex
         amount: -5
       - !type:AdjustReagent
-        conditions:
-        - !type:ReagentThreshold
-          reagent: Libidozenithizine
-          min: 1
         reagent: Libidozenithizine
         amount: -3
 

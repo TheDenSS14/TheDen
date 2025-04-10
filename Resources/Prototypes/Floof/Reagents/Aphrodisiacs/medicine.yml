@@ -8,7 +8,7 @@
   color: "#45072f"
   metabolisms:
     Medicine:
-      metabolismRate : 0.03
+      metabolismRate : 0.1
       effects:
       - !type:PopupMessage
         type: Local
@@ -61,7 +61,7 @@
   color: "#ae0072"
   metabolisms:
     Medicine:
-      metabolismRate : 0.03
+      metabolismRate : 0.1
       effects:
       - !type:PopupMessage
         type: Local
@@ -72,10 +72,10 @@
           - "reagent-effect-aphrodisiac-normal3"
           - "reagent-effect-aphrodisiac-normal4"
           - "reagent-effect-aphrodisiac-normal5"
-        probability: 0.04
+        probability: 0.05
         conditions:
         - !type:ReagentThreshold
-          max: 16.5
+          max: 30
       - !type:PopupMessage
         type: Local
         visualType: MediumCaution
@@ -89,11 +89,11 @@
         probability: 0.06
         conditions:
         - !type:ReagentThreshold
-          min: 16.5
+          min: 30
       - !type:Emote
         conditions:
         - !type:ReagentThreshold
-          min: 16.5
+          min: 30
         emote: Yawn
         showInChat: true
         probability: 0.02
