@@ -924,6 +924,10 @@
       inverted: true
       traits:
         - WheelchairBound
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Arachne
   functions:
     - !type:TraitPushDescription
       descriptionExtensions:
