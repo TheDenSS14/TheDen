@@ -19,7 +19,7 @@
         factor: 2
       - !type:AdjustReagent
         reagent: Ethanol
-        amount: 0.15
+        amount: 0.075
 
 - type: reagent
   id: Soju
@@ -42,7 +42,7 @@
         factor: 2
       - !type:AdjustReagent
         reagent: Ethanol
-        amount: 0.2
+        amount: 0.1
 
 - type: reagent
   id: OrangeCreamice
@@ -65,7 +65,7 @@
         factor: 2
       - !type:AdjustReagent
         reagent: Ethanol
-        amount: 0.125
+        amount: 0.0625
 
 - type: reagent
   id: Silverjack
@@ -88,7 +88,7 @@
         factor: 2
       - !type:AdjustReagent
         reagent: Ethanol
-        amount: 0.15
+        amount: 0.075
 
 - type: reagent
   id: Brainbomb
@@ -118,7 +118,7 @@
         factor: 2
       - !type:AdjustReagent
         reagent: Ethanol
-        amount: 0.161
+        amount: 0.0805
       - !type:AdjustReagent
         reagent: THC
         amount: 0.33
@@ -147,7 +147,7 @@
         factor: 2
       - !type:AdjustReagent
         reagent: Ethanol
-        amount: 0.055
+        amount: 0.0275
 
 - type: reagent
   id: CircusJuice
@@ -170,7 +170,7 @@
         factor: 2
       - !type:AdjustReagent
         reagent: Ethanol
-        amount: 0.1375
+        amount: 0.06875
       - !type:Emote #It's very funny
         emote: Laugh
         probability: 0.15
@@ -196,7 +196,7 @@
         factor: 2
       - !type:AdjustReagent
         reagent: Ethanol
-        amount: 0.1125
+        amount: 0.05625
       - !type:AdjustTemperature
         amount: 75 # thermal energy, not temperature!
 
@@ -221,4 +221,4 @@
         factor: 2
       - !type:AdjustReagent
         reagent: Ethanol
-        amount: 0.12
+        amount: 0.06

@@ -22,7 +22,7 @@
         amount: 0.5
       - !type:AdjustReagent
         reagent: Ethanol
-        amount: 0.18
+        amount: 0.09
 
 - type: reagent
   id: A.B.Lustine
@@ -45,7 +45,7 @@
         factor: 3
       - !type:AdjustReagent
         reagent: Pomelustine
-        amount: 0.5
+        amount: 0.25
 
 - type: reagent
   id: Anisette
@@ -62,7 +62,7 @@
         factor: 2
       - !type:AdjustReagent
         reagent: Ethanol
-        amount: 0.25
+        amount: 0.125
 
 - type: reagent
   id: AppleberryFizz
@@ -105,7 +105,7 @@
         factor: 2
       - !type:AdjustReagent
         reagent: Ethanol
-        amount: 0.216
+        amount: 0.108
 
 - type: reagent
   id: BlueBaller
@@ -128,7 +128,7 @@
         factor: 2
       - !type:AdjustReagent
         reagent: Ethanol
-        amount: 0.083
+        amount: 0.0415
       - !type:AdjustReagent
         reagent: Pomelustine
         amount: 0.5
@@ -154,7 +154,7 @@
         factor: 3
       - !type:AdjustReagent
         reagent: Ethanol
-        amount: 0.083
+        amount: 0.0415
 
 - type: reagent
   id: CalicoSunrise
@@ -197,7 +197,7 @@
         factor: 2
       - !type:AdjustReagent
         reagent: Ethanol
-        amount: 0.25
+        amount: 0.125
 
 - type: reagent
   id: DeadMansDraught
@@ -220,7 +220,7 @@
         factor: 2
       - !type:AdjustReagent
         reagent: Ethanol
-        amount: 0.3425
+        amount: 0.17125
 
 - type: reagent
   id: DarkOasis
@@ -243,7 +243,7 @@
         factor: 2
       - !type:AdjustReagent
         reagent: Ethanol
-        amount: 0.11
+        amount: 0.055
 
 - type: reagent
   id: DemonSeed
@@ -266,7 +266,7 @@
         factor: 2
       - !type:AdjustReagent
         reagent: Ethanol
-        amount: 0.083
+        amount: 0.0415
       - !type:AdjustReagent
         reagent: Pomelustine
         amount: 1
@@ -292,7 +292,7 @@
         factor: 2
       - !type:AdjustReagent
         reagent: Ethanol
-        amount: 0.13
+        amount: 0.065
 
 - type: reagent
   id: DoubleCreamBlaster
@@ -335,7 +335,7 @@
         factor: 2
       - !type:AdjustReagent
         reagent: Ethanol
-        amount: 0.023
+        amount: 0.0115
 
 - type: reagent
   id: DragonsBreath
@@ -358,7 +358,7 @@
         factor: 2
       - !type:AdjustReagent
         reagent: Ethanol
-        amount: 0.183
+        amount: 0.0915
 
 - type: reagent
   id: DragonsSeed
@@ -401,7 +401,7 @@
         factor: 2
       - !type:AdjustReagent
         reagent: Ethanol
-        amount: 0.04
+        amount: 0.02
 
 - type: reagent
   id: Eminence
@@ -424,7 +424,7 @@
         factor: 2
       - !type:AdjustReagent
         reagent: Ethanol
-        amount: 0.49156
+        amount: 0.24578
 
 - type: reagent
   id: GoldbloomSpecial
@@ -447,7 +447,7 @@
         factor: 2
       - !type:AdjustReagent
         reagent: Ethanol
-        amount: 0.175
+        amount: 0.0875
 
 - type: reagent
   id: GrandNavy
@@ -470,7 +470,7 @@
         factor: 2
       - !type:AdjustReagent
         reagent: Ethanol
-        amount: 0.1646
+        amount: 0.0823
 
 - type: reagent
   id: HeartbreakMountain
@@ -493,7 +493,7 @@
         factor: 3
       - !type:AdjustReagent
         reagent: Pomelustine
-        amount: 0.5
+        amount: 0.25
 
 - type: reagent
   id: HolyVice
@@ -516,7 +516,7 @@
         factor: 2
       - !type:AdjustReagent
         reagent: Ethanol
-        amount: 0.15
+        amount: 0.075
 
 - type: reagent
   id: HornyStallion
@@ -539,7 +539,7 @@
         factor: 2
       - !type:AdjustReagent
         reagent: Libidozenithizine
-        amount: 0.5
+        amount: 0.25
 
 - type: reagent
   id: KoboldKooler
@@ -608,7 +608,7 @@
           type: Moth # non-moths get standard effect
           shouldHave: false
         reagent: Pomelustine
-        amount: 0.5
+        amount: 0.25
       - !type:AdjustReagent
         conditions:
         - !type:ReagentThreshold
@@ -617,7 +617,7 @@
           type: Moth # Get them moffy fucks horny
           shouldHave: true
         reagent: Philterex
-        amount: 0.5
+        amount: 0.25
 
 - type: reagent
   id: LemonPopsicle
@@ -660,7 +660,7 @@
         factor: 2
       - !type:AdjustReagent
         reagent: Ethanol
-        amount: 0.073
+        amount: 0.0365
       - !type:AdjustReagent
         reagent: Pomelustine
         amount: 0.5
@@ -686,7 +686,7 @@
         factor: 2
       - !type:AdjustReagent
         reagent: Ethanol
-        amount: 0.175
+        amount: 0.0875
 
 - type: reagent
   id: MarsBar
@@ -709,7 +709,7 @@
         factor: 2
       - !type:AdjustReagent
         reagent: Ethanol
-        amount: 0.13
+        amount: 0.065
 
 - type: reagent
   id: MossBloodShot
@@ -732,7 +732,7 @@
         factor: 2
       - !type:AdjustReagent
         reagent: Ethanol
-        amount: 0.2
+        amount: 0.1
 
 - type: reagent
   id: NumberOne
@@ -755,7 +755,7 @@
         factor: 2
       - !type:AdjustReagent
         reagent: Ethanol
-        amount: 0.16
+        amount: 0.08
 
 - type: reagent
   id: OpsShine
@@ -788,7 +788,7 @@
         factor: 2
       - !type:AdjustReagent
         reagent: Ethanol
-        amount: 0.3476
+        amount: 0.1738
 
 - type: reagent
   id: OrgasmOnTheBeach
@@ -811,7 +811,7 @@
         factor: 2
       - !type:AdjustReagent
         reagent: Ethanol
-        amount: 0.1
+        amount: 0.05
 
 - type: reagent
   id: Pomonade
@@ -854,7 +854,7 @@
         factor: 2
       - !type:AdjustReagent
         reagent: Ethanol
-        amount: 0.083
+        amount: 0.0415
 
 - type: reagent
   id: PomTwist
@@ -877,7 +877,7 @@
         factor: 3
       - !type:AdjustReagent
         reagent: Pomelustine
-        amount: 0.5
+        amount: 0.25
 
 - type: reagent
   id: PrairieOyster
@@ -900,7 +900,7 @@
         factor: 2
       - !type:AdjustReagent
         reagent: Ethanol
-        amount: 0.083
+        amount: 0.0415
 
 - type: reagent
   id: PrisonWine
@@ -963,10 +963,10 @@
         factor: 2
       - !type:AdjustReagent
         reagent: Ethanol
-        amount: 0.06
+        amount: 0.03
       - !type:AdjustReagent
         reagent: Pomelustine
-        amount: 0.5
+        amount: 0.25
 
 
 - type: reagent
@@ -990,7 +990,7 @@
         factor: 2
       - !type:AdjustReagent
         reagent: Ethanol
-        amount: 0.083
+        amount: 0.0415
 
 - type: reagent
   id: SalvagersDelight
@@ -1013,7 +1013,7 @@
         factor: 2
       - !type:AdjustReagent
         reagent: Ethanol
-        amount: 0.028
+        amount: 0.014
 
 - type: reagent
   id: SemenBomb
@@ -1036,7 +1036,7 @@
         factor: 2
       - !type:AdjustReagent
         reagent: Ethanol
-        amount: 0.046
+        amount: 0.023
 
 # horrifyingly, this is a real drink from a real cocktail book online
 - type: reagent
@@ -1156,7 +1156,7 @@
         factor: 3
       - !type:AdjustReagent
         reagent: Pomelustine
-        amount: 0.05
+        amount: 0.025
 
 - type: reagent
   id: SyndicatesOverseer
@@ -1179,7 +1179,7 @@
         factor: 2
       - !type:AdjustReagent
         reagent: Ethanol
-        amount: 0.2415
+        amount: 0.12075
 
 - type: reagent
   id: TripleCitrus
@@ -1222,7 +1222,7 @@
         factor: 2
       - !type:AdjustReagent
         reagent: Ethanol
-        amount: 0.246
+        amount: 0.123
 
 - type: reagent
   id: WakeUpJuice
@@ -1265,7 +1265,7 @@
         factor: 2
       - !type:AdjustReagent
         reagent: Ethanol
-        amount: 0.1
+        amount: 0.05
 
 - type: reagent
   id: TheWaterslide
@@ -1288,7 +1288,7 @@
         factor: 2
       - !type:AdjustReagent
         reagent: Ethanol
-        amount: 0.016
+        amount: 0.008
 
 - type: reagent
   id: WhiskeySour
@@ -1311,7 +1311,7 @@
         factor: 2
       - !type:AdjustReagent
         reagent: Ethanol
-        amount: 0.186
+        amount: 0.093
 
 - type: reagent
   id: YeOlHandy
@@ -1334,7 +1334,7 @@
         factor: 2
       - !type:AdjustReagent
         reagent: Ethanol
-        amount: 0.08
+        amount: 0.04
 
 - type: reagent
   id: TheCuteCaptain
@@ -1357,7 +1357,7 @@
         factor: 3
       - !type:AdjustReagent
         reagent: Pomelustine
-        amount: 0.5
+        amount: 0.25
 
 - type: reagent
   id: AxelsAle
@@ -1380,10 +1380,10 @@
         factor: 2
       - !type:AdjustReagent
         reagent: Pomelustine
-        amount: 0.5
+        amount: 0.25
       - !type:AdjustReagent
         reagent: Ethanol
-        amount: 0.19
+        amount: 0.095
 
 - type: reagent
   id: JennTonic
@@ -1406,7 +1406,7 @@
         factor: 2
       - !type:AdjustReagent
         reagent: Ethanol
-        amount: 0.13
+        amount: 0.065
 
 - type: reagent
   id: Hallelujah
@@ -1429,7 +1429,7 @@
         factor: 5
       - !type:AdjustReagent
         reagent: Ethanol
-        amount: 0.55
+        amount: 0.275
 
 - type: reagent
   id: Eggnog
@@ -1452,7 +1452,7 @@
         factor: 1
       - !type:AdjustReagent
         reagent: Pomelustine
-        amount: 0.1
+        amount: 0.05
 
 - type: reagent
   id: SyndicateEggnog
@@ -1475,7 +1475,7 @@
         factor: 1
       - !type:AdjustReagent
         reagent: Ethanol
-        amount: 0.08
+        amount: 0.04
 
 - type: entity
   parent: DrinkGlass
