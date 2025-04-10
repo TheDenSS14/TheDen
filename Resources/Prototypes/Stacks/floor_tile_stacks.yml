@@ -573,36 +573,35 @@
   name: concrete tile
   spawn: FloorTileItemGrayConcrete
   maxCount: 30
+  itemSize: 5
 
 - type: stack
   id: FloorTileConcreteMono
   name: concrete mono tile
   spawn: FloorTileItemConcreteMono
   maxCount: 30
+  itemSize: 5
 
 - type: stack
   id: FloorTileConcreteSmooth
   name: concrete smooth
   spawn: FloorTileItemConcreteSmooth
   maxCount: 30
+  itemSize: 5
 
 - type: stack
   id: FloorTileGrayConcrete
   name: gray concrete tile
   spawn: FloorTileItemGrayConcrete
   maxCount: 30
+  itemSize: 5
 
 - type: stack
   id: FloorTileGrayConcreteMono
   name: gray concrete mono tile
   spawn: FloorTileItemGrayConcreteMono
   maxCount: 30
-
-- type: stack
-  id: FloorTileGrayConcreteSmooth
-  name: gray concrete smooth
-  spawn: FloorTileItemGrayConcreteSmooth
-  maxCount: 30
+  itemSize: 5
 
 - type: stack
   id: FloorTileGrayConcreteSmooth
@@ -616,18 +615,21 @@
   name: old concrete tile
   spawn: FloorTileItemOldConcrete
   maxCount: 30
+  itemSize: 5
 
 - type: stack
   id: FloorTileOldConcreteMono
   name: old concrete mono tile
   spawn: FloorTileItemOldConcreteMono
   maxCount: 30
+  itemSize: 5
 
 - type: stack
   id: FloorTileOldConcreteSmooth
   name: old concrete smooth
   spawn: FloorTileItemOldConcreteSmooth
   maxCount: 30
+  itemSize: 5
 
 - type: stack
   id: FloorTileSilver
