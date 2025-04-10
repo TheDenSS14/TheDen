@@ -40,6 +40,28 @@
   - sprite: _EE/Mobs/Customization/Tajaran/tail_markings.rsi
     state: tail_anim_rings
 
+- type: marking
+  id: TajaranLeoTailNoAnim # Den Addition - Leopard Tail No Animation
+  bodyPart: Tail
+  markingCategory: Tail
+  speciesRestriction: [Tajaran]
+  sprites:
+  - sprite: _EE/Mobs/Customization/Tajaran/leotail.rsi
+    state: leopard_primary
+  - sprite: _EE/Mobs/Customization/Tajaran/leotail.rsi
+    state: leopard_tertiary
+
+- type: marking
+  id: TajaranLeoTailAnim # Den Addition - Leopard Tail Animation
+  bodyPart: Tail
+  markingCategory: Tail
+  speciesRestriction: [Tajaran]
+  sprites:
+  - sprite: _EE/Mobs/Customization/Tajaran/leotail.rsi
+    state: leotailanim_primary
+  - sprite: _EE/Mobs/Customization/Tajaran/leotail.rsi
+    state: leotailanim_secondary
+
 # Tajaran Ears
 
 - type: marking

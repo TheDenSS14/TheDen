@@ -1,0 +1,18 @@
+- type: entity
+  parent: BaseItem
+  id: TableFlagBase
+  name: table flag
+  description: A blank flag for your office table.
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Misc/tableflag.rsi
+    state: tableflagblank
+
+- type: entity
+  parent: TableFlagBase
+  id: TableFlagTrans
+  name: trans table flag
+  description: A flag you can place in your office as a symbol of support or a safe space.
+  components:
+  - type: Sprite
+    state: tableflagtrans

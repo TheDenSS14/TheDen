@@ -1,0 +1,21 @@
+- type: entity
+  parent: BaseFlag
+  id: TransFlagRight
+  name: trans flag
+  description: "A flag of rebirth and change, the fabric is also unironed."
+  suffix: right
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Wallmounts/trans_flag.rsi
+    state: trans_flag_right
+
+- type: entity
+  parent: BaseFlag
+  id: TransFlagLeft
+  name: trans flag
+  description: "A flag of rebirth and change, the fabric is also unironed."
+  suffix: left
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Wallmounts/trans_flag.rsi
+    state: trans_flag_left
