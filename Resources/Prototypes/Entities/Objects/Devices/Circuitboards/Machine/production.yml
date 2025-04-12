@@ -1791,3 +1791,18 @@
       requirements:
         MatterBin: 1
         Manipulator: 2
+
+- type: entity
+  parent: BaseMachineCircuitboard
+  id: CutterMachineCircuitboard
+  name: cutter machine board
+  description: A machine printed circuit board for a tile cutter
+  components:
+  - type: MachineBoard
+    prototype: CutterMachine
+    requirements:
+      Capacitor: 1
+      Manipulator: 1
+    materialRequirements:
+      Cable: 1
+      Steel: 2

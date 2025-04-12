@@ -3,8 +3,6 @@
   category: TraitsSpeechLanguages
   points: -2
   requirements:
-    - !type:CharacterItemGroupRequirement
-      group: TraitsLanguagesRacial
     - !type:CharacterSpeciesRequirement
       inverted: true
       species:
