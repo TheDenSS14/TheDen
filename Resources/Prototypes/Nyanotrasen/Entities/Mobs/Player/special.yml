@@ -1,18 +1,17 @@
 - type: entity
   id: MobObserverTelegnostic
   name: telegnostic projection
-  description: Ominous. Placeholder sprite.
+  description: Ominous.
   categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
     overrideContainerOcclusion: true # Ghosts always show up regardless of where they're contained.
     noRot: true
     drawdepth: Ghosts
-    sprite: Objects/Consumable/Food/bowl.rsi
-    state: eyeball
+    sprite: _DEN/Mobs/Ghosts/telegnosis.rsi
     color: "#90EE90"
     layers:
-      - state: eyeball
+      - state: telegnosis
         shader: unshaded
   - type: Psionic
     removable: false
