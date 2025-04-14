@@ -213,7 +213,7 @@
 - type: entity
   name: white office chair
   id: ChairOfficeLight
-  parent: RollingOfficeChairBase # Goobstation - make the rolly chairs roll!
+  parent: OfficeChairBase
   components:
   - type: Sprite
     state: office-white

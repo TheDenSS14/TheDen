@@ -19,8 +19,7 @@
       Extinguish: [Touch]
   - type: NpcFactionMember
     factions:
-    - Mouse
-    # - SimpleHostile
+    - SimpleHostile
   - type: Sprite
     drawdepth: SmallMobs
     sprite: Mobs/Animals/regalrat.rsi
@@ -214,7 +213,7 @@
       Extinguish: [Touch]
   - type: NpcFactionMember
     factions:
-    - Mouse
+    - SimpleHostile
   - type: Sprite
     drawdepth: SmallMobs
     sprite: Mobs/Animals/rat.rsi
