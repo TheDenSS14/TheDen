@@ -29,6 +29,10 @@
       checkCanAccess: false
       range: 8
       itemIconStyle: BigAction
+      blacklist:
+        components:
+          - PsionicInsulation
+          - Mindbroken
       event: !type:MassSleepPowerActionEvent
 
 - type: entity
