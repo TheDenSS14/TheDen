@@ -1553,6 +1553,8 @@
       - Gauze
       - Metal
       - Diamond
+  - type: LatheAnnouncing
+    channels: [Security]
 
 - type: entity
   id: AmmoTechFab
@@ -1739,6 +1741,8 @@
     board: MedicalTechFabCircuitboard
   - type: StealTarget
     stealGroup: MedicalTechFabCircuitboard
+  - type: LatheAnnouncing
+    channels: [Medical]
 
 # THIS ENTIRE SECTION BELONGS TO FLOOF - port to EE if possible
 # ===

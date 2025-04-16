@@ -38,6 +38,7 @@ using Content.Server.Materials;
 using Content.Server.Popups;
 using Content.Server.Power.Components;
 using Content.Server.Power.EntitySystems;
+using Content.Server.Radio.EntitySystems;
 using Content.Server.Stack;
 using Content.Shared.Atmos;
 using Content.Shared.Chemistry.Components;
@@ -48,6 +49,8 @@ using Content.Shared.Database;
 using Content.Shared.Emag.Components;
 using Content.Shared.Examine;
 using Content.Shared.Lathe;
+using Content.Shared.Lathe.Prototypes;
+using Content.Shared.Localizations;
 using Content.Shared.Materials;
 using Content.Shared.Power;
 using Content.Shared.ReagentSpeed;
@@ -83,6 +86,7 @@ namespace Content.Server.Lathe
         [Dependency] private readonly StackSystem _stack = default!;
         [Dependency] private readonly TransformSystem _transform = default!;
         [Dependency] private readonly ChatSystem _chatSystem = default!; // Goobstation - New recipes message
+        [Dependency] private readonly RadioSystem _radio = default!;
 
         /// <summary>
         /// Per-tick cache
@@ -96,6 +100,7 @@ namespace Content.Server.Lathe
             SubscribeLocalEvent<LatheComponent, MapInitEvent>(OnMapInit);
             SubscribeLocalEvent<LatheComponent, PowerChangedEvent>(OnPowerChanged);
             SubscribeLocalEvent<LatheComponent, TechnologyDatabaseModifiedEvent>(OnDatabaseModified);
+            SubscribeLocalEvent<LatheAnnouncingComponent, TechnologyDatabaseModifiedEvent>(OnTechnologyDatabaseModified);
             SubscribeLocalEvent<LatheComponent, ResearchRegistrationChangedEvent>(OnResearchRegistrationChanged);
 
             SubscribeLocalEvent<LatheComponent, LatheQueueRecipeMessage>(OnLatheQueueRecipeMessage);
@@ -396,6 +401,41 @@ namespace Content.Server.Lathe
             if (recipesCount > 0)
                 _chatSystem.TrySendInGameICMessage(uid, Loc.GetString("lathe-technology-recipes-update-message", ("count", recipesCount)), InGameICChatType.Speak, hideChat: true);
             // Goobstation - Lathe message on recipes update - End
+        }
+
+        private void OnTechnologyDatabaseModified(Entity<LatheAnnouncingComponent> ent, ref TechnologyDatabaseModifiedEvent args)
+        {
+            if (args.NewlyUnlockedRecipes is null)
+                return;
+
+            if (!TryGetAvailableRecipes(ent.Owner, out var potentialRecipes))
+                return;
+
+            var recipeNames = new List<string>();
+            foreach (var recipeId in args.NewlyUnlockedRecipes)
+            {
+                if (!potentialRecipes.Contains(new(recipeId)))
+                    continue;
+
+                if (!_proto.TryIndex(recipeId, out LatheRecipePrototype? recipe))
+                    continue;
+
+                var itemName = GetRecipeName(recipe!);
+                recipeNames.Add(Loc.GetString("lathe-unlock-recipe-radio-broadcast-item", ("item", itemName)));
+            }
+
+            if (recipeNames.Count == 0)
+                return;
+
+            var message = Loc.GetString(
+                "lathe-unlock-recipe-radio-broadcast",
+                ("items", ContentLocalizationManager.FormatList(recipeNames))
+            );
+
+            foreach (var channel in ent.Comp.Channels)
+            {
+                _radio.SendRadioMessage(ent.Owner, message, channel, ent.Owner, escapeMarkup: false);
+            }
         }
 
         private void OnResearchRegistrationChanged(EntityUid uid, LatheComponent component, ref ResearchRegistrationChangedEvent args)
