@@ -142,6 +142,7 @@
         whitelist:
           tags:
           - MagazinePistol
+          - MagazinePistolHighCapacity
       gun_chamber:
         name: Chamber
         startingItem: null
@@ -261,14 +262,14 @@
         priority: 2
         whitelist:
           tags:
-          - MagazinePistol
+          - MagazinePistolCaselessRifle
       gun_chamber:
         name: Chamber
         startingItem: null
         priority: 1
         whitelist:
           tags:
-          - CartridgePistol
+          - CartridgeCaselessRifle
 
 - type: entity
   name: mk 58
@@ -422,14 +423,14 @@
         priority: 2
         whitelist:
           tags:
-          - MagazinePistol
+          - MagazineMagnum
       gun_chamber:
         name: Chamber
         startingItem: null
         priority: 1
         whitelist:
           tags:
-          - CartridgePistol
+          - CartridgeMagnum
 
 - type: entity
   name: N1984

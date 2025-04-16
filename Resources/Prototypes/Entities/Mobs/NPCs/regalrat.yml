@@ -19,8 +19,7 @@
       Extinguish: [Touch]
   - type: NpcFactionMember
     factions:
-    - Mouse
-    # - SimpleHostile
+    - SimpleHostile
   - type: Sprite
     drawdepth: SmallMobs
     sprite: Mobs/Animals/regalrat.rsi
@@ -142,6 +141,7 @@
     color: "#808080"
     activateSound: null
     deactivateSound: null
+  - type: Hands
   - type: ComplexInteraction
   - type: Puller
     needsHands: false
@@ -214,7 +214,7 @@
       Extinguish: [Touch]
   - type: NpcFactionMember
     factions:
-    - Mouse
+    - SimpleHostile
   - type: Sprite
     drawdepth: SmallMobs
     sprite: Mobs/Animals/rat.rsi

@@ -254,7 +254,11 @@
     - !type:TraitAddComponent
       components:
         - type: PsionicInsulation
-        - type: Mindbroken
+    - !type:TraitPushDescription
+      descriptionExtensions:
+        - description: examine-psionic-insulation-message
+          fontSize: 12
+          requireDetailRange: true
   requirements:
     - !type:CharacterJobRequirement
       inverted: true

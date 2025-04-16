@@ -323,8 +323,7 @@ trait-description-LatentPsychic =
 
 trait-name-PsionicInsulation = χ Waveform Misalignment
 trait-description-PsionicInsulation =
-    You are a flesh automaton animated by neurotransmitters. Within your skull lies a
-    1.5kg sack of meat pretending at sentience. By modern epistemiological theory, you aren't even a sophont.
+    Whether through implants or by way of innate psionic insulation, your consciousness is isolated from the noosphere.
     The good news is that you are immune to most positive and negative effects of psychic powers.
     There may be other consequences to this malady.
 
@@ -674,5 +673,5 @@ trait-description-Weakling =
 
 trait-name-Bodybuilder = Bodybuilder
 trait-description-Bodybuilder =
-    Through extensive training or body modification, you have achieved the pinnacle of physique. 
+    Through extensive training or body modification, you have achieved the pinnacle of physique.
     This trait halves the movement speed penalty when dragging something.
