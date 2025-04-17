@@ -258,3 +258,16 @@
     stampState: "paper_stamp-detective"
   - type: Sprite
     state: stamp-detective
+
+- type: entity
+  name: blueshield's rubber stamp
+  parent: RubberStampBase
+  id: RubberStampBlueshield
+  suffix: DO NOT MAP
+  components:
+  - type: Stamp
+    stampedName: stamp-component-stamped-name-blueshield
+    stampedColor: "#004281FF"
+    stampState: "paper_stamp-bso"
+  - type: Sprite
+    state: stamp-bso

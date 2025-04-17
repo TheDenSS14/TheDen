@@ -20,6 +20,17 @@
 #  items:
 
 - type: characterItemGroup
+  id: LoadoutBlueshieldOfficerSecondary
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutBSOEnergyRevolver
+    - type: loadout
+      id: LoadoutBSOMace
+    - type: loadout
+      id: LoadoutBSOAxe
+
+- type: characterItemGroup
   id: LoadoutBlueshieldOfficerPrimary
   maxItems: 1
   items:

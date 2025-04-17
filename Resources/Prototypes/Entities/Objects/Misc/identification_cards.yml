@@ -1129,8 +1129,11 @@
   - type: Sprite
     layers:
     - state: silver
-    - sprite: DeltaV/Objects/Misc/id_cards.rsi
-      state: idadminassistant
+    - state: departmenthead
+      color: "#1B67A5"
+    - state: subdepartment
+      color: "#878787"
+    - state: adminassistant
   - type: Item
     heldPrefix: silver
   - type: PresetIdCard
