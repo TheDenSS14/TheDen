@@ -7,6 +7,12 @@
   - type: Pda
     id: BlueshieldIDCard
     state: pda-blueshield
+    penSlot:
+      startingItem: PenBlueshield
+      priority: -1
+      whitelist:
+        tags:
+        - Write
   - type: Icon
     sprite: _Goobstation/Objects/Devices/pda.rsi
     state: pda-blueshield

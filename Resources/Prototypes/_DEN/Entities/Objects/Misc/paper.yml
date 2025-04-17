@@ -41,3 +41,17 @@
   - type: Sprite
     sprite: _DEN/Objects/Misc/bureaucracy.rsi
     state: pen_rd
+
+- type: entity
+  name: blueshield's fountain pen
+  parent: PenEmbeddable
+  id: PenBlueshield
+  description: 'A luxurious fountain pen for the blueshield officer of the station. It has scuff marks and battle damage but still does its duty.'
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Misc/bureaucracy.rsi
+    state: pen_bso
+  - type: DamageOtherOnHit
+    damage:
+      types:
+        Piercing: 8
