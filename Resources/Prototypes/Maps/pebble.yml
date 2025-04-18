@@ -14,7 +14,7 @@
           mapNameTemplate: '{0} Pebble Station {1}'
           nameGenerator:
             !type:NanotrasenNameGenerator
-            prefixCreator: 'NYA'
+            prefixCreator: 'NTDV'
 #        - type: GridSpawn
 #          groups:
 #            AISAT:
@@ -82,6 +82,6 @@
             Passenger: [ -1, -1 ]
           #justice
             ChiefJustice: [ 1, 1 ]
-            Clerk: [ 1, 1 ]
+            # Clerk: [ 1, 1 ] #Couldnt find room for him in the rebuild
           # Silicon
             StationAi: [ 1, 1 ]
