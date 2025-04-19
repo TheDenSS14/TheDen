@@ -71,6 +71,19 @@
       state: long_overlay
 
 - type: marking
+  id: RodentiaHeadTopEarBunnyLarge
+  markingCategory: HeadTop
+  bodyPart: HeadTop
+  speciesRestriction: [Rodentia, SlimePerson, IPC, Human]
+  sprites:
+    - sprite: DeltaV/Mobs/Customization/Rodentia/tall_ear_markings.rsi
+      state: ears_bunny_large_primary
+    - sprite: DeltaV/Mobs/Customization/Rodentia/tall_ear_markings.rsi
+      state: ears_bunny_large_secondary
+    - sprite: DeltaV/Mobs/Customization/Rodentia/tall_ear_markings.rsi
+      state: ears_bunny_large_tertiary
+
+- type: marking
   id: RodentiaHeadTopEarMouse
   markingCategory: HeadTop
   bodyPart: HeadTop

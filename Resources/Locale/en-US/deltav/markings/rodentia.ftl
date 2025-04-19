@@ -30,12 +30,17 @@ marking-RodentiaHeadTopEarLong = Ears - Long
 marking-RodentiaHeadTopEarLong-long = Outer ear
 marking-RodentiaHeadTopEarLong-long_overlay = Inner ear
 
+marking-RodentiaHeadTopEarBunnyLarge = Bunny (Large)
+marking-RodentiaHeadTopEarBunnyLarge-ears_bunny_large_primary = Primary
+marking-RodentiaHeadTopEarBunnyLarge-ears_bunny_large_secondary = Secondary
+marking-RodentiaHeadTopEarBunnyLarge-ears_bunny_large_tertiary = Tertiary
+
 marking-RodentiaHeadTopEarMouse = Ears - Mouse
 marking-RodentiaHeadTopEarMouse-mouse = Outer ear
 marking-RodentiaHeadTopEarMouse-mouse_overlay = Inner ear
 
 marking-RodentiaHeadTopEarMouseLarge = Ears - Mouse (Large)
-marking-RodentiaHeadTopEarMouseLarge-mouse_large = Outer 
+marking-RodentiaHeadTopEarMouseLarge-mouse_large = Outer
 marking-RodentiaHeadTopEarMouseLarge-mouse_large_overlay = Inner ear
 
 marking-RodentiaHeadTopEarNone = Ears - Hidden
