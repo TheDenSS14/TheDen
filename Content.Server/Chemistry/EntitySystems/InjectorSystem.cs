@@ -12,6 +12,7 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
+using System.Linq; // DeltaV
 using Content.Server.Abilities.Chitinid;
 using Content.Server.Body.Components;
 using Content.Server.Body.Systems;
@@ -373,6 +374,15 @@ public sealed class InjectorSystem : SharedInjectorSystem
         {
             return;
         }
+        // Begin DeltaV Additions - skimmer functionality
+        else if (injector.Comp.TargetSmallest)
+        {
+            if (applicableTargetSolution.Count() > 0 && applicableTargetSolution.MinBy(soln => soln.Quantity) is {} smallest)
+            {
+                temporarilyRemovedSolution = applicableTargetSolution.SplitSolutionWithout(applicableTargetSolution.Volume, new string[] { smallest.Reagent.Prototype });
+            }
+        }
+        // End DeltaV Additions - skimmer functionality
 
         // Get transfer amount. May be smaller than _transferAmount if not enough room, also make sure there's room in the injector
         var realTransferAmount = FixedPoint2.Min(injector.Comp.TransferAmount, targetSolution.Comp.Solution.Volume,
@@ -396,6 +406,9 @@ public sealed class InjectorSystem : SharedInjectorSystem
 
         // Move units from attackSolution to targetSolution
         var removedSolution = SolutionContainers.Draw(target.Owner, targetSolution, realTransferAmount);
+
+        // Add back non-whitelisted reagents to the target solution
+        SolutionContainers.TryAddSolution(targetSolution, temporarilyRemovedSolution); // DeltaV - fix bug with visualization for skimmers
 
         if (!SolutionContainers.TryAddSolution(soln.Value, removedSolution))
         {
