@@ -1,7 +1,7 @@
 {
   "version": 1,
   "license": "CC-BY-SA-3.0",
-  "copyright": "Taken from https://github.com/ParadiseSS13/Paradise edited by Floofers, then edited again by Tirochora",
+  "copyright": "Taken from https://github.com/ParadiseSS13/Paradise edited by Floofers, then edited again by Tirochora and Blitz",
   "size": {"x": 32, "y": 32},
     "states": [
         {
@@ -34,6 +34,14 @@
         },
         {
             "name": "furred_l_foot",
+            "directions": 4
+        },
+        {
+            "name": "furred_torso_f",
+            "directions": 4
+        },
+        {
+            "name": "furred_torso_m",
             "directions": 4
         }
     ]

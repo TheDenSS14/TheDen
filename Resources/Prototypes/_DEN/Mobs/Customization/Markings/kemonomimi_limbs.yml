@@ -69,3 +69,21 @@
   sprites:
   - sprite: _DEN/Mobs/Customization/Body/kemonomimi-limbs.rsi
     state: furred_r_hand
+
+- type: marking
+  id: FurredTorsoFemale
+  bodyPart: Chest
+  markingCategory: Chest
+  speciesRestriction: [Human, HumanHybrid, Canid]
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Body/kemonomimi-limbs.rsi
+    state: furred_torso_f
+
+- type: marking
+  id: FurredTorsoMale
+  bodyPart: Chest
+  markingCategory: Chest
+  speciesRestriction: [Human, HumanHybrid, Canid]
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Body/kemonomimi-limbs.rsi
+    state: furred_torso_m

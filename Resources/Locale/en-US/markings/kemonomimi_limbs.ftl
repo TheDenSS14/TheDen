@@ -21,3 +21,9 @@ marking-FurredLeftHand = Furred Left Hand
 
 marking-FurredRightHand-furred_r_hand = Furred Right Hand
 marking-FurredRightHand = Furred Right Hand
+
+marking-FurredTorsoFemale-furred_torso_f = Furred Torso
+marking-FurredTorsoFemale = Furred Torso
+
+marking-FurredTorsoMale-furred_torso_m = Furred Torso
+marking-FurredTorsoMale = Furred Torso
