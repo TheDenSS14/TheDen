@@ -395,6 +395,34 @@
     DriestMartini: 2
 
 - type: reaction
+  id: Eggnog
+  requiredMixerCategories:
+  - Shake
+  reactants:
+    Egg:
+      amount: 1
+    Milk:
+      amount: 4
+    Rum:
+      amount: 5
+  products:
+    Eggnog: 10
+
+- type: reaction
+  id: ElectricShark
+  requiredMixerCategories:
+  - Shake
+  reactants:
+    DarkandStormy:
+      amount: 4
+    BlueCuracao:
+      amount: 1
+    JuicePineapple:
+      amount: 1
+  products:
+    ElectricShark: 6
+
+- type: reaction
   id: ErikaSurprise
   requiredMixerCategories:
   - Shake
