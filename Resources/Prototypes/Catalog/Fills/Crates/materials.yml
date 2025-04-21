@@ -157,3 +157,33 @@
     contents:
       - id: IngotSilver
         amount: 3
+
+- type: entity
+  id: CrateMaterialCopper
+  name: copper crate
+  parent: CrateGenericSteel
+  components:
+  - type: StorageFill
+    contents:
+      - id: IngotCopper
+        amount: 3
+
+- type: entity
+  id: CrateMaterialAluminium
+  name: aluminium crate
+  parent: CrateGenericSteel
+  components:
+  - type: StorageFill
+    contents:
+      - id: N14IngotAluminium
+        amount: 3
+
+- type: entity
+  id: CrateMaterialLead
+  name: lead crate
+  parent: CrateGenericSteel
+  components:
+  - type: StorageFill
+    contents:
+      - id: N14IngotLead
+        amount: 3
