@@ -137,3 +137,33 @@
   cost: 3000
   category: cargoproduct-category-name-materials
   group: market
+
+- type: cargoProduct
+  id: MaterialCopper
+  icon:
+    sprite: /Textures/_Nuclear14/Objects/Misc/materials.rsi
+    state: ingot_copper
+  product: CrateMaterialCopper
+  cost: 2500
+  category: cargoproduct-category-name-materials
+  group: market
+
+- type: cargoProduct
+  id: MaterialAluminium
+  icon:
+    sprite: /Textures/_Nuclear14/Objects/Misc/materials.rsi
+    state: ingot_aluminum
+  product: CrateMaterialAluminium
+  cost: 2500
+  category: cargoproduct-category-name-materials
+  group: market
+
+- type: cargoProduct
+  id: MaterialLead
+  icon:
+    sprite: /Textures/_Nuclear14/Objects/Misc/materials.rsi
+    state: ingot_lead
+  product: CrateMaterialLead
+  cost: 2500
+  category: cargoproduct-category-name-materials
+  group: market
