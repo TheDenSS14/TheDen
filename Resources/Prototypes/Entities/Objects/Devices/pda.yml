@@ -50,7 +50,17 @@
       PDA-pai: !type:ContainerSlot {}
       Cartridge-Slot: !type:ContainerSlot {}
       program-container: !type:Container
+      passport: !type:ContainerSlot {}
   - type: ItemSlots
+    slots:
+      passport:
+        insertVerbText: Put in Passport
+        ejectVerbText: Take out Passport
+        name: Passport
+        whitelist:
+          components:
+          - Passport
+        insertOnInteract: true
   - type: Clothing
     quickEquip: false
     slots:
