@@ -8,6 +8,8 @@
   - type: Sprite
     sprite: _DEN/Structures/Wallmounts/trans_flag.rsi
     state: trans_flag_right
+  - type: Transform
+    anchored: true
 
 - type: entity
   parent: BaseFlag
@@ -19,3 +21,5 @@
   - type: Sprite
     sprite: _DEN/Structures/Wallmounts/trans_flag.rsi
     state: trans_flag_left
+  - type: Transform
+    anchored: true

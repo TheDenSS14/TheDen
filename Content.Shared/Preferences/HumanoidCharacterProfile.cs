@@ -27,7 +27,7 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
     private static readonly Regex ICNameCaseRegex = new(@"^(?<word>\w)|\b(?<word>\w)(?=\w*$)");
 
     public const int MaxNameLength = 64;
-    public const int MaxDescLength = 1024;
+    public const int MaxDescLength = 3096;
 
     /// Job preferences for initial spawn
     [DataField]
