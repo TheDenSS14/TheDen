@@ -41,7 +41,6 @@ public sealed class FootPrintsSystem : EntitySystem
         SubscribeLocalEvent<FootPrintsComponent, MoveEvent>(OnMove);
         SubscribeLocalEvent<FootPrintComponent, ComponentGetState>(OnGetState);
         SubscribeLocalEvent<FootPrintComponent, SolutionContainerChangedEvent>(OnSolutionUpdate);
-
     }
 
     private void OnGetState(Entity<FootPrintComponent> ent, ref ComponentGetState args)
