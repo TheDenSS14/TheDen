@@ -109,7 +109,7 @@
   description: It's a backpack especially designed for use in a sterile environment.
   components:
   - type: Sprite
-    sprite: Clothing/Back/Backpacks/medical.rsi
+    sprite: _DEN/Clothing/Medical/Back/Backpacks/medical.rsi
 
 - type: entity
   parent: ClothingBackpack
@@ -136,7 +136,7 @@
   description: A backpack specially designed to repel stains and hazardous liquids.
   components:
   - type: Sprite
-    sprite: Clothing/Back/Backpacks/chemistry.rsi
+    sprite: _DEN/Clothing/Medical/Back/Backpacks/chemistry.rsi
 
 - type: entity
   parent: ClothingBackpack
@@ -172,7 +172,7 @@
   description: A backpack made of hypo-allergenic fibers. It's designed to help prevent the spread of disease. Smells like monkey.
   components:
   - type: Sprite
-    sprite: Clothing/Back/Backpacks/virology.rsi
+    sprite: _DEN/Clothing/Medical/Back/Backpacks/virology.rsi
 
 - type: entity
   parent: ClothingBackpack

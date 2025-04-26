@@ -156,9 +156,9 @@
   name: chemistry winter coat
   components:
   - type: Sprite
-    sprite: Clothing/OuterClothing/WinterCoats/coatchem.rsi
+    sprite: _DEN/Clothing/Medical/OuterClothing/WinterCoats/coatchem.rsi
   - type: Clothing
-    sprite: Clothing/OuterClothing/WinterCoats/coatchem.rsi
+    sprite: _DEN/Clothing/Medical/OuterClothing/WinterCoats/coatchem.rsi
   - type: Armor
     modifiers:
       coefficients:
@@ -175,9 +175,9 @@
   name: chief medical officer's winter coat
   components:
   - type: Sprite
-    sprite: Clothing/OuterClothing/WinterCoats/coatcmo.rsi
+    sprite: _DEN/Clothing/Medical/OuterClothing/WinterCoats/coatcmo.rsi
   - type: Clothing
-    sprite: Clothing/OuterClothing/WinterCoats/coatcmo.rsi
+    sprite: _DEN/Clothing/Medical/OuterClothing/WinterCoats/coatcmo.rsi
   - type: Armor
     modifiers:
       coefficients:
@@ -312,9 +312,9 @@
   name: medical winter coat
   components:
   - type: Sprite
-    sprite: Clothing/OuterClothing/WinterCoats/coatmed.rsi
+    sprite: _DEN/Clothing/Medical/OuterClothing/WinterCoats/coatmed.rsi
   - type: Clothing
-    sprite: Clothing/OuterClothing/WinterCoats/coatmed.rsi
+    sprite: _DEN/Clothing/Medical/OuterClothing/WinterCoats/coatmed.rsi
   - type: Armor
     modifiers:
       coefficients:
@@ -355,9 +355,9 @@
   name: paramedic winter coat
   components:
   - type: Sprite
-    sprite: Clothing/OuterClothing/WinterCoats/coatparamed.rsi
+    sprite: _DEN/Clothing/Medical/OuterClothing/WinterCoats/coatparamed.rsi
   - type: Clothing
-    sprite: Clothing/OuterClothing/WinterCoats/coatparamed.rsi
+    sprite: _DEN/Clothing/Medical/OuterClothing/WinterCoats/coatparamed.rsi
   - type: Armor
     modifiers:
       coefficients:
@@ -457,9 +457,9 @@
   name: virology winter coat
   components:
   - type: Sprite
-    sprite: Clothing/OuterClothing/WinterCoats/coatviro.rsi
+    sprite: _DEN/Clothing/Medical/OuterClothing/WinterCoats/coatviro.rsi
   - type: Clothing
-    sprite: Clothing/OuterClothing/WinterCoats/coatviro.rsi
+    sprite: _DEN/Clothing/Medical/OuterClothing/WinterCoats/coatviro.rsi
   - type: Armor
     modifiers:
       coefficients:
@@ -468,7 +468,7 @@
         Caustic: 0.9
     priceMultiplier: 0.15
   - type: ToggleableClothing
-    clothingPrototype: ClothingHeadHatHoodWinterSci
+    clothingPrototype: ClothingHeadHatHoodWinterViro
 
 - type: entity
   parent: [ClothingOuterArmorWarden, ClothingOuterWinterCoatToggleable]

@@ -40,7 +40,7 @@
   description: A large duffel bag for holding extra medical supplies.
   components:
     - type: Sprite
-      sprite: Clothing/Back/Duffels/medical.rsi
+      sprite: _DEN/Clothing/Medical/Back/Duffels/medical.rsi
 
 - type: entity
   parent: ClothingBackpackDuffel
@@ -88,7 +88,7 @@
   description: A large duffel bag for holding extra beakers and test tubes.
   components:
     - type: Sprite
-      sprite: Clothing/Back/Duffels/chemistry.rsi
+      sprite: _DEN/Clothing/Medical/Back/Duffels/chemistry.rsi
 
 - type: entity
   parent: ClothingBackpackDuffel
@@ -97,7 +97,7 @@
   description: A large duffel bag made of hypo-allergenic fibers. It's designed to help prevent the spread of disease. Smells like monkey.
   components:
     - type: Sprite
-      sprite: Clothing/Back/Duffels/virology.rsi
+      sprite: _DEN/Clothing/Medical/Back/Duffels/virology.rsi
 
 - type: entity
   parent: ClothingBackpackDuffel

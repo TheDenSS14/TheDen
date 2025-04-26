@@ -252,7 +252,7 @@
   description: There's some odd stains on this jumpsuit. Hm.
   components:
   - type: Sprite
-    sprite: Clothing/Uniforms/Jumpsuit/chemistry.rsi
+    sprite: _DEN/Clothing/Medical/Uniforms/Jumpsuit/chemistry.rsi
 
 - type: entity
   parent: ClothingUniformBase
@@ -261,9 +261,9 @@
   description: It's made of a special fiber that gives special protection against biohazards. It has a virologist rank stripe on it.
   components:
   - type: Sprite
-    sprite: Clothing/Uniforms/Jumpsuit/virology.rsi
+    sprite: _DEN/Clothing/Medical/Uniforms/Jumpsuit/virology.rsi
   - type: Clothing
-    sprite: Clothing/Uniforms/Jumpsuit/virology.rsi
+    sprite: _DEN/Clothing/Medical/Uniforms/Jumpsuit/virology.rsi
 
 - type: entity
   parent: ClothingUniformBase
@@ -336,7 +336,7 @@
   description: It's a jumpsuit worn by those with the experience to be Chief Medical Officer. It provides minor biological protection.
   components:
   - type: Sprite
-    sprite: Clothing/Uniforms/Jumpsuit/cmo.rsi
+    sprite: _DEN/Clothing/Medical/Uniforms/Jumpsuit/cmo.rsi
 
 - type: entity
   parent: ClothingUniformBase
@@ -345,9 +345,9 @@
   description: It's a turtleneck worn by those with the experience to be Chief Medical Officer. It provides minor biological protection.
   components:
   - type: Sprite
-    sprite: Clothing/Uniforms/Jumpsuit/cmo_turtle.rsi
+    sprite: _DEN/Clothing/Medical/Uniforms/Jumpsuit/cmo_turtle.rsi
   - type: Clothing
-    sprite: Clothing/Uniforms/Jumpsuit/cmo_turtle.rsi
+    sprite: _DEN/Clothing/Medical/Uniforms/Jumpsuit/cmo_turtle.rsi
 
 - type: entity
   parent: [ClothingUniformBase, ClothingUniformFoldableBase]
@@ -574,7 +574,7 @@
   description: It's made of a special fiber that provides minor protection against biohazards. It has a cross on the chest denoting that the wearer is trained medical personnel.
   components:
   - type: Sprite
-    sprite: Clothing/Uniforms/Jumpsuit/medical.rsi
+    sprite: _DEN/Clothing/Medical/Uniforms/Jumpsuit/medical_doctor.rsi
 
 - type: entity
   parent: ClothingUniformBase
@@ -594,9 +594,9 @@
   description: It's got a plus on it, that's a good thing right?
   components:
   - type: Sprite
-    sprite: Clothing/Uniforms/Jumpsuit/paramedic.rsi
+    sprite: _DEN/Clothing/Medical/Uniforms/Jumpsuit/paramedic.rsi
   - type: Clothing
-    sprite: Clothing/Uniforms/Jumpsuit/paramedic.rsi
+    sprite: _DEN/Clothing/Medical/Uniforms/Jumpsuit/paramedic.rsi
 
 - type: entity
   parent: ClothingUniformBase

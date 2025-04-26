@@ -1,0 +1,40 @@
+- type: entity
+  parent: ClothingBackpack
+  id: ClothingBackpackMessenger
+  name: satchel
+  description: A trendy looking messenger bag.
+  components:
+  - type: Sprite
+    sprite: Clothing/Back/Satchels/satchel.rsi
+  - type: Storage
+    grid:
+    - 0,0,1,3
+    - 3,0,6,3
+    - 8,0,9,3
+
+- type: entity
+  parent: ClothingBackpackMessenger
+  id: ClothingBackpackMessengerChemistry
+  name: chemistry messenger bag
+  description: A sterile satchel with chemist colours.
+  components:
+  - type: Sprite
+    sprite: _DEN/Clothing/Medical/Back/Messenger/chemistry.rsi
+
+- type: entity
+  parent: ClothingBackpackMessenger
+  id: ClothingBackpackMessengerVirology
+  name: virology messenger bag
+  description: A satchel made of hypo-allergenic fibers. It's designed to help prevent the spread of disease. Smells like monkey.
+  components:
+  - type: Sprite
+    sprite: _DEN/Clothing/Medical/Back/Messenger/virology.rsi
+
+- type: entity
+  parent: ClothingBackpackMessenger
+  id: ClothingBackpackMessengerMedical
+  name: medical messenger bag
+  description: A sterile satchel used in medical departments.
+  components:
+  - type: Sprite
+    sprite: _DEN/Clothing/Medical/Back/Messenger/medical.rsi
