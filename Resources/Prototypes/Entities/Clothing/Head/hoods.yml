@@ -6,9 +6,9 @@
   description: A hood that protects the head and face from biological contaminants.
   components:
   - type: Sprite
-    sprite: Clothing/Head/Hoods/Bio/general.rsi
+    sprite: _DEN/Clothing/Medical/Head/Hoods/Bio/general.rsi
   - type: Clothing
-    sprite: Clothing/Head/Hoods/Bio/general.rsi
+    sprite: _DEN/Clothing/Medical/Head/Hoods/Bio/general.rsi
   - type: BreathMask
   - type: IngestionBlocker
   - type: Tag
@@ -28,9 +28,9 @@
   components:
   - type: IdentityBlocker
   - type: Sprite
-    sprite: Clothing/Head/Hoods/Bio/cmo.rsi
+    sprite: _DEN/Clothing/Medical/Head/Hoods/Bio/cmo.rsi
   - type: Clothing
-    sprite: Clothing/Head/Hoods/Bio/cmo.rsi
+    sprite: _DEN/Clothing/Medical/Clothing/Head/Hoods/Bio/cmo.rsi
 
 - type: entity
   parent: ClothingHeadHatHoodBioGeneral
@@ -80,9 +80,9 @@
   components:
   - type: IdentityBlocker
   - type: Sprite
-    sprite: Clothing/Head/Hoods/Bio/virology.rsi
+    sprite: _DEN/Clothing/Medical/Head/Hoods/Bio/virology.rsi
   - type: Clothing
-    sprite: Clothing/Head/Hoods/Bio/virology.rsi
+    sprite: _DEN/Clothing/Medical/Head/Hoods/Bio/virology.rsi
 
 - type: entity
   parent: ClothingHeadBase
