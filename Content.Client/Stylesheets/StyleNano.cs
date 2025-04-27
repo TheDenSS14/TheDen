@@ -134,6 +134,7 @@ namespace Content.Client.Stylesheets
         public const string StyleClassConsoleHeading = "ConsoleHeading";
         public const string StyleClassConsoleSubHeading = "ConsoleSubHeading";
         public const string StyleClassConsoleText = "ConsoleText";
+        public const string StyleClassInset = "Inset";
 
         public const string StyleClassSliderRed = "Red";
         public const string StyleClassSliderGreen = "Green";
@@ -1947,6 +1948,9 @@ namespace Content.Client.Stylesheets
                     .Prop(TextureButton.StylePropertyTexture, resCache.GetTexture("/Textures/_Shitmed/Interface/Targeting/Doll/mouth_hover.png")),
                 // Shitmed Change End
 
+                Element<PanelContainer>()
+                    .Class(StyleClassInset)
+                    .Prop(PanelContainer.StylePropertyPanel, insetBack),
             }).ToList());
         }
     }
