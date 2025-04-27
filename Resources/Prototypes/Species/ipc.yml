@@ -72,16 +72,15 @@
     Tail:
       points: 6
       required: false
-
     Chest:
       points: 6
       required: true
       defaultMarkings: [ MobIPCTorsoDefault ]
-    Underwear:
-      points: 1
-      required: false
     Undershirt:
-      points: 1
+      points: 2 # FLOOF CHANGE
+      required: false
+    Underwear:
+      points: 2 # FLOOF CHANGE
       required: false
     HeadSide:
       points: 6

@@ -79,6 +79,15 @@ public sealed partial class HumanoidAppearanceComponent : Component
     [DataField, AutoNetworkedField]
     public HashSet<HumanoidVisualLayers> HiddenLayers = new();
 
+    /// <summary>
+    /// The specific markings that are hidden, whether or not the layer is hidden.
+    /// This is so we can just turn off a single marking, or part of a single marking.
+    /// (cus underwear, its for underwear, so you can take off your bra and still have your shirt on)
+    /// FLOOF ADD
+    /// </summary>
+    [DataField, AutoNetworkedField]
+    public HashSet<string> HiddenMarkings = new();
+
     [DataField, AutoNetworkedField]
     public Sex Sex = Sex.Male;
 
