@@ -3,6 +3,7 @@
   abstract: true
   placement:
     mode: SnapgridCenter
+  suffix: N14 # TheDen
   components:
   - type: Sprite
     sprite: _Nuclear14/Structures/Decoration/cave_decor.rsi
@@ -345,7 +346,7 @@
   id: N14DecorFloorPaper
   name: scattered paper
   description: A mess of papers
-  suffix: 8 states
+  suffix: N14, 8 States # TheDen
   components:
   - type: Sprite
     sprite: _Nuclear14/Structures/Decoration/world.rsi
@@ -355,7 +356,7 @@
 - type: entity
   parent: N14DecorFloorWorldBase
   id: N14DecorFloorPaper1
-  suffix: 4 states
+  suffix: N14, 4 States # TheDen
   name: scattered paper
   description: A mess of papers
   components:
@@ -391,7 +392,7 @@
   id: N14DecorFloorBrickrubble
   name: brick rubble
   description: brick rubble
-  suffix: "6 states"
+  suffix: N14, 6 States # TheDen
   components:
   - type: Sprite
     state: brickrubble
@@ -401,7 +402,7 @@
   id: N14DecorFloorCardboard
   name: cardboard boxes
   description: cardboard scrap boxes
-  suffix: "6 states"
+  suffix: N14, 6 States # TheDen
   components:
   - type: Sprite
     state: cardboard
@@ -412,7 +413,7 @@
   id: N14DecorFloorPallet
   name: pallet
   description: a wooden pallet.
-  suffix: "2 states"
+  suffix: N14, 2 States # TheDen
   components:
   - type: Sprite
     state: pallet
@@ -423,7 +424,7 @@
   id: N14DecorFloorPalletStack
   name: pallet stack
   description: a stack of wooden pallets
-  suffix: "2 states"
+  suffix: N14, 2 States # TheDen
   components:
   - type: Sprite
     state: pallet_stack
@@ -454,6 +455,7 @@
   id: N14DecorFloorBookstack1
   name: book stack
   description: a stack of books
+  suffix: N14 # The Den
   components:
   - type: Sprite
     state: bookstack_1
@@ -478,6 +480,7 @@
   id: N14DecorFloorBookPile1
   name: book pile
   description: a pile of books
+  suffix: N14 # TheDen
   components:
   - type: Sprite
     state: bookpile_1

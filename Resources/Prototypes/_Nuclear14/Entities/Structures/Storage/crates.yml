@@ -3,6 +3,7 @@
   id: N14CrateFootlocker
   name: footlocker
   description: A footlocker for someones equipment.
+  suffix: N14 # TheDen
   components:
   - type: Icon
     sprite: _Nuclear14/Structures/Storage/Crates/footlocker.rsi
@@ -58,6 +59,7 @@
   id: N14CrateEnclave
   name: metal crate
   description: An advanced looking crate. Might have high tech stuff in.
+  suffix: "" # TheDen
   components:
   - type: Icon
     sprite: _Nuclear14/Structures/Storage/Crates/crateenclave.rsi
@@ -92,6 +94,7 @@
   id: N14CrateMedical
   name: medical crate
   description: A metal crate for storing medical equipment.
+  suffix: N14 # TheDen
   components:
   - type: Icon
     sprite: _Nuclear14/Structures/Storage/Crates/medicalcrate.rsi
@@ -113,6 +116,7 @@
   id: N14CrateRed
   name: red crate
   description: A faded red crate for storing stuff.
+  suffix: N14 # TheDen
   components:
   - type: Icon
     sprite: _Nuclear14/Structures/Storage/Crates/redcrate.rsi
@@ -153,6 +157,7 @@
   id: N14CrateFreezer
   name: freezer
   description: A freezer for keeping things cool.
+  suffix: N14, Container # TheDen
   components:
   - type: Icon
     sprite: _Nuclear14/Structures/Storage/Crates/freezer.rsi
@@ -213,6 +218,7 @@
   id: N14CrateMilitary
   name: military crate
   description: An old wooden crate. Looks like it might have some supplies in.
+  suffix: N14 # TheDen
   components:
   - type: Icon
     sprite: _Nuclear14/Structures/Storage/Crates/cratemilitary.rsi

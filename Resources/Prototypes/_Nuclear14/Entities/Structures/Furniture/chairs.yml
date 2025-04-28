@@ -101,6 +101,7 @@
   parent: Chair
   id: N14ChairMetalGreen
   description: A metal chair for sitting on.
+  suffix: Green # TheDen
   components:
   - type: Sprite
     sprite: _Nuclear14/Structures/Furniture/chairs.rsi
@@ -112,7 +113,7 @@
 - type: entity
   parent: N14ChairMetalGreen
   id: N14ChairMetalGreenUnfinished
-  suffix: unfinished
+  suffix: Green, Unfinished # TheDen
   components:
   - type: Sprite
     state: metal_chair_unfinished
@@ -120,7 +121,7 @@
 - type: entity
   parent: N14ChairMetalGreen
   id: N14ChairMetalGreenBroken
-  suffix: broken
+  suffix: Green, Broken # TheDen
   components:
   - type: Sprite
     state: metal_chair_broken
@@ -244,7 +245,7 @@
     node: N14ChairOfficeGreen
     
 - type: entity
-  parent: OfficeChairBase
+  parent: N14ChairOfficeRed # TheDen
   id: N14ChairOfficeGreenBroken
   suffix: green, broken
   components:

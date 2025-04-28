@@ -802,6 +802,7 @@
 - type: entity
   parent: ClothingHeadHatJester
   id: ClothingHeadHatJesterAlt
+  suffix: Variant # TheDen
   components:
     - type: Sprite
       sprite: Clothing/Head/Hats/jester2.rsi
@@ -829,6 +830,7 @@
   id: ClothingHeadHatPirateTricorn
   name: pirate hat
   description: 'Yo ho ho and a bottle of rum!'
+  suffix: Variant # TheDen
   components:
   - type: Sprite
     sprite: Clothing/Head/Hats/piratetricord.rsi

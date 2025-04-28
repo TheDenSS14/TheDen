@@ -63,7 +63,7 @@
   parent: StorageTankBase
   name: fuel tank
   description: A fuel tank. It's used to store high amounts of fuel.
-  suffix: Empty
+  suffix: Empty, Wide # TheDen
   components:
   - type: Sprite
     sprite: Structures/Storage/tanksx64.rsi
@@ -104,7 +104,7 @@
 - type: entity
   parent: StorageTankWide
   id: StorageTankWideFullFuel
-  suffix: Full
+  suffix: Full, Wide # TheDen
   components:
   - type: SolutionContainerManager
     solutions:
@@ -117,7 +117,7 @@
 - type: entity
   parent: StorageTankWide
   id: StorageTank2
-  suffix: Empty
+  suffix: Empty, Tall # TheDen
   components:
   - type: Sprite
     sprite: Structures/Storage/tanksx64.rsi
@@ -138,7 +138,7 @@
 - type: entity
   id: StorageTankFullFuel
   parent: StorageTank2
-  suffix: Full
+  suffix: Full, Tall # TheDen
   components:
   - type: SolutionContainerManager
     solutions:
@@ -150,7 +150,7 @@
 - type: entity
   id: StorageTankHuge
   parent: StorageTankWide
-  suffix: Empty
+  suffix: Empty, Huge # TheDen
   components:
   - type: Sprite
     sprite: Structures/Storage/tanksx64.rsi
@@ -171,7 +171,7 @@
 - type: entity
   id: StorageTankHugeFullFuel
   parent: StorageTankHuge
-  suffix: Full
+  suffix: Full, Huge # TheDen
   components:
   - type: SolutionContainerManager
     solutions:

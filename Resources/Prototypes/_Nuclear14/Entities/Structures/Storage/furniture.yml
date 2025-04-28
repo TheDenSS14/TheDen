@@ -4,6 +4,7 @@
   id: N14ClosetSafe
   name: safe
   description: Might be filled with valuables.
+  suffix: N14 # TheDen
   components:
   - type: Sprite
     sprite: _Nuclear14/Structures/Storage/Furniture/safe.rsi
@@ -26,7 +27,7 @@
 - type: entity
   parent: N14ClosetSafe
   id: N14ClosetSafeSpinner
-  suffix: spinner
+  suffix: N14, Spinner # TheDen
   components:
   - type: Sprite
     sprite: _Nuclear14/Structures/Storage/Furniture/safespinner.rsi

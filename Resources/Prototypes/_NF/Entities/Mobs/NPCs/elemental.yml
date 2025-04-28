@@ -3,6 +3,7 @@
   parent: MobOreCrab
   id: MobBananiumCrab
   description: An ore crab made from bananium.
+  suffix: Bananium # TheDen
   components:
   - type: Sprite
     sprite: /Textures/_NF/Mobs/Elemental/orecrab.rsi
@@ -31,6 +32,7 @@
   parent: MobOreCrab
   id: MobCoalCrab
   description: An ore crab made from coal.
+  suffix: Coal # TheDen
   components:
   - type: Sprite
     sprite: /Textures/_NF/Mobs/Elemental/orecrab.rsi
@@ -56,6 +58,7 @@
   parent: MobOreCrab
   id: MobGoldCrab
   description: An ore crab made from gold.
+  suffix: Gold # TheDen
   components:
   - type: Sprite
     sprite: /Textures/_NF/Mobs/Elemental/orecrab.rsi
@@ -81,6 +84,7 @@
   parent: MobOreCrab
   id: MobPlasmaCrab
   description: An ore crab made from plasma.
+  suffix: Plasma # TheDen
   components:
   - type: Sprite
     sprite: /Textures/_NF/Mobs/Elemental/orecrab.rsi
@@ -114,6 +118,7 @@
   parent: MobOreCrab
   id: MobSaltCrab
   description: An ore crab made from salt. # delicious, don't try to lick this
+  suffix: Salt # TheDen
   components:
   - type: Sprite
     sprite: /Textures/_NF/Mobs/Elemental/orecrab.rsi
@@ -403,6 +408,7 @@
   parent: MobOreGolem
   id: MobBananiumGolem
   description: An ore golem made from bananium.
+  suffix: Bananium # TheDen
   components:
   - type: Sprite
     state: bananium_golem
@@ -455,6 +461,7 @@
   parent: MobOreGolem
   id: MobCoalGolem
   description: An ore golem made from coal.
+  suffix: Coal # TheDen
   components:
   - type: Sprite
     state: coal_golem
@@ -479,6 +486,7 @@
   parent: MobOreGolem
   id: MobGoldGolem
   description: An ore golem made from gold.
+  suffix: Gold # TheDen
   components:
   - type: Sprite
     state: gold_golem
@@ -503,6 +511,7 @@
   parent: MobOreGolem
   id: MobIronGolem
   description: An ore golem made from iron.
+  suffix: Iron # TheDen
   components:
   - type: Sprite
     state: iron_golem
@@ -527,6 +536,7 @@
   parent: MobOreGolem
   id: MobPlasmaGolem
   description: An ore golem made from plasma.
+  suffix: Plasma # TheDen
   components:
   - type: Sprite
     state: plasma_golem
@@ -559,6 +569,7 @@
   parent: MobOreGolem
   id: MobQuartzGolem
   description: An ore golem made from quartz.
+  suffix: Quartz # TheDen
   components:
   - type: Sprite
     state: quartz_golem
@@ -583,6 +594,7 @@
   parent: MobOreGolem
   id: MobSaltGolem
   description: An ore golem made from salt.
+  suffix: Salt # TheDen
   components:
   - type: Sprite
     state: salt_golem
@@ -607,6 +619,7 @@
   parent: MobOreGolem
   id: MobSilverGolem
   description: An ore golem made from silver.
+  suffix: Silver # TheDen
   components:
   - type: Sprite
     state: silver_golem
@@ -631,6 +644,7 @@
   parent: MobOreGolem
   id: MobUraniumGolem
   description: An ore golem made from uranium.
+  suffix: Uranium # TheDen
   components:
   - type: Sprite
     state: uranium_golem

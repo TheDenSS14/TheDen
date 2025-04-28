@@ -287,7 +287,7 @@
   id: N14WallRockCoal
   parent: N14WallRock
   description: An ore vein rich with coal.
-  suffix: Coal
+  suffix: N14, Coal # TheDen
   components:
     - type: OreVein
       oreChance: 1.0
@@ -309,7 +309,7 @@
   id: N14WallRockGold
   parent: N14WallRock
   description: An ore vein rich with gold.
-  suffix: Gold
+  suffix: N14, Gold # TheDen
   components:
     - type: OreVein
       oreChance: 1.0
@@ -331,7 +331,7 @@
   id: N14WallRockSilver
   parent: N14WallRock
   description: An ore vein rich with silver.
-  suffix: Silver
+  suffix: N14, Silver # TheDen
   components:
     - type: OreVein
       oreChance: 1.0
@@ -375,7 +375,7 @@
   id: N14WallRockUranium
   parent: N14WallRock
   description: An ore vein rich with uranium.
-  suffix: Uranium
+  suffix: N14, Uranium # TheDen
   components:
     - type: OreVein
       oreChance: 1.0
@@ -397,7 +397,7 @@
   id: N14WallRockSalt
   parent: N14WallRock
   description: An ore vein rich with salt.
-  suffix: Salt
+  suffix: N14, Salt # TheDen
   components:
     - type: OreVein
       oreChance: 1.0
@@ -575,6 +575,7 @@
   id: N14WallRockSand
   name: sandstone
   parent: N14WallRock
+  suffix: N14 # TheDen
   components:
     - type: Icon
       sprite: Structures/Walls/rock.rsi
@@ -596,7 +597,7 @@
   id: N14WallRockSandCoal
   parent: N14WallRockSand
   description: An ore vein rich with coal.
-  suffix: Coal
+  suffix: N14, Coal # TheDen
   components:
     - type: OreVein
       oreChance: 1.0
@@ -618,7 +619,7 @@
   id: N14WallRockSandGold
   parent: N14WallRockSand
   description: An ore vein rich with gold.
-  suffix: Gold
+  suffix: N14, Gold # TheDen
   components:
     - type: OreVein
       oreChance: 1.0
@@ -640,7 +641,7 @@
   id: N14WallRockSandSilver
   parent: N14WallRockSand
   description: An ore vein rich with silver.
-  suffix: Silver
+  suffix: N14, Silver # TheDen
   components:
     - type: OreVein
       oreChance: 1.0
@@ -684,7 +685,7 @@
   id: N14WallRockSandUranium
   parent: N14WallRockSand
   description: An ore vein rich with uranium.
-  suffix: Uranium
+  suffix: N14, Uranium # TheDen
   components:
     - type: OreVein
       oreChance: 1.0
@@ -706,7 +707,7 @@
   id: N14WallRockSandSalt
   parent: N14WallRockSand
   description: An ore vein rich with salt.
-  suffix: Salt
+  suffix: N14, Salt # TheDen
   components:
     - type: OreVein
       oreChance: 1.0

@@ -87,6 +87,7 @@
   name: rollerbed
   parent: RollerBed
   description: A run-down rollerbed. Used to carry patients around.
+  suffix: Cheap # TheDen
   components:
   - type: Sprite
     layers:
@@ -103,7 +104,7 @@
 - type: entity
   parent: CheapRollerBed
   id: CheapRollerBedSpawnFolded
-  suffix: folded
+  suffix: Cheap, Folded # TheDen
   components:
   - type: Foldable
     folded: true
@@ -115,6 +116,7 @@
   name: rollerbed
   parent: RollerBed
   description: A robust looking rollerbed used for emergencies.
+  suffix: Emergancy # TheDen
   components:
   - type: Sprite
     layers:
@@ -131,7 +133,7 @@
 - type: entity
   parent: EmergencyRollerBed
   id: EmergencyRollerBedSpawnFolded
-  suffix: folded
+  suffix: Emergancy, Folded # TheDen
   components:
   - type: Foldable
     folded: true

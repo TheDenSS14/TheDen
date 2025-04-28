@@ -73,6 +73,7 @@
   id: N14TableDeskSchool
   name: end table
   description: A wooden end table.
+  suffix: School # TheDen
   components:
   - type: Sprite
     sprite: _Nuclear14/Structures/Furniture/Tables/tables.rsi
@@ -94,6 +95,7 @@
   id: N14TableWoodEnd
   name: end table
   description: A wooden end table.
+  suffix: "" # TheDen
   components:
   - type: Sprite
     sprite: _Nuclear14/Structures/Furniture/Tables/tables.rsi
@@ -125,6 +127,7 @@
   id: N14TableWoodSquare
   name: wooden table
   description: A wooden square table.
+  suffix: "" # TheDen
   components:
   - type: Sprite
     sprite: _Nuclear14/Structures/Furniture/Tables/tables.rsi
@@ -313,6 +316,7 @@
   id: N14TableMetalWide
   name: metal table
   description: A wide metal table.
+  suffix: Wide # TheDen
   components:
   - type: Sprite
     sprite: _Nuclear14/Structures/Furniture/64x64_furniture.rsi
@@ -409,6 +413,7 @@
   id: N14TableCounterMetal
   name: metal counter
   description: A cold, hard metal counter.
+  suffix: Variant # TheDen
   components:
   - type: Sprite
     sprite: _Nuclear14/Structures/Furniture/Tables/counters.rsi

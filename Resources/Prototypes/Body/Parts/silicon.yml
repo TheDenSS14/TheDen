@@ -38,6 +38,7 @@
   id: BaseBorgLeftArm
   parent: PartSilicon
   name: cyborg left arm
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
   - type: BodyPart
     partType: Arm # Shitmed Change
@@ -61,6 +62,7 @@
   id: BaseBorgRightArm
   parent: PartSilicon
   name: cyborg right arm
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
   - type: BodyPart
     partType: Arm # Shitmed Change
@@ -84,6 +86,7 @@
   id: BaseBorgLegLeft
   parent: PartSilicon
   name: cyborg left leg
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
   - type: BodyPart
     partType: Leg
@@ -108,6 +111,7 @@
   id: BaseBorgLegRight
   parent: PartSilicon
   name: cyborg right leg
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
   - type: BodyPart
     partType: Leg
@@ -132,6 +136,7 @@
   id: BaseLightHeadBorg
   parent: PartSilicon
   name: cyborg head
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
   - type: BodyPart
     partType: Head
@@ -149,6 +154,7 @@
   id: BaseBorgTorso
   parent: PartSilicon
   name: cyborg torso
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
   - type: BodyPart
     partType: Torso

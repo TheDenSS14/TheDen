@@ -41,6 +41,7 @@
   id: CrateMedical2
   name: medical crate
   description: A metal crate for storing medical equipment.
+  suffix: Variant # TheDen
   components:
   - type: Icon
     sprite: Structures/Storage/Crates/medicalcrate.rsi
@@ -92,6 +93,7 @@
   id: CrateFreezer2
   name: freezer
   description: A freezer for keeping things cool.
+  suffix: Container Variant # TheDen - No idea what makes this and CrateFreezer different.
   components:
   - type: Icon
     sprite: Structures/Storage/Crates/freezer.rsi

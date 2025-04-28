@@ -31,6 +31,7 @@
   id: SignDirectionalBridge
   name: bridge sign
   description: A direction sign, pointing out which way the Bridge is.
+  suffix: Directional # TheDen
   components:
   - type: Sprite
     state: direction_bridge
@@ -49,6 +50,7 @@
   id: SignDirectionalChapel
   name: chapel sign
   description: A direction sign, pointing out which way the Chapel is.
+  suffix: Directional # TheDen
   components:
   - type: Sprite
     state: direction_chapel
@@ -58,6 +60,7 @@
   id: SignDirectionalChemistry
   name: chemistry sign
   description: A direction sign, pointing out which way the chemistry lab is.
+  suffix: Directional # TheDen
   components:
   - type: Sprite
     state: direction_chemistry
@@ -67,6 +70,7 @@
   id: SignDirectionalCryo
   name: cryo sign
   description: A direction sign, pointing out the way to cryogenics.
+  suffix: Directional # TheDen
   components:
   - type: Sprite
     state: direction_cryo
@@ -85,6 +89,7 @@
   id: SignDirectionalEng
   name: engineering sign
   description: A direction sign, pointing out which way the Engineering department is.
+  suffix: Directional # TheDen
   components:
   - type: Sprite
     state: direction_eng
@@ -94,6 +99,7 @@
   id: SignDirectionalEvac
   name: evac sign
   description: A direction sign, pointing out which way evac is.
+  suffix: Directional # TheDen
   components:
   - type: Sprite
     state: direction_evac
@@ -103,6 +109,7 @@
   id: SignDirectionalExam
   name: exam sign
   description: A direction sign, pointing out which way the examination room(s) are.
+  suffix: Directional # TheDen
   components:
   - type: Sprite
     state: direction_exam
@@ -121,6 +128,7 @@
   id: SignDirectionalGravity
   name: gravity sign
   description: A direction sign, pointing out which way the gravity generator is.
+  suffix: Directional # TheDen
   components:
   - type: Sprite
     state: direction_gravity
@@ -139,6 +147,7 @@
   id: SignDirectionalHydro
   name: hydro sign
   description: A direction sign, pointing out which way hydroponics is.
+  suffix: Directional # TheDen
   components:
   - type: Sprite
     state: direction_hydro
@@ -157,6 +166,7 @@
   id: SignDirectionalJanitor
   name: janitor sign
   description: A direction sign, pointing out which way the janitor's closet is.
+  suffix: Directional # TheDen
   components:
   - type: Sprite
     state: direction_janitor
@@ -166,6 +176,7 @@
   id: SignDirectionalLibrary
   name: library sign
   description: A direction sign, pointing out which way the library is.
+  suffix: Directional # TheDen
   components:
   - type: Sprite
     state: direction_library
@@ -175,6 +186,7 @@
   id: SignDirectionalMed
   name: medical sign
   description: A direction sign, pointing out which way the Medical department is.
+  suffix: Directional # TheDen
   components:
   - type: Sprite
     state: direction_med
@@ -184,6 +196,7 @@
   id: SignDirectionalSalvage
   name: salvage sign
   description: A direction sign, pointing out which way the Salvage department is.
+  suffix: Directional # TheDen
   components:
   - type: Sprite
     state: direction_salvage
@@ -203,6 +216,7 @@
   id: SignDirectionalSec
   name: sec sign
   description: A direction sign, pointing out which way Security is.
+  suffix: Directional # TheDen
   components:
   - type: Sprite
     state: direction_sec
@@ -375,6 +389,7 @@
   id: SignBiohazard
   name: biohazard sign
   description: A sign indicating a biohazard.
+  suffix: Old # TheDen
   components:
   - type: Sprite
     state: biohazard
@@ -393,6 +408,7 @@
   id: SignCanisters
   name: canisters sign
   description: A sign warning the viewer about pressurised canisters.
+  suffix: Old # TheDen
   components:
   - type: Sprite
     state: canisters
@@ -541,6 +557,7 @@
   id: SignElectrical
   name: electrical sign
   description: A sign indicating an electrical hazard.
+  suffix: Old # TheDen
   components:
   - type: Sprite
     state: electrical
@@ -1057,7 +1074,6 @@
   id: SignBiohazardMed
   name: biohazard sign
   description: A sign indicating a biohazard.
-  suffix: Medical # TheDen
   components:
   - type: Sprite
     state: medium_biohazard
@@ -1197,6 +1213,7 @@
   id: SignSomethingOld2
   name: old sign
   description: Looks like a planet crashing by some station above it. Its kinda scary.
+  suffix: Variant # TheDen
   components:
   - type: Sprite
     state: something-old2

@@ -45,13 +45,14 @@
   name: park bench
   id: BenchParkBambooMiddle
   parent: BenchBaseMiddle
+  suffix: Middle, Bamboo # TheDen
   components:
   - type: Sprite
     sprite: SimpleStation14/Structures/Furniture/Benches/parkbench_bamboo.rsi
 
 - type: entity
   id: BenchParkBambooLeft
-  suffix: Left
+  suffix: Left, Bamboo # TheDen
   parent: BenchParkBambooMiddle
   components:
   - type: Sprite
@@ -59,7 +60,7 @@
 
 - type: entity
   id: BenchParkBambooRight
-  suffix: Right
+  suffix: Right, Bamboo # TheDen
   parent: BenchParkBambooMiddle
   components:
   - type: Sprite

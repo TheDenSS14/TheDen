@@ -29,6 +29,7 @@
   id: N14SignOpen1
   name: open sign
   description: Open for business. Maybe.
+  suffix: N14, Off # TheDen
   components:
   - type: Sprite
     state: open
@@ -40,6 +41,7 @@
 - type: entity
   parent: N14SignOpen1
   id: N14SignOpen2
+  suffix: N14, Variant, Off # TheDen
   components:
   - type: Sprite
     state: open_bar
@@ -47,6 +49,7 @@
 - type: entity
   parent: N14SignOpen1
   id: N14SignOpenOn1
+  suffix: N14 # TheDen
   components:
   - type: Sprite
     state: open_on
@@ -54,6 +57,7 @@
 - type: entity
   parent: N14SignOpen1
   id: N14SignOpenOn2
+  suffix: N14, Variant # TheDen
   components:
   - type: Sprite
     state: open_bar_on
@@ -93,7 +97,6 @@
   id: N14SignBazaarOn
   name: bazaar sign
   description: A sign for a bazaar. How bizarre.
-  suffix: N14 # TheDen
   components:
   - type: Sprite
     sprite: _Nuclear14/Structures/Wallmounts/signs_64x32.rsi
@@ -108,6 +111,7 @@
   id: N14SignHotel
   name: hotel sign
   description: A sign for a hotel. Get a room!
+  suffix: N14 # TheDen
   components:
   - type: Sprite
     state: hotel
@@ -126,6 +130,7 @@
   id: N14SignOpenBig
   name: open sign
   description: We are open sign. I hope so.
+  suffix: N14, Big # TheDen
   components:
   - type: Sprite
     state: we_open_open
