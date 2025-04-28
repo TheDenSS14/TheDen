@@ -99,11 +99,15 @@
   - type: Clothing
     sprite: Nyanotrasen/Clothing/Head/Hats/cage.rsi
     equipDelay: 0.5
-    unequipDelay: 6
+    unequipDelay: 10
+  - type: TinfoilHat
+    destroyOnFry: false
   - type: HeadCage
   - type: Tag
     tags:
     - ForensicBeltEquip
+  - type: GuideHelp
+    guides: [ PsionicInsulation ]
 
 - type: entity
   parent: ClothingHeadTinfoil
@@ -115,6 +119,8 @@
     sprite: Nyanotrasen/Clothing/Head/Helmets/insulative_skullcap.rsi
   - type: Clothing
     sprite: Nyanotrasen/Clothing/Head/Helmets/insulative_skullcap.rsi
+  - type: TinfoilHat
+    destroyOnFry: false
   - type: Armor
     modifiers:
       coefficients:
