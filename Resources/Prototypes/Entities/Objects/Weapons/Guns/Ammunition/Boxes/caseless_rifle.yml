@@ -49,6 +49,7 @@
   parent: BaseMagazineBoxCaselessRifle
   id: MagazineBoxCaselessRifleBig
   name: ammunition box (.25 caseless)
+  suffix: Big # TheDen
   components:
   - type: BallisticAmmoProvider
     capacity: 200
@@ -69,6 +70,7 @@
   parent: BaseMagazineBoxCaselessRifle
   id: MagazineBoxCaselessRifleBigRubber
   name: ammunition box (.25 caseless rubber)
+  suffix: Big # TheDen
   components:
   - type: BallisticAmmoProvider
     capacity: 200

@@ -26,6 +26,7 @@
   id: BloodRitesAura
   name: blood rite aura
   description: Absorbs blood from anything you touch. Touching cultists and constructs can heal them. Use in-hand to cast an advanced rite.
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
   - type: Sprite
     sprite: WhiteDream/BloodCult/Entities/Items/rites.rsi
