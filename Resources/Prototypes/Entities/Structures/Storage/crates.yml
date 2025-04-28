@@ -214,6 +214,7 @@
   parent: CrateBreakBase
   id: CrateBreakArmy
   name: army crate
+  suffix: Wood # TheDen
   components:
   - type: Sprite
     state: army_crate
@@ -221,7 +222,7 @@
 - type: entity
   parent: CrateBreakArmy
   id: CrateBreakArmyDamaged
-  suffix: damaged
+  suffix: Wood, Damaged # TheDen
   components:
   - type: Sprite
     state: army_crate-1 # TODO: Make this random between states -1 and -2

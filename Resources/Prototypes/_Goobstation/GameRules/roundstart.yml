@@ -1,6 +1,7 @@
 - type: entity
   parent: BaseGameRule
   id: Changeling
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
   - type: ChangelingRule
   - type: GameRule

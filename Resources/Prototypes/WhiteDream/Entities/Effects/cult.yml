@@ -22,6 +22,7 @@
 - type: entity
   id: CultTeleportInEffect
   name: Teleport in
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
   - type: TimedDespawn
     lifetime: 0.8
@@ -41,6 +42,7 @@
 - type: entity
   id: CultTeleportOutEffect
   name: Teleport out
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
   - type: TimedDespawn
     lifetime: 0.8

@@ -24,6 +24,7 @@
   id: N14CrateAluminium
   name: aluminium crate
   description: An aluminium crate for storing stuff.
+  suffix: N14 # TheDen
   components:
   - type: Icon
     sprite: _Nuclear14/Structures/Storage/Crates/aluminiumcrate.rsi
@@ -40,6 +41,7 @@
   id: N14CrateArmy
   name: army crate
   description: A crate with a US Army star on.
+  suffix: N14
   components:
   - type: Icon
     sprite: _Nuclear14/Structures/Storage/Crates/armycrate.rsi
@@ -311,6 +313,7 @@
   parent: N14CrateBreakBase
   id: N14CrateBreakArmy
   name: army crate
+  suffix: N14, Wood # TheDen
   components:
   - type: Sprite
     state: army_crate
@@ -318,7 +321,7 @@
 - type: entity
   parent: N14CrateBreakArmy
   id: N14CrateBreakArmyDamaged
-  suffix: damaged
+  suffix: N14, Wood, Damaged # TheDen
   components:
   - type: Sprite
     state: army_crate-1 # TODO: Make this random between states -1 and -2

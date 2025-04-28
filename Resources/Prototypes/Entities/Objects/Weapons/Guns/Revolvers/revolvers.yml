@@ -103,6 +103,7 @@
   id: WeaponRevolverDeckardSecurity
   description: A rare, custom-built revolver. Use when there is no time for Voight-Kampff test. Uses .45 magnum ammo.
                The serial number on the handguard marks this gun as belonging to an NT Security Officer.
+  suffix: Security # TheDen
   components:
   - type: GuideHelp
     guides: [ SecurityWeapons ]
@@ -113,6 +114,7 @@
   id: WeaponRevolverDeckardNonLethalSecurity
   description: A rare, custom-built revolver. Use when you need to spare the Replicants. Comes with .45 magnum rubber.
                The serial number on the handguard marks this gun as belonging to an NT Security Officer.
+  suffix: Security, Non-lethal # TheDen
   components:
   - type: RevolverAmmoProvider
     whitelist:
@@ -144,6 +146,7 @@
   id: WeaponRevolverInspectorSecurity
   description: A detective's best friend. Uses .45 magnum ammo.
                The serial number on the handguard marks this gun as belonging to an NT Security Officer.
+  suffix: Security # TheDen
   components:
   - type: GuideHelp
     guides: [ SecurityWeapons ]
@@ -154,6 +157,7 @@
   id: WeaponRevolverInspectorNonLethalSecurity
   description: A detective's best friend. Comes loaded with .45 magnum rubber.
                The serial number on the handguard marks this gun as belonging to an NT Security Officer.
+  suffix: Security, Non-lethal # TheDen
   components:
   - type: RevolverAmmoProvider
     whitelist:
@@ -206,6 +210,7 @@
   id: WeaponRevolverPythonSecurity
   description: An iconic large-framed revolver of ancient Sol' design. It is commonly manufactured by many companies all over the colonies. Uses .45 magnum ammo.
                The serial number on the handguard marks this gun as belonging to an NT Security Officer.
+  suffix: Security # TheDen
   components:
   - type: GuideHelp
     guides: [ SecurityWeapons ]
@@ -214,6 +219,7 @@
   name: Python
   parent: WeaponRevolverPythonSecurity
   id: WeaponRevolverPythonNonlethalSecurity
+  suffix: Security, Non-lethal # TheDen
   components:
   - type: RevolverAmmoProvider
     whitelist:
@@ -272,6 +278,7 @@
   id: WeaponRevolverArgentiSecurity
   description: The military grade Argenti Type 20 revolver. Manufactured by Silver Industries. While the design with expanded cylinder is quite ancient, the right gunslinger will know how to utilise it well. Uses .20 rifle ammo.
                The serial number on the handguard marks this gun as belonging to an NT Security Officer.
+  suffix: Security # TheDen
   components:
   - type: GuideHelp
     guides: [ SecurityWeapons ]
@@ -279,7 +286,7 @@
 - type: entity
   parent: WeaponRevolverArgenti
   id: WeaponRevolverArgentiNonLethalSecurity
-  suffix: Non-lethal
+  suffix: Security, Non-lethal # TheDen
   description: The military grade Argenti Type 20 revolver. Manufactured by Silver Industries. While the design with expanded cylinder is quite ancient, the right gunslinger will know how to utilise it well. Comes with .20 rubber rifle ammo.
                The serial number on the handguard marks this gun as belonging to an NT Security Officer.
   components:

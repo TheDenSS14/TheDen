@@ -122,6 +122,7 @@
   id: N14BedMattressDirty2
   name: Mattress
   description: A mattress on the floor. Filthy.
+  suffix: Dirty # TheDen
   components:
   - type: Sprite
     state: mattress2
@@ -131,6 +132,7 @@
   id: N14BedMattressDirty3
   name: Mattress
   description: A mattress on the floor. Is that blood?
+  suffix: Bloody # TheDen
   components:
   - type: Sprite
     state: mattress3
@@ -140,6 +142,7 @@
   id: N14BedMattressDirty4
   name: Mattress
   description: A mattress on the floor. That's definitely blood.
+  suffix: Very Bloody # TheDen
   components:
   - type: Sprite
     state: mattress4

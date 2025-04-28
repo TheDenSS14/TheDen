@@ -18,6 +18,7 @@
   id: TorsoArachnid
   name: "arachnid torso"
   parent: [PartArachnid, BaseTorso]
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
   - type: Sprite
     sprite: Mobs/Species/Arachnid/parts.rsi
@@ -34,6 +35,7 @@
   id: HeadArachnid
   name: "arachnid head"
   parent: [PartArachnid, BaseHead]
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
   - type: Sprite
     sprite: Mobs/Species/Arachnid/parts.rsi
@@ -50,6 +52,7 @@
   id: LeftArmArachnid
   name: "left arachnid arm"
   parent: [PartArachnid, BaseLeftArm]
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
   - type: Sprite
     sprite: Mobs/Species/Arachnid/parts.rsi
@@ -59,6 +62,7 @@
   id: RightArmArachnid
   name: "right arachnid arm"
   parent: [PartArachnid, BaseRightArm]
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
   - type: Sprite
     sprite: Mobs/Species/Arachnid/parts.rsi
@@ -68,6 +72,7 @@
   id: LeftHandArachnid
   name: "left arachnid hand"
   parent: [PartArachnid, BaseLeftHand]
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
   - type: Sprite
     sprite: Mobs/Species/Arachnid/parts.rsi
@@ -77,6 +82,7 @@
   id: RightHandArachnid
   name: "right arachnid hand"
   parent: [PartArachnid, BaseRightHand]
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
   - type: Sprite
     sprite: Mobs/Species/Arachnid/parts.rsi
@@ -86,6 +92,7 @@
   id: LeftLegArachnid
   name: "left arachnid leg"
   parent: [PartArachnid, BaseLeftLeg]
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
   - type: Sprite
     sprite: Mobs/Species/Arachnid/parts.rsi
@@ -96,6 +103,7 @@
   id: RightLegArachnid
   name: "right arachnid leg"
   parent: [PartArachnid, BaseRightLeg]
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
   - type: Sprite
     sprite: Mobs/Species/Arachnid/parts.rsi
@@ -106,6 +114,7 @@
   id: LeftFootArachnid
   name: "left arachnid foot"
   parent: [PartArachnid, BaseLeftFoot]
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
   - type: Sprite
     sprite: Mobs/Species/Arachnid/parts.rsi
@@ -115,6 +124,7 @@
   id: RightFootArachnid
   name: "right arachnid foot"
   parent: [PartArachnid, BaseRightFoot]
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
   - type: Sprite
     sprite: Mobs/Species/Arachnid/parts.rsi
