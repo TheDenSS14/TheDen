@@ -242,7 +242,7 @@
   id: N14WallRock
   parent: BaseWall
   name: rock
-  suffix: planetmap
+  suffix: N14, planetmap # TheDen
   components:
     - type: Transform
       noRot: true
@@ -420,7 +420,7 @@
   id: N14WallRockBasalt
   name: basalt
   parent: N14WallRock
-  suffix: N14 # TheDen
+  suffix: N14, Planetmap # TheDen
   components:
     - type: Icon
       sprite: Structures/Walls/rock.rsi
@@ -575,7 +575,7 @@
   id: N14WallRockSand
   name: sandstone
   parent: N14WallRock
-  suffix: N14 # TheDen
+  suffix: N14, Planetmap # TheDen
   components:
     - type: Icon
       sprite: Structures/Walls/rock.rsi
@@ -730,7 +730,7 @@
   id: N14WallRockAndesite
   name: andesite
   parent: N14WallRock
-  suffix: N14 # TheDen
+  suffix: N14, Planetmap # TheDen
   components:
     - type: Icon
       sprite: Structures/Walls/rock.rsi

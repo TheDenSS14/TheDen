@@ -180,6 +180,7 @@
   parent: CrateGeneric
   id: N14CrateWooden
   name: wooden crate
+  suffix: N14 # TheDen
   components:
   - type: Icon
     sprite: _Nuclear14/Structures/Storage/Crates/cratewooden.rsi
@@ -278,7 +279,7 @@
 - type: entity
   parent: N14CrateBreakBase
   id: N14CrateBreakWood
-  suffix: wood
+  suffix: N14, Wood # TheDen
   components:
   - type: Sprite
     state: wood_crate
@@ -286,7 +287,7 @@
 - type: entity
   parent: N14CrateBreakBase
   id: N14CrateBreakPlain
-  suffix: plain
+  suffix: N14, Plain # TheDen
   components:
   - type: Sprite
     state: plain_crate
@@ -294,7 +295,7 @@
 - type: entity
   parent: N14CrateBreakBase
   id: N14CrateBreakPlainDamaged
-  suffix: plain damaged
+  suffix: N14, Plain, Damaged # TheDen
   components:
   - type: Sprite
     state: plain_crate-1 # TODO: Make this random between states -1, -2 and -3

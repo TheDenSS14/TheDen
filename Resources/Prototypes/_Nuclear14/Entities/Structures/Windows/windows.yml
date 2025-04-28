@@ -116,11 +116,13 @@
 ## Smooth Windows
 - type: entity
   id: N14Window
+  suffix: Yellow # TheDen
   parent: N14WindowSmoothBaseAirtight
 
 - type: entity
   parent: N14WindowSmoothBase
   id: N14WindowBroken
+  suffix: Yellow, Broken # TheDen
   components:
   - type: Sprite
     sprite: _Nuclear14/Structures/Windows/windowbroken.rsi
@@ -133,6 +135,7 @@
 - type: entity
   parent: N14WindowBaseAirtight
   id: N14WindowRuins
+  suffix: Ruins # TheDen
   components:
   - type: Sprite
     sprite: _Nuclear14/Structures/Windows/window_ruins.rsi
@@ -144,6 +147,7 @@
 - type: entity
   parent: N14WindowBaseAirtight
   id: N14WindowRuinsVertical
+  suffix: Ruins, Vertical # TheDen
   components:
   - type: Sprite
     sprite: _Nuclear14/Structures/Windows/window_ruins.rsi
@@ -155,6 +159,7 @@
 - type: entity
   parent: N14WindowBase
   id: N14WindowRuinsBroken
+  suffix: Ruins, Broken # TheDen
   components:
   - type: Sprite
     sprite: _Nuclear14/Structures/Windows/window_ruins.rsi
@@ -166,6 +171,7 @@
 - type: entity
   parent: N14WindowBase
   id: N14WindowRuinsVerticalBroken
+  suffix: Ruins, Vertical, Broken # TheDen
   components:
   - type: Sprite
     sprite: _Nuclear14/Structures/Windows/window_ruins.rsi
@@ -177,6 +183,7 @@
 - type: entity
   parent: N14WindowBase
   id: N14WindowRuinsDestroyed
+  suffix: Ruins, Destroyed # TheDen
   components:
   - type: Sprite
     sprite: _Nuclear14/Structures/Windows/window_ruins.rsi
@@ -189,6 +196,7 @@
 - type: entity
   parent: N14WindowBaseAirtight
   id: N14WindowHouse
+  suffix: House # TheDen
   components:
   - type: Sprite
     sprite: _Nuclear14/Structures/Windows/window_ruins.rsi
@@ -200,6 +208,7 @@
 - type: entity
   parent: N14WindowBaseAirtight
   id: N14WindowHouseVertical
+  suffix: House, Vertical # TheDen
   components:
   - type: Sprite
     sprite: _Nuclear14/Structures/Windows/window_ruins.rsi
@@ -211,6 +220,7 @@
 - type: entity
   parent: N14WindowBaseAirtight
   id: N14WindowHouseWood
+  suffix: House, Wood # TheDen
   components:
   - type: Sprite
     sprite: _Nuclear14/Structures/Windows/window_ruins.rsi
@@ -222,6 +232,7 @@
 - type: entity
   parent: N14WindowBase
   id: N14WindowHouseBroken
+  suffix: House, Broken # TheDen
   components:
   - type: Sprite
     sprite: _Nuclear14/Structures/Windows/window_ruins.rsi
@@ -233,6 +244,7 @@
 - type: entity
   parent: N14WindowBase
   id: N14WindowHouseBrokenVertical
+  suffix: House, Broken, Vertical # TheDen
   components:
   - type: Sprite
     sprite: _Nuclear14/Structures/Windows/window_ruins.rsi
@@ -244,6 +256,7 @@
 - type: entity
   parent: N14WindowBase
   id: N14WindowHouseWoodBroken
+  suffix: House, Wood, Broken # TheDen
   components:
   - type: Sprite
     sprite: _Nuclear14/Structures/Windows/window_ruins.rsi

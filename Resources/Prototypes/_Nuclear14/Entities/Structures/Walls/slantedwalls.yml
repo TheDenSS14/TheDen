@@ -482,6 +482,7 @@
   parent: BaseWallIndestructible
   id: N14WallWoodAltSlantedIndestructible
   name: wood wall
+  suffix: Variant, Indestructible # TheDen
   components:
   - type: Sprite
     sprite: _Nuclear14/Structures/Walls/ms13/slanted/woodalt.rsi
@@ -495,7 +496,7 @@
   parent: [ N14WallWoodAltSlantedIndestructible, N14BaseWallSlantedWood ]
   id: N14WallWoodAltSlanted
   name: wood wall
-  suffix: slanted
+  suffix: Variant, Slanted # TheDen
     
 - type: entity
   id: N14WallRebar

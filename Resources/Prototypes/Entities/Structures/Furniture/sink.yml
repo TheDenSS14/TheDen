@@ -105,6 +105,7 @@
   name: sink
   id: SinkStemless
   parent: SinkEmpty
+  suffix: Empty, Stemless # TheDen
   components:
   - type: Sprite
     sprite: Structures/Furniture/sink.rsi
@@ -118,7 +119,7 @@
   name: sink
   id: SinkStemlessWater
   parent: SinkStemless
-  suffix: Water
+  suffix: Stemless, Water # TheDen
   components:
   - type: SolutionContainerManager
     solutions:

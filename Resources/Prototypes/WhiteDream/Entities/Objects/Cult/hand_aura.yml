@@ -46,6 +46,7 @@
   id: StunAura
   name: stunning aura
   description: Will stun and mute a weak-minded victim on hit.
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
   - type: Sprite
     sprite: WhiteDream/BloodCult/Entities/Items/stun.rsi
@@ -60,6 +61,7 @@
   id: ShadowShacklesAura
   name: shadow shackles aura
   description: Will shackles the target with shadow shackles on hit.
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
   - type: Sprite
     sprite: WhiteDream/BloodCult/Entities/Items/shadow_shaсkles.rsi
