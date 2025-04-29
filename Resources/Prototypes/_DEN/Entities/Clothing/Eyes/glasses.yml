@@ -1,5 +1,5 @@
 - type: entity
-  parent: [ClothingEyesHudMedical, ShowMedicalIcons]
+  parent: ClothingEyesHudMedical
   id: ClothingEyesGlassesMedicalVisor
   name: medical visor glasses
   description: Upgraded visor sunglasses that provide a medical HUD. Flash immunity not included.
@@ -16,7 +16,5 @@
     - Biological
   - type: Tag
     tags:
-    - HudMedical
-  - type: Tag
-    tags:
     - WhitelistChameleon
+    - HudMedical
