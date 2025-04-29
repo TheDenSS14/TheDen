@@ -458,6 +458,9 @@ trait-description-Arachnic = The language of arachnids is composed of mostly cli
 trait-name-Nehina = Nēhina
 trait-description-Nehina =  A language spoken by the Feroxi, well adapted to speaking under the waters of ocean planets.
 
+trait-name-Rodentian = Rodentian
+trait-description-Rodentian =  A language mostly consisting of squeaks spoken by Rodentia if all shapes and sizes.
+
 trait-name-LowPotential = Low Psi-Potential
 trait-description-LowPotential =
     You possess an unusually weak connection to the noösphere, which makes it more difficult to obtain new psionic powers.
