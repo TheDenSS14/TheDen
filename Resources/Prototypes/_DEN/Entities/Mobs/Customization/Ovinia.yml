@@ -1,0 +1,71 @@
+# Default
+- type: marking
+  id: OviniaEars
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  speciesRestriction: [ Ovinia ]
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Ovinia/ear_markings.rsi
+    state: ovinia-ears
+  - sprite: _DEN/Mobs/Customization/Ovinia/ear_markings.rsi
+    state: ovinia-ears-inner
+
+- type: marking
+  id: OviniaTail
+  bodyPart: Tail
+  markingCategory: Tail
+  speciesRestriction: [ Ovinia ]
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Ovinia/tail_markings.rsi
+    state: ovinia-tail
+
+- type: marking
+  id: OviniaSnout
+  bodyPart: Snout
+  markingCategory: Snout
+  speciesRestriction: [ Ovinia ]
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Ovinia/snout_markings.rsi
+    state: ovinia-snout
+  - sprite: _DEN/Mobs/Customization/Ovinia/snout_markings.rsi
+    state: ovinia-nose
+
+# Ears Markings
+
+# Horns Markings
+- type: marking
+  id: OviniaLambHorns
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  speciesRestriction: [ Ovinia ]
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Ovinia/horn_markings.rsi
+    state: ovinia-lamb-horns
+
+# Snout Markings
+- type: marking
+  id: OviniaFace
+  bodyPart: Snout
+  markingCategory: Snout
+  speciesRestriction: [ Ovinia ]
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Ovinia/snout_markings.rsi
+    state: ovinia-face
+  - sprite: _DEN/Mobs/Customization/Ovinia/snout_markings.rsi
+    state: ovinia-nose
+
+# Tail Markings
+
+# Body Markings
+- type: marking
+  id: OviniaTummy
+  bodyPart: Chest
+  markingCategory: Chest
+  speciesRestriction: [ Ovinia ]
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Ovinia/body_markings.rsi
+    state: ovinia-tummy
+
+# Leg Markings
+
+# Arm Markings
