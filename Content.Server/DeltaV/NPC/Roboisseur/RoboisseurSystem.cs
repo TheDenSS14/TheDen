@@ -72,7 +72,7 @@ namespace Content.Server.Roboisseur.Roboisseur
         private void RewardServicer(EntityUid uid, RoboisseurComponent component, int tier)
         {
             var r = new Random();
-            int rewardToDispense = r.Next(100, 350) + 250 * tier;
+            int rewardToDispense = r.Next(1250, 1500) + 500 * tier;
 
             _material.SpawnMultipleFromMaterial(rewardToDispense, "Credit", Transform(uid).Coordinates);
             if(tier > 1)

@@ -148,7 +148,7 @@
         - Marish
 
 - type: trait
-  id: Mouse
+  id: Rodentian
   category: TraitsSpeechLanguages
   points: -2
   requirements:
@@ -159,9 +159,9 @@
   functions:
     - !type:TraitModifyLanguages
       languagesSpoken:
-        - Mouse
+        - Rodentian
       languagesUnderstood:
-        - Mouse
+        - Rodentian
 
 - type: trait
   id: Nehina
