@@ -1,6 +1,7 @@
 - type: entity
   id: OrganVampiricHumanoidStomach
   parent: OrganHumanStomach
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
   - type: Metabolizer
     # mm yummy
@@ -13,6 +14,7 @@
 - type: entity
   id: OrganVampiricStomach
   parent: OrganAnimalStomach
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
   - type: Metabolizer
     maxReagents: 3

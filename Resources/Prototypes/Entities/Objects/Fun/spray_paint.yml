@@ -46,6 +46,7 @@
   id: FunnyPaint
   name: funny paint
   description:  A tin of funny paint, manufactured by Honk! Co.
+  suffix: Yellow # TheDen
   components:
   - type: Paint
     color: "#fa74df"
@@ -87,6 +88,7 @@
 - type: entity
   parent: PaintBase
   id: DeathPaint
+  suffix: Death, Pink # TheDen
   components:
   - type: Paint
     color: "#ff20c8"
@@ -109,6 +111,7 @@
 - type: entity
   parent: PaintBase
   id: DeathPaintTwo
+  suffix: Death, Red # TheDen
   components:
   - type: Paint
     color: "#ff2020"

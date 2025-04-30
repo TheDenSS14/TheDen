@@ -316,6 +316,7 @@
 - type: entity
   id: SnailMigrationLowPop
   parent: BaseGameRule
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
   - type: StationEvent
     startAnnouncement: true
@@ -334,6 +335,7 @@
 - type: entity
   id: SnailMigration
   parent: BaseStationEventShortDelay
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
   - type: StationEvent
     startAnnouncement: true

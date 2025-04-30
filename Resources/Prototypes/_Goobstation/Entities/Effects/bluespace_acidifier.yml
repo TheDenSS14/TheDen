@@ -3,6 +3,7 @@
   id: BluespaceLifeline
   name: bluespace lifeline
   description: Teleports your body to save your life!
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
   - type: Transform
     anchored: True

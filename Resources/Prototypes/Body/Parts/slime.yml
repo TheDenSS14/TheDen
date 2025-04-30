@@ -9,6 +9,7 @@
   id: TorsoSlime
   name: "slime torso"
   parent: [PartSlime, BaseTorso]
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
     - type: Sprite
       sprite: Mobs/Species/Slime/parts.rsi
@@ -18,15 +19,17 @@
   id: HeadSlime
   name: "slime head"
   parent: [PartSlime, BaseHead]
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
     - type: Sprite
       sprite: Mobs/Species/Slime/parts.rsi
       state: "head_m"
-  
+
 - type: entity
   id: LeftArmSlime
   name: "left slime arm"
   parent: [PartSlime, BaseLeftArm]
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
     - type: Sprite
       sprite: Mobs/Species/Slime/parts.rsi
@@ -36,6 +39,7 @@
   id: RightArmSlime
   name: "right slime arm"
   parent: [PartSlime, BaseRightArm]
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
     - type: Sprite
       sprite: Mobs/Species/Slime/parts.rsi
@@ -45,6 +49,7 @@
   id: LeftHandSlime
   name: "left slime hand"
   parent: [PartSlime, BaseLeftHand]
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
     - type: Sprite
       sprite: Mobs/Species/Slime/parts.rsi
@@ -54,6 +59,7 @@
   id: RightHandSlime
   name: "right slime hand"
   parent: [PartSlime, BaseRightHand]
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
     - type: Sprite
       sprite: Mobs/Species/Slime/parts.rsi
@@ -63,6 +69,7 @@
   id: LeftLegSlime
   name: "left slime leg"
   parent: [PartSlime, BaseLeftLeg]
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
     - type: Sprite
       sprite: Mobs/Species/Slime/parts.rsi
@@ -72,6 +79,7 @@
   id: RightLegSlime
   name: "right slime leg"
   parent: [PartSlime, BaseRightLeg]
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
     - type: Sprite
       sprite: Mobs/Species/Slime/parts.rsi
@@ -81,6 +89,7 @@
   id: LeftFootSlime
   name: "left slime foot"
   parent: [PartSlime, BaseLeftFoot]
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
     - type: Sprite
       sprite: Mobs/Species/Slime/parts.rsi
@@ -90,6 +99,7 @@
   id: RightFootSlime
   name: "right slime foot"
   parent: [PartSlime, BaseRightFoot]
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
     - type: Sprite
       sprite: Mobs/Species/Slime/parts.rsi

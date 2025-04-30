@@ -216,6 +216,7 @@
 - type: entity
   parent: N14DoorWoodTall
   id: N14DoorWoodBlueTall
+  suffix: Blue, Tall # TheDen
   components:
   - type: Sprite
     sprite: _Nuclear14/Structures/Doors/TallDoors/woodblue.rsi
@@ -226,6 +227,7 @@
 - type: entity
   parent: N14DoorWoodTall
   id: N14DoorWoodGreenTall
+  suffix: Green, Tall # TheDen
   components:
   - type: Sprite
     sprite: _Nuclear14/Structures/Doors/TallDoors/woodgreen.rsi
@@ -236,6 +238,7 @@
 - type: entity
   parent: N14DoorWoodTall
   id: N14DoorWoodRedTall
+  suffix: Red, Tall # TheDen
   components:
   - type: Sprite
     sprite: _Nuclear14/Structures/Doors/TallDoors/woodred.rsi
@@ -246,6 +249,7 @@
 - type: entity
   parent: N14DoorWoodTall
   id: N14DoorWoodWhiteTall
+  suffix: White, Tall # TheDen
   components:
   - type: Sprite
     sprite: _Nuclear14/Structures/Doors/TallDoors/woodwhite.rsi
@@ -285,6 +289,7 @@
 - type: entity
   parent: N14DoorCell
   id: N14DoorCellRust
+  suffix: Tall, Rusty # TheDen
   components:
   - type: Sprite
     sprite: _Nuclear14/Structures/Doors/TallDoors/cellrust.rsi

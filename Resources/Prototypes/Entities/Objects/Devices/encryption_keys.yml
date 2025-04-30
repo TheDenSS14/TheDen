@@ -241,6 +241,7 @@
   id: EncryptionKeyBinarySyndicate
   name: binary translator key
   description: A syndicate encryption key that translates binary signals used by silicons.
+  suffix: Syndicate # TheDen
   components:
   - type: EncryptionKey
     channels:

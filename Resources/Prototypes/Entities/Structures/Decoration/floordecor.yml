@@ -318,6 +318,7 @@
   id: DecorSignLeftMine
   name: sign
   description: A sign, for a mine, pointing li...left
+  suffix: Left # TheDen
   components:
   - type: Sprite
     state: sign_left
@@ -327,6 +328,7 @@
   id: DecorSignRightMine
   name: sign
   description: A sign, pointing right.
+  suffix: Right # TheDen
   components:
   - type: Sprite
     state: sign_right

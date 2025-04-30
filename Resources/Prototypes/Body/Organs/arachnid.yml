@@ -30,6 +30,7 @@
   parent: OrganAnimalStomach
   name: stomach
   description: "Gross. This is hard to stomach."
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
   - type: Sprite
     sprite: Mobs/Species/Arachnid/organs.rsi
@@ -55,6 +56,7 @@
   parent: BaseArachnidOrgan
   name: lungs
   description: "Filters oxygen from an atmosphere... just more greedily."
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
   - type: Sprite
     layers:
@@ -92,6 +94,7 @@
   parent: BaseArachnidOrgan
   name: heart
   description: "A disgustingly persistent little biological pump made for spiders."
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
   - type: Sprite
     state: heart-on
@@ -152,6 +155,7 @@
   parent: BaseArachnidOrgan
   name: eyes
   description: "Two was already too many."
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
   - type: Sprite
     layers:
@@ -166,6 +170,7 @@
   parent: BaseArachnidOrgan
   name: tongue
   description: "A fleshy muscle mostly used for lying."
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
   - type: Sprite
     state: tongue

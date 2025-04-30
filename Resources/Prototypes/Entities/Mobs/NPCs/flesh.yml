@@ -64,6 +64,7 @@
 - type: entity
   parent: BaseMobFlesh
   id: MobFleshJared
+  suffix: Jared, AI # TheDen
   components:
   - type: Sprite
     layers:
@@ -89,6 +90,7 @@
 - type: entity
   parent: BaseMobFlesh
   id: MobFleshGolem
+  suffix: Golem, AI # TheDen
   components:
   - type: Sprite
     layers:
@@ -118,6 +120,7 @@
 - type: entity
   parent: BaseMobFlesh
   id: MobFleshClamp
+  suffix: Clamp, AI # TheDen
   components:
   - type: Sprite
     layers:
@@ -142,6 +145,7 @@
 - type: entity
   parent: BaseMobFlesh
   id: MobFleshLover
+  suffix: Lover, AI # TheDen
   components:
   - type: Sprite
     layers:
@@ -263,6 +267,7 @@
 - type: entity
   parent: BaseMobFleshSalvage
   id: MobFleshJaredSalvage
+  suffix: Jared, Salvage # TheDen
   components:
   - type: Sprite
     layers:
@@ -288,6 +293,7 @@
 - type: entity
   parent: BaseMobFleshSalvage
   id: MobFleshGolemSalvage
+  suffix: Golem, Salvage # TheDen
   components:
   - type: Sprite
     layers:
@@ -317,6 +323,7 @@
 - type: entity
   parent: BaseMobFleshSalvage
   id: MobFleshClampSalvage
+  suffix: Clamp, Salvage # TheDen
   components:
   - type: Sprite
     layers:
@@ -341,6 +348,7 @@
 - type: entity
   parent: BaseMobFleshSalvage
   id: MobFleshLoverSalvage
+  suffix: Lover, Salvage # TheDen
   components:
   - type: Sprite
     layers:

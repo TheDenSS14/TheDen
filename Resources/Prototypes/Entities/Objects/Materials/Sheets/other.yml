@@ -32,7 +32,7 @@
   parent: SheetOtherBase
   id: SheetPaper
   name: paper
-  suffix: Full
+  suffix: Full, Material # TheDen
   components:
   - type: Stack
     stackType: Paper
@@ -72,7 +72,7 @@
   parent: SheetPaper
   id: SheetPaper1
   name: paper
-  suffix: Single
+  suffix: Single, Material # TheDen
   components:
   - type: Sprite
     state: paper

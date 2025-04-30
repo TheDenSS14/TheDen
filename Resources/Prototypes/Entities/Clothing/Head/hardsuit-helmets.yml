@@ -11,6 +11,7 @@
   id: ClothingHeadHelmetHardsuitBasic
   name: basic hardsuit helmet
   description: A basic-looking hardsuit helmet that provides minor protection against most sources of damage.
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
   - type: BreathMask
   - type: Sprite
@@ -27,6 +28,7 @@
   id: ClothingHeadHelmetHardsuitAtmos
   name: atmos hardsuit helmet
   description: A special hardsuit helmet designed for working in low-pressure, high thermal environments.
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
   - type: BreathMask
   - type: Sprite
@@ -67,6 +69,7 @@
   id: ClothingHeadHelmetHardsuitEngineeringUnpainted
   name: engineering hardsuit helmet
   description: An engineering hardsuit helmet designed for working in low-pressure, high radioactive environments.
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
   - type: Sprite
     sprite: Clothing/Head/Hardsuits/engineering-base.rsi
@@ -97,6 +100,7 @@
   id: ClothingHeadHelmetHardsuitEngineering
   name: engineering hardsuit helmet
   description: An engineering hardsuit helmet designed for working in low-pressure, high radioactive environments.
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
   - type: BreathMask
   - type: Sprite
@@ -115,6 +119,7 @@
   id: ClothingHeadHelmetHardsuitSpatio
   name: spationaut hardsuit helmet
   description: A sturdy helmet designed for complex industrial operations in space.
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
   - type: BreathMask
   - type: Sprite
@@ -150,6 +155,7 @@
   id: ClothingHeadHelmetHardsuitSalvage
   name: salvage hardsuit helmet
   description: A special helmet designed for work in a hazardous, low pressure environment. Has reinforced plating for wildlife encounters and dual floodlights.
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
   - type: BreathMask
   - type: Sprite
@@ -192,6 +198,7 @@
   id: ClothingHeadHelmetHardsuitVoidParamed
   name: paramedic void helmet
   description: A void helmet made for paramedics.
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
   - type: BreathMask
   - type: Sprite
@@ -211,6 +218,7 @@
   id: ClothingHeadHelmetHardsuitSecurity
   name: security hardsuit helmet
   description: Armored hardsuit helmet for security needs.
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
   - type: BreathMask
   - type: Sprite
@@ -238,6 +246,7 @@
   id: ClothingHeadHelmetHardsuitBrigmedic
   name: corpsman hardsuit helmet # DeltaV - rename brigmedic to corpsman
   description: The lightweight helmet of the corpsman hardsuit. Protects against viruses, and clowns. # Delta V - rename brigmedic to corpsman
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
   - type: BreathMask
   - type: Sprite
@@ -267,6 +276,7 @@
   id: ClothingHeadHelmetHardsuitWarden
   name: warden's hardsuit helmet
   description: A modified riot helmet. Oddly comfortable.
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
   - type: BreathMask
   - type: Sprite
@@ -294,6 +304,7 @@
   id: ClothingHeadHelmetHardsuitCap
   name: captain's hardsuit helmet
   description: Special hardsuit helmet, made for the captain of the station.
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
   - type: BreathMask
   - type: Sprite
@@ -312,6 +323,7 @@
   id: ClothingHeadHelmetHardsuitEngineeringWhite
   name: chief engineer's hardsuit helmet
   description: Special hardsuit helmet, made for the chief engineer of the station.
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
   - type: BreathMask
   - type: Sprite
@@ -330,6 +342,7 @@
   id: ClothingHeadHelmetHardsuitMedical
   name: chief medical officer's hardsuit helmet
   description: Lightweight medical hardsuit helmet that doesn't restrict your head movements.
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
   - type: BreathMask
   - type: Sprite
@@ -348,6 +361,7 @@
   id: ClothingHeadHelmetHardsuitRd
   name: experimental research hardsuit helmet
   description: Lightweight hardsuit helmet that doesn't restrict your head movements.
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
   - type: BreathMask
   - type: Sprite
@@ -366,6 +380,7 @@
   id: ClothingHeadHelmetHardsuitSecurityRed
   name: head of security's hardsuit helmet
   description: Security hardsuit helmet with the latest top secret NT-HUD software. Belongs to the HoS.
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
   - type: BreathMask
   - type: Sprite
@@ -393,6 +408,7 @@
   id: ClothingHeadHelmetHardsuitLuxury #DO NOT MAP - https://github.com/space-wizards/space-station-14/pull/19738#issuecomment-1703486738
   name: luxury mining hardsuit helmet
   description: A refurbished mining hardsuit helmet, fitted with satin cushioning and an extra (non-functioning) antenna, because you're that extra.
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
   - type: BreathMask
   - type: Sprite
@@ -412,6 +428,7 @@
   parent: ClothingHeadHelmetHardsuitSyndie
   id: ClothingHeadHelmetHardsuitShanlinUnpainted
   name: Cybersun tacsuit helmet
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
   - type: Sprite
     sprite: Clothing/Head/Hardsuits/syndicate-base.rsi
@@ -442,6 +459,7 @@
   id: ClothingHeadHelmetHardsuitSyndie
   name: blood-red hardsuit helmet
   description: A heavily armored helmet designed for work in special operations. Property of Gorlex Marauders.
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
   - type: BreathMask
   - type: Sprite
@@ -469,6 +487,7 @@
   id: ClothingHeadHelmetHardsuitSyndieMedic
   name: blood-red medic hardsuit helmet
   description: An advanced red hardsuit helmet specifically designed for field medic operations.
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
   - type: BreathMask
   - type: Sprite
@@ -495,6 +514,7 @@
   parent: ClothingHeadHelmetHardsuitSyndieElite
   id: ClothingHeadHelmetHardsuitShiweiUnpainted
   name: Cybersun elite tacsuit helmet
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
   - type: Sprite
     sprite: Clothing/Head/Hardsuits/syndicate-elite-base.rsi
@@ -525,6 +545,7 @@
   id: ClothingHeadHelmetHardsuitSyndieElite
   name: syndicate elite helmet
   description: An elite version of the blood-red hardsuit's helmet, with improved armor and fireproofing. Property of Gorlex Marauders.
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
   - type: BreathMask
   - type: Sprite
@@ -556,6 +577,7 @@
   id: ClothingHeadHelmetHardsuitSyndieCommander
   name: syndicate commander helmet
   description: A bulked up version of the blood-red hardsuit's helmet, purpose-built for the commander of a syndicate operative squad. Has significantly improved armor for those deadly front-lines firefights.
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
   - type: BreathMask
   - type: Sprite
@@ -583,6 +605,7 @@
   id: ClothingHeadHelmetHardsuitCybersun
   name: cybersun juggernaut helmet
   description: Made of compressed red matter, this helmet was designed in the Tau chromosphere facility.
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
   - type: BreathMask
   - type: Sprite
@@ -608,6 +631,7 @@
   id: ClothingHeadHelmetHardsuitWizard
   name: wizard hardsuit helmet
   description: A bizarre gem-encrusted helmet that radiates magical energies.
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
   - type: BreathMask
   - type: Sprite
@@ -635,6 +659,7 @@
   id: ClothingHeadHelmetHardsuitLing
   name: organic space helmet
   description: A spaceworthy biomass of pressure and temperature resistant tissue.
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
   - type: BreathMask
   - type: Sprite
@@ -652,6 +677,7 @@
   name: deep space EVA helmet
   suffix: Pirate
   description: A deep space EVA helmet, very heavy but provides good protection.
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
   - type: BreathMask
   - type: Sprite
@@ -669,6 +695,7 @@
   name: pirate captain's hardsuit helmet
   suffix: Pirate
   description: A special hardsuit helmet, made for the captain of a pirate ship.
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
   - type: BreathMask
   - type: Sprite
@@ -688,6 +715,7 @@
   id: ClothingHeadHelmetHardsuitERTLeader
   name: ERT leader hardsuit helmet
   description: A special hardsuit helmet worn by members of an emergency response team.
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
   - type: BreathMask
   - type: Sprite
@@ -710,6 +738,7 @@
   id: ClothingHeadHelmetHardsuitERTChaplain
   name: ERT chaplain hardsuit helmet
   description: A special hardsuit helmet worn by members of an emergency response team.
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
   - type: BreathMask
   - type: Sprite
@@ -725,6 +754,7 @@
   id: ClothingHeadHelmetHardsuitERTEngineer
   name: ERT engineer hardsuit helmet
   description: A special hardsuit helmet worn by members of an emergency response team.
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
   - type: BreathMask
   - type: Sprite
@@ -747,6 +777,7 @@
   id: ClothingHeadHelmetHardsuitERTMedical
   name: ERT medic hardsuit helmet
   description: A special hardsuit helmet worn by members of an emergency response team.
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
   - type: BreathMask
   - type: Sprite
@@ -762,6 +793,7 @@
   id: ClothingHeadHelmetHardsuitERTSecurity
   name: ERT security hardsuit helmet
   description: A special hardsuit helmet worn by members of an emergency response team.
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
   - type: BreathMask
   - type: Sprite
@@ -784,6 +816,7 @@
   id: ClothingHeadHelmetHardsuitERTJanitor
   name: ERT janitor hardsuit helmet
   description: A special hardsuit helmet worn by members of an emergency response team.
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
   - type: BreathMask
   - type: Sprite
@@ -799,6 +832,7 @@
   id: ClothingHeadHelmetCBURN
   name: CBURN exosuit helmet
   description: A pressure resistant and fireproof hood worn by special cleanup units.
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
   - type: BreathMask
   - type: Sprite
@@ -840,6 +874,7 @@
   id: ClothingHeadHelmetHardsuitDeathsquad
   name: deathsquad hardsuit helmet
   description: A robust helmet for special operations.
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
   - type: BreathMask
   - type: Sprite
@@ -873,6 +908,7 @@
   id: ClothingHeadHelmetHardsuitClown
   name: clown hardsuit helmet
   description: A clown hardsuit helmet.
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
   - type: BreathMask
   - type: Sprite
@@ -888,6 +924,7 @@
   id: ClothingHeadHelmetHardsuitMime
   name: mime hardsuit helmet
   description: A mime hardsuit helmet.
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
   - type: BreathMask
   - type: Sprite
@@ -901,6 +938,7 @@
   id: ClothingHeadHelmetHardsuitSanta
   name: Santa's hardsuit helmet
   description: A festive-looking hardsuit helmet that provides the jolly gift-giver protection from low-pressure environments.
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
   - type: BreathMask
   - type: Sprite

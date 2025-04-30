@@ -3,6 +3,7 @@
   parent: CardBase
   id: CardBaseSyndicate
   name: card
+  suffix: Syndicate # TheDen
   components:
     - type: Card
       backSprite:
@@ -32,6 +33,7 @@
   parent: CardDeckBase
   id: CardDeckSyndicate
   name: deck of cards
+  suffix: Syndicate # TheDen
   components:
   - type: Sprite
     sprite: EstacaoPirata/Objects/Misc/cards.rsi

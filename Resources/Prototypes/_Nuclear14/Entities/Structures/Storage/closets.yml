@@ -29,6 +29,7 @@
   id: N14ClosetBaseW
   name: closet
   description: A basic closet for storing things.
+  suffix: N14, Tan # TheDen
   components:
   - type: Weldable
   - type: Sprite
@@ -52,6 +53,7 @@
 - type: entity
   parent: N14ClosetBaseW
   id: N14ClosetGrey1
+  suffix: N14, Grey # TheDen
   components:
   - type: Sprite
     sprite: _Nuclear14/Structures/Storage/Closets/closetgrey.rsi
@@ -80,6 +82,7 @@
 - type: entity
   id: N14ClosetGrey2
   parent: N14ClosetBaseW
+  suffix: N14, Grey Variant # TheDen
   components:
   - type: Sprite
     sprite: _Nuclear14/Structures/Storage/Closets/closetgrey2.rsi
@@ -87,28 +90,29 @@
 - type: entity
   parent: [ N14ClosetGrey2 ]
   id: N14ClosetGrey2Refilling
-  suffix: Refilling,Domestic,Random
+  suffix: Variant, Refilling,Domestic,Random # TheDen
 
 - type: entity
   parent: [ N14ClosetGrey2 ]
   id: N14LootClosetGrey2
-  suffix: Loot,Domestic,Random
+  suffix: Variant, Loot,Domestic,Random # TheDen
 
 - type: entity
   parent: [ N14ClosetGrey2 ]
   id: N14ClosetGrey2RefillingGeneric
-  suffix: Refilling,Generic,Random
+  suffix: Variant, Refilling,Generic,Random # TheDen
 
 - type: entity
   parent: [ N14ClosetGrey2 ]
   id: N14LootGenericClosetGrey2
-  suffix: Loot,Generic,Random
+  suffix: Variant, Loot,Generic,Random # TheDen
 
 - type: entity
   parent: N14ClosetBaseW
   id: N14ClosetRusty
   name: rusty closet
   description: A rusty old closet for storing things.
+  suffix: N14 # TheDen
   components:
   - type: Sprite
     sprite: _Nuclear14/Structures/Storage/Closets/closetold.rsi
@@ -138,6 +142,7 @@
   id: N14ClosetGunCabinet
   name: gun cabinet
   description: A secure cabinet for storing guns.
+  suffix: N14 # TheDen
   components:
   - type: Sprite
     sprite: _Nuclear14/Structures/Storage/Closets/guncabinet.rsi
@@ -157,6 +162,7 @@
   id: N14ClosetFridgeDirty
   name: fridge
   description: A dirty old fridge for keeping food fresh
+  suffix: N14 # TheDen
   components:
   - type: Sprite
     sprite: _Nuclear14/Structures/Storage/Closets/fridgedirty.rsi
@@ -169,6 +175,7 @@
   id: N14ClosetFridgeWideDirty
   name: fridge
   description: A dirty old fridge for keeping food fresh
+  suffix: N14, Wide # TheDen
   components:
   - type: Sprite
     sprite: _Nuclear14/Structures/Storage/Closets/fridgewidedirty.rsi
@@ -185,6 +192,7 @@
   parent: N14ClosetBaseW
   id: N14ClosetDouble
   name: double closet
+  suffix: N14 # TheDen
   description: A double closet for holding twice the things.
   components:
   - type: Sprite
@@ -228,6 +236,7 @@
   id: N14ClosetCabinetWood
   name: cabinet
   description: An old pre-war wooden cabinet.
+  suffix: N14 # TheDen
   components:
   - type: Sprite
     sprite: _Nuclear14/Structures/Storage/Closets/cabinet.rsi
@@ -275,7 +284,7 @@
 - type: entity
   parent: N14ClosetBaseW
   id: N14ClosetGeneric
-  suffix: generic roller
+  suffix: N14, Generic Roller # TheDen
   components:
   - type: Sprite
     sprite: _Nuclear14/Structures/Storage/Closets/closetgeneric.rsi
@@ -283,7 +292,7 @@
 - type: entity
   parent: [ N14ClosetGeneric ]
   id: N14LootClosetGeneric
-  suffix: Loot,Generic,Random
+  suffix: Roller, Loot,Generic,Random # TheDen
 
 - type: entity
   parent: [ N14ClosetGeneric ]
@@ -302,6 +311,7 @@
     mode: SnapgridCenter
   name: medicabinet
   description: A medicabinet mounted on the wall.
+  suffix: N14 # TheDen
   components:
   - type: InteractionOutline
   - type: Clickable
