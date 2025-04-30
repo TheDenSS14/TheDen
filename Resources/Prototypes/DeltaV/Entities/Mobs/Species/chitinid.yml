@@ -11,7 +11,7 @@
     - HeadTop
 
   - type: Hunger
-    baseDecayRate: 0.0467 #needs to eat more to survive
+    baseDecayRate: 0.0221666666 # Floofstation, changed from 0.0467 so it's actually 33% faster. Original number came from DeltaV, which has a much higher base hunger rate. Original comment: needs to eat more to survive
   - type: Thirst
 
   - type: Carriable
