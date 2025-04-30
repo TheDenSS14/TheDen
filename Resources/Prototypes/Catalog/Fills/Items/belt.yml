@@ -29,7 +29,7 @@
 - type: entity
   id: ClothingBeltUtilityAtmos
   parent: ClothingBeltUtility
-  suffix: Atmospherics
+  suffix: Atmospherics # TheDen
   components:
   - type: StorageFill
     contents:
@@ -102,7 +102,7 @@
 - type: entity
   id: ClothingBeltMedicalAdvancedFilled
   parent: ClothingBeltMedical
-  suffix: Advanced Filled
+  suffix: Advanced Filled # TheDen
   components:
   - type: StorageFill
     contents:
