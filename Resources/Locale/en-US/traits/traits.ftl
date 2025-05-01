@@ -518,7 +518,7 @@ trait-description-CyberEyes =
 
 trait-name-FlareShielding = Cyber-Eyes: Eye Damage Resistance
 trait-description-FlareShielding =
-    Your cybereyes have been fitted with a photochromic lense that automatically darkens in response to intense stimuli.
+    Your cybereyes have been fitted with a photochromic lens that automatically darkens in response to intense stimuli.
     This provides immunity from most bright flashes of light, such as those from welding arcs.
 
 trait-name-CyberEyesSecurity = Cyber-Eyes: SecHud Module
@@ -618,7 +618,7 @@ trait-description-BionicLeg =
 
 trait-name-FlareShieldingModule = I.P.C Eye Module: Flare Shielding
 trait-description-FlareShieldingModule =
-   Your eyes have been fitted with a photochromic lense that automatically darkens in response to intense stimuli.
+   Your eyes have been fitted with a photochromic lens that automatically darkens in response to intense stimuli.
    This provides immunity from most bright flashes of light, such as those from welding arcs.
 
 trait-name-SecurityEyesModule = I.P.C Eye Module: Sechud
