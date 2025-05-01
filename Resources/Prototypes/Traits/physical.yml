@@ -659,10 +659,9 @@
   category: Physical
   points: -4
   requirements:
-    - !type:CharacterJobRequirement
-      inverted: true
-      jobs:
-        - Prisoner # Bionics should be "Confiscated" from long term prisoners.
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Security
     - !type:CharacterTraitRequirement
       traits:
         - CyberEyes
@@ -951,10 +950,9 @@
   category: Physical
   points: -4
   requirements:
-    - !type:CharacterJobRequirement
-      inverted: true
-      jobs:
-        - Prisoner # Bionics should be "Confiscated" from long term prisoners.
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Security
     - !type:CharacterSpeciesRequirement
       species:
         - IPC
