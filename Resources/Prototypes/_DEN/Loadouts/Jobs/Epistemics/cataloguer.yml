@@ -1,0 +1,10 @@
+- type: loadout
+  id: LoadoutTowelDarkGreen
+  category:  JobsEpistemicsCataloger
+  cost: 1
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - Librarian
+  items:
+    - TowelColorDarkGreen

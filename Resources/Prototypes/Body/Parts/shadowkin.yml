@@ -21,6 +21,7 @@
   id: TorsoShadowkin
   name: "Shadowkin torso"
   parent: PartShadowkin
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
     - type: Sprite
       state: "torso_m"
@@ -33,6 +34,7 @@
   id: HeadShadowkin
   name: "Shadowkin head"
   parent: PartShadowkin
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
     - type: Sprite
       state: "head_m"
@@ -52,6 +54,7 @@
   id: LeftArmShadowkin
   name: "left Shadowkin arm"
   parent: PartShadowkin
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
     - type: Sprite
       state: "l_arm"
@@ -65,6 +68,7 @@
   id: RightArmShadowkin
   name: "right Shadowkin arm"
   parent: PartShadowkin
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
     - type: Sprite
       state: "r_arm"
@@ -78,6 +82,7 @@
   id: LeftHandShadowkin
   name: "left Shadowkin hand"
   parent: PartShadowkin
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
     - type: Sprite
       state: "l_hand"
@@ -91,6 +96,7 @@
   id: RightHandShadowkin
   name: "right Shadowkin hand"
   parent: PartShadowkin
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
     - type: Sprite
       state: "r_hand"
@@ -104,6 +110,7 @@
   id: LeftLegShadowkin
   name: "left Shadowkin leg"
   parent: PartShadowkin
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
     - type: Sprite
       state: "l_leg"
@@ -118,6 +125,7 @@
   id: RightLegShadowkin
   name: "right Shadowkin leg"
   parent: PartShadowkin
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
     - type: Sprite
       state: "r_leg"
@@ -132,6 +140,7 @@
   id: LeftFootShadowkin
   name: "left Shadowkin foot"
   parent: PartShadowkin
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
     - type: Sprite
       state: "l_foot"
@@ -145,6 +154,7 @@
   id: RightFootShadowkin
   name: "right Shadowkin foot"
   parent: PartShadowkin
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
     - type: Sprite
       state: "r_foot"

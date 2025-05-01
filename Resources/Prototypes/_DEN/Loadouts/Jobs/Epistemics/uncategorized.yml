@@ -1,0 +1,10 @@
+- type: loadout
+  id: LoadoutTowelPurple
+  category: JobsEpistemicsAAUncategorized
+  cost: 1
+  requirements:
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Epistemics
+  items:
+    - TowelColorPurple

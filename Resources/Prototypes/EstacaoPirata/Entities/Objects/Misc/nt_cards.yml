@@ -3,6 +3,7 @@
   parent: CardBase
   id: CardBaseNanotrasen
   name: card
+  suffix: Nanotrasen # TheDen
   components:
     - type: Card
       backSprite:
@@ -32,6 +33,7 @@
   parent: CardDeckBase
   id: CardDeckNanotrasen
   name: deck of cards
+  suffix: Nanotrasen # TheDen
   components:
   - type: Sprite
     sprite: EstacaoPirata/Objects/Misc/cards.rsi

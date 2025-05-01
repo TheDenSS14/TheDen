@@ -122,6 +122,7 @@
   parent: N14DoorMakeshift
   id: N14DoorWoodRoom
   name: wooden door
+  suffix: Room # TheDen
   description: A door used inside pre-war buildigs that section off rooms.
   components:
   - type: Sprite
@@ -136,6 +137,7 @@
   id: N14DoorWoodInterior
   name: wooden door
   description: A door used inside pre-war buildings.
+  suffix: Interior # TheDen
   components:
   - type: Sprite
     netsync: false
@@ -177,6 +179,7 @@
   id: N14DoorWoodSecure
   name: secure door
   description: It's a secure door, made out of wood. Hope you brought bobby pins.
+  suffix: Wood # TheDen
   components:
   - type: Sprite
     sprite: _Nuclear14/Structures/Doors/FalloutDoors/securedoor.rsi
@@ -412,6 +415,7 @@
   id: N14DoorGlassStoreBroken
   name: broken glass door
   description: Shattered, just like your marriage.
+  suffix: Store # TheDen
   components:
   - type: Sprite
     sprite: _Nuclear14/Structures/Doors/FalloutDoors/brokenstoredoor.rsi

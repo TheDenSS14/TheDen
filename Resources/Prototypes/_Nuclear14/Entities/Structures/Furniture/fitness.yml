@@ -3,6 +3,7 @@
   id: N14FitnessWeightsBench1
   name: weights bench
   description: A bench for pumping iron.
+  suffix: N14 # TheDen
   components:
   - type: Transform
     anchored: true
@@ -18,6 +19,7 @@
   parent: N14FitnessWeightsBench1
   id: N14FitnessWeightLifter
   name: weight lifter
+  suffix: N14 # TheDen
   components:
   - type: Sprite
     state: fitnesslifter
@@ -40,6 +42,7 @@
   parent: BaseStructure
   name: punching bag
   description: A punching bag. Let's get big!
+  suffix: N14 # TheDen
   components:
   - type: Sprite
     sprite: _Nuclear14/Structures/Furniture/np13_misc.rsi

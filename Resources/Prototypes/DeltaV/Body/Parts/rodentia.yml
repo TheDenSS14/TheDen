@@ -25,6 +25,7 @@
   id: TorsoRodentia
   name: "rodentia torso"
   parent: PartRodentia
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
   - type: Sprite
     state: "torso_m"
@@ -37,6 +38,7 @@
   id: HeadRodentia
   name: "rodentia head"
   parent: PartRodentia
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
   - type: Sprite
     state: "head_m"
@@ -57,6 +59,7 @@
   id: LeftArmRodentia
   name: "left rodentia arm"
   parent: PartRodentia
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
   - type: Sprite
     state: "l_arm"
@@ -70,6 +73,7 @@
   id: RightArmRodentia
   name: "right rodentia arm"
   parent: PartRodentia
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
   - type: Sprite
     state: "r_arm"
@@ -83,6 +87,7 @@
   id: LeftHandRodentia
   name: "left rodentia hand"
   parent: PartRodentia
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
   - type: Sprite
     state: "l_hand"
@@ -96,6 +101,7 @@
   id: RightHandRodentia
   name: "right rodentia hand"
   parent: PartRodentia
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
   - type: Sprite
     state: "r_hand"
@@ -109,6 +115,7 @@
   id: LeftLegRodentia
   name: "left rodentia leg"
   parent: PartRodentia
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
   - type: Sprite
     state: "l_leg"
@@ -123,6 +130,7 @@
   id: RightLegRodentia
   name: "right rodentia leg"
   parent: PartRodentia
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
   - type: Sprite
     state: "r_leg"
@@ -137,6 +145,7 @@
   id: LeftFootRodentia
   name: "left rodentia foot"
   parent: PartRodentia
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
   - type: Sprite
     state: "l_foot"
@@ -150,6 +159,7 @@
   id: RightFootRodentia
   name: "right rodentia foot"
   parent: PartRodentia
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
   - type: Sprite
     state: "r_foot"

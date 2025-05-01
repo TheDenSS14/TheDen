@@ -3,6 +3,7 @@
   id: N14Bed
   name: Bed
   description: A clean mattress for sleeping on.
+  suffix: N14 # TheDen
   components:
   - type: Sprite
     sprite: _Nuclear14/Structures/Furniture/bedsandchairs.rsi
@@ -16,6 +17,7 @@
   id: N14BedDirty
   name: "Dirty Bed"
   description: A bed that looks like it's seen better days.
+  suffix: "" # TheDen
   components:
   - type: Sprite
     state: bed_dirty
@@ -26,6 +28,7 @@
   id: N14BedWood
   name: "Wooden Bed"
   description: A bed with a wooden frame.
+  suffix: "" # TheDen
   components:
   - type: Sprite
     state: bed_wood
@@ -38,6 +41,7 @@
   id: N14BedWoodBunk
   name: "Wooden Bunk Bed"
   description: A bunk bed with a wooden frame.
+  suffix: "" # TheDen
   components:
   - type: Sprite
     state: bed_wood_bunk
@@ -48,6 +52,7 @@
   parent: RollerBed
   name: bedroll
   description: A bedroll for sleeping on the road. Not very comfy.
+  suffix: "" # TheDen
   components:
     - type: HealOnBuckle
       damage:
@@ -122,6 +127,7 @@
   id: N14BedMattressDirty2
   name: Mattress
   description: A mattress on the floor. Filthy.
+  suffix: N14, Dirty # TheDen
   components:
   - type: Sprite
     state: mattress2
@@ -131,6 +137,7 @@
   id: N14BedMattressDirty3
   name: Mattress
   description: A mattress on the floor. Is that blood?
+  suffix: N14, Bloody # TheDen
   components:
   - type: Sprite
     state: mattress3
@@ -140,6 +147,7 @@
   id: N14BedMattressDirty4
   name: Mattress
   description: A mattress on the floor. That's definitely blood.
+  suffix: N14, Very Bloody # TheDen
   components:
   - type: Sprite
     state: mattress4
@@ -147,7 +155,7 @@
 - type: entity
   parent: N14BedMattressDirty1
   id: N14BedMattressDirty5
-  suffix: mouldy
+  suffix: N14, Mouldy # TheDen
   name: Mattress
   description: A mattress on the floor. I'm not sleeping on that.
   components:

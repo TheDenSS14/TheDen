@@ -4,6 +4,7 @@
   id: FurnitureWashingmachine
   name: washing machine
   description: wishy washy.
+  suffix: Variant # TheDen
   components:
   - type: Sprite
     sprite: Structures/Storage/Furniture/washingmachine.rsi
@@ -36,6 +37,7 @@
   id: ClosetSafe
   name: safe
   description: Might be filled with valuables.
+  suffix: "" # TheDen
   components:
   - type: Sprite
     sprite: Structures/Storage/Furniture/safe.rsi

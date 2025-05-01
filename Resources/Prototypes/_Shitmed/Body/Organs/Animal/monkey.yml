@@ -18,6 +18,7 @@
   id: TorsoMonkey
   name: "monkey torso"
   parent: [PartMonkey, BaseTorso]
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
   - type: Sprite
     sprite: Mobs/Animals/monkey.rsi
@@ -34,6 +35,7 @@
   id: HeadMonkey
   name: "monkey head"
   parent: [PartMonkey, BaseHead]
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
   - type: Sprite
     sprite: Mobs/Animals/monkey.rsi
@@ -50,6 +52,7 @@
   id: LeftArmMonkey
   name: "left monkey arm"
   parent: [PartMonkey, BaseLeftArm]
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
   - type: Sprite
     sprite: Mobs/Animals/monkey.rsi
@@ -59,6 +62,7 @@
   id: RightArmMonkey
   name: "right monkey arm"
   parent: [PartMonkey, BaseRightArm]
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
   - type: Sprite
     sprite: Mobs/Animals/monkey.rsi
@@ -68,6 +72,7 @@
   id: LeftHandMonkey
   name: "left monkey hand"
   parent: [PartMonkey, BaseLeftHand]
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
   - type: Sprite
     sprite: Mobs/Animals/monkey.rsi
@@ -77,6 +82,7 @@
   id: RightHandMonkey
   name: "right monkey hand"
   parent: [PartMonkey, BaseRightHand]
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
   - type: Sprite
     sprite: Mobs/Animals/monkey.rsi
@@ -86,6 +92,7 @@
   id: LeftLegMonkey
   name: "left monkey leg"
   parent: [PartMonkey, BaseLeftLeg]
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
   - type: Sprite
     sprite: Mobs/Animals/monkey.rsi
@@ -95,6 +102,7 @@
   id: RightLegMonkey
   name: "right monkey leg"
   parent: [PartMonkey, BaseRightLeg]
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
   - type: Sprite
     sprite: Mobs/Animals/monkey.rsi
@@ -104,6 +112,7 @@
   id: LeftFootMonkey
   name: "left monkey foot"
   parent: [PartMonkey, BaseLeftFoot]
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
   - type: Sprite
     sprite: Mobs/Animals/monkey.rsi
@@ -113,6 +122,7 @@
   id: RightFootMonkey
   name: "right monkey foot"
   parent: [PartMonkey, BaseRightFoot]
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
   - type: Sprite
     sprite: Mobs/Animals/monkey.rsi

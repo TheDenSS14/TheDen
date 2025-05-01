@@ -18,6 +18,7 @@
   id: TorsoKobold
   name: "kobold torso"
   parent: [PartKobold, BaseTorso]
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
   - type: Sprite
     sprite: Mobs/Animals/kobold.rsi
@@ -34,6 +35,7 @@
   id: HeadKobold
   name: "kobold head"
   parent: [PartKobold, BaseHead]
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
   - type: Sprite
     sprite: Mobs/Animals/kobold.rsi
@@ -50,6 +52,7 @@
   id: LeftArmKobold
   name: "left kobold arm"
   parent: [PartKobold, BaseLeftArm]
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
   - type: Sprite
     sprite: Mobs/Animals/kobold.rsi
@@ -59,6 +62,7 @@
   id: RightArmKobold
   name: "right kobold arm"
   parent: [PartKobold, BaseRightArm]
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
   - type: Sprite
     sprite: Mobs/Animals/kobold.rsi
@@ -68,6 +72,7 @@
   id: LeftHandKobold
   name: "left kobold hand"
   parent: [PartKobold, BaseLeftHand]
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
   - type: Sprite
     sprite: Mobs/Animals/kobold.rsi
@@ -77,6 +82,7 @@
   id: RightHandKobold
   name: "right kobold hand"
   parent: [PartKobold, BaseRightHand]
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
   - type: Sprite
     sprite: Mobs/Animals/kobold.rsi
@@ -86,6 +92,7 @@
   id: LeftLegKobold
   name: "left kobold leg"
   parent: [PartKobold, BaseLeftLeg]
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
   - type: Sprite
     sprite: Mobs/Animals/kobold.rsi
@@ -95,6 +102,7 @@
   id: RightLegKobold
   name: "right kobold leg"
   parent: [PartKobold, BaseRightLeg]
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
   - type: Sprite
     sprite: Mobs/Animals/kobold.rsi
@@ -104,6 +112,7 @@
   id: LeftFootKobold
   name: "left kobold foot"
   parent: [PartKobold, BaseLeftFoot]
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
   - type: Sprite
     sprite: Mobs/Animals/kobold.rsi
@@ -113,6 +122,7 @@
   id: RightFootKobold
   name: "right kobold foot"
   parent: [PartKobold, BaseRightFoot]
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
   - type: Sprite
     sprite: Mobs/Animals/kobold.rsi

@@ -3,6 +3,7 @@
   id: N14CrateFootlocker
   name: footlocker
   description: A footlocker for someones equipment.
+  suffix: N14 # TheDen
   components:
   - type: Icon
     sprite: _Nuclear14/Structures/Storage/Crates/footlocker.rsi
@@ -24,6 +25,7 @@
   id: N14CrateAluminium
   name: aluminium crate
   description: An aluminium crate for storing stuff.
+  suffix: N14 # TheDen
   components:
   - type: Icon
     sprite: _Nuclear14/Structures/Storage/Crates/aluminiumcrate.rsi
@@ -40,6 +42,7 @@
   id: N14CrateArmy
   name: army crate
   description: A crate with a US Army star on.
+  suffix: N14 # TheDen
   components:
   - type: Icon
     sprite: _Nuclear14/Structures/Storage/Crates/armycrate.rsi
@@ -56,6 +59,7 @@
   id: N14CrateEnclave
   name: metal crate
   description: An advanced looking crate. Might have high tech stuff in.
+  suffix: "" # TheDen
   components:
   - type: Icon
     sprite: _Nuclear14/Structures/Storage/Crates/crateenclave.rsi
@@ -90,6 +94,7 @@
   id: N14CrateMedical
   name: medical crate
   description: A metal crate for storing medical equipment.
+  suffix: N14 # TheDen
   components:
   - type: Icon
     sprite: _Nuclear14/Structures/Storage/Crates/medicalcrate.rsi
@@ -111,6 +116,7 @@
   id: N14CrateRed
   name: red crate
   description: A faded red crate for storing stuff.
+  suffix: N14 # TheDen
   components:
   - type: Icon
     sprite: _Nuclear14/Structures/Storage/Crates/redcrate.rsi
@@ -151,6 +157,7 @@
   id: N14CrateFreezer
   name: freezer
   description: A freezer for keeping things cool.
+  suffix: N14, Container # TheDen
   components:
   - type: Icon
     sprite: _Nuclear14/Structures/Storage/Crates/freezer.rsi
@@ -173,6 +180,7 @@
   parent: CrateGeneric
   id: N14CrateWooden
   name: wooden crate
+  suffix: N14 # TheDen
   components:
   - type: Icon
     sprite: _Nuclear14/Structures/Storage/Crates/cratewooden.rsi
@@ -211,6 +219,7 @@
   id: N14CrateMilitary
   name: military crate
   description: An old wooden crate. Looks like it might have some supplies in.
+  suffix: N14 # TheDen
   components:
   - type: Icon
     sprite: _Nuclear14/Structures/Storage/Crates/cratemilitary.rsi
@@ -270,7 +279,7 @@
 - type: entity
   parent: N14CrateBreakBase
   id: N14CrateBreakWood
-  suffix: wood
+  suffix: N14, Wood # TheDen
   components:
   - type: Sprite
     state: wood_crate
@@ -278,7 +287,7 @@
 - type: entity
   parent: N14CrateBreakBase
   id: N14CrateBreakPlain
-  suffix: plain
+  suffix: N14, Plain # TheDen
   components:
   - type: Sprite
     state: plain_crate
@@ -286,7 +295,7 @@
 - type: entity
   parent: N14CrateBreakBase
   id: N14CrateBreakPlainDamaged
-  suffix: plain damaged
+  suffix: N14, Plain, Damaged # TheDen
   components:
   - type: Sprite
     state: plain_crate-1 # TODO: Make this random between states -1, -2 and -3
@@ -311,6 +320,7 @@
   parent: N14CrateBreakBase
   id: N14CrateBreakArmy
   name: army crate
+  suffix: N14, Wood # TheDen
   components:
   - type: Sprite
     state: army_crate
@@ -318,7 +328,7 @@
 - type: entity
   parent: N14CrateBreakArmy
   id: N14CrateBreakArmyDamaged
-  suffix: damaged
+  suffix: N14, Wood, Damaged # TheDen
   components:
   - type: Sprite
     state: army_crate-1 # TODO: Make this random between states -1 and -2

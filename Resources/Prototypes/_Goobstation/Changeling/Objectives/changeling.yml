@@ -2,6 +2,7 @@
   abstract: true
   parent: BaseObjective
   id: BaseChangelingObjective
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
   - type: Objective
     difficulty: 1.5 # unused but necessary i guess
@@ -12,6 +13,7 @@
   id: ChangelingSurviveObjective
   name: Survive
   description: I must survive no matter what.
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
   - type: Objective
     icon:
@@ -21,6 +23,7 @@
 - type: entity
   parent: BaseChangelingObjective
   id: ChangelingAbsorbObjective
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
   - type: Objective
     icon:
@@ -36,6 +39,7 @@
 - type: entity
   parent: BaseChangelingObjective
   id: ChangelingStealDNAObjective
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
   - type: Objective
     icon:
@@ -52,6 +56,7 @@
   parent: BaseChangelingObjective
   id: EscapeIdentityObjective
   description: I need to escape on the evacuation shuttle. Undercover.
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
   - type: Objective
     icon:

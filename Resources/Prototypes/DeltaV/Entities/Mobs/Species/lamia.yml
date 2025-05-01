@@ -234,6 +234,7 @@
   parent: MobHumanDummy
   id: MobLamiaDummy
   description: A dummy lamia meant to be used in character setup.
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
   - type: Sprite
     netsync: false

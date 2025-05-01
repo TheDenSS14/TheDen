@@ -37,6 +37,7 @@
   parent: BaseDionaOrganUnGibbable
   name: brain
   description: "The central hub of a diona's pseudo-neurological activity, its root-like tendrils search for its former body."
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
   - type: Sprite
     state: brain
@@ -68,6 +69,7 @@
   parent: BaseDionaOrgan
   name: eyes
   description: "I see you!"
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
   - type: Sprite
     layers:
@@ -82,6 +84,7 @@
   parent: BaseDionaOrgan
   name: stomach
   description: "The diona's equivalent of a stomach, it reeks of asparagus and vinegar."
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
   - type: Sprite
     state: stomach
@@ -115,6 +118,7 @@
   parent: BaseDionaOrgan
   name: lungs
   description: "A spongy mess of slimy, leaf-like structures. Capable of breathing both carbon dioxide and oxygen."
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
   - type: Sprite
     sprite: Mobs/Species/Human/organs.rsi

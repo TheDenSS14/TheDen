@@ -1,0 +1,10 @@
+- type: loadout
+  id: LoadoutNeckVetCone
+  category: Neck
+  cost: 1
+  exclusive: true
+  items:
+    - ClothingNeckVetCone
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutNeck

@@ -1,0 +1,11 @@
+- type: loadout
+  id: LoadoutTowelCentcom
+  category: JobsCommandNanorep
+  cost: 1
+  canBeHeirloom: true
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+      - NanotrasenRepresentative
+  items:
+    - TowelColorCentcom

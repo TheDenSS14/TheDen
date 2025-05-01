@@ -516,10 +516,10 @@ trait-description-CyberEyes =
     Their most basic functionality is to provide amelioration for weaknesses of the wearer's natural eyes.
     The functionality of these implants can be extended by a variety of commercially available modules.
 
-# trait-name-FlareShielding = Cyber-Eyes: Eye Damage Resistance
-# trait-description-FlareShielding =
-#    Your cybereyes have been fitted with a photochromic lense that automatically darkens in response to intense stimuli.
-#    This provides immunity from most bright flashes of light, such as those from welding arcs.
+trait-name-FlareShielding = Cyber-Eyes: Eye Damage Resistance
+trait-description-FlareShielding =
+    Your cybereyes have been fitted with a photochromic lens that automatically darkens in response to intense stimuli.
+    This provides immunity from most bright flashes of light, such as those from welding arcs.
 
 trait-name-CyberEyesSecurity = Cyber-Eyes: SecHud Module
 trait-description-CyberEyesSecurity =
@@ -618,9 +618,8 @@ trait-description-BionicLeg =
 
 trait-name-FlareShieldingModule = I.P.C Eye Module: Flare Shielding
 trait-description-FlareShieldingModule =
-   Your cybereyes have been fitted with a photochromic lense that automatically darkens in response to intense stimuli.
-   This provides immunity from most bright flashes of light, such as those from welding arcs, exclusive to IPCs because it only needs the module
-   skipping the eye insertion process.
+   Your eyes have been fitted with a photochromic lens that automatically darkens in response to intense stimuli.
+   This provides immunity from most bright flashes of light, such as those from welding arcs.
 
 trait-name-SecurityEyesModule = I.P.C Eye Module: Sechud
 trait-description-SecurityEyesModule =
@@ -628,7 +627,7 @@ trait-description-SecurityEyesModule =
 
 trait-name-MedicalEyesModule = I.P.C Eye Module: Medical
 trait-description-MedicalEyesModule =
-    Your Cyber-Eyes have been upgraded to include a built-in Medical Hud, and a Chemical Analysis Hud, allowing you to track the relative health condition of biological organisms, and discern the chemicals in any solution.
+    Your eyes have been upgraded to include a built-in Medical Hud, and a Chemical Analysis Hud, allowing you to track the relative health condition of biological organisms, and discern the chemicals in any solution.
 
 trait-name-DiagnosticEyesModule = I.P.C Eye Module: Diagnostics
 trait-description-DiagnosticEyesModule =
