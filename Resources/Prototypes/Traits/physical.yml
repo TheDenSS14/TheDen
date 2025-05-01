@@ -654,22 +654,23 @@
         - type: Flashable # Effectively, removes any flash-vulnerability species traits.
 
 
-# - type: trait
-#  id: FlareShielding
-#  category: Physical
-#  points: -3
-#  requirements:
-#    - !type:CharacterJobRequirement
-#      inverted: true
-#      jobs:
-#        - Prisoner # Bionics should be "Confiscated" from long term prisoners.
-#    - !type:CharacterTraitRequirement
-#      traits:
-#        - CyberEyes
-#  functions:
-#    - !type:TraitAddComponent
-#      components:
-#        - type: EyeProtection
+- type: trait
+  id: FlareShielding
+  category: Physical
+  points: -4
+  requirements:
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Prisoner # Bionics should be "Confiscated" from long term prisoners.
+    - !type:CharacterTraitRequirement
+      traits:
+        - CyberEyes
+  functions:
+    - !type:TraitAddComponent
+      components:
+        - type: FlashImmunity
+        - type: EyeProtection
 
 
 - type: trait
@@ -945,33 +946,6 @@
       protoId: SpeedRightLeg
       slotId: "right leg"
 
-
-# - type: trait
-#  id: FlareShieldingModule
-#  category: Physical
-#  points: -4
-#  requirements:
-#    - !type:CharacterJobRequirement
-#      inverted: true
-#      jobs:
-#        - Prisoner # Bionics should be "Confiscated" from long term prisoners.
-#    - !type:CharacterSpeciesRequirement
-#      species:
-#        - IPC
-#    - !type:CharacterTraitRequirement
-#      inverted: true
-#      traits:
-#       - Photophobia
-#        - Blindness
-#        - Nearsighted
-#    - !type:CharacterItemGroupRequirement
-#      group: TraitsMind
-#  functions:
-#    - !type:TraitAddComponent
-#      components:
-#        - type: FlashImmunity
-#        - type: EyeProtection
-
 - type: trait
   id: FlareShieldingModule
   category: Physical
@@ -984,6 +958,14 @@
     - !type:CharacterSpeciesRequirement
       species:
         - IPC
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - Photophobia
+        - Blindness
+        - Nearsighted
+    - !type:CharacterItemGroupRequirement
+      group: TraitsMind
   functions:
     - !type:TraitAddComponent
       components:

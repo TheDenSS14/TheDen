@@ -516,10 +516,10 @@ trait-description-CyberEyes =
     Their most basic functionality is to provide amelioration for weaknesses of the wearer's natural eyes.
     The functionality of these implants can be extended by a variety of commercially available modules.
 
-# trait-name-FlareShielding = Cyber-Eyes: Eye Damage Resistance
-# trait-description-FlareShielding =
-#    Your cybereyes have been fitted with a photochromic lense that automatically darkens in response to intense stimuli.
-#    This provides immunity from most bright flashes of light, such as those from welding arcs.
+trait-name-FlareShielding = Cyber-Eyes: Eye Damage Resistance
+trait-description-FlareShielding =
+    Your cybereyes have been fitted with a photochromic lense that automatically darkens in response to intense stimuli.
+    This provides immunity from most bright flashes of light, such as those from welding arcs.
 
 trait-name-CyberEyesSecurity = Cyber-Eyes: SecHud Module
 trait-description-CyberEyesSecurity =
@@ -532,7 +532,7 @@ trait-description-CyberEyesMedical =
 
 trait-name-CyberEyesDiagnostic = Cyber-Eyes: Diagnostics Module
 trait-description-CyberEyesDiagnostic =
-    Your Cyber-Eyes have been upgraded to include a built-in Diagnostic Hud and flare shielding, allowing you to track the condition of synthetic entities, and providing eye protection against welding arcs.
+    Your Cyber-Eyes have been upgraded to include a built-in Diagnostic Hud, allowing you to track the condition of synthetic entities.
 
 trait-name-CyberEyesOmni = Cyber-Eyes: Premium Suite Module
 trait-description-CyberEyesOmni =
@@ -632,7 +632,7 @@ trait-description-MedicalEyesModule =
 
 trait-name-DiagnosticEyesModule = I.P.C Eye Module: Diagnostics
 trait-description-DiagnosticEyesModule =
-    Your eyes have been upgraded to include a built-in Diagnostic Hud and flare shielding, allowing you to track the condition of synthetic entities, and providing eye protection against welding arcs.
+    You possess a built-in Diagnostic Hud, allowing you to track the condition of synthetic entities.
 
 trait-name-OmniEyesModule = I.P.C Eye Module: Premium Model
 trait-description-OmniEyesModule =
