@@ -25,3 +25,17 @@
         - Lawyer
   items:
     - ClothingUniformJumpskirtLawyerBlack
+
+- type: loadout
+  id: LoadoutTowelMaroon
+  category: JobsServiceLawyer
+  cost: 1
+  canBeHeirloom: true
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+      - Lawyer
+      - Prosecutor
+      - Clerk
+  items:
+    - TowelColorMaroon

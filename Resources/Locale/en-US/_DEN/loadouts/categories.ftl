@@ -1,0 +1,1 @@
+loadout-category-GeneralTowels = Towels
