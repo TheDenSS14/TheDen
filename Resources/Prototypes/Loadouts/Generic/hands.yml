@@ -114,7 +114,7 @@
       jobs:
         - Passenger
     - !type:CharacterItemGroupRequirement
-      group: LoadoutGloves2
+      group: LoadoutGloves
   items:
     - ClothingHandsGlovesColorYellowBudget
 
@@ -125,11 +125,11 @@
   items:
     - ClothingHandsGlovesLeather
   requirements:
-  - !type:CharacterItemGroupRequirement
-    group: LoadoutBotanistGloves
-  - !type:CharacterJobRequirement
-    jobs:
-    - Botanist
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBotanistGloves
+    - !type:CharacterJobRequirement
+      jobs:
+      - Botanist
 
 - type: loadout
   id: LoadoutHandsGlovesPowerglove
@@ -140,7 +140,7 @@
     - ClothingHandsGlovesPowerglove
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutGloves2
+      group: LoadoutGloves
 
 - type: loadout
   id: LoadoutHandsGlovesRobohands
@@ -150,8 +150,7 @@
     - ClothingHandsGlovesRobohands
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutGloves2
-
+      group: LoadoutGloves
 - type: loadout
   id: LoadoutHandsGlovesFingerless
   category: Hands
@@ -161,10 +160,10 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutGloves
-    - !type:CharacterSpeciesRequirement
-      inverted: true
-      species:
-        - Plasmaman
+#    - !type:CharacterSpeciesRequirement - TheDen - pointless to restrict them
+#      inverted: true
+#      species:
+#        - Plasmaman
 
 - type: loadout
   id: LoadoutHandsGlovesEvening

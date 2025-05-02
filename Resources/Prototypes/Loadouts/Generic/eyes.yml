@@ -7,7 +7,7 @@
     - ClothingEyesEyepatch
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutEyes2
+      group: LoadoutEyes # TheDen
 
 - type: loadout
   id: LoadoutEyesEyepatchColor
@@ -42,25 +42,23 @@
     - ClothingEyesGlasses
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutEyes2
+      group: LoadoutEyes # TheDen
 
 - type: loadout
   id: LoadoutEyesGlassesJamjar
   category: Eyes
   cost: 1
-  exclusive: true
   customColorTint: true
   items:
     - ClothingEyesGlassesJamjar
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutEyes2
+      group: LoadoutEyes # TheDen
 
 - type: loadout
   id: LoadoutEyesGlasses3D
   category: Eyes
   cost: 1
-  exclusive: true
   items:
     - ClothingEyesGlasses3D
   requirements:
@@ -71,7 +69,6 @@
   id: LoadoutEyesGlassesHipster
   category: Eyes
   cost: 0
-  exclusive: true
   customColorTint: true
   items:
     - ClothingEyesGlassesHipster
@@ -83,7 +80,6 @@
   id: LoadoutEyesGlassesMonocle
   category: Eyes
   cost: 1
-  exclusive: true
   customColorTint: true
   items:
     - ClothingEyesGlassesMonocle
@@ -95,7 +91,6 @@
   id: LoadoutEyesGlassesPanto
   category: Eyes
   cost: 0
-  exclusive: true
   customColorTint: true
   items:
     - ClothingEyesGlassesPanto
@@ -107,12 +102,11 @@
   id: LoadoutEyesGlassesJensen
   category: Eyes
   cost: 1
-  exclusive: true
   items:
     - ClothingEyesGlassesJensen
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutEyes2
+      group: LoadoutEyes # TheDen
 
 - type: loadout
   id: LoadoutEyesBlindfold
@@ -122,7 +116,7 @@
     - ClothingEyesBlindfold
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutEyes2
+      group: LoadoutEyes # TheDen
 
 - type: loadout
   id: LoadoutEyesBlindfoldColor
@@ -139,18 +133,16 @@
   id: LoadoutItemCheapSunglasses
   category: Eyes
   cost: 1
-  exclusive: true
   items:
     - ClothingEyesGlassesCheapSunglasses
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutEyes2
+      group: LoadoutEyes # TheDen
 
 - type: loadout
   id: LoadoutEyesGlassesCheapSunglassesAviator
   category: Eyes
   cost: 1
-  exclusive: true
   customColorTint: true
   items:
     - ClothingEyesGlassesCheapSunglassesAviator
@@ -162,7 +154,6 @@
   id: LoadoutEyesGlassesCheapSunglassesBig
   category: Eyes
   cost: 1
-  exclusive: true
   items:
     - ClothingEyesGlassesCheapSunglassesBig
   requirements:
@@ -173,7 +164,6 @@
   id: LoadoutEyesGlassesCheapSunglassesVisor
   category: Eyes
   cost: 1
-  exclusive: true
   items:
     - ClothingEyesGlassesCheapSunglassesVisor
   requirements:
@@ -184,18 +174,16 @@
   id: LoadoutItemSunglasses
   category: Eyes
   cost: 7
-  exclusive: true
   items:
     - ClothingEyesGlassesSunglasses
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutEyes2
+      group: LoadoutEyes # TheDen
 
 - type: loadout
   id: LoadoutEyesGlassesSunglassesAviator
   category: Eyes
   cost: 7
-  exclusive: true
   customColorTint: true
   items:
     - ClothingEyesGlassesSunglassesAviator
@@ -207,7 +195,6 @@
   id: LoadoutEyesGlassesSunglassesBig
   category: Eyes
   cost: 7
-  exclusive: true
   items:
     - ClothingEyesGlassesSunglassesBig
   requirements:
@@ -218,7 +205,6 @@
   id: LoadoutEyesGlassesSunglassesVisor
   category: Eyes
   cost: 7
-  exclusive: true
   items:
     - ClothingEyesGlassesSunglassesVisor
   requirements:
@@ -229,12 +215,11 @@
   id: LoadoutItemBlindfoldFake
   category: Eyes
   cost: 0
-  exclusive: true
   items:
     - ClothingEyesBlindfoldFake
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutEyes2
+      group: LoadoutEyes # TheDen
 
 - type: loadout
   id: LoadoutEyesBlindfoldFakeColor

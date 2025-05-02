@@ -4,31 +4,28 @@
   id: LoadoutEyesThermalBudget
   category: Eyes
   cost: 0
-  exclusive: true
   items:
     - ClothingEyesGlassesThermalBudget
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutEyes2
+      group: LoadoutEyes # TheDen
 
 - type: loadout
   id: LoadoutEyesChemicalBudget
   category: Eyes
   cost: 0
-  exclusive: true
   items:
     - ClothingEyesGlassesChemicalBudget
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutEyes2
+      group: LoadoutEyes # TheDen
 
 - type: loadout
   id: LoadoutEyesMesonBudget
   category: Eyes
   cost: 0
-  exclusive: true
   items:
     - ClothingEyesGlassesMesonBudget
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutEyes2
+      group: LoadoutEyes # TheDen
