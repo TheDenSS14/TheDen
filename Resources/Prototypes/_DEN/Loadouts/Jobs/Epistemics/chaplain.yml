@@ -1,0 +1,10 @@
+- type: loadout
+  id: LoadoutTowelBlack
+  category:  JobsEpistemicsChaplain
+  cost: 1
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - Chaplain
+  items:
+    - TowelColorBlack

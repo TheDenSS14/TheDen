@@ -137,8 +137,10 @@
     sprite: Clothing/Shoes/Specific/swat.rsi
   - type: Clothing
     sprite: Clothing/Shoes/Specific/swat.rsi
-  - type: ClothingSlowOnDamageModifier
-    modifier: 0.7
+  - type: ClothingSlowOnDamageModifier # Goobstation
+    modifier: 0.4
+  - type: ClothingModifyStunTime # Goobstation
+    modifier: 0.65
 
 - type: entity
   parent: ClothingShoesBaseButcherable

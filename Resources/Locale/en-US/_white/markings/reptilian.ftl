@@ -44,24 +44,27 @@ marking-LizardHornsBighorn-horns_bighorn_r = Right horn
 
 # TAILS
 marking-SnakeLargeTail = Lizard, large snake tail
-marking-SnakeLargeTail-tail_snakelarge = Inner
-marking-SnakeLargeTail-tail_snakelarge_overlay = Outer
+marking-SnakeLargeTail-tail_snake_large = Inner
+marking-SnakeLargeTail-tail_snake_large_overlay = Outer
+marking-SnakeLargeTailAnimated = Lizard, large snake tail
+marking-SnakeLargeTail-tail_snake_large_wagging = Inner
+marking-SnakeLargeTail-tail_snake_large_wagging_overlay = Outer
 
 # SPINES
 marking-LizardChestSpinesAquatic = Lizard, chest, spines (Aquatic)
 marking-LizardChestSpinesAquatic-spines_aquatic = Spikes
 marking-LizardChestSpinesAquaticWithoutTail = Lizard, chest, spines (Aquatic, without tail)
-marking-LizardChestSpinesAquaticWithoutTail-spines_aquatic = Spikes
+marking-LizardChestSpinesAquaticWithoutTail-spines_aquatic_alt = Spikes
 
 marking-LizardChestSpinesLong = Lizard, chest, spines (Long)
 marking-LizardChestSpinesLong-spines_long = Spikes
 marking-LizardChestSpinesLongWithoutTail = Lizard, chest, spines (Long, without tail)
-marking-LizardChestSpinesLongWithoutTail-spines_long = Spikes
+marking-LizardChestSpinesLongWithoutTail-spines_long_alt = Spikes
 
 marking-LizardChestSpinesLongMembrane = Lizard, chest, spines (Long, Membrane)
 marking-LizardChestSpinesLongMembrane-spines_longmembrane = spines
 marking-LizardChestSpinesLongMembraneWithoutTail = Lizard, chest, spines (Long, Membrane, without tail)
-marking-LizardChestSpinesLongMembraneWithoutTail-spines_longmembrane = spines
+marking-LizardChestSpinesLongMembraneWithoutTail-spines_longmembrane_alt = spines
 
 marking-LizardChestSpinesShort = Lizard, chest, spines (Short)
 marking-LizardChestSpinesShort-spines_short = Spikes
@@ -69,6 +72,6 @@ marking-LizardChestSpinesShortWithoutTail = Lizard, chest, spines (Short, withou
 marking-LizardChestSpinesShortWithoutTail-spines_short = Spikes
 
 marking-LizardChestSpinesShortMembrane = Lizard, chest, spines (Short, Membrane)
-marking-LizardChestSpinesShortMembrane-spines_short = Spikes
+marking-LizardChestSpinesShortMembrane-spines_shortmembrane = Spikes
 marking-LizardChestSpinesShortMembraneWithoutTail = Lizard, chest, spines (Short, Membrane, without tail)
-marking-LizardChestSpinesShortMembraneWithoutTail-spines_short = Spikes
+marking-LizardChestSpinesShortMembraneWithoutTail-spines_shortmembrane_alt = Spikes

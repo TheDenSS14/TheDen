@@ -95,3 +95,14 @@
         - Security
   items:
     - ClothingUniformJumpskirtSec
+
+- type: loadout
+  id: LoadoutTowelRed
+  category: JobsSecurityAUncategorized
+  cost: 1
+  requirements:
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Security
+  items:
+    - TowelColorRed

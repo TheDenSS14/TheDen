@@ -1,0 +1,11 @@
+- type: loadout
+  id: LoadoutTowelSyndicate
+  category: JobsZMiscPrisoner
+  cost: 1
+  canBeHeirloom: true
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - Prisoner
+  items:
+    - TowelColorSyndicate
