@@ -66,6 +66,7 @@
   parent: [BaseTraitorObjective, BaseTeachLessonObjective]
   id: TeachLessonRandomPersonObjective
   description: Kill them, and show everyone we mean business. They only need to die once.
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
   - type: Objective
     difficulty: 1.75

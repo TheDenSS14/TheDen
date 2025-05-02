@@ -1,6 +1,7 @@
 - type: entity
   parent: Dresser
   id: N14Dresser
+  suffix: Variant # TheDen
   components:
   - type: Sprite
     sprite: _Nuclear14/Structures/Furniture/np13_misc.rsi
@@ -30,6 +31,7 @@
 - type: entity
   parent: N14Television
   id: N14TelevisionCabinetOpen
+  suffix: Cabinet # TheDen
   components:
   - type: Sprite
     state: cabinet_tv
@@ -38,6 +40,7 @@
   parent: N14Television
   id: N14TelevisionRadking
   description: A Radking brand television.
+  suffix: Radking # TheDen
   components:
   - type: Sprite
     state: radking_tv
@@ -46,6 +49,7 @@
   parent: N14Television
   id: N14TelevisionRedwood
   description: A television in a redwood cabinet.
+  suffix: Redwood # TheDen
   components:
   - type: Sprite
     state: redwood_tv
@@ -54,6 +58,7 @@
   parent: N14Television
   id: N14TelevisionTube
   description: An old pre-war tube television.
+  suffix: Tube # TheDen
   components:
   - type: Sprite
     state: tube_tv
@@ -62,6 +67,7 @@
   parent: N14Television
   id: N14TelevisionSmall
   description: A television in a small case.
+  suffix: Small # TheDen
   components:
   - type: Sprite
     state: small_tv
@@ -80,6 +86,7 @@
   parent: N14TelevisionSmall
   id: N14TelevisionTiny
   description: A tiny television.
+  suffix: Tiny # TheDen
   components:
   - type: Sprite
     state: tiny_tv

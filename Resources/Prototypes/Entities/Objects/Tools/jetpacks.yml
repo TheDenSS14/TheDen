@@ -86,7 +86,7 @@
   id: JetpackBlue
   parent: BaseJetpack
   name: jetpack
-  suffix: Empty
+  suffix: Empty, Blue # TheDen
   components:
   - type: Sprite
     sprite: Objects/Tanks/Jetpacks/blue.rsi
@@ -100,7 +100,7 @@
   id: JetpackBlueFilled
   parent: JetpackBlue
   name: jetpack
-  suffix: Filled
+  suffix: Filled, Blue # TheDen
   components:
   - type: GasTank
     outputPressure: 42.6
@@ -117,7 +117,7 @@
   id: JetpackBlack
   parent: BaseJetpack
   name: jetpack
-  suffix: Empty
+  suffix: Empty, Black # TheDen
   components:
   - type: Item
     sprite: Objects/Tanks/Jetpacks/black.rsi
@@ -133,7 +133,7 @@
   id: JetpackBlackFilled
   parent: JetpackBlack
   name: jetpack
-  suffix: Filled
+  suffix: Filled, Black # TheDen
   components:
   - type: GasTank
     outputPressure: 42.6

@@ -100,6 +100,7 @@
 - type: entity
   parent: BaseComputer
   id: BaseComputerAiAccess
+  suffix: AI Access # TheDen
   components:
   - type: StationAiWhitelist
   - type: Wires

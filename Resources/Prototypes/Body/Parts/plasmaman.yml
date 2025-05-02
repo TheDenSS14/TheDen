@@ -21,6 +21,7 @@
   id: TorsoPlasmaman
   name: plasmaman torso
   parent: [PartPlasmaman, BaseTorso]
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
   - type: Sprite
     state: torso_m
@@ -36,6 +37,7 @@
   id: HeadPlasmaman
   name: plasmaman head
   parent: [PartPlasmaman, BaseHead]
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
   - type: Sprite
     state: head_m
@@ -48,6 +50,7 @@
   id: LeftArmPlasmaman
   name: left plasmaman arm
   parent: [PartPlasmaman, BaseLeftArm]
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
   - type: Sprite
     state: l_arm
@@ -58,6 +61,7 @@
   id: RightArmPlasmaman
   name: right plasmaman arm
   parent: [PartPlasmaman, BaseRightArm]
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
   - type: Sprite
     state: r_arm
@@ -68,6 +72,7 @@
   id: LeftHandPlasmaman
   name: left plasmaman hand
   parent: [PartPlasmaman, BaseLeftHand]
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
   - type: Sprite
     state: l_hand
@@ -80,6 +85,7 @@
   id: RightHandPlasmaman
   name: right plasmaman hand
   parent: [PartPlasmaman, BaseRightHand]
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
   - type: Sprite
     state: r_hand
@@ -92,6 +98,7 @@
   id: LeftLegPlasmaman
   name: left plasmaman leg
   parent: [PartPlasmaman, BaseLeftLeg]
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
   - type: Sprite
     state: l_leg
@@ -102,6 +109,7 @@
   id: RightLegPlasmaman
   name: right plasmaman leg
   parent: [PartPlasmaman, BaseRightLeg]
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
   - type: Sprite
     state: r_leg
@@ -112,6 +120,7 @@
   id: LeftFootPlasmaman
   name: left plasmaman foot
   parent: [PartPlasmaman, BaseLeftFoot]
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
   - type: Sprite
     state: l_foot
@@ -124,6 +133,7 @@
   id: RightFootPlasmaman
   name: right plasmaman foot
   parent: [PartPlasmaman, BaseRightFoot]
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
   - type: Sprite
     state: r_foot

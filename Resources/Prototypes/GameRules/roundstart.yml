@@ -179,6 +179,7 @@
 - type: entity
   id: TraitorReinforcement
   parent: Traitor
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
   - type: TraitorRule
     giveUplink: false

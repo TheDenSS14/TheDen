@@ -90,6 +90,9 @@ language-Chittin-description =
 language-Nehina-name = Nēhina
 language-Nehina-description =  A language spoken by the Feroxi, well adapted to speaking under the waters of ocean planets.
 
+language-Rodentian-name = Rodentian
+language-Rodentian-description =  A language mostly consisting of squeaks spoken by Rodentia if all shapes and sizes.
+
 language-Alaseta-name = Alaseta
 language-Alaseta-description =  A horrifying mix of Sol Common and Canilunzt, the language is loosely remembles the structure Sol Common with alot more yapping, snarling, and growling.
 

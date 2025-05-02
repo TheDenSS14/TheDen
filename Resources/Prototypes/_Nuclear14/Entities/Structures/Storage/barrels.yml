@@ -75,6 +75,7 @@
   id: N14BlackBarrel
   name: black barrel
   description: A worn out black barrel. The label is torn off.
+  suffix: N14 # TheDen
   components:
   - type: Sprite
     sprite: _Nuclear14/Structures/Storage/barrels.rsi
@@ -85,6 +86,7 @@
   id: N14BlueBarrel
   name: blue barrel
   description: A blue barrel with a warning sign of. Maybe it contains water?
+  suffix: N14 # TheDen
   components:
   - type: Sprite
     sprite: _Nuclear14/Structures/Storage/barrels.rsi
@@ -95,6 +97,7 @@
   id: N14RedBarrel
   name: red barrel
   description: A red barrel with an explosive warning sign on. Better be careful.
+  suffix: N14 # TheDen
   components:
   - type: Sprite
     sprite: _Nuclear14/Structures/Storage/barrels.rsi
@@ -119,6 +122,7 @@
   id: N14YellowBarrel
   name: yellow barrel
   description: A yellow barrel with a radiation warning sign on. Better be careful.
+  suffix: N14 # TheDen
   components:
   - type: Sprite
     sprite: _Nuclear14/Structures/Storage/barrels.rsi
@@ -131,7 +135,7 @@
 - type: entity
   parent: N14BaseBarrelOpen
   id: N14BlackBarrelOpen
-  suffix: open
+  suffix: N14, Open # TheDen
   name: black barrel
   description: A worn out black barrel. The label is torn off. The lid is off and you can see inside.
   components:
@@ -142,7 +146,7 @@
 - type: entity
   parent: N14BaseBarrelOpen
   id: N14BlueBarrelOpen
-  suffix: open
+  suffix: N14, Open # TheDen
   name: blue barrel
   description: A blue barrel with a warning sign of. The lid is off and you can see inside.
   components:
@@ -153,7 +157,7 @@
 - type: entity
   parent: N14BaseBarrelOpen
   id: N14RedBarrelOpen
-  suffix: open
+  suffix: N14, Open # TheDen
   name: red barrel
   description: A red barrel with an explosive warning sign on. The lid is off and you can see inside.
   components:
@@ -164,7 +168,7 @@
 - type: entity
   parent: N14BaseBarrelOpen
   id: N14YellowBarrelOpen
-  suffix: open
+  suffix: N14, Open # TheDen
   name: yellow barrel
   description: A yellow barrel with a radiation warning sign on. The lid is off and you can see inside but it still makes you twitch.
   components:
@@ -179,7 +183,7 @@
 - type: entity
   parent: N14BlackBarrelOpen
   id: N14BlackBarrelFull
-  suffix: full
+  suffix: N14, Full # TheDen
   description: A worn out black barrel. This one looks full of some dark liquid.
   components:
   - type: Sprite
@@ -190,7 +194,7 @@
 - type: entity
   parent: N14RedBarrelOpen
   id: N14RedBarrelFull
-  suffix: full
+  suffix: N14, Full # TheDen
   description: A red barrel with an explosive warning sign on. It has a golden liquid inside.
   components:
   - type: Sprite
@@ -214,7 +218,7 @@
 - type: entity
   parent: N14YellowBarrelOpen
   id: N14YellowBarrelFull
-  suffix: full
+  suffix: N14, Full # TheDen
   description: A yellow barrel with a radiation warning sign on. You can see the glowing goo bubble.
   components:
   - type: Sprite
@@ -250,6 +254,7 @@
   id: N14BurningBarrel
   name: burnt barrel
   description: This barrel looks like it once contained a fire.
+  suffix: N14 # TheDen
   components:
   - type: Sprite
     sprite: _Nuclear14/Structures/Storage/burningbarrel.rsi

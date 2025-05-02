@@ -29,6 +29,7 @@
   id: PortalRed
   parent: BasePortal
   description: This one looks more like a redspace portal.
+  suffix: Red # TheDen
   components:
   - type: Sprite
     layers:
@@ -42,6 +43,7 @@
 - type: entity
   id: PortalBlue
   parent: BasePortal
+  suffix: Blue # TheDen
   components:
   - type: Sprite
     layers:
@@ -55,6 +57,7 @@
 - type: entity
   id: PortalArtifact
   parent: BasePortal
+  suffix: Artifact # TheDen
   components:
   - type: Sprite
     layers:
@@ -72,6 +75,7 @@
 - type: entity
   id: PortalGatewayBlue
   parent: BasePortal
+  suffix: Gateway, Blue # TheDen
   components:
   - type: Sprite
     noRot: true
@@ -88,6 +92,7 @@
 - type: entity
   id: PortalGatewayOrange
   parent: BasePortal
+  suffix: Gateway, Red # TheDen
   components:
   - type: Sprite
     noRot: true

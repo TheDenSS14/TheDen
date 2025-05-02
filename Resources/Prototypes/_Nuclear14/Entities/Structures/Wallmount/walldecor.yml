@@ -3,6 +3,7 @@
   parent: BaseSign
   id: N14SignBase # for non directional signs otherwise remove snapCardinals: true
   abstract: true
+  suffix: N14 # TheDen
   components:
   - type: WallMount
     arc: 360
@@ -156,6 +157,7 @@
   id: N14WallDecorCalendar1
   name: calendar
   description: A blank calendar for some forgotten year.
+  suffix: Variant # TheDen
   components:
   - type: Sprite
     state: calendar_blank

@@ -2,6 +2,7 @@
   id: Acidifier
   name: acid
   description: Melts you into a puddle of yuck!
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
   - type: Transform
     anchored: True

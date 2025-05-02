@@ -157,7 +157,7 @@
   id: WeaponPistolViperSecurity
   description: A small, easily concealable, but somewhat underpowered gun, produced by a bulk arms manufacturer now defunct for over a century.
                Uses .35 auto ammo. The serial number on the handguard marks this gun as belonging to an NT Security Officer.
-  suffix: Security Loadouts
+  suffix: Security # TheDen
   components:
   - type: GuideHelp
     guides: [ SecurityWeapons ]
@@ -192,7 +192,7 @@
 - type: entity
   id: WeaponPistolViperSecurityNonLethal
   parent: WeaponPistolViperNonLethal
-  suffix: Non-lethal, SecurityLoadouts
+  suffix: Security, Non-lethal # TheDen
   description: A small, easily concealable, but somewhat underpowered gun, produced by a bulk arms manufacturer now defunct for over a century.
                Uses .35 auto ammo. The serial number on the handguard marks this gun as belonging to an NT Security Officer.
   components:
@@ -323,7 +323,7 @@
   id: WeaponPistolMk58Security
   description: A cheap, ubiquitous sidearm, produced by a NanoTrasen subsidiary. Uses .35 auto ammo.
                The serial number on the handguard marks this gun as belonging to an NT Security Officer.
-  suffix: Security Loadouts
+  suffix: Security # TheDen
   components:
   - type: GuideHelp
     guides: [ SecurityWeapons ]
@@ -357,7 +357,7 @@
 - type: entity
   id: WeaponPistolMk58SecurityNonlethal
   parent: WeaponPistolMk58Nonlethal
-  suffix: Non-lethal, Security Loadouts
+  suffix: Security, Non-lethal # TheDen
   description: A cheap, ubiquitous sidearm, produced by a NanoTrasen subsidiary. Uses .35 auto ammo.
                The serial number on the handguard marks this gun as belonging to an NT Security Officer.
   components:
@@ -438,7 +438,7 @@
   id: WeaponPistolN1984Security # the spaces in description are for formatting.
   description: The sidearm of any self respecting officer.     Comes in .45 magnum, the lord's caliber.
                The serial number on the handguard marks this gun as belonging to an NT Security Officer.
-  suffix: Security Loadouts
+  suffix: Security # TheDen
   components:
   - type: GuideHelp
     guides: [ SecurityWeapons ]
@@ -476,7 +476,7 @@
   id: WeaponPistolN1984SecurityNonLethal
   description: The sidearm of any self respecting officer.     Comes in .45 magnum, the lord's caliber.
                The serial number on the handguard marks this gun as belonging to an NT Security Officer.
-  suffix: Security Loadouts
+  suffix: Security, Non-lethal # TheDen
   components:
   - type: GuideHelp
     guides: [ SecurityWeapons ]

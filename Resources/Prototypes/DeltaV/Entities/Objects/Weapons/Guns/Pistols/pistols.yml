@@ -39,6 +39,7 @@
   id: WeaponPistolViperWoodSecurity
   description: A small, low-power pistol with pleasant lacquered wooden grips. Uses .35 auto ammo.
                The serial number on the handguard marks this gun as belonging to an NT Security Officer.
+  suffix: Wood, Security # TheDen
   components:
   - type: GuideHelp
     guides: [ SecurityWeapons ]
@@ -48,7 +49,7 @@
   parent: BaseWeaponPistol
   id: WeaponPistolPollock
   description: A compact and mass-produced combat pistol. Uses .35 auto ammo.
-  suffix: Mercenary
+# suffix: Mercenary # TheDen - Uneccessary suffix
   components:
   - type: Sprite
     sprite: DeltaV/Objects/Weapons/Guns/Pistols/pollock.rsi
@@ -88,6 +89,7 @@
   id: WeaponPistolPollockSecurity
   description: A compact and mass-produced combat pistol. Uses .35 auto ammo.
                The serial number on the handguard marks this gun as belonging to an NT Security Officer.
+  suffix: Security # TheDen
   components:
   - type: GuideHelp
     guides: [ SecurityWeapons ]
@@ -96,6 +98,7 @@
   name: Pollock
   parent: WeaponPistolPollockSecurity
   id: WeaponPistolPollockNonlethalSecurity
+  suffix: Security, Non-lethal # TheDen
   components:
   - type: ItemSlots
     slots:
@@ -165,7 +168,7 @@
   components:
   - type: BallisticAmmoProvider
     whitelist:
-      tags: 
+      tags:
       - CartridgeMusket
     capacity: 1
     proto: CartridgeMusket

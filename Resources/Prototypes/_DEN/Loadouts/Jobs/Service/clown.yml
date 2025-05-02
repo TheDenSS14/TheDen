@@ -1,0 +1,10 @@
+- type: loadout
+  id: LoadoutTowelYellow
+  category:  JobsServiceClown
+  cost: 1
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - Clown
+  items:
+    - TowelColorYellow

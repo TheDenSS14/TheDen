@@ -8,6 +8,7 @@
   id: N14WallmountVent
   name: vent
   description: An airvent. Could be a good stash.
+  suffix: N14 # TheDen
   components:
   - type: WallMount
     arc: 360
@@ -23,7 +24,7 @@
 - type: entity
   parent: N14WallmountVent
   id: N14WallmountVentDamaged
-  suffix: damaged
+  suffix: N14, Damaged # TheDen
   components:
   - type: Sprite
     sprite: _Nuclear14/Structures/Storage/storage.rsi
@@ -32,7 +33,7 @@
 - type: entity
   parent: N14WallmountVent
   id: N14WallmountVentOpen
-  suffix: open
+  suffix: N14, Open # TheDen
   components:
   - type: Sprite
     sprite: _Nuclear14/Structures/Storage/storage.rsi

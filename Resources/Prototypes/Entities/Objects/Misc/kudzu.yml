@@ -303,6 +303,7 @@
   name: Shadowkin Haze
   id: ShadowkinShadow
   parent: ShadowKudzuWeak
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
     - type: RandomSpawner
       deleteSpawnerAfterSpawn: false

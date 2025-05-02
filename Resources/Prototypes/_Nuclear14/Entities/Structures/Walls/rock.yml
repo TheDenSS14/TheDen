@@ -5,6 +5,7 @@
   parent: BaseWall
   name: asteroid rock
   description: A rocky asteroid.
+  suffix: N14 # TheDen
   components:
   - type: Transform
     noRot: true
@@ -49,7 +50,7 @@
   id: N14RockGreyCoal
   parent: N14RockGrey
   description: An ore vein rich with coal.
-  suffix: Coal
+  suffix: N14, Coal # TheDen
   components:
     - type: OreVein
       oreChance: 1.0
@@ -71,7 +72,7 @@
   id: N14RockGreyGold
   parent: N14RockGrey
   description: An ore vein rich with gold.
-  suffix: Gold
+  suffix: N14, Gold # TheDen
   components:
     - type: OreVein
       oreChance: 1.0
@@ -93,7 +94,7 @@
   id: N14RockGreySilver
   parent: N14RockGrey
   description: An ore vein rich with silver.
-  suffix: Silver
+  suffix: N14, Silver # TheDen
   components:
     - type: OreVein
       oreChance: 1.0
@@ -115,7 +116,7 @@
   id: N14RockGreySteel
   parent: N14RockGrey
   description: An ore vein rich with Steel.
-  suffix: Steel
+  suffix: N14, Steel # TheDen
   components:
     - type: OreVein
       oreChance: 1.0
@@ -137,7 +138,7 @@
   id: N14RockGreyUranium
   parent: N14RockGrey
   description: An ore vein rich with uranium.
-  suffix: Uranium
+  suffix: N14, Uranium # TheDen
   components:
     - type: OreVein
       oreChance: 1.0
@@ -159,7 +160,7 @@
   id: N14RockGreyMining
   parent: N14RockGrey
   name: ore vein
-  suffix: higher ore yield .44
+  suffix: N14, higher ore yield .44 # TheDen
   description: An asteroid.
   components:
   - type: OreVein
@@ -206,7 +207,7 @@
   id: N14RockGreySalt
   parent: N14RockGrey
   description: An ore vein rich with salt.
-  suffix: Salt
+  suffix: N14, Salt # TheDen
   components:
     - type: OreVein
       oreChance: 1.0
@@ -228,7 +229,7 @@
   id: N14RockMining
   parent: SteelRock
   name: ore evin
-  suffix: higher ore yield
+  suffix: N14, higher ore yield # TheDen
   description: An asteroid.
   components:
   - type: OreVein
@@ -241,7 +242,7 @@
   id: N14WallRock
   parent: BaseWall
   name: rock
-  suffix: planetmap
+  suffix: N14, planetmap # TheDen
   components:
     - type: Transform
       noRot: true
@@ -286,7 +287,7 @@
   id: N14WallRockCoal
   parent: N14WallRock
   description: An ore vein rich with coal.
-  suffix: Coal
+  suffix: N14, Coal # TheDen
   components:
     - type: OreVein
       oreChance: 1.0
@@ -308,7 +309,7 @@
   id: N14WallRockGold
   parent: N14WallRock
   description: An ore vein rich with gold.
-  suffix: Gold
+  suffix: N14, Gold # TheDen
   components:
     - type: OreVein
       oreChance: 1.0
@@ -330,7 +331,7 @@
   id: N14WallRockSilver
   parent: N14WallRock
   description: An ore vein rich with silver.
-  suffix: Silver
+  suffix: N14, Silver # TheDen
   components:
     - type: OreVein
       oreChance: 1.0
@@ -374,7 +375,7 @@
   id: N14WallRockUranium
   parent: N14WallRock
   description: An ore vein rich with uranium.
-  suffix: Uranium
+  suffix: N14, Uranium # TheDen
   components:
     - type: OreVein
       oreChance: 1.0
@@ -396,7 +397,7 @@
   id: N14WallRockSalt
   parent: N14WallRock
   description: An ore vein rich with salt.
-  suffix: Salt
+  suffix: N14, Salt # TheDen
   components:
     - type: OreVein
       oreChance: 1.0
@@ -419,6 +420,7 @@
   id: N14WallRockBasalt
   name: basalt
   parent: N14WallRock
+  suffix: N14, Planetmap # TheDen
   components:
     - type: Icon
       sprite: Structures/Walls/rock.rsi
@@ -440,7 +442,7 @@
   id: N14WallRockBasaltCoal
   parent: N14WallRockBasalt
   description: An ore vein rich with coal.
-  suffix: Coal
+  suffix: N14, Coal # TheDen
   components:
     - type: OreVein
       oreChance: 1.0
@@ -462,7 +464,7 @@
   id: N14WallRockBasaltGold
   parent: N14WallRockBasalt
   description: An ore vein rich with gold.
-  suffix: Gold
+  suffix: N14, Gold # TheDen
   components:
     - type: OreVein
       oreChance: 1.0
@@ -484,7 +486,7 @@
   id: N14WallRockBasaltSilver
   parent: N14WallRockBasalt
   description: An ore vein rich with silver.
-  suffix: Silver
+  suffix: N14, Silver # TheDen
   components:
     - type: OreVein
       oreChance: 1.0
@@ -506,7 +508,7 @@
   id: N14WallRockBasaltSteel
   parent: N14WallRockBasalt
   description: An ore vein rich with Steel.
-  suffix: Steel
+  suffix: N14, Steel # TheDen
   components:
     - type: OreVein
       oreChance: 1.0
@@ -528,7 +530,7 @@
   id: N14WallRockBasaltUranium
   parent: N14WallRockBasalt
   description: An ore vein rich with uranium.
-  suffix: Uranium
+  suffix: N14, Uranium # TheDen
   components:
     - type: OreVein
       oreChance: 1.0
@@ -550,7 +552,7 @@
   id: N14WallRockBasaltSalt
   parent: N14WallRockBasalt
   description: An ore vein rich with salt.
-  suffix: Salt
+  suffix: N14, Salt # TheDen
   components:
     - type: OreVein
       oreChance: 1.0
@@ -573,6 +575,7 @@
   id: N14WallRockSand
   name: sandstone
   parent: N14WallRock
+  suffix: N14, Planetmap # TheDen
   components:
     - type: Icon
       sprite: Structures/Walls/rock.rsi
@@ -594,7 +597,7 @@
   id: N14WallRockSandCoal
   parent: N14WallRockSand
   description: An ore vein rich with coal.
-  suffix: Coal
+  suffix: N14, Coal # TheDen
   components:
     - type: OreVein
       oreChance: 1.0
@@ -616,7 +619,7 @@
   id: N14WallRockSandGold
   parent: N14WallRockSand
   description: An ore vein rich with gold.
-  suffix: Gold
+  suffix: N14, Gold # TheDen
   components:
     - type: OreVein
       oreChance: 1.0
@@ -638,7 +641,7 @@
   id: N14WallRockSandSilver
   parent: N14WallRockSand
   description: An ore vein rich with silver.
-  suffix: Silver
+  suffix: N14, Silver # TheDen
   components:
     - type: OreVein
       oreChance: 1.0
@@ -682,7 +685,7 @@
   id: N14WallRockSandUranium
   parent: N14WallRockSand
   description: An ore vein rich with uranium.
-  suffix: Uranium
+  suffix: N14, Uranium # TheDen
   components:
     - type: OreVein
       oreChance: 1.0
@@ -704,7 +707,7 @@
   id: N14WallRockSandSalt
   parent: N14WallRockSand
   description: An ore vein rich with salt.
-  suffix: Salt
+  suffix: N14, Salt # TheDen
   components:
     - type: OreVein
       oreChance: 1.0
@@ -727,6 +730,7 @@
   id: N14WallRockAndesite
   name: andesite
   parent: N14WallRock
+  suffix: N14, Planetmap # TheDen
   components:
     - type: Icon
       sprite: Structures/Walls/rock.rsi
@@ -748,7 +752,7 @@
   id: N14WallRockAndesiteCoal
   parent: N14WallRockAndesite
   description: An ore vein rich with coal.
-  suffix: Coal
+  suffix: N14, Coal # TheDen
   components:
     - type: OreVein
       oreChance: 1.0
@@ -770,7 +774,7 @@
   id: N14WallRockAndesiteGold
   parent: N14WallRockAndesite
   description: An ore vein rich with gold.
-  suffix: Gold
+  suffix: N14, Gold # TheDen
   components:
     - type: OreVein
       oreChance: 1.0
@@ -792,7 +796,7 @@
   id: N14WallRockAndesiteSilver
   parent: N14WallRockAndesite
   description: An ore vein rich with silver.
-  suffix: Silver
+  suffix: N14, Silver # TheDen
   components:
     - type: OreVein
       oreChance: 1.0
@@ -814,7 +818,7 @@
   id: N14WallRockAndesiteSteel
   parent: N14WallRockAndesite
   description: An ore vein rich with Steel.
-  suffix: Steel
+  suffix: N14, Steel # TheDen
   components:
     - type: OreVein
       oreChance: 1.0
@@ -836,7 +840,7 @@
   id: N14WallRockAndesiteUranium
   parent: N14WallRockAndesite
   description: An ore vein rich with uranium.
-  suffix: Uranium
+  suffix: N14, Uranium # TheDen
   components:
     - type: OreVein
       oreChance: 1.0
@@ -858,7 +862,7 @@
   id: N14WallRockAndesiteSalt
   parent: N14WallRockAndesite
   description: An ore vein rich with salt.
-  suffix: Salt
+  suffix: N14, Salt # TheDen
   components:
     - type: OreVein
       oreChance: 1.0

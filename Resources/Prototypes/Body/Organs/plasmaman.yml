@@ -32,6 +32,7 @@
   parent: [ BasePlasmamanOrgan, OrganHumanLungs ]
   name: plasmaman lungs
   description: The lungs yearn for the plasma. Only plasma gas can satiate these lungs, and oxygen is lethally toxic.
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
   - type: Sprite
     layers:
@@ -62,6 +63,7 @@
   parent: [ BasePlasmamanOrgan, OrganHumanStomach ]
   name: plasmaman stomach
   description: Why do plasmamen have stomachs if they don't need to eat?
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
   - type: Metabolizer
     metabolizerTypes: [ Plasmaman ]
@@ -90,6 +92,7 @@
   id: OrganPlasmamanEyes
   parent: [ BasePlasmamanOrgan, OrganHumanEyes ]
   name: plasmaman eyes
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
   - type: Sprite
     layers:
@@ -99,6 +102,7 @@
   id: OrganPlasmamanLiver
   parent: [ BasePlasmamanOrgan, OrganHumanLiver ]
   name: plasmaman liver
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
   - type: Metabolizer
     metabolizerTypes: [ Plasmaman ]
@@ -107,11 +111,13 @@
   id: OrganPlasmamanTongue
   parent: [ BasePlasmamanOrgan, OrganHumanTongue ]
   name: plasmaman tongue
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
 
 - type: entity
   id: OrganPlasmamanKidneys
   parent: [ BasePlasmamanOrgan, OrganHumanKidneys ]
   name: plasmaman kidneys
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
   - type: Sprite
     layers:
@@ -124,6 +130,7 @@
   parent: [ BasePlasmamanOrgan, OrganHumanHeart ]
   name: plasmaman heart
   description: It pulses with plasma even outside the body.
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
   - type: Metabolizer
     metabolizerTypes: [ Plasmaman ]
@@ -132,6 +139,7 @@
   id: OrganPlasmamanBrain
   parent: [ BasePlasmamanOrgan, OrganHumanBrain ]
   name: plasmaman brain
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
   - type: SolutionContainerManager
     solutions:

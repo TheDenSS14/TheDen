@@ -29,6 +29,7 @@ public sealed class FootPrintsSystem : EntitySystem
     private EntityQuery<AppearanceComponent> _appearanceQuery;
     private EntityQuery<StandingStateComponent> _standingStateQuery;
 
+    private HashSet<EntityUid> _deletionQueue = [];
     public override void Initialize()
     {
         base.Initialize();
@@ -39,6 +40,7 @@ public sealed class FootPrintsSystem : EntitySystem
         SubscribeLocalEvent<FootPrintsComponent, ComponentStartup>(OnStartupComponent);
         SubscribeLocalEvent<FootPrintsComponent, MoveEvent>(OnMove);
         SubscribeLocalEvent<FootPrintComponent, ComponentGetState>(OnGetState);
+        SubscribeLocalEvent<FootPrintComponent, SolutionContainerChangedEvent>(OnSolutionUpdate);
     }
 
     private void OnGetState(Entity<FootPrintComponent> ent, ref ComponentGetState args)
@@ -136,5 +138,31 @@ public sealed class FootPrintsSystem : EntitySystem
             state = FootPrintVisuals.Dragging;
 
         return state;
+    }
+
+    public override void Update(float frameTime)
+    {
+        base.Update(frameTime);
+
+        foreach (var ent in _deletionQueue)
+        {
+            Del(ent);
+        }
+
+        _deletionQueue.Clear();
+    }
+
+    private void OnSolutionUpdate(EntityUid uid, FootPrintComponent comp, ref SolutionContainerChangedEvent args)
+    {
+        if (args.SolutionId != comp.SolutionName)
+            return;
+
+        if (args.Solution.Volume <= 0)
+        {
+            _deletionQueue.Add(uid);
+            return;
+        }
+
+        _deletionQueue.Remove(uid);
     }
 }

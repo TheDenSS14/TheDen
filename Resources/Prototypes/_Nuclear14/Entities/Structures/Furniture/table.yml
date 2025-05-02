@@ -73,6 +73,7 @@
   id: N14TableDeskSchool
   name: end table
   description: A wooden end table.
+  suffix: School # TheDen
   components:
   - type: Sprite
     sprite: _Nuclear14/Structures/Furniture/Tables/tables.rsi
@@ -94,6 +95,7 @@
   id: N14TableWoodEnd
   name: end table
   description: A wooden end table.
+  suffix: "" # TheDen
   components:
   - type: Sprite
     sprite: _Nuclear14/Structures/Furniture/Tables/tables.rsi
@@ -115,6 +117,7 @@
   id: N14TableWoodRound
   name: wooden table
   description: A wooden round table.
+  suffix: Round # TheDen
   components:
   - type: Sprite
     sprite: _Nuclear14/Structures/Furniture/Tables/tables.rsi
@@ -125,6 +128,7 @@
   id: N14TableWoodSquare
   name: wooden table
   description: A wooden square table.
+  suffix: Square # TheDen
   components:
   - type: Sprite
     sprite: _Nuclear14/Structures/Furniture/Tables/tables.rsi
@@ -146,6 +150,7 @@
   id: N14TableWoodLow
   name: wooden table
   description: A low wooden square table.
+  suffix: Low # TheDen
   components:
   - type: Sprite
     sprite: _Nuclear14/Structures/Furniture/Tables/tables.rsi
@@ -154,6 +159,7 @@
 - type: entity
   parent: N14TableWoodSquare
   id: N14TableWoodStand
+  suffix: Stand # TheDen
   components:
   - type: Sprite
     sprite: _Nuclear14/Structures/Furniture/Tables/tables.rsi
@@ -223,6 +229,7 @@
 - type: entity
   parent: N14FreeTableBase
   id: N14TableDeskMetalSmall
+  suffix: Small Desk # TheDen
   components:
   - type: Sprite
     sprite: _Nuclear14/Structures/Furniture/64x64_furniture.rsi
@@ -233,6 +240,7 @@
   id: N14TableDeskWood
   name: wooden desk
   description: A wooden desk for working at.
+  suffix: "" # TheDen
   components:
   - type: Sprite
     sprite: _Nuclear14/Structures/Furniture/Tables/desks.rsi
@@ -293,6 +301,7 @@
   id: N14TableWoodenOvalWide
   name: wooden table
   description: An oval table made from wood.
+  suffix: Oval, Wide # TheDen
   components:
   - type: Sprite
     sprite: _Nuclear14/Structures/Furniture/64x64_furniture.rsi
@@ -303,6 +312,7 @@
   id: N14TableWoodenSquareWide
   name: wooden table
   description: A wide square table made from wood.
+  suffix: Square, Wide # TheDen
   components:
   - type: Sprite
     sprite: _Nuclear14/Structures/Furniture/64x64_furniture.rsi
@@ -313,6 +323,7 @@
   id: N14TableMetalWide
   name: metal table
   description: A wide metal table.
+  suffix: Wide # TheDen
   components:
   - type: Sprite
     sprite: _Nuclear14/Structures/Furniture/64x64_furniture.rsi
@@ -409,6 +420,7 @@
   id: N14TableCounterMetal
   name: metal counter
   description: A cold, hard metal counter.
+  suffix: Variant # TheDen
   components:
   - type: Sprite
     sprite: _Nuclear14/Structures/Furniture/Tables/counters.rsi
@@ -472,6 +484,7 @@
   parent: Table
   name: wooden table
   description: A wooden table used by settlers.
+  suffix: Settler # TheDen
   components:
   - type: Sprite
     sprite: _Nuclear14/Structures/Furniture/Tables/table_settler.rsi

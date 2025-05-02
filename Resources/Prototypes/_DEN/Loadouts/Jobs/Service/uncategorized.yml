@@ -1,0 +1,10 @@
+- type: loadout
+  id: LoadoutTowelGreen
+  category: JobsServiceAUncategorized
+  cost: 1
+  requirements:
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Civilian
+  items:
+    - TowelColorGreen
