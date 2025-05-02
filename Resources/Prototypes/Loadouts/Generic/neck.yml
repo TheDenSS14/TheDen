@@ -21,6 +21,17 @@
       group: LoadoutNeck2
 
 - type: loadout
+  id: LoadoutNeckCowBellCollar
+  category: Neck
+  cost: 1
+  exclusive: true
+  items:
+    - ClothingNeckCowBellCollar
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutNeck2
+
+- type: loadout
   id: LoadoutNeckOldMantle
   category: Neck
   cost: 0
