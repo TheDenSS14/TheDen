@@ -1,7 +1,7 @@
 - type: entity
   id: N14Torch
   name: torch
-  suffix: floor
+  suffix: N14, Floor # TheDen
   description: A flaming torch for lighting an area.
   placement:
     mode: SnapgridCenter
@@ -63,7 +63,7 @@
 - type: entity
   parent: N14Torch
   id: N14TorchWall
-  suffix: wall
+  suffix: N14, Wall # TheDen
   components:
   - type: Sprite
     noRot: false

@@ -181,6 +181,7 @@
   parent: SimpleMobBase
   id: MobChicken
   description: Comes before an egg, and IS a dinosaur!
+  suffix: Black # TheDen
   components:
   - type: Sprite
     drawdepth: Mobs
@@ -266,6 +267,7 @@
 - type: entity
   parent: MobChicken
   id: MobChicken1
+  suffix: Brown # TheDen
   components:
   - type: Sprite
     layers:
@@ -291,6 +293,7 @@
 - type: entity
   parent: MobChicken
   id: MobChicken2
+  suffix: White # TheDen
   components:
   - type: Sprite
     layers:
@@ -415,6 +418,7 @@
 - type: entity
   parent: MobCockroach
   id: MobCockroachPet
+  suffix: Pet # TheDen
   components:
   - type: HTN
     rootTask:
@@ -606,6 +610,7 @@
 - type: entity
   parent: MobMothroach
   id: MobMothroachPet
+  suffix: Pet # TheDen
   components:
   - type: HTN
     rootTask:
@@ -1654,6 +1659,7 @@
   parent: SimpleMobBase
   id: MobMouse
   description: Squeak!
+  suffix: White # TheDen
   components:
   - type: Body
     prototype: Mouse
@@ -1834,6 +1840,7 @@
 - type: entity
   parent: MobMouse
   id: MobMousePet
+  suffix: Pet # TheDen
   components:
   - type: HTN
     rootTask:
@@ -1876,6 +1883,7 @@
 - type: entity
   parent: MobMouse
   id: MobMouse1
+  suffix: Brown # TheDen
   components:
   - type: Sprite
     layers:
@@ -1905,6 +1913,7 @@
 - type: entity
   parent: MobMouse
   id: MobMouse2
+  suffix: Grey # TheDen
   components:
   - type: Sprite
     layers:
@@ -2563,6 +2572,7 @@
   - MobGiantSpider
   - MobSpiderAngryBase
   id: MobGiantSpiderAngry
+  suffix: Angry # TheDen
 
 - type: entity
   name: clown spider
@@ -3582,6 +3592,7 @@
 - type: entity
   parent: MobHamster
   id: MobHamsterPet
+  suffix: Pet # TheDen
   components:
   - type: HTN
     rootTask:

@@ -450,6 +450,7 @@
   id: PosterContrabandRobustSoftdrinks
   name: "Robust Softdrinks"
   description: "Robust Softdrinks: More robust than a toolbox to the head!"
+  suffix: Poster # TheDen
   components:
   - type: Sprite
     state: poster37_contraband
@@ -665,6 +666,7 @@
   id: PosterContrabandEnlistGorlex
   name: "Enlist"
   description: "Enlist with the Gorlex Marauders today! See the galaxy, kill corpos, get paid!"
+  suffix: Gorlex # TheDen
   components:
     - type: Sprite
       state: poster60_contraband
@@ -1026,6 +1028,7 @@
   id: PosterLegitEnlist
   name: "Enlist"
   description: "Enlist in the NanoTrasen ERT reserves today!" # DeltaV - expunged blatant reference to Division of Asset Protection death squads
+  suffix: ERT # TheDen
   components:
   - type: Sprite
     state: poster29_legit

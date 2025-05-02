@@ -466,12 +466,19 @@ namespace Content.Shared.Movement.Systems
             }
             // Delta V NoShoesSilentFootsteps till here.
 
+            // Den changes to create shoes (but but not shoes) slightly reorganized
             if (_inventory.TryGetSlotEntity(uid, "shoes", out var shoes) &&
-                TryComp<FootstepModifierComponent>(shoes, out var modifier))
+                TryComp<NaturalFootstepSoundsComponent>(shoes, out var _))
+            {
+                return false;
+            }
+
+            if (TryComp<FootstepModifierComponent>(shoes, out var modifier))
             {
                 sound = modifier.FootstepSoundCollection;
                 return true;
             }
+            // End of den changes
 
             return TryGetFootstepSound(uid, xform, shoes != null, out sound, tileDef: tileDef);
         }

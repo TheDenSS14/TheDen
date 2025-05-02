@@ -18,6 +18,7 @@
   id: TorsoMoth
   name: "moth torso"
   parent: [PartMoth, BaseTorso]
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
   - type: Sprite
     sprite: Mobs/Species/Moth/parts.rsi
@@ -35,6 +36,7 @@
   id: HeadMoth
   name: "moth head"
   parent: [PartMoth, BaseHead]
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
   - type: Sprite
     sprite: Mobs/Species/Moth/parts.rsi
@@ -51,6 +53,7 @@
   id: LeftArmMoth
   name: "left moth arm"
   parent: [PartMoth, BaseLeftArm]
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
   - type: Sprite
     sprite: Mobs/Species/Moth/parts.rsi
@@ -60,6 +63,7 @@
   id: RightArmMoth
   name: "right moth arm"
   parent: [PartMoth, BaseRightArm]
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
   - type: Sprite
     sprite: Mobs/Species/Moth/parts.rsi
@@ -69,6 +73,7 @@
   id: LeftHandMoth
   name: "left moth hand"
   parent: [PartMoth, BaseLeftHand]
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
   - type: Sprite
     sprite: Mobs/Species/Moth/parts.rsi
@@ -78,6 +83,7 @@
   id: RightHandMoth
   name: "right moth hand"
   parent: [PartMoth, BaseRightHand]
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
   - type: Sprite
     sprite: Mobs/Species/Moth/parts.rsi
@@ -87,6 +93,7 @@
   id: LeftLegMoth
   name: "left moth leg"
   parent: [PartMoth, BaseLeftLeg]
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
   - type: Sprite
     sprite: Mobs/Species/Moth/parts.rsi
@@ -96,6 +103,7 @@
   id: RightLegMoth
   name: "right moth leg"
   parent: [PartMoth, BaseRightLeg]
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
   - type: Sprite
     sprite: Mobs/Species/Moth/parts.rsi
@@ -105,6 +113,7 @@
   id: LeftFootMoth
   name: "left moth foot"
   parent: [PartMoth, BaseLeftFoot]
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
   - type: Sprite
     sprite: Mobs/Species/Moth/parts.rsi
@@ -114,6 +123,7 @@
   id: RightFootMoth
   name: "right moth foot"
   parent: [PartMoth, BaseRightFoot]
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
   - type: Sprite
     sprite: Mobs/Species/Moth/parts.rsi

@@ -98,6 +98,7 @@
   parent: ClosetSteelBase
   name: level 3 biohazard gear closet
   description: It's a storage unit for level 3 biohazard gear.
+  suffix: Generic # TheDen
   components:
   - type: Appearance
   - type: EntityStorageVisuals
@@ -109,6 +110,7 @@
 - type: entity
   id: ClosetL3Virology
   parent: ClosetL3
+  suffix: Virology # TheDen
   components:
   - type: Appearance
   - type: EntityStorageVisuals
@@ -120,6 +122,7 @@
 - type: entity
   id: ClosetL3Security
   parent: ClosetL3
+  suffix: Security # TheDen
   components:
   - type: Appearance
   - type: EntityStorageVisuals
@@ -131,6 +134,7 @@
 - type: entity
   id: ClosetL3Janitor
   parent: ClosetL3
+  suffix: Janitor # TheDen
   components:
   - type: Appearance
   - type: EntityStorageVisuals

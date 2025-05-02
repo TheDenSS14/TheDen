@@ -20,6 +20,7 @@
   id: TorsoChitinid
   name: "chitinid torso"
   parent: [PartChitinidBase, BaseTorso]
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
   - type: Sprite
     state: "torso_m"
@@ -36,6 +37,7 @@
   id: HeadChitinid
   name: "chitinid head"
   parent: [PartChitinidBase, BaseHead]
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
   - type: Sprite
     state: "head_m"
@@ -51,6 +53,7 @@
   id: LeftArmChitinid
   name: "left chitinid arm"
   parent: [PartChitinidBase, BaseLeftArm]
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
   - type: Sprite
     state: "l_arm"
@@ -59,6 +62,7 @@
   id: RightArmChitinid
   name: "right chitinid arm"
   parent: [PartChitinidBase, BaseRightArm]
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
   - type: Sprite
     state: "r_arm"
@@ -67,6 +71,7 @@
   id: LeftHandChitinid
   name: "left chitinid hand"
   parent: [PartChitinidBase, BaseLeftHand]
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
   - type: Sprite
     state: "l_hand"
@@ -75,6 +80,7 @@
   id: RightHandChitinid
   name: "right chitinid hand"
   parent: [PartChitinidBase, BaseRightHand]
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
   - type: Sprite
     state: "r_hand"
@@ -83,6 +89,7 @@
   id: LeftLegChitinid
   name: "left chitinid leg"
   parent: [PartChitinidBase, BaseLeftLeg]
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
   - type: Sprite
     state: "l_leg"
@@ -91,6 +98,7 @@
   id: RightLegChitinid
   name: "right chitinid leg"
   parent: [PartChitinidBase, BaseRightLeg]
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
   - type: Sprite
     state: "r_leg"
@@ -99,6 +107,7 @@
   id: LeftFootChitinid
   name: "left chitinid foot"
   parent: [PartChitinidBase, BaseLeftFoot]
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
   - type: Sprite
     state: "l_foot"
@@ -107,6 +116,7 @@
   id: RightFootChitinid
   name: "right chitinid foot"
   parent: [PartChitinidBase, BaseRightFoot]
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
   - type: Sprite
     state: "r_foot"

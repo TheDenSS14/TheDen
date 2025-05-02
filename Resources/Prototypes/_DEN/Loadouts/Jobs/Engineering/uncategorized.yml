@@ -1,0 +1,10 @@
+- type: loadout
+  id: LoadoutTowelOrange
+  category: JobsEngineeringAAUncategorized
+  cost: 1
+  requirements:
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Engineering
+  items:
+    - TowelColorOrange

@@ -1,0 +1,16 @@
+- type: entity
+  parent: ClothingShoesBase
+  id: ClothingShoesFootProtectors
+  name: foot protectors
+  description: A pair of protectors, for your feed! Allows you to walk around (basically) barefoot, and not accidentally step on something!
+  components:
+  - type: Item
+    size: Small
+  - type: Sprite
+    sprite: _DEN/Clothing/Shoes/Misc/foot_protectors.rsi
+  - type: Clothing
+    sprite: _DEN/Clothing/Shoes/Misc/foot_protectors.rsi
+  - type: Tag
+    tags:
+    - WhitelistChameleon
+  - type: NaturalFootstepSounds

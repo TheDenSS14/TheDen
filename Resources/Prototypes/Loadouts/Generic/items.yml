@@ -570,7 +570,7 @@
        inverted: true
        jobs:
          - Clown
-         - Mime 
+         - Mime
 
 - type: loadout
   id: LoadoutItemBoxSurvivalEngineering
@@ -899,6 +899,13 @@
   cost: 0 # It shouldnt cost points to be able to function.
   items:
     - WhiteCane
+
+- type: loadout
+  id: LoadoutItemCaneWalking
+  category: GeneralItems
+  cost: 0 # It shouldnt cost points to be able to function.
+  items:
+    - Cane
 
 # Pets
 - type: loadout

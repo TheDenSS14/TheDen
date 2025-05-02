@@ -149,6 +149,7 @@
   id: TreasureCoinIron
   name: coin
   description: A flat bit of metal. If it was still in circulation, inflation would've made it worthless. Since it isn't, it's worth enough to keep in a book.
+  suffix: Iron # TheDen
   components:
   - type: Sprite
     sprite: Objects/Misc/coins.rsi
@@ -164,6 +165,7 @@
 - type: entity
   parent: TreasureCoinIron
   id: TreasureCoinSilver
+  suffix: Silver # TheDen
   components:
   - type: Sprite
     state: coin_silver
@@ -177,6 +179,7 @@
 - type: entity
   parent: TreasureCoinIron
   id: TreasureCoinGold
+  suffix: Gold # TheDen
   components:
   - type: Sprite
     state: coin_gold
@@ -190,6 +193,7 @@
 - type: entity
   parent: TreasureCoinIron
   id: TreasureCoinAdamantine
+  suffix: Adamantine # TheDen
   components:
   - type: Sprite
     state: coin_adamantine
@@ -203,6 +207,7 @@
 - type: entity
   parent: TreasureCoinIron
   id: TreasureCoinDiamond
+  suffix: Diamond # TheDen
   components:
   - type: Sprite
     state: coin_diamond

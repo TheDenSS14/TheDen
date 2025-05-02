@@ -158,6 +158,7 @@
   parent: BaseWallIndestructible
   id: N14WallBrickAltSlantedIndestructible
   name: brick wall
+  suffix: Alt, Indestructible # TheDen
   components:
   - type: Sprite
     sprite: _Nuclear14/Structures/Walls/ms13/slanted/brickalt.rsi
@@ -171,12 +172,13 @@
   parent: [ N14WallBrickAltSlantedIndestructible, N14BaseWallSlanted ]
   id: N14WallBrickAltSlanted
   name: brick wall
-  suffix: slanted
-    
+  suffix: Alt, Slanted # TheDen
+
 - type: entity
   parent: BaseWallIndestructible
   id: N14WallBrickGraySlantedIndestructible
   name: brick wall
+  suffix: Grey, Indestructible # TheDen
   components:
   - type: Sprite
     sprite: _Nuclear14/Structures/Walls/ms13/slanted/brickgray.rsi
@@ -190,7 +192,7 @@
   parent: [ N14WallBrickGraySlantedIndestructible, N14BaseWallSlanted ]
   id: N14WallBrickGraySlanted
   name: brick wall
-  suffix: slanted
+  suffix: Grey, Slanted # TheDen
 
 - type: entity
   parent: BaseWallIndestructible
@@ -209,6 +211,7 @@
   parent: BaseWallIndestructible
   id: N14WallConcreteAltSlantedIndestructible
   name: concrete wall
+  suffix: Alt, Indestructible # TheDen
   components:
   - type: Sprite
     sprite: _Nuclear14/Structures/Walls/ms13/slanted/concretealt.rsi
@@ -479,6 +482,7 @@
   parent: BaseWallIndestructible
   id: N14WallWoodAltSlantedIndestructible
   name: wood wall
+  suffix: Variant, Indestructible # TheDen
   components:
   - type: Sprite
     sprite: _Nuclear14/Structures/Walls/ms13/slanted/woodalt.rsi
@@ -492,7 +496,7 @@
   parent: [ N14WallWoodAltSlantedIndestructible, N14BaseWallSlantedWood ]
   id: N14WallWoodAltSlanted
   name: wood wall
-  suffix: slanted
+  suffix: Variant, Slanted # TheDen
     
 - type: entity
   id: N14WallRebar

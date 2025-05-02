@@ -3,6 +3,7 @@
   description: light throwing dart for playing darts. Don't get in the eye!
   parent: BaseItem
   id: Dart
+  suffix: Red # TheDen
   components:
   - type: EmbeddableProjectile
     minimumSpeed: 3
@@ -92,6 +93,7 @@
 - type: entity
   parent: Dart
   id: DartBlue
+  suffix: Blue # TheDen
   components:
   - type: Sprite
     sprite: Objects/Fun/Darts/dart_blue.rsi
@@ -101,6 +103,7 @@
 - type: entity
   parent: Dart
   id: DartPurple
+  suffix: Purple # TheDen
   components:
   - type: Sprite
     sprite: Objects/Fun/Darts/dart_purple.rsi
@@ -110,6 +113,7 @@
 - type: entity
   parent: Dart
   id: DartYellow
+  suffix: Yellow # TheDen
   components:
   - type: Sprite
     sprite: Objects/Fun/Darts/dart_yellow.rsi

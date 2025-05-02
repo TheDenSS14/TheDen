@@ -3,7 +3,7 @@
   parent: SmallLight
   id: N14LightSmallAlwayson
   name: small light
-  suffix: Always on
+  suffix: N14, Always on # TheDen
   description: "An always powered light."
   components:
   - type: Sprite
@@ -23,7 +23,7 @@
   id: N14LightSmallEmpty
   name: small light
   description: "A light fixture. Draws power and produces light when equipped with a light bulb."
-  suffix: Empty
+  suffix: N14, Empty # TheDen
   components:
   - type: Sprite
     sprite: _Nuclear14/Structures/Wallmounts/lightbulbcaged.rsi
@@ -37,7 +37,7 @@
 - type: entity
   parent: PoweredSmallLight
   id: N14LightSmall
-  suffix: ""
+  suffix: N14 # TheDen
   components:
   - type: Sprite
     sprite: _Nuclear14/Structures/Wallmounts/lightbulbcaged.rsi

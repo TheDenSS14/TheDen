@@ -1,0 +1,11 @@
+- type: loadout
+  id: LoadoutTowelDarkBlue
+  category: JobsCommandAUncategorized
+  cost: 1
+  requirements:
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Command
+        - Dignitary
+  items:
+    - TowelColorDarkBlue

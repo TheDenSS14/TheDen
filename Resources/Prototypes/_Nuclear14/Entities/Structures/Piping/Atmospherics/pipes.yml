@@ -16,7 +16,7 @@
 - type: entity
   parent: N14GasPipeBase
   id: N14GasPipeEnd
-  suffix: End
+  suffix: N14, End # TheDen
   components:
   - type: NodeContainer
     nodes:
@@ -32,7 +32,7 @@
 - type: entity
   parent: N14GasPipeBase
   id: N14GasPipeStraight
-  suffix: Straight
+  suffix: N14, Straight # TheDen
   components:
   - type: NodeContainer
     nodes:
@@ -48,7 +48,7 @@
 - type: entity
   parent: N14GasPipeBase
   id: N14GasPipeBend
-  suffix: Bend
+  suffix: N14, Bend # TheDen
   components:
   - type: NodeContainer
     nodes:
@@ -64,7 +64,7 @@
 - type: entity
   parent: N14GasPipeBase
   id: N14GasPipeTJunction
-  suffix: TJunction
+  suffix: N14, TJunction # TheDen
   components:
   - type: NodeContainer
     nodes:
@@ -80,7 +80,7 @@
 - type: entity
   parent: N14GasPipeBase
   id: N14GasPipeFourway
-  suffix: Fourway
+  suffix: N14, Fourway # TheDen
   components:
   - type: Transform
     noRot: true

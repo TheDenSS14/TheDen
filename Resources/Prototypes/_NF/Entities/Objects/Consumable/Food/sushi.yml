@@ -31,6 +31,7 @@
   parent: FoodInjectableBase
   id: FoodMealAvocadoSushiSlice
   description: Where did the seaweed come from?
+  suffix: Slice # TheDen
   components:
   - type: FlavorProfile
     flavors:
@@ -89,6 +90,7 @@
   parent: FoodInjectableBase
   id: FoodMealCarpSushiSlice
   description: Certainly worth the smaller risk.
+  suffix: Slice # TheDen
   components:
   - type: FlavorProfile
     flavors:

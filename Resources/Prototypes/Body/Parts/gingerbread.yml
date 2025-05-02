@@ -16,6 +16,7 @@
   id: TorsoGingerbread
   name: "gingerbread torso"
   parent: [PartGingerbread, BaseTorso]
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
   - type: Sprite
     sprite: Mobs/Species/Gingerbread/parts.rsi
@@ -32,6 +33,7 @@
   id: HeadGingerbread
   name: "gingerbread head"
   parent: [PartGingerbread, BaseHead]
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
   - type: Sprite
     sprite: Mobs/Species/Gingerbread/parts.rsi
@@ -48,6 +50,7 @@
   id: LeftArmGingerbread
   name: "left gingerbread arm"
   parent: [PartGingerbread, BaseLeftArm]
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
   - type: Sprite
     sprite: Mobs/Species/Gingerbread/parts.rsi
@@ -57,6 +60,7 @@
   id: RightArmGingerbread
   name: "right gingerbread arm"
   parent: [PartGingerbread, BaseRightArm]
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
   - type: Sprite
     sprite: Mobs/Species/Gingerbread/parts.rsi
@@ -66,6 +70,7 @@
   id: LeftHandGingerbread
   name: "left gingerbread hand"
   parent: [PartGingerbread, BaseLeftHand]
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
   - type: Sprite
     sprite: Mobs/Species/Gingerbread/parts.rsi
@@ -75,6 +80,7 @@
   id: RightHandGingerbread
   name: "right gingerbread hand"
   parent: [PartGingerbread, BaseRightHand]
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
   - type: Sprite
     sprite: Mobs/Species/Gingerbread/parts.rsi
@@ -84,6 +90,7 @@
   id: LeftLegGingerbread
   name: "left gingerbread leg"
   parent: [PartGingerbread, BaseLeftLeg]
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
   - type: Sprite
     sprite: Mobs/Species/Gingerbread/parts.rsi
@@ -93,6 +100,7 @@
   id: RightLegGingerbread
   name: "right gingerbread leg"
   parent: [PartGingerbread, BaseRightLeg]
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
   - type: Sprite
     sprite: Mobs/Species/Gingerbread/parts.rsi
@@ -102,6 +110,7 @@
   id: LeftFootGingerbread
   name: "left gingerbread foot"
   parent: [PartGingerbread, BaseLeftFoot]
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
   - type: Sprite
     sprite: Mobs/Species/Gingerbread/parts.rsi
@@ -111,6 +120,7 @@
   id: RightFootGingerbread
   name: "right gingerbread foot"
   parent: [PartGingerbread, BaseRightFoot]
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
   - type: Sprite
     sprite: Mobs/Species/Gingerbread/parts.rsi

@@ -7,6 +7,7 @@
   id: SignBar2
   name: bar sign
   description: Bar! Get drunk here.
+  suffix: Fancy # TheDen
   components:
   - type: Sprite
     sprite: Structures/Wallmounts/signs_32x32.rsi
@@ -17,6 +18,7 @@
   id: SignClinic
   name: clinic sign
   description: A clinic sign. Hopefully they have meds.
+  suffix: "" # TheDen
   components:
   - type: Sprite
     state: clinic
@@ -30,6 +32,7 @@
   id: SignOpen1
   name: open sign
   description: Open for business. Maybe.
+  suffix: Off # TheDen
   components:
   - type: Sprite
     state: open
@@ -41,6 +44,7 @@
 - type: entity
   parent: SignOpen1
   id: SignOpen2
+  suffix: Variant, Off # TheDen
   components:
   - type: Sprite
     state: open_bar
@@ -48,6 +52,7 @@
 - type: entity
   parent: SignOpen1
   id: SignOpenOn1
+  suffix: "" # TheDen
   components:
   - type: Sprite
     state: open_on
@@ -55,6 +60,7 @@
 - type: entity
   parent: SignOpen1
   id: SignOpenOn2
+  suffix: Variant # TheDen
   components:
   - type: Sprite
     state: open_bar_on
@@ -84,6 +90,7 @@
   id: SignDanger2
   name: danger sign
   description: Danger.
+  suffix: Variant
   components:
   - type: Sprite
     state: danger_sign
@@ -104,6 +111,7 @@
   id: SignBazaarOn
   name: bazaar sign
   description: A sign for a bazaar. How bizarre.
+  suffix: "" # TheDen
   components:
   - type: Sprite
     sprite: Structures/Wallmounts/signs_64x32.rsi
@@ -136,6 +144,7 @@
   id: SignOpenBig
   name: open sign
   description: We are open sign. I hope so.
+  suffix: Big # TheDen
   components:
   - type: Sprite
     state: we_open_open

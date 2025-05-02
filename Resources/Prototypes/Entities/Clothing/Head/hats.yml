@@ -406,6 +406,7 @@
   id: ClothingHeadHatWitch1
   name: witch hat
   description: A witch hat.
+  suffix: Variant # TheDen
   components:
   - type: Sprite
     sprite: Clothing/Head/Hats/witchhat.rsi
@@ -498,6 +499,7 @@
   id: ClothingHeadHatSurgcapBlue
   name: surgical cap
   description: A blue cap surgeons wear during operations. Keeps their hair from tickling your internal organs.
+  suffix: Blue # TheDen
   components:
   - type: Sprite
     sprite: Clothing/Head/Hats/surgcap_blue.rsi
@@ -514,6 +516,7 @@
   id: ClothingHeadHatSurgcapGreen
   name: surgical cap
   description: A green cap surgeons wear during operations. Keeps their hair from tickling your internal organs.
+  suffix: Green # TheDen
   components:
   - type: Sprite
     sprite: Clothing/Head/Hats/surgcap_green.rsi
@@ -525,6 +528,7 @@
   id: ClothingHeadHatSurgcapPurple
   name: surgical cap
   description: A purple cap surgeons wear during operations. Keeps their hair from tickling your internal organs.
+  suffix: Purple # TheDen
   components:
   - type: Sprite
     sprite: Clothing/Head/Hats/surgcap_purple.rsi
@@ -802,6 +806,7 @@
 - type: entity
   parent: ClothingHeadHatJester
   id: ClothingHeadHatJesterAlt
+  suffix: Variant # TheDen
   components:
     - type: Sprite
       sprite: Clothing/Head/Hats/jester2.rsi
@@ -829,6 +834,7 @@
   id: ClothingHeadHatPirateTricorn
   name: pirate hat
   description: 'Yo ho ho and a bottle of rum!'
+  suffix: Variant # TheDen
   components:
   - type: Sprite
     sprite: Clothing/Head/Hats/piratetricord.rsi

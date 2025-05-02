@@ -126,6 +126,7 @@
 - type: entity
   parent: FoodPlateTrash
   id: FoodPlateSmallTrash
+  suffix: Small # TheDen
   components:
   - type: Sprite
     sprite: Objects/Consumable/Food/plates.rsi
@@ -160,6 +161,7 @@
   parent: BaseItem
   id: FoodPlateSmallPlastic
   description: A blue plastic plate, excellent for slices of birthday cake.
+  suffix: Small # TheDen
   components:
   - type: Sprite
     sprite: Objects/Consumable/Food/plates.rsi

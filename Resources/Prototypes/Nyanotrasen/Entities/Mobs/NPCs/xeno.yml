@@ -4,6 +4,7 @@
 - type: entity
   parent: MobPurpleSnake
   id: MobPurpleSnakeGhost
+  suffix: Player # TheDen
   components:
   - type: GhostTakeoverAvailable
   - type: GhostRole
@@ -18,6 +19,7 @@
 - type: entity
   parent: MobSmallPurpleSnake
   id: MobSmallPurpleSnakeGhost
+  suffix: Small, Player # TheDen
   components:
   - type: GhostTakeoverAvailable
   - type: GhostRole
@@ -125,6 +127,7 @@
   name: Rouny
   parent: MobXenoRounyNPC
   id: MobXenoRouny
+  suffix: Player # TheDen
   components:
   - type: GhostRole
     allowMovement: true

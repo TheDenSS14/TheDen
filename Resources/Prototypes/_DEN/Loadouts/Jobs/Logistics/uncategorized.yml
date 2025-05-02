@@ -1,0 +1,10 @@
+- type: loadout
+  id: LoadoutTowelLightBrown
+  category: JobsLogisticsAUncategorized
+  cost: 1
+  requirements:
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Logistics
+  items:
+    - TowelColorLightBrown
