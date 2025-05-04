@@ -222,8 +222,55 @@ public sealed partial class MarkingPicker : Control
                 continue;
             }
 
-            var item = CMarkingsUnused.AddItem($"{GetMarkingName(marking)}", marking.Sprites[0].Frame0());
-            item.Metadata = marking;
+            //TODO: Show animations and the preview on the player
+            var preview = new PanelContainer
+            {
+                PanelOverride = new StyleBoxFlat { BackgroundColor = Color.FromHex("#2f2f2f"), },
+                Children =
+                {
+                    new TextureRect
+                    {
+                        Texture = marking.Sprites[0].DirFrame0().TextureFor(
+                            Enum.TryParse<Direction>(marking.PreviewDirection, out var dir) ? dir : Direction.South),
+                    },
+                },
+            };
+
+            var item = new Button
+            {
+                Name = marking.ID,
+                Text = Loc.GetString($"marking-{marking.ID}"),
+                StyleClasses = { StyleBase.ButtonOpenBoth, },
+                ToggleMode = true,
+                Pressed = _currentMarkings.TryGetMarking(_selectedMarkingCategory, marking.ID, out _),
+            };
+            var customize = new Button
+            {
+                Text = "Customize",
+                StyleClasses = { StyleBase.ButtonOpenLeft, },
+                Disabled = !item.Pressed,
+            };
+
+            item.OnToggled += _ =>
+            {
+                // Add the marking if they have points for it
+                item.Pressed = item.Pressed && !Forced ? _currentMarkings.PointsLeft(_selectedMarkingCategory) > 0 : item.Pressed;
+                if (item.Pressed)
+                    MarkingAdd(_prototypeManager.Index<MarkingPrototype>(item.Name));
+                else
+                    MarkingRemove(_prototypeManager.Index<MarkingPrototype>(item.Name));
+                customize.Disabled = !item.Pressed;
+            };
+            customize.OnPressed += _ =>
+            {
+                _selectedMarking = item;
+                OnColorChangePressed(_prototypeManager.Index<MarkingPrototype>(item.Name));
+            };
+
+            cont.AddChild(preview);
+            cont.AddChild(item);
+            cont.AddChild(customize);
+            Markings.AddChild(cont);
         }
 
         CMarkingPoints.Visible = _currentMarkings.PointsLeft(_selectedMarkingCategory) != -1;
@@ -524,23 +571,10 @@ public sealed partial class MarkingPicker : Control
 
     private void MarkingRemove()
     {
-        if (_selectedMarking is null) return;
-
-        var marking = (MarkingPrototype) _selectedMarking.Metadata!;
-
         _currentMarkings.Remove(_selectedMarkingCategory, marking.ID);
 
         UpdatePoints();
-
-        CMarkingsUsed.Remove(_selectedMarking);
-
-        if (marking.MarkingCategory == _selectedMarkingCategory)
-        {
-            var item = CMarkingsUnused.AddItem($"{GetMarkingName(marking)}", marking.Sprites[0].Frame0());
-            item.Metadata = marking;
-        }
-        _selectedMarking = null;
-        CMarkingColors.Visible = false;
+        CMarkingColors.Visible = _selectedMarking?.Name != marking.ID;
         OnMarkingRemoved?.Invoke(_currentMarkings);
     }
 }

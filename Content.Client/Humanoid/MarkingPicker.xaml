@@ -1,20 +1,13 @@
 <Control xmlns="https://spacestation14.io">
     <!-- Primary container -->
     <BoxContainer Orientation="Vertical" HorizontalExpand="True">
-        <!-- Marking lists -->
-        <BoxContainer Orientation="Horizontal" SeparationOverride="5" HorizontalExpand="True">
-            <!-- Unused markings -->
-            <BoxContainer Orientation="Vertical" HorizontalExpand="True">
-                <BoxContainer Orientation="Horizontal" HorizontalExpand="True">
-                    <Label Text="{Loc 'markings-unused'}" HorizontalAlignment="Stretch" HorizontalExpand="True" />
-                    <Label Name="CMarkingPoints" Text="uwu" HorizontalAlignment="Right" />
-                </BoxContainer>
-
-                <OptionButton Name="CMarkingCategoryButton" StyleClasses="OpenLeft" />
-                <LineEdit Name="CMarkingSearch" PlaceHolder="{Loc 'markings-search'}" />
-
-                <ItemList Name="CMarkingsUnused" VerticalExpand="True" MinSize="300 250" />
-                <Button Name="CMarkingAdd" Text="{Loc 'markings-add'}" StyleClasses="OpenRight" />
+        <!-- Markings -->
+        <BoxContainer Orientation="Vertical" HorizontalExpand="True">
+            <BoxContainer HorizontalExpand="True">
+                <OptionButton Name="CMarkingCategoryButton" StyleClasses="OpenBoth" />
+                <Label Name="CMarkingPoints" Text="uwu" Margin="8 0" />
+                <LineEdit Name="CMarkingSearch" PlaceHolder="{Loc 'markings-search'}" HorizontalExpand="True" />
+                <Button Name="ResetButton" Text="{Loc 'ui-options-bind-reset'}" StyleClasses="OpenLeft" />
             </BoxContainer>
 
             <!-- Used markings -->
