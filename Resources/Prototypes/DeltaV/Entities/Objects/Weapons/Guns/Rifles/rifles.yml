@@ -52,7 +52,7 @@
   parent: BaseWeaponRifle
   id: WeaponRifleJackdaw
   description: The beginning of the end is heralded by the song of a Jackdaw. Uses .25 caseless ammo.
-  suffix: Deathsquad
+# suffix: Deathsquad # TheDen - Unecessary Suffix
   components:
   - type: Item
     size: Large
@@ -111,7 +111,7 @@
   parent: BaseWeaponRifle
   id: WeaponRifleTenebra
   description: A mass-produced and minimalist rifle in bullpup design. Uses .20 rifle ammo.
-  suffix: Mercenary
+# suffix: Mercenary # TheDen - Unecessary Suffix
   components:
   - type: Sprite
     sprite: DeltaV/Objects/Weapons/Guns/Rifles/tenebra.rsi

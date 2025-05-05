@@ -58,6 +58,7 @@
   id: TorsoHarpy
   name: "harpy torso"
   parent: PartHarpy
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
   - type: Sprite
     netsync: false
@@ -109,6 +110,7 @@
   id: HeadHarpy
   name: "harpy head"
   parent: PartHarpy
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
   - type: Sprite
     netsync: false
@@ -133,6 +135,7 @@
   id: LeftArmHarpy
   name: "left harpy arm"
   parent: PartHarpy
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
   - type: Sprite
     netsync: false
@@ -150,6 +153,7 @@
   id: RightArmHarpy
   name: "right harpy arm"
   parent: PartHarpy
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
   - type: Sprite
     netsync: false
@@ -173,6 +177,7 @@
   id: LeftHandHarpy
   name: "left harpy hand"
   parent: PartHarpy
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
   - type: Sprite
     netsync: false
@@ -190,6 +195,7 @@
   id: RightHandHarpy
   name: "right harpy hand"
   parent: PartHarpy
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
   - type: Sprite
     netsync: false
@@ -207,6 +213,7 @@
   id: LeftLegHarpy
   name: "left harpy leg"
   parent: PartHarpy
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
   - type: Sprite
     netsync: false
@@ -225,6 +232,7 @@
   id: RightLegHarpy
   name: "right harpy leg"
   parent: PartHarpy
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
   - type: Sprite
     netsync: false
@@ -243,6 +251,7 @@
   id: LeftFootHarpy
   name: "left harpy foot"
   parent: PartHarpy
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
   - type: Sprite
     netsync: false
@@ -260,6 +269,7 @@
   id: RightFootHarpy
   name: "right harpy foot"
   parent: PartHarpy
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
   - type: Sprite
     netsync: false

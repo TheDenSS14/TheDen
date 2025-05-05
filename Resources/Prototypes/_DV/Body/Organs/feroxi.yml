@@ -30,6 +30,7 @@
   id: OrganFeroxiLungs
   name: feroxian lungs and gills
   description: "A pair of amphibious lungs along with gills, filtering oxygen out of the air continuously."
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
   - type: Sprite
     sprite: Mobs/Species/Human/organs.rsi

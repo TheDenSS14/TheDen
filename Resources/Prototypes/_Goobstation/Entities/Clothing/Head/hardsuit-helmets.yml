@@ -3,6 +3,7 @@
   id: ClothingHeadHelmetHardsuitBlueshield
   name: blueshield's hardsuit helmet
   description: Blueshield hardsuit with a top of the line gunlink. Belongs to the Blueshield.
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
   - type: BreathMask
   - type: Sprite
@@ -35,6 +36,7 @@
   suffix: stealth
   name: cybersun stealth hardsuit helmet
   description: A helmet with plating for stealth operations.
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
   - type: Sprite
     sprite: _Goobstation/Clothing/Head/Hardsuits/cybersunstealth.rsi
@@ -66,6 +68,7 @@
   id: ClothingHeadHelmetHardsuitDreadnought
   name: CSA-105UA "Xíngtiān" tacsuit
   description: A helmet for the Xíngtiān tacsuit.
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
   - type: Sprite
     sprite: _Goobstation/Clothing/Head/Hardsuits/dreadnought.rsi

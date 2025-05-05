@@ -67,6 +67,7 @@
   id: TorsoVox
   name: "vox torso"
   parent: PartVox
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
     - type: Sprite
       sprite: Mobs/Species/Vox/parts.rsi
@@ -124,6 +125,7 @@
   id: HeadVox
   name: "vox head"
   parent: PartVox
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
     - type: Sprite
       sprite: Mobs/Species/Vox/parts.rsi
@@ -152,6 +154,7 @@
   id: LeftArmVox
   name: "left vox arm"
   parent: PartVox
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
     - type: Sprite
       sprite: Mobs/Species/Vox/parts.rsi
@@ -168,6 +171,7 @@
   id: RightArmVox
   name: "right vox arm"
   parent: PartVox
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
     - type: Sprite
       sprite: Mobs/Species/Vox/parts.rsi
@@ -184,6 +188,7 @@
   id: LeftHandVox
   name: "left vox hand"
   parent: PartVox
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
     - type: Sprite
       sprite: Mobs/Species/Vox/parts.rsi
@@ -200,6 +205,7 @@
   id: RightHandVox
   name: "right vox hand"
   parent: PartVox
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
     - type: Sprite
       sprite: Mobs/Species/Vox/parts.rsi
@@ -216,6 +222,7 @@
   id: LeftLegVox
   name: "left vox leg"
   parent: PartVox
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
     - type: Sprite
       sprite: Mobs/Species/Vox/parts.rsi
@@ -233,6 +240,7 @@
   id: RightLegVox
   name: "right vox leg"
   parent: PartVox
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
     - type: Sprite
       sprite: Mobs/Species/Vox/parts.rsi
@@ -250,6 +258,7 @@
   id: LeftFootVox
   name: "left vox foot"
   parent: PartVox
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
     - type: Sprite
       sprite: Mobs/Species/Vox/parts.rsi
@@ -266,6 +275,7 @@
   id: RightFootVox
   name: "right vox foot"
   parent: PartVox
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
     - type: Sprite
       sprite: Mobs/Species/Vox/parts.rsi

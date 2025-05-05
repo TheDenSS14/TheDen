@@ -98,6 +98,7 @@
   parent: FoodTinBaseTrash
   id: FoodTinPeachesTrash
   name: tinned peaches
+  suffix: Trash # TheDen
   components:
   - type: Sprite
     sprite: Objects/Consumable/Food/Tins/peaches.rsi
@@ -131,6 +132,7 @@
   parent: FoodTinBaseTrash
   id: FoodTinPeachesMaintTrash
   name: maintenance peaches
+  suffix: Trash # TheDen
   components:
   - type: Sprite
     sprite: Objects/Consumable/Food/Tins/maint_peaches.rsi
@@ -156,6 +158,7 @@
   parent: FoodTinBaseTrash
   id: FoodTinBeansTrash
   name: tin of beans
+  suffix: Trash # TheDen
   components:
   - type: Sprite
     sprite: Objects/Consumable/Food/Tins/beans.rsi
@@ -189,6 +192,7 @@
   parent: FoodTinBaseTrash
   id: FoodTinMRETrash
   name: tinned meat
+  suffix: Trash # TheDen
   components:
   - type: Sprite
     sprite: Objects/Consumable/Food/Tins/meat.rsi

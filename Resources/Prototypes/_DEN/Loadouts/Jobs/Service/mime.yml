@@ -90,3 +90,14 @@
         - Mime
   items:
     - ClothingMaskSexyMime
+
+- type: loadout
+  id: LoadoutTowelMime
+  category:  JobsServiceMime
+  cost: 1
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - Mime
+  items:
+    - TowelColorMime

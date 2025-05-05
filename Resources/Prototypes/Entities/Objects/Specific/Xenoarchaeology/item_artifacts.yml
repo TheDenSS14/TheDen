@@ -70,7 +70,7 @@
 - type: entity
   parent: BaseXenoArtifactItem
   id: SimpleXenoArtifactItem
-  suffix: Simple
+  suffix: Item, Simple # TheDen
   components:
   - type: Artifact
     nodesMin: 2
@@ -79,7 +79,7 @@
 - type: entity
   parent: BaseXenoArtifactItem
   id: MediumXenoArtifactItem
-  suffix: Medium
+  suffix: Item, Medium # TheDen
   components:
   - type: Artifact
     nodesMin: 5
@@ -88,7 +88,7 @@
 - type: entity
   parent: BaseXenoArtifactItem
   id: ComplexXenoArtifactItem
-  suffix: Complex
+  suffix: Item, Complex # TheDen
   components:
   - type: Artifact
     nodesMin: 9
@@ -107,7 +107,7 @@
 - type: entity
   parent: BaseXenoArtifactItem
   id: VariedXenoArtifactItem
-  suffix: Varied
+  suffix: Item, Varied # TheDen
   components:
   - type: Artifact
     nodesMin: 2

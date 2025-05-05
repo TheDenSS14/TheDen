@@ -3,6 +3,7 @@
   parent: [BaseItem, OrganHumanBrain]
   name: sentient slimes core
   description: "The source of incredible, unending gooeyness."
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
     - type: Sprite
       sprite: Mobs/Species/Slime/organs.rsi
@@ -32,6 +33,7 @@
   parent: BaseHumanOrgan
   name: slimes gas sacs
   description: "Collects nitrogen, which slime cells use for maintenance."
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
     - type: Sprite
       sprite: Mobs/Species/Slime/organs.rsi

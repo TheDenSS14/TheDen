@@ -2,6 +2,7 @@
   id: WoodenSign
   name: wooden sign
   description: He's pointing somewhere. 
+  suffix: Left # TheDen
   components:
   - type: Clickable
   - type: InteractionOutline
@@ -43,6 +44,7 @@
 - type: entity
   parent: WoodenSign
   id: WoodenSignRight
+  suffix: Right # TheDen
   components:
   - type: Sprite
     sprite: Objects/Decoration/mines.rsi
@@ -173,6 +175,7 @@
 - type: entity
   id: WoodenSupportWallBroken
   parent: WoodenSupportWall
+  suffix: Broken # TheDen
   components:
   - type: Sprite
     sprite: Objects/Decoration/mines.rsi

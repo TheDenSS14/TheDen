@@ -1,6 +1,7 @@
 - type: entity
   id: BorgChassisSelectable
   parent: BaseBorgChassisNT
+  suffix: Selectable # TheDen
   components:
   - type: Sprite
     layers:
@@ -362,6 +363,7 @@
   id: BorgChassisServiceBare
   parent: BorgChassisSelectable
   name: service cyborg
+  suffix: "" # TheDen
   components:
   - type: Sprite
     layers:

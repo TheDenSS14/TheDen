@@ -16,6 +16,7 @@
   id: TorsoTajaran
   name: "Tajaran torso"
   parent: [PartTajaran, BaseTorso]
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
   - type: Sprite
     sprite: _EE/Mobs/Species/Tajaran/parts.rsi
@@ -33,6 +34,7 @@
   id: HeadTajaran
   name: "Tajaran head"
   parent: [PartTajaran, BaseHead]
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
   - type: Sprite
     sprite: _EE/Mobs/Species/Tajaran/parts.rsi
@@ -49,6 +51,7 @@
   id: LeftArmTajaran
   name: "left Tajaran arm"
   parent: [PartTajaran, BaseLeftArm]
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
   - type: Sprite
     sprite: _EE/Mobs/Species/Tajaran/parts.rsi
@@ -58,6 +61,7 @@
   id: RightArmTajaran
   name: "right Tajaran arm"
   parent: [PartTajaran, BaseRightArm]
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
   - type: Sprite
     sprite: _EE/Mobs/Species/Tajaran/parts.rsi
@@ -67,6 +71,7 @@
   id: LeftHandTajaran
   name: "left Tajaran hand"
   parent: [PartTajaran, BaseLeftHand]
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
   - type: Sprite
     sprite: _EE/Mobs/Species/Tajaran/parts.rsi
@@ -76,6 +81,7 @@
   id: RightHandTajaran
   name: "right Tajaran hand"
   parent: [PartTajaran, BaseRightHand]
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
   - type: Sprite
     sprite: _EE/Mobs/Species/Tajaran/parts.rsi
@@ -85,6 +91,7 @@
   id: LeftLegTajaran
   name: "left Tajaran leg"
   parent: [PartTajaran, BaseLeftLeg]
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
   - type: Sprite
     sprite: _EE/Mobs/Species/Tajaran/parts.rsi
@@ -94,6 +101,7 @@
   id: RightLegTajaran
   name: "right Tajaran leg"
   parent: [PartTajaran, BaseRightLeg]
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
   - type: Sprite
     sprite: _EE/Mobs/Species/Tajaran/parts.rsi
@@ -103,6 +111,7 @@
   id: LeftFootTajaran
   name: "left Tajaran foot"
   parent: [PartTajaran, BaseLeftFoot]
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
   - type: Sprite
     sprite: _EE/Mobs/Species/Tajaran/parts.rsi
@@ -112,6 +121,7 @@
   id: RightFootTajaran
   name: "right Tajaran foot"
   parent: [PartTajaran, BaseRightFoot]
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
   - type: Sprite
     sprite: _EE/Mobs/Species/Tajaran/parts.rsi

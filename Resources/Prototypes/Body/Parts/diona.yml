@@ -11,6 +11,7 @@
   id: TorsoDiona
   name: "diona torso"
   parent: [PartDiona, BaseTorso]
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
   - type: Sprite
     state: "torso_m"
@@ -19,6 +20,7 @@
   id: HeadDiona
   name: "diona head"
   parent: [PartDiona, BaseHead]
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
   - type: Sprite
     state: "head_m"
@@ -27,6 +29,7 @@
   id: LeftArmDiona
   name: "left diona arm"
   parent: [PartDiona, BaseLeftArm]
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
   - type: Sprite
     state: "l_arm"
@@ -35,6 +38,7 @@
   id: RightArmDiona
   name: "right diona arm"
   parent: [PartDiona, BaseRightArm]
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
   - type: Sprite
     state: "r_arm"
@@ -43,6 +47,7 @@
   id: LeftHandDiona
   name: "left diona hand"
   parent: [PartDiona, BaseLeftHand]
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
   - type: Sprite
     state: "l_hand"
@@ -51,6 +56,7 @@
   id: RightHandDiona
   name: "right diona hand"
   parent: [PartDiona, BaseRightHand]
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
   - type: Sprite
     state: "r_hand"
@@ -59,6 +65,7 @@
   id: LeftLegDiona
   name: "left diona leg"
   parent: [PartDiona, BaseLeftLeg]
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
   - type: Sprite
     state: "l_leg"
@@ -67,6 +74,7 @@
   id: RightLegDiona
   name: "right diona leg"
   parent: [PartDiona, BaseRightLeg]
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
   - type: Sprite
     state: "r_leg"
@@ -78,6 +86,7 @@
   id: LeftFootDiona
   name: "left diona foot"
   parent: [PartDiona, BaseLeftFoot]
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
   - type: Sprite
     state: "l_foot"
@@ -89,6 +98,7 @@
   id: RightFootDiona
   name: "right diona foot"
   parent: [PartDiona, BaseRightFoot]
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
   - type: Sprite
     state: "r_foot"

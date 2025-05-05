@@ -3,6 +3,7 @@
   parent: OrganAnimalStomach
   name: stomach
   description: "Gross. This is hard to stomach."
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
   - type: Organ # Shitmed Change
     slotId: stomach # Shitmed Change

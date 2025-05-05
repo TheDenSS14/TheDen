@@ -276,9 +276,9 @@
       prob: 0.001
     - id: MobRoingus
       prob: 0.01
-    specialEntries:
-    - id: SpawnPointGhostRatKing
-      prob: 0.001
+#    specialEntries:
+#    - id: SpawnPointGhostRatKing
+#      prob: 0.001
 
 - type: entity
   id: RoingusMigration
@@ -316,6 +316,7 @@
 - type: entity
   id: SnailMigrationLowPop
   parent: BaseGameRule
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
   - type: StationEvent
     startAnnouncement: true
@@ -334,6 +335,7 @@
 - type: entity
   id: SnailMigration
   parent: BaseStationEventShortDelay
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
   - type: StationEvent
     startAnnouncement: true

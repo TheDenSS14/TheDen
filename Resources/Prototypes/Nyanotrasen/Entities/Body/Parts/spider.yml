@@ -28,6 +28,7 @@
   id: ThoraxSpider
   name: "spider thorax" #for arachne, actual spiders should get a cephalothorax that combines with head.
   parent: PartSpider
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
   - type: Sprite
     sprite: Mobs/Species/Moth/parts.rsi # placeholder sprite
@@ -49,6 +50,7 @@
   id: RightLegSpider
   name: "right spider leg"
   parent: PartSpider
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
   - type: Sprite
     sprite: Objects/Consumable/Food/meat.rsi # placeholder sprite
@@ -67,6 +69,7 @@
   id: LeftLegSpider
   name: "left spider leg"
   parent: PartSpider
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
   - type: Sprite
     sprite: Objects/Consumable/Food/meat.rsi # placeholder sprite

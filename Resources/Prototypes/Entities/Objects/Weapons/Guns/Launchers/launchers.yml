@@ -88,6 +88,13 @@
         map: ["enum.GunVisualLayers.Mag"]
   - type: Clothing
     sprite: Objects/Weapons/Guns/Launchers/rocket.rsi
+    quickEquip: false
+    slots:
+    - Back
+    - suitStorage
+  - type: Wieldable
+    unwieldOnUse: false
+  - type: GunRequiresWield
   - type: Gun
     fireRate: 0.5
     soundGunshot:

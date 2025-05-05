@@ -3,6 +3,7 @@
   id: N14ChairWood
   name: wooden chair
   description: A wooden chair suitable for sitting on.
+  suffix: Variant # TheDen
   components:
   - type: Sprite
     sprite: _Nuclear14/Structures/Furniture/bedsandchairs.rsi
@@ -14,6 +15,7 @@
 - type: entity
   parent: ChairWood
   id: N14ChairWood1
+  suffix: Variant 2 # TheDen
   components:
   - type: Sprite
     sprite: _Nuclear14/Structures/Furniture/chairs.rsi
@@ -39,6 +41,7 @@
   id: N14ChairWoodSettler
   name: wooden chair
   description: A wooden chair claimed by some settlers.
+  suffix: Settler # TheDen
   components:
   - type: Sprite
     state: wooden_chair_settler
@@ -50,6 +53,7 @@
   parent: StoolBase
   id: N14ChairStoolBarBlack
   description: A black bar stool.
+  suffix: Black # TheDen
   components:
   - type: Sprite
     sprite: _Nuclear14/Structures/Furniture/bedsandchairs.rsi
@@ -63,6 +67,7 @@
   parent: StoolBase
   id: N14ChairStoolBarTan
   description: A tan bar stool.
+  suffix: Tan # TheDen
   components:
   - type: Sprite
     sprite: _Nuclear14/Structures/Furniture/bedsandchairs.rsi
@@ -75,6 +80,7 @@
   parent: StoolBase
   id: N14ChairStoolBarRed
   description: A red bar stool.
+  suffix: Variant # TheDen
   components:
   - type: Sprite
     sprite: _Nuclear14/Structures/Furniture/chairs.rsi
@@ -101,6 +107,7 @@
   parent: Chair
   id: N14ChairMetalGreen
   description: A metal chair for sitting on.
+  suffix: Green # TheDen
   components:
   - type: Sprite
     sprite: _Nuclear14/Structures/Furniture/chairs.rsi
@@ -112,7 +119,7 @@
 - type: entity
   parent: N14ChairMetalGreen
   id: N14ChairMetalGreenUnfinished
-  suffix: unfinished
+  suffix: Green, Unfinished # TheDen
   components:
   - type: Sprite
     state: metal_chair_unfinished
@@ -120,7 +127,7 @@
 - type: entity
   parent: N14ChairMetalGreen
   id: N14ChairMetalGreenBroken
-  suffix: broken
+  suffix: Green, Broken # TheDen
   components:
   - type: Sprite
     state: metal_chair_broken
@@ -244,7 +251,7 @@
     node: N14ChairOfficeGreen
     
 - type: entity
-  parent: OfficeChairBase
+  parent: N14ChairOfficeRed # TheDen
   id: N14ChairOfficeGreenBroken
   suffix: green, broken
   components:

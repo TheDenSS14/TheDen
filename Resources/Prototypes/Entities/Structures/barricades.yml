@@ -69,6 +69,7 @@
 - type: entity
   id: BarricadeBlock
   parent: Barricade
+  suffix: Wall # TheDen
   components:
   - type: Sprite
     sprite: Structures/barricades.rsi
@@ -81,6 +82,7 @@
   placement:
     mode: SnapgridCenter
 #A bunch of this is taken straight from dirwindows and there is a chance that I may have fucked something up. Probably not though
+  suffix: Directional # TheDen
   components:
   - type: Sprite
     sprite: Structures/barricades.rsi

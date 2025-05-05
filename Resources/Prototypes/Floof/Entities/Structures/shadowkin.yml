@@ -57,6 +57,7 @@
   parent: BasePortal
   name: dark portal
   description: The portal to the dark...
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
   - type: Sprite
     noRot: true

@@ -1,5 +1,6 @@
 - type: entity
   id: LavalandStormScheduler
   parent: BaseGameRule
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
   - type: LavalandStormSchedulerRule

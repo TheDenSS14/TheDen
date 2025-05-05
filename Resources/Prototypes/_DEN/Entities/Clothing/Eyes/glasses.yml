@@ -1,0 +1,20 @@
+- type: entity
+  parent: ClothingEyesHudMedical
+  id: ClothingEyesGlassesMedicalVisor
+  name: medical visor glasses
+  description: Upgraded visor sunglasses that provide a medical HUD. Flash immunity not included.
+  components:
+  - type: Sprite
+    sprite: _DEN/Clothing/Eyes/Glasses/medglasses_visor.rsi
+  - type: Clothing
+    sprite: _DEN/Clothing/Eyes/Glasses/medglasses_visor.rsi
+  - type: ShowHealthBars
+    damageContainers:
+    - Biological
+  - type: ShowHealthIcons
+    damageContainers:
+    - Biological
+  - type: Tag
+    tags:
+    - WhitelistChameleon
+    - HudMedical

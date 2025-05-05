@@ -135,7 +135,7 @@
         - id: ClothingHeadHatSANMarineUtility
         - id: DoubleEmergencyOxygenTankFilled
         - id: ClothingUniformJumpsuitSolFatigueGreen
-        - id: ClothingBeltMercWebbing
+        - id: ClothingBeltMilitaryWebbingDeserters
         - id: WeaponPistolViperWood
         - id: MagazinePistol
         - id: ClothingMaskGasMerc
@@ -178,7 +178,7 @@
 
 - type: entity
   id: CrateSANModsuitGroup
-  suffix: Filled
+  suffix: Filled, Group # TheDen
   parent: [CrateAluminium, SolAllianceInfo]
   name: Solarian marine modsuit bundle
   description: Contains five full Solarian marine uniforms, complete with modsuits.

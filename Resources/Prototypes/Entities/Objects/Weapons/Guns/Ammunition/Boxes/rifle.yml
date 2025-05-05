@@ -28,6 +28,7 @@
   parent: BaseMagazineBoxRifle
   id: MagazineBoxRifleBig
   name: ammunition box (.20 rifle)
+  suffix: Big # TheDen
   components:
   - type: BallisticAmmoProvider
     capacity: 200
@@ -48,6 +49,7 @@
   parent: BaseMagazineBoxRifle
   id: MagazineBoxRifleBigRubber
   name: ammunition box (.20 rifle rubber)
+  suffix: Big # TheDen
   components:
   - type: BallisticAmmoProvider
     capacity: 200

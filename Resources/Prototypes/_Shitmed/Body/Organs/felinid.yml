@@ -3,6 +3,7 @@
   parent: OrganHumanEars
   name: cat ears
   description: "Holding these might potentially be contagious."
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
   - type: Sprite
     sprite: Clothing/Head/Hats/catears.rsi
@@ -15,6 +16,7 @@
   parent: BaseHumanOrgan
   name: cat tail
   description: "Should you really have this?"
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
   - type: Sprite
     sprite: Nyanotrasen/Mobs/Customization/felinid_tails.rsi

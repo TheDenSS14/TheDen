@@ -82,6 +82,7 @@
   id: SoapNT
   parent: Soap
   description: A Nanotrasen brand bar of soap. Smells of plasma.
+  suffix: Nanotrasen # TheDen
   components:
   - type: Sprite
     layers:
@@ -107,6 +108,7 @@
   id: SoapDeluxe
   parent: Soap
   description: A deluxe Waffle Co. brand bar of soap. Smells of strawberries.
+  suffix: Deluxe # TheDen
   components:
   - type: Sprite
     layers:
@@ -125,6 +127,7 @@
   id: SoapSyndie
   parent: Soap
   description: An untrustworthy bar of soap. Smells of fear.
+  suffix: Syndicate
   components:
   - type: Sprite
     layers:
@@ -195,6 +198,7 @@
   id: SoapHomemade
   parent: Soap
   description: A homemade bar of soap. Smells of... well....
+  suffix: Homemade # TheDen
   components:
   - type: Sprite
     layers:

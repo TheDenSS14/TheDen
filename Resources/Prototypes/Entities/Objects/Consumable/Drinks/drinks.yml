@@ -2406,6 +2406,7 @@
   id: DrinkFitnessShakerBlack
   name: fitness shaker
   description: Big enough to contain enough protein to get perfectly swole. Don't mind the bits.
+  suffix: Black # TheDen
   components:
   - type: Sprite
     sprite: Objects/Consumable/Drinks/shakerblack.rsi
@@ -2415,6 +2416,7 @@
 - type: entity
   parent: DrinkFitnessShakerBlack
   id: DrinkFitnessShakerRed
+  suffix: Red # TheDen
   components:
   - type: Sprite
     sprite: Objects/Consumable/Drinks/shakerred.rsi
@@ -2423,6 +2425,7 @@
 - type: entity
   parent: DrinkFitnessShakerBlack
   id: DrinkFitnessShakerBlue
+  suffix: Blue # TheDen
   components:
   - type: Sprite
     sprite: Objects/Consumable/Drinks/shakerblue.rsi

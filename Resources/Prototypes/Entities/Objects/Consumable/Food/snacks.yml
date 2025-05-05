@@ -122,6 +122,7 @@
   parent: FoodSnackBase
   id: FoodSnackChocolateBar
   description: Tastes like cardboard.
+  suffix: Unwrapped # TheDen
   components:
   - type: FlavorProfile
     flavors:
@@ -146,6 +147,7 @@
   parent: FoodSnackBase
   id: FoodSnackEnergy
   description: An energy bar with a lot of punch.
+  suffix: Unwrapped # TheDen
   components:
   - type: Sprite
     state: energybar
@@ -328,6 +330,7 @@
   parent: FoodSnackBase
   id: FoodSnackChowMein
   description: A salty fried noodle snack. Looks like they forgot the vegetables.
+  suffix: Snack # TheDen
   components:
   - type: FlavorProfile
     flavors:
@@ -410,6 +413,7 @@
   parent: BaseItem
   name: nutribrick
   description: A carefully synthesized brick designed to contain the highest ratio of nutriment to volume. Tastes like shit.
+  suffix: Unwrapped # TheDen
   components:
   - type: Item
     size: Small
