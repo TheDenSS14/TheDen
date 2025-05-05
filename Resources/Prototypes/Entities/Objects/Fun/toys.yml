@@ -2020,6 +2020,27 @@
     - type: Sprite
       sprite: Objects/Fun/toys.rsi
       state: shadowkin
+    - type: EmitSoundOnUse
+      sound:
+        collection: Wurble
+    - type: EmitSoundOnCollide
+      sound:
+        collection: Wurble
+    - type: EmitSoundOnLand
+      sound:
+        collection: Wurble
+    - type: MeleeWeapon
+      wideAnimationRotation: -135
+      attackRate: 1.2
+      damage:
+        types:
+          Blunt: 0
+      soundHit:
+        collection: Wurble
+      soundSwing:
+        collection: Wurble
+      soundNoDamage:
+        collection: Wurble
 
 - type: entity
   parent: BasePlushie

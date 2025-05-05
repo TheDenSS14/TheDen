@@ -7,8 +7,13 @@
   - type: Sprite
     layers:
     - state: centcom
+    - state: departmenthead
+      color: "#1B67A5"
+    - state: subdepartment
+      color: "#030e17"
+    - state: blueshieldofficer
   - type: Item
-    heldPrefix: 
+    heldPrefix:
   - type: PresetIdCard
     job: BlueshieldOfficer
   - type: Access
