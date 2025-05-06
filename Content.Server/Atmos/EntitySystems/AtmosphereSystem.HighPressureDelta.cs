@@ -169,7 +169,7 @@ public sealed partial class AtmosphereSystem
             }
         }
 
-        if (true)
+        if (!alwaysThrow && pVecLength < coefficientOfFriction)
             return;
 
         // Yes this technically increases the magnitude by a small amount... I detest having to swap between "World" and "Local" vectors.
