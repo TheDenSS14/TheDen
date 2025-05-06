@@ -1,4 +1,18 @@
 - type: entity
+  parent: ClothingNeckCollarBase # Floof - reparented
+  id: ClothingNeckCowBellCollar
+  name: cowbell collar
+  description: A way to inform others about the presence of livestock, or just to annoy everyone around you!
+  components:
+  - type: Sprite
+    sprite: _DEN/Clothing/Neck/Misc/cowbellcollar.rsi
+  - type: Clothing
+    sprite: _DEN/Clothing/Neck/Misc/cowbellcollar.rsi
+  - type: EmitsSoundOnMove
+    soundCollection:
+      collection: CowbellRings
+      
+- type: entity
   parent: ClothingNeckBase
   id: ClothingNeckVetCone
   name: Veterinary Cone
@@ -28,3 +42,4 @@
           Quantity: 2.5
         - ReagentId: Phosphorus
           Quantity: 2.5
+          

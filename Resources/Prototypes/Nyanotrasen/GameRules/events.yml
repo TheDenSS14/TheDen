@@ -24,13 +24,13 @@
     earliestStart: 25
   - type: MidRoundAntagRule
 
-- type: entity
-  categories: [ HideSpawnMenu ]
-  parent: BaseMidRoundAntag
-  id: RatKingSpawn
-  components:
-  - type: MidRoundAntagRule
-    spawner: SpawnPointGhostRatKing
+#- type: entity
+#  categories: [ HideSpawnMenu ]
+#  parent: BaseMidRoundAntag
+#  id: RatKingSpawn
+#  components:
+#  - type: MidRoundAntagRule
+#    spawner: SpawnPointGhostRatKing
 
 - type: entity
   categories: [ HideSpawnMenu ]
@@ -78,15 +78,15 @@
     - type: NoosphericZapRule
 
 # Fry tinfoil hats and shoot lightnings from probers
-- type: entity
-  id: NoosphericFry
-  parent: BaseGlimmerEvent
-  categories: [ HideSpawnMenu ]
-  components:
-    - type: GlimmerEvent
-      minimumGlimmer: 650
-      maximumGlimmer: 1000
-    - type: NoosphericFryRule
+#- type: entity
+#  id: NoosphericFry
+#  parent: BaseGlimmerEvent
+#  categories: [ HideSpawnMenu ]
+#  components:
+#    - type: GlimmerEvent
+#      minimumGlimmer: 700
+#      maximumGlimmer: 1000
+#    - type: NoosphericFryRule
 
 - type: entity
   id: PsionicCatGotYourTongue
