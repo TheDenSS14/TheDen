@@ -161,7 +161,7 @@ public sealed partial class CCVars
     ///     Whether or not Space Wind is allowed to attempt to knock down player characters.
     /// </summary>
     public static readonly CVarDef<bool> SpaceWindAllowKnockdown =
-        CVarDef.Create("atmos.space_wind_allow_knockdown", true, CVar.SERVERONLY);
+        CVarDef.Create("atmos.space_wind_allow_knockdown", false, CVar.SERVERONLY);
 
     /// <summary>
     ///     Whether or not Space Wind will create subtle visual indicators for the presence of air currents.
