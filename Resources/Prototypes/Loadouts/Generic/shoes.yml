@@ -450,7 +450,7 @@
 # Miscellaneous
 - type: loadout
   id: LoadoutShoesSlippersDuck
-  category: Shoes
+  category: JobsServiceClown
   cost: 1
 #  exclusive: true - TheDen - Doesnt need this
   canBeHeirloom: true
@@ -458,7 +458,7 @@
     - ClothingShoeSlippersDuck
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutShoes # TheDen
+      group: LoadoutClownShoes # TheDen
     - !type:CharacterJobRequirement
       jobs:
         - Clown
