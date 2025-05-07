@@ -126,7 +126,7 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutUniformsCivilian # TheDen
-  - !type:CharacterSpeciesRequirement # TheDen - Sorry plasmamen, but this is to prevent you burning up on spawn :c
+    - !type:CharacterSpeciesRequirement # TheDen - Sorry plasmamen, but this is to prevent you burning up on spawn :c
       inverted: true
       species:
         - Plasmaman
