@@ -114,7 +114,7 @@
       jobs:
         - Passenger
     - !type:CharacterItemGroupRequirement
-      group: LoadoutGloves
+      group: LoadoutGloves # TheDen
   items:
     - ClothingHandsGlovesColorYellowBudget
 
@@ -140,7 +140,7 @@
     - ClothingHandsGlovesPowerglove
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutGloves
+      group: LoadoutGloves # TheDen
 
 - type: loadout
   id: LoadoutHandsGlovesRobohands
@@ -150,7 +150,8 @@
     - ClothingHandsGlovesRobohands
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutGloves
+      group: LoadoutGloves # TheDen
+
 - type: loadout
   id: LoadoutHandsGlovesFingerless
   category: Hands
