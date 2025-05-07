@@ -70,16 +70,16 @@
     - !type:CharacterItemGroupRequirement
       group: LoadoutHead # TheDen
 
-- type: loadout
-  id: LoadoutHeadHatWitch1
-  category: Head
-  cost: 0
-  exclusive: true
-  items:
-    - ClothingHeadHatWitch1
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutHead # TheDen
+#- type: loadout
+#  id: LoadoutHeadHatWitch1
+#  category: Head
+#  cost: 0
+#  exclusive: true
+#  items:
+#    - ClothingHeadHatWitch1
+#  requirements:
+#    - !type:CharacterItemGroupRequirement
+#      group: LoadoutHead2
 
 - type: loadout
   id: LoadoutHeadHatPlaguedoctor
