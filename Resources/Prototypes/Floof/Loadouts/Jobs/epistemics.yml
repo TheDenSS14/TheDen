@@ -19,11 +19,11 @@
   items:
   - ClothingUnderSocksEpi
   requirements:
-  - !type:CharacterSpeciesRequirement
-    inverted: true
-    species:
-    - Diona
-    - Harpy
+#  - !type:CharacterSpeciesRequirement - TheDen
+#    inverted: true
+#    species:
+#    - Diona
+#    - Harpy
   - !type:CharacterDepartmentRequirement
     departments:
     - Epistemics
@@ -73,11 +73,11 @@
   items:
   - ClothingUnderSocksMantisEpi
   requirements:
-  - !type:CharacterSpeciesRequirement
-    inverted: true
-    species:
-    - Diona
-    - Harpy
+#  - !type:CharacterSpeciesRequirement - TheDen
+#    inverted: true
+#    species:
+#    - Diona
+#    - Harpy
   - !type:CharacterJobRequirement
     jobs:
     - ForensicMantis
@@ -116,11 +116,11 @@
   items:
   - ClothingUnderSocksChaplain
   requirements:
-  - !type:CharacterSpeciesRequirement
-    inverted: true
-    species:
-    - Diona
-    - Harpy
+#  - !type:CharacterSpeciesRequirement - TheDen
+#    inverted: true
+#    species:
+#    - Diona
+#    - Harpy
   - !type:CharacterJobRequirement
     jobs:
     - Chaplain
