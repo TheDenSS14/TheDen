@@ -329,11 +329,13 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutMedicalHead
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Medical # TheDen - Any doctor, except CMO
     - !type:CharacterJobRequirement
+      inverted: true
       jobs:
-        - MedicalDoctor
-        - Chemist
-        - Paramedic
+        - ChiefMedicalOfficer # TheDen
   items:
     - ClothingHeadHatSurgcapCybersun
 
@@ -386,33 +388,30 @@
 
 - type: loadout
   id: LoadoutMedicalOuterLabcoat
-  category: JobsMedicalAUncategorized
+  category: JobsMedicalMedicalDoctor # TheDen
   cost: 0
   exclusive: true
   customColorTint: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutMedicalOuter
+      group: LoadoutMedicalDoctorOuter # TheDen
     - !type:CharacterJobRequirement
       jobs:
-        - MedicalDoctor
-        - Chemist
+        - MedicalDoctor # TheDen - Reduced to just MD
   items:
     - ClothingOuterCoatLab
 
 - type: loadout
   id: LoadoutMedicalOuterCybersunWindbreaker
-  category: JobsMedicalAUncategorized
+  category: JobsMedicalParamedic #TheDen
   cost: 3
   exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutMedicalOuter
+      group: LoadoutParamedicOuter # TheDen
     - !type:CharacterJobRequirement
       jobs:
-        - MedicalDoctor
-        - Chemist
-        - Paramedic
+        - Paramedic # TheDen Reduced to just paramedic
   items:
     - ClothingOuterCoatCybersunWindbreaker
 
@@ -511,11 +510,13 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutMedicalUniforms
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Medical # TheDen - Any doctor, except CMO
     - !type:CharacterJobRequirement
+      inverted: true
       jobs:
-        - MedicalDoctor
-        - Chemist
-        - Paramedic
+        - ChiefMedicalOfficer # TheDen
   items:
     - UniformScrubsColorCybersun
 
