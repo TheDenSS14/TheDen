@@ -6,10 +6,5 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutShoes
-    - !type:CharacterSpeciesRequirement # TheDen
-      inverted: true
-      species:
-        - Diona
-        - Harpy
   items:
     - ClothingShoesFootProtectors

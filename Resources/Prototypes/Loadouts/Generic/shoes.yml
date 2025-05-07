@@ -3,15 +3,10 @@
   id: LoadoutShoesBlack
   category: Shoes
   cost: 0
-#  exclusive: true - TheDen - Doesnt need this
+  exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutShoes
-    - !type:CharacterSpeciesRequirement # TheDen
-      inverted: true
-      species:
-        - Diona
-        - Harpy
   items:
     - ClothingShoesColorBlack
 
@@ -19,15 +14,10 @@
   id: LoadoutShoesBlue
   category: Shoes
   cost: 0
-#  exclusive: true - TheDen - Doesnt need this
+  exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutShoes
-    - !type:CharacterSpeciesRequirement # TheDen
-      inverted: true
-      species:
-        - Diona
-        - Harpy
   items:
     - ClothingShoesColorBlue
 
@@ -35,15 +25,10 @@
   id: LoadoutShoesBrown
   category: Shoes
   cost: 0
-#  exclusive: true - TheDen - Doesnt need this
+  exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutShoes
-    - !type:CharacterSpeciesRequirement # TheDen
-      inverted: true
-      species:
-        - Diona
-        - Harpy
   items:
     - ClothingShoesColorBrown
 
@@ -51,15 +36,10 @@
   id: LoadoutShoesGreen
   category: Shoes
   cost: 0
-#  exclusive: true - TheDen - Doesnt need this
+  exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutShoes
-    - !type:CharacterSpeciesRequirement # TheDen
-      inverted: true
-      species:
-        - Diona
-        - Harpy
   items:
     - ClothingShoesColorGreen
 
@@ -67,15 +47,10 @@
   id: LoadoutShoesOrange
   category: Shoes
   cost: 0
-#  exclusive: true - TheDen - Doesnt need this
+  exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutShoes
-    - !type:CharacterSpeciesRequirement # TheDen
-      inverted: true
-      species:
-        - Diona
-        - Harpy
   items:
     - ClothingShoesColorOrange
 
@@ -83,15 +58,10 @@
   id: LoadoutShoesPurple
   category: Shoes
   cost: 0
-#  exclusive: true - TheDen - Doesnt need this
+  exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutShoes
-    - !type:CharacterSpeciesRequirement # TheDen
-      inverted: true
-      species:
-        - Diona
-        - Harpy
   items:
     - ClothingShoesColorPurple
 
@@ -99,15 +69,10 @@
   id: LoadoutShoesRed
   category: Shoes
   cost: 0
-#  exclusive: true - TheDen - Doesnt need this
+  exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutShoes
-    - !type:CharacterSpeciesRequirement # TheDen
-      inverted: true
-      species:
-        - Diona
-        - Harpy
   items:
     - ClothingShoesColorRed
 
@@ -115,16 +80,11 @@
   id: LoadoutShoesWhite
   category: Shoes
   cost: 0
-#  exclusive: true - TheDen - Doesnt need this
+  exclusive: true
   customColorTint: true
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutShoes # TheDen
-    - !type:CharacterSpeciesRequirement # TheDen
-      inverted: true
-      species:
-        - Diona
-        - Harpy
   items:
     - ClothingShoesColorWhite
 
@@ -132,15 +92,10 @@
   id: LoadoutShoesYellow
   category: Shoes
   cost: 0
-#  exclusive: true - TheDen - Doesnt need this
+  exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutShoes
-    - !type:CharacterSpeciesRequirement # TheDen
-      inverted: true
-      species:
-        - Diona
-        - Harpy
   items:
     - ClothingShoesColorYellow
 
@@ -148,15 +103,10 @@
   id: LoadoutShoesGeta
   category: Shoes
   cost: 0
-#  exclusive: true - TheDen - Doesnt need this
+  exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutShoes # TheDen
-    - !type:CharacterSpeciesRequirement # TheDen
-      inverted: true
-      species:
-        - Diona
-        - Harpy
   items:
     - ClothingShoesGeta
 
@@ -164,15 +114,10 @@
   id: LoadoutShoesTourist
   category: Shoes
   cost: 1
-#  exclusive: true - TheDen - Doesnt need this
+  exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutShoes # TheDen
-    - !type:CharacterSpeciesRequirement # TheDen
-      inverted: true
-      species:
-        - Diona
-        - Harpy
   items:
     - ClothingShoesTourist
 
@@ -181,15 +126,10 @@
   id: LoadoutShoesBootsWork
   category: Shoes
   cost: 0
-#  exclusive: true - TheDen - Doesnt need this
+  exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutShoes # TheDen
-    - !type:CharacterSpeciesRequirement # TheDen
-      inverted: true
-      species:
-        - Diona
-        - Harpy
   items:
     - ClothingShoesBootsWork
 
@@ -197,16 +137,11 @@
   id: LoadoutShoesBootsWorkColor
   category: Shoes
   cost: 1
-#  exclusive: true - TheDen - Doesnt need this
+  exclusive: true
   customColorTint: true
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutShoes
-    - !type:CharacterSpeciesRequirement # TheDen
-      inverted: true
-      species:
-        - Diona
-        - Harpy
   items:
     - ClothingShoesBootsWorkColor
 
@@ -214,15 +149,10 @@
   id: LoadoutShoesBootsJackFake
   category: Shoes
   cost: 1
-#  exclusive: true - TheDen - Doesnt need this
+  exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutShoes
-    - !type:CharacterSpeciesRequirement # TheDen
-      inverted: true
-      species:
-        - Diona
-        - Harpy
   items:
     - ClothingShoesBootsJackFake
 
@@ -230,16 +160,11 @@
   id: LoadoutShoesBootsJackColor
   category: Shoes
   cost: 1
-#  exclusive: true - TheDen - Doesnt need this
+  exclusive: true
   customColorTint: true
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutShoes
-    - !type:CharacterSpeciesRequirement # TheDen
-      inverted: true
-      species:
-        - Diona
-        - Harpy
   items:
     - ClothingShoesBootsJackColor
 
@@ -247,15 +172,10 @@
   id: LoadoutShoesBootsLaceup
   category: Shoes
   cost: 1
-#  exclusive: true - TheDen - Doesnt need this
+  exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutShoes # TheDen
-    - !type:CharacterSpeciesRequirement # TheDen
-      inverted: true
-      species:
-        - Diona
-        - Harpy
   items:
     - ClothingShoesBootsLaceup
 
@@ -263,15 +183,10 @@
   id: LoadoutShoesBootsWinter
   category: Shoes
   cost: 0
-#  exclusive: true - TheDen - Doesnt need this
+  exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutShoes # TheDen
-    - !type:CharacterSpeciesRequirement # TheDen
-      inverted: true
-      species:
-        - Diona
-        - Harpy
   items:
     - ClothingShoesBootsWinter
 
@@ -279,16 +194,11 @@
   id: LoadoutShoesBootsCowboyBrown
   category: Shoes
   cost: 1
-#  exclusive: true - TheDen - Doesnt need this
+  exclusive: true
   canBeHeirloom: true
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutShoes
-    - !type:CharacterSpeciesRequirement # TheDen
-      inverted: true
-      species:
-        - Diona
-        - Harpy
   items:
     - ClothingShoesBootsCowboyBrown
 
@@ -296,16 +206,11 @@
   id: LoadoutShoesBootsCowboyBlack
   category: Shoes
   cost: 1
-#  exclusive: true - TheDen - Doesnt need this
+  exclusive: true
   canBeHeirloom: true
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutShoes
-    - !type:CharacterSpeciesRequirement # TheDen
-      inverted: true
-      species:
-        - Diona
-        - Harpy
   items:
     - ClothingShoesBootsCowboyBlack
 
@@ -313,17 +218,12 @@
   id: LoadoutShoesBootsCowboyWhite
   category: Shoes
   cost: 1
-#  exclusive: true - TheDen - Doesnt need this
+  exclusive: true
   customColorTint: true
   canBeHeirloom: true
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutShoes # TheDen
-    - !type:CharacterSpeciesRequirement # TheDen
-      inverted: true
-      species:
-        - Diona
-        - Harpy
   items:
     - ClothingShoesBootsCowboyWhite
 
@@ -331,17 +231,12 @@
   id: LoadoutShoesBootsCowboyFancy
   category: Shoes
   cost: 1
-#  exclusive: true - TheDen - Doesnt need this
+  exclusive: true
   customColorTint: true
   canBeHeirloom: true
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutShoes # TheDen
-    - !type:CharacterSpeciesRequirement # TheDen
-      inverted: true
-      species:
-        - Diona
-        - Harpy
   items:
     - ClothingShoesBootsCowboyFancy
 
@@ -349,15 +244,10 @@
   id: LoadoutShoesBootsFishing
   category: Shoes
   cost: 1
-#  exclusive: true - TheDen - Doesnt need this
+  exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutShoes # TheDen
-    - !type:CharacterSpeciesRequirement # TheDen
-      inverted: true
-      species:
-        - Diona
-        - Harpy
   items:
     - ClothingShoesBootsFishing
 
@@ -365,16 +255,11 @@
   id: LoadoutShoesBootsAnkle
   category: Shoes
   cost: 1
-#  exclusive: true - TheDen - Doesnt need this
+  exclusive: true
   customColorTint: true
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutShoes
-    - !type:CharacterSpeciesRequirement # TheDen
-      inverted: true
-      species:
-        - Diona
-        - Harpy
   items:
     - ClothingShoesBootsAnkle
 
@@ -382,16 +267,11 @@
   id: LoadoutShoesBootsFull
   category: Shoes
   cost: 1
-#  exclusive: true - TheDen - Doesnt need this
+  exclusive: true
   customColorTint: true
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutShoes
-    - !type:CharacterSpeciesRequirement # TheDen
-      inverted: true
-      species:
-        - Diona
-        - Harpy
   items:
     - ClothingShoesBootsFull
 
@@ -399,16 +279,11 @@
   id: LoadoutShoesBootsMud
   category: Shoes
   cost: 1
-#  exclusive: true - TheDen - Doesnt need this
+  exclusive: true
   customColorTint: true
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutShoes
-    - !type:CharacterSpeciesRequirement # TheDen
-      inverted: true
-      species:
-        - Diona
-        - Harpy
   items:
     - ClothingShoesBootsMud
 
@@ -416,16 +291,11 @@
   id: LoadoutShoesBootsMudThigh
   category: Shoes
   cost: 1
-#  exclusive: true - TheDen - Doesnt need this
+  exclusive: true
   customColorTint: true
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutShoes
-    - !type:CharacterSpeciesRequirement # TheDen
-      inverted: true
-      species:
-        - Diona
-        - Harpy
   items:
     - ClothingShoesBootsMudThigh
 
@@ -433,16 +303,11 @@
   id: LoadoutShoesBootsThigh
   category: Shoes
   cost: 1
-#  exclusive: true - TheDen - Doesnt need this
+  exclusive: true
   customColorTint: true
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutShoes
-    - !type:CharacterSpeciesRequirement # TheDen
-      inverted: true
-      species:
-        - Diona
-        - Harpy
   items:
     - ClothingShoesBootsThigh
 
@@ -450,9 +315,9 @@
 # Miscellaneous
 - type: loadout
   id: LoadoutShoesSlippersDuck
-  category: JobsServiceClown
+  category: JobsServiceClown # TheDen
   cost: 1
-#  exclusive: true - TheDen - Doesnt need this
+  exclusive: true
   canBeHeirloom: true
   items:
     - ClothingShoeSlippersDuck
@@ -462,25 +327,15 @@
     - !type:CharacterJobRequirement
       jobs:
         - Clown
-    - !type:CharacterSpeciesRequirement # TheDen
-      inverted: true
-      species:
-        - Diona
-        - Harpy
 
 - type: loadout
   id: LoadoutShoesLeather
   category: Shoes
   cost: 0
-#  exclusive: true - TheDen - Doesnt need this
+  exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutShoes # TheDen
-    - !type:CharacterSpeciesRequirement # TheDen
-      inverted: true
-      species:
-        - Diona
-        - Harpy
   items:
     - ClothingShoesLeather
 
@@ -488,16 +343,11 @@
   id: LoadoutShoesMiscWhite
   category: Shoes
   cost: 0
-#  exclusive: true - TheDen - Doesnt need this
+  exclusive: true
   customColorTint: true
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutShoes # TheDen
-    - !type:CharacterSpeciesRequirement # TheDen
-      inverted: true
-      species:
-        - Diona
-        - Harpy
   items:
     - ClothingShoesMiscWhite
 
@@ -505,7 +355,7 @@
   id: LoadoutShoesHighheelBoots
   category: Shoes
   cost: 1
-#  exclusive: true - TheDen - Doesnt need this
+  exclusive: true
   canBeHeirloom: true
   requirements:
     - !type:CharacterItemGroupRequirement
@@ -514,9 +364,6 @@
       inverted: true
       species:
         - Plasmaman
-        # TheDen
-        - Diona
-        - Harpy
   items:
     - ClothingShoesHighheelBoots
 
@@ -553,7 +400,7 @@
   id: LoadoutShoesClothWrap
   category: Shoes
   cost: 0
-#  exclusive: true - TheDen - Doesnt need this
+  exclusive: true
   customColorTint: true
   requirements:
     - !type:CharacterItemGroupRequirement
@@ -565,7 +412,7 @@
   id: LoadoutShoesHighHeels
   category: Shoes
   cost: 0
-#  exclusive: true - TheDen - Doesnt need this
+  exclusive: true
   customColorTint: true
   canBeHeirloom: true
   requirements:
@@ -575,9 +422,6 @@
       inverted: true
       species:
         - Plasmaman
-        # TheDen
-        - Diona
-        - Harpy
   items:
     - ClothingShoesHighHeels
 
@@ -585,7 +429,7 @@
   id: LoadoutShoesHighHeelsLong
   category: Shoes
   cost: 0
-#  exclusive: true - TheDen - Doesnt need this
+  exclusive: true
   customColorTint: true
   canBeHeirloom: true
   requirements:
@@ -595,9 +439,6 @@
       inverted: true
       species:
         - Plasmaman
-        # TheDen
-        - Diona
-        - Harpy
   items:
     - ClothingShoesHighHeelsLong
 
@@ -605,17 +446,12 @@
   id: LoadoutShoesFlats
   category: Shoes
   cost: 0
-#  exclusive: true - TheDen - Doesnt need this
+  exclusive: true
   customColorTint: true
   canBeHeirloom: true
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutShoes
-    - !type:CharacterSpeciesRequirement # TheDen
-      inverted: true
-      species:
-        - Diona
-        - Harpy
   items:
     - ClothingShoesFlats
 
@@ -623,16 +459,11 @@
   id: LoadoutShoesSkater
   category: Shoes
   cost: 0
-#  exclusive: true - TheDen - Doesnt need this
+  exclusive: true
   customColorTint: true
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutShoes
-    - !type:CharacterSpeciesRequirement # TheDen
-      inverted: true
-      species:
-        - Diona
-        - Harpy
   items:
     - ClothingShoesSkater
 
@@ -640,16 +471,11 @@
   id: LoadoutShoesSandals
   category: Shoes
   cost: 0
-#  exclusive: true - TheDen - Doesnt need this
+  exclusive: true
   customColorTint: true
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutShoes
-    - !type:CharacterSpeciesRequirement # TheDen
-      inverted: true
-      species:
-        - Diona
-        - Harpy
   items:
     - ClothingShoesSandals
 
@@ -657,16 +483,11 @@
   id: LoadoutShoesSandalsFlipFlops
   category: Shoes
   cost: 0
-#  exclusive: true - TheDen - Doesnt need this
+  exclusive: true
   customColorTint: true
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutShoes
-    - !type:CharacterSpeciesRequirement # TheDen
-      inverted: true
-      species:
-        - Diona
-        - Harpy
   items:
     - ClothingShoesSandalsFlipFlops
 
@@ -674,15 +495,10 @@
   id: LoadoutShoesSandalsFlipFlopsAlt
   category: Shoes
   cost: 0
-#  exclusive: true - TheDen - Doesnt need this
+  exclusive: true
   customColorTint: true
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutShoes
-    - !type:CharacterSpeciesRequirement # TheDen
-      inverted: true
-      species:
-        - Diona
-        - Harpy
   items:
     - ClothingShoesSandalsFlipFlopsAlt
