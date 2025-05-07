@@ -2612,9 +2612,9 @@
   components:
   - type: Sprite
     sprite: Objects/Specific/Hydroponics/red_rose.rsi
-  - type: SolutionContainerManager
-  - type: Produce
-    seedId: red_rose
+ # - type: SolutionContainerManager
+ # - type: Produce
+ #   seedId: red_rose
   - type: Tag
     tags:
     - Flower
@@ -2627,9 +2627,9 @@
   components:
   - type: Sprite
     sprite: Objects/Specific/Hydroponics/jasmine.rsi
-  - type: SolutionContainerManager
-  - type: Produce
-    seedId: jasmine
+ # - type: SolutionContainerManager
+ # - type: Produce
+ #   seedId: jasmine
   - type: Tag
     tags:
     - Flower
