@@ -211,7 +211,7 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutGloves
-    - !type:CharacterSpeciesRequirement
-      inverted: true
-      species:
-        - Plasmaman
+#    - !type:CharacterSpeciesRequirement - TheDen - pointless to restrict them
+#      inverted: true
+#      species:
+#        - Plasmaman
