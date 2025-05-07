@@ -2,10 +2,10 @@
   id: LoadoutClothingUnderSocksPlain
   category: Shoes
   cost: 0
-  exclusive: true
+#  exclusive: true - TheDen - Doesnt need this
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutShoes2
+      group: LoadoutShoes # TheDen
     - !type:CharacterSpeciesRequirement
       inverted: true
       species:
@@ -18,10 +18,10 @@
   id: LoadoutClothingUnderSocksStripedPurple
   category: Shoes
   cost: 0
-  exclusive: true
+#  exclusive: true - TheDen - Doesnt need this
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutShoes2
+      group: LoadoutShoes # TheDen
     - !type:CharacterSpeciesRequirement
       inverted: true
       species:
@@ -34,10 +34,10 @@
   id: LoadoutClothingUnderSocksStripedRainbow
   category: Shoes
   cost: 0
-  exclusive: true
+#  exclusive: true - TheDen - Doesnt need this
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutShoes2
+      group: LoadoutShoes # TheDen
     - !type:CharacterSpeciesRequirement
       inverted: true
       species:
@@ -50,10 +50,10 @@
   id: LoadoutClothingUnderSocksCoder
   category: Shoes
   cost: 0
-  exclusive: true
+#  exclusive: true - TheDen - Doesnt need this
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutShoes2
+      group: LoadoutShoes # TheDen
     - !type:CharacterSpeciesRequirement
       inverted: true
       species:
@@ -66,10 +66,10 @@
   id: LoadoutClothingUnderSocksCoderValid
   category: Shoes
   cost: 0
-  exclusive: true
+#  exclusive: true - TheDen - Doesnt need this
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutShoes2
+      group: LoadoutShoes # TheDen
     - !type:CharacterSpeciesRequirement
       inverted: true
       species:
@@ -82,10 +82,10 @@
   id: LoadoutClothingUnderSocksBee
   category: Shoes
   cost: 0
-  exclusive: true
+#  exclusive: true - TheDen - Doesnt need this
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutShoes2
+      group: LoadoutShoes # TheDen
     - !type:CharacterSpeciesRequirement
       inverted: true
       species:
