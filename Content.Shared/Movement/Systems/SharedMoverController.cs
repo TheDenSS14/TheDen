@@ -468,15 +468,9 @@ namespace Content.Shared.Movement.Systems
             }
             // Delta V NoShoesSilentFootsteps till here.
 
-            // Den changes to create shoes (but but not shoes) slightly reorganized
             if (_inventory.TryGetSlotEntity(uid, "shoes", out var shoes) &&
-                TryComp<NaturalFootstepSoundsComponent>(shoes, out var _))
-            {
-                sound = moverModifier.FootstepSoundCollection;
-                return true;
-            }
-
-            if (TryComp<FootstepModifierComponent>(shoes, out var modifier))
+                TryComp<FootstepModifierComponent>(shoes, out var modifier) &&
+                !HasComp<NaturalFootstepSoundsComponent>(shoes)) // ignore if using natural footsteps
             {
                 sound = modifier.FootstepSoundCollection;
                 return true;
