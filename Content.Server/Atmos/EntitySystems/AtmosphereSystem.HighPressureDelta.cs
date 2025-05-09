@@ -11,6 +11,9 @@ using Robust.Shared.Physics;
 using Robust.Shared.Physics.Components;
 using Robust.Shared.Prototypes;
 using System.Numerics;
+using Content.Shared.Damage;
+using Content.Shared.Damage.Events;
+
 
 namespace Content.Server.Atmos.EntitySystems;
 
@@ -18,6 +21,20 @@ public sealed partial class AtmosphereSystem
 {
     private EntProtoId _spaceWindProto = "SpaceWindVisual";
     private readonly HashSet<Entity<MovedByPressureComponent>> _activePressures = new();
+
+    public void InitializeSpaceWindEvents()
+    {
+        SubscribeLocalEvent<MovedByPressureComponent, GetThrowingDamageEvent>(GetThrowingDamage);
+    }
+
+    private void GetThrowingDamage(Entity<MovedByPressureComponent> entity, ref GetThrowingDamageEvent throwingDamageEvent)
+    {
+        if (SpaceWindDamageStructures)
+            return;
+
+        throwingDamageEvent.Damage = new();
+    }
+
     private void UpdateHighPressure(float frameTime)
     {
         foreach (var ent in _activePressures)
