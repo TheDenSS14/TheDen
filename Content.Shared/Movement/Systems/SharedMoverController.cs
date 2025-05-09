@@ -475,9 +475,9 @@ namespace Content.Shared.Movement.Systems
                 sound = modifier.FootstepSoundCollection;
                 return true;
             }
-            // End of den changes
 
-            return TryGetFootstepSound(uid, xform, shoes != null, out sound, tileDef: tileDef);
+            var hasShoes = shoes != null && !HasComp<NaturalFootstepSoundsComponent>(shoes);
+            return TryGetFootstepSound(uid, xform, hasShoes, out sound, tileDef: tileDef);
         }
 
         private bool TryGetFootstepSound(

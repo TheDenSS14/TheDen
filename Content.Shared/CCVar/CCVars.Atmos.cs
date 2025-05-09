@@ -168,10 +168,4 @@ public sealed partial class CCVars
     /// </summary>
     public static readonly CVarDef<bool> SpaceWindVisuals =
         CVarDef.Create("atmos.space_wind_visuals", true, CVar.SERVERONLY);
-
-    /// <summary>
-    ///     Whether or not Space Wind will cause damage to structures.
-    /// </summary>
-    public static readonly CVarDef<bool> SpaceWindDamageStructures =
-        CVarDef.Create("atmos.space_wind_damage_structures", false, CVar.SERVERONLY);
 }

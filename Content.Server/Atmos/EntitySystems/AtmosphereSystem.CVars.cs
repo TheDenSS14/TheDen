@@ -29,7 +29,6 @@ namespace Content.Server.Atmos.EntitySystems
         public float HumanoidThrowMultiplier { get; private set; }
         public bool SpaceWindAllowKnockdown { get; private set; }
         public bool SpaceWindVisuals { get; private set; }
-        public bool SpaceWindDamageStructures { get; private set; }
 
         /// <summary>
         /// Time between each atmos sub-update.  If you are writing an atmos device, use AtmosDeviceUpdateEvent.dt
@@ -62,7 +61,6 @@ namespace Content.Server.Atmos.EntitySystems
             Subs.CVar(_cfg, CCVars.AtmosHumanoidThrowMultiplier, value => HumanoidThrowMultiplier = value, true);
             Subs.CVar(_cfg, CCVars.SpaceWindAllowKnockdown, value => SpaceWindAllowKnockdown = value, true);
             Subs.CVar(_cfg, CCVars.SpaceWindVisuals, value => SpaceWindVisuals = value, true);
-            Subs.CVar(_cfg, CCVars.SpaceWindDamageStructures, value => SpaceWindDamageStructures = value, true);
         }
     }
 }

@@ -97,7 +97,7 @@ namespace Content.Shared.Damage.Systems
                 || _standing.IsDown(args.Target))
                 return;
 
-            var modifiedDamage = _damageable.TryChangeDamage(args.Target, GetDamage(uid, component, args.Component.Thrower),
+            var modifiedDamage = _damageable.TryChangeDamage(args.Target, GetDamage(uid, component, args.Target, args.Component.Thrower),
                 component.IgnoreResistances, origin: args.Component.Thrower, targetPart: args.TargetPart);
 
             // Log damage only for mobs. Useful for when people throw spears at each other, but also avoids log-spam when explosions send glass shards flying.
@@ -200,12 +200,12 @@ namespace Content.Shared.Damage.Systems
         /// <summary>
         ///   Gets the total damage a throwing weapon does.
         /// </summary>
-        public DamageSpecifier GetDamage(EntityUid uid, DamageOtherOnHitComponent? component = null, EntityUid? user = null)
+        public DamageSpecifier GetDamage(EntityUid uid, DamageOtherOnHitComponent? component = null, EntityUid? target = null, EntityUid? user = null)
         {
             if (!Resolve(uid, ref component, false))
                 return new DamageSpecifier();
 
-            var ev = new GetThrowingDamageEvent(uid, component.Damage, new(), user);
+            var ev = new GetThrowingDamageEvent(uid, component.Damage, new(), target, user);
             RaiseLocalEvent(uid, ref ev);
 
             if (component.ContestArgs is not null && user is EntityUid userUid)
