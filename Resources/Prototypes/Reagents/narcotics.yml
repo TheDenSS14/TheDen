@@ -229,11 +229,11 @@
   plantMetabolism:
   - !type:PlantAdjustHealth
     amount: -5
-  metabolisms:
-    Narcotic:
-      effects:
-      - !type:ChemAddMoodlet
-        moodPrototype: NicotineBenefit
+#  metabolisms:
+#    Narcotic:
+#      effects:
+#      - !type:ChemAddMoodlet                   #commenting this out until someone can somehow make this popup less spammy. Tired of getting this mood popup every five seconds whenever I smoke.
+#        moodPrototype: NicotineBenefit
 
 # TODO: Replace these nonstandardized effects with generic brain damage
 - type: reagent
