@@ -180,8 +180,8 @@
     - !type:CharacterJobRequirement
       jobs:
         - Captain
-    - !type:CharacterAgeRequirement
-      min: 21
+#    - !type:CharacterAgeRequirement - TheDen
+#      min: 21
   items:
     - WeaponPulsePistolCaptain
 
@@ -197,8 +197,8 @@
     - !type:CharacterJobRequirement
       jobs:
         - Captain
-    - !type:CharacterAgeRequirement
-      min: 21
+#    - !type:CharacterAgeRequirement - TheDen
+#      min: 21
     - !type:CharacterSpeciesRequirement
       species:
       - Oni

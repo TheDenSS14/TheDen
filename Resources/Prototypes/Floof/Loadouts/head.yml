@@ -1,18 +1,19 @@
-- type: loadout
-  id: LoadoutTacticalMaidHeadband
-  category: Head
-  cost: 1
-  exclusive: true
-  items:
-    - ClothingHeadHatTacticalMaidHeadband
-  requirements:
-    - !type:CharacterDepartmentRequirement
-       inverted: true
-       departments:
-         - Security
-         - Command
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutHead2
+# TheDen - loadout deduplication EE versions prefered over floof
+#- type: loadout
+#  id: LoadoutTacticalMaidHeadband
+#  category: Head
+#  cost: 1
+#  exclusive: true
+#  items:
+#    - ClothingHeadHatTacticalMaidHeadband
+#  requirements:
+#    - !type:CharacterDepartmentRequirement
+#       inverted: true
+#       departments:
+#         - Security
+#         - Command
+#    - !type:CharacterItemGroupRequirement
+#      group: LoadoutHead2
 
 - type: loadout
   id: LoadoutHeadHatAnimalCat
@@ -23,7 +24,7 @@
     - ClothingHeadHatAnimalCat
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutHead2
+      group: LoadoutHead # TheDen
 
 - type: loadout
   id: LoadoutHeadHatAnimalCatBrown
@@ -34,7 +35,7 @@
     - ClothingHeadHatAnimalCatBrown
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutHead2
+      group: LoadoutHead # TheDen
 
 - type: loadout
   id: LoadoutHeadAnimalCatBlack
@@ -45,7 +46,7 @@
     - ClothingHeadHatAnimalCatBlack
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutHead2
+      group: LoadoutHead # TheDen
 
 - type: loadout
   id: LoadoutHeadAnimalHeadslime
@@ -56,7 +57,7 @@
     - ClothingHeadHatAnimalHeadslime
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutHead2
+      group: LoadoutHead # TheDen
 
 - type: loadout
   id: LoadoutHeadHatAnimalMonkey
@@ -67,18 +68,19 @@
     - ClothingHeadHatAnimalMonkey
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutHead2
+      group: LoadoutHead # TheDen
 
-- type: loadout
-  id: LoadoutHeadHatWitch1
-  category: Head
-  cost: 0
-  exclusive: true
-  items:
-    - ClothingHeadHatWitch1
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutHead2
+# TheDen - loadout deduplication EE versions prefered over floof
+#- type: loadout
+#  id: LoadoutHeadHatWitch1
+#  category: Head
+#  cost: 0
+#  exclusive: true
+#  items:
+#    - ClothingHeadHatWitch1
+#  requirements:
+#    - !type:CharacterItemGroupRequirement
+#      group: LoadoutHead2
 
 - type: loadout
   id: LoadoutHeadHatPlaguedoctor
@@ -89,7 +91,7 @@
     - ClothingHeadHatPlaguedoctor
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutHead2
+      group: LoadoutHead # TheDen
 
 - type: loadout
   id: LoadoutHeadHatUshanka
@@ -100,7 +102,7 @@
     - ClothingHeadHatUshanka
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutHead2
+      group: LoadoutHead # TheDen
 
 - type: loadout
   id: LoadoutHeadHatWitch
@@ -111,7 +113,7 @@
     - ClothingHeadHatWitch
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutHead2
+      group: LoadoutHead # TheDen
 
 - type: loadout
   id: LoadoutHeadHatTrucker
@@ -122,7 +124,7 @@
     - ClothingHeadHatTrucker
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutHead2
+      group: LoadoutHead # TheDen
 
 - type: loadout
   id: LoadoutHeadPaperSack
@@ -133,7 +135,7 @@
     - ClothingHeadPaperSack
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutHead2
+      group: LoadoutHead # TheDen
 
 - type: loadout
   id: LoadoutHeadHatFlowerWreath
@@ -144,7 +146,11 @@
     - ClothingHeadHatFlowerWreath
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutHead2
+      group: LoadoutHead # TheDen
+    - !type:CharacterSpeciesRequirement # TheDen - Sorry plasmamen, but this is to prevent you burning up on spawn :c
+      inverted: true
+      species:
+        - Plasmaman
 
 - type: loadout
   id: LoadoutHeadHatSquid
@@ -155,7 +161,7 @@
     - ClothingHeadHatSquid
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutHead2
+      group: LoadoutHead # TheDen
 
 - type: loadout
   id: LoadoutHeadHatRedRacoon
@@ -166,7 +172,7 @@
     - ClothingHeadHatRedRacoon
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutHead2
+      group: LoadoutHead # TheDen
 
 - type: loadout
   id: LoadoutHeadHatDogEarsCosmetic
@@ -177,7 +183,7 @@
     - ClothingHeadHatDogEarsCosmetic
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutHead2
+      group: LoadoutHead # TheDen
 
 - type: loadout
   id: LoadoutHeadHatCatEarsCosmetic
@@ -188,4 +194,4 @@
     - ClothingHeadHatCatEarsCosmetic
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutHead2
+      group: LoadoutHead # TheDen

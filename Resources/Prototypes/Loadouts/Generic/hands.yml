@@ -114,22 +114,22 @@
       jobs:
         - Passenger
     - !type:CharacterItemGroupRequirement
-      group: LoadoutGloves2
+      group: LoadoutGloves # TheDen
   items:
     - ClothingHandsGlovesColorYellowBudget
 
 - type: loadout
   id: LoadoutHandsGlovesLeather
-  category: JobsServiceBotanist #they are called botonist's gloves
+  category: JobsServiceBotanist # TheDen - they are called botonist's gloves
   cost: 0
   items:
     - ClothingHandsGlovesLeather
   requirements:
-  - !type:CharacterItemGroupRequirement
-    group: LoadoutBotanistGloves
-  - !type:CharacterJobRequirement
-    jobs:
-    - Botanist
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBotanistGloves
+    - !type:CharacterJobRequirement
+      jobs:
+      - Botanist
 
 - type: loadout
   id: LoadoutHandsGlovesPowerglove
@@ -140,7 +140,7 @@
     - ClothingHandsGlovesPowerglove
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutGloves2
+      group: LoadoutGloves # TheDen
 
 - type: loadout
   id: LoadoutHandsGlovesRobohands
@@ -150,7 +150,7 @@
     - ClothingHandsGlovesRobohands
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutGloves2
+      group: LoadoutGloves # TheDen
 
 - type: loadout
   id: LoadoutHandsGlovesFingerless
@@ -161,10 +161,10 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutGloves
-    - !type:CharacterSpeciesRequirement
-      inverted: true
-      species:
-        - Plasmaman
+#    - !type:CharacterSpeciesRequirement - TheDen - pointless to restrict them
+#      inverted: true
+#      species:
+#        - Plasmaman
 
 - type: loadout
   id: LoadoutHandsGlovesEvening
@@ -213,7 +213,7 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutGloves
-    - !type:CharacterSpeciesRequirement
-      inverted: true
-      species:
-        - Plasmaman
+#    - !type:CharacterSpeciesRequirement - TheDen - pointless to restrict them
+#      inverted: true
+#      species:
+#        - Plasmaman

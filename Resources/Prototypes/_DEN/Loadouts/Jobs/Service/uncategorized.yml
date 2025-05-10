@@ -6,5 +6,9 @@
     - !type:CharacterDepartmentRequirement
       departments:
         - Civilian
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Passenger
   items:
     - TowelColorGreen

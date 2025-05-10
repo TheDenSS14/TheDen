@@ -20,6 +20,8 @@
     - !type:CharacterSpeciesRequirement
       species:
         - Plasmaman
+    - !type:CharacterItemGroupRequirement # TheDen
+      group: LoadoutAirTank
   items:
     - DoubleEmergencyPlasmaTankFilled
 

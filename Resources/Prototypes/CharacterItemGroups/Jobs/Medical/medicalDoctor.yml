@@ -56,12 +56,14 @@
 #  id: LoadoutMedicalDoctorMask
 #  maxItems: 1
 #  items:
-#
-#- type: characterItemGroup
-#  id: LoadoutMedicalDoctorOuter
-#  maxItems: 1
-#  items:
-#
+
+- type: characterItemGroup
+  id: LoadoutMedicalDoctorOuter
+  maxItems: 1
+  items:
+  - type: loadout # TheDen
+    id: LoadoutMedicalOuterLabcoat
+
 #- type: characterItemGroup
 #  id: LoadoutMedicalDoctorShoes
 #  maxItems: 1
