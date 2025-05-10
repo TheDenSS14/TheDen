@@ -67,7 +67,7 @@
   description: A sterile satchel used in medical departments.
   components:
   - type: Sprite
-    sprite: Clothing/Back/Satchels/medical.rsi
+    sprite: _DEN/Clothing/Medical/Back/Satchels/medical.rsi
 
 - type: entity
   parent: ClothingBackpackSatchel
@@ -76,7 +76,7 @@
   description: A sterile satchel with chemist colours.
   components:
   - type: Sprite
-    sprite: Clothing/Back/Satchels/chemistry.rsi
+    sprite: _DEN/Clothing/Medical/Back/Satchels/chemistry.rsi
 
 - type: entity
   parent: ClothingBackpackSatchel
@@ -85,7 +85,7 @@
   description: A satchel made of hypo-allergenic fibers. It's designed to help prevent the spread of disease. Smells like monkey.
   components:
   - type: Sprite
-    sprite: Clothing/Back/Satchels/virology.rsi
+    sprite: _DEN/Clothing/Medical/Back/Satchels/virology.rsi
 
 - type: entity
   parent: ClothingBackpackSatchel

@@ -6,9 +6,9 @@
   description: A suit that protects against biological contamination.
   components:
   - type: Sprite
-    sprite: Clothing/OuterClothing/Bio/general.rsi
+    sprite: _DEN/Clothing/Medical/OuterClothing/Bio/general.rsi
   - type: Clothing
-    sprite: Clothing/OuterClothing/Bio/general.rsi
+    sprite: _DEN/Clothing/Medical/OuterClothing/Bio/general.rsi
   - type: Armor
     modifiers:
       coefficients:
@@ -22,9 +22,9 @@
   description: An advanced suit that protects against biological contamination, in CMO colors.
   components:
   - type: Sprite
-    sprite: Clothing/OuterClothing/Bio/cmo.rsi
+    sprite: _DEN/Clothing/Medical/OuterClothing/Bio/cmo.rsi
   - type: Clothing
-    sprite: Clothing/OuterClothing/Bio/cmo.rsi
+    sprite: _DEN/Clothing/Medical/OuterClothing/Bio/cmo.rsi
 
 - type: entity
   parent: ClothingOuterBioGeneral
@@ -70,6 +70,6 @@
   description: A suit that protects against biological contamination, in Virology colors.
   components:
   - type: Sprite
-    sprite: Clothing/OuterClothing/Bio/virology.rsi
+    sprite: _DEN/Clothing/Medical/OuterClothing/Bio/virology.rsi
   - type: Clothing
-    sprite: Clothing/OuterClothing/Bio/virology.rsi
+    sprite: _DEN/Clothing/Medical/OuterClothing/Bio/virology.rsi
