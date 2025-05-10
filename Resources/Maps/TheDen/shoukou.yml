@@ -6346,6 +6346,14 @@ entities:
     - type: Transform
       pos: -20.5,-43.5
       parent: 2
+- proto: AirlockExternalGlassShuttleMining
+  entities:
+  - uid: 4891
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: -44.5,-62.5
+      parent: 2
 - proto: AirlockFreezerHydroponicsLocked
   entities:
   - uid: 174
@@ -6458,7 +6466,7 @@ entities:
       pos: 24.5,16.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -16670.904
+      secondsUntilStateChange: -16850.707
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -6878,7 +6886,7 @@ entities:
       pos: 15.5,8.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -30329.521
+      secondsUntilStateChange: -30509.324
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -7350,7 +7358,7 @@ entities:
       pos: 18.5,-7.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -257043.7
+      secondsUntilStateChange: -257223.5
       state: Opening
     - type: DeviceLinkSink
       links:
@@ -46374,7 +46382,7 @@ entities:
       pos: 24.5,16.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -16677.203
+      secondsUntilStateChange: -16857.006
       state: Closing
     - type: DeviceNetwork
       deviceLists:
