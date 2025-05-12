@@ -8,6 +8,7 @@ using Content.Server.Psionics;
 using Content.Server.StationEvents.Components;
 using Content.Shared.Abilities.Psionics;
 using Content.Shared.Consent;
+using Content.Shared.Mind.Components;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Mobs.Systems;
 using Robust.Shared.Player;
@@ -38,7 +39,10 @@ internal sealed class MassMindSwapRule : StationEventSystem<MassMindSwapRuleComp
         var query = EntityQueryEnumerator<PsionicComponent, MobStateComponent>();
         while (query.MoveNext(out var psion, out _, out _))
         {
-            if (_mobStateSystem.IsAlive(psion) && !HasComp<PsionicInsulationComponent>(psion) && _consent.HasConsent(psion, MassMindSwapConsent))
+            if (_mobStateSystem.IsAlive(psion)
+                && !HasComp<PsionicInsulationComponent>(psion)
+                && HasComp<MindContainerComponent>(psion)
+                && _consent.HasConsent(psion, MassMindSwapConsent))
             {
                 psionicPool.Add(psion);
 
@@ -63,6 +67,11 @@ internal sealed class MassMindSwapRule : StationEventSystem<MassMindSwapRuleComp
 
                 // Pop the last entry off.
                 var other = psionicPool[^1];
+
+                if (!HasComp<MindContainerComponent>(other)
+                    || !_consent.HasConsent(other, MassMindSwapConsent))
+                    continue;
+
                 psionicPool.RemoveAt(psionicPool.Count - 1);
 
                 if (other == actor)

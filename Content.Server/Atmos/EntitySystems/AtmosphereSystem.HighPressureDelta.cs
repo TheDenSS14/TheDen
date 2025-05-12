@@ -11,6 +11,10 @@ using Robust.Shared.Physics;
 using Robust.Shared.Physics.Components;
 using Robust.Shared.Prototypes;
 using System.Numerics;
+using Content.Server._DEN.Atmos.Components;
+using Content.Shared.Damage.Events;
+using Content.Shared.Mobs.Components;
+
 
 namespace Content.Server.Atmos.EntitySystems;
 
@@ -18,6 +22,7 @@ public sealed partial class AtmosphereSystem
 {
     private EntProtoId _spaceWindProto = "SpaceWindVisual";
     private readonly HashSet<Entity<MovedByPressureComponent>> _activePressures = new();
+
     private void UpdateHighPressure(float frameTime)
     {
         foreach (var ent in _activePressures)
@@ -145,7 +150,8 @@ public sealed partial class AtmosphereSystem
         if (!Resolve(uid, ref physics, false)
             || !Resolve(uid, ref xform)
             || physics.BodyType == BodyType.Static
-            || physics.LinearVelocity.Length() >= SpaceWindMaxForce)
+            || physics.LinearVelocity.Length() >= SpaceWindMaxForce
+            || HasComp<WasMovedByPressureComponent>(ent))
             return;
 
         var alwaysThrow = partialFrictionComposition == 0 || physics.BodyStatus == BodyStatus.InAir;
@@ -183,5 +189,6 @@ public sealed partial class AtmosphereSystem
         component.Throwing = true;
         component.ThrowingCutoffTarget = _gameTiming.CurTime + component.CutoffTime;
         _activePressures.Add(ent);
+        EnsureComp<WasMovedByPressureComponent>(ent);
     }
 }

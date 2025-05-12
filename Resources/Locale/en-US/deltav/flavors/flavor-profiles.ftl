@@ -32,7 +32,7 @@ flavor-complex-double-ice-cream = like ice cream, twice
 flavor-complex-drgibbbloodred = like severe malpractice
 
 ## Delta-V additional drink flavors
-flavor-complex-absinthe = like green death
+flavor-complex-absinthe = like... green
 flavor-complex-blue-curacao = like fermented oranges
 flavor-complex-deadrum = like a botched murder
 flavor-complex-n-t-cahors = five hundred dollars too expensive

@@ -1,0 +1,14 @@
+- type: entity
+  parent: ClothingShoesBootsMag
+  id: ClothingShoesBootsMagParamed
+  name: paramedic magboots
+  suffix: Medical # TheDen
+  description: Magboots designed to be lighter than standard-issue for paramedical use in low gravity emergencies.
+  components:
+  - type: Sprite
+    sprite: _DEN/Clothing/Shoes/magboots-paramed.rsi
+  - type: Clothing
+    sprite: _DEN/Clothing/Shoes/magboots-paramed.rsi
+  - type: ClothingSpeedModifier
+    walkModifier: 0.90
+    sprintModifier: 0.85

@@ -140,7 +140,7 @@
     - HugObject
     - KissObject
     - LickObject
-  - type: PressureDamageChange # Lavaland Change: Pressure damage change for kinetic weapons
+#  - type: PressureDamageChange # Lavaland Change: Pressure damage change for kinetic weapons
 
 - type: entity
   parent: BaseWeaponCrusher
@@ -169,7 +169,7 @@
     capacity: 1
     count: 1
   - type: MeleeWeapon
-    attackRate: 1.5 # Lavaland/Eris Change
+    attackRate: 0.65 # Lavaland/Eris Change
     range: 1.65
     wideAnimationRotation: -135
     damage:
@@ -177,9 +177,9 @@
         Blunt: 13 # Lavaland Change: no damage when unwielded
         Slash: 7
     bluntStaminaDamageFactor: 2.0
-    heavyRateModifier: 1.5
+    heavyRateModifier: .75
     heavyDamageBaseModifier: 1.2
-    heavyStaminaCost: 2.5
+    heavyStaminaCost: 3
     angle: 120
     soundHit:
       collection: MetalThud
@@ -199,9 +199,17 @@
     slots:
     - back
     - suitStorage
+  - type: IncreaseDamageOnWield
+    damage:
+      types:
+        Blunt: 5
+        Slash: 5
+        Structural: 30
+  - type: LeechOnMarker
+    leech:
+      groups:
+        Brute: -10
   # Lavaland Change Start
-  - type: MeleeRequiresWield
-    fumbleOnAttempt: true
   - type: DamageBoostOnMarker
     boost:
       types: # Totals to 70 damage when hitting marked targets
