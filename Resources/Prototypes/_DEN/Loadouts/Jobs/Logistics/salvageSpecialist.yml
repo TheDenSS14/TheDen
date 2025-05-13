@@ -1,0 +1,21 @@
+- type: loadout
+  id: LoadoutSalvageGearJaunter
+  category: JobsLogisticsSalvageSpecialist
+  cost: 0
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - SalvageSpecialist
+  items:
+    - LavalandJaunter
+
+- type: loadout
+  id: LoadoutSalvageGearJaunterSpare
+  category: JobsLogisticsSalvageSpecialist
+  cost: 4
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - SalvageSpecialist
+  items:
+    - LavalandJaunter
