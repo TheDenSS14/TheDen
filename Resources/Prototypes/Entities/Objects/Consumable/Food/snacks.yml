@@ -223,6 +223,13 @@
   - type: FlavorProfile
     flavors:
       - raisins
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 30 # Room for extra condiments
+        reagents:
+        - ReagentId: Raisins
+          Quantity: 10
   - type: Sprite
     state: raisins
   - type: Item
