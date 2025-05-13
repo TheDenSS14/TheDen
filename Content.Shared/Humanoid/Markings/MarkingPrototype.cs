@@ -38,9 +38,6 @@ namespace Content.Shared.Humanoid.Markings
         [DataField]
         public MarkingColors Coloring { get; private set; } = new();
 
-        [DataField]
-        public string PreviewDirection { get; private set; } = "South";
-
         [DataField("sprites", required: true)]
         public List<SpriteSpecifier> Sprites { get; private set; } = default!;
 
