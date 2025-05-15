@@ -11,7 +11,8 @@ language-RootSpeak-name = Rootspeak
 language-RootSpeak-description = The strange whistling-style language spoken by the Diona.
 
 language-Nekomimetic-name = Nekomimetic
-language-Nekomimetic-description = To the casual observer, this language is an incomprehensible mess of broken Japanese. To the Felinids and Oni, it's somehow comprehensible.
+language-Nekomimetic-description = A language composed of animal noises and syllables, easy to replicate but hard to understand. Spoken natively by Felinids.
+# DEN: Changed Nekomimetic description
 
 language-Draconic-name = Sinta'Unathi
 language-Draconic-description =
