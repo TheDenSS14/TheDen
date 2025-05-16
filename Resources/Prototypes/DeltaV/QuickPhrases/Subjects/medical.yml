@@ -179,6 +179,11 @@
   text: phrase-healthy
 
 - type: quickPhrase
+  id: LobotomyPhrase
+  parent: BaseMedicinePhrase
+  text: phrase-lobotomy
+
+- type: quickPhrase
   id: MedicalChemicalsPhrase
   parent: BaseMedicinePhrase
   text: phrase-chemicals

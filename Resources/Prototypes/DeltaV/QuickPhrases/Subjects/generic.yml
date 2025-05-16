@@ -203,6 +203,21 @@
   parent: BaseSubjectPhrase
   text: phrase-upgrade
 
+- type: quickPhrase
+  id: HappenPhrase
+  parent: BaseSubjectPhrase
+  text: phrase-happen
+
+- type: quickPhrase
+  id: FunPhrase
+  parent: BaseSubjectPhrase
+  text: phrase-fun
+
+- type: quickPhrase
+  id: TimePhrase
+  parent: BaseSubjectPhrase
+  text: phrase-time
+
 # Materials
 
 - type: quickPhrase

@@ -42,19 +42,24 @@
 - type: quickPhrase
   id: HowDoIPhrase
   parent: BaseQuestionPhrase
-  text: phrase-how-do-i
+  text: phrase-how-do
 
 - type: quickPhrase
   id: CanIPhrase
   parent: BaseQuestionPhrase
-  text: phrase-can-i
+  text: phrase-can
 
 - type: quickPhrase
   id: ShouldIPhrase
   parent: BaseQuestionPhrase
-  text: phrase-should-i
+  text: phrase-should
 
 - type: quickPhrase
   id: WhichPhrase
   parent: BaseQuestionPhrase
   text: phrase-which
+
+- type: quickPhrase
+  id: QuestionPhrase
+  parent: BaseQuestionPhrase
+  text: phrase-question

@@ -126,6 +126,7 @@ phrase-alive = alive
 phrase-crit = critical
 phrase-dead = dead
 phrase-healthy = healthy
+phrase-lobotomy = lobotomy
 phrase-handcuffs = handcuffs
 phrase-stun-baton = stun baton
 phrase-disabler = disabler
@@ -210,6 +211,9 @@ phrase-gas-analyzer = gas analyzer
 phrase-planetside = planetside
 phrase-holopad = holopad
 phrase-upgrade = upgrade
+phrase-happen = happen
+phrase-fun = fun
+phrase-time = time
 
 # colors
 phrase-color-red = red

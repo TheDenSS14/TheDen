@@ -31,9 +31,19 @@
   text: phrase-hazard-cold
 
 - type: quickPhrase
-  id: HazardGasLeakPhrase
+  id: HazardWetPhrase
   parent: BaseHazardThreatPhrase
-  text: phrase-hazard-gas-leak
+  text: phrase-hazard-wet
+
+- type: quickPhrase
+  id: HazardLeakPhrase
+  parent: BaseHazardThreatPhrase
+  text: phrase-hazard-leak
+
+- type: quickPhrase
+  id: HazardGasPhrase
+  parent: BaseHazardThreatPhrase
+  text: phrase-hazard-gas
 
 - type: quickPhrase
   id: HazardExplosionPhrase

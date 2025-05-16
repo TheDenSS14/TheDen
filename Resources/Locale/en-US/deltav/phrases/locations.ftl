@@ -11,6 +11,12 @@ phrase-location-near = near
 phrase-location-far = far
 phrase-location-inside = inside
 phrase-location-outside = outside
+phrase-location-in = in
+phrase-location-out = out
+phrase-location-left = left
+phrase-location-right = right
+phrase-location-top = top
+phrase-location-bottom = bottom
 
 ## compass
 phrase-location-north = north

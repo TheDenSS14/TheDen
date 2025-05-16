@@ -65,6 +65,36 @@
   id: LocationOutsidePhrase
   text: phrase-location-outside
 
+- type: quickPhrase
+  parent: BaseLocationPhrase
+  id: LocationInPhrase
+  text: phrase-location-in
+
+- type: quickPhrase
+  parent: BaseLocationPhrase
+  id: LocationOutPhrase
+  text: phrase-location-out
+
+- type: quickPhrase
+  parent: BaseLocationPhrase
+  id: LocationLeftPhrase
+  text: phrase-location-left
+
+- type: quickPhrase
+  parent: BaseLocationPhrase
+  id: LocationRightPhrase
+  text: phrase-location-right
+
+- type: quickPhrase
+  parent: BaseLocationPhrase
+  id: LocationTopPhrase
+  text: phrase-location-top
+
+- type: quickPhrase
+  parent: BaseLocationPhrase
+  id: LocationBottomPhrase
+  text: phrase-location-bottom
+
 ## Compass directions
 
 - type: quickPhrase
