@@ -45,8 +45,8 @@
 
 - type: entity
   parent: BaseItem
-  id: AACTablet_sas
-  name: Speak & Spell AAC tablet
+  id: AACTablet_SAS
+  name: S&S AAC tablet
   description: An "augmentative and alternative communication" device that allows speech-impaired individuals to communicate. This one seems to sound like an old learning aid.
   components:
   - type: Sprite
@@ -84,7 +84,7 @@
       enum.AACTabletKey.Key:
         type: AACBoundUserInterface
   - type: Speech
-    speechSounds: AAC_tablet_sas_collection
+    speechSounds: AAC_tablet_SAS_collection
   - type: AACTablet
   - type: VoiceMask
 
