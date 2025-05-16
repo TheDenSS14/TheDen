@@ -18,11 +18,11 @@
   items:
   - ClothingUnderSocksHeadSecurity
   requirements:
-  - !type:CharacterSpeciesRequirement
-    inverted: true
-    species:
-    - Diona
-    - Harpy
+#  - !type:CharacterSpeciesRequirement - TheDen
+#    inverted: true
+#    species:
+#    - Diona
+#    - Harpy
   - !type:CharacterJobRequirement
     jobs:
     - HeadOfSecurity

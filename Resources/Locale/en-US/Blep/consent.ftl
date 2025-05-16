@@ -25,11 +25,14 @@ consent-Hypno-name = Hypnosis
 consent-Hypno-desc = Allow yourself to be hypnotized.
 
 consent-NoClone-name = Disallow Paradox Anomaly
-consent-NoClone-desc = Disallow yourself to be the target of a paradox anomaly clone.
+consent-NoClone-desc = Disallow yourself to be the target of a paradox anomaly clone. (on = no paradox anomaly)
 
 consent-MindSwap-name = Mind Swap
-consent-MindSwap-desc = Should mind swap effect you?
+consent-MindSwap-desc = Should mind swap work on you?
 consent-MindSwap-no-consent = { CAPITALIZE(POSS-ADJ($target)) } mind rejects your advances.
+
+consent-MassMindSwap-name = Mass Mind Swap
+consent-MassMindSwap-desc = Should a mass mind swap from glimmer work on you?
 
 consent-ChangelingTarget-name = Changeling Target
 consent-ChangelingTarget-desc = Should your body be allowed to be stolen by changelings?

@@ -655,7 +655,7 @@
 
 - type: loadout
   id: LoadoutMedkitBruteFilled
-  category: GeneralItems
+  category: JobsMedicalAUncategorized # TheDen
   cost: 2
   items:
     - MedkitBruteFilled
@@ -673,7 +673,7 @@
 
 - type: loadout
   id: LoadoutMedkitBurnFilled
-  category: GeneralItems
+  category: JobsMedicalAUncategorized # TheDen
   cost: 2
   items:
     - MedkitBurnFilled
@@ -691,7 +691,7 @@
 
 - type: loadout
   id: LoadoutMedkitToxinFilled
-  category: GeneralItems
+  category: JobsMedicalAUncategorized # TheDen
   cost: 2
   items:
     - MedkitToxinFilled
@@ -709,7 +709,7 @@
 
 - type: loadout
   id: LoadoutMedkitOxygenFilled
-  category: GeneralItems
+  category: JobsMedicalAUncategorized # TheDen
   cost: 2
   items:
     - MedkitOxygenFilled
@@ -727,7 +727,7 @@
 
 - type: loadout
   id: LoadoutMedkitRadiationFilled
-  category: GeneralItems
+  category: JobsMedicalAUncategorized # TheDen
   cost: 2
   items:
     - MedkitRadiationFilled
@@ -745,7 +745,7 @@
 
 - type: loadout
   id: LoadoutMedkitAdvancedFilled
-  category: GeneralItems
+  category: JobsMedicalAUncategorized # TheDen
   cost: 3
   items:
     - MedkitAdvancedFilled
@@ -763,7 +763,7 @@
 
 - type: loadout
   id: LoadoutMedkitCombatFilled
-  category: GeneralItems
+  category: JobsMedicalAUncategorized # TheDen
   cost: 3
   items:
     - MedkitCombatFilled
@@ -789,19 +789,19 @@
   items:
   - WeaponCivilianDisabler
 
-- type: loadout
-  id: LoadoutItemFlash
-  category: GeneralItems
-  cost: 1
-  items:
-    - Flash
-  requirements:
-    - !type:CharacterDepartmentRequirement
-       departments:
-         - Security
-    - !type:CharacterJobRequirement
-       jobs:
-         - Brigmedic
+#- type: loadout - Already a flash in the sec loadouts (plus one default in bag, and if oyu want more than TWO flashes, sectech is right there)
+#  id: LoadoutItemFlash
+#  category: GeneralItems
+#  cost: 1
+#  items:
+#    - Flash
+#  requirements:
+#    - !type:CharacterDepartmentRequirement
+#       departments:
+#         - Security
+#    - !type:CharacterJobRequirement
+#       jobs:
+#         - Brigmedic
 
  # 5 zillion ghostroles, more people will take them if theyre less common.
  # - type: loadout
@@ -991,7 +991,7 @@
 
 - type: loadout
   id: LoadoutItemNTDeck
-  category: GeneralItems
+  category: JobsCommandAUncategorized # TheDen
   cost: 3
   canBeHeirloom: false
   items:
@@ -1002,6 +1002,7 @@
     - !type:CharacterDepartmentRequirement
        departments:
          - Command
+         - Dignitary # TheDen
 
 - type: loadout
   id: LoadoutItemFoodLollipop

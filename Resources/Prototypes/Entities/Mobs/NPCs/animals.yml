@@ -2436,9 +2436,9 @@
     solution: melee
   - type: LanguageKnowledge
     speaks:
-    - Xeno
+    - Arachnic
     understands:
-    - Xeno
+    - Arachnic
   - type: FootstepModifier # Spider multi-step noise // TheDen
     footstepSoundCollection:
       collection: FootstepSpider
@@ -2513,7 +2513,7 @@
   components:
   - type: NpcFactionMember
     factions:
-      - Xeno
+      - SimpleHostile
   - type: InputMover
   - type: MobMover
   - type: HTN

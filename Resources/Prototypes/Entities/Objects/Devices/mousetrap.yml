@@ -22,7 +22,7 @@
     - type: DamageUserOnTrigger
       damage:
         types:
-          Blunt: 2 # base damage, scales based on mass
+          Blunt: 10
     - type: EmitSoundOnUse
       sound: "/Audio/Items/Handcuffs/cuff_end.ogg"
     - type: EmitSoundOnTrigger

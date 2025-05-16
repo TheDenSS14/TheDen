@@ -1,14 +1,19 @@
 using Robust.Server.GameObjects;
 using Robust.Shared.Random;
 using Content.Server.Abilities.Psionics;
+using Content.Server.Consent;
 using Content.Shared.GameTicking.Components;
 using Content.Server.GameTicking.Rules.Components;
 using Content.Server.Psionics;
 using Content.Server.StationEvents.Components;
 using Content.Shared.Abilities.Psionics;
+using Content.Shared.Consent;
+using Content.Shared.Mind.Components;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Mobs.Systems;
 using Robust.Shared.Player;
+using Robust.Shared.Prototypes;
+
 
 namespace Content.Server.StationEvents.Events;
 
@@ -20,6 +25,9 @@ internal sealed class MassMindSwapRule : StationEventSystem<MassMindSwapRuleComp
     [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly MobStateSystem _mobStateSystem = default!;
     [Dependency] private readonly MindSwapPowerSystem _mindSwap = default!;
+    [Dependency] private readonly ConsentSystem _consent = default!;
+
+    private static readonly ProtoId<ConsentTogglePrototype> MassMindSwapConsent = "MassMindSwap";
 
     protected override void Started(EntityUid uid, MassMindSwapRuleComponent component, GameRuleComponent gameRule, GameRuleStartedEvent args)
     {
@@ -31,7 +39,10 @@ internal sealed class MassMindSwapRule : StationEventSystem<MassMindSwapRuleComp
         var query = EntityQueryEnumerator<PsionicComponent, MobStateComponent>();
         while (query.MoveNext(out var psion, out _, out _))
         {
-            if (_mobStateSystem.IsAlive(psion) && !HasComp<PsionicInsulationComponent>(psion))
+            if (_mobStateSystem.IsAlive(psion)
+                && !HasComp<PsionicInsulationComponent>(psion)
+                && HasComp<MindContainerComponent>(psion)
+                && _consent.HasConsent(psion, MassMindSwapConsent))
             {
                 psionicPool.Add(psion);
 
@@ -56,6 +67,11 @@ internal sealed class MassMindSwapRule : StationEventSystem<MassMindSwapRuleComp
 
                 // Pop the last entry off.
                 var other = psionicPool[^1];
+
+                if (!HasComp<MindContainerComponent>(other)
+                    || !_consent.HasConsent(other, MassMindSwapConsent))
+                    continue;
+
                 psionicPool.RemoveAt(psionicPool.Count - 1);
 
                 if (other == actor)
