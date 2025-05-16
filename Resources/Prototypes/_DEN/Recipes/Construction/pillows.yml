@@ -1,0 +1,14 @@
+- type: construction
+  name: white pillow
+  id: PillowFoldingWhiteConstruction
+  graph: Pillows
+  startNode: start
+  targetNode: pillowWhite
+  category: construction-category-furniture
+  description: Comfy pillow you can sit on.
+  icon:
+    sprite: /Textures/_Bubber/Structures/Furniture/pillows.rsi
+    state: pillowWhite
+  canRotate: false
+  objectType: Structure
+  canBuildInImpassable: false

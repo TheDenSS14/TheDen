@@ -1,0 +1,24 @@
+- type: constructionGraph
+  id: Pillows
+  start: start
+  graph:
+  - node: start
+    actions:
+    - !type:DestroyEntity {}
+    edges:
+    - to: pillowWhite
+      steps:
+      - material: Cloth
+        amount: 1
+        doAfter: 1
+  - node: pillowWhite
+    entity: pillowWhite
+    edges:
+    - to: start
+      completed:
+      - !type:SpawnPrototype
+        prototype: MaterialCloth1
+        amount: 1
+      steps:
+      - tool: Cutting
+        doAfter: 2

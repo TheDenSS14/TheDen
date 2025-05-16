@@ -1,0 +1,26 @@
+- type: entity
+  parent: [SeatBase, BaseFoldable]
+  id: pillowWhite
+  name: white pillow
+  description: Comfy pillow you can sit on.
+  components:
+  - type: Sprite
+    sprite: /Textures/_Bubber/Structures/Furniture/pillows.rsi
+    layers:
+    - state: pillowWhite
+      map: ["unfoldedLayer"]
+    - state: pillowWhite
+      map: ["foldedLayer"]
+      visible: false
+  - type: Item
+    size: Small
+  - type: Appearance
+  - type: MeleeWeapon
+    damage:
+      types:
+        Blunt: 0
+    soundHit:
+      collection: storageRustle
+  - type: Construction
+    graph: Pillows
+    node: pillowWhite
