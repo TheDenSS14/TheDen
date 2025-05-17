@@ -1,0 +1,17 @@
+# Ported and edited from Hyperstation (SS13).
+
+- type: marking
+  id: IPCHeadRound
+  bodyPart: Head
+  markingCategory: Head
+  speciesRestriction: [IPC]
+  coloring:
+    default:
+      type:
+        !type:SkinColoring
+      fallbackTypes:
+      - !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+  - sprite: _DEN/Mobs/Customization/IPC/ipc_heads.rsi
+    state: round
