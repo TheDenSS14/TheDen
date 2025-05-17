@@ -484,3 +484,86 @@
   id: LanguageRodentianPhrase
   parent: BaseLanguageNamePhrase
   text: language-Rodentian-name
+
+- type: quickPhrase
+  id: BaseEmotionPhrase
+  parent: BaseSubjectPhrase
+  group: Emotions
+  abstract: true
+
+- type: quickPhrase
+  id: EmotionIFeelPhrase
+  parent: BaseEmotionPhrase
+  text: phrase-emotion-ifeel
+
+# emotions alphabetically
+
+- type: quickPhrase
+  id: EmotionAngerPhrase
+  parent: BaseEmotionPhrase
+  text: phrase-emotion-anger
+
+- type: quickPhrase
+  id: EmotionAnxietyPhrase
+  parent: BaseEmotionPhrase
+  text: phrase-emotion-anxiety
+
+- type: quickPhrase
+  id: EmotionDesirePhrase
+  parent: BaseEmotionPhrase
+  text: phrase-emotion-desire
+
+- type: quickPhrase
+  id: EmotionDeterminationPhrase
+  parent: BaseEmotionPhrase
+  text: phrase-emotion-determination
+
+- type: quickPhrase
+  id: EmotionDisgustPhrase
+  parent: BaseEmotionPhrase
+  text: phrase-emotion-disgust
+
+- type: quickPhrase
+  id: EmotionFatiguePhrase
+  parent: BaseEmotionPhrase
+  text: phrase-emotion-fatigue
+
+- type: quickPhrase
+  id: EmotionFearPhrase
+  parent: BaseEmotionPhrase
+  text: phrase-emotion-fear
+
+- type: quickPhrase
+  id: EmotionGuiltPhrase
+  parent: BaseEmotionPhrase
+  text: phrase-emotion-guilt
+
+- type: quickPhrase
+  id: EmotionHappinessPhrase
+  parent: BaseEmotionPhrase
+  text: phrase-emotion-happiness
+
+- type: quickPhrase
+  id: EmotionHatePhrase
+  parent: BaseEmotionPhrase
+  text: phrase-emotion-hate
+
+- type: quickPhrase
+  id: EmotionLovePhrase
+  parent: BaseEmotionPhrase
+  text: phrase-emotion-love
+
+- type: quickPhrase
+  id: EmotionPatiencePhrase
+  parent: BaseEmotionPhrase
+  text: phrase-emotion-patience
+
+- type: quickPhrase
+  id: EmotionSadnessPhrase
+  parent: BaseEmotionPhrase
+  text: phrase-emotion-sadness
+
+- type: quickPhrase
+  id: EmotionSurprisePhrase
+  parent: BaseEmotionPhrase
+  text: phrase-emotion-surprise

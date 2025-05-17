@@ -230,6 +230,24 @@ phrase-color-rainbow = rainbow
 phrase-color-brown = brown
 phrase-color-gray = gray
 
+# emotions alphabetically
+phrase-emotion-ifeel = I feel
+
+phrase-emotion-anger = anger
+phrase-emotion-anxiety = anxiety
+phrase-emotion-desire = desire
+phrase-emotion-determination = determination
+phrase-emotion-disgust = disgust
+phrase-emotion-fatigue = fatigue
+phrase-emotion-fear = fear
+phrase-emotion-guilt = guilt
+phrase-emotion-happiness = happiness
+phrase-emotion-hate = hate
+phrase-emotion-love = love
+phrase-emotion-patience = patience
+phrase-emotion-sadness = sadness
+phrase-emotion-surprise = surprise
+
 # flavors
 phrase-sweet = sweet
 phrase-sour = sour
