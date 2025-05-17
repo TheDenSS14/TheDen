@@ -29,7 +29,6 @@ phrase-signature = signature
 phrase-belt = belt
 phrase-hardsuit = hardsuit
 phrase-light = light
-phrase-bag = bag
 phrase-steel = steel
 phrase-plastic = plastic
 phrase-plasteel = plasteel
