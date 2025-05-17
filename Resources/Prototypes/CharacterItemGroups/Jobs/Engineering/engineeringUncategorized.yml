@@ -74,11 +74,13 @@
 #  maxItems: 1
 #  items:
 #
-#- type: characterItemGroup
-#  id: LoadoutEngineeringNeck
-#  maxItems: 1
-#  items:
-#
+- type: characterItemGroup
+  id: LoadoutEngineeringNeck
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutEngineeringNeckNeckerchief # Floof - M3739 - #988
+
 #- type: characterItemGroup
 #  id: LoadoutEngineeringMask
 #  maxItems: 1

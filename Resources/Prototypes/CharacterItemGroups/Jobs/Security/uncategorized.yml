@@ -183,11 +183,13 @@
 #  maxItems: 1
 #  items:
 #
-#- type: characterItemGroup
-#  id: LoadoutSecurityNeck
-#  maxItems: 1
-#  items:
-#
+- type: characterItemGroup 
+  id: LoadoutSecurityNeck # Floof - M3739 - #988
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutSecurityNeckNeckerchief
+
 - type: characterItemGroup
   id: LoadoutSecurityMask
   maxItems: 1

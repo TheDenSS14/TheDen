@@ -1,0 +1,88 @@
+- type: entity
+  parent: ClothingNeckBase
+  id: ClothingNeckNeckerchief
+  name: neckerchief
+  description: A unique neckwear choice evoking an adventurous spirit. The origins of this style remain a mystery to this day.
+  components:
+    - type: Sprite
+      sprite: _Floof/Clothing/Neck/Neckerchiefs/Neckerchief.rsi
+    - type: Clothing
+      sprite: _Floof/Clothing/Neck/Neckerchiefs/Neckerchief.rsi
+      
+- type: entity
+  parent: ClothingNeckBase
+  id: ClothingNeckNeckerchiefSecurity
+  name: security neckerchief
+  description: A gunmetal grey sheet of ballistic fabric, folded and tied around the neck. The origins of this style remain a mystery to this day.
+  components:
+    - type: Sprite
+      sprite: _Floof/Clothing/Neck/Neckerchiefs/NeckerchiefSecurity.rsi
+    - type: Clothing
+      sprite: _Floof/Clothing/Neck/Neckerchiefs/NeckerchiefSecurity.rsi
+      
+- type: entity
+  parent: ClothingNeckBase
+  id: ClothingNeckNeckerchiefMedical
+  name: medical neckerchief
+  description: A sterile white sheet of cloth, folded and tied around the neck. The origins of this style remain a mystery to this day.
+  components:
+    - type: Sprite
+      sprite: _Floof/Clothing/Neck/Neckerchiefs/NeckerchiefMedical.rsi
+    - type: Clothing
+      sprite: _Floof/Clothing/Neck/Neckerchiefs/NeckerchiefMedical.rsi
+
+- type: entity
+  parent: ClothingNeckBase
+  id: ClothingNeckNeckerchiefCargo
+  name: logistics neckerchief
+  description: A brown sheet of burlap, folded and tied around the neck. The origins of this style remain a mystery to this day.
+  components:
+    - type: Sprite
+      sprite: _Floof/Clothing/Neck/Neckerchiefs/NeckerchiefCargo.rsi
+    - type: Clothing
+      sprite: _Floof/Clothing/Neck/Neckerchiefs/NeckerchiefCargo.rsi
+      
+- type: entity
+  parent: ClothingNeckBase
+  id: ClothingNeckNeckerchiefScience
+  name: epistemics neckerchief
+  description: A stain-resistant sheet of a cotton-polyester blend, folded and tied around the neck. The origins of this style remain a mystery to this day.
+  components:
+    - type: Sprite
+      sprite: _Floof/Clothing/Neck/Neckerchiefs/NeckerchiefScience.rsi
+    - type: Clothing
+      sprite: _Floof/Clothing/Neck/Neckerchiefs/NeckerchiefScience.rsi
+      
+- type: entity
+  parent: ClothingNeckBase
+  id: ClothingNeckNeckerchiefEngineering
+  name: engineering neckerchief
+  description: A fire-resistant safety yellow sheet of cloth, folded and tied around the neck. The origins of this style remain a mystery to this day.
+  components:
+    - type: Sprite
+      sprite: _Floof/Clothing/Neck/Neckerchiefs/NeckerchiefEngineering.rsi
+    - type: Clothing
+      sprite: _Floof/Clothing/Neck/Neckerchiefs/NeckerchiefEngineering.rsi
+      
+      
+- type: entity
+  parent: ClothingNeckBase
+  id: ClothingNeckNeckerchiefService
+  name: service neckerchief
+  description: A graphite sheet of silk, folded and tied around the neck. The origins of this style remain a mystery to this day.
+  components:
+    - type: Sprite
+      sprite: _Floof/Clothing/Neck/Neckerchiefs/NeckerchiefService.rsi
+    - type: Clothing
+      sprite: _Floof/Clothing/Neck/Neckerchiefs/NeckerchiefService.rsi
+      
+- type: entity
+  parent: ClothingNeckBase
+  id: ClothingNeckNeckerchiefCommand
+  name: command neckerchief
+  description: A cerulean sheet of durathread, folded and tied around the neck. The origins of this style remain a mystery to this day.
+  components:
+    - type: Sprite
+      sprite: _Floof/Clothing/Neck/Neckerchiefs/NeckerchiefCommand.rsi
+    - type: Clothing
+      sprite: _Floof/Clothing/Neck/Neckerchiefs/NeckerchiefCommand.rsi
