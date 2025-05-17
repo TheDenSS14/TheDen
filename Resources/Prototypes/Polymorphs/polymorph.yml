@@ -207,5 +207,6 @@
     inventory: None
     transferName: true
     transferDamage: true
-    revertOnCrit: false
-    revertOnDeath: false
+    revertOnDeath: true
+    revertOnCrit: true
+    duration: 30
