@@ -10,7 +10,7 @@
       fix1:
         shape: !type:PhysShapeCircle
           radius: 0.35
-        density: 50
+        density: 140 # Floof - M3739 - #981 - Was originally 50. Later found out from SolStar that this was unintended. Given the same density as the Felinids.
         restitution: 0.0
         mask:
         - MobMask
