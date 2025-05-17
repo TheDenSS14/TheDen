@@ -41,8 +41,8 @@ public sealed class AACTabletSystem : EntitySystem
         {
             if (_prototype.TryIndex(phraseProto, out var phrase))
             {
-                // Ensures each phrase is capitalised to maintain common AAC styling
-                _localisedPhrases.Add(_chat.SanitizeMessageCapital(Loc.GetString(phrase.Text)));
+                // removed capitalization 
+                _localisedPhrases.Add(Loc.GetString(phrase.Text));
             }
         }
 
@@ -55,7 +55,7 @@ public sealed class AACTabletSystem : EntitySystem
         EnsureComp<VoiceOverrideComponent>(ent).NameOverride = speakerName;
 
         _chat.TrySendInGameICMessage(ent,
-            string.Join(" ", _localisedPhrases),
+            _chat.SanitizeMessageCapital(string.Join(" ", _localisedPhrases)),
             InGameICChatType.Speak,
             hideChat: false,
             nameOverride: speakerName);
