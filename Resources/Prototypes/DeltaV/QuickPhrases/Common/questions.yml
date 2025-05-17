@@ -35,24 +35,24 @@
   text: phrase-when
 
 - type: quickPhrase
-  id: DoYouHavePhrase
+  id: DoPhrase
   parent: BaseQuestionPhrase
-  text: phrase-do-you-have
+  text: phrase-do
 
 - type: quickPhrase
-  id: HowDoIPhrase
-  parent: BaseQuestionPhrase
-  text: phrase-how-do
-
-- type: quickPhrase
-  id: CanIPhrase
+  id: CanPhrase
   parent: BaseQuestionPhrase
   text: phrase-can
 
 - type: quickPhrase
-  id: ShouldIPhrase
+  id: ShouldPhrase
   parent: BaseQuestionPhrase
   text: phrase-should
+
+- type: quickPhrase
+  id: WouldPhrase
+  parent: BaseQuestionPhrase
+  text: phrase-would
 
 - type: quickPhrase
   id: WhichPhrase

@@ -34,6 +34,11 @@
   text: phrase-ore-processor
 
 - type: quickPhrase
+  id: OrePhrase
+  parent: BaseLogisticsSubjectPhrase
+  text: phrase-ore
+
+- type: quickPhrase
   id: RequestPhrase
   parent: BaseLogisticsSubjectPhrase
   text: phrase-request
@@ -79,14 +84,14 @@
   text: phrase-drill
 
 - type: quickPhrase
-  id: OreBagPhrase
+  id: BagPhrase
   parent: BaseLogisticsSubjectPhrase
-  text: phrase-ore-bag
+  text: phrase-bag
 
 - type: quickPhrase
-  id: SalvMagnetPhrase
+  id: MagnetPhrase
   parent: BaseLogisticsSubjectPhrase
-  text: phrase-salv-magnet
+  text: phrase-magnet
 
 - type: quickPhrase
   id: ExpeditionPhrase

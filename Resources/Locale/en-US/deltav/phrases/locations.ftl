@@ -1,10 +1,10 @@
 phrase-location-ats = ATS
-phrase-location-shipyard = Shipyard
-phrase-location-boxing-ring = Boxing Ring
-phrase-location-outpost = Outpost
-phrase-location-escape-shuttle = Escape shuttle
-phrase-location-shuttle = Shuttle
-phrase-location-maintenance = Maintenance
+phrase-location-shipyard = shipyard
+phrase-location-boxing-ring = boxing ring
+phrase-location-outpost = outpost
+phrase-location-escape-shuttle = escape shuttle
+phrase-location-shuttle = shuttle
+phrase-location-maintenance = maintenance
 
 # relative
 phrase-location-near = near
