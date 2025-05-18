@@ -366,3 +366,8 @@
     - !type:TraitModifyFactions
       addFactions:
         - AnimalFriend
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Ovinia
