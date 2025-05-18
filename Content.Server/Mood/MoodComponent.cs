@@ -1,5 +1,7 @@
-﻿using Content.Shared.Alert;
+﻿using System.Threading;
+using Content.Shared.Alert;
 using Content.Shared.FixedPoint;
+using Content.Shared.Mood;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Generic;
 
@@ -96,6 +98,9 @@ public sealed partial class MoodComponent : Component
         { "HealthLightDamage", 0.1f },
         { "HealthNoDamage", 0.05f }
     };
+
+    // DEN: Bugfix. Allows timeout timers to be cancelled after they are created.
+    public Dictionary<ProtoId<MoodEffectPrototype>, CancellationTokenSource> EffectTimeoutSources = new();
 }
 
 [Serializable]
