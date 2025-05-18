@@ -37,6 +37,9 @@
     capacity: 1
     airtight: false
     itemCanStoreMobs: true
+    whitelist:
+      tags:
+        - PetCarrier
   - type: Weldable
   - type: ResistLocker
   - type: PlaceableSurface
