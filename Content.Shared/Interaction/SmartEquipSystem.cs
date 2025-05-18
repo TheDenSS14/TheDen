@@ -12,7 +12,9 @@ using Robust.Shared.Containers;
 using Robust.Shared.Input.Binding;
 using Robust.Shared.Player;
 
+
 namespace Content.Shared.Interaction;
+
 
 /// <summary>
 /// This handles smart equipping or inserting/ejecting from slots through keybinds--generally shift+E and shift+B
@@ -32,8 +34,12 @@ public sealed class SmartEquipSystem : EntitySystem
     public override void Initialize()
     {
         CommandBinds.Builder
-            .Bind(ContentKeyFunctions.SmartEquipBackpack, InputCmdHandler.FromDelegate(HandleSmartEquipBackpack, handle: false, outsidePrediction: false))
-            .Bind(ContentKeyFunctions.SmartEquipBelt, InputCmdHandler.FromDelegate(HandleSmartEquipBelt, handle: false, outsidePrediction: false))
+            .Bind(
+                ContentKeyFunctions.SmartEquipBackpack,
+                InputCmdHandler.FromDelegate(HandleSmartEquipBackpack, handle: false, outsidePrediction: false))
+            .Bind(
+                ContentKeyFunctions.SmartEquipBelt,
+                InputCmdHandler.FromDelegate(HandleSmartEquipBelt, handle: false, outsidePrediction: false))
             .Register<SmartEquipSystem>();
     }
 
@@ -54,6 +60,36 @@ public sealed class SmartEquipSystem : EntitySystem
         HandleSmartEquip(session, "belt");
     }
 
+    private void SaveLocation(StorageComponent storage, EntityUid itemUid)
+    {
+        var id = IoCManager.Resolve<IEntityManager>().GetNetEntity(itemUid).ToString();
+        storage.StoredItems.TryGetValue(itemUid, out var location);
+
+        if (!storage.SavedLocations.TryGetValue(id, out var locations))
+            locations = new();
+
+        if (locations.Contains(location))
+            return;
+
+        locations.Add(location);
+        storage.SavedLocations[id] = locations;
+    }
+
+
+    private ItemStorageLocation? LoadLocation(StorageComponent storage, EntityUid itemUid)
+    {
+        var id = IoCManager.Resolve<IEntityManager>().GetNetEntity(itemUid).ToString();
+
+        if (!storage.SavedLocations.TryGetValue(id, out var locations))
+            return null;
+
+        if (locations.Count == 0)
+            return null;
+
+        return locations[^1];
+    }
+
+
     private void HandleSmartEquip(ICommonSession? session, string equipmentSlot)
     {
         if (session is not { } playerSession)
@@ -71,7 +107,10 @@ public sealed class SmartEquipSystem : EntitySystem
 
         if (!TryComp<InventoryComponent>(uid, out var inventory) || !_inventory.HasSlot(uid, equipmentSlot, inventory))
         {
-            _popup.PopupClient(Loc.GetString("smart-equip-missing-equipment-slot", ("slotName", equipmentSlot)), uid, uid);
+            _popup.PopupClient(
+                Loc.GetString("smart-equip-missing-equipment-slot", ("slotName", equipmentSlot)),
+                uid,
+                uid);
             return;
         }
 
@@ -120,40 +159,47 @@ public sealed class SmartEquipSystem : EntitySystem
             }
 
             _hands.TryDrop(uid, hands.ActiveHand, handsComp: hands);
-            _inventory.TryEquip(uid, handItem.Value, equipmentSlot, predicted: true, checkDoafter:true);
+            _inventory.TryEquip(uid, handItem.Value, equipmentSlot, predicted: true, checkDoafter: true);
             return;
         }
 
         // case 2 (storage item):
         if (TryComp<StorageComponent>(slotItem, out var storage))
         {
-            switch (handItem)
+            if (handItem == null)
             {
-                case null when storage.Container.ContainedEntities.Count == 0:
+                if (storage.Container.ContainedEntities.Count == 0)
+                {
                     if (storage.SmartEquipSelfIfEmpty)
-                    {
                         SmartEquipItem(slotItem, uid, equipmentSlot, inventory, hands);
-                        return;
-                    }
-                    _popup.PopupClient(emptyEquipmentSlotString, uid, uid);
+                    else
+                        _popup.PopupClient(emptyEquipmentSlotString, uid, uid);
                     return;
-                case null:
-                    var removing = storage.Container.ContainedEntities[^1];
-                    _container.RemoveEntity(slotItem, removing);
-                    _hands.TryPickup(uid, removing, handsComp: hands);
-                    return;
+                }
+
+                var removing = storage.Container.ContainedEntities[^1];
+                SaveLocation(storage, removing);
+                _container.RemoveEntity(slotItem, removing);
+                _hands.TryPickup(uid, removing, handsComp: hands);
+                return;
             }
 
             if (!_storage.CanInsert(slotItem, handItem.Value, out var reason))
             {
                 if (reason != null)
                     _popup.PopupClient(Loc.GetString(reason), uid, uid);
-
                 return;
             }
 
             _hands.TryDrop(uid, hands.ActiveHand, handsComp: hands);
-            _storage.Insert(slotItem, handItem.Value, out var stacked, out _);
+
+            var loc = LoadLocation(storage, handItem.Value);
+            EntityUid? stacked;
+
+            if (loc != null && _storage.ItemFitsInGridLocation(handItem.Value, slotItem, loc.Value))
+                _storage.InsertAt(slotItem, handItem.Value, loc.Value, out stacked);
+            else
+                _storage.Insert(slotItem, handItem.Value, out stacked);
 
             if (stacked != null)
                 _hands.TryPickup(uid, stacked.Value, handsComp: hands);
@@ -181,6 +227,7 @@ public sealed class SmartEquipSystem : EntitySystem
                         SmartEquipItem(slotItem, uid, equipmentSlot, inventory, hands);
                         return;
                     }
+
                     _popup.PopupClient(emptyEquipmentSlotString, uid, uid);
                     return;
                 }
@@ -203,7 +250,10 @@ public sealed class SmartEquipSystem : EntitySystem
 
             if (toInsertTo == null)
             {
-                _popup.PopupClient(Loc.GetString("smart-equip-no-valid-item-slot-insert", ("item", handItem.Value)), uid, uid);
+                _popup.PopupClient(
+                    Loc.GetString("smart-equip-no-valid-item-slot-insert", ("item", handItem.Value)),
+                    uid,
+                    uid);
                 return;
             }
 
@@ -218,7 +268,13 @@ public sealed class SmartEquipSystem : EntitySystem
         SmartEquipItem(slotItem, uid, equipmentSlot, inventory, hands);
     }
 
-    private void SmartEquipItem(EntityUid slotItem, EntityUid uid, string equipmentSlot, InventoryComponent inventory, HandsComponent hands)
+    private void SmartEquipItem(
+        EntityUid slotItem,
+        EntityUid uid,
+        string equipmentSlot,
+        InventoryComponent inventory,
+        HandsComponent hands
+    )
     {
         if (!_inventory.CanUnequip(uid, equipmentSlot, out var inventoryReason))
         {
