@@ -101,10 +101,7 @@ public sealed class SmartEquipSystem : EntitySystem
 
         if (!TryComp<InventoryComponent>(uid, out var inventory) || !_inventory.HasSlot(uid, equipmentSlot, inventory))
         {
-            _popup.PopupClient(
-                Loc.GetString("smart-equip-missing-equipment-slot", ("slotName", equipmentSlot)),
-                uid,
-                uid);
+            _popup.PopupClient(Loc.GetString("smart-equip-missing-equipment-slot", ("slotName", equipmentSlot)), uid, uid);
             return;
         }
 
@@ -244,7 +241,7 @@ public sealed class SmartEquipSystem : EntitySystem
 
             if (toInsertTo == null)
             {
-                _popup.PopupClient(Loc.GetString("smart-equip-no-valid-item-slot-insert", ("item", handItem.Value)),uid,uid);
+                _popup.PopupClient(Loc.GetString("smart-equip-no-valid-item-slot-insert", ("item", handItem.Value)), uid, uid);
                 return;
             }
 
@@ -259,7 +256,7 @@ public sealed class SmartEquipSystem : EntitySystem
         SmartEquipItem(slotItem, uid, equipmentSlot, inventory, hands);
     }
 
-    private void SmartEquipItem(EntityUid slotItem,EntityUid uid,string equipmentSlot,InventoryComponent inventory,HandsComponent hands)
+    private void SmartEquipItem(EntityUid slotItem, EntityUid uid, string equipmentSlot, InventoryComponent inventory, HandsComponent hands)
     {
         if (!_inventory.CanUnequip(uid, equipmentSlot, out var inventoryReason))
         {
