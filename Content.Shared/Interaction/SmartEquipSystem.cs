@@ -12,9 +12,7 @@ using Robust.Shared.Containers;
 using Robust.Shared.Input.Binding;
 using Robust.Shared.Player;
 
-
 namespace Content.Shared.Interaction;
-
 
 /// <summary>
 /// This handles smart equipping or inserting/ejecting from slots through keybinds--generally shift+E and shift+B
@@ -34,12 +32,8 @@ public sealed class SmartEquipSystem : EntitySystem
     public override void Initialize()
     {
         CommandBinds.Builder
-            .Bind(
-                ContentKeyFunctions.SmartEquipBackpack,
-                InputCmdHandler.FromDelegate(HandleSmartEquipBackpack, handle: false, outsidePrediction: false))
-            .Bind(
-                ContentKeyFunctions.SmartEquipBelt,
-                InputCmdHandler.FromDelegate(HandleSmartEquipBelt, handle: false, outsidePrediction: false))
+            .Bind(ContentKeyFunctions.SmartEquipBackpack, InputCmdHandler.FromDelegate(HandleSmartEquipBackpack, handle: false, outsidePrediction: false))
+            .Bind(ContentKeyFunctions.SmartEquipBelt, InputCmdHandler.FromDelegate(HandleSmartEquipBelt, handle: false, outsidePrediction: false))
             .Register<SmartEquipSystem>();
     }
 
@@ -188,6 +182,7 @@ public sealed class SmartEquipSystem : EntitySystem
             {
                 if (reason != null)
                     _popup.PopupClient(Loc.GetString(reason), uid, uid);
+
                 return;
             }
 
@@ -227,7 +222,6 @@ public sealed class SmartEquipSystem : EntitySystem
                         SmartEquipItem(slotItem, uid, equipmentSlot, inventory, hands);
                         return;
                     }
-
                     _popup.PopupClient(emptyEquipmentSlotString, uid, uid);
                     return;
                 }
@@ -250,10 +244,7 @@ public sealed class SmartEquipSystem : EntitySystem
 
             if (toInsertTo == null)
             {
-                _popup.PopupClient(
-                    Loc.GetString("smart-equip-no-valid-item-slot-insert", ("item", handItem.Value)),
-                    uid,
-                    uid);
+                _popup.PopupClient(Loc.GetString("smart-equip-no-valid-item-slot-insert", ("item", handItem.Value)),uid,uid);
                 return;
             }
 
@@ -268,13 +259,7 @@ public sealed class SmartEquipSystem : EntitySystem
         SmartEquipItem(slotItem, uid, equipmentSlot, inventory, hands);
     }
 
-    private void SmartEquipItem(
-        EntityUid slotItem,
-        EntityUid uid,
-        string equipmentSlot,
-        InventoryComponent inventory,
-        HandsComponent hands
-    )
+    private void SmartEquipItem(EntityUid slotItem,EntityUid uid,string equipmentSlot,InventoryComponent inventory,HandsComponent hands)
     {
         if (!_inventory.CanUnequip(uid, equipmentSlot, out var inventoryReason))
         {
