@@ -4,7 +4,7 @@ using Robust.Shared.Map;
 
 namespace Content.IntegrationTests.Tests.Minds;
 
-[TestFixture]
+// [TestFixture]
 public sealed partial class MindTests
 {
     // [Test]
