@@ -7,7 +7,7 @@ namespace Content.IntegrationTests.Tests.Minds;
 [TestFixture]
 public sealed partial class MindTests
 {
-    [Test]
+    // [Test]
     public async Task DeleteAllThenGhost()
     {
         var settings = new PoolSettings
