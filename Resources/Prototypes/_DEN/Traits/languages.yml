@@ -195,18 +195,3 @@
       languagesUnderstood:
         - Alaseta
 
-- type: trait
-  id: Alaseta
-  category: TraitsSpeechLanguages
-  points: -2
-  requirements:
-    - !type:CharacterSpeciesRequirement
-      inverted: true
-      species:
-      - Ovinia
-  functions:
-    - !type:TraitModifyLanguages
-      languagesSpoken:
-        - Caprine
-      languagesUnderstood:
-        - Caprine
