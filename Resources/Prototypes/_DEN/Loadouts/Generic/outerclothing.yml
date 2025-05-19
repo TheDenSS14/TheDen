@@ -9,3 +9,49 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutOuter
+
+# Waist aprons!
+
+- type: loadout
+  id: LoadoutClothingWaistApron
+  category: Outer
+  cost: 1
+  customColorTint: true
+  items:
+    -  ClothingWaistApron
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutOuter
+
+- type: loadout
+  id: LoadoutClothingWaistApronCheckered
+  category: Outer
+  cost: 1
+  customColorTint: true
+  items:
+    -  ClothingWaistApronCheckered
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutOuter
+
+- type: loadout
+  id: LoadoutClothingWaistApronStripesHorizontal
+  category: Outer
+  cost: 1
+  customColorTint: true
+  items:
+    -  ClothingWaistApronStripesHorizontal
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutOuter
+
+- type: loadout
+  id: LoadoutClothingWaistApronStripesVertical
+  category: Outer
+  cost: 1
+  customColorTint: true
+  items:
+    -  ClothingWaistApronStripesVertical
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutOuter
