@@ -11,3 +11,12 @@
   components:
     - type: Implanter
       implant: BionicSyrinxImplant
+
+# CentComm Implanter (Anti-Antag and Mindshield)
+- type: entity
+  parent: BaseImplantOnlyImplanter
+  id: CentCommImplanter
+  name: centcomm implanter
+  components:
+  - type: Implanter
+    implant: CentCommImplant

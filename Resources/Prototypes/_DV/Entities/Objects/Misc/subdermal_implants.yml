@@ -27,3 +27,16 @@
       tags:
         - SubdermalImplant
         - BionicSyrinxImplant
+
+
+- type: entity # DeltaV - CentComm Implanter (Anti-Antag and Mindshield)
+  parent: BaseSubdermalImplant
+  id: CentCommImplant
+  name: centcomm implant
+  description: This implant includes a MindShield and something labeled as "antag immune"? Whatever that is.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: AddComponentsImplant
+    componentsToAdd:
+    - type: AntagImmune
+    - type: MindShield
