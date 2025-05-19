@@ -1,1 +1,11 @@
-# smile
+# Using the chef apron for this one, because the sprite is already white.
+- type: loadout
+  id: LoadoutClothingOuterApronChef
+  category: Outer
+  cost: 1
+  customColorTint: true
+  items:
+    -  ClothingOuterApronChef
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutOuter
