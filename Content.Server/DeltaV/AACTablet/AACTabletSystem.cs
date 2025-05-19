@@ -18,6 +18,8 @@ public sealed class AACTabletSystem : EntitySystem
     [Dependency] private readonly IPrototypeManager _prototype = default!;
     [Dependency] private readonly MimePowersSystem _mimePowers = default!;
 
+    private readonly List<string> _localisedPhrases = [];
+
     public override void Initialize()
     {
         base.Initialize();
@@ -34,7 +36,17 @@ public sealed class AACTabletSystem : EntitySystem
             ("speaker", Name(ent)),
             ("originalName", senderName));
 
-        if (!_prototype.TryIndex(message.PhraseId, out var phrase))
+        _localisedPhrases.Clear();
+        foreach (var phraseProto in message.PhraseIds)
+        {
+            if (_prototype.TryIndex(phraseProto, out var phrase))
+            {
+                // removed capitalization 
+                _localisedPhrases.Add(Loc.GetString(phrase.Text));
+            }
+        }
+
+        if (_localisedPhrases.Count <= 0)
             return;
 
         if (HasComp<MimePowersComponent>(message.Actor))
@@ -43,7 +55,7 @@ public sealed class AACTabletSystem : EntitySystem
         EnsureComp<VoiceOverrideComponent>(ent).NameOverride = speakerName;
 
         _chat.TrySendInGameICMessage(ent,
-            Loc.GetString(phrase.Text),
+            _chat.SanitizeMessageCapital(string.Join(" ", _localisedPhrases)),
             InGameICChatType.Speak,
             hideChat: false,
             nameOverride: speakerName);

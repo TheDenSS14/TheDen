@@ -1248,3 +1248,20 @@
           - Pill
           - Crayon
           - Paper
+
+- type: trait
+  id: EggLaying
+  category: Physical
+  points: -1 # After discussion in its initial suggestion thread, point cost was voted for balance
+  requirements:
+  - !type:CharacterJobRequirement
+    inverted: true
+    jobs:
+    - Borg
+    - MedicalBorg
+  functions:
+    - !type:TraitAddComponent
+      components:
+        - type: EggLayer
+          eggSpawn:
+            - id: FoodEgg

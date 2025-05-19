@@ -24,6 +24,11 @@
   text: phrase-artifact
 
 - type: quickPhrase
+  id: FragmentPhrase
+  parent: BaseEpistemicsSubjectPhrase
+  text: phrase-fragment
+
+- type: quickPhrase
   id: ArtifactContainerPhrase
   parent: BaseEpistemicsSubjectPhrase
   text: phrase-artifact-container
@@ -91,7 +96,7 @@
 - type: quickPhrase
   id: EpistemicsBluespacePhrase
   parent: BaseEpistemicsSubjectPhrase
-  text: phrase-bluespace-crystal
+  text: materials-bluespace
 
 - type: quickPhrase
   id: EpiUpgradePhrase

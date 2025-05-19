@@ -677,3 +677,9 @@ trait-name-Bodybuilder = Bodybuilder
 trait-description-Bodybuilder =
     Through extensive training or body modification, you have achieved the pinnacle of physique.
     This trait halves the movement speed penalty when dragging something.
+
+trait-name-EggLaying = Egg Layer
+trait-description-EggLaying = You have an organ capable of laying eggs at the cost of internal nutrition.
+
+trait-name-Caprine = Caprine
+trait-description-Caprine = A language spoken by the Ovinia, the language is composed of many loose bleating and baahing noises strung together to create words.

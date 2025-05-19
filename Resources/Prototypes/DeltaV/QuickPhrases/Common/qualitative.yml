@@ -60,6 +60,21 @@
   text: phrase-not-enough
 
 - type: quickPhrase
+  id: SmallPhrase
+  parent: BaseQualitativePhrase
+  text: phrase-small
+
+- type: quickPhrase
+  id: BigPhrase
+  parent: BaseQualitativePhrase
+  text: phrase-big
+
+- type: quickPhrase
+  id: CouplePhrase
+  parent: BaseQualitativePhrase
+  text: phrase-couple
+
+- type: quickPhrase
   id: GoodPhrase
   parent: BaseQualitativePhrase
   text: phrase-good
