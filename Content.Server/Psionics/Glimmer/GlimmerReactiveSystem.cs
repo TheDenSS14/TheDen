@@ -203,7 +203,7 @@ public sealed class GlimmerReactiveSystem : EntitySystem
         var removed = glimmer * _random.NextFloat(0.1f, 0.15f);
         _glimmerSystem.DeltaGlimmerInput(-removed);
         BeamRandomNearProber(uid, (int) glimmer / 350, glimmer / 50);
-        _explosionSystem.QueueExplosion(uid, "Default", totalIntensity, slope, maxIntensity);
+        // _explosionSystem.QueueExplosion(uid, "Default", totalIntensity, slope, maxIntensity);
     }
 
     private void OnUnanchorAttempt(EntityUid uid, SharedGlimmerReactiveComponent component, UnanchorAttemptEvent args)

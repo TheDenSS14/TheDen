@@ -29,19 +29,14 @@
   text: phrase-wirecutter
 
 - type: quickPhrase
-  id: WeldingToolPhrase
+  id: WeldingPhrase
   parent: BaseSubjectPhrase
-  text: phrase-welding-tool
+  text: phrase-welding
 
 - type: quickPhrase
-  id: WeldingMaskPhrase
+  id: MaskPhrase
   parent: BaseSubjectPhrase
-  text: phrase-welding-mask
-
-- type: quickPhrase
-  id: ToolboxPhrase
-  parent: BaseSubjectPhrase
-  text: phrase-toolbox
+  text: phrase-mask
 
 - type: quickPhrase
   id: BeakerPhrase
@@ -203,7 +198,22 @@
   parent: BaseSubjectPhrase
   text: phrase-upgrade
 
-# Materials
+- type: quickPhrase
+  id: HappenPhrase
+  parent: BaseSubjectPhrase
+  text: phrase-happen
+
+- type: quickPhrase
+  id: FunPhrase
+  parent: BaseSubjectPhrase
+  text: phrase-fun
+
+- type: quickPhrase
+  id: TimePhrase
+  parent: BaseSubjectPhrase
+  text: phrase-time
+
+# Materials alphabetically
 
 - type: quickPhrase
   id: BaseMaterialPhrase
@@ -212,69 +222,164 @@
   abstract: true
 
 - type: quickPhrase
-  id: SteelPhrase
+  id: AluminiumMaterialPhrase
   parent: BaseMaterialPhrase
-  text: phrase-steel
+  text: materials-aluminium
 
 - type: quickPhrase
-  id: PlasticPhrase
+  id: BananiumMaterialPhrase
   parent: BaseMaterialPhrase
-  text: phrase-plastic
+  text: materials-bananium
 
 - type: quickPhrase
-  id: PlasteelPhrase
+  id: BiomassMaterialPhrase
   parent: BaseMaterialPhrase
-  text: phrase-plasteel
+  text: materials-biomass
 
 - type: quickPhrase
-  id: PlasmaPhrase
+  id: BluespaceMaterialPhrase
   parent: BaseMaterialPhrase
-  text: phrase-plasma
+  text: materials-bluespace
 
 - type: quickPhrase
-  id: UraniumPhrase
+  id: BoneMaterialPhrase
   parent: BaseMaterialPhrase
-  text: phrase-uranium
+  text: materials-bones
 
 - type: quickPhrase
-  id: BananiumPhrase
+  id: CardboardMaterialPhrase
   parent: BaseMaterialPhrase
-  text: phrase-bananium
+  text: materials-cardboard
 
 - type: quickPhrase
-  id: WoodPhrase
+  id: CircuitryMaterialPhrase
   parent: BaseMaterialPhrase
-  text: phrase-wood
+  text: materials-circuitry
 
 - type: quickPhrase
-  id: ClothPhrase
+  id: ClothMaterialPhrase
   parent: BaseMaterialPhrase
-  text: phrase-cloth
+  text: materials-cloth
 
 - type: quickPhrase
-  id: CardboardPhrase
+  id: CopperMaterialPhrase
   parent: BaseMaterialPhrase
-  text: phrase-cardboard
+  text: materials-copper
 
 - type: quickPhrase
-  id: GoldPhrase
+  id: DiamondMaterialPhrase
   parent: BaseMaterialPhrase
-  text: phrase-gold
+  text: materials-diamond
 
 - type: quickPhrase
-  id: GlassPhrase
+  id: DurathreadMaterialPhrase
   parent: BaseMaterialPhrase
-  text: phrase-glass
+  text: materials-durathread
 
 - type: quickPhrase
-  id: SilverPhrase
+  id: GlassMaterialPhrase
   parent: BaseMaterialPhrase
-  text: phrase-silver
+  text: materials-glass
 
 - type: quickPhrase
-  id: BluespacePhrase
+  id: GoldMaterialPhrase
   parent: BaseMaterialPhrase
-  text: phrase-bluespace
+  text: materials-gold
+
+- type: quickPhrase
+  id: GunpowderMaterialPhrase
+  parent: BaseMaterialPhrase
+  text: materials-gunpowder
+
+- type: quickPhrase
+  id: LeadMaterialPhrase
+  parent: BaseMaterialPhrase
+  text: materials-lead
+
+- type: quickPhrase
+  id: MeatMaterialPhrase
+  parent: BaseMaterialPhrase
+  text: materials-meat
+
+- type: quickPhrase
+  id: NormalityMaterialPhrase
+  parent: BaseMaterialPhrase
+  text: materials-normality
+
+- type: quickPhrase
+  id: PaperMaterialPhrase
+  parent: BaseMaterialPhrase
+  text: materials-paper
+
+- type: quickPhrase
+  id: PlasmaMaterialPhrase
+  parent: BaseMaterialPhrase
+  text: materials-plasma
+
+- type: quickPhrase
+  id: PlasmaGlassMaterialPhrase
+  parent: BaseMaterialPhrase
+  text: materials-plasma-glass
+
+- type: quickPhrase
+  id: PlasteelMaterialPhrase
+  parent: BaseMaterialPhrase
+  text: materials-plasteel
+
+- type: quickPhrase
+  id: PlasticMaterialPhrase
+  parent: BaseMaterialPhrase
+  text: materials-plastic
+
+- type: quickPhrase
+  id: ReinforcedGlassMaterialPhrase
+  parent: BaseMaterialPhrase
+  text: materials-reinforced-glass
+
+- type: quickPhrase
+  id: ReinforcedPlasmaGlassMaterialPhrase
+  parent: BaseMaterialPhrase
+  text: materials-reinforced-plasma-glass
+
+- type: quickPhrase
+  id: ReinforcedUraniumGlassMaterialPhrase
+  parent: BaseMaterialPhrase
+  text: materials-reinforced-uranium-glass
+
+- type: quickPhrase
+  id: SilkMaterialPhrase
+  parent: BaseMaterialPhrase
+  text: materials-web
+
+- type: quickPhrase
+  id: SilverMaterialPhrase
+  parent: BaseMaterialPhrase
+  text: materials-silver
+
+- type: quickPhrase
+  id: SteelMaterialPhrase
+  parent: BaseMaterialPhrase
+  text: materials-steel
+
+- type: quickPhrase
+  id: TungstenCarbideMaterialPhrase
+  parent: BaseMaterialPhrase
+  text: materials-tungsten
+
+- type: quickPhrase
+  id: UraniumMaterialPhrase
+  parent: BaseMaterialPhrase
+  text: materials-uranium
+
+- type: quickPhrase
+  id: UraniumGlassMaterialPhrase
+  parent: BaseMaterialPhrase
+  text: materials-uranium-glass
+
+- type: quickPhrase
+  id: WoodMaterialPhrase
+  parent: BaseMaterialPhrase
+  text: materials-wood
 
 # Colors
 
@@ -358,3 +463,202 @@
   id: ColorGrayPhrase
   parent: BaseColorPhrase
   text: phrase-color-gray
+
+- type: quickPhrase
+  id: BaseLanguageNamePhrase
+  parent: BaseSubjectPhrase
+  group: Languages
+  abstract: true
+
+- type: quickPhrase
+  id: LanguageUniversalPhrase
+  parent: BaseLanguageNamePhrase
+  text: language-Universal-name
+
+- type: quickPhrase
+  id: LanguagePsychomanticPhrase
+  parent: BaseLanguageNamePhrase
+  text: language-Psychomantic-name
+
+- type: quickPhrase
+  id: LanguageBubblishPhrase
+  parent: BaseLanguageNamePhrase
+  text: language-Bubblish-name
+
+- type: quickPhrase
+  id: LanguageRootspeakPhrase
+  parent: BaseLanguageNamePhrase
+  text: language-RootSpeak-name
+
+- type: quickPhrase
+  id: LanguageNekomimeticPhrase
+  parent: BaseLanguageNamePhrase
+  text: language-Nekomimetic-name
+
+- type: quickPhrase
+  id: LanguageSinta'UnathiPhrase
+  parent: BaseLanguageNamePhrase
+  text: language-Draconic-name
+
+- type: quickPhrase
+  id: LanguageSinta'AzazibaPhrase
+  parent: BaseLanguageNamePhrase
+  text: language-Azaziba-name
+
+- type: quickPhrase
+  id: LanguageSolPhrase
+  parent: BaseLanguageNamePhrase
+  text: language-SolCommon-name
+
+- type: quickPhrase
+  id: LanguageNovu-NedericPhrase
+  parent: BaseLanguageNamePhrase
+  text: language-NovuNederic-name
+
+- type: quickPhrase
+  id: LanguageTau-CetiPhrase
+  parent: BaseLanguageNamePhrase
+  text: language-TauCetiBasic-name
+
+- type: quickPhrase
+  id: LanguageTradebandPhrase
+  parent: BaseLanguageNamePhrase
+  text: language-Tradeband-name
+
+- type: quickPhrase
+  id: LanguageFreespeakPhrase
+  parent: BaseLanguageNamePhrase
+  text: language-Freespeak-name
+
+- type: quickPhrase
+  id: LanguageElyranPhrase
+  parent: BaseLanguageNamePhrase
+  text: language-Elyran-name
+
+- type: quickPhrase
+  id: LanguageCanilunztPhrase
+  parent: BaseLanguageNamePhrase
+  text: language-Canilunzt-name
+
+- type: quickPhrase
+  id: LanguageMofficPhrase
+  parent: BaseLanguageNamePhrase
+  text: language-Moffic-name
+
+- type: quickPhrase
+  id: LanguageRobotTalkPhrase
+  parent: BaseLanguageNamePhrase
+  text: language-RobotTalk-name
+
+- type: quickPhrase
+  id: LanguageCalcicPhrase
+  parent: BaseLanguageNamePhrase
+  text: language-Calcic-name
+
+- type: quickPhrase
+  id: LanguageTau-Ceti-SignPhrase
+  parent: BaseLanguageNamePhrase
+  text: language-Sign-name
+
+- type: quickPhrase
+  id: LanguageMarishPhrase
+  parent: BaseLanguageNamePhrase
+  text: language-Marish-name
+
+- type: quickPhrase
+  id: LanguageValyrianPhrase
+  parent: BaseLanguageNamePhrase
+  text: language-ValyrianStandard-name
+
+- type: quickPhrase
+  id: LanguageChittinPhrase
+  parent: BaseLanguageNamePhrase
+  text: language-Chittin-name
+
+- type: quickPhrase
+  id: LanguageRodentianPhrase
+  parent: BaseLanguageNamePhrase
+  text: language-Rodentian-name
+
+- type: quickPhrase
+  id: BaseEmotionPhrase
+  parent: BaseSubjectPhrase
+  group: Emotions
+  abstract: true
+
+- type: quickPhrase
+  id: EmotionIFeelPhrase
+  parent: BaseEmotionPhrase
+  text: phrase-emotion-ifeel
+
+# emotions alphabetically
+
+- type: quickPhrase
+  id: EmotionAngerPhrase
+  parent: BaseEmotionPhrase
+  text: phrase-emotion-anger
+
+- type: quickPhrase
+  id: EmotionAnxietyPhrase
+  parent: BaseEmotionPhrase
+  text: phrase-emotion-anxiety
+
+- type: quickPhrase
+  id: EmotionDesirePhrase
+  parent: BaseEmotionPhrase
+  text: phrase-emotion-desire
+
+- type: quickPhrase
+  id: EmotionDeterminationPhrase
+  parent: BaseEmotionPhrase
+  text: phrase-emotion-determination
+
+- type: quickPhrase
+  id: EmotionDisgustPhrase
+  parent: BaseEmotionPhrase
+  text: phrase-emotion-disgust
+
+- type: quickPhrase
+  id: EmotionFatiguePhrase
+  parent: BaseEmotionPhrase
+  text: phrase-emotion-fatigue
+
+- type: quickPhrase
+  id: EmotionFearPhrase
+  parent: BaseEmotionPhrase
+  text: phrase-emotion-fear
+
+- type: quickPhrase
+  id: EmotionGuiltPhrase
+  parent: BaseEmotionPhrase
+  text: phrase-emotion-guilt
+
+- type: quickPhrase
+  id: EmotionHappinessPhrase
+  parent: BaseEmotionPhrase
+  text: phrase-emotion-happiness
+
+- type: quickPhrase
+  id: EmotionHatePhrase
+  parent: BaseEmotionPhrase
+  text: phrase-emotion-hate
+
+- type: quickPhrase
+  id: EmotionLovePhrase
+  parent: BaseEmotionPhrase
+  text: phrase-emotion-love
+
+- type: quickPhrase
+  id: EmotionPatiencePhrase
+  parent: BaseEmotionPhrase
+  text: phrase-emotion-patience
+
+- type: quickPhrase
+  id: EmotionSadnessPhrase
+  parent: BaseEmotionPhrase
+  text: phrase-emotion-sadness
+
+- type: quickPhrase
+  id: EmotionSurprisePhrase
+  parent: BaseEmotionPhrase
+  text: phrase-emotion-surprise

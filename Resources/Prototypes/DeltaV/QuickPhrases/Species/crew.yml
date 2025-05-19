@@ -4,15 +4,12 @@
   group: Crew
   abstract: true
 
-- type: quickPhrase
-  id: SpeciesHumanPhrase
-  parent: BaseCrewSpeciesPhrase
-  text: species-name-human
+# crew species names sorted alphabetically
 
 - type: quickPhrase
-  id: SpeciesDionaPhrase
+  id: SpeciesArachnePhrase
   parent: BaseCrewSpeciesPhrase
-  text: species-name-diona
+  text: species-name-arachne
 
 - type: quickPhrase
   id: SpeciesArachnidPhrase
@@ -20,24 +17,24 @@
   text: species-name-arachnid
 
 - type: quickPhrase
-  id: SpeciesMothPhrase
+  id: SpeciesCanidPhrase
   parent: BaseCrewSpeciesPhrase
-  text: species-name-moth
+  text: species-name-canid
 
 - type: quickPhrase
-  id: SpeciesReptilianPhrase
+  id: SpeciesChitinidPhrase
   parent: BaseCrewSpeciesPhrase
-  text: species-name-reptilian
+  text: species-name-chitinid
 
 - type: quickPhrase
-  id: SpeciesSlimePersonPhrase
+  id: SpeciesDionaPhrase
   parent: BaseCrewSpeciesPhrase
-  text: species-name-slime
+  text: species-name-diona
 
 - type: quickPhrase
-  id: SpeciesVulpkaninPhrase
+  id: SpeciesDwarfPhrase
   parent: BaseCrewSpeciesPhrase
-  text: species-name-vulpkanin
+  text: species-name-dwarf
 
 - type: quickPhrase
   id: SpeciesFelinidPhrase
@@ -45,9 +42,29 @@
   text: species-name-felinid
 
 - type: quickPhrase
+  id: SpeciesFeroxiPhrase
+  parent: BaseCrewSpeciesPhrase
+  text: species-name-feroxi
+
+- type: quickPhrase
   id: SpeciesHarpyPhrase
   parent: BaseCrewSpeciesPhrase
   text: species-name-harpy
+
+- type: quickPhrase
+  id: SpeciesHumanPhrase
+  parent: BaseCrewSpeciesPhrase
+  text: species-name-human
+
+- type: quickPhrase
+  id: SpeciesIPCPhrase
+  parent: BaseCrewSpeciesPhrase
+  text: species-name-ipc
+
+- type: quickPhrase
+  id: SpeciesMothPersonPhrase
+  parent: BaseCrewSpeciesPhrase
+  text: species-name-moth
 
 - type: quickPhrase
   id: SpeciesOniPhrase
@@ -55,16 +72,51 @@
   text: species-name-oni
 
 - type: quickPhrase
+  id: SpeciesOviniaPhrase
+  parent: BaseCrewSpeciesPhrase
+  text: species-name-ovinia
+
+- type: quickPhrase
+  id: SpeciesPlasmamanPhrase
+  parent: BaseCrewSpeciesPhrase
+  text: species-name-plasmaman
+
+- type: quickPhrase
+  id: SpeciesRodentiaPhrase
+  parent: BaseCrewSpeciesPhrase
+  text: species-name-rodentia
+
+- type: quickPhrase
+  id: SpeciesShadowkinPhrase
+  parent: BaseCrewSpeciesPhrase
+  text: species-name-shadowkin
+
+- type: quickPhrase
   id: SpeciesSkeletonPhrase
   parent: BaseCrewSpeciesPhrase
   text: species-name-skeleton
 
 - type: quickPhrase
+  id: SpeciesSlimePersonPhrase
+  parent: BaseCrewSpeciesPhrase
+  text: species-name-slime
+
+- type: quickPhrase
+  id: SpeciesTajaranPhrase
+  parent: BaseCrewSpeciesPhrase
+  text: species-name-tajaran
+
+- type: quickPhrase
+  id: SpeciesUnathiPhrase
+  parent: BaseCrewSpeciesPhrase
+  text: species-name-reptilian
+
+- type: quickPhrase
   id: SpeciesVoxPhrase
   parent: BaseCrewSpeciesPhrase
   text: species-name-vox
-  
+
 - type: quickPhrase
-  id: SpeciesRodentiaPhrase
+  id: SpeciesVulpkaninPhrase
   parent: BaseCrewSpeciesPhrase
-  text: species-name-rodentia  
+  text: species-name-vulpkanin

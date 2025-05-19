@@ -99,8 +99,18 @@ public sealed partial class AddPsionicPowerComponents : PsionicPowerFunction
     {
         foreach (var entry in Components.Values)
         {
-            if (entityManager.HasComponent(uid, entry.Component.GetType()))
-                continue;
+            var type = entry.Component.GetType();
+            if (entityManager.TryGetComponent(uid, type, out var existing))
+            {
+                if (existing.LifeStage != ComponentLifeStage.Running)
+                {
+                    entityManager.RemoveComponent(uid, existing);
+                }
+                else
+                {
+                    continue;
+                }
+            }
 
             var comp = (Component) serializationManager.CreateCopy(entry.Component, notNullableOverride: true);
             comp.Owner = uid;

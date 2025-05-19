@@ -100,10 +100,8 @@
 - type: trait
   id: HoneyProducer
   category: Physical
+  points: -1 # Point cost added to balance with removal of species restriction
   requirements:
-    - !type:CharacterSpeciesRequirement
-      species:
-        - Chitinid
     - !type:CharacterJobRequirement
       inverted: true
       jobs:

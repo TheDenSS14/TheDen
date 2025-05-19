@@ -1,4 +1,17 @@
 - type: entity
+  id: BaseIntegratedMagboot
+  name: integrated magboots
+  description: A set of magnetic locks integrated into a suit.
+  abstract: true
+  components:
+    - type: ToggleClothing
+      action: ActionToggleMagboots
+    - type: Magboots
+      slot: outerClothing
+    - type: ItemToggle
+      onUse: false # can't really wear it like that
+
+- type: entity
   parent: [ClothingShoesBase, BaseToggleClothing]
   id: ClothingShoesBootsMagBase
   name: magboots
@@ -18,9 +31,9 @@
     components:
     - type: NoSlip
   - type: Magboots
-  - type: ClothingSpeedModifier
-    walkModifier: 0.85
-    sprintModifier: 0.8
+    activeWalkModifier: 0.85
+    activeSprintModifier: 0.8
+    changeClothingVisuals: true
   - type: Appearance
   - type: GenericVisualizer
     visuals:
@@ -49,9 +62,9 @@
     state: icon
   - type: Clothing
     sprite: Clothing/Shoes/Boots/magboots-advanced.rsi
-  - type: ClothingSpeedModifier
-    walkModifier: 1
-    sprintModifier: 1
+  - type: Magboots
+    activeWalkModifier: 1
+    activeSprintModifier: 1
   - type: Tag
     tags:
     - WhitelistChameleon
@@ -82,9 +95,9 @@
   name: magboots of blinding speed
   description: These would look fetching on a fetcher like you.
   components:
-  - type: ClothingSpeedModifier
-    walkModifier: 1.10 #PVS isn't too much of an issue when you are blind...
-    sprintModifier: 1.10
+  - type: Magboots
+    activeWalkModifier: 1.10
+    activeSprintModifier: 1.10
   - type: StaticPrice
     price: 3000
 
@@ -99,9 +112,9 @@
     state: icon
   - type: Clothing
     sprite: Clothing/Shoes/Boots/magboots-syndicate.rsi
-  - type: ClothingSpeedModifier
-    walkModifier: 0.95
-    sprintModifier: 0.9
+  - type: Magboots
+    activeWalkModifier: 0.95
+    activeSprintModifier: 0.9
   - type: GasTank
     outputPressure: 42.6
     air:

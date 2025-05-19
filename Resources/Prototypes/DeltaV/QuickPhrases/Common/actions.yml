@@ -68,3 +68,28 @@
   id: KnowPhrase
   parent: BaseActionPhrase
   text: phrase-know
+
+- type: quickPhrase
+  id: HavePhrase
+  parent: BaseActionPhrase
+  text: phrase-have
+
+- type: quickPhrase
+  id: LikePhrase
+  parent: BaseActionPhrase
+  text: phrase-like
+
+- type: quickPhrase
+  id: SpeakPhrase
+  parent: BaseActionPhrase
+  text: phrase-speak
+
+- type: quickPhrase
+  id: UnderstandPhrase
+  parent: BaseActionPhrase
+  text: phrase-understand
+
+- type: quickPhrase
+  id: MixPhrase
+  parent: BaseActionPhrase
+  text: phrase-mix

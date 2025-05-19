@@ -4,6 +4,13 @@
   group: Question
   abstract: true
 
+# !!! special phrase, no touchy with automation !!!
+- type: quickPhrase
+  id: QuestionMarkPhrase
+  parent: BaseQuestionPhrase
+  text: phrase-question-mark
+
+# work from here
 - type: quickPhrase
   id: WherePhrase
   parent: BaseQuestionPhrase
@@ -35,26 +42,31 @@
   text: phrase-when
 
 - type: quickPhrase
-  id: DoYouHavePhrase
+  id: DoPhrase
   parent: BaseQuestionPhrase
-  text: phrase-do-you-have
+  text: phrase-do
 
 - type: quickPhrase
-  id: HowDoIPhrase
+  id: CanPhrase
   parent: BaseQuestionPhrase
-  text: phrase-how-do-i
+  text: phrase-can
 
 - type: quickPhrase
-  id: CanIPhrase
+  id: ShouldPhrase
   parent: BaseQuestionPhrase
-  text: phrase-can-i
+  text: phrase-should
 
 - type: quickPhrase
-  id: ShouldIPhrase
+  id: WouldPhrase
   parent: BaseQuestionPhrase
-  text: phrase-should-i
+  text: phrase-would
 
 - type: quickPhrase
   id: WhichPhrase
   parent: BaseQuestionPhrase
   text: phrase-which
+
+- type: quickPhrase
+  id: QuestionPhrase
+  parent: BaseQuestionPhrase
+  text: phrase-question
