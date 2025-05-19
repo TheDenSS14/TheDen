@@ -13,6 +13,12 @@
     sprite: _DEN/Clothing/OuterClothing/Misc/apronwaist.rsi
     slots:
     - outerClothing
+    - belt
+    clothingVisuals:
+      outerClothing:
+      - state: equipped-OUTERCLOTHING
+      belt:
+      - state: equipped-OUTERCLOTHING
 
 - type: entity
   parent: ClothingWaistApron
@@ -26,6 +32,9 @@
   - type: Clothing
     clothingVisuals:
       outerClothing:
+      - state: equipped-OUTERCLOTHING
+      - state: checker-equipped-OUTERCLOTHING
+      belt:
       - state: equipped-OUTERCLOTHING
       - state: checker-equipped-OUTERCLOTHING
   - type: Item
@@ -51,6 +60,9 @@
       outerClothing:
       - state: equipped-OUTERCLOTHING
       - state: stripes_horizontal-equipped-OUTERCLOTHING
+      belt:
+      - state: equipped-OUTERCLOTHING
+      - state: stripes_horizontal-equipped-OUTERCLOTHING
   - type: Item
     inhandVisuals:
       left:
@@ -72,6 +84,9 @@
   - type: Clothing
     clothingVisuals:
       outerClothing:
+      - state: equipped-OUTERCLOTHING
+      - state: stripes_vertical-equipped-OUTERCLOTHING
+      belt:
       - state: equipped-OUTERCLOTHING
       - state: stripes_vertical-equipped-OUTERCLOTHING
   - type: Item
