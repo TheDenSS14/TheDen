@@ -213,7 +213,7 @@
   parent: BaseSubjectPhrase
   text: phrase-time
 
-# Materials
+# Materials alphabetically
 
 - type: quickPhrase
   id: BaseMaterialPhrase
@@ -222,69 +222,164 @@
   abstract: true
 
 - type: quickPhrase
-  id: SteelPhrase
+  id: AluminiumPhrase
   parent: BaseMaterialPhrase
-  text: phrase-steel
-
-- type: quickPhrase
-  id: PlasticPhrase
-  parent: BaseMaterialPhrase
-  text: phrase-plastic
-
-- type: quickPhrase
-  id: PlasteelPhrase
-  parent: BaseMaterialPhrase
-  text: phrase-plasteel
-
-- type: quickPhrase
-  id: PlasmaPhrase
-  parent: BaseMaterialPhrase
-  text: phrase-plasma
-
-- type: quickPhrase
-  id: UraniumPhrase
-  parent: BaseMaterialPhrase
-  text: phrase-uranium
+  text: materials-aluminium
 
 - type: quickPhrase
   id: BananiumPhrase
   parent: BaseMaterialPhrase
-  text: phrase-bananium
+  text: materials-bananium
 
 - type: quickPhrase
-  id: WoodPhrase
+  id: BiomassPhrase
   parent: BaseMaterialPhrase
-  text: phrase-wood
-
-- type: quickPhrase
-  id: ClothPhrase
-  parent: BaseMaterialPhrase
-  text: phrase-cloth
-
-- type: quickPhrase
-  id: CardboardPhrase
-  parent: BaseMaterialPhrase
-  text: phrase-cardboard
-
-- type: quickPhrase
-  id: GoldPhrase
-  parent: BaseMaterialPhrase
-  text: phrase-gold
-
-- type: quickPhrase
-  id: GlassPhrase
-  parent: BaseMaterialPhrase
-  text: phrase-glass
-
-- type: quickPhrase
-  id: SilverPhrase
-  parent: BaseMaterialPhrase
-  text: phrase-silver
+  text: materials-biomass
 
 - type: quickPhrase
   id: BluespacePhrase
   parent: BaseMaterialPhrase
-  text: phrase-bluespace
+  text: materials-bluespace
+
+- type: quickPhrase
+  id: BonePhrase
+  parent: BaseMaterialPhrase
+  text: materials-bones
+
+- type: quickPhrase
+  id: CardboardPhrase
+  parent: BaseMaterialPhrase
+  text: materials-cardboard
+
+- type: quickPhrase
+  id: CircuitryPhrase
+  parent: BaseMaterialPhrase
+  text: materials-circuitry
+
+- type: quickPhrase
+  id: ClothPhrase
+  parent: BaseMaterialPhrase
+  text: materials-cloth
+
+- type: quickPhrase
+  id: CopperPhrase
+  parent: BaseMaterialPhrase
+  text: materials-copper
+
+- type: quickPhrase
+  id: DiamondPhrase
+  parent: BaseMaterialPhrase
+  text: materials-diamond
+
+- type: quickPhrase
+  id: DurathreadPhrase
+  parent: BaseMaterialPhrase
+  text: materials-durathread
+
+- type: quickPhrase
+  id: GlassPhrase
+  parent: BaseMaterialPhrase
+  text: materials-glass
+
+- type: quickPhrase
+  id: GoldPhrase
+  parent: BaseMaterialPhrase
+  text: materials-gold
+
+- type: quickPhrase
+  id: GunpowderPhrase
+  parent: BaseMaterialPhrase
+  text: materials-gunpowder
+
+- type: quickPhrase
+  id: LeadPhrase
+  parent: BaseMaterialPhrase
+  text: materials-lead
+
+- type: quickPhrase
+  id: MeatPhrase
+  parent: BaseMaterialPhrase
+  text: materials-meat
+
+- type: quickPhrase
+  id: NormalityPhrase
+  parent: BaseMaterialPhrase
+  text: materials-normality
+
+- type: quickPhrase
+  id: PaperPhrase
+  parent: BaseMaterialPhrase
+  text: materials-paper
+
+- type: quickPhrase
+  id: PlasmaPhrase
+  parent: BaseMaterialPhrase
+  text: materials-plasma
+
+- type: quickPhrase
+  id: PlasmaGlassPhrase
+  parent: BaseMaterialPhrase
+  text: materials-plasma-glass
+
+- type: quickPhrase
+  id: PlasteelPhrase
+  parent: BaseMaterialPhrase
+  text: materials-plasteel
+
+- type: quickPhrase
+  id: PlasticPhrase
+  parent: BaseMaterialPhrase
+  text: materials-plastic
+
+- type: quickPhrase
+  id: ReinforcedGlassPhrase
+  parent: BaseMaterialPhrase
+  text: materials-reinforced-glass
+
+- type: quickPhrase
+  id: ReinforcedPlasmaGlassPhrase
+  parent: BaseMaterialPhrase
+  text: materials-reinforced-plasma-glass
+
+- type: quickPhrase
+  id: ReinforcedUraniumGlassPhrase
+  parent: BaseMaterialPhrase
+  text: materials-reinforced-uranium-glass
+
+- type: quickPhrase
+  id: SilkPhrase
+  parent: BaseMaterialPhrase
+  text: materials-web
+
+- type: quickPhrase
+  id: SilverPhrase
+  parent: BaseMaterialPhrase
+  text: materials-silver
+
+- type: quickPhrase
+  id: SteelPhrase
+  parent: BaseMaterialPhrase
+  text: materials-steel
+
+- type: quickPhrase
+  id: TungstenCarbidePhrase
+  parent: BaseMaterialPhrase
+  text: materials-tungsten
+
+- type: quickPhrase
+  id: UraniumPhrase
+  parent: BaseMaterialPhrase
+  text: materials-uranium
+
+- type: quickPhrase
+  id: UraniumGlassPhrase
+  parent: BaseMaterialPhrase
+  text: materials-uranium-glass
+
+- type: quickPhrase
+  id: WoodPhrase
+  parent: BaseMaterialPhrase
+  text: materials-wood
 
 # Colors
 

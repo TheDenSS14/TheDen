@@ -101,7 +101,7 @@
 - type: quickPhrase
   id: BiomassPhrase
   parent: BaseMedicinePhrase
-  text: phrase-biomass
+  text: materials-biomass
 
 - type: quickPhrase
   id: SyringePhrase
@@ -137,6 +137,16 @@
   id: LobotomyPhrase
   parent: BaseMedicinePhrase
   text: phrase-lobotomy
+
+- type: quickPhrase
+  id: DamagePhrase
+  parent: BaseMedicinePhrase
+  text: phrase-damage
+
+- type: quickPhrase
+  id: BonesPhrase
+  parent: BaseMedicinePhrase
+  text: materials-bones
 
 - type: quickPhrase
   id: MedicalChemicalsPhrase
