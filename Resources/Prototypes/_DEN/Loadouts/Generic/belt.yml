@@ -1,0 +1,45 @@
+# Waist aprons!
+# Note that these can be equipped on both the belt slot and the outer clothing slot.
+- type: loadout
+  id: LoadoutClothingWaistApron
+  category: Belt
+  cost: 1
+  customColorTint: true
+  items:
+    -  ClothingWaistApron
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBelt
+
+- type: loadout
+  id: LoadoutClothingWaistApronCheckered
+  category: Belt
+  cost: 1
+  customColorTint: true
+  items:
+    -  ClothingWaistApronCheckered
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBelt
+
+- type: loadout
+  id: LoadoutClothingWaistApronStripesHorizontal
+  category: Belt
+  cost: 1
+  customColorTint: true
+  items:
+    -  ClothingWaistApronStripesHorizontal
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBelt
+
+- type: loadout
+  id: LoadoutClothingWaistApronStripesVertical
+  category: Belt
+  cost: 1
+  customColorTint: true
+  items:
+    -  ClothingWaistApronStripesVertical
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBelt
