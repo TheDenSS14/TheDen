@@ -210,3 +210,13 @@
         - Passenger
   items:
     - TowelColorGray
+
+- type: loadout
+  id: LoadoutItemCigsStinky # Den - Introduction to Stinky Steve's Weed Emporium
+  category: GeneralItems
+  cost: 1 # Same price as Dan's, which just feels right
+  items:
+    - CigPackJoint
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSmokes

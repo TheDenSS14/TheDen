@@ -1,0 +1,12 @@
+- type: construction
+  name: emergency comfort deployment unit
+  id: EmergencyComfortDeploymentUnitConstruction
+  graph: Pillows
+  startNode: start
+  targetNode: EmergencyComfortDeploymentUnitWrapped
+  category: construction-category-misc
+  description: Deploy in any comfort requiring location for maximum softness.
+  icon:
+    sprite: /Textures/_DEN/Structures/Furniture/pillows.rsi
+    state: EmergencyComfortDeploymentUnitWrapped
+  objectType: Item
