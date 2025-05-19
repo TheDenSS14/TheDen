@@ -1,3 +1,8 @@
+# !!! special phrases, no touchy with automation !!!
+phrase-question-mark = ?
+phrase-exclamation-mark = !
+
+# work from here
 phrase-where = where
 phrase-who = who
 phrase-what = what

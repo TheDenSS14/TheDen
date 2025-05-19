@@ -4,6 +4,13 @@
   group: Question
   abstract: true
 
+# !!! special phrase, no touchy with automation !!!
+- type: quickPhrase
+  id: QuestionMarkPhrase
+  parent: BaseQuestionPhrase
+  text: phrase-question-mark
+
+# work from here
 - type: quickPhrase
   id: WherePhrase
   parent: BaseQuestionPhrase
