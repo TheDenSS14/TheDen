@@ -26,9 +26,6 @@ trait-description-ZeroGAverse =
 trait-name-HoneyProducer = Honey Stomach
 trait-description-HoneyProducer = Your abdomen contains an extra stomach that processes nutrients into honey.
 
-trait-name-EggLaying = Egg Layer
-trait-description-EggLaying = You have an organ capable of laying eggs at the cost of internal nutrition.
-
 trait-name-TailWag = Tail Wag
 trait-description-TailWag =
     Your species has the innate ability to wag their tails, often used as an avenue to express untold emotions.
