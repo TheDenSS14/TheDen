@@ -39,3 +39,17 @@
     - !type:CharacterJobRequirement
       jobs:
         - Bartender
+
+- type: loadout
+  id: LoadoutServiceOuterBartenderApron
+  category: JobsServiceBartender
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingOuterApronBar
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBartenderOuter
+    - !type:CharacterJobRequirement
+      jobs:
+        - Bartender

@@ -4244,3 +4244,61 @@ Entries:
   id: 385
   time: '2025-05-18T11:40:32.0000000+00:00'
   url: https://github.com/TheDenSS14/TheDen/pull/551
+- author: Forzii
+  changes:
+    - type: Fix
+      message: Ovinia should now better reflect their guidebook entry
+  id: 386
+  time: '2025-05-18T18:05:40.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/540
+- author: Camdot
+  changes:
+    - type: Tweak
+      message: >-
+        Uses the storage's existing savedlocations to storage the item's
+        position when it is taken out, and thus retrieved when reinserted. 
+  id: 387
+  time: '2025-05-19T01:41:48.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/552
+- author: Wheels
+  changes:
+    - type: Fix
+      message: Restored Mail unit UI
+    - type: Tweak
+      message: Mailing unit clears target on send
+  id: 388
+  time: '2025-05-19T02:14:01.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/554
+- author: MajorMoth
+  changes:
+    - type: Add
+      message: >-
+        Added the Emergency Comfort Deployment Unit (a.k.a. a pillow) craftable
+        with two cloth in the construction menu
+  id: 389
+  time: '2025-05-19T02:15:00.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/558
+- author: portfiend
+  changes:
+    - type: Fix
+      message: >-
+        Drugs with effect and withdrawal moodlets should hopefully no longer
+        spam you with moodlet messages.
+    - type: Fix
+      message: Restores nicotine's ability to give you a positive moodlet.
+  id: 390
+  time: '2025-05-19T02:15:20.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/550
+- author: portfiend
+  changes:
+    - type: Add
+      message: >-
+        Added bartender apron to the bartender loadout, and a recolorable white
+        apron to the civilian "Outer" loadout.
+    - type: Add
+      message: >-
+        Added a new, fashionable "waist apron". Add it in belt loadouts or make
+        it at a uniform printer. Comes in four different patterns.
+  id: 391
+  time: '2025-05-19T09:17:40.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/559

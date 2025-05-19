@@ -153,6 +153,7 @@
       map: ["enum.WeldableLayers.BaseWelded"]
   - type: EntityStorage
     isCollidableWhenOpen: true
+    airtight: true
     enteringOffset: 0, -0.75
     closeSound:
       path: /Audio/Items/deconstruct.ogg
