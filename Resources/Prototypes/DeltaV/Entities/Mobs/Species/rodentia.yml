@@ -9,7 +9,7 @@
     species: Rodentia
   - type: Thirst
   - type: Hunger
-    baseDecayRate: 0.0467 # 33% faster than usual
+    baseDecayRate: 0.0221666666 # Floofstation, changed from 0.0467 so it's actually 33% faster. Original number came from DeltaV, which has a much higher base hunger rate
   - type: Carriable # Carrying system from nyanotrasen.
   - type: Inventory
     speciesId: rodentia
@@ -47,9 +47,9 @@
       - map: [ "enum.HumanoidVisualLayers.LArm" ]
       - map: [ "enum.HumanoidVisualLayers.RLeg" ]
       - map: [ "enum.HumanoidVisualLayers.LLeg" ]
-      - map: [ "jumpsuit" ]
       - map: [ "enum.HumanoidVisualLayers.Underwear" ]
       - map: [ "enum.HumanoidVisualLayers.Undershirt" ]
+      - map: [ "jumpsuit" ] # TheDen, moved jumpsuit layer over underwear/undershirt
       - map: [ "enum.HumanoidVisualLayers.LHand" ]
       - map: [ "enum.HumanoidVisualLayers.RHand" ]
       - map: [ "enum.HumanoidVisualLayers.LFoot" ]

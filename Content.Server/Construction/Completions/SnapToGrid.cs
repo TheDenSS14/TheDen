@@ -2,6 +2,7 @@ using Content.Shared.Coordinates.Helpers;
 using Content.Shared.Construction;
 using JetBrains.Annotations;
 
+
 namespace Content.Server.Construction.Completions
 {
     [UsedImplicitly]
@@ -15,11 +16,13 @@ namespace Content.Server.Construction.Completions
             var transform = entityManager.GetComponent<TransformComponent>(uid);
 
             if (!transform.Anchored)
+            {
                 transform.Coordinates = transform.Coordinates.SnapToGrid(entityManager);
 
-            if (SouthRotation)
-            {
-                transform.LocalRotation = Angle.Zero;
+                if (SouthRotation)
+                {
+                    transform.LocalRotation = Angle.Zero;
+                }
             }
         }
     }

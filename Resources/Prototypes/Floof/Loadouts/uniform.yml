@@ -7,7 +7,7 @@
     - ClothingUniformNudityPermit
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutUniformsCivilian2
+      group: LoadoutUniformsCivilian # TheDen
 
 - type: loadout
   id: LoadoutUniformJumpskirtTacticalMaid
@@ -18,7 +18,7 @@
     - ClothingUniformJumpskirtTacticalMaid
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutUniformsCivilian2
+      group: LoadoutUniformsCivilian # TheDen
     - !type:CharacterDepartmentRequirement
        inverted: true
        departments:
@@ -34,7 +34,7 @@
     - ClothingUniformJumpskirtJanimaid
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutUniformsCivilian2
+      group: LoadoutUniformsCivilian # TheDen
     - !type:CharacterDepartmentRequirement
        inverted: true
        departments:
@@ -50,7 +50,7 @@
     - ClothingUniformJumpskirtJanimaidmini
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutUniformsCivilian2
+      group: LoadoutUniformsCivilian # TheDen
     - !type:CharacterDepartmentRequirement
        inverted: true
        departments:
@@ -66,7 +66,7 @@
     - ClothingUniformJumpskirtTacticool
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutUniformsCivilian2
+      group: LoadoutUniformsCivilian # TheDen
     - !type:CharacterDepartmentRequirement
        inverted: true
        departments:
@@ -82,7 +82,7 @@
     - ClothingUniformJumpsuitTacticool
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutUniformsCivilian2
+      group: LoadoutUniformsCivilian # TheDen
     - !type:CharacterDepartmentRequirement
        inverted: true
        departments:
@@ -99,7 +99,7 @@
     - ClothingUniformReotaSuit
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutUniformsCivilian2
+      group: LoadoutUniformsCivilian # TheDen
 
 - type: loadout
   id: LoadoutClothingUniformLoinClothBlack
@@ -110,7 +110,11 @@
     - ClothingUniformLoinClothBlack
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutUniformsCivilian2
+      group: LoadoutUniformsCivilian # TheDen
+    - !type:CharacterSpeciesRequirement # TheDen - Sorry plasmamen, but this is to prevent you burning up on spawn :c
+      inverted: true
+      species:
+        - Plasmaman
 
 - type: loadout
   id: LoadoutClothingUniformLoinClothWhite
@@ -121,7 +125,11 @@
     - ClothingUniformLoinClothWhite
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutUniformsCivilian2
+      group: LoadoutUniformsCivilian # TheDen
+    - !type:CharacterSpeciesRequirement # TheDen - Sorry plasmamen, but this is to prevent you burning up on spawn :c
+      inverted: true
+      species:
+        - Plasmaman
 
 - type: loadout
   id: LoadoutClothingUniformThongPlain
@@ -132,7 +140,7 @@
     - ClothingUniformThongPlain
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutUniformsCivilian2
+      group: LoadoutUniformsCivilian # TheDen
 
 - type: loadout
   id: LoadoutClothingUniformStripedThongPurple
@@ -143,7 +151,7 @@
     - ClothingUniformStripedThongPurple
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutUniformsCivilian2
+      group: LoadoutUniformsCivilian # TheDen
 
 - type: loadout
   id: LoadoutClothingUniformStripedThongRainbow
@@ -154,7 +162,7 @@
     - ClothingUniformStripedThongRainbow
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutUniformsCivilian2
+      group: LoadoutUniformsCivilian # TheDen
 
 - type: loadout
   id: LoadoutClothingUniformThongCoder
@@ -165,7 +173,7 @@
     - ClothingUniformThongCoder
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutUniformsCivilian2
+      group: LoadoutUniformsCivilian # TheDen
 
 - type: loadout
   id: LoadoutClothingUniformThongCoderValid
@@ -176,7 +184,7 @@
     - ClothingUniformThongCoderValid
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutUniformsCivilian2
+      group: LoadoutUniformsCivilian # TheDen
 
 - type: loadout
   id: LoadoutClothingUniformThongBee
@@ -187,4 +195,4 @@
     - ClothingUniformThongBee
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutUniformsCivilian2
+      group: LoadoutUniformsCivilian # TheDen

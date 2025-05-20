@@ -20,6 +20,7 @@ namespace Content.Shared.Humanoid
         HeadTop,  // top parts (i.e., ears)
         Genitals, // Things to do with the genitals.
         Nipples, // Things for specifically nipples.
+        NeckFluff, // for fluff on necks
         Eyes,
         RArm,
         LArm,

@@ -42,7 +42,7 @@
         shape:
           !type:PhysShapeAabb
           bounds: "-0.25,-0.48,0.25,0.48"
-        density: 75
+        density: 150
         mask:
         - MachineMask
         layer:
@@ -153,6 +153,7 @@
       map: ["enum.WeldableLayers.BaseWelded"]
   - type: EntityStorage
     isCollidableWhenOpen: true
+    airtight: true
     enteringOffset: 0, -0.75
     closeSound:
       path: /Audio/Items/deconstruct.ogg

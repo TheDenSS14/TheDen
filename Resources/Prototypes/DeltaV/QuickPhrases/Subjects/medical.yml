@@ -49,51 +49,6 @@
   text: damage-type-radiation
 
 - type: quickPhrase
-  id: ChemDylovenePhrase
-  parent: BaseMedicinePhrase
-  text: reagent-name-dylovene
-
-- type: quickPhrase
-  id: ChemArithrazinePhrase
-  parent: BaseMedicinePhrase
-  text: reagent-name-arithrazine
-
-- type: quickPhrase
-  id: ChemBicaridinePhrase
-  parent: BaseMedicinePhrase
-  text: reagent-name-bicaridine
-
-- type: quickPhrase
-  id: ChemDermalinePhrase
-  parent: BaseMedicinePhrase
-  text: reagent-name-dermaline
-
-- type: quickPhrase
-  id: ChemDexalinPhrase
-  parent: BaseMedicinePhrase
-  text: reagent-name-dexalin
-
-- type: quickPhrase
-  id: ChemKelotanePhrase
-  parent: BaseMedicinePhrase
-  text: reagent-name-kelotane
-
-- type: quickPhrase
-  id: ChemTricordrazinePhrase
-  parent: BaseMedicinePhrase
-  text: reagent-name-tricordrazine
-
-- type: quickPhrase
-  id: ChemOmnizinePhrase
-  parent: BaseMedicinePhrase
-  text: reagent-name-omnizine
-
-- type: quickPhrase
-  id: ChemPyrazinePhrase
-  parent: BaseMedicinePhrase
-  text: reagent-name-pyrazine
-
-- type: quickPhrase
   id: TopicalPhrase
   parent: BaseMedicinePhrase
   text: phrase-topical
@@ -146,7 +101,7 @@
 - type: quickPhrase
   id: BiomassPhrase
   parent: BaseMedicinePhrase
-  text: phrase-biomass
+  text: materials-biomass
 
 - type: quickPhrase
   id: SyringePhrase
@@ -177,6 +132,21 @@
   id: HealthyPhrase
   parent: BaseMedicinePhrase
   text: phrase-healthy
+
+- type: quickPhrase
+  id: LobotomyPhrase
+  parent: BaseMedicinePhrase
+  text: phrase-lobotomy
+
+- type: quickPhrase
+  id: DamagePhrase
+  parent: BaseMedicinePhrase
+  text: phrase-damage
+
+- type: quickPhrase
+  id: BonesPhrase
+  parent: BaseMedicinePhrase
+  text: materials-bones
 
 - type: quickPhrase
   id: MedicalChemicalsPhrase

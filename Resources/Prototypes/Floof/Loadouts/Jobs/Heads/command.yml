@@ -6,15 +6,9 @@
   items:
   - ClothingHandsCommandWarmers
   requirements:
-  - !type:CharacterJobRequirement
-    jobs:
-    - Captain
-    - ChiefEngineer
-    - ChiefMedicalOfficer
-    - HeadOfPersonnel
-    - HeadOfSecurity
-    - Quartermaster
-    - ResearchDirector
+  - !type:CharacterDepartmentRequirement # TheDen
+      departments:
+      - Command
 
 - type: loadout
   id: LoadoutClothingUnderSocksCommand
@@ -24,20 +18,14 @@
   items:
   - ClothingUnderSocksCommand
   requirements:
-  - !type:CharacterSpeciesRequirement
-    inverted: true
-    species:
-    - Diona
-    - Harpy
-  - !type:CharacterJobRequirement
-    jobs:
-    - Captain
-    - ChiefEngineer
-    - ChiefMedicalOfficer
-    - HeadOfPersonnel
-    - HeadOfSecurity
-    - Quartermaster
-    - ResearchDirector
+#  - !type:CharacterSpeciesRequirement - TheDen
+#    inverted: true
+#    species:
+#    - Diona
+#    - Harpy
+  - !type:CharacterDepartmentRequirement # TheDen
+      departments:
+      - Command
 
 - type: loadout
   id: LoadoutClothingUniformCommandThong
@@ -47,12 +35,6 @@
   items:
   - ClothingUniformCommandThong
   requirements:
-  - !type:CharacterJobRequirement
-    jobs:
-    - Captain
-    - ChiefEngineer
-    - ChiefMedicalOfficer
-    - HeadOfPersonnel
-    - HeadOfSecurity
-    - Quartermaster
-    - ResearchDirector
+  - !type:CharacterDepartmentRequirement # TheDen
+      departments:
+      - Command

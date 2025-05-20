@@ -92,15 +92,16 @@
     - !type:CharacterItemGroupRequirement
       group: LoadoutOuter
 
-- type: loadout
-  id: LoadoutClothingOuterSuitWitchRobes
-  category: Outer
-  cost: 1
-  items:
-    - ClothingOuterSuitWitchRobes
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutOuter2
+# TheDen - loadout deduplication EE versions prefered over floof
+#- type: loadout
+#  id: LoadoutClothingOuterSuitWitchRobes
+#  category: Outer
+#  cost: 1
+#  items:
+#    - ClothingOuterSuitWitchRobes
+#  requirements:
+#    - !type:CharacterItemGroupRequirement
+#      group: LoadoutOuter2
 
 - type: loadout
   id: LoadoutClothingOuterShackles
@@ -110,4 +111,4 @@
     -  ClothingOuterShackles
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutOuter2
+      group: LoadoutOuter # TheDen

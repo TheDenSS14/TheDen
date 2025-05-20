@@ -4,10 +4,17 @@
   group: Commands and Requests
   abstract: true
 
+# !!! special phrase, no touchy with automation !!!
 - type: quickPhrase
-  id: GiveMePhrase
+  id: ExclamationMarkPhrase
   parent: BaseImperativePhrase
-  text: phrase-give-me
+  text: phrase-exclamation-mark
+
+# work from here
+- type: quickPhrase
+  id: GivePhrase
+  parent: BaseImperativePhrase
+  text: phrase-give
 
 - type: quickPhrase
   id: NeedPhrase

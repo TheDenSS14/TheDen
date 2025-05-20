@@ -34,6 +34,11 @@
   text: phrase-ore-processor
 
 - type: quickPhrase
+  id: OrePhrase
+  parent: BaseLogisticsSubjectPhrase
+  text: phrase-ore
+
+- type: quickPhrase
   id: RequestPhrase
   parent: BaseLogisticsSubjectPhrase
   text: phrase-request
@@ -79,14 +84,14 @@
   text: phrase-drill
 
 - type: quickPhrase
-  id: OreBagPhrase
+  id: BagLogiPhrase
   parent: BaseLogisticsSubjectPhrase
-  text: phrase-ore-bag
+  text: phrase-bag
 
 - type: quickPhrase
-  id: SalvMagnetPhrase
+  id: MagnetPhrase
   parent: BaseLogisticsSubjectPhrase
-  text: phrase-salv-magnet
+  text: phrase-magnet
 
 - type: quickPhrase
   id: ExpeditionPhrase
@@ -98,64 +103,105 @@
   parent: BaseLogisticsSubjectPhrase
   text: phrase-planetside
 
-# Ores
+# Mining related phrases alphabetically
 
 - type: quickPhrase
-  id: PhraseLogisticsIron
+  id: BaseMiningRelatedPhrase
   parent: BaseLogisticsSubjectPhrase
-  text: phrase-iron
+  group: Mining
+  abstract: true
 
 - type: quickPhrase
-  id: PhraseLogisticsCoal
-  parent: BaseLogisticsSubjectPhrase
-  text: phrase-coal
+  id: ArtifactPhraseMiningRelated
+  parent: BaseMiningRelatedPhrase
+  text: phrase-artifact
 
 - type: quickPhrase
-  id: PhraseLogisticsQuartz
-  parent: BaseLogisticsSubjectPhrase
-  text: phrase-quartz
+  id: CoalPhraseMiningRelated
+  parent: BaseMiningRelatedPhrase
+  text: materials-coal
 
 - type: quickPhrase
-  id: PhraseLogisticsSalt
-  parent: BaseLogisticsSubjectPhrase
-  text: phrase-salt
+  id: FragmentPhraseMiningRelated
+  parent: BaseMiningRelatedPhrase
+  text: phrase-fragment
 
 - type: quickPhrase
-  id: PhraseLogisticsGold
-  parent: BaseLogisticsSubjectPhrase
-  text: phrase-gold
+  id: RawAluminiumPhraseMiningRelated
+  parent: BaseMiningRelatedPhrase
+  text: materials-raw-aluminium
 
 - type: quickPhrase
-  id: PhraseLogisticsSilver
-  parent: BaseLogisticsSubjectPhrase
-  text: phrase-silver
+  id: RawBananiumPhraseMiningRelated
+  parent: BaseMiningRelatedPhrase
+  text: materials-raw-bananium
 
 - type: quickPhrase
-  id: PhraseLogisticsPlasma
-  parent: BaseLogisticsSubjectPhrase
-  text: phrase-plasma
+  id: RawBluespacePhraseMiningRelated
+  parent: BaseMiningRelatedPhrase
+  text: materials-raw-bluespace
 
 - type: quickPhrase
-  id: PhraseLogisticsUranium
-  parent: BaseLogisticsSubjectPhrase
-  text: phrase-uranium
+  id: RawCopperPhraseMiningRelated
+  parent: BaseMiningRelatedPhrase
+  text: materials-raw-copper
 
 - type: quickPhrase
-  id: PhraseLogisticsBananium
-  parent: BaseLogisticsSubjectPhrase
-  text: phrase-bananium
+  id: RawDiamondPhraseMiningRelated
+  parent: BaseMiningRelatedPhrase
+  text: materials-raw-diamond
 
 - type: quickPhrase
-  id: PhraseLogisticsArtifactFragment
-  parent: BaseLogisticsSubjectPhrase
-  text: phrase-artifact-fragment
+  id: RawGoldPhraseMiningRelated
+  parent: BaseMiningRelatedPhrase
+  text: materials-raw-gold
 
 - type: quickPhrase
-  id: PhraseLogisticsBluespaceCrystal
-  parent: BaseLogisticsSubjectPhrase
-  text: phrase-bluespace-crystal
+  id: RawIronPhraseMiningRelated
+  parent: BaseMiningRelatedPhrase
+  text: materials-raw-iron
 
 - type: quickPhrase
-  id: PhraseLogisticsDiamond
-  parent: BaseLogisticsSubjectPhrase
-  text: phrase-diamond
+  id: RawLeadPhraseMiningRelated
+  parent: BaseMiningRelatedPhrase
+  text: materials-raw-lead
+
+- type: quickPhrase
+  id: RawNormalityPhraseMiningRelated
+  parent: BaseMiningRelatedPhrase
+  text: materials-raw-normality
+
+- type: quickPhrase
+  id: RawPlasmaPhraseMiningRelated
+  parent: BaseMiningRelatedPhrase
+  text: materials-raw-plasma
+
+- type: quickPhrase
+  id: RawQuartzPhraseMiningRelated
+  parent: BaseMiningRelatedPhrase
+  text: materials-raw-quartz
+
+- type: quickPhrase
+  id: RawSaltPhraseMiningRelated
+  parent: BaseMiningRelatedPhrase
+  text: materials-raw-salt
+
+- type: quickPhrase
+  id: RawSilverPhraseMiningRelated
+  parent: BaseMiningRelatedPhrase
+  text: materials-raw-silver
+
+- type: quickPhrase
+  id: RawSulfurPhraseMiningRelated
+  parent: BaseMiningRelatedPhrase
+  text: materials-raw-sulfur
+
+- type: quickPhrase
+  id: RawTungstenPhraseMiningRelated
+  parent: BaseMiningRelatedPhrase
+  text: materials-raw-tungsten
+
+- type: quickPhrase
+  id: RawUraniumPhraseMiningRelated
+  parent: BaseMiningRelatedPhrase
+  text: materials-raw-uranium

@@ -11,19 +11,9 @@
   text: phrase-hazard-space
 
 - type: quickPhrase
-  id: HazardLowPresurePhrase
+  id: HazardPresurePhrase
   parent: BaseHazardThreatPhrase
-  text: phrase-hazard-low-presure
-
-- type: quickPhrase
-  id: HazardHighPresurePhrase
-  parent: BaseHazardThreatPhrase
-  text: phrase-hazard-high-presure
-
-- type: quickPhrase
-  id: HazardHeatPhrase
-  parent: BaseHazardThreatPhrase
-  text: phrase-hazard-heat
+  text: phrase-hazard-presure
 
 - type: quickPhrase
   id: HazardColdPhrase
@@ -31,9 +21,19 @@
   text: phrase-hazard-cold
 
 - type: quickPhrase
-  id: HazardGasLeakPhrase
+  id: HazardWetPhrase
   parent: BaseHazardThreatPhrase
-  text: phrase-hazard-gas-leak
+  text: phrase-hazard-wet
+
+- type: quickPhrase
+  id: HazardLeakPhrase
+  parent: BaseHazardThreatPhrase
+  text: phrase-hazard-leak
+
+- type: quickPhrase
+  id: HazardGasPhrase
+  parent: BaseHazardThreatPhrase
+  text: phrase-hazard-gas
 
 - type: quickPhrase
   id: HazardExplosionPhrase
@@ -81,14 +81,19 @@
   text: phrase-hazard-fire
 
 - type: quickPhrase
-  id: HazardPowerOutagePhrase
-  parent: BaseHazardThreatPhrase
-  text: phrase-hazard-power-outage
-
-- type: quickPhrase
   id: HazardLowPhrase
   parent: BaseHazardThreatPhrase
   text: phrase-hazard-low
+
+- type: quickPhrase
+  id: HazardHighPhrase
+  parent: BaseHazardThreatPhrase
+  text: phrase-hazard-high
+
+- type: quickPhrase
+  id: HazardPowerPhrase
+  parent: BaseHazardThreatPhrase
+  text: phrase-hazard-power
 
 - type: quickPhrase
   id: HazardInfectionPhrase
@@ -96,9 +101,9 @@
   text: phrase-hazard-infection
 
 - type: quickPhrase
-  id: HazardViralThreatPhrase
+  id: HazardViralPhrase
   parent: BaseHazardThreatPhrase
-  text: phrase-hazard-viral-threat
+  text: phrase-hazard-viral
 
 - type: quickPhrase
   id: HazardBrokenEquipmentPhrase
@@ -116,9 +121,9 @@
   text: phrase-hazard-burning
 
 - type: quickPhrase
-  id: HazardBadTemperaturePhrase
+  id: HazardTemperaturePhrase
   parent: BaseHazardThreatPhrase
-  text: phrase-hazard-bad-temperature
+  text: phrase-hazard-temperature
 
 - type: quickPhrase
   id: HazardFreezingPhrase
@@ -134,3 +139,8 @@
   id: HazardBloodPhrase
   parent: BaseHazardThreatPhrase
   text: phrase-blood
+
+- type: quickPhrase
+  id: HazardAggressivePhrase
+  parent: BaseHazardThreatPhrase
+  text: phrase-hazard-aggressive

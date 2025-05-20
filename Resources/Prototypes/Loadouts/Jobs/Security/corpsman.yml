@@ -78,8 +78,8 @@
   cost: 2
   exclusive: true
   requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutSecurityEyes
+#    - !type:CharacterItemGroupRequirement - TheDen - For easier 1 character all jobs cahracters
+#      group: LoadoutSecurityEyes
     - !type:CharacterJobRequirement
       jobs:
         - Brigmedic

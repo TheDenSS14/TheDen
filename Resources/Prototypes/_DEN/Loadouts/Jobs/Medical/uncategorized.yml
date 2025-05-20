@@ -11,3 +11,14 @@
         - Medical
   items:
     - ClothingEyesGlassesMedicalVisor
+
+- type: loadout
+  id: LoadoutTowelLightBlue
+  category: JobsMedicalAUncategorized
+  cost: 1
+  requirements:
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Medical
+  items:
+    - TowelColorLightBlue

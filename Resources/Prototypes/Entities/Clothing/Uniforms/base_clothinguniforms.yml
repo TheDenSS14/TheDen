@@ -33,6 +33,17 @@
     tags:
     - ClothMade
     - WhitelistChameleon
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.25,-0.25,0.25,0.25"
+        density: 35
+        mask:
+        - ItemMask
+        restitution: 0.3
+        friction: 0.2
 
 - type: entity
   abstract: true
@@ -269,3 +280,14 @@
     foldVerbText: fold-verb-clothing-jacket
   - type: FoldableClothing
     foldedEquippedPrefix: folded
+
+- type: entity
+  abstract: true
+  id: ClothingUniformRollableBase
+  components:
+  - type: Foldable
+    canFoldInsideContainer: true
+    unfoldVerbText: fold-unrollsleeves-verb
+    foldVerbText: fold-rollsleeves-verb
+  - type: FoldableClothing
+    foldedEquippedPrefix: rolled

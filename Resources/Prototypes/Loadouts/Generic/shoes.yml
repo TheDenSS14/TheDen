@@ -84,7 +84,7 @@
   customColorTint: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutShoes2
+      group: LoadoutShoes # TheDen
   items:
     - ClothingShoesColorWhite
 
@@ -106,7 +106,7 @@
   exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutShoes2
+      group: LoadoutShoes # TheDen
   items:
     - ClothingShoesGeta
 
@@ -117,7 +117,7 @@
   exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutShoes2
+      group: LoadoutShoes # TheDen
   items:
     - ClothingShoesTourist
 
@@ -129,7 +129,7 @@
   exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutShoes2
+      group: LoadoutShoes # TheDen
   items:
     - ClothingShoesBootsWork
 
@@ -175,7 +175,7 @@
   exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutShoes2
+      group: LoadoutShoes # TheDen
   items:
     - ClothingShoesBootsLaceup
 
@@ -186,7 +186,7 @@
   exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutShoes2
+      group: LoadoutShoes # TheDen
   items:
     - ClothingShoesBootsWinter
 
@@ -223,7 +223,7 @@
   canBeHeirloom: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutShoes2
+      group: LoadoutShoes # TheDen
   items:
     - ClothingShoesBootsCowboyWhite
 
@@ -236,7 +236,7 @@
   canBeHeirloom: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutShoes2
+      group: LoadoutShoes # TheDen
   items:
     - ClothingShoesBootsCowboyFancy
 
@@ -247,7 +247,7 @@
   exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutShoes2
+      group: LoadoutShoes # TheDen
   items:
     - ClothingShoesBootsFishing
 
@@ -315,7 +315,7 @@
 # Miscellaneous
 - type: loadout
   id: LoadoutShoesSlippersDuck
-  category: Shoes
+  category: JobsServiceClown # TheDen
   cost: 1
   exclusive: true
   canBeHeirloom: true
@@ -323,7 +323,7 @@
     - ClothingShoeSlippersDuck
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutShoes2
+      group: LoadoutClownShoes # TheDen
     - !type:CharacterJobRequirement
       jobs:
         - Clown
@@ -335,7 +335,7 @@
   exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutShoes2
+      group: LoadoutShoes # TheDen
   items:
     - ClothingShoesLeather
 
@@ -347,7 +347,7 @@
   customColorTint: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutShoes2
+      group: LoadoutShoes # TheDen
   items:
     - ClothingShoesMiscWhite
 
@@ -359,13 +359,14 @@
   canBeHeirloom: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutShoes2
+      group: LoadoutShoes # TheDen
     - !type:CharacterSpeciesRequirement # Due to a visual bug with envirosuits and heels they are disabled for now.
       inverted: true
       species:
         - Plasmaman
   items:
     - ClothingShoesHighheelBoots
+
 # Socks
 #- type: loadout
 #  id: LoadoutShoesUnderSocksCoder
@@ -403,7 +404,7 @@
   customColorTint: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutShoes2
+      group: LoadoutShoes # TheDen
   items:
     - ClothingClothWrap
 

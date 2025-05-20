@@ -11,14 +11,14 @@
     range: 1.85
     damage:
       types:
-        Blunt: 2
+        Blunt: 5
     bluntStaminaDamageFactor: 3
-    heavyRateModifier: 1.25
-    heavyRangeModifier: 1.25
+    heavyRateModifier: 2.5
+    heavyRangeModifier: 2
     heavyDamageBaseModifier: 1.25
-    heavyStaminaCost: 7.5
-    maxTargets: 2
-    angle: 180
+    heavyStaminaCost: 5
+    maxTargets: 7
+    angle: 160
     soundHit:
       collection: MetalThud
   - type: DamageOtherOnHit
@@ -32,7 +32,7 @@
   - type: IncreaseDamageOnWield
     damage:
       types:
-        Blunt: 5
+        Blunt: 4
   - type: Item
     size: Large
     sprite: Objects/Specific/Janitorial/mop.rsi
@@ -69,20 +69,20 @@
       range: 1.85
       damage:
         types:
-          Blunt: 2
+          Blunt: 7.5
       bluntStaminaDamageFactor: 3
-      heavyRateModifier: 1.25
-      heavyRangeModifier: 1.25
+      heavyRateModifier: 2.5
+      heavyRangeModifier: 2
       heavyDamageBaseModifier: 1.25
-      heavyStaminaCost: 7.5
-      maxTargets: 2
-      angle: 180
+      heavyStaminaCost: 5
+      maxTargets: 7
+      angle: 160
       soundHit:
          collection: MetalThud
     - type: DamageOtherOnHit
       damage:
         types:
-          Blunt: 6
+          Blunt: 7
       staminaCost: 8
     - type: Spillable
       solution: absorbed
@@ -90,7 +90,7 @@
     - type: IncreaseDamageOnWield
       damage:
         types:
-          Blunt: 5
+          Blunt: 4.5
     - type: Item
       size: Large
       sprite: Objects/Specific/Janitorial/advmop.rsi

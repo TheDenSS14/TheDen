@@ -26,7 +26,7 @@
         shape:
           !type:PhysShapeAabb
           bounds: "-0.25,-0.25,0.25,0.25"
-        density: 9.6 # Assuming a level 3 bulletproof vest weighs 2.4kg
+        density: 55
         mask:
         - ItemMask
         restitution: 0.3
@@ -83,14 +83,14 @@
   - type: Armor
     modifiers:
       coefficients:
-        Blunt: 0.6
-        Slash: 0.6
-        Piercing: 0.6
-        Heat: 0.85
+        Blunt: 0.45
+        Slash: 0.45
+        Piercing: 0.45
+        Heat: 0.5
         Radiation: 0.75
         Caustic: 0.85
   - type: ExplosionResistance
-    damageCoefficient: 0.50
+    damageCoefficient: 0.3
   - type: ClothingSpeedModifier # Burdensome for running, but perfect for speedy gliding, even though running is still probably better
     walkModifier: 0.9
     sprintModifier: 0.7
@@ -100,7 +100,7 @@
   parent: [ClothingOuterBaseLarge, AllowSuitStorageClothing]
   id: ClothingOuterArmorHosSamurai
   name: daimyō's tousei gusoku
-  description: A tousei gusoku fashioned for the Head of Security, it's primarily for ceremonial use, lacking pockets and gauntlets to make handling firearms easier, but still provides suitable protection for the Head of Security. Pairs excellently with a Katana sheath or tuncheon! 
+  description: A tousei gusoku fashioned for the Head of Security, it's primarily for ceremonial use, lacking pockets and gauntlets to make handling firearms easier, but still provides suitable protection for the Head of Security. Pairs excellently with a Katana sheath or tuncheon!
   components:
   - type: Sprite
     sprite: Clothing/OuterClothing/Armor/hosamurai.rsi
@@ -120,6 +120,11 @@
   - type: Tag
     tags:
       - FullBodyOuter
+  - type: ClothingSpeedModifier
+    walkModifier: 0.95
+    sprintModifier: 0.95
+  - type: ExplosionResistance
+    damageCoefficient: 0.6
 
 - type: entity
   parent: ClothingOuterArmorBasic

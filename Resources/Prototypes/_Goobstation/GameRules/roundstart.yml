@@ -12,10 +12,11 @@
     - EscapeIdentityObjective
     - ChangelingSurviveObjective
   - type: AntagSelection
-    selectionTime: PrePlayerSpawn
+    selectionTime: PostPlayerSpawn
     agentName: changeling-roundend-name
     definitions:
     - prefRoles: [ Changeling ]
+      min: 0
       max: 0
       playerRatio: 12
       lateJoinAdditional: true

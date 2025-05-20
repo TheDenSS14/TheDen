@@ -19,6 +19,7 @@ using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using System.Diagnostics.CodeAnalysis;
 using Content.Server.Consent;
+using Content.Shared.Consent;
 
 
 namespace Content.Server.DeltaV.ParadoxAnomaly.Systems;
@@ -43,6 +44,8 @@ public sealed class ParadoxAnomalySystem : EntitySystem
     [Dependency] private readonly StationSpawningSystem _stationSpawning = default!;
     [Dependency] private readonly LoadoutSystem _loadout = default!;
 
+    private ProtoId<ConsentTogglePrototype> _paradoxAnomalyConsent = "NoClone";
+
     public override void Initialize()
     {
         base.Initialize();
@@ -52,11 +55,9 @@ public sealed class ParadoxAnomalySystem : EntitySystem
 
     private void OnTakeGhostRole(Entity<ParadoxAnomalySpawnerComponent> ent, ref TakeGhostRoleEvent args)
     {
-        Log.Info($"Using paradox anomaly spawner {ent}");
         if (!TrySpawnParadoxAnomaly(ent.Comp.Rule, out var twin))
             return;
 
-        Log.Info($"Created paradox anomaly {ToPrettyString(twin):twin}");
         var role = Comp<GhostRoleComponent>(ent);
         _ghostRole.GhostRoleInternalCreateMindAndTransfer(args.Player, ent, twin.Value, role);
         _ghostRole.UnregisterGhostRole((ent.Owner, role));
@@ -86,7 +87,7 @@ public sealed class ParadoxAnomalySystem : EntitySystem
             if (_role.MindIsAntagonist(mindId))
                 continue;
 
-            if (_consent.HasConsent(uid, "NoClone"))
+            if (_consent.HasConsent(uid, _paradoxAnomalyConsent))
                 continue;
 
             // TODO: when metempsychosis real skip whoever has Karma

@@ -7,7 +7,7 @@
     - ClothingNeckHeadphones
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutNeck2
+      group: LoadoutNeck # TheDen
 
 - type: loadout
   id: LoadoutNeckBellCollar
@@ -18,7 +18,18 @@
     - ClothingNeckBellCollar
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutNeck2
+      group: LoadoutNeck # TheDen
+
+- type: loadout
+  id: LoadoutNeckCowBellCollar
+  category: Neck
+  cost: 1
+  exclusive: true
+  items:
+    - ClothingNeckCowBellCollar
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutNeck # TheDen
 
 - type: loadout
   id: LoadoutNeckOldMantle
@@ -31,7 +42,7 @@
     - ClothingNeckOldMantle
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutNeck2
+      group: LoadoutNeck # TheDen
 
 - type: loadout
   id: LoadoutNeckUnathiMantle
@@ -44,7 +55,7 @@
     - ClothingNeckUnathiMantle
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutNeck2
+      group: LoadoutNeck # TheDen
 
 - type: loadout
   id: LoadoutNeckDogtags
@@ -69,7 +80,7 @@
     - ClothingNeckScarfStripedRed
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutNeck2
+      group: LoadoutNeck # TheDen
 
 - type: loadout
   id: LoadoutNeckScarfStripedBlue
@@ -80,7 +91,7 @@
     - ClothingNeckScarfStripedBlue
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutNeck2
+      group: LoadoutNeck # TheDen
 
 - type: loadout
   id: LoadoutNeckScarfStripedGreen
@@ -91,7 +102,7 @@
     - ClothingNeckScarfStripedGreen
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutNeck2
+      group: LoadoutNeck # TheDen
 
 - type: loadout
   id: LoadoutNeckScarfStripedBlack
@@ -102,7 +113,7 @@
     - ClothingNeckScarfStripedBlack
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutNeck2
+      group: LoadoutNeck # TheDen
 
 - type: loadout
   id: LoadoutNeckScarfStripedBrown
@@ -113,7 +124,7 @@
     - ClothingNeckScarfStripedBrown
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutNeck2
+      group: LoadoutNeck # TheDen
 
 - type: loadout
   id: LoadoutNeckScarfStripedLightBlue
@@ -124,7 +135,7 @@
     - ClothingNeckScarfStripedLightBlue
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutNeck2
+      group: LoadoutNeck # TheDen
 
 - type: loadout
   id: LoadoutNeckScarfStripedOrange
@@ -135,7 +146,7 @@
     - ClothingNeckScarfStripedOrange
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutNeck2
+      group: LoadoutNeck # TheDen
 
 - type: loadout
   id: LoadoutNeckScarfStripedPurple
@@ -146,7 +157,7 @@
     - ClothingNeckScarfStripedPurple
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutNeck2
+      group: LoadoutNeck # TheDen
 
 - type: loadout
   id: LoadoutNeckScarfStripedZebra
@@ -157,7 +168,7 @@
     - ClothingNeckScarfStripedZebra
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutNeck2
+      group: LoadoutNeck # TheDen
 
 # Ties
 - type: loadout
@@ -235,7 +246,7 @@
     - ClothingNeckTieRibbon
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutNeck2
+      group: LoadoutNeck # TheDen
 
 - type: loadout
   id: LoadoutNeckTieBlack
@@ -551,7 +562,7 @@
     - BedsheetCosmos
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutNeck2
+      group: LoadoutNeck # TheDen
     - !type:CharacterDepartmentRequirement
        departments:
          - Civilian
@@ -643,7 +654,7 @@
     - BedsheetRainbow
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutNeck2
+      group: LoadoutNeck # TheDen
     - !type:CharacterDepartmentRequirement
        departments:
          - Civilian
@@ -681,7 +692,7 @@
     - BedsheetWhite
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutNeck2
+      group: LoadoutNeck # TheDen
     - !type:CharacterDepartmentRequirement
        departments:
          - Civilian
@@ -718,7 +729,7 @@
     - BedsheetNT
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutNeck2
+      group: LoadoutNeck # TheDen
     - !type:CharacterDepartmentRequirement
        departments:
          - Civilian

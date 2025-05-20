@@ -2603,3 +2603,33 @@
     tags:
     - Beetroot
     - Vegetable
+
+- type: entity
+  name: red rose
+  description: A symbol of love. Smells nice, too.
+  id: RedRose
+  parent: ProduceBase
+  components:
+  - type: Sprite
+    sprite: Objects/Specific/Hydroponics/red_rose.rsi
+ # - type: SolutionContainerManager
+ # - type: Produce
+ #   seedId: red_rose
+  - type: Tag
+    tags:
+    - Flower
+
+- type: entity
+  name: jasmine
+  description: Small, white flowers with a heavenly scent.
+  id: Jasmine
+  parent: ProduceBase
+  components:
+  - type: Sprite
+    sprite: Objects/Specific/Hydroponics/jasmine.rsi
+ # - type: SolutionContainerManager
+ # - type: Produce
+ #   seedId: jasmine
+  - type: Tag
+    tags:
+    - Flower

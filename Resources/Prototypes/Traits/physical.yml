@@ -448,6 +448,7 @@
         - IPC # Other species could justify getting this trait for Blunt stamina damage,
               # but 6 blunt -> 5 blunt is a straight up downgrade.
         - Canid # The Den
+        - Ovinia # The Den
     - !type:CharacterTraitRequirement
       inverted: true
       traits:
@@ -654,22 +655,22 @@
         - type: Flashable # Effectively, removes any flash-vulnerability species traits.
 
 
-# - type: trait
-#  id: FlareShielding
-#  category: Physical
-#  points: -3
-#  requirements:
-#    - !type:CharacterJobRequirement
-#      inverted: true
-#      jobs:
-#        - Prisoner # Bionics should be "Confiscated" from long term prisoners.
-#    - !type:CharacterTraitRequirement
-#      traits:
-#        - CyberEyes
-#  functions:
-#    - !type:TraitAddComponent
-#      components:
-#        - type: EyeProtection
+- type: trait
+  id: FlareShielding
+  category: Physical
+  points: -4
+  requirements:
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Security
+    - !type:CharacterTraitRequirement
+      traits:
+        - CyberEyes
+  functions:
+    - !type:TraitAddComponent
+      components:
+        - type: FlashImmunity
+        - type: EyeProtection
 
 
 - type: trait
@@ -945,45 +946,25 @@
       protoId: SpeedRightLeg
       slotId: "right leg"
 
-
-# - type: trait
-#  id: FlareShieldingModule
-#  category: Physical
-#  points: -4
-#  requirements:
-#    - !type:CharacterJobRequirement
-#      inverted: true
-#      jobs:
-#        - Prisoner # Bionics should be "Confiscated" from long term prisoners.
-#    - !type:CharacterSpeciesRequirement
-#      species:
-#        - IPC
-#    - !type:CharacterTraitRequirement
-#      inverted: true
-#      traits:
-#       - Photophobia
-#        - Blindness
-#        - Nearsighted
-#    - !type:CharacterItemGroupRequirement
-#      group: TraitsMind
-#  functions:
-#    - !type:TraitAddComponent
-#      components:
-#        - type: FlashImmunity
-#        - type: EyeProtection
-
 - type: trait
   id: FlareShieldingModule
   category: Physical
   points: -4
   requirements:
-    - !type:CharacterJobRequirement
-      inverted: true
-      jobs:
-        - Prisoner # Bionics should be "Confiscated" from long term prisoners.
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Security
     - !type:CharacterSpeciesRequirement
       species:
         - IPC
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - Photophobia
+        - Blindness
+        - Nearsighted
+    - !type:CharacterItemGroupRequirement
+      group: TraitsMind
   functions:
     - !type:TraitAddComponent
       components:
@@ -1267,3 +1248,20 @@
           - Pill
           - Crayon
           - Paper
+
+- type: trait
+  id: EggLaying
+  category: Physical
+  points: -1 # After discussion in its initial suggestion thread, point cost was voted for balance
+  requirements:
+  - !type:CharacterJobRequirement
+    inverted: true
+    jobs:
+    - Borg
+    - MedicalBorg
+  functions:
+    - !type:TraitAddComponent
+      components:
+        - type: EggLayer
+          eggSpawn:
+            - id: FoodEgg

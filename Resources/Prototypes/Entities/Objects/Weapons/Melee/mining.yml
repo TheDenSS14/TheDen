@@ -12,8 +12,8 @@
     sprite: Objects/Weapons/Melee/pickaxe.rsi
     state: pickaxe
   - type: MeleeWeapon
-    attackRate: 0.85
-    range: 1.5
+    attackRate: 1.2
+    range: 1.6
     wideAnimationRotation: -135
     soundHit:
       path: "/Audio/Weapons/smash.ogg"
@@ -140,7 +140,7 @@
     - HugObject
     - KissObject
     - LickObject
-  - type: PressureDamageChange # Lavaland Change: Pressure damage change for kinetic weapons
+#  - type: PressureDamageChange # Lavaland Change: Pressure damage change for kinetic weapons
 
 - type: entity
   parent: BaseWeaponCrusher
@@ -177,9 +177,9 @@
         Blunt: 13 # Lavaland Change: no damage when unwielded
         Slash: 7
     bluntStaminaDamageFactor: 2.0
-    heavyRateModifier: 0.75
+    heavyRateModifier: .75
     heavyDamageBaseModifier: 1.2
-    heavyStaminaCost: 7.5
+    heavyStaminaCost: 3
     angle: 120
     soundHit:
       collection: MetalThud
@@ -199,9 +199,17 @@
     slots:
     - back
     - suitStorage
+  - type: IncreaseDamageOnWield
+    damage:
+      types:
+        Blunt: 5
+        Slash: 5
+        Structural: 30
+  - type: LeechOnMarker
+    leech:
+      groups:
+        Brute: -10
   # Lavaland Change Start
-  - type: MeleeRequiresWield
-    fumbleOnAttempt: true
   - type: DamageBoostOnMarker
     boost:
       types: # Totals to 70 damage when hitting marked targets
@@ -224,12 +232,12 @@
   - type: MeleeWeapon
     autoAttack: true
     wideAnimationRotation: -135
-    attackRate: 1
+    attackRate: 0.8
     range: 1.4
     damage:
       types:
-        Slash: 12
-    heavyRateModifier: 0.9
+        Slash: 9
+    heavyRateModifier: 1.4
     heavyDamageBaseModifier: 1.2
     maxTargets: 2
     angle: 20
