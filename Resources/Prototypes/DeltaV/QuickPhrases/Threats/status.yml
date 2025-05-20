@@ -120,3 +120,8 @@
   id: SafetyIsPhrase
   parent: BaseSafetyStatusPhrase
   text: phrase-is
+
+- type: quickPhrase
+  id: SafetyProblemPhrase
+  parent: BaseSafetyStatusPhrase
+  text: phrase-safety-problem

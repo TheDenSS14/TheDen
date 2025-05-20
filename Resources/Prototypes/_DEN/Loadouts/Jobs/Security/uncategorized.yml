@@ -13,18 +13,42 @@
     - ClothingHeadHatSeniorTrooper
 
 - type: loadout
-  id: LoadoutSecurityUniformJumpsuitSeniorTrooper
+  id: LoadoutMagazineShotgunBeanbag
   category: JobsSecurityAUncategorized
   cost: 0
-  exclusive: true
   requirements:
+    - !type:CharacterDepartmentTimeRequirement
+      department: Security
+      min: 10800 # 3 hours
     - !type:CharacterItemGroupRequirement
-      group: LoadoutSecurityUniforms
-    - !type:CharacterDepartmentRequirement
-      departments:
-        - Security
+      group: LoadoutSecurityEquipment
+    - !type:CharacterLogicOrRequirement
+      requirements:
+      - !type:CharacterDepartmentRequirement
+        departments:
+          - Security
   items:
-    - ClothingUniformJumpsuitSeniorTrooper
+    - MagazineShotgunBeanbag
+
+- type: loadout
+  id: LoadoutSecurityShotgunSawn
+  category: JobsSecurityAUncategorized
+  cost: 4
+  canBeHeirloom: true
+  guideEntry: SecurityWeapons
+  requirements:
+    - !type:CharacterDepartmentTimeRequirement
+      department: Security
+      min: 10800 # 3 hours
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSecurityWeapons
+    - !type:CharacterLogicOrRequirement
+      requirements:
+      - !type:CharacterDepartmentRequirement
+        departments:
+          - Security
+  items:
+    - WeaponShotgunSawnSecurity
 
 - type: loadout
   id: LoadoutSecurityHeadHelmetCombat
@@ -67,6 +91,20 @@
         - Security
   items:
     - ClothingMaskGasSecurityBallistic
+
+- type: loadout
+  id: LoadoutSecurityUniformJumpsuitSeniorTrooper
+  category: JobsSecurityAUncategorized
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSecurityUniforms
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Security
+  items:
+    - ClothingUniformJumpsuitSeniorTrooper
 
 - type: loadout
   id: LoadoutSecurityUniformJumpsuit

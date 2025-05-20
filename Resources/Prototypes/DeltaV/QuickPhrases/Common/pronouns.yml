@@ -65,6 +65,11 @@
   text: phrase-me
 
 - type: quickPhrase
+  id: WePhrase
+  parent: BaseNounsPhrase
+  text: phrase-we
+
+- type: quickPhrase
   id: IAmPhrase
   parent: BaseNounsPhrase
   text: phrase-i-am
@@ -72,7 +77,7 @@
 - type: quickPhrase
   id: YouArePhrase
   parent: BaseNounsPhrase
-  text: phrase-you-are
+  text: phrase-are
 
 - type: quickPhrase
   id: MinePhrase

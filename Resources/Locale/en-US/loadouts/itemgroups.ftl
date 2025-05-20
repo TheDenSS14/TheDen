@@ -12,6 +12,7 @@ character-item-group-LoadoutShoes = Civilian Shoes
 character-item-group-LoadoutUniformsCivilian = Civilian Uniforms
 
 # Generic - Items
+character-item-group-AACTabletVersions = AAC Tablet Versions
 character-item-group-LoadoutAirTank = Emergency Air Tanks
 character-item-group-LoadoutLighters = Lighters
 character-item-group-LoadoutInstrumentsAny = Musical Instruments (Non-Musician)

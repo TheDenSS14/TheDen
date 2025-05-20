@@ -1,0 +1,99 @@
+
+# Waist aprons.
+
+- type: entity
+  parent: ClothingOuterStorageBase
+  id: ClothingWaistApron
+  name: waist apron
+  description: An apron that can be tied around the waist.
+  components:
+  - type: Sprite
+    sprite: _DEN/Clothing/OuterClothing/Misc/apronwaist.rsi
+  - type: Clothing
+    sprite: _DEN/Clothing/OuterClothing/Misc/apronwaist.rsi
+    slots:
+    - outerClothing
+    - belt
+    clothingVisuals:
+      outerClothing:
+      - state: equipped-OUTERCLOTHING
+      belt:
+      - state: equipped-OUTERCLOTHING
+
+- type: entity
+  parent: ClothingWaistApron
+  id: ClothingWaistApronCheckered
+  suffix: checkered
+  components:
+  - type: Sprite
+    layers:
+    - state: icon
+    - state: checker-icon
+  - type: Clothing
+    clothingVisuals:
+      outerClothing:
+      - state: equipped-OUTERCLOTHING
+      - state: checker-equipped-OUTERCLOTHING
+      belt:
+      - state: equipped-OUTERCLOTHING
+      - state: checker-equipped-OUTERCLOTHING
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+      - state: checker-inhand-left
+      right:
+      - state: inhand-right
+      - state: checker-inhand-right
+
+- type: entity
+  parent: ClothingWaistApron
+  id: ClothingWaistApronStripesHorizontal
+  suffix: horizontal stripes
+  components:
+  - type: Sprite
+    layers:
+    - state: icon
+    - state: stripes_horizontal-icon
+  - type: Clothing
+    clothingVisuals:
+      outerClothing:
+      - state: equipped-OUTERCLOTHING
+      - state: stripes_horizontal-equipped-OUTERCLOTHING
+      belt:
+      - state: equipped-OUTERCLOTHING
+      - state: stripes_horizontal-equipped-OUTERCLOTHING
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+      - state: stripes_horizontal-inhand-left
+      right:
+      - state: inhand-right
+      - state: stripes_horizontal-inhand-right
+
+- type: entity
+  parent: ClothingWaistApron
+  id: ClothingWaistApronStripesVertical
+  suffix: vertical stripes
+  components:
+  - type: Sprite
+    layers:
+    - state: icon
+    - state: stripes_vertical-icon
+  - type: Clothing
+    clothingVisuals:
+      outerClothing:
+      - state: equipped-OUTERCLOTHING
+      - state: stripes_vertical-equipped-OUTERCLOTHING
+      belt:
+      - state: equipped-OUTERCLOTHING
+      - state: stripes_vertical-equipped-OUTERCLOTHING
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+      - state: stripes_vertical-inhand-left
+      right:
+      - state: inhand-right
+      - state: stripes_vertical-inhand-right

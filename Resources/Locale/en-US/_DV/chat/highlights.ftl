@@ -2,7 +2,7 @@
 # The corresponding prototypes are located in Resources/Prototypes/Catalog/_DV/Chat/highlights.yml
 # if you add or remove a string here, update the protoype
 
-###### Centcomm
+# Centcomm
 highlight-centcomm-agent-1 = Centcomm
 highlight-centcomm-agent-2 = Central Command
 highlight-centcomm-agent-3 = Death Squad
@@ -16,7 +16,7 @@ highlight-centcomm-quarantine-officer-2 = Central Command
 highlight-centcomm-quarantine-officer-3 = "CBURN"
 
 
-###### ERT
+# ERT
 highlight-ert-leader-1 = "ERT Leader
 highlight-ert-leader-2 = Leader
 highlight-ert-leader-3 = "ERT"
@@ -53,7 +53,7 @@ highlight-ert-security-5 = "Sec"
 highlight-ert-security-6 = "ERT"
 
 
-###### Command
+# Command
 highlight-captain-1 = Captain
 highlight-captain-2 = "Cap"
 highlight-captain-3 = Command
@@ -105,7 +105,7 @@ highlight-administrative-assistant-2 = "AA"
 highlight-administrative-assistant-3 = Command
 
 
-###### Security
+# Security
 highlight-detective-1 = Detective
 highlight-detective-2 = "Det"
 highlight-detective-3 = Security
@@ -142,7 +142,7 @@ highlight-corpsman-4 = "Sec"
 highlight-corpsman-5 = Security
 
 
-###### Station-specific
+# Station-specific
 highlight-boxer-1 = Boxer
 
 highlight-gladiator-1 = Gladiator
@@ -164,7 +164,7 @@ highlight-zookeeper-1 = Zookeeper
 highlight-zookeeper-2 = Zookeep
 
 
-###### Engineering
+# Engineering
 highlight-atmospheric-technician-1 = Atmospheric Technician
 highlight-atmospheric-technician-2 = Atmos
 highlight-atmospheric-technician-3 = Atmospheric
@@ -182,7 +182,7 @@ highlight-technical-assistant-4 = Engineer
 highlight-technical-assistant-5 = "Engi"
 
 
-###### Epistemics
+# Epistemics
 highlight-scientist-1 = Scientist
 highlight-scientist-2 = Epistemics
 highlight-scientist-3 = "Epi"
@@ -199,7 +199,7 @@ highlight-psionic-mantis-1 = "Mantis"
 highlight-psionic-mantis-2 = Psionic Mantis
 
 
-###### Justice
+# Justice
 highlight-clerk-1 = Clerk
 
 highlight-attorney-1 = Lawyer
@@ -212,7 +212,7 @@ highlight-prosecutor-3 = Prosecution
 highlight-prosecutor-4 = "Prosec"
 
 
-###### Logistics
+# Logistics
 highlight-cargo-technician-1 = Cargo Technician
 highlight-cargo-technician-2 = Cargo Tech
 highlight-cargo-technician-3 = Cargo
@@ -239,7 +239,7 @@ highlight-courier-3 = Logistics
 highlight-courier-4 = "Logi"
 
 
-###### Medical
+# Medical
 highlight-chemist-1 = Chemist
 highlight-chemist-2 = Chemistry
 highlight-chemist-3 = MedBay
@@ -271,7 +271,7 @@ highlight-surgeon-3 = MedBay
 highlight-surgeon-4 = Medical
 
 
-###### Civilian
+# Civilian
 highlight-bartender-1 = Bartender
 highlight-bartender-2 = Barkeeper
 highlight-bartender-3 = Barkeep
@@ -315,7 +315,7 @@ highlight-visitor-1 = Visitor
 highlight-service-worker-1 = Service Worker
 
 
-###### Silicon
+# Silicon
 highlight-personal-ai-1 = Personal AI
 highlight-personal-ai-2 = "pAI"
 

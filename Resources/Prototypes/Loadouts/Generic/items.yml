@@ -892,6 +892,19 @@
   cost: 2
   items:
     - AACTablet
+  requirements: #TheDen
+  - !type:CharacterItemGroupRequirement
+    group: AACTabletVersions
+
+- type: loadout
+  id: LoadoutItemAACTablet_SAS
+  category: GeneralItems
+  cost: 2
+  items:
+    - AACTablet_SAS
+  requirements: #TheDen
+  - !type:CharacterItemGroupRequirement
+    group: AACTabletVersions
 
 - type: loadout
   id: LoadoutItemCaneBlind

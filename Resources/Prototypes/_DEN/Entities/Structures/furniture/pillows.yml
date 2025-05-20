@@ -1,0 +1,35 @@
+- type: entity
+  name: emergency comfort deployment unit
+  parent: BaseItem
+  id: EmergencyComfortDeploymentUnitWrapped
+  description: Presenting the NanoTrasen emergency comfort deployment unit model P.I.L.L.O.W. Deploy in any comfort requiring location for maximum softness. This item has shown to be habit-forming. Enjoy with care, and Have a NanoTastic day!
+  components:
+  - type: Sprite
+    sprite: /Textures/_DEN/Structures/Furniture/pillows.rsi
+    state: EmergencyComfortDeploymentUnitWrapped
+  - type: Item
+    size: Normal
+  - type: SpawnItemsOnUse
+    items:
+      - id: EmergencyComfortDeploymentUnitUnwrapped
+    sound:
+      path: /Audio/Misc/zip.ogg
+  - type: Construction
+    graph: Pillows
+    node: EmergencyComfortDeploymentUnitWrapped
+
+- type: entity
+  name: deployed emergency comfort unit
+  parent: SeatBase
+  id: EmergencyComfortDeploymentUnitUnwrapped
+  description: Presenting the NanoTrasen emergency comfort deployment unit model P.I.L.L.O.W. Deploy in any comfort requiring location for maximum softness. This item has shown to be habit-forming. Enjoy with care, and Have a NanoTastic day!
+  components:
+  - type: Sprite
+    sprite: /Textures/_DEN/Structures/Furniture/pillows.rsi
+    state: EmergencyComfortDeploymentUnitUnwrapped
+  - type: MeleeWeapon
+    damage:
+      types:
+        Blunt: 0
+    soundHit:
+      collection: storageRustle

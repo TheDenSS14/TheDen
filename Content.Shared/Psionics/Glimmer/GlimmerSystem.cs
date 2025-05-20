@@ -88,15 +88,15 @@ public sealed class GlimmerSystem : EntitySystem
 
         return glimmer switch
         {
-            <= 49 => GlimmerTier.Minimal,
-            >= 50 and <= 399 => GlimmerTier.Low,
-            >= 400 and <= 599 => GlimmerTier.Moderate,
-            >= 600 and <= 699 => GlimmerTier.High,
-            >= 700 and <= 899 => GlimmerTier.Dangerous,
+            < 50 => GlimmerTier.Minimal,
+            < 400 => GlimmerTier.Low,
+            < 600 => GlimmerTier.Moderate,
+            < 700 => GlimmerTier.High,
+            < 900 => GlimmerTier.Dangerous,
             _ => GlimmerTier.Critical,
         };
     }
-
+    
     /// <summary>
     ///     Returns a 0 through 10 range of glimmer. Do not divide by this for any reason.
     /// </summary>
