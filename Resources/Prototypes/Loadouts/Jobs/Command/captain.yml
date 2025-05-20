@@ -89,6 +89,7 @@
   id: LoadoutCaptainSwordSheath
   category: JobsCommandCaptain
   cost: 0
+  exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutCaptainBelt
@@ -210,6 +211,7 @@
   id: LoadoutCaptainEyesSunglasses
   category: JobsCommandCaptain
   cost: 0
+  exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutCaptainEyes
@@ -224,6 +226,7 @@
   id: LoadoutCaptainGlovesCapGloves
   category: JobsCommandCaptain
   cost: 0
+  exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutCaptainGloves
@@ -253,6 +256,7 @@
   id: LoadoutCommandCapHat
   category: JobsCommandCaptain
   cost: 0
+  exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutCaptainHead
@@ -266,6 +270,7 @@
   id: LoadoutCommandCapHatCapcap
   category: JobsCommandCaptain
   cost: 0
+  exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutCaptainHead
@@ -279,6 +284,7 @@
   id: LoadoutCommandCapHatBeret
   category: JobsCommandCaptain
   cost: 0
+  exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutCaptainHead
@@ -395,6 +401,7 @@
   id: LoadoutCommandCapOuterWinter
   category: JobsCommandCaptain
   cost: 0
+  exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutCaptainOuter
@@ -408,6 +415,7 @@
   id: LoadoutCaptainOuterCarapace
   category: JobsCommandCaptain
   cost: 0
+  exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutCaptainOuter
@@ -421,6 +429,7 @@
   id: LoadoutCaptainOuterDogi
   category: JobsCommandCaptain
   cost: 0
+  exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutCaptainOuter
