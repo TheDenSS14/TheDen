@@ -4,12 +4,11 @@
   isVisibleLanguage: true
   speech:
     color: "#df57aaee"
-    fontId: Biscuitos # DEN
+    fontId: Biscuitos
   obfuscation:
     !type:SyllableObfuscation
     minSyllables: 1
-    maxSyllables: 1 # DEN: One syllable.
-    # DEN: Replaces this entire word list.
+    maxSyllables: 1
     replacement:
     - meow
     - meeow

@@ -425,7 +425,6 @@ trait-description-ValyrianStandard =
 
 trait-name-Nekomimetic = Nekomimetic
 trait-description-Nekomimetic = A language composed of animal noises and syllables, easy to replicate but hard to understand. Spoken natively by Felinids.
-# DEN: Changed Nekomimetic description
 
 trait-name-Canilunzt = Canilunzt
 trait-description-Canilunzt = The guttural language spoken and utilized by the inhabitants of the Vazzend system,

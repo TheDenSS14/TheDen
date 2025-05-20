@@ -12,7 +12,6 @@ language-RootSpeak-description = The strange whistling-style language spoken by 
 
 language-Nekomimetic-name = Nekomimetic
 language-Nekomimetic-description = A language composed of animal noises and syllables, easy to replicate but hard to understand. Spoken natively by Felinids.
-# DEN: Changed Nekomimetic description
 
 language-Draconic-name = Sinta'Unathi
 language-Draconic-description =
