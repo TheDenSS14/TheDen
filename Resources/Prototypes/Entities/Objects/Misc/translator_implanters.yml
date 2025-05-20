@@ -139,3 +139,11 @@
   components:
   - type: Implanter
     implant: RodentianTranslatorImplant
+
+- type: entity
+  id: CaprineTranslatorImplanter
+  parent: [ BaseTranslatorImplanter ]
+  name: caprine translator implant
+  components:
+  - type: Implanter
+    implant: CaprineTranslatorImplant

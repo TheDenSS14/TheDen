@@ -246,3 +246,18 @@
     - Rodentian
     requires:
     - TauCetiBasic
+
+- type: entity
+  parent: BaseSubdermalImplant
+  id: CaprineTranslatorImplant
+  name: caprine translator implant
+  description: An implant giving the ability to understand and speak Caprine.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: TranslatorImplant
+    understood:
+    - Caprine
+    spoken:
+    - Caprine
+    requires:
+    - TauCetiBasic

@@ -357,3 +357,20 @@
     requires:
     - TauCetiBasic
     - Rodentian
+
+- type: entity
+  id: CaprineTranslator
+  parent: [ TranslatorPoweredBase ]
+  name: caprine translator
+  description: Translates speech between Caprine and Galactic Common, helping communicate with slimes and slime people.
+  components:
+  - type: HandheldTranslator
+    spoken:
+    - TauCetiBasic
+    - Caprine
+    understood:
+    - TauCetiBasic
+    - Caprine
+    requires:
+    - TauCetiBasic
+    - Caprine
