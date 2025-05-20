@@ -1249,19 +1249,20 @@
           - Crayon
           - Paper
 
-- type: trait
-  id: EggLaying
-  category: Physical
-  points: 0
-  requirements:
-  - !type:CharacterJobRequirement
-    inverted: true
-    jobs:
-    - Borg
-    - MedicalBorg
-  functions:
-    - !type:TraitAddComponent
-      components:
-        - type: EggLayer
-          eggSpawn:
-            - id: ItemEggTrait
+# Commented out upon request for the time being
+#- type: trait
+#  id: EggLaying
+#  category: Physical
+#  points: 0
+#  requirements:
+#  - !type:CharacterJobRequirement
+#    inverted: true
+#    jobs:
+#    - Borg
+#    - MedicalBorg
+#  functions:
+#    - !type:TraitAddComponent
+#      components:
+#        - type: EggLayer
+#          eggSpawn:
+#            - id: ItemEggTrait
