@@ -134,3 +134,14 @@
     sprite: _Impstation/Clothing/Uniforms/Jumpsuit/brosblazer.rsi
   - type: Clothing
     sprite: _Impstation/Clothing/Uniforms/Jumpsuit/brosblazer.rsi
+
+- type: entity
+  parent: [ClothingUniformBase]
+  id: ClothingUniformJesterEvil
+  name: evil jester suit
+  description: Heeheehee...
+  components:
+  - type: Sprite
+    sprite: _Impstation/Clothing/Uniforms/Jumpsuit/jesterevil.rsi
+  - type: Clothing
+    sprite: _Impstation/Clothing/Uniforms/Jumpsuit/jesterevil.rsi
