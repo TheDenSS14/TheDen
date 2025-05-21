@@ -135,3 +135,9 @@
         conditions:
           - !type:ReagentThreshold
             min: 20
+      - !type:AdjustReagent
+        reagent: Corgium
+        amount: -20
+        conditions:
+        - !type:ReagentThreshold
+          min: 20

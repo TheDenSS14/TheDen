@@ -131,6 +131,7 @@
   id: LoadoutCommandHOSHatBeret
   category: JobsSecurityHeadOfSecurity
   cost: 0
+  exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutHeadOfSecurityHead
@@ -144,6 +145,7 @@
   id: LoadoutCommandHOSHatHoshat
   category: JobsSecurityHeadOfSecurity
   cost: 0
+  exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutHeadOfSecurityHead
@@ -207,6 +209,7 @@
   id: LoadoutCommandHOSOuterWinterUnarmored
   category: JobsSecurityHeadOfSecurity
   cost: 0
+  exclusive: true
   requirements:
   - !type:CharacterItemGroupRequirement
     group: LoadoutHeadOfSecurityOuter
@@ -220,6 +223,7 @@
   id: LoadoutCommandHOSOuterWinter
   category: JobsSecurityHeadOfSecurity
   cost: 0
+  exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutHeadOfSecurityOuter
@@ -233,6 +237,7 @@
   id: LoadoutCommandHOSOuterTrench
   category: JobsSecurityHeadOfSecurity
   cost: 0
+  exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutHeadOfSecurityOuter
@@ -246,6 +251,7 @@
   id: LoadoutCommandHOSOuterArmorHosSamurai
   category: JobsSecurityHeadOfSecurity
   cost: 0
+  exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutHeadOfSecurityOuter

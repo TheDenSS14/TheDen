@@ -306,3 +306,71 @@
     requires:
     - TauCetiBasic
     - SiikMaas
+
+- type: entity
+  id: NehinaTranslator
+  parent: [ TranslatorPoweredBase ]
+  name: nēhina translator
+  description: Translates speech between Nēhina and Galactic Common, helping communicate with slimes and slime people.
+  components:
+  - type: HandheldTranslator
+    spoken:
+    - TauCetiBasic
+    - Nehina
+    understood:
+    - TauCetiBasic
+    - Nehina
+    requires:
+    - TauCetiBasic
+    - Nehina
+
+- type: entity
+  id: AlasetaTranslator
+  parent: [ TranslatorPoweredBase ]
+  name: alaseta translator
+  description: Translates speech between Alaseta and Galactic Common, helping communicate with slimes and slime people.
+  components:
+  - type: HandheldTranslator
+    spoken:
+    - TauCetiBasic
+    - Alaseta
+    understood:
+    - TauCetiBasic
+    - Alaseta
+    requires:
+    - TauCetiBasic
+    - Alaseta
+
+- type: entity
+  id: RodentianTranslator
+  parent: [ TranslatorPoweredBase ]
+  name: rodentian translator
+  description: Translates speech between Rodentian and Galactic Common, helping communicate with slimes and slime people.
+  components:
+  - type: HandheldTranslator
+    spoken:
+    - TauCetiBasic
+    - Rodentian
+    understood:
+    - TauCetiBasic
+    - Rodentian
+    requires:
+    - TauCetiBasic
+    - Rodentian
+
+- type: entity
+  id: CaprineTranslator
+  parent: [ TranslatorPoweredBase ]
+  name: caprine translator
+  description: Translates speech between Caprine and Galactic Common, helping communicate with slimes and slime people.
+  components:
+  - type: HandheldTranslator
+    spoken:
+    - TauCetiBasic
+    - Caprine
+    understood:
+    - TauCetiBasic
+    - Caprine
+    requires:
+    - TauCetiBasic
+    - Caprine

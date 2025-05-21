@@ -19,6 +19,7 @@ using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using System.Diagnostics.CodeAnalysis;
 using Content.Server.Consent;
+using Content.Server.Roles.Jobs;
 using Content.Shared.Consent;
 
 
@@ -43,6 +44,7 @@ public sealed class ParadoxAnomalySystem : EntitySystem
     [Dependency] private readonly StationSystem _station = default!;
     [Dependency] private readonly StationSpawningSystem _stationSpawning = default!;
     [Dependency] private readonly LoadoutSystem _loadout = default!;
+    [Dependency] private readonly JobSystem _jobSystem = default!;
 
     private ProtoId<ConsentTogglePrototype> _paradoxAnomalyConsent = "NoClone";
 
@@ -81,7 +83,10 @@ public sealed class ParadoxAnomalySystem : EntitySystem
             if (!_proto.TryIndex<SpeciesPrototype>(humanoid.Species, out var species))
                 continue;
 
-            if (_mind.GetMind(uid, mindContainer) is not {} mindId || !HasComp<JobRoleComponent>(mindId))
+            if (_mind.GetMind(uid, mindContainer) is not {} mindId)
+                continue;
+
+            if (!_jobSystem.MindTryGetJob(mindId, out var job))
                 continue;
 
             if (_role.MindIsAntagonist(mindId))
@@ -106,8 +111,9 @@ public sealed class ParadoxAnomalySystem : EntitySystem
             return null;
 
         var (uid, mindId, species, profile) = _random.Pick(candidates);
-        var jobId = Comp<JobRoleComponent>(mindId).Prototype;
-        var job = _proto.Index<JobPrototype>(jobId!);
+
+        if (!_jobSystem.MindTryGetJob(mindId, out var job))
+            return null;
 
         // Find a suitable spawn point.
         var station = _station.GetOwningStation(uid);

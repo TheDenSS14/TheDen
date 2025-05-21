@@ -424,7 +424,7 @@ trait-description-ValyrianStandard =
     Its speakers are those who wish to uphold the traditions and beliefs of ancient peoples from before the colonial era.
 
 trait-name-Nekomimetic = Nekomimetic
-trait-description-Nekomimetic = To the casual observer, this language is an incomprehensible mess of broken Japanese. To the Felinids and Oni, it's somehow comprehensible.
+trait-description-Nekomimetic = A language composed of animal noises and syllables, easy to replicate but hard to understand. Spoken natively by Felinids.
 
 trait-name-Canilunzt = Canilunzt
 trait-description-Canilunzt = The guttural language spoken and utilized by the inhabitants of the Vazzend system,

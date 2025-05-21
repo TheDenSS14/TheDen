@@ -11,7 +11,7 @@
     sounds:
       Male: MaleOni
       Female: FemaleOni
-      Unsexed: MaleOni 
+      Unsexed: MaleOni
   - type: HumanoidAppearance
     species: Oni
   - type: Sprite
@@ -47,10 +47,9 @@
   - type: LanguageKnowledge
     speaks:
     - TauCetiBasic
-    - Nekomimetic
     understands:
     - TauCetiBasic
-    - Nekomimetic
+    # TODO: Discuss what to do about Oni language. Maybe give them something more klingon-esque?
   - type: PotentiaModifier
     potentiaMultiplier: 0.5
   - type: Tag

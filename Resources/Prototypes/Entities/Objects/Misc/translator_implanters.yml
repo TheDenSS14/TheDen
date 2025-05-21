@@ -115,3 +115,35 @@
   components:
   - type: Implanter
     implant: SiikMaasTranslatorImplant
+
+- type: entity
+  id: NehinaTranslatorImplanter
+  parent: [ BaseTranslatorImplanter ]
+  name: nēhina translator implant
+  components:
+  - type: Implanter
+    implant: NehinaTranslatorImplant
+
+- type: entity
+  id: AlasetaTranslatorImplanter
+  parent: [ BaseTranslatorImplanter ]
+  name: alaseta translator implant
+  components:
+  - type: Implanter
+    implant: AlasetaTranslatorImplant
+
+- type: entity
+  id: RodentianTranslatorImplanter
+  parent: [ BaseTranslatorImplanter ]
+  name: rodentian translator implant
+  components:
+  - type: Implanter
+    implant: RodentianTranslatorImplant
+
+- type: entity
+  id: CaprineTranslatorImplanter
+  parent: [ BaseTranslatorImplanter ]
+  name: caprine translator implant
+  components:
+  - type: Implanter
+    implant: CaprineTranslatorImplant

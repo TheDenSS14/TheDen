@@ -229,6 +229,7 @@
   id: LoadoutCommandRDOuterWinter
   category: JobsEpistemicsMystagogue
   cost: 0
+  exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutMystagogueOuter
@@ -242,6 +243,7 @@
   id: LoadoutCommandRDOuterMysta
   category: JobsEpistemicsMystagogue
   cost: 0
+  exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutMystagogueOuter
