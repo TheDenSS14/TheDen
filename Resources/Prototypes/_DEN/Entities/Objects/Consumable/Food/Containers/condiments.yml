@@ -1,0 +1,48 @@
+
+- type: entity
+  parent: BaseFoodCondimentPacket
+  id: FoodCondimentPacketSyrup
+  name: syrup
+  description: Sticky, sweet syrup.
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        reagents:
+        - ReagentId: Syrup
+          Quantity: 10
+  - type: Icon
+    sprite: _DEN/Objects/Consumable/Food/syrup.rsi
+    state: packet-syrup
+  - type: Appearance
+  - type: SolutionContainerVisuals
+    maxFillLevels: 2
+    fillBaseName: packet-solid-
+
+- type: entity
+  parent: BaseFoodCondimentBottle
+  id: FoodCondimentBottleSyrup
+  name: syrup bottle
+  description: Sticky, smoky, sweet syrup, perfectly to taste, so you can get it everywhere except on your food.
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        reagents:
+        - ReagentId: Syrup
+          Quantity: 30
+  - type: Sprite
+    sprite: _DEN/Objects/Consumable/Food/syrup.rsi
+    layers:
+    - state: bottle-empty
+      map: ["enum.OpenableVisuals.Layer"]
+    - state: bottle-alpha-6
+      map: ["enum.SolutionContainerLayers.Fill"]
+      visible: true
+    - state: label-syrup
+  - type: Icon
+    sprite: _DEN/Objects/Consumable/Food/syrup.rsi
+    state: icon
+  - type: Tag
+    tags:
+      - Syrup

@@ -190,10 +190,15 @@
     - !type:SpillTileReaction
   metabolisms:
     Food:
-      # 12 diona blood for 1 unit of syrup, this stuff better be worthwhile.
       effects:
       - !type:SatiateHunger
-        factor: 6.0 #Stronger than cookedramen
+        conditions:
+        - !type:ReagentThreshold
+          reagent: Nutriment
+          min: 0.1
+        factor: 1
+    # Sorry! This is not 2x hunger restoring anymore, because it spawns in the kitchen now.
+    # These effects are adjusted to resemble sugar/honey more.
   footstepSound:
     collection: FootstepBlood
     params:
