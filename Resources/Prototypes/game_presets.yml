@@ -52,11 +52,10 @@
   id: AllAtOnce
   name: all-at-once-title
   description: all-at-once-description
-  showInVote: false
+  showInVote: true
   rules:
     - Nukeops
     - Traitor
-    - Revolutionary
     - Zombie
     - RampingStationEventScheduler
     - LavalandStormScheduler # Lavaland Change
@@ -92,7 +91,7 @@
     - secret
     - sekrit
   name: secret-title
-  showInVote: true
+  showInVote: false
   description: secret-description
   rules:
     - Secret
@@ -139,7 +138,7 @@
     - traitor
   name: traitor-title
   description: traitor-description
-  showInVote: false
+  showInVote: true
   rules:
     - Traitor
     - SubGamemodesRule
@@ -166,7 +165,7 @@
     - nukeops
   name: nukeops-title
   description: nukeops-description
-  showInVote: false
+  showInVote: true
   rules:
     - Nukeops
     - SubGamemodesRule
@@ -200,7 +199,7 @@
   - zomber
   name: zombie-title
   description: zombie-description
-  showInVote: false
+  showInVote: true
   rules:
   - Zombie
   - BasicStationEventScheduler
