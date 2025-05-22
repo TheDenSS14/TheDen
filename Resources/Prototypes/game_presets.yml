@@ -91,12 +91,11 @@
     - secret
     - sekrit
   name: secret-title
-  showInVote: false
+  showInVote: true
   description: secret-description
   rules:
     - Secret
     - LavalandStormScheduler # Lavaland Change
-
 
 - type: gamePreset
   id: SecretExtended #For Admin Use: Runs Extended but shows "Secret" in lobby.
