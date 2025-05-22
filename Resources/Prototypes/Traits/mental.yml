@@ -341,51 +341,51 @@
       psionicPowers:
         - MetapsionicPower
 
-# - type: trait
-#   id: XenoglossyPower
-#   category: Mental
-#   points: -7
-#   requirements:
-#     - !type:CharacterTraitRequirement
-#       inverted: true
-#       traits:
-#         - Foreigner
-#         - ForeignerLight
-#     - !type:CharacterLogicOrRequirement
-#       requirements:
-#         - !type:CharacterSpeciesRequirement
-#           species:
-#             - Shadowkin # Innate Psionics
-#         - !type:CharacterTraitRequirement
-#           traits:
-#             - LatentPsychic
-#             - NaturalTelepath
-#         - !type:CharacterJobRequirement
-#           jobs:
-#             - Chaplain
-#             - ResearchDirector
-#             - ForensicMantis
-#     - !type:CharacterLogicOrRequirement
-#       requirements:
-#         - !type:CharacterSpeciesRequirement
-#           inverted: true
-#           species:
-#             - IPC
-#         - !type:CharacterTraitRequirement
-#           traits:
-#             - AnomalousPositronics
-#     - !type:CharacterTraitRequirement
-#       inverted: true
-#       traits:
-#         - ShadowkinBlackeye
-#     - !type:CharacterJobRequirement
-#       inverted: true
-#       jobs:
-#         - Librarian
-#   functions:
-#     - !type:TraitAddPsionics
-#       psionicPowers:
-#         - XenoglossyPower
+- type: trait
+  id: XenoglossyPower
+  category: Mental
+  points: -10
+  requirements:
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - Foreigner
+        - ForeignerLight
+    - !type:CharacterLogicOrRequirement
+      requirements:
+        - !type:CharacterSpeciesRequirement
+          species:
+            - Shadowkin # Innate Psionics
+        - !type:CharacterTraitRequirement
+          traits:
+            - LatentPsychic
+            - NaturalTelepath
+        - !type:CharacterJobRequirement
+          jobs:
+            - Chaplain
+            - ResearchDirector
+            - ForensicMantis
+    - !type:CharacterLogicOrRequirement
+      requirements:
+        - !type:CharacterSpeciesRequirement
+          inverted: true
+          species:
+            - IPC
+        - !type:CharacterTraitRequirement
+          traits:
+            - AnomalousPositronics
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - ShadowkinBlackeye
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Librarian
+  functions:
+    - !type:TraitAddPsionics
+      psionicPowers:
+        - XenoglossyPower
 
 - type: trait
   id: MindSwapPower
