@@ -79,18 +79,20 @@ public sealed partial class LanguageSystem : SharedLanguageSystem
             || language == UniversalPrototype)
             return true;
 
-
+        var canRegularlyUnderstand = Resolve(ent, ref ent.Comp, logMissing: false)
+            && ent.Comp.UnderstoodLanguages.Contains(language);
+        
         if (TryComp<UniversalLanguageSpeakerComponent>(ent, out var uni)
             && uni.Enabled)
         {
             if (target != null && HasComp<PsionicInsulationComponent>(target))
-                return false;
+                return canRegularlyUnderstand;
 
             _sawmill.Info("not insulated");
             return true;
         }
 
-        return Resolve(ent, ref ent.Comp, logMissing: false) && ent.Comp.UnderstoodLanguages.Contains(language);
+        return canRegularlyUnderstand;
     }
 
     public bool CanSpeak(Entity<LanguageSpeakerComponent?> ent, ProtoId<LanguagePrototype> language)
