@@ -119,7 +119,7 @@
     - type: Item
       size: Normal
     - type: Sprite
-      sprite: DeltaV/Mobs/Ghosts/revenant.rsi # DeltaV - Custom revenant sprite
+      sprite: _DV/Mobs/Ghosts/revenant.rsi # DeltaV - Custom revenant sprite
       state: icon
       noRot: true
     - type: Construction
@@ -1103,16 +1103,16 @@
     state: plushie_vulp
   - type: EmitSoundOnUse
     sound:
-      path: /Audio/DeltaV/Voice/Vulpkanin/dog_bark1.ogg
+      path: /Audio/_DV/Voice/Vulpkanin/dog_bark1.ogg
   - type: EmitSoundOnLand
     sound:
-      path: /Audio/DeltaV/Voice/Vulpkanin/dog_bark1.ogg
+      path: /Audio/_DV/Voice/Vulpkanin/dog_bark1.ogg
   - type: EmitSoundOnActivate
     sound:
-      path: /Audio/DeltaV/Voice/Vulpkanin/dog_bark1.ogg
+      path: /Audio/_DV/Voice/Vulpkanin/dog_bark1.ogg
   - type: MeleeWeapon
     soundHit:
-      path: /Audio/DeltaV/Voice/Vulpkanin/dog_bark1.ogg
+      path: /Audio/_DV/Voice/Vulpkanin/dog_bark1.ogg
 
 - type: entity
   parent: PlushieVulp
