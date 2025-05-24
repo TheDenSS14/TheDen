@@ -1,4 +1,6 @@
+using Content.Shared.DisplacementMap;
 using Content.Shared.Hands.EntitySystems;
+using Content.Shared.Inventory;
 using Robust.Shared.Containers;
 using Robust.Shared.GameStates;
 using Robust.Shared.Serialization;
@@ -77,6 +79,9 @@ public sealed partial class HandsComponent : Component
     /// </summary>
     [DataField, ViewVariables(VVAccess.ReadWrite)]
     public TimeSpan ThrowCooldown = TimeSpan.FromSeconds(0.5f);
+
+    [DataField]
+    public DisplacementData? HandDisplacement;
 }
 
 [Serializable, NetSerializable]
