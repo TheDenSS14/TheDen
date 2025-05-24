@@ -26,6 +26,7 @@ namespace Content.Server.Database
         public DbSet<Preference> Preference { get; set; } = null!;
         public DbSet<Profile> Profile { get; set; } = null!;
         public DbSet<ConsentSettings> ConsentSettings { get; set; } = null!;
+        public DbSet<ConsentPermissionsEntry> ConsentPermissionsEntry { get; set; } = null!;
         public DbSet<AssignedUserId> AssignedUserId { get; set; } = null!;
         public DbSet<Player> Player { get; set; } = default!;
         public DbSet<Admin> Admin { get; set; } = null!;
@@ -67,6 +68,14 @@ namespace Content.Server.Database
 
             modelBuilder.Entity<ConsentToggle>()
                 .HasIndex(c => new { c.ConsentSettingsId, c.ToggleProtoId })
+                .IsUnique();
+
+            modelBuilder.Entity<ConsentPermissionsEntry>()
+                .HasIndex(c => new { c.Id, c.UserId } )
+                .IsUnique();
+
+            modelBuilder.Entity<ConsentTarget>()
+                .HasIndex(c => new { c.Id, c.TargetId } )
                 .IsUnique();
 
             modelBuilder.Entity<Antag>()
@@ -432,6 +441,23 @@ namespace Content.Server.Database
         public int PreferenceId { get; set; }
         public Preference Preference { get; set; } = null!;
     }
+
+    public class ConsentPermissionsEntry
+    {
+        public int Id { get; set; }
+        public Guid UserId { get; set; }
+
+        public List<ConsentTarget> ConsentTargets { get; set; } = new();
+    }
+
+    public class ConsentTarget
+    {
+        public int Id { get; set; }
+        public Guid TargetId { get; set; }
+        public string TargetConsent { get; set; } = string.Empty;
+        public bool TargetHasConsent { get; set; }
+    }
+
     public class ConsentSettings
     {
         public int Id { get; set; }
