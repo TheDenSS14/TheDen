@@ -33,3 +33,5 @@ reagent-desc-grey-matter = Thought juice, the stuff that leaks out of your ears.
 
 reagent-name-black-blood = black blood
 reagent-desc-black-blood = This is definitely not ketchup.
+
+reagent-desc-synth-blood-theden = A reflective, metallic coolant used in certain biomechanical beings. Not safe for most organics.
