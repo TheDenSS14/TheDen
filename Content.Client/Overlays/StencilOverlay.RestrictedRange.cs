@@ -45,7 +45,7 @@ public sealed partial class StencilOverlay
         }, Color.Transparent);
 
         worldHandle.SetTransform(Matrix3x2.Identity);
-        worldHandle.UseShader(_protoManager.Index<ShaderPrototype>("StencilMask").Instance());
+        worldHandle.UseShader(_protoManager.Index<ShaderPrototype>("StencilMaskWeather").Instance());
         worldHandle.DrawTextureRect(_blep!.Texture, worldBounds);
         var curTime = _timing.RealTime;
         var sprite = _sprite.GetFrame(new SpriteSpecifier.Texture(new ResPath("/Textures/Parallaxes/noise.png")), curTime);

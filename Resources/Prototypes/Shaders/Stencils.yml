@@ -12,14 +12,32 @@
   kind: source
   path: "/Textures/Shaders/stencil_mask.swsl"
   stencil:
-    ref: 1
+    ref: 2
     op: Replace
     func: Always
+
+- type: shader
+  id: StencilMaskWeather
+  kind: source
+  path: "/Textures/Shaders/stencil_mask.swsl"
+  stencil:
+    ref: 2
+    op: Replace
+    func: Always
+
+
+- type: shader
+  id: StencilDrawWeather
+  kind: canvas
+  stencil:
+    ref: 1
+    op: Keep
+    func: NotEqual
 
 - type: shader
   id: StencilDraw
   kind: canvas
   stencil:
-    ref: 1
+    ref: 2
     op: Keep
     func: NotEqual
