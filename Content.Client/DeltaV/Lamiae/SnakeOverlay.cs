@@ -15,7 +15,7 @@ namespace Content.Client.Lamiae;
 /// This draws lamia segments directly from polygons instead of sprites. This is a very novel approach as of the time this is being written (August 2024) but it wouldn't surprise me
 /// if there's a better way to do this at some point. Currently we have a very heavy restriction on the tools we can make, forcing me to make several helpers that may be redundant later.
 /// This will be overcommented because I know you haven't seen code like this before and you might want to copy it.
-/// This is an expansion on some techniques I discovered in (https://github.com/Elijahrane/Delta-v/blob/49d76c437740eab79fc622ab50d628b926e6ddcb/Content.Client/DeltaV/Arcade/S3D/Renderer/S3DRenderer.cs)
+/// This is an expansion on some techniques I discovered in (https://github.com/Elijahrane/Delta-v/blob/49d76c437740eab79fc622ab50d628b926e6ddcb/Content.Client/_DV/Arcade/S3D/Renderer/S3DRenderer.cs)
 /// </summary>
 public sealed class SnakeOverlay : Overlay
 {

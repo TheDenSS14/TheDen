@@ -10,7 +10,7 @@
       stationProto: StandardNanotrasenStationCargoOnly
       components:
         - type: StationEmergencyShuttle
-          emergencyShuttlePath: /Maps/Shuttles/DeltaV/NTES_Delta.yml
+          emergencyShuttlePath: /Maps/Shuttles/_DV/NTES_Delta.yml
         - type: StationNameSetup
           mapNameTemplate: '{0} NVS Gax {1}'
           nameGenerator:

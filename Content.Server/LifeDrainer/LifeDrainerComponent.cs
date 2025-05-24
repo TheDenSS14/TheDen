@@ -34,7 +34,7 @@ public sealed partial class LifeDrainerComponent : Component
     /// Sound played while draining a mob.
     /// </summary>
     [DataField]
-    public SoundSpecifier DrainSound = new SoundPathSpecifier("/Audio/DeltaV/Effects/clang2.ogg");
+    public SoundSpecifier DrainSound = new SoundPathSpecifier("/Audio/_DV/Effects/clang2.ogg");
 
     /// <summary>
     /// Sound played after draining is complete.

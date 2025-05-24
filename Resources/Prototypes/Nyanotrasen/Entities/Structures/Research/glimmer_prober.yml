@@ -21,7 +21,7 @@
     pointspersecond: 20
     active: true
   - type: Sprite
-    sprite: DeltaV/Structures/Machines/glimmer_machines.rsi # DeltaV reskin
+    sprite: _DV/Structures/Machines/glimmer_machines.rsi # DeltaV reskin
     noRot: true
     layers:
     - state: base
@@ -108,7 +108,7 @@
     graph: GlimmerDevices
     node: glimmerDrain
   - type: Sprite
-    sprite: DeltaV/Structures/Machines/glimmer_machines.rsi # DeltaV reskin
+    sprite: _DV/Structures/Machines/glimmer_machines.rsi # DeltaV reskin
     noRot: true
     layers:
     - state: base
@@ -174,7 +174,7 @@
         - !type:DoActsBehavior
           acts: ["Destruction"]
     - type: Sprite
-      sprite: DeltaV/Structures/Machines/glimmer_machines.rsi # DeltaV reskin
+      sprite: _DV/Structures/Machines/glimmer_machines.rsi # DeltaV reskin
       noRot: true
       layers:
       - state: base
