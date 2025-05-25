@@ -1,0 +1,20 @@
+- type: entityTable
+  id: FillLockerEngineerDV
+  table: !type:AllSelector
+    children:
+    - id: LunchboxEngineeringFilledRandom
+      prob: 0.3
+
+- type: entityTable
+  id: FillLockerAtmosphericsDV
+  table: !type:AllSelector
+    children:
+    - id: LunchboxEngineeringFilledRandom
+      prob: 0.3
+
+- type: entityTable
+  id: FillLockerEngineeringLunchboxDV
+  table: !type:AllSelector
+    children:
+    - id: LunchboxEngineeringFilledRandom
+      prob: 0.3
