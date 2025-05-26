@@ -1,4 +1,5 @@
 using System.Linq;
+using Content.Server._DEN.Research.Components;
 using Content.Server.Power.EntitySystems;
 using Content.Shared.Research.Components;
 
@@ -10,6 +11,7 @@ public sealed partial class ResearchSystem
     {
         SubscribeLocalEvent<ResearchServerComponent, ComponentStartup>(OnServerStartup);
         SubscribeLocalEvent<ResearchServerComponent, ComponentShutdown>(OnServerShutdown);
+        SubscribeLocalEvent<ResearchServerComponent, MapInitEvent>(OnServerMapInit);
         SubscribeLocalEvent<ResearchServerComponent, TechnologyDatabaseModifiedEvent>(OnServerDatabaseModified);
     }
 
@@ -27,6 +29,24 @@ public sealed partial class ResearchSystem
         {
             UnregisterClient(client, uid, serverComponent: component, dirtyServer: false);
         }
+    }
+
+    private void OnServerMapInit(Entity<ResearchServerComponent> ent, ref MapInitEvent args)
+    {
+        var station = _station.GetOwningStation(ent);
+
+        if (station == null || !Exists(station) || station == EntityUid.Invalid)
+            return;
+
+        if (!HasComp<StationResearchRecordComponent>(station.Value))
+            AddComp<StationResearchRecordComponent>(station.Value);
+
+        if (!TryComp<StationResearchRecordComponent>(station.Value, out var record)
+            || !TryComp<TechnologyDatabaseComponent>(ent, out var technologyDatabase))
+            return;
+
+        technologyDatabase.SoftCapMultiplier = record.SoftCapMultiplier;
+        ent.Comp.CurrentSoftCapMultiplier = record.SoftCapMultiplier;
     }
 
     private void OnServerDatabaseModified(EntityUid uid, ResearchServerComponent component, ref TechnologyDatabaseModifiedEvent args)

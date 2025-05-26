@@ -15,6 +15,7 @@ using Content.Shared.Mobs.Systems;
 using Content.Shared.Mobs;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Psionics.Glimmer;
+using Content.Server.Popups;
 
 namespace Content.Server.Abilities.Psionics;
 
@@ -31,6 +32,7 @@ public sealed class RevivifyPowerSystem : EntitySystem
     [Dependency] private readonly MobThresholdSystem _mobThreshold = default!;
     [Dependency] private readonly MobStateSystem _mobState = default!;
     [Dependency] private readonly GlimmerSystem _glimmer = default!;
+    [Dependency] private readonly PopupSystem _popUp = default!;
 
     public override void Initialize()
     {
@@ -120,6 +122,20 @@ public sealed class RevivifyPowerSystem : EntitySystem
         if (args.Target is null
             || args.Cancelled)
             return;
+
+        // Healing Word fails if the target is not alive
+        if (!TryComp<MobStateComponent>(args.Target, out var mobState) || _mobState.IsDead((EntityUid) args.Target, mobState) && !args.DoRevive)
+        {
+            _popUp.PopupEntity(Loc.GetString("healing-word-fail"), (EntityUid) args.Target, uid);
+            return;
+        }
+
+        // Healing Word fails if the target is not alive
+        if (_mobState.IsAlive((EntityUid) args.Target, mobState) && args.DoRevive)
+        {
+            _popUp.PopupEntity(Loc.GetString("revifiy-fail"), (EntityUid) args.Target, uid);
+            return;
+        }
 
         if (args.RotReduction is not null)
             _rotting.ReduceAccumulator(args.Target.Value, TimeSpan.FromSeconds(args.RotReduction.Value * args.ModifiedAmplification));

@@ -9,7 +9,7 @@
       stationProto: StandardNanotrasenStation
       components:
       - type: StationEmergencyShuttle #floofstation
-        emergencyShuttlePath: /Maps/Shuttles/DeltaV/NTES_Vertex.yml
+        emergencyShuttlePath: /Maps/Shuttles/_DV/NTES_Vertex.yml
       - type: StationNameSetup
         mapNameTemplate: '{0} Glacier Station {1}'
         nameGenerator:
@@ -48,10 +48,10 @@
           TechnicalAssistant: [ 2, 2 ]
           SeniorEngineer: [ 1, 1 ]
         #justice
-          # ChiefJustice: [ 1, 1 ] 
-          # Clerk: [ 1, 1 ] 
-          Lawyer: [ 2, 2 ] 
-          # Prosecutor: [ 1, 1 ] 
+          # ChiefJustice: [ 1, 1 ]
+          # Clerk: [ 1, 1 ]
+          Lawyer: [ 2, 2 ]
+          # Prosecutor: [ 1, 1 ]
         #medical
           ChiefMedicalOfficer: [ 1, 1 ]
           Chemist: [ 1, 2 ]

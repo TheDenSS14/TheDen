@@ -420,6 +420,7 @@
     - RCDAmmo #DeltaV
     - RCD #EE
     - RPD
+    - RadioHandheld
     # Shitmed Change
     - EnergyScalpel
     - EnergyCautery
@@ -1046,6 +1047,7 @@
       - BoxShotgunBirdshot
       - BoxShotgun00Buckshot
       - BoxShotgun0000Buckshot
+      - RadioHandheldSecurity
     dynamicRecipes:
       - Truncheon
       - Terminus
@@ -1484,6 +1486,7 @@
     # Machines and computers
     - CargoTelepadMachineCircuitboard
     - OreProcessorMachineCircuitboard
+    - RadioHandheld
     # NOTE: advanced tools, industrial ore processor, expeds board are not added here as those are the very few things epi provides for cargo
   - type: MaterialStorage
     whitelist:

@@ -11,7 +11,8 @@ using Content.Shared.Radio;
 using Content.Shared.Radio.Components;
 using Content.Shared.Speech;
 using Microsoft.CodeAnalysis.Host;
-using Content.Shared.Ghost; // Nuclear-14
+using Content.Shared.Ghost;
+using Content.Shared.Language.Components; // Nuclear-14
 using Robust.Shared.Map;
 using Robust.Shared.Network;
 using Robust.Shared.Player;
@@ -72,17 +73,23 @@ public sealed class RadioSystem : EntitySystem
 
     private void OnIntrinsicReceive(EntityUid uid, IntrinsicRadioReceiverComponent component, ref RadioReceiveEvent args)
     {
-        if (TryComp(uid, out ActorComponent? actor))
-        {
-            // Einstein-Engines - languages mechanic
-            var listener = component.Owner;
-            var msg = args.OriginalChatMsg;
+        if (!TryComp(uid, out ActorComponent? actor))
+            return;
 
-            if (listener != null && !_language.CanUnderstand(listener, args.Language.ID))
-                msg = args.LanguageObfuscatedChatMsg;
+        // Einstein-Engines - languages mechanic
+        var listener = component.Owner;
+        var msg = args.OriginalChatMsg;
 
-            _netMan.ServerSendMessage(new MsgChatMessage { Message = msg}, actor.PlayerSession.Channel);
-        }
+        var hasSpeakerComponent = TryComp<LanguageSpeakerComponent>(args.MessageSource, out var languageSpeakerComponent);
+        var canUnderstand = _language.CanUnderstand(
+            listener,
+            args.Language.ID,
+            hasSpeakerComponent ? (args.MessageSource, languageSpeakerComponent) : null);
+
+        if (!canUnderstand)
+            msg = args.LanguageObfuscatedChatMsg;
+
+        _netMan.ServerSendMessage(new MsgChatMessage { Message = msg}, actor.PlayerSession.Channel);
     }
 
     /// <summary>

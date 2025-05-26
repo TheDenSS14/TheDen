@@ -5,6 +5,9 @@
   requirements:
     - !type:CharacterLogicOrRequirement
       requirements:
+        - !type:CharacterSpeciesRequirement
+          species:
+            - Shadowkin # Innate Psionics
         - !type:CharacterTraitRequirement
           traits:
             - LatentPsychic
@@ -27,14 +30,11 @@
       inverted: true
       species:
         - Oni
-    - !type:CharacterSpeciesRequirement
-      inverted: true
-      species:
-        - Shadowkin
     - !type:CharacterTraitRequirement
       inverted: true
       traits:
         - LowPotential
+        - ShadowkinBlackeye
   functions:
     - !type:TraitReplaceComponent
       components:
@@ -48,6 +48,9 @@
   requirements:
     - !type:CharacterLogicOrRequirement
       requirements:
+        - !type:CharacterSpeciesRequirement
+          species:
+            - Shadowkin # Innate Psionics
         - !type:CharacterTraitRequirement
           traits:
             - LatentPsychic
@@ -70,14 +73,11 @@
       inverted: true
       species:
         - Oni
-    - !type:CharacterSpeciesRequirement
-      inverted: true
-      species:
-        - Shadowkin
     - !type:CharacterTraitRequirement
       inverted: true
       traits:
         - HighPotential
+        - ShadowkinBlackeye
   functions:
     - !type:TraitReplaceComponent
       components:
@@ -91,6 +91,9 @@
   requirements:
     - !type:CharacterLogicOrRequirement
       requirements:
+        - !type:CharacterSpeciesRequirement
+          species:
+            - Shadowkin # Innate Psionics
         - !type:CharacterTraitRequirement
           traits:
             - LatentPsychic
@@ -109,15 +112,12 @@
         - !type:CharacterTraitRequirement
           traits:
             - AnomalousPositronics
-    - !type:CharacterSpeciesRequirement
-      inverted: true
-      species:
-        - Shadowkin
     - !type:CharacterTraitRequirement
       inverted: true
       traits:
         - HighAmplification
         - PowerOverwhelming
+        - ShadowkinBlackeye
   functions:
     - !type:TraitAddPsionics
       psionicPowers:
@@ -130,6 +130,9 @@
   requirements:
     - !type:CharacterLogicOrRequirement
       requirements:
+        - !type:CharacterSpeciesRequirement
+          species:
+            - Shadowkin # Innate Psionics
         - !type:CharacterTraitRequirement
           traits:
             - LatentPsychic
@@ -153,6 +156,7 @@
       traits:
         - LowAmplification
         - PowerOverwhelming
+        - ShadowkinBlackeye
   functions:
     - !type:TraitAddPsionics
       psionicPowers:
@@ -165,6 +169,9 @@
   requirements:
     - !type:CharacterLogicOrRequirement
       requirements:
+        - !type:CharacterSpeciesRequirement
+          species:
+            - Shadowkin # Innate Psionics
         - !type:CharacterTraitRequirement
           traits:
             - LatentPsychic
@@ -188,6 +195,7 @@
       traits:
         - LowAmplification
         - HighAmplification
+        - ShadowkinBlackeye
   functions:
     - !type:TraitAddPsionics
       psionicPowers:
@@ -200,6 +208,9 @@
   requirements:
     - !type:CharacterLogicOrRequirement
       requirements:
+        - !type:CharacterSpeciesRequirement
+          species:
+            - Shadowkin # Innate Psionics
         - !type:CharacterTraitRequirement
           traits:
             - LatentPsychic
@@ -222,6 +233,7 @@
       inverted: true
       traits:
         - HighDampening
+        - ShadowkinBlackeye
   functions:
     - !type:TraitAddPsionics
       psionicPowers:
@@ -234,6 +246,9 @@
   requirements:
     - !type:CharacterLogicOrRequirement
       requirements:
+        - !type:CharacterSpeciesRequirement
+          species:
+            - Shadowkin # Innate Psionics
         - !type:CharacterTraitRequirement
           traits:
             - LatentPsychic
@@ -256,6 +271,7 @@
       inverted: true
       traits:
         - LowDampening
+        - ShadowkinBlackeye
   functions:
     - !type:TraitAddPsionics
       psionicPowers:
@@ -465,42 +481,42 @@
       psionicPowers:
         - PsychognomyPower
 
-- type: trait
-  id: HealingWordPower
-  category: Mental
-  points: -6
-  requirements:
-    - !type:CharacterLogicOrRequirement
-      requirements:
-        - !type:CharacterSpeciesRequirement
-          species:
-            - Shadowkin # Innate Psionics
-        - !type:CharacterTraitRequirement
-          traits:
-            - LatentPsychic
-        - !type:CharacterJobRequirement
-          jobs:
-            - Librarian
-            - ForensicMantis
-            - ResearchDirector
-    - !type:CharacterLogicOrRequirement
-      requirements:
-        - !type:CharacterSpeciesRequirement
-          inverted: true
-          species:
-            - IPC
-        - !type:CharacterTraitRequirement
-          traits:
-            - AnomalousPositronics
-    - !type:CharacterTraitRequirement
-      inverted: true
-      traits:
-        - ShadowkinBlackeye
-    - !type:CharacterJobRequirement
-      inverted: true
-      jobs:
-        - Chaplain
-  functions:
-    - !type:TraitAddPsionics
-      psionicPowers:
-        - HealingWordPower
+# - type: trait
+#   id: HealingWordPower
+#   category: Mental
+#   points: -6
+#   requirements:
+#     - !type:CharacterLogicOrRequirement
+#       requirements:
+#         - !type:CharacterSpeciesRequirement
+#           species:
+#             - Shadowkin # Innate Psionics
+#         - !type:CharacterTraitRequirement
+#           traits:
+#             - LatentPsychic
+#         - !type:CharacterJobRequirement
+#           jobs:
+#             - Librarian
+#             - ForensicMantis
+#             - ResearchDirector
+#     - !type:CharacterLogicOrRequirement
+#       requirements:
+#         - !type:CharacterSpeciesRequirement
+#           inverted: true
+#           species:
+#             - IPC
+#         - !type:CharacterTraitRequirement
+#           traits:
+#             - AnomalousPositronics
+#     - !type:CharacterTraitRequirement
+#       inverted: true
+#       traits:
+#         - ShadowkinBlackeye
+#     - !type:CharacterJobRequirement
+#       inverted: true
+#       jobs:
+#         - Chaplain
+#   functions:
+#     - !type:TraitAddPsionics
+#       psionicPowers:
+#         - HealingWordPower

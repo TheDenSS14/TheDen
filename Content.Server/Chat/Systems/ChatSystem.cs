@@ -39,6 +39,7 @@ using Robust.Shared.Random;
 using Robust.Shared.Replays;
 using Robust.Shared.Utility;
 using Content.Server.Shuttles.Components;
+using Content.Shared.Language.Components;
 using Robust.Shared.Physics.Components;
 using Robust.Shared.Physics.Dynamics.Joints;
 
@@ -496,7 +497,9 @@ public sealed partial class ChatSystem : SharedChatSystem
         if (!_actionBlocker.CanSpeak(source) && !ignoreActionBlocker)
             return;
 
+        var targetHasLanguage = TryComp<LanguageSpeakerComponent>(source, out var languageSpeakerComponent);
         var message = TransformSpeech(source, FormattedMessage.RemoveMarkupPermissive(originalMessage), language);
+
         if (message.Length == 0)
             return;
 
@@ -531,7 +534,11 @@ public sealed partial class ChatSystem : SharedChatSystem
             if (MessageRangeCheck(session, data, range) != MessageRangeCheckResult.Full)
                 continue; // Won't get logged to chat, and ghosts are too far away to see the pop-up, so we just won't send it to them.
 
-            var canUnderstandLanguage = _language.CanUnderstand(listener, language.ID);
+
+            var canUnderstandLanguage = _language.CanUnderstand(
+                listener,
+                language.ID,
+                targetHasLanguage ? (source, languageSpeakerComponent) : null);
             // How the entity perceives the message depends on whether it can understand its language
             var perceivedMessage = canUnderstandLanguage ? message : languageObfuscatedMessage;
 
@@ -772,6 +779,8 @@ public sealed partial class ChatSystem : SharedChatSystem
     private void SendInVoiceRange(ChatChannel channel, string name, string message, string wrappedMessage, string obfuscated, string obfuscatedWrappedMessage, EntityUid source, ChatTransmitRange range, NetUserId? author = null, LanguagePrototype? languageOverride = null)
     {
         var language = languageOverride ?? _language.GetLanguage(source);
+        var targetHasLanguage = TryComp<LanguageSpeakerComponent>(source, out var languageSpeakerComponent);
+
         foreach (var (session, data) in GetRecipients(source, Transform(source).GridUid == null ? 0.3f : VoiceRange))
         {
             if (session.AttachedEntity != null
@@ -787,9 +796,10 @@ public sealed partial class ChatSystem : SharedChatSystem
                 continue;
             EntityUid listener = session.AttachedEntity.Value;
 
-
             // If the channel does not support languages, or the entity can understand the message, send the original message, otherwise send the obfuscated version
-            if (channel == ChatChannel.LOOC || channel == ChatChannel.Emotes || _language.CanUnderstand(listener, language.ID))
+            if (channel == ChatChannel.LOOC
+                || channel == ChatChannel.Emotes
+                || _language.CanUnderstand(listener, language.ID, targetHasLanguage ? (source, languageSpeakerComponent) : null))
             {
                 _chatManager.ChatMessageToOne(channel, message, wrappedMessage, source, entHideChat, session.Channel, author: author);
             }
