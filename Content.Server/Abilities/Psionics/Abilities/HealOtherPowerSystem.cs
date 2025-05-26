@@ -123,10 +123,17 @@ public sealed class RevivifyPowerSystem : EntitySystem
             || args.Cancelled)
             return;
 
-        // Fails if the target is not alive
+        // Healing Word fails if the target is not alive
         if (!TryComp<MobStateComponent>(args.Target, out var mobState) || _mobState.IsDead((EntityUid) args.Target, mobState) && !args.DoRevive)
         {
-            _popUp.PopupEntity(Loc.GetString("psionic-deaf-ears"), (EntityUid) args.Target, uid);
+            _popUp.PopupEntity(Loc.GetString("healing-word-fail"), (EntityUid) args.Target, uid);
+            return;
+        }
+
+        // Healing Word fails if the target is not alive
+        if (_mobState.IsAlive((EntityUid) args.Target, mobState) && args.DoRevive)
+        {
+            _popUp.PopupEntity(Loc.GetString("revifiy-fail"), (EntityUid) args.Target, uid);
             return;
         }
 
