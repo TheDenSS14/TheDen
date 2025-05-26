@@ -204,7 +204,7 @@
     emptySpriteName: bicpen_empty
   - type: Hypospray
     solutionName: pen
-    transferAmount: 20
+    transferAmount: 30 # make it equal to maxVol
     onlyAffectsMobs: false
     injectOnly: true
   - type: SolutionContainerManager
@@ -238,7 +238,7 @@
     emptySpriteName: dermpen_empty
   - type: Hypospray
     solutionName: pen
-    transferAmount: 20
+    transferAmount: 30 # make it equal to maxVol
     onlyAffectsMobs: false
     injectOnly: true
   - type: SolutionContainerManager
@@ -304,7 +304,7 @@
     emptySpriteName: punctpen_empty
   - type: Hypospray
     solutionName: pen
-    transferAmount: 15
+    transferAmount: 20 # make it equal to maxVol
     onlyAffectsMobs: false
     injectOnly: true
   - type: SolutionContainerManager
@@ -336,7 +336,7 @@
     emptySpriteName: pyrapen_empty
   - type: Hypospray
     solutionName: pen
-    transferAmount: 20
+    transferAmount: 25 # make it equal to maxVol
     onlyAffectsMobs: false
     injectOnly: true
   - type: SolutionContainerManager
@@ -368,7 +368,7 @@
     emptySpriteName: dexpen_empty
   - type: Hypospray
     solutionName: pen
-    transferAmount: 40
+    transferAmount: 30 # make it equal to maxVol
     onlyAffectsMobs: false
     injectOnly: true
   - type: SolutionContainerManager
@@ -502,6 +502,44 @@
   - type: Hypospray
     solutionName: pen
     transferAmount: 30
+    onlyAffectsMobs: false
+    injectOnly: true
+  - type: StaticPrice
+    price: 500
+  - type: Tag
+    tags: []
+
+# moved from medkits.yml (why was it there???)
+
+- type: entity
+  name: advanced combat medipen
+  parent: ChemicalMedipen
+  id: AdvancedCombatMedipen
+  description: A single-use advanced medipen containing chemicals extracted from eldritch beasts. # ethically sourced space dragon blood
+  components:
+  - type: Sprite
+    sprite: Objects/Specific/Medical/medipen.rsi
+    layers:
+    - state: stimpen
+      map: ["enum.SolutionContainerLayers.Fill"]
+  - type: SolutionContainerVisuals
+    maxFillLevels: 1
+    changeColor: false
+    emptySpriteName: advcombatpen_empty
+  - type: SolutionContainerManager
+    solutions:
+      pen:
+        maxVol: 25 # Funkychem
+        reagents:
+        - ReagentId: Ichor
+          Quantity: 12 # Heals very fast- 90~ Damage all types in 60s. - Funkychem
+        - ReagentId: Revivopine # Funkychem
+          Quantity: 8 # Heals 20~ Damage all types when crit
+        - ReagentId: TranexamicAcid
+          Quantity: 5
+  - type: Hypospray
+    solutionName: pen
+    transferAmount: 25 # make it equal to maxVol
     onlyAffectsMobs: false
     injectOnly: true
   - type: StaticPrice
