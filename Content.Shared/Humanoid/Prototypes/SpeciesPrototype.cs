@@ -90,13 +90,13 @@ public sealed partial class SpeciesPrototype : IPrototype
     public HumanoidSkinColor SkinColoration { get; private set; }
 
     [DataField]
-    public ProtoId<LocalizedDatasetPrototype> MaleFirstNames { get; private set; } = "NamesFirstMale";
+    public ProtoId<LocalizedDatasetPrototype> MaleFirstNames { get; private set; } = "names_first_male";
 
     [DataField]
-    public ProtoId<LocalizedDatasetPrototype> FemaleFirstNames { get; private set; } = "NamesFirstFemale";
+    public ProtoId<LocalizedDatasetPrototype> FemaleFirstNames { get; private set; } = "names_first_female";
 
     [DataField]
-    public ProtoId<LocalizedDatasetPrototype> LastNames { get; private set; } = "NamesLast";
+    public ProtoId<LocalizedDatasetPrototype> LastNames { get; private set; } = "names_last";
 
     [DataField]
     public SpeciesNaming Naming { get; private set; } = SpeciesNaming.FirstLast;
