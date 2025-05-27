@@ -29,7 +29,7 @@ public sealed class StationGoalPaperSystem : EntitySystem
     [ValidatePrototypeId<WeightedRandomPrototype>]
     private const string RandomPrototype = "StationGoals";
     [ValidatePrototypeId<DatasetPrototype>]
-    private const string RandomSignature = "names_last";
+    private const string RandomSignature = "NamesLast";
 
     public override void Initialize()
     {

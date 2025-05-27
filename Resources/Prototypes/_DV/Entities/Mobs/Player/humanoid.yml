@@ -31,7 +31,7 @@
     - type: RandomMetadata
       nameSegments:
       - fake_human_first
-      - names_last
+      - NamesLast
     - type: RandomHumanoidSpawner
       settings: Mobster
 
@@ -52,7 +52,7 @@
     - type: RandomMetadata
       nameSegments:
       - fake_human_first
-      - names_last
+      - NamesLast
 
 - type: entity
   id: RandomHumanoidSpawnerMobsterAlt
@@ -66,7 +66,7 @@
     - type: RandomMetadata
       nameSegments:
       - fake_human_first
-      - names_last
+      - NamesLast
     - type: RandomHumanoidSpawner
       settings: MobsterAlt
 
@@ -87,4 +87,4 @@
     - type: RandomMetadata
       nameSegments:
       - fake_human_first
-      - names_last
+      - NamesLast

@@ -108,7 +108,7 @@ namespace Content.Client.Lobby.UI
         private const string StationAiNames = "NamesAI";
 
         [ValidatePrototypeId<DatasetPrototype>]
-        private const string CyborgNames = "names_borg";
+        private const string CyborgNames = "NamesBorg";
 
         public HumanoidProfileEditor(
             IClientPreferencesManager preferencesManager,
@@ -1794,7 +1794,7 @@ namespace Content.Client.Lobby.UI
                 return;
 
             var newName = Profile.CyborgName ?? string.Empty;
-            
+
             if (newName != CyborgNameEdit.Text)
                 CyborgNameEdit.Text = newName;
 
