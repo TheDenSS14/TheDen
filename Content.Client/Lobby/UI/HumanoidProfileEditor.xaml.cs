@@ -21,6 +21,7 @@ using Content.Shared.Humanoid;
 using Content.Shared.Humanoid.Markings;
 using Content.Shared.Humanoid.Prototypes;
 using Content.Shared.Preferences;
+using Content.Shared.Random.Helpers;
 using Content.Shared.Roles;
 using Content.Shared.StatusIcon;
 using Content.Shared.Traits;
@@ -1801,8 +1802,8 @@ namespace Content.Client.Lobby.UI
             if (CyborgNameEdit.Text != string.Empty)
                 return;
 
-            var borgNames = _prototypeManager.Index<DatasetPrototype>(CyborgNames);
-            var randomName = _random.Pick(borgNames.Values);
+            var borgNames = _prototypeManager.Index<LocalizedDatasetPrototype>(CyborgNames);
+            var randomName = _random.Pick(borgNames);
             CyborgNameEdit.PlaceHolder = Loc.GetString(randomName);
         }
 
