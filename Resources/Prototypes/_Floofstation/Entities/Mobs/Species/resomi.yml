@@ -127,14 +127,15 @@
         visible: false
       - map: [ "enum.HumanoidVisualLayers.Underwear" ]
       - map: [ "enum.HumanoidVisualLayers.Undershirt" ]
+        # Why is L and RHand on the bottom?
+      - map: [ "enum.HumanoidVisualLayers.LHand" ]
+      - map: [ "enum.HumanoidVisualLayers.RHand" ]
       - map: ["enum.HumanoidVisualLayers.LFoot"]
       - map: ["enum.HumanoidVisualLayers.RFoot"]
       - map: ["socks"]
       - map: ["underpants"]
       - map: ["undershirt"]
       - map: ["jumpsuit"]
-      - map: ["enum.HumanoidVisualLayers.LHand"]
-      - map: ["enum.HumanoidVisualLayers.RHand"]
       - map: ["enum.HumanoidVisualLayers.Handcuffs"]
         color: "#ffffff"
         sprite: Objects/Misc/handcuffs.rsi
@@ -208,21 +209,12 @@
             !type:DamageTypeTrigger
             damageType: Blunt
             damage: 300
-    # This doesn't work, not sure what the proper way to do this is
     - type: Hands
       handDisplacement:
         sizeMaps:
           32:
             sprite: "_FloofStation/Mobs/Species/Resomi/displacement.rsi"
             state: inHand
-#        layer:
-#          sprite: "_FloofStation/Mobs/Species/Resomi/displacement.rsi"
-#          state: inHand
-#          copyToShaderParameters:
-##             Value required, provide a dummy. Gets overridden when applied.
-#            layerKey: dummy
-#            parameterTexture: displacementMap
-#            parameterUV: displacementUV
     - type: Inventory
       speciesId: resomi
     # templateId: digitigrade
@@ -326,15 +318,6 @@
               layerKey: dummy
               parameterTexture: displacementMap
               parameterUV: displacementUV
-#        handDisplacement:
-#          layer:
-#            sprite: "_FloofStation/Mobs/Species/Resomi/displacement.rsi"
-#            state: inHand
-#            copyToShaderParameters:
-#              # Value required, provide a dummy. Gets overridden when applied.
-#              layerKey: dummy
-#              parameterTexture: displacementMap
-#              parameterUV: displacementUV
 
 - type: entity
   save: false
