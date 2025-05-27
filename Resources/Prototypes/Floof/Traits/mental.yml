@@ -14,6 +14,9 @@
   requirements:
     - !type:CharacterLogicOrRequirement
       requirements:
+        - !type:CharacterSpeciesRequirement
+          species:
+            - Shadowkin # Innate Psionics
         - !type:CharacterTraitRequirement
           traits:
             - LatentPsychic
@@ -32,3 +35,7 @@
         - !type:CharacterTraitRequirement
           traits:
             - AnomalousPositronics
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - ShadowkinBlackeye
