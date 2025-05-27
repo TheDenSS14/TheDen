@@ -41,4 +41,6 @@
       behaviors:
       - !type:DoActsBehavior
         acts: ["Destruction"]
+  - type: TimedDespawn # Floof - M3739 - #1030 - poor man's cooldown, sadge. Maybe someday I'll do this a better way.
+    lifetime: 120
   - type: InteractionOutline

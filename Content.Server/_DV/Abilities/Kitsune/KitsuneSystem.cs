@@ -76,7 +76,7 @@ public sealed class KitsuneSystem : SharedKitsuneSystem
             _faction.AddFactions(newEntity, factions.Factions);
         }
 
-        _popup.PopupEntity(Loc.GetString("kitsune-popup-morph-message-others", ("entity", args.NewEntity)), args.NewEntity, Filter.PvsExcept(args.NewEntity), true);
+        _popup.PopupEntity(Loc.GetString("kitsune-popup-morph-message-others", ("target", args.NewEntity)), args.NewEntity, Filter.PvsExcept(args.NewEntity), true); // Floof - M3739 - #1030
         _popup.PopupEntity(Loc.GetString("kitsune-popup-morph-message-user"), args.NewEntity, args.NewEntity);
     }
 

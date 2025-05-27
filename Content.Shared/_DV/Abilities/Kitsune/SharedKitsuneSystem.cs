@@ -63,9 +63,17 @@ public abstract class SharedKitsuneSystem : EntitySystem
             _popup.PopupEntity(Loc.GetString("fox-no-hands"), ent, ent);
             return;
         }
-
-        // This caps the amount of fox fire summons at a time to the charge count, deleting the oldest fire when exceeded.
-        if (_actions.GetCharges(ent.Comp.FoxfireAction) < 1)
+        // Floof - M3739 - #1030 - Do not allow additional fox fires if they have no charges. They will have to wait.
+        if (_actions.GetCharges(ent.Comp.FoxfireAction) <= 0)
+        {
+            _popup.PopupEntity(Loc.GetString("fox-no-charges"), ent, ent);
+            return;
+        }
+        // Floof - M3739 - #1030 - This... is probably the least intrusive solution to the infinite foxfire problem.
+        // Ensure that the number of active fox fires does not exceed max charges.
+        if (!TryComp<InstantActionComponent>(ent.Comp.FoxfireAction, out var instantActionComp))
+            return;
+        if (ent.Comp.ActiveFoxFires.Count >= instantActionComp.MaxCharges)
         {
             QueueDel(ent.Comp.ActiveFoxFires[0]);
             ent.Comp.ActiveFoxFires.RemoveAt(0);
@@ -75,6 +83,7 @@ public abstract class SharedKitsuneSystem : EntitySystem
         var fireComp = EnsureComp<FoxfireComponent>(fireEnt);
         fireComp.Kitsune = ent;
         ent.Comp.ActiveFoxFires.Add(fireEnt);
+        _actions.RemoveCharges(ent.Comp.FoxfireAction, 1); // Floof - M3739 - #1030
         Dirty(fireEnt, fireComp);
         Dirty(ent);
 
