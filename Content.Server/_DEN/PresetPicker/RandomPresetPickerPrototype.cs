@@ -3,7 +3,7 @@ using JetBrains.Annotations;
 using Robust.Shared.Prototypes;
 
 
-namespace Content.Server._DEN.PresetPicker;
+namespace Content.Server.PresetPicker;
 
 
 /// <summary>
