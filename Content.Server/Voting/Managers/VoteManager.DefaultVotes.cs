@@ -1,4 +1,4 @@
-using System.Linq;  
+using System.Linq;
 using Content.Server.GameTicking;
 using Content.Server.GameTicking.Presets;
 using Content.Server.Maps;
