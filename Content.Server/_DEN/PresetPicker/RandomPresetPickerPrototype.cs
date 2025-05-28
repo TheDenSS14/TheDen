@@ -8,7 +8,7 @@ namespace Content.Server._DEN.PresetPicker;
 /// <summary>
 /// This is a prototype for picking a prototype for use in presets.
 /// </summary>
-[Prototype]
+[Prototype("randomPresetPicker")]
 public sealed partial class RandomPresetPickerPrototype : IPrototype
 {
     /// <inheritdoc/>
