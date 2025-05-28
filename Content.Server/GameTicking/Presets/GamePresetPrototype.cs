@@ -1,4 +1,5 @@
 
+using Content.Server._DEN.PresetPicker;
 using Content.Server.Maps;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype;
@@ -16,7 +17,7 @@ namespace Content.Server.GameTicking.Presets
         public string ID { get; private set; } = default!;
 
         [DataField("alias")]
-        public string[] Alias = Array.Empty<string>();
+        public string[] Alias = [];
 
         [DataField("name")]
         public string ModeTitle = "????";
@@ -32,6 +33,15 @@ namespace Content.Server.GameTicking.Presets
 
         [DataField("maxPlayers")]
         public int? MaxPlayers;
+
+        [DataField]
+        public int PickableAfterRounds = 1;
+
+        [DataField]
+        public ProtoId<RandomPresetPickerPrototype>? UseRandomPrototype;
+
+        [DataField]
+        public bool VoteOnly;
 
         [DataField("rules", customTypeSerializer: typeof(PrototypeIdListSerializer<EntityPrototype>))]
         public IReadOnlyList<string> Rules { get; private set; } = Array.Empty<string>();
