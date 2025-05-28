@@ -108,7 +108,7 @@ namespace Content.Client.Lobby.UI
         [ValidatePrototypeId<LocalizedDatasetPrototype>]
         private const string StationAiNames = "NamesAI";
 
-        [ValidatePrototypeId<DatasetPrototype>]
+        [ValidatePrototypeId<LocalizedDatasetPrototype>]
         private const string CyborgNames = "NamesBorg";
 
         public HumanoidProfileEditor(
