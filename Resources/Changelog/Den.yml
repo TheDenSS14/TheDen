@@ -4582,3 +4582,29 @@ Entries:
   id: 421
   time: '2025-05-26T20:27:59.0000000+00:00'
   url: https://github.com/TheDenSS14/TheDen/pull/588
+- author: MajorMoth
+  changes:
+    - type: Tweak
+      message: Disposable syringes now inject faster.
+    - type: Tweak
+      message: All prefilled syringes (medkits, etc.) are now the disposable variety.
+    - type: Tweak
+      message: Tweaked the dosages of certain prefilled syringes.
+    - type: Fix
+      message: >-
+        Every autoinjector now injects the entirety of its contents upon use.
+        This is how it was before funkychem.
+    - type: Fix
+      message: >-
+        Standardized the naming convention of prefilled syringes. Should be
+        consistent across the board now. 
+  id: 422
+  time: '2025-05-27T05:53:01.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/596
+- author: MajorMoth
+  changes:
+    - type: Fix
+      message: Added the Rickenbacker to musician loadouts (was missing)
+  id: 423
+  time: '2025-05-27T06:03:21.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/598
