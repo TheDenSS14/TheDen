@@ -8,5 +8,5 @@ namespace Content.Server._DEN.GameTicking.Rules;
 public sealed partial class LowDangerRuleComponent : Component, IFakePreset
 {
     [DataField]
-    public HashSet<EntityUid> AdditionalGameRules { get; set; }
+    public HashSet<EntityUid> AdditionalGameRules { get; set; } = new();
 }

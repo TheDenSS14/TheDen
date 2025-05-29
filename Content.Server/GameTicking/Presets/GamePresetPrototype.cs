@@ -33,11 +33,9 @@ namespace Content.Server.GameTicking.Presets
         [DataField("maxPlayers")]
         public int? MaxPlayers;
 
+        // not implemented
         [DataField]
         public int PickableAfterRounds = 1;
-
-        [DataField]
-        public ProtoId<PresetPickerPrototype>? UseRandomPrototype;
 
         [DataField]
         public bool VoteOnly;

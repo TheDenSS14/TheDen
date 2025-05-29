@@ -5,10 +5,8 @@
   name: low-danger-title
   description: low-danger-description
   showInVote: true
-  useRandomPrototype: lowDanger
-  voteOnly: true
   rules:
-    - LowDangerLow
+    - LowDangerRule
 
 
 - type: gamePreset
@@ -18,8 +16,6 @@
   name: high-danger-title
   description: high-danger-description
   showInVote: true
-  useRandomPrototype: highDanger
-  voteOnly: true
   rules:
     - HighDangerRule
   

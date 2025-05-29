@@ -173,50 +173,6 @@ public sealed partial class VoteManager
             Loc.GetString("ui-vote-restart-fail-not-enough-ghost-players", ("ghostPlayerRequirement", ghostPercentageRequirement)));
     }
 
-    private ProtoId<GamePresetPrototype> HandleRandomPresets(
-        PresetPickerPrototype presetPicker,
-        RobustRandom random
-    )
-    {
-        // this should never happen.
-        if (presetPicker.PossiblePresets == null)
-            return DefaultGamePreset;
-
-        return random.Pick(presetPicker.PossiblePresets);
-    }
-
-    private ProtoId<GamePresetPrototype> HandleWeightedPresets(
-        PresetPickerPrototype presetPicker,
-        RobustRandom random
-    )
-    {
-        // this should never happen.
-        if (presetPicker.PossibleWeightedPresets == null)
-            return DefaultGamePreset;
-
-        return random.Pick(presetPicker.PossibleWeightedPresets);
-    }
-
-    private bool ShouldHandlePreset(GameTicker ticker, GamePresetPrototype presetPrototype)
-    {
-        if (!_prototypeManager.TryIndex(presetPrototype.UseRandomPrototype, out var randomPresetPrototype)
-            || randomPresetPrototype.PossiblePresets == null && randomPresetPrototype.PossibleWeightedPresets == null)
-            return true;
-
-        var random = new RobustRandom();
-        ProtoId<GamePresetPrototype> randomPreset;
-
-        if (randomPresetPrototype.PossiblePresets is { Count: > 0 })
-            randomPreset = HandleRandomPresets(randomPresetPrototype, random);
-        else if (randomPresetPrototype.PossibleWeightedPresets is { Count: > 0 })
-            randomPreset = HandleWeightedPresets(randomPresetPrototype, random);
-        else
-            return true;
-
-        ticker.SetGamePreset(randomPreset);
-        return false;
-    }
-
     private void CreatePresetVote(ICommonSession? initiator)
     {
         var presets = GetGamePresets();
