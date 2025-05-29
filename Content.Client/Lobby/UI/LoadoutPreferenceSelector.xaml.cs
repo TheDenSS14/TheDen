@@ -114,7 +114,7 @@ public sealed partial class LoadoutPreferenceSelector : Control
             // Create a sprite preview of the loadout item
             previewLoadout = new SpriteView
             {
-                Scale = new Vector2(1, 1),
+                Scale = new Vector2(2, 2),
                 OverrideDirection = Direction.South,
                 VerticalAlignment = VAlignment.Center,
                 SizeFlagsStretchRatio = 1,
@@ -126,7 +126,7 @@ public sealed partial class LoadoutPreferenceSelector : Control
             // Create a sprite preview of the loadout item
             previewLoadout = new SpriteView
             {
-                Scale = new Vector2(1, 1),
+                Scale = new Vector2(2, 2),
                 OverrideDirection = Direction.South,
                 VerticalAlignment = VAlignment.Center,
                 SizeFlagsStretchRatio = 1,
