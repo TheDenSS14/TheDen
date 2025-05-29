@@ -19,7 +19,6 @@ public sealed class HighDangerRuleSystem : GameRuleSystem<HighDangerRuleComponen
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
     [Dependency] private readonly IAdminLogManager _adminLogger = default!;
     [Dependency] private readonly IChatManager _chatManager = default!;
-    [Dependency] private readonly GameTicker _gameTicker = default!;
 
     private readonly ProtoId<PresetPickerPrototype> _highDangerProtoId = "HighDanger";
 
@@ -35,7 +34,7 @@ public sealed class HighDangerRuleSystem : GameRuleSystem<HighDangerRuleComponen
         // Not checking because I want it to error if it's gone.
         var presetPicker = _prototypeManager.Index(_highDangerProtoId);
 
-        if (!_gameTicker.TryPickPreset(presetPicker, out var preset))
+        if (!GameTicker.TryPickPreset(presetPicker, out var preset))
         {
             Log.Error($"{ToPrettyString(uid)} failed to pick any preset. Removing rule.");
             Del(uid);
@@ -45,7 +44,7 @@ public sealed class HighDangerRuleSystem : GameRuleSystem<HighDangerRuleComponen
         Log.Info($"Selected {preset.ID} as the secret preset.");
         _adminLogger.Add(LogType.EventStarted, $"Selected {preset.ID} as the secret preset.");
         _chatManager.SendAdminAnnouncement(Loc.GetString("rule-secret-selected-preset", ("preset", preset.ID)));
-        _gameTicker.StartGameRulesOf(component, preset);
+        GameTicker.StartGameRulesOf(component, preset);
     }
 
     protected override void Ended(
