@@ -17,11 +17,11 @@ public sealed partial class PresetPickerPrototype : IPrototype
     ///     Choose from a list of presets.
     /// </summary>
     [DataField]
-    public List<ProtoId<GamePresetPrototype>>? PossiblePresets;
+    public List<string>? PossiblePresets;
 
     /// <summary>
     ///     Choose from a list of presets with a weight
     /// </summary>
     [DataField]
-    public Dictionary<ProtoId<GamePresetPrototype>, float>? PossibleWeightedPresets;
+    public Dictionary<string, float>? PossibleWeightedPresets;
 }
