@@ -103,6 +103,7 @@ namespace Content.Server.GameTicking
                 "Overflow role does not have the correct name!");
             InitializeGameRules();
             InitializeReplays();
+            InitializeFakePreset();
             _initialized = true;
         }
 

@@ -18,6 +18,7 @@ public sealed class SubFloorHideSystem : SharedSubFloorHideSystem
     public override void Initialize()
     {
         base.Initialize();
+
         SubscribeNetworkEvent<ShowSubfloorRequestEvent>(OnShowSubfloor);
         SubscribeLocalEvent<GetVisMaskEvent>(OnGetVisibility);
 

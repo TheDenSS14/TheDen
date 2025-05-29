@@ -7,6 +7,8 @@
   showInVote: true
   useRandomPrototype: lowDanger
   voteOnly: true
+  rules:
+    - LowDanger
 
 
 - type: gamePreset
@@ -18,4 +20,6 @@
   showInVote: true
   useRandomPrototype: highDanger
   voteOnly: true
+  rules:
+    - HighDanger
   

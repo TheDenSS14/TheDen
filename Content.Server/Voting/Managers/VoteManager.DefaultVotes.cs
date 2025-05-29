@@ -268,9 +268,6 @@ public sealed partial class VoteManager
             var ticker = _entityManager.EntitySysManager.GetEntitySystem<GameTicker>();
             _adminLogger.Add(LogType.Vote, LogImpact.Medium, $"Preset vote finished: {picked}");
 
-            if (!ShouldHandlePreset(ticker, presetPrototype))
-                return;
-
             ticker.SetGamePreset(picked);
         };
     }
