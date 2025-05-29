@@ -27,7 +27,7 @@
 - type: entity
   parent: BaseMagazineBoxSpecial
   id: MagazineBoxSpecial
-  name: ammunition box (.38 orchid)
+  name: ammunition box (9.7mm Orchid)
   components:
   - type: BallisticAmmoProvider
     proto: CartridgeSpecial
@@ -41,7 +41,7 @@
 - type: entity
   parent: BaseMagazineBoxSpecial
   id: MagazineBoxSpecialPractice
-  name: ammunition box (.38 orchid practice)
+  name: ammunition box (9.7mm Orchid practice)
   components:
   - type: BallisticAmmoProvider
     proto: CartridgeSpecialPractice
@@ -56,7 +56,7 @@
 - type: entity
   parent: BaseMagazineBoxSpecial
   id: MagazineBoxSpecialRubber
-  name: ammunition box (.38 orchid rubber)
+  name: ammunition box (9.7mm Orchid rubber)
   components:
   - type: BallisticAmmoProvider
     proto: CartridgeSpecialRubber
@@ -71,7 +71,7 @@
 - type: entity
   parent: BaseMagazineBoxSpecial
   id: MagazineBoxSpecialIncendiary
-  name: ammunition box (.38 orchid incendiary)
+  name: ammunition box (9.7mm Orchid incendiary)
   components:
   - type: BallisticAmmoProvider
     proto: CartridgeSpecialIncendiary
@@ -86,7 +86,7 @@
 - type: entity
   parent: BaseMagazineBoxSpecial
   id: MagazineBoxSpecialUranium
-  name: ammunition box (.38 orchid uranium)
+  name: ammunition box (9.7mm Orchid uranium)
   components:
   - type: BallisticAmmoProvider
     proto: CartridgeSpecialUranium
@@ -101,7 +101,7 @@
 - type: entity
   parent: BaseMagazineBoxSpecial
   id: MagazineBoxSpecialMindbreaker
-  name: ammunition box (.38 orchid mindbreaker)
+  name: ammunition box (9.7mm Orchid mindbreaker)
   components:
   - type: BallisticAmmoProvider
     proto: CartridgeSpecialMindbreaker
