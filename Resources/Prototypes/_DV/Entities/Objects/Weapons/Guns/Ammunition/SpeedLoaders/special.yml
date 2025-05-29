@@ -1,6 +1,6 @@
 - type: entity
   id: BaseSpeedLoaderSpecial
-  name: "speed loader (.38 special)"
+  name: "speed loader (.38 orchid)"
   parent: BaseItem
   abstract: true
   components:
@@ -21,7 +21,7 @@
 
 - type: entity
   id: SpeedLoaderSpecial
-  name: "speed loader (.38 special)"
+  name: "speed loader (.38 orchid)"
   parent: BaseSpeedLoaderSpecial
   components:
   - type: BallisticAmmoProvider
@@ -41,7 +41,7 @@
 
 - type: entity
   id: SpeedLoaderSpecialPractice
-  name: "speed loader (.38 special practice)"
+  name: "speed loader (.38 orchid practice)"
   parent: BaseSpeedLoaderSpecial
   components:
   - type: BallisticAmmoProvider
@@ -61,7 +61,7 @@
 
 - type: entity
   id: SpeedLoaderSpecialRubber
-  name: "speed loader (.38 special rubber)"
+  name: "speed loader (.38 orchid rubber)"
   parent: BaseSpeedLoaderSpecial
   components:
   - type: BallisticAmmoProvider
@@ -81,7 +81,7 @@
 
 - type: entity
   id: SpeedLoaderSpecialUranium
-  name: "speed loader (.38 special uranium)"
+  name: "speed loader (.38 orchid uranium)"
   parent: BaseSpeedLoaderSpecial
   components:
   - type: BallisticAmmoProvider
@@ -101,7 +101,7 @@
 
 - type: entity
   id: SpeedLoaderSpecialMindbreaker
-  name: "speed loader (.38 special mindbreaker)"
+  name: "speed loader (.38 orchid mindbreaker)"
   parent: BaseSpeedLoaderSpecial
   components:
   - type: BallisticAmmoProvider
@@ -121,7 +121,7 @@
 
 - type: entity
   id: SpeedLoaderSpecialHoly
-  name: "speed loader (.38 special holy)"
+  name: "speed loader (.38 orchid holy)"
   parent: BaseSpeedLoaderSpecial
   components:
   - type: BallisticAmmoProvider

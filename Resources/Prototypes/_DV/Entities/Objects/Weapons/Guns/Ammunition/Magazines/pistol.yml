@@ -1,6 +1,6 @@
 - type: entity
   id: BaseMagazinePistolSpecial
-  name: pistol magazine (.38 special)
+  name: pistol magazine (.38 orchid)
   parent: BaseItem
   abstract: true
   components:
@@ -33,7 +33,7 @@
 
 - type: entity
   id: MagazinePistolSpecial
-  name: pistol magazine (.38 special)
+  name: pistol magazine (.38 orchid)
   parent: BaseMagazinePistolSpecial
   components:
   - type: BallisticAmmoProvider
@@ -47,7 +47,7 @@
 
 - type: entity
   id: MagazinePistolSpecialPractice
-  name: pistol magazine (.38 special practice)
+  name: pistol magazine (.38 orchid practice)
   parent: BaseMagazinePistolSpecial
   components:
   - type: BallisticAmmoProvider
@@ -61,7 +61,7 @@
 
 - type: entity
   id: MagazinePistolSpecialRubber
-  name: pistol magazine (.38 special rubber)
+  name: pistol magazine (.38 orchid rubber)
   parent: BaseMagazinePistolSpecial
   components:
   - type: BallisticAmmoProvider
@@ -75,7 +75,7 @@
 
 - type: entity
   id: MagazinePistolSpecialMindbreaker
-  name: pistol magazine (.38 special mindbreaker)
+  name: pistol magazine (.38 orchid mindbreaker)
   parent: BaseMagazinePistolSpecial
   components:
   - type: BallisticAmmoProvider

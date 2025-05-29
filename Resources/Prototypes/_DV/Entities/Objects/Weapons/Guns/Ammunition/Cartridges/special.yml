@@ -1,6 +1,6 @@
 - type: entity
   id: BaseCartridgeSpecial
-  name: cartridge (.38 special)
+  name: cartridge (.38 orchid)
   parent: BaseCartridge
   abstract: true
   components:
@@ -22,7 +22,7 @@
 
 - type: entity
   id: CartridgeSpecial
-  name: cartridge (.38 special)
+  name: cartridge (.38 orchid)
   parent: BaseCartridgeSpecial
   components:
   - type: CartridgeAmmo
@@ -30,7 +30,7 @@
 
 - type: entity
   id: CartridgeSpecialPractice
-  name: cartridge (.38 special practice)
+  name: cartridge (.38 orchid practice)
   parent: BaseCartridgeSpecial
   components:
   - type: CartridgeAmmo
@@ -45,7 +45,7 @@
 
 - type: entity
   id: CartridgeSpecialRubber
-  name: cartridge (.38 special rubber)
+  name: cartridge (.38 orchid rubber)
   parent: BaseCartridgeSpecial
   components:
   - type: CartridgeAmmo
@@ -60,7 +60,7 @@
 
 - type: entity
   id: CartridgeSpecialIncendiary
-  name: cartridge (.38 special incendiary)
+  name: cartridge (.38 orchid incendiary)
   parent: BaseCartridgeSpecial
   components:
   - type: CartridgeAmmo
@@ -75,7 +75,7 @@
 
 - type: entity
   id: CartridgeSpecialUranium
-  name: cartridge (.38 special uranium)
+  name: cartridge (.38 orchid uranium)
   parent: BaseCartridgeSpecial
   components:
   - type: CartridgeAmmo
@@ -90,7 +90,7 @@
 
 - type: entity
   id: CartridgeSpecialHoly
-  name: cartridge (.38 special holy)
+  name: cartridge (.38 orchid holy)
   parent: BaseCartridgeSpecial
   components:
   - type: CartridgeAmmo
@@ -105,7 +105,7 @@
 
 - type: entity
   id: CartridgeSpecialMindbreaker
-  name: cartridge (.38 special mindbreaker)
+  name: cartridge (.38 orchid mindbreaker)
   parent: BaseCartridgeSpecial
   components:
   - type: CartridgeAmmo
