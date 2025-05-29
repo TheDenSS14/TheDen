@@ -14,7 +14,7 @@ namespace Content.Server._DEN.GameTicking.Rules;
 /// <summary>
 /// This handles the High Danger rule.
 /// </summary>
-public sealed class HighDangerRuleSystem : GameRuleSystem<LowDangerRuleComponent>
+public sealed class HighDangerRuleSystem : GameRuleSystem<HighDangerRuleComponent>
 {
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
     [Dependency] private readonly IAdminLogManager _adminLogger = default!;
@@ -25,7 +25,7 @@ public sealed class HighDangerRuleSystem : GameRuleSystem<LowDangerRuleComponent
 
     protected override void Added(
         EntityUid uid,
-        LowDangerRuleComponent component,
+        HighDangerRuleComponent component,
         GameRuleComponent gameRule,
         GameRuleAddedEvent args
     )
@@ -50,7 +50,7 @@ public sealed class HighDangerRuleSystem : GameRuleSystem<LowDangerRuleComponent
 
     protected override void Ended(
         EntityUid uid,
-        LowDangerRuleComponent component,
+        HighDangerRuleComponent component,
         GameRuleComponent gameRule,
         GameRuleEndedEvent args
     )

@@ -21,13 +21,8 @@ public sealed class SecretRuleSystem : GameRuleSystem<SecretRuleComponent>
     [Dependency] private readonly IConfigurationManager _configurationManager = default!;
     [Dependency] private readonly IAdminLogManager _adminLogger = default!;
     [Dependency] private readonly IChatManager _chatManager = default!;
-    [Dependency] private readonly FakePresetLoadingSystem _fakePreset = default!;
+    [Dependency] private readonly GameTicker _gameTicker = default!;
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
-
-    public override void Initialize()
-    {
-        base.Initialize();
-    }
 
     protected override void Added(EntityUid uid, SecretRuleComponent component, GameRuleComponent gameRule, GameRuleAddedEvent args)
     {
@@ -41,7 +36,7 @@ public sealed class SecretRuleSystem : GameRuleSystem<SecretRuleComponent>
             return;
         }
 
-        if (!_fakePreset.TryPickPreset(weightedRandom, out var preset))
+        if (!_gameTicker.TryPickPreset(weightedRandom, out var preset))
         {
             Log.Error($"{ToPrettyString(uid)} failed to pick any preset. Removing rule.");
             Del(uid);
@@ -51,13 +46,13 @@ public sealed class SecretRuleSystem : GameRuleSystem<SecretRuleComponent>
         Log.Info($"Selected {preset.ID} as the secret preset.");
         _adminLogger.Add(LogType.EventStarted, $"Selected {preset.ID} as the secret preset.");
         _chatManager.SendAdminAnnouncement(Loc.GetString("rule-secret-selected-preset", ("preset", preset.ID)));
-        _fakePreset.StartGameRulesOf(component, preset);
+        _gameTicker.StartGameRulesOf(component, preset);
     }
 
     protected override void Ended(EntityUid uid, SecretRuleComponent component, GameRuleComponent gameRule, GameRuleEndedEvent args)
     {
         base.Ended(uid, component, gameRule, args);
 
-        _fakePreset.EndGameRulesOf(component);
+        _gameTicker.EndGameRulesOf(component);
     }
 }
