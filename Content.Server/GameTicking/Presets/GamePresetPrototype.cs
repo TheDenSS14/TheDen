@@ -37,7 +37,7 @@ namespace Content.Server.GameTicking.Presets
         public int PickableAfterRounds = 1;
 
         [DataField]
-        public ProtoId<RandomPresetPickerPrototype>? UseRandomPrototype;
+        public ProtoId<PresetPickerPrototype>? UseRandomPrototype;
 
         [DataField]
         public bool VoteOnly;

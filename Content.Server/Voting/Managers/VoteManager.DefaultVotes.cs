@@ -174,27 +174,27 @@ public sealed partial class VoteManager
     }
 
     private ProtoId<GamePresetPrototype> HandleRandomPresets(
-        RandomPresetPickerPrototype randomPresetPicker,
+        PresetPickerPrototype presetPicker,
         RobustRandom random
     )
     {
         // this should never happen.
-        if (randomPresetPicker.PossiblePresets == null)
+        if (presetPicker.PossiblePresets == null)
             return DefaultGamePreset;
 
-        return random.Pick(randomPresetPicker.PossiblePresets);
+        return random.Pick(presetPicker.PossiblePresets);
     }
 
     private ProtoId<GamePresetPrototype> HandleWeightedPresets(
-        RandomPresetPickerPrototype randomPresetPicker,
+        PresetPickerPrototype presetPicker,
         RobustRandom random
     )
     {
         // this should never happen.
-        if (randomPresetPicker.PossibleWeightedPresets == null)
+        if (presetPicker.PossibleWeightedPresets == null)
             return DefaultGamePreset;
 
-        return random.Pick(randomPresetPicker.PossibleWeightedPresets);
+        return random.Pick(presetPicker.PossibleWeightedPresets);
     }
 
     private bool ShouldHandlePreset(GameTicker ticker, GamePresetPrototype presetPrototype)

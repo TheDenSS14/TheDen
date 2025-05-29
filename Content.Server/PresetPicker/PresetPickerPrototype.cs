@@ -1,5 +1,4 @@
 using Content.Server.GameTicking.Presets;
-using JetBrains.Annotations;
 using Robust.Shared.Prototypes;
 
 
@@ -9,8 +8,8 @@ namespace Content.Server.PresetPicker;
 /// <summary>
 /// This is a prototype for picking a prototype for use in presets.
 /// </summary>
-[Prototype("randomPresetPicker"), PublicAPI]
-public sealed partial class RandomPresetPickerPrototype : IPrototype
+[Prototype("presetPicker")]
+public sealed partial class PresetPickerPrototype : IPrototype
 {
     /// <inheritdoc/>
     [IdDataField]

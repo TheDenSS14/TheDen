@@ -1,4 +1,4 @@
-- type: randomPresetPicker
+- type: presetPicker
   id: highDanger
   possibleWeightedPresets:
     Traitor: 0.65
@@ -6,7 +6,7 @@
     Nukeops: 0.1
     Zombie: 0.1
 
-- type: randomPresetPicker
+- type: presetPicker
   id: lowDanger
   possibleWeightedPresets:
     SurvivalIrregularExtended: 0.35
