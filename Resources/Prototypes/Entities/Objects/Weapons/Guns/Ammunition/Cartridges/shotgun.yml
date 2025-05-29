@@ -1,6 +1,6 @@
 ﻿- type: entity
   id: BaseShellShotgun
-  name: shell (.50)
+  name: shell (14 gauge)
   parent: BaseCartridge
   abstract: true
   components:
@@ -21,7 +21,7 @@
 
 - type: entity
   id: ShellShotgunBeanbag
-  name: shell (.50 beanbag)
+  name: shell (14 gauge beanbag)
   parent: BaseShellShotgun
   components:
   - type: Tag
@@ -40,7 +40,7 @@
 
 - type: entity
   id: ShellShotgunSlug
-  name: shell (.50 slug)
+  name: shell (14 gauge slug)
   parent: BaseShellShotgun
   components:
   - type: Sprite
@@ -54,7 +54,7 @@
 
 - type: entity
   id: ShellShotgunFlare
-  name: shell (.50 flare)
+  name: shell (14 gauge flare)
   parent: BaseShellShotgun
   components:
   - type: Tag
@@ -73,7 +73,7 @@
 
 - type: entity
   id: ShellShotgun
-  name: shell (.50)
+  name: shell (14 gauge)
   parent: BaseShellShotgun
   components:
   - type: Sprite
@@ -85,7 +85,7 @@
 
 - type: entity
   id: ShellShotgunIncendiary
-  name: shell (.50 incendiary)
+  name: shell (14 gauge incendiary)
   parent: BaseShellShotgun
   components:
   - type: Sprite
@@ -99,7 +99,7 @@
 
 - type: entity
   id: ShellShotgunPractice
-  name: shell (.50 practice)
+  name: shell (14 gauge practice)
   parent: BaseShellShotgun
   components:
   - type: Sprite
@@ -113,7 +113,7 @@
 
 - type: entity
   id: ShellTranquilizer
-  name: shell (.50 tranquilizer)
+  name: shell (14 gauge tranquilizer)
   parent: BaseShellShotgun
   components:
   - type: Tag
@@ -178,7 +178,7 @@
 
 - type: entity
   id: ShellShotgunBirdshot
-  name: shell (.50 birdshot)
+  name: shell (14 gauge birdshot)
   parent: BaseShellShotgun
   components:
   - type: Sprite
@@ -190,7 +190,7 @@
 
 - type: entity
   id: ShellShotgun00Buckshot
-  name: shell (.50 00-Buckshot)
+  name: shell (14 gauge 00-Buckshot)
   parent: BaseShellShotgun
   components:
   - type: Sprite
@@ -202,7 +202,7 @@
 
 - type: entity
   id: ShellShotgun0000Buckshot
-  name: shell (.50 0000-Buckshot)
+  name: shell (14 gauge 0000-Buckshot)
   parent: BaseShellShotgun
   components:
   - type: Sprite
