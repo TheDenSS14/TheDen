@@ -1,6 +1,6 @@
 - type: entity
   id: BaseCartridgeLightRifle
-  name: cartridge (.30 rifle)
+  name: cartridge (8.1mm Lea)
   parent: BaseCartridge
   abstract: true
   components:
@@ -20,7 +20,7 @@
 
 - type: entity
   id: CartridgeLightRifle
-  name: cartridge (.30 rifle)
+  name: cartridge (8.1mm Lea)
   parent: BaseCartridgeLightRifle
   components:
   - type: CartridgeAmmo
@@ -28,7 +28,7 @@
 
 - type: entity
   id: CartridgeLightRiflePractice
-  name: cartridge (.30 rifle practice)
+  name: cartridge (8.1mm Lea practice)
   parent: BaseCartridgeLightRifle
   components:
   - type: CartridgeAmmo
@@ -43,7 +43,7 @@
 
 - type: entity
   id: CartridgeLightRifleRubber
-  name: cartridge (.30 rifle rubber)
+  name: cartridge (8.1mm Lea rubber)
   parent: BaseCartridgeLightRifle
   components:
   - type: CartridgeAmmo
@@ -58,7 +58,7 @@
 
 - type: entity
   id: CartridgeLightRifleIncendiary
-  name: cartridge (.30 rifle incendiary)
+  name: cartridge (8.1mm Lea incendiary)
   parent: BaseCartridgeLightRifle
   components:
   - type: CartridgeAmmo
@@ -73,7 +73,7 @@
 
 - type: entity
   id: CartridgeLightRifleUranium
-  name: cartridge (.30 rifle uranium)
+  name: cartridge (8.1mm Lea uranium)
   parent: BaseCartridgeLightRifle
   components:
   - type: CartridgeAmmo
@@ -88,7 +88,7 @@
 
 - type: entity
   id: CartridgeLightRifleShrapnel
-  name: cartridge (.30 rifle shrapnel)
+  name: cartridge (8.1mm Lea shrapnel)
   parent: BaseCartridgeLightRifle
   components:
   - type: CartridgeAmmo
