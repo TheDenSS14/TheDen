@@ -9,6 +9,7 @@ public sealed class SubFloorHideSystem : SharedSubFloorHideSystem
     public override void Initialize()
     {
         base.Initialize();
+
         SubscribeLocalEvent<SubFloorHideComponent, AnchorAttemptEvent>(OnAnchorAttempt);
         SubscribeLocalEvent<SubFloorHideComponent, UnanchorAttemptEvent>(OnUnanchorAttempt);
     }

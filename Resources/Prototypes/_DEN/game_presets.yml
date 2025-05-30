@@ -1,0 +1,21 @@
+- type: gamePreset
+  id: LowDanger
+  alias:
+    - low-danger
+  name: low-danger-title
+  description: low-danger-description
+  showInVote: true
+  rules:
+    - LowDangerRule
+
+
+- type: gamePreset
+  id: HighDanger
+  alias:
+    - high-danger
+  name: high-danger-title
+  description: high-danger-description
+  showInVote: true
+  rules:
+    - HighDangerRule
+  
