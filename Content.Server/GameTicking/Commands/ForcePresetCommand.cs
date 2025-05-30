@@ -36,6 +36,12 @@ namespace Content.Server.GameTicking.Commands
                 return;
             }
 
+            if (type.VoteOnly)
+            {
+                shell.WriteLine("This preset is vote exclusive.");
+                return;
+            }
+
             ticker.SetGamePreset(type, true);
             shell.WriteLine($"Forced the game to start with preset {name}.");
             ticker.UpdateInfoText();

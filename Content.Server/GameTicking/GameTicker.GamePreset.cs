@@ -132,7 +132,8 @@ namespace Content.Server.GameTicking
             if (_prototypeManager.TryIndex(preset, out GamePresetPrototype? presetProto))
                 return presetProto;
 
-            foreach (var proto in _prototypeManager.EnumeratePrototypes<GamePresetPrototype>())
+            foreach (var proto in _prototypeManager.EnumeratePrototypes<GamePresetPrototype>()
+                .Where(p => !p.VoteOnly))
             {
                 foreach (var alias in proto.Alias)
                 {

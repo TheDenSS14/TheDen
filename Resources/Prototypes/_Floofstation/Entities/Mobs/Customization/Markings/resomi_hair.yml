@@ -233,3 +233,12 @@
   sprites:
   - sprite: _FloofStation/Mobs/Customization/resomi_hair.rsi
     state: ResomiGenericallyUnique
+
+- type: marking
+  id: HairResomiRoyalPlume
+  bodyPart: Hair
+  markingCategory: Hair
+  speciesRestriction: [Resomi]
+  sprites:
+  - sprite: _FloofStation/Mobs/Customization/resomi_hair.rsi
+    state: ResomiRoyalPlume
