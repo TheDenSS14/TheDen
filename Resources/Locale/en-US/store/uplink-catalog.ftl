@@ -119,10 +119,10 @@ uplink-pistol-magazine-caseless-shrapnel-name = Pistol Magazine (6.2mm Eclipse, 
 uplink-pistol-magazine-caseless-shrapnel-desc = A premium magazine with 10 catridges, for (quietly) firing clouds of lead at the crew.
 
 uplink-magazine-caseless-name = SMG magazine (6.2mm Eclipse)
-uplink-magazine-caseless-desc = Rifle magazine with 30 cartridges. Compatible with the FPA-90.
+uplink-magazine-caseless-desc = Submachine Gun magazine with 30 cartridges. Compatible with the FPA-90.
 
 uplink-magazine-caseless-rubber-name = SMG magazine (6.2mm Eclipse, rubber)
-uplink-magazine-caseless-rubber-desc = Rifle magazine with 30 cartridges. For when you need to (quietly) take many hostages.
+uplink-magazine-caseless-rubber-desc = Submachine Gun magazine with 30 cartridges. For when you need to (quietly) take many hostages.
 
 uplink-magazine-caseless-incendiary-name = SMG magazine (6.2mm Eclipse, incendiary)
 uplink-magazine-caseless-incendiary-desc = A premium magazine with 30 cartridges for burning holes in both your wallet, and your victims.
@@ -137,10 +137,10 @@ uplink-mosin-ammo-name = Ammunition box (8.1mm Lea)
 uplink-mosin-ammo-desc = A box of 50 cartridges for the surplus rifle.
 
 uplink-sniper-ammo-name = Ammunition box (17.5mm Hristov)
-uplink-sniper-ammo-desc = A box of 10 cartridges for the Hristov sniper rifle.
+uplink-sniper-ammo-desc = A box of 10 cartridges for the Hristov anti-materiel rifle.
 
 uplink-sniper-ammo-shrapnel-name = Ammunition box (17.5mm Hristov shrapnel)
-uplink-sniper-ammo-shrapnel-desc = A box of 10 anti-personnel cannister shots for the Hristov sniper rifle.
+uplink-sniper-ammo-shrapnel-desc = A box of 10 anti-personnel cannister shots for the Hristov anti-materiel rifle.
 
 # Utility
 uplink-holopara-kit-name = Holoparasite Kit
@@ -278,7 +278,7 @@ uplink-c20r-bundle-name = C-20r Bundle
 uplink-c20r-bundle-desc = Old faithful: The classic C-20r Submachine Gun, ammo comes separately.
 
 uplink-buldog-bundle-name = Bulldog Bundle
-uplink-buldog-bundle-desc = Lean and mean: Contains the popular Bulldog Shotgun, a 12g beanbag drum and three 12g buckshot drums.
+uplink-buldog-bundle-desc = Lean and mean: Contains the popular Bulldog Shotgun, a 14g beanbag drum and three 14g buckshot drums.
 
 uplink-grenade-launcher-bundle-name = China-Lake Bundle
 uplink-grenade-launcher-bundle-desc = An old China-Lake grenade launcher bundled with 11 rounds of various destruction capability.

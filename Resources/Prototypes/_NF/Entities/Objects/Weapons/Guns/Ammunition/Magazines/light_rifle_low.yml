@@ -1,6 +1,6 @@
 - type: entity
   id: MagazineLightRifleLowCapacityEmpty
-  name: "low cap magazine (8.1mm Lea any)"
+  name: "low capacity magazine (8.1mm Lea any)"
   suffix: empty
   parent: MagazineLightRifle
   components:
@@ -19,7 +19,7 @@
 
 - type: entity
   id: MagazineLightRifleLowCapacity
-  name: "low cap magazine (8.1mm Lea)"
+  name: "low capacity magazine (8.1mm Lea)"
   parent: BaseMagazineLightRifle
   components:
   - type: BallisticAmmoProvider
@@ -37,7 +37,7 @@
 
 - type: entity
   id: MagazineLightRifleLowCapacityPractice
-  name: "low cap magazine (8.1mm Lea practice)"
+  name: "low capacity magazine (8.1mm Lea practice)"
   parent: MagazineLightRifleLowCapacity
   components:
   - type: BallisticAmmoProvider
@@ -54,7 +54,7 @@
 
 - type: entity
   id: MagazineLightRifleLowCapacityRubber
-  name: "low cap magazine (8.1mm Lea rubber)"
+  name: "low capacity magazine (8.1mm Lea rubber)"
   parent: MagazineLightRifleLowCapacity
   components:
   - type: BallisticAmmoProvider
@@ -71,7 +71,7 @@
 
 - type: entity
   id: MagazineLightRifleLowCapacityUranium
-  name: "low cap magazine (8.1mm Lea uranium)"
+  name: "low capacity magazine (8.1mm Lea uranium)"
   parent: MagazineLightRifleLowCapacity
   components:
   - type: BallisticAmmoProvider
