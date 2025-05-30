@@ -27,7 +27,7 @@
 - type: entity
   parent: BaseMagazineBoxRifle
   id: MagazineBoxRifleBig
-  name: ammunition box (.20 rifle)
+  name: ammunition box (4.9mm Qasir)
   suffix: Big # TheDen
   components:
   - type: BallisticAmmoProvider
@@ -48,7 +48,7 @@
 - type: entity
   parent: BaseMagazineBoxRifle
   id: MagazineBoxRifleBigRubber
-  name: ammunition box (.20 rifle rubber)
+  name: ammunition box (4.9mm Qasir rubber)
   suffix: Big # TheDen
   components:
   - type: BallisticAmmoProvider
@@ -70,7 +70,7 @@
 - type: entity
   parent: BaseMagazineBoxRifle
   id: MagazineBoxRifle
-  name: ammunition box (.20 rifle)
+  name: ammunition box (4.9mm Qasir)
   components:
   - type: BallisticAmmoProvider
     proto: CartridgeRifle
@@ -84,7 +84,7 @@
 - type: entity
   parent: BaseMagazineBoxRifle
   id: MagazineBoxRiflePractice
-  name: ammunition box (.20 rifle practice)
+  name: ammunition box (4.9mm Qasir practice)
   components:
   - type: BallisticAmmoProvider
     proto: CartridgeRiflePractice
@@ -99,7 +99,7 @@
 - type: entity
   parent: BaseMagazineBoxRifle
   id: MagazineBoxRifleRubber
-  name: ammunition box (.20 rifle rubber)
+  name: ammunition box (4.9mm Qasir rubber)
   components:
   - type: BallisticAmmoProvider
     proto: CartridgeRifleRubber
@@ -114,7 +114,7 @@
 - type: entity
   id: MagazineBoxRifleIncendiary
   parent: BaseMagazineBoxRifle
-  name: ammunition box (.20 rifle incendiary)
+  name: ammunition box (4.9mm Qasir incendiary)
   components:
   - type: BallisticAmmoProvider
     proto: CartridgeRifleIncendiary
@@ -129,7 +129,7 @@
 - type: entity
   id: MagazineBoxRifleUranium
   parent: BaseMagazineBoxRifle
-  name: ammunition box (.20 rifle uranium)
+  name: ammunition box (4.9mm Qasir uranium)
   components:
   - type: BallisticAmmoProvider
     proto: CartridgeRifleUranium
@@ -144,7 +144,7 @@
 - type: entity
   parent: BaseMagazineBoxRifle
   id: MagazineBoxRifleShrapnel
-  name: ammunition box (.20 rifle shrapnel)
+  name: ammunition box (4.9mm Qasir shrapnel)
   components:
   - type: BallisticAmmoProvider
     proto: CartridgeRifleShrapnel

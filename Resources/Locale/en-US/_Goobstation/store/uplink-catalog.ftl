@@ -45,8 +45,8 @@ uplink-blast-grenade-desc = Higher damage, smaller radius. Compatible with the C
 uplink-frag-grenade-name = Frag Grenade
 uplink-frag-grenade-desc = Lower damage, bigger radius. Compatible with the China-Lake.
 
-uplink-rifle-mag-name = .20 Rifle Magazine
-uplink-rifle-mag-desc = A 25 round magazine containing .20 rifle bullets. Supports the Lecter and M-90.
+uplink-rifle-mag-name = 4.9mm Qasir Magazine
+uplink-rifle-mag-desc = A 25 round magazine containing 4.9mm Qasir bullets. Supports the Lecter and M-90.
 
 uplink-rifle-subsonic-mag-name = 8.1mm Lea Subsonic Magazine
 uplink-rifle-subsonic-mag-desc = A 35 round magazine containing 8.1mm Lea subsonic bullets. Supports the WSPR and any other 8.1mm Lea.
