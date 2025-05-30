@@ -1,6 +1,6 @@
 - type: entity
   id: BulletPistol
-  name: bullet (.35 auto)
+  name: bullet (10mm Pacem)
   parent: BaseBullet
   categories: [ HideSpawnMenu ]
   components:
@@ -11,7 +11,7 @@
 
 - type: entity
   id: BulletPistolPractice
-  name: bullet (.35 auto practice)
+  name: bullet (10mm Pacem practice)
   parent: BaseBulletPractice
   categories: [ HideSpawnMenu ]
   components:
@@ -22,7 +22,7 @@
 
 - type: entity
   id: BulletPistolRubber
-  name: bullet (.35 auto rubber)
+  name: bullet (10mm Pacem rubber)
   parent: BaseBulletRubber
   categories: [ HideSpawnMenu ]
   components:
@@ -34,7 +34,7 @@
 - type: entity
   id: BulletPistolIncendiary
   parent: BaseBulletIncendiary
-  name: bullet (.35 auto incendiary)
+  name: bullet (10mm Pacem incendiary)
   categories: [ HideSpawnMenu ]
   components:
   - type: Projectile
@@ -46,7 +46,7 @@
 - type: entity
   id: BulletPistolUranium
   parent: BaseBulletUranium
-  name: bullet (.35 auto uranium)
+  name: bullet (10mm Pacem uranium)
   categories: [ HideSpawnMenu ]
   components:
   - type: Projectile
@@ -57,7 +57,7 @@
 
 - type: entity
   id: BulletPistolShrapnel
-  name: bullet (.35 auto shrapnel)
+  name: bullet (10mm Pacem shrapnel)
   categories: [ HideSpawnMenu ]
   parent: BaseBullet
   components:

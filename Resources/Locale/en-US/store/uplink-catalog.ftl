@@ -1,6 +1,6 @@
 # Weapons
 uplink-pistol-viper-name = Viper
-uplink-pistol-viper-desc = A small, easily concealable, but somewhat underpowered gun. Retrofitted with a fully automatic receiver. Uses pistol magazines (.35 auto).
+uplink-pistol-viper-desc = A small, easily concealable, but somewhat underpowered gun. Retrofitted with a fully automatic receiver. Uses pistol magazines (10mm Pacem).
 
 uplink-revolver-python-name = Python
 uplink-revolver-python-desc = A brutally simple, effective, and loud Syndicate revolver. Comes loaded with armor-piercing rounds. Uses .45 magnum.
@@ -82,28 +82,28 @@ uplink-shrapnel-grenade-name = Shrapnel Grenade
 uplink-shrapnel-grenade-desc = Launches a spray of sharp fragments dealing great damage against unarmored targets.
 
 # Ammo
-uplink-pistol-magazine-name = Pistol Magazine (.35 auto)
+uplink-pistol-magazine-name = Pistol Magazine (10mm Pacem)
 uplink-pistol-magazine-desc = Pistol magazine with 10 catridges. Compatible with the Viper.
 
-uplink-pistol-magazine-rubber-name = Pistol Magazine (.35 auto, rubber)
+uplink-pistol-magazine-rubber-name = Pistol Magazine (10mm Pacem, rubber)
 uplink-pistol-magazine-rubber-desc = Pistol magazine with 10 cartridges. For when you need to take someone alive.
 
-uplink-pistol-magazine-incendiary-name = Pistol Magazine (.35 auto, incendiary)
+uplink-pistol-magazine-incendiary-name = Pistol Magazine (10mm Pacem, incendiary)
 uplink-pistol-magazine-incendiary-desc = A premium magazine for putting burning holes in both your wallet, and your victims.
 
-uplink-pistol-magazine-shrapnel-name = Pistol Magazine (.35 auto, shrapnel)
+uplink-pistol-magazine-shrapnel-name = Pistol Magazine (10mm Pacem, shrapnel)
 uplink-pistol-magazine-shrapnel-desc = A premium magazine for firing clouds of bullets at the crew.
 
-uplink-pistol-magazine-c20r-name = SMG magazine (.35 auto)
+uplink-pistol-magazine-c20r-name = SMG magazine (10mm Pacem)
 uplink-pistol-magazine-c20r-desc = Rifle magazine with 30 catridges. Compatible with C-20r.
 
-uplink-pistol-magazine-c20r-rubber-name = SMG magazine (.35 auto, rubber)
+uplink-pistol-magazine-c20r-rubber-name = SMG magazine (10mm Pacem, rubber)
 uplink-pistol-magazine-c20r-rubber-desc = Rifle magazine with 30 catridges. For when you need to take many hostages.
 
-uplink-pistol-magazine-c20r-incendiary-name = SMG magazine (.35 auto, incendiary)
+uplink-pistol-magazine-c20r-incendiary-name = SMG magazine (10mm Pacem, incendiary)
 uplink-pistol-magazine-c20r-incendiary-desc = WAKE THE FUCK UP SAMURAI, WE GOT A STATION TO BURN!
 
-uplink-pistol-magazine-c20r-shrapnel-name = SMG magazine (.35 auto, shrapnel)
+uplink-pistol-magazine-c20r-shrapnel-name = SMG magazine (10mm Pacem, shrapnel)
 uplink-pistol-magazine-c20r-shrapnel-desc = A premium magazine with 30 cartridges for firing clouds of bullets at the crew.
 
 uplink-pistol-magazine-caseless-name = Pistol Magazine (.25 caseless)
