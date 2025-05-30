@@ -51,6 +51,24 @@
     - WeaponShotgunSawnSecurity
 
 - type: loadout
+  id: LoadoutSecurityPlasteelArmingSword
+  category: JobsSecurityAUncategorized
+  cost: 3
+  requirements:
+    - !type:CharacterDepartmentTimeRequirement
+      department: Security
+      min: 10800 # 3 hours
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSecurityWeapons
+    - !type:CharacterLogicOrRequirement
+      requirements:
+      - !type:CharacterDepartmentRequirement
+        departments:
+          - Security
+  items:
+    - PlasteelArmingSwordSecurity
+
+- type: loadout
   id: LoadoutSecurityHeadHelmetCombat
   category: JobsSecurityAUncategorized
   cost: 0
