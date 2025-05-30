@@ -1,17 +1,17 @@
 - type: entity
   id: BulletLightRifle
-  name: bullet (4.9mm Qasir)
+  name: bullet (8.1mm Lea)
   parent: BaseBullet
   categories: [ HideSpawnMenu ]
   components:
   - type: Projectile
     damage:
       types:
-        Piercing: 19
+        Piercing: 23
 
 - type: entity
   id: BulletLightRiflePractice
-  name: bullet (4.9mm Qasir practice)
+  name: bullet (8.1mm Lea practice)
   parent: BaseBulletPractice
   categories: [ HideSpawnMenu ]
   components:
@@ -22,7 +22,7 @@
 
 - type: entity
   id: BulletLightRifleRubber
-  name: bullet (4.9mm Qasir rubber)
+  name: bullet (8.1mm Lea rubber)
   parent: BaseBulletRubber
   categories: [ HideSpawnMenu ]
   components:
@@ -34,7 +34,7 @@
 - type: entity
   id: BulletLightRifleIncendiary
   parent: BaseBulletIncendiary
-  name: bullet (4.9mm Qasir incendiary)
+  name: bullet (8.1mm Lea incendiary)
   categories: [ HideSpawnMenu ]
   components:
   - type: Projectile
@@ -46,25 +46,25 @@
 - type: entity
   id: BulletLightRifleUranium
   parent: BaseBulletUranium
-  name: bullet (4.9mm Qasir uranium)
+  name: bullet (8.1mm Lea uranium)
   categories: [ HideSpawnMenu ]
   components:
   - type: Projectile
     damage:
       types:
         Radiation: 9
-        Piercing: 10
+        Piercing: 12
 
 - type: entity
   id: BulletLightRifleShrapnel
-  name: bullet (4.9mm Qasir shrapnel)
+  name: bullet (8.1mm Lea shrapnel)
   categories: [ HideSpawnMenu ]
   parent: BaseBullet
   components:
   - type: Projectile
     damage:
       types:
-        Piercing: 5.525
+        Piercing: 6.325
   - type: Sprite
     scale: 0.5, 0.5
 
