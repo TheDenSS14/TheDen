@@ -965,7 +965,7 @@ public sealed partial class BiomeSystem : SharedBiomeSystem
             }
         }
 
-        _mapSystem.SetTiles(gridUid, grid, tiles);
+        grid.SetTiles(tiles);
         tiles.Clear();
         component.LoadedChunks.Remove(chunk);
 

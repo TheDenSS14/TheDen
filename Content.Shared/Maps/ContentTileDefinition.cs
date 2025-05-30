@@ -50,12 +50,6 @@ namespace Content.Shared.Maps
         // Delta V
         [DataField("canShovel")] public bool CanShovel { get; private set; }
         //Delta V
-        
-        /// <summary>
-        /// Effective mass of this tile for grid impacts.
-        /// </summary>
-        [DataField]
-        public float Mass = 800f;
 
         /// <remarks>
         /// Legacy AF but nice to have.

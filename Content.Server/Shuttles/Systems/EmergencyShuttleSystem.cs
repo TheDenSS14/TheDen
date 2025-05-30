@@ -27,17 +27,16 @@ using Content.Shared.Shuttles.Events;
 using Content.Shared.Tag;
 using Content.Shared.Tiles;
 using Robust.Server.GameObjects;
+using Robust.Server.Maps;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Configuration;
-using Robust.Shared.EntitySerialization.Systems;
+using Robust.Shared.Map;
 using Robust.Shared.Map.Components;
 using Robust.Shared.Player;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
 using Content.Server.Announcements.Systems;
-using Robust.Shared.Map;
-
 
 namespace Content.Server.Shuttles.Systems;
 
@@ -61,8 +60,7 @@ public sealed partial class EmergencyShuttleSystem : EntitySystem
     [Dependency] private readonly EntityManager _entityManager = default!;
     [Dependency] private readonly IdCardSystem _idSystem = default!;
     [Dependency] private readonly NavMapSystem _navMap = default!;
-    [Dependency] private readonly MapLoaderSystem _loader = default!;
-    [Dependency] private readonly MetaDataSystem _metaData = default!;
+    [Dependency] private readonly MapLoaderSystem _map = default!;
     [Dependency] private readonly PopupSystem _popup = default!;
     [Dependency] private readonly RoundEndSystem _roundEnd = default!;
     [Dependency] private readonly SharedAudioSystem _audio = default!;
@@ -434,18 +432,25 @@ public sealed partial class EmergencyShuttleSystem : EntitySystem
         }
 
         var mapPath = _random.Pick(component.Maps).ToString();
-        AddSingleCentcomm(station, component, new(mapPath));
+        AddSingleCentcomm(station, component, mapPath);
     }
 
-    private void AddSingleCentcomm(EntityUid station, StationCentcommComponent component, ResPath mapPath)
+    private void AddSingleCentcomm(EntityUid station, StationCentcommComponent component, string mapPath)
     {
-        var map = _mapSystem.CreateMap(out var mapId);
-
-        if (!_loader.TryLoadGrid(mapId, mapPath, out var grid))
+        if (string.IsNullOrEmpty(mapPath))
         {
-            Log.Error($"Failed to set up centcomm grid!");
+            Log.Warning("No CentComm map found, skipping setup.");
             return;
         }
+
+        var map = _mapSystem.CreateMap(out var mapId);
+        var grid = _map.LoadGrid(
+            mapId,
+            mapPath,
+            new()
+            {
+                LoadMap = false,
+            });
 
         if (!Exists(map) || map == EntityUid.Invalid)
         {
@@ -518,11 +523,15 @@ public sealed partial class EmergencyShuttleSystem : EntitySystem
 
         // Load escape shuttle
         var shuttlePath = ent.Comp1.EmergencyShuttlePath;
-        if (!_loader.TryLoadGrid(map.MapId,
-            shuttlePath,
-            out var shuttle,
+        var shuttle = _map.LoadGrid(map.MapId, shuttlePath.ToString(), new MapLoadOptions()
+        {
             // Should be far enough... right? I'm too lazy to bounds check CentCom rn.
-            offset: new Vector2(500f + ent.Comp2.ShuttleIndex, 0f)))
+            Offset = new Vector2(500f + ent.Comp2.ShuttleIndex, 0f),
+            // fun fact: if you just fucking yeet centcomm into nullspace anytime you try to spawn the shuttle, then any distance is far enough. so lets not do that
+            LoadMap = false,
+        });
+
+        if (shuttle == null)
         {
             Log.Error($"Unable to spawn emergency shuttle {shuttlePath} for {ToPrettyString(ent)}");
             return;

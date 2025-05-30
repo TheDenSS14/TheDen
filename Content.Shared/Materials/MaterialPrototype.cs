@@ -29,7 +29,7 @@ namespace Content.Shared.Materials
         ///     include which stack we should spawn by default.
         /// </summary>
         [DataField]
-        public EntProtoId? StackEntity;
+        public ProtoId<EntityPrototype>? StackEntity;
 
         [DataField]
         public string Name = string.Empty;

@@ -34,9 +34,9 @@ public sealed partial class TestPair
             mapData.GridCoords = new EntityCoordinates(mapData.Grid, 0, 0);
             var plating = tileDefinitionManager[tile];
             var platingTile = new Tile(plating.TileId);
-            Server.System<SharedMapSystem>().SetTile(mapData.Grid.Owner, mapData.Grid.Comp, mapData.GridCoords, platingTile);
+            mapData.Grid.Comp.SetTile(mapData.GridCoords, platingTile);
             mapData.MapCoords = new MapCoordinates(0, 0, mapData.MapId);
-            mapData.Tile = Server.System<SharedMapSystem>().GetAllTiles(mapData.Grid.Owner, mapData.Grid.Comp).First();
+            mapData.Tile = mapData.Grid.Comp.GetAllTiles().First();
         });
 
         TestMap = mapData;

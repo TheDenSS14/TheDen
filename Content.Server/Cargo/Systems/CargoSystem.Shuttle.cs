@@ -13,6 +13,7 @@ using Content.Shared.GameTicking;
 using Content.Shared.Shuttles.Components;
 using Content.Shared.Tiles;
 using Content.Shared.Whitelist;
+using Robust.Server.Maps;
 using Robust.Shared.Map;
 using Robust.Shared.Random;
 using Robust.Shared.Audio;
@@ -28,11 +29,10 @@ public sealed partial class CargoSystem
     /*
      * Handles cargo shuttle / trade mechanics.
      */
-
+    [Dependency] private readonly IConfigurationManager _confMan = default!;
     public MapId? CargoMap { get; private set; }
 
     private static readonly SoundPathSpecifier ApproveSound = new("/Audio/Effects/Cargo/ping.ogg");
-    private static readonly ResPath MapPath = new ResPath("/Maps/Shuttles/trading_outpost.yml");
 
     private void InitializeShuttle()
     {
@@ -354,7 +354,7 @@ public sealed partial class CargoSystem
         if (!HasComp<StationCargoOrderDatabaseComponent>(args.Station)) // No cargo, L
             return;
 
-        if (_cfgManager.GetCVar(CCVars.GridFill) && _cfg.GetCVar(CargoCVars.CreateCargoMap))
+        if (_cfgManager.GetCVar(CCVars.GridFill) && _confMan.GetCVar(CargoCVars.CreateCargoMap))
             SetupTradePost();
     }
 
@@ -367,31 +367,42 @@ public sealed partial class CargoSystem
             return;
         }
 
-        _mapSystem.DeleteMap(CargoMap.Value);
+        _mapManager.DeleteMap(CargoMap.Value);
         CargoMap = null;
     }
 
     private void SetupTradePost()
     {
         if (CargoMap != null && _sharedMapSystem.MapExists(CargoMap.Value))
+        {
             return;
+        }
 
         // It gets mapinit which is okay... buuutt we still want it paused to avoid power draining.
         var mapEntId = _mapSystem.CreateMap();
         CargoMap = _entityManager.GetComponent<MapComponent>(mapEntId).MapId;
-        _mapLoader.TryLoadGrid(CargoMap.Value, MapPath, out var grid); // Oh boy oh boy, hardcoded paths!
+
+        var options = new MapLoadOptions
+        {
+            LoadMap = true,
+        };
+
+        _mapLoader.TryLoad((MapId) CargoMap, "/Maps/Shuttles/trading_outpost.yml", out var rootUids, options); // Oh boy oh boy, hardcoded paths!
 
         // If this fails to load for whatever reason, cargo is fucked
-        if (!grid.HasValue)
+        if (rootUids == null || !rootUids.Any())
             return;
 
-        EnsureComp<ProtectedGridComponent>(grid.Value);
-        EnsureComp<TradeStationComponent>(grid.Value);
+        foreach (var grid in rootUids)
+        {
+            EnsureComp<ProtectedGridComponent>(grid);
+            EnsureComp<TradeStationComponent>(grid);
 
-        var shuttleComponent = EnsureComp<ShuttleComponent>(grid.Value);
-        shuttleComponent.AngularDamping = 10000;
-        shuttleComponent.LinearDamping = 10000;
-        Dirty(grid.Value, shuttleComponent);
+            var shuttleComponent = EnsureComp<ShuttleComponent>(grid);
+            shuttleComponent.AngularDamping = 10000;
+            shuttleComponent.LinearDamping = 10000;
+            Dirty(grid, shuttleComponent);
+        }
 
         var mapUid = _sharedMapSystem.GetMap(CargoMap.Value);
         var ftl = EnsureComp<FTLDestinationComponent>(mapUid);
@@ -405,6 +416,7 @@ public sealed partial class CargoSystem
         };
 
         _metaSystem.SetEntityName(mapUid, $"Automated Trade Station {_random.Next(1000):000}");
+
         _console.RefreshShuttleConsoles();
     }
 }
