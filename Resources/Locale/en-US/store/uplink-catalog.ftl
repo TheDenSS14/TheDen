@@ -136,10 +136,10 @@ uplink-speedloader-magnu-desc = Revolver speedloader with 6 armor-piercing catri
 uplink-mosin-ammo-name = Ammunition box (8.1mm Lea)
 uplink-mosin-ammo-desc = A box of 50 cartridges for the surplus rifle.
 
-uplink-sniper-ammo-name = Ammunition box (.60 antimateriel)
+uplink-sniper-ammo-name = Ammunition box (17.5mm Hristov)
 uplink-sniper-ammo-desc = A box of 10 cartridges for the Hristov sniper rifle.
 
-uplink-sniper-ammo-shrapnel-name = Ammunition box (.60 antipersonnel shrapnel)
+uplink-sniper-ammo-shrapnel-name = Ammunition box (17.5mm Hristov shrapnel)
 uplink-sniper-ammo-shrapnel-desc = A box of 10 anti-personnel cannister shots for the Hristov sniper rifle.
 
 # Utility

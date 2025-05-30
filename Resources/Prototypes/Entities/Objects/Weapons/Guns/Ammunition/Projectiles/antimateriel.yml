@@ -2,7 +2,7 @@
   categories: [ HideSpawnMenu ]
   parent: BaseBullet
   id: BulletAntiMateriel
-  name: bullet (.60 anti-materiel)
+  name: bullet (17.5mm Hristov)
   components:
   - type: Projectile
     damage:
@@ -15,7 +15,7 @@
 
 - type: entity
   id: BulletAntiMaterielShrapnel
-  name: bullet (.60 anti-personnel shrapnel)
+  name: bullet (17.5mm Hristov shrapnel)
   categories: [ HideSpawnMenu ]
   parent: BaseBullet
   components:
