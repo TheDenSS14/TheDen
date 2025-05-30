@@ -57,7 +57,7 @@ public sealed class EnergySwordSystem : EntitySystem
 
         if (!TryComp(uid, out AppearanceComponent? appearanceComponent))
             return;
-        _appearance.SetData(uid, ToggleableLightVisuals.Color, comp.ActivatedColor, appearanceComponent);
+        _appearance.SetData(uid, ToggleableVisuals.Color, comp.ActivatedColor, appearanceComponent);
     }
 
     // Used to make the make the blade multicolored when using a multitool on it.

@@ -99,7 +99,9 @@
       - HeadTop
       - HeadSide
   # This will all be replaced by modules later
-  - type: ToggleableLightVisuals
+  - type: ItemTogglePointLight
+  - type: ToggleableVisuals
+    spriteLayer: light
   - type: PointLight
     enabled: false
     radius: 3

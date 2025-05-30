@@ -58,7 +58,7 @@
       behaviors:
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
-  - type: ToggleableLightVisuals
+  - type: ToggleableVisuals
     spriteLayer: null
   - type: PointLight
     color: "#e39c40"

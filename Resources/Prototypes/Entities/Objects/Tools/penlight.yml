@@ -36,7 +36,9 @@
       interfaces:
         enum.PenLightUiKey.Key:
           type: PenLightBoundUserInterface
-    - type: ToggleableLightVisuals
+    - type: ItemTogglePointLight
+    - type: ToggleableVisuals
+      spriteLayer: light
     - type: ContainerContainer
       containers:
         cell_slot: !type:ContainerSlot {}
@@ -81,7 +83,7 @@
     - type: PenLight
       examSpeed: 1.5 #time in seconds
     - type: Appearance
-    - type: ToggleableLightVisuals
+    - type: ToggleableVisuals
     - type: PowerCellSlot
       cellSlotId: cell_slot
     - type: ItemSlots

@@ -35,6 +35,16 @@
     drawdepth: Items
     sprite: Objects/Misc/landmine.rsi
     state: landmine
+    layers:
+    - state: landmine-inactive
+      map: [ "enum.ToggleableVisuals.Layer" ]
+  - type: Appearance
+  - type: GenericVisualizer
+    visuals:
+      enum.ToggleableVisuals.Enabled:
+        enum.ToggleableVisuals.Layer:
+          True: {state: landmine}
+          False: {state: landmine-inactive}
   - type: Damageable
     damageContainer: Inorganic
   - type: Destructible
