@@ -17,7 +17,7 @@ namespace Content.YAMLLinter
     {
         private static async Task<int> Main(string[] _)
         {
-            PoolManager.Startup();
+            PoolManager.Startup(null);
             var stopwatch = new Stopwatch();
             stopwatch.Start();
 

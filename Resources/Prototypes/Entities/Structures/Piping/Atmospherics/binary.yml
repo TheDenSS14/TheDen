@@ -31,17 +31,6 @@
   placement:
     mode: SnapgridCenter
   components:
-  - type: ExtensionCableReceiver
-  - type: LightningTarget
-    priority: 1
-  - type: ApcPowerReceiver
-    powerLoad: 200
-  - type: Rotatable
-  - type: Transform
-    noRot: false
-  - type: SubFloorHide
-    visibleLayers:
-    - enum.SubfloorLayers.FirstLayer
   - type: Sprite
     sprite: Structures/Piping/Atmospherics/pump.rsi
     layers:
@@ -85,17 +74,6 @@
   placement:
     mode: SnapgridCenter
   components:
-    - type: ExtensionCableReceiver
-    - type: LightningTarget
-      priority: 1
-    - type: ApcPowerReceiver
-      powerLoad: 200
-    - type: Rotatable
-    - type: Transform
-      noRot: false
-    - type: SubFloorHide
-      visibleLayers:
-      - enum.SubfloorLayers.FirstLayer
     - type: Sprite
       sprite: Structures/Piping/Atmospherics/pump.rsi
       layers:
@@ -148,9 +126,6 @@
   placement:
     mode: SnapgridCenter
   components:
-    - type: SubFloorHide
-      visibleLayers:
-      - enum.SubfloorLayers.FirstLayer
     - type: Sprite
       sprite: Structures/Piping/Atmospherics/pump.rsi
       layers:
@@ -183,9 +158,6 @@
     mode: SnapgridCenter
   components:
     # TODO ATMOS: Give unique sprite.
-    - type: SubFloorHide
-      visibleLayers:
-      - enum.SubfloorLayers.FirstLayer
     - type: Sprite
       sprite: Structures/Piping/Atmospherics/pump.rsi
       layers:
@@ -236,9 +208,6 @@
     mode: SnapgridCenter
   components:
   - type: StationAiWhitelist
-  - type: SubFloorHide
-    visibleLayers:
-    - enum.SubfloorLayers.FirstLayer
   - type: Sprite
     sprite: Structures/Piping/Atmospherics/pump.rsi
     layers:
@@ -299,9 +268,6 @@
   placement:
     mode: SnapgridCenter
   components:
-    - type: SubFloorHide
-      visibleLayers:
-      - enum.SubfloorLayers.FirstLayer
     - type: Sprite
       sprite: Structures/Piping/Atmospherics/gascanisterport.rsi
       layers:
@@ -333,9 +299,6 @@
   placement:
     mode: SnapgridCenter
   components:
-    - type: SubFloorHide
-      visibleLayers:
-      - enum.SubfloorLayers.FirstLayer
     - type: Sprite
       drawdepth: FloorObjects
       sprite: Structures/Piping/Atmospherics/vent.rsi
@@ -490,32 +453,3 @@
     node: radiator
   - type: AtmosMonitoringConsoleDevice
     navMapBlip: Thermoregulator
-
-- type: entity
-  parent: HeatExchanger
-  id: HeatExchangerBend
-  suffix: Bend
-  components:
-    - type: SubFloorHide
-      visibleLayers:
-      - enum.SubfloorLayers.FirstLayer
-    - type: Sprite
-      layers:
-      - sprite: Structures/Piping/Atmospherics/pipe.rsi
-        state: pipeBend
-        map: [ "enum.PipeVisualLayers.Pipe" ]
-      - state: heBend
-        map: [ "enum.SubfloorLayers.FirstLayer" ]
-    - type: NodeContainer
-      nodes:
-        inlet:
-          !type:PipeNode
-          nodeGroupID: Pipe
-          pipeDirection: South
-        outlet:
-          !type:PipeNode
-          nodeGroupID: Pipe
-          pipeDirection: West
-    - type: Construction
-      graph: GasBinary
-      node: bendradiator

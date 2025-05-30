@@ -10,13 +10,14 @@ using Content.Server.Mind;
 using Content.Shared.Mobs.Systems;
 using Content.Server.Popups;
 using Content.Server.Psionics;
+using Content.Server.GameTicking;
 using Content.Shared.Mind;
 using Content.Shared.Actions.Events;
 using Content.Server.DoAfter;
-using Content.Server.Ghost;
 using Content.Shared.Consent;
 using Content.Shared.DoAfter;
 using Robust.Shared.Prototypes;
+
 
 namespace Content.Server.Abilities.Psionics
 {

@@ -16,7 +16,6 @@ using Content.Shared.GameTicking;
 using Content.Shared.Inventory;
 using Content.Shared.Projectiles;
 using Content.Shared.Throwing;
-using Robust.Server.GameObjects;
 using Robust.Server.GameStates;
 using Robust.Server.Player;
 using Robust.Shared.Audio.Systems;
@@ -51,7 +50,6 @@ public sealed partial class ExplosionSystem : EntitySystem
     [Dependency] private readonly SharedAudioSystem _audio = default!;
     [Dependency] private readonly SharedTransformSystem _transformSystem = default!;
     [Dependency] private readonly SharedMapSystem _map = default!;
-    [Dependency] private readonly MapSystem _mapSystem = default!;
 
     private EntityQuery<TransformComponent> _transformQuery;
     private EntityQuery<FlammableComponent> _flammableQuery;
@@ -255,7 +253,7 @@ public sealed partial class ExplosionSystem : EntitySystem
 
         var posFound = _transformSystem.TryGetMapOrGridCoordinates(uid, out var gridPos, pos);
 
-        QueueExplosion(mapPos, typeId, totalIntensity, slope, maxTileIntensity, uid, tileBreakScale, maxTileBreak, canCreateVacuum, addLog: false);
+        QueueExplosion(mapPos, typeId, totalIntensity, slope, maxTileIntensity, tileBreakScale, maxTileBreak, canCreateVacuum, addLog: false);
 
         if (!addLog)
             return;
@@ -283,7 +281,6 @@ public sealed partial class ExplosionSystem : EntitySystem
         float totalIntensity,
         float slope,
         float maxTileIntensity,
-        EntityUid? cause,
         float tileBreakScale = 1f,
         int maxTileBreak = int.MaxValue,
         bool canCreateVacuum = true,
@@ -327,8 +324,7 @@ public sealed partial class ExplosionSystem : EntitySystem
             MaxTileIntensity = maxTileIntensity,
             TileBreakScale = tileBreakScale,
             MaxTileBreak = maxTileBreak,
-            CanCreateVacuum = canCreateVacuum,
-            Cause = cause
+            CanCreateVacuum = canCreateVacuum
         };
         _explosionQueue.Enqueue(boom);
         _queuedExplosions.Add(boom);
@@ -397,9 +393,7 @@ public sealed partial class ExplosionSystem : EntitySystem
             queued.CanCreateVacuum,
             EntityManager,
             _mapManager,
-            visualEnt,
-            queued.Cause,
-            _map);
+            visualEnt);
     }
 
     private void CameraShake(float range, MapCoordinates epicenter, float totalIntensity)

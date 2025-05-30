@@ -560,7 +560,7 @@
     duration: 1
   - type: RuleGrids
   - type: LoadMapRule
-    gridPath: /Maps/Shuttles/ShuttleEvent/striker.yml
+    preloadedGrid: ShuttleStriker
   - type: NukeopsRule
     roundEndBehavior: Nothing
   - type: AntagSelection
