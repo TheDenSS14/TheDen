@@ -1,3 +1,6 @@
+using Content.Shared.Dataset;
+using Robust.Shared.Prototypes;
+
 namespace Content.Server.Paper;
 
 /// <summary>
@@ -7,7 +10,7 @@ namespace Content.Server.Paper;
 public sealed partial class PaperRandomStoryComponent : Component
 {
     [DataField]
-    public List<string>? StorySegments;
+    public List<ProtoId<LocalizedDatasetPrototype>>? StorySegments;
 
     [DataField]
     public string StorySeparator = " ";

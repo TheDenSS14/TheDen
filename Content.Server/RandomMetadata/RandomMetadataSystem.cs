@@ -1,5 +1,5 @@
 ﻿using Content.Shared.Dataset;
-using Content.Shared.Humanoid;
+using Content.Shared.Random.Helpers;
 using JetBrains.Annotations;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;

@@ -10,10 +10,10 @@ namespace Content.Server.RandomMetadata;
 public sealed partial class RandomMetadataComponent : Component
 {
     [DataField("descriptionSegments")]
-    public List<string>? DescriptionSegments;
+    public List<ProtoId<LocalizedDatasetPrototype>>? DescriptionSegments;
 
     [DataField("nameSegments")]
-    public List<string>? NameSegments;
+    public List<ProtoId<LocalizedDatasetPrototype>>? NameSegments;
 
     /// <summary>
     /// LocId of the formatting string to use to assemble the <see cref="NameSegments"/> into the entity's name.
