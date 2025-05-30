@@ -3,7 +3,7 @@ uplink-pistol-viper-name = Viper
 uplink-pistol-viper-desc = A small, easily concealable, but somewhat underpowered gun. Retrofitted with a fully automatic receiver. Uses pistol magazines (10mm Pacem).
 
 uplink-revolver-python-name = Python
-uplink-revolver-python-desc = A brutally simple, effective, and loud Syndicate revolver. Comes loaded with armor-piercing rounds. Uses .45 magnum.
+uplink-revolver-python-desc = A brutally simple, effective, and loud Syndicate revolver. Comes loaded with armor-piercing rounds. Uses .45 Liberté.
 
 uplink-pistol-cobra-name = Cobra
 uplink-pistol-cobra-desc = A rugged, robust operator handgun with inbuilt silencer. Uses pistol magazines (6.2mm Eclipse).
@@ -130,7 +130,7 @@ uplink-magazine-caseless-incendiary-desc = A premium magazine with 30 cartridges
 uplink-magazine-caseless-shrapnel-name = SMG magazine (6.2mm Eclipse, shrapnel)
 uplink-magazine-caseless-shrapnel-desc = A premium magazine with 30 cartridges for (quietly) firing clouds of lead at the crew.
 
-uplink-speedloader-magnum-name = Speedloader (.45 magnum AP)
+uplink-speedloader-magnum-name = Speedloader (.45 Liberté AP)
 uplink-speedloader-magnu-desc = Revolver speedloader with 6 armor-piercing catridges, capable of ignoring armor entirely. Compatible with the Python.
 
 uplink-mosin-ammo-name = Ammunition box (8.1mm Lea)

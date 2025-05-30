@@ -73,7 +73,7 @@
   name: Deckard
   parent: BaseWeaponRevolver
   id: WeaponRevolverDeckard
-  description: A rare, custom-built revolver. Use when there is no time for Voight-Kampff test. Uses .45 magnum ammo.
+  description: A rare, custom-built revolver. Use when there is no time for Voight-Kampff test. Uses .45 Liberté ammo.
   components:
   - type: Sprite
     sprite: Objects/Weapons/Guns/Revolvers/deckard.rsi
@@ -101,7 +101,7 @@
   name: Deckard
   parent: WeaponRevolverDeckard
   id: WeaponRevolverDeckardSecurity
-  description: A rare, custom-built revolver. Use when there is no time for Voight-Kampff test. Uses .45 magnum ammo.
+  description: A rare, custom-built revolver. Use when there is no time for Voight-Kampff test. Uses .45 Liberté ammo.
                The serial number on the handguard marks this gun as belonging to an NT Security Officer.
   suffix: Security # TheDen
   components:
@@ -112,7 +112,7 @@
   name: Deckard
   parent: WeaponRevolverDeckardSecurity
   id: WeaponRevolverDeckardNonLethalSecurity
-  description: A rare, custom-built revolver. Use when you need to spare the Replicants. Comes with .45 magnum rubber.
+  description: A rare, custom-built revolver. Use when you need to spare the Replicants. Comes with .45 Liberté rubber.
                The serial number on the handguard marks this gun as belonging to an NT Security Officer.
   suffix: Security, Non-lethal # TheDen
   components:
@@ -129,7 +129,7 @@
   name: Inspector
   parent: BaseWeaponRevolver
   id: WeaponRevolverInspector
-  description: A detective's best friend. Uses .45 magnum ammo.
+  description: A detective's best friend. Uses .45 Liberté ammo.
   components:
   - type: Sprite
     sprite: Objects/Weapons/Guns/Revolvers/inspector.rsi
@@ -144,7 +144,7 @@
   name: Inspector
   parent: WeaponRevolverInspector
   id: WeaponRevolverInspectorSecurity
-  description: A detective's best friend. Uses .45 magnum ammo.
+  description: A detective's best friend. Uses .45 Liberté ammo.
                The serial number on the handguard marks this gun as belonging to an NT Security Officer.
   suffix: Security # TheDen
   components:
@@ -155,7 +155,7 @@
   name: Inspector
   parent: WeaponRevolverInspectorSecurity
   id: WeaponRevolverInspectorNonLethalSecurity
-  description: A detective's best friend. Comes loaded with .45 magnum rubber.
+  description: A detective's best friend. Comes loaded with .45 Liberté rubber.
                The serial number on the handguard marks this gun as belonging to an NT Security Officer.
   suffix: Security, Non-lethal # TheDen
   components:
@@ -172,7 +172,7 @@
   name: Mateba
   parent: BaseWeaponRevolver
   id: WeaponRevolverMateba
-  description: A distinctive revolver of an ancient Sol' design that was once seen as a rare collectible. It is in common manufacture by many companies in the Biesel Republic. Uses .45 magnum ammo.
+  description: A distinctive revolver of an ancient Sol' design that was once seen as a rare collectible. It is in common manufacture by many companies in the Biesel Republic. Uses .45 Liberté ammo.
   components:
   - type: Sprite
     sprite: Objects/Weapons/Guns/Revolvers/mateba.rsi
@@ -187,7 +187,7 @@
   name: Python
   parent: BaseWeaponRevolver
   id: WeaponRevolverPython
-  description: An iconic large-framed revolver of ancient Sol' design. It is commonly manufactured by many companies all over the colonies. Uses .45 magnum ammo.
+  description: An iconic large-framed revolver of ancient Sol' design. It is commonly manufactured by many companies all over the colonies. Uses .45 Liberté ammo.
   components:
   - type: Sprite
     sprite: Objects/Weapons/Guns/Revolvers/python.rsi
@@ -208,7 +208,7 @@
   name: Python
   parent: WeaponRevolverPython
   id: WeaponRevolverPythonSecurity
-  description: An iconic large-framed revolver of ancient Sol' design. It is commonly manufactured by many companies all over the colonies. Uses .45 magnum ammo.
+  description: An iconic large-framed revolver of ancient Sol' design. It is commonly manufactured by many companies all over the colonies. Uses .45 Liberté ammo.
                The serial number on the handguard marks this gun as belonging to an NT Security Officer.
   suffix: Security # TheDen
   components:
@@ -242,7 +242,7 @@
   parent: WeaponRevolverPython
   id: WeaponRevolverPythonAP # For the uplink.
   suffix: armor-piercing
-  description: An iconic large-framed revolver of ancient Sol' design. It is commonly manufactured by many companies all over the colonies. Uses .45 magnum ammo.
+  description: An iconic large-framed revolver of ancient Sol' design. It is commonly manufactured by many companies all over the colonies. Uses .45 Liberté ammo.
   components:
   - type: RevolverAmmoProvider
     whitelist:
@@ -256,7 +256,7 @@
   name: pirate revolver
   parent: BaseWeaponRevolver
   id: WeaponRevolverPirate
-  description: An odd, old-looking revolver, favoured by pirate crews. Uses .45 magnum ammo.
+  description: An odd, old-looking revolver, favoured by pirate crews. Uses .45 Liberté ammo.
   components:
   - type: Sprite
     sprite: Objects/Weapons/Guns/Revolvers/pirate_revolver.rsi

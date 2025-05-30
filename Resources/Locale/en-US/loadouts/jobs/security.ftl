@@ -4,10 +4,10 @@ loadout-description-LoadoutSecurityShoesJackboots = A really nice, heavy, pair o
 # Equipment
 loadout-name-LoadoutMagazinePistolSpare = pistol magazine (10mm Pacem, spare)
 loadout-name-LoadoutMagazinePistolNonLethalSpare = pistol magazine (10mm Pacem rubber, spare)
-loadout-name-LoadoutSpeedLoaderMagnumSpare = speed loader (.45 magnum, spare)
-loadout-name-LoadoutSpeedLoaderMagnumRubberSpare = speed loader (.45 magnum rubber, spare)
-loadout-name-LoadoutMagazineMagnumSpare = pistol magazine (.45 magnum, spare)
-loadout-name-LoadoutMagazineMagnumRubberSpare = pistol magazine (.45 magnum rubber, spare)
+loadout-name-LoadoutSpeedLoaderMagnumSpare = speed loader (.45 Liberté, spare)
+loadout-name-LoadoutSpeedLoaderMagnumRubberSpare = speed loader (.45 Liberté rubber, spare)
+loadout-name-LoadoutMagazineMagnumSpare = pistol magazine (.45 Liberté, spare)
+loadout-name-LoadoutMagazineMagnumRubberSpare = pistol magazine (.45 Liberté rubber, spare)
 
 # Duty Weapons
 loadout-name-LoadoutSecurityMk58 = Mk58 (lethal)
