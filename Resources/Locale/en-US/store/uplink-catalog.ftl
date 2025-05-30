@@ -6,7 +6,7 @@ uplink-revolver-python-name = Python
 uplink-revolver-python-desc = A brutally simple, effective, and loud Syndicate revolver. Comes loaded with armor-piercing rounds. Uses .45 magnum.
 
 uplink-pistol-cobra-name = Cobra
-uplink-pistol-cobra-desc = A rugged, robust operator handgun with inbuilt silencer. Uses pistol magazines (.25 caseless).
+uplink-pistol-cobra-desc = A rugged, robust operator handgun with inbuilt silencer. Uses pistol magazines (6.2mm Eclipse).
 
 uplink-rifle-mosin-name = Surplus Rifle
 uplink-rifle-mosin-desc = A bolt action service rifle that has seen many wars. Not modern by any standard, hand loaded, and terrible recoil, but it is cheap. The attached bayonet allows it to be used as an improvised spear.
@@ -106,28 +106,28 @@ uplink-pistol-magazine-c20r-incendiary-desc = WAKE THE FUCK UP SAMURAI, WE GOT A
 uplink-pistol-magazine-c20r-shrapnel-name = SMG magazine (10mm Pacem, shrapnel)
 uplink-pistol-magazine-c20r-shrapnel-desc = A premium magazine with 30 cartridges for firing clouds of bullets at the crew.
 
-uplink-pistol-magazine-caseless-name = Pistol Magazine (.25 caseless)
+uplink-pistol-magazine-caseless-name = Pistol Magazine (6.2mm Eclipse)
 uplink-pistol-magazine-caseless-desc = Pistol magazine with 10 catridges. Compatible with the Cobra.
 
-uplink-pistol-magazine-caseless-rubber-name = Pistol Magazine (.25 caseless, rubber)
+uplink-pistol-magazine-caseless-rubber-name = Pistol Magazine (6.2mm Eclipse, rubber)
 uplink-pistol-magazine-caseless-rubber-desc = Pistol magazine with 10 catridges. For when you need to (quietly) take someone alive.
 
-uplink-pistol-magazine-caseless-incendiary-name = Pistol Magazine (.25 caseless, incendiary)
+uplink-pistol-magazine-caseless-incendiary-name = Pistol Magazine (6.2mm Eclipse, incendiary)
 uplink-pistol-magazine-caseless-incendiary-desc = A premium magazine with 10 catridges, for (quietly) burning holes in your wallet and your victims.
 
-uplink-pistol-magazine-caseless-shrapnel-name = Pistol Magazine (.25 caseless, shrapnel)
+uplink-pistol-magazine-caseless-shrapnel-name = Pistol Magazine (6.2mm Eclipse, shrapnel)
 uplink-pistol-magazine-caseless-shrapnel-desc = A premium magazine with 10 catridges, for (quietly) firing clouds of lead at the crew.
 
-uplink-magazine-caseless-name = SMG magazine (.25 caseless)
+uplink-magazine-caseless-name = SMG magazine (6.2mm Eclipse)
 uplink-magazine-caseless-desc = Rifle magazine with 30 cartridges. Compatible with the FPA-90.
 
-uplink-magazine-caseless-rubber-name = SMG magazine (.25 caseless, rubber)
+uplink-magazine-caseless-rubber-name = SMG magazine (6.2mm Eclipse, rubber)
 uplink-magazine-caseless-rubber-desc = Rifle magazine with 30 cartridges. For when you need to (quietly) take many hostages.
 
-uplink-magazine-caseless-incendiary-name = SMG magazine (.25 caseless, incendiary)
+uplink-magazine-caseless-incendiary-name = SMG magazine (6.2mm Eclipse, incendiary)
 uplink-magazine-caseless-incendiary-desc = A premium magazine with 30 cartridges for burning holes in both your wallet, and your victims.
 
-uplink-magazine-caseless-shrapnel-name = SMG magazine (.25 caseless, shrapnel)
+uplink-magazine-caseless-shrapnel-name = SMG magazine (6.2mm Eclipse, shrapnel)
 uplink-magazine-caseless-shrapnel-desc = A premium magazine with 30 cartridges for (quietly) firing clouds of lead at the crew.
 
 uplink-speedloader-magnum-name = Speedloader (.45 magnum AP)

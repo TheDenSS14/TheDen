@@ -2,7 +2,7 @@
   name: FPA-90 sub machine gun
   parent: BaseWeaponPistol
   id: WeaponSubMachineGunFPA90
-  description: It's a cheap piece of shit made by a company well known for cheap guns, but at least you don't need hearing protection while using it. It fires .25 caseless.
+  description: It's a cheap piece of shit made by a company well known for cheap guns, but at least you don't need hearing protection while using it. It fires 6.2mm Eclipse.
   components:
   - type: Sprite
     sprite: _EE/Objects/Weapons/Guns/SMGs/FPA90.rsi
@@ -67,7 +67,7 @@
   name: FPA-90 sub machine gun
   parent: WeaponSubMachineGunFPA90
   id: WeaponSubMachineGunFPA90Empty
-  description: It's a cheap piece of shit made by a company well known for cheap guns, but at least you don't need hearing protection while using it. It fires .25 caseless.
+  description: It's a cheap piece of shit made by a company well known for cheap guns, but at least you don't need hearing protection while using it. It fires 6.2mm Eclipse.
   suffix: Empty # TheDen
   components:
   - type: ItemSlots
@@ -93,7 +93,7 @@
   name: BRDI R-25
   parent: [BaseWeaponSubMachineGun, BaseGunWieldable]
   id: WeaponSubMachineGunBRDIR25
-  description: An iconic weapon used by members of the Biesel Republic Foreign Legion. As a pride and joy of the colonies, it represents freedom from the tyranny of the Sol Alliance. It is chambered in .25 Caseless Rifle.
+  description: An iconic weapon used by members of the Biesel Republic Foreign Legion. As a pride and joy of the colonies, it represents freedom from the tyranny of the Sol Alliance. It is chambered in 6.2mm Eclipse Rifle.
   components:
   - type: Sprite
     sprite: _EE/Objects/Weapons/Guns/SMGs/BRDI_R25.rsi
