@@ -95,10 +95,10 @@ uplink-pistol-magazine-shrapnel-name = Pistol Magazine (10mm Pacem, shrapnel)
 uplink-pistol-magazine-shrapnel-desc = A premium magazine for firing clouds of bullets at the crew.
 
 uplink-pistol-magazine-c20r-name = SMG magazine (10mm Pacem)
-uplink-pistol-magazine-c20r-desc = Rifle magazine with 30 catridges. Compatible with C-20r.
+uplink-pistol-magazine-c20r-desc = Submachine Gun magazine with 30 catridges. Compatible with C-20r.
 
 uplink-pistol-magazine-c20r-rubber-name = SMG magazine (10mm Pacem, rubber)
-uplink-pistol-magazine-c20r-rubber-desc = Rifle magazine with 30 catridges. For when you need to take many hostages.
+uplink-pistol-magazine-c20r-rubber-desc = Submachine Gun magazine with 30 catridges. For when you need to take many hostages.
 
 uplink-pistol-magazine-c20r-incendiary-name = SMG magazine (10mm Pacem, incendiary)
 uplink-pistol-magazine-c20r-incendiary-desc = WAKE THE FUCK UP SAMURAI, WE GOT A STATION TO BURN!
