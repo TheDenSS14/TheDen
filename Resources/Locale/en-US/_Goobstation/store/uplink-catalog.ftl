@@ -69,5 +69,5 @@ uplink-high-caliber-explosive-magazine-desc = Rifle magazine with 15 explosive c
 uplink-high-caliber-box-name = 11.5mm Catalyst Ammo box
 uplink-high-caliber-box-desc = A box of 30 11.5mm Catalyst rounds.
 
-uplink-highcap-pistol-mag-name = High Capacity .35 Pistol Magazine
+uplink-highcap-pistol-mag-name = High Capacity 10mm Pacem Pistol Magazine
 uplink-highcap-pistol-mag-desc = High capacity pistol magazine holds 4 extra bullets for a total of 16 rounds.
