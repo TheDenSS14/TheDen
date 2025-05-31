@@ -94,6 +94,34 @@
     state: ovinia_feet
 
 - type: marking
+  id: OverlayPlushSeamsShadowkin
+  bodyPart: LLeg
+  markingCategory: Overlay
+  speciesRestriction: [ Shadowkin ]
+  coloring:
+    default:
+      type:
+        !type:TattooColoring
+      fallbackColor: "#666666"
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Body/Toy/seams.rsi
+    state: shadowkin
+
+- type: marking
+  id: OverlayPlushSeamsShadowkinFeet
+  bodyPart: RFoot
+  markingCategory: Overlay
+  speciesRestriction: [ Shadowkin ]
+  coloring:
+    default:
+      type:
+        !type:TattooColoring
+      fallbackColor: "#666666"
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Body/Toy/seams.rsi
+    state: shadowkin_feet
+
+- type: marking
   id: OverlayPlushSeamsBuggy
   bodyPart: LLeg
   markingCategory: Overlay
@@ -207,8 +235,8 @@
   coloring:
     default:
       type:
-        !type:SkinColoring
-      fallbackColor: "#eeeeee"
+        !type:SimpleColoring
+        color: "#EEEEEE"
   sprites:
   - sprite: _DEN/Mobs/Customization/Body/Toy/overlay.rsi
     state: l_foot_plush
@@ -222,8 +250,38 @@
   coloring:
     default:
       type:
-        !type:SkinColoring
-      fallbackColor: "#eeeeee"
+        !type:SimpleColoring
+        color: "#EEEEEE"
   sprites:
   - sprite: _DEN/Mobs/Customization/Body/Toy/overlay.rsi
     state: r_foot_plush
+
+- type: marking
+  id: OverlayPlushBellyF
+  bodyPart: Chest
+  markingCategory: Chest
+  speciesRestriction: [ Diona, Resomi, Vox ]
+  invertSpeciesRestriction: true
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+        color: "#EEEEEE"
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Body/Toy/overlay.rsi
+    state: belly_plush_f
+
+- type: marking
+  id: OverlayPlushBellyM
+  bodyPart: Chest
+  markingCategory: Chest
+  speciesRestriction: [ Diona, Resomi, Vox ]
+  invertSpeciesRestriction: true
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+        color: "#EEEEEE"
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Body/Toy/overlay.rsi
+    state: belly_plush_m
