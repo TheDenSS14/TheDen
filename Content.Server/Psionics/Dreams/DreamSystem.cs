@@ -21,7 +21,7 @@ namespace Content.Server.Psionics.Dreams
         public readonly IReadOnlyList<string> DreamSetPrototypes = new[]
         {
             "adjectives",
-            "names_first",
+            "NamesFirst",
             "verbs",
         };
 
