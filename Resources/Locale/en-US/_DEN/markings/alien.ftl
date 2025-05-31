@@ -1,5 +1,5 @@
 # Antennae
-marking-AlienAntenna=Alien Antennae (Double)
+marking-AlienAntenna=Alien Antenna (Double)
 marking-AlienAntenna-alien_antenna_double=Antennae
 
 marking-AlienAntennaSide=Alien Antenna (Side)
