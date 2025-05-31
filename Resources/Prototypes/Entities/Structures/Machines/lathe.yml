@@ -368,6 +368,8 @@
     - VoiceTrigger
     - Igniter
     - HandHeldMassScanner
+    - HandHeldAtmosMonitor #DEN
+    - HandHeldPowerMonitor #DEN
     - PowerCellMicrortg
     - PowerCellMicroreactor
     - PowerCellHigh
@@ -1421,6 +1423,8 @@
       - WeaponParticleDecelerator
       - ClothingMaskWeldingGas
       - ClothingShoesBootsMagSci
+      - HandHeldAtmosMonitor
+      - HandHeldPowerMonitor
       # Routers and monitors
       - PowerComputerCircuitboard
       - AlertsComputerCircuitboard
@@ -1545,7 +1549,7 @@
     - WeaponSprayNozzle
     - ClothingBackpackWaterTank
     - MegaSprayBottle
-    - TrashBagBluespace 
+    - TrashBagBluespace
     # Machines and computers
     - SeedExtractorMachineCircuitboard
     - HydroponicsTrayMachineCircuitboard
