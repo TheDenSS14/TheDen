@@ -45,7 +45,21 @@
       fallbackColor: "#666666"
   sprites:
   - sprite: _DEN/Mobs/Customization/Body/Toy/seams.rsi
-    state: head_human #TODO
+    state: head_shortsnout
+
+- type: marking
+  id: OverlayPlushSeamsHeadLongSnout
+  bodyPart: HeadTop
+  markingCategory: Head
+  speciesRestriction: [ Vulpkanin, Feroxi, Reptilian ]
+  coloring:
+    default:
+      type:
+        !type:TattooColoring
+      fallbackColor: "#666666"
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Body/Toy/seams.rsi
+    state: head_longsnout # TODO: Individual markings for these species
 
 - type: marking
   id: OverlayPlushSeamsHandsFeet
