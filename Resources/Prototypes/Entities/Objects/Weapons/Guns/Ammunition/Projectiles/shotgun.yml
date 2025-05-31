@@ -1,6 +1,6 @@
 - type: entity
   id: PelletShotgunSlug
-  name: pellet (.50 slug)
+  name: pellet (14 gauge slug)
   categories: [ HideSpawnMenu ]
   parent: BaseBullet
   components:
@@ -54,7 +54,7 @@
 
 - type: entity
   id: PelletShotgunIncendiary
-  name: pellet (.50 incendiary)
+  name: pellet (14 gauge incendiary)
   categories: [ HideSpawnMenu ]
   parent: BaseBulletIncendiary
   components:
@@ -81,7 +81,7 @@
 
 - type: entity
   id: PelletShotgunPractice
-  name: pellet (.50 practice)
+  name: pellet (14 gauge practice)
   categories: [ HideSpawnMenu ]
   parent: BaseBulletPractice
   components:
@@ -130,7 +130,7 @@
 
 - type: entity
   id: PelletShotgunTranquilizer
-  name: pellet (.50 tranquilizer)
+  name: pellet (14 gauge tranquilizer)
   categories: [ HideSpawnMenu ]
   parent: BaseBulletPractice
   components:
@@ -157,7 +157,7 @@
 
 - type: entity
   id: PelletShotgunFlare
-  name: pellet (.50 flare)
+  name: pellet (14 gauge flare)
   categories: [ HideSpawnMenu ]
   components:
   - type: Physics
@@ -204,7 +204,7 @@
 
 - type: entity
   id: PelletShotgunUranium
-  name: pellet (.50 uranium)
+  name: pellet (14 gauge uranium)
   categories: [ HideSpawnMenu ]
   parent: BaseBullet
   components:
@@ -287,7 +287,7 @@
 
 - type: entity
   id: PelletShotgunBirdshot
-  name: pellet (.50 birdshot)
+  name: pellet (14 gauge birdshot)
   categories: [ HideSpawnMenu ]
   parent: BaseBullet
   components:
@@ -312,7 +312,7 @@
 
 - type: entity
   id: PelletShotgun00Buckshot
-  name: pellet (.50 00-Buckshot)
+  name: pellet (14 gauge 00-Buckshot)
   categories: [ HideSpawnMenu ]
   parent: BaseBullet
   components:
@@ -337,7 +337,7 @@
 
 - type: entity
   id: PelletShotgun0000Buckshot
-  name: pellet (.50 0000-Buckshot)
+  name: pellet (14 gauge 0000-Buckshot)
   categories: [ HideSpawnMenu ]
   parent: BaseBullet
   components:

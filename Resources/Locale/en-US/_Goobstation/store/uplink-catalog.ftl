@@ -45,29 +45,29 @@ uplink-blast-grenade-desc = Higher damage, smaller radius. Compatible with the C
 uplink-frag-grenade-name = Frag Grenade
 uplink-frag-grenade-desc = Lower damage, bigger radius. Compatible with the China-Lake.
 
-uplink-rifle-mag-name = .20 Rifle Magazine
-uplink-rifle-mag-desc = A 25 round magazine containing .20 rifle bullets. Supports the Lecter and M-90.
+uplink-rifle-mag-name = 4.9mm Qasir Magazine
+uplink-rifle-mag-desc = A 25 round magazine containing 4.9mm Qasir bullets. Supports the Lecter and M-90.
 
-uplink-rifle-subsonic-mag-name = .30 Rifle Subsonic Magazine
-uplink-rifle-subsonic-mag-desc = A 35 round magazine containing .30 rifle subsonic bullets. Supports the WSPR and any other .30 rife.
+uplink-rifle-subsonic-mag-name = 8.1mm Lea Subsonic Magazine
+uplink-rifle-subsonic-mag-desc = A 35 round magazine containing 8.1mm Lea subsonic bullets. Supports the WSPR and any other 8.1mm Lea.
 
-uplink-l6-box-name = Magazine Box (.30 rifle)
+uplink-l6-box-name = Magazine Box (8.1mm Lea)
 uplink-l6-box-desc = Magazine box with 100 catridges. Compatible with the L6 SAW.
 
-uplink-shotgun-magazine-name = Shotgun Drum (.50 pellet)
+uplink-shotgun-magazine-name = Shotgun Drum (14 gauge pellet)
 uplink-shotgun-magazine-desc = Shotgun drum with 8 pellet shells. Compatible with the Bulldog.
 
-uplink-shotgun-magazine-slug-name = Shotgun Drum (.50 slug)
+uplink-shotgun-magazine-slug-name = Shotgun Drum (14 gauge slug)
 uplink-shotgun-magazine-slug-desc = Shotgun drum with 8 slug shells. Compatible with the Bulldog.
 
-uplink-high-caliber-magazine-name = Heavy Rifle Magazine (.50 anti-materiel)
+uplink-high-caliber-magazine-name = Heavy Rifle Magazine (11.5mm Catalyst)
 uplink-high-caliber-magazine-desc = Rifle magazine with 15 cartridges. Compatible with the Burner.
 
-uplink-high-caliber-explosive-magazine-name = Heavy Rifle Magazine (.50 high-explosive)
+uplink-high-caliber-explosive-magazine-name = Heavy Rifle Magazine (11.5mm Catalyst high-explosive)
 uplink-high-caliber-explosive-magazine-desc = Rifle magazine with 15 explosive cartridges. Compatible with the Burner.
 
-uplink-high-caliber-box-name = .50 Ammo box
-uplink-high-caliber-box-desc = A box of 30 .50 caliber anti-materiel rounds.
+uplink-high-caliber-box-name = 11.5mm Catalyst Ammo box
+uplink-high-caliber-box-desc = A box of 30 11.5mm Catalyst rounds.
 
-uplink-highcap-pistol-mag-name = High Capacity .35 Pistol Magazine
+uplink-highcap-pistol-mag-name = High Capacity 10mm Pacem Pistol Magazine
 uplink-highcap-pistol-mag-desc = High capacity pistol magazine holds 4 extra bullets for a total of 16 rounds.

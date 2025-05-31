@@ -1,6 +1,6 @@
 - type: entity
   id: BaseMagazineHeavyRifle
-  name: "magazine (.20 rifle)"
+  name: "magazine (4.9mm Qasir)"
   parent: BaseItem
   abstract: true
   components:
@@ -29,7 +29,7 @@
 
 - type: entity
   id: MagazineBoxRifleMinigun
-  name: "Minigun Ammo Box (.10 rifle)"
+  name: "Minigun Ammo Box (3.08mm Winzig)"
   parent: BaseMagazineHeavyRifle
   components:
   - type: Tag
