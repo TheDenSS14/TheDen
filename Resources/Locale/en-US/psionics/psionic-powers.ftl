@@ -59,6 +59,7 @@ healing-word-power-initialization-feedback =
     I need only speak it.
 healing-word-power-metapsionic-feedback = {CAPITALIZE($entity)} bears the Lesser Secret of Life.
 healing-word-begin = {CAPITALIZE($entity)} mutters a word that brings both joy and pain alike to those who hear it.
+healing-word-fail = Your words fall on deaf ears.
 
 # Revivify
 action-name-revivify = Breath of Life
@@ -70,6 +71,7 @@ revivify-power-initialization-feedback =
     Power flows through me as a mighty river, begging to be released with a simple spoken word.
 revivify-power-metapsionic-feedback = {CAPITALIZE($entity)} bears the Greater Secret of Life.
 revivify-begin = {CAPITALIZE($entity)} enunciates a word of such divine power, that those who hear it weep from joy.
+revivify-fail = Your words do not work on the living.
 
 # Telegnosis
 telegnosis-power-description = Create a telegnostic projection to remotely observe things.

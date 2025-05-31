@@ -1,3 +1,4 @@
+using Content.Server._DEN.Research.Components;
 using Content.Shared.Database;
 using Content.Shared.Research.Components;
 using Content.Shared.Research.Prototypes;
@@ -20,7 +21,6 @@ public sealed partial class ResearchSystem
         primaryDb.SupportedDisciplines = otherDb.SupportedDisciplines;
         primaryDb.UnlockedTechnologies = otherDb.UnlockedTechnologies;
         primaryDb.UnlockedRecipes = otherDb.UnlockedRecipes;
-        primaryDb.SoftCapMultiplier = otherDb.SoftCapMultiplier;
 
         Dirty(primaryUid, primaryDb);
 
@@ -79,10 +79,8 @@ public sealed partial class ResearchSystem
             || prototype.Cost * clientDatabase.SoftCapMultiplier > researchServer.Points)
             return false;
 
-        AddTechnology(serverEnt.Value, prototype);
-        TrySetMainDiscipline(prototype, serverEnt.Value);
-        ModifyServerPoints(serverEnt.Value, -(int) (prototype.Cost * clientDatabase.SoftCapMultiplier));
-        UpdateTechnologyCards(serverEnt.Value);
+        var station = _station.GetOwningStation(client);
+        var oldSoftCap = clientDatabase.SoftCapMultiplier;
 
         if (prototype.Tier >= disciplinePrototype.LockoutTier)
         {
@@ -90,7 +88,20 @@ public sealed partial class ResearchSystem
             researchServer.CurrentSoftCapMultiplier *= prototype.SoftCapContribution;
         }
 
-        _adminLog.Add(LogType.Action, LogImpact.Medium,
+        if (station != null
+            && Exists(station)
+            && station != EntityUid.Invalid
+            && TryComp<StationResearchRecordComponent>(station, out var record))
+            record.SoftCapMultiplier = clientDatabase.SoftCapMultiplier;
+
+        AddTechnology(serverEnt.Value, prototype);
+        TrySetMainDiscipline(prototype, serverEnt.Value);
+        ModifyServerPoints(serverEnt.Value, -(int) (prototype.Cost * oldSoftCap));
+        UpdateTechnologyCards(serverEnt.Value);
+
+        _adminLog.Add(
+            LogType.Action,
+            LogImpact.Medium,
             $"{ToPrettyString(user):player} unlocked {prototype.ID} (discipline: {prototype.Discipline}, tier: {prototype.Tier}) at {ToPrettyString(client)}, for server {ToPrettyString(serverEnt.Value)}.");
         return true;
     }
@@ -129,6 +140,7 @@ public sealed partial class ResearchSystem
         {
             if (component.UnlockedRecipes.Contains(unlock))
                 continue;
+
             component.UnlockedRecipes.Add(unlock);
         }
         Dirty(uid, component);

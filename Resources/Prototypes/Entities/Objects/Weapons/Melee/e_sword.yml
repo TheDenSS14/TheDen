@@ -245,7 +245,7 @@
             Heat: 12
     deactivatedSecret: true
   - type: Sprite
-    sprite: DeltaV/Objects/Weapons/Melee/e_cutlass.rsi # DeltaV
+    sprite: _DV/Objects/Weapons/Melee/e_cutlass.rsi # DeltaV
     layers:
       - state: e_cutlass
       - state: e_cutlass_blade
@@ -262,7 +262,7 @@
         Blunt: 6
   - type: Item
     size: Small
-    sprite: DeltaV/Objects/Weapons/Melee/e_cutlass.rsi #DeltaV
+    sprite: _DV/Objects/Weapons/Melee/e_cutlass.rsi #DeltaV
   - type: ToggleableLightVisuals
     spriteLayer: blade
     inhandVisuals:
@@ -277,7 +277,7 @@
   name: energy cutlass
   parent: EnergyCutlass
   id: EnergyCutlassSecurity
-  description: A sleek energy weapon, its blade hums with volatile plasma, expertly contained to cut through nearly any material. The serial number on the hilt marks this gun as belonging to an NT Security Officer. # how do I make the text blue
+  description: A sleek energy weapon, its blade hums with volatile plasma, expertly contained to cut through nearly any material. The serial number on the hilt marks this sword as belonging to an NT Security Officer. # how do I make the text blue
   suffix: Security Loadouts
   components:
   - type: MeleeWeapon

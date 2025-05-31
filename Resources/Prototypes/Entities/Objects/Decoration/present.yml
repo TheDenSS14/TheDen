@@ -378,10 +378,24 @@
         orGroup: GiftPool
       - id: RGBStaff
         orGroup: GiftPool
-      - id: ToyRenault # DeltaV Toy, see Resources/Prototypes/DeltaV/Entities/Objects/Fun/toys.yml
+        # Begin DeltaV - see Resources/Prototypes/_DV/Entities/Objects/Fun/toys.yml
+      - id: ToyRenault
         orGroup: GiftPool
-      - id: ToySiobhan # DeltaV Toy, see Resources/Prototypes/DeltaV/Entities/Objects/Fun/toys.yml
+      - id: ToySiobhan
         orGroup: GiftPool
+      - id: PlushieFelinid
+        orGroup: GiftPool
+      - id: PlushieOni
+        orGroup: GiftPool
+      - id: PlushieHarpy
+        orGroup: GiftPool
+      - id: PlushieRodentia
+        orGroup: GiftPool
+      - id: PlushieFeroxi
+        orGroup: GiftPool
+      - id: PlushieChitinid
+        orGroup: GiftPool
+        # End DeltaV
     sound:
       path: /Audio/Effects/unwrap.ogg
 
