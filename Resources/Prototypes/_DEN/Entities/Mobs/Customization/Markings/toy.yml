@@ -20,6 +20,34 @@
     state: human
 
 - type: marking
+  id: OverlayPlushSeamsHeadHuman
+  bodyPart: Head
+  markingCategory: Head
+  speciesRestriction: [ Human, Canid, Felinid, Oni, Harpy, Arachne, SlimePerson ]
+  coloring:
+    default:
+      type:
+        !type:TattooColoring
+      fallbackColor: "#666666"
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Body/Toy/seams.rsi
+    state: head_human
+- type: marking
+
+  id: OverlayPlushSeamsHeadSmallSnout
+  bodyPart: Head
+  markingCategory: Head
+  speciesRestriction: [ Rodentia, Tajaran, Ovinia ]
+  coloring:
+    default:
+      type:
+        !type:TattooColoring
+      fallbackColor: "#666666"
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Body/Toy/seams.rsi
+    state: head_human #TODO
+
+- type: marking
   id: OverlayPlushSeamsHandsFeet
   bodyPart: RHand
   markingCategory: Overlay
