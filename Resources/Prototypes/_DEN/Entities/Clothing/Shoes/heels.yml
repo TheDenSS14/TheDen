@@ -1,0 +1,18 @@
+- type: entity
+  parent: ClothingShoesBaseButcherable
+  id: ClothingShoesHeelsStockingsBlackBlack
+  name: b&b heelstockings
+  description: Heels with stockings. Meant to be worn together, they shape the legs just right—sharp, impossible to ignore once they're on.
+  components:
+  - type: Sprite
+    sprite: _DEN/Clothing/Shoes/Heels/blackheels_blackstockings.rsi
+  - type: Clothing
+    sprite: _DEN/Clothing/Shoes/Heels/blackheels_blackstockings.rsi
+  - type: FootstepModifier
+    footstepSoundCollection:
+      collection: FootstepHighHeels
+  - type: HideLayerClothing
+    force: true
+    slots:
+    - RFoot
+    - LFoot
