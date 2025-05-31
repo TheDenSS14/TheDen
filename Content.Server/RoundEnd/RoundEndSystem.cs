@@ -55,12 +55,13 @@ namespace Content.Server.RoundEnd
         /// <summary>
         /// How long should a round last until you can no longer recall without admin intervention?
         /// </summary>
-        public TimeSpan RoundHardEnd { get; set; } = TimeSpan.FromHours(5);
+        // public TimeSpan RoundHardEnd { get; set; } = TimeSpan.FromHours(5);
+        public TimeSpan RoundHardEnd { get; set; } = TimeSpan.FromMinutes(2);
 
         /// <summary>
         /// How long before round hard end should the warning be sent?
         /// </summary>
-        public TimeSpan RoundHardEndWarningTime { get; set; } = TimeSpan.FromMinutes(15);
+        public TimeSpan RoundHardEndWarningTime { get; set; } = TimeSpan.FromMinutes(1);
 
         /// <summary>
         /// Should we not allow recall due to round hard end being met?

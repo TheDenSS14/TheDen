@@ -17,15 +17,6 @@ public sealed partial class RoundEndSystem
         SubscribeLocalEvent<CanCallOrRecallEvent>(CheckIfCanCallOrRecall);
     }
 
-    public void RestartHardEndWarning()
-    {
-        _roundHardEndWarningToken?.Cancel();
-
-        InitializeTimer();
-    }
-
-    public void CancelHardEndWarning() => _roundHardEndWarningToken?.Cancel();
-
     private TimeSpan WarnAt() => RoundHardEnd - RoundHardEndWarningTime;
 
     private void InitializeTimer()
@@ -43,6 +34,9 @@ public sealed partial class RoundEndSystem
 
     private void SendWarningAnnouncement()
     {
+        if (!RespectRoundHardEnd)
+            return;
+
         var warnAt = WarnAt();
 
         int time;
