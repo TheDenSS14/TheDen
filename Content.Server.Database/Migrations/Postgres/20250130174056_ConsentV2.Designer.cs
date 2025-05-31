@@ -5,6 +5,7 @@ using System.Text.Json;
 using Content.Server.Database;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using NpgsqlTypes;
@@ -14,9 +15,11 @@ using NpgsqlTypes;
 namespace Content.Server.Database.Migrations.Postgres
 {
     [DbContext(typeof(PostgresServerDbContext))]
-    partial class PostgresServerDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250130174056_ConsentV2")]
+    partial class ConsentV2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -35,14 +38,6 @@ namespace Content.Server.Database.Migrations.Postgres
                     b.Property<int?>("AdminRankId")
                         .HasColumnType("integer")
                         .HasColumnName("admin_rank_id");
-
-                    b.Property<bool>("Deadminned")
-                        .HasColumnType("boolean")
-                        .HasColumnName("deadminned");
-
-                    b.Property<bool>("Suspended")
-                        .HasColumnType("boolean")
-                        .HasColumnName("suspended");
 
                     b.Property<string>("Title")
                         .HasColumnType("text")
@@ -989,11 +984,6 @@ namespace Content.Server.Database.Migrations.Postgres
                         .HasColumnType("text")
                         .HasColumnName("display_pronouns");
 
-                    b.Property<string>("Employer")
-                        .IsRequired()
-                        .HasColumnType("text")
-                        .HasColumnName("employer");
-
                     b.Property<string>("EyeColor")
                         .IsRequired()
                         .HasColumnType("text")
@@ -1033,19 +1023,9 @@ namespace Content.Server.Database.Migrations.Postgres
                         .HasColumnType("real")
                         .HasColumnName("height");
 
-                    b.Property<string>("Lifepath")
-                        .IsRequired()
-                        .HasColumnType("text")
-                        .HasColumnName("lifepath");
-
                     b.Property<JsonDocument>("Markings")
                         .HasColumnType("jsonb")
                         .HasColumnName("markings");
-
-                    b.Property<string>("Nationality")
-                        .IsRequired()
-                        .HasColumnType("text")
-                        .HasColumnName("nationality");
 
                     b.Property<int>("PreferenceId")
                         .HasColumnType("integer")
