@@ -175,7 +175,21 @@
       fallbackColor: "#666666"
   sprites:
   - sprite: _DEN/Mobs/Customization/Body/Toy/seams.rsi
-    state: human # TODO
+    state: buggy # TODO
+
+- type: marking
+  id: OverlayPlushSeamsBuggyFeet
+  bodyPart: RFoot
+  markingCategory: Overlay
+  speciesRestriction: [ Moth, Chitinid ]
+  coloring:
+    default:
+      type:
+        !type:TattooColoring
+      fallbackColor: "#666666"
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Body/Toy/seams.rsi
+    state: buggy_feet
 
 - type: marking
   id: OverlayPlushSeamsArachne

@@ -28,7 +28,9 @@ marking-OverlayPlushSeamsShadowkinFeet = Plush Seams (Shadowkin Feet)
 marking-OverlayPlushSeamsShadowkinFeet-shadowkin_feet = Seam
 
 marking-OverlayPlushSeamsBuggy = Plush Seams (Bug)
-marking-OverlayPlushSeamsBuggy-human = Seam
+marking-OverlayPlushSeamsBuggy-buggy = Seam
+marking-OverlayPlushSeamsBuggyFeet = Plush Seams (Bug Feet)
+marking-OverlayPlushSeamsBuggyFeet-buggy_feet = Seam
 
 marking-OverlayPlushSeamsArachne = Plush Seams (Upper Body)
 marking-OverlayPlushSeamsArachne-arachne = Seam
