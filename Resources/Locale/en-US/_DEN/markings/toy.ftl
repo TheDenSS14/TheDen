@@ -62,7 +62,7 @@ marking-ChestWindupKeySilverAnimated-windup_silver_animated = Key
 
 # Overlays
 
-mzrking-OverlayPlushTorsoHumanM = Plush Torso (Male)
+marking-OverlayPlushTorsoHumanM = Plush Torso (Male)
 marking-OverlayPlushTorsoHumanM-torso_plush_human_m = Torso
 marking-OverlayPlushTorsoHumanF = Plush Torso (Female)
 marking-OverlayPlushTorsoHumanF-torso_plush_human_f = Torso
