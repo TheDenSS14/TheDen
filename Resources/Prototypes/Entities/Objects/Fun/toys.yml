@@ -1772,10 +1772,6 @@
     - type: Sprite
       sprite: Objects/Fun/rubber_hammer.rsi
       state: icon
-    - type: WeaponRandom
-      damageBonus:
-          types:
-              Blunt: 1000
     - type: StaminaDamageOnHit
       damage: 8
     - type: Item
