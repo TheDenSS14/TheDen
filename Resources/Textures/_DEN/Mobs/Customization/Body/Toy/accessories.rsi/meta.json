@@ -10,6 +10,34 @@
         {
             "name": "zipper",
             "directions": 4
+        },
+        {
+            "name": "windup_gold",
+            "directions": 4
+        },
+        {
+            "name": "windup_silver",
+            "directions": 4
+        },
+        {
+            "name": "windup_gold_animated",
+            "directions": 4,
+            "delays": [
+                [0.3, 0.3],
+                [0.3, 0.3],
+                [0.3, 0.3],
+                [0.3, 0.3]
+            ]
+        },
+        {
+            "name": "windup_silver_animated",
+            "directions": 4,
+            "delays": [
+                [0.3, 0.3],
+                [0.3, 0.3],
+                [0.3, 0.3],
+                [0.3, 0.3]
+            ]
         }
     ]
 }

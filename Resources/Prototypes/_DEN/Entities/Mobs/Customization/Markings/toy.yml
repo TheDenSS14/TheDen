@@ -280,7 +280,67 @@
   - sprite: _DEN/Mobs/Customization/Body/Toy/accessories.rsi
     state: zipper
 
-# TODO: Wind-up key
+- type: marking
+  id: ChestWindupKeyGold
+  bodyPart: Chest
+  markingCategory: Overlay
+  speciesRestriction: [ Resomi ]
+  invertSpeciesRestriction: true
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+        color: "#FFFFFF"
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Body/Toy/accessories.rsi
+    state: windup_gold
+
+- type: marking
+  id: ChestWindupKeySilver
+  bodyPart: Chest
+  markingCategory: Overlay
+  speciesRestriction: [ Resomi ]
+  invertSpeciesRestriction: true
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+        color: "#FFFFFF"
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Body/Toy/accessories.rsi
+    state: windup_silver
+
+# Because these follow the Animated namescheme, the animated keys are compatible with wagging.
+
+- type: marking
+  id: ChestWindupKeyGoldAnimated
+  bodyPart: Chest
+  markingCategory: Overlay
+  speciesRestriction: [ Resomi ]
+  invertSpeciesRestriction: true
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+        color: "#FFFFFF"
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Body/Toy/accessories.rsi
+    state: windup_gold_animated
+
+- type: marking
+  id: ChestWindupKeySilverAnimated
+  bodyPart: Chest
+  markingCategory: Overlay
+  speciesRestriction: [ Resomi ]
+  invertSpeciesRestriction: true
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+        color: "#FFFFFF"
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Body/Toy/accessories.rsi
+    state: windup_silver_animated
 
 ## BODY OVERLAYS
 

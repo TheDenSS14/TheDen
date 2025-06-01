@@ -50,6 +50,16 @@ marking-OverlayPlushSeamsVoxFeet-vox_feet = Seam
 marking-ChestZipper = Zipper
 marking-ChestZipper-zipper = Zipper
 
+marking-ChestWindupKeyGold = Wind-up Key (Gold)
+marking-ChestWindupKeyGold-windup_gold = Key
+marking-ChestWindupKeyGoldAnimated = Wind-up Key (Gold, Animated)
+marking-ChestWindupKeyGoldAnimated-windup_gold_animated = Key
+
+marking-ChestWindupKeySilver = Wind-up Key (Silver)
+marking-ChestWindupKeySilver-windup_silver = Key
+marking-ChestWindupKeySilverAnimated = Wind-up Key (Silver, Animated)
+marking-ChestWindupKeySilverAnimated-windup_silver_animated = Key
+
 # Overlays
 
 mzrking-OverlayPlushTorsoHumanM = Plush Torso (Male)
