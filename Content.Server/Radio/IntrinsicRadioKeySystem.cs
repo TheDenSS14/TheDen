@@ -1,3 +1,4 @@
+using Content.Server.Emp;
 using Content.Server.Radio.Components;
 using Content.Shared.Radio;
 using Content.Shared.Radio.Components;
@@ -12,6 +13,8 @@ public sealed class IntrinsicRadioKeySystem : EntitySystem
 
         SubscribeLocalEvent<IntrinsicRadioTransmitterComponent, EncryptionChannelsChangedEvent>(OnTransmitterChannelsChanged);
         SubscribeLocalEvent<ActiveRadioComponent, EncryptionChannelsChangedEvent>(OnReceiverChannelsChanged);
+        SubscribeLocalEvent<ActiveRadioComponent, EmpPulseEvent>(OnEmpPulse);
+        SubscribeLocalEvent<IntrinsicRadioTransmitterComponent, EmpPulseEvent>(OnEmpPulse);
     }
 
     private void OnTransmitterChannelsChanged(EntityUid uid, IntrinsicRadioTransmitterComponent component, EncryptionChannelsChangedEvent args)
@@ -28,5 +31,23 @@ public sealed class IntrinsicRadioKeySystem : EntitySystem
     {
         channels.Clear();
         channels.UnionWith(component.Channels);
+    }
+
+    private void OnEmpPulse(EntityUid uid, ActiveRadioComponent component, ref EmpPulseEvent args)
+    {
+        if (component.Enabled)
+        {
+            args.Affected = true;
+            args.Disabled = true;
+        }
+    }
+
+    private void OnEmpPulse(EntityUid uid, IntrinsicRadioTransmitterComponent component, ref EmpPulseEvent args)
+    {
+        if (component.Enabled)
+        {
+            args.Affected = true;
+            args.Disabled = true;
+        }
     }
 }
