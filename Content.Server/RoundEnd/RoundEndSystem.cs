@@ -23,6 +23,9 @@ using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
 using Timer = Robust.Shared.Timing.Timer;
 using Content.Server.Announcements.Systems;
+using Content.Server.Voting.Managers;
+using Robust.Server.Player;
+
 
 namespace Content.Server.RoundEnd
 {
@@ -30,7 +33,7 @@ namespace Content.Server.RoundEnd
     /// Handles ending rounds normally and also via requesting it (e.g. via comms console)
     /// If you request a round end then an escape shuttle will be used.
     /// </summary>
-    public sealed class RoundEndSystem : EntitySystem
+    public sealed partial class RoundEndSystem : EntitySystem
     {
         [Dependency] private readonly IAdminLogManager _adminLogger = default!;
         [Dependency] private readonly IConfigurationManager _cfg = default!;
@@ -44,6 +47,9 @@ namespace Content.Server.RoundEnd
         [Dependency] private readonly SharedAudioSystem _audio = default!;
         [Dependency] private readonly StationSystem _stationSystem = default!;
         [Dependency] private readonly AnnouncerSystem _announcer = default!;
+        [Dependency] private readonly IVoteManager _voteManager = default!;
+        [Dependency] private readonly IPlayerManager _playerManager = default!;
+        [Dependency] private readonly ILogManager _logManager = default!;
 
         public TimeSpan DefaultCooldownDuration { get; set; } = TimeSpan.FromSeconds(30);
 
@@ -52,21 +58,38 @@ namespace Content.Server.RoundEnd
         /// </summary>
         public TimeSpan DefaultCountdownDuration { get; set; } = TimeSpan.FromMinutes(10);
 
+        /// <summary>
+        /// How long should a round last until you can no longer recall without admin intervention?
+        /// </summary>
+        public TimeSpan RoundHardEnd { get; set; } = TimeSpan.FromHours(5);
+
+        /// <summary>
+        /// How long before round hard end should the warning be sent?
+        /// </summary>
+        public TimeSpan RoundHardEndWarningTime { get; set; } = TimeSpan.FromMinutes(15);
+
+        /// <summary>
+        /// Should we not allow recall due to round hard end being met?
+        /// </summary>
+        public bool RespectRoundHardEnd { get; set; } = true;
+
         private CancellationTokenSource? _countdownTokenSource = null;
         private CancellationTokenSource? _cooldownTokenSource = null;
         public TimeSpan? LastCountdownStart { get; set; } = null;
         public TimeSpan? ExpectedCountdownEnd { get; set; } = null;
         public TimeSpan? ExpectedShuttleLength => ExpectedCountdownEnd - LastCountdownStart;
         public TimeSpan? ShuttleTimeLeft => ExpectedCountdownEnd - _gameTiming.CurTime;
-
         public TimeSpan AutoCallStartTime;
+
         private bool _autoCalledBefore = false;
 
         public override void Initialize()
         {
             base.Initialize();
             SubscribeLocalEvent<RoundRestartCleanupEvent>(_ => Reset());
+
             SetAutoCallTime();
+            InitializeDen();
         }
 
         private void SetAutoCallTime()
@@ -103,6 +126,7 @@ namespace Content.Server.RoundEnd
             AllEntityQuery<StationEmergencyShuttleComponent, StationDataComponent>().MoveNext(out _, out _, out var data);
             if (data == null)
                 return null;
+
             var targetGrid = _stationSystem.GetLargestGrid(data);
             return targetGrid == null ? null : Transform(targetGrid.Value).MapUid;
         }
@@ -119,7 +143,31 @@ namespace Content.Server.RoundEnd
 
         public bool CanCallOrRecall()
         {
+            var station = GetStation();
+
+            if (station == null)
+                return _cooldownTokenSource == null;
+
+            var ev = new CanCallOrRecallEvent(station.Value);
+            RaiseLocalEvent(ref ev);
+
+            if (ev.Cancelled)
+                return false;
+
             return _cooldownTokenSource == null;
+        }
+
+        public bool CanCallOrRecallIgnoringCooldown()
+        {
+            var station = GetStation();
+
+            if (station == null)
+                return true;
+
+            var ev = new CanCallOrRecallEvent(station.Value);
+            RaiseLocalEvent(ref ev);
+
+            return !ev.Cancelled;
         }
 
         public bool IsRoundEndRequested()
@@ -182,16 +230,32 @@ namespace Content.Server.RoundEnd
                 units = "eta-units-minutes";
             }
 
-            _announcer.SendAnnouncement(_announcer.GetAnnouncementId("ShuttleCalled"),
-                Filter.Broadcast(),
-                text,
-                name,
-                Color.Gold,
-                null,
-                null,
-                ("time", time),
+            if (_gameTicker.RoundDuration() >= RoundHardEnd && RespectRoundHardEnd)
+            {
+                _announcer.SendAnnouncement(_announcer.GetAnnouncementId("ShuttleCalled"),
+                    Filter.Broadcast(),
+                    "round-end-system-shuttle-no-longer-recall",
+                    name,
+                    Color.Gold,
+                    null,
+                    null,
+                    ("time", time),
                     ("units", Loc.GetString(units))
-            );
+                );
+            }
+            else
+            {
+                _announcer.SendAnnouncement(_announcer.GetAnnouncementId("ShuttleCalled"),
+                    Filter.Broadcast(),
+                    text,
+                    name,
+                    Color.Gold,
+                    null,
+                    null,
+                    ("time", time),
+                    ("units", Loc.GetString(units))
+                );
+            }
 
             LastCountdownStart = _gameTiming.CurTime;
             ExpectedCountdownEnd = _gameTiming.CurTime + countdownTime;
@@ -220,10 +284,15 @@ namespace Content.Server.RoundEnd
 
         public void CancelRoundEndCountdown(EntityUid? requester = null, bool checkCooldown = true)
         {
-            if (_gameTicker.RunLevel != GameRunLevel.InRound) return;
-            if (checkCooldown && _cooldownTokenSource != null) return;
+            if (_gameTicker.RunLevel != GameRunLevel.InRound)
+                return;
 
-            if (_countdownTokenSource == null) return;
+            if (checkCooldown && _cooldownTokenSource != null)
+                return;
+
+            if (_countdownTokenSource == null)
+                return;
+
             _countdownTokenSource.Cancel();
             _countdownTokenSource = null;
 
@@ -384,8 +453,8 @@ namespace Content.Server.RoundEnd
             {
                 if (!_shuttle.EmergencyShuttleArrived && ExpectedCountdownEnd is null)
                 {
-                    RequestRoundEnd(null, false, "round-end-system-shuttle-auto-called-announcement");
-                    _autoCalledBefore = true;
+                    var ev = new ShuttleAutoCallAttemptedEvent();
+                    RaiseLocalEvent(ref ev);
                 }
 
                 // Always reset auto-call in case of a recall.
@@ -398,6 +467,12 @@ namespace Content.Server.RoundEnd
     {
         public static RoundEndSystemChangedEvent Default { get; } = new();
     }
+
+    [ByRefEvent]
+    public record struct CanCallOrRecallEvent(EntityUid Station, bool Cancelled = false);
+
+    [ByRefEvent]
+    public record struct ShuttleAutoCallAttemptedEvent;
 
     public enum RoundEndBehavior : byte
     {

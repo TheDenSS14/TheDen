@@ -4545,3 +4545,289 @@ Entries:
   id: 418
   time: '2025-05-25T20:26:41.0000000+00:00'
   url: https://github.com/TheDenSS14/TheDen/pull/592
+- author: BlitzTheSquishy
+  changes:
+    - type: Tweak
+      message: Shadowkin no longer have to be blackeye to be a perma prisoner.
+    - type: Tweak
+      message: Shadowkin can now select psionic traits if they dont have black eyes.
+  id: 419
+  time: '2025-05-26T06:37:19.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/593
+- author: BlitzTheSquishy
+  changes:
+    - type: Tweak
+      message: Healing word nerfed to a level similar, but stronger than tricordrazine.
+    - type: Tweak
+      message: Healing word no longer works on corpses.
+    - type: Tweak
+      message: Breath of Life no longer works on the living.
+  id: 420
+  time: '2025-05-26T07:47:41.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/594
+- author: Savante-Sam
+  changes:
+    - type: Add
+      message: Added Trash Bag of Holding
+    - type: Tweak
+      message: Tweaked Rags to be more versatile, and better at what they're made for.
+    - type: Tweak
+      message: Made the Janibelt able to hold a few more sensible items.
+    - type: Tweak
+      message: >-
+        Made the default trashbag use code from the Orebag to allow belt
+        magnetism.
+    - type: Remove
+      message: Removed a bit of useless (for now) code from Rags
+  id: 421
+  time: '2025-05-26T20:27:59.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/588
+- author: MajorMoth
+  changes:
+    - type: Tweak
+      message: Disposable syringes now inject faster.
+    - type: Tweak
+      message: All prefilled syringes (medkits, etc.) are now the disposable variety.
+    - type: Tweak
+      message: Tweaked the dosages of certain prefilled syringes.
+    - type: Fix
+      message: >-
+        Every autoinjector now injects the entirety of its contents upon use.
+        This is how it was before funkychem.
+    - type: Fix
+      message: >-
+        Standardized the naming convention of prefilled syringes. Should be
+        consistent across the board now. 
+  id: 422
+  time: '2025-05-27T05:53:01.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/596
+- author: MajorMoth
+  changes:
+    - type: Fix
+      message: Added the Rickenbacker to musician loadouts (was missing)
+  id: 423
+  time: '2025-05-27T06:03:21.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/598
+- author: kaminukurumi
+  changes:
+    - type: Add
+      message: >-
+        Royal Plume hairstyle for the space birbs who want to show off their
+        head feathers. Inspired off Starbound Avali's long feathered plume
+        hairstyle
+    - type: Tweak
+      message: >-
+        Resomi right arm and left arm sprites to not overclip each other due to
+        the weird layering resomi always have
+    - type: Tweak
+      message: Resomi hands are in the weird position in layering
+    - type: Tweak
+      message: Resomi ftl's now appropriately show up in marking menu
+    - type: Fix
+      message: Resomi leg feather not appearing; Issue was double marking listed
+  id: 424
+  time: '2025-05-28T02:58:44.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/600
+- author: Lawdog4817
+  changes:
+    - type: Tweak
+      message: Removed cost of the Accentless trait
+  id: 425
+  time: '2025-05-29T00:46:06.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/601
+- author: Wheels
+  changes:
+    - type: Add
+      message: Added 4 new hair styles originally by Cepha
+  id: 426
+  time: '2025-05-29T07:07:13.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/566
+- author: Rosycup
+  changes:
+    - type: Tweak
+      message: >-
+        Thieves are now RP antags, preset objectives replaced with a freeform
+        objective, as well as their pacifism implant removed.
+    - type: Tweak
+      message: Replaced the C4s in the thief toolset with breaching charges.
+  id: 427
+  time: '2025-05-29T07:10:08.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/606
+- author: Rosycup
+  changes:
+    - type: Add
+      message: >-
+        Added the Plasteel Arming Swords from Frontier (Credits to MagnusCrowe),
+        available in the cargo catalog, security loadouts, and the salvage
+        points shop.
+  id: 428
+  time: '2025-05-29T08:54:16.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/607
+- author: Camdot
+  changes:
+    - type: Tweak
+      message: Loadout icons bigger
+  id: 429
+  time: '2025-05-29T14:27:43.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/608
+- author: foxcurl
+  changes:
+    - type: Add
+      message: 'Ported the Synthetic trait from Cosmatic Drift. '
+  id: 430
+  time: '2025-05-29T16:42:28.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/557
+- author: sleepyyapril
+  changes:
+    - type: Add
+      message: Ported fishing.
+  id: 431
+  time: '2025-05-29T18:25:17.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/599
+- author: sleepyyapril
+  changes:
+    - type: Add
+      message: >-
+        Added new game presets: High Danger and Low Danger. Secret, but you can
+        guess what you're getting into.
+    - type: Fix
+      message: Secret will no longer select game presets it can't run.
+    - type: Remove
+      message: 'Removed All At Once, Nuke Ops, and Zombies from votable pool '
+  id: 432
+  time: '2025-05-29T21:22:17.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/604
+- author: Rosycup
+  changes:
+    - type: Tweak
+      message: >-
+        Tweaked the thief toolbox telecrystal from 10 -> 50 as it should have
+        been with the TC rework.
+    - type: Tweak
+      message: >-
+        Tweaked the traitor telecrystal from 100 -> 115 to give them a slight
+        edge.
+  id: 433
+  time: '2025-05-29T21:30:10.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/605
+- author: Camdot
+  changes:
+    - type: Add
+      message: 'Ready-up manifest in lobby. '
+  id: 434
+  time: '2025-05-29T22:42:57.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/609
+- author: kaminukurumi
+  changes:
+    - type: Add
+      message: >-
+        RSI for Resomi version of DeltaV's duravest, riot suit, platecarrier and
+        CD's default cargo winter jacket.
+    - type: Tweak
+      message: Resomi markings' localization files
+  id: 435
+  time: '2025-05-30T01:39:59.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/602
+- author: MajorMoth
+  changes:
+    - type: Fix
+      message: Unathi can yip again.
+  id: 436
+  time: '2025-05-30T19:07:53.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/618
+- author: MajorMoth
+  changes:
+    - type: Tweak
+      message: Chemists now have Hydroponics in their extended access list.
+  id: 437
+  time: '2025-05-30T19:11:32.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/616
+- author: portfiend
+  changes:
+    - type: Add
+      message: >-
+        Ported Delta-V species plushies (Felinid, Oni, Harpy, Rodentia, Feroxi,
+        Chitinid), courtesy of yours truly, with some special Den sauce to it
+  id: 438
+  time: '2025-05-31T01:41:48.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/617
+- author: portfiend
+  changes:
+    - type: Add
+      message: >-
+        Eight different alien-themed markings: four pairs of eyes, three sets of
+        antennae, and a head overlay. Gneep gnorp
+  id: 439
+  time: '2025-05-31T09:38:47.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/622
+- author: Rosycup
+  changes:
+    - type: Remove
+      message: Disabled the Ion damage type as well as all sources of it.
+  id: 440
+  time: '2025-05-31T09:39:21.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/621
+- author: sleepyyapril
+  changes:
+    - type: Remove
+      message: >-
+        Removed Revenants as there is no current way for them to fit in with the
+        direction of The Den as they stand. Looking into replacements.
+  id: 441
+  time: '2025-05-31T09:39:43.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/619
+- author: WallflowerGhost
+  changes:
+    - type: Fix
+      message: Fixed Glacier's Sauna
+  id: 442
+  time: '2025-05-31T19:28:21.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/625
+- author: sleepyyapril
+  changes:
+    - type: Add
+      message: >-
+        Round extension votes are now handled through an OOC vote, before the
+        initial shuttle call is made.
+    - type: Add
+      message: >-
+        Rounds will no longer last 6 hours and are now capped at 5, unless an
+        admin intervenes beforehand.
+  id: 443
+  time: '2025-06-01T02:11:26.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/626
+- author: mart33no
+  changes:
+    - type: Add
+      message: Handheld Atmospherics Monitor
+    - type: Add
+      message: Handheld Power Monitor
+    - type: Tweak
+      message: >-
+        Added both into research upgrades (Power Monitor into Advanced Tools,
+        Atmospherics Monitor into Advanced Atmospherics)
+    - type: Tweak
+      message: Added both into the Advanced Tools module for borgs
+  id: 444
+  time: '2025-06-01T02:13:06.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/623
+- author: sleepyyapril
+  changes:
+    - type: Fix
+      message: Fixed NanoChat Lookup.
+  id: 445
+  time: '2025-06-01T03:08:41.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/629
+- author: Rosycup
+  changes:
+    - type: Add
+      message: >-
+        Added a katana sheath fit for a single katana, available in the salvage
+        specialist loadout for veterans in the workplace.
+    - type: Tweak
+      message: >-
+        Tweaked some stats for the crushers and kinetic weapons with overall
+        improvements, view PR for details.
+  id: 446
+  time: '2025-06-01T03:32:11.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/613

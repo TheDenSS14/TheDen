@@ -40,6 +40,11 @@ namespace Content.Server.Voting
         public List<(string text, object data)> Options { get; set; } = new();
 
         /// <summary>
+        ///     Whether the iconic vote sound should play or not.
+        /// </summary>
+        public bool PlayVoteSound { get; set; } = true;
+
+        /// <summary>
         ///     Sets <see cref="InitiatorPlayer"/> and <see cref="InitiatorText"/>
         ///     by setting the latter to the player's name.
         /// </summary>
