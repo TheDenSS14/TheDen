@@ -13,10 +13,12 @@ public sealed class ToggleHardEndCommand : IConsoleCommand
 
     public void Execute(IConsoleShell shell, string argStr, string[] args)
     {
-        var roundEndSystem = IoCManager.Resolve<RoundEndSystem>();
+        var sysManager = IoCManager.Resolve<IEntitySystemManager>();
+        var roundEndSystem = sysManager.GetEntitySystem<RoundEndSystem>();
         roundEndSystem.RespectRoundHardEnd = !roundEndSystem.RespectRoundHardEnd;
+        roundEndSystem.UpdateRoundEnd();
 
-        var toggled = roundEndSystem.RespectRoundHardEnd ? "will now " : "will no longer ";
+        var toggled = roundEndSystem.RespectRoundHardEnd ? "will now" : "will no longer";
         shell.WriteLine($"The round {toggled} end when hard end is reached.");
     }
 }
