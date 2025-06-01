@@ -443,3 +443,13 @@
       visible: false
   - type: Battery
     startingCharge: 0
+
+- type: entity
+  id: PowerCellIPC
+  parent: PowerCellHyper
+  name: IPC Power Cell
+  description: A powercell for an IPC! This cell has a unique EMP resistant casing. This should be in an IPC.
+  components:
+  - type: Item
+    size: Normal
+  - type: EmpImmune

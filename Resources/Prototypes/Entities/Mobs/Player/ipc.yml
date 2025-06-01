@@ -11,10 +11,8 @@
     slots:
       cell_slot:
         name: power-cell-slot-component-slot-name-default
-        startingItem: PowerCellMedium
-  - type: ItemSlotsRequirePanel
-    slots:
-      cell_slot: true
+        startingItem: PowerCellIPC
+        disableEject: true
   - type: EncryptionHolderRequiresLock
   - type: SiliconEmitSoundOnDrained
     sound: "/Audio/Weapons/Guns/EmptyAlarm/smg_empty_alarm.ogg"
@@ -42,10 +40,6 @@
       - Critical
       - Dead
   - type: MobThresholds
-    thresholds:
-      0: Alive
-      119.999: Critical # TO make it almost impossible
-      120: Dead
     stateAlertDict:
       Alive: BorgHealth
       Critical: BorgCrit
@@ -60,11 +54,6 @@
           damage: 400
         behaviors:
           - !type:GibBehavior { }
-  - type: SlowOnDamage
-    speedModifierThresholds:
-      60: 0.75
-      90: 0.5
-      120: 0.3
   - type: SiliconDownOnDead
   - type: Inventory
     templateId: ipc
