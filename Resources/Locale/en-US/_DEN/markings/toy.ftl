@@ -34,10 +34,14 @@ marking-OverlayPlushSeamsArachne = Plush Seams (Upper Body)
 marking-OverlayPlushSeamsArachne-arachne = Seam
 
 marking-OverlayPlushSeamsHarpy = Plush Seams (Harpy)
-marking-OverlayPlushSeamsHarpy-human = Seam
+marking-OverlayPlushSeamsHarpy-harpy = Seam
+marking-OverlayPlushSeamsHarpyFeet = Plush Seams (Harpy Feet)
+marking-OverlayPlushSeamsHarpyFeet-harpy_feet = Seam
 
 marking-OverlayPlushSeamsVox = Plush Seams (Vox)
-marking-OverlayPlushSeamsVox-human = Seam
+marking-OverlayPlushSeamsVox-vox = Seam
+marking-OverlayPlushSeamsVoxFeet = Plush Seams (Vox Feet)
+marking-OverlayPlushSeamsVoxFeet-vox_feet = Seam
 
 # Accessories
 

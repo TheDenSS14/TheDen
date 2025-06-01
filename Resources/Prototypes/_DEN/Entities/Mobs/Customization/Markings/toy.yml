@@ -203,7 +203,21 @@
       fallbackColor: "#666666"
   sprites:
   - sprite: _DEN/Mobs/Customization/Body/Toy/seams.rsi
-    state: human # TODO
+    state: harpy
+
+- type: marking
+  id: OverlayPlushSeamsHarpyFeet
+  bodyPart: RFoot
+  markingCategory: Overlay
+  speciesRestriction: [ Harpy ]
+  coloring:
+    default:
+      type:
+        !type:TattooColoring
+      fallbackColor: "#666666"
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Body/Toy/seams.rsi
+    state: harpy_feet
 
 - type: marking
   id: OverlayPlushSeamsVox
@@ -217,7 +231,21 @@
       fallbackColor: "#666666"
   sprites:
   - sprite: _DEN/Mobs/Customization/Body/Toy/seams.rsi
-    state: human # TODO
+    state: vox # TODO
+
+- type: marking
+  id: OverlayPlushSeamsVoxFeet
+  bodyPart: RFoot
+  markingCategory: Overlay
+  speciesRestriction: [ Vox ]
+  coloring:
+    default:
+      type:
+        !type:TattooColoring
+      fallbackColor: "#666666"
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Body/Toy/seams.rsi
+    state: vox_feet
 
 # TODO: Plush seams for Resomi. Don't feel like making it for plasmaman and diona.
 
@@ -302,7 +330,7 @@
   id: OverlayPlushBellyF
   bodyPart: Chest
   markingCategory: Chest
-  speciesRestriction: [ Diona, Resomi, Vox ]
+  speciesRestriction: [ Diona, Resomi ]
   invertSpeciesRestriction: true
   coloring:
     default:
@@ -317,7 +345,7 @@
   id: OverlayPlushBellyM
   bodyPart: Chest
   markingCategory: Chest
-  speciesRestriction: [ Diona, Resomi, Vox ]
+  speciesRestriction: [ Diona, Resomi ]
   invertSpeciesRestriction: true
   coloring:
     default:
