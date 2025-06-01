@@ -1,0 +1,18 @@
+- type: entity
+  id: ActionHypno
+  name: action-name-hypno
+  description: action-description-hypno
+  categories: [ HideSpawnMenu ]
+  components:
+    - type: EntityTargetAction
+      icon: _Floof/Interface/Actions/hypno.png
+      useDelay: 45
+      checkCanAccess: false
+      range: 8
+      itemIconStyle: BigAction
+      canTargetSelf: false
+      blacklist:
+        components:
+          - PsionicInsulation
+          - Mindbroken
+      event: !type:HypnoPowerActionEvent

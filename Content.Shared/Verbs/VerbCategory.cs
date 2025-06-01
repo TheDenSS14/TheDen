@@ -109,6 +109,6 @@ namespace Content.Shared.Verbs
         public static readonly VerbCategory Interaction = new("verb-categories-interaction");
 
         public static readonly VerbCategory BloodSpells = new("verb-categories-blood-cult",
-            new SpriteSpecifier.Rsi(new ResPath("/Textures/WhiteDream/BloodCult/actions.rsi"), "blood_spells"));
+            new SpriteSpecifier.Rsi(new ResPath("/Textures/_White/BloodCult/actions.rsi"), "blood_spells"));
     }
 }

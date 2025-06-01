@@ -103,23 +103,6 @@ public sealed partial class NanoChatUiFragment : BoxContainer
         };
 
         MessageInput.OnTextEntered += _ => SendMessage();
-        LookupButton.OnPressed += _ => ToggleView();
-        LookupView.OnStartChat += contact =>
-        {
-            if (ActionSendUiMessage is { } handler)
-            {
-                handler(NanoChatUiMessageType.NewChat, contact.Number, contact.Name, contact.JobTitle);
-                SelectChat(contact.Number);
-                ToggleView();
-            }
-        };
-        ListNumberButton.OnPressed += _ =>
-        {
-            _listNumber = !_listNumber;
-            UpdateListNumber();
-            ActionSendUiMessage?.Invoke(NanoChatUiMessageType.ToggleListNumber, null, null, null);
-        };
-
         SendButton.OnPressed += _ => SendMessage();
         EditChatButton.OnPressed += _ => BeginEditChat();
         DeleteChatButton.OnPressed += _ => DeleteCurrentChat();

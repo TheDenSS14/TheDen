@@ -271,7 +271,7 @@
   parent: BaseItem
   name: damp rag
   id: RagItem
-  description: For cleaning up messes, you suppose. Never seems to dry out fully. 
+  description: For cleaning up messes, you suppose. Never seems to dry out fully.
   components:
     - type: Sprite
       sprite: Objects/Specific/Janitorial/rag.rsi
@@ -279,9 +279,9 @@
     - type: Spillable
       solution: absorbed
     - type: MeleeWeapon
-      soundHit: 
-        path: "/Audio/Floof/Lewd/whip.ogg" 
-      animation: WeaponArcThrust 
+      soundHit:
+        path: "/Audio/_Floof/Lewd/whip.ogg"
+      animation: WeaponArcThrust
       wideAnimationRotation: -90
       maxTargets: 1
       damage:
@@ -310,22 +310,22 @@
       butcheringType: Knife
       spawned:
       - id: MaterialCloth1
-        amount: 1  
+        amount: 1
     - type: Item
       size: Small
       sprite: Objects/Specific/Janitorial/rag.rsi
     - type: Absorbent
-      pickupAmount: 30 
+      pickupAmount: 30
     - type: Construction
       graph: Rag
       node: rag
     - type: SolutionContainerManager
       solutions:
         absorbed:
-          maxVol: 30 
+          maxVol: 30
     - type: PaintRemover
     - type: UseDelay
-      delay: 1.25 
+      delay: 1.25
     - type: Tag
       tags:
         - Mop

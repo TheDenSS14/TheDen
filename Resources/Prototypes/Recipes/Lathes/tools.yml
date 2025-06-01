@@ -158,6 +158,32 @@
     Circuitry: 50
 
 - type: latheRecipe
+  id: HandHeldAtmosMonitor
+  result: HandHeldAtmosMonitorEmpty
+  icon:
+    sprite: _DEN/Objects/Tools/handheld_atmospherics_monitor.rsi
+    state: icon
+  category: Tools
+  completetime: 2
+  materials:
+    Aluminum: 600
+    Glass: 200
+    Circuitry: 50
+
+- type: latheRecipe
+  id: HandHeldPowerMonitor
+  result: HandHeldPowerMonitorEmpty
+  icon:
+    sprite: _DEN/Objects/Tools/handheld_power_monitor.rsi
+    state: icon
+  category: Tools
+  completetime: 2
+  materials:
+    Aluminum: 600
+    Glass: 200
+    Circuitry: 50
+
+- type: latheRecipe
   id: HandheldGPSBasic
   result: HandheldGPSBasic
   category: Tools

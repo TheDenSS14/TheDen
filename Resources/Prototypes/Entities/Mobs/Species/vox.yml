@@ -118,4 +118,14 @@
     species: Vox
   - type: Body
     prototype: Vox
-
+  - type: Inventory
+    speciesId: vox
+    displacements:
+      jumpsuit:
+        layer:
+          sprite: Mobs/Species/Vox/displacement.rsi
+          state: jumpsuit
+          copyToShaderParameters:
+            layerKey: dummy
+            parameterTexture: displacementMap
+            parameterUV: displacementUV

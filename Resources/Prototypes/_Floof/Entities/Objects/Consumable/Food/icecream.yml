@@ -1,0 +1,712 @@
+- type: entity
+  parent: FoodBase
+  id: IceCreamBowlBase
+  abstract: true
+  components:
+  - type: Item
+  - type: Food
+    trash:
+    - IceCreamBowl
+    utensil: Spoon
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 50
+        reagents:
+        - ReagentId: IceCream
+          Quantity: 30
+  - type: Sprite
+    sprite: _Floof/Objects/Consumable/Food/icecream.rsi
+    layers:
+    - state: bowl
+  - type: DamageOnLand
+    damage:
+      types:
+        Blunt: 5
+  - type: DamageOtherOnHit
+    damage:
+      types:
+        Blunt: 5
+  - type: Spillable
+    solution: food
+  # ice cream weapon!
+  - type: MeleeWeapon
+    soundNoDamage:
+      path: "/Audio/Effects/Fluids/splat.ogg"
+    damage:
+      types:
+        Blunt: 0
+  - type: Damageable
+    damageContainer: Inorganic
+  - type: Tag
+    tags:
+    - IceCream
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 5
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: GlassBreak
+          params:
+            volume: -8
+      - !type:SpillBehavior { }
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          FoodBowlBigTrash:
+            min: 1
+            max: 1
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+
+- type: entity
+  name: blood drop
+  parent: IceCreamBowlBase
+  id: IceCreamBloodDrop
+  description: Deep, dark delight with a crimson finish. Favorite snack of every vampire.
+  components:
+  - type: FlavorProfile
+    flavors:
+    - blooddrop
+  - type: Sprite
+    sprite: _Floof/Objects/Consumable/Food/icecream.rsi
+    layers:
+    - state: blooddrop
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 50
+        reagents:
+        - ReagentId: IceCream
+          Quantity: 20
+        - ReagentId: Nutriment
+          Quantity: 5
+        - ReagentId: Blood
+          Quantity: 20
+
+- type: entity
+  name: caramel ice cream
+  parent: IceCreamBowlBase
+  id: IceCreamCaramel
+  description: Creamy vanilla ice cream swirled with rich, velvety caramel, creating luscious ribbons of golden sweetness in every bite.
+  components:
+  - type: FlavorProfile
+    flavors:
+    - creamy
+    - caramel
+  - type: Sprite
+    sprite: _Floof/Objects/Consumable/Food/icecream.rsi
+    layers:
+    - state: caramel
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 50
+        reagents:
+        - ReagentId: IceCream
+          Quantity: 22
+        - ReagentId: Nutriment
+          Quantity: 22
+
+- type: entity
+  name: coffee ice cream
+  parent: IceCreamBowlBase
+  id: IceCreamCoffee
+  description: Silky ice cream with deep aromatic coffee and crunchy coffee beans.
+  components:
+  - type: FlavorProfile
+    flavors:
+    - coffee
+  - type: Sprite
+    sprite: _Floof/Objects/Consumable/Food/icecream.rsi
+    layers:
+    - state: coffee
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 50
+        reagents:
+        - ReagentId: IceCream
+          Quantity: 22
+        - ReagentId: Nutriment
+          Quantity: 22
+
+- type: entity
+  name: greentea ice cream
+  parent: IceCreamBowlBase
+  id: IceCreamGreenTea
+  description: Mildly sweet with the authentic taste of green tea.
+  components:
+  - type: FlavorProfile
+    flavors:
+    - sweet
+    - tea
+  - type: Sprite
+    sprite: _Floof/Objects/Consumable/Food/icecream.rsi
+    layers:
+    - state: greentea
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 50
+        reagents:
+        - ReagentId: IceCream
+          Quantity: 22
+        - ReagentId: Nutriment
+          Quantity: 22
+
+- type: entity
+  name: lemon ice cream
+  parent: IceCreamBowlBase
+  id: IceCreamLemon
+  description: Sweet delight with a burst of citrusy freshness.
+  components:
+  - type: FlavorProfile
+    flavors:
+    - sweet
+    - sour
+  - type: Sprite
+    sprite: _Floof/Objects/Consumable/Food/icecream.rsi
+    layers:
+    - state: lemon
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 50
+        reagents:
+        - ReagentId: IceCream
+          Quantity: 22
+        - ReagentId: Nutriment
+          Quantity: 22
+
+- type: entity
+  name: orange ice cream
+  parent: IceCreamBowlBase
+  id: IceCreamOrange
+  description: Deliciously creamy with a juicy, orange twist.
+  components:
+  - type: FlavorProfile
+    flavors:
+    - sweet
+    - orange
+  - type: Sprite
+    sprite: _Floof/Objects/Consumable/Food/icecream.rsi
+    layers:
+    - state: orange
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 50
+        reagents:
+        - ReagentId: IceCream
+          Quantity: 22
+        - ReagentId: Nutriment
+          Quantity: 22
+
+- type: entity
+  name: rainbow ice cream
+  parent: IceCreamBowlBase
+  id: IceCreamRainbow
+  description: Colorful layers of lemon, grape and orange ice cream fruity goodness, topped with rainbow sprinkles.
+  components:
+  - type: FlavorProfile
+    flavors:
+    - sweet
+    - orange
+    - grape
+    - sour
+  - type: Sprite
+    sprite: _Floof/Objects/Consumable/Food/icecream.rsi
+    layers:
+    - state: rainbow
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 50
+        reagents:
+        - ReagentId: IceCream
+          Quantity: 22
+        - ReagentId: Nutriment
+          Quantity: 22
+
+- type: entity
+  name: salted caramel ice cream
+  parent: IceCreamBowlBase
+  id: IceCreamSaltedCaramel
+  description: Rich, buttery caramel with a perfect hint of sea salt.
+  components:
+  - type: FlavorProfile
+    flavors:
+    - salty
+    - caramel
+    - creamy
+  - type: Sprite
+    sprite: _Floof/Objects/Consumable/Food/icecream.rsi
+    layers:
+    - state: saltedcaramel
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 50
+        reagents:
+        - ReagentId: IceCream
+          Quantity: 22
+        - ReagentId: Nutriment
+          Quantity: 22
+
+
+- type: entity
+  name: spaghetti ice cream
+  parent: IceCreamBowlBase
+  id: IceCreamSpaghetti
+  description: spaghetti vanilla ice cream topped with sweet strawberry sauce with a dusting of white chocolate.
+  components:
+  - type: FlavorProfile
+    flavors:
+    - whitechocolatechip
+    - vanilla
+    - strawberry
+  - type: Sprite
+    sprite: _Floof/Objects/Consumable/Food/icecream.rsi
+    layers:
+    - state: spaghetti
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 50
+        reagents:
+        - ReagentId: IceCream
+          Quantity: 22
+        - ReagentId: Nutriment
+          Quantity: 22
+
+- type: entity
+  name: strawberry ice cream
+  parent: IceCreamBowlBase
+  id: IceCreamStrawberry
+  description: Velvety ice cream loaded with delightful bits of fresh strawberries.
+  components:
+  - type: FlavorProfile
+    flavors:
+    - strawberry
+  - type: Sprite
+    sprite: _Floof/Objects/Consumable/Food/icecream.rsi
+    layers:
+    - state: strawberry
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 50
+        reagents:
+        - ReagentId: IceCream
+          Quantity: 22
+        - ReagentId: Nutriment
+          Quantity: 22
+
+- type: entity
+  name: bananasplit ice cream
+  parent: IceCreamBowlBase
+  id: IceCreamBananaSplit
+  description: A split banana cradles scoops of chocolate, vanilla, and strawberry ice cream, drizzled with rich chocolate sauce and topped with bright cherries.
+  components:
+  - type: FlavorProfile
+    flavors:
+    - strawberry
+    - banana
+    - chocolate
+    - vanilla
+  - type: Sprite
+    sprite: _Floof/Objects/Consumable/Food/icecream.rsi
+    layers:
+    - state: bananasplit
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 50
+        reagents:
+        - ReagentId: IceCream
+          Quantity: 22
+        - ReagentId: Nutriment
+          Quantity: 22
+
+- type: entity
+  name: chocolate ice cream
+  parent: IceCreamBowlBase
+  id: IceCreamChoco
+  description: Velvety chocolate ice cream with chunks of chocolate fudge.
+  components:
+  - type: FlavorProfile
+    flavors:
+    - chocolate
+  - type: Sprite
+    sprite: _Floof/Objects/Consumable/Food/icecream.rsi
+    layers:
+    - state: choco
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 50
+        reagents:
+        - ReagentId: IceCream
+          Quantity: 22
+        - ReagentId: Nutriment
+          Quantity: 22
+
+- type: entity
+  name: coconut ice cream
+  parent: IceCreamBowlBase
+  id: IceCreamCoconut
+  description: Nutty, creamy, and laced with flakes for coconut.
+  components:
+  - type: FlavorProfile
+    flavors:
+    - coconut
+  - type: Sprite
+    sprite: _Floof/Objects/Consumable/Food/icecream.rsi
+    layers:
+    - state: coconut
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 50
+        reagents:
+        - ReagentId: IceCream
+          Quantity: 22
+        - ReagentId: Nutriment
+          Quantity: 22
+
+- type: entity
+  name: cosmos ice cream
+  parent: IceCreamBowlBase
+  id: IceCreamCosmos
+  description: The essence of the cosmos distilled and blended together with ice cream.
+  components:
+  - type: FlavorProfile
+    flavors:
+    - space time
+  - type: Sprite
+    sprite: _Floof/Objects/Consumable/Food/icecream.rsi
+    layers:
+    - state: cosmos
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 50
+        reagents:
+        - ReagentId: IceCream
+          Quantity: 22
+        - ReagentId: Nutriment
+          Quantity: 22
+
+- type: entity
+  name: gilded ice cream
+  parent: IceCreamBowlBase
+  id: IceCreamGilded
+  description: Golden-hued luxury with honey-kissed cream and shimmer.
+  components:
+  - type: FlavorProfile
+    flavors:
+    - gold
+    - silver
+    - mining
+  - type: Sprite
+    sprite: _Floof/Objects/Consumable/Food/icecream.rsi
+    layers:
+    - state: gilded
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 50
+        reagents:
+        - ReagentId: IceCream
+          Quantity: 22
+        - ReagentId: Nutriment
+          Quantity: 22
+
+- type: entity
+  name: hazelnut ice cream
+  parent: IceCreamBowlBase
+  id: IceCreamHazelnut
+  description: Silky-smooth with the toasty essence of roasted hazelnuts.
+  components:
+  - type: FlavorProfile
+    flavors:
+    - hazelnut
+  - type: Sprite
+    sprite: _Floof/Objects/Consumable/Food/icecream.rsi
+    layers:
+    - state: hazelnut
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 50
+        reagents:
+        - ReagentId: IceCream
+          Quantity: 22
+        - ReagentId: Nutriment
+          Quantity: 22
+
+- type: entity
+  name: lover's delight ice cream
+  parent: IceCreamBowlBase
+  id: IceCreamLoversDelight
+  description:
+  components:
+  - type: FlavorProfile
+    flavors:
+    - strawberry
+    - lust
+    - chocolate
+  - type: Sprite
+    sprite: _Floof/Objects/Consumable/Food/icecream.rsi
+    layers:
+    - state: loversdelight
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 50
+        reagents:
+        - ReagentId: IceCream
+          Quantity: 22
+        - ReagentId: Nutriment
+          Quantity: 22
+
+- type: entity
+  name: mint chocolate ice cream
+  parent: IceCreamBowlBase
+  id: IceCreamMintChoco
+  description: Mint and chocolate ice cream, laced with rich dark chocolate chunk.
+  components:
+  - type: FlavorProfile
+    flavors:
+    - chocolate
+    - mint
+  - type: Sprite
+    sprite: _Floof/Objects/Consumable/Food/icecream.rsi
+    layers:
+    - state: mintchoco
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 50
+        reagents:
+        - ReagentId: IceCream
+          Quantity: 22
+        - ReagentId: Nutriment
+          Quantity: 22
+
+- type: entity
+  name: solar ice cream
+  parent: IceCreamBowlBase
+  id: IceCreamSolar
+  description: a stellar core, condensed, frozen and served ice cold. Somehow it's still burning.
+  components:
+  - type: FlavorProfile
+    flavors:
+    - star
+  - type: Sprite
+    sprite: _Floof/Objects/Consumable/Food/icecream.rsi
+    layers:
+    - state: napalm
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 50
+        reagents:
+        - ReagentId: IceCream
+          Quantity: 22
+        - ReagentId: Nutriment
+          Quantity: 22
+
+- type: entity
+  name: nebula ice cream
+  parent: IceCreamBowlBase
+  id: IceCreamNebula
+  description: harvested from a collapsing cloud of dust right before the formation of a new star.
+  components:
+  - type: FlavorProfile
+    flavors:
+    - strawberry
+  - type: Sprite
+    sprite: _Floof/Objects/Consumable/Food/icecream.rsi
+    layers:
+    - state: nebula
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 50
+        reagents:
+        - ReagentId: IceCream
+          Quantity: 22
+        - ReagentId: Nutriment
+          Quantity: 22
+
+
+- type: entity
+  name: neapolitan ice cream
+  parent: IceCreamBowlBase
+  id: IceCreamNeapolitan
+  description: Thick layers of chocolate, strawberry, and vanilla.
+  components:
+  - type: FlavorProfile
+    flavors:
+    - strawberry
+    - chocolate
+    - vanilla
+  - type: Sprite
+    sprite: _Floof/Objects/Consumable/Food/icecream.rsi
+    layers:
+    - state: neapolitan
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 50
+        reagents:
+        - ReagentId: IceCream
+          Quantity: 22
+        - ReagentId: Nutriment
+          Quantity: 22
+
+- type: entity
+  name: rocky road ice cream
+  parent: IceCreamBowlBase
+  id: IceCreamRockyRoad
+  description: gooey marshmallows, and crunchy nuts served in rich chocolate fudge ice cream.
+  components:
+  - type: FlavorProfile
+    flavors:
+    - marshmallow
+    - nuts
+    - chocolate
+  - type: Sprite
+    sprite: _Floof/Objects/Consumable/Food/icecream.rsi
+    layers:
+    - state: rockyroad
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 50
+        reagents:
+        - ReagentId: IceCream
+          Quantity: 22
+        - ReagentId: Nutriment
+          Quantity: 22
+
+- type: entity
+  name: starlight ice cream
+  parent: IceCreamBowlBase
+  id: IceCreamStarlight
+  description: Strands of starlight harvested over eons ground up and mixed with void ice cream.
+  components:
+  - type: FlavorProfile
+    flavors:
+    - strawberry
+  - type: Sprite
+    sprite: _Floof/Objects/Consumable/Food/icecream.rsi
+    layers:
+    - state: starlight
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 50
+        reagents:
+        - ReagentId: IceCream
+          Quantity: 22
+        - ReagentId: Nutriment
+          Quantity: 22
+
+- type: entity
+  name: vanilla ice cream
+  parent: IceCreamBowlBase
+  id: IceCreamVanilla
+  description: Sweet and simple, a timeless classic that never disappoints.
+  components:
+  - type: FlavorProfile
+    flavors:
+    - vanilla
+  - type: Sprite
+    sprite: _Floof/Objects/Consumable/Food/icecream.rsi
+    layers:
+    - state: vanilla
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 50
+        reagents:
+        - ReagentId: IceCream
+          Quantity: 22
+        - ReagentId: Nutriment
+          Quantity: 22
+
+- type: entity
+  name: void ice cream
+  parent: IceCreamBowlBase
+  id: IceCreamVoid
+  description: Taste the heat death of the universe in every bite.
+  components:
+  - type: FlavorProfile
+    flavors:
+    - nothing
+    - emptiness
+    - despair
+  - type: Sprite
+    sprite: _Floof/Objects/Consumable/Food/icecream.rsi
+    layers:
+    - state: void
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 50
+        reagents:
+        - ReagentId: IceCream
+          Quantity: 22
+        - ReagentId: Nutriment
+          Quantity: 22
+
+- type: entity
+  name: walnut ice cream
+  parent: IceCreamBowlBase
+  id: IceCreamWalnut
+  description: Creamy and nutty with the perfect crunch of toasted walnuts.
+  components:
+  - type: FlavorProfile
+    flavors:
+    - walnut
+  - type: Sprite
+    sprite: _Floof/Objects/Consumable/Food/icecream.rsi
+    layers:
+    - state: walnut
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 50
+        reagents:
+        - ReagentId: IceCream
+          Quantity: 22
+        - ReagentId: Nutriment
+          Quantity: 22
+
+- type: entity
+  name: watermelon ice cream
+  parent: IceCreamBowlBase
+  id: IceCreamWatermelon
+  description: Bursting with tangy sweetness, perfect for cooling off on a hot day.
+  components:
+  - type: FlavorProfile
+    flavors:
+    - watermelon
+  - type: Sprite
+    sprite: _Floof/Objects/Consumable/Food/icecream.rsi
+    layers:
+    - state: watermelon
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 50
+        reagents:
+        - ReagentId: IceCream
+          Quantity: 22
+        - ReagentId: Nutriment
+          Quantity: 22
