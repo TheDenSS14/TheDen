@@ -2,7 +2,7 @@
   name: bible
   description: New Interstellar Version 2340
   parent: BaseStorageItem
-  id: Bible
+  id: HolyBookBible #Den - changing the id of this and related items to start with "HolyBook" as opposed to "Bible" so we don't end up with "BibleQuran" or "BibleTanakh" for example
   components:
   - type: UseDelay
     delay: 10.0
@@ -65,7 +65,7 @@
   parent: Bible
   name: necronomicon
   description: "There's a note: Klatuu, Verata, Nikto -- Don't forget it again!"
-  id: BibleNecronomicon
+  id: HolyBookNecronomicon #den- changed "Bible" to "HolyBook"
   components:
   - type: Bible
     damage:

@@ -18,7 +18,35 @@
       jobs:
         - Chaplain
   items:
-    - Bible
+    - HolyBookBible
+    
+- type: loadout
+  id: LoadoutChaplainQuran
+  category: JobsEpistemicsChaplain
+  cost: 0
+  exclusive: true
+  requirements:
+     - !type:CharacterItemGroupRequirement
+      group: LoadoutChaplainEquipment
+    - !type:CharacterJobRequirement
+      jobs:
+        - Chaplain
+  items:
+    - HolyBookQuran
+    
+ - type: loadout
+  id: LoadoutChaplainTanakh
+  category: JobsEpistemicsChaplain
+  cost: 0
+  exclusive: true
+  requirements:
+     - !type:CharacterItemGroupRequirement
+      group: LoadoutChaplainEquipment
+    - !type:CharacterJobRequirement
+      jobs:
+        - Chaplain
+  items:
+    - HolyBookTanakh
 
 - type: loadout
   id: LoadoutChaplainStamp
