@@ -1,5 +1,5 @@
 - type: entity
-  parent: [ClothingBeltStorageBase, ClothingSlotBase]
+  parent: [ClothingBeltBase, ClothingSlotBase]
   id: ClothingBeltKatanaSheathSingle
   name: katana sheath
   description: An ornate belt designed to hold a katana. Earned through experience and hard work.
@@ -9,6 +9,8 @@
     state: sheath
   - type: Clothing
     sprite: _DEN/Clothing/Belt/katanasheathsingle.rsi
+  - type: Item
+    size: Large
   - type: ItemSlots
     slots:
       item:
