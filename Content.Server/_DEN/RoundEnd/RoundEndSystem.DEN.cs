@@ -60,7 +60,7 @@ public sealed partial class RoundEndSystem
 
         var votedYes = (bool) args.Winner;
 
-        if (votedYes || !CanCallOrRecallIgnoringCooldown())
+        if (votedYes)
             return;
 
         RequestRoundEnd(null, false, "round-end-system-shuttle-auto-called-announcement");

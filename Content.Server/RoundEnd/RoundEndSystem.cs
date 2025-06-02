@@ -61,7 +61,7 @@ namespace Content.Server.RoundEnd
         /// <summary>
         /// How long should a round last until you can no longer recall without admin intervention?
         /// </summary>
-        public TimeSpan RoundHardEnd { get; set; } = TimeSpan.FromHours(5) + TimeSpan.FromMinutes(10);
+        public TimeSpan RoundHardEnd { get; set; } = TimeSpan.FromHours(5);
 
         /// <summary>
         /// How long before round hard end should the warning be sent?
@@ -82,6 +82,7 @@ namespace Content.Server.RoundEnd
         public TimeSpan AutoCallStartTime;
 
         private bool _autoCalledBefore = false;
+        private bool _roundEndShuttleCalled = false;
 
         public override void Initialize()
         {
@@ -449,6 +450,15 @@ namespace Content.Server.RoundEnd
 
         public override void Update(float frameTime)
         {
+            if (_roundEndShuttleCalled)
+                return;
+
+            if (_gameTicker.RoundDuration() > RoundHardEnd)
+            {
+                RequestRoundEnd(checkCooldown: false);
+                _roundEndShuttleCalled = true;
+            }
+
             // Check if we should auto-call.
             int mins = _autoCalledBefore ? _cfg.GetCVar(CCVars.EmergencyShuttleAutoCallExtensionTime)
                                         : _cfg.GetCVar(CCVars.EmergencyShuttleAutoCallTime);
