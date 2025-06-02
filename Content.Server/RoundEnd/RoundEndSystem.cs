@@ -453,12 +453,15 @@ namespace Content.Server.RoundEnd
             if (_roundEndShuttleCalled)
                 return;
 
-            if (_gameTicker.RoundDuration() > RoundHardEnd)
+            if (_gameTicker.RoundDuration() > RoundHardEnd && RespectRoundHardEnd)
             {
+                UpdateRoundEnd();
                 RequestRoundEnd(checkCooldown: false);
                 _roundEndShuttleCalled = true;
                 return;
             }
+
+            UpdateForWarning();
 
             // Check if we should auto-call.
             int mins = _autoCalledBefore ? _cfg.GetCVar(CCVars.EmergencyShuttleAutoCallExtensionTime)

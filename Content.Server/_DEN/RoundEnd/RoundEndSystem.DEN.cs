@@ -14,37 +14,22 @@ public sealed partial class RoundEndSystem
 {
     private CancellationTokenSource? _timerCancellation;
 
+    private bool _hasHardEndWarningRun;
+
     private void InitializeDen()
     {
         SubscribeLocalEvent<CanCallOrRecallEvent>(CheckIfCanCallOrRecall);
-        SubscribeLocalEvent<RoundStartingEvent>(OnRoundStartingEvent);
-    }
-
-    private void OnRoundStartingEvent(RoundStartingEvent ev) => InitializeHardEndTimer();
-
-    private void ResetHardEndTimer()
-    {
-        if (_timerCancellation != null)
-        {
-            _timerCancellation.Cancel();
-            _timerCancellation = null;
-        }
     }
 
     private TimeSpan WarnAt() => RoundHardEnd - RoundHardEndWarningTime;
 
-    private void InitializeHardEndTimer()
+    private void UpdateForWarning()
     {
-        if (_timerCancellation != null)
-        {
-            _timerCancellation.Cancel();
-            _timerCancellation = null;
-        }
+        if (_hasHardEndWarningRun || _gameTicker.RoundDuration() < WarnAt())
+            return;
 
-        _timerCancellation = new();
-
-        Timer.Spawn(WarnAt(), SendWarningAnnouncement, _timerCancellation.Token);
-        Timer.Spawn(RoundHardEnd, UpdateRoundEnd, _timerCancellation.Token);
+        _hasHardEndWarningRun = true;
+        SendWarningAnnouncement();
     }
 
     private void CheckIfCanCallOrRecall(ref CanCallOrRecallEvent ev)
