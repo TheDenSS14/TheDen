@@ -73,16 +73,16 @@ namespace Content.Server.RoundEnd
         /// </summary>
         public bool RespectRoundHardEnd { get; set; } = true;
 
-        private CancellationTokenSource? _countdownTokenSource = null;
-        private CancellationTokenSource? _cooldownTokenSource = null;
-        public TimeSpan? LastCountdownStart { get; set; } = null;
-        public TimeSpan? ExpectedCountdownEnd { get; set; } = null;
+        private CancellationTokenSource? _countdownTokenSource;
+        private CancellationTokenSource? _cooldownTokenSource;
+        public TimeSpan? LastCountdownStart { get; set; }
+        public TimeSpan? ExpectedCountdownEnd { get; set; }
         public TimeSpan? ExpectedShuttleLength => ExpectedCountdownEnd - LastCountdownStart;
         public TimeSpan? ShuttleTimeLeft => ExpectedCountdownEnd - _gameTiming.CurTime;
         public TimeSpan AutoCallStartTime;
 
-        private bool _autoCalledBefore = false;
-        private bool _roundEndShuttleCalled = false;
+        private bool _autoCalledBefore;
+        private bool _roundEndShuttleCalled;
 
         public override void Initialize()
         {
