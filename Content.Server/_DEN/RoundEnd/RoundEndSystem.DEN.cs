@@ -72,9 +72,6 @@ public sealed partial class RoundEndSystem
     /// </summary>
     private void CreateAutoCallVote()
     {
-        if (!CanCallOrRecallIgnoringCooldown())
-            return;
-
         var alone = _playerManager.PlayerCount == 1;
         var options = new VoteOptions
         {
