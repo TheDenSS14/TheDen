@@ -2,6 +2,7 @@ using System.Threading;
 using Content.Server.GameTicking.Events;
 using Content.Server.Voting;
 using Content.Shared.CCVar;
+using Content.Shared.Database;
 using Content.Shared.GameTicking;
 using Robust.Shared.Player;
 using Timer = Robust.Shared.Timing.Timer;
@@ -59,6 +60,9 @@ public sealed partial class RoundEndSystem
             return;
 
         var votedYes = (bool) args.Winner;
+        var logText = votedYes ? "staying" : "leaving";
+
+        _adminLogger.Add(LogType.Vote, LogImpact.Low, $"Round extension vote ended in favor of {logText}.");
 
         if (votedYes || !CanCallOrRecallIgnoringCooldown())
             return;
@@ -88,6 +92,8 @@ public sealed partial class RoundEndSystem
         options.PlayVoteSound = false; // we expect to be doing this several times a shift.
         options.Options.Add((localeYes, true));
         options.Options.Add((localeNo, false));
+
+        _adminLogger.Add(LogType.Vote, LogImpact.Low, $"Server vote started for round extension.");
 
         var recallVote = _voteManager.CreateVote(options);
         recallVote.OnFinished += (_, args) => ShuttleRecallVoteFinished(args);
