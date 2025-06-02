@@ -69,11 +69,11 @@ namespace Content.Server._DEN.Administration.Commands
             if (args.Length == 2)
             {
                 var types = _prototypeManager.EnumeratePrototypes<DamageTypePrototype>()
-                    .Where(d => _ignoreTypesGroups.Contains(d.ID))
+                    .Where(d => !_ignoreTypesGroups.Contains(d.ID))
                     .Select(p => new CompletionOption(p.ID));
 
                 var groups = _prototypeManager.EnumeratePrototypes<DamageGroupPrototype>()
-                    .Where(d => _ignoreTypesGroups.Contains(d.ID))
+                    .Where(d => !_ignoreTypesGroups.Contains(d.ID))
                     .Select(p => new CompletionOption(p.ID));
 
                 return CompletionResult.FromHintOptions(types.Concat(groups).OrderBy(p => p.Value),
