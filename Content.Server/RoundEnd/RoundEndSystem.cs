@@ -457,6 +457,7 @@ namespace Content.Server.RoundEnd
             {
                 RequestRoundEnd(checkCooldown: false);
                 _roundEndShuttleCalled = true;
+                return;
             }
 
             // Check if we should auto-call.
