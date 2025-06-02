@@ -134,5 +134,8 @@ namespace Content.Shared.Verbs
 
         public static readonly VerbCategory BloodSpells = new("verb-categories-blood-cult",
             new SpriteSpecifier.Rsi(new ResPath("/Textures/_White/BloodCult/actions.rsi"), "blood_spells"));
+
+        public static readonly VerbCategory Adjust =
+            new("verb-categories-adjust", "/Textures/Interface/VerbIcons/screwdriver.png");
     }
 }
