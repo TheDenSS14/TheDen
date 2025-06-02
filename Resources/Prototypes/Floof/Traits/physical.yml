@@ -1,6 +1,6 @@
 - type: trait
   id: HollowFangs
-  category: Physical
+  category: TraitsPhysicalBiological
   points: -2
   requirements:
   - !type:CharacterJobRequirement
@@ -26,7 +26,7 @@
 
 - type: trait
   id: Weakness
-  category: Physical
+  category: TraitsPhysicalDisabilities
   points: 5
   requirements:
     - !type:CharacterJobRequirement
@@ -52,7 +52,7 @@
 
 - type: trait
   id: Lightweight
-  category: Physical
+  category: TraitsPhysicalBiological
   points: 2 # Has pros and cons, not sure
   requirements:
   - !type:CharacterJobRequirement
