@@ -112,7 +112,8 @@ namespace Content.Server.RoundEnd
                 _cooldownTokenSource = null;
             }
 
-            ResetHardEndTimer();
+            _hasHardEndWarningRun = false;
+            _roundEndShuttleCalled = false;
 
             RespectRoundHardEnd = true;
             LastCountdownStart = null;
