@@ -11,7 +11,7 @@ language-RootSpeak-name = Rootspeak
 language-RootSpeak-description = The strange whistling-style language spoken by the Diona.
 
 language-Nekomimetic-name = Nekomimetic
-language-Nekomimetic-description = To the casual observer, this language is an incomprehensible mess of broken Japanese. To the Felinids and Oni, it's somehow comprehensible.
+language-Nekomimetic-description = A language composed of animal noises and syllables, easy to replicate but hard to understand. Spoken natively by Felinids.
 
 language-Draconic-name = Sinta'Unathi
 language-Draconic-description =
@@ -87,14 +87,8 @@ language-Chittin-description =
     A language consisting of clicks, buzzes, and some variety of harsh insect sounds.
     Most of what makes up their speech comes from their antennae, making it a near-impossible language for those without to learn.
 
-language-Nehina-name = Nēhina
-language-Nehina-description =  A language spoken by the Feroxi, well adapted to speaking under the waters of ocean planets.
-
 language-Rodentian-name = Rodentian
 language-Rodentian-description =  A language mostly consisting of squeaks spoken by Rodentia if all shapes and sizes.
-
-language-Alaseta-name = Alaseta
-language-Alaseta-description =  A horrifying mix of Sol Common and Canilunzt, the language is loosely remembles the structure Sol Common with alot more yapping, snarling, and growling.
 
 # Animal Languages
 

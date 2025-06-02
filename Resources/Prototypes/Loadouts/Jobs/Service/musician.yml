@@ -239,6 +239,20 @@
     - RockGuitarInstrument
 
 - type: loadout
+  id: LoadoutItemRickenbackerInstrumentMusician
+  category: JobsServiceMusician
+  cost: 0
+  canBeHeirloom: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMusicianEquipment
+    - !type:CharacterJobRequirement
+      jobs:
+        - Musician
+  items:
+    - Rickenbacker4003Instrument
+
+- type: loadout
   id: LoadoutItemAcousticGuitarInstrumentMusician
   category: JobsServiceMusician
   cost: 0

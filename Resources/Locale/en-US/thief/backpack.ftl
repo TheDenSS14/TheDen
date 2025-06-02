@@ -24,7 +24,7 @@ thief-backpack-category-tools-description =
     A set of tools for roughing up doors, walls, windows,
     and anything else that for whatever reason doesn't
     want to let you in where you need to go.
-    Includes two C4s, a multitool, jaws of life,
+    Includes two breaching charges, a multitool, jaws of life,
     a pair of advanced welder meson glasses and some insulated gloves.
 
 thief-backpack-category-chemistry-name = chemistry kit

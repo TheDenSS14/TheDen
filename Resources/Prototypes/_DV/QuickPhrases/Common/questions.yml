@@ -1,0 +1,72 @@
+- type: quickPhrase
+  id: BaseQuestionPhrase
+  parent: BaseCommonPhrase
+  group: Question
+  abstract: true
+
+# !!! special phrase, no touchy with automation !!!
+- type: quickPhrase
+  id: QuestionMarkPhrase
+  parent: BaseQuestionPhrase
+  text: phrase-question-mark
+
+# work from here
+- type: quickPhrase
+  id: WherePhrase
+  parent: BaseQuestionPhrase
+  text: phrase-where
+
+- type: quickPhrase
+  id: WhoPhrase
+  parent: BaseQuestionPhrase
+  text: phrase-who
+
+- type: quickPhrase
+  id: WhatPhrase
+  parent: BaseQuestionPhrase
+  text: phrase-what
+
+- type: quickPhrase
+  id: WhyPhrase
+  parent: BaseQuestionPhrase
+  text: phrase-why
+
+- type: quickPhrase
+  id: HowPhrase
+  parent: BaseQuestionPhrase
+  text: phrase-how
+
+- type: quickPhrase
+  id: WhenPhrase
+  parent: BaseQuestionPhrase
+  text: phrase-when
+
+- type: quickPhrase
+  id: DoPhrase
+  parent: BaseQuestionPhrase
+  text: phrase-do
+
+- type: quickPhrase
+  id: CanPhrase
+  parent: BaseQuestionPhrase
+  text: phrase-can
+
+- type: quickPhrase
+  id: ShouldPhrase
+  parent: BaseQuestionPhrase
+  text: phrase-should
+
+- type: quickPhrase
+  id: WouldPhrase
+  parent: BaseQuestionPhrase
+  text: phrase-would
+
+- type: quickPhrase
+  id: WhichPhrase
+  parent: BaseQuestionPhrase
+  text: phrase-which
+
+- type: quickPhrase
+  id: QuestionPhrase
+  parent: BaseQuestionPhrase
+  text: phrase-question

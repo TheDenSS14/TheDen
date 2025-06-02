@@ -21,8 +21,8 @@ namespace Content.Server.DetailExaminable
             if (Identity.Name(args.Target, EntityManager) != MetaData(args.Target).EntityName)
                 return;
 
-            var detailsRange = _examineSystem.IsInDetailsRange(args.User, uid);
-
+            // var detailsRange = _examineSystem.IsInDetailsRange(args.User, uid); 
+            var detailsRange = true; //removed the range limitation due to player requests, the detail examine button should now be active all the time
             var verb = new ExamineVerb()
             {
                 Act = () =>

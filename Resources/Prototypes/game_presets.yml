@@ -56,7 +56,6 @@
   rules:
     - Nukeops
     - Traitor
-    - Revolutionary
     - Zombie
     - RampingStationEventScheduler
     - LavalandStormScheduler # Lavaland Change
@@ -98,7 +97,6 @@
     - Secret
     - LavalandStormScheduler # Lavaland Change
 
-
 - type: gamePreset
   id: SecretExtended #For Admin Use: Runs Extended but shows "Secret" in lobby.
   alias:
@@ -139,7 +137,7 @@
     - traitor
   name: traitor-title
   description: traitor-description
-  showInVote: false
+  showInVote: true
   rules:
     - Traitor
     - SubGamemodesRule

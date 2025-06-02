@@ -59,7 +59,7 @@ public sealed partial class StencilOverlay
         var sprite = _sprite.GetFrame(weatherProto.Sprite, curTime);
 
         // Draw the rain
-        worldHandle.UseShader(_protoManager.Index<ShaderPrototype>("StencilDraw").Instance());
+        worldHandle.UseShader(_protoManager.Index<ShaderPrototype>("StencilDrawWeather").Instance());
         _parallax.DrawParallax(worldHandle, worldAABB, sprite, curTime, position, Vector2.Zero, modulate: (weatherProto.Color ?? Color.White).WithAlpha(alpha));
 
         worldHandle.SetTransform(Matrix3x2.Identity);

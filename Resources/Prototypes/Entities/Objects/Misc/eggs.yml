@@ -1,0 +1,54 @@
+- type: entity
+  parent: BaseItem
+  id: ItemEggTraitBase
+  description: An egg! Laid by a crewmember. Not for consumption.
+  abstract: true
+  components:
+  - type: Sprite
+    sprite: Objects/Consumable/Food/egg.rsi
+    scale: 1.25, 1.25
+  - type: Item
+    sprite: Objects/Consumable/Food/egg.rsi
+    size: Tiny
+
+
+- type: entity
+  parent: ItemEggTraitBase
+  id: ItemEggTrait
+  name: oversized egg
+  description: An egg! Laid by a crewmember. Not for consumption.
+  components:
+  - type: Sprite
+    layers:
+      - state: icon
+        map: [ "enum.DamageStateVisualLayers.Base" ]
+  - type: RandomSprite
+    available:
+      - enum.DamageStateVisualLayers.Base:
+          icon: ""
+          white: ""
+  # egg fragile
+  - type: DamageOnHighSpeedImpact
+    minimumSpeed: 0.1
+    damage:
+      types:
+        Blunt: 1
+  - type: Damageable
+    damageContainer: Biological
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 1
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: desecration
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          Eggshells:
+            min: 1
+            max: 1
+          # Wow double-yolk you're so lucky!
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]

@@ -448,6 +448,7 @@
         - IPC # Other species could justify getting this trait for Blunt stamina damage,
               # but 6 blunt -> 5 blunt is a straight up downgrade.
         - Canid # The Den
+        - Ovinia # The Den
     - !type:CharacterTraitRequirement
       inverted: true
       traits:
@@ -1247,3 +1248,35 @@
           - Pill
           - Crayon
           - Paper
+
+# Commented out upon request for the time being
+#- type: trait
+#  id: EggLaying
+#  category: Physical
+#  points: 0
+#  requirements:
+#  - !type:CharacterJobRequirement
+#    inverted: true
+#    jobs:
+#    - Borg
+#    - MedicalBorg
+#  functions:
+#    - !type:TraitAddComponent
+#      components:
+#        - type: EggLayer
+#          eggSpawn:
+#            - id: ItemEggTrait
+
+- type: trait # Based on Cosmatic Drift's Synth trait
+  id: Synthetic
+  category: Physical
+  points: -2 # Can detect ion storms, poison blood
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - IPC
+  functions:
+    - !type:TraitAddComponent
+      components:
+        - type: Synth

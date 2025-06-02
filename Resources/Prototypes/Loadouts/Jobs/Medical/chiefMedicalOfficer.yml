@@ -173,7 +173,7 @@
 
 - type: loadout
   id: LoadoutChiefMedicalOfficerShoesLaceup
-  category: JobsCommandCaptain
+  category: JobsMedicalChiefMedicalOfficer # TheDen
   cost: 0
   exclusive: true
   requirements:
@@ -187,7 +187,7 @@
 
 - type: loadout
   id: LoadoutChiefMedicalOfficerShoesLeather
-  category: JobsCommandCaptain
+  category: JobsMedicalChiefMedicalOfficer # TheDen
   cost: 0
   exclusive: true
   requirements:
@@ -204,6 +204,7 @@
   id: LoadoutChiefMedicalOfficerJumpsuit
   category: JobsMedicalChiefMedicalOfficer
   cost: 0
+  exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutChiefMedicalOfficerUniforms
@@ -217,6 +218,7 @@
   id: LoadoutChiefMedicalOfficerJumpskirt
   category: JobsMedicalChiefMedicalOfficer
   cost: 0
+  exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutChiefMedicalOfficerUniforms
@@ -230,6 +232,7 @@
   id: LoadoutChiefMedicalOfficerTurtleskirt
   category: JobsMedicalChiefMedicalOfficer
   cost: 0
+  exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutChiefMedicalOfficerUniforms
@@ -243,6 +246,7 @@
   id: LoadoutChiefMedicalOfficerTurtlesuit
   category: JobsMedicalChiefMedicalOfficer
   cost: 0
+  exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutChiefMedicalOfficerUniforms

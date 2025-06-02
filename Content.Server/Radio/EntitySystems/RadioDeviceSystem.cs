@@ -15,7 +15,8 @@ using Content.Shared.Radio;
 using Content.Shared.Chat;
 using Content.Shared.Radio.Components;
 using Content.Shared.UserInterface; // Nuclear-14
-using Content.Shared._NC.Radio; // Nuclear-14
+using Content.Shared._NC.Radio;
+using Content.Shared.Language.Components; // Nuclear-14
 using Robust.Server.GameObjects;
 using Robust.Shared.Network;
 using Robust.Shared.Player; // Nuclear-14
@@ -230,15 +231,21 @@ public sealed class RadioDeviceSystem : EntitySystem
     private void OnReceiveRadio(EntityUid uid, RadioSpeakerComponent component, ref RadioReceiveEvent args)
     {
         var parent = Transform(uid).ParentUid;
-        if (TryComp(parent, out ActorComponent? actor))
+
+        if (!TryComp(parent, out ActorComponent? actor))
+            return;
+
+        var hasSpeakerComponent = TryComp<LanguageSpeakerComponent>(args.MessageSource, out var languageSpeakerComponent);
+        var canUnderstand = _language.CanUnderstand(
+            parent,
+            args.Language.ID,
+            hasSpeakerComponent ? (args.MessageSource, languageSpeakerComponent) : null);
+
+        var msg = new MsgChatMessage
         {
-            var canUnderstand = _language.CanUnderstand(parent, args.Language.ID);
-            var msg = new MsgChatMessage
-            {
-                Message = canUnderstand ? args.OriginalChatMsg : args.LanguageObfuscatedChatMsg
-            };
-            _netMan.ServerSendMessage(msg, actor.PlayerSession.Channel);
-        }
+            Message = canUnderstand ? args.OriginalChatMsg : args.LanguageObfuscatedChatMsg
+        };
+        _netMan.ServerSendMessage(msg, actor.PlayerSession.Channel);
     }
 
     private void OnIntercomEncryptionChannelsChanged(Entity<IntercomComponent> ent, ref EncryptionChannelsChangedEvent args)

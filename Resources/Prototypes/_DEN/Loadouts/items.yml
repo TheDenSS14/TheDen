@@ -7,7 +7,7 @@
   canBeHeirloom: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutMasks2
+      group: LoadoutMasks
   items:
     - ClothingMaskMime
 
@@ -19,7 +19,7 @@
   canBeHeirloom: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutMasks2
+      group: LoadoutMasks
   items:
     - ClothingMaskSadMime
 
@@ -31,7 +31,7 @@
   canBeHeirloom: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutMasks2
+      group: LoadoutMasks
   items:
     - ClothingMaskScaredMime
 
@@ -43,7 +43,7 @@
   canBeHeirloom: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutMasks2
+      group: LoadoutMasks
   items:
     - ClothingMaskSexyMime
 
@@ -56,7 +56,7 @@
   canBeHeirloom: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutMasks2
+      group: LoadoutMasks
   items:
     - ClothingMaskOniRed
 
@@ -67,7 +67,7 @@
   canBeHeirloom: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutMasks2
+      group: LoadoutMasks
   items:
     - ClothingMaskOniBlue
 
@@ -119,6 +119,54 @@
   canBeHeirloom: true
   items:
     - PlushieJenn
+
+- type: loadout
+  id: PlushieFelinid
+  category: GeneralToys
+  cost: 1
+  canBeHeirloom: true
+  items:
+    - PlushieFelinid
+
+- type: loadout
+  id: PlushieOni
+  category: GeneralToys
+  cost: 1
+  canBeHeirloom: true
+  items:
+    - PlushieOni
+
+- type: loadout
+  id: PlushieHarpy
+  category: GeneralToys
+  cost: 1
+  canBeHeirloom: true
+  items:
+    - PlushieHarpy
+
+- type: loadout
+  id: PlushieRodentia
+  category: GeneralToys
+  cost: 1
+  canBeHeirloom: true
+  items:
+    - PlushieRodentia
+
+- type: loadout
+  id: PlushieFeroxi
+  category: GeneralToys
+  cost: 1
+  canBeHeirloom: true
+  items:
+    - PlushieFeroxi
+
+- type: loadout
+  id: PlushieChitinid
+  category: GeneralToys
+  cost: 1
+  canBeHeirloom: true
+  items:
+    - PlushieChitinid
 
 - type: loadout
   id: LoadoutClicker
@@ -210,3 +258,13 @@
         - Passenger
   items:
     - TowelColorGray
+
+- type: loadout
+  id: LoadoutItemCigsStinky # Den - Introduction to Stinky Steve's Weed Emporium
+  category: GeneralItems
+  cost: 1 # Same price as Dan's, which just feels right
+  items:
+    - CigPackJoint
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSmokes

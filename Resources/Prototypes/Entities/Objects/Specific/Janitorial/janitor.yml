@@ -271,7 +271,7 @@
   parent: BaseItem
   name: damp rag
   id: RagItem
-  description: For cleaning up messes, you suppose.
+  description: For cleaning up messes, you suppose. Never seems to dry out fully.
   components:
     - type: Sprite
       sprite: Objects/Specific/Janitorial/rag.rsi
@@ -279,16 +279,43 @@
     - type: Spillable
       solution: absorbed
     - type: MeleeWeapon
-      soundNoDamage:
-        path: "/Audio/Effects/Fluids/splat.ogg"
+      soundHit:
+        path: "/Audio/_Floof/Lewd/whip.ogg"
+      animation: WeaponArcThrust
+      wideAnimationRotation: -90
+      maxTargets: 1
+      damage:
+        types:
+          Blunt: 1
+    - type: DamageOtherOnHit
       damage:
         types:
           Blunt: 0
+      soundHit:
+        collection: desecration
+      staminaCost: 5
+    - type: StaminaDamageOnCollide
+      damage: 10
+    - type: StaminaDamageOnHit
+      damage: 5
+    - type: LandAtCursor
+    - type: Clothing
+      slots: [mask]
+      quickEquip: false
+    - type: IngestionBlocker
+    - type: AddAccentClothing
+      accent: ReplacementAccent
+      replacement: mumble
+    - type: Butcherable
+      butcheringType: Knife
+      spawned:
+      - id: MaterialCloth1
+        amount: 1
     - type: Item
       size: Small
       sprite: Objects/Specific/Janitorial/rag.rsi
     - type: Absorbent
-      pickupAmount: 15
+      pickupAmount: 30
     - type: Construction
       graph: Rag
       node: rag
@@ -296,12 +323,10 @@
       solutions:
         absorbed:
           maxVol: 30
+    - type: PaintRemover
     - type: UseDelay
-      delay: 1.5
+      delay: 1.25
     - type: Tag
       tags:
         - Mop
         - Rag #VASH change. Needed for bounties.
-    - type: CleansForensics
-    - type: Fiber
-      fiberColor: fibers-white

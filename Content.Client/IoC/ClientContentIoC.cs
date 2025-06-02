@@ -3,7 +3,7 @@ using Content.Client.Changelog;
 using Content.Client.Chat.Managers;
 using Content.Client.Clickable;
 using Content.Client.Consent;
-using Content.Client.DeltaV.NanoChat;
+using Content.Client._DV.NanoChat;
 using Content.Client.DiscordAuth;
 using Content.Client.JoinQueue;
 using Content.Client.DebugMon;

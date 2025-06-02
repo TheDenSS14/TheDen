@@ -262,19 +262,21 @@
 # Gloves
 
 # Head
-- type: loadout
-  id: LoadoutAtmosphericTechnicianChickenhead
-  category: JobsEngineeringAtmosphericTechnician
-  cost: 0
-  exclusive: true
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutAtmosphericTechnicianHead
-    - !type:CharacterJobRequirement
-      jobs:
-        - AtmosphericTechnician
-  items:
-    - ClothingHeadHatChickenhead
+# The Den - This shouldnt be here (Clown can have it though)
+#- type: loadout
+#  id: LoadoutAtmosphericTechnicianChickenhead
+#  category: JobsEngineeringAtmosphericTechnician
+#  cost: 0
+#  exclusive: true
+#  requirements:
+#    - !type:CharacterItemGroupRequirement
+#      group: LoadoutAtmosphericTechnicianHead
+#    - !type:CharacterJobRequirement
+#      jobs:
+#        - AtmosphericTechnician
+#  items:
+#    - ClothingHeadHatChickenhead
+
 # Id
 
 # Neck
@@ -308,20 +310,21 @@
   items:
   - ClothingOuterWinterAtmos
 
-- type: loadout
-  id: LoadoutAtmosphericTechnicianChickenSuit
-  category: JobsEngineeringAtmosphericTechnician
-  cost: 0
-  exclusive: true
-  canBeHeirloom: true
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutAtmosphericTechnicianOuter
-    - !type:CharacterJobRequirement
-      jobs:
-        - AtmosphericTechnician
-  items:
-    - ClothingOuterSuitChicken
+# The Den - This shouldnt be here (Clown can have it though)
+#- type: loadout
+#  id: LoadoutAtmosphericTechnicianChickenSuit
+#  category: JobsEngineeringAtmosphericTechnician
+#  cost: 0
+#  exclusive: true
+#  canBeHeirloom: true
+#  requirements:
+#    - !type:CharacterItemGroupRequirement
+#      group: LoadoutAtmosphericTechnicianOuter
+#    - !type:CharacterJobRequirement
+#      jobs:
+#        - AtmosphericTechnician
+#  items:
+#    - ClothingOuterSuitChicken
 
 # Shoes
 - type: loadout

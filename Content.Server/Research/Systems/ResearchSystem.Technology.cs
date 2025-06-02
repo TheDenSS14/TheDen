@@ -1,3 +1,4 @@
+using Content.Server._DEN.Research.Components;
 using Content.Shared.Database;
 using Content.Shared.Research.Components;
 using Content.Shared.Research.Prototypes;
@@ -78,18 +79,29 @@ public sealed partial class ResearchSystem
             || prototype.Cost * clientDatabase.SoftCapMultiplier > researchServer.Points)
             return false;
 
+        var station = _station.GetOwningStation(client);
+        var oldSoftCap = clientDatabase.SoftCapMultiplier;
+
         if (prototype.Tier >= disciplinePrototype.LockoutTier)
         {
             clientDatabase.SoftCapMultiplier *= prototype.SoftCapContribution;
             researchServer.CurrentSoftCapMultiplier *= prototype.SoftCapContribution;
         }
 
+        if (station != null
+            && Exists(station)
+            && station != EntityUid.Invalid
+            && TryComp<StationResearchRecordComponent>(station, out var record))
+            record.SoftCapMultiplier = clientDatabase.SoftCapMultiplier;
+
         AddTechnology(serverEnt.Value, prototype);
         TrySetMainDiscipline(prototype, serverEnt.Value);
-        ModifyServerPoints(serverEnt.Value, -(int) (prototype.Cost * clientDatabase.SoftCapMultiplier));
+        ModifyServerPoints(serverEnt.Value, -(int) (prototype.Cost * oldSoftCap));
         UpdateTechnologyCards(serverEnt.Value);
 
-        _adminLog.Add(LogType.Action, LogImpact.Medium,
+        _adminLog.Add(
+            LogType.Action,
+            LogImpact.Medium,
             $"{ToPrettyString(user):player} unlocked {prototype.ID} (discipline: {prototype.Discipline}, tier: {prototype.Tier}) at {ToPrettyString(client)}, for server {ToPrettyString(serverEnt.Value)}.");
         return true;
     }
@@ -128,6 +140,7 @@ public sealed partial class ResearchSystem
         {
             if (component.UnlockedRecipes.Contains(unlock))
                 continue;
+
             component.UnlockedRecipes.Add(unlock);
         }
         Dirty(uid, component);

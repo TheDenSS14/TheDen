@@ -41,6 +41,8 @@ namespace Content.Shared.GameTicking
 
         private void OnRecordingStart(MappingDataNode metadata, List<object> events)
         {
+            if (metadata.Has("roundId"))
+                return;
             metadata["roundId"] = new ValueDataNode(RoundId.ToString());
         }
         public TimeSpan RoundDuration()

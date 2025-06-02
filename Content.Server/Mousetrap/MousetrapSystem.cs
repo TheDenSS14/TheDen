@@ -17,7 +17,7 @@ public sealed class MousetrapSystem : EntitySystem
     public override void Initialize()
     {
         SubscribeLocalEvent<MousetrapComponent, UseInHandEvent>(OnUseInHand);
-        SubscribeLocalEvent<MousetrapComponent, BeforeDamageUserOnTriggerEvent>(BeforeDamageOnTrigger);
+        // SubscribeLocalEvent<MousetrapComponent, BeforeDamageUserOnTriggerEvent>(BeforeDamageOnTrigger);
         SubscribeLocalEvent<MousetrapComponent, StepTriggerAttemptEvent>(OnStepTriggerAttempt);
         SubscribeLocalEvent<MousetrapComponent, TriggerEvent>(OnTrigger);
     }

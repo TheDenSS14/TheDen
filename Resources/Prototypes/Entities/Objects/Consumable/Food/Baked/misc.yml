@@ -12,7 +12,7 @@
   - type: SolutionContainerManager
     solutions:
       food:
-        maxVol: 6
+        maxVol: 8
         reagents:
         - ReagentId: Nutriment
           Quantity: 5
@@ -202,7 +202,7 @@
           Quantity: 2
         - ReagentId: Vitamin
           Quantity: 1
-  - type: FlavorProfile # DeltaV - custom flavor, see Resources/Locale/en-US/deltav/flavors/flavor_profiles.ftl
+  - type: FlavorProfile # DeltaV - custom flavor, see Resources/Locale/en-US/_DV/flavors/flavor_profiles.ftl
     flavors:
      - nuggie
 
@@ -327,7 +327,7 @@
   - type: SolutionContainerManager
     solutions:
       food:
-        maxVol: 6
+        maxVol: 9
         reagents:
         - ReagentId: Nutriment
           Quantity: 5

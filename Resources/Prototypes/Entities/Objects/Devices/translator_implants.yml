@@ -201,3 +201,63 @@
     - SiikMaas
     requires:
     - TauCetiBasic
+
+- type: entity
+  parent: BaseSubdermalImplant
+  id: NehinaTranslatorImplant
+  name: Nēhina translator implant
+  description: An implant giving the ability to understand and speak Nēhina.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: TranslatorImplant
+    understood:
+    - Nehina
+    spoken:
+    - Nehina
+    requires:
+    - TauCetiBasic
+
+- type: entity
+  parent: BaseSubdermalImplant
+  id: AlasetaTranslatorImplant
+  name: alaseta translator implant
+  description: An implant giving the ability to understand and speak Alaseta.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: TranslatorImplant
+    understood:
+    - Alaseta
+    spoken:
+    - Alaseta
+    requires:
+    - TauCetiBasic
+
+- type: entity
+  parent: BaseSubdermalImplant
+  id: RodentianTranslatorImplant
+  name: rodentian translator implant
+  description: An implant giving the ability to understand and speak Rodentian.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: TranslatorImplant
+    understood:
+    - Rodentian
+    spoken:
+    - Rodentian
+    requires:
+    - TauCetiBasic
+
+- type: entity
+  parent: BaseSubdermalImplant
+  id: CaprineTranslatorImplant
+  name: caprine translator implant
+  description: An implant giving the ability to understand and speak Caprine.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: TranslatorImplant
+    understood:
+    - Caprine
+    spoken:
+    - Caprine
+    requires:
+    - TauCetiBasic

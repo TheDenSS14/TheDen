@@ -16,6 +16,7 @@
   id: LoadoutCommandQMHeadSoft
   category: JobsLogisticsLogisticsOfficer
   cost: 0
+  exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutLogisticsOfficerHead
@@ -29,6 +30,7 @@
   id: LoadoutCommandClothingHeadHatBeretQM
   category: JobsLogisticsLogisticsOfficer
   cost: 0
+  exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutLogisticsOfficerHead
@@ -78,6 +80,7 @@
   id: LoadoutQMWinterCoat
   category: JobsLogisticsLogisticsOfficer
   cost: 0
+  exclusive: true
   requirements:
   - !type:CharacterItemGroupRequirement
     group: LoadoutLogisticsOfficerOuter
