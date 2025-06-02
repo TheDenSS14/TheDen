@@ -1,0 +1,431 @@
+# TODO: Refactor the marking system to allow grouping marking layer colors, applying layers to different body parts in the same marking, better layer sorting, etc. and then fix these prototypes to account for that.
+
+# OVERLAYS
+
+## PLUSH SEAMS
+
+- type: marking
+  id: OverlayPlushSeamsHuman
+  bodyPart: LLeg
+  markingCategory: Overlay
+  speciesRestriction:
+    [ Arachnid, Canid, Felinid, Feroxi, Human, IPC, Oni, Reptilian, Rodentia, SlimePerson, Tajaran, Vulpkanin ]
+  coloring:
+    default:
+      type:
+        !type:TattooColoring
+      fallbackColor: "#666666"
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Body/Toy/seams.rsi
+    state: human
+
+- type: marking
+  id: OverlayPlushSeamsHeadHuman
+  bodyPart: Head
+  markingCategory: Head
+  speciesRestriction: [ Human, Canid, Felinid, Oni, Harpy, Arachne, SlimePerson ]
+  coloring:
+    default:
+      type:
+        !type:TattooColoring
+      fallbackColor: "#666666"
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Body/Toy/seams.rsi
+    state: head_human
+
+- type: marking
+  id: OverlayPlushSeamsHeadSmallSnout
+  bodyPart: Head
+  markingCategory: Head
+  speciesRestriction: [ Rodentia, Tajaran, Ovinia ]
+  coloring:
+    default:
+      type:
+        !type:TattooColoring
+      fallbackColor: "#666666"
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Body/Toy/seams.rsi
+    state: head_shortsnout
+
+- type: marking
+  id: OverlayPlushSeamsHeadLongSnout
+  bodyPart: HeadTop
+  markingCategory: Head
+  speciesRestriction: [ Vulpkanin, Feroxi, Reptilian ]
+  coloring:
+    default:
+      type:
+        !type:TattooColoring
+      fallbackColor: "#666666"
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Body/Toy/seams.rsi
+    state: head_longsnout # TODO: Individual markings for these species
+
+- type: marking
+  id: OverlayPlushSeamsHandsFeet
+  bodyPart: RHand
+  markingCategory: Overlay
+  speciesRestriction:
+    [ Arachnid, Canid, Felinid, Feroxi, Human, IPC, Oni, Reptilian, Rodentia, SlimePerson, Tajaran, Vulpkanin ]
+  coloring:
+    default:
+      type:
+        !type:TattooColoring
+      fallbackColor: "#666666"
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Body/Toy/seams.rsi
+    state: handsfeet
+
+- type: marking
+  id: OverlayPlushSeamsFeet
+  bodyPart: RFoot
+  markingCategory: Overlay
+  speciesRestriction:
+    [ Arachnid, Canid, Felinid, Feroxi, Human, IPC, Oni, Reptilian, Rodentia, SlimePerson, Tajaran, Vulpkanin ]
+  coloring:
+    default:
+      type:
+        !type:TattooColoring
+      fallbackColor: "#666666"
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Body/Toy/seams.rsi
+    state: feet
+
+- type: marking
+  id: OverlayPlushSeamsHands
+  bodyPart: RHand
+  markingCategory: Overlay
+  speciesRestriction:
+    [ Arachnid, Canid, Felinid, Feroxi, Human, IPC, Oni, Reptilian, Rodentia, SlimePerson, Tajaran, Vulpkanin,
+      Ovinia, Shadowkin, Arachne ]
+  coloring:
+    default:
+      type:
+        !type:TattooColoring
+      fallbackColor: "#666666"
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Body/Toy/seams.rsi
+    state: hands
+
+- type: marking
+  id: OverlayPlushSeamsOvinia
+  bodyPart: LLeg
+  markingCategory: Overlay
+  speciesRestriction: [ Ovinia ]
+  coloring:
+    default:
+      type:
+        !type:TattooColoring
+      fallbackColor: "#666666"
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Body/Toy/seams.rsi
+    state: ovinia
+
+- type: marking
+  id: OverlayPlushSeamsOviniaFeet
+  bodyPart: RFoot
+  markingCategory: Overlay
+  speciesRestriction: [ Ovinia ]
+  coloring:
+    default:
+      type:
+        !type:TattooColoring
+      fallbackColor: "#666666"
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Body/Toy/seams.rsi
+    state: ovinia_feet
+
+- type: marking
+  id: OverlayPlushSeamsShadowkin
+  bodyPart: LLeg
+  markingCategory: Overlay
+  speciesRestriction: [ Shadowkin ]
+  coloring:
+    default:
+      type:
+        !type:TattooColoring
+      fallbackColor: "#666666"
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Body/Toy/seams.rsi
+    state: shadowkin
+
+- type: marking
+  id: OverlayPlushSeamsShadowkinFeet
+  bodyPart: RFoot
+  markingCategory: Overlay
+  speciesRestriction: [ Shadowkin ]
+  coloring:
+    default:
+      type:
+        !type:TattooColoring
+      fallbackColor: "#666666"
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Body/Toy/seams.rsi
+    state: shadowkin_feet
+
+- type: marking
+  id: OverlayPlushSeamsBuggy
+  bodyPart: LLeg
+  markingCategory: Overlay
+  speciesRestriction: [ Moth, Chitinid ]
+  coloring:
+    default:
+      type:
+        !type:TattooColoring
+      fallbackColor: "#666666"
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Body/Toy/seams.rsi
+    state: buggy
+
+- type: marking
+  id: OverlayPlushSeamsBuggyFeet
+  bodyPart: RFoot
+  markingCategory: Overlay
+  speciesRestriction: [ Moth, Chitinid ]
+  coloring:
+    default:
+      type:
+        !type:TattooColoring
+      fallbackColor: "#666666"
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Body/Toy/seams.rsi
+    state: buggy_feet
+
+- type: marking
+  id: OverlayPlushSeamsArachne
+  bodyPart: LArm
+  markingCategory: Overlay
+  speciesRestriction: [ Arachne ]
+  coloring:
+    default:
+      type:
+        !type:TattooColoring
+      fallbackColor: "#666666"
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Body/Toy/seams.rsi
+    state: arachne
+
+- type: marking
+  id: OverlayPlushSeamsHarpy
+  bodyPart: LLeg
+  markingCategory: Overlay
+  speciesRestriction: [ Harpy ]
+  coloring:
+    default:
+      type:
+        !type:TattooColoring
+      fallbackColor: "#666666"
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Body/Toy/seams.rsi
+    state: harpy
+
+- type: marking
+  id: OverlayPlushSeamsHarpyFeet
+  bodyPart: RFoot
+  markingCategory: Overlay
+  speciesRestriction: [ Harpy ]
+  coloring:
+    default:
+      type:
+        !type:TattooColoring
+      fallbackColor: "#666666"
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Body/Toy/seams.rsi
+    state: harpy_feet
+
+- type: marking
+  id: OverlayPlushSeamsVox
+  bodyPart: LLeg
+  markingCategory: Overlay
+  speciesRestriction: [ Vox ]
+  coloring:
+    default:
+      type:
+        !type:TattooColoring
+      fallbackColor: "#666666"
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Body/Toy/seams.rsi
+    state: vox
+
+- type: marking
+  id: OverlayPlushSeamsVoxFeet
+  bodyPart: RFoot
+  markingCategory: Overlay
+  speciesRestriction: [ Vox ]
+  coloring:
+    default:
+      type:
+        !type:TattooColoring
+      fallbackColor: "#666666"
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Body/Toy/seams.rsi
+    state: vox_feet
+
+# TODO: Plush seams for Resomi. Don't feel like making it for plasmaman and diona.
+
+## ACCESSORIES / ADDONS
+
+- type: marking
+  id: ChestZipper
+  bodyPart: LLeg
+  markingCategory: Overlay
+  speciesRestriction: [ Resomi ]
+  invertSpeciesRestriction: true
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+        color: "#CCCCCC"
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Body/Toy/accessories.rsi
+    state: zipper
+
+- type: marking
+  id: ChestWindupKeyGold
+  bodyPart: LLeg
+  markingCategory: Overlay
+  speciesRestriction: [ Resomi ]
+  invertSpeciesRestriction: true
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+        color: "#FFFFFF"
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Body/Toy/accessories.rsi
+    state: windup_gold
+
+- type: marking
+  id: ChestWindupKeySilver
+  bodyPart: LLeg
+  markingCategory: Overlay
+  speciesRestriction: [ Resomi ]
+  invertSpeciesRestriction: true
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+        color: "#FFFFFF"
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Body/Toy/accessories.rsi
+    state: windup_silver
+
+# Because these follow the Animated namescheme, the animated keys are compatible with wagging.
+
+- type: marking
+  id: ChestWindupKeyGoldAnimated
+  bodyPart: LLeg
+  markingCategory: Overlay
+  speciesRestriction: [ Resomi ]
+  invertSpeciesRestriction: true
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+        color: "#FFFFFF"
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Body/Toy/accessories.rsi
+    state: windup_gold_animated
+
+- type: marking
+  id: ChestWindupKeySilverAnimated
+  bodyPart: LLeg
+  markingCategory: Overlay
+  speciesRestriction: [ Resomi ]
+  invertSpeciesRestriction: true
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+        color: "#FFFFFF"
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Body/Toy/accessories.rsi
+    state: windup_silver_animated
+
+## BODY OVERLAYS
+
+- type: marking
+  id: OverlayPlushTorsoHumanM
+  bodyPart: Chest
+  markingCategory: Chest
+  speciesRestriction: [ Human, Felinid, Canid, Oni, Arachne ]
+  coloring:
+    default:
+      type:
+        !type:SkinColoring
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Body/Toy/overlay.rsi
+    state: torso_plush_human_m
+
+- type: marking
+  id: OverlayPlushTorsoHumanF
+  bodyPart: Chest
+  markingCategory: Chest
+  speciesRestriction: [ Human, Felinid, Canid, Oni, Arachne ]
+  coloring:
+    default:
+      type:
+        !type:SkinColoring
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Body/Toy/overlay.rsi
+    state: torso_plush_human_f
+
+- type: marking
+  id: OverlayPlushFootLeft
+  bodyPart: LFoot
+  markingCategory: LeftFoot
+  speciesRestriction:
+    [ Arachnid, Canid, Felinid, Feroxi, Human, IPC, Oni, Reptilian, Rodentia, SlimePerson, Tajaran, Vulpkanin ]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+        color: "#EEEEEE"
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Body/Toy/overlay.rsi
+    state: l_foot_plush
+
+- type: marking
+  id: OverlayPlushFootRight
+  bodyPart: RFoot
+  markingCategory: RightFoot
+  speciesRestriction:
+    [ Arachnid, Canid, Felinid, Feroxi, Human, IPC, Oni, Reptilian, Rodentia, SlimePerson, Tajaran, Vulpkanin ]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+        color: "#EEEEEE"
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Body/Toy/overlay.rsi
+    state: r_foot_plush
+
+- type: marking
+  id: OverlayPlushBellyF
+  bodyPart: Chest
+  markingCategory: Chest
+  speciesRestriction: [ Diona, Resomi ]
+  invertSpeciesRestriction: true
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+        color: "#EEEEEE"
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Body/Toy/overlay.rsi
+    state: belly_plush_f
+
+- type: marking
+  id: OverlayPlushBellyM
+  bodyPart: Chest
+  markingCategory: Chest
+  speciesRestriction: [ Diona, Resomi ]
+  invertSpeciesRestriction: true
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+        color: "#EEEEEE"
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Body/Toy/overlay.rsi
+    state: belly_plush_m

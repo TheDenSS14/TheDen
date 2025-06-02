@@ -38,7 +38,7 @@ public sealed class LeashSystem : EntitySystem
     [Dependency] private readonly SharedTransformSystem _xform = default!;
 
     public static VerbCategory LeashLengthConfigurationCategory =
-        new("verb-categories-leash-config", "/Textures/Floof/Interface/VerbIcons/resize.svg.192dpi.png");
+        new("verb-categories-leash-config", "/Textures/_Floof/Interface/VerbIcons/resize.svg.192dpi.png");
 
     #region Lifecycle
 
