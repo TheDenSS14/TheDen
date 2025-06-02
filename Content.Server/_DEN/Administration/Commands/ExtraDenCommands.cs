@@ -112,6 +112,13 @@ namespace Content.Server._DEN.Administration.Commands
                 return false;
             }
 
+            if (amount <= 0)
+            {
+                shell.WriteLine("You cannot do negative or zero damage.");
+                func = null;
+                return false;
+            }
+
             if (_prototypeManager.TryIndex<DamageGroupPrototype>(damageTypeOrGroup, out var damageGroup))
             {
                 func = (entity, ignoreResistances) =>
