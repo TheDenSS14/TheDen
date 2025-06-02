@@ -30,8 +30,8 @@
       state: mobster
     - type: RandomMetadata
       nameSegments:
-      - fake_human_first
-      - names_last
+      - NamesFakeHumanFirst
+      - NamesLast
     - type: RandomHumanoidSpawner
       settings: Mobster
 
@@ -51,8 +51,8 @@
       prototypes: [ MobsterGear ]
     - type: RandomMetadata
       nameSegments:
-      - fake_human_first
-      - names_last
+      - NamesFakeHumanFirst
+      - NamesLast
 
 - type: entity
   id: RandomHumanoidSpawnerMobsterAlt
@@ -65,8 +65,8 @@
       state: mobster
     - type: RandomMetadata
       nameSegments:
-      - fake_human_first
-      - names_last
+      - NamesFakeHumanFirst
+      - NamesLast
     - type: RandomHumanoidSpawner
       settings: MobsterAlt
 
@@ -86,5 +86,5 @@
       prototypes: [ MobsterGearAlt ]
     - type: RandomMetadata
       nameSegments:
-      - fake_human_first
-      - names_last
+      - NamesFakeHumanFirst
+      - NamesLast

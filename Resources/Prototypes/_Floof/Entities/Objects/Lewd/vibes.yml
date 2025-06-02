@@ -1,0 +1,117 @@
+- type: entity
+  parent: BaseItem
+  id: BaseVibe
+  abstract: true
+  components:
+  - type: PhysicalComposition
+    materialComposition:
+      Plastic: 75
+      Steel: 25
+  - type: StaticPrice
+    price: 100
+  - type: ItemToggle
+    predictable: false
+    soundActivate:
+      path: /Audio/_Floof/Lewd/vibrate.ogg
+  - type: UseDelay
+    delay: 1.0
+  - type: Appearance
+  - type: GenericVisualizer
+    visuals:
+      enum.ToggleVisuals.Toggled:
+        on:
+          True: { visible: true }
+          False: { visible: false }
+        base:
+          True: { visible: false }
+          False: { visible: true }
+
+- type: entity
+  parent: BaseVibe
+  id: LewdWand
+  name: magic wand
+  description: A magic wand! This one casts spells of pleasure!
+  components:
+  - type: Sprite
+    sprite: _Floof/Objects/Fun/Lewd/Toys/Vibes/magic_wand.rsi
+    layers:
+      - state: magicwand_off
+        map: ["base"]
+      - state: magicwand_medium
+        map: ["on"]
+        visible: false
+
+- type: entity
+  parent: BaseVibe
+  id: LewdVibeGreen
+  name: tentacle vibrator
+  description: A green vibrator in the shape of a tentacle.
+  components:
+  - type: Sprite
+    sprite: _Floof/Objects/Fun/Lewd/Toys/Vibes/vibrator_green.rsi
+    layers:
+      - state: vibrator_green_off
+        map: ["base"]
+      - state: vibrator_green_medium
+        map: ["on"]
+        visible: false
+
+- type: entity
+  parent: BaseVibe
+  id: LewdVibeTeal
+  name: teal vibrator
+  description: A teal vibrator with a bolbous look.
+  components:
+  - type: Sprite
+    sprite: _Floof/Objects/Fun/Lewd/Toys/Vibes/vibrator_teal.rsi
+    layers:
+      - state: vibrator_teal_off
+        map: ["base"]
+      - state: vibrator_teal_medium
+        map: ["on"]
+        visible: false
+
+- type: entity
+  parent: BaseVibe
+  id: LewdVibePink
+  name: pink vibrator
+  description: A common pink vibrator.
+  components:
+  - type: Sprite
+    sprite: _Floof/Objects/Fun/Lewd/Toys/Vibes/vibrator_pink.rsi
+    layers:
+      - state: vibrator_pink_off
+        map: ["base"]
+      - state: vibrator_pink_medium
+        map: ["on"]
+        visible: false
+
+- type: entity
+  parent: BaseVibe
+  id: LewdVibeRed
+  name: beaded vibrator
+  description: A red vibrator with different sized beads.
+  components:
+  - type: Sprite
+    sprite: _Floof/Objects/Fun/Lewd/Toys/Vibes/vibrator_red.rsi
+    layers:
+      - state: vibrator_red_off
+        map: ["base"]
+      - state: vibrator_red_medium
+        map: ["on"]
+        visible: false
+
+- type: entity
+  parent: BaseVibe
+  id: LewdVibeYellow
+  name: yellow vibrator
+  description: A yellow vibrator in the shape of an egg.
+  components:
+  - type: Sprite
+    sprite: _Floof/Objects/Fun/Lewd/Toys/Vibes/vibrator_yellow.rsi
+    layers:
+      - state: vibrator_yellow_off
+        map: ["base"]
+      - state: vibrator_yellow_medium
+        map: ["on"]
+        visible: false

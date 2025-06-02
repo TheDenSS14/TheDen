@@ -52,7 +52,7 @@
   id: AllAtOnce
   name: all-at-once-title
   description: all-at-once-description
-  showInVote: true
+  showInVote: false
   rules:
     - Nukeops
     - Traitor
@@ -164,7 +164,7 @@
     - nukeops
   name: nukeops-title
   description: nukeops-description
-  showInVote: true
+  showInVote: false
   rules:
     - Nukeops
     - SubGamemodesRule
@@ -198,7 +198,7 @@
   - zomber
   name: zombie-title
   description: zombie-description
-  showInVote: true
+  showInVote: false
   rules:
   - Zombie
   - BasicStationEventScheduler

@@ -183,23 +183,24 @@
         - DeathAcidifierImplant
       - type: RandomMetadata
         nameSegments:
-        - names_ninja_title
-        - names_ninja
+        - NamesNinjaTitle
+        - NamesNinja
+        nameFormat: name-format-ninja
       mindRoles:
       - MindRoleNinja
 
-- type: entity
-  parent: BaseGameRule
-  id: RevenantSpawn
-  categories: [ HideSpawnMenu ]
-  components:
-  - type: StationEvent
-    weight: 7.5
-    duration: 1
-    earliestStart: 45
-    minimumPlayers: 20
-  - type: RandomSpawnRule
-    prototype: MobRevenant
+# - type: entity
+#   parent: BaseGameRule
+#   id: RevenantSpawn
+#   categories: [ HideSpawnMenu ]
+#   components:
+#   - type: StationEvent
+#     weight: 7.5
+#     duration: 1
+#     earliestStart: 45
+#     minimumPlayers: 20
+#   - type: RandomSpawnRule
+#     prototype: MobRevenant
 
 # disabled until event is rewritten to be more interesting
 #- type: entity
@@ -573,8 +574,9 @@
       - type: NukeOperative
       - type: RandomMetadata
         nameSegments:
-        - SyndicateNamesPrefix
-        - SyndicateNamesNormal
+        - NamesSyndicatePrefix
+        - NamesSyndicateNormal
+        nameFormat: name-format-nukie-generic
       - type: NpcFactionMember
         factions:
         - Syndicate
