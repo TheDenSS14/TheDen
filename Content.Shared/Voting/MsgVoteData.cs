@@ -14,6 +14,7 @@ namespace Content.Shared.Voting
         public string VoteInitiator = string.Empty;
         public TimeSpan StartTime; // Server RealTime.
         public TimeSpan EndTime; // Server RealTime.
+        public bool PlayVoteSound;
         public (ushort votes, string name)[] Options = default!;
         public bool IsYourVoteDirty;
         public byte? YourVote;

@@ -355,6 +355,7 @@
     - BluespaceManipulatorStockPart
     - BluespaceMatterBinStockPart
     - AdvMopItem
+    - TrashBagBluespace #DEN - Sanitation Station
     - WeaponSprayNozzle
     - ClothingBackpackWaterTank
     - MegaSprayBottle
@@ -367,6 +368,8 @@
     - VoiceTrigger
     - Igniter
     - HandHeldMassScanner
+    - HandHeldAtmosMonitor #DEN
+    - HandHeldPowerMonitor #DEN
     - PowerCellMicrortg
     - PowerCellMicroreactor
     - PowerCellHigh
@@ -1420,6 +1423,8 @@
       - WeaponParticleDecelerator
       - ClothingMaskWeldingGas
       - ClothingShoesBootsMagSci
+      - HandHeldAtmosMonitor
+      - HandHeldPowerMonitor
       # Routers and monitors
       - PowerComputerCircuitboard
       - AlertsComputerCircuitboard
@@ -1544,6 +1549,7 @@
     - WeaponSprayNozzle
     - ClothingBackpackWaterTank
     - MegaSprayBottle
+    - TrashBagBluespace
     # Machines and computers
     - SeedExtractorMachineCircuitboard
     - HydroponicsTrayMachineCircuitboard
@@ -2144,6 +2150,12 @@
       - PlushieLoveable
       - PlushieDeer
       - PlushieIpc
+      - PlushieFelinid
+      - PlushieOni
+      - PlushieHarpy
+      - PlushieRodentia
+      - PlushieFeroxi
+      - PlushieChitinid
       - PlushieGrey
       - PlushieRedFox
       - PlushiePurpleFox

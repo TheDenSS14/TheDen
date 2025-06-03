@@ -1,0 +1,26 @@
+- type: reagent
+  id: SynthBlood
+  name: reagent-name-synth-blood
+  group: Biological
+  desc: reagent-desc-synth-blood-theden
+  flavor: metallic
+  color: "#00b8f5"
+  recognizable: true
+  physicalDesc: reagent-physical-desc-reflective
+  slippery: false
+  metabolisms:
+    Poison: # TheDen - make synth blood work as coolant
+      effects:
+      - !type:HealthChange
+        damage:
+          types:
+            Cold: 0.2
+      - !type:AdjustTemperature
+        conditions:
+        - !type:Temperature
+          min: 253.15
+        amount: -20000
+  footstepSound:
+    collection: FootstepBlood
+    params:
+      volume: 6

@@ -33,6 +33,12 @@ namespace Content.Server.GameTicking.Commands
                 return;
             }
 
+            if (preset.VoteOnly)
+            {
+                shell.WriteLine("This preset is vote exclusive.");
+                return;
+            }
+
             ticker.SetGamePreset(preset);
             shell.WriteLine(Loc.GetString("set-game-preset-preset-set", ("preset", preset.ID)));
         }

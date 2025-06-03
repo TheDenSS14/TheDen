@@ -39,31 +39,7 @@
 
 # Miscellaneous Items
 
-- type: entity
-  id: SyringeCognizine
-  parent: BaseSyringe
-  name: cognizine syringe
-  components:
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        maxVol: 15
-        reagents:
-        - ReagentId: Cognizine
-          Quantity: 15 # Surely three friends is enough.
-
-- type: entity
-  id: SyringeOpporozidone
-  parent: BaseSyringe
-  name: opporozidone syringe
-  components:
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        maxVol: 15
-        reagents: # TODO: we don't have that yet. Guess the people will receive an empty syringe instead.
-        - ReagentId: Opporozidone
-          Quantity: 15
+# moved cogni and oppo syringes to syringes.yml
 
 - type: entity
   id: NecrosolChemistryBottle
