@@ -1769,6 +1769,15 @@
         reagents:
         - ReagentId: UncookedAnimalProteins
           Quantity: 3
+  - type: ReplaceSolutionWhenRotten
+    solution: food
+    replacements:
+      - solution:
+          reagents:
+          - ReagentId: Gastrotoxin
+            Quantity: 0.005 # 3u replaced after 600 seconds
+        whitelist:
+        - UncookedAnimalProteins
   - type: Butcherable
     spawned:
     - id: FoodMeatRat
