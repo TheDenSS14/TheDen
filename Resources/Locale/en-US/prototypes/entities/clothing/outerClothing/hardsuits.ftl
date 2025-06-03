@@ -97,11 +97,11 @@ ent-ClothingOuterHardsuitSyndieCommander = "Tianming" tacsuit
     .desc = A "Commander" tactical combat hardsuit produced by the Cybersun-Armaments Corporation. The suit's tags indicate that it protects greatly against all forms of damage.
     This one has been painted blood red. It doesn't seem to have any weight.
 ent-ClothingOuterHardsuitJuggernaut = "Guan Yu" tacsuit
-    .desc = "Juggernaut".
-    Matching its bulky appearance, it protects against all forms of damage. It feels VERY heavy.
+    .desc = The pride and joy of the Cybersun-Armaments Corporation, named after an ancient Sol' War God. Commonly known throughout the galaxy as a "Juggernaut".
+        Matching its bulky appearance, it protects against all forms of damage. It feels VERY heavy.
 ent-ClothingOuterHardsuitJuggernautReverseEngineered = "Guan Yu" tacsuit
-    .desc = "Juggernaut".
-    Matching its bulky appearance, it protects against all forms of damage. It feels VERY heavy.
+    .desc = The pride and joy of the Cybersun-Armaments Corporation, named after an ancient Sol' War God. Commonly known throughout the galaxy as a "Juggernaut".
+        Matching its bulky appearance, it protects against all forms of damage. It feels VERY heavy.
 ent-ClothingOuterHardsuitCybersunStealth = "Èguǐ" tacsuit
     .desc = A rare prototype tacsuit that features metamaterial plating which warps light around it to produce an "Invisibility cloak" effect.
     Unfortunately, it accomplishes this by trading a lot of protections that one would normally expect from a typical tacsuit.
