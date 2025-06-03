@@ -2,7 +2,7 @@
   abstract: true
   parent: BaseItem
   id: BaseMagazineBoxAntiMateriel
-  name: ammunition box (.60 anti-materiel)
+  name: ammunition box (17.5mm Hristov)
   components:
   - type: BallisticAmmoProvider
     mayTransfer: true
@@ -28,7 +28,7 @@
 - type: entity
   parent: BaseMagazineBoxAntiMateriel
   id: MagazineBoxAntiMaterielBig
-  name: ammunition box (.60 anti-materiel)
+  name: ammunition box (17.5mm Hristov)
   suffix: Big # TheDen
   components:
   - type: BallisticAmmoProvider
@@ -49,7 +49,7 @@
 - type: entity
   parent: BaseMagazineBoxAntiMateriel
   id: MagazineBoxAntiMateriel
-  name: ammunition box (.60 anti-materiel)
+  name: ammunition box (17.5mm Hristov)
   components:
   - type: BallisticAmmoProvider
     proto: CartridgeAntiMateriel
@@ -63,7 +63,7 @@
 - type: entity
   parent: MagazineBoxAntiMateriel
   id: MagazineBoxAntiMaterielShrapnel
-  name: ammunition box (.60 anti-personnel shrapnel)
+  name: ammunition box (17.5mm Hristov shrapnel)
   components:
   - type: BallisticAmmoProvider
     proto: CartridgeAntiMaterielShrapnel

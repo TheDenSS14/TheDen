@@ -90,7 +90,7 @@
   name: viper
   parent: BaseWeaponPistol
   id: WeaponPistolViper
-  description: A small, easily concealable, but somewhat underpowered gun, produced by a bulk arms manufacturer now defunct for over a century. Uses .35 auto ammo.
+  description: A small, easily concealable, but somewhat underpowered gun, produced by a bulk arms manufacturer now defunct for over a century. Uses 10mm Pacem ammo.
   components:
   - type: Sprite
     sprite: Objects/Weapons/Guns/Pistols/viper.rsi
@@ -156,7 +156,7 @@
   parent: WeaponPistolViper
   id: WeaponPistolViperSecurity
   description: A small, easily concealable, but somewhat underpowered gun, produced by a bulk arms manufacturer now defunct for over a century.
-               Uses .35 auto ammo. The serial number on the handguard marks this gun as belonging to an NT Security Officer.
+               Uses 10mm Pacem ammo. The serial number on the handguard marks this gun as belonging to an NT Security Officer.
   suffix: Security # TheDen
   components:
   - type: GuideHelp
@@ -194,7 +194,7 @@
   parent: WeaponPistolViperNonLethal
   suffix: Security, Non-lethal # TheDen
   description: A small, easily concealable, but somewhat underpowered gun, produced by a bulk arms manufacturer now defunct for over a century.
-               Uses .35 auto ammo. The serial number on the handguard marks this gun as belonging to an NT Security Officer.
+               Uses 10mm Pacem ammo. The serial number on the handguard marks this gun as belonging to an NT Security Officer.
   components:
   - type: GuideHelp
     guides: [ SecurityWeapons ]
@@ -203,7 +203,7 @@
   name: cobra
   parent: BaseWeaponPistol
   id: WeaponPistolCobra
-  description: A rugged, robust operator handgun with inbuilt silencer. Uses .25 caseless ammo.
+  description: A rugged, robust operator handgun with inbuilt silencer. Uses 6.2mm Eclipse ammo.
   components:
   - type: Sprite
     sprite: Objects/Weapons/Guns/Pistols/cobra.rsi
@@ -275,7 +275,7 @@
   name: mk 58
   parent: BaseWeaponPistol
   id: WeaponPistolMk58
-  description: A cheap, ubiquitous sidearm, produced by a NanoTrasen subsidiary. Uses .35 auto ammo.
+  description: A cheap, ubiquitous sidearm, produced by a NanoTrasen subsidiary. Uses 10mm Pacem ammo.
   components:
   - type: Sprite
     sprite: Objects/Weapons/Guns/Pistols/mk58.rsi
@@ -321,7 +321,7 @@
   name: mk 58
   parent: WeaponPistolMk58
   id: WeaponPistolMk58Security
-  description: A cheap, ubiquitous sidearm, produced by a NanoTrasen subsidiary. Uses .35 auto ammo.
+  description: A cheap, ubiquitous sidearm, produced by a NanoTrasen subsidiary. Uses 10mm Pacem ammo.
                The serial number on the handguard marks this gun as belonging to an NT Security Officer.
   suffix: Security # TheDen
   components:
@@ -358,7 +358,7 @@
   id: WeaponPistolMk58SecurityNonlethal
   parent: WeaponPistolMk58Nonlethal
   suffix: Security, Non-lethal # TheDen
-  description: A cheap, ubiquitous sidearm, produced by a NanoTrasen subsidiary. Uses .35 auto ammo.
+  description: A cheap, ubiquitous sidearm, produced by a NanoTrasen subsidiary. Uses 10mm Pacem ammo.
                The serial number on the handguard marks this gun as belonging to an NT Security Officer.
   components:
   - type: GuideHelp
@@ -368,7 +368,7 @@
   name: N1984
   parent: BaseWeaponPistol
   id: WeaponPistolN1984 # the spaces in description are for formatting.
-  description: The sidearm of any self respecting officer.     Comes in .45 magnum, the lord's caliber.
+  description: The sidearm of any self respecting officer.     Comes in .45 Liberté, the lord's caliber.
   components:
   - type: Sprite
     sprite: Objects/Weapons/Guns/Pistols/N1984.rsi
@@ -436,7 +436,7 @@
   name: N1984
   parent: WeaponPistolN1984
   id: WeaponPistolN1984Security # the spaces in description are for formatting.
-  description: The sidearm of any self respecting officer.     Comes in .45 magnum, the lord's caliber.
+  description: The sidearm of any self respecting officer.     Comes in .45 Liberté, the lord's caliber.
                The serial number on the handguard marks this gun as belonging to an NT Security Officer.
   suffix: Security # TheDen
   components:
@@ -474,7 +474,7 @@
   name: N1984
   parent: WeaponPistolN1984NonLethal
   id: WeaponPistolN1984SecurityNonLethal
-  description: The sidearm of any self respecting officer.     Comes in .45 magnum, the lord's caliber.
+  description: The sidearm of any self respecting officer.     Comes in .45 Liberté, the lord's caliber.
                The serial number on the handguard marks this gun as belonging to an NT Security Officer.
   suffix: Security, Non-lethal # TheDen
   components:

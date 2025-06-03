@@ -1,6 +1,6 @@
 - type: entity
   id: BaseMagazineUniversalMagnum
-  name: "Universal magazine (.45 magnum)"
+  name: "Universal magazine (.45 Liberté)"
   parent: BaseMagazinePistol
   abstract: true
   components:
@@ -32,7 +32,7 @@
 
 - type: entity
   id: MagazineUniversalMagnum
-  name: "Universal magazine (.45 magnum)"
+  name: "Universal magazine (.45 Liberté)"
   parent: BaseMagazineUniversalMagnum
   components:
   - type: BallisticAmmoProvider
@@ -51,7 +51,7 @@
 
 - type: entity
   id: MagazineUniversalMagnumPractice
-  name: "Universal magazine (.45 magnum practice)"
+  name: "Universal magazine (.45 Liberté practice)"
   parent: BaseMagazineUniversalMagnum
   components:
   - type: BallisticAmmoProvider
@@ -70,7 +70,7 @@
 
 - type: entity
   id: MagazineUniversalMagnumRubber
-  name: "Universal magazine (.45 magnum rubber)"
+  name: "Universal magazine (.45 Liberté rubber)"
   parent: BaseMagazineUniversalMagnum
   components:
   - type: BallisticAmmoProvider
