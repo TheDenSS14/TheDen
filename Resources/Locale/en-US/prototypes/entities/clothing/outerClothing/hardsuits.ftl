@@ -144,13 +144,15 @@ ent-ClothingOuterHardsuitWizard = "Mana" tacsuit
     Technical identifier: WZD-084
 ent-ClothingOuterHardsuitLing = organic vacsuit
     .desc = A suit made of biomass tissue that is somehow capable of resisting the hazards of low pressure and temperature in space.
-ent-ClothingOuterHardsuitPirateEVA = pirate vacsuit
+ent-ClothingOuterHardsuitPirateEVA = "Grunt" vacsuit
     .desc = A worn-out heavy space suit of unknown origin that provides some basic protection from the cold harsh realities of deep space.
-            Technical identifier: unknown
-ent-ClothingOuterHardsuitPirateCap = pirate captain's tacsuit
+    The technical identifier is nonetheless engraved crudely on the shoulder.
+    Technical identifier: OPR-032
+ent-ClothingOuterHardsuitPirateCap = "Dragon" tacsuit
     .desc = An ancient armored tactical combat hardsuit of unknown origin, provides basic protections from the cold harsh realities of deep space and physical trauma.
     It doesn't seem to have any weight either. Perfect for defending against space scurvy and toolbox-wielding scallywags.
-    Technical identifier: unknown
+    The technical identifier is nonetheless engraved crudely on the shoulder.
+    Technical identifier: OPR-32c
 ent-ClothingOuterHardsuitERTCentcomm = "Ophanim" tacsuit
     .desc = A highly advanced, tactical combat hardsuit used by Central Command Officers, it seems to be branded with the Nanotrasen logo and a strange looking series number.
     The armor appears to be lined with a very sturdy alloy, it doesn't seem to have any weight either.
