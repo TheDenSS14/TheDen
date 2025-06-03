@@ -44,6 +44,10 @@
       Alive: BorgHealth
       Critical: BorgCrit
       Dead: BorgDead
+    thresholds:
+      0: Alive
+      100: Critical
+      200: Dead
   - type: TypingIndicator
     proto: robot
   - type: Destructible
@@ -124,6 +128,22 @@
     - DoorBumpOpener
     - SiliconEmotes
     - SiliconMob
+  - type: Bloodstream
+    damageBleedModifiers: BloodlossIPC
+    bloodReagent: Oil
+    bleedReductionAmount: 0
+    bloodMaxVolume: 500
+    chemicalMaxVolume: 0
+    bleedPuddleThreshold: 3
+    bleedRefreshAmount: 0
+    bloodLossThreshold: 0
+    maxBleedAmount: 10
+    bloodlossDamage:
+      types:
+        Burn: 1.5
+    bloodlossHealDamage:
+      types:
+        Burn: 0
 
 - type: entity
   save: false
