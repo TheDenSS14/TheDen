@@ -7,14 +7,14 @@
   - type: AntagObjectives
     objectives:
     - EscapeThiefShuttleObjective
-  - type: AntagRandomObjectives
-    sets:
-    - groups: ThiefBigObjectiveGroups
-      prob: 0.7
-      maxPicks: 1
-    - groups: ThiefObjectiveGroups
-      maxPicks: 10
-    maxDifficulty: 2.5
+  # - type: AntagRandomObjectives
+  #   sets:
+  #   - groups: ThiefBigObjectiveGroups
+  #     prob: 0.7
+  #     maxPicks: 1
+  #   - groups: ThiefObjectiveGroups
+  #     maxPicks: 10
+  #   maxDifficulty: 2.5
   - type: AntagSelection
     agentName: thief-round-end-agent-name
     definitions:
@@ -25,8 +25,8 @@
       allowNonHumans: true
       multiAntagSetting: All
       startingGear: ThiefGear
-      components:
-      - type: Pacified
+      # components:
+      # - type: Pacified
       mindRoles:
       - MindRoleThief
       briefing:

@@ -370,6 +370,11 @@ public sealed class ClientClothingSystem : ClothingSystem
             sprite.LayerSetData(index, layerData);
             layer.Offset += slotDef.Offset;
 
+            // Begin TheDen - Ignore displacement maps for custom sprites
+            if (layerData.State != null && inventory.SpeciesId != null && layerData.State.Contains(inventory.SpeciesId))
+                continue;
+            // End TheDen
+
             if (displacementData != null)
             {
                 if (displacementData.ShaderOverride != null)

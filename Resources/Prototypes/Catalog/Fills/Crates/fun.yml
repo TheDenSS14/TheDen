@@ -82,6 +82,20 @@
         id: PlushieArachind
       - !type:EntSelector
         id: PlushiePenguin
+      # Begin DeltaV,- see Resources/Prototypes/_DV/Entities/Objects/Fun/toys.yml
+      - !type:EntSelector
+        id: PlushieFelinid
+      - !type:EntSelector
+        id: PlushieOni
+      - !type:EntSelector
+        id: PlushieHarpy
+      - !type:EntSelector
+        id: PlushieRodentia
+      - !type:EntSelector
+        id: PlushieFeroxi
+      - !type:EntSelector
+        id: PlushieChitinid
+      # End DeltaV
 
 - type: entity
   id: CrateFunPlushie

@@ -14,6 +14,12 @@ public sealed class MidRoundAntagRule : StationEventSystem<MidRoundAntagRuleComp
         if (!TryGetRandomStation(out var station))
             return;
 
+        var ev = new BeforeMidRoundAntagSpawnEvent((uid, component));
+        RaiseLocalEvent(ref ev);
+
+        if (ev.Cancelled)
+            return;
+
         var spawnLocations = FindSpawns(station.Value);
         if (spawnLocations.Count == 0)
         {
@@ -54,3 +60,8 @@ public sealed class MidRoundAntagRule : StationEventSystem<MidRoundAntagRuleComp
         return spawns;
     }
 }
+
+[ByRefEvent]
+public record struct BeforeMidRoundAntagSpawnEvent(
+    Entity<MidRoundAntagRuleComponent> MidRoundAntagRule,
+    bool Cancelled = false);

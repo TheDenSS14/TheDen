@@ -2,8 +2,8 @@ using Content.Server.Access.Systems;
 using Content.Server.Administration.Logs;
 using Content.Server.Cargo.Components;
 using Content.Server.Cargo.Systems;
-using Content.Server.DeltaV.Cargo.Components;
-using Content.Server.DeltaV.CartridgeLoader.Cartridges;
+using Content.Server._DV.Cargo.Components;
+using Content.Server._DV.CartridgeLoader.Cartridges;
 using Content.Shared.Access.Components;
 using Content.Shared.Access.Systems;
 using Content.Shared.CartridgeLoader;
@@ -13,7 +13,7 @@ using Robust.Shared.Audio.Systems;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
 
-namespace Content.Server.DeltaV.Cargo.Systems;
+namespace Content.Server._DV.Cargo.Systems;
 
 /// <summary>
 /// This handles the stock market updates

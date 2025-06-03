@@ -1,0 +1,14 @@
+- type: entity
+  parent: CrateBaseWeldable
+  id: CrateLewd
+  name: lewd crate
+  components:
+  - type: Icon
+    sprite: _Floof/Structures/lewdcrate.rsi
+  - type: Sprite
+    sprite: _Floof/Structures/lewdcrate.rsi
+  - type: Reflect
+    reflects:
+    - Energy
+    reflectProb: 0.2
+    spread: 90

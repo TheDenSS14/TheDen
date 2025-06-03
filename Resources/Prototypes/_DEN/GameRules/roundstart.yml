@@ -1,0 +1,13 @@
+- type: entity
+  id: HighDangerRule
+  parent: BaseGameRule
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: HighDangerRule
+
+- type: entity
+  id: LowDangerRule
+  parent: BaseGameRule
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: LowDangerRule
