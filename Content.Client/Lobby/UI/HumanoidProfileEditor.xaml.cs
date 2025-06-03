@@ -21,6 +21,7 @@ using Content.Shared.Humanoid;
 using Content.Shared.Humanoid.Markings;
 using Content.Shared.Humanoid.Prototypes;
 using Content.Shared.Preferences;
+using Content.Shared.Random.Helpers;
 using Content.Shared.Roles;
 using Content.Shared.StatusIcon;
 using Content.Shared.Traits;
@@ -107,8 +108,8 @@ namespace Content.Client.Lobby.UI
         [ValidatePrototypeId<LocalizedDatasetPrototype>]
         private const string StationAiNames = "NamesAI";
 
-        [ValidatePrototypeId<DatasetPrototype>]
-        private const string CyborgNames = "names_borg";
+        [ValidatePrototypeId<LocalizedDatasetPrototype>]
+        private const string CyborgNames = "NamesBorg";
 
         public HumanoidProfileEditor(
             IClientPreferencesManager preferencesManager,
@@ -1794,15 +1795,15 @@ namespace Content.Client.Lobby.UI
                 return;
 
             var newName = Profile.CyborgName ?? string.Empty;
-            
+
             if (newName != CyborgNameEdit.Text)
                 CyborgNameEdit.Text = newName;
 
             if (CyborgNameEdit.Text != string.Empty)
                 return;
 
-            var borgNames = _prototypeManager.Index<DatasetPrototype>(CyborgNames);
-            var randomName = _random.Pick(borgNames.Values);
+            var borgNames = _prototypeManager.Index<LocalizedDatasetPrototype>(CyborgNames);
+            var randomName = _random.Pick(borgNames);
             CyborgNameEdit.PlaceHolder = Loc.GetString(randomName);
         }
 

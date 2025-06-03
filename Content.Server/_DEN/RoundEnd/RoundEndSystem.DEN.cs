@@ -1,6 +1,9 @@
 using System.Threading;
+using Content.Server.GameTicking.Events;
 using Content.Server.Voting;
 using Content.Shared.CCVar;
+using Content.Shared.Database;
+using Content.Shared.GameTicking;
 using Robust.Shared.Player;
 using Timer = Robust.Shared.Timing.Timer;
 
@@ -10,20 +13,24 @@ namespace Content.Server.RoundEnd;
 
 public sealed partial class RoundEndSystem
 {
+    private CancellationTokenSource? _timerCancellation;
+
+    private bool _hasHardEndWarningRun;
+
     private void InitializeDen()
     {
-        InitializeTimer();
-
         SubscribeLocalEvent<CanCallOrRecallEvent>(CheckIfCanCallOrRecall);
-        SubscribeLocalEvent<ShuttleAutoCallAttemptedEvent>(OnShuttleAutoCallAttempted);
     }
 
     private TimeSpan WarnAt() => RoundHardEnd - RoundHardEndWarningTime;
 
-    private void InitializeTimer()
+    private void UpdateForWarning()
     {
-        Timer.Spawn(WarnAt(), SendWarningAnnouncement);
-        Timer.Spawn(RoundHardEnd, UpdateRoundEnd);
+        if (_hasHardEndWarningRun || _gameTicker.RoundDuration() < WarnAt())
+            return;
+
+        _hasHardEndWarningRun = true;
+        SendWarningAnnouncement();
     }
 
     private void CheckIfCanCallOrRecall(ref CanCallOrRecallEvent ev)
@@ -38,8 +45,11 @@ public sealed partial class RoundEndSystem
             return;
 
         var votedYes = (bool) args.Winner;
+        var logText = votedYes ? "staying" : "leaving";
 
-        if (votedYes || !CanCallOrRecallIgnoringCooldown())
+        _adminLogger.Add(LogType.Vote, LogImpact.Low, $"Round extension vote ended in favor of {logText}.");
+
+        if (votedYes)
             return;
 
         RequestRoundEnd(null, false, "round-end-system-shuttle-auto-called-announcement");
@@ -49,11 +59,8 @@ public sealed partial class RoundEndSystem
     /// <summary>
     /// Send recall vote.
     /// </summary>
-    private void OnShuttleAutoCallAttempted(ref ShuttleAutoCallAttemptedEvent ev)
+    private void CreateAutoCallVote()
     {
-        if (!CanCallOrRecallIgnoringCooldown())
-            return;
-
         var alone = _playerManager.PlayerCount == 1;
         var options = new VoteOptions
         {
@@ -70,6 +77,8 @@ public sealed partial class RoundEndSystem
         options.PlayVoteSound = false; // we expect to be doing this several times a shift.
         options.Options.Add((localeYes, true));
         options.Options.Add((localeNo, false));
+
+        _adminLogger.Add(LogType.Vote, LogImpact.Low, $"Server vote started for round extension.");
 
         var recallVote = _voteManager.CreateVote(options);
         recallVote.OnFinished += (_, args) => ShuttleRecallVoteFinished(args);
