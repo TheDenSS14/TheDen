@@ -316,7 +316,13 @@ public sealed partial class ChatUIController : UIController
                 SetChatSizing(chatSizeRaw, separatedScreen, setting);
 
                 if (!_registeredEvent)
-                    _config.OnValueChanged(CCVars.ChatExtraInfo, (newValue) => OnChatExtraInfoChanged(newValue, separatedScreen), true);
+                {
+                    _config.OnValueChanged(
+                        CCVars.ChatExtraInfo,
+                        newValue => OnChatExtraInfoChanged(newValue, separatedScreen),
+                        true);
+                    _registeredEvent = true;
+                }
 
                 break;
             case OverlayChatGameScreen overlayScreen:
