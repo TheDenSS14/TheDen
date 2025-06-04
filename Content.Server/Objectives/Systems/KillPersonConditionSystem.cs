@@ -101,7 +101,7 @@ public sealed class KillPersonConditionSystem : EntitySystem
             return;
 
         // no other humans to kill
-        var allHumans = _mind.GetAliveHumans(args.MindId);
+        var allHumans = _mind.GetAliveHumans(exclude: args.MindId);
         if (allHumans.Count == 0)
         {
             args.Cancelled = true;
@@ -117,7 +117,7 @@ public sealed class KillPersonConditionSystem : EntitySystem
         }
 
         if (allHeads.Count == 0)
-            allHeads = allHumans.Select(human => human.Owner).ToList(); // fallback to non-head target
+            allHeads = allHumans.Select(x => x.Owner).ToList(); // fallback to non-head target
 
         _target.SetTarget(uid, _random.Pick(allHeads), target);
     }
