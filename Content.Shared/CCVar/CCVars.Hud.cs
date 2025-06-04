@@ -27,4 +27,7 @@ public sealed partial class CCVars
 
     public static readonly CVarDef<bool> ModernProgressBar =
         CVarDef.Create("hud.modern_progress_bar", true, CVar.CLIENTONLY | CVar.ARCHIVE);
+
+    public static readonly CVarDef<bool> ChatExtraInfo =
+        CVarDef.Create("hud.chat_extra_info", true, CVar.CLIENTONLY | CVar.ARCHIVE);
 }
