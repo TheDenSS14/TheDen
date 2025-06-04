@@ -1775,10 +1775,11 @@
     replacements:
       - solution:
           reagents:
-          - ReagentId: Gastrotoxin
+          - ReagentId: GastroToxin
             Quantity: 0.05 # 3u replaced after 600 seconds
         whitelist:
         - UncookedAnimalProteins
+        amount: 0.05
   - type: Butcherable
     spawned:
     - id: FoodMeatRat
