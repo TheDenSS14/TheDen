@@ -270,19 +270,21 @@ public sealed partial class ChatSystem : SharedChatSystem
                 return;
             }
         }
-        
+
         // message = FormattedMessage.EscapeText(message);
 
         // Otherwise, send whatever type.
         switch (desiredType)
         {
             case InGameICChatType.Speak:
+                message = FormattedMessage.EscapeText(message);
                 SendEntitySpeak(source, message, range, nameOverride, language, hideLog, ignoreActionBlocker);
                 break;
             case InGameICChatType.Whisper:
                 SendEntityWhisper(source, message, range, null, nameOverride, language, hideLog, ignoreActionBlocker);
                 break;
             case InGameICChatType.Emote:
+                message = FormattedMessage.EscapeText(message);
                 SendEntityEmote(source, message, range, nameOverride, language, hideLog: hideLog, ignoreActionBlocker: ignoreActionBlocker);
                 break;
             case InGameICChatType.Subtle:
@@ -498,7 +500,7 @@ public sealed partial class ChatSystem : SharedChatSystem
             return;
 
         var targetHasLanguage = TryComp<LanguageSpeakerComponent>(source, out var languageSpeakerComponent);
-        var message = TransformSpeech(source, FormattedMessage.RemoveMarkupPermissive(originalMessage), language);
+        var message = TransformSpeech(source, originalMessage, language);
 
         if (message.Length == 0)
             return;
