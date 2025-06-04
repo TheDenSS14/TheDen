@@ -354,6 +354,7 @@
       species:
         - Vulpkanin # This trait functions exactly as-is for the Vulpkanin trait.
         - Plasmaman # Plasmamen have cold immunity so this trait is unnecessary
+        - Resomi # Get this as a species trait
   functions:
     - !type:TraitReplaceComponent
       components:
@@ -410,6 +411,7 @@
         - Shadowkin # Shadowkins also have claws.
         # - Vulpkanin # Vulpkanin have "Blunt" claws. One could argue this trait "Sharpens" their claws.
         - Rodentia # Floof - Rodentia already has it
+        - Resomi # Resomi get these. Space raptors.
     - !type:CharacterTraitRequirement
       inverted: true
       traits:
