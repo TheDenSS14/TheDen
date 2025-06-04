@@ -138,8 +138,7 @@ namespace Content.Client.Voting
                     return;
                 }
 
-                if (message.PlayVoteSound)
-                    _voteSource?.Restart();
+                _voteSource?.Restart();
 
                 @new = true;
 

@@ -34,22 +34,14 @@ public sealed class EventManagerSystem : EntitySystem
     /// <summary>
     /// Randomly runs a valid event.
     /// </summary>
-    public string RunRandomEvent()
+    public void RunRandomEvent()
     {
         var randomEvent = PickRandomEvent();
 
         if (randomEvent == null)
-        {
-            var errStr = Loc.GetString("station-event-system-run-random-event-no-valid-events");
-            Log.Error(errStr);
-            return errStr;
-        }
+            return;
 
-        var ent = GameTicker.AddGameRule(randomEvent);
-        var str = Loc.GetString("station-event-system-run-event",("eventName", ToPrettyString(ent)));
-        _chat.SendAdminAlert(str);
-        Log.Info(str);
-        return str;
+        GameTicker.AddGameRule(randomEvent);
     }
 
     /// <summary>

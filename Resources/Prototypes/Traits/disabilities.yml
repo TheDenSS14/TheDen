@@ -121,7 +121,7 @@
 
 - type: trait
   id: Uncloneable
-  category: Physical
+  category: TraitsPhysicalBiological
   points: 1
   requirements:
     - !type:CharacterJobRequirement
@@ -178,7 +178,7 @@
 
 - type: trait
   id: BadKnees
-  category: Physical
+  category: TraitsPhysicalDisabilities
   points: 5
   requirements:
     - !type:CharacterTraitRequirement
@@ -202,7 +202,7 @@
 
 - type: trait
   id: Sluggish
-  category: Physical
+  category: TraitsPhysicalDisabilities
   points: 5
   requirements:
     - !type:CharacterTraitRequirement
@@ -225,7 +225,7 @@
 
 - type: trait
   id: SnailPaced
-  category: Physical
+  category: TraitsPhysicalDisabilities
   points: 8
   requirements:
     - !type:CharacterTraitRequirement
@@ -248,7 +248,7 @@
 
 - type: trait
   id: BloodDeficiency
-  category: Physical
+  category: TraitsPhysicalDisabilities
   points: 6
   requirements:
     - !type:CharacterJobRequirement
@@ -270,7 +270,7 @@
 
 - type: trait
   id: Hemophilia
-  category: Physical
+  category: TraitsPhysicalDisabilities
   points: 4
   requirements:
     - !type:CharacterJobRequirement
@@ -325,7 +325,7 @@
 
 - type: trait
   id: Clumsy
-  category: Physical
+  category: TraitsPhysicalDisabilities
   points: 4
   requirements:
     - !type:CharacterJobRequirement
