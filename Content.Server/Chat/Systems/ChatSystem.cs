@@ -270,8 +270,8 @@ public sealed partial class ChatSystem : SharedChatSystem
                 return;
             }
         }
-
-        message = FormattedMessage.EscapeText(message);
+        
+        // message = FormattedMessage.EscapeText(message);
 
         // Otherwise, send whatever type.
         switch (desiredType)
