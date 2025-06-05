@@ -132,7 +132,7 @@ ent-ClothingOuterHardsuitJuggernaut = "Guan Yu" tacsuit
     Technical identifier: CSA-80UA
 ent-ClothingOuterHardsuitJuggernautReverseEngineered = "Guan Yu" tacsuit
     .desc = The pride and joy of the Cybersun-Armaments Corporation, named after an ancient Sol' War God. Commonly known throughout the galaxy as a "Juggernaut".
-    Matching its bulky appearance, it protects against all forms of damage. It feels VERY heavy.
+    Matching its bulky appearance, it protects against all forms of damage. It feels VERY heavy. This one has been painted blue.
     Technical identifier: CSA-80UA
 ent-ClothingOuterHardsuitCybersunStealth = "Èguǐ" tacsuit
     .desc = A rare prototype tacsuit that features metamaterial plating which warps light around it to produce an "Invisibility cloak" effect.
