@@ -69,6 +69,26 @@ namespace Content.Server.Chat.Commands
         public string Description => "Perform a subtle action with your own color and option for whether there's a space between name and message.";
         public string Help => "subtledetailed <color or 'none' for default> <separate (true/false)> <text>";
 
+        public CompletionResult GetCompletion(IConsoleShell shell, string[] args)
+        {
+            if (args.Length == 1)
+            {
+                return CompletionResult.FromHint("#ffffff");
+            }
+
+            if (args.Length == 2)
+            {
+                return CompletionResult.FromOptions(["true", "false"]);
+            }
+
+            if (args.Length >= 3)
+            {
+                return CompletionResult.FromHint("[ message ]");
+            }
+
+            return CompletionResult.Empty;
+        }
+
         public void Execute(IConsoleShell shell, string argStr, string[] arrayArgs)
         {
             string? color = null;

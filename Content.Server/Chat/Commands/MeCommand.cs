@@ -67,6 +67,21 @@ namespace Content.Server.Chat.Commands
         public string Description => "Perform an action. If separate is true, your emote will display as (Name) Message instead of Name Message.";
         public string Help => "medetailed <separate (true/false)> <text>";
 
+        public CompletionResult GetCompletion(IConsoleShell shell, string[] args)
+        {
+            if (args.Length == 1)
+            {
+                return CompletionResult.FromOptions(["true", "false"]);
+            }
+
+            if (args.Length >= 2)
+            {
+                return CompletionResult.FromHint("[ message ]");
+            }
+
+            return CompletionResult.Empty;
+        }
+
         public void Execute(IConsoleShell shell, string argStr, string[] arrayArgs)
         {
             var separateNameAndMessage = false;
