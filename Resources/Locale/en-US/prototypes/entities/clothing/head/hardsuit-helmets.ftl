@@ -125,7 +125,7 @@ ent-ClothingHeadHelmetHardsuitLing = organic space helmet
     .desc = A spaceworthy biomass of pressure and temperature resistant tissue.
 ent-ClothingHeadHelmetHardsuitPirateEVA = "Grunt" helmet
     .desc = A pirate vacsuit helmet, very heavy but provides good protection.
-    Technical identifier: OPR-032
+    Technical identifier: OPR-32
 ent-ClothingHeadHelmetHardsuitPirateCap = "Dragon" helmet
     .desc = A special hardsuit helmet, made for the captain of a pirate ship.
     Technical identifier: OPR-32c

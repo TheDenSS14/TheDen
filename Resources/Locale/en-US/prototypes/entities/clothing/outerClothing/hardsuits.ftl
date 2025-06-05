@@ -39,7 +39,7 @@ ent-ClothingOuterHardsuitBrigmedic = "Tsagaan" tacsuit
 ent-ClothingOuterHardsuitCombatStandard = "Baghatur Mk.II" tacsuit
     .desc = A sturdy tactical combat hardsuit mass-produced by Five-Points-Armory.
     The tags on the suit indicate that its rated for moderate amounts of physical and explosion damage. It feels heavy.
-    Technical identifier: FPA-085
+    Technical identifier: FPA-85
 ent-ClothingOuterHardsuitCombatOfficer = "Baghatur Mk.II" tacsuit
     .desc = A sturdy tactical combat hardsuit mass-produced by Five-Points-Armory, painted with the colors of station security.
     The tags on the suit indicate that its rated for moderate amounts of physical and explosion damage. It feels heavy.
@@ -47,7 +47,7 @@ ent-ClothingOuterHardsuitCombatOfficer = "Baghatur Mk.II" tacsuit
 ent-ClothingOuterHardsuitCombatMedical = "Tsagaan Mk.II" tacsuit
     .desc = A sturdy tactical combat hardsuit mass-produced by Five-Points-Armory.
     The tags on the suit indicate that its rated for moderate amounts of physical and explosion damage. It feels heavy.
-    Technical identifier: FPA-086
+    Technical identifier: FPA-86
 ent-ClothingOuterHardsuitCombatCorpsman = "Tsagaan Mk.II" tacsuit
     .desc = A sturdy tactical combat hardsuit mass-produced by Five-Points-Armory, painted with the colors of station security & medical staff.
     The tags on the suit indicate that its rated for moderate amounts of physical and explosion damage. It feels heavy.
@@ -59,7 +59,7 @@ ent-ClothingOuterHardsuitWarden = "Sulde" tacsuit
 ent-ClothingOuterHardsuitCombatRiot = "Sulde Mk.II" tacsuit
     .desc = A specialized tactical combat hardsuit produced by Five-Points-Armory.
     The tags on the suit indicate that its rated for moderate amounts of physical and explosion damage. It feels VERY heavy.
-    Technical identifier: FPA-093
+    Technical identifier: FPA-93
 ent-ClothingOuterHardsuitCombatWarden = "Sulde Mk.II" tacsuit
     .desc = A specialized tactical combat hardsuit produced by Five-Points-Armory, painted with the colors of station security.
     The tags on the suit indicate that its rated for moderate amounts of physical and explosion damage. It feels VERY heavy.
@@ -147,13 +147,13 @@ ent-ClothingOuterHardsuitDreadnought = "Xíngtiān" tacsuit
 ent-ClothingOuterHardsuitWizard = "Mana" tacsuit
     .desc = A bizarre gem-encrusted hardsuit. Famously used by members of the Wizard Federation in their operations.
     Contrary to it's appearance, it can protect its wearer from space and considerable amounts of physical trauma, it feels somewhat light.
-    Technical identifier: WZD-084
+    Technical identifier: WZD-84
 ent-ClothingOuterHardsuitLing = organic vacsuit
     .desc = A suit made of biomass tissue that is somehow capable of resisting the hazards of low pressure and temperature in space.
 ent-ClothingOuterHardsuitPirateEVA = "Grunt" vacsuit
     .desc = A worn-out heavy space suit of unknown origin that provides some basic protection from the cold harsh realities of deep space.
     The technical identifier is nonetheless engraved crudely on the shoulder.
-    Technical identifier: OPR-032
+    Technical identifier: OPR-32
 ent-ClothingOuterHardsuitPirateCap = "Dragon" tacsuit
     .desc = An ancient armored tactical combat hardsuit of unknown origin, provides basic protections from the cold harsh realities of deep space and physical trauma.
     It doesn't seem to have any weight either. Perfect for defending against space scurvy and toolbox-wielding scallywags.
