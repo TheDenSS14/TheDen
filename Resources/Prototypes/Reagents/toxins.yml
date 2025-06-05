@@ -561,12 +561,13 @@
           type: Shadowkin
         reagent: Protein
         amount: 0.5
-      - !type:AdjustReagent
-        conditions:
-        - !type:OrganType
-          type: Detritivore
-        reagent: Protein
-        amount: 0.5
+      # - !type:AdjustReagent
+      #   conditions:
+      #   - !type:OrganType
+      #     type: Detritivore
+      #   reagent: Protein
+      #   amount: 0.5
+        # this is commented because i realized this would cause redundancy with animal organs. uhhhh.
         # TODO: these last three should be a single effect with a "or" conditional or smth
 
 - type: reagent
