@@ -614,16 +614,17 @@ public sealed partial class ChatSystem : SharedChatSystem
         action = FormattedMessage.EscapeText(action);
         var useSpace = !action.StartsWith("\'s") || !action.StartsWith(",");
         var space = useSpace || separateNameAndMessage ? " " : "";
-        var locString = "chat-manager-entity-subtle-wrap-message";
+        var locString = "chat-manager-entity-me-wrap-message";
 
         if (separateNameAndMessage)
-            locString = "chat-manager-entity-subtle-no-separate-wrap-message";
+            locString = "chat-manager-entity-me-no-separate-wrap-message";
 
         // Emotes use Identity.Name, since it doesn't actually involve your voice at all.
         var wrappedMessage = Loc.GetString(locString,
             ("entityName", name),
             ("entity", ent),
             ("space", space),
+            ("color", "#d3d3d3"),
             ("message", action));
 
         if (checkEmote)

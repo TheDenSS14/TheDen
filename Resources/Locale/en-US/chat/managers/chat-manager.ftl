@@ -38,6 +38,12 @@ chat-manager-entity-me-wrap-message = [italic]{ PROPER($entity) ->
      [true] {$entityName}{$space}{$message}[/italic]
     }
 
+chat-manager-entity-me-no-separate-wrap-message = [italic]{ PROPER($entity) ->
+    *[false] [color=#707070](the {$entityName})[/color][color={$color}]{$space}{$message}[/color][/italic]
+     [true] [color=#707070]({$entityName})[/color][color={$color}]{$space}{$message}[/color][/italic]
+    }
+
+
 chat-manager-entity-subtle-wrap-message = [italic][color={$color}]{ PROPER($entity) ->
     *[false] the {$entityName}{$space}{$message}[/color][/italic]
      [true] {$entityName}{$space}{$message}[/color][/italic]
