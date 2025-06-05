@@ -195,6 +195,10 @@ ent-ClothingOuterHardsuitCBURN = "Jophiel" tacsuit
     .desc = A tactical combat hardsuit used by the CBURN subdivision of the Emergency Response Team, it seems to be branded with the Nanotrasen logo and a strange looking series number.
     The armor appears to be lined with a rather plain, but sturdy alloy, it doesn't seem to have any weight either.
     Technical identifier: NT-444c
+ent-ClothingOuterHardsuitBlueshield = "Aegis" tacsuit
+    .desc = An advanced combat tacsuit employed by station Blue Shield officers, it appears to be branded with the Nanotrasen logo.
+    You can make out the letters "NTIA-DAP" written on it. The armour appears to be lined with a rather plain, but study alloy, effective for taking multiple gunshots.
+    Technical identifier: NT-661b
 ent-ClothingOuterHardsuitClown = clown vacsuit
     .desc = A custom-made clown vacsuit. On closer inspection, it appears to be a normal vacsuit with paint applied on top.
 ent-ClothingOuterHardsuitMime = mime vacsuit

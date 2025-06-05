@@ -99,6 +99,10 @@ ent-ClothingHeadHelmetHardsuitERTJanitor = "Elymas" helmet
     .desc = A pressure resistant and fireproof hood worn by special cleanup units.
 ent-ClothingHeadHelmetHardsuitDeathsquad = NT-662ua helmet
     .desc = A highly advanced, top of the line helmet used in special operations.
+    Technical identifier: NT-662s
+ent-ClothingHeadHelmetHardsuitBlueshield = "Aegis" helmet
+    .desc = An advanced combat helmet used in defence of VIPs. 
+    Technical identifier: NT-NT-661b
 ent-ClothingHeadHelmetHardsuitClown = clown vacsuit helmet
     .desc = A colorful clown vacsuit helmet. On closer inspection, it appears to be a normal helmet painted with crayons, and a clown mask glued on top.
 ent-ClothingHeadHelmetHardsuitMime = mime vacsuit helmet
