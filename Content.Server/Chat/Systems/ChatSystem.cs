@@ -658,7 +658,6 @@ public sealed partial class ChatSystem : SharedChatSystem
             ("entityName", name),
             ("entity", ent),
             ("color", color ?? DefaultSpeakColor.ToHex()),
-            ("message", action));
             ("space", space),
             ("message", formattedAction));
 
