@@ -44,6 +44,7 @@
   id: FoodSnackBase
   abstract: true
   components:
+  - type: Food
   - type: Tag
     tags:
       - FoodSnack

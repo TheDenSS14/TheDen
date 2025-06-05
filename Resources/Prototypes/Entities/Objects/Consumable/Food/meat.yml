@@ -436,6 +436,12 @@
     price: 750
   - type: StealTarget
     stealGroup: FoodMeatCorgi
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: corgi-inhand-left
+      right:
+      - state: corgi-inhand-right
 
 - type: entity
   parent: FoodMeatRawBase
@@ -796,6 +802,12 @@
     graph: RounySteak
     node: start
     defaultTarget: rouny steak
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: plain-inhand-left
+      right:
+      - state: plain-inhand-right
 
 - type: entity
   parent: FoodMeatBase
@@ -939,11 +951,11 @@
     storedOffset: -1,-3
     inhandVisuals:
       left:
-      - state: generic-pink-inhand-left
-        color: "#E2AE7C"
+        - state: generic-pink-inhand-left
+          color: "#E2AE7C"
       right:
-      - state: generic-pink-inhand-right
-        color: "#E2AE7C"
+        - state: generic-pink-inhand-right
+          color: "#E2AE7C"
 
 # Cooked
 
@@ -1486,7 +1498,7 @@
   - type: Item
     size: Tiny
     shape:
-    - 0,0,0,0
+      - 0,0,0,0
     storedOffset: -1,2
     heldPrefix: meatball
 
@@ -1522,11 +1534,11 @@
     storedOffset: -1,-3
     inhandVisuals:
       left:
-      - state: generic-pink-inhand-left
-        color: "#5B3E2A"
+        - state: generic-pink-inhand-left
+          color: "#5B3E2A"
       right:
-      - state: generic-pink-inhand-right
-        color: "#5B3E2A"
+        - state: generic-pink-inhand-right
+          color: "#5B3E2A"
 
 # Cutlets
 
