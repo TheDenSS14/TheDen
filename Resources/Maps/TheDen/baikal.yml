@@ -10732,7 +10732,7 @@ entities:
       pos: 114.5,11.5
       parent: 13
     - type: Door
-      secondsUntilStateChange: -62676.9
+      secondsUntilStateChange: -63028.574
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -11065,7 +11065,7 @@ entities:
       pos: 106.5,-61.5
       parent: 13
     - type: Door
-      secondsUntilStateChange: -71949.79
+      secondsUntilStateChange: -72301.46
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -11738,7 +11738,7 @@ entities:
       pos: 50.5,-60.5
       parent: 13
     - type: Door
-      secondsUntilStateChange: -97205.03
+      secondsUntilStateChange: -97556.7
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -12098,7 +12098,7 @@ entities:
       pos: 49.5,0.5
       parent: 13
     - type: Door
-      secondsUntilStateChange: -255365.75
+      secondsUntilStateChange: -255717.42
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -12108,6 +12108,11 @@ entities:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: 26.5,-48.5
+      parent: 13
+  - uid: 9162
+    components:
+    - type: Transform
+      pos: 122.5,12.5
       parent: 13
   - uid: 9582
     components:
@@ -12190,7 +12195,7 @@ entities:
       pos: 101.5,-11.5
       parent: 13
     - type: Door
-      secondsUntilStateChange: -82484.445
+      secondsUntilStateChange: -82836.12
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -12242,7 +12247,7 @@ entities:
       pos: 125.5,4.5
       parent: 13
     - type: Door
-      secondsUntilStateChange: -158283.25
+      secondsUntilStateChange: -158634.92
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -12270,7 +12275,7 @@ entities:
       pos: 125.5,-6.5
       parent: 13
     - type: Door
-      secondsUntilStateChange: -181697.97
+      secondsUntilStateChange: -182049.64
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -12466,11 +12471,6 @@ entities:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: 124.5,10.5
-      parent: 13
-  - uid: 15862
-    components:
-    - type: Transform
-      pos: 122.5,12.5
       parent: 13
 - proto: AirlockLawyerGlassLocked
   entities:
@@ -16151,13 +16151,6 @@ entities:
     - type: Transform
       pos: 83.5,12.5
       parent: 13
-  - uid: 9162
-    components:
-    - type: MetaData
-      name: Bridge APC
-    - type: Transform
-      pos: 68.5,6.5
-      parent: 13
   - uid: 9268
     components:
     - type: MetaData
@@ -16233,6 +16226,18 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 44.5,22.5
       parent: 13
+  - uid: 15862
+    components:
+    - type: MetaData
+      name: Bridge APC
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 68.5,6.5
+      parent: 13
+    - type: Apc
+      hasAccess: True
+      lastExternalState: Good
+      lastChargeState: Full
   - uid: 15881
     components:
     - type: MetaData
@@ -38781,6 +38786,11 @@ entities:
     components:
     - type: Transform
       pos: 140.5,-29.5
+      parent: 13
+  - uid: 29558
+    components:
+    - type: Transform
+      pos: 153.5,-28.5
       parent: 13
 - proto: CableApcStack1
   entities:
@@ -65613,7 +65623,7 @@ entities:
       pos: 9.5,-33.5
       parent: 13
     - type: Door
-      secondsUntilStateChange: -363692.56
+      secondsUntilStateChange: -364044.25
       state: Opening
   - uid: 2484
     components:
@@ -187177,7 +187187,7 @@ entities:
       lastSignals:
         DoorStatus: True
     - type: Door
-      secondsUntilStateChange: -221021.1
+      secondsUntilStateChange: -221372.77
       state: Opening
   - uid: 15839
     components:
