@@ -610,13 +610,17 @@ public sealed partial class ChatSystem : SharedChatSystem
 
         // get the entity's apparent name (if no override provided).
         var ent = Identity.Entity(source, EntityManager);
-        string name = FormattedMessage.EscapeText(nameOverride ?? Name(ent));
+        var name = FormattedMessage.EscapeText(nameOverride ?? Name(ent));
+        var formattedAction = FormattedMessage.RemoveMarkupPermissive(action);
+        var useSpace = !formattedAction.StartsWith("\'s");
+        var space = useSpace ? " " : "";
 
         // Emotes use Identity.Name, since it doesn't actually involve your voice at all.
         var wrappedMessage = Loc.GetString("chat-manager-entity-me-wrap-message",
             ("entityName", name),
             ("entity", ent),
-            ("message", FormattedMessage.RemoveMarkupPermissive(action)));
+            ("space", space),
+            ("message", formattedAction));
 
         if (checkEmote)
             TryEmoteChatInput(source, action);
@@ -644,7 +648,10 @@ public sealed partial class ChatSystem : SharedChatSystem
 
         // get the entity's apparent name (if no override provided).
         var ent = Identity.Entity(source, EntityManager);
-        string name = FormattedMessage.EscapeText(nameOverride ?? Name(ent));
+        var name = FormattedMessage.EscapeText(nameOverride ?? Name(ent));
+        var formattedAction = FormattedMessage.RemoveMarkupPermissive(action);
+        var useSpace = !formattedAction.StartsWith("\'s");
+        var space = useSpace ? " " : "";
 
         // Emotes use Identity.Name, since it doesn't actually involve your voice at all.
         var wrappedMessage = Loc.GetString("chat-manager-entity-subtle-wrap-message",
@@ -652,6 +659,8 @@ public sealed partial class ChatSystem : SharedChatSystem
             ("entity", ent),
             ("color", color ?? DefaultSpeakColor.ToHex()),
             ("message", action));
+            ("space", space),
+            ("message", formattedAction));
 
         foreach (var (session, data) in GetRecipients(source, WhisperClearRange))
         {
