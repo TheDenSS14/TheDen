@@ -100,6 +100,11 @@
           - !type:ReagentThreshold
             min: 2
           probability: 0.2
+        - !type:PopupMessage
+          type: Local
+          visualType: MediumCaution
+          messages: [ "generic-reagent-effect-sick" ]
+          probability: 0.4
 
 - type: reagent
   id: Mold
