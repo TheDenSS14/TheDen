@@ -7,6 +7,8 @@ using Content.Shared.Rejuvenate;
 using Robust.Shared.Containers;
 using Robust.Shared.Timing;
 using Content.Shared.Cuffs.Components;
+using JetBrains.Annotations;
+using Content.Shared.Nutrition.Components;
 
 namespace Content.Shared.Atmos.Rotting;
 
@@ -168,6 +170,123 @@ public abstract class SharedRottingSystem : EntitySystem
 
         else
             rotting.TotalRotTime = total - perishable.RotAfter;
+    }
+
+    /// <summary>
+    /// Transfers accumulated rot from one entity to another, scaling the time proportioanlly if needed.
+    /// Does not transfer rotting level; use TransferRot for that.
+    /// </summary>
+    /// <param name="perishableFrom">The entity to transfer rot accumulation from.</param>
+    /// <param name="perishableTo">The entity whose rot accumulation is being replaced.</param>
+    /// <param name="proportional">Whether the rot accumulation on the receiving entity should be relative to its own expiration date.</param>
+    /// <param name="butcherableFrom">Optional, ButcherableComponent on the "from" entity. The FreshnessIncrease field of the component is used to add a flat modifier to the freshness transfer time.</param>
+    [PublicAPI]
+    public void TransferFreshness(PerishableComponent perishableFrom,
+        PerishableComponent perishableTo,
+        bool proportional = true,
+        ButcherableComponent? butcherableFrom = null)
+    {
+        TimeSpan newRotAccumulator = perishableFrom.RotAccumulator;
+
+        if (proportional)
+        {
+            var ratio = perishableFrom.RotAccumulator / perishableFrom.RotAfter;
+            newRotAccumulator = perishableTo.RotAfter * ratio;
+        }
+
+        if (butcherableFrom != null)
+            newRotAccumulator -= butcherableFrom.FreshnessIncrease;
+
+        if (newRotAccumulator < TimeSpan.Zero)
+            newRotAccumulator = TimeSpan.Zero;
+
+        perishableTo.RotAccumulator = newRotAccumulator;
+    }
+
+    /// <summary>
+    /// Transfers accumulated rot from one entity to another, scaling the time proportioanlly if needed.
+    /// Does not transfer rotting level; use TransferRot for that.
+    /// </summary>
+    /// <param name="fromId">The entity to transfer rot accumulation from.</param>
+    /// <param name="toId">The entity whose rot accumulation should be replaced.</param>
+    /// <param name="proportional">Whether the rot accumulation on the receiving entity should be relative to its own expiration date.</param>
+    /// <param name="butcherableFrom">Optional, ButcherableComponent on the "from" entity. The FreshnessIncrease field of the component is used to add a flat modifier to the freshness transfer time.</param>
+    [PublicAPI]
+    public void TransferFreshness(EntityUid fromId,
+        EntityUid toId,
+        bool proportional = true,
+        ButcherableComponent? butcherableFrom = null)
+    {
+        if (!TryComp<PerishableComponent>(fromId, out var perishableFrom)
+            || !TryComp<PerishableComponent>(toId, out var perishableTo))
+            return;
+
+        TransferFreshness(perishableFrom, perishableTo, proportional, butcherableFrom);
+    }
+
+    /// <summary>
+    /// Transfers rotting amount from a rotten entity to a receiving entity.
+    /// If the receiver is not already rotting, it will gain RottingComponent from this operation.
+    /// </summary>
+    /// <param name="rottingFrom">RottenComponent on the rotting entity.</param>
+    /// <param name="perishableFrom">PerishableComponent on the rotting entity.</param>
+    /// <param name="toId">The entity ID that will have its rot stage set.</param>
+    /// <param name="perishableTo">PerishableComponent on the "to" entity.</param>
+    /// <param name="proportional">Whether rot stage transferred should be proportional to the expiration time of the target entity.</param>
+    [PublicAPI]
+    public void TransferRotStage(RottingComponent rottingFrom,
+        PerishableComponent perishableFrom,
+        EntityUid toId,
+        PerishableComponent? perishableTo,
+        bool proportional = true)
+    {
+        var rottingTo = EnsureComp<RottingComponent>(toId);
+        if (!proportional || !Resolve(toId, ref perishableTo, false))
+        {
+            rottingTo.TotalRotTime = rottingFrom.TotalRotTime;
+            return;
+        }
+
+        var ratio = rottingFrom.TotalRotTime / perishableFrom.RotAfter;
+        rottingTo.TotalRotTime = perishableTo.RotAfter * ratio;
+    }
+
+
+    /// <summary>
+    /// Transfers rotting amount from a rotten entity to a receiving entity.
+    /// If the receiver is not already rotting, it will gain RottingComponent from this operation.
+    /// </summary>
+    /// <param name="fromId">The entity ID that will transfer its rot stage.</param>
+    /// <param name="toId">The entity ID that will have its rot stage set.</param>
+    /// <param name="rottingFrom">RottenComponent on the rotting entity.</param>
+    /// <param name="proportional">Whether rot stage transferred should be proportional to the expiration time of the target entity.</param>
+    [PublicAPI]
+    public void TransferRotStage(EntityUid fromId,
+        EntityUid toId,
+        RottingComponent rottingFrom,
+        bool proportional = true)
+    {
+        if (!TryComp<PerishableComponent>(fromId, out var perishableFrom)
+            || !TryComp<PerishableComponent>(toId, out var perishableTo))
+            return;
+
+        TransferRotStage(rottingFrom, perishableFrom, toId, perishableTo, proportional);
+    }
+
+    /// <summary>
+    /// Transfers rotting amount from a rotten entity to a receiving entity.
+    /// If the receiver is not already rotting, it will gain RottingComponent from this operation.
+    /// </summary>
+    /// <param name="fromId">The entity ID that will transfer its rot stage.</param>
+    /// <param name="toId">The entity ID that will have its rot stage set.</param>
+    /// <param name="proportional">Whether rot stage transferred should be proportional to the expiration time of the target entity.</param>
+    [PublicAPI]
+    public void TransferRotStage(EntityUid fromId, EntityUid toId, bool proportional = true)
+    {
+        if (!TryComp<RottingComponent>(fromId, out var rottingFrom))
+            return;
+
+        TransferRotStage(fromId, toId, rottingFrom, proportional);
     }
 
     /// <summary>

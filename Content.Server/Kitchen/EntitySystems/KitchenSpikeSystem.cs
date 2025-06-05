@@ -2,6 +2,7 @@ using Content.Server.Administration.Logs;
 using Content.Server.Body.Systems;
 using Content.Server.Kitchen.Components;
 using Content.Server.Popups;
+using Content.Shared.Atmos.Rotting;
 using Content.Shared.Chat;
 using Content.Shared.Damage;
 using Content.Shared.Database;
@@ -21,6 +22,7 @@ using Robust.Server.GameObjects;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Player;
 using Robust.Shared.Random;
+using Robust.Shared.Serialization.Manager;
 using static Content.Shared.Kitchen.Components.KitchenSpikeComponent;
 
 namespace Content.Server.Kitchen.EntitySystems
@@ -38,6 +40,8 @@ namespace Content.Server.Kitchen.EntitySystems
         [Dependency] private readonly SharedAudioSystem _audio = default!;
         [Dependency] private readonly MetaDataSystem _metaData = default!;
         [Dependency] private readonly SharedSuicideSystem _suicide = default!;
+        [Dependency] private readonly ISerializationManager _serMan = default!;
+        [Dependency] private readonly SharedRottingSystem _rotting = default!;
 
         public override void Initialize()
         {
@@ -146,13 +150,9 @@ namespace Content.Server.Kitchen.EntitySystems
             _logger.Add(LogType.Gib, LogImpact.Extreme, $"{ToPrettyString(userUid):user} kitchen spiked {ToPrettyString(victimUid):target}");
 
             // TODO VERY SUS
+            var virtualEnt = CreateVirtualSpikedEntity(uid, victimUid);
+            component.SpikedEntity = virtualEnt;
             component.PrototypesToSpawn = EntitySpawnCollection.GetSpawns(butcherable.SpawnedEntities, _random);
-
-            // This feels not okay, but entity is getting deleted on "Spike", for now...
-            component.MeatSource1p = Loc.GetString("comp-kitchen-spike-remove-meat", ("victim", victimUid));
-            component.MeatSource0 = Loc.GetString("comp-kitchen-spike-remove-meat-last", ("victim", victimUid));
-            component.Victim = Name(victimUid);
-
             UpdateAppearance(uid, null, component);
 
             _popupSystem.PopupEntity(Loc.GetString("comp-kitchen-spike-kill", ("user", Identity.Entity(userUid, EntityManager)), ("victim", victimUid)), uid, PopupType.LargeCaution);
@@ -161,21 +161,51 @@ namespace Content.Server.Kitchen.EntitySystems
             // THE WHAT?
             // TODO: Need to be able to leave them on the spike to do DoT, see ss13.
             var gibs = _bodySystem.GibBody(victimUid);
-            foreach (var gib in gibs) {
+            foreach (var gib in gibs)
                 QueueDel(gib);
-            }
 
             _audio.PlayEntity(component.SpikeSound, Filter.Pvs(uid), uid, true);
+        }
+
+        /// <summary>
+        /// Creates a "basic" representation of a butchered entity using only components
+        /// that are relevant to meat spiking. TODO storing the real entity on the spike and making
+        /// sure it doesn't suck when we do
+        /// </summary>
+        /// <param name="spikeId">The ID of the spike entity.</param>
+        /// <param name="victimId">The ID of the entity being spiked.</param>
+        /// <returns>The ID of the new "virtual" enttity.</returns>
+        private EntityUid CreateVirtualSpikedEntity(EntityUid spikeId, EntityUid victimId)
+        {
+            var ent = Spawn(null, Transform(spikeId).Coordinates);
+            CopyComponent<MetaDataComponent>(victimId, ent);
+            CopyComponent<ButcherableComponent>(victimId, ent);
+            CopyComponent<PerishableComponent>(victimId, ent);
+            CopyComponent<RottingComponent>(victimId, ent);
+            return ent;
+        }
+
+        // TODO: move this somewhere that isn't KitchenSpikeSystem
+        private void CopyComponent<T>(EntityUid src, EntityUid target) where T : Component, new()
+        {
+            if (!TryComp<T>(src, out var srcComp))
+                return;
+
+            var targetComp = EnsureComp<T>(target);
+            _serMan.CopyTo(srcComp, ref targetComp, notNullableOverride: true);
         }
 
         private bool TryGetPiece(EntityUid uid, EntityUid user, EntityUid used,
             KitchenSpikeComponent? component = null, SharpComponent? sharp = null)
         {
-            if (!Resolve(uid, ref component) || component.PrototypesToSpawn == null || component.PrototypesToSpawn.Count == 0)
+            if (!Resolve(uid, ref component)
+            || component.PrototypesToSpawn == null
+            || component.PrototypesToSpawn.Count == 0
+            || component.SpikedEntity == null)
                 return false;
 
             // Is using knife
-            if (!Resolve(used, ref sharp, false) )
+            if (!Resolve(used, ref sharp, false))
             {
                 return false;
             }
@@ -184,14 +214,30 @@ namespace Content.Server.Kitchen.EntitySystems
 
             var ent = Spawn(item, Transform(uid).Coordinates);
             _metaData.SetEntityName(ent,
-                Loc.GetString("comp-kitchen-spike-meat-name", ("name", Name(ent)), ("victim", component.Victim)));
+                Loc.GetString("comp-kitchen-spike-meat-name",
+                    ("name", Name(ent)),
+                    ("victim", Name(component.SpikedEntity.Value))));
+
+            _rotting.TransferFreshness(component.SpikedEntity.Value, ent, true);
+            _rotting.TransferRotStage(component.SpikedEntity.Value, ent, true);
 
             if (component.PrototypesToSpawn.Count != 0)
-                _popupSystem.PopupEntity(component.MeatSource1p, uid, user, PopupType.MediumCaution);
+                _popupSystem.PopupEntity(Loc.GetString("comp-kitchen-spike-remove-meat",
+                    ("victim", component.SpikedEntity)),
+                    uid,
+                    user,
+                    PopupType.MediumCaution);
             else
             {
+                _popupSystem.PopupEntity(Loc.GetString("comp-kitchen-spike-remove-meat-last",
+                    ("victim", component.SpikedEntity)),
+                    uid,
+                    user,
+                    PopupType.MediumCaution);
+
+                QueueDel(component.SpikedEntity);
+                component.SpikedEntity = null;
                 UpdateAppearance(uid, null, component);
-                _popupSystem.PopupEntity(component.MeatSource0, uid, user, PopupType.MediumCaution);
             }
 
             return true;
@@ -202,7 +248,10 @@ namespace Content.Server.Kitchen.EntitySystems
             if (!Resolve(uid, ref component, ref appearance, false))
                 return;
 
-            _appearance.SetData(uid, KitchenSpikeVisuals.Status, component.PrototypesToSpawn?.Count > 0 ? KitchenSpikeStatus.Bloody : KitchenSpikeStatus.Empty, appearance);
+            _appearance.SetData(uid,
+                KitchenSpikeVisuals.Status,
+                component.SpikedEntity != null ? KitchenSpikeStatus.Bloody : KitchenSpikeStatus.Empty,
+                appearance);
         }
 
         private bool Spikeable(EntityUid uid, EntityUid userUid, EntityUid victimUid,
