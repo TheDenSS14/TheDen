@@ -109,7 +109,7 @@ ent-ClothingOuterHardsuitShanlinUnpainted = "Shanlin" tacsuit
 ent-ClothingOuterHardsuitSyndieReverseEngineered = "Shanlin" tacsuit
     .desc = A tactical combat hardsuit produced by the Cybersun-Armaments Corporation, the suit's tags indicate it provides moderate protection against most forms of damage.
     This one has been painted blue. It feels incredibly light.
-    Technical identifier: CSA-51a
+    Technical identifier: CSA-51a-NT
 ent-ClothingOuterHardsuitSyndieMedic = "Zhongyao" tacsuit
     .desc = A tactical combat hardsuit produced by the Cybersun-Armaments Corporation, the suit's tags indicate it provides moderate protection against most forms of damage.
     Half of the suit is painted blood red, the rest bears galactic-standard medical markings. It feels incredibly light.
@@ -135,7 +135,7 @@ ent-ClothingOuterHardsuitJuggernaut = "Guan Yu" tacsuit
 ent-ClothingOuterHardsuitJuggernautReverseEngineered = "Guan Yu" tacsuit
     .desc = The pride and joy of the Cybersun-Armaments Corporation, named after an ancient Sol' War God. Commonly known throughout the galaxy as a "Juggernaut".
     Matching its bulky appearance, it protects against all forms of damage. It feels VERY heavy. This one has been painted blue.
-    Technical identifier: CSA-80UA
+    Technical identifier: CSA-80UA-NT
 ent-ClothingOuterHardsuitCybersunStealth = "Èguǐ" tacsuit
     .desc = A rare prototype tacsuit that features metamaterial plating which warps light around it to produce an "Invisibility cloak" effect.
     Unfortunately, it accomplishes this by trading a lot of protections that one would normally expect from a typical tacsuit.
