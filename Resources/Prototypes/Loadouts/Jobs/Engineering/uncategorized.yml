@@ -46,6 +46,19 @@
 # Ears
 
 # Equipment
+- type: loadout
+  id: LoadoutHandHeldPowerMonitor
+  category: JobsEngineeringAAUncategorized
+  cost: 2
+  exclusive: true
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutEngineeringEquipment
+  - !type:CharacterDepartmentRequirement
+    departments:
+    - Engineering
+  items:
+  - HandHeldPowerMonitor
 
 # Eyes
 - type: loadout

@@ -122,6 +122,20 @@
   items:
     - WeaponSubMachineGunBRDIR25HoS
 
+- type: loadout
+  id: LoadoutCommandTerminus
+  category: JobsSecurityHeadOfSecurity
+  cost: 0
+  canBeHeirloom: true
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutHeadOfSecurityWeapon
+  - !type:CharacterJobRequirement
+    jobs:
+    - HeadOfSecurity
+  items:
+  - Terminus
+
 # Eyes
 
 # Gloves

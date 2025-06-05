@@ -26,6 +26,13 @@
 #  items:
 #
 - type: characterItemGroup
+  id: LoadoutEngineeringEquipment
+  maxItems: 1
+  items:
+  - type: loadout
+    id: LoadoutHandHeldPowerMonitor
+
+- type: characterItemGroup
   id: LoadoutEngineeringEyes
   items:
     - type: loadout

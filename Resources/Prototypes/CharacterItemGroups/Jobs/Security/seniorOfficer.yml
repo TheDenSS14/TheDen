@@ -14,11 +14,13 @@
 #  maxItems: 1
 #  items:
 #
-#- type: characterItemGroup
-#  id: LoadoutSeniorOfficerEquipment
-#  maxItems: 1
-#  items:
-#
+
+- type: characterItemGroup
+  id: LoadoutSeniorOfficerEquipment
+  items:
+  - type: loadout
+    id: LoadoutSeniorOfficerDoubleEnergySwordSO
+
 #- type: characterItemGroup
 #  id: LoadoutSeniorOfficerEyes
 #  maxItems: 1
