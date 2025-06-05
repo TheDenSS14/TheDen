@@ -1,12 +1,4 @@
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using Content.Shared.Chemistry.Components;
-using Content.Shared.Chemistry.Reagent;
-using Content.Shared.FixedPoint;
-using Microsoft.VisualBasic;
 using Robust.Shared.GameStates;
-using Robust.Shared.Prototypes;
-using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom;
 
 namespace Content.Shared._DEN.Atmos.Rotting;
 
@@ -15,86 +7,6 @@ namespace Content.Shared._DEN.Atmos.Rotting;
 /// the solution with the given name will be replaced with a given other solution.
 /// For example, rotting corpses may build up gastrotoxin.
 /// </summary>
-[RegisterComponent, NetworkedComponent, AutoGenerateComponentPause]
-// [AutoGenerateComponentState]
-public sealed partial class ReplaceSolutionWhenRottenComponent : Component
-{
-    /// <summary>
-    /// The name of the solution to replace.
-    /// </summary>
-    [DataField("solution", required: true), ViewVariables(VVAccess.ReadWrite)]
-    public string SolutionName = string.Empty;
-
-    /// <summary>
-    /// The solution to replace reagents from.
-    /// </summary>
-    [ViewVariables]
-    public Entity<SolutionComponent>? SolutionRef = null;
-
-    /// <summary>
-    /// A list of reagent replacements to perform. Can have multiple replacements, for example,
-    /// replacing every reagent in a solution with something else.
-    /// </summary>
-
-    [DataField("replacements"), ViewVariables(VVAccess.ReadWrite)]
-    public List<SolutionReplacement> Replacements = default!;
-
-    /// <summary>
-    /// How long it takes to replace the solution once.
-    /// </summary>
-    [DataField("duration"), ViewVariables(VVAccess.ReadWrite)]
-    public TimeSpan Duration = TimeSpan.FromSeconds(1);
-
-    /// <summary>
-    /// The time when the next replacement will occur.
-    /// </summary>
-    [DataField("nextChargeTime", customTypeSerializer: typeof(TimeOffsetSerializer)), ViewVariables(VVAccess.ReadWrite)]
-    [AutoPausedField]
-    public TimeSpan NextReplaceTime = TimeSpan.FromSeconds(0);
-
-    /// <summary>
-    /// Gets a list of all reagent IDs that are considering "rot byproducts", and thus
-    /// should not be replaced.
-    /// </summary>
-    /// <returns>List of rot byproduct reagent IDs.</returns>
-    public HashSet<ReagentId> ReplacementReagentIds()
-    {
-        HashSet<ReagentId> reagentIds = new HashSet<ReagentId>();
-
-        foreach (var replacement in Replacements)
-        {
-            if (replacement.ReplacementSolution.Contents.Count == 0)
-                continue;
-
-            foreach (var reagent in replacement.ReplacementSolution.Contents)
-            {
-                reagentIds.Add(reagent.Reagent);
-            }
-        }
-
-        return reagentIds;
-    }
-}
-
-[DataDefinition]
-public sealed partial class SolutionReplacement
-{
-    /// <summary>
-    /// The reagent(s) to be replaced in the solution.
-    /// </summary>
-    [DataField("solution", required: true), ViewVariables(VVAccess.ReadWrite)]
-    public Solution ReplacementSolution = default!;
-
-    /// <summary>
-    /// How much of the original solution should be reduced each cycle.
-    /// </summary>
-
-    [DataField("amount", required: true), ViewVariables(VVAccess.ReadWrite)]
-    public FixedPoint2 Amount = FixedPoint2.Zero;
-
-    /// <summary>
-    /// When specified, this only replaces the given reagents.
-    /// </summary>
-    [DataField("whitelist"), ViewVariables(VVAccess.ReadWrite)]
-    public List<ProtoId<ReagentPrototype>>? Whitelist = default!;
-}
+[RegisterComponent, NetworkedComponent]
+public sealed partial class ReplaceSolutionWhenRottenComponent : BaseReplaceSolutionIntervalComponent
+{ }

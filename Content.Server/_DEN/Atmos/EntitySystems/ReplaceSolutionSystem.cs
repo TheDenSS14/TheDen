@@ -21,7 +21,7 @@ public sealed class ReplaceSolutionSystem : SharedReplaceSolutionSystem
         UpdateRottingEntities();
     }
 
-    public void UpdateRottingEntities()
+    private void UpdateRottingEntities()
     {
         var query = EntityQueryEnumerator<ReplaceSolutionWhenRottenComponent,
             RottingComponent,
@@ -29,26 +29,53 @@ public sealed class ReplaceSolutionSystem : SharedReplaceSolutionSystem
 
         while (query.MoveNext(out var uid, out var replaceSolution, out var _, out var manager))
         {
-            if (_timing.CurTime < replaceSolution.NextReplaceTime)
-                continue;
-
-            replaceSolution.NextReplaceTime = _timing.CurTime + replaceSolution.Duration;
-
-            var success = _solutionContainer.ResolveSolution((uid, manager),
-                replaceSolution.SolutionName,
-                ref replaceSolution.SolutionRef,
-                out var solution);
-
-            if (!success || solution == null || replaceSolution.SolutionRef == null)
-                continue;
-
-            Solution replacedSolution = ReplaceReagents(solution, replaceSolution);
-            _solutionContainer.RemoveAllSolution(replaceSolution.SolutionRef.Value);
-            _solutionContainer.AddSolution(replaceSolution.SolutionRef.Value, replacedSolution);
+            UpdateEntityOnInterval(uid, replaceSolution, manager);
         }
     }
 
-    public Solution ReplaceReagents(Solution solution, ReplaceSolutionWhenRottenComponent replaceSolution)
+    private void UpdateEntityOnInterval(EntityUid uid,
+        BaseReplaceSolutionIntervalComponent comp,
+        SolutionContainerManagerComponent manager)
+    {
+        if (_timing.CurTime < comp.NextReplaceTime)
+            return;
+        comp.NextReplaceTime = _timing.CurTime + comp.Duration;
+
+        UpdateEntity(uid, comp, manager);
+    }
+
+    /// <summary>
+    /// Performs replacements on an entity with the components needed to do so.
+    /// </summary>
+    /// <param name="uid">The ID of the entity to perform replacements on.</param>
+    /// <param name="comp">The BaseReplaceSolution component to use.</param>
+    /// <param name="manager">The SolutionContainerManager component on the entity.</param>
+    private void UpdateEntity(EntityUid uid,
+        BaseReplaceSolutionComponent comp,
+        SolutionContainerManagerComponent manager)
+    {
+        var success = _solutionContainer.ResolveSolution((uid, manager),
+            comp.SolutionName,
+            ref comp.SolutionRef,
+            out var solution);
+
+        if (!success || solution == null || comp.SolutionRef == null)
+            return;
+
+        Solution replacedSolution = ReplaceReagents(solution, comp);
+        _solutionContainer.RemoveAllSolution(comp.SolutionRef.Value);
+        _solutionContainer.AddSolution(comp.SolutionRef.Value, replacedSolution);
+    }
+
+    /// <summary>
+    /// Performs a replacement of a solution's reagents using the properties of a BaseReplaceSolutionComponent.
+    /// For example, the compoment may have a replacement rule that says to reduce the solution volume by 1u,
+    /// and then add 1u of Water to the solution.
+    /// </summary>
+    /// <param name="solution">The solution to perform replacements on</param>
+    /// <param name="replaceSolution">The solution replacement component.</param>
+    /// <returns>A new solution after replacements have been performed.</returns>
+    public Solution ReplaceReagents(Solution solution, BaseReplaceSolutionComponent replaceSolution)
     {
         var replacementTargetIds = replaceSolution.ReplacementReagentIds();
         var replacedProducts = solution.Clone();
@@ -58,10 +85,8 @@ public sealed class ReplaceSolutionSystem : SharedReplaceSolutionSystem
         {
             PerformReplacement(solutionToReplace,
                 replacement,
-                out var outputSolution,
                 out var replacementSolution);
 
-            solutionToReplace = outputSolution;
             replacedProducts.AddSolution(replacementSolution, _protoMan);
         }
 
@@ -70,44 +95,46 @@ public sealed class ReplaceSolutionSystem : SharedReplaceSolutionSystem
         return finalResultSolution;
     }
 
+    /// <summary>
+    /// Given a solution, reduce its volume and then create a solution of "replacement" reagents, scaling with
+    /// how much the solution was actually reduced by. Does not perform filtering on the input solution
+    /// for "byproducts", so if you fail to filter those out first, behavior may be unpredictable.
+    ///
+    /// This also modifies the input solution in place.
+    /// </summary>
+    /// <param name="solution">The solution to perform the placement on.</param>
+    /// <param name="replacement">The SolutionReplacement rule defining how to replace reagents.</param>
+    /// <param name="replacedOutput">The solution of "replacement" reagents generated.</param>
     public void PerformReplacement(Solution solution,
         SolutionReplacement replacement,
-        out Solution cleanOutput,
         out Solution replacedOutput)
     {
         if (solution.Volume <= 0 || replacement.ReplacementSolution.Volume <= 0)
         {
-            cleanOutput = solution;
             replacedOutput = new Solution();
             return;
         }
 
-        Solution solutionToReplace = solution;
         Solution? ignoredSolution = null;
-
         if (replacement.Whitelist != null)
-        {
-            solutionToReplace = solution.SplitSolutionWithOnly(solution.Volume, replacement.Whitelist);
             ignoredSolution = solution.SplitSolutionWithout(solution.Volume, replacement.Whitelist);
-        }
 
-        var originalVolume = solutionToReplace.Volume;
-        solutionToReplace.RemoveSolution(replacement.Amount);
+        var originalVolume = solution.Volume;
+        solution.RemoveSolution(replacement.Amount);
 
         // Important to make sure this scales with how much is actually replaced.
         // For example, if it replaces 2u of Nutriment with 3u of Gastrotoxin,
         // but there was only 1u left of Nutriment in the original solution,
         // then it should only generate 1.5u of Gastrotoxin.
-        var replacedAmount = originalVolume - solutionToReplace.Volume;
-        var replacementRatio = replacedAmount / replacement.Amount;
+        var replacedAmount = originalVolume - solution.Volume;
+        float replacementRatio = replacedAmount.Float() / replacement.Amount.Float();
         Solution replacementSolution = replacement.ReplacementSolution.Clone();
-        replacementSolution.ScaleSolution(replacementRatio.Float());
+        replacementSolution.ScaleSolution(replacementRatio);
 
         // If there's a whitelist, make sure we readd our non-whitelisted solution back.
         if (ignoredSolution != null && ignoredSolution.Volume > 0)
-            solutionToReplace.AddSolution(ignoredSolution, _protoMan);
+            solution.AddSolution(ignoredSolution, _protoMan);
 
-        cleanOutput = solutionToReplace;
         replacedOutput = replacementSolution;
     }
 }
