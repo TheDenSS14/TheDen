@@ -97,7 +97,7 @@
   suffix: Constructed
   components:
     - type: DeviceNetwork
-      deviceNetId: Wired
+      deviceNetId: Wireless
       transmitFrequencyId: SurveillanceCamera
     - type: SurveillanceCamera
       setupAvailableNetworks:
@@ -117,7 +117,7 @@
   suffix: Engineering
   components:
   - type: DeviceNetwork
-    deviceNetId: Wired
+    deviceNetId: Wireless
     receiveFrequencyId: SurveillanceCameraEngineering
     transmitFrequencyId: SurveillanceCamera
   - type: SurveillanceCamera
@@ -130,7 +130,7 @@
   suffix: Security
   components:
   - type: DeviceNetwork
-    deviceNetId: Wired
+    deviceNetId: Wireless
     receiveFrequencyId: SurveillanceCameraSecurity
     transmitFrequencyId: SurveillanceCamera
   - type: SurveillanceCamera
@@ -143,7 +143,7 @@
   suffix: Epistemics # DeltaV - Epistemics Department replacing Science
   components:
   - type: DeviceNetwork
-    deviceNetId: Wired
+    deviceNetId: Wireless
     receiveFrequencyId: SurveillanceCameraScience
     transmitFrequencyId: SurveillanceCamera
   - type: SurveillanceCamera
@@ -156,7 +156,7 @@
   suffix: Supply
   components:
   - type: DeviceNetwork
-    deviceNetId: Wired
+    deviceNetId: Wireless
     receiveFrequencyId: SurveillanceCameraSupply
     transmitFrequencyId: SurveillanceCamera
   - type: SurveillanceCamera
@@ -169,7 +169,7 @@
   suffix: Command
   components:
   - type: DeviceNetwork
-    deviceNetId: Wired
+    deviceNetId: Wireless
     receiveFrequencyId: SurveillanceCameraCommand
     transmitFrequencyId: SurveillanceCamera
   - type: SurveillanceCamera
@@ -182,7 +182,7 @@
   suffix: Service
   components:
   - type: DeviceNetwork
-    deviceNetId: Wired
+    deviceNetId: Wireless
     receiveFrequencyId: SurveillanceCameraService
     transmitFrequencyId: SurveillanceCamera
   - type: SurveillanceCamera
@@ -195,7 +195,7 @@
   suffix: Medical
   components:
   - type: DeviceNetwork
-    deviceNetId: Wired
+    deviceNetId: Wireless
     receiveFrequencyId: SurveillanceCameraMedical
     transmitFrequencyId: SurveillanceCamera
   - type: SurveillanceCamera
@@ -208,7 +208,7 @@
   suffix: General
   components:
   - type: DeviceNetwork
-    deviceNetId: Wired
+    deviceNetId: Wireless
     receiveFrequencyId: SurveillanceCameraGeneral
     transmitFrequencyId: SurveillanceCamera
   - type: SurveillanceCamera

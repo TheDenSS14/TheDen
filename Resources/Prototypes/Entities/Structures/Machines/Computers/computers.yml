@@ -1148,10 +1148,11 @@
   - type: Computer
     board: SurveillanceCameraMonitorCircuitboard
   - type: DeviceNetwork
-    deviceNetId: Wired
+    deviceNetId: Wireless
     receiveFrequencyId: SurveillanceCamera
     transmitFrequencyId: SurveillanceCamera
-  - type: WiredNetworkConnection
+  - type: WirelessNetworkConnection
+    range: 2000
   - type: DeviceNetworkRequiresPower
   - type: SurveillanceCameraMonitor
   - type: ActivatableUI
@@ -1163,8 +1164,6 @@
     interfaces:
         enum.SurveillanceCameraMonitorUiKey.Key:
           type: SurveillanceCameraMonitorBoundUserInterface
-        enum.WiresUiKey.Key:
-          type: WiresBoundUserInterface
 
 - type: entity
   parent: BaseComputer
@@ -1188,10 +1187,10 @@
     board: SurveillanceWirelessCameraMonitorCircuitboard
   - type: DeviceNetwork
     deviceNetId: Wireless
-    receiveFrequencyId: SurveillanceCamera
-    transmitFrequencyId: SurveillanceCamera
+    receiveFrequencyId: SurveillanceCameraEntertainment
+    transmitFrequencyId: SurveillanceCameraEntertainment
   - type: WirelessNetworkConnection
-    range: 200
+    range: 2000
   - type: DeviceNetworkRequiresPower
   - type: Speech
     speechVerb: Robotic
@@ -1204,8 +1203,6 @@
     interfaces:
         enum.SurveillanceCameraMonitorUiKey.Key:
           type: SurveillanceCameraMonitorBoundUserInterface
-        enum.WiresUiKey.Key:
-          type: WiresBoundUserInterface
 
 - type: entity
   id: ComputerPalletConsole
