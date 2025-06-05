@@ -1899,6 +1899,16 @@
       tags:
       - NukeOpsUplink
 
+- type: listing
+  id: UplinkBackpackSyndicate
+  name: uplink-backpack-syndicate-name
+  description: uplink-backpack-syndicate-desc
+  productEntity: ClothingBackpackSyndicate
+  cost:
+    Telecrystal: 5
+  categories:
+    - UplinkWearables
+
 # Tools
 
 - type: listing
@@ -2233,14 +2243,14 @@
 # Pointless
 
 - type: listing
-  id: UplinkBackpackSyndicate
-  name: uplink-backpack-syndicate-name
-  description: uplink-backpack-syndicate-desc
-  productEntity: ClothingBackpackSyndicate
+  id: UplinkSnackBox
+  name: uplink-snack-box-name
+  description: uplink-snack-box-desc
+  productEntity: HappyHonkNukieSnacks
   cost:
     Telecrystal: 5
   categories:
-    - UplinkPointless
+  - UplinkMisc
 
 - type: listing
   id: UplinkBarberScissors
