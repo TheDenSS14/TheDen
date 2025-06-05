@@ -76,11 +76,11 @@ ent-ClothingOuterHardsuitMedical = "Okuninushi" hardsuit
     .desc = A hardsuit produced by Zeng-hu Pharmaceuticals, often purchased for use by Nanotrasen senior medical doctors.
     The labels claim it protects against damage from most chemical spills. It feels incredibly light.
     Technical identifier: ZhP-25m
-ent-ClothingOuterHardsuitRd = "Sophia" research hardsuit
+ent-ClothingOuterHardsuitRd = "Sophia" hardsuit
     .desc = The magnum opus of Nanotrasen's R&D division. The labels on this hardsuit claim that its near-immune to explosions, heat and radiation.
     Somehow it also can shrink enough to fit in a bag. It feels VERY heavy.
     Technical identifier: NT-45e
-ent-ClothingOuterHardsuitMystagogue = "Sophia" research hardsuit
+ent-ClothingOuterHardsuitMystagogue = "Sophia" hardsuit
     .desc = { ent-ClothingOuterHardsuitRd.desc }
 ent-ClothingOuterHardsuitSecurityRed = "Dayicin" tacsuit
     .desc = A top-of-the-line tactical combat hardsuit  produced by Five-Points-Armory, often purchased for use by Nanotrasen senior security officers.
@@ -89,7 +89,7 @@ ent-ClothingOuterHardsuitSecurityRed = "Dayicin" tacsuit
 ent-ClothingOuterHardsuitCombatAdvanced = "Dayicin Mk.II" tacsuit
     .desc = A top-of-the-line tactical combat hardsuit produced by Five-Points-Armory.
     The tags on the suit indicate that its rated for moderate amounts of physical and explosion damage. It feels somewhat light.
-    Technical identifier: FPA-099
+    Technical identifier: FPA-99
 ent-ClothingOuterHardsuitCombatHoS = "Dayicin Mk.II" tacsuit
     .desc = A top-of-the-line tactical combat hardsuit produced by Five-Points-Armory, painted with the colors of station security.
     The tags on the suit indicate that its rated for moderate amounts of physical and explosion damage. It feels somewhat light.
@@ -205,3 +205,4 @@ ent-ClothingOuterHardsuitMime = mime vacsuit
     .desc = A custom-made mime vacsuit. On closer inspection, it appears to be a normal vacsuit with suspenders and paint applied on top.
 ent-ClothingOuterHardsuitSanta = "Jolly" hardsuit
     .desc = A festive hardsuit produced by Donk Co. for their time-limited celebratory events, provides protection for its jolly gift-giver to sleighride safely in space without worrying about asteroid strikes.
+    Technical identifier: DNK-31
