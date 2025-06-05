@@ -183,6 +183,10 @@ ent-ClothingOuterHardsuitERTJanitor = "Sandalphon" hardsuit
     .desc = A highly advanced hardsuit used by Janitors of the Emergency Response Team, it seems to be branded with the Nanotrasen logo and a strange looking series number.
     The armor appears to be lined with a very sturdy alloy, it doesn't seem to have any weight either.
     Technical identifier: NT-444j
+ent-ClothingOuterHardsuitERTChaplain = "Elymas" hardsuit
+    .desc = A highly advanced hardsuit used by Chaplains of the Emergency Response Team, it seems to be branded with the Nanotrasen logo and a strange looking series number.
+    The armor appears to be lined with a very sturdy alloy, it doesn't seem to have any weight either.
+    Technical identifier: NT-444o
 ent-ClothingOuterHardsuitDeathsquad = "Samael" tacsuit
     .desc = A highly advanced, top of the line tactical combat hardsuit, it seems to be branded with the Nanotrasen logo and a strange looking series number.
     You can barely make out the letters "NTIA-DAP" written on it. The armor appears to be lined with a very sturdy alloy, and doesn't seem to have any weight either.

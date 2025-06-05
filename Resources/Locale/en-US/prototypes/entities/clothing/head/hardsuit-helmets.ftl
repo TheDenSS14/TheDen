@@ -93,7 +93,9 @@ ent-ClothingHeadHelmetHardsuitERTSecurity = NT-444s helmet
     .desc = A special tacsuit helmet worn by members of a engineering emergency response team.
 ent-ClothingHeadHelmetHardsuitERTJanitor = NT-444j helmet
     .desc = A special hardsuit helmet worn by members of a janitorial emergency response team.
-ent-ClothingHeadHelmetCBURN = NT-444-CBRN helmet
+ent-ClothingHeadHelmetHardsuitERTJanitor = "Elymas" helmet
+    .desc = A special hardsuit helmet worn by members of a epistemological emergency response team.
+    Technical identifier: NT-444o
     .desc = A pressure resistant and fireproof hood worn by special cleanup units.
 ent-ClothingHeadHelmetHardsuitDeathsquad = NT-662ua helmet
     .desc = A highly advanced, top of the line helmet used in special operations.
