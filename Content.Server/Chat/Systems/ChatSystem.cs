@@ -611,7 +611,7 @@ public sealed partial class ChatSystem : SharedChatSystem
         // get the entity's apparent name (if no override provided).
         var ent = Identity.Entity(source, EntityManager);
         var name = FormattedMessage.EscapeText(nameOverride ?? Name(ent));
-        action = FormattedMessage.EscapeText(action);
+        action = FormattedMessage.RemoveMarkupPermissive(action);
         var useSpace = !action.StartsWith("\'s") || !action.StartsWith(",");
         var space = useSpace || separateNameAndMessage ? " " : "";
         var locString = "chat-manager-entity-me-wrap-message";
