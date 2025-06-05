@@ -115,7 +115,7 @@ ent-ClothingHeadHelmetHardsuitJuggernautReverseEngineered = "Guan Yu" helmet
 ent-ClothingHeadHelmetHardsuitCybersunStealth = "Èguǐ" helmet
     .desc = A moderately protective sealed helmet designed for the "Èguǐ" tacsuit. It features "Cloaking" metamaterials.
     Technical identifier: CSA-91x
-ent-ClothingHeadHelmetHardsuitCybersunStealth = "Xíngtiān" helmet
+ent-ClothingHeadHelmetHardsuitDreadnought = "Xíngtiān" helmet
     .desc = A prototype helmet for the prototype "Xíngtiān" tacsuit, the helmet is heavily plated, but thankfully removable.
     Technical identifier: CSA-105UA
 ent-ClothingHeadHelmetHardsuitWizard = "Mana" helmet
