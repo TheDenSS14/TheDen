@@ -189,7 +189,8 @@ public sealed partial class ChatSystem : SharedChatSystem
         bool checkRadioPrefix = true,
         bool ignoreActionBlocker = false,
         LanguagePrototype? languageOverride = null,
-        string? color = null
+        string? color = null,
+        bool separateNameAndMessage = false
         )
     {
         if (HasComp<GhostComponent>(source))
@@ -271,24 +272,22 @@ public sealed partial class ChatSystem : SharedChatSystem
             }
         }
 
-        // message = FormattedMessage.EscapeText(message);
+        message = FormattedMessage.EscapeText(message);
 
         // Otherwise, send whatever type.
         switch (desiredType)
         {
             case InGameICChatType.Speak:
-                message = FormattedMessage.EscapeText(message);
                 SendEntitySpeak(source, message, range, nameOverride, language, hideLog, ignoreActionBlocker);
                 break;
             case InGameICChatType.Whisper:
                 SendEntityWhisper(source, message, range, null, nameOverride, language, hideLog, ignoreActionBlocker);
                 break;
             case InGameICChatType.Emote:
-                message = FormattedMessage.EscapeText(message);
-                SendEntityEmote(source, message, range, nameOverride, language, hideLog: hideLog, ignoreActionBlocker: ignoreActionBlocker);
+                SendEntityEmote(source, message, range, nameOverride, language, hideLog: hideLog, ignoreActionBlocker: ignoreActionBlocker, separateNameAndMessage: separateNameAndMessage);
                 break;
             case InGameICChatType.Subtle:
-                SendEntitySubtle(source, message, range, nameOverride, hideLog: hideLog, ignoreActionBlocker: ignoreActionBlocker, color: color);
+                SendEntitySubtle(source, message, range, nameOverride, hideLog: hideLog, ignoreActionBlocker: ignoreActionBlocker, color: color, separateNameAndMessage: separateNameAndMessage);
                 break;
             case InGameICChatType.SubtleOOC:
                 SendEntitySubtle(source, $"ooc: {message}", range, nameOverride, hideLog: hideLog, ignoreActionBlocker: ignoreActionBlocker, color: color);
@@ -602,6 +601,7 @@ public sealed partial class ChatSystem : SharedChatSystem
         bool hideLog = false,
         bool checkEmote = true,
         bool ignoreActionBlocker = false,
+        bool separateNameAndMessage = false,
         NetUserId? author = null
         )
     {
@@ -611,20 +611,26 @@ public sealed partial class ChatSystem : SharedChatSystem
         // get the entity's apparent name (if no override provided).
         var ent = Identity.Entity(source, EntityManager);
         var name = FormattedMessage.EscapeText(nameOverride ?? Name(ent));
-        var formattedAction = FormattedMessage.RemoveMarkupPermissive(action);
-        var useSpace = !formattedAction.StartsWith("\'s");
-        var space = useSpace ? " " : "";
+        action = FormattedMessage.EscapeText(action);
+        var useSpace = !action.StartsWith("\'s") || !action.StartsWith(",");
+        var space = useSpace || separateNameAndMessage ? " " : "";
+        var locString = "chat-manager-entity-subtle-wrap-message";
+
+        if (separateNameAndMessage)
+            locString = "chat-manager-entity-subtle-no-separate-wrap-message";
 
         // Emotes use Identity.Name, since it doesn't actually involve your voice at all.
-        var wrappedMessage = Loc.GetString("chat-manager-entity-me-wrap-message",
+        var wrappedMessage = Loc.GetString(locString,
             ("entityName", name),
             ("entity", ent),
             ("space", space),
-            ("message", formattedAction));
+            ("message", action));
 
         if (checkEmote)
             TryEmoteChatInput(source, action);
+
         SendInVoiceRange(ChatChannel.Emotes, name, action, wrappedMessage, obfuscated: "", obfuscatedWrappedMessage: "", source, range, author);
+
         if (!hideLog)
             if (name != Name(source))
                 _adminLogger.Add(LogType.Chat, LogImpact.Low, $"Emote from {ToPrettyString(source):user} as {name}: {action}");
@@ -639,6 +645,7 @@ public sealed partial class ChatSystem : SharedChatSystem
         string? nameOverride,
         bool hideLog = false,
         bool ignoreActionBlocker = false,
+        bool separateNameAndMessage = false,
         NetUserId? author = null,
         string? color = null
         )
@@ -649,17 +656,21 @@ public sealed partial class ChatSystem : SharedChatSystem
         // get the entity's apparent name (if no override provided).
         var ent = Identity.Entity(source, EntityManager);
         var name = FormattedMessage.EscapeText(nameOverride ?? Name(ent));
-        var formattedAction = FormattedMessage.RemoveMarkupPermissive(action);
-        var useSpace = !formattedAction.StartsWith("\'s");
-        var space = useSpace ? " " : "";
+        action = FormattedMessage.RemoveMarkupPermissive(action);
+        var useSpace = !action.StartsWith("\'s") || !action.StartsWith(",");
+        var space = useSpace || separateNameAndMessage ? " " : "";
+        var locString = "chat-manager-entity-subtle-wrap-message";
+
+        if (separateNameAndMessage)
+            locString = "chat-manager-entity-subtle-no-separate-wrap-message";
 
         // Emotes use Identity.Name, since it doesn't actually involve your voice at all.
-        var wrappedMessage = Loc.GetString("chat-manager-entity-subtle-wrap-message",
+        var wrappedMessage = Loc.GetString(locString,
             ("entityName", name),
             ("entity", ent),
             ("color", color ?? DefaultSpeakColor.ToHex()),
             ("space", space),
-            ("message", formattedAction));
+            ("message", action));
 
         foreach (var (session, data) in GetRecipients(source, WhisperClearRange))
         {
