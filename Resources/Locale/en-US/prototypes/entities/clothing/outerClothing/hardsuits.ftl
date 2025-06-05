@@ -138,6 +138,10 @@ ent-ClothingOuterHardsuitCybersunStealth = "Èguǐ" tacsuit
     .desc = A rare prototype tacsuit that features metamaterial plating which warps light around it to produce an "Invisibility cloak" effect.
     Unfortunately, it accomplishes this by trading a lot of protections that one would normally expect from a typical tacsuit.
     Technical identifier: CSA-91x
+ent-ClothingOuterHardsuitDreadnought = "Xíngtiān" tacsuit
+    .desc = A prototype tacsuit that makes an almost impenetrable wall out of the wearer. Once fastened in place, it can't be removed without killing the wearer.
+    Its use will slowly kill the wearer, making entombment inside a one-way trip to the grave. Are you sure you want to do this?
+    Technical identifier: CSA-105UA
 ent-ClothingOuterHardsuitWizard = "Mana" tacsuit
     .desc = A bizarre gem-encrusted hardsuit. Famously used by members of the Wizard Federation in their operations.
     Contrary to it's appearance, it can protect its wearer from space and considerable amounts of physical trauma, it feels somewhat light.
