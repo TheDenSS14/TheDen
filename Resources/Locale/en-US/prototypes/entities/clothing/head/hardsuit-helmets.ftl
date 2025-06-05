@@ -147,7 +147,7 @@ ent-ClothingHeadHelmetHardsuitERTSecurity = "Gabriel" helmet
 ent-ClothingHeadHelmetHardsuitERTJanitor = "Sandalphon" helmet
     .desc = A special hardsuit helmet worn by members of a janitorial emergency response team.
     Technical identifier: NT-444j
-ent-ClothingHeadHelmetHardsuitERTJanitor = "Elymas" helmet
+ent-ClothingHeadHelmetHardsuitERTChaplain = "Elymas" helmet
     .desc = A special hardsuit helmet worn by members of a epistemological emergency response team.
     Technical identifier: NT-444o
 ent-ClothingHeadHelmetCBURN = "Jophiel" helmet
