@@ -40,14 +40,14 @@
       - Critical
       - Dead
   - type: MobThresholds
-    stateAlertDict:
-      Alive: BorgHealth
-      Critical: BorgCrit
-      Dead: BorgDead
     thresholds:
       0: Alive
       100: Critical
       200: Dead
+    stateAlertDict:
+      Alive: BorgHealth
+      Critical: BorgCrit
+      Dead: BorgDead
   - type: TypingIndicator
     proto: robot
   - type: Destructible
@@ -58,6 +58,11 @@
           damage: 400
         behaviors:
           - !type:GibBehavior { }
+  - type: SlowOnDamage
+    speedModifierThresholds:
+      60: 0.75
+      90: 0.5
+      120: 0.3
   - type: SiliconDownOnDead
   - type: Inventory
     templateId: ipc
