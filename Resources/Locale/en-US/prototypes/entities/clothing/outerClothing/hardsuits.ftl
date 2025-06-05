@@ -9,7 +9,9 @@ ent-ClothingOuterHardsuitEngineering = "Lampsi" hardsuit
     The label indicates that its rated for moderate amounts of radiation exposure. It feels a bit heavy.
     Technical identifier: HpI-19r
 ent-ClothingOuterHardsuitEngineeringUnpainted = "Lampsi" hardsuit
-    .desc = { ent-ClothingOuterHardsuitEngineering.desc }
+    .desc = A standard-issue hardsuit produced by Hephaestus Industries, used by engineers in low & high pressure environments.
+    The label indicates that its rated for moderate amounts of radiation exposure. It feels a bit heavy. The plasteel plating is exposed.
+    Technical identifier: HpI-19r
 ent-ClothingOuterHardsuitSpatio = "Kriti" hardsuit
     .desc = A standard-issue hardsuit produced by Hephaestus Industries, designed for industrial work in low pressure environments.
     The label indicates that its rated for moderate amounts of radiation exposure, and it feels somewhat light.
