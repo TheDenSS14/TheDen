@@ -6,7 +6,7 @@ using Content.Shared.Chemistry.EntitySystems;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
 
-namespace Content.Server._DEN.Atmos.EntitySystems;
+namespace Content.Server._DEN.Chemistry.EntitySystems;
 
 public sealed class ReplaceSolutionSystem : SharedReplaceSolutionSystem
 {

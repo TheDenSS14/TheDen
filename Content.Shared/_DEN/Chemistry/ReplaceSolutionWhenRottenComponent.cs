@@ -1,6 +1,6 @@
 using Robust.Shared.GameStates;
 
-namespace Content.Shared._DEN.Atmos.Rotting;
+namespace Content.Shared._DEN.Chemistry;
 
 /// <summary>
 /// A component that works in tandem with <see cref="RottingComponent"/>. When this entity is rotten,

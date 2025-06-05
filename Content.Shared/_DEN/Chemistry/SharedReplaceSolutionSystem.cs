@@ -1,4 +1,4 @@
-namespace Content.Shared._DEN.Atmos.Rotting;
+namespace Content.Shared._DEN.Chemistry;
 
 public abstract class SharedReplaceSolutionSystem : EntitySystem
 { }

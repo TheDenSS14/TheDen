@@ -4,7 +4,7 @@ using Content.Shared.FixedPoint;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom;
 
-namespace Content.Shared._DEN.Atmos.Rotting;
+namespace Content.Shared._DEN.Chemistry;
 
 /// <summary>
 /// Entities with this component may partially convert reagents into other reagents under certain conditions.
