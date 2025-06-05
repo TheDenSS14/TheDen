@@ -651,7 +651,7 @@ public sealed partial class ChatSystem : SharedChatSystem
             ("entityName", name),
             ("entity", ent),
             ("color", color ?? DefaultSpeakColor.ToHex()),
-            ("message", FormattedMessage.RemoveMarkupPermissive(action)));
+            ("message", action));
 
         foreach (var (session, data) in GetRecipients(source, WhisperClearRange))
         {
