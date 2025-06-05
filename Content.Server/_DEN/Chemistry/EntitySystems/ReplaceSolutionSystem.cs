@@ -1,4 +1,4 @@
-using Content.Shared._DEN.Atmos.Rotting;
+using Content.Shared._DEN.Chemistry;
 using Content.Shared.Atmos.Rotting;
 using Content.Shared.Chemistry.Components;
 using Content.Shared.Chemistry.Components.SolutionManager;

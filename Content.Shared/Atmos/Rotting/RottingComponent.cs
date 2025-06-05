@@ -1,4 +1,4 @@
-using Content.Shared._DEN.Atmos.Rotting;
+using Content.Shared._DEN.Chemistry;
 using Content.Shared.Damage;
 using Robust.Shared.GameStates;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom;
