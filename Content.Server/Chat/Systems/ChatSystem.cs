@@ -79,6 +79,7 @@ public sealed partial class ChatSystem : SharedChatSystem
     public const int VoiceRange = 10; // how far voice goes in world units
     public const int WhisperClearRange = 2; // how far whisper goes while still being understandable, in world units
     public const int WhisperMuffledRange = 5; // how far whisper goes at all, in world units
+    public const float InSpaceRange = .3f; // how far speech travels in space
     public const string DefaultAnnouncementSound = "/Audio/Announcements/announce.ogg";
     public const float DefaultObfuscationFactor = 0.2f; // Percentage of symbols in a whispered message that can be seen even by "far" listeners
     public readonly Color DefaultSpeakColor = Color.White;
@@ -522,10 +523,11 @@ public sealed partial class ChatSystem : SharedChatSystem
 
         var languageObfuscatedMessage = SanitizeInGameICMessage(source, _language.ObfuscateSpeech(message, language), out var emoteStr, true, _configurationManager.GetCVar(CCVars.ChatPunctuation), (!CultureInfo.CurrentCulture.IsNeutralCulture && CultureInfo.CurrentCulture.Parent.Name == "en") || (CultureInfo.CurrentCulture.IsNeutralCulture && CultureInfo.CurrentCulture.Name == "en"));
 
-        foreach (var (session, data) in GetRecipients(source, Transform(source).GridUid == null ? 0.3f : WhisperMuffledRange))
+        foreach (var (session, data) in GetRecipients(source, Transform(source).GridUid == null ? InSpaceRange : WhisperMuffledRange))
         {
             if (session.AttachedEntity is not { Valid: true } listener
-                || session.AttachedEntity.HasValue && HasComp<GhostComponent>(session.AttachedEntity.Value))
+                || session.AttachedEntity.HasValue && HasComp<GhostComponent>(session.AttachedEntity.Value)
+                || !_interactionSystem.InRangeUnobstructed(source, listener, WhisperClearRange))
                 continue;
 
             if (Transform(session.AttachedEntity.Value).GridUid != Transform(source).GridUid
@@ -676,7 +678,8 @@ public sealed partial class ChatSystem : SharedChatSystem
         foreach (var (session, data) in GetRecipients(source, WhisperClearRange))
         {
             if (session.AttachedEntity is not { Valid: true } listener
-                || session.AttachedEntity.HasValue && HasComp<GhostComponent>(session.AttachedEntity.Value))
+                || session.AttachedEntity.HasValue && HasComp<GhostComponent>(session.AttachedEntity.Value)
+                || !_interactionSystem.InRangeUnobstructed(source, listener, WhisperClearRange))
                 continue;
 
             if (MessageRangeCheck(session, data, range) == MessageRangeCheckResult.Disallowed)
@@ -803,10 +806,12 @@ public sealed partial class ChatSystem : SharedChatSystem
         var language = languageOverride ?? _language.GetLanguage(source);
         var targetHasLanguage = TryComp<LanguageSpeakerComponent>(source, out var languageSpeakerComponent);
 
-        foreach (var (session, data) in GetRecipients(source, Transform(source).GridUid == null ? 0.3f : VoiceRange))
+        foreach (var (session, data) in GetRecipients(source, Transform(source).GridUid == null ? InSpaceRange : VoiceRange))
         {
-            if (session.AttachedEntity != null
-                && Transform(session.AttachedEntity.Value).GridUid != Transform(source).GridUid
+            if (session.AttachedEntity is not { Valid: true } playerEntity)
+                continue;
+
+            if (Transform(playerEntity).GridUid != Transform(source).GridUid
                 && !CheckAttachedGrids(source, session.AttachedEntity.Value))
                 continue;
 
@@ -814,21 +819,14 @@ public sealed partial class ChatSystem : SharedChatSystem
             if (entRange == MessageRangeCheckResult.Disallowed)
                 continue;
             var entHideChat = entRange == MessageRangeCheckResult.HideChat;
-            if (session.AttachedEntity is not { Valid: true } playerEntity)
-                continue;
-            EntityUid listener = session.AttachedEntity.Value;
 
             // If the channel does not support languages, or the entity can understand the message, send the original message, otherwise send the obfuscated version
             if (channel == ChatChannel.LOOC
                 || channel == ChatChannel.Emotes
-                || _language.CanUnderstand(listener, language.ID, targetHasLanguage ? (source, languageSpeakerComponent) : null))
-            {
+                || _language.CanUnderstand(playerEntity, language.ID, targetHasLanguage ? (source, languageSpeakerComponent) : null))
                 _chatManager.ChatMessageToOne(channel, message, wrappedMessage, source, entHideChat, session.Channel, author: author);
-            }
             else
-            {
                 _chatManager.ChatMessageToOne(channel, obfuscated, obfuscatedWrappedMessage, source, entHideChat, session.Channel, author: author);
-            }
         }
 
         _replay.RecordServerMessage(new ChatMessage(channel, message, wrappedMessage, GetNetEntity(source), null, MessageRangeHideChatForReplay(range)));
