@@ -8,6 +8,7 @@ using Content.Shared.Damage;
 using Content.Shared.Database;
 using Content.Shared.DoAfter;
 using Content.Shared.DragDrop;
+using Content.Shared.Examine;
 using Content.Shared.IdentityManagement;
 using Content.Shared.Interaction;
 using Content.Shared.Interaction.Events;
@@ -55,6 +56,7 @@ namespace Content.Server.Kitchen.EntitySystems
             SubscribeLocalEvent<KitchenSpikeComponent, SpikeDoAfterEvent>(OnDoAfter);
 
             SubscribeLocalEvent<KitchenSpikeComponent, SuicideByEnvironmentEvent>(OnSuicideByEnvironment);
+            SubscribeLocalEvent<KitchenSpikeComponent, ExaminedEvent>(OnExamined);
 
             SubscribeLocalEvent<ButcherableComponent, CanDropDraggedEvent>(OnButcherableCanDrop);
         }
@@ -139,6 +141,28 @@ namespace Content.Server.Kitchen.EntitySystems
 
             if (TryGetPiece(entity, args.User, args.Used))
                 args.Handled = true;
+        }
+
+        private void OnExamined(Entity<KitchenSpikeComponent> spike, ref ExaminedEvent args)
+        {
+            var comp = spike.Comp;
+            var spiked = comp.SpikedEntity;
+            if (spiked != null)
+            {
+                if (TryComp<PerishableComponent>(spiked, out var perishable))
+                {
+                    Entity<PerishableComponent> ent = new Entity<PerishableComponent>(spiked.Value, perishable);
+                    string examineText = _rotting.GetPerishableExamineText(ent);
+                    args.PushMarkup(examineText);
+                }
+
+                if (TryComp<RottingComponent>(spiked, out var rotting))
+                {
+                    Entity<RottingComponent> ent = new Entity<RottingComponent>(spiked.Value, rotting);
+                    string examineText = _rotting.GetRottingExamineText(ent);
+                    args.PushMarkup(examineText);
+                }
+            }
         }
 
         private void Spike(EntityUid uid, EntityUid userUid, EntityUid victimUid,

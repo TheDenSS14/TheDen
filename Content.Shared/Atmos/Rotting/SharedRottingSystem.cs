@@ -53,16 +53,8 @@ public abstract class SharedRottingSystem : EntitySystem
 
     private void OnPerishableExamined(Entity<PerishableComponent> perishable, ref ExaminedEvent args)
     {
-        int stage = PerishStage(perishable, MaxStages);
-        if (stage < 1 || stage > MaxStages)
-        {
-            // We dont push an examined string if it hasen't started "perishing" or it's already rotting
-            return;
-        }
-
-        var isMob = HasComp<MobStateComponent>(perishable);
-        var description = "perishable-" + stage + (!isMob ? "-nonmob" : string.Empty);
-        args.PushMarkup(Loc.GetString(description, ("target", Identity.Entity(perishable, EntityManager))));
+        var examineText = GetPerishableExamineText(perishable);
+        args.PushMarkup(examineText);
     }
 
     private void OnShutdown(EntityUid uid, RottingComponent component, ComponentShutdown args)
@@ -85,9 +77,29 @@ public abstract class SharedRottingSystem : EntitySystem
         RemCompDeferred<RottingComponent>(uid);
     }
 
-    private void OnExamined(EntityUid uid, RottingComponent component, ExaminedEvent args)
+    private void OnExamined(Entity<RottingComponent> rotting, ref ExaminedEvent args)
     {
-        var stage = RotStage(uid, component);
+        var examineText = GetRottingExamineText(rotting);
+        args.PushMarkup(examineText);
+    }
+
+    [PublicAPI]
+    public string GetPerishableExamineText(Entity<PerishableComponent> entity)
+    {
+        int stage = PerishStage(entity, MaxStages);
+        if (stage < 1 || stage > MaxStages)
+            return string.Empty;
+
+        var isMob = HasComp<MobStateComponent>(entity);
+        var description = "perishable-" + stage + (!isMob ? "-nonmob" : string.Empty);
+        return Loc.GetString(description, ("target", Identity.Entity(entity, EntityManager)));
+    }
+
+    [PublicAPI]
+    public string GetRottingExamineText(Entity<RottingComponent> entity)
+    {
+        var comp = entity.Comp;
+        var stage = RotStage(entity, comp);
         var description = stage switch
         {
             >= 2 => "rotting-extremely-bloated",
@@ -95,10 +107,10 @@ public abstract class SharedRottingSystem : EntitySystem
             _ => "rotting-rotting"
         };
 
-        if (!HasComp<MobStateComponent>(uid))
+        if (!HasComp<MobStateComponent>(entity))
             description += "-nonmob";
 
-        args.PushMarkup(Loc.GetString(description, ("target", Identity.Entity(uid, EntityManager))));
+        return Loc.GetString(description, ("target", Identity.Entity(entity, EntityManager)));
     }
 
     /// <summary>
@@ -109,7 +121,7 @@ public abstract class SharedRottingSystem : EntitySystem
     {
         if (perishable.Comp.RotAfter.TotalSeconds == 0 || perishable.Comp.RotAccumulator.TotalSeconds == 0)
             return 0;
-        return (int)(1 + maxStages * perishable.Comp.RotAccumulator.TotalSeconds / perishable.Comp.RotAfter.TotalSeconds);
+        return (int) (1 + maxStages * perishable.Comp.RotAccumulator.TotalSeconds / perishable.Comp.RotAfter.TotalSeconds);
     }
 
     public bool IsRotProgressing(EntityUid uid, PerishableComponent? perishable)
