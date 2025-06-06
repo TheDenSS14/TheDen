@@ -6,19 +6,6 @@
 # Ears
 
 # Equipment
-- type: loadout
-  id: LoadoutSeniorOfficerAntiqueDoubleEnergySword
-  category: JobsSecuritySeniorOfficer
-  cost: 10
-  exclusive: true
-  requirements:
-  - !type:CharacterItemGroupRequirement
-    group: LoadoutSeniorOfficerEquipment
-  - !type:CharacterJobRequirement
-    jobs:
-    - SeniorOfficer
-  items:
-  - AntiqueEnergySwordDouble
 
 # Eyes
 
