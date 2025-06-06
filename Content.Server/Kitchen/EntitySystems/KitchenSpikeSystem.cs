@@ -226,6 +226,7 @@ namespace Content.Server.Kitchen.EntitySystems
         {
             var ent = Spawn(null, Transform(spikeId).Coordinates);
             CopyComponent<MetaDataComponent>(victimId, ent);
+            CopyComponent<MobStateComponent>(victimId, ent);
             CopyComponent<ButcherableComponent>(victimId, ent);
             CopyComponent<PerishableComponent>(victimId, ent);
             CopyComponent<RottingComponent>(victimId, ent);
