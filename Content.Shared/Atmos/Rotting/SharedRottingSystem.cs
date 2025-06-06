@@ -181,7 +181,8 @@ public abstract class SharedRottingSystem : EntitySystem
     /// <param name="proportional">Whether the rot accumulation on the receiving entity should be relative to its own expiration date.</param>
     /// <param name="butcherableFrom">Optional, ButcherableComponent on the "from" entity. The FreshnessIncrease field of the component is used to add a flat modifier to the freshness transfer time.</param>
     [PublicAPI]
-    public void TransferFreshness(PerishableComponent perishableFrom,
+    public void TransferFreshness(EntityUid fromId,
+        PerishableComponent perishableFrom,
         PerishableComponent perishableTo,
         bool proportional = true,
         ButcherableComponent? butcherableFrom = null)
@@ -194,7 +195,7 @@ public abstract class SharedRottingSystem : EntitySystem
             newRotAccumulator = perishableTo.RotAfter * ratio;
         }
 
-        if (butcherableFrom != null)
+        if (butcherableFrom != null && !HasComp<RottingComponent>(fromId))
             newRotAccumulator -= butcherableFrom.FreshnessIncrease;
 
         if (newRotAccumulator < TimeSpan.Zero)
@@ -221,7 +222,7 @@ public abstract class SharedRottingSystem : EntitySystem
             || !TryComp<PerishableComponent>(toId, out var perishableTo))
             return;
 
-        TransferFreshness(perishableFrom, perishableTo, proportional, butcherableFrom);
+        TransferFreshness(fromId, perishableFrom, perishableTo, proportional, butcherableFrom);
     }
 
     /// <summary>
