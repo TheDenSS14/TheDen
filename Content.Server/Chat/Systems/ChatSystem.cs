@@ -37,7 +37,6 @@ using Robust.Shared.Random;
 using Robust.Shared.Replays;
 using Robust.Shared.Utility;
 using Content.Shared.Language.Components;
-using Content.Shared.Nyanotrasen.Item.PseudoItem;
 using Content.Shared.Physics;
 
 namespace Content.Server.Chat.Systems;
