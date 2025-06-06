@@ -6,8 +6,10 @@
 // SPDX-FileCopyrightText: 2023 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2024 VMSolidus <evilexecutive@gmail.com>
 // SPDX-FileCopyrightText: 2024 nikthechampiongr <32041239+nikthechampiongr@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 RedFoxIV <38788538+RedFoxIV@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 plykiya <plykiya@protonmail.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+// SPDX-FileCopyrightText: 2025 Roudenn <romabond091@gmail.com>
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -17,6 +19,7 @@ using Content.Shared.Consent;
 using Content.Shared.Damage;
 using Content.Shared.Devour.Components;
 using Content.Shared.DoAfter;
+using Content.Shared.Item; // Goobstation
 using Content.Shared.Mobs;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Popups;
@@ -72,6 +75,16 @@ public abstract class SharedDevourSystem : EntitySystem
             HandleMobState((uid, component), target, targetState);
             return;
         }
+        // Goobstation start - Item devouring
+        if (HasComp<ItemComponent>(target))
+        {
+            _doAfterSystem.TryStartDoAfter(new DoAfterArgs(EntityManager, uid, component.DevourTime, new DevourDoAfterEvent(), uid, target: target, used: uid)
+            {
+                BreakOnMove = true,
+            });
+            return;
+        }
+        // Goobstation end
 
         _popupSystem.PopupClient(Loc.GetString("devour-action-popup-message-structure"), uid, uid);
 

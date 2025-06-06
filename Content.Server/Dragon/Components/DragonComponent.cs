@@ -10,9 +10,12 @@
 // SPDX-FileCopyrightText: 2023 keronshb <54602815+keronshb@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2024 deltanedas <39013340+deltanedas@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+// SPDX-FileCopyrightText: 2025 Roudenn <romabond091@gmail.com>
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
+using Content.Shared.Damage;
 using Content.Shared.NPC.Prototypes;
 using Robust.Shared.Audio;
 using Robust.Shared.Prototypes;
@@ -80,5 +83,42 @@ namespace Content.Server.Dragon
         /// </summary>
         [DataField]
         public ProtoId<NpcFactionPrototype> Faction = "Dragon";
+
+        #region Goobstation
+
+        [DataField]
+        public EntityUid? SpawnCarpsActionEntity;
+
+        [DataField]
+        public EntProtoId SpawnCarpsAction = "ActionRiseFish";
+
+        [DataField]
+        public EntProtoId CarpProtoId = "MobCarpDragon";
+
+        [DataField]
+        public int CarpAmount = 3;
+
+        [DataField]
+        public EntityUid? RoarActionEntity;
+
+        [DataField]
+        public EntProtoId RoarAction = "ActionDragonRoar";
+
+        [DataField]
+        public float RoarRange = 3f;
+
+        [DataField]
+        public float RoarStunTime = 2f;
+
+        [DataField]
+        public float CarpRiftHealingRange = 3f;
+
+        /// <summary>
+        /// Amount of healing the dragon receives when standing near a carp rift per second.
+        /// </summary>
+        [DataField]
+        public DamageSpecifier CarpRiftHealing;
+
+        #endregion
     }
 }

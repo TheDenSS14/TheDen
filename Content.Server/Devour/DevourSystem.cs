@@ -4,6 +4,10 @@
 // SPDX-FileCopyrightText: 2024 cynical <superpilotboy@gmail.com>
 // SPDX-FileCopyrightText: 2024 zelezniciar1 <39102800+zelezniciar1@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+// SPDX-FileCopyrightText: 2025 Rouden <149893554+Roudenn@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Roudenn <romabond091@gmail.com>
+// SPDX-FileCopyrightText: 2025 coderabbitai[bot] <136622811+coderabbitai[bot]@users.noreply.github.com>
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -14,6 +18,7 @@ using Content.Shared.Damage;
 using Content.Shared.Devour;
 using Content.Shared.Devour.Components;
 using Content.Shared.Humanoid;
+using Content.Shared.Item; // Goobstation
 
 namespace Content.Server.Devour;
 
@@ -42,6 +47,15 @@ public sealed class DevourSystem : SharedDevourSystem
             if (component.ShouldStoreDevoured && args.Args.Target is not null && args.AllowDevouring)
                 ContainerSystem.Insert(args.Args.Target.Value, component.Stomach);
         }
+        // Goobstation start - Item devouring
+        else if (args.Args.Target is { } target && HasComp<ItemComponent>(target))
+        {
+            if (component.ShouldStoreDevoured)
+                ContainerSystem.Insert(target, component.Stomach);
+            else
+                QueueDel(target);
+        }
+        // Goobstation end
         //TODO: Figure out a better way of removing structures via devour that still entails standing still and waiting for a DoAfter. Somehow.
         //If it's not human, it must be a structure
         else if (args.Args.Target != null)
