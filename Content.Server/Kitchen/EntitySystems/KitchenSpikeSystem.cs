@@ -225,7 +225,11 @@ namespace Content.Server.Kitchen.EntitySystems
         private EntityUid CreateVirtualSpikedEntity(EntityUid spikeId, EntityUid victimId)
         {
             var ent = Spawn(null, Transform(spikeId).Coordinates);
-            CopyComponent<MetaDataComponent>(victimId, ent);
+
+            var meta = EnsureComp<MetaDataComponent>(ent);
+            if (TryComp(victimId, out MetaDataComponent? victimMeta))
+                _metaData.SetEntityName(ent, victimMeta.EntityName, meta);
+
             CopyComponent<MobStateComponent>(victimId, ent);
             CopyComponent<ButcherableComponent>(victimId, ent);
             CopyComponent<PerishableComponent>(victimId, ent);
