@@ -11,8 +11,12 @@
       size: Huge
     - type: Wieldable
     - type: Eye
+    - type: DeviceNetwork
+      deviceNetId: Wireless
+      receiveFrequencyId: SurveillanceCameraEntertainment
+      transmitFrequencyId: SurveillanceCameraEntertainment
     - type: WirelessNetworkConnection
-      range: 200
+      range: 3000
     - type: SurveillanceCameraMicrophone
       blacklist:
         components:
@@ -34,6 +38,6 @@
   - type: DeviceNetwork
     deviceNetId: Wireless
     receiveFrequencyId: SurveillanceCameraEntertainment
-    transmitFrequencyId: SurveillanceCamera
+    transmitFrequencyId: SurveillanceCameraEntertainment
   - type: SurveillanceCamera
     networkSet: true
