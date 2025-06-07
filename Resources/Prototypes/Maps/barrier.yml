@@ -3,9 +3,9 @@
   mapName: 'Barrier Hospital'
   mapPath: /Maps/TheDen/barrier.yml
   minPlayers: 0
-  maxPlayers: 45
+  maxPlayers: 50
   stations:
-    Edge:
+    Barrier:
       stationProto: StandardNanotrasenStation
       components:
         - type: StationEmergencyShuttle
