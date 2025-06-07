@@ -34,6 +34,9 @@ public sealed class SmartEquipSystem : EntitySystem
         CommandBinds.Builder
             .Bind(ContentKeyFunctions.SmartEquipBackpack, InputCmdHandler.FromDelegate(HandleSmartEquipBackpack, handle: false, outsidePrediction: false))
             .Bind(ContentKeyFunctions.SmartEquipBelt, InputCmdHandler.FromDelegate(HandleSmartEquipBelt, handle: false, outsidePrediction: false))
+            .Bind(ContentKeyFunctions.SmartEquipSuitStorage, InputCmdHandler.FromDelegate(HandleSmartEquipSuitStorage, handle: false, outsidePrediction: false))
+            .Bind(ContentKeyFunctions.SmartEquipPocket1, InputCmdHandler.FromDelegate(HandleSmartEquipPocket1, handle: false, outsidePrediction: false))
+            .Bind(ContentKeyFunctions.SmartEquipPocket2, InputCmdHandler.FromDelegate(HandleSmartEquipPocket2, handle: false, outsidePrediction: false))
             .Register<SmartEquipSystem>();
     }
 
@@ -52,6 +55,21 @@ public sealed class SmartEquipSystem : EntitySystem
     private void HandleSmartEquipBelt(ICommonSession? session)
     {
         HandleSmartEquip(session, "belt");
+    }
+
+    private void HandleSmartEquipSuitStorage(ICommonSession? session)
+    {
+        HandleSmartEquip(session, "suitstorage", true);
+    }
+
+    private void HandleSmartEquipPocket1(ICommonSession? session)
+    {
+        HandleSmartEquip(session, "pocket1", true);
+    }
+
+    private void HandleSmartEquipPocket2(ICommonSession? session)
+    {
+        HandleSmartEquip(session, "pocket2", true);
     }
 
     private void SaveLocation(StorageComponent storage, EntityUid itemUid)
@@ -84,7 +102,7 @@ public sealed class SmartEquipSystem : EntitySystem
     }
 
 
-    private void HandleSmartEquip(ICommonSession? session, string equipmentSlot)
+    private void HandleSmartEquip(ICommonSession? session, string equipmentSlot, bool ignoreStorage = false)
     {
         if (session is not { } playerSession)
             return;
@@ -155,7 +173,7 @@ public sealed class SmartEquipSystem : EntitySystem
         }
 
         // case 2 (storage item):
-        if (TryComp<StorageComponent>(slotItem, out var storage))
+        if (TryComp<StorageComponent>(slotItem, out var storage) && !ignoreStorage)
         {
             if (handItem == null)
             {
@@ -200,7 +218,7 @@ public sealed class SmartEquipSystem : EntitySystem
         }
 
         // case 3 (itemslot item):
-        if (TryComp<ItemSlotsComponent>(slotItem, out var slots))
+        if (TryComp<ItemSlotsComponent>(slotItem, out var slots) && !ignoreStorage)
         {
             if (handItem == null)
             {
