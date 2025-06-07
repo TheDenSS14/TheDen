@@ -324,7 +324,7 @@ namespace Content.Server.Kitchen.EntitySystems
             var active = AddComp<ActiveReagentGrinderComponent>(uid);
             active.EndTime = _timing.CurTime + reagentGrinder.WorkTime * reagentGrinder.WorkTimeMultiplier;
             active.Program = program;
-            
+
             // slightly higher pitched
             var audio = _audioSystem.PlayPvs(sound, uid,
                 AudioParams.Default.WithPitchScale(1 / reagentGrinder.WorkTimeMultiplier));

@@ -1,0 +1,18 @@
+- type: trait
+  id: Detritivore
+  category: TraitsPhysicalBiological
+  points: -1
+  requirements:
+  - !type:CharacterJobRequirement
+    inverted: true
+    jobs:
+      - Borg
+      - MedicalBorg
+  - !type:CharacterSpeciesRequirement
+    inverted: true
+    species:
+      - IPC
+  functions:
+  - !type:TraitAddMetabolizer
+    metabolizers:
+    - Detritivore

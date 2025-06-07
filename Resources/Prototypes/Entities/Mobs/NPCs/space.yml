@@ -480,6 +480,17 @@
         reagents:
         - ReagentId: UncookedAnimalProteins
           Quantity: 3
+  - type: ReplaceSolutionWhenRotten
+    solution: food
+    duration: 2
+    replacements:
+      - solution:
+          reagents:
+          - ReagentId: GastroToxin
+            Quantity: 0.01 # 3u replaced after 600 seconds
+        whitelist:
+        - UncookedAnimalProteins
+        amount: 0.01
   - type: Butcherable
     spawned:
     - id: FoodMeatSnail

@@ -18,19 +18,20 @@ using Robust.Server.Containers;
 using Robust.Server.GameObjects;
 using Robust.Shared.Random;
 using Robust.Shared.Utility;
+using Content.Server.Atmos.Rotting;
+using Content.Shared._DEN.Kitchen;
 
 namespace Content.Server.Kitchen.EntitySystems;
 
 public sealed class SharpSystem : EntitySystem
 {
     [Dependency] private readonly BodySystem _bodySystem = default!;
+    [Dependency] private readonly SharedButcherySystem _butcherySystem = default!;
     [Dependency] private readonly SharedDestructibleSystem _destructibleSystem = default!;
     [Dependency] private readonly SharedDoAfterSystem _doAfterSystem = default!;
     [Dependency] private readonly SharedPopupSystem _popupSystem = default!;
     [Dependency] private readonly ContainerSystem _containerSystem = default!;
     [Dependency] private readonly MobStateSystem _mobStateSystem = default!;
-    [Dependency] private readonly TransformSystem _transform = default!;
-    [Dependency] private readonly IRobustRandom _robustRandom = default!;
     [Dependency] private readonly ISharedAdminLogManager _adminLogger = default!;
 
     public override void Initialize()
@@ -102,14 +103,7 @@ public sealed class SharpSystem : EntitySystem
             return;
         }
 
-        var spawnEntities = EntitySpawnCollection.GetSpawns(butcher.SpawnedEntities, _robustRandom);
-        var coords = _transform.GetMapCoordinates(args.Args.Target.Value);
-        EntityUid popupEnt = default!;
-        foreach (var proto in spawnEntities)
-        {
-            // distribute the spawned items randomly in a small radius around the origin
-            popupEnt = Spawn(proto, coords.Offset(_robustRandom.NextVector2(0.25f)));
-        }
+        _butcherySystem.SpawnButcherableProducts(args.Args.Target.Value, butcher, out var popupEnt);
 
         var hasBody = TryComp<BodyComponent>(args.Args.Target.Value, out var body);
 

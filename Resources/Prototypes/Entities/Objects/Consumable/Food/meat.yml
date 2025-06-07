@@ -68,6 +68,18 @@
     entity: FoodMeatRotten
     # once it would say bloated, turn into the rotten prototype
     stage: 1
+  - type: ReplaceSolutionWhenRotten
+    solution: food
+    duration: 1.5
+    replacements:
+      - solution:
+          reagents:
+          - ReagentId: GastroToxin
+            Quantity: 0.02 # 4u replaced after 300 seconds
+        whitelist:
+        - Nutriment
+        - UncookedAnimalProteins
+        amount: 0.02
 
 # bruh
 - type: Tag
