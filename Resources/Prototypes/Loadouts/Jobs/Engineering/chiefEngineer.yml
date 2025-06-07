@@ -75,6 +75,19 @@
 
 # Equipment
 - type: loadout
+  id: LoadoutChiefEngineerEquipmentHandHeldAtmosMonitor
+  category: JobsEngineeringChiefEngineer
+  cost: 2
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutChiefEngineerEquipment
+  - !type:CharacterJobRequirement
+    jobs:
+    - ChiefEngineer
+  items:
+  - HandHeldAtmosMonitor
+
+- type: loadout
   id: LoadoutChiefEngineerEquipmentBoxInflatable
   category: JobsEngineeringChiefEngineer
   cost: 0
