@@ -39,8 +39,8 @@ public sealed class ReplaceSolutionSystem : SharedReplaceSolutionSystem
     {
         if (_timing.CurTime < comp.NextReplaceTime)
             return;
-        comp.NextReplaceTime = _timing.CurTime + comp.Duration;
 
+        comp.NextReplaceTime = _timing.CurTime + comp.Duration;
         UpdateEntity(uid, comp, manager);
     }
 
