@@ -40,3 +40,21 @@
   - type: Clothing
     sprite: Clothing/Head/Hats/holyhatmelon.rsi
   - type: Armor
+  - type: Tag
+    tags:
+    - WhitelistChameleon
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadSailorCap
+  name: sailor's hat
+  description: You aren't immune to seasickness wearing this, but it'll make you look cooler when heaving on the boat!
+  components:
+  - type: Sprite
+    sprite: _Impstation/Clothing/Head/Hats/sailorcap.rsi
+  - type: Clothing
+    sprite: _Impstation/Clothing/Head/Hats/sailorcap.rsi
+  - type: Tag
+    tags:
+    - WhitelistChameleon
+    - ClothMade
