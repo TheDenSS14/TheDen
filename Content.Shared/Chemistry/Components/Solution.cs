@@ -636,7 +636,7 @@ namespace Content.Shared.Chemistry.Components
 
         public Solution SplitSolutionWithOnly(FixedPoint2 toTake, IEnumerable<ProtoId<ReagentPrototype>> includedPrototypes)
         {
-            string[] included = includedPrototypes
+            var included = includedPrototypes
                 .Select(protoId => protoId.ToString())
                 .ToArray();
             return SplitSolutionWithOnly(toTake, included);
