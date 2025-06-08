@@ -590,7 +590,7 @@ namespace Content.Shared.Chemistry.Components
 
         public Solution SplitSolutionWithout(FixedPoint2 toTake, IEnumerable<ProtoId<ReagentPrototype>> excludedPrototypes)
         {
-            string[] excluded = excludedPrototypes
+            var excluded = excludedPrototypes
                 .Select(protoId => protoId.ToString())
                 .ToArray();
             return SplitSolutionWithout(toTake, excluded);
