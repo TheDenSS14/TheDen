@@ -74,18 +74,6 @@
 # Ears
 
 # Equipment
-- type: loadout
-  id: LoadoutAtmosphericTechnicianEquipmentHandHeldAtmosMonitor
-  category: JobsEngineeringAtmosphericTechnician
-  cost: 2
-  requirements:
-  - !type:CharacterItemGroupRequirement
-    group: LoadoutAtmosphericTechnicianEquipment
-  - !type:CharacterJobRequirement
-    jobs:
-    - AtmosphericTechnician
-  items:
-  - HandHeldAtmosMonitor
 
 - type: loadout
   id: LoadoutAtmosphericTechnicianEquipmentBoxInflatable

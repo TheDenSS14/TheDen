@@ -88,6 +88,19 @@
   - HandHeldAtmosMonitor
 
 - type: loadout
+  id: LoadoutChiefEngineerEquipmentHandHeldPowerMonitor
+  category: JobsEngineeringChiefEngineer
+  cost: 2
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutChiefEngineerEquipment
+  - !type:CharacterJobRequirement
+    jobs:
+    - ChiefEngineer
+  items:
+  - HandHeldPowerMonitor
+
+- type: loadout
   id: LoadoutChiefEngineerEquipmentBoxInflatable
   category: JobsEngineeringChiefEngineer
   cost: 0
