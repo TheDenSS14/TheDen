@@ -237,8 +237,9 @@ public sealed class SuitSensorSystem : EntitySystem
             return;
 
         // check if target is incapacitated (cuffed, dead, etc)
-        if (component.User != null && args.User != component.User && _actionBlocker.CanInteract(component.User.Value, null))
-            return;
+        // ignore above, check commented out due to player requests
+        //if (component.User != null && args.User != component.User && _actionBlocker.CanInteract(component.User.Value, null))
+        //    return;
 
         args.Verbs.UnionWith(new[]
         {
