@@ -83,10 +83,7 @@ public sealed class ReplaceSolutionSystem : SharedReplaceSolutionSystem
 
         foreach (var replacement in replaceSolution.Replacements)
         {
-            PerformReplacement(solutionToReplace,
-                replacement,
-                out var replacementSolution);
-
+            var replacementSolution = PerformReplacement(solutionToReplace, replacement);
             replacedProducts.AddSolution(replacementSolution, _protoMan);
         }
 
@@ -105,15 +102,10 @@ public sealed class ReplaceSolutionSystem : SharedReplaceSolutionSystem
     /// <param name="solution">The solution to perform the placement on.</param>
     /// <param name="replacement">The SolutionReplacement rule defining how to replace reagents.</param>
     /// <param name="replacedOutput">The solution of "replacement" reagents generated.</param>
-    public void PerformReplacement(Solution solution,
-        SolutionReplacement replacement,
-        out Solution replacedOutput)
+    public Solution PerformReplacement(Solution solution, SolutionReplacement replacement)
     {
         if (solution.Volume <= 0 || replacement.ReplacementSolution.Volume <= 0)
-        {
-            replacedOutput = new Solution();
-            return;
-        }
+            return new Solution();
 
         Solution? ignoredSolution = null;
         if (replacement.Whitelist != null)
@@ -135,6 +127,6 @@ public sealed class ReplaceSolutionSystem : SharedReplaceSolutionSystem
         if (ignoredSolution != null && ignoredSolution.Volume > 0)
             solution.AddSolution(ignoredSolution, _protoMan);
 
-        replacedOutput = replacementSolution;
+        return replacementSolution;
     }
 }
