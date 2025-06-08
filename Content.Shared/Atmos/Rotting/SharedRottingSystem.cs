@@ -254,6 +254,7 @@ public abstract class SharedRottingSystem : EntitySystem
         bool proportional = true)
     {
         var rottingTo = EnsureComp<RottingComponent>(toId);
+        
         if (!proportional || !Resolve(toId, ref perishableTo, false))
         {
             rottingTo.TotalRotTime = rottingFrom.TotalRotTime;
