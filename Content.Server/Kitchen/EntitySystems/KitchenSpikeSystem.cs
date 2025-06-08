@@ -54,7 +54,7 @@ namespace Content.Server.Kitchen.EntitySystems
         {
             base.Initialize();
 
-            SubscribeLocalEvent<KitchenSpikeComponent, ComponentStartup>(OnStartup);
+            SubscribeLocalEvent<KitchenSpikeComponent, ComponentInit>(OnInit);
             SubscribeLocalEvent<KitchenSpikeComponent, ComponentShutdown>(OnRemove);
             SubscribeLocalEvent<KitchenSpikeComponent, InteractUsingEvent>(OnInteractUsing);
             SubscribeLocalEvent<KitchenSpikeComponent, InteractHandEvent>(OnInteractHand);
@@ -69,10 +69,9 @@ namespace Content.Server.Kitchen.EntitySystems
             SubscribeLocalEvent<ButcherableComponent, CanDropDraggedEvent>(OnButcherableCanDrop);
         }
 
-        private void OnStartup(EntityUid uid, KitchenSpikeComponent spike, ComponentStartup args)
+        private void OnInit(EntityUid uid, KitchenSpikeComponent spike, ComponentInit args)
         {
-            var containerManager = EnsureComp<ContainerManagerComponent>(uid);
-            var cont = _containerSystem.EnsureContainer<Container>(uid, spike.ContainerName, containerManager);
+            var cont = _containerSystem.EnsureContainer<Container>(uid, spike.ContainerName);
             spike.SpikeContainer = cont;
         }
 
@@ -168,23 +167,23 @@ namespace Content.Server.Kitchen.EntitySystems
         {
             var comp = spike.Comp;
             var hasSpiked = TryGetSpikedEntity(spike, comp, out var spiked);
-            if (hasSpiked)
-            {
-                if (TryComp<PerishableComponent>(spiked, out var perishable))
-                {
-                    Entity<PerishableComponent> ent = new Entity<PerishableComponent>(spiked.Value, perishable);
-                    string examineText = _rotting.GetPerishableExamineText(ent);
-                    if (examineText != string.Empty)
-                        args.PushMarkup(examineText);
-                }
+            if (!hasSpiked)
+                return;
 
-                if (TryComp<RottingComponent>(spiked, out var rotting))
-                {
-                    Entity<RottingComponent> ent = new Entity<RottingComponent>(spiked.Value, rotting);
-                    string examineText = _rotting.GetRottingExamineText(ent);
-                    if (examineText != string.Empty)
-                        args.PushMarkup(examineText);
-                }
+            if (TryComp<PerishableComponent>(spiked, out var perishable))
+            {
+                var ent = new Entity<PerishableComponent>(spiked.Value, perishable);
+                var examineText = _rotting.GetPerishableExamineText(ent);
+                if (examineText != string.Empty)
+                    args.PushMarkup(examineText);
+            }
+
+            if (TryComp<RottingComponent>(spiked, out var rotting))
+            {
+                var ent = new Entity<RottingComponent>(spiked.Value, rotting);
+                var examineText = _rotting.GetRottingExamineText(ent);
+                if (examineText != string.Empty)
+                    args.PushMarkup(examineText);
             }
         }
 

@@ -86,12 +86,15 @@ public abstract class SharedRottingSystem : EntitySystem
     [PublicAPI]
     public string GetPerishableExamineText(Entity<PerishableComponent> entity)
     {
-        int stage = PerishStage(entity, MaxStages);
+        var stage = PerishStage(entity, MaxStages);
         if (stage < 1 || stage > MaxStages)
             return string.Empty;
 
-        var isMob = HasComp<MobStateComponent>(entity);
-        var description = "perishable-" + stage + (!isMob ? "-nonmob" : string.Empty);
+        var suffix = stage.ToString();
+        if (HasComp<MobStateComponent>(entity))
+            suffix += "-nonmob";
+
+        var description = "perishable-" + suffix;
         return Loc.GetString(description, ("target", Identity.Entity(entity, EntityManager)));
     }
 
@@ -254,7 +257,7 @@ public abstract class SharedRottingSystem : EntitySystem
         bool proportional = true)
     {
         var rottingTo = EnsureComp<RottingComponent>(toId);
-        
+
         if (!proportional || !Resolve(toId, ref perishableTo, false))
         {
             rottingTo.TotalRotTime = rottingFrom.TotalRotTime;

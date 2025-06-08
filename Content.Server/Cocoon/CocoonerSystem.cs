@@ -186,7 +186,7 @@ namespace Content.Server.Cocoon
                 return;
 
             if (TryComp<ButcherableComponent>(args.Args.Target.Value, out var butcher))
-                _butcherySystem.SpawnButcherableProducts(args.Args.Target.Value, butcher, out var _);
+                _butcherySystem.SpawnButcherableProducts(args.Args.Target.Value, butcher);
 
             _destructibleSystem.DestroyEntity(args.Args.Target.Value);
 

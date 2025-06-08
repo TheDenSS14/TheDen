@@ -1,8 +1,10 @@
 using System.Linq;
+using Content.Server.Administration.Logs;
 using Content.Server.Body.Components;
 using Content.Shared.Body.Components;
 using Content.Shared.Body.Prototypes;
 using Content.Shared.Body.Systems;
+using Content.Shared.Database;
 using Content.Shared.Traits;
 using Content.Shared.Whitelist;
 using JetBrains.Annotations;
@@ -46,7 +48,7 @@ public sealed partial class TraitAddMetabolizer : TraitFunction
 
         var bodySystem = entityManager.System<SharedBodySystem>();
         var whitelistSystem = entityManager.System<EntityWhitelistSystem>();
-        var sawmill = Logger.GetSawmill("TraitAddMetabolizer");
+        var logManager = IoCManager.Resolve<IAdminLogManager>();
 
         foreach (var (organId, _) in bodySystem.GetBodyOrgans(uid, body))
         {
@@ -59,7 +61,9 @@ public sealed partial class TraitAddMetabolizer : TraitFunction
             else
                 metabolizer.MetabolizerTypes.UnionWith(Metabolizers);
 
-            sawmill.Info($"Added metabolizers {string.Join(",", Metabolizers)} to {entityManager.ToPrettyString(organId)} in {entityManager.ToPrettyString(uid)} (REPLACE: {Replace}). New metabolizer list: {string.Join(",", metabolizer.MetabolizerTypes)}");
+            logManager.Add(LogType.Hunger,
+                LogImpact.Low,
+                $"Added metabolizers {string.Join(",", Metabolizers)} to {entityManager.ToPrettyString(organId)} in {entityManager.ToPrettyString(uid)} (REPLACE: {Replace}). New metabolizer list: {string.Join(",", metabolizer.MetabolizerTypes)}");
         }
     }
 }

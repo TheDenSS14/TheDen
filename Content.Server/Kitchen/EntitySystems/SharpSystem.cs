@@ -103,8 +103,7 @@ public sealed class SharpSystem : EntitySystem
             return;
         }
 
-        _butcherySystem.SpawnButcherableProducts(args.Args.Target.Value, butcher, out var popupEnt);
-
+        var popupEnt = _butcherySystem.SpawnButcherableProducts(args.Args.Target.Value, butcher);
         var hasBody = TryComp<BodyComponent>(args.Args.Target.Value, out var body);
 
         // only show a big popup when butchering living things.
@@ -112,8 +111,11 @@ public sealed class SharpSystem : EntitySystem
         if (hasBody)
             popupType = PopupType.LargeCaution;
 
-        _popupSystem.PopupEntity(Loc.GetString("butcherable-knife-butchered-success", ("target", args.Args.Target.Value), ("knife", uid)),
-            popupEnt, args.Args.User, popupType);
+        if (popupEnt != null)
+            _popupSystem.PopupEntity(Loc.GetString("butcherable-knife-butchered-success",
+                ("target", args.Args.Target.Value),
+                ("knife", uid)),
+                popupEnt.Value, args.Args.User, popupType);
 
         if (hasBody)
             _bodySystem.GibBody(args.Args.Target.Value, body: body);

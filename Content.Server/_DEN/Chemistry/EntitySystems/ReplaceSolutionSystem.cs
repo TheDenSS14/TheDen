@@ -62,7 +62,7 @@ public sealed class ReplaceSolutionSystem : SharedReplaceSolutionSystem
         if (!success || solution == null || comp.SolutionRef == null)
             return;
 
-        Solution replacedSolution = ReplaceReagents(solution, comp);
+        var replacedSolution = ReplaceReagents(solution, comp);
         _solutionContainer.RemoveAllSolution(comp.SolutionRef.Value);
         _solutionContainer.AddSolution(comp.SolutionRef.Value, replacedSolution);
     }
@@ -90,7 +90,7 @@ public sealed class ReplaceSolutionSystem : SharedReplaceSolutionSystem
             replacedProducts.AddSolution(replacementSolution, _protoMan);
         }
 
-        Solution finalResultSolution = solutionToReplace;
+        var finalResultSolution = solutionToReplace;
         finalResultSolution.AddSolution(replacedProducts, _protoMan);
         return finalResultSolution;
     }
@@ -127,8 +127,8 @@ public sealed class ReplaceSolutionSystem : SharedReplaceSolutionSystem
         // but there was only 1u left of Nutriment in the original solution,
         // then it should only generate 1.5u of Gastrotoxin.
         var replacedAmount = originalVolume - solution.Volume;
-        float replacementRatio = replacedAmount.Float() / replacement.Amount.Float();
-        Solution replacementSolution = replacement.ReplacementSolution.Clone();
+        var replacementRatio = replacedAmount.Float() / replacement.Amount.Float();
+        var replacementSolution = replacement.ReplacementSolution.Clone();
         replacementSolution.ScaleSolution(replacementRatio);
 
         // If there's a whitelist, make sure we readd our non-whitelisted solution back.

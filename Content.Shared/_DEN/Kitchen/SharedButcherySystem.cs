@@ -11,12 +11,12 @@ public sealed class SharedButcherySystem : EntitySystem
     [Dependency] private readonly SharedRottingSystem _rotting = default!;
     [Dependency] private readonly SharedTransformSystem _transform = default!;
 
-    public void SpawnButcherableProducts(EntityUid uid, ButcherableComponent butcher, out EntityUid lastEntity)
+    public EntityUid? SpawnButcherableProducts(EntityUid uid, ButcherableComponent butcher)
     {
         var spawnEntities = EntitySpawnCollection.GetSpawns(butcher.SpawnedEntities, _robustRandom);
         var coords = _transform.GetMapCoordinates(uid);
+        EntityUid? lastEntity = null;
 
-        lastEntity = default!;
         foreach (var proto in spawnEntities)
         {
             // distribute the spawned items randomly in a small radius around the origin
@@ -24,9 +24,11 @@ public sealed class SharedButcherySystem : EntitySystem
 
             if (butcher.SpawnedInheritFreshness)
             {
-                _rotting.TransferFreshness(uid, lastEntity, true, butcher);
-                _rotting.TransferRotStage(uid, lastEntity, true);
+                _rotting.TransferFreshness(uid, lastEntity.Value, true, butcher);
+                _rotting.TransferRotStage(uid, lastEntity.Value, true);
             }
         }
+
+        return lastEntity;
     }
 }
