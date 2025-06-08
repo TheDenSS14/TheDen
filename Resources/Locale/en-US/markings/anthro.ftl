@@ -533,10 +533,6 @@ marking-TailSevenKitsune-m_tail_sevenkitsune_FRONT_primary = Kitsune, 7 Tail (Pr
 marking-TailSevenKitsune-m_tail_sevenkitsune_FRONT_secondary = Kitsune, 7 Tail (Secondary)
 marking-TailSevenKitsune = Kitsune, 7 Tail
 
-marking-TailShark-m_tail_shark_BEHIND_primary = Shark Tail w/ Fin
-marking-TailShark-m_tail_shark_FRONT_primary = Shark Tail w/ Fin
-marking-TailShark = Shark Tail w/ Fin
-
 marking-TailSharkNoFin_tail_sharknofin_BEHIND_primary = Shark Tail w/o Fin
 marking-TailSharkNoFin_tail_sharknofin_FRONT_primary = Shark Tail w/o Fin
 marking-TailSharkNoFin = Shark Tail w/o Fin
@@ -650,36 +646,6 @@ marking-TailZorgoia-m_tail_zorgoia_FRONT_primary = Zorgoia Asra Tail (Primary)
 marking-TailZorgoia-m_tail_zorgoia_FRONT_secondary = Zorgoia Asra Tail (Secondary)
 marking-TailZorgoia-m_tail_zorgoia_FRONT_tertiary = Zorgoia Asra Tail (tertiary)
 marking-TailZorgoia = Zorgoia Asra Tail
-
-# and a bunch that didnt have em before
-
-marking-TailAxolotl-axolotl= Axolotl
-marking-TailAxolotl = Axolotl Tail
-
-marking-TailEasternDragon-easternd_primary = Eastern Dragon Tail
-marking-TailEasternDragon-easternd_secondary = Eastern Dragon Tail
-marking-TailEasternDragon = Eastern Dragon Tail
-
-marking-TailFish-fish_primary = Fish Tail
-marking-TailFish-fish_secondary = Fish Tail
-marking-TailFish = Fish Tail
-
-marking-TailGecko-gecko_primary = Gecko Tail
-marking-TailGecko-gecko_secondary = Gecko Tail
-marking-TailGecko-gecko_tertiary = Gecko Tail
-marking-TailGecko = Gecko Tail
-
-marking-TailMaw-maw= Maw Tail
-marking-TailMaw = Maw Tail
-
-marking-TailSnake-snake= Lizard, Snake Tail
-marking-TailSnake = Lizard, Snake Tail
-
-marking-TailSuccubus-succubus= Succubus Tail
-marking-TailSuccubus = Succubus Tail
-
-marking-TailTentacle-tentacle= Tentacle Tail
-marking-TailTentacle = Tentacle Tail
 
 # More ears from the skyrats
 
