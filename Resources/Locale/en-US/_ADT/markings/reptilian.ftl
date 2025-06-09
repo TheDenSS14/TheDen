@@ -21,6 +21,9 @@ marking-ReptilianDrawingSun = Sun Drawing
 marking-ReptilianDrawingWarpaint = Warpaint Drawing
 marking-ReptilianLineEyes = Stripe Eyes
 
+marking-TailDatashark = Data Shark Tail
+marking-TailShark = Shark Tail
+
 marking-EarsSylveon = Sylveon Ears
 marking-EarsResomi = Resomi Ears
 marking-EarsChemlight = ChemLight Ears
