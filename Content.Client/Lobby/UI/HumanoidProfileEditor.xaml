@@ -4,6 +4,7 @@
     xmlns:cc="clr-namespace:Content.Client.Administration.UI.CustomControls"
     xmlns:prefUi="clr-namespace:Content.Client.Lobby.UI"
     xmlns:ui="clr-namespace:Content.Client.UserInterface.Controls"
+    xmlns:cd="clr-namespace:Content.Client._CD.Records.UI"
     HorizontalExpand="True">
     <!-- Left side -->
     <BoxContainer Orientation="Vertical" Margin="10 10 10 10" HorizontalExpand="True">
@@ -44,6 +45,9 @@
         <Control MinHeight="10" />
         <!-- TabContainer -->
         <ui:NeoTabContainer Name="CTabContainer" VerticalExpand="True" HScrollEnabled="False" VScrollEnabled="False">
+            <BoxContainer Name="RecordsTab" HorizontalExpand="True" VerticalExpand="True" Orientation="Vertical">
+                <cd:RecordEditorGui Name="Records" HorizontalExpand="True" VerticalExpand="True" Visible="True"/>
+            </BoxContainer>
             <BoxContainer Name="Appearance" HorizontalExpand="True" Orientation="Vertical">
                 <!-- appearanceList -->
                 <ScrollContainer HorizontalExpand="True" HScrollEnabled="True" VerticalExpand="True" VScrollEnabled="True">

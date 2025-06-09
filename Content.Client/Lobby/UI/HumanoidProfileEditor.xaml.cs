@@ -21,6 +21,7 @@ using Content.Shared.Humanoid;
 using Content.Shared.Humanoid.Markings;
 using Content.Shared.Humanoid.Prototypes;
 using Content.Shared.Preferences;
+using Content.Shared.Random.Helpers;
 using Content.Shared.Roles;
 using Content.Shared.StatusIcon;
 using Content.Shared.Traits;
@@ -39,6 +40,11 @@ using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Utility;
 using Direction = Robust.Shared.Maths.Direction;
+// Begin CD - Character Records
+using System.Globalization;
+using Content.Client._CD.Records.UI;
+using Content.Shared._CD.Records;
+// End CD - Character Records
 
 namespace Content.Client.Lobby.UI
 {
@@ -107,8 +113,8 @@ namespace Content.Client.Lobby.UI
         [ValidatePrototypeId<LocalizedDatasetPrototype>]
         private const string StationAiNames = "NamesAI";
 
-        [ValidatePrototypeId<DatasetPrototype>]
-        private const string CyborgNames = "names_borg";
+        [ValidatePrototypeId<LocalizedDatasetPrototype>]
+        private const string CyborgNames = "NamesBorg";
 
         public HumanoidProfileEditor(
             IClientPreferencesManager preferencesManager,
@@ -546,6 +552,16 @@ namespace Content.Client.Lobby.UI
 
             #endregion Markings
 
+            // Begin CD - Character Records
+            #region CosmaticRecords
+
+            RecordsTab.Orphan();
+            Records.SetRecordUpdateFunction(UpdateProfileRecords);
+            CTabContainer.AddTab(RecordsTab, Loc.GetString("humanoid-profile-editor-cd-records-tab"));
+
+            #endregion CosmaticRecords
+            // End CD - Character Records
+
             RefreshFlavorText();
 
             #region Dummy
@@ -906,6 +922,10 @@ namespace Content.Client.Lobby.UI
             UpdateHeightWidthSliders();
             UpdateWeight();
             UpdateCharacterRequired();
+
+            // Begin CD - Character Records
+            Records.Update(profile);
+            // End CD - Character Records
 
             RefreshAntags();
             RefreshJobs();
@@ -1271,6 +1291,16 @@ namespace Content.Client.Lobby.UI
             }
         }
 
+        // Start CD - Character Records
+        private void UpdateProfileRecords(PlayerProvidedCharacterRecords records)
+        {
+            if (Profile is null)
+                return;
+            Profile = Profile.WithCDCharacterRecords(records);
+            IsDirty = true;
+        }
+        // End CD - Character Records
+
         private void OnFlavorTextChange(string content)
         {
             if (Profile is null)
@@ -1550,14 +1580,14 @@ namespace Content.Client.Lobby.UI
         private void SetProfileHeight(float height)
         {
             Profile = Profile?.WithHeight(height);
-            IsDirty = true;
+            SetDirty();
             ReloadProfilePreview();
         }
 
         private void SetProfileWidth(float width)
         {
             Profile = Profile?.WithWidth(width);
-            IsDirty = true;
+            SetDirty();
             ReloadProfilePreview();
         }
 
@@ -1794,15 +1824,15 @@ namespace Content.Client.Lobby.UI
                 return;
 
             var newName = Profile.CyborgName ?? string.Empty;
-            
+
             if (newName != CyborgNameEdit.Text)
                 CyborgNameEdit.Text = newName;
 
             if (CyborgNameEdit.Text != string.Empty)
                 return;
 
-            var borgNames = _prototypeManager.Index<DatasetPrototype>(CyborgNames);
-            var randomName = _random.Pick(borgNames.Values);
+            var borgNames = _prototypeManager.Index<LocalizedDatasetPrototype>(CyborgNames);
+            var randomName = _random.Pick(borgNames);
             CyborgNameEdit.PlaceHolder = Loc.GetString(randomName);
         }
 
@@ -2014,6 +2044,8 @@ namespace Content.Client.Lobby.UI
             var name = HumanoidCharacterProfile.GetName(Profile.Species, Profile.Gender);
             SetName(name);
             UpdateNameEdit();
+
+            Records.Update(Profile); // CD - Character Records
         }
 
         private async void ImportProfile()

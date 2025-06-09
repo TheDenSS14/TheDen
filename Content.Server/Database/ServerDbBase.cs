@@ -6,8 +6,10 @@ using System.Runtime.CompilerServices;
 using System.Text.Json;
 using System.Threading;
 using System.Threading.Tasks;
+using Content.Server._CD.Records;
 using Content.Server.Administration.Logs;
 using Content.Server.Administration.Managers;
+using Content.Shared._CD.Records;
 using Content.Shared.Administration.Logs;
 using Content.Shared.Clothing.Loadouts.Systems;
 using Content.Shared.Consent;
@@ -51,6 +53,11 @@ namespace Content.Server.Database
                 .Include(p => p.Profiles).ThenInclude(h => h.Jobs)
                 .Include(p => p.Profiles).ThenInclude(h => h.Antags)
                 .Include(p => p.Profiles).ThenInclude(h => h.Traits)
+                // Begin CD - Character Records
+                .Include(p => p.Profiles)
+                .ThenInclude(h => h.CDProfile)
+                .ThenInclude(cd => cd != null ? cd.CharacterRecordEntries : null)
+                // End CD - Character Records
                 .Include(p => p.Profiles).ThenInclude(h => h.Loadouts)
                 .AsSingleQuery()
                 .SingleOrDefaultAsync(p => p.UserId == userId.UserId, cancel);
@@ -101,6 +108,8 @@ namespace Content.Server.Database
                 .Include(p => p.Antags)
                 .Include(p => p.Traits)
                 .Include(p => p.Loadouts)
+                .Include(p => p.CDProfile) // CD - Character Records
+                .ThenInclude(cd => cd != null ? cd.CharacterRecordEntries : null)
                 .AsSplitQuery()
                 .SingleOrDefault(h => h.Slot == slot);
 
@@ -223,6 +232,12 @@ namespace Content.Server.Database
                 }
             }
 
+            // Begin CD - Chracter Records
+            var cdRecords = profile.CDProfile?.CharacterRecords != null
+                ? RecordsSerialization.Deserialize(profile.CDProfile.CharacterRecords, profile.CDProfile.CharacterRecordEntries)
+                : PlayerProvidedCharacterRecords.DefaultRecords();
+            // End CD - Character Records
+
             return new HumanoidCharacterProfile(
                 profile.CharacterName,
                 profile.FlavorText,
@@ -259,7 +274,8 @@ namespace Content.Server.Database
                 {
                     CustomName = l.CustomName, CustomDescription = l.CustomDescription,
                     CustomColorTint = l.CustomColorTint, CustomHeirloom = l.CustomHeirloom, Selected = true,
-                }).ToHashSet()
+                }).ToHashSet(),
+                cdRecords
             );
         }
 
@@ -324,6 +340,18 @@ namespace Content.Server.Database
             profile.Loadouts.Clear();
             profile.Loadouts.AddRange(humanoid.LoadoutPreferences
                 .Select(l => new Loadout(l.LoadoutName, l.CustomName, l.CustomDescription, l.CustomColorTint, l.CustomHeirloom)));
+
+            // Begin CD - Character Records
+            profile.CDProfile ??= new();
+            // There are JsonIgnore annotations to ensure that entries are not stored as JSON.
+            profile.CDProfile.CharacterRecords = JsonSerializer.SerializeToDocument(humanoid.CDCharacterRecords ?? PlayerProvidedCharacterRecords.DefaultRecords());
+
+            if (humanoid.CDCharacterRecords != null)
+            {
+                profile.CDProfile.CharacterRecordEntries.Clear();
+                profile.CDProfile.CharacterRecordEntries.AddRange(RecordsSerialization.GetEntries(humanoid.CDCharacterRecords));
+            }
+            // End CD - Character Records
 
             return profile;
         }

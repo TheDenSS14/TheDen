@@ -28,8 +28,8 @@ public sealed class StationGoalPaperSystem : EntitySystem
 
     [ValidatePrototypeId<WeightedRandomPrototype>]
     private const string RandomPrototype = "StationGoals";
-    [ValidatePrototypeId<DatasetPrototype>]
-    private const string RandomSignature = "names_last";
+    [ValidatePrototypeId<LocalizedDatasetPrototype>]
+    private const string RandomSignature = "NamesLast";
 
     public override void Initialize()
     {
@@ -88,7 +88,7 @@ public sealed class StationGoalPaperSystem : EntitySystem
     {
         var enumerator = EntityManager.EntityQueryEnumerator<FaxMachineComponent>();
         var wasSent = false;
-        var signerName = _prototype.Index<DatasetPrototype>(RandomSignature);
+        var signerName = _prototype.Index<LocalizedDatasetPrototype>(RandomSignature);
 
         while (enumerator.MoveNext(out var uid, out var fax))
         {
@@ -103,7 +103,7 @@ public sealed class StationGoalPaperSystem : EntitySystem
                     ("date", DateTime.Now.AddYears(1000).ToString("yyyy MMMM dd")),
                     ("station", string.IsNullOrEmpty(stationId) ? "???" : stationId),
                     ("content", goal.Text),
-                    ("name", _random.Pick(signerName.Values))
+                    ("name", _random.Pick(signerName))
                 ),
                 Loc.GetString("station-goal-fax-paper-name"),
                 "StationGoalPaper"

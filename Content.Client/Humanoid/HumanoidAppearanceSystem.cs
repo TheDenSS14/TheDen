@@ -6,6 +6,8 @@ using Content.Shared.Preferences;
 using Robust.Client.GameObjects;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
+using System.Numerics; // CD - Character Records
+using Robust.Client.Console; // CD - Character Records
 
 namespace Content.Client.Humanoid;
 
@@ -53,7 +55,7 @@ public sealed class HumanoidAppearanceSystem : SharedHumanoidAppearanceSystem
 
         // add default species layers
         var speciesProto = _prototypeManager.Index(component.Species);
-        var baseSprites = _prototypeManager.Index<HumanoidSpeciesBaseSpritesPrototype>(speciesProto.SpriteSet);
+        var baseSprites = _prototypeManager.Index(speciesProto.SpriteSet);
         foreach (var (key, id) in baseSprites.Sprites)
         {
             oldLayers.Remove(key);

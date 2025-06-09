@@ -93,6 +93,7 @@ namespace Content.Client.Options.UI.Tabs
             // ToggleWalk.OnToggled += OnCheckBoxToggled;
             StaticStorageUI.OnToggled += OnCheckBoxToggled;
             ModernProgressBar.OnToggled += OnCheckBoxToggled;
+            ChatExtraInfo.OnToggled += OnCheckBoxToggled;
             DisableFiltersCheckBox.OnToggled += OnCheckBoxToggled;
 
             HudThemeOption.SelectId(_hudThemeIdToIndex.GetValueOrDefault(_cfg.GetCVar(CVars.InterfaceTheme), 0));
@@ -113,8 +114,8 @@ namespace Content.Client.Options.UI.Tabs
             // ToggleWalk.Pressed = _cfg.GetCVar(CCVars.ToggleWalk);
             StaticStorageUI.Pressed = _cfg.GetCVar(CCVars.StaticStorageUI);
             ModernProgressBar.Pressed = _cfg.GetCVar(CCVars.ModernProgressBar);
+            ChatExtraInfo.Pressed = _cfg.GetCVar(CCVars.ChatExtraInfo);
             DisableFiltersCheckBox.Pressed = _cfg.GetCVar(CCVars.NoVisionFilters);
-
 
             ApplyButton.OnPressed += OnApplyButtonPressed;
             UpdateApplyButton();
@@ -173,6 +174,7 @@ namespace Content.Client.Options.UI.Tabs
             _cfg.SetCVar(CCVars.ModernProgressBar, ModernProgressBar.Pressed);
             _cfg.SetCVar(CCVars.NoVisionFilters, DisableFiltersCheckBox.Pressed);
             _cfg.SetCVar(CCVars.ChatStackLastLines, ChatStackOption.SelectedId);
+            _cfg.SetCVar(CCVars.ChatExtraInfo, ChatExtraInfo.Pressed);
 
             if (HudLayoutOption.SelectedMetadata is string opt)
             {
@@ -204,6 +206,7 @@ namespace Content.Client.Options.UI.Tabs
             // var isToggleWalkSame = ToggleWalk.Pressed == _cfg.GetCVar(CCVars.ToggleWalk);
             var isStaticStorageUISame = StaticStorageUI.Pressed == _cfg.GetCVar(CCVars.StaticStorageUI);
             var isModernProgressBarSame = ModernProgressBar.Pressed == _cfg.GetCVar(CCVars.ModernProgressBar);
+            var isChatExtraInfoSame = ChatExtraInfo.Pressed == _cfg.GetCVar(CCVars.ChatExtraInfo);
             var isNoVisionFiltersSame = DisableFiltersCheckBox.Pressed == _cfg.GetCVar(CCVars.NoVisionFilters);
             var isChatStackTheSame = ChatStackOption.SelectedId == _cfg.GetCVar(CCVars.ChatStackLastLines);
 
@@ -226,6 +229,7 @@ namespace Content.Client.Options.UI.Tabs
                                    // isToggleWalkSame &&
                                    isStaticStorageUISame &&
                                    isModernProgressBarSame &&
+                                   isChatExtraInfoSame &&
                                    isNoVisionFiltersSame &&
                                    isChatStackTheSame;
         }

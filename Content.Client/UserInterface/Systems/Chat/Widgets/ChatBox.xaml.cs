@@ -60,10 +60,9 @@ public partial class ChatBox : UIWidget
         //if (_chatStackAmount < 0) // anti-idiot protection
         //    _chatStackAmount = 0;
         _chatStackList = new(_chatStackAmount);
+
         _cfg.OnValueChanged(CCVars.ChatStackLastLines, UpdateChatStack, true);
-
     }
-
 
     private void UpdateChatStack(int value)
     {

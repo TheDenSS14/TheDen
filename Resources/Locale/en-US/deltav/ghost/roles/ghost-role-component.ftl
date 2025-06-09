@@ -8,8 +8,11 @@ ghost-role-information-listeningop-description = You are a Listening Post operat
 ghost-role-information-listeningop-rules =	You are a Syndicate Operative tasked with the continuous reporting and monitoring of the station and its activities, as well as assisting any fellow operatives who may be aboard the station. As an antagonist, do whatever is required for you to complete this task. Make sure your station doesn't fall into enemy hands and DO NOT abandon your station! Hide your existence at any cost!
 
 ghost-role-information-paradox-anomaly-name = Paradox Anomaly
-ghost-role-information-paradox-anomaly-description = Replace your double, or befriend them.
-ghost-role-information-paradox-anomaly-rules = Try and replace your twin with this funny roleplay antag rather than plasma flooding the station or something. You can also just befriend them.
+ghost-role-information-paradox-anomaly-description = Explore this unknown universe.
+ghost-role-information-paradox-anomaly-rules = Consider yourself a non-antagonist, but you have more leeway on rule 0 to further round roleplay. 
+                                               Your goal is simply to explore the universe and have interactions with or without your other self.
+                                               Coordination with your other self in OOC is highly encouraged.
+                                               Anything done in coordination with your other self is fair game, as long as it doesn't involve the whole station.
 
 # Delta V soft antag rule
 deltav-ghost-role-information-softantag-rules = You are allowed to attack the crew without provocation.

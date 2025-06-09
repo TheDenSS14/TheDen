@@ -1,6 +1,6 @@
 - type: trait
   id: Heavyweight
-  category: Physical
+  category: TraitsPhysicalBiological
   points: -2 # Has pros and cons, not sure
   requirements:
   - !type:CharacterJobRequirement
@@ -23,7 +23,7 @@
 
 - type: trait
   id: UltraHeavyweight
-  category: Physical
+  category: TraitsPhysicalBiological
   points: -4 # Has pros and cons, not sure
   requirements:
   - !type:CharacterJobRequirement
@@ -46,7 +46,7 @@
 
 - type: trait
   id: UltraLightweight
-  category: Physical
+  category: TraitsPhysicalBiological
   points: 4 # Has pros and cons, not sure
   requirements:
   - !type:CharacterJobRequirement
@@ -69,7 +69,7 @@
 
 - type: trait
   id: ZeroGTraining
-  category: Physical
+  category: TraitsPhysicalFeats
   points: -2 # Suggested value, tweak as appropriate
   requirements:
   - !type:CharacterJobRequirement
@@ -82,6 +82,7 @@
     species:
     - Moth
     - Harpy
+    - Resomi #Species trait
   - !type:CharacterTraitRequirement
     inverted: true
     traits:
@@ -95,7 +96,7 @@
 
 - type: trait
   id: ZeroGAverse
-  category: Physical
+  category: TraitsPhysicalDisabilities
   points: 2 # Suggested value, tweak as appropriate
   requirements:
   - !type:CharacterJobRequirement
@@ -121,7 +122,7 @@
 
 - type: trait
   id: TailWag
-  category: Physical
+  category: TraitsPhysicalBiological
   points: 0
   requirements:
   - !type:CharacterJobRequirement

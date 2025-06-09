@@ -59,6 +59,7 @@ ui-options-fancy-name-background = Add background to speech bubble names
 ui-options-enable-color-name = Add colors to character names
 ui-options-colorblind-friendly = Colorblind friendly mode
 ui-options-no-filters = Disable species vision filters
+ui-options-no-chat-status = Enable chat status, emotes, config box
 ui-options-reduced-motion = Reduce motion of visual effects
 ui-options-chat-window-opacity = Chat window opacity
 ui-options-chat-window-opacity-percent = { TOSTRING($opacity, "P0") }
@@ -165,6 +166,9 @@ ui-options-modern-progress-bar = Modern progress bar
 
 ui-options-function-smart-equip-backpack = Smart-equip to backpack
 ui-options-function-smart-equip-belt = Smart-equip to belt
+ui-options-function-smart-equip-suit-storage = Smart-equip to suit storage
+ui-options-function-smart-equip-pocket1 = Smart-equip to first pocket
+ui-options-function-smart-equip-pocket2 = Smart-equip to second pocket
 ui-options-function-open-backpack = Open backpack
 ui-options-function-open-belt = Open belt
 ui-options-function-throw-item-in-hand = Throw item

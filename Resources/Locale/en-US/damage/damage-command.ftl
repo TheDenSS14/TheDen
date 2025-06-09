@@ -3,6 +3,11 @@
 damage-command-description = Add or remove damage to an entity. 
 damage-command-help = Usage: {$command} <type/group> <amount> [ignoreResistances] [uid]
 
+self-damage-command-description = Add or remove damage to yourself, for RP purposes. 
+self-damage-command-help = Usage: {$command} <amount> <type/group> [ignoreResistances]
+
+self-damage-command-error-player = No entity attached to session.
+
 damage-command-arg-type = <damage type or group>
 damage-command-arg-quantity = [quantity]
 damage-command-arg-target = [target euid]

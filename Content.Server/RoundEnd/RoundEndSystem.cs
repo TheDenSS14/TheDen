@@ -73,15 +73,16 @@ namespace Content.Server.RoundEnd
         /// </summary>
         public bool RespectRoundHardEnd { get; set; } = true;
 
-        private CancellationTokenSource? _countdownTokenSource = null;
-        private CancellationTokenSource? _cooldownTokenSource = null;
-        public TimeSpan? LastCountdownStart { get; set; } = null;
-        public TimeSpan? ExpectedCountdownEnd { get; set; } = null;
+        private CancellationTokenSource? _countdownTokenSource;
+        private CancellationTokenSource? _cooldownTokenSource;
+        public TimeSpan? LastCountdownStart { get; set; }
+        public TimeSpan? ExpectedCountdownEnd { get; set; }
         public TimeSpan? ExpectedShuttleLength => ExpectedCountdownEnd - LastCountdownStart;
         public TimeSpan? ShuttleTimeLeft => ExpectedCountdownEnd - _gameTiming.CurTime;
         public TimeSpan AutoCallStartTime;
 
-        private bool _autoCalledBefore = false;
+        private bool _autoCalledBefore;
+        private bool _roundEndShuttleCalled;
 
         public override void Initialize()
         {
@@ -111,7 +112,8 @@ namespace Content.Server.RoundEnd
                 _cooldownTokenSource = null;
             }
 
-            ResetHardEndTimer();
+            _hasHardEndWarningRun = false;
+            _roundEndShuttleCalled = false;
 
             RespectRoundHardEnd = true;
             LastCountdownStart = null;
@@ -449,6 +451,19 @@ namespace Content.Server.RoundEnd
 
         public override void Update(float frameTime)
         {
+            if (_roundEndShuttleCalled)
+                return;
+
+            if (_gameTicker.RoundDuration() > RoundHardEnd && RespectRoundHardEnd)
+            {
+                UpdateRoundEnd();
+                RequestRoundEnd(checkCooldown: false);
+                _roundEndShuttleCalled = true;
+                return;
+            }
+
+            UpdateForWarning();
+
             // Check if we should auto-call.
             int mins = _autoCalledBefore ? _cfg.GetCVar(CCVars.EmergencyShuttleAutoCallExtensionTime)
                                         : _cfg.GetCVar(CCVars.EmergencyShuttleAutoCallTime);
@@ -457,6 +472,7 @@ namespace Content.Server.RoundEnd
                 if (!_shuttle.EmergencyShuttleArrived && ExpectedCountdownEnd is null)
                 {
                     CreateAutoCallVote();
+                    _autoCalledBefore = true;
                 }
 
                 // Always reset auto-call in case of a recall.
