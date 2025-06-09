@@ -64183,18 +64183,6 @@ entities:
     - type: Transform
       pos: 17.5,31.5
       parent: 2
-- proto: LootSpawnerCableCoil
-  entities:
-  - uid: 13595
-    components:
-    - type: Transform
-      pos: -3.5,55.5
-      parent: 2
-  - uid: 13596
-    components:
-    - type: Transform
-      pos: 8.5,44.5
-      parent: 2
 - proto: LootSpawnerMedicalClassy
   entities:
   - uid: 13606
@@ -65083,17 +65071,14 @@ entities:
     components:
     - type: Transform
       rot: 3.141592653589793 rad
-      pos: -27.5,21.5
+      pos: -26.5,21.5
       parent: 2
   - uid: 1687
     components:
     - type: Transform
-      anchored: False
       rot: 3.141592653589793 rad
-      pos: -26.5,21.5
+      pos: -27.5,21.5
       parent: 2
-    - type: Physics
-      bodyType: Dynamic
   - uid: 1892
     components:
     - type: Transform
