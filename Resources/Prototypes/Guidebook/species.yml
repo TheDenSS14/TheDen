@@ -3,24 +3,28 @@
   name: guide-entry-species
   text: "/ServerInfo/Guidebook/Mobs/Species.xml"
   children:
-    - Arachnid
-    - Diona
-    - Human
-    - Moth
-    - Oni
-    - Reptilian
-    - SlimePerson
-    - IPCs
-    - Harpy
-    - Rodentia # Floofstation
-    - Shadowkin
-    - Plasmaman
-    - Chitinid
-    - Tajaran
-    - Feroxi # DeltaV
-    - Canid # TheDen
-    - Ovinia # TheDen
-    - Resomi # Floofstation
+  - Arachne
+  - Arachnid
+  - Canid # TheDen
+  - Chitinid
+  - Diona
+  - Felinid
+  - Feroxi # DeltaV
+  - Harpy
+  - Human
+  - IPCs
+  - Moth
+  - Oni
+  - Ovinia # TheDen
+  - Plasmaman
+  - Resomi # Floofstation
+  - Rodentia # Floofstation
+  - Shadowkin
+  - SlimePerson
+  - Tajaran
+  - Reptilian
+  - Vox
+  - Vulpkanin
 
 - type: guideEntry
   id: Arachnid
@@ -86,3 +90,13 @@
   id: Resomi
   name: species-name-resomi
   text: "/ServerInfo/Guidebook/Mobs/Resomi.xml"
+
+- type: guideEntry
+  id: Vox
+  name: species-name-vox
+  text: "/ServerInfo/Guidebook/Mobs/Vox.xml"
+
+- type: guideEntry
+  id: Arachne
+  name: species-name-arachne
+  text: "/ServerInfo/Guidebook/Mobs/Arachne.xml"
