@@ -6,10 +6,11 @@
   description: A surveillance camera router. It routes. Perhaps.
   components:
     - type: DeviceNetwork
-      deviceNetId: Wired
+      deviceNetId: Wireless
       receiveFrequencyId: SurveillanceCamera
       transmitFrequencyId: SurveillanceCamera
-    - type: WiredNetworkConnection
+    - type: WirelessNetworkConnection
+      range: 2000
     - type: DeviceNetworkRequiresPower
     - type: UserInterface
       interfaces:
@@ -111,10 +112,10 @@
   components:
     - type: DeviceNetwork
       deviceNetId: Wireless
-      receiveFrequencyId: SurveillanceCamera
-      transmitFrequencyId: SurveillanceCamera
+      receiveFrequencyId: SurveillanceCameraEntertainment
+      transmitFrequencyId: SurveillanceCameraEntertainment
     - type: WirelessNetworkConnection
-      range: 200
+      range: 2000
     - type: DeviceNetworkRequiresPower
     - type: UserInterface
       interfaces:

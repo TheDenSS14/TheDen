@@ -42,6 +42,7 @@
     RLeg: MobReptilianRLeg
     LFoot: MobReptilianLFoot
     RFoot: MobReptilianRFoot
+    Wings: MobHumanoidAnyMarking
 
 - type: markingPoints
   id: MobReptilianMarkingLimits
@@ -57,6 +58,9 @@
       points: 1
       required: true
       defaultMarkings: [ LizardTailSmooth ]
+    Wings: #new marking
+      points: 1
+      required: false
     Snout:
       points: 1
       required: true

@@ -16,6 +16,7 @@ using Robust.Shared.Map;
 using Robust.Shared.Network;
 using Robust.Shared.Player;
 using Robust.Shared.Utility;
+using Content.Shared.Silicon.Components;
 
 namespace Content.Shared.Mind;
 

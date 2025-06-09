@@ -147,6 +147,9 @@ public sealed class ThrowingSystem : EntitySystem
         if (baseThrowSpeed <= 0 || direction == Vector2Helpers.Infinity || direction == Vector2Helpers.NaN || direction == Vector2.Zero || friction < 0)
             return;
 
+        if (float.IsNaN(direction.X) || float.IsNaN(direction.Y))
+            direction = new(0, 0);
+
         if ((physics.BodyType & (BodyType.Dynamic | BodyType.KinematicController)) == 0x0)
         {
             Log.Warning($"Tried to throw entity {ToPrettyString(uid)} but can't throw {physics.BodyType} bodies!");

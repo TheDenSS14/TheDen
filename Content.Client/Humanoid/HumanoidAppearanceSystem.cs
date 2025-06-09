@@ -6,6 +6,8 @@ using Content.Shared.Preferences;
 using Robust.Client.GameObjects;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
+using System.Numerics; // CD - Character Records
+using Robust.Client.Console; // CD - Character Records
 
 namespace Content.Client.Humanoid;
 

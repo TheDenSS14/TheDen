@@ -1,4 +1,4 @@
-﻿using Content.Server.Chat.Managers;
+using Content.Server.Chat.Managers;
 using Content.Server.Popups;
 using Content.Shared.Alert;
 using Content.Shared.Chat;
@@ -33,6 +33,10 @@ public sealed class MoodSystem : EntitySystem
     [Dependency] private readonly PopupSystem _popup = default!;
     [Dependency] private readonly IConfigurationManager _config = default!;
 
+    // Floof - Improve ChemAddMoodlet effect guidebook description
+    public const string LocMoodEffectNamePrefix = "mood-effect-name-";
+    public const string LocMoodCategoryNamePrefix = "mood-category-name-";
+    // Floof changes end
 
     public override void Initialize()
     {
