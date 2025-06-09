@@ -1115,12 +1115,11 @@
   result: FoodTartGapple
   time: 15
   reagents:
-    Gold: 10
     Sugar: 5
     Milk: 5
   solids:
     FoodDoughPie: 1
-    FoodApple: 2 #in absence of the real gapple i'm substituting one apple with 10u gold (one ingot)
+    FoodGoldenApple: 2 # gapples now real
     FoodPlateTin: 1
 
 - type: microwaveMealRecipe

@@ -4791,7 +4791,7 @@ entities:
       pos: 40.5,-4.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -9030.727
+      secondsUntilStateChange: -9543.781
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -5006,7 +5006,7 @@ entities:
       pos: -7.5,-34.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -32415.72
+      secondsUntilStateChange: -32928.773
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -7393,6 +7393,23 @@ entities:
     components:
     - type: Transform
       pos: -9.5,-42.5
+      parent: 2
+  - uid: 13241
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: -46.5,-7.5
+      parent: 2
+  - uid: 13242
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: -49.5,-13.5
+      parent: 2
+  - uid: 13243
+    components:
+    - type: Transform
+      pos: -46.5,-15.5
       parent: 2
 - proto: AtmosDeviceFanTiny
   entities:
@@ -28183,12 +28200,6 @@ entities:
     - type: Transform
       pos: -10.5,9.5
       parent: 2
-  - uid: 2855
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: -36.5,4.5
-      parent: 2
   - uid: 3252
     components:
     - type: Transform
@@ -28568,12 +28579,6 @@ entities:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: 34.544502,13.573694
-      parent: 2
-  - uid: 13224
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: 39.04958,-23.170755
       parent: 2
   - uid: 13226
     components:
@@ -29416,8 +29421,11 @@ entities:
   - uid: 11192
     components:
     - type: Transform
-      pos: -32.786118,-28.041967
+      pos: -32.543396,-28.533455
       parent: 2
+    - type: Physics
+      angularDamping: 0
+      linearDamping: 0
 - proto: ClothingNeckCloakQm
   entities:
   - uid: 11191
@@ -29821,10 +29829,10 @@ entities:
       rot: 1.5707963267948966 rad
       pos: -39.5,4.5
       parent: 2
-  - uid: 3468
+  - uid: 3253
     components:
     - type: Transform
-      rot: -1.5707963267948966 rad
+      rot: 3.141592653589793 rad
       pos: -31.5,-28.5
       parent: 2
   - uid: 4062
@@ -33849,6 +33857,20 @@ entities:
     - type: Transform
       pos: 49.5,1.5
       parent: 2
+- proto: DresserChiefEngineerFilled
+  entities:
+  - uid: 9616
+    components:
+    - type: Transform
+      pos: 33.5,11.5
+      parent: 2
+- proto: DresserChiefMedicalOfficerFilled
+  entities:
+  - uid: 2855
+    components:
+    - type: Transform
+      pos: 39.5,-23.5
+      parent: 2
 - proto: DresserFilled
   entities:
   - uid: 2297
@@ -33875,6 +33897,34 @@ entities:
     components:
     - type: Transform
       pos: -20.5,-37.5
+      parent: 2
+- proto: DresserHeadOfPersonnelFilled
+  entities:
+  - uid: 10835
+    components:
+    - type: Transform
+      pos: 11.5,4.5
+      parent: 2
+- proto: DresserHeadOfSecurityFilled
+  entities:
+  - uid: 1645
+    components:
+    - type: Transform
+      pos: -36.5,4.5
+      parent: 2
+- proto: DresserQuarterMasterFilled
+  entities:
+  - uid: 3468
+    components:
+    - type: Transform
+      pos: 7.5,15.5
+      parent: 2
+- proto: DresserResearchDirectorFilled
+  entities:
+  - uid: 4211
+    components:
+    - type: Transform
+      pos: -32.5,-28.5
       parent: 2
 - proto: DrinkBeerBottleFull
   entities:
@@ -35003,11 +35053,6 @@ entities:
     components:
     - type: Transform
       pos: -1.5,5.5
-      parent: 2
-  - uid: 1645
-    components:
-    - type: Transform
-      pos: 7.276731,15.5
       parent: 2
   - uid: 2456
     components:
@@ -57447,12 +57492,6 @@ entities:
       rot: 3.141592653589793 rad
       pos: 20.5,19.5
       parent: 2
-  - uid: 10835
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: 23.5,1.5
-      parent: 2
   - uid: 10836
     components:
     - type: Transform
@@ -57491,6 +57530,11 @@ entities:
     components:
     - type: Transform
       pos: 37.5,21.5
+      parent: 2
+  - uid: 13244
+    components:
+    - type: Transform
+      pos: 17.5,-2.5
       parent: 2
 - proto: IntercomMedical
   entities:
@@ -59785,11 +59829,6 @@ entities:
       parent: 2
 - proto: PottedPlantRandomPlastic
   entities:
-  - uid: 3253
-    components:
-    - type: Transform
-      pos: 33.5,11.5
-      parent: 2
   - uid: 3672
     components:
     - type: Transform
@@ -69124,12 +69163,10 @@ entities:
       parent: 2
 - proto: SurveillanceCameraRouterService
   entities:
-  - uid: 4211
+  - uid: 13240
     components:
-    - type: MetaData
-      name: camera router (service)
     - type: Transform
-      pos: 11.5,4.5
+      pos: 64.5,-14.5
       parent: 2
 - proto: SurveillanceCameraRouterSupply
   entities:
@@ -71767,19 +71804,17 @@ entities:
     - type: Transform
       pos: 36.5,-32.5
       parent: 2
-- proto: VendingMachineTankDispenserEngineering
-  entities:
-  - uid: 9616
-    components:
-    - type: Transform
-      pos: 17.5,8.5
-      parent: 2
 - proto: VendingMachineTankDispenserEVA
   entities:
   - uid: 5673
     components:
     - type: Transform
       pos: -16.5,-29.5
+      parent: 2
+  - uid: 13224
+    components:
+    - type: Transform
+      pos: 17.5,8.5
       parent: 2
 - proto: VendingMachineTheater
   entities:

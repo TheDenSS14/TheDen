@@ -278,7 +278,7 @@ uplink-c20r-bundle-name = C-20r Bundle
 uplink-c20r-bundle-desc = Old faithful: The classic C-20r Submachine Gun, ammo comes separately.
 
 uplink-buldog-bundle-name = Bulldog Bundle
-uplink-buldog-bundle-desc = Lean and mean: Contains the popular Bulldog Shotgun, a 12g beanbag drum and three 12g buckshot drums.
+uplink-buldog-bundle-desc = Lean and mean: Contains the popular Bulldog Shotgun, a 12 gauge beanbag drum and three 12 gauge buckshot drums.
 
 uplink-grenade-launcher-bundle-name = China-Lake Bundle
 uplink-grenade-launcher-bundle-desc = An old China-Lake grenade launcher bundled with 11 rounds of various destruction capability.
@@ -296,7 +296,7 @@ uplink-super-surplus-bundle-name = Super Surplus Crate
 uplink-super-surplus-bundle-desc = Contains 125 telecrystals worth of completely random Syndicate items.
 
 uplink-fpa-90-bundle-name = FPA-90 Bundle
-uplink-fpa-90-bundle-desc = A cheap integrally suppressed SMG. Ammo comes separately.
+uplink-fpa-90-bundle-desc = A cheap integrally suppressed SMG. Comes loaded.
 
 # Tools
 uplink-toolbox-name = Toolbox
@@ -375,19 +375,19 @@ uplink-eva-syndie-desc = A simple EVA suit that offers no protection other than 
 uplink-hardsuit-carp-name = Carp Hardsuit
 uplink-hardsuit-carp-desc = Looks like an ordinary carp suit, except fully spaceproof and tricks space carp into thinking you are one of them.
 
-uplink-hardsuit-syndie-name = Blood-red Tacsuit
-uplink-hardsuit-syndie-desc = The calling card of pirates, outlaws, mercenaries, and deserters. The "Blood Red" Shanlin Tacsuit is an iconic piece of equipment employed by the Syndicate.
+uplink-hardsuit-syndie-name = "Shanlin" Tacsuit
+uplink-hardsuit-syndie-desc = The calling card of pirates, outlaws, mercenaries, and deserters. The "Shanlin" Tacsuit is an iconic piece of equipment employed by the Syndicate.
 
-uplink-hardsuit-syndie-medic-name = Blood-red Medic Tacsuit
-uplink-hardsuit-syndie-medic-desc = A variant of the "Blood-red" tacsuit that includes medical markings.
+uplink-hardsuit-syndie-medic-name = "Zhongyao" Tacsuit
+uplink-hardsuit-syndie-medic-desc = A variant of the "Shanlin" tacsuit that includes medical markings.
 
-uplink-hardsuit-syndie-commander-name = Blood-red "Commander" Tacsuit
-uplink-hardsuit-syndie-commander-desc = An up-armored variant of the iconic "Blood-red" tacsuit.
+uplink-hardsuit-syndie-commander-name = "Tianming" Tacsuit
+uplink-hardsuit-syndie-commander-desc = An up-armored variant of the iconic "Blood-red" tacsuit for commanders.
 
-uplink-hardsuit-syndieelite-name = Syndicate Elite Hardsuit
-uplink-hardsuit-syndieelite-desc = An elite version of the blood-red hardsuit, with improved mobility and fireproofing. Property of Gorlex Marauders.
+uplink-hardsuit-syndieelite-name = "Shiwei" Tacsuit
+uplink-hardsuit-syndieelite-desc = An elite version of the "Shanlin" hardsuit, with improved mobility and fireproofing. Property of Gorlex Marauders.
 
-uplink-clothing-outer-hardsuit-juggernaut-name = Cybersun Juggernaut Suit
+uplink-clothing-outer-hardsuit-juggernaut-name = "Guan Yu" Suit
 uplink-clothing-outer-hardsuit-juggernaut-desc = Hyper resilient armor made of materials tested in the Tau chromosphere facility. The only thing that's going to be slowing you down is this suit... and tasers.
 
 uplink-night-vision-name = Night vision goggles

@@ -11,7 +11,7 @@ using Robust.Shared.Prototypes;
 
 namespace Content.Server._DEN.Administration.Commands
 {
-    [AdminCommand(AdminFlags.None)]
+    [AnyCommand]
     sealed class RoundInfoCommand : IConsoleCommand
     {
         [Dependency] private readonly IEntityManager _entManager = default!;

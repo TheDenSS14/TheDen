@@ -8,7 +8,7 @@
   - type: HumanoidAppearance
     species: Vulpkanin
   - type: Hunger
-    baseDecayRate: 0.02083333332 # 25% more than default
+    baseDecayRate: 0.00375 # 25% more than default
   - type: Carriable # Carrying system from nyanotrasen.
   - type: Inventory # Allows vulps to wear properly shaped helmets
     speciesId: vulpkanin
@@ -27,6 +27,7 @@
     noRot: true
     drawdepth: Mobs
     layers:
+      - map: [ "enum.HumanoidVisualLayers.TailBehind" ]
       - map: [ "enum.HumanoidVisualLayers.Chest" ]
       - map: [ "enum.HumanoidVisualLayers.Nipples" ]
       - map: [ "enum.HumanoidVisualLayers.Genitals" ]
@@ -67,6 +68,7 @@
       - map: [ "innerBelt" ]
       - map: [ "innerNeck" ]
       - map: [ "outerClothing" ]
+      - map: [ "enum.HumanoidVisualLayers.TailOversuit" ]
       - map: [ "eyes" ]
       - map: [ "belt" ]
       - map: [ "neck" ]

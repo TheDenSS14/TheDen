@@ -472,6 +472,7 @@ namespace Content.Server.RoundEnd
                 if (!_shuttle.EmergencyShuttleArrived && ExpectedCountdownEnd is null)
                 {
                     CreateAutoCallVote();
+                    _autoCalledBefore = true;
                 }
 
                 // Always reset auto-call in case of a recall.

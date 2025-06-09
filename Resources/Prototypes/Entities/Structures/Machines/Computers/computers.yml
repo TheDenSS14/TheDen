@@ -425,6 +425,16 @@
     color: "#1f8c28"
   - type: Computer
     board: MedicalRecordsComputerCircuitboard
+  # Begin CD - Character Records
+  - type: CharacterRecordConsole
+    consoleType: Medical
+  - type: UserInterface
+    interfaces:
+      enum.CharacterRecordConsoleKey.Key:
+        type: CharacterRecordConsoleBoundUserInterface
+  - type: ActivatableUI
+    key: enum.CharacterRecordConsoleKey.Key
+  # End CD - Character Records
 
 - type: entity
   parent: BaseComputerAiAccess
@@ -435,12 +445,18 @@
   - type: CriminalRecordsConsole
   - type: UserInterface
     interfaces:
-      enum.CriminalRecordsConsoleKey.Key:
-        type: CriminalRecordsConsoleBoundUserInterface
+      # Begin CD - Character Records
+      enum.CharacterRecordConsoleKey.Key:
+        type: CharacterRecordConsoleBoundUserInterface
+      # End CD - Character Records
       enum.WiresUiKey.Key:
         type: WiresBoundUserInterface
+  # Begin CD - Character Records
+  - type: CharacterRecordConsole
+    consoleType: Security
   - type: ActivatableUI
-    key: enum.CriminalRecordsConsoleKey.Key
+    key: enum.CharacterRecordConsoleKey.Key
+  # End CD - Character Records
   - type: Sprite
     layers:
     - map: ["computerLayerBody"]
@@ -514,12 +530,18 @@
   - type: GeneralStationRecordConsole
   - type: UserInterface
     interfaces:
-        enum.GeneralStationRecordConsoleKey.Key:
-          type: GeneralStationRecordConsoleBoundUserInterface
+        # Begin CD - Character Records
+        enum.CharacterRecordConsoleKey.Key:
+          type: CharacterRecordConsoleBoundUserInterface
+        # End CD - Character Records
         enum.WiresUiKey.Key:
           type: WiresBoundUserInterface
+  # Begin CD - Character Records
+  - type: CharacterRecordConsole
+    consoleType: Employment
   - type: ActivatableUI
-    key: enum.GeneralStationRecordConsoleKey.Key
+    key: enum.CharacterRecordConsoleKey.Key
+  # End CD - Character Records
   - type: PointLight
     radius: 1.5
     energy: 1.6
@@ -1148,10 +1170,11 @@
   - type: Computer
     board: SurveillanceCameraMonitorCircuitboard
   - type: DeviceNetwork
-    deviceNetId: Wired
+    deviceNetId: Wireless
     receiveFrequencyId: SurveillanceCamera
     transmitFrequencyId: SurveillanceCamera
-  - type: WiredNetworkConnection
+  - type: WirelessNetworkConnection
+    range: 2000
   - type: DeviceNetworkRequiresPower
   - type: SurveillanceCameraMonitor
   - type: ActivatableUI
@@ -1163,8 +1186,6 @@
     interfaces:
         enum.SurveillanceCameraMonitorUiKey.Key:
           type: SurveillanceCameraMonitorBoundUserInterface
-        enum.WiresUiKey.Key:
-          type: WiresBoundUserInterface
 
 - type: entity
   parent: BaseComputer
@@ -1188,10 +1209,10 @@
     board: SurveillanceWirelessCameraMonitorCircuitboard
   - type: DeviceNetwork
     deviceNetId: Wireless
-    receiveFrequencyId: SurveillanceCamera
-    transmitFrequencyId: SurveillanceCamera
+    receiveFrequencyId: SurveillanceCameraEntertainment
+    transmitFrequencyId: SurveillanceCameraEntertainment
   - type: WirelessNetworkConnection
-    range: 200
+    range: 2000
   - type: DeviceNetworkRequiresPower
   - type: Speech
     speechVerb: Robotic
@@ -1204,8 +1225,6 @@
     interfaces:
         enum.SurveillanceCameraMonitorUiKey.Key:
           type: SurveillanceCameraMonitorBoundUserInterface
-        enum.WiresUiKey.Key:
-          type: WiresBoundUserInterface
 
 - type: entity
   id: ComputerPalletConsole

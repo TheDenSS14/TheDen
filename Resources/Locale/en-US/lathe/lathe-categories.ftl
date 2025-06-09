@@ -7,6 +7,7 @@ lathe-category-robotics = Robotics
 lathe-category-tacsuits = Tacsuits
 lathe-category-tools = Tools
 lathe-category-weapons = Weapons
+lathe-category-storage = Storage
 
 lathe-category-food = Food
 lathe-category-chemicals = Chemicals

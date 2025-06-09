@@ -369,9 +369,18 @@ reagent-effect-guidebook-chem-reroll-psionic =
         *[other] allow
     } a chance to get a different psionic power
 
+## Floof - Improve ChemAddMoodlet effect guidebook description
 reagent-effect-guidebook-add-moodlet =
-    modifies mood by {$amount}
-    { $timeout ->
+    { $use-effect-name ->
+        [true] { $chance ->
+            [1] Causes
+            *[other] cause
+        } {$mood-effect}
+        *[false] { $chance ->
+            [1] Modifies
+            *[other] modify
+        } mood by {$amount}
+    } { $timeout ->
         [0] indefinitely
         *[other] for {$timeout} seconds
     }
