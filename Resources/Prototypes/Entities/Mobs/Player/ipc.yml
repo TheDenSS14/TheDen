@@ -149,12 +149,12 @@
     maxBleedAmount: 10
     bloodlossDamage:
       types:
-        Burn: 1.5
+        Burn: 1
     bloodlossHealDamage:
       types:
         Burn: 0
   - type: IPCEmp
-    durationMultiplier: 0.13 # So a flash grenade and emp grenade are about equal
+    durationMultiplier: 0.125 # So an emp doesnt hold you down for a whole minute
 
 - type: entity
   save: false

@@ -1,37 +1,38 @@
 using Content.Server.Emp;
+using Content.Server.Flash;
 using Content.Server.Ipc;
-using Robust.Server.GameObjects;
+using Content.Server.Stunnable;
+using Content.Shared.Damage;
+using Content.Shared.Damage.Prototypes;
+using Robust.Shared.Prototypes;
 
 namespace Content.Server.IpcEmp;
 
-public sealed class IpcEmpSystem : EntitySystem
+internal sealed class IpcEmpSystem : EntitySystem
 {
     [Dependency]
-    private readonly TransformSystem _transform = default!;
+    private readonly StunSystem _stun = default!;
+    [Dependency]
+    private readonly FlashSystem _flash = default!;
+    [Dependency]
+    private readonly DamageableSystem _damageable = default!;
+    [Dependency]
+    private readonly IPrototypeManager _prototypeManager = default!;
 
     public override void Initialize()
     {
         base.Initialize();
 
         SubscribeLocalEvent<IpcEmpComponent, EmpPulseEvent>(OnEmpPulse);
-        SubscribeLocalEvent<IpcEmpComponent, EmpDisabledRemoved>(OnEmpDisabledRemoved);
     }
 
-    private void OnEmpPulse(Entity<IpcEmpComponent> ipcEnt, ref EmpPulseEvent ev)
+    private void OnEmpPulse(EntityUid uid, IpcEmpComponent ipcEnt, ref EmpPulseEvent ev)
     {
-        if (!ipcEnt.Comp.Disabled)
-        {
-            ev.Affected = true;
-            ev.Disabled = true;
-            ipcEnt.Comp.Disabled = true;
-        }
-    }
+        ev.Affected = true;
+        ev.Disabled = true;
 
-    private void OnEmpDisabledRemoved(Entity<IpcEmpComponent> ipcEnt, ref EmpDisabledRemoved ev)
-    {
-        if (ipcEnt.Comp.Disabled)
-        {
-            ipcEnt.Comp.Disabled = false;
-        }
+        var empDamage = ev.EnergyConsumption / 25000f; // Using how much energy is consumed to scale the damage (2700000 is an EMP grenade)
+        DamageSpecifier damage = new(_prototypeManager.Index<DamageTypePrototype>("Shock"), empDamage);
+        _damageable.TryChangeDamage(uid, damage);
     }
 }
