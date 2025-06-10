@@ -67,7 +67,6 @@ public partial class ChatSystem
         if (!_prototypeManager.TryIndex<EmotePrototype>(emoteId, out var proto))
             return;
 
-        _sawmill.Info("You confuse me");
         TryEmoteWithChat(source, proto, range, hideLog: hideLog, nameOverride, ignoreActionBlocker: ignoreActionBlocker, forceEmote: forceEmote);
     }
 
@@ -92,10 +91,7 @@ public partial class ChatSystem
         )
     {
         if (!forceEmote && !AllowedToUseEmote(source, emote))
-        {
-            _sawmill.Info("Failed to use emote!");
             return;
-        }
 
         // check if proto has valid message for chat
         if (emote.ChatMessages.Count != 0)
@@ -105,8 +101,6 @@ public partial class ChatSystem
             var language = _language.GetLanguage(source);
             SendEntityEmote(source, action, range, nameOverride, language, hideLog: hideLog, checkEmote: false, ignoreActionBlocker: ignoreActionBlocker);
         }
-
-        _sawmill.Info("passed!");
 
         // do the rest of emote event logic here
         TryEmoteWithoutChat(source, emote, ignoreActionBlocker);
@@ -129,10 +123,7 @@ public partial class ChatSystem
     public void TryEmoteWithoutChat(EntityUid uid, EmotePrototype proto, bool ignoreActionBlocker = false)
     {
         if (!_actionBlocker.CanEmote(uid) && !ignoreActionBlocker)
-        {
-            _sawmill.Info("Failed to use emote 3!");
             return;
-        }
 
         InvokeEmoteEvent(uid, proto);
     }
@@ -153,10 +144,7 @@ public partial class ChatSystem
     public bool TryPlayEmoteSound(EntityUid uid, EmoteSoundsPrototype? proto, string emoteId)
     {
         if (proto == null)
-        {
-            _sawmill.Info("proto is null");
             return false;
-        }
 
         // try to get specific sound for this emote
         if (!proto.Sounds.TryGetValue(emoteId, out var sound))
@@ -204,12 +192,8 @@ public partial class ChatSystem
             return;
 
         if (!AllowedToUseEmote(uid, emote))
-        {
-            _sawmill.Info("Failed to use emote 2!");
             return;
-        }
 
-        _sawmill.Info("Emote success!");
         InvokeEmoteEvent(uid, emote);
     }
     /// <summary>

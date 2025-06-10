@@ -31,8 +31,6 @@ public sealed class VocalSystem : EntitySystem
     [ValidatePrototypeId<ReplacementAccentPrototype>]
     private const string MuzzleAccent = "mumble";
 
-    private ISawmill _sawmill = default!;
-
     public override void Initialize()
     {
         base.Initialize();
@@ -42,8 +40,6 @@ public sealed class VocalSystem : EntitySystem
         SubscribeLocalEvent<VocalComponent, SexChangedEvent>(OnSexChanged);
         SubscribeLocalEvent<VocalComponent, EmoteEvent>(OnEmote);
         SubscribeLocalEvent<VocalComponent, ScreamActionEvent>(OnScreamAction);
-
-        _sawmill = _log.GetSawmill("vocal");
     }
 
     private void OnMapInit(EntityUid uid, VocalComponent component, MapInitEvent args)
@@ -70,16 +66,11 @@ public sealed class VocalSystem : EntitySystem
 
     private void OnEmote(EntityUid uid, VocalComponent component, ref EmoteEvent args)
     {
-        _sawmill.Info("Help");
         if (args.Handled
             || !args.Emote.Category.HasFlag(EmoteCategory.Vocal)
             || !_actionBlocker.CanSpeak(uid)
             || TryComp<ReplacementAccentComponent>(uid, out var replacement) && replacement.Accent == MuzzleAccent)
-        {
-            _sawmill.Info("Failed to use emote in vocal system!");
-            _sawmill.Info($"{args.Handled}");
             return;
-        }
 
         var sounds = component.EmoteSounds?.Sounds;
 
@@ -94,8 +85,6 @@ public sealed class VocalSystem : EntitySystem
         }
 
         // just play regular sound based on emote proto
-        _sawmill.Info($"{args.Handled}");
-
         if (sounds == null)
             args.Handled = _chat.TryPlayEmoteSound(uid, component.EmoteSounds, args.Emote.ID);
         else
