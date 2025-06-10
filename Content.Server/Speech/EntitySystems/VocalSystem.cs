@@ -1,3 +1,4 @@
+using Content.Server._DEN.Vocal;
 using Content.Server.Actions;
 using Content.Server.Chat.Systems;
 using Content.Server.Speech.Components;
@@ -24,9 +25,13 @@ public sealed class VocalSystem : EntitySystem
     [Dependency] private readonly ActionsSystem _actions = default!;
     [Dependency] private readonly ActionBlockerSystem _actionBlocker = default!;
     [Dependency] private readonly IConfigurationManager _config = default!;
+    [Dependency] private readonly ILogManager _log = default!;
+    [Dependency] private readonly AdditionalVocalSoundsSystem _additionalVocalSounds = default!;
 
     [ValidatePrototypeId<ReplacementAccentPrototype>]
     private const string MuzzleAccent = "mumble";
+
+    private ISawmill _sawmill = default!;
 
     public override void Initialize()
     {
@@ -37,6 +42,8 @@ public sealed class VocalSystem : EntitySystem
         SubscribeLocalEvent<VocalComponent, SexChangedEvent>(OnSexChanged);
         SubscribeLocalEvent<VocalComponent, EmoteEvent>(OnEmote);
         SubscribeLocalEvent<VocalComponent, ScreamActionEvent>(OnScreamAction);
+
+        _sawmill = _log.GetSawmill("vocal");
     }
 
     private void OnMapInit(EntityUid uid, VocalComponent component, MapInitEvent args)
@@ -63,11 +70,21 @@ public sealed class VocalSystem : EntitySystem
 
     private void OnEmote(EntityUid uid, VocalComponent component, ref EmoteEvent args)
     {
+        _sawmill.Info("Help");
         if (args.Handled
             || !args.Emote.Category.HasFlag(EmoteCategory.Vocal)
             || !_actionBlocker.CanSpeak(uid)
-            || TryComp<ReplacementAccentComponent>(uid, out var replacement) && replacement.Accent == MuzzleAccent) // This is not ideal, but it works.
+            || TryComp<ReplacementAccentComponent>(uid, out var replacement) && replacement.Accent == MuzzleAccent)
+        {
+            _sawmill.Info("Failed to use emote in vocal system!");
+            _sawmill.Info($"{args.Handled}");
             return;
+        }
+
+        var sounds = component.EmoteSounds?.Sounds;
+
+        if (TryComp<AdditionalVocalSoundsComponent>(uid, out var additionalVocalSounds))
+            sounds = _additionalVocalSounds.GetVocalSounds((uid, additionalVocalSounds), component.EmoteSounds);
 
         // snowflake case for wilhelm scream easter egg
         if (args.Emote.ID == component.ScreamId)
@@ -77,7 +94,12 @@ public sealed class VocalSystem : EntitySystem
         }
 
         // just play regular sound based on emote proto
-        args.Handled = _chat.TryPlayEmoteSound(uid, component.EmoteSounds, args.Emote);
+        _sawmill.Info($"{args.Handled}");
+
+        if (sounds == null)
+            args.Handled = _chat.TryPlayEmoteSound(uid, component.EmoteSounds, args.Emote.ID);
+        else
+            args.Handled = _chat.TryPlayEmoteSound(uid, sounds, args.Emote.ID);
     }
 
     private void OnScreamAction(EntityUid uid, VocalComponent component, ScreamActionEvent args)

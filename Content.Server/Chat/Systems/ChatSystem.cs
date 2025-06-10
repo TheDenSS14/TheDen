@@ -70,6 +70,7 @@ public sealed partial class ChatSystem : SharedChatSystem
     [Dependency] private readonly LanguageSystem _language = default!;
     [Dependency] private readonly TelepathicChatSystem _telepath = default!;
     [Dependency] private readonly EntityWhitelistSystem _whitelistSystem = default!;
+    [Dependency] private readonly ILogManager _logManager = default!;
     [Dependency] private readonly GhostSystem _ghost = default!;
 
     public const int VoiceRange = 10; // how far voice goes in world units
@@ -86,6 +87,8 @@ public sealed partial class ChatSystem : SharedChatSystem
     private bool _critLoocEnabled;
     private readonly bool _adminLoocEnabled = true;
 
+    private ISawmill _sawmill = default!;
+
     public override void Initialize()
     {
         base.Initialize();
@@ -93,6 +96,8 @@ public sealed partial class ChatSystem : SharedChatSystem
         Subs.CVar(_configurationManager, CCVars.LoocEnabled, OnLoocEnabledChanged, true);
         Subs.CVar(_configurationManager, CCVars.DeadLoocEnabled, OnDeadLoocEnabledChanged, true);
         Subs.CVar(_configurationManager, CCVars.CritLoocEnabled, OnCritLoocEnabledChanged, true);
+
+        _sawmill = _logManager.GetSawmill("chat");
 
         SubscribeLocalEvent<GameRunLevelChangedEvent>(OnGameChange);
     }
