@@ -45,22 +45,37 @@
     - bahed
     - bah'd
 
-# Unathi
+# Resomi
 - type: emote
-  id: Trill
-  name: chat-emote-name-trill
+  id: Coo
+  name: chat-emote-name-coo
   category: Vocal
-  available: false
-  icon: Interface/Emotes/weh.png
+  icon: Interface/Emotes/caw.png
   whitelist:
     tags:
-    - HarpyEmotes
-    - UnathiEmotes
+      - HarpyEmotes
+      - ResomiEmotes
   blacklist:
     components:
     - BorgChassis
-  chatMessages: [ trills ]
+  chatMessages: [ coos ]
   chatTriggers:
-    - trill
-    - trills
-    - trilled
+    - coos
+    - coo
+
+- type: emote
+  id: AvaliHonk
+  name: chat-emote-name-avali-honk
+  category: Vocal
+  icon: Interface/Emotes/caw.png
+  whitelist:
+    tags:
+    - HarpyEmotes
+    - ResomiEmotes
+  blacklist:
+    components:
+    - BorgChassis
+  chatMessages: [ hornks ]
+  chatTriggers:
+  - hornk
+  - hornks
