@@ -153,6 +153,8 @@
     bloodlossHealDamage:
       types:
         Burn: 0
+  - type: IPCEmp
+    durationMultiplier: 0.13 # So a flash grenade and emp grenade are about equal
 
 - type: entity
   save: false

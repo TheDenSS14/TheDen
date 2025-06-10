@@ -1,13 +1,13 @@
-using Content.Server.IPCEmp;
+using Robust.Shared.GameStates;
 
-namespace Content.Server.IPC;
+namespace Content.Server.Ipc;
 
-[RegisterComponent]
-[Access(typeof(IPCEmpSystem))]
-public sealed partial class IPCEmpComponent : Component
+[RegisterComponent, NetworkedComponent, AutoGenerateComponentState]
+public sealed partial class IpcEmpComponent : Component
 {
-    [DataField("duration")]
-    [ViewVariables(VVAccess.ReadWrite)]
-    public int EmpDuration { get; set; } = 5000;
-}
+    [DataField, AutoNetworkedField]
+    public bool Disabled = false;
 
+    [DataField]
+    public float DurationMultiplier = 1f;
+}

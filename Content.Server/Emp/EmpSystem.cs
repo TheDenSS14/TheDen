@@ -1,4 +1,5 @@
 using Content.Server.Explosion.EntitySystems;
+using Content.Server.Ipc;
 using Content.Server.Power.Components;
 using Content.Server.Power.EntitySystems;
 using Content.Server.Radio;
@@ -80,6 +81,13 @@ public sealed class EmpSystem : SharedEmpSystem
             {
                 disabled.DisabledUntil = Timing.CurTime;
             }
+
+            // EMPs usually last longer than flashes, this is to reduce it for IPCs
+            if (TryComp<IpcEmpComponent>(uid, out var ipcComp))
+            {
+                duration *= ipcComp.DurationMultiplier;
+            }
+
             disabled.DisabledUntil = disabled.DisabledUntil + TimeSpan.FromSeconds(duration);
 
             /// i tried my best to go through the Pow3r server code but i literally couldn't find in relation to PowerNetworkBatteryComponent that uses the event system
