@@ -92,6 +92,9 @@
     staminaCost: 8
   - type: Spillable
     solution: absorbed
+    spillWhenThrown: false
+  - type: DrainableSolution
+    solution: absorbed
   - type: Wieldable
   - type: IncreaseDamageOnWield
     damage:
@@ -149,6 +152,9 @@
           Blunt: 7
       staminaCost: 8
     - type: Spillable
+      solution: absorbed
+      spillWhenThrown: false
+    - type: DrainableSolution
       solution: absorbed
     - type: Wieldable
     - type: IncreaseDamageOnWield
@@ -341,6 +347,9 @@
       sprite: Objects/Specific/Janitorial/rag.rsi
       state: rag
     - type: Spillable
+      solution: absorbed
+      spillWhenThrown: false
+    - type: DrainableSolution
       solution: absorbed
     - type: MeleeWeapon
       soundHit:
