@@ -74,9 +74,7 @@
   - type: Appearance
   - type: SecretStash
     secretStashName: secret-stash-toilet
-    examineStash: toilet-component-on-examine-found-hidden-item
   - type: ToolOpenable
-    openableStash: true
     openToolQualityNeeded: Prying
     closeToolQualityNeeded: Prying
     name: secret-stash-toilet
