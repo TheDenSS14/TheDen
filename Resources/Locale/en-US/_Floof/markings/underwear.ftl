@@ -1,6 +1,3 @@
-markings-category-Undershirt = Undershirt
-markings-category-Underwear = Underwear
-
 marking-UndershirtStandard = Undershirt (Standard)
 marking-UndershirtStandard-t_undershirt = Undershirt
 
