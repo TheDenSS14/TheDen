@@ -37,6 +37,7 @@ using Content.Shared.CCVar;
 using Content.Shared.Chemistry.EntitySystems;
 using Content.Shared.Whitelist;
 using Robust.Shared.Configuration;
+using Content.Shared.Destructible;
 
 namespace Content.Server.Nutrition.EntitySystems;
 
@@ -366,6 +367,9 @@ public sealed class FoodSystem : EntitySystem
         RaiseLocalEvent(food, ev);
         if (ev.Cancelled)
             return;
+
+        var dev = new DestructionEventArgs();
+        RaiseLocalEvent(food, dev);
 
         if (component.Trash.Count == 0)
         {
