@@ -440,8 +440,8 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
             && LoadoutPreferences.SequenceEqual(other.LoadoutPreferences)
             && Appearance.MemberwiseEquals(other.Appearance)
             && FlavorText == other.FlavorText
-            && CDCharacterRecords != null && other.CDCharacterRecords != null &&
-                CDCharacterRecords.MemberwiseEquals(other.CDCharacterRecords);
+            && (CDCharacterRecords == null || other.CDCharacterRecords == null
+                || CDCharacterRecords.MemberwiseEquals(other.CDCharacterRecords));
     }
 
     public void EnsureValid(ICommonSession session, IDependencyCollection collection)
