@@ -54,11 +54,11 @@
   icon: Interface/Emotes/weh.png
   whitelist:
     tags:
-      - HarpyEmotes
-      - UnathiEmotes
+    - HarpyEmotes
+    - UnathiEmotes
   blacklist:
-     components:
-      - BorgChassis
+    components:
+    - BorgChassis
   chatMessages: [ trills ]
   chatTriggers:
     - trill
@@ -73,8 +73,8 @@
   icon: Interface/Emotes/caw.png
   whitelist:
     tags:
-      - HarpyEmotes
-      - ResomiEmotes
+    - HarpyEmotes
+    - ResomiEmotes
   blacklist:
     components:
     - BorgChassis
