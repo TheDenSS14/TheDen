@@ -1,0 +1,13 @@
+- type: entity
+  parent: BasePlushie
+  id: PlushieTeddyBear
+  name: teddy bear
+  description: Because everybody needs a friend. # reference to no joke the worst movie i have seen in my life
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Fun/toys.rsi
+    state: teddybear
+    layers:
+    - state: teddybear
+    - state: teddybear-accent
+    - state: teddybear-ribbon
