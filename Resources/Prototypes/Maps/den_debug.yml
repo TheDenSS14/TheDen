@@ -1,0 +1,16 @@
+- type: gameMap
+  id: Poligon
+  mapName: Poligon
+  mapPath: /Maps/Test/den_debug.yml
+  minPlayers: 0
+  stations:
+    Poligon:
+      stationProto: StandardNanotrasenStation
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: "Poligon"
+        - type: StationJobs
+          overflowJobs:
+          - Captain
+          availableJobs:
+            Captain: [ -1, -1 ]
