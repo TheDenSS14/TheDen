@@ -5631,3 +5631,45 @@ Entries:
   id: 528
   time: '2025-06-10T09:22:58.0000000+00:00'
   url: https://github.com/TheDenSS14/TheDen/pull/718
+- author: sleepyyapril
+  changes:
+    - type: Tweak
+      message: Race Sounds no longer give you points. Silly april.
+    - type: Fix
+      message: Fixed Race Sounds not having a localization.
+    - type: Remove
+      message: >-
+        Remove Harpy Sounds as a trait, pending separation from EVERY RACE SOUND
+        IN THE GAME.
+  id: 529
+  time: '2025-06-10T17:13:19.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/742
+- author: sleepyyapril
+  changes:
+    - type: Tweak
+      message: >-
+        Various uplink items have been upped in price due to the recent TC
+        changes.
+  id: 530
+  time: '2025-06-10T18:05:09.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/744
+- author: sleepyyapril
+  changes:
+    - type: Tweak
+      message: Only nukies get a stealth suit
+    - type: Tweak
+      message: 'Stealth suit price changed from 100 to 80 TC. '
+  id: 531
+  time: '2025-06-10T19:03:22.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/745
+- author: portfiend
+  changes:
+    - type: Fix
+      message: Localization fixes for a few markings and the emote sound trait group.
+    - type: Fix
+      message: You can now only choose one species emote sound trait.
+    - type: Tweak
+      message: Moved emote sound traits to the Speech trait category.
+  id: 532
+  time: '2025-06-11T02:12:46.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/747
