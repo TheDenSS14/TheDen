@@ -45,6 +45,22 @@
     - bahed
     - bah'd
 
+# Unathi
+- type: emote
+  id: Trill
+  name: chat-emote-name-Trill
+  available: false
+  icon: Interface/Emotes/weh.png
+  whitelist:
+    tags:
+      -HarpyEmotes
+      -UnathiEmotes
+  chatMessages: [ trills ]
+  chatTriggers:
+    - trill
+    - trills
+    - trilled
+
 # Resomi
 - type: emote
   id: Coo
