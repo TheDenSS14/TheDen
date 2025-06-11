@@ -1,7 +1,7 @@
 - type: trait
   id: VulpkaninSounds
   category: TraitsSpeechSounds
-  points: 2
+  points: -2
   requirements:
     - !type:CharacterItemGroupRequirement
       group: TraitsRaceSounds
@@ -20,7 +20,7 @@
 - type: trait
   id: FelinidSounds
   category: TraitsSpeechSounds
-  points: 2
+  points: -2
   requirements:
     - !type:CharacterItemGroupRequirement
       group: TraitsRaceSounds
@@ -37,28 +37,9 @@
       useSex: true
 
 - type: trait
-  id: HarpySounds
-  category: TraitsSpeechSounds
-  points: 2
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: TraitsRaceSounds
-    - !type:CharacterSpeciesRequirement
-      inverted: true
-      species:
-        - Harpy
-  functions:
-    - !type:TraitAddTag
-      tags:
-      - HarpyEmotes
-    - !type:TraitSetAdditionalEmoteSound
-      emoteSound: SoundsHarpy
-      useSex: false
-
-- type: trait
   id: OniSounds
   category: TraitsSpeechSounds
-  points: 2
+  points: -2
   requirements:
     - !type:CharacterItemGroupRequirement
       group: TraitsRaceSounds
@@ -77,7 +58,7 @@
 - type: trait
   id: ShadowkinSounds
   category: TraitsSpeechSounds
-  points: 2
+  points: -2
   requirements:
     - !type:CharacterItemGroupRequirement
       group: TraitsRaceSounds
@@ -96,7 +77,7 @@
 - type: trait
   id: SiliconSounds
   category: TraitsSpeechSounds
-  points: 2
+  points: -2
   requirements:
     - !type:CharacterItemGroupRequirement
       group: TraitsRaceSounds
@@ -115,7 +96,7 @@
 - type: trait
   id: ReptilianSounds
   category: TraitsSpeechSounds
-  points: 2
+  points: -2
   requirements:
     - !type:CharacterItemGroupRequirement
       group: TraitsRaceSounds
@@ -134,7 +115,7 @@
 - type: trait
   id: OviniaSounds
   category: TraitsSpeechSounds
-  points: 2
+  points: -2
   requirements:
     - !type:CharacterItemGroupRequirement
       group: TraitsRaceSounds
@@ -153,7 +134,7 @@
 - type: trait
   id: FeroxiSounds
   category: TraitsSpeechSounds
-  points: 2
+  points: -2
   requirements:
     - !type:CharacterItemGroupRequirement
       group: TraitsRaceSounds

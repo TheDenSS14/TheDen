@@ -34,7 +34,7 @@
     onlyCollideWhenShot: true
     damage:
       types:
-        Heat: 45
+        Heat: 25
   - type: TimedDespawn
     lifetime: 10
   - type: PointLight
@@ -138,7 +138,7 @@
   - type: ExplodeOnTrigger
   - type: Explosive
     explosionType: Default
-    totalIntensity: 12
+    totalIntensity: 6
     intensitySlope: 0.4
     maxIntensity: 4
     canCreateVacuum: false
@@ -157,7 +157,7 @@
     penetrate: true
     damage:
       types:
-        Heat: 30
+        Heat: 10
   - type: Fixtures
     fixtures:
       projectile:
