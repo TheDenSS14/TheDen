@@ -50,11 +50,15 @@
   id: Oni
   name: species-name-oni
   text: "/ServerInfo/Guidebook/Mobs/Oni.xml"
+  children:
+  - OniLore
 
 - type: guideEntry
   id: Reptilian
   name: species-name-reptilian
   text: "/ServerInfo/Guidebook/Mobs/Reptilian.xml"
+  children:
+  - ReptilianLore
 
 - type: guideEntry
   id: SlimePerson
@@ -70,16 +74,22 @@
   id: Harpy
   name: species-name-harpy
   text: "/ServerInfo/Guidebook/Mobs/Harpy.xml"
+  children:
+  - HarpyLore
 
 - type: guideEntry
   id: Shadowkin
   name: species-name-shadowkin
   text: "/ServerInfo/Guidebook/Mobs/Shadowkin.xml"
+  children:
+  - ShadowkinLore
 
 - type: guideEntry
   id: Tajaran
   name: species-name-tajaran
   text: "/ServerInfo/Guidebook/Mobs/Tajaran.xml"
+  children:
+  - TajaranLore
 
 - type: guideEntry
   id: Plasmaman
@@ -100,3 +110,30 @@
   id: Arachne
   name: species-name-arachne
   text: "/ServerInfo/Guidebook/Mobs/Arachne.xml"
+
+# Species Lore
+
+- type: guideEntry
+  id: HarpyLore
+  name: guide-entry-species-lore-harpy
+  text: "/ServerInfo/Guidebook/Mobs/Lore/HarpyLore.xml"
+
+- type: guideEntry
+  id: OniLore
+  name: guide-entry-species-lore-oni
+  text: "/ServerInfo/Guidebook/Mobs/Lore/OniLore.xml"
+
+- type: guideEntry
+  id: ReptilianLore
+  name: guide-entry-species-lore-reptilian
+  text: "/ServerInfo/Guidebook/Mobs/Lore/ReptilianLore.xml"
+
+- type: guideEntry
+  id: ShadowkinLore
+  name: guide-entry-species-lore-shadowkin
+  text: "/ServerInfo/Guidebook/Mobs/Lore/ShadowkinLore.xml"
+
+- type: guideEntry
+  id: TajaranLore
+  name: guide-entry-species-lore-tajaran
+  text: "/ServerInfo/Guidebook/Mobs/Lore/TajaranLore.xml"
