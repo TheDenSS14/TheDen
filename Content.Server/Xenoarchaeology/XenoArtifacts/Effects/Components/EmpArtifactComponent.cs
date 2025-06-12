@@ -13,7 +13,7 @@ public sealed partial class EmpArtifactComponent : Component
     public float Range = 4f;
 
     [DataField("energyConsumption"), ViewVariables(VVAccess.ReadWrite)]
-    public float EnergyConsumption = 1000000;
+    public float EnergyConsumption = 100000;
 
     [DataField("disableDuration"), ViewVariables(VVAccess.ReadWrite)]
     public float DisableDuration = 60f;
