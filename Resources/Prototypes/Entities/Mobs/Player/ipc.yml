@@ -156,6 +156,7 @@
         Burn: 0
   - type: IpcEmp
     durationMultiplier: 0.125 # So an emp doesnt hold you down for a whole minute
+    damageMultiplier: 0.000125 # Damage is based on EMP power drain, EMP grenade should deal ~50 damage on this value
 
 - type: entity
   save: false

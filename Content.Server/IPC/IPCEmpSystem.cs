@@ -31,7 +31,7 @@ internal sealed class IpcEmpSystem : EntitySystem
         ev.Affected = true;
         ev.Disabled = true;
 
-        var empDamage = ev.EnergyConsumption / 25000f; // Using how much energy is consumed to scale the damage (2700000 is an EMP grenade)
+        var empDamage = ev.EnergyConsumption * ipcEnt.DamageMultiplier; // Using how much energy is consumed to scale the damage (2700000 is an EMP grenade)
         DamageSpecifier damage = new(_prototypeManager.Index<DamageTypePrototype>("Shock"), empDamage);
         _damageable.TryChangeDamage(uid, damage);
     }

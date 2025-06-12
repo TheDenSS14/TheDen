@@ -8,4 +8,6 @@ public sealed partial class IpcEmpComponent : Component
 
     [DataField]
     public float DurationMultiplier = 1f;
+    [DataField]
+    public float DamageMultiplier = 1f;
 }
