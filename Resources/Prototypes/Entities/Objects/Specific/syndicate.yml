@@ -54,6 +54,14 @@
   - type: Stack
     count: 25
 
+- type: entity
+  parent: Telecrystal
+  id: Telecrystal50
+  suffix: 50 TC
+  components:
+  - type: Stack
+    count: 50
+
 # Uplinks
 - type: entity
   parent: [ BaseItem, StorePresetUplink ]

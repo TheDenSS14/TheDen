@@ -381,7 +381,7 @@
     bloodMaxVolume: 20
   - type: Food
   - type: Hunger
-    baseDecayRate: 0.25
+    baseDecayRate: 0.001
   - type: Extractable
     grindableSolutionName: food
   - type: SolutionContainerManager
@@ -390,6 +390,17 @@
         reagents:
         - ReagentId: Slime
           Quantity: 5
+  - type: ReplaceSolutionWhenRotten
+    solution: food
+    duration: 1.2
+    replacements:
+      - solution:
+          reagents:
+          - ReagentId: GastroToxin
+            Quantity: 0.01 # 5u replaced after 600 seconds
+        whitelist:
+        - Slime
+        amount: 0.01
   - type: Butcherable
     spawned:
     - id: FoodMeatSlime
@@ -1751,7 +1762,7 @@
       Thirsty: 15
       Parched: 10
       Dead: 0
-    baseDecayRate: 0.04
+    baseDecayRate: 0.006
   - type: Hunger
     currentHunger: 25   # spawn with Okay hunger state
     thresholds:
@@ -1760,7 +1771,7 @@
       Peckish: 15
       Starving: 10
       Dead: 0
-    baseDecayRate: 0.5 # I'm very hungry! Give me. The cheese.
+    baseDecayRate: 0.05 # I'm very hungry! Give me. The cheese.
   - type: Extractable
     grindableSolutionName: food
   - type: SolutionContainerManager
@@ -1769,6 +1780,17 @@
         reagents:
         - ReagentId: UncookedAnimalProteins
           Quantity: 3
+  - type: ReplaceSolutionWhenRotten
+    solution: food
+    duration: 2
+    replacements:
+      - solution:
+          reagents:
+          - ReagentId: GastroToxin
+            Quantity: 0.01 # 3u replaced after 600 seconds
+        whitelist:
+        - UncookedAnimalProteins
+        amount: 0.01
   - type: Butcherable
     spawned:
     - id: FoodMeatRat
@@ -3514,7 +3536,7 @@
         Base: splat-0
   - type: Food
   - type: Hunger
-    baseDecayRate: 0.3
+    baseDecayRate: 0.03
   - type: Extractable
     grindableSolutionName: food
   - type: SolutionContainerManager
@@ -3527,6 +3549,17 @@
           Quantity: 55
         - ReagentId: Fat
           Quantity: 5
+  - type: ReplaceSolutionWhenRotten
+    solution: food
+    duration: 1.2
+    replacements:
+      - solution:
+          reagents:
+          - ReagentId: GastroToxin
+            Quantity: 0.01 # 5u replaced after 600 seconds
+        whitelist:
+        - Nutriment
+        amount: 0.01
   - type: Butcherable
     spawned:
     - id: FoodMeat

@@ -41,6 +41,8 @@ namespace Content.Shared.GameTicking
 
         private void OnRecordingStart(MappingDataNode metadata, List<object> events)
         {
+            if (metadata.Has("roundId"))
+                return;
             metadata["roundId"] = new ValueDataNode(RoundId.ToString());
         }
         public TimeSpan RoundDuration()
@@ -70,6 +72,16 @@ namespace Content.Shared.GameTicking
         }
     }
 
+    [Serializable, NetSerializable]
+    public sealed class TickerInGameInfoEvent : EntityEventArgs
+    {
+        public string InGameTextBlob { get; }
+
+        public TickerInGameInfoEvent(string textBlob)
+        {
+            InGameTextBlob = textBlob;
+        }
+    }
     [Serializable, NetSerializable]
     public sealed class TickerConnectionStatusEvent : EntityEventArgs
     {

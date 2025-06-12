@@ -1,6 +1,7 @@
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using Content.Client.Inventory;
+using Content.Shared._DV.Silicon.IPC; // DeltaV - IPC Snouts
 using Content.Shared.Clothing;
 using Content.Shared.Clothing.Components;
 using Content.Shared.Clothing.EntitySystems;
@@ -107,17 +108,24 @@ public sealed class ClientClothingSystem : ClothingSystem
 
         List<PrototypeLayerData>? layers = null;
 
+        // Begin DeltaV Additions - IPC snouts
+        var speciesId = inventory.SpeciesId;
+
+        if (TryComp(args.Equipee, out SnoutHelmetComponent? helmetComponent) && helmetComponent.EnableAlternateHelmet)
+            speciesId = helmetComponent.ReplacementRace;
+
         // first attempt to get species specific data.
-        if (inventory.SpeciesId != null)
-            item.ClothingVisuals.TryGetValue($"{args.Slot}-{inventory.SpeciesId}", out layers);
+        if (speciesId != null)
+            item.ClothingVisuals.TryGetValue($"{args.Slot}-{speciesId}", out layers);
 
         // if that returned nothing, attempt to find generic data
         if (layers == null && !item.ClothingVisuals.TryGetValue(args.Slot, out layers))
         {
             // No generic data either. Attempt to generate defaults from the item's RSI & item-prefixes
-            if (!TryGetDefaultVisuals(uid, item, args.Slot, inventory.SpeciesId, out layers))
+            if (!TryGetDefaultVisuals(uid, item, args.Slot, speciesId, out layers))
                 return;
         }
+        // End DeltaV Additions
 
         // add each layer to the visuals
         var i = 0;
@@ -369,6 +377,11 @@ public sealed class ClientClothingSystem : ClothingSystem
 
             sprite.LayerSetData(index, layerData);
             layer.Offset += slotDef.Offset;
+
+            // Begin TheDen - Ignore displacement maps for custom sprites
+            if (layerData.State != null && inventory.SpeciesId != null && layerData.State.Contains(inventory.SpeciesId))
+                continue;
+            // End TheDen
 
             if (displacementData != null)
             {

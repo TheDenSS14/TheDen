@@ -1,0 +1,26 @@
+- type: emote
+  id: Gekker
+  name: chat-emote-name-gekker
+  category: Vocal
+  whitelist:
+    tags:
+    - VulpEmotes
+    - HarpyEmotes
+  chatMessages: [ gekkers ]
+  chatTriggers:
+  - gekkers
+
+- type: emote
+  id: Yip
+  name: chat-emote-name-yip
+  category: Vocal
+  whitelist:
+    tags:
+    - VulpEmotes
+    - HarpyEmotes
+    - UnathiEmotes
+  chatMessages: [ yips ]
+  chatTriggers:
+  - yip
+  - yips
+  - yipped

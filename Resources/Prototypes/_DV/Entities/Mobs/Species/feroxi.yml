@@ -12,7 +12,7 @@
   - type: Inventory
     speciesId: feroxi
   - type: Thirst
-    baseDecayRate: 0.2
+    baseDecayRate: 0.03
   - type: Icon
     sprite: _DV/Mobs/Species/Feroxi/parts.rsi
     state: full
@@ -32,6 +32,7 @@
     noRot: true
     drawdepth: Mobs
     layers:
+      - map: [ "enum.HumanoidVisualLayers.TailBehind" ]
       - map: [ "enum.HumanoidVisualLayers.Chest" ]
       - map: [ "enum.HumanoidVisualLayers.Head" ]
       - map: [ "enum.HumanoidVisualLayers.Snout" ]
@@ -65,6 +66,7 @@
       - map: [ "eyes" ]
       - map: [ "belt" ]
       - map: [ "neck" ]
+      - map: [ "enum.HumanoidVisualLayers.TailOversuit" ]
       - map: [ "back" ]
       - map: [ "enum.HumanoidVisualLayers.FacialHair" ]
       - map: [ "enum.HumanoidVisualLayers.Hair" ]
@@ -121,3 +123,5 @@
   components:
   - type: HumanoidAppearance
     species: Feroxi
+  - type: Inventory
+    speciesId: feroxi

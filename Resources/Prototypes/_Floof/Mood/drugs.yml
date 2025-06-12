@@ -1,0 +1,106 @@
+# Drugs should be paired up in Trios of "Bonus, Penalty, Category"
+
+# Amphetamine: Powerful addiction
+- type: moodEffect
+  id: AmphetamineBenefit
+  moodChange: 5
+  timeout: 420 #7 minutes
+  moodletOnEnd: AmphetamineWithdrawal
+  category: AmphetamineAddiction
+
+- type: moodEffect
+  id: AmphetamineNeutral
+  moodChange: 0
+  timeout: 420 #7 minutes
+  moodletOnEnd: AmphetamineWithdrawal
+  category: AmphetamineAddiction
+
+- type: moodEffect
+  id: AmphetamineWithdrawal
+  moodChange: -7
+  timeout: 1980 #33 minutes
+  category: AmphetamineAddiction
+
+# Antidepressant: Moderate addiction
+- type: moodEffect
+  id: AntidepressantBenefit
+  moodChange: 1 # Not usually a recreational drug, but an accidental addiction.
+  timeout: 1020 #17 minutes
+  moodletOnEnd: AntidepressantWithdrawal
+  category: AntidepressantAddiction
+
+- type: moodEffect
+  id: AntidepressantNeutral
+  moodChange: 0
+  timeout: 1020 #17 minutes
+  moodletOnEnd: AntidepressantWithdrawal
+  category: AntidepressantAddiction
+
+- type: moodEffect
+  id: AntidepressantWithdrawal
+  moodChange: -5
+  timeout: 1020 #17 minutes
+  category: AntidepressantAddiction
+
+# Happiness: Moderate addiction
+- type: moodEffect
+  id: HappinessBenefit
+  moodChange: 5
+  timeout: 1020 #17 minutes
+  moodletOnEnd: HappinessWithdrawal
+  category: HappinessAddiction
+
+- type: moodEffect
+  id: HappinessNeutral
+  moodChange: 0
+  timeout: 1020 #17 minutes
+  moodletOnEnd: HappinessWithdrawal
+  category: HappinessAddiction
+
+- type: moodEffect
+  id: HappinessWithdrawal
+  moodChange: -5
+  timeout: 1020 #17 minutes
+  category: HappinessAddiction
+
+# Impedrezene: Moderate addiction
+- type: moodEffect
+  id: ImpedrezeneBenefit
+  moodChange: 5
+  timeout: 1020 #17 minutes
+  moodletOnEnd: ImpedrezeneWithdrawal
+  category: ImpedrezeneAddiction
+
+- type: moodEffect
+  id: ImpedrezeneNeutral
+  moodChange: 0
+  timeout: 1020 #17 minutes
+  moodletOnEnd: ImpedrezeneWithdrawal
+  category: ImpedrezeneAddiction
+
+- type: moodEffect
+  id: ImpedrezeneWithdrawal
+  moodChange: -5
+  timeout: 1020 #17 minutes
+  category: ImpedrezeneAddiction
+
+# Painkiller: Powerful addiction
+- type: moodEffect
+  id: PainkillerBenefit
+  moodChange: 3 # Not usually a recreational drug, but an accidental addiction.
+  timeout: 420 #7 minutes
+  moodletOnEnd: PainkillerWithdrawal
+  category: PainkillerAddiction
+
+- type: moodEffect
+  id: PainkillerNeutral
+  moodChange: 0
+  timeout: 420 #7 minutes
+  moodletOnEnd: PainkillerWithdrawal
+  category: PainkillerAddiction
+
+- type: moodEffect
+  id: PainkillerWithdrawal
+  moodChange: -7
+  timeout: 1980 #33 minutes
+  category: PainkillerAddiction

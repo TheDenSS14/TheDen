@@ -442,6 +442,7 @@ public abstract class SharedHumanoidAppearanceSystem : EntitySystem
         humanoid.StationAiName = profile.StationAiName;
         humanoid.CyborgName = profile.CyborgName;
         humanoid.Age = profile.Age;
+        humanoid.Height = profile.Height; // CD - Character Records
 
         humanoid.CustomSpecieName = profile.Customspeciename;
 

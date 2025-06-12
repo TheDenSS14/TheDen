@@ -23,7 +23,7 @@ public sealed class TheDarkSystem : EntitySystem
         var mapId = _mapManager.CreateMap();
         _mapManager.AddUninitializedMap(mapId);
 
-        if (!_loader.TryLoad(mapId, "/Maps/Floof/hideout.yml", out var uids))
+        if (!_loader.TryLoad(mapId, "/Maps/_Floof/hideout.yml", out var uids))
             return;
 
         foreach (var id in uids)

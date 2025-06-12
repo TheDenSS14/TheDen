@@ -8,6 +8,7 @@
   components:
   - type: Input
     context: "ghost"
+  - type: Spectral
   - type: MovementSpeedModifier
     baseWalkSpeed: 6
     baseSprintSpeed: 6
@@ -91,11 +92,10 @@
     - StolenEssence
   - type: RandomMetadata
     nameSegments:
-    - The
-    - RevenantType
-    - of
-    - RevenantAdjective
-    - RevenantTheme
+    - NamesRevenantType
+    - NamesRevenantAdjective
+    - NamesRevenantTheme
+    nameFormat: name-format-revenant
   - type: Speech
     speechVerb: Ghost
   - type: Psionic

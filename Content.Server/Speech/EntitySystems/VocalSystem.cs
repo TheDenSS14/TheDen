@@ -1,3 +1,4 @@
+using Content.Server._DEN.Vocal;
 using Content.Server.Actions;
 using Content.Server.Chat.Systems;
 using Content.Server.Speech.Components;
@@ -24,6 +25,8 @@ public sealed class VocalSystem : EntitySystem
     [Dependency] private readonly ActionsSystem _actions = default!;
     [Dependency] private readonly ActionBlockerSystem _actionBlocker = default!;
     [Dependency] private readonly IConfigurationManager _config = default!;
+    [Dependency] private readonly ILogManager _log = default!;
+    [Dependency] private readonly AdditionalVocalSoundsSystem _additionalVocalSounds = default!;
 
     [ValidatePrototypeId<ReplacementAccentPrototype>]
     private const string MuzzleAccent = "mumble";
@@ -66,8 +69,13 @@ public sealed class VocalSystem : EntitySystem
         if (args.Handled
             || !args.Emote.Category.HasFlag(EmoteCategory.Vocal)
             || !_actionBlocker.CanSpeak(uid)
-            || TryComp<ReplacementAccentComponent>(uid, out var replacement) && replacement.Accent == MuzzleAccent) // This is not ideal, but it works.
+            || TryComp<ReplacementAccentComponent>(uid, out var replacement) && replacement.Accent == MuzzleAccent)
             return;
+
+        var sounds = component.EmoteSounds?.Sounds;
+
+        if (TryComp<AdditionalVocalSoundsComponent>(uid, out var additionalVocalSounds))
+            sounds = _additionalVocalSounds.GetVocalSounds((uid, additionalVocalSounds), component.EmoteSounds);
 
         // snowflake case for wilhelm scream easter egg
         if (args.Emote.ID == component.ScreamId)
@@ -77,7 +85,10 @@ public sealed class VocalSystem : EntitySystem
         }
 
         // just play regular sound based on emote proto
-        args.Handled = _chat.TryPlayEmoteSound(uid, component.EmoteSounds, args.Emote);
+        if (sounds == null)
+            args.Handled = _chat.TryPlayEmoteSound(uid, component.EmoteSounds, args.Emote.ID);
+        else
+            args.Handled = _chat.TryPlayEmoteSound(uid, sounds, args.Emote.ID);
     }
 
     private void OnScreamAction(EntityUid uid, VocalComponent component, ScreamActionEvent args)

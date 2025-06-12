@@ -1,6 +1,6 @@
 - type: trait
   id: WillToLive
-  category: Physical
+  category: TraitsPhysicalFeats
   points: -3
   requirements:
     - !type:CharacterJobRequirement
@@ -25,7 +25,7 @@
 
 - type: trait
   id: WillToDie
-  category: Physical
+  category: TraitsPhysicalDisabilities
   points: 2
   requirements:
     - !type:CharacterJobRequirement
@@ -49,7 +49,7 @@
 
 - type: trait
   id: Tenacity
-  category: Physical
+  category: TraitsPhysicalFeats
   points: -4
   requirements:
     - !type:CharacterJobRequirement
@@ -74,7 +74,7 @@
 
 - type: trait
   id: GlassJaw
-  category: Physical
+  category: TraitsPhysicalDisabilities
   points: 2
   requirements:
     - !type:CharacterJobRequirement
@@ -98,7 +98,7 @@
 
 - type: trait
   id: Vigor
-  category: Physical
+  category: TraitsPhysicalFeats
   points: -6
   requirements:
     - !type:CharacterJobRequirement
@@ -124,7 +124,7 @@
 
 - type: trait
   id: Lethargy
-  category: Physical
+  category: TraitsPhysicalDisabilities
   points: 4
   requirements:
     - !type:CharacterJobRequirement
@@ -150,7 +150,7 @@
 
 - type: trait
   id: HighAdrenaline
-  category: Physical
+  category: TraitsPhysicalFeats
   points: -5
   requirements:
     - !type:CharacterJobRequirement
@@ -175,7 +175,7 @@
 
 - type: trait
   id: AdrenalDysfunction
-  category: Physical
+  category: TraitsPhysicalDisabilities
   points: 3
   requirements:
     - !type:CharacterJobRequirement
@@ -199,7 +199,7 @@
 
 - type: trait
   id: Masochism
-  category: Physical
+  category: TraitsPhysicalFeats
   points: -5
   requirements:
     - !type:CharacterJobRequirement
@@ -220,7 +220,7 @@
 
 - type: trait
   id: LowPainTolerance
-  category: Physical
+  category: TraitsPhysicalDisabilities
   points: 3
   requirements:
     - !type:CharacterJobRequirement
@@ -240,7 +240,7 @@
 
 - type: trait
   id: Steadfast
-  category: Physical
+  category: TraitsPhysicalFeats
   points: -4
   requirements:
     - !type:CharacterJobRequirement
@@ -264,7 +264,7 @@
 
 - type: trait
   id: Feeble
-  category: Physical
+  category: TraitsPhysicalDisabilities
   points: 3
   requirements:
     - !type:CharacterJobRequirement
@@ -288,7 +288,7 @@
 
 - type: trait
   id: MartialArtist
-  category: Physical
+  category: TraitsPhysicalFeats
   points: -5
   requirements:
   - !type:CharacterJobRequirement
@@ -321,7 +321,7 @@
 
 - type: trait
   id: Small
-  category: Physical
+  category: TraitsPhysicalBiological
   points: -2
   requirements:
     - !type:CharacterSpeciesRequirement
@@ -346,7 +346,7 @@
 
 - type: trait
   id: TemperatureTolerance
-  category: Physical
+  category: TraitsPhysicalBiological
   points: -1
   requirements:
     - !type:CharacterSpeciesRequirement
@@ -354,6 +354,7 @@
       species:
         - Vulpkanin # This trait functions exactly as-is for the Vulpkanin trait.
         - Plasmaman # Plasmamen have cold immunity so this trait is unnecessary
+        - Resomi # Get this as a species trait
   functions:
     - !type:TraitReplaceComponent
       components:
@@ -365,7 +366,7 @@
 # When declared, componentRemovals work like a "RemComp" that activates upon joining a round.
 - type: trait
   id: Talons
-  category: Physical
+  category: TraitsPhysicalBiological
   points: -1
   requirements:
     - !type:CharacterSpeciesRequirement
@@ -398,7 +399,7 @@
 
 - type: trait
   id: Claws
-  category: Physical
+  category: TraitsPhysicalBiological
   points: -1
   requirements:
     - !type:CharacterSpeciesRequirement
@@ -410,6 +411,7 @@
         - Shadowkin # Shadowkins also have claws.
         # - Vulpkanin # Vulpkanin have "Blunt" claws. One could argue this trait "Sharpens" their claws.
         - Rodentia # Floof - Rodentia already has it
+        - Resomi # Resomi get these. Space raptors.
     - !type:CharacterTraitRequirement
       inverted: true
       traits:
@@ -433,7 +435,7 @@
 
 - type: trait
   id: NaturalWeaponRemoval
-  category: Physical
+  category: TraitsPhysicalBiological
   points: 0
   requirements:
     - !type:CharacterSpeciesRequirement
@@ -471,7 +473,7 @@
 
 - type: trait
   id: StrikingCalluses
-  category: Physical
+  category: TraitsPhysicalFeats
   points: -3
   requirements:
     - !type:CharacterJobRequirement
@@ -523,7 +525,7 @@
 
 - type: trait
   id: Spinarette
-  category: Physical
+  category: TraitsPhysicalAugmentations
   points: -3
   requirements:
     - !type:CharacterJobRequirement
@@ -552,7 +554,7 @@
 
 - type: trait
   id: BionicArm
-  category: Physical
+  category: TraitsPhysicalAugmentations
   points: -6
   requirements:
     - !type:CharacterJobRequirement
@@ -579,7 +581,7 @@
 
 - type: trait
   id: PlateletFactories
-  category: Physical
+  category: TraitsPhysicalAugmentations
   points: -10
   requirements:
     - !type:CharacterJobRequirement
@@ -608,7 +610,7 @@
 
 - type: trait
   id: DermalArmor
-  category: Physical
+  category: TraitsPhysicalAugmentations
   points: -6
   requirements:
     - !type:CharacterJobRequirement
@@ -627,7 +629,7 @@
 
 - type: trait
   id: CyberEyes
-  category: Physical
+  category: TraitsPhysicalAugmentations
   points: -4
   requirements:
     - !type:CharacterJobRequirement
@@ -657,7 +659,7 @@
 
 - type: trait
   id: FlareShielding
-  category: Physical
+  category: TraitsPhysicalAugmentations
   points: -4
   requirements:
     - !type:CharacterDepartmentRequirement
@@ -675,7 +677,7 @@
 
 - type: trait
   id: CyberEyesSecurity
-  category: Physical
+  category: TraitsPhysicalAugmentations
   points: -1
   requirements:
     - !type:CharacterJobRequirement
@@ -703,7 +705,7 @@
 
 - type: trait
   id: CyberEyesMedical
-  category: Physical
+  category: TraitsPhysicalAugmentations
   points: -2
   requirements:
     - !type:CharacterJobRequirement
@@ -731,7 +733,7 @@
 
 - type: trait
   id: CyberEyesDiagnostic
-  category: Physical
+  category: TraitsPhysicalAugmentations
   points: -2
   requirements:
     - !type:CharacterJobRequirement
@@ -757,7 +759,7 @@
 
 - type: trait
   id: CyberEyesOmni
-  category: Physical
+  category: TraitsPhysicalAugmentations
   points: -3
   requirements:
     - !type:CharacterJobRequirement
@@ -798,7 +800,7 @@
 
 - type: trait
   id: Redshirt
-  category: Physical
+  category: TraitsPhysicalDisabilities
   points: 8
   requirements:
     - !type:CharacterJobRequirement
@@ -822,7 +824,7 @@
 
 - type: trait
   id: BrittleBoneDisease
-  category: Physical
+  category: TraitsPhysicalDisabilities
   points: 10
   requirements:
     - !type:CharacterJobRequirement
@@ -846,7 +848,7 @@
 
 - type: trait
   id: LightAmplification
-  category: Physical
+  category: TraitsPhysicalAugmentations
   points: -4
   requirements:
     - !type:CharacterJobRequirement
@@ -863,7 +865,7 @@
 
 - type: trait
   id: ThermographicVision
-  category: Physical
+  category: TraitsPhysicalAugmentations
   points: -4
   requirements:
     - !type:CharacterJobRequirement
@@ -887,7 +889,7 @@
 
 - type: trait
   id: NaniteAutoRepairBots
-  category: Physical
+  category: TraitsPhysicalAugmentations
   points: -10
   requirements:
     - !type:CharacterJobRequirement
@@ -914,7 +916,7 @@
 
 - type: trait
   id: BionicLeg
-  category: Physical
+  category: TraitsPhysicalAugmentations
   points: -8
   requirements:
     - !type:CharacterJobRequirement
@@ -948,7 +950,7 @@
 
 - type: trait
   id: FlareShieldingModule
-  category: Physical
+  category: TraitsPhysicalAugmentations
   points: -4
   requirements:
     - !type:CharacterDepartmentRequirement
@@ -973,7 +975,7 @@
 
 - type: trait
   id: SecurityEyesModule
-  category: Physical
+  category: TraitsPhysicalAugmentations
   points: -1
   requirements:
     - !type:CharacterJobRequirement
@@ -1001,7 +1003,7 @@
 
 - type: trait
   id: MedicalEyesModule
-  category: Physical
+  category: TraitsPhysicalAugmentations
   points: -2
   requirements:
     - !type:CharacterJobRequirement
@@ -1029,7 +1031,7 @@
 
 - type: trait
   id: DiagnosticEyesModule
-  category: Physical
+  category: TraitsPhysicalAugmentations
   points: -2
   requirements:
     - !type:CharacterJobRequirement
@@ -1055,7 +1057,7 @@
 
 - type: trait
   id: OmniEyesModule
-  category: Physical
+  category: TraitsPhysicalAugmentations
   points: -3
   requirements:
     - !type:CharacterJobRequirement
@@ -1099,7 +1101,7 @@
 
 - type: trait
   id: LightAmplificationModule
-  category: Physical
+  category: TraitsPhysicalAugmentations
   points: -4
   requirements:
     - !type:CharacterJobRequirement
@@ -1116,7 +1118,7 @@
 
 - type: trait
   id: ThermographicVisionModule
-  category: Physical
+  category: TraitsPhysicalAugmentations
   points: -4
   requirements:
     - !type:CharacterJobRequirement
@@ -1140,7 +1142,7 @@
 
 # - type: trait
 #   id: Bulky
-#   category: Physical
+#   category: TraitsPhysicalBiological
 #   points: -6
 #   requirements:
 #     - !type:CharacterTraitRequirement
@@ -1159,7 +1161,7 @@
 
 # - type: trait
 #   id: Featherweight
-#   category: Physical
+#   category: TraitsPhysicalBiological
 #   points: 3
 #   requirements:
 #     - !type:CharacterTraitRequirement
@@ -1178,7 +1180,7 @@
 
 - type: trait
   id: Bodybuilder
-  category: Physical
+  category: TraitsPhysicalFeats
   points: -6
   requirements:
     - !type:CharacterTraitRequirement
@@ -1202,7 +1204,7 @@
 
 - type: trait
   id: Weakling
-  category: Physical
+  category: TraitsPhysicalDisabilities
   points: 3
   requirements:
     - !type:CharacterTraitRequirement
@@ -1226,7 +1228,7 @@
 
 - type: trait
   id: Vampirism # You may port this to EE, you have my permission!
-  category: Physical
+  category: TraitsPhysicalBiological
   points: -3
   requirements:
     - !type:CharacterJobRequirement
@@ -1252,7 +1254,7 @@
 # Commented out upon request for the time being
 #- type: trait
 #  id: EggLaying
-#  category: Physical
+#  category: TraitsPhysicalBiological
 #  points: 0
 #  requirements:
 #  - !type:CharacterJobRequirement
@@ -1266,3 +1268,17 @@
 #        - type: EggLayer
 #          eggSpawn:
 #            - id: ItemEggTrait
+
+- type: trait # Based on Cosmatic Drift's Synth trait
+  id: Synthetic
+  category: TraitsPhysicalBiological
+  points: -2 # Can detect ion storms, poison blood
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - IPC
+  functions:
+    - !type:TraitAddComponent
+      components:
+        - type: Synth

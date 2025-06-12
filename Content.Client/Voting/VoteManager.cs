@@ -139,6 +139,7 @@ namespace Content.Client.Voting
                 }
 
                 _voteSource?.Restart();
+
                 @new = true;
 
                 // Refresh

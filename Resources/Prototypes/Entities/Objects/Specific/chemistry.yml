@@ -290,6 +290,9 @@
     toggleState: 1 # draw
   - type: ExaminableSolution
     solution: dropper
+  - type: Tag
+    tags:
+    - Dropper
   - type: UserInterface
     interfaces:
       enum.TransferAmountUiKey.Key:
@@ -353,6 +356,8 @@
         maxVol: 15
   - type: FillableOneTimeInjector
     transferAmount: 15
+    maxTransferAmount: 15
+    delay: 1
     toggleState: Draw
   - type: ExaminableSolution
     solution: injector
@@ -422,13 +427,7 @@
     - Syringe
     - Trash
 
-- type: entity
-  parent: BaseSyringe
-  id: PrefilledSyringe
-  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
-  components:
-  - type: Injector
-    toggleState: Inject
+# moved prefilled syringes to syringes.yml
 
 - type: entity
   id: SyringeBluespace

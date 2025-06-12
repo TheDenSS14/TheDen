@@ -15,6 +15,12 @@
 - type: traitCategory
   id: Physical
   root: true
+  subCategories:
+    - TraitsPhysicalUncategorized
+    - TraitsPhysicalFeats
+    - TraitsPhysicalDisabilities
+    - TraitsPhysicalBiological
+    - TraitsPhysicalAugmentations
 
 - type: traitCategory
   id: Speech
@@ -23,6 +29,7 @@
     - TraitsSpeechUncategorized
     - TraitsSpeechAccents
     - TraitsSpeechLanguages
+    - TraitsSpeechSounds
 
 - type: traitCategory
   id: TraitsSpeechUncategorized
@@ -34,9 +41,27 @@
   id: TraitsSpeechLanguages
 
 - type: traitCategory
+  id: TraitsSpeechSounds
+
+- type: traitCategory
   id: Visual
   root: true
 
 - type: traitCategory
   id: Language
   root: true
+
+- type: traitCategory
+  id: TraitsPhysicalUncategorized
+
+- type: traitCategory
+  id: TraitsPhysicalFeats
+
+- type: traitCategory
+  id: TraitsPhysicalDisabilities
+
+- type: traitCategory
+  id: TraitsPhysicalBiological
+
+- type: traitCategory
+  id: TraitsPhysicalAugmentations

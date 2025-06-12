@@ -116,6 +116,8 @@
       collection: Snores
     Sigh:
       collection: MaleSigh
+    Trill:
+      collection: MaleTrill
 
 - type: emoteSounds
   id: FemaleReptilian
@@ -158,6 +160,8 @@
       collection: Snores
     Sigh:
       collection: FemaleSigh
+    Trill:
+      collection: FemaleTrill
 
 - type: emoteSounds
   id: MaleSlime
@@ -805,7 +809,7 @@
       path: /Audio/Voice/Diona/diona_salute.ogg
       params:
        volume: -5
-       
+
 - type: emoteSounds
   id: ReptilianBodyEmotes
   sounds:

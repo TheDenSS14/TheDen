@@ -3,6 +3,7 @@ using System.Linq;
 using Content.Shared.Chat;
 using Content.Shared.Chat.Prototypes;
 using Content.Shared.Speech;
+using Robust.Shared.Audio;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 
@@ -65,6 +66,7 @@ public partial class ChatSystem
     {
         if (!_prototypeManager.TryIndex<EmotePrototype>(emoteId, out var proto))
             return;
+
         TryEmoteWithChat(source, proto, range, hideLog: hideLog, nameOverride, ignoreActionBlocker: ignoreActionBlocker, forceEmote: forceEmote);
     }
 
@@ -158,6 +160,22 @@ public partial class ChatSystem
         _audio.PlayPvs(sound, uid, param);
         return true;
     }
+
+    /// <summary>
+    ///     Tries to find and play relevant emote sound in emote sounds collection.
+    /// </summary>
+    /// <returns>True if emote sound was played.</returns>
+    public bool TryPlayEmoteSound(EntityUid uid, Dictionary<string, SoundSpecifier> sounds, string emoteId, AudioParams? audioParams = null)
+    {
+        // try to get specific sound for this emote
+        if (!sounds.TryGetValue(emoteId, out var sound))
+            return false;
+
+        // if general params for all sounds set - use them
+        _audio.PlayPvs(sound, uid, audioParams ?? sound.Params);
+        return true;
+    }
+
     /// <summary>
     /// Checks if a valid emote was typed, to play sounds and etc and invokes an event.
     /// </summary>

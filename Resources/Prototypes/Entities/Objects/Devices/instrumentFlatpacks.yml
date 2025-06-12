@@ -49,12 +49,12 @@
 
 - type: entity
   parent: InstrumentFlatpack
-  id: ChurchOrganFlatpack
-  name: church organ flatpack
-  description: A flatpack used for constructing a church organ.
+  id: PipeOrganFlatpack
+  name: pipe organ flatpack
+  description: A flatpack used for constructing a pipe organ.
   components:
   - type: Flatpack
-    entity: ChurchOrganInstrument
+    entity: PipeOrganInstrument
 
 - type: entity
   parent: InstrumentFlatpack

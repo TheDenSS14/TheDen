@@ -86,6 +86,25 @@
   items:
     - ClothingBeltMilitaryWebbing
 
+- type: loadout
+  id: LoadoutSalvageBeltKatanaSheath
+  category: JobsLogisticsSalvageSpecialist
+  cost: 0
+  customColorTint: true
+  exclusive: true
+  canBeHeirloom: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSalvageSpecialistBelt
+    - !type:CharacterJobRequirement
+      jobs:
+        - SalvageSpecialist
+    - !type:CharacterPlaytimeRequirement
+      tracker: JobSalvageSpecialist
+      min: 36000 # 10 hours
+  items:
+    - ClothingBeltKatanaSheathSingle
+
 # Ears
 
 # Equipment

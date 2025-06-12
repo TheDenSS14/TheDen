@@ -1,6 +1,6 @@
 - type: trait
   id: FastMetabolism
-  category: Physical
+  category: TraitsPhysicalBiological
   points: 2
   requirements:
     - !type:CharacterJobRequirement
@@ -20,4 +20,4 @@
     - !type:TraitReplaceComponent
       components:
         - type: Hunger
-          baseDecayRate: 0.0221666666
+          baseDecayRate: 0.005
