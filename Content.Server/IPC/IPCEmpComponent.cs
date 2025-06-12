@@ -2,7 +2,7 @@ using Robust.Shared.GameStates;
 
 namespace Content.Server.Ipc;
 
-[RegisterComponent, NetworkedComponent, AutoGenerateComponentState]
+[RegisterComponent, NetworkedComponent]
 public sealed partial class IpcEmpComponent : Component
 {
     [DataField, AutoNetworkedField]
