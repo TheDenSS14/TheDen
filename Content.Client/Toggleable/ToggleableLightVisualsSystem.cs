@@ -66,7 +66,11 @@ public sealed class ToggleableLightVisualsSystem : VisualizerSystem<ToggleableLi
         List<PrototypeLayerData>? layers = null;
 
         if (TryComp(args.Equipee, out InventoryComponent? inventory))
+        {
+            if (inventory.SpeciesId == null)
+                return;
             component.ClothingVisuals.TryGetValue($"{args.Slot}-{inventory.SpeciesId}", out layers);
+        }
 
         if (layers == null && !component.ClothingVisuals.TryGetValue(args.Slot, out layers))
             return;
