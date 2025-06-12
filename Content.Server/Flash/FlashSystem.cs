@@ -157,7 +157,7 @@ namespace Content.Server.Flash
                     ("user", Identity.Entity(user.Value, EntityManager))), target, target);
             }
 
-            if (HasComp<FlashSoundSuppressionComponent>(target))
+            if (HasComp<FlashSoundSuppressionComponent>(target) && HasComp<FlashImmunityComponent>(target))
                 return;
 
             if (stunDuration != null)
