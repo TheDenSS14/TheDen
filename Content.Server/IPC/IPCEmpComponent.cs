@@ -1,11 +1,9 @@
-using Robust.Shared.GameStates;
-
 namespace Content.Server.Ipc;
 
-[RegisterComponent, NetworkedComponent]
+[RegisterComponent]
 public sealed partial class IpcEmpComponent : Component
 {
-    [DataField, AutoNetworkedField]
+    [DataField]
     public bool Disabled = false;
 
     [DataField]
