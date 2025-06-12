@@ -25,22 +25,6 @@
 
 - type: entity
   categories: [ HideSpawnMenu ]
-  parent: ClothingBackpackBrigmedic
-  id: ClothingBackpackBrigmedicFilled
-  components:
-  - type: StorageFill
-    contents:
-      - id: EmergencyRollerBedSpawnFolded
-      - id: BodyBagFolded
-      - id: Portafib
-      - id: BruteAutoInjector
-        amount: 2
-      - id: BurnAutoInjector
-        amount: 2
-      - id: MagazinePistol
-
-- type: entity
-  categories: [ HideSpawnMenu ]
   parent: ClothingBackpackSecurity
   id: ClothingBackpackSecurityFilledDetective
   components:
