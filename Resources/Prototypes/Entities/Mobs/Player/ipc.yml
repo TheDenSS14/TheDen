@@ -13,6 +13,7 @@
         name: power-cell-slot-component-slot-name-default
         startingItem: PowerCellIPC
         disableEject: true
+        insertOnInteract: false
   - type: EncryptionHolderRequiresLock
   - type: SiliconEmitSoundOnDrained
     sound: "/Audio/Weapons/Guns/EmptyAlarm/smg_empty_alarm.ogg"
