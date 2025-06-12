@@ -89,7 +89,6 @@ public sealed partial class LanguageSystem : SharedLanguageSystem
             if (target != null && HasComp<PsionicInsulationComponent>(target) && !HasComp<GhostComponent>(ent))
                 return canRegularlyUnderstand;
 
-            _sawmill.Info("not insulated");
             return true;
         }
 

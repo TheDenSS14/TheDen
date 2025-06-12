@@ -1,5 +1,6 @@
 using Content.Client.Atmos.EntitySystems;
 using Content.Shared._DEN.Timestring;
+using Content.Shared.Administration;
 using Content.Shared.Atmos;
 using Content.Shared.GameTicking;
 using JetBrains.Annotations;
@@ -7,7 +8,7 @@ using Robust.Shared.Console;
 
 namespace Content.Client._DEN.Timer;
 
-[UsedImplicitly]
+[AnyCommand]
 internal sealed class TimerCommand : LocalizedCommands
 {
     [Dependency] private readonly IEntitySystemManager _sysManager = default!;

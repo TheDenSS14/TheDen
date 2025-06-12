@@ -579,6 +579,23 @@ namespace Content.Shared.Chemistry.Components
 
             return sol;
         }
+
+        public Solution SplitSolutionWithout(FixedPoint2 toTake, IEnumerable<ReagentId> excludedPrototypes)
+        {
+            var excluded = excludedPrototypes
+                .Select(reagentId => reagentId.Prototype)
+                .ToArray();
+            return SplitSolutionWithout(toTake, excluded);
+        }
+
+        public Solution SplitSolutionWithout(FixedPoint2 toTake, IEnumerable<ProtoId<ReagentPrototype>> excludedPrototypes)
+        {
+            var excluded = excludedPrototypes
+                .Select(protoId => protoId.ToString())
+                .ToArray();
+            return SplitSolutionWithout(toTake, excluded);
+        }
+
         /// <summary>
         /// splits the solution taking the specified amount of reagents proportionally to their quantity.
         /// </summary>
@@ -607,6 +624,22 @@ namespace Content.Shared.Chemistry.Components
             }
 
             return sol;
+        }
+
+        public Solution SplitSolutionWithOnly(FixedPoint2 toTake, IEnumerable<ReagentId> includedPrototypes)
+        {
+            var included = includedPrototypes
+                .Select(reagentId => reagentId.Prototype)
+                .ToArray();
+            return SplitSolutionWithout(toTake, included);
+        }
+
+        public Solution SplitSolutionWithOnly(FixedPoint2 toTake, IEnumerable<ProtoId<ReagentPrototype>> includedPrototypes)
+        {
+            var included = includedPrototypes
+                .Select(protoId => protoId.ToString())
+                .ToArray();
+            return SplitSolutionWithOnly(toTake, included);
         }
 
         public Solution SplitSolution(FixedPoint2 toTake)

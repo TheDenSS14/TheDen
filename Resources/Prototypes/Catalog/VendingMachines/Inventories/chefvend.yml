@@ -1,21 +1,30 @@
 - type: vendingMachineInventory
   id: ChefvendInventory
   startingInventory:
-    ReagentContainerFlour: 2
-    ReagentContainerCornmeal: 2
-    ReagentContainerSugar: 2
-    ReagentContainerRice: 2
-    FoodCondimentPacketSalt: 4
-    FoodCondimentBottleEnzyme: 2
-    FoodCondimentBottleHotsauce: 1
-    FoodCondimentBottleKetchup: 1
-    FoodCondimentBottleBBQ: 1
-    FoodCondimentBottleSyrup: 1
-    FoodCondimentBottleVinegar: 2
-    ReagentContainerOliveoil: 2
-    ReagentContainerMayo: 1
-    VariantCubeBox: 1
-    FoodContainerEgg: 2 # DeltaV - more eggs
+    ReagentContainerFlour: 5 # Frontier - 2<5
+    ReagentContainerCornmeal: 5 # Frontier - 2<5
+    ReagentContainerSugar: 5 # Frontier - 2<5
+    ReagentContainerRice: 5 # Frontier - 2<5
+    ReagentContainerRaisin: 5 # Frontier
+    ReagentContainerChocolate: 5 # Frontier
+#    FoodCondimentPacketSalt: 4 # Frontier - Replaced with big salt
+    ReagentContainerSalt: 5 # Frontier
+    ReagentContainerPepper: 5 # Frontier
+    FoodCondimentBottleEnzyme: 5 # Frontier 2<5
+    FoodCondimentBottleHotsauce: 2
+    FoodCondimentBottleKetchup: 2
+    FoodCondimentBottleBBQ: 2
+    FoodCondimentBottleVinegar: 5  # Frontier 2<5
+    FoodCondimentBottleSoysauce: 5 # Frontier    
+#    ReagentContainerOliveoil: 2 # Frontier - Replaced with OilJarOlive
+    ReagentContainerMayo: 2
+    OilJarOlive: 1 # Frontier
+    OilJarCorn: 1 # Frontier
+    OilJarGhee: 1 # Frontier
+    #VariantCubeBox: 3 # Frontier
+    MonkeyCubeBox: 2 # Frontier
+    KoboldCubeBox: 2 # Frontier
+    FoodContainerEgg: 3
     DrinkMilkCarton: 2
     DrinkSoyMilkCarton: 1
     BoxChocolateBar: 1 # Floof
@@ -24,6 +33,3 @@
     FoodCheese: 1
     FoodMeat: 6
     LunchboxGenericFilledRandom: 5 # Delta-V Adds Lunchbox
-    ReagentContainerSalt: 1 # DeltaV adds big containers
-    ReagentContainerPepper: 1 # DeltaV adds big containers
-    ReagentContainerChocolate: 1 # DeltaV adds big containers

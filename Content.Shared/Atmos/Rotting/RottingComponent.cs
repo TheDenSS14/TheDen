@@ -1,3 +1,4 @@
+using Content.Shared._DEN.Chemistry;
 using Content.Shared.Damage;
 using Robust.Shared.GameStates;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom;
@@ -9,7 +10,7 @@ namespace Content.Shared.Atmos.Rotting;
 /// Only the current stage is networked to the client.
 /// </summary>
 [RegisterComponent, NetworkedComponent, AutoGenerateComponentPause]
-[Access(typeof(SharedRottingSystem))]
+[Access(typeof(SharedRottingSystem), typeof(SharedReplaceSolutionSystem))]
 public sealed partial class RottingComponent : Component
 {
     /// <summary>

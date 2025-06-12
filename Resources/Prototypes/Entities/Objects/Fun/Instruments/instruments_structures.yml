@@ -44,15 +44,15 @@
     state: marimba
 
 - type: entity
-  name: church organ
+  name: pipe organ
   parent: BasePlaceableInstrumentRotatable
-  id: ChurchOrganInstrument
+  id: PipeOrganInstrument
   description: This thing really blows!
   components:
   - type: Instrument
     program: 19
   - type: Sprite
-    state: church-organ
+    state: pipe-organ
 
 - type: entity
   name: tuba

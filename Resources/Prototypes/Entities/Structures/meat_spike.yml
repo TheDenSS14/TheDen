@@ -42,6 +42,10 @@
   - type: Transform
     noRot: true
   - type: KitchenSpike
+  - type: ContainerContainer
+    containers:
+      spike: !type:Container
+        ents: []
   - type: Anchorable
   - type: Pullable
   - type: Appearance

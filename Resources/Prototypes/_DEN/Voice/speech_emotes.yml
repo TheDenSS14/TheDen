@@ -44,3 +44,23 @@
     - bahs
     - bahed
     - bah'd
+
+# Unathi
+- type: emote
+  id: Trill
+  name: chat-emote-name-trill
+  category: Vocal
+  available: false
+  icon: Interface/Emotes/weh.png
+  whitelist:
+    tags:
+    - HarpyEmotes
+    - UnathiEmotes
+  blacklist:
+    components:
+    - BorgChassis
+  chatMessages: [ trills ]
+  chatTriggers:
+    - trill
+    - trills
+    - trilled
