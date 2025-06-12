@@ -1,4 +1,5 @@
 using System.Linq;
+using Content.Server._Goobstation.Flashbang;
 using Content.Server.Flash.Components;
 using Content.Shared.Flash.Components;
 using Content.Server.Light.EntitySystems;
@@ -156,7 +157,7 @@ namespace Content.Server.Flash
                     ("user", Identity.Entity(user.Value, EntityManager))), target, target);
             }
 
-            if (HasComp<FlashImmunityComponent>(target))
+            if (HasComp<FlashSoundSuppressionComponent>(target))
                 return;
 
             if (stunDuration != null)
