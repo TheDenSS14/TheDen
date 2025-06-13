@@ -5,8 +5,8 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
-    sprite: _White/BloodCult/actions.rsi
-    state: transmute
+    sprite: Objects/Specific/Chemistry/syringe.rsi
+    state: "syringe_base0"
   - type: EntityTargetAction
     checkCanAccess: true
     range: 1.5
@@ -23,6 +23,6 @@
       components:
       - Silicon
     icon:
-      sprite: _White/BloodCult/actions.rsi
-      state: transmute
+      sprite: Objects/Specific/Chemistry/syringe.rsi
+      state: "syringe_base0"
     event: !type:MedibotInjectTargetEvent
