@@ -1,0 +1,17 @@
+- type: entity
+  parent: BaseItem
+  id: MedibotInjector
+  name: medibot syringe
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      medicine:
+        maxVol: 30
+  - type: ExaminableSolution
+    solution: medicine
+  - type: Hypospray
+    solutionName: medicine
+    transferAmount: 15
+    onlyAffectsMobs: true
+    injectOnly: true

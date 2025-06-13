@@ -1,0 +1,28 @@
+- type: entity
+  id: ActionMedibotInject
+  name: Inject
+  description: Inject a target with medicinal chemicals.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _White/BloodCult/actions.rsi
+    state: transmute
+  - type: EntityTargetAction
+    checkCanAccess: true
+    range: 1.5
+    itemIconStyle: BigAction
+    canTargetSelf: false
+    interactOnMiss: false
+    whitelist:
+      requireAll: true
+      components:
+      - InjectableSolution
+      - MobStateComponent
+    blacklist:
+      components:
+      - NPCRecentlyInjectedComponent
+      - SiliconComponent
+    icon:
+      sprite: _White/BloodCult/actions.rsi
+      state: transmute
+    event: !type:MedibotInjectTargetEvent
