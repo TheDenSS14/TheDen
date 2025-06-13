@@ -2,6 +2,7 @@ using Content.Server.Actions;
 using Content.Server.Chat.Systems;
 using Content.Server.Chemistry.EntitySystems;
 using Content.Server.NPC.Components;
+using Content.Server.Popups;
 using Content.Shared._DEN.Silicons.Bots.Components;
 using Content.Shared.Chat;
 using Content.Shared.Chemistry.Components;
@@ -12,6 +13,7 @@ using Content.Shared.Damage;
 using Content.Shared.DoAfter;
 using Content.Shared.Emag.Components;
 using Content.Shared.Emag.Systems;
+using Content.Shared.IdentityManagement;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Silicons.Borgs.Components;
 using Content.Shared.Silicons.Bots;
@@ -27,6 +29,7 @@ public sealed class MedibotSystem : SharedMedibotSystem
     [Dependency] private readonly ChatSystem _chat = default!;
     [Dependency] private readonly SharedContainerSystem _container = default!;
     [Dependency] private readonly HypospraySystem _hypospray = default!;
+    [Dependency] private readonly PopupSystem _popup = default!;
     [Dependency] private readonly SharedSolutionContainerSystem _solutionContainer = default!;
 
     public override void Initialize()
@@ -118,10 +121,14 @@ public sealed class MedibotSystem : SharedMedibotSystem
                 hideChat: true,
                 hideLog: true);
 
+
         var hyposprayEnt = new Entity<HyposprayComponent>(injectorId.Value, hypospray);
         _solutionContainer.RemoveAllSolution(injectorSolution.Value);
         _solutionContainer.TryAddReagent(injectorSolution.Value, treatment.Reagent, treatment.Quantity, out _);
+
+        _popup.PopupEntity(Loc.GetString("injector-component-injecting-user"), target, uid);
         _hypospray.TryDoInject(hyposprayEnt, target, uid, DuplicateConditions.SameEvent);
+
         return true;
     }
 
