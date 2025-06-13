@@ -125,6 +125,7 @@
     - RobotTalk
   - type: PsionicInsulation
   - type: LeashAnchor # Floofstation
+  - type: Examiner
 
 - type: entity
   parent: MobSiliconBase
@@ -279,6 +280,8 @@
   description: No substitute for a doctor, but better than nothing.
   components:
   - type: Medibot
+    injectorProto: MedibotInjector
+    injectActionId: ActionMedibotInject
     treatments:
       Alive:
         reagent: Tricordrazine
@@ -307,6 +310,7 @@
   - type: Construction
     graph: MediBot
     node: bot
+  - type: DoAfter
   - type: NoSlip
   - type: SentienceTarget
     flavorKind: station-event-random-sentience-flavor-mechanical

@@ -10,6 +10,7 @@
   - type: EntityTargetAction
     checkCanAccess: true
     range: 1.5
+    useDelay: 5
     itemIconStyle: BigAction
     canTargetSelf: false
     interactOnMiss: false
@@ -17,11 +18,10 @@
       requireAll: true
       components:
       - InjectableSolution
-      - MobStateComponent
+      - MobState
     blacklist:
       components:
-      - NPCRecentlyInjectedComponent
-      - SiliconComponent
+      - Silicon
     icon:
       sprite: _White/BloodCult/actions.rsi
       state: transmute

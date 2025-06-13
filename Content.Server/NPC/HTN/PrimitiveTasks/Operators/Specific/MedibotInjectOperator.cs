@@ -17,7 +17,7 @@ public sealed partial class MedibotInjectOperator : HTNOperator
 {
     [Dependency] private readonly IEntityManager _entMan = default!;
     private ChatSystem _chat = default!;
-    private MedibotSystem _medibot = default!;
+    private SharedMedibotSystem _medibot = default!;
     private SharedAudioSystem _audio = default!;
     private SharedInteractionSystem _interaction = default!;
     private SharedPopupSystem _popup = default!;
@@ -33,7 +33,7 @@ public sealed partial class MedibotInjectOperator : HTNOperator
     {
         base.Initialize(sysManager);
         _chat = sysManager.GetEntitySystem<ChatSystem>();
-        _medibot = sysManager.GetEntitySystem<MedibotSystem>();
+        _medibot = sysManager.GetEntitySystem<SharedMedibotSystem>();
         _audio = sysManager.GetEntitySystem<SharedAudioSystem>();
         _interaction = sysManager.GetEntitySystem<SharedInteractionSystem>();
         _popup = sysManager.GetEntitySystem<SharedPopupSystem>();

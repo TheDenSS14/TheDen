@@ -4,5 +4,6 @@ using Content.Shared.Magic;
 
 namespace Content.Shared.Silicons.Bots;
 
+[ByRefEvent]
 public sealed partial class MedibotInjectTargetEvent : EntityTargetActionEvent
 { }
