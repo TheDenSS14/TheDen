@@ -27,7 +27,4 @@ public sealed partial class ActiveRadioComponent : Component
     /// </summary>
     [DataField("globalReceive")]
     public bool GlobalReceive = false;
-
-    [DataField("enabled")]
-    public bool Enabled = true;
 }

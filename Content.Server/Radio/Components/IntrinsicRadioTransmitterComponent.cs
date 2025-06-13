@@ -14,7 +14,4 @@ public sealed partial class IntrinsicRadioTransmitterComponent : Component
 {
     [DataField("channels", customTypeSerializer: typeof(PrototypeIdHashSetSerializer<RadioChannelPrototype>))]
     public HashSet<string> Channels = new() { SharedChatSystem.CommonChannel };
-
-    [DataField("enabled")]
-    public bool Enabled = true;
 }
