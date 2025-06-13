@@ -15,7 +15,7 @@ public sealed partial class ThirstComponent : Component
     [ViewVariables(VVAccess.ReadWrite)]
     [DataField("baseDecayRate")]
     [AutoNetworkedField]
-    public float BaseDecayRate = 150.0f / (35 * 60); // One tier every 35 minutes
+    public float BaseDecayRate = 150.0f / (40 * 60); // One tier every 40 minutes
 
     /// <summary>
     /// A flat multiplier applied to BaseDecayRate.
