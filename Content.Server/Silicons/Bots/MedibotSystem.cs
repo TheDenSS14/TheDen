@@ -62,7 +62,7 @@ public sealed class MedibotSystem : SharedMedibotSystem
     private bool TryInjectTarget(EntityUid uid, EntityUid target)
     {
         if (!TryComp<MedibotComponent>(uid, out var medibot)
-            || !HasComp<EmaggedComponent>(uid) && HasComp<NPCRecentlyInjectedComponent>(target)
+            || HasComp<NPCRecentlyInjectedComponent>(target)
             || !TryComp<MobStateComponent>(target, out var state)
             || !TryGetTreatment(medibot, state.CurrentState, out var treatment))
             return false;
