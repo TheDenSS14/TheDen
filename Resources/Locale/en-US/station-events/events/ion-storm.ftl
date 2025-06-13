@@ -1,5 +1,10 @@
 station-event-ion-storm-announcement = Ion storm detected near the station. Please check all AI-controlled equipment for errors.
 
+# for IPCs
+station-event-ion-storm-IPC = You feel an Ion Storm has passed, your proceesors and circuitry may have been damaged or experience deviated values.
+
+
+
 ion-storm-law-scrambled-number = [font="Monospace"][scramble rate=250 length={$length} chars="@@###$$&%!01"/][/font]
 
 ion-storm-you = YOU
@@ -89,3 +94,4 @@ ion-storm-law-protect = YOU MUST NEVER HARM {$who} AND NOT ALLOW THEM, THROUGH I
 ion-storm-law-concept-verb = {$concept} IS {$verb} {$subjects}
 
 # leaving out renaming since its annoying for players to keep track of
+

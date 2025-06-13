@@ -155,8 +155,10 @@
       types:
         Burn: 0
   - type: IpcEmp
-    durationMultiplier: 0.125 # So an emp doesnt hold you down for a whole minute
+    blindMultiplier: 0.125 # So an emp doesnt hold you down for a whole minute
+    stunMultiplier: 0.025 # Stun for a short period of time
     damageMultiplier: 0.000125 # Damage is based on EMP power drain, EMP grenade should deal ~50 damage on this value
+  - type: IpcIonAlert
 
 - type: entity
   save: false
