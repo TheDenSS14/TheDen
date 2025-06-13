@@ -4,10 +4,12 @@ namespace Content.Server.Ipc;
 public sealed partial class IpcEmpComponent : Component
 {
     [DataField]
-    public bool Disabled = false;
-
-    [DataField]
-    public float DurationMultiplier = 1f;
-    [DataField]
     public float DamageMultiplier = 1f;
+    [DataField]
+    public float BlindMultiplier = 1f;
+    [DataField]
+    public float StatusMultiplier = 1f;
+    [DataField]
+    public float StunMultiplier = 1f;
+
 }
