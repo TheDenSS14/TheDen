@@ -1,13 +1,19 @@
 using Content.Server.Actions;
+using Content.Server.Chat.Systems;
 using Content.Server.Chemistry.EntitySystems;
 using Content.Server.NPC.Components;
+using Content.Shared._DEN.Silicons.Bots.Components;
+using Content.Shared.Chat;
 using Content.Shared.Chemistry.Components;
 using Content.Shared.Chemistry.Components.SolutionManager;
 using Content.Shared.Chemistry.EntitySystems;
+using Content.Shared.Chemistry.Hypospray.Events;
+using Content.Shared.Damage;
 using Content.Shared.DoAfter;
 using Content.Shared.Emag.Components;
 using Content.Shared.Emag.Systems;
 using Content.Shared.Mobs.Components;
+using Content.Shared.Silicons.Borgs.Components;
 using Content.Shared.Silicons.Bots;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Containers;
@@ -18,6 +24,7 @@ public sealed class MedibotSystem : SharedMedibotSystem
 {
     [Dependency] private readonly ActionsSystem _actions = default!;
     [Dependency] private readonly SharedAudioSystem _audio = default!;
+    [Dependency] private readonly ChatSystem _chat = default!;
     [Dependency] private readonly SharedContainerSystem _container = default!;
     [Dependency] private readonly HypospraySystem _hypospray = default!;
     [Dependency] private readonly SharedSolutionContainerSystem _solutionContainer = default!;
@@ -28,14 +35,20 @@ public sealed class MedibotSystem : SharedMedibotSystem
 
         SubscribeLocalEvent<MedibotComponent, ComponentStartup>(OnMedibotStartup);
         SubscribeLocalEvent<EmaggableMedibotComponent, GotEmaggedEvent>(OnEmagged);
+        SubscribeLocalEvent<MedibotInjectorComponent, HyposprayDoAfterEvent>(AfterInjected,
+            after: [typeof(HypospraySystem)]);
         SubscribeLocalEvent<MedibotInjectTargetEvent>(OnInjectTarget);
     }
 
     private void OnMedibotStartup(EntityUid uid, MedibotComponent component, ComponentStartup args)
     {
         component.InjectorSlot = _container.EnsureContainer<ContainerSlot>(uid, component.SlotId);
-        if (!EntityManager.TrySpawnInContainer(component.InjectorProto, uid, component.InjectorSlot.ID, out var _))
+        if (!EntityManager.TrySpawnInContainer(component.InjectorProto, uid, component.InjectorSlot.ID,
+            out var injector))
             Log.Error($"Failed to spawn injector {component.InjectorProto} for {ToPrettyString(uid)}!");
+
+        if (TryComp<MedibotInjectorComponent>(injector, out var injectorComp))
+            injectorComp.Medibot = uid;
 
         _actions.AddAction(uid, ref component.InjectActionEntity, component.InjectActionId);
     }
@@ -55,16 +68,41 @@ public sealed class MedibotSystem : SharedMedibotSystem
 
     private void OnInjectTarget(ref MedibotInjectTargetEvent ev)
     {
-        if (!ev.Handled && TryInjectTarget(ev.Performer, ev.Target))
+        if (!ev.Handled && TryInjectTarget(ev.Performer, ev.Target, true))
             ev.Handled = true;
     }
 
-    private bool TryInjectTarget(EntityUid uid, EntityUid target)
+    private void AfterInjected(EntityUid uid, MedibotInjectorComponent injectorComponent,
+        ref HyposprayDoAfterEvent args)
     {
-        if (!TryComp<MedibotComponent>(uid, out var medibot)
-            || HasComp<NPCRecentlyInjectedComponent>(target)
+        if (!args.Handled || injectorComponent.Medibot == null)
+            return;
+
+        _chat.TrySendInGameICMessage(injectorComponent.Medibot.Value,
+            Loc.GetString("medibot-finish-inject"),
+            InGameICChatType.Speak,
+            hideChat: true,
+            hideLog: true);
+    }
+
+    /// <summary>
+    ///     Ensures that the medibot can inject the patient, and then attempts to do so with a DoAfter.
+    /// </summary>
+    /// <param name="entity">The medibot entity performing the injection.</param>
+    /// <param name="target">The ID of the target.</param>
+    /// <param name="sayTheLine">Whether the medibot should say "Hold still, please."</param>
+    /// <returns>Whether or not the DoAfter was started successfully.</returns>
+    public bool TryInjectTarget(Entity<MedibotComponent> entity, EntityUid target, bool sayTheLine = false)
+    {
+        var uid = entity.Owner;
+        var medibot = entity.Comp;
+
+        // TODO: "Error messages" for failed injection attempts
+        if (HasComp<NPCRecentlyInjectedComponent>(target)
             || !TryComp<MobStateComponent>(target, out var state)
-            || !TryGetTreatment(medibot, state.CurrentState, out var treatment))
+            || !TryComp<DamageableComponent>(target, out var damage)
+            || !TryGetTreatment(medibot, state.CurrentState, out var treatment)
+            || !HasComp<EmaggedComponent>(uid) && !treatment.IsValid(damage.TotalDamage))
             return false;
 
         var injectorId = medibot.InjectorSlot.ContainedEntity;
@@ -73,10 +111,37 @@ public sealed class MedibotSystem : SharedMedibotSystem
             || !_solutionContainer.TryGetSolution(injectorId.Value, "injector", out var injectorSolution))
             return false;
 
+        if (sayTheLine)
+            _chat.TrySendInGameICMessage(uid,
+                Loc.GetString("medibot-start-inject"),
+                InGameICChatType.Speak,
+                hideChat: true,
+                hideLog: true);
+
         var hyposprayEnt = new Entity<HyposprayComponent>(injectorId.Value, hypospray);
         _solutionContainer.RemoveAllSolution(injectorSolution.Value);
         _solutionContainer.TryAddReagent(injectorSolution.Value, treatment.Reagent, treatment.Quantity, out _);
         _hypospray.TryDoInject(hyposprayEnt, target, uid, DuplicateConditions.SameEvent);
         return true;
+    }
+
+    /// <summary>
+    ///     Ensures that the medibot can inject the patient, and then attempts to do so with a DoAfter.
+    /// </summary>
+    /// <param name="uid">The ID of the entity performing the injection.</param>
+    /// <param name="target">The ID of the target.</param>
+    /// <param name="sayTheLine">Whether the medibot should say "Hold still, please."</param>
+    /// <param name="medibot">Optional, the MedibotComponent to use.</param>
+    /// <returns>Whether or not the DoAfter was started successfully.</returns>
+    public bool TryInjectTarget(EntityUid uid,
+        EntityUid target,
+        bool sayTheLine = false,
+        MedibotComponent? medibot = null)
+    {
+        if (!Resolve(uid, ref medibot))
+            return false;
+
+        var ent = new Entity<MedibotComponent>(uid, medibot);
+        return TryInjectTarget(ent, target, sayTheLine);
     }
 }

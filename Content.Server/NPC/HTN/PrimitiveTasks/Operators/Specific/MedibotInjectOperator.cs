@@ -1,27 +1,17 @@
-using Content.Server.Chat.Systems;
-using Content.Server.Chemistry.Containers.EntitySystems;
-using Content.Server.NPC.Components;
-using Content.Shared.Chat;
+using Content.Server.Silicons.Bots;
 using Content.Shared.Damage;
 using Content.Shared.Emag.Components;
 using Content.Shared.Interaction;
-using Content.Shared.Mobs.Components;
-using Content.Shared.Popups;
 using Content.Shared.Silicon.Components;
 using Content.Shared.Silicons.Bots;
-using Robust.Shared.Audio.Systems;
 
 namespace Content.Server.NPC.HTN.PrimitiveTasks.Operators.Specific;
 
 public sealed partial class MedibotInjectOperator : HTNOperator
 {
     [Dependency] private readonly IEntityManager _entMan = default!;
-    private ChatSystem _chat = default!;
-    private SharedMedibotSystem _medibot = default!;
-    private SharedAudioSystem _audio = default!;
+    private MedibotSystem _medibot = default!;
     private SharedInteractionSystem _interaction = default!;
-    private SharedPopupSystem _popup = default!;
-    private SolutionContainerSystem _solutionContainer = default!;
 
     /// <summary>
     /// Target entity to inject.
@@ -32,12 +22,8 @@ public sealed partial class MedibotInjectOperator : HTNOperator
     public override void Initialize(IEntitySystemManager sysManager)
     {
         base.Initialize(sysManager);
-        _chat = sysManager.GetEntitySystem<ChatSystem>();
-        _medibot = sysManager.GetEntitySystem<SharedMedibotSystem>();
-        _audio = sysManager.GetEntitySystem<SharedAudioSystem>();
+        _medibot = sysManager.GetEntitySystem<MedibotSystem>();
         _interaction = sysManager.GetEntitySystem<SharedInteractionSystem>();
-        _popup = sysManager.GetEntitySystem<SharedPopupSystem>();
-        _solutionContainer = sysManager.GetEntitySystem<SolutionContainerSystem>();
     }
 
     public override void TaskShutdown(NPCBlackboard blackboard, HTNOperatorStatus status)
@@ -63,30 +49,19 @@ public sealed partial class MedibotInjectOperator : HTNOperator
         if (!_entMan.TryGetComponent<DamageableComponent>(target, out var damage))
             return HTNOperatorStatus.Failed;
 
-        if (!_solutionContainer.TryGetInjectableSolution(target, out var injectable, out _))
-            return HTNOperatorStatus.Failed;
+        var total = damage.TotalDamage;
 
         if (!_interaction.InRangeUnobstructed(owner, target))
             return HTNOperatorStatus.Failed;
-
-        var total = damage.TotalDamage;
 
         // always inject healthy patients when emagged
         if (total == 0 && !_entMan.HasComponent<EmaggedComponent>(owner))
             return HTNOperatorStatus.Failed;
 
-        if (!_entMan.TryGetComponent<MobStateComponent>(target, out var mobState))
+        // FINALLY actually try to perform the injection
+        if (!_medibot.TryInjectTarget(owner, target, false, botComp))
             return HTNOperatorStatus.Failed;
 
-        var state = mobState.CurrentState;
-        if (!_medibot.TryGetTreatment(botComp, mobState.CurrentState, out var treatment) || !treatment.IsValid(total))
-            return HTNOperatorStatus.Failed;
-
-        _entMan.EnsureComponent<NPCRecentlyInjectedComponent>(target);
-        _solutionContainer.TryAddReagent(injectable.Value, treatment.Reagent, treatment.Quantity, out _);
-        _popup.PopupEntity(Loc.GetString("hypospray-component-feel-prick-message"), target, target);
-        _audio.PlayPvs(botComp.InjectSound, target);
-        _chat.TrySendInGameICMessage(owner, Loc.GetString("medibot-finish-inject"), InGameICChatType.Speak, hideChat: true, hideLog: true);
         return HTNOperatorStatus.Finished;
     }
 }
