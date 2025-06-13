@@ -290,6 +290,9 @@
     toggleState: 1 # draw
   - type: ExaminableSolution
     solution: dropper
+  - type: Tag
+    tags:
+    - Dropper
   - type: UserInterface
     interfaces:
       enum.TransferAmountUiKey.Key:

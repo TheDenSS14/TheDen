@@ -3,6 +3,20 @@
 
 # Belt
 
+- type: loadout
+  id: LoadoutCommandHoSJudoBelt
+  category: JobsSecurityHeadOfSecurity
+  cost: 6
+  canBeHeirloom: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutHeadOfSecurityBelt
+    - !type:CharacterJobRequirement
+      jobs:
+        - HeadOfSecurity
+  items:
+    - ClothingBeltCorporateJudo
+
 # Ears
 
 # Equipment
@@ -121,6 +135,20 @@
         - HeadOfSecurity
   items:
     - WeaponSubMachineGunBRDIR25HoS
+
+- type: loadout
+  id: LoadoutCommandAntiqueTerminus
+  category: JobsSecurityHeadOfSecurity
+  cost: 0
+  canBeHeirloom: true
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutHeadOfSecurityWeapon
+  - !type:CharacterJobRequirement
+    jobs:
+    - HeadOfSecurity
+  items:
+  - AntiqueTerminus
 
 # Eyes
 

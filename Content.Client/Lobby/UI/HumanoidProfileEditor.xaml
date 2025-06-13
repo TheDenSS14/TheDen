@@ -4,6 +4,7 @@
     xmlns:cc="clr-namespace:Content.Client.Administration.UI.CustomControls"
     xmlns:prefUi="clr-namespace:Content.Client.Lobby.UI"
     xmlns:ui="clr-namespace:Content.Client.UserInterface.Controls"
+    xmlns:cd="clr-namespace:Content.Client._CD.Records.UI"
     HorizontalExpand="True">
     <!-- Left side -->
     <BoxContainer Orientation="Vertical" Margin="10 10 10 10" HorizontalExpand="True">
@@ -44,6 +45,9 @@
         <Control MinHeight="10" />
         <!-- TabContainer -->
         <ui:NeoTabContainer Name="CTabContainer" VerticalExpand="True" HScrollEnabled="False" VScrollEnabled="False">
+            <BoxContainer Name="RecordsTab" HorizontalExpand="True" VerticalExpand="True" Orientation="Vertical">
+                <cd:RecordEditorGui Name="Records" HorizontalExpand="True" VerticalExpand="True" Visible="True"/>
+            </BoxContainer>
             <BoxContainer Name="Appearance" HorizontalExpand="True" Orientation="Vertical">
                 <!-- appearanceList -->
                 <ScrollContainer HorizontalExpand="True" HScrollEnabled="True" VerticalExpand="True" VScrollEnabled="True">
@@ -117,21 +121,23 @@
                                 <Control HorizontalExpand="True"/>
                                 <OptionButton Name="SpawnPriorityButton" HorizontalAlignment="Right" />
                             </BoxContainer>
-						    <!-- Height -->
-                            <BoxContainer HorizontalExpand="True">
-                                <Label Name="HeightLabel" MinWidth="110" />
-                                <Slider Name="HeightSlider" MinValue="0.5" Value="1" MaxValue="1.5" HorizontalExpand="True" Margin="5 0 5 0" />
-                                <Button Name="HeightReset" Text="{Loc 'ui-options-bind-reset'}" />
-                            </BoxContainer>
-                            <!-- Width -->
-                            <BoxContainer HorizontalExpand="True">
-                                <Label Name="WidthLabel" MinWidth="110" />
-                                <Slider Name="WidthSlider" MinValue="0.5" Value="1" MaxValue="1.5" HorizontalExpand="True" Margin="5 0 5 0" />
-                                <Button Name="WidthReset" Text="{Loc 'ui-options-bind-reset'}" />
-                            </BoxContainer>
-                            <!--Weight -->
-                            <BoxContainer HorizontalExpand="True">
-                                <Label Name="WeightLabel" />
+                            <BoxContainer Orientation="Vertical" Margin="15 10 15 5">
+						        <!-- Height -->
+                                <BoxContainer HorizontalExpand="True">
+                                    <Label Name="HeightLabel" MinWidth="110" HorizontalExpand="True" />
+                                    <Button Name="HeightReset" Text="{Loc 'ui-options-bind-reset'}" />
+                                </BoxContainer>
+                                <Slider Name="HeightSlider" MinValue="0.5" Value="1" MaxValue="1.5" HorizontalExpand="True" Margin="0 0 0 5" />
+                                <!-- Width -->
+                                <BoxContainer HorizontalExpand="True">
+                                    <Label Name="WidthLabel" MinWidth="110" HorizontalExpand="True" />
+                                    <Button Name="WidthReset" Text="{Loc 'ui-options-bind-reset'}" />
+                                </BoxContainer>
+                                <Slider Name="WidthSlider" MinValue="0.5" Value="1" MaxValue="1.5" HorizontalExpand="True" Margin="0 0 0 5" />
+                                <!--Weight -->
+                                <BoxContainer HorizontalExpand="True">
+                                    <Label Name="WeightLabel" />
+                                </BoxContainer>
                             </BoxContainer>
                         </BoxContainer>
                         <!-- Skin -->

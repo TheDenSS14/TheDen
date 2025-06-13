@@ -158,7 +158,7 @@ public sealed class HungerSystem : EntitySystem
 
         if (component.HungerThresholdDecayModifiers.TryGetValue(component.CurrentThreshold, out var modifier))
         {
-            component.ActualDecayRate = component.BaseDecayRate * modifier;
+            component.ActualDecayRate = component.BaseDecayRate * component.DecayRateMultiplier * modifier;
         }
 
         component.LastThreshold = component.CurrentThreshold;

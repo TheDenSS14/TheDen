@@ -1,4 +1,4 @@
-﻿using Content.Server.Body.Systems;
+using Content.Server.Body.Systems;
 using Content.Server.Kitchen.Components;
 using Content.Server.Nutrition.EntitySystems;
 using Content.Shared.Body.Components;
@@ -18,19 +18,20 @@ using Robust.Server.Containers;
 using Robust.Server.GameObjects;
 using Robust.Shared.Random;
 using Robust.Shared.Utility;
+using Content.Server.Atmos.Rotting;
+using Content.Shared._DEN.Kitchen;
 
 namespace Content.Server.Kitchen.EntitySystems;
 
 public sealed class SharpSystem : EntitySystem
 {
     [Dependency] private readonly BodySystem _bodySystem = default!;
+    [Dependency] private readonly SharedButcherySystem _butcherySystem = default!;
     [Dependency] private readonly SharedDestructibleSystem _destructibleSystem = default!;
     [Dependency] private readonly SharedDoAfterSystem _doAfterSystem = default!;
     [Dependency] private readonly SharedPopupSystem _popupSystem = default!;
     [Dependency] private readonly ContainerSystem _containerSystem = default!;
     [Dependency] private readonly MobStateSystem _mobStateSystem = default!;
-    [Dependency] private readonly TransformSystem _transform = default!;
-    [Dependency] private readonly IRobustRandom _robustRandom = default!;
     [Dependency] private readonly ISharedAdminLogManager _adminLogger = default!;
 
     public override void Initialize()
@@ -102,15 +103,7 @@ public sealed class SharpSystem : EntitySystem
             return;
         }
 
-        var spawnEntities = EntitySpawnCollection.GetSpawns(butcher.SpawnedEntities, _robustRandom);
-        var coords = _transform.GetMapCoordinates(args.Args.Target.Value);
-        EntityUid popupEnt = default!;
-        foreach (var proto in spawnEntities)
-        {
-            // distribute the spawned items randomly in a small radius around the origin
-            popupEnt = Spawn(proto, coords.Offset(_robustRandom.NextVector2(0.25f)));
-        }
-
+        var popupEnt = _butcherySystem.SpawnButcherableProducts(args.Args.Target.Value, butcher);
         var hasBody = TryComp<BodyComponent>(args.Args.Target.Value, out var body);
 
         // only show a big popup when butchering living things.
@@ -118,11 +111,14 @@ public sealed class SharpSystem : EntitySystem
         if (hasBody)
             popupType = PopupType.LargeCaution;
 
-        _popupSystem.PopupEntity(Loc.GetString("butcherable-knife-butchered-success", ("target", args.Args.Target.Value), ("knife", uid)),
-            popupEnt, args.Args.User, popupType);
+        if (popupEnt != null)
+            _popupSystem.PopupEntity(Loc.GetString("butcherable-knife-butchered-success",
+                ("target", args.Args.Target.Value),
+                ("knife", uid)),
+                popupEnt.Value, args.Args.User, popupType);
 
-        if (hasBody)
-            _bodySystem.GibBody(args.Args.Target.Value, body: body);
+        if (hasBody && butcher.GibBody) // Floof - added additional check
+            _bodySystem.GibBody(args.Args.Target.Value, body: body, acidify: butcher.GibOrgans, contents: butcher.GibContents);
 
         _destructibleSystem.DestroyEntity(args.Args.Target.Value);
 

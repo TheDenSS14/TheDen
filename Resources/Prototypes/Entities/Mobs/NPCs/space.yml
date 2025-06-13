@@ -122,7 +122,7 @@
 - type: entity
   name: space kangaroo
   id: MobKangarooSpace
-  parent: MobSpaceBasic
+  parent: [MobSpaceBasic, StripableInventoryBase]
   description: It looks friendly. Why don't you give it a hug?
   components:
   - type: Sprite
@@ -171,12 +171,6 @@
     - Kangaroo
     understands:
     - Kangaroo
-  - type: InventorySlots
-  - type: Strippable
-  - type: UserInterface
-    interfaces:
-      enum.StrippingUiKey.Key:
-        type: StrippableBoundUserInterface
 
 - type: entity
   id: MobKangarooSpaceSalvage
@@ -480,6 +474,17 @@
         reagents:
         - ReagentId: UncookedAnimalProteins
           Quantity: 3
+  - type: ReplaceSolutionWhenRotten
+    solution: food
+    duration: 2
+    replacements:
+      - solution:
+          reagents:
+          - ReagentId: GastroToxin
+            Quantity: 0.01 # 3u replaced after 600 seconds
+        whitelist:
+        - UncookedAnimalProteins
+        amount: 0.01
   - type: Butcherable
     spawned:
     - id: FoodMeatSnail

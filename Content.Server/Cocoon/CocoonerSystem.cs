@@ -19,11 +19,13 @@ using Robust.Shared.Random;
 using Content.Shared.Nutrition.Components;
 using Content.Shared.Storage;
 using Robust.Shared.Utility;
+using Content.Shared._DEN.Kitchen;
 
 namespace Content.Server.Cocoon
 {
     public sealed class CocooningSystem : EntitySystem
     {
+        [Dependency] private readonly SharedButcherySystem _butcherySystem = default!;
         [Dependency] private readonly PopupSystem _popupSystem = default!;
         [Dependency] private readonly DoAfterSystem _doAfter = default!;
         [Dependency] private readonly ItemSlotsSystem _itemSlots = default!;
@@ -184,13 +186,7 @@ namespace Content.Server.Cocoon
                 return;
 
             if (TryComp<ButcherableComponent>(args.Args.Target.Value, out var butcher))
-            {
-                var spawnEntities = EntitySpawnCollection.GetSpawns(butcher.SpawnedEntities, _robustRandom);
-                var coords = Transform(args.Args.Target.Value).MapPosition;
-                EntityUid popupEnt = default!;
-                foreach (var proto in spawnEntities)
-                    popupEnt = Spawn(proto, coords.Offset(_robustRandom.NextVector2(0.25f)));
-            }
+                _butcherySystem.SpawnButcherableProducts(args.Args.Target.Value, butcher);
 
             _destructibleSystem.DestroyEntity(args.Args.Target.Value);
 

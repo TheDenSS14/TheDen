@@ -3,6 +3,7 @@ using Content.Shared.Nutrition.EntitySystems;
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom;
+using Robust.Shared.Serialization.TypeSerializers.Implementations.Generic;
 
 namespace Content.Shared.Nutrition.Components;
 
@@ -14,7 +15,14 @@ public sealed partial class ThirstComponent : Component
     [ViewVariables(VVAccess.ReadWrite)]
     [DataField("baseDecayRate")]
     [AutoNetworkedField]
-    public float BaseDecayRate = 0.1f;
+    public float BaseDecayRate = 150.0f / (40 * 60); // One tier every 40 minutes
+
+    /// <summary>
+    /// A flat multiplier applied to BaseDecayRate.
+    /// This shouldn't change, ideally; this is supposed to make species hunger rates more intuitive to code.
+    /// </summary>
+    [DataField, ViewVariables(VVAccess.ReadWrite)]
+    public float DecayRateMultiplier = 1.0f;
 
     [ViewVariables(VVAccess.ReadWrite)]
     [AutoNetworkedField]
@@ -65,6 +73,20 @@ public sealed partial class ThirstComponent : Component
         {ThirstThreshold.Thirsty, "Thirsty"},
         {ThirstThreshold.Parched, "Parched"},
         {ThirstThreshold.Dead, "Parched"},
+    };
+
+    /// <summary>
+    /// A dictionary relating ThirstThreshold to how much they modify <see cref="BaseDecayRate"/>.
+    /// </summary>
+    [DataField("hungerThresholdDecayModifiers", customTypeSerializer: typeof(DictionarySerializer<ThirstThreshold, float>))]
+    [AutoNetworkedField]
+    public Dictionary<ThirstThreshold, float> ThirstThresholdDecayModifiers = new()
+    {
+        {ThirstThreshold.OverHydrated, 1.2f},
+        {ThirstThreshold.Okay, 1.0f },
+        {ThirstThreshold.Thirsty, 0.8f },
+        {ThirstThreshold.Parched, 0.6f},
+        {ThirstThreshold.Dead, 0f}
     };
 }
 

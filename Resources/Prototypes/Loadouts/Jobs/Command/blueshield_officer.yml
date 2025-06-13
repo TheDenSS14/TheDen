@@ -42,6 +42,21 @@
   items:
     - ClothingBackpackDuffelBlueshield
 
+- type: loadout
+  id: LoadoutClothingModsuitBlueshield
+  category: JobsCommandBlueshieldOfficer
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBlueshieldOfficerBackpacks
+    - !type:CharacterJobRequirement
+      jobs:
+        - BlueshieldOfficer
+  items:
+    - ClothingModsuitPraetorian #Blueshield modsuit
+
+
 # Belt
 
 # Ears
@@ -243,16 +258,16 @@
   items:
     - HandheldCrewMonitor
 
-- type: loadout
-  id: LoadoutBSOCQCManual
-  category: JobsCommandBlueshieldOfficer
-  cost: 8 # You can run this alongside the 3 medical items, but then you will be restricted to free gear for everything else such as weapons or other utilities.
-  requirements: # Knowledge does not occupy a weapon slot. You are a trained bodyguard, so it makes sense to have it. Balanced out by costing over half of your loadout points.
-    - !type:CharacterJobRequirement
-      jobs:
-        - BlueshieldOfficer
-  items:
-    - BSOManual
+# - type: loadout
+#   id: LoadoutBSOCQCManual
+#   category: JobsCommandBlueshieldOfficer
+#   cost: 8 # You can run this alongside the 3 medical items, but then you will be restricted to free gear for everything else such as weapons or other utilities.
+#   requirements: # Knowledge does not occupy a weapon slot. You are a trained bodyguard, so it makes sense to have it. Balanced out by costing over half of your loadout points.
+#     - !type:CharacterJobRequirement
+#       jobs:
+#         - BlueshieldOfficer
+#   items:
+#     - NTCQCManual
 
 - type: loadout
   id: LoadoutBSOTerminus

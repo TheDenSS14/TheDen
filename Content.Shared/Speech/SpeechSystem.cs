@@ -1,7 +1,13 @@
+using Content.Shared.Chat.Prototypes;
+using Robust.Shared.Prototypes;
+
+
 namespace Content.Shared.Speech
 {
     public sealed class SpeechSystem : EntitySystem
     {
+        [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
+
         public override void Initialize()
         {
             base.Initialize();
@@ -22,6 +28,17 @@ namespace Content.Shared.Speech
             component.Enabled = value;
 
             Dirty(uid, component);
+        }
+
+        public void AddAllowedEmote(Entity<SpeechComponent?> ent, ProtoId<EmotePrototype> emoteId)
+        {
+            if (!Resolve(ent.Owner, ref ent.Comp, false)
+                || !_prototypeManager.TryIndex(emoteId, out _)
+                || ent.Comp.AllowedEmotes.Contains(emoteId))
+                return;
+
+            ent.Comp.AllowedEmotes.Add(emoteId);
+            Dirty(ent);
         }
 
         private void OnSpeakAttempt(SpeakAttemptEvent args)

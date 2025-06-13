@@ -24,7 +24,14 @@ public sealed partial class HungerComponent : Component
     /// The base amount at which <see cref="CurrentHunger"/> decays.
     /// </summary>
     [DataField("baseDecayRate"), ViewVariables(VVAccess.ReadWrite)]
-    public float BaseDecayRate = 0.01666666666f;
+    public float BaseDecayRate = 50.0f / (50 * 60); // One tier every 50 minutes
+
+    /// <summary>
+    /// A flat multiplier applied to BaseDecayRate.
+    /// This shouldn't change, ideally; this is supposed to make species hunger rates more intuitive to code.
+    /// </summary>
+    [DataField, ViewVariables(VVAccess.ReadWrite)]
+    public float DecayRateMultiplier = 1.0f;
 
     /// <summary>
     /// The actual amount at which <see cref="CurrentHunger"/> decays.

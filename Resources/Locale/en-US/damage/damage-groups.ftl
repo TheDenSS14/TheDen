@@ -4,3 +4,4 @@ damage-group-airloss = Airloss
 damage-group-toxin = Toxin
 damage-group-genetic = Genetic
 damage-group-immaterial = Immaterial
+damage-group-metaphysical = Metaphysical

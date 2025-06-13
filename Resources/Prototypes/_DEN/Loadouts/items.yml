@@ -268,3 +268,10 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutSmokes
+
+- type: loadout
+  id: LoadoutSpectralLocator
+  category: GeneralItems
+  cost: 0
+  items:
+    - SpectralLocator

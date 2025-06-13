@@ -63,7 +63,7 @@ public sealed partial class TelepathicChatSystem
 
     private void DescribeDamage(EntityUid uid, DamageableComponent component, GetPsychognomicDescriptorEvent ev)
     {
-        if (component.DamageContainerID == "CorporealSpirit")
+        if (component.DamageContainerID == "ManifestedSpirit") // Floof - M3739 - #937 - CorporealSpirit container superseded by ManifestedSpirit
         {
             ev.Descriptors.Add(Loc.GetString("p-descriptor-liminal"));
             if (!HasComp<HumanoidAppearanceComponent>(uid))

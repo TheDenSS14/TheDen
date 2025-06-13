@@ -55,6 +55,16 @@
       - state: equipped-head
       - state: equipped-head-unshaded
         shader: unshaded
+      head-vox:
+      - state: equipped-head-vox
+      - state: equipped-head-unshaded-vox
+        shader: unshaded
+      # Begin DeltaV species helmets
+      head-feroxi:
+      - state: equipped-head-feroxi
+      - state: equipped-head-unshaded-feroxi
+        shader: unshaded
+      # End DeltaV species helmets
   - type: PointLight
     color: "#adffe6"
   - type: PressureProtection
@@ -145,6 +155,18 @@
       - state: equipped-head
       - state: equipped-head-unshaded
         shader: unshaded
+      head-vox:
+      - state: equipped-head-vox
+      - state: equipped-head-unshaded-vox
+        shader: unshaded
+      # Begin DeltaV species helmets
+      head-feroxi:
+      - state: equipped-head-feroxi
+      - state: equipped-head-unshaded
+        shader: unshaded
+      # End DeltaV species helmets
+  - type: PointLight
+    radius: 6
   - type: PressureProtection
     highPressureMultiplier: 0.72
     lowPressureMultiplier: 1000

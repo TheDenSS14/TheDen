@@ -24,6 +24,12 @@ public sealed partial class SuitSensorComponent : Component
     public bool ControlsLocked = false;
 
     /// <summary>
+    ///  How much time it takes to change another player's sensors
+    /// </summary>
+    [DataField("sensorsTime")]
+    public float SensorsTime = 1.75f;
+
+    /// <summary>
     ///     Current sensor mode. Can be switched by user verbs.
     /// </summary>
     [DataField("mode")]
@@ -56,7 +62,7 @@ public sealed partial class SuitSensorComponent : Component
     /// <summary>
     ///     Next time when sensor updated owners status
     /// </summary>
-    [DataField("nextUpdate", customTypeSerializer:typeof(TimeOffsetSerializer))]
+    [DataField("nextUpdate", customTypeSerializer: typeof(TimeOffsetSerializer))]
     [AutoPausedField]
     public TimeSpan NextUpdate = TimeSpan.Zero;
 

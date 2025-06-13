@@ -5,7 +5,7 @@
   abstract: true
   components:
   - type: Hunger
-    baseDecayRate: 0.02083333332 # 25% more than default
+    decayRateMultiplier: 1.25
   - type: Thirst
   - type: Sprite
     scale: 0.8, 0.8

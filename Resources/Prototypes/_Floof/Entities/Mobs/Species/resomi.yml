@@ -23,14 +23,6 @@
         - Pacified
         - StaminaModifier
     - type: Blindable
-    - type: ThermalRegulator
-      metabolismHeat: 800
-      radiatedHeat: 100
-      implicitHeatRegulation: 500
-      sweatHeatRegulation: 2000
-      shiveringHeatRegulation: 2000
-      normalBodyTemperature: 300
-      thermalRegulationTemperatureThreshold: 25
     - type: Perishable
     - type: FireVisuals
       sprite: _Floof/Mobs/Effects/onfire.rsi
@@ -77,8 +69,12 @@
           Bloodloss: 1
       bloodlossHealDamage:
         types:
-          Bloodloss: -0.25
+          Bloodloss: -0.1
       bloodReagent: AmmoniaBlood
+    - type: MovementSpeedModifier
+      weightlessAcceleration: 2.5 # Move around more easily in space.
+      weightlessModifier: 1.1
+      weightlessFriction: 2 # makes you turn more sharply while weightless
     - type: Temperature
       heatDamageThreshold: 320.15
       coldDamageThreshold: 195
@@ -193,13 +189,14 @@
         - TauCetiBasic
       understands:
         - TauCetiBasic
+    - type: TemperatureProtection
+      coefficient: 0.1 #same as vulp, temp tolerance trait
     - type: Tag
       tags:
       - CanPilot
       - FootstepSound
       - DoorBumpOpener
-    - type: MovementSpeedModifier
-      weightlessAcceleration: 2.5
+      - ResomiEmotes
     - type: FootPrints # Goobstation - resomi footprints
       leftBarePrint: "footprint-left-bare-lizard"
       rightBarePrint: "footprint-right-bare-lizard"

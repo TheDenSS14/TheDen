@@ -11,7 +11,7 @@
   - type: HumanoidAppearance
     species: Arachnid
   - type: Hunger
-    baseDecayRate: 0.0125 # Spiders have slow metabolisms all things considered, so I decided to just make their hunger drain slower.
+    decayRateMultiplier: 0.8 # Spiders have slow metabolisms all things considered, so I decided to just make their hunger drain slower.
   - type: Carriable # Carrying system from nyanotrasen.
   - type: Thirst
   - type: Sericulture
@@ -84,6 +84,7 @@
     proto: spider
   - type: Sprite # I'd prefer if these maps were better. Insert map pun here.
     layers:
+      - map: [ "enum.HumanoidVisualLayers.TailBehind" ]
       - map: [ "enum.HumanoidVisualLayers.Chest" ]
       - map: [ "enum.HumanoidVisualLayers.Head" ]
       - map: [ "enum.HumanoidVisualLayers.Snout" ]
@@ -114,6 +115,7 @@
       - map: [ "id" ]
       - map: [ "enum.HumanoidVisualLayers.Tail" ] # Mentioned in moth code: This needs renaming lol.
       - map: [ "neck" ]
+      - map: [ "enum.HumanoidVisualLayers.TailOversuit" ]
       - map: [ "back" ]
       - map: [ "enum.HumanoidVisualLayers.FacialHair" ]
       - map: [ "enum.HumanoidVisualLayers.Hair" ] # Do these need to be here? (arachnid hair arachnid hair)

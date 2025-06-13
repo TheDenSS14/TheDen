@@ -1,3 +1,4 @@
+using Content.Server._DEN.Traits;
 using Content.Server.Body.Systems;
 using Content.Server.Traits.Assorted;
 using Content.Shared.Body.Prototypes;
@@ -47,7 +48,11 @@ namespace Content.Server.Body.Components
         ///     List of metabolizer types that this organ is. ex. Human, Slime, Felinid, w/e.
         /// </summary>
         [DataField]
-        [Access(typeof(MetabolizerSystem), typeof(LiquorLifelineSystem), typeof(VampirismSystem), Other = AccessPermissions.ReadExecute)] // FIXME Friends
+        [Access(typeof(MetabolizerSystem),
+            typeof(LiquorLifelineSystem),
+            typeof(VampirismSystem),
+            typeof(TraitAddMetabolizer),
+            Other = AccessPermissions.ReadExecute)] // FIXME Friends
         public HashSet<ProtoId<MetabolizerTypePrototype>>? MetabolizerTypes = null;
 
         /// <summary>

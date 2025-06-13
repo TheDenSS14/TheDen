@@ -177,36 +177,18 @@ public sealed class ThirstSystem : EntitySystem
         var ev = new MoodEffectEvent("Thirst" + component.CurrentThirstThreshold);
         RaiseLocalEvent(uid, ev);
 
-        switch (component.CurrentThirstThreshold)
+        if (component.CurrentThirstThreshold == ThirstThreshold.Dead)
+            return;
+
+        component.ActualDecayRate = component.BaseDecayRate * component.DecayRateMultiplier;
+        if (!component.ThirstThresholdDecayModifiers.TryGetValue(component.CurrentThirstThreshold,
+            out var decayRateModifier))
         {
-            case ThirstThreshold.OverHydrated:
-                component.LastThirstThreshold = component.CurrentThirstThreshold;
-                component.ActualDecayRate = component.BaseDecayRate * 1.2f;
-                return;
-
-            case ThirstThreshold.Okay:
-                component.LastThirstThreshold = component.CurrentThirstThreshold;
-                component.ActualDecayRate = component.BaseDecayRate;
-                return;
-
-            case ThirstThreshold.Thirsty:
-                // Same as okay except with UI icon saying drink soon.
-                component.LastThirstThreshold = component.CurrentThirstThreshold;
-                component.ActualDecayRate = component.BaseDecayRate * 0.8f;
-                return;
-            case ThirstThreshold.Parched:
-                _movement.RefreshMovementSpeedModifiers(uid);
-                component.LastThirstThreshold = component.CurrentThirstThreshold;
-                component.ActualDecayRate = component.BaseDecayRate * 0.6f;
-                return;
-
-            case ThirstThreshold.Dead:
-                return;
-
-            default:
-                Log.Error($"No thirst threshold found for {component.CurrentThirstThreshold}");
-                throw new ArgumentOutOfRangeException($"No thirst threshold found for {component.CurrentThirstThreshold}");
+            Log.Error($"No thirst threshold found for {component.CurrentThirstThreshold}");
+            throw new ArgumentOutOfRangeException($"No thirst threshold found for {component.CurrentThirstThreshold}");
         }
+
+        component.ActualDecayRate *= decayRateModifier;
     }
 
     public override void Update(float frameTime)

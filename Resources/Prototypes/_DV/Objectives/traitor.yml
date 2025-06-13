@@ -75,3 +75,14 @@
     title: objective-condition-teach-person-title
   - type: PickRandomPerson
   - type: TeachLessonCondition
+
+- type: entity
+  abstract: true
+  parent: BaseTraitorStealObjective
+  id: SilviaStealObjective
+  components:
+  - type: NotJobRequirement
+    job: ChiefMedicalOfficer
+  - type: StealCondition
+    stealGroup: AnimalSilvia
+    owner: job-name-cmo

@@ -93,12 +93,15 @@
   id: OrganMouseStomach
   parent: OrganAnimalStomach
   name: stomach
+  suffix: "mouse"
   categories: [ HideSpawnMenu ]
   components:
   - type: SolutionContainerManager
     solutions:
       stomach:
         maxVol: 30
+  - type: Metabolizer
+    metabolizerTypes: [ Animal, Detritivore ]
 
 - type: entity
   id: OrganAnimalLiver
@@ -137,6 +140,13 @@
     - id: Narcotic
   - type: Heart # Shitmed
 
+- type: entity
+  id: OrganMouseHeart
+  parent: OrganAnimalHeart
+  suffix: "mouse"
+  components:
+  - type: Metabolizer
+    metabolizerTypes: [ Animal, Detritivore ]
 
 - type: entity
   id: OrganAnimalKidneys

@@ -79,7 +79,6 @@
         Base: splat
   - type: Food
   - type: Hunger
-    baseDecayRate: 0.1
   - type: Extractable
     grindableSolutionName: food
   - type: SolutionContainerManager
@@ -92,6 +91,17 @@
           Quantity: 55
         - ReagentId: Fat
           Quantity: 5
+  - type: ReplaceSolutionWhenRotten
+    solution: food
+    duration: 1.2
+    replacements:
+      - solution:
+          reagents:
+          - ReagentId: GastroToxin
+            Quantity: 0.01 # 5u replaced after 600 seconds
+        whitelist:
+        - Nutriment
+        amount: 0.01
   - type: Butcherable
     spawned:
     - id: FoodMeat

@@ -176,6 +176,8 @@ public sealed partial class ChatUIController : UIController
     public ChatSelectChannel SelectableChannels { get; private set; }
     private ChatSelectChannel PreferredChannel { get; set; } = ChatSelectChannel.OOC;
 
+    private bool _registeredEvent = false;
+
     public event Action<ChatSelectChannel>? CanSendChannelsChanged;
     public event Action<ChatChannel>? FilterableChannelsChanged;
     public event Action<ChatSelectChannel>? SelectableChannelsChanged;
@@ -312,6 +314,16 @@ public sealed partial class ChatUIController : UIController
                 chatBox = separatedScreen.ChatBox;
                 chatSizeRaw = _config.GetCVar(CCVars.SeparatedScreenChatSize);
                 SetChatSizing(chatSizeRaw, separatedScreen, setting);
+
+                if (!_registeredEvent)
+                {
+                    _config.OnValueChanged(
+                        CCVars.ChatExtraInfo,
+                        newValue => OnChatExtraInfoChanged(newValue, separatedScreen),
+                        true);
+                    _registeredEvent = true;
+                }
+
                 break;
             case OverlayChatGameScreen overlayScreen:
                 chatBox = overlayScreen.ChatBox;
@@ -328,6 +340,11 @@ public sealed partial class ChatUIController : UIController
         }
 
         chatBox.Main = setting;
+    }
+
+    private void OnChatExtraInfoChanged(bool newValue, SeparatedChatGameScreen chatBox)
+    {
+        chatBox.UserActionsPanel.Visible = newValue;
     }
 
     private void SetChatSizing(string sizing, InGameScreen screen, bool setting)
