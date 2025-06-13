@@ -85,7 +85,7 @@ public sealed class EmpSystem : SharedEmpSystem
             // EMPs usually last longer than flashes, this is to reduce it for IPCs
             if (TryComp<IpcEmpComponent>(uid, out var ipcComp))
             {
-                duration *= ipcComp.DurationMultiplier;
+                duration *= ipcComp.StatusMultiplier;
             }
 
             disabled.DisabledUntil = disabled.DisabledUntil + TimeSpan.FromSeconds(duration);
