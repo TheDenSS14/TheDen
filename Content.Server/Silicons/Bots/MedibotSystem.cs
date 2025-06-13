@@ -100,19 +100,29 @@ public sealed class MedibotSystem : SharedMedibotSystem
         var uid = entity.Owner;
         var medibot = entity.Comp;
 
-        // TODO: "Error messages" for failed injection attempts
-        if (HasComp<NPCRecentlyInjectedComponent>(target)
-            || !TryComp<MobStateComponent>(target, out var state)
+        if (HasComp<NPCRecentlyInjectedComponent>(target))
+        {
+            _popup.PopupEntity(Loc.GetString("medibot-error-injected-too-recently"), target, uid);
+            return false;
+        }
+
+        if (!TryComp<MobStateComponent>(target, out var state)
             || !TryComp<DamageableComponent>(target, out var damage)
             || !TryGetTreatment(medibot, state.CurrentState, out var treatment)
             || !HasComp<EmaggedComponent>(uid) && !treatment.IsValid(damage.TotalDamage))
+        {
+            _popup.PopupEntity(Loc.GetString("medibot-error-invalid-treatment"), target, uid);
             return false;
+        }
 
         var injectorId = medibot.InjectorSlot.ContainedEntity;
         if (injectorId == null
             || !TryComp<HyposprayComponent>(injectorId, out var hypospray)
             || !_solutionContainer.TryGetSolution(injectorId.Value, "injector", out var injectorSolution))
+        {
+            _popup.PopupEntity(Loc.GetString("medibot-error-can-not-inject"), target, uid);
             return false;
+        }
 
         if (sayTheLine)
             _chat.TrySendInGameICMessage(uid,
@@ -120,7 +130,6 @@ public sealed class MedibotSystem : SharedMedibotSystem
                 InGameICChatType.Speak,
                 hideChat: true,
                 hideLog: true);
-
 
         var hyposprayEnt = new Entity<HyposprayComponent>(injectorId.Value, hypospray);
         _solutionContainer.RemoveAllSolution(injectorSolution.Value);
