@@ -9,20 +9,23 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
+using Content.Shared._AS.Consent;
 using Content.Shared.Humanoid.Markings;
 using Content.Shared.Localizations;
 using Content.Shared.Tag;
 using Content.Shared.Whitelist;
 
-namespace Content.Shared.IoC;
-
-public static class SharedContentIoC
+namespace Content.Shared.IoC
 {
-    public static void Register()
+    public static class SharedContentIoC
     {
-        IoCManager.Register<MarkingManager, MarkingManager>();
-        IoCManager.Register<ContentLocalizationManager, ContentLocalizationManager>();
-        IoCManager.Register<TagSystem>();
-        IoCManager.Register<EntityWhitelistSystem>();
+        public static void Register()
+        {
+            IoCManager.Register<MarkingManager, MarkingManager>();
+            IoCManager.Register<ContentLocalizationManager, ContentLocalizationManager>();
+            IoCManager.Register<TagSystem>();
+            IoCManager.Register<EntityWhitelistSystem>();
+            IoCManager.Register<SharedConsentCardSystem>();
+        }
     }
 }
