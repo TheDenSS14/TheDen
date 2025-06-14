@@ -58,7 +58,7 @@ public sealed class MedibotSystem : SharedMedibotSystem
     private void AfterInjected(EntityUid uid, MedibotInjectorComponent injectorComponent,
         ref HyposprayDoAfterEvent args)
     {
-        if (!args.Handled || injectorComponent.Medibot == null)
+        if (!args.Handled || args.Cancelled || injectorComponent.Medibot == null)
             return;
 
         _chat.TrySendInGameICMessage(injectorComponent.Medibot.Value,

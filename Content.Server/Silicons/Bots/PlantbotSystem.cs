@@ -93,7 +93,10 @@ public sealed class PlantbotSystem : SharedPlantbotSystem
         where TEvent : DoAfterEvent
     {
         var target = args.Target;
-        if (target == null || !TryGetBotAndHolder(args.User, target.Value, out var bot, out var holder))
+        if (target == null
+            || args.Handled
+            || args.Cancelled
+            || !TryGetBotAndHolder(args.User, target.Value, out var bot, out var holder))
             return;
 
         action(bot.Value, holder.Value);
