@@ -7,20 +7,28 @@ using Robust.Shared.Serialization;
 namespace Content.Shared.Silicons.Bots;
 
 [ByRefEvent]
-public sealed partial class MedibotInjectTargetEvent : EntityTargetActionEvent
+public sealed partial class MedibotInjectTargetActionEvent : EntityTargetActionEvent
+{ }
+
+[ByRefEvent]
+public sealed partial class PlantbotWaterPlantActionEvent : EntityTargetActionEvent
+{ }
+
+[ByRefEvent]
+public sealed partial class PlantbotRemoveWeedsActionEvent : EntityTargetActionEvent
 { }
 
 [ByRefEvent]
 [Serializable, NetSerializable]
-public sealed partial class PlantBotWateringDoAfterEvent : SimpleDoAfterEvent
+public sealed partial class PlantbotWateringDoAfterEvent : SimpleDoAfterEvent
 { }
 
 [ByRefEvent]
 [Serializable, NetSerializable]
-public sealed partial class PlantBotWeedingDoAfterEvent : SimpleDoAfterEvent
+public sealed partial class PlantbotWeedingDoAfterEvent : SimpleDoAfterEvent
 { }
 
 [ByRefEvent]
 [Serializable, NetSerializable]
-public sealed partial class PlantBotDrinkingDoAfterEvent : SimpleDoAfterEvent
+public sealed partial class PlantbotDrinkingDoAfterEvent : SimpleDoAfterEvent
 { }

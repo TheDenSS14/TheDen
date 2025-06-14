@@ -33,7 +33,7 @@ public sealed class MedibotSystem : SharedMedibotSystem
         SubscribeLocalEvent<MedibotComponent, ComponentStartup>(OnMedibotStartup);
         SubscribeLocalEvent<MedibotInjectorComponent, HyposprayDoAfterEvent>(AfterInjected,
             after: [typeof(HypospraySystem)]);
-        SubscribeLocalEvent<MedibotInjectTargetEvent>(OnInjectTarget);
+        SubscribeLocalEvent<MedibotInjectTargetActionEvent>(OnInjectTargetAction);
     }
 
     private void OnMedibotStartup(EntityUid uid, MedibotComponent component, ComponentStartup args)
@@ -49,7 +49,7 @@ public sealed class MedibotSystem : SharedMedibotSystem
         _actions.AddAction(uid, ref component.InjectActionEntity, component.InjectActionId);
     }
 
-    private void OnInjectTarget(ref MedibotInjectTargetEvent ev)
+    private void OnInjectTargetAction(ref MedibotInjectTargetActionEvent ev)
     {
         if (!ev.Handled && TryInjectTarget(ev.Performer, ev.Target, true))
             ev.Handled = true;

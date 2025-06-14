@@ -25,4 +25,5 @@
     icon:
       sprite: Objects/Specific/Chemistry/syringe.rsi
       state: "syringe_base0"
-    event: !type:MedibotInjectTargetEvent
+    event: !type:MedibotInjectTargetActionEvent
+
