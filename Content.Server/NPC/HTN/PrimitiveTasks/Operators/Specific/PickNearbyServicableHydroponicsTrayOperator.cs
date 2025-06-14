@@ -3,7 +3,6 @@ using System.Threading.Tasks;
 using Content.Server.Botany.Components;
 using Content.Server.NPC.Pathfinding;
 using Content.Server.Silicons.Bots;
-using Content.Shared.Emag.Components;
 using Content.Shared.Interaction;
 using Content.Shared.Silicons.Bots;
 using Robust.Shared.Prototypes;
@@ -13,7 +12,6 @@ namespace Content.Server.NPC.HTN.PrimitiveTasks.Operators.Specific;
 public sealed partial class PickNearbyServicableHydroponicsTrayOperator : HTNOperator
 {
     [Dependency] private readonly IEntityManager _entManager = default!;
-    [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
 
     private EntityLookupSystem _lookup = default!;
     private PathfindingSystem _pathfinding = default!;

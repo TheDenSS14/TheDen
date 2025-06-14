@@ -76,12 +76,7 @@ public sealed class PlantbotSystem : SharedPlantbotSystem
     /// <param name="plantBot">The plantBot that will perform the maintenance.</param>
     /// <param name="plantHolder">The plantHolder (hydroponics tray etc) that will receive maintenance.</param>
     public void TryDoDrinkPlant(Entity<PlantbotComponent> plantBot, Entity<PlantHolderComponent> plantHolder)
-    {
-        if (!CanDrinkPlant(plantBot, plantHolder))
-            return;
-
-        TryDoPlantMaintenance<PlantbotDrinkingDoAfterEvent>(plantBot, plantHolder);
-    }
+        => TryDoPlantMaintenance<PlantbotDrinkingDoAfterEvent>(plantBot, plantHolder);
 
     private void OnDoPlantMaintenance<TEvent>(ref TEvent args,
         Action<Entity<PlantbotComponent>, Entity<PlantHolderComponent>> action)
@@ -197,9 +192,11 @@ public sealed class PlantbotSystem : SharedPlantbotSystem
     /// <returns>If the plantbot should perform maintenance on the plant holder.</returns>
     public bool CanServicePlantHolder(Entity<PlantbotComponent> plantBot, Entity<PlantHolderComponent> plantHolder)
     {
+        if (plantBot.Comp.IsEmagged)
+            return CanDrinkPlant(plantBot, plantHolder);
+
         return CanWaterPlantHolder(plantBot, plantHolder)
-            || CanWeedPlantHolder(plantBot, plantHolder)
-            || CanDrinkPlant(plantBot, plantHolder);
+            || CanWeedPlantHolder(plantBot, plantHolder);
     }
 
     /// <summary>
@@ -233,7 +230,7 @@ public sealed class PlantbotSystem : SharedPlantbotSystem
     public bool CanDrinkPlant(Entity<PlantbotComponent> plantBot, Entity<PlantHolderComponent> plantHolder)
     {
         return HasComp<EmaggedComponent>(plantBot.Owner)
-            && plantHolder.Comp.WaterLevel >= 0f
+            && plantHolder.Comp.WaterLevel > 0f
             && !plantHolder.Comp.Dead;
     }
 }

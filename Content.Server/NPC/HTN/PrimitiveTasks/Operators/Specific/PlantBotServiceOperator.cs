@@ -1,14 +1,7 @@
 using Content.Server.Botany.Components;
-using Content.Server.Botany.Systems;
-using Content.Server.Chat.Systems;
 using Content.Server.Silicons.Bots;
-using Content.Shared.Damage;
 using Content.Shared.Interaction;
-using Content.Shared.Popups;
 using Content.Shared.Silicons.Bots;
-using Content.Shared.Tag;
-using Robust.Shared.Audio.Systems;
-using Robust.Shared.Prototypes;
 
 namespace Content.Server.NPC.HTN.PrimitiveTasks.Operators.Specific;
 
@@ -58,7 +51,12 @@ public sealed partial class PlantbotServiceOperator : HTNOperator
             return HTNOperatorStatus.Failed;
 
         if (botComp.IsEmagged)
-            _plantbot.TryDoDrinkPlant(bot, holder);
+        {
+            if (_plantbot.CanDrinkPlant(bot, holder))
+                _plantbot.TryDoDrinkPlant(bot, holder);
+            else
+                return HTNOperatorStatus.Failed;
+        }
         else
         {
             if (_plantbot.CanWaterPlantHolder(bot, holder))
