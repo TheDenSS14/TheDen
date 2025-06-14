@@ -7,7 +7,7 @@ namespace Content.Shared.Silicons.Bots;
 /// Currently no clientside prediction done, only exists in shared for emag handling.
 /// </summary>
 [RegisterComponent]
-[Access(typeof(PlantbotSystem))]
+[Access(typeof(SharedPlantbotSystem))]
 public sealed partial class PlantbotComponent : Component
 {
     /// <summary>
@@ -35,4 +35,16 @@ public sealed partial class PlantbotComponent : Component
     };
 
     public bool IsEmagged = false;
+
+    [DataField, ViewVariables(VVAccess.ReadWrite)]
+    public float RequiredWaterLevelToService = 80f;
+
+    [DataField, ViewVariables(VVAccess.ReadWrite)]
+    public float RequiredWeedsAmountToWeed = 1f;
+
+    [DataField, ViewVariables(VVAccess.ReadWrite)]
+    public float WaterTransferAmount = 10f;
+
+    [DataField, ViewVariables(VVAccess.ReadWrite)]
+    public float WeedsRemovedAmount = 1f;
 }

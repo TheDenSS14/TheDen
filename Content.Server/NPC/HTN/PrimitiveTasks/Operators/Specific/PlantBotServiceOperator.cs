@@ -1,9 +1,8 @@
 using Content.Server.Botany.Components;
 using Content.Server.Botany.Systems;
 using Content.Server.Chat.Systems;
-using Content.Shared.Chat;
+using Content.Server.Silicons.Bots;
 using Content.Shared.Damage;
-using Content.Shared.Emag.Components;
 using Content.Shared.Interaction;
 using Content.Shared.Popups;
 using Content.Shared.Silicons.Bots;
@@ -16,21 +15,9 @@ namespace Content.Server.NPC.HTN.PrimitiveTasks.Operators.Specific;
 public sealed partial class PlantbotServiceOperator : HTNOperator
 {
     [Dependency] private readonly IEntityManager _entMan = default!;
-    [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
 
-    private ChatSystem _chat = default!;
-    private SharedAudioSystem _audio = default!;
+    private PlantbotSystem _plantbot = default!;
     private SharedInteractionSystem _interaction = default!;
-    private SharedPopupSystem _popup = default!;
-    private PlantHolderSystem _plantHolderSystem = default!;
-    private DamageableSystem _damageableSystem = default!;
-    private TagSystem _tagSystem = default!;
-
-    public const float RequiredWaterLevelToService = 80f;
-    public const float RequiredWeedsAmountToWeed = 1f;
-    public const float WaterTransferAmount = 10f;
-    public const float WeedsRemovedAmount = 1f;
-    public const string SiliconTag = "SiliconMob";
 
     /// <summary>
     /// Target entity to inject.
@@ -42,11 +29,8 @@ public sealed partial class PlantbotServiceOperator : HTNOperator
     {
         base.Initialize(sysManager);
 
-        _chat = sysManager.GetEntitySystem<ChatSystem>();
-        _audio = sysManager.GetEntitySystem<SharedAudioSystem>();
+        _plantbot = sysManager.GetEntitySystem<PlantbotSystem>();
         _interaction = sysManager.GetEntitySystem<SharedInteractionSystem>();
-        _popup = sysManager.GetEntitySystem<SharedPopupSystem>();
-        _plantHolderSystem = sysManager.GetEntitySystem<PlantHolderSystem>();
     }
 
     public override void TaskShutdown(NPCBlackboard blackboard, HTNOperatorStatus status)
@@ -63,30 +47,24 @@ public sealed partial class PlantbotServiceOperator : HTNOperator
             return HTNOperatorStatus.Failed;
 
         if (!_entMan.TryGetComponent<PlantbotComponent>(owner, out var botComp)
-            || !_entMan.TryGetComponent<PlantHolderComponent>(target, out var plantHolderComponent)
-            || !_interaction.InRangeUnobstructed(owner, target)
-            || (plantHolderComponent is { WaterLevel: >= RequiredWaterLevelToService, WeedLevel: <= RequiredWeedsAmountToWeed } && (!_entMan.HasComponent<EmaggedComponent>(owner) || plantHolderComponent.Dead || plantHolderComponent.WaterLevel <= 0f)))
+            || !_entMan.TryGetComponent<PlantHolderComponent>(target, out var plantHolderComponent))
+            return HTNOperatorStatus.Failed;
+
+        var bot = new Entity<PlantbotComponent>(owner, botComp);
+        var holder = new Entity<PlantHolderComponent>(target, plantHolderComponent);
+
+        if (!_interaction.InRangeUnobstructed(owner, target)
+            || !_plantbot.CanServicePlantHolder(bot, holder))
             return HTNOperatorStatus.Failed;
 
         if (botComp.IsEmagged)
-        {
-            _plantHolderSystem.AdjustWater(target, -WaterTransferAmount);
-            _audio.PlayPvs(botComp.RemoveWaterSound, target);
-        }
+            _plantbot.TryDoDrinkPlant(bot, holder);
         else
         {
-            if (plantHolderComponent.WaterLevel <= RequiredWaterLevelToService)
-            {
-                _plantHolderSystem.AdjustWater(target, 10);
-                _audio.PlayPvs(botComp.WaterSound, target);
-                _chat.TrySendInGameICMessage(owner, Loc.GetString("plantbot-add-water"), InGameICChatType.Speak, hideChat: true, hideLog: true);
-            }
-            else if (plantHolderComponent.WeedLevel >= RequiredWeedsAmountToWeed)
-            {
-                plantHolderComponent.WeedLevel -= WeedsRemovedAmount;
-                _audio.PlayPvs(botComp.WeedSound, target);
-                _chat.TrySendInGameICMessage(owner, Loc.GetString("plantbot-remove-weeds"), InGameICChatType.Speak, hideChat: true, hideLog: true);
-            }
+            if (_plantbot.CanWaterPlantHolder(bot, holder))
+                _plantbot.TryDoWaterPlant(bot, holder);
+            else if (_plantbot.CanWeedPlantHolder(bot, holder))
+                _plantbot.TryDoWeedPlant(bot, holder);
             else
                 return HTNOperatorStatus.Failed;
         }
