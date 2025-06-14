@@ -17,7 +17,7 @@ public sealed partial class PickNearbyInjectableOperator : HTNOperator
 {
     [Dependency] private readonly IEntityManager _entManager = default!;
     private EntityLookupSystem _lookup = default!;
-    private MedibotSystem _medibot = default!;
+    private SharedMedibotSystem _medibot = default!;
     private PathfindingSystem _pathfinding = default!;
 
     [DataField("rangeKey")] public string RangeKey = NPCBlackboard.MedibotInjectRange;
@@ -38,7 +38,7 @@ public sealed partial class PickNearbyInjectableOperator : HTNOperator
     {
         base.Initialize(sysManager);
         _lookup = sysManager.GetEntitySystem<EntityLookupSystem>();
-        _medibot = sysManager.GetEntitySystem<MedibotSystem>();
+        _medibot = sysManager.GetEntitySystem<SharedMedibotSystem>();
         _pathfinding = sysManager.GetEntitySystem<PathfindingSystem>();
     }
 
