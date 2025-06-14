@@ -1164,6 +1164,11 @@ INSERT INTO player_round (players_id, rounds_id) VALUES ({players[player]}, {id}
                 db.DbContext.ConsentSettings.Add(currentConsentSettings);
             }
 
+            var permissions = await db.DbContext.ConsentPermissionsEntry
+                .Include(e => e.ConsentTargets)
+                .AsSplitQuery()
+                .SingleOrDefaultAsync(p => p.UserId == userId);
+
             currentConsentSettings.ConsentFreetext = consentSettings.Freetext;
             Dictionary<ProtoId<ConsentTogglePrototype>, string> currentConsentToggles = currentConsentSettings.ConsentToggles.ToDictionary(
                 keySelector: t => new ProtoId<ConsentTogglePrototype>(t.ToggleProtoId),
@@ -1175,7 +1180,8 @@ INSERT INTO player_round (players_id, rounds_id) VALUES ({players[player]}, {id}
             {
                 if (consentSettings.Toggles.TryGetValue(toggle.Key, out var toggleState))
                 {
-                    currentConsentSettings.ConsentToggles.Where(t => t.ToggleProtoId == toggle.Key).First().ToggleProtoState = toggleState;
+                    currentConsentSettings.ConsentToggles.First(t => t.ToggleProtoId == toggle.Key)
+                        .ToggleProtoState = toggleState;
                 }
                 else
                 {
@@ -1195,6 +1201,35 @@ INSERT INTO player_round (players_id, rounds_id) VALUES ({players[player]}, {id}
                 });
             }
 
+            if (permissions is null)
+            {
+                var currentPermissions = new ConsentPermissionsEntry();
+                currentPermissions.UserId = userId.UserId;
+                currentPermissions.ConsentTargets = new();
+                permissions = currentPermissions;
+
+                db.DbContext.ConsentPermissionsEntry.Add(currentPermissions);
+            }
+
+            permissions.ConsentTargets.Clear();
+
+            foreach (var permission in consentSettings.Permissions.SpecifiedConsents)
+            {
+                foreach (var option in permission.Value)
+                {
+                    if (option.IsConsenting == Consenting.Default)
+                        continue;
+
+                    var target = new ConsentTarget();
+                    target.TargetConsent = option.ConsentToggleId;
+                    target.TargetHasConsent = option.HasConsent;
+
+                    permissions.ConsentTargets.Add(target);
+                }
+
+                permissions.UserId = userId.UserId;
+            }
+
             await db.DbContext.SaveChangesAsync();
         }
 
@@ -1209,13 +1244,40 @@ INSERT INTO player_round (players_id, rounds_id) VALUES ({players[player]}, {id}
                 //.AsSingleQuery()
                 .SingleOrDefaultAsync(c => c.UserId == userId);
 
+            var consentPermissions = await db.DbContext.ConsentPermissionsEntry
+                .Include(e => e.ConsentTargets)
+                .SingleOrDefaultAsync(c => c.UserId == userId);
+
             if (consentSettings is null)
                 return new();
 
-            return new(consentSettings.ConsentFreetext, consentSettings.ConsentToggles.ToDictionary(
+            var toggles = consentSettings.ConsentToggles.ToDictionary(
                 keySelector: t => new ProtoId<ConsentTogglePrototype>(t.ToggleProtoId),
                 elementSelector: t => t.ToggleProtoState
-            ));
+            );
+
+            if (consentPermissions is null)
+                return new(consentSettings.ConsentFreetext, toggles, new(userId));
+
+            var targets = new Dictionary<Guid, List<ConsentOption>>();
+
+            foreach (var target in consentPermissions.ConsentTargets)
+            {
+                if (!targets.ContainsKey(target.TargetId))
+                    targets.Add(target.TargetId, new());
+
+                var option = new ConsentOption();
+                option.ConsentToggleId = target.TargetConsent;
+                option.SetConsent(target.TargetHasConsent);
+
+                targets[target.TargetId].Add(option);
+            }
+
+            var permissions = new ConsentPermissions();
+            permissions.UserId = userId;
+            permissions.SpecifiedConsents = targets;
+
+            return new(consentSettings.ConsentFreetext, toggles, permissions);
         }
 
         #endregion

@@ -151,7 +151,7 @@ public sealed class ParadoxAnomalySystem : EntitySystem
             if (_role.MindIsAntagonist(mindId))
                 continue;
 
-            if (_consent.HasConsent(uid, _paradoxAnomalyConsent))
+            if (!_consent.HasConsent(uid, "ParadoxAnomaly"))
                 continue;
 
             // TODO: when metempsychosis real skip whoever has Karma
