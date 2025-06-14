@@ -704,6 +704,26 @@
     - WeaponPistolViperSecurityNonLethal
 
 - type: loadout
+  id: LoadoutSecurityPistolViperWoodNonlethal
+  category: JobsSecurityAUncategorized
+  cost: 2
+  canBeHeirloom: true
+  guideEntry: SecurityWeapons
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSecurityWeapons
+    - !type:CharacterLogicOrRequirement
+      requirements:
+      - !type:CharacterDepartmentRequirement
+        departments:
+          - Security
+      - !type:CharacterJobRequirement
+        jobs:
+          - BlueshieldOfficer
+  items:
+    - WeaponPistolViperWoodSecurityNonlethal
+
+- type: loadout
   id: LoadoutSecurityEquipmentTruncheon
   category: JobsSecurityAUncategorized
   cost: 3

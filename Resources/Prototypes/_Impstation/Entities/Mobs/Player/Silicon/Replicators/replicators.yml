@@ -189,6 +189,9 @@
     - ActionReplicatorUpgrade2Alt
   - type: CombatMode
   - type: Puller
+    softGrabSpeedModifier: 1
+    hardGrabSpeedModifier: 1
+    chokeGrabSpeedModifier: 1
     needsHands: false
     applySpeedModifier: false
   - type: StaminaDamageOnHit
