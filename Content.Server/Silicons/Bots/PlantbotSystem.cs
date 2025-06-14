@@ -3,10 +3,13 @@ using Content.Server.Actions;
 using Content.Server.Botany.Components;
 using Content.Server.Botany.Systems;
 using Content.Server.Chat.Systems;
+using Content.Server.Popups;
 using Content.Shared.Actions;
 using Content.Shared.Chat;
 using Content.Shared.DoAfter;
 using Content.Shared.Emag.Components;
+using Content.Shared.IdentityManagement;
+using Content.Shared.Popups;
 using Content.Shared.Silicons.Bots;
 
 namespace Content.Server.Silicons.Bots;
@@ -17,6 +20,7 @@ public sealed class PlantbotSystem : SharedPlantbotSystem
     [Dependency] private readonly ChatSystem _chat = default!;
     [Dependency] private readonly SharedDoAfterSystem _doAfter = default!;
     [Dependency] private readonly PlantHolderSystem _plantHolder = default!;
+    [Dependency] private readonly PopupSystem _popup = default!;
 
     public override void Initialize()
     {
@@ -37,10 +41,16 @@ public sealed class PlantbotSystem : SharedPlantbotSystem
     }
 
     private void OnWaterPlantAction(ref PlantbotWaterPlantActionEvent args)
-        => HandlePlantMaintenanceAction(ref args, CanWaterPlantHolder, TryDoWaterPlant);
+        => HandlePlantMaintenanceAction(ref args,
+            CanWaterPlantHolder,
+            TryDoWaterPlant,
+            "plantbot-error-too-much-water");
 
     private void OnRemoveWeedsAction(ref PlantbotRemoveWeedsActionEvent args)
-        => HandlePlantMaintenanceAction(ref args, CanWeedPlantHolder, TryDoWeedPlant);
+        => HandlePlantMaintenanceAction(ref args,
+            CanWeedPlantHolder,
+            TryDoWeedPlant,
+            "plant-holder-component-no-weeds-message");
 
     private void OnDoWaterPlant(ref PlantbotWateringDoAfterEvent args)
         => OnDoPlantMaintenance(ref args, WaterPlant);
@@ -108,7 +118,8 @@ public sealed class PlantbotSystem : SharedPlantbotSystem
 
     private void HandlePlantMaintenanceAction<TEvent>(ref TEvent args,
         Func<Entity<PlantbotComponent>, Entity<PlantHolderComponent>, bool> condition,
-        Action<Entity<PlantbotComponent>, Entity<PlantHolderComponent>> actionFunction)
+        Action<Entity<PlantbotComponent>, Entity<PlantHolderComponent>> actionFunction,
+        LocId? failedMessage = null)
         where TEvent : EntityTargetActionEvent
     {
         if (args.Handled ||
@@ -127,16 +138,26 @@ public sealed class PlantbotSystem : SharedPlantbotSystem
             actionFunction(bot.Value, holder.Value);
             args.Handled = true;
         }
+        else if (failedMessage != null)
+            _popup.PopupCursor(Loc.GetString(failedMessage), args.Performer);
     }
 
     public void WaterPlant(Entity<PlantbotComponent> plantBot, Entity<PlantHolderComponent> plantHolder)
     {
+        _popup.PopupCursor(Loc.GetString("plantbot-add-water-message",
+            ("name", Identity.Name(plantHolder.Owner, EntityManager))),
+            plantBot.Owner,
+            PopupType.Medium);
         _plantHolder.AdjustWater(plantHolder.Owner, plantBot.Comp.WaterTransferAmount, plantHolder.Comp);
         AudioSystem.PlayPvs(plantBot.Comp.WaterSound, plantHolder.Owner);
     }
 
     public void WeedPlant(Entity<PlantbotComponent> plantBot, Entity<PlantHolderComponent> plantHolder)
     {
+        _popup.PopupCursor(Loc.GetString("plant-holder-component-remove-weeds-message",
+            ("name", Identity.Name(plantHolder.Owner, EntityManager))),
+            plantBot.Owner,
+            PopupType.Medium);
         plantHolder.Comp.WeedLevel -= plantBot.Comp.WeedsRemovedAmount;
         AudioSystem.PlayPvs(plantBot.Comp.WeedSound, plantHolder.Owner);
     }
