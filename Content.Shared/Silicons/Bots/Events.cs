@@ -32,3 +32,8 @@ public sealed partial class PlantbotWeedingDoAfterEvent : SimpleDoAfterEvent
 [Serializable, NetSerializable]
 public sealed partial class PlantbotDrinkingDoAfterEvent : SimpleDoAfterEvent
 { }
+
+[ByRefEvent]
+[Serializable, NetSerializable]
+public sealed partial class WeldbotWeldEntityDoAfterEvent : SimpleDoAfterEvent
+{ }

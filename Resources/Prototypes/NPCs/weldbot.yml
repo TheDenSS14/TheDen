@@ -18,11 +18,6 @@
             targetMoveKey: TargetCoordinates
 
         - !type:HTNPrimitiveTask
-          operator: !type:SpeakOperator
-            speech: weldbot-start-weld
-            hidden: true
-
-        - !type:HTNPrimitiveTask
           operator: !type:MoveToOperator
             pathfindInPlanning: false
 

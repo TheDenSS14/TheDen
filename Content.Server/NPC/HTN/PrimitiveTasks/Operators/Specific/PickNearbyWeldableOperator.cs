@@ -1,6 +1,7 @@
 using System.Threading;
 using System.Threading.Tasks;
 using Content.Server.NPC.Pathfinding;
+using Content.Server.Silicons.Bots;
 using Content.Shared.Damage;
 using Content.Shared.Emag.Components;
 using Content.Shared.Interaction;
@@ -47,37 +48,26 @@ public sealed partial class PickNearbyWeldableOperator : HTNOperator
     {
         var owner = blackboard.GetValue<EntityUid>(NPCBlackboard.Owner);
 
-        if (!blackboard.TryGetValue<float>(RangeKey, out var range, _entManager) || !_entManager.TryGetComponent<WeldbotComponent>(owner, out var weldbot))
+        if (!blackboard.TryGetValue<float>(RangeKey, out var range, _entManager)
+            || !_entManager.TryGetComponent<WeldbotComponent>(owner, out var weldbotComp))
             return (false, null);
 
+        var weldbot = new Entity<WeldbotComponent>(owner, weldbotComp);
         var damageQuery = _entManager.GetEntityQuery<DamageableComponent>();
-        var emagged = _entManager.HasComponent<EmaggedComponent>(owner);
 
         foreach (var target in _lookup.GetEntitiesInRange(owner, range))
         {
-            if (!damageQuery.TryGetComponent(target, out var damage))
-                continue;
-
-            var tagSiliconMobPrototype = _prototypeManager.Index<TagPrototype>(WeldbotWeldOperator.SiliconTag);
-            var tagWeldFixableStructurePrototype = _prototypeManager.Index<TagPrototype>(WeldbotWeldOperator.WeldotFixableStructureTag);
-
-            if (!_entManager.TryGetComponent<TagComponent>(target, out var tagComponent))
-                continue;
-
-            var canWeldSiliconMob = _tagSystem.HasTag(tagComponent, tagSiliconMobPrototype) && (emagged || damage.DamagePerGroup["Brute"].Value > 0);
-            var canWeldStructure = _tagSystem.HasTag(tagComponent, tagWeldFixableStructurePrototype) && damage.TotalDamage.Value > 0;
-
-            if(!canWeldSiliconMob && !canWeldStructure)
+            if (!damageQuery.HasComp(target)
+                || !_weldbot.CanWeldEntity(weldbot, target))
                 continue;
 
             var pathRange = SharedInteractionSystem.InteractionRange;
 
             //Needed to make sure it doesn't sometimes stop right outside its interaction range, in case of a mob.
-            if (canWeldSiliconMob)
+            if (_weldbot.CanWeldMob(weldbot, target))
                 pathRange--;
 
             var path = await _pathfinding.GetPath(owner, target, pathRange, cancelToken);
-
             if (path.Result == PathResult.NoPath)
                 continue;
 
