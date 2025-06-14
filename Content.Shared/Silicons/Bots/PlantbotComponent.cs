@@ -1,4 +1,5 @@
 using Robust.Shared.Audio;
+using Robust.Shared.Prototypes;
 
 namespace Content.Shared.Silicons.Bots;
 
@@ -47,4 +48,15 @@ public sealed partial class PlantbotComponent : Component
 
     [DataField, ViewVariables(VVAccess.ReadWrite)]
     public float WeedsRemovedAmount = 1f;
+
+    [DataField, ViewVariables(VVAccess.ReadWrite)]
+    public float DoAfterLength = 2.0f;
+
+    [DataField, ViewVariables]
+    public EntProtoId WaterPlantActionId = "ActionPlantbotWaterPlant";
+    public EntityUid? WaterPlantActionEntity;
+
+    [DataField, ViewVariables]
+    public EntProtoId WeedPlantActionId = "ActionPlantbotRemoveWeeds";
+    public EntityUid? WeedPlantActionEntity;
 }

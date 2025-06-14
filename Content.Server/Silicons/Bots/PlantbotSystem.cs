@@ -1,7 +1,9 @@
 using System.Diagnostics.CodeAnalysis;
+using Content.Server.Actions;
 using Content.Server.Botany.Components;
 using Content.Server.Botany.Systems;
 using Content.Server.Chat.Systems;
+using Content.Shared.Actions;
 using Content.Shared.Chat;
 using Content.Shared.DoAfter;
 using Content.Shared.Emag.Components;
@@ -11,6 +13,7 @@ namespace Content.Server.Silicons.Bots;
 
 public sealed class PlantbotSystem : SharedPlantbotSystem
 {
+    [Dependency] private readonly ActionsSystem _actions = default!;
     [Dependency] private readonly ChatSystem _chat = default!;
     [Dependency] private readonly SharedDoAfterSystem _doAfter = default!;
     [Dependency] private readonly PlantHolderSystem _plantHolder = default!;
@@ -19,10 +22,34 @@ public sealed class PlantbotSystem : SharedPlantbotSystem
     {
         base.Initialize();
 
-        SubscribeLocalEvent<PlantBotWateringDoAfterEvent>(OnDoWaterPlant);
-        SubscribeLocalEvent<PlantBotWeedingDoAfterEvent>(OnDoWeedPlant);
-        SubscribeLocalEvent<PlantBotDrinkingDoAfterEvent>(OnDoDrinkPlant);
+        SubscribeLocalEvent<PlantbotComponent, ComponentStartup>(OnPlantbotStartup);
+        SubscribeLocalEvent<PlantbotWateringDoAfterEvent>(OnDoWaterPlant);
+        SubscribeLocalEvent<PlantbotWeedingDoAfterEvent>(OnDoWeedPlant);
+        SubscribeLocalEvent<PlantbotDrinkingDoAfterEvent>(OnDoDrinkPlant);
+        SubscribeLocalEvent<PlantbotWaterPlantActionEvent>(OnWaterPlantAction);
+        SubscribeLocalEvent<PlantbotRemoveWeedsActionEvent>(OnRemoveWeedsAction);
     }
+
+    private void OnPlantbotStartup(EntityUid uid, PlantbotComponent component, ComponentStartup args)
+    {
+        _actions.AddAction(uid, ref component.WaterPlantActionEntity, component.WaterPlantActionId);
+        _actions.AddAction(uid, ref component.WeedPlantActionEntity, component.WeedPlantActionId);
+    }
+
+    private void OnWaterPlantAction(ref PlantbotWaterPlantActionEvent args)
+        => HandlePlantMaintenanceAction(ref args, CanWaterPlantHolder, TryDoWaterPlant);
+
+    private void OnRemoveWeedsAction(ref PlantbotRemoveWeedsActionEvent args)
+        => HandlePlantMaintenanceAction(ref args, CanWeedPlantHolder, TryDoWeedPlant);
+
+    private void OnDoWaterPlant(ref PlantbotWateringDoAfterEvent args)
+        => OnDoPlantMaintenance(ref args, WaterPlant);
+
+    private void OnDoWeedPlant(ref PlantbotWeedingDoAfterEvent args)
+        => OnDoPlantMaintenance(ref args, WeedPlant);
+
+    private void OnDoDrinkPlant(ref PlantbotDrinkingDoAfterEvent args)
+        => OnDoPlantMaintenance(ref args, DrinkPlant);
 
     /// <summary>
     ///     Starts a DoAfter that will end in the plantBot watering a plant. Does not actually check
@@ -31,7 +58,7 @@ public sealed class PlantbotSystem : SharedPlantbotSystem
     /// <param name="plantBot">The plantBot that will perform the maintenance.</param>
     /// <param name="plantHolder">The plantHolder (hydroponics tray etc) that will receive maintenance.</param>
     public void TryDoWaterPlant(Entity<PlantbotComponent> plantBot, Entity<PlantHolderComponent> plantHolder)
-        => TryDoPlantMaintenance<PlantBotWateringDoAfterEvent>(plantBot, plantHolder, "plantbot-add-water");
+        => TryDoPlantMaintenance<PlantbotWateringDoAfterEvent>(plantBot, plantHolder, "plantbot-add-water");
 
     /// <summary>
     ///     Starts a DoAfter that will end in the plantBot removing weeds from a plant. Does not actually check
@@ -40,7 +67,7 @@ public sealed class PlantbotSystem : SharedPlantbotSystem
     /// <param name="plantBot">The plantBot that will perform the maintenance.</param>
     /// <param name="plantHolder">The plantHolder (hydroponics tray etc) that will receive maintenance.</param>
     public void TryDoWeedPlant(Entity<PlantbotComponent> plantBot, Entity<PlantHolderComponent> plantHolder)
-        => TryDoPlantMaintenance<PlantBotWeedingDoAfterEvent>(plantBot, plantHolder, "plantbot-remove-weeds");
+        => TryDoPlantMaintenance<PlantbotWeedingDoAfterEvent>(plantBot, plantHolder, "plantbot-remove-weeds");
 
     /// <summary>
     ///     Starts a DoAfter that will end in the plantBot drinking water out of a plant. Does not actually check
@@ -53,16 +80,8 @@ public sealed class PlantbotSystem : SharedPlantbotSystem
         if (!CanDrinkPlant(plantBot, plantHolder))
             return;
 
-        TryDoPlantMaintenance<PlantBotDrinkingDoAfterEvent>(plantBot, plantHolder);
+        TryDoPlantMaintenance<PlantbotDrinkingDoAfterEvent>(plantBot, plantHolder);
     }
-    private void OnDoWaterPlant(ref PlantBotWateringDoAfterEvent args)
-        => OnDoPlantMaintenance(ref args, WaterPlant);
-
-    private void OnDoWeedPlant(ref PlantBotWeedingDoAfterEvent args)
-        => OnDoPlantMaintenance(ref args, WeedPlant);
-
-    private void OnDoDrinkPlant(ref PlantBotDrinkingDoAfterEvent args)
-        => OnDoPlantMaintenance(ref args, DrinkPlant);
 
     private void OnDoPlantMaintenance<TEvent>(ref TEvent args,
         Action<Entity<PlantbotComponent>, Entity<PlantHolderComponent>> action)
@@ -92,6 +111,29 @@ public sealed class PlantbotSystem : SharedPlantbotSystem
         _doAfter.TryStartDoAfter(doAfterEventArgs);
     }
 
+    private void HandlePlantMaintenanceAction<TEvent>(ref TEvent args,
+        Func<Entity<PlantbotComponent>, Entity<PlantHolderComponent>, bool> condition,
+        Action<Entity<PlantbotComponent>, Entity<PlantHolderComponent>> actionFunction)
+        where TEvent : EntityTargetActionEvent
+    {
+        if (args.Handled ||
+            !TryGetBotAndHolder(args.Performer, args.Target, out var bot, out var holder))
+            return;
+
+        if (CanDrinkPlant(bot.Value, holder.Value))
+        {
+            TryDoDrinkPlant(bot.Value, holder.Value);
+            args.Handled = true;
+            return;
+        }
+
+        if (condition(bot.Value, holder.Value))
+        {
+            actionFunction(bot.Value, holder.Value);
+            args.Handled = true;
+        }
+    }
+
     public void WaterPlant(Entity<PlantbotComponent> plantBot, Entity<PlantHolderComponent> plantHolder)
     {
         _plantHolder.AdjustWater(plantHolder.Owner, plantBot.Comp.WaterTransferAmount, plantHolder.Comp);
@@ -112,12 +154,11 @@ public sealed class PlantbotSystem : SharedPlantbotSystem
 
     private DoAfterArgs GetActionArgs(Entity<PlantbotComponent> plantBot,
         Entity<PlantHolderComponent> plantHolder,
-        DoAfterEvent @event,
-        float doAfterLength = 1.2f)
+        DoAfterEvent @event)
     {
         var doAfterEventArgs = new DoAfterArgs(EntityManager,
             plantBot.Owner,
-            doAfterLength,
+            plantBot.Comp.DoAfterLength,
             @event,
             plantBot.Owner,
             plantHolder.Owner)
