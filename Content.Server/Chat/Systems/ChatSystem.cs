@@ -100,6 +100,8 @@ public sealed partial class ChatSystem : SharedChatSystem
         _sawmill = _logManager.GetSawmill("chat");
 
         SubscribeLocalEvent<GameRunLevelChangedEvent>(OnGameChange);
+
+        InitializeEmotes();
     }
 
     private void OnLoocEnabledChanged(bool val)

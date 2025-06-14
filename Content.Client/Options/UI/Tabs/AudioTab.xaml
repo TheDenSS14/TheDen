@@ -71,6 +71,14 @@
                     <Label Name="AnnouncerVolumeLabel" MinSize="48 0" Align="Right" />
                     <Control MinSize="4 0"/>
                 </BoxContainer>
+                <BoxContainer Orientation="Horizontal" Margin="5 0 0 0">
+                    <Label Text="{Loc 'ui-options-emotes-volume'}" HorizontalExpand="True" />
+                    <Control MinSize="8 0" />
+                    <Slider Name="EmotesVolumeSlider" MinValue="0" MaxValue="100" HorizontalExpand="True" MinSize="80 0" Rounded="True" />
+                    <Control MinSize="8 0" />
+                    <Label Name="EmotesVolumeLabel" MinSize="48 0" Align="Right" />
+                    <Control MinSize="4 0"/>
+                </BoxContainer>
                 <Control MinSize="0 8" />
                 <CheckBox Name="LobbyMusicCheckBox" Text="{Loc 'ui-options-lobby-music'}" />
                 <CheckBox Name="RestartSoundsCheckBox" Text="{Loc 'ui-options-restart-sounds'}" />
