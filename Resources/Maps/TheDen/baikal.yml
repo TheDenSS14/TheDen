@@ -14603,8 +14603,6 @@ entities:
       pos: 74.5,-52.5
       parent: 13
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 26522
   - uid: 26476
@@ -15873,8 +15871,6 @@ entities:
       pos: 120.5,-61.5
       parent: 13
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 29083
   - uid: 28995
@@ -15900,8 +15896,6 @@ entities:
       pos: 120.5,-65.5
       parent: 13
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 29083
 - proto: AltarConvertMaint
@@ -78237,8 +78231,6 @@ entities:
       pos: 74.5,-47.5
       parent: 13
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 26522
       - 26477
@@ -78248,8 +78240,6 @@ entities:
       pos: 75.5,-47.5
       parent: 13
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 26522
       - 26477
@@ -81790,8 +81780,6 @@ entities:
       pos: 118.5,-60.5
       parent: 13
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 29083
       - 27319
@@ -118948,8 +118936,6 @@ entities:
       pos: 63.5,-53.5
       parent: 13
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 26522
     - type: AtmosPipeColor
@@ -120363,8 +120349,6 @@ entities:
       pos: 119.5,-65.5
       parent: 13
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 29083
     - type: AtmosPipeColor
@@ -120376,8 +120360,6 @@ entities:
       pos: 121.5,-61.5
       parent: 13
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 29083
     - type: AtmosPipeColor
@@ -120452,8 +120434,6 @@ entities:
       pos: 62.5,-53.5
       parent: 13
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 26522
     - type: AtmosPipeColor
@@ -123207,8 +123187,6 @@ entities:
       pos: 121.5,-60.5
       parent: 13
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 29083
     - type: AtmosPipeColor
@@ -123220,8 +123198,6 @@ entities:
       pos: 119.5,-64.5
       parent: 13
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 29083
     - type: AtmosPipeColor
@@ -136063,13 +136039,13 @@ entities:
         Hihi! Thanks for taking the time to explore my map! I'd love to take this small hidden out of the way note to really really thank everyone who encouraged me to work towards making and completing this map!
 
 
-        Special Special thanks to Jenn, April, Gregg, Morgan, KC, Mono, Fox, and Madelyn! Y'all made sure I never gave up! 
+        Special Special thanks to Jenn, April, Gregg, Morgan, KC, Mono, Fox, and Madelyn! Y'all made sure I never gave up!
 
 
-        Thank you also to the greater SS14 Community for giving me such great content and tools to make this map with! Y'all really let a girl go wild! :] 
+        Thank you also to the greater SS14 Community for giving me such great content and tools to make this map with! Y'all really let a girl go wild! :]
 
 
-        Okay okay! enjoy the map and the silly plushie now! 
+        Okay okay! enjoy the map and the silly plushie now!
 
 
         With Hugs and Love,
@@ -162950,11 +162926,6 @@ entities:
       setupAvailableNetworks:
       - SurveillanceCameraCommand
       id: '[Command] Bridge Hallway 2'
-    - type: UserInterface
-      actors:
-        enum.SurveillanceCameraSetupUiKey.Camera:
-        - invalid
-    - type: ActiveUserInterface
   - uid: 25238
     components:
     - type: Transform
@@ -163326,11 +163297,6 @@ entities:
       setupAvailableNetworks:
       - SurveillanceCameraEngineering
       id: '[Engineering] Atmos Main 6'
-    - type: UserInterface
-      actors:
-        enum.SurveillanceCameraSetupUiKey.Camera:
-        - invalid
-    - type: ActiveUserInterface
   - uid: 25177
     components:
     - type: Transform
@@ -163388,11 +163354,6 @@ entities:
       setupAvailableNetworks:
       - SurveillanceCameraEngineering
       id: '[Engineering] Shipyard Main 3'
-    - type: UserInterface
-      actors:
-        enum.SurveillanceCameraSetupUiKey.Camera:
-        - invalid
-    - type: ActiveUserInterface
   - uid: 25184
     components:
     - type: Transform
@@ -163699,11 +163660,6 @@ entities:
       setupAvailableNetworks:
       - SurveillanceCameraGeneral
       id: '[Common] Library 1'
-    - type: UserInterface
-      actors:
-        enum.SurveillanceCameraSetupUiKey.Camera:
-        - invalid
-    - type: ActiveUserInterface
   - uid: 25100
     components:
     - type: Transform
@@ -163714,11 +163670,6 @@ entities:
       setupAvailableNetworks:
       - SurveillanceCameraGeneral
       id: '[Common] Library 3'
-    - type: UserInterface
-      actors:
-        enum.SurveillanceCameraSetupUiKey.Camera:
-        - invalid
-    - type: ActiveUserInterface
   - uid: 25101
     components:
     - type: Transform
@@ -163737,11 +163688,6 @@ entities:
       setupAvailableNetworks:
       - SurveillanceCameraGeneral
       id: '[Common] Library 4'
-    - type: UserInterface
-      actors:
-        enum.SurveillanceCameraSetupUiKey.Camera:
-        - invalid
-    - type: ActiveUserInterface
   - uid: 25103
     components:
     - type: Transform
@@ -163783,11 +163729,6 @@ entities:
       setupAvailableNetworks:
       - SurveillanceCameraGeneral
       id: '[Common] HOP- Epistemics Hallway 2'
-    - type: UserInterface
-      actors:
-        enum.SurveillanceCameraSetupUiKey.Camera:
-        - invalid
-    - type: ActiveUserInterface
   - uid: 25108
     components:
     - type: Transform
@@ -163805,11 +163746,6 @@ entities:
       setupAvailableNetworks:
       - SurveillanceCameraGeneral
       id: '[Common] HOP- Epistemics Hallway 1'
-    - type: UserInterface
-      actors:
-        enum.SurveillanceCameraSetupUiKey.Camera:
-        - invalid
-    - type: ActiveUserInterface
   - uid: 25110
     components:
     - type: Transform
@@ -163852,11 +163788,6 @@ entities:
       setupAvailableNetworks:
       - SurveillanceCameraGeneral
       id: '[Common] Arrivals - HOP Hallway 4'
-    - type: UserInterface
-      actors:
-        enum.SurveillanceCameraSetupUiKey.Camera:
-        - invalid
-    - type: ActiveUserInterface
   - uid: 25114
     components:
     - type: Transform
@@ -163866,11 +163797,6 @@ entities:
       setupAvailableNetworks:
       - SurveillanceCameraGeneral
       id: '[Common] Arrivals - HOP Hallway 3'
-    - type: UserInterface
-      actors:
-        enum.SurveillanceCameraSetupUiKey.Camera:
-        - invalid
-    - type: ActiveUserInterface
   - uid: 25117
     components:
     - type: Transform
@@ -165132,11 +165058,6 @@ entities:
       setupAvailableNetworks:
       - SurveillanceCameraService
       id: '[Service] Janitor Closet'
-    - type: UserInterface
-      actors:
-        enum.SurveillanceCameraSetupUiKey.Camera:
-        - invalid
-    - type: ActiveUserInterface
   - uid: 25257
     components:
     - type: Transform
@@ -165220,11 +165141,6 @@ entities:
       setupAvailableNetworks:
       - SurveillanceCameraService
       id: '[Service] Law Office 2'
-    - type: UserInterface
-      actors:
-        enum.SurveillanceCameraSetupUiKey.Camera:
-        - invalid
-    - type: ActiveUserInterface
   - uid: 25281
     components:
     - type: Transform
@@ -165287,11 +165203,6 @@ entities:
       setupAvailableNetworks:
       - SurveillanceCameraSupply
       id: '[Logistics] Storage Area'
-    - type: UserInterface
-      actors:
-        enum.SurveillanceCameraSetupUiKey.Camera:
-        - invalid
-    - type: ActiveUserInterface
   - uid: 25085
     components:
     - type: Transform
@@ -187054,8 +186965,6 @@ entities:
       pos: 104.5,-66.5
       parent: 13
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 29069
   - uid: 28291
@@ -187064,8 +186973,6 @@ entities:
       pos: 104.5,-58.5
       parent: 13
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 29069
   - uid: 28292
@@ -187074,8 +186981,6 @@ entities:
       pos: 96.5,-58.5
       parent: 13
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 29069
   - uid: 28960
@@ -187084,8 +186989,6 @@ entities:
       pos: 96.5,-66.5
       parent: 13
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 29069
   - uid: 29070
@@ -187094,8 +186997,6 @@ entities:
       pos: 107.5,-62.5
       parent: 13
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 29069
 - proto: WeaponEnergyTurretAIControlPanel

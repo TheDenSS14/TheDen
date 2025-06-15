@@ -76,7 +76,7 @@ internal struct CustomRichTextEntry
             if (node.Name == ExamineBorderTag.TagName)
                 IsInBox = true;
 
-            if (!tagManager.TryGetMarkupTag(node.Name, _tagsAllowed, out var tag) || !tag.TryGetControl(node, out var control))
+            if (!tagManager.TryGetMarkupTagHandler(node.Name, _tagsAllowed, out var tag) || !tag.TryCreateControl(node, out var control))
                 continue;
 
             parent.Children.Add(control);
@@ -376,7 +376,7 @@ internal struct CustomRichTextEntry
             return node.Value.StringValue ?? "";
 
         //Skip the node if there is no markup tag for it.
-        if (!tagManager.TryGetMarkupTag(node.Name, _tagsAllowed, out var tag))
+        if (!tagManager.TryGetMarkupTagHandler(node.Name, _tagsAllowed, out var tag))
             return "";
 
         if (!node.Closing)

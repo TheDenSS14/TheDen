@@ -17,9 +17,6 @@ entities:
     components:
     - type: MetaData
       name: SAN Shuttle
-    - type: Transform
-      pos: -0.6171875,1.6265492
-      parent: invalid
     - type: MapGrid
       chunks:
         0,0:
@@ -940,13 +937,6 @@ entities:
       parent: 1
     - type: Fixtures
       fixtures: {}
-- proto: Doorjack
-  entities:
-  - uid: 102
-    components:
-    - type: Transform
-      pos: 3.5337243,-9.2386
-      parent: 1
 - proto: FoodPacketCheesieTrash
   entities:
   - uid: 103

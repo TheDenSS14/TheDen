@@ -24,9 +24,6 @@ entities:
     components:
     - type: MetaData
       name: NT Evac Box
-    - type: Transform
-      pos: 0.06253052,0.58707
-      parent: 22
     - type: MapGrid
       chunks:
         0,0:
@@ -491,19 +488,6 @@ entities:
     - type: GasTileOverlay
     - type: RadiationGridResistance
     - type: NavMap
-  - uid: 22
-    components:
-    - type: MetaData
-      name: Map Entity
-    - type: Transform
-    - type: Map
-      mapPaused: True
-    - type: PhysicsMap
-    - type: GridTree
-    - type: MovedGrids
-    - type: Broadphase
-    - type: OccluderTree
-    - type: LoadedMap
 - proto: AirAlarm
   entities:
   - uid: 659
