@@ -1,6 +1,4 @@
-﻿using System.Numerics;
-using Content.Client.Resources;
-using Content.Client.UserInterface.Systems.Chat.Controls.Denu;
+﻿using Content.Client.Resources;
 using Robust.Client.ResourceManagement;
 using Robust.Client.UserInterface.Controls;
 
@@ -15,56 +13,38 @@ public sealed class DenuButton : ChatPopupButton<DenuPopup>
     public static readonly Color ColorPressed = Color.FromHex("#789B8C");
 
     private readonly TextureRect? _textureRect;
-    private readonly ChatUIController _chatUIController;
-
-    private const int FilterDropdownOffset = 120;
 
     public DenuButton()
     {
-        _chatUIController = UserInterfaceManager.GetUIController<ChatUIController>();
         var filterTexture = IoCManager.Resolve<IResourceCache>()
-            .GetTexture("/Textures/Interface/Nano/filter.svg.96dpi.png");
+            .GetTexture("/Textures/_DEN/Interface/Denu.png");
 
-        AddChild(
-            (_textureRect = new TextureRect
-            {
-                Texture = filterTexture,
-                HorizontalAlignment = HAlignment.Center,
-                VerticalAlignment = VAlignment.Center
-            })
-        );
+        _textureRect = new()
+        {
+            Texture = filterTexture,
+            HorizontalAlignment = HAlignment.Center,
+            VerticalAlignment = VAlignment.Center
+        };
+
+        AddChild(_textureRect);
     }
 
-    protected override UIBox2 GetPopupPosition()
-    {
-        var globalPos = GlobalPosition;
-        var (minX, minY) = Popup.MinSize;
-        return UIBox2.FromDimensions(
-            globalPos - new Vector2(FilterDropdownOffset, 0),
-            new Vector2(Math.Max(minX, Popup.MinWidth), minY));
-    }
+    protected override UIBox2 GetPopupPosition() =>
+        UIBox2.FromDimensions(GlobalPosition, Popup.MinSize with { X = Math.Max(Popup.MinSize.X, Popup.MinWidth) });
 
     private void UpdateChildColors()
     {
         if (_textureRect == null)
             return;
-        switch (DrawMode)
+
+        _textureRect.ModulateSelfOverride = DrawMode switch
         {
-            case DrawModeEnum.Normal:
-                _textureRect.ModulateSelfOverride = ColorNormal;
-                break;
-
-            case DrawModeEnum.Pressed:
-                _textureRect.ModulateSelfOverride = ColorPressed;
-                break;
-
-            case DrawModeEnum.Hover:
-                _textureRect.ModulateSelfOverride = ColorHovered;
-                break;
-
-            case DrawModeEnum.Disabled:
-                break;
-        }
+            DrawModeEnum.Normal => ColorNormal,
+            DrawModeEnum.Pressed => ColorPressed,
+            DrawModeEnum.Hover => ColorHovered,
+            DrawModeEnum.Disabled => Color.Transparent,
+            _ => ColorNormal
+        };
     }
 
     protected override void DrawModeChanged()
@@ -77,13 +57,5 @@ public sealed class DenuButton : ChatPopupButton<DenuPopup>
     {
         base.StylePropertiesChanged();
         UpdateChildColors();
-    }
-
-    protected override void Dispose(bool disposing)
-    {
-        base.Dispose(disposing);
-
-        if (!disposing)
-            return;
     }
 }

@@ -1,24 +1,24 @@
 ﻿using Content.Client.Chat.TypingIndicator;
-using OpenToolkit.GraphicsLibraryFramework;
 using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.Controllers;
-using Robust.Shared.Timing;
-using Serilog;
+
 
 namespace Content.Client.UserInterface.Systems.Chat.Controls.Denu;
 
-public sealed partial class DenuUIController : UIController
+
+public sealed class DenuUIController : UIController
 {
-    [UISystemDependency] private readonly TypingIndicatorSystem? _typingIndicator = default;
-    
-    public void TypingToggleUpdate()
-    {
-        _typingIndicator!.ClientChangedChatText();
-    }
+    [UISystemDependency] private readonly TypingIndicatorSystem _typingIndicatorSystem = default!;
+    public bool AutoFormatterEnabled { get; set; } = false;
+    public Color DialogueColor { get; set; } = Color.FromHex("#FFFFFF");
+    public Color EmoteColor { get; set; } = Color.FromHex("#FF13FF");
 
-    public void TypingToggleDisabled()
-    {
-        _typingIndicator!.ClientSubmittedChatText();
-    }
+    public string FormatMessage(string message) =>
+        MessageFormatter.Format(message, DialogueColor.ToHex(), EmoteColor.ToHex());
 
+    public void ShowTypingIndicator() =>
+        _typingIndicatorSystem.ClientChangedChatText();
+
+    public void HideTypingIndicator() =>
+        _typingIndicatorSystem.ClientSubmittedChatText();
 }
