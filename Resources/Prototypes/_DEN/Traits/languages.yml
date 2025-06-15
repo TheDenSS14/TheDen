@@ -195,3 +195,19 @@
       languagesUnderstood:
         - Alaseta
 
+- type: trait
+  id: Kagebun
+  category: TraitsSpeechLanguages
+  points: -2
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+      - Kitsune
+  functions:
+    - !type:TraitModifyLanguages
+      languagesSpoken:
+        - Kagebun
+      languagesUnderstood:
+        - Kagebun
+
