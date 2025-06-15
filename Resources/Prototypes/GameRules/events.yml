@@ -255,6 +255,81 @@
   - type: MeteorSwarmRule
 
 - type: entity
+  id: XenoVents
+  parent: BaseGameRule
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: StationEvent
+    startAnnouncement: true
+    earliestStart: 15
+    reoccurrenceDelay: 12
+    minimumPlayers: 10
+    weight: 6 # Really weak compared to other critters
+    duration: 30
+  - type: VentCrittersRule
+    table: !type:GroupSelector # DeltaV: EntityTable instead of spawn entries
+      children:
+      - id: MobXeno
+        weight: 0.55
+      - id: MobXenoRouny
+        weight: 0.01
+      - id: MobXenoDrone
+        weight: 0.25
+      - id: MobXenoSpitter
+        weight: 0.05
+      - id: MobXenoRunner
+        weight: 0.08
+      - id: MobXenoPraetorian
+        weight: 0.03
+      - id: MobXenoRavager
+        weight: 0.02
+      - id: MobXenoQueen
+        weight: 0.01
+
+# Weaker version of xenos, meant to provide some dangers in low pop.
+- type: entity
+  id: XenoVentsWeak
+  parent: XenoVents
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: StationEvent
+    startAnnouncement: true
+    reoccurrenceDelay: 12
+    minimumPlayers: 1
+    duration: 30
+  - type: VentCrittersRule
+    table: !type:GroupSelector # DeltaV: EntityTable instead of spawn entries
+      children:
+      - id: MobXeno
+        weight: 0.55
+      - id: MobXenoRouny
+        weight: 0.01
+      - id: MobXenoDrone
+        weight: 0.25
+      - id: MobXenoSpitter
+        weight: 0.05
+      - id: MobXenoRunner
+        weight: 0.08
+      - id: MobXenoRavager
+        weight: 0.02
+
+- type: entity
+  id: MothroachSpawn
+  parent: BaseGameRule
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: StationEvent
+    earliestStart: 15
+    minimumPlayers: 1
+    weight: 4
+    duration: 60
+  - type: VentCrittersRule
+    table: !type:GroupSelector # DeltaV: EntityTable instead of spawn entries
+      children:
+      - id: MobMothroach
+        weight: 1
+
+- type: entity
   id: MouseMigration
   parent: BaseGameRule
   categories: [ HideSpawnMenu ]
@@ -266,17 +341,18 @@
     weight: 3
     duration: 50
   - type: VentCrittersRule
-    entries:
-    - id: MobMouse
-      prob: 0.02
-    - id: MobMouse1
-      prob: 0.02
-    - id: MobMouse2
-      prob: 0.02
-    - id: MobMouseCancer
-      prob: 0.001
-    - id: MobRoingus
-      prob: 0.01
+    table: !type:GroupSelector # DeltaV: EntityTable instead of spawn entries
+      children:
+      - id: MobMouse
+        weight: 0.25
+      - id: MobMouse1
+        prob: 0.25
+      - id: MobMouse2
+        prob: 0.25
+      # - id: MobMouseCancer
+      #   prob: 0.001
+      - id: MobRoingus
+        prob: 0.25
 #    specialEntries:
 #    - id: SpawnPointGhostRatKing
 #      prob: 0.001
@@ -293,9 +369,10 @@
     weight: 6
     duration: 50
   - type: VentCrittersRule
-    entries:
-    - id: MobRoingus
-      prob: 0.02
+    table: !type:GroupSelector # DeltaV: EntityTable instead of spawn entries
+      children:
+      - id: MobRoingus
+        weight: 1
 
 - type: entity
   id: CockroachMigration
@@ -308,11 +385,12 @@
     weight: 3
     duration: 50
   - type: VentCrittersRule
-    entries:
-    - id: MobCockroach
-      prob: 0.03
-    - id: MobMothroach
-      prob: 0.008
+    table: !type:GroupSelector # DeltaV: EntityTable instead of spawn entries
+      children:
+      - id: MobCockroach
+        weight: 0.7
+      - id: MobMothroach
+        weight: 0.3
 
 - type: entity
   id: SnailMigrationLowPop
@@ -325,13 +403,12 @@
     weight: 3
     duration: 50
   - type: VentCrittersRule
-    entries:
-    - id: MobSnail
-      prob: 0.02
-    - id: MobSnailSpeed
-      prob: 0.002
-    - id: MobSnailMoth
-      prob: 0.002
+    table: !type:GroupSelector # DeltaV: EntityTable instead of spawn entries
+      children:
+      - id: MobSnail
+        weight: 0.7
+      - id: MobSnailMoth
+        weight: 0.3
 
 - type: entity
   id: SnailMigration
@@ -345,15 +422,16 @@
     duration: 50
     minimumPlayers: 30
   - type: VentCrittersRule
-    entries:
-    - id: MobSnail
-      prob: 0.02
-    - id: MobSnailSpeed
-      prob: 0.002
-    - id: MobSnailMoth
-      prob: 0.002
-    - id: MobSnailInstantDeath
-      prob: 0.00001 #  ~ 1:2000 snails
+    table: !type:GroupSelector # DeltaV: EntityTable instead of spawn entries
+      children:
+      - id: MobSnail
+        weight: 0.6
+      - id: MobSnailSpeed
+        weight: 0.1
+      - id: MobSnailMoth
+        weight: 0.3
+      # - id: MobSnailInstantDeath
+      #   prob: 0.00001 #  ~ 1:2000 snails
 
 - type: entity
   id: PowerGridCheck
@@ -435,16 +513,33 @@
     startDelay: 10
     earliestStart: 20
     minimumPlayers: 15
-    weight: 3
-    duration: 60
+    weight: 5
+    duration: 30 # DeltaV: was 60, used as a delay now
   - type: VentCrittersRule
-    entries:
-    - id: MobAdultSlimesBlueAngry
-      prob: 0.02
-    - id: MobAdultSlimesGreenAngry
-      prob: 0.02
-    - id: MobAdultSlimesYellowAngry
-      prob: 0.02
+    table: !type:GroupSelector # DeltaV: EntityTable instead of spawn entries
+      children:
+      - id: MobAdultSlimesBlueAngry
+      - id: MobAdultSlimesGreenAngry
+      - id: MobAdultSlimesYellowAngry
+
+- type: entity
+  id: SnakeSpawn
+  parent: BaseStationEventShortDelay
+  components:
+  - type: StationEvent
+    startAnnouncement: station-event-vent-creatures-start-announcement
+    startAudio:
+      path: /Audio/Announcements/aliens.ogg
+    earliestStart: 20
+    minimumPlayers: 15
+    weight: 5
+    duration: 30 # DeltaV: was 60, used as a delay now
+  - type: VentCrittersRule
+    table: !type:GroupSelector # DeltaV: EntityTable instead of spawn entries
+      children:
+      - id: MobPurpleSnake
+      - id: MobSmallPurpleSnake
+      - id: MobCobraSpace
 
 - type: entity
   id: SpiderSpawn
@@ -456,12 +551,12 @@
     startDelay: 10
     earliestStart: 20
     minimumPlayers: 15
-    weight: 3
-    duration: 60
+    weight: 5
+    duration: 30 # DeltaV: was 60, used as a delay now
   - type: VentCrittersRule
-    entries:
-    - id: MobGiantSpiderAngry
-      prob: 0.05
+    table: # DeltaV: EntityTable instead of spawn entries
+      children:
+      - id: MobGiantSpiderAngry
 
 - type: entity
   id: SpiderClownSpawn
@@ -469,16 +564,15 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: StationEvent
-    startAnnouncement: false
-    startDelay: 10
-    earliestStart: 20
-    minimumPlayers: 20
-    weight: 1.5
-    duration: 60
+    startAnnouncement: true
+    earliestStart: 30 # funkystation delay
+    minimumPlayers: 30 # DeltaV - was 20
+    weight: 1 # DeltaV - was 1.5
+    duration: 30 # DeltaV: was 60, used as a delay now
   - type: VentCrittersRule
-    entries:
-    - id: MobClownSpider
-      prob: 0.05
+    table: !type:GroupSelector # DeltaV: EntityTable instead of spawn entries
+      children:
+       - id: MobClownSpider
 
 #- type: entity
 #  id: ZombieOutbreak

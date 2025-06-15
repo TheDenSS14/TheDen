@@ -192,8 +192,8 @@
     reoccurrenceDelay: 12
     minimumPlayers: 1
     weight: 5
-    duration: 50
+    duration: 60
   - type: VentCrittersRule
-    entries:
-    - id: MobScugCat
-      prob: 0.01
+    table: !type:GroupSelector # DeltaV: EntityTable instead of spawn entries
+      children:
+      - id: MobScugCat

@@ -3,33 +3,58 @@
   suffix: Filled
   parent: LockerQuarterMaster
   components:
-  - type: StorageFill
-    contents:
-      - id: BoxFolderQmClipboard
-      - id: CargoRequestComputerCircuitboard
-      - id: CargoShuttleComputerCircuitboard
-      - id: CargoShuttleConsoleCircuitboard
-      - id: SalvageShuttleConsoleCircuitboard
-      - id: CargoBountyComputerCircuitboard
-      - id: CigPackGreen
-        prob: 0.50
-      - id: DoorRemoteCargo
-      - id: RubberStampQm
-      - id: RubberStampDenied
-      - id: RubberStampApproved
-      - id: ClothingHeadsetAltCargo
-      - id: BoxEncryptionKeyCargo
-      - id: SpaceCashLuckyBill # DeltaV - LO steal objective, see Resources/Prototypes/_DV/Entities/Objects/Misc/first_bill.yml
-      - id: BoxPDACargo # Delta-V
-      - id: QuartermasterIDCard # Delta-V
-      - id: AstroNavCartridge
-      - id: ClothingLongcoatLO # Floofstation
-      - id: ClothingOuterCoatCargoBomber # CD
-      - id: LunchboxCommandFilledRandom # Delta-V Lunchboxes!
-        prob: 0.3
-      - id: CargoTechFabCircuitboard # Floof - port to EE if possible
-      - id: PrinterDocFlatpack  # Corvax-Printer
+  - type: EntityTableContainerFill
+    containers:
+      entity_storage: !type:NestedSelector
+        tableId: LockerFillQuarterMaster
 
+# No laser table
+- type: entityTable
+  id: LockerFillCaptainNoLaser
+  table: !type:AllSelector
+    children:
+    - id: CaptainIDCard
+    - id: CigarGoldCase
+      prob: 0.25
+    - id: ClothingBeltSheathFilled
+    - id: ClothingHeadsetAltCommand
+    - id: ClothingOuterArmorCaptainCarapace
+    - id: CommsComputerCircuitboard
+    - id: DoorRemoteCommand
+    - id: MedalCase
+    - id: NukeDisk
+    - id: PinpointerNuclear
+    - id: PlushieNuke
+      prob: 0.1
+    - id: RubberStampCaptain
+    - id: SpaceCash1000
+    - id: WeaponDisabler
+    - id: ClothingEyesGlassesCommand
+    - id: HeadSkeleton # A skull to accompany your skeleton crew
+      conditions:
+      - !type:PlayerCountCondition
+        max: 15
+
+# No laser table + Laser table
+- type: entityTable
+  id: LockerFillCaptainLaser
+  table: !type:AllSelector
+    children:
+    - !type:NestedSelector
+      tableId: LockerFillCaptainNoLaser
+    - id: WeaponAntiqueLaser
+
+# Hardsuit table, used for suit storage as well
+- type: entityTable
+  id: FillCaptainHardsuit
+  table: !type:AllSelector
+    children:
+    - id: ClothingOuterHardsuitCap
+    - id: ClothingMaskGasCaptain
+    - id: JetpackCaptainFilled
+    - id: OxygenTankFilled
+
+# No laser locker, used when the antique laser is placed in the special display crate
 - type: entity
   id: LockerCaptainFilledHardsuit
   suffix: Filled, Hardsuit
