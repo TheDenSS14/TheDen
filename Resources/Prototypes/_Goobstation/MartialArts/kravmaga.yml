@@ -8,7 +8,7 @@
     icon:
       sprite: _Goobstation/Actions/kravmaga.rsi
       state: legsweep
-      useDelay: 3
+      useDelay: 5 # allows a window of escape and prevents looping
     event: !type:KravMagaActionEvent { }
   - type: KravMagaAction
     configuration: LegSweep
