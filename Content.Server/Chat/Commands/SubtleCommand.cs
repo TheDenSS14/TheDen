@@ -91,41 +91,26 @@ namespace Content.Server.Chat.Commands
 
         public void Execute(IConsoleShell shell, string argStr, string[] arrayArgs)
         {
-            string? color = null;
+            var args = argStr.Split(" ");
 
-            var separateNameAndMessage = false;
-            var args = arrayArgs.ToList();
-
-            if (args.Count < 3)
+            if (args.Length < 4)
             {
                 shell.WriteError("You must provide at least 3 arguments.");
                 return;
             }
 
-            if (args[0] != "none" && args[0].Length > 6 && args[0].Length < 8)
-            {
-                if (args[0].StartsWith("#") && args[0].Length == 7)
-                    color = args[0];
+            string colorStr = args[1];
+            bool separateNameAndMessage = args[2].ToLower() == "true";
+            
+            if (!colorStr.StartsWith("#"))
+                colorStr = "#" + colorStr;
 
-                if (args[0].Length == 6)
-                    color = $"#{args[0]}";
-            }
-
-            if (args[1].ToLower() == "true")
-            {
-                separateNameAndMessage = true;
-            }
-
-            if (args[1].ToLower() == "false" && color == null) // scuffed
-                args.RemoveAt(1);
-
-            if (separateNameAndMessage || color != null)
-            {
-                args.RemoveAt(0);
-                args.RemoveAt(0);
-            }
-
-            SubtleUtilities.RunSubtle(shell, args.ToArray(), color ?? "#d3d3ff", separateNameAndMessage);
+            if (!Color.TryParse(colorStr, out _))
+                colorStr = "#d3d3ff";
+            
+            var messageArr = args.Skip(3).ToArray();
+            
+            SubtleUtilities.RunSubtle(shell, messageArr, colorStr, separateNameAndMessage);
         }
     }
 }
