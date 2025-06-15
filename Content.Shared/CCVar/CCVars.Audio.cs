@@ -57,4 +57,10 @@ public sealed partial class CCVars
     /// </summary>
     public static readonly CVarDef<float> InterfaceVolume =
         CVarDef.Create("audio.interface_volume", 0.50f, CVar.ARCHIVE | CVar.CLIENTONLY);
+
+    /// <summary>
+    /// Emotes volume.
+    /// </summary>
+    public static readonly CVarDef<float> EmotesVolume =
+        CVarDef.Create("audio.emotes_volume", 1f, CVar.ARCHIVE | CVar.REPLICATED);
 }
