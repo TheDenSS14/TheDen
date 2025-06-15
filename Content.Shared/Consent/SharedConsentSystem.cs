@@ -1,4 +1,5 @@
 using Content.Shared.Examine;
+using Content.Shared.InteractionVerbs.Events;
 using Content.Shared.Mind;
 using Content.Shared.Mind.Components;
 using Content.Shared.Verbs;
