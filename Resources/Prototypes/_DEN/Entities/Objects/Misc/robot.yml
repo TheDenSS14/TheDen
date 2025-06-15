@@ -22,3 +22,28 @@
     addComponents:
     - type: NPCRecentlyInjected
   - type: MedibotInjector
+
+- type: entity
+  parent: Welder
+  id: WeldbotWelder
+  name: weldbot tool
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      Welder:
+        reagents:
+        - ReagentId: WeldingFuel
+          Quantity: 50
+        maxVol: 50
+  - type: SolutionRegeneration
+    solution: Welder
+    generated:
+      reagents:
+      - ReagentId: WeldingFuel
+        Quantity: 1
+  - type: Welder
+    tankSafe: true
+  - type: Tool
+    useSound:
+      collection: Welder

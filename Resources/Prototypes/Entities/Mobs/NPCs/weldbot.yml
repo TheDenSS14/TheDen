@@ -41,6 +41,14 @@
   - type: SentienceTarget
     flavorKind: station-event-random-sentience-flavor-mechanical
   - type: Anchorable
+  - type: InnateTool
+    tools:
+    - id: WeldbotWelder
+  - type: Hands
+    showInHands: false
+  - type: Body
+    prototype: SiliconHand
+    requiredLegs: 0
   - type: InteractionPopup
     interactSuccessString: petting-success-weldbot
     interactFailureString: petting-failure-weldbot
