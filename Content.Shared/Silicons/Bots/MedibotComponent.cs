@@ -2,6 +2,7 @@ using Content.Shared.Chemistry.Reagent;
 using Content.Shared.FixedPoint;
 using Content.Shared.Mobs;
 using Robust.Shared.Audio;
+using Robust.Shared.Containers;
 using Robust.Shared.Prototypes;
 
 namespace Content.Shared.Silicons.Bots;
@@ -11,7 +12,7 @@ namespace Content.Shared.Silicons.Bots;
 /// Currently no clientside prediction done, only exists in shared for emag handling.
 /// </summary>
 [RegisterComponent]
-[Access(typeof(MedibotSystem))]
+[Access(typeof(SharedMedibotSystem))]
 public sealed partial class MedibotComponent : Component
 {
     /// <summary>
@@ -25,6 +26,22 @@ public sealed partial class MedibotComponent : Component
     /// </summary>
     [DataField("injectSound")]
     public SoundSpecifier InjectSound = new SoundPathSpecifier("/Audio/Items/hypospray.ogg");
+
+    /// <summary>
+    /// Contains the medibot's injector.
+    /// </summary>
+    [ViewVariables]
+    public ContainerSlot InjectorSlot = default!;
+
+    [DataField("slotId"), ViewVariables]
+    public string SlotId = "injector";
+
+    [DataField, ViewVariables]
+    public EntProtoId InjectorProto = "MedibotInjector";
+
+    [DataField, ViewVariables]
+    public EntProtoId InjectActionId = "ActionMedibotInject";
+    public EntityUid? InjectActionEntity;
 }
 
 /// <summary>

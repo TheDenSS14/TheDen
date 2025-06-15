@@ -8,7 +8,7 @@ namespace Content.Shared.Silicon.Components;
 /// Replaces the entities' factions when emagged.
 /// </summary>
 [RegisterComponent, NetworkedComponent]
-[Access(typeof(MedibotSystem))]
+[Access(typeof(SharedMedibotSystem))]
 public sealed partial class EmagReplaceFactionsComponent : Component
 {
     /// <summary>

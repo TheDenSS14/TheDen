@@ -8,7 +8,7 @@ namespace Content.Shared.Silicons.Bots;
 /// Replaces the medibot's meds with these when emagged. Could be poison, could be fun.
 /// </summary>
 [RegisterComponent, NetworkedComponent]
-[Access(typeof(MedibotSystem))]
+[Access(typeof(SharedMedibotSystem))]
 public sealed partial class EmaggableMedibotComponent : Component
 {
     /// <summary>
