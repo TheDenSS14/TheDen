@@ -1,7 +1,11 @@
 {
     "version": 1,
     "license": "CC-BY-SA-3.0",
+<<<<<<< HEAD:Resources/Textures/Clothing/Eyes/Glasses/etherealgoogles.rsi/meta.json
     "copyright": "JustAnOrange",
+=======
+    "copyright": "Made by JustAnOrange, arachnid and moth version made by HTMLSystem",
+>>>>>>> e8beac2a2e (Delta V arachnid and moth glasses ! (#3934)):Resources/Textures/_DV/Clothing/Eyes/Glasses/interdynechemgoogles.rsi/meta.json
     "size": {
         "x": 32,
         "y": 32
@@ -9,6 +13,14 @@
     "states": [
         {
             "name": "icon"
+        },
+        {
+            "name": "equipped-EYES-arachnid",
+            "directions": 4
+        },
+        {
+            "name": "equipped-EYES-moth",
+            "directions": 4
         },
         {
             "name": "equipped-EYES",
