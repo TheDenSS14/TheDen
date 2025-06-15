@@ -34,5 +34,5 @@ public sealed partial class WeldbotComponent : Component
     public float StructureRepairAmount = 5;
 
     [DataField, ViewVariables(VVAccess.ReadWrite)]
-    public float DoAfterLength = 3.0f;
+    public float ExpectedFuelCost = 10.0f;
 }

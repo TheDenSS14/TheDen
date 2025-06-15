@@ -1,20 +1,20 @@
 using Content.Server.Chat.Systems;
 using Content.Server.Silicons.Bots;
-using Content.Shared.Damage;
+using Content.Shared.Chat;
 using Content.Shared.Interaction;
-using Content.Shared.Popups;
+using Content.Shared.Item.ItemToggle;
+using Content.Shared.Item.ItemToggle.Components;
 using Content.Shared.Silicons.Bots;
-using Content.Shared.Tag;
-using Robust.Shared.Audio.Systems;
-using Robust.Shared.Prototypes;
 
 namespace Content.Server.NPC.HTN.PrimitiveTasks.Operators.Specific;
 
 public sealed partial class WeldbotWeldOperator : HTNOperator
 {
     [Dependency] private readonly IEntityManager _entMan = default!;
+    private ChatSystem _chat = default!;
     private WeldbotSystem _weldbot = default!;
     private SharedInteractionSystem _interaction = default!;
+    private ItemToggleSystem _toggle = default!;
 
     public const string SiliconTag = "SiliconMob";
     public const string WeldotFixableStructureTag = "WeldbotFixableStructure";
@@ -28,8 +28,10 @@ public sealed partial class WeldbotWeldOperator : HTNOperator
     public override void Initialize(IEntitySystemManager sysManager)
     {
         base.Initialize(sysManager);
+        _chat = sysManager.GetEntitySystem<ChatSystem>();
         _weldbot = sysManager.GetEntitySystem<WeldbotSystem>();
         _interaction = sysManager.GetEntitySystem<SharedInteractionSystem>();
+        _toggle = sysManager.GetEntitySystem<ItemToggleSystem>();
     }
 
     public override void TaskShutdown(NPCBlackboard blackboard, HTNOperatorStatus status)
@@ -45,14 +47,36 @@ public sealed partial class WeldbotWeldOperator : HTNOperator
         if (!blackboard.TryGetValue<EntityUid>(TargetKey, out var target, _entMan)
             || _entMan.Deleted(target)
             || !_interaction.InRangeUnobstructed(owner, target)
-            || !_entMan.TryGetComponent<WeldbotComponent>(owner, out var botComp))
+            || !_entMan.TryGetComponent<WeldbotComponent>(owner, out var botComp)
+            || !_entMan.TryGetComponent<TransformComponent>(target, out var targetXform))
             return HTNOperatorStatus.Failed;
 
         var weldbot = new Entity<WeldbotComponent>(owner, botComp);
 
-        if (!_weldbot.CanWeldEntity(weldbot, target)
-            || !_weldbot.TryWeldEntity(weldbot, target, true))
+        if (!_weldbot.TryGetWelder(weldbot, out var welder)
+            || !_entMan.TryGetComponent<ItemToggleComponent>(welder.Value.Owner, out var toggle)
+            || !_weldbot.CanWeldEntity(weldbot, target))
             return HTNOperatorStatus.Failed;
+
+        if (!welder.Value.Comp.Enabled)
+            _toggle.TrySetActive((welder.Value.Owner, toggle), true, owner);
+
+        _chat.TrySendInGameICMessage(weldbot.Owner,
+            Loc.GetString("weldbot-start-weld"),
+            InGameICChatType.Speak,
+            hideChat: true,
+            hideLog: true);
+
+        if (botComp.IsEmagged)
+        {
+            if (!_weldbot.CanWeldMob(weldbot, target))
+                return HTNOperatorStatus.Failed;
+        }
+        else
+            _interaction.InteractUsing(owner,
+                welder.Value.Owner,
+                target,
+                targetXform.Coordinates);
 
         return HTNOperatorStatus.Finished;
     }

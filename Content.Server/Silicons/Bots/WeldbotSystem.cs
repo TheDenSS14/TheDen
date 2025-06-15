@@ -1,11 +1,18 @@
+using System.Diagnostics.CodeAnalysis;
 using Content.Server.Chat.Systems;
+using Content.Server.Hands.Systems;
+using Content.Server.Repairable;
 using Content.Shared.Chat;
+using Content.Shared.Chemistry.Components.SolutionManager;
+using Content.Shared.Chemistry.EntitySystems;
 using Content.Shared.Damage;
 using Content.Shared.Damage.Prototypes;
 using Content.Shared.DoAfter;
 using Content.Shared.Emag.Components;
+using Content.Shared.Hands.Components;
 using Content.Shared.Silicons.Bots;
 using Content.Shared.Tag;
+using Content.Shared.Tools.Components;
 using Robust.Shared.Prototypes;
 
 namespace Content.Server.Silicons.Bots;
@@ -13,10 +20,9 @@ namespace Content.Server.Silicons.Bots;
 public sealed class WeldbotSystem : SharedWeldbotSystem
 {
     [Dependency] private readonly ChatSystem _chat = default!;
-    [Dependency] private readonly DamageableSystem _damageable = default!;
-    [Dependency] private readonly SharedDoAfterSystem _doAfter = default!;
     [Dependency] private readonly IPrototypeManager _proto = default!;
     [Dependency] private readonly TagSystem _tag = default!;
+    [Dependency] private readonly SharedSolutionContainerSystem _solutionContainer = default!;
 
     public const string SiliconTag = "SiliconMob";
     public const string FixableStructureTag = "WeldbotFixableStructure";
@@ -25,104 +31,22 @@ public sealed class WeldbotSystem : SharedWeldbotSystem
     {
         base.Initialize();
 
-        SubscribeLocalEvent<WeldbotWeldEntityDoAfterEvent>(OnDoWeldEntity);
+        SubscribeLocalEvent<WeldbotComponent, RepairedEvent>(OnRepairedObject);
     }
 
-    private void OnDoWeldEntity(ref WeldbotWeldEntityDoAfterEvent args)
+    public void OnRepairedObject(EntityUid uid, WeldbotComponent component, RepairedEvent args)
     {
-        if (args.Target == null
-            || args.Handled
-            || args.Cancelled
-            || !TryComp<WeldbotComponent>(args.User, out var weldbotComp)
-            || !HasComp<DamageableComponent>(args.Target))
-            return;
-
-        var weldbot = new Entity<WeldbotComponent>(args.User, weldbotComp);
-        var target = args.Target.Value;
-        var isStructure = CanWeldStructure(weldbot, target);
-        var isMob = CanWeldMob(weldbot, target);
-
-        Audio.PlayPvs(weldbotComp.WeldSound, target);
-
-        if (isStructure)
-            WeldStructure(weldbot, target);
-        else if (isMob)
+        if (WeldingIsFinished(args.Ent.Owner))
         {
-            if (HasComp<EmaggedComponent>(weldbot.Owner))
-            {
-                SabotageMob(weldbot, target);
-                return;
-            }
-
-            WeldMob(weldbot, target);
-        }
-
-        if (WeldingIsFinished(target))
-            _chat.TrySendInGameICMessage(weldbot.Owner,
+            _chat.TrySendInGameICMessage(uid,
                 Loc.GetString("weldbot-finish-weld"),
                 InGameICChatType.Speak,
                 hideChat: true,
                 hideLog: true);
+        }
     }
 
-    public bool TryWeldEntity(Entity<WeldbotComponent> weldbot, EntityUid target, bool sayTheLine = false)
-    {
-        if (!CanWeldEntity(weldbot, target))
-            return false;
-
-        if (sayTheLine)
-            _chat.TrySendInGameICMessage(weldbot.Owner,
-                Loc.GetString("weldbot-start-weld"),
-                InGameICChatType.Speak,
-                hideChat: true,
-                hideLog: true);
-
-        var doAfterEventArgs = new DoAfterArgs(EntityManager,
-            weldbot.Owner,
-            weldbot.Comp.DoAfterLength,
-            new WeldbotWeldEntityDoAfterEvent(),
-            weldbot.Owner,
-            target)
-        {
-            BreakOnMove = target != weldbot.Owner,
-            BreakOnWeightlessMove = false,
-            NeedHand = false,
-            Broadcast = true
-        };
-
-        _doAfter.TryStartDoAfter(doAfterEventArgs);
-        return true;
-    }
-
-    public void WeldMob(Entity<WeldbotComponent> weldbot, EntityUid target)
-    {
-
-        if (!_proto.TryIndex<DamageGroupPrototype>("Brute", out var brute))
-            return;
-
-        var specifier = new DamageSpecifier(brute, -weldbot.Comp.SiliconRepairAmount);
-        _damageable.TryChangeDamage(target, specifier, true, false);
-    }
-
-    public void WeldStructure(Entity<WeldbotComponent> weldbot, EntityUid target)
-    {
-        if (!TryComp<DamageableComponent>(target, out var damage))
-            return;
-
-        _damageable.ChangeAllDamage(target, damage, -weldbot.Comp.StructureRepairAmount);
-    }
-
-    public void SabotageMob(Entity<WeldbotComponent> weldbot, EntityUid target)
-    {
-
-        if (!_proto.TryIndex<DamageGroupPrototype>("Burn", out var burn))
-            return;
-
-        var specifier = new DamageSpecifier(burn, weldbot.Comp.EmaggedBurnDamage);
-        _damageable.TryChangeDamage(target, specifier, true, false);
-    }
-
-    private bool WeldingIsFinished(EntityUid target)
+    public bool WeldingIsFinished(EntityUid target)
     {
         if (!TryComp<DamageableComponent>(target, out var damage))
             return false;
@@ -134,14 +58,47 @@ public sealed class WeldbotSystem : SharedWeldbotSystem
             || isStructure && damage.TotalDamage <= 0;
     }
 
-    public bool IsWeldableMob(EntityUid target) => EntityHasTag(target, SiliconTag);
-
-    public bool IsWeldableStructure(EntityUid target) => EntityHasTag(target, FixableStructureTag);
-
     public bool CanWeldEntity(Entity<WeldbotComponent> weldbot, EntityUid target)
     {
         return CanWeldMob(weldbot, target)
             || CanWeldStructure(weldbot, target);
+    }
+
+    public bool HasEnoughFuel(Entity<WeldbotComponent> weldbot, Entity<WelderComponent> welder)
+    {
+        var fuelCost = weldbot.Comp.ExpectedFuelCost;
+
+        if (!TryComp<SolutionContainerManagerComponent>(welder.Owner, out var container)
+            || !_solutionContainer.TryGetSolution((welder.Owner, container),
+                welder.Comp.FuelSolutionName,
+                out var solution))
+            return false;
+
+        return solution.Value.Comp.Solution.Volume >= fuelCost;
+    }
+
+    public bool HasEnoughFuel(Entity<WeldbotComponent> weldbot)
+    {
+        if (!TryGetWelder(weldbot, out var welderEntity))
+            return false;
+
+        return HasEnoughFuel(weldbot, welderEntity.Value);
+    }
+
+    public bool TryGetWelder(Entity<WeldbotComponent> weldbot,
+        [NotNullWhen(true)] out Entity<WelderComponent>? welder)
+    {
+        welder = null;
+
+        if (TryComp<HandsComponent>(weldbot.Owner, out var hands)
+            && hands.ActiveHandEntity != null
+            && TryComp<WelderComponent>(hands.ActiveHandEntity, out var welderComp))
+        {
+            welder = (hands.ActiveHandEntity.Value, welderComp);
+            return true;
+        }
+
+        return false;
     }
 
     public bool CanWeldMob(Entity<WeldbotComponent> weldbot, EntityUid target)
@@ -159,6 +116,10 @@ public sealed class WeldbotSystem : SharedWeldbotSystem
             && TryComp<DamageableComponent>(target, out var damage)
             && damage.TotalDamage > 0;
     }
+
+    public bool IsWeldableMob(EntityUid target) => EntityHasTag(target, SiliconTag);
+
+    public bool IsWeldableStructure(EntityUid target) => EntityHasTag(target, FixableStructureTag);
 
     private bool EntityHasTag(EntityUid uid, string tag)
     {

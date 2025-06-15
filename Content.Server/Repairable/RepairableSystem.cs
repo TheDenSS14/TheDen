@@ -49,6 +49,7 @@ namespace Content.Server.Repairable
 
             var ev = new RepairedEvent((uid, component), args.User);
             RaiseLocalEvent(uid, ref ev);
+            RaiseLocalEvent(args.User, ref ev);
         }
 
         public async void Repair(EntityUid uid, RepairableComponent component, InteractUsingEvent args)
