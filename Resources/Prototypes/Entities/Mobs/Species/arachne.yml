@@ -113,6 +113,13 @@
     speechSounds: Alto
   - type: Inventory
     templateId: anytaur
+  - type: LanguageKnowledge
+    speaks:
+    - TauCetiBasic
+    - Arachnic
+    understands:
+    - TauCetiBasic
+    - Arachnic
   - type: Tag
     tags:
     - CanPilot
