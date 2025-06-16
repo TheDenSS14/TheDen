@@ -14,7 +14,7 @@ namespace Content.Client.UserInterface.Systems.Chat.Controls.Denu;
 public sealed partial class DenuPopup : Popup
 {
     private const string PreviewText = "\"Hello! *italic* **bold** ***bolditalic***\" *looks at you*";
-    
+
     private readonly DenuUIController _denuUIController;
 
     private IClientConsoleHost _consoleHost;
@@ -32,12 +32,13 @@ public sealed partial class DenuPopup : Popup
     private void InitializeUI()
     {
         CloseButton.OnPressed += _ => Close();
-        
+
         TypingToggleButton.WhileToggled += _denuUIController.ShowTypingIndicator;
         TypingToggleButton.OnToggledOff += _denuUIController.HideTypingIndicator;
         _consoleHost.AnyCommandExecuted += (_, _, _, _) => TypingToggleButton.Pressed = false;
 
-        AutoFormatterButton.OnToggled += e => _denuUIController.AutoFormatterEnabled = e.Pressed;
+        AutoFormatterCheckBox.OnToggled += e => _denuUIController.AutoFormatterEnabled = e.Pressed;
+        RemoveAsterisksCheckBox.OnToggled += e => _denuUIController.RemoveAsterisks = e.Pressed;
 
         DialogueColorSelector.Color = _denuUIController.DialogueColor;
         DialogueColorSelector.OnColorChanged += color => {

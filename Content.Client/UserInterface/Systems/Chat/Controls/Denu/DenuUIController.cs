@@ -9,12 +9,13 @@ namespace Content.Client.UserInterface.Systems.Chat.Controls.Denu;
 public sealed class DenuUIController : UIController
 {
     [UISystemDependency] private readonly TypingIndicatorSystem _typingIndicatorSystem = default!;
-    public bool AutoFormatterEnabled { get; set; } = false;
+    public bool AutoFormatterEnabled { get; set; }
+    public bool RemoveAsterisks { get; set; }
     public Color DialogueColor { get; set; } = Color.FromHex("#FFFFFF");
     public Color EmoteColor { get; set; } = Color.FromHex("#FF13FF");
 
     public string FormatMessage(string message) =>
-        MessageFormatter.Format(message, DialogueColor.ToHex(), EmoteColor.ToHex());
+        MessageFormatter.Format(message, DialogueColor.ToHex(), EmoteColor.ToHex(), RemoveAsterisks);
 
     public void ShowTypingIndicator() =>
         _typingIndicatorSystem.ClientChangedChatText();

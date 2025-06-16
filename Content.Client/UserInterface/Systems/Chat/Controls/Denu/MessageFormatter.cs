@@ -16,7 +16,7 @@ public sealed class MessageFormatter
         ("*", "[italic][color={EmoteColor}]*", "*[/color][/italic]", false),
     };
 
-    public static string Format(string input, string dialogueColor = "#FFFFFF", string emoteColor = "#FF13FF")
+    public static string Format(string input, string dialogueColor = "#FFFFFF", string emoteColor = "#FF13FF", bool removeAsterisks = false)
     {
         var result = new StringBuilder();
         var stack = new Stack<string>();
@@ -40,6 +40,9 @@ public sealed class MessageFormatter
 
         result.Replace("{DialogueColor}", dialogueColor);
         result.Replace("{EmoteColor}", emoteColor);
+
+        if (removeAsterisks)
+            result.Replace("*", "");
 
         return result.ToString();
     }
