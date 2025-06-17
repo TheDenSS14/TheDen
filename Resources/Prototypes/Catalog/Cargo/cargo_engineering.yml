@@ -137,3 +137,13 @@
   cost: 300
   category: cargoproduct-category-name-engineering
   group: market
+
+- type: cargoProduct #TheDen
+  id: EngineeringCrateSurplus
+  icon:
+    sprite: Structures/Storage/Crates/engicrate_secure.rsi
+    state: icon
+  product: CrateEngiSurplus
+  cost: 6000
+  category: cargoproduct-category-name-engineering
+  group: market
