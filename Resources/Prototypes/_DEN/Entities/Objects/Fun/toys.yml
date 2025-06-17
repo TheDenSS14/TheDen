@@ -54,8 +54,22 @@
   parent: BasePlushie
   id: PlushieAlienGerm
   name: beady alien plushie
-  description: It looks at you pleadingly.
+  description: A stuffed toy that resembles a... UFO? Alien? Germ? It looks at you pleadingly.
   components:
     - type: Sprite
-      sprite: _DEN/Objects/Fun/toys.rsi
-      state: beady_alien
+      sprite: _DEN/Objects/Fun/ufoplushie.rsi
+      state: icon
+
+# accidentally made the sprite too small at first but i didnt want to throw it out so you get a little one.
+- type: entity
+  parent: PlushieAlienGerm
+  id: PlushieAlienGermSmall
+  name: mini beady alien plushie
+  description: A stuffed toy that resembles a... UFO? Alien? Germ? This one is very small.
+  components:
+    - type: Sprite
+      state: small
+    - type: Item
+      size: Tiny
+    - type: SecretStash
+      maxItemSize: Tiny
