@@ -39,7 +39,7 @@ namespace Content.Server._DEN.Administration.Commands
         }
     }
 
-    [AdminCommand(AdminFlags.None)]
+    [AnyCommand]
     sealed class SelfDamageCommand : IConsoleCommand
     {
         [Dependency] private readonly IEntityManager _entManager = default!;

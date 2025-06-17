@@ -20,8 +20,17 @@
     - VulpEmotes
     - HarpyEmotes
     - UnathiEmotes
+    - KitsuneEmotes
   chatMessages: [ yips ]
   chatTriggers:
   - yip
   - yips
   - yipped
+
+- type: emote
+  id: Yap
+  name: chat-emote-name-yap
+  chatMessages: [ yaps ]
+  chatTriggers:
+  - yap
+  - yaps

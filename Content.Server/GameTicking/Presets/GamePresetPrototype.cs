@@ -33,9 +33,8 @@ namespace Content.Server.GameTicking.Presets
         [DataField("maxPlayers")]
         public int? MaxPlayers;
 
-        // not implemented
         [DataField]
-        public int PickableAfterRounds = 1;
+        public bool HighDanger;
 
         [DataField]
         public bool VoteOnly;

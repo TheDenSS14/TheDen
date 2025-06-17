@@ -398,7 +398,7 @@
       Dead:
         Base: dead_level3
   - type: Body
-    prototype: Replicator2
+    prototype: Replicator3
   - type: Loadout
     prototypes:
       - StartingGearReplicatorT3Weapon
@@ -412,8 +412,8 @@
     - Alive
     damage:
       groups:
-        Brute: -0.75
-        Burn: -0.75
+        Brute: -0.3
+        Burn: -0.3
       types:
         Shock: -0.5
         Structural: -0.5
