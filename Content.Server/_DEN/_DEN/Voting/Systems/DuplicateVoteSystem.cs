@@ -69,6 +69,9 @@ public sealed class DuplicateVoteSystem : EntitySystem
     private void OnRoundRestart(RoundRestartCleanupEvent ev)
     {
         if (IsHighDanger)
+        {
             SetHighDangerPickable();
+            IsHighDanger = false;
+        }
     }
 }
