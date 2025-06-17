@@ -6,3 +6,4 @@ loadout-name-LoadoutClothingWaistApronStripesVertical = waist apron (vertical st
 loadout-name-PlushieTeddyBearRecolorable = teddy bear (colorable)
 loadout-name-PlushieTeddyBearRecolorablePlaid = teddy bear (colorable, plaid)
 loadout-name-PlushieTeddyBearRecolorableRandom = teddy bear (random)
+loadout-name-SqueakySmileyGuy = smiley guy (colorable)
