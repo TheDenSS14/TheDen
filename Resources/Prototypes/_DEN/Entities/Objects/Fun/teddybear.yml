@@ -30,9 +30,10 @@
     containers:
       stash: !type:ContainerSlot {}
       ribbon: !type:ContainerSlot {}
-  - type: ContainerFill
+  - type: EntityTableContainerFill
     containers:
-      stash: [ PlushieHeartInsert ]
+      stash: !type:NestedSelector
+        tableId: RandomPlushieHeart
   - type: ItemMapper
     spriteLayers:
     - ribbon
@@ -134,3 +135,12 @@
   - type: Sprite
     sprite: _DEN/Objects/Fun/toys.rsi
     state: plush_heart
+
+- type: entityTable
+  id: RandomPlushieHeart
+  table: !type:GroupSelector
+    children:
+    - id: PlushieHeartInsert
+      weight: 9
+    - id: OrganHumanHeart
+      weight: 1
