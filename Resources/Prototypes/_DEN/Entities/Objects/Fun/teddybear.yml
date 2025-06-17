@@ -82,6 +82,38 @@
 
 - type: entity
   parent: PlushieTeddyBearRecolorable
+  id: PlushieTeddyBearRecolorablePlaid
+  suffix: recolorable, plaid
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Fun/toys.rsi
+    state: teddybear
+    layers:
+    - state: teddybear_base_plaid
+      color: "#cc9975"
+      map: [ "base" ]
+    - state: teddybear_accent
+      map: [ "accent" ]
+    - state: teddybear_ribbon
+      map: [ "ribbon" ]
+      visible: false
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: teddybear_base-inhand-left
+        color: "#cc9975"
+        map: [ "teddybear_base_plaid" ]
+      - state: teddybear_accent-inhand-left
+        map: [ "accent" ]
+      right:
+      - state: teddybear_base-inhand-right
+        color: "#cc9975"
+        map: [ "teddybear_base_plaid" ]
+      - state: teddybear_accent-inhand-right
+        map: [ "accent" ]
+
+- type: entity
+  parent: PlushieTeddyBearRecolorable
   id: PlushieTeddyBearRecolorableRandom
   name: teddy bear
   suffix: random appearance
