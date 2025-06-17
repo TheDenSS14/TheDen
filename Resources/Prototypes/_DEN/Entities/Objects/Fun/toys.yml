@@ -30,3 +30,22 @@
       available:
         - enum.DamageStateVisualLayers.Base:
             icon: PlasticToy
+
+- type: entity
+  parent: PlushieSmileyGuy
+  id: SqueakySmileyBall
+  name: smiley ball
+  description: This thing is squishy and full of slime. Just like you!
+  components:
+    - type: Sprite
+      sprite: _DEN/Objects/Fun/smileyball.rsi
+
+- type: entity
+  parent: SqueakySmileyBall
+  id: PlushieSmileyBallRandom
+  suffix: random appearance
+  components:
+    - type: RandomSprite
+      available:
+        - enum.DamageStateVisualLayers.Base:
+            icon: PlasticToy
