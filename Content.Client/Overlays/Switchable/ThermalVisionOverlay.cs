@@ -1,6 +1,7 @@
 using System.Linq;
 using System.Numerics;
 using Content.Client.Stealth;
+using Content.Shared._EE.Overlays.Switchable;
 using Content.Shared.Body.Components;
 using Content.Shared.Overlays.Switchable;
 using Content.Shared.Stealth.Components;
@@ -10,6 +11,7 @@ using Robust.Client.Player;
 using Robust.Shared.Enums;
 using Robust.Shared.Map;
 using Robust.Shared.Timing;
+using Content.Shared._Impstation.Replicator;
 
 namespace Content.Client.Overlays.Switchable;
 
@@ -86,7 +88,8 @@ public sealed class ThermalVisionOverlay : Overlay
         var entities = _entity.EntityQueryEnumerator<BodyComponent, SpriteComponent, TransformComponent>();
         while (entities.MoveNext(out var uid, out var body, out var sprite, out var xform))
         {
-            if (!CanSee(uid, sprite) || !body.ThermalVisibility)
+            if (!CanSee(uid, sprite) || !body.ThermalVisibility
+                || _entity.HasComponent<ThermalVisionImmuneComponent>(uid)) // imp - added ThermalVisionImmune
                 continue;
 
             var entity = uid;
@@ -94,6 +97,10 @@ public sealed class ThermalVisionOverlay : Overlay
             if (_container.TryGetOuterContainer(uid, xform, out var container))
             {
                 var owner = container.Owner;
+
+                if (_entity.HasComponent<ThermalVisionImmuneComponent>(owner)) // imp - added ThermalVisionImmune
+                    continue;
+
                 if (_entity.TryGetComponent<SpriteComponent>(owner, out var ownerSprite)
                     && _entity.TryGetComponent<TransformComponent>(owner, out var ownerXform))
                 {

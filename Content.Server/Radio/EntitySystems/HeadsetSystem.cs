@@ -6,6 +6,11 @@ using Content.Server.Speech;
 using Content.Shared.Chat;
 using Content.Shared.Inventory.Events;
 using Content.Shared.Language.Components;
+using Content.Shared.Cuffs; // DeltaV
+using Content.Shared.Cuffs.Components; // DeltaV
+using Content.Shared.Hands.Components; // DeltaV
+using Content.Shared.Inventory.Events;
+using Content.Shared.Popups; // DeltaV
 using Content.Shared.Radio;
 using Content.Shared.Radio.Components;
 using Content.Shared.Radio.EntitySystems;
@@ -19,6 +24,8 @@ public sealed class HeadsetSystem : SharedHeadsetSystem
     [Dependency] private readonly INetManager _netMan = default!;
     [Dependency] private readonly RadioSystem _radio = default!;
     [Dependency] private readonly LanguageSystem _language = default!;
+    [Dependency] private readonly SharedCuffableSystem _cuffable = default!; // DeltaV
+    [Dependency] private readonly SharedPopupSystem _popup = default!; // DeltaV
 
     public override void Initialize()
     {

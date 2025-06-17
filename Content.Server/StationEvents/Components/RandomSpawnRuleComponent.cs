@@ -15,4 +15,10 @@ public sealed partial class RandomSpawnRuleComponent : Component
     /// </summary>
     [DataField("prototype", required: true, customTypeSerializer: typeof(PrototypeIdSerializer<EntityPrototype>))]
     public string Prototype = string.Empty;
+
+    /// <summary>
+    /// Whether to exclusively spawn on a station.
+    /// </summary>
+    [DataField]
+    public bool StationExclusive;
 }

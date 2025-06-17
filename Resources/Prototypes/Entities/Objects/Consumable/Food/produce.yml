@@ -2604,17 +2604,61 @@
     - Beetroot
     - Vegetable
 
+# Flowers
+# Roses
 - type: entity
   name: red rose
-  description: A symbol of love. Smells nice, too.
+  description: A red rose - age old symbol of passionate love and desire.
   id: RedRose
   parent: ProduceBase
   components:
   - type: Sprite
     sprite: Objects/Specific/Hydroponics/red_rose.rsi
+    scale: 0.75,0.75
  # - type: SolutionContainerManager
  # - type: Produce
  #   seedId: red_rose
+  - type: PotencyVisuals
+    minimumScale: 0.75 # reduce this in size because the sprite is way too big
+    maximumScale: 1.5
+  - type: Tag
+    tags:
+    - Flower
+
+- type: entity
+  name: white rose
+  description: A white rose - often a symbol of new everlasting love and loyalty.
+  id: WhiteRose
+  parent: ProduceBase
+  components:
+  - type: Sprite
+    sprite: Objects/Specific/Hydroponics/white_rose.rsi
+    scale: 0.75,0.75
+ # - type: SolutionContainerManager
+ # - type: Produce
+ #   seedId: white_rose
+  - type: PotencyVisuals
+    minimumScale: 0.75 # reduce this in size because the sprite is way too big
+    maximumScale: 1.5
+  - type: Tag
+    tags:
+    - Flower
+
+- type: entity
+  name: pink rose
+  description: A pink rose - sometimes used to express admiration and appreciation.
+  id: PinkRose
+  parent: ProduceBase
+  components:
+  - type: Sprite
+    sprite: Objects/Specific/Hydroponics/pink_rose.rsi
+    scale: 0.75,0.75
+ # - type: SolutionContainerManager
+ # - type: Produce
+ #   seedId: pink_rose
+  - type: PotencyVisuals
+    minimumScale: 0.75 # reduce this in size because the sprite is way too big
+    maximumScale: 1.5
   - type: Tag
     tags:
     - Flower
@@ -2627,9 +2671,70 @@
   components:
   - type: Sprite
     sprite: Objects/Specific/Hydroponics/jasmine.rsi
+    scale: 0.75,0.75
  # - type: SolutionContainerManager
  # - type: Produce
  #   seedId: jasmine
+  - type: PotencyVisuals
+    minimumScale: 0.75 # reduce this in size because the sprite is way too big
+    maximumScale: 1.5
+  - type: Tag
+    tags:
+    - Flower
+
+- type: entity
+  name: lavender
+  description: Sprigs of small purple flowers known for their soothing oils and calming scent.
+  id: Lavender
+  parent: ProduceBase
+  components:
+  - type: Sprite
+    sprite: Objects/Specific/Hydroponics/lavender.rsi
+    scale: 0.75,0.75
+ # - type: SolutionContainerManager
+ # - type: Produce
+ #   seedId: lavender
+  - type: PotencyVisuals
+    minimumScale: 0.75 # reduce this in size because the sprite is way too big
+    maximumScale: 1.5
+  - type: Tag
+    tags:
+    - Flower
+
+- type: entity
+  name: orchid
+  description: An elegent and fragile flower, the white variety often symbolising purity and new beginnings.
+  id: Orchid
+  parent: ProduceBase
+  components:
+  - type: Sprite
+    sprite: Objects/Specific/Hydroponics/orchid.rsi
+    scale: 0.5,0.5
+ # - type: SolutionContainerManager
+ # - type: Produce
+ #   seedId: orchid
+  - type: PotencyVisuals
+    minimumScale: 0.5 # reduce this in size because the sprite is way too big
+    maximumScale: 1
+  - type: Tag
+    tags:
+    - Flower
+
+- type: entity
+  name: tulip
+  description: A pretty red tulip, often a symbol of vibrant love and sometimes wealth and prosperity.
+  id: Tulip
+  parent: ProduceBase
+  components:
+  - type: Sprite
+    sprite: Objects/Specific/Hydroponics/tulip.rsi
+    scale: 0.75,0.75
+ # - type: SolutionContainerManager
+ # - type: Produce
+ #   seedId: tulip
+  - type: PotencyVisuals
+    minimumScale: 0.75 # reduce this in size because the sprite is way too big
+    maximumScale: 1.5
   - type: Tag
     tags:
     - Flower

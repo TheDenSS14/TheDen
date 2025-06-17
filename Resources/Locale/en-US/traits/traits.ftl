@@ -458,6 +458,12 @@ trait-description-Arachnic = The language of arachnids is composed of mostly cli
 trait-name-Nehina = Nēhina
 trait-description-Nehina =  A language spoken by the Feroxi, well adapted to speaking under the waters of ocean planets.
 
+trait-name-Kagebun = Kagebun
+trait-description-Kagebun = 
+    An ancient language primarily used by the yōkai, originating from their supernatural roots. 
+    To the uninitiated, it is a chorus of sounds ranging from eerie whispers to ritualistic chanting.
+    To those who speak it, it is a living tongue that links them to the spirit world and their ancient pacts.
+
 trait-name-Rodentian = Rodentian
 trait-description-Rodentian =  A language mostly consisting of squeaks spoken by Rodentia if all shapes and sizes.
 
@@ -686,3 +692,12 @@ trait-description-Caprine = A language spoken by the Ovinia, the language is com
 
 trait-name-Synthetic = Synthetic
 trait-description-Synthetic = You are a biomechanical construct, who bleeds coolant and is notified of ongoing Ion Storms.
+
+trait-name-NoContractions = No Contractions
+trait-description-NoContractions = You are (mostly) incapable of using contractions.
+
+trait-name-SharpInflection = Sharp Inflection
+trait-description-SharpInflection = You mumble... When you aren't shouting!!
+
+trait-name-Monotonous = Monotonous
+trait-description-Monotonous = You speak in a way that others see as total disinterest. Always.

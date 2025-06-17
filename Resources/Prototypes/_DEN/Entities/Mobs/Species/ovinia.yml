@@ -127,9 +127,9 @@
   - type: Flammable
     fireStackIncreaseMultiplier: .75 #wool isnt flammable
   - type: Hunger
-    baseDecayRate: 0.00075 #25% slower than normal (chewin they cud)
+    decayRateMultiplier: 0.75 #25% slower than normal (chewin they cud)
   - type: Thirst
-    baseDecayRate: 0.01125 # 25% slower than normal
+    decayRateMultiplier: 0.75 # 25% slower than normal
   - type: Carriable
 
 

@@ -1,4 +1,5 @@
 using System.Linq;
+using Content.Server._Goobstation.Flashbang;
 using Content.Server.Flash.Components;
 using Content.Shared.Flash.Components;
 using Content.Server.Light.EntitySystems;
@@ -150,6 +151,15 @@ namespace Content.Server.Flash
                 && _random.Prob(flashable.EyeDamageChance))
                 _blindingSystem.AdjustEyeDamage((target, blindable), flashable.EyeDamage);
 
+            if (displayPopup && user != null && target != user && Exists(user.Value))
+            {
+                _popup.PopupEntity(Loc.GetString("flash-component-user-blinds-you",
+                    ("user", Identity.Entity(user.Value, EntityManager))), target, target);
+            }
+
+            if (HasComp<FlashSoundSuppressionComponent>(target))
+                return;
+
             if (stunDuration != null)
             {
                 // stunmeta
@@ -159,12 +169,6 @@ namespace Content.Server.Flash
             {
                 _stun.TrySlowdown(target, TimeSpan.FromSeconds(flashDuration/1000f), true,
                 slowTo, slowTo);
-            }
-
-            if (displayPopup && user != null && target != user && Exists(user.Value))
-            {
-                _popup.PopupEntity(Loc.GetString("flash-component-user-blinds-you",
-                    ("user", Identity.Entity(user.Value, EntityManager))), target, target);
             }
         }
 

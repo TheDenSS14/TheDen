@@ -316,7 +316,7 @@ public sealed class LeashSystem : EntitySystem
 
         if (TryComp<ClothingComponent>(ent, out var clothing))
         {
-            if (clothing.InSlot == null || !_container.TryGetContainingContainer(ent, out var container))
+            if (clothing.InSlot == null || !_container.TryGetContainingContainer(ent.Owner, out var container))
                 return false;
 
             leashTarget = container.Owner;

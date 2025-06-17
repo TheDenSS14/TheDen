@@ -4,9 +4,11 @@ using Content.Server.Inventory;
 using Content.Server.Mind.Commands;
 using Content.Server.Nutrition;
 using Content.Server.Polymorph.Components;
+using Content.Shared._DV.Polymorph; // DeltaV
 using Content.Shared.Actions;
 using Content.Shared.Buckle;
 using Content.Shared.Damage;
+using Content.Shared.Damage.Systems; // DeltaV
 using Content.Shared.Destructible;
 using Content.Shared.Hands.EntitySystems;
 using Content.Shared.IdentityManagement;
@@ -36,6 +38,7 @@ public sealed partial class PolymorphSystem : EntitySystem
     [Dependency] private readonly ActionsSystem _actions = default!;
     [Dependency] private readonly AudioSystem _audio = default!;
     [Dependency] private readonly SharedBuckleSystem _buckle = default!;
+    [Dependency] private readonly StaminaSystem _stamina = default!; // DeltaV
     [Dependency] private readonly ContainerSystem _container = default!;
     [Dependency] private readonly DamageableSystem _damageable = default!;
     [Dependency] private readonly HumanoidAppearanceSystem _humanoid = default!;
@@ -236,7 +239,15 @@ public sealed partial class PolymorphSystem : EntitySystem
             damage != null)
         {
             _damageable.SetDamage(child, damageParent, damage);
+
+            // DeltaV - Transfer Stamina Damage
+            var staminaDamage = _stamina.GetStaminaDamage(uid);
+            _stamina.TakeStaminaDamage(child, staminaDamage);
         }
+
+        // DeltaV - Drop MindContainer entities on polymorph
+        var beforePolymorphedEv = new BeforePolymorphedEvent();
+        RaiseLocalEvent(uid, ref beforePolymorphedEv);
 
         if (configuration.Inventory == PolymorphInventoryChange.Transfer)
         {
@@ -279,6 +290,10 @@ public sealed partial class PolymorphSystem : EntitySystem
         if (PausedMap != null)
             _transform.SetParent(uid, targetTransformComp, PausedMap.Value);
 
+        // Raise an event to inform anything that wants to know about the entity swap
+        var ev = new PolymorphedEvent(uid, child, false);
+        RaiseLocalEvent(uid, ref ev);
+
         return child;
     }
 
@@ -312,6 +327,10 @@ public sealed partial class PolymorphSystem : EntitySystem
             damage != null)
         {
             _damageable.SetDamage(parent, damageParent, damage);
+
+            // DeltaV - Transfer Stamina Damage
+            var staminaDamage = _stamina.GetStaminaDamage(uid);
+            _stamina.TakeStaminaDamage(parent, staminaDamage);
         }
 
         if (component.Configuration.Inventory == PolymorphInventoryChange.Transfer)
@@ -347,6 +366,10 @@ public sealed partial class PolymorphSystem : EntitySystem
 
         // if an item polymorph was picked up, put it back down after reverting
         _transform.AttachToGridOrMap(parent, parentXform);
+
+        // Raise an event to inform anything that wants to know about the entity swap
+        var ev = new PolymorphedEvent(uid, parent, true);
+        RaiseLocalEvent(uid, ref ev);
 
         _popup.PopupEntity(Loc.GetString("polymorph-revert-popup-generic",
                 ("parent", Identity.Entity(uid, EntityManager)),

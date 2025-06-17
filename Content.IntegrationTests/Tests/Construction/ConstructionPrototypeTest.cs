@@ -5,6 +5,8 @@ using Robust.Shared.GameObjects;
 using Robust.Shared.Map;
 using Robust.Shared.Maths;
 using Robust.Shared.Prototypes;
+using Robust.Shared.Utility;
+
 
 namespace Content.IntegrationTests.Tests.Construction
 {
@@ -44,7 +46,7 @@ namespace Content.IntegrationTests.Tests.Construction
                     }
                     catch (Exception e)
                     {
-                        Assert.Fail(proto.ID);
+                        Assert.Fail(e.ToStringBetter());
                         return;
                     }
 

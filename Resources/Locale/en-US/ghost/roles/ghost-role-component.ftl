@@ -219,6 +219,10 @@ ghost-role-information-centcom-official-description = Perform CentComm related d
 
 ghost-role-information-nukeop-rules = You are a syndicate operative tasked with the destruction of the station. As an antagonist, do whatever is required to complete this task.
 
+ghost-role-information-nukeop-reinforcement-name = Nuclear Operative Reinforcement
+ghost-role-information-nukeop-reinforcement-description = You are a nuclear operative reinforcement. Destroy the station!
+ghost-role-information-nukeop-reinforcement-rules = You are a syndicate operative tasked with the destruction of the station. As an antagonist, do whatever is required to complete this task.
+
 ghost-role-information-loneop-name = Lone Operative
 ghost-role-information-loneop-description = You are a lone nuclear operative. Destroy the station!
 ghost-role-information-loneop-rules = You are a syndicate operative tasked with the destruction of the station. As an antagonist, do whatever is required to complete this task.

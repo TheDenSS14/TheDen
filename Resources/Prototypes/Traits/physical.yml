@@ -329,6 +329,8 @@
       species:
         - Felinid # Felinids/Tajaran already have this feature by default.
         - Rodentia # Floof - Rodentia
+        - Resomi # Floof - have this by default after porting Goob changes
+        - Kitsune # Floof - M3739 - #937 - Kitsune have this by default.
         - Tajaran
     - !type:CharacterHeightRequirement
       max: 150
@@ -727,9 +729,11 @@
         - type: ShowHealthBars
           damageContainers:
           - Biological
+          - BiologicalMetaphysical # Floof - M3739 - #1006
         - type: ShowHealthIcons
           damageContainers:
           - Biological
+          - BiologicalMetaphysical # Floof - M3739 - #1006
 
 - type: trait
   id: CyberEyesDiagnostic
@@ -792,9 +796,11 @@
         - type: ShowHealthIcons
           damageContainers:
           - Biological
+          - BiologicalMetaphysical # Floof - M3739 - #1006
         - type: ShowHealthBars
           damageContainers:
           - Biological
+          - BiologicalMetaphysical # Floof - M3739 - #1006
           - Inorganic
           - Silicon
 

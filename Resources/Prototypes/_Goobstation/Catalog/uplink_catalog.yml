@@ -69,7 +69,7 @@
   description: uplink-sleeping-carp-desc
   productEntity: SleepingCarpScroll
   cost:
-    Telecrystal: 140
+    Telecrystal: 100
   categories:
   - UplinkWeaponry
   conditions:
@@ -98,7 +98,7 @@
   icon: { sprite:  /Textures/_Goobstation/Objects/Weapons/Guns/Bow/hardlight_bow.rsi, state: icon }
   productEntity: BowHardlight
   cost:
-    Telecrystal: 80
+    Telecrystal: 100
   categories:
   - UplinkWeaponry
   conditions:
@@ -155,11 +155,16 @@
   productEntity: ClothingBackpackDuffelSyndicateStealthHardsuitBundle
   discountCategory: rareDiscounts
   discountDownTo:
-    Telecrystal: 35
+    Telecrystal: 65
   cost:
-    Telecrystal: 55
+    Telecrystal: 80
   categories:
   - UplinkWearables
+  conditions:
+  - !type:StoreWhitelistCondition
+    whitelist:
+      tags:
+      - NukeOpsUplink
 
 - type: listing
   id: UplinkClothingDreadnought

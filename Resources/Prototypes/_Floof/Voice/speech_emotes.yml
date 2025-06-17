@@ -6,6 +6,7 @@
     tags:
     - VulpEmotes
     - HarpyEmotes
+    - KitsuneEmotes # Floof - M3739 - #937 
   chatMessages: [ gekkers ]
   chatTriggers:
   - gekkers
@@ -19,8 +20,17 @@
     - VulpEmotes
     - HarpyEmotes
     - UnathiEmotes
+    - KitsuneEmotes
   chatMessages: [ yips ]
   chatTriggers:
   - yip
   - yips
   - yipped
+
+- type: emote
+  id: Yap
+  name: chat-emote-name-yap
+  chatMessages: [ yaps ]
+  chatTriggers:
+  - yap
+  - yaps

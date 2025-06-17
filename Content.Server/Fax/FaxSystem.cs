@@ -160,7 +160,12 @@ public sealed class FaxSystem : EntitySystem
 
     private void OnComponentInit(EntityUid uid, FaxMachineComponent component, ComponentInit args)
     {
-        _itemSlotsSystem.AddItemSlot(uid, PaperSlotId, component.PaperSlot);
+        // <Goobstation> - define the slot in ItemSlots instead of adding it
+        if (_itemSlotsSystem.TryGetSlot(uid, PaperSlotId, out var slot))
+            component.PaperSlot = slot;
+        else
+            _itemSlotsSystem.AddItemSlot(uid, PaperSlotId, component.PaperSlot);
+        // </Goobstation>
         UpdateAppearance(uid, component);
     }
 
@@ -484,7 +489,11 @@ public sealed class FaxSystem : EntitySystem
 
         UpdateUserInterface(uid, component);
 
-        _adminLogger.Add(LogType.Action, LogImpact.Low,
+        if (!args.Actor.IsValid()) // Goobstation - no log for automation
+            return;
+
+        _adminLogger.Add(LogType.Action,
+            LogImpact.Low,
             $"{ToPrettyString(args.Actor):actor} " +
             $"added copy job to \"{component.FaxName}\" {ToPrettyString(uid):tool} " +
             $"of {ToPrettyString(sendEntity):subject}: {printout.Content}");
@@ -542,11 +551,13 @@ public sealed class FaxSystem : EntitySystem
 
         _deviceNetworkSystem.QueuePacket(uid, component.DestinationFaxAddress, payload);
 
-        _adminLogger.Add(LogType.Action, LogImpact.Low,
-            $"{ToPrettyString(args.Actor):actor} " +
-            $"sent fax from \"{component.FaxName}\" {ToPrettyString(uid):tool} " +
-            $"to \"{faxName}\" ({component.DestinationFaxAddress}) " +
-            $"of {ToPrettyString(sendEntity):subject}: {paper.Content}");
+        if (args.Actor.IsValid()) // Goobstation - no log for automation
+            _adminLogger.Add(LogType.Action,
+                LogImpact.Low,
+                $"{ToPrettyString(args.Actor):actor} " +
+                $"sent fax from \"{component.FaxName}\" {ToPrettyString(uid):tool} " +
+                $"to \"{faxName}\" ({component.DestinationFaxAddress}) " +
+                $"of {ToPrettyString(sendEntity):subject}: {paper.Content}");
 
         component.SendTimeoutRemaining += component.SendTimeout;
 

@@ -196,3 +196,126 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutUniformsCivilian # TheDen
+
+# - type: loadout
+#   id: LoadoutClothingUniformSwimsuitBlue
+#   category: Uniform
+#   cost: 0
+#   exclusive: true
+#   items:
+#     - ClothingUniformSwimsuitBlue
+#   requirements:
+#     - !type:CharacterItemGroupRequirement
+#       group: LoadoutUniformsCivilian
+
+# - type: loadout
+#   id: LoadoutUniformFlemenco
+#   category: Uniform
+#   cost: 0
+#   exclusive: true
+#   items:
+#     - ClothingUniformFlamenco
+#   requirements:
+#     - !type:CharacterItemGroupRequirement
+#       group: LoadoutUniformsCivilian
+#     - !type:CharacterDepartmentRequirement
+#        inverted: true
+#        departments:
+#          - Security
+#          - Command
+
+- type: loadout
+  id: LoadoutUniformRedDancersGarb
+  category: Uniform
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingUniformRedDancersGarb
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutUniformsCivilian
+    - !type:CharacterDepartmentRequirement
+       inverted: true
+       departments:
+         - Security
+         - Command
+
+- type: loadout
+  id: LoadoutUniformBandedDancersGarb
+  category: Uniform
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingUniformBandedDancersGarb
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutUniformsCivilian
+    - !type:CharacterDepartmentRequirement
+       inverted: true
+       departments:
+         - Security
+         - Command
+
+- type: loadout
+  id: LoadoutUniformRedSidelessDress
+  category: Uniform
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingUniformRedSidelessDress
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutUniformsCivilian
+    - !type:CharacterDepartmentRequirement
+       inverted: true
+       departments:
+         - Security
+         - Command
+
+- type: loadout
+  id: LoadoutUniformPurpleNightclubDress
+  category: Uniform
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingUniformPurpleNightclubDress
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutUniformsCivilian
+    - !type:CharacterDepartmentRequirement
+       inverted: true
+       departments:
+         - Security
+         - Command
+
+- type: loadout
+  id: LoadoutUniformBlackPetticoatDress
+  category: Uniform
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingUniformBlackPetticoatDress
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutUniformsCivilian
+    - !type:CharacterDepartmentRequirement
+       inverted: true
+       departments:
+         - Security
+         - Command
+
+- type: loadout
+  id: LoadoutUniformBlueFancyLad
+  category: Uniform
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingUniformBlueFancyLad
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutUniformsCivilian
+    - !type:CharacterDepartmentRequirement
+       inverted: true
+       departments:
+         - Security
+         - Command

@@ -3,7 +3,7 @@
   id: NinjaThreats
   weights:
     Dragon: 1
-    Revenant: 1
+    Replicators: 1
 
 - type: ninjaHackingThreat
   id: Dragon
@@ -14,3 +14,8 @@
 #  id: Revenant
 #  announcement: terror-revenant
 #  rule: RevenantSpawn
+
+- type: ninjaHackingThreat
+  id: Replicators
+  announcement: terror-replicators
+  rule: ReplicatorSpawn

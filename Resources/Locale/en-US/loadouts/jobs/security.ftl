@@ -22,7 +22,7 @@ loadout-name-LoadoutSecurityPistolN1984 = N1984 (lethal)
 loadout-name-LoadoutSecurityPistolN1984NonLethal = N1984 (non-lethal)
 loadout-name-LoadoutSecurityPistolViper = Viper (lethal)
 loadout-name-LoadoutSecurityPistolViperNonLethal = Viper (non-lethal)
-loadout-name-LoadoutSecurityPistolViperWood = Viper (wood furniture, non-lethal)
+loadout-name-LoadoutSecurityPistolViperWoodNonLethal = Viper (wood furniture, non-lethal)
 loadout-name-LoadoutSecurityEnergyGun = Mini Energy Gun
 loadout-name-LoadoutSecurityEnergyGunPistol = Energy Pistol
 loadout-name-LoadoutSecurityPistolPollock = Pollock (lethal)
@@ -38,7 +38,8 @@ loadout-name-LoadoutSecurityRevolverPythonNonlethal = Python (non-lethal)
 loadout-name-LoadoutSecurityPistolEnergyRevolver = EG-4 Energy Revolver
 loadout-name-LoadoutSecurityArgenti = Argenti (lethal)
 loadout-name-LoadoutSecurityArgentiNonLethal = Argenti (non-lethal)
+loadout-name-LoadoutSecurityWeaponLaserSvalinn = Svalinn Laser Pistol
 
 # Duty Melee
 loadout-name-LoadoutSecurityEquipmentTruncheon = Truncheon
-loadout-name-LoadoutSecurityEquipmentEnergySword = Energy Sword
+loadout-name-LoadoutSecurityEquipmentEnergySword = Energy Cutlass

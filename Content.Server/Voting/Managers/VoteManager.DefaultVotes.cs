@@ -1,4 +1,5 @@
 using System.Linq;
+using Content.Server._DEN.Voting.Systems;
 using Content.Server.GameTicking;
 using Content.Server.GameTicking.Presets;
 using Content.Server.Maps;
@@ -29,8 +30,6 @@ public sealed partial class VoteManager
         {StandardVoteType.Preset, CCVars.VotePresetEnabled},
         {StandardVoteType.Map, CCVars.VoteMapEnabled},
     };
-
-    private static Dictionary<string, int> _lastPicked = new();
 
     public void CreateStandardVote(ICommonSession? initiator, StandardVoteType voteType)
     {
@@ -175,6 +174,8 @@ public sealed partial class VoteManager
 
     private void CreatePresetVote(ICommonSession? initiator)
     {
+        var duplicateVote = _entityManager.EntitySysManager.GetEntitySystem<DuplicateVoteSystem>();
+        var ticker = _entityManager.EntitySysManager.GetEntitySystem<GameTicker>();
         var presets = GetGamePresets();
 
         var alone = _playerManager.PlayerCount == 1 && initiator != null;
@@ -191,6 +192,9 @@ public sealed partial class VoteManager
 
         foreach (var preset in presets)
         {
+            if (preset.HighDanger && !duplicateVote.IsHighDangerPickable() || !ticker.CanPick(preset))
+                continue;
+
             var properModeTitle = Loc.GetString(preset.ModeTitle);
             options.Options.Add((properModeTitle, preset.ID));
         }
@@ -221,9 +225,7 @@ public sealed partial class VoteManager
                     Loc.GetString("ui-vote-gamemode-win", ("winner", Loc.GetString(presetPrototype.ModeTitle))));
             }
 
-            var ticker = _entityManager.EntitySysManager.GetEntitySystem<GameTicker>();
             _adminLogger.Add(LogType.Vote, LogImpact.Medium, $"Preset vote finished: {picked}");
-
             ticker.SetGamePreset(picked);
         };
     }

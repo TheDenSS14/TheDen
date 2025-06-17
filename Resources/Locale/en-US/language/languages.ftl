@@ -90,6 +90,12 @@ language-Chittin-description =
 language-Rodentian-name = Rodentian
 language-Rodentian-description =  A language mostly consisting of squeaks spoken by Rodentia if all shapes and sizes.
 
+language-Kagebun-name = Kagebun
+language-Kagebun-description = 
+    An ancient language primarily used by the yōkai, originating from their supernatural roots. 
+    To the uninitiated, it is a chorus of sounds ranging from eerie whispers to ritualistic chanting.
+    To those who speak it, it is a living tongue that links them to the spirit world and their ancient pacts.
+
 # Animal Languages
 
 language-Cat-name = Cat

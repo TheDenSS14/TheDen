@@ -56,6 +56,35 @@ public abstract partial class GameRuleSystem<T> where T: IComponent
         return true;
     }
 
+    /// <summary>
+    ///     Utility function for finding a random event-eligible station entity
+    /// </summary>
+    protected bool TryGetRandomStationData([NotNullWhen(true)] out Entity<StationDataComponent>? station, Func<EntityUid, bool>? filter = null)
+    {
+        var stations = new ValueList<Entity<StationDataComponent>>(Count<StationDataComponent>());
+
+        filter ??= _ => true;
+        var query = AllEntityQuery<StationDataComponent>();
+
+        while (query.MoveNext(out var uid, out var comp))
+        {
+            if (!filter(uid))
+                continue;
+
+            stations.Add((uid, comp));
+        }
+
+        if (stations.Count == 0)
+        {
+            station = null;
+            return false;
+        }
+
+        // TODO: Engine PR.
+        station = stations[RobustRandom.Next(stations.Count)];
+        return true;
+    }
+
     protected bool TryFindRandomTile(out Vector2i tile,
         [NotNullWhen(true)] out EntityUid? targetStation,
         out EntityUid targetGrid,
@@ -65,6 +94,30 @@ public abstract partial class GameRuleSystem<T> where T: IComponent
         targetStation = EntityUid.Invalid;
         targetGrid = EntityUid.Invalid;
         targetCoords = EntityCoordinates.Invalid;
+
+        if (TryGetRandomStation(out targetStation))
+        {
+            return TryFindRandomTileOnStation((targetStation.Value, Comp<StationDataComponent>(targetStation.Value)),
+                out tile,
+                out targetGrid,
+                out targetCoords);
+        }
+
+        return false;
+    }
+
+    protected bool TryFindRandomTile(
+        bool stationExclusive,
+        out Vector2i tile,
+        [NotNullWhen(true)] out EntityUid? targetStation,
+        out EntityUid targetGrid,
+        out EntityCoordinates targetCoords)
+    {
+        tile = default;
+        targetStation = EntityUid.Invalid;
+        targetGrid = EntityUid.Invalid;
+        targetCoords = EntityCoordinates.Invalid;
+
         if (TryGetRandomStation(out targetStation))
         {
             return TryFindRandomTileOnStation((targetStation.Value, Comp<StationDataComponent>(targetStation.Value)),

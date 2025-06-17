@@ -1,0 +1,39 @@
+# - type: Interaction
+#   parent: [BaseGlobal, BaseHands]
+#   id: ToggleUndershirt
+#   priority: -11
+#   delay: 3
+#   allowSelfInteract: true
+#   hideByRequirement: true
+#   requirement:
+#     !type:ComplexRequirement
+#     requirements:
+#     - !type:EntityWhitelistRequirement
+#       whitelist:
+#         components: [HumanoidAppearance]
+#     - !type:ClothingSlotBlacklistRequirement
+#       slot: jumpsuit
+#   effectSuccess:
+#     popup: Obvious
+#     sound: {path: /Audio/Effects/thudswoosh.ogg}
+#     soundPerceivedByOthers: false
+#   action:
+#     !type:ToggleLayersAction
+#     neededMarkingCategory: Undershirt
+#     toggleLayers:
+#     - Undershirt
+#
+# - type: Interaction
+#   parent: ToggleUndershirt
+#   id: ToggleUnderwear
+#   priority: -12
+#   delay: 2.2
+#   effectSuccess:
+#     popup: Obvious
+#     sound: {path: /Audio/Effects/thudswoosh.ogg}
+#     soundPerceivedByOthers: false
+#   action:
+#     !type:ToggleLayersAction
+#     neededMarkingCategory: Underwear
+#     toggleLayers:
+#     - Underwear

@@ -39,9 +39,9 @@
         mask:
         - GhostImpassable
   - type: MovementIgnoreGravity
-  - type: Damageable # Nyanotrasen - Corporeal Spirit allows Holy water to do damage
-    damageContainer: CorporealSpirit
-    damageModifierSet: CorporealSpirit
+  - type: Damageable
+    damageContainer: ManifestedSpirit # Floof - M3739 - #937 - CorporealSpirit container superseded by ManifestedSpirit
+    damageModifierSet: Spirit # DeltaV: Keep revenant extreme weakness to heat and bible
   - type: Examiner
   - type: NoSlip
   - type: Eye

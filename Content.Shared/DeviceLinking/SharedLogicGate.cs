@@ -32,5 +32,20 @@ public enum LogicGateVisuals : byte
 [Serializable, NetSerializable]
 public enum LogicGateLayers : byte
 {
-    Gate
+    Gate,
+    InputA,
+    InputB,
+    Output
+}
+
+/// <summary>
+/// The possible states of a logic-capable signal.
+/// Stored in network payload data of device network messages.
+/// </summary>
+[Serializable, NetSerializable]
+public enum SignalState : byte
+{
+    Momentary, // Instantaneous pulse high, compatibility behavior
+    Low,
+    High
 }

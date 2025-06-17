@@ -293,7 +293,7 @@ uplink-surplus-bundle-name = Surplus Crate
 uplink-surplus-bundle-desc = Contains 50 telecrystals worth of completely random Syndicate items. It can be useless junk or really good.
 
 uplink-super-surplus-bundle-name = Super Surplus Crate
-uplink-super-surplus-bundle-desc = Contains 125 telecrystals worth of completely random Syndicate items.
+uplink-super-surplus-bundle-desc = Contains 625 telecrystals worth of completely random Syndicate items.
 
 uplink-fpa-90-bundle-name = FPA-90 Bundle
 uplink-fpa-90-bundle-desc = A cheap integrally suppressed SMG. Comes loaded.

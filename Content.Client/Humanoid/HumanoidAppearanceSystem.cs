@@ -330,6 +330,7 @@ public sealed class HumanoidAppearanceSystem : SharedHumanoidAppearanceSystem
         // lets just kinda sorta do that ourselves
         var layerDict = new Dictionary<string, int>();
 
+        visible &= !humanoid.HiddenMarkings.Contains(markingPrototype.ID); // FLOOF ADD
         // FLOOF ADD END
 
         for (var j = 0; j < markingPrototype.Sprites.Count; j++)

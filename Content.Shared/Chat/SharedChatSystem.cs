@@ -49,8 +49,8 @@ public abstract class SharedChatSystem : EntitySystem
     {
         base.Initialize();
         DebugTools.Assert(_prototypeManager.HasIndex<RadioChannelPrototype>(CommonChannel));
-        SubscribeLocalEvent<PrototypesReloadedEventArgs>(OnPrototypeReload);
         CacheRadios();
+        SubscribeLocalEvent<PrototypesReloadedEventArgs>(OnPrototypeReload);
     }
 
     protected virtual void OnPrototypeReload(PrototypesReloadedEventArgs obj)

@@ -1,3 +1,5 @@
+character-item-group-TraitRaceSounds = Race Sounds
+
 trait-name-VulpkaninSounds = Vulpkanin Sounds
 trait-description-VulpkaninSounds =
     Allows you to use the sounds Vulpkanins have.

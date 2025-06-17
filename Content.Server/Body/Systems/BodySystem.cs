@@ -1,5 +1,5 @@
 using Content.Server.Body.Components;
-using Content.Server.GameTicking;
+using Content.Server.Ghost;
 using Content.Server.Humanoid;
 using Content.Shared._Shitmed.Body.Part;
 using Content.Shared.Body.Components;
@@ -13,6 +13,8 @@ using Content.Shared.Movement.Systems;
 using Robust.Shared.Audio;
 using Robust.Shared.Timing;
 using System.Numerics;
+using Content.Server.Polymorph.Components;
+using Content.Server.Polymorph.Systems;
 
 // Shitmed Change
 using System.Linq;
@@ -22,12 +24,13 @@ namespace Content.Server.Body.Systems;
 
 public sealed class BodySystem : SharedBodySystem
 {
-    [Dependency] private readonly GameTicker _ticker = default!;
+    [Dependency] private readonly GhostSystem _ghostSystem = default!;
     [Dependency] private readonly IGameTiming _gameTiming = default!;
     [Dependency] private readonly HumanoidAppearanceSystem _humanoidSystem = default!;
     [Dependency] private readonly SharedAppearanceSystem _appearance = default!; // Shitmed Change
     [Dependency] private readonly MobStateSystem _mobState = default!;
     [Dependency] private readonly SharedMindSystem _mindSystem = default!;
+    [Dependency] private readonly PolymorphSystem _polymorph = default!;
 
     public override void Initialize()
     {
@@ -48,8 +51,8 @@ public sealed class BodySystem : SharedBodySystem
 
         if (_mobState.IsDead(ent) && _mindSystem.TryGetMind(ent, out var mindId, out var mind))
         {
-            mind.TimeOfDeath ??= _gameTiming.CurTime; // WD EDIT
-            _ticker.OnGhostAttempt(mindId, canReturnGlobal: true, mind: mind);
+            mind.TimeOfDeath ??= _gameTiming.CurTime;
+            _ghostSystem.OnGhostAttempt(mindId, canReturnGlobal: true, mind: mind);
         }
     }
 
@@ -106,7 +109,7 @@ public sealed class BodySystem : SharedBodySystem
 
     public override HashSet<EntityUid> GibBody(
         EntityUid bodyId,
-        bool gibOrgans = false,
+        bool acidify = false,
         BodyComponent? body = null,
         bool launchGibs = true,
         Vector2? splatDirection = null,
@@ -124,11 +127,23 @@ public sealed class BodySystem : SharedBodySystem
             return new HashSet<EntityUid>();
         }
 
+        // If a polymorph configured to revert on death is gibbed without dying,
+        // revert it then gib so the parent is gibbed instead of the polymorph.
+        if (TryComp<PolymorphedEntityComponent>(bodyId, out var polymorph)
+            && polymorph.Configuration.RevertOnDeath)
+        {
+            _polymorph.Revert(bodyId);
+            if (polymorph.Configuration.TransferDamage)
+                GibBody(polymorph.Parent, acidify, null, launchGibs: launchGibs, splatDirection: splatDirection,
+                splatModifier: splatModifier, splatCone:splatCone);
+            return new HashSet<EntityUid>();
+        }
+
         var xform = Transform(bodyId);
         if (xform.MapUid is null)
             return new HashSet<EntityUid>();
 
-        var gibs = base.GibBody(bodyId, gibOrgans, body, launchGibs: launchGibs,
+        var gibs = base.GibBody(bodyId, acidify, body, launchGibs: launchGibs,
             splatDirection: splatDirection, splatModifier: splatModifier, splatCone: splatCone,
             gib: gib, contents: contents); // Shitmed Change
 

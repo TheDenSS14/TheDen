@@ -475,18 +475,21 @@ namespace Content.Shared.Interaction
             return uid != null && IsDeleted(uid.Value);
         }
 
-        public void InteractHand(EntityUid user, EntityUid target)
+        public bool InteractHand(EntityUid user, EntityUid target) // Goobstation - useful return value
         {
+            if (IsDeleted(user) || IsDeleted(target))
+                return false; // Goobstation
+
             var complexInteractions = _actionBlockerSystem.CanComplexInteract(user);
             if (!complexInteractions)
             {
-                InteractionActivate(user,
+                return InteractionActivate(user, // Goobstation
                     target,
                     checkCanInteract: false,
                     checkUseDelay: true,
                     checkAccess: false,
-                    complexInteractions: complexInteractions);
-                return;
+                    complexInteractions: complexInteractions,
+                    checkDeletion: false);
             }
 
             // allow for special logic before main interaction
@@ -495,7 +498,7 @@ namespace Content.Shared.Interaction
             if (ev.Handled)
             {
                 _adminLogger.Add(LogType.InteractHand, LogImpact.Low, $"{ToPrettyString(user):user} interacted with {ToPrettyString(target):target}, but it was handled by another system");
-                return;
+                return false; // Goobstation
             }
 
             DebugTools.Assert(!IsDeleted(user) && !IsDeleted(target));
@@ -506,12 +509,12 @@ namespace Content.Shared.Interaction
             _adminLogger.Add(LogType.InteractHand, LogImpact.Low, $"{ToPrettyString(user):user} interacted with {ToPrettyString(target):target}");
             DoContactInteraction(user, target, message);
             if (message.Handled)
-                return;
+                return true; // Goobstation
 
             DebugTools.Assert(!IsDeleted(user) && !IsDeleted(target));
 
             // Else we run Activate.
-            InteractionActivate(user,
+            return InteractionActivate(user, // Goobstation
                 target,
                 checkCanInteract: false,
                 checkUseDelay: true,
