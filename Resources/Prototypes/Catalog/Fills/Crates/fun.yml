@@ -96,6 +96,12 @@
       - !type:EntSelector
         id: PlushieChitinid
       # End DeltaV
+    - !type:GroupSelector
+      children:
+      - !type:EntSelector
+        id: PlushieTeddyBear
+      - !type:EntSelector
+        id: PlushieTeddyBearRecolorableRandom
 
 - type: entity
   id: CrateFunPlushie
