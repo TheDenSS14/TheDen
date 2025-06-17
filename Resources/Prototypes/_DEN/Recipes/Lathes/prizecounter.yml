@@ -62,3 +62,30 @@
   completetime: 0.1
   materials:
     PrizeTicket: 50
+
+# squeaky toys are discounted because they're not plushies (no stash, not edible, etc)
+
+- type: latheRecipe
+  id: SqueakySmileyGuy
+  result: SqueakySmileyGuy
+  applyMaterialDiscount: false
+  completetime: 0.1
+  materials:
+    PrizeTicket: 40
+
+- type: latheRecipe
+  id: SqueakySmileyGuyRandom
+  result: SqueakySmileyGuyRandom
+  name: lathe-recipe-SqueakySmileyGuyRandom-name
+  applyMaterialDiscount: false
+  completetime: 0.1
+  materials:
+    PrizeTicket: 40
+
+- type: latheRecipe
+  id: SqueakySmileyBall
+  result: SqueakySmileyBall
+  applyMaterialDiscount: false
+  completetime: 0.1
+  materials:
+    PrizeTicket: 40
