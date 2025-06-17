@@ -40,6 +40,7 @@
   id: SurvivalIrregularExtended
   alias: [irregular-extended]
   showInVote: true
+  highDanger: true
   name: irregular-extended-title
   description: irregular-extended-description
   rules:
@@ -92,6 +93,7 @@
     - sekrit
   name: secret-title
   showInVote: true
+  highDanger: true
   description: secret-description
   rules:
     - Secret
@@ -138,6 +140,7 @@
   name: traitor-title
   description: traitor-description
   showInVote: true
+  highDanger: true
   rules:
     - Traitor
     - SubGamemodesRule
