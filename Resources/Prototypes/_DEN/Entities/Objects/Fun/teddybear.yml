@@ -5,7 +5,7 @@
   description: Because everybody needs a friend. # reference to no joke the worst movie i have seen in my life
   components:
   - type: Sprite
-    sprite: _DEN/Objects/Fun/toys.rsi
+    sprite: _DEN/Objects/Fun/teddybear.rsi
     state: teddybear
     layers:
     - state: teddybear
@@ -50,7 +50,7 @@
   suffix: recolorable
   components:
   - type: Sprite
-    sprite: _DEN/Objects/Fun/toys.rsi
+    sprite: _DEN/Objects/Fun/teddybear.rsi
     state: teddybear
     layers:
     - state: teddybear_base
@@ -86,7 +86,7 @@
   suffix: recolorable, plaid
   components:
   - type: Sprite
-    sprite: _DEN/Objects/Fun/toys.rsi
+    sprite: _DEN/Objects/Fun/teddybear.rsi
     state: teddybear
     layers:
     - state: teddybear_base_plaid
@@ -165,7 +165,7 @@
   description: "Fun fact: a plushie can survive just fine without this."
   components:
   - type: Sprite
-    sprite: _DEN/Objects/Fun/toys.rsi
+    sprite: _DEN/Objects/Fun/teddybear.rsi
     state: plush_heart
 
 - type: entityTable
