@@ -1,0 +1,32 @@
+- type: entity
+  parent: BaseSqueakyToy
+  id: PlushieSmileyGuy
+  name: smiley guy
+  description: Socially acceptable toy for the kind of office desk worker whose job makes them want to become a serial killer. # also known as a "stress toy"
+  components:
+    - type: Sprite
+      sprite: _DEN/Objects/Fun/littlesteve.rsi
+      layers:
+        - state: icon
+          color: "#EDE74E"
+          map: ["enum.DamageStateVisualLayers.Base"]
+    - type: Item
+      inhandVisuals:
+        left:
+          - state: inhand-left
+            color: "#EDE74E"
+            map: ["enum.DamageStateVisualLayers.Base"]
+        right:
+          - state: inhand-right
+            color: "#EDE74E"
+            map: ["enum.DamageStateVisualLayers.Base"]
+
+- type: entity
+  parent: PlushieSmileyGuy
+  id: PlushieSmileyGuyRandom
+  suffix: random appearance
+  components:
+    - type: RandomSprite
+      available:
+        - enum.DamageStateVisualLayers.Base:
+            icon: PlasticToy
