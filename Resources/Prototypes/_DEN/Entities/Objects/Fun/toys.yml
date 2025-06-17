@@ -1,6 +1,6 @@
 - type: entity
   parent: BaseSqueakyToy
-  id: PlushieSmileyGuy
+  id: SqueakySmileyGuy
   name: smiley guy
   description: Socially acceptable toy for the kind of office desk worker whose job makes them want to become a serial killer. # also known as a "stress toy"
   components:
@@ -22,8 +22,8 @@
             map: ["enum.DamageStateVisualLayers.Base"]
 
 - type: entity
-  parent: PlushieSmileyGuy
-  id: PlushieSmileyGuyRandom
+  parent: SqueakySmileyGuy
+  id: SqueakySmileyGuyRandom
   suffix: random appearance
   components:
     - type: RandomSprite
@@ -32,7 +32,7 @@
             icon: PlasticToy
 
 - type: entity
-  parent: PlushieSmileyGuy
+  parent: SqueakySmileyGuy
   id: SqueakySmileyBall
   name: smiley ball
   description: This thing is squishy and full of slime. Just like you!
@@ -49,3 +49,13 @@
       available:
         - enum.DamageStateVisualLayers.Base:
             icon: PlasticToy
+
+- type: entity
+  parent: BasePlushie
+  id: PlushieAlienGerm
+  name: beady alien plushie
+  description: It looks at you pleadingly.
+  components:
+    - type: Sprite
+      sprite: _DEN/Objects/Fun/toys.rsi
+      state: beady_alien
