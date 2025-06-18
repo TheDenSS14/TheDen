@@ -113,6 +113,12 @@
       - !type:EntSelector
         id: PlushieSmileyBallRandom
         weight: 0.3 # rare color variant...
+    - !type:GroupSelector
+      children:
+      - !type:EntSelector
+        id: PlushieAlienGerm
+      - !type:EntSelector
+        id: PlushieAlienGermMini
 
 - type: entity
   id: CrateFunPlushie
