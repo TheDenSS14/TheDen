@@ -530,14 +530,16 @@ def main():
     # Validate license
     license_label = args.pr_license.lower()
 
+    original_config = LICENSE_CONFIG.copy()
+
     # TODO: support any amount of licenses
-    for license in LICENSE_CONFIG:
-        for target_license in LICENSE_CONFIG:
+    for license in original_config:
+        for target_license in original_config:
             if target_license == license:
                 continue
 
-            config_license_id = LICENSE_CONFIG[license]["id"]
-            target_license_id = LICENSE_CONFIG[target_license]["id"]
+            config_license_id = original_config[license]["id"]
+            target_license_id = original_config[target_license]["id"]
 
             LICENSE_CONFIG[f"{license}&{target_license}"] = {
                 id: f"{config_license_id} AND {target_license_id}"
