@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 fishing-rod-remove-lure = { $ent } is reeling
 fishing-progress-success = You pull something up from the spot!
 fishing-progress-fail = You missed it...

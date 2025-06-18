@@ -1,4 +1,12 @@
+// SPDX-FileCopyrightText: 2023 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 PilgrimViis <PilgrimViis@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+//
+// SPDX-License-Identifier: MIT
+
 using Content.Shared.Chemistry.Reagent;
+using Content.Shared.Damage;
 using Content.Shared.Whitelist;
 using Robust.Shared.Audio;
 using Robust.Shared.Containers;
@@ -60,16 +68,10 @@ public sealed partial class DevourerComponent : Component
     };
 
     /// <summary>
-    /// The chemical ID injected upon devouring
-    /// </summary>
-    [DataField("chemical", customTypeSerializer: typeof(PrototypeIdSerializer<ReagentPrototype>))]
-    public string Chemical = "Ichor";
-
-    /// <summary>
     /// The amount of ichor injected per devour
     /// </summary>
-    [ViewVariables(VVAccess.ReadWrite), DataField("healRate")]
-    public float HealRate = 15f;
+    [ViewVariables(VVAccess.ReadWrite), DataField("healDamage")]
+    public DamageSpecifier HealDamage = new();
 
     /// <summary>
     /// The favorite food not only feeds you, but also heals

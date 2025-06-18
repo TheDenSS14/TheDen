@@ -1,4 +1,10 @@
-﻿oracle-demand-1 = I demand one {$item}! Do not question why!
+# SPDX-FileCopyrightText: 2023 Debug <49997488+DebugOk@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 VMSolidus <evilexecutive@gmail.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
+oracle-demand-1 = I demand one {$item}! Do not question why!
 oracle-demand-2 = In exchange for knowledge, you must bring me one {$item}!
 oracle-demand-3 = I will grant you a gift of the divine in exchange for one {$item}!
 oracle-demand-4 = Bring me one {$item} if you ever wish to receive even one drop of my grace!

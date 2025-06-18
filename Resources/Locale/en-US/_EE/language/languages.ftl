@@ -1,3 +1,8 @@
+# SPDX-FileCopyrightText: 2025 SX-7 <92227810+SX-7@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 language-SiikMaas-name = Siik'maas
 language-SiikMaas-description =
     The ancient religious tongue of the Tajara, now the most widely spoken and taught language on Adhomai.

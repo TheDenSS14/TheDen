@@ -1,3 +1,8 @@
+// SPDX-FileCopyrightText: 2025 Falcon <falcon@zigtag.dev>
+// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 using Content.Shared.Charges.Components;
 using Content.Shared.Charges.Systems;
 using Content.Shared.Coordinates.Helpers;
@@ -93,8 +98,8 @@ public sealed class ChargeHolosignSystem : EntitySystem
         var placed = container.ContainedEntities.First(); // checked Count beforehand so this won't fail
         _transform.SetCoordinates(placed, coords);
         _transform.AnchorEntity(placed);
-        if (TryComp(placed, out SpamEmitSoundComponent? comp)) // TheDen - Holofan sounds
-            _sound.SetEnabled((placed, comp), true);
+        // if (TryComp(placed, out SpamEmitSoundComponent? comp)) // TheDen - Holofan sounds
+        //     _sound.SetEnabled((placed, comp), true);
         return true;
     }
 
@@ -113,8 +118,8 @@ public sealed class ChargeHolosignSystem : EntitySystem
             return false;
         }
 
-        if (TryComp(sign, out SpamEmitSoundComponent? comp)) // TheDen - Holofan sounds
-            _sound.SetEnabled((sign, comp), false);
+        // if (TryComp(sign, out SpamEmitSoundComponent? comp)) // TheDen - Holofan sounds
+        //     _sound.SetEnabled((sign, comp), false);
         _charges.AddCharges(ent, 1, ent);
 
         var userIdentity = Identity.Name(user, EntityManager);

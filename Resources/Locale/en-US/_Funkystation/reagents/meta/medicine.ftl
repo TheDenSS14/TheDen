@@ -1,3 +1,8 @@
+# SPDX-FileCopyrightText: 2025 Eris <eris@erisws.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 reagent-name-libital = libital
 reagent-desc-libital = A common but weak medicine used to heal brute trauma. Usually paired with other chemicals.
 

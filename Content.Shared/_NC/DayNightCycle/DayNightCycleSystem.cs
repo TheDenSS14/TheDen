@@ -1,3 +1,8 @@
+// SPDX-FileCopyrightText: 2024 Vonsant <von7ant@gmail.com>
+// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 using System.Linq;
 using Robust.Shared.Map.Components;
 using Robust.Shared.Timing;

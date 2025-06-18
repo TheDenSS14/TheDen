@@ -1,3 +1,8 @@
+# SPDX-FileCopyrightText: 2024 Milon <milonpl.git@proton.me>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 # Examine
 nanochat-card-examine-no-number = The NanoChat card has not been assigned a number yet.
 nanochat-card-examine-number = The NanoChat card displays #{$number}.

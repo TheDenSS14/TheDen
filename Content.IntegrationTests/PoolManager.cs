@@ -1,3 +1,19 @@
+// SPDX-FileCopyrightText: 2022 Mervill <mervills.email@gmail.com>
+// SPDX-FileCopyrightText: 2022 wrexbe <81056464+wrexbe@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Moony <moony@hellomouse.net>
+// SPDX-FileCopyrightText: 2023 TemporalOroboros <TemporalOroboros@gmail.com>
+// SPDX-FileCopyrightText: 2023 Visne <39844191+Visne@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
+// SPDX-FileCopyrightText: 2024 VMSolidus <evilexecutive@gmail.com>
+// SPDX-FileCopyrightText: 2025 Falcon <falcon@zigtag.dev>
+// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 sleepyyapril <flyingkarii@gmail.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 #nullable enable
 using System.Collections.Generic;
 using System.IO;
@@ -40,6 +56,8 @@ public static partial class PoolManager
     private static bool _dead;
     private static Exception? _poolFailureReason;
 
+    private static HashSet<Assembly> _contentAssemblies = default!;
+
     public static async Task<(RobustIntegrationTest.ServerIntegrationInstance, PoolTestLogHandler)> GenerateServer(
         PoolSettings poolSettings,
         TextWriter testOut)
@@ -52,12 +70,7 @@ public static partial class PoolManager
                 LoadConfigAndUserData = false,
                 LoadContentResources = !poolSettings.NoLoadContent,
             },
-            ContentAssemblies = new[]
-            {
-                typeof(Shared.Entry.EntryPoint).Assembly,
-                typeof(Server.Entry.EntryPoint).Assembly,
-                typeof(PoolManager).Assembly
-            }
+            ContentAssemblies = _contentAssemblies.ToArray()
         };
 
         var logHandler = new PoolTestLogHandler("SERVER");
@@ -138,7 +151,7 @@ public static partial class PoolManager
             {
                 typeof(Shared.Entry.EntryPoint).Assembly,
                 typeof(Client.Entry.EntryPoint).Assembly,
-                typeof(PoolManager).Assembly
+                typeof(PoolManager).Assembly,
             }
         };
 
@@ -424,13 +437,26 @@ we are just going to end this here to save a lot of time. This is the exception 
     /// <summary>
     /// Initialize the pool manager.
     /// </summary>
-    /// <param name="assembly">Assembly to search for to discover extra test prototypes.</param>
-    public static void Startup(Assembly? assembly)
+    /// <param name="extraAssemblies">Assemblies to search for to discover extra prototypes and systems.</param>
+    public static void Startup(params Assembly[] extraAssemblies)
     {
         if (_initialized)
             throw new InvalidOperationException("Already initialized");
 
         _initialized = true;
-        DiscoverTestPrototypes(assembly);
+        _contentAssemblies =
+        [
+            typeof(Shared.Entry.EntryPoint).Assembly,
+            typeof(Server.Entry.EntryPoint).Assembly,
+            typeof(PoolManager).Assembly
+        ];
+        _contentAssemblies.UnionWith(extraAssemblies);
+
+        _testPrototypes.Clear();
+        DiscoverTestPrototypes(typeof(PoolManager).Assembly);
+        foreach (var assembly in extraAssemblies)
+        {
+            DiscoverTestPrototypes(assembly);
+        }
     }
 }

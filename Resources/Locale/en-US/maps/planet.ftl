@@ -1,3 +1,10 @@
+# SPDX-FileCopyrightText: 2023 Debug <49997488+DebugOk@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: MIT
+
 cmd-planet-desc = Converts the supplied map into a planet with some specific biome.
 cmd-planet-help = {$command} <mapid> <biome>.
 cmd-planet-args = Requires 2 args only.

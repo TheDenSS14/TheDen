@@ -1,3 +1,31 @@
+// SPDX-FileCopyrightText: 2022 Kara <lunarautomaton6@gmail.com>
+// SPDX-FileCopyrightText: 2022 Marat Gadzhiev <15rinkashikachi15@gmail.com>
+// SPDX-FileCopyrightText: 2022 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
+// SPDX-FileCopyrightText: 2023 Checkraze <71046427+Cheackraze@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Eoin Mcloughlin <helloworld@eoinrul.es>
+// SPDX-FileCopyrightText: 2023 Jezithyr <jezithyr@gmail.com>
+// SPDX-FileCopyrightText: 2023 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 TemporalOroboros <TemporalOroboros@gmail.com>
+// SPDX-FileCopyrightText: 2023 Tom Leys <tom@crump-leys.com>
+// SPDX-FileCopyrightText: 2023 Visne <39844191+Visne@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 deltanedas <39013340+deltanedas@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 deltanedas <@deltanedas:kde.org>
+// SPDX-FileCopyrightText: 2023 eoineoineoin <eoin.mcloughlin+gh@gmail.com>
+// SPDX-FileCopyrightText: 2023 eoineoineoin <github@eoinrul.es>
+// SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT <77995199+DEATHB4DEFEAT@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Debug <49997488+DebugOk@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Flesh <62557990+PolterTzi@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 SimpleStation14 <130339894+SimpleStation14@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 VMSolidus <evilexecutive@gmail.com>
+// SPDX-FileCopyrightText: 2024 blueDev2 <89804215+blueDev2@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Falcon <falcon@zigtag.dev>
+// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 sleepyyapril <flyingkarii@gmail.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 using System.Linq;
 using Content.Server.Cargo.Components;
 using Content.Server.GameTicking.Events;
@@ -13,7 +41,6 @@ using Content.Shared.GameTicking;
 using Content.Shared.Shuttles.Components;
 using Content.Shared.Tiles;
 using Content.Shared.Whitelist;
-using Robust.Server.Maps;
 using Robust.Shared.Map;
 using Robust.Shared.Random;
 using Robust.Shared.Audio;
@@ -29,10 +56,11 @@ public sealed partial class CargoSystem
     /*
      * Handles cargo shuttle / trade mechanics.
      */
-    [Dependency] private readonly IConfigurationManager _confMan = default!;
+
     public MapId? CargoMap { get; private set; }
 
     private static readonly SoundPathSpecifier ApproveSound = new("/Audio/Effects/Cargo/ping.ogg");
+    private static readonly ResPath MapPath = new ResPath("/Maps/Shuttles/trading_outpost.yml");
 
     private void InitializeShuttle()
     {
@@ -354,7 +382,7 @@ public sealed partial class CargoSystem
         if (!HasComp<StationCargoOrderDatabaseComponent>(args.Station)) // No cargo, L
             return;
 
-        if (_cfgManager.GetCVar(CCVars.GridFill) && _confMan.GetCVar(CargoCVars.CreateCargoMap))
+        if (_cfgManager.GetCVar(CCVars.GridFill) && _cfg.GetCVar(CargoCVars.CreateCargoMap))
             SetupTradePost();
     }
 
@@ -367,42 +395,31 @@ public sealed partial class CargoSystem
             return;
         }
 
-        _mapManager.DeleteMap(CargoMap.Value);
+        _mapSystem.DeleteMap(CargoMap.Value);
         CargoMap = null;
     }
 
     private void SetupTradePost()
     {
         if (CargoMap != null && _sharedMapSystem.MapExists(CargoMap.Value))
-        {
             return;
-        }
 
         // It gets mapinit which is okay... buuutt we still want it paused to avoid power draining.
         var mapEntId = _mapSystem.CreateMap();
         CargoMap = _entityManager.GetComponent<MapComponent>(mapEntId).MapId;
-
-        var options = new MapLoadOptions
-        {
-            LoadMap = true,
-        };
-
-        _mapLoader.TryLoad((MapId) CargoMap, "/Maps/Shuttles/trading_outpost.yml", out var rootUids, options); // Oh boy oh boy, hardcoded paths!
+        _mapLoader.TryLoadGrid(CargoMap.Value, MapPath, out var grid); // Oh boy oh boy, hardcoded paths!
 
         // If this fails to load for whatever reason, cargo is fucked
-        if (rootUids == null || !rootUids.Any())
+        if (!grid.HasValue)
             return;
 
-        foreach (var grid in rootUids)
-        {
-            EnsureComp<ProtectedGridComponent>(grid);
-            EnsureComp<TradeStationComponent>(grid);
+        EnsureComp<ProtectedGridComponent>(grid.Value);
+        EnsureComp<TradeStationComponent>(grid.Value);
 
-            var shuttleComponent = EnsureComp<ShuttleComponent>(grid);
-            shuttleComponent.AngularDamping = 10000;
-            shuttleComponent.LinearDamping = 10000;
-            Dirty(grid, shuttleComponent);
-        }
+        var shuttleComponent = EnsureComp<ShuttleComponent>(grid.Value);
+        shuttleComponent.AngularDamping = 10000;
+        shuttleComponent.LinearDamping = 10000;
+        Dirty(grid.Value, shuttleComponent);
 
         var mapUid = _sharedMapSystem.GetMap(CargoMap.Value);
         var ftl = EnsureComp<FTLDestinationComponent>(mapUid);
@@ -416,7 +433,6 @@ public sealed partial class CargoSystem
         };
 
         _metaSystem.SetEntityName(mapUid, $"Automated Trade Station {_random.Next(1000):000}");
-
         _console.RefreshShuttleConsoles();
     }
 }

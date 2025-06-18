@@ -1,3 +1,12 @@
+# SPDX-FileCopyrightText: 2022 Alex Evgrashin <aevgrashin@yandex.ru>
+# SPDX-FileCopyrightText: 2022 metalgearsloth <comedian_vs_clown@hotmail.com>
+# SPDX-FileCopyrightText: 2024 RumiTiger <154005209+RumiTiger@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 SleepyScarecrow <sharedjunkemail69@gmail.com>
+# SPDX-FileCopyrightText: 2025 Hedera <185189451+Hederadaii@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 reagent-name-juice-apple = apple juice
 reagent-desc-juice-apple = It's a little piece of Eden.
 

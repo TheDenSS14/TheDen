@@ -1,3 +1,13 @@
+// SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT <77995199+DEATHB4DEFEAT@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Emisse <99158783+emisse@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Falcon <falcon@zigtag.dev>
+// SPDX-FileCopyrightText: 2025 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 sleepyyapril <flyingkarii@gmail.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 using System.Linq;
 using System.Numerics;
 using System.Threading.Tasks;
@@ -6,7 +16,7 @@ using Content.Shared.Humanoid;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Radio;
 using Content.Shared.Salvage.Magnet;
-using Robust.Server.Maps;
+using Robust.Shared.Exceptions;
 using Robust.Shared.Map;
 
 namespace Content.Server.Salvage;
@@ -30,7 +40,7 @@ public sealed partial class SalvageSystem
 
         SubscribeLocalEvent<SalvageMagnetComponent, MagnetClaimOfferEvent>(OnMagnetClaim);
         SubscribeLocalEvent<SalvageMagnetComponent, ComponentStartup>(OnMagnetStartup);
-        SubscribeLocalEvent<SalvageMagnetComponent, AnchorStateChangedEvent>(OnMagnetAnchored);
+        SubscribeLocalEvent<SalvageMagnetDataComponent, AnchorStateChangedEvent>(OnMagnetAnchored);
     }
 
     private void OnMagnetClaim(EntityUid uid, SalvageMagnetComponent component, ref MagnetClaimOfferEvent args)
@@ -51,12 +61,12 @@ public sealed partial class SalvageSystem
         UpdateMagnetUI((uid, component), Transform(uid));
     }
 
-    private void OnMagnetAnchored(EntityUid uid, SalvageMagnetComponent component, ref AnchorStateChangedEvent args)
+    private void OnMagnetAnchored(EntityUid uid, SalvageMagnetDataComponent component, ref AnchorStateChangedEvent args)
     {
         if (!args.Anchored)
             return;
 
-        UpdateMagnetUI((uid, component), args.Transform);
+        UpdateMagnetUIs((uid, component));
     }
 
     private void OnMagnetDataMapInit(EntityUid uid, SalvageMagnetDataComponent component, ref MapInitEvent args)
@@ -230,8 +240,8 @@ public sealed partial class SalvageSystem
         {
             var station = _station.GetOwningStation(magnetUid, xform);
 
-            if (station != data.Owner)
-                continue;
+            //if (station != data.Owner) somehow lets magents off station work?
+            //    continue;
 
             _ui.SetUiState(magnetUid, SalvageMagnetUiKey.Key,
                 new SalvageMagnetBoundUserInterfaceState(data.Comp.Offered)
@@ -250,7 +260,8 @@ public sealed partial class SalvageSystem
         var seed = data.Comp.Offered[index];
 
         var offering = GetSalvageOffering(seed);
-        var salvMap = _mapManager.CreateMap();
+        var salvMap = _mapSystem.CreateMap();
+        var salvMapXform = Transform(salvMap);
 
         // Set values while awaiting asteroid dungeon if relevant so we can't double-take offers.
         data.Comp.ActiveSeed = seed;
@@ -261,21 +272,16 @@ public sealed partial class SalvageSystem
         switch (offering)
         {
             case AsteroidOffering asteroid:
-                var grid = _mapManager.CreateGrid(salvMap);
+                var grid = _mapManager.CreateGrid(salvMapXform.MapID);
                 await _dungeon.GenerateDungeonAsync(asteroid.DungeonConfig, grid.Owner, grid, Vector2i.Zero, seed);
                 break;
             case SalvageOffering wreck:
                 var salvageProto = wreck.SalvageMap;
 
-                var opts = new MapLoadOptions
-                {
-                    Offset = new Vector2(0, 0)
-                };
-
-                if (!_map.TryLoad(salvMap, salvageProto.MapPath.ToString(), out var roots, opts))
+                if (!_loader.TryLoadGrid(salvMapXform.MapID, salvageProto.MapPath, out _))
                 {
                     Report(magnet, MagnetChannel, "salvage-system-announcement-spawn-debris-disintegrated");
-                    _mapManager.DeleteMap(salvMap);
+                    _mapSystem.DeleteMap(salvMapXform.MapID);
                     return;
                 }
 
@@ -285,7 +291,7 @@ public sealed partial class SalvageSystem
         }
 
         Box2? bounds = null;
-        var mapXform = _xformQuery.GetComponent(_mapManager.GetMapEntityId(salvMap));
+        var mapXform = _xformQuery.GetComponent(salvMap);
 
         if (mapXform.ChildCount == 0)
         {
@@ -337,7 +343,7 @@ public sealed partial class SalvageSystem
         if (!TryGetSalvagePlacementLocation(mapId, attachedBounds, bounds!.Value, worldAngle, out var spawnLocation, out var spawnAngle))
         {
             Report(magnet.Owner, MagnetChannel, "salvage-system-announcement-spawn-no-debris-available");
-            _mapManager.DeleteMap(salvMap);
+            _mapSystem.DeleteMap(salvMapXform.MapID);
             return;
         }
 
@@ -368,7 +374,7 @@ public sealed partial class SalvageSystem
         }
 
         Report(magnet.Owner, MagnetChannel, "salvage-system-announcement-arrived", ("timeLeft", data.Comp.ActiveTime.TotalSeconds));
-        _mapManager.DeleteMap(salvMap);
+        _mapSystem.DeleteMap(salvMapXform.MapID);
 
         data.Comp.Announced = false;
 

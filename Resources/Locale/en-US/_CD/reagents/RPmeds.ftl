@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 ### Messages to be used with RP-based medication.
 
 reagent-effect-antidepressant-mild1 = You feel like things aren't so bad. 

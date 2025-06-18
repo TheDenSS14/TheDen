@@ -1,3 +1,26 @@
+// SPDX-FileCopyrightText: 2022 Kara <lunarautomaton6@gmail.com>
+// SPDX-FileCopyrightText: 2022 Kara D <lunarautomaton6@gmail.com>
+// SPDX-FileCopyrightText: 2022 mirrorcult <lunarautomaton6@gmail.com>
+// SPDX-FileCopyrightText: 2023 Chief-Engineer <119664036+Chief-Engineer@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Debug <49997488+DebugOk@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
+// SPDX-FileCopyrightText: 2023 Ygg01 <y.laughing.man.y@gmail.com>
+// SPDX-FileCopyrightText: 2023 metalgearsloth <comedian_vs_clown@hotmail.com>
+// SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT <77995199+DEATHB4DEFEAT@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Jezithyr <jezithyr@gmail.com>
+// SPDX-FileCopyrightText: 2024 SimpleStation14 <130339894+SimpleStation14@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Tayrtahn <tayrtahn@gmail.com>
+// SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Falcon <falcon@zigtag.dev>
+// SPDX-FileCopyrightText: 2025 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 M3739 <47579354+M3739@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 sleepyyapril <flyingkarii@gmail.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
+using System.Linq;
 using System.Numerics;
 using Content.Shared.Database;
 using Content.Shared.Follower.Components;
@@ -10,6 +33,7 @@ using Content.Shared.Polymorph;
 using Content.Shared.Tag;
 using Content.Shared.Verbs;
 using Robust.Shared.Containers;
+using Robust.Shared.GameStates;
 using Robust.Shared.Map;
 using Robust.Shared.Map.Events;
 using Robust.Shared.Network;
@@ -40,14 +64,34 @@ public sealed class FollowerSystem : EntitySystem
 
         SubscribeLocalEvent<FollowerComponent, GotEquippedHandEvent>(OnGotEquippedHand);
         SubscribeLocalEvent<FollowedComponent, EntityTerminatingEvent>(OnFollowedTerminating);
-        SubscribeLocalEvent<FollowedComponent, PolymorphedEvent>(OnFollowedPolymorphed);
-        SubscribeLocalEvent<BeforeSaveEvent>(OnBeforeSave);
+        SubscribeLocalEvent<BeforeSerializationEvent>(OnBeforeSave);
     }
 
-    private void OnBeforeSave(BeforeSaveEvent ev)
+    private void OnFollowedAttempt(Entity<FollowedComponent> ent, ref ComponentGetStateAttemptEvent args)
     {
-        // Some followers will not be map savable. This ensures that maps don't get saved with empty/invalid
-        // followers, but just stopping any following on the map being saved.
+        if (args.Cancelled)
+            return;
+
+        // Clientside VV stay losing
+        var playerEnt = args.Player?.AttachedEntity;
+
+        if (playerEnt == null ||
+            !ent.Comp.Following.Contains(playerEnt.Value) && !HasComp<GhostComponent>(playerEnt.Value))
+        {
+            args.Cancelled = true;
+        }
+    }
+
+    private void OnBeforeSave(BeforeSerializationEvent ev)
+    {
+        // Some followers will not be map savable. This ensures that maps don't get saved with some entities that have
+        // empty/invalid followers, by just stopping any following happening on the map being saved.
+        // I hate this so much.
+        // TODO WeakEntityReference
+        // We need some way to store entity references in a way that doesn't imply that the entity still exists.
+        // Then we wouldn't have to deal with this shit.
+
+        var maps = ev.Entities.Select(x => Transform(x).MapUid).ToHashSet();
 
         var query = AllEntityQuery<FollowerComponent, TransformComponent, MetaDataComponent>();
         while (query.MoveNext(out var uid, out var follower, out var xform, out var meta))
@@ -55,7 +99,7 @@ public sealed class FollowerSystem : EntitySystem
             if (meta.EntityPrototype == null || meta.EntityPrototype.MapSavable)
                 continue;
 
-            if (xform.MapUid != ev.Map)
+            if (!maps.Contains(xform.MapUid))
                 continue;
 
             StopFollowingEntity(uid, follower.Following);
