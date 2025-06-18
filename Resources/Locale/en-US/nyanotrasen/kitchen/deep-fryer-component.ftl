@@ -1,3 +1,8 @@
+# SPDX-FileCopyrightText: 2023 JJ <47927305+PHCodes@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: MIT
+
 ## DeepFryer Entity
 
 deep-fryer-blacklist-item-failed = {CAPITALIZE(THE($item))} fails to be covered in oil.

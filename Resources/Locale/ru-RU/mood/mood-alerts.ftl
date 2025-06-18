@@ -1,4 +1,9 @@
-﻿alerts-mood-insane-name = Безумие
+# SPDX-FileCopyrightText: 2024 VMSolidus <evilexecutive@gmail.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
+alerts-mood-insane-name = Безумие
 alerts-mood-insane-desc = В моей душе тлеют мрак и безнадежность, мир обречен на абсолютное зло.
 alerts-mood-horrible-name = Печально
 alerts-mood-horrible-desc = Я борюсь с болями и страхами, моя судьба - череда мучений и страданий.

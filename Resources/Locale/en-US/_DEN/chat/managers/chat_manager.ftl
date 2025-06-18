@@ -1,3 +1,8 @@
+# SPDX-FileCopyrightText: 2025 juniwoofs <jakbroeder@gmail.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 chat-speech-verb-name-ovinia = Ovinia
 chat-speech-verb-ovinia-1 = baas
 chat-speech-verb-ovinia-2 = bleats

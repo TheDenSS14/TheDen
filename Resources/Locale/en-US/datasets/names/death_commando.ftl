@@ -1,3 +1,8 @@
+# SPDX-FileCopyrightText: 2025 Blitz <73762869+BlitzTheSquishy@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 names-death-commando-dataset-1 = A whole bunch of spiders in a SWAT suit
 names-death-commando-dataset-2 = AMERICA
 names-death-commando-dataset-3 = Beat Punchbeef

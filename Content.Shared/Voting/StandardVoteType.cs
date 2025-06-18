@@ -1,4 +1,10 @@
-﻿namespace Content.Shared.Voting
+// SPDX-FileCopyrightText: 2021 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
+// SPDX-FileCopyrightText: 2021 mirrorcult <lunarautomaton6@gmail.com>
+// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+//
+// SPDX-License-Identifier: MIT
+
+namespace Content.Shared.Voting
 {
     /// <summary>
     /// Standard vote types that players can initiate themselves from the escape menu.

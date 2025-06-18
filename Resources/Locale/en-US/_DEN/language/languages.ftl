@@ -1,3 +1,8 @@
+# SPDX-FileCopyrightText: 2025 juniwoofs <jakbroeder@gmail.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 language-Nehina-name = Nēhina
 language-Nehina-description =  A language spoken by the Feroxi, well adapted to speaking under the waters of ocean planets.
 

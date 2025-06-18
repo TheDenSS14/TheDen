@@ -1,3 +1,11 @@
+# SPDX-FileCopyrightText: 2024 Remuchi <72476615+Remuchi@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 BloodfiendishOperator <141253729+Diggy0@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 BramvanZijp <56019239+BramvanZijp@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 VMSolidus <evilexecutive@gmail.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 examine-cybereyes-message = {CAPITALIZE(POSS-ADJ($entity))} eyes shine with a faint inner light.
 examine-dermal-armor-message = {CAPITALIZE(POSS-ADJ($entity))} skin seems to be made of a sturdy, yet flexible plastic.
 examine-bionic-arm-message = {CAPITALIZE(POSS-ADJ($entity))} arms emit an ever present faint chirp of servomotors.

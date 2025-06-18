@@ -1,4 +1,10 @@
-﻿## Forcemap command loc.
+# SPDX-FileCopyrightText: 2021 mirrorcult <lunarautomaton6@gmail.com>
+# SPDX-FileCopyrightText: 2022 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: MIT
+
+## Forcemap command loc.
 
 forcemap-command-description = Forces the game to start with a given map next round.
 forcemap-command-help = forcemap <map ID>
