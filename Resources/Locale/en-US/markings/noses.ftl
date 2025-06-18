@@ -1,3 +1,8 @@
+# SPDX-FileCopyrightText: 2024 SlamBamActionman <83650252+SlamBamActionman@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: MIT
+
 marking-HumanNoseSchnozz = Schnozz
 marking-HumanNoseSchnozz-schnozz = Nose
 

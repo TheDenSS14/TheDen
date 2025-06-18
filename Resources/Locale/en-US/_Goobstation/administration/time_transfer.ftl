@@ -1,3 +1,8 @@
+# SPDX-FileCopyrightText: 2025 John Willis <143434770+CerberusWolfie@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 time-transfer-panel-title = Time Transfer
 time-transfer-panel-player-label = Player
 time-transfer-panel-time = Time

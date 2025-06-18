@@ -1,4 +1,9 @@
-﻿# For Sol Alliance Navy Deserters
+# SPDX-FileCopyrightText: 2025 VMSolidus <evilexecutive@gmail.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
+# For Sol Alliance Navy Deserters
 ghost-role-information-deserter-name = Solarian Navy Deserter
 ghost-role-information-deserter-description = "I've fucking had it with the quartermaster not giving me my damn paycheck! Let's take one of the dropships for a joyride and go looting to pay ourselves."
 ghost-role-information-deserter-rules =

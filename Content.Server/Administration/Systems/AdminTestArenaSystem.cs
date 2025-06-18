@@ -1,3 +1,14 @@
+// SPDX-FileCopyrightText: 2022 Moony <moonheart08@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Chief-Engineer <119664036+Chief-Engineer@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Debug <49997488+DebugOk@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Falcon <falcon@zigtag.dev>
+// SPDX-FileCopyrightText: 2025 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 sleepyyapril <flyingkarii@gmail.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 using Robust.Shared.EntitySerialization.Systems;
 using Robust.Shared.Network;
 using Robust.Shared.Player;
@@ -12,6 +23,7 @@ public sealed class AdminTestArenaSystem : EntitySystem
 {
     [Dependency] private readonly MapLoaderSystem _loader = default!;
     [Dependency] private readonly MetaDataSystem _metaDataSystem = default!;
+    [Dependency] private readonly SharedMapSystem _maps = default!;
 
     public const string ArenaMapPath = "/Maps/Test/admin_test_arena.yml";
 
@@ -33,17 +45,20 @@ public sealed class AdminTestArenaSystem : EntitySystem
         }
 
         var path = new ResPath(ArenaMapPath);
-        if (!_loader.TryLoadMap(path, out var map, out var grids))
+        var mapUid = _maps.CreateMap(out var mapId);
+
+        if (!_loader.TryLoadGrid(mapId, path, out var grid))
+        {
+            QueueDel(mapUid);
             throw new Exception($"Failed to load admin arena");
+        }
 
-        ArenaMap[admin.UserId] = map.Value.Owner;
-        _metaDataSystem.SetEntityName(map.Value.Owner, $"ATAM-{admin.Name}");
+        ArenaMap[admin.UserId] = mapUid;
+        _metaDataSystem.SetEntityName(mapUid, $"ATAM-{admin.Name}");
 
-        var grid = grids.FirstOrNull();
-        ArenaGrid[admin.UserId] = grid?.Owner;
-        if (grid != null)
-            _metaDataSystem.SetEntityName(grid.Value.Owner, $"ATAG-{admin.Name}");
+        ArenaGrid[admin.UserId] = grid.Value.Owner;
+        _metaDataSystem.SetEntityName(grid.Value.Owner, $"ATAG-{admin.Name}");
 
-        return (map.Value.Owner, grid?.Owner);
+        return (mapUid, grid.Value.Owner);
     }
 }

@@ -1,3 +1,8 @@
+# SPDX-FileCopyrightText: 2024 SleepyScarecrow <sharedjunkemail69@gmail.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 reagent-effect-aphrodisiac-mild1 = You feel a tingling in your chest.
 reagent-effect-aphrodisiac-mild2 = Your body feels warm.
 reagent-effect-aphrodisiac-mild3 = You feel slightly aroused.

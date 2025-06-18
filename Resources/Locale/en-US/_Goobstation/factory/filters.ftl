@@ -1,3 +1,9 @@
+# SPDX-FileCopyrightText: 2025 AirFryerBuyOneGetOneFree <airfryerbuyonegetonefree@gmail.com>
+# SPDX-FileCopyrightText: 2025 deltanedas <39013340+deltanedas@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 automation-filter-examine-empty = [color=red]This filter isn't configured yet.[/color]
 automation-filter-examine-string = This filter is set to '{$name}'
 stack-filter-examine = This filter is set to a minimum of [color=green]{$size}[/color] items in a stack.

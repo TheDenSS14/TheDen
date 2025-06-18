@@ -1,3 +1,31 @@
+<!--
+SPDX-FileCopyrightText: 2017 PJB3005 <pieterjan.briers@gmail.com>
+SPDX-FileCopyrightText: 2018 Pieter-Jan Briers <pieterjan.briers@gmail.com>
+SPDX-FileCopyrightText: 2019 Ivan <silvertorch5@gmail.com>
+SPDX-FileCopyrightText: 2019 Silver <silvertorch5@gmail.com>
+SPDX-FileCopyrightText: 2020 Injazz <43905364+Injazz@users.noreply.github.com>
+SPDX-FileCopyrightText: 2020 RedlineTriad <39059512+RedlineTriad@users.noreply.github.com>
+SPDX-FileCopyrightText: 2020 Víctor Aguilera Puerto <zddm@outlook.es>
+SPDX-FileCopyrightText: 2021 Paul Ritter <ritter.paul1@googlemail.com>
+SPDX-FileCopyrightText: 2021 Swept <sweptwastaken@protonmail.com>
+SPDX-FileCopyrightText: 2021 mirrorcult <lunarautomaton6@gmail.com>
+SPDX-FileCopyrightText: 2022 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
+SPDX-FileCopyrightText: 2022 ike709 <ike709@users.noreply.github.com>
+SPDX-FileCopyrightText: 2023 iglov <iglov@avalon.land>
+SPDX-FileCopyrightText: 2024 BasedPugilist <125258730+BasedPugilist@users.noreply.github.com>
+SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT <77995199+DEATHB4DEFEAT@users.noreply.github.com>
+SPDX-FileCopyrightText: 2024 Debug <49997488+DebugOk@users.noreply.github.com>
+SPDX-FileCopyrightText: 2024 Fansana <116083121+Fansana@users.noreply.github.com>
+SPDX-FileCopyrightText: 2024 Pspritechologist <81725545+Pspritechologist@users.noreply.github.com>
+SPDX-FileCopyrightText: 2024 VMSolidus <evilexecutive@gmail.com>
+SPDX-FileCopyrightText: 2024 stellar-novas <158120145+stellar-novas@users.noreply.github.com>
+SPDX-FileCopyrightText: 2024 stellar-novas <stellar_novas@riseup.net>
+SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+SPDX-FileCopyrightText: 2025 sleepyyapril <flyingkarii@gmail.com>
+
+SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+-->
+
 # Einstein Engines
 
 <p align="center"><img src="https://raw.githubusercontent.com/Simple-Station/Einstein-Engines/master/Resources/Textures/Logo/splashlogo.png" width="512px" /></p>
@@ -69,4 +97,8 @@ We provide some scripts shown below to make the job easier.
 
 ## License
 
-Please read the [LEGAL.md](./LEGAL.md) file for information on the licenses of the code and assets in this repository.
+All code in this codebase is released under the AGPL-3.0-or-later license. Each file includes REUSE Specification headers or separate .license files that specify a dual license option. This dual licensing is provided to simplify the process for projects that are not using AGPL, allowing them to adopt the relevant portions of the code under an alternative license. You can review the complete texts of these licenses in the LICENSES/ directory.
+
+Most media assets are licensed under [CC-BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/) unless stated otherwise. Assets have their license and the copyright in the metadata file. [Example](https://github.com/space-wizards/space-station-14/blob/master/Resources/Textures/Objects/Tools/crowbar.rsi/meta.json).
+
+Note that some assets are licensed under the non-commercial [CC-BY-NC-SA 3.0](https://creativecommons.org/licenses/by-nc-sa/3.0/) or similar non-commercial licenses and will need to be removed if you wish to use this project commercially.

@@ -1,3 +1,8 @@
+// SPDX-FileCopyrightText: 2022 vulppine <vulppine@gmail.com>
+// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+//
+// SPDX-License-Identifier: MIT
+
 using System.Collections.Generic;
 using Content.Shared.Atmos.Monitor;
 using Content.Shared.Power;
