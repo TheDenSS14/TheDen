@@ -169,6 +169,8 @@
       state: generic_panel_open
   - type: Computer
     board: ShuttleConsoleCircuitboard
+  - type: ShuttleConsole
+    ftlToPlanets: true
 
 - type: entity
   parent: BaseComputerShuttle
