@@ -8,3 +8,4 @@ chat-emote-msg-deathgasp-silicon =
 
 chat-emote-name-gekker = Gekker
 chat-emote-name-yip = Yip
+chat-emote-nanme-yap = Yap
