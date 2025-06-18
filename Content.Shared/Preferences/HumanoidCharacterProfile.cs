@@ -319,6 +319,22 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
         };
     }
 
+    public static HumanoidCharacterProfile RandomBody(HumanoidCharacterProfile profile)
+    {
+        return new HumanoidCharacterProfile()
+        {
+            Name = profile.Name,
+            Sex = profile.Sex,
+            Age = profile.Age,
+            Gender = profile.Gender,
+            Species = profile.Species,
+            Appearance = HumanoidCharacterAppearance.Random(profile.Species, profile.Sex),
+            Nationality = profile.Nationality,
+            Employer = profile.Employer,
+            Lifepath = profile.Lifepath,
+        };
+    }
+
     public HumanoidCharacterProfile WithName(string name) => new(this) { Name = name };
     public HumanoidCharacterProfile WithFlavorText(string flavorText) => new(this) { FlavorText = flavorText };
     public HumanoidCharacterProfile WithAge(int age) => new(this) { Age = age };

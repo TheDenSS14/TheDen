@@ -1,4 +1,5 @@
 humanoid-profile-editor-randomize-everything-button = Randomize everything
+humanoid-profile-editor-randomize-body-button = Randomize body
 humanoid-profile-editor-name-label = Name:
 humanoid-profile-editor-name-random-button = Randomize
 humanoid-profile-editor-appearance-tab = Appearance
