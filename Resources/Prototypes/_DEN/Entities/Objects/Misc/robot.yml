@@ -1,0 +1,49 @@
+- type: entity
+  parent: BaseItem
+  id: MedibotInjector
+  name: medibot syringe
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      injector:
+        maxVol: 30
+  - type: ExaminableSolution
+    solution: injector
+  - type: Hypospray
+    solutionName: injector
+    transferAmount: 30
+    onlyAffectsMobs: true
+    injectOnly: true
+    injectTime: 3.0
+    maxPressure: 0 # For some reason this determines whether or not it uses inject time??
+    needHands: false
+  - type: AddComponentAfterInjection
+    addComponents:
+    - type: NPCRecentlyInjected
+  - type: MedibotInjector
+
+- type: entity
+  parent: Welder
+  id: WeldbotWelder
+  name: weldbot tool
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      Welder:
+        reagents:
+        - ReagentId: WeldingFuel
+          Quantity: 50
+        maxVol: 50
+  - type: SolutionRegeneration
+    solution: Welder
+    generated:
+      reagents:
+      - ReagentId: WeldingFuel
+        Quantity: 1
+  - type: Welder
+    tankSafe: true
+  - type: Tool
+    useSound:
+      collection: Welder

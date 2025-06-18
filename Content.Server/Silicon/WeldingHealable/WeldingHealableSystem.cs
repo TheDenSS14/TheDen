@@ -41,10 +41,13 @@ public sealed class WeldingHealableSystem : SharedWeldingHealableSystem
 
         _damageableSystem.TryChangeDamage(uid, component.Damage, true, false, origin: args.User);
 
-        Entity<SolutionComponent>? sol = new();
-        if (!_solutionContainer.ResolveSolution(((EntityUid) args.Used, solutionContainer), welder.FuelSolutionName, ref sol, out _))
+        var tool = args.Used.Value;
+        if (!_solutionContainer.TryGetSolution((tool, solutionContainer),
+            welder.FuelSolutionName,
+            out var solution))
             return;
-        _solutionContainer.RemoveReagent(sol.Value, welder.FuelReagent, component.FuelCost);
+
+        _solutionContainer.RemoveReagent(solution.Value, welder.FuelReagent, component.FuelCost);
 
         var str = Loc.GetString("comp-repairable-repair",
             ("target", uid),

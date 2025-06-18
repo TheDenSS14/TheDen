@@ -8,7 +8,7 @@ namespace Content.Shared.Silicons.Bots;
 /// <summary>
 /// Handles emagging medibots and provides api.
 /// </summary>
-public sealed class MedibotSystem : EntitySystem
+public abstract class SharedMedibotSystem : EntitySystem
 {
     [Dependency] private readonly SharedAudioSystem _audio = default!;
 
@@ -27,9 +27,7 @@ public sealed class MedibotSystem : EntitySystem
         _audio.PlayPredicted(comp.SparkSound, uid, args.UserUid);
 
         foreach (var (state, treatment) in comp.Replacements)
-        {
             medibot.Treatments[state] = treatment;
-        }
 
         args.Handled = true;
     }
