@@ -1,3 +1,14 @@
+# SPDX-FileCopyrightText: 2024 FoxxoTrystan <trystan.garnierhein@gmail.com>
+# SPDX-FileCopyrightText: 2024 neuPanda <chriseparton@gmail.com>
+# SPDX-FileCopyrightText: 2025 Blitz <73762869+BlitzTheSquishy@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 M3739 <47579354+M3739@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Rosycup <178287475+Rosycup@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Tabitha <64847293+KyuPolaris@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 mart <martgitomen@gmail.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 - type: emote
   id: Gekker
   name: chat-emote-name-gekker
@@ -6,6 +17,7 @@
     tags:
     - VulpEmotes
     - HarpyEmotes
+    - KitsuneEmotes # Floof - M3739 - #937 
   chatMessages: [ gekkers ]
   chatTriggers:
   - gekkers
@@ -19,8 +31,17 @@
     - VulpEmotes
     - HarpyEmotes
     - UnathiEmotes
+    - KitsuneEmotes
   chatMessages: [ yips ]
   chatTriggers:
   - yip
   - yips
   - yipped
+
+- type: emote
+  id: Yap
+  name: chat-emote-name-yap
+  chatMessages: [ yaps ]
+  chatTriggers:
+  - yap
+  - yaps

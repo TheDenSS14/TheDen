@@ -1,13 +1,27 @@
+// SPDX-FileCopyrightText: 2023 TemporalOroboros <TemporalOroboros@gmail.com>
+// SPDX-FileCopyrightText: 2023 Visne <39844191+Visne@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
+// SPDX-FileCopyrightText: 2024 VMSolidus <evilexecutive@gmail.com>
+// SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Falcon <falcon@zigtag.dev>
+// SPDX-FileCopyrightText: 2025 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 sleepyyapril <flyingkarii@gmail.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 using System.Collections.Generic;
 using System.Linq;
 using System.Numerics;
 using Content.Server.Shuttles.Systems;
 using Content.Tests;
 using Robust.Server.GameObjects;
+using Robust.Shared.EntitySerialization.Systems;
 using Robust.Shared.GameObjects;
 using Robust.Shared.Map;
 using Robust.Shared.Map.Components;
 using Robust.Shared.Maths;
+using Robust.Shared.Utility;
 
 namespace Content.IntegrationTests.Tests.Shuttle;
 
@@ -106,8 +120,9 @@ public sealed class DockTest : ContentUnitTest
         {
             mapGrid = entManager.AddComponent<MapGridComponent>(map.MapUid);
             entManager.DeleteEntity(map.Grid);
-            Assert.That(entManager.System<MapLoaderSystem>().TryLoad(otherMap.MapId, "/Maps/Shuttles/emergency.yml", out var rootUids));
-            shuttle = rootUids[0];
+            var path = new ResPath("/Maps/Shuttles/emergency.yml");
+            Assert.That(entManager.System<MapLoaderSystem>().TryLoadGrid(otherMap.MapId, path, out var grid));
+            shuttle = grid!.Value.Owner;
 
             var dockingConfig = dockingSystem.GetDockingConfig(shuttle, map.MapUid);
             Assert.That(dockingConfig, Is.EqualTo(null));

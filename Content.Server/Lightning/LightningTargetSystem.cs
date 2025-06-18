@@ -1,3 +1,13 @@
+// SPDX-FileCopyrightText: 2023 Ed <96445749+theshued@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Ed <96445749+TheShuEd@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Kara <lunarautomaton6@gmail.com>
+// SPDX-FileCopyrightText: 2024 TsjipTsjip <19798667+TsjipTsjip@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Falcon <falcon@zigtag.dev>
+// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 sleepyyapril <flyingkarii@gmail.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 using Content.Server.Explosion.EntitySystems;
 using Content.Server.Lightning;
 using Content.Server.Lightning.Components;
@@ -35,6 +45,7 @@ public sealed class LightningTargetSystem : EntitySystem
                 uid.Comp.ExplosionPrototype,
                 uid.Comp.TotalIntensity, uid.Comp.Dropoff,
                 uid.Comp.MaxTileIntensity,
+                uid,
                 canCreateVacuum: false);
         }
     }

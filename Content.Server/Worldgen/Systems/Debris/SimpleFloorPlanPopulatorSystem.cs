@@ -1,4 +1,12 @@
-﻿using Content.Server.Worldgen.Components.Debris;
+// SPDX-FileCopyrightText: 2023 Moony <moony@hellomouse.net>
+// SPDX-FileCopyrightText: 2024 MilenVolf <63782763+MilenVolf@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Falcon <falcon@zigtag.dev>
+// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 sleepyyapril <flyingkarii@gmail.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
+using Content.Server.Worldgen.Components.Debris;
 using Content.Shared.Maps;
 using Robust.Shared.Map;
 using Robust.Shared.Map.Components;
@@ -13,6 +21,7 @@ public sealed class SimpleFloorPlanPopulatorSystem : BaseWorldSystem
 {
     [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly ITileDefinitionManager _tileDefinition = default!;
+    [Dependency] private readonly SharedMapSystem _map = default!;
 
     /// <inheritdoc />
     public override void Initialize()
@@ -25,7 +34,7 @@ public sealed class SimpleFloorPlanPopulatorSystem : BaseWorldSystem
     {
         var placeables = new List<string?>(4);
         var grid = Comp<MapGridComponent>(uid);
-        var enumerator = grid.GetAllTilesEnumerator();
+        var enumerator = _map.GetAllTilesEnumerator(uid, grid);
         while (enumerator.MoveNext(out var tile))
         {
             var coords = grid.GridTileToLocal(tile.Value.GridIndices);

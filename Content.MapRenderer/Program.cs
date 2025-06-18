@@ -1,4 +1,21 @@
-﻿#nullable enable
+// SPDX-FileCopyrightText: 2022 20kdc <asdd2808@gmail.com>
+// SPDX-FileCopyrightText: 2022 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 Javier Guardia Fernández <DrSmugleaf@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 Julian Giebel <juliangiebel@live.de>
+// SPDX-FileCopyrightText: 2022 Kara D <lunarautomaton6@gmail.com>
+// SPDX-FileCopyrightText: 2022 Mervill <mervills.email@gmail.com>
+// SPDX-FileCopyrightText: 2022 Moony <moonheart08@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 github-actions <github-actions@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 TemporalOroboros <TemporalOroboros@gmail.com>
+// SPDX-FileCopyrightText: 2023 Visne <39844191+Visne@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Falcon <falcon@zigtag.dev>
+// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 sleepyyapril <flyingkarii@gmail.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
+#nullable enable
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -29,7 +46,7 @@ namespace Content.MapRenderer
             if (!CommandLineArguments.TryParse(args, out var arguments))
                 return;
 
-            PoolManager.Startup(null);
+            PoolManager.Startup();
             if (arguments.Maps.Count == 0)
             {
                 Console.WriteLine("Didn't specify any maps to paint! Loading the map list...");

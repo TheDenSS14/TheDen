@@ -1,3 +1,12 @@
+# SPDX-FileCopyrightText: 2024 Blu <79374236+BlueHNT@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 FoxxoTrystan <trystan.garnierhein@gmail.com>
+# SPDX-FileCopyrightText: 2025 Rosycup <178287475+Rosycup@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 VMSolidus <evilexecutive@gmail.com>
+# SPDX-FileCopyrightText: 2025 juniwoofs <180479595+juniwoofs@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 # Engineering
 - type: cargoProduct
   id: EngineeringFotiaHardsuit
@@ -37,38 +46,6 @@
     state: icon
   product: CrateLogisticsLavrionHardsuit
   cost: 3500
-  category: cargoproduct-category-name-hardsuits
-  group: market
-
-# Security
-# Can't abuse em if you only got 1, good luck spamming frezon
-- type: cargoProduct
-  id: SecurityShanlinTacsuit
-  icon:
-    sprite: Clothing/OuterClothing/Hardsuits/syndicate-base.rsi
-    state: icon
-  product: CrateSecurityShanlinTacsuit
-  cost: 75000
-  category: cargoproduct-category-name-hardsuits
-  group: market
-
-- type: cargoProduct
-  id: SecurityShiweiTacsuit
-  icon:
-    sprite: Clothing/OuterClothing/Hardsuits/syndicate-elite-base.rsi
-    state: icon
-  product: CrateSecurityShiweiTacsuit
-  cost: 90000
-  category: cargoproduct-category-name-hardsuits
-  group: market
-
-- type: cargoProduct
-  id: SecurityGuanYuTacsuit
-  icon:
-    sprite: Nyanotrasen/Clothing/OuterClothing/ReverseEngineering/juggernaut.rsi
-    state: icon
-  product: CrateSecurityGuanYuTacsuit
-  cost: 125000
   category: cargoproduct-category-name-hardsuits
   group: market
 

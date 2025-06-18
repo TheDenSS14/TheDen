@@ -1,3 +1,13 @@
+# SPDX-FileCopyrightText: 2022 Scribbles0 <91828755+Scribbles0@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 T-Stalker <43253663+DogZeroX@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 metalgearsloth <comedian_vs_clown@hotmail.com>
+# SPDX-FileCopyrightText: 2023 Nairod <110078045+Nairodian@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Skubman <ba.fallaria@gmail.com>
+# SPDX-FileCopyrightText: 2025 VMSolidus <evilexecutive@gmail.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 marking-TattooHiveChest-tattoo_hive_chest = Back Tattoo (Hive)
 marking-TattooHiveChest = Back Tattoo (Hive)
 

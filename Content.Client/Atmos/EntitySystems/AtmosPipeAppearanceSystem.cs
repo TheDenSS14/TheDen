@@ -1,3 +1,10 @@
+// SPDX-FileCopyrightText: 2023 08A <git@08a.re>
+// SPDX-FileCopyrightText: 2023 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Visne <39844191+Visne@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+//
+// SPDX-License-Identifier: MIT
+
 using Content.Client.SubFloor;
 using Content.Shared.Atmos;
 using Content.Shared.Atmos.Components;

@@ -1,4 +1,33 @@
+// SPDX-FileCopyrightText: 2021 20kdc <asdd2808@gmail.com>
+// SPDX-FileCopyrightText: 2021 Acruid <shatter66@gmail.com>
+// SPDX-FileCopyrightText: 2021 Moony <moonheart08@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2021 Paul Ritter <ritter.paul1@googlemail.com>
+// SPDX-FileCopyrightText: 2021 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
+// SPDX-FileCopyrightText: 2021 Visne <39844191+Visne@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2021 metalgearsloth <comedian_vs_clown@hotmail.com>
+// SPDX-FileCopyrightText: 2021 mirrorcult <lunarautomaton6@gmail.com>
+// SPDX-FileCopyrightText: 2021 moonheart08 <moonheart08@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 Mervill <mervills.email@gmail.com>
+// SPDX-FileCopyrightText: 2022 Pancake <Pangogie@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 Putnam3145 <putnam3145@gmail.com>
+// SPDX-FileCopyrightText: 2022 Radosvik <65792927+Radosvik@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 Vera Aguilera Puerto <6766154+Zumorica@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 corentt <36075110+corentt@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 wrexbe <81056464+wrexbe@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Chief-Engineer <119664036+Chief-Engineer@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Debug <49997488+DebugOk@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 LankLTE <135308300+LankLTE@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 alexkar598 <25136265+alexkar598@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Repo <47093363+Titian3@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 using System.Linq;
+using Content.Server._DEN.Voting.Systems;
 using Content.Server.GameTicking;
 using Content.Server.GameTicking.Presets;
 using Content.Server.Maps;
@@ -29,8 +58,6 @@ public sealed partial class VoteManager
         {StandardVoteType.Preset, CCVars.VotePresetEnabled},
         {StandardVoteType.Map, CCVars.VoteMapEnabled},
     };
-
-    private static Dictionary<string, int> _lastPicked = new();
 
     public void CreateStandardVote(ICommonSession? initiator, StandardVoteType voteType)
     {
@@ -175,6 +202,8 @@ public sealed partial class VoteManager
 
     private void CreatePresetVote(ICommonSession? initiator)
     {
+        var duplicateVote = _entityManager.EntitySysManager.GetEntitySystem<DuplicateVoteSystem>();
+        var ticker = _entityManager.EntitySysManager.GetEntitySystem<GameTicker>();
         var presets = GetGamePresets();
 
         var alone = _playerManager.PlayerCount == 1 && initiator != null;
@@ -191,6 +220,9 @@ public sealed partial class VoteManager
 
         foreach (var preset in presets)
         {
+            if (preset.HighDanger && !duplicateVote.IsHighDangerPickable() || !ticker.CanPick(preset))
+                continue;
+
             var properModeTitle = Loc.GetString(preset.ModeTitle);
             options.Options.Add((properModeTitle, preset.ID));
         }
@@ -221,9 +253,7 @@ public sealed partial class VoteManager
                     Loc.GetString("ui-vote-gamemode-win", ("winner", Loc.GetString(presetPrototype.ModeTitle))));
             }
 
-            var ticker = _entityManager.EntitySysManager.GetEntitySystem<GameTicker>();
             _adminLogger.Add(LogType.Vote, LogImpact.Medium, $"Preset vote finished: {picked}");
-
             ticker.SetGamePreset(picked);
         };
     }

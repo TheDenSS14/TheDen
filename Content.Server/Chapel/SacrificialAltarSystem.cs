@@ -1,3 +1,10 @@
+// SPDX-FileCopyrightText: 2024 sleepyyapril <flyingkarii@gmail.com>
+// SPDX-FileCopyrightText: 2025 M3739 <47579354+M3739@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 VMSolidus <evilexecutive@gmail.com>
+// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 using Content.Server.Bible.Components;
 using Content.Shared.Abilities.Psionics;
 using Content.Shared.Administration.Logs;
@@ -59,7 +66,7 @@ public sealed class SacrificialAltarSystem : SharedSacrificialAltarSystem
 
         // finally gib the targets old body
         if (TryComp<BodyComponent>(target, out var body))
-            _body.GibBody(target, gibOrgans: false, body, launchGibs: true);
+            _body.GibBody(target, acidify: true, body, launchGibs: true);
         else
             QueueDel(target);
     }

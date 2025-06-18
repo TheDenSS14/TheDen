@@ -1,3 +1,17 @@
+# SPDX-FileCopyrightText: 2022 Alex Evgrashin <aevgrashin@yandex.ru>
+# SPDX-FileCopyrightText: 2022 KIBORG04 <bossmira4@gmail.com>
+# SPDX-FileCopyrightText: 2022 metalgearsloth <comedian_vs_clown@hotmail.com>
+# SPDX-FileCopyrightText: 2023 Floofi <126319569+Shadowtheprotogen546@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Veritius <veritiusgaming@gmail.com>
+# SPDX-FileCopyrightText: 2023 lapatison <100279397+lapatison@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Firewatch <54725557+musicmanvr@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 cool dolphin <36332236+Afrokada@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 reagent-name-coffee = coffee
 reagent-desc-coffee = A drink made from brewed coffee beans. Contains a moderate amount of caffeine.
 

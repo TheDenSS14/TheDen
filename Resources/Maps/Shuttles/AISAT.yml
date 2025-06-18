@@ -1,3 +1,13 @@
+# SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT <77995199+DEATHB4DEFEAT@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 ScarKy0 <106310278+ScarKy0@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Ubaser <134914314+UbaserB@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Velcroboy <107660393+IamVelcroboy@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Falcon <falcon@zigtag.dev>
+# SPDX-FileCopyrightText: 2025 Plyush <121322002+Plyushsune@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 meta:
   format: 6
   postmapinit: false
@@ -17,25 +27,10 @@ tilemap:
 entities:
 - proto: ""
   entities:
-  - uid: 1
-    components:
-    - type: MetaData
-      name: Map Entity
-    - type: Transform
-    - type: Map
-      mapPaused: True
-    - type: PhysicsMap
-    - type: GridTree
-    - type: MovedGrids
-    - type: Broadphase
-    - type: OccluderTree
   - uid: 2
     components:
     - type: MetaData
       name: grid
-    - type: Transform
-      pos: -2.3770304,-0.17093253
-      parent: 1
     - type: MapGrid
       chunks:
         0,0:
@@ -3820,4 +3815,3 @@ entities:
       rot: 1.5707963267948966 rad
       pos: -0.5,-0.5
       parent: 2
-...

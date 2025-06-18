@@ -1,3 +1,15 @@
+# SPDX-FileCopyrightText: 2023 Colin-Tel <113523727+Colin-Tel@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Fluffiest Floofers <thebluewulf@gmail.com>
+# SPDX-FileCopyrightText: 2024 Aikakakah <145503852+Aikakakah@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Blitz <73762869+BlitzTheSquishy@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 SimpleStation14 <130339894+SimpleStation14@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 VMSolidus <evilexecutive@gmail.com>
+# SPDX-FileCopyrightText: 2024 dge21 <129136517+dge21@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 leo <136020119+leonardo-dabepis@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 ## Nyano
 flavor-base-acidic = acidic
 flavor-complex-nuggie = like "chicken"

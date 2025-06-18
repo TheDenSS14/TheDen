@@ -1,3 +1,11 @@
+# SPDX-FileCopyrightText: 2023 Fluffiest Floofers <thebluewulf@gmail.com>
+# SPDX-FileCopyrightText: 2024 Danger Revolution! <142105406+DangerRevolution@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Ichaie <167008606+Ichaie@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <flyingkarii@gmail.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 law-medical-1 = First, do no harm.
 law-medical-2 = Secondly, consider the crew dear to you; to live in common with them and, if necessary, risk your existence for them.
 law-medical-3 = Thirdly, prescribe regimens for the good of the crew according to your ability and your judgment. Give no deadly medicine to any one if asked, nor suggest any such counsel.

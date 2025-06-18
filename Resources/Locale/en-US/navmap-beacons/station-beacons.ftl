@@ -1,3 +1,13 @@
+# SPDX-FileCopyrightText: 2024 Errant <35878406+errant-4@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Jeff <velcroboy333@hotmail.com>
+# SPDX-FileCopyrightText: 2024 Krunklehorn <42424291+Krunklehorn@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Velcroboy <107660393+IamVelcroboy@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Velcroboy <velcroboy333@hotmail.com>
+# SPDX-FileCopyrightText: 2024 sleepyyapril <flyingkarii@gmail.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 station-beacon-general = General
 
 station-beacon-command = Command

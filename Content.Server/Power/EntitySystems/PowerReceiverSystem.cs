@@ -1,33 +1,49 @@
+// SPDX-FileCopyrightText: 2021 20kdc <asdd2808@gmail.com>
+// SPDX-FileCopyrightText: 2021 Julian Giebel <j.giebel@netrocks.info>
+// SPDX-FileCopyrightText: 2021 Julian Giebel <juliangiebel@live.de>
+// SPDX-FileCopyrightText: 2021 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
+// SPDX-FileCopyrightText: 2021 Vera Aguilera Puerto <gradientvera@outlook.com>
+// SPDX-FileCopyrightText: 2022 fishfish458 <fishfish458>
+// SPDX-FileCopyrightText: 2023 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Kevin Zheng <kevinz5000@gmail.com>
+// SPDX-FileCopyrightText: 2023 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Pieter-Jan Briers <pieterjan.briers@gmail.com>
+// SPDX-FileCopyrightText: 2023 Rane <60792108+Elijahrane@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Ygg01 <y.laughing.man.y@gmail.com>
+// SPDX-FileCopyrightText: 2024 Mervill <mervills.email@gmail.com>
+// SPDX-FileCopyrightText: 2024 ShadowCommander <10494922+ShadowCommander@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 SimpleStation14 <130339894+SimpleStation14@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 WarMechanic <69510347+WarMechanic@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 AirFryerBuyOneGetOneFree <airfryerbuyonegetonefree@gmail.com>
+// SPDX-FileCopyrightText: 2025 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 sleepyyapril <flyingkarii@gmail.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 using System.Diagnostics.CodeAnalysis;
-using Content.Server.Administration.Logs;
 using Content.Server.Administration.Managers;
 using Content.Server.Power.Components;
 using Content.Server.Emp;
 using Content.Shared.Administration;
-using Content.Shared.Database;
 using Content.Shared.Examine;
 using Content.Shared.Hands.Components;
-using Content.Shared.Power;
 using Content.Shared.Power.Components;
 using Content.Shared.Power.EntitySystems;
 using Content.Shared.Verbs;
-using Robust.Server.Audio;
-using Robust.Server.GameObjects;
-using Robust.Shared.Audio;
 using Robust.Shared.GameStates;
 using Robust.Shared.Utility;
 using Content.Shared.Emp;
 using Content.Shared.Interaction;
+using Robust.Server.Audio;
+using Robust.Server.GameObjects;
 
 
 namespace Content.Server.Power.EntitySystems
 {
     public sealed class PowerReceiverSystem : SharedPowerReceiverSystem
     {
-        [Dependency] private readonly IAdminLogManager _adminLogger = default!;
         [Dependency] private readonly IAdminManager _adminManager = default!;
-        [Dependency] private readonly AppearanceSystem _appearance = default!;
-        [Dependency] private readonly AudioSystem _audio = default!;
         [Dependency] private readonly SharedInteractionSystem _interaction = default!;
         private EntityQuery<ApcPowerReceiverComponent> _recQuery;
         private EntityQuery<ApcPowerProviderComponent> _provQuery;
@@ -69,7 +85,10 @@ namespace Content.Server.Power.EntitySystems
                 Text = Loc.GetString("verb-debug-toggle-need-power"),
                 Category = VerbCategory.Debug,
                 Icon = new SpriteSpecifier.Texture(new ("/Textures/Interface/VerbIcons/smite.svg.192dpi.png")), // "smite" is a lightning bolt
-                Act = () => component.NeedsPower = !component.NeedsPower
+                Act = () =>
+                {
+                    SetNeedsPower(uid, !component.NeedsPower, component);
+                }
             });
         }
 
@@ -152,7 +171,9 @@ namespace Content.Server.Power.EntitySystems
         {
             args.State = new ApcPowerReceiverComponentState
             {
-                Powered = component.Powered
+                Powered = component.Powered,
+                NeedsPower = component.NeedsPower,
+                PowerDisabled = component.PowerDisabled,
             };
         }
 
@@ -173,39 +194,9 @@ namespace Content.Server.Power.EntitySystems
             return !_recQuery.Resolve(uid, ref receiver, false) || receiver.Powered;
         }
 
-        /// <summary>
-        /// Turn this machine on or off.
-        /// Returns true if we turned it on, false if we turned it off.
-        /// </summary>
-        public bool TogglePower(EntityUid uid, bool playSwitchSound = true, ApcPowerReceiverComponent? receiver = null, EntityUid? user = null)
+        public override void SetLoad(SharedApcPowerReceiverComponent comp, float load) // Goobstation - override shared method
         {
-            if (!_recQuery.Resolve(uid, ref receiver, false))
-                return true;
-
-            // it'll save a lot of confusion if 'always powered' means 'always powered'
-            if (!receiver.NeedsPower)
-            {
-                receiver.PowerDisabled = false;
-                return true;
-            }
-
-            receiver.PowerDisabled = !receiver.PowerDisabled;
-
-            if (user != null)
-                _adminLogger.Add(LogType.Action, LogImpact.Low, $"{ToPrettyString(user.Value):player} hit power button on {ToPrettyString(uid)}, it's now {(!receiver.PowerDisabled ? "on" : "off")}");
-
-            if (playSwitchSound)
-            {
-                _audio.PlayPvs(new SoundPathSpecifier("/Audio/Machines/machine_switch.ogg"), uid,
-                    AudioParams.Default.WithVolume(-2f));
-            }
-
-            return !receiver.PowerDisabled; // i.e. PowerEnabled
-        }
-
-        public void SetLoad(ApcPowerReceiverComponent comp, float load)
-        {
-            comp.Load = load;
+            ((ApcPowerReceiverComponent) comp).Load = load; // Goobstation
         }
 
         public override bool ResolveApc(EntityUid entity, [NotNullWhen(true)] ref SharedApcPowerReceiverComponent? component)

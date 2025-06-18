@@ -1,17 +1,28 @@
+// SPDX-FileCopyrightText: 2021 Flipp Syder <76629141+vulppine@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Tayrtahn <tayrtahn@gmail.com>
+// SPDX-FileCopyrightText: 2024 c4llv07e <38111072+c4llv07e@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Falcon <falcon@zigtag.dev>
+// SPDX-FileCopyrightText: 2025 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 sleepyyapril <flyingkarii@gmail.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
+using Content.Shared.Eye;
+using Content.Shared.Hands;
 using Content.Shared.Interaction;
-using Robust.Shared.Containers;
+using Content.Shared.Inventory.Events;
 using Robust.Shared.GameStates;
-using Robust.Shared.Map;
 using Robust.Shared.Serialization;
-using Robust.Shared.Timing;
-using Robust.Shared.Utility;
-using System.Linq;
 
 namespace Content.Shared.SubFloor;
 
 public abstract class SharedTrayScannerSystem : EntitySystem
 {
     [Dependency] private readonly SharedAppearanceSystem _appearance = default!;
+    [Dependency] private readonly SharedEyeSystem _eye = default!;
 
     public const float SubfloorRevealAlpha = 0.8f;
 
@@ -22,6 +33,50 @@ public abstract class SharedTrayScannerSystem : EntitySystem
         SubscribeLocalEvent<TrayScannerComponent, ComponentGetState>(OnTrayScannerGetState);
         SubscribeLocalEvent<TrayScannerComponent, ComponentHandleState>(OnTrayScannerHandleState);
         SubscribeLocalEvent<TrayScannerComponent, ActivateInWorldEvent>(OnTrayScannerActivate);
+
+        SubscribeLocalEvent<TrayScannerComponent, GotEquippedHandEvent>(OnTrayHandEquipped);
+        SubscribeLocalEvent<TrayScannerComponent, GotUnequippedHandEvent>(OnTrayHandUnequipped);
+        SubscribeLocalEvent<TrayScannerComponent, GotEquippedEvent>(OnTrayEquipped);
+        SubscribeLocalEvent<TrayScannerComponent, GotUnequippedEvent>(OnTrayUnequipped);
+
+        SubscribeLocalEvent<TrayScannerUserComponent, GetVisMaskEvent>(OnUserGetVis);
+    }
+
+    private void OnUserGetVis(Entity<TrayScannerUserComponent> ent, ref GetVisMaskEvent args)
+    {
+        args.VisibilityMask |= (int)VisibilityFlags.Subfloor;
+    }
+
+    private void OnEquip(EntityUid user)
+    {
+        EnsureComp<TrayScannerUserComponent>(user);
+        _eye.RefreshVisibilityMask(user);
+    }
+
+    private void OnUnequip(EntityUid user)
+    {
+        RemComp<TrayScannerUserComponent>(user);
+        _eye.RefreshVisibilityMask(user);
+    }
+
+    private void OnTrayHandUnequipped(Entity<TrayScannerComponent> ent, ref GotUnequippedHandEvent args)
+    {
+        OnUnequip(args.User);
+    }
+
+    private void OnTrayHandEquipped(Entity<TrayScannerComponent> ent, ref GotEquippedHandEvent args)
+    {
+        OnEquip(args.User);
+    }
+
+    private void OnTrayUnequipped(Entity<TrayScannerComponent> ent, ref GotUnequippedEvent args)
+    {
+        OnUnequip(args.Equipee);
+    }
+
+    private void OnTrayEquipped(Entity<TrayScannerComponent> ent, ref GotEquippedEvent args)
+    {
+        OnEquip(args.Equipee);
     }
 
     private void OnTrayScannerActivate(EntityUid uid, TrayScannerComponent scanner, ActivateInWorldEvent args)

@@ -1,3 +1,18 @@
+// SPDX-FileCopyrightText: 2023 Chief-Engineer <119664036+Chief-Engineer@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Jezithyr <jezithyr@gmail.com>
+// SPDX-FileCopyrightText: 2023 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 metalgearsloth <comedian_vs_clown@hotmail.com>
+// SPDX-FileCopyrightText: 2024 LordCarve <27449516+LordCarve@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 VMSolidus <evilexecutive@gmail.com>
+// SPDX-FileCopyrightText: 2025 Falcon <falcon@zigtag.dev>
+// SPDX-FileCopyrightText: 2025 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 sleepyyapril <flyingkarii@gmail.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 using System.Numerics;
 using Content.Server.Actions;
 using Content.Server.GameTicking;
@@ -63,7 +78,14 @@ public sealed partial class RevenantSystem : EntitySystem
         SubscribeLocalEvent<RevenantComponent, StatusEffectEndedEvent>(OnStatusEnded);
         SubscribeLocalEvent<RoundEndTextAppendEvent>(_ => MakeVisible(true));
 
+        SubscribeLocalEvent<RevenantComponent, GetVisMaskEvent>(OnRevenantGetVis);
+
         InitializeAbilities();
+    }
+
+    private void OnRevenantGetVis(Entity<RevenantComponent> ent, ref GetVisMaskEvent args)
+    {
+        args.VisibilityMask |= (int)VisibilityFlags.Ghost;
     }
 
     private void OnStartup(EntityUid uid, RevenantComponent component, ComponentStartup args)
@@ -84,10 +106,7 @@ public sealed partial class RevenantSystem : EntitySystem
         }
 
         //ghost vision
-        if (TryComp(uid, out EyeComponent? eye))
-        {
-            _eye.SetVisibilityMask(uid, eye.VisibilityMask | (int) (VisibilityFlags.Ghost), eye);
-        }
+        _eye.RefreshVisibilityMask(uid);
     }
 
     private void OnMapInit(EntityUid uid, RevenantComponent component, MapInitEvent args)

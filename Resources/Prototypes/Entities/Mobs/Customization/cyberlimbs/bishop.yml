@@ -1,3 +1,16 @@
+# SPDX-FileCopyrightText: 2024 Angelo Fallaria <ba.fallaria@gmail.com>
+# SPDX-FileCopyrightText: 2024 Timemaster99 <57200767+Timemaster99@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 VMSolidus <evilexecutive@gmail.com>
+# SPDX-FileCopyrightText: 2025 M3739 <47579354+M3739@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Rosycup <178287475+Rosycup@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 SX-7 <92227810+SX-7@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Skubman <ba.fallaria@gmail.com>
+# SPDX-FileCopyrightText: 2025 kc the sheep <aakajohnson@hotmail.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <flyingkarii@gmail.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 - type: marking
   id: CyberLimbsMarkingBishopHead
   bodyPart: Head
@@ -42,7 +55,7 @@
   id: CyberLimbsMarkingBishopLArm
   bodyPart: LArm
   markingCategory: LeftArm
-  speciesRestriction: [IPC, Moth, Dwarf, Human, Arachnid, Felinid, Oni, Vulpkanin, HumanoidFoxes, Reptilian, Arachne, Lamia, Tajaran, Rodentia] # Einstein Engines - Tajaran
+  speciesRestriction: [IPC, Moth, Dwarf, Human, Arachnid, Felinid, Oni, Vulpkanin, HumanoidFoxes, Reptilian, Arachne, Lamia, Tajaran, Rodentia, Kitsune] # Einstein Engines - Tajaran
   sprites:
   - sprite: Mobs/Customization/cyberlimbs/bishop/bishop_main.rsi
     state: l_arm-primary
@@ -55,7 +68,7 @@
   id: CyberLimbsMarkingBishopLHand
   bodyPart: LHand
   markingCategory: LeftHand
-  speciesRestriction: [IPC, Moth, Dwarf, Human, Arachnid, Felinid, Oni, Vulpkanin, HumanoidFoxes, Reptilian, Arachne, Lamia, Tajaran, Rodentia] # Einstein Engines - Tajaran
+  speciesRestriction: [IPC, Moth, Dwarf, Human, Arachnid, Felinid, Oni, Vulpkanin, HumanoidFoxes, Reptilian, Arachne, Lamia, Tajaran, Rodentia, Kitsune] # Einstein Engines - Tajaran
   sprites:
   - sprite: Mobs/Customization/cyberlimbs/bishop/bishop_main.rsi
     state: l_hand
@@ -64,7 +77,7 @@
   id: CyberLimbsMarkingBishopLLeg
   bodyPart: LLeg
   markingCategory: LeftLeg
-  speciesRestriction: [IPC, Moth, Dwarf, Human, Arachnid, Felinid, Oni, Vulpkanin, HumanoidFoxes, Reptilian, Tajaran, Rodentia] # Einstein Engines - Tajaran
+  speciesRestriction: [IPC, Moth, Dwarf, Human, Arachnid, Felinid, Oni, Vulpkanin, HumanoidFoxes, Reptilian, Tajaran, Rodentia, Kitsune] # Einstein Engines - Tajaran
   sprites:
   - sprite: Mobs/Customization/cyberlimbs/bishop/bishop_main.rsi
     state: l_leg-primary
@@ -76,7 +89,7 @@
   id: CyberLimbsMarkingBishopLFoot
   bodyPart: LFoot
   markingCategory: LeftFoot
-  speciesRestriction: [IPC, Moth, Dwarf, Human, Arachnid, Felinid, Oni, Vulpkanin, HumanoidFoxes, Reptilian, Tajaran, Rodentia] # Einstein Engines - Tajaran
+  speciesRestriction: [IPC, Moth, Dwarf, Human, Arachnid, Felinid, Oni, Vulpkanin, HumanoidFoxes, Reptilian, Tajaran, Rodentia, Kitsune] # Einstein Engines - Tajaran
   sprites:
   - sprite: Mobs/Customization/cyberlimbs/bishop/bishop_main.rsi
     state: l_foot
@@ -87,7 +100,7 @@
   id: CyberLimbsMarkingBishopRArm
   bodyPart: RArm
   markingCategory: RightArm
-  speciesRestriction: [IPC, Moth, Dwarf, Human, Arachnid, Felinid, Oni, Vulpkanin, HumanoidFoxes, Reptilian, Arachne, Lamia, Tajaran, Rodentia] # Einstein Engines - Tajaran
+  speciesRestriction: [IPC, Moth, Dwarf, Human, Arachnid, Felinid, Oni, Vulpkanin, HumanoidFoxes, Reptilian, Arachne, Lamia, Tajaran, Rodentia, Kitsune] # Einstein Engines - Tajaran
   sprites:
   - sprite: Mobs/Customization/cyberlimbs/bishop/bishop_main.rsi
     state: r_arm-primary
@@ -101,7 +114,7 @@
   id: CyberLimbsMarkingBishopRHand
   bodyPart: RHand
   markingCategory: RightHand
-  speciesRestriction: [IPC, Moth, Dwarf, Human, Arachnid, Felinid, Oni, Vulpkanin, HumanoidFoxes, Reptilian, Arachne, Lamia, Tajaran, Rodentia] # Einstein Engines - Tajaran
+  speciesRestriction: [IPC, Moth, Dwarf, Human, Arachnid, Felinid, Oni, Vulpkanin, HumanoidFoxes, Reptilian, Arachne, Lamia, Tajaran, Rodentia, Kitsune] # Einstein Engines - Tajaran
   sprites:
   - sprite: Mobs/Customization/cyberlimbs/bishop/bishop_main.rsi
     state: r_hand
@@ -110,7 +123,7 @@
   id: CyberLimbsMarkingBishopRLeg
   bodyPart: RLeg
   markingCategory: RightLeg
-  speciesRestriction: [IPC, Moth, Dwarf, Human, Arachnid, Felinid, Oni, Vulpkanin, HumanoidFoxes, Reptilian, Tajaran, Rodentia] # Einstein Engines - Tajaran
+  speciesRestriction: [IPC, Moth, Dwarf, Human, Arachnid, Felinid, Oni, Vulpkanin, HumanoidFoxes, Reptilian, Tajaran, Rodentia, Kitsune] # Einstein Engines - Tajaran
   sprites:
   - sprite: Mobs/Customization/cyberlimbs/bishop/bishop_main.rsi
     state: r_leg-primary
@@ -122,7 +135,7 @@
   id: CyberLimbsMarkingBishopRFoot
   bodyPart: RFoot
   markingCategory: RightFoot
-  speciesRestriction: [IPC, Moth, Dwarf, Human, Arachnid, Felinid, Oni, Vulpkanin, HumanoidFoxes, Reptilian, Tajaran, Rodentia] # Einstein Engines - Tajaran
+  speciesRestriction: [IPC, Moth, Dwarf, Human, Arachnid, Felinid, Oni, Vulpkanin, HumanoidFoxes, Reptilian, Tajaran, Rodentia, Kitsune] # Einstein Engines - Tajaran
   sprites:
   - sprite: Mobs/Customization/cyberlimbs/bishop/bishop_main.rsi
     state: r_foot

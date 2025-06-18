@@ -1,3 +1,27 @@
+// SPDX-FileCopyrightText: 2021 Paul <ritter.paul1+git@googlemail.com>
+// SPDX-FileCopyrightText: 2021 Paul Ritter <ritter.paul1@googlemail.com>
+// SPDX-FileCopyrightText: 2022 Acruid <shatter66@gmail.com>
+// SPDX-FileCopyrightText: 2022 Kara D <lunarautomaton6@gmail.com>
+// SPDX-FileCopyrightText: 2022 Moony <moonheart08@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 Vera Aguilera Puerto <gradientvera@outlook.com>
+// SPDX-FileCopyrightText: 2022 metalgearsloth <comedian_vs_clown@hotmail.com>
+// SPDX-FileCopyrightText: 2022 mirrorcult <lunarautomaton6@gmail.com>
+// SPDX-FileCopyrightText: 2023 Chief-Engineer <119664036+Chief-Engineer@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Debug <49997488+DebugOk@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 MilenVolf <63782763+MilenVolf@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
+// SPDX-FileCopyrightText: 2024 VMSolidus <evilexecutive@gmail.com>
+// SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Falcon <falcon@zigtag.dev>
+// SPDX-FileCopyrightText: 2025 Tayrtahn <tayrtahn@gmail.com>
+// SPDX-FileCopyrightText: 2025 poemota <142114334+poeMota@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 sleepyyapril <flyingkarii@gmail.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 using System.Linq;
 using System.Numerics;
 using System.Threading.Tasks;
@@ -34,7 +58,7 @@ namespace Content.Server.Decals
         [Dependency] private readonly IConfigurationManager _conf = default!;
         [Dependency] private readonly IGameTiming _timing = default!;
         [Dependency] private readonly IAdminLogManager _adminLogger = default!;
-        [Dependency] private readonly MapSystem _mapSystem = default!;
+        [Dependency] private readonly SharedMapSystem _mapSystem = default!;
 
         private readonly Dictionary<NetEntity, HashSet<Vector2i>> _dirtyChunks = new();
         private readonly Dictionary<ICommonSession, Dictionary<NetEntity, HashSet<Vector2i>>> _previousSentChunks = new();
@@ -105,7 +129,7 @@ namespace Content.Server.Decals
                 return;
 
             // Transfer decals over to the new grid.
-            var enumerator = Comp<MapGridComponent>(ev.Grid).GetAllTilesEnumerator();
+            var enumerator = _mapSystem.GetAllTilesEnumerator(ev.Grid, Comp<MapGridComponent>(ev.Grid));
 
             var oldChunkCollection = oldComp.ChunkCollection.ChunkCollection;
             var chunkCollection = newComp.ChunkCollection.ChunkCollection;
@@ -158,38 +182,41 @@ namespace Content.Server.Decals
 
         private void OnTileChanged(ref TileChangedEvent args)
         {
-            if (!args.NewTile.IsSpace(_tileDefMan))
-                return;
-
-            if (!TryComp(args.Entity, out DecalGridComponent? grid))
-                return;
-
-            var indices = GetChunkIndices(args.NewTile.GridIndices);
-            var toDelete = new HashSet<uint>();
-            if (!grid.ChunkCollection.ChunkCollection.TryGetValue(indices, out var chunk))
-                return;
-
-            foreach (var (uid, decal) in chunk.Decals)
+            foreach (var change in args.Changes)
             {
-                if (new Vector2((int) Math.Floor(decal.Coordinates.X), (int) Math.Floor(decal.Coordinates.Y)) ==
-                    args.NewTile.GridIndices)
+                if (!change.NewTile.IsSpace(_tileDefMan))
+                    return;
+
+                if (!TryComp(args.Entity, out DecalGridComponent? grid))
+                    return;
+
+                var indices = GetChunkIndices(change.GridIndices);
+                var toDelete = new HashSet<uint>();
+                if (!grid.ChunkCollection.ChunkCollection.TryGetValue(indices, out var chunk))
+                    return;
+
+                foreach (var (uid, decal) in chunk.Decals)
                 {
-                    toDelete.Add(uid);
+                    if (new Vector2((int)Math.Floor(decal.Coordinates.X), (int)Math.Floor(decal.Coordinates.Y)) ==
+                        change.GridIndices)
+                    {
+                        toDelete.Add(uid);
+                    }
                 }
+
+                if (toDelete.Count == 0)
+                    return;
+
+                foreach (var decalId in toDelete)
+                {
+                    grid.DecalIndex.Remove(decalId);
+                    chunk.Decals.Remove(decalId);
+                }
+
+                DirtyChunk(args.Entity, indices, chunk);
+                if (chunk.Decals.Count == 0)
+                    grid.ChunkCollection.ChunkCollection.Remove(indices);
             }
-
-            if (toDelete.Count == 0)
-                return;
-
-            foreach (var decalId in toDelete)
-            {
-                grid.DecalIndex.Remove(decalId);
-                chunk.Decals.Remove(decalId);
-            }
-
-            DirtyChunk(args.Entity, indices, chunk);
-            if (chunk.Decals.Count == 0)
-                grid.ChunkCollection.ChunkCollection.Remove(indices);
         }
 
         private void OnPlayerStatusChanged(object? sender, SessionStatusEventArgs e)

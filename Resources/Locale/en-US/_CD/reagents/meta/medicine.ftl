@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 ## Floof - style reagent names in lower-case
 reagent-name-serenitol = serenitol
 reagent-desc-serenitol = A fairly unreactive chemical that has mild antidepressant properties. Originally used to help patients overcome the loss of a pet or family friend, it is fairly safe to administer.

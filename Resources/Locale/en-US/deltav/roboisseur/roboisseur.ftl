@@ -1,3 +1,8 @@
+# SPDX-FileCopyrightText: 2024 Debug <49997488+DebugOk@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: MIT
+
 roboisseur-request-1 = I humbly request one {$item} for my wealthiest client.
 roboisseur-request-2 = Oodles of dough await you, for a nice {$item}!
 roboisseur-request-3 = There may be an exorbitantly affluent personage in this sector looking for {INDEFINITE($item)} {$item}.

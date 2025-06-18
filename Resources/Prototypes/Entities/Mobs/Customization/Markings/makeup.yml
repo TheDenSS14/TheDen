@@ -1,8 +1,19 @@
+# SPDX-FileCopyrightText: 2024 Angelo Fallaria <ba.fallaria@gmail.com>
+# SPDX-FileCopyrightText: 2025 Blitz <73762869+BlitzTheSquishy@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 M3739 <47579354+M3739@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Rosycup <178287475+Rosycup@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Sapphire <98045970+sapphirescript@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Skubman <ba.fallaria@gmail.com>
+# SPDX-FileCopyrightText: 2025 Tonk-GCR <190437025+Tonk-GCR@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 - type: marking
   id: MakeupLips
   bodyPart: Face
   markingCategory: Face
-  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Arachne, Lamia, Tajaran, Canid] # Delta V - Felinid, Oni, Harpy; The Den - Canid
+  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Arachne, Lamia, Tajaran, Canid, Kitsune] # Delta V - Felinid, Oni, Harpy; The Den - Canid
   coloring:
     default:
       type:
@@ -16,7 +27,7 @@
   id: MakeupBlush
   bodyPart: Face
   markingCategory: Face
-  speciesRestriction: [Dwarf, Human, Reptilian, SlimePerson, Felinid, Oni, Vulpkanin, Harpy, Arachne, Lamia, Tajaran, Canid] # Delta V - Felinid, Oni, Vulpkanin, Harpy; The Den - Canid
+  speciesRestriction: [Dwarf, Human, Reptilian, SlimePerson, Felinid, Oni, Vulpkanin, Harpy, Arachne, Lamia, Tajaran, Canid, Kitsune] # Delta V - Felinid, Oni, Vulpkanin, Harpy; The Den - Canid
   coloring:
     default:
       type:
@@ -30,7 +41,7 @@
   id: MakeupNailPolishRight
   bodyPart: RHand
   markingCategory: RightHand
-  speciesRestriction: [Dwarf, Human, Reptilian, Arachnid, SlimePerson, Felinid, Oni, Vulpkanin, Arachne, Lamia, Tajaran, Canid] # Delta V - Felinid, Oni, Vulpkanin; The Den - Canid
+  speciesRestriction: [Dwarf, Human, Reptilian, Arachnid, SlimePerson, Felinid, Oni, Vulpkanin, Arachne, Lamia, Tajaran, Canid, Kitsune] # Delta V - Felinid, Oni, Vulpkanin; The Den - Canid
   coloring:
     default:
       type:
@@ -44,7 +55,7 @@
   id: MakeupNailPolishLeft
   bodyPart: LHand
   markingCategory: LeftHand
-  speciesRestriction: [Dwarf, Human, Reptilian, Arachnid, SlimePerson, Felinid, Oni, Vulpkanin, Arachne, Lamia, Tajaran, Canid] # Delta V - Felinid, Oni, Vulpkanin; The Den - Canid
+  speciesRestriction: [Dwarf, Human, Reptilian, Arachnid, SlimePerson, Felinid, Oni, Vulpkanin, Arachne, Lamia, Tajaran, Canid, Kitsune] # Delta V - Felinid, Oni, Vulpkanin; The Den - Canid
   coloring:
     default:
       type:

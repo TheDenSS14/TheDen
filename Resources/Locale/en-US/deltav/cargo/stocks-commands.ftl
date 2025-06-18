@@ -1,3 +1,8 @@
+# SPDX-FileCopyrightText: 2024 Milon <milonpl.git@proton.me>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 # changestockprice command
 cmd-changestocksprice-desc = Changes a company's stock price to the specified number.
 cmd-changestocksprice-help = changestockprice <Company index> <New price> [Station UID]

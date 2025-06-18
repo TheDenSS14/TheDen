@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 - type: entity
   parent: KitchenMicrowaveUpstream
   id: KitchenMicrowave
@@ -13,7 +17,7 @@
       collection: MetalBreak
     damage:
       types:
-        Blunt: 25
+        Blunt: 7
   - type: DamageOtherOnHit
     damage:
       types:
@@ -21,7 +25,7 @@
   - type: DamageOnLand
     damage:
       types:
-        Blunt: 50
+        Blunt: 15
   - type: EmitSoundOnLand
     sound:
       collection: MetalBreak
@@ -45,16 +49,16 @@
     attackRate: 0.75
     damage:
       types:
-        Blunt: 30
+        Blunt: 12
         Shock: 5
   - type: DamageOtherOnHit
     damage:
       types:
-        Blunt: 15
+        Blunt: 10
   - type: DamageOnLand
     damage:
       types:
-        Blunt: 25
+        Blunt: 15
   - type: EmitSoundOnLand
     sound:
       collection: MetalBreak

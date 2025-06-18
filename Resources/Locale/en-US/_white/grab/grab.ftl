@@ -1,3 +1,9 @@
+# SPDX-FileCopyrightText: 2025 BramvanZijp <BramvanZijp@gmail.com>
+# SPDX-FileCopyrightText: 2025 Eagle-0 <114363363+Eagle-0@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 popup-grab-soft-target = {CAPITALIZE($puller)} grabbed you softly.
 popup-grab-hard-target = {CAPITALIZE($puller)} grabbed you firmly.
 popup-grab-suffocate-target = {CAPITALIZE($puller)} started to choke you!

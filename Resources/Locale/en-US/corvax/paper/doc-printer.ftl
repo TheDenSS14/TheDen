@@ -1,3 +1,9 @@
+# SPDX-FileCopyrightText: 2025 KekaniCreates <87507256+KekaniCreates@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Will-Oliver-Br <164823659+Will-Oliver-Br@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 doc-text-printer-report-station =
    ⠀[color=#1b487e]███░███░░░░██░░░░[/color]
    ⠀[color=#1b487e]░██░████░░░██░░░░[/color]      [head=3]Situation Report[/head]

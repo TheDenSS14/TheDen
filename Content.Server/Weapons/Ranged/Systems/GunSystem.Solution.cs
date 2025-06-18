@@ -1,3 +1,10 @@
+// SPDX-FileCopyrightText: 2023 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 TemporalOroboros <TemporalOroboros@gmail.com>
+// SPDX-FileCopyrightText: 2023 TemporalOroboros <temporaloroboros@gmail.com>
+// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+//
+// SPDX-License-Identifier: MIT
+
 using Content.Server.Chemistry.Components;
 using Content.Server.Chemistry.Containers.EntitySystems;
 using Content.Shared.Chemistry.Components;

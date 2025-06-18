@@ -1,3 +1,12 @@
+# SPDX-FileCopyrightText: 2021 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2021 mirrorcult <lunarautomaton6@gmail.com>
+# SPDX-FileCopyrightText: 2023 Maxtone <124747282+MagnusCrowe@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT <77995199+DEATHB4DEFEAT@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 M3739 <47579354+M3739@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 - type: damageGroup
   id: Brute
   name: damage-group-brute
@@ -40,3 +49,11 @@
   name: damage-group-genetic
   damageTypes:
     - Cellular
+
+# Metaphysical damage types should be used very sparingly, and likely not affect normal crew entities.
+# Revenants and other ghost-like/demonic creatures are more fitting. Healing should never be available via medicine.
+- type: damageGroup
+  id: Metaphysical
+  name: damage-group-metaphysical
+  damageTypes:
+  - Holy

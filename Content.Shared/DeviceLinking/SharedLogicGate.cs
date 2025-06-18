@@ -1,3 +1,9 @@
+// SPDX-FileCopyrightText: 2023 deltanedas <@deltanedas:kde.org>
+// SPDX-FileCopyrightText: 2025 deltanedas <39013340+deltanedas@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 using Robust.Shared.Serialization;
 
 namespace Content.Shared.DeviceLinking;
@@ -32,5 +38,20 @@ public enum LogicGateVisuals : byte
 [Serializable, NetSerializable]
 public enum LogicGateLayers : byte
 {
-    Gate
+    Gate,
+    InputA,
+    InputB,
+    Output
+}
+
+/// <summary>
+/// The possible states of a logic-capable signal.
+/// Stored in network payload data of device network messages.
+/// </summary>
+[Serializable, NetSerializable]
+public enum SignalState : byte
+{
+    Momentary, // Instantaneous pulse high, compatibility behavior
+    Low,
+    High
 }
