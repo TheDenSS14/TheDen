@@ -230,8 +230,8 @@ public sealed partial class SalvageSystem
         {
             var station = _station.GetOwningStation(magnetUid, xform);
 
-            if (station != data.Owner)
-                continue;
+            //if (station != data.Owner) somehow lets magents off station work?
+            //    continue;
 
             _ui.SetUiState(magnetUid, SalvageMagnetUiKey.Key,
                 new SalvageMagnetBoundUserInterfaceState(data.Comp.Offered)
