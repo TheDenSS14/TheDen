@@ -14,10 +14,40 @@ namespace Content.Client.UserInterface.Systems.Chat.Controls.Denu;
 public sealed class DenuUIController : UIController
 {
     [UISystemDependency] private readonly TypingIndicatorSystem _typingIndicatorSystem = default!;
-    public bool AutoFormatterEnabled { get; set; }
+
+    public bool IsOpen { get; set; } = false;
+    public bool AutoFormatterEnabled { get; set; } = false;
     public bool RemoveAsterisks { get; set; }
+
     public Color DialogueColor { get; set; } = Color.FromHex("#FFFFFF");
     public Color EmoteColor { get; set; } = Color.FromHex("#FF13FF");
+
+    private DenuWindow? _denuWindow;
+
+    public DenuUIController()
+    {
+    }
+
+    public void CreateWindow()
+    {
+        if (!UIManager.TryGetFirstWindow<DenuWindow>(out _denuWindow))
+            _denuWindow = UIManager.CreateWindow<DenuWindow>();
+        
+        _denuWindow!.OnOpen += () => IsOpen = true;
+        _denuWindow!.OnClose += () => IsOpen = false;
+    }
+
+    public void OpenWindow()
+    {
+        if (_denuWindow is null)
+            CreateWindow();
+        _denuWindow!.OpenCentered();
+    }
+
+    public void CloseWindow()
+    {
+        _denuWindow!.Close();
+    }
 
     public string FormatMessage(string message) =>
         MessageFormatter.Format(message, DialogueColor.ToHex(), EmoteColor.ToHex(), RemoveAsterisks);
@@ -27,4 +57,6 @@ public sealed class DenuUIController : UIController
 
     public void HideTypingIndicator() =>
         _typingIndicatorSystem.ClientSubmittedChatText();
+
+
 }

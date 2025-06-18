@@ -64,6 +64,7 @@ public class ChatInputBox : PanelContainer
             Name = "DenuButton",
             StyleClasses = {"chatFilterOptionButton"}
         };
+        
         Container.AddChild(DenuButton);
         AddStyleClass(StyleNano.StyleClassChatSubPanel);
         ChannelSelector.OnChannelSelect += UpdateActiveChannel;
