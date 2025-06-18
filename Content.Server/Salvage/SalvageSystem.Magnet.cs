@@ -30,7 +30,7 @@ public sealed partial class SalvageSystem
 
         SubscribeLocalEvent<SalvageMagnetComponent, MagnetClaimOfferEvent>(OnMagnetClaim);
         SubscribeLocalEvent<SalvageMagnetComponent, ComponentStartup>(OnMagnetStartup);
-        SubscribeLocalEvent<SalvageMagnetComponent, AnchorStateChangedEvent>(OnMagnetAnchored);
+        SubscribeLocalEvent<SalvageMagnetDataComponent, AnchorStateChangedEvent>(OnMagnetAnchored);
     }
 
     private void OnMagnetClaim(EntityUid uid, SalvageMagnetComponent component, ref MagnetClaimOfferEvent args)
@@ -51,12 +51,12 @@ public sealed partial class SalvageSystem
         UpdateMagnetUI((uid, component), Transform(uid));
     }
 
-    private void OnMagnetAnchored(EntityUid uid, SalvageMagnetComponent component, ref AnchorStateChangedEvent args)
+    private void OnMagnetAnchored(EntityUid uid, SalvageMagnetDataComponent component, ref AnchorStateChangedEvent args)
     {
         if (!args.Anchored)
             return;
 
-        UpdateMagnetUI((uid, component), args.Transform);
+        UpdateMagnetUIs((uid, component));
     }
 
     private void OnMagnetDataMapInit(EntityUid uid, SalvageMagnetDataComponent component, ref MapInitEvent args)
