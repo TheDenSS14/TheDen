@@ -53,7 +53,7 @@
 - type: entity
   parent: BasePlushie
   id: PlushieAlienGerm
-  name: beady alien plushie
+  name: alien germ plushie
   description: A stuffed toy that resembles a... UFO? Alien? Germ? It looks at you pleadingly.
   components:
     - type: Sprite
@@ -63,8 +63,8 @@
 # accidentally made the sprite too small at first but i didnt want to throw it out so you get a little one.
 - type: entity
   parent: PlushieAlienGerm
-  id: PlushieAlienGermSmall
-  name: mini beady alien plushie
+  id: PlushieAlienGermMini
+  name: mini alien germ plushie
   description: A stuffed toy that resembles a... UFO? Alien? Germ? This one is very small.
   components:
     - type: Sprite
