@@ -29,6 +29,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
     xmlns:prefUi="clr-namespace:Content.Client.Lobby.UI"
     xmlns:ui="clr-namespace:Content.Client.UserInterface.Controls"
     xmlns:cd="clr-namespace:Content.Client._CD.Records.UI"
+    xmlns:denLoadouts="clr-namespace:Content.Client._DEN.Lobby.UI.Loadouts"
     HorizontalExpand="True">
     <!-- Left side -->
     <BoxContainer Orientation="Vertical" Margin="10 10 10 10" HorizontalExpand="True">
@@ -269,31 +270,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
                 <ui:NeoTabContainer Name="TraitsTabs" VerticalExpand="True" SeparatorMargin="0" />
             </BoxContainer>
-            <BoxContainer Name="LoadoutsTab" HorizontalExpand="True" Orientation="Vertical" Margin="10">
-                <!-- Loadouts -->
-                <Label Name="LoadoutPointsLabel" HorizontalAlignment="Stretch" Align="Center" />
-                <ProgressBar Name="LoadoutPointsBar" MaxValue="1" Value="1" MaxHeight="8" Margin="0 5" />
-
-                <BoxContainer HorizontalExpand="True" Margin="0 0 0 5">
-                    <Button
-                        Name="LoadoutsShowUnusableButton"
-                        Text="{Loc 'humanoid-profile-editor-loadouts-show-unusable-button'}"
-                        ToolTip="{Loc 'humanoid-profile-editor-loadouts-show-unusable-button-tooltip'}"
-                        ToggleMode="True"
-                        HorizontalAlignment="Stretch"
-                        HorizontalExpand="True"
-                        StyleClasses="OpenRight" />
-                    <Button
-                        Name="LoadoutsRemoveUnusableButton"
-                        Text="You shouldn't see this"
-                        ToolTip="{Loc 'humanoid-profile-editor-loadouts-remove-unusable-button-tooltip'}"
-                        HorizontalAlignment="Stretch"
-                        HorizontalExpand="True"
-                        StyleClasses="OpenLeft" />
-                </BoxContainer>
-
-                <ui:NeoTabContainer Name="LoadoutsTabs" VerticalExpand="True" SeparatorMargin="0" />
-            </BoxContainer>
+            <denLoadouts:LoadoutsPanel Name="LoadoutsTab" />
             <BoxContainer Name="MarkingsTab" HorizontalExpand="True" Orientation="Vertical" Margin="10">
                 <ScrollContainer HorizontalExpand="True" HScrollEnabled="True" VerticalExpand="True" VScrollEnabled="True">
                     <!-- Markings -->

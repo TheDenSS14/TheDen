@@ -67,6 +67,19 @@ public sealed partial class LoadoutPreferenceSelector : Control
         }
     }
 
+    public bool Equals(LoadoutPreferenceSelector? other)
+    {
+        if (ReferenceEquals(null, other)) return false;
+        if (ReferenceEquals(this, other)) return true;
+        return Loadout.ID == other.Loadout.ID; // Critical: Compare by ID
+    }
+
+    public override bool Equals(object? obj)
+        => obj is LoadoutPreferenceSelector other && Equals(other);
+
+    public override int GetHashCode()
+        => Loadout.ID.GetHashCode();
+
     public bool Valid;
     private bool _showUnusable;
     public bool ShowUnusable
@@ -273,6 +286,14 @@ public sealed partial class LoadoutPreferenceSelector : Control
             formattedTooltip.SetMessage(FormattedMessage.FromMarkupPermissive(tooltip.ToString()));
             PreferenceButton.TooltipSupplier = _ => formattedTooltip;
         }
+    }
+
+    // Minimal constructor for lookup
+    public LoadoutPreferenceSelector(LoadoutPrototype loadout, IEntityManager entityManager)
+    {
+        RobustXamlLoader.Load(this);
+        Loadout = loadout;
+        _entityManager = entityManager;
     }
 
     private bool _initialized;
