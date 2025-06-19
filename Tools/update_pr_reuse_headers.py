@@ -136,7 +136,7 @@ def sanitize(name):
     real_name = name[:email_pos - 2]
 
     is_token_email, new_email = sanitize_one(email)
-    is_token_name, new_name = sanitize_one(email)
+    is_token_name, new_name = sanitize_one(real_name)
     check = is_token_email == True or is_token_name == True or real_name.startswith("TheDen") # lmao
 
     return check, f"{new_name} <{new_email}"
