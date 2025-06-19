@@ -161,6 +161,7 @@ public sealed partial class LoadoutsPanel : BoxContainer
         }
 
         BuildLoadoutTabs(mainJob, profile);
+        UpdateAllSelectors();
         UpdateLoadoutPreferences();
     }
 
@@ -179,7 +180,6 @@ public sealed partial class LoadoutsPanel : BoxContainer
                 && _characterRequirements.CanEntityWearItem(_dummy.Value, entity);
         }
     }
-
 
     private void PopulateLoadoutData(JobPrototype mainJob, HumanoidCharacterProfile profile)
     {
@@ -204,8 +204,14 @@ public sealed partial class LoadoutsPanel : BoxContainer
             );
 
             _loadoutData.Add(loadoutProto, usable);
+        }
+    }
 
-            if (_selectorLookup.TryGetValue(loadoutProto, out var selector))
+    private void UpdateAllSelectors()
+    {
+        foreach (var (proto, usable) in _loadoutData)
+        {
+            if (_selectorLookup.TryGetValue(proto, out var selector))
                 UpdateLoadoutSelector(selector, usable);
         }
     }
@@ -282,7 +288,7 @@ public sealed partial class LoadoutsPanel : BoxContainer
         return newSelector;
     }
 
-    void BuildCategoryContainer(Dictionary<string, object> tree, NeoTabContainer parent)
+    private void BuildCategoryContainer(Dictionary<string, object> tree, NeoTabContainer parent)
     {
         foreach (var (key, value) in tree)
         {
@@ -307,6 +313,12 @@ public sealed partial class LoadoutsPanel : BoxContainer
         }
     }
 
+    /// <summary>
+    /// Iterates over every loadout selector and inserts them into the associated loadout category tab.
+    /// </summary>
+    /// <param name="mainJob">The highest job of the character.</param>
+    /// <param name="profile">The HumanoidCharacterProfile data associated with the character.</param>
+    /// <param name="uncategorizedTab">The container for uncategorized loadout items.</param>
     private void PopulateCategoryTabs(JobPrototype mainJob,
         HumanoidCharacterProfile profile,
         BoxContainer uncategorizedTab)
@@ -446,6 +458,7 @@ public sealed partial class LoadoutsPanel : BoxContainer
             Selected = preference.Selected
         };
     }
+
     private EntityUid EnsureLoadoutDummy(EntProtoId item, string key)
     {
         if (_loadoutDummies.TryGetValue(key, out var entity)
@@ -456,6 +469,7 @@ public sealed partial class LoadoutsPanel : BoxContainer
         _loadoutDummies[key] = entity;
         return entity;
     }
+
     private bool ValidateSelection(int cost, bool isSelected)
     {
         var testPoints = LoadoutPointsBar.Value + cost;
@@ -465,7 +479,8 @@ public sealed partial class LoadoutsPanel : BoxContainer
     private bool IsLoadoutUnusable(LoadoutPrototype loadout, bool isValid)
     {
         return !isValid
-            || _selectorLookup.TryGetValue(loadout, out var selector) && !selector.Wearable;
+            || _selectorLookup.TryGetValue(loadout, out var selector)
+            && !selector.Wearable;
     }
 
     private NeoTabContainer? GetTopTabContainer(Control tab)
@@ -493,10 +508,9 @@ public sealed partial class LoadoutsPanel : BoxContainer
                 && IsLoadoutUnusable(l.Key, l.Value))
             .ToDictionary();
 
-
-
         return unusableLoadouts;
     }
+
     private static BoxContainer? FindCategoryTab(string id, NeoTabContainer parent)
     {
         if (parent.Contents.FirstOrDefault(c => c.Name == id) is BoxContainer match)
