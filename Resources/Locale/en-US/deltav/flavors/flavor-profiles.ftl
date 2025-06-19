@@ -29,7 +29,6 @@ flavor-complex-sapopicante = like tomatoes and spices
 flavor-complex-graveyard = like a strong cold brew
 flavor-complex-bubbletea = like creamy sweetness
 flavor-complex-corncob = like a sick joke
-flavor-complex-tirggel = crunchy
 
 ## Delta
 flavor-complex-gunmetal = bittersweet and creamy
