@@ -24,10 +24,10 @@
 
 
 - type: entity
-  name: box of .45 magnum Universal magazines
+  name: box of Universal magazines (.45 magnum)
   parent: BoxMagazine
   id: BoxMagazineUniversalMagnum
-  description: A box full of .45 magnum Universal magazines.
+  description: A box full of Universal magazines (.45 magnum).
   components:
   - type: StorageFill
     contents:
@@ -42,10 +42,10 @@
         - BallisticAmmoProvider
 
 - type: entity
-  name: box of .45 magnum (practice) Universal magazines
+  name: box of Universal magazines (.45 magnum practice)
   parent: BoxMagazine
   id: BoxMagazineUniversalMagnumPractice
-  description: A box full of .45 magnum (practice) Universal magazines.
+  description: A box full of Universal magazines (.45 magnum practice).
   components:
   - type: StorageFill
     contents:
@@ -60,10 +60,10 @@
         - BallisticAmmoProvider
 
 - type: entity
-  name: box of .45 magnum (rubber) Universal magazines
+  name: box of Universal magazines (.45 magnum rubber)
   parent: BoxMagazine
   id: BoxMagazineUniversalMagnumRubber
-  description: A box full of .45 magnum (rubber) Universal magazines.
+  description: A box full of Universal magazines (.45 magnum rubber).
   components:
   - type: StorageFill
     contents:
@@ -78,10 +78,10 @@
         - BallisticAmmoProvider
 
 - type: entity
-  name: box of .30 rifle stripper clips
+  name: box of stripper clips (.30 rifle)
   parent: BoxMagazine
   id: BoxSpeedLoaderLightRifle
-  description: A box full of .30 rifle stripper clips.
+  description: A box full of stripper clips (.30 rifle).
   components:
   - type: StorageFill
     contents:
