@@ -91,19 +91,19 @@
       state: icon
     - type: EmitSoundOnUse
       sound:
-        collection: OviniaPlusheSounds
+        collection: OviniaPlushieSounds
     - type: EmitSoundOnLand
       sound:
         collection: ToySqueak
     - type: EmitSoundOnActivate
       sound:
-        collection: OviniaPlusheSounds
+        collection: OviniaPlushieSounds
     - type: EmitSoundOnTrigger
       sound:
-        collection: OviniaPlusheSounds
+        collection: OviniaPlushieSounds
     - type: MeleeWeapon
       soundHit:
-        collection: OviniaPlusheSounds
+        collection: OviniaPlushieSounds
     - type: Food
       useSound:
-        collection: OviniaPlusheSounds
+        collection: OviniaPlushieSounds
