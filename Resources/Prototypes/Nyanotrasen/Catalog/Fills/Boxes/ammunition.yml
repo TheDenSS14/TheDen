@@ -27,7 +27,7 @@
   name: box of .45 magnum Universal magazines
   parent: BoxMagazine
   id: BoxMagazineUniversalMagnum
-  description: A box full of .45 magnum magazines.
+  description: A box full of .45 magnum Universal magazines.
   components:
   - type: StorageFill
     contents:
@@ -42,10 +42,10 @@
         - BallisticAmmoProvider
 
 - type: entity
-  name: box of .45 magnum Universal (practice) magazines
+  name: box of .45 magnum (practice) Universal magazines
   parent: BoxMagazine
   id: BoxMagazineUniversalMagnumPractice
-  description: A box full of .45 magnum practice magazines.
+  description: A box full of .45 magnum (practice) Universal magazines.
   components:
   - type: StorageFill
     contents:
@@ -60,10 +60,10 @@
         - BallisticAmmoProvider
 
 - type: entity
-  name: box of .45 magnum Universal (rubber) magazines
+  name: box of .45 magnum (rubber) Universal magazines
   parent: BoxMagazine
   id: BoxMagazineUniversalMagnumRubber
-  description: A box full of .45 magnum rubber magazines.
+  description: A box full of .45 magnum (rubber) Universal magazines.
   components:
   - type: StorageFill
     contents:
