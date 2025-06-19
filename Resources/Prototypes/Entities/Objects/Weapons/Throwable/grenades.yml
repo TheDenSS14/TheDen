@@ -152,26 +152,30 @@
 #Ideally, there should be a weak radius around the bomb outside of its gibbing / spacing range capable of dealing fair damage to players / structures.
 - type: entity
   name: syndicate minibomb
-  description: A syndicate-manufactured explosive used to stow destruction and cause chaos.
+  description: A syndicate-manufactured explosive. Ominous.
   parent: GrenadeBase
   id: SyndieMiniBomb
   components:
   - type: Sprite
     sprite: Objects/Weapons/Grenades/syndgrenade.rsi
-  - type: OnUseTimerTrigger
-    delay: 5
-  - type: ExplodeOnTrigger
   - type: Explosive
     explosionType: Minibomb
-    totalIntensity: 180
-    intensitySlope: 100 #Will destroy the tile under it reliably, space 1-2 more to rods. Only does any significant damage in a 5-tile cross.
-    maxIntensity: 15 #Will now not gib a full health Urist with no expolsive resistance, but it will still kill them instantly. Same explosion shape and roughly same tile breaking
-  - type: Appearance
+    totalIntensity: 30
+    intensitySlope: 15
+    maxIntensity: 20
+  - type: ExplodeOnTrigger
+  - type: TriggerOnSignal
+  - type: DeviceLinkSink
+    ports:
+      - Trigger
+  - type: OnUseTimerTrigger
+    delay: 5
   - type: TimerTriggerVisuals
     primingSound:
       path: /Audio/Effects/minibombcountdown.ogg
       params:
         volume: 12
+  - type: Appearance
 
 - type: entity
   name: Self Destruct

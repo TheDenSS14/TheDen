@@ -14,21 +14,17 @@
   description: A dark ink pen.
   id: PenExploding
   components:
-  - type: OnUseTimerTrigger
-    delay: 4
-    examinable: false
   - type: Explosive
-    explosionType: Default
-    maxIntensity: 8
-    intensitySlope: 5
-    totalIntensity: 20
+    explosionType: PenBomb
+    maxIntensity: 10
+    intensitySlope: 7
+    totalIntensity: 7
     canCreateVacuum: false
   - type: ActivateOnPaperOpened
   - type: ExplodeOnTrigger
-  - type: TriggerOnSignal
-  - type: DeviceLinkSink
-    ports:
-      - Trigger
+  - type: OnUseTimerTrigger
+    delay: 4
+    examinable: false
 
 - type: entity
   parent: BaseItem
