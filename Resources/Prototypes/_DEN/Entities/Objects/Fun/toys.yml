@@ -73,3 +73,33 @@
       size: Tiny
     - type: SecretStash
       maxItemSize: Tiny
+
+# SPECIES PLUSHIES
+
+- type: entity
+  parent: BasePlushie
+  id: PlushieOvinia
+  name: ovinia plushie
+  description: A stuffed toy that resembles an ovinia. Made with real wool!
+  components:
+    - type: Sprite
+      sprite: _DEN/Objects/Fun/oviniaplushie.rsi
+      state: icon
+    - type: EmitSoundOnUse
+      sound:
+        collection: OviniaPlusheSounds
+    - type: EmitSoundOnLand
+      sound:
+        collection: ToySqueak
+    - type: EmitSoundOnActivate
+      sound:
+        collection: OviniaPlusheSounds
+    - type: EmitSoundOnTrigger
+      sound:
+        collection: OviniaPlusheSounds
+    - type: MeleeWeapon
+      soundHit:
+        collection: OviniaPlusheSounds
+    - type: Food
+      useSound:
+        collection: OviniaPlusheSounds
