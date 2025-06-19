@@ -1,3 +1,8 @@
+// SPDX-FileCopyrightText: 2024 Angelo Fallaria <ba.fallaria@gmail.com>
+// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 using Content.Shared.Movement.Components;
 using Content.Shared.Movement.Systems;
 using Content.Shared.Traits.Assorted.Components;

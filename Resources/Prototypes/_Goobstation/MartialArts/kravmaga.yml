@@ -1,3 +1,8 @@
+# SPDX-FileCopyrightText: 2025 Eagle-0 <114363363+Eagle-0@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 - type: entity
   id: ActionLegSweep
   name: Leg Sweep
@@ -8,7 +13,7 @@
     icon:
       sprite: _Goobstation/Actions/kravmaga.rsi
       state: legsweep
-      useDelay: 3
+      useDelay: 5 # allows a window of escape and prevents looping
     event: !type:KravMagaActionEvent { }
   - type: KravMagaAction
     configuration: LegSweep

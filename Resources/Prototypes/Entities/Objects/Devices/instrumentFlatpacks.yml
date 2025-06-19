@@ -1,3 +1,9 @@
+# SPDX-FileCopyrightText: 2024 VMSolidus <evilexecutive@gmail.com>
+# SPDX-FileCopyrightText: 2025 SleepyScarecrow <136123749+SleepyScarecrow@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 - type: entity
   parent: BaseFlatpack
   id: InstrumentFlatpack
@@ -49,12 +55,12 @@
 
 - type: entity
   parent: InstrumentFlatpack
-  id: ChurchOrganFlatpack
-  name: church organ flatpack
-  description: A flatpack used for constructing a church organ.
+  id: PipeOrganFlatpack
+  name: pipe organ flatpack
+  description: A flatpack used for constructing a pipe organ.
   components:
   - type: Flatpack
-    entity: ChurchOrganInstrument
+    entity: PipeOrganInstrument
 
 - type: entity
   parent: InstrumentFlatpack

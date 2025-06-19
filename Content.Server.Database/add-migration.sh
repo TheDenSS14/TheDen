@@ -1,3 +1,9 @@
+# SPDX-FileCopyrightText: 2021 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
+# SPDX-FileCopyrightText: 2021 Saphire Lattice <lattice@saphi.re>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: MIT
+
 #!/usr/bin/env bash
 
 if [ -z "$1" ] ; then

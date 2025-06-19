@@ -1,3 +1,8 @@
+// SPDX-FileCopyrightText: 2024 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 using Content.Shared.Random.Helpers;
 using Robust.Shared.Prototypes;
 
@@ -13,16 +18,21 @@ public sealed partial class GroupSelector : EntityTableSelector
 
     protected override IEnumerable<EntProtoId> GetSpawnsImplementation(System.Random rand,
         IEntityManager entMan,
-        IPrototypeManager proto)
+        IPrototypeManager proto,
+        EntityTableContext ctx)
     {
         var children = new Dictionary<EntityTableSelector, float>(Children.Count);
         foreach (var child in Children)
         {
+            // Don't include invalid groups
+            if (!child.CheckConditions(entMan, proto, ctx))
+                continue;
+
             children.Add(child, child.Weight);
         }
 
         var pick = SharedRandomExtensions.Pick(children, rand);
 
-        return pick.GetSpawns(rand, entMan, proto);
+        return pick.GetSpawns(rand, entMan, proto, ctx);
     }
 }

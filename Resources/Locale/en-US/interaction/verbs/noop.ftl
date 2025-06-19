@@ -1,3 +1,9 @@
+# SPDX-FileCopyrightText: 2024 Mnemotechnican <69920617+Mnemotechnician@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 ShatteredSwords <135023515+ShatteredSwords@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 interaction-LookAt-name = Look at
 interaction-LookAt-description = Stare into the void and see it stare back.
 interaction-LookAt-success-self-popup = You look at {THE($target)}.

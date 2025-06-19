@@ -1,3 +1,14 @@
+# SPDX-FileCopyrightText: 2024 Dakota Haven <TotallyDemonicDragon@Gmail.com>
+# SPDX-FileCopyrightText: 2024 FoxxoTrystan <trystan.garnierhein@gmail.com>
+# SPDX-FileCopyrightText: 2024 SleepyScarecrow <sharedjunkemail69@gmail.com>
+# SPDX-FileCopyrightText: 2024 cynical <superpilotboy@gmail.com>
+# SPDX-FileCopyrightText: 2025 Aikakakah <145503852+Aikakakah@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Rosycup <178287475+Rosycup@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 cynical <132783285+cynical24@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 - type: entity
   parent: ClothingUniformBase
   id: ClothingUniformNudityPermit
@@ -206,3 +217,69 @@
     sprite: _Floof/Clothing/Uniforms/musiciankingblack.rsi
   - type: Clothing
     sprite: _Floof/Clothing/Uniforms/musiciankingblack.rsi
+
+- type: entity
+  parent: ClothingUniformSkirtBase
+  id: ClothingUniformRedDancersGarb
+  name: red dancers garb
+  description: A red top and matching skirt that reveals a LOT of thigh!
+  components:
+  - type: Sprite
+    sprite: _Floof/Clothing/Uniforms/reddancersgarb.rsi
+  - type: Clothing
+    sprite: _Floof/Clothing/Uniforms/reddancersgarb.rsi
+
+- type: entity
+  parent: ClothingUniformSkirtBase
+  id: ClothingUniformBandedDancersGarb
+  name: banded dancers garb
+  description: A red top and matching skirt that rides high but hides the thigh!
+  components:
+  - type: Sprite
+    sprite: _Floof/Clothing/Uniforms/bandeddancersgarb.rsi
+  - type: Clothing
+    sprite: _Floof/Clothing/Uniforms/bandeddancersgarb.rsi
+
+- type: entity
+  parent: ClothingUniformSkirtBase
+  id: ClothingUniformRedSidelessDress
+  name: red sideless dress
+  description: A red dress that leaves VERY LITTLE to the imagination.  Great for laying on top of pianos!
+  components:
+  - type: Sprite
+    sprite: _Floof/Clothing/Uniforms/redsidelessdress.rsi
+  - type: Clothing
+    sprite: _Floof/Clothing/Uniforms/redsidelessdress.rsi
+
+- type: entity
+  parent: ClothingUniformSkirtBase
+  id: ClothingUniformPurpleNightclubDress
+  name: purple nightclub dress
+  description: A purple dress made more for taking off than for wearing.
+  components:
+  - type: Sprite
+    sprite: _Floof/Clothing/Uniforms/purplenightclubdress.rsi
+  - type: Clothing
+    sprite: _Floof/Clothing/Uniforms/purplenightclubdress.rsi
+
+- type: entity
+  parent: ClothingUniformSkirtBase
+  id: ClothingUniformBlackPetticoatDress
+  name: black petticoat dress
+  description: Aahhh, yes dahling.  You're ravashing!
+  components:
+  - type: Sprite
+    sprite: _Floof/Clothing/Uniforms/blackpetticoatdress.rsi
+  - type: Clothing
+    sprite: _Floof/Clothing/Uniforms/blackpetticoatdress.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformBlueFancyLad
+  name: blue fancy lad outfit
+  description: Crisp blue, velvety blacks. Smoother than melted butter on ice.
+  components:
+  - type: Sprite
+    sprite: _Floof/Clothing/Uniforms/bluefancylad.rsi
+  - type: Clothing
+    sprite: _Floof/Clothing/Uniforms/bluefancylad.rsi

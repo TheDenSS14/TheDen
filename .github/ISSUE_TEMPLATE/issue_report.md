@@ -1,3 +1,14 @@
+<!--
+SPDX-FileCopyrightText: 2021 Swept <sweptwastaken@protonmail.com>
+SPDX-FileCopyrightText: 2021 mirrorcult <lunarautomaton6@gmail.com>
+SPDX-FileCopyrightText: 2022 Jacob Tong <10494922+ShadowCommander@users.noreply.github.com>
+SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT <77995199+DEATHB4DEFEAT@users.noreply.github.com>
+SPDX-FileCopyrightText: 2024 stellar-novas <stellar_novas@riseup.net>
+SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+
+SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+-->
+
 ---
 name: Report an issue
 about: "Any issues found in gameplay or the codebase"

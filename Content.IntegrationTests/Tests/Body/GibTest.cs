@@ -1,4 +1,11 @@
-﻿#nullable enable
+// SPDX-FileCopyrightText: 2023 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Tayrtahn <tayrtahn@gmail.com>
+// SPDX-FileCopyrightText: 2025 M3739 <47579354+M3739@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
+#nullable enable
 using Content.Server.Body.Systems;
 using Robust.Shared.GameObjects;
 
@@ -28,8 +35,8 @@ public sealed class GibTest
         Assert.That(client.EntMan.EntityExists(nuid1));
         Assert.That(client.EntMan.EntityExists(nuid2));
 
-        await server.WaitAssertion(() => server.System<BodySystem>().GibBody(target1, gibOrgans: false));
-        await server.WaitAssertion(() => server.System<BodySystem>().GibBody(target2, gibOrgans: true));
+        await server.WaitAssertion(() => server.System<BodySystem>().GibBody(target1, acidify: false));
+        await server.WaitAssertion(() => server.System<BodySystem>().GibBody(target2, acidify: true));
 
         await pair.RunTicksSync(5);
         await pair.WaitCommand("dirty");

@@ -1,3 +1,8 @@
+# SPDX-FileCopyrightText: 2025 Blitz <73762869+BlitzTheSquishy@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 names-arachnid-first-dataset-1 = Amblyocarenum
 names-arachnid-first-dataset-2 = Aname
 names-arachnid-first-dataset-3 = Aptostichus

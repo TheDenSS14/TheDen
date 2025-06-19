@@ -1,6 +1,13 @@
+// SPDX-FileCopyrightText: 2024 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Tayrtahn <tayrtahn@gmail.com>
+// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 using Content.Shared.Examine;
 using Content.Shared.Interaction;
 using Content.Shared.Lathe;
+using Content.Shared.NameModifier.EntitySystems;
 using Content.Shared.Popups;
 using Content.Shared.Random.Helpers;
 using Content.Shared.Research.Components;
@@ -21,6 +28,7 @@ public sealed class TechnologyDiskSystem : EntitySystem
     [Dependency] private readonly SharedPopupSystem _popup = default!;
     [Dependency] private readonly SharedResearchSystem _research = default!;
     [Dependency] private readonly SharedLatheSystem _lathe = default!;
+    [Dependency] private readonly NameModifierSystem _nameModifier = default!;
 
     public override void Initialize()
     {
@@ -29,6 +37,7 @@ public sealed class TechnologyDiskSystem : EntitySystem
         SubscribeLocalEvent<TechnologyDiskComponent, MapInitEvent>(OnMapInit);
         SubscribeLocalEvent<TechnologyDiskComponent, AfterInteractEvent>(OnAfterInteract);
         SubscribeLocalEvent<TechnologyDiskComponent, ExaminedEvent>(OnExamine);
+        SubscribeLocalEvent<TechnologyDiskComponent, RefreshNameModifiersEvent>(OnRefreshNameModifiers);
     }
 
     private void OnMapInit(Entity<TechnologyDiskComponent> ent, ref MapInitEvent args)
@@ -56,6 +65,7 @@ public sealed class TechnologyDiskSystem : EntitySystem
         ent.Comp.Recipes = [];
         ent.Comp.Recipes.Add(_random.Pick(techs));
         Dirty(ent);
+        _nameModifier.RefreshNameModifiers(ent.Owner);
     }
 
     private void OnAfterInteract(Entity<TechnologyDiskComponent> ent, ref AfterInteractEvent args)
@@ -91,5 +101,17 @@ public sealed class TechnologyDiskSystem : EntitySystem
                 message += " " + Loc.GetString("tech-disk-examine-more");
         }
         args.PushMarkup(message);
+    }
+
+    private void OnRefreshNameModifiers(Entity<TechnologyDiskComponent> entity, ref RefreshNameModifiersEvent args)
+    {
+        if (entity.Comp.Recipes != null)
+        {
+            foreach (var recipe in entity.Comp.Recipes)
+            {
+                var proto = _protoMan.Index(recipe);
+                args.AddModifier("tech-disk-name-format", extraArgs: ("technology", _lathe.GetRecipeName(proto)));
+            }
+        }
     }
 }

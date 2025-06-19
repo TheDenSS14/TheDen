@@ -1,3 +1,8 @@
+# SPDX-FileCopyrightText: 2025 portfiend <109661617+portfiend@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 ### SNOUTS ####
 
 ### CANID ###
@@ -48,6 +53,10 @@ marking-SnoutFWolfAlt-snout_fwolfalt = Wolf Snout Alt F
 
 marking-SnoutWolfAlt = Wolf Snout Alt
 marking-SnoutWolfAlt-snout_wolfalt = Wolf Snout Alt
+
+marking-SnoutSCanid = Canid Snout S
+marking-SnoutSCanid-snout_scanid_primary = Primary
+marking-SnoutSCanid-snout_scanid_secondary = Secondary
 
 marking-SnoutFSCanid = Canid Snout FS
 marking-SnoutFSCanid-snout_fscanid_primary = Canid Snout FS (Primary)
@@ -533,8 +542,15 @@ marking-TailSevenKitsune-m_tail_sevenkitsune_FRONT_primary = Kitsune, 7 Tail (Pr
 marking-TailSevenKitsune-m_tail_sevenkitsune_FRONT_secondary = Kitsune, 7 Tail (Secondary)
 marking-TailSevenKitsune = Kitsune, 7 Tail
 
-marking-TailSharkNoFin_tail_sharknofin_BEHIND_primary = Shark Tail w/o Fin
-marking-TailSharkNoFin_tail_sharknofin_FRONT_primary = Shark Tail w/o Fin
+marking-TailSharkADT-shark_tail = Tail
+marking-TailSharkADT-shark_fin = Fin
+marking-TailSharkADT = Shark Tail Alt
+
+marking-TailShark-m_tail_shark_FRONT_primary = Tail
+marking-TailShark = Shark Tail
+
+marking-TailSharkNoFin-tail_sharknofin_BEHIND_primary = Shark Tail w/o Fin
+marking-TailSharkNoFin-tail_sharknofin_FRONT_primary = Shark Tail w/o Fin
 marking-TailSharkNoFin = Shark Tail w/o Fin
 
 marking-TailShepherd-m_tail_sheperd_BEHIND_secondary = German Shepherd (Primary)

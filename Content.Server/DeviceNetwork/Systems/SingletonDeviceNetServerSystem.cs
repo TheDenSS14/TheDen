@@ -1,9 +1,16 @@
-﻿using System.Diagnostics.CodeAnalysis;
+// SPDX-FileCopyrightText: 2024 Julian Giebel <juliangiebel@live.de>
+// SPDX-FileCopyrightText: 2024 SimpleStation14 <130339894+SimpleStation14@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
+using System.Diagnostics.CodeAnalysis;
 using Content.Server.DeviceNetwork.Components;
 using Content.Server.Medical.CrewMonitoring;
-using Content.Server.Power.Components;
 using Content.Server.Station.Systems;
 using Content.Shared.Power;
+using Content.Shared.DeviceNetwork.Components;
 
 namespace Content.Server.DeviceNetwork.Systems;
 
@@ -63,7 +70,7 @@ public sealed class SingletonDeviceNetServerSystem : EntitySystem
 
             last = (uid, server, device);
 
-            if (!server.Active)
+            if (!server.Active || string.IsNullOrEmpty(device.Address))
                 continue;
 
             address = device.Address;

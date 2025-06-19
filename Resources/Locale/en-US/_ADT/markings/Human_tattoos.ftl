@@ -1,3 +1,8 @@
+# SPDX-FileCopyrightText: 2025 BloodfiendishOperator <141253729+Diggy0@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 marking-HumanTattooArmImheartmomL = "I Love Mom" Tattoo (Left Arm)
 marking-HumanTattooArmImheartmomR = "I Love Mom" Tattoo (Right Arm)
 marking-HumanTattooChurchdomes = Church Dome Tattoo

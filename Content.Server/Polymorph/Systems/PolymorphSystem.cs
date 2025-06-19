@@ -1,12 +1,39 @@
+// SPDX-FileCopyrightText: 2023 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Moony <moony@hellomouse.net>
+// SPDX-FileCopyrightText: 2023 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Pieter-Jan Briers <pieterjan.briers@gmail.com>
+// SPDX-FileCopyrightText: 2023 ShadowCommander <10494922+ShadowCommander@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 TemporalOroboros <TemporalOroboros@gmail.com>
+// SPDX-FileCopyrightText: 2023 Visne <39844191+Visne@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 deltanedas <39013340+deltanedas@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 deltanedas <@deltanedas:kde.org>
+// SPDX-FileCopyrightText: 2024 AJCM-git <60196617+AJCM-git@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Bakke <luringens@protonmail.com>
+// SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT <77995199+DEATHB4DEFEAT@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Mnemotechnican <69920617+Mnemotechnician@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 VMSolidus <evilexecutive@gmail.com>
+// SPDX-FileCopyrightText: 2024 keronshb <54602815+keronshb@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 M3739 <47579354+M3739@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 RedFoxIV <38788538+RedFoxIV@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 sleepyyapril <flyingkarii@gmail.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 using Content.Server.Actions;
 using Content.Server.Humanoid;
 using Content.Server.Inventory;
 using Content.Server.Mind.Commands;
 using Content.Server.Nutrition;
 using Content.Server.Polymorph.Components;
+using Content.Shared._DV.Polymorph; // DeltaV
 using Content.Shared.Actions;
 using Content.Shared.Buckle;
 using Content.Shared.Damage;
+using Content.Shared.Damage.Systems; // DeltaV
 using Content.Shared.Destructible;
 using Content.Shared.Hands.EntitySystems;
 using Content.Shared.IdentityManagement;
@@ -36,6 +63,7 @@ public sealed partial class PolymorphSystem : EntitySystem
     [Dependency] private readonly ActionsSystem _actions = default!;
     [Dependency] private readonly AudioSystem _audio = default!;
     [Dependency] private readonly SharedBuckleSystem _buckle = default!;
+    [Dependency] private readonly StaminaSystem _stamina = default!; // DeltaV
     [Dependency] private readonly ContainerSystem _container = default!;
     [Dependency] private readonly DamageableSystem _damageable = default!;
     [Dependency] private readonly HumanoidAppearanceSystem _humanoid = default!;
@@ -236,7 +264,15 @@ public sealed partial class PolymorphSystem : EntitySystem
             damage != null)
         {
             _damageable.SetDamage(child, damageParent, damage);
+
+            // DeltaV - Transfer Stamina Damage
+            var staminaDamage = _stamina.GetStaminaDamage(uid);
+            _stamina.TakeStaminaDamage(child, staminaDamage);
         }
+
+        // DeltaV - Drop MindContainer entities on polymorph
+        var beforePolymorphedEv = new BeforePolymorphedEvent();
+        RaiseLocalEvent(uid, ref beforePolymorphedEv);
 
         if (configuration.Inventory == PolymorphInventoryChange.Transfer)
         {
@@ -279,6 +315,10 @@ public sealed partial class PolymorphSystem : EntitySystem
         if (PausedMap != null)
             _transform.SetParent(uid, targetTransformComp, PausedMap.Value);
 
+        // Raise an event to inform anything that wants to know about the entity swap
+        var ev = new PolymorphedEvent(uid, child, false);
+        RaiseLocalEvent(uid, ref ev);
+
         return child;
     }
 
@@ -312,6 +352,10 @@ public sealed partial class PolymorphSystem : EntitySystem
             damage != null)
         {
             _damageable.SetDamage(parent, damageParent, damage);
+
+            // DeltaV - Transfer Stamina Damage
+            var staminaDamage = _stamina.GetStaminaDamage(uid);
+            _stamina.TakeStaminaDamage(parent, staminaDamage);
         }
 
         if (component.Configuration.Inventory == PolymorphInventoryChange.Transfer)
@@ -347,6 +391,10 @@ public sealed partial class PolymorphSystem : EntitySystem
 
         // if an item polymorph was picked up, put it back down after reverting
         _transform.AttachToGridOrMap(parent, parentXform);
+
+        // Raise an event to inform anything that wants to know about the entity swap
+        var ev = new PolymorphedEvent(uid, parent, true);
+        RaiseLocalEvent(uid, ref ev);
 
         _popup.PopupEntity(Loc.GetString("polymorph-revert-popup-generic",
                 ("parent", Identity.Entity(uid, EntityManager)),

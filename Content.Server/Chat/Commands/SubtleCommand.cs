@@ -1,3 +1,22 @@
+// SPDX-FileCopyrightText: 2021 Acruid <shatter66@gmail.com>
+// SPDX-FileCopyrightText: 2021 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2021 Vera Aguilera Puerto <gradientvera@outlook.com>
+// SPDX-FileCopyrightText: 2021 Visne <39844191+Visne@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2021 metalgearsloth <metalgearsloth@gmail.com>
+// SPDX-FileCopyrightText: 2022 Clyybber <darkmine956@gmail.com>
+// SPDX-FileCopyrightText: 2022 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 mirrorcult <lunarautomaton6@gmail.com>
+// SPDX-FileCopyrightText: 2022 wrexbe <81056464+wrexbe@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 20kdc <asdd2808@gmail.com>
+// SPDX-FileCopyrightText: 2023 Debug <49997488+DebugOk@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 HerCoyote23 <131214189+HerCoyote23@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 FoxxoTrystan <trystan.garnierhein@gmail.com>
+// SPDX-FileCopyrightText: 2025 Cami <147159915+Camdot@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 using System.Linq;
 using Content.Server.Chat.Systems;
 using Content.Shared.Administration;
@@ -91,41 +110,26 @@ namespace Content.Server.Chat.Commands
 
         public void Execute(IConsoleShell shell, string argStr, string[] arrayArgs)
         {
-            string? color = null;
+            var args = argStr.Split(" ");
 
-            var separateNameAndMessage = false;
-            var args = arrayArgs.ToList();
-
-            if (args.Count < 3)
+            if (args.Length < 4)
             {
                 shell.WriteError("You must provide at least 3 arguments.");
                 return;
             }
 
-            if (args[0] != "none" && args[0].Length > 6 && args[0].Length < 8)
-            {
-                if (args[0].StartsWith("#") && args[0].Length == 7)
-                    color = args[0];
+            string colorStr = args[1];
+            bool separateNameAndMessage = args[2].ToLower() == "true";
+            
+            if (!colorStr.StartsWith("#"))
+                colorStr = "#" + colorStr;
 
-                if (args[0].Length == 6)
-                    color = $"#{args[0]}";
-            }
-
-            if (args[1].ToLower() == "true")
-            {
-                separateNameAndMessage = true;
-            }
-
-            if (args[1].ToLower() == "false" && color == null) // scuffed
-                args.RemoveAt(1);
-
-            if (separateNameAndMessage || color != null)
-            {
-                args.RemoveAt(0);
-                args.RemoveAt(0);
-            }
-
-            SubtleUtilities.RunSubtle(shell, args.ToArray(), color ?? "#d3d3ff", separateNameAndMessage);
+            if (!Color.TryParse(colorStr, out _))
+                colorStr = "#d3d3ff";
+            
+            var messageArr = args.Skip(3).ToArray();
+            
+            SubtleUtilities.RunSubtle(shell, messageArr, colorStr, separateNameAndMessage);
         }
     }
 }

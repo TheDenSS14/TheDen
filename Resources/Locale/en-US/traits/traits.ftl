@@ -1,3 +1,53 @@
+# SPDX-FileCopyrightText: 2022 Moony <moony@hellomouse.net>
+# SPDX-FileCopyrightText: 2023 Morb <14136326+Morb0@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 OctoRocket <88291550+OctoRocket@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Raitononai <136900466+Raitononai@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Vasilis <vasilis@pikachu.systems>
+# SPDX-FileCopyrightText: 2023 dahnte <70238020+dahnte@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Debug <49997488+DebugOk@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 FoxxoTrystan <45297731+FoxxoTrystan@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 FoxxoTrystan <trystan.garnierhein@gmail.com>
+# SPDX-FileCopyrightText: 2024 KyuPolaris <tabi@kyuudev.me>
+# SPDX-FileCopyrightText: 2024 Memeji <greyalphawolf7@gmail.com>
+# SPDX-FileCopyrightText: 2024 Miller <151492849+CilliePaint@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Mnemotechnican <69920617+Mnemotechnician@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Pierson Arnold <greyalphawolf7@gmail.com>
+# SPDX-FileCopyrightText: 2024 Scribbles0 <91828755+Scribbles0@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 ShatteredSwords <135023515+ShatteredSwords@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 SimpleStation14 <130339894+SimpleStation14@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 UBlueberry <161545003+UBlueberry@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Ubaser <134914314+UbaserB@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 WarMechanic <69510347+WarMechanic@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 cynical <superpilotboy@gmail.com>
+# SPDX-FileCopyrightText: 2024 deathride58 <deathride58@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 lzk <124214523+lzk228@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Angelo Fallaria <ba.fallaria@gmail.com>
+# SPDX-FileCopyrightText: 2025 Blitz <73762869+BlitzTheSquishy@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 BloodfiendishOperator <141253729+Diggy0@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 BramvanZijp <56019239+BramvanZijp@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 DEATHB4DEFEAT <77995199+DEATHB4DEFEAT@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 EctoplasmIsGood <109397347+EctoplasmIsGood@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 GNUtopia <93669372+GNUtopia@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 GNUtopia <erainach14@gmail.com>
+# SPDX-FileCopyrightText: 2025 MajorMoth <61519600+MajorMoth@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Peptide90 <78795277+Peptide90@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Raikyr0 <Kurohana@hotmail.com.au>
+# SPDX-FileCopyrightText: 2025 Rosycup <178287475+Rosycup@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 SX-7 <92227810+SX-7@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Sapphire <98045970+sapphirescript@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 SixplyDev <einlichen@gmail.com>
+# SPDX-FileCopyrightText: 2025 Skubman <ba.fallaria@gmail.com>
+# SPDX-FileCopyrightText: 2025 Tabitha <64847293+KyuPolaris@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Timfa <timfalken@hotmail.com>
+# SPDX-FileCopyrightText: 2025 VMSolidus <evilexecutive@gmail.com>
+# SPDX-FileCopyrightText: 2025 foxcurl <kitshoffeitt@gmail.com>
+# SPDX-FileCopyrightText: 2025 portfiend <109661617+portfiend@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <flyingkarii@gmail.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 trait-name-Blindness = Blindness
 trait-description-Blindness = You are legally blind, and can't see clearly past a few meters in front of you.
 trait-examined-Blindness = [color=lightblue]{CAPITALIZE(POSS-ADJ($target))} eyes are glassy and unfocused. It doesn't seem like {SUBJECT($target)} can see you well, if at all.[/color]
@@ -458,6 +508,12 @@ trait-description-Arachnic = The language of arachnids is composed of mostly cli
 trait-name-Nehina = Nēhina
 trait-description-Nehina =  A language spoken by the Feroxi, well adapted to speaking under the waters of ocean planets.
 
+trait-name-Kagebun = Kagebun
+trait-description-Kagebun = 
+    An ancient language primarily used by the yōkai, originating from their supernatural roots. 
+    To the uninitiated, it is a chorus of sounds ranging from eerie whispers to ritualistic chanting.
+    To those who speak it, it is a living tongue that links them to the spirit world and their ancient pacts.
+
 trait-name-Rodentian = Rodentian
 trait-description-Rodentian =  A language mostly consisting of squeaks spoken by Rodentia if all shapes and sizes.
 
@@ -686,3 +742,12 @@ trait-description-Caprine = A language spoken by the Ovinia, the language is com
 
 trait-name-Synthetic = Synthetic
 trait-description-Synthetic = You are a biomechanical construct, who bleeds coolant and is notified of ongoing Ion Storms.
+
+trait-name-NoContractions = No Contractions
+trait-description-NoContractions = You are (mostly) incapable of using contractions.
+
+trait-name-SharpInflection = Sharp Inflection
+trait-description-SharpInflection = You mumble... When you aren't shouting!!
+
+trait-name-Monotonous = Monotonous
+trait-description-Monotonous = You speak in a way that others see as total disinterest. Always.

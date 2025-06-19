@@ -1,3 +1,12 @@
+# SPDX-FileCopyrightText: 2025 Blitz <73762869+BlitzTheSquishy@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 BloodfiendishOperator <141253729+Diggy0@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Jakumba <jkmcbennett@hotmail.com>
+# SPDX-FileCopyrightText: 2025 Rosycup <178287475+Rosycup@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Tabitha <64847293+KyuPolaris@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 ##i did markings for a lot of different species so for now theyre are all here##
 ##if no one else does it ill do a cleanup of all marking coding in a few months##
 ##-carousel##
@@ -135,7 +144,7 @@
   id: DwarfBearCheeks
   bodyPart: Head
   markingCategory: Head
-  speciesRestriction: [ Dwarf, Human, Felinid, Canid, Oni, Slimeperson ]
+  speciesRestriction: [ Dwarf, Human, Felinid, Canid, Oni, Slimeperson, Kitsune ]
   forcedColoring: true
   followSkinColor: false
   sprites:
@@ -147,7 +156,7 @@
   id: DwarfHeadGlow
   bodyPart: Head
   markingCategory: Head
-  speciesRestriction: [ Dwarf, Human, Felinid, Canid, Oni, Slimeperson ]
+  speciesRestriction: [ Dwarf, Human, Felinid, Canid, Oni, Slimeperson, Kitsune ]
   forcedColoring: true
   followSkinColor: false
   sprites:
@@ -159,7 +168,7 @@
   id: DwarfConstellationHead
   bodyPart: Head
   markingCategory: Overlay
-  speciesRestriction: [ Dwarf, Human, Felinid, Canid, Oni, Slimeperson ]
+  speciesRestriction: [ Dwarf, Human, Felinid, Canid, Oni, Slimeperson, Kitsune ]
   coloring:
     default:
       type:
@@ -175,7 +184,7 @@
   id: DwarfConstellationChest
   bodyPart: Chest
   markingCategory: Overlay
-  speciesRestriction: [ Dwarf, Human, Felinid, Canid, Oni, Slimeperson ]
+  speciesRestriction: [ Dwarf, Human, Felinid, Canid, Oni, Slimeperson, Kitsune ]
   coloring:
     default:
       type:
@@ -191,7 +200,7 @@
   id: DwarfConstellationLArm
   bodyPart: LArm
   markingCategory: Overlay
-  speciesRestriction: [ Dwarf, Human, Felinid, Canid, Oni, Slimeperson ]
+  speciesRestriction: [ Dwarf, Human, Felinid, Canid, Oni, Slimeperson, Kitsune ]
   coloring:
     default:
       type:
@@ -207,7 +216,7 @@
   id: DwarfConstellationLHand
   bodyPart: LHand
   markingCategory: Overlay
-  speciesRestriction: [ Dwarf, Human, Felinid, Canid, Oni, Slimeperson ]
+  speciesRestriction: [ Dwarf, Human, Felinid, Canid, Oni, Slimeperson, Kitsune ]
   coloring:
     default:
       type:
@@ -223,7 +232,7 @@
   id: DwarfConstellationRArm
   bodyPart: RArm
   markingCategory: Overlay
-  speciesRestriction: [ Dwarf, Human, Felinid, Canid, Oni, Slimeperson ]
+  speciesRestriction: [ Dwarf, Human, Felinid, Canid, Oni, Slimeperson, Kitsune ]
   coloring:
     default:
       type:
@@ -239,7 +248,7 @@
   id: DwarfConstellationRHand
   bodyPart: RHand
   markingCategory: Overlay
-  speciesRestriction: [ Dwarf, Human, Felinid, Canid, Oni, Slimeperson ]
+  speciesRestriction: [ Dwarf, Human, Felinid, Canid, Oni, Slimeperson, Kitsune ]
   coloring:
     default:
       type:
@@ -255,7 +264,7 @@
   id: DwarfConstellationLLeg
   bodyPart: LLeg
   markingCategory: Overlay
-  speciesRestriction: [ Dwarf, Human, Felinid, Canid, Oni, Slimeperson ]
+  speciesRestriction: [ Dwarf, Human, Felinid, Canid, Oni, Slimeperson, Kitsune ]
   coloring:
     default:
       type:
@@ -271,7 +280,7 @@
   id: DwarfConstellationLFoot
   bodyPart: LFoot
   markingCategory: Overlay
-  speciesRestriction: [ Dwarf, Human, Felinid, Canid, Oni, Slimeperson ]
+  speciesRestriction: [ Dwarf, Human, Felinid, Canid, Oni, Slimeperson, Kitsune ]
   coloring:
     default:
       type:
@@ -287,7 +296,7 @@
   id: DwarfConstellationRLeg
   bodyPart: RLeg
   markingCategory: Overlay
-  speciesRestriction: [ Dwarf, Human, Felinid, Canid, Oni, Slimeperson ]
+  speciesRestriction: [ Dwarf, Human, Felinid, Canid, Oni, Slimeperson, Kitsune ]
   coloring:
     default:
       type:
@@ -303,7 +312,7 @@
   id: DwarfConstellationRFoot
   bodyPart: RFoot
   markingCategory: Overlay
-  speciesRestriction: [ Dwarf, Human, Felinid, Canid, Oni, Slimeperson ]
+  speciesRestriction: [ Dwarf, Human, Felinid, Canid, Oni, Slimeperson, Kitsune ]
   coloring:
     default:
       type:
@@ -319,7 +328,7 @@
   id: DwarfChestHair
   bodyPart: Chest
   markingCategory: Chest
-  speciesRestriction: [ Dwarf, Human, Felinid, Canid, Oni, Slimeperson ]
+  speciesRestriction: [ Dwarf, Human, Felinid, Canid, Oni, Slimeperson, Kitsune ]
   sprites:
   - sprite: _Impstation/Mobs/Customization/markingsbundle1.rsi
     state: dwarfchesthair
@@ -328,7 +337,7 @@
   id: DwarfArmHair
   bodyPart: LArm
   markingCategory: LeftArm
-  speciesRestriction: [ Dwarf, Human, Felinid, Canid, Oni, Slimeperson ]
+  speciesRestriction: [ Dwarf, Human, Felinid, Canid, Oni, Slimeperson, Kitsune ]
   sprites:
   - sprite: _Impstation/Mobs/Customization/markingsbundle1.rsi
     state: dwarfarmhair
@@ -337,7 +346,7 @@
   id: DwarfLegHair
   bodyPart: LLeg
   markingCategory: LeftLeg
-  speciesRestriction: [ Dwarf, Human, Felinid, Canid, Oni, Slimeperson ]
+  speciesRestriction: [ Dwarf, Human, Felinid, Canid, Oni, Slimeperson, Kitsune ]
   sprites:
   - sprite: _Impstation/Mobs/Customization/markingsbundle1.rsi
     state: dwarfleghair
@@ -346,7 +355,7 @@
   id: DwarfTattooShootingStar
   bodyPart: Chest
   markingCategory: Chest
-  speciesRestriction: [ Dwarf, Human, Felinid, Canid, Oni, Slimeperson ]
+  speciesRestriction: [ Dwarf, Human, Felinid, Canid, Oni, Slimeperson, Kitsune ]
   coloring:
     default:
       type:
@@ -361,7 +370,7 @@
   id: DwarfMarkBear
   bodyPart: Chest
   markingCategory: Chest
-  speciesRestriction: [ Dwarf, Human, Felinid, Canid, Oni, Slimeperson ]
+  speciesRestriction: [ Dwarf, Human, Felinid, Canid, Oni, Slimeperson, Kitsune ]
   coloring:
     default:
       type:
@@ -376,7 +385,7 @@
   id: DwarfMarkKangarooLHand
   bodyPart: LHand
   markingCategory: LeftHand
-  speciesRestriction: [ Dwarf, Human, Felinid, Canid, Oni, Slimeperson ]
+  speciesRestriction: [ Dwarf, Human, Felinid, Canid, Oni, Slimeperson, Kitsune ]
   coloring:
     default:
       type:
@@ -391,7 +400,7 @@
   id: DwarfMarkKangarooRHand
   bodyPart: RHand
   markingCategory: RightHand
-  speciesRestriction: [ Dwarf, Human, Felinid, Canid, Oni, Slimeperson ]
+  speciesRestriction: [ Dwarf, Human, Felinid, Canid, Oni, Slimeperson, Kitsune ]
   coloring:
     default:
       type:
@@ -406,7 +415,7 @@
   id: DwarfMarkCobra
   bodyPart: Chest
   markingCategory: Chest
-  speciesRestriction: [ Dwarf, Human, Felinid, Canid, Oni, Slimeperson ]
+  speciesRestriction: [ Dwarf, Human, Felinid, Canid, Oni, Slimeperson, Kitsune ]
   coloring:
     default:
       type:
@@ -421,7 +430,7 @@
   id: DwarfMarkSpider
   bodyPart: Chest
   markingCategory: Chest
-  speciesRestriction: [ Dwarf, Human, Felinid, Canid, Oni, Slimeperson ]
+  speciesRestriction: [ Dwarf, Human, Felinid, Canid, Oni, Slimeperson, Kitsune ]
   coloring:
     default:
       type:
@@ -1020,7 +1029,7 @@
   id: VitiligoHeadL
   bodyPart: Head
   markingCategory: Head
-  speciesRestriction: [ Human, Dwarf, Oni, Felinid, Canid] # Frontier: add  Oni, Felinid - The Den - Add Canid
+  speciesRestriction: [ Human, Dwarf, Oni, Felinid, Canid, Kitsune] # Frontier: add  Oni, Felinid - The Den - Add Canid
   forcedColoring: true
   coloring:
     default:
@@ -1035,7 +1044,7 @@
   id: VitiligoHeadR
   bodyPart: Head
   markingCategory: Head
-  speciesRestriction: [ Human, Dwarf, Oni, Felinid, Canid] # Frontier: add  Oni, Felinid - The Den - Add Canid
+  speciesRestriction: [ Human, Dwarf, Oni, Felinid, Canid, Kitsune] # Frontier: add  Oni, Felinid - The Den - Add Canid
   forcedColoring: true
   coloring:
     default:
@@ -1050,7 +1059,7 @@
   id: VitiligoHeadJaw
   bodyPart: Head
   markingCategory: Head
-  speciesRestriction: [ Human, Dwarf, Oni, Felinid, Canid] # Frontier: add  Oni, Felinid - The Den - Add Canid
+  speciesRestriction: [ Human, Dwarf, Oni, Felinid, Canid, Kitsune] # Frontier: add  Oni, Felinid - The Den - Add Canid
   forcedColoring: true
   coloring:
     default:
@@ -1065,7 +1074,7 @@
   id: VitiligoChestF
   bodyPart: Chest
   markingCategory: Chest
-  speciesRestriction: [ Human, Dwarf, Oni, Oni, Felinid, Canid] # Frontier: add  Oni, Felinid - The Den - Add Canid
+  speciesRestriction: [ Human, Dwarf, Oni, Oni, Felinid, Canid, Kitsune] # Frontier: add  Oni, Felinid - The Den - Add Canid
   forcedColoring: true
   coloring:
     default:
@@ -1080,7 +1089,7 @@
   id: VitiligoChestSpots
   bodyPart: Chest
   markingCategory: Chest
-  speciesRestriction: [ Human, Dwarf, Oni, Felinid, Canid] # Frontier: add  Oni, Felinid - The Den - Add Canid
+  speciesRestriction: [ Human, Dwarf, Oni, Felinid, Canid, Kitsune] # Frontier: add  Oni, Felinid - The Den - Add Canid
   forcedColoring: true
   coloring:
     default:
@@ -1095,7 +1104,7 @@
   id: VitiligoArmR
   bodyPart: RArm
   markingCategory: RightArm
-  speciesRestriction: [ Human, Dwarf, Oni, Felinid, Canid] # Frontier: add  Oni, Felinid - The Den - Add Canid
+  speciesRestriction: [ Human, Dwarf, Oni, Felinid, Canid, Kitsune] # Frontier: add  Oni, Felinid - The Den - Add Canid
   forcedColoring: true
   coloring:
     default:
@@ -1110,7 +1119,7 @@
   id: VitiligoArmL
   bodyPart: LArm
   markingCategory: LeftArm
-  speciesRestriction: [ Human, Dwarf, Oni, Felinid, Canid] # Frontier: add  Oni, Felinid - The Den - Add Canid
+  speciesRestriction: [ Human, Dwarf, Oni, Felinid, Canid, Kitsune] # Frontier: add  Oni, Felinid - The Den - Add Canid
   forcedColoring: true
   coloring:
     default:
@@ -1125,7 +1134,7 @@
   id: VitiligoHandR
   bodyPart: RHand
   markingCategory: RightHand
-  speciesRestriction: [ Human, Dwarf, Oni, Felinid, Canid] # Frontier: add  Oni, Felinid - The Den - Add Canid
+  speciesRestriction: [ Human, Dwarf, Oni, Felinid, Canid, Kitsune] # Frontier: add  Oni, Felinid - The Den - Add Canid
   forcedColoring: true
   coloring:
     default:
@@ -1140,7 +1149,7 @@
   id: VitiligoHandL
   bodyPart: LHand
   markingCategory: LeftHand
-  speciesRestriction: [ Human, Dwarf, Oni, Felinid, Canid] # Frontier: add  Oni, Felinid - The Den - Add Canid
+  speciesRestriction: [ Human, Dwarf, Oni, Felinid, Canid, Kitsune] # Frontier: add  Oni, Felinid - The Den - Add Canid
   forcedColoring: true
   coloring:
     default:
@@ -1155,7 +1164,7 @@
   id: VitiligoLegR
   bodyPart: RFoot
   markingCategory: RightLeg
-  speciesRestriction: [ Human, Dwarf, Oni, Felinid, Canid] # Frontier: add  Oni, Felinid - The Den - Add Canid
+  speciesRestriction: [ Human, Dwarf, Oni, Felinid, Canid, Kitsune] # Frontier: add  Oni, Felinid - The Den - Add Canid
   forcedColoring: true
   coloring:
     default:
@@ -1170,7 +1179,7 @@
   id: VitiligoLegL
   bodyPart: LLeg
   markingCategory: LeftLeg
-  speciesRestriction: [ Human, Dwarf, Oni, Felinid, Canid] # Frontier: add  Oni, Felinid - The Den - Add Canid
+  speciesRestriction: [ Human, Dwarf, Oni, Felinid, Canid, Kitsune] # Frontier: add  Oni, Felinid - The Den - Add Canid
   forcedColoring: true
   coloring:
     default:

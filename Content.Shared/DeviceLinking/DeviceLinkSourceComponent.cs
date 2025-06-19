@@ -1,3 +1,12 @@
+// SPDX-FileCopyrightText: 2023 AJCM-git <60196617+AJCM-git@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Julian Giebel <juliangiebel@live.de>
+// SPDX-FileCopyrightText: 2024 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 deltanedas <39013340+deltanedas@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
 
@@ -12,12 +21,12 @@ public sealed partial class DeviceLinkSourceComponent : Component
     /// The ports the device link source sends signals from
     /// </summary>
     [DataField]
-    public HashSet<ProtoId<SourcePortPrototype>>? Ports;
+    public HashSet<ProtoId<SourcePortPrototype>> Ports = new();
 
     /// <summary>
-    /// A list of sink uids that got linked for each port
+    /// Dictionary mapping each port to a set of linked sink entities.
     /// </summary>
-    [ViewVariables]
+    [ViewVariables] // This is not serialized as it can be constructed from LinkedPorts
     public Dictionary<ProtoId<SourcePortPrototype>, HashSet<EntityUid>> Outputs = new();
 
     /// <summary>
@@ -32,7 +41,7 @@ public sealed partial class DeviceLinkSourceComponent : Component
     /// The list of source to sink ports for each linked sink entity for easier managing of links
     /// </summary>
     [DataField]
-    public Dictionary<EntityUid, HashSet<(ProtoId<SourcePortPrototype> source, ProtoId<SinkPortPrototype> sink)>> LinkedPorts = new();
+    public Dictionary<EntityUid, HashSet<(ProtoId<SourcePortPrototype> Source, ProtoId<SinkPortPrototype> Sink)>> LinkedPorts = new();
 
     /// <summary>
     ///     Limits the range devices can be linked across.

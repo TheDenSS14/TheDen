@@ -1,4 +1,9 @@
-﻿using System.Threading;
+// SPDX-FileCopyrightText: 2023 Ygg01 <y.laughing.man.y@gmail.com>
+// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+//
+// SPDX-License-Identifier: MIT
+
+using System.Threading;
 using Content.Shared.Tools;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype;
 

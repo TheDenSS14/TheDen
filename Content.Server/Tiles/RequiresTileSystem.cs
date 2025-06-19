@@ -1,3 +1,11 @@
+// SPDX-FileCopyrightText: 2023 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Falcon <falcon@zigtag.dev>
+// SPDX-FileCopyrightText: 2025 Tayrtahn <tayrtahn@gmail.com>
+// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 sleepyyapril <flyingkarii@gmail.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 using Content.Shared.Tiles;
 using Robust.Shared.Map.Components;
 using Robust.Shared.Map.Enumerators;
@@ -26,16 +34,19 @@ public sealed class RequiresTileSystem : EntitySystem
         if (!TryComp<MapGridComponent>(ev.Entity, out var grid))
             return;
 
-        var anchored = _maps.GetAnchoredEntitiesEnumerator(ev.Entity, grid, ev.NewTile.GridIndices);
-        if (anchored.Equals(AnchoredEntitiesEnumerator.Empty))
-            return;
-
-        while (anchored.MoveNext(out var ent))
+        foreach (var change in ev.Changes)
         {
-            if (!_tilesQuery.HasComponent(ent.Value))
-                continue;
+            var anchored = _maps.GetAnchoredEntitiesEnumerator(ev.Entity, grid, change.GridIndices);
+            if (anchored.Equals(AnchoredEntitiesEnumerator.Empty))
+                return;
 
-            QueueDel(ent.Value);
+            while (anchored.MoveNext(out var ent))
+            {
+                if (!_tilesQuery.HasComponent(ent.Value))
+                    continue;
+
+                QueueDel(ent.Value);
+            }
         }
     }
 }

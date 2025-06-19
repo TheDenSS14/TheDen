@@ -1,3 +1,13 @@
+// SPDX-FileCopyrightText: 2024 Fildrance <fildrance@gmail.com>
+// SPDX-FileCopyrightText: 2024 ScarKy0 <106310278+ScarKy0@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 chromiumboy <50505512+chromiumboy@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 VMSolidus <evilexecutive@gmail.com>
+// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 sleepyyapril <flyingkarii@gmail.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 using Content.Shared.ActionBlocker;
 using Content.Shared.Actions;
 using Content.Shared.Administration.Managers;
@@ -29,6 +39,7 @@ using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization;
 using Robust.Shared.Timing;
 using System.Diagnostics.CodeAnalysis;
+using Robust.Shared.Utility;
 
 namespace Content.Shared.Silicons.StationAi;
 
@@ -57,6 +68,7 @@ public abstract partial class SharedStationAiSystem : EntitySystem
     [Dependency] private readonly   SharedTransformSystem _xforms = default!;
     [Dependency] private readonly   SharedUserInterfaceSystem _uiSystem = default!;
     [Dependency] private readonly   StationAiVisionSystem _vision = default!;
+    [Dependency] private readonly   IPrototypeManager _protoManager = default!;
 
     // StationAiHeld is added to anything inside of an AI core.
     // StationAiHolder indicates it can hold an AI positronic brain (e.g. holocard / core).
@@ -83,6 +95,7 @@ public abstract partial class SharedStationAiSystem : EntitySystem
         InitializeAirlock();
         InitializeHeld();
         InitializeLight();
+        InitializeCustomization();
 
         SubscribeLocalEvent<StationAiWhitelistComponent, BoundUserInterfaceCheckRangeEvent>(OnAiBuiCheck);
 
@@ -108,28 +121,38 @@ public abstract partial class SharedStationAiSystem : EntitySystem
 
     private void OnCoreVerbs(Entity<StationAiCoreComponent> ent, ref GetVerbsEvent<Verb> args)
     {
-        if (!_admin.IsAdmin(args.User) ||
-            TryGetHeld((ent.Owner, ent.Comp), out _))
-        {
-            return;
-        }
-
         var user = args.User;
 
-        args.Verbs.Add(new Verb()
+        // Admin option to take over the station AI core
+        if (_admin.IsAdmin(args.User) &&
+            !TryGetHeld((ent.Owner, ent.Comp), out _))
         {
-            Text = Loc.GetString("station-ai-takeover"),
-            Category = VerbCategory.Debug,
-            Act = () =>
+            args.Verbs.Add(new Verb()
             {
-                if (!_containers.TryGetContainer(ent, StationAiCoreComponent.Container, out _))
-                    return;
+                Text = Loc.GetString("station-ai-takeover"),
+                Category = VerbCategory.Debug,
+                Act = () =>
+                {
+                    if (!_containers.TryGetContainer(ent, StationAiCoreComponent.Container, out _))
+                        return;
 
-                var brain = SpawnInContainerOrDrop(DefaultAi, ent.Owner, StationAiCoreComponent.Container);
-                _mind.ControlMob(user, brain);
-            },
-            Impact = LogImpact.High,
-        });
+                    var brain = SpawnInContainerOrDrop(DefaultAi, ent.Owner, StationAiCoreComponent.Container);
+                    _mind.ControlMob(user, brain);
+                },
+                Impact = LogImpact.High,
+            });
+        }
+
+        // Option to open the station AI customization menu
+        if (TryGetHeld((ent, ent.Comp), out var insertedAi) && insertedAi == user)
+        {
+            args.Verbs.Add(new Verb()
+            {
+                Text = Loc.GetString("station-ai-customization-menu"),
+                Act = () => _uiSystem.TryOpenUi(ent.Owner, StationAiCustomizationUiKey.Key, insertedAi),
+                Icon = new SpriteSpecifier.Texture(new("/Textures/Interface/emotes.svg.192dpi.png")),
+            });
+        }
     }
 
     private void OnAiAccessible(Entity<StationAiOverlayComponent> ent, ref AccessibleOverrideEvent args)
@@ -485,14 +508,21 @@ public abstract partial class SharedStationAiSystem : EntitySystem
         if (!Resolve(entity.Owner, ref entity.Comp, false))
             return;
 
-        if (!_containers.TryGetContainer(entity.Owner, StationAiHolderComponent.Container, out var container) ||
-            container.Count == 0)
+        // Todo: when AIs can die, add a check to see if the AI is in the 'dead' state
+        var state = StationAiState.Empty;
+
+        if (_containers.TryGetContainer(entity.Owner, StationAiHolderComponent.Container, out var container) && container.Count > 0)
+            state = StationAiState.Occupied;
+
+        // If the entity is a station AI core, attempt to customize its appearance
+        if (TryComp<StationAiCoreComponent>(entity, out var stationAiCore))
         {
-            _appearance.SetData(entity.Owner, StationAiVisualState.Key, StationAiState.Empty);
+            CustomizeAppearance((entity, stationAiCore), state);
             return;
         }
 
-        _appearance.SetData(entity.Owner, StationAiVisualState.Key, StationAiState.Occupied);
+        // Otherwise let generic visualizers handle the appearance update
+        _appearance.SetData(entity.Owner, StationAiVisualState.Key, state);
     }
 
     public virtual void AnnounceIntellicardUsage(EntityUid uid, SoundSpecifier? cue = null) { }
@@ -571,9 +601,14 @@ public sealed partial class JumpToCoreEvent : InstantActionEvent
 [Serializable, NetSerializable]
 public sealed partial class IntellicardDoAfterEvent : SimpleDoAfterEvent;
 
-
 [Serializable, NetSerializable]
 public enum StationAiVisualState : byte
+{
+    Key,
+}
+
+[Serializable, NetSerializable]
+public enum StationAiSpriteState : byte
 {
     Key,
 }
@@ -584,4 +619,5 @@ public enum StationAiState : byte
     Empty,
     Occupied,
     Dead,
+    Hologram,
 }

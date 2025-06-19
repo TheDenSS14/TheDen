@@ -1,0 +1,60 @@
+# SPDX-FileCopyrightText: 2025 Rosycup <178287475+Rosycup@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
+- type: constructionGraph
+  id: ImprovisedCrossbow
+  start: start
+  graph:
+  - node: start
+    edges:
+    - to: ImprovisedCrossbow
+      steps:
+      - material: WoodPlank
+        amount: 10
+        doAfter: 4
+      - material: Cloth
+        amount: 10
+        doAfter: 4
+      - material: Cable
+        amount: 3
+        doAfter: 0.5
+      - material: MetalRod
+        amount: 5
+        doAfter: 0.5
+  - node: ImprovisedCrossbow
+    entity: CrossbowImprovised
+    edges:
+    - to: ImprovisedCrossbowHand
+      steps:
+      - tool: Sawing
+        doAfter: 2
+  - node: ImprovisedCrossbowHand
+    entity: CrossbowImprovisedHand
+
+- type: constructionGraph
+  id: ModernCrossbowHand
+  start: start
+  graph:
+  - node: start
+    edges:
+    - to: CrossbowModernHand
+      steps:
+      - tool: Sawing
+        doAfter: 2
+  - node: CrossbowModernHand
+    entity: CrossbowModernHand
+
+- type: constructionGraph
+  id: CultCrossbowHand
+  start: start
+  graph:
+  - node: start
+    edges:
+    - to: CrossbowBloodCultHand
+      steps:
+      - tool: Sawing
+        doAfter: 2
+  - node: CrossbowBloodCultHand
+    entity: CrossbowBloodCultHand

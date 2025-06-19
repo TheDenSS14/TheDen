@@ -1,4 +1,9 @@
-﻿cult-item-component-generic = The item refuses to obey your will. You can't use it.
+# SPDX-FileCopyrightText: 2024 Remuchi <72476615+Remuchi@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
+cult-item-component-generic = The item refuses to obey your will. You can't use it.
 cult-item-component-attack-fail = The weapon refuses to obey your will. You can't attack with it.
 cult-item-component-equip-fail = The armor refuses to obey your will. You can't equip it.
 cult-item-component-throw-fail = The weapon refuses to obey your will. You can't throw it.

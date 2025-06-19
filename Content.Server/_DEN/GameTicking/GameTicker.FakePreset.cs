@@ -1,3 +1,8 @@
+// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
+using System.Collections;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using Content.Server._DEN.GameTicking.Rules;
@@ -63,17 +68,31 @@ public sealed partial class GameTicker
 
         if (presetPicker.PossiblePresets != null && presetPicker.PossiblePresets.Any())
         {
-            var result = _robustRandom.Pick(presetPicker.PossiblePresets!);
-            var exists = _prototypeManager.TryIndex(result, out preset);
+            var presets = new List<GamePresetPrototype>();
 
-            return exists;
+            foreach (var targetPresetId in presetPicker.PossiblePresets)
+            {
+                var targetExists = _prototypeManager.TryIndex<GamePresetPrototype>(targetPresetId, out var targetPreset);
+
+                if (!targetExists || !CanPick(targetPreset))
+                    continue;
+
+                presets.Add(targetPreset);
+            }
+
+            if (presets.Count == 0)
+            {
+                preset = null;
+                return false;
+            }
+
+            preset = _robustRandom.Pick(presets);
+            return true;
         }
 
         if (presetPicker.PossibleWeightedPresets != null && presetPicker.PossibleWeightedPresets.Any())
         {
-            var result = _robustRandom.Pick(presetPicker.PossibleWeightedPresets!);
-            var exists = _prototypeManager.TryIndex(result, out preset);
-
+            var exists = TryPickPreset(presetPicker.PossibleWeightedPresets, out preset);
             return exists;
         }
 
@@ -83,8 +102,19 @@ public sealed partial class GameTicker
 
     public bool TryPickPreset(ProtoId<WeightedRandomPrototype> weightedRandomId, [NotNullWhen(true)] out GamePresetPrototype? preset)
     {
-        if (!_prototypeManager.TryIndex(weightedRandomId, out var weightedRandom)
-            || !CanPickAny(weightedRandomId))
+        if (!_prototypeManager.TryIndex(weightedRandomId, out var weightedRandom))
+        {
+            preset = null;
+            return false;
+        }
+
+        var exists = TryPickPreset(weightedRandom.Weights, out preset);
+        return exists;
+    }
+
+    public bool TryPickPreset(Dictionary<string, float> chances, [NotNullWhen(true)] out GamePresetPrototype? preset)
+    {
+        if (!CanPickAny(chances.Keys))
         {
             preset = null;
             return false;
@@ -93,13 +123,19 @@ public sealed partial class GameTicker
         var weights = new Dictionary<string, float>();
         var players = ReadyPlayerCount();
 
-        foreach (var (presetId, chance) in weightedRandom.Weights)
+        foreach (var (presetId, chance) in chances)
         {
             if (!_prototypeManager.TryIndex<GamePresetPrototype>(presetId, out var selected)
                 || !CanPick(selected, players))
                 continue;
 
             weights.Add(presetId, chance);
+        }
+
+        if (weights.Count == 0)
+        {
+            preset = null;
+            return false;
         }
 
         var result = _robustRandom.Pick(weights);
@@ -145,10 +181,53 @@ public sealed partial class GameTicker
     }
 
     /// <summary>
+    /// Can any of the given presets be picked, taking into account the currently available player count?
+    /// </summary>
+    public bool CanPickAny(IEnumerable<string> protos)
+    {
+        var players = ReadyPlayerCount();
+
+        foreach (var id in protos)
+        {
+            if (!_prototypeManager.TryIndex<GamePresetPrototype>(id, out var selectedPreset))
+                Log.Error($"Invalid preset {selectedPreset} in secret rule weights: {id}");
+
+            if (CanPick(selectedPreset, players))
+                return true;
+        }
+
+        return false;
+    }
+
+    /// <summary>
     /// Can the given preset be picked, taking into account the currently available player count?
     /// </summary>
-    private bool CanPick([NotNullWhen(true)] GamePresetPrototype? selected, int players)
+    public bool CanPick([NotNullWhen(true)] GamePresetPrototype? selected, int players)
     {
+        if (selected == null)
+            return false;
+
+        foreach (var ruleId in selected.Rules)
+        {
+            if (!_prototypeManager.TryIndex(ruleId, out EntityPrototype? rule)
+                || !rule.TryGetComponent(_ruleCompName, out GameRuleComponent? ruleComp))
+            {
+                Log.Error($"Encountered invalid rule {ruleId} in preset {selected.ID}");
+                return false;
+            }
+
+            if (ruleComp.MinPlayers > players)
+                return false;
+        }
+
+        return true;
+    }
+
+    /// <inherited/>
+    public bool CanPick([NotNullWhen(true)] GamePresetPrototype? selected)
+    {
+        var players = ReadyPlayerCount();
+
         if (selected == null)
             return false;
 

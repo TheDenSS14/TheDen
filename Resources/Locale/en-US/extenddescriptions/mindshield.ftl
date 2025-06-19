@@ -1,3 +1,8 @@
+# SPDX-FileCopyrightText: 2025 Timfa <timfalken@hotmail.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 mindshield-extenddescription-emag = I feel an overwhelming urge to turn this item in to Security.
 mindshield-extenddescription-poster-atmosia = Doomed from the start. Nanotrasen cannot be defeated by rebels!
 mindshield-extenddescription-poster-funpolice = The security staff is here for our protection.

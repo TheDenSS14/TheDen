@@ -1,3 +1,27 @@
+// SPDX-FileCopyrightText: 2023 AJCM-git <60196617+AJCM-git@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Debug <49997488+DebugOk@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 DrSmugleaf <drsmugleaf@gmail.com>
+// SPDX-FileCopyrightText: 2023 Guillaume E <262623+quatre@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Julian Giebel <juliangiebel@live.de>
+// SPDX-FileCopyrightText: 2023 Kara <lunarautomaton6@gmail.com>
+// SPDX-FileCopyrightText: 2023 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 PHCodes <47927305+PHCodes@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Pieter-Jan Briers <pieterjan.briers@gmail.com>
+// SPDX-FileCopyrightText: 2023 TemporalOroboros <TemporalOroboros@gmail.com>
+// SPDX-FileCopyrightText: 2023 deltanedas <39013340+deltanedas@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 deltanedas <@deltanedas:kde.org>
+// SPDX-FileCopyrightText: 2024 Boaz1111 <149967078+boaz1111@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT <77995199+DEATHB4DEFEAT@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Ed <96445749+TheShuEd@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 ShatteredSwords <135023515+ShatteredSwords@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 VMSolidus <evilexecutive@gmail.com>
+// SPDX-FileCopyrightText: 2025 dootythefrooty <137359445+dootythefrooty@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 using System.Linq;
 using Content.Server.Construction;
 using Content.Server.Paper;
@@ -13,6 +37,7 @@ using Content.Shared.DeviceLinking.Events;
 using Content.Shared.Placeable;
 using Content.Shared.Popups;
 using Content.Shared.Power;
+using Content.Shared.Power.EntitySystems;
 using Content.Shared.Research.Components;
 using Content.Shared.Xenoarchaeology.Equipment;
 using Content.Shared.Xenoarchaeology.XenoArtifacts;
@@ -35,16 +60,17 @@ public sealed class ArtifactAnalyzerSystem : EntitySystem
 {
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly IPrototypeManager _prototype = default!;
-    [Dependency] private readonly SharedAudioSystem _audio = default!;
-    [Dependency] private readonly SharedAmbientSoundSystem _ambientSound = default!;
-    [Dependency] private readonly SharedPopupSystem _popup = default!;
-    [Dependency] private readonly UserInterfaceSystem _ui = default!;
     [Dependency] private readonly ArtifactSystem _artifact = default!;
+    [Dependency] private readonly MetaDataSystem _metaSystem = default!;
     [Dependency] private readonly PaperSystem _paper = default!;
     [Dependency] private readonly ResearchSystem _research = default!;
-    [Dependency] private readonly MetaDataSystem _metaSystem = default!;
+    [Dependency] private readonly SharedAmbientSoundSystem _ambientSound = default!;
+    [Dependency] private readonly SharedAudioSystem _audio = default!;
+    [Dependency] private readonly SharedPopupSystem _popup = default!;
+    [Dependency] private readonly SharedPowerReceiverSystem _receiver = default!;
     [Dependency] private readonly TraversalDistorterSystem _traversalDistorter = default!;
     [Dependency] private readonly GlimmerSystem _glimmerSystem = default!;
+    [Dependency] private readonly UserInterfaceSystem _ui = default!;
 
     /// <inheritdoc/>
     public override void Initialize()
@@ -516,17 +542,13 @@ public sealed class ArtifactAnalyzerSystem : EntitySystem
 
     private void OnAnalyzeStart(EntityUid uid, ActiveArtifactAnalyzerComponent component, ComponentStartup args)
     {
-        if (TryComp<ApcPowerReceiverComponent>(uid, out var powa))
-            powa.NeedsPower = true;
-
+        _receiver.SetNeedsPower(uid, true);
         _ambientSound.SetAmbience(uid, true);
     }
 
     private void OnAnalyzeEnd(EntityUid uid, ActiveArtifactAnalyzerComponent component, ComponentShutdown args)
     {
-        if (TryComp<ApcPowerReceiverComponent>(uid, out var powa))
-            powa.NeedsPower = false;
-
+        _receiver.SetNeedsPower(uid, false);
         _ambientSound.SetAmbience(uid, false);
     }
 

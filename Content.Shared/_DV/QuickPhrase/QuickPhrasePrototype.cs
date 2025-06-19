@@ -1,3 +1,10 @@
+// SPDX-FileCopyrightText: 2024 Milon <milonpl.git@proton.me>
+// SPDX-FileCopyrightText: 2024 portfiend <109661617+portfiend@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 BlitzTheSquishy <73762869+BlitzTheSquishy@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype.Array;
 
@@ -48,4 +55,36 @@ public sealed partial class QuickPhrasePrototype : IPrototype, IInheritingProtot
     /// </summary>
     [DataField]
     public string StyleClass = string.Empty;
+}
+
+/// <summary>
+/// Imp. Added this to enable custom AAC vocabularies
+/// </summary>
+[Prototype]
+public sealed partial class QuickPhraseGroupPrototype : IPrototype, IInheritingPrototype
+{
+    /// <summary>
+    /// The "in code name" of the object. Must be unique.
+    /// </summary>
+    [ViewVariables]
+    [IdDataField]
+    public string ID { get; private set; } = default!;
+
+    /// <summary>
+    /// The prototype we inherit from.
+    /// </summary>
+    [ViewVariables]
+    [ParentDataField(typeof(AbstractPrototypeIdArraySerializer<QuickPhraseGroupPrototype>))]
+    public string[]? Parents { get; }
+
+    [ViewVariables]
+    [NeverPushInheritance]
+    [AbstractDataField]
+    public bool Abstract { get; }
+
+    /// <summary>
+    /// List of prototype IDs in this group.
+    /// </summary>
+    [DataField]
+    public List<ProtoId<QuickPhrasePrototype>> Prototypes { get; set; } = default!;
 }
