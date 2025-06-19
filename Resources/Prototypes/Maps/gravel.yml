@@ -44,11 +44,6 @@
           nameGenerator:
             !type:NanotrasenNameGenerator
             prefixCreator: 'NTTD'
-#        - type: GridSpawn
-#          groups:
-#            AISAT:
-#              paths:
-#              - /Maps/Shuttles/AISAT.yml
         - type: StationJobs
           overflowJobs:
             - Passenger
