@@ -116,19 +116,32 @@ remove_emails = [
     {"target": "thepoland", "replace_with": "***"}
 ]
 
-def is_token_basic(text):
+def sanitize_one(text):
+    replace_with = text
+
+    for key in remove_emails:
+        data = remove_emails[key]
+
+        if text.startswith(data["target"]):
+            replace_with = data["replace_with"]
+
     for token in tokens:
         if text.startswith(token):
             return True
         
-    return False
+    return False, replace_with
 
-def is_token(name):
+# im sorry
+def sanitize(name):
     email_pos = name.find("<")
-    email = name[email_pos:]
+    email = name[email_pos + 1:]
     real_name = name[:email_pos - 2]
 
-    return is_token_basic(email) == True or is_token_basic(real_name) == True or real_name.startswith("TheDen") # lmao
+    is_token_email, new_email = sanitize_one(email)
+    is_token_name, new_name = sanitize_one(email)
+    check = is_token_email == True or is_token_name == True or real_name.startswith("TheDen") # lmao
+
+    return check, f"{new_name} <{new_email}"
 
 def run_git_command(command, cwd=REPO_PATH, check=True):
     """Runs a git command and returns its output."""
@@ -278,19 +291,25 @@ def process_git_log_output(output, author_timestamps):
             continue
 
         # Add main author
-        has_token = is_token_basic(author_name) and is_token_basic(author_email)
+        has_token_name, sanitized_name = sanitize_one(author_name)
+        has_token_email, sanitized_email = sanitize_one(author_email)
+        has_token = has_token_name == False and has_token_email == False
+
         if author_name and author_email and author_name.strip() != "Unknown" and not has_token:
-            author_key = f"{author_name.strip()} <{author_email.strip()}>"
+            author_key = f"{sanitized_name.strip()} <{sanitized_email.strip()}>"
             author_timestamps[author_key].append(timestamp)
 
         # Add co-authors
         for match in co_author_regex.finditer(body):
             co_author_name = match.group(1).strip()
             co_author_email = match.group(2).strip()
-            has_token = is_token_basic(co_author_name) and is_token_basic(co_author_email)
+
+            has_token_name, sanitized__co_name = sanitize_one(author_name)
+            has_token_email, sanitized_co_email = sanitize_one(author_email)
+            has_token = has_token_name == False and has_token_email == False
 
             if co_author_name and co_author_email and co_author_name.strip() != "Unknown" and not has_token:
-                co_author_key = f"{co_author_name} <{co_author_email}>"
+                co_author_key = f"{sanitized__co_name} <{sanitized_co_email}>"
                 author_timestamps[co_author_key].append(timestamp)
 
     # No need to convert timestamps to years here, it's done in get_authors_from_git
@@ -400,9 +419,9 @@ def create_header(authors, license_id, comment_style):
         # Add copyright lines
         if authors:
             for author, (_, year) in sorted(authors.items(), key=lambda x: (x[1][1], x[0])):
-                has_token = is_token(author)
+                has_token, edit = sanitize(author)
                 if not author.startswith("Unknown <") and not has_token:
-                    lines.append(f"{prefix} SPDX-FileCopyrightText: {year} {author}")
+                    lines.append(f"{prefix} SPDX-FileCopyrightText: {year} {edit}")
         else:
             lines.append(f"{prefix} SPDX-FileCopyrightText: Contributors to the GoobStation14 project")
 
@@ -419,9 +438,9 @@ def create_header(authors, license_id, comment_style):
         # Add copyright lines
         if authors:
             for author, (_, year) in sorted(authors.items(), key=lambda x: (x[1][1], x[0])):
-                has_token = is_token(author)
+                has_token, edit = sanitize(author)
                 if not author.startswith("Unknown <") and not has_token:
-                    lines.append(f"SPDX-FileCopyrightText: {year} {author}")
+                    lines.append(f"SPDX-FileCopyrightText: {year} {edit}")
         else:
             lines.append(f"SPDX-FileCopyrightText: Contributors to the GoobStation14 project")
 
@@ -502,7 +521,7 @@ def process_file(file_path, default_license_id, pr_base_sha=None, pr_head_sha=No
         # Combine existing and git authors
         combined_authors = existing_authors.copy()
         for author, (git_min, git_max) in git_authors.items():
-            has_token = is_token(author)
+            has_token = sanitize(author)
 
             if author.startswith("Unknown <") or has_token:
                 continue
