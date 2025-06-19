@@ -109,10 +109,10 @@
     - LickObject
 
 - type: entity
-  name: BSO's AKMS
+  name: AK-104
   parent: WeaponRifleAk
   id: WeaponRiflBSOAk
-  description: An iconic weapon of war in the hands of the BSO (unless you stole this you little shit) to protect Corporation VIPs. Uses .30 rifle ammo.
+  description: A modernized weapon of war, painted in the BSO's colours. Uses .30 rifle ammo.
   components:
   - type: Sprite
     sprite: _DEN/Objects/Weapons/Guns/Rifles/bsoak.rsi
@@ -158,7 +158,7 @@
   - type: Appearance
 
 - type: entity
-  name: AKMS
+  name: AKM # It's not an AKMS, it has no folding stock
   parent: BaseWeaponRifle
   id: WeaponRifleAk
   description: An iconic weapon of war. Uses .30 rifle ammo.
