@@ -112,7 +112,8 @@ REPO_PATH = "."
 
 tokens = ["github_pat_", "ghp_", "gho_"]
 remove_emails = [
-    {"target": "jakbroe", "replace_with": "180479595+juniwoofs@users.noreply.github.com"}
+    {"target": "jakbroe", "replace_with": "180479595+juniwoofs@users.noreply.github.com"},
+    {"target": "thepoland", "replace_with": "***"}
 ]
 
 def is_token_basic(text):
