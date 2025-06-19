@@ -34,15 +34,14 @@ public sealed partial class LoadoutsPanel : BoxContainer
 
     private Dictionary<LoadoutPrototype, bool> _loadoutData = new();
     private HashSet<LoadoutPreferenceSelector> _preferenceSelectors = new();
-    private Dictionary<LoadoutPrototype, LoadoutPreferenceSelector> _selectorLookup = new();
     private Dictionary<string, EntityUid> _loadoutDummies = new();
     private Dictionary<Button, ConfirmationData> _confirmationData = new();
+    private Dictionary<ProtoId<LoadoutPrototype>, LoadoutPreferenceSelector> _selectorLookup = new();
     private Dictionary<string, LoadoutPreference> _profilePreferenceLookup = new();
 
     private HumanoidCharacterProfile? _profile;
     private EntityUid? _dummy;
     private bool _showUnusable = false;
-    private int _points = 0;
     private int _maxPoints = 0;
 
     public event Action<Dictionary<LoadoutPrototype, bool>>? OnRemoveUnusableAction;
@@ -86,30 +85,38 @@ public sealed partial class LoadoutsPanel : BoxContainer
         OnRemoveUnusableAction?.Invoke(GetUnusableLoadouts());
     }
 
+    /// <summary>
+    /// Updates all UI controls that rely on the currently selected loadout preferences of this profile.
+    /// </summary>
     private void UpdateLoadoutPreferences()
     {
         UpdatePreferenceSelectors();
-        UpdatePoints();
         UpdatePointsRemainingBar();
         UpdateUnusableLoadoutCount();
         LoadoutsTabs.UpdateTabMerging();
     }
 
-    private void UpdatePoints()
-    {
-        _maxPoints = _configuration.GetCVar(CCVars.GameLoadoutsPoints);
-        _points = _maxPoints - _preferenceSelectors
-            .Where(s => s.Preference.Selected)
-            .Sum(s => s.Loadout.Cost);
-    }
-
+    /// <summary>
+    ///  Recalculates and displays the amount of points the player has left.
+    /// </summary>
     private void UpdatePointsRemainingBar()
     {
+        _maxPoints = _configuration.GetCVar(CCVars.GameLoadoutsPoints);
+        var points = _maxPoints;
+
+        if (_profile?.LoadoutPreferences != null)
+            foreach (var pref in _profile.LoadoutPreferences)
+            {
+                if (_selectorLookup.TryGetValue(pref.LoadoutName, out var selector)
+                    && selector.Preference.Selected)
+                    points -= selector.Loadout.Cost;
+            }
+
         LoadoutPointsLabel.Text = Loc.GetString("humanoid-profile-editor-loadouts-points-label",
-            ("points", _points),
+            ("points", points),
             ("max", _maxPoints));
-        LoadoutPointsBar.MaxValue = _points;
-        LoadoutPointsBar.Value = _points;
+        LoadoutPointsBar.MaxValue = _maxPoints;
+        LoadoutPointsBar.Value = points;
     }
 
     private void UpdateUnusableLoadoutCount()
@@ -324,8 +331,8 @@ public sealed partial class LoadoutsPanel : BoxContainer
 
         foreach (var (loadout, usable) in orderedLoadouts)
         {
-            if (existingLoadoutIds.Contains(loadout.ID) &&
-                _selectorLookup.TryGetValue(loadout, out var selector))
+            if (existingLoadoutIds.Contains(loadout.ID)
+                && _selectorLookup.TryGetValue(loadout.ID, out var selector))
             {
                 CopyProfilePreference(selector);
                 UpdateLoadoutSelector(selector, usable);
@@ -372,7 +379,7 @@ public sealed partial class LoadoutsPanel : BoxContainer
     private void AddLoadoutSelector(LoadoutPreferenceSelector selector)
     {
         _preferenceSelectors.Add(selector);
-        _selectorLookup.Add(selector.Loadout, selector);
+        _selectorLookup.Add(selector.Loadout.ID, selector);
 
         selector.PreferenceChanged += preference =>
         {
@@ -473,7 +480,7 @@ public sealed partial class LoadoutsPanel : BoxContainer
     private bool IsLoadoutUnusable(LoadoutPrototype loadout, bool isValid)
     {
         return !isValid
-            || _selectorLookup.TryGetValue(loadout, out var selector)
+            || _selectorLookup.TryGetValue(loadout.ID, out var selector)
             && !selector.Wearable;
     }
 
