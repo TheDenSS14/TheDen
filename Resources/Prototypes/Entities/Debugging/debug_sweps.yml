@@ -60,7 +60,7 @@
 
 - type: entity
   id: MagazinePistolDebug
-  name: bang, ded mag
+  name: pistol magazine (bang, ded)
   parent: BaseMagazinePistol
   suffix: DEBUG
   components:
@@ -75,7 +75,7 @@
 
 - type: entity
   id: BulletDebug
-  name: bang, ded bullet
+  name: bullet (bang, ded)
   parent: BaseBullet
   categories: [ HideSpawnMenu ]
   suffix: DEBUG
@@ -90,7 +90,7 @@
 
 - type: entity
   id: CartridgeDebug
-  name: bang, ded cartridge
+  name: cartridge (bang, ded)
   parent: BaseCartridgePistol
   suffix: DEBUG
   components:
