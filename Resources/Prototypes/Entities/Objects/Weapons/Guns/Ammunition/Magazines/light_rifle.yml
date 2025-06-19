@@ -13,7 +13,7 @@
 # Empty mags
 - type: entity
   id: BaseMagazineLightRifle
-  name: "magazine (.30 rifle)"
+  name: "rifle magazine (.30 rifle)"
   parent: BaseItem
   abstract: true
   components:
@@ -108,7 +108,7 @@
 
 - type: entity
   id: MagazineLightRifle
-  name: "magazine (.30 rifle)"
+  name: "rifle magazine (.30 rifle)"
   parent: BaseMagazineLightRifle
   components:
   - type: BallisticAmmoProvider
@@ -122,7 +122,7 @@
 
 - type: entity
   id: MagazineLightRifleEmpty
-  name: "magazine (.30 rifle any)"
+  name: "rifle magazine (.30 rifle any)"
   suffix: empty
   parent: MagazineLightRifle
   components:
@@ -135,7 +135,7 @@
 
 - type: entity
   id: MagazineLightRiflePractice
-  name: "magazine (.30 rifle practice)"
+  name: "rifle magazine (.30 rifle practice)"
   parent: BaseMagazineLightRifle
   components:
   - type: BallisticAmmoProvider
@@ -149,7 +149,7 @@
 
 - type: entity
   id: MagazineLightRifleRubber
-  name: "magazine (.30 rifle rubber)"
+  name: "rifle magazine (.30 rifle rubber)"
   parent: BaseMagazineLightRifle
   components:
   - type: BallisticAmmoProvider
@@ -163,7 +163,7 @@
 
 - type: entity
   id: MagazineLightRifleUranium
-  name: "magazine (.30 rifle uranium)"
+  name: "rifle magazine (.30 rifle uranium)"
   parent: BaseMagazineLightRifle
   components:
   - type: BallisticAmmoProvider
@@ -177,7 +177,7 @@
 
 - type: entity
   id: MagazineLightRifleIncendiary
-  name: "magazine (.30 rifle incendiary)"
+  name: "rifle magazine (.30 rifle incendiary)"
   parent: MagazineLightRifle
   components:
   - type: BallisticAmmoProvider
@@ -185,7 +185,7 @@
 
 - type: entity
   id: MagazineLightRifleShrapnel
-  name: "magazine (.30 rifle shrapnel)"
+  name: "rifle magazine (.30 rifle shrapnel)"
   parent: BaseMagazineLightRifle
   components:
   - type: BallisticAmmoProvider
