@@ -177,8 +177,8 @@ public sealed partial class LoadoutsPanel : BoxContainer
             var key = $"{selector.Loadout.ID}_{index}";
             var entity = EnsureLoadoutDummy(item, key);
 
-            selector.Wearable = _entity.HasComponent<ClothingComponent>(entity)
-                && _dummy != null
+            selector.Wearable = !_entity.HasComponent<ClothingComponent>(entity)
+                || _dummy != null
                 && _characterRequirements.CanEntityWearItem(_dummy.Value, entity);
         }
     }
