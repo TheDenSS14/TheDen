@@ -68,11 +68,11 @@ uplink-rifle-subsonic-mag-desc = A 35 round magazine containing .30 rifle subson
 uplink-l6-box-name = Belt Box (.30 rifle)
 uplink-l6-box-desc = Belt box with 100 catridges. Compatible with the L6 SAW.
 
-uplink-shotgun-magazine-name = Shotgun Drum (12 gauge pellet)
-uplink-shotgun-magazine-desc = Shotgun drum with 8 pellet shells. Compatible with the Bulldog.
+uplink-shotgun-magazine-name = Drum Magazine (12 gauge)
+uplink-shotgun-magazine-desc = Drum magazine with 8 12 gauge pellet shells. Compatible with the Bulldog.
 
-uplink-shotgun-magazine-slug-name = Shotgun Drum (12 gauge slug)
-uplink-shotgun-magazine-slug-desc = Shotgun drum with 8 slug shells. Compatible with the Bulldog.
+uplink-shotgun-magazine-slug-name = Drum Magazine (12 gauge slug)
+uplink-shotgun-magazine-slug-desc = Drum magazine with 8 12 gauge slug shells. Compatible with the Bulldog.
 
 uplink-high-caliber-magazine-name = Heavy Rifle Magazine (.50 anti-materiel)
 uplink-high-caliber-magazine-desc = Heavy rifle magazine with 15 cartridges. Compatible with the Burner.
