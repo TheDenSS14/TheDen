@@ -1,4 +1,9 @@
-﻿using Content.Server.Store.Systems;
+// SPDX-FileCopyrightText: 2024 keronshb <54602815+keronshb@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+//
+// SPDX-License-Identifier: MIT
+
+using Content.Server.Store.Systems;
 
 namespace Content.Server.Store.Components;
 

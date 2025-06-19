@@ -1,3 +1,14 @@
+// SPDX-FileCopyrightText: 2022 Emisse <99158783+Emisse@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 keronshb <54602815+keronshb@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 ShatteredSwords <135023515+ShatteredSwords@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 SimpleStation14 <130339894+SimpleStation14@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 VMSolidus <evilexecutive@gmail.com>
+// SPDX-FileCopyrightText: 2024 WarMechanic <69510347+WarMechanic@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 using Content.Shared.Inventory;
 using Content.Shared.Popups;
 using Content.Shared.Strip.Components;

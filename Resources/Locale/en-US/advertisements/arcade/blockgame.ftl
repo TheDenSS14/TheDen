@@ -1,3 +1,8 @@
+# SPDX-FileCopyrightText: 2024 Tayrtahn <tayrtahn@gmail.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 advertisement-block-game-1 = Legally distinct!
 advertisement-block-game-2 = What the hell is a T-spin?
 advertisement-block-game-3 = These blocks aren't going to clear themselves!

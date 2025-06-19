@@ -1,3 +1,11 @@
+// SPDX-FileCopyrightText: 2023 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Falcon <falcon@zigtag.dev>
+// SPDX-FileCopyrightText: 2025 Tayrtahn <tayrtahn@gmail.com>
+// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 sleepyyapril <flyingkarii@gmail.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 using Content.Shared.Tiles;
 using Robust.Shared.Map.Components;
 using Robust.Shared.Map.Enumerators;

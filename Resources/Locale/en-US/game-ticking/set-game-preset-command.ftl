@@ -1,3 +1,9 @@
+# SPDX-FileCopyrightText: 2022 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: MIT
+
 set-game-preset-command-description = Sets the game preset for the current round.
 set-game-preset-command-help-text = setgamepreset <id>
 

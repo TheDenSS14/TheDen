@@ -1,3 +1,8 @@
+# SPDX-FileCopyrightText: 2025 Blitz <73762869+BlitzTheSquishy@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 ## Male, first
 # generic names
 names-rodentia-first-male-dataset-1 = Squeaks
@@ -114,6 +119,15 @@ names-rodentia-first-male-dataset-107 = Cosmo
 names-rodentia-first-male-dataset-108 = Ziggy
 names-rodentia-first-male-dataset-109 = Freddie
 names-rodentia-first-male-dataset-110 = Chester
+names-rodentia-first-male-dataset-111 = Rocco
+names-rodentia-first-male-dataset-112 = Perry
+names-rodentia-first-male-dataset-113 = Mickey
+names-rodentia-first-male-dataset-114 = Tim
+names-rodentia-first-male-dataset-115 = Chuck
+names-rodentia-first-male-dataset-116 = Frankie
+names-rodentia-first-male-dataset-117 = Willie
+names-rodentia-first-male-dataset-118 = Alvin
+names-rodentia-first-male-dataset-119 = Vinny
 names-rodentia-first-male-dataset-120 = Harvey
 names-rodentia-first-male-dataset-121 = Rudy
 names-rodentia-first-male-dataset-122 = Ollie

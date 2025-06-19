@@ -1,3 +1,10 @@
+# SPDX-FileCopyrightText: 2021 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2021 Galactic Chimp <63882831+GalacticChimp@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2021 Vera Aguilera Puerto <gradientvera@outlook.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 permissions-eui-do-not-have-required-flags-to-edit-admin-tooltip = You do not have the required flags to edit this admin.
 permissions-eui-do-not-have-required-flags-to-edit-rank-tooltip = You do not have the required flags to edit this rank.
 

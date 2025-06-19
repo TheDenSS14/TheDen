@@ -6174,3 +6174,95 @@ Entries:
   id: 583
   time: '2025-06-17T21:16:40.0000000+00:00'
   url: https://github.com/TheDenSS14/TheDen/pull/805
+- author: sleepyyapril
+  changes:
+    - type: Add
+      message: >-
+        The dragon now uses consent for its devour, but still gains the buff if
+        they cannot 'nom someone.
+    - type: Tweak
+      message: >-
+        The dragon is now more of a direct, confrontational threat than anything
+        else. They do not bleed, they regenerate 50 health a minute out of 500,
+        and they get slowed at higher damage levels.
+    - type: Tweak
+      message: The dragon will no longer rot the people it holds.
+    - type: Tweak
+      message: >-
+        A dragon will no longer die if they do not make a rift, but they will be
+        weaker. This is mainly to encourage roleplay.
+  id: 584
+  time: '2025-06-18T01:40:42.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/823
+- author: ZigTag
+  changes:
+    - type: Remove
+      message: holofan sounds
+  id: 585
+  time: '2025-06-18T04:53:11.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/825
+- author: portfiend
+  changes:
+    - type: Fix
+      message: Rodentia names now localize properly.
+  id: 586
+  time: '2025-06-18T14:53:27.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/831
+- author: lunarcomets
+  changes:
+    - type: Add
+      message: >-
+        AI customization has been ported from WizDen. AIs are now allowed to
+        change their AI screens and hologram with select sprites!
+  id: 587
+  time: '2025-06-18T18:51:04.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/827
+- author: portfiend
+  changes:
+    - type: Add
+      message: >-
+        Added a "randomize body" button to the character creator, which will
+        randomize your character's appearance and nothing else.
+  id: 588
+  time: '2025-06-18T18:54:34.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/830
+- author: BlitzTheSquishy
+  changes:
+    - type: Tweak
+      message: Expeditions can be performed on player built shuttles
+    - type: Tweak
+      message: Salvage magnet works on player built shuttles
+  id: 589
+  time: '2025-06-18T19:03:38.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/824
+- author: MajorMoth
+  changes:
+    - type: Add
+      message: >-
+        Ported lots of new atmos gases, which were themselves ports of /tg/
+        gases, see PR for details. Guides on making these need to be written up
+        so get to work atmos dwellers!
+    - type: Add
+      message: >-
+        Ported a new firefighting backpack water tank, found in atmos locker
+        fills - it's specialized firefighting gear. Changes functionality
+        depending on intent/mode. Can be used to clear out toxic gases in its
+        secondary mode.
+    - type: Add
+      message: >-
+        Ported insulated atmos gloves - they are resprited insulated gloves.
+        Extra drip is always good. 
+    - type: Tweak
+      message: >-
+        Ported a bunch of mechanical/technical changes to the SM, along with
+        gorgeous new assets.
+  id: 590
+  time: '2025-06-18T19:57:40.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/819
+- author: ZigTag
+  changes:
+    - type: Tweak
+      message: changed to wizden logo until new logo comes in
+  id: 591
+  time: '2025-06-19T03:26:47.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/837

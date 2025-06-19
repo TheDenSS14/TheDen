@@ -1,3 +1,12 @@
+// SPDX-FileCopyrightText: 2022 Moony <moony@hellomouse.net>
+// SPDX-FileCopyrightText: 2023 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Scribbles0 <91828755+Scribbles0@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Vordenburg <114301317+Vordenburg@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Mnemotechnican <69920617+Mnemotechnician@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 using Content.Server.Chat.Managers;
 using Content.Shared.Bed.Sleep;
 using Content.Shared.Chat;

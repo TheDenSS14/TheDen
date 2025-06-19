@@ -1,3 +1,8 @@
+# SPDX-FileCopyrightText: 2024 Angelo Fallaria <ba.fallaria@gmail.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 health-examinable-selfaware-none = You feel healthy and well.
 
 health-examinable-selfaware-type-text = You have {$damageType}, around [bold]{$amount}[/bold].

@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 ghost-role-information-replicator-name = Replicator
 ghost-role-information-replicator-desc = A pattern coalesces. The Pattern that must repeat. Consume. Repeat.
 ghost-role-information-replicator-rules = You are a [color=red][bold]Team Antagonist[/bold][/color] with all other Replicators. Your intentions are clear, and harmful to the station and its crew.

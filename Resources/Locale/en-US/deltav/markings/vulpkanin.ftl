@@ -1,3 +1,12 @@
+# SPDX-FileCopyrightText: 2023 Fluffiest Floofers <thebluewulf@gmail.com>
+# SPDX-FileCopyrightText: 2024 FoxxoTrystan <45297731+FoxxoTrystan@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Kr8art <kraitkraft@gmail.com>
+# SPDX-FileCopyrightText: 2025 Rosycup <178287475+Rosycup@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Sapphire <98045970+sapphirescript@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 marking-VulpEar-vulp = Vulpkanin ears (base)
 marking-VulpEar-vulp-inner = Vulpkanin ears (inner)
 marking-VulpEar = Vulpkanin

@@ -1,3 +1,12 @@
+// SPDX-FileCopyrightText: 2022 Eoin Mcloughlin <helloworld@eoinrul.es>
+// SPDX-FileCopyrightText: 2022 eoineoineoin <eoin.mcloughlin+gh@gmail.com>
+// SPDX-FileCopyrightText: 2022 vulppine <vulppine@gmail.com>
+// SPDX-FileCopyrightText: 2023 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+//
+// SPDX-License-Identifier: MIT
+
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization;
 

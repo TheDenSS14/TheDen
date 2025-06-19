@@ -1,3 +1,33 @@
+// SPDX-FileCopyrightText: 2022 Justin Trotter <trotter.justin@gmail.com>
+// SPDX-FileCopyrightText: 2022 LittleBuilderJane <63973502+LittleBuilderJane@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 SpaceManiac <tad@platymuus.com>
+// SPDX-FileCopyrightText: 2022 metalgearsloth <metalgearsloth@gmail.com>
+// SPDX-FileCopyrightText: 2023 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Kevin Zheng <kevinz5000@gmail.com>
+// SPDX-FileCopyrightText: 2023 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Pieter-Jan Briers <pieterjan.briers@gmail.com>
+// SPDX-FileCopyrightText: 2023 Tom Leys <tom@crump-leys.com>
+// SPDX-FileCopyrightText: 2023 Varen <ychwack@hotmail.it>
+// SPDX-FileCopyrightText: 2023 Visne <39844191+Visne@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 deltanedas <39013340+deltanedas@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 deltanedas <@deltanedas:kde.org>
+// SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT <77995199+DEATHB4DEFEAT@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 MilenVolf <63782763+MilenVolf@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
+// SPDX-FileCopyrightText: 2024 Plykiya <58439124+Plykiya@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 SimpleStation14 <130339894+SimpleStation14@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Eagle-0 <114363363+Eagle-0@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Eris <eris@erisws.com>
+// SPDX-FileCopyrightText: 2025 Falcon <falcon@zigtag.dev>
+// SPDX-FileCopyrightText: 2025 Ilya246 <57039557+Ilya246@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 VMSolidus <evilexecutive@gmail.com>
+// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 sleepyyapril <flyingkarii@gmail.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Numerics;

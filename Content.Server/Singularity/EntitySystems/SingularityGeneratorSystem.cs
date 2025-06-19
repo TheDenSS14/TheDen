@@ -1,3 +1,12 @@
+// SPDX-FileCopyrightText: 2022 keronshb <54602815+keronshb@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Ed <96445749+theshued@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 TemporalOroboros <TemporalOroboros@gmail.com>
+// SPDX-FileCopyrightText: 2023 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+//
+// SPDX-License-Identifier: MIT
+
 using Content.Server.ParticleAccelerator.Components;
 using Content.Server.Singularity.Components;
 using Content.Shared.Singularity.Components;

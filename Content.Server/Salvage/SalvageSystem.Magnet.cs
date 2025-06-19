@@ -1,3 +1,13 @@
+// SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT <77995199+DEATHB4DEFEAT@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Emisse <99158783+emisse@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Falcon <falcon@zigtag.dev>
+// SPDX-FileCopyrightText: 2025 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 sleepyyapril <flyingkarii@gmail.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 using System.Linq;
 using System.Numerics;
 using System.Threading.Tasks;
@@ -30,7 +40,7 @@ public sealed partial class SalvageSystem
 
         SubscribeLocalEvent<SalvageMagnetComponent, MagnetClaimOfferEvent>(OnMagnetClaim);
         SubscribeLocalEvent<SalvageMagnetComponent, ComponentStartup>(OnMagnetStartup);
-        SubscribeLocalEvent<SalvageMagnetComponent, AnchorStateChangedEvent>(OnMagnetAnchored);
+        SubscribeLocalEvent<SalvageMagnetDataComponent, AnchorStateChangedEvent>(OnMagnetAnchored);
     }
 
     private void OnMagnetClaim(EntityUid uid, SalvageMagnetComponent component, ref MagnetClaimOfferEvent args)
@@ -51,12 +61,12 @@ public sealed partial class SalvageSystem
         UpdateMagnetUI((uid, component), Transform(uid));
     }
 
-    private void OnMagnetAnchored(EntityUid uid, SalvageMagnetComponent component, ref AnchorStateChangedEvent args)
+    private void OnMagnetAnchored(EntityUid uid, SalvageMagnetDataComponent component, ref AnchorStateChangedEvent args)
     {
         if (!args.Anchored)
             return;
 
-        UpdateMagnetUI((uid, component), args.Transform);
+        UpdateMagnetUIs((uid, component));
     }
 
     private void OnMagnetDataMapInit(EntityUid uid, SalvageMagnetDataComponent component, ref MapInitEvent args)
@@ -230,8 +240,8 @@ public sealed partial class SalvageSystem
         {
             var station = _station.GetOwningStation(magnetUid, xform);
 
-            if (station != data.Owner)
-                continue;
+            //if (station != data.Owner) somehow lets magents off station work?
+            //    continue;
 
             _ui.SetUiState(magnetUid, SalvageMagnetUiKey.Key,
                 new SalvageMagnetBoundUserInterfaceState(data.Comp.Offered)

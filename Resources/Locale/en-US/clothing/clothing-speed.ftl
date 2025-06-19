@@ -1,3 +1,9 @@
+# SPDX-FileCopyrightText: 2022 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 rolfero <45628623+rolfero@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: MIT
+
 # Clothing speed examine
 clothing-speed-examinable-verb-text = Clothing
 clothing-speed-examinable-verb-message = Examine the clothing speed values.

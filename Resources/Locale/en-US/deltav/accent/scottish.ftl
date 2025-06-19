@@ -1,4 +1,9 @@
-﻿# these specifically mostly come from examples of specific scottish-english (not necessarily scots) verbiage
+# SPDX-FileCopyrightText: 2023 Ps3Moira <113228053+ps3moira@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: MIT
+
+# these specifically mostly come from examples of specific scottish-english (not necessarily scots) verbiage
 # https://en.wikipedia.org/wiki/Scotticism
 # https://en.wikipedia.org/wiki/Scottish_English
 # https://www.cs.stir.ac.uk/~kjt/general/scots.html

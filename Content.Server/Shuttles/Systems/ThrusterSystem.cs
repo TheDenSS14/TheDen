@@ -1,3 +1,32 @@
+// SPDX-FileCopyrightText: 2021 Javier Guardia Fernández <DrSmugleaf@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2021 JustinTime <41876089+JustinTether@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2021 metalgearsloth <metalgearsloth@gmail.com>
+// SPDX-FileCopyrightText: 2021 shaeone <60476183+shaeone@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 Acruid <shatter66@gmail.com>
+// SPDX-FileCopyrightText: 2022 Jacob Tong <10494922+ShadowCommander@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 Morb <14136326+Morb0@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 Radrark <76271993+Radrark@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 Vera Aguilera Puerto <gradientvera@outlook.com>
+// SPDX-FileCopyrightText: 2022 metalgearsloth <comedian_vs_clown@hotmail.com>
+// SPDX-FileCopyrightText: 2022 wrexbe <81056464+wrexbe@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Visne <39844191+Visne@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 router <messagebus@vk.com>
+// SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT <77995199+DEATHB4DEFEAT@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Kara <lunarautomaton6@gmail.com>
+// SPDX-FileCopyrightText: 2024 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Nemanja <98561806+emogarbage404@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 VMSolidus <evilexecutive@gmail.com>
+// SPDX-FileCopyrightText: 2024 lzk <124214523+lzk228@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Falcon <falcon@zigtag.dev>
+// SPDX-FileCopyrightText: 2025 Tayrtahn <tayrtahn@gmail.com>
+// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 sleepyyapril <flyingkarii@gmail.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 using System.Numerics;
 using Content.Server.Audio;
 using Content.Server.Construction;

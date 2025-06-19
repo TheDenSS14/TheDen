@@ -1,3 +1,33 @@
+// SPDX-FileCopyrightText: 2021 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2021 Wrexbe <wrexbe@protonmail.com>
+// SPDX-FileCopyrightText: 2022 Moony <moonheart08@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 Paul Ritter <ritter.paul1@googlemail.com>
+// SPDX-FileCopyrightText: 2022 Radrark <76271993+Radrark@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 Vera Aguilera Puerto <gradientvera@outlook.com>
+// SPDX-FileCopyrightText: 2022 metalgearsloth <comedian_vs_clown@hotmail.com>
+// SPDX-FileCopyrightText: 2022 metalgearsloth <metalgearsloth@gmail.com>
+// SPDX-FileCopyrightText: 2022 wrexbe <81056464+wrexbe@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Kevin Zheng <kevinz5000@gmail.com>
+// SPDX-FileCopyrightText: 2023 Pieter-Jan Briers <pieterjan.briers@gmail.com>
+// SPDX-FileCopyrightText: 2023 Tom Leys <tom@crump-leys.com>
+// SPDX-FileCopyrightText: 2023 Varen <ychwack@hotmail.it>
+// SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT <77995199+DEATHB4DEFEAT@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Debug <49997488+DebugOk@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
+// SPDX-FileCopyrightText: 2024 SimpleStation14 <130339894+SimpleStation14@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 VMSolidus <evilexecutive@gmail.com>
+// SPDX-FileCopyrightText: 2024 neuPanda <chriseparton@gmail.com>
+// SPDX-FileCopyrightText: 2025 Blitz <73762869+BlitzTheSquishy@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Falcon <falcon@zigtag.dev>
+// SPDX-FileCopyrightText: 2025 Ilya246 <57039557+Ilya246@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 sleepyyapril <flyingkarii@gmail.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 using Content.Server.Administration.Logs;
 using Content.Server.Body.Systems;
 using Content.Server.Buckle.Systems;

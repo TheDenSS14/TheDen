@@ -1,3 +1,11 @@
+# SPDX-FileCopyrightText: 2023 MishaUnity <81403616+MishaUnity@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 PrPleGoo <PrPleGoo@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Julian Giebel <juliangiebel@live.de>
+# SPDX-FileCopyrightText: 2024 lapatison <100279397+lapatison@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: MIT
+
 news-read-ui-next-text = ▶
 news-read-ui-prev-text = ◀
 news-read-ui-next-tooltip = Next

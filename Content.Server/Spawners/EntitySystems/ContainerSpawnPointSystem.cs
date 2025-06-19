@@ -1,4 +1,14 @@
-﻿using Content.Server.GameTicking;
+// SPDX-FileCopyrightText: 2024 Debug <49997488+DebugOk@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Errant <35878406+Errant-4@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Krunklehorn <42424291+krunklehorn@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 sleepyyapril <flyingkarii@gmail.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
+using Content.Server.GameTicking;
 using Content.Server.Spawners.Components;
 using Content.Server.Station.Systems;
 using Content.Shared.Preferences;

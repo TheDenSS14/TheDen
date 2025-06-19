@@ -1,4 +1,8 @@
-﻿# these come from examples of specific (overlapping) scottish-english and irish-english (not necessarily irish (gaelic)) language
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
+# these come from examples of specific (overlapping) scottish-english and irish-english (not necessarily irish (gaelic)) language
 # https://www.sara-sees.com/the-ultimate-guide-to-irish-slang-irish-vs-american-terms/
 # https://tandem.net/blog/irish-slang-words-phrases
 # https://inirish.bitesize.irish/how-to-say/

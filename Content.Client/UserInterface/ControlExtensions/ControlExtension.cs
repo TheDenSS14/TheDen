@@ -1,3 +1,8 @@
+// SPDX-FileCopyrightText: 2023 Hebi <spiritbreakz@gmail.com>
+// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+//
+// SPDX-License-Identifier: MIT
+
 using Content.Client.Guidebook.Controls;
 using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.Controls;

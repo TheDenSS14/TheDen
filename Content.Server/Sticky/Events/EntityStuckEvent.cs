@@ -1,4 +1,11 @@
-﻿namespace Content.Server.Sticky.Events;
+// SPDX-FileCopyrightText: 2022 Alex Evgrashin <aevgrashin@yandex.ru>
+// SPDX-FileCopyrightText: 2023 Debug <49997488+DebugOk@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 TemporalOroboros <TemporalOroboros@gmail.com>
+// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+//
+// SPDX-License-Identifier: MIT
+
+namespace Content.Server.Sticky.Events;
 
 /// <summary>
 ///     Risen on sticky entity to see if it can stick to another entity.

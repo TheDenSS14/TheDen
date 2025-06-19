@@ -1,3 +1,10 @@
+# SPDX-FileCopyrightText: 2023 Debug <49997488+DebugOk@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Fluffiest Floofers <thebluewulf@gmail.com>
+# SPDX-FileCopyrightText: 2024 Mnemotechnican <69920617+Mnemotechnician@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 # Mailto
 command-mailto-description = Queue a parcel to be delivered to an entity. Example usage: `mailto 1234 5678 false false`. The target container's contents will be transferred to an actual mail parcel.
 command-mailto-help = Usage: {$command} <recipient entityUid> <container entityUid> [is-fragile: true or false] [is-priority: true or false] [is-large: true or false, optional]

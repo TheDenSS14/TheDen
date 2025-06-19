@@ -1,3 +1,13 @@
+// SPDX-FileCopyrightText: 2023 Arimah Greene <30327355+arimah@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Morb <14136326+Morb0@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 TemporalOroboros <TemporalOroboros@gmail.com>
+// SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT <77995199+DEATHB4DEFEAT@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Guilherme Ornel <86210200+joshepvodka@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 using System.IO;
 using System.Threading.Tasks;
 using Content.Shared.Fax;

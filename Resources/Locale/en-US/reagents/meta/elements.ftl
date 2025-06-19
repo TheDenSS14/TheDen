@@ -1,3 +1,13 @@
+# SPDX-FileCopyrightText: 2022 Alex Evgrashin <aevgrashin@yandex.ru>
+# SPDX-FileCopyrightText: 2022 Visne <39844191+Visne@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 Will Robson <WPRobson@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 metalgearsloth <comedian_vs_clown@hotmail.com>
+# SPDX-FileCopyrightText: 2023 LankLTE <135308300+LankLTE@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 brainfood1183 <113240905+brainfood1183@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: MIT
+
 reagent-name-aluminium = aluminium
 reagent-desc-aluminium = A silver, soft, non-magnetic, and ductile metal.
 

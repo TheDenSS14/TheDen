@@ -1,3 +1,10 @@
+// SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT <77995199+DEATHB4DEFEAT@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 brainfood1183 <113240905+brainfood1183@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 portfiend <109661617+portfiend@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 using Content.Shared.Storage.EntitySystems;
 using Content.Shared.Containers.ItemSlots;
 using Content.Shared.Item;

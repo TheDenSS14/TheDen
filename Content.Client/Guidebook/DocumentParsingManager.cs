@@ -1,4 +1,13 @@
+// SPDX-FileCopyrightText: 2023 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Leon Friedrich <60421075+electrojr@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Thomas <87614336+Aeshus@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using System.Linq;
+using Content.Client.Guidebook.Controls;
 using Content.Client.Guidebook.Richtext;
 using Content.Shared.Guidebook;
 using Pidgin;
@@ -7,6 +16,7 @@ using Robust.Shared.ContentPack;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Reflection;
 using Robust.Shared.Sandboxing;
+using Robust.Shared.Utility;
 using static Pidgin.Parser;
 
 namespace Content.Client.Guidebook;
@@ -22,8 +32,10 @@ public sealed partial class DocumentParsingManager
     [Dependency] private readonly ISandboxHelper _sandboxHelper = default!;
 
     private readonly Dictionary<string, Parser<char, Control>> _tagControlParsers = new();
-    private Parser<char, Control> _tagParser = default!;
     private Parser<char, Control> _controlParser = default!;
+
+    private ISawmill _sawmill = default!;
+    private Parser<char, Control> _tagParser = default!;
     public Parser<char, IEnumerable<Control>> ControlParser = default!;
 
     public void Initialize()
@@ -32,14 +44,19 @@ public sealed partial class DocumentParsingManager
             .Assert(_tagControlParsers.ContainsKey, tag => $"unknown tag: {tag}")
             .Bind(tag => _tagControlParsers[tag]);
 
-        _controlParser = OneOf(_tagParser, TryHeaderControl, ListControlParser, TextControlParser).Before(SkipWhitespaces);
+        var whitespaceAndCommentParser = SkipWhitespaces.Then(Try(String("<!--").Then(Parser<char>.Any.SkipUntil(Try(String("-->"))))).SkipMany());
+
+        _controlParser = OneOf(_tagParser, TryHeaderControl, ListControlParser, TextControlParser)
+            .Before(whitespaceAndCommentParser);
 
         foreach (var typ in _reflectionManager.GetAllChildren<IDocumentTag>())
         {
             _tagControlParsers.Add(typ.Name, CreateTagControlParser(typ.Name, typ, _sandboxHelper));
         }
 
-        ControlParser = SkipWhitespaces.Then(_controlParser.Many());
+        ControlParser = whitespaceAndCommentParser.Then(_controlParser.Many());
+
+        _sawmill = Logger.GetSawmill("Guidebook");
     }
 
     public bool TryAddMarkup(Control control, ProtoId<GuideEntryPrototype> entryId, bool log = true)
@@ -68,37 +85,57 @@ public sealed partial class DocumentParsingManager
         }
         catch (Exception e)
         {
-            if (log)
-                Logger.Error($"Encountered error while generating markup controls: {e}");
+            _sawmill.Error($"Encountered error while generating markup controls: {e}");
+
+            control.AddChild(new GuidebookError(text, e.ToStringBetter()));
+
             return false;
         }
 
         return true;
     }
 
-    private Parser<char, Control> CreateTagControlParser(string tagId, Type tagType, ISandboxHelper sandbox) => Map(
-        (args, controls) =>
-        {
-            var tag = (IDocumentTag) sandbox.CreateInstance(tagType);
-            if (!tag.TryParseTag(args, out var control))
-            {
-                Logger.Error($"Failed to parse {tagId} args");
-                return new Control();
-            }
+    private Parser<char, Control> CreateTagControlParser(string tagId, Type tagType, ISandboxHelper sandbox)
+    {
+        return Map(
+                (args, controls) =>
+                {
+                    try
+                    {
+                        var tag = (IDocumentTag) sandbox.CreateInstance(tagType);
+                        if (!tag.TryParseTag(args, out var control))
+                        {
+                            _sawmill.Error($"Failed to parse {tagId} args");
+                            return new GuidebookError(args.ToString() ?? tagId, $"Failed to parse {tagId} args");
+                        }
 
-            foreach (var child in controls)
-            {
-                control.AddChild(child);
-            }
-            return control;
-        },
-        ParseTagArgs(tagId),
-        TagContentParser(tagId)).Labelled($"{tagId} control");
+                        foreach (var child in controls)
+                        {
+                            control.AddChild(child);
+                        }
+
+                        return control;
+                    }
+                    catch (Exception e)
+                    {
+                        var output = args.Aggregate(string.Empty,
+                            (current, pair) => current + $"{pair.Key}=\"{pair.Value}\" ");
+
+                        _sawmill.Error($"Tag: {tagId} \n Arguments: {output}/>");
+                        return new GuidebookError($"Tag: {tagId}\nArguments: {output}", e.ToString());
+                    }
+                },
+                ParseTagArgs(tagId),
+                TagContentParser(tagId))
+            .Labelled($"{tagId} control");
+    }
 
     // Parse a bunch of controls until we encounter a matching closing tag.
-    private Parser<char, IEnumerable<Control>> TagContentParser(string tag) =>
-    OneOf(
-        Try(ImmediateTagEnd).ThenReturn(Enumerable.Empty<Control>()),
-        TagEnd.Then(_controlParser.Until(TryTagTerminator(tag)).Labelled($"{tag} children"))
-    );
+    private Parser<char, IEnumerable<Control>> TagContentParser(string tag)
+    {
+        return OneOf(
+            Try(ImmediateTagEnd).ThenReturn(Enumerable.Empty<Control>()),
+            TagEnd.Then(_controlParser.Until(TryTagTerminator(tag)).Labelled($"{tag} children"))
+        );
+    }
 }

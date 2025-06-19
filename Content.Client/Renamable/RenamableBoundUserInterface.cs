@@ -1,4 +1,9 @@
-﻿using System.IO;
+// SPDX-FileCopyrightText: 2025 Timfa <timfalken@hotmail.com>
+// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
+using System.IO;
 using Content.Shared.NameModifier.EntitySystems;
 using Content.Shared.Popups;
 using Content.Shared.Renamable.EntitySystems;

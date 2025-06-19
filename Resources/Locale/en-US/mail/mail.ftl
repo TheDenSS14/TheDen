@@ -1,3 +1,8 @@
+# SPDX-FileCopyrightText: 2024 Mnemotechnican <69920617+Mnemotechnician@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 mail-recipient-mismatch = Recipient name or job does not match.
 mail-invalid-access = Recipient name and job match, but access isn't as expected.
 mail-locked = The anti-tamper lock hasn't been removed. Tap the recipient's ID.

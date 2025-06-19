@@ -1,3 +1,19 @@
+// SPDX-FileCopyrightText: 2022 Alex Evgrashin <aevgrashin@yandex.ru>
+// SPDX-FileCopyrightText: 2022 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 Moony <moonheart08@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Debug <49997488+DebugOk@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Rainfall <rainfey0+git@gmail.com>
+// SPDX-FileCopyrightText: 2023 Rainfey <11758391+Rainfey@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Visne <39844191+Visne@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Plykiya <58439124+Plykiya@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Tornado Tech <54727692+Tornado-Technology@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 sleepyyapril <flyingkarii@gmail.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 using Content.Shared.Access.Components;
 using Content.Shared.Clothing.Components;
 using Content.Shared.Inventory;

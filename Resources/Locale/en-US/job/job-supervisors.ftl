@@ -1,3 +1,13 @@
+# SPDX-FileCopyrightText: 2022 Morber <14136326+Morb0@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 Myctai <108953437+Myctai@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Fluffiest Floofers <thebluewulf@gmail.com>
+# SPDX-FileCopyrightText: 2023 Nairod <110078045+Nairodian@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 crazybrain23 <44417085+crazybrain23@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT <77995199+DEATHB4DEFEAT@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 job-supervisors-centcom = Central Command
 job-supervisors-captain = the captain
 job-supervisors-hop = the head of personnel

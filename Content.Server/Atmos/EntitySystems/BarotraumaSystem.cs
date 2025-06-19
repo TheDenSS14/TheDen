@@ -1,3 +1,29 @@
+// SPDX-FileCopyrightText: 2021 20kdc <asdd2808@gmail.com>
+// SPDX-FileCopyrightText: 2021 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2021 Kara D <lunarautomaton6@gmail.com>
+// SPDX-FileCopyrightText: 2021 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
+// SPDX-FileCopyrightText: 2021 ShadowCommander <10494922+ShadowCommander@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2021 Vera Aguilera Puerto <gradientvera@outlook.com>
+// SPDX-FileCopyrightText: 2022 Acruid <shatter66@gmail.com>
+// SPDX-FileCopyrightText: 2022 Julian Giebel <juliangiebel@live.de>
+// SPDX-FileCopyrightText: 2022 Vera Aguilera Puerto <6766154+Zumorica@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 mirrorcult <lunarautomaton6@gmail.com>
+// SPDX-FileCopyrightText: 2022 wrexbe <81056464+wrexbe@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Menshin <Menshin@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Fansana <116083121+Fansana@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Fansana <fansana95@googlemail.com>
+// SPDX-FileCopyrightText: 2024 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 SimpleStation14 <130339894+SimpleStation14@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Tmanzxd <164098915+Tmanzxd@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 gluesniffler <159397573+gluesniffler@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 gluesniffler <linebarrelerenthusiast@gmail.com>
+// SPDX-FileCopyrightText: 2025 Eris <eris@erisws.com>
+// SPDX-FileCopyrightText: 2025 VMSolidus <evilexecutive@gmail.com>
+// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 using System.Diagnostics.CodeAnalysis;
 using Content.Server.Administration.Logs;
 using Content.Server.Atmos.Components;

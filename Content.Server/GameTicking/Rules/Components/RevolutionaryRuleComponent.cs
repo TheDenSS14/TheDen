@@ -1,3 +1,14 @@
+// SPDX-FileCopyrightText: 2023 Debug <49997488+DebugOk@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 JoeHammad1844 <130668733+JoeHammad1844@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Vasilis <vasilis@pikachu.systems>
+// SPDX-FileCopyrightText: 2023 coolmankid12345 <55817627+coolmankid12345@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 coolmankid12345 <coolmankid12345@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Rainfey <rainfey0+github@gmail.com>
+// SPDX-FileCopyrightText: 2024 VMSolidus <evilexecutive@gmail.com>
+// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 using Content.Shared.Roles;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom;
