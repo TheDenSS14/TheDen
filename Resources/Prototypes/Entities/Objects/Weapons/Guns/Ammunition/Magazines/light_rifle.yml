@@ -48,7 +48,7 @@
 # Magazines
 - type: entity
   id: MagazineLightRifleBox
-  name: "box magazine (.30 rifle)"
+  name: "belt box (.30 rifle)"
   parent: BaseMagazineLightRifle
   components:
   - type: Tag
@@ -68,7 +68,7 @@
 
 - type: entity
   id: MagazineLightRifleBoxPractice
-  name: "box magazine (.30 rifle practice)"
+  name: "belt box (.30 rifle practice)"
   parent: MagazineLightRifleBox
   components:
   - type: BallisticAmmoProvider
@@ -76,7 +76,7 @@
 
 - type: entity
   id: MagazineLightRifleBoxRubber
-  name: "box magazine (.30 rifle rubber)"
+  name: "belt box (.30 rifle rubber)"
   parent: MagazineLightRifleBox
   components:
   - type: BallisticAmmoProvider
@@ -84,7 +84,7 @@
 
 - type: entity
   id: MagazineLightRifleBoxIncendiary
-  name: "box magazine (.30 rifle incendiary)"
+  name: "belt box (.30 rifle incendiary)"
   parent: MagazineLightRifleBox
   components:
   - type: BallisticAmmoProvider
@@ -92,7 +92,7 @@
 
 - type: entity
   id: MagazineLightRifleBoxUranium
-  name: "box magazine (.30 rifle uranium)"
+  name: "belt box (.30 rifle uranium)"
   parent: MagazineLightRifleBox
   components:
   - type: BallisticAmmoProvider
@@ -100,7 +100,7 @@
 
 - type: entity
   id: MagazineLightRifleBoxShrapnel
-  name: "L6 SAW magazine box (.30 rifle shrapnel)"
+  name: belt box (.30 rifle shrapnel)
   parent: MagazineLightRifleBox
   components:
   - type: BallisticAmmoProvider
@@ -207,7 +207,7 @@
 
 - type: entity
   id: MagazineLightRiflePkBox
-  name: "PK munitions box (.30 rifle)"
+  name: "PK belt box (.30 rifle)"
   parent: BaseMagazineLightRifle
   components:
   - type: Tag

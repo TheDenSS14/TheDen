@@ -65,8 +65,8 @@ uplink-rifle-mag-desc = A 25 round magazine containing .20 rifle bullets. Suppor
 uplink-rifle-subsonic-mag-name = .30 Rifle Subsonic Magazine
 uplink-rifle-subsonic-mag-desc = A 35 round magazine containing .30 rifle subsonic bullets. Supports the WSPR and any other .30 rife.
 
-uplink-l6-box-name = Magazine Box (.30 rifle)
-uplink-l6-box-desc = Magazine box with 100 catridges. Compatible with the L6 SAW.
+uplink-l6-box-name = Belt Box (.30 rifle)
+uplink-l6-box-desc = Belt box with 100 catridges. Compatible with the L6 SAW.
 
 uplink-shotgun-magazine-name = Shotgun Drum (12 gauge pellet)
 uplink-shotgun-magazine-desc = Shotgun drum with 8 pellet shells. Compatible with the Bulldog.
