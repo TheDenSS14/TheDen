@@ -138,6 +138,9 @@ public sealed partial class LoadoutsPanel : BoxContainer
         foreach (var selector in _preferenceSelectors)
         {
             CopyProfilePreference(selector);
+
+            if (_loadoutData.TryGetValue(selector.Loadout, out var usable))
+                UpdateLoadoutSelector(selector, usable);
         }
     }
 
@@ -161,7 +164,6 @@ public sealed partial class LoadoutsPanel : BoxContainer
         }
 
         BuildLoadoutTabs(mainJob, profile);
-        UpdateAllSelectors();
         UpdateLoadoutPreferences();
     }
 
@@ -204,15 +206,6 @@ public sealed partial class LoadoutsPanel : BoxContainer
             );
 
             _loadoutData.Add(loadoutProto, usable);
-        }
-    }
-
-    private void UpdateAllSelectors()
-    {
-        foreach (var (proto, usable) in _loadoutData)
-        {
-            if (_selectorLookup.TryGetValue(proto, out var selector))
-                UpdateLoadoutSelector(selector, usable);
         }
     }
 
@@ -446,6 +439,7 @@ public sealed partial class LoadoutsPanel : BoxContainer
     private void CopyProfilePreference(LoadoutPreferenceSelector selector)
     {
         _profilePreferenceLookup.TryGetValue(selector.Loadout.ID, out var preference);
+        var selected = preference?.Selected ?? false;
         preference ??= selector.Preference;
 
         selector.Preference = new(
@@ -455,7 +449,7 @@ public sealed partial class LoadoutsPanel : BoxContainer
             preference.CustomColorTint,
             preference.CustomHeirloom)
         {
-            Selected = preference.Selected
+            Selected = selected
         };
     }
 
