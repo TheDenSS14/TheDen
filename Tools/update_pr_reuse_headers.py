@@ -130,16 +130,14 @@ def sanitize_one(text):
     return False, replace_with
 
 # im sorry
-def sanitize(name):
-    email_pos = name.find("<")
-    email = name[email_pos + 1:]
-    real_name = name[:email_pos - 2]
+def sanitize(name: str):
+    name_split = name.split("<")
 
-    is_token_email, new_email = sanitize_one(email)
-    is_token_name, new_name = sanitize_one(real_name)
-    check = is_token_email == True or is_token_name == True or real_name.startswith("TheDen") # lmao
+    is_token_email, new_email = sanitize_one(name_split[1])
+    is_token_name, new_name = sanitize_one(name_split[0])
+    check = is_token_email == True or is_token_name == True or new_name.startswith("TheDen") # lmao
 
-    return check, f"{new_name} <{new_email}"
+    return check, f"{new_name}<{new_email}"
 
 def run_git_command(command, cwd=REPO_PATH, check=True):
     """Runs a git command and returns its output."""
