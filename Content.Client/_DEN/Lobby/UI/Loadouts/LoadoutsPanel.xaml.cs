@@ -337,8 +337,6 @@ public sealed partial class LoadoutsPanel : BoxContainer
             var contentContainer = categoryContainer.Children.First().Children.First();
             contentContainer.AddChild(newSelector);
         }
-
-        _selectorLookup = _preferenceSelectors.ToDictionary(lps => lps.Loadout);
     }
 
     private BoxContainer AddTabToContainer(string name, NeoTabContainer parent)
@@ -374,6 +372,8 @@ public sealed partial class LoadoutsPanel : BoxContainer
     private void AddLoadoutSelector(LoadoutPreferenceSelector selector)
     {
         _preferenceSelectors.Add(selector);
+        _selectorLookup.Add(selector.Loadout, selector);
+
         selector.PreferenceChanged += preference =>
         {
             var isSelected = preference.Selected;
