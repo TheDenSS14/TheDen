@@ -205,10 +205,8 @@ public sealed partial class LoadoutsPanel : BoxContainer
 
             _loadoutData.Add(loadoutProto, usable);
 
-            if (_preferenceSelectors.TryGetValue(
-                new LoadoutPreferenceSelector(loadoutProto, _entity),
-                out var existing))
-                UpdateLoadoutSelector(existing, usable);
+            if (_selectorLookup.TryGetValue(loadoutProto, out var selector))
+                UpdateLoadoutSelector(selector, usable);
         }
     }
 
