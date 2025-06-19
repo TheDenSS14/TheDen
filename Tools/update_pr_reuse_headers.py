@@ -113,15 +113,13 @@ REPO_PATH = "."
 tokens = ["github_pat_", "ghp_", "gho_"]
 remove_emails = [
     {"target": "jakbroe", "replace_with": "180479595+juniwoofs@users.noreply.github.com"},
-    {"target": "thepoland", "replace_with": "***"}
+    {"target": "thepola", "replace_with": "***"}
 ]
 
 def sanitize_one(text):
     replace_with = text
 
-    for key in remove_emails:
-        data = remove_emails[key]
-
+    for data in remove_emails:
         if text.startswith(data["target"]):
             replace_with = data["replace_with"]
 
@@ -237,9 +235,7 @@ def get_authors_from_git(file_path, cwd=REPO_PATH, pr_base_sha=None, pr_head_sha
             user_name = run_git_command(name_cmd, cwd=cwd, check=False)
             user_email = run_git_command(email_cmd, cwd=cwd, check=False)
 
-            for key in remove_emails:
-                data = remove_emails[key]
-
+            for data in remove_emails:
                 if user_email.startswith(data["target"]):
                     user_email = data["replace_with"]
 
@@ -490,9 +486,7 @@ def process_file(file_path, default_license_id, pr_base_sha=None, pr_head_sha=No
         user_name = run_git_command(name_cmd, check=False)
         user_email = run_git_command(email_cmd, check=False)
 
-        for key in remove_emails:
-            data = remove_emails[key]
-
+        for data in remove_emails:
             if user_email.startswith(data["target"]):
                 user_email = data["replace_with"]
 
