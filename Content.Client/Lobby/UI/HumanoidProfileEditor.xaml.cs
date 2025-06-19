@@ -1013,6 +1013,8 @@ namespace Content.Client.Lobby.UI
 
             if (Profile != null)
                 PreferenceUnavailableButton.SelectId((int) Profile.PreferenceUnavailable);
+
+            LoadoutsTab.SetProfile(Profile);
         }
 
         /// A slim reload that only updates the entity itself and not any of the job entities, etc
