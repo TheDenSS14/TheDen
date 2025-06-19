@@ -18,7 +18,7 @@
 
 - type: entity
   id: BaseMagazineShotgun
-  name: ammo drum (12 gauge shells)
+  name: drum magazine (12 gauge shells)
   parent: BaseItem
   abstract: true
   components:
@@ -53,7 +53,7 @@
 
 - type: entity
   id: MagazineShotgunEmpty
-  name: ammo drum (12 gauge shells any)
+  name: drum magazine (12 gauge shells any)
   suffix: empty
   parent: BaseMagazineShotgun
   components:
@@ -62,7 +62,7 @@
 
 - type: entity
   id: MagazineShotgun
-  name: ammo drum (12 gauge pellet)
+  name: drum magazine (12 gauge pellet)
   parent: BaseMagazineShotgun
   components:
   - type: BallisticAmmoProvider
@@ -76,7 +76,7 @@
 
 - type: entity
   id: MagazineShotgunBeanbag
-  name: ammo drum (12 gauge beanbags)
+  name: drum magazine (12 gauge beanbags)
   parent: BaseMagazineShotgun
   components:
   - type: BallisticAmmoProvider
@@ -90,7 +90,7 @@
 
 - type: entity
   id: MagazineShotgunSlug
-  name: ammo drum (12 gauge slug)
+  name: drum magazine (12 gauge slug)
   parent: BaseMagazineShotgun
   components:
   - type: BallisticAmmoProvider
@@ -104,7 +104,7 @@
 
 - type: entity
   id: MagazineShotgunIncendiary
-  name: ammo drum (12 gauge dragon's breath)
+  name: drum magazine (12 gauge dragon's breath)
   parent: BaseMagazineShotgun
   components:
   - type: BallisticAmmoProvider
@@ -118,7 +118,7 @@
 
 - type: entity
   id: MagazineShotgunUranium
-  name: ammo drum (12 gauge uranium slug)
+  name: drum magazine (12 gauge uranium slug)
   parent: BaseMagazineShotgun
   components:
   - type: BallisticAmmoProvider
@@ -132,7 +132,7 @@
 
 - type: entity
   id: MagazineShotgunBirdshot
-  name: ammo drum (12 gauge birdshot)
+  name: drum magazine (12 gauge birdshot)
   parent: BaseMagazineShotgun
   components:
   - type: BallisticAmmoProvider
@@ -146,7 +146,7 @@
 
 - type: entity
   id: MagazineShotgun00Buckshot
-  name: ammo drum (12 gauge 00-Buckshot)
+  name: drum magazine (12 gauge 00-Buckshot)
   parent: BaseMagazineShotgun
   components:
   - type: BallisticAmmoProvider
@@ -160,7 +160,7 @@
 
 - type: entity
   id: MagazineShotgun0000Buckshot
-  name: ammo drum (12 gauge 0000-Buckshot)
+  name: drum magazine (12 gauge 0000-Buckshot)
   parent: BaseMagazineShotgun
   components:
   - type: BallisticAmmoProvider
