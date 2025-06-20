@@ -617,9 +617,7 @@ public sealed partial class LoadoutsPanel : BoxContainer
         {
             if (control.Name == null) continue;
             if (_prototype.TryIndex<LoadoutCategoryPrototype>(control.Name, out var proto))
-            {
                 categories.Add(proto);
-            }
         }
 
         return categories;
