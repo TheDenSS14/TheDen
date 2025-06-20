@@ -11,6 +11,7 @@
 using System.Linq;
 using System.Numerics;
 using System.Threading.Tasks;
+using Content.Server.Salvage.Components;
 using Content.Server.Salvage.Magnet;
 using Content.Shared.Humanoid;
 using Content.Shared.Mobs.Components;
@@ -40,7 +41,7 @@ public sealed partial class SalvageSystem
 
         SubscribeLocalEvent<SalvageMagnetComponent, MagnetClaimOfferEvent>(OnMagnetClaim);
         SubscribeLocalEvent<SalvageMagnetComponent, ComponentStartup>(OnMagnetStartup);
-        SubscribeLocalEvent<SalvageMagnetDataComponent, AnchorStateChangedEvent>(OnMagnetAnchored);
+        SubscribeLocalEvent<SalvageMagnetComponent, AnchorStateChangedEvent>(OnMagnetAnchored);
     }
 
     private void OnMagnetClaim(EntityUid uid, SalvageMagnetComponent component, ref MagnetClaimOfferEvent args)
@@ -61,12 +62,12 @@ public sealed partial class SalvageSystem
         UpdateMagnetUI((uid, component), Transform(uid));
     }
 
-    private void OnMagnetAnchored(EntityUid uid, SalvageMagnetDataComponent component, ref AnchorStateChangedEvent args)
+    private void OnMagnetAnchored(EntityUid uid, SalvageMagnetComponent component, ref AnchorStateChangedEvent args)
     {
         if (!args.Anchored)
             return;
 
-        UpdateMagnetUIs((uid, component));
+        UpdateMagnetUI((uid, component), args.Transform);
     }
 
     private void OnMagnetDataMapInit(EntityUid uid, SalvageMagnetDataComponent component, ref MapInitEvent args)
@@ -218,6 +219,14 @@ public sealed partial class SalvageSystem
     {
         var station = _station.GetOwningStation(entity, xform);
 
+        if (TryComp<SalvageLastStation>(entity.Owner, out var prevStation))
+        {
+            if (station != null)
+                prevStation.StationID = (EntityUid) station;
+            else if (station == null)
+                station = prevStation.StationID;
+        }
+
         if (!TryComp(station, out SalvageMagnetDataComponent? dataComp))
             return;
 
@@ -240,8 +249,16 @@ public sealed partial class SalvageSystem
         {
             var station = _station.GetOwningStation(magnetUid, xform);
 
-            //if (station != data.Owner) somehow lets magents off station work?
-            //    continue;
+            if (TryComp<SalvageLastStation>(magnetUid, out var prevStation))
+            {
+                if (station != null)
+                    prevStation.StationID = (EntityUid) station;
+                else if (station == null)
+                    station = prevStation.StationID;
+            }
+
+            if (station != data.Owner)
+                continue;
 
             _ui.SetUiState(magnetUid, SalvageMagnetUiKey.Key,
                 new SalvageMagnetBoundUserInterfaceState(data.Comp.Offered)
