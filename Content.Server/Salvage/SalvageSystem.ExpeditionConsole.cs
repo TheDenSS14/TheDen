@@ -25,6 +25,14 @@ public sealed partial class SalvageSystem
     {
         var station = _station.GetOwningStation(uid);
 
+        if (TryComp<SalvageLastStationComponent>(uid, out var prevStation))
+        {
+            if (station != null)
+                prevStation.StationID = (EntityUid) station;
+            else if (station == null)
+                station = prevStation.StationID;
+        }
+
         if (!TryComp<SalvageExpeditionDataComponent>(station, out var data) || data.Claimed)
             return;
 
@@ -62,6 +70,14 @@ public sealed partial class SalvageSystem
         while (query.MoveNext(out var uid, out _, out var uiComp, out var xform))
         {
             var station = _station.GetOwningStation(uid, xform);
+
+            if (TryComp<SalvageLastStationComponent>(component.Owner, out var prevStation))
+            {
+                if (station != null)
+                    prevStation.StationID = (EntityUid) station;
+                else if (station == null)
+                    station = prevStation.StationID;
+            }
 
             if (station != component.Owner)
                 continue;
