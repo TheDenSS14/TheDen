@@ -119,13 +119,11 @@ public sealed partial class LoadoutsPanel : BoxContainer
         LoadoutPointsBar.Value = points;
     }
 
+    /// <summary>
+    ///     Updates the unusable loadout count in the "Remove Unusable Loadouts" button label.
+    /// </summary>
     private void UpdateUnusableLoadoutCount()
     {
-        var selectedLoadouts = _preferenceSelectors
-            .Where(lps => lps.Preference.Selected)
-            .Select(lps => lps.Loadout)
-            .ToHashSet();
-
         var unusableCount = GetUnusableLoadouts().Count();
 
         LoadoutsRemoveUnusableButton.Text = Loc.GetString(
