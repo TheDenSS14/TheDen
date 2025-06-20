@@ -12,8 +12,6 @@
 using System.Linq;
 using System.Numerics;
 using System.Text;
-using Content.Client.Guidebook;
-using Content.Client.Paint;
 using Content.Client.Players.PlayTimeTracking;
 using Content.Client.Stylesheets;
 using Content.Client.UserInterface.Systems.Guidebook;
@@ -128,13 +126,14 @@ public sealed partial class LoadoutPreferenceSelector : Control
         SpecialName.Visible = Loadout.CustomName;
         SpecialDescription.Visible = Loadout.CustomDescription;
         SpecialColorTintToggle.Visible = Loadout.CustomColorTint;
-        InitializeGuidebookButton();
+        InitializeGuidebook();
 
         var dummyLoadoutItem = EnsureDummyItem(ref entities);
         DummyEntityUid = dummyLoadoutItem;
 
-        var loadoutName = GetName();
-        var loadoutDesc = GetDescription();
+        var dummyMeta = _entityManager.GetComponent<MetaDataComponent>(DummyEntityUid);
+        var loadoutName = GetName(dummyMeta);
+        var loadoutDesc = GetDescription(dummyMeta);
         InitializeTooltip(loadoutDesc, highJob, profile);
 
         var loadoutContainer = InitializeLoadoutContainer(loadoutName);
@@ -255,9 +254,9 @@ public sealed partial class LoadoutPreferenceSelector : Control
         if (!entities.TryGetValue(previewKey, out var dummyLoadoutItem))
         {
             dummyLoadoutItem = _entityManager.SpawnEntity(Loadout.Items.First(), MapCoordinates.Nullspace);
-            entities.Add(previewKey, dummyLoadoutItem);
             _entityManager.EnsureComponent<AppearanceComponent>(dummyLoadoutItem);
-            _entityManager.EnsureComponent<PaintedComponent>(dummyLoadoutItem, out _);
+            _entityManager.EnsureComponent<PaintedComponent>(dummyLoadoutItem);
+            entities.Add(previewKey, dummyLoadoutItem);
         }
 
         _previewLoadout = new SpriteView
@@ -272,13 +271,13 @@ public sealed partial class LoadoutPreferenceSelector : Control
         return dummyLoadoutItem;
     }
 
-    private string GetName()
+    private string GetName(MetaDataComponent metadata)
     {
         var locId = $"loadout-name-{Loadout.ID}";
         var name = Loc.GetString(locId);
 
         if (name == locId)
-            name = _entityManager.GetComponent<MetaDataComponent>(DummyEntityUid).EntityName;
+            name = metadata.EntityName;
 
         if (_entityManager.TryGetComponent(DummyEntityUid, out LabelComponent? labelComponent))
         {
@@ -290,35 +289,33 @@ public sealed partial class LoadoutPreferenceSelector : Control
         return name;
     }
 
-    private string GetDescription()
+    private string GetDescription(MetaDataComponent metadata)
     {
         var locId = $"loadout-description-{Loadout.ID}";
         var description = Loc.GetString(locId);
 
-        if (description != locId)
-            return description;
-
-        description = _entityManager.GetComponent<MetaDataComponent>(DummyEntityUid).EntityDescription
-            ?? description;
+        if (description == locId)
+            description = metadata.EntityDescription ?? description;
 
         return description;
     }
 
     private void UpdateGuidebook()
     {
-        var visible = string.IsNullOrEmpty(Loadout.GuideEntry)
+        var visible = !string.IsNullOrEmpty(Loadout.GuideEntry)
             && _prototypeManager.HasIndex<GuideEntryPrototype>(Loadout.GuideEntry);
         GuidebookButton.Visible = visible;
     }
 
-    private void InitializeGuidebookButton()
+    private void InitializeGuidebook()
     {
         _prototypeManager.PrototypesReloaded += _ => UpdateGuidebook();
         UpdateGuidebook();
 
         GuidebookButton.OnPressed += _ =>
         {
-            if (!_prototypeManager.TryIndex<GuideEntryPrototype>(Loadout.GuideEntry, out var guideRoot))
+            if (string.IsNullOrEmpty(Loadout.GuideEntry)
+                || !_prototypeManager.TryIndex<GuideEntryPrototype>(Loadout.GuideEntry, out var guideRoot))
                 return;
 
             var guidebookController = UserInterfaceManager.GetUIController<GuidebookUIController>();
@@ -353,7 +350,6 @@ public sealed partial class LoadoutPreferenceSelector : Control
 
         _initialized = true;
     }
-
 
     private void UpdatePaint(Entity<PaintedComponent> entity, IEntityManager entityManager)
     {
