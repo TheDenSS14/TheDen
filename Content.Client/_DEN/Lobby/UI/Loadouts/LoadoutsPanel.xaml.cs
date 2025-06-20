@@ -32,10 +32,11 @@ public sealed partial class LoadoutsPanel : BoxContainer
     private readonly CharacterRequirementsSystem _characterRequirements;
     private readonly LobbyUIController _lobbyUI;
 
-    private Dictionary<LoadoutPrototype, bool> _loadoutData = new();
     private HashSet<LoadoutPreferenceSelector> _preferenceSelectors = new();
+    private Dictionary<LoadoutPrototype, bool> _loadoutData = new();
     private Dictionary<string, EntityUid> _loadoutDummies = new();
     private Dictionary<Button, ConfirmationData> _confirmationData = new();
+    private Dictionary<ProtoId<LoadoutCategoryPrototype>, BoxContainer> _categoryTabs = new();
     private Dictionary<ProtoId<LoadoutPrototype>, LoadoutPreferenceSelector> _selectorLookup = new();
     private Dictionary<string, LoadoutPreference> _profilePreferenceLookup = new();
 
@@ -309,6 +310,7 @@ public sealed partial class LoadoutsPanel : BoxContainer
         foreach (var uid in _loadoutDummies)
             _entity.QueueDeleteEntity(uid.Value);
 
+        _categoryTabs.Clear();
         _preferenceSelectors.Clear();
         _selectorLookup.Clear();
     }
@@ -371,6 +373,7 @@ public sealed partial class LoadoutsPanel : BoxContainer
                 };
 
                 parent.AddTab(category, Loc.GetString($"loadout-category-{key}"));
+                _categoryTabs.Add(key, category);
                 BuildCategoryContainer((Dictionary<string, object>) value, category);
             }
         }
@@ -403,7 +406,7 @@ public sealed partial class LoadoutsPanel : BoxContainer
             }
 
             var newSelector = BuildNewSelector(loadout, mainJob, profile, usable);
-            var categoryContainer = FindCategoryTab(loadout.Category, LoadoutsTabs) ?? uncategorizedTab;
+            var categoryContainer = _categoryTabs.GetValueOrDefault(loadout.Category, uncategorizedTab);
             var contentContainer = categoryContainer.Children.First().Children.First();
             contentContainer.AddChild(newSelector);
         }
@@ -441,6 +444,7 @@ public sealed partial class LoadoutsPanel : BoxContainer
             Children = { scroll },
         };
 
+        _categoryTabs.Add(name, tab);
         parent.AddTab(tab, Loc.GetString($"loadout-category-{name}"));
         return tab;
     }
@@ -507,8 +511,8 @@ public sealed partial class LoadoutsPanel : BoxContainer
     {
         foreach (var category in categories)
         {
-            var tab = FindCategoryTab(category.ID, LoadoutsTabs);
-            if (tab == null) continue;
+            if (!_categoryTabs.TryGetValue(category.ID, out var tab))
+                continue;
 
             var contentContainer = tab.Children
                 .FirstOrDefault()?
@@ -638,22 +642,5 @@ public sealed partial class LoadoutsPanel : BoxContainer
             .ToHashSet();
 
         return unusableLoadouts;
-    }
-
-    /// <summary>
-    ///     Recursively searches for the tab container corresponding to a category.
-    /// </summary>
-    /// <param name="categoryId">The ID of the category to search for.</param>
-    /// <param name="parent">The control to look inside for the tab.</param>
-    /// <returns>The category tab, if found.</returns>
-    private static BoxContainer? FindCategoryTab(string categoryId, NeoTabContainer parent)
-    {
-        if (parent.Contents.FirstOrDefault(c => c.Name == categoryId) is BoxContainer match)
-            return match;
-
-        return parent.Contents
-            .OfType<NeoTabContainer>()
-            .Select(subcategory => FindCategoryTab(categoryId, subcategory))
-            .FirstOrDefault(result => result != null);
     }
 }
