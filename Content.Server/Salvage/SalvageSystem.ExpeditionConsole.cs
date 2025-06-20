@@ -79,8 +79,8 @@ public sealed partial class SalvageSystem
                     station = prevStation.StationID;
             }
 
-            if (station != component.Owner)
-                continue;
+            //if (station != component.Owner)
+            //    continue;
 
             _ui.SetUiState((uid, uiComp), SalvageConsoleUiKey.Expedition, state);
         }
