@@ -388,16 +388,17 @@ public sealed partial class LoadoutsPanel : BoxContainer
         HumanoidCharacterProfile profile,
         BoxContainer uncategorizedTab)
     {
-        var orderedLoadouts = _loadoutData.OrderBy(l => l.Key.ID).ToList();
-        var existingLoadoutIds = _preferenceSelectors.Select(lps => lps.Loadout.ID).ToHashSet();
+        var orderedLoadouts = _loadoutData
+            .OrderBy(l => l.Key.ID)
+            .ToList();
+
         _profilePreferenceLookup = _profile?.LoadoutPreferences?
             .ToDictionary(lp => lp.LoadoutName)
             ?? new Dictionary<string, LoadoutPreference>();
 
         foreach (var (loadout, usable) in orderedLoadouts)
         {
-            if (existingLoadoutIds.Contains(loadout.ID)
-                && _selectorLookup.TryGetValue(loadout.ID, out var selector))
+            if (_selectorLookup.TryGetValue(loadout.ID, out var selector))
             {
                 SyncSelectorToProfile(selector);
                 UpdatePreferenceSelector(selector, usable);
