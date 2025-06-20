@@ -22,8 +22,13 @@ jobs:
         token: ${{secrets.GITHUB_TOKEN}}
         ref: master
 
+    - name: Setup Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.11'
+
     - name: Publish changelog
-      run: Tools/actions_changelogs_since_last_run.py
+      run: python Tools/actions_changelogs_since_last_run.py
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         CHANGELOG_DIR: ${{ vars.CHANGELOG_DIR }}
