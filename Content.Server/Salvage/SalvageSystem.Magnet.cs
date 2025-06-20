@@ -214,14 +214,14 @@ public sealed partial class SalvageSystem
 
         while (query.MoveNext(out var magnetUid, out var magnet, out var xform))
         {
-            var stationUid = _station.GetOwningStation(magnetUid, xform);
+            var station = _station.GetOwningStation(magnetUid, xform);
 
             if (TryComp<SalvageLastStationComponent>(magnetUid, out var prevStation))
             {
-                if (stationUid != null)
-                    prevStation.StationID = (EntityUid) stationUid;
-                else if (stationUid == null)
-                    stationUid = prevStation.StationID;
+                if (station != null)
+                    prevStation.StationID = (EntityUid) station;
+                else if (station == null)
+                    station = prevStation.StationID;
             }
 
             if (stationUid != data.Owner)
