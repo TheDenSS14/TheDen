@@ -64,7 +64,6 @@ public sealed partial class LoadoutsPanel : BoxContainer
     public void SetProfile(HumanoidCharacterProfile? profile)
     {
         _profile = profile;
-        UpdateLoadouts();
     }
 
     public void SetPreviewDummy(EntityUid dummy)
