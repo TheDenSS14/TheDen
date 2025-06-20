@@ -1198,7 +1198,7 @@
   description: If you are not an admin please return this PDA to the nearest admin.
   components:
   - type: Pda
-    id: PassengerIDCard
+    id: CentcomIDCard
   - type: HealthAnalyzer
     scanDelay: 0
   - type: CartridgeLoader
@@ -1206,14 +1206,15 @@
     notificationsEnabled: false
     diskSpace: 10 # DeltaV
     preinstalled:
-      - CrewManifestCartridge
-      - NotekeeperCartridge
-      - NewsReaderCartridge
-      - LogProbeCartridge
-      - SecWatchCartridge # DeltaV: SecWatch replaces WantedList
-      - StockTradingCartridge # Delta-V
-      - NanoChatCartridge # DeltaV
-      - PsiWatchCartridge
+    # den - every cartridge alphabetically
+     - AstroNavCartridge
+     - CrewManifestCartridge
+     - LogProbeCartridge
+     #- MedTekCartridge  # not needed, already has HealthAnalyzer component
+     - NetProbeCartridge
+     - NewsReaderCartridge
+     - NotekeeperCartridge
+     - PsiWatchCartridge
 
 - type: entity
   parent: CentcomPDA

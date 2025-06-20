@@ -276,6 +276,9 @@
   components:
   - type: StorageFill
     contents:
-    - id: GasAnalyzer
-    - id: trayScanner
-  - type: Unremoveable
+    - id: DrinkGlass
+    - id: AdminMaterialBox
+    - id: TrashBananaPeel
+    - id: PowerCellMicroreactor
+      amount: 2
+  #- type: Unremoveable # why? makes testing some things pretty annoying, and the PDA is removable
