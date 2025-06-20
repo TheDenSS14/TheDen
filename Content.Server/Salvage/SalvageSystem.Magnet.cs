@@ -224,8 +224,8 @@ public sealed partial class SalvageSystem
                     station = prevStation.StationID;
             }
 
-            if (stationUid != data.Owner)
-                continue;
+            //if (station != data.Owner)
+            //    continue;
 
             return (magnetUid, magnet);
         }
@@ -275,8 +275,8 @@ public sealed partial class SalvageSystem
                     station = prevStation.StationID;
             }
 
-            if (station != data.Owner)
-                continue;
+            //if (station != data.Owner)
+            //    continue;
 
             _ui.SetUiState(magnetUid, SalvageMagnetUiKey.Key,
                 new SalvageMagnetBoundUserInterfaceState(data.Comp.Offered)
