@@ -28,11 +28,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 # The Den
 
-<!-- Snippet from WizDen https://github.com/space-wizards/space-station-14/blob/5033f5c6820831ea6dd1fef1d770b5eda97e0186/README.md -->
-<div class="header" align="center">
-<img alt="Space Station 14" width="880" height="300" src="https://raw.githubusercontent.com/space-wizards/asset-dump/de329a7898bb716b9d5ba9a0cd07f38e61f1ed05/github-logo.svg">
-</div>
-<!-- Snippet from WizDen -->
+<p align="center"><img src="https://raw.githubusercontent.com/TheDenSS14/TheDen/master/Resources/Textures/Logo/logo.png" width="512px" /></p>
 
 ---
 
