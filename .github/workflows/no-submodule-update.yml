@@ -12,7 +12,7 @@ on:
 
 jobs:
   this_aint_right:
-    if: github.actor != 'sleepyyapril' && github.actor != 'VMSolidus' && github.actor != 'DEATHB4DEFEAT'
+    if: github.actor != 'sleepyyapril'
     name: Submodule update in pr found
     runs-on: ubuntu-latest
     steps:
