@@ -75,7 +75,7 @@ public sealed partial class SalvageSystem
         var station = _station.GetOwningStation(component);
         SalvageExpeditionConsoleState state;
 
-        if (TryComp<SalvageLastStation>(component.Owner, out var prevStation))
+        if (TryComp<SalvageLastStationComponent>(component.Owner, out var prevStation))
         {
             if (station != null)
                 prevStation.StationID = (EntityUid) station;
