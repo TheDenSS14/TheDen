@@ -87,7 +87,7 @@ public sealed partial class LoadoutsPanel : BoxContainer
     }
 
     /// <summary>
-    ///     Updates all UI controls that depdend on the currently selected loadout preferences of this profile.
+    ///     Updates all UI controls that depend on the currently selected loadout preferences of this profile.
     ///     This includes: loadout selector states, the points remaining bar, and the number of unusable loadouts.
     /// </summary>
     private void UpdateLoadoutPreferences()
@@ -587,9 +587,10 @@ public sealed partial class LoadoutsPanel : BoxContainer
     /// <param name="loadout">The loadout to check.</param>
     /// <param name="isValid">Whether or not this loadout follows character requirements.</param>
     /// <returns>If this loadout is usable or not.</returns>
-    private bool IsLoadoutUnusable(LoadoutPrototype loadout, bool isValid)
+    private bool IsLoadoutUnusable(LoadoutPrototype loadout)
     {
-        return !isValid
+        return !_loadoutData.TryGetValue(loadout, out var valid)
+            || !valid
             || _selectorLookup.TryGetValue(loadout.ID, out var selector)
             && !selector.Wearable;
     }
@@ -629,15 +630,17 @@ public sealed partial class LoadoutsPanel : BoxContainer
     /// <returns>A HashSet of all currently-selected unusable loadouts.</returns>
     private HashSet<LoadoutPrototype> GetUnusableSelectedLoadouts()
     {
-        var selectedLoadouts = _preferenceSelectors
-            .Where(lps => lps.Preference.Selected)
-            .Select(lps => lps.Loadout)
-            .ToHashSet();
+        var unusableLoadouts = new HashSet<LoadoutPrototype>();
 
-        var unusableLoadouts = _loadoutData
-            .Where(l => selectedLoadouts.Contains(l.Key) && IsLoadoutUnusable(l.Key, l.Value))
-            .Select(l => l.Key)
-            .ToHashSet();
+        foreach (var (id, pref) in _profilePreferenceLookup)
+        {
+            if (!pref.Selected)
+                continue;
+
+            if (_prototype.TryIndex<LoadoutPrototype>(id, out var proto)
+                && IsLoadoutUnusable(proto))
+                unusableLoadouts.Add(proto);
+        }
 
         return unusableLoadouts;
     }
