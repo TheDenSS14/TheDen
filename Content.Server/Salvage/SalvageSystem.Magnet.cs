@@ -58,6 +58,16 @@ public sealed partial class SalvageSystem
                 station = prevStation.StationID;
         }
 
+        if (prevStation != null && prevStation.StationID == null && station == null)
+        {
+            var stationQuery = EntityQueryEnumerator<SalvageMagnetComponent>();
+            while (stationQuery.MoveNext(out var foundStation, out var salvageMagnet))
+            {
+                station = foundStation;
+                prevStation.StationID = (EntityUid) station;
+            }
+        }
+
         if (!TryComp(station, out SalvageMagnetDataComponent? dataComp) ||
             dataComp.EndTime != null)
         {
@@ -224,6 +234,15 @@ public sealed partial class SalvageSystem
                     station = prevStation.StationID;
             }
 
+            if (prevStation != null && prevStation.StationID == null && station == null)
+            {
+                var stationQuery = EntityQueryEnumerator<SalvageMagnetComponent>();
+                while (stationQuery.MoveNext(out var foundStation, out var salvageMagnet))
+                {
+                    station = foundStation;
+                    prevStation.StationID = (EntityUid) station;
+                }
+            }
             //if (station != data.Owner)
             //    continue;
 
@@ -243,6 +262,16 @@ public sealed partial class SalvageSystem
                 prevStation.StationID = (EntityUid) station;
             else if (station == null)
                 station = prevStation.StationID;
+        }
+
+        if (prevStation != null && prevStation.StationID == null && station == null)
+        {
+            var stationQuery = EntityQueryEnumerator<SalvageMagnetComponent>();
+            while (stationQuery.MoveNext(out var foundStation, out var salvageMagnet))
+            {
+                station = foundStation;
+                prevStation.StationID = (EntityUid) station;
+            }
         }
 
         if (!TryComp(station, out SalvageMagnetDataComponent? dataComp))
@@ -273,6 +302,16 @@ public sealed partial class SalvageSystem
                     prevStation.StationID = (EntityUid) station;
                 else if (station == null)
                     station = prevStation.StationID;
+            }
+
+            if (prevStation != null && prevStation.StationID == null && station == null)
+            {
+                var stationQuery = EntityQueryEnumerator<SalvageMagnetComponent>();
+                while (stationQuery.MoveNext(out var foundStation, out var salvageMagnet))
+                {
+                    station = foundStation;
+                    prevStation.StationID = (EntityUid) station;
+                }
             }
 
             //if (station != data.Owner)

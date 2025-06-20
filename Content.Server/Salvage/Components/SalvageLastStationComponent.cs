@@ -8,5 +8,5 @@ namespace Content.Server.Salvage.Components;
 public sealed partial class SalvageLastStationComponent : Component
 {
     [AutoNetworkedField]
-    public EntityUid StationID;
+    public EntityUid? StationID = null;
 }

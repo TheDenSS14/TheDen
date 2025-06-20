@@ -14,6 +14,7 @@ using Content.Shared.Salvage.Expeditions;
 using Content.Shared.Dataset;
 using Robust.Shared.Prototypes;
 using Content.Server.Salvage.Components;
+using Content.Server.Salvage.Magnet;
 
 namespace Content.Server.Salvage;
 
@@ -32,6 +33,16 @@ public sealed partial class SalvageSystem
                 prevStation.StationID = (EntityUid) station;
             else if (station == null)
                 station = prevStation.StationID;
+        }
+
+        if (prevStation != null && prevStation.StationID == null && station == null)
+        {
+            var stationQuery = EntityQueryEnumerator<SalvageMagnetComponent>();
+            while (stationQuery.MoveNext(out var foundStation, out var salvageMagnet))
+            {
+                station = foundStation;
+                prevStation.StationID = (EntityUid) station;
+            }
         }
 
         if (!TryComp<SalvageExpeditionDataComponent>(station, out var data) || data.Claimed)
@@ -80,6 +91,16 @@ public sealed partial class SalvageSystem
                     station = prevStation.StationID;
             }
 
+            if (prevStation != null && prevStation.StationID == null && station == null)
+            {
+                var stationQuery = EntityQueryEnumerator<SalvageMagnetComponent>();
+                while (stationQuery.MoveNext(out var foundStation, out var salvageMagnet))
+                {
+                    station = foundStation;
+                    prevStation.StationID = (EntityUid) station;
+                }
+            }
+
             //if (station != component.Owner)
             //    continue;
 
@@ -98,6 +119,16 @@ public sealed partial class SalvageSystem
                 prevStation.StationID = (EntityUid) station;
             else if (station == null)
                 station = prevStation.StationID;
+        }
+
+        if (prevStation != null && prevStation.StationID == null && station == null)
+        {
+            var stationQuery = EntityQueryEnumerator<SalvageMagnetComponent>();
+            while (stationQuery.MoveNext(out var foundStation, out var salvageMagnet))
+            {
+                station = foundStation;
+                prevStation.StationID = (EntityUid) station;
+            }
         }
 
         if (TryComp<SalvageExpeditionDataComponent>(station, out var dataComponent))
