@@ -46,7 +46,14 @@ public sealed partial class LoadoutPreferenceSelector : Control
     public const string DefaultLoadoutInfoGuidebook = "LoadoutInfo";
 
     public EntityUid DummyEntityUid;
+
     private readonly IEntityManager _entityManager;
+    private readonly IPrototypeManager _prototypeManager;
+    private readonly CharacterRequirementsSystem _characterRequirements;
+    private readonly IConfigurationManager _configManager;
+    private readonly JobRequirementsManager _jobRequirements;
+
+    private SpriteView _previewLoadout = null!;
 
     public LoadoutPrototype Loadout { get; }
 
@@ -96,136 +103,58 @@ public sealed partial class LoadoutPreferenceSelector : Control
 
     public event Action<LoadoutPreference>? PreferenceChanged;
 
-
-    public LoadoutPreferenceSelector(LoadoutPrototype loadout, JobPrototype highJob,
-        HumanoidCharacterProfile profile, ref Dictionary<string, EntityUid> entities,
-        IEntityManager entityManager, IPrototypeManager prototypeManager, IConfigurationManager configManager,
-        CharacterRequirementsSystem characterRequirementsSystem, JobRequirementsManager jobRequirementsManager)
+    public LoadoutPreferenceSelector(LoadoutPrototype loadout,
+        JobPrototype highJob,
+        HumanoidCharacterProfile profile,
+        ref Dictionary<string, EntityUid> entities,
+        IEntityManager entityManager,
+        IPrototypeManager prototypeManager,
+        IConfigurationManager configManager,
+        CharacterRequirementsSystem characterRequirementsSystem,
+        JobRequirementsManager jobRequirementsManager)
     {
         RobustXamlLoader.Load(this);
 
         _entityManager = entityManager;
+        _prototypeManager = prototypeManager;
+        _characterRequirements = characterRequirementsSystem;
+        _configManager = configManager;
+        _jobRequirements = jobRequirementsManager;
+
         Loadout = loadout;
 
-        // Show/hide the special menu and items depending on what's allowed
         HeirloomButton.Visible = loadout.CanBeHeirloom;
         SpecialMenu.Visible = Loadout.CustomName || Loadout.CustomDescription || Loadout.CustomColorTint;
         SpecialName.Visible = Loadout.CustomName;
         SpecialDescription.Visible = Loadout.CustomDescription;
         SpecialColorTintToggle.Visible = Loadout.CustomColorTint;
+        InitializeGuidebookButton();
 
-
-        SpriteView previewLoadout;
-        if (!entities.TryGetValue(loadout.ID + 0, out var dummyLoadoutItem))
-        {
-            // Get the first item in the loadout to be the preview
-            dummyLoadoutItem = entityManager.SpawnEntity(loadout.Items.First(), MapCoordinates.Nullspace);
-            entities.Add(loadout.ID + 0, dummyLoadoutItem);
-
-            // Create a sprite preview of the loadout item
-            previewLoadout = new SpriteView
-            {
-                Scale = new Vector2(2, 2),
-                OverrideDirection = Direction.South,
-                VerticalAlignment = VAlignment.Center,
-                SizeFlagsStretchRatio = 1,
-            };
-            previewLoadout.SetEntity(dummyLoadoutItem);
-        }
-        else
-        {
-            // Create a sprite preview of the loadout item
-            previewLoadout = new SpriteView
-            {
-                Scale = new Vector2(2, 2),
-                OverrideDirection = Direction.South,
-                VerticalAlignment = VAlignment.Center,
-                SizeFlagsStretchRatio = 1,
-            };
-            previewLoadout.SetEntity(dummyLoadoutItem);
-        }
+        var dummyLoadoutItem = EnsureDummyItem(ref entities);
         DummyEntityUid = dummyLoadoutItem;
 
-        entityManager.EnsureComponent<AppearanceComponent>(dummyLoadoutItem);
-        entityManager.EnsureComponent<PaintedComponent>(dummyLoadoutItem, out var paint);
+        var loadoutName = GetName();
+        var loadoutDesc = GetDescription();
+        InitializeTooltip(loadoutDesc, highJob, profile);
 
-        var loadoutName =
-            Loc.GetString($"loadout-name-{loadout.ID}") == $"loadout-name-{loadout.ID}"
-                ? entityManager.GetComponent<MetaDataComponent>(dummyLoadoutItem).EntityName
-                : Loc.GetString($"loadout-name-{loadout.ID}");
+        var loadoutContainer = InitializeLoadoutContainer(loadoutName);
+        PreferenceButton.AddChild(loadoutContainer);
 
-        // Display the item's label if it's present
-        if (entityManager.TryGetComponent(dummyLoadoutItem, out LabelComponent? labelComponent))
-        {
-            var itemLabel = labelComponent.CurrentLabel;
-            if (!string.IsNullOrEmpty(itemLabel))
-                loadoutName += $" ({Loc.GetString(itemLabel)})";
-        }
+        NameEdit.PlaceHolder = loadoutName;
+        DescriptionEdit.Placeholder = new Rope.Leaf(Loc.GetString(loadoutDesc));
 
-        var loadoutDesc =
-            !Loc.TryGetString($"loadout-description-{loadout.ID}", out var description)
-                ? entityManager.GetComponent<MetaDataComponent>(dummyLoadoutItem).EntityDescription
-                : description;
-
-
-        // Manage the info button
-        void UpdateGuidebook() => GuidebookButton.Visible =
-            prototypeManager.HasIndex<GuideEntryPrototype>(loadout.GuideEntry);
-        UpdateGuidebook();
-        prototypeManager.PrototypesReloaded += _ => UpdateGuidebook();
-
-        GuidebookButton.OnPressed += _ =>
-        {
-            if (!prototypeManager.TryIndex<GuideEntryPrototype>(loadout.GuideEntry, out var guideRoot))
-                return;
-
-            var guidebookController = UserInterfaceManager.GetUIController<GuidebookUIController>();
-            //TODO: Don't close the guidebook if its already open, just go to the correct page
-            guidebookController.OpenGuidebook(
-                new Dictionary<ProtoId<GuideEntryPrototype>, GuideEntry> { { loadout.GuideEntry, guideRoot } },
-                includeChildren: true,
-                selected: loadout.GuideEntry);
-        };
-
-        // Create a checkbox to get the loadout
-        PreferenceButton.AddChild(new BoxContainer
-        {
-            Children =
-            {
-                new Label
-                {
-                    Text = loadout.Cost.ToString(),
-                    StyleClasses = { StyleBase.StyleClassLabelHeading },
-                    MinWidth = 32,
-                    MaxWidth = 32,
-                    ClipText = true,
-                    Margin = new Thickness(0, 0, 8, 0),
-                },
-                new PanelContainer
-                {
-                    PanelOverride = new StyleBoxFlat { BackgroundColor = Color.FromHex("#2f2f2f") },
-                    Children =
-                    {
-                        previewLoadout,
-                    },
-                },
-                new Label
-                {
-                    Text = loadoutName,
-                    Margin = new Thickness(8, 0, 0, 0),
-                },
-            },
-        });
         PreferenceButton.OnToggled += args =>
         {
             _preference.Selected = args.Pressed;
             PreferenceChanged?.Invoke(Preference);
         };
+
         HeirloomButton.OnToggled += args =>
         {
             _preference.CustomHeirloom = args.Pressed ? true : null;
             PreferenceChanged?.Invoke(Preference);
         };
+
         SaveButton.OnPressed += _ =>
         {
             _preference.CustomColorTint = SpecialColorTintToggle.Pressed ? ColorEdit.Color.ToHex() : null;
@@ -233,46 +162,176 @@ public sealed partial class LoadoutPreferenceSelector : Control
             PreferenceChanged?.Invoke(Preference);
         };
 
-        // Update prefs cache when something changes
         NameEdit.OnTextChanged += _ =>
             _preference.CustomName = string.IsNullOrEmpty(NameEdit.Text) ? null : NameEdit.Text;
+
         DescriptionEdit.OnTextChanged += _ =>
-            _preference.CustomDescription = string.IsNullOrEmpty(Rope.Collapse(DescriptionEdit.TextRope)) ? null : Rope.Collapse(DescriptionEdit.TextRope);
+            _preference.CustomDescription = string.IsNullOrEmpty(Rope.Collapse(DescriptionEdit.TextRope))
+                ? null
+                : Rope.Collapse(DescriptionEdit.TextRope);
+
         SpecialColorTintToggle.OnToggled += args =>
             ColorEdit.Visible = args.Pressed;
+
         ColorEdit.OnColorChanged += _ =>
         {
-            _preference.CustomColorTint = SpecialColorTintToggle.Pressed ? ColorEdit.Color.ToHex() : null;
-            UpdatePaint(new Entity<PaintedComponent>(dummyLoadoutItem, paint), entityManager);
+            _preference.CustomColorTint = SpecialColorTintToggle.Pressed
+                ? ColorEdit.Color.ToHex()
+                : null;
+
+            if (_entityManager.TryGetComponent<PaintedComponent>(dummyLoadoutItem, out var paint))
+                UpdatePaint(new Entity<PaintedComponent>(dummyLoadoutItem, paint), entityManager);
         };
+    }
 
-        NameEdit.PlaceHolder = loadoutName;
-        DescriptionEdit.Placeholder = new Rope.Leaf(Loc.GetString(loadoutDesc));
-
-
+    private void InitializeTooltip(string loadoutDesc,
+        JobPrototype highJob,
+        HumanoidCharacterProfile profile)
+    {
         var tooltip = new StringBuilder();
-        // Add the loadout description to the tooltip if there is one
         if (!string.IsNullOrEmpty(loadoutDesc))
             tooltip.Append($"{Loc.GetString(loadoutDesc)}");
 
-        // Get requirement reasons
-        characterRequirementsSystem.CheckRequirementsValid(
-            loadout.Requirements, highJob, profile, new Dictionary<string, TimeSpan>(),
-            jobRequirementsManager.IsWhitelisted(), loadout,
-            entityManager, prototypeManager, configManager,
+        _characterRequirements.CheckRequirementsValid(
+            Loadout.Requirements,
+            highJob,
+            profile,
+            new Dictionary<string,
+            TimeSpan>(),
+            _jobRequirements.IsWhitelisted(),
+            Loadout,
+            _entityManager,
+            _prototypeManager,
+            _configManager,
             out var reasons);
 
-        // Add requirement reasons to the tooltip
         foreach (var reason in reasons)
             tooltip.Append($"\n{reason}");
 
-        // Combine the tooltip and format it in the checkbox supplier
         if (tooltip.Length > 0)
         {
             var formattedTooltip = new Tooltip();
             formattedTooltip.SetMessage(FormattedMessage.FromMarkupPermissive(tooltip.ToString()));
             PreferenceButton.TooltipSupplier = _ => formattedTooltip;
         }
+    }
+
+    private BoxContainer InitializeLoadoutContainer(string loadoutName)
+    {
+        var costLabel = new Label
+        {
+            Text = Loadout.Cost.ToString(),
+            StyleClasses = { StyleBase.StyleClassLabelHeading },
+            MinWidth = 32,
+            MaxWidth = 32,
+            ClipText = true,
+            Margin = new Thickness(0, 0, 8, 0),
+        };
+
+        var iconContainer = new PanelContainer
+        {
+            PanelOverride = new StyleBoxFlat { BackgroundColor = Color.FromHex("#2f2f2f") },
+            Children = { _previewLoadout },
+        };
+
+        var loadoutNameLabel = new Label
+        {
+            Text = loadoutName,
+            Margin = new Thickness(8, 0, 0, 0),
+        };
+
+        var loadoutContainer = new BoxContainer
+        {
+            Children = { costLabel, iconContainer, loadoutNameLabel },
+        };
+
+        return loadoutContainer;
+    }
+
+    private EntityUid EnsureDummyItem(ref Dictionary<string, EntityUid> entities)
+    {
+        var previewKey = $"{Loadout.ID}_0";
+
+        if (!entities.TryGetValue(previewKey, out var dummyLoadoutItem))
+        {
+            dummyLoadoutItem = _entityManager.SpawnEntity(Loadout.Items.First(), MapCoordinates.Nullspace);
+            entities.Add(previewKey, dummyLoadoutItem);
+            _entityManager.EnsureComponent<AppearanceComponent>(dummyLoadoutItem);
+            _entityManager.EnsureComponent<PaintedComponent>(dummyLoadoutItem, out _);
+        }
+
+        _previewLoadout = new SpriteView
+        {
+            Scale = new Vector2(2, 2),
+            OverrideDirection = Direction.South,
+            VerticalAlignment = VAlignment.Center,
+            SizeFlagsStretchRatio = 1
+        };
+
+        _previewLoadout.SetEntity(dummyLoadoutItem);
+        return dummyLoadoutItem;
+    }
+
+    private string GetName()
+    {
+        var locId = $"loadout-name-{Loadout.ID}";
+        var name = Loc.GetString(locId);
+
+        if (name == locId)
+            name = _entityManager.GetComponent<MetaDataComponent>(DummyEntityUid).EntityName;
+
+        if (_entityManager.TryGetComponent(DummyEntityUid, out LabelComponent? labelComponent))
+        {
+            var itemLabel = labelComponent.CurrentLabel;
+            if (!string.IsNullOrEmpty(itemLabel))
+                name += $" ({Loc.GetString(itemLabel)})";
+        }
+
+        return name;
+    }
+
+    private string GetDescription()
+    {
+        var locId = $"loadout-description-{Loadout.ID}";
+        var description = Loc.GetString(locId);
+
+        if (description != locId)
+            return description;
+
+        description = _entityManager.GetComponent<MetaDataComponent>(DummyEntityUid).EntityDescription
+            ?? description;
+
+        return description;
+    }
+
+    private void UpdateGuidebook()
+    {
+        var visible = string.IsNullOrEmpty(Loadout.GuideEntry)
+            && _prototypeManager.HasIndex<GuideEntryPrototype>(Loadout.GuideEntry);
+        GuidebookButton.Visible = visible;
+    }
+
+    private void InitializeGuidebookButton()
+    {
+        _prototypeManager.PrototypesReloaded += _ => UpdateGuidebook();
+        UpdateGuidebook();
+
+        GuidebookButton.OnPressed += _ =>
+        {
+            if (!_prototypeManager.TryIndex<GuideEntryPrototype>(Loadout.GuideEntry, out var guideRoot))
+                return;
+
+            var guidebookController = UserInterfaceManager.GetUIController<GuidebookUIController>();
+
+            //TODO: Don't close the guidebook if its already open, just go to the correct page
+            guidebookController.OpenGuidebook(
+                new Dictionary<ProtoId<GuideEntryPrototype>, GuideEntry>
+                {
+                    { Loadout.GuideEntry, guideRoot }
+                },
+                includeChildren: true,
+                selected: Loadout.GuideEntry);
+        };
     }
 
     private bool _initialized;
