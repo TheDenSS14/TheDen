@@ -275,11 +275,8 @@ public sealed partial class LoadoutsPanel : BoxContainer
     /// <param name="profile">The profile that will be checked against loadout requirements.</param>
     private void BuildLoadoutTabs(JobPrototype mainJob, HumanoidCharacterProfile profile)
     {
-        var uncategorizedTab = LoadoutsTabs
-            .Contents
-            .OfType<BoxContainer>()
-            .FirstOrDefault(c => c.Name == "Uncategorized");
-        uncategorizedTab ??= AddTabToContainer("Uncategorized", LoadoutsTabs);
+        if (!_categoryTabs.TryGetValue("Uncategorized", out var uncategorizedTab))
+            uncategorizedTab = AddTabToContainer("Uncategorized", LoadoutsTabs);
 
         var loadoutCategories = _prototype.EnumeratePrototypes<LoadoutCategoryPrototype>();
         var rootCategories = loadoutCategories
