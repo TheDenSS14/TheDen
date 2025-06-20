@@ -12,6 +12,7 @@ using Content.Shared.Procedural;
 using Content.Shared.Salvage.Expeditions;
 using Content.Shared.Dataset;
 using Robust.Shared.Prototypes;
+using Content.Server.Salvage.Components;
 
 namespace Content.Server.Salvage;
 
@@ -73,6 +74,14 @@ public sealed partial class SalvageSystem
     {
         var station = _station.GetOwningStation(component);
         SalvageExpeditionConsoleState state;
+
+        if (TryComp<SalvageLastStation>(component.Owner, out var prevStation))
+        {
+            if (station != null)
+                prevStation.StationID = (EntityUid) station;
+            else if (station == null)
+                station = prevStation.StationID;
+        }
 
         if (TryComp<SalvageExpeditionDataComponent>(station, out var dataComponent))
         {
