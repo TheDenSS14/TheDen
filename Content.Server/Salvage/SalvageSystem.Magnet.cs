@@ -48,6 +48,14 @@ public sealed partial class SalvageSystem
     {
         var station = _station.GetOwningStation(uid);
 
+        if (TryComp<SalvageLastStationComponent>(uid, out var prevStation))
+        {
+            if (station != null)
+                prevStation.StationID = (EntityUid) station;
+            else if (station == null)
+                station = prevStation.StationID;
+        }
+
         if (!TryComp(station, out SalvageMagnetDataComponent? dataComp) ||
             dataComp.EndTime != null)
         {
@@ -205,6 +213,14 @@ public sealed partial class SalvageSystem
         while (query.MoveNext(out var magnetUid, out var magnet, out var xform))
         {
             var stationUid = _station.GetOwningStation(magnetUid, xform);
+
+            if (TryComp<SalvageLastStationComponent>(magnetUid, out var prevStation))
+            {
+                if (stationUid != null)
+                    prevStation.StationID = (EntityUid) stationUid;
+                else if (stationUid == null)
+                    stationUid = prevStation.StationID;
+            }
 
             if (stationUid != data.Owner)
                 continue;
