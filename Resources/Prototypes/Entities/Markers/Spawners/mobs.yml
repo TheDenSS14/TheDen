@@ -93,6 +93,19 @@
       - MobPossumMortyOld
 
 - type: entity
+  name: Possum Poppy Spawner
+  id: SpawnMobPossumPoppy
+  parent: MarkerBase
+  components:
+  - type: Sprite
+    layers:
+      - state: green
+      - state: ai
+  - type: ConditionalSpawner
+    prototypes:
+      - MobPossumPoppy
+
+- type: entity
   name: Raccoon Morticia Spawner
   id: SpawnMobRaccoonMorticia
   parent: MarkerBase
