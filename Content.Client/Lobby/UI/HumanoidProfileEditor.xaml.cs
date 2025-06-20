@@ -996,6 +996,7 @@ namespace Content.Client.Lobby.UI
             UpdateCMarkingsFacialHair();
             UpdateHeightWidthSliders();
             UpdateWeight();
+            LoadoutsTab.SetProfile(Profile);
             UpdateCharacterRequired();
 
             // Begin CD - Character Records
@@ -1014,7 +1015,6 @@ namespace Content.Client.Lobby.UI
             if (Profile != null)
                 PreferenceUnavailableButton.SelectId((int) Profile.PreferenceUnavailable);
 
-            LoadoutsTab.SetProfile(Profile);
         }
 
         /// A slim reload that only updates the entity itself and not any of the job entities, etc
@@ -2552,6 +2552,7 @@ namespace Content.Client.Lobby.UI
 
         public void UpdateLoadouts(bool reload = false)
         {
+            LoadoutsTab.SetProfile(Profile);
             LoadoutsTab.UpdateLoadouts(reload);
             ReloadProfilePreview();
         }
@@ -2575,6 +2576,9 @@ namespace Content.Client.Lobby.UI
         {
             foreach (var loadout in loadouts)
                 Profile = Profile?.WithLoadoutPreference(loadout.ID, false);
+
+            UpdateLoadouts();
+            UpdateCharacterRequired();
         }
 
         // TODO: This one is redundant IRT loadouts because of LoadoutsPanel.xaml, but traits still use them
