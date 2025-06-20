@@ -60,8 +60,8 @@ public sealed partial class SalvageSystem
 
         if (prevStation != null && prevStation.StationID == null && station == null)
         {
-            var stationQuery = EntityQueryEnumerator<SalvageMagnetComponent>();
-            while (stationQuery.MoveNext(out var foundStation, out var salvageMagnet))
+            var stationQuery = EntityQueryEnumerator<SalvageMagnetDataComponent>();
+            while (stationQuery.MoveNext(out var foundStation, out var salvageMagnetData))
             {
                 station = foundStation;
                 prevStation.StationID = (EntityUid) station;
@@ -236,8 +236,8 @@ public sealed partial class SalvageSystem
 
             if (prevStation != null && prevStation.StationID == null && station == null)
             {
-                var stationQuery = EntityQueryEnumerator<SalvageMagnetComponent>();
-                while (stationQuery.MoveNext(out var foundStation, out var salvageMagnet))
+                var stationQuery = EntityQueryEnumerator<SalvageMagnetDataComponent>();
+                while (stationQuery.MoveNext(out var foundStation, out var salvageMagnetData))
                 {
                     station = foundStation;
                     prevStation.StationID = (EntityUid) station;
@@ -266,8 +266,8 @@ public sealed partial class SalvageSystem
 
         if (prevStation != null && prevStation.StationID == null && station == null)
         {
-            var stationQuery = EntityQueryEnumerator<SalvageMagnetComponent>();
-            while (stationQuery.MoveNext(out var foundStation, out var salvageMagnet))
+            var stationQuery = EntityQueryEnumerator<SalvageMagnetDataComponent>();
+            while (stationQuery.MoveNext(out var foundStation, out var salvageMagnetData))
             {
                 station = foundStation;
                 prevStation.StationID = (EntityUid) station;
@@ -306,8 +306,8 @@ public sealed partial class SalvageSystem
 
             if (prevStation != null && prevStation.StationID == null && station == null)
             {
-                var stationQuery = EntityQueryEnumerator<SalvageMagnetComponent>();
-                while (stationQuery.MoveNext(out var foundStation, out var salvageMagnet))
+                var stationQuery = EntityQueryEnumerator<SalvageMagnetDataComponent>();
+                while (stationQuery.MoveNext(out var foundStation, out var salvageMagnetData))
                 {
                     station = foundStation;
                     prevStation.StationID = (EntityUid) station;
