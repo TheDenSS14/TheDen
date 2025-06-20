@@ -44,7 +44,7 @@ public sealed partial class LoadoutsPanel : BoxContainer
     private bool _showUnusable = false;
     private int _maxPoints = 0;
 
-    public event Action<Dictionary<LoadoutPrototype, bool>>? OnRemoveUnusableAction;
+    public event Action<HashSet<LoadoutPrototype>>? OnRemoveUnusableAction;
     public event Action<LoadoutPreference, bool>? OnLoadoutSelectedAction;
 
     // TODO: This probably should be broken up into even smaller classes
@@ -82,11 +82,12 @@ public sealed partial class LoadoutsPanel : BoxContainer
         if (!AdminUIHelpers.TryConfirm(LoadoutsRemoveUnusableButton, _confirmationData))
             return;
 
-        OnRemoveUnusableAction?.Invoke(GetUnusableLoadouts());
+        OnRemoveUnusableAction?.Invoke(GetUnusableSelectedLoadouts());
     }
 
     /// <summary>
-    /// Updates all UI controls that rely on the currently selected loadout preferences of this profile.
+    ///     Updates all UI controls that depdend on the currently selected loadout preferences of this profile.
+    ///     This includes: loadout selector states, the points remaining bar, and the number of unusable loadouts.
     /// </summary>
     private void UpdateLoadoutPreferences()
     {
@@ -97,7 +98,7 @@ public sealed partial class LoadoutsPanel : BoxContainer
     }
 
     /// <summary>
-    ///  Recalculates and displays the amount of points the player has left.
+    ///     Recalculates and updates the "remaining points" progress bar and label.
     /// </summary>
     private void UpdatePointsRemainingBar()
     {
@@ -120,11 +121,12 @@ public sealed partial class LoadoutsPanel : BoxContainer
     }
 
     /// <summary>
-    ///     Updates the unusable loadout count in the "Remove Unusable Loadouts" button label.
+    ///     Recalculates the amount of unusable loadouts and updates the unusable loadout count in
+    ///     the "Remove Unusable Loadouts" button label.
     /// </summary>
     private void UpdateUnusableLoadoutCount()
     {
-        var unusableCount = GetUnusableLoadouts().Count();
+        var unusableCount = GetUnusableSelectedLoadouts().Count();
 
         LoadoutsRemoveUnusableButton.Text = Loc.GetString(
             "humanoid-profile-editor-loadouts-remove-unusable-button",
@@ -134,6 +136,10 @@ public sealed partial class LoadoutsPanel : BoxContainer
         AdminUIHelpers.RemoveConfirm(LoadoutsRemoveUnusableButton, _confirmationData);
     }
 
+    /// <summary>
+    ///     Updates all loadout selectors at once by updating their selected status,
+    ///     wearability status, and whether they should be hidden (due to being unusable).
+    /// </summary>
     private void UpdatePreferenceSelectors()
     {
         _profilePreferenceLookup = _profile?.LoadoutPreferences?
@@ -142,16 +148,22 @@ public sealed partial class LoadoutsPanel : BoxContainer
 
         foreach (var selector in _preferenceSelectors)
         {
-            CopyProfilePreference(selector);
+            SyncSelectorToProfile(selector);
 
             if (_loadoutData.TryGetValue(selector.Loadout, out var usable))
-                UpdateLoadoutSelector(selector, usable);
+                UpdatePreferenceSelector(selector, usable);
         }
     }
 
+    /// <summary>
+    ///     Updates loadout data, adds missing tabs and loadout selectors, and reloads
+    ///     loadout preference UIs.
+    ///
+    ///     TODO: Separate this for efficiency.
+    /// </summary>
+    /// <param name="reload">Whether this should be a full reload of the loadout UI - starting from scratch with no tabs or loadout selectors.</param>
     public void UpdateLoadouts(bool reload = false)
     {
-
         if (reload)
             ClearLoadoutTabs();
 
@@ -160,7 +172,7 @@ public sealed partial class LoadoutsPanel : BoxContainer
             ?? new JobPrototype();
         var profile = _profile ?? HumanoidCharacterProfile.DefaultWithSpecies();
 
-        PopulateLoadoutData(mainJob, profile);
+        ReloadLoadoutData(mainJob, profile);
 
         if (_loadoutData.Count == 0)
         {
@@ -172,23 +184,52 @@ public sealed partial class LoadoutsPanel : BoxContainer
         UpdateLoadoutPreferences();
     }
 
-    private void UpdateLoadoutSelector(LoadoutPreferenceSelector selector, bool usable)
+    /// <summary>
+    ///     Updates visual properties of a loadout selector button. The visibility of a button
+    ///     depends on whether it is usable and/or if "show usable" is enabled.
+    ///     This also updates "wearability" status - for example, harpies cannot wear shoes.
+    /// </summary>
+    /// <param name="selector">The loadout selector button.</param>
+    /// <param name="usable">Whether this loadout is considered "usable" (all requirements fulfilled)</param>
+    private void UpdatePreferenceSelector(LoadoutPreferenceSelector selector, bool usable)
     {
         selector.Valid = usable;
         selector.ShowUnusable = _showUnusable;
+        selector.Wearable = PreferenceIsWearable(selector);
+    }
+
+    /// <summary>
+    ///     Whether or not the loadout in this loadout selector is considered "wearable". It is unwearable
+    ///     if ANY of the items in the loadout cannot be worn by the character.
+    ///     TODO: This might need to be inverted?
+    /// </summary>
+    /// <param name="selector">The loadout selector button.</param>
+    /// <returns>Whether or not the loadout is wearable by the current profile.</returns>
+    private bool PreferenceIsWearable(LoadoutPreferenceSelector selector)
+    {
+        if (_dummy == null)
+            return false;
 
         foreach (var (item, index) in selector.Loadout.Items.Select((item, index) => (item, index)))
         {
             var key = $"{selector.Loadout.ID}_{index}";
             var entity = EnsureLoadoutDummy(item, key);
 
-            selector.Wearable = !_entity.HasComponent<ClothingComponent>(entity)
-                || _dummy != null
-                && _characterRequirements.CanEntityWearItem(_dummy.Value, entity);
+            if (_entity.HasComponent<ClothingComponent>(entity)
+                && !_characterRequirements.CanEntityWearItem(_dummy.Value, entity))
+                return false;
         }
+
+        return true;
     }
 
-    private void PopulateLoadoutData(JobPrototype mainJob, HumanoidCharacterProfile profile)
+    /// <summary>
+    ///     Repopulates the `_loadoutData` by mapping LoadoutPrototypes to whether or not they are
+    ///     "usable" (fulfilling all requirements) by the given profile.
+    /// </summary>
+    /// <param name="mainJob">The preferred job this profile uses.</param>
+    /// <param name="profile">The profile that will be checked against loadout requirements.</param>
+    private void ReloadLoadoutData(JobPrototype mainJob, HumanoidCharacterProfile profile)
     {
         _loadoutData.Clear();
 
@@ -214,6 +255,9 @@ public sealed partial class LoadoutsPanel : BoxContainer
         }
     }
 
+    /// <summary>
+    ///     Creates the interface that is displayed if there are no loadouts at all.
+    /// </summary>
     private void BuildNoLoadoutsInterface()
     {
         var noLoadoutsLabel = new Label
@@ -224,6 +268,11 @@ public sealed partial class LoadoutsPanel : BoxContainer
         LoadoutsTabs.AddTab(noLoadoutsLabel, Loc.GetString("loadout-category-Uncategorized"));
     }
 
+    /// <summary>
+    ///     Initializes tab containers and selectors for each loadout category recursively, including subcategories.
+    /// </summary>
+    /// <param name="mainJob">The preferred job this profile uses.</param>
+    /// <param name="profile">The profile that will be checked against loadout requirements.</param>
     private void BuildLoadoutTabs(JobPrototype mainJob, HumanoidCharacterProfile profile)
     {
         var uncategorizedTab = LoadoutsTabs
@@ -249,6 +298,9 @@ public sealed partial class LoadoutsPanel : BoxContainer
         HideEmptyTabs(loadoutCategories.ToList());
     }
 
+    /// <summary>
+    ///     Deletes all tabs and loadout selectors.
+    /// </summary>
     private void ClearLoadoutTabs()
     {
         foreach (var tab in LoadoutsTabs.Tabs)
@@ -261,6 +313,14 @@ public sealed partial class LoadoutsPanel : BoxContainer
         _selectorLookup.Clear();
     }
 
+    /// <summary>
+    ///     Creates a new loadout selector for a given loadout.
+    /// </summary>
+    /// <param name="loadout">The loadout prototype corresponding to this selector.</param>
+    /// <param name="mainJob">The preferred job this profile uses.</param>
+    /// <param name="profile">The profile that will be checked against loadout requirements.</param>
+    /// <param name="usable">Whether or not this loadout is usable.</param>
+    /// <returns>A loadout selector button.</returns>
     private LoadoutPreferenceSelector BuildNewSelector(LoadoutPrototype loadout,
         JobPrototype mainJob,
         HumanoidCharacterProfile profile,
@@ -280,12 +340,17 @@ public sealed partial class LoadoutsPanel : BoxContainer
             Preference = new(loadout.ID)
         };
 
-        UpdateLoadoutSelector(newSelector, usable);
+        UpdatePreferenceSelector(newSelector, usable);
         AddLoadoutSelector(newSelector);
 
         return newSelector;
     }
 
+    /// <summary>
+    ///     Recursively constructs a tab container and subcategory tabs for a given category.
+    /// </summary>
+    /// <param name="tree">A recursive table of sub-categories and loadouts prototypes.</param>
+    /// <param name="parent">The control that this container should be added to.</param>
     private void BuildCategoryContainer(Dictionary<string, object> tree, NeoTabContainer parent)
     {
         foreach (var (key, value) in tree)
@@ -332,8 +397,8 @@ public sealed partial class LoadoutsPanel : BoxContainer
             if (existingLoadoutIds.Contains(loadout.ID)
                 && _selectorLookup.TryGetValue(loadout.ID, out var selector))
             {
-                CopyProfilePreference(selector);
-                UpdateLoadoutSelector(selector, usable);
+                SyncSelectorToProfile(selector);
+                UpdatePreferenceSelector(selector, usable);
                 continue;
             }
 
@@ -344,6 +409,12 @@ public sealed partial class LoadoutsPanel : BoxContainer
         }
     }
 
+    /// <summary>
+    ///     Creates a new tab container representing a loadout (sub)category.
+    /// </summary>
+    /// <param name="name">The name of this tab container.</param>
+    /// <param name="parent">This tab container is added as a new tab to this NeoTabContainer.</param>
+    /// <returns></returns>
     private BoxContainer AddTabToContainer(string name, NeoTabContainer parent)
     {
         var tabContent = new BoxContainer
@@ -374,6 +445,11 @@ public sealed partial class LoadoutsPanel : BoxContainer
         return tab;
     }
 
+    /// <summary>
+    ///     Adds a loadout selector to the relevant data tables, and binds the click event that
+    ///     allows it to select/deselect loadouts.
+    /// </summary>
+    /// <param name="selector">The selector button to add.</param>
     private void AddLoadoutSelector(LoadoutPreferenceSelector selector)
     {
         _preferenceSelectors.Add(selector);
@@ -391,6 +467,11 @@ public sealed partial class LoadoutsPanel : BoxContainer
         };
     }
 
+    /// <summary>
+    ///     Creates a recursive data structure representing all loadout categories and sub-categories.
+    /// </summary>
+    /// <param name="loadoutCategories">List of loadout categories to add to this branch of the tree.</param>
+    /// <returns></returns>
     private Dictionary<string, object> CreateTree(List<LoadoutCategoryPrototype> loadoutCategories)
     {
         var tree = new Dictionary<string, object>();
@@ -418,6 +499,10 @@ public sealed partial class LoadoutsPanel : BoxContainer
         return tree;
     }
 
+    /// <summary>
+    ///     Hides all category tabs that have no buttons in them.
+    /// </summary>
+    /// <param name="categories">A list of all categories that may be hidden.</param>
     private void HideEmptyTabs(List<LoadoutCategoryPrototype> categories)
     {
         foreach (var category in categories)
@@ -436,12 +521,16 @@ public sealed partial class LoadoutsPanel : BoxContainer
                 topContainer.SetTabVisible(tab, hasContent);
 
             if (tab.Parent?.Parent is NeoTabContainer parentTab)
-                HideEmptyTabs(GetParentCategories(parentTab));
+                HideEmptyTabs(GetSubcategoriesFromTabs(parentTab));
         }
     }
 
-    // TODO: Figure out why this exists
-    private void CopyProfilePreference(LoadoutPreferenceSelector selector)
+    /// <summary>
+    ///     Updates a loadout selector's preference with the currently loaded profile's preference.
+    ///     This also sets the selection status of the loadout selector.
+    /// </summary>
+    /// <param name="selector">The selector button to update.</param>
+    private void SyncSelectorToProfile(LoadoutPreferenceSelector selector)
     {
         _profilePreferenceLookup.TryGetValue(selector.Loadout.ID, out var preference);
         var selected = preference?.Selected ?? false;
@@ -458,23 +547,42 @@ public sealed partial class LoadoutsPanel : BoxContainer
         };
     }
 
-    private EntityUid EnsureLoadoutDummy(EntProtoId item, string key)
+    /// <summary>
+    ///     Creates a "dummy entity" for an item in a loadout. Not to be confused with the loadout icon!!
+    ///     These dummy entitires are used to check against requirements.
+    /// </summary>
+    /// <param name="itemProto">The entity prototype for the loadout item.</param>
+    /// <param name="key">A unique key for caching this entity.</param>
+    /// <returns>The ID of the dummy entity.</returns>
+    private EntityUid EnsureLoadoutDummy(EntProtoId itemProto, string key)
     {
         if (_loadoutDummies.TryGetValue(key, out var entity)
-            && _entity.GetComponent<MetaDataComponent>(entity).EntityPrototype!.ID == item)
+            && _entity.GetComponent<MetaDataComponent>(entity).EntityPrototype!.ID == itemProto)
             return entity;
 
-        entity = _entity.SpawnEntity(item, MapCoordinates.Nullspace);
+        entity = _entity.SpawnEntity(itemProto, MapCoordinates.Nullspace);
         _loadoutDummies[key] = entity;
         return entity;
     }
 
+    /// <summary>
+    ///     Checks whether a loadout can be selected/deselected while remaining within the bounds of point costs.
+    /// </summary>
+    /// <param name="cost">The cost of the loadout.</param>
+    /// <param name="isSelected">Whether or not the button itself is selected.</param>
+    /// <returns>The "real" selection status to maintain within the point bounds.</returns>
     private bool ValidateSelection(int cost, bool isSelected)
     {
         var testPoints = LoadoutPointsBar.Value + cost;
         return isSelected ? testPoints >= 0 : testPoints < 0;
     }
 
+    /// <summary>
+    ///     Whether or not this loadout is wearable and follows all requirements.
+    /// </summary>
+    /// <param name="loadout">The loadout to check.</param>
+    /// <param name="isValid">Whether or not this loadout follows character requirements.</param>
+    /// <returns>If this loadout is usable or not.</returns>
     private bool IsLoadoutUnusable(LoadoutPrototype loadout, bool isValid)
     {
         return !isValid
@@ -482,20 +590,42 @@ public sealed partial class LoadoutsPanel : BoxContainer
             && !selector.Wearable;
     }
 
+    /// <summary>
+    ///     Searches for the topmost tab container.
+    /// </summary>
+    /// <param name="tab">The tab to search for the topmost ancestor.</param>
+    /// <returns>The topmost tab container.</returns>
     private NeoTabContainer? GetTopTabContainer(Control tab)
     {
         return tab.Parent?.Parent?.Parent?.Parent as NeoTabContainer;
     }
 
-    private List<LoadoutCategoryPrototype> GetParentCategories(NeoTabContainer parent)
+    /// <summary>
+    ///     Gets a list of subcategories of a NeoTabContainer from its contents.
+    /// </summary>
+    /// <param name="parent">The NeoTabContainer to use.</param>
+    /// <returns>A list of LoadoutCategoryPrototype subcategories.</returns>
+    private List<LoadoutCategoryPrototype> GetSubcategoriesFromTabs(NeoTabContainer parent)
     {
-        return parent.Contents
-            .Select(c => _prototype.Index<LoadoutCategoryPrototype>(c.Name!))
-            .Where(p => p != null)
-            .ToList()!;
+        var categories = new List<LoadoutCategoryPrototype>();
+
+        foreach (var control in parent.Contents)
+        {
+            if (control.Name == null) continue;
+            if (_prototype.TryIndex<LoadoutCategoryPrototype>(control.Name, out var proto))
+            {
+                categories.Add(proto);
+            }
+        }
+
+        return categories;
     }
 
-    private Dictionary<LoadoutPrototype, bool> GetUnusableLoadouts()
+    /// <summary>
+    ///     Creates a HashSet of all currently-selected unusable loadouts.
+    /// </summary>
+    /// <returns>A HashSet of all currently-selected unusable loadouts.</returns>
+    private HashSet<LoadoutPrototype> GetUnusableSelectedLoadouts()
     {
         var selectedLoadouts = _preferenceSelectors
             .Where(lps => lps.Preference.Selected)
@@ -503,20 +633,27 @@ public sealed partial class LoadoutsPanel : BoxContainer
             .ToHashSet();
 
         var unusableLoadouts = _loadoutData
-            .Where(l => selectedLoadouts.Contains(l.Key)
-                && IsLoadoutUnusable(l.Key, l.Value))
-            .ToDictionary();
+            .Where(l => selectedLoadouts.Contains(l.Key) && IsLoadoutUnusable(l.Key, l.Value))
+            .Select(l => l.Key)
+            .ToHashSet();
 
         return unusableLoadouts;
     }
 
-    private static BoxContainer? FindCategoryTab(string id, NeoTabContainer parent)
+    /// <summary>
+    ///     Recursively searches for the tab container corresponding to a category.
+    /// </summary>
+    /// <param name="categoryId">The ID of the category to search for.</param>
+    /// <param name="parent">The control to look inside for the tab.</param>
+    /// <returns>The category tab, if found.</returns>
+    private static BoxContainer? FindCategoryTab(string categoryId, NeoTabContainer parent)
     {
-        if (parent.Contents.FirstOrDefault(c => c.Name == id) is BoxContainer match)
+        if (parent.Contents.FirstOrDefault(c => c.Name == categoryId) is BoxContainer match)
             return match;
 
-        return parent.Contents.OfType<NeoTabContainer>()
-            .Select(subcategory => FindCategoryTab(id, subcategory))
+        return parent.Contents
+            .OfType<NeoTabContainer>()
+            .Select(subcategory => FindCategoryTab(categoryId, subcategory))
             .FirstOrDefault(result => result != null);
     }
 }

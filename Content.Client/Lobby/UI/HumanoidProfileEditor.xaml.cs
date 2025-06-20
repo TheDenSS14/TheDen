@@ -2571,9 +2571,9 @@ namespace Content.Client.Lobby.UI
             SetProfile(Profile, CharacterSlot);
         }
 
-        private void RemoveUnusableLoadouts(Dictionary<LoadoutPrototype, bool> loadouts)
+        private void RemoveUnusableLoadouts(HashSet<LoadoutPrototype> loadouts)
         {
-            foreach (var (loadout, _) in loadouts)
+            foreach (var loadout in loadouts)
                 Profile = Profile?.WithLoadoutPreference(loadout.ID, false);
         }
 
