@@ -1,4 +1,10 @@
-﻿using Robust.Shared.Configuration;
+// SPDX-FileCopyrightText: 2025 DocNITE <docnite0530@gmail.com>
+// SPDX-FileCopyrightText: 2025 VMSolidus <evilexecutive@gmail.com>
+// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
+using Robust.Shared.Configuration;
 
 namespace Content.Shared.CCVar;
 
@@ -27,4 +33,7 @@ public sealed partial class CCVars
 
     public static readonly CVarDef<bool> ModernProgressBar =
         CVarDef.Create("hud.modern_progress_bar", true, CVar.CLIENTONLY | CVar.ARCHIVE);
+
+    public static readonly CVarDef<bool> ChatExtraInfo =
+        CVarDef.Create("hud.chat_extra_info", true, CVar.CLIENTONLY | CVar.ARCHIVE);
 }

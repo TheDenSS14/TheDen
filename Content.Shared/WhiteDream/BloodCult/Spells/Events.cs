@@ -1,4 +1,11 @@
-﻿using Content.Shared.Actions;
+// SPDX-FileCopyrightText: 2025 Remuchi <72476615+Remuchi@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Rosycup <178287475+Rosycup@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Spatison <137375981+Spatison@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
+using Content.Shared.Actions;
 using Content.Shared.Chat;
 using Content.Shared.DoAfter;
 using Content.Shared.Magic;
@@ -102,8 +109,8 @@ public sealed partial class CreateSpeellDoAfterEvent : SimpleDoAfterEvent
 public sealed partial class TeleportActionDoAfterEvent : SimpleDoAfterEvent
 {
     public NetEntity Rune;
-    public SoundPathSpecifier TeleportInSound = new("/Audio/WhiteDream/BloodCult/veilin.ogg");
-    public SoundPathSpecifier TeleportOutSound = new("/Audio/WhiteDream/BloodCult/veilout.ogg");
+    public SoundPathSpecifier TeleportInSound = new("/Audio/_White/BloodCult/veilin.ogg");
+    public SoundPathSpecifier TeleportOutSound = new("/Audio/_White/BloodCult/veilout.ogg");
 }
 
 [Serializable, NetSerializable]

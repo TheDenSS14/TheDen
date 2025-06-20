@@ -1,0 +1,32 @@
+# SPDX-FileCopyrightText: 2024 Fansana <fansana95@googlemail.com>
+# SPDX-FileCopyrightText: 2025 Rosycup <178287475+Rosycup@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
+- type: constructionGraph
+  id: SleepingBag
+  start: start
+  graph:
+  - node: start
+    edges:
+    - to: sleepingbag
+      steps:
+      - material: Cloth
+        amount: 5
+        doAfter: 4
+  - node: sleepingbag
+    entity: SleepingBagFolded
+
+- type: construction
+  name: sleeping bag
+  id: sleeping_bag
+  graph: SleepingBag
+  startNode: start
+  targetNode: sleepingbag
+  category: construction-category-furniture
+  description: A sleeping bed, perfect for those calm nights under a stary sky.
+  icon:
+    sprite: _Floof/Structures/sleepingbag.rsi
+    state: open
+  objectType: Item

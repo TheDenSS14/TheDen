@@ -1,0 +1,42 @@
+# SPDX-FileCopyrightText: 2024 FoxxoTrystan <trystan.garnierhein@gmail.com>
+# SPDX-FileCopyrightText: 2024 ShatteredSwords <135023515+ShatteredSwords@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Blitz <73762869+BlitzTheSquishy@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Rosycup <178287475+Rosycup@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
+# Cosmetic Goggles
+
+- type: loadout
+  id: LoadoutEyesThermalBudget
+  category: Eyes
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingEyesGlassesThermalBudget
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutEyes # TheDen
+
+- type: loadout
+  id: LoadoutEyesChemicalBudget
+  category: Eyes
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingEyesGlassesChemicalBudget
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutEyes # TheDen
+
+- type: loadout
+  id: LoadoutEyesMesonBudget
+  category: Eyes
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingEyesGlassesMesonBudget
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutEyes # TheDen

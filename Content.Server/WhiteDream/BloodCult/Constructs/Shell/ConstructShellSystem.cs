@@ -1,4 +1,10 @@
-﻿using Content.Server.Mind;
+// SPDX-FileCopyrightText: 2024 Remuchi <72476615+Remuchi@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Rosycup <178287475+Rosycup@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
+using Content.Server.Mind;
 using Content.Server.Popups;
 using Content.Server.WhiteDream.BloodCult.Constructs.SoulShard;
 using Content.Shared.Containers.ItemSlots;
@@ -66,7 +72,7 @@ public sealed class ConstructShellSystem : EntitySystem
             DoContactInteraction = true,
             Text = Loc.GetString("soul-shard-selector-form"),
             Icon = new SpriteSpecifier.Texture(
-                new ResPath("/Textures/WhiteDream/BloodCult/Entities/Items/construct_shell.rsi")),
+                new ResPath("/Textures/_White/BloodCult/Entities/Items/construct_shell.rsi")),
             Act = action
         });
     }

@@ -1,3 +1,13 @@
+// SPDX-FileCopyrightText: 2023 Moony <moony@hellomouse.net>
+// SPDX-FileCopyrightText: 2023 Vordenburg <114301317+Vordenburg@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 MilenVolf <63782763+MilenVolf@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Falcon <falcon@zigtag.dev>
+// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 sleepyyapril <flyingkarii@gmail.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 using System.Linq;
 using Content.Server.Worldgen.Components.Debris;
 using Content.Shared.Maps;
@@ -15,6 +25,7 @@ public sealed class BlobFloorPlanBuilderSystem : BaseWorldSystem
     [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly ITileDefinitionManager _tileDefinition = default!;
     [Dependency] private readonly TileSystem _tiles = default!;
+    [Dependency] private readonly SharedMapSystem _map = default!;
 
     /// <inheritdoc />
     public override void Initialize()
@@ -25,10 +36,10 @@ public sealed class BlobFloorPlanBuilderSystem : BaseWorldSystem
     private void OnBlobFloorPlanBuilderStartup(EntityUid uid, BlobFloorPlanBuilderComponent component,
         ComponentStartup args)
     {
-        PlaceFloorplanTiles(component, Comp<MapGridComponent>(uid));
+        PlaceFloorplanTiles(uid, component, Comp<MapGridComponent>(uid));
     }
 
-    private void PlaceFloorplanTiles(BlobFloorPlanBuilderComponent comp, MapGridComponent grid)
+    private void PlaceFloorplanTiles(EntityUid gridUid, BlobFloorPlanBuilderComponent comp, MapGridComponent grid)
     {
         // NO MORE THAN TWO ALLOCATIONS THANK YOU VERY MUCH.
         // TODO: Just put these on a field instead then?
@@ -82,7 +93,7 @@ public sealed class BlobFloorPlanBuilderSystem : BaseWorldSystem
             }
         }
 
-        grid.SetTiles(taken.Select(x => (x.Key, x.Value)).ToList());
+        _map.SetTiles(gridUid, grid, taken.Select(x => (x.Key, x.Value)).ToList());
     }
 }
 

@@ -1,3 +1,24 @@
+# SPDX-FileCopyrightText: 2022 Alex Evgrashin <aevgrashin@yandex.ru>
+# SPDX-FileCopyrightText: 2022 Emisse <99158783+Emisse@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 metalgearsloth <comedian_vs_clown@hotmail.com>
+# SPDX-FileCopyrightText: 2023 Debug <49997488+DebugOk@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Lei Yunxing <lyx2020@sjtu.edu.cn>
+# SPDX-FileCopyrightText: 2023 Nairod <110078045+Nairodian@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Vordenburg <114301317+Vordenburg@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 lzk <124214523+lzk228@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 lzk228 <124214523+lzk228@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT <77995199+DEATHB4DEFEAT@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Ed <96445749+TheShuEd@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 SimpleStation14 <130339894+SimpleStation14@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Blitz <73762869+BlitzTheSquishy@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Falcon <falcon@zigtag.dev>
+# SPDX-FileCopyrightText: 2025 MajorMoth <61519600+MajorMoth@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 - type: entity
   id: HolosignWetFloor
   name: wet floor sign
@@ -32,7 +53,7 @@
 
 - type: entity
   id: HoloFan
-  parent: HolosignWetFloor
+  parent: BaseHolosign # DeltaV - don't include TimedDespawn
   name: holofan
   description: A barrier of hard light that blocks air, but nothing else.
   components:
@@ -45,16 +66,22 @@
         shape:
           !type:PhysShapeAabb
             bounds: "-0.5,-0.5,0.5,0.5"
-  - type: TimedDespawn
-    lifetime: 180
+  #- type: TimedDespawn # DeltaV - no despawning for holofans
+  #  lifetime: 180
+  - type: Transform # DeltaV
+    noRot: true
   - type: Airtight
     noAirWhenFullyAirBlocked: false
-  - type: EmitSoundOnSpawn
-    sound: 
-      path: /Audio/_DEN/holofan_sound.ogg
-      params:
-        maxDistance: 5
-        volume: 2
+  - type: Holofan # DeltaV - for whitelisting
+#  - type: SpamEmitSound
+#    enabled: false
+#    minInterval: 3.2
+#    maxInterval: 3.3
+#    sound:
+#      path: /Audio/_DEN/holofan_sound_looped.ogg
+#      params:
+#        maxDistance: 5
+#        volume: 2
 
 - type: entity
   id: HolosignSecurity

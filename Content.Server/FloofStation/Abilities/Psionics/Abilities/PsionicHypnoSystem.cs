@@ -1,3 +1,10 @@
+// SPDX-FileCopyrightText: 2024 FoxxoTrystan <trystan.garnierhein@gmail.com>
+// SPDX-FileCopyrightText: 2024 sleepyyapril <flyingkarii@gmail.com>
+// SPDX-FileCopyrightText: 2025 Rosycup <178287475+Rosycup@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 using Content.Shared.Abilities.Psionics;
 using Content.Shared.Actions.Events;
 using Content.Shared.Floofstation.Hypno;
@@ -113,7 +120,7 @@ namespace Content.Server.Abilities.Psionics
             {
                 Act = () => StopHypno(args.Target),
                 Text = Loc.GetString("hypno-release"),
-                Icon = new SpriteSpecifier.Texture(new ResPath("/Textures/Floof/Interface/Actions/hypno.png")),
+                Icon = new SpriteSpecifier.Texture(new ResPath("/Textures/_Floof/Interface/Actions/hypno.png")),
                 Priority = 1
             };
             args.Verbs.Add(verbReleaseHypno);
@@ -128,7 +135,7 @@ namespace Content.Server.Abilities.Psionics
             {
                 Act = () => StopHypno(args.User),
                 Text = Loc.GetString("hypno-break"),
-                Icon = new SpriteSpecifier.Texture(new ResPath("/Textures/Floof/Interface/Actions/hypno.png")),
+                Icon = new SpriteSpecifier.Texture(new ResPath("/Textures/_Floof/Interface/Actions/hypno.png")),
                 Priority = 1
             };
             args.Verbs.Add(verbBreakHypno);

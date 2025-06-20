@@ -1,12 +1,18 @@
+// SPDX-FileCopyrightText: 2024 Milon <milonpl.git@proton.me>
+// SPDX-FileCopyrightText: 2025 BlitzTheSquishy <73762869+BlitzTheSquishy@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 using System.Numerics;
-using Content.Server.DeltaV.Cargo.Systems;
-using Content.Server.DeltaV.CartridgeLoader.Cartridges;
+using Content.Server._DV.Cargo.Systems;
+using Content.Server._DV.CartridgeLoader.Cartridges;
 using Content.Shared.CartridgeLoader.Cartridges;
 using Robust.Shared.Audio;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom;
 using Robust.Shared.Timing;
 
-namespace Content.Server.DeltaV.Cargo.Components;
+namespace Content.Server._DV.Cargo.Components;
 
 [RegisterComponent, AutoGenerateComponentPause]
 [Access(typeof(StockMarketSystem), typeof(StockTradingCartridgeSystem))]

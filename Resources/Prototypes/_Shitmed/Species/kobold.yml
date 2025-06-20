@@ -1,3 +1,8 @@
+# SPDX-FileCopyrightText: 2024 gluesniffler <159397573+gluesniffler@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 - type: species
   id: Kobold
   name: species-name-kobold
@@ -12,6 +17,8 @@
 - type: speciesBaseSprites
   id: MobKoboldSprites
   sprites:
+    TailBehind: MobHumanoidAnyMarking
+    TailOversuit: MobHumanoidAnyMarking
     Head: MobKoboldHead
     Chest: MobKoboldTorso
     Tail: MobKoboldTail

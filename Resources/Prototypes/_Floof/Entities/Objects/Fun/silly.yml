@@ -1,0 +1,43 @@
+# SPDX-FileCopyrightText: 2024 Fansana <116083121+Fansana@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Rosycup <178287475+Rosycup@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
+- type: entity
+  parent: ChemistryEmptyBottle02
+  id: HealthPotionFake
+  name: health potion
+  description: Full of vitamins and deliciousness!
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 30
+        reagents:
+        - ReagentId: JuiceApple
+          Quantity: 10
+        - ReagentId: JuiceBerry
+          Quantity: 10
+        - ReagentId: JuiceOrange
+          Quantity: 10
+  - type: Label
+    currentLabel: health potion
+
+- type: entity
+  parent: ChemistryEmptyBottle04
+  id: ManaPotionFake
+  name: mana potion
+  description: Full of vitamins and powaa!
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 30
+        reagents:
+        - ReagentId: JuiceBluePumpkin
+          Quantity: 15
+        - ReagentId: JuiceBerry
+          Quantity: 15
+  - type: Label
+    currentLabel: mana potion

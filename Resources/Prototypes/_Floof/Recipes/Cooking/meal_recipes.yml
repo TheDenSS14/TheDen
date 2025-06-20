@@ -1,0 +1,277 @@
+# SPDX-FileCopyrightText: 2024 Fansana <fansana95@googlemail.com>
+# SPDX-FileCopyrightText: 2024 neuPanda <chriseparton@gmail.com>
+# SPDX-FileCopyrightText: 2025 Rosycup <178287475+Rosycup@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Tabitha <64847293+KyuPolaris@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
+- type: microwaveMealRecipe
+  id: RecipeIceCreamBloodDrop
+  name: blood drop ice cream recipe
+  result: IceCreamBloodDrop
+  time: 5
+  reagents:
+    IceCream: 20
+    Blood: 10
+    JuiceBerry: 5
+  solids:
+    IceCreamBowl: 1
+
+- type: microwaveMealRecipe
+  id: RecipeIceCreamCaramel
+  name: caramel ice cream recipe
+  result: IceCreamCaramel
+  time: 5
+  reagents:
+    IceCream: 20
+    Sugar: 10
+    Butter: 5
+  solids:
+    IceCreamBowl: 1
+    FoodCoffeeBeansRoastedLight: 1
+
+- type: microwaveMealRecipe
+  id: RecipeIceCreamCoffee
+  name: coffee ice cream recipe
+  result: IceCreamCoffee
+  time: 5
+  reagents:
+    IceCream: 20
+    Coffee: 20
+  solids:
+    IceCreamBowl: 1
+
+- type: microwaveMealRecipe
+  id: RecipeIceCreamGreenTea
+  name: green tea ice cream recipe
+  result: IceCreamGreenTea
+  time: 5
+  reagents:
+    IceCream: 20
+    GreenTea: 15
+  solids:
+    IceCreamBowl: 1
+
+- type: microwaveMealRecipe
+  id: RecipeIceCreamLemon
+  name: lemon tea ice cream recipe
+  result: IceCreamLemon
+  reagents:
+    IceCream: 20
+    JuiceLemon: 15
+  solids:
+    IceCreamBowl: 1
+
+- type: microwaveMealRecipe
+  id: RecipeIceCreamOrange
+  name: orange ice cream recipe
+  result: IceCreamOrange
+  time: 5
+  reagents:
+    IceCream: 20
+    JuiceOrange: 15
+  solids:
+    IceCreamBowl: 1
+
+- type: microwaveMealRecipe
+  id: RecipeIceCreamRainbow
+  name: rainbow ice cream recipe
+  result: IceCreamRainbow
+  time: 5
+  reagents:
+    IceCream: 20
+    JuiceBerry: 5
+    JuiceLemon: 5
+    JuiceOrange: 5
+  solids:
+    IceCreamBowl: 1
+
+- type: microwaveMealRecipe
+  id: RecipeIceCreamSaltedCaramel
+  name: salted caramel ice cream recipe
+  result: IceCreamSaltedCaramel
+  time: 5
+  reagents:
+    IceCream: 20
+    Sugar: 10
+    TableSalt: 5
+  solids:
+    IceCreamBowl: 1
+
+- type: microwaveMealRecipe
+  id: RecipeIceCreamSpaghetti
+  name: spaghetti ice cream recipe
+  result: IceCreamSpaghetti
+  time: 5
+  reagents:
+    IceCream: 20
+    Sugar: 10
+    JuiceBerry: 5
+  solids:
+    IceCreamBowl: 1
+
+- type: microwaveMealRecipe
+  id: RecipeIceCreamStrawberry
+  name: strawberry ice cream recipe
+  result: IceCreamStrawberry
+  time: 5
+  reagents:
+    IceCream: 20
+    JuiceBerry: 15
+  solids:
+    IceCreamBowl: 1
+    FoodBerries: 1
+
+- type: microwaveMealRecipe
+  id: RecipeIceCreamBananaSplit
+  name: banana split ice cream recipe
+  result: IceCreamBananaSplit
+  time: 5
+  reagents:
+    IceCream: 20
+    CocoaPowder: 5
+    JuiceBerry: 5
+  solids:
+    IceCreamBowl: 1
+    FoodBanana: 1
+    FoodCherry: 1
+
+- type: microwaveMealRecipe
+  id: RecipeIceCreamChoco
+  name: chocolate ice cream recipe
+  result: IceCreamChoco
+  time: 5
+  reagents:
+    IceCream: 20
+    CocoaPowder: 5
+  solids:
+    IceCreamBowl: 1
+    FoodSnackChocolateBar: 1
+
+- type: microwaveMealRecipe
+  id: RecipeIceCreamCoconut
+  name: coconut ice cream recipe
+  result: IceCreamCoconut
+  time: 5
+  reagents:
+    IceCream: 20
+    CoconutWater: 20
+  solids:
+    IceCreamBowl: 1
+
+- type: microwaveMealRecipe
+  id: RecipeIceCreamCosmos
+  name: cosmos ice cream recipe
+  result: IceCreamCosmos
+  time: 5
+  reagents:
+    IceCream: 20
+    Nothing: 5
+    JuiceBerry: 15
+  solids:
+    IceCreamBowl: 1
+
+- type: microwaveMealRecipe
+  id: RecipeIceCreamGilded
+  name: gilded ice cream recipe
+  result: IceCreamGilded
+  time: 5
+  reagents:
+    IceCream: 20
+    Gold: 10
+    Honey: 10
+  solids:
+    IceCreamBowl: 1
+
+- type: microwaveMealRecipe
+  id: RecipeIceCreamLoversDelight
+  name: gilded ice cream recipe
+  result: IceCreamLoversDelight
+  time: 5
+  reagents:
+    IceCream: 20
+    JuicePomegranate: 20
+  solids:
+    IceCreamBowl: 1
+
+- type: microwaveMealRecipe
+  id: RecipeIceCreamMintChoco
+  name: mint chocolate ice cream recipe
+  result: IceCreamMintChoco
+  time: 5
+  reagents:
+    IceCream: 20
+    Frostoil: 10
+    CocoaPowder: 5
+  solids:
+    IceCreamBowl: 1
+
+- type: microwaveMealRecipe
+  id: RecipeIceCreamSolar
+  name: napalm ice cream recipe
+  result: IceCreamSolar
+  time: 5
+  reagents:
+    IceCream: 20
+    Napalm: 10
+    Hydrogen: 10
+  solids:
+    IceCreamBowl: 1
+
+- type: microwaveMealRecipe
+  id: RecipeIceCreamNebula
+  name: Nebula ice cream recipe
+  result: IceCreamNebula
+  time: 5
+  reagents:
+    IceCream: 20
+    Nothing: 10
+    Hydrogen: 10
+  solids:
+    IceCreamBowl: 1
+
+- type: microwaveMealRecipe
+  id: RecipeIceCreamNeapolitan
+  name: neapolitan ice cream recipe
+  result: IceCreamNeapolitan
+  time: 5
+  reagents:
+    IceCream: 20
+    JuiceBerry: 10
+    CocoaPowder: 5
+  solids:
+    IceCreamBowl: 1
+
+- type: microwaveMealRecipe
+  id: RecipeIceCreamWatermelon
+  name: neapolitan ice cream recipe
+  result: IceCreamWatermelon
+  time: 5
+  reagents:
+    IceCream: 20
+    JuiceWatermelon: 20
+  solids:
+    IceCreamBowl: 1
+
+- type: microwaveMealRecipe
+  id: RecipeIceCreamVanilla
+  name: neapolitan ice cream recipe
+  result: IceCreamVanilla
+  time: 5
+  reagents:
+    IceCream: 35
+    Cream: 5
+  solids:
+    IceCreamBowl: 1
+
+- type: microwaveMealRecipe
+  id: RecipeRicePudding2
+  name: rice pudding recipe
+  result: FoodRicePudding
+  time: 15
+  reagents:
+    Rice: 15
+    Cream: 15
+  solids:
+    FoodBowlBig: 1

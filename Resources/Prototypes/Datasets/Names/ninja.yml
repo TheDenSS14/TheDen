@@ -1,42 +1,19 @@
-﻿- type: dataset
-  id: names_ninja
+# SPDX-FileCopyrightText: 2022 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 Paul Ritter <ritter.paul1@googlemail.com>
+# SPDX-FileCopyrightText: 2022 Peptide90 <78795277+Peptide90@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Blitz <73762869+BlitzTheSquishy@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
+- type: localizedDataset
+  id: NamesNinja
   values:
-  - Shadow
-  - Sarutobi
-  - Smoke
-  - Rain
-  - Zero
-  - Raphael
-  - Michaelangelo
-  - Donatello
-  - Leonardo
-  - Splinter
-  - Shredder
-  - Hazuki
-  - Hien
-  - Hiryu
-  - Hayabusa
-  - Midnight
-  - Seven
-  - McNinja
-  - Hanzo
-  - Blood
-  - Iga
-  - Koga
-  - Hero
-  - Hiro
-  - Phantom
-  - Baki
-  - Ogre
-  - Daemon
-  - Goemon
-  - McAwesome
-  - Throat
-  - Death
-  - Aria
-  - Bro
-  - Fox
-  - Samurai
-  - Eater
-  - Ryu
-  - Raiden
+    prefix: names-ninja-dataset-
+    count: 39
+
+- type: localizedDataset
+  id: NamesNinjaTitle
+  values:
+    prefix: names-ninja-title-dataset-
+    count: 46

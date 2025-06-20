@@ -1,3 +1,21 @@
+// SPDX-FileCopyrightText: 2021 Alex Evgrashin <aevgrashin@yandex.ru>
+// SPDX-FileCopyrightText: 2021 Paul Ritter <ritter.paul1@googlemail.com>
+// SPDX-FileCopyrightText: 2022 mirrorcult <lunarautomaton6@gmail.com>
+// SPDX-FileCopyrightText: 2022 wrexbe <81056464+wrexbe@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Ahion <58528255+Ahion@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Julian Giebel <juliangiebel@live.de>
+// SPDX-FileCopyrightText: 2023 chromiumboy <50505512+chromiumboy@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 keronshb <54602815+keronshb@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Danger Revolution! <142105406+DangerRevolution@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Pspritechologist <81725545+Pspritechologist@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 XavierSomething <tylernguyen203@gmail.com>
+// SPDX-FileCopyrightText: 2025 MajorMoth <61519600+MajorMoth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
+using Content.Shared.DoAfter;
 using Robust.Shared.Map;
 using Robust.Shared.Serialization;
 
@@ -6,8 +24,9 @@ namespace Content.Shared.Medical.SuitSensor;
 [Serializable, NetSerializable]
 public sealed class SuitSensorStatus
 {
-    public SuitSensorStatus(NetEntity suitSensorUid, string name, string job, string jobIcon, List<string> jobDepartments)
+    public SuitSensorStatus(NetEntity ownerUid, NetEntity suitSensorUid, string name, string job, string jobIcon, List<string> jobDepartments)
     {
+        OwnerUid = ownerUid;
         SuitSensorUid = suitSensorUid;
         Name = name;
         Job = job;
@@ -17,6 +36,7 @@ public sealed class SuitSensorStatus
 
     public TimeSpan Timestamp;
     public NetEntity SuitSensorUid;
+    public NetEntity OwnerUid;
     public string Name;
     public string Job;
     public string JobIcon;
@@ -54,6 +74,7 @@ public enum SuitSensorMode : byte
 
 public static class SuitSensorConstants
 {
+    public const string NET_OWNER_UID = "ownerUid";
     public const string NET_NAME = "name";
     public const string NET_JOB = "job";
     public const string NET_JOB_ICON = "jobIcon";
@@ -66,4 +87,17 @@ public static class SuitSensorConstants
 
     ///Used by the CrewMonitoringServerSystem to send the status of all connected suit sensors to each crew monitor
     public const string NET_STATUS_COLLECTION = "suit-status-collection";
+}
+
+[Serializable, NetSerializable]
+public sealed partial class SuitSensorChangeDoAfterEvent : DoAfterEvent
+{
+    public SuitSensorMode Mode { get; private set; } = SuitSensorMode.SensorOff;
+
+    public SuitSensorChangeDoAfterEvent(SuitSensorMode mode)
+    {
+        Mode = mode;
+    }
+
+    public override DoAfterEvent Clone() => this;
 }

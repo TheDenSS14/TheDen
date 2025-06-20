@@ -1,3 +1,21 @@
+// SPDX-FileCopyrightText: 2021 Alex Evgrashin <aevgrashin@yandex.ru>
+// SPDX-FileCopyrightText: 2021 Paul Ritter <ritter.paul1@googlemail.com>
+// SPDX-FileCopyrightText: 2022 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 Vera Aguilera Puerto <6766154+Zumorica@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 keronshb <54602815+keronshb@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 wrexbe <81056464+wrexbe@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Julian Giebel <juliangiebel@live.de>
+// SPDX-FileCopyrightText: 2023 chromiumboy <50505512+chromiumboy@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
+// SPDX-FileCopyrightText: 2024 SimpleStation14 <130339894+SimpleStation14@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 themias <89101928+themias@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 MajorMoth <61519600+MajorMoth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 using Content.Shared.Medical.SuitSensor;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom;
 
@@ -22,6 +40,12 @@ public sealed partial class SuitSensorComponent : Component
     /// </summary>
     [DataField("controlsLocked")]
     public bool ControlsLocked = false;
+
+    /// <summary>
+    ///  How much time it takes to change another player's sensors
+    /// </summary>
+    [DataField("sensorsTime")]
+    public float SensorsTime = 1.75f;
 
     /// <summary>
     ///     Current sensor mode. Can be switched by user verbs.
@@ -56,7 +80,7 @@ public sealed partial class SuitSensorComponent : Component
     /// <summary>
     ///     Next time when sensor updated owners status
     /// </summary>
-    [DataField("nextUpdate", customTypeSerializer:typeof(TimeOffsetSerializer))]
+    [DataField("nextUpdate", customTypeSerializer: typeof(TimeOffsetSerializer))]
     [AutoPausedField]
     public TimeSpan NextUpdate = TimeSpan.Zero;
 

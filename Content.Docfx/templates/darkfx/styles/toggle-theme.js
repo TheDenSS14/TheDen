@@ -1,3 +1,8 @@
+// SPDX-FileCopyrightText: 2022 Zoldorf <silvertorch5@gmail.com>
+// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+//
+// SPDX-License-Identifier: MIT
+
 const sw = document.getElementById("switch-style"), sw_mobile = document.getElementById("switch-style-m"), b = document.body;
 if (b) {
   function toggleTheme(target, dark) {

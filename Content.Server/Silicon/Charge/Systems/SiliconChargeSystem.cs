@@ -1,3 +1,11 @@
+// SPDX-FileCopyrightText: 2024 Timemaster99 <57200767+Timemaster99@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 VMSolidus <evilexecutive@gmail.com>
+// SPDX-FileCopyrightText: 2024 sleepyyapril <flyingkarii@gmail.com>
+// SPDX-FileCopyrightText: 2025 Falcon <falcon@zigtag.dev>
+// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 using Robust.Shared.Random;
 using Content.Shared.Silicon.Components;
 using Content.Server.Power.Components;
@@ -20,6 +28,9 @@ using Robust.Shared.Utility;
 using Content.Shared.CCVar;
 using Content.Shared.PowerCell.Components;
 using Content.Shared.Alert;
+using Content.Shared.Movement.Components;
+using Robust.Shared.Physics.Components;
+
 
 namespace Content.Server.Silicon.Charge;
 
@@ -34,6 +45,7 @@ public sealed class SiliconChargeSystem : EntitySystem
     [Dependency] private readonly IConfigurationManager _config = default!;
     [Dependency] private readonly PowerCellSystem _powerCell = default!;
     [Dependency] private readonly AlertsSystem _alerts = default!;
+    [Dependency] private readonly SharedJetpackSystem _jetpack = default!;
     public override void Initialize()
     {
         base.Initialize();
@@ -114,8 +126,10 @@ public sealed class SiliconChargeSystem : EntitySystem
             // Maybe use something similar to refreshmovespeedmodifiers, where it's stored in the component.
             // Maybe it doesn't matter, and stuff should just use static drain?
             if (!siliconComp.EntityType.Equals(SiliconType.Npc)) // Don't bother checking heat if it's an NPC. It's a waste of time, and it'd be delayed due to the update time.
+            {
                 drainRateFinalAddi += SiliconHeatEffects(silicon, siliconComp, frameTime) - 1; // This will need to be changed at some point if we allow external batteries, since the heat of the Silicon might not be applicable.
-
+                drainRateFinalAddi -= SiliconMovementEffects(silicon, siliconComp);
+            }
             // Ensures that the drain rate is at least 10% of normal,
             // and would allow at least 4 minutes of life with a max charge, to prevent cheese.
             drainRate += Math.Clamp(drainRateFinalAddi, drainRate * -0.9f, batteryComp.MaxCharge / 240);
@@ -193,5 +207,24 @@ public sealed class SiliconChargeSystem : EntitySystem
             return 0.5f + temperComp.CurrentTemperature / thermalComp.NormalBodyTemperature * 0.5f;
 
         return 0;
+    }
+
+    private float SiliconMovementEffects(EntityUid silicon, SiliconComponent siliconComp)
+    {
+        // Calculate dynamic power draw.
+        if (!TryComp(silicon, out MovementSpeedModifierComponent? movement) ||
+            !TryComp(silicon, out PhysicsComponent? physics) || !TryComp(silicon, out InputMoverComponent? input))
+            return 0;
+
+        if (input.HeldMoveButtons == 0x0 || _jetpack.IsUserFlying(silicon)) // If nothing is being held or jet packing
+        {
+            return siliconComp.DrainPerSecond * siliconComp.IdleDrainReduction; // Reduces draw by idle drain reduction
+        }
+
+        // LinearVelocity is relative to the parent
+        return Math.Clamp(
+            siliconComp.DrainPerSecond * (1 - (physics.LinearVelocity.Length() / movement.CurrentSprintSpeed)), // Power draw changes as a percentage of the movement
+            0f, // Minimum is no change to power draw
+            siliconComp.DrainPerSecond * siliconComp.IdleDrainReduction); // Should be a maximum of the idle drain reduction
     }
 }

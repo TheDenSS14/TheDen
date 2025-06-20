@@ -1,0 +1,25 @@
+# SPDX-FileCopyrightText: 2024 FoxxoTrystan <trystan.garnierhein@gmail.com>
+# SPDX-FileCopyrightText: 2024 SleepyScarecrow <sharedjunkemail69@gmail.com>
+# SPDX-FileCopyrightText: 2024 sleepyyapril <flyingkarii@gmail.com>
+# SPDX-FileCopyrightText: 2025 Rosycup <178287475+Rosycup@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
+- type: reagent
+  id: JuicePomegranate
+  name: reagent-name-juice-pomegranate
+  parent: BaseJuice
+  desc: reagent-desc-juice-pomegranate
+  physicalDesc: reagent-physical-desc-sticky
+  flavor: sweet
+  color: "#660C21"
+
+- type: reagent
+  id: JuiceBluePumpkin
+  name: reagent-name-juice-blue-pumpkin
+  parent: BaseJuice
+  desc: reagent-desc-juice-blue-pumpkin
+  physicalDesc: reagent-physical-desc-strong-smelling
+  flavor: bluepumpkin
+  color: "#00BFFF"

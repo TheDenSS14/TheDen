@@ -1,3 +1,14 @@
+# SPDX-FileCopyrightText: 2023 Colin-Tel <113523727+Colin-Tel@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Tad "Taddy" Johnson <120885811+TadJohnson00@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Fluffiest Floofers <thebluewulf@gmail.com>
+# SPDX-FileCopyrightText: 2024 Tryded <139474617+Tryded@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 VMSolidus <evilexecutive@gmail.com>
+# SPDX-FileCopyrightText: 2025 Blitz <73762869+BlitzTheSquishy@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Rosycup <178287475+Rosycup@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 - type: entity
   name: viper
   parent: BaseWeaponPistol
@@ -36,11 +47,30 @@
 - type: entity
   name: viper
   parent: WeaponPistolViperWood
-  id: WeaponPistolViperWoodSecurity
+  id: WeaponPistolViperWoodSecurityNonlethal
   description: A small, low-power pistol with pleasant lacquered wooden grips. Uses .35 auto ammo.
                The serial number on the handguard marks this gun as belonging to an NT Security Officer.
-  suffix: Wood, Security # TheDen
+  suffix: Wood, Security, Non-lethal # TheDen
   components:
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: MagazinePistolRubber
+        insertSound: /Audio/Weapons/Guns/MagIn/pistol_magin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/pistol_magout.ogg
+        priority: 2
+        whitelist:
+          tags:
+            - MagazinePistol
+            - MagazinePistolHighCapacity
+      gun_chamber:
+        name: Chamber
+        startingItem: CartridgePistolRubber
+        priority: 1
+        whitelist:
+          tags:
+            - CartridgePistol
   - type: GuideHelp
     guides: [ SecurityWeapons ]
 

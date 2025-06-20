@@ -1,4 +1,12 @@
-﻿using Content.Shared.Item.ItemToggle;
+// SPDX-FileCopyrightText: 2024 Jezithyr <jezithyr@gmail.com>
+// SPDX-FileCopyrightText: 2024 deltanedas <39013340+deltanedas@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
+using System.Linq;
+using Content.Shared.GameTicking;
+using Content.Shared.Item.ItemToggle;
 ﻿using Content.Shared.Item.ItemToggle.Components;
 using Content.Shared.ProximityDetection.Components;
 using Content.Shared.Tag;
@@ -15,6 +23,7 @@ public sealed class ProximityDetectionSystem : EntitySystem
     [Dependency] private readonly SharedTransformSystem _transform = default!;
     [Dependency] private readonly TagSystem _tagSystem = default!;
     [Dependency] private readonly INetManager _net = default!;
+    [Dependency] private readonly SharedGameTicker _gameTicker = default!;
 
     //update is only run on the server
 
@@ -109,6 +118,7 @@ public sealed class ProximityDetectionSystem : EntitySystem
             Log.Error($"ProximityDetectorComponent on {ToPrettyString(owner)} must use at least 1 component as a filter in criteria!");
             throw new ArgumentException($"ProximityDetectorComponent on {ToPrettyString(owner)} must use at least 1 component as a filter in criteria!");
         }
+
         var firstCompType = EntityManager.ComponentFactory.GetRegistration(detector.Criteria.Components[0]).Type;
         var foundEnts = _entityLookup.GetEntitiesInRange(firstCompType,_transform.GetMapCoordinates(owner, xform), detector.Range.Float());
 
@@ -146,7 +156,8 @@ public sealed class ProximityDetectionSystem : EntitySystem
             var compType = EntityManager.ComponentFactory.GetRegistration(detector.Criteria.Components[i]).Type;
             foreach (var ent in foundEnts)
             {
-                if (!HasComp(ent, compType))
+                if (!HasComp(ent, compType)
+                    || EntityManager.GetComponent<MetaDataComponent>(ent).EntityPrototype?.ID == "AdminObserver")
                     continue;
                 validEnts.Add(ent);
             }

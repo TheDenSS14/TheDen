@@ -1,3 +1,18 @@
+# SPDX-FileCopyrightText: 2022 Flipp Syder <76629141+vulppine@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 Mervill <mervills.email@gmail.com>
+# SPDX-FileCopyrightText: 2022 Visne <39844191+Visne@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Fluffiest Floofers <thebluewulf@gmail.com>
+# SPDX-FileCopyrightText: 2023 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT <77995199+DEATHB4DEFEAT@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Kara <lunarautomaton6@gmail.com>
+# SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 EctoplasmIsGood <109397347+EctoplasmIsGood@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 mart <martgitomen@gmail.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 - type: entity
   abstract: true
   id: SurveillanceCameraBase
@@ -97,7 +112,7 @@
   suffix: Constructed
   components:
     - type: DeviceNetwork
-      deviceNetId: Wired
+      deviceNetId: Wireless
       transmitFrequencyId: SurveillanceCamera
     - type: SurveillanceCamera
       setupAvailableNetworks:
@@ -117,7 +132,7 @@
   suffix: Engineering
   components:
   - type: DeviceNetwork
-    deviceNetId: Wired
+    deviceNetId: Wireless
     receiveFrequencyId: SurveillanceCameraEngineering
     transmitFrequencyId: SurveillanceCamera
   - type: SurveillanceCamera
@@ -130,7 +145,7 @@
   suffix: Security
   components:
   - type: DeviceNetwork
-    deviceNetId: Wired
+    deviceNetId: Wireless
     receiveFrequencyId: SurveillanceCameraSecurity
     transmitFrequencyId: SurveillanceCamera
   - type: SurveillanceCamera
@@ -143,7 +158,7 @@
   suffix: Epistemics # DeltaV - Epistemics Department replacing Science
   components:
   - type: DeviceNetwork
-    deviceNetId: Wired
+    deviceNetId: Wireless
     receiveFrequencyId: SurveillanceCameraScience
     transmitFrequencyId: SurveillanceCamera
   - type: SurveillanceCamera
@@ -156,7 +171,7 @@
   suffix: Supply
   components:
   - type: DeviceNetwork
-    deviceNetId: Wired
+    deviceNetId: Wireless
     receiveFrequencyId: SurveillanceCameraSupply
     transmitFrequencyId: SurveillanceCamera
   - type: SurveillanceCamera
@@ -169,7 +184,7 @@
   suffix: Command
   components:
   - type: DeviceNetwork
-    deviceNetId: Wired
+    deviceNetId: Wireless
     receiveFrequencyId: SurveillanceCameraCommand
     transmitFrequencyId: SurveillanceCamera
   - type: SurveillanceCamera
@@ -182,7 +197,7 @@
   suffix: Service
   components:
   - type: DeviceNetwork
-    deviceNetId: Wired
+    deviceNetId: Wireless
     receiveFrequencyId: SurveillanceCameraService
     transmitFrequencyId: SurveillanceCamera
   - type: SurveillanceCamera
@@ -195,7 +210,7 @@
   suffix: Medical
   components:
   - type: DeviceNetwork
-    deviceNetId: Wired
+    deviceNetId: Wireless
     receiveFrequencyId: SurveillanceCameraMedical
     transmitFrequencyId: SurveillanceCamera
   - type: SurveillanceCamera
@@ -208,7 +223,7 @@
   suffix: General
   components:
   - type: DeviceNetwork
-    deviceNetId: Wired
+    deviceNetId: Wireless
     receiveFrequencyId: SurveillanceCameraGeneral
     transmitFrequencyId: SurveillanceCamera
   - type: SurveillanceCamera

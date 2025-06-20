@@ -1,0 +1,26 @@
+# SPDX-FileCopyrightText: 2024 ShatteredSwords <135023515+ShatteredSwords@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Rosycup <178287475+Rosycup@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
+# - type: entity
+#   name: Seb
+#   parent: MobArcticFox
+#   id: MobArcticFoxSeb
+#   description: His name is "Sebastien de Lys", but he is known as Seb by his friends. A fluffy, adorable arctic fox.
+#   components:
+#   - type: InteractionPopup
+#     successChance: 1
+#   - type: Butcherable
+#     spawned:
+#     - id: FoodMeat
+#       amount: 3
+#   - type: Grammar
+#     attributes:
+#       proper: true
+#       gender: male
+#   - type: Tag
+#     tags:
+#     - CannotSuicide
+#     - VimPilot

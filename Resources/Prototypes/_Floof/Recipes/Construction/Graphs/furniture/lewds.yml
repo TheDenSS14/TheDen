@@ -1,0 +1,52 @@
+# SPDX-FileCopyrightText: 2024 Pierson Arnold <greyalphawolf7@gmail.com>
+# SPDX-FileCopyrightText: 2025 Rosycup <178287475+Rosycup@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
+- type: constructionGraph
+  id: Lewd
+  start: start
+  graph:
+    - node: start
+      actions:
+        - !type:DeleteEntity {}
+      edges:
+        - to: FurnStripPoleInit
+          steps:
+            - material: Steel
+              amount: 3
+              doAfter: 1
+
+    - node: FurnStripPoleInit
+      entity: StripperPoleInit
+      edges:
+        - to: start
+          completed:
+            - !type:SpawnPrototype
+              prototype: SheetSteel1
+              amount: 3
+          steps:
+           - tool: Screwing
+             doAfter: 1
+        - to: FurnStripPole
+          steps:
+            - material: MetalRod
+              amount: 2
+              doAfter: 2
+
+
+    - node: FurnStripPole
+      entity: StripperPole
+      edges:
+        - to: start
+          completed:
+            - !type:SpawnPrototype
+              prototype: SheetSteel1
+              amount: 3
+            - !type:SpawnPrototype
+              prototype: PartRodMetal
+              amount: 2
+          steps:
+            - tool: Screwing
+              doAfter: 4

@@ -1,0 +1,102 @@
+# SPDX-FileCopyrightText: 2024 fox <daytimer253@gmail.com>
+# SPDX-FileCopyrightText: 2024 sleepyyapril <***>
+# SPDX-FileCopyrightText: 2025 Blitz <73762869+BlitzTheSquishy@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Rosycup <178287475+Rosycup@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
+# General logistics
+- type: loadout
+  id: LoadoutClothingHandsLogisWarmers
+  category: JobsLogisticsCargoTechnician
+  cost: 2
+  exclusive: true
+  items:
+  - ClothingHandsLogisWarmers
+  requirements:
+  - !type:CharacterJobRequirement
+    jobs:
+    - CargoTechnician
+
+- type: loadout
+  id: LoadoutClothingUnderSocksLogis
+  category: JobsLogisticsCargoTechnician
+  cost: 2
+  exclusive: true
+  items:
+  - ClothingUnderSocksLogis
+  requirements:
+#  - !type:CharacterSpeciesRequirement - TheDen
+#    inverted: true
+#    species:
+#    - Diona
+#    - Harpy
+  - !type:CharacterJobRequirement
+    jobs:
+    - CargoTechnician
+
+- type: loadout
+  id: LoadoutClothingUniformLogisThong
+  category: JobsLogisticsCargoTechnician
+  cost: 2
+  exclusive: true
+  items:
+  - ClothingUniformLogisThong
+  requirements:
+  - !type:CharacterJobRequirement
+    jobs:
+    - CargoTechnician
+
+- type: loadout
+  id: LoadoutCargoNeckCollar
+  category: JobsLogisticsAUncategorized
+  cost: 1
+  requirements:
+  - !type:CharacterDepartmentRequirement
+    departments:
+    - Logistics
+  items:
+  - ClothingNeckCollarLogi
+
+# Courier
+- type: loadout
+  id: LoadoutClothingHandsCourierWarmers
+  category: JobsLogisticsCourier
+  cost: 1
+  exclusive: true
+  items:
+  - ClothingHandsCourierWarmers
+  requirements:
+  - !type:CharacterJobRequirement
+    jobs:
+    - MailCarrier
+
+- type: loadout
+  id: LoadoutClothingUnderSocksCourier
+  category: JobsLogisticsCourier
+  cost: 2
+  exclusive: true
+  items:
+  - ClothingUnderSocksCourier
+  requirements:
+#  - !type:CharacterSpeciesRequirement - TheDen
+#    inverted: true
+#    species:
+#    - Diona
+#    - Harpy
+  - !type:CharacterJobRequirement
+    jobs:
+    - MailCarrier
+
+- type: loadout
+  id: LoadoutClothingUniformCourierThong
+  category: JobsLogisticsCourier
+  cost: 1
+  exclusive: true
+  items:
+  - ClothingUniformCourierThong
+  requirements:
+  - !type:CharacterJobRequirement
+    jobs:
+    - MailCarrier

@@ -1,3 +1,8 @@
+# SPDX-FileCopyrightText: 2025 Spatison <137375981+Spatison@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 signal-port-name-autoclose = Автозакрытие
 signal-port-description-autoclose = Переключает, должно ли устройство автоматически закрываться.
 

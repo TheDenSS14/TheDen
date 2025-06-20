@@ -1,0 +1,21 @@
+<!--
+SPDX-FileCopyrightText: 2025 Lyndomen <49795619+Lyndomen@users.noreply.github.com>
+SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+
+SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+-->
+
+<Control xmlns="https://spacestation14.io">
+    <BoxContainer Orientation="Vertical" HorizontalExpand="True" VerticalExpand="True">
+        <ItemList Name="EntrySelector" HorizontalExpand="True" VerticalExpand="True" MinSize="300 200" />
+        <BoxContainer Orientation="Horizontal">
+            <Button Name="AddButton" StyleClasses="OpenBoth" Text="{Loc 'humanoid-profile-editor-cd-records-add-entry'}" />
+            <Button Name="EditButton" StyleClasses="OpenBoth" Text="{Loc 'humanoid-profile-editor-cd-records-edit-entry'}" />
+            <Button Name="ViewButton" StyleClasses="OpenBoth" Text="{Loc 'humanoid-profile-editor-cd-records-view-entry'}" />
+            <Button Name="RemoveButton" StyleClasses="OpenLeft" Text="{Loc 'humanoid-profile-editor-cd-records-remove-entry'}" />
+            <Control HorizontalExpand="True" />
+            <Button Name="UpButton" HorizontalAlignment="Right" StyleClasses="OpenRight" Text="{Loc 'humanoid-profile-editor-cd-records-up'}" />
+            <Button Name="DownButton" HorizontalAlignment="Right" StyleClasses="OpenBoth" Text="{Loc 'humanoid-profile-editor-cd-records-down'}" />
+        </BoxContainer>
+    </BoxContainer>
+</Control>

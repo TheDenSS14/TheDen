@@ -1,0 +1,79 @@
+# SPDX-FileCopyrightText: 2024 fox <daytimer253@gmail.com>
+# SPDX-FileCopyrightText: 2025 KekaniCreates <87507256+KekaniCreates@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Rosycup <178287475+Rosycup@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
+- type: characterItemGroup
+  id: LoadoutFun
+  items:
+    - type: loadout
+      id: LoadoutItemLeashBasic
+    - type: loadout
+      id: LoadoutItemLeashShort
+
+- type: characterItemGroup
+  id: LoadoutVASH
+  items:
+  - type: loadout
+    id: LoadoutVASHHygiene
+  - type: loadout
+    id: LoadoutVASHSex
+  - type: loadout
+    id: LoadoutTampon
+#  - type: loadout Currently an RP item, so it's not really necessary to have be exclusive.
+#    id: LoadoutCondom
+  - type: loadout
+    id: LoadoutLiner
+  - type: loadout
+    id: LoadoutPad
+
+# If you are ever going to add more: open regex101; in list mode, find "id: (.+)", replace with "- type: loadout\n  id: $1\n", paste the result here
+- type: characterItemGroup
+  id: LoadoutLewd
+  items:
+  - type: loadout
+    id: LoadoutItemDroneMask #TheDen
+  - type: loadout
+    id: LoadoutItemDroneMaskHoodless #TheDen
+  - type: loadout
+    id: LoadoutItemPillCanisterPomelustine
+  - type: loadout
+    id: LoadoutItemPillCanisterPhilterex
+  - type: loadout
+    id: LoadoutItemPillCanisterLibidozenithizine
+  - type: loadout
+    id: LoadoutItemLewdWand
+  - type: loadout
+    id: LoadoutItemLewdVibeGreen
+  - type: loadout
+    id: LoadoutItemLewdVibeTeal
+  - type: loadout
+    id: LoadoutItemLewdVibePink
+  - type: loadout
+    id: LoadoutItemLewdVibeRed
+  - type: loadout
+    id: LoadoutItemLewdVibeYellow
+  - type: loadout
+    id: LoadoutItemLewdFleshlightGreen
+  - type: loadout
+    id: LoadoutItemLewdFleshlightTeal
+  - type: loadout
+    id: LoadoutItemLewdFleshlightPink
+  - type: loadout
+    id: LoadoutItemLewdFleshlightRed
+  - type: loadout
+    id: LoadoutItemLewdFleshlightYellow
+  - type: loadout
+    id: LoadoutItemWhipPink
+  - type: loadout
+    id: LoadoutItemWhipTeal
+  - type: loadout
+    id: LoadoutItemWhipPinkCrotch
+  - type: loadout
+    id: LoadoutItemWhipTealCrotch
+  - type: loadout
+    id: LoadoutItemSpankPinkPaddle
+  - type: loadout
+    id: LoadoutItemSpankTealPaddle

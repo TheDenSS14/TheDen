@@ -1,0 +1,15 @@
+# SPDX-FileCopyrightText: 2024 FoxxoTrystan <trystan.garnierhein@gmail.com>
+# SPDX-FileCopyrightText: 2025 Rosycup <178287475+Rosycup@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
+- type: parallax
+  id: Dark
+  layers:
+    - texture:
+        !type:ImageParallaxTextureSource
+        path: "/Textures/_Floof/Structures/dark.rsi/dark.png"
+      slowness: 0
+      scale: "1, 1"
+      shader: ""

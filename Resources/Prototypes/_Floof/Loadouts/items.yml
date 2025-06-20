@@ -1,0 +1,47 @@
+# SPDX-FileCopyrightText: 2024 Fansana <116083121+Fansana@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 ShatteredSwords <135023515+ShatteredSwords@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 fox <daytimer253@gmail.com>
+# SPDX-FileCopyrightText: 2025 Rosycup <178287475+Rosycup@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Tabitha <64847293+KyuPolaris@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
+- type: loadout
+  id: LoadoutItemSuspendersBlack
+  category: Belt
+  cost: 0
+  items:
+    - ClothingBeltSuspendersBlack 
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBelt
+
+- type: loadout
+  id: LoadoutItemSuspenders
+  category: Belt
+  cost: 0
+  items:
+    - ClothingBeltSuspenders
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBelt
+
+- type: loadout
+  id: LoadoutItemRemoteSignaller
+  category: GeneralItems
+  cost: 1
+  items:
+    - RemoteSignaller
+
+# Leashes
+- type: loadout
+  id: LoadoutItemLeashBasic
+  category: GeneralItems
+  cost: 2
+  exclusive: true
+  items:
+  - LeashBasic
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutFun

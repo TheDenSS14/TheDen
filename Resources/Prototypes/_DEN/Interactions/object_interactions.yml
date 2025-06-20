@@ -1,3 +1,9 @@
+# SPDX-FileCopyrightText: 2025 MajorMoth <61519600+MajorMoth@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Rosycup <178287475+Rosycup@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 #add compenents to the items or their bases like this
 #- type: InteractionVerbs
 #    allowedVerbs:
@@ -50,7 +56,7 @@
     effect: BeingKissed
   effectSuccess:
     popup: Obvious
-    sound: {path: /Audio/Floof/Lewd/kiss.ogg}
+    sound: {path: /Audio/_Floof/Lewd/kiss.ogg}
 
 - type: Interaction
   id: LickObject
@@ -62,4 +68,4 @@
     effect: BeingLicked
   effectSuccess:
     popup: Obvious
-    sound: {path: /Audio/Floof/Lewd/lick.ogg}
+    sound: {path: /Audio/_Floof/Lewd/lick.ogg}

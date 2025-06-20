@@ -1,8 +1,14 @@
+# SPDX-FileCopyrightText: 2025 Blitz <73762869+BlitzTheSquishy@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Rosycup <178287475+Rosycup@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 - type: entity
   name: soul-shatter
   parent: BaseWeaponShotgun
   id: WeaponShotgunSoulshatter
-  description: A flashy, pocket-sized shotgun with a marble style grip. Provides no tactical advantage. Uses .50 shotgun shells.
+  description: A flashy, pocket-sized shotgun with a marble style grip. Provides no tactical advantage. Uses 12 gauge shells.
   components:
   - type: Sprite
     sprite: _DEN/Objects/Weapons/Guns/Shotguns/soulshatter.rsi

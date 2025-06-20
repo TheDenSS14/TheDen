@@ -1,0 +1,53 @@
+# SPDX-FileCopyrightText: 2024 FoxxoTrystan <trystan.garnierhein@gmail.com>
+# SPDX-FileCopyrightText: 2024 Pierson Arnold <greyalphawolf7@gmail.com>
+# SPDX-FileCopyrightText: 2025 Rosycup <178287475+Rosycup@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
+- type: reagent
+  id: Cum
+  name: reagent-name-cum
+  group: NaturalSauce
+  desc: reagent-desc-cum
+  physicalDesc: reagent-physical-desc-sticky
+  flavor: salty
+  color: "#ffffff"
+  viscosity: 0.35
+  recognizable: true
+  metabolisms:
+    Drink:
+      effects:
+      - !type:SatiateThirst
+        factor: 0.2
+      - !type:SatiateHunger
+        factor: 1
+  footstepSound:
+    collection: FootstepSticky
+    params:
+      volume: 6
+
+- type: reagent
+  id: NaturalLubricant
+  name: reagent-name-nat-lube
+  group: NaturalSauce
+  desc: reagent-desc-nat-lube
+  slippery: true
+  physicalDesc: reagent-physical-desc-shiny
+  flavor: funny
+  color: "#d6d6d6"
+  recognizable: true
+  metabolisms:
+    Drink:
+      effects:
+      - !type:SatiateThirst
+        factor: 0.3
+  footstepSound:
+    collection: FootstepSticky
+    params:
+      volume: 4
+  tileReactions:
+  - !type:SpillTileReaction
+    paralyzeTime: 0.5
+    launchForwardsMultiplier: 1.2
+    requiredSlipSpeed: 1

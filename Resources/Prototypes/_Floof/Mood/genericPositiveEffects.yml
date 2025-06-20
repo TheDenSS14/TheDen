@@ -1,0 +1,38 @@
+# SPDX-FileCopyrightText: 2024 FoxxoTrystan <trystan.garnierhein@gmail.com>
+# SPDX-FileCopyrightText: 2024 neuPanda <chriseparton@gmail.com>
+# SPDX-FileCopyrightText: 2025 Rosycup <178287475+Rosycup@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
+- type: moodEffect
+  id: BeingKissed
+  moodChange: 4
+  timeout: 120
+  category: PositiveInteraction
+
+- type: moodEffect
+  id: BeingLicked
+  moodChange: 4
+  timeout: 120
+  category: PositiveInteraction
+
+- type: moodEffect
+  id: BeingHypnotized
+  moodChange: 10
+  timeout: 300
+
+- type: moodEffect
+  id: LostHypnosis
+  moodChange: -3
+  timeout: 120
+
+- type: moodEffect
+  id: IceCreamBenefit
+  moodChange: 2
+  timeout: 180 #3 minutes
+
+- type: moodEffect
+  id: IceCreamBrainFreeze
+  moodChange: -15
+  timeout: 30 #30 second

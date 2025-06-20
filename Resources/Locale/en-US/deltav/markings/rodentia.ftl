@@ -1,86 +1,94 @@
+# SPDX-FileCopyrightText: 2024 Memeji <greyalphawolf7@gmail.com>
+# SPDX-FileCopyrightText: 2025 Erol509 <81807356+Erol509@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Falcon <falcon@zigtag.dev>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <flyingkarii@gmail.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 # head markings
 
 ## patterns
 
-marking-RodentiaHeadBlaze = Head - Blaze
+marking-RodentiaHeadBlaze = Rodentia Head - Blaze
 marking-RodentiaHeadBlaze-head_m = Head
 marking-RodentiaHeadBlaze-blaze = Pattern
 
-marking-RodentiaHeadRound = Head - Face Color
+marking-RodentiaHeadRound = Rodentia Head - Face Color
 marking-RodentiaHeadRound-head_m = Head
 marking-RodentiaHeadRound-round = Pattern
 
 ## ears
 
-marking-RodentiaHeadTopEarDefault = Ear - Default
+marking-RodentiaHeadTopEarDefault = Rodentia Ear - Default
 marking-RodentiaHeadTopEarDefault-mouse = Outer ear
 marking-RodentiaHeadTopEarDefault-mouse_overlay = Inner ear
 
-marking-RodentiaHeadTopEarBat = Ears - Bat
+marking-RodentiaHeadTopEarBat = Rodentia Ears - Bat
 marking-RodentiaHeadTopEarBat-bat = Outer ear
 
-marking-RodentiaHeadTopEarBatLarge = Ears - Bat (Large)
+marking-RodentiaHeadTopEarBatLarge = Rodentia Ears - Bat (Large)
 marking-RodentiaHeadTopEarBatLarge-bat_large = Outer ear
 
-marking-RodentiaHeadTopEarHamster = Ears - Hamster
+marking-RodentiaHeadTopEarHamster = Rodentia Ears - Hamster
 marking-RodentiaHeadTopEarHamster-hamster = Outer ear
 marking-RodentiaHeadTopEarHamster-hamster_overlay = Inner ear
 
-marking-RodentiaHeadTopEarLong = Ears - Long
+marking-RodentiaHeadTopEarLong = Rodentia Ears - Long
 marking-RodentiaHeadTopEarLong-long = Outer ear
 marking-RodentiaHeadTopEarLong-long_overlay = Inner ear
 
-marking-RodentiaHeadTopEarBunnyLarge = Bunny (Large)
+marking-RodentiaHeadTopEarBunnyLarge = Rodentia Ears - Bunny (Large)
 marking-RodentiaHeadTopEarBunnyLarge-ears_bunny_large_primary = Primary
 marking-RodentiaHeadTopEarBunnyLarge-ears_bunny_large_secondary = Secondary
 marking-RodentiaHeadTopEarBunnyLarge-ears_bunny_large_tertiary = Tertiary
 
-marking-RodentiaHeadTopEarMouse = Ears - Mouse
+marking-RodentiaHeadTopEarMouse = Rodentia Ears - Mouse
 marking-RodentiaHeadTopEarMouse-mouse = Outer ear
 marking-RodentiaHeadTopEarMouse-mouse_overlay = Inner ear
 
-marking-RodentiaHeadTopEarMouseLarge = Ears - Mouse (Large)
+marking-RodentiaHeadTopEarMouseLarge = Rodentia Ears - Mouse (Large)
 marking-RodentiaHeadTopEarMouseLarge-mouse_large = Outer
 marking-RodentiaHeadTopEarMouseLarge-mouse_large_overlay = Inner ear
 
-marking-RodentiaHeadTopEarNone = Ears - Hidden
+marking-RodentiaHeadTopEarNone = Rodentia Ears - Hidden
 marking-RodentiaHeadTopEarNone-none = None
 
-marking-RodentiaHeadTopEarPointy = Ears - Pointy
+marking-RodentiaHeadTopEarPointy = Rodentia Ears - Pointy
 marking-RodentiaHeadTopEarPointy-pointy = Outer ear
 
-marking-RodentiaHeadTopEarRabbit = Ears - Rabbit
+marking-RodentiaHeadTopEarRabbit = Rodentia Ears - Rabbit
 marking-RodentiaHeadTopEarRabbit-rabbit = Outer ear
 marking-RodentiaHeadTopEarRabbit-rabbit_overlay = Inner ear
 
-marking-RodentiaHeadTopEarSmall = Ears - Small
+marking-RodentiaHeadTopEarSmall = Rodentia Ears - Small
 marking-RodentiaHeadTopEarSmall-small = Outer Ear
 
 ## snout
 
-marking-RodentiaSnoutBat = Snout - Bat
+marking-RodentiaSnoutBat = Rodentia Snout - Bat
 marking-RodentiaSnoutBat-bat = Snout
 marking-RodentiaSnoutBat-bat_nose = Nose
 
-marking-RodentiaSnoutBatCounter = Snout - Bat, Two-tone
+marking-RodentiaSnoutBatCounter = Rodentia Snout - Bat, Two-tone
 marking-RodentiaSnoutBatCounter-bat = Snout
 marking-RodentiaSnoutBatCounter-bat_nose = Nose
 marking-RodentiaSnoutBatCounter-bat_overlay = Countershade
 
-marking-RodentiaSnoutFlat = Snout - Flat
+marking-RodentiaSnoutFlat = Rodentia Snout - Flat
 marking-RodentiaSnoutFlat-flat = Snout
 marking-RodentiaSnoutFlat-flat_nose = Nose
 
-marking-RodentiaSnoutFlatCounter = Snout - Flat, Two-tone
+marking-RodentiaSnoutFlatCounter = Rodentia Snout - Flat, Two-tone
 marking-RodentiaSnoutFlatCounter-flat = Snout
 marking-RodentiaSnoutFlatCounter-flat_nose = Nose
 marking-RodentiaSnoutFlatCounter-flat_overlay = Countershade
 
-marking-RodentiaSnoutRound = Snout - Round
+marking-RodentiaSnoutRound = Rodentia Snout - Round
 marking-RodentiaSnoutRound-round = Snout
 marking-RodentiaSnoutRound-round_nose = Nose
 
-marking-RodentiaSnoutRoundCounter = Snout - Round, Two-tone
+marking-RodentiaSnoutRoundCounter = Rodentia Snout - Round, Two-tone
 marking-RodentiaSnoutRoundCounter-round = Snout
 marking-RodentiaSnoutRoundCounter-round_nose = Nose
 marking-RodentiaSnoutRoundCounter-round_overlay = Countershade
@@ -115,44 +123,44 @@ marking-RodentiaCheeksWhiskers-whiskers = Whiskers
 
 ## tail
 
-marking-RodentiaTailDefault = Tail - Default
+marking-RodentiaTailDefault = Rodentia Tail - Default
 marking-RodentiaTailDefault-mouse = Tail
 
-marking-RodentiaTailBeaver = Tail - Beaver
+marking-RodentiaTailBeaver = Rodentia Tail - Beaver
 marking-RodentiaTailBeaver-beaver = Tail
 
-marking-RodentiaTailHamster = Tail - Hamster
+marking-RodentiaTailHamster = Rodentia Tail - Hamster
 marking-RodentiaTailHamster-hamster = Tail
 
-marking-RodentiaTailLong = Tail - Long
+marking-RodentiaTailLong = Rodentia Tail - Long
 marking-RodentiaTailLong-long = Tail
 
-marking-RodentiaTailLongCounter = Tail - Long, Two-tone
+marking-RodentiaTailLongCounter = Rodentia Tail - Long, Two-tone
 marking-RodentiaTailLongCounter-long = Tail
 marking-RodentiaTailLongCounter-long_overlay = Countershade
 
-marking-RodentiaTailLongCounterTip = Tail - Long, Three-tone
+marking-RodentiaTailLongCounterTip = Rodentia Tail - Long, Three-tone
 marking-RodentiaTailLongCounterTip-long = Tail
 marking-RodentiaTailLongCounterTip-long_overlay = Countershade
 marking-RodentiaTailLongCounterTip-long_tip = Tip
 
-marking-RodentiaTailMouse = Tail - Mouse
+marking-RodentiaTailMouse = Rodentia Tail - Mouse
 marking-RodentiaTailMouse-mouse = Tail
 
-marking-RodentiaTailRabbit = Tail - Rabbit
+marking-RodentiaTailRabbit = Rodentia Tail - Rabbit
 marking-RodentiaTailRabbit-rabbit = Tail
 
-marking-RodentiaTailRabbitCounter = Tail - Rabbit, Two-tone
+marking-RodentiaTailRabbitCounter = Rodentia Tail - Rabbit, Two-tone
 marking-RodentiaTailRabbitCounter-rabbit = Tail
 marking-RodentiaTailRabbitCounter-rabbit_overlay = Countershade
 
-marking-RodentiaTailShort = Tail - Short
+marking-RodentiaTailShort = Rodentia Tail - Short
 marking-RodentiaTailShort-short = Tail
 
-marking-RodentiaTailSquirrel = Tail - Squirrel
+marking-RodentiaTailSquirrel = Rodentia Tail - Squirrel
 marking-RodentiaTailSquirrel-squirrel = Tail
 
-marking-RodentiaTailSquirrelBicolor = Tail - Squirrel, Two-tone
+marking-RodentiaTailSquirrelBicolor = Rodentia Tail - Squirrel, Two-tone
 marking-RodentiaTailSquirrelBicolor-squirrel = Tail
 marking-RodentiaTailSquirrelBicolor-squirrel_overlay = Secondary
 

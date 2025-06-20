@@ -1,5 +1,12 @@
-﻿using Content.Shared.CartridgeLoader.Cartridges;
-using Content.Shared.DeltaV.CartridgeLoader.Cartridges; // DeltaV
+// SPDX-FileCopyrightText: 2023 Chief-Engineer <119664036+Chief-Engineer@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Milon <milonpl.git@proton.me>
+// SPDX-FileCopyrightText: 2025 BlitzTheSquishy <73762869+BlitzTheSquishy@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
+using Content.Shared.CartridgeLoader.Cartridges;
+using Content.Shared._DV.CartridgeLoader.Cartridges; // DeltaV
 using Robust.Shared.Audio;
 
 namespace Content.Server.CartridgeLoader.Cartridges;

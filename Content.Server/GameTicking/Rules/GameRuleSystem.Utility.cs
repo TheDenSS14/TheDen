@@ -1,3 +1,13 @@
+// SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT <77995199+DEATHB4DEFEAT@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Kara <lunarautomaton6@gmail.com>
+// SPDX-FileCopyrightText: 2024 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Rainfey <rainfey0+github@gmail.com>
+// SPDX-FileCopyrightText: 2024 VMSolidus <evilexecutive@gmail.com>
+// SPDX-FileCopyrightText: 2024 deltanedas <39013340+deltanedas@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using Content.Server.GameTicking.Rules.Components;
@@ -56,6 +66,35 @@ public abstract partial class GameRuleSystem<T> where T: IComponent
         return true;
     }
 
+    /// <summary>
+    ///     Utility function for finding a random event-eligible station entity
+    /// </summary>
+    protected bool TryGetRandomStationData([NotNullWhen(true)] out Entity<StationDataComponent>? station, Func<EntityUid, bool>? filter = null)
+    {
+        var stations = new ValueList<Entity<StationDataComponent>>(Count<StationDataComponent>());
+
+        filter ??= _ => true;
+        var query = AllEntityQuery<StationDataComponent>();
+
+        while (query.MoveNext(out var uid, out var comp))
+        {
+            if (!filter(uid))
+                continue;
+
+            stations.Add((uid, comp));
+        }
+
+        if (stations.Count == 0)
+        {
+            station = null;
+            return false;
+        }
+
+        // TODO: Engine PR.
+        station = stations[RobustRandom.Next(stations.Count)];
+        return true;
+    }
+
     protected bool TryFindRandomTile(out Vector2i tile,
         [NotNullWhen(true)] out EntityUid? targetStation,
         out EntityUid targetGrid,
@@ -65,6 +104,30 @@ public abstract partial class GameRuleSystem<T> where T: IComponent
         targetStation = EntityUid.Invalid;
         targetGrid = EntityUid.Invalid;
         targetCoords = EntityCoordinates.Invalid;
+
+        if (TryGetRandomStation(out targetStation))
+        {
+            return TryFindRandomTileOnStation((targetStation.Value, Comp<StationDataComponent>(targetStation.Value)),
+                out tile,
+                out targetGrid,
+                out targetCoords);
+        }
+
+        return false;
+    }
+
+    protected bool TryFindRandomTile(
+        bool stationExclusive,
+        out Vector2i tile,
+        [NotNullWhen(true)] out EntityUid? targetStation,
+        out EntityUid targetGrid,
+        out EntityCoordinates targetCoords)
+    {
+        tile = default;
+        targetStation = EntityUid.Invalid;
+        targetGrid = EntityUid.Invalid;
+        targetCoords = EntityCoordinates.Invalid;
+
         if (TryGetRandomStation(out targetStation))
         {
             return TryFindRandomTileOnStation((targetStation.Value, Comp<StationDataComponent>(targetStation.Value)),

@@ -1,11 +1,17 @@
-using Content.Server.RandomMetadata;
+// SPDX-FileCopyrightText: 2024 Ed <96445749+TheShuEd@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Blitz <73762869+BlitzTheSquishy@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
+using Content.Shared.StoryGen;
 
 namespace Content.Server.Paper;
 
 public sealed class PaperRandomStorySystem : EntitySystem
 {
-
-    [Dependency] private readonly RandomMetadataSystem _randomMeta = default!;
+    [Dependency] private readonly StoryGeneratorSystem _storyGen = default!;
+    [Dependency] private readonly PaperSystem _paper = default!;
 
     public override void Initialize()
     {
@@ -19,11 +25,9 @@ public sealed class PaperRandomStorySystem : EntitySystem
         if (!TryComp<PaperComponent>(paperStory, out var paper))
             return;
 
-        if (paperStory.Comp.StorySegments == null)
+        if (!_storyGen.TryGenerateStoryFromTemplate(paperStory.Comp.Template, out var story))
             return;
 
-        var story = _randomMeta.GetRandomFromSegments(paperStory.Comp.StorySegments, paperStory.Comp.StorySeparator);
-
-        paper.Content += $"\n{story}";
+        _paper.SetContent(paperStory.Owner, story, paper);
     }
 }

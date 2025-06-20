@@ -1,0 +1,39 @@
+# SPDX-FileCopyrightText: 2025 Rosycup <178287475+Rosycup@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
+- type: entity
+  parent: [ClothingBeltBase, ClothingSlotBase]
+  id: ClothingBeltKatanaSheathSingle
+  name: katana sheath
+  description: An ornate belt designed to hold a katana. Earned through experience and hard work.
+  components:
+  - type: Sprite
+    sprite: _DEN/Clothing/Belt/katanasheathsingle.rsi
+    state: sheath
+  - type: Clothing
+    sprite: _DEN/Clothing/Belt/katanasheathsingle.rsi
+  - type: Item
+    size: Large
+  - type: ItemSlots
+    slots:
+      item:
+        name: Katana
+        insertVerbText: sheath-insert-verb
+        ejectVerbText: sheath-eject-verb
+        insertSound: /Audio/SimpleStation14/Items/Handling/sword_sheath.ogg
+        ejectSound: /Audio/SimpleStation14/Items/Handling/sword_unsheath.ogg
+        whitelist:
+          tags:
+          - Katana
+  - type: ItemMapper
+    mapLayers:
+      sheath-sabre:
+        whitelist:
+          tags:
+          - Katana
+  - type: Appearance
+  - type: Tag
+    tags:
+      - BeltSlotNotBelt

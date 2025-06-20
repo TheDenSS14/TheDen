@@ -1,0 +1,48 @@
+# SPDX-FileCopyrightText: 2024 FoxxoTrystan <trystan.garnierhein@gmail.com>
+# SPDX-FileCopyrightText: 2024 SleepyScarecrow <sharedjunkemail69@gmail.com>
+# SPDX-FileCopyrightText: 2024 neuPanda <chriseparton@gmail.com>
+# SPDX-FileCopyrightText: 2025 Rosycup <178287475+Rosycup@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
+- type: reaction
+  id: Philterex
+  impact: Medium
+  reactants:
+    Inaprovaline:
+      amount: 2
+    Saline:
+      amount: 1
+    Ephedrine:
+      amount: 1
+    Benzene:
+      amount: 1
+  products:
+      Philterex: 5
+
+- type: reaction
+  id: Traumoxadone
+  reactants:
+    Cryoxadone:
+      amount: 1
+    SalicylicAcid:
+      amount: 1
+    Lipozine:
+      amount: 1
+  products:
+    Traumoxadone: 2
+    
+- type: reaction
+  id: Stelloxadone
+  reactants:
+    Cryoxadone:
+      amount: 3
+    Stellibinin:
+      amount: 5
+    Arithrazine:
+      amount: 2
+  products:
+    Stelloxadone: 5
+    Water: 3
+    Fiber: 2

@@ -1,3 +1,17 @@
+# SPDX-FileCopyrightText: 2024 Aviu00 <93730715+Aviu00@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 John Space <bigdumb421@gmail.com>
+# SPDX-FileCopyrightText: 2024 gluesniffler <159397573+gluesniffler@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <aiden@djkraz.com>
+# SPDX-FileCopyrightText: 2025 Blitz <73762869+BlitzTheSquishy@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 BloodfiendishOperator <141253729+Diggy0@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 EctoplasmIsGood <109397347+EctoplasmIsGood@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Timfa <timfalken@hotmail.com>
+# SPDX-FileCopyrightText: 2025 VMSolidus <evilexecutive@gmail.com>
+# SPDX-FileCopyrightText: 2025 Your Name <EctoplasmIsGood@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 # Mechs
 
 uplink-mech-teleporter-heavy-name = Heavy Mech teleporter
@@ -6,11 +20,11 @@ uplink-mech-teleporter-heavy-desc = Contains a heavily armored Cybersun mech wit
 uplink-mech-teleporter-assault-name = Assault Mech teleporter
 uplink-mech-teleporter-assault-desc = Contains a lightly armored Cybersun mech with an integrated chainsword, LBX AC 10 "Scattershot", SRM-8 Light Missile Rack and P-X Tesla Cannon.
 
-uplink-hardsuit-cybersun-stealth-name = CSA-91x "Èguǐ" tacsuit
+uplink-hardsuit-cybersun-stealth-name ="Èguǐ" tacsuit
 uplink-hardsuit-cybersun-stealth-desc = A rare prototype tacsuit that features metamaterial plating which warps light around it to produce an "Invisibility cloak" effect.
 
 # Cybersun Dreadnought suit
-uplink-hardsuit-cybersun-dreadnought-name = CSA-105UA "Xíngtiān" tacsuit
+uplink-hardsuit-cybersun-dreadnought-name = "Xíngtiān" tacsuit
 uplink-hardsuit-cybersun-dreadnought-desc = A prototype tacsuit that makes an almost impenetrable wall out of the wearer. Once fastened in place, it can't be removed without killing the wearer. Its use will slowly kill the wearer, making entombment inside a one-way trip to the grave. Are you sure you want to do this?
 
 # Weapons
@@ -54,10 +68,10 @@ uplink-rifle-subsonic-mag-desc = A 35 round magazine containing .30 rifle subson
 uplink-l6-box-name = Magazine Box (.30 rifle)
 uplink-l6-box-desc = Magazine box with 100 catridges. Compatible with the L6 SAW.
 
-uplink-shotgun-magazine-name = Shotgun Drum (.50 pellet)
+uplink-shotgun-magazine-name = Shotgun Drum (12 gauge pellet)
 uplink-shotgun-magazine-desc = Shotgun drum with 8 pellet shells. Compatible with the Bulldog.
 
-uplink-shotgun-magazine-slug-name = Shotgun Drum (.50 slug)
+uplink-shotgun-magazine-slug-name = Shotgun Drum (12 gauge slug)
 uplink-shotgun-magazine-slug-desc = Shotgun drum with 8 slug shells. Compatible with the Bulldog.
 
 uplink-high-caliber-magazine-name = Heavy Rifle Magazine (.50 anti-materiel)

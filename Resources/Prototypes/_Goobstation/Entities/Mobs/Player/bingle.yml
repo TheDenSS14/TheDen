@@ -1,3 +1,10 @@
+# SPDX-FileCopyrightText: 2025 Rosycup <178287475+Rosycup@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Your Name <EctoplasmIsGood@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 fishbait <gnesse@gmail.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 - type: entity
   name: bingle
   id: MobBingle
@@ -52,7 +59,7 @@
       types:
         Blunt: 7
         Structural: 14 # breaks down the walls and airlocks in 10 hits
-        Ion: 5
+        #Ion: 5
     bluntStaminaDamageFactor: 2.0
   - type: MovementSpeedModifier
     baseWalkSpeed : 2 # same as slime
@@ -138,7 +145,7 @@
       types:
         Blunt: 14
         Structural: 28
-        Ion: 7
+        #Ion: 7
   - type: Damageable
     damageContainer: Biological
     damageModifierSet: BingleUpgraded

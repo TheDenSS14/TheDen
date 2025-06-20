@@ -1,3 +1,11 @@
+# SPDX-FileCopyrightText: 2025 Rosycup <178287475+Rosycup@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Solstice <solsticeofthewinter@gmail.com>
+# SPDX-FileCopyrightText: 2025 VMSolidus <evilexecutive@gmail.com>
+# SPDX-FileCopyrightText: 2025 mart <martgitomen@gmail.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 - type: entity
   name: DT-8 "Terminus"
   parent: BaseItem
@@ -63,3 +71,9 @@
     slots:
     - back
     - suitStorage
+
+- type: entity
+  name: DT-8 "Antique Terminus"
+  parent: Terminus
+  id: AntiqueTerminus
+  description: With a rise of Oni personnel taking up the Head of Security position, it was deemed a necessity to equip them with the only Oni-compatible weapon able to fire disabler bolts.

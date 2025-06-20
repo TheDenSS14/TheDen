@@ -1,0 +1,25 @@
+# SPDX-FileCopyrightText: 2024 FoxxoTrystan <trystan.garnierhein@gmail.com>
+# SPDX-FileCopyrightText: 2024 sleepyyapril <flyingkarii@gmail.com>
+# SPDX-FileCopyrightText: 2025 Rosycup <178287475+Rosycup@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
+- type: entity
+  id: ActionHypno
+  name: action-name-hypno
+  description: action-description-hypno
+  categories: [ HideSpawnMenu ]
+  components:
+    - type: EntityTargetAction
+      icon: _Floof/Interface/Actions/hypno.png
+      useDelay: 45
+      checkCanAccess: false
+      range: 8
+      itemIconStyle: BigAction
+      canTargetSelf: false
+      blacklist:
+        components:
+          - PsionicInsulation
+          - Mindbroken
+      event: !type:HypnoPowerActionEvent

@@ -1,3 +1,14 @@
+# SPDX-FileCopyrightText: 2022 Flipp Syder <76629141+vulppine@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 AJCM-git <60196617+AJCM-git@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT <77995199+DEATHB4DEFEAT@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 VMSolidus <evilexecutive@gmail.com>
+# SPDX-FileCopyrightText: 2025 mart <martgitomen@gmail.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 - type: entity
   abstract: true
   parent: [ BaseStructureDynamic, SmallConstructibleMachine ]
@@ -8,7 +19,7 @@
     - type: InteractionOutline
     - type: Eye
     - type: WirelessNetworkConnection
-      range: 200
+      range: 2000
     - type: Damageable
       damageContainer: Inorganic
       damageModifierSet: Metallic
@@ -83,8 +94,8 @@
   components:
     - type: DeviceNetwork
       deviceNetId: Wireless
-      receiveFrequencyId: SurveillanceCamera
-      transmitFrequencyId: SurveillanceCamera
+      receiveFrequencyId: SurveillanceCameraEntertainment
+      transmitFrequencyId: SurveillanceCameraEntertainment
     - type: SurveillanceCamera
       setupAvailableNetworks:
         - SurveillanceCameraEntertainment
@@ -97,7 +108,7 @@
     - type: DeviceNetwork
       deviceNetId: Wireless
       receiveFrequencyId: SurveillanceCameraEntertainment
-      transmitFrequencyId: SurveillanceCamera
+      transmitFrequencyId: SurveillanceCameraEntertainment
     - type: SurveillanceCamera
       setupAvailableNetworks:
         - SurveillanceCameraEntertainment
@@ -110,7 +121,7 @@
     - type: DeviceNetwork
       deviceNetId: Wireless
       receiveFrequencyId: SurveillanceCameraEntertainment
-      transmitFrequencyId: SurveillanceCamera
+      transmitFrequencyId: SurveillanceCameraEntertainment
     - type: SurveillanceCamera
       networkSet: true
 
@@ -122,6 +133,6 @@
     - type: DeviceNetwork
       deviceNetId: Wireless
       receiveFrequencyId: SurveillanceCameraEntertainment
-      transmitFrequencyId: SurveillanceCamera
+      transmitFrequencyId: SurveillanceCameraEntertainment
     - type: SurveillanceCamera
       networkSet: true

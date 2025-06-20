@@ -1,0 +1,49 @@
+# SPDX-FileCopyrightText: 2025 TheOneTrueWolfio <Wolfgangleader3@gmail.com>
+# SPDX-FileCopyrightText: 2025 mart <martgitomen@gmail.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
+- type: entity
+  parent: BaseItem
+  id: HandheldSurveillanceWirelessCameraBase
+  name: handheld wireless camera
+  description: A handheld camera. You can almost hear the judgement from prying eyes behind the lens.
+  components:
+    - type: Sprite
+      sprite: _RMC14/Objects/Devices/broadcasting_camera.rsi
+      state: icon
+    - type: Item
+      size: Huge
+    - type: Wieldable
+    - type: Eye
+    - type: DeviceNetwork
+      deviceNetId: Wireless
+      receiveFrequencyId: SurveillanceCameraEntertainment
+      transmitFrequencyId: SurveillanceCameraEntertainment
+    - type: WirelessNetworkConnection
+      range: 3000
+    - type: SurveillanceCameraMicrophone
+      blacklist:
+        components:
+          - SurveillanceCamera
+          - SurveillanceCameraMonitor
+          - RadioSpeaker
+    - type: ActiveListener
+      range: 10
+    - type: UserInterface
+      interfaces:
+        enum.SurveillanceCameraSetupUiKey.Camera:
+          type: SurveillanceCameraSetupBoundUi
+
+- type: entity
+  parent: HandheldSurveillanceWirelessCameraBase
+  suffix: Entertainment, Anchored
+  id: HandheldSurveillanceWirelessCameraAnchoredEntertainment
+  components:
+  - type: DeviceNetwork
+    deviceNetId: Wireless
+    receiveFrequencyId: SurveillanceCameraEntertainment
+    transmitFrequencyId: SurveillanceCameraEntertainment
+  - type: SurveillanceCamera
+    networkSet: true

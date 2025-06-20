@@ -1,0 +1,33 @@
+# SPDX-FileCopyrightText: 2025 LaconiumDragona <riascazadofelra@gmail.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
+- type: marking
+  id: WingsDragon
+  bodyPart: Wings
+  markingCategory: Wings
+  speciesRestriction: [Reptilian]
+  sprites:
+  - sprite: _SimpleStation/Mobs/Customization/wings64x34.rsi
+    state: dragon
+
+- type: marking
+  id: WingsDragonTwotone
+  bodyPart: Wings
+  markingCategory: Wings
+  speciesRestriction: [Reptilian]
+  sprites:
+  - sprite: _SimpleStation/Mobs/Customization/wings64x34.rsi
+    state: dragon
+  - sprite: _SimpleStation/Mobs/Customization/wings64x34.rsi
+    state: dragon-inner
+
+- type: marking
+  id: WingsBigArmWings
+  bodyPart: Wings
+  markingCategory: Wings
+  speciesRestriction: [Reptilian]
+  sprites:
+  - sprite: SimpleStation14/Mobs/Customization/wings64x32.rsi
+    state: harpy

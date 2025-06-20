@@ -1,3 +1,10 @@
+// SPDX-FileCopyrightText: 2024 Timemaster99 <57200767+Timemaster99@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 VMSolidus <evilexecutive@gmail.com>
+// SPDX-FileCopyrightText: 2025 Falcon <falcon@zigtag.dev>
+// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 using Robust.Shared.GameStates;
 using Content.Shared.Silicon.Systems;
 using Robust.Shared.Serialization.TypeSerializers.Implementations;
@@ -69,6 +76,16 @@ public sealed partial class SiliconComponent : Component
     [DataField]
     public float DrainPerSecond = 50f;
 
+    /// <summary>
+    ///     How much less power is used while being idle.
+    /// </summary>
+    /// <remarks>
+    ///     Relative to the DrainPerSecond.
+    ///     0 is no reduction. 1 is 100% reduction. 0.5 is 50% reduction.
+    ///     Currently, 90% reduction is as high as we can go without changing code in C#
+    /// </remarks>
+    [DataField]
+    public float IdleDrainReduction = 0.6f;
 
     /// <summary>
     ///     The percentages at which the silicon will enter each state.

@@ -1,3 +1,9 @@
+# SPDX-FileCopyrightText: 2025 Rosycup <178287475+Rosycup@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Tabitha <64847293+KyuPolaris@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 - type: microwaveMealRecipe
   id: RecipeLasagne
   name: lasagne recipe
@@ -8,3 +14,14 @@
     FoodCheeseSlice: 1
     FoodTomato: 1
     FoodMeat: 1
+
+- type: microwaveMealRecipe
+  id: RecipeTirggel
+  name: tirggel recipe
+  result: FoodBakedTirggel
+  time: 5
+  reagents:
+    Honey: 5
+    Sugar: 5
+    Water: 5
+    Flour: 5

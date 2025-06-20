@@ -1,0 +1,95 @@
+# SPDX-FileCopyrightText: 2024 ShatteredSwords <135023515+ShatteredSwords@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Blitz <73762869+BlitzTheSquishy@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Rosycup <178287475+Rosycup@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
+# Costume Masks FloofStation
+- type: loadout
+  id: LoadoutMaskPlague
+  category: Mask
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingMaskPlague
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMasks # TheDen
+
+- type: loadout
+  id: LoadoutMaskRat
+  category: Mask
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingMaskRat
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMasks # TheDen
+
+- type: loadout
+  id: LoadoutMaskFox
+  category: Mask
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingMaskFox
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMasks # TheDen
+
+- type: loadout
+  id: LoadoutMaskBee
+  category: Mask
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingMaskBee
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMasks # TheDen
+
+- type: loadout
+  id: LoadoutMaskBear
+  category: Mask
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingMaskBear
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMasks # TheDen
+
+- type: loadout
+  id: LoadoutMaskRaven
+  category: Mask
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingMaskRaven
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMasks # TheDen
+
+- type: loadout
+  id: LoadoutMaskJackal
+  category: Mask
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingMaskJackal
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMasks # TheDen
+
+- type: loadout
+  id: LoadoutMaskBat
+  category: Mask
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingMaskBat
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMasks # TheDen

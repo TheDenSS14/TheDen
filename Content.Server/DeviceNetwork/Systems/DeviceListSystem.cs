@@ -1,3 +1,15 @@
+// SPDX-FileCopyrightText: 2022 Flipp Syder <76629141+vulppine@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 vulppine <vulppine@gmail.com>
+// SPDX-FileCopyrightText: 2023 AJCM-git <60196617+AJCM-git@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Julian Giebel <juliangiebel@live.de>
+// SPDX-FileCopyrightText: 2024 SimpleStation14 <130339894+SimpleStation14@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Falcon <falcon@zigtag.dev>
+// SPDX-FileCopyrightText: 2025 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 sleepyyapril <flyingkarii@gmail.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 using System.Linq;
 using Content.Server.DeviceNetwork.Components;
 using Content.Shared.DeviceNetwork;
@@ -20,7 +32,7 @@ public sealed class DeviceListSystem : SharedDeviceListSystem
         SubscribeLocalEvent<DeviceListComponent, ComponentShutdown>(OnShutdown);
         SubscribeLocalEvent<DeviceListComponent, BeforeBroadcastAttemptEvent>(OnBeforeBroadcast);
         SubscribeLocalEvent<DeviceListComponent, BeforePacketSentEvent>(OnBeforePacketSent);
-        SubscribeLocalEvent<BeforeSaveEvent>(OnMapSave);
+        SubscribeLocalEvent<BeforeSerializationEvent>(OnMapSave);
     }
 
     private void OnShutdown(EntityUid uid, DeviceListComponent component, ComponentShutdown args)
@@ -124,14 +136,14 @@ public sealed class DeviceListSystem : SharedDeviceListSystem
         Dirty(list);
     }
 
-    private void OnMapSave(BeforeSaveEvent ev)
+    private void OnMapSave(BeforeSerializationEvent ev)
     {
         List<EntityUid> toRemove = new();
         var query = GetEntityQuery<TransformComponent>();
         var enumerator = AllEntityQuery<DeviceListComponent, TransformComponent>();
         while (enumerator.MoveNext(out var uid, out var device, out var xform))
         {
-            if (xform.MapUid != ev.Map)
+            if (!ev.MapIds.Contains(xform.MapID))
                 continue;
 
             foreach (var ent in device.Devices)
@@ -144,7 +156,10 @@ public sealed class DeviceListSystem : SharedDeviceListSystem
                     continue;
                 }
 
-                if (linkedXform.MapUid == ev.Map)
+                // This is assuming that **all** of the map is getting saved.
+                // Which is not necessarily true.
+                // AAAAAAAAAAAAAA
+                if (ev.MapIds.Contains(linkedXform.MapID))
                     continue;
 
                 toRemove.Add(ent);

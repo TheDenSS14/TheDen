@@ -1,3 +1,9 @@
+# SPDX-FileCopyrightText: 2024 gluesniffler <159397573+gluesniffler@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 KekaniCreates <87507256+KekaniCreates@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 autodoc-program-step-surgery = perform surgery on {$part}: {$name}
 autodoc-program-step-grab-item = grab item: '{$name}'
 autodoc-program-step-grab-any = grab any: {$name}

@@ -1,0 +1,58 @@
+# SPDX-FileCopyrightText: 2024 Fansana <fansana95@googlemail.com>
+# SPDX-FileCopyrightText: 2024 Pierson Arnold <greyalphawolf7@gmail.com>
+# SPDX-FileCopyrightText: 2025 Blitz <73762869+BlitzTheSquishy@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Rosycup <178287475+Rosycup@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
+- type: entity
+  parent: BaseItem
+  id: BasicEggEaster
+  name: basic egg
+  description: A large and shiny egg, couldn't have been laid by a chicken!
+  components:
+  - type: Sprite
+    sprite: _Floof/Objects/Fun/Lewd/egg.rsi
+    state: egg_chicken
+
+- type: entity
+  parent: BaseItem
+  id: DragonEggEaster
+  name: dragon egg
+  description: A warm and shimmering egg, power could be felt from within...
+  suffix: Easter # TheDen
+  components:
+  - type: Sprite
+    sprite: _Floof/Objects/Fun/Lewd/egg.rsi
+    state: egg_dragon
+
+- type: entity
+  parent: BaseItem
+  id: VoidEggEaster
+  name: void egg
+  description: A void egg. This has to be dangerous, right?
+  components:
+  - type: Sprite
+    sprite: _Floof/Objects/Fun/Lewd/egg.rsi
+    state: egg_void
+
+- type: entity
+  parent: BaseItem
+  id: SlimeEggEaster
+  name: slime egg
+  description: A globby and squishy egg, feels nasty.
+  components:
+  - type: Sprite
+    sprite: _Floof/Objects/Fun/Lewd/egg.rsi
+    state: egg_slimeglob
+
+- type: entity
+  parent: BaseItem
+  id: HoneyEggEaster
+  name: honeycomb egg
+  description: An egg covered in a sticky and sweet honey.
+  components:
+  - type: Sprite
+    sprite: _Floof/Objects/Fun/Lewd/egg.rsi
+    state: egg_honeycomb

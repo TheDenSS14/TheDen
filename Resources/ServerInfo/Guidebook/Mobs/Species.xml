@@ -1,37 +1,47 @@
+<!--
+SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT <77995199+DEATHB4DEFEAT@users.noreply.github.com>
+SPDX-FileCopyrightText: 2024 Memeji <greyalphawolf7@gmail.com>
+SPDX-FileCopyrightText: 2024 Timemaster99 <57200767+Timemaster99@users.noreply.github.com>
+SPDX-FileCopyrightText: 2025 Alice <alicecoupland45@gmail.com>
+SPDX-FileCopyrightText: 2025 Blitz <73762869+BlitzTheSquishy@users.noreply.github.com>
+SPDX-FileCopyrightText: 2025 M3739 <47579354+M3739@users.noreply.github.com>
+SPDX-FileCopyrightText: 2025 SixplyDev <einlichen@gmail.com>
+SPDX-FileCopyrightText: 2025 TheOneTrueWolfio <wolfgangleader3@gmail.com>
+SPDX-FileCopyrightText: 2025 juniwoofs <180479595+juniwoofs@users.noreply.github.com>
+SPDX-FileCopyrightText: 2025 portfiend <109661617+portfiend@users.noreply.github.com>
+SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+
+SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+-->
+
 <Document>
   # Species
 
   Nanotrasen employs a variety of sapient species.
 
-  <Box>
-  <GuideEntityEmbed Entity="MobArachnid" Caption="Arachnid"/>
-  <GuideEntityEmbed Entity="MobDiona" Caption="Diona"/>
-  <GuideEntityEmbed Entity="MobHuman" Caption="Human"/>
-  </Box>
-  <Box>
-  <GuideEntityEmbed Entity="MobMoth" Caption="Moth Person"/>
-  <GuideEntityEmbed Entity="MobOni" Caption="Oni"/>
-  <GuideEntityEmbed Entity="MobReptilian" Caption="Reptilian"/>
-  <GuideEntityEmbed Entity="MobSlimePerson" Caption="Slime Person"/>
-  <GuideEntityEmbed Entity="MobShadowkinDummy" Caption="Shadowkin"/>
-  <GuideEntityEmbed Entity="MobChitinid" Caption="Chitinid"/>
-    <GuideEntityEmbed Entity="MobResomi" Caption="Resomi"/>
-  </Box>
-
-  # Parkstation specific species
-  <Box>
-  <GuideEntityEmbed Entity="MobIPCDummy" Caption="I.P.C."/>
-  </Box>
-
-  # Delta-V specific species
-  <Box>
-    <GuideEntityEmbed Entity="MobRodentia" Caption="Rodentia"/>
-    <GuideEntityEmbed Entity="MobFeroxi" Caption="Feroxi"/>
-  </Box>
-
-  # The Den specific species
-  <Box>
-    <GuideEntityEmbed Entity="MobCanid" Caption="Canid"/>
-    <GuideEntityEmbed Entity="MobOvinia" Caption="Ovinia"/>
-  </Box>
+  <Grid Columns="5">
+    <GuideEntityEmbed Entity="MobArachneDummy" Caption="Arachne" Scale="2"/>
+    <GuideEntityEmbed Entity="MobArachnidDummy" Caption="Arachnid" Scale="3"/>
+    <GuideEntityEmbed Entity="MobCanidDummy" Caption="Canid" Scale="3"/>
+    <GuideEntityEmbed Entity="MobChitinidDummy" Caption="Chitinid" Scale="3"/>
+    <GuideEntityEmbed Entity="MobDionaDummy" Caption="Diona" Scale="3"/>
+    <GuideEntityEmbed Entity="MobFelinidDummy" Caption="Felinid" Scale="3"/>
+    <GuideEntityEmbed Entity="MobFeroxiDummy" Caption="Feroxi" Scale="3"/>
+    <GuideEntityEmbed Entity="MobHarpyDummy" Caption="Harpy" Scale="3"/>
+    <GuideEntityEmbed Entity="MobHumanDummy" Caption="Human" Scale="3"/>
+    <GuideEntityEmbed Entity="MobIPCDummy" Caption="I.P.C." Scale="3"/>
+    <GuideEntityEmbed Entity="MobKitsuneDummy" Caption="Kitsune" Scale="3"/>
+    <GuideEntityEmbed Entity="MobMothDummy" Caption="Moth Person" Scale="3"/>
+    <GuideEntityEmbed Entity="MobOniDummy" Caption="Oni" Scale="3"/>
+    <GuideEntityEmbed Entity="MobOviniaDummy" Caption="Ovinia" Scale="3"/>
+    <GuideEntityEmbed Entity="MobPlasmamanDummy" Caption="Plasmaman" Scale="3"/>
+    <GuideEntityEmbed Entity="MobResomiDummy" Caption="Resomi" Scale="3"/>
+    <GuideEntityEmbed Entity="MobRodentiaDummy" Caption="Rodentia" Scale="3"/>
+    <GuideEntityEmbed Entity="MobShadowkinDummy" Caption="Shadowkin" Scale="2"/>
+    <GuideEntityEmbed Entity="MobSlimePersonDummy" Caption="Slime Person" Scale="3"/>
+    <GuideEntityEmbed Entity="MobTajaranDummy" Caption="Tajaran" Scale="3"/>
+    <GuideEntityEmbed Entity="MobReptilianDummy" Caption="Unathi" Scale="3"/>
+    <GuideEntityEmbed Entity="MobVoxDummy" Caption="Vox" Scale="3"/>
+    <GuideEntityEmbed Entity="MobVulpkaninDummy" Caption="Vulpkanin" Scale="3"/>
+  </Grid>
 </Document>

@@ -1,3 +1,9 @@
+# SPDX-FileCopyrightText: 2024 Chief-Engineer <119664036+Chief-Engineer@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 sleepyyapril <flyingkarii@gmail.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 cmd-babyjail-desc = Toggles the baby jail, which enables stricter restrictions on who's allowed to join the server.
 cmd-babyjail-help = Usage: babyjail
 babyjail-command-enabled = Baby jail has been enabled.

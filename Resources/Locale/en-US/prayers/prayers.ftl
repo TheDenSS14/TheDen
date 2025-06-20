@@ -1,4 +1,11 @@
-﻿prayer-verbs-subtle-message = Subtle Message
+# SPDX-FileCopyrightText: 2022 eclips_e <67359748+Just-a-Unity-Dev@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Chief-Engineer <119664036+Chief-Engineer@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 deltanedas <39013340+deltanedas@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: MIT
+
+prayer-verbs-subtle-message = Subtle Message
 prayer-verbs-pray = Pray
 prayer-verbs-call = Call
 prayer-chat-notify-pray = PRAYER

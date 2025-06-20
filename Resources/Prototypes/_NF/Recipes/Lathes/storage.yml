@@ -1,0 +1,54 @@
+# SPDX-FileCopyrightText: 2025 Rosycup <178287475+Rosycup@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
+- type: latheRecipe
+  abstract: true
+  id: NFBaseToolboxRecipe
+  categories:
+  - Storage
+  completetime: 4
+  materials:
+    Steel: 300
+
+# Weapon cases
+- type: latheRecipe
+  id: WeaponCaseShort
+  parent: NFBaseToolboxRecipe
+  result: WeaponCaseShort
+  name: lathe-recipe-WeaponCaseShort-name
+
+- type: latheRecipe
+  id: WeaponCaseLong
+  parent: NFBaseToolboxRecipe
+  result: WeaponCaseLong
+  name: lathe-recipe-WeaponCaseLong-name
+  materials:
+    Steel: 600
+
+- type: latheRecipe
+  id: WeaponCaseHeavy
+  parent: NFBaseToolboxRecipe
+  result: WeaponCaseHeavy
+  name: lathe-recipe-WeaponCaseHeavy-name
+  materials:
+    Steel: 1200
+
+- type: latheRecipe
+  id: WeaponCaseShortAmmo
+  parent: NFBaseToolboxRecipe
+  result: WeaponCaseShortAmmo
+  name: lathe-recipe-WeaponCaseShortAmmo-name
+
+- type: latheRecipe
+  id: WeaponCaseShortExplosives
+  parent: NFBaseToolboxRecipe
+  result: WeaponCaseShortExplosives
+  name: lathe-recipe-WeaponCaseShortExplosives-name
+
+- type: latheRecipe
+  id: WeaponCaseShortDocuments
+  parent: NFBaseToolboxRecipe
+  result: WeaponCaseShortDocuments
+  name: lathe-recipe-WeaponCaseShortDocuments-name

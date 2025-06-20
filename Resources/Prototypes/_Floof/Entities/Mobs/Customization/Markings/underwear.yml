@@ -1,0 +1,426 @@
+# SPDX-FileCopyrightText: 2025 Aikakakah <145503852+Aikakakah@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
+- type: marking
+  id: UnderwearClassicbriefs
+  bodyPart: Underwear
+  markingCategory: Underwear
+  speciesRestriction: [Shadowkin, Diona, Arachnid, Reptilian, Moth, SlimePerson, Resomi, Rodentia, Human, Rodentia, Felinid, Oni, Vulpkanin, Harpy]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+  - sprite: _Floof/Mobs/Customization/underwear.rsi
+    state: briefs
+
+- type: marking
+  id: UnderwearClassicjockstrap
+  bodyPart: Underwear
+  markingCategory: Underwear
+  speciesRestriction: [Shadowkin, Diona, Arachnid, Reptilian, Moth, SlimePerson, Resomi, Rodentia, Human, Rodentia, Felinid, Oni, Vulpkanin, Harpy]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+  - sprite: _Floof/Mobs/Customization/underwear.rsi
+    state: jockstrap
+
+- type: marking
+  id: UnderwearClassicmankini
+  bodyPart: Underwear
+  markingCategory: Underwear
+  speciesRestriction: [Shadowkin, Diona, Arachnid, Reptilian, Moth, SlimePerson, Resomi, Rodentia, Human, Rodentia, Felinid, Oni, Vulpkanin, Harpy]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+  - sprite: _Floof/Mobs/Customization/underwear.rsi
+    state: mankini
+
+- type: marking
+  id: UnderwearClassicboxers
+  bodyPart: Underwear
+  markingCategory: Underwear
+  speciesRestriction: [Shadowkin, Diona, Arachnid, Reptilian, Moth, SlimePerson, Resomi, Rodentia, Human, Rodentia, Felinid, Oni, Vulpkanin, Harpy]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+  - sprite: _Floof/Mobs/Customization/underwear.rsi
+    state: boxers
+
+- type: marking
+  id: UnderwearClassicheartboxers
+  bodyPart: Underwear
+  markingCategory: Underwear
+  speciesRestriction: [Shadowkin, Diona, Arachnid, Reptilian, Moth, SlimePerson, Resomi, Rodentia, Human, Rodentia, Felinid, Oni, Vulpkanin, Harpy]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+  - sprite: _Floof/Mobs/Customization/underwear.rsi
+    state: boxers_heart
+
+- type: marking
+  id: UnderwearClassicukboxers
+  bodyPart: Underwear
+  markingCategory: Underwear
+  speciesRestriction: [Shadowkin, Diona, Arachnid, Reptilian, Moth, SlimePerson, Resomi, Rodentia, Human, Rodentia, Felinid, Oni, Vulpkanin, Harpy]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+  - sprite: _Floof/Mobs/Customization/underwear.rsi
+    state: boxers_uk
+
+- type: marking
+  id: UnderwearClassicassblastusaboxers
+  bodyPart: Underwear
+  markingCategory: Underwear
+  speciesRestriction: [Shadowkin, Diona, Arachnid, Reptilian, Moth, SlimePerson, Resomi, Rodentia, Human, Rodentia, Felinid, Oni, Vulpkanin, Harpy]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+  - sprite: _Floof/Mobs/Customization/underwear.rsi
+    state: boxers_assblastusa
+
+- type: marking
+  id: UnderwearClassiccommieboxers
+  bodyPart: Underwear
+  markingCategory: Underwear
+  speciesRestriction: [Shadowkin, Diona, Arachnid, Reptilian, Moth, SlimePerson, Resomi, Rodentia, Human, Rodentia, Felinid, Oni, Vulpkanin, Harpy]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+  - sprite: _Floof/Mobs/Customization/underwear.rsi
+    state: boxers_commie
+
+- type: marking
+  id: UnderwearClassicstripedboxers
+  bodyPart: Underwear
+  markingCategory: Underwear
+  speciesRestriction: [Shadowkin, Diona, Arachnid, Reptilian, Moth, SlimePerson, Resomi, Rodentia, Human, Rodentia, Felinid, Oni, Vulpkanin, Harpy]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+  - sprite: _Floof/Mobs/Customization/underwear.rsi
+    state: boxers_striped
+
+- type: marking
+  id: UnderwearClassicboxerbriefs
+  bodyPart: Underwear
+  markingCategory: Underwear
+  speciesRestriction: [Shadowkin, Diona, Arachnid, Reptilian, Moth, SlimePerson, Resomi, Rodentia, Human, Rodentia, Felinid, Oni, Vulpkanin, Harpy]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+  - sprite: _Floof/Mobs/Customization/underwear.rsi
+    state: boxer_briefs
+
+- type: marking
+  id: UnderwearClassicbeeshorts
+  bodyPart: Underwear
+  markingCategory: Underwear
+  speciesRestriction: [Shadowkin, Diona, Arachnid, Reptilian, Moth, SlimePerson, Resomi, Rodentia, Human, Rodentia, Felinid, Oni, Vulpkanin, Harpy]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+  - sprite: _Floof/Mobs/Customization/underwear.rsi
+    state: bee_shorts
+
+- type: marking
+  id: UnderwearClassicpanties
+  bodyPart: Underwear
+  markingCategory: Underwear
+  speciesRestriction: [Shadowkin, Diona, Arachnid, Reptilian, Moth, SlimePerson, Resomi, Rodentia, Human, Rodentia, Felinid, Oni, Vulpkanin, Harpy]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+  - sprite: _Floof/Mobs/Customization/underwear.rsi
+    state: panties
+
+- type: marking
+  id: UnderwearClassicpantiesalt
+  bodyPart: Underwear
+  markingCategory: Underwear
+  speciesRestriction: [Shadowkin, Diona, Arachnid, Reptilian, Moth, SlimePerson, Resomi, Rodentia, Human, Rodentia, Felinid, Oni, Vulpkanin, Harpy]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+  - sprite: _Floof/Mobs/Customization/underwear.rsi
+    state: panties_alt
+
+- type: marking
+  id: UnderwearClassicpantiesslim
+  bodyPart: Underwear
+  markingCategory: Underwear
+  speciesRestriction: [Shadowkin, Diona, Arachnid, Reptilian, Moth, SlimePerson, Resomi, Rodentia, Human, Rodentia, Felinid, Oni, Vulpkanin, Harpy]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+  - sprite: _Floof/Mobs/Customization/underwear.rsi
+    state: panties_slim
+
+- type: marking
+  id: UnderwearClassicpantiesthin
+  bodyPart: Underwear
+  markingCategory: Underwear
+  speciesRestriction: [Shadowkin, Diona, Arachnid, Reptilian, Moth, SlimePerson, Resomi, Rodentia, Human, Rodentia, Felinid, Oni, Vulpkanin, Harpy]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+  - sprite: _Floof/Mobs/Customization/underwear.rsi
+    state: panties_thin
+
+- type: marking
+  id: UnderwearClassicpantiesneko
+  bodyPart: Underwear
+  markingCategory: Underwear
+  speciesRestriction: [Shadowkin, Diona, Arachnid, Reptilian, Moth, SlimePerson, Resomi, Rodentia, Human, Rodentia, Felinid, Oni, Vulpkanin, Harpy]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+  - sprite: _Floof/Mobs/Customization/underwear.rsi
+    state: panties_neko
+
+- type: marking
+  id: UnderwearClassicpantiesswimming
+  bodyPart: Underwear
+  markingCategory: Underwear
+  speciesRestriction: [Shadowkin, Diona, Arachnid, Reptilian, Moth, SlimePerson, Resomi, Rodentia, Human, Rodentia, Felinid, Oni, Vulpkanin, Harpy]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+  - sprite: _Floof/Mobs/Customization/underwear.rsi
+    state: panties_swimming
+
+- type: marking
+  id: UnderwearClassicthong
+  bodyPart: Underwear
+  markingCategory: Underwear
+  speciesRestriction: [Shadowkin, Diona, Arachnid, Reptilian, Moth, SlimePerson, Resomi, Rodentia, Human, Rodentia, Felinid, Oni, Vulpkanin, Harpy]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+  - sprite: _Floof/Mobs/Customization/underwear.rsi
+    state: thong
+
+- type: marking
+  id: UnderwearClassicthongbabydoll
+  bodyPart: Underwear
+  markingCategory: Underwear
+  speciesRestriction: [Shadowkin, Diona, Arachnid, Reptilian, Moth, SlimePerson, Resomi, Rodentia, Human, Rodentia, Felinid, Oni, Vulpkanin, Harpy]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+  - sprite: _Floof/Mobs/Customization/underwear.rsi
+    state: thong_babydoll
+
+- type: marking
+  id: UnderwearFishnetlower
+  bodyPart: Underwear
+  markingCategory: Underwear
+  speciesRestriction: [Shadowkin, Diona, Arachnid, Reptilian, Moth, SlimePerson, Resomi, Rodentia, Human, Rodentia, Felinid, Oni, Vulpkanin, Harpy]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+  - sprite: _Floof/Mobs/Customization/underwear.rsi
+    state: fishnet_lower
+
+- type: marking
+  id: UnderwearClassicpantiesassblastusa
+  bodyPart: Underwear
+  markingCategory: Underwear
+  speciesRestriction: [Shadowkin, Diona, Arachnid, Reptilian, Moth, SlimePerson, Resomi, Rodentia, Human, Rodentia, Felinid, Oni, Vulpkanin, Harpy]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+  - sprite: _Floof/Mobs/Customization/underwear.rsi
+    state: panties_assblastusa
+
+- type: marking
+  id: UnderwearClassicpantiesbeekini
+  bodyPart: Underwear
+  markingCategory: Underwear
+  speciesRestriction: [Shadowkin, Diona, Arachnid, Reptilian, Moth, SlimePerson, Resomi, Rodentia, Human, Rodentia, Felinid, Oni, Vulpkanin, Harpy]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+  - sprite: _Floof/Mobs/Customization/underwear.rsi
+    state: panties_bee-kini
+
+- type: marking
+  id: UnderwearClassicpantiescommie
+  bodyPart: Underwear
+  markingCategory: Underwear
+  speciesRestriction: [Shadowkin, Diona, Arachnid, Reptilian, Moth, SlimePerson, Resomi, Rodentia, Human, Rodentia, Felinid, Oni, Vulpkanin, Harpy]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+  - sprite: _Floof/Mobs/Customization/underwear.rsi
+    state: panties_commie
+
+- type: marking
+  id: UnderwearClassicpantiesuk
+  bodyPart: Underwear
+  markingCategory: Underwear
+  speciesRestriction: [Shadowkin, Diona, Arachnid, Reptilian, Moth, SlimePerson, Resomi, Rodentia, Human, Rodentia, Felinid, Oni, Vulpkanin, Harpy]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+  - sprite: _Floof/Mobs/Customization/underwear.rsi
+    state: panties_uk
+
+- type: marking
+  id: UnderwearClassicpantiesstriped
+  bodyPart: Underwear
+  markingCategory: Underwear
+  speciesRestriction: [Shadowkin, Diona, Arachnid, Reptilian, Moth, SlimePerson, Resomi, Rodentia, Human, Rodentia, Felinid, Oni, Vulpkanin, Harpy]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+  - sprite: _Floof/Mobs/Customization/underwear.rsi
+    state: striped_panties
+
+- type: marking
+  id: UnderwearClassicpantiesbow
+  bodyPart: Underwear
+  markingCategory: Underwear
+  speciesRestriction: [Shadowkin, Diona, Arachnid, Reptilian, Moth, SlimePerson, Resomi, Rodentia, Human, Rodentia, Felinid, Oni, Vulpkanin, Harpy]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+  - sprite: _Floof/Mobs/Customization/underwear.rsi
+    state: bowpanties
+
+- type: marking
+  id: UnderwearClassicpantiesbowslim
+  bodyPart: Underwear
+  markingCategory: Underwear
+  speciesRestriction: [Shadowkin, Diona, Arachnid, Reptilian, Moth, SlimePerson, Resomi, Rodentia, Human, Rodentia, Felinid, Oni, Vulpkanin, Harpy]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+  - sprite: _Floof/Mobs/Customization/underwear.rsi
+    state: bowpanties_slim
+
+- type: marking
+  id: UnderwearClassicthongbow
+  bodyPart: Underwear
+  markingCategory: Underwear
+  speciesRestriction: [Shadowkin, Diona, Arachnid, Reptilian, Moth, SlimePerson, Resomi, Rodentia, Human, Rodentia, Felinid, Oni, Vulpkanin, Harpy]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+  - sprite: _Floof/Mobs/Customization/underwear.rsi
+    state: bowthong
+
+- type: marking
+  id: UnderwearClassicthongbowbabydoll
+  bodyPart: Underwear
+  markingCategory: Underwear
+  speciesRestriction: [Shadowkin, Diona, Arachnid, Reptilian, Moth, SlimePerson, Resomi, Rodentia, Human, Rodentia, Felinid, Oni, Vulpkanin, Harpy]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+  - sprite: _Floof/Mobs/Customization/underwear.rsi
+    state: bowthong_babydoll
+
+- type: marking
+  id: UnderwearClassicpantiescow
+  bodyPart: Underwear
+  markingCategory: Underwear
+  speciesRestriction: [Shadowkin, Diona, Arachnid, Reptilian, Moth, SlimePerson, Resomi, Rodentia, Human, Rodentia, Felinid, Oni, Vulpkanin, Harpy]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+  - sprite: _Floof/Mobs/Customization/underwear.rsi
+    state: panties_cow
+
+

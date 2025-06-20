@@ -1,0 +1,24 @@
+<!--
+SPDX-FileCopyrightText: 2024 Fansana <116083121+Fansana@users.noreply.github.com>
+SPDX-FileCopyrightText: 2024 Mnemotechnican <69920617+Mnemotechnician@users.noreply.github.com>
+SPDX-FileCopyrightText: 2024 ShatteredSwords <135023515+ShatteredSwords@users.noreply.github.com>
+SPDX-FileCopyrightText: 2024 VMSolidus <evilexecutive@gmail.com>
+SPDX-FileCopyrightText: 2025 BlitzTheSquishy <73762869+BlitzTheSquishy@users.noreply.github.com>
+SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+
+SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+-->
+
+<cartridges:SecWatchUiFragment xmlns="https://spacestation14.io"
+        xmlns:cartridges="clr-namespace:Content.Client._DV.CartridgeLoader.Cartridges"
+        Margin="5"
+        VerticalExpand="True">
+    <BoxContainer Orientation="Vertical" HorizontalExpand="True" VerticalExpand="True">
+        <Label Text="{Loc 'sec-watch-title'}" HorizontalExpand="True" HorizontalAlignment="Center"/>
+        <Label Name="NoEntries" Text="{Loc 'sec-watch-no-entries'}" HorizontalExpand="True" HorizontalAlignment="Center" Visible="False"/>
+        <ScrollContainer HorizontalExpand="True" VerticalExpand="True">
+            <!-- Populated when state received -->
+            <BoxContainer Name="Entries" Orientation="Vertical" VerticalAlignment="Top"/>
+        </ScrollContainer>
+    </BoxContainer>
+</cartridges:SecWatchUiFragment>

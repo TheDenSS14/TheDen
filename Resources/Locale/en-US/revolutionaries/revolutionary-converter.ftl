@@ -1,3 +1,8 @@
+# SPDX-FileCopyrightText: 2025 Timfa <timfalken@hotmail.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 revolutionary-converter-speech-1 = The power of communism compels you!
 revolutionary-converter-speech-2 = Cast off Nanotrasen's oppression!
 revolutionary-converter-speech-3 = Join me, and together we will liberate this station!

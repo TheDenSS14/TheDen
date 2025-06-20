@@ -1,3 +1,17 @@
+// SPDX-FileCopyrightText: 2023 Alex Evgrashin <aevgrashin@yandex.ru>
+// SPDX-FileCopyrightText: 2023 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Pieter-Jan Briers <pieterjan.briers@gmail.com>
+// SPDX-FileCopyrightText: 2023 Visne <39844191+Visne@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT <77995199+DEATHB4DEFEAT@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Mnemotechnican <69920617+Mnemotechnician@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Tabitha <64847293+KyuPolaris@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 VMSolidus <evilexecutive@gmail.com>
+// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
+using Content.Server._DEN.Vocal;
 using Content.Server.Actions;
 using Content.Server.Chat.Systems;
 using Content.Server.Speech.Components;
@@ -24,6 +38,8 @@ public sealed class VocalSystem : EntitySystem
     [Dependency] private readonly ActionsSystem _actions = default!;
     [Dependency] private readonly ActionBlockerSystem _actionBlocker = default!;
     [Dependency] private readonly IConfigurationManager _config = default!;
+    [Dependency] private readonly ILogManager _log = default!;
+    [Dependency] private readonly AdditionalVocalSoundsSystem _additionalVocalSounds = default!;
 
     [ValidatePrototypeId<ReplacementAccentPrototype>]
     private const string MuzzleAccent = "mumble";
@@ -58,7 +74,7 @@ public sealed class VocalSystem : EntitySystem
 
     private void OnSexChanged(EntityUid uid, VocalComponent component, SexChangedEvent args)
     {
-        LoadSounds(uid, component);
+        LoadSounds(uid, component, args.NewSex);
     }
 
     private void OnEmote(EntityUid uid, VocalComponent component, ref EmoteEvent args)
@@ -66,8 +82,13 @@ public sealed class VocalSystem : EntitySystem
         if (args.Handled
             || !args.Emote.Category.HasFlag(EmoteCategory.Vocal)
             || !_actionBlocker.CanSpeak(uid)
-            || TryComp<ReplacementAccentComponent>(uid, out var replacement) && replacement.Accent == MuzzleAccent) // This is not ideal, but it works.
+            || TryComp<ReplacementAccentComponent>(uid, out var replacement) && replacement.Accent == MuzzleAccent)
             return;
+
+        var sounds = component.EmoteSounds?.Sounds;
+
+        if (TryComp<AdditionalVocalSoundsComponent>(uid, out var additionalVocalSounds))
+            sounds = _additionalVocalSounds.GetVocalSounds((uid, additionalVocalSounds), component.EmoteSounds);
 
         // snowflake case for wilhelm scream easter egg
         if (args.Emote.ID == component.ScreamId)
@@ -77,7 +98,10 @@ public sealed class VocalSystem : EntitySystem
         }
 
         // just play regular sound based on emote proto
-        args.Handled = _chat.TryPlayEmoteSound(uid, component.EmoteSounds, args.Emote);
+        if (sounds == null)
+            args.Handled = _chat.TryPlayEmoteSound(uid, component.EmoteSounds, args.Emote.ID);
+        else
+            args.Handled = _chat.TryPlayEmoteSound(uid, sounds, args.Emote.ID);
     }
 
     private void OnScreamAction(EntityUid uid, VocalComponent component, ScreamActionEvent args)

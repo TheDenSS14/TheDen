@@ -1,3 +1,13 @@
+# SPDX-FileCopyrightText: 2025 Blitz <73762869+BlitzTheSquishy@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Rosycup <178287475+Rosycup@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Savante-Sam <sakhalinsam@gmail.com>
+# SPDX-FileCopyrightText: 2025 Tabitha <64847293+KyuPolaris@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 portfiend <109661617+portfiend@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <flyingkarii@gmail.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 # Mime masks
 - type: loadout
   id: LoadoutMimeMask
@@ -121,6 +131,54 @@
     - PlushieJenn
 
 - type: loadout
+  id: PlushieFelinid
+  category: GeneralToys
+  cost: 1
+  canBeHeirloom: true
+  items:
+    - PlushieFelinid
+
+- type: loadout
+  id: PlushieOni
+  category: GeneralToys
+  cost: 1
+  canBeHeirloom: true
+  items:
+    - PlushieOni
+
+- type: loadout
+  id: PlushieHarpy
+  category: GeneralToys
+  cost: 1
+  canBeHeirloom: true
+  items:
+    - PlushieHarpy
+
+- type: loadout
+  id: PlushieRodentia
+  category: GeneralToys
+  cost: 1
+  canBeHeirloom: true
+  items:
+    - PlushieRodentia
+
+- type: loadout
+  id: PlushieFeroxi
+  category: GeneralToys
+  cost: 1
+  canBeHeirloom: true
+  items:
+    - PlushieFeroxi
+
+- type: loadout
+  id: PlushieChitinid
+  category: GeneralToys
+  cost: 1
+  canBeHeirloom: true
+  items:
+    - PlushieChitinid
+
+- type: loadout
   id: LoadoutClicker
   category: GeneralItems
   cost: 0
@@ -220,3 +278,10 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutSmokes
+
+- type: loadout
+  id: LoadoutSpectralLocator
+  category: GeneralItems
+  cost: 0
+  items:
+    - SpectralLocator

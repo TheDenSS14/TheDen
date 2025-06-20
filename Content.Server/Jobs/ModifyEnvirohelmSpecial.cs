@@ -1,3 +1,10 @@
+// SPDX-FileCopyrightText: 2025 Falcon <falcon@zigtag.dev>
+// SPDX-FileCopyrightText: 2025 Skubman <ba.fallaria@gmail.com>
+// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 sleepyyapril <flyingkarii@gmail.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 using Content.Shared.Containers.ItemSlots;
 using Content.Shared.Humanoid;
 using Content.Shared.Humanoid.Prototypes;
@@ -16,7 +23,7 @@ public sealed partial class ModifyEnvirohelmSpecial : JobSpecial
     //   The new power cell of the envirohelm.
     // </summary>
     [DataField(required: true)]
-    public ProtoId<EntityPrototype> PowerCell { get; private set; }
+    public EntProtoId PowerCell { get; private set; }
 
     [ValidatePrototypeId<SpeciesPrototype>]
     private const string Species = "Plasmaman";

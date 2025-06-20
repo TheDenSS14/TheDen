@@ -1,3 +1,17 @@
+// SPDX-FileCopyrightText: 2023 Ben <50087092+benev0@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 BenOwnby <ownbyb@appstate.edu>
+// SPDX-FileCopyrightText: 2023 Vordenburg <114301317+Vordenburg@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Ygg01 <y.laughing.man.y@gmail.com>
+// SPDX-FileCopyrightText: 2024 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Tornado Tech <54727692+Tornado-Technology@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Falcon <falcon@zigtag.dev>
+// SPDX-FileCopyrightText: 2025 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 sleepyyapril <flyingkarii@gmail.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 using System.Threading;
 using System.Threading.Tasks;
 using Content.Server.Construction;
@@ -14,10 +28,13 @@ using Content.Shared.Tag;
 using Robust.Server.GameObjects;
 using Robust.Shared.Configuration;
 using Robust.Shared.Console;
+using Robust.Shared.EntitySerialization;
+using Robust.Shared.EntitySerialization.Systems;
 using Robust.Shared.Map;
 using Robust.Shared.Map.Components;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
+using Robust.Shared.Utility;
 
 namespace Content.Server.Procedural;
 
@@ -173,14 +190,18 @@ public sealed partial class DungeonSystem : SharedDungeonSystem
                 return Transform(uid).MapID;
         }
 
-        var mapId = _mapManager.CreateMap();
-        _mapManager.AddUninitializedMap(mapId);
-        _loader.Load(mapId, proto.AtlasPath.ToString());
-        var mapUid = _mapManager.GetMapEntityId(mapId);
-        _mapManager.SetMapPaused(mapId, true);
-        comp = AddComp<DungeonAtlasTemplateComponent>(mapUid);
+        var opts = new MapLoadOptions
+        {
+            DeserializationOptions = DeserializationOptions.Default with {PauseMaps = true},
+            ExpectedCategory = FileCategory.Map
+        };
+
+        if (!_loader.TryLoadGeneric(proto.AtlasPath, out var res, opts) || !res.Maps.TryFirstOrNull(out var map))
+            throw new Exception($"Failed to load dungeon template.");
+
+        comp = AddComp<DungeonAtlasTemplateComponent>(map.Value.Owner);
         comp.Path = proto.AtlasPath;
-        return mapId;
+        return map.Value.Comp.MapId;
     }
 
     public void GenerateDungeon(DungeonConfigPrototype gen,

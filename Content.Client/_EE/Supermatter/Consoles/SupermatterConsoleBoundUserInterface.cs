@@ -1,18 +1,19 @@
+// SPDX-FileCopyrightText: 2025 VMSolidus <evilexecutive@gmail.com>
+// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 using Content.Shared._EE.Supermatter.Components;
 
 namespace Content.Client._EE.Supermatter.Consoles;
 
-public sealed class SupermatterConsoleBoundUserInterface : BoundUserInterface
+public sealed class SupermatterConsoleBoundUserInterface(EntityUid owner, Enum uiKey) : BoundUserInterface(owner, uiKey)
 {
     [ViewVariables]
     private SupermatterConsoleWindow? _menu;
 
-    public SupermatterConsoleBoundUserInterface(EntityUid owner, Enum uiKey) : base(owner, uiKey) { }
-
     protected override void Open()
     {
-        base.Open();
-
         _menu = new SupermatterConsoleWindow(this, Owner);
         _menu.OpenCentered();
         _menu.OnClose += Close;
@@ -37,6 +38,6 @@ public sealed class SupermatterConsoleBoundUserInterface : BoundUserInterface
         if (!disposing)
             return;
 
-        _menu?.Dispose();
+        _menu?.Parent?.RemoveChild(_menu);
     }
 }

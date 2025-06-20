@@ -1,0 +1,63 @@
+# SPDX-FileCopyrightText: 2022 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 Jezithyr <Jezithyr@gmail.com>
+# SPDX-FileCopyrightText: 2023 Jezithyr <jezithyr@gmail.com>
+# SPDX-FileCopyrightText: 2023 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 metalgearsloth <comedian_vs_clown@hotmail.com>
+# SPDX-FileCopyrightText: 2024 gluesniffler <159397573+gluesniffler@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 gluesniffler <linebarrelerenthusiast@gmail.com>
+# SPDX-FileCopyrightText: 2025 Rosycup <178287475+Rosycup@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 TheOneTrueWolfio <wolfgangleader3@gmail.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
+- type: body
+  id: Resomi
+  name: "resomi"
+  root: torso
+  slots:
+    head:
+      part: HeadResomi
+      connections:
+      - torso
+      organs:
+        brain: OrganHumanBrain
+        eyes: OrganHumanEyes
+    torso:
+      part: TorsoResomi
+      connections:
+      - right arm
+      - left arm
+      - right leg
+      - left leg
+      - head
+      organs:
+        heart: OrganHumanHeart
+        lungs: OrganHumanLungs
+        stomach: OrganResomiStomach # Goobstation - classic furries can eat everything except chocolate :)
+        liver: OrganHumanLiver
+        kidneys: OrganHumanKidneys
+    right arm:
+      part: RightArmResomi
+      connections:
+      - right hand
+    left arm:
+      part: LeftArmResomi
+      connections:
+      - left hand
+    right hand:
+      part: RightHandResomi
+    left hand:
+      part: LeftHandResomi
+    right leg:
+      part: RightLegResomi
+      connections:
+      - right foot
+    left leg:
+      part: LeftLegResomi
+      connections:
+      - left foot
+    right foot:
+      part: RightFootResomi
+    left foot:
+      part: LeftFootResomi

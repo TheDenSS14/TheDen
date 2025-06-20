@@ -1,3 +1,15 @@
+# SPDX-FileCopyrightText: 2023 Adrian16199 <144424013+Adrian16199@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Fluffiest Floofers <thebluewulf@gmail.com>
+# SPDX-FileCopyrightText: 2024 SimpleStation14 <130339894+SimpleStation14@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Blitz <73762869+BlitzTheSquishy@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 M3739 <47579354+M3739@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Rosycup <178287475+Rosycup@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Tabitha <64847293+KyuPolaris@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 mart <martgitomen@gmail.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 # species
 - type: emoteSounds
   id: SoundsHarpy
@@ -126,6 +138,10 @@
       collection: VulpkaninHowls
     Awoo:
       collection: VulpkaninHowls
+    Yip:
+      collection: Yip
+    Yap:
+      collection: VulpkaninYap
 
 - type: emoteSounds
   id: FemaleVulpkanin
@@ -168,6 +184,10 @@
       collection: VulpkaninHowls
     Awoo:
       collection: VulpkaninHowls
+    Yip:
+      collection: Yip
+    Yap:
+      collection: VulpkaninYap
 
 - type: emoteSounds
   id: MobDog
@@ -336,3 +356,89 @@
       collection: Weh
     Gnash:
       collection: FeroxiGnashes
+
+- type: emoteSounds
+  id: MaleKitsune
+  params:
+    variation: 0.125
+  sounds:
+    Scream:
+      collection: KitsuneScream
+    Laugh:
+      collection: MaleLaugh
+    Sneeze:
+      collection: MaleSneezes
+    Cough:
+      collection: MaleCoughs
+    Yawn:
+      collection: MaleYawn
+    Snore:
+      collection: Snores
+    Honk:
+      collection: BikeHorn
+    Sigh:
+      collection: MaleSigh
+    Crying:
+      collection: MaleCry
+    Whistle:
+      collection: Whistles
+    Weh:
+      collection: Weh
+    Squeak:
+      collection: KitsuneSqueal
+    Growl:
+      collection: KitsuneGrowl
+    Whine: #Floof - M3739 - #937 - TODO: Give them a unique whine.
+      collection: VulpkaninWhines
+    Gekker: #Floof - M3739 - #937 - Foxes do be laughin' a lot.
+      collection: VulpkaninGekker
+    Yap:
+      collection: VulpkaninYap
+#    Gasp: | Floof - M3739 - #937 - We do not have these... yet.
+#      collection: MaleGasp
+#    DefaultDeathgasp: 
+#      collection: MaleDeathGasp
+
+- type: emoteSounds
+  id: FemaleKitsune
+  params:
+    variation: 0.125
+  sounds:
+    Scream:
+      collection: KitsuneScream
+    Laugh:
+      collection: FemaleLaugh
+    Sneeze:
+      collection: FemaleSneezes
+    Cough:
+      collection: FemaleCoughs
+    Yawn:
+      collection: FemaleYawn
+    Snore:
+      collection: Snores
+    Honk:
+      collection: BikeHorn
+    Sigh:
+      collection: FemaleSigh
+    Crying:
+      collection: FemaleCry
+    Whistle:
+      collection: Whistles
+    Weh:
+      collection: Weh
+    Squeak:
+      collection: KitsuneSqueal
+    Growl:
+      collection: KitsuneGrowl
+    Whine: #Floof - M3739 - #937 - TODO: Give them a unique whine.
+      collection: VulpkaninWhines
+    Gekker: #Floof - M3739 - #937 - Foxes do be laughin' a lot.
+      collection: VulpkaninGekker
+    Yip:
+      collection: Yip
+    Yap:
+      collection: VulpkaninYap
+#    Gasp: | Floof - M3739 - #937 - We do not have these... yet.
+#      collection: FemaleGasp
+#    DefaultDeathgasp: 
+#      collection: FemaleDeathGasp

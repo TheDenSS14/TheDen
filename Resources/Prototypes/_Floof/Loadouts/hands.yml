@@ -1,0 +1,85 @@
+# SPDX-FileCopyrightText: 2024 Pierson Arnold <greyalphawolf7@gmail.com>
+# SPDX-FileCopyrightText: 2024 ShatteredSwords <135023515+ShatteredSwords@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Blitz <73762869+BlitzTheSquishy@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Rosycup <178287475+Rosycup@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
+# TheDen - loadout deduplication EE versions prefered over floof
+#- type: loadout
+#  id: LoadoutHandsGlovesTacticalMaid
+#  category: Hands
+#  cost: 0
+#  exclusive: true
+#  items:
+#    - ClothingHandsTacticalMaidGloves
+#  requirements:
+#    - !type:CharacterItemGroupRequirement
+#      group: LoadoutGloves2
+
+- type: loadout
+  id: LoadoutClothingHandsPlainWarmers
+  category: Hands
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingHandsPlainWarmers
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutGloves # TheDen
+
+- type: loadout
+  id: LoadoutClothingHandsStripePurpleWarmers
+  category: Hands
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingHandsStripePurpleWarmers
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutGloves # TheDen
+
+- type: loadout
+  id: LoadoutClothingHandsStripeRainbowWarmers
+  category: Hands
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingHandsStripeRainbowWarmers
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutGloves # TheDen
+
+- type: loadout
+  id: LoadoutClothingHandsCoderWarmers
+  category: Hands
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingHandsCoderWarmers
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutGloves # TheDen
+
+- type: loadout
+  id: LoadoutClothingHandsCoderValidWarmers
+  category: Hands
+  cost: 1
+  exclusive: true
+  items:
+    - ClothingHandsCoderValidWarmers
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutGloves # TheDen
+
+- type: loadout
+  id: LoadoutClothingHandsBeeWarmers
+  category: Hands
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingHandsBeeWarmers
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutGloves # TheDen

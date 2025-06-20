@@ -1,3 +1,11 @@
+// SPDX-FileCopyrightText: 2023 PHCodes <47927305+PHCodes@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 VMSolidus <evilexecutive@gmail.com>
+// SPDX-FileCopyrightText: 2024 deltanedas <39013340+deltanedas@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 sleepyyapril <flyingkarii@gmail.com>
+// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 using Content.Shared.GameTicking.Components;
 using Content.Server.GameTicking.Rules.Components;
 using Content.Server.StationEvents.Components;
@@ -12,6 +20,12 @@ public sealed class MidRoundAntagRule : StationEventSystem<MidRoundAntagRuleComp
         base.Started(uid, component, gameRule, args);
 
         if (!TryGetRandomStation(out var station))
+            return;
+
+        var ev = new BeforeMidRoundAntagSpawnEvent((uid, component));
+        RaiseLocalEvent(ref ev);
+
+        if (ev.Cancelled)
             return;
 
         var spawnLocations = FindSpawns(station.Value);
@@ -54,3 +68,8 @@ public sealed class MidRoundAntagRule : StationEventSystem<MidRoundAntagRuleComp
         return spawns;
     }
 }
+
+[ByRefEvent]
+public record struct BeforeMidRoundAntagSpawnEvent(
+    Entity<MidRoundAntagRuleComponent> MidRoundAntagRule,
+    bool Cancelled = false);

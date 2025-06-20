@@ -1,3 +1,18 @@
+// SPDX-FileCopyrightText: 2021 20kdc <asdd2808@gmail.com>
+// SPDX-FileCopyrightText: 2021 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2021 Vera Aguilera Puerto <6766154+Zumorica@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 Alex Evgrashin <aevgrashin@yandex.ru>
+// SPDX-FileCopyrightText: 2022 mirrorcult <lunarautomaton6@gmail.com>
+// SPDX-FileCopyrightText: 2022 wrexbe <81056464+wrexbe@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Ray <vigersray@gmail.com>
+// SPDX-FileCopyrightText: 2023 deltanedas <39013340+deltanedas@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT <77995199+DEATHB4DEFEAT@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Mnemotechnican <69920617+Mnemotechnician@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 using System.Linq;
 using Content.Client.Eui;
 using Content.Client.Lobby;
@@ -82,6 +97,13 @@ namespace Content.Client.UserInterface.Systems.Ghost.Controls.Roles
 
             if (state is not GhostRolesEuiState ghostState)
                 return;
+
+            // We must save BodyVisible state, so all Collapsible boxes will not close
+            // on adding new ghost role.
+            // Save the current state of each Collapsible box being visible or not
+            _window.SaveCollapsibleBoxesStates();
+
+            // Clearing the container before adding new roles
             _window.ClearEntries();
 
             var entityManager = IoCManager.Resolve<IEntityManager>();
@@ -93,8 +115,12 @@ namespace Content.Client.UserInterface.Systems.Ghost.Controls.Roles
             var protoMan = IoCManager.Resolve<IPrototypeManager>();
             var configManager = IoCManager.Resolve<IConfigurationManager>();
 
+            // TODO: role.Requirements value doesn't work at all as an equality key, this must be fixed
+            // Grouping roles
             var groupedRoles = ghostState.GhostRoles.GroupBy(
                 role => (role.Name, role.Description, role.Requirements));
+
+            // Add a new entry for each role group
             foreach (var group in groupedRoles)
             {
                 var name = group.Key.Name;
@@ -118,11 +144,13 @@ namespace Content.Client.UserInterface.Systems.Ghost.Controls.Roles
                 _window.AddEntry(name, description, hasAccess, characterReqs.GetRequirementsText(reasons), group, spriteSystem);
             }
 
+            // Restore the Collapsible box state if it is saved
+            _window.RestoreCollapsibleBoxesStates();
+
+            // Close the rules window if it is no longer needed
             var closeRulesWindow = ghostState.GhostRoles.All(role => role.Identifier != _windowRulesId);
             if (closeRulesWindow)
-            {
                 _windowRules?.Close();
-            }
         }
     }
 }

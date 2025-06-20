@@ -1,0 +1,142 @@
+# SPDX-FileCopyrightText: 2025 portfiend <109661617+portfiend@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
+- type: marking
+  id: AvianSnoutBeakFishing
+  bodyPart: Snout
+  markingCategory: Snout
+  coloring:
+    default:
+      type: !type:TattooColoring
+  speciesRestriction: [Harpy, Human, Dwarf, Felinid, Oni, SlimePerson, Arachne, Lamia, Canid]
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Head/beak.rsi
+    state: fishing
+
+- type: marking
+  id: AvianSnoutBeakGeneralist
+  bodyPart: Snout
+  markingCategory: Snout
+  coloring:
+    default:
+      type: !type:TattooColoring
+  speciesRestriction: [Harpy, Human, Dwarf, Felinid, Oni, SlimePerson, Arachne, Lamia, Canid]
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Head/beak.rsi
+    state: generalist
+
+- type: marking
+  id: AvianSnoutBeakGrainEating
+  bodyPart: Snout
+  markingCategory: Snout
+  coloring:
+    default:
+      type: !type:TattooColoring
+  speciesRestriction: [Harpy, Human, Dwarf, Felinid, Oni, SlimePerson, Arachne, Lamia, Canid]
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Head/beak.rsi
+    state: graineating
+
+- type: marking
+  id: AvianSnoutBeakGull
+  bodyPart: Snout
+  markingCategory: Snout
+  coloring:
+    default:
+      type: !type:TattooColoring
+  speciesRestriction: [Harpy, Human, Dwarf, Felinid, Oni, SlimePerson, Arachne, Lamia, Canid]
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Head/beak.rsi
+    state: gull
+
+- type: marking
+  id: AvianSnoutBeakInsectCatching
+  bodyPart: Snout
+  markingCategory: Snout
+  coloring:
+    default:
+      type: !type:TattooColoring
+  speciesRestriction: [Harpy, Human, Dwarf, Felinid, Oni, SlimePerson, Arachne, Lamia, Canid]
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Head/beak.rsi
+    state: insectcatching
+
+- type: marking
+  id: AvianSnoutBeakNectarFeeding
+  bodyPart: Snout
+  markingCategory: Snout
+  coloring:
+    default:
+      type: !type:TattooColoring
+  speciesRestriction: [Harpy, Human, Dwarf, Felinid, Oni, SlimePerson, Arachne, Lamia, Canid]
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Head/beak.rsi
+    state: nectarfeeding
+
+- type: marking
+  id: AvianSnoutBeakParrot
+  bodyPart: Snout
+  markingCategory: Snout
+  coloring:
+    default:
+      type: !type:TattooColoring
+  speciesRestriction: [Harpy, Human, Dwarf, Felinid, Oni, SlimePerson, Arachne, Lamia, Canid]
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Head/beak.rsi
+    state: parrot
+
+- type: marking
+  id: AvianSnoutBeakPursuit
+  bodyPart: Snout
+  markingCategory: Snout
+  coloring:
+    default:
+      type: !type:TattooColoring
+  speciesRestriction: [Harpy, Human, Dwarf, Felinid, Oni, SlimePerson, Arachne, Lamia, Canid]
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Head/beak.rsi
+    state: pursuit
+
+- type: marking
+  id: AvianSnoutBeakRaptorial
+  bodyPart: Snout
+  markingCategory: Snout
+  coloring:
+    default:
+      type: !type:TattooColoring
+  speciesRestriction: [Harpy, Human, Dwarf, Felinid, Oni, SlimePerson, Arachne, Lamia, Canid]
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Head/beak.rsi
+    state: raptorial
+
+- type: marking
+  id: AvianSnoutBeakScavenging
+  bodyPart: Snout
+  markingCategory: Snout
+  coloring:
+    default:
+      type: !type:TattooColoring
+    layers:
+      scavenging_caruncle:
+        type: !type:SimpleColoring
+          color: "#cf7b7b"
+  speciesRestriction: [Harpy, Human, Dwarf, Felinid, Oni, SlimePerson, Arachne, Lamia, Canid]
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Head/beak.rsi
+    state: scavenging_beak
+  - sprite: _DEN/Mobs/Customization/Head/beak.rsi
+    state: scavenging_caruncle
+
+- type: marking
+  id: AvianSnoutBeakSniffer
+  bodyPart: Snout
+  markingCategory: Snout
+  coloring:
+    default:
+      type: !type:TattooColoring
+  speciesRestriction: [Harpy, Human, Dwarf, Felinid, Oni, SlimePerson, Arachne, Lamia, Canid]
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Head/beak.rsi
+    state: sniffer

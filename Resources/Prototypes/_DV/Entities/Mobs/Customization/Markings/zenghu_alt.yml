@@ -1,0 +1,110 @@
+# SPDX-FileCopyrightText: 2025 Falcon <falcon@zigtag.dev>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
+- type: marking
+  id: CyberLimbsMarkingZenghuHeadAlt
+  bodyPart: Head
+  markingCategory: Head
+  speciesRestriction: [IPC]
+  sprites:
+  - sprite: _Shitmed/Mobs/Species/Cybernetics/zenghu/zenghu_alt.rsi
+    state: zhpipc_head-1
+  - sprite: _Shitmed/Mobs/Species/Cybernetics/zenghu/zenghu_alt.rsi
+    state: zhpipc_head-2
+
+- type: marking
+  id: CyberLimbsMarkingZenghuChestAlt
+  bodyPart: Chest
+  markingCategory: Chest
+  speciesRestriction: [IPC]
+  sprites:
+  - sprite: _Shitmed/Mobs/Species/Cybernetics/zenghu/zenghu_alt.rsi
+    state: zhpipc_chest-1
+  - sprite: _Shitmed/Mobs/Species/Cybernetics/zenghu/zenghu_alt.rsi
+    state: zhpipc_chest-2
+
+- type: marking
+  id: CyberLimbsMarkingZenghuLArmAlt
+  bodyPart: LArm
+  markingCategory: LeftArm
+  speciesRestriction: [IPC]
+  sprites:
+  - sprite: _Shitmed/Mobs/Species/Cybernetics/zenghu/zenghu_alt.rsi
+    state: zhpipc_l_arm-1
+  - sprite: _Shitmed/Mobs/Species/Cybernetics/zenghu/zenghu_alt.rsi
+    state: zhpipc_l_arm-2
+
+- type: marking
+  id: CyberLimbsMarkingZenghuLHandAlt
+  bodyPart: LHand
+  markingCategory: LeftHand
+  speciesRestriction: [IPC]
+  sprites:
+  - sprite: _Shitmed/Mobs/Species/Cybernetics/zenghu/zenghu_alt.rsi
+    state: zhpipc_l_hand-1
+  - sprite: _Shitmed/Mobs/Species/Cybernetics/zenghu/zenghu_alt.rsi
+    state: zhpipc_l_hand-2
+
+- type: marking
+  id: CyberLimbsMarkingZenghuLLegAlt
+  bodyPart: LLeg
+  markingCategory: LeftLeg
+  speciesRestriction: [IPC]
+  sprites:
+  - sprite: _Shitmed/Mobs/Species/Cybernetics/zenghu/zenghu_alt.rsi
+    state: zhpipc_l_leg-1
+  - sprite: _Shitmed/Mobs/Species/Cybernetics/zenghu/zenghu_alt.rsi
+    state: zhpipc_l_leg-2
+
+- type: marking
+  id: CyberLimbsMarkingZenghuLFootAlt
+  bodyPart: LFoot
+  markingCategory: LeftFoot
+  speciesRestriction: [IPC]
+  sprites:
+  - sprite: _Shitmed/Mobs/Species/Cybernetics/zenghu/zenghu_alt.rsi
+    state: zhpipc_l_foot
+
+- type: marking
+  id: CyberLimbsMarkingZenghuRArmAlt
+  bodyPart: RArm
+  markingCategory: RightArm
+  speciesRestriction: [IPC]
+  sprites:
+  - sprite: _Shitmed/Mobs/Species/Cybernetics/zenghu/zenghu_alt.rsi
+    state: zhpipc_r_arm-1
+  - sprite: _Shitmed/Mobs/Species/Cybernetics/zenghu/zenghu_alt.rsi
+    state: zhpipc_r_arm-2
+
+- type: marking
+  id: CyberLimbsMarkingZenghuRHandAlt
+  bodyPart: RHand
+  markingCategory: RightHand
+  speciesRestriction: [IPC]
+  sprites:
+  - sprite: _Shitmed/Mobs/Species/Cybernetics/zenghu/zenghu_alt.rsi
+    state: zhpipc_r_hand-1
+  - sprite: _Shitmed/Mobs/Species/Cybernetics/zenghu/zenghu_alt.rsi
+    state: zhpipc_r_hand-2
+
+- type: marking
+  id: CyberLimbsMarkingZenghuRLegAlt
+  bodyPart: RLeg
+  markingCategory: RightLeg
+  speciesRestriction: [IPC]
+  sprites:
+  - sprite: _Shitmed/Mobs/Species/Cybernetics/zenghu/zenghu_alt.rsi
+    state: zhpipc_r_leg-1
+  - sprite: _Shitmed/Mobs/Species/Cybernetics/zenghu/zenghu_alt.rsi
+    state: zhpipc_r_leg-2
+
+- type: marking
+  id: CyberLimbsMarkingZenghuRFootAlt
+  bodyPart: RFoot
+  markingCategory: RightFoot
+  speciesRestriction: [IPC]
+  sprites:
+  - sprite: _Shitmed/Mobs/Species/Cybernetics/zenghu/zenghu_alt.rsi
+    state: zhpipc_r_foot

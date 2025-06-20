@@ -1,0 +1,34 @@
+<!--
+SPDX-FileCopyrightText: 2024 Milon <milonpl.git@proton.me>
+SPDX-FileCopyrightText: 2024 portfiend <109661617+portfiend@users.noreply.github.com>
+SPDX-FileCopyrightText: 2025 BlitzTheSquishy <73762869+BlitzTheSquishy@users.noreply.github.com>
+SPDX-FileCopyrightText: 2025 MajorMoth <61519600+MajorMoth@users.noreply.github.com>
+SPDX-FileCopyrightText: 2025 SleepyScarecrow <136123749+SleepyScarecrow@users.noreply.github.com>
+SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+
+SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+-->
+
+<controls:FancyWindow xmlns="https://spacestation14.io"
+    xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls"
+    Title="{Loc 'aac-tablet-title'}"
+    Resizable="True"
+    SetSize="540 400"
+    MinSize="540 300">
+    <BoxContainer Orientation="Vertical">
+        <BoxContainer Orientation="Horizontal" HorizontalExpand="True">
+            <CheckBox Name="ShouldBuffer" Text="{Loc 'aac-tablet-combine'}"/>
+            <LineEdit Name="BufferedString" Editable="False" HorizontalExpand="True"/>
+            <Button Name="ClearButton" Text="{Loc 'aac-tablet-backspace'}" TextAlign="Center"/>
+            <Button Name="SendButton" Text="{Loc 'aac-tablet-send'}" TextAlign="Center"/>
+        </BoxContainer>
+        <TabContainer Name="WindowBody" TabTitle="Search" VerticalExpand="True" MouseFilter="Pass">
+            <BoxContainer Orientation="Vertical" Name="Search" MinSize="540 200">
+                <LineEdit Name="SearchBar" PlaceHolder="Search" HorizontalExpand="True" Margin="4 4" />
+                <ScrollContainer HorizontalExpand="True" VerticalExpand="True">
+                    <BoxContainer Name="SearchResults" Orientation="Vertical" HorizontalExpand="True" />
+                </ScrollContainer>
+            </BoxContainer>
+        </TabContainer>
+    </BoxContainer>
+</controls:FancyWindow>

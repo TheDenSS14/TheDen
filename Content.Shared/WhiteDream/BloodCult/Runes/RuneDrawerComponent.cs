@@ -1,4 +1,10 @@
-﻿using Content.Shared.DoAfter;
+// SPDX-FileCopyrightText: 2024 Remuchi <72476615+Remuchi@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Rosycup <178287475+Rosycup@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
+using Content.Shared.DoAfter;
 using Robust.Shared.Audio;
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
@@ -13,9 +19,9 @@ public sealed partial class RuneDrawerComponent : Component
     public float EraseTime = 4f;
 
     [DataField]
-    public SoundSpecifier StartDrawingSound = new SoundPathSpecifier("/Audio/WhiteDream/BloodCult/butcher.ogg");
+    public SoundSpecifier StartDrawingSound = new SoundPathSpecifier("/Audio/_White/BloodCult/butcher.ogg");
 
-    public SoundSpecifier EndDrawingSound = new SoundPathSpecifier("/Audio/WhiteDream/BloodCult/blood.ogg");
+    public SoundSpecifier EndDrawingSound = new SoundPathSpecifier("/Audio/_White/BloodCult/blood.ogg");
 }
 
 [Serializable, NetSerializable]

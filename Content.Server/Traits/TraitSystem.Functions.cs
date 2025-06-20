@@ -1,3 +1,14 @@
+// SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT <77995199+DEATHB4DEFEAT@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 sleepyyapril <flyingkarii@gmail.com>
+// SPDX-FileCopyrightText: 2025 BramvanZijp <56019239+BramvanZijp@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Raikyr0 <Kurohana@hotmail.com.au>
+// SPDX-FileCopyrightText: 2025 RedFoxIV <38788538+RedFoxIV@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Skubman <ba.fallaria@gmail.com>
+// SPDX-FileCopyrightText: 2025 VMSolidus <evilexecutive@gmail.com>
+// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 using Content.Shared.FixedPoint;
 using Content.Shared.Traits;
 using JetBrains.Annotations;
@@ -28,6 +39,10 @@ using Content.Shared.Body.Components;
 using Robust.Shared.Physics;
 using Robust.Shared.Physics.Systems;
 using System.Linq;
+using Content.Server._DEN.Vocal;
+using Content.Shared.Chat.Prototypes;
+using Content.Shared.Humanoid;
+using Content.Shared.Speech;
 using Robust.Shared.Utility;
 using Robust.Shared.GameStates;
 
@@ -847,5 +862,69 @@ public sealed partial class TraitCyberneticLimbReplacement : TraitFunction
             if (entityManager.TryGetComponent(newLimb, out BodyPartComponent? limbComp))
                 bodySystem.AttachPart(root.Value.Entity, SlotId, newLimb, root.Value.BodyPart, limbComp);
         }
+    }
+}
+
+// <summary>
+// Adds an allowed emote to something
+// </summary>
+[UsedImplicitly]
+public sealed partial class TraitAddAllowedEmote : TraitFunction
+{
+    [DataField, AlwaysPushInheritance]
+    public List<ProtoId<EmotePrototype>> AllowedEmotes { get; private set; } = new();
+
+    public override void OnPlayerSpawn(EntityUid uid,
+        IComponentFactory factory,
+        IEntityManager entityManager,
+        ISerializationManager serializationManager)
+    {
+        var speechSystem = entityManager.System<SpeechSystem>();
+
+        if (!entityManager.TryGetComponent<SpeechComponent>(uid, out var speech))
+            return;
+
+        foreach (var allowedEmote in AllowedEmotes)
+            speechSystem.AddAllowedEmote((uid, speech), allowedEmote);
+    }
+}
+
+// <summary>
+// Set the singular additional sound a player can also have.
+// </summary>
+[UsedImplicitly]
+public sealed partial class TraitSetAdditionalEmoteSound : TraitFunction
+{
+    [DataField("emoteSound"), AlwaysPushInheritance]
+    public string ExtraEmoteSoundPrototype { get; private set; } = "Vulpkanin";
+
+    [DataField, AlwaysPushInheritance]
+    public bool UseSex { get; private set; }
+
+    public override void OnPlayerSpawn(EntityUid uid,
+        IComponentFactory factory,
+        IEntityManager entityManager,
+        ISerializationManager serializationManager)
+    {
+        var additionalVocalSounds = entityManager.EnsureComponent<AdditionalVocalSoundsComponent>(uid);
+        var appearanceComponent = entityManager.GetComponentOrNull<HumanoidAppearanceComponent>(uid);
+        var prototypeManager = IoCManager.Resolve<IPrototypeManager>();
+        var sex = appearanceComponent?.Sex ?? Sex.Unsexed;
+        var emotePrefix = string.Empty;
+
+        if (UseSex)
+        {
+            if (sex == Sex.Female)
+                emotePrefix = "Female";
+            else
+                emotePrefix = "Male";
+        }
+
+        var protoId = emotePrefix + ExtraEmoteSoundPrototype;
+
+        if (string.IsNullOrEmpty(protoId) || !prototypeManager.TryIndex<EmoteSoundsPrototype>(protoId, out _))
+            return;
+
+        additionalVocalSounds.AdditionalSounds = protoId;
     }
 }

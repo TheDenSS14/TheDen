@@ -1,4 +1,10 @@
-﻿using Content.Shared.Physics;
+// SPDX-FileCopyrightText: 2024 Remuchi <72476615+Remuchi@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Rosycup <178287475+Rosycup@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
+using Content.Shared.Physics;
 using Content.Shared.StatusEffect;
 using Robust.Shared.Audio;
 using Robust.Shared.Prototypes;
@@ -28,11 +34,11 @@ public sealed partial class PhaseShiftedComponent : Component
     public EntProtoId PhaseOutEffect = "EffectEmpPulseNoSound";
 
     [DataField]
-    public SoundSpecifier PhaseInSound = new SoundPathSpecifier(new ResPath("/Audio/WhiteDream/BloodCult/veilin.ogg"));
+    public SoundSpecifier PhaseInSound = new SoundPathSpecifier(new ResPath("/Audio/_White/BloodCult/veilin.ogg"));
 
     [DataField]
     public SoundSpecifier PhaseOutSound =
-        new SoundPathSpecifier(new ResPath("/Audio/WhiteDream/BloodCult/veilout.ogg"));
+        new SoundPathSpecifier(new ResPath("/Audio/_White/BloodCult/veilout.ogg"));
 
     public int StoredMask;
     public int StoredLayer;
