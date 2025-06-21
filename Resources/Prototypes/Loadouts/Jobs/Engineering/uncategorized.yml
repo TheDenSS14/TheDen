@@ -259,6 +259,37 @@
     - ClothingOuterVestHazard
 
 # Shoes
+- type: loadout
+  id: LoadoutEngineeringShoesBootsWork
+  category: JobsEngineeringAAUncategorized
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutEngineeringShoes
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Engineering
+  items:
+    - ClothingShoesBootsWork
+
+- type: loadout
+  id: LoadoutEngineeringShoesBootsWinter
+  category: JobsEngineeringAAUncategorized
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutEngineeringShoes
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Engineering
+    - !type:CharacterJobRequirement
+      jobs:
+      - AtmosphericTechnician # Mostly for atmos recognizibility
+      - ChiefEngineer # CE has a CE specific variant
+  items:
+    - ClothingShoesBootsWinterEngi
 
 # Uniforms
 - type: loadout
