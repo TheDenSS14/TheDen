@@ -9,12 +9,16 @@
 #  id: LoadoutCourierBackpacks
 #  maxItems: 1
 #  items:
-#
-#- type: characterItemGroup
-#  id: LoadoutCourierBelt
-#  maxItems: 1
-#  items:
-#
+
+- type: characterItemGroup
+  id: LoadoutCourierBelt
+  maxItems: 1
+  items:
+    - type: loadout
+      id: CourierBag
+    - type: loadout
+      id: MailBag
+
 #- type: characterItemGroup
 #  id: LoadoutCourierEars
 #  maxItems: 1
@@ -41,6 +45,8 @@
   items:
     - type: loadout
       id: LoadoutCourierHeadMail
+    - type: loadout
+      id: LoadoutCourierHeadCourier
 
 #- type: characterItemGroup
 #  id: LoadoutCourierId
@@ -63,6 +69,8 @@
   items:
     - type: loadout
       id: LoadoutCourierOuterMail
+    - type: loadout
+      id: LoadoutCourierOuterCourier
 
 #- type: characterItemGroup
 #  id: LoadoutCourierShoes
