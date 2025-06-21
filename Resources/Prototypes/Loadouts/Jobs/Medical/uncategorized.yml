@@ -379,6 +379,19 @@
     - BedsheetMedical
 
 # Mask
+- type: loadout
+  id: LoadoutClothingMaskSterileMedical
+  category: JobsMedicalAUncategorized
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMedicalMask
+    - !type:CharacterDepartmentRequirement
+      department:
+        - Medical
+  items:
+    - ClothingMaskSterile
 
 # Outer
 - type: loadout
