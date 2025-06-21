@@ -124,3 +124,55 @@
         - MedicalDoctor
   items:
     - ClothingUniformJumpskirtMedicalDoctor
+
+- type: loadout
+  id: LoadoutMedicalDoctorJumpsuitViro
+  category: JobsMedicalMedicalDoctor
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMedicalDoctorUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - MedicalDoctor
+  items:
+    - ClothingUniformJumpsuitVirology
+
+- type: loadout
+  id: LoadoutMedicalDoctorJumpskirtViro
+  category: JobsMedicalMedicalDoctor
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMedicalDoctorUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - MedicalDoctor
+  items:
+    - ClothingUniformJumpskirtVirology
+
+- type: loadout
+  id: LoadoutMedicalDoctorJumpsuitGen
+  category: JobsMedicalMedicalDoctor
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMedicalDoctorUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - MedicalDoctor
+  items:
+    - ClothingUniformJumpsuitGenetics
+
+- type: loadout
+  id: LoadoutMedicalDoctorJumpskirtGen
+  category: JobsMedicalMedicalDoctor
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMedicalDoctorUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - MedicalDoctor
+  items:
+    - ClothingUniformJumpskirtGenetics
