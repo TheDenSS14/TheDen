@@ -120,6 +120,7 @@ namespace Content.IntegrationTests.Tests
             "Hammurabi", //DeltaV
             "Lighthouse", //DeltaV
             "Submarine", //DeltaV
+			"Anvil", //DeltaV
             // "Gax",
             "Rad",
             "Europa",
