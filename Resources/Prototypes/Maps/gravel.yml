@@ -28,89 +28,79 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 - type: gameMap
-  id: Pebble
-  mapName: 'Pebble'
-  mapPath: /Maps/TheDen/pebble.yml
+  id: Gravel
+  mapName: 'Gravel'
+  mapPath: /Maps/TheDen/gravel.yml
   minPlayers: 0
-  maxPlayers: 30
+  maxPlayers: 45
   stations:
-    PebbleStation:
+    Gravel:
       stationProto: StandardNanotrasenStation
       components:
-        - type: StationEmergencyShuttle
-          emergencyShuttlePath: /Maps/Shuttles/emergency.yml
         - type: StationNameSetup
-          mapNameTemplate: '{0} Pebble Station {1}'
+          mapNameTemplate: '{0} Gravel Station {1}'
           nameGenerator:
             !type:NanotrasenNameGenerator
-            prefixCreator: 'NTDV'
-#        - type: GridSpawn
-#          groups:
-#            AISAT:
-#              paths:
-#              - /Maps/Shuttles/AISAT.yml
+            prefixCreator: 'TD'
+        - type: StationEmergencyShuttle
+          emergencyShuttlePath: /Maps/Shuttles/TheDen/NTES_Caledonia.yml
         - type: StationJobs
-          overflowJobs:
-            - Passenger
           availableJobs:
-          #service
+            #service
             Captain: [ 1, 1 ]
             BlueshieldOfficer: [ 1, 1 ]
             NanotrasenRepresentative: [ 1, 1 ]
+            Magistrate: [ 1, 1 ]
             AdministrativeAssistant: [ 1, 1 ]
             HeadOfPersonnel: [ 1, 1 ]
-            Bartender: [ 1, 2 ]
+            Bartender: [ 2, 2 ]
             Botanist: [ 2, 2 ]
-            Boxer: [ 2, 2 ]
-            Chef: [ 2 , 2 ]
-            Clown: [ 1, 1 ]
-            Lawyer: [ 1, 2 ]
-            Musician: [ 1, 1 ]
-            Janitor: [ 1, 2 ]
-            Mime: [ 1, 1 ]
-            Reporter: [ 1, 1 ]
-            ServiceWorker: [ 1, 2 ]
-          #engineering
+            Chef: [ 1, 1 ]
+            Janitor: [ 2, 2 ]
+            Librarian: [ 1, 1 ]
+            ServiceWorker: [ 2, 2 ]
+            #engineering
             ChiefEngineer: [ 1, 1 ]
-            AtmosphericTechnician: [ 1, 2 ]
-            StationEngineer: [ 2, 3 ]
             SeniorEngineer: [ 1, 1 ]
+            AtmosphericTechnician: [ 2, 2 ]
+            StationEngineer: [ 3, 4 ]
             TechnicalAssistant: [ 2, 2 ]
-          #medical
+            #medical
             ChiefMedicalOfficer: [ 1, 1 ]
-            Chemist: [ 1, 1 ]
             SeniorPhysician: [ 1, 1 ]
+            Chemist: [ 1, 1 ]
             MedicalDoctor: [ 2, 3 ]
-            MedicalBorg: [ 1, 1 ]
             MedicalIntern: [ 2, 2 ]
             Paramedic: [ 1, 1 ]
             Psychologist: [ 1, 1 ]
-          #science
+            #science
             ResearchDirector: [ 1, 1 ]
-            Chaplain: [ 1, 1 ]
-            ForensicMantis: [ 1, 1 ]
-            SeniorResearcher: [ 1, 1 ]
-            Scientist: [ 2, 3 ]
+            Scientist: [ 3, 3 ]
             ResearchAssistant: [ 2, 2 ]
+            Chaplain: [ 1, 1 ]
             Roboticist: [ 1, 1 ]
-            Borg: [ 1, 1 ]
-          #security
+            ForensicMantis: [ 1, 1 ]
+            SeniorResearcher: [ 2, 2 ]
+            #security
             HeadOfSecurity: [ 1, 1 ]
             Warden: [ 1, 1 ]
-            Detective: [ 1, 1 ]
             SecurityOfficer: [ 2, 3 ]
-            SecurityCadet: [ 1, 3 ]
-            Brigmedic: [ 1, 1 ]
-            Prisoner: [ 1, 2 ]
-          #supply
+            Detective: [ 1, 1 ]
+            SecurityCadet: [ 2, 2 ]
+            Lawyer: [ 2, 2 ]
+            Prisoner: [ 2, 2 ]
+            SeniorOfficer: [ 1, 1 ]
+            #supply
             Quartermaster: [ 1, 1 ]
-            MailCarrier: [ 1, 2 ]
-            SalvageSpecialist: [ 2, 3 ]
-            CargoTechnician: [ 2, 3 ]
-          #civilian
+            SalvageSpecialist: [ 2, 2 ]
+            CargoTechnician: [ 3, 3 ]
+            MailCarrier: [ 1, 1 ]
+            #civilian
             Passenger: [ -1, -1 ]
-          #justice
-            ChiefJustice: [ 1, 1 ]
-            # Clerk: [ 1, 1 ] #Couldnt find room for him in the rebuild
-          # Silicon
+            Clown: [ 1, 1 ]
+            Mime: [ 1, 1 ]
+            Musician: [ 1, 1 ]
+            Reporter: [ 1, 1 ]
+            #silicon
+            Borg: [ 2, 2 ]
             StationAi: [ 1, 1 ]
