@@ -87,6 +87,10 @@
     - !type:CharacterDepartmentRequirement
       departments:
         - Logistics
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Quartermaster # LO has a LO specific variant
 
 
 # Id
