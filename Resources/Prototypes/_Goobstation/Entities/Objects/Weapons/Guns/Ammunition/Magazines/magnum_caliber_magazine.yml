@@ -1,3 +1,4 @@
+# SPDX-FileCopyrightText: 2025 BlitzTheSquishy <73762869+BlitzTheSquishy@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
@@ -5,7 +6,7 @@
 # Empty mags
 - type: entity
   id: BaseMagazineMagnumLeverRifle
-  name: "magazine (.45 rifle)"
+  name: "rifle magazine (.45 magnum)"
   parent: BaseItem
   abstract: true
   components:
@@ -39,7 +40,7 @@
 
 - type: entity
   id: MagazineMagnumLeverRifle
-  name: "lever rifle magazine (.45)"
+  name: "en-bloc clip (.45 magnum)"
   parent: BaseMagazineMagnumLeverRifle
   components:
   - type: Tag

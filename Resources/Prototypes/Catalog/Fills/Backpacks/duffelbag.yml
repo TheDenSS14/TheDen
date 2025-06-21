@@ -50,6 +50,7 @@
 # SPDX-FileCopyrightText: 2024 sleepyyapril <flyingkarii@gmail.com>
 # SPDX-FileCopyrightText: 2024 starch <starchpersonal@gmail.com>
 # SPDX-FileCopyrightText: 2025 Blitz <73762869+BlitzTheSquishy@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 BlitzTheSquishy <73762869+BlitzTheSquishy@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 ConstantlyConfused <67894661+Eternally-Confused@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Skubman <ba.fallaria@gmail.com>
 # SPDX-FileCopyrightText: 2025 VMSolidus <evilexecutive@gmail.com>
@@ -152,7 +153,7 @@
   parent: ClothingBackpackDuffelSyndicateBundle
   id: ClothingBackpackDuffelSyndicateFilledLMG
   name: L6 Saw bundle
-  description: "More dakka: The iconic L6 lightmachinegun, bundled with 2 box magazines."
+  description: "More dakka: The iconic L6 lightmachinegun, bundled with 2 belt boxes."
   components:
   - type: StorageFill
     contents:
@@ -195,7 +196,7 @@
   parent: ClothingBackpackDuffelSyndicateAmmo
   id: ClothingBackpackDuffelSyndicateAmmoFilled
   name: ammo bundle
-  description: "Reloading! Contains 4 magazines for the C-20r, 4 drums for the Bulldog, 2 ammo boxes for the L6 SAW, and 3 mags for the Burner."
+  description: "Reloading! Contains 4 magazines for the C-20r, 4 drums for the Bulldog, 2 belt boxes for the L6 SAW, and 3 mags for the Burner."
   components:
   - type: StorageFill
     contents:
@@ -216,7 +217,7 @@
   parent: ClothingBackpackDuffelSyndicateAmmo
   id: ClothingBackpackDuffelSyndicateAmmoFilledRubber
   name: ammo bundle
-  description: "Reloading! Contains 4 magazines for the C-20r, 4 drums for the Bulldog, and 2 ammo boxes for the L6 SAW."
+  description: "Reloading! Contains 4 magazines for the C-20r, 4 drums for the Bulldog, and 2 belt boxes for the L6 SAW."
   suffix: Non-lethal # TheDen
   components:
   - type: StorageFill
@@ -232,7 +233,7 @@
   parent: ClothingBackpackDuffelSyndicateAmmo
   id: ClothingBackpackDuffelSyndicateAmmoFilledIncendiary
   name: ammo bundle
-  description: "Reloading! Contains 4 magazines for the C-20r, 4 drums for the Bulldog, and 2 ammo boxes for the L6 SAW."
+  description: "Reloading! Contains 4 magazines for the C-20r, 4 drums for the Bulldog, and 2 belt boxes for the L6 SAW."
   suffix: Incendiary # TheDen
   components:
   - type: StorageFill
@@ -248,7 +249,7 @@
   parent: ClothingBackpackDuffelSyndicateAmmo
   id: ClothingBackpackDuffelSyndicateAmmoFilledShrapnel
   name: ammo bundle
-  description: "Reloading! Contains 4 magazines for the C-20r, 4 drums for the Bulldog, and 2 ammo boxes for the L6 SAW."
+  description: "Reloading! Contains 4 magazines for the C-20r, 4 drums for the Bulldog, and 2 belt boxes for the L6 SAW."
   suffix: Shrapnel # TheDen
   components:
   - type: StorageFill
