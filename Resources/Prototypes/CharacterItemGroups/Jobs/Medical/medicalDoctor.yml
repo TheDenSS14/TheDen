@@ -9,7 +9,7 @@
 #  id: LoadoutMedicalDoctorBackpacks
 #  maxItems: 1
 #  items:
-#
+
 - type: characterItemGroup
   id: LoadoutMedicalDoctorBelt
   maxItems: 1
@@ -67,12 +67,16 @@
   items:
   - type: loadout # TheDen
     id: LoadoutMedicalOuterLabcoat
+  - type: loadout
+    id: LoadoutMedicalOuterLabcoatViro
+  - type: loadout
+    id: LoadoutMedicalOuterLabcoatGen
 
 #- type: characterItemGroup
 #  id: LoadoutMedicalDoctorShoes
 #  maxItems: 1
 #  items:
-#
+
 - type: characterItemGroup
   id: LoadoutMedicalDoctorUniforms
   maxItems: 1
@@ -81,3 +85,11 @@
       id: LoadoutMedicalDoctorJumpsuit
     - type: loadout
       id: LoadoutMedicalDoctorJumpskirt
+    - type: loadout
+      id: LoadoutMedicalDoctorJumpsuitViro
+    - type: loadout
+      id: LoadoutMedicalDoctorJumpskirtViro
+    - type: loadout
+      id: LoadoutMedicalDoctorJumpsuitGen
+    - type: loadout
+      id: LoadoutMedicalDoctorJumpskirtGen

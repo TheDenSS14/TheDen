@@ -58,19 +58,6 @@
 # Gloves
 
 # Head
-- type: loadout
-  id: LoadoutMedicalHeadNurse
-  category: JobsMedicalAUncategorized
-  cost: 0
-  exclusive: true
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutMedicalDoctorHead
-    - !type:CharacterJobRequirement
-      jobs:
-        - MedicalDoctor
-  items:
-    - ClothingHeadNurseHat
 
 # Id
 
@@ -79,6 +66,35 @@
 # Mask
 
 # Outer
+- type: loadout
+  id: LoadoutMedicalOuterLabcoatViro
+  category: JobsMedicalMedicalDoctor
+  cost: 0
+  exclusive: true
+  customColorTint: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMedicalDoctorOuter
+    - !type:CharacterJobRequirement
+      jobs:
+        - MedicalDoctor
+  items:
+    - ClothingOuterCoatLabViro
+
+- type: loadout
+  id: LoadoutMedicalOuterLabcoatGen
+  category: JobsMedicalMedicalDoctor
+  cost: 0
+  exclusive: true
+  customColorTint: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMedicalDoctorOuter
+    - !type:CharacterJobRequirement
+      jobs:
+        - MedicalDoctor
+  items:
+    - ClothingOuterCoatLabGene
 
 # Shoes
 
