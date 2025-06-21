@@ -17,6 +17,10 @@
   - !type:CharacterDepartmentRequirement
     departments:
     - Security
+  - !type:CharacterJobRequirement
+    jobs:
+    - Detective
+    - HeadOfSecurity
 
 - type: loadout
   id: LoadoutClothingUnderSocksSecurity
@@ -34,6 +38,10 @@
   - !type:CharacterDepartmentRequirement
     departments:
     - Security
+  - !type:CharacterJobRequirement
+    jobs:
+    - Detective
+    - HeadOfSecurity
 
 - type: loadout
   id: LoadoutClothingUniformSecurityThong
@@ -46,6 +54,10 @@
   - !type:CharacterDepartmentRequirement
     departments:
     - Security
+  - !type:CharacterJobRequirement
+    jobs:
+    - Detective
+    - HeadOfSecurity
 
 - type: loadout
   id: LoadoutSecurityNeckCollar
