@@ -70,7 +70,7 @@ jobs:
         retention-days: 0
 
     - name: Publish version
-      run: Tools/publish_github_artifact.py
+      run: python3 Tools/publish_github_artifact.py
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         PUBLISH_TOKEN: ${{ secrets.PUBLISH_TOKEN }}
@@ -87,7 +87,7 @@ jobs:
     #     DISCORD_WEBHOOK_URL: ${{ secrets.CHANGELOG_DISCORD_WEBHOOK }}
 
     - name: Publish changelog (RSS)
-      run: Tools/actions_changelog_rss.py
+      run: python3 Tools/actions_changelog_rss.py
       env:
         CHANGELOG_RSS_KEY: ${{ secrets.CHANGELOG_RSS_KEY }}
 
