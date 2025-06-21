@@ -484,6 +484,7 @@ def process_file(file_path, default_license_id, pr_base_sha=None, pr_head_sha=No
     for author in list(git_authors.keys()):
         split_author_string_match = email_removal_pattern.match(author)
         if split_author_string_match:
+            print(f"Removed email from: {split_author_string_match.group(1)}")
             git_authors[split_author_string_match.group(1).strip()] = git_authors.pop(author) # this changes the keys in git_authors and will also remove any duplicate users
         else:
             print(f"Email removal from git_authors[{author}] failed.")
@@ -491,9 +492,14 @@ def process_file(file_path, default_license_id, pr_base_sha=None, pr_head_sha=No
     for author in list(existing_authors.keys()):
         split_author_string_match = email_removal_pattern.match(author)
         if split_author_string_match:
+            print(f"Removed email from: {split_author_string_match.group(1)}")
             existing_authors[split_author_string_match.group(1).strip()] = existing_authors.pop(author)
         else:
             print(f"Email removal from existing_authors[{author}] failed.")
+    print("Git authors after email removal: ")
+    print(git_authors)
+    print("Existing authors after email removal: ")
+    print(existing_authors)
 
     # Determine what to do based on existing header
     if existing_license:
