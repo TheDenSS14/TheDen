@@ -320,6 +320,20 @@
   items:
     - ClothingShoesEnclosedChem
 
+- type: loadout
+  id: LoadoutMedicalShoesWinterChem
+  category: JobsMedicalChemist
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutChemistShoes
+    - !type:CharacterJobRequirement
+       jobs:
+         - Chemist
+  items:
+    - ClothingShoesWinterChem
+
 # Uniforms
 - type: loadout
   id: LoadoutMedicalUniformJumpsuitChemShirt
