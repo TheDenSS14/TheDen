@@ -940,6 +940,14 @@
     accentVColor: "#2a4b5b"
   - type: Icon
     state: pda-paramedic
+  - type: CartridgeLoader
+    preinstalled:
+      - AstroNavCartridge
+      - CrewManifestCartridge
+      - NotekeeperCartridge
+      - NewsReaderCartridge
+      - MedTekCartridge
+      - NanoChatCartridge # DeltaV
 
 - type: entity
   parent: BaseMedicalPDA
@@ -1533,6 +1541,7 @@
     state: pda-brigmedic
   - type: CartridgeLoader # DeltaV - Crime Assist + SecWatch
     preinstalled:
+    - AstroNavCartridge
     - CrewManifestCartridge
     - NotekeeperCartridge
     - NewsReaderCartridge

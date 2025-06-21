@@ -1267,6 +1267,8 @@
       - CrossbowBoltBroadhead # Frontier
       - ClothingBeltQuiverCrossbow # Frontier
     dynamicRecipes:
+      - JetpackBlue
+      - JetpackMini
       - Truncheon
       - Terminus
       - CrossbowModern # Frontier
@@ -1718,6 +1720,8 @@
     - CargoTelepadMachineCircuitboard
     - OreProcessorMachineCircuitboard
     - RadioHandheld
+    - JetpackBlue
+    - JetpackMini
     # NOTE: advanced tools, industrial ore processor, expeds board are not added here as those are the very few things epi provides for cargo
   - type: MaterialStorage
     whitelist:
