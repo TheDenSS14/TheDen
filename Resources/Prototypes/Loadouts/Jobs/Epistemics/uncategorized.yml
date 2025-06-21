@@ -21,6 +21,11 @@
     - !type:CharacterDepartmentRequirement
       departments:
         - Epistemics
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Roboticist # For robo recognizibility
+        - ResearchDirector # MG has a MG specific variant
 
 - type: loadout
   id: LoadoutBackpackSatchelScience
@@ -35,6 +40,11 @@
     - !type:CharacterDepartmentRequirement
       departments:
         - Epistemics
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Roboticist # For robo recognizibility
+        - ResearchDirector # MG has a MG specific variant
 
 - type: loadout
   id: LoadoutBackpackDuffelScience
@@ -49,6 +59,11 @@
     - !type:CharacterDepartmentRequirement
       departments:
         - Epistemics
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Roboticist # For robo recognizibility
+        - ResearchDirector # MG has a MG specific variant
 
 # Belt
 
@@ -231,6 +246,11 @@
     - !type:CharacterDepartmentRequirement
       departments:
         - Epistemics
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Roboticist # For robo recognizibility
+        - ResearchDirector # MG has a MG specific variant
   items:
     - ClothingOuterCoatRnd
 
@@ -246,6 +266,11 @@
     - !type:CharacterDepartmentRequirement
       departments:
         - Epistemics
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Roboticist # For robo recognizibility
+        - ResearchDirector # MG has a MG specific variant
   items:
     - ClothingOuterCoatLab
 
@@ -274,6 +299,12 @@
     - !type:CharacterDepartmentRequirement
       departments:
         - Epistemics
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Roboticist # For robo recognizibility
+        - ResearchDirector # MG has a MG specific variant
+        - ForensicMantis # Mantis has a specific variant
   items:
     - ClothingOuterWinterSci
 
@@ -289,6 +320,11 @@
     - !type:CharacterDepartmentRequirement
       departments:
         - Epistemics
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Roboticist # For robo recognizibility
+        - ResearchDirector # MG has a MG specific variant
   items:
     - ClothingOuterExplorerCoat
 
@@ -317,6 +353,11 @@
     - !type:CharacterDepartmentRequirement
       departments:
         - Epistemics
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Roboticist # For robo recognizibility
+        - ResearchDirector # MG has a MG specific variant
   items:
     - ClothingShoesBootsWinterSci
 
