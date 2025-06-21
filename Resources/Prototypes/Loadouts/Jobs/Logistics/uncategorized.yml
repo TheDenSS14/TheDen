@@ -19,6 +19,11 @@
     - !type:CharacterDepartmentRequirement
       departments:
         - Logistics
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - SalvageSpecialist # For salvage recognizibility
+        - Quartermaster # LO has a LO specific variant
 
 - type: loadout
   id: LoadoutBackpackSatchelCargo
@@ -33,6 +38,11 @@
     - !type:CharacterDepartmentRequirement
       departments:
         - Logistics
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - SalvageSpecialist # For salvage recognizibility
+        - Quartermaster # LO has a LO specific variant
 
 - type: loadout
   id: LoadoutBackpackDuffelCargo
@@ -47,6 +57,11 @@
     - !type:CharacterDepartmentRequirement
       departments:
         - Logistics
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - SalvageSpecialist # For salvage recognizibility
+        - Quartermaster # LO has a LO specific variant
 
 # Belt
 
