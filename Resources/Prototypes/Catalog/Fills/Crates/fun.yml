@@ -149,6 +149,31 @@
       - !type:EntSelector
         id: PlushieChitinid
       # End DeltaV
+      - !type:EntSelector
+        id: PlushieOvinia
+    - !type:GroupSelector
+      children:
+      - !type:EntSelector
+        id: PlushieTeddyBear
+      - !type:EntSelector
+        id: PlushieTeddyBearRecolorableRandom
+    - !type:GroupSelector
+      children:
+      - !type:EntSelector
+        id: SqueakySmileyGuy
+      - !type:EntSelector
+        id: SqueakySmileyGuyRandom
+      - !type:EntSelector
+        id: SqueakySmileyBall
+      - !type:EntSelector
+        id: PlushieSmileyBallRandom
+        weight: 0.3 # rare color variant...
+    - !type:GroupSelector
+      children:
+      - !type:EntSelector
+        id: PlushieAlienGerm
+      - !type:EntSelector
+        id: PlushieAlienGermMini
 
 - type: entity
   id: CrateFunPlushie

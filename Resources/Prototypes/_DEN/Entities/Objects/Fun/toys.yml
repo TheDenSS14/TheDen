@@ -1,0 +1,109 @@
+# SPDX-FileCopyrightText: 2025 portfiend <109661617+portfiend@users.noreply.github.com>
+#
+# SPDX-License-Identifier: MPL-2.0
+
+- type: entity
+  parent: BaseSqueakyToy
+  id: SqueakySmileyGuy
+  name: smiley guy
+  description: Socially acceptable toy for the kind of office desk worker whose job makes them want to become a serial killer. # also known as a "stress toy"
+  components:
+    - type: Sprite
+      sprite: _DEN/Objects/Fun/littlesteve.rsi
+      layers:
+        - state: icon
+          color: "#EDE74E"
+          map: ["enum.DamageStateVisualLayers.Base"]
+    - type: Item
+      inhandVisuals:
+        left:
+          - state: inhand-left
+            color: "#EDE74E"
+            map: ["enum.DamageStateVisualLayers.Base"]
+        right:
+          - state: inhand-right
+            color: "#EDE74E"
+            map: ["enum.DamageStateVisualLayers.Base"]
+
+- type: entity
+  parent: SqueakySmileyGuy
+  id: SqueakySmileyGuyRandom
+  suffix: random appearance
+  components:
+    - type: RandomSprite
+      available:
+        - enum.DamageStateVisualLayers.Base:
+            icon: PlasticToy
+
+- type: entity
+  parent: SqueakySmileyGuy
+  id: SqueakySmileyBall
+  name: smiley ball
+  description: This thing is squishy and full of slime. Just like you!
+  components:
+    - type: Sprite
+      sprite: _DEN/Objects/Fun/smileyball.rsi
+
+- type: entity
+  parent: SqueakySmileyBall
+  id: PlushieSmileyBallRandom
+  suffix: random appearance
+  components:
+    - type: RandomSprite
+      available:
+        - enum.DamageStateVisualLayers.Base:
+            icon: PlasticToy
+
+- type: entity
+  parent: BasePlushie
+  id: PlushieAlienGerm
+  name: alien germ plushie
+  description: A stuffed toy that resembles a... UFO? Alien? Germ? It looks at you pleadingly.
+  components:
+    - type: Sprite
+      sprite: _DEN/Objects/Fun/ufoplushie.rsi
+      state: icon
+
+# accidentally made the sprite too small at first but i didnt want to throw it out so you get a little one.
+- type: entity
+  parent: PlushieAlienGerm
+  id: PlushieAlienGermMini
+  name: mini alien germ plushie
+  description: A stuffed toy that resembles a... UFO? Alien? Germ? This one is very small.
+  components:
+    - type: Sprite
+      state: small
+    - type: Item
+      size: Tiny
+    - type: SecretStash
+      maxItemSize: Tiny
+
+# SPECIES PLUSHIES
+
+- type: entity
+  parent: BasePlushie
+  id: PlushieOvinia
+  name: ovinia plushie
+  description: A stuffed toy that resembles an ovinia. Made with real wool!
+  components:
+    - type: Sprite
+      sprite: _DEN/Objects/Fun/oviniaplushie.rsi
+      state: icon
+    - type: EmitSoundOnUse
+      sound:
+        collection: OviniaPlushieSounds
+    - type: EmitSoundOnLand
+      sound:
+        collection: ToySqueak
+    - type: EmitSoundOnActivate
+      sound:
+        collection: OviniaPlushieSounds
+    - type: EmitSoundOnTrigger
+      sound:
+        collection: OviniaPlushieSounds
+    - type: MeleeWeapon
+      soundHit:
+        collection: OviniaPlushieSounds
+    - type: Food
+      useSound:
+        collection: OviniaPlushieSounds
