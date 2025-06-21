@@ -347,6 +347,28 @@
   items:
     - ClothingHeadHatSurgcapCybersun
 
+- type: loadout
+  id: LoadoutMedicalHeadNurse
+  category: JobsMedicalAUncategorized
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMedicalHead
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Medical
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Chemist # Jobs too special/specific for nurse roleplay (no longer MD exclusive)
+        - Paramedic
+        - Psychologist
+        - SeniorPhysician
+        - ChiefMedicalOfficer
+  items:
+    - ClothingHeadNurseHat
+
 # Id
 
 # Neck
@@ -555,3 +577,25 @@
         - Medical
   items:
     - UniformScrubsColorWhite
+
+- type: loadout
+  id: LoadoutMedicalUniformNurse
+  category: JobsMedicalAUncategorized
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMedicalUniforms
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Medical
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Chemist # Jobs too special/specific for nurse roleplay (no longer MD exclusive)
+        - Paramedic
+        - Psychologist
+        - SeniorPhysician
+        - ChiefMedicalOfficer
+  items:
+    - ClothingUniformJumpskirtNurse
