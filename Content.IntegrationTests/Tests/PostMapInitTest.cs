@@ -32,11 +32,14 @@
 // SPDX-FileCopyrightText: 2025 Falcon <falcon@zigtag.dev>
 // SPDX-FileCopyrightText: 2025 Ichaie <167008606+Ichaie@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Jonathan <44554691+Mike32oz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 LaCumbiaDelCoronavirus <90893484+LaCumbiaDelCoronavirus@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 MajorMoth <thepolandbear@gmail.com>
 // SPDX-FileCopyrightText: 2025 Plyush <121322002+Plyushsune@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Spanky <scott@wearejacob.com>
 // SPDX-FileCopyrightText: 2025 VMSolidus <evilexecutive@gmail.com>
 // SPDX-FileCopyrightText: 2025 astriloqua <129308840+astriloqua@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 marc-pelletier <113944176+marc-pelletier@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 sleepyyapril <flyingkarii@gmail.com>
 //
@@ -103,8 +106,19 @@ namespace Content.IntegrationTests.Tests
         {
             "Dev",
             "TestTeg",
-            "CentCommMain",
-            "CentCommHarmony",
+            "TestHFR", // Funky - HFR
+            "Fland",
+            "Meta",
+            "Packed",
+            "Cluster", // Goobstation - Readds Cluster
+            "Omega",
+            "Bagel",
+            "CentComm",
+            "Box",
+            "Europa", // Goobstation - Readds Europa
+            "Atlas", // Goobstation - Readds Atlas
+            "Core",
+            "Marathon",
             "MeteorArena",
             "NukieOutpost",
             "Core",
