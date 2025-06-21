@@ -8,19 +8,19 @@
 
 - type: loadout
   id: LoadoutClothingHandsCommandWarmers
-  category: JobsCommandAUncategorized
+  category: JobsCommandHeadOfPersonnel
   cost: 2
   exclusive: true
   items:
   - ClothingHandsCommandWarmers
   requirements:
-  - !type:CharacterDepartmentRequirement # TheDen
-      departments:
-      - Command
+  - !type:CharacterJobRequirement
+    jobs:
+    - HeadOfPersonel
 
 - type: loadout
   id: LoadoutClothingUnderSocksCommand
-  category: JobsCommandAUncategorized
+  category: JobsCommandHeadOfPersonnel
   cost: 2
   exclusive: true
   items:
@@ -31,18 +31,18 @@
 #    species:
 #    - Diona
 #    - Harpy
-  - !type:CharacterDepartmentRequirement # TheDen
-      departments:
-      - Command
+  - !type:CharacterJobRequirement
+    jobs:
+    - HeadOfPersonel
 
 - type: loadout
   id: LoadoutClothingUniformCommandThong
-  category: JobsCommandAUncategorized
+  category: JobsCommandHeadOfPersonnel
   cost: 2
   exclusive: true
   items:
   - ClothingUniformCommandThong
   requirements:
-  - !type:CharacterDepartmentRequirement # TheDen
-      departments:
-      - Command
+  - !type:CharacterJobRequirement
+    jobs:
+    - HeadOfPersonel
