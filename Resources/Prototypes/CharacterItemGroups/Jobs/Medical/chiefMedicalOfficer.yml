@@ -7,11 +7,17 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 # Chief Medical Officer
-#- type: characterItemGroup
-#  id: LoadoutChiefMedicalOfficerBackpacks
-#  maxItems: 1
-#  items:
-#
+- type: characterItemGroup
+  id: LoadoutChiefMedicalOfficerBackpacks
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutBackpackCMO
+    - type: loadout
+      id: LoadoutBackpackSatchelCMO
+    - type: loadout
+      id: LoadoutBackpackDuffelCMO
+
 - type: characterItemGroup
   id: LoadoutChiefMedicalOfficerBelt
   maxItems: 1

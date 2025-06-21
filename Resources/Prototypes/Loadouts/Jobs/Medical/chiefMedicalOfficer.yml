@@ -11,42 +11,42 @@
 # Backpacks
 - type: loadout
   id: LoadoutBackpackCMO
-  category: JobsMedicalAUncategorized
+  category: JobsMedicalChiefMedicalOfficer
   cost: 0
   exclusive: true
   items:
     - ClothingBackpackCMOFilled
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutChiefMedicalOfficerBag
+      group: LoadoutChiefMedicalOfficerBackpacks
     - !type:CharacterJobRequirement
       jobs:
         - ChiefMedicalOfficer
 
 - type: loadout
   id: LoadoutBackpackSatchelCMO
-  category: JobsMedicalAUncategorized
+  category: JobsMedicalChiefMedicalOfficer
   cost: 0
   exclusive: true
   items:
     - ClothingBackpackSatchelCMOFilled
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutChiefMedicalOfficerBag
+      group: LoadoutChiefMedicalOfficerBackpacks
     - !type:CharacterJobRequirement
       jobs:
         - ChiefMedicalOfficer
 
 - type: loadout
   id: LoadoutBackpackDuffelCMO
-  category: JobsMedicalAUncategorized
+  category: JobsMedicalChiefMedicalOfficer
   cost: 0
   exclusive: true
   items:
     - ClothingBackpackDuffelCMOFilled
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutChiefMedicalOfficerBag
+      group: LoadoutChiefMedicalOfficerBackpacks
     - !type:CharacterJobRequirement
       jobs:
         - ChiefMedicalOfficer
