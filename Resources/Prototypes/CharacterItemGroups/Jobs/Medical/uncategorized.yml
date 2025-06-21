@@ -120,16 +120,26 @@
   items:
     - type: loadout
       id: LoadoutMedicalOuterWinterCoat
+    - type: loadout
+      id: LoadoutMedicalOuterWinterCoatViro
+    - type: loadout
+      id: LoadoutMedicalOuterWinterCoatGen
 #    - type: loadout - TheDen
 #      id: LoadoutMedicalOuterLabcoat
 #    - type: loadout
 #      id: LoadoutMedicalOuterCybersunWindbreaker
 
-#- type: characterItemGroup
-#  id: LoadoutMedicalShoes
-#  maxItems: 1
-#  items:
-#
+- type: characterItemGroup
+  id: LoadoutMedicalShoes
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutMedicalBootsWinter
+    - type: loadout
+      id: LoadoutMedicalBootsWinterViro
+    - type: loadout
+      id: LoadoutMedicalBootsWinterGen
+
 - type: characterItemGroup
   id: LoadoutMedicalUniforms
   maxItems: 1
