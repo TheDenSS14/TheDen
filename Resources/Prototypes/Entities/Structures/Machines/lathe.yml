@@ -170,7 +170,7 @@
 # SPDX-FileCopyrightText: 2025 Eris <eris@erisws.com>
 # SPDX-FileCopyrightText: 2025 KekaniCreates <87507256+KekaniCreates@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 KekaniCreates <kekanisb@gmail.com>
-# SPDX-FileCopyrightText: 2025 MajorMoth <***>
+# SPDX-FileCopyrightText: 2025 MajorMoth <61519600+MajorMoth@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 MajorMoth <thepolandbear@gmail.com>
 # SPDX-FileCopyrightText: 2025 Rosycup <178287475+Rosycup@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Rosycup <benjho049@gmail.com>
@@ -180,6 +180,7 @@
 # SPDX-FileCopyrightText: 2025 Solstice <solsticeofthewinter@gmail.com>
 # SPDX-FileCopyrightText: 2025 Spatison <137375981+Spatison@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Stop-Signs <stopsign221@gmail.com>
+# SPDX-FileCopyrightText: 2025 Ted Lukin <66275205+pheenty@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Timfa <timfalken@hotmail.com>
 # SPDX-FileCopyrightText: 2025 VMSolidus <evilexecutive@gmail.com>
 # SPDX-FileCopyrightText: 2025 Will-Oliver-Br <164823659+Will-Oliver-Br@users.noreply.github.com>
@@ -468,10 +469,19 @@
     - MagazineBoxCaselessRiflePractice # EE
     - MagazineBoxCaselessRifle # EE
     - MagazineBoxCaselessRifleRubber # EE
+    - BolaEnergy # Goobstation
+    - MagazinePistolCaselessRifle # Goobstation
+    - MagazineBoxCaselessRifle # Goobstation
     - MagazineMagnumEmpty # Goobstation
     - MagazineMagnum # Goobstation
-    - MagazineMagnumLeverRifleEmpty # Goobstation
-    - MagazineMagnumLeverRifle # Goobstation
+    - MagazineShotgunLeverRifleEmpty # Goobstation
+    - MagazineShotgunLeverRifle # Goobstation
+    - MagazineBoxShotgunHighCaliber # Goobstation
+    - MagazineBoxShotgunSlugHighCaliber # Goobstation
+    - MagazineBoxShotgunIncendiaryHighCaliber # Goobstation
+    - MagazineBoxShotgunUraniumHighCaliber # Goobstation
+    - MagazineBoxShotgunBeanbagHighCaliber # Goobstation
+    - MagazineBoxShotgunPracticeHighCaliber # Goobstation
 
 - type: entity
   id: AutolatheHyperConvection
@@ -1222,8 +1232,6 @@
       - SpeedLoaderRifleHeavyEmpty
       - WeaponRifleNovaliteC1
       - WeaponRifleGestio
-      - MagazineMagnumLeverRifle # Goobstation
-      - MagazineMagnumLeverRifleEmpty # Goobstation
       - ClothingEyesGlassesSecurity
       - TelescopicShield
       - HoloprojectorSecurity
@@ -1231,6 +1239,13 @@
       - ClothingHeadHelmetBasic
       - MagazineShotgunBeanbag
       - ShellTranquilizer
+      - MagazineMagnumEmpty # Goobstation
+      - MagazineMagnum # Goobstation
+      - MagazineShotgunLeverRifle # Goobstation
+      - MagazineShotgunLeverRifleEmpty # Goobstation
+      - MagazineBoxShotgunHighCaliber # Goobstation
+      - MagazineBoxShotgunSlugHighCaliber # Goobstation
+      - MagazineBoxShotgunPracticeHighCaliber # Goobstation
       - BoxBeanbag
       - CartridgePistolRubber
       - CartridgeMagnumRubber
@@ -1309,6 +1324,9 @@
       - MagazineRifleIncendiary
       - MagazineRifleUranium
       - MagazineShotgunIncendiary
+      - MagazineBoxShotgunIncendiaryHighCaliber # Goobstation
+      - MagazineBoxShotgunUraniumHighCaliber # Goobstation
+      - MagazineBoxShotgunBeanbagHighCaliber # Goobstation
       - PortableRecharger
       - PowerCageHigh
       - PowerCageMedium
@@ -1483,6 +1501,18 @@
         - MagazineBoxCaselessRiflePractice # EE
         - MagazineBoxCaselessRifle # EE
         - MagazineBoxCaselessRifleRubber # EE
+        - MagazineMagnumEmpty # Goobstation
+        - MagazineMagnum # Goobstation
+        - MagazineBoxShotgunHighCaliber # Goobstation
+        - MagazineBoxShotgunSlugHighCaliber # Goobstation
+        - MagazineBoxShotgunPracticeHighCaliber # Goobstation
+    - type: EmagLatheRecipes # Goobstation
+      emagStaticRecipes:
+      - MagazinePistolCaselessRifle # Goobstation
+      - MagazineBoxCaselessRifle # Goobstation
+      - MagazineBoxShotgunIncendiaryHighCaliber # Goobstation
+      - MagazineBoxShotgunUraniumHighCaliber # Goobstation
+      - MagazineBoxShotgunBeanbagHighCaliber # Goobstation
     - type: MaterialStorage
       whitelist:
         tags:

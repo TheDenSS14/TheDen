@@ -1,5 +1,6 @@
 # SPDX-FileCopyrightText: 2025 Eagle-0 <114363363+Eagle-0@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Rosycup <178287475+Rosycup@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Ted Lukin <66275205+pheenty@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
@@ -19,3 +20,37 @@
   - type: StaticPrice
     price: 3000
   - type: GrantCqc
+
+
+- type: entity
+  parent: [BaseItem]
+  id: HandheldCrewMonitorBSO
+  name: handheld command monitor
+  description: A handheld crew monitor modified for blueshield officer's needs. Will only track scanned command personnel and alarm you about them being in danger. Works on a built-in microreactor cell.
+  components:
+  - type: Sprite
+    sprite: _Goobstation/Objects/Specific/Security/bso_monitor.rsi
+    state: scanner
+  - type: Item
+    size: Small
+  - type: CrewMonitorScanning
+    whitelist:
+      components:
+      - CommandStaff
+  - type: ActivatableUI
+    key: enum.CrewMonitoringUIKey.Key
+  - type: UserInterface
+    interfaces:
+      enum.CrewMonitoringUIKey.Key:
+        type: CrewMonitoringBoundUserInterface
+  - type: CrewMonitoringConsole
+  - type: DeviceNetwork
+    deviceNetId: Wireless
+    receiveFrequencyId: CrewMonitor
+  - type: WirelessNetworkConnection
+    range: 500
+  - type: StationLimitedNetwork
+  - type: StaticPrice
+    price: 1000
+  - type: Speech
+    speechSounds: Borg

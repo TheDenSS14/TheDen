@@ -5,6 +5,7 @@
 # SPDX-FileCopyrightText: 2025 MajorMoth <61519600+MajorMoth@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Rosycup <178287475+Rosycup@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 SixplyDev <einlichen@gmail.com>
+# SPDX-FileCopyrightText: 2025 Solstice <solsticeofthewinter@gmail.com>
 # SPDX-FileCopyrightText: 2025 Tabitha <64847293+KyuPolaris@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 VMSolidus <evilexecutive@gmail.com>
 # SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
@@ -145,7 +146,7 @@
     - WeaponLeverChester
 
 - type: loadout
-  id: LoadoutMagazineMagnumMagnumLeverRifle
+  id: LoadoutMagazineShotgunLeverRifle
   category: JobsCommandBlueshieldOfficer
   cost: 2
   exclusive: true
@@ -159,10 +160,10 @@
       jobs:
         - BlueshieldOfficer
   items:
-    - MagazineMagnumLeverRifle
+    - MagazineShotgunLeverRifle
 
 - type: loadout
-  id: LoadoutMagazineMagnumMagnumLeverRifleSpare
+  id: LoadoutMagazineShotgunLeverRifleSpare
   category: JobsCommandBlueshieldOfficer
   cost: 4
   exclusive: true
@@ -176,7 +177,7 @@
       jobs:
         - BlueshieldOfficer
   items:
-    - MagazineMagnumLeverRifle
+    - MagazineShotgunLeverRifle
 
 - type: loadout
   id: LoadoutBSORifleBRDIR25
