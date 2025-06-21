@@ -9,6 +9,47 @@
 
 # Chief Medical Officer
 # Backpacks
+- type: loadout
+  id: LoadoutBackpackCMO
+  category: JobsMedicalAUncategorized
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingBackpackCMOFilled
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutChiefMedicalOfficerBag
+    - !type:CharacterJobRequirement
+      jobs:
+        - ChiefMedicalOfficer
+
+- type: loadout
+  id: LoadoutBackpackSatchelCMO
+  category: JobsMedicalAUncategorized
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingBackpackSatchelCMOFilled
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutChiefMedicalOfficerBag
+    - !type:CharacterJobRequirement
+      jobs:
+        - ChiefMedicalOfficer
+
+- type: loadout
+  id: LoadoutBackpackDuffelCMO
+  category: JobsMedicalAUncategorized
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingBackpackDuffelCMOFilled
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutChiefMedicalOfficerBag
+    - !type:CharacterJobRequirement
+      jobs:
+        - ChiefMedicalOfficer
 
 # Belt
 - type: loadout
