@@ -1,3 +1,9 @@
+// SPDX-FileCopyrightText: 2023 JJ <47927305+PHCodes@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Debug <49997488+DebugOk@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+//
+// SPDX-License-Identifier: MIT
+
 #nullable enable annotations
 using Content.Server.Kitchen.Components;
 using Content.Server.Kitchen.EntitySystems;

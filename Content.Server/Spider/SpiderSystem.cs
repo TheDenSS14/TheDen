@@ -1,3 +1,9 @@
+// SPDX-FileCopyrightText: 2023 Jackrost <jackrost@mail.ru>
+// SPDX-FileCopyrightText: 2024 FoxxoTrystan <trystan.garnierhein@gmail.com>
+// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 using System.Linq;
 using Content.Server.Popups;
 using Content.Shared.Spider;

@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 law-replicator-1 = Preserve the Hive.
 law-replicator-2 = Defend the Nest.
 law-replicator-3 = Replicate.

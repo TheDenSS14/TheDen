@@ -1,4 +1,13 @@
-﻿using System.IO;
+// SPDX-FileCopyrightText: 2024 DrSmugleaf <10968691+DrSmugleaf@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Falcon <falcon@zigtag.dev>
+// SPDX-FileCopyrightText: 2025 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 poemota <142114334+poeMota@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 sleepyyapril <flyingkarii@gmail.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
+using System.IO;
 using System.Linq;
 using Content.Server.Administration.Managers;
 using Content.Shared.Administration;
@@ -6,6 +15,8 @@ using Content.Shared.Mapping;
 using Robust.Server.GameObjects;
 using Robust.Server.Player;
 using Robust.Shared.ContentPack;
+using Robust.Shared.EntitySerialization;
+using Robust.Shared.EntitySerialization.Systems;
 using Robust.Shared.Map;
 using Robust.Shared.Network;
 using Robust.Shared.Prototypes;
@@ -29,6 +40,7 @@ public sealed class MappingManager : IPostInjectInit
     [Dependency] private readonly IEntitySystemManager _systems = default!;
     [Dependency] private readonly ISerializationManager _serialization = default!;
     [Dependency] private readonly IResourceManager _resourceMan = default!;
+    [Dependency] private readonly IEntityManager _ent = default!;
 
     private ISawmill _sawmill = default!;
     private ZStdCompressionContext _zstd = default!;
@@ -60,14 +72,14 @@ public sealed class MappingManager : IPostInjectInit
             if (!_players.TryGetSessionByChannel(message.MsgChannel, out var session) ||
                 !_admin.IsAdmin(session, true) ||
                 !_admin.HasAdminFlag(session, AdminFlags.Host) ||
-                session.AttachedEntity is not { } player)
+                !_ent.TryGetComponent(session.AttachedEntity, out TransformComponent? xform) ||
+                xform.MapUid is not {} mapUid)
             {
                 return;
             }
 
-            var mapId = _systems.GetEntitySystem<TransformSystem>().GetMapCoordinates(player).MapId;
-            var mapEntity = _map.GetMapEntityIdOrThrow(mapId);
-            var data = _systems.GetEntitySystem<MapLoaderSystem>().GetSaveData(mapEntity);
+            var sys = _systems.GetEntitySystem<MapLoaderSystem>();
+            var data = sys.SerializeEntitiesRecursive([mapUid]).Node;
             var document = new YamlDocument(data.ToYaml());
             var stream = new YamlStream { document };
             var writer = new StringWriter();

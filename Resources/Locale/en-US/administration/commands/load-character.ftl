@@ -1,4 +1,9 @@
-﻿loadcharacter-command-description = Applies your currently selected character to an entity
+# SPDX-FileCopyrightText: 2023 Debug <49997488+DebugOk@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: MIT
+
+loadcharacter-command-description = Applies your currently selected character to an entity
 loadcharacter-command-help = Usage: loadcharacter | loadcharacter <entityUid> | loadcharacter <entityUid> <characterName>
 loadcharacter-command-mismatch = Species mismatch detected between character and selected entity, this may have unexpected results.
 loadcharacter-command-complete = Character loaded.

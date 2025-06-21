@@ -1,4 +1,9 @@
-﻿blood-cult-title = The Blood Cult
+# SPDX-FileCopyrightText: 2025 Remuchi <72476615+Remuchi@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
+blood-cult-title = The Blood Cult
 blood-cult-description = The oldest and strongest emotion of mankind is fear, and the oldest and strongest kind of fear is fear of the unknown.
 
 roles-antag-blood-cultist-name = Blood cultist

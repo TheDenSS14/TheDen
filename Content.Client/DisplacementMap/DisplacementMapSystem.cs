@@ -1,4 +1,9 @@
-﻿using Content.Shared.DisplacementMap;
+// SPDX-FileCopyrightText: 2025 chly <haychiethewonderfulsnivy@gmail.com>
+// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
+using Content.Shared.DisplacementMap;
 using Robust.Client.GameObjects;
 using Robust.Client.Graphics;
 using Robust.Shared.Serialization.Manager;

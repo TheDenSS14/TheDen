@@ -1,3 +1,8 @@
+# SPDX-FileCopyrightText: 2025 SX-7 <92227810+SX-7@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 trait-name-SiikMaas = Siik'maas
 trait-description-SiikMaas =
     Siik'maas is theorized to be the ancient religious tongue of the Tajara, once universally shared among them.

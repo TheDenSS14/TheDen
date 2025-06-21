@@ -6024,3 +6024,348 @@ Entries:
   id: 568
   time: '2025-06-14T22:48:14.0000000+00:00'
   url: https://github.com/TheDenSS14/TheDen/pull/798
+- author: juniwoofs
+  changes:
+    - type: Remove
+      message: >-
+        Removed the Guan-Yu, Shanlin, and Sheiwei tacsuits from the cargo
+        catalogue.
+  id: 569
+  time: '2025-06-15T04:27:37.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/801
+- author: juniwoofs
+  changes:
+    - type: Add
+      message: Added a new and improved listening post to replace the old one!
+  id: 570
+  time: '2025-06-15T07:30:35.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/787
+- author: KyuPolaris
+  changes:
+    - type: Add
+      message: Added the Yap emote from Floof (credit to Memeji)
+    - type: Tweak
+      message: Added kitsune to the whitelist for a bunch of markings
+    - type: Fix
+      message: Gave Kitsune yip emote (as originally intended)
+    - type: Tweak
+      message: Removed restriction on some hairs
+  id: 571
+  time: '2025-06-15T23:30:25.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/806
+- author: Camdot
+  changes:
+    - type: Fix
+      message: Quotes can now be used in subtledetailed
+  id: 572
+  time: '2025-06-16T01:53:35.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/809
+- author: Camdot
+  changes:
+    - type: Add
+      message: >-
+        The Denu! A new menu located next to the chat filter button with various
+        buttons, including a typing toggle, automatic chat formatting, and color
+        sliders for said formatting. 
+  id: 573
+  time: '2025-06-16T01:57:06.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/810
+- author: Camdot
+  changes:
+    - type: Fix
+      message: 'Fixed lavaland weather over-rendering '
+  id: 574
+  time: '2025-06-16T01:57:20.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/811
+- author: sleepyyapril
+  changes:
+    - type: Tweak
+      message: >-
+        Updated the Denu to allow you to remove the asterisks currently required
+        by the formatter.
+  id: 575
+  time: '2025-06-16T18:06:36.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/813
+- author: ZigTag
+  changes:
+    - type: Tweak
+      message: updated to robust version 260.2
+    - type: Add
+      message: AA to glacier
+    - type: Fix
+      message: glacier roboticist slots now show
+  id: 576
+  time: '2025-06-16T19:03:57.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/807
+- author: mart33no
+  changes:
+    - type: Add
+      message: Added war.
+    - type: Tweak
+      message: Changed the requirement for nukies to declare war to 3 operatives from 4
+  id: 577
+  time: '2025-06-17T02:22:13.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/814
+- author: sleepyyapril
+  changes:
+    - type: Tweak
+      message: Replicators are now weaker to lasers.
+  id: 578
+  time: '2025-06-17T04:38:11.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/816
+- author: juniwoofs
+  changes:
+    - type: Remove
+      message: Removed CC stamp from the new LPO
+  id: 579
+  time: '2025-06-17T04:38:18.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/812
+- author: sleepyyapril
+  changes:
+    - type: Add
+      message: >-
+        Shifts with a lot of danger will be accompanied by one shift with a
+        lesser chance of threats, Low Danger, the mode, and Irregular Extended
+        do imply a factor of randomness to things, but admins are to allow a lot
+        less when they are picked.
+    - type: Fix
+      message: >-
+        Modes that cannot run will no longer be picked for High Danger and
+        others. No more picking nukies when under 20 players.
+    - type: Fix
+      message: Selfdamage and timer are now usable by all.
+  id: 580
+  time: '2025-06-17T11:18:15.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/817
+- author: Jakumba
+  changes:
+    - type: Tweak
+      message: >-
+        Reworked vent critters event. Critters now all spawn from one vent in
+        higher numbers.
+  id: 581
+  time: '2025-06-17T20:34:52.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/802
+- author: sleepyyapril
+  changes:
+    - type: Fix
+      message: Fixed the admin test arena
+  id: 582
+  time: '2025-06-17T20:35:08.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/820
+- author: Rosycup
+  changes:
+    - type: Tweak
+      message: >-
+        Tweaked Krav Maga's leg sweep to have a 5 second use delay instead of 3
+        and to do a knockdown instead of a complete paralysis.
+    - type: Tweak
+      message: >-
+        Diamonds should now only be able to be inserted into the respective
+        lathes that use them, security techfab and exosuit fabricator.
+    - type: Tweak
+      message: Stamina cost for heavy swings on Greatsword lowered from 30 to 20.
+    - type: Fix
+      message: >-
+        Fixed the heavy swing speed for katanas and claymores to be more
+        sensible.
+    - type: Fix
+      message: Fixed IPCs not being able to set poses.
+  id: 583
+  time: '2025-06-17T21:16:40.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/805
+- author: sleepyyapril
+  changes:
+    - type: Add
+      message: >-
+        The dragon now uses consent for its devour, but still gains the buff if
+        they cannot 'nom someone.
+    - type: Tweak
+      message: >-
+        The dragon is now more of a direct, confrontational threat than anything
+        else. They do not bleed, they regenerate 50 health a minute out of 500,
+        and they get slowed at higher damage levels.
+    - type: Tweak
+      message: The dragon will no longer rot the people it holds.
+    - type: Tweak
+      message: >-
+        A dragon will no longer die if they do not make a rift, but they will be
+        weaker. This is mainly to encourage roleplay.
+  id: 584
+  time: '2025-06-18T01:40:42.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/823
+- author: ZigTag
+  changes:
+    - type: Remove
+      message: holofan sounds
+  id: 585
+  time: '2025-06-18T04:53:11.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/825
+- author: portfiend
+  changes:
+    - type: Fix
+      message: Rodentia names now localize properly.
+  id: 586
+  time: '2025-06-18T14:53:27.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/831
+- author: lunarcomets
+  changes:
+    - type: Add
+      message: >-
+        AI customization has been ported from WizDen. AIs are now allowed to
+        change their AI screens and hologram with select sprites!
+  id: 587
+  time: '2025-06-18T18:51:04.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/827
+- author: portfiend
+  changes:
+    - type: Add
+      message: >-
+        Added a "randomize body" button to the character creator, which will
+        randomize your character's appearance and nothing else.
+  id: 588
+  time: '2025-06-18T18:54:34.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/830
+- author: BlitzTheSquishy
+  changes:
+    - type: Tweak
+      message: Expeditions can be performed on player built shuttles
+    - type: Tweak
+      message: Salvage magnet works on player built shuttles
+  id: 589
+  time: '2025-06-18T19:03:38.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/824
+- author: MajorMoth
+  changes:
+    - type: Add
+      message: >-
+        Ported lots of new atmos gases, which were themselves ports of /tg/
+        gases, see PR for details. Guides on making these need to be written up
+        so get to work atmos dwellers!
+    - type: Add
+      message: >-
+        Ported a new firefighting backpack water tank, found in atmos locker
+        fills - it's specialized firefighting gear. Changes functionality
+        depending on intent/mode. Can be used to clear out toxic gases in its
+        secondary mode.
+    - type: Add
+      message: >-
+        Ported insulated atmos gloves - they are resprited insulated gloves.
+        Extra drip is always good. 
+    - type: Tweak
+      message: >-
+        Ported a bunch of mechanical/technical changes to the SM, along with
+        gorgeous new assets.
+  id: 590
+  time: '2025-06-18T19:57:40.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/819
+- author: ZigTag
+  changes:
+    - type: Tweak
+      message: changed to wizden logo until new logo comes in
+  id: 591
+  time: '2025-06-19T03:26:47.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/837
+- author: BlitzTheSquishy
+  changes:
+    - type: Tweak
+      message: >-
+        Central Command deemed the blue stripes on weapons preloaded non-lethal
+        ammunition an eyesore for the red-attuned eyes of security, and thus
+        have been removed.
+  id: 592
+  time: '2025-06-19T04:33:06.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/844
+- author: ZigTag
+  changes:
+    - type: Add
+      message: nukie plushie to loadout
+  id: 593
+  time: '2025-06-19T04:34:17.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/841
+- author: portfiend
+  changes:
+    - type: Fix
+      message: Rodentia now have a squeak emote in their emote menus again.
+  id: 594
+  time: '2025-06-19T04:36:42.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/842
+- author: KyuPolaris
+  changes:
+    - type: Add
+      message: >-
+        Tirggel biscuits! Small little yummy biscuits for nibbling on (Bounty
+        from Foxmin, no I will not call them cookies)
+  id: 595
+  time: '2025-06-19T23:54:38.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/829
+- author: portfiend
+  changes:
+    - type: Add
+      message: >-
+        Teddy bears, smiley guys, smiley balls, weird alien UFO thing and, by
+        popular request, a new Ovinia plushie are now available! You can find
+        them in all the places you'd expect to find plushies. 
+  id: 596
+  time: '2025-06-20T11:07:46.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/838
+- author: BlitzTheSquishy
+  changes:
+    - type: Tweak
+      message: >-
+        Some more loadout tweaks, please ensure you check them just in case
+        (especially Engi mains)
+  id: 597
+  time: '2025-06-20T11:13:07.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/846
+- author: BlitzTheSquishy
+  changes:
+    - type: Add
+      message: >-
+        Poppy the Safety Possom can now be mapped into engineering! Space OSHA
+        rejoice!
+  id: 598
+  time: '2025-06-20T15:40:59.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/860
+- author: Fox
+  changes:
+    - type: Add
+      message: Added Gravel Station! The replacement for Pebble Station!
+    - type: Remove
+      message: Removed Pebble Station once and for all, goodbye old friend.
+  id: 599
+  time: '2025-06-21T19:23:35.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/859
+- author: MajorMoth
+  changes:
+    - type: Add
+      message: A bunch of new admin tools and things in the aghost starting gear.
+  id: 600
+  time: '2025-06-21T19:32:16.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/855
+- author: portfiend
+  changes:
+    - type: Fix
+      message: >-
+        Loadouts have been majorly refactored on the backend. You shouldn't be
+        able to tell the difference, though - you might notice that they
+        load/work faster. Please report any new loadout-related bugs ASAP
+        because this change was a little bit gargantuan.
+  id: 601
+  time: '2025-06-21T19:41:23.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/856
+- author: BlitzTheSquishy
+  changes:
+    - type: Tweak
+      message: >-
+        lots of loadout tweaks, please I beg, ensure your check your loadouts to
+        make sure you have everything you need
+    - type: Add
+      message: virology and genetics uniforms to medical loadouts
+    - type: Add
+      message: added courier bag options in loadouts
+    - type: Add
+      message: added missing winter coat/boot options
+  id: 602
+  time: '2025-06-21T19:52:17.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/866

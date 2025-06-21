@@ -1,3 +1,10 @@
+# SPDX-FileCopyrightText: 2024 FoxxoTrystan <45297731+FoxxoTrystan@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 FoxxoTrystan <trystan.garnierhein@gmail.com>
+# SPDX-FileCopyrightText: 2024 VMSolidus <evilexecutive@gmail.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 action-name-spin-web = Spin Web
 action-desc-spin-web = Use your spinnerets to make a spider web in the current tile. Makes you hungrier and thirstier.
 action-name-spin-web-space = You can't spin a web in space!

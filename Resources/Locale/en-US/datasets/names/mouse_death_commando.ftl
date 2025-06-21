@@ -1,3 +1,8 @@
+# SPDX-FileCopyrightText: 2025 Blitz <73762869+BlitzTheSquishy@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 names-mouse-death-command-dataset-1 = Operator Blue Cheese
 names-mouse-death-command-dataset-2 = Operator AMERICAN CHEESE
 names-mouse-death-command-dataset-3 = Operator Fromage

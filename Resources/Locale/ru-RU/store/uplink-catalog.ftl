@@ -1,4 +1,10 @@
-﻿uplink-emp-flashlight-name = Электромагнитный фонарик
+# SPDX-FileCopyrightText: 2024 VMSolidus <evilexecutive@gmail.com>
+# SPDX-FileCopyrightText: 2025 Spatison <137375981+Spatison@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
+uplink-emp-flashlight-name = Электромагнитный фонарик
 uplink-emp-flashlight-desc = Замаскированное под фонарик устройство. При ударе выпускает ЭМИ, поражающий электрические устройства.
 
 # Armor

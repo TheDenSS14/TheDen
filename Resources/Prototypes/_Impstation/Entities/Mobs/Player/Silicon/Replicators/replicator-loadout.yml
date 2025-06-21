@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 - type: startingGear
   id: StartingGearReplicatorTools
   inhand:
@@ -123,7 +127,7 @@
     sprite: _Impstation/Mobs/Replicator/replicator.rsi
     state: t3weapon
   - type: MeleeWeapon
-    attackRate: 0.5
+    attackRate: 1
     wideAnimationRotation: 180
     soundHit: 
       path: "/Audio/Effects/metal_slam4.ogg"
@@ -131,7 +135,7 @@
     damage:
       types:
         Blunt: 30
-        Structural: 45
+        Structural: 50
   - type: Unremoveable
   - type: Prying
     pryPowered: true
