@@ -121,7 +121,21 @@
     - Roboticist
   items:
   - ClothingOuterWinterRobo
+
 # Shoes
+- type: loadout
+  id: LoadoutScienceShoesBootsWinterRoboticist
+  category: JobsEpistemicsGolemancer
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutGolemancerShoes
+    - !type:CharacterJobRequirement
+      jobs:
+        - Roboticist
+  items:
+    - ClothingShoesBootsWinterRobo
 
 # Uniforms
 - type: loadout
