@@ -458,6 +458,46 @@
   items:
     - ClothingOuterCoatCybersunWindbreaker
 
+- type: loadout
+  id: LoadoutMedicalOuterWinterCoatViro
+  category: JobsMedicalAUncategorized
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMedicalOuter
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Medical
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Chemist # For chemist recognizibility
+        - Paramedic # For paramedic recognizibility
+        - Psychologist # Doesnt suit a psych, has access to base medical
+        - ChiefMedicalOfficer # For CMO recognizibility
+  items:
+    - ClothingOuterWinterViro
+
+- type: loadout
+  id: LoadoutMedicalOuterWinterCoatGen
+  category: JobsMedicalAUncategorized
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMedicalOuter
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Medical
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Chemist # For chemist recognizibility
+        - Paramedic # For paramedic recognizibility
+        - Psychologist # Doesnt suit a psych, has access to base medical
+        - ChiefMedicalOfficer # For CMO recognizibility
+  items:
+    - ClothingOuterWinterGen
+
 # Shoes
 
 # Uniforms
