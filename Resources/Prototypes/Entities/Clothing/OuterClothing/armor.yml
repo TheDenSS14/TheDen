@@ -154,9 +154,6 @@
   - type: GroupExamine
   - type: ClothingRequiredStepTriggerImmune
     slots: WITHOUT_POCKET
-  - type: Tag
-    tags:
-      - FullBodyOuter
   - type: ClothingSpeedModifier
     walkModifier: 0.95
     sprintModifier: 0.95
@@ -319,9 +316,6 @@
   - type: GroupExamine
   - type: ClothingRequiredStepTriggerImmune
     slots: WITHOUT_POCKET
-  - type: Tag
-    tags:
-      - FullBodyOuter
 
 - type: entity
   parent: ClothingOuterArmorHeavy
@@ -446,9 +440,6 @@
   - type: GroupExamine
   - type: ClothingRequiredStepTriggerImmune
     slots: WITHOUT_POCKET
-  - type: Tag
-    tags:
-      - FullBodyOuter
 
 - type: entity
   parent: ClothingOuterBaseLarge
