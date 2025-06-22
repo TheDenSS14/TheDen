@@ -1,9 +1,15 @@
+// SPDX-FileCopyrightText: 2025 Steve <marlumpy@gmail.com>
+// SPDX-FileCopyrightText: 2025 marc-pelletier <113944176+marc-pelletier@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
+using Content.Server.Atmos;
 using Content.Server.Atmos.EntitySystems;
 using Content.Shared.Atmos;
 using Content.Shared.Atmos.Reactions;
 using JetBrains.Annotations;
 
-namespace Content.Server.Atmos.Reactions;
+namespace Content.Server._Funkystation.Atmos.Reactions;
 
 [UsedImplicitly]
 public sealed partial class HalonOxygenAbsorptionReaction : IGasReactionEffect
@@ -18,13 +24,14 @@ public sealed partial class HalonOxygenAbsorptionReaction : IGasReactionEffect
 
         var temperature = mixture.Temperature;
 
-        var heatEfficiency = Math.Min(temperature / (Atmospherics.FireMinimumTemperatureToExist * 10f), Math.Min(initHalon, initOxy*20f));
-        if (heatEfficiency <= 0f || initHalon - heatEfficiency < 0f || initOxy - heatEfficiency * 20f < 0f)
+        var heatEfficiency = Math.Min(temperature / (Atmospherics.FireMinimumTemperatureToExist * 10f), Math.Min(initHalon, initOxy / 20f));
+
+        if (heatEfficiency <= 0f)
             return ReactionResult.NoReaction;
 
         mixture.AdjustMoles(Gas.Halon, -heatEfficiency);
-        mixture.AdjustMoles(Gas.Oxygen, -heatEfficiency*20f);
-        mixture.AdjustMoles(Gas.CarbonDioxide, heatEfficiency*2.5f);
+        mixture.AdjustMoles(Gas.Oxygen, -heatEfficiency * 20f);
+        mixture.AdjustMoles(Gas.CarbonDioxide, heatEfficiency * 2.5f);
 
         var energyReleased = heatEfficiency * Atmospherics.HalonCombustionEnergy;
         var heatCap = atmosphereSystem.GetHeatCapacity(mixture, true);
