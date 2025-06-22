@@ -52,6 +52,7 @@ research-technology-bluespace-storage = Bluespace Storage
 research-technology-portable-fission = Portable Fission
 research-technology-space-scanning = Space Scanning
 research-technology-excavation = Mass Excavation
+research-technology-atmospherics-exotech = Atmospherics Exotech
 
 research-technology-basic-weapons = Basic Weapons
 research-technology-draconic-munitions = Draconic Munitions
