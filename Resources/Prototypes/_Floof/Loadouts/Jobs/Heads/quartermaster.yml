@@ -16,6 +16,8 @@
   - !type:CharacterJobRequirement
     jobs:
     - Quartermaster
+  - !type:CharacterItemGroupRequirement
+    - LoadoutLogisticsOfficerGloves
 
 - type: loadout
   id: LoadoutClothingUnderSocksLOLogis
@@ -33,6 +35,8 @@
   - !type:CharacterJobRequirement
     jobs:
     - Quartermaster
+  - !type:CharacterItemGroupRequirement
+    - LoadoutLogisticsOfficerShoes
 
 - type: loadout
   id: LoadoutClothingUniformLOLogisThong
@@ -45,3 +49,5 @@
   - !type:CharacterJobRequirement
     jobs:
     - Quartermaster
+  - !type:CharacterItemGroupRequirement
+    - LoadoutLogisticsOfficerUniforms
