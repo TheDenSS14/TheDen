@@ -99,6 +99,19 @@
 # Gloves
 
 # Head
+- type: loadout
+  id: LoadoutPsionicMantisFez
+  category: JobsEpistemicsPsionicMantis
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutPsionicMantisHead
+    - !type:CharacterJobRequirement
+      jobs:
+        - ForensicMantis
+  items:
+    - ClothingHeadHatFezMantis
 
 # Id
 
@@ -121,8 +134,34 @@
   items:
     - ClothingOuterWinterCoatMantis
 
+- type: loadout
+  id: LoadoutScienceOuterCoatMantis
+  category: JobsEpistemicsPsionicMantis
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutPsionicMantisOuter
+    - !type:CharacterJobRequirement
+      jobs:
+        - ForensicMantis
+  items:
+    - ClothingOuterCoatMantis
 
 # Shoes
+- type: loadout
+  id: LoadoutPsionicMantisUniformShoes
+  category: JobsEpistemicsPsionicMantis
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutPsionicMantisUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - ForensicMantis
+  items:
+    - ClothingShoesBootsMantis
 
 # Uniforms
 - type: loadout

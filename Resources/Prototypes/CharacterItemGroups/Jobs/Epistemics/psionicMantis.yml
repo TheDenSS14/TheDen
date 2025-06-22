@@ -42,16 +42,20 @@
     - type: loadout
       id: LoadoutPsionicMantisEyesEpiGlasses
 
-#- type: characterItemGroup
-#  id: LoadoutPsionicMantisGloves
-#  maxItems: 1
-#  items:
-#
-#- type: characterItemGroup
-#  id: LoadoutPsionicMantisHead
-#  maxItems: 1
-#  items:
-#
+- type: characterItemGroup
+  id: LoadoutPsionicMantisGloves
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutClothingHandsMantisEpiWarmers
+
+- type: characterItemGroup
+  id: LoadoutPsionicMantisHead
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutPsionicMantisFez
+
 #- type: characterItemGroup
 #  id: LoadoutPsionicMantisId
 #  maxItems: 1
@@ -66,19 +70,25 @@
 #  id: LoadoutPsionicMantisMask
 #  maxItems: 1
 #  items:
-#
+
 - type: characterItemGroup
   id: LoadoutPsionicMantisOuter
   maxItems: 1
   items:
     - type: loadout
       id: LoadoutScienceOuterWinterCoatMantis
+    - type: loadout
+      id: LoadoutScienceOuterCoatMantis
 
-#- type: characterItemGroup
-#  id: LoadoutPsionicMantisShoes
-#  maxItems: 1
-#  items:
-#
+- type: characterItemGroup
+  id: LoadoutPsionicMantisShoes
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutPsionicMantisShoesBoots
+    - type: loadout
+      id: LoadoutClothingUnderSocksMantisEpi
+
 - type: characterItemGroup
   id: LoadoutPsionicMantisUniforms
   maxItems: 1
@@ -87,3 +97,5 @@
       id: LoadoutPsionicMantisUniformSuit
     - type: loadout
       id: LoadoutPsionicMantisUniformSkirt
+    - type: loadout
+      id: LoadoutClothingUniformMantisEpiThong
