@@ -1,5 +1,6 @@
 # SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT <77995199+DEATHB4DEFEAT@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2024 VMSolidus <evilexecutive@gmail.com>
+# SPDX-FileCopyrightText: 2025 Blitz <73762869+BlitzTheSquishy@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 BlitzTheSquishy <73762869+BlitzTheSquishy@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Lonofera <108367450+LonoferaRS@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 MajorMoth <61519600+MajorMoth@users.noreply.github.com>
@@ -24,6 +25,11 @@
     - !type:CharacterDepartmentRequirement
       departments:
         - Engineering
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - AtmosphericTechnician # Mostly for atmos recognizibility
+        - ChiefEngineer # CE has a CE specific variant
 
 - type: loadout
   id: LoadoutBackpackSatchelEngineering
@@ -38,6 +44,11 @@
     - !type:CharacterDepartmentRequirement
       departments:
         - Engineering
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - AtmosphericTechnician # Mostly for atmos recognizibility
+        - ChiefEngineer # CE has a CE specific variant
 
 - type: loadout
   id: LoadoutBackpackDuffelEngineering
@@ -52,6 +63,12 @@
     - !type:CharacterDepartmentRequirement
       departments:
         - Engineering
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - AtmosphericTechnician # For atmos recognizibility
+        - ChiefEngineer # CE has a CE specific variant
+
 # Belt
 
 # Ears
@@ -220,6 +237,11 @@
   - !type:CharacterDepartmentRequirement
     departments:
       - Engineering
+  - !type:CharacterJobRequirement
+    inverted: true
+    jobs:
+      - AtmosphericTechnician # Mostly for atmos recognizibility
+      - ChiefEngineer # CE has a CE specific variant
   items:
   - ClothingOuterWinterEngi
 
@@ -238,6 +260,37 @@
     - ClothingOuterVestHazard
 
 # Shoes
+- type: loadout
+  id: LoadoutEngineeringShoesBootsWork
+  category: JobsEngineeringAAUncategorized
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutEngineeringShoes
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Engineering
+  items:
+    - ClothingShoesBootsWork
+
+- type: loadout
+  id: LoadoutEngineeringShoesBootsWinter
+  category: JobsEngineeringAAUncategorized
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutEngineeringShoes
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Engineering
+    - !type:CharacterJobRequirement
+      jobs:
+      - AtmosphericTechnician # Mostly for atmos recognizibility
+      - ChiefEngineer # CE has a CE specific variant
+  items:
+    - ClothingShoesBootsWinterEngi
 
 # Uniforms
 - type: loadout

@@ -495,6 +495,27 @@ def process_file(file_path_tuple):
         else:
             determined_license_id = LICENSE_AFTER if last_commit_timestamp > cutoff_ts else LICENSE_BEFORE
 
+        # dirty changes, this entire script needs to be refactored!!!
+        email_removal_pattern = re.compile(r"^(.+) (<\S+@\S+>)$") # we match the name as the first capture group and the email as the 2nd
+        for author in list(git_authors.keys()):
+            match = email_removal_pattern.match(author)
+            if match:
+                author_name = match.group(1).strip()
+                git_authors[author_name] = git_authors.pop(author) # this changes the keys in git_authors and will also remove any duplicate users
+                print(f"Removed email from: {author_name}")
+            else:
+                print(f"Email removal from git_authors[{author}] failed.")
+
+        # doing the same for existing_authors
+        for author in list(existing_authors.keys()):
+            match = email_removal_pattern.match(author)
+            if match:
+                author_name = match.group(1).strip()
+                existing_authors[author_name] = existing_authors.pop(author) # this changes the keys in existing_authors and will also remove any duplicate users
+                print(f"Removed email from: {author_name}")
+            else:
+                print(f"Email removal from existing_authors[{author}] failed.")
+
         # Determine what to do based on existing header
         if existing_license:
             print(f"Updating existing header for {file_path} (License: {existing_license})")

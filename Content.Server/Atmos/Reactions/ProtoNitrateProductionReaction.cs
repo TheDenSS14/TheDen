@@ -1,9 +1,15 @@
+// SPDX-FileCopyrightText: 2025 Steve <marlumpy@gmail.com>
+// SPDX-FileCopyrightText: 2025 marc-pelletier <113944176+marc-pelletier@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
+using Content.Server.Atmos;
 using Content.Server.Atmos.EntitySystems;
 using Content.Shared.Atmos;
 using Content.Shared.Atmos.Reactions;
 using JetBrains.Annotations;
 
-namespace Content.Server.Atmos.Reactions;
+namespace Content.Server._Funkystation.Atmos.Reactions;
 
 [UsedImplicitly]
 public sealed partial class ProtoNitrateProductionReaction : IGasReactionEffect
@@ -24,7 +30,7 @@ public sealed partial class ProtoNitrateProductionReaction : IGasReactionEffect
 
         mixture.AdjustMoles(Gas.Hydrogen, -heatEfficiency * 2f);
         mixture.AdjustMoles(Gas.Pluoxium, -heatEfficiency * 0.2f);
-        mixture.AdjustMoles(Gas.ProtoNitrate, heatEfficiency * 0.2f);
+        mixture.AdjustMoles(Gas.ProtoNitrate, heatEfficiency * 2.2f);
 
         var energyReleased = heatEfficiency * Atmospherics.ProtoNitrateProductionEnergy;
 

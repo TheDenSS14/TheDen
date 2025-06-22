@@ -140,6 +140,9 @@
           tags:
           - PowerCell
           - PowerCellSmall
+        blacklist:
+          tags:
+          - NoRecharge  # Assmos - Crystallizer
 
 - type: entity
   parent: [ BaseItemRecharger, ConstructibleMachine ]
@@ -176,6 +179,9 @@
         whitelist:
           tags:
           - PowerCage
+        blacklist:
+          tags:
+          - NoRecharge  # Assmos - Crystallizer
   - type: Machine
     board: PowerCageRechargerCircuitboard
   - type: StaticPrice
@@ -200,6 +206,11 @@
           - HitscanBatteryAmmoProvider
           - ProjectileBatteryAmmoProvider
           - Stunbaton
+        blacklist:  # Goobstation
+          components:
+          - MaterialEnergy
+          tags:
+          - NoRecharge  # Assmos - Crystallizer
 
 - type: entity
   parent: BaseItemRecharger
@@ -226,6 +237,9 @@
         blacklist:
           tags:
           - PotatoBattery
+          - NoRecharge  # Assmos - Crystallizer
+          components:  # Goobstation
+          - MaterialEnergy
 
 - type: entity
   parent: BaseItemRecharger
@@ -252,6 +266,9 @@
           - HitscanBatteryAmmoProvider
           - ProjectileBatteryAmmoProvider
           - Stunbaton
+        blacklist:
+          tags:
+          - NoRecharge  # Assmos - Crystallizer
 
 - type: entity
   parent: BaseRecharger

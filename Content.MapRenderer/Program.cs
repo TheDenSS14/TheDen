@@ -10,6 +10,7 @@
 // SPDX-FileCopyrightText: 2023 Visne <39844191+Visne@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2024 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Falcon <falcon@zigtag.dev>
+// SPDX-FileCopyrightText: 2025 Vlad <cybertropic@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 sleepyyapril <flyingkarii@gmail.com>
 //
@@ -122,34 +123,7 @@ namespace Content.MapRenderer
 
             if (arguments.ArgumentsAreFileNames)
             {
-                Console.WriteLine("Retrieving map ids by map file names...");
-
-                Console.Write("Fetching map prototypes... ");
-                await using var pair = await PoolManager.GetServerClient();
-                var mapPrototypes = pair.Server
-                    .ResolveDependency<IPrototypeManager>()
-                    .EnumeratePrototypes<GameMapPrototype>()
-                    .ToArray();
-                Console.WriteLine("[Done]");
-
-                var ids = new List<string>();
-
-                foreach (var mapPrototype in mapPrototypes)
-                {
-                    if (arguments.Maps.Contains(mapPrototype.MapPath.Filename))
-                    {
-                        ids.Add(mapPrototype.ID);
-                        Console.WriteLine($"Found map: {mapPrototype.MapName}");
-                    }
-                }
-
-                if (ids.Count == 0)
-                {
-                    await Console.Error.WriteLineAsync("Found no maps for the given file names!");
-                    return;
-                }
-
-                arguments.Maps = ids;
+                Console.WriteLine("Retrieving maps by file names...");
             }
 
             await Run(arguments);
@@ -172,12 +146,14 @@ namespace Content.MapRenderer
                 };
 
                 mapViewerData.ParallaxLayers.Add(LayerGroup.DefaultParallax());
-                var directory = Path.Combine(arguments.OutputPath, map);
+                var directory = Path.Combine(arguments.OutputPath, Path.GetFileNameWithoutExtension(map));
 
                 var i = 0;
                 try
                 {
-                    await foreach (var renderedGrid in MapPainter.Paint(map))
+                    await foreach (var renderedGrid in MapPainter.Paint(map,
+                                       arguments.ArgumentsAreFileNames,
+                                       arguments.ShowMarkers))
                     {
                         var grid = renderedGrid.Image;
                         Directory.CreateDirectory(directory);
