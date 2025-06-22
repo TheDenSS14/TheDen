@@ -11,6 +11,7 @@
 // SPDX-FileCopyrightText: 2023 TemporalOroboros <TemporalOroboros@gmail.com>
 // SPDX-FileCopyrightText: 2023 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2024 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
+// SPDX-FileCopyrightText: 2025 Vlad <cybertropic@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
 //
 // SPDX-License-Identifier: MIT
@@ -60,7 +61,7 @@ namespace Content.MapRenderer.Painters
             _decals = GetDecals();
         }
 
-        public void Run(Image gridCanvas, EntityUid gridUid, MapGridComponent grid)
+        public void Run(Image gridCanvas, EntityUid gridUid, MapGridComponent grid, Vector2 customOffset = default)
         {
             var stopwatch = new Stopwatch();
             stopwatch.Start();
@@ -73,10 +74,10 @@ namespace Content.MapRenderer.Painters
 
             // Decals are always painted before entities, and are also optional.
             if (_decals.TryGetValue(gridUid, out var decals))
-                _decalPainter.Run(gridCanvas, CollectionsMarshal.AsSpan(decals));
+                _decalPainter.Run(gridCanvas, CollectionsMarshal.AsSpan(decals), customOffset);
 
 
-            _entityPainter.Run(gridCanvas, entities);
+            _entityPainter.Run(gridCanvas, entities, customOffset);
             Console.WriteLine($"{nameof(GridPainter)} painted grid {gridUid} in {(int) stopwatch.Elapsed.TotalMilliseconds} ms");
         }
 

@@ -84,8 +84,10 @@
 # SPDX-FileCopyrightText: 2025 ArtisticRoomba <145879011+ArtisticRoomba@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 John Willis <143434770+CerberusWolfie@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 KekaniCreates <87507256+KekaniCreates@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 Rosycup <178287475+Rosycup@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 MajorMoth <61519600+MajorMoth@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Rosycup <***>
+# SPDX-FileCopyrightText: 2025 Rosycup <178287475+Rosycup@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Rosycup <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>
 # SPDX-FileCopyrightText: 2025 Tobias Berger <toby@tobot.dev>
 # SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 sleepyyapril <flyingkarii@gmail.com>
@@ -1198,7 +1200,7 @@
   description: If you are not an admin please return this PDA to the nearest admin.
   components:
   - type: Pda
-    id: PassengerIDCard
+    id: CentcomIDCard
   - type: HealthAnalyzer
     scanDelay: 0
   - type: CartridgeLoader
@@ -1206,14 +1208,15 @@
     notificationsEnabled: false
     diskSpace: 10 # DeltaV
     preinstalled:
-      - CrewManifestCartridge
-      - NotekeeperCartridge
-      - NewsReaderCartridge
-      - LogProbeCartridge
-      - SecWatchCartridge # DeltaV: SecWatch replaces WantedList
-      - StockTradingCartridge # Delta-V
-      - NanoChatCartridge # DeltaV
-      - PsiWatchCartridge
+    # den - every cartridge alphabetically
+     - AstroNavCartridge
+     - CrewManifestCartridge
+     - LogProbeCartridge
+     #- MedTekCartridge  # not needed, already has HealthAnalyzer component
+     - NetProbeCartridge
+     - NewsReaderCartridge
+     - NotekeeperCartridge
+     - PsiWatchCartridge
 
 - type: entity
   parent: CentcomPDA
