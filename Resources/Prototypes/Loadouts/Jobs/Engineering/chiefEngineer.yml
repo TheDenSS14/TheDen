@@ -1,5 +1,6 @@
 # SPDX-FileCopyrightText: 2024 VMSolidus <evilexecutive@gmail.com>
 # SPDX-FileCopyrightText: 2025 Blitz <73762869+BlitzTheSquishy@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 BlitzTheSquishy <73762869+BlitzTheSquishy@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 MajorMoth <61519600+MajorMoth@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Rosycup <178287475+Rosycup@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 mart <martgitomen@gmail.com>
@@ -622,7 +623,7 @@
 - type: loadout
   id: LoadoutClothingUniformJumpsuitChiefEngineerCybersun
   category: JobsEngineeringChiefEngineer
-  cost: 0
+  cost: 1
   exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
