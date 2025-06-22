@@ -1,5 +1,6 @@
 # SPDX-FileCopyrightText: 2024 fox <daytimer253@gmail.com>
 # SPDX-FileCopyrightText: 2025 Blitz <73762869+BlitzTheSquishy@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 BlitzTheSquishy <73762869+BlitzTheSquishy@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Rosycup <178287475+Rosycup@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
 #
@@ -17,6 +18,10 @@
   - !type:CharacterDepartmentRequirement
     departments:
     - Security
+  - !type:CharacterJobRequirement
+    jobs:
+    - Detective
+    - HeadOfSecurity
 
 - type: loadout
   id: LoadoutClothingUnderSocksSecurity
@@ -34,6 +39,10 @@
   - !type:CharacterDepartmentRequirement
     departments:
     - Security
+  - !type:CharacterJobRequirement
+    jobs:
+    - Detective
+    - HeadOfSecurity
 
 - type: loadout
   id: LoadoutClothingUniformSecurityThong
@@ -46,6 +55,10 @@
   - !type:CharacterDepartmentRequirement
     departments:
     - Security
+  - !type:CharacterJobRequirement
+    jobs:
+    - Detective
+    - HeadOfSecurity
 
 - type: loadout
   id: LoadoutSecurityNeckCollar

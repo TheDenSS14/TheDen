@@ -4,6 +4,7 @@
 # SPDX-FileCopyrightText: 2024 ShatteredSwords <135023515+ShatteredSwords@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2024 cynical <superpilotboy@gmail.com>
 # SPDX-FileCopyrightText: 2024 sleepyyapril <flyingkarii@gmail.com>
+# SPDX-FileCopyrightText: 2025 BlitzTheSquishy <73762869+BlitzTheSquishy@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Rosycup <178287475+Rosycup@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
 #
@@ -58,8 +59,8 @@
 - type: entity
   parent: ClothingHandsBase
   id: ClothingHandsCommandWarmers
-  name: command's arm-warmers
-  description: A pair of rather nice arm-warmers, styled for command roles.
+  name: head of personel's arm-warmers
+  description: A pair of rather nice arm-warmers, styled for the head of personel.
   components:
   - type: Sprite
     sprite: _Floof/Clothing/Departmental/Command/commandwarmer.rsi
@@ -73,8 +74,8 @@
 - type: entity
   parent: ClothingShoesBase
   id: ClothingUnderSocksCommand
-  name: command's thigh-high socks
-  description: A pair of thigh-high socks, styled for command roles.
+  name: head of personel's thigh-high socks
+  description: A pair of thigh-high socks, styled for the head of personel.
   components:
   - type: Sprite
     sprite: _Floof/Clothing/Departmental/Command/commandsocks.rsi
@@ -84,8 +85,8 @@
 - type: entity
   parent: ClothingUniformBase
   id: ClothingUniformCommandThong
-  name: command's thong
-  description: Styled for a commanding officer, but is this even considered a piece of clothing?
+  name: head of personel's thong
+  description: Styled for a head of personel, but is this even considered a piece of clothing?
   components:
   - type: Sprite
     sprite: _Floof/Clothing/Departmental/Command/commandthong.rsi
