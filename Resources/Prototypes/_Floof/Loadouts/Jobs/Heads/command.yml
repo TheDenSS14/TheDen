@@ -19,6 +19,8 @@
   - !type:CharacterJobRequirement
     jobs:
     - HeadOfPersonnel
+  - !type:CharacterItemGroupRequirement
+      group: LoadoutHeadOfPersonnelGloves
 
 - type: loadout
   id: LoadoutClothingUnderSocksCommand
@@ -36,6 +38,8 @@
   - !type:CharacterJobRequirement
     jobs:
     - HeadOfPersonnel
+  - !type:CharacterItemGroupRequirement
+      group: LoadoutHeadOfPersonnelShoes
 
 - type: loadout
   id: LoadoutClothingUniformCommandThong
@@ -48,3 +52,5 @@
   - !type:CharacterJobRequirement
     jobs:
     - HeadOfPersonnel
+  - !type:CharacterItemGroupRequirement
+      group: LoadoutHeadOfPersonnelUniforms
