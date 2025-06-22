@@ -209,6 +209,11 @@
           whitelist:
             tags:
               - Plunger
+        goldenplunger_slot:
+          name: janitorial-trolley-slot-component-slot-name-goldenplunger
+          whitelist:
+            tags:
+            - GoldenPlunger
           priority: 8
         wetfloorsign_slot4:
           name: janitorial-trolley-slot-component-slot-name-sign
@@ -318,6 +323,10 @@
           whitelist:
             tags:
               - Plunger
+        cart_goldenplunger:
+          whitelist:
+            tags:
+            - GoldenPlunger
         cart_mop:
           whitelist:
             tags:
@@ -381,6 +390,7 @@
         trashbag_slot: !type:ContainerSlot {}
         bucket_slot: !type:ContainerSlot {}
         plunger_slot: !type:ContainerSlot {}
+        goldenplunger_slot: !type:ContainerSlot {}
         wetfloorsign_slot4: !type:ContainerSlot {}
         wetfloorsign_slot3: !type:ContainerSlot {}
         wetfloorsign_slot2: !type:ContainerSlot {}
