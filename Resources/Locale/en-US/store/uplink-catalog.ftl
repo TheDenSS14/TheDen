@@ -111,7 +111,7 @@ uplink-smoke-grenade-name = Smoke Grenade
 uplink-smoke-grenade-desc = A grenade that releases a huge cloud of smoke, perfect for killing someone in the shadows or making a sneaky getaway.
 
 uplink-mini-bomb-name = Minibomb
-uplink-mini-bomb-desc = A low-yield, high-impact, high-temperature precision sabotage explosive with a five-second long fuse and remote detonation capabilities. Will reliably tear through spacecraft hull or heavy armour.
+uplink-mini-bomb-desc = A low-yield, high-impact, high-temperature precision explosive with a five-second long fuse and remote detonation capabilities. Will reliably tear through spacecraft hull or heavy armour, without eviscerating organic targets.
 
 uplink-supermatter-grenade-name = Supermatter Grenade
 uplink-supermatter-grenade-desc = Grenade that simulates delamination of a suppermatter engine, generates powerful gravity well. Explosion comparable to a Mini Bomb.
