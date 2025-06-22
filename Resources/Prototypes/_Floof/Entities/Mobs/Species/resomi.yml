@@ -217,6 +217,11 @@
       - FootstepSound
       - DoorBumpOpener
       - ResomiEmotes
+    - type: PseudoItem
+      storedOffset: -10,0
+      shape:
+      - 0, 0, 3, 2
+      - 0, 2, 3, 4
     - type: FootPrints # Goobstation - resomi footprints
       leftBarePrint: "footprint-left-bare-lizard"
       rightBarePrint: "footprint-right-bare-lizard"
