@@ -60,6 +60,21 @@
     - type: loadout
       id: LoadoutBSOTerminus
 
+- type: characterItemGroup
+  id: LoadoutBlueshieldOfficerEquipment
+  maxItems: 4
+  items:
+    - type: loadout
+      id: LoadoutMagazineMagnumMagnumLeverRifle
+    - type: loadout
+      id: LoadoutMagazineMagnumMagnumLeverRifleSpare
+    - type: loadout
+      id: LoadoutBSOMedkitCombatFilled
+    - type: loadout
+      id: LoadoutBSOPortafib
+    - type: loadout
+      id: LoadoutBSOCrewMonitor
+
 #- type: characterItemGroup
 #  id: LoadoutJOBEyes
 #  maxItems: 1
