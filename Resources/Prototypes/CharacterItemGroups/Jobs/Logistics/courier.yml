@@ -34,12 +34,14 @@
 #  id: LoadoutCourierEyes
 #  maxItems: 1
 #  items:
-#
-#- type: characterItemGroup
-#  id: LoadoutCourierGloves
-#  maxItems: 1
-#  items:
-#
+
+- type: characterItemGroup
+  id: LoadoutCourierGloves
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutClothingHandsCourierWarmers
+
 - type: characterItemGroup
   id: LoadoutCourierHead
   maxItems: 1
@@ -63,7 +65,7 @@
 #  id: LoadoutCourierMask
 #  maxItems: 1
 #  items:
-#
+
 - type: characterItemGroup
   id: LoadoutCourierOuter
   maxItems: 1
@@ -73,11 +75,13 @@
     - type: loadout
       id: LoadoutCourierOuterCourier
 
-#- type: characterItemGroup
-#  id: LoadoutCourierShoes
-#  maxItems: 1
-#  items:
-#
+- type: characterItemGroup
+  id: LoadoutCourierShoes
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutClothingUnderSocksCourier
+
 - type: characterItemGroup
   id: LoadoutCourierUniforms
   maxItems: 1
@@ -92,3 +96,5 @@
       id: LoadoutCourierUniformMailSkirt
     - type: loadout
       id: LoadoutCourierUniformEnvirosuitMailCarrier
+    - type: loadout
+      id: LoadoutClothingUniformCourierThong

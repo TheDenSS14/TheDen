@@ -13,11 +13,13 @@
   cost: 2
   exclusive: true
   items:
-  - ClothingHandsLogisWarmers
+    - ClothingHandsLogisWarmers
   requirements:
-  - !type:CharacterJobRequirement
-    jobs:
-    - CargoTechnician
+    - !type:CharacterJobRequirement
+      jobs:
+        - CargoTechnician
+    - !type:CharacterItemGroupRequirement
+      - LoadoutCargoTechnicianGloves
 
 - type: loadout
   id: LoadoutClothingUnderSocksLogis
@@ -25,16 +27,18 @@
   cost: 2
   exclusive: true
   items:
-  - ClothingUnderSocksLogis
+    - ClothingUnderSocksLogis
   requirements:
-#  - !type:CharacterSpeciesRequirement - TheDen
-#    inverted: true
-#    species:
-#    - Diona
-#    - Harpy
-  - !type:CharacterJobRequirement
-    jobs:
-    - CargoTechnician
+    #  - !type:CharacterSpeciesRequirement - TheDen
+    #    inverted: true
+    #    species:
+    #    - Diona
+    #    - Harpy
+    - !type:CharacterJobRequirement
+      jobs:
+        - CargoTechnician
+    - !type:CharacterItemGroupRequirement
+      - LoadoutCargoTechnicianShoes
 
 - type: loadout
   id: LoadoutClothingUniformLogisThong
@@ -42,22 +46,26 @@
   cost: 2
   exclusive: true
   items:
-  - ClothingUniformLogisThong
+    - ClothingUniformLogisThong
   requirements:
-  - !type:CharacterJobRequirement
-    jobs:
-    - CargoTechnician
+    - !type:CharacterJobRequirement
+      jobs:
+        - CargoTechnician
+    - !type:CharacterItemGroupRequirement
+      - LoadoutCargoTechnicianUniforms
 
 - type: loadout
   id: LoadoutCargoNeckCollar
   category: JobsLogisticsAUncategorized
   cost: 1
   requirements:
-  - !type:CharacterDepartmentRequirement
-    departments:
-    - Logistics
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Logistics
+    - !type:CharacterItemGroupRequirement
+      - LoadoutLogisticsNeck
   items:
-  - ClothingNeckCollarLogi
+    - ClothingNeckCollarLogi
 
 # Courier
 - type: loadout
@@ -66,11 +74,13 @@
   cost: 1
   exclusive: true
   items:
-  - ClothingHandsCourierWarmers
+    - ClothingHandsCourierWarmers
   requirements:
-  - !type:CharacterJobRequirement
-    jobs:
-    - MailCarrier
+    - !type:CharacterJobRequirement
+      jobs:
+        - MailCarrier
+    - !type:CharacterItemGroupRequirement
+      - LoadoutCourierGloves
 
 - type: loadout
   id: LoadoutClothingUnderSocksCourier
@@ -78,16 +88,18 @@
   cost: 2
   exclusive: true
   items:
-  - ClothingUnderSocksCourier
+    - ClothingUnderSocksCourier
   requirements:
-#  - !type:CharacterSpeciesRequirement - TheDen
-#    inverted: true
-#    species:
-#    - Diona
-#    - Harpy
-  - !type:CharacterJobRequirement
-    jobs:
-    - MailCarrier
+    #  - !type:CharacterSpeciesRequirement - TheDen
+    #    inverted: true
+    #    species:
+    #    - Diona
+    #    - Harpy
+    - !type:CharacterJobRequirement
+      jobs:
+        - MailCarrier
+    - !type:CharacterItemGroupRequirement
+      - LoadoutCourierShoes
 
 - type: loadout
   id: LoadoutClothingUniformCourierThong
@@ -95,8 +107,10 @@
   cost: 1
   exclusive: true
   items:
-  - ClothingUniformCourierThong
+    - ClothingUniformCourierThong
   requirements:
-  - !type:CharacterJobRequirement
-    jobs:
-    - MailCarrier
+    - !type:CharacterJobRequirement
+      jobs:
+        - MailCarrier
+    - !type:CharacterItemGroupRequirement
+      - LoadoutCourierUniforms

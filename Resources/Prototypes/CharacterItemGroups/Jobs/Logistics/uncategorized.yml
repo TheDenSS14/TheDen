@@ -45,20 +45,21 @@
   id: LoadoutLogisticsHead
   maxItems: 1
   items:
-      - type: loadout
-        id: LoadoutClothingHeadHatBeretLogi
+    - type: loadout
+      id: LoadoutClothingHeadHatBeretLogi
 
 #- type: characterItemGroup
 #  id: LoadoutLogisticsId
 #  maxItems: 1
 #  items:
-#
-#- type: characterItemGroup
-#  id: LoadoutLogisticsNeck
-#  maxItems: 1
-#  items:
-#
-#- type: characterItemGroup
+
+- type: characterItemGroup
+  id: LoadoutLogisticsNeck
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutCargoNeckCollar
+
 #  id: LoadoutLogisticsMask
 #  maxItems: 1
 #  items:

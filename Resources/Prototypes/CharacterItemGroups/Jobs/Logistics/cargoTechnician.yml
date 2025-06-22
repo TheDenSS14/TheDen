@@ -29,12 +29,14 @@
 #  id: LoadoutCargoTechnicianEyes
 #  maxItems: 1
 #  items:
-#
-#- type: characterItemGroup
-#  id: LoadoutCargoTechnicianGloves
-#  maxItems: 1
-#  items:
-#
+
+- type: characterItemGroup
+  id: LoadoutCargoTechnicianGloves
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutClothingHandsLogisWarmers
+
 #- type: characterItemGroup
 #  id: LoadoutCargoTechnicianHead
 #  maxItems: 1
@@ -72,6 +74,8 @@
       id: LoadoutCargoShoesBootsWinterCargo
     - type: loadout
       id: LoadoutCargoTechnicianBootsSteel
+    - type: loadout
+      id: LoadoutClothingUnderSocksLogis
 
 - type: characterItemGroup
   id: LoadoutCargoTechnicianUniforms
@@ -85,3 +89,5 @@
       id: LoadoutCargoTechnicianUniformSkirtLight
     - type: loadout
       id: LoadoutCargoTechnicianUniformSkirtDark
+    - type: loadout
+      id: LoadoutClothingUniformLogisThong
