@@ -16,6 +16,8 @@
   - !type:CharacterJobRequirement
     jobs:
     - ChiefEngineer
+  - !type:CharacterItemGroupRequirement
+      group: LoadoutChiefEngineerGloves
 
 - type: loadout
   id: LoadoutClothingUnderSocksChiefEngi
@@ -30,6 +32,8 @@
 #    species:
 #    - Diona
 #    - Harpy
+  - !type:CharacterItemGroupRequirement
+      group: LoadoutChiefEngineerShoes
   - !type:CharacterJobRequirement
     jobs:
     - ChiefEngineer
@@ -45,3 +49,5 @@
   - !type:CharacterJobRequirement
     jobs:
     - ChiefEngineer
+  - !type:CharacterItemGroupRequirement
+      group: LoadoutChiefEngineerUniforms

@@ -97,10 +97,12 @@
 #  maxItems: 1
 #  items:
 
-#- type: characterItemGroup
-#  id: LoadoutChiefEngineerGloves
-#  maxItems: 1
-#  items:
+- type: characterItemGroup
+  id: LoadoutChiefEngineerGloves
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutClothingHandsChiefEngiWarmers
 
 #- type: characterItemGroup
 #  id: LoadoutChiefEngineerHead
@@ -143,6 +145,8 @@
   items:
     - type: loadout
       id: LoadoutChiefEngineerShoesBootsWinter
+    - type: loadout
+      id: LoadoutClothingUnderSocksChiefEngi
 
 - type: characterItemGroup
   id: LoadoutChiefEngineerUniforms
@@ -160,3 +164,5 @@
       id: LoadoutClothingUniformJumpsuitChiefEngineerNT
     - type: loadout
       id: LoadoutClothingUniformJumpsuitChiefEngineerCybersun
+    - type: loadout
+      id: LoadoutClothingUniformChiefEngiThong
