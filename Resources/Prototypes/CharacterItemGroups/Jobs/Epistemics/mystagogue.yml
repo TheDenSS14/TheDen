@@ -46,11 +46,13 @@
     - type: loadout
       id: LoadoutMystagogueEyesEpiGlasses
 
-#- type: characterItemGroup
-#  id: LoadoutMystagogueGloves
-#  maxItems: 1
-#  items:
-#
+- type: characterItemGroup
+  id: LoadoutMystagogueGloves
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutClothingHandsEpiHeadWarmers
+
 - type: characterItemGroup
   id: LoadoutMystagogueHead
   maxItems: 1
@@ -100,6 +102,8 @@
   items:
     - type: loadout
       id: LoadoutCommandRDShoesBootsWinter
+    - type: loadout
+      id: LoadoutClothingUnderSocksEpiHead
 
 - type: characterItemGroup
   id: LoadoutMystagogueUniforms
@@ -109,3 +113,5 @@
       id: LoadoutMystagogueUniformJumpsuit
     - type: loadout
       id: LoadoutMystagogueUniformJumpskirt
+    - type: loadout
+      id: LoadoutClothingUniformEpiHeadThong
