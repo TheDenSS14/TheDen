@@ -1,4 +1,45 @@
-
+// SPDX-FileCopyrightText: 2021 20kdc
+// SPDX-FileCopyrightText: 2021 Acruid
+// SPDX-FileCopyrightText: 2021 Javier Guardia Fernández
+// SPDX-FileCopyrightText: 2022 Vordenburg
+// SPDX-FileCopyrightText: 2022 corentt
+// SPDX-FileCopyrightText: 2022 metalgearsloth
+// SPDX-FileCopyrightText: 2022 mirrorcult
+// SPDX-FileCopyrightText: 2022 wrexbe
+// SPDX-FileCopyrightText: 2023 Adrian16199
+// SPDX-FileCopyrightText: 2023 Carolyn3114
+// SPDX-FileCopyrightText: 2023 Colin-Tel
+// SPDX-FileCopyrightText: 2023 DrSmugleaf
+// SPDX-FileCopyrightText: 2023 Kara
+// SPDX-FileCopyrightText: 2023 Moony
+// SPDX-FileCopyrightText: 2023 Nemanja
+// SPDX-FileCopyrightText: 2023 TemporalOroboros
+// SPDX-FileCopyrightText: 2023 Ubaser
+// SPDX-FileCopyrightText: 2023 Visne
+// SPDX-FileCopyrightText: 2023 Ygg01
+// SPDX-FileCopyrightText: 2024 778b
+// SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT
+// SPDX-FileCopyrightText: 2024 Ed
+// SPDX-FileCopyrightText: 2024 Pieter-Jan Briers
+// SPDX-FileCopyrightText: 2024 Rainfey
+// SPDX-FileCopyrightText: 2024 SimpleStation14
+// SPDX-FileCopyrightText: 2024 Tayrtahn
+// SPDX-FileCopyrightText: 2024 UnicornOnLSD
+// SPDX-FileCopyrightText: 2024 Velcroboy
+// SPDX-FileCopyrightText: 2025 Eris
+// SPDX-FileCopyrightText: 2025 Falcon
+// SPDX-FileCopyrightText: 2025 Ichaie
+// SPDX-FileCopyrightText: 2025 Jonathan
+// SPDX-FileCopyrightText: 2025 LaCumbiaDelCoronavirus
+// SPDX-FileCopyrightText: 2025 Leon Friedrich
+// SPDX-FileCopyrightText: 2025 MajorMoth
+// SPDX-FileCopyrightText: 2025 Plyush
+// SPDX-FileCopyrightText: 2025 Spanky
+// SPDX-FileCopyrightText: 2025 This_Is_Gray
+// SPDX-FileCopyrightText: 2025 VMSolidus
+// SPDX-FileCopyrightText: 2025 astriloqua
+// SPDX-FileCopyrightText: 2025 marc-pelletier
+// SPDX-FileCopyrightText: 2025 sleepyyapril
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
