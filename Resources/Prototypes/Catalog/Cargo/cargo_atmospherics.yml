@@ -124,3 +124,14 @@
 #  cost: 15500
 #  category: cargoproduct-category-name-atmospherics
 #  group: market
+
+# HFR
+- type: cargoProduct
+  id: AtmosphericsHFRCrate
+  icon:
+    sprite: _Funkystation/Structures/Machines/HFR/hfrcore.rsi
+    state: off
+  product: CrateEngineeringHFR
+  cost: 4000
+  category: cargoproduct-category-name-atmospherics
+  group: market
