@@ -1,0 +1,12 @@
+- type: entity
+  abstract: true
+  parent: ClothingShoesBaseButcherable
+  id: ClothingShoesBaseSocks
+  components:
+  - type: Clothing
+    renderLayer: jumpsuit
+  - type: HideLayerClothing
+    force: true
+    slots:
+    - LFoot
+    - RFoot
