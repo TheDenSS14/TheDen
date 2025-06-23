@@ -6414,3 +6414,71 @@ Entries:
   id: 606
   time: '2025-06-22T02:52:09.0000000+00:00'
   url: https://github.com/TheDenSS14/TheDen/pull/857
+- author: MajorMoth
+  changes:
+    - type: Add
+      message: Guidebook entries for the new gases have been ported from funky.
+    - type: Add
+      message: >-
+        The Hypertorus Fusion Reactor has been ported from funky, a late-round,
+        high-stakes atmos department project.
+    - type: Add
+      message: >-
+        Ported the crystallizer and atmos crystals from funky. It allows you to
+        solidify gases into useful crystals.
+    - type: Add
+      message: >-
+        Bluespace gas transportation has been ported from funky. It allows for
+        pipeless transfer of gases, normalizing their temperature in the
+        process. No more hauling 47 cans of gas back and forth. 
+    - type: Tweak
+      message: >-
+        Electrolyzers now produce at a higher rate but with a much higher power
+        draw.
+    - type: Fix
+      message: Fixed zauker poisoning code
+    - type: Add
+      message: >-
+        Thermomachines now have 4 tiers, and are capable of much greater heating
+        and cooling. They are spread across new researches now, with the basic
+        thermomachine board moved to roundstart recipes in the imprinter. 
+    - type: Add
+      message: >-
+        Atmospherics Exotech, a new unlockable research, has been added.
+        Hellfire freezers have been moved to it.
+    - type: Tweak
+      message: >-
+        Hyper-Noblium's maximum production temperature has been lowered from 24K
+        to 15K.
+  id: 607
+  time: '2025-06-22T02:57:19.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/850
+- author: Fox
+  changes:
+    - type: Fix
+      message: (GRAVEL) Various fixes and additions
+  id: 608
+  time: '2025-06-22T03:22:52.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/875
+- author: Monotheonist
+  changes:
+    - type: Add
+      message: >-
+        (ARENA) Arena has been overhauled. Enjoy a newer Security, Medical, and
+        Service area, and bigger dorms.
+    - type: Fix
+      message: (ARENA) Added an AI job slot.
+    - type: Tweak
+      message: >-
+        (TORTUGA, ASTERISK) Creatures have migrated inside the vents to other
+        places
+  id: 609
+  time: '2025-06-22T17:57:24.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/879
+- author: Monotheonist
+  changes:
+    - type: Tweak
+      message: (SHOKO) Gave Shoukou's AI sat turrets and comms consoles.
+  id: 610
+  time: '2025-06-22T18:57:30.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/851
