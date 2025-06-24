@@ -17,6 +17,9 @@
   abstract: true
   suffix: Full
   components:
+  - type: Tag
+    tags:
+    - DrinkBottle
   - type: Openable
     sound:
       collection: bottleOpenSounds #Could use a new sound someday ¯\_(ツ)_/¯
