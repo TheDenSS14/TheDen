@@ -38,7 +38,7 @@ public sealed class HFRConsoleSystem : EntitySystem
         SubscribeLocalEvent<HFRConsoleComponent, HFRConsoleSetFuelInputRateMessage>(OnSetFuelInputRateMessage);
         SubscribeLocalEvent<HFRConsoleComponent, HFRConsoleSetModeratorInputRateMessage>(OnSetModeratorInputRateMessage);
         SubscribeLocalEvent<HFRConsoleComponent, HFRConsoleSelectRecipeMessage>(OnSelectRecipeMessage);
-        SubscribeLocalEvent<HFRConsoleComponent, ComponentStartup>(OnConsoleStartup);
+        SubscribeLocalEvent<HFRConsoleComponent, MapInitEvent>(OnConsoleStartup);
         SubscribeLocalEvent<HFRConsoleComponent, AnchorStateChangedEvent>(OnConsoleAnchorChanged);
         SubscribeLocalEvent<HFRConsoleComponent, HFRConsoleToggleWasteRemoveMessage>(OnToggleWasteRemoveMessage);
         SubscribeLocalEvent<HFRConsoleComponent, HFRConsoleSetHeatingConductorMessage>(OnSetHeatingConductorMessage);
@@ -55,7 +55,7 @@ public sealed class HFRConsoleSystem : EntitySystem
         DirtyUI(ent, ent.Comp);
     }
 
-    private void OnConsoleStartup(EntityUid uid, HFRConsoleComponent console, ComponentStartup args)
+    private void OnConsoleStartup(EntityUid uid, HFRConsoleComponent console, MapInitEvent args)
     {
         SetPowerState(uid, console);
     }
@@ -88,7 +88,7 @@ public sealed class HFRConsoleSystem : EntitySystem
             return;
 
         bool shouldBePowered = false;
-        if (console.CoreUid != null && 
+        if (console.CoreUid != null &&
             EntityManager.EntityExists(console.CoreUid.Value) &&
             TryComp<HFRCoreComponent>(console.CoreUid.Value, out var coreComp))
         {
@@ -332,7 +332,7 @@ public sealed class HFRConsoleSystem : EntitySystem
             {
                 coolantMoles = corePipe.Air.TotalMoles;
                 coolantTemperature = corePipe.Air.Temperature;
-                coolantTemperatureArchived = coolantTemperature; 
+                coolantTemperatureArchived = coolantTemperature;
             }
 
             // Calculate output moles and temperature from HFRWasteOutput pipe
@@ -342,7 +342,7 @@ public sealed class HFRConsoleSystem : EntitySystem
             {
                 outputMoles = wastePipe.Air.TotalMoles;
                 outputTemperature = wastePipe.Air.Temperature;
-                outputTemperatureArchived = outputTemperature; 
+                outputTemperatureArchived = outputTemperature;
             }
         }
 
