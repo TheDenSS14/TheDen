@@ -1,0 +1,188 @@
+- type: entity
+  abstract: true
+  parent: BaseItem
+  id: BaseGamblingChip
+  components:
+    - type: Sprite
+      sprite: Objects/Misc/chips.rsi
+    - type: Tag
+      tags:
+        -
+    - type: Item
+      size: Tiny
+
+# Chip Chest
+- type: entity
+  parent: BaseGamblingChip
+  id: GamblingChipRed
+  name: red chips
+  description: Chips! Meant for gambling! Worth 5 each.
+  components:
+    - type: Sprite
+      state: Objects/Misc/chip_chest.rsi
+      layers:
+        - state: chip_stack_red_5
+          map: ["base"]
+    - type: Appearance
+      count: 5
+
+# Chips
+- type: entity
+  parent: BaseGamblingChip
+  id: GamblingChipRed
+  name: red chips
+  description: Chips! Meant for gambling! Worth 5 each.
+  components:
+    - type: Sprite
+      state: Objects/Misc/chips.rsi
+      layers:
+        - state: chip_stack_red_5
+          map: ["base"]
+    - type: Appearance
+    - type: Stack
+      stackType: GamblingChipRed
+      baseLayer: base
+      layerStates:
+        - chip_stack_red
+        - chip_stack_red_2
+        - chip_stack_red_3
+        - chip_stack_red_4
+        - chip_stack_red_5
+      count: 5
+
+- type: entity
+  parent: GamblingChipRed1
+  suffix: 1
+  components:
+    - type: Sprite
+      state: chip_stack_red
+    - type: Stack
+      count: 1
+
+- type: entity
+  parent: BaseGamblingChip
+  id: GamblingChipBlue
+  name: blue chips
+  description: Chips! Meant for gambling! Worth 10 each.
+  components:
+    - type: Sprite
+      state: Objects/Misc/chips.rsi
+      layers:
+        - state: chip_stack_blue_5
+          map: ["base"]
+    - type: Appearance
+    - type: Stack
+      stackType: GamblingChipBlue
+      baseLayer: base
+      layerStates:
+        - chip_stack_blue
+        - chip_stack_blue_2
+        - chip_stack_blue_3
+        - chip_stack_blue_4
+        - chip_stack_blue_5
+      count: 5
+
+- type: entity
+  parent: GamblingChipBlue1
+  suffix: 1
+  components:
+    - type: Sprite
+      state: chip_stack_blue
+    - type: Stack
+      count: 1
+
+- type: entity
+  parent: BaseGamblingChip
+  id: GamblingChipGreen
+  name: green chips
+  description: Chips! Meant for gambling! Worth 25 each.
+  components:
+    - type: Sprite
+      state: Objects/Misc/chips.rsi
+      layers:
+        - state: chip_stack_green_5
+          map: ["base"]
+    - type: Appearance
+    - type: Stack
+      stackType: GamblingChipGreen
+      baseLayer: base
+      layerStates:
+        - chip_stack_green
+        - chip_stack_green_2
+        - chip_stack_green_3
+        - chip_stack_green_4
+        - chip_stack_green_5
+      count: 5
+
+- type: entity
+  parent: GamblingChipGreen1
+  suffix: 1
+  components:
+    - type: Sprite
+      state: chip_stack_green
+    - type: Stack
+      count: 1
+
+- type: entity
+  parent: BaseGamblingChip
+  id: GamblingChipYellow
+  name: yellow chips
+  description: Chips! Meant for gambling! Worth 50 each.
+  components:
+    - type: Sprite
+      state: Objects/Misc/chips.rsi
+      layers:
+        - state: chip_stack_yellow_5
+          map: ["base"]
+    - type: Appearance
+    - type: Stack
+      stackType: GamblingChipYellow
+      baseLayer: base
+      layerStates:
+        - chip_stack_yellow
+        - chip_stack_yellow_2
+        - chip_stack_yellow_3
+        - chip_stack_yellow_4
+        - chip_stack_yellow_5
+      count: 5
+
+- type: entity
+  parent: GamblingChipYellow1
+  suffix: 1
+  components:
+    - type: Sprite
+      state: chip_stack_yellow
+    - type: Stack
+      count: 1
+
+- type: entity
+  parent: BaseGamblingChip
+  id: GamblingChipBlack
+  name: black chips
+  description: Chips! Meant for gambling! Worth 100 each.
+  components:
+    - type: Sprite
+      state: Objects/Misc/chips.rsi
+      layers:
+        - state: chip_stack_black_5
+          map: ["base"]
+    - type: Appearance
+    - type: Stack
+      stackType: GamblingChipRed
+      baseLayer: base
+      layerStates:
+        - chip_stack_black
+        - chip_stack_black_2
+        - chip_stack_black_3
+        - chip_stack_black_4
+        - chip_stack_black_5
+      count: 5
+
+- type: entity
+  parent: GamblingChipBlack1
+  suffix: 1
+  components:
+    - type: Sprite
+      state: chip_stack_black
+    - type: Stack
+      count: 1
