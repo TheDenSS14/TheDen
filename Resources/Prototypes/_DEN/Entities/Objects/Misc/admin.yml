@@ -7,7 +7,7 @@
   parent: BoxBase
   name: admin folder
   description: A special folder for more than just paper.
-  suffix: Admin
+  categories: [ AdminTools ]
   components:
   - type: Sprite
     sprite: Objects/Misc/bureaucracy.rsi
@@ -44,7 +44,7 @@
   parent: ClothingBeltChiefEngineer
   name: admin toolbelt
   description: A magical toolbelt that is NOT a bigger chief engineer's toolbelt.
-  suffix: Admin
+  categories: [ AdminTools ]
   components:
   - type: StorageFill
     contents:
@@ -71,7 +71,7 @@
   parent: BoxCardboard
   name: admin material box
   description: A box of basic materials.
-  suffix: Admin
+  categories: [ AdminTools ]
   components:
   - type: Item
     size: Normal
@@ -95,7 +95,7 @@
   parent: RCD
   name: admin RCD
   description: An RCD with a never-ending supply of compressed matter.
-  suffix: Admin
+  categories: [ AdminTools ]
   components:
   - type: LimitedCharges
     maxCharges: 100

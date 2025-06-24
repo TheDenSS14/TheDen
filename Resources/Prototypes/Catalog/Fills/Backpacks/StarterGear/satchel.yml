@@ -270,9 +270,9 @@
       - id: RubberStampMime
 
 - type: entity
-  categories: [ HideSpawnMenu ]
   parent: ClothingBackpackSatchelHolding
   id: ClothingBackpackSatchelHoldingAdmin
+  categories: [ AdminTools ]
   components:
   - type: StorageFill
     contents:
