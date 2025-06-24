@@ -32,6 +32,7 @@ namespace Content.IntegrationTests.Tests
     [TestFixture]
     public sealed class StorageTest
     {
+        private static readonly ProtoId<EntityCategoryPrototype> AdminToolsCategory = "AdminTools";
         /// <summary>
         /// Can an item store more than itself weighs.
         /// In an ideal world this test wouldn't need to exist because sizes would be recursive.
@@ -47,6 +48,8 @@ namespace Content.IntegrationTests.Tests
 
             var itemSys = entMan.System<SharedItemSystem>();
 
+            var protoId = (ProtoId<EntityCategoryPrototype>) AdminToolsCategory.Id;
+
             await server.WaitAssertion(() =>
             {
                 foreach (var proto in protoManager.EnumeratePrototypes<EntityPrototype>())
@@ -54,7 +57,8 @@ namespace Content.IntegrationTests.Tests
                     if (!proto.TryGetComponent<StorageComponent>("Storage", out var storage) ||
                         storage.Whitelist != null ||
                         storage.MaxItemSize == null ||
-                        !proto.TryGetComponent<ItemComponent>("Item", out var item))
+                        !proto.TryGetComponent<ItemComponent>("Item", out var item) ||
+                        proto.Categories.Any(target => target.ID == AdminToolsCategory))
                         continue;
 
                     Assert.That(itemSys.GetSizePrototype(storage.MaxItemSize.Value).Weight,

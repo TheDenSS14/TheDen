@@ -20,7 +20,7 @@
     size: Small
     shape: null
   - type: Storage
-    maxItemSize: Small
+    maxItemSize: Normal
     grid:
     - 0,0,9,3
   - type: ItemMapper
@@ -46,6 +46,9 @@
   description: A magical toolbelt that is NOT a bigger chief engineer's toolbelt.
   categories: [ AdminTools ]
   components:
+  - type: Item
+    size: Small
+    shape: null
   - type: StorageFill
     contents:
       - id: ToolDebug
