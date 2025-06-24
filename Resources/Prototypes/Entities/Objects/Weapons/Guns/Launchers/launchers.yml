@@ -345,7 +345,7 @@
   name: tether gun
   parent: BaseItem
   id: WeaponTetherGunAdmin
-  suffix: Admeme
+  categories: [ AdminTools ]
   description: Manipulates gravity around objects to fling them at high velocities.
   components:
     - type: TetherGun
@@ -384,7 +384,7 @@
   name: force gun
   parent: BaseItem
   id: WeaponForceGunAdmin
-  suffix: Admeme
+  categories: [ AdminTools ]
   description: Manipulates gravity around objects to fling them at high velocities.
   components:
     - type: ForceGun
@@ -426,7 +426,7 @@
   name: meteor launcher
   parent: WeaponLauncherMultipleRocket
   id: WeaponLauncherAdmemeMeteorLarge
-  suffix: Admeme
+  categories: [ AdminTools ]
   description: It fires large meteors
   components:
   - type: BallisticAmmoProvider
@@ -439,7 +439,7 @@
   name: immovable rod launcher
   parent: WeaponLauncherAdmemeMeteorLarge
   id: WeaponLauncherAdmemeImmovableRodSlow
-  suffix: Admeme
+  categories: [ AdminTools ]
   description: It fires slow immovable rods.
   components:
   - type: BallisticAmmoProvider

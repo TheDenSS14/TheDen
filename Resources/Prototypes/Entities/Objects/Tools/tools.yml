@@ -829,7 +829,7 @@
     - Deconstruct
 
 - type: entity
-  id: RCDRecharging
+  id: RCDRecharging # borg tool
   parent: RCD
   name: experimental RCD
   description: A bluespace-enhanced rapid construction device that passively generates its own compressed matter.
@@ -842,17 +842,7 @@
     rechargeDuration: 10
 
 - type: entity
-  id: RCDExperimental
-  parent: RCD
-  suffix: Admeme
-  name: experimental RCD
-  description: A bluespace-enhanced rapid construction device that passively generates its own compressed matter.
-  components:
-  - type: AutoRecharge
-    rechargeDuration: 1
-
-- type: entity
-  id: RPDRecharging
+  id: RPDRecharging # borg tool
   parent: RPD
   name: experimental RPD
   description: A bluespace-enhanced rapid piping device that passively generates its own compressed matter.
@@ -863,16 +853,6 @@
     charges: 25
   - type: AutoRecharge
     rechargeDuration: 10
-
-- type: entity
-  id: RPDExperimental
-  parent: RPD
-  suffix: Admeme
-  name: experimental RPD
-  description: A bluespace-enhanced rapid piping device that passively generates its own compressed matter.
-  components:
-  - type: AutoRecharge
-    rechargeDuration: 1
 
 - type: entity
   name: compressed matter

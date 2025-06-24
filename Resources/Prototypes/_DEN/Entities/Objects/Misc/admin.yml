@@ -102,3 +102,16 @@
     charges: 100
   - type: AutoRecharge
     rechargeDuration: 0
+
+- type: entity
+  id: AdminRPD
+  parent: RPD
+  name: admin RPD
+  description: An RPD with a never-ending supply of compressed matter.
+  categories: [ AdminTools ]
+  components:
+  - type: LimitedCharges
+    maxCharges: 100
+    charges: 100
+  - type: AutoRecharge
+    rechargeDuration: 0

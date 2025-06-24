@@ -27,10 +27,10 @@
 
 - type: entity
   id: HandTeleporterAdmeme
-  suffix: Admeme
   parent: BaseItem
   name: interdimensional teleporter
   description: allows you to open stable portal gates that are not limited by distance
+  categories: [ AdminTools ]
   components:
   - type: Sprite
     sprite: /Textures/Objects/Devices/hand_teleporter.rsi
