@@ -110,6 +110,22 @@ COMMENT_STYLES = {
 }
 REPO_PATH = "."
 
+tokens = ["github_pat_", "ghp_", "gho_"]
+
+def is_token_basic(text):
+    for token in tokens:
+        if text.startswith(token):
+            return True
+        
+    return False
+
+def is_token(name):
+    email_pos = name.find("<")
+    email = name[email_pos:]
+    real_name = name[:email_pos - 2]
+
+    return is_token_basic(email) == True or is_token_basic(real_name) == True or real_name.startswith("TheDen") # lmao
+
 def run_git_command(command, cwd=REPO_PATH, check=True):
     """Runs a git command and returns its output."""
     try:
@@ -206,7 +222,7 @@ def get_authors_from_git(file_path, cwd=REPO_PATH, pr_base_sha=None, pr_head_sha
 
             # Use current year
             current_year = datetime.now(timezone.utc).year
-            if user_name and user_email and user_name.strip() != "Unknown":
+            if user_name and user_email and user_name.strip() != "Unknown" and user_name != "TheDen-Bot":
                 return {f"{user_name} <{user_email}>": (current_year, current_year)}
             else:
                 print("Warning: Could not get current user from git config or name is 'Unknown'")
@@ -252,7 +268,8 @@ def process_git_log_output(output, author_timestamps):
             continue
 
         # Add main author
-        if author_name and author_email and author_name.strip() != "Unknown":
+        has_token = is_token_basic(author_name) and is_token_basic(author_email)
+        if author_name and author_email and author_name.strip() != "Unknown" and not has_token:
             author_key = f"{author_name.strip()} <{author_email.strip()}>"
             author_timestamps[author_key].append(timestamp)
 
@@ -260,7 +277,9 @@ def process_git_log_output(output, author_timestamps):
         for match in co_author_regex.finditer(body):
             co_author_name = match.group(1).strip()
             co_author_email = match.group(2).strip()
-            if co_author_name and co_author_email and co_author_name.strip() != "Unknown":
+            has_token = is_token_basic(co_author_name) and is_token_basic(co_author_email)
+
+            if co_author_name and co_author_email and co_author_name.strip() != "Unknown" and not has_token:
                 co_author_key = f"{co_author_name} <{co_author_email}>"
                 author_timestamps[co_author_key].append(timestamp)
 
@@ -371,7 +390,8 @@ def create_header(authors, license_id, comment_style):
         # Add copyright lines
         if authors:
             for author, (_, year) in sorted(authors.items(), key=lambda x: (x[1][1], x[0])):
-                if not author.startswith("Unknown <"):
+                has_token = is_token(author)
+                if not author.startswith("Unknown <") and not has_token:
                     lines.append(f"{prefix} SPDX-FileCopyrightText: {year} {author}")
         else:
             lines.append(f"{prefix} SPDX-FileCopyrightText: Contributors to the GoobStation14 project")
@@ -389,7 +409,8 @@ def create_header(authors, license_id, comment_style):
         # Add copyright lines
         if authors:
             for author, (_, year) in sorted(authors.items(), key=lambda x: (x[1][1], x[0])):
-                if not author.startswith("Unknown <"):
+                has_token = is_token(author)
+                if not author.startswith("Unknown <") and not has_token:
                     lines.append(f"SPDX-FileCopyrightText: {year} {author}")
         else:
             lines.append(f"SPDX-FileCopyrightText: Contributors to the GoobStation14 project")
@@ -458,6 +479,27 @@ def process_file(file_path, default_license_id, pr_base_sha=None, pr_head_sha=No
     except Exception as e:
         print(f"Error getting git user: {e}")
 
+    # dirty changes, this entire script needs to be refactored!!!
+    email_removal_pattern = re.compile(r"^(.+) (<\S+@\S+>)$") # we match the name as the first capture group and the email as the 2nd
+    for author in list(git_authors.keys()):
+        match = email_removal_pattern.match(author)
+        if match:
+            author_name = match.group(1).strip()
+            git_authors[author_name] = git_authors.pop(author) # this changes the keys in git_authors and will also remove any duplicate users
+            print(f"Removed email from: {author_name}")
+        else:
+            print(f"Email removal from git_authors[{author}] failed.")
+
+    # doing the same for existing_authors
+    for author in list(existing_authors.keys()):
+        match = email_removal_pattern.match(author)
+        if match:
+            author_name = match.group(1).strip()
+            existing_authors[author_name] = existing_authors.pop(author) # this changes the keys in existing_authors and will also remove any duplicate users
+            print(f"Removed email from: {author_name}")
+        else:
+            print(f"Email removal from existing_authors[{author}] failed.")
+
     # Determine what to do based on existing header
     if existing_license:
         print(f"Updating existing header for {file_path} (License: {existing_license})")
@@ -465,7 +507,9 @@ def process_file(file_path, default_license_id, pr_base_sha=None, pr_head_sha=No
         # Combine existing and git authors
         combined_authors = existing_authors.copy()
         for author, (git_min, git_max) in git_authors.items():
-            if author.startswith("Unknown <"):
+            has_token = is_token(author)
+
+            if author.startswith("Unknown <") or has_token:
                 continue
             if author in combined_authors:
                 existing_min, existing_max = combined_authors[author]

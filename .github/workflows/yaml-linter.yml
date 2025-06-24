@@ -25,7 +25,7 @@ on:
 jobs:
   build:
     name: YAML Linter
-    if: github.actor != 'PJBot' && github.event.pull_request.draft == false && github.actor != 'DeltaV-Bot' && github.actor != 'SimpleStation14'
+    if: github.actor != 'PJBot' && github.event.pull_request.draft == false && github.actor != 'TheDen-Bot'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3.6.0

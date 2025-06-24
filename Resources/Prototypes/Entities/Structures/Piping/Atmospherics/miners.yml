@@ -1,16 +1,19 @@
-# SPDX-FileCopyrightText: 2021 Swept <sweptwastaken@protonmail.com>
-# SPDX-FileCopyrightText: 2021 Vera Aguilera Puerto <6766154+Zumorica@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2021 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2021 mirrorcult <lunarautomaton6@gmail.com>
-# SPDX-FileCopyrightText: 2022 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2022 Peptide90 <78795277+Peptide90@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2022 Rane <60792108+Elijahrane@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2023 Kara <lunarautomaton6@gmail.com>
-# SPDX-FileCopyrightText: 2023 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2023 Scribbles0 <91828755+Scribbles0@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2023 lzk <124214523+lzk228@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 degradka <69397649+degradka@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2021 Swept
+# SPDX-FileCopyrightText: 2021 Vera Aguilera Puerto
+# SPDX-FileCopyrightText: 2021 metalgearsloth
+# SPDX-FileCopyrightText: 2021 mirrorcult
+# SPDX-FileCopyrightText: 2022 Leon Friedrich
+# SPDX-FileCopyrightText: 2022 Peptide90
+# SPDX-FileCopyrightText: 2022 Rane
+# SPDX-FileCopyrightText: 2023 Kara
+# SPDX-FileCopyrightText: 2023 Nemanja
+# SPDX-FileCopyrightText: 2023 Scribbles0
+# SPDX-FileCopyrightText: 2023 lzk
+# SPDX-FileCopyrightText: 2024 degradka
+# SPDX-FileCopyrightText: 2025 LaCumbiaDelCoronavirus
+# SPDX-FileCopyrightText: 2025 MajorMoth
+# SPDX-FileCopyrightText: 2025 marc-pelletier
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: MIT
 
@@ -137,6 +140,14 @@
       spawnGas: Tritium
 
 - type: entity
+  name: frezon gas miner
+  parent: GasMinerBase
+  id: GasMinerFrezon
+  components:
+    - type: GasMiner
+      spawnGas: Frezon
+
+- type: entity
   name: water vapor gas miner
   parent: GasMinerBase
   id: GasMinerWaterVapor
@@ -165,3 +176,91 @@
   components:
     - type: GasMiner
       spawnGas: NitrousOxide
+
+- type: entity
+  name: bz gas miner
+  parent: GasMinerBase
+  id: GasMinerBZ
+  components:
+    - type: GasMiner
+      spawnGas: BZ
+
+- type: entity
+  name: healium gas miner
+  parent: GasMinerBase
+  id: GasMinerHealium
+  components:
+    - type: GasMiner
+      spawnGas: Healium
+
+- type: entity
+  name: nitrium gas miner
+  parent: GasMinerBase
+  id: GasMinerNitrium
+  components:
+    - type: GasMiner
+      spawnGas: Nitrium
+
+- type: entity
+  name: pluoxium gas miner
+  parent: GasMinerBase
+  id: GasMinerPluoxium
+  components:
+    - type: GasMiner
+      spawnGas: Pluoxium
+
+- type: entity
+  name: hydrogen gas miner
+  parent: GasMinerBase
+  id: GasMinerHydrogen
+  components:
+    - type: GasMiner
+      spawnGas: Hydrogen
+
+- type: entity
+  name: hyper-noblium gas miner
+  parent: GasMinerBase
+  id: GasMinerHyperNoblium
+  components:
+    - type: GasMiner
+      spawnGas: HyperNoblium
+
+- type: entity
+  name: proto-nitrate gas miner
+  parent: GasMinerBase
+  id: GasMinerProtoNitrate
+  components:
+    - type: GasMiner
+      spawnGas: ProtoNitrate
+
+- type: entity
+  name: zauker gas miner
+  parent: GasMinerBase
+  id: GasMinerZauker
+  components:
+    - type: GasMiner
+      spawnGas: Zauker
+
+- type: entity
+  name: halon gas miner
+  parent: GasMinerBase
+  id: GasMinerHalon
+  components:
+    - type: GasMiner
+      spawnGas: Halon
+
+- type: entity
+  name: helium gas miner
+  parent: GasMinerBase
+  id: GasMinerHelium
+  components:
+    - type: GasMiner
+      spawnGas: Helium
+
+- type: entity
+  name: anti-noblium gas miner
+  parent: GasMinerBase
+  id: GasMinerAntiNoblium
+  components:
+    - type: GasMiner
+      spawnGas: AntiNoblium

@@ -5,6 +5,7 @@
 // SPDX-FileCopyrightText: 2023 Vasilis <vasilis@pikachu.systems>
 // SPDX-FileCopyrightText: 2024 Leon Friedrich <60421075+electrojr@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2024 Sk1tch <ben.peter.smith@gmail.com>
+// SPDX-FileCopyrightText: 2024 Thomas <87614336+Aeshus@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 sleepyyapril <flyingkarii@gmail.com>
 //
@@ -145,8 +146,21 @@ public sealed partial class GuidebookWindow : FancyWindow, ILinkClickHandler
             HashSet<ProtoId<GuideEntryPrototype>> entries = new(_entries.Keys);
             foreach (var entry in _entries.Values)
             {
+                if (entry.Children.Count > 0)
+                {
+                    var sortedChildren = entry.Children
+                        .Select(childId => _entries[childId])
+                        .OrderBy(childEntry => childEntry.Priority)
+                        .ThenBy(childEntry => Loc.GetString(childEntry.Name))
+                        .Select(childEntry => new ProtoId<GuideEntryPrototype>(childEntry.Id))
+                        .ToList();
+
+                    entry.Children = sortedChildren;
+                }
+
                 entries.ExceptWith(entry.Children);
             }
+
             rootEntries = entries.ToList();
         }
 
