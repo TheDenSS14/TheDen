@@ -1,8 +1,16 @@
+# SPDX-FileCopyrightText: 2025 Blitz <73762869+BlitzTheSquishy@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Rosycup <178287475+Rosycup@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Tabitha <64847293+KyuPolaris@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Tirochora <leotabletdb@gmail.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 - type: marking
   id: FurredLeftArm
   bodyPart: LArm
   markingCategory: LeftArm
-  speciesRestriction: [Human, Canid]
+  speciesRestriction: [Human, Canid, Kitsune]
   sprites:
   - sprite: _DEN/Mobs/Customization/Body/kemonomimi-limbs.rsi
     state: furred_l_arm
@@ -11,7 +19,7 @@
   id: FurredRightArm
   bodyPart: RArm
   markingCategory: RightArm
-  speciesRestriction: [Human, Canid]
+  speciesRestriction: [Human, Canid, Kitsune]
   sprites:
   - sprite: _DEN/Mobs/Customization/Body/kemonomimi-limbs.rsi
     state: furred_r_arm
@@ -20,7 +28,7 @@
   id: FurredLeftLeg
   bodyPart: LLeg
   markingCategory: LeftLeg
-  speciesRestriction: [Human, Canid]
+  speciesRestriction: [Human, Canid, Kitsune]
   sprites:
   - sprite: _DEN/Mobs/Customization/Body/kemonomimi-limbs.rsi
     state: furred_l_leg
@@ -29,7 +37,7 @@
   id: FurredRightLeg
   bodyPart: RLeg
   markingCategory: RightLeg
-  speciesRestriction: [Human, Canid]
+  speciesRestriction: [Human, Canid, Kitsune]
   sprites:
   - sprite: _DEN/Mobs/Customization/Body/kemonomimi-limbs.rsi
     state: furred_r_leg
@@ -38,7 +46,7 @@
   id: FurredLeftFoot
   bodyPart: LFoot
   markingCategory: LeftFoot
-  speciesRestriction: [Human, Canid]
+  speciesRestriction: [Human, Canid, Kitsune]
   sprites:
   - sprite: _DEN/Mobs/Customization/Body/kemonomimi-limbs.rsi
     state: furred_l_foot
@@ -47,7 +55,7 @@
   id: FurredRightFoot
   bodyPart: RFoot
   markingCategory: RightFoot
-  speciesRestriction: [Human, Canid]
+  speciesRestriction: [Human, Canid, Kitsune]
   sprites:
   - sprite: _DEN/Mobs/Customization/Body/kemonomimi-limbs.rsi
     state: furred_r_foot
@@ -56,7 +64,7 @@
   id: FurredLeftHand
   bodyPart: LHand
   markingCategory: LeftHand
-  speciesRestriction: [Human, Canid]
+  speciesRestriction: [Human, Canid, Kitsune]
   sprites:
   - sprite: _DEN/Mobs/Customization/Body/kemonomimi-limbs.rsi
     state: furred_l_hand
@@ -65,7 +73,7 @@
   id: FurredRightHand
   bodyPart: RHand
   markingCategory: RightHand
-  speciesRestriction: [Human, Canid]
+  speciesRestriction: [Human, Canid, Kitsune]
   sprites:
   - sprite: _DEN/Mobs/Customization/Body/kemonomimi-limbs.rsi
     state: furred_r_hand
@@ -74,7 +82,7 @@
   id: FurredTorsoFemale
   bodyPart: Chest
   markingCategory: Chest
-  speciesRestriction: [Human, Canid]
+  speciesRestriction: [Human, Canid, Kitsune]
   sexRestriction: [Female]
   sprites:
   - sprite: _DEN/Mobs/Customization/Body/kemonomimi-limbs.rsi
@@ -84,7 +92,7 @@
   id: FurredTorsoMale
   bodyPart: Chest
   markingCategory: Chest
-  speciesRestriction: [Human, Canid]
+  speciesRestriction: [Human, Canid, Kitsune]
   sexRestriction: [Male]
   sprites:
   - sprite: _DEN/Mobs/Customization/Body/kemonomimi-limbs.rsi

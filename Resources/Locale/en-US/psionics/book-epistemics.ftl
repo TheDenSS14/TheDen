@@ -1,3 +1,9 @@
+# SPDX-FileCopyrightText: 2023 Fluffiest Floofers <thebluewulf@gmail.com>
+# SPDX-FileCopyrightText: 2024 VMSolidus <evilexecutive@gmail.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 book-text-epistemics1 = THE EFFECTS OF HIGH GLIMMER LEVELS
 
       On a shift I served on one of our backwater stations, we had an eccentric mystagogue as our only command member.

@@ -1,3 +1,48 @@
+# SPDX-FileCopyrightText: 2019 Swept <49448379+SweptWasTaken@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2020 AJCM-git <60196617+AJCM-git@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2020 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2020 Hugo Laloge <hugo.laloge@gmail.com>
+# SPDX-FileCopyrightText: 2020 Moses <StrawberryMoses@gmail.com>
+# SPDX-FileCopyrightText: 2020 Paul Ritter <ritter.paul1@googlemail.com>
+# SPDX-FileCopyrightText: 2020 SoulSloth <67545203+SoulSloth@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2020 Víctor Aguilera Puerto <6766154+Zumorica@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2020 Ygg01 <daniel.fath7@gmail.com>
+# SPDX-FileCopyrightText: 2020 nuke <47336974+nuke-makes-games@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2020 py01 <pyronetics01@gmail.com>
+# SPDX-FileCopyrightText: 2021 Galactic Chimp <GalacticChimpanzee@gmail.com>
+# SPDX-FileCopyrightText: 2021 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2021 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
+# SPDX-FileCopyrightText: 2021 StStevens <StStevens@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2021 Swept <sweptwastaken@protonmail.com>
+# SPDX-FileCopyrightText: 2021 Vera Aguilera Puerto <6766154+Zumorica@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2021 Ygg01 <y.laughing.man.y@gmail.com>
+# SPDX-FileCopyrightText: 2021 mirrorcult <notzombiedude@gmail.com>
+# SPDX-FileCopyrightText: 2021 py01 <60152240+collinlunn@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 ModeratelyAware <84935671+ModeratelyAware@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 Vera Aguilera Puerto <gradientvera@outlook.com>
+# SPDX-FileCopyrightText: 2022 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 metalgearsloth <comedian_vs_clown@hotmail.com>
+# SPDX-FileCopyrightText: 2022 metalgearsloth <metalgearsloth@gmail.com>
+# SPDX-FileCopyrightText: 2022 mirrorcult <lunarautomaton6@gmail.com>
+# SPDX-FileCopyrightText: 2023 I.K <45953835+notquitehadouken@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Slava0135 <40753025+Slava0135@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 TemporalOroboros <TemporalOroboros@gmail.com>
+# SPDX-FileCopyrightText: 2023 deltanedas <39013340+deltanedas@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 lzk <124214523+lzk228@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 notquitehadouken <1isthisameme>
+# SPDX-FileCopyrightText: 2024 AJCM-git <60196617+ajcm-git@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT <77995199+DEATHB4DEFEAT@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Debug <49997488+DebugOk@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 OldDanceJacket <98985560+OldDanceJacket@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Skubman <ba.fallaria@gmail.com>
+# SPDX-FileCopyrightText: 2024 Verm <32827189+Vermidia@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 dge21 <129136517+dge21@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 sleepyyapril <flyingkarii@gmail.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 - type: entity
   name: fire extinguisher
   parent: BaseItem
@@ -7,8 +52,8 @@
   - type: Sprite
     sprite: Objects/Misc/fire_extinguisher.rsi
     layers:
-        - state: fire_extinguisher_closed
-          map: [ "enabled" ]
+    - state: fire_extinguisher_closed
+      map: [ "enum.ToggleVisuals.Layer" ]
   - type: Item
     sprite: Objects/Misc/fire_extinguisher.rsi
     size: Normal
@@ -24,6 +69,8 @@
   - type: DrainableSolution
     solution: spray
   - type: SolutionTransfer
+    maxTransferAmount: 100
+    transferAmount: 100
   - type: UseDelay
   - type: Spray
     transferAmount: 10
@@ -34,8 +81,20 @@
     vaporAmount: 3
     vaporSpread: 90
     sprayVelocity: 2.0
-  - type: FireExtinguisher
-    hasSafety: true
+  - type: ItemToggle
+    soundActivate:
+      path: /Audio/Machines/button.ogg
+      params:
+        variation: 0.125
+        volume: -4
+    soundDeactivate:
+      path: /Audio/Machines/button.ogg
+      params:
+        variation: 0.125
+        volume: -4
+  - type: ToggleVerb
+    text: fire-extinguisher-component-verb-text
+  - type: SpraySafety
   - type: MeleeWeapon
     wideAnimationRotation: 180
     attackRate: 1.25
@@ -55,14 +114,14 @@
   - type: Tool
     qualities:
     - Rolling
-    speedModifier: 0.5 # its very big, akward to use
+    speedModifier: 0.5 # its very big, awkward to use
   - type: Appearance
   - type: GenericVisualizer
     visuals:
-      enum.FireExtinguisherVisuals.Safety:
-        enabled:
-          True: { state: fire_extinguisher_closed }
-          False: { state: fire_extinguisher_open }
+      enum.ToggleVisuals.Toggled:
+        enum.ToggleVisuals.Layer:
+          True: { state: fire_extinguisher_open }
+          False: { state: fire_extinguisher_closed }
   - type: PhysicalComposition
     materialComposition:
       Steel: 100
@@ -84,3 +143,36 @@
   - type: VaporVisuals
     animationTime: 0.8
     animationState: extinguish
+
+- type: entity
+  name: pocket fire extinguisher
+  parent: FireExtinguisher
+  id: FireExtinguisherMini
+  description: A light and compact fibreglass-framed model fire extinguisher. It holds less water then its bigger brother.
+  components:
+  - type: Sprite
+    sprite: Objects/Misc/fire_extinguisher_mini.rsi
+    layers:
+        - state: fire_extinguisher_closed
+          map: [ "enabled" ]
+  - type: Item
+    sprite: Objects/Misc/fire_extinguisher_mini.rsi
+    size: Small
+  - type: SolutionContainerManager
+    solutions:
+      spray:
+        maxVol: 30
+        reagents:
+        - ReagentId: Water
+          Quantity: 30
+  - type: MeleeWeapon
+    wideAnimationRotation: 180
+    damage:
+      types:
+        Blunt: 3 #completely ineffective; your fists are better
+    soundHit:
+      path: /Audio/Effects/weak_hit1.ogg
+  - type: PhysicalComposition
+    materialComposition:
+      Steel: 50
+      Glass: 40

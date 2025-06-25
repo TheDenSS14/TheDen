@@ -1,3 +1,10 @@
+# SPDX-FileCopyrightText: 2024 gluesniffler <159397573+gluesniffler@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Blitz <73762869+BlitzTheSquishy@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 VMSolidus <evilexecutive@gmail.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 ent-ClothingOuterHardsuitBasic = basic vacsuit
     .desc = A common, colonial-era vacsuit of indeterminate make and model. It's strictly better than nothing, but not by much.
 ent-ClothingOuterHardsuitAtmos = "Fotia" hardsuit

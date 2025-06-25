@@ -1,4 +1,9 @@
-﻿using System.Threading.Tasks;
+// SPDX-FileCopyrightText: 2024 Simon <63975668+Simyon264@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
+using System.Threading.Tasks;
 using Content.Server.Database;
 using Content.Shared.Players.PlayTimeTracking;
 using Robust.Shared.Network;

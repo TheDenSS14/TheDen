@@ -1,4 +1,19 @@
-﻿using System;
+// SPDX-FileCopyrightText: 2022 Paul Ritter <ritter.paul1@googlemail.com>
+// SPDX-FileCopyrightText: 2022 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
+// SPDX-FileCopyrightText: 2022 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 TemporalOroboros <TemporalOroboros@gmail.com>
+// SPDX-FileCopyrightText: 2023 Visne <39844191+Visne@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Falcon <falcon@zigtag.dev>
+// SPDX-FileCopyrightText: 2025 LaCumbiaDelCoronavirus <90893484+LaCumbiaDelCoronavirus@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 MajorMoth <thepolandbear@gmail.com>
+// SPDX-FileCopyrightText: 2025 marc-pelletier <113944176+marc-pelletier@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 sleepyyapril <flyingkarii@gmail.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -6,12 +21,13 @@ using BenchmarkDotNet.Attributes;
 using Content.IntegrationTests;
 using Content.IntegrationTests.Pair;
 using Content.Server.Maps;
-using Robust.Server.GameObjects;
 using Robust.Shared;
 using Robust.Shared.Analyzers;
+using Robust.Shared.EntitySerialization.Systems;
 using Robust.Shared.GameObjects;
 using Robust.Shared.Map;
 using Robust.Shared.Prototypes;
+using Robust.Shared.Utility;
 
 namespace Content.Benchmarks;
 
@@ -20,13 +36,13 @@ public class MapLoadBenchmark
 {
     private TestPair _pair = default!;
     private MapLoaderSystem _mapLoader = default!;
-    private IMapManager _mapManager = default!;
+    private SharedMapSystem _mapSys = default!;
 
     [GlobalSetup]
     public void Setup()
     {
         ProgramShared.PathOffset = "../../../../";
-        PoolManager.Startup(null);
+        PoolManager.Startup();
 
         _pair = PoolManager.GetServerClient().GetAwaiter().GetResult();
         var server = _pair.Server;
@@ -36,7 +52,7 @@ public class MapLoadBenchmark
             .ToDictionary(x => x.ID, x => x.MapPath.ToString());
 
         _mapLoader = server.ResolveDependency<IEntitySystemManager>().GetEntitySystem<MapLoaderSystem>();
-        _mapManager = server.ResolveDependency<IMapManager>();
+        _mapSys = server.ResolveDependency<IEntitySystemManager>().GetEntitySystem<SharedMapSystem>();
     }
 
     [GlobalCleanup]
@@ -46,23 +62,25 @@ public class MapLoadBenchmark
         PoolManager.Shutdown();
     }
 
-    public static readonly string[] MapsSource = { "Empty", "Box", "Aspid", "Bagel", "Dev", "CentComm", "Atlas", "Core", "TestTeg", "Saltern", "Packed", "Omega", "Cluster", "Gemini", "Reach", "Origin", "Meta", "Marathon", "Europa", "MeteorArena", "Fland", "Barratry" };
+    public static readonly string[] MapsSource = { "Empty", "Box", "Aspid", "Bagel", "Dev", "CentComm", "Atlas", "Core", "TestTeg", "Saltern", "TestHFR", "Packed", "Omega", "Cluster", "Gemini", "Reach", "Origin", "Meta", "Marathon", "Europa", "MeteorArena", "Fland", "Barratry" };
 
     [ParamsSource(nameof(MapsSource))]
     public string Map;
 
     public Dictionary<string, string> Paths;
+    private MapId _mapId;
 
     [Benchmark]
     public async Task LoadMap()
     {
-        var mapPath = Paths[Map];
+        var mapPath = new ResPath(Paths[Map]);
         var server = _pair.Server;
         await server.WaitPost(() =>
         {
-            var success = _mapLoader.TryLoad(new MapId(10), mapPath, out _);
+            var success = _mapLoader.TryLoadMap(mapPath, out var map, out _);
             if (!success)
                 throw new Exception("Map load failed");
+            _mapId = map.Value.Comp.MapId;
         });
     }
 
@@ -70,9 +88,7 @@ public class MapLoadBenchmark
     public void IterationCleanup()
     {
         var server = _pair.Server;
-        server.WaitPost(() =>
-        {
-            _mapManager.DeleteMap(new MapId(10));
-        }).Wait();
+        server.WaitPost(() => _mapSys.DeleteMap(_mapId))
+            .Wait();
     }
 }

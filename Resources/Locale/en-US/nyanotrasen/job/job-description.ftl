@@ -1,3 +1,9 @@
+# SPDX-FileCopyrightText: 2023 Bakke <luringens@protonmail.com>
+# SPDX-FileCopyrightText: 2023 Fluffiest Floofers <thebluewulf@gmail.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: MIT
+
 job-description-gladiator = Put on a combat spectacle for the crew. Fight for your freedom, glory, and honor. Currently available on Arena.
 job-description-guard = Keep track of prisoners and make sure they have their basic needs.
 job-description-mail-carrier = Deliver mail and other packages from and to logistics. Avoid dogs.

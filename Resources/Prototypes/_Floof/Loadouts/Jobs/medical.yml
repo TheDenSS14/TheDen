@@ -1,3 +1,13 @@
+# SPDX-FileCopyrightText: 2024 fox <daytimer253@gmail.com>
+# SPDX-FileCopyrightText: 2024 sleepyyapril <***>
+# SPDX-FileCopyrightText: 2024 sleepyyapril <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>
+# SPDX-FileCopyrightText: 2025 Blitz <73762869+BlitzTheSquishy@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 BlitzTheSquishy <73762869+BlitzTheSquishy@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Rosycup <178287475+Rosycup@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 # General medical
 - type: loadout
   id: LoadoutClothingHandsMedicWarmers
@@ -10,6 +20,11 @@
   - !type:CharacterDepartmentRequirement
     departments:
     - Medical
+  - !type:CharacterJobRequirement
+    jobs:
+    - Chemist
+    - Paramedic
+    - ChiefMedicalOfficer
 
 - type: loadout
   id: LoadoutClothingUnderSocksMedic
@@ -27,6 +42,11 @@
   - !type:CharacterDepartmentRequirement
     departments:
     - Medical
+  - !type:CharacterJobRequirement
+    jobs:
+    - Chemist
+    - Paramedic
+    - ChiefMedicalOfficer
 
 - type: loadout
   id: LoadoutClothingUniformMedicThong
@@ -39,6 +59,11 @@
   - !type:CharacterDepartmentRequirement
     departments:
     - Medical
+  - !type:CharacterJobRequirement
+    jobs:
+    - Chemist
+    - Paramedic
+    - ChiefMedicalOfficer
 
 - type: loadout
   id: LoadoutMedicalNeckCollar

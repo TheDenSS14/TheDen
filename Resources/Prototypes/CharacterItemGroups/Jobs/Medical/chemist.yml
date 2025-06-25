@@ -1,3 +1,10 @@
+# SPDX-FileCopyrightText: 2024 VMSolidus <evilexecutive@gmail.com>
+# SPDX-FileCopyrightText: 2025 BlitzTheSquishy <73762869+BlitzTheSquishy@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Lonofera <108367450+LonoferaRS@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 # Chemist
 - type: characterItemGroup
   id: LoadoutChemistBackpacks
@@ -102,6 +109,8 @@
   items:
     - type: loadout
       id: LoadoutMedicalShoesEnclosedChem
+    - type: loadout
+      id: LoadoutMedicalShoesWinterChem
 
 - type: characterItemGroup
   id: LoadoutChemistUniforms

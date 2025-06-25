@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 - type: trait
   id: GoblinAccent
   category: TraitsSpeechAccents
@@ -9,3 +13,27 @@
     - !type:TraitAddComponent
       components:
         - type: GoblinAccent
+  
+- type: trait
+  id: SharpInflection
+  category: TraitsSpeechAccents
+  points: -1
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: TraitsAccents
+  functions:
+    - !type:TraitAddComponent
+      components:
+        - type: SharpInflection
+  
+- type: trait
+  id: Monotonous
+  category: TraitsSpeechAccents
+  points: -1
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: TraitsAccents
+  functions:
+    - !type:TraitAddComponent
+      components:
+        - type: Monotonous

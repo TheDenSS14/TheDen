@@ -1,3 +1,9 @@
+# SPDX-FileCopyrightText: 2025 Falcon <falcon@zigtag.dev>
+# SPDX-FileCopyrightText: 2025 MajorMoth <61519600+MajorMoth@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 # These IDs are generated from job IDs
 # The corresponding prototypes are located in Resources/Prototypes/Catalog/_DV/Chat/highlights.yml
 # if you add or remove a string here, update the protoype

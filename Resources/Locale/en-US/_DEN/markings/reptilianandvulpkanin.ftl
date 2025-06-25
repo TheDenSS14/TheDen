@@ -1,4 +1,10 @@
-﻿marking-ReptilianSharpCobraHood = Sharp Cobra Hood
+# SPDX-FileCopyrightText: 2025 LaconiumDragona <riascazadofelra@gmail.com>
+# SPDX-FileCopyrightText: 2025 portfiend <109661617+portfiend@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
+marking-ReptilianSharpCobraHood = Sharp Cobra Hood
 marking-ReptilianSharpCobraHood-sharp_cobra_hood = Base
 marking-ReptilianSharpCobraHood-sharp_cobra_hood_overlay = Inner
 

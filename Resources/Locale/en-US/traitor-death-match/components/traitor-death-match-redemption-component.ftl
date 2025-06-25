@@ -1,3 +1,10 @@
+# SPDX-FileCopyrightText: 2021 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2021 Galactic Chimp <63882831+GalacticChimp@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2021 Paul Ritter <ritter.paul1@googlemail.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: MIT
+
 traitor-death-match-redemption-component-interact-using-main-message = The machine buzzes, and displays: {$secondMessage}
 traitor-death-match-redemption-component-interact-using-no-mind-message = "AUTHENTICATION FAILED (0045)"
 traitor-death-match-redemption-component-interact-using-no-user-mind-message = "AUTHENTICATION FAILED (0052)"

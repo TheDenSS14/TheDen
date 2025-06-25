@@ -1,3 +1,39 @@
+# SPDX-FileCopyrightText: 2023 Colin-Tel
+# SPDX-FileCopyrightText: 2023 Kadeo64
+# SPDX-FileCopyrightText: 2023 Nim
+# SPDX-FileCopyrightText: 2023 RiceMar1244
+# SPDX-FileCopyrightText: 2023 Stanislav4ix
+# SPDX-FileCopyrightText: 2023 T-Stalker
+# SPDX-FileCopyrightText: 2023 lzk228
+# SPDX-FileCopyrightText: 2023 metalgearsloth
+# SPDX-FileCopyrightText: 2023 Арт
+# SPDX-FileCopyrightText: 2024 Alzore
+# SPDX-FileCopyrightText: 2024 ArtisticRoomba
+# SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT
+# SPDX-FileCopyrightText: 2024 Debug
+# SPDX-FileCopyrightText: 2024 Ed
+# SPDX-FileCopyrightText: 2024 FungiFellow
+# SPDX-FileCopyrightText: 2024 Ilya246
+# SPDX-FileCopyrightText: 2024 John Space
+# SPDX-FileCopyrightText: 2024 Menshin
+# SPDX-FileCopyrightText: 2024 Nemanja
+# SPDX-FileCopyrightText: 2024 Pieter-Jan Briers
+# SPDX-FileCopyrightText: 2024 gluesniffler
+# SPDX-FileCopyrightText: 2024 zelezniciar1
+# SPDX-FileCopyrightText: 2025 AirFryerBuyOneGetOneFree
+# SPDX-FileCopyrightText: 2025 MajorMoth
+# SPDX-FileCopyrightText: 2025 Solaris
+# SPDX-FileCopyrightText: 2025 Spatison
+# SPDX-FileCopyrightText: 2025 Timfa
+# SPDX-FileCopyrightText: 2025 VMSolidus
+# SPDX-FileCopyrightText: 2025 Your Name
+# SPDX-FileCopyrightText: 2025 deltanedas
+# SPDX-FileCopyrightText: 2025 dootythefrooty
+# SPDX-FileCopyrightText: 2025 mart
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 # Tier 1
 
 - type: technology
@@ -17,6 +53,8 @@
   - MechEquipmentDrill # Goobstation
   - OreProcessorIndustrialMachineCircuitboard
   - ClothingMaskWeldingGas
+  - JetpackBlue
+  - JetpackMini
 
 - type: technology
   id: AdvancedPowercells
@@ -101,7 +139,7 @@
   tier: 1
   cost: 7500
   recipeUnlocks:
-  - ThermomachineFreezerMachineCircuitBoard
+  - ThermomachineUpgradedFreezerMachineCircuitBoard # Assmos
   - GasRecyclerMachineCircuitboard
   - AlertsComputerCircuitboard
 
@@ -165,10 +203,13 @@
   tier: 2
   cost: 7500
   recipeUnlocks:
-  - HellfireFreezerMachineCircuitBoard
+  - ThermomachineAdvancedFreezerMachineCircuitBoard # Assmos
   - PortableScrubberMachineCircuitBoard
   - HolofanProjector
-  - HandHeldAtmosMonitor
+  - CrystallizerMachineCircuitboard
+  - ElectrolyzerMachineCircuitboard # Assmos - /tg/ gases
+  technologyPrerequisites:
+  - AtmosphericTech
 
 - type: technology
   id: AdvancedToolsTechnology
@@ -271,3 +312,19 @@
   technologyPrerequisites:
   - AdvancedPowercells
   softCapContribution: 1.5
+
+# Assmos
+- type: technology
+  id: AtmosphericsExotech
+  name: research-technology-atmospherics-exotech
+  icon:
+    sprite: _Funkystation/Structures/Piping/Atmospherics/bluespacegassender.rsi
+    state: off
+  discipline: Industrial
+  tier: 3
+  cost: 10000
+  recipeUnlocks:
+  - HellfireFreezerMachineCircuitBoard
+  - BluespaceGasSenderMachineBoard
+  technologyPrerequisites:
+  - AdvancedAtmospherics

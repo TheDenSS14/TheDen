@@ -1,0 +1,20 @@
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
+version = 1
+SPDX-PackageName = "The Den"
+SPDX-PackageSupplier = "sleepyyapril <mousetvgaming@gmail.com>
+SPDX-PackageDownloadLocation = "https://www.denstation.net"
+
+[[annotations]]
+path = ["Resources/Audio/**", "Resources/Textures/**"]
+precedence = "aggregate"
+SPDX-FileCopyrightText = "None"
+SPDX-License-Identifier = "MIT"
+
+[[annotations]]
+path = ["**.txt", "**.json"]
+precedence = "aggregate"
+SPDX-FileCopyrightText = "None"
+SPDX-License-Identifier = "MIT"

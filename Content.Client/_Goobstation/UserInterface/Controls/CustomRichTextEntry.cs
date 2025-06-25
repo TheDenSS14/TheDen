@@ -1,5 +1,7 @@
+// SPDX-FileCopyrightText: 2025 Falcon <falcon@zigtag.dev>
 // SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
 // SPDX-FileCopyrightText: 2025 gluesniffler <linebarrelerenthusiast@gmail.com>
+// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -76,7 +78,7 @@ internal struct CustomRichTextEntry
             if (node.Name == ExamineBorderTag.TagName)
                 IsInBox = true;
 
-            if (!tagManager.TryGetMarkupTag(node.Name, _tagsAllowed, out var tag) || !tag.TryGetControl(node, out var control))
+            if (!tagManager.TryGetMarkupTagHandler(node.Name, _tagsAllowed, out var tag) || !tag.TryCreateControl(node, out var control))
                 continue;
 
             parent.Children.Add(control);
@@ -376,7 +378,7 @@ internal struct CustomRichTextEntry
             return node.Value.StringValue ?? "";
 
         //Skip the node if there is no markup tag for it.
-        if (!tagManager.TryGetMarkupTag(node.Name, _tagsAllowed, out var tag))
+        if (!tagManager.TryGetMarkupTagHandler(node.Name, _tagsAllowed, out var tag))
             return "";
 
         if (!node.Closing)

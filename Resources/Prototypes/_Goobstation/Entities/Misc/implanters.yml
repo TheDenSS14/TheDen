@@ -1,3 +1,9 @@
+# SPDX-FileCopyrightText: 2025 Baptr0b0t
+# SPDX-FileCopyrightText: 2025 Rouge2t7
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 - type: entity
   id: BaseImplantOnlyImplanterCentcomm
   parent: BaseImplantOnlyImplanter
@@ -36,3 +42,11 @@
   components:
   - type: Implanter
     implant: BluespaceLifelineImplant
+
+- type: entity
+  id: CommandTrackingImplanter
+  suffix: command tracker
+  parent: BaseImplantOnlyImplanterCentcomm
+  components:
+  - type: Implanter
+    implant: CommandTrackingImplant

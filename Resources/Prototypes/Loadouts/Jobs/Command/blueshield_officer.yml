@@ -1,3 +1,17 @@
+# SPDX-FileCopyrightText: 2025 Alice
+# SPDX-FileCopyrightText: 2025 Blitz
+# SPDX-FileCopyrightText: 2025 BramvanZijp
+# SPDX-FileCopyrightText: 2025 EctoplasmIsGood
+# SPDX-FileCopyrightText: 2025 MajorMoth
+# SPDX-FileCopyrightText: 2025 Rosycup
+# SPDX-FileCopyrightText: 2025 SixplyDev
+# SPDX-FileCopyrightText: 2025 Solstice
+# SPDX-FileCopyrightText: 2025 Tabitha
+# SPDX-FileCopyrightText: 2025 VMSolidus
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 # Uncategorized
 # Backpacks
 - type: loadout
@@ -132,7 +146,7 @@
     - WeaponLeverChester
 
 - type: loadout
-  id: LoadoutMagazineMagnumMagnumLeverRifle
+  id: LoadoutMagazineShotgunLeverRifle
   category: JobsCommandBlueshieldOfficer
   cost: 2
   exclusive: true
@@ -146,10 +160,10 @@
       jobs:
         - BlueshieldOfficer
   items:
-    - MagazineMagnumLeverRifle
+    - MagazineShotgunLeverRifle
 
 - type: loadout
-  id: LoadoutMagazineMagnumMagnumLeverRifleSpare
+  id: LoadoutMagazineShotgunLeverRifleSpare
   category: JobsCommandBlueshieldOfficer
   cost: 4
   exclusive: true
@@ -163,7 +177,7 @@
       jobs:
         - BlueshieldOfficer
   items:
-    - MagazineMagnumLeverRifle
+    - MagazineShotgunLeverRifle
 
 - type: loadout
   id: LoadoutBSORifleBRDIR25
@@ -235,28 +249,6 @@
         - BlueshieldOfficer
   items:
     - MedkitCombatFilled
-
-- type: loadout
-  id: LoadoutBSOPortafib
-  category: JobsCommandBlueshieldOfficer
-  cost: 2
-  requirements:
-    - !type:CharacterJobRequirement
-      jobs:
-        - BlueshieldOfficer
-  items:
-    - Portafib
-
-- type: loadout
-  id: LoadoutBSOCrewMonitor
-  category: JobsCommandBlueshieldOfficer
-  cost: 2 # BSO's main job is to keep command safe, they should be able to monitor their status & location without that costing too many points.
-  requirements:
-    - !type:CharacterJobRequirement
-      jobs:
-        - BlueshieldOfficer
-  items:
-    - HandheldCrewMonitor
 
 # - type: loadout
 #   id: LoadoutBSOCQCManual

@@ -1,3 +1,9 @@
+// SPDX-FileCopyrightText: 2023 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+//
+// SPDX-License-Identifier: MIT
+
 using Content.Shared.DoAfter;
 using Content.Shared.FixedPoint;
 using Robust.Shared.Audio;
@@ -33,4 +39,16 @@ public sealed partial class AbsorbantDoAfterEvent : DoAfterEvent
     }
 
     public override DoAfterEvent Clone() => this;
+}
+
+/// <summary>
+/// Raised when trying to spray something, for example a fire extinguisher.
+/// </summary>
+[ByRefEvent]
+public record struct SprayAttemptEvent(EntityUid User, bool Cancelled = false)
+{
+    public void Cancel()
+    {
+        Cancelled = true;
+    }
 }

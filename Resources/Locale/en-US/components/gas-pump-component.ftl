@@ -1,3 +1,9 @@
+# SPDX-FileCopyrightText: 2021 E F R <602406+Efruit@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2021 ike709 <ike709@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: MIT
+
 comp-gas-pump-ui-pump-status = Status:
 comp-gas-pump-ui-status-enabled = On
 comp-gas-pump-ui-status-disabled = Off

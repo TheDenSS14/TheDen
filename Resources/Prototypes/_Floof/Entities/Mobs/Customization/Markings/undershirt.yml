@@ -1,0 +1,1239 @@
+# SPDX-FileCopyrightText: 2025 Aikakakah <145503852+Aikakakah@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
+- type: marking
+  id: UndershirtBra
+  bodyPart: Undershirt
+  markingCategory: Undershirt
+  speciesRestriction: [Shadowkin, Diona, Arachnid, Reptilian, Moth, SlimePerson, Resomi, Rodentia, Human, Rodentia, Felinid, Oni, Vulpkanin, Harpy]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+  - sprite: _Floof/Mobs/Customization/undershirt.rsi
+    state: bra
+
+- type: marking
+  id: UndershirtBraalt
+  bodyPart: Undershirt
+  markingCategory: Undershirt
+  speciesRestriction: [Shadowkin, Diona, Arachnid, Reptilian, Moth, SlimePerson, Resomi, Rodentia, Human, Rodentia, Felinid, Oni, Vulpkanin, Harpy]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+  - sprite: _Floof/Mobs/Customization/undershirt.rsi
+    state: bra_alt
+
+- type: marking
+  id: UndershirtBrathin
+  bodyPart: Undershirt
+  markingCategory: Undershirt
+  speciesRestriction: [Shadowkin, Diona, Arachnid, Reptilian, Moth, SlimePerson, Resomi, Rodentia, Human, Rodentia, Felinid, Oni, Vulpkanin, Harpy]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+  - sprite: _Floof/Mobs/Customization/undershirt.rsi
+    state: bra_thin
+
+- type: marking
+  id: UndershirtSportsbra
+  bodyPart: Undershirt
+  markingCategory: Undershirt
+  speciesRestriction: [Shadowkin, Diona, Arachnid, Reptilian, Moth, SlimePerson, Resomi, Rodentia, Human, Rodentia, Felinid, Oni, Vulpkanin, Harpy]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+  - sprite: _Floof/Mobs/Customization/undershirt.rsi
+    state: sports_bra
+
+- type: marking
+  id: UndershirtSportsbraalt
+  bodyPart: Undershirt
+  markingCategory: Undershirt
+  speciesRestriction: [Shadowkin, Diona, Arachnid, Reptilian, Moth, SlimePerson, Resomi, Rodentia, Human, Rodentia, Felinid, Oni, Vulpkanin, Harpy]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+  - sprite: _Floof/Mobs/Customization/undershirt.rsi
+    state: sports_bra_alt
+
+- type: marking
+  id: UndershirtBrastrapless
+  bodyPart: Undershirt
+  markingCategory: Undershirt
+  speciesRestriction: [Shadowkin, Diona, Arachnid, Reptilian, Moth, SlimePerson, Resomi, Rodentia, Human, Rodentia, Felinid, Oni, Vulpkanin, Harpy]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+  - sprite: _Floof/Mobs/Customization/undershirt.rsi
+    state: bra_strapless
+
+- type: marking
+  id: UndershirtBrastraplessalt
+  bodyPart: Undershirt
+  markingCategory: Undershirt
+  speciesRestriction: [Shadowkin, Diona, Arachnid, Reptilian, Moth, SlimePerson, Resomi, Rodentia, Human, Rodentia, Felinid, Oni, Vulpkanin, Harpy]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+  - sprite: _Floof/Mobs/Customization/undershirt.rsi
+    state: bra_strapless_alt
+
+- type: marking
+  id: UndershirtHalterneckbra
+  bodyPart: Undershirt
+  markingCategory: Undershirt
+  speciesRestriction: [Shadowkin, Diona, Arachnid, Reptilian, Moth, SlimePerson, Resomi, Rodentia, Human, Rodentia, Felinid, Oni, Vulpkanin, Harpy]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+  - sprite: _Floof/Mobs/Customization/undershirt.rsi
+    state: halterneck_bra
+
+- type: marking
+  id: UndershirtBraneko
+  bodyPart: Undershirt
+  markingCategory: Undershirt
+  speciesRestriction: [Shadowkin, Diona, Arachnid, Reptilian, Moth, SlimePerson, Resomi, Rodentia, Human, Rodentia, Felinid, Oni, Vulpkanin, Harpy]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+  - sprite: _Floof/Mobs/Customization/undershirt.rsi
+    state: bra_neko
+
+- type: marking
+  id: UndershirtBraswimming
+  bodyPart: Undershirt
+  markingCategory: Undershirt
+  speciesRestriction: [Shadowkin, Diona, Arachnid, Reptilian, Moth, SlimePerson, Resomi, Rodentia, Human, Rodentia, Felinid, Oni, Vulpkanin, Harpy]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+  - sprite: _Floof/Mobs/Customization/undershirt.rsi
+    state: bra_swimming
+
+- type: marking
+  id: UndershirtBraswimmingalt
+  bodyPart: Undershirt
+  markingCategory: Undershirt
+  speciesRestriction: [Shadowkin, Diona, Arachnid, Reptilian, Moth, SlimePerson, Resomi, Rodentia, Human, Rodentia, Felinid, Oni, Vulpkanin, Harpy]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+  - sprite: _Floof/Mobs/Customization/undershirt.rsi
+    state: bra_swimming_alt
+
+- type: marking
+  id: UndershirtTubetop
+  bodyPart: Undershirt
+  markingCategory: Undershirt
+  speciesRestriction: [Shadowkin, Diona, Arachnid, Reptilian, Moth, SlimePerson, Resomi, Rodentia, Human, Rodentia, Felinid, Oni, Vulpkanin, Harpy]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+  - sprite: _Floof/Mobs/Customization/undershirt.rsi
+    state: tubetop
+
+- type: marking
+  id: UndershirtBabydoll
+  bodyPart: Undershirt
+  markingCategory: Undershirt
+  speciesRestriction: [Shadowkin, Diona, Arachnid, Reptilian, Moth, SlimePerson, Resomi, Rodentia, Human, Rodentia, Felinid, Oni, Vulpkanin, Harpy]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+  - sprite: _Floof/Mobs/Customization/undershirt.rsi
+    state: babydoll
+
+- type: marking
+  id: UndershirtBrakinky
+  bodyPart: Undershirt
+  markingCategory: Undershirt
+  speciesRestriction: [Shadowkin, Diona, Arachnid, Reptilian, Moth, SlimePerson, Resomi, Rodentia, Human, Rodentia, Felinid, Oni, Vulpkanin, Harpy]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+  - sprite: _Floof/Mobs/Customization/undershirt.rsi
+    state: bra_kinky
+
+- type: marking
+  id: UndershirtBraassblastusa
+  bodyPart: Undershirt
+  markingCategory: Undershirt
+  speciesRestriction: [Shadowkin, Diona, Arachnid, Reptilian, Moth, SlimePerson, Resomi, Rodentia, Human, Rodentia, Felinid, Oni, Vulpkanin, Harpy]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+  - sprite: _Floof/Mobs/Customization/undershirt.rsi
+    state: bra_assblastusa
+
+- type: marking
+  id: UndershirtBrabeekini
+  bodyPart: Undershirt
+  markingCategory: Undershirt
+  speciesRestriction: [Shadowkin, Diona, Arachnid, Reptilian, Moth, SlimePerson, Resomi, Rodentia, Human, Rodentia, Felinid, Oni, Vulpkanin, Harpy]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+  - sprite: _Floof/Mobs/Customization/undershirt.rsi
+    state: bra_bee-kini
+
+- type: marking
+  id: UndershirtBracommie
+  bodyPart: Undershirt
+  markingCategory: Undershirt
+  speciesRestriction: [Shadowkin, Diona, Arachnid, Reptilian, Moth, SlimePerson, Resomi, Rodentia, Human, Rodentia, Felinid, Oni, Vulpkanin, Harpy]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+  - sprite: _Floof/Mobs/Customization/undershirt.rsi
+    state: bra_commie
+
+- type: marking
+  id: UndershirtBrauk
+  bodyPart: Undershirt
+  markingCategory: Undershirt
+  speciesRestriction: [Shadowkin, Diona, Arachnid, Reptilian, Moth, SlimePerson, Resomi, Rodentia, Human, Rodentia, Felinid, Oni, Vulpkanin, Harpy]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+  - sprite: _Floof/Mobs/Customization/undershirt.rsi
+    state: bra_uk
+
+- type: marking
+  id: UndershirtBrastriped
+  bodyPart: Undershirt
+  markingCategory: Undershirt
+  speciesRestriction: [Shadowkin, Diona, Arachnid, Reptilian, Moth, SlimePerson, Resomi, Rodentia, Human, Rodentia, Felinid, Oni, Vulpkanin, Harpy]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+  - sprite: _Floof/Mobs/Customization/undershirt.rsi
+    state: striped_bra
+
+- type: marking
+  id: UndershirtSwimsuitblue
+  bodyPart: Undershirt
+  markingCategory: Undershirt
+  speciesRestriction: [Shadowkin, Diona, Arachnid, Reptilian, Moth, SlimePerson, Resomi, Rodentia, Human, Rodentia, Felinid, Oni, Vulpkanin, Harpy]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+  - sprite: _Floof/Mobs/Customization/undershirt.rsi
+    state: swimming_blue
+
+- type: marking
+  id: UndershirtSwimsuitred
+  bodyPart: Undershirt
+  markingCategory: Undershirt
+  speciesRestriction: [Shadowkin, Diona, Arachnid, Reptilian, Moth, SlimePerson, Resomi, Rodentia, Human, Rodentia, Felinid, Oni, Vulpkanin, Harpy]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+  - sprite: _Floof/Mobs/Customization/undershirt.rsi
+    state: swimming_red
+
+- type: marking
+  id: UndershirtSwimsuitblack
+  bodyPart: Undershirt
+  markingCategory: Undershirt
+  speciesRestriction: [Shadowkin, Diona, Arachnid, Reptilian, Moth, SlimePerson, Resomi, Rodentia, Human, Rodentia, Felinid, Oni, Vulpkanin, Harpy]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+  - sprite: _Floof/Mobs/Customization/undershirt.rsi
+    state: swimming_black
+
+- type: marking
+  id: UndershirtFishnet
+  bodyPart: Undershirt
+  markingCategory: Undershirt
+  speciesRestriction: [Shadowkin, Diona, Arachnid, Reptilian, Moth, SlimePerson, Resomi, Rodentia, Human, Rodentia, Felinid, Oni, Vulpkanin, Harpy]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+  - sprite: _Floof/Mobs/Customization/undershirt.rsi
+    state: fishnet
+
+- type: marking
+  id: UndershirtFishnetbody
+  bodyPart: Undershirt
+  markingCategory: Undershirt
+  speciesRestriction: [Shadowkin, Diona, Arachnid, Reptilian, Moth, SlimePerson, Resomi, Rodentia, Human, Rodentia, Felinid, Oni, Vulpkanin, Harpy]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+  - sprite: _Floof/Mobs/Customization/undershirt.rsi
+    state: fishnet_body
+
+- type: marking
+  id: UndershirtFishnetsleeves
+  bodyPart: Undershirt
+  markingCategory: Undershirt
+  speciesRestriction: [Shadowkin, Diona, Arachnid, Reptilian, Moth, SlimePerson, Resomi, Rodentia, Human, Rodentia, Felinid, Oni, Vulpkanin, Harpy]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+  - sprite: _Floof/Mobs/Customization/undershirt.rsi
+    state: fishnet_sleeves
+
+- type: marking
+  id: UndershirtFishnetgloves
+  bodyPart: Undershirt
+  markingCategory: Undershirt
+  speciesRestriction: [Shadowkin, Diona, Arachnid, Reptilian, Moth, SlimePerson, Resomi, Rodentia, Human, Rodentia, Felinid, Oni, Vulpkanin, Harpy]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+  - sprite: _Floof/Mobs/Customization/undershirt.rsi
+    state: fishnet_gloves
+
+- type: marking
+  id: UndershirtUndershirtgeneric
+  bodyPart: Undershirt
+  markingCategory: Undershirt
+  speciesRestriction: [Shadowkin, Diona, Arachnid, Reptilian, Moth, SlimePerson, Resomi, Rodentia, Human, Rodentia, Felinid, Oni, Vulpkanin, Harpy]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+  - sprite: _Floof/Mobs/Customization/undershirt.rsi
+    state: undershirt
+
+- type: marking
+  id: UndershirtShortsleeve
+  bodyPart: Undershirt
+  markingCategory: Undershirt
+  speciesRestriction: [Shadowkin, Diona, Arachnid, Reptilian, Moth, SlimePerson, Resomi, Rodentia, Human, Rodentia, Felinid, Oni, Vulpkanin, Harpy]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+  - sprite: _Floof/Mobs/Customization/undershirt.rsi
+    state: shortsleeve
+
+- type: marking
+  id: UndershirtPolo
+  bodyPart: Undershirt
+  markingCategory: Undershirt
+  speciesRestriction: [Shadowkin, Diona, Arachnid, Reptilian, Moth, SlimePerson, Resomi, Rodentia, Human, Rodentia, Felinid, Oni, Vulpkanin, Harpy]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+  - sprite: _Floof/Mobs/Customization/undershirt.rsi
+    state: polo
+
+- type: marking
+  id: UndershirtTanktop
+  bodyPart: Undershirt
+  markingCategory: Undershirt
+  speciesRestriction: [Shadowkin, Diona, Arachnid, Reptilian, Moth, SlimePerson, Resomi, Rodentia, Human, Rodentia, Felinid, Oni, Vulpkanin, Harpy]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+  - sprite: _Floof/Mobs/Customization/undershirt.rsi
+    state: tanktop
+
+- type: marking
+  id: UndershirtTanktoprainbow
+  bodyPart: Undershirt
+  markingCategory: Undershirt
+  speciesRestriction: [Shadowkin, Diona, Arachnid, Reptilian, Moth, SlimePerson, Resomi, Rodentia, Human, Rodentia, Felinid, Oni, Vulpkanin, Harpy]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+  - sprite: _Floof/Mobs/Customization/undershirt.rsi
+    state: tank_rainbow
+
+- type: marking
+  id: UndershirtTanktopstripes
+  bodyPart: Undershirt
+  markingCategory: Undershirt
+  speciesRestriction: [Shadowkin, Diona, Arachnid, Reptilian, Moth, SlimePerson, Resomi, Rodentia, Human, Rodentia, Felinid, Oni, Vulpkanin, Harpy]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+  - sprite: _Floof/Mobs/Customization/undershirt.rsi
+    state: tank_stripes
+
+- type: marking
+  id: UndershirtTanktopalt
+  bodyPart: Undershirt
+  markingCategory: Undershirt
+  speciesRestriction: [Shadowkin, Diona, Arachnid, Reptilian, Moth, SlimePerson, Resomi, Rodentia, Human, Rodentia, Felinid, Oni, Vulpkanin, Harpy]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+  - sprite: _Floof/Mobs/Customization/undershirt.rsi
+    state: tanktop_alt
+
+- type: marking
+  id: UndershirtTanktopmidriff
+  bodyPart: Undershirt
+  markingCategory: Undershirt
+  speciesRestriction: [Shadowkin, Diona, Arachnid, Reptilian, Moth, SlimePerson, Resomi, Rodentia, Human, Rodentia, Felinid, Oni, Vulpkanin, Harpy]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+  - sprite: _Floof/Mobs/Customization/undershirt.rsi
+    state: tank_midriff
+
+- type: marking
+  id: UndershirtTanktopmidriffalt
+  bodyPart: Undershirt
+  markingCategory: Undershirt
+  speciesRestriction: [Shadowkin, Diona, Arachnid, Reptilian, Moth, SlimePerson, Resomi, Rodentia, Human, Rodentia, Felinid, Oni, Vulpkanin, Harpy]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+  - sprite: _Floof/Mobs/Customization/undershirt.rsi
+    state: tank_midriff_alt
+
+- type: marking
+  id: UndershirtTanktopsun
+  bodyPart: Undershirt
+  markingCategory: Undershirt
+  speciesRestriction: [Shadowkin, Diona, Arachnid, Reptilian, Moth, SlimePerson, Resomi, Rodentia, Human, Rodentia, Felinid, Oni, Vulpkanin, Harpy]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+  - sprite: _Floof/Mobs/Customization/undershirt.rsi
+    state: tank_sun
+
+- type: marking
+  id: UndershirtIanshirt
+  bodyPart: Undershirt
+  markingCategory: Undershirt
+  speciesRestriction: [Shadowkin, Diona, Arachnid, Reptilian, Moth, SlimePerson, Resomi, Rodentia, Human, Rodentia, Felinid, Oni, Vulpkanin, Harpy]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+  - sprite: _Floof/Mobs/Customization/undershirt.rsi
+    state: ian
+
+- type: marking
+  id: UndershirtLovershirt
+  bodyPart: Undershirt
+  markingCategory: Undershirt
+  speciesRestriction: [Shadowkin, Diona, Arachnid, Reptilian, Moth, SlimePerson, Resomi, Rodentia, Human, Rodentia, Felinid, Oni, Vulpkanin, Harpy]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+  - sprite: _Floof/Mobs/Customization/undershirt.rsi
+    state: lover
+
+- type: marking
+  id: UndershirtLoventshirt
+  bodyPart: Undershirt
+  markingCategory: Undershirt
+  speciesRestriction: [Shadowkin, Diona, Arachnid, Reptilian, Moth, SlimePerson, Resomi, Rodentia, Human, Rodentia, Felinid, Oni, Vulpkanin, Harpy]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+  - sprite: _Floof/Mobs/Customization/undershirt.rsi
+    state: ilovent
+
+- type: marking
+  id: UndershirtUkshirt
+  bodyPart: Undershirt
+  markingCategory: Undershirt
+  speciesRestriction: [Shadowkin, Diona, Arachnid, Reptilian, Moth, SlimePerson, Resomi, Rodentia, Human, Rodentia, Felinid, Oni, Vulpkanin, Harpy]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+  - sprite: _Floof/Mobs/Customization/undershirt.rsi
+    state: uk
+
+- type: marking
+  id: UndershirtPeaceshirt
+  bodyPart: Undershirt
+  markingCategory: Undershirt
+  speciesRestriction: [Shadowkin, Diona, Arachnid, Reptilian, Moth, SlimePerson, Resomi, Rodentia, Human, Rodentia, Felinid, Oni, Vulpkanin, Harpy]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+  - sprite: _Floof/Mobs/Customization/undershirt.rsi
+    state: peace
+
+- type: marking
+  id: UndershirtBandshirt
+  bodyPart: Undershirt
+  markingCategory: Undershirt
+  speciesRestriction: [Shadowkin, Diona, Arachnid, Reptilian, Moth, SlimePerson, Resomi, Rodentia, Human, Rodentia, Felinid, Oni, Vulpkanin, Harpy]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+  - sprite: _Floof/Mobs/Customization/undershirt.rsi
+    state: band
+
+- type: marking
+  id: UndershirtPogomanshirt
+  bodyPart: Undershirt
+  markingCategory: Undershirt
+  speciesRestriction: [Shadowkin, Diona, Arachnid, Reptilian, Moth, SlimePerson, Resomi, Rodentia, Human, Rodentia, Felinid, Oni, Vulpkanin, Harpy]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+  - sprite: _Floof/Mobs/Customization/undershirt.rsi
+    state: pogoman
+
+- type: marking
+  id: UndershirtGreensportshirt
+  bodyPart: Undershirt
+  markingCategory: Undershirt
+  speciesRestriction: [Shadowkin, Diona, Arachnid, Reptilian, Moth, SlimePerson, Resomi, Rodentia, Human, Rodentia, Felinid, Oni, Vulpkanin, Harpy]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+  - sprite: _Floof/Mobs/Customization/undershirt.rsi
+    state: greenshirtsport
+
+- type: marking
+  id: UndershirtRedsportshirt
+  bodyPart: Undershirt
+  markingCategory: Undershirt
+  speciesRestriction: [Shadowkin, Diona, Arachnid, Reptilian, Moth, SlimePerson, Resomi, Rodentia, Human, Rodentia, Felinid, Oni, Vulpkanin, Harpy]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+  - sprite: _Floof/Mobs/Customization/undershirt.rsi
+    state: redshirtsport
+
+- type: marking
+  id: UndershirtBluesportshirt
+  bodyPart: Undershirt
+  markingCategory: Undershirt
+  speciesRestriction: [Shadowkin, Diona, Arachnid, Reptilian, Moth, SlimePerson, Resomi, Rodentia, Human, Rodentia, Felinid, Oni, Vulpkanin, Harpy]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+  - sprite: _Floof/Mobs/Customization/undershirt.rsi
+    state: blueshirtsport
+
+- type: marking
+  id: UndershirtMatroska
+  bodyPart: Undershirt
+  markingCategory: Undershirt
+  speciesRestriction: [Shadowkin, Diona, Arachnid, Reptilian, Moth, SlimePerson, Resomi, Rodentia, Human, Rodentia, Felinid, Oni, Vulpkanin, Harpy]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+  - sprite: _Floof/Mobs/Customization/undershirt.rsi
+    state: matroska
+
+- type: marking
+  id: UndershirtSs13shirt
+  bodyPart: Undershirt
+  markingCategory: Undershirt
+  speciesRestriction: [Shadowkin, Diona, Arachnid, Reptilian, Moth, SlimePerson, Resomi, Rodentia, Human, Rodentia, Felinid, Oni, Vulpkanin, Harpy]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+  - sprite: _Floof/Mobs/Customization/undershirt.rsi
+    state: shirt_ss13
+
+- type: marking
+  id: UndershirtQuestionshirt
+  bodyPart: Undershirt
+  markingCategory: Undershirt
+  speciesRestriction: [Shadowkin, Diona, Arachnid, Reptilian, Moth, SlimePerson, Resomi, Rodentia, Human, Rodentia, Felinid, Oni, Vulpkanin, Harpy]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+  - sprite: _Floof/Mobs/Customization/undershirt.rsi
+    state: shirt_question
+
+- type: marking
+  id: UndershirtSkullshirt
+  bodyPart: Undershirt
+  markingCategory: Undershirt
+  speciesRestriction: [Shadowkin, Diona, Arachnid, Reptilian, Moth, SlimePerson, Resomi, Rodentia, Human, Rodentia, Felinid, Oni, Vulpkanin, Harpy]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+  - sprite: _Floof/Mobs/Customization/undershirt.rsi
+    state: shirt_skull
+
+- type: marking
+  id: UndershirtTankfireshirt
+  bodyPart: Undershirt
+  markingCategory: Undershirt
+  speciesRestriction: [Shadowkin, Diona, Arachnid, Reptilian, Moth, SlimePerson, Resomi, Rodentia, Human, Rodentia, Felinid, Oni, Vulpkanin, Harpy]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+  - sprite: _Floof/Mobs/Customization/undershirt.rsi
+    state: tank_fire
+
+- type: marking
+  id: UndershirtCommieshirt
+  bodyPart: Undershirt
+  markingCategory: Undershirt
+  speciesRestriction: [Shadowkin, Diona, Arachnid, Reptilian, Moth, SlimePerson, Resomi, Rodentia, Human, Rodentia, Felinid, Oni, Vulpkanin, Harpy]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+  - sprite: _Floof/Mobs/Customization/undershirt.rsi
+    state: shirt_commie
+
+- type: marking
+  id: UndershirtNanoshirt
+  bodyPart: Undershirt
+  markingCategory: Undershirt
+  speciesRestriction: [Shadowkin, Diona, Arachnid, Reptilian, Moth, SlimePerson, Resomi, Rodentia, Human, Rodentia, Felinid, Oni, Vulpkanin, Harpy]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+  - sprite: _Floof/Mobs/Customization/undershirt.rsi
+    state: shirt_nano
+
+
+- type: marking
+  id: UndershirtMeatshirt
+  bodyPart: Undershirt
+  markingCategory: Undershirt
+  speciesRestriction: [Shadowkin, Diona, Arachnid, Reptilian, Moth, SlimePerson, Resomi, Rodentia, Human, Rodentia, Felinid, Oni, Vulpkanin, Harpy]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+  - sprite: _Floof/Mobs/Customization/undershirt.rsi
+    state: shirt_meat
+
+- type: marking
+  id: UndershirtStripesshirt
+  bodyPart: Undershirt
+  markingCategory: Undershirt
+  speciesRestriction: [Shadowkin, Diona, Arachnid, Reptilian, Moth, SlimePerson, Resomi, Rodentia, Human, Rodentia, Felinid, Oni, Vulpkanin, Harpy]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+  - sprite: _Floof/Mobs/Customization/undershirt.rsi
+    state: shirt_stripes
+
+- type: marking
+  id: UndershirtTiedyeshirt
+  bodyPart: Undershirt
+  markingCategory: Undershirt
+  speciesRestriction: [Shadowkin, Diona, Arachnid, Reptilian, Moth, SlimePerson, Resomi, Rodentia, Human, Rodentia, Felinid, Oni, Vulpkanin, Harpy]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+  - sprite: _Floof/Mobs/Customization/undershirt.rsi
+    state: shirt_tiedye
+
+- type: marking
+  id: UndershirtRedjersey
+  bodyPart: Undershirt
+  markingCategory: Undershirt
+  speciesRestriction: [Shadowkin, Diona, Arachnid, Reptilian, Moth, SlimePerson, Resomi, Rodentia, Human, Rodentia, Felinid, Oni, Vulpkanin, Harpy]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+  - sprite: _Floof/Mobs/Customization/undershirt.rsi
+    state: shirt_redjersey
+
+- type: marking
+  id: UndershirtBluejersey
+  bodyPart: Undershirt
+  markingCategory: Undershirt
+  speciesRestriction: [Shadowkin, Diona, Arachnid, Reptilian, Moth, SlimePerson, Resomi, Rodentia, Human, Rodentia, Felinid, Oni, Vulpkanin, Harpy]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+  - sprite: _Floof/Mobs/Customization/undershirt.rsi
+    state: shirt_bluejersey
+
+- type: marking
+  id: UndershirtBowlingshirt
+  bodyPart: Undershirt
+  markingCategory: Undershirt
+  speciesRestriction: [Shadowkin, Diona, Arachnid, Reptilian, Moth, SlimePerson, Resomi, Rodentia, Human, Rodentia, Felinid, Oni, Vulpkanin, Harpy]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+  - sprite: _Floof/Mobs/Customization/undershirt.rsi
+    state: bowling
+
+
+- type: marking
+  id: UndershirtBowlingpshirt
+  bodyPart: Undershirt
+  markingCategory: Undershirt
+  speciesRestriction: [Shadowkin, Diona, Arachnid, Reptilian, Moth, SlimePerson, Resomi, Rodentia, Human, Rodentia, Felinid, Oni, Vulpkanin, Harpy]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+  - sprite: _Floof/Mobs/Customization/undershirt.rsi
+    state: bowlingp
+
+- type: marking
+  id: UndershirtBowlingashirt
+  bodyPart: Undershirt
+  markingCategory: Undershirt
+  speciesRestriction: [Shadowkin, Diona, Arachnid, Reptilian, Moth, SlimePerson, Resomi, Rodentia, Human, Rodentia, Felinid, Oni, Vulpkanin, Harpy]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+  - sprite: _Floof/Mobs/Customization/undershirt.rsi
+    state: bowlinga
+
+- type: marking
+  id: UndershirtBowlingwshirt
+  bodyPart: Undershirt
+  markingCategory: Undershirt
+  speciesRestriction: [Shadowkin, Diona, Arachnid, Reptilian, Moth, SlimePerson, Resomi, Rodentia, Human, Rodentia, Felinid, Oni, Vulpkanin, Harpy]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+  - sprite: _Floof/Mobs/Customization/undershirt.rsi
+    state: bowlingw
+
+- type: marking
+  id: UndershirtBeeshirt
+  bodyPart: Undershirt
+  markingCategory: Undershirt
+  speciesRestriction: [Shadowkin, Diona, Arachnid, Reptilian, Moth, SlimePerson, Resomi, Rodentia, Human, Rodentia, Felinid, Oni, Vulpkanin, Harpy]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+  - sprite: _Floof/Mobs/Customization/undershirt.rsi
+    state: bee_shirt
+
+- type: marking
+  id: UndershirtAlienshirt
+  bodyPart: Undershirt
+  markingCategory: Undershirt
+  speciesRestriction: [Shadowkin, Diona, Arachnid, Reptilian, Moth, SlimePerson, Resomi, Rodentia, Human, Rodentia, Felinid, Oni, Vulpkanin, Harpy]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+  - sprite: _Floof/Mobs/Customization/undershirt.rsi
+    state: shirt_alien
+
+- type: marking
+  id: UndershirtClownshirt
+  bodyPart: Undershirt
+  markingCategory: Undershirt
+  speciesRestriction: [Shadowkin, Diona, Arachnid, Reptilian, Moth, SlimePerson, Resomi, Rodentia, Human, Rodentia, Felinid, Oni, Vulpkanin, Harpy]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+  - sprite: _Floof/Mobs/Customization/undershirt.rsi
+    state: shirt_clown
+
+- type: marking
+  id: UndershirtNavycowboyshirt
+  bodyPart: Undershirt
+  markingCategory: Undershirt
+  speciesRestriction: [Shadowkin, Diona, Arachnid, Reptilian, Moth, SlimePerson, Resomi, Rodentia, Human, Rodentia, Felinid, Oni, Vulpkanin, Harpy]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+  - sprite: _Floof/Mobs/Customization/undershirt.rsi
+    state: cowboyshirt_navy
+
+- type: marking
+  id: UndershirtRedcowboyshirt
+  bodyPart: Undershirt
+  markingCategory: Undershirt
+  speciesRestriction: [Shadowkin, Diona, Arachnid, Reptilian, Moth, SlimePerson, Resomi, Rodentia, Human, Rodentia, Felinid, Oni, Vulpkanin, Harpy]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+  - sprite: _Floof/Mobs/Customization/undershirt.rsi
+    state: cowboyshirt_red
+
+- type: marking
+  id: UndershirtLongstripeshirt
+  bodyPart: Undershirt
+  markingCategory: Undershirt
+  speciesRestriction: [Shadowkin, Diona, Arachnid, Reptilian, Moth, SlimePerson, Resomi, Rodentia, Human, Rodentia, Felinid, Oni, Vulpkanin, Harpy]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+  - sprite: _Floof/Mobs/Customization/undershirt.rsi
+    state: longstripe
+
+- type: marking
+  id: UndershirtBluelongstripeshirt
+  bodyPart: Undershirt
+  markingCategory: Undershirt
+  speciesRestriction: [Shadowkin, Diona, Arachnid, Reptilian, Moth, SlimePerson, Resomi, Rodentia, Human, Rodentia, Felinid, Oni, Vulpkanin, Harpy]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+  - sprite: _Floof/Mobs/Customization/undershirt.rsi
+    state: longstripe_blue
+
+- type: marking
+  id: UndershirtShapelyshirtgirlish
+  bodyPart: Undershirt
+  markingCategory: Undershirt
+  speciesRestriction: [Shadowkin, Diona, Arachnid, Reptilian, Moth, SlimePerson, Resomi, Rodentia, Human, Rodentia, Felinid, Oni, Vulpkanin, Harpy]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+  - sprite: _Floof/Mobs/Customization/undershirt.rsi
+    state: shapely_girlish
+
+- type: marking
+  id: UndershirtShapelyshirtpetite
+  bodyPart: Undershirt
+  markingCategory: Undershirt
+  speciesRestriction: [Shadowkin, Diona, Arachnid, Reptilian, Moth, SlimePerson, Resomi, Rodentia, Human, Rodentia, Felinid, Oni, Vulpkanin, Harpy]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+  - sprite: _Floof/Mobs/Customization/undershirt.rsi
+    state: shapely_petite
+
+- type: marking
+  id: UndershirtShapelyshirtcurvy
+  bodyPart: Undershirt
+  markingCategory: Undershirt
+  speciesRestriction: [Shadowkin, Diona, Arachnid, Reptilian, Moth, SlimePerson, Resomi, Rodentia, Human, Rodentia, Felinid, Oni, Vulpkanin, Harpy]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+  - sprite: _Floof/Mobs/Customization/undershirt.rsi
+    state: shapely_curvy
+
+- type: marking
+  id: UndershirtShapelyshirtbusty
+  bodyPart: Undershirt
+  markingCategory: Undershirt
+  speciesRestriction: [Shadowkin, Diona, Arachnid, Reptilian, Moth, SlimePerson, Resomi, Rodentia, Human, Rodentia, Felinid, Oni, Vulpkanin, Harpy]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+  - sprite: _Floof/Mobs/Customization/undershirt.rsi
+    state: shapely_busty
+
+- type: marking
+  id: UndershirtShapelyshirtmassive
+  bodyPart: Undershirt
+  markingCategory: Undershirt
+  speciesRestriction: [Shadowkin, Diona, Arachnid, Reptilian, Moth, SlimePerson, Resomi, Rodentia, Human, Rodentia, Felinid, Oni, Vulpkanin, Harpy]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+  - sprite: _Floof/Mobs/Customization/undershirt.rsi
+    state: shapely_massive
+
+- type: marking
+  id: UndershirtShapelyshirtbackbreaker
+  bodyPart: Undershirt
+  markingCategory: Undershirt
+  speciesRestriction: [Shadowkin, Diona, Arachnid, Reptilian, Moth, SlimePerson, Resomi, Rodentia, Human, Rodentia, Felinid, Oni, Vulpkanin, Harpy]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+  - sprite: _Floof/Mobs/Customization/undershirt.rsi
+    state: shapely_backbreaker
+
+- type: marking
+  id: UndershirtBrabinder
+  bodyPart: Undershirt
+  markingCategory: Undershirt
+  speciesRestriction: [Shadowkin, Diona, Arachnid, Reptilian, Moth, SlimePerson, Resomi, Rodentia, Human, Rodentia, Felinid, Oni, Vulpkanin, Harpy]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+  - sprite: _Floof/Mobs/Customization/undershirt.rsi
+    state: bra_binder
+
+- type: marking
+  id: UndershirtBrabinderstrapless
+  bodyPart: Undershirt
+  markingCategory: Undershirt
+  speciesRestriction: [Shadowkin, Diona, Arachnid, Reptilian, Moth, SlimePerson, Resomi, Rodentia, Human, Rodentia, Felinid, Oni, Vulpkanin, Harpy]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+  - sprite: _Floof/Mobs/Customization/undershirt.rsi
+    state: bra_binder_strapless
+
+- type: marking
+  id: UndershirtScrubsgreen
+  bodyPart: Undershirt
+  markingCategory: Undershirt
+  speciesRestriction: [Shadowkin, Diona, Arachnid, Reptilian, Moth, SlimePerson, Resomi, Rodentia, Human, Rodentia, Felinid, Oni, Vulpkanin, Harpy]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+  - sprite: _Floof/Mobs/Customization/undershirt.rsi
+    state: scrubsgreen
+
+- type: marking
+  id: UndershirtScrubspurple
+  bodyPart: Undershirt
+  markingCategory: Undershirt
+  speciesRestriction: [Shadowkin, Diona, Arachnid, Reptilian, Moth, SlimePerson, Resomi, Rodentia, Human, Rodentia, Felinid, Oni, Vulpkanin, Harpy]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+  - sprite: _Floof/Mobs/Customization/undershirt.rsi
+    state: scrubspurple
+
+- type: marking
+  id: UndershirtBluebridebra
+  bodyPart: Undershirt
+  markingCategory: Undershirt
+  speciesRestriction: [Shadowkin, Diona, Arachnid, Reptilian, Moth, SlimePerson, Resomi, Rodentia, Human, Rodentia, Felinid, Oni, Vulpkanin, Harpy]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+  - sprite: _Floof/Mobs/Customization/undershirt.rsi
+    state: bride_blue
+
+- type: marking
+  id: UndershirtOrangebridebra
+  bodyPart: Undershirt
+  markingCategory: Undershirt
+  speciesRestriction: [Shadowkin, Diona, Arachnid, Reptilian, Moth, SlimePerson, Resomi, Rodentia, Human, Rodentia, Felinid, Oni, Vulpkanin, Harpy]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+  - sprite: _Floof/Mobs/Customization/undershirt.rsi
+    state: bride_orange
+
+- type: marking
+  id: UndershirtPurplebridebra
+  bodyPart: Undershirt
+  markingCategory: Undershirt
+  speciesRestriction: [Shadowkin, Diona, Arachnid, Reptilian, Moth, SlimePerson, Resomi, Rodentia, Human, Rodentia, Felinid, Oni, Vulpkanin, Harpy]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+  - sprite: _Floof/Mobs/Customization/undershirt.rsi
+    state: bride_purple
+
+- type: marking
+  id: UndershirtRedbridebra
+  bodyPart: Undershirt
+  markingCategory: Undershirt
+  speciesRestriction: [Shadowkin, Diona, Arachnid, Reptilian, Moth, SlimePerson, Resomi, Rodentia, Human, Rodentia, Felinid, Oni, Vulpkanin, Harpy]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+  - sprite: _Floof/Mobs/Customization/undershirt.rsi
+    state: bride_red
+
+- type: marking
+  id: UndershirtBowbra
+  bodyPart: Undershirt
+  markingCategory: Undershirt
+  speciesRestriction: [Shadowkin, Diona, Arachnid, Reptilian, Moth, SlimePerson, Resomi, Rodentia, Human, Rodentia, Felinid, Oni, Vulpkanin, Harpy]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+  - sprite: _Floof/Mobs/Customization/undershirt.rsi
+    state: bowbra
+
+- type: marking
+  id: UndershirtBowbraalt
+  bodyPart: Undershirt
+  markingCategory: Undershirt
+  speciesRestriction: [Shadowkin, Diona, Arachnid, Reptilian, Moth, SlimePerson, Resomi, Rodentia, Human, Rodentia, Felinid, Oni, Vulpkanin, Harpy]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+  - sprite: _Floof/Mobs/Customization/undershirt.rsi
+    state: bowbraalt
+
+- type: marking
+  id: UndershirtBowbraneko
+  bodyPart: Undershirt
+  markingCategory: Undershirt
+  speciesRestriction: [Shadowkin, Diona, Arachnid, Reptilian, Moth, SlimePerson, Resomi, Rodentia, Human, Rodentia, Felinid, Oni, Vulpkanin, Harpy]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+  - sprite: _Floof/Mobs/Customization/undershirt.rsi
+    state: bowbra_neko
+
+- type: marking
+  id: UndershirtBowbraswimming
+  bodyPart: Undershirt
+  markingCategory: Undershirt
+  speciesRestriction: [Shadowkin, Diona, Arachnid, Reptilian, Moth, SlimePerson, Resomi, Rodentia, Human, Rodentia, Felinid, Oni, Vulpkanin, Harpy]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+  - sprite: _Floof/Mobs/Customization/undershirt.rsi
+    state: bowbra_swimming
+
+- type: marking
+  id: UndershirtBowbraswimmingalt
+  bodyPart: Undershirt
+  markingCategory: Undershirt
+  speciesRestriction: [Shadowkin, Diona, Arachnid, Reptilian, Moth, SlimePerson, Resomi, Rodentia, Human, Rodentia, Felinid, Oni, Vulpkanin, Harpy]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+  - sprite: _Floof/Mobs/Customization/undershirt.rsi
+    state: bowbra_swimming_alt
+

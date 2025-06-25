@@ -1,3 +1,10 @@
+# SPDX-FileCopyrightText: 2025 LaconiumDragona <riascazadofelra@gmail.com>
+# SPDX-FileCopyrightText: 2025 TheOneTrueWolfio <wolfgangleader3@gmail.com>
+# SPDX-FileCopyrightText: 2025 Zac1107 <riascazadofelra@gmail.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 marking-HairResomiBackstrafe = Resomi Backstrafe
 marking-HairResomiBurstShort = Resomi Burst Short
 marking-HairResomiDefault = Resomi Default

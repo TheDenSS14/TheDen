@@ -1,3 +1,10 @@
+# SPDX-FileCopyrightText: 2024 SimpleStation14 <130339894+SimpleStation14@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 deltanedas <39013340+deltanedas@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 k3yw <grenadiumdota@gmail.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 criminal-records-console-window-title = Criminal Records Computer
 criminal-records-console-records-list-title = Crewmembers
 criminal-records-console-select-record-info = Select a record.
