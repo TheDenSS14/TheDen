@@ -1,3 +1,8 @@
+// SPDX-FileCopyrightText: 2024 metalgearsloth
+// SPDX-FileCopyrightText: 2025 portfiend
+//
+// SPDX-License-Identifier: MIT
+
 using System.IO;
 using System.Numerics;
 using System.Threading;
