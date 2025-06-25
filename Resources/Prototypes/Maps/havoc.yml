@@ -1,0 +1,83 @@
+- type: gameMap
+  id: Havoc
+  mapName: 'Havoc'
+  mapPath: /Maps/TheDen/havoc.yml
+  minPlayers: 40
+  maxPlayers: 100
+  stations:
+    Havoc:
+      stationProto: StandardNanotrasenStation
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: '{0} Refurbished Prison-Station HAVOC {1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: 'TD'
+        - type: StationEmergencyShuttle
+          emergencyShuttlePath: /Maps/Shuttles/_DV/NTES_Seal.yml
+        - type: StationJobs
+          availableJobs:
+            #service
+            Captain: [ 1, 1 ]
+            BlueshieldOfficer: [ 1, 1]
+            NanotrasenRepresentative: [ 1, 1 ]
+            Magistrate: [ 1, 1 ]
+            AdministrativeAssistant: [ 2, 2 ]
+            HeadOfPersonnel: [ 1, 1 ]
+            Bartender: [ 2, 2 ]
+            Botanist: [ 2, 2 ]
+            Chef: [ 2, 2 ]
+            Janitor: [ 2, 2 ]
+            Librarian: [ 1, 1 ]
+            ServiceWorker: [ -1, -1 ]
+            #engineering
+            ChiefEngineer: [ 1, 1 ]
+            SeniorEngineer: [ 1, 1 ]
+            AtmosphericTechnician: [ 2, 2 ]
+            StationEngineer: [ 4, 8 ]
+            TechnicalAssistant: [ 2, 2 ]
+            #medical
+            ChiefMedicalOfficer: [ 1, 1 ]
+            SeniorPhysician: [ 1, 1 ]
+            Chemist: [ 2, 2 ]
+            MedicalDoctor: [ 3, 3 ]
+            MedicalIntern: [ 2, 2 ]
+            Paramedic: [ 2, 2 ]
+            Psychologist: [ 1, 1 ]
+            #science
+            ResearchDirector: [ 1, 1 ]
+            Scientist: [ 3, 6 ]
+            ResearchAssistant: [ 2, 2 ]
+            Chaplain: [ 1, 3 ]
+            Roboticist: [ 2, 2 ]
+            ForensicMantis: [ 1, 1 ]
+            SeniorResearcher: [ 1, 1 ]
+            #security
+            HeadOfSecurity: [ 1, 1 ]
+            Warden: [ 2, 2 ]
+            SecurityOfficer: [ 5, 5 ]
+            Detective: [ 1, 1 ]
+            SecurityCadet: [ 2, 2 ]
+            Lawyer: [ 2, 2 ]
+            Brigmedic: [ 1, 1 ]
+            Prisoner: [ 4, 4 ]
+            Gladiator: [ 1, 1 ]
+            SeniorOfficer: [ 1, 1 ]
+            #supply
+            Quartermaster: [ 1, 1 ]
+            SalvageSpecialist: [ 5, 5 ]
+            CargoTechnician: [ 4, 4 ]
+            MailCarrier: [ 1, 1 ]
+            #civilian
+            Passenger: [ -1, -1 ]
+            Clown: [ 1, 1 ]
+            Mime: [ 1, 1 ]
+            Musician: [ 1, 2 ]
+            Reporter: [ 2, 2 ]
+            Boxer: [ 1, 1 ]
+            MartialArtist: [ 1, 1 ]
+            Zookeeper: [ 2, 2 ]
+            #silicon
+            Borg: [ 3, 3 ]
+            MedicalBorg: [ 2, 2 ]
+            StationAi: [ 1, 1 ]
