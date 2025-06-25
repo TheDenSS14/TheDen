@@ -162,7 +162,9 @@
 # SPDX-FileCopyrightText: 2025 Solaris
 # SPDX-FileCopyrightText: 2025 Solstice
 # SPDX-FileCopyrightText: 2025 Spatison
+# SPDX-FileCopyrightText: 2025 Steve
 # SPDX-FileCopyrightText: 2025 Stop-Signs
+# SPDX-FileCopyrightText: 2025 Ted Lukin
 # SPDX-FileCopyrightText: 2025 Timfa
 # SPDX-FileCopyrightText: 2025 VMSolidus
 # SPDX-FileCopyrightText: 2025 Will-Oliver-Br
@@ -450,10 +452,19 @@
     - MagazineBoxCaselessRiflePractice # EE
     - MagazineBoxCaselessRifle # EE
     - MagazineBoxCaselessRifleRubber # EE
+    - BolaEnergy # Goobstation
+    - MagazinePistolCaselessRifle # Goobstation
+    - MagazineBoxCaselessRifle # Goobstation
     - MagazineMagnumEmpty # Goobstation
     - MagazineMagnum # Goobstation
-    - MagazineMagnumLeverRifleEmpty # Goobstation
-    - MagazineMagnumLeverRifle # Goobstation
+    - MagazineShotgunLeverRifleEmpty # Goobstation
+    - MagazineShotgunLeverRifle # Goobstation
+    - MagazineBoxShotgunHighCaliber # Goobstation
+    - MagazineBoxShotgunSlugHighCaliber # Goobstation
+    - MagazineBoxShotgunIncendiaryHighCaliber # Goobstation
+    - MagazineBoxShotgunUraniumHighCaliber # Goobstation
+    - MagazineBoxShotgunBeanbagHighCaliber # Goobstation
+    - MagazineBoxShotgunPracticeHighCaliber # Goobstation
 
 - type: entity
   id: AutolatheHyperConvection
@@ -1211,8 +1222,6 @@
       - SpeedLoaderRifleHeavyEmpty
       - WeaponRifleNovaliteC1
       - WeaponRifleGestio
-      - MagazineMagnumLeverRifle # Goobstation
-      - MagazineMagnumLeverRifleEmpty # Goobstation
       - ClothingEyesGlassesSecurity
       - TelescopicShield
       - HoloprojectorSecurity
@@ -1220,6 +1229,13 @@
       - ClothingHeadHelmetBasic
       - MagazineShotgunBeanbag
       - ShellTranquilizer
+      - MagazineMagnumEmpty # Goobstation
+      - MagazineMagnum # Goobstation
+      - MagazineShotgunLeverRifle # Goobstation
+      - MagazineShotgunLeverRifleEmpty # Goobstation
+      - MagazineBoxShotgunHighCaliber # Goobstation
+      - MagazineBoxShotgunSlugHighCaliber # Goobstation
+      - MagazineBoxShotgunPracticeHighCaliber # Goobstation
       - BoxBeanbag
       - CartridgePistolRubber
       - CartridgeMagnumRubber
@@ -1300,6 +1316,9 @@
       - MagazineRifleIncendiary
       - MagazineRifleUranium
       - MagazineShotgunIncendiary
+      - MagazineBoxShotgunIncendiaryHighCaliber # Goobstation
+      - MagazineBoxShotgunUraniumHighCaliber # Goobstation
+      - MagazineBoxShotgunBeanbagHighCaliber # Goobstation
       - PortableRecharger
       - PowerCageHigh
       - PowerCageMedium
@@ -1474,6 +1493,11 @@
         - MagazineBoxCaselessRiflePractice # EE
         - MagazineBoxCaselessRifle # EE
         - MagazineBoxCaselessRifleRubber # EE
+        - MagazineMagnumEmpty # Goobstation
+        - MagazineMagnum # Goobstation
+        - MagazineBoxShotgunHighCaliber # Goobstation
+        - MagazineBoxShotgunSlugHighCaliber # Goobstation
+        - MagazineBoxShotgunPracticeHighCaliber # Goobstation
     - type: MaterialStorage
       whitelist:
         tags:
