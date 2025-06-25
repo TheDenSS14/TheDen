@@ -1,29 +1,39 @@
-// SPDX-FileCopyrightText: 2021 Alex Evgrashin <aevgrashin@yandex.ru>
-// SPDX-FileCopyrightText: 2021 Paul Ritter <ritter.paul1@googlemail.com>
-// SPDX-FileCopyrightText: 2022 Jezithyr <Jezithyr.@gmail.com>
-// SPDX-FileCopyrightText: 2022 Jezithyr <Jezithyr@gmail.com>
-// SPDX-FileCopyrightText: 2022 KIBORG04 <bossmira4@gmail.com>
-// SPDX-FileCopyrightText: 2022 mirrorcult <lunarautomaton6@gmail.com>
-// SPDX-FileCopyrightText: 2022 wrexbe <81056464+wrexbe@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2023 Ahion <58528255+Ahion@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2023 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2023 Jezithyr <jezithyr@gmail.com>
-// SPDX-FileCopyrightText: 2023 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2023 chromiumboy <50505512+chromiumboy@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2023 keronshb <54602815+keronshb@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT <77995199+DEATHB4DEFEAT@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 Julian Giebel <juliangiebel@live.de>
-// SPDX-FileCopyrightText: 2024 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
-// SPDX-FileCopyrightText: 2024 Pspritechologist <81725545+Pspritechologist@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 SimpleStation14 <130339894+SimpleStation14@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 chavonadelal <156101927+chavonadelal@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 themias <89101928+themias@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 MajorMoth <61519600+MajorMoth@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 RedFoxIV <38788538+RedFoxIV@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 VMSolidus <evilexecutive@gmail.com>
-// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2021 Alex Evgrashin
+// SPDX-FileCopyrightText: 2021 Paul Ritter
+// SPDX-FileCopyrightText: 2022 KIBORG04
+// SPDX-FileCopyrightText: 2022 mirrorcult
+// SPDX-FileCopyrightText: 2022 wrexbe
+// SPDX-FileCopyrightText: 2023 Ahion
+// SPDX-FileCopyrightText: 2023 DrSmugleaf
+// SPDX-FileCopyrightText: 2023 Jezithyr
+// SPDX-FileCopyrightText: 2023 Leon Friedrich
+// SPDX-FileCopyrightText: 2023 chromiumboy
+// SPDX-FileCopyrightText: 2023 keronshb
+// SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT
+// SPDX-FileCopyrightText: 2024 Julian Giebel
+// SPDX-FileCopyrightText: 2024 Pieter-Jan Briers
+// SPDX-FileCopyrightText: 2024 Pspritechologist
+// SPDX-FileCopyrightText: 2024 SimpleStation14
+// SPDX-FileCopyrightText: 2024 chavonadelal
+// SPDX-FileCopyrightText: 2024 metalgearsloth
+// SPDX-FileCopyrightText: 2024 nikthechampiongr
+// SPDX-FileCopyrightText: 2024 plykiya
+// SPDX-FileCopyrightText: 2024 saintmuntzer
+// SPDX-FileCopyrightText: 2024 shamp
+// SPDX-FileCopyrightText: 2024 strO0pwafel
+// SPDX-FileCopyrightText: 2024 stroopwafel
+// SPDX-FileCopyrightText: 2024 themias
+// SPDX-FileCopyrightText: 2024 to4no_fix
+// SPDX-FileCopyrightText: 2024 voidnull000
+// SPDX-FileCopyrightText: 2025 Aiden
+// SPDX-FileCopyrightText: 2025 Baptr0b0t
+// SPDX-FileCopyrightText: 2025 GoobBot
+// SPDX-FileCopyrightText: 2025 Ignaz "Ian" Kraft
+// SPDX-FileCopyrightText: 2025 MajorMoth
+// SPDX-FileCopyrightText: 2025 RedFoxIV
+// SPDX-FileCopyrightText: 2025 VMSolidus
+// SPDX-FileCopyrightText: 2025 slarticodefast
+// SPDX-FileCopyrightText: 2025 sleepyyapril
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -472,6 +482,7 @@ public sealed class SuitSensorSystem : EntitySystem
                 }
 
                 status.Coordinates = GetNetCoordinates(coordinates);
+                status.IsCommandTracker = sensor.CommandTracker; //Goob station
                 break;
         }
 
@@ -491,6 +502,7 @@ public sealed class SuitSensorSystem : EntitySystem
             [SuitSensorConstants.NET_JOB_ICON] = status.JobIcon,
             [SuitSensorConstants.NET_JOB_DEPARTMENTS] = status.JobDepartments,
             [SuitSensorConstants.NET_IS_ALIVE] = status.IsAlive,
+            [SuitSensorConstants.NET_IS_COMMAND] = status.IsCommandTracker, //Goob station
             [SuitSensorConstants.NET_SUIT_SENSOR_UID] = status.SuitSensorUid,
             [SuitSensorConstants.NET_OWNER_UID] = status.OwnerUid,
         };
@@ -522,6 +534,7 @@ public sealed class SuitSensorSystem : EntitySystem
         if (!payload.TryGetValue(SuitSensorConstants.NET_JOB_ICON, out string? jobIcon)) return null;
         if (!payload.TryGetValue(SuitSensorConstants.NET_JOB_DEPARTMENTS, out List<string>? jobDepartments)) return null;
         if (!payload.TryGetValue(SuitSensorConstants.NET_IS_ALIVE, out bool? isAlive)) return null;
+        if (!payload.TryGetValue(SuitSensorConstants.NET_IS_COMMAND, out bool iscommand)) return null; //Goob station
         if (!payload.TryGetValue(SuitSensorConstants.NET_SUIT_SENSOR_UID, out NetEntity suitSensorUid)) return null;
         if (!payload.TryGetValue(SuitSensorConstants.NET_OWNER_UID, out NetEntity ownerUid)) return null;
 
@@ -536,6 +549,7 @@ public sealed class SuitSensorSystem : EntitySystem
             TotalDamage = totalDamage,
             TotalDamageThreshold = totalDamageThreshold,
             Coordinates = coords,
+            IsCommandTracker = iscommand,//Goob station
         };
         return status;
     }

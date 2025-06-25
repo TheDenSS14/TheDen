@@ -1,0 +1,58 @@
+# SPDX-FileCopyrightText: 2025 BlitzTheSquishy <73762869+BlitzTheSquishy@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
+# Empty mags
+- type: entity
+  id: BaseMagazineShotgunLeverRifle
+  name: "magazine (.75 caliber)"
+  parent: [ BaseItem]
+  abstract: true
+  components:
+  - type: Tag
+    tags:
+      - MagazineShotgunLeverRifle
+  - type: BallisticAmmoProvider
+    mayTransfer: true
+    whitelist:
+      tags:
+        - ShellShotgunHeavy
+    proto: ShellShotgunHighCaliber
+    capacity: 8
+  - type: Item
+    size: Small
+  - type: ContainerContainer
+    containers:
+      ballistic-ammo: !type:Container
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Ammunition/Magazine/LightRifle/light_rifle_mag.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: MagazineVisuals
+    magState: mag
+    steps: 9
+    zeroVisible: false
+  - type: Appearance
+
+- type: entity
+  id: MagazineShotgunLeverRifle
+  name: "lever rifle magazine (.75 caliber)"
+  parent: BaseMagazineShotgunLeverRifle
+  components:
+  - type: Tag
+    tags:
+      - MagazineShotgunLeverRifle
+  - type: Sprite
+    sprite: _Goobstation/Objects/Weapons/Guns/Ammunition/Magazine/lever_rifle_mags.rsi
+
+- type: entity
+  id: MagazineShotgunLeverRifleEmpty
+  parent: MagazineShotgunLeverRifle
+  suffix: Empty
+  components:
+  - type: BallisticAmmoProvider
+    proto: null

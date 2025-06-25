@@ -148,7 +148,7 @@
     shoes: ClothingShoesBootsCombatFilled
     id: SyndiPDA
     pocket1: DoubleEmergencyOxygenTankFilled
-    pocket2: BaseUplinkRadio40TC
+    pocket2: BaseUplinkRadioNukeOps
     belt: ClothingBeltMilitaryWebbing
   innerClothingSkirt: ClothingUniformJumpskirtOperative
   satchel: ClothingBackpackDuffelSyndicateOperative
@@ -170,7 +170,7 @@
     shoes: ClothingShoesBootsCombatFilled
     id: SyndiPDA
     pocket1: DoubleEmergencyOxygenTankFilled
-    pocket2: BaseUplinkRadio40TC
+    pocket2: BaseUplinkRadioNukeOps
     belt: ClothingBeltMilitaryWebbing
 #  inhand:
 #    - NukeOpsDeclarationOfWar
@@ -193,7 +193,7 @@
     shoes: ClothingShoesBootsMagSyndie
     id: SyndiAgentPDA
     pocket1: DoubleEmergencyOxygenTankFilled
-    pocket2: BaseUplinkRadio40TC
+    pocket2: BaseUplinkRadioNukeOps
     belt: ClothingBeltMilitaryWebbingMedFilled
   innerClothingSkirt: ClothingUniformJumpskirtOperative
   satchel: ClothingBackpackDuffelSyndicateOperativeMedic
@@ -343,6 +343,11 @@
   equipment:
     back: ClothingBackpackSatchelHoldingAdmin
     id: AdminPDA
+    belt: AdminToolbelt
+    pocket1: BoxFolderAdmin
+    #pocket2: 
+    #pocket3: 
+    #pocket4: 
 
 #Head Rev Gear
 - type: startingGear
