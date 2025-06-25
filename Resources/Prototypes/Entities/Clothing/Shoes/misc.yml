@@ -122,6 +122,7 @@
   - type: ClothingSpeedModifier
     walkModifier: 1.5
     sprintModifier: 1.5
+    requiresToggle: true
   - type: Appearance
   - type: GenericVisualizer
     visuals:
@@ -132,7 +133,7 @@
   - type: StaticPrice
     price: 500
   - type: PowerCellDraw
-    drawRate: 4
+    drawRate: 24 # it was 4 before :skull: it's now 2x the amount a micrortg recharges in a second
   - type: ToggleCellDraw
   - type: ItemSlots
     slots:
