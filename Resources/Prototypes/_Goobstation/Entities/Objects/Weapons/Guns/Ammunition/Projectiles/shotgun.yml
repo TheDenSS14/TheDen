@@ -9,7 +9,7 @@
 
 - type: entity
   id: HighCaliberPelletShotgun
-  name: pellet (.75 carpshot)
+  name: pellet (8 gauge carpshot)
   categories: [ HideSpawnMenu ]
   parent: BaseBullet
   components:
@@ -35,7 +35,7 @@
 
 - type: entity
   id: HighCaliberPelletShotgunIncendiary
-  name: pellet (.75 incendiary)
+  name: pellet (8 gauge dragon's breath)
   categories: [ HideSpawnMenu ]
   parent: BaseBulletIncendiary
   components:
@@ -64,7 +64,7 @@
 
 - type: entity
   id: HighCaliberPelletShotgunPractice
-  name: pellet (.75 practice)
+  name: pellet (8 gauge practice)
   categories: [ HideSpawnMenu ]
   parent: BaseBulletPractice
   components:
@@ -90,7 +90,7 @@
 
 - type: entity
   id: HighCaliberPelletShotgunUranium
-  name: pellet (.75 uranium)
+  name: pellet (8 gauge uranium)
   categories: [ HideSpawnMenu ]
   parent: BaseBullet
   components:
@@ -117,7 +117,7 @@
 
 - type: entity
   id: PelletShotgunSlugHighCaliber
-  name: pellet (.75 slug)
+  name: pellet (8 gauge slug)
   categories: [ HideSpawnMenu ]
   parent: BaseBullet
   components:
@@ -131,7 +131,7 @@
 
 - type: entity
   id: BulletSlugEnsnaring
-  name: bullet (.75 caliber ensnaring slug)
+  name: pellet (8 gauge ensnaring slug)
   parent: BaseBullet
   categories: [ HideSpawnMenu ]
   components:
@@ -155,7 +155,7 @@
 
 - type: entity
   id: BulletSlugEMP
-  name: bullet (.75 caliber EMP slug)
+  name: pellet (8 gauge EMP slug)
   parent: BaseBulletTrigger
   categories: [ HideSpawnMenu ]
   components:
@@ -182,7 +182,7 @@
 
 - type: entity
   id: BulletSlugFlash
-  name: bullet (.75 caliber flash slug)
+  name: pellet (8 gauge flash slug)
   parent: BaseBulletTrigger
   categories: [ HideSpawnMenu ]
   components:
@@ -209,7 +209,7 @@
 
 - type: entity
   id: BulletSlugBeanbagHighCaliber
-  name: beanbag (.75)
+  name: beanbag (8 gauge beanbag)
   categories: [ HideSpawnMenu ]
   parent: BaseBullet
   components:
