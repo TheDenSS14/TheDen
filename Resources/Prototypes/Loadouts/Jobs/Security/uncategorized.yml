@@ -121,6 +121,25 @@
 # Duplicate "Spare" equipment exists and shares the ItemGroup, for those officers who like to pack a spare magazine in their pocket, outside of what was issued to them.
 # I knew a lot of people in my time working IRL Armed security that did this.
 - type: loadout
+  id: LoadoutSecurityDisabler
+  category: JobsSecurityAUncategorized
+  cost: 2
+  canBeHeirloom: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSecurityEquipment
+    - !type:CharacterLogicOrRequirement
+      requirements:
+        - !type:CharacterDepartmentRequirement
+          departments:
+            - Security
+        - !type:CharacterJobRequirement
+          jobs:
+            - BlueshieldOfficer
+  items:
+    - WeaponDisabler
+    
+- type: loadout
   id: LoadoutSecurityCombatKnife
   category: JobsSecurityAUncategorized
   cost: 0
@@ -573,26 +592,6 @@
 # This category is universal to the entire security department by special request, so that players can choose their preferred Duty Pistol even if they aren't playing a security role.
 # All lethal options come with a 1 hour security department playtime, as a basic shitter protection.
 - type: loadout
-  id: LoadoutSecurityDisabler
-  category: JobsSecurityAUncategorized
-  cost: 0
-  canBeHeirloom: true
-  guideEntry: SecurityWeapons
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutSecurityWeapons
-    - !type:CharacterLogicOrRequirement
-      requirements:
-        - !type:CharacterDepartmentRequirement
-          departments:
-            - Security
-        - !type:CharacterJobRequirement
-          jobs:
-            - BlueshieldOfficer
-  items:
-    - WeaponDisabler
-
-- type: loadout
   id: LoadoutSecurityMk58NonLethal
   category: JobsSecurityAUncategorized
   cost: 0
@@ -772,9 +771,6 @@
         - !type:CharacterJobRequirement
           jobs:
             - BlueshieldOfficer
-    - !type:CharacterSpeciesRequirement
-      species:
-        - Oni
   items:
     - Truncheon
 
