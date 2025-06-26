@@ -39,6 +39,11 @@
     - HugObject
     - KissObject
     - LickObject
+  - type: SupportStanding
+    worksInHand: true
+  - type: HeldLegSupport
+    walkSpeedPenaltyReduction: 0.5
+    sprintSpeedPenaltyReduction: 0.5
 
 - type: entity
   name: cane blade

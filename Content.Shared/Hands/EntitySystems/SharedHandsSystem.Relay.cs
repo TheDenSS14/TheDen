@@ -4,6 +4,7 @@
 // SPDX-License-Identifier: MIT
 
 using Content.Shared._DEN.Body;
+using Content.Shared._DEN.Movement.Systems;
 using Content.Shared.Hands.Components;
 using Content.Shared.Movement.Systems;
 
@@ -15,6 +16,7 @@ public abstract partial class SharedHandsSystem
     {
         SubscribeLocalEvent<HandsComponent, RefreshMovementSpeedModifiersEvent>(RelayEvent);
         SubscribeLocalEvent<HandsComponent, CannotSupportStandingEvent>(RelayEvent);
+        SubscribeLocalEvent<HandsComponent, ModifyLegLossSpeedPenaltyEvent>(RelayEvent);
     }
 
     private void RelayEvent<T>(Entity<HandsComponent> entity, ref T args) where T : EntityEventArgs
