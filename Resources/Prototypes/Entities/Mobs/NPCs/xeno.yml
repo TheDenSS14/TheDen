@@ -81,15 +81,10 @@
         true
       NavSmash: !type:Bool
         true
-  - type: Tool
-    speedModifier: 1.5
-    qualities:
-      - Prying
   - type: Prying
-    pryPowered: !type:Bool
-        true
-    force: !type:Bool
-      true
+    pryPowered: true
+    force: true
+    speedModifier: 3 # DeltaV - Was 1.5
     useSound:
       path: /Audio/Items/crowbar.ogg
   - type: Reactive
@@ -129,8 +124,7 @@
   - type: MobThresholds
     thresholds:
       0: Alive
-      50: Critical
-      100: Dead
+      150: Dead # DeltaV - Was 50
   - type: SlowOnDamage
     speedModifierThresholds:
       25: 0.5
@@ -146,8 +140,11 @@
      collection: AlienClaw
     animation: WeaponArcBite
     damage:
-      groups:
-        Brute: 6
+# Begin Delta V Changes
+      types:
+        Slash: 12
+        Structural: 35
+# End DeltaV Changes
   - type: DamageStateVisuals
     rotate: true
     states:
@@ -227,8 +224,7 @@
   - type: MobThresholds
     thresholds:
       0: Alive
-      100: Critical
-      150: Dead
+      250: Dead  # DeltaV - Was 100
   - type: Stamina
     critThreshold: 300
   - type: SlowOnDamage
@@ -245,6 +241,10 @@
         - MobMask
         layer:
         - MobLayer
+  - type: MeleeWeapon # DeltaV - Make Xenos Scary
+    damage:
+      types:
+        Slash: 20
 
 - type: entity
   name: Drone
@@ -261,15 +261,16 @@
   - type: MobThresholds
     thresholds:
       0: Alive
-      80: Critical
-      130: Dead
+      160: Dead # DeltaV - Was 80
   - type: SlowOnDamage
     speedModifierThresholds:
       40: 0.7
   - type: MeleeWeapon
     damage:
-      groups:
-        Brute: 6
+# Begin DeltaV Changes
+      types:
+        Slash: 10
+# End DeltaV Changes
   - type: MovementSpeedModifier
     baseSprintSpeed: 4
   - type: Fixtures
@@ -299,16 +300,18 @@
   - type: MobThresholds
     thresholds:
       0: Alive
-      300: Critical
-      350: Dead
+      600: Dead # DeltaV - Was 300
   - type: SlowOnDamage
     speedModifierThresholds:
       150: 0.7
   - type: MovementSpeedModifier
   - type: MeleeWeapon
     damage:
-     groups:
-       Brute: 12
+# Begin DeltaV Changes
+     types:
+       Slash: 35
+       Structural: 60
+# End DeltaV Changes
   - type: Fixtures
     fixtures:
       fix1:
@@ -346,14 +349,17 @@
   - type: MobThresholds
     thresholds:
       0: Alive
-      100: Critical
-      150: Dead
+      200: Dead # DeltaV - Was 100
   - type: MovementSpeedModifier
     baseSprintSpeed: 4
   - type: MeleeWeapon
+    attackRate: 2 # DeltaV - One of the deadliest if you get too close
     damage:
-     groups:
-       Brute: 10
+# Begin DeltaV Changes
+     types:
+       Slash: 20
+       Structural: 40
+# End DeltaV Changes
   - type: SlowOnDamage
     speedModifierThresholds:
       50: 0.7
@@ -384,9 +390,12 @@
   - type: MovementSpeedModifier
     baseSprintSpeed: 6.0
   - type: MeleeWeapon
+# Begin DeltaV Changes
+    attackRate: 2
     damage:
-     groups:
-       Brute: 10
+     types:
+       Slash: 10
+# End DeltaV Changes
   - type: Fixtures
     fixtures:
       fix1:
@@ -398,6 +407,10 @@
         - MobMask
         layer:
         - MobLayer
+  - type: MobThresholds # DeltaV - Make Xenos Scary
+    thresholds:
+      0: Alive
+      125: Dead
 
 - type: entity
   name: Rouny
@@ -430,7 +443,7 @@
   - type: MobThresholds
     thresholds:
       0: Alive
-      50: Dead
+      100: Dead # DeltaV - Was 50
   - type: SlowOnDamage
     speedModifierThresholds:
       25: 0.7
