@@ -16,9 +16,9 @@
       state: icon
   - type: EmitSoundOnLand
   - type: Storage
-    maxItemSize: Small
+    maxItemSize: Normal
     grid:
-    - 0,0,6,1
+    - 0,0,5,1
     whitelist:
       components:
       - BallisticAmmoProvider
