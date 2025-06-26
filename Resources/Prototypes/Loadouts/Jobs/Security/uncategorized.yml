@@ -139,7 +139,7 @@
             - BlueshieldOfficer
   items:
     - WeaponDisabler
-    
+
 - type: loadout
   id: LoadoutSecurityCombatKnife
   category: JobsSecurityAUncategorized
@@ -693,9 +693,9 @@
     - EnergyCutlassSecurity
 
 - type: loadout
-  id: LoadoutSecurityWeaponLaserSvalinn
+  id: LoadoutSecurityEnergyGunMini
   category: JobsSecurityAUncategorized
-  cost: 3
+  cost: 2
   canBeHeirloom: true
   guideEntry: SecurityWeapons
   requirements:
@@ -710,7 +710,7 @@
           jobs:
             - BlueshieldOfficer
   items:
-    - WeaponLaserSvalinn
+    - WeaponEnergyGunMiniSecurity
 
 - type: loadout
   id: LoadoutSecurityPistolViperNonLethal
