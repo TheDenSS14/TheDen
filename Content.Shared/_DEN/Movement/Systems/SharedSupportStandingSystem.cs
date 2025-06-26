@@ -1,9 +1,6 @@
 using Content.Shared._DEN.Body;
 using Content.Shared._DEN.Movement.Components;
-using Content.Shared.Body.Components;
 using Content.Shared.Hands;
-using Content.Shared.Hands.Components;
-using Content.Shared.Hands.EntitySystems;
 using Content.Shared.Inventory;
 
 namespace Content.Shared._DEN.Movement.Systems;
