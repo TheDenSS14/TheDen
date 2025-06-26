@@ -837,8 +837,7 @@ public sealed partial class TraitCyberneticLimbReplacement : TraitFunction
         var transformSystem = entityManager.System<SharedTransformSystem>();
 
         if (!entityManager.TryGetComponent(uid, out BodyComponent? body)
-            || !entityManager.TryGetComponent(uid, out TransformComponent? xform)
-            || ProtoId is null)
+            || !entityManager.TryGetComponent(uid, out TransformComponent? xform))
             return;
 
         var root = bodySystem.GetRootPartOrNull(uid, body);
@@ -857,6 +856,9 @@ public sealed partial class TraitCyberneticLimbReplacement : TraitFunction
 
             transformSystem.AttachToGridOrMap(part.Id);
             entityManager.QueueDeleteEntity(part.Id);
+
+            if (ProtoId is null)
+                continue;
 
             var newLimb = entityManager.SpawnAtPosition(ProtoId, xform.Coordinates);
             if (entityManager.TryGetComponent(newLimb, out BodyPartComponent? limbComp))
