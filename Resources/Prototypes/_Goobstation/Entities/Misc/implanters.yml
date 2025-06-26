@@ -1,5 +1,6 @@
-# SPDX-FileCopyrightText: 2025 Rouge2t7 <81053047+Sarahon@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Baptr0b0t
+# SPDX-FileCopyrightText: 2025 Rouge2t7
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -41,3 +42,11 @@
   components:
   - type: Implanter
     implant: BluespaceLifelineImplant
+
+- type: entity
+  id: CommandTrackingImplanter
+  suffix: command tracker
+  parent: BaseImplantOnlyImplanterCentcomm
+  components:
+  - type: Implanter
+    implant: CommandTrackingImplant
