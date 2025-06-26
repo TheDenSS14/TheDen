@@ -753,23 +753,26 @@
   - sprite: Floof/Mobs/Customization/skyratears.rsi
     state: m_ears_possum_ADJ_secondary
 
-#- type: marking
-#  id: EarsProtogen
-#  bodyPart: HeadTop
-#  markingCategory: HeadTop
-#  speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid]
-#  colorLinks:
-#    m_ears_protogen_ADJ_primary: m_ears_protogen_FRONT_primary
-#    m_ears_protogen_ADJ_secondary: m_ears_protogen_FRONT_secondary
-#  sprites:
+- type: marking
+  id: EarsProtogen
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  speciesRestriction: [IPC]
+  colorLinks:
+    m_ears_protogen_ADJ_primary: m_ears_protogen_FRONT_primary
+    m_ears_protogen_ADJ_secondary: m_ears_protogen_FRONT_secondary
+  sprites:
+  - sprite: Floof/Mobs/Customization/skyratears.rsi
+    state: m_ears_protogen_FRONT_primary
+  - sprite: Floof/Mobs/Customization/skyratears.rsi
+    state: m_ears_protogen_FRONT_secondary
+    shader: unshaded
 #  - sprite: Floof/Mobs/Customization/skyratears.rsi
-#    state: m_ears_protogen_FRONT_primary
+#    state: m_ears_protogen_ADJs_primary
+#    shader: unshaded
 #  - sprite: Floof/Mobs/Customization/skyratears.rsi
-#    state: m_ears_protogen_FRONT_secondary
-#  - sprite: Floof/Mobs/Customization/skyratears.rsi
-#    state: m_ears_protogen_ADJ_primary
-#  - sprite: Floof/Mobs/Customization/skyratears.rsi
-#    state: m_ears_protogen_ADJ_secondary
+#    state: m_ears_protogen_ADJs_secondary
+#    shader: unshaded
 
 - type: marking
   id: EarsRabbit
