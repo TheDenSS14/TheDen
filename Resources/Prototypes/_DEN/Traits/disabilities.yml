@@ -87,11 +87,12 @@
       jobs:
         - Borg
         - MedicalBorg
+    - !type:CharacterItemGroupRequirement
+      group: TraitsLegAmputee
     - !type:CharacterTraitRequirement
       inverted: true
       traits:
-      - AmputeeRightLeg
-      - AmputeeBothLegs
+        - WheelchairBound
   functions:
     - !type:TraitCyberneticLimbReplacement
       removeBodyPart: Leg
@@ -107,11 +108,56 @@
       jobs:
         - Borg
         - MedicalBorg
+    - !type:CharacterItemGroupRequirement
+      group: TraitsLegAmputee
     - !type:CharacterTraitRequirement
       inverted: true
       traits:
-      - AmputeeLeftLeg
-      - AmputeeBothLegs
+        - WheelchairBound
+  functions:
+    - !type:TraitCyberneticLimbReplacement
+      removeBodyPart: Leg
+      partSymmetry: Right
+
+### "Total Leg Immobility" versions
+# Why? Because if you take WheelchairBound and a leg amputee trait, you're basically getting points for free.
+# These are 0 points, because WheelchairBound disabling legs makes these traits effectively cosmetic.
+
+- type: trait
+  id: WheelchairAmputeeLeftLeg
+  category: TraitsPhysicalDisabilities
+  points: 0
+  requirements:
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Borg
+        - MedicalBorg
+    - !type:CharacterItemGroupRequirement
+      group: TraitsLegAmputee
+    - !type:CharacterTraitRequirement
+      traits:
+        - WheelchairBound
+  functions:
+    - !type:TraitCyberneticLimbReplacement
+      removeBodyPart: Leg
+      partSymmetry: Left
+
+- type: trait
+  id: WheelchairAmputeeRightLeg
+  category: TraitsPhysicalDisabilities
+  points: 0
+  requirements:
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Borg
+        - MedicalBorg
+    - !type:CharacterItemGroupRequirement
+      group: TraitsLegAmputee
+    - !type:CharacterTraitRequirement
+      traits:
+        - WheelchairBound
   functions:
     - !type:TraitCyberneticLimbReplacement
       removeBodyPart: Leg
@@ -120,22 +166,18 @@
 - type: trait
   id: AmputeeBothLegs
   category: TraitsPhysicalDisabilities
-  points: 0 # WheelchairBound already disables your legs - this is basically cosmetic
+  points: 0
   requirements:
     - !type:CharacterJobRequirement
       inverted: true
       jobs:
         - Borg
         - MedicalBorg
-    - !type:CharacterTraitRequirement
-      inverted: true
-      traits:
-      - AmputeeLeftLeg
-      - AmputeeRightLeg
+    - !type:CharacterItemGroupRequirement
+      group: TraitsLegAmputee
     - !type:CharacterTraitRequirement
       traits:
-      - WheelchairBound
-      # If any other traits give legless characters mobility, feel free to add them here.
+        - WheelchairBound
   functions:
     - !type:TraitCyberneticLimbReplacement
       removeBodyPart: Leg
