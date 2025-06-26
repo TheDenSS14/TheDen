@@ -42,6 +42,10 @@ marking-OviniaFace = Ovinia Face
 marking-OviniaFace-ovinia-face = Face
 marking-OviniaFace-ovinia-nose = Nose
 
+marking-OviniaBlaze = Ovinia Face
+marking-OviniaBlaze-ovinia-blaze = Face
+marking-OviniaBlaze-ovinia-nose = Nose
+
 marking-OviniaSnout = Ovinia Snout
 marking-OviniaSnout-ovinia-snout = Snout
 marking-OviniaSnout-ovinia-nose = Nose

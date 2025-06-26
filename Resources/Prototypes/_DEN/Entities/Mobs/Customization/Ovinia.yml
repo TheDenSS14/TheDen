@@ -123,6 +123,17 @@
     state: ovinia-nose
 
 - type: marking
+  id: OviniaBlaze
+  bodyPart: Snout
+  markingCategory: Snout
+  speciesRestriction: [ Ovinia ]
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Ovinia/snout_markings.rsi
+    state: ovinia-blaze
+  - sprite: _DEN/Mobs/Customization/Ovinia/snout_markings.rsi
+    state: ovinia-nose
+
+- type: marking
   id: OviniaSnout
   bodyPart: Snout
   markingCategory: Snout
