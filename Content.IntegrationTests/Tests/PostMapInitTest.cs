@@ -108,7 +108,7 @@ namespace Content.IntegrationTests.Tests
             "MeteorArena",
             "NukieOutpost",
             "Core",
-            "Pebble", //DeltaV
+            "Gravel", // Den
             "Edge", //DeltaV
             "Saltern",
             "Shoukou", //DeltaV

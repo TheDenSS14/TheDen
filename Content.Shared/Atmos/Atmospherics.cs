@@ -80,7 +80,7 @@ namespace Content.Shared.Atmos
         ///     calculations and so cap it here. The physical interpretation is that at this temperature, any
         ///     gas that you would have transforms into plasma.
         /// </summary>
-        public const float Tmax = 262144; // 1/64 of max safe integer, any values above will result in a ~0.03K epsilon
+        public const float Tmax = 262144000; // 1/64 of max safe integer, any values above will result in a ~0.03K epsilon // Funky - raised to support HFR
 
         /// <summary>
         ///     Liters in a cell.
@@ -203,6 +203,35 @@ namespace Content.Shared.Atmos
             [Gas.Halon] = Loc.GetString("gas-halon-abbreviation"),
             [Gas.Helium] = Loc.GetString("gas-helium-abbreviation"),
             [Gas.AntiNoblium] = Loc.GetString("gas-anti-noblium-abbreviation"),
+        };
+
+
+        /// <summary>
+        ///     Funkystation - Dictionary of names for <see cref="Gas"/>
+        ///     this was kind of ported in Den PR #819
+        /// </summary>
+        public static Dictionary<Gas, string> GasNames = new Dictionary<Gas, string>()
+        {
+            [Gas.Ammonia] = Loc.GetString("gases-ammonia"),
+            [Gas.CarbonDioxide] = Loc.GetString("gases-co2"),
+            [Gas.Frezon] = Loc.GetString("gases-frezon"),
+            [Gas.Nitrogen] = Loc.GetString("gases-nitrogen"),
+            [Gas.NitrousOxide] = Loc.GetString("gases-n2o"),
+            [Gas.Oxygen] = Loc.GetString("gases-oxygen"),
+            [Gas.Plasma] = Loc.GetString("gases-plasma"),
+            [Gas.Tritium] = Loc.GetString("gases-tritium"),
+            [Gas.WaterVapor] = Loc.GetString("gases-water-vapor"),
+            [Gas.BZ] = Loc.GetString("gases-bz"),
+            [Gas.Healium] = Loc.GetString("gases-healium"),
+            [Gas.Nitrium] = Loc.GetString("gases-nitrium"),
+            [Gas.Pluoxium] = Loc.GetString("gases-pluoxium"),
+            [Gas.Hydrogen] = Loc.GetString("gases-hydrogen"),
+            [Gas.HyperNoblium] = Loc.GetString("gases-hyper-noblium"),
+            [Gas.ProtoNitrate] = Loc.GetString("gases-proto-nitrate"),
+            [Gas.Zauker] = Loc.GetString("gases-zauker"),
+            [Gas.Halon] = Loc.GetString("gases-halon"),
+            [Gas.Helium] = Loc.GetString("gases-helium"),
+            [Gas.AntiNoblium] = Loc.GetString("gases-anti-noblium"),
         };
 
         #region Excited Groups
