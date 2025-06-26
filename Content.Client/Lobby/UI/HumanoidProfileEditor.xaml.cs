@@ -1668,6 +1668,7 @@ namespace Content.Client.Lobby.UI
         private void SetSpawnPriority(SpawnPriorityPreference newSpawnPriority)
         {
             Profile = Profile?.WithSpawnPriorityPreference(newSpawnPriority);
+            IsDirty = true;
         }
 
         private void SetProfileHeight(float height)
