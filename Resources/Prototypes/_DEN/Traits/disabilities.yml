@@ -40,7 +40,7 @@
 - type: trait
   id: AmputeeLeftArm
   category: TraitsPhysicalDisabilities
-  points: 4
+  points: 6
   requirements:
     - !type:CharacterJobRequirement
       inverted: true
@@ -50,7 +50,7 @@
     - !type:CharacterTraitRequirement
       inverted: true
       traits:
-      - AmputeeRightArm
+        - AmputeeRightArm
   functions:
     - !type:TraitCyberneticLimbReplacement
       removeBodyPart: Arm
@@ -59,7 +59,7 @@
 - type: trait
   id: AmputeeRightArm
   category: TraitsPhysicalDisabilities
-  points: 4
+  points: 6
   requirements:
     - !type:CharacterJobRequirement
       inverted: true
@@ -69,7 +69,7 @@
     - !type:CharacterTraitRequirement
       inverted: true
       traits:
-      - AmputeeLeftArm
+        - AmputeeLeftArm
   functions:
     - !type:TraitCyberneticLimbReplacement
       removeBodyPart: Arm
@@ -80,7 +80,7 @@
 - type: trait
   id: AmputeeLeftLeg
   category: TraitsPhysicalDisabilities
-  points: 4
+  points: 6
   requirements:
     - !type:CharacterJobRequirement
       inverted: true
@@ -100,7 +100,7 @@
 - type: trait
   id: AmputeeRightLeg
   category: TraitsPhysicalDisabilities
-  points: 4
+  points: 6
   requirements:
     - !type:CharacterJobRequirement
       inverted: true
