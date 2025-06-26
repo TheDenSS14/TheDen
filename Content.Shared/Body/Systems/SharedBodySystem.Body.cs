@@ -48,6 +48,7 @@ using Content.Shared.Humanoid;
 using Content.Shared.Inventory.Events;
 using Content.Shared.Standing;
 using Robust.Shared.Timing;
+using Content.Shared._DEN.Body;
 
 namespace Content.Shared.Body.Systems;
 
@@ -485,7 +486,13 @@ public partial class SharedBodySystem
 
     private void OnStandAttempt(Entity<BodyComponent> ent, ref StandAttemptEvent args)
     {
-        if (ent.Comp.LegEntities.Count < ent.Comp.RequiredLegs)
+        var legCount = ent.Comp.LegEntities.Count;
+        if (legCount >= ent.Comp.RequiredLegs)
+            return;
+
+        var cannotStand = new CannotSupportStandingEvent(legCount);
+        RaiseLocalEvent(ent.Owner, cannotStand, false);
+        if (!cannotStand.Cancelled)
             args.Cancel();
     }
 

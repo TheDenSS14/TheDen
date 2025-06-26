@@ -57,6 +57,7 @@ using Content.Shared.Overlays.Switchable;
 
 using Content.Shared.Stunnable;
 using Content.Shared.Movement.Events;
+using Content.Shared._DEN.Body;
 
 namespace Content.Shared.Inventory;
 
@@ -81,6 +82,7 @@ public partial class InventorySystem
         SubscribeLocalEvent<InventoryComponent, SelfBeforeGunShotEvent>(RelayInventoryEvent);
         SubscribeLocalEvent<InventoryComponent, SelfBeforeClimbEvent>(RelayInventoryEvent);
         SubscribeLocalEvent<InventoryComponent, MakeFootstepSoundEvent>(RelayInventoryEvent);
+        SubscribeLocalEvent<InventoryComponent, CannotSupportStandingEvent>(RelayInventoryEvent);
 
         // by-ref events
         SubscribeLocalEvent<InventoryComponent, GetExplosionResistanceEvent>(RefRelayInventoryEvent);
