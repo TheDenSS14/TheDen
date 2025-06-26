@@ -1,11 +1,12 @@
-# SPDX-FileCopyrightText: 2025 John Willis <143434770+CerberusWolfie@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 MajorMoth <61519600+MajorMoth@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 Rosycup <178287475+Rosycup@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 SixplyDev <einlichen@gmail.com>
-# SPDX-FileCopyrightText: 2025 Solstice <solsticeofthewinter@gmail.com>
-# SPDX-FileCopyrightText: 2025 Tabitha <64847293+KyuPolaris@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 VMSolidus <evilexecutive@gmail.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 John Willis
+# SPDX-FileCopyrightText: 2025 MajorMoth
+# SPDX-FileCopyrightText: 2025 Rosycup
+# SPDX-FileCopyrightText: 2025 SixplyDev
+# SPDX-FileCopyrightText: 2025 Solstice
+# SPDX-FileCopyrightText: 2025 Tabitha
+# SPDX-FileCopyrightText: 2025 Ted Lukin
+# SPDX-FileCopyrightText: 2025 VMSolidus
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -26,24 +27,36 @@
     - id: Paper
       amount: 2
 
+- type: entityTable
+  id: LockerFillBlueshieldOfficer
+  table: !type:AllSelector
+    children:
+    - id: Flash
+    - id: FlashlightSeclite
+    - id: ClothingBeltSecurityFilled
+    - id: DefibrillatorCompact
+    - id: BoxZiptie
+    - id: OxygenTankFilled
+    - id: NitrogenTankFilled
+    - id: ClothingBlueshieldArmourVest
+    - id: ClothingHeadHelmetBasic
+    - id: ClothingEyesGlassesMedSec
+    - id: ClothingHandsGlovesCombat
+    - id: ClothingOuterHardsuitBlueshield
+    - id: ClothingBackpackDuffelSurgeryFilled
+    - id: HandheldCrewMonitorBSO
+    - id: PinpointerNuclear
+    - id: RubberStampBlueshield
+
 - type: entity
   id: LockerBlueshieldOfficerFilled
   suffix: Filled
   parent: LockerBlueshieldOfficer
   components:
-  - type: StorageFill
-    contents:
-    - id: Flash
-    - id: FlashlightSeclite
-    - id: ClothingBeltSecurityFilled
-    - id: ClothingBlueshieldArmourVest
-    - id: ClothingEyesGlassesMedSec
-    - id: ClothingHandsGlovesCombat
-    - id: ClothingOuterHardsuitBlueshield
-    - id: OxygenTankFilled
-    - id: NitrogenTankFilled
-    - id: PinpointerNuclear
-    - id: RubberStampBlueshield
+  - type: EntityTableContainerFill
+    containers:
+      entity_storage: !type:NestedSelector
+        tableId: LockerFillBlueshieldOfficer
 
 - type: entity
   id: LockerMagistrateFilled

@@ -1,6 +1,7 @@
-// SPDX-FileCopyrightText: 2025 LaCumbiaDelCoronavirus <90893484+LaCumbiaDelCoronavirus@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 MajorMoth <thepolandbear@gmail.com>
-// SPDX-FileCopyrightText: 2025 marc-pelletier <113944176+marc-pelletier@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 LaCumbiaDelCoronavirus
+// SPDX-FileCopyrightText: 2025 MajorMoth
+// SPDX-FileCopyrightText: 2025 marc-pelletier
+// SPDX-FileCopyrightText: 2025 sleepyyapril
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -38,7 +39,7 @@ public sealed class HFRConsoleSystem : EntitySystem
         SubscribeLocalEvent<HFRConsoleComponent, HFRConsoleSetFuelInputRateMessage>(OnSetFuelInputRateMessage);
         SubscribeLocalEvent<HFRConsoleComponent, HFRConsoleSetModeratorInputRateMessage>(OnSetModeratorInputRateMessage);
         SubscribeLocalEvent<HFRConsoleComponent, HFRConsoleSelectRecipeMessage>(OnSelectRecipeMessage);
-        SubscribeLocalEvent<HFRConsoleComponent, ComponentStartup>(OnConsoleStartup);
+        SubscribeLocalEvent<HFRConsoleComponent, MapInitEvent>(OnConsoleStartup);
         SubscribeLocalEvent<HFRConsoleComponent, AnchorStateChangedEvent>(OnConsoleAnchorChanged);
         SubscribeLocalEvent<HFRConsoleComponent, HFRConsoleToggleWasteRemoveMessage>(OnToggleWasteRemoveMessage);
         SubscribeLocalEvent<HFRConsoleComponent, HFRConsoleSetHeatingConductorMessage>(OnSetHeatingConductorMessage);
@@ -55,7 +56,7 @@ public sealed class HFRConsoleSystem : EntitySystem
         DirtyUI(ent, ent.Comp);
     }
 
-    private void OnConsoleStartup(EntityUid uid, HFRConsoleComponent console, ComponentStartup args)
+    private void OnConsoleStartup(EntityUid uid, HFRConsoleComponent console, MapInitEvent args)
     {
         SetPowerState(uid, console);
     }
@@ -88,7 +89,7 @@ public sealed class HFRConsoleSystem : EntitySystem
             return;
 
         bool shouldBePowered = false;
-        if (console.CoreUid != null && 
+        if (console.CoreUid != null &&
             EntityManager.EntityExists(console.CoreUid.Value) &&
             TryComp<HFRCoreComponent>(console.CoreUid.Value, out var coreComp))
         {
@@ -332,7 +333,7 @@ public sealed class HFRConsoleSystem : EntitySystem
             {
                 coolantMoles = corePipe.Air.TotalMoles;
                 coolantTemperature = corePipe.Air.Temperature;
-                coolantTemperatureArchived = coolantTemperature; 
+                coolantTemperatureArchived = coolantTemperature;
             }
 
             // Calculate output moles and temperature from HFRWasteOutput pipe
@@ -342,7 +343,7 @@ public sealed class HFRConsoleSystem : EntitySystem
             {
                 outputMoles = wastePipe.Air.TotalMoles;
                 outputTemperature = wastePipe.Air.Temperature;
-                outputTemperatureArchived = outputTemperature; 
+                outputTemperatureArchived = outputTemperature;
             }
         }
 
