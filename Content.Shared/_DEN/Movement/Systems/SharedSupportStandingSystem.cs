@@ -10,9 +10,6 @@ namespace Content.Shared._DEN.Movement.Systems;
 
 public abstract class SharedSupportStandingSystem : EntitySystem
 {
-    [Dependency] private readonly SharedHandsSystem _handsSystem = default!;
-    [Dependency] private readonly InventorySystem _inventorySystem = default!;
-
     public override void Initialize()
     {
         SubscribeLocalEvent<SupportStandingComponent,
