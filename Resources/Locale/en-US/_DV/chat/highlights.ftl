@@ -196,24 +196,45 @@ highlight-technical-assistant-5 = "TA"
 highlight-scientist-1 = Scientist
 highlight-scientist-2 = Epistemics
 highlight-scientist-3 = "Epi"
+highlight-scientist-4 = Science
+highlight-scientist-5 = "Sci"
 
 highlight-roboticist-1 = Roboticist
 highlight-roboticist-2 = Epistemics
 highlight-roboticist-3 = "Epi"
+highlight-roboticist-4 = Science
+highlight-roboticist-5 = "Sci"
+highlight-roboticist-6 = Robo
 
 highlight-research-assistant-1 = Research Assistant
 highlight-research-assistant-2 = Epistemics
 highlight-research-assistant-3 = "Epi"
+highlight-research-assistant-4 = Science
+highlight-research-assistant-5 = "Sci"
+highlight-research-assistant-6 = "RA"
 
 highlight-psionic-mantis-1 = "Mantis"
 highlight-psionic-mantis-2 = Psionic Mantis
+highlight-psionic-mantis-3 = "Epi"
+highlight-psionic-mantis-4 = Epistemics
+highlight-psionic-mantis-5 = "Sci"
+highlight-psionic-mantis-6 = Science
 
 highlight-chaplain-1 = Chaplain
 highlight-chaplain-2 = "Chap"
 highlight-chaplain-3 = Chapel
+highlight-chaplain-4 = "Epi"
+highlight-chaplain-5 = Epistemics
+highlight-chaplain-6 = "Sci"
+highlight-chaplain-7 = Science
 
 highlight-librarian-1 = Librarian
 highlight-librarian-2 = Library
+highlight-librarian-3 = "Epi"
+highlight-librarian-4 = Epistemics
+highlight-librarian-5 = "Sci"
+highlight-librarian-6 = Science
+highlight-librarian-7 = Cataloguer
 
 # Justice
 highlight-clerk-1 = Clerk
