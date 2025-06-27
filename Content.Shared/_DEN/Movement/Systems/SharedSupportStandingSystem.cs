@@ -4,18 +4,22 @@ using Content.Shared.Body.Components;
 using Content.Shared.Hands;
 using Content.Shared.Inventory;
 using Content.Shared.Inventory.Events;
+using Content.Shared.Item.ItemToggle;
+using Content.Shared.Item.ItemToggle.Components;
 using Content.Shared.Standing;
 
 namespace Content.Shared._DEN.Movement.Systems;
 
 public abstract class SharedSupportStandingSystem : EntitySystem
 {
+    [Dependency] private readonly ItemToggleSystem _itemToggle = default!;
     [Dependency] private readonly StandingStateSystem _standing = default!;
 
     public override void Initialize()
     {
         SubscribeLocalEvent<HeldSupportStandingComponent, GotUnequippedHandEvent>(OnGotUnequippedHand);
         SubscribeLocalEvent<WornSupportStandingComponent, GotUnequippedEvent>(OnGotUnequipped);
+        SubscribeLocalEvent<HeldSupportStandingComponent, ItemToggledEvent>(OnToggled);
 
         SubscribeLocalEvent<HeldSupportStandingComponent,
             HeldRelayedEvent<CannotSupportStandingEvent>>(SupportStandingWhenHeld);
@@ -29,13 +33,19 @@ public abstract class SharedSupportStandingSystem : EntitySystem
     private void OnGotUnequipped(Entity<WornSupportStandingComponent> ent, ref GotUnequippedEvent args)
         => UpdateStanding(args.Equipee);
 
+    private void OnToggled(EntityUid uid, SupportStandingComponent comp, ref ItemToggledEvent args)
+    {
+        if (args.User != null)
+            UpdateStanding(args.User.Value);
+    }
+
     protected void SupportStandingWhenHeld(Entity<HeldSupportStandingComponent> ent,
         ref HeldRelayedEvent<CannotSupportStandingEvent> args)
-        => TrySupportStanding(ent.Comp, ref args.Args);
+        => TrySupportStanding(ent.Owner, ent.Comp, ref args.Args);
 
     protected void SupportStandingWhenWorn(Entity<WornSupportStandingComponent> ent,
         ref InventoryRelayedEvent<CannotSupportStandingEvent> args)
-        => TrySupportStanding(ent.Comp, ref args.Args);
+        => TrySupportStanding(ent.Owner, ent.Comp, ref args.Args);
 
     private void UpdateStanding(EntityUid uid)
     {
@@ -49,9 +59,9 @@ public abstract class SharedSupportStandingSystem : EntitySystem
             _standing.Down(uid);
     }
 
-    private void TrySupportStanding(SupportStandingComponent comp, ref CannotSupportStandingEvent args)
+    private void TrySupportStanding(EntityUid uid, SupportStandingComponent comp, ref CannotSupportStandingEvent args)
     {
-        if (args.LegCount >= comp.MinimumLegCount)
+        if (args.LegCount >= comp.MinimumLegCount && _itemToggle.IsActivated(uid))
             args.Cancel();
     }
 }

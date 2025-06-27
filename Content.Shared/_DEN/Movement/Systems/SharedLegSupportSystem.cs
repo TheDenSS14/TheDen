@@ -1,8 +1,8 @@
 using Content.Shared._DEN.Movement.Components;
 using Content.Shared.Body.Components;
 using Content.Shared.Hands;
-using Content.Shared.Hands.Components;
-using Content.Shared.Hands.EntitySystems;
+using Content.Shared.Item.ItemToggle;
+using Content.Shared.Item.ItemToggle.Components;
 using Content.Shared.Movement.Systems;
 using Content.Shared.Standing;
 
@@ -14,15 +14,17 @@ namespace Content.Shared._DEN.Movement.Systems;
 /// </summary>
 public abstract class SharedLegSupportSystem : EntitySystem
 {
+    [Dependency] private readonly ItemToggleSystem _itemToggle = default!;
     [Dependency] private readonly MovementSpeedModifierSystem _movementSpeedModifier = default!;
     [Dependency] private readonly StandingStateSystem _standing = default!;
 
     public override void Initialize()
     {
-        SubscribeLocalEvent<HeldLegSupportComponent, GotEquippedHandEvent>(OnGotEquippedHand);
-        SubscribeLocalEvent<HeldLegSupportComponent, GotUnequippedHandEvent>(OnGotUnequippedHand);
         SubscribeLocalEvent<BodyComponent, RefreshMovementSpeedModifiersEvent>(OnRefreshMovementSpeedModifiers);
 
+        SubscribeLocalEvent<HeldLegSupportComponent, GotEquippedHandEvent>(OnGotEquippedHand);
+        SubscribeLocalEvent<HeldLegSupportComponent, GotUnequippedHandEvent>(OnGotUnequippedHand);
+        SubscribeLocalEvent<HeldLegSupportComponent, ItemToggledEvent>(OnToggled);
         SubscribeLocalEvent<HeldLegSupportComponent, HeldRelayedEvent<ModifyLegLossSpeedPenaltyEvent>>
             (HeldModifySpeedPenalty);
     }
@@ -37,13 +39,20 @@ public abstract class SharedLegSupportSystem : EntitySystem
         _movementSpeedModifier.RefreshMovementSpeedModifiers(args.User);
     }
 
+    private void OnToggled(EntityUid uid, LegSupportComponent comp, ref ItemToggledEvent args)
+    {
+        if (args.User != null)
+            _movementSpeedModifier.RefreshMovementSpeedModifiers(args.User.Value);
+    }
+
     private void OnRefreshMovementSpeedModifiers(Entity<BodyComponent> ent,
         ref RefreshMovementSpeedModifiersEvent args)
     {
         var body = ent.Comp;
         if (_standing.IsDown(ent.Owner)
             || body.RequiredLegs <= 0
-            || body.LegEntities.Count >= body.RequiredLegs)
+            || body.LegEntities.Count >= body.RequiredLegs
+            || !_itemToggle.IsActivated(ent.Owner))
             return;
 
         var legRatio = (float) body.LegEntities.Count / body.RequiredLegs;
