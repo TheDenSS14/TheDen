@@ -9,21 +9,26 @@
 # if you add or remove a string here, update the protoype
 
 # Centcomm
-highlight-centcomm-agent-1 = Centcom
+highlight-centcomm-agent-1 = Centcomm
 highlight-centcomm-agent-2 = Central Command
 highlight-centcomm-agent-3 = Death Squad
 highlight-centcomm-agent-4 = DeathSquad
 highlight-centcomm-agent-5 = "CC"
 highlight-centcomm-agent-6 = "DS"
+highlight-centcomm-agent-7 = Centcom
 
-highlight-centcomm-official-1 = Centcom
+highlight-centcomm-official-1 = Centcomm
 highlight-centcomm-official-2 = Central Command
 highlight-centcomm-official-3 = "CC"
+highlight-centcomm-official-4 = Centcom Official
+highlight-centcomm-official-5 = Centcomm Official
+highlight-centcomm-official-6 = Centcom
 
-highlight-centcomm-quarantine-officer-1 = Centcom
+highlight-centcomm-quarantine-officer-1 = Centcomm
 highlight-centcomm-quarantine-officer-2 = Central Command
 highlight-centcomm-quarantine-officer-3 = "CBURN"
 highlight-centcomm-quarantine-officer-4 = "CC"
+highlight-centcomm-quarantine-officer-5 = Centcom
 
 # ERT
 highlight-ert-leader-1 = "ERT Leader"
