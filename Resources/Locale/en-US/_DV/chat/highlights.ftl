@@ -238,15 +238,22 @@ highlight-librarian-7 = Cataloguer
 
 # Justice
 highlight-clerk-1 = Clerk
+highlight-clerk-2 = Justice
+highlight-clerk-3 = Lawyer
+highlight-clerk-4 = Court
 
 highlight-attorney-1 = Lawyer
 highlight-attorney-2 = Attorney
 highlight-attorney-3 = Defense
+highlight-attorney-4 = Justice
+highlight-attorney-5 = Court
 
 highlight-prosecutor-1 = Lawyer
 highlight-prosecutor-2 = Prosecutor
 highlight-prosecutor-3 = Prosecution
 highlight-prosecutor-4 = "Prosec"
+highlight-prosecutor-5 = Justice
+highlight-prosecutor-6 = Court
 
 # Logistics
 highlight-cargo-technician-1 = Cargo Technician
