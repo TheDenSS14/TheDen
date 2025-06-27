@@ -420,6 +420,7 @@ highlight-personal-ai-2 = "pAI"
 highlight-cyborg-1 = Cyborg
 highlight-cyborg-2 = Borgie
 highlight-cyborg-3 = Borg
+highlight-cyborg-4 = Borgy
 
 highlight-medical-cyborg-1 = Cyborg
 highlight-medical-cyborg-2 = Borgie
@@ -427,6 +428,9 @@ highlight-medical-cyborg-3 = Borg
 highlight-medical-cyborg-4 = Medical
 highlight-medical-cyborg-5 = Medborg
 highlight-medical-cyborg-6 = Medical Cyborg
+highlight-medical-cyborg-7 = "Med"
+highlight-medical-cyborg-8 = MedBay
+highlight-medical-cyborg-9 = Borgy
 
 highlight-security-cyborg-1 = Cyborg
 highlight-security-cyborg-2 = Borgie
@@ -434,6 +438,8 @@ highlight-security-cyborg-3 = Borg
 highlight-security-cyborg-4 = Security
 highlight-security-cyborg-5 = Secborg
 highlight-security-cyborg-6 = Security Cyborg
+highlight-security-cyborg-7 = "Sec"
+highlight-security-cyborg-8 = Borgy
 
 highlight-station-ai-1 = Station AI
 highlight-station-ai-2 = "AI"
