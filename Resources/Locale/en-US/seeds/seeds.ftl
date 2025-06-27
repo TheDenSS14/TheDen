@@ -155,3 +155,5 @@ seeds-capfruit-name = capfruit
 seeds-capfruit-display-name = capfruit tree
 seeds-cherry-name = cherry
 seeds-cherry-display-name = cherry tree
+seeds-beetroot-name = beetroot
+seeds-beetroot-display-name = beetroot
