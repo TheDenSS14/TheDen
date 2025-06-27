@@ -394,13 +394,6 @@ highlight-janitor-5 = Civilian
 highlight-janitor-6 = Custodian
 highlight-janitor-7 = Custodial
 
-highlight-lawyer-1 = Lawyer
-highlight-lawyer-2 = Attorney
-highlight-lawyer-3 = Justive
-highlight-lawyer-4 = Court
-highlight-lawyer-5 = Service
-highlight-lawyer-6 = Civilian
-
 highlight-mime-1 = Mime
 highlight-mime-2 = Service
 highlight-mime-3 = Civilian
@@ -449,9 +442,6 @@ highlight-zookeeper-4 = Civilian
 highlight-zookeeper-5 = Zoo
 
 # Silicon
-highlight-personal-ai-1 = Personal AI
-highlight-personal-ai-2 = "pAI"
-
 highlight-cyborg-1 = Cyborg
 highlight-cyborg-2 = Borgie
 highlight-cyborg-3 = Borg
