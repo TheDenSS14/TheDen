@@ -1,5 +1,5 @@
 marking-MothNeckfluffBurntOff = Burnt Off
-marking-MothNeckfluff-m_fluff_burnt_off = Colour
+marking-MothNeckfluffBurntOff-m_fluff_burnt_off = Colour
 
 marking-MothNeckfluffDeathhead = Deathhead
 marking-MothNeckfluffDeathhead-m_fluff_deathhead = Colour
