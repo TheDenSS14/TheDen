@@ -443,3 +443,24 @@ highlight-security-cyborg-8 = Borgy
 
 highlight-station-ai-1 = Station AI
 highlight-station-ai-2 = "AI"
+
+# Dignitary
+highlight-blue-shield-officer-1 = Blueshield Officer
+highlight-blue-shield-officer-2 = Blueshield
+highlight-blue-shield-officer-3 = "BSO"
+highlight-blue-shield-officer-4 = Command
+highlight-blue-shield-officer-5 = Dignitary
+
+highlight-nanotrasen-representative-1 = Nanotrasen Representative
+highlight-nanotrasen-representative-2 = "NTR"
+highlight-nanotrasen-representative-3 = "NT Rep"
+highlight-nanotrasen-representative-4 = Command
+highlight-nanotrasen-representative-5 = Dignitary
+
+highlight-magistrate-1 = Chief Justice
+highlight-magistrate-2 = "CJ"
+highlight-magistrate-3 = Justice
+highlight-magistrate-4 = Command
+highlight-magistrate-5 = Magistrate
+highlight-magistrate-6 = "Magi"
+highlight-magistrate-7 = Dignitary
