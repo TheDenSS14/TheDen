@@ -331,50 +331,87 @@ highlight-bartender-2 = Barkeeper
 highlight-bartender-3 = Barkeep
 highlight-bartender-4 = "Bar"
 highlight-bartender-5 = Tender
+highlight-bartender-6 = Service
+highlight-bartender-7 = Civilian
 
 highlight-botanist-1 = Botanist
 highlight-botanist-2 = Botany
 highlight-botanist-3 = Hydroponics
+highlight-botanist-4 = Service
+highlight-botanist-5 = Civilian
 
 highlight-chef-1 = Chef
 highlight-chef-2 = "Cook"
 highlight-chef-3 = Kitchen
+highlight-chef-4 = Service
+highlight-chef-5 = Civilian
 
 highlight-clown-1 = Clown
 highlight-clown-2 = Jester
+highlight-clown-3 = Service
+highlight-clown-4 = Civilian
 
 highlight-janitor-1 = Janitorial
 highlight-janitor-2 = Janitor
 highlight-janitor-3 = "Jani"
+highlight-janitor-4 = Service
+highlight-janitor-5 = Civilian
+highlight-janitor-6 = Custodian
+highlight-janitor-7 = Custodial
 
 highlight-lawyer-1 = Lawyer
 highlight-lawyer-2 = Attorney
+highlight-lawyer-3 = Justive
+highlight-lawyer-4 = Court
+highlight-lawyer-5 = Service
+highlight-lawyer-6 = Civilian
 
 highlight-mime-1 = Mime
+highlight-mime-2 = Service
+highlight-mime-3 = Civilian
 
 highlight-musician-1 = Musician
 highlight-musician-2 = Music
+highlight-musician-3 = Service
+highlight-musician-4 = Civilian
 
 highlight-passenger-1 = Passenger
+highlight-passenger-2 = Civilian
 
 highlight-visitor-1 = Visitor
+highlight-visitor-2 = Civilian
 
 highlight-service-worker-1 = Service Worker
-
-highlight-reporter-1 = Reporter
-highlight-reporter-2 = Journalist
-
-highlight-zookeeper-1 = Zookeeper
-highlight-zookeeper-2 = Zookeep
+highlight-service-worker-2 = Service
+highlight-service-worker-3 = Civilian
 
 highlight-boxer-1 = Boxer
+highlight-boxer-2 = Service
+highlight-boxer-3 = Civilian
 
 highlight-gladiator-1 = Gladiator
+highlight-gladiator-2 = Civilian
+highlight-gladiator-3 = Perma
 
 highlight-martial-artist-1 = Martial Artist
 highlight-martial-artist-2 = Martial
+highlight-martial-artist-3 = Service
+highlight-martial-artist-4 = Civilian
 
 highlight-prisoner-1 = Prisoner
+highlight-prisoner-2 = Civilian
+highlight-prisoner-3 = Perma
+
+highlight-reporter-1 = Reporter
+highlight-reporter-2 = Journalist
+highlight-reporter-3 = Service
+highlight-reporter-4 = Civilian
+
+highlight-zookeeper-1 = Zookeeper
+highlight-zookeeper-2 = Zookeep
+highlight-zookeeper-3 = Service
+highlight-zookeeper-4 = Civilian
+highlight-zookeeper-5 = Zoo
 
 # Silicon
 highlight-personal-ai-1 = Personal AI
