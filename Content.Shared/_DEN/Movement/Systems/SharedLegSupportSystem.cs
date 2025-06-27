@@ -51,6 +51,7 @@ public abstract class SharedLegSupportSystem : EntitySystem
         var body = ent.Comp;
         if (_standing.IsDown(ent.Owner)
             || body.RequiredLegs <= 0
+            || body.LegEntities.Count == 0
             || body.LegEntities.Count >= body.RequiredLegs
             || !_itemToggle.IsActivated(ent.Owner))
             return;
