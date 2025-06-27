@@ -1,21 +1,25 @@
-# SPDX-FileCopyrightText: 2023 Kara <lunarautomaton6@gmail.com>
-# SPDX-FileCopyrightText: 2023 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2023 Nim <128169402+Nimfar11@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2023 Slava0135 <40753025+Slava0135@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2023 brainfood1183 <113240905+brainfood1183@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2023 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 AJCM-git <60196617+AJCM-git@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 Aiden <aiden@djkraz.com>
-# SPDX-FileCopyrightText: 2024 Alzore <140123969+Blackern5000@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT <77995199+DEATHB4DEFEAT@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 Ed <96445749+TheShuEd@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 Emisse <99158783+emisse@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 Memeji <greyalphawolf7@gmail.com>
-# SPDX-FileCopyrightText: 2024 VMSolidus <evilexecutive@gmail.com>
-# SPDX-FileCopyrightText: 2024 Whisper <121047731+QuietlyWhisper@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 icekot8 <93311212+icekot8@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 Rosycup <178287475+Rosycup@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Kara
+# SPDX-FileCopyrightText: 2023 Nemanja
+# SPDX-FileCopyrightText: 2023 Nim
+# SPDX-FileCopyrightText: 2023 Slava0135
+# SPDX-FileCopyrightText: 2023 brainfood1183
+# SPDX-FileCopyrightText: 2023 metalgearsloth
+# SPDX-FileCopyrightText: 2024 AJCM-git
+# SPDX-FileCopyrightText: 2024 Aiden
+# SPDX-FileCopyrightText: 2024 Alzore
+# SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT
+# SPDX-FileCopyrightText: 2024 Ed
+# SPDX-FileCopyrightText: 2024 Emisse
+# SPDX-FileCopyrightText: 2024 Memeji
+# SPDX-FileCopyrightText: 2024 VMSolidus
+# SPDX-FileCopyrightText: 2024 Whisper
+# SPDX-FileCopyrightText: 2024 coderabbitai[bot]
+# SPDX-FileCopyrightText: 2024 icekot8
+# SPDX-FileCopyrightText: 2025 MajorMoth
+# SPDX-FileCopyrightText: 2025 Rosycup
+# SPDX-FileCopyrightText: 2025 Steve
+# SPDX-FileCopyrightText: 2025 marc-pelletier
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -203,8 +207,11 @@
     - Water
     - Sulfur
     - Blood # Floof - Artifact tweaks
-    - Cum # Floof - Artifact tweaks
-    - Pomelustine # Floof - Artifact tweaks
+#   The Den start
+#   These often end up breaking consent. Removed.
+#   - Cum # Floof - Artifact tweaks
+#   - Pomelustine # Floof - Artifact tweaks
+#   The Den end
 
 - type: artifactEffect
   id: EffectCold
@@ -539,8 +546,11 @@
     - Desoxyephedrine
     - Pax
     - Siderlac
-    - Libidozenithizine # Floof - Artifact tweaks
-    - Philterex # Floof - Artifact tweaks
+#   The Den start
+#   These often end up breaking consent. Removed.
+#   - Libidozenithizine # Floof - Artifact tweaks
+#   - Philterex # Floof - Artifact tweaks
+#   The Den end
 
 - type: artifactEffect
   id: EffectEmp

@@ -49,14 +49,14 @@
 # Magazines
 - type: entity
   id: MagazineLightRifleBox
-  name: "belt box (.30 rifle)"
-  parent: BaseMagazineLightRifle
+  name: "belt box (.20 rifle)"
+  parent: BaseMagazineRifle
   components:
   - type: Tag
     tags:
       - MagazineLightRifleBox
   - type: BallisticAmmoProvider
-    proto: CartridgeLightRifle
+    proto: CartridgeRifle
     capacity: 100
   - type: Item
   - type: Sprite
@@ -69,43 +69,43 @@
 
 - type: entity
   id: MagazineLightRifleBoxPractice
-  name: "belt box (.30 rifle practice)"
+  name: "belt box (.20 rifle practice)"
   parent: MagazineLightRifleBox
   components:
   - type: BallisticAmmoProvider
-    proto: CartridgeLightRiflePractice
+    proto: CartridgeRiflePractice
 
 - type: entity
   id: MagazineLightRifleBoxRubber
-  name: "belt box (.30 rifle rubber)"
+  name: "belt box (.20 rifle rubber)"
   parent: MagazineLightRifleBox
   components:
   - type: BallisticAmmoProvider
-    proto: CartridgeLightRifleRubber
+    proto: CartridgeRifleRubber
 
 - type: entity
   id: MagazineLightRifleBoxIncendiary
-  name: "belt box (.30 rifle incendiary)"
+  name: "belt box (.20 rifle incendiary)"
   parent: MagazineLightRifleBox
   components:
   - type: BallisticAmmoProvider
-    proto: CartridgeLightRifleIncendiary
+    proto: CartridgeRifleIncendiary
 
 - type: entity
   id: MagazineLightRifleBoxUranium
-  name: "belt box (.30 rifle uranium)"
+  name: "belt box (.20 rifle uranium)"
   parent: MagazineLightRifleBox
   components:
   - type: BallisticAmmoProvider
-    proto: CartridgeLightRifleUranium
+    proto: CartridgeRifleUranium
 
 - type: entity
   id: MagazineLightRifleBoxShrapnel
-  name: belt box (.30 rifle shrapnel)
+  name: belt box (.20 rifle shrapnel)
   parent: MagazineLightRifleBox
   components:
   - type: BallisticAmmoProvider
-    proto: CartridgeLightRifleShrapnel
+    proto: CartridgeRifleShrapnel
 
 - type: entity
   id: MagazineLightRifle
