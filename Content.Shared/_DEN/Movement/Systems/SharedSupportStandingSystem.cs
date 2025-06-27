@@ -49,7 +49,8 @@ public abstract class SharedSupportStandingSystem : EntitySystem
 
     private void UpdateStanding(EntityUid uid)
     {
-        if (!TryComp<BodyComponent>(uid, out var body))
+        if (!TryComp<BodyComponent>(uid, out var body)
+            || body.LegEntities.Count >= body.RequiredLegs)
             return;
 
         var ev = new CannotSupportStandingEvent(body.LegEntities.Count);
