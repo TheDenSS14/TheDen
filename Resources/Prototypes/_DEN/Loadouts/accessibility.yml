@@ -45,3 +45,14 @@
       group: LoadoutWalkingCanes
   items:
     - CaneQuad
+
+- type: loadout
+  id: LoadoutItemWalkingCaneImp
+  category: GeneralItems
+  cost: 0
+  customColorTint: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutWalkingCanes
+  items:
+    - WalkingCane
