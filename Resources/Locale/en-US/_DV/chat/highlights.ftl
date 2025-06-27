@@ -26,25 +26,32 @@ highlight-centcomm-quarantine-officer-3 = "CBURN"
 highlight-centcomm-quarantine-officer-4 = "CC"
 
 # ERT
-highlight-ert-leader-1 = "ERT Leader
+highlight-ert-leader-1 = "ERT Leader"
 highlight-ert-leader-2 = Leader
 highlight-ert-leader-3 = "ERT"
+highlight-ert-leader-4 = Emergency Response Team
 
 highlight-ert-chaplain-1 = Chaplain
 highlight-ert-chaplain-2 = "Chap"
 highlight-ert-chaplain-3 = Chapel
 highlight-ert-chaplain-4 = "ERT"
+highlight-ert-chaplain-5 = Emergency Response Team
+highlight-ert-chaplain-6 = "Chappy":
 
 highlight-ert-engineer-1 = Station Engineer
 highlight-ert-engineer-2 = Engineering
 highlight-ert-engineer-3 = Engineer
 highlight-ert-engineer-4 = "Engi"
 highlight-ert-engineer-5 = "ERT"
+highlight-ert-engineer-6 = Emergency Response Team
 
 highlight-ert-janitor-1 = Janitorial
 highlight-ert-janitor-2 = Janitor
 highlight-ert-janitor-3 = "Jani"
 highlight-ert-janitor-4 = "ERT"
+highlight-ert-janitor-5 = Emergency Response Team
+highlight-ert-janitor-6 = Custodial
+highlight-ert-janitor-7 = Custodian
 
 highlight-ert-medic-1 = Medical Doctor
 highlight-ert-medic-2 = Doctor
@@ -53,6 +60,7 @@ highlight-ert-medic-4 = MedBay
 highlight-ert-medic-5 = "Med"
 highlight-ert-medic-6 = Medic
 highlight-ert-medic-7 = "ERT"
+highlight-ert-medic-8 = Emergency Response Team
 
 highlight-ert-security-1 = Security Officer
 highlight-ert-security-2 = Secoff
@@ -60,6 +68,7 @@ highlight-ert-security-3 = Officer
 highlight-ert-security-4 = Security
 highlight-ert-security-5 = "Sec"
 highlight-ert-security-6 = "ERT"
+highlight-ert-security-7 = Emergency Response Team
 
 # Command
 highlight-captain-1 = Captain
