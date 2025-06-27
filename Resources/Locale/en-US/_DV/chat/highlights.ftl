@@ -178,6 +178,8 @@ highlight-atmospheric-technician-1 = Atmospheric Technician
 highlight-atmospheric-technician-2 = Atmos
 highlight-atmospheric-technician-3 = Atmospheric
 highlight-atmospheric-technician-4 = Atmosian
+highlight-atmospheric-technician-5 = Engineering
+highlight-atmospheric-technician-6 = "Engi"
 
 highlight-station-engineer-1 = Station Engineer
 highlight-station-engineer-2 = Engineering
@@ -187,8 +189,8 @@ highlight-station-engineer-4 = "Engi"
 highlight-technical-assistant-1 = Technical Assistant
 highlight-technical-assistant-2 = Tech Assistant
 highlight-technical-assistant-3 = Engineering
-highlight-technical-assistant-4 = Engineer
-highlight-technical-assistant-5 = "Engi"
+highlight-technical-assistant-4 = "Engi"
+highlight-technical-assistant-5 = "TA"
 
 # Epistemics
 highlight-scientist-1 = Scientist
