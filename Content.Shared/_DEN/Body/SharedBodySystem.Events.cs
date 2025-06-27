@@ -15,6 +15,7 @@ public sealed class CannotSupportStandingEvent : CancellableEntityEventArgs, IIn
 {
     public SlotFlags TargetSlots => SlotFlags.WITHOUT_POCKET;
     public int LegCount;
+    public bool Forced = false;
 
     public CannotSupportStandingEvent(int legCount)
     {

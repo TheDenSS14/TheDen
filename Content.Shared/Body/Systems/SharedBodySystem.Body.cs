@@ -487,7 +487,7 @@ public partial class SharedBodySystem
     {
         var cannotStand = new CannotSupportStandingEvent(ent.Comp.LegEntities.Count);
         RaiseLocalEvent(ent.Owner, cannotStand, false);
-        if (!cannotStand.Cancelled)
+        if (cannotStand.Forced || !cannotStand.Cancelled)
             args.Cancel();
     }
 

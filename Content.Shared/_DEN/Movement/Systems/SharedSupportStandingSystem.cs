@@ -59,7 +59,7 @@ public abstract class SharedSupportStandingSystem : EntitySystem
         var ev = new CannotSupportStandingEvent(body.LegEntities.Count);
         RaiseLocalEvent(uid, ev);
 
-        if (!ev.Cancelled)
+        if (ev.Forced || !ev.Cancelled)
             _standing.Down(uid, dropHeldItems: false);
     }
 
