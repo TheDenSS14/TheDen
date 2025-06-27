@@ -1,0 +1,48 @@
+# SPDX-FileCopyrightText: 2025 DeNatus
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  parent: AirlockMaint
+  id: AirlockMaintMantisLocked
+  suffix: Mantis, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsMantis ]
+
+- type: entity
+  parent: AirlockMaint
+  id: AirlockMaintCorpsmanLocked
+  suffix: Corpsman, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsCorpsman ]
+
+- type: entity
+  parent: AirlockMaint
+  id: AirlockMaintBSOLocked
+  suffix: BSO, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsBSO ]
+
+- type: entity
+  parent: AirlockMaint
+  id: AirlockMaintNTRLocked
+  suffix: NTR, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsNTR ]
+
+- type: entity
+  parent: AirlockMaint
+  id: AirlockMaintMAGLocked
+  suffix: Magistrate, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsMAG ]
