@@ -1,11 +1,11 @@
-// SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT <77995199+DEATHB4DEFEAT@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 sleepyyapril <flyingkarii@gmail.com>
-// SPDX-FileCopyrightText: 2025 BramvanZijp <56019239+BramvanZijp@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 Raikyr0 <Kurohana@hotmail.com.au>
-// SPDX-FileCopyrightText: 2025 RedFoxIV <38788538+RedFoxIV@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 Skubman <ba.fallaria@gmail.com>
-// SPDX-FileCopyrightText: 2025 VMSolidus <evilexecutive@gmail.com>
-// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT
+// SPDX-FileCopyrightText: 2025 BramvanZijp
+// SPDX-FileCopyrightText: 2025 Raikyr0
+// SPDX-FileCopyrightText: 2025 RedFoxIV
+// SPDX-FileCopyrightText: 2025 Skubman
+// SPDX-FileCopyrightText: 2025 VMSolidus
+// SPDX-FileCopyrightText: 2025 portfiend
+// SPDX-FileCopyrightText: 2025 sleepyyapril
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
