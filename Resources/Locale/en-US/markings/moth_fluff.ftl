@@ -1,50 +1,50 @@
-marking-MothNeckfluffBurntOff = Burnt Off
+marking-MothNeckfluffBurntOff = Mothic Burnt Off Neck Fluff
 marking-MothNeckfluffBurntOff-m_fluff_burnt_off = Colour
 
-marking-MothNeckfluffDeathhead = Deathhead
+marking-MothNeckfluffDeathhead = Mothic Deathhead Neck Fluff
 marking-MothNeckfluffDeathhead-m_fluff_deathhead = Colour
 
-marking-MothNeckfluffFirewatch = Firewatch
+marking-MothNeckfluffFirewatch = Mothic Firewatch Neck Fluff
 marking-MothNeckfluffFirewatch-m_fluff_firewatch = Colour
 
-marking-MothNeckfluffGothic = Gothic
+marking-MothNeckfluffGothic = Mothic Gothic Neck Fluff
 marking-MothNeckfluffGothic-m_fluff_gothic = Colour
 
-marking-MothNeckfluffInsectF = Insect (Feminine)
+marking-MothNeckfluffInsectF = Insect Neck Fluff (Feminine)
 marking-MothNeckfluffInsectF-m_fluff_insectf = Colour
 
-marking-MothNeckfluffInsectM = Insect (Masculine)
+marking-MothNeckfluffInsectM = Insect Neck Fluff (Masculine)
 marking-MothNeckfluffInsectM-m_fluff_insectm = Colour
 
-marking-MothNeckfluffJungle = Jungle
+marking-MothNeckfluffJungle = Mothic Jungle Neck Fluff
 marking-MothNeckfluffJungle-m_fluff_jungle = Colour
 
-marking-MothNeckfluffLovers = Lovers
+marking-MothNeckfluffLovers = Mothic Lovers Neck Fluff
 marking-MothNeckfluffLovers-m_fluff_lovers = Colour
 
-marking-MothNeckfluffMoonfly = Moonfly
+marking-MothNeckfluffMoonfly = Mothic Moonfly Neck Fluff
 marking-MothNeckfluffMoonfly-m_fluff_moonfly = Colour
 
-marking-MothNeckfluffOakworm = Oakworm
+marking-MothNeckfluffOakworm = Mothic Oakworm Neck Fluff
 marking-MothNeckfluffOakworm-m_fluff_oakworm = Colour
 
-marking-MothNeckfluffPlain = Plain
+marking-MothNeckfluffPlain = Mothic Plain Neck Fluff
 marking-MothNeckfluffPlain-m_fluff_plain = Colour
 
-marking-MothNeckfluffPoison = Poison
+marking-MothNeckfluffPoison = Mothic Poison Neck Fluff
 marking-MothNeckfluffPoison-m_fluff_poison = Colour
 
-marking-MothNeckfluffRedish = Redish
+marking-MothNeckfluffRedish = Mothic Redish Neck Fluff
 marking-MothNeckfluffRedish-m_fluff_redish = Colour
 
-marking-MothNeckfluffRoyal = Royal
+marking-MothNeckfluffRoyal = Mothic Royal Neck Fluff
 marking-MothNeckfluffRoyal-m_fluff_royal = Colour
 
-marking-MothNeckfluffSnow = Snow
+marking-MothNeckfluffSnow = Mothic Snow Neck Fluff
 marking-MothNeckfluffSnow-m_fluff_snow = Colour
 
-marking-MothNeckfluffWhitefly = Whitefly
+marking-MothNeckfluffWhitefly = Mothic Whitefly Neck Fluff
 marking-MothNeckfluffWhitefly-m_fluff_whitefly = Colour
 
-marking-MothNeckfluffWitchwing = Witchwing
+marking-MothNeckfluffWitchwing = Mothic Witchwing Neck Fluff
 marking-MothNeckfluffWitchwing-m_fluff = Colour
