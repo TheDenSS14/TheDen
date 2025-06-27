@@ -80,7 +80,7 @@
 - type: trait
   id: AmputeeLeftLeg
   category: TraitsPhysicalDisabilities
-  points: 6
+  points: 8
   requirements:
     - !type:CharacterJobRequirement
       inverted: true
@@ -101,7 +101,7 @@
 - type: trait
   id: AmputeeRightLeg
   category: TraitsPhysicalDisabilities
-  points: 6
+  points: 8
   requirements:
     - !type:CharacterJobRequirement
       inverted: true
