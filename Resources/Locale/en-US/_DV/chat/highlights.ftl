@@ -21,7 +21,6 @@ highlight-centcomm-quarantine-officer-1 = Centcomm
 highlight-centcomm-quarantine-officer-2 = Central Command
 highlight-centcomm-quarantine-officer-3 = "CBURN"
 
-
 # ERT
 highlight-ert-leader-1 = "ERT Leader
 highlight-ert-leader-2 = Leader
@@ -58,13 +57,12 @@ highlight-ert-security-4 = Security
 highlight-ert-security-5 = "Sec"
 highlight-ert-security-6 = "ERT"
 
-
 # Command
 highlight-captain-1 = Captain
 highlight-captain-2 = "Cap"
 highlight-captain-3 = Command
 
-highlight-chief-justice-1 = Chief justice
+highlight-chief-justice-1 = Chief Justice
 highlight-chief-justice-2 = "CJ"
 highlight-chief-justice-3 = Justice
 highlight-chief-justice-4 = Command
@@ -82,7 +80,7 @@ highlight-chief-medical-officer-3 = MedBay
 highlight-chief-medical-officer-4 = "Med"
 highlight-chief-medical-officer-5 = Command
 
-highlight-head-of-personnel-1 = Head Of Personnel
+highlight-head-of-personnel-1 = Head of Personnel
 highlight-head-of-personnel-2 = "HoP"
 highlight-head-of-personnel-3 = Service
 highlight-head-of-personnel-4 = Command
@@ -109,7 +107,6 @@ highlight-mystagogue-6 = Command
 highlight-administrative-assistant-1 = Administrative Assistant
 highlight-administrative-assistant-2 = "AA"
 highlight-administrative-assistant-3 = Command
-
 
 # Security
 highlight-detective-1 = Detective
@@ -147,29 +144,6 @@ highlight-corpsman-3 = Brigmed
 highlight-corpsman-4 = "Sec"
 highlight-corpsman-5 = Security
 
-
-# Station-specific
-highlight-boxer-1 = Boxer
-
-highlight-gladiator-1 = Gladiator
-
-highlight-martial-artist-1 = Martial Artist
-highlight-martial-artist-2 = Martial
-
-highlight-prisoner-1 = Prisoner
-
-highlight-psychologist-1 = Psychologist
-highlight-psychologist-2 = Psychology
-highlight-psychologist-3 = Psychodoc
-highlight-psychologist-4 = "Psych"
-
-highlight-reporter-1 = Reporter
-highlight-reporter-2 = Journalist
-
-highlight-zookeeper-1 = Zookeeper
-highlight-zookeeper-2 = Zookeep
-
-
 # Engineering
 highlight-atmospheric-technician-1 = Atmospheric Technician
 highlight-atmospheric-technician-2 = Atmos
@@ -187,7 +161,6 @@ highlight-technical-assistant-3 = Engineering
 highlight-technical-assistant-4 = Engineer
 highlight-technical-assistant-5 = "Engi"
 
-
 # Epistemics
 highlight-scientist-1 = Scientist
 highlight-scientist-2 = Epistemics
@@ -204,6 +177,12 @@ highlight-research-assistant-3 = "Epi"
 highlight-psionic-mantis-1 = "Mantis"
 highlight-psionic-mantis-2 = Psionic Mantis
 
+highlight-chaplain-1 = Chaplain
+highlight-chaplain-2 = "Chap"
+highlight-chaplain-3 = Chapel
+
+highlight-librarian-1 = Librarian
+highlight-librarian-2 = Library
 
 # Justice
 highlight-clerk-1 = Clerk
@@ -216,7 +195,6 @@ highlight-prosecutor-1 = Lawyer
 highlight-prosecutor-2 = Prosecutor
 highlight-prosecutor-3 = Prosecution
 highlight-prosecutor-4 = "Prosec"
-
 
 # Logistics
 highlight-cargo-technician-1 = Cargo Technician
@@ -243,7 +221,6 @@ highlight-courier-1 = Courier
 highlight-courier-2 = Mailman
 highlight-courier-3 = Logistics
 highlight-courier-4 = "Logi"
-
 
 # Medical
 highlight-chemist-1 = Chemist
@@ -276,6 +253,10 @@ highlight-surgeon-2 = "Med"
 highlight-surgeon-3 = MedBay
 highlight-surgeon-4 = Medical
 
+highlight-psychologist-1 = Psychologist
+highlight-psychologist-2 = Psychology
+highlight-psychologist-3 = Psychodoc
+highlight-psychologist-4 = "Psych"
 
 # Civilian
 highlight-bartender-1 = Bartender
@@ -287,10 +268,6 @@ highlight-bartender-5 = Tender
 highlight-botanist-1 = Botanist
 highlight-botanist-2 = Botany
 highlight-botanist-3 = Hydroponics
-
-highlight-chaplain-1 = Chaplain
-highlight-chaplain-2 = "Chap"
-highlight-chaplain-3 = Chapel
 
 highlight-chef-1 = Chef
 highlight-chef-2 = "Cook"
@@ -306,9 +283,6 @@ highlight-janitor-3 = "Jani"
 highlight-lawyer-1 = Lawyer
 highlight-lawyer-2 = Attorney
 
-highlight-librarian-1 = Librarian
-highlight-librarian-2 = Library
-
 highlight-mime-1 = Mime
 
 highlight-musician-1 = Musician
@@ -320,6 +294,20 @@ highlight-visitor-1 = Visitor
 
 highlight-service-worker-1 = Service Worker
 
+highlight-reporter-1 = Reporter
+highlight-reporter-2 = Journalist
+
+highlight-zookeeper-1 = Zookeeper
+highlight-zookeeper-2 = Zookeep
+
+highlight-boxer-1 = Boxer
+
+highlight-gladiator-1 = Gladiator
+
+highlight-martial-artist-1 = Martial Artist
+highlight-martial-artist-2 = Martial
+
+highlight-prisoner-1 = Prisoner
 
 # Silicon
 highlight-personal-ai-1 = Personal AI
