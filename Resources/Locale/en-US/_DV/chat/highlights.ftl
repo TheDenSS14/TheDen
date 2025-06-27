@@ -156,6 +156,7 @@ highlight-warden-2 = "Ward"
 highlight-warden-3 = Security
 highlight-warden-4 = "Sec"
 highlight-warden-5 = Brig
+highlight-warden-6 = Perma
 
 highlight-prison-guard-1 = Prison Guard
 highlight-prison-guard-2 = Prison
@@ -163,12 +164,14 @@ highlight-prison-guard-3 = Guard
 highlight-prison-guard-4 = Security
 highlight-prison-guard-5 = "Sec"
 highlight-prison-guard-6 = Brig
+highlight-prison-guard-7 = Perma
 
 highlight-corpsman-1 = Corpsman
 highlight-corpsman-2 = "Corps"
 highlight-corpsman-3 = Brigmed
 highlight-corpsman-4 = "Sec"
 highlight-corpsman-5 = Security
+highlight-corpsman-6 = Brigmedic
 
 # Engineering
 highlight-atmospheric-technician-1 = Atmospheric Technician
