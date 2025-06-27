@@ -267,6 +267,7 @@ highlight-cargo-assistant-1 = Cargo Assistant
 highlight-cargo-assistant-2 = "CA"
 highlight-cargo-assistant-3 = "Logi"
 highlight-cargo-assistant-4 = Logistics
+highlight-cargo-assistant-5 = Cargo
 
 highlight-salvage-specialist-1 = Salvage Specialist
 highlight-salvage-specialist-2 = Salvager
@@ -275,11 +276,13 @@ highlight-salvage-specialist-4 = "Salv"
 highlight-salvage-specialist-5 = Miner
 highlight-salvage-specialist-6 = "Logi"
 highlight-salvage-specialist-7 = Logistics
+highlight-salvage-specialist-8 = Cargo
 
 highlight-courier-1 = Courier
 highlight-courier-2 = Mailman
 highlight-courier-3 = Logistics
 highlight-courier-4 = "Logi"
+highlight-courier-5 = Cargo
 
 # Medical
 highlight-chemist-1 = Chemist
