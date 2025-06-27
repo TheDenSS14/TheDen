@@ -82,6 +82,7 @@ public partial class SharedBodySystem
         SubscribeLocalEvent<BodyComponent, StandAttemptEvent>(OnStandAttempt); // Shitmed Change
         SubscribeLocalEvent<BodyComponent, ProfileLoadFinishedEvent>(OnProfileLoadFinished); // Shitmed change
         SubscribeLocalEvent<BodyComponent, IsEquippingAttemptEvent>(OnBeingEquippedAttempt); // Shitmed Change
+        SubscribeLocalEvent<BodyComponent, CannotSupportStandingEvent>(OnTrySupportStanding);
 
     }
 
@@ -486,13 +487,15 @@ public partial class SharedBodySystem
 
     private void OnStandAttempt(Entity<BodyComponent> ent, ref StandAttemptEvent args)
     {
-        var legCount = ent.Comp.LegEntities.Count;
-        if (legCount >= ent.Comp.RequiredLegs)
-            return;
-
-        var cannotStand = new CannotSupportStandingEvent(legCount);
+        var cannotStand = new CannotSupportStandingEvent(ent.Comp.LegEntities.Count);
         RaiseLocalEvent(ent.Owner, cannotStand, false);
         if (!cannotStand.Cancelled)
+            args.Cancel();
+    }
+
+    private void OnTrySupportStanding(Entity<BodyComponent> ent, ref CannotSupportStandingEvent args)
+    {
+        if (args.LegCount >= ent.Comp.RequiredLegs)
             args.Cancel();
     }
 

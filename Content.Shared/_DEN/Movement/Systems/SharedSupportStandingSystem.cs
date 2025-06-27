@@ -49,15 +49,14 @@ public abstract class SharedSupportStandingSystem : EntitySystem
 
     private void UpdateStanding(EntityUid uid)
     {
-        if (!TryComp<BodyComponent>(uid, out var body)
-            || body.LegEntities.Count >= body.RequiredLegs)
+        if (!TryComp<BodyComponent>(uid, out var body))
             return;
 
         var ev = new CannotSupportStandingEvent(body.LegEntities.Count);
         RaiseLocalEvent(uid, ev);
 
         if (!ev.Cancelled)
-            _standing.Down(uid);
+            _standing.Down(uid, dropHeldItems: false);
     }
 
     private void TrySupportStanding(EntityUid uid, SupportStandingComponent comp, ref CannotSupportStandingEvent args)
