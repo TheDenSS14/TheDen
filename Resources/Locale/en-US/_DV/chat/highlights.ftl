@@ -74,11 +74,15 @@ highlight-ert-security-7 = Emergency Response Team
 highlight-captain-1 = Captain
 highlight-captain-2 = "Cap"
 highlight-captain-3 = Command
+highlight-captain-4 = Cappy
 
 highlight-chief-justice-1 = Chief Justice
 highlight-chief-justice-2 = "CJ"
 highlight-chief-justice-3 = Justice
 highlight-chief-justice-4 = Command
+highlight-chief-justice-5 = Magistrate
+highlight-chief-justice-6 = "Magi"
+highlight-chief-justice-7 = Dignitary
 
 highlight-chief-engineer-1 = Chief Engineer
 highlight-chief-engineer-2 = "CE"
@@ -92,11 +96,13 @@ highlight-chief-medical-officer-2 = "CMO"
 highlight-chief-medical-officer-3 = MedBay
 highlight-chief-medical-officer-4 = "Med"
 highlight-chief-medical-officer-5 = Command
+highlight-chief-medical-officer-6 = Medical
 
 highlight-head-of-personnel-1 = Head of Personnel
 highlight-head-of-personnel-2 = "HoP"
 highlight-head-of-personnel-3 = Service
 highlight-head-of-personnel-4 = Command
+highlight-head-of-personnel-5 = Civilian
 
 highlight-head-of-security-1 = Head of Security
 highlight-head-of-security-2 = "HoS"
@@ -109,17 +115,24 @@ highlight-logistics-officer-2 = "LO"
 highlight-logistics-officer-3 = Logistics
 highlight-logistics-officer-4 = Logi
 highlight-logistics-officer-5 = Command
+highlight-logistics-officer-6 = Quartermaster
+highlight-logistics-officer-7 = "QM"
+highlight-logistics-officer-8 = Cargo
 
 highlight-mystagogue-1 = Mystagogue
 highlight-mystagogue-2 = Mysta
 highlight-mystagogue-3 = "MG"
 highlight-mystagogue-4 = Epistemics
 highlight-mystagogue-5 = "Epi"
-highlight-mystagogue-6 = Command
+highlight-mystagogue-6 = Research Director
+highlight-mystagogue-7 = "RD"
+highlight-mystagogue-8 = Science
+highlight-mystagogue-9 = "Sci"
 
 highlight-administrative-assistant-1 = Administrative Assistant
 highlight-administrative-assistant-2 = "AA"
 highlight-administrative-assistant-3 = Command
+highlight-administrative-assistant-4 = Bridge
 
 # Security
 highlight-detective-1 = Detective
