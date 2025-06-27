@@ -289,26 +289,28 @@ highlight-chemist-1 = Chemist
 highlight-chemist-2 = Chemistry
 highlight-chemist-3 = MedBay
 highlight-chemist-4 = "Chem"
-highlight-chemist-5 = "Medical"
+highlight-chemist-5 = "Med"
 
 highlight-medical-doctor-1 = Medical Doctor
 highlight-medical-doctor-2 = Doctor
 highlight-medical-doctor-3 = "Doc"
 highlight-medical-doctor-4 = MedBay
 highlight-medical-doctor-5 = "Med"
-highlight-medical-doctor-6 = "Medical"
+highlight-medical-doctor-6 = Medical
+highlight-medical-doctor-7 = "MD"
 
 highlight-medical-intern-1 = Medical Intern
 highlight-medical-intern-2 = Intern
 highlight-medical-intern-3 = MedBay
 highlight-medical-intern-4 = "Med"
-highlight-medical-intern-5 = "Medical"
+highlight-medical-intern-5 = Medical
+highlight-medical-intern-6 = "MI"
 
 highlight-paramedic-1 = Paramedic
 highlight-paramedic-2 = "Para"
 highlight-paramedic-3 = MedBay
 highlight-paramedic-4 = "Med"
-highlight-paramedic-5 = "Medical"
+highlight-paramedic-5 = Medical
 
 highlight-surgeon-1 = Surgeon
 highlight-surgeon-2 = "Med"
@@ -319,6 +321,9 @@ highlight-psychologist-1 = Psychologist
 highlight-psychologist-2 = Psychology
 highlight-psychologist-3 = Psychodoc
 highlight-psychologist-4 = "Psych"
+highlight-psychologist-5 = "Med"
+highlight-psychologist-6 = MedBay
+highlight-psychologist-7 = Medical
 
 # Civilian
 highlight-bartender-1 = Bartender
