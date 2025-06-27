@@ -36,7 +36,11 @@ highlight-ert-chaplain-2 = "Chap"
 highlight-ert-chaplain-3 = Chapel
 highlight-ert-chaplain-4 = "ERT"
 highlight-ert-chaplain-5 = Emergency Response Team
-highlight-ert-chaplain-6 = "Chappy":
+highlight-ert-chaplain-6 = "Chappy"
+highlight-ert-chaplain-7 = "Epi"
+highlight-ert-chaplain-8 = Epistemics
+highlight-ert-chaplain-9 = "Sci"
+highlight-ert-chaplain-10 = Science
 
 highlight-ert-engineer-1 = Station Engineer
 highlight-ert-engineer-2 = Engineering
@@ -52,6 +56,8 @@ highlight-ert-janitor-4 = "ERT"
 highlight-ert-janitor-5 = Emergency Response Team
 highlight-ert-janitor-6 = Custodial
 highlight-ert-janitor-7 = Custodian
+highlight-ert-janitor-8 = Service
+highlight-ert-janitor-9 = Civilian
 
 highlight-ert-medic-1 = Medical Doctor
 highlight-ert-medic-2 = Doctor
