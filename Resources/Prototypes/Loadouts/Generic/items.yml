@@ -943,6 +943,9 @@
   id: LoadoutItemCaneWalking
   category: GeneralItems
   cost: 0 # It shouldnt cost points to be able to function.
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutWalkingCanes
   items:
     - Cane
 
