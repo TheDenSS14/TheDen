@@ -184,6 +184,12 @@ highlight-corpsman-4 = "Sec"
 highlight-corpsman-5 = Security
 highlight-corpsman-6 = Brigmedic
 
+highlight-senior-officer-1 = Senior Officer
+highlight-senior-officer-2 = Secoff
+highlight-senior-officer-3 = Officer
+highlight-senior-officer-4 = Security
+highlight-senior-officer-5 = "Sec"
+
 # Engineering
 highlight-atmospheric-technician-1 = Atmospheric Technician
 highlight-atmospheric-technician-2 = Atmos
@@ -202,6 +208,11 @@ highlight-technical-assistant-2 = Tech Assistant
 highlight-technical-assistant-3 = Engineering
 highlight-technical-assistant-4 = "Engi"
 highlight-technical-assistant-5 = "TA"
+
+highlight-senior-engineer-1 = Senior Engineer
+highlight-senior-engineer-2 = Engineering
+highlight-senior-engineer-3 = Engineer
+highlight-senior-engineer-4 = "Engi"
 
 # Epistemics
 highlight-scientist-1 = Scientist
@@ -246,6 +257,13 @@ highlight-librarian-4 = Epistemics
 highlight-librarian-5 = "Sci"
 highlight-librarian-6 = Science
 highlight-librarian-7 = Cataloguer
+
+highlight-senior-rearcher-1 = Senior Researcher
+highlight-senior-rearcher-2 = Researcher
+highlight-senior-rearcher-3 = "Epi"
+highlight-senior-rearcher-4 = Epistemics
+highlight-senior-rearcher-5 = "Sci"
+highlight-senior-rearcher-6 = Science
 
 # Justice
 highlight-clerk-1 = Clerk
@@ -335,6 +353,12 @@ highlight-psychologist-4 = "Psych"
 highlight-psychologist-5 = "Med"
 highlight-psychologist-6 = MedBay
 highlight-psychologist-7 = Medical
+
+highlight-senior-physician-1 = Senior Physician
+highlight-senior-physician-2 = "Med"
+highlight-senior-physician-3 = Medbay
+highlight-senior-physician-4 = Medical
+highlight-senior-physician-5 = Physician
 
 # Civilian
 highlight-bartender-1 = Bartender
@@ -475,3 +499,5 @@ highlight-magistrate-4 = Command
 highlight-magistrate-5 = Magistrate
 highlight-magistrate-6 = "Magi"
 highlight-magistrate-7 = Dignitary
+
+# Misc

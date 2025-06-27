@@ -155,6 +155,12 @@
     prefix: highlight-corpsman-
     count: 6
 
+- type: localizedDataset
+  id: ChatHighlightSeniorOfficer
+  values:
+    prefix: highlight-senior-officer-
+    count: 5
+
 # Engineering
 - type: localizedDataset
   id: ChatHighlightAtmosphericTechnician
@@ -173,6 +179,12 @@
   values:
     prefix: highlight-technical-assistant-
     count: 5
+
+- type: localizedDataset
+  id: ChatHighlightSeniorEngineer
+  values:
+    prefix: highlight-senior-engineer-
+    count: 4
 
 # Epistemics
 - type: localizedDataset
@@ -210,6 +222,12 @@
   values:
     prefix: highlight-librarian-
     count: 7
+
+- type: localizedDataset
+  id: ChatHighlightSeniorResearcher
+  values:
+    prefix: highlight-senior-rearcher-
+    count: 6
 
 # Justice
 - type: localizedDataset
@@ -291,6 +309,12 @@
   values:
     prefix: highlight-psychologist-
     count: 7
+
+- type: localizedDataset
+  id: ChatHighlightSeniorPhysician
+  values:
+    prefix: highlight-senior-physician-
+    count: 5
 
 # Civilian
 - type: localizedDataset
