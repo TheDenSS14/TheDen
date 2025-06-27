@@ -37,7 +37,12 @@
       activated: true
       wieldToggle: false
     - type: ItemToggleSize
+      activatedSize: Normal
+      activatedShape:
+        - 0,0,1,2
       deactivatedSize: Small
+      deactivatedShape:
+        - 0,0,0,1
     - type: Appearance
     - type: GenericVisualizer
       visuals:
@@ -51,6 +56,10 @@
   id: CaneFoldableFolded
   suffix: folded
   components:
+    - type: Item
+      size: Small
+      shape:
+        - 0,0,0,1
     - type: ItemToggle
       activated: false
 
