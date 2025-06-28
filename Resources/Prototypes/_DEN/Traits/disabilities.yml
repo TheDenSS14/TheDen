@@ -94,6 +94,10 @@
       traits:
         - WheelchairBound
   functions:
+    - !type:TraitAddComponent
+      components:
+        - type: AdaptedBalance
+          balanceDuration: 10
     - !type:TraitCyberneticLimbReplacement
       removeBodyPart: Leg
       partSymmetry: Left
@@ -115,6 +119,10 @@
       traits:
         - WheelchairBound
   functions:
+    - !type:TraitAddComponent
+      components:
+        - type: AdaptedBalance
+          balanceDuration: 10
     - !type:TraitCyberneticLimbReplacement
       removeBodyPart: Leg
       partSymmetry: Right

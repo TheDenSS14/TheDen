@@ -39,6 +39,9 @@ using Robust.Shared.Audio.Systems;
 using Robust.Shared.Physics;
 using Robust.Shared.Physics.Systems;
 using System.Linq;
+using Content.Shared.Body.Components;
+using Content.Shared._DEN.Body;
+using Content.Shared.Inventory;
 
 namespace Content.Shared.Standing;
 
@@ -190,6 +193,17 @@ public sealed class StandingStateSystem : EntitySystem
         if (entityDistances.Count > 0)
             _climb.ForciblySetClimbing(uid, entityDistances.OrderBy(e => e.Value).First().Key);
     }
+    public void UpdateStanding(Entity<BodyComponent?> ent)
+    {
+        if (!Resolve(ent.Owner, ref ent.Comp))
+            return;
+
+        var ev = new CannotSupportStandingEvent(ent.Comp.LegEntities.Count);
+        RaiseLocalEvent(ent.Owner, ev);
+
+        if (ev.Forced || !ev.Cancelled)
+            Down(ent.Owner, dropHeldItems: false);
+    }
 }
 
 
@@ -214,3 +228,19 @@ public sealed class StoodEvent : EntityEventArgs { }
 ///     Raised when an entity is not standing
 /// </summary>
 public sealed class DownedEvent : EntityEventArgs { }
+
+/// <summary>
+///     Whether or not this entity can support standing up when they have less than the required amount of legs.
+///     Cancel this event if the entity should be able to stand anyway.
+/// </summary>
+public sealed class CannotSupportStandingEvent : CancellableEntityEventArgs, IInventoryRelayEvent
+{
+    public SlotFlags TargetSlots => SlotFlags.WITHOUT_POCKET;
+    public int LegCount;
+    public bool Forced = false;
+
+    public CannotSupportStandingEvent(int legCount)
+    {
+        LegCount = legCount;
+    }
+}

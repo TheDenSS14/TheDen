@@ -54,7 +54,7 @@ using Content.Shared.Overlays.Switchable;
 
 using Content.Shared.Stunnable;
 using Content.Shared.Movement.Events;
-using Content.Shared._DEN.Body;
+using Content.Shared.Standing;
 
 namespace Content.Shared.Inventory;
 

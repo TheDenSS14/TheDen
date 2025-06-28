@@ -398,7 +398,12 @@ public partial class SharedBodySystem
             bodyEnt.Comp.LegEntities.Remove(legEnt);
             UpdateMovementSpeed(bodyEnt);
             Dirty(bodyEnt, bodyEnt.Comp);
-            Standing.Down(bodyEnt); // Shitmed Change
+
+            // DEN: I made this update standing status instead of downing directly.
+            // Hopefully this does not cause issues? This was triggering on roundstart if you have
+            // the amputee traits, but the amputee traits are also supposed to give you 10 seconds
+            // where you remain standing before you actually fall over.
+            Standing.UpdateStanding(bodyEnt); // Shitmed Change
         }
     }
 

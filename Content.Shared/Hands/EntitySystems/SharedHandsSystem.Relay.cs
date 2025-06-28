@@ -4,10 +4,10 @@
 //
 // SPDX-License-Identifier: MIT
 
-using Content.Shared._DEN.Body;
 using Content.Shared._DEN.Movement.Systems;
 using Content.Shared.Hands.Components;
 using Content.Shared.Movement.Systems;
+using Content.Shared.Standing;
 
 namespace Content.Shared.Hands.EntitySystems;
 

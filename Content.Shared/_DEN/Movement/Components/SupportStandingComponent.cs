@@ -18,6 +18,13 @@ public abstract partial class SupportStandingComponent : Component
 }
 
 /// <summary>
+///     Characters with this component can stand with less legs, as long as they have the minimum number of legs.
+/// </summary>
+[RegisterComponent]
+public sealed partial class AlwaysSupportStandingComponent : SupportStandingComponent
+{ }
+
+/// <summary>
 ///     Allows characters with missing legs to stand up while holding this item.
 /// </summary>
 [RegisterComponent]

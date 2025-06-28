@@ -1,3 +1,16 @@
+
+trait-name-MobilityAdaptedBalance = Adapted Balance
+trait-description-MobilityAdaptedBalance =
+    You are [color=#1e90ff]adapted[/color] to mobility with missing legs.
+    As long as you have [color=yellow]at least one working leg[/color], you can stand and walk around for a [color=#1e90ff]full minute[/color] without support.
+
+trait-name-MobilityWalkWhenAmputee = Sustained Balance
+trait-description-MobilityWalkWhenAmputee =
+    You are [color=#1e90ff]well-practiced[/color] at mobility with missing legs.
+    As long as you have [color=yellow]at least one working leg[/color], you can stand and walk around [color=#1e90ff]even if you are missing a leg.[/color]
+
+# Amputee Traits
+
 character-item-group-TraitsLegAmputee = Leg Amputee
 
 trait-name-AmputeeLeftArm = Left Arm Amputee
@@ -15,18 +28,20 @@ trait-description-AmputeeRightArm =
 trait-name-AmputeeLeftLeg = Left Leg Amputee
 trait-description-AmputeeLeftLeg =
     You are missing your [color=red]left leg.[/color]
-    You [color=orange]cannot stand[/color] without a mobility aid. When using your leg, [color=orange]your movement speed is reduced.[/color]
+    You [color=orange]cannot stand for more than 10 seconds[/color] without a mobility aid.
+    When using your leg, [color=orange]your movement speed is reduced.[/color]
     You [color=red]DO NOT start with a cane or other mobility aid[/color] unless you choose one in Loadouts.
     ([color=yellow]Note: Amputee traits do not appear in the character editor preview![/color])
 
 trait-name-AmputeeRightLeg = Right Leg Amputee
 trait-description-AmputeeRightLeg =
     You are missing your [color=red]right leg.[/color]
-    You [color=orange]cannot stand[/color] without a mobility aid. When using your leg, [color=orange]your movement speed is reduced.[/color]
+    You [color=orange]cannot stand for more than 10 seconds[/color] without a mobility aid.
+    When using your leg, [color=orange]your movement speed is reduced.[/color]
     You [color=red]DO NOT start with a cane or other mobility aid[/color] unless you choose one in Loadouts.
     ([color=yellow]Note: Amputee traits do not appear in the character editor preview![/color])
 
-# WheelchairBound variants
+## WheelchairBound variants
 
 trait-name-WheelchairAmputeeLeftLeg = Left Leg Amputee (Immobile)
 trait-description-WheelchairAmputeeLeftLeg =
