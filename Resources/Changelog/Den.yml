@@ -6687,3 +6687,62 @@ Entries:
   id: 631
   time: '2025-06-28T10:53:58.0000000+00:00'
   url: https://github.com/TheDenSS14/TheDen/pull/910
+- author: sleepyyapril
+  changes:
+    - type: Add
+      message: >-
+        You can now have an admin add a SpeciesRestrictionExemptComponent to
+        allow your height and width be changed to anything.
+  id: 632
+  time: '2025-06-28T11:23:30.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/919
+- author: BlitzTheSquishy
+  changes:
+    - type: Remove
+      message: >-
+        Central Command realized that having two spare captain IDs on station
+        was a security risk and thus has removed one from the Captains locker.
+        It also saves a bit of money too.
+  id: 633
+  time: '2025-06-28T13:17:45.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/893
+- author: portfiend
+  changes:
+    - type: Tweak
+      message: >-
+        Chef no longer starts with the Italian moustache or chef apron - it has
+        been moved to their loadouts.
+    - type: Tweak
+      message: >-
+        Bartender no longer starts with top hat and vest by default - it has
+        been added to their loadouts.
+    - type: Add
+      message: Chefs can also now select the chef's freezer coat in their loadout.
+  id: 634
+  time: '2025-06-28T13:19:23.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/880
+- author: MajorMoth
+  changes:
+    - type: Tweak
+      message: >-
+        Tweaked the minibomb and exploding pen. Minbomb now deals much more
+        damage without gibbing and can be linked to a remote. The exploding pen
+        has different damage proportions and cannot link to a remote anymore.
+        See PR for details. 
+  id: 635
+  time: '2025-06-28T13:21:48.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/881
+- author: Jakumba
+  changes:
+    - type: Tweak
+      message: Made the Disabler not take your duty weapon slot for security.
+  id: 636
+  time: '2025-06-28T13:23:24.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/898
+- author: IAmNotGray
+  changes:
+    - type: Add
+      message: Anvil Station is now recieving crew members. Bring a spray bottle!
+  id: 637
+  time: '2025-06-28T18:50:53.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/872

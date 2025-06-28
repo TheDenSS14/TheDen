@@ -1,17 +1,18 @@
-# SPDX-FileCopyrightText: 2024 Angelo Fallaria <ba.fallaria@gmail.com>
-# SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT <77995199+DEATHB4DEFEAT@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 Pierson Arnold <greyalphawolf7@gmail.com>
-# SPDX-FileCopyrightText: 2024 Tmanzxd <164098915+Tmanzxd@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 gluesniffler <159397573+gluesniffler@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 BlitzTheSquishy <73762869+BlitzTheSquishy@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 Blu <79374236+BlueHNT@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 Lonofera <108367450+LonoferaRS@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 Rosycup <178287475+Rosycup@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 Skubman <ba.fallaria@gmail.com>
-# SPDX-FileCopyrightText: 2025 Tad "Taddy" Johnson <120885811+TadJohnson00@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 VMSolidus <evilexecutive@gmail.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <flyingkarii@gmail.com>
+# SPDX-FileCopyrightText: 2024 Angelo Fallaria
+# SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT
+# SPDX-FileCopyrightText: 2024 Pierson Arnold
+# SPDX-FileCopyrightText: 2024 Tmanzxd
+# SPDX-FileCopyrightText: 2024 gluesniffler
+# SPDX-FileCopyrightText: 2025 Blitz
+# SPDX-FileCopyrightText: 2025 BlitzTheSquishy
+# SPDX-FileCopyrightText: 2025 Blu
+# SPDX-FileCopyrightText: 2025 Jakumba
+# SPDX-FileCopyrightText: 2025 Lonofera
+# SPDX-FileCopyrightText: 2025 Rosycup
+# SPDX-FileCopyrightText: 2025 Skubman
+# SPDX-FileCopyrightText: 2025 Tad "Taddy" Johnson
+# SPDX-FileCopyrightText: 2025 VMSolidus
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -120,6 +121,25 @@
 # Equipment, limit 3 selections
 # Duplicate "Spare" equipment exists and shares the ItemGroup, for those officers who like to pack a spare magazine in their pocket, outside of what was issued to them.
 # I knew a lot of people in my time working IRL Armed security that did this.
+- type: loadout
+  id: LoadoutSecurityDisabler
+  category: JobsSecurityAUncategorized
+  cost: 2
+  canBeHeirloom: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSecurityEquipment
+    - !type:CharacterLogicOrRequirement
+      requirements:
+        - !type:CharacterDepartmentRequirement
+          departments:
+            - Security
+        - !type:CharacterJobRequirement
+          jobs:
+            - BlueshieldOfficer
+  items:
+    - WeaponDisabler
+
 - type: loadout
   id: LoadoutSecurityCombatKnife
   category: JobsSecurityAUncategorized
@@ -573,26 +593,6 @@
 # This category is universal to the entire security department by special request, so that players can choose their preferred Duty Pistol even if they aren't playing a security role.
 # All lethal options come with a 1 hour security department playtime, as a basic shitter protection.
 - type: loadout
-  id: LoadoutSecurityDisabler
-  category: JobsSecurityAUncategorized
-  cost: 0
-  canBeHeirloom: true
-  guideEntry: SecurityWeapons
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutSecurityWeapons
-    - !type:CharacterLogicOrRequirement
-      requirements:
-        - !type:CharacterDepartmentRequirement
-          departments:
-            - Security
-        - !type:CharacterJobRequirement
-          jobs:
-            - BlueshieldOfficer
-  items:
-    - WeaponDisabler
-
-- type: loadout
   id: LoadoutSecurityMk58NonLethal
   category: JobsSecurityAUncategorized
   cost: 0
@@ -693,9 +693,9 @@
     - EnergyCutlassSecurity
 
 - type: loadout
-  id: LoadoutSecurityWeaponLaserSvalinn
+  id: LoadoutSecurityEnergyGunMini
   category: JobsSecurityAUncategorized
-  cost: 3
+  cost: 2
   canBeHeirloom: true
   guideEntry: SecurityWeapons
   requirements:
@@ -710,7 +710,7 @@
           jobs:
             - BlueshieldOfficer
   items:
-    - WeaponLaserSvalinn
+    - WeaponEnergyGunMiniSecurity
 
 - type: loadout
   id: LoadoutSecurityPistolViperNonLethal
@@ -772,9 +772,6 @@
         - !type:CharacterJobRequirement
           jobs:
             - BlueshieldOfficer
-    - !type:CharacterSpeciesRequirement
-      species:
-        - Oni
   items:
     - Truncheon
 

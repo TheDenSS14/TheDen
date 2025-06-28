@@ -1,19 +1,20 @@
-# SPDX-FileCopyrightText: 2022 Alex Evgrashin <aevgrashin@yandex.ru>
-# SPDX-FileCopyrightText: 2022 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2022 Moony <moonheart08@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2022 keronshb <54602815+keronshb@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2023 Dawid Bla <46636558+DawBla@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2023 Emisse <99158783+Emisse@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2023 Kara <lunarautomaton6@gmail.com>
-# SPDX-FileCopyrightText: 2023 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2023 Skye <22365940+Skyedra@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2023 ThunderBear2006 <100388962+ThunderBear2006@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2023 eclips_e <67359748+Just-a-Unity-Dev@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2023 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 Mr. 27 <45323883+Dutch-VanDerLinde@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 liltenhead <104418166+liltenhead@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 VMSolidus <evilexecutive@gmail.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 Alex Evgrashin
+# SPDX-FileCopyrightText: 2022 Leon Friedrich
+# SPDX-FileCopyrightText: 2022 Moony
+# SPDX-FileCopyrightText: 2022 keronshb
+# SPDX-FileCopyrightText: 2023 Dawid Bla
+# SPDX-FileCopyrightText: 2023 Emisse
+# SPDX-FileCopyrightText: 2023 Kara
+# SPDX-FileCopyrightText: 2023 Nemanja
+# SPDX-FileCopyrightText: 2023 Skye
+# SPDX-FileCopyrightText: 2023 ThunderBear2006
+# SPDX-FileCopyrightText: 2023 eclips_e
+# SPDX-FileCopyrightText: 2023 metalgearsloth
+# SPDX-FileCopyrightText: 2024 Mr. 27
+# SPDX-FileCopyrightText: 2024 liltenhead
+# SPDX-FileCopyrightText: 2025 MajorMoth
+# SPDX-FileCopyrightText: 2025 VMSolidus
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -95,15 +96,32 @@
   id: Minibomb
   damagePerIntensity:
     types:
-      Heat: 4
-      Blunt: 7
-      Piercing: 4
-  tileBreakChance: [0, 0.5, 1]
-  tileBreakIntensity: [0, 10, 30]
-  tileBreakRerollReduction: 20
+      Heat: 10
+      Blunt: 6
+      Piercing: 2
+      Slash: 2
+  tileBreakChance: [0,1]
+  tileBreakIntensity: [0,1]
+  tileBreakRerollReduction: 2
+  lightColor: Red
+  fireColor: Red
+  texturePath: /Textures/Effects/fire_greyscale.rsi
+  fireStates: 2
+  fireStacks: 2
+
+- type: explosion
+  id: PenBomb
+  damagePerIntensity:
+    types:
+      Heat: 1
+      Blunt: 1
+      Piercing: 7
+      Slash: 7
+  tileBreakChance: [0]
+  tileBreakIntensity: [0]
   lightColor: Orange
   texturePath: /Textures/Effects/fire.rsi
-  fireStates: 3
+  fireStates: 1
 
 - type: explosion
   id: PowerSink
