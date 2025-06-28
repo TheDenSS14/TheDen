@@ -398,10 +398,10 @@ public partial class SharedBodySystem
             Dirty(bodyEnt, bodyEnt.Comp);
 
             // DEN: I made this update standing status instead of downing directly.
-            // Hopefully this does not cause issues? This was triggering on roundstart if you have
-            // the amputee traits, but the amputee traits are also supposed to give you 10 seconds
+            // Hopefully this does not cause issues? It was downing on roundstart if you have
+            // the amputee traits, but the amputee traits are supposed to give you 10 seconds
             // where you remain standing before you actually fall over.
-            Standing.UpdateStanding(bodyEnt); // Shitmed Change
+            Standing.UpdateStanding(bodyEnt, true); // Shitmed Change
         }
     }
 

@@ -61,6 +61,7 @@ namespace Content.IntegrationTests.Tests.Buckle
   - type: InputMover
   - type: Body
     prototype: Human
+    requiredLegs: 2
   - type: StandingState
 
 - type: entity

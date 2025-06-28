@@ -195,7 +195,7 @@ public sealed class StandingStateSystem : EntitySystem
             _climb.ForciblySetClimbing(uid, entityDistances.OrderBy(e => e.Value).First().Key);
     }
 
-    public void UpdateStanding(Entity<BodyComponent?> ent)
+    public void UpdateStanding(Entity<BodyComponent?> ent, bool dropItems = false)
     {
         if (!Resolve(ent.Owner, ref ent.Comp, false))
             return;
@@ -204,7 +204,7 @@ public sealed class StandingStateSystem : EntitySystem
         RaiseLocalEvent(ent.Owner, ev);
 
         if (ev.Forced || !ev.Cancelled)
-            Down(ent.Owner, dropHeldItems: false);
+            Down(ent.Owner, dropHeldItems: dropItems);
     }
 }
 
