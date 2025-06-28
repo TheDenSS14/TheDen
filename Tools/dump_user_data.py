@@ -1,3 +1,8 @@
+# SPDX-FileCopyrightText: 2023 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: MIT
+
 #!/usr/bin/env python3
 
 # User data dumping script for dumping data from an SS14 postgres database.

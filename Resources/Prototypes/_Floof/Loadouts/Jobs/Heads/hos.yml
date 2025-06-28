@@ -1,0 +1,47 @@
+# SPDX-FileCopyrightText: 2024 fox <daytimer253@gmail.com>
+# SPDX-FileCopyrightText: 2025 Blitz <73762869+BlitzTheSquishy@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Rosycup <178287475+Rosycup@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
+- type: loadout
+  id: LoadoutClothingHandsHeadSecurityWarmers
+  category: JobsSecurityHeadOfSecurity
+  cost: 1
+  exclusive: true
+  items:
+  - ClothingHandsHeadSecurityWarmers
+  requirements:
+  - !type:CharacterJobRequirement
+    jobs:
+    - HeadOfSecurity
+
+- type: loadout
+  id: LoadoutClothingUnderSocksHeadSecurity
+  category: JobsSecurityHeadOfSecurity
+  cost: 1
+  exclusive: true
+  items:
+  - ClothingUnderSocksHeadSecurity
+  requirements:
+#  - !type:CharacterSpeciesRequirement - TheDen
+#    inverted: true
+#    species:
+#    - Diona
+#    - Harpy
+  - !type:CharacterJobRequirement
+    jobs:
+    - HeadOfSecurity
+
+- type: loadout
+  id: LoadoutClothingUniformHeadSecurityThong
+  category: JobsSecurityHeadOfSecurity
+  cost: 1
+  exclusive: true
+  items:
+  - ClothingUniformHeadSecurityThong
+  requirements:
+  - !type:CharacterJobRequirement
+    jobs:
+    - HeadOfSecurity

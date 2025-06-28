@@ -1,4 +1,10 @@
-﻿using Content.Shared.DoAfter;
+// SPDX-FileCopyrightText: 2024 Remuchi <72476615+Remuchi@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Rosycup <178287475+Rosycup@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
+using Content.Shared.DoAfter;
 using Robust.Shared.Audio;
 using Robust.Shared.Audio.Components;
 using Robust.Shared.Prototypes;
@@ -13,10 +19,10 @@ public sealed partial class CultRuneRendingComponent : Component
 
     [DataField]
     public SoundSpecifier FinishedDrawingAudio =
-        new SoundPathSpecifier("/Audio/WhiteDream/BloodCult/rending_draw_finished.ogg");
+        new SoundPathSpecifier("/Audio/_White/BloodCult/rending_draw_finished.ogg");
 
     [DataField]
-    public SoundSpecifier SummonAudio = new SoundPathSpecifier("/Audio/WhiteDream/BloodCult/rending_ritual.ogg");
+    public SoundSpecifier SummonAudio = new SoundPathSpecifier("/Audio/_White/BloodCult/rending_ritual.ogg");
 
     [DataField]
     public EntProtoId NarsiePrototype = "MobNarsieSpawn";

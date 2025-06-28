@@ -1,3 +1,9 @@
+// SPDX-FileCopyrightText: 2024 chromiumboy <50505512+chromiumboy@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 zelezniciar1 <39102800+zelezniciar1@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 using Content.Client.Stylesheets;
 using Content.Shared.Atmos;
 using Content.Shared.Atmos.Components;
@@ -29,6 +35,30 @@ public sealed partial class AtmosAlarmEntryContainer : BoxContainer
         [AtmosAlarmType.Normal] = "atmos-alerts-window-normal-state",
         [AtmosAlarmType.Warning] = "atmos-alerts-window-warning-state",
         [AtmosAlarmType.Danger] = "atmos-alerts-window-danger-state",
+    };
+
+    private Dictionary<Gas, string> _gasShorthands = new Dictionary<Gas, string>()
+    {
+        [Gas.Ammonia] = "NH₃",
+        [Gas.CarbonDioxide] = "CO₂",
+        [Gas.Frezon] = "F",
+        [Gas.Nitrogen] = "N₂",
+        [Gas.NitrousOxide] = "N₂O",
+        [Gas.Oxygen] = "O₂",
+        [Gas.Plasma] = "P",
+        [Gas.Tritium] = "T",
+        [Gas.WaterVapor] = "H₂O",
+        [Gas.BZ] = "BZ", // Assmos - /tg/ gases
+        [Gas.Healium] = "Healium", // Assmos - /tg/ gases
+        [Gas.Nitrium] = "Nitrium", // Assmos - /tg/ gases
+        [Gas.Pluoxium] = "Pluox", // Assmos - /tg/ gases
+        [Gas.Hydrogen] = "H₂", // Assmos - /tg/ gases
+        [Gas.HyperNoblium] = "HyNo", // Assmos - /tg/ gases
+        [Gas.ProtoNitrate] = "PN", // Assmos - /tg/ gases
+        [Gas.Zauker] = "Z", // Assmos - /tg/ gases
+        [Gas.Halon] = "H", // Assmos - /tg/ gases
+        [Gas.Helium] = "He", // Assmos - /tg/ gases
+        [Gas.AntiNoblium] = "AnNo", // Assmos - /tg/ gases
     };
 
     public AtmosAlarmEntryContainer(NetEntity uid, EntityCoordinates? coordinates)

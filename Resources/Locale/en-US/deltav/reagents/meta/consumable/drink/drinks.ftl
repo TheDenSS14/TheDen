@@ -1,3 +1,11 @@
+# SPDX-FileCopyrightText: 2023 Fluffiest Floofers <thebluewulf@gmail.com>
+# SPDX-FileCopyrightText: 2023 Tad "Taddy" Johnson <120885811+TadJohnson00@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 leo <136020119+leonardo-dabepis@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 dge21 <129136517+dge21@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 reagent-name-kvass = kvass
 reagent-desc-kvass = A cool refreshing drink with a taste of socialism.
 

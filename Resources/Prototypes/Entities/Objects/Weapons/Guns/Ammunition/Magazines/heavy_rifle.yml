@@ -1,6 +1,17 @@
+# SPDX-FileCopyrightText: 2022 Kara
+# SPDX-FileCopyrightText: 2022 metalgearsloth
+# SPDX-FileCopyrightText: 2023 Vordenburg
+# SPDX-FileCopyrightText: 2023 lzk
+# SPDX-FileCopyrightText: 2024 Debug
+# SPDX-FileCopyrightText: 2025 BlitzTheSquishy
+# SPDX-FileCopyrightText: 2025 EctoplasmIsGood
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 - type: entity
   id: BaseMagazineHeavyRifle
-  name: "magazine (.20 rifle)"
+  name: "rifle magazine (.20 rifle)"
   parent: BaseItem
   abstract: true
   components:
@@ -29,7 +40,7 @@
 
 - type: entity
   id: MagazineBoxRifleMinigun
-  name: "Minigun Ammo Box (.10 rifle)"
+  name: "belt box (.10 rifle)"
   parent: BaseMagazineHeavyRifle
   components:
   - type: Tag

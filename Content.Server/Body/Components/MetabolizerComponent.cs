@@ -1,3 +1,23 @@
+// SPDX-FileCopyrightText: 2021 Ygg01 <y.laughing.man.y@gmail.com>
+// SPDX-FileCopyrightText: 2022 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
+// SPDX-FileCopyrightText: 2022 Vera Aguilera Puerto <6766154+Zumorica@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 mirrorcult <lunarautomaton6@gmail.com>
+// SPDX-FileCopyrightText: 2022 wrexbe <81056464+wrexbe@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 TemporalOroboros <temporaloroboros@gmail.com>
+// SPDX-FileCopyrightText: 2024 Angelo Fallaria <ba.fallaria@gmail.com>
+// SPDX-FileCopyrightText: 2024 FoxxoTrystan <trystan.garnierhein@gmail.com>
+// SPDX-FileCopyrightText: 2024 VMSolidus <evilexecutive@gmail.com>
+// SPDX-FileCopyrightText: 2024 fox <daytimer253@gmail.com>
+// SPDX-FileCopyrightText: 2024 neuPanda <chriseparton@gmail.com>
+// SPDX-FileCopyrightText: 2025 Raikyr0 <Kurohana@hotmail.com.au>
+// SPDX-FileCopyrightText: 2025 portfiend <109661617+portfiend@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 sleepyyapril <flyingkarii@gmail.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
+using Content.Server._DEN.Traits;
 using Content.Server.Body.Systems;
 using Content.Server.Traits.Assorted;
 using Content.Shared.Body.Prototypes;
@@ -47,7 +67,11 @@ namespace Content.Server.Body.Components
         ///     List of metabolizer types that this organ is. ex. Human, Slime, Felinid, w/e.
         /// </summary>
         [DataField]
-        [Access(typeof(MetabolizerSystem), typeof(LiquorLifelineSystem), typeof(VampirismSystem), Other = AccessPermissions.ReadExecute)] // FIXME Friends
+        [Access(typeof(MetabolizerSystem),
+            typeof(LiquorLifelineSystem),
+            typeof(VampirismSystem),
+            typeof(TraitAddMetabolizer),
+            Other = AccessPermissions.ReadExecute)] // FIXME Friends
         public HashSet<ProtoId<MetabolizerTypePrototype>>? MetabolizerTypes = null;
 
         /// <summary>

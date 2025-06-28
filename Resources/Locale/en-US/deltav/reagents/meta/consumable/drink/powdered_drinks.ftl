@@ -1,3 +1,8 @@
+# SPDX-FileCopyrightText: 2024 DisposableCrewmember42 <disposablecrewmember42@proton.me>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 reagent-name-powdered-milk = powdered milk
 reagent-desc-powdered-milk = A powder-based milk substitute that can be reconstituted with water.
 

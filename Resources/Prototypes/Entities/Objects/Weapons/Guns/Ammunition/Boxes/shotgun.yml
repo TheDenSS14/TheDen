@@ -1,3 +1,15 @@
+# SPDX-FileCopyrightText: 2024 Boaz1111
+# SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT
+# SPDX-FileCopyrightText: 2024 SpaceRox1244
+# SPDX-FileCopyrightText: 2024 metalgearsloth
+# SPDX-FileCopyrightText: 2025 Blitz
+# SPDX-FileCopyrightText: 2025 BlitzTheSquishy
+# SPDX-FileCopyrightText: 2025 Rosycup
+# SPDX-FileCopyrightText: 2025 VMSolidus
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 - type: entity
   parent: BaseItem
   id: BaseAmmoProvider
@@ -32,10 +44,10 @@
 
 # Shotgun Shells
 - type: entity
-  name: shell box (beanbag)
+  name: shell box (12 gauge beanbag)
   parent: AmmoProviderShotgunShell
   id: BoxBeanbag
-  description: A dispenser box full of beanbag shots, designed for riot shotguns.
+  description: A dispenser box full of 12 gauge beanbag shells, designed for riot shotguns.
   components:
     - type: BallisticAmmoProvider
       proto: ShellShotgunBeanbag
@@ -48,10 +60,10 @@
         - state: beanbag
 
 - type: entity
-  name: shell box (lethal)
+  name: shell box (12 gauge lethal)
   parent: AmmoProviderShotgunShell
   id: BoxLethalshot
-  description: A dispenser box full of lethal pellet shots, designed for riot shotguns.
+  description: A dispenser box full of 12 gauge shells, designed for riot shotguns.
   components:
     - type: BallisticAmmoProvider
       proto: ShellShotgun
@@ -64,10 +76,10 @@
         - state: lethal
 
 - type: entity
-  name: shell box (slug)
+  name: shell box (12 gauge slug)
   parent: AmmoProviderShotgunShell
   id: BoxShotgunSlug
-  description: A dispenser box full of slugs, designed for riot shotguns.
+  description: A dispenser box full of 12 gauge slugs, designed for riot shotguns.
   components:
     - type: BallisticAmmoProvider
       proto: ShellShotgunSlug
@@ -84,10 +96,10 @@
         - state: slug
 
 - type: entity
-  name: shell box (flare)
+  name: shell box (12 gauge flare)
   parent: AmmoProviderShotgunShell
   id: BoxShotgunFlare
-  description: A dispenser box full of flare cartridges, designed for riot shotguns.
+  description: A dispenser box full of 12 gauge flares, designed for riot shotguns.
   components:
     - type: BallisticAmmoProvider
       proto: ShellShotgunFlare
@@ -100,10 +112,10 @@
         - state: flare
 
 - type: entity
-  name: shell box (incendiary)
+  name: shell box (12 gauge dragon's breath)
   parent: AmmoProviderShotgunShell
   id: BoxShotgunIncendiary
-  description: A dispenser box full of incendiary cartridges, designed for riot shotguns.
+  description: A dispenser box full of 12 gauge dragon's breath shells, designed for riot shotguns.
   components:
     - type: BallisticAmmoProvider
       proto: ShellShotgunIncendiary
@@ -116,10 +128,10 @@
         - state: incendiary
 
 - type: entity
-  name: shell box (uranium)
+  name: shell box (12 gauge uranium)
   parent: AmmoProviderShotgunShell
   id: BoxShotgunUranium
-  description: A dispenser box full of uranium cartridges, designed for riot shotguns.
+  description: A dispenser box full of 12 gauge uranium shells, designed for riot shotguns.
   components:
     - type: BallisticAmmoProvider
       proto: ShellShotgunUranium
@@ -136,10 +148,10 @@
         - state: uranium
 
 - type: entity
-  name: shell box (practice)
+  name: shell box (12 gauge practice)
   parent: AmmoProviderShotgunShell
   id: BoxShotgunPractice
-  description: A dispenser box full of practice cartridges, designed for riot shotguns.
+  description: A dispenser box full of 12 gauge practice shells, designed for riot shotguns.
   components:
     - type: BallisticAmmoProvider
       proto: ShellShotgunPractice
@@ -152,10 +164,10 @@
         - state: practice
 
 - type: entity
-  name: shell box (tranquilizer)
+  name: shell box (12 gauge tranquilizer)
   parent: AmmoProviderShotgunShell
   id: BoxShellTranquilizer
-  description: A dispenser box full of tranquilizer cartridges, designed for riot shotguns.
+  description: A dispenser box full of 12 gauge tranquilizer shells, designed for riot shotguns.
   components:
     - type: BallisticAmmoProvider
       proto: ShellTranquilizer
@@ -168,10 +180,10 @@
         - state: tranquilizer
 
 - type: entity
-  name: "shellbox (Birdshot)"
+  name: "shell box (12 gauge birdshot)"
   parent: AmmoProviderShotgunShell
   id: BoxShotgunBirdshot
-  description: A dispenser box full of .50 birdshot. Used for centuries by colonists to hunt small game on alien worlds.
+  description: A dispenser box full of 12 gauge birdshot shells. Used for centuries by colonists to hunt small game on alien worlds.
   components:
     - type: BallisticAmmoProvider
       proto: ShellShotgunBirdshot
@@ -184,10 +196,10 @@
         - state: lethal
 
 - type: entity
-  name: "shell box (00-Buckshot)"
+  name: "shell box (12 gauge 00-buckshot)"
   parent: AmmoProviderShotgunShell
   id: BoxShotgun00Buckshot
-  description: A dispenser box full of .50 "Double-Aught" buckshot. Used for centuries by colonists to hunt mid-sized game. The knowledge of what a "Buck" means has been lost to time.
+  description: A dispenser box full of 12 gauge "Double-Aught" buckshot shells. Used for centuries by colonists to hunt mid-sized game. The knowledge of what a "Buck" means has been lost to time.
   components:
     - type: BallisticAmmoProvider
       proto: ShellShotgun00Buckshot
@@ -200,10 +212,10 @@
         - state: lethal
 
 - type: entity
-  name: "shell box (0000-Buckshot)"
+  name: "shell box (12 gauge 0000-buckshot)"
   parent: AmmoProviderShotgunShell
   id: BoxShotgun0000Buckshot
-  description: A dispenser box full of .50 "Quad-Aught" buckshot. Used for centuries by colonists to hunt alien megafauna. It'll rip through a hardsuit just as easily as thick hides.
+  description: A dispenser box full of 12 gauge "Quad-Aught" buckshot shells. Used for centuries by colonists to hunt alien megafauna. It'll rip through a hardsuit just as easily as thick hides.
   components:
     - type: BallisticAmmoProvider
       proto: ShellShotgun0000Buckshot

@@ -1,4 +1,10 @@
-﻿using Content.Shared.Damage;
+// SPDX-FileCopyrightText: 2024 Remuchi <72476615+Remuchi@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Rosycup <178287475+Rosycup@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
+using Content.Shared.Damage;
 using Robust.Shared.Audio;
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
@@ -42,7 +48,7 @@ public sealed partial class PylonComponent : Component
     public SoundSpecifier BurnHandSound = new SoundPathSpecifier("/Audio/Effects/lightburn.ogg");
 
     [DataField]
-    public SoundSpecifier CorruptTileSound = new SoundPathSpecifier("/Audio/WhiteDream/BloodCult/curse.ogg");
+    public SoundSpecifier CorruptTileSound = new SoundPathSpecifier("/Audio/_White/BloodCult/curse.ogg");
 
     [DataField]
     public DamageSpecifier Healing = new();

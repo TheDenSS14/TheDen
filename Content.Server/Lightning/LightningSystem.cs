@@ -1,3 +1,19 @@
+// SPDX-FileCopyrightText: 2022 keronshb <54602815+keronshb@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 AJCM-git <60196617+AJCM-git@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Ed <96445749+theshued@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Visne <39844191+Visne@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Ed <96445749+TheShuEd@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Emisse <99158783+Emisse@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Kara <lunarautomaton6@gmail.com>
+// SPDX-FileCopyrightText: 2024 TinManTim <73014819+Tin-Man-Tim@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 sleepyyapril <flyingkarii@gmail.com>
+// SPDX-FileCopyrightText: 2025 VMSolidus <evilexecutive@gmail.com>
+// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 using System.Linq;
 using Content.Server.Beam;
 using Content.Server.Beam.Components;
@@ -130,9 +146,9 @@ public sealed class LightningSystem : SharedLightningSystem
     /// <param name="hitCoordsChance">Chance for lightning to strike random coordinates instead of an entity.</param>
     public void ShootRandomLightnings(MapCoordinates coordinates, float range, int boltCount, string lightningPrototype = "Lightning", int arcDepth = 0, bool triggerLightningEvents = true, float hitCoordsChance = 0f, EntityUid? user = null)
     {
-        //TODO: add support to different priority target tablem for different lightning types
-        //TODO: Remove Hardcode LightningTargetComponent (this should be a parameter of the SharedLightningComponent)
-        //TODO: This is still pretty bad for perf but better than before and at least it doesn't re-allocate
+        //To Do: add support to different priority target tablem for different lightning types
+        //To Do: Remove Hardcode LightningTargetComponent (this should be a parameter of the SharedLightningComponent)
+        //To Do: This is still pretty bad for perf but better than before and at least it doesn't re-allocate
         // several hashsets every time
 
         var targets = _lookup.GetEntitiesInRange<LightningTargetComponent>(coordinates, range).ToList();

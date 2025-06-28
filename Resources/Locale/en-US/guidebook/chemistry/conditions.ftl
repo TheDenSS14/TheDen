@@ -1,3 +1,10 @@
+# SPDX-FileCopyrightText: 2023 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT <77995199+DEATHB4DEFEAT@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 icekot8 <93311212+icekot8@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 reagent-effect-condition-guidebook-total-damage =
     { $max ->
         [2147483648] it has at least {NATURALFIXED($min, 2)} total damage
@@ -60,5 +67,14 @@ reagent-effect-condition-guidebook-has-tag =
                  [true] does not have
                  *[false] has
                 } the tag {$tag}
+
+reagent-effect-condition-guidebook-blood-reagent-threshold =
+    { $max ->
+        [2147483648] there's at least {NATURALFIXED($min, 2)}u of {$reagent}
+        *[other] { $min ->
+                    [0] there's at most {NATURALFIXED($max, 2)}u of {$reagent}
+                    *[other] there's between {NATURALFIXED($min, 2)}u and {NATURALFIXED($max, 2)}u of {$reagent}
+                 }
+    }
 
 reagent-effect-condition-guidebook-this-reagent = this reagent

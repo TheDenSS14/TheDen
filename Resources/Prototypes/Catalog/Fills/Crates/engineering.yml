@@ -1,3 +1,43 @@
+# SPDX-FileCopyrightText: 2020 Vera Aguilera Puerto <6766154+Zumorica@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2020 Vera Aguilera Puerto <zddm@outlook.es>
+# SPDX-FileCopyrightText: 2021 20kdc <asdd2808@gmail.com>
+# SPDX-FileCopyrightText: 2021 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
+# SPDX-FileCopyrightText: 2021 Swept <sweptwastaken@protonmail.com>
+# SPDX-FileCopyrightText: 2022 Easypoller <117361103+Easypoller@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 Rinkashikachi <15rinkashikachi15@gmail.com>
+# SPDX-FileCopyrightText: 2022 Scribbles0 <91828755+Scribbles0@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 corentt <36075110+corentt@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 magmodius <88403244+magmodius@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Nemanja <98561806+emogarbage404@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Puro <103608145+PuroSlavKing@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 lzk228 <124214523+lzk228@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Ed <96445749+TheShuEd@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 chromiumboy <50505512+chromiumboy@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 lzk <124214523+lzk228@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Puro <103608145+PuroSlavKing@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 lzk228 <124214523+lzk228@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Aidenkrz <aiden@djkraz.com>
+# SPDX-FileCopyrightText: 2024 Ed <96445749+TheShuEd@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Eoin Mcloughlin <helloworld@eoinrul.es>
+# SPDX-FileCopyrightText: 2024 Kara <lunarautomaton6@gmail.com>
+# SPDX-FileCopyrightText: 2024 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 PoTeletubby <ajcraigaz@gmail.com>
+# SPDX-FileCopyrightText: 2024 chromiumboy <50505512+chromiumboy@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 eoineoineoin <github@eoinrul.es>
+# SPDX-FileCopyrightText: 2024 lzk <124214523+lzk228@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Dinner <180707738+DinnerCalzone@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+# SPDX-FileCopyrightText: 2025 Southbridge <7013162+southbridge-fur@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Steve <marlumpy@gmail.com>
+# SPDX-FileCopyrightText: 2025 marc-pelletier <113944176+marc-pelletier@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 - type: entity
   id: CrateEngineeringGear
   parent: CrateEngineering
@@ -194,3 +234,219 @@
     contents:
     - id: WeaponParticleDecelerator
       amount: 3
+
+- type: entityTable
+  id: RandomTechBoardTable
+  table: !type:GroupSelector
+    children:
+    - id: AirAlarmElectronics
+    - id: FireAlarmElectronics
+    - id: DoorElectronics
+    - id: FirelockElectronics
+    - id: APCElectronics
+    - id: SignalTimerElectronics
+    - id: SMESMachineCircuitboard
+    - id: SubstationMachineCircuitboard
+    - id: SpaceVillainArcadeComputerCircuitboard
+    - id: BlockGameArcadeComputerCircuitboard
+
+- type: entity
+  id: CrateTechBoardRandom
+  parent: CrateEngineering
+  name: surplus boards
+  description: Surplus boards from somewhere.
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      entity_storage: !type:NestedSelector
+        tableId: RandomTechBoardTable
+        rolls: !type:RangeNumberSelector
+          range: 3, 7
+
+# RPD
+- type: entity
+  id: CrateRPD
+  parent: CrateEngineeringSecure
+  name: RPD crate
+  description: A crate containing a single rapid piping device.
+  components:
+  - type: StorageFill
+    contents:
+    - id: RPD
+
+# Assmos - Extinguisher Nozzle
+- type: entity
+  id: CrateEngineeringFirefighterBackpackTank
+  parent: CrateEngineering
+  name: firefighter crate
+  description: Contains a firefighter backpack water tank.
+  components:
+  - type: StorageFill
+    contents:
+      - id: ClothingBackpackFirefighterTank
+
+- type: entity #TheDen
+  id: CrateEngiSurplus
+  name: engineering surplus crate
+  description: A box containing surplus tools for the engineering department.
+  parent: CrateEngineeringSecure
+  components:
+  - type: StorageFill
+    contents:
+#clothing
+    - id: ClothingShoesBootsMag
+      prob: 0.01
+      orGroup: Clothing
+    - id: ClothingShoesBootsMagAdv
+      prob: 0.0015
+      orGroup: Clothing
+    - id: ClothingShoesBootsWork
+      prob: 0.01
+      orGroup: Clothing
+    - id: ClothingHeadHatBeretEngineering
+      prob: 0.01
+      orGroup: Clothing
+#ppe
+    - id: ClothingHeadHatWelding
+      prob: 0.01
+      orGroup: PPE
+    - id: ClothingEyesGlassesMeson
+      prob: 0.01
+      orGroup: PPE
+    - id: ClothingOuterVestHazard
+      prob: 0.015
+      orGroup: PPE
+    - id: ClothingHeadHatHardhatYellow
+      prob: 0.015
+      orGroup: PPE
+    - id: ClothingHeadHatHardhatOrange
+      prob: 0.015
+      orGroup: PPE
+    - id: ClothingHeadHatHardhatArmored
+      prob: 0.01
+      orGroup: PPE
+    - id: ClothingHeadHelmetFire
+      prob: 0.008
+      orGroup: PPE
+    - id: ClothingOuterSuitFire
+      prob: 0.008
+      orGroup: PPE
+#hardsuit
+    - id: ClothingOuterHardsuitEngineering
+      prob: 0.008
+      orGroup: Hardsuit
+    - id: ClothingOuterHardsuitAtmos
+      prob: 0.008
+      orGroup: Hardsuit
+    - id: ClothingOuterHardsuitEngineeringWhite
+      prob: 0.0015
+      orGroup: Hardsuit
+#material
+    - id: SheetSteel
+      prob: 0.015
+      orGroup: Material
+    - id: SheetPlasteel
+      prob: 0.012
+      orGroup: Material
+    - id: SheetGlass
+      prob: 0.015
+      orGroup: Material
+    - id: SheetRGlass
+      prob: 0.012
+      orGroup: Material
+    - id: SheetPGlass
+      prob: 0.012
+      orGroup: Material
+    - id: SheetRPGlass
+      prob: 0.012
+      orGroup: Material
+    - id: SheetUGlass
+      prob: 0.012
+      orGroup: Material
+    - id: SheetRUGlass
+      prob: 0.012
+      orGroup: Material
+#tools
+    - id: RPD
+      prob: 0.01
+      orGroup: Tools
+    - id: RCD
+      prob: 0.01
+      orGroup: Tools
+    - id: RCDRecharging
+      prob: 0.0015
+      orGroup: Tools
+    - id: RPDRecharging
+      prob: 0.0015
+      orGroup: Tools
+    - id: Omnitool
+      prob: 0.004
+      orGroup: Tools
+    - id: PowerDrill
+      prob: 0.008
+      orGroup: Tools
+    - id: WelderIndustrial
+      prob: 0.008
+      orGroup: Tools
+    - id: WelderIndustrialAdvanced
+      prob: 0.005
+      orGroup: Tools
+    - id: ToolboxMechanical
+      prob: 0.01
+      orGroup: Tools
+    - id: ToolboxElectrical
+      prob: 0.01
+      orGroup: Tools
+    - id: ClothingBeltUtilityAtmos
+      prob: 0.01
+      orGroup: Tools
+    - id: ClothingBeltUtilityEngineering
+      prob: 0.01
+      orGroup: Tools
+    - id: ClothingBeltChiefEngineerFilled
+      prob: 0.0015
+      orGroup: Tools
+#misc
+    - id: CableHVStack
+      prob: 0.01
+      orGroup: Misc
+    - id: CableMVStack
+      prob: 0.01
+      orGroup: Misc
+    - id: CableApcStack
+      prob: 0.01
+      orGroup: Misc
+    - id: RCDAmmo
+      prob: 0.01
+      orGroup: Misc
+#canisters
+    - id: AirCanister
+      prob: 0.001
+      orGroup: Canister
+    - id: AmmoniaCanister
+      prob: 0.001
+      orGroup: Canister
+    - id: CarbonDioxideCanister
+      prob: 0.001
+      orGroup: Canister
+    - id: FrezonCanister
+      prob: 0.001
+      orGroup: Canister
+    - id: NitrogenCanister
+      prob: 0.001
+      orGroup: Canister
+    - id: NitrousOxideCanister
+      prob: 0.001
+      orGroup: Canister
+    - id: OxygenCanister
+      prob: 0.001
+      orGroup: Canister
+    - id: PlasmaCanister
+      prob: 0.001
+      orGroup: Canister
+    - id: TritiumCanister
+      prob: 0.001
+      orGroup: Canister
+    - id: WaterVaporCanister
+      prob: 0.001
+      orGroup: Canister

@@ -1,0 +1,166 @@
+# SPDX-FileCopyrightText: 2024 fox <daytimer253@gmail.com>
+# SPDX-FileCopyrightText: 2024 sleepyyapril <***>
+# SPDX-FileCopyrightText: 2024 sleepyyapril <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>
+# SPDX-FileCopyrightText: 2025 Blitz <73762869+BlitzTheSquishy@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 BlitzTheSquishy <73762869+BlitzTheSquishy@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Rosycup <178287475+Rosycup@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
+# General medical
+- type: loadout
+  id: LoadoutClothingHandsMedicWarmers
+  category: JobsMedicalAUncategorized
+  cost: 2
+  exclusive: true
+  items:
+  - ClothingHandsMedicWarmers
+  requirements:
+  - !type:CharacterDepartmentRequirement
+    departments:
+    - Medical
+  - !type:CharacterJobRequirement
+    jobs:
+    - Chemist
+    - Paramedic
+    - ChiefMedicalOfficer
+
+- type: loadout
+  id: LoadoutClothingUnderSocksMedic
+  category: JobsMedicalAUncategorized
+  cost: 2
+  exclusive: true
+  items:
+  - ClothingUnderSocksMedic
+  requirements:
+#  - !type:CharacterSpeciesRequirement - TheDen
+#    inverted: true
+#    species:
+#    - Diona
+#    - Harpy
+  - !type:CharacterDepartmentRequirement
+    departments:
+    - Medical
+  - !type:CharacterJobRequirement
+    jobs:
+    - Chemist
+    - Paramedic
+    - ChiefMedicalOfficer
+
+- type: loadout
+  id: LoadoutClothingUniformMedicThong
+  category: JobsMedicalAUncategorized
+  cost: 2
+  exclusive: true
+  items:
+  - ClothingUniformMedicThong
+  requirements:
+  - !type:CharacterDepartmentRequirement
+    departments:
+    - Medical
+  - !type:CharacterJobRequirement
+    jobs:
+    - Chemist
+    - Paramedic
+    - ChiefMedicalOfficer
+
+- type: loadout
+  id: LoadoutMedicalNeckCollar
+  category: JobsMedicalAUncategorized
+  cost: 1
+  requirements:
+  - !type:CharacterLogicXorRequirement
+    requirements:
+    - !type:CharacterDepartmentRequirement
+      departments:
+      - Medical
+    - !type:CharacterJobRequirement
+      jobs:
+      - Brigmedic
+  items:
+  - ClothingNeckCollarMed
+
+# Chemist
+- type: loadout
+  id: LoadoutClothingHandsChemistsWarmers
+  category: JobsMedicalChemist
+  cost: 2
+  exclusive: true
+  items:
+  - ClothingHandsChemistsWarmers
+  requirements:
+  - !type:CharacterJobRequirement
+    jobs:
+    - Chemist
+
+- type: loadout
+  id: LoadoutClothingUnderSocksChemists
+  category: JobsMedicalChemist
+  cost: 2
+  exclusive: true
+  items:
+  - ClothingUnderSocksChemists
+  requirements:
+#  - !type:CharacterSpeciesRequirement - TheDen
+#    inverted: true
+#    species:
+#    - Diona
+#    - Harpy
+  - !type:CharacterJobRequirement
+    jobs:
+    - Chemist
+
+- type: loadout
+  id: LoadoutClothingUniformChemistsThong
+  category: JobsMedicalChemist
+  cost: 2
+  exclusive: true
+  items:
+  - ClothingUniformChemistsThong
+  requirements:
+  - !type:CharacterJobRequirement
+    jobs:
+    - Chemist
+
+# Paramedic
+- type: loadout
+  id: LoadoutClothingHandsParaMedicWarmers
+  category: JobsMedicalParamedic
+  cost: 1
+  exclusive: true
+  items:
+  - ClothingHandsParaMedicWarmers
+  requirements:
+  - !type:CharacterJobRequirement
+    jobs:
+    - Paramedic
+
+- type: loadout
+  id: LoadoutClothingUnderSocksParaMedic
+  category: JobsMedicalParamedic
+  cost: 1
+  exclusive: true
+  items:
+  - ClothingUnderSocksParaMedic
+  requirements:
+#  - !type:CharacterSpeciesRequirement - TheDen
+#    inverted: true
+#    species:
+#    - Diona
+#    - Harpy
+  - !type:CharacterJobRequirement
+    jobs:
+    - Paramedic
+
+- type: loadout
+  id: LoadoutClothingUniformParaMedicThong
+  category: JobsMedicalParamedic
+  cost: 1
+  exclusive: true
+  items:
+  - ClothingUniformParaMedicThong
+  requirements:
+  - !type:CharacterJobRequirement
+    jobs:
+    - Paramedic

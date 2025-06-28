@@ -1,3 +1,29 @@
+# SPDX-FileCopyrightText: 2024 Angelo Fallaria
+# SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT
+# SPDX-FileCopyrightText: 2024 Danger Revolution!
+# SPDX-FileCopyrightText: 2024 Fansana
+# SPDX-FileCopyrightText: 2024 FoxxoTrystan
+# SPDX-FileCopyrightText: 2024 ShatteredSwords
+# SPDX-FileCopyrightText: 2024 Tmanzxd
+# SPDX-FileCopyrightText: 2024 VMSolidus
+# SPDX-FileCopyrightText: 2024 gluesniffler
+# SPDX-FileCopyrightText: 2025 Blitz
+# SPDX-FileCopyrightText: 2025 BlitzTheSquishy
+# SPDX-FileCopyrightText: 2025 EctoplasmIsGood
+# SPDX-FileCopyrightText: 2025 Falcon
+# SPDX-FileCopyrightText: 2025 MajorMoth
+# SPDX-FileCopyrightText: 2025 RadsammyT
+# SPDX-FileCopyrightText: 2025 Rosycup
+# SPDX-FileCopyrightText: 2025 Sapphire
+# SPDX-FileCopyrightText: 2025 Skubman
+# SPDX-FileCopyrightText: 2025 Tabitha
+# SPDX-FileCopyrightText: 2025 Timfa
+# SPDX-FileCopyrightText: 2025 Tonk-GCR
+# SPDX-FileCopyrightText: 2025 portfiend
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 #Smokes
 - type: loadout
   id: LoadoutItemCig
@@ -917,6 +943,9 @@
   id: LoadoutItemCaneWalking
   category: GeneralItems
   cost: 0 # It shouldnt cost points to be able to function.
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutWalkingCanes
   items:
     - Cane
 
@@ -1034,6 +1063,14 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutWritables
+
+- type: loadout
+  id: PlushieNuke
+  category: GeneralToys
+  cost: 2
+  canBeHeirloom: true
+  items:
+    - PlushieNuke
 
 - type: loadout
   id: PlushieSharkBlue

@@ -1,3 +1,9 @@
+# SPDX-FileCopyrightText: 2025 Aikakakah <145503852+Aikakakah@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Blitz <73762869+BlitzTheSquishy@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 - type: species
   id: Feroxi
   name: species-name-feroxi
@@ -8,13 +14,15 @@
   markingLimits: MobFeroxiMarkingLimits
   dollPrototype: MobFeroxiDummy
   skinColoration: Hues
-  maleFirstNames: names_first_male
-  femaleFirstNames: names_first_female
-  lastNames: names_last
+  maleFirstNames: NamesFeroxiFirstMale
+  femaleFirstNames: NamesFeroxiFirstFemale
+  lastNames: NamesFeroxiLast
 
 - type: speciesBaseSprites
   id: MobFeroxiSprites
   sprites:
+    TailBehind: MobHumanoidAnyMarking
+    TailOversuit: MobHumanoidAnyMarking
     Head: MobFeroxiHead
     Hair: MobHumanoidAnyMarking
     FacialHair: MobHumanoidAnyMarking
@@ -69,6 +77,12 @@
       required: false
     RightLeg:
       points: 1
+      required: false
+    Undershirt:
+      points: 2 # FLOOF CHANGE
+      required: false
+    Underwear:
+      points: 2 # FLOOF CHANGE
       required: false
     Tail:
       points: 1

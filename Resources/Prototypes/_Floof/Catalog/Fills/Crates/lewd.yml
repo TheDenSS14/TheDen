@@ -1,0 +1,49 @@
+# SPDX-FileCopyrightText: 2024 Fansana <116083121+Fansana@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Memeji Dankiri <39416235+Memeji@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Pierson Arnold <greyalphawolf7@gmail.com>
+# SPDX-FileCopyrightText: 2024 sleepyyapril <flyingkarii@gmail.com>
+# SPDX-FileCopyrightText: 2025 Rosycup <178287475+Rosycup@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
+- type: entity
+  id: CrateLewdToys
+  parent: CrateLewd
+  name: sex toys crate
+  description: Improve your station's mood by introducing some fun "toys"! Careful, work may plummet and the station may become a mess.
+  components:
+  - type: StorageFill
+    contents:
+      - id: ClothingMaskGasDrone #TheDen
+      - id: LewdWand
+      - id: LewdVibeGreen
+      - id: LewdVibeTeal
+      - id: LewdVibePink
+      - id: LewdVibeRed
+      - id: LewdVibeYellow
+      - id: LewdFleshlightGreen
+      - id: LewdFleshlightTeal
+      - id: LewdFleshlightPink
+      - id: LewdFleshlightRed
+      - id: LewdFleshlightYellow
+      - id: AvianDildo
+      - id: CanineDildo
+        orGroup: canine
+      - id: CanineDildoRed
+        orGroup: canine
+      - id: HorseDildo
+      - id: DragonDildo
+      - id: NormalDildo
+      - id: TentacleDildo
+      - id: DoubleDildo
+      - id: WhipPink
+      - id: WhipTeal
+      - id: WhipPinkCrotch
+      - id: WhipTealCrotch
+      - id: SpankPinkPaddle
+      - id: SpankTealPaddle
+      - id: DrinkCumBottleFull
+        amount: 2
+      - id: LeashBasic
+        amount: 2

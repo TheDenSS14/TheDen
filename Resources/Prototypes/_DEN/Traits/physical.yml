@@ -1,6 +1,16 @@
+# SPDX-FileCopyrightText: 2025 ElusiveCoin <elusivecoin@gmail.com>
+# SPDX-FileCopyrightText: 2025 Rosycup <178287475+Rosycup@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Tabitha <64847293+KyuPolaris@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 TheOneTrueWolfio <Wolfgangleader3@gmail.com>
+# SPDX-FileCopyrightText: 2025 foxcurl <kitshoffeitt@gmail.com>
+# SPDX-FileCopyrightText: 2025 portfiend <109661617+portfiend@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 - type: trait
   id: Heavyweight
-  category: Physical
+  category: TraitsPhysicalBiological
   points: -2 # Has pros and cons, not sure
   requirements:
   - !type:CharacterJobRequirement
@@ -23,7 +33,7 @@
 
 - type: trait
   id: UltraHeavyweight
-  category: Physical
+  category: TraitsPhysicalBiological
   points: -4 # Has pros and cons, not sure
   requirements:
   - !type:CharacterJobRequirement
@@ -46,7 +56,7 @@
 
 - type: trait
   id: UltraLightweight
-  category: Physical
+  category: TraitsPhysicalBiological
   points: 4 # Has pros and cons, not sure
   requirements:
   - !type:CharacterJobRequirement
@@ -69,7 +79,7 @@
 
 - type: trait
   id: ZeroGTraining
-  category: Physical
+  category: TraitsPhysicalFeats
   points: -2 # Suggested value, tweak as appropriate
   requirements:
   - !type:CharacterJobRequirement
@@ -82,6 +92,7 @@
     species:
     - Moth
     - Harpy
+    - Resomi #Species trait
   - !type:CharacterTraitRequirement
     inverted: true
     traits:
@@ -95,7 +106,7 @@
 
 - type: trait
   id: ZeroGAverse
-  category: Physical
+  category: TraitsPhysicalDisabilities
   points: 2 # Suggested value, tweak as appropriate
   requirements:
   - !type:CharacterJobRequirement
@@ -121,7 +132,7 @@
 
 - type: trait
   id: TailWag
-  category: Physical
+  category: TraitsPhysicalBiological
   points: 0
   requirements:
   - !type:CharacterJobRequirement

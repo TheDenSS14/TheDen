@@ -1,3 +1,8 @@
+# SPDX-FileCopyrightText: 2024 Mnemotechnican <69920617+Mnemotechnician@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 # Mice get a lot because they are a lot  more common than e.g. cows or chickens, are understood by certain species and player-controlled mice, etc...
 bark-mouse-1 = pi pi pi
 bark-mouse-2 = pi pi pi pi

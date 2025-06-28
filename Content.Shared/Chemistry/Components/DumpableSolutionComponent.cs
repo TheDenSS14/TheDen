@@ -1,3 +1,9 @@
+// SPDX-FileCopyrightText: 2023 TNE <38938720+JustTNE@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 TemporalOroboros <temporaloroboros@gmail.com>
+// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+//
+// SPDX-License-Identifier: MIT
+
 using Robust.Shared.GameStates;
 
 namespace Content.Shared.Chemistry.Components;

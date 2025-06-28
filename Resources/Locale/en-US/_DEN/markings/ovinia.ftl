@@ -1,3 +1,8 @@
+# SPDX-FileCopyrightText: 2025 juniwoofs <180479595+juniwoofs@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 marking-OviniaEars = Ovinia Ears (Default)
 marking-OviniaEars-ovinia-ears = Outer Ears
 marking-OviniaEars-ovinia-ears-inner = Inner Ears
@@ -17,6 +22,18 @@ marking-OviniaRamHorns-ovinia-ram-horns = Horns
 marking-OviniaPointyHorns = Pointy Horns
 marking-OviniaPointyHorns-ovinia-pointy-horns = Horns
 
+marking-OviniaDeerHorns = Deer Horns
+marking-OviniaDeerHorns-ovinia-deer-horns = Horns
+
+marking-OviniaDevilHorns = Devil Horns
+marking-OviniaDevilHorns-ovinia-devil-horns = Horns
+
+marking-OviniaBaphometHorns = Baphomet Horns
+marking-OviniaBaphometHorns-ovinia-baphomet-horns = Horns
+
+marking-OviniaIbexHorns = Ibex Horns
+marking-OviniaIbexHorns-ovinia-ibex-horns = Horns
+
 marking-OviniaCurvedHorns = Curved Horns
 marking-OviniaCurvedHorns-ovinia-curved-horns = Horns
 
@@ -24,6 +41,10 @@ marking-OviniaCurvedHorns-ovinia-curved-horns = Horns
 marking-OviniaFace = Ovinia Face
 marking-OviniaFace-ovinia-face = Face
 marking-OviniaFace-ovinia-nose = Nose
+
+marking-OviniaBlaze = Ovinia Face
+marking-OviniaBlaze-ovinia-blaze = Face
+marking-OviniaBlaze-ovinia-nose = Nose
 
 marking-OviniaSnout = Ovinia Snout
 marking-OviniaSnout-ovinia-snout = Snout

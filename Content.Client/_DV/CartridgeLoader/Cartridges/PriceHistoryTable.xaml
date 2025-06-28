@@ -1,0 +1,33 @@
+<!--
+SPDX-FileCopyrightText: 2024 Milon <milonpl.git@proton.me>
+SPDX-FileCopyrightText: 2025 BlitzTheSquishy <73762869+BlitzTheSquishy@users.noreply.github.com>
+SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+
+SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+-->
+
+<cartridges:PriceHistoryTable
+    xmlns="https://spacestation14.io"
+    xmlns:cartridges="clr-namespace:Content.Client._DV.CartridgeLoader.Cartridges"
+    Orientation="Vertical"
+    HorizontalExpand="True"
+    Margin="0,5,0,0">
+
+    <!-- Header -->
+    <BoxContainer Orientation="Horizontal" HorizontalExpand="True">
+        <Label Text="{Loc stock-trading-price-history}"
+               HorizontalExpand="True"
+               StyleClasses="LabelSubText" />
+    </BoxContainer>
+
+    <!-- Price history panel -->
+    <PanelContainer Name="HistoryPanel"
+                    HorizontalExpand="True"
+                    Margin="0,2,0,0">
+        <BoxContainer Orientation="Horizontal"
+                      HorizontalExpand="True"
+                      HorizontalAlignment="Center">
+            <GridContainer Name="PriceGrid" Columns="5" />
+        </BoxContainer>
+    </PanelContainer>
+</cartridges:PriceHistoryTable>

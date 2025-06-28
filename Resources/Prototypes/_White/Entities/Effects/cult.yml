@@ -1,0 +1,68 @@
+# SPDX-FileCopyrightText: 2024 Remuchi <72476615+Remuchi@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Blitz <73762869+BlitzTheSquishy@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Rosycup <178287475+Rosycup@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
+- type: entity
+  id: CultTileSpawnEffect
+  name: cult tile effect
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
+  placement:
+    mode: SnapgridCenter
+  components:
+  - type: TimedDespawn
+    lifetime: 0.5
+  - type: Transform
+    noRot: true
+    anchored: true
+  - type: Sprite
+    layers:
+    - sprite: _White/BloodCult/Effects/tiles_spawn.rsi
+      state: floorglow
+      shader: unshaded
+    netsync: false
+    drawdepth: FloorObjects
+  - type: PointLight
+    color: "#FF0000"
+
+- type: entity
+  id: CultTeleportInEffect
+  name: Teleport in
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
+  components:
+  - type: TimedDespawn
+    lifetime: 0.8
+  - type: Transform
+    noRot: true
+    anchored: true
+  - type: Sprite
+    layers:
+    - sprite: _White/BloodCult/Effects/cult_in_out.rsi
+      state: cult_in
+      shader: unshaded
+    netsync: false
+    drawdepth: Effects
+  - type: PointLight
+    color: "#FF0000"
+
+- type: entity
+  id: CultTeleportOutEffect
+  name: Teleport out
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
+  components:
+  - type: TimedDespawn
+    lifetime: 0.8
+  - type: Transform
+    noRot: true
+    anchored: true
+  - type: Sprite
+    layers:
+    - sprite: _White/BloodCult/Effects/cult_in_out.rsi
+      state: cult_out
+      shader: unshaded
+    netsync: false
+    drawdepth: Effects
+  - type: PointLight
+    color: "#FF0000"

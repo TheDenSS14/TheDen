@@ -1,0 +1,23 @@
+# SPDX-FileCopyrightText: 2024 XavierSomething <tylernguyen203@gmail.com>
+# SPDX-FileCopyrightText: 2024 fox <daytimer253@gmail.com>
+# SPDX-FileCopyrightText: 2025 Rosycup <178287475+Rosycup@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
+- type: entity
+  id: ArachnicTranslator
+  parent: [ TranslatorPoweredBase ]
+  name: Arachnic translator
+  description: Translates speech between Arachnic and Galactic Common, which won't get through to spiders that walk on more than 2 legs.
+  components:
+  - type: HandheldTranslator
+    spoken:
+    - TauCetiBasic
+    - Arachnic
+    understood:
+    - TauCetiBasic
+    - Arachnic
+    requires:
+    - TauCetiBasic
+    - Arachnic

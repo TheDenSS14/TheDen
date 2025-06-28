@@ -1,3 +1,23 @@
+# SPDX-FileCopyrightText: 2025 Blitz
+# SPDX-FileCopyrightText: 2025 portfiend
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
+- type: loadout
+  id: LoadoutServiceHeadHatTophat
+  category: JobsServiceBartender
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBartenderHead
+    - !type:CharacterJobRequirement
+      jobs:
+        - Bartender
+  items:
+    - ClothingHeadHatTophat
+
 - type: loadout
   id: LoadoutServiceBartenderUniformSuit
   category: JobsServiceBartender
@@ -47,6 +67,20 @@
   exclusive: true
   items:
     - ClothingOuterApronBar
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBartenderOuter
+    - !type:CharacterJobRequirement
+      jobs:
+        - Bartender
+
+- type: loadout
+  id: LoadoutServiceOuterVest
+  category: JobsServiceBartender
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingOuterVest
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutBartenderOuter

@@ -1,3 +1,18 @@
+// SPDX-FileCopyrightText: 2021 Vera Aguilera Puerto <gradientvera@outlook.com>
+// SPDX-FileCopyrightText: 2022 Alex Evgrashin <aevgrashin@yandex.ru>
+// SPDX-FileCopyrightText: 2022 Justin Trotter <trotter.justin@gmail.com>
+// SPDX-FileCopyrightText: 2022 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Chief-Engineer <119664036+Chief-Engineer@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Slava0135 <40753025+Slava0135@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 metalgearsloth <comedian_vs_clown@hotmail.com>
+// SPDX-FileCopyrightText: 2024 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
+// SPDX-FileCopyrightText: 2024 sleepyyapril <flyingkarii@gmail.com>
+// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 using Content.Shared.Interaction;
 using Content.Shared.Pinpointer;
 using System.Linq;
@@ -5,6 +20,7 @@ using System.Numerics;
 using Robust.Shared.Utility;
 using Content.Server.Shuttles.Events;
 using Content.Shared.IdentityManagement;
+using Content.Server.Bible.Components; // #IMP
 
 namespace Content.Server.Pinpointer;
 
@@ -51,7 +67,7 @@ public sealed class PinpointerSystem : SharedPinpointerSystem
         TogglePinpointer(uid, component);
 
         if (!component.CanRetarget)
-            LocateTarget(uid, component);
+            LocateTarget(uid, component, args); //#IMP args
 
         args.Handled = true;
     }
@@ -73,7 +89,8 @@ public sealed class PinpointerSystem : SharedPinpointerSystem
         }
     }
 
-    private void LocateTarget(EntityUid uid, PinpointerComponent component)
+    //#IMP ActivateInWorldEvent args: added this
+    private void LocateTarget(EntityUid uid, PinpointerComponent component, ActivateInWorldEvent? args = null)
     {
         // try to find target from whitelist
         if (component.IsActive && component.Component != null)
@@ -88,6 +105,11 @@ public sealed class PinpointerSystem : SharedPinpointerSystem
             var target = FindTargetFromComponent(uid, reg.Type);
             SetTarget(uid, target, component);
         }
+        // #IMP For anomalites to find their cores, use familiar component to get core EntityUid
+        else if (args is not null && TryComp<FamiliarComponent>(args.User, out var familiarComp))
+        {
+            SetTarget(uid, familiarComp.Source, component);
+        }
     }
 
     public override void Update(float frameTime)
@@ -99,6 +121,20 @@ public sealed class PinpointerSystem : SharedPinpointerSystem
         var query = EntityQueryEnumerator<PinpointerComponent>();
         while (query.MoveNext(out var uid, out var pinpointer))
         {
+            //#IMP automatically turn on the pinpointer ONCE if ActivateImmediately is true.
+            if (pinpointer.ActivateImmediately)
+            {
+                pinpointer.ActivateImmediately = false;
+                // Anomalite check
+                if (TryComp<FamiliarComponent>(_transform.GetParentUid(uid), out var familiar))
+                {
+                    SetTarget(uid, familiar.Source, pinpointer);
+                }
+
+                TogglePinpointer(uid, pinpointer);
+                LocateTarget(uid, pinpointer);
+            }
+
             UpdateDirectionToTarget(uid, pinpointer);
         }
     }

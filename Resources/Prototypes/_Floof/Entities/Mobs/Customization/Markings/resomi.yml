@@ -1,0 +1,198 @@
+# SPDX-FileCopyrightText: 2025 Rosycup <178287475+Rosycup@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 TheOneTrueWolfio <wolfgangleader3@gmail.com>
+# SPDX-FileCopyrightText: 2025 Zac1107 <riascazadofelra@gmail.com>
+# SPDX-FileCopyrightText: 2025 chly <haychiethewonderfulsnivy@gmail.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
+## Basic Resomi
+
+- type: marking
+  id: ResomiTail
+  bodyPart: Chest
+  markingCategory: Tail
+  speciesRestriction: [Resomi]
+  forcedColoring: true
+  sprites:
+  - sprite: _Floof/Mobs/Customization/resomi_parts.rsi
+    state: tail
+
+- type: marking
+  id: ResomiTailFeathers
+  bodyPart: Chest
+  markingCategory: Tail
+  speciesRestriction: [Resomi]
+  sprites:
+  - sprite: _Floof/Mobs/Customization/resomi_parts.rsi
+    state: tail_feathers
+
+- type: marking
+  id: ResomiLArmFeathers
+  bodyPart: LHand
+  markingCategory: LeftHand
+  speciesRestriction: [Resomi]
+  sprites:
+  - sprite: _Floof/Mobs/Customization/resomi_parts.rsi
+    state: l_hand_feathers
+
+- type: marking
+  id: ResomiLLegFeathers
+  bodyPart: LFoot
+  markingCategory: LeftFoot
+  speciesRestriction: [Resomi]
+  sprites:
+  - sprite: _Floof/Mobs/Customization/resomi_parts.rsi
+    state: l_foot_feathers
+
+- type: marking
+  id: ResomiRArmFeathers
+  bodyPart: RHand
+  markingCategory: RightHand
+  speciesRestriction: [Resomi]
+  sprites:
+  - sprite: _Floof/Mobs/Customization/resomi_parts.rsi
+    state: r_hand_feathers
+
+- type: marking
+  id: ResomiRLegFeathers
+  bodyPart: RFoot
+  markingCategory: RightFoot
+  speciesRestriction: [Resomi]
+  sprites:
+  - sprite: _Floof/Mobs/Customization/resomi_parts.rsi
+    state: r_foot_feathers
+
+- type: marking
+  id: ResomiFluff
+  bodyPart: Chest
+  markingCategory: Chest
+  speciesRestriction: [Resomi]
+  sprites:
+  - sprite: _Floof/Mobs/Customization/resomi_parts.rsi
+    state: fluff
+
+- type: marking
+  id: ResomiFluffHead
+  bodyPart: Head
+  markingCategory: Head
+  speciesRestriction: [Resomi]
+  sprites:
+  - sprite: _Floof/Mobs/Customization/resomi_parts.rsi
+    state: fluff_head
+
+- type: marking
+  id: ResomiFluffHeadUp
+  bodyPart: Head
+  markingCategory: Head
+  speciesRestriction: [Resomi]
+  sprites:
+  - sprite: _Floof/Mobs/Customization/resomi_parts.rsi
+    state: fluff_head_up
+
+
+# Head Markings
+- type: marking
+  id: ResomiWendigoFaceOnly
+  bodyPart: Head
+  markingCategory: Head
+  speciesRestriction: [Resomi]
+  sprites:
+  - sprite: _Floof/Mobs/Customization/Resomi/head_markings.rsi
+    state: Wendigo-paint
+
+- type: marking
+  id: ResomiWendigoFaceManed
+  bodyPart: Head
+  markingCategory: Head
+  speciesRestriction: [Resomi]
+  sprites:
+  - sprite: _Floof/Mobs/Customization/Resomi/head_markings.rsi
+    state: Wendigo-paint
+  - sprite: _Floof/Mobs/Customization/Resomi/head_markings.rsi
+    state: Wendigo-paint-mane
+
+- type: marking
+  id: ResomiEars
+  bodyPart: Head
+  markingCategory: Head
+  speciesRestriction: [Resomi]
+  sprites:
+  - sprite: _Floof/Mobs/Customization/Resomi/head_markings.rsi
+    state: fluff_ears
+
+# Arm Markings
+
+- type: marking
+  id: ResomiCyArmL
+  bodyPart: LArm
+  markingCategory: LeftArm
+  speciesRestriction: [Resomi]
+  sprites:
+  - sprite: _Floof/Mobs/Customization/Resomi/arm_markings.rsi
+    state: cyberkinetic-arm-l
+
+- type: marking
+  id: ResomiCyArmR
+  bodyPart: RArm
+  markingCategory: RightArm
+  speciesRestriction: [Resomi]
+  sprites:
+  - sprite: _Floof/Mobs/Customization/Resomi/arm_markings.rsi
+    state: cyberkinetic-arm-r
+
+- type: marking
+  id: ResomiCyHandR
+  bodyPart: RHand
+  markingCategory: RightHand
+  speciesRestriction: [Resomi]
+  sprites:
+  - sprite: _Floof/Mobs/Customization/Resomi/arm_markings.rsi
+    state: cyberkinetic-hand-r
+
+- type: marking
+  id: ResomiCyHandL
+  bodyPart: LHand
+  markingCategory: LeftHand
+  speciesRestriction: [Resomi]
+  sprites:
+  - sprite: _Floof/Mobs/Customization/Resomi/arm_markings.rsi
+    state: cyberkinetic-hand-l
+
+# Leg Markings
+
+- type: marking
+  id: ResomiCyLegR
+  bodyPart: RLeg
+  markingCategory: RightLeg
+  speciesRestriction: [Resomi]
+  sprites:
+  - sprite: _Floof/Mobs/Customization/Resomi/leg_markings.rsi
+    state: cyberkinetic-leg-r
+
+- type: marking
+  id: ResomiCyLegL
+  bodyPart: LLeg
+  markingCategory: LeftLeg
+  speciesRestriction: [Resomi]
+  sprites:
+  - sprite: _Floof/Mobs/Customization/Resomi/leg_markings.rsi
+    state: cyberkinetic-leg-l
+
+- type: marking
+  id: ResomiCyFootR
+  bodyPart: RFoot
+  markingCategory: RightFoot
+  speciesRestriction: [Resomi]
+  sprites:
+  - sprite: _Floof/Mobs/Customization/Resomi/leg_markings.rsi
+    state: cyberkinetic-foot-r
+
+- type: marking
+  id: ResomiCyFootL
+  bodyPart: LFoot
+  markingCategory: LeftFoot
+  speciesRestriction: [Resomi]
+  sprites:
+  - sprite: _Floof/Mobs/Customization/Resomi/leg_markings.rsi
+    state: cyberkinetic-foot-l

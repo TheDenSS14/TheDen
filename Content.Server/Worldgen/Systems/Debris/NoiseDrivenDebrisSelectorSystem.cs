@@ -1,4 +1,9 @@
-﻿using Content.Server.Worldgen.Components.Debris;
+// SPDX-FileCopyrightText: 2023 Moony <moony@hellomouse.net>
+// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+//
+// SPDX-License-Identifier: MIT
+
+using Content.Server.Worldgen.Components.Debris;
 using Robust.Server.GameObjects;
 using Robust.Shared.Random;
 

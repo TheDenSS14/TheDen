@@ -1,3 +1,8 @@
+// SPDX-FileCopyrightText: 2024 deathride58 <deathride58@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+//
+// SPDX-License-Identifier: MIT
+
 using Content.Shared.Eye.Blinding.Systems;
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;

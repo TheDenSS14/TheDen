@@ -1,3 +1,12 @@
+// SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT <77995199+DEATHB4DEFEAT@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 VMSolidus <evilexecutive@gmail.com>
+// SPDX-FileCopyrightText: 2025 Falcon <falcon@zigtag.dev>
+// SPDX-FileCopyrightText: 2025 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 sleepyyapril <flyingkarii@gmail.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 using Content.Server.GameTicking.Rules;
 using Content.Server.Maps;
 using Content.Shared.GridPreloader.Prototypes;
@@ -20,10 +29,16 @@ public sealed partial class LoadMapRuleComponent : Component
     public ProtoId<GameMapPrototype>? GameMap;
 
     /// <summary>
-    /// A map path to load on a new map.
+    /// A map to load.
     /// </summary>
     [DataField]
     public ResPath? MapPath;
+
+    /// <summary>
+    /// A grid to load on a new map.
+    /// </summary>
+    [DataField]
+    public ResPath? GridPath;
 
     /// <summary>
     /// A <see cref="PreloadedGridPrototype"/> to move to a new map.

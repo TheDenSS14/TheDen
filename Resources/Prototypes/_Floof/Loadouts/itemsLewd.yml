@@ -1,0 +1,254 @@
+# SPDX-FileCopyrightText: 2024 FoxxoTrystan <45297731+FoxxoTrystan@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Mnemotechnican <69920617+Mnemotechnician@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 fox <daytimer253@gmail.com>
+# SPDX-FileCopyrightText: 2025 KekaniCreates <87507256+KekaniCreates@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Rosycup <178287475+Rosycup@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
+# Note: only explicitly lewd items go into this category.
+# Items with ambiguous uses like leashes should go into Items
+
+# Wands
+- type: loadout
+  id: LoadoutItemLewdWand
+  category: ItemsLewd
+  cost: 2
+  exclusive: true
+  items:
+  - LewdWand
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutLewd
+
+- type: loadout
+  id: LoadoutItemLewdVibeGreen
+  category: ItemsLewd
+  cost: 2
+  exclusive: true
+  items:
+  - LewdVibeGreen
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutLewd
+
+- type: loadout
+  id: LoadoutItemLewdVibeTeal
+  category: ItemsLewd
+  cost: 2
+  exclusive: true
+  items:
+  - LewdVibeTeal
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutLewd
+
+- type: loadout
+  id: LoadoutItemLewdVibePink
+  category: ItemsLewd
+  cost: 2
+  exclusive: true
+  items:
+  - LewdVibePink
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutLewd
+
+- type: loadout
+  id: LoadoutItemLewdVibeRed
+  category: ItemsLewd
+  cost: 2
+  exclusive: true
+  items:
+  - LewdVibeRed
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutLewd
+
+- type: loadout
+  id: LoadoutItemLewdVibeYellow
+  category: ItemsLewd
+  cost: 2
+  exclusive: true
+  items:
+  - LewdVibeYellow
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutLewd
+
+# Fleshlights
+- type: loadout
+  id: LoadoutItemLewdFleshlightGreen
+  category: ItemsLewd
+  cost: 2
+  items:
+  - LewdFleshlightGreen
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutLewd
+
+- type: loadout
+  id: LoadoutItemLewdFleshlightTeal
+  category: ItemsLewd
+  cost: 2
+  items:
+  - LewdFleshlightTeal
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutLewd
+
+- type: loadout
+  id: LoadoutItemLewdFleshlightPink
+  category: ItemsLewd
+  cost: 2
+  items:
+  - LewdFleshlightPink
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutLewd
+
+- type: loadout
+  id: LoadoutItemLewdFleshlightRed
+  category: ItemsLewd
+  cost: 2
+  items:
+  - LewdFleshlightRed
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutLewd
+
+- type: loadout
+  id: LoadoutItemLewdFleshlightYellow
+  category: ItemsLewd
+  cost: 2
+  items:
+  - LewdFleshlightYellow
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutLewd
+
+# Whips
+- type: loadout
+  id: LoadoutItemWhipPink
+  category: ItemsLewd
+  cost: 2
+  items:
+  - WhipPink
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutLewd
+
+- type: loadout
+  id: LoadoutItemWhipTeal
+  category: ItemsLewd
+  cost: 2
+  items:
+  - WhipTeal
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutLewd
+
+- type: loadout
+  id: LoadoutItemWhipPinkCrotch
+  category: ItemsLewd
+  cost: 2
+  items:
+  - WhipPinkCrotch
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutLewd
+
+- type: loadout
+  id: LoadoutItemWhipTealCrotch
+  category: ItemsLewd
+  cost: 2
+  items:
+  - WhipTealCrotch
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutLewd
+
+- type: loadout
+  id: LoadoutItemSpankPinkPaddle
+  category: ItemsLewd
+  cost: 2
+  items:
+  - SpankPinkPaddle
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutLewd
+
+- type: loadout
+  id: LoadoutItemSpankTealPaddle
+  category: ItemsLewd
+  cost: 2
+  items:
+  - SpankTealPaddle
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutLewd
+
+# VASH
+- type: loadout
+  id: LoadoutVASHHygiene
+  category: ItemsLewd
+  cost: 3 #totally bullshitting the number cost, but that's a lot of stop-bleeding items.
+  exclusive: true
+  items:
+  - VASHBox
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutVASH
+
+- type: loadout
+  id: LoadoutVASHSex
+  category: ItemsLewd
+  cost: 1 #totally bullshitting the number cost, but that's a lot of roleplay items. Has space lube, though.
+  exclusive: true
+  items:
+  - SexBox
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutVASH
+
+- type: loadout
+  id: LoadoutTampon
+  category: ItemsLewd
+  cost: 0
+  items:
+  - tampon
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutVASH
+
+- type: loadout
+  id: LoadoutCondom
+  category: ItemsLewd
+  cost: 0 #currently functionless. No need for a cost.
+  items:
+  - CondomWrapped
+#  requirements:  Condom is currently an RP item, so exlusivity is not important.
+#  - !type:CharacterItemGroupRequirement
+#    group: LoadoutVASH
+
+
+- type: loadout
+  id: LoadoutPad
+  category: ItemsLewd
+  cost: 2 #Stops a decent amount of healing..
+  items:
+  - pad
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutVASH
+
+- type: loadout
+  id: LoadoutLiner
+  category: ItemsLewd
+  cost: 0
+  items:
+  - liner
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutVASH

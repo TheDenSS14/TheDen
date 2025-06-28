@@ -1,3 +1,11 @@
+# SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT
+# SPDX-FileCopyrightText: 2024 ShatteredSwords
+# SPDX-FileCopyrightText: 2024 VMSolidus
+# SPDX-FileCopyrightText: 2025 portfiend
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 # Alphabetically ordered, except for Uncategorized since it is always first
 
 - type: traitCategory
@@ -15,6 +23,16 @@
 - type: traitCategory
   id: Physical
   root: true
+  subCategories:
+    - TraitsPhysicalUncategorized
+    - TraitsPhysicalFeats
+    - TraitsPhysicalDisabilities
+    - TraitsPhysicalBiological
+    - TraitsPhysicalAugmentations
+
+- type: traitCategory
+  id: Lewd
+  root: true
 
 - type: traitCategory
   id: Speech
@@ -23,6 +41,7 @@
     - TraitsSpeechUncategorized
     - TraitsSpeechAccents
     - TraitsSpeechLanguages
+    - TraitsSpeechSounds
 
 - type: traitCategory
   id: TraitsSpeechUncategorized
@@ -34,9 +53,27 @@
   id: TraitsSpeechLanguages
 
 - type: traitCategory
+  id: TraitsSpeechSounds
+
+- type: traitCategory
   id: Visual
   root: true
 
 - type: traitCategory
   id: Language
   root: true
+
+- type: traitCategory
+  id: TraitsPhysicalUncategorized
+
+- type: traitCategory
+  id: TraitsPhysicalFeats
+
+- type: traitCategory
+  id: TraitsPhysicalDisabilities
+
+- type: traitCategory
+  id: TraitsPhysicalBiological
+
+- type: traitCategory
+  id: TraitsPhysicalAugmentations
