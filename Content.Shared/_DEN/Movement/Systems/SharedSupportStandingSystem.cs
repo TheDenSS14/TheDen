@@ -23,13 +23,11 @@ public abstract class SharedSupportStandingSystem : EntitySystem
         SubscribeLocalEvent<AlwaysSupportStandingComponent, ComponentShutdown>(OnLoseSupport);
         SubscribeLocalEvent<AlwaysSupportStandingComponent, CannotSupportStandingEvent>(AlwaysSupportStanding);
 
-        SubscribeLocalEvent<HeldSupportStandingComponent, ComponentShutdown>(OnLoseSupport);
         SubscribeLocalEvent<HeldSupportStandingComponent, GotUnequippedHandEvent>(OnGotUnequippedHand);
         SubscribeLocalEvent<HeldSupportStandingComponent, ItemToggledEvent>(OnToggled);
         SubscribeLocalEvent<HeldSupportStandingComponent,
             HeldRelayedEvent<CannotSupportStandingEvent>>(SupportStandingWhenHeld);
 
-        SubscribeLocalEvent<WornSupportStandingComponent, ComponentShutdown>(OnLoseSupport);
         SubscribeLocalEvent<WornSupportStandingComponent, GotUnequippedEvent>(OnGotUnequipped);
         SubscribeLocalEvent<WornSupportStandingComponent,
             InventoryRelayedEvent<CannotSupportStandingEvent>>(SupportStandingWhenWorn);

@@ -194,6 +194,7 @@ public sealed class StandingStateSystem : EntitySystem
         if (entityDistances.Count > 0)
             _climb.ForciblySetClimbing(uid, entityDistances.OrderBy(e => e.Value).First().Key);
     }
+
     public void UpdateStanding(Entity<BodyComponent?> ent)
     {
         if (!Resolve(ent.Owner, ref ent.Comp))
