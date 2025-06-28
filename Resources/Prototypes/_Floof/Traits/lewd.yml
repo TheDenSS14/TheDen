@@ -107,7 +107,7 @@
 
 - type: trait
   id: HoneyProducer
-  category: Lewd
+  category: TraitsPhysicalBiological
   points: -1 # Point cost added to balance with removal of species restriction
   requirements:
     - !type:CharacterJobRequirement
@@ -122,7 +122,7 @@
           solutionname: honeystomach
     - !type:TraitAddSolutionContainer
       solutions:
-        vagina:
+        honeystomach:
           maxVol: 50
           reagents:
           - ReagentId: Honey
