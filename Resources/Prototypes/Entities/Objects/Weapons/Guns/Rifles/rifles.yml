@@ -24,6 +24,7 @@
 # SPDX-FileCopyrightText: 2024 VMSolidus
 # SPDX-FileCopyrightText: 2024 nikthechampiongr
 # SPDX-FileCopyrightText: 2025 Alice
+# SPDX-FileCopyrightText: 2025 BlitzTheSquishy
 # SPDX-FileCopyrightText: 2025 MajorMoth
 # SPDX-FileCopyrightText: 2025 Skubman
 # SPDX-FileCopyrightText: 2025 sleepyyapril
@@ -110,10 +111,10 @@
     - LickObject
 
 - type: entity
-  name: BSO's AKMS
+  name: AK-104
   parent: WeaponRifleAk
   id: WeaponRiflBSOAk
-  description: An iconic weapon of war in the hands of the BSO (unless you stole this you little shit) to protect Corporation VIPs. Uses .30 rifle ammo.
+  description: A modernized weapon of war, painted in the BSO's colours. Uses .30 rifle ammo.
   components:
   - type: Sprite
     sprite: _DEN/Objects/Weapons/Guns/Rifles/bsoak.rsi
@@ -122,6 +123,12 @@
         map: ["enum.GunVisualLayers.Base"]
       - state: mag-0
         map: ["enum.GunVisualLayers.Mag"]
+  - type: Clothing
+    sprite: _DEN/Objects/Weapons/Guns/Rifles/bsoak.rsi
+    quickEquip: false
+    slots:
+    - Back
+    - suitStorage
   - type: Gun
     fireRate: 5
     soundGunshot:
@@ -159,7 +166,7 @@
   - type: Appearance
 
 - type: entity
-  name: AKMS
+  name: AKM # It's not an AKMS, it has no folding stock
   parent: BaseWeaponRifle
   id: WeaponRifleAk
   description: An iconic weapon of war. Uses .30 rifle ammo.

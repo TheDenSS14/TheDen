@@ -1,19 +1,20 @@
-# SPDX-FileCopyrightText: 2022 Kara <lunarautomaton6@gmail.com>
-# SPDX-FileCopyrightText: 2022 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2023 Vordenburg <114301317+Vordenburg@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2023 lzk <124214523+lzk228@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT <77995199+DEATHB4DEFEAT@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 Debug <49997488+DebugOk@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 IProduceWidgets <107586145+IProduceWidgets@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 VMSolidus <evilexecutive@gmail.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 Kara
+# SPDX-FileCopyrightText: 2022 metalgearsloth
+# SPDX-FileCopyrightText: 2023 Vordenburg
+# SPDX-FileCopyrightText: 2023 lzk
+# SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT
+# SPDX-FileCopyrightText: 2024 Debug
+# SPDX-FileCopyrightText: 2024 IProduceWidgets
+# SPDX-FileCopyrightText: 2025 BlitzTheSquishy
+# SPDX-FileCopyrightText: 2025 VMSolidus
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 # Empty mags
 - type: entity
   id: BaseMagazineRifle
-  name: "magazine (.20 rifle)"
+  name: "rifle magazine (.20 rifle)"
   parent: BaseItem
   abstract: true
   components:
@@ -47,7 +48,7 @@
 # Magazines
 - type: entity
   id: MagazineRifle
-  name: "magazine (.20 rifle)"
+  name: "rifle magazine (.20 rifle)"
   parent: BaseMagazineRifle
   components:
   - type: BallisticAmmoProvider
@@ -61,7 +62,7 @@
 
 - type: entity
   id: MagazineRifleEmpty
-  name: "magazine (.20 rifle any)"
+  name: "rifle magazine (.20 rifle any)"
   suffix: empty
   parent: MagazineRifle
   components:
@@ -74,7 +75,7 @@
 
 - type: entity
   id: MagazineRifleIncendiary
-  name: "magazine (.20 rifle incendiary)"
+  name: "rifle magazine (.20 rifle incendiary)"
   parent: MagazineRifle
   components:
   - type: BallisticAmmoProvider
@@ -82,7 +83,7 @@
 
 - type: entity
   id: MagazineRiflePractice
-  name: "magazine (.20 rifle practice)"
+  name: "rifle magazine (.20 rifle practice)"
   parent: BaseMagazineRifle
   components:
   - type: BallisticAmmoProvider
@@ -96,7 +97,7 @@
 
 - type: entity
   id: MagazineRifleRubber
-  name: "magazine (.20 rifle rubber)"
+  name: "rifle magazine (.20 rifle rubber)"
   parent: BaseMagazineRifle
   components:
   - type: BallisticAmmoProvider
@@ -110,7 +111,7 @@
 
 - type: entity
   id: MagazineRifleUranium
-  name: "magazine (.20 rifle uranium)"
+  name: "rifle magazine (.20 rifle uranium)"
   parent: BaseMagazineRifle
   components:
   - type: BallisticAmmoProvider
@@ -124,7 +125,7 @@
 
 - type: entity
   id: MagazineRifleShrapnel
-  name: "magazine (.20 rifle shrapnel)"
+  name: "rifle magazine (.20 rifle shrapnel)"
   parent: BaseMagazineRifle
   components:
   - type: BallisticAmmoProvider

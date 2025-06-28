@@ -24,7 +24,9 @@ using Content.Shared.Preferences;
 using Robust.Client.GameObjects;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
-using System.Numerics; // CD - Character Records
+using System.Numerics;
+using Content.Shared._DEN.Species;
+using Microsoft.CodeAnalysis; // CD - Character Records
 using Robust.Client.Console; // CD - Character Records
 
 namespace Content.Client.Humanoid;
@@ -33,6 +35,7 @@ public sealed class HumanoidAppearanceSystem : SharedHumanoidAppearanceSystem
 {
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
     [Dependency] private readonly MarkingManager _markingManager = default!;
+    [Dependency] private readonly SpriteSystem _spriteSystem = default!;
 
     public override void Initialize()
     {
@@ -43,24 +46,41 @@ public sealed class HumanoidAppearanceSystem : SharedHumanoidAppearanceSystem
 
     private void OnHandleState(EntityUid uid, HumanoidAppearanceComponent component, ref AfterAutoHandleStateEvent args)
     {
-        UpdateSprite(component, Comp<SpriteComponent>(uid));
+        UpdateSprite(uid, component, Comp<SpriteComponent>(uid));
     }
 
-    private void UpdateSprite(HumanoidAppearanceComponent component, SpriteComponent sprite)
+    private void UpdateSprite(EntityUid uid, HumanoidAppearanceComponent component, SpriteComponent? sprite)
     {
+        if (sprite == null)
+            return;
+
         UpdateLayers(component, sprite);
         ApplyMarkingSet(component, sprite);
 
         var speciesPrototype = _prototypeManager.Index(component.Species);
 
-        var height = Math.Clamp(component.Height, speciesPrototype.MinHeight, speciesPrototype.MaxHeight);
-        var width = Math.Clamp(component.Width, speciesPrototype.MinWidth, speciesPrototype.MaxWidth);
+        // var height = Math.Clamp(component.Height, speciesPrototype.MinHeight, speciesPrototype.MaxHeight);
+        // var width = Math.Clamp(component.Width, speciesPrototype.MinWidth, speciesPrototype.MaxWidth);
+
+        var height = component.Height;
+        var width = component.Width;
+
+        if (!HasComp<SpeciesRestrictionExemptComponent>(uid))
+        {
+            height = Math.Clamp(component.Height, speciesPrototype.MinHeight, speciesPrototype.MaxHeight);
+            width = Math.Clamp(component.Width, speciesPrototype.MinWidth, speciesPrototype.MaxWidth);
+        }
+
         component.Height = height;
         component.Width = width;
 
-        sprite.Scale = new Vector2(width, height);
+        // sprite.Scale = new Vector2(width, height);
+        var scale = new Vector2(width, height);
+        var ent = (uid, sprite);
+        var layer = _spriteSystem.LayerMapReserve(ent, HumanoidVisualLayers.Eyes);
 
-        sprite[sprite.LayerMapReserveBlank(HumanoidVisualLayers.Eyes)].Color = component.EyeColor;
+        _spriteSystem.SetScale(ent, scale);
+        sprite[layer].Color = component.EyeColor;
     }
 
     private static bool IsHidden(HumanoidAppearanceComponent humanoid, HumanoidVisualLayers layer)
@@ -235,7 +255,10 @@ public sealed class HumanoidAppearanceSystem : SharedHumanoidAppearanceSystem
         humanoid.Height = profile.Height;
         humanoid.Width = profile.Width;
 
-        UpdateSprite(humanoid, Comp<SpriteComponent>(uid));
+        if (!TryComp<SpriteComponent>(uid, out var spriteComponent))
+            return;
+
+        UpdateSprite(uid, humanoid, spriteComponent);
     }
 
     private void ApplyMarkingSet(HumanoidAppearanceComponent humanoid, SpriteComponent sprite)

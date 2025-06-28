@@ -1,10 +1,11 @@
+# SPDX-FileCopyrightText: 2025 BlitzTheSquishy
 # SPDX-FileCopyrightText: 2025 Solstice
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
 # Carpshot
 - type: entity
-  name: shell box (.75 carpshot)
+  name: shell box (8 gauge carpshot)
   parent: AmmoProviderShotgunShell
   id: MagazineBoxShotgunHighCaliber
   components:
@@ -20,7 +21,7 @@
 
 # Normal Slug
 - type: entity
-  name: shell box (.75 slug)
+  name: shell box (8 gauge slug)
   parent: AmmoProviderShotgunShell
   id: MagazineBoxShotgunSlugHighCaliber
   components:
@@ -40,7 +41,7 @@
 
 # Incendiary
 - type: entity
-  name: shell box (.75 incendiary)
+  name: shell box (8 gauge dragon's breath)
   parent: AmmoProviderShotgunShell
   id: MagazineBoxShotgunIncendiaryHighCaliber
   components:
@@ -56,7 +57,7 @@
 
 # Uranium
 - type: entity
-  name: shell box (.75 uranium)
+  name: shell box (8 gauge uranium)
   parent: AmmoProviderShotgunShell
   id: MagazineBoxShotgunUraniumHighCaliber
   components:
@@ -79,7 +80,7 @@
 - type: entity
   parent: AmmoProviderShotgunShell
   id: MagazineBoxShotgunBeanbagHighCaliber
-  name: shell box (.75 beanbag)
+  name: shell box (8 gauge beanbag)
   components:
   - type: BallisticAmmoProvider
     proto: ShellShotgunBeanbagHighCaliber
@@ -94,7 +95,7 @@
 # Practice
 
 - type: entity
-  name: shell box (.75 practice)
+  name: shell box (8 gauge practice)
   parent: AmmoProviderShotgunShell
   id: MagazineBoxShotgunPracticeHighCaliber
   components:
@@ -113,7 +114,7 @@
 - type: entity
   id: MagazineBoxShotgunHighCaliberEnsnaring
   parent: AmmoProviderShotgunShell
-  name: shell box (.75 slug ensnaring)
+  name: shell box (8 gauge ensnaring slug)
   components:
   - type: BallisticAmmoProvider
     proto: ShellShotgunSlugEnsnaring
@@ -130,7 +131,7 @@
 - type: entity
   id: MagazineBoxShotgunHighCaliberEMP
   parent: AmmoProviderShotgunShell
-  name: shell box (.75 slug EMP)
+  name: shell box (8 gauge EMP slug)
   components:
   - type: BallisticAmmoProvider
     proto: ShellShotgunSlugEMP
@@ -147,7 +148,7 @@
 - type: entity
   id: MagazineBoxShotgunHighCaliberFlash
   parent: AmmoProviderShotgunShell
-  name: shell box (.75 slug flash)
+  name: shell box (8 gauge flash slug)
   components:
   - type: BallisticAmmoProvider
     proto: ShellShotgunSlugFlash

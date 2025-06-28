@@ -330,16 +330,16 @@ uplink-meds-bundle-name = Interdyne Medical Bundle
 uplink-meds-bundle-desc = An assortment of autoinjectors and premium medical equipment to cover for every possible situation. Contains an elite compact defibrillator that can be used as a weapon.
 
 uplink-ammo-bundle-name = Ammo Bundle
-uplink-ammo-bundle-desc = Reloading! Contains 4 magazines for the C-20r, 4 drums for the Bulldog, and 2 ammo boxes for the L6 SAW.
+uplink-ammo-bundle-desc = Reloading! Contains 4 magazines for the C-20r, 4 drums for the Bulldog, and 2 belt boxes for the L6 SAW.
 
 uplink-ammo-bundle-rubber-name = Ammo Bundle (Rubber)
-uplink-ammo-bundle-rubber-desc = Reloading! Contains 4 magazines for the C-20r, 4 drums for the Bulldog, and 2 ammo boxes for the L6 SAW.
+uplink-ammo-bundle-rubber-desc = Reloading! Contains 4 magazines for the C-20r, 4 drums for the Bulldog, and 2 belt boxes for the L6 SAW.
 
 uplink-ammo-bundle-incendiary-name = Ammo Bundle (Incendiary)
 uplink-ammo-bundle-incendiary-desc = WAKE THE FUCK UP SAMURAI, WE HAVE A STATION TO BURN!
 
 uplink-ammo-bundle-shrapnel-name = Ammo Bundle (Shrapnel)
-uplink-ammo-bundle-shrapnel-desc = Reloading! Contains 4 magazines for the C-20r, 4 drums for the Bulldog, and 2 ammo boxes for the L6 SAW.
+uplink-ammo-bundle-shrapnel-desc = Reloading! Contains 4 magazines for the C-20r, 4 drums for the Bulldog, and 2 belt boxes for the L6 SAW.
 
 
 uplink-sniper-bundle-name = Sniper Bundle
@@ -355,7 +355,7 @@ uplink-grenade-launcher-bundle-name = China-Lake Bundle
 uplink-grenade-launcher-bundle-desc = An old China-Lake grenade launcher bundled with 11 rounds of various destruction capability.
 
 uplink-l6-saw-bundle-name = L6 Saw Bundle
-uplink-l6-saw-bundle-desc = More dakka: The iconic L6 light machine gun, bundled with 2 box magazines.
+uplink-l6-saw-bundle-desc = More dakka: The iconic L6 light machine gun, bundled with 2 belt boxes.
 
 uplink-zombie-bundle-name = Syndicate Zombie Bundle
 uplink-zombie-bundle-desc = An all-in-one kit for unleashing the undead upon a station.

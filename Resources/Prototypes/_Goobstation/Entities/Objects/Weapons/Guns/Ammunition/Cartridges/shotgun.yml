@@ -1,3 +1,4 @@
+# SPDX-FileCopyrightText: 2025 BlitzTheSquishy
 # SPDX-FileCopyrightText: 2025 Solstice
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
@@ -7,7 +8,7 @@
 # Buckshot
 - type: entity
   id: ShellShotgunHighCaliber
-  name: shell (.75 carpshot)
+  name: shell (8 gauge carpshot)
   parent: BaseShellShotgun
   components:
   - type: Tag
@@ -26,7 +27,7 @@
 
 - type: entity
   id: ShellShotgunHighCaliberIncendiary
-  name: shell (.75 dragons breath)
+  name: shell (8 gauge dragon's breath)
   parent: ShellShotgunHighCaliber
   components:
     - type: Tag
@@ -44,7 +45,7 @@
 
 - type: entity
   id: ShellShotgunHighCaliberPractice
-  name: shell (.75 practice)
+  name: shell (8 gauge practice)
   parent: ShellShotgunHighCaliber
   components:
     - type: Tag
@@ -62,7 +63,7 @@
 
 - type: entity
   id: ShellShotgunHighCaliberUranium
-  name: shell (.75 depleted uranium)
+  name: shell (8 gauge uranium)
   parent: ShellShotgunHighCaliber
   components:
     - type: Tag
@@ -83,7 +84,7 @@
 # Slug
 - type: entity
   id: ShellShotgunSlugHighCaliber
-  name: shell (.75 slug)
+  name: shell (8 gauge slug)
   parent: BaseShellShotgun
   components:
     - type: Tag
@@ -103,7 +104,7 @@
 # Ensnaring
 - type: entity
   id: ShellShotgunSlugEnsnaring
-  name: cartridge (.75 caliber ensnaring slug)
+  name: shell (8 gauge ensnaring slug)
   parent: ShellShotgunSlugHighCaliber
   components:
   - type: Tag
@@ -122,7 +123,7 @@
 # EMP
 - type: entity
   id: ShellShotgunSlugEMP
-  name: cartridge (.75 caliber EMP slug)
+  name: shell (8 gauge EMP slug)
   parent: ShellShotgunSlugHighCaliber
   components:
   - type: Tag
@@ -141,7 +142,7 @@
 # Flash
 - type: entity
   id: ShellShotgunSlugFlash
-  name: cartridge (.75 caliber flash slug)
+  name: shell (8 gauge flash slug)
   parent: ShellShotgunSlugHighCaliber
   components:
   - type: Tag
@@ -160,7 +161,7 @@
 # Beanbag
 - type: entity
   id: ShellShotgunBeanbagHighCaliber
-  name: shell (.75 beanbag)
+  name: shell (8 gauge beanbag)
   parent: ShellShotgunSlugHighCaliber
   components:
   - type: Tag
