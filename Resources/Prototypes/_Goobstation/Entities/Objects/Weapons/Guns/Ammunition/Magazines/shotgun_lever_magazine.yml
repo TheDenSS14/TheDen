@@ -1,23 +1,25 @@
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 BlitzTheSquishy
+# SPDX-FileCopyrightText: 2025 Solstice
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 # Empty mags
 - type: entity
-  id: BaseMagazineMagnumLeverRifle
-  name: "magazine (.45 rifle)"
-  parent: BaseItem
+  id: BaseMagazineShotgunLeverRifle
+  name: "magazine (8 gauge)"
+  parent: [BaseItem]
   abstract: true
   components:
   - type: Tag
     tags:
-      - MagazineMagnumLeverRifle
+      - MagazineShotgunLeverRifle
   - type: BallisticAmmoProvider
     mayTransfer: true
     whitelist:
       tags:
-        - CartridgeMagnum
-    proto: CartridgeMagnum
+        - ShellShotgunHeavy
+    proto: ShellShotgunHighCaliber
     capacity: 8
   - type: Item
     size: Small
@@ -38,19 +40,19 @@
   - type: Appearance
 
 - type: entity
-  id: MagazineMagnumLeverRifle
-  name: "lever rifle magazine (.45)"
-  parent: BaseMagazineMagnumLeverRifle
+  id: MagazineShotgunLeverRifle
+  name: "en-bloc clip (8 gauge)"
+  parent: BaseMagazineShotgunLeverRifle
   components:
   - type: Tag
     tags:
-      - MagazineMagnumLeverRifle
+      - MagazineShotgunLeverRifle
   - type: Sprite
     sprite: _Goobstation/Objects/Weapons/Guns/Ammunition/Magazine/lever_rifle_mags.rsi
 
 - type: entity
-  id: MagazineMagnumLeverRifleEmpty
-  parent: MagazineMagnumLeverRifle
+  id: MagazineShotgunLeverRifleEmpty
+  parent: MagazineShotgunLeverRifle
   suffix: Empty
   components:
   - type: BallisticAmmoProvider

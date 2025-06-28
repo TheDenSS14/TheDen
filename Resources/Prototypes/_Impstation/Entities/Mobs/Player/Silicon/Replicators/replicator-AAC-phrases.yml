@@ -1,4 +1,5 @@
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 MajorMoth
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -78,32 +79,32 @@
 # Species
 - type: quickPhrase
   id: ReplicatorOrganicPhrase
-  parent: BaseSpeciesPhrase
+  parent: [ BaseSubjectPhrase, BaseReplicatorPhrase ]
   text: repli-phrase-species-organic
 
 - type: quickPhrase
   id: ReplicatorSiliconPhrase
-  parent: BaseSpeciesPhrase
+  parent: [ BaseSubjectPhrase, BaseReplicatorPhrase ]
   text: repli-phrase-species-silicon
 
 # Laws
 - type: quickPhrase
   id: ReplicatorLaw1Phrase
-  tab: Laws
+  parent: [ BaseSubjectPhrase, BaseReplicatorPhrase ]
   text: law-replicator-1
 
 - type: quickPhrase
   id: ReplicatorLaw2Phrase
-  tab: Laws
+  parent: [ BaseSubjectPhrase, BaseReplicatorPhrase ]
   text: law-replicator-2
 
 - type: quickPhrase
   id: ReplicatorLaw3Phrase
-  tab: Laws
+  parent: [ BaseSubjectPhrase, BaseReplicatorPhrase ]
   text: law-replicator-3
 
 # Pronouns
 - type: quickPhrase
   id: WeArePhrase
-  parent: BaseNounsPhrase
+  parent: [ BaseSubjectPhrase, BaseReplicatorPhrase ]
   text: phrase-we-are

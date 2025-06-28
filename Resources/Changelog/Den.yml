@@ -6482,3 +6482,267 @@ Entries:
   id: 610
   time: '2025-06-22T18:57:30.0000000+00:00'
   url: https://github.com/TheDenSS14/TheDen/pull/851
+- author: Fox
+  changes:
+    - type: Tweak
+      message: (GRAVEL) Various map adjustments, see discord forum for details
+  id: 611
+  time: '2025-06-23T22:57:25.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/888
+- author: MajorMoth
+  changes:
+    - type: Add
+      message: >-
+        Added an HFR crate to the cargo catalog for 50 thousand spesos, it no
+        longer needs to be mapped in.
+  id: 612
+  time: '2025-06-24T02:38:39.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/890
+- author: Monotheonist
+  changes:
+    - type: Fix
+      message: >-
+        (ARENA) Rescued all bartenders, prison guards, and chefs from the hell
+        dimension.
+  id: 613
+  time: '2025-06-24T05:35:36.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/892
+- author: TheOneTrueWolfio
+  changes:
+    - type: Fix
+      message: Fixed bagging Resomi. Small is small again!
+  id: 614
+  time: '2025-06-24T11:55:28.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/882
+- author: MajorMoth
+  changes:
+    - type: Add
+      message: >-
+        Ported the Chester revamp. It's a magazine-fed lever-action shotgun now.
+        CentComm save us all. 
+    - type: Add
+      message: >-
+        Added handheld command monitor for Blueshield Officer. It is able to
+        implant special command trackers into command members, and only those
+        implanted members of command will show up in the UI. If the status of
+        any command member changes, the monitor will yap about it into your ear.
+  id: 615
+  time: '2025-06-25T05:05:57.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/852
+- author: Fox
+  changes:
+    - type: Tweak
+      message: (BARRIER) Made various changes and touch-ups, check discord for details
+  id: 616
+  time: '2025-06-25T05:14:01.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/895
+- author: Hederadaii
+  changes:
+    - type: Fix
+      message: Fixed the beetroot seeds so that their name displays correctly
+  id: 617
+  time: '2025-06-25T21:02:15.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/899
+- author: NatusExVacuo
+  changes:
+    - type: Fix
+      message: >-
+        Coder socks now appear under jumpsuits, jumpskirts, basically any
+        clothes
+    - type: Add
+      message: All the under socks are now butcherable (into one cloth)
+  id: 618
+  time: '2025-06-26T01:21:31.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/883
+- author: NatusExVacuo
+  changes:
+    - type: Add
+      message: Added a few missing maints doors for mappers
+  id: 619
+  time: '2025-06-26T06:49:26.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/876
+- author: KyuPolaris
+  changes:
+    - type: Add
+      message: Added more existing markings to Kitsune
+  id: 620
+  time: '2025-06-27T07:40:22.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/903
+- author: BlitzTheSquishy
+  changes:
+    - type: Tweak
+      message: L6 now uses .20 Rifle instead of .30
+  id: 621
+  time: '2025-06-27T08:29:38.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/915
+- author: BlitzTheSquishy
+  changes:
+    - type: Tweak
+      message: Job highlighting is now supported on all Den jobs!
+  id: 622
+  time: '2025-06-27T08:31:51.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/912
+- author: MajorMoth
+  changes:
+    - type: Remove
+      message: >-
+        Removed consent-breaking reagents from spawning in through artifacts,
+        random pills, vent clogs, and reagent slimes. Please report any other
+        mechanics that might've been missed if you see them. Anomalies did not
+        need changing as they did not have any NSFW reagents in them.
+  id: 623
+  time: '2025-06-27T08:33:15.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/909
+- author: Hederadaii
+  changes:
+    - type: Add
+      message: Added the drink 'Blood Moon'
+  id: 624
+  time: '2025-06-27T08:37:15.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/907
+- author: Monotheonist
+  changes:
+    - type: Add
+      message: Gave ovinia a little bit more horn, and a secret snout.
+  id: 625
+  time: '2025-06-27T08:38:18.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/911
+- author: Jakumba
+  changes:
+    - type: Tweak
+      message: 'Redesigned the Solarian Navy Dropship. '
+  id: 626
+  time: '2025-06-27T21:37:32.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/917
+- author: MajorMoth
+  changes:
+    - type: Fix
+      message: Fixed some drink cartons not fitting in drink dispensers.
+    - type: Fix
+      message: >-
+        Changed the names of the Science and Cargo communication consoles to be
+        Epistemics and Logistics.
+    - type: Fix
+      message: >-
+        Fixed PowerCellSystem.Draw.cs so that things no longer draw 1/60th of
+        the power they were intended to. This will affect things like portable
+        monitors, anomaly locators, etc. 
+    - type: Fix
+      message: Fixed speed boots not actually requiring a power cell to function.
+    - type: Tweak
+      message: Significantly increased the power draw of speed boots. (4 -> 24)
+    - type: Tweak
+      message: >-
+        Moved all AAC tablet phrases relating to replicators to their own group,
+        pending a way to whitelist/blacklist phrases.
+  id: 627
+  time: '2025-06-28T09:21:58.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/897
+- author: portfiend
+  changes:
+    - type: Tweak
+      message: Lewd traits have been moved out of Physical and into a new category.
+  id: 628
+  time: '2025-06-28T09:23:59.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/918
+- author: KyuPolaris
+  changes:
+    - type: Add
+      message: Magmantles added to Epistemics research
+  id: 629
+  time: '2025-06-28T09:24:49.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/904
+- author: portfiend
+  changes:
+    - type: Add
+      message: >-
+        Amputee traits have been added, allowing you remove an arm/leg. If you
+        have the Wheelchair Bound trait, you can also optionally remove both
+        legs.
+    - type: Tweak
+      message: >-
+        Characters with missing legs can now stand up with the help of a
+        mobility aid (cane). The cane itself will also reduce the speed penalty
+        for missing legs somewhat.
+    - type: Add
+      message: >-
+        "Adapted Balance" and "Sustained Balance" traits have also been added,
+        allowing you to stand up and walk even if you have a missing leg. 
+    - type: Add
+      message: >-
+        Five new canes (colorable version of original, anatomical grip, folding,
+        and quad. Walking cane ported from Impstation). They can be found in
+        loadouts, NanoMed, or the medical techfab.
+    - type: Add
+      message: >-
+        White canes have been added to the medical techfab as well, though they
+        aren't used for mobility.
+  id: 630
+  time: '2025-06-28T09:25:47.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/916
+- author: GreggTheFather
+  changes:
+    - type: Tweak
+      message: (ARENA) Tweaked minor things across the station. See PR for details.
+  id: 631
+  time: '2025-06-28T10:53:58.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/910
+- author: sleepyyapril
+  changes:
+    - type: Add
+      message: >-
+        You can now have an admin add a SpeciesRestrictionExemptComponent to
+        allow your height and width be changed to anything.
+  id: 632
+  time: '2025-06-28T11:23:30.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/919
+- author: BlitzTheSquishy
+  changes:
+    - type: Remove
+      message: >-
+        Central Command realized that having two spare captain IDs on station
+        was a security risk and thus has removed one from the Captains locker.
+        It also saves a bit of money too.
+  id: 633
+  time: '2025-06-28T13:17:45.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/893
+- author: portfiend
+  changes:
+    - type: Tweak
+      message: >-
+        Chef no longer starts with the Italian moustache or chef apron - it has
+        been moved to their loadouts.
+    - type: Tweak
+      message: >-
+        Bartender no longer starts with top hat and vest by default - it has
+        been added to their loadouts.
+    - type: Add
+      message: Chefs can also now select the chef's freezer coat in their loadout.
+  id: 634
+  time: '2025-06-28T13:19:23.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/880
+- author: MajorMoth
+  changes:
+    - type: Tweak
+      message: >-
+        Tweaked the minibomb and exploding pen. Minbomb now deals much more
+        damage without gibbing and can be linked to a remote. The exploding pen
+        has different damage proportions and cannot link to a remote anymore.
+        See PR for details. 
+  id: 635
+  time: '2025-06-28T13:21:48.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/881
+- author: Jakumba
+  changes:
+    - type: Tweak
+      message: Made the Disabler not take your duty weapon slot for security.
+  id: 636
+  time: '2025-06-28T13:23:24.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/898
+- author: IAmNotGray
+  changes:
+    - type: Add
+      message: Anvil Station is now recieving crew members. Bring a spray bottle!
+  id: 637
+  time: '2025-06-28T18:50:53.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/872

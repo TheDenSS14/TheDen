@@ -35,6 +35,7 @@
 # SPDX-FileCopyrightText: 2024 neuPanda <chriseparton@gmail.com>
 # SPDX-FileCopyrightText: 2025 Tabitha <64847293+KyuPolaris@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Hedera <185189451+Hederadaii@users.noreply.github.com>
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -1212,3 +1213,13 @@
       amount: 1
   products:
     Cola: 4
+
+- type: reaction
+  id: BloodMoon
+  reactants:
+    Blood:
+      amount: 2
+    Absinthe:
+      amount: 1
+  products:
+    BloodMoon: 3
