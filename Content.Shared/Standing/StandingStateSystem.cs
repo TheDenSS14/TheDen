@@ -197,7 +197,7 @@ public sealed class StandingStateSystem : EntitySystem
 
     public void UpdateStanding(Entity<BodyComponent?> ent)
     {
-        if (!Resolve(ent.Owner, ref ent.Comp))
+        if (!Resolve(ent.Owner, ref ent.Comp, false))
             return;
 
         var ev = new CannotSupportStandingEvent(ent.Comp.LegEntities.Count);
