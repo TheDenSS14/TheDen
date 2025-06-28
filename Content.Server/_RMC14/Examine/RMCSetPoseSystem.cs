@@ -1,5 +1,5 @@
-// SPDX-FileCopyrightText: 2025 MajorMoth <61519600+MajorMoth@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 MajorMoth
+// SPDX-FileCopyrightText: 2025 sleepyyapril
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -25,8 +25,10 @@ public sealed class RMCSetPoseSystem : SharedRMCSetPoseSystem
 
     private void OnSetPoseGetVerbs(Entity<RMCSetPoseComponent> ent, ref GetVerbsEvent<Verb> args)
     {
-        if (!args.CanInteract)
-            return;
+        // The Den: removed interact check, it does make sense to be able to pose without being able to interact with the world.
+        // yes, this will allow you to pose while dead which is very much intended.
+        //if (!args.CanInteract)
+        //    return;
 
         if (args.User != args.Target)
             return;

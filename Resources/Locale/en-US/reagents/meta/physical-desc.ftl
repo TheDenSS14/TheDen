@@ -24,6 +24,7 @@
 # SPDX-FileCopyrightText: 2024 potato1234_x <79580518+potato1234x@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2024 sleepyyapril <flyingkarii@gmail.com>
 # SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Hedera <185189451+Hederadaii@users.noreply.github.com>
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -127,6 +128,7 @@ reagent-physical-desc-vibrant = vibrant
 reagent-physical-desc-viscous = viscous
 reagent-physical-desc-volatile = volatile
 reagent-physical-desc-wormy = wormy
+reagent-physical-desc-slightly-evil = slightly evil
 
 ## Floof
 reagent-physical-desc-earthy = earthy

@@ -1,0 +1,79 @@
+# SPDX-FileCopyrightText: 2025 portfiend
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  parent: CaneWieldableBase
+  id: CaneColorable
+  suffix: colorable
+  components:
+    - type: Sprite
+      sprite: _DEN/Objects/Tools/Mobility/cane_colorable.rsi
+    - type: Item
+      sprite: _DEN/Objects/Tools/Mobility/cane_colorable.rsi
+
+- type: entity
+  parent: CaneWieldableBase
+  id: CaneAnatomical
+  name: anatomical grip cane
+  description: A cane with a flat, perpendicular handle, for better grip.
+  components:
+    - type: Sprite
+      sprite: _DEN/Objects/Tools/Mobility/cane_anatomical.rsi
+    - type: Item
+      sprite: _DEN/Objects/Tools/Mobility/cane_anatomical.rsi
+
+- type: entity
+  parent: CaneBase
+  id: CaneFoldable
+  name: folding cane
+  description: A cane that can be folded for portability.
+  components:
+    - type: Sprite
+      sprite: _DEN/Objects/Tools/Mobility/cane_anatomical.rsi
+      layers:
+        - state: cane
+          map: ["enum.ToggleVisuals.Layer"]
+          visible: true
+    - type: Item
+      sprite: _DEN/Objects/Tools/Mobility/cane_anatomical.rsi
+    - type: ItemToggle
+      activated: true
+      wieldToggle: false
+    - type: ItemToggleSize
+      activatedSize: Normal
+      activatedShape:
+        - 0,0,1,2
+      deactivatedSize: Small
+      deactivatedShape:
+        - 0,0,0,1
+    - type: Appearance
+    - type: GenericVisualizer
+      visuals:
+        enum.ToggleVisuals.Toggled:
+          enum.ToggleVisuals.Layer:
+            True: { state: cane }
+            False: { state: cane_folded }
+
+- type: entity
+  parent: CaneFoldable
+  id: CaneFoldableFolded
+  suffix: folded
+  components:
+    - type: Item
+      size: Small
+      shape:
+        - 0,0,0,1
+    - type: ItemToggle
+      activated: false
+
+- type: entity
+  parent: CaneWieldableBase
+  id: CaneQuad
+  name: quad cane
+  description: A cane with a four-footed base design, for better stability.
+  components:
+    - type: Sprite
+      sprite: _DEN/Objects/Tools/Mobility/cane_quadbase.rsi
+    - type: Item
+      sprite: _DEN/Objects/Tools/Mobility/cane_quadbase.rsi

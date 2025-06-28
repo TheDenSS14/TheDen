@@ -1,0 +1,58 @@
+# SPDX-FileCopyrightText: 2025 portfiend
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: loadout
+  id: LoadoutItemCaneWalkingColorable
+  category: GeneralItems
+  cost: 0
+  customColorTint: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutWalkingCanes
+  items:
+    - CaneColorable
+
+- type: loadout
+  id: LoadoutItemCaneWalkingAnatomical
+  category: GeneralItems
+  cost: 0
+  customColorTint: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutWalkingCanes
+  items:
+    - CaneAnatomical
+
+- type: loadout
+  id: LoadoutItemCaneWalkingFoldable
+  category: GeneralItems
+  cost: 0
+  customColorTint: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutWalkingCanes
+  items:
+    - CaneFoldableFolded
+
+- type: loadout
+  id: LoadoutItemCaneWalkingQuad
+  category: GeneralItems
+  cost: 0
+  customColorTint: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutWalkingCanes
+  items:
+    - CaneQuad
+
+- type: loadout
+  id: LoadoutItemWalkingCaneImp
+  category: GeneralItems
+  cost: 0
+  customColorTint: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutWalkingCanes
+  items:
+    - WalkingCane

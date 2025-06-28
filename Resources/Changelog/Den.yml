@@ -6536,3 +6536,147 @@ Entries:
   id: 616
   time: '2025-06-25T05:14:01.0000000+00:00'
   url: https://github.com/TheDenSS14/TheDen/pull/895
+- author: Hederadaii
+  changes:
+    - type: Fix
+      message: Fixed the beetroot seeds so that their name displays correctly
+  id: 617
+  time: '2025-06-25T21:02:15.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/899
+- author: NatusExVacuo
+  changes:
+    - type: Fix
+      message: >-
+        Coder socks now appear under jumpsuits, jumpskirts, basically any
+        clothes
+    - type: Add
+      message: All the under socks are now butcherable (into one cloth)
+  id: 618
+  time: '2025-06-26T01:21:31.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/883
+- author: NatusExVacuo
+  changes:
+    - type: Add
+      message: Added a few missing maints doors for mappers
+  id: 619
+  time: '2025-06-26T06:49:26.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/876
+- author: KyuPolaris
+  changes:
+    - type: Add
+      message: Added more existing markings to Kitsune
+  id: 620
+  time: '2025-06-27T07:40:22.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/903
+- author: BlitzTheSquishy
+  changes:
+    - type: Tweak
+      message: L6 now uses .20 Rifle instead of .30
+  id: 621
+  time: '2025-06-27T08:29:38.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/915
+- author: BlitzTheSquishy
+  changes:
+    - type: Tweak
+      message: Job highlighting is now supported on all Den jobs!
+  id: 622
+  time: '2025-06-27T08:31:51.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/912
+- author: MajorMoth
+  changes:
+    - type: Remove
+      message: >-
+        Removed consent-breaking reagents from spawning in through artifacts,
+        random pills, vent clogs, and reagent slimes. Please report any other
+        mechanics that might've been missed if you see them. Anomalies did not
+        need changing as they did not have any NSFW reagents in them.
+  id: 623
+  time: '2025-06-27T08:33:15.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/909
+- author: Hederadaii
+  changes:
+    - type: Add
+      message: Added the drink 'Blood Moon'
+  id: 624
+  time: '2025-06-27T08:37:15.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/907
+- author: Monotheonist
+  changes:
+    - type: Add
+      message: Gave ovinia a little bit more horn, and a secret snout.
+  id: 625
+  time: '2025-06-27T08:38:18.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/911
+- author: Jakumba
+  changes:
+    - type: Tweak
+      message: 'Redesigned the Solarian Navy Dropship. '
+  id: 626
+  time: '2025-06-27T21:37:32.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/917
+- author: MajorMoth
+  changes:
+    - type: Fix
+      message: Fixed some drink cartons not fitting in drink dispensers.
+    - type: Fix
+      message: >-
+        Changed the names of the Science and Cargo communication consoles to be
+        Epistemics and Logistics.
+    - type: Fix
+      message: >-
+        Fixed PowerCellSystem.Draw.cs so that things no longer draw 1/60th of
+        the power they were intended to. This will affect things like portable
+        monitors, anomaly locators, etc. 
+    - type: Fix
+      message: Fixed speed boots not actually requiring a power cell to function.
+    - type: Tweak
+      message: Significantly increased the power draw of speed boots. (4 -> 24)
+    - type: Tweak
+      message: >-
+        Moved all AAC tablet phrases relating to replicators to their own group,
+        pending a way to whitelist/blacklist phrases.
+  id: 627
+  time: '2025-06-28T09:21:58.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/897
+- author: portfiend
+  changes:
+    - type: Tweak
+      message: Lewd traits have been moved out of Physical and into a new category.
+  id: 628
+  time: '2025-06-28T09:23:59.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/918
+- author: KyuPolaris
+  changes:
+    - type: Add
+      message: Magmantles added to Epistemics research
+  id: 629
+  time: '2025-06-28T09:24:49.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/904
+- author: portfiend
+  changes:
+    - type: Add
+      message: >-
+        Amputee traits have been added, allowing you remove an arm/leg. If you
+        have the Wheelchair Bound trait, you can also optionally remove both
+        legs.
+    - type: Tweak
+      message: >-
+        Characters with missing legs can now stand up with the help of a
+        mobility aid (cane). The cane itself will also reduce the speed penalty
+        for missing legs somewhat.
+    - type: Add
+      message: >-
+        "Adapted Balance" and "Sustained Balance" traits have also been added,
+        allowing you to stand up and walk even if you have a missing leg. 
+    - type: Add
+      message: >-
+        Five new canes (colorable version of original, anatomical grip, folding,
+        and quad. Walking cane ported from Impstation). They can be found in
+        loadouts, NanoMed, or the medical techfab.
+    - type: Add
+      message: >-
+        White canes have been added to the medical techfab as well, though they
+        aren't used for mobility.
+  id: 630
+  time: '2025-06-28T09:25:47.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/916
