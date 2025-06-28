@@ -13,3 +13,10 @@ loadout-name-PlushieTeddyBearRecolorablePlaid = teddy bear (colorable, plaid)
 loadout-name-PlushieTeddyBearRecolorableRandom = teddy bear (random)
 loadout-name-SqueakySmileyGuy = smiley guy (colorable)
 loadout-name-SqueakySmileyBall = smiley ball (colorable)
+
+# mobility aids
+character-item-group-LoadoutWalkingCanes = Walking Canes
+loadout-name-LoadoutItemCaneWalkingColorable = cane (colorable)
+loadout-name-LoadoutItemCaneWalkingAnatomical = anatomical grip cane (colorable)
+loadout-name-LoadoutItemCaneWalkingFoldable = folding cane (colorable)
+loadout-name-LoadoutItemCaneWalkingQuad = quad cane (colorable)

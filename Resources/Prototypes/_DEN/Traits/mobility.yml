@@ -1,0 +1,42 @@
+# SPDX-FileCopyrightText: 2025 portfiend
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: trait
+  id: MobilityAdaptedBalance
+  category: TraitsPhysicalDisabilities
+  points: -2
+  requirements:
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Borg
+        - MedicalBorg
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - MobilityWalkWhenAmputee
+  functions:
+    - !type:TraitReplaceComponent
+      components:
+        - type: AdaptedBalance
+          balanceDuration: 60
+
+- type: trait
+  id: MobilityWalkWhenAmputee
+  category: TraitsPhysicalDisabilities
+  points: -4
+  requirements:
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Borg
+        - MedicalBorg
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - MobilityAdaptedBalance
+  functions:
+    - !type:TraitAddComponent
+      components:
+        - type: AlwaysSupportStanding

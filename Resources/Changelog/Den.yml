@@ -6607,3 +6607,83 @@ Entries:
   id: 625
   time: '2025-06-27T08:38:18.0000000+00:00'
   url: https://github.com/TheDenSS14/TheDen/pull/911
+- author: Jakumba
+  changes:
+    - type: Tweak
+      message: 'Redesigned the Solarian Navy Dropship. '
+  id: 626
+  time: '2025-06-27T21:37:32.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/917
+- author: MajorMoth
+  changes:
+    - type: Fix
+      message: Fixed some drink cartons not fitting in drink dispensers.
+    - type: Fix
+      message: >-
+        Changed the names of the Science and Cargo communication consoles to be
+        Epistemics and Logistics.
+    - type: Fix
+      message: >-
+        Fixed PowerCellSystem.Draw.cs so that things no longer draw 1/60th of
+        the power they were intended to. This will affect things like portable
+        monitors, anomaly locators, etc. 
+    - type: Fix
+      message: Fixed speed boots not actually requiring a power cell to function.
+    - type: Tweak
+      message: Significantly increased the power draw of speed boots. (4 -> 24)
+    - type: Tweak
+      message: >-
+        Moved all AAC tablet phrases relating to replicators to their own group,
+        pending a way to whitelist/blacklist phrases.
+  id: 627
+  time: '2025-06-28T09:21:58.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/897
+- author: portfiend
+  changes:
+    - type: Tweak
+      message: Lewd traits have been moved out of Physical and into a new category.
+  id: 628
+  time: '2025-06-28T09:23:59.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/918
+- author: KyuPolaris
+  changes:
+    - type: Add
+      message: Magmantles added to Epistemics research
+  id: 629
+  time: '2025-06-28T09:24:49.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/904
+- author: portfiend
+  changes:
+    - type: Add
+      message: >-
+        Amputee traits have been added, allowing you remove an arm/leg. If you
+        have the Wheelchair Bound trait, you can also optionally remove both
+        legs.
+    - type: Tweak
+      message: >-
+        Characters with missing legs can now stand up with the help of a
+        mobility aid (cane). The cane itself will also reduce the speed penalty
+        for missing legs somewhat.
+    - type: Add
+      message: >-
+        "Adapted Balance" and "Sustained Balance" traits have also been added,
+        allowing you to stand up and walk even if you have a missing leg. 
+    - type: Add
+      message: >-
+        Five new canes (colorable version of original, anatomical grip, folding,
+        and quad. Walking cane ported from Impstation). They can be found in
+        loadouts, NanoMed, or the medical techfab.
+    - type: Add
+      message: >-
+        White canes have been added to the medical techfab as well, though they
+        aren't used for mobility.
+  id: 630
+  time: '2025-06-28T09:25:47.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/916
+- author: GreggTheFather
+  changes:
+    - type: Tweak
+      message: (ARENA) Tweaked minor things across the station. See PR for details.
+  id: 631
+  time: '2025-06-28T10:53:58.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/910
