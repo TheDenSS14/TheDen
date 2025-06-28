@@ -37,6 +37,7 @@
 # SPDX-FileCopyrightText: 2024 Skubman
 # SPDX-FileCopyrightText: 2024 nikthechampiongr
 # SPDX-FileCopyrightText: 2025 Blitz
+# SPDX-FileCopyrightText: 2025 BlitzTheSquishy
 # SPDX-FileCopyrightText: 2025 MajorMoth
 # SPDX-FileCopyrightText: 2025 Rosycup
 # SPDX-FileCopyrightText: 2025 VMSolidus
@@ -266,7 +267,7 @@
   name: Enforcer
   parent: [BaseWeaponShotgun, BaseGunWieldable]
   id: WeaponShotgunEnforcer
-  description: A premium combat shotgun based on the Kammerer design, featuring an upgraded clip capacity. 12 gauge shells.
+  description: A premium combat shotgun based on the Kammerer design, featuring an upgraded magazine capacity. 12 gauge shells.
   components:
   - type: Sprite
     sprite: _DV/Objects/Weapons/Guns/Shotguns/enforcer.rsi
