@@ -16,7 +16,6 @@ marking-bluntbangs_alt = Bangs (Alt)
 marking-braided_front = Braided Front (Alt)
 marking-braided_sidetail = Braided Sidetail
 marking-bunhead4 = Bun Head 4
-marking-clean = Clean
 marking-combed = Combed
 marking-combedbob = Combed Bob
 marking-cotton = Cotton
