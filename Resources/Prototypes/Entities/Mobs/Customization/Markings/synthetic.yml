@@ -1,0 +1,121 @@
+# SPDX-FileCopyrightText: 2025 BlitzTheSquishy
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+# Heads
+- type: marking
+  id: SyntheticMammalHeadM
+  bodyPart: Head
+  markingCategory: Head
+  speciesRestriction: [IPC]
+  sprites:
+  - sprite: Mobs/Customization/SynthMammalIPC/head_markings.rsi
+    state: synth_mammal_head_m
+
+- type: marking
+  id: SyntheticMammalHeadF
+  bodyPart: Head
+  markingCategory: Head
+  speciesRestriction: [IPC]
+  sprites:
+  - sprite: Mobs/Customization/SynthMammalIPC/head_markings.rsi
+    state: synth_mammal_head_f
+
+# Torsos
+- type: marking
+  id: SyntheticMammalChestM
+  bodyPart: Chest
+  markingCategory: Chest
+  speciesRestriction: [IPC]
+  sprites:
+  - sprite: Mobs/Customization/SynthMammalIPC/body_markings.rsi
+    state: synth_mammal_chest_m
+
+- type: marking
+  id: SyntheticMammalChestF
+  bodyPart: Chest
+  markingCategory: Chest
+  speciesRestriction: [IPC]
+  sprites:
+  - sprite: Mobs/Customization/SynthMammalIPC/body_markings.rsi
+    state: synth_mammal_chest_f
+
+# Arms
+- type: marking
+  id: SyntheticMammalRArm
+  bodyPart: RArm
+  markingCategory: RightArm
+  speciesRestriction: [IPC]
+  sprites:
+  - sprite: Mobs/Customization/SynthMammalIPC/body_markings.rsi
+    state: synth_mammal_r_arm
+
+- type: marking
+  id: SyntheticMammalLArm
+  bodyPart: LArm
+  markingCategory: LeftArm
+  speciesRestriction: [IPC]
+  sprites:
+  - sprite: Mobs/Customization/SynthMammalIPC/body_markings.rsi
+    state: synth_mammal_l_arm
+
+- type: marking
+  id: SyntheticMammalRHand
+  bodyPart: RHand
+  markingCategory: RightHand
+  speciesRestriction: [IPC]
+  sprites:
+  - sprite: Mobs/Customization/SynthMammalIPC/body_markings.rsi
+    state: synth_mammal_r_hand
+
+- type: marking
+  id: SyntheticMammalLHand
+  bodyPart: LHand
+  markingCategory: LeftHand
+  speciesRestriction: [IPC]
+  sprites:
+  - sprite: Mobs/Customization/SynthMammalIPC/body_markings.rsi
+    state: synth_mammal_l_hand
+
+# Legs
+- type: marking
+  id: SyntheticMammalRLeg
+  bodyPart: RLeg
+  markingCategory: RightLeg
+  speciesRestriction: [IPC]
+  sprites:
+  - sprite: Mobs/Customization/SynthMammalIPC/body_markings.rsi
+    state: synth_mammal_r_leg
+
+- type: marking
+  id: SyntheticMammalLLeg
+  bodyPart: LLeg
+  markingCategory: LeftLeg
+  speciesRestriction: [IPC]
+  sprites:
+  - sprite: Mobs/Customization/SynthMammalIPC/body_markings.rsi
+    state: synth_mammal_l_leg
+
+- type: marking
+  id: SyntheticMammalRFoot
+  bodyPart: RFoot
+  markingCategory: RightFoot
+  speciesRestriction: [IPC]
+  sprites:
+  - sprite: Mobs/Customization/SynthMammalIPC/body_markings.rsi
+    state: synth_mammal_r_foot
+
+- type: marking
+  id: SyntheticMammalLFoot
+  bodyPart: LFoot
+  markingCategory: LeftFoot
+  speciesRestriction: [IPC]
+  sprites:
+  - sprite: Mobs/Customization/SynthMammalIPC/body_markings.rsi
+    state: synth_mammal_l_foot
+
+# Eyes
+
+# Snouts
+
+# Antenna

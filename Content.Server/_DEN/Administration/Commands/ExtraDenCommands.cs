@@ -1,13 +1,13 @@
-// SPDX-FileCopyrightText: 2021 Acruid <shatter66@gmail.com>
-// SPDX-FileCopyrightText: 2021 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2021 Silver <silvertorch5@gmail.com>
-// SPDX-FileCopyrightText: 2021 Vera Aguilera Puerto <gradientvera@outlook.com>
-// SPDX-FileCopyrightText: 2021 Visne <39844191+Visne@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2022 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2022 mirrorcult <lunarautomaton6@gmail.com>
-// SPDX-FileCopyrightText: 2022 wrexbe <81056464+wrexbe@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2023 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2021 Acruid
+// SPDX-FileCopyrightText: 2021 DrSmugleaf
+// SPDX-FileCopyrightText: 2021 Silver
+// SPDX-FileCopyrightText: 2021 Vera Aguilera Puerto
+// SPDX-FileCopyrightText: 2021 Visne
+// SPDX-FileCopyrightText: 2022 Leon Friedrich
+// SPDX-FileCopyrightText: 2022 mirrorcult
+// SPDX-FileCopyrightText: 2022 wrexbe
+// SPDX-FileCopyrightText: 2023 metalgearsloth
+// SPDX-FileCopyrightText: 2025 sleepyyapril
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -15,6 +15,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Numerics;
 using Content.Server.Administration;
+using Content.Server.Administration.Systems;
 using Content.Server.GameTicking;
 using Content.Shared._DEN.Species;
 using Content.Shared.Administration;
@@ -64,7 +65,7 @@ namespace Content.Server._DEN.Administration.Commands
 
         public string Command => "setheightwidth";
         public string Description => "Set height and width with an option to ignore species restrictions.";
-        public string Help => "roundinfo";
+        public string Help => "setheightwidth <player> <height (integer or string to ignore)> <width (integer or string to ignore)> <exempt>";
 
         public void Execute(IConsoleShell shell, string argStr, string[] args)
         {
@@ -111,7 +112,9 @@ namespace Content.Server._DEN.Administration.Commands
                 return;
 
             var heightAdjust = _entManager.System<HeightAdjustSystem>();
+            var rejuvenate = _entManager.System<RejuvenateSystem>();
             heightAdjust.SetScale(playerEntity, new Vector2(width, height));
+            rejuvenate.PerformRejuvenate(playerEntity);
         }
 
         public CompletionResult GetCompletion(IConsoleShell shell, string[] args)
@@ -124,8 +127,10 @@ namespace Content.Server._DEN.Administration.Commands
 
             if (args.Length == 2 || args.Length == 3)
             {
-                var validNumber = int.TryParse(args[1], out var number);
-                var hint = validNumber ? number.ToString() : "<invalid number>";
+                var num = args.Length == 2 ? args[1] : args[2];
+                var validNumber = float.TryParse(num, out var number);
+                var hint = validNumber ? number.ToString("0.00") : "<invalid number>";
+
                 return CompletionResult.FromHint(hint);
             }
 
@@ -133,6 +138,58 @@ namespace Content.Server._DEN.Administration.Commands
             {
                 var options = new[] { "true", "false" };
                 return CompletionResult.FromHintOptions(options, "<bool>");
+            }
+
+            return CompletionResult.Empty;
+        }
+    }
+
+    [AdminCommand(AdminFlags.Admin)]
+    sealed class GetHeightWidth : IConsoleCommand
+    {
+        [Dependency] private readonly IEntityManager _entManager = default!;
+        [Dependency] private readonly IPlayerManager _playerManager = default!;
+
+        public string Command => "getheightwidth";
+        public string Description => "Set height and width with an option to ignore species restrictions.";
+        public string Help => "getheightwidth <player>";
+
+        public void Execute(IConsoleShell shell, string argStr, string[] args)
+        {
+            if (args.Length < 3)
+            {
+                shell.WriteLine("Usage: setheightwidth <player> <height (integer or string to ignore)> <width (integer or string to ignore)> <exempt>");
+                return;
+            }
+
+            if (!_playerManager.TryGetSessionByUsername(args[0], out var session))
+            {
+                shell.WriteError("Session not found: " + args[0]);
+                return;
+            }
+
+            if (session.AttachedEntity is not { Valid: true } playerEntity)
+            {
+                shell.WriteError("Player entity not found: " + args[0]);
+                return;
+            }
+
+            if (!_entManager.TryGetComponent<HumanoidAppearanceComponent>(playerEntity, out var appearance))
+            {
+                shell.WriteError("Player appearance not found: " + args[0]);
+                return;
+            }
+
+            shell.WriteLine("Height: " + appearance.Height.ToString("0.00"));
+            shell.WriteLine("Width: " + appearance.Width.ToString("0.00"));
+        }
+
+        public CompletionResult GetCompletion(IConsoleShell shell, string[] args)
+        {
+            if (args.Length == 1)
+            {
+                var options = _playerManager.Sessions.Select(c => c.Name).OrderBy(c => c).ToArray();
+                return CompletionResult.FromHintOptions(options, Loc.GetString("cmd-ban-hint"));
             }
 
             return CompletionResult.Empty;
