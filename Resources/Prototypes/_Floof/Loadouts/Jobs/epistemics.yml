@@ -1,10 +1,10 @@
-# SPDX-FileCopyrightText: 2024 fox <daytimer253@gmail.com>
+# SPDX-FileCopyrightText: 2024 fox
 # SPDX-FileCopyrightText: 2024 sleepyyapril <***>
 # SPDX-FileCopyrightText: 2024 sleepyyapril <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>
-# SPDX-FileCopyrightText: 2025 Blitz <73762869+BlitzTheSquishy@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 BlitzTheSquishy <73762869+BlitzTheSquishy@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 Rosycup <178287475+Rosycup@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Blitz
+# SPDX-FileCopyrightText: 2025 BlitzTheSquishy
+# SPDX-FileCopyrightText: 2025 Rosycup
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -15,16 +15,18 @@
   cost: 2
   exclusive: true
   items:
-  - ClothingHandsEpiWarmers
+    - ClothingHandsEpiWarmers
   requirements:
-  - !type:CharacterDepartmentRequirement
-    departments:
-    - Epistemics
-  - !type:CharacterJobRequirement
-    jobs:
-    - ForensicMantis
-    - Chaplain
-    - ResearchDirector
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Epistemics
+    - !type:CharacterJobRequirement
+      jobs:
+        - ForensicMantis
+        - Chaplain
+        - ResearchDirector
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutEpistemicsGloves
 
 - type: loadout
   id: LoadoutClothingUnderSocksEpi
@@ -32,21 +34,23 @@
   cost: 2
   exclusive: true
   items:
-  - ClothingUnderSocksEpi
+    - ClothingUnderSocksEpi
   requirements:
-#  - !type:CharacterSpeciesRequirement - TheDen
-#    inverted: true
-#    species:
-#    - Diona
-#    - Harpy
-  - !type:CharacterDepartmentRequirement
-    departments:
-    - Epistemics
-  - !type:CharacterJobRequirement
-    jobs:
-    - ForensicMantis
-    - Chaplain
-    - ResearchDirector
+    #- !type:CharacterSpeciesRequirement - TheDen
+    #  inverted: true
+    #  species:
+    #  - Diona
+    #  - Harpy
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Epistemics
+    - !type:CharacterJobRequirement
+      jobs:
+        - ForensicMantis
+        - Chaplain
+        - ResearchDirecto
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutEpistemicsShoes
 
 - type: loadout
   id: LoadoutClothingUniformEpiThong
@@ -54,28 +58,31 @@
   cost: 2
   exclusive: true
   items:
-  - ClothingUniformEpiThong
+    - ClothingUniformEpiThong
   requirements:
-  - !type:CharacterDepartmentRequirement
-    departments:
-    - Epistemics
-  - !type:CharacterJobRequirement
-    jobs:
-    - ForensicMantis
-    - Chaplain
-    - ResearchDirector
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Epistemics
+    - !type:CharacterJobRequirement
+      jobs:
+        - ForensicMantis
+        - Chaplain
+        - ResearchDirector
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutEpistemicsUniforms
 
 - type: loadout
   id: LoadoutScienceNeckCollar
   category: JobsEpistemicsAAUncategorized
   cost: 1
   requirements:
-  - !type:CharacterDepartmentRequirement
-    departments:
-    - Epistemics
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Epistemics
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutEpistemicsNeck
   items:
-  - ClothingNeckCollarEpi
-
+    - ClothingNeckCollarEpi
 
 # Psionic mantis
 - type: loadout
@@ -84,11 +91,13 @@
   cost: 1
   exclusive: true
   items:
-  - ClothingHandsMantisEpiWarmers
+    - ClothingHandsMantisEpiWarmers
   requirements:
-  - !type:CharacterJobRequirement
-    jobs:
-    - ForensicMantis
+    - !type:CharacterJobRequirement
+      jobs:
+        - ForensicMantis
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutPsionicMantisGloves
 
 - type: loadout
   id: LoadoutClothingUnderSocksMantisEpi
@@ -96,17 +105,18 @@
   cost: 1
   exclusive: true
   items:
-  - ClothingUnderSocksMantisEpi
+    - ClothingUnderSocksMantisEpi
   requirements:
-#  - !type:CharacterSpeciesRequirement - TheDen
-#    inverted: true
-#    species:
-#    - Diona
-#    - Harpy
-  - !type:CharacterJobRequirement
-    jobs:
-    - ForensicMantis
-
+    #- !type:CharacterSpeciesRequirement - TheDen
+    #  inverted: true
+    #  species:
+    #  - Diona
+    #  - Harpy
+    - !type:CharacterJobRequirement
+      jobs:
+        - ForensicMantis
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutPsionicMantisShoes
 
 - type: loadout
   id: LoadoutClothingUniformMantisEpiThong
@@ -114,11 +124,13 @@
   cost: 1
   exclusive: true
   items:
-  - ClothingUniformMantisEpiThong
+    - ClothingUniformMantisEpiThong
   requirements:
-  - !type:CharacterJobRequirement
-    jobs:
-    - ForensicMantis
+    - !type:CharacterJobRequirement
+      jobs:
+        - ForensicMantis
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutPsionicMantisUniforms
 
 # Chaplain
 - type: loadout
@@ -127,11 +139,13 @@
   cost: 2
   exclusive: true
   items:
-  - ClothingHandsChaplainWarmers
+    - ClothingHandsChaplainWarmers
   requirements:
-  - !type:CharacterJobRequirement
-    jobs:
-    - Chaplain
+    - !type:CharacterJobRequirement
+      jobs:
+        - Chaplain
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutChaplainGloves
 
 - type: loadout
   id: LoadoutClothingUnderSocksChaplain
@@ -139,16 +153,18 @@
   cost: 2
   exclusive: true
   items:
-  - ClothingUnderSocksChaplain
+    - ClothingUnderSocksChaplain
   requirements:
-#  - !type:CharacterSpeciesRequirement - TheDen
-#    inverted: true
-#    species:
-#    - Diona
-#    - Harpy
-  - !type:CharacterJobRequirement
-    jobs:
-    - Chaplain
+    #  - !type:CharacterSpeciesRequirement - TheDen
+    #    inverted: true
+    #    species:
+    #    - Diona
+    #    - Harpy
+    - !type:CharacterJobRequirement
+      jobs:
+        - Chaplain
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutChaplainShoes
 
 - type: loadout
   id: LoadoutClothingUniformChaplainThong
@@ -156,11 +172,13 @@
   cost: 2
   exclusive: true
   items:
-  - ClothingUniformChaplainThong
+    - ClothingUniformChaplainThong
   requirements:
-  - !type:CharacterJobRequirement
-    jobs:
-    - Chaplain
+    - !type:CharacterJobRequirement
+      jobs:
+        - Chaplain
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutChaplainUniforms
 
 - type: loadout
   id: LoadoutClothingChaplainEpiMantle
@@ -168,8 +186,10 @@
   cost: 1
   exclusive: true
   items:
-  - ClothingOuterEpiChaplainMantle
+    - ClothingOuterEpiChaplainMantle
   requirements:
-  - !type:CharacterJobRequirement
-    jobs:
-    - Chaplain
+    - !type:CharacterJobRequirement
+      jobs:
+        - Chaplain
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutChaplainNeck

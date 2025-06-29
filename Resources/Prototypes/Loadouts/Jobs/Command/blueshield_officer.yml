@@ -1,5 +1,6 @@
 # SPDX-FileCopyrightText: 2025 Alice
 # SPDX-FileCopyrightText: 2025 Blitz
+# SPDX-FileCopyrightText: 2025 BlitzTheSquishy
 # SPDX-FileCopyrightText: 2025 BramvanZijp
 # SPDX-FileCopyrightText: 2025 EctoplasmIsGood
 # SPDX-FileCopyrightText: 2025 MajorMoth
@@ -148,14 +149,14 @@
 - type: loadout
   id: LoadoutMagazineShotgunLeverRifle
   category: JobsCommandBlueshieldOfficer
-  cost: 2
+  cost: 0
   exclusive: true
   requirements:
     - !type:CharacterDepartmentTimeRequirement
       department: Security
       min: 3600 # 1 hours
     - !type:CharacterItemGroupRequirement
-      group: LoadoutSecurityEquipment
+      group: LoadoutBlueshieldOfficerEquipment
     - !type:CharacterJobRequirement
       jobs:
         - BlueshieldOfficer
@@ -165,14 +166,14 @@
 - type: loadout
   id: LoadoutMagazineShotgunLeverRifleSpare
   category: JobsCommandBlueshieldOfficer
-  cost: 4
+  cost: 2
   exclusive: true
   requirements:
     - !type:CharacterDepartmentTimeRequirement
       department: Security
       min: 3600 # 1 hours
     - !type:CharacterItemGroupRequirement
-      group: LoadoutSecurityEquipment
+      group: LoadoutBlueshieldOfficerEquipment
     - !type:CharacterJobRequirement
       jobs:
         - BlueshieldOfficer

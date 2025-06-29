@@ -1,6 +1,7 @@
-# SPDX-FileCopyrightText: 2024 VMSolidus <evilexecutive@gmail.com>
-# SPDX-FileCopyrightText: 2025 Rosycup <178287475+Rosycup@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 VMSolidus
+# SPDX-FileCopyrightText: 2025 BlitzTheSquishy
+# SPDX-FileCopyrightText: 2025 Rosycup
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -29,12 +30,14 @@
 #  id: LoadoutCargoTechnicianEyes
 #  maxItems: 1
 #  items:
-#
-#- type: characterItemGroup
-#  id: LoadoutCargoTechnicianGloves
-#  maxItems: 1
-#  items:
-#
+
+- type: characterItemGroup
+  id: LoadoutCargoTechnicianGloves
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutClothingHandsLogisWarmers
+
 #- type: characterItemGroup
 #  id: LoadoutCargoTechnicianHead
 #  maxItems: 1
@@ -72,6 +75,8 @@
       id: LoadoutCargoShoesBootsWinterCargo
     - type: loadout
       id: LoadoutCargoTechnicianBootsSteel
+    - type: loadout
+      id: LoadoutClothingUnderSocksLogis
 
 - type: characterItemGroup
   id: LoadoutCargoTechnicianUniforms
@@ -85,3 +90,5 @@
       id: LoadoutCargoTechnicianUniformSkirtLight
     - type: loadout
       id: LoadoutCargoTechnicianUniformSkirtDark
+    - type: loadout
+      id: LoadoutClothingUniformLogisThong

@@ -1,10 +1,11 @@
-# SPDX-FileCopyrightText: 2024 VMSolidus <evilexecutive@gmail.com>
-# SPDX-FileCopyrightText: 2025 Alice <alicecoupland45@gmail.com>
-# SPDX-FileCopyrightText: 2025 Angelo Fallaria <ba.fallaria@gmail.com>
-# SPDX-FileCopyrightText: 2025 EctoplasmIsGood <109397347+EctoplasmIsGood@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 Rosycup <178287475+Rosycup@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 Skubman <ba.fallaria@gmail.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 VMSolidus
+# SPDX-FileCopyrightText: 2025 Alice
+# SPDX-FileCopyrightText: 2025 Angelo Fallaria
+# SPDX-FileCopyrightText: 2025 BlitzTheSquishy
+# SPDX-FileCopyrightText: 2025 EctoplasmIsGood
+# SPDX-FileCopyrightText: 2025 Rosycup
+# SPDX-FileCopyrightText: 2025 Skubman
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -81,6 +82,8 @@
       id: LoadoutCaptainGlovesCapGloves
     - type: loadout
       id: LoadoutCaptainGlovesInspection
+    - type: loadout
+      id: LoadoutClothingHandsCaptainWarmers
 
 - type: characterItemGroup
   id: LoadoutCaptainHead
@@ -112,6 +115,8 @@
       id: LoadoutCommandCapNeckCloakFormal
     - type: loadout
       id: LoadoutCaptainNeckGoldMedal
+    - type: loadout
+      id: LoadoutCommandCapCollar
 
 - type: characterItemGroup
   id: LoadoutCaptainMask
@@ -147,6 +152,8 @@
       id: LoadoutCaptainShoesWinter
     - type: loadout
       id: LoadoutCaptainShoesCombat
+    - type: loadout
+      id: LoadoutClothingUnderCaptainSocks
 
 - type: characterItemGroup
   id: LoadoutCaptainUniforms
@@ -160,3 +167,5 @@
       id: LoadoutCommandCapJumpsuitFormal
     - type: loadout
       id: LoadoutCommandCapJumpskirtFormal
+    - type: loadout
+      id: LoadoutClothingUniformCaptainThong
