@@ -586,7 +586,7 @@ public sealed partial class ChatSystem : SharedChatSystem
 
         var languageObfuscatedMessage = SanitizeInGameICMessage(source, _language.ObfuscateSpeech(message, language), out var emoteStr, true, _configurationManager.GetCVar(CCVars.ChatPunctuation), (!CultureInfo.CurrentCulture.IsNeutralCulture && CultureInfo.CurrentCulture.Parent.Name == "en") || (CultureInfo.CurrentCulture.IsNeutralCulture && CultureInfo.CurrentCulture.Name == "en"));
 
-        foreach (var (session, data) in GetRecipients(source, Transform(source).GridUid == null ? InSpaceRange : WhisperMuffledRange))
+        foreach (var (session, data) in GetRecipients(source, WhisperMuffledRange))
         {
             if (session.AttachedEntity is not { Valid: true } listener
                 || session.AttachedEntity.HasValue && HasComp<GhostComponent>(session.AttachedEntity.Value)
@@ -869,7 +869,7 @@ public sealed partial class ChatSystem : SharedChatSystem
         var language = languageOverride ?? _language.GetLanguage(source);
         var targetHasLanguage = TryComp<LanguageSpeakerComponent>(source, out var languageSpeakerComponent);
 
-        foreach (var (session, data) in GetRecipients(source, Transform(source).GridUid == null ? InSpaceRange : VoiceRange))
+        foreach (var (session, data) in GetRecipients(source, VoiceRange))
         {
             if (session.AttachedEntity is not { Valid: true } playerEntity)
                 continue;

@@ -3,6 +3,7 @@
 // SPDX-FileCopyrightText: 2021 Javier Guardia Fernández
 // SPDX-FileCopyrightText: 2022 Vordenburg
 // SPDX-FileCopyrightText: 2022 corentt
+// SPDX-FileCopyrightText: 2022 metalgearsloth
 // SPDX-FileCopyrightText: 2022 mirrorcult
 // SPDX-FileCopyrightText: 2022 wrexbe
 // SPDX-FileCopyrightText: 2023 Adrian16199
@@ -16,7 +17,6 @@
 // SPDX-FileCopyrightText: 2023 Ubaser
 // SPDX-FileCopyrightText: 2023 Visne
 // SPDX-FileCopyrightText: 2023 Ygg01
-// SPDX-FileCopyrightText: 2023 metalgearsloth
 // SPDX-FileCopyrightText: 2024 778b
 // SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT
 // SPDX-FileCopyrightText: 2024 Ed
@@ -41,7 +41,7 @@
 // SPDX-FileCopyrightText: 2025 marc-pelletier
 // SPDX-FileCopyrightText: 2025 sleepyyapril
 //
-// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+// SPDX-License-Identifier: AGPL-3.0-or-later
 
 using System.Collections.Generic;
 using System.IO;
@@ -121,6 +121,7 @@ namespace Content.IntegrationTests.Tests
             "Hammurabi", //DeltaV
             "Lighthouse", //DeltaV
             "Submarine", //DeltaV
+			"Anvil", //DeltaV
             // "Gax",
             "Rad",
             "Europa",
