@@ -19,9 +19,6 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutGolemancerBackpacks
-    - !type:CharacterJobRequirement
-      jobs:
-        - Roboticist
 
 - type: loadout
   id: LoadoutBackpackSatchelRobotics
@@ -33,9 +30,6 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutGolemancerBackpacks
-    - !type:CharacterJobRequirement
-      jobs:
-        - Roboticist
 
 - type: loadout
   id: LoadoutBackpackDuffelRobotics
@@ -47,9 +41,6 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutGolemancerBackpacks
-    - !type:CharacterJobRequirement
-      jobs:
-        - Roboticist
 
 
 # Belt
@@ -64,9 +55,6 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutGolemancerEquipment
-    - !type:CharacterJobRequirement
-      jobs:
-        - Roboticist
   items:
     - BoxCandle
 
@@ -77,9 +65,6 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutGolemancerEquipment
-    - !type:CharacterJobRequirement
-      jobs:
-        - Roboticist
   items:
     - BoxCandleSmall
 
@@ -91,9 +76,6 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutGolemancerEquipment
-    - !type:CharacterJobRequirement
-      jobs:
-        - Roboticist
   items:
     - PillCanisterSpaceDrugs
 
@@ -117,9 +99,6 @@
   requirements:
   - !type:CharacterItemGroupRequirement
     group: LoadoutGolemancerOuter # The Den - Wrong category
-  - !type:CharacterJobRequirement
-    jobs:
-    - Roboticist
   items:
   - ClothingOuterWinterRobo
 
@@ -132,9 +111,6 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutGolemancerShoes
-    - !type:CharacterJobRequirement
-      jobs:
-        - Roboticist
   items:
     - ClothingShoesBootsWinterRobo
 
@@ -147,9 +123,6 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutGolemancerUniforms
-    - !type:CharacterJobRequirement
-      jobs:
-        - Roboticist
   items:
     - ClothingUniformJumpskirtRoboticist
 
@@ -161,8 +134,5 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutGolemancerUniforms
-    - !type:CharacterJobRequirement
-      jobs:
-        - Roboticist
   items:
     - ClothingUniformJumpsuitRoboticist

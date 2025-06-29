@@ -15,9 +15,9 @@
   items:
   - ClothingHandsLogisWarmers
   requirements:
-  - !type:CharacterJobRequirement
-    jobs:
-    - CargoTechnician
+  - !type:CharacterDepartmentRequirement
+      departments:
+        - Logistics
 
 - type: loadout
   id: LoadoutClothingUnderSocksLogis
@@ -32,9 +32,9 @@
 #    species:
 #    - Diona
 #    - Harpy
-  - !type:CharacterJobRequirement
-    jobs:
-    - CargoTechnician
+  - !type:CharacterDepartmentRequirement
+      departments:
+        - Logistics
 
 - type: loadout
   id: LoadoutClothingUniformLogisThong
@@ -44,9 +44,9 @@
   items:
   - ClothingUniformLogisThong
   requirements:
-  - !type:CharacterJobRequirement
-    jobs:
-    - CargoTechnician
+  - !type:CharacterDepartmentRequirement
+      departments:
+        - Logistics
 
 - type: loadout
   id: LoadoutCargoNeckCollar
@@ -55,7 +55,7 @@
   requirements:
   - !type:CharacterDepartmentRequirement
     departments:
-    - Logistics
+      - Logistics
   items:
   - ClothingNeckCollarLogi
 

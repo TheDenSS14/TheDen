@@ -13,9 +13,6 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutCargoTechnicianOuter
-    - !type:CharacterJobRequirement
-      jobs:
-        - CargoTechnician
   items:
     - ClothingOuterCoatCargoBomber
 
@@ -27,9 +24,6 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutCargoTechnicianUniforms
-    - !type:CharacterJobRequirement
-      jobs:
-        - CargoTechnician
   items:
     - ClothingUniformJumpsuitCargoLight
 
@@ -41,9 +35,6 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutCargoTechnicianUniforms
-    - !type:CharacterJobRequirement
-      jobs:
-        - CargoTechnician
   items:
     - ClothingUniformJumpsuitCargoDark
 
@@ -55,9 +46,6 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutCargoTechnicianUniforms
-    - !type:CharacterJobRequirement
-      jobs:
-        - CargoTechnician
   items:
     - ClothingUniformJumpskirtCargoLight
 
@@ -69,9 +57,6 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutCargoTechnicianUniforms
-    - !type:CharacterJobRequirement
-      jobs:
-        - CargoTechnician
   items:
     - ClothingUniformJumpskirtCargoDark
 
@@ -83,8 +68,5 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutCargoTechnicianShoes
-    - !type:CharacterJobRequirement
-      jobs:
-        - CargoTechnician
   items:
     - ClothingShoesBootsSteel
