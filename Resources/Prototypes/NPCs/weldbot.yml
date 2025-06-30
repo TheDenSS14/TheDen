@@ -26,6 +26,10 @@
           operator: !type:PickNearbyWeldableOperator
             targetKey: WeldTarget
             targetMoveKey: TargetCoordinates
+          preconditions:
+          - !type:ActiveHandComponentPrecondition
+            components:
+            - type: Welder
 
         - !type:HTNPrimitiveTask
           operator: !type:MoveToOperator
@@ -46,3 +50,7 @@
         - !type:HTNPrimitiveTask
           operator: !type:WeldbotWeldOperator
             targetKey: WeldTarget
+          preconditions:
+          - !type:ActiveHandComponentPrecondition
+            components:
+            - type: Welder
