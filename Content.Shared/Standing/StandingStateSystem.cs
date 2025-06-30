@@ -1,29 +1,30 @@
-// SPDX-FileCopyrightText: 2021 Acruid <shatter66@gmail.com>
-// SPDX-FileCopyrightText: 2021 Clyybber <darkmine956@gmail.com>
-// SPDX-FileCopyrightText: 2021 Galactic Chimp <GalacticChimpanzee@gmail.com>
-// SPDX-FileCopyrightText: 2021 Paul <ritter.paul1@googlemail.com>
-// SPDX-FileCopyrightText: 2021 Vera Aguilera Puerto <6766154+Zumorica@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2021 Visne <39844191+Visne@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2022 Alex Evgrashin <aevgrashin@yandex.ru>
-// SPDX-FileCopyrightText: 2022 Fishfish458 <47410468+Fishfish458@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2022 Francesco <frafonia@gmail.com>
-// SPDX-FileCopyrightText: 2022 Jacob Tong <10494922+ShadowCommander@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2022 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2021 Acruid
+// SPDX-FileCopyrightText: 2021 Clyybber
+// SPDX-FileCopyrightText: 2021 Galactic Chimp
+// SPDX-FileCopyrightText: 2021 Paul
+// SPDX-FileCopyrightText: 2021 Vera Aguilera Puerto
+// SPDX-FileCopyrightText: 2021 Visne
+// SPDX-FileCopyrightText: 2022 Alex Evgrashin
+// SPDX-FileCopyrightText: 2022 Fishfish458
+// SPDX-FileCopyrightText: 2022 Francesco
+// SPDX-FileCopyrightText: 2022 Jacob Tong
+// SPDX-FileCopyrightText: 2022 Leon Friedrich
 // SPDX-FileCopyrightText: 2022 fishfish458 <fishfish458>
-// SPDX-FileCopyrightText: 2022 keronshb <54602815+keronshb@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2023 Debug <49997488+DebugOk@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2023 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2023 Pieter-Jan Briers <pieterjan.briers@gmail.com>
-// SPDX-FileCopyrightText: 2023 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 Aiden <aiden@djkraz.com>
-// SPDX-FileCopyrightText: 2024 Mnemotechnican <69920617+Mnemotechnician@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 Tayrtahn <tayrtahn@gmail.com>
-// SPDX-FileCopyrightText: 2024 VMSolidus <evilexecutive@gmail.com>
-// SPDX-FileCopyrightText: 2024 gluesniffler <159397573+gluesniffler@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 sleepyyapril <flyingkarii@gmail.com>
+// SPDX-FileCopyrightText: 2022 keronshb
+// SPDX-FileCopyrightText: 2023 Debug
+// SPDX-FileCopyrightText: 2023 DrSmugleaf
+// SPDX-FileCopyrightText: 2023 Pieter-Jan Briers
+// SPDX-FileCopyrightText: 2023 metalgearsloth
+// SPDX-FileCopyrightText: 2024 Aiden
+// SPDX-FileCopyrightText: 2024 Mnemotechnican
+// SPDX-FileCopyrightText: 2024 Tayrtahn
+// SPDX-FileCopyrightText: 2024 VMSolidus
+// SPDX-FileCopyrightText: 2024 gluesniffler
 // SPDX-FileCopyrightText: 2024 sleepyyapril <***>
-// SPDX-FileCopyrightText: 2025 FoxxoTrystan <45297731+FoxxoTrystan@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 sleepyyapril <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>
+// SPDX-FileCopyrightText: 2025 FoxxoTrystan
+// SPDX-FileCopyrightText: 2025 portfiend
+// SPDX-FileCopyrightText: 2025 sleepyyapril
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -39,6 +40,9 @@ using Robust.Shared.Audio.Systems;
 using Robust.Shared.Physics;
 using Robust.Shared.Physics.Systems;
 using System.Linq;
+using Content.Shared.Body.Components;
+using Content.Shared._DEN.Body;
+using Content.Shared.Inventory;
 
 namespace Content.Shared.Standing;
 
@@ -190,6 +194,18 @@ public sealed class StandingStateSystem : EntitySystem
         if (entityDistances.Count > 0)
             _climb.ForciblySetClimbing(uid, entityDistances.OrderBy(e => e.Value).First().Key);
     }
+
+    public void UpdateStanding(Entity<BodyComponent?> ent, bool dropItems = false)
+    {
+        if (!Resolve(ent.Owner, ref ent.Comp, false))
+            return;
+
+        var ev = new CannotSupportStandingEvent(ent.Comp.LegEntities.Count);
+        RaiseLocalEvent(ent.Owner, ev);
+
+        if (ev.Forced || !ev.Cancelled)
+            Down(ent.Owner, dropHeldItems: dropItems);
+    }
 }
 
 
@@ -214,3 +230,19 @@ public sealed class StoodEvent : EntityEventArgs { }
 ///     Raised when an entity is not standing
 /// </summary>
 public sealed class DownedEvent : EntityEventArgs { }
+
+/// <summary>
+///     Whether or not this entity can support standing up when they have less than the required amount of legs.
+///     Cancel this event if the entity should be able to stand anyway.
+/// </summary>
+public sealed class CannotSupportStandingEvent : CancellableEntityEventArgs, IInventoryRelayEvent
+{
+    public SlotFlags TargetSlots => SlotFlags.WITHOUT_POCKET;
+    public int LegCount;
+    public bool Forced = false;
+
+    public CannotSupportStandingEvent(int legCount)
+    {
+        LegCount = legCount;
+    }
+}

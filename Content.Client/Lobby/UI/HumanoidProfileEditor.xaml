@@ -62,11 +62,13 @@ SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
             <!-- Import/Export -->
             <BoxContainer Orientation="Vertical">
                 <prefUi:HighlightedContainer>
-                    <BoxContainer Orientation="Horizontal" SeparationOverride="5">
+                    <BoxContainer Orientation="Vertical" SeparationOverride="5">
                         <Button Name="ImportButton" Text="{Loc 'humanoid-profile-editor-import-button'}"/>
                         <Button Name="ExportButton" Text="{Loc 'humanoid-profile-editor-export-button'}"/>
                         <Button Name="SaveButton" Text="{Loc 'humanoid-profile-editor-save-button'}" />
                         <Button Name="ResetButton" Disabled="True" Text="{Loc 'humanoid-profile-editor-reset-button'}"/>
+                        <Button Name="ExportImageButton" Text="{Loc 'humanoid-profile-editor-export-image-button'}"/>
+                        <Button Name="OpenImagesButton" Text="{Loc 'humanoid-profile-editor-open-image-button'}"/>
                     </BoxContainer>
                 </prefUi:HighlightedContainer>
             </BoxContainer>

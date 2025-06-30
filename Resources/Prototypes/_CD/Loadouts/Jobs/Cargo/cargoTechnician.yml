@@ -1,7 +1,7 @@
-# SPDX-FileCopyrightText: 2024 VMSolidus <evilexecutive@gmail.com>
-# SPDX-FileCopyrightText: 2025 Blitz <73762869+BlitzTheSquishy@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 Rosycup <178287475+Rosycup@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 VMSolidus
+# SPDX-FileCopyrightText: 2025 Blitz
+# SPDX-FileCopyrightText: 2025 Rosycup
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -13,9 +13,6 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutCargoTechnicianOuter
-    - !type:CharacterJobRequirement
-      jobs:
-        - CargoTechnician
   items:
     - ClothingOuterCoatCargoBomber
 
@@ -27,9 +24,6 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutCargoTechnicianUniforms
-    - !type:CharacterJobRequirement
-      jobs:
-        - CargoTechnician
   items:
     - ClothingUniformJumpsuitCargoLight
 
@@ -41,9 +35,6 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutCargoTechnicianUniforms
-    - !type:CharacterJobRequirement
-      jobs:
-        - CargoTechnician
   items:
     - ClothingUniformJumpsuitCargoDark
 
@@ -55,9 +46,6 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutCargoTechnicianUniforms
-    - !type:CharacterJobRequirement
-      jobs:
-        - CargoTechnician
   items:
     - ClothingUniformJumpskirtCargoLight
 
@@ -69,9 +57,6 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutCargoTechnicianUniforms
-    - !type:CharacterJobRequirement
-      jobs:
-        - CargoTechnician
   items:
     - ClothingUniformJumpskirtCargoDark
 
@@ -83,8 +68,5 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutCargoTechnicianShoes
-    - !type:CharacterJobRequirement
-      jobs:
-        - CargoTechnician
   items:
     - ClothingShoesBootsSteel
