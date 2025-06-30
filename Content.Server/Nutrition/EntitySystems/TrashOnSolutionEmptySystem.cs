@@ -1,3 +1,13 @@
+// SPDX-FileCopyrightText: 2022 Jessica M <jessica@jessicamaybe.com>
+// SPDX-FileCopyrightText: 2023 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Psychpsyo <60073468+Psychpsyo@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 TemporalOroboros <TemporalOroboros@gmail.com>
+// SPDX-FileCopyrightText: 2023 TemporalOroboros <temporaloroboros@gmail.com>
+// SPDX-FileCopyrightText: 2024 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+//
+// SPDX-License-Identifier: MIT
+
 using Content.Server.Chemistry.Containers.EntitySystems;
 using Content.Server.Nutrition.Components;
 using Content.Shared.Chemistry.Components;

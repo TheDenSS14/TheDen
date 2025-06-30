@@ -1,3 +1,8 @@
+# SPDX-FileCopyrightText: 2025 BloodfiendishOperator <141253729+Diggy0@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 marking-DionaFlowersHead_colorable-flowers_head_primary_colorable = Stems
 marking-DionaFlowersHead_colorable-flowers_head_secondary_colorable = Flowers
 

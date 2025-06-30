@@ -1,70 +1,81 @@
-- type: entity
-  id: ReagentSlimeCum
-  parent: ReagentSlime
-  suffix: Cum
-  components:
-  - type: Bloodstream
-    bloodReagent: Cum
-  - type: PointLight
-    color: "#FFFDFB"
-  - type: Sprite
-    drawdepth: Mobs
-    sprite: Mobs/Aliens/elemental.rsi
-    layers:
-      - map: [ "enum.DamageStateVisualLayers.Base" ]
-        state: alive
-        color: "#FFFDFB"
+# SPDX-FileCopyrightText: 2024 fenndragon
+# SPDX-FileCopyrightText: 2024 fox
+# SPDX-FileCopyrightText: 2025 MajorMoth
+# SPDX-FileCopyrightText: 2025 Rosycup
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
-- type: entity
-  id: ReagentSlimePomelustine
-  parent: ReagentSlime
-  suffix: Pomelustine
-  components:
-  - type: Bloodstream
-    bloodReagent: Pomelustine
-  - type: PointLight
-    color: "#45072f"
-  - type: Sprite
-    drawdepth: Mobs
-    sprite: Mobs/Aliens/elemental.rsi
-    layers:
-      - map: [ "enum.DamageStateVisualLayers.Base" ]
-        state: alive
-        color: "#45072f"
+# The Den start
+# These often end up breaking consent. Removed.
+# - type: entity
+#   id: ReagentSlimeCum
+#   parent: ReagentSlime
+#   suffix: Cum
+#   components:
+#   - type: Bloodstream
+#     bloodReagent: Cum
+#   - type: PointLight
+#     color: "#FFFDFB"
+#   - type: Sprite
+#     drawdepth: Mobs
+#     sprite: Mobs/Aliens/elemental.rsi
+#     layers:
+#       - map: [ "enum.DamageStateVisualLayers.Base" ]
+#         state: alive
+#         color: "#FFFDFB"
 
-- type: entity
-  id: ReagentSlimePhilterex
-  parent: ReagentSlime
-  suffix: Philterex
-  components:
-  - type: Bloodstream
-    bloodReagent: Philterex
-  - type: PointLight
-    color: "#ae0072"
-  - type: Sprite
-    drawdepth: Mobs
-    sprite: Mobs/Aliens/elemental.rsi
-    layers:
-      - map: [ "enum.DamageStateVisualLayers.Base" ]
-        state: alive
-        color: "#ae0072"
+# - type: entity
+#   id: ReagentSlimePomelustine
+#   parent: ReagentSlime
+#   suffix: Pomelustine
+#   components:
+#   - type: Bloodstream
+#     bloodReagent: Pomelustine
+#   - type: PointLight
+#     color: "#45072f"
+#   - type: Sprite
+#     drawdepth: Mobs
+#     sprite: Mobs/Aliens/elemental.rsi
+#     layers:
+#       - map: [ "enum.DamageStateVisualLayers.Base" ]
+#         state: alive
+#         color: "#45072f"
 
-- type: entity
-  id: ReagentSlimeLibidozenithizine
-  parent: ReagentSlime
-  suffix: Libidozenithizine
-  components:
-  - type: Bloodstream
-    bloodReagent: Libidozenithizine
-  - type: PointLight
-    color: "#c90084"
-  - type: Sprite
-    drawdepth: Mobs
-    sprite: Mobs/Aliens/elemental.rsi
-    layers:
-      - map: [ "enum.DamageStateVisualLayers.Base" ]
-        state: alive
-        color: "#c90084"
+# - type: entity
+#   id: ReagentSlimePhilterex
+#   parent: ReagentSlime
+#   suffix: Philterex
+#   components:
+#   - type: Bloodstream
+#     bloodReagent: Philterex
+#   - type: PointLight
+#     color: "#ae0072"
+#   - type: Sprite
+#     drawdepth: Mobs
+#     sprite: Mobs/Aliens/elemental.rsi
+#     layers:
+#       - map: [ "enum.DamageStateVisualLayers.Base" ]
+#         state: alive
+#         color: "#ae0072"
+
+# - type: entity
+#   id: ReagentSlimeLibidozenithizine
+#   parent: ReagentSlime
+#   suffix: Libidozenithizine
+#   components:
+#   - type: Bloodstream
+#     bloodReagent: Libidozenithizine
+#   - type: PointLight
+#     color: "#c90084"
+#   - type: Sprite
+#     drawdepth: Mobs
+#     sprite: Mobs/Aliens/elemental.rsi
+#     layers:
+#       - map: [ "enum.DamageStateVisualLayers.Base" ]
+#         state: alive
+#         color: "#c90084"
+# The Den end
 
 - type: entity
   id: ReagentSlimeOpporozidone

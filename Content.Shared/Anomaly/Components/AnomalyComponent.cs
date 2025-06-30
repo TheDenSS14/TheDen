@@ -1,4 +1,17 @@
-using System.Numerics;
+// SPDX-FileCopyrightText: 2023 Debug <49997488+DebugOk@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Kara <lunarautomaton6@gmail.com>
+// SPDX-FileCopyrightText: 2023 brainfood1183 <113240905+brainfood1183@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Ed <96445749+TheShuEd@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
+// SPDX-FileCopyrightText: 2024 sleepyyapril <flyingkarii@gmail.com>
+// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
+    using System.Numerics;
 using Content.Shared.Anomaly.Prototypes;
 using Content.Shared.Damage;
 using Robust.Shared.Audio;
@@ -185,21 +198,21 @@ public sealed partial class AnomalyComponent : Component
     /// The minimum amount of research points generated per second
     /// </summary>
     [DataField("minPointsPerSecond")]
-    public int MinPointsPerSecond = 40;
+    public int MinPointsPerSecond = 60;
 
     /// <summary>
     /// The maximum amount of research points generated per second
     /// This doesn't include the point bonus for being unstable.
     /// </summary>
     [DataField("maxPointsPerSecond")]
-    public int MaxPointsPerSecond = 150;
+    public int MaxPointsPerSecond = 120;
 
     /// <summary>
     /// The multiplier applied to the point value for the
     /// anomaly being above the <see cref="GrowthThreshold"/>
     /// </summary>
     [DataField("growingPointMultiplier")]
-    public float GrowingPointMultiplier = 2.0f;
+    public float GrowingPointMultiplier = 1.5f;
     #endregion
 
     /// <summary>

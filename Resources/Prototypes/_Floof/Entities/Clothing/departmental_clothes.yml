@@ -1,3 +1,16 @@
+# SPDX-FileCopyrightText: 2024 Dakota Haven
+# SPDX-FileCopyrightText: 2024 Fansana
+# SPDX-FileCopyrightText: 2024 FoxxoTrystan
+# SPDX-FileCopyrightText: 2024 ShatteredSwords
+# SPDX-FileCopyrightText: 2024 cynical
+# SPDX-FileCopyrightText: 2025 Blitz
+# SPDX-FileCopyrightText: 2025 BlitzTheSquishy
+# SPDX-FileCopyrightText: 2025 DeNatus
+# SPDX-FileCopyrightText: 2025 Rosycup
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 #Command Outfits
 #
 #Captain
@@ -18,7 +31,7 @@
   - type: FingerprintMask
 
 - type: entity
-  parent: ClothingShoesBase
+  parent: ClothingShoesBaseSocks #TheDen
   id: ClothingUnderSocksCaptain
   name: captain's thigh-high socks
   description: A pair of thigh-high socks, styled for a captain.
@@ -47,8 +60,8 @@
 - type: entity
   parent: ClothingHandsBase
   id: ClothingHandsCommandWarmers
-  name: command's arm-warmers
-  description: A pair of rather nice arm-warmers, styled for command roles.
+  name: head of personel's arm-warmers
+  description: A pair of rather nice arm-warmers, styled for the head of personel.
   components:
   - type: Sprite
     sprite: _Floof/Clothing/Departmental/Command/commandwarmer.rsi
@@ -60,10 +73,10 @@
   - type: FingerprintMask
 
 - type: entity
-  parent: ClothingShoesBase
+  parent: ClothingShoesBaseSocks #TheDen
   id: ClothingUnderSocksCommand
-  name: command's thigh-high socks
-  description: A pair of thigh-high socks, styled for command roles.
+  name: head of personel's thigh-high socks
+  description: A pair of thigh-high socks, styled for the head of personel.
   components:
   - type: Sprite
     sprite: _Floof/Clothing/Departmental/Command/commandsocks.rsi
@@ -73,8 +86,8 @@
 - type: entity
   parent: ClothingUniformBase
   id: ClothingUniformCommandThong
-  name: command's thong
-  description: Styled for a commanding officer, but is this even considered a piece of clothing?
+  name: head of personel's thong
+  description: Styled for a head of personel, but is this even considered a piece of clothing?
   components:
   - type: Sprite
     sprite: _Floof/Clothing/Departmental/Command/commandthong.rsi
@@ -103,7 +116,7 @@
   - type: FingerprintMask
 
 - type: entity
-  parent: ClothingShoesBase
+  parent: ClothingShoesBaseSocks #TheDen
   id: ClothingUnderSocksEngi
   name: engineering thigh-high socks
   description: A pair of thigh-high socks, styled for Engineering roles.
@@ -144,7 +157,7 @@
   - type: FingerprintMask
 
 - type: entity
-  parent: ClothingShoesBase
+  parent: ClothingShoesBaseSocks #TheDen
   id: ClothingUnderSocksChiefEngi
   name: chief engineer's thigh-high socks
   description: A pair of thigh-high socks, styled for Logistic roles.
@@ -191,7 +204,7 @@
   - type: FingerprintMask
 
 - type: entity
-  parent: ClothingShoesBase
+  parent: ClothingShoesBaseSocks #TheDen
   id: ClothingUnderSocksEpi
   name: epistemics thigh-high socks
   description: A pair of thigh-high socks, styled for Epistemic roles.
@@ -232,7 +245,7 @@
   - type: FingerprintMask
 
 - type: entity
-  parent: ClothingShoesBase
+  parent: ClothingShoesBaseSocks #TheDen
   id: ClothingUnderSocksChaplain
   name: chaplain thigh-high socks
   description: A pair of thigh-high socks, oddly, styled for a Chaplain.
@@ -296,7 +309,7 @@
   - type: FingerprintMask
 
 - type: entity
-  parent: ClothingShoesBase
+  parent: ClothingShoesBaseSocks #TheDen
   id: ClothingUnderSocksEpiHead
   name: research director's thigh-high socks
   description: A pair of thigh-high socks, styled for the research director.
@@ -337,7 +350,7 @@
   - type: FingerprintMask
 
 - type: entity
-  parent: ClothingShoesMilitaryBase
+  parent: ClothingShoesBaseSocks #TheDen
   id: ClothingUnderSocksMantisEpi
   name: psionic mantis' thigh-high socks
   description: A pair of thigh-high socks, styled for a Psionic Mantis.
@@ -380,7 +393,7 @@
   - type: FingerprintMask
 
 - type: entity
-  parent: ClothingShoesBase
+  parent: ClothingShoesBaseSocks #TheDen
   id: ClothingUnderSocksLogis
   name: logistics thigh-high socks
   description: A pair of thigh-high socks, styled for Logistic roles.
@@ -421,7 +434,7 @@
   - type: FingerprintMask
 
 - type: entity
-  parent: ClothingShoesBase
+  parent: ClothingShoesBaseSocks #TheDen
   id: ClothingUnderSocksLOLogis
   name: logistics officer thigh-high socks
   description: A pair of thigh-high socks, styled for Logistic roles.
@@ -462,7 +475,7 @@
   - type: FingerprintMask
 
 - type: entity
-  parent: ClothingShoesBase
+  parent: ClothingShoesBaseSocks #TheDen
   id: ClothingUnderSocksCourier
   name: courier thigh-high socks
   description: A pair of thigh-high socks, styled for Couriers.
@@ -505,7 +518,7 @@
   - type: FingerprintMask
 
 - type: entity
-  parent: ClothingShoesBase
+  parent: ClothingShoesBaseSocks #TheDen
   id: ClothingUnderSocksMedic
   name: medical thigh-high socks
   description: A pair of thigh-high socks, styled for Medic roles.
@@ -546,7 +559,7 @@
   - type: FingerprintMask
 
 - type: entity
-  parent: ClothingShoesBase
+  parent: ClothingShoesBaseSocks #TheDen
   id: ClothingUnderSocksChemists
   name: chemist thigh-high socks
   description: A pair of thigh-high socks, styled for Chemists.
@@ -587,7 +600,7 @@
   - type: FingerprintMask
 
 - type: entity
-  parent: ClothingShoesBase
+  parent: ClothingShoesBaseSocks #TheDen
   id: ClothingUnderSocksParaMedic
   name: paramedic thigh-high socks
   description: A pair of thigh-high socks, styled for Paramedic roles.
@@ -628,7 +641,7 @@
   - type: FingerprintMask
 
 - type: entity
-  parent: ClothingShoesBase
+  parent: ClothingShoesBaseSocks #TheDen
   id: ClothingUnderSocksCMO
   name: chief med officer's thigh-high socks
   description: A pair of thigh-high socks, styled for the CMO.
@@ -671,7 +684,7 @@
   - type: FingerprintMask
 
 - type: entity
-  parent: ClothingShoesMilitaryBase
+  parent: ClothingShoesBaseSocks #TheDen
   id: ClothingUnderSocksSecurity
   name: security thigh-high socks
   description: A pair of thigh-high socks, styled for Security roles.
@@ -712,7 +725,7 @@
   - type: FingerprintMask
 
 - type: entity
-  parent: ClothingShoesMilitaryBase
+  parent: ClothingShoesBaseSocks #TheDen
   id: ClothingUnderSocksHeadSecurity
   name: HoS thigh-high socks
   description: A pair of thigh-high socks, styled for the HoS.
@@ -753,7 +766,7 @@
   - type: FingerprintMask
 
 - type: entity
-  parent: ClothingShoesMilitaryBase
+  parent: ClothingShoesBaseSocks #TheDen
   id: ClothingUnderSocksDetective
   name: detective's thigh-high socks
   description: A pair of thigh-high socks, styled for a Detective.
@@ -796,7 +809,7 @@
   - type: FingerprintMask
 
 - type: entity
-  parent: ClothingShoesBase
+  parent: ClothingShoesBaseSocks #TheDen
   id: ClothingUnderSocksService
   name: service thigh-high socks
   description: A pair of thigh-high socks, styled for Service workers.
@@ -848,7 +861,7 @@
   - type: FingerprintMask
 
 - type: entity
-  parent: ClothingShoesBase
+  parent: ClothingShoesBaseSocks #TheDen
   id: ClothingUnderSocksJanitor
   name: rubber thigh-high socks
   description: A pair of thigh-high socks, styled for Janitorial.
@@ -890,7 +903,7 @@
   - type: FingerprintMask
 
 - type: entity
-  parent: ClothingShoesBase
+  parent: ClothingShoesBaseSocks #TheDen
   id: ClothingUnderSocksBartender
   name: bartender thigh-high socks
   description: A pair of thigh-high socks, styled for Bartenders.
@@ -931,7 +944,7 @@
   - type: FingerprintMask
 
 - type: entity
-  parent: ClothingShoesBase
+  parent: ClothingShoesBaseSocks #TheDen
   id: ClothingUnderSocksMusician
   name: musician thigh-high socks
   description: A pair of thigh-high socks, styled for musicians.
@@ -972,7 +985,7 @@
   - type: FingerprintMask
 
 - type: entity
-  parent: ClothingShoesBase
+  parent: ClothingShoesBaseSocks #TheDen
   id: ClothingUnderSocksChef
   name: chef thigh-high socks
   description: A pair of thigh-high socks, styled for a Chef.

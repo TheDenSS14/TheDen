@@ -1,3 +1,9 @@
+# SPDX-FileCopyrightText: 2025 Blitz
+# SPDX-FileCopyrightText: 2025 portfiend
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 - type: loadout
   id: LoadoutServiceJumpsuitChef
   category: JobsServiceChef
@@ -25,3 +31,49 @@
         - Chef
   items:
     - ClothingUniformJumpskirtChef
+
+# Masks
+
+- type: loadout
+  id: LoadoutServiceMaskItalianMoustache
+  category: JobsServiceChef
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutChefMask
+    - !type:CharacterJobRequirement
+      jobs:
+        - Chef
+  items:
+    - ClothingMaskItalianMoustache
+
+# Outer
+
+- type: loadout
+  id: LoadoutServiceOuterWinterChef
+  category: JobsServiceChef
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutChefOuter
+    - !type:CharacterJobRequirement
+      jobs:
+        - Chef
+  items:
+    - ClothingOuterWinterChef
+
+- type: loadout
+  id: LoadoutServiceOuterApronChef
+  category: JobsServiceChef
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutChefOuter
+    - !type:CharacterJobRequirement
+      jobs:
+        - Chef
+  items:
+    - ClothingOuterApronChef

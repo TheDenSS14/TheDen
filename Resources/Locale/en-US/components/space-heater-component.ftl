@@ -1,4 +1,9 @@
-﻿comp-space-heater-ui-thermostat = Thermostat:
+# SPDX-FileCopyrightText: 2024 Menshin <Menshin@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: MIT
+
+comp-space-heater-ui-thermostat = Thermostat:
 comp-space-heater-ui-mode = Mode
 comp-space-heater-ui-status-disabled = Off
 comp-space-heater-ui-status-enabled = On

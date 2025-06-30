@@ -1,3 +1,13 @@
+# SPDX-FileCopyrightText: 2023 Adrian16199 <144424013+Adrian16199@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Fluffiest Floofers <thebluewulf@gmail.com>
+# SPDX-FileCopyrightText: 2024 SimpleStation14 <130339894+SimpleStation14@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Rosycup <178287475+Rosycup@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 TheOneTrueWolfio <Wolfgangleader3@gmail.com>
+# SPDX-FileCopyrightText: 2025 TheOneTrueWolfio <wolfgangleader3@gmail.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 - type: soundCollection
   id: AvaliScreams
   files:
@@ -13,7 +23,7 @@
     Laugh:
       path: /Audio/_RMC14/Voice/Avali/avali_laugh.ogg
     Sneeze:
-      collection: MaleSneezes
+      path: /Audio/_DEN/avali_sneeze.ogg
     Cough:
       collection: MaleCoughs
     CatMeow:
@@ -31,13 +41,17 @@
     Honk:
       collection: BikeHorn
     Sigh:
-      collection: MaleSigh
+      path: /Audio/_DEN/avali_sigh.ogg
     Crying:
-      collection: MaleCry
+      path: /Audio/_DEN/avali_cry.ogg
     Whistle:
       collection: Whistles
     Weh:
       collection: Weh
+    Coo:
+      path: /Audio/_DEN/avali_coo.ogg
+    AvaliHonk:
+      path: /Audio/_DEN/avali_honk.ogg
 
 - type: emoteSounds
   id: FemaleAvali
@@ -49,7 +63,7 @@
     Laugh:
       path: /Audio/_RMC14/Voice/Avali/avali_laugh.ogg
     Sneeze:
-      collection: FemaleSneezes
+      path: /Audio/_DEN/avali_sneeze.ogg
     Cough:
       collection: FemaleCoughs
     CatMeow:
@@ -67,10 +81,14 @@
     Honk:
       collection: CluwneHorn
     Sigh:
-      collection: FemaleSigh
+      path: /Audio/_DEN/avali_sigh.ogg
     Crying:
-      collection: FemaleCry
+      path: /Audio/_DEN/avali_cry.ogg
     Whistle:
       collection: Whistles
     Weh:
       collection: Weh
+    Coo:
+      path: /Audio/_DEN/avali_coo.ogg
+    AvaliHonk:
+      path: /Audio/_DEN/avali_honk.ogg

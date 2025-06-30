@@ -1,21 +1,25 @@
+# SPDX-FileCopyrightText: 2025 portfiend <109661617+portfiend@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 - type: characterItemGroup
   id: TraitsRaceSounds
+  maxItems: 1
   items:
-    - type: loadout
+    - type: trait
       id: VulpkaninSounds
-    - type: loadout
+    - type: trait
       id: FelinidSounds
-    - type: loadout
-      id: HarpySounds
-    - type: loadout
+    - type: trait
       id: OniSounds
-    - type: loadout
+    - type: trait
       id: ShadowkinSounds
-    - type: loadout
+    - type: trait
       id: SiliconSounds
-    - type: loadout
+    - type: trait
       id: ReptilianSounds
-    - type: loadout
+    - type: trait
       id: OviniaSounds
-    - type: loadout
+    - type: trait
       id: FeroxiSounds

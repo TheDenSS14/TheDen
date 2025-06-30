@@ -1,5 +1,10 @@
-using System.ComponentModel;
-using Content.Server.DeviceLinking.Events;
+// SPDX-FileCopyrightText: 2024 SpeltIncorrectyl <66873282+SpeltIncorrectyl@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
+using Content.Shared.DeviceLinking.Events;
 using Content.Shared.Power.Generator;
 
 namespace Content.Server.Power.Generator;

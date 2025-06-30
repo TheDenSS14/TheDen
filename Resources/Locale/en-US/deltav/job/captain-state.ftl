@@ -1,3 +1,8 @@
+# SPDX-FileCopyrightText: 2024 SolStar <44028047+ewokswagger@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 # Announcements related to captain presence and ACO state
 
 captain-arrived-revoke-aco-announcement = The Acting Commanding Officer's position is revoked due to the arrival of a NanoTrasen-appointed captain. All personnel are to return to the standard Chain of Command.

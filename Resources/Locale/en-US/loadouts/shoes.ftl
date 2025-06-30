@@ -1,3 +1,10 @@
+# SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT <77995199+DEATHB4DEFEAT@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 VMSolidus <evilexecutive@gmail.com>
+# SPDX-FileCopyrightText: 2024 sleepyyapril <flyingkarii@gmail.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 loadout-description-LoadoutShoesBlack = Step into the shadows with these sleek and stylish black shoes, perfect for ninjas or anyone looking to leave an enigmatic impression.
 loadout-description-LoadoutShoesBlue =  From zero-gravity dance floors to orbital adventures, these kicks are ready to make your journey as vibrant as the cosmos.
 loadout-description-LoadoutShoesBrown = Classic and reliable, these brown shoes are like your trusted sidekick on any adventure.

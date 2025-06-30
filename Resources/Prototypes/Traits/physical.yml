@@ -1,3 +1,31 @@
+# SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT
+# SPDX-FileCopyrightText: 2024 FoxxoTrystan
+# SPDX-FileCopyrightText: 2024 Memeji
+# SPDX-FileCopyrightText: 2024 ShatteredSwords
+# SPDX-FileCopyrightText: 2024 Timemaster99
+# SPDX-FileCopyrightText: 2024 fox
+# SPDX-FileCopyrightText: 2025 Blitz
+# SPDX-FileCopyrightText: 2025 BloodfiendishOperator
+# SPDX-FileCopyrightText: 2025 BramvanZijp
+# SPDX-FileCopyrightText: 2025 EctoplasmIsGood
+# SPDX-FileCopyrightText: 2025 M3739
+# SPDX-FileCopyrightText: 2025 MajorMoth
+# SPDX-FileCopyrightText: 2025 Raikyr0
+# SPDX-FileCopyrightText: 2025 Rosycup
+# SPDX-FileCopyrightText: 2025 Rosycup <***>
+# SPDX-FileCopyrightText: 2025 Rosycup <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>
+# SPDX-FileCopyrightText: 2025 SX-7
+# SPDX-FileCopyrightText: 2025 Sapphire
+# SPDX-FileCopyrightText: 2025 Skubman
+# SPDX-FileCopyrightText: 2025 Tabitha
+# SPDX-FileCopyrightText: 2025 TheOneTrueWolfio
+# SPDX-FileCopyrightText: 2025 VMSolidus
+# SPDX-FileCopyrightText: 2025 foxcurl
+# SPDX-FileCopyrightText: 2025 portfiend
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 - type: trait
   id: WillToLive
   category: TraitsPhysicalFeats
@@ -329,6 +357,8 @@
       species:
         - Felinid # Felinids/Tajaran already have this feature by default.
         - Rodentia # Floof - Rodentia
+        - Resomi # Floof - have this by default after porting Goob changes
+        - Kitsune # Floof - M3739 - #937 - Kitsune have this by default.
         - Tajaran
     - !type:CharacterHeightRequirement
       max: 150
@@ -727,9 +757,11 @@
         - type: ShowHealthBars
           damageContainers:
           - Biological
+          - BiologicalMetaphysical # Floof - M3739 - #1006
         - type: ShowHealthIcons
           damageContainers:
           - Biological
+          - BiologicalMetaphysical # Floof - M3739 - #1006
 
 - type: trait
   id: CyberEyesDiagnostic
@@ -792,9 +824,11 @@
         - type: ShowHealthIcons
           damageContainers:
           - Biological
+          - BiologicalMetaphysical # Floof - M3739 - #1006
         - type: ShowHealthBars
           damageContainers:
           - Biological
+          - BiologicalMetaphysical # Floof - M3739 - #1006
           - Inorganic
           - Silicon
 
@@ -1254,7 +1288,7 @@
 # Commented out upon request for the time being
 #- type: trait
 #  id: EggLaying
-#  category: TraitsPhysicalBiological
+#  category: Lewd
 #  points: 0
 #  requirements:
 #  - !type:CharacterJobRequirement

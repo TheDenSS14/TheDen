@@ -1,4 +1,9 @@
-﻿#nullable enable
+// SPDX-FileCopyrightText: 2023 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+//
+// SPDX-License-Identifier: MIT
+
+#nullable enable
 using System.Collections.Generic;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;

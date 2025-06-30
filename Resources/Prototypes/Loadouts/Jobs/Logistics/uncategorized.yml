@@ -1,3 +1,10 @@
+# SPDX-FileCopyrightText: 2024 VMSolidus <evilexecutive@gmail.com>
+# SPDX-FileCopyrightText: 2025 BlitzTheSquishy <73762869+BlitzTheSquishy@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 MajorMoth <61519600+MajorMoth@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 # Uncategorized
 # Backpacks
 - type: loadout
@@ -13,6 +20,11 @@
     - !type:CharacterDepartmentRequirement
       departments:
         - Logistics
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - SalvageSpecialist # For salvage recognizibility
+        - Quartermaster # LO has a LO specific variant
 
 - type: loadout
   id: LoadoutBackpackSatchelCargo
@@ -27,6 +39,11 @@
     - !type:CharacterDepartmentRequirement
       departments:
         - Logistics
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - SalvageSpecialist # For salvage recognizibility
+        - Quartermaster # LO has a LO specific variant
 
 - type: loadout
   id: LoadoutBackpackDuffelCargo
@@ -41,6 +58,11 @@
     - !type:CharacterDepartmentRequirement
       departments:
         - Logistics
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - SalvageSpecialist # For salvage recognizibility
+        - Quartermaster # LO has a LO specific variant
 
 # Belt
 
@@ -66,6 +88,10 @@
     - !type:CharacterDepartmentRequirement
       departments:
         - Logistics
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Quartermaster # LO has a LO specific variant
 
 
 # Id

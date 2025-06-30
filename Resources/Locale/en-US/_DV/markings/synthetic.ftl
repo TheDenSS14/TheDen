@@ -1,3 +1,8 @@
+# SPDX-FileCopyrightText: 2025 Falcon <falcon@zigtag.dev>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 # Antennae
 marking-SynthAntennaBasic = Synth Antenna Basic
 marking-SynthAntennaBasic-synth_antenna_basic = Primary
@@ -100,8 +105,8 @@ marking-SyntheticVulpkaninHead = Vulpkanin Head from Ward-Takahashi
 marking-SyntheticVulpkaninHead-vulp_head = Primary
 
 # Eyes
-marking-ProtogenEyes = Protogen Screen
-marking-ProtogenEyes-protogen_eyes = Primary
+marking-ProtogenMouth = Protogen Mouth
+marking-ProtogenMouth-protogen_mouth = Primary
 
 marking-SyntheticIPCEyes = Anthropomorphic Eyes
 marking-SyntheticIPCEyes-eyes = Primary

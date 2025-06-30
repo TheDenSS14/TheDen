@@ -1,3 +1,28 @@
+// SPDX-FileCopyrightText: 2021 Alex Evgrashin <aevgrashin@yandex.ru>
+// SPDX-FileCopyrightText: 2022 Justin Trotter <trotter.justin@gmail.com>
+// SPDX-FileCopyrightText: 2022 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 Paul Ritter <ritter.paul1@googlemail.com>
+// SPDX-FileCopyrightText: 2022 mirrorcult <lunarautomaton6@gmail.com>
+// SPDX-FileCopyrightText: 2022 wrexbe <81056464+wrexbe@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 20kdc <asdd2808@gmail.com>
+// SPDX-FileCopyrightText: 2023 Ahion <58528255+Ahion@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Alex <129697969+Lomcastar@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 DEATHB4DEFEAT <77995199+DEATHB4DEFEAT@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Eoin Mcloughlin <helloworld@eoinrul.es>
+// SPDX-FileCopyrightText: 2023 Julian Giebel <juliangiebel@live.de>
+// SPDX-FileCopyrightText: 2023 Visne <39844191+Visne@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 chromiumboy <50505512+chromiumboy@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 eoineoineoin <eoin.mcloughlin+gh@gmail.com>
+// SPDX-FileCopyrightText: 2023 keronshb <54602815+keronshb@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
+// SPDX-FileCopyrightText: 2024 Pspritechologist <81725545+Pspritechologist@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 MajorMoth <61519600+MajorMoth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Numerics;
@@ -25,6 +50,7 @@ public sealed partial class CrewMonitoringWindow : FancyWindow
 {
     [Dependency] private readonly IEntityManager _entManager = default!;
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
+    private readonly SharedTransformSystem _transformSystem;
     private readonly SpriteSystem _spriteSystem;
 
     private NetEntity? _trackedEntity;
@@ -36,10 +62,10 @@ public sealed partial class CrewMonitoringWindow : FancyWindow
         RobustXamlLoader.Load(this);
         IoCManager.InjectDependencies(this);
 
+        _transformSystem = _entManager.System<SharedTransformSystem>();
         _spriteSystem = _entManager.System<SpriteSystem>();
 
         NavMap.TrackedEntitySelectedAction += SetTrackedEntityFromNavMap;
-
     }
 
     public void Set(string stationName, EntityUid? mapUid)
@@ -308,7 +334,7 @@ public sealed partial class CrewMonitoringWindow : FancyWindow
             {
                 NavMap.TrackedEntities.TryAdd(sensor.SuitSensorUid,
                     new NavMapBlip
-                    (coordinates.Value,
+                    (CoordinatesToLocal(coordinates.Value),
                     _blipTexture,
                     (_trackedEntity == null || sensor.SuitSensorUid == _trackedEntity) ? Color.LimeGreen : Color.LimeGreen * Color.DimGray,
                     sensor.SuitSensorUid == _trackedEntity));
@@ -374,7 +400,7 @@ public sealed partial class CrewMonitoringWindow : FancyWindow
             if (NavMap.TrackedEntities.TryGetValue(castSensor.SuitSensorUid, out var data))
             {
                 data = new NavMapBlip
-                    (data.Coordinates,
+                    (CoordinatesToLocal(data.Coordinates),
                     data.Texture,
                     (currTrackedEntity == null || castSensor.SuitSensorUid == currTrackedEntity) ? Color.LimeGreen : Color.LimeGreen * Color.DimGray,
                     castSensor.SuitSensorUid == currTrackedEntity);
@@ -437,6 +463,26 @@ public sealed partial class CrewMonitoringWindow : FancyWindow
         nextScrollPosition = null;
 
         return false;
+    }
+
+    /// <summary>
+    /// Converts the input coordinates to an EntityCoordinates which are in
+    /// reference to the grid that the map is displaying. This is a stylistic
+    /// choice; this window deliberately limits the rate that blips update,
+    /// but if the blip is attached to another grid which is moving, that
+    /// blip will move smoothly, unlike the others. By converting the
+    /// coordinates, we are back in control of the blip movement.
+    /// </summary>
+    private EntityCoordinates CoordinatesToLocal(EntityCoordinates refCoords)
+    {
+        if (NavMap.MapUid != null)
+        {
+            return _transformSystem.WithEntityId(refCoords, (EntityUid)NavMap.MapUid);
+        }
+        else
+        {
+            return refCoords;
+        }
     }
 
     private void ClearOutDatedData()

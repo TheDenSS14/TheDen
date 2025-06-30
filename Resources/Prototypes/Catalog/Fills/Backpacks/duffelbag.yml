@@ -1,3 +1,61 @@
+# SPDX-FileCopyrightText: 2021 Pieter-Jan Briers
+# SPDX-FileCopyrightText: 2021 Swept
+# SPDX-FileCopyrightText: 2022 Ablankmann
+# SPDX-FileCopyrightText: 2022 Alex Evgrashin
+# SPDX-FileCopyrightText: 2022 Emisse
+# SPDX-FileCopyrightText: 2022 EmoGarbage404
+# SPDX-FileCopyrightText: 2022 Fishfish458
+# SPDX-FileCopyrightText: 2022 Kara
+# SPDX-FileCopyrightText: 2022 Level10Cybermancer
+# SPDX-FileCopyrightText: 2022 Mervill
+# SPDX-FileCopyrightText: 2022 Moony
+# SPDX-FileCopyrightText: 2022 Myctai
+# SPDX-FileCopyrightText: 2022 Peptide90
+# SPDX-FileCopyrightText: 2022 Rane
+# SPDX-FileCopyrightText: 2022 TaralGit
+# SPDX-FileCopyrightText: 2022 Willhelm53
+# SPDX-FileCopyrightText: 2022 ZeroDayDaemon
+# SPDX-FileCopyrightText: 2022 Zymem
+# SPDX-FileCopyrightText: 2022 and_a
+# SPDX-FileCopyrightText: 2022 fishfish458 <fishfish458>
+# SPDX-FileCopyrightText: 2022 lapatison
+# SPDX-FileCopyrightText: 2022 metalgearsloth
+# SPDX-FileCopyrightText: 2022 ninruB
+# SPDX-FileCopyrightText: 2023 Danger Revolution!
+# SPDX-FileCopyrightText: 2023 DangerRevoltion
+# SPDX-FileCopyrightText: 2023 Flareguy
+# SPDX-FileCopyrightText: 2023 FluidRock
+# SPDX-FileCopyrightText: 2023 Geekyhobo
+# SPDX-FileCopyrightText: 2023 JoeHammad1844
+# SPDX-FileCopyrightText: 2023 LankLTE
+# SPDX-FileCopyrightText: 2023 Leon Friedrich
+# SPDX-FileCopyrightText: 2023 Nemanja
+# SPDX-FileCopyrightText: 2023 Ubaser
+# SPDX-FileCopyrightText: 2023 Whisper
+# SPDX-FileCopyrightText: 2023 crazybrain23
+# SPDX-FileCopyrightText: 2023 deltanedas
+# SPDX-FileCopyrightText: 2023 deltanedas <@deltanedas:kde.org>
+# SPDX-FileCopyrightText: 2023 liltenhead
+# SPDX-FileCopyrightText: 2023 nukashimika
+# SPDX-FileCopyrightText: 2023 vanx
+# SPDX-FileCopyrightText: 2024 AlexUm & XGabriel08X
+# SPDX-FileCopyrightText: 2024 Alzore
+# SPDX-FileCopyrightText: 2024 Debug
+# SPDX-FileCopyrightText: 2024 Firewatch
+# SPDX-FileCopyrightText: 2024 SimpleStation14
+# SPDX-FileCopyrightText: 2024 a_person
+# SPDX-FileCopyrightText: 2024 gluesniffler
+# SPDX-FileCopyrightText: 2024 starch
+# SPDX-FileCopyrightText: 2025 Blitz
+# SPDX-FileCopyrightText: 2025 BlitzTheSquishy
+# SPDX-FileCopyrightText: 2025 ConstantlyConfused
+# SPDX-FileCopyrightText: 2025 Skubman
+# SPDX-FileCopyrightText: 2025 VMSolidus
+# SPDX-FileCopyrightText: 2025 mart
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 - type: entity
   parent: ClothingBackpackDuffelMedical
   id: ClothingBackpackDuffelSurgeryFilled
@@ -92,7 +150,7 @@
   parent: ClothingBackpackDuffelSyndicateBundle
   id: ClothingBackpackDuffelSyndicateFilledLMG
   name: L6 Saw bundle
-  description: "More dakka: The iconic L6 lightmachinegun, bundled with 2 box magazines."
+  description: "More dakka: The iconic L6 lightmachinegun, bundled with 2 belt boxes."
   components:
   - type: StorageFill
     contents:
@@ -135,7 +193,7 @@
   parent: ClothingBackpackDuffelSyndicateAmmo
   id: ClothingBackpackDuffelSyndicateAmmoFilled
   name: ammo bundle
-  description: "Reloading! Contains 4 magazines for the C-20r, 4 drums for the Bulldog, 2 ammo boxes for the L6 SAW, and 3 mags for the Burner."
+  description: "Reloading! Contains 4 magazines for the C-20r, 4 drums for the Bulldog, 2 belt boxes for the L6 SAW, and 3 mags for the Burner."
   components:
   - type: StorageFill
     contents:
@@ -156,7 +214,7 @@
   parent: ClothingBackpackDuffelSyndicateAmmo
   id: ClothingBackpackDuffelSyndicateAmmoFilledRubber
   name: ammo bundle
-  description: "Reloading! Contains 4 magazines for the C-20r, 4 drums for the Bulldog, and 2 ammo boxes for the L6 SAW."
+  description: "Reloading! Contains 4 magazines for the C-20r, 4 drums for the Bulldog, and 2 belt boxes for the L6 SAW."
   suffix: Non-lethal # TheDen
   components:
   - type: StorageFill
@@ -172,7 +230,7 @@
   parent: ClothingBackpackDuffelSyndicateAmmo
   id: ClothingBackpackDuffelSyndicateAmmoFilledIncendiary
   name: ammo bundle
-  description: "Reloading! Contains 4 magazines for the C-20r, 4 drums for the Bulldog, and 2 ammo boxes for the L6 SAW."
+  description: "Reloading! Contains 4 magazines for the C-20r, 4 drums for the Bulldog, and 2 belt boxes for the L6 SAW."
   suffix: Incendiary # TheDen
   components:
   - type: StorageFill
@@ -188,7 +246,7 @@
   parent: ClothingBackpackDuffelSyndicateAmmo
   id: ClothingBackpackDuffelSyndicateAmmoFilledShrapnel
   name: ammo bundle
-  description: "Reloading! Contains 4 magazines for the C-20r, 4 drums for the Bulldog, and 2 ammo boxes for the L6 SAW."
+  description: "Reloading! Contains 4 magazines for the C-20r, 4 drums for the Bulldog, and 2 belt boxes for the L6 SAW."
   suffix: Shrapnel # TheDen
   components:
   - type: StorageFill

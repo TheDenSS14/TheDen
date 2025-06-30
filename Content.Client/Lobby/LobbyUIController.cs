@@ -1,3 +1,17 @@
+// SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT
+// SPDX-FileCopyrightText: 2024 FoxxoTrystan
+// SPDX-FileCopyrightText: 2024 Leon Friedrich
+// SPDX-FileCopyrightText: 2024 Mnemotechnican
+// SPDX-FileCopyrightText: 2024 VMSolidus
+// SPDX-FileCopyrightText: 2024 deltanedas
+// SPDX-FileCopyrightText: 2024 metalgearsloth
+// SPDX-FileCopyrightText: 2025 Skubman
+// SPDX-FileCopyrightText: 2025 dootythefrooty
+// SPDX-FileCopyrightText: 2025 portfiend
+// SPDX-FileCopyrightText: 2025 sleepyyapril
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 using System.Linq;
 using Content.Client.Guidebook;
 using Content.Client.Humanoid;
@@ -134,7 +148,7 @@ public sealed class LobbyUIController : UIController, IOnStateEntered<LobbyState
             _profileEditor.UpdateTraits(null, true);
 
         if (obj.WasModified<LoadoutPrototype>())
-            _profileEditor.UpdateLoadouts(null, true);
+            _profileEditor.UpdateLoadouts(true);
     }
 
 
@@ -207,6 +221,7 @@ public sealed class LobbyUIController : UIController, IOnStateEntered<LobbyState
             _dialogManager,
             _playerManager,
             _prototypeManager,
+            _resourceCache,
             _requirements,
             _markings,
             _random);

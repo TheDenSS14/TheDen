@@ -1,3 +1,13 @@
+# SPDX-FileCopyrightText: 2020 Swept
+# SPDX-FileCopyrightText: 2023 OctoRocket
+# SPDX-FileCopyrightText: 2023 faint
+# SPDX-FileCopyrightText: 2025 GNUtopia
+# SPDX-FileCopyrightText: 2025 Mae
+# SPDX-FileCopyrightText: 2025 portfiend
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 - type: entity
   parent: ClothingNeckScarfBase
   id: ClothingNeckScarfStripedRed
@@ -132,7 +142,7 @@
 
 # Pride Scarves
 - type: entity
-  parent: ClothingNeckBase
+  parent: ClothingNeckScarfBase
   id: ClothingNeckScarfStripedAce
   name: striped asexual scarf
   description: A stylish striped asexual scarf. The perfect winter accessory for those with a keen fashion sense, and those who just can't handle a cold breeze on their necks.
@@ -143,7 +153,7 @@
     sprite: Clothing/Neck/Scarfs/PrideScarfs/ace.rsi
 
 - type: entity
-  parent: ClothingNeckBase
+  parent: ClothingNeckScarfBase
   id: ClothingNeckScarfStripedAro
   name: striped aromantic scarf
   description: A stylish striped aromantic scarf. The perfect winter accessory for those with a keen fashion sense, and those who just can't handle a cold breeze on their necks.
@@ -154,7 +164,7 @@
     sprite: Clothing/Neck/Scarfs/PrideScarfs/aro.rsi
 
 - type: entity
-  parent: ClothingNeckBase
+  parent: ClothingNeckScarfBase
   id: ClothingNeckScarfStripedBiSexual
   name: striped bisexual scarf
   description: A stylish striped bisexual scarf. The perfect winter accessory for those with a keen fashion sense, and those who just can't handle a cold breeze on their necks.
@@ -165,7 +175,7 @@
     sprite: Clothing/Neck/Scarfs/PrideScarfs/bi.rsi
 
 - type: entity
-  parent: ClothingNeckBase
+  parent: ClothingNeckScarfBase
   id: ClothingNeckScarfStripedGay
   name: striped gay scarf
   description: A stylish striped gay scarf. The perfect winter accessory for those with a keen fashion sense, and those who just can't handle a cold breeze on their necks.
@@ -176,7 +186,7 @@
     sprite: Clothing/Neck/Scarfs/PrideScarfs/gay.rsi
 
 - type: entity
-  parent: ClothingNeckBase
+  parent: ClothingNeckScarfBase
   id: ClothingNeckScarfStripedInter
   name: striped intersex scarf
   description: A stylish striped intersex scarf. The perfect winter accessory for those with a keen fashion sense, and those who just can't handle a cold breeze on their necks.
@@ -187,7 +197,7 @@
     sprite: Clothing/Neck/Scarfs/PrideScarfs/inter.rsi
 
 - type: entity
-  parent: ClothingNeckBase
+  parent: ClothingNeckScarfBase
   id: ClothingNeckScarfStripedLesbian
   name: striped lesbian scarf
   description: A stylish striped lesbian scarf. The perfect winter accessory for those with a keen fashion sense, and those who just can't handle a cold breeze on their necks.
@@ -198,7 +208,7 @@
     sprite: Clothing/Neck/Scarfs/PrideScarfs/lesbian.rsi
 
 - type: entity
-  parent: ClothingNeckBase
+  parent: ClothingNeckScarfBase
   id: ClothingNeckScarfStripedPan
   name: striped pan scarf
   description: A stylish striped pan scarf. The perfect winter accessory for those with a keen fashion sense, and those who just can't handle a cold breeze on their necks.
@@ -209,7 +219,7 @@
     sprite: Clothing/Neck/Scarfs/PrideScarfs/pan.rsi
 
 - type: entity
-  parent: ClothingNeckBase
+  parent: ClothingNeckScarfBase
   id: ClothingNeckScarfStripedNonBinary
   name: striped non-binary scarf
   description: A stylish striped non-binary scarf. The perfect winter accessory for those with a keen fashion sense, and those who just can't handle a cold breeze on their necks.
@@ -220,7 +230,7 @@
     sprite: Clothing/Neck/Scarfs/PrideScarfs/non.rsi
 
 - type: entity
-  parent: ClothingNeckBase
+  parent: ClothingNeckScarfBase
   id: ClothingNeckScarfStripedRainbow
   name: rainbow scarf
   description: A stylish rainbow scarf. The perfect winter accessory for those with a keen fashion sense, and those who just can't handle a cold breeze on their necks.
@@ -231,7 +241,7 @@
     sprite: Clothing/Neck/Scarfs/PrideScarfs/rainbow.rsi
 
 - type: entity
-  parent: ClothingNeckBase
+  parent: ClothingNeckScarfBase
   id: ClothingNeckScarfStripedTrans
   name: striped trans scarf
   description: A stylish striped trans scarf. The perfect winter accessory for those with a keen fashion sense, and those who just can't handle a cold breeze on their necks.
@@ -242,7 +252,7 @@
     sprite: Clothing/Neck/Scarfs/PrideScarfs/trans.rsi
 
 - type: entity
-  parent: ClothingNeckBase
+  parent: ClothingNeckScarfBase
   id: ClothingNeckScarfStripedLesbianLong
   name: long bacon
   description: Long bacon! Perfect for sharing with your girlfriend!

@@ -1,6 +1,16 @@
+// SPDX-FileCopyrightText: 2024 VMSolidus <evilexecutive@gmail.com>
+// SPDX-FileCopyrightText: 2025 BlitzTheSquishy <73762869+BlitzTheSquishy@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Falcon <falcon@zigtag.dev>
+// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 sleepyyapril <flyingkarii@gmail.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 using Content.Server.Parallax;
 using Content.Server.Station.Components;
 using Robust.Server.GameObjects;
+using Robust.Shared.EntitySerialization.Systems;
+
 
 namespace Content.Server.Station.Systems;
 
@@ -23,7 +33,7 @@ public sealed class StationSurfaceSystem : EntitySystem
             return;
 
         var map = _map.CreateMap(out var mapId);
-        if (!_mapLoader.TryLoad(mapId, path.ToString(), out _))
+        if (!_mapLoader.TryLoadGrid(mapId, path, out _))
         {
             Log.Error($"Failed to load surface map {ent.Comp.MapPath}!");
             Del(map);

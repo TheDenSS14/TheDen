@@ -1,3 +1,28 @@
+# SPDX-FileCopyrightText: 2023 Adrian16199
+# SPDX-FileCopyrightText: 2023 Debug
+# SPDX-FileCopyrightText: 2023 Kara
+# SPDX-FileCopyrightText: 2023 LankLTE
+# SPDX-FileCopyrightText: 2023 MilenVolf
+# SPDX-FileCopyrightText: 2023 Nairod
+# SPDX-FileCopyrightText: 2023 Tad "Taddy" Johnson
+# SPDX-FileCopyrightText: 2024 Angelo Fallaria
+# SPDX-FileCopyrightText: 2024 Fluffiest Floofers
+# SPDX-FileCopyrightText: 2024 FoxxoTrystan
+# SPDX-FileCopyrightText: 2024 FryOfDestiny
+# SPDX-FileCopyrightText: 2024 Mnemotechnican
+# SPDX-FileCopyrightText: 2024 fox
+# SPDX-FileCopyrightText: 2025 BlitzTheSquishy
+# SPDX-FileCopyrightText: 2025 Eris
+# SPDX-FileCopyrightText: 2025 KekaniCreates
+# SPDX-FileCopyrightText: 2025 Rosycup
+# SPDX-FileCopyrightText: 2025 Sapphire
+# SPDX-FileCopyrightText: 2025 Skubman
+# SPDX-FileCopyrightText: 2025 VMSolidus
+# SPDX-FileCopyrightText: 2025 portfiend
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 - type: entity
   save: false
   name: Urist McVulp
@@ -8,7 +33,7 @@
   - type: HumanoidAppearance
     species: Vulpkanin
   - type: Hunger
-    baseDecayRate: 0.00375 # 25% more than default
+    decayRateMultiplier: 1.25
   - type: Carriable # Carrying system from nyanotrasen.
   - type: Inventory # Allows vulps to wear properly shaped helmets
     speciesId: vulpkanin
@@ -75,6 +100,7 @@
       - map: [ "back" ]
       - map: [ "enum.HumanoidVisualLayers.FacialHair" ]
       - map: [ "enum.HumanoidVisualLayers.Hair" ]
+      - map: [ "enum.HumanoidVisualLayers.NeckFluff" ]
       - map: [ "enum.HumanoidVisualLayers.HeadSide" ]
       - map: [ "enum.HumanoidVisualLayers.HeadTop" ]
       - map: [ "enum.HumanoidVisualLayers.Tail" ]

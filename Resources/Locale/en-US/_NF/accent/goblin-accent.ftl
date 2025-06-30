@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 # a mix of cockney and cant (rogue/vagabond slang)
 # cockney: https://www.eastlondonhistory.co.uk/history-east-end-cockney/   (th -> f/v, tt -> ', er -> ah, -ing -> -in')
 # cant: https://www.gutenberg.org/files/47018/47018-h/47018-h.htm

@@ -1,3 +1,12 @@
+// SPDX-FileCopyrightText: 2024 Milon <milonpl.git@proton.me>
+// SPDX-FileCopyrightText: 2024 sleepyyapril <flyingkarii@gmail.com>
+// SPDX-FileCopyrightText: 2025 BlitzTheSquishy <73762869+BlitzTheSquishy@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Tobias Berger <toby@tobot.dev>
+// SPDX-FileCopyrightText: 2025 Will-Oliver-Br <164823659+Will-Oliver-Br@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 using Robust.Shared.Serialization;
 
 namespace Content.Shared._DV.CartridgeLoader.Cartridges;

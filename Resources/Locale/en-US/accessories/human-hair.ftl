@@ -1,3 +1,21 @@
+# SPDX-FileCopyrightText: 2021 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
+# SPDX-FileCopyrightText: 2022 Flipp Syder <76629141+vulppine@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Bloody2372 <146976013+Bloody2372@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 KingFroozy <140668342+KingFroozy@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 MACMAN2003 <macman2003c@gmail.com>
+# SPDX-FileCopyrightText: 2023 liltenhead <104418166+liltenhead@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Илья Стокалюк <darkelement237@mail.ru>
+# SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT <77995199+DEATHB4DEFEAT@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Emisse <99158783+Emisse@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 SimpleStation14 <130339894+SimpleStation14@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Ubaser <134914314+UbaserB@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Арт <123451459+JustArt1m@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Skubman <ba.fallaria@gmail.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <flyingkarii@gmail.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 marking-HumanHairAfro = Afro
 marking-HumanHairAfro2 = Afro 2
 marking-HumanHairBigafro = Afro (Large)
@@ -118,7 +136,7 @@ marking-HumanHairMulder = Mulder
 marking-HumanHairOdango = Odango
 marking-HumanHairOmbre = Ombre
 marking-HumanHairOneshoulder = One Shoulder
-marking-HumanHairShortovereye = Over Eye
+marking-HumanHairShortovereye = Short Over Eye
 marking-HumanHairOxton = Oxton
 marking-HumanHairParted = Parted
 marking-HumanHairPart = Parted (Side)
@@ -196,3 +214,34 @@ marking-HumanHairVeryshortovereyealternate = Very Short Over Eye
 marking-HumanHairVlongfringe = Very Long with Fringe
 marking-HumanHairVolaju = Volaju
 marking-HumanHairWisp = Wisp
+marking-HumanHairBobcutOverEye =  Bobcut Over Eye
+marking-HumanHairBobcutOverEye2 = Bobcut Over Eye 2
+marking-HumanHairBobcutOverEye3 = Bobcut Over Eye 3
+marking-HumanHairBonnie = Bonnie
+marking-HumanHairBonnieLong = Bonnie Long
+marking-HumanHairBonnieShort = Bonnie Short
+marking-HumanHairBonnie2 = Bonnie 2
+marking-HumanHairBonnie2Long = Bonnie Long 2
+marking-HumanHairBonnie2Short = Bonnie Short 2
+marking-HumanHairDawn = Dawn
+marking-HumanHairFluffy = Fluffy
+marking-HumanHairFluffyLong = Fluffy Long
+marking-HumanHairKhmuro = Khmuro
+marking-HumanHairKobeni = Kobeni
+marking-HumanHairKobeni2 = Kobeni 2
+marking-HumanHairLowBun = Low Bun
+marking-HumanHairLowPonytail = Low Ponytail
+marking-HumanHairMorning = Morning
+marking-HumanHairOverEar = Over Ear
+marking-HumanHairOverEar2 = Over Ear 2
+marking-HumanHairOverEye = Over Eye
+marking-HumanHairPonytailShort = Short Ponytail
+marking-HumanHairSimple = Simple
+marking-HumanHairSimpleLong = Simple Long
+marking-HumanHairSimpleShort = Simple Short
+marking-HumanHairThinPonytail = Thin Ponytail
+marking-HumanHairThinPonytailLong = Thin Ponytail Long
+marking-HumanHairTwintails2 = Twintails 2
+marking-HumanHairTwintails2Long = Twintails Long 2
+marking-HumanHairTwintails2Short = Twintails Short 2
+marking-HumanHairUpwards = Upwards

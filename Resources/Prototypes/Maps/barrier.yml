@@ -1,3 +1,22 @@
+# SPDX-FileCopyrightText: 2023 Bakke <luringens@protonmail.com>
+# SPDX-FileCopyrightText: 2023 Carolyn3114 <136143032+Carolyn3114@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Colin-Tel <113523727+Colin-Tel@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Fluffiest Floofers <thebluewulf@gmail.com>
+# SPDX-FileCopyrightText: 2024 Debug <49997488+DebugOk@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Fansana <fansana95@googlemail.com>
+# SPDX-FileCopyrightText: 2024 FoxxoTrystan <trystan.garnierhein@gmail.com>
+# SPDX-FileCopyrightText: 2024 SimpleStation14 <130339894+SimpleStation14@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Velcroboy <107660393+IamVelcroboy@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 flyingkarii <flyingkarii@gmail.com>
+# SPDX-FileCopyrightText: 2025 John Willis <143434770+CerberusWolfie@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Rosycup <178287475+Rosycup@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 VMSolidus <evilexecutive@gmail.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <flyingkarii@gmail.com>
+# SPDX-FileCopyrightText: 2025 therealDLondon <162949166+therealDLondon@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 - type: gameMap
   id: Barrier
   mapName: 'Barrier Hospital'
@@ -25,7 +44,7 @@
             NanotrasenRepresentative: [ 1, 1 ]
             AdministrativeAssistant: [ 1, 1 ]
             HeadOfPersonnel: [ 1, 1 ]
-            Bartender: [ 1, 1 ]
+            Bartender: [ 2, 2 ]
             Botanist: [ 2, 2 ]
             Chef: [ 1, 1 ]
             Clown: [ 1, 1 ]
@@ -38,7 +57,7 @@
             ChiefEngineer: [ 1, 1 ]
             AtmosphericTechnician: [ 2, 2 ]
             StationEngineer: [ 2, 3 ]
-            TechnicalAssistant: [ 2, 3 ]
+            TechnicalAssistant: [ 1, 2 ]
             SeniorEngineer: [ 1, 1 ]
           #medical
             ChiefMedicalOfficer: [ 1, 1 ]
@@ -52,7 +71,7 @@
             ResearchDirector: [ 1, 1 ]
             Chaplain: [ 1, 1 ]
             ForensicMantis: [ 1, 1 ]
-            Scientist: [ 2, 2 ]
+            Scientist: [ 2, 3 ]
             ResearchAssistant: [ 2, 2 ]
             Borg: [ 1, 2 ]
             SeniorResearcher: [ 1, 1 ]
@@ -67,9 +86,9 @@
             SeniorOfficer: [ 1, 1 ]
           #supply
             Quartermaster: [ 1, 1 ]
-            MailCarrier: [ 1, 2 ]
+            MailCarrier: [ 1, 1 ]
             SalvageSpecialist: [ 2, 3 ]
-            CargoTechnician: [ 2, 4 ]
+            CargoTechnician: [ 2, 3 ]
           #civilian
             Passenger: [ -1, -1 ]
 

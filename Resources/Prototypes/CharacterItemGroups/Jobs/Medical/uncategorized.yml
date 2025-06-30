@@ -1,3 +1,13 @@
+# SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT <77995199+DEATHB4DEFEAT@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 VMSolidus <evilexecutive@gmail.com>
+# SPDX-FileCopyrightText: 2025 Blitz <73762869+BlitzTheSquishy@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 BlitzTheSquishy <73762869+BlitzTheSquishy@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Lonofera <108367450+LonoferaRS@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Rosycup <178287475+Rosycup@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 # All Medical
 - type: characterItemGroup
   id: LoadoutMedicalBackpacks
@@ -81,6 +91,8 @@
       id: LoadoutMedicalHeadSurgcapWhite
     - type: loadout
       id: LoadoutMedicalHeadSurgcapCybersun
+    - type: loadout
+      id: LoadoutMedicalHeadNurse
 
 #- type: characterItemGroup
 #  id: LoadoutMedicalId
@@ -96,27 +108,39 @@
     - type: loadout
       id: LoadoutMedicalBedsheetMedical
 
-#- type: characterItemGroup
-#  id: LoadoutMedicalMask
-#  maxItems: 1
-#  items:
-#
+- type: characterItemGroup
+  id: LoadoutMedicalMask
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutClothingMaskSterileMedical
+
 - type: characterItemGroup
   id: LoadoutMedicalOuter
   maxItems: 1
   items:
     - type: loadout
       id: LoadoutMedicalOuterWinterCoat
+    - type: loadout
+      id: LoadoutMedicalOuterWinterCoatViro
+    - type: loadout
+      id: LoadoutMedicalOuterWinterCoatGen
 #    - type: loadout - TheDen
 #      id: LoadoutMedicalOuterLabcoat
 #    - type: loadout
 #      id: LoadoutMedicalOuterCybersunWindbreaker
 
-#- type: characterItemGroup
-#  id: LoadoutMedicalShoes
-#  maxItems: 1
-#  items:
-#
+- type: characterItemGroup
+  id: LoadoutMedicalShoes
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutMedicalBootsWinter
+    - type: loadout
+      id: LoadoutMedicalBootsWinterViro
+    - type: loadout
+      id: LoadoutMedicalBootsWinterGen
+
 - type: characterItemGroup
   id: LoadoutMedicalUniforms
   maxItems: 1
@@ -137,3 +161,5 @@
       id: LoadoutMedicalUniformScrubsCybersun
     - type: loadout
       id: LoadoutMedicalUniformScrubsWhite
+    - type: loadout
+      id: LoadoutMedicalUniformNurse

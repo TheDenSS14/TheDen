@@ -1,4 +1,12 @@
-﻿using System.Threading.Tasks;
+// SPDX-FileCopyrightText: 2024 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 VMSolidus <evilexecutive@gmail.com>
+// SPDX-FileCopyrightText: 2025 Falcon <falcon@zigtag.dev>
+// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 sleepyyapril <flyingkarii@gmail.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
+using System.Threading.Tasks;
 using BenchmarkDotNet.Attributes;
 using Content.IntegrationTests;
 using Content.IntegrationTests.Pair;
@@ -32,7 +40,7 @@ public class SpawnEquipDeleteBenchmark
     public async Task SetupAsync()
     {
         ProgramShared.PathOffset = "../../../../";
-        PoolManager.Startup(null);
+        PoolManager.Startup();
         _pair = await PoolManager.GetServerClient();
         var server = _pair.Server;
 

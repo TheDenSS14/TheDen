@@ -1,3 +1,9 @@
+# SPDX-FileCopyrightText: 2025 Tabitha
+# SPDX-FileCopyrightText: 2025 portfiend
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 # TODO: Refactor the marking system to allow grouping marking layer colors, applying layers to different body parts in the same marking, better layer sorting, etc. and then fix these prototypes to account for that.
 
 # OVERLAYS
@@ -9,7 +15,7 @@
   bodyPart: LLeg
   markingCategory: Overlay
   speciesRestriction:
-    [ Arachnid, Canid, Felinid, Feroxi, Human, IPC, Oni, Reptilian, Rodentia, SlimePerson, Tajaran, Vulpkanin ]
+    [ Arachnid, Canid, Felinid, Feroxi, Human, IPC, Oni, Reptilian, Rodentia, SlimePerson, Tajaran, Vulpkanin, Kitsune ]
   coloring:
     default:
       type:
@@ -23,7 +29,7 @@
   id: OverlayPlushSeamsHeadHuman
   bodyPart: Head
   markingCategory: Head
-  speciesRestriction: [ Human, Canid, Felinid, Oni, Harpy, Arachne, SlimePerson ]
+  speciesRestriction: [ Human, Canid, Felinid, Oni, Harpy, Arachne, SlimePerson, Kitsune ]
   coloring:
     default:
       type:
@@ -66,7 +72,7 @@
   bodyPart: RHand
   markingCategory: Overlay
   speciesRestriction:
-    [ Arachnid, Canid, Felinid, Feroxi, Human, IPC, Oni, Reptilian, Rodentia, SlimePerson, Tajaran, Vulpkanin ]
+    [ Arachnid, Canid, Felinid, Feroxi, Human, IPC, Oni, Reptilian, Rodentia, SlimePerson, Tajaran, Vulpkanin, Kitsune ]
   coloring:
     default:
       type:
@@ -81,7 +87,7 @@
   bodyPart: RFoot
   markingCategory: Overlay
   speciesRestriction:
-    [ Arachnid, Canid, Felinid, Feroxi, Human, IPC, Oni, Reptilian, Rodentia, SlimePerson, Tajaran, Vulpkanin ]
+    [ Arachnid, Canid, Felinid, Feroxi, Human, IPC, Oni, Reptilian, Rodentia, SlimePerson, Tajaran, Vulpkanin, Kitsune ]
   coloring:
     default:
       type:
@@ -97,7 +103,7 @@
   markingCategory: Overlay
   speciesRestriction:
     [ Arachnid, Canid, Felinid, Feroxi, Human, IPC, Oni, Reptilian, Rodentia, SlimePerson, Tajaran, Vulpkanin,
-      Ovinia, Shadowkin, Arachne ]
+      Ovinia, Shadowkin, Arachne, Kitsune ]
   coloring:
     default:
       type:
@@ -348,7 +354,7 @@
   id: OverlayPlushTorsoHumanM
   bodyPart: Chest
   markingCategory: Chest
-  speciesRestriction: [ Human, Felinid, Canid, Oni, Arachne ]
+  speciesRestriction: [ Human, Felinid, Canid, Oni, Arachne, Kitsune ]
   coloring:
     default:
       type:
@@ -361,7 +367,7 @@
   id: OverlayPlushTorsoHumanF
   bodyPart: Chest
   markingCategory: Chest
-  speciesRestriction: [ Human, Felinid, Canid, Oni, Arachne ]
+  speciesRestriction: [ Human, Felinid, Canid, Oni, Arachne, Kitsune ]
   coloring:
     default:
       type:
@@ -375,7 +381,7 @@
   bodyPart: LFoot
   markingCategory: LeftFoot
   speciesRestriction:
-    [ Arachnid, Canid, Felinid, Feroxi, Human, IPC, Oni, Reptilian, Rodentia, SlimePerson, Tajaran, Vulpkanin ]
+    [ Arachnid, Canid, Felinid, Feroxi, Human, IPC, Oni, Reptilian, Rodentia, SlimePerson, Tajaran, Vulpkanin, Kitsune ]
   coloring:
     default:
       type:
@@ -390,7 +396,7 @@
   bodyPart: RFoot
   markingCategory: RightFoot
   speciesRestriction:
-    [ Arachnid, Canid, Felinid, Feroxi, Human, IPC, Oni, Reptilian, Rodentia, SlimePerson, Tajaran, Vulpkanin ]
+    [ Arachnid, Canid, Felinid, Feroxi, Human, IPC, Oni, Reptilian, Rodentia, SlimePerson, Tajaran, Vulpkanin, Kitsune ]
   coloring:
     default:
       type:

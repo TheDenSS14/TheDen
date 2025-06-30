@@ -1,3 +1,21 @@
+# SPDX-FileCopyrightText: 2024 Angelo Fallaria
+# SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT
+# SPDX-FileCopyrightText: 2024 Pierson Arnold
+# SPDX-FileCopyrightText: 2024 Tmanzxd
+# SPDX-FileCopyrightText: 2024 gluesniffler
+# SPDX-FileCopyrightText: 2025 Blitz
+# SPDX-FileCopyrightText: 2025 BlitzTheSquishy
+# SPDX-FileCopyrightText: 2025 Blu
+# SPDX-FileCopyrightText: 2025 Jakumba
+# SPDX-FileCopyrightText: 2025 Lonofera
+# SPDX-FileCopyrightText: 2025 Rosycup
+# SPDX-FileCopyrightText: 2025 Skubman
+# SPDX-FileCopyrightText: 2025 Tad "Taddy" Johnson
+# SPDX-FileCopyrightText: 2025 VMSolidus
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 # Uncategorized
 # Backpack
 - type: loadout
@@ -11,6 +29,10 @@
     - !type:CharacterDepartmentRequirement
       departments:
         - Security
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Brigmedic # Mostly for corpsman recognizibility
   items:
     - ClothingBackpackSecurity
 
@@ -25,6 +47,10 @@
     - !type:CharacterDepartmentRequirement
       departments:
         - Security
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Brigmedic # Mostly for corpsman recognizibility
   items:
     - ClothingBackpackSatchelSecurity
 
@@ -39,6 +65,10 @@
     - !type:CharacterDepartmentRequirement
       departments:
         - Security
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Brigmedic # Mostly for corpsman recognizibility
   items:
     - ClothingBackpackDuffelSecurity
 
@@ -92,6 +122,25 @@
 # Duplicate "Spare" equipment exists and shares the ItemGroup, for those officers who like to pack a spare magazine in their pocket, outside of what was issued to them.
 # I knew a lot of people in my time working IRL Armed security that did this.
 - type: loadout
+  id: LoadoutSecurityDisabler
+  category: JobsSecurityAUncategorized
+  cost: 2
+  canBeHeirloom: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSecurityEquipment
+    - !type:CharacterLogicOrRequirement
+      requirements:
+        - !type:CharacterDepartmentRequirement
+          departments:
+            - Security
+        - !type:CharacterJobRequirement
+          jobs:
+            - BlueshieldOfficer
+  items:
+    - WeaponDisabler
+
+- type: loadout
   id: LoadoutSecurityCombatKnife
   category: JobsSecurityAUncategorized
   cost: 0
@@ -100,12 +149,12 @@
       group: LoadoutSecurityEquipment
     - !type:CharacterLogicOrRequirement
       requirements:
-      - !type:CharacterDepartmentRequirement
-        departments:
-          - Security
-      - !type:CharacterJobRequirement
-        jobs:
-          - BlueshieldOfficer
+        - !type:CharacterDepartmentRequirement
+          departments:
+            - Security
+        - !type:CharacterJobRequirement
+          jobs:
+            - BlueshieldOfficer
   items:
     - CombatKnife
 
@@ -118,12 +167,12 @@
       group: LoadoutSecurityEquipment
     - !type:CharacterLogicOrRequirement
       requirements:
-      - !type:CharacterDepartmentRequirement
-        departments:
-          - Security
-      - !type:CharacterJobRequirement
-        jobs:
-          - BlueshieldOfficer
+        - !type:CharacterDepartmentRequirement
+          departments:
+            - Security
+        - !type:CharacterJobRequirement
+          jobs:
+            - BlueshieldOfficer
   items:
     - Flash
 
@@ -139,12 +188,12 @@
       group: LoadoutSecurityEquipment
     - !type:CharacterLogicOrRequirement
       requirements:
-      - !type:CharacterDepartmentRequirement
-        departments:
-          - Security
-      - !type:CharacterJobRequirement
-        jobs:
-          - BlueshieldOfficer
+        - !type:CharacterDepartmentRequirement
+          departments:
+            - Security
+        - !type:CharacterJobRequirement
+          jobs:
+            - BlueshieldOfficer
   items:
     - MagazinePistol
 
@@ -160,12 +209,12 @@
       group: LoadoutSecurityEquipment
     - !type:CharacterLogicOrRequirement
       requirements:
-      - !type:CharacterDepartmentRequirement
-        departments:
-          - Security
-      - !type:CharacterJobRequirement
-        jobs:
-          - BlueshieldOfficer
+        - !type:CharacterDepartmentRequirement
+          departments:
+            - Security
+        - !type:CharacterJobRequirement
+          jobs:
+            - BlueshieldOfficer
   items:
     - MagazinePistol
 
@@ -178,12 +227,12 @@
       group: LoadoutSecurityEquipment
     - !type:CharacterLogicOrRequirement
       requirements:
-      - !type:CharacterDepartmentRequirement
-        departments:
-          - Security
-      - !type:CharacterJobRequirement
-        jobs:
-          - BlueshieldOfficer
+        - !type:CharacterDepartmentRequirement
+          departments:
+            - Security
+        - !type:CharacterJobRequirement
+          jobs:
+            - BlueshieldOfficer
   items:
     - MagazinePistolRubber
 
@@ -196,12 +245,12 @@
       group: LoadoutSecurityEquipment
     - !type:CharacterLogicOrRequirement
       requirements:
-      - !type:CharacterDepartmentRequirement
-        departments:
-          - Security
-      - !type:CharacterJobRequirement
-        jobs:
-          - BlueshieldOfficer
+        - !type:CharacterDepartmentRequirement
+          departments:
+            - Security
+        - !type:CharacterJobRequirement
+          jobs:
+            - BlueshieldOfficer
   items:
     - MagazinePistolRubber
 
@@ -218,12 +267,12 @@
       group: LoadoutSecurityEquipment
     - !type:CharacterLogicOrRequirement
       requirements:
-      - !type:CharacterDepartmentRequirement
-        departments:
-          - Security
-      - !type:CharacterJobRequirement
-        jobs:
-          - BlueshieldOfficer
+        - !type:CharacterDepartmentRequirement
+          departments:
+            - Security
+        - !type:CharacterJobRequirement
+          jobs:
+            - BlueshieldOfficer
   items:
     - SpeedLoaderMagnum
 
@@ -240,12 +289,12 @@
       group: LoadoutSecurityEquipment
     - !type:CharacterLogicOrRequirement
       requirements:
-      - !type:CharacterDepartmentRequirement
-        departments:
-          - Security
-      - !type:CharacterJobRequirement
-        jobs:
-          - BlueshieldOfficer
+        - !type:CharacterDepartmentRequirement
+          departments:
+            - Security
+        - !type:CharacterJobRequirement
+          jobs:
+            - BlueshieldOfficer
   items:
     - SpeedLoaderMagnum
 
@@ -259,12 +308,12 @@
       group: LoadoutSecurityEquipment
     - !type:CharacterLogicOrRequirement
       requirements:
-      - !type:CharacterDepartmentRequirement
-        departments:
-          - Security
-      - !type:CharacterJobRequirement
-        jobs:
-          - BlueshieldOfficer
+        - !type:CharacterDepartmentRequirement
+          departments:
+            - Security
+        - !type:CharacterJobRequirement
+          jobs:
+            - BlueshieldOfficer
   items:
     - SpeedLoaderMagnumRubber
 
@@ -278,12 +327,12 @@
       group: LoadoutSecurityEquipment
     - !type:CharacterLogicOrRequirement
       requirements:
-      - !type:CharacterDepartmentRequirement
-        departments:
-          - Security
-      - !type:CharacterJobRequirement
-        jobs:
-          - BlueshieldOfficer
+        - !type:CharacterDepartmentRequirement
+          departments:
+            - Security
+        - !type:CharacterJobRequirement
+          jobs:
+            - BlueshieldOfficer
   items:
     - SpeedLoaderMagnumRubber
 
@@ -300,12 +349,12 @@
       group: LoadoutSecurityEquipment
     - !type:CharacterLogicOrRequirement
       requirements:
-      - !type:CharacterDepartmentRequirement
-        departments:
-          - Security
-      - !type:CharacterJobRequirement
-        jobs:
-          - BlueshieldOfficer
+        - !type:CharacterDepartmentRequirement
+          departments:
+            - Security
+        - !type:CharacterJobRequirement
+          jobs:
+            - BlueshieldOfficer
   items:
     - SpeedLoaderSpecial
 
@@ -322,12 +371,12 @@
       group: LoadoutSecurityEquipment
     - !type:CharacterLogicOrRequirement
       requirements:
-      - !type:CharacterDepartmentRequirement
-        departments:
-          - Security
-      - !type:CharacterJobRequirement
-        jobs:
-          - BlueshieldOfficer
+        - !type:CharacterDepartmentRequirement
+          departments:
+            - Security
+        - !type:CharacterJobRequirement
+          jobs:
+            - BlueshieldOfficer
   items:
     - SpeedLoaderSpecial
 
@@ -341,12 +390,12 @@
       group: LoadoutSecurityEquipment
     - !type:CharacterLogicOrRequirement
       requirements:
-      - !type:CharacterDepartmentRequirement
-        departments:
-          - Security
-      - !type:CharacterJobRequirement
-        jobs:
-          - BlueshieldOfficer
+        - !type:CharacterDepartmentRequirement
+          departments:
+            - Security
+        - !type:CharacterJobRequirement
+          jobs:
+            - BlueshieldOfficer
   items:
     - SpeedLoaderSpecialRubber
 
@@ -360,12 +409,12 @@
       group: LoadoutSecurityEquipment
     - !type:CharacterLogicOrRequirement
       requirements:
-      - !type:CharacterDepartmentRequirement
-        departments:
-          - Security
-      - !type:CharacterJobRequirement
-        jobs:
-          - BlueshieldOfficer
+        - !type:CharacterDepartmentRequirement
+          departments:
+            - Security
+        - !type:CharacterJobRequirement
+          jobs:
+            - BlueshieldOfficer
   items:
     - SpeedLoaderSpecialRubber
 
@@ -382,12 +431,12 @@
       group: LoadoutSecurityEquipment
     - !type:CharacterLogicOrRequirement
       requirements:
-      - !type:CharacterDepartmentRequirement
-        departments:
-          - Security
-      - !type:CharacterJobRequirement
-        jobs:
-          - BlueshieldOfficer
+        - !type:CharacterDepartmentRequirement
+          departments:
+            - Security
+        - !type:CharacterJobRequirement
+          jobs:
+            - BlueshieldOfficer
   items:
     - MagazineMagnum
 
@@ -404,12 +453,12 @@
       group: LoadoutSecurityEquipment
     - !type:CharacterLogicOrRequirement
       requirements:
-      - !type:CharacterDepartmentRequirement
-        departments:
-          - Security
-      - !type:CharacterJobRequirement
-        jobs:
-          - BlueshieldOfficer
+        - !type:CharacterDepartmentRequirement
+          departments:
+            - Security
+        - !type:CharacterJobRequirement
+          jobs:
+            - BlueshieldOfficer
   items:
     - MagazineMagnumRubber
 
@@ -426,12 +475,12 @@
       group: LoadoutSecurityEquipment
     - !type:CharacterLogicOrRequirement
       requirements:
-      - !type:CharacterDepartmentRequirement
-        departments:
-          - Security
-      - !type:CharacterJobRequirement
-        jobs:
-          - BlueshieldOfficer
+        - !type:CharacterDepartmentRequirement
+          departments:
+            - Security
+        - !type:CharacterJobRequirement
+          jobs:
+            - BlueshieldOfficer
   items:
     - MagazineMagnum
 
@@ -448,12 +497,12 @@
       group: LoadoutSecurityEquipment
     - !type:CharacterLogicOrRequirement
       requirements:
-      - !type:CharacterDepartmentRequirement
-        departments:
-          - Security
-      - !type:CharacterJobRequirement
-        jobs:
-          - BlueshieldOfficer
+        - !type:CharacterDepartmentRequirement
+          departments:
+            - Security
+        - !type:CharacterJobRequirement
+          jobs:
+            - BlueshieldOfficer
   items:
     - MagazineMagnumRubber
 
@@ -470,12 +519,12 @@
       group: LoadoutSecurityEquipment
     - !type:CharacterLogicOrRequirement
       requirements:
-      - !type:CharacterDepartmentRequirement
-        departments:
-          - Security
-      - !type:CharacterJobRequirement
-        jobs:
-          - BlueshieldOfficer
+        - !type:CharacterDepartmentRequirement
+          departments:
+            - Security
+        - !type:CharacterJobRequirement
+          jobs:
+            - BlueshieldOfficer
   items:
     - SpeedLoaderRifleHeavy
 
@@ -492,12 +541,12 @@
       group: LoadoutSecurityEquipment
     - !type:CharacterLogicOrRequirement
       requirements:
-      - !type:CharacterDepartmentRequirement
-        departments:
-          - Security
-      - !type:CharacterJobRequirement
-        jobs:
-          - BlueshieldOfficer
+        - !type:CharacterDepartmentRequirement
+          departments:
+            - Security
+        - !type:CharacterJobRequirement
+          jobs:
+            - BlueshieldOfficer
   items:
     - SpeedLoaderRifleHeavy
 
@@ -511,12 +560,12 @@
       group: LoadoutSecurityEquipment
     - !type:CharacterLogicOrRequirement
       requirements:
-      - !type:CharacterDepartmentRequirement
-        departments:
-          - Security
-      - !type:CharacterJobRequirement
-        jobs:
-          - BlueshieldOfficer
+        - !type:CharacterDepartmentRequirement
+          departments:
+            - Security
+        - !type:CharacterJobRequirement
+          jobs:
+            - BlueshieldOfficer
   items:
     - SpeedLoaderRifleHeavyRubber
 
@@ -530,12 +579,12 @@
       group: LoadoutSecurityEquipment
     - !type:CharacterLogicOrRequirement
       requirements:
-      - !type:CharacterDepartmentRequirement
-        departments:
-          - Security
-      - !type:CharacterJobRequirement
-        jobs:
-          - BlueshieldOfficer
+        - !type:CharacterDepartmentRequirement
+          departments:
+            - Security
+        - !type:CharacterJobRequirement
+          jobs:
+            - BlueshieldOfficer
   items:
     - SpeedLoaderRifleHeavyRubber
 
@@ -543,26 +592,6 @@
 # Security no longer spawns with a weapon automatically, instead they have a free choice of security appropriate Duty Pistol in their loadouts.
 # This category is universal to the entire security department by special request, so that players can choose their preferred Duty Pistol even if they aren't playing a security role.
 # All lethal options come with a 1 hour security department playtime, as a basic shitter protection.
-- type: loadout
-  id: LoadoutSecurityDisabler
-  category: JobsSecurityAUncategorized
-  cost: 0
-  canBeHeirloom: true
-  guideEntry: SecurityWeapons
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutSecurityWeapons
-    - !type:CharacterLogicOrRequirement
-      requirements:
-      - !type:CharacterDepartmentRequirement
-        departments:
-          - Security
-      - !type:CharacterJobRequirement
-        jobs:
-          - BlueshieldOfficer
-  items:
-    - WeaponDisabler
-
 - type: loadout
   id: LoadoutSecurityMk58NonLethal
   category: JobsSecurityAUncategorized
@@ -574,12 +603,12 @@
       group: LoadoutSecurityWeapons
     - !type:CharacterLogicOrRequirement
       requirements:
-      - !type:CharacterDepartmentRequirement
-        departments:
-          - Security
-      - !type:CharacterJobRequirement
-        jobs:
-          - BlueshieldOfficer
+        - !type:CharacterDepartmentRequirement
+          departments:
+            - Security
+        - !type:CharacterJobRequirement
+          jobs:
+            - BlueshieldOfficer
   items:
     - WeaponPistolMk58SecurityNonlethal
 
@@ -594,12 +623,12 @@
       group: LoadoutSecurityWeapons
     - !type:CharacterLogicOrRequirement
       requirements:
-      - !type:CharacterDepartmentRequirement
-        departments:
-          - Security
-      - !type:CharacterJobRequirement
-        jobs:
-          - BlueshieldOfficer
+        - !type:CharacterDepartmentRequirement
+          departments:
+            - Security
+        - !type:CharacterJobRequirement
+          jobs:
+            - BlueshieldOfficer
   items:
     - WeaponRevolverInspectorNonLethalSecurity
 
@@ -614,12 +643,12 @@
       group: LoadoutSecurityWeapons
     - !type:CharacterLogicOrRequirement
       requirements:
-      - !type:CharacterDepartmentRequirement
-        departments:
-          - Security
-      - !type:CharacterJobRequirement
-        jobs:
-          - BlueshieldOfficer
+        - !type:CharacterDepartmentRequirement
+          departments:
+            - Security
+        - !type:CharacterJobRequirement
+          jobs:
+            - BlueshieldOfficer
   items:
     - WeaponRevolverDeckardNonLethalSecurity
 
@@ -634,14 +663,54 @@
       group: LoadoutSecurityWeapons
     - !type:CharacterLogicOrRequirement
       requirements:
-      - !type:CharacterDepartmentRequirement
-        departments:
-          - Security
-      - !type:CharacterJobRequirement
-        jobs:
-          - BlueshieldOfficer
+        - !type:CharacterDepartmentRequirement
+          departments:
+            - Security
+        - !type:CharacterJobRequirement
+          jobs:
+            - BlueshieldOfficer
   items:
     - WeaponPistolN1984SecurityNonLethal
+
+- type: loadout
+  id: LoadoutSecurityEquipmentEnergySword
+  category: JobsSecurityAUncategorized
+  cost: 3
+  canBeHeirloom: true
+  guideEntry: SecurityWeapons
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSecurityWeapons
+    - !type:CharacterLogicOrRequirement
+      requirements:
+        - !type:CharacterDepartmentRequirement
+          departments:
+            - Security
+        - !type:CharacterJobRequirement
+          jobs:
+            - BlueshieldOfficer
+  items:
+    - EnergyCutlassSecurity
+
+- type: loadout
+  id: LoadoutSecurityEnergyGunMini
+  category: JobsSecurityAUncategorized
+  cost: 2
+  canBeHeirloom: true
+  guideEntry: SecurityWeapons
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSecurityWeapons
+    - !type:CharacterLogicOrRequirement
+      requirements:
+        - !type:CharacterDepartmentRequirement
+          departments:
+            - Security
+        - !type:CharacterJobRequirement
+          jobs:
+            - BlueshieldOfficer
+  items:
+    - WeaponEnergyGunMiniSecurity
 
 - type: loadout
   id: LoadoutSecurityPistolViperNonLethal
@@ -654,14 +723,34 @@
       group: LoadoutSecurityWeapons
     - !type:CharacterLogicOrRequirement
       requirements:
-      - !type:CharacterDepartmentRequirement
-        departments:
-          - Security
-      - !type:CharacterJobRequirement
-        jobs:
-          - BlueshieldOfficer
+        - !type:CharacterDepartmentRequirement
+          departments:
+            - Security
+        - !type:CharacterJobRequirement
+          jobs:
+            - BlueshieldOfficer
   items:
     - WeaponPistolViperSecurityNonLethal
+
+- type: loadout
+  id: LoadoutSecurityPistolViperWoodNonlethal
+  category: JobsSecurityAUncategorized
+  cost: 2
+  canBeHeirloom: true
+  guideEntry: SecurityWeapons
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSecurityWeapons
+    - !type:CharacterLogicOrRequirement
+      requirements:
+        - !type:CharacterDepartmentRequirement
+          departments:
+            - Security
+        - !type:CharacterJobRequirement
+          jobs:
+            - BlueshieldOfficer
+  items:
+    - WeaponPistolViperWoodSecurityNonlethal
 
 - type: loadout
   id: LoadoutSecurityEquipmentTruncheon
@@ -677,15 +766,12 @@
       group: LoadoutSecurityWeapons
     - !type:CharacterLogicOrRequirement
       requirements:
-      - !type:CharacterDepartmentRequirement
-        departments:
-          - Security
-      - !type:CharacterJobRequirement
-        jobs:
-          - BlueshieldOfficer
-    - !type:CharacterSpeciesRequirement
-      species:
-        - Oni
+        - !type:CharacterDepartmentRequirement
+          departments:
+            - Security
+        - !type:CharacterJobRequirement
+          jobs:
+            - BlueshieldOfficer
   items:
     - Truncheon
 
@@ -700,12 +786,12 @@
       group: LoadoutSecurityWeapons
     - !type:CharacterLogicOrRequirement
       requirements:
-      - !type:CharacterDepartmentRequirement
-        departments:
-          - Security
-      - !type:CharacterJobRequirement
-        jobs:
-          - BlueshieldOfficer
+        - !type:CharacterDepartmentRequirement
+          departments:
+            - Security
+        - !type:CharacterJobRequirement
+          jobs:
+            - BlueshieldOfficer
   items:
     - WeaponPistolPollockNonlethalSecurity
 
@@ -720,12 +806,12 @@
       group: LoadoutSecurityWeapons
     - !type:CharacterLogicOrRequirement
       requirements:
-      - !type:CharacterDepartmentRequirement
-        departments:
-          - Security
-      - !type:CharacterJobRequirement
-        jobs:
-          - BlueshieldOfficer
+        - !type:CharacterDepartmentRequirement
+          departments:
+            - Security
+        - !type:CharacterJobRequirement
+          jobs:
+            - BlueshieldOfficer
   items:
     - WeaponRevolverSnubNonlethalSecurity
 
@@ -740,12 +826,12 @@
       group: LoadoutSecurityWeapons
     - !type:CharacterLogicOrRequirement
       requirements:
-      - !type:CharacterDepartmentRequirement
-        departments:
-          - Security
-      - !type:CharacterJobRequirement
-        jobs:
-          - BlueshieldOfficer
+        - !type:CharacterDepartmentRequirement
+          departments:
+            - Security
+        - !type:CharacterJobRequirement
+          jobs:
+            - BlueshieldOfficer
   items:
     - WeaponRevolverK38MasterNonlethalSecurity
 
@@ -760,12 +846,12 @@
       group: LoadoutSecurityWeapons
     - !type:CharacterLogicOrRequirement
       requirements:
-      - !type:CharacterDepartmentRequirement
-        departments:
-          - Security
-      - !type:CharacterJobRequirement
-        jobs:
-          - BlueshieldOfficer
+        - !type:CharacterDepartmentRequirement
+          departments:
+            - Security
+        - !type:CharacterJobRequirement
+          jobs:
+            - BlueshieldOfficer
   items:
     - WeaponRevolverFitzNonlethalSecurity
 
@@ -780,12 +866,12 @@
       group: LoadoutSecurityWeapons
     - !type:CharacterLogicOrRequirement
       requirements:
-      - !type:CharacterDepartmentRequirement
-        departments:
-          - Security
-      - !type:CharacterJobRequirement
-        jobs:
-          - BlueshieldOfficer
+        - !type:CharacterDepartmentRequirement
+          departments:
+            - Security
+        - !type:CharacterJobRequirement
+          jobs:
+            - BlueshieldOfficer
   items:
     - WeaponRevolverPythonNonlethalSecurity
 
@@ -800,12 +886,12 @@
       group: LoadoutSecurityWeapons
     - !type:CharacterLogicOrRequirement
       requirements:
-      - !type:CharacterDepartmentRequirement
-        departments:
-          - Security
-      - !type:CharacterJobRequirement
-        jobs:
-          - BlueshieldOfficer
+        - !type:CharacterDepartmentRequirement
+          departments:
+            - Security
+        - !type:CharacterJobRequirement
+          jobs:
+            - BlueshieldOfficer
   items:
     - WeaponRevolverArgentiNonLethalSecurity
 
@@ -939,6 +1025,12 @@
     - !type:CharacterDepartmentRequirement
       departments:
         - Security
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Brigmedic # Corpsman has a Corpsman specific variant
+        - Warden # Warden has a Warden specific variant
+        - HeadOfSecurity # HoS has a HoS specific variant
   items:
     - ClothingHeadHatBeretSecurity
 
@@ -996,14 +1088,19 @@
   category: JobsSecurityAUncategorized
   cost: 0
   requirements:
-  - !type:CharacterItemGroupRequirement
-    group: LoadoutSecurityOuter
-  - !type:CharacterDepartmentRequirement
-    departments:
-    - Security
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSecurityOuter
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Security
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Brigmedic # Corpsman has a Corpsman specific variant
+        - Warden # Warden has a Warden specific variant
+        - HeadOfSecurity # HoS has a HoS specific variant
   items:
-  - ClothingOuterWinterSec
-
+    - ClothingOuterWinterSec
 
 - type: loadout
   id: LoadoutClothingOuterArmorPlateCarrier
@@ -1102,6 +1199,12 @@
     - !type:CharacterDepartmentRequirement
       departments:
         - Security
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Brigmedic # Corpsman has a Corpsman specific variant
+        - Warden # Warden has a Warden specific variant
+        - HeadOfSecurity # HoS has a HoS specific variant
   items:
     - ClothingUniformJumpsuitSecBlue
 
@@ -1116,6 +1219,12 @@
     - !type:CharacterDepartmentRequirement
       departments:
         - Security
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Brigmedic # Corpsman has a Corpsman specific variant
+        - Warden # Warden has a Warden specific variant
+        - HeadOfSecurity # HoS has a HoS specific variant
   items:
     - ClothingUniformJumpsuitSecGrey
 
@@ -1130,6 +1239,12 @@
     - !type:CharacterDepartmentRequirement
       departments:
         - Security
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Brigmedic # Corpsman has a Corpsman specific variant
+        - Warden # Warden has a Warden specific variant
+        - HeadOfSecurity # HoS has a HoS specific variant
   items:
     - ClothingUniformJumpskirtSecGrey
 
@@ -1144,6 +1259,12 @@
     - !type:CharacterDepartmentRequirement
       departments:
         - Security
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Brigmedic # Corpsman has a Corpsman specific variant
+        - Warden # Warden has a Warden specific variant
+        - HeadOfSecurity # HoS has a HoS specific variant
   items:
     - ClothingUniformJumpskirtSecBlue
 
@@ -1158,6 +1279,11 @@
     - !type:CharacterDepartmentRequirement
       departments:
         - Security
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Warden # Warden has a Warden specific variant
+        - HeadOfSecurity # HoS has a HoS specific variant
   items:
     - ClothingUniformJumpsuitSecFormal
 
@@ -1172,6 +1298,12 @@
     - !type:CharacterDepartmentRequirement
       departments:
         - Security
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Brigmedic # Corpsman has a Corpsman specific variant
+        - Warden # Warden probably should have warden clothes only
+        - HeadOfSecurity # HoS probably should have HoS clothes only
   items:
     - ClothingUniformJumpsuitSecSummer
 

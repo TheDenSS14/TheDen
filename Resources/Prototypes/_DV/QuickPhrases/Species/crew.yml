@@ -1,3 +1,12 @@
+# SPDX-FileCopyrightText: 2024 portfiend <109661617+portfiend@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 M3739 <47579354+M3739@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 MajorMoth <61519600+MajorMoth@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Rosycup <178287475+Rosycup@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 keekee38 <iamabanana372456@gmail.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 - type: quickPhrase
   id: BaseCrewSpeciesPhrase
   parent: BaseSpeciesPhrase
@@ -100,6 +109,11 @@
   id: SpeciesSlimePersonPhrase
   parent: BaseCrewSpeciesPhrase
   text: species-name-slime
+
+- type: quickPhrase
+  id: SpeciesKitsunePhrase
+  parent: BaseCrewSpeciesPhrase
+  text: species-name-kitsune
 
 - type: quickPhrase
   id: SpeciesTajaranPhrase

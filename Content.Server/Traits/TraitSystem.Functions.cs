@@ -1,3 +1,14 @@
+// SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT
+// SPDX-FileCopyrightText: 2025 BramvanZijp
+// SPDX-FileCopyrightText: 2025 Raikyr0
+// SPDX-FileCopyrightText: 2025 RedFoxIV
+// SPDX-FileCopyrightText: 2025 Skubman
+// SPDX-FileCopyrightText: 2025 VMSolidus
+// SPDX-FileCopyrightText: 2025 portfiend
+// SPDX-FileCopyrightText: 2025 sleepyyapril
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 using Content.Shared.FixedPoint;
 using Content.Shared.Traits;
 using JetBrains.Annotations;
@@ -826,8 +837,7 @@ public sealed partial class TraitCyberneticLimbReplacement : TraitFunction
         var transformSystem = entityManager.System<SharedTransformSystem>();
 
         if (!entityManager.TryGetComponent(uid, out BodyComponent? body)
-            || !entityManager.TryGetComponent(uid, out TransformComponent? xform)
-            || ProtoId is null)
+            || !entityManager.TryGetComponent(uid, out TransformComponent? xform))
             return;
 
         var root = bodySystem.GetRootPartOrNull(uid, body);
@@ -846,6 +856,9 @@ public sealed partial class TraitCyberneticLimbReplacement : TraitFunction
 
             transformSystem.AttachToGridOrMap(part.Id);
             entityManager.QueueDeleteEntity(part.Id);
+
+            if (ProtoId is null)
+                continue;
 
             var newLimb = entityManager.SpawnAtPosition(ProtoId, xform.Coordinates);
             if (entityManager.TryGetComponent(newLimb, out BodyPartComponent? limbComp))

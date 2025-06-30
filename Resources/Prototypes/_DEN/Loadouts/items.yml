@@ -1,3 +1,13 @@
+# SPDX-FileCopyrightText: 2025 Blitz <73762869+BlitzTheSquishy@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Rosycup <178287475+Rosycup@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Savante-Sam <sakhalinsam@gmail.com>
+# SPDX-FileCopyrightText: 2025 Tabitha <64847293+KyuPolaris@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 portfiend <109661617+portfiend@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <flyingkarii@gmail.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 # Mime masks
 - type: loadout
   id: LoadoutMimeMask
@@ -167,6 +177,82 @@
   canBeHeirloom: true
   items:
     - PlushieChitinid
+
+- type: loadout
+  id: PlushieOvinia
+  category: GeneralToys
+  cost: 1
+  canBeHeirloom: true
+  items:
+    - PlushieOvinia
+
+- type: loadout
+  id: PlushieTeddyBear
+  category: GeneralToys
+  cost: 1
+  canBeHeirloom: true
+  items:
+    - PlushieTeddyBear
+
+- type: loadout
+  id: PlushieTeddyBearRecolorable
+  category: GeneralToys
+  cost: 1
+  canBeHeirloom: true
+  customColorTint: true
+  items:
+    - PlushieTeddyBearRecolorable
+
+- type: loadout
+  id: PlushieTeddyBearRecolorablePlaid
+  category: GeneralToys
+  cost: 1
+  canBeHeirloom: true
+  customColorTint: true
+  items:
+    - PlushieTeddyBearRecolorablePlaid
+
+- type: loadout
+  id: PlushieTeddyBearRecolorableRandom
+  category: GeneralToys
+  cost: 1
+  canBeHeirloom: true
+  items:
+    - PlushieTeddyBearRecolorableRandom
+
+- type: loadout
+  id: SqueakySmileyGuy
+  category: GeneralToys
+  cost: 1
+  customColorTint: true
+  canBeHeirloom: true
+  items:
+    - SqueakySmileyGuy
+
+- type: loadout
+  id: SqueakySmileyBall
+  category: GeneralToys
+  cost: 1
+  customColorTint: true
+  canBeHeirloom: true
+  items:
+    - SqueakySmileyBall
+
+- type: loadout
+  id: PlushieAlienGerm
+  category: GeneralToys
+  cost: 1
+  canBeHeirloom: true
+  items:
+    - PlushieAlienGerm
+
+- type: loadout
+  id: PlushieAlienGermMini
+  category: GeneralToys
+  cost: 1
+  canBeHeirloom: true
+  items:
+    - PlushieAlienGermMini
 
 - type: loadout
   id: LoadoutClicker

@@ -1,4 +1,9 @@
-﻿### Loc for the transfer amount eui window
+# SPDX-FileCopyrightText: 2021 mirrorcult <lunarautomaton6@gmail.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: MIT
+
+### Loc for the transfer amount eui window
 
 ## Title
 

@@ -1,3 +1,20 @@
+# SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT
+# SPDX-FileCopyrightText: 2024 Remuchi
+# SPDX-FileCopyrightText: 2024 Timemaster99
+# SPDX-FileCopyrightText: 2024 beck-thompson
+# SPDX-FileCopyrightText: 2024 gluesniffler
+# SPDX-FileCopyrightText: 2024 router
+# SPDX-FileCopyrightText: 2025 BlitzTheSquishy
+# SPDX-FileCopyrightText: 2025 BramvanZijp
+# SPDX-FileCopyrightText: 2025 Eris
+# SPDX-FileCopyrightText: 2025 Rosycup
+# SPDX-FileCopyrightText: 2025 Sapphire
+# SPDX-FileCopyrightText: 2025 Skubman
+# SPDX-FileCopyrightText: 2025 Spatison
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 - type: entity
   save: false
   id: PlayerSiliconHumanoidBase
@@ -142,6 +159,7 @@
         - map: ["belt"]
         - map: ["neck"]
         - map: ["back"]
+        - map: [ "enum.HumanoidVisualLayers.NeckFluff" ]
         - map: ["enum.HumanoidVisualLayers.FacialHair"]
         - map: ["enum.HumanoidVisualLayers.Hair"]
         - map: ["enum.HumanoidVisualLayers.HeadSide"]
@@ -331,6 +349,8 @@
     - type: FootPrints
     - type: Carriable
     - type: LayingDown
+    - type: RMCSetPose
+    - type: ModifyUndies  # FLOOF Add
 
 
 - type: damageModifierSet

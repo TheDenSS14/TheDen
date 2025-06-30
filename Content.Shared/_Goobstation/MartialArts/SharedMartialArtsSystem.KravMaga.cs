@@ -1,3 +1,9 @@
+// SPDX-FileCopyrightText: 2025 Eagle-0 <114363363+Eagle-0@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Tirochora <leotabletdb@gmail.com>
+// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 using Content.Shared._Goobstation.MartialArts.Components;
 using Content.Shared._Goobstation.MartialArts.Events;
 using Content.Shared.Contests;
@@ -81,7 +87,7 @@ public abstract partial class SharedMartialArtsSystem
             case KravMagaMoves.LegSweep:
                 if(_netManager.IsClient)
                     return;
-                _stun.TryParalyze(hitEntity, TimeSpan.FromSeconds(4), true);
+                _stun.TryKnockdown(hitEntity, TimeSpan.FromSeconds(4), true);
                 break;
             case KravMagaMoves.NeckChop:
                 var comp = EnsureComp<KravMagaSilencedComponent>(hitEntity);

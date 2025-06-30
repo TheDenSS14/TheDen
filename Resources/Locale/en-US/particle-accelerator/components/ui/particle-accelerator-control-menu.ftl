@@ -1,3 +1,9 @@
+# SPDX-FileCopyrightText: 2021 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2021 Galactic Chimp <63882831+GalacticChimp@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: MIT
+
 particle-accelerator-control-menu-on-button = On
 particle-accelerator-control-menu-off-button = Off
 particle-accelerator-control-menu-service-manual-reference = Refer to p.132 of service manual

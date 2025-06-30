@@ -1,3 +1,8 @@
+# SPDX-FileCopyrightText: 2024 VMSolidus <evilexecutive@gmail.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 loadout-name-LoadoutEngineeringChickenSuit = eggmospheric technician suit
 loadout-description-LoadoutEngineeringChickenSuit = For the Eggmos tech who always knows where home is...
 loadout-description-LoadoutEngineeringUniformJumpskirtSenior = A skirt fit for the best of the best.

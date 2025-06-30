@@ -1,3 +1,21 @@
+# SPDX-FileCopyrightText: 2022 CommieFlowers
+# SPDX-FileCopyrightText: 2022 Nemanja
+# SPDX-FileCopyrightText: 2022 rolfero
+# SPDX-FileCopyrightText: 2023 I.K
+# SPDX-FileCopyrightText: 2023 LankLTE
+# SPDX-FileCopyrightText: 2023 RiceMar1244
+# SPDX-FileCopyrightText: 2023 notquitehadouken <1isthisameme>
+# SPDX-FileCopyrightText: 2024 Debug
+# SPDX-FileCopyrightText: 2024 OldDanceJacket
+# SPDX-FileCopyrightText: 2024 Skubman
+# SPDX-FileCopyrightText: 2024 VMSolidus
+# SPDX-FileCopyrightText: 2024 dge21
+# SPDX-FileCopyrightText: 2025 MajorMoth
+# SPDX-FileCopyrightText: 2025 Rosycup
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 - type: entity
   parent: BaseHandheldInstrument
   id: ElectricGuitarInstrument
@@ -216,7 +234,7 @@
   id: GuitarlessFretsInstrument
   name: guitarless frets
   description: who even needs a body?
-  suffix: Admeme #the sound is awful
+  categories: [ AdminTools ] #the sound is awful
   components:
   - type: Instrument
     program: 120

@@ -1,3 +1,8 @@
+# SPDX-FileCopyrightText: 2025 Falcon <falcon@zigtag.dev>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 marking-CyberLimbsMarkingZenghuHeadAlt = Alternate Head from Zenghu Pharmaceuticals
 marking-CyberLimbsMarkingZenghuChestAlt = Alternate Robotic Chassis from Zenghu Pharmaceuticals
 marking-CyberLimbsMarkingZenghuRHandAlt = Alternate Right Robotic Hand from Zenghu Pharmaceuticals

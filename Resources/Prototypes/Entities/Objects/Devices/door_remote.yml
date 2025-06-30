@@ -1,3 +1,19 @@
+# SPDX-FileCopyrightText: 2022 Chris V
+# SPDX-FileCopyrightText: 2022 Veritius
+# SPDX-FileCopyrightText: 2022 WlarusFromDaSpace
+# SPDX-FileCopyrightText: 2022 mirrorcult
+# SPDX-FileCopyrightText: 2023 Ed
+# SPDX-FileCopyrightText: 2023 Fluffiest Floofers
+# SPDX-FileCopyrightText: 2023 Nairod
+# SPDX-FileCopyrightText: 2023 Tom Leys
+# SPDX-FileCopyrightText: 2023 lzk
+# SPDX-FileCopyrightText: 2023 lzk228
+# SPDX-FileCopyrightText: 2024 SimpleStation14
+# SPDX-FileCopyrightText: 2025 MajorMoth
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 - type: entity
   parent: BaseItem
   id: DoorRemoteDefault
@@ -164,7 +180,7 @@
   parent: DoorRemoteDefault
   id: DoorRemoteAll
   name: super door remote
-  suffix: Admeme
+  categories: [ AdminTools ]
   components:
   - type: Sprite
     layers:

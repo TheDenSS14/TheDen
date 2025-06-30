@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 ui-config-menu-options = Options
 ui-config-menu-disconnect = Disconnect
 ui-config-menu-quit = Quit

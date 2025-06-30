@@ -1,3 +1,18 @@
+# SPDX-FileCopyrightText: 2022 20kdc <asdd2808@gmail.com>
+# SPDX-FileCopyrightText: 2022 Kara <lunarautomaton6@gmail.com>
+# SPDX-FileCopyrightText: 2022 Moony <moonheart08@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 Morber <14136326+Morb0@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 Rane <60792108+Elijahrane@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Moony <moony@hellomouse.net>
+# SPDX-FileCopyrightText: 2023 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
+# SPDX-FileCopyrightText: 2023 metalgearsloth <comedian_vs_clown@hotmail.com>
+# SPDX-FileCopyrightText: 2024 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 sleepyyapril <flyingkarii@gmail.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 - type: gameMap
   id: Empty
   mapName: Empty
@@ -46,5 +61,20 @@
         - type: StationJobs
           overflowJobs:
             - ChiefEngineer
+          availableJobs:
+            ChiefEngineer: [ -1, -1 ]
+
+- type: gameMap
+  id: TestHFR
+  mapName: Test HFR
+  mapPath: /Maps/Test/test_hfr.yml
+  minPlayers: 0
+  stations:
+    HFR:
+      stationProto: TestStation
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: "HFR"
+        - type: StationJobs
           availableJobs:
             ChiefEngineer: [ -1, -1 ]

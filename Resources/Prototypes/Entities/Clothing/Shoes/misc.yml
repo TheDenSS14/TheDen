@@ -1,3 +1,20 @@
+# SPDX-FileCopyrightText: 2021 Swept
+# SPDX-FileCopyrightText: 2022 FunkySphere
+# SPDX-FileCopyrightText: 2022 Leon Friedrich
+# SPDX-FileCopyrightText: 2022 metalgearsloth
+# SPDX-FileCopyrightText: 2023 Alekshhh
+# SPDX-FileCopyrightText: 2023 Nim
+# SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT
+# SPDX-FileCopyrightText: 2024 Nemanja
+# SPDX-FileCopyrightText: 2024 SimpleStation14
+# SPDX-FileCopyrightText: 2024 deltanedas
+# SPDX-FileCopyrightText: 2025 Blitz
+# SPDX-FileCopyrightText: 2025 MajorMoth
+# SPDX-FileCopyrightText: 2025 Skubman
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 - type: entity
   parent: ClothingShoesBase
   id: ClothingShoesFlippers
@@ -105,6 +122,7 @@
   - type: ClothingSpeedModifier
     walkModifier: 1.5
     sprintModifier: 1.5
+    requiresToggle: true
   - type: Appearance
   - type: GenericVisualizer
     visuals:
@@ -115,7 +133,7 @@
   - type: StaticPrice
     price: 500
   - type: PowerCellDraw
-    drawRate: 4
+    drawRate: 24 # it was 4 before :skull: it's now 2x the amount a micrortg recharges in a second
   - type: ToggleCellDraw
   - type: ItemSlots
     slots:

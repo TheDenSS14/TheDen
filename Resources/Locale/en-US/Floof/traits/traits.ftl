@@ -1,3 +1,12 @@
+# SPDX-FileCopyrightText: 2024 ShatteredSwords <135023515+ShatteredSwords@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 cynical <superpilotboy@gmail.com>
+# SPDX-FileCopyrightText: 2024 fox <daytimer253@gmail.com>
+# SPDX-FileCopyrightText: 2025 KekaniCreates <87507256+KekaniCreates@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <flyingkarii@gmail.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 trait-name-HollowFangs = Hollow Fangs
 trait-description-HollowFangs =
     Whether through implantation, genetic modification, or evolution, you have a pair of hollow, sharp fangs used to drink iron-based blood from the beings that contain it.

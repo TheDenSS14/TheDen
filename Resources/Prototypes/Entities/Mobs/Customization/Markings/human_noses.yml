@@ -1,10 +1,20 @@
+# SPDX-FileCopyrightText: 2024 Angelo Fallaria <ba.fallaria@gmail.com>
+# SPDX-FileCopyrightText: 2024 SlamBamActionman <83650252+SlamBamActionman@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Blitz <73762869+BlitzTheSquishy@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 M3739 <47579354+M3739@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Rosycup <178287475+Rosycup@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Skubman <ba.fallaria@gmail.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 - type: marking
   id: HumanNoseSchnozz
   bodyPart: Snout
   markingCategory: Snout
   followSkinColor: true
   forcedColoring: true
-  speciesRestriction: [Human, Dwarf, Felinid, Oni, Harpy, SlimePerson, Arachne, Lamia, Canid] # THe Den - Canid
+  speciesRestriction: [Human, Dwarf, Felinid, Oni, Harpy, SlimePerson, Arachne, Lamia, Canid, Kitsune] # THe Den - Canid
   sprites:
   - sprite: Mobs/Customization/human_noses.rsi
     state: schnozz
@@ -15,7 +25,7 @@
   markingCategory: Snout
   followSkinColor: true
   forcedColoring: true
-  speciesRestriction: [Human, Dwarf, Felinid, Oni, Harpy, SlimePerson, Arachne, Lamia, Canid] # THe Den - Canid
+  speciesRestriction: [Human, Dwarf, Felinid, Oni, Harpy, SlimePerson, Arachne, Lamia, Canid, Kitsune] # THe Den - Canid
   sprites:
   - sprite: Mobs/Customization/human_noses.rsi
     state: nubby
@@ -26,7 +36,7 @@
   markingCategory: Snout
   followSkinColor: true
   forcedColoring: true
-  speciesRestriction: [Human, Dwarf, Felinid, Oni, Harpy, SlimePerson, Arachne, Lamia, Canid] # THe Den - Canid
+  speciesRestriction: [Human, Dwarf, Felinid, Oni, Harpy, SlimePerson, Arachne, Lamia, Canid, Kitsune] # THe Den - Canid
   sprites:
   - sprite: Mobs/Customization/human_noses.rsi
     state: droop
@@ -37,7 +47,7 @@
   markingCategory: Snout
   followSkinColor: true
   forcedColoring: true
-  speciesRestriction: [Human, Dwarf, Felinid, Oni, Harpy, SlimePerson, Arachne, Lamia, Canid] # THe Den - Canid
+  speciesRestriction: [Human, Dwarf, Felinid, Oni, Harpy, SlimePerson, Arachne, Lamia, Canid, Kitsune] # THe Den - Canid
   sprites:
   - sprite: Mobs/Customization/human_noses.rsi
     state: blob
@@ -48,7 +58,7 @@
   markingCategory: Snout
   followSkinColor: true
   forcedColoring: true
-  speciesRestriction: [Human, Dwarf, Felinid, Oni, Harpy, SlimePerson, Arachne, Lamia, Canid] # THe Den - Canid
+  speciesRestriction: [Human, Dwarf, Felinid, Oni, Harpy, SlimePerson, Arachne, Lamia, Canid, Kitsune] # THe Den - Canid
   sprites:
   - sprite: Mobs/Customization/human_noses.rsi
     state: uppie

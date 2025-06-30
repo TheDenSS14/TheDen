@@ -1,3 +1,15 @@
+# SPDX-FileCopyrightText: 2022 Kara
+# SPDX-FileCopyrightText: 2022 metalgearsloth
+# SPDX-FileCopyrightText: 2023 Vordenburg
+# SPDX-FileCopyrightText: 2023 lzk
+# SPDX-FileCopyrightText: 2024 Debug
+# SPDX-FileCopyrightText: 2025 Blitz
+# SPDX-FileCopyrightText: 2025 BlitzTheSquishy
+# SPDX-FileCopyrightText: 2025 VMSolidus
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 - type: entity
   abstract: true
   parent: BaseMagazineBox
@@ -29,6 +41,7 @@
   parent: BaseMagazineBoxCaselessRifle
   id: MagazineBoxCaselessRifle10x24
   name: ammunition box (.25 caseless)
+  suffix: 10x24
   components:
   - type: BallisticAmmoProvider
     capacity: 200

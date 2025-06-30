@@ -1,3 +1,18 @@
+// SPDX-FileCopyrightText: 2023 AlexMorgan3817 <46600554+AlexMorgan3817@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Debug <49997488+DebugOk@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Slava0135 <40753025+Slava0135@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 deltanedas <39013340+deltanedas@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 FoxxoTrystan <45297731+FoxxoTrystan@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 LordCarve <27449516+LordCarve@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Mnemotechnican <69920617+Mnemotechnician@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 fox <daytimer253@gmail.com>
+// SPDX-FileCopyrightText: 2025 RedFoxIV <38788538+RedFoxIV@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 using Content.Server.Chat.Systems;
 using Content.Server.Emp;
 using Content.Server.Language;
@@ -6,6 +21,11 @@ using Content.Server.Speech;
 using Content.Shared.Chat;
 using Content.Shared.Inventory.Events;
 using Content.Shared.Language.Components;
+using Content.Shared.Cuffs; // DeltaV
+using Content.Shared.Cuffs.Components; // DeltaV
+using Content.Shared.Hands.Components; // DeltaV
+using Content.Shared.Inventory.Events;
+using Content.Shared.Popups; // DeltaV
 using Content.Shared.Radio;
 using Content.Shared.Radio.Components;
 using Content.Shared.Radio.EntitySystems;
@@ -19,6 +39,8 @@ public sealed class HeadsetSystem : SharedHeadsetSystem
     [Dependency] private readonly INetManager _netMan = default!;
     [Dependency] private readonly RadioSystem _radio = default!;
     [Dependency] private readonly LanguageSystem _language = default!;
+    [Dependency] private readonly SharedCuffableSystem _cuffable = default!; // DeltaV
+    [Dependency] private readonly SharedPopupSystem _popup = default!; // DeltaV
 
     public override void Initialize()
     {

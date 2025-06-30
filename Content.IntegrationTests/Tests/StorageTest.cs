@@ -1,3 +1,19 @@
+// SPDX-FileCopyrightText: 2021 DrSmugleaf
+// SPDX-FileCopyrightText: 2021 Javier Guardia Fernández
+// SPDX-FileCopyrightText: 2021 Paul Ritter
+// SPDX-FileCopyrightText: 2021 Swept
+// SPDX-FileCopyrightText: 2022 wrexbe
+// SPDX-FileCopyrightText: 2023 Leon Friedrich
+// SPDX-FileCopyrightText: 2023 TemporalOroboros
+// SPDX-FileCopyrightText: 2023 Visne
+// SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT
+// SPDX-FileCopyrightText: 2024 Debug
+// SPDX-FileCopyrightText: 2025 MajorMoth
+// SPDX-FileCopyrightText: 2025 metalgearsloth
+// SPDX-FileCopyrightText: 2025 sleepyyapril
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 #nullable enable
 using System.Collections.Generic;
 using System.Linq;
@@ -15,6 +31,7 @@ namespace Content.IntegrationTests.Tests
     [TestFixture]
     public sealed class StorageTest
     {
+        private static readonly ProtoId<EntityCategoryPrototype> AdminToolsCategory = "AdminTools";
         /// <summary>
         /// Can an item store more than itself weighs.
         /// In an ideal world this test wouldn't need to exist because sizes would be recursive.
@@ -30,6 +47,8 @@ namespace Content.IntegrationTests.Tests
 
             var itemSys = entMan.System<SharedItemSystem>();
 
+            var protoId = (ProtoId<EntityCategoryPrototype>) AdminToolsCategory.Id;
+
             await server.WaitAssertion(() =>
             {
                 foreach (var proto in protoManager.EnumeratePrototypes<EntityPrototype>())
@@ -37,7 +56,8 @@ namespace Content.IntegrationTests.Tests
                     if (!proto.TryGetComponent<StorageComponent>("Storage", out var storage) ||
                         storage.Whitelist != null ||
                         storage.MaxItemSize == null ||
-                        !proto.TryGetComponent<ItemComponent>("Item", out var item))
+                        !proto.TryGetComponent<ItemComponent>("Item", out var item) ||
+                        proto.Categories.Any(target => target.ID == AdminToolsCategory))
                         continue;
 
                     Assert.That(itemSys.GetSizePrototype(storage.MaxItemSize.Value).Weight,

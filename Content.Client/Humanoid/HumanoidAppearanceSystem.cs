@@ -1,3 +1,21 @@
+// SPDX-FileCopyrightText: 2023 Debug <49997488+DebugOk@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Flipp Syder <76629141+vulppine@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Morb <14136326+Morb0@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 csqrb <56765288+CaptainSqrBeard@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 VMSolidus <evilexecutive@gmail.com>
+// SPDX-FileCopyrightText: 2025 Aikakakah <145503852+Aikakakah@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Blitz <73762869+BlitzTheSquishy@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Jakumba <jkmcbennett@hotmail.com>
+// SPDX-FileCopyrightText: 2025 Lyndomen <49795619+Lyndomen@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 gluesniffler <159397573+gluesniffler@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 gluesniffler <linebarrelerenthusiast@gmail.com>
+// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 using System.Numerics;
 using Content.Shared.Humanoid;
 using Content.Shared.Humanoid.Markings;
@@ -6,7 +24,9 @@ using Content.Shared.Preferences;
 using Robust.Client.GameObjects;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
-using System.Numerics; // CD - Character Records
+using System.Numerics;
+using Content.Shared._DEN.Species;
+using Microsoft.CodeAnalysis; // CD - Character Records
 using Robust.Client.Console; // CD - Character Records
 
 namespace Content.Client.Humanoid;
@@ -15,6 +35,7 @@ public sealed class HumanoidAppearanceSystem : SharedHumanoidAppearanceSystem
 {
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
     [Dependency] private readonly MarkingManager _markingManager = default!;
+    [Dependency] private readonly SpriteSystem _spriteSystem = default!;
 
     public override void Initialize()
     {
@@ -25,24 +46,41 @@ public sealed class HumanoidAppearanceSystem : SharedHumanoidAppearanceSystem
 
     private void OnHandleState(EntityUid uid, HumanoidAppearanceComponent component, ref AfterAutoHandleStateEvent args)
     {
-        UpdateSprite(component, Comp<SpriteComponent>(uid));
+        UpdateSprite(uid, component, Comp<SpriteComponent>(uid));
     }
 
-    private void UpdateSprite(HumanoidAppearanceComponent component, SpriteComponent sprite)
+    private void UpdateSprite(EntityUid uid, HumanoidAppearanceComponent component, SpriteComponent? sprite)
     {
+        if (sprite == null)
+            return;
+
         UpdateLayers(component, sprite);
         ApplyMarkingSet(component, sprite);
 
         var speciesPrototype = _prototypeManager.Index(component.Species);
 
-        var height = Math.Clamp(component.Height, speciesPrototype.MinHeight, speciesPrototype.MaxHeight);
-        var width = Math.Clamp(component.Width, speciesPrototype.MinWidth, speciesPrototype.MaxWidth);
+        // var height = Math.Clamp(component.Height, speciesPrototype.MinHeight, speciesPrototype.MaxHeight);
+        // var width = Math.Clamp(component.Width, speciesPrototype.MinWidth, speciesPrototype.MaxWidth);
+
+        var height = component.Height;
+        var width = component.Width;
+
+        if (!HasComp<SpeciesRestrictionExemptComponent>(uid))
+        {
+            height = Math.Clamp(component.Height, speciesPrototype.MinHeight, speciesPrototype.MaxHeight);
+            width = Math.Clamp(component.Width, speciesPrototype.MinWidth, speciesPrototype.MaxWidth);
+        }
+
         component.Height = height;
         component.Width = width;
 
-        sprite.Scale = new Vector2(width, height);
+        // sprite.Scale = new Vector2(width, height);
+        var scale = new Vector2(width, height);
+        var ent = (uid, sprite);
+        var layer = _spriteSystem.LayerMapReserve(ent, HumanoidVisualLayers.Eyes);
 
-        sprite[sprite.LayerMapReserveBlank(HumanoidVisualLayers.Eyes)].Color = component.EyeColor;
+        _spriteSystem.SetScale(ent, scale);
+        sprite[layer].Color = component.EyeColor;
     }
 
     private static bool IsHidden(HumanoidAppearanceComponent humanoid, HumanoidVisualLayers layer)
@@ -217,7 +255,10 @@ public sealed class HumanoidAppearanceSystem : SharedHumanoidAppearanceSystem
         humanoid.Height = profile.Height;
         humanoid.Width = profile.Width;
 
-        UpdateSprite(humanoid, Comp<SpriteComponent>(uid));
+        if (!TryComp<SpriteComponent>(uid, out var spriteComponent))
+            return;
+
+        UpdateSprite(uid, humanoid, spriteComponent);
     }
 
     private void ApplyMarkingSet(HumanoidAppearanceComponent humanoid, SpriteComponent sprite)
@@ -330,6 +371,7 @@ public sealed class HumanoidAppearanceSystem : SharedHumanoidAppearanceSystem
         // lets just kinda sorta do that ourselves
         var layerDict = new Dictionary<string, int>();
 
+        visible &= !humanoid.HiddenMarkings.Contains(markingPrototype.ID); // FLOOF ADD
         // FLOOF ADD END
 
         for (var j = 0; j < markingPrototype.Sprites.Count; j++)
