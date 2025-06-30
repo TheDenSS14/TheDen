@@ -3,6 +3,7 @@
 # SPDX-FileCopyrightText: 2023 Nairod
 # SPDX-FileCopyrightText: 2024 Ubaser
 # SPDX-FileCopyrightText: 2024 VMSolidus
+# SPDX-FileCopyrightText: 2025 Blitz
 # SPDX-FileCopyrightText: 2025 BlitzTheSquishy
 # SPDX-FileCopyrightText: 2025 Rosycup
 # SPDX-FileCopyrightText: 2025 Tirochora
@@ -1121,3 +1122,223 @@
   sprites:
   - sprite: Mobs/Customization/Moth/moth_parts.rsi
     state: witchwing_r_arm
+
+# Lovers
+- type: marking
+  id: MothHeadLovers
+  bodyPart: Head
+  markingCategory: Head
+  speciesRestriction: [Moth, SlimePerson, IPC]
+  sprites:
+  - sprite: Mobs/Customization/Moth/moth_parts_greyscale.rsi
+    state: lovers-head
+
+- type: marking
+  id: MothChestLovers
+  bodyPart: Chest
+  markingCategory: Chest
+  speciesRestriction: [Moth, SlimePerson, IPC]
+  sprites:
+  - sprite: Mobs/Customization/Moth/moth_parts_greyscale.rsi
+    state: lovers-chest
+
+- type: marking
+  id: MothLArmLovers
+  bodyPart: LArm
+  markingCategory: LeftArm
+  speciesRestriction: [Moth, SlimePerson, IPC]
+  sprites:
+  - sprite: Mobs/Customization/Moth/moth_parts_greyscale.rsi
+    state: lovers-leftarm
+
+- type: marking
+  id: MothRArmLovers
+  bodyPart: RArm
+  markingCategory: RightArm
+  speciesRestriction: [Moth, SlimePerson, IPC]
+  sprites:
+  - sprite: Mobs/Customization/Moth/moth_parts_greyscale.rsi
+    state: lovers-rightarm
+
+- type: marking
+  id: MothLLegLovers
+  bodyPart: LLeg
+  markingCategory: LeftLeg
+  speciesRestriction: [Moth, SlimePerson, IPC]
+  sprites:
+  - sprite: Mobs/Customization/Moth/moth_parts_greyscale.rsi
+    state: lovers-leftleg
+
+- type: marking
+  id: MothRLegLovers
+  bodyPart: RLeg
+  markingCategory: RightLeg
+  speciesRestriction: [Moth, SlimePerson, IPC]
+  sprites:
+  - sprite: Mobs/Customization/Moth/moth_parts_greyscale.rsi
+    state: lovers-rightleg
+
+# Poison
+- type: marking
+  id: MothHeadPoison
+  bodyPart: Head
+  markingCategory: Head
+  speciesRestriction: [Moth, SlimePerson, IPC]
+  sprites:
+  - sprite: Mobs/Customization/Moth/moth_parts_greyscale.rsi
+    state: poison-head
+
+- type: marking
+  id: MothChestPoison
+  bodyPart: Chest
+  markingCategory: Chest
+  speciesRestriction: [Moth, SlimePerson, IPC]
+  sprites:
+  - sprite: Mobs/Customization/Moth/moth_parts_greyscale.rsi
+    state: poison-chest
+
+- type: marking
+  id: MothLArmPoison
+  bodyPart: LArm
+  markingCategory: LeftArm
+  speciesRestriction: [Moth, SlimePerson, IPC]
+  sprites:
+  - sprite: Mobs/Customization/Moth/moth_parts_greyscale.rsi
+    state: poison-leftarm
+
+- type: marking
+  id: MothRArmPoison
+  bodyPart: RArm
+  markingCategory: RightArm
+  speciesRestriction: [Moth, SlimePerson, IPC]
+  sprites:
+  - sprite: Mobs/Customization/Moth/moth_parts_greyscale.rsi
+    state: poison-rightarm
+
+- type: marking
+  id: MothLLegPoison
+  bodyPart: LLeg
+  markingCategory: LeftLeg
+  speciesRestriction: [Moth, SlimePerson, IPC]
+  sprites:
+  - sprite: Mobs/Customization/Moth/moth_parts_greyscale.rsi
+    state: poison-leftleg
+
+- type: marking
+  id: MothRLegPoison
+  bodyPart: RLeg
+  markingCategory: RightLeg
+  speciesRestriction: [Moth, SlimePerson, IPC]
+  sprites:
+  - sprite: Mobs/Customization/Moth/moth_parts_greyscale.rsi
+    state: poison-rightleg
+
+# Reddish
+- type: marking
+  id: MothHeadReddish
+  bodyPart: Head
+  markingCategory: Head
+  speciesRestriction: [Moth, SlimePerson, IPC]
+  sprites:
+  - sprite: Mobs/Customization/Moth/moth_parts_greyscale.rsi
+    state: reddish-head
+
+- type: marking
+  id: MothChestReddish
+  bodyPart: Chest
+  markingCategory: Chest
+  speciesRestriction: [Moth, SlimePerson, IPC]
+  sprites:
+  - sprite: Mobs/Customization/Moth/moth_parts_greyscale.rsi
+    state: reddish-chest
+
+- type: marking
+  id: MothLArmReddish
+  bodyPart: LArm
+  markingCategory: LeftArm
+  speciesRestriction: [Moth, SlimePerson, IPC]
+  sprites:
+  - sprite: Mobs/Customization/Moth/moth_parts_greyscale.rsi
+    state: reddish-leftarm
+
+- type: marking
+  id: MothRArmReddish
+  bodyPart: RArm
+  markingCategory: RightArm
+  speciesRestriction: [Moth, SlimePerson, IPC]
+  sprites:
+  - sprite: Mobs/Customization/Moth/moth_parts_greyscale.rsi
+    state: reddish-rightarm
+
+- type: marking
+  id: MothLLegReddish
+  bodyPart: LLeg
+  markingCategory: LeftLeg
+  speciesRestriction: [Moth, SlimePerson, IPC]
+  sprites:
+  - sprite: Mobs/Customization/Moth/moth_parts_greyscale.rsi
+    state: reddish-leftleg
+
+- type: marking
+  id: MothRLegReddish
+  bodyPart: RLeg
+  markingCategory: RightLeg
+  speciesRestriction: [Moth, SlimePerson, IPC]
+  sprites:
+  - sprite: Mobs/Customization/Moth/moth_parts_greyscale.rsi
+    state: reddish-rightleg
+
+# Witchking
+- type: marking
+  id: MothHeadWitchking
+  bodyPart: Head
+  markingCategory: Head
+  speciesRestriction: [Moth, SlimePerson, IPC]
+  sprites:
+  - sprite: Mobs/Customization/Moth/moth_parts_greyscale.rsi
+    state: witchking-head
+
+- type: marking
+  id: MothChestWitchking
+  bodyPart: Chest
+  markingCategory: Chest
+  speciesRestriction: [Moth, SlimePerson, IPC]
+  sprites:
+  - sprite: Mobs/Customization/Moth/moth_parts_greyscale.rsi
+    state: witchking-chest
+
+- type: marking
+  id: MothLArmWitchking
+  bodyPart: LArm
+  markingCategory: LeftArm
+  speciesRestriction: [Moth, SlimePerson, IPC]
+  sprites:
+  - sprite: Mobs/Customization/Moth/moth_parts_greyscale.rsi
+    state: witchking-leftarm
+
+- type: marking
+  id: MothRArmWitchking
+  bodyPart: RArm
+  markingCategory: RightArm
+  speciesRestriction: [Moth, SlimePerson, IPC]
+  sprites:
+  - sprite: Mobs/Customization/Moth/moth_parts_greyscale.rsi
+    state: witchking-rightarm
+
+- type: marking
+  id: MothLLegWitchking
+  bodyPart: LLeg
+  markingCategory: LeftLeg
+  speciesRestriction: [Moth, SlimePerson, IPC]
+  sprites:
+  - sprite: Mobs/Customization/Moth/moth_parts_greyscale.rsi
+    state: witchking-leftleg
+
+- type: marking
+  id: MothRLegWitchking
+  bodyPart: RLeg
+  markingCategory: RightLeg
+  speciesRestriction: [Moth, SlimePerson, IPC]
+  sprites:
+  - sprite: Mobs/Customization/Moth/moth_parts_greyscale.rsi
+    state: witchking-rightleg
