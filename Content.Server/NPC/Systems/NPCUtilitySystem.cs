@@ -15,6 +15,7 @@ using Content.Shared.Mobs.Systems;
 using Content.Shared.NPC.Systems;
 using Content.Shared.Nutrition.Components;
 using Content.Shared.Nutrition.EntitySystems;
+using Content.Shared.Tag;
 using Content.Shared.Tools.Systems;
 using Content.Shared.Turrets;
 using Content.Shared.Weapons.Melee;
@@ -44,6 +45,7 @@ public sealed class NPCUtilitySystem : EntitySystem
     [Dependency] private readonly NpcFactionSystem _npcFaction = default!;
     [Dependency] private readonly OpenableSystem _openable = default!;
     [Dependency] private readonly PuddleSystem _puddle = default!;
+    [Dependency] private readonly TagSystem _tag = default!;
     [Dependency] private readonly SharedTransformSystem _transform = default!;
     [Dependency] private readonly SolutionContainerSystem _solutions = default!;
     [Dependency] private readonly WeldableSystem _weldable = default!;
@@ -520,6 +522,10 @@ public sealed class NPCUtilitySystem : EntitySystem
 
                 break;
             }
+            case TagFilter tagFilter:
+                // TODO: Holy smokes this entire function i should refactor this later
+                entities.RemoveWhere(ent => !_tag.HasAnyTag(ent, tagFilter.Tags));
+                break;
             default:
                 throw new NotImplementedException();
         }
