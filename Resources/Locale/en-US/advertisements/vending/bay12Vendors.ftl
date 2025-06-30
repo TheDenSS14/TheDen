@@ -1,4 +1,9 @@
-﻿advertisement-solsnack-1 = We cut all the red-tape so that you can have diarrhea!
+# SPDX-FileCopyrightText: 2024 VMSolidus <evilexecutive@gmail.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
+advertisement-solsnack-1 = We cut all the red-tape so that you can have diarrhea!
 advertisement-solsnack-2 = Food safety standards are merely a suggestion if you know the right people!
 advertisement-solsnack-3 = Snacks from home, corruption included!
 advertisement-solsnack-4 = A taste of home!

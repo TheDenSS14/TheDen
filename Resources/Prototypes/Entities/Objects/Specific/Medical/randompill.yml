@@ -1,3 +1,17 @@
+# SPDX-FileCopyrightText: 2023 CrigCrag
+# SPDX-FileCopyrightText: 2023 MisterMecky
+# SPDX-FileCopyrightText: 2023 Moomoobeef
+# SPDX-FileCopyrightText: 2023 Ubaser
+# SPDX-FileCopyrightText: 2023 forthbridge
+# SPDX-FileCopyrightText: 2023 lzk
+# SPDX-FileCopyrightText: 2023 metalgearsloth
+# SPDX-FileCopyrightText: 2024 deathride58
+# SPDX-FileCopyrightText: 2025 KekaniCreates
+# SPDX-FileCopyrightText: 2025 MajorMoth
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 - type: weightedRandomFillSolution
   id: RandomFillStrangePill
   fills:
@@ -77,7 +91,8 @@
       - Rhigoxane # funky
       - Spewium # funky
       - Pestiline # funky
-      - Philterex # VASH
+#     this might break consent
+#     - Philterex # VASH
     - quantity: 5
       weight: 2.5
       reagents:

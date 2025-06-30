@@ -1,6 +1,33 @@
+// SPDX-FileCopyrightText: 2023 Alex Evgrashin
+// SPDX-FileCopyrightText: 2023 Debug
+// SPDX-FileCopyrightText: 2023 DrSmugleaf
+// SPDX-FileCopyrightText: 2023 Flipp Syder
+// SPDX-FileCopyrightText: 2023 Leon Friedrich
+// SPDX-FileCopyrightText: 2023 Morb
+// SPDX-FileCopyrightText: 2023 Visne
+// SPDX-FileCopyrightText: 2023 Vordenburg
+// SPDX-FileCopyrightText: 2023 csqrb
+// SPDX-FileCopyrightText: 2024 Aiden
+// SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT
+// SPDX-FileCopyrightText: 2024 FoxxoTrystan
+// SPDX-FileCopyrightText: 2024 Tayrtahn
+// SPDX-FileCopyrightText: 2024 VMSolidus
+// SPDX-FileCopyrightText: 2024 deltanedas
+// SPDX-FileCopyrightText: 2024 gluesniffler
+// SPDX-FileCopyrightText: 2024 ike709
+// SPDX-FileCopyrightText: 2024 metalgearsloth
+// SPDX-FileCopyrightText: 2025 Aikakakah
+// SPDX-FileCopyrightText: 2025 Lyndomen
+// SPDX-FileCopyrightText: 2025 Tabitha
+// SPDX-FileCopyrightText: 2025 Timfa
+// SPDX-FileCopyrightText: 2025 sleepyyapril
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 using System.IO;
 using System.Linq;
 using System.Numerics;
+using Content.Shared._DEN.Species;
 using Content.Shared._EE.Contractors.Prototypes;
 using Content.Shared.Decals;
 using Content.Shared.Examine;
@@ -148,6 +175,36 @@ public abstract class SharedHumanoidAppearanceSystem : EntitySystem
         SetLayerVisibility(uid, humanoid, layer, visible, permanent, ref dirty);
         if (dirty)
             Dirty(uid, humanoid);
+    }
+
+    /// <summary>
+    ///     Clones a humanoid's appearance to a target mob, provided they both have humanoid components.
+    /// </summary>
+    /// <param name="source">Source entity to fetch the original appearance from.</param>
+    /// <param name="target">Target entity to apply the source entity's appearance to.</param>
+    /// <param name="sourceHumanoid">Source entity's humanoid component.</param>
+    /// <param name="targetHumanoid">Target entity's humanoid component.</param>
+    public void CloneAppearance(EntityUid source, EntityUid target, HumanoidAppearanceComponent? sourceHumanoid = null,
+        HumanoidAppearanceComponent? targetHumanoid = null)
+    {
+        if (!Resolve(source, ref sourceHumanoid) || !Resolve(target, ref targetHumanoid))
+            return;
+
+        targetHumanoid.Species = sourceHumanoid.Species;
+        targetHumanoid.SkinColor = sourceHumanoid.SkinColor;
+        targetHumanoid.EyeColor = sourceHumanoid.EyeColor;
+        targetHumanoid.Age = sourceHumanoid.Age;
+        SetSex(target, sourceHumanoid.Sex, false, targetHumanoid);
+        targetHumanoid.CustomBaseLayers = new(sourceHumanoid.CustomBaseLayers);
+        targetHumanoid.MarkingSet = new(sourceHumanoid.MarkingSet);
+
+        targetHumanoid.Gender = sourceHumanoid.Gender;
+        if (TryComp<GrammarComponent>(target, out var grammar))
+            grammar.Gender = sourceHumanoid.Gender;
+
+        targetHumanoid.LastProfileLoaded = sourceHumanoid.LastProfileLoaded; // DeltaV - let paradox anomaly be cloned
+
+        Dirty(target, targetHumanoid);
     }
 
     /// <summary>
@@ -362,8 +419,15 @@ public abstract class SharedHumanoidAppearanceSystem : EntitySystem
             return;
 
         var species = _proto.Index(humanoid.Species);
-        humanoid.Height = Math.Clamp(scale.Y, species.MinHeight, species.MaxHeight);
-        humanoid.Width = Math.Clamp(scale.X, species.MinWidth, species.MaxWidth);
+
+        humanoid.Height = scale.Y;
+        humanoid.Width = scale.X;
+
+        if (!HasComp<SpeciesRestrictionExemptComponent>(uid))
+        {
+            humanoid.Height = Math.Clamp(scale.Y, species.MinHeight, species.MaxHeight);
+            humanoid.Width = Math.Clamp(scale.X, species.MinWidth, species.MaxWidth);
+        }
 
         if (sync)
             Dirty(uid, humanoid);
@@ -442,6 +506,7 @@ public abstract class SharedHumanoidAppearanceSystem : EntitySystem
         humanoid.StationAiName = profile.StationAiName;
         humanoid.CyborgName = profile.CyborgName;
         humanoid.Age = profile.Age;
+        humanoid.Height = profile.Height; // CD - Character Records
 
         humanoid.CustomSpecieName = profile.Customspeciename;
 
@@ -552,4 +617,25 @@ public abstract class SharedHumanoidAppearanceSystem : EntitySystem
 
         return Loc.GetString("identity-age-old");
     }
+
+    // Floofstation section
+    public void SetMarkingVisibility(
+        EntityUid uid,
+        HumanoidAppearanceComponent? humanoid,
+        string markingId,
+        bool visible)
+    {
+        if (!_markingManager.Markings.TryGetValue(markingId, out var prototype))
+            return;
+        if (!Resolve(uid, ref humanoid))
+            return;
+
+        if (visible)
+            humanoid.HiddenMarkings.Remove(markingId);
+        else
+            humanoid.HiddenMarkings.Add(markingId);
+
+        Dirty(uid, humanoid);
+    }
+    // Floofstation section end
 }

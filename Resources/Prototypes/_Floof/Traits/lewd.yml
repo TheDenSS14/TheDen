@@ -1,0 +1,129 @@
+# SPDX-FileCopyrightText: 2024 Pierson Arnold
+# SPDX-FileCopyrightText: 2025 Rosycup
+# SPDX-FileCopyrightText: 2025 Tabitha
+# SPDX-FileCopyrightText: 2025 portfiend
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
+- type: trait
+  id: CumProducer
+  category: Lewd
+  requirements:
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Borg
+        - MedicalBorg
+  functions:
+    - !type:TraitAddComponent
+      components:
+        - type: CumProducer
+          solutionname: penis
+    - !type:TraitAddSolutionContainer
+      solutions:
+        penis:
+          maxVol: 25
+          reagents:
+          - ReagentId: Cum
+            Quantity: 25
+
+#   components:
+#     - type: CumProducer
+#       solutionname: "penis"
+#     - type: SolutionContainerManager
+#       solutions:
+#         penis:
+#           maxVol: 25
+#           reagents:
+#           - ReagentId: Cum
+#             Quantity: 25
+
+- type: trait
+  id: MilkProducer
+  category: Lewd
+  requirements:
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Borg
+        - MedicalBorg
+  functions:
+    - !type:TraitAddComponent
+      components:
+        - type: MilkProducer
+          solutionname: breasts
+    - !type:TraitAddSolutionContainer
+      solutions:
+        breasts:
+          maxVol: 50
+          reagents:
+          - ReagentId: Milk
+            Quantity: 50
+
+#   components:
+#     - type: MilkProducer
+#       solutionname: "breasts"
+#     - type: SolutionContainerManager
+#       solutions:
+#         breasts:
+#           maxVol: 50
+#           reagents:
+#           - ReagentId: Milk
+#             Quantity: 50
+
+- type: trait
+  id: SquirtProducer
+  category: Lewd
+  requirements:
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Borg
+        - MedicalBorg
+  functions:
+    - !type:TraitAddComponent
+      components:
+        - type: SquirtProducer
+          solutionname: vagina
+    - !type:TraitAddSolutionContainer
+      solutions:
+        vagina:
+          maxVol: 25
+          reagents:
+          - ReagentId: NaturalLubricant
+            Quantity: 25
+
+#   components:
+#     - type: SquirtProducer
+#       solutionname: "vagina"
+#     - type: SolutionContainerManager
+#       solutions:
+#         vagina:
+#           maxVol: 25
+#           reagents:
+#           - ReagentId: NaturalLubricant
+#             Quantity: 25
+
+- type: trait
+  id: HoneyProducer
+  category: TraitsPhysicalBiological
+  points: -1 # Point cost added to balance with removal of species restriction
+  requirements:
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Borg
+        - MedicalBorg
+  functions:
+    - !type:TraitAddComponent
+      components:
+        - type: HoneyProducer
+          solutionname: honeystomach
+    - !type:TraitAddSolutionContainer
+      solutions:
+        honeystomach:
+          maxVol: 50
+          reagents:
+          - ReagentId: Honey
+            Quantity: 50

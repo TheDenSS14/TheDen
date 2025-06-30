@@ -1,3 +1,27 @@
+# SPDX-FileCopyrightText: 2023 Alex
+# SPDX-FileCopyrightText: 2023 Ed
+# SPDX-FileCopyrightText: 2023 I.K
+# SPDX-FileCopyrightText: 2023 Kara
+# SPDX-FileCopyrightText: 2023 brainfood1183
+# SPDX-FileCopyrightText: 2023 notquitehadouken <1isthisameme>
+# SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT
+# SPDX-FileCopyrightText: 2024 Fansana
+# SPDX-FileCopyrightText: 2024 Nairod
+# SPDX-FileCopyrightText: 2024 Nemanja
+# SPDX-FileCopyrightText: 2024 ShatteredSwords
+# SPDX-FileCopyrightText: 2024 Tonydatguy
+# SPDX-FileCopyrightText: 2024 Whisper
+# SPDX-FileCopyrightText: 2024 fenndragon
+# SPDX-FileCopyrightText: 2024 gluesniffler
+# SPDX-FileCopyrightText: 2024 liltenhead
+# SPDX-FileCopyrightText: 2025 Blitz
+# SPDX-FileCopyrightText: 2025 Eris
+# SPDX-FileCopyrightText: 2025 MajorMoth
+# SPDX-FileCopyrightText: 2025 VMSolidus
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 - type: entity
   abstract: true
   id: MobElementalBase
@@ -348,10 +372,13 @@
         - ReagentSlimeNorepinephricAcid
         - ReagentSlimeEphedrine
         - ReagentSlimeRobustHarvest
-        - ReagentSlimeCum # Floofstation
-        - ReagentSlimePomelustine # Floofstation
-        - ReagentSlimePhilterex # Floofstation
-        - ReagentSlimeLibidozenithizine # Floofstation
+#       The Den start
+#       These often end up breaking consent. Removed.
+#       - ReagentSlimeCum # Floofstation
+#       - ReagentSlimePomelustine # Floofstation
+#       - ReagentSlimePhilterex # Floofstation
+#       - ReagentSlimeLibidozenithizine # Floofstation
+#       The Den end
         - ReagentSlimeIchor
         - ReagentSlimeBleach
         - ReagentSlimeSoap

@@ -1,45 +1,71 @@
-- files: ["01 The Gamble.ogg", "02 Guilty Pleasures.ogg", "03 Jazzcuzzi.ogg", "04 The Walk.ogg", "05 Velvet Bossa.ogg", "06 Colors.ogg", "07 Midnight Jam.ogg", "08 Miles Ahead.ogg", "09 Moody.ogg", "10 Flying Away.ogg", "11 Take It Easy.ogg"]
-  license: "CC-BY-NC-SA-3.0"
-  copyright: "All songs used are produced by Danya Vodovoz, royalty free."
-  source: "https://soundcloud.com/danyavodovoz"
+# SPDX-FileCopyrightText: 2022 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 ike709 <ike709@github.com>
+# SPDX-FileCopyrightText: 2022 ike709 <ike709@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 wrexbe <81056464+wrexbe@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Adeinitas <147965189+adeinitas@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Colin-Tel <113523727+Colin-Tel@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 DocNITE <docnite0530@gmail.com>
+# SPDX-FileCopyrightText: 2024 VMSolidus <evilexecutive@gmail.com>
+# SPDX-FileCopyrightText: 2024 therealDLondon <162949166+therealDLondon@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Mono <182929384+Monotheonist@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
-- files: ["atomicamnesiammx.ogg"]
+# Note from Mono: If you are looking for Den files, look in the Den folder. This is upstream and Delta V files, under AGPL and MIT. If you are going to port those, put them here and label them - this helps people distinguish license.
+
+- files: ["atomicamnesiammx.ogg"] #WIZDEN
   license: "CC-BY-NC-SA-3.0"
   copyright: "Atomic Amnesia MMX by Phillip Dyer. Converted from MP3 to OGG."
   source: "https://soundcloud.com/3kliksphilip/atomic-amnesia-mmx-1"
 
-- files: ["Monument.ogg"]
+- files: ["Monument.ogg"] #WIZDEN
   license: "CC-BY-NC-SA-3.0"
   copyright: "Monument by Six Umbrellas."
   source: "https://sixumbrellas.bandcamp.com/album/the-psychedelic-and"
 
-- files: ["Patricia_Taxxon_-_Chipshop.ogg"]
+- files: ["space_asshole.ogg"] #WIZDEN
+  license: "Custom"
+  copyright: "Space Asshole by Chris Remo is used with special permission from the author, under the condition that the project remains non-commercial and open source. The author also requested that a link to his bandcamp be included: https://chrisremo.bandcamp.com/"
+  source: "https://idlethumbs.bandcamp.com/track/space-asshole"
+  # The source is a direct link to the track, but not the "main" bandcamp of the author. Hence the link is also included separately in the copyright.
+
+- files: ["Spac_Stac.ogg"] #WIZDEN
+  license: "CC-BY-NC-SA-3.0"
+  copyright: "Spac Stac by Hayabusa. Converted from MP3 to OGG."
+  source: "https://www.youtube.com/watch?v=grUBe-SZgr0"
+
+- files: ["mod.flip-flap.ogg"] #WIZDEN
+  license: "Custom"
+  copyright: "Flip Flap by X-ceed is licensed under a short but clear license (see flip-flap.txt in this directory) and is free for non-commercial use. It was converted from MOD to WAV using Schism Tracker, in 16 Bit, Non-Interpolated mode, no output equalizer settings, Ramp volume at start of sample enabled. From there it was converted to OGG Vorbis with `ffmpeg -i flip-flap.wav -q 2.9 flip-flap-renc.ogg` (quality scale chosen to match size of the OGG file being replaced). Non-interpolated mode was chosen as the module has a high enough sample rate to balance it out, but seems muffled in other interpolation modes. If 'Ramp volume at start of sample' is not enabled, a clicking phenomenon results."
+  source: "http://aminet.net/package/mods/xceed/Flipflap"
+
+- files: ["Patricia_Taxxon_-_Chipshop.ogg"] #DV
   license: "CC-BY-SA-3.0"
   copyright: "Chipshop by Patricia Taxxon off the album 'Bicycle'"
   source: "https://patriciataxxon.bandcamp.com/track/chipshop"
 
-- files: ["Patricia_Taxxon_-_Minute.ogg"]
+- files: ["Patricia_Taxxon_-_Minute.ogg"] #DV
   license: "CC-BY-SA-3.0"
   copyright: "Minute by Patricia Taxxon off the album 'Aeroplane'"
   source: "https://patriciataxxon.bandcamp.com/track/minute"
 
-- files: ["Black_Heat.ogg"]
+- files: ["Black_Heat.ogg"] #DV
   license: "CC-BY-SA-3.0"
   copyright: "Black Heat by Ross Bugden, converted from WAV to OGG"
   source: "https://soundcloud.com/rossbugden/intense-and-upbeat-electronic-trailer-music-black-heat-copyright-and-royalty-free"
 
-- files: ["thestation.ogg"]
+- files: ["thestation.ogg"] #DV
   license: "CC0-1.0"
   copyright: "The Station by A-Guy, converted from mp3 to OGG"
   source: "https://github.com/A-Guy173/Music/blob/main/thestation.mp3"
 
-- files: ["Get_It_Done.ogg"]
+- files: ["Get_It_Done.ogg"] #DV
   license: "CC0-1.0"
   copyright: "Get It Done by A-Guy, converted from mp3 to OGG"
   source: "https://github.com/A-Guy173/Music/blob/main/getitdone.mp3"
 
-- files: ["Undefined_Theory.ogg"]
-  license: "CC0-1.0"
-  copyright: "Undefined Theory by A-Guy, converted to OGG"
-  source: "https://www.youtube.com/watch?v=FIOs2t84MKo"
-  
+- files: ["psirius_-_nymphs_of_the_forest.mptm.ogg"] #DV
+  license: "CC-BY-NC-SA-4.0"
+  copyright: "Nymphs of the forest by Psirius"
+  source: "https://modarchive.org/index.php?request=view_by_moduleid&query=185545"

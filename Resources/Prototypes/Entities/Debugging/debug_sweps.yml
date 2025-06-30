@@ -1,3 +1,19 @@
+# SPDX-FileCopyrightText: 2021 Leon Friedrich
+# SPDX-FileCopyrightText: 2021 ShadowCommander
+# SPDX-FileCopyrightText: 2021 Swept
+# SPDX-FileCopyrightText: 2022 Kara
+# SPDX-FileCopyrightText: 2022 Peptide90
+# SPDX-FileCopyrightText: 2022 Vera Aguilera Puerto
+# SPDX-FileCopyrightText: 2023 TaralGit
+# SPDX-FileCopyrightText: 2023 and_a
+# SPDX-FileCopyrightText: 2023 metalgearsloth
+# SPDX-FileCopyrightText: 2024 Debug
+# SPDX-FileCopyrightText: 2024 gluesniffler
+# SPDX-FileCopyrightText: 2025 BlitzTheSquishy
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 - type: entity
   name: bang, ded
   parent: BaseWeaponPistol
@@ -43,7 +59,7 @@
 
 - type: entity
   id: MagazinePistolDebug
-  name: bang, ded mag
+  name: pistol magazine (bang, ded)
   parent: BaseMagazinePistol
   suffix: DEBUG
   components:
@@ -58,7 +74,7 @@
 
 - type: entity
   id: BulletDebug
-  name: bang, ded bullet
+  name: bullet (bang, ded)
   parent: BaseBullet
   categories: [ HideSpawnMenu ]
   suffix: DEBUG
@@ -73,7 +89,7 @@
 
 - type: entity
   id: CartridgeDebug
-  name: bang, ded cartridge
+  name: cartridge (bang, ded)
   parent: BaseCartridgePistol
   suffix: DEBUG
   components:

@@ -1,4 +1,10 @@
-﻿using Content.Server.Inventory;
+// SPDX-FileCopyrightText: 2024 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
+// SPDX-FileCopyrightText: 2025 dootythefrooty <awhunter8@gmail.com>
+// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
+using Content.Server.Inventory;
 using Content.Server.Radio.Components;
 using Content.Server.Silicons.Laws;
 using Content.Shared.Inventory;

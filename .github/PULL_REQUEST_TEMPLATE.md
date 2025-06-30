@@ -1,62 +1,41 @@
+<!-- Guidelines: https://docs.spacestation14.io/en/getting-started/pr-guideline -->
+<!-- NOTE: All code submitted to this repository is ALWAYS licensed under the AGPL-3.0-or-later license. 
+The REUSE Specification headers or separate .license files indicate a secondary license (e.g., MPL or MIT) solely to facilitate 
+integration for projects that do not use the AGPL license. This secondary license does not replace the fact that AGPL-3.0-or-later remains the primary and binding license. 
+Uncomment and modify the following line if you wish to change the license from the default of AGPL.-->
+<!--- LICENSE: AGPL -->
+## About the PR
+<!-- What did you change? -->
+
+## Why / Balance
+<!-- Discuss how this would affect game balance or explain why it was changed. Link any relevant discussions or issues. -->
+
+## Technical details
+<!-- Summary of code changes for easier review. -->
+
+## Media
+<!-- Attach media if the PR makes ingame changes (clothing, items, features, etc).
+Small fixes/refactors are exempt. Media may be used in SS14 progress reports with credit. -->
+
+## Requirements
+<!-- Confirm the following by placing an X in the brackets [X]: -->
+- [ ] I have read and am following the [Pull Request and Changelog Guidelines](https://docs.spacestation14.com/en/general-development/codebase-info/pull-request-guidelines.html).
+- [ ] I have added media to this PR or it does not require an ingame showcase.
+- [ ] I can confirm this PR contains no AI-generated content, and did not use any AI-generated content.
+<!-- You should understand that not following the above may get your PR closed at maintainer’s discretion -->
+
+## Breaking changes
+<!-- List any breaking changes, including namespaces, public class/method/field changes, prototype renames; and provide instructions for fixing them.
+This will be posted in #codebase-changes. -->
+
+**Changelog**
+<!-- Add a Changelog entry to make players aware of new features or changes that could affect gameplay.
+Make sure to read the guidelines and take this Changelog template out of the comment block in order for it to show up.
+Changelog must have a :cl: symbol, so the bot recognizes the changes and adds them to the game's changelog. -->
 <!--
-This is a semi-strict format, you can add/remove sections as needed but the order/format should be kept the same
-Remove these comments before submitting
--->
-
-# Description
-
-<!--
-Explain this PR in as much detail as applicable
-
-Some example prompts to consider:
-How might this affect the game? The codebase?
-What might be some alternatives to this?
-How/Who does this benefit/hurt [the game/codebase]?
--->
-
-Description.
-
----
-
-# TODO
-
-<!--
-A list of everything you have to do before this PR is "complete"
-You probably won't have to complete everything before merging but it's good to leave future references
--->
-
-- [ ] Task
-- [x] Completed Task
-
----
-
-<!--
-This is default collapsed, readers click to expand it and see all your media
-The PR media section can get very large at times, so this is a good way to keep it clean
-The title is written using HTML tags
-The title must be within the <summary> tags or you won't see it
--->
-
-<details><summary><h1>Media</h1></summary>
-<p>
-
-![Example Media Embed](https://example.com/thisimageisntreal.png)
-
-</p>
-</details>
-
----
-
-# Changelog
-
-<!--
-You can add an author after the `:cl:` to change the name that appears in the changelog (ex: `:cl: Death`)
-Leaving it blank will default to your GitHub display name
-This includes all available types for the changelog
--->
-
 :cl:
-- add: Added fun :D
-- tweak: Tweaked fun
+- add: Added fun!
+- remove: Removed fun!
+- tweak: Changed fun!
 - fix: Fixed fun!
-- remove: Removed fun :(
+-->

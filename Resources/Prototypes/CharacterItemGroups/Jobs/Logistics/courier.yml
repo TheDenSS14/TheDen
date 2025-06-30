@@ -1,14 +1,25 @@
+# SPDX-FileCopyrightText: 2024 VMSolidus <evilexecutive@gmail.com>
+# SPDX-FileCopyrightText: 2025 BlitzTheSquishy <73762869+BlitzTheSquishy@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Skubman <ba.fallaria@gmail.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 # Courier
 #- type: characterItemGroup
 #  id: LoadoutCourierBackpacks
 #  maxItems: 1
 #  items:
-#
-#- type: characterItemGroup
-#  id: LoadoutCourierBelt
-#  maxItems: 1
-#  items:
-#
+
+- type: characterItemGroup
+  id: LoadoutCourierBelt
+  maxItems: 1
+  items:
+    - type: loadout
+      id: CourierBag
+    - type: loadout
+      id: MailBag
+
 #- type: characterItemGroup
 #  id: LoadoutCourierEars
 #  maxItems: 1
@@ -35,6 +46,8 @@
   items:
     - type: loadout
       id: LoadoutCourierHeadMail
+    - type: loadout
+      id: LoadoutCourierHeadCourier
 
 #- type: characterItemGroup
 #  id: LoadoutCourierId
@@ -57,6 +70,8 @@
   items:
     - type: loadout
       id: LoadoutCourierOuterMail
+    - type: loadout
+      id: LoadoutCourierOuterCourier
 
 #- type: characterItemGroup
 #  id: LoadoutCourierShoes

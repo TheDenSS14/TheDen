@@ -1,3 +1,8 @@
+# SPDX-FileCopyrightText: 2024 FoxxoTrystan <45297731+FoxxoTrystan@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 cmd-jobwhitelist-job-does-not-exist = Job {$job} does not exist.
 cmd-jobwhitelist-player-not-found = Player {$player} not found.
 cmd-jobwhitelist-hint-player = [player]

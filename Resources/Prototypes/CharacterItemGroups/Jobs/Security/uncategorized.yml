@@ -1,3 +1,18 @@
+# SPDX-FileCopyrightText: 2024 Unkn0wn_Gh0st
+# SPDX-FileCopyrightText: 2024 gluesniffler
+# SPDX-FileCopyrightText: 2025 Blitz
+# SPDX-FileCopyrightText: 2025 Blu
+# SPDX-FileCopyrightText: 2025 Jakumba
+# SPDX-FileCopyrightText: 2025 Lonofera
+# SPDX-FileCopyrightText: 2025 Rosycup
+# SPDX-FileCopyrightText: 2025 Skubman
+# SPDX-FileCopyrightText: 2025 Tabitha
+# SPDX-FileCopyrightText: 2025 Tad "Taddy" Johnson
+# SPDX-FileCopyrightText: 2025 VMSolidus
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 # All Security
 - type: characterItemGroup
   id: LoadoutSecurityBackpacks
@@ -51,6 +66,14 @@
     - type: loadout
       id: LoadoutSpeedLoaderMagnumRubberSpare
     - type: loadout
+      id: LoadoutSpeedLoaderSpecial
+    - type: loadout
+      id: LoadoutSpeedLoaderSpecialSpare
+    - type: loadout
+      id: LoadoutSpeedLoaderSpecialRubber
+    - type: loadout
+      id: LoadoutSpeedLoaderSpecialRubberSpare
+    - type: loadout
       id: LoadoutMagazineMagnum
     - type: loadout
       id: LoadoutMagazineMagnumRubber
@@ -78,65 +101,35 @@
   id: LoadoutSecurityWeapons
   items:
     - type: loadout
-      id: LoadoutSecurityDisabler
-    - type: loadout
-      id: LoadoutSecurityMk58
-    - type: loadout
       id: LoadoutSecurityMk58NonLethal
-    - type: loadout
-      id: LoadoutSecurityRevolver
     - type: loadout
       id: LoadoutSecurityRevolverNonLethal
     - type: loadout
-      id: LoadoutSecurityRevolverDeckard
-    - type: loadout
       id: LoadoutSecurityRevolverDeckardNonLethal
-    - type: loadout
-      id: LoadoutSecurityPistolN1984
     - type: loadout
       id: LoadoutSecurityPistolN1984NonLethal
     - type: loadout
-      id: LoadoutSecurityPistolViper
-    - type: loadout
       id: LoadoutSecurityPistolViperNonLethal
     - type: loadout
-      id: LoadoutSecurityPistolViperWood
+      id: LoadoutSecurityPistolViperWoodNonlethal
     - type: loadout
       id: LoadoutSecurityEquipmentTruncheon
     - type: loadout
-      id: LoadoutSecurityEquipmentEnergySword
-    - type: loadout
-      id: LoadoutSecurityPistolSvalin
-    - type: loadout
       id: LoadoutSecurityEnergyGunMini
     - type: loadout
-      id: LoadoutSecurityEnergyGunPistol
-    - type: loadout
-      id: LoadoutSecurityPistolPollock
+      id: LoadoutSecurityEquipmentEnergySword
     - type: loadout
       id: LoadoutSecurityPistolPollockNonlethal
     - type: loadout
-      id: LoadoutSecurityRevolverSnub
-    - type: loadout
       id: LoadoutSecurityRevolverSnubNonlethal
-    - type: loadout
-      id: LoadoutSecurityRevolverK38Master
     - type: loadout
       id: LoadoutSecurityRevolverK38MasterNonlethal
     - type: loadout
-      id: LoadoutSecurityRevolverFitz
-    - type: loadout
       id: LoadoutSecurityRevolverFitzNonlethal
-    - type: loadout
-      id: LoadoutSecurityRevolverPython
     - type: loadout
       id: LoadoutSecurityRevolverPythonNonlethal
     - type: loadout
-      id: LoadoutSecurityArgenti
-    - type: loadout
       id: LoadoutSecurityArgentiNonLethal
-    - type: loadout
-      id: LoadoutSecurityPistolEnergyRevolver
     - type: loadout
       id: LoadoutSecurityShotgunSawn
     - type: loadout

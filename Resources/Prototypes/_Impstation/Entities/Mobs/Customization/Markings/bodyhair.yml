@@ -1,8 +1,14 @@
+# SPDX-FileCopyrightText: 2025 Jakumba <jkmcbennett@hotmail.com>
+# SPDX-FileCopyrightText: 2025 Tabitha <64847293+KyuPolaris@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 - type: marking
   id: BodyhairHumanMale
   bodyPart: Chest
   markingCategory: Chest
-  speciesRestriction: [ Dwarf, Human, Oni, Felinid ] # Frontier: add Oni, Felinid
+  speciesRestriction: [ Dwarf, Human, Oni, Felinid, Kitsune ] # Frontier: add Oni, Felinid
   sexRestriction: [ Male ]
   sprites:
   - sprite: _Impstation/Mobs/Customization/bodyhair.rsi
@@ -12,7 +18,7 @@
   id: BodyhairHumanFemale
   bodyPart: Chest
   markingCategory: Chest
-  speciesRestriction: [ Dwarf, Human, Oni, Felinid ] # Frontier: add Oni, Felinid
+  speciesRestriction: [ Dwarf, Human, Oni, Felinid, Kitsune ] # Frontier: add Oni, Felinid
   sexRestriction: [ Female ]
   sprites:
   - sprite: _Impstation/Mobs/Customization/bodyhair.rsi
@@ -22,7 +28,7 @@
   id: BodyhairHumanUnsexed
   bodyPart: Chest
   markingCategory: Chest
-  speciesRestriction: [ Dwarf, Human, Oni, Felinid ] # Frontier: add Oni, Felinid
+  speciesRestriction: [ Dwarf, Human, Oni, Felinid, Kitsune ] # Frontier: add Oni, Felinid
   sexRestriction: [ Unsexed ]
   sprites:
   - sprite: _Impstation/Mobs/Customization/bodyhair.rsi

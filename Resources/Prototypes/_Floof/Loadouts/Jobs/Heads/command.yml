@@ -1,0 +1,50 @@
+# SPDX-FileCopyrightText: 2024 fox <daytimer253@gmail.com>
+# SPDX-FileCopyrightText: 2024 sleepyyapril <***>
+# SPDX-FileCopyrightText: 2024 sleepyyapril <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>
+# SPDX-FileCopyrightText: 2025 Blitz <73762869+BlitzTheSquishy@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 BlitzTheSquishy <73762869+BlitzTheSquishy@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Rosycup <178287475+Rosycup@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
+- type: loadout
+  id: LoadoutClothingHandsCommandWarmers
+  category: JobsCommandHeadOfPersonnel
+  cost: 2
+  exclusive: true
+  items:
+  - ClothingHandsCommandWarmers
+  requirements:
+  - !type:CharacterJobRequirement
+    jobs:
+    - HeadOfPersonnel
+
+- type: loadout
+  id: LoadoutClothingUnderSocksCommand
+  category: JobsCommandHeadOfPersonnel
+  cost: 2
+  exclusive: true
+  items:
+  - ClothingUnderSocksCommand
+  requirements:
+#  - !type:CharacterSpeciesRequirement - TheDen
+#    inverted: true
+#    species:
+#    - Diona
+#    - Harpy
+  - !type:CharacterJobRequirement
+    jobs:
+    - HeadOfPersonnel
+
+- type: loadout
+  id: LoadoutClothingUniformCommandThong
+  category: JobsCommandHeadOfPersonnel
+  cost: 2
+  exclusive: true
+  items:
+  - ClothingUniformCommandThong
+  requirements:
+  - !type:CharacterJobRequirement
+    jobs:
+    - HeadOfPersonnel

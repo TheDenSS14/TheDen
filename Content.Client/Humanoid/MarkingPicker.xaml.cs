@@ -1,3 +1,16 @@
+// SPDX-FileCopyrightText: 2022 Flipp Syder <76629141+vulppine@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 DEATHB4DEFEAT <77995199+DEATHB4DEFEAT@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Morb <14136326+Morb0@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Visne <39844191+Visne@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 csqrb <56765288+CaptainSqrBeard@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 SimpleStation14 <130339894+SimpleStation14@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Rosycup <178287475+Rosycup@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 using System.Linq;
 using Content.Shared.Humanoid;
 using Content.Shared.Humanoid.Markings;
@@ -402,12 +415,37 @@ public sealed partial class MarkingPicker : Control
         List<ColorSelectorSliders> colorSliders = new();
         for (int i = 0; i < prototype.Sprites.Count; i++)
         {
+            // first, check if the coloration is parented to another marking
+            // and if so, just kinda sorta dont display it
+            var skipdraw = false;
+            if (prototype.ColorLinks?.Count > 0)
+            {
+                var name = prototype.Sprites[i] switch
+                {
+                    SpriteSpecifier.Rsi rsi => rsi.RsiState,
+                    SpriteSpecifier.Texture texture => texture.TexturePath.Filename,
+                    _ => null
+                };
+
+                if (name != null && prototype.ColorLinks.ContainsKey(name))
+                {
+                    // dont show it, cus its parented to another marking
+                    skipdraw = true;
+                }
+            }
             var colorContainer = new BoxContainer
             {
                 Orientation = LayoutOrientation.Vertical,
             };
 
-            CMarkingColors.AddChild(colorContainer);
+            // so.
+            // the color selector sliders decide which destination color to modify
+            // based on its index in the list of color selectors.
+            // this is a problem if we, say, want to *not* show a certain slider
+            // cus then it'll modify the wrong color, unless the color happened to
+            // be in index 0.
+            if(!skipdraw)
+                CMarkingColors.AddChild(colorContainer);
 
             ColorSelectorSliders colorSelector = new ColorSelectorSliders();
             colorSliders.Add(colorSelector);

@@ -1,3 +1,11 @@
+# SPDX-FileCopyrightText: 2024 VMSolidus <evilexecutive@gmail.com>
+# SPDX-FileCopyrightText: 2025 Blitz <73762869+BlitzTheSquishy@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 BlitzTheSquishy <73762869+BlitzTheSquishy@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Lonofera <108367450+LonoferaRS@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 # Golemancer
 - type: characterItemGroup
   id: LoadoutGolemancerBackpacks
@@ -73,12 +81,14 @@
       id: LoadoutScienceUniformLabcoatRobo # TheDen
     - type: loadout
       id: LoadoutClothingOuterRoboOveralls # TheDen
-#
-#- type: characterItemGroup
-#  id: LoadoutGolemancerShoes
-#  maxItems: 1
-#  items:
-#
+
+- type: characterItemGroup
+  id: LoadoutGolemancerShoes
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutScienceShoesBootsWinterRoboticist
+
 - type: characterItemGroup
   id: LoadoutGolemancerUniforms
   maxItems: 1

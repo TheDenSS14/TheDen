@@ -1,3 +1,10 @@
+# SPDX-FileCopyrightText: 2025 Eris <eris@erisws.com>
+# SPDX-FileCopyrightText: 2025 Rosycup <178287475+Rosycup@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 wheelwrightt <174839295+wheelwrightt@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 - type: entity
   parent: [BaseItem]
   id: LavalandWeaponKineticBase
@@ -57,13 +64,13 @@
     capacity: 1
     count: 1
   - type: MeleeWeapon
-    attackRate: 1.5
-    range: 1.75 # insane reach
+    attackRate: 0.8
+    range: 2 # insane reach
     wideAnimationRotation: -135
     damage:
       types:
         Blunt: 10
-        Slash: 5
+        Slash: 10
     soundHit:
       collection: MetalThud
     angle: 0
@@ -86,6 +93,11 @@
       types:
         Blunt: 11
         Slash: 9
+  - type: LeechOnMarker
+    leech:
+      groups:
+        Brute: -10
+        Burn: -5
 
 - type: entity
   parent: LavalandWeaponKineticBase
@@ -99,11 +111,11 @@
   - type: UseDelay
     delay: 1
   - type: MeleeWeapon
-    attackRate: 1.5 # slightly slower than the fireaxe
+    attackRate: 1
     wideAnimationRotation: -135
     damage:
       types:
-        Blunt: 17.5
+        Blunt: 25
     soundHit:
       collection: MetalThud
     angle: 0
@@ -206,4 +218,4 @@
         Blunt: 5
   - type: BlockCharge
     rechargeTime: 120
-    markerReductionTime: 20
+    markerReductionTime: 40

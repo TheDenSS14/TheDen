@@ -1,3 +1,10 @@
+# SPDX-FileCopyrightText: 2024 portfiend
+# SPDX-FileCopyrightText: 2025 MajorMoth
+# SPDX-FileCopyrightText: 2025 Rosycup
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 # Tabs
 
 - type: quickPhrase
@@ -83,4 +90,9 @@
   id: BaseServicePhrase
   group: Service
   styleClass: ServiceButton
+  abstract: true
+
+- type: quickPhrase
+  id: BaseReplicatorPhrase
+  group: Replicators
   abstract: true

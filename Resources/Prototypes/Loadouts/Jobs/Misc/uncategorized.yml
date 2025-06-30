@@ -1,3 +1,11 @@
+# SPDX-FileCopyrightText: 2024 VMSolidus <evilexecutive@gmail.com>
+# SPDX-FileCopyrightText: 2025 BlitzTheSquishy <73762869+BlitzTheSquishy@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 GNUtopia <93669372+GNUtopia@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Rosycup <178287475+Rosycup@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 # Uncategorized
 # Backpacks
 
@@ -6,6 +14,19 @@
 # Ears
 
 # Equipment
+- type: loadout
+  id: LoadoutMiscCQCManual
+  category: JobsServiceAUncategorized
+  cost: 4
+  requirements:
+    - !type:CharacterLogicOrRequirement
+      requirements:
+      - !type:CharacterJobRequirement
+        jobs:
+          - Boxer
+          - MartialArtist
+  items:
+    - NTCQCManual
 
 # Eyes
 

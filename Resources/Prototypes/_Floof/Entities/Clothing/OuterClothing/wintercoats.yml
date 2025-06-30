@@ -1,0 +1,225 @@
+# SPDX-FileCopyrightText: 2024 Lonely Fox <foxcumberland@gmail.com>
+# SPDX-FileCopyrightText: 2024 ShatteredSwords <135023515+ShatteredSwords@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 cynical <superpilotboy@gmail.com>
+# SPDX-FileCopyrightText: 2025 KekaniCreates <kekanisb@gmail.com>
+# SPDX-FileCopyrightText: 2025 Rosycup <178287475+Rosycup@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
+- type: entity
+  parent: ClothingOuterWinterCoat
+  id: ClothingLongcoatAL
+  name: arashi labs longcoat
+  description: A Double-Breasted longcoat, specifically. This one is in the colors of Arashi Laboratories, A biotech corporation claiming to hail from the 'Long Rim', wherever that is. Longcoats are fairly robust, offering some protection from the wear and tear of the universe.
+  components:
+  - type: Sprite
+    sprite: _Floof/Clothing/OuterClothing/WinterCoats/longcoatAL.rsi
+  - type: Clothing
+    sprite: _Floof/Clothing/OuterClothing/WinterCoats/longcoatAL.rsi
+
+- type: entity
+  parent: ClothingOuterWinterCoat
+  id: ClothingLongcoatNT
+  name: nanotrasen longcoat
+  description: A Double-Breasted longcoat, specifically. This one is in the colors of NanoTrasen, The general-purpose spacefaring corporation that you (hopefully) work for! Longcoats are fairly robust, offering some protection from the wear and tear of the universe.
+  components:
+  - type: Sprite
+    sprite: _Floof/Clothing/OuterClothing/WinterCoats/longcoatNT.rsi
+  - type: Clothing
+    sprite: _Floof/Clothing/OuterClothing/WinterCoats/longcoatNT.rsi
+
+- type: entity
+  parent: ClothingOuterWinterCoat
+  id: ClothingLongcoatBlack
+  name: black longcoat
+  description: A Double-Breasted longcoat, specifically. This one is matte black with gold-tinted brass buttons. Longcoats are fairly robust, offering some protection from the wear and tear of the universe.
+  components:
+  - type: Sprite
+    sprite: _Floof/Clothing/OuterClothing/WinterCoats/longcoatBlack.rsi
+  - type: Clothing
+    sprite: _Floof/Clothing/OuterClothing/WinterCoats/longcoatBlack.rsi
+
+- type: entity
+  parent: ClothingOuterWinterCoat
+  id: ClothingLongcoatBrown
+  name: brown longcoat
+  description: A Double-Breasted longcoat, specifically. This one is matte brown with onyx buttons. Longcoats are fairly robust, offering some protection from the wear and tear of the universe.
+  components:
+  - type: Sprite
+    sprite: _Floof/Clothing/OuterClothing/WinterCoats/longcoatBrown.rsi
+  - type: Clothing
+    sprite: _Floof/Clothing/OuterClothing/WinterCoats/longcoatBrown.rsi
+
+- type: entity
+  parent: ClothingOuterWinterCoat
+  id: ClothingLongcoatLO
+  name: logistics officer's longcoat
+  description: A Double-Breasted longcoat, specifically. This one is a saturated brown with mossy trim, fit for the Logistics Officer. Longcoats are fairly robust, offering some protection from the wear and tear of the universe.
+  components:
+  - type: Sprite
+    sprite: _Floof/Clothing/OuterClothing/WinterCoats/longcoatLO.rsi
+  - type: Clothing
+    sprite: _Floof/Clothing/OuterClothing/WinterCoats/longcoatLO.rsi
+
+- type: entity
+  parent: [ ClothingOuterWinterCoat, ClothingUniformFoldableBase ]
+  id: ClothingLongcoatRD
+  name: mystagogue's longcoat
+  description: A Double-Breasted longcoat, specifically. This one is a pure white with a purple stripe, fit for the Mystagogue. Longcoats are fairly robust, offering some protection from the wear and tear of the universe.
+  components:
+  - type: Sprite
+    sprite: _Floof/Clothing/OuterClothing/WinterCoats/longcoatRD.rsi
+  - type: Clothing
+    sprite: _Floof/Clothing/OuterClothing/WinterCoats/longcoatRD.rsi
+
+- type: entity
+  parent: ClothingOuterWinterCoat
+  id: ClothingLongcoatCMO
+  name: chief medical officer's longcoat
+  description: A Double-Breasted longcoat, specifically. This one is a deep cyan with a green cross, fit for the CMO. Longcoats are fairly robust, offering some protection from the wear and tear of the universe.
+  components:
+  - type: Sprite
+    sprite: _Floof/Clothing/OuterClothing/WinterCoats/longcoatCMO.rsi
+  - type: Clothing
+    sprite: _Floof/Clothing/OuterClothing/WinterCoats/longcoatCMO.rsi
+
+- type: entity
+  parent: ClothingOuterWinterCoat
+  id: ClothingLongcoatCE
+  name: chief engineer's longcoat
+  description: A Double-Breasted longcoat, specifically. This one is a dark green with LED strip trim, fit for the CE. Longcoats are fairly robust, offering some protection from the wear and tear of the universe.
+  components:
+  - type: Sprite
+    sprite: _Floof/Clothing/OuterClothing/WinterCoats/longcoatCE.rsi
+  - type: Clothing
+    sprite: _Floof/Clothing/OuterClothing/WinterCoats/longcoatCE.rsi
+
+- type: entity
+  parent: ClothingOuterWinterCoat
+  id: ClothingLongcoatHoP
+  name: head of personnel's longcoat
+  description: A Double-Breasted longcoat, specifically. This one is a navy blue with red shoulderpads, fit for the HoP. Longcoats are fairly robust, offering some protection from the wear and tear of the universe.
+  components:
+  - type: Sprite
+    sprite: _Floof/Clothing/OuterClothing/WinterCoats/longcoatHoP.rsi
+  - type: Clothing
+    sprite: _Floof/Clothing/OuterClothing/WinterCoats/longcoatHoP.rsi
+
+- type: entity
+  parent: ClothingOuterWinterCoat
+  id: ClothingLongcoatCap
+  name: captain's longcoat
+  description: A Double-Breasted longcoat, specifically. This one is a navy blue with gold embelleshments, fit for the Captain. Longcoats are fairly robust, offering some protection from the wear and tear of the universe.
+  components:
+  - type: Sprite
+    sprite: _Floof/Clothing/OuterClothing/WinterCoats/longcoatCap.rsi
+  - type: Clothing
+    sprite: _Floof/Clothing/OuterClothing/WinterCoats/longcoatCap.rsi
+
+- type: entity
+  parent: ClothingOuterWinterCoat
+  id: ClothingLongcoatSec
+  name: security officer's armored longcoat
+  description: A Double-Breasted longcoat, specifically. This one is black with silver buttons and red armbands. Security longcoats sport protective plate carriers underneath, but are fairly heavy.
+  components:
+  - type: Sprite
+    sprite: _Floof/Clothing/OuterClothing/WinterCoats/longcoatSec.rsi
+  - type: Clothing
+    sprite: _Floof/Clothing/OuterClothing/WinterCoats/longcoatSec.rsi
+  - type: Armor #A stylish but solid middle-ground between the Durathread Vest and Plate Carrier, but not as good as the Armored Trenchcoat or Armored Longcoat.
+    modifiers:
+      coefficients:
+        Blunt: 0.75
+        Slash: 0.70
+        Piercing: 0.75
+        Heat: 0.9
+        Caustic: 0.95
+  - type: ExplosionResistance
+    damageCoefficient: 0.9
+  - type: ClothingSpeedModifier
+    walkModifier: 0.9
+    sprintModifier: 0.9
+
+- type: entity
+  parent: ClothingOuterWinterCoat
+  id: ClothingLongcoatWarden
+  name: warden's armored longcoat
+  description: A Double-Breasted longcoat, specifically. This one is black with silver buttons and red band and cuffs, fit for the Warden. Security longcoats sport protective plate carriers underneath, but are fairly heavy.
+  components:
+  - type: Sprite
+    sprite: _Floof/Clothing/OuterClothing/WinterCoats/longcoatWarden.rsi
+  - type: Clothing
+    sprite: _Floof/Clothing/OuterClothing/WinterCoats/longcoatWarden.rsi
+  - type: Armor #overall better than the Secoff Armored Longcoat, Warden Longcoat defense stats have parity to Warden's Armored Jacket, being slightly better than the Armored Jacket but maintaining the slowdown.
+    modifiers:
+      coefficients:
+        Blunt: 0.70
+        Slash: 0.65
+        Piercing: 0.70
+        Heat: 0.70
+        Caustic: 0.90
+  - type: ExplosionResistance
+    damageCoefficient: 0.85
+  - type: ClothingSpeedModifier
+    walkModifier: 0.9
+    sprintModifier: 0.9
+
+- type: entity
+  parent: ClothingOuterWinterCoat
+  id: ClothingLongcoatBrigmedic
+  name: corpsman's armored longcoat
+  description: A Double-Breasted longcoat, specifically. This one is black with silver buttons, red and blue bands, and sterile fabric cuffs fit for the Corpsman. Security longcoats sport protective plate carriers underneath, though this one comes with lighter plates that traditional Armored Longcoats.
+  components:
+  - type: Sprite
+    sprite: _Floof/Clothing/OuterClothing/WinterCoats/longcoatBrigmedic.rsi
+  - type: Clothing
+    sprite: _Floof/Clothing/OuterClothing/WinterCoats/longcoatBrigmedic.rsi
+  - type: Armor #Trades physical resistances for heat/caust/explosive compared to secoff armored longcoat, and is only 5% slow.
+    modifiers:
+      coefficients:
+        Blunt: 0.85
+        Slash: 0.85
+        Piercing: 0.85
+        Heat: 0.65
+        Caustic: 0.25
+  - type: ExplosionResistance
+    damageCoefficient: 0.75
+  - type: ClothingSpeedModifier
+    walkModifier: 0.95
+    sprintModifier: 0.95
+
+- type: entity
+  parent: ClothingOuterWinterCoat
+  id: ClothingLongcoatHoS
+  name: head of security's armored longcoat
+  description: A Double-Breasted longcoat, specifically. This one is black with gold buttons and gray sleeves with velvet trim along the whole outfit. A heavier alternative to the Armored Coat.
+  components:
+  - type: Sprite
+    sprite: _Floof/Clothing/OuterClothing/WinterCoats/longcoatHoS.rsi
+  - type: Clothing
+    sprite: _Floof/Clothing/OuterClothing/WinterCoats/longcoatHoS.rsi
+  - type: Armor #Effectively a heavier Armored Trenchcoat, trading speed for slightly better Slash and Explosion resistance.
+    modifiers:
+      coefficients:
+        Blunt: 0.7
+        Slash: 0.6
+        Piercing: 0.7
+        Heat: 0.7
+        Caustic: 0.75
+  - type: ExplosionResistance
+    damageCoefficient: 0.75
+  - type: ClothingSpeedModifier
+    walkModifier: 0.9
+    sprintModifier: 0.9
+
+- type: entity
+  parent: ClothingOuterWinterCoat
+  id: ClothingLongcoatCC
+  name: central command longcoat
+  description: A Double-Breasted longcoat, specifically. This one is a royal green with gold embellishments, fit for a Central Command Agent. Longcoats are fairly robust, offering some protection from the wear and tear of the universe.
+  components:
+  - type: Sprite
+    sprite: _Floof/Clothing/OuterClothing/WinterCoats/longcoatCC.rsi
+  - type: Clothing
+    sprite: _Floof/Clothing/OuterClothing/WinterCoats/longcoatCC.rsi

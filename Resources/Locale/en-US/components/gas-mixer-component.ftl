@@ -1,3 +1,9 @@
+# SPDX-FileCopyrightText: 2021 E F R <602406+Efruit@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2021 ike709 <ike709@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: MIT
+
 comp-gas-mixer-ui-mixer-status = Status:
 comp-gas-mixer-ui-status-enabled = On
 comp-gas-mixer-ui-status-disabled = Off

@@ -1,0 +1,31 @@
+# SPDX-FileCopyrightText: 2024 Remuchi <72476615+Remuchi@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Rosycup <178287475+Rosycup@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 VMSolidus <evilexecutive@gmail.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
+- type: entity
+  id: BloodCult
+  parent: BaseGameRule
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: GameRule
+    minPlayers: 30
+  - type: BloodCultRule
+  - type: AntagSelection
+    definitions:
+    - prefRoles: [ BloodCultist ]
+      max: 4
+      min: 2
+      playerRatio: 15
+      briefing:
+        text: blood-cult-role-greeting
+        color: Red
+        sound: "/Audio/_White/BloodCult/blood_cult_greeting.ogg"
+      startingGear: BloodCultistGear
+      components:
+      - type: BloodCultist
+      - type: BloodCultSpellsHolder
+      mindRoles:
+      - MindRoleBloodCultist

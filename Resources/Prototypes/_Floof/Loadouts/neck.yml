@@ -1,0 +1,86 @@
+# SPDX-FileCopyrightText: 2024 Pierson Arnold <greyalphawolf7@gmail.com>
+# SPDX-FileCopyrightText: 2024 ShatteredSwords <135023515+ShatteredSwords@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 fox <daytimer253@gmail.com>
+# SPDX-FileCopyrightText: 2025 Blitz <73762869+BlitzTheSquishy@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Rosycup <178287475+Rosycup@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
+- type: loadout
+  id: LoadoutNeckCloakMoth
+  category: Neck
+  cost: 1
+  exclusive: true
+  items:
+    - ClothingNeckCloakMoth
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutNeck # TheDen
+
+- type: loadout
+  id: LoadoutItemsNeckRedHood
+  category: Neck
+  cost: 1
+  exclusive: true
+  items:
+    - ClothingNeckCloakRedHood
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutNeck # TheDen
+
+# Generic collars
+- type: loadout
+  id: LoadoutItemsNeckBlueCollar
+  category: Neck
+  cost: 1
+  exclusive: true
+  items:
+    - ClothingNeckCollarBlue
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutNeck # TheDen
+
+- type: loadout
+  id: LoadoutItemsNeckBlackCollar
+  category: Neck
+  cost: 1
+  exclusive: true
+  items:
+    - ClothingNeckCollarBlack
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutNeck # TheDen
+
+- type: loadout
+  id: LoadoutItemsNeckPinkCollar
+  category: Neck
+  cost: 1
+  exclusive: true
+  items:
+    - ClothingNeckCollarPink
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutNeck # TheDen
+
+- type: loadout
+  id: LoadoutItemsNeckSyndieCollar
+  category: Neck
+  cost: 1
+  exclusive: true
+  items:
+    - ClothingNeckCollarSyndi
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutNeck # TheDen
+
+- type: loadout
+  id: LoadoutItemsNeckShockCollar
+  category: Neck
+  cost: 1
+  exclusive: true
+  items:
+    - ShockCollar
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutNeck # TheDen

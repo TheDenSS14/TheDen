@@ -1,3 +1,13 @@
+// SPDX-FileCopyrightText: 2023 deltanedas <39013340+deltanedas@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 deltanedas <@deltanedas:kde.org>
+// SPDX-FileCopyrightText: 2024 Errant <35878406+Errant-4@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 FoxxoTrystan <trystan.garnierhein@gmail.com>
+// SPDX-FileCopyrightText: 2024 flyingkarii <flyingkarii@gmail.com>
+// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 sleepyyapril <flyingkarii@gmail.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
         using Content.Server.CriminalRecords.Systems;
 using Content.Server.GameTicking;
 using Content.Server.KillTracking;
@@ -101,7 +111,7 @@ public sealed class KillPersonConditionSystem : EntitySystem
             return;
 
         // no other humans to kill
-        var allHumans = _mind.GetAliveHumans(args.MindId);
+        var allHumans = _mind.GetAliveHumans(exclude: args.MindId);
         if (allHumans.Count == 0)
         {
             args.Cancelled = true;
@@ -117,7 +127,7 @@ public sealed class KillPersonConditionSystem : EntitySystem
         }
 
         if (allHeads.Count == 0)
-            allHeads = allHumans.Select(human => human.Owner).ToList(); // fallback to non-head target
+            allHeads = allHumans.Select(x => x.Owner).ToList(); // fallback to non-head target
 
         _target.SetTarget(uid, _random.Pick(allHeads), target);
     }

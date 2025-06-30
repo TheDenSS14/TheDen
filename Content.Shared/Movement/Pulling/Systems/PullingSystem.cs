@@ -1,8 +1,28 @@
+// SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT <77995199+DEATHB4DEFEAT@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Jezithyr <jezithyr@gmail.com>
+// SPDX-FileCopyrightText: 2024 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Mnemotechnican <69920617+Mnemotechnician@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Remuchi <72476615+Remuchi@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 ShadowCommander <shadowjjt@gmail.com>
+// SPDX-FileCopyrightText: 2024 SimpleStation14 <130339894+SimpleStation14@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 VMSolidus <evilexecutive@gmail.com>
+// SPDX-FileCopyrightText: 2024 Zealith-Gamer <61980908+Zealith-Gamer@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 sleepyyapril <flyingkarii@gmail.com>
+// SPDX-FileCopyrightText: 2025 BramvanZijp <56019239+BramvanZijp@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 BramvanZijp <BramvanZijp@gmail.com>
+// SPDX-FileCopyrightText: 2025 Eagle-0 <114363363+Eagle-0@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Rosycup <178287475+Rosycup@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Tirochora <leotabletdb@gmail.com>
+// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 using Content.Shared._Goobstation.MartialArts.Events; // Goobstation - Martial Arts
 using Content.Shared.Contests; // Goobstation - Grab Intent
 using System.Diagnostics.CodeAnalysis;
 using System.Numerics; // Goobstation - Grab Intent
-using Content.Shared._Goobstation.Grab;
 using Content.Shared._Goobstation.MartialArts.Components; // Goobstation - Grab Intent
 using Content.Shared._White.Grab; // Goobstation
 using Content.Shared.ActionBlocker;
@@ -11,7 +31,6 @@ using Content.Shared.Alert;
 using Content.Shared.Buckle.Components;
 using Content.Shared.CombatMode;
 using Content.Shared.CombatMode.Pacification; // Goobstation
-using Content.Shared.Cuffs.Components; // Goobstation
 using Content.Shared.Damage;
 using Content.Shared.Damage.Components; // Goobstation
 using Content.Shared.Damage.Systems; // Goobstation
@@ -24,22 +43,19 @@ using Content.Shared.Input;
 using Content.Shared.Interaction;
 using Content.Shared.Inventory.VirtualItem; // Goobstation
 using Content.Shared.Item;
-using Content.Shared.Mobs;
 using Content.Shared.Mobs.Components; // Goobstation
-using Content.Shared.Mobs.Systems;
 using Content.Shared.Popups;
 using Content.Shared.IdentityManagement;
-using Content.Shared.Movement.Components;
 using Content.Shared.Movement.Events;
 using Content.Shared.Movement.Pulling.Components;
 using Content.Shared.Movement.Pulling.Events;
 using Content.Shared.Movement.Systems;
-using Content.Shared.Projectiles;
 using Content.Shared.Pulling.Events;
 using Content.Shared.Speech; // Goobstation
 using Content.Shared.Standing;
 using Content.Shared.Throwing; // Goobstation
 using Content.Shared.Verbs;
+using Content.Shared.Weapons.Melee;
 using Robust.Shared.Audio; // Goobstation
 using Robust.Shared.Audio.Systems; // Goobstation
 using Robust.Shared.Containers;
@@ -387,6 +403,9 @@ public sealed class PullingSystem : EntitySystem
 
     private void OnRefreshMovespeed(EntityUid uid, PullerComponent component, RefreshMovementSpeedModifiersEvent args)
     {
+        if (!component.ApplySpeedModifier)
+            return;
+
         if (TryComp<HeldSpeedModifierComponent>(component.Pulling, out var itemHeldSpeed) && component.Pulling.HasValue)
         {
             var (walkMod, sprintMod) =
@@ -870,6 +889,8 @@ public sealed class PullingSystem : EntitySystem
         }
         // Goobstation
         StopPulling(pullableUid, pullable);
+        if (user != null)
+            _virtualSystem.DeleteInHandsMatching(user.Value, pullableUid);
         return true;
     }
 
@@ -881,26 +902,21 @@ public sealed class PullingSystem : EntitySystem
     /// <param name="ignoreCombatMode">If true, will ignore disabled combat mode</param>
     /// <exception cref="ArgumentOutOfRangeException"></exception>
     /// <returns></returns>
-    public bool TryGrab(Entity<PullableComponent?> pullable, Entity<PullerComponent?> puller, bool ignoreCombatMode = false)
+    public bool TryGrab(Entity<PullableComponent?> pullable, Entity<PullerComponent?, MeleeWeaponComponent?> puller, bool ignoreCombatMode = false)
     {
-        if (!Resolve(pullable.Owner, ref pullable.Comp))
+        if (!Resolve(pullable.Owner, ref pullable.Comp)
+            || !Resolve(puller.Owner, ref puller.Comp1, ref puller.Comp2)
+            || TryComp(puller, out PullableComponent? pullerAsPullable) && pullerAsPullable.Puller != null)
             return false;
 
-        if (!Resolve(puller.Owner, ref puller.Comp))
+        // makes it so that you can't grab somebody if you can't attack. without this you can perform some combos near-instantly
+        if (puller.Comp2.NextAttack > _timing.CurTime)
+            puller.Comp1.NextStageChange = puller.Comp2.NextAttack;
+
+        if (HasComp<PacifiedComponent>(puller) || pullable.Comp.Puller != puller || puller.Comp1.Pulling != pullable)
             return false;
 
-        // prevent you from grabbing someone else while being grabbed
-        if (TryComp<PullableComponent>(puller, out var pullerAsPullable) && pullerAsPullable.Puller != null)
-            return false;
-
-        if (HasComp<PacifiedComponent>(puller))
-            return false;
-
-        if (pullable.Comp.Puller != puller ||
-            puller.Comp.Pulling != pullable)
-            return false;
-
-        if (puller.Comp.NextStageChange > _timing.CurTime)
+        if (puller.Comp1.NextStageChange > _timing.CurTime)
             return true;
 
         // You can't choke crates
@@ -908,8 +924,8 @@ public sealed class PullingSystem : EntitySystem
             return false;
 
         // Delay to avoid spamming
-        puller.Comp.NextStageChange = _timing.CurTime + puller.Comp.StageChangeCooldown;
-        Dirty(puller);
+        puller.Comp1.NextStageChange = _timing.CurTime + puller.Comp1.StageChangeCooldown;
+        Dirty(puller, puller.Comp1);
 
         // Don't grab without grab intent
         if (!ignoreCombatMode)
@@ -917,29 +933,32 @@ public sealed class PullingSystem : EntitySystem
                 return false;
 
         // It's blocking stage update, maybe better UX?
-        if (puller.Comp.GrabStage == GrabStage.Suffocate)
+        if (puller.Comp1.GrabStage == GrabStage.Suffocate)
         {
-            _stamina.TakeStaminaDamage(pullable, puller.Comp.SuffocateGrabStaminaDamage);
+            _stamina.TakeStaminaDamage(pullable, puller.Comp1.SuffocateGrabStaminaDamage);
 
             Dirty(pullable);
-            Dirty(puller);
+            Dirty(puller, puller.Comp1);
             return true;
         }
 
         // Update stage
         // TODO: Change grab stage direction
-        var nextStageAddition = puller.Comp.GrabStageDirection switch
+        var nextStageAddition = puller.Comp1.GrabStageDirection switch
         {
             GrabStageDirection.Increase => 1,
             GrabStageDirection.Decrease => -1,
             _ => throw new ArgumentOutOfRangeException(),
         };
 
-        if (puller.Comp.GrabStage <= GrabStage.Soft) // Set the cooldown unless it is currently hard or above.
+        // giving the cooldown before punching/pushing
+        puller.Comp2.NextAttack = _timing.CurTime + TimeSpan.FromSeconds(puller.Comp2.AttackRate);
+
+        if (puller.Comp1.GrabStage <= GrabStage.Soft) // Set the cooldown unless it is currently hard or above.
         {
-            puller.Comp.WhenCanThrow = _timing.CurTime + puller.Comp.ThrowDelayOnGrab;
+            puller.Comp1.WhenCanThrow = _timing.CurTime + puller.Comp1.ThrowDelayOnGrab;
         }
-        var newStage = puller.Comp.GrabStage + nextStageAddition;
+        var newStage = puller.Comp1.GrabStage + nextStageAddition;
 
         if (HasComp<MartialArtsKnowledgeComponent>(puller)
             && TryComp<RequireProjectileTargetComponent>(pullable, out var layingDown)
@@ -950,7 +969,7 @@ public sealed class PullingSystem : EntitySystem
             newStage = ev.Stage;
         }
 
-        if (!TrySetGrabStages((puller, puller.Comp), (pullable, pullable.Comp), newStage))
+        if (!TrySetGrabStages((puller, puller.Comp1), (pullable, pullable.Comp), newStage))
             return false;
 
         _color.RaiseEffect(Color.Yellow, new List<EntityUid> { pullable }, Filter.Pvs(pullable, entityManager: EntityManager));

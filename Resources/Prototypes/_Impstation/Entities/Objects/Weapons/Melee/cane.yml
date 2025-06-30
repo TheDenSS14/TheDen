@@ -1,0 +1,24 @@
+# SPDX-FileCopyrightText: 2024 ATDoop
+# SPDX-FileCopyrightText: 2024 Darkmaija
+# SPDX-FileCopyrightText: 2025 portfiend
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  parent: CaneBase # DEN edit
+  id: WalkingCane
+  name: walking cane
+  description: A cane, of a more modern design.
+  components: # DEN: Removed redundant components (Appearance, DamageOtherOnHit, UseDelay)
+  - type: Sprite
+    sprite: _Impstation/Objects/Weapons/Melee/cane.rsi
+    state: walkingcane
+  - type: Item
+    sprite: _Impstation/Objects/Weapons/Melee/cane.rsi
+  - type: MeleeWeapon
+    wideAnimationRotation: 45
+    damage:
+      types:
+        Blunt: 4
+  - type: StaminaDamageOnHit
+    damage: 4

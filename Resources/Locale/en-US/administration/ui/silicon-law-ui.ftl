@@ -1,4 +1,10 @@
-﻿silicon-law-ui-verb = Manage laws
+# SPDX-FileCopyrightText: 2024 Simon <63975668+Simyon264@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
+silicon-law-ui-verb = Manage laws
 silicon-law-ui-title = Silicon laws
 silicon-law-ui-new-law = New law
 silicon-law-ui-save = Save changes

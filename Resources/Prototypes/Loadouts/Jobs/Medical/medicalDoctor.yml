@@ -1,3 +1,9 @@
+# SPDX-FileCopyrightText: 2024 VMSolidus <evilexecutive@gmail.com>
+# SPDX-FileCopyrightText: 2025 BlitzTheSquishy <73762869+BlitzTheSquishy@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 # Medical Doctor
 # Backpacks
 
@@ -53,19 +59,6 @@
 # Gloves
 
 # Head
-- type: loadout
-  id: LoadoutMedicalHeadNurse
-  category: JobsMedicalAUncategorized
-  cost: 0
-  exclusive: true
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutMedicalDoctorHead
-    - !type:CharacterJobRequirement
-      jobs:
-        - MedicalDoctor
-  items:
-    - ClothingHeadNurseHat
 
 # Id
 
@@ -74,6 +67,35 @@
 # Mask
 
 # Outer
+- type: loadout
+  id: LoadoutMedicalOuterLabcoatViro
+  category: JobsMedicalMedicalDoctor
+  cost: 0
+  exclusive: true
+  customColorTint: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMedicalDoctorOuter
+    - !type:CharacterJobRequirement
+      jobs:
+        - MedicalDoctor
+  items:
+    - ClothingOuterCoatLabViro
+
+- type: loadout
+  id: LoadoutMedicalOuterLabcoatGen
+  category: JobsMedicalMedicalDoctor
+  cost: 0
+  exclusive: true
+  customColorTint: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMedicalDoctorOuter
+    - !type:CharacterJobRequirement
+      jobs:
+        - MedicalDoctor
+  items:
+    - ClothingOuterCoatLabGene
 
 # Shoes
 
@@ -103,3 +125,55 @@
         - MedicalDoctor
   items:
     - ClothingUniformJumpskirtMedicalDoctor
+
+- type: loadout
+  id: LoadoutMedicalDoctorJumpsuitViro
+  category: JobsMedicalMedicalDoctor
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMedicalDoctorUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - MedicalDoctor
+  items:
+    - ClothingUniformJumpsuitVirology
+
+- type: loadout
+  id: LoadoutMedicalDoctorJumpskirtViro
+  category: JobsMedicalMedicalDoctor
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMedicalDoctorUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - MedicalDoctor
+  items:
+    - ClothingUniformJumpskirtVirology
+
+- type: loadout
+  id: LoadoutMedicalDoctorJumpsuitGen
+  category: JobsMedicalMedicalDoctor
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMedicalDoctorUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - MedicalDoctor
+  items:
+    - ClothingUniformJumpsuitGenetics
+
+- type: loadout
+  id: LoadoutMedicalDoctorJumpskirtGen
+  category: JobsMedicalMedicalDoctor
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMedicalDoctorUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - MedicalDoctor
+  items:
+    - ClothingUniformJumpskirtGenetics

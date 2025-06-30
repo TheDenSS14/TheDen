@@ -1,3 +1,9 @@
+# SPDX-FileCopyrightText: 2025 Aviu00 <93730715+Aviu00@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 VMSolidus <evilexecutive@gmail.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 - type: entity
   id: BaseHardlightArrow
   abstract: true
@@ -34,7 +40,7 @@
     onlyCollideWhenShot: true
     damage:
       types:
-        Heat: 45
+        Heat: 25
   - type: TimedDespawn
     lifetime: 10
   - type: PointLight
@@ -138,7 +144,7 @@
   - type: ExplodeOnTrigger
   - type: Explosive
     explosionType: Default
-    totalIntensity: 12
+    totalIntensity: 6
     intensitySlope: 0.4
     maxIntensity: 4
     canCreateVacuum: false
@@ -157,7 +163,7 @@
     penetrate: true
     damage:
       types:
-        Heat: 30
+        Heat: 10
   - type: Fixtures
     fixtures:
       projectile:

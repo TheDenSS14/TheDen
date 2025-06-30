@@ -1,3 +1,14 @@
+// SPDX-FileCopyrightText: 2022 Flipp Syder <76629141+vulppine@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 Rane <60792108+Elijahrane@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 Vera Aguilera Puerto <6766154+Zumorica@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 mirrorcult <lunarautomaton6@gmail.com>
+// SPDX-FileCopyrightText: 2022 vulppine <vulppine@gmail.com>
+// SPDX-FileCopyrightText: 2022 wrexbe <81056464+wrexbe@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Kara <lunarautomaton6@gmail.com>
+// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+//
+// SPDX-License-Identifier: MIT
+
 using Content.Shared.Atmos.Monitor.Components;
 using Robust.Shared.Serialization;
 
@@ -22,7 +33,17 @@ namespace Content.Shared.Atmos.Piping.Unary.Components
             Gas.WaterVapor,
             Gas.Ammonia,
             Gas.NitrousOxide,
-            Gas.Frezon
+            Gas.Frezon,
+            Gas.BZ, // Assmos - /tg/ gases
+            Gas.Healium, // Assmos - /tg/ gases
+            Gas.Nitrium, // Assmos - /tg/ gases
+            Gas.Hydrogen, // Assmos - /tg/ gases
+            Gas.HyperNoblium, // Assmos - /tg/ gases
+            Gas.ProtoNitrate, // Assmos - /tg/ gases
+            Gas.Zauker, // Assmos - /tg/ gases
+            Gas.Halon, // Assmos - /tg/ gases
+            Gas.Helium, // Assmos - /tg/ gases
+            Gas.AntiNoblium, // Assmos - /tg/ gases
         };
 
         // Presets for 'dumb' air alarm modes

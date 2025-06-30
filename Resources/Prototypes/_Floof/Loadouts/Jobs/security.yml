@@ -1,0 +1,114 @@
+# SPDX-FileCopyrightText: 2024 fox <daytimer253@gmail.com>
+# SPDX-FileCopyrightText: 2025 Blitz <73762869+BlitzTheSquishy@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 BlitzTheSquishy <73762869+BlitzTheSquishy@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Rosycup <178287475+Rosycup@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
+# General security
+- type: loadout
+  id: LoadoutClothingHandsSecurityWarmers
+  category: JobsSecurityAUncategorized
+  cost: 2
+  exclusive: true
+  items:
+  - ClothingHandsSecurityWarmers
+  requirements:
+  - !type:CharacterDepartmentRequirement
+    departments:
+    - Security
+  - !type:CharacterJobRequirement
+    jobs:
+    - Detective
+    - HeadOfSecurity
+
+- type: loadout
+  id: LoadoutClothingUnderSocksSecurity
+  category: JobsSecurityAUncategorized
+  cost: 2
+  exclusive: true
+  items:
+  - ClothingUnderSocksSecurity
+  requirements:
+#  - !type:CharacterSpeciesRequirement - TheDen
+#    inverted: true
+#    species:
+#    - Diona
+#    - Harpy
+  - !type:CharacterDepartmentRequirement
+    departments:
+    - Security
+  - !type:CharacterJobRequirement
+    jobs:
+    - Detective
+    - HeadOfSecurity
+
+- type: loadout
+  id: LoadoutClothingUniformSecurityThong
+  category: JobsSecurityAUncategorized
+  cost: 2
+  exclusive: true
+  items:
+  - ClothingUniformSecurityThong
+  requirements:
+  - !type:CharacterDepartmentRequirement
+    departments:
+    - Security
+  - !type:CharacterJobRequirement
+    jobs:
+    - Detective
+    - HeadOfSecurity
+
+- type: loadout
+  id: LoadoutSecurityNeckCollar
+  category: JobsSecurityAUncategorized
+  cost: 1
+  requirements:
+  - !type:CharacterDepartmentRequirement
+    departments:
+    - Security
+  items:
+  - ClothingNeckCollarSec
+
+# Detective
+- type: loadout
+  id: LoadoutClothingHandsDetectiveWarmers
+  category: JobsSecurityDetective
+  cost: 1
+  exclusive: true
+  items:
+  - ClothingHandsDetectiveWarmers
+  requirements:
+  - !type:CharacterJobRequirement
+    jobs:
+    - Detective
+
+- type: loadout
+  id: LoadoutClothingUnderSocksDetective
+  category: JobsSecurityDetective
+  cost: 1
+  exclusive: true
+  items:
+  - ClothingUnderSocksDetective
+  requirements:
+#  - !type:CharacterSpeciesRequirement - TheDen
+#    inverted: true
+#    species:
+#    - Diona
+#    - Harpy
+  - !type:CharacterJobRequirement
+    jobs:
+    - Detective
+
+- type: loadout
+  id: LoadoutClothingUniformDetectiveThong
+  category: JobsSecurityDetective
+  cost: 1
+  exclusive: true
+  items:
+  - ClothingUniformDetectiveThong
+  requirements:
+  - !type:CharacterJobRequirement
+    jobs:
+    - Detective

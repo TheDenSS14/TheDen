@@ -1,0 +1,39 @@
+# SPDX-FileCopyrightText: 2025 MajorMoth <61519600+MajorMoth@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
+- type: entity
+  parent: [DrinkBottleVisualsAll, DrinkBottleGlassBaseFull]
+  id: FoodCondimentBottleSoysauce
+  name: soy sauce bottle
+  description: Used to season dishes to umami perfection. With extra sodium!
+  components:
+  - type: Appearance
+  - type: GenericVisualizer
+    visuals:
+      enum.OpenableVisuals.Opened:
+        enum.OpenableVisuals.Layer:
+          True: {state: "icon_open"}
+          False: {state: "icon_empty"}
+  - type: Item
+    size: Small
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 30
+        reagents:
+        - ReagentId: Soysauce
+          Quantity: 30
+  - type: SolutionTransfer
+    canChangeTransferAmount: true
+    minTransferAmount: 1
+    maxTransferAmount: 5
+  - type: Sprite
+    sprite: _NF/Objects/Consumable/Food/soysauce.rsi
+    state: icon
+  - type: Openable
+    closeable: true
+  - type: SolutionContainerVisuals
+    maxFillLevels: 5
+    fillBaseName: fill-

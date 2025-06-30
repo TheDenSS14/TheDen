@@ -1,0 +1,100 @@
+# SPDX-FileCopyrightText: 2025 Rosycup <178287475+Rosycup@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
+- type: entity
+  parent: PillCanister
+  id: PillCanisterPomelustine
+  suffix: Pomelustine 10u
+  components:
+  - type: Label
+    currentLabel: pomelustine 10u
+  - type: StorageFill
+    contents:
+    - id: PillPomelustine
+      amount: 10
+
+- type: entity
+  name: pill
+  suffix: Pomelustine 10u
+  parent: Pill
+  id: PillPomelustine
+  components:
+  - type: Pill
+    pillType: 3
+  - type: Sprite
+    state: pill4
+  - type: Label
+    currentLabel: pomelustine 10u
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 20
+        reagents:
+        - ReagentId: Pomelustine
+          Quantity: 10
+
+- type: entity
+  parent: PillCanister
+  id: PillCanisterPhilterex
+  suffix: Philterex 5u
+  components:
+  - type: Label
+    currentLabel: philterex 5u
+  - type: StorageFill
+    contents:
+    - id: PillPhilterex
+      amount: 10
+
+- type: entity
+  name: pill
+  suffix: Philterex 5u
+  parent: Pill
+  id: PillPhilterex
+  components:
+  - type: Pill
+    pillType: 4
+  - type: Sprite
+    state: pill5
+  - type: Label
+    currentLabel: philterex 5u
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 20
+        reagents:
+        - ReagentId: Philterex
+          Quantity: 5
+
+- type: entity
+  parent: PillCanister
+  id: PillCanisterLibidozenithizine
+  suffix: Libidozenithizine 10u
+  components:
+  - type: Label
+    currentLabel: libidozenithizine 10u
+  - type: StorageFill
+    contents:
+    - id: PillLibidozenithizine
+      amount: 5
+
+- type: entity
+  name: pill
+  suffix: Libidozenithizine 10u
+  parent: Pill
+  id: PillLibidozenithizine
+  components:
+  - type: Pill
+    pillType: 4
+  - type: Sprite
+    state: pill5
+  - type: Label
+    currentLabel: libidozenithizine 10u
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 20
+        reagents:
+        - ReagentId: Libidozenithizine
+          Quantity: 10

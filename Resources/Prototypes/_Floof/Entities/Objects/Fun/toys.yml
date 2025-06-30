@@ -1,0 +1,260 @@
+# SPDX-FileCopyrightText: 2024 Fansana <116083121+Fansana@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 ShatteredSwords <135023515+ShatteredSwords@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 fenndragon <fenndragon@gmail.com>
+# SPDX-FileCopyrightText: 2025 Rosycup <178287475+Rosycup@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
+- type: entity
+  parent: BasePlushie
+  id: PlushieFRouny
+  name: blue rouny plush
+  description: An adorable stuffed toy that resembles a rouny with blue stripes.
+  components:
+  - type: Sprite
+    state: nrouny
+  - type: Item
+    storedRotation: -90
+  - type: EmitSoundOnUse
+    sound:
+      path: /Audio/Weapons/Xeno/alien_spitacid.ogg
+  - type: EmitSoundOnLand
+    sound:
+      path: /Audio/Weapons/Xeno/alien_spitacid.ogg
+  - type: EmitSoundOnActivate
+    sound:
+      path: /Audio/Weapons/Xeno/alien_spitacid.ogg
+  - type: EmitSoundOnTrigger
+    sound:
+      path: /Audio/Weapons/Xeno/alien_spitacid.ogg
+  - type: Food
+    requiresSpecialDigestion: true
+    useSound:
+      path: /Audio/Weapons/Xeno/alien_spitacid.ogg
+  - type: MeleeWeapon
+    wideAnimationRotation: -90
+    soundHit:
+      path: /Audio/Weapons/Xeno/alien_spitacid.ogg
+    angle: 0
+    animation: WeaponArcBite # Rrrr!
+
+- type: entity
+  parent: BasePlushie
+  id: PlushieFDrone
+  name: blue drone plush
+  description: An adorable stuffed toy that resembles a drone with blue stripes.
+  components:
+  - type: Sprite
+    state: ndrone
+  - type: Item
+    storedRotation: -90
+  - type: EmitSoundOnUse
+    sound:
+      path: /Audio/Weapons/Xeno/alien_spitacid.ogg
+  - type: EmitSoundOnLand
+    sound:
+      path: /Audio/Weapons/Xeno/alien_spitacid.ogg
+  - type: EmitSoundOnActivate
+    sound:
+      path: /Audio/Weapons/Xeno/alien_spitacid.ogg
+  - type: EmitSoundOnTrigger
+    sound:
+      path: /Audio/Weapons/Xeno/alien_spitacid.ogg
+  - type: Food
+    requiresSpecialDigestion: true
+    useSound:
+      path: /Audio/Weapons/Xeno/alien_spitacid.ogg
+  - type: MeleeWeapon
+    wideAnimationRotation: -90
+    soundHit:
+      path: /Audio/Weapons/Xeno/alien_spitacid.ogg
+    angle: 0
+    animation: WeaponArcBite # Rrrr!
+
+- type: entity
+  parent: BasePlushie
+  id: PlushieFPraetorian
+  name: blue Praetorian plush
+  description: An adorable stuffed toy that resembles a Praetorian with blue stripes.
+  components:
+  - type: Sprite
+    state: nPraetorian
+  - type: Item
+    storedRotation: -90
+  - type: EmitSoundOnUse
+    sound:
+      path: /Audio/Weapons/Xeno/alien_spitacid.ogg
+  - type: EmitSoundOnLand
+    sound:
+      path: /Audio/Weapons/Xeno/alien_spitacid.ogg
+  - type: EmitSoundOnActivate
+    sound:
+      path: /Audio/Weapons/Xeno/alien_spitacid.ogg
+  - type: EmitSoundOnTrigger
+    sound:
+      path: /Audio/Weapons/Xeno/alien_spitacid.ogg
+  - type: Food
+    requiresSpecialDigestion: true
+    useSound:
+      path: /Audio/Weapons/Xeno/alien_spitacid.ogg
+  - type: MeleeWeapon
+    wideAnimationRotation: -90
+    soundHit:
+      path: /Audio/Weapons/Xeno/alien_spitacid.ogg
+    angle: 0
+    animation: WeaponArcBite # Rrrr!
+
+- type: entity
+  parent: BasePlushie
+  id: PlushieFRavager
+  name: blue ravager plush
+  description: An adorable stuffed toy that resembles a ravager with blue stripes.
+  components:
+  - type: Sprite
+    state: nravager
+  - type: Item
+    storedRotation: -90
+  - type: EmitSoundOnUse
+    sound:
+      path: /Audio/Weapons/Xeno/alien_spitacid.ogg
+  - type: EmitSoundOnLand
+    sound:
+      path: /Audio/Weapons/Xeno/alien_spitacid.ogg
+  - type: EmitSoundOnActivate
+    sound:
+      path: /Audio/Weapons/Xeno/alien_spitacid.ogg
+  - type: EmitSoundOnTrigger
+    sound:
+      path: /Audio/Weapons/Xeno/alien_spitacid.ogg
+  - type: Food
+    requiresSpecialDigestion: true
+    useSound:
+      path: /Audio/Weapons/Xeno/alien_spitacid.ogg
+  - type: MeleeWeapon
+    wideAnimationRotation: -90
+    soundHit:
+      path: /Audio/Weapons/Xeno/alien_spitacid.ogg
+    angle: 0
+    animation: WeaponArcBite # Rrrr!
+
+- type: entity
+  parent: BasePlushie
+  id: PlushieDragon
+  name:
+  description:
+  components:
+  - type: Sprite
+    sprite: _Floof/Objects/Fun/floof_plush.rsi
+    state: dragon
+    color: "#ff0000"
+  - type: PhysicalComposition
+    materialComposition:
+      Plastic: 100
+  - type: StaticPrice
+    price: 75
+  - type: UseDelay
+    delay: 3.0
+  - type: EmitSoundOnUse
+    sound:
+      path: /Audio/Animals/space_dragon_roar.ogg
+      params:
+        volume: 1
+  - type: EmitSoundOnLand
+    sound:
+      path: /Audio/Animals/space_dragon_roar.ogg
+  - type: EmitSoundOnActivate
+    sound:
+      path: /Audio/Animals/space_dragon_roar.ogg
+      params:
+        volume: 1
+  - type: EmitSoundOnCollide
+    sound:
+      collection: ToyFall
+      params:
+        variation: 0.03
+        volume: 3
+  - type: MeleeWeapon
+    soundHit:
+      collection: ToyFall
+      params:
+        variation: 0.05
+        volume: 4
+
+- type: entity
+  parent: BasePlushie
+  id: PlushieDino
+  name: dino plushie
+  suffix: DO NOT MAP
+  description: It'S just a generic dino, nothing to see here.
+  components:
+  - type: Sprite
+    sprite: _Floof/Objects/Fun/floof_plush.rsi
+    state: dino
+  - type: PhysicalComposition
+    materialComposition:
+      Plastic: 100
+  - type: StaticPrice
+    price: 75
+  - type: UseDelay
+    delay: 3.0
+  - type: EmitSoundOnUse
+    sound:
+      path: /Audio/Animals/space_dragon_roar.ogg
+      params:
+        volume: 1
+  - type: EmitSoundOnLand
+    sound:
+      path: /Audio/Animals/space_dragon_roar.ogg
+  - type: EmitSoundOnActivate
+    sound:
+      path: /Audio/Animals/space_dragon_roar.ogg
+      params:
+        volume: 1
+  - type: EmitSoundOnCollide
+    sound:
+      collection: ToyFall
+      params:
+        variation: 0.03
+        volume: 3
+  - type: MeleeWeapon
+    soundHit:
+      collection: ToyFall
+      params:
+        variation: 0.05
+        volume: 4
+
+- type: entity
+  parent: PlushieHuman
+  id: PlushieChillHuman
+  name: chill human plushie
+  description: It's just a chill lill dude.
+  components:
+  - type: Sprite
+    sprite: _Floof/Objects/Fun/floof_plush.rsi
+    state: chill
+
+- type: entity
+  parent: PlushieHuman
+  id: PlushieSlimeTider
+  name: slime tider plushie
+  description: A generic tider, this one seems to be particularly slimy. The label reads 'Product not insulated'
+  components:
+  - type: Sprite
+    sprite: _Floof/Objects/Fun/floof_plush.rsi
+    state: slime
+  - type: UseDelay
+    delay: 3.0
+  - type: EmitSoundOnUse
+    sound:
+      path: /Audio/Voice/Slime/slime_squish.ogg
+      params:
+        volume: 1
+  - type: EmitSoundOnLand
+    sound:
+      path: /Audio/Voice/Slime/slime_squish.ogg
+  - type: EmitSoundOnActivate
+    sound:
+      path: /Audio/Voice/Slime/slime_squish.ogg
+      params:
+        volume: 1

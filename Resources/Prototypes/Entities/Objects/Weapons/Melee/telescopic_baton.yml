@@ -1,3 +1,11 @@
+# SPDX-FileCopyrightText: 2024 Remuchi
+# SPDX-FileCopyrightText: 2024 Skubman
+# SPDX-FileCopyrightText: 2024 dge21
+# SPDX-FileCopyrightText: 2025 MajorMoth
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 - type: entity
   id: TelescopicBaton
   parent: BaseItem
@@ -67,7 +75,7 @@
   id: TelescopicBatonAdmeme
   name: robust telescopic baton
   description: A compact and HARMFUL personal defense weapon. Sturdy enough to break legs of the attackers, making them unable to walk again.
-  suffix: admeme, DO NOT MAP
+  categories: [ AdminTools ]
   components:
   - type: TelescopicBaton
     attackTimeframe: 300 # one minute after activation

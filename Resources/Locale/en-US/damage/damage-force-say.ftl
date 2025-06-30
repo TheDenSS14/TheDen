@@ -1,4 +1,10 @@
-﻿damage-force-say-message-wrap = {$message}-{$suffix}
+# SPDX-FileCopyrightText: 2023 Debug <49997488+DebugOk@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Kara <lunarautomaton6@gmail.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: MIT
+
+damage-force-say-message-wrap = {$message}-{$suffix}
 damage-force-say-message-wrap-no-suffix = {$message}-
 
 damage-force-say-1 = GACK!

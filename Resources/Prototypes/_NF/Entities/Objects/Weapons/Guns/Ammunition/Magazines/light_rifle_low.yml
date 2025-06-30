@@ -1,6 +1,12 @@
+# SPDX-FileCopyrightText: 2025 BlitzTheSquishy
+# SPDX-FileCopyrightText: 2025 VMSolidus
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 - type: entity
   id: MagazineLightRifleLowCapacityEmpty
-  name: "low cap magazine (.30 rifle any)"
+  name: "reduced-capacity rifle magazine (.30 rifle any)"
   suffix: empty
   parent: MagazineLightRifle
   components:
@@ -19,7 +25,7 @@
 
 - type: entity
   id: MagazineLightRifleLowCapacity
-  name: "low cap magazine (.30 rifle)"
+  name: "reduced-capacity rifle magazine (.30 rifle)"
   parent: BaseMagazineLightRifle
   components:
   - type: BallisticAmmoProvider
@@ -37,7 +43,7 @@
 
 - type: entity
   id: MagazineLightRifleLowCapacityPractice
-  name: "low cap magazine (.30 rifle practice)"
+  name: "reduced-capacity rifle magazine (.30 rifle practice)"
   parent: MagazineLightRifleLowCapacity
   components:
   - type: BallisticAmmoProvider
@@ -54,7 +60,7 @@
 
 - type: entity
   id: MagazineLightRifleLowCapacityRubber
-  name: "low cap magazine (.30 rifle rubber)"
+  name: "reduced-capacity rifle magazine (.30 rifle rubber)"
   parent: MagazineLightRifleLowCapacity
   components:
   - type: BallisticAmmoProvider
@@ -71,7 +77,7 @@
 
 - type: entity
   id: MagazineLightRifleLowCapacityUranium
-  name: "low cap magazine (.30 rifle uranium)"
+  name: "reduced-capacity rifle magazine (.30 rifle uranium)"
   parent: MagazineLightRifleLowCapacity
   components:
   - type: BallisticAmmoProvider

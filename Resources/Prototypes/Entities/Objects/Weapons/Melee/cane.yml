@@ -1,6 +1,17 @@
+# SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT
+# SPDX-FileCopyrightText: 2024 Skubman
+# SPDX-FileCopyrightText: 2024 dge21
+# SPDX-FileCopyrightText: 2025 MajorMoth
+# SPDX-FileCopyrightText: 2025 portfiend
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
+# DEN: Make abstract and move the wieldable component out. This should not break anything.
 - type: entity
   parent: BaseItem
-  id: Cane
+  id: CaneBase
+  abstract: true
   name: cane
   description: A wooden cane.
   components:
@@ -9,6 +20,8 @@
     state: cane
   - type: Item
     size: Normal
+    shape:
+    - 0,0,1,2
     sprite: Objects/Weapons/Melee/cane.rsi
   - type: Appearance
   - type: MeleeWeapon
@@ -19,11 +32,6 @@
   - type: DamageOtherOnHit
   - type: StaminaDamageOnHit
     damage: 5
-  - type: Wieldable
-  - type: IncreaseDamageOnWield
-    damage:
-      types:
-        Blunt: 3
   - type: UseDelay
     delay: 1
   - type: InteractionVerbs
@@ -31,6 +39,25 @@
     - HugObject
     - KissObject
     - LickObject
+  - type: HeldSupportStanding
+  - type: HeldLegSupport
+    walkSpeedPenaltyReduction: 0.5
+    sprintSpeedPenaltyReduction: 0.5
+
+- type: entity
+  parent: CaneBase
+  id: CaneWieldableBase
+  abstract: true
+  components:
+  - type: Wieldable
+  - type: IncreaseDamageOnWield
+    damage:
+      types:
+        Blunt: 3
+
+- type: entity
+  parent: CaneWieldableBase
+  id: Cane
 
 - type: entity
   name: cane blade
@@ -64,7 +91,7 @@
     - LickObject
 
 - type: entity
-  parent: Cane
+  parent: CaneWieldableBase
   id: CaneSheath
   suffix: Empty
   components:

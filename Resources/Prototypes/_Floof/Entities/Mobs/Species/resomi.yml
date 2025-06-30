@@ -1,0 +1,509 @@
+# SPDX-FileCopyrightText: 2024 FoxxoTrystan
+# SPDX-FileCopyrightText: 2025 Eagle-0
+# SPDX-FileCopyrightText: 2025 Eris
+# SPDX-FileCopyrightText: 2025 LaconiumDragona
+# SPDX-FileCopyrightText: 2025 RocketBoss360
+# SPDX-FileCopyrightText: 2025 Rosycup
+# SPDX-FileCopyrightText: 2025 Sapphire
+# SPDX-FileCopyrightText: 2025 SixplyDev
+# SPDX-FileCopyrightText: 2025 Skubman
+# SPDX-FileCopyrightText: 2025 TheOneTrueWolfio
+# SPDX-FileCopyrightText: 2025 VMSolidus
+# SPDX-FileCopyrightText: 2025 Zac1107
+# SPDX-FileCopyrightText: 2025 chly
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
+- type: entity
+  save: false
+  name: Urist McRaptor
+  parent: BaseMobHuman
+  id: BaseMobResomi
+  abstract: true
+  components:
+    - type: StatusEffects
+      allowed:
+        - Stun
+        - KnockedDown
+        - SlowedDown
+        - Stutter
+        - SeeingRainbows
+        - Electrocution
+        - ForcedSleep
+        - TemporaryBlindness
+        - Drunk
+        - SlurredSpeech
+        - RatvarianLanguage
+        - PressureImmunity
+        - Muted
+        - Pacified
+        - StaminaModifier
+    - type: Blindable
+    - type: Perishable
+    - type: FireVisuals
+      sprite: _Floof/Mobs/Effects/onfire.rsi
+      normalState: Resomi_minor_burning
+      alternateState: Resomi_burning
+    - type: OfferItem
+    - type: LayingDown
+    - type: BloodstreamAffectedByMass
+      power: 0.6
+    - type: Hunger
+    - type: Thirst
+    - type: Carriable
+    - type: HumanoidAppearance
+      species: Resomi
+    - type: Icon
+      sprite: "_Floof/Mobs/Species/Resomi/parts.rsi"
+      state: full
+    - type: Body
+      prototype: Resomi
+    - type: Flammable
+      damage:
+        types:
+          Heat: 1.5 # burn more
+    - type: MobThresholds
+      thresholds: # Weak
+        0: Alive
+        80: Critical
+        180: Dead
+    - type: DamageVisuals
+      thresholds: [ 10, 30, 50, 70 ]
+      damageOverlayGroups:
+        Brute:
+          sprite: "_Floof/Mobs/Effects/Resomi/brute_damage.rsi"
+          color: "#C048C2"
+        Burn:
+          sprite: "_Floof/Mobs/Effects/Resomi/burn_damage.rsi"
+    - type: Barotrauma
+      damage:
+        types:
+          Blunt: 0.35 # per second, scales with pressure and other constants.
+    - type: Bloodstream
+      bloodlossDamage:
+        types:
+          Bloodloss: 1
+      bloodlossHealDamage:
+        types:
+          Bloodloss: -0.1
+      bloodReagent: AmmoniaBlood
+    - type: MovementSpeedModifier
+      weightlessAcceleration: 2.5 # Move around more easily in space.
+      weightlessModifier: 1.1
+      weightlessFriction: 2 # makes you turn more sharply while weightless
+    - type: Temperature
+      heatDamageThreshold: 320.15
+      coldDamageThreshold: 195
+      currentTemperature: 300
+      specificHeat: 46
+      coldDamage:
+        types:
+          Cold: 0.05 #per second, scales with temperature & other constants
+      heatDamage:
+        types:
+          Heat: 0.25 #per second, scales with temperature & other constants
+    - type: Fixtures
+      fixtures:
+        fix1:
+          shape: !type:PhysShapeCircle
+            radius: 0.35
+          density: 185 #lower density
+          restitution: 0.0
+          mask:
+            - MobMask
+          layer:
+            - MobLayer
+    - type: Sprite
+      netsync: false
+      noRot: true
+      drawdepth: Mobs
+      scale: 1, 1
+      layers:
+      - map: ["enum.HumanoidVisualLayers.Chest"]
+      - map: ["enum.HumanoidVisualLayers.Head"]
+      - map: ["enum.HumanoidVisualLayers.Snout"]
+      - map: ["enum.HumanoidVisualLayers.Eyes"]
+        shader: unshaded
+      - map: ["enum.HumanoidVisualLayers.Face"]
+      - map: ["enum.HumanoidVisualLayers.RArm"]
+      - map: ["enum.HumanoidVisualLayers.LArm"]
+      - map: ["enum.HumanoidVisualLayers.RLeg"]
+      - map: ["enum.HumanoidVisualLayers.LLeg"]
+      #     - shader: StencilClear
+      #      sprite: Mobs/Species/Human/parts.rsi
+      #      state: l_leg
+      - shader: StencilMask
+        map: ["enum.HumanoidVisualLayers.StencilMask"]
+        sprite: Mobs/Customization/masking_helpers.rsi
+        state: full
+        visible: false
+      - map: [ "enum.HumanoidVisualLayers.Underwear" ]
+      - map: [ "enum.HumanoidVisualLayers.Undershirt" ]
+        # Why is L and RHand on the bottom?
+      - map: [ "enum.HumanoidVisualLayers.LHand" ]
+      - map: [ "enum.HumanoidVisualLayers.RHand" ]
+      - map: ["enum.HumanoidVisualLayers.LFoot"]
+      - map: ["enum.HumanoidVisualLayers.RFoot"]
+      - map: ["socks"]
+      - map: ["underpants"]
+      - map: ["undershirt"]
+      - map: ["jumpsuit"]
+      - map: ["enum.HumanoidVisualLayers.Handcuffs"]
+        color: "#ffffff"
+        sprite: Objects/Misc/handcuffs.rsi
+        state: body-overlay-2
+        visible: false
+      - map: ["id"]
+      - map: ["gloves"]
+      - map: ["shoes"]
+      - map: ["ears"]
+      - map: ["innerBelt"]
+      - map: ["innerNeck"]
+      - map: ["outerClothing"]
+      - map: ["eyes"]
+      - map: ["belt"]
+      - map: ["neck"]
+      - map: ["back"]
+      - map: ["enum.HumanoidVisualLayers.FacialHair"]
+      - map: ["enum.HumanoidVisualLayers.Hair"]
+      - map: ["enum.HumanoidVisualLayers.HeadSide"]
+      - map: ["enum.HumanoidVisualLayers.HeadTop"]
+      - map: ["mask"]
+      - map: ["head"]
+      - map: ["pocket1"]
+      - map: ["pocket2"]
+      - map: ["enum.HumanoidVisualLayers.Tail"]
+    - type: MeleeWeapon
+      soundHit:
+        collection: AlienClaw
+      angle: 30
+      animation: WeaponArcClaw
+      damage:
+        types:
+          Slash: 5
+    - type: Speech
+      speechVerb: Parrot
+      speechSounds: MaleAvali
+    - type: Vocal
+      sounds:
+        Male: MaleAvali
+        Female: FemaleAvali
+        Unsexed: MaleAvali
+    - type: Flashable
+      eyeDamageChance: 0.3
+      eyeDamage: 1
+      durationMultiplier: 1.5
+    - type: Respirator
+      damage:
+       types:
+        Asphyxiation: 1.0
+      damageRecovery:
+        types:
+          Asphyxiation: -1.0
+    - type: LanguageKnowledge
+      speaks:
+        - TauCetiBasic
+      understands:
+        - TauCetiBasic
+    - type: TemperatureProtection
+      coefficient: 0.1 #same as vulp, temp tolerance trait
+    - type: Tag
+      tags:
+      - CanPilot
+      - FootstepSound
+      - DoorBumpOpener
+      - ResomiEmotes
+    - type: PseudoItem
+      storedOffset: -10,0
+      shape:
+      - 0, 0, 3, 2
+      - 0, 2, 3, 4
+    - type: FootPrints # Goobstation - resomi footprints
+      leftBarePrint: "footprint-left-bare-lizard"
+      rightBarePrint: "footprint-right-bare-lizard"
+    - type: Destructible
+      thresholds:
+        - trigger:
+            !type:DamageTypeTrigger
+            damageType: Blunt
+            damage: 300
+    - type: Hands
+      handDisplacement:
+        sizeMaps:
+          32:
+            sprite: "_Floof/Mobs/Species/Resomi/displacement.rsi"
+            state: inHand
+    - type: Inventory
+      speciesId: resomi
+    # templateId: digitigrade
+      displacements:
+        jumpsuit:
+          layer:
+            sprite: "_Floof/Mobs/Species/Resomi/displacement.rsi"
+            state: jumpsuit
+            copyToShaderParameters:
+              # Value required, provide a dummy. Gets overridden when applied.
+              layerKey: dummy
+              parameterTexture: displacementMap
+              parameterUV: displacementUV
+        eyes:
+          layer:
+            sprite: "_Floof/Mobs/Species/Resomi/displacement.rsi"
+            state: eyes
+            copyToShaderParameters:
+              # Value required, provide a dummy. Gets overridden when applied.
+              layerKey: dummy
+              parameterTexture: displacementMap
+              parameterUV: displacementUV
+        gloves:
+          layer:
+            sprite: "_Floof/Mobs/Species/Resomi/displacement.rsi"
+            state: hands
+            copyToShaderParameters:
+              # Value required, provide a dummy. Gets overridden when applied.
+              layerKey: dummy
+              parameterTexture: displacementMap
+              parameterUV: displacementUV
+        head:
+          layer:
+            sprite: "_Floof/Mobs/Species/Resomi/displacement.rsi"
+            state: head
+            copyToShaderParameters:
+              # Value required, provide a dummy. Gets overridden when applied.
+              layerKey: dummy
+              parameterTexture: displacementMap
+              parameterUV: displacementUV
+        back:
+          layer:
+            sprite: "_Floof/Mobs/Species/Resomi/displacement.rsi"
+            state: back
+            copyToShaderParameters:
+              # Value required, provide a dummy. Gets overridden when applied.
+              layerKey: dummy
+              parameterTexture: displacementMap
+              parameterUV: displacementUV
+        ears:
+          layer:
+            sprite: "_Floof/Mobs/Species/Resomi/displacement.rsi"
+            state: ears
+            copyToShaderParameters:
+              # Value required, provide a dummy. Gets overridden when applied.
+              layerKey: dummy
+              parameterTexture: displacementMap
+              parameterUV: displacementUV
+        shoes:
+          layer:
+            sprite: "_Floof/Mobs/Species/Resomi/displacement.rsi"
+            state: feet
+            copyToShaderParameters:
+              # Value required, provide a dummy. Gets overridden when applied.
+              layerKey: dummy
+              parameterTexture: displacementMap
+              parameterUV: displacementUV
+        neck:
+          layer:
+            sprite: "_Floof/Mobs/Species/Resomi/displacement.rsi"
+            state: neck
+            copyToShaderParameters:
+              # Value required, provide a dummy. Gets overridden when applied.
+              layerKey: dummy
+              parameterTexture: displacementMap
+              parameterUV: displacementUV
+        mask:
+          layer:
+            sprite: "_Floof/Mobs/Species/Resomi/displacement.rsi"
+            state: mask
+            copyToShaderParameters:
+              # Value required, provide a dummy. Gets overridden when applied.
+              layerKey: dummy
+              parameterTexture: displacementMap
+              parameterUV: displacementUV
+        suitstorage:
+          layer:
+            sprite: "_Floof/Mobs/Species/Resomi/displacement.rsi"
+            state: suitStorage
+            copyToShaderParameters:
+              # Value required, provide a dummy. Gets overridden when applied.
+              layerKey: dummy
+              parameterTexture: displacementMap
+              parameterUV: displacementUV
+        belt:
+          layer:
+            sprite: "_Floof/Mobs/Species/Resomi/displacement.rsi"
+            state: belt
+            copyToShaderParameters:
+              # Value required, provide a dummy. Gets overridden when applied.
+              layerKey: dummy
+              parameterTexture: displacementMap
+              parameterUV: displacementUV
+
+- type: entity
+  save: false
+  parent: MobHumanDummy
+  id: MobResomiDummy
+  categories: [ HideSpawnMenu ]
+  description: A dummy resomi meant to be used in character setup.
+  components:
+    - type: HumanoidAppearance
+      species: Resomi
+    - type: Inventory
+      speciesId: resomi
+#      templateId: digitigrade
+      displacements:
+        jumpsuit:
+          layer:
+            sprite: "_Floof/Mobs/Species/Resomi/displacement.rsi"
+            state: jumpsuit
+            copyToShaderParameters:
+              # Value required, provide a dummy. Gets overridden when applied.
+              layerKey: dummy
+              parameterTexture: displacementMap
+              parameterUV: displacementUV
+        eyes:
+          layer:
+            sprite: "_Floof/Mobs/Species/Resomi/displacement.rsi"
+            state: eyes
+            copyToShaderParameters:
+              # Value required, provide a dummy. Gets overridden when applied.
+              layerKey: dummy
+              parameterTexture: displacementMap
+              parameterUV: displacementUV
+        gloves:
+          layer:
+            sprite: "_Floof/Mobs/Species/Resomi/displacement.rsi"
+            state: hands
+            copyToShaderParameters:
+              # Value required, provide a dummy. Gets overridden when applied.
+              layerKey: dummy
+              parameterTexture: displacementMap
+              parameterUV: displacementUV
+        head:
+          layer:
+            sprite: "_Floof/Mobs/Species/Resomi/displacement.rsi"
+            state: head
+            copyToShaderParameters:
+              # Value required, provide a dummy. Gets overridden when applied.
+              layerKey: dummy
+              parameterTexture: displacementMap
+              parameterUV: displacementUV
+        back:
+          layer:
+            sprite: "_Floof/Mobs/Species/Resomi/displacement.rsi"
+            state: back
+            copyToShaderParameters:
+              # Value required, provide a dummy. Gets overridden when applied.
+              layerKey: dummy
+              parameterTexture: displacementMap
+              parameterUV: displacementUV
+        ears:
+          layer:
+            sprite: "_Floof/Mobs/Species/Resomi/displacement.rsi"
+            state: ears
+            copyToShaderParameters:
+              # Value required, provide a dummy. Gets overridden when applied.
+              layerKey: dummy
+              parameterTexture: displacementMap
+              parameterUV: displacementUV
+        shoes:
+          layer:
+            sprite: "_Floof/Mobs/Species/Resomi/displacement.rsi"
+            state: feet
+            copyToShaderParameters:
+              # Value required, provide a dummy. Gets overridden when applied.
+              layerKey: dummy
+              parameterTexture: displacementMap
+              parameterUV: displacementUV
+        neck:
+          layer:
+            sprite: "_Floof/Mobs/Species/Resomi/displacement.rsi"
+            state: neck
+            copyToShaderParameters:
+              # Value required, provide a dummy. Gets overridden when applied.
+              layerKey: dummy
+              parameterTexture: displacementMap
+              parameterUV: displacementUV
+        mask:
+          layer:
+            sprite: "_Floof/Mobs/Species/Resomi/displacement.rsi"
+            state: mask
+            copyToShaderParameters:
+              # Value required, provide a dummy. Gets overridden when applied.
+              layerKey: dummy
+              parameterTexture: displacementMap
+              parameterUV: displacementUV
+        suitstorage:
+          layer:
+            sprite: "_Floof/Mobs/Species/Resomi/displacement.rsi"
+            state: suitStorage
+            copyToShaderParameters:
+              # Value required, provide a dummy. Gets overridden when applied.
+              layerKey: dummy
+              parameterTexture: displacementMap
+              parameterUV: displacementUV
+        belt:
+          layer:
+            sprite: "_Floof/Mobs/Species/Resomi/displacement.rsi"
+            state: belt
+            copyToShaderParameters:
+              # Value required, provide a dummy. Gets overridden when applied.
+              layerKey: dummy
+              parameterTexture: displacementMap
+              parameterUV: displacementUV
+    - type: Sprite
+      netsync: false
+      noRot: true
+      drawdepth: Mobs
+      scale: 0.85, 0.85 # Small
+      layers:
+        - map: ["enum.HumanoidVisualLayers.Chest"]
+        - map: ["enum.HumanoidVisualLayers.Head"]
+        - map: ["enum.HumanoidVisualLayers.Snout"]
+        - map: ["enum.HumanoidVisualLayers.Eyes"]
+          shader: unshaded
+        - map: ["enum.HumanoidVisualLayers.Face"]
+        - map: ["enum.HumanoidVisualLayers.RLeg"]
+        - map: ["enum.HumanoidVisualLayers.LLeg"]
+        - map: [ "enum.HumanoidVisualLayers.RArm" ]
+        - map: [ "enum.HumanoidVisualLayers.LArm" ]
+#     - shader: StencilClear
+#      sprite: Mobs/Species/Human/parts.rsi
+#      state: l_leg
+        - shader: StencilMask
+          map: ["enum.HumanoidVisualLayers.StencilMask"]
+          sprite: Mobs/Customization/masking_helpers.rsi
+          state: full
+          visible: false
+        - map: ["enum.HumanoidVisualLayers.LFoot"]
+        - map: ["enum.HumanoidVisualLayers.RFoot"]
+        - map: ["socks"]
+        - map: ["underpants"]
+        - map: ["undershirt"]
+        - map: ["jumpsuit"]
+        - map: ["enum.HumanoidVisualLayers.LHand"]
+        - map: ["enum.HumanoidVisualLayers.RHand"]
+        - map: ["enum.HumanoidVisualLayers.Handcuffs"]
+          color: "#ffffff"
+          sprite: Objects/Misc/handcuffs.rsi
+          state: body-overlay-2
+          visible: false
+        - map: ["id"]
+        - map: ["gloves"]
+        - map: ["shoes"]
+        - map: ["ears"]
+        - map: ["innerBelt"]
+        - map: ["innerNeck"]
+        - map: ["outerClothing"]
+        - map: ["eyes"]
+        - map: ["belt"]
+        - map: ["neck"]
+        - map: ["back"]
+        - map: ["enum.HumanoidVisualLayers.FacialHair"]
+        - map: ["enum.HumanoidVisualLayers.Hair"]
+        - map: ["enum.HumanoidVisualLayers.HeadSide"]
+        - map: ["enum.HumanoidVisualLayers.HeadTop"]
+        - map: ["mask"]
+        - map: ["head"]
+        - map: ["pocket1"]
+        - map: ["pocket2"]
+        - map: ["enum.HumanoidVisualLayers.Tail"]

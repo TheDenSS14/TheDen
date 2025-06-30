@@ -1,3 +1,33 @@
+// SPDX-FileCopyrightText: 2021 Acruid
+// SPDX-FileCopyrightText: 2021 Clyybber
+// SPDX-FileCopyrightText: 2021 Galactic Chimp
+// SPDX-FileCopyrightText: 2021 Paul
+// SPDX-FileCopyrightText: 2021 Vera Aguilera Puerto
+// SPDX-FileCopyrightText: 2021 Visne
+// SPDX-FileCopyrightText: 2022 Alex Evgrashin
+// SPDX-FileCopyrightText: 2022 Fishfish458
+// SPDX-FileCopyrightText: 2022 Francesco
+// SPDX-FileCopyrightText: 2022 Jacob Tong
+// SPDX-FileCopyrightText: 2022 Leon Friedrich
+// SPDX-FileCopyrightText: 2022 fishfish458 <fishfish458>
+// SPDX-FileCopyrightText: 2022 keronshb
+// SPDX-FileCopyrightText: 2023 Debug
+// SPDX-FileCopyrightText: 2023 DrSmugleaf
+// SPDX-FileCopyrightText: 2023 Pieter-Jan Briers
+// SPDX-FileCopyrightText: 2023 metalgearsloth
+// SPDX-FileCopyrightText: 2024 Aiden
+// SPDX-FileCopyrightText: 2024 Mnemotechnican
+// SPDX-FileCopyrightText: 2024 Tayrtahn
+// SPDX-FileCopyrightText: 2024 VMSolidus
+// SPDX-FileCopyrightText: 2024 gluesniffler
+// SPDX-FileCopyrightText: 2024 sleepyyapril <***>
+// SPDX-FileCopyrightText: 2024 sleepyyapril <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>
+// SPDX-FileCopyrightText: 2025 FoxxoTrystan
+// SPDX-FileCopyrightText: 2025 portfiend
+// SPDX-FileCopyrightText: 2025 sleepyyapril
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 using Content.Shared.Buckle;
 using Content.Shared.Buckle.Components;
 using Content.Shared.Climbing.Systems;
@@ -10,6 +40,9 @@ using Robust.Shared.Audio.Systems;
 using Robust.Shared.Physics;
 using Robust.Shared.Physics.Systems;
 using System.Linq;
+using Content.Shared.Body.Components;
+using Content.Shared._DEN.Body;
+using Content.Shared.Inventory;
 
 namespace Content.Shared.Standing;
 
@@ -161,6 +194,18 @@ public sealed class StandingStateSystem : EntitySystem
         if (entityDistances.Count > 0)
             _climb.ForciblySetClimbing(uid, entityDistances.OrderBy(e => e.Value).First().Key);
     }
+
+    public void UpdateStanding(Entity<BodyComponent?> ent, bool dropItems = false)
+    {
+        if (!Resolve(ent.Owner, ref ent.Comp, false))
+            return;
+
+        var ev = new CannotSupportStandingEvent(ent.Comp.LegEntities.Count);
+        RaiseLocalEvent(ent.Owner, ev);
+
+        if (ev.Forced || !ev.Cancelled)
+            Down(ent.Owner, dropHeldItems: dropItems);
+    }
 }
 
 
@@ -185,3 +230,19 @@ public sealed class StoodEvent : EntityEventArgs { }
 ///     Raised when an entity is not standing
 /// </summary>
 public sealed class DownedEvent : EntityEventArgs { }
+
+/// <summary>
+///     Whether or not this entity can support standing up when they have less than the required amount of legs.
+///     Cancel this event if the entity should be able to stand anyway.
+/// </summary>
+public sealed class CannotSupportStandingEvent : CancellableEntityEventArgs, IInventoryRelayEvent
+{
+    public SlotFlags TargetSlots => SlotFlags.WITHOUT_POCKET;
+    public int LegCount;
+    public bool Forced = false;
+
+    public CannotSupportStandingEvent(int legCount)
+    {
+        LegCount = legCount;
+    }
+}

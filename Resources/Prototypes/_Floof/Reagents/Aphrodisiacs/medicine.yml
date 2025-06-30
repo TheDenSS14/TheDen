@@ -1,0 +1,139 @@
+# SPDX-FileCopyrightText: 2024 FoxxoTrystan <trystan.garnierhein@gmail.com>
+# SPDX-FileCopyrightText: 2024 ShatteredSwords <135023515+ShatteredSwords@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 SleepyScarecrow <sharedjunkemail69@gmail.com>
+# SPDX-FileCopyrightText: 2025 Rosycup <178287475+Rosycup@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 SleepyScarecrow <136123749+SleepyScarecrow@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
+- type: reagent
+  id: Pomelustine
+  name: reagent-name-pomelustine
+  group: Medicine
+  desc: reagent-desc-pomelustine
+  physicalDesc: reagent-physical-desc-sticky
+  flavor: fruity
+  color: "#45072f"
+  metabolisms:
+    Medicine:
+      metabolismRate : 0.1
+      effects:
+      - !type:PopupMessage
+        type: Local
+        visualType: Medium
+        messages:
+          - "reagent-effect-aphrodisiac-mild1"
+          - "reagent-effect-aphrodisiac-mild2"
+          - "reagent-effect-aphrodisiac-mild3"
+          - "reagent-effect-aphrodisiac-mild4"
+          - "reagent-effect-aphrodisiac-mild5"
+        probability: 0.035
+        conditions:
+          - !type:ReagentThreshold
+            max: 50
+      - !type:PopupMessage # Overdose causes nausea and vomiting
+        type: Local
+        visualType: Medium
+        messages:
+          - "reagent-effect-aphrodisiac-mildoverdose"
+        probability: 0.06
+        conditions:
+          - !type:ReagentThreshold
+            min: 50
+      - !type:Drunk
+        conditions:
+        - !type:ReagentThreshold
+          min: 50
+      - !type:ChemVomit
+        conditions:
+        - !type:ReagentThreshold
+          min: 60
+        probability: 0.05
+      - !type:PopupMessage
+        type: Local
+        visualType: Small
+        messages:
+          - "reagent-effect-aphrodisiac-fade" # A decent chance to notify the player when their meds run out, but could happen silently.
+        probability: 0.35
+        conditions:
+          - !type:ReagentThreshold
+            max: 0.1
+
+- type: reagent
+  id: Philterex
+  name: reagent-name-philterex
+  group: Medicine
+  desc: reagent-desc-philterex
+  physicalDesc: reagent-physical-desc-syrupy
+  flavor: sweet
+  color: "#ae0072"
+  metabolisms:
+    Medicine:
+      metabolismRate : 0.1
+      effects:
+      - !type:PopupMessage
+        type: Local
+        visualType: Large
+        messages:
+          - "reagent-effect-aphrodisiac-normal1"
+          - "reagent-effect-aphrodisiac-normal2"
+          - "reagent-effect-aphrodisiac-normal3"
+          - "reagent-effect-aphrodisiac-normal4"
+          - "reagent-effect-aphrodisiac-normal5"
+        probability: 0.05
+        conditions:
+        - !type:ReagentThreshold
+          max: 30
+      - !type:PopupMessage
+        type: Local
+        visualType: MediumCaution
+        messages:
+          - "reagent-effect-aphrodisiac-normaloverdose1" # overdose makes you tired and forgetful
+          - "reagent-effect-aphrodisiac-normaloverdose2"
+          - "reagent-effect-aphrodisiac-normaloverdose3"
+          - "reagent-effect-aphrodisiac-normaloverdose4"
+          - "reagent-effect-aphrodisiac-normaloverdose5"
+          - "reagent-effect-aphrodisiac-normaloverdose6"
+        probability: 0.06
+        conditions:
+        - !type:ReagentThreshold
+          min: 30
+      - !type:Emote
+        conditions:
+        - !type:ReagentThreshold
+          min: 30
+        emote: Yawn
+        showInChat: true
+        probability: 0.02
+      - !type:MovespeedModifier
+        walkSpeedModifier: 0.8
+        sprintSpeedModifier: 0.8
+        conditions:
+        - !type:ReagentThreshold
+          min: 16.5
+      - !type:GenericStatusEffect
+        conditions:
+        - !type:ReagentThreshold
+          min: 30.0
+        key: ForcedSleep
+        component: ForcedSleeping
+        refresh: false
+        type: Add
+        probability: 0.1
+      - !type:HealthChange # poisons you if you take way too much
+        conditions:
+        - !type:ReagentThreshold
+          min: 30
+        damage:
+          types:
+            Poison: 1
+      - !type:PopupMessage
+        type: Local
+        visualType: Small
+        messages:
+          - "reagent-effect-aphrodisiac-fade" # A decent chance to notify the player when their meds run out, but could happen silently.
+        probability: 0.32
+        conditions:
+          - !type:ReagentThreshold
+            max: 0.1

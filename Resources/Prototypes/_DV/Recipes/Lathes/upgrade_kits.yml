@@ -1,0 +1,25 @@
+# SPDX-FileCopyrightText: 2025 AirFryerBuyOneGetOneFree <airfryerbuyonegetonefree@gmail.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
+# a bit more expensive than igniter + hyper-convection X board, its more convenient
+- type: latheRecipe
+  abstract: true
+  id: BaseUpgradeKit
+  completetime: 5
+  materials:
+    Glass: 800
+    Steel: 600
+    Plastic: 400
+    Gold: 200
+
+- type: latheRecipe
+  parent: BaseUpgradeKit
+  id: LatheUpgradeKitHyper
+  result: LatheUpgradeKitHyper
+
+- type: latheRecipe
+  parent: BaseUpgradeKit
+  id: LatheUpgradeKitCryo
+  result: LatheUpgradeKitCryo

@@ -1,3 +1,22 @@
+// SPDX-FileCopyrightText: 2021 Alex Evgrashin
+// SPDX-FileCopyrightText: 2021 Paul Ritter
+// SPDX-FileCopyrightText: 2022 Leon Friedrich
+// SPDX-FileCopyrightText: 2022 Vera Aguilera Puerto
+// SPDX-FileCopyrightText: 2022 keronshb
+// SPDX-FileCopyrightText: 2022 wrexbe
+// SPDX-FileCopyrightText: 2023 DrSmugleaf
+// SPDX-FileCopyrightText: 2023 Julian Giebel
+// SPDX-FileCopyrightText: 2023 chromiumboy
+// SPDX-FileCopyrightText: 2023 metalgearsloth
+// SPDX-FileCopyrightText: 2024 Pieter-Jan Briers
+// SPDX-FileCopyrightText: 2024 SimpleStation14
+// SPDX-FileCopyrightText: 2024 themias
+// SPDX-FileCopyrightText: 2025 Baptr0b0t
+// SPDX-FileCopyrightText: 2025 MajorMoth
+// SPDX-FileCopyrightText: 2025 sleepyyapril
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 using Content.Shared.Medical.SuitSensor;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom;
 
@@ -11,6 +30,13 @@ namespace Content.Server.Medical.SuitSensors;
 [Access(typeof(SuitSensorSystem))]
 public sealed partial class SuitSensorComponent : Component
 {
+    // GoobStation - Start
+    /// <summary>
+    ///     Is this suit sensor for commands, BSO use only
+    /// </summary>
+    [DataField]
+    public bool CommandTracker = false;
+    // GoobStation - End
     /// <summary>
     ///     Choose a random sensor mode when item is spawned.
     /// </summary>
@@ -22,6 +48,12 @@ public sealed partial class SuitSensorComponent : Component
     /// </summary>
     [DataField("controlsLocked")]
     public bool ControlsLocked = false;
+
+    /// <summary>
+    ///  How much time it takes to change another player's sensors
+    /// </summary>
+    [DataField("sensorsTime")]
+    public float SensorsTime = 1.75f;
 
     /// <summary>
     ///     Current sensor mode. Can be switched by user verbs.
@@ -56,7 +88,7 @@ public sealed partial class SuitSensorComponent : Component
     /// <summary>
     ///     Next time when sensor updated owners status
     /// </summary>
-    [DataField("nextUpdate", customTypeSerializer:typeof(TimeOffsetSerializer))]
+    [DataField("nextUpdate", customTypeSerializer: typeof(TimeOffsetSerializer))]
     [AutoPausedField]
     public TimeSpan NextUpdate = TimeSpan.Zero;
 

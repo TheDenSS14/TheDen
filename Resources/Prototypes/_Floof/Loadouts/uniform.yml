@@ -1,0 +1,334 @@
+# SPDX-FileCopyrightText: 2024 Dakota Haven <TotallyDemonicDragon@Gmail.com>
+# SPDX-FileCopyrightText: 2024 FoxxoTrystan <trystan.garnierhein@gmail.com>
+# SPDX-FileCopyrightText: 2024 ShatteredSwords <135023515+ShatteredSwords@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 SleepyScarecrow <sharedjunkemail69@gmail.com>
+# SPDX-FileCopyrightText: 2025 Aikakakah <145503852+Aikakakah@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Blitz <73762869+BlitzTheSquishy@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 BlitzTheSquishy <73762869+BlitzTheSquishy@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Rosycup <178287475+Rosycup@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 cynical <132783285+cynical24@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
+- type: loadout
+  id: ClothingUniformNudityPermit
+  category: Uniform
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingUniformNudityPermit
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutUniformsCivilian # TheDen
+
+- type: loadout
+  id: LoadoutUniformJumpskirtTacticalMaid
+  category: Uniform
+  cost: 1
+  exclusive: true
+  items:
+    - ClothingUniformJumpskirtTacticalMaid
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutUniformsCivilian # TheDen
+    - !type:CharacterDepartmentRequirement
+       inverted: true
+       departments:
+         - Security
+         - Command
+
+- type: loadout
+  id: LoadoutUniformJumpskirtJanimaid
+  category: Uniform
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingUniformJumpskirtJanimaid
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutUniformsCivilian # TheDen
+    - !type:CharacterDepartmentRequirement
+       inverted: true
+       departments:
+         - Security
+         - Command
+
+- type: loadout
+  id: LoadoutUniformJumpskirtJanimaidmini
+  category: Uniform
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingUniformJumpskirtJanimaidmini
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutUniformsCivilian # TheDen
+    - !type:CharacterDepartmentRequirement
+       inverted: true
+       departments:
+         - Security
+         - Command
+
+- type: loadout
+  id: LoadoutUniformJumpskirtTacticool
+  category: Uniform
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingUniformJumpskirtTacticool
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutUniformsCivilian # TheDen
+    - !type:CharacterDepartmentRequirement
+       inverted: true
+       departments:
+         - Security
+         - Command
+
+- type: loadout
+  id: LoadoutUniformJumpsuitTacticool
+  category: Uniform
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingUniformJumpsuitTacticool
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutUniformsCivilian # TheDen
+    - !type:CharacterDepartmentRequirement
+       inverted: true
+       departments:
+         - Security
+         - Command
+
+#Floofstation - Sock ect Uniform add ins
+- type: loadout
+  id: LoadoutClothingUniformReotaSuit
+  category: Uniform
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingUniformReotaSuit
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutUniformsCivilian # TheDen
+
+- type: loadout
+  id: LoadoutClothingUniformLoinClothBlack
+  category: Uniform
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingUniformLoinClothBlack
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutUniformsCivilian # TheDen
+    - !type:CharacterSpeciesRequirement # TheDen - Sorry plasmamen, but this is to prevent you burning up on spawn :c
+      inverted: true
+      species:
+        - Plasmaman
+
+- type: loadout
+  id: LoadoutClothingUniformLoinClothWhite
+  category: Uniform
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingUniformLoinClothWhite
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutUniformsCivilian # TheDen
+    - !type:CharacterSpeciesRequirement # TheDen - Sorry plasmamen, but this is to prevent you burning up on spawn :c
+      inverted: true
+      species:
+        - Plasmaman
+
+- type: loadout
+  id: LoadoutClothingUniformThongPlain
+  category: Uniform
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingUniformThongPlain
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutUniformsCivilian # TheDen
+
+- type: loadout
+  id: LoadoutClothingUniformStripedThongPurple
+  category: Uniform
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingUniformStripedThongPurple
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutUniformsCivilian # TheDen
+
+- type: loadout
+  id: LoadoutClothingUniformStripedThongRainbow
+  category: Uniform
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingUniformStripedThongRainbow
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutUniformsCivilian # TheDen
+
+- type: loadout
+  id: LoadoutClothingUniformThongCoder
+  category: Uniform
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingUniformThongCoder
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutUniformsCivilian # TheDen
+
+- type: loadout
+  id: LoadoutClothingUniformThongCoderValid
+  category: Uniform
+  cost: 1
+  exclusive: true
+  items:
+    - ClothingUniformThongCoderValid
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutUniformsCivilian # TheDen
+
+- type: loadout
+  id: LoadoutClothingUniformThongBee
+  category: Uniform
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingUniformThongBee
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutUniformsCivilian # TheDen
+
+# - type: loadout
+#   id: LoadoutClothingUniformSwimsuitBlue
+#   category: Uniform
+#   cost: 0
+#   exclusive: true
+#   items:
+#     - ClothingUniformSwimsuitBlue
+#   requirements:
+#     - !type:CharacterItemGroupRequirement
+#       group: LoadoutUniformsCivilian
+
+# - type: loadout
+#   id: LoadoutUniformFlemenco
+#   category: Uniform
+#   cost: 0
+#   exclusive: true
+#   items:
+#     - ClothingUniformFlamenco
+#   requirements:
+#     - !type:CharacterItemGroupRequirement
+#       group: LoadoutUniformsCivilian
+#     - !type:CharacterDepartmentRequirement
+#        inverted: true
+#        departments:
+#          - Security
+#          - Command
+
+- type: loadout
+  id: LoadoutUniformRedDancersGarb
+  category: Uniform
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingUniformRedDancersGarb
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutUniformsCivilian
+    - !type:CharacterDepartmentRequirement
+       inverted: true
+       departments:
+         - Security
+         - Command
+
+- type: loadout
+  id: LoadoutUniformBandedDancersGarb
+  category: Uniform
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingUniformBandedDancersGarb
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutUniformsCivilian
+    - !type:CharacterDepartmentRequirement
+       inverted: true
+       departments:
+         - Security
+         - Command
+
+- type: loadout
+  id: LoadoutUniformRedSidelessDress
+  category: Uniform
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingUniformRedSidelessDress
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutUniformsCivilian
+    - !type:CharacterDepartmentRequirement
+       inverted: true
+       departments:
+         - Security
+         - Command
+
+- type: loadout
+  id: LoadoutUniformPurpleNightclubDress
+  category: Uniform
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingUniformPurpleNightclubDress
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutUniformsCivilian
+    - !type:CharacterDepartmentRequirement
+       inverted: true
+       departments:
+         - Security
+         - Command
+
+- type: loadout
+  id: LoadoutUniformBlackPetticoatDress
+  category: Uniform
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingUniformBlackPetticoatDress
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutUniformsCivilian
+    - !type:CharacterDepartmentRequirement
+       inverted: true
+       departments:
+         - Security
+         - Command
+
+- type: loadout
+  id: LoadoutUniformBlueFancyLad
+  category: Uniform
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingUniformBlueFancyLad
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutUniformsCivilian
+    - !type:CharacterDepartmentRequirement
+       inverted: true
+       departments:
+         - Security
+         - Command

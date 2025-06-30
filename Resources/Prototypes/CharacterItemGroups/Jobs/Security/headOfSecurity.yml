@@ -1,14 +1,27 @@
+# SPDX-FileCopyrightText: 2025 Alice <alicecoupland45@gmail.com>
+# SPDX-FileCopyrightText: 2025 Blitz <73762869+BlitzTheSquishy@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 BlueHNT <79374236+BlueHNT@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Lonofera <108367450+LonoferaRS@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Rosycup <178287475+Rosycup@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 VMSolidus <evilexecutive@gmail.com>
+# SPDX-FileCopyrightText: 2025 mart <martgitomen@gmail.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 # Head Of Security
 #- type: characterItemGroup
 #  id: LoadoutHeadOfSecurityBackpacks
 #  maxItems: 1
 #  items:
 #
-#- type: characterItemGroup
-#  id: LoadoutHeadOfSecurityBelt
-#  maxItems: 1
-#  items:
-#
+- type: characterItemGroup
+  id: LoadoutHeadOfSecurityBelt
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutCommandHoSJudoBelt
+
 #- type: characterItemGroup
 #  id: LoadoutHeadOfSecurityEars
 #  maxItems: 1
@@ -39,6 +52,8 @@
       id: LoadoutCommandHoSEnergyGun
     - type: loadout
       id: LoadoutCommandHoSBRDIR25
+    - type: loadout
+      id: LoadoutCommandAntiqueTerminus
 
 #- type: characterItemGroup
 #  id: LoadoutHeadOfSecurityEyes
