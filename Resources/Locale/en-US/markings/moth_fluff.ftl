@@ -55,9 +55,6 @@ marking-MothNeckfluffDeathheadGreyscale-m_fluff_deathhead_greyscale = Colour
 marking-MothNeckfluffFirewatchGreyscale = Mothic Firewatch Neck Fluff (Greyscale)
 marking-MothNeckfluffFirewatchGreyscale-m_fluff_firewatch_greyscale = Colour
 
-marking-MothNeckfluffGothicGreyscale = Mothic Gothic Neck Fluff (Greyscale)
-marking-MothNeckfluffGothicGreyscale-m_fluff_gothic_greyscale = Colour
-
 marking-MothNeckfluffJungleGreyscale = Mothic Jungle Neck Fluff (Greyscale)
 marking-MothNeckfluffJungleGreyscale-m_fluff_jungle_greyscale = Colour
 
