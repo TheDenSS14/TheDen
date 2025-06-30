@@ -356,7 +356,14 @@
   - type: Construction
     graph: MediBot
     node: bot
-  - type: DoAfter
+  - type: InnateTool
+    tools:
+    - id: MedibotInjector
+  - type: Hands
+    showInHands: false
+  - type: Body
+    prototype: SiliconHand
+    requiredLegs: 0
   - type: NoSlip
   - type: SentienceTarget
     flavorKind: station-event-random-sentience-flavor-mechanical
