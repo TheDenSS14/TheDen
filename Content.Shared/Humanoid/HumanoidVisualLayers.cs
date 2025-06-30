@@ -28,6 +28,7 @@ namespace Content.Shared.Humanoid
         Face,
         Tail,
         Wings,
+        NeckFluff, // for fluff on necks
         Hair,
         FacialHair,
         Chest,
@@ -39,7 +40,6 @@ namespace Content.Shared.Humanoid
         HeadTop,  // top parts (i.e., ears)
         Genitals, // Things to do with the genitals.
         Nipples, // Things for specifically nipples.
-        NeckFluff, // for fluff on necks
         TailBehind, // FLOOF - add tails that dont have to go through a brutal cookiecutter to work
         TailOversuit, // FLOOF - add tails that dont have to go through a brutal cookiecutter to work
         Eyes,
