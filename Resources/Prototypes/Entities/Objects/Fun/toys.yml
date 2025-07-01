@@ -143,6 +143,12 @@
   - type: DamageOtherOnHit
   - type: StaticPrice
     price: 5
+  - type: InteractionVerbs
+    allowedVerbs:
+      - HugObject
+      - PetObject
+      - KissObject
+      - LickObject
 
 ## Plushies
 
