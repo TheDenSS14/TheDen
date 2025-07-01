@@ -6827,3 +6827,24 @@ Entries:
   id: 646
   time: '2025-06-30T16:05:54.0000000+00:00'
   url: https://github.com/TheDenSS14/TheDen/pull/938
+- author: KyuPolaris
+  changes:
+    - type: Fix
+      message: >-
+        Fixed Arachne inventory to not be jank (sorry voters, easier to fix than
+        to replace funnily enough)
+    - type: Tweak
+      message: >-
+        Arachne now start with Arachnic as their default language instead of Sol
+        Common
+    - type: Tweak
+      message: >-
+        Removed restriction on some suits so Arachne can wear them (will look a
+        little silly for the time being, but all suits on them do)
+    - type: Fix
+      message: >-
+        Gave the arachnic language it's [Arachnic] prefix tag like other
+        languages. 
+  id: 647
+  time: '2025-06-30T22:52:25.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/878
