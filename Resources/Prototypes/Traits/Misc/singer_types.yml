@@ -11,7 +11,8 @@
 - type: SingerInstrument
   id: HarpySinger
   instrumentList:
-    "Voice": {52: 0}
+    "Voice (Aah)": {52: 0}
+    "Voice (Ooh)": {53: 0}
     "Trumpet": {56: 0}
     "Electric": {27: 0}
     "Bass": {33: 0}
@@ -22,7 +23,7 @@
     "Piano": {1: 0}
     "Pipe Organ": {19: 0}
     "Harp": {46: 0}
-  defaultInstrument: "Voice"
+  defaultInstrument: "Voice (Aah)"
   midiUi: Key
   midiActionId: ActionHarpyPlayMidi
 
