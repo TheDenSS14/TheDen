@@ -23,8 +23,7 @@
     - !type:CharacterJobRequirement
       inverted: true
       jobs:
-        - SalvageSpecialist # For salvage recognizibility
-        - Quartermaster # LO has a LO specific variant
+        - Quartermaster # LO has a variant of this exact bag (same bag different contents)
 
 - type: loadout
   id: LoadoutBackpackSatchelCargo
@@ -42,8 +41,7 @@
     - !type:CharacterJobRequirement
       inverted: true
       jobs:
-        - SalvageSpecialist # For salvage recognizibility
-        - Quartermaster # LO has a LO specific variant
+        - Quartermaster # LO has a variant of this exact bag (same bag different contents)
 
 - type: loadout
   id: LoadoutBackpackDuffelCargo
@@ -61,8 +59,7 @@
     - !type:CharacterJobRequirement
       inverted: true
       jobs:
-        - SalvageSpecialist # For salvage recognizibility
-        - Quartermaster # LO has a LO specific variant
+        - Quartermaster # LO has a variant of this exact bag (same bag different contents)
 
 # Belt
 
@@ -88,11 +85,6 @@
     - !type:CharacterDepartmentRequirement
       departments:
         - Logistics
-    - !type:CharacterJobRequirement
-      inverted: true
-      jobs:
-        - Quartermaster # LO has a LO specific variant
-
 
 # Id
 

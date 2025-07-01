@@ -45,8 +45,8 @@
   id: LoadoutLogisticsHead
   maxItems: 1
   items:
-      - type: loadout
-        id: LoadoutClothingHeadHatBeretLogi
+    - type: loadout
+      id: LoadoutClothingHeadHatBeretLogi
 
 #- type: characterItemGroup
 #  id: LoadoutLogisticsId
@@ -62,17 +62,24 @@
 #  id: LoadoutLogisticsMask
 #  maxItems: 1
 #  items:
-#
-#- type: characterItemGroup
-#  id: LoadoutLogisticsOuter
-#  maxItems: 1
-#  items:
-#
-#- type: characterItemGroup
-#  id: LoadoutLogisticsShoes
-#  maxItems: 1
-#  items:
-#
+
+- type: characterItemGroup
+  id: LoadoutLogisticsOuter
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutCargoOuterWinterCargo
+    - type: loadout
+      id: LoadoutCargoOuterCoatCargoBomber
+
+- type: characterItemGroup
+  id: LoadoutLogisticsShoes
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutCargoShoesBootsWinterCargo
+    - type: loadout
+      id: LoadoutCargoTechnicianBootsSteel
 #- type: characterItemGroup
 #  id: LoadoutLogisticsUniforms
 #  maxItems: 1

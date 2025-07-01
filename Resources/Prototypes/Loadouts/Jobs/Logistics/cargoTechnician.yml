@@ -29,15 +29,15 @@
 # Outer
 - type: loadout
   id: LoadoutCargoOuterWinterCargo
-  category: JobsLogisticsCargoTechnician # TheDen
+  category: JobsLogisticsAUncategorized # TheDen
   cost: 1
   exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutCargoTechnicianOuter
-    - !type:CharacterJobRequirement
-      jobs:
-        - CargoTechnician
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Logistics
   items:
     - ClothingOuterWinterCargo
 
@@ -49,10 +49,10 @@
   exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutCargoTechnicianShoes
-    - !type:CharacterJobRequirement
-      jobs:
-        - CargoTechnician
+      group: LoadoutLogisticsShoes
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Logistics
   items:
     - ClothingShoesBootsWinterCargo
 

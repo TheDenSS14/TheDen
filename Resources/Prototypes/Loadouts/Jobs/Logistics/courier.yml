@@ -95,20 +95,6 @@
   items:
     - ClothingOuterWinterCoatMail
 
-- type: loadout
-  id: LoadoutCourierOuterCourier
-  category: JobsLogisticsCourier
-  cost: 0
-  exclusive: true
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutCourierOuter
-    - !type:CharacterJobRequirement
-      jobs:
-        - MailCarrier
-  items:
-    - ClothingOuterWinterCargo
-
 # Shoes
 
 # Uniforms
