@@ -24,6 +24,7 @@
     - !type:CharacterDepartmentRequirement
       departments:
         - Command
+        - Dignitary
   items:
     - TelescopicBaton
 
@@ -38,10 +39,13 @@
     - !type:CharacterDepartmentRequirement
       departments:
         - Command
+        - Dignitary
     - !type:CharacterJobRequirement
       inverted: true
       jobs:
         - HeadOfSecurity
+        - BlueshieldOfficer
+        - NanotrasenRepresentative
   items:
     - WeaponDisabler
 
@@ -56,10 +60,12 @@
     - !type:CharacterDepartmentRequirement
       departments:
         - Command
+        - Dignitary
     - !type:CharacterJobRequirement
       inverted: true
       jobs:
         - HeadOfSecurity
+        - BlueshieldOfficer
   items:
     - Stunbaton
 
@@ -74,10 +80,12 @@
     - !type:CharacterDepartmentRequirement
       departments:
         - Command
+        - Dignitary
     - !type:CharacterJobRequirement
       inverted: true
       jobs:
         - HeadOfSecurity
+        - BlueshieldOfficer
   items:
     - Flash
 # Eyes
