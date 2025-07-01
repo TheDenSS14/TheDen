@@ -28,8 +28,7 @@
     - !type:CharacterJobRequirement
       inverted: true
       jobs:
-        - AtmosphericTechnician # Mostly for atmos recognizibility
-        - ChiefEngineer # CE has a CE specific variant
+        - ChiefEngineer # CE has a variant of this exact bag (same bag different contents)
 
 - type: loadout
   id: LoadoutBackpackSatchelEngineering
@@ -47,8 +46,7 @@
     - !type:CharacterJobRequirement
       inverted: true
       jobs:
-        - AtmosphericTechnician # Mostly for atmos recognizibility
-        - ChiefEngineer # CE has a CE specific variant
+        - ChiefEngineer # CE has a variant of this exact bag (same bag different contents)
 
 - type: loadout
   id: LoadoutBackpackDuffelEngineering
@@ -66,8 +64,7 @@
     - !type:CharacterJobRequirement
       inverted: true
       jobs:
-        - AtmosphericTechnician # For atmos recognizibility
-        - ChiefEngineer # CE has a CE specific variant
+        - ChiefEngineer # CE has a variant of this exact bag (same bag different contents)
 
 # Belt
 
@@ -237,11 +234,6 @@
   - !type:CharacterDepartmentRequirement
     departments:
       - Engineering
-  - !type:CharacterJobRequirement
-    inverted: true
-    jobs:
-      - AtmosphericTechnician # Mostly for atmos recognizibility
-      - ChiefEngineer # CE has a CE specific variant
   items:
   - ClothingOuterWinterEngi
 
@@ -285,10 +277,6 @@
     - !type:CharacterDepartmentRequirement
       departments:
         - Engineering
-    - !type:CharacterJobRequirement
-      jobs:
-      - AtmosphericTechnician # Mostly for atmos recognizibility
-      - ChiefEngineer # CE has a CE specific variant
   items:
     - ClothingShoesBootsWinterEngi
 
