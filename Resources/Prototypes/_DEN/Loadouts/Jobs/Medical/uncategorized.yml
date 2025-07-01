@@ -12,9 +12,14 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutMedicalEyes
-    - !type:CharacterDepartmentRequirement
-      departments:
+    - !type:CharacterLogicXorRequirement
+      requirements:
+      - !type:CharacterDepartmentRequirement
+        departments:
         - Medical
+      - !type:CharacterJobRequirement
+        jobs:
+        - Brigmedic
   items:
     - ClothingEyesGlassesMedicalVisor
 
