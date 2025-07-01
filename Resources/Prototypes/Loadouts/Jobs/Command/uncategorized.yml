@@ -23,9 +23,9 @@
       group: LoadoutCommandSelfDefense
     - !type:CharacterDepartmentRequirement
       departments:
-      - Command
+        - Command
   items:
-  - TelescopicBaton
+    - TelescopicBaton
 
 - type: loadout
   id: LoadoutCommandDisabler
@@ -37,9 +37,13 @@
       group: LoadoutCommandSelfDefense
     - !type:CharacterDepartmentRequirement
       departments:
-      - Command
+        - Command
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - HeadOfSecurity
   items:
-  - WeaponDisabler
+    - WeaponDisabler
 
 - type: loadout
   id: LoadoutCommandStunBaton
@@ -51,9 +55,13 @@
       group: LoadoutCommandSelfDefense
     - !type:CharacterDepartmentRequirement
       departments:
-      - Command
+        - Command
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - HeadOfSecurity
   items:
-  - Stunbaton
+    - Stunbaton
 
 - type: loadout
   id: LoadoutCommandFlash
@@ -65,10 +73,13 @@
       group: LoadoutCommandSelfDefense
     - !type:CharacterDepartmentRequirement
       departments:
-      - Command
+        - Command
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - HeadOfSecurity
   items:
-  - Flash
-
+    - Flash
 # Eyes
 
 # Gloves
