@@ -25,7 +25,7 @@
     - !type:CharacterJobRequirement
       inverted: true
       jobs:
-        - ChiefMedicalOfficer # CMO has a variant of this exact bag (same bag different contents)
+        - ChiefMedicalOfficer # CMO has ClothingBackpackCMOFilled
 
 - type: loadout
   id: LoadoutBackpackVirology
@@ -40,10 +40,6 @@
     - !type:CharacterDepartmentRequirement
       departments:
         - Medical
-    - !type:CharacterJobRequirement
-      inverted: true
-      jobs:
-        - ChiefMedicalOfficer # CMO has a variant of this exact bag (same bag different contents)
 
 - type: loadout
   id: LoadoutBackpackGenetics
@@ -58,10 +54,6 @@
     - !type:CharacterDepartmentRequirement
       departments:
         - Medical
-    - !type:CharacterJobRequirement
-      inverted: true
-      jobs:
-        - ChiefMedicalOfficer # CMO has a variant of this exact bag (same bag different contents)
 
 - type: loadout
   id: LoadoutBackpackSatchelMedical
@@ -79,7 +71,7 @@
 - !type:CharacterJobRequirement
       inverted: true
       jobs:
-        - ChiefMedicalOfficer # CMO has a variant of this exact bag (same bag different contents)
+        - ChiefMedicalOfficer # CMO has ClothingBackpackSatchelCMOFilled
 
 - type: loadout
   id: LoadoutBackpackSatchelVirology
@@ -122,6 +114,10 @@
     - !type:CharacterDepartmentRequirement
       departments:
         - Medical
+- !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - ChiefMedicalOfficer # CMO has ClothingBackpackDuffelCMOFilled
 
 - type: loadout
   id: LoadoutBackpackDuffelVirology

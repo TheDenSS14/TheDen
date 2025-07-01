@@ -28,7 +28,7 @@
     - !type:CharacterJobRequirement
       inverted: true
       jobs:
-        - ChiefEngineer # CE has a variant of this exact bag (same bag different contents)
+        - ChiefEngineer # CE has ClothingBackpackChiefEngineerFilled
 
 - type: loadout
   id: LoadoutBackpackSatchelEngineering
@@ -46,7 +46,7 @@
     - !type:CharacterJobRequirement
       inverted: true
       jobs:
-        - ChiefEngineer # CE has a variant of this exact bag (same bag different contents)
+        - ChiefEngineer # CE has ClothingBackpackSatchelChiefEngineerFilled
 
 - type: loadout
   id: LoadoutBackpackDuffelEngineering
@@ -64,7 +64,7 @@
     - !type:CharacterJobRequirement
       inverted: true
       jobs:
-        - ChiefEngineer # CE has a variant of this exact bag (same bag different contents)
+        - ChiefEngineer # CE has ClothingBackpackDuffelChiefEngineerFilled
 
 # Belt
 

@@ -20,10 +20,6 @@
     - !type:CharacterDepartmentRequirement
       departments:
         - Logistics
-    - !type:CharacterJobRequirement
-      inverted: true
-      jobs:
-        - Quartermaster # LO has a variant of this exact bag (same bag different contents)
 
 - type: loadout
   id: LoadoutBackpackSatchelCargo
@@ -38,10 +34,6 @@
     - !type:CharacterDepartmentRequirement
       departments:
         - Logistics
-    - !type:CharacterJobRequirement
-      inverted: true
-      jobs:
-        - Quartermaster # LO has a variant of this exact bag (same bag different contents)
 
 - type: loadout
   id: LoadoutBackpackDuffelCargo
@@ -56,10 +48,6 @@
     - !type:CharacterDepartmentRequirement
       departments:
         - Logistics
-    - !type:CharacterJobRequirement
-      inverted: true
-      jobs:
-        - Quartermaster # LO has a variant of this exact bag (same bag different contents)
 
 # Belt
 

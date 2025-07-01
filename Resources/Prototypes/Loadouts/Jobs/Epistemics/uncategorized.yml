@@ -24,7 +24,7 @@
     - !type:CharacterJobRequirement
       inverted: true
       jobs:
-        - ResearchDirector # MG has a variant of this exact bag (same bag different contents)
+        - ResearchDirector # MG has ClothingBackpackResearchDirectorFilled
 
 - type: loadout
   id: LoadoutBackpackSatchelScience
@@ -42,7 +42,7 @@
     - !type:CharacterJobRequirement
       inverted: true
       jobs:
-        - ResearchDirector # MG has a variant of this exact bag (same bag different contents)
+        - ResearchDirector # MG has ClothingBackpackSatchelResearchDirectorFilled
 
 - type: loadout
   id: LoadoutBackpackDuffelScience
@@ -60,7 +60,7 @@
     - !type:CharacterJobRequirement
       inverted: true
       jobs:
-        - ResearchDirector # MG has a variant of this exact bag (same bag different contents)
+        - ResearchDirector # MG has ClothingBackpackDuffelResearchDirectorFilled
 
 # Belt
 
