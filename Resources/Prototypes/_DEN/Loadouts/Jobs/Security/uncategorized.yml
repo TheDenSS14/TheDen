@@ -144,6 +144,12 @@
     - !type:CharacterDepartmentRequirement
       departments:
         - Security
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Brigmedic # Corpsman has ClothingUniformJumpsuitBrigmedic
+        - Warden # Warden has ClothingUniformJumpsuitWarden
+        - HeadOfSecurity # HoS has ClothingUniformJumpsuitHoS
   items:
     - ClothingUniformJumpsuitSec
 
@@ -158,6 +164,12 @@
     - !type:CharacterDepartmentRequirement
       departments:
         - Security
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Brigmedic # Corpsman has ClothingUniformJumpskirtBrigmedic
+        - Warden # Warden has ClothingUniformJumpskirtWarden
+        - HeadOfSecurity # HoS has ClothingUniformJumpskirtHoS
   items:
     - ClothingUniformJumpskirtSec
 
