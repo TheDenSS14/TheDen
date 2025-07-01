@@ -19,12 +19,10 @@
   category: JobsServiceAUncategorized
   cost: 4
   requirements:
-    - !type:CharacterLogicOrRequirement
-      requirements:
-      - !type:CharacterJobRequirement
-        jobs:
-          - Boxer
-          - MartialArtist
+    - !type:CharacterJobRequirement
+      jobs:
+        - Boxer
+        - MartialArtist
   items:
     - NTCQCManual
 

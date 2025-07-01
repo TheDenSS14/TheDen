@@ -53,7 +53,7 @@
   category: JobsMedicalAUncategorized
   cost: 1
   requirements:
-    - !type:CharacterLogicXorRequirement
+    - !type:CharacterLogicOrRequirement
       requirements:
         - !type:CharacterDepartmentRequirement
           departments:
