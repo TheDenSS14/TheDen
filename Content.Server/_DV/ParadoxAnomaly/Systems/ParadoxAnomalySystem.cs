@@ -1,13 +1,12 @@
-// SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT <77995199+DEATHB4DEFEAT@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 Errant <35878406+Errant-4@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 VMSolidus <evilexecutive@gmail.com>
-// SPDX-FileCopyrightText: 2024 deltanedas <39013340+deltanedas@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 BlitzTheSquishy <73762869+BlitzTheSquishy@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 Cami <147159915+Camdot@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 Fansana <116083121+Fansana@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 Skubman <ba.fallaria@gmail.com>
-// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 sleepyyapril <flyingkarii@gmail.com>
+// SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT
+// SPDX-FileCopyrightText: 2024 Errant
+// SPDX-FileCopyrightText: 2024 VMSolidus
+// SPDX-FileCopyrightText: 2024 deltanedas
+// SPDX-FileCopyrightText: 2025 BlitzTheSquishy
+// SPDX-FileCopyrightText: 2025 Cami
+// SPDX-FileCopyrightText: 2025 Fansana
+// SPDX-FileCopyrightText: 2025 Skubman
+// SPDX-FileCopyrightText: 2025 sleepyyapril
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -66,6 +65,7 @@ public sealed class ParadoxAnomalySystem : EntitySystem
     private ISawmill _sawmill = default!;
     private readonly ProtoId<ConsentTogglePrototype> _paradoxAnomalyConsent = "NoClone";
     private readonly EntProtoId _paradoxAnomalySpawnerId = "SpawnPointGhostParadoxAnomaly";
+    private readonly EntProtoId _paradoxAnomalyRule = "ParadoAnomaly";
 
 
     public override void Initialize()
@@ -183,6 +183,18 @@ public sealed class ParadoxAnomalySystem : EntitySystem
             return null;
 
         var (uid, mindId, species, profile) = _random.Pick(candidates);
+        return SpawnParadoxAnomaly((uid, mindId, species, profile), rule);
+    }
+
+    private EntityUid? SpawnParadoxAnomaly(
+        (EntityUid uid, EntityUid mindId, SpeciesPrototype species, HumanoidCharacterProfile profile) candidate,
+        string rule
+    )
+    {
+        var uid = candidate.uid;
+        var mindId = candidate.mindId;
+        var species = candidate.species;
+        var profile = candidate.profile;
 
         if (!_jobSystem.MindTryGetJob(mindId, out var job))
             return null;
@@ -264,5 +276,23 @@ public sealed class ParadoxAnomalySystem : EntitySystem
             EnsureComp<PsionicComponent>(spawned);
 
         return spawned;
+    }
+
+    public bool TrySpawnUserParadoxAnomaly(EntityUid target, [NotNullWhen(true)] out EntityUid? spawned)
+    {
+        spawned = null;
+
+        if (!TryComp<HumanoidAppearanceComponent>(target, out var humanoid)
+            || !TryComp<MindContainerComponent>(target, out var mindContainer)
+            || humanoid.LastProfileLoaded is not {} profile
+            || !_proto.TryIndex(humanoid.Species, out var species)
+            || _mind.GetMind(target, mindContainer) is not {} mindId
+            || !_jobSystem.MindTryGetJob(mindId, out var job)
+            || _role.MindIsAntagonist(mindId)
+            || _consent.HasConsent(target, _paradoxAnomalyConsent))
+            return false;
+
+        spawned = SpawnParadoxAnomaly((target, mindId, species, profile), _paradoxAnomalyRule);
+        return spawned != null;
     }
 }

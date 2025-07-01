@@ -4,6 +4,7 @@
 # SPDX-FileCopyrightText: 2024 beck-thompson
 # SPDX-FileCopyrightText: 2024 gluesniffler
 # SPDX-FileCopyrightText: 2024 router
+# SPDX-FileCopyrightText: 2025 Blitz
 # SPDX-FileCopyrightText: 2025 BlitzTheSquishy
 # SPDX-FileCopyrightText: 2025 BramvanZijp
 # SPDX-FileCopyrightText: 2025 Eris
@@ -164,11 +165,11 @@
         - map: ["enum.HumanoidVisualLayers.Hair"]
         - map: ["enum.HumanoidVisualLayers.HeadSide"]
         - map: ["enum.HumanoidVisualLayers.HeadTop"]
+        - map: ["enum.HumanoidVisualLayers.Tail"]
         - map: ["mask"]
         - map: ["head"]
         - map: ["pocket1"]
         - map: ["pocket2"]
-        - map: ["enum.HumanoidVisualLayers.Tail"]
         - map: ["clownedon"] # Dynamically generated
           sprite: "Effects/creampie.rsi"
           state: "creampie_human"

@@ -6827,3 +6827,124 @@ Entries:
   id: 646
   time: '2025-06-30T16:05:54.0000000+00:00'
   url: https://github.com/TheDenSS14/TheDen/pull/938
+- author: KyuPolaris
+  changes:
+    - type: Fix
+      message: >-
+        Fixed Arachne inventory to not be jank (sorry voters, easier to fix than
+        to replace funnily enough)
+    - type: Tweak
+      message: >-
+        Arachne now start with Arachnic as their default language instead of Sol
+        Common
+    - type: Tweak
+      message: >-
+        Removed restriction on some suits so Arachne can wear them (will look a
+        little silly for the time being, but all suits on them do)
+    - type: Fix
+      message: >-
+        Gave the arachnic language it's [Arachnic] prefix tag like other
+        languages. 
+  id: 647
+  time: '2025-06-30T22:52:25.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/878
+- author: Floof Station and WizDen Contributors
+  changes:
+    - type: Add
+      message: >-
+        You can now transfer carried and pulled entities via item offering
+        (default keybind is F, as always).
+    - type: Add
+      message: >-
+        The drum kit is now available as a musician loadout option and can be
+        ordered from cargo. Rock on! 🤘
+    - type: Add
+      message: A new instrument style, "Kweh" has been added to the microphone.
+    - type: Fix
+      message: >-
+        Foxes can no longer use sign language, as their teeny tiny little paws
+        are incapable of complex interaction.
+    - type: Fix
+      message: >-
+        Sign language now requires two empty hands. You're going to have to put
+        that woman down.
+    - type: Fix
+      message: >-
+        When several pseudo-items (small people) are inside one container (e.g.
+        a bluespace duffel), they can no longer accidentally kick each other out
+        using the right click menu.
+    - type: Tweak
+      message: The microphone can now be played without holding it.
+    - type: Tweak
+      message: >-
+        Guitars (except the Rickenbacker) can now be worn in your suit storage
+        slot.
+    - type: Tweak
+      message: The super synthesizer has a new sprite to communicate that it is super.
+    - type: Fix
+      message: >-
+        Resolved a longstanding issue where buckled characters would get all
+        floppy after sleeping or being knocked down.
+    - type: Fix
+      message: >-
+        Hands no longer become blocked when the person you're carrying
+        polymorphs.
+  id: 648
+  time: '2025-07-01T01:15:08.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/946
+- author: Monotheonist
+  changes:
+    - type: Tweak
+      message: >-
+        Changed up some songs in rotation. Removed some because they had vocals,
+        sorry vocal enjoyers.
+  id: 649
+  time: '2025-07-01T01:38:19.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/936
+- author: WallflowerGhost
+  changes:
+    - type: Tweak
+      message: (GLACIER) Misc. changes here and there :>
+  id: 650
+  time: '2025-07-01T01:40:56.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/921
+- author: hivehum
+  changes:
+    - type: Add
+      message: A few new plushies can be bought from the prize counter.
+  id: 651
+  time: '2025-07-01T01:43:31.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/942
+- author: This_Is_Gray
+  changes:
+    - type: Tweak
+      message: >-
+        (ANVIL) Tweaked the positioning of some of Anvil's lights. A few areas
+        should look a little brighter.
+    - type: Add
+      message: (ANVIL) Added a fishing spot to Anvil. Bring a space suit!
+    - type: Fix
+      message: >-
+        (NTES HAMMERHEAD) Fixed the power issues present on Anvil's evacuation
+        shuttle.
+    - type: Fix
+      message: Anvil no longer causes the server to spit errors everwhere.
+  id: 652
+  time: '2025-07-01T01:45:57.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/947
+- author: sleepyyapril
+  changes:
+    - type: Add
+      message: >-
+        You may now ask an admin to create a paradox anomaly of you! Ensure your
+        consent is on!
+  id: 653
+  time: '2025-07-01T04:57:09.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/951
+- author: sleepyyapril
+  changes:
+    - type: Tweak
+      message: High Danger is now high danger.
+  id: 654
+  time: '2025-07-01T05:45:24.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/952

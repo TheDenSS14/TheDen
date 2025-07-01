@@ -1,16 +1,15 @@
-// SPDX-FileCopyrightText: 2023 Adrian16199 <144424013+Adrian16199@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT <77995199+DEATHB4DEFEAT@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 Debug <49997488+DebugOk@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 Mnemotechnican <69920617+Mnemotechnician@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 SimpleStation14 <130339894+SimpleStation14@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 VMSolidus <evilexecutive@gmail.com>
-// SPDX-FileCopyrightText: 2024 cynical <superpilotboy@gmail.com>
-// SPDX-FileCopyrightText: 2025 Eagle-0 <114363363+Eagle-0@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 FoxxoTrystan <45297731+FoxxoTrystan@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 M3739 <47579354+M3739@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 RedFoxIV <38788538+RedFoxIV@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 sleepyyapril <flyingkarii@gmail.com>
+// SPDX-FileCopyrightText: 2023 Adrian16199
+// SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT
+// SPDX-FileCopyrightText: 2024 Debug
+// SPDX-FileCopyrightText: 2024 SimpleStation14
+// SPDX-FileCopyrightText: 2024 VMSolidus
+// SPDX-FileCopyrightText: 2024 cynical
+// SPDX-FileCopyrightText: 2025 Eagle-0
+// SPDX-FileCopyrightText: 2025 FoxxoTrystan
+// SPDX-FileCopyrightText: 2025 M3739
+// SPDX-FileCopyrightText: 2025 Mnemotechnican
+// SPDX-FileCopyrightText: 2025 RedFoxIV
+// SPDX-FileCopyrightText: 2025 sleepyyapril
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -320,7 +319,7 @@ namespace Content.Server.Carrying
                 || HasComp<ItemComponent>(carrier)
                 || TryComp<PhysicsComponent>(carrier, out var carrierPhysics)
                 && TryComp<PhysicsComponent>(toCarry, out var toCarryPhysics)
-                && carrierPhysics.Mass < toCarryPhysics.Mass * 2f)
+                && carrierPhysics.Mass * 2f < toCarryPhysics.Mass)
                 return false;
 
             Carry(carrier, toCarry);

@@ -172,6 +172,7 @@
 # SPDX-FileCopyrightText: 2025 Your Name
 # SPDX-FileCopyrightText: 2025 deltanedas
 # SPDX-FileCopyrightText: 2025 dootythefrooty
+# SPDX-FileCopyrightText: 2025 hivehum
 # SPDX-FileCopyrightText: 2025 marc-pelletier
 # SPDX-FileCopyrightText: 2025 mart
 # SPDX-FileCopyrightText: 2025 portfiend
@@ -2463,6 +2464,14 @@
       - PlushieRatvar
       - PlushieNar
       - PlushieGrim
+      # imp start
+      - PlushieUrsaMinor
+      - PlushieGiantBear
+      - PlushieDoll
+      - PlushieDollHair
+      - PlushieDwarf
+      - PlushieGriffy
+      # imp end
   - type: EmagLatheRecipes
     emagStaticRecipes:
     - PlushieGhost
@@ -2482,6 +2491,7 @@
     - ToySword
     - BwoinkHammer
     - ThronglerToy
+    - PlushieBug # imp
   - type: MaterialStorage
     whitelist:
       tags:
