@@ -1,8 +1,8 @@
-# SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT
-# SPDX-FileCopyrightText: 2024 VMSolidus
-# SPDX-FileCopyrightText: 2025 Blitz
-# SPDX-FileCopyrightText: 2025 BlitzTheSquishy
-# SPDX-FileCopyrightText: 2025 sleepyyapril
+# SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT <77995199+DEATHB4DEFEAT@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 VMSolidus <evilexecutive@gmail.com>
+# SPDX-FileCopyrightText: 2025 Blitz <73762869+BlitzTheSquishy@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 BlitzTheSquishy <73762869+BlitzTheSquishy@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -21,6 +21,11 @@
     - !type:CharacterDepartmentRequirement
       departments:
         - Epistemics
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Roboticist # For robo recognizibility
+        - ResearchDirector # MG has a MG specific variant
 
 - type: loadout
   id: LoadoutBackpackSatchelScience
@@ -35,6 +40,11 @@
     - !type:CharacterDepartmentRequirement
       departments:
         - Epistemics
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Roboticist # For robo recognizibility
+        - ResearchDirector # MG has a MG specific variant
 
 - type: loadout
   id: LoadoutBackpackDuffelScience
@@ -49,6 +59,11 @@
     - !type:CharacterDepartmentRequirement
       departments:
         - Epistemics
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Roboticist # For robo recognizibility
+        - ResearchDirector # MG has a MG specific variant
 
 # Belt
 
@@ -231,6 +246,11 @@
     - !type:CharacterDepartmentRequirement
       departments:
         - Epistemics
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Roboticist # For robo recognizibility
+        - ResearchDirector # MG has a MG specific variant
   items:
     - ClothingOuterCoatRnd
 
@@ -246,6 +266,11 @@
     - !type:CharacterDepartmentRequirement
       departments:
         - Epistemics
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Roboticist # For robo recognizibility
+        - ResearchDirector # MG has a MG specific variant
   items:
     - ClothingOuterCoatLab
 
@@ -257,6 +282,9 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutGolemancerOuter
+    - !type:CharacterJobRequirement
+      jobs:
+        - Roboticist
   items:
     - ClothingOuterCoatRobo
 
@@ -271,6 +299,12 @@
     - !type:CharacterDepartmentRequirement
       departments:
         - Epistemics
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Roboticist # For robo recognizibility
+        - ResearchDirector # MG has a MG specific variant
+        - ForensicMantis # Mantis has a specific variant
   items:
     - ClothingOuterWinterSci
 
@@ -286,6 +320,11 @@
     - !type:CharacterDepartmentRequirement
       departments:
         - Epistemics
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Roboticist # For robo recognizibility
+        - ResearchDirector # MG has a MG specific variant
   items:
     - ClothingOuterExplorerCoat
 
@@ -314,6 +353,11 @@
     - !type:CharacterDepartmentRequirement
       departments:
         - Epistemics
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Roboticist # For robo recognizibility
+        - ResearchDirector # MG has a MG specific variant
   items:
     - ClothingShoesBootsWinterSci
 
