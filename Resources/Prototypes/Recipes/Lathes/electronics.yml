@@ -200,6 +200,11 @@
      Plastic: 300
 
 - type: latheRecipe
+  parent: BaseCheapElectronicsRecipe
+  id: FreezerElectronics
+  result: FreezerElectronics
+
+- type: latheRecipe
   id: AirAlarmElectronics
   result: AirAlarmElectronics
   category: Circuitry
@@ -1270,7 +1275,7 @@
   materials:
     Steel: 100
     Glass: 500
-  
+
 # Assmos - Bluespace Gas
 - type: latheRecipe
   parent: BaseCircuitboardRecipe
