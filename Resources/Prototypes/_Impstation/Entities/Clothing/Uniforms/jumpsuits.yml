@@ -166,7 +166,7 @@
     - ClothMade
 
 - type: entity
-  parent: [ClothingUniformBase, Tier3Contraband]
+  parent: [ClothingUniformBase]
   id: ClothingUniformBurglarJumpsuit
   name: suspicious crime jumpsuit
   description: The wearer of this is one sneaky snitch...
@@ -179,3 +179,14 @@
     tags:
     - WhitelistChameleon
     - ClothMade
+
+- type: entity
+  parent: [ClothingUniformBase, BaseCommandContraband]
+  id: ClothingUniformJumpsuitMusicianMarchingBand
+  name: musician's marching uniform
+  description: For when you need to join the parade.
+  components:
+  - type: Sprite
+    sprite: _Impstation/Clothing/Uniforms/Jumpsuit/mus_marchingband.rsi
+  - type: Clothing
+    sprite: _Impstation/Clothing/Uniforms/Jumpsuit/mus_marchingband.rsi
