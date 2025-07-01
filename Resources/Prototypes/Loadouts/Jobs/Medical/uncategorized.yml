@@ -68,7 +68,7 @@
     - !type:CharacterDepartmentRequirement
       departments:
         - Medical
-- !type:CharacterJobRequirement
+    - !type:CharacterJobRequirement
       inverted: true
       jobs:
         - ChiefMedicalOfficer # CMO has ClothingBackpackSatchelCMOFilled
@@ -114,7 +114,7 @@
     - !type:CharacterDepartmentRequirement
       departments:
         - Medical
-- !type:CharacterJobRequirement
+    - !type:CharacterJobRequirement
       inverted: true
       jobs:
         - ChiefMedicalOfficer # CMO has ClothingBackpackDuffelCMOFilled
@@ -176,12 +176,12 @@
   requirements:
     - !type:CharacterLogicXorRequirement
       requirements:
-      - !type:CharacterDepartmentRequirement
-        departments:
-        - Medical
-      - !type:CharacterJobRequirement
-        jobs:
-        - Brigmedic
+        - !type:CharacterDepartmentRequirement
+          departments:
+            - Medical
+        - !type:CharacterJobRequirement
+          jobs:
+            - Brigmedic
   items:
     - ClothingEyesHudMedical
 
@@ -195,12 +195,12 @@
       group: LoadoutMedicalEyes
     - !type:CharacterLogicXorRequirement
       requirements:
-      - !type:CharacterDepartmentRequirement
-        departments:
-        - Medical
-      - !type:CharacterJobRequirement
-        jobs:
-        - Brigmedic
+        - !type:CharacterDepartmentRequirement
+          departments:
+            - Medical
+        - !type:CharacterJobRequirement
+          jobs:
+            - Brigmedic
   items:
     - ClothingEyesEyepatchHudMedical
 
@@ -214,12 +214,12 @@
       group: LoadoutMedicalEyes
     - !type:CharacterLogicXorRequirement
       requirements:
-      - !type:CharacterDepartmentRequirement
-        departments:
-        - Medical
-      - !type:CharacterJobRequirement
-        jobs:
-        - Brigmedic
+        - !type:CharacterDepartmentRequirement
+          departments:
+            - Medical
+        - !type:CharacterJobRequirement
+          jobs:
+            - Brigmedic
     - !type:CharacterTraitRequirement
       traits:
         - Nearsighted
@@ -452,12 +452,6 @@
     - !type:CharacterDepartmentRequirement
       departments:
         - Medical
-    - !type:CharacterJobRequirement
-      inverted: true
-      jobs:
-        - Chemist # For chemist recognizibility
-        - Paramedic # For paramedic recognizibility
-        - ChiefMedicalOfficer # For CMO recognizibility
   items:
     - ClothingOuterWinterMed
 
@@ -500,13 +494,6 @@
     - !type:CharacterDepartmentRequirement
       departments:
         - Medical
-    - !type:CharacterJobRequirement
-      inverted: true
-      jobs:
-        - Chemist # For chemist recognizibility
-        - Paramedic # For paramedic recognizibility
-        - Psychologist # Doesnt suit a psych, has access to base medical
-        - ChiefMedicalOfficer # For CMO recognizibility
   items:
     - ClothingOuterWinterViro
 
@@ -520,13 +507,6 @@
     - !type:CharacterDepartmentRequirement
       departments:
         - Medical
-    - !type:CharacterJobRequirement
-      inverted: true
-      jobs:
-        - Chemist # For chemist recognizibility
-        - Paramedic # For paramedic recognizibility
-        - Psychologist # Doesnt suit a psych, has access to base medical
-        - ChiefMedicalOfficer # For CMO recognizibility
   items:
     - ClothingOuterWinterGen
 
@@ -541,12 +521,6 @@
     - !type:CharacterDepartmentRequirement
       departments:
         - Medical
-    - !type:CharacterJobRequirement
-      inverted: true
-      jobs:
-        - Chemist # For chemist recognizibility
-        - Paramedic # For paramedic recognizibility
-        - ChiefMedicalOfficer # For CMO recognizibility
   items:
     - ClothingShoesBootsWinterMed
 
@@ -560,13 +534,6 @@
     - !type:CharacterDepartmentRequirement
       departments:
         - Medical
-    - !type:CharacterJobRequirement
-      inverted: true
-      jobs:
-        - Chemist # For chemist recognizibility
-        - Paramedic # For paramedic recognizibility
-        - Psychologist # Doesnt suit a psych, has access to base medical
-        - ChiefMedicalOfficer # For CMO recognizibility
   items:
     - ClothingShoesBootsWinterViro
 
@@ -580,13 +547,6 @@
     - !type:CharacterDepartmentRequirement
       departments:
         - Medical
-    - !type:CharacterJobRequirement
-      inverted: true
-      jobs:
-        - Chemist # For chemist recognizibility
-        - Paramedic # For paramedic recognizibility
-        - Psychologist # Doesnt suit a psych, has access to base medical
-        - ChiefMedicalOfficer # For CMO recognizibility
   items:
     - ClothingShoesBootsWinterGenetics
 
