@@ -107,6 +107,7 @@
     tags:
     - VulpEmotes
     - HarpyEmotes
+    - KitsuneEmotes
   blacklist:
     components:
     - BorgChassis
@@ -155,6 +156,7 @@
   whitelist:
     tags:
     - VulpEmotes
+    - KitsuneEmotes
     - HarpyEmotes
   blacklist:
     components:
@@ -162,6 +164,9 @@
   chatMessages: [ howls ]
   chatTriggers:
     - howls
+    - howl
+    - awoo
+    - awoos
 
 - type: emote
   id: Awoo
@@ -169,8 +174,9 @@
   category: Vocal
   whitelist:
     components:
-    - Vocal
+    - VulpEmotes
     - HarpyEmotes
+    - KitsuneEmotes
   blacklist:
     components:
     - BorgChassis

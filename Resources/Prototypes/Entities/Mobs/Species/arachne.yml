@@ -127,6 +127,11 @@
     requiredLegs: 8
   - type: Speech
     speechSounds: Alto
+  - type: Vocal
+    sounds:
+      Male: MaleArachne
+      Female: FemaleArachne
+      Unsexed: MaleArachne
   - type: Inventory
     templateId: anytaur
   - type: Tag
@@ -135,6 +140,7 @@
     - FootstepSound
     - DoorBumpOpener
     - SpiderCraft
+    - ArachneEmotes
   - type: StepTriggerImmune
   - type: Bloodstream
     bloodReagent: DemonsBlood
