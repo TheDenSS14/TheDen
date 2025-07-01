@@ -26,6 +26,7 @@
       inverted: true
       jobs:
         - ChiefMedicalOfficer # CMO has ClothingBackpackCMOFilled
+        - Psychologist # Psych has ClothingBackpackPsychologistFilled
 
 - type: loadout
   id: LoadoutBackpackVirology
@@ -72,6 +73,7 @@
       inverted: true
       jobs:
         - ChiefMedicalOfficer # CMO has ClothingBackpackSatchelCMOFilled
+        - Psychologist # Psych has ClothingBackpackSatchelPsychologistFilled
 
 - type: loadout
   id: LoadoutBackpackSatchelVirology
@@ -118,6 +120,7 @@
       inverted: true
       jobs:
         - ChiefMedicalOfficer # CMO has ClothingBackpackDuffelCMOFilled
+        - Psychologist # Psych has ClothingBackpackDuffelPsychologistFilled
 
 - type: loadout
   id: LoadoutBackpackDuffelVirology
