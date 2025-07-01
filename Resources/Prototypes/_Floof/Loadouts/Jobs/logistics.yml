@@ -13,9 +13,9 @@
   cost: 2
   exclusive: true
   items:
-  - ClothingHandsLogisWarmers
+    - ClothingHandsLogisWarmers
   requirements:
-  - !type:CharacterDepartmentRequirement
+    - !type:CharacterDepartmentRequirement
       departments:
         - Logistics
 
@@ -25,14 +25,14 @@
   cost: 2
   exclusive: true
   items:
-  - ClothingUnderSocksLogis
+    - ClothingUnderSocksLogis
   requirements:
-#  - !type:CharacterSpeciesRequirement - TheDen
-#    inverted: true
-#    species:
-#    - Diona
-#    - Harpy
-  - !type:CharacterDepartmentRequirement
+    #- !type:CharacterSpeciesRequirement - TheDen
+    #  inverted: true
+    #  species:
+    #  - Diona
+    #  - Harpy
+    - !type:CharacterDepartmentRequirement
       departments:
         - Logistics
 
@@ -42,9 +42,9 @@
   cost: 2
   exclusive: true
   items:
-  - ClothingUniformLogisThong
+    - ClothingUniformLogisThong
   requirements:
-  - !type:CharacterDepartmentRequirement
+    - !type:CharacterDepartmentRequirement
       departments:
         - Logistics
 
@@ -53,11 +53,11 @@
   category: JobsLogisticsAUncategorized
   cost: 1
   requirements:
-  - !type:CharacterDepartmentRequirement
-    departments:
-    - Logistics
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Logistics
   items:
-  - ClothingNeckCollarLogi
+    - ClothingNeckCollarLogi
 
 # Courier
 - type: loadout
@@ -66,11 +66,11 @@
   cost: 1
   exclusive: true
   items:
-  - ClothingHandsCourierWarmers
+    - ClothingHandsCourierWarmers
   requirements:
-  - !type:CharacterJobRequirement
-    jobs:
-    - MailCarrier
+    - !type:CharacterJobRequirement
+      jobs:
+        - MailCarrier
 
 - type: loadout
   id: LoadoutClothingUnderSocksCourier
@@ -78,16 +78,16 @@
   cost: 2
   exclusive: true
   items:
-  - ClothingUnderSocksCourier
+    - ClothingUnderSocksCourier
   requirements:
-#  - !type:CharacterSpeciesRequirement - TheDen
-#    inverted: true
-#    species:
-#    - Diona
-#    - Harpy
-  - !type:CharacterJobRequirement
-    jobs:
-    - MailCarrier
+    #- !type:CharacterSpeciesRequirement - TheDen
+    #  inverted: true
+    #  species:
+    #  - Diona
+    #  - Harpy
+    - !type:CharacterJobRequirement
+      jobs:
+        - MailCarrier
 
 - type: loadout
   id: LoadoutClothingUniformCourierThong
@@ -95,8 +95,8 @@
   cost: 1
   exclusive: true
   items:
-  - ClothingUniformCourierThong
+    - ClothingUniformCourierThong
   requirements:
-  - !type:CharacterJobRequirement
-    jobs:
-    - MailCarrier
+    - !type:CharacterJobRequirement
+      jobs:
+        - MailCarrier

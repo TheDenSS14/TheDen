@@ -51,7 +51,6 @@
       jobs:
         - Roboticist
 
-
 # Belt
 
 # Ears
@@ -115,13 +114,13 @@
   category: JobsEpistemicsGolemancer
   cost: 0
   requirements:
-  - !type:CharacterItemGroupRequirement
-    group: LoadoutGolemancerOuter # The Den - Wrong category
-  - !type:CharacterJobRequirement
-    jobs:
-    - Roboticist
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutGolemancerOuter # The Den - Wrong category
+    - !type:CharacterJobRequirement
+      jobs:
+        - Roboticist
   items:
-  - ClothingOuterWinterRobo
+    - ClothingOuterWinterRobo
 
 # Shoes
 - type: loadout

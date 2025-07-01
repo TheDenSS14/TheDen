@@ -229,13 +229,13 @@
   category: JobsEngineeringAAUncategorized
   cost: 0
   requirements:
-  - !type:CharacterItemGroupRequirement
-    group: LoadoutEngineeringOuter
-  - !type:CharacterDepartmentRequirement
-    departments:
-      - Engineering
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutEngineeringOuter
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Engineering
   items:
-  - ClothingOuterWinterEngi
+    - ClothingOuterWinterEngi
 
 - type: loadout
   id: LoadoutEngineeringOuterHazard

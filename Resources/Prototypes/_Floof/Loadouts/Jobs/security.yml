@@ -13,11 +13,11 @@
   cost: 2
   exclusive: true
   items:
-  - ClothingHandsSecurityWarmers
+    - ClothingHandsSecurityWarmers
   requirements:
-  - !type:CharacterDepartmentRequirement
-    departments:
-    - Security
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Security
 
 - type: loadout
   id: LoadoutClothingUnderSocksSecurity
@@ -25,16 +25,16 @@
   cost: 2
   exclusive: true
   items:
-  - ClothingUnderSocksSecurity
+    - ClothingUnderSocksSecurity
   requirements:
-#  - !type:CharacterSpeciesRequirement - TheDen
-#    inverted: true
-#    species:
-#    - Diona
-#    - Harpy
-  - !type:CharacterDepartmentRequirement
-    departments:
-    - Security
+    #- !type:CharacterSpeciesRequirement - TheDen
+    #  inverted: true
+    #  species:
+    #  - Diona
+    #  - Harpy
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Security
 
 - type: loadout
   id: LoadoutClothingUniformSecurityThong
@@ -42,22 +42,22 @@
   cost: 2
   exclusive: true
   items:
-  - ClothingUniformSecurityThong
+    - ClothingUniformSecurityThong
   requirements:
-  - !type:CharacterDepartmentRequirement
-    departments:
-    - Security
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Security
 
 - type: loadout
   id: LoadoutSecurityNeckCollar
   category: JobsSecurityAUncategorized
   cost: 1
   requirements:
-  - !type:CharacterDepartmentRequirement
-    departments:
-    - Security
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Security
   items:
-  - ClothingNeckCollarSec
+    - ClothingNeckCollarSec
 
 # Detective
 - type: loadout
@@ -66,11 +66,11 @@
   cost: 1
   exclusive: true
   items:
-  - ClothingHandsDetectiveWarmers
+    - ClothingHandsDetectiveWarmers
   requirements:
-  - !type:CharacterJobRequirement
-    jobs:
-    - Detective
+    - !type:CharacterJobRequirement
+      jobs:
+        - Detective
 
 - type: loadout
   id: LoadoutClothingUnderSocksDetective
@@ -78,16 +78,16 @@
   cost: 1
   exclusive: true
   items:
-  - ClothingUnderSocksDetective
+    - ClothingUnderSocksDetective
   requirements:
-#  - !type:CharacterSpeciesRequirement - TheDen
-#    inverted: true
-#    species:
-#    - Diona
-#    - Harpy
-  - !type:CharacterJobRequirement
-    jobs:
-    - Detective
+    #- !type:CharacterSpeciesRequirement - TheDen
+    #  inverted: true
+    #  species:
+    #  - Diona
+    #  - Harpy
+    - !type:CharacterJobRequirement
+      jobs:
+        - Detective
 
 - type: loadout
   id: LoadoutClothingUniformDetectiveThong
@@ -95,8 +95,8 @@
   cost: 1
   exclusive: true
   items:
-  - ClothingUniformDetectiveThong
+    - ClothingUniformDetectiveThong
   requirements:
-  - !type:CharacterJobRequirement
-    jobs:
-    - Detective
+    - !type:CharacterJobRequirement
+      jobs:
+        - Detective

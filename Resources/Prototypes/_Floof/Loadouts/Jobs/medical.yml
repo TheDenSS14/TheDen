@@ -13,11 +13,11 @@
   cost: 2
   exclusive: true
   items:
-  - ClothingHandsMedicWarmers
+    - ClothingHandsMedicWarmers
   requirements:
-  - !type:CharacterDepartmentRequirement
-    departments:
-    - Medical
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Medical
 
 - type: loadout
   id: LoadoutClothingUnderSocksMedic
@@ -25,16 +25,16 @@
   cost: 2
   exclusive: true
   items:
-  - ClothingUnderSocksMedic
+    - ClothingUnderSocksMedic
   requirements:
-#  - !type:CharacterSpeciesRequirement - TheDen
-#    inverted: true
-#    species:
-#    - Diona
-#    - Harpy
-  - !type:CharacterDepartmentRequirement
-    departments:
-    - Medical
+    #- !type:CharacterSpeciesRequirement - TheDen
+    #  inverted: true
+    #  species:
+    #  - Diona
+    #  - Harpy
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Medical
 
 - type: loadout
   id: LoadoutClothingUniformMedicThong
@@ -42,27 +42,27 @@
   cost: 2
   exclusive: true
   items:
-  - ClothingUniformMedicThong
+    - ClothingUniformMedicThong
   requirements:
-  - !type:CharacterDepartmentRequirement
-    departments:
-    - Medical
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Medical
 
 - type: loadout
   id: LoadoutMedicalNeckCollar
   category: JobsMedicalAUncategorized
   cost: 1
   requirements:
-  - !type:CharacterLogicXorRequirement
-    requirements:
-    - !type:CharacterDepartmentRequirement
-      departments:
-      - Medical
-    - !type:CharacterJobRequirement
-      jobs:
-      - Brigmedic
+    - !type:CharacterLogicXorRequirement
+      requirements:
+        - !type:CharacterDepartmentRequirement
+          departments:
+            - Medical
+        - !type:CharacterJobRequirement
+          jobs:
+            - Brigmedic
   items:
-  - ClothingNeckCollarMed
+    - ClothingNeckCollarMed
 
 # Chemist
 - type: loadout
@@ -71,11 +71,11 @@
   cost: 2
   exclusive: true
   items:
-  - ClothingHandsChemistsWarmers
+    - ClothingHandsChemistsWarmers
   requirements:
-  - !type:CharacterJobRequirement
-    jobs:
-    - Chemist
+    - !type:CharacterJobRequirement
+      jobs:
+        - Chemist
 
 - type: loadout
   id: LoadoutClothingUnderSocksChemists
@@ -83,16 +83,16 @@
   cost: 2
   exclusive: true
   items:
-  - ClothingUnderSocksChemists
+    - ClothingUnderSocksChemists
   requirements:
-#  - !type:CharacterSpeciesRequirement - TheDen
-#    inverted: true
-#    species:
-#    - Diona
-#    - Harpy
-  - !type:CharacterJobRequirement
-    jobs:
-    - Chemist
+    #- !type:CharacterSpeciesRequirement - TheDen
+    #  inverted: true
+    #  species:
+    #  - Diona
+    #  - Harpy
+    - !type:CharacterJobRequirement
+      jobs:
+        - Chemist
 
 - type: loadout
   id: LoadoutClothingUniformChemistsThong
@@ -100,11 +100,11 @@
   cost: 2
   exclusive: true
   items:
-  - ClothingUniformChemistsThong
+    - ClothingUniformChemistsThong
   requirements:
-  - !type:CharacterJobRequirement
-    jobs:
-    - Chemist
+    - !type:CharacterJobRequirement
+      jobs:
+        - Chemist
 
 # Paramedic
 - type: loadout
@@ -113,11 +113,11 @@
   cost: 1
   exclusive: true
   items:
-  - ClothingHandsParaMedicWarmers
+    - ClothingHandsParaMedicWarmers
   requirements:
-  - !type:CharacterJobRequirement
-    jobs:
-    - Paramedic
+    - !type:CharacterJobRequirement
+      jobs:
+        - Paramedic
 
 - type: loadout
   id: LoadoutClothingUnderSocksParaMedic
@@ -125,16 +125,16 @@
   cost: 1
   exclusive: true
   items:
-  - ClothingUnderSocksParaMedic
+    - ClothingUnderSocksParaMedic
   requirements:
-#  - !type:CharacterSpeciesRequirement - TheDen
-#    inverted: true
-#    species:
-#    - Diona
-#    - Harpy
-  - !type:CharacterJobRequirement
-    jobs:
-    - Paramedic
+    #- !type:CharacterSpeciesRequirement - TheDen
+    #  inverted: true
+    #  species:
+    #  - Diona
+    #  - Harpy
+    - !type:CharacterJobRequirement
+      jobs:
+        - Paramedic
 
 - type: loadout
   id: LoadoutClothingUniformParaMedicThong
@@ -142,8 +142,8 @@
   cost: 1
   exclusive: true
   items:
-  - ClothingUniformParaMedicThong
+    - ClothingUniformParaMedicThong
   requirements:
-  - !type:CharacterJobRequirement
-    jobs:
-    - Paramedic
+    - !type:CharacterJobRequirement
+      jobs:
+        - Paramedic

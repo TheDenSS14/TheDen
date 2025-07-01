@@ -32,9 +32,9 @@
       group: LoadoutSecurityEquipment
     - !type:CharacterLogicOrRequirement
       requirements:
-      - !type:CharacterDepartmentRequirement
-        departments:
-          - Security
+        - !type:CharacterDepartmentRequirement
+          departments:
+            - Security
   items:
     - MagazineShotgunBeanbag
 
@@ -52,9 +52,9 @@
       group: LoadoutSecurityWeapons
     - !type:CharacterLogicOrRequirement
       requirements:
-      - !type:CharacterDepartmentRequirement
-        departments:
-          - Security
+        - !type:CharacterDepartmentRequirement
+          departments:
+            - Security
   items:
     - WeaponShotgunSawnSecurity
 
@@ -70,9 +70,9 @@
       group: LoadoutSecurityWeapons
     - !type:CharacterLogicOrRequirement
       requirements:
-      - !type:CharacterDepartmentRequirement
-        departments:
-          - Security
+        - !type:CharacterDepartmentRequirement
+          departments:
+            - Security
   items:
     - PlasteelArmingSwordSecurity
 
