@@ -170,7 +170,6 @@
 # SPDX-FileCopyrightText: 2024 github-actions[bot]
 # SPDX-FileCopyrightText: 2024 icekot8
 # SPDX-FileCopyrightText: 2024 lunarcomets
-# SPDX-FileCopyrightText: 2024 lzk
 # SPDX-FileCopyrightText: 2024 metalgearsloth
 # SPDX-FileCopyrightText: 2024 nikthechampiongr
 # SPDX-FileCopyrightText: 2024 osjarw
@@ -226,6 +225,7 @@
 # SPDX-FileCopyrightText: 2025 dootythefrooty
 # SPDX-FileCopyrightText: 2025 juniwoofs
 # SPDX-FileCopyrightText: 2025 keronshb
+# SPDX-FileCopyrightText: 2025 lzk
 # SPDX-FileCopyrightText: 2025 marc-pelletier
 # SPDX-FileCopyrightText: 2025 portfiend
 # SPDX-FileCopyrightText: 2025 sleepyyapril
@@ -934,6 +934,9 @@
 
 - type: Tag
   id: ForceNoFixRotations # fixrotations command WON'T target this
+
+- type: Tag
+  id: FreezerElectronics
 
 - type: Tag
   id: Fruit
