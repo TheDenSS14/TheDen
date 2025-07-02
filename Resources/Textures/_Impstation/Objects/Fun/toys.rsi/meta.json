@@ -1,0 +1,75 @@
+﻿{
+    "version": 1,
+    "license": "CC-BY-SA-3.0",
+    "copyright": "minor and giant bear by crocodilecarousel (github). bug amd dolls by Doop.",
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "states": [
+        {
+            "name": "bug-equipped-HELMET",
+            "directions": 4
+        },
+        {
+            "name": "doll_base"
+        },
+        {
+            "name": "doll_base-inhand-left",
+            "directions": 4
+        },
+        {
+            "name": "doll_base-inhand-right",
+            "directions": 4
+        },
+        {
+            "name": "doll_hair"
+        },
+        {
+            "name": "doll_hair-inhand-left",
+            "directions": 4
+        },
+        {
+            "name": "doll_hair-inhand-right",
+            "directions": 4
+        },
+        {
+            "name": "giantbearplush"
+        },
+        {
+            "name": "giantbearplush-inhand",
+            "directions": 4
+        },
+        {
+            "name": "minor"
+        },
+        {
+            "name": "plushie_bug"
+        },
+        {
+            "name": "plushie_bug-inhand-left",
+            "directions": 4
+        },
+        {
+            "name": "plushie_bug-inhand-right",
+            "directions": 4
+        },
+        {
+            "name": "plushie_dwarf"
+        },
+        {
+            "name": "plushie_dwarf_unshaded",
+            "delays": [
+                [
+                    0.2,
+                    0.2,
+                    0.2,
+                    0.2
+                ]
+            ]
+        },
+        {
+            "name": "plushie_mascotgriffy"
+        }
+    ]
+}
