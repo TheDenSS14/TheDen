@@ -362,6 +362,7 @@
   - type: FootPrints
   - type: RMCSetPose
   - type: ModifyUndies  # FLOOF Add
+  - type: OfferItem
 
 - type: entity
   save: false
@@ -452,7 +453,6 @@
         Asphyxiation: -1.0
   - type: FireVisuals
     alternateState: Standing
-  - type: OfferItem
   - type: LayingDown
   - type: BloodstreamAffectedByMass
     power: 0.6 # A minimum size felinid will have 30% blood, a minimum size vulp will have 60%, a maximum size oni will have ~200%
