@@ -1,0 +1,21 @@
+- type: trait
+  id: TraitorKillTarget
+  category: Marked
+  points: 2
+  slots: 0
+  functions:
+  - !type:TraitAddComponent
+    components:
+    - type: Marked
+      targetType: TraitorKill
+
+- type: trait
+  id: TraitorTeachTarget
+  category: Marked
+  points: 1
+  slots: 0
+  functions:
+  - !type:TraitAddComponent
+    components:
+    - type: Marked
+      targetType: TraitorTeach
