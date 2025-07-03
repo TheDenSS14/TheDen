@@ -515,3 +515,124 @@
       group: LoadoutShoes
   items:
     - ClothingShoesSandalsFlipFlopsAlt
+
+- type: loadout
+  id: LoadoutShoesBlackheelsBlackstockings
+  category: Shoes
+  cost: 1
+  exclusive: true
+  customColorTint: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutShoes
+  items:
+    - ClothingShoesHeelsStockingsBlackBlack
+
+- type: loadout
+  id: LoadoutShoesBlackheelsWhitetockings
+  category: Shoes
+  cost: 1
+  exclusive: true
+  customColorTint: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutShoes
+  items:
+    - ClothingShoesHeelsStockingsBlackWhite
+
+- type: loadout
+  id: LoadoutShoesBlackheelsPlainBlackstockings
+  category: Shoes
+  cost: 1
+  exclusive: true
+  customColorTint: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutShoes
+  items:
+    - ClothingShoesHeelsStockingsBlackBPlain
+
+- type: loadout
+  id: LoadoutShoesBlackheelsPlainWhitestockings
+  category: Shoes
+  cost: 1
+  exclusive: true
+  customColorTint: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutShoes
+  items:
+    - ClothingShoesHeelsStockingsBlackWPlain
+
+- type: loadout
+  id: LoadoutShoesBlackheelsLatexstockings
+  category: Shoes
+  cost: 1
+  exclusive: true
+  customColorTint: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutShoes
+  items:
+    - ClothingShoesHeelsStockingsBlackLatex
+
+- type: loadout
+  id: LoadoutShoesWhiteheelsBlackstockings
+  category: Shoes
+  cost: 1
+  exclusive: true
+  customColorTint: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutShoes
+  items:
+    - ClothingShoesHeelsStockingsWhiteBlack
+
+- type: loadout
+  id: LoadoutShoesWhiteheelsPlainBlackstockings
+  category: Shoes
+  cost: 1
+  exclusive: true
+  customColorTint: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutShoes
+  items:
+    - ClothingShoesHeelsStockingsWhiteBPlain
+
+- type: loadout
+  id: LoadoutShoesWhiteheelsWhitestockings
+  category: Shoes
+  cost: 1
+  exclusive: true
+  customColorTint: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutShoes
+  items:
+    - ClothingShoesHeelsStockingsWhiteWhite
+
+- type: loadout
+  id: LoadoutShoesWhiteheelsPlainWhitestockings
+  category: Shoes
+  cost: 1
+  exclusive: true
+  customColorTint: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutShoes
+  items:
+    - ClothingShoesHeelsStockingsWhiteWPlain
+
+- type: loadout
+  id: LoadoutShoesWhiteheelsLatexstockings
+  category: Shoes
+  cost: 1
+  exclusive: true
+  customColorTint: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutShoes
+  items:
+    - ClothingShoesHeelsStockingsWhiteLatex
+
