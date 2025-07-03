@@ -1,8 +1,9 @@
-# SPDX-FileCopyrightText: 2024 ShatteredSwords <135023515+ShatteredSwords@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 fenndragon <fenndragon@gmail.com>
-# SPDX-FileCopyrightText: 2025 Fansana <116083121+Fansana@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 Rosycup <178287475+Rosycup@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 ShatteredSwords
+# SPDX-FileCopyrightText: 2024 fenndragon
+# SPDX-FileCopyrightText: 2025 Fansana
+# SPDX-FileCopyrightText: 2025 M3739
+# SPDX-FileCopyrightText: 2025 Rosycup
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -32,6 +33,18 @@
     sprite: Objects/Fun/toys.rsi
     state: plushie_lizard
   product: CrateFunLizardPlushieBulk
+  cost: 2500
+  category: cargoproduct-category-name-fun
+  group: market
+
+# instruments
+
+- type: cargoProduct
+  id: FunInstrumentsDrumKit
+  icon:
+    sprite: GreyStation/Objects/Fun/Instruments/structureinstruments.rsi
+    state: drumkit
+  product: CrateFunInstrumentsDrumKit
   cost: 2500
   category: cargoproduct-category-name-fun
   group: market

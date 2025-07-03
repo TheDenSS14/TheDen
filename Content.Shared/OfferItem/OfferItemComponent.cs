@@ -1,12 +1,15 @@
-// SPDX-FileCopyrightText: 2024 Spatison <137375981+Spatison@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 sleepyyapril <flyingkarii@gmail.com>
-// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Spatison
+// SPDX-FileCopyrightText: 2025 Mnemotechnican
+// SPDX-FileCopyrightText: 2025 sleepyyapril
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
+using System.Diagnostics.CodeAnalysis;
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
 using Content.Shared.Alert;
+using Content.Shared.Inventory.VirtualItem;
+
 
 namespace Content.Shared.OfferItem;
 
@@ -34,4 +37,9 @@ public sealed partial class OfferItemComponent : Component
 
     [DataField]
     public ProtoId<AlertPrototype> OfferAlert = "Offer";
+
+    // Floofstation section
+    public EntityUid GetRealEntity(EntityManager entityManager) =>
+        entityManager.GetComponentOrNull<VirtualItemComponent>(Item)?.BlockingEntity ?? Item ?? EntityUid.Invalid;
+    // Floofstation section end
 }
