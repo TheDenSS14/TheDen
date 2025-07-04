@@ -35,6 +35,7 @@ public sealed class HealthExaminableSystem : EntitySystem
         base.Initialize();
 
         SubscribeLocalEvent<HealthExaminableComponent, GetVerbsEvent<ExamineVerb>>(OnGetExamineVerbs);
+        SubscribeLocalEvent<HealthExaminableComponent, ExaminedEvent>(HandleExamined);
     }
 
     private void OnGetExamineVerbs(EntityUid uid, HealthExaminableComponent component, GetVerbsEvent<ExamineVerb> args)
@@ -70,7 +71,11 @@ public sealed class HealthExaminableSystem : EntitySystem
             : CreateMarkup(examinable, examinable.Comp, damageable);
     }
 
-    private FormattedMessage CreateMarkup(EntityUid uid, HealthExaminableComponent component, DamageableComponent damage)
+    private FormattedMessage CreateMarkup(EntityUid uid,
+        HealthExaminableComponent component,
+        DamageableComponent damage,
+        // Floof: empty message for basic examine
+        bool showFallbackMessage = true)
     {
         var msg = new FormattedMessage();
 
@@ -115,7 +120,8 @@ public sealed class HealthExaminableSystem : EntitySystem
             msg.AddMarkup(chosenLocStr);
         }
 
-        if (msg.IsEmpty)
+        // Floof: empty message for basic examine
+        if (msg.IsEmpty && showFallbackMessage)
             msg.AddMarkup(Loc.GetString($"health-examinable-{component.LocPrefix}-none"));
 
         // Anything else want to add on to this?
@@ -212,6 +218,19 @@ public sealed class HealthExaminableSystem : EntitySystem
             critThreshold = 100;
 
         return thresholdPercentages.Select(percentage => critThreshold * percentage).ToList();
+    }
+
+    // Floof: basic examine
+    private void HandleExamined(EntityUid examinedUid, HealthExaminableComponent component, ExaminedEvent args)
+    {
+        if (!TryComp(examinedUid, out DamageableComponent? damage))
+            return;
+
+        using (args.PushGroup(nameof(HealthExaminableComponent)))
+        {
+            // only show the default health inspect, leave self-aware to the actual health examine action
+            args.PushMessage(CreateMarkup(args.Examiner, component, damage, false));
+        }
     }
 }
 
