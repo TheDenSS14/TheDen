@@ -91,6 +91,13 @@
     damage:
       types:
         Slash: 5 # Reduce?
+  - type: LanguageKnowledge
+    speaks:
+    - TauCetiBasic
+    - VoxPidgin
+    understands:
+    - TauCetiBasic
+    - VoxPidgin
   - type: Sprite # Need to redefine the whole order to draw the tail over their gas tank
     layers:
     - map: [ "enum.HumanoidVisualLayers.Chest" ]
