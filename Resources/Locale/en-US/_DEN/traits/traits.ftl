@@ -51,3 +51,9 @@ trait-description-Detritivore = Your hardy digestive system is well-equipped for
     Gastrotoxin and mold have no ill effects on you, and will restore your hunger.
     You can also digest uncooked animal proteins (raw meat) if you do not already have the ability
     to do so, and even rotting animal corpses will be safe for consumption.
+
+trait-name-VoxPidgin = Vox-Pidgin
+trait-description-VoxPidgin =
+    The common tongue of the various Vox ships making up the Shoal. It sounds like chaotic shrieking to everyone else.
+    The sounds in this language can only be produced by a Vox's unique Syrinx.
+    Note: [color=red]This trait only allows you to understand Vox-Pidgin. You will not be able to speak it.[/color]
