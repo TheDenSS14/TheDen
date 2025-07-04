@@ -585,6 +585,10 @@
   category: TraitsPhysicalAugmentations
   points: -6
   requirements:
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - BionicArmNoVisuals
     - !type:CharacterJobRequirement
       inverted: true
       jobs:
@@ -601,6 +605,27 @@
       partSymmetry: Right
       protoId: JawsOfLifeRightArm
       slotId: "right arm"
+    - !type:TraitPushDescription
+      descriptionExtensions:
+        - description: examine-bionic-arm-message
+          fontSize: 12
+          requireDetailRange: true
+
+- type: trait
+  id: BionicArmNoVisuals
+  category: TraitsPhysicalAugmentations
+  points: -6
+  requirements:
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - BionicArm
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Prisoner # Bionics should be "Confiscated" from long term prisoners.
+        - Gladiator
+  functions:
     - !type:TraitPushDescription
       descriptionExtensions:
         - description: examine-bionic-arm-message
@@ -959,6 +984,7 @@
       inverted: true
       traits:
         - WheelchairBound
+        - BionicLegNoVisuals
     - !type:CharacterSpeciesRequirement
       inverted: true
       species:
@@ -979,6 +1005,31 @@
       partSymmetry: Right
       protoId: SpeedRightLeg
       slotId: "right leg"
+
+- type: trait
+  id: BionicLegNoVisuals
+  category: TraitsPhysicalAugmentations
+  points: -8
+  requirements:
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Prisoner # Bionics should be "Confiscated" from long term prisoners.
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - WheelchairBound
+        - BionicLeg
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Arachne
+  functions:
+    - !type:TraitPushDescription
+      descriptionExtensions:
+        - description: examine-bionic-leg-message
+          fontSize: 12
+          requireDetailRange: true
 
 - type: trait
   id: FlareShieldingModule
