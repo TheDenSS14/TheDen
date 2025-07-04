@@ -1,3 +1,15 @@
+// SPDX-FileCopyrightText: 2023 AJCM-git
+// SPDX-FileCopyrightText: 2023 Nemanja
+// SPDX-FileCopyrightText: 2023 metalgearsloth
+// SPDX-FileCopyrightText: 2024 Pieter-Jan Briers
+// SPDX-FileCopyrightText: 2024 Tayrtahn
+// SPDX-FileCopyrightText: 2024 deltanedas
+// SPDX-FileCopyrightText: 2025 MajorMoth
+// SPDX-FileCopyrightText: 2025 VMSolidus
+// SPDX-FileCopyrightText: 2025 sleepyyapril
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 using Content.Server.Power.Components;
 using Content.Shared.PowerCell;
 using Content.Shared.PowerCell.Components;
@@ -20,24 +32,15 @@ public sealed partial class PowerCellSystem
             if (!comp.Enabled)
                 continue;
 
-            // Any delay between zero and 1/tickrate will be equivalent to 1/tickrate delay.
-            // Setting delay to zero makes the draw "continuous"
-            var drawRate = comp.DrawRate;
-
-            if (comp.Delay == TimeSpan.Zero)
-                drawRate *= frameTime;
-            else
-            {
-                if (Timing.CurTime < comp.NextUpdateTime)
-                    continue;
-            }
+            if (Timing.CurTime < comp.NextUpdateTime)
+                continue;
 
             comp.NextUpdateTime += comp.Delay;
 
             if (!TryGetBatteryFromSlot(uid, out var batteryEnt, out var battery, slot))
                 continue;
 
-            if (_battery.TryUseCharge(batteryEnt.Value, drawRate, battery))
+            if (_battery.TryUseCharge(batteryEnt.Value, comp.DrawRate * (float) comp.Delay.TotalSeconds, battery)) // this fixes tcj's change which made the power draw of everything 30-60 times less
                 continue;
 
             var ev = new PowerCellSlotEmptyEvent();
