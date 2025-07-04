@@ -5,7 +5,7 @@
 - type: entity
   abstract: true
   id: ClothingShoesBaseHeelStocking
-  parent: ClothingShoesBaseButcherable
+  parent: ClothingShoesBaseSocks
   components:
   - type: FootstepModifier
     footstepSoundCollection: 
