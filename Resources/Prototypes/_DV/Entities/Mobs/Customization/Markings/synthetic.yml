@@ -1,5 +1,7 @@
-# SPDX-FileCopyrightText: 2025 Falcon <falcon@zigtag.dev>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Blitz
+# SPDX-FileCopyrightText: 2025 BlitzTheSquishy
+# SPDX-FileCopyrightText: 2025 Falcon
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -133,6 +135,16 @@
   sprites:
   - sprite: Mobs/Customization/eyes.rsi
     state: eyes
+    shader: unshaded
+
+- type: marking
+  id: ProtogenMouth
+  bodyPart: Eyes
+  markingCategory: Face
+  speciesRestriction: [IPC]
+  sprites:
+  - sprite: _DV/Mobs/Customization/SynthLizIPC/head_markings.rsi
+    state: protogen_mouth
 
 # Snouts
 - type: marking
@@ -275,6 +287,28 @@
     state: synth_lizard_snout_barless_tert_under_2
   - sprite: _DV/Mobs/Customization/SynthLizIPC/snout_markings.rsi
     state: synth_lizard_snout_barless_tert_under_3
+
+- type: marking
+  id: ProtogenSnout
+  bodyPart: Snout
+  markingCategory: Snout
+  speciesRestriction: [IPC]
+  sprites:
+  - sprite: _DV/Mobs/Customization/SynthLizIPC/snout_markings.rsi
+    state: protogen_snout_1
+  - sprite: _DV/Mobs/Customization/SynthLizIPC/snout_markings.rsi
+    state: protogen_snout_2
+
+- type: marking
+  id: ProtogenBoltSnout
+  bodyPart: Snout
+  markingCategory: Snout
+  speciesRestriction: [IPC]
+  sprites:
+  - sprite: _DV/Mobs/Customization/SynthLizIPC/snout_markings.rsi
+    state: protogen_snout_bolt_1
+  - sprite: _DV/Mobs/Customization/SynthLizIPC/snout_markings.rsi
+    state: protogen_snout_bolt_2
 
 # Tails
 - type: marking

@@ -1,5 +1,7 @@
-# SPDX-FileCopyrightText: 2025 EctoplasmIsGood <109397347+EctoplasmIsGood@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 BlitzTheSquishy
+# SPDX-FileCopyrightText: 2025 EctoplasmIsGood
+# SPDX-FileCopyrightText: 2025 Solstice
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -7,7 +9,7 @@
   name: Chester
   parent: [ BaseWeaponRifle, BaseGunWieldable ]
   id: WeaponLeverChester
-  description: An improved lever-action rifle designed to fire specialized .45 caliber ammunition for rapid threat removal.
+  description: An improved lever-action rifle designed to fire specialized 8 gauge ammunition for rapid threat removal.
   components:
   - type: Sprite
     sprite: _Goobstation/Objects/Weapons/Guns/Lever/chester.rsi
@@ -22,21 +24,22 @@
     slots:
       gun_magazine:
         name: Magazine
-        startingItem: MagazineMagnumLeverRifle
+        startingItem: MagazineShotgunLeverRifle
         insertSound: /Audio/Weapons/Guns/MagIn/rifle_load.ogg
         ejectSound: /Audio/Weapons/Guns/MagOut/sfrifle_magout.ogg
         priority: 2
         whitelist:
           tags:
-          - MagazineMagnumLeverRifle
+          - MagazineShotgunLeverRifle
+        whitelistFailPopup: gun-magazine-whitelist-fail
       gun_chamber:
         name: Chamber
         priority: 1
         whitelist:
           tags:
-          - CartridgeMagnum
+          - ShellShotgunHeavy
   - type: Gun
-    fireRate: 0.8
+    fireRate: 1 # gun feel (Personal testing makes it feel like actual ass with how much time you have to wait if you can action the gun to fire again)
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/batrifle.ogg
   - type: ChamberMagazineAmmoProvider
@@ -51,7 +54,7 @@
     soundBoltClosed:
       path: /Audio/Weapons/Guns/Bolt/lever_bolt_closed.ogg
       params:
-        volume: -3  
+        volume: -3
     soundBoltOpened:
       path: /Audio/Weapons/Guns/Bolt/lever_bolt_opened.ogg
       params:

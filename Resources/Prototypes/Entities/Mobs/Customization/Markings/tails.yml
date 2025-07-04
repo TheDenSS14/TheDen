@@ -1,0 +1,44 @@
+# SPDX-FileCopyrightText: 2025 BlitzTheSquishy
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: marking
+  id: LizardTailShort
+  bodyPart: Tail
+  markingCategory: Tail
+  speciesRestriction: [Reptilian, Human, IPC, SlimePerson]
+  sprites:
+  - sprite: Mobs/Customization/tails.rsi
+    state: m_tail_short
+
+- type: marking
+  id: LizardTailShortTwoTone
+  bodyPart: Tail
+  markingCategory: Tail
+  speciesRestriction: [Reptilian, Human, IPC, SlimePerson]
+  sprites:
+  - sprite: Mobs/Customization/tails.rsi
+    state: m_tail_short
+  - sprite: Mobs/Customization/tails.rsi
+    state: m_tail_short2tone
+
+# Animated
+- type: marking
+  id: LizardTailShortAnimated
+  bodyPart: Tail
+  markingCategory: Tail
+  speciesRestriction: []
+  sprites:
+    - sprite: Mobs/Customization/tails.rsi
+      state: m_waggingtail_short
+
+- type: marking
+  id: LizardTailShortTwoToneAnimated
+  bodyPart: Tail
+  markingCategory: Tail
+  speciesRestriction: []
+  sprites:
+    - sprite: Mobs/Customization/tails.rsi
+      state: m_waggingtail_short
+    - sprite: Mobs/Customization/tails.rsi
+      state: m_waggingtail_short2tone

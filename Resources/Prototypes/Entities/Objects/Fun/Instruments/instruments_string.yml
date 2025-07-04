@@ -1,22 +1,44 @@
-# SPDX-FileCopyrightText: 2022 CommieFlowers <rasmus.cedergren@hotmail.com>
-# SPDX-FileCopyrightText: 2022 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2022 rolfero <45628623+rolfero@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2023 I.K <45953835+notquitehadouken@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2023 LankLTE <135308300+LankLTE@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2023 RiceMar1244 <138547931+RiceMar1244@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 CommieFlowers
+# SPDX-FileCopyrightText: 2022 Nemanja
+# SPDX-FileCopyrightText: 2022 rolfero
+# SPDX-FileCopyrightText: 2023 I.K
+# SPDX-FileCopyrightText: 2023 LankLTE
+# SPDX-FileCopyrightText: 2023 RiceMar1244
 # SPDX-FileCopyrightText: 2023 notquitehadouken <1isthisameme>
-# SPDX-FileCopyrightText: 2024 Debug <49997488+DebugOk@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 OldDanceJacket <98985560+OldDanceJacket@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 Skubman <ba.fallaria@gmail.com>
-# SPDX-FileCopyrightText: 2024 VMSolidus <evilexecutive@gmail.com>
-# SPDX-FileCopyrightText: 2024 dge21 <129136517+dge21@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 Rosycup <178287475+Rosycup@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Debug
+# SPDX-FileCopyrightText: 2024 OldDanceJacket
+# SPDX-FileCopyrightText: 2024 Skubman
+# SPDX-FileCopyrightText: 2024 VMSolidus
+# SPDX-FileCopyrightText: 2024 dge21
+# SPDX-FileCopyrightText: 2025 M3739
+# SPDX-FileCopyrightText: 2025 MajorMoth
+# SPDX-FileCopyrightText: 2025 Rosycup
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 - type: entity
   parent: BaseHandheldInstrument
+  id: BaseStringInstrument
+  abstract: true
+  components:
+  - type: Tag
+    tags:
+    - StringInstrument
+
+- type: entity
+  parent: BaseStringInstrument
+  id: BaseStringInstrumentClothing
+  abstract: true
+  components:
+  - type: Clothing
+    quickEquip: false
+    slots:
+    - back
+    - suitStorage
+
+- type: entity
+  parent: BaseStringInstrumentClothing
   id: ElectricGuitarInstrument
   name: electric guitar
   description: Now this makes you feel like a rock star!
@@ -26,7 +48,7 @@
   - type: SwappableInstrument
     instrumentList:
       "Clean": {27: 0}
-      "Jazz": {25: 0}
+      "Jazz": {26: 0}
       "Muted": {28: 0}
   - type: Sprite
     sprite: Objects/Fun/Instruments/eguitar.rsi
@@ -60,7 +82,7 @@
     - StringInstrument
 
 - type: entity
-  parent: BaseHandheldInstrument
+  parent: BaseStringInstrumentClothing
   id: BassGuitarInstrument
   name: bass guitar
   description: You feel really cool holding this. Shame you're the only one that thinks that.
@@ -105,7 +127,7 @@
     - StringInstrument
 
 - type: entity
-  parent: BaseHandheldInstrument
+  parent: BaseStringInstrumentClothing
   id: RockGuitarInstrument
   name: rock guitar
   description: What an axe!
@@ -157,7 +179,7 @@
     - StringInstrument
 
 - type: entity
-  parent: BaseHandheldInstrument
+  parent: BaseStringInstrumentClothing
   id: AcousticGuitarInstrument
   name: acoustic guitar
   description: Anyway, here's Wonderwall.
@@ -229,20 +251,19 @@
         Blunt: 3
 
 - type: entity
-  parent: BaseHandheldInstrument
+  parent: BaseStringInstrument
   id: GuitarlessFretsInstrument
   name: guitarless frets
   description: who even needs a body?
-  suffix: Admeme #the sound is awful
+  categories: [ AdminTools ] #the sound is awful
   components:
   - type: Instrument
     program: 120
   - type: Sprite
     sprite: Objects/Fun/Instruments/guitarlessfrets.rsi
-    state: icon
 
 - type: entity
-  parent: BaseHandheldInstrument
+  parent: BaseStringInstrumentClothing
   id: BanjoInstrument
   name: banjo
   components:
@@ -250,13 +271,6 @@
     program: 105
   - type: Sprite
     sprite: Objects/Fun/Instruments/banjo.rsi
-    state: icon
-  - type: Item
-    size: Normal
-    sprite: Objects/Fun/Instruments/banjo.rsi
-  - type: Tag
-    tags:
-    - StringInstrument
   - type: MeleeWeapon
     soundHit:
       path: /Audio/SimpleStation14/Weapons/Melee/banjohit.ogg
@@ -273,7 +287,7 @@
     staminaCost: 8
 
 - type: entity
-  parent: BaseHandheldInstrument
+  parent: BaseStringInstrument
   id: ViolinInstrument
   name: violin
   description: The favorite of musical virtuosos and bluegrass bands.
@@ -286,16 +300,9 @@
       "Bluegrass": {110: 0}
   - type: Sprite
     sprite: Objects/Fun/Instruments/violin.rsi
-    state: icon
-  - type: Item
-    size: Normal
-    sprite: Objects/Fun/Instruments/violin.rsi
-  - type: Tag
-    tags:
-    - StringInstrument
 
 - type: entity
-  parent: BaseHandheldInstrument
+  parent: BaseStringInstrument
   id: ViolaInstrument
   name: viola
   description: Like a violin, but worse.
@@ -304,16 +311,9 @@
     program: 41
   - type: Sprite
     sprite: Objects/Fun/Instruments/viola.rsi
-    state: icon
-  - type: Item
-    size: Normal
-    sprite: Objects/Fun/Instruments/viola.rsi
-  - type: Tag
-    tags:
-    - StringInstrument
 
 - type: entity
-  parent: BaseHandheldInstrument
+  parent: BaseStringInstrument
   id: CelloInstrument
   name: cello
   description: The nerds call these violoncellos.
@@ -322,12 +322,7 @@
     program: 42
   - type: Sprite
     sprite: Objects/Fun/Instruments/cello.rsi
-    state: icon
   - type: Item
     size: Large
     shape:
     - 0,0,1,3
-    sprite: Objects/Fun/Instruments/cello.rsi
-  - type: Tag
-    tags:
-    - StringInstrument

@@ -1,8 +1,9 @@
-# SPDX-FileCopyrightText: 2024 fox <daytimer253@gmail.com>
+# SPDX-FileCopyrightText: 2024 fox
 # SPDX-FileCopyrightText: 2024 sleepyyapril <***>
-# SPDX-FileCopyrightText: 2025 Blitz <73762869+BlitzTheSquishy@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 Rosycup <178287475+Rosycup@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 sleepyyapril <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>
+# SPDX-FileCopyrightText: 2025 Blitz
+# SPDX-FileCopyrightText: 2025 Rosycup
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -15,9 +16,9 @@
   items:
   - ClothingHandsLogisWarmers
   requirements:
-  - !type:CharacterJobRequirement
-    jobs:
-    - CargoTechnician
+  - !type:CharacterDepartmentRequirement
+      departments:
+        - Logistics
 
 - type: loadout
   id: LoadoutClothingUnderSocksLogis
@@ -32,9 +33,9 @@
 #    species:
 #    - Diona
 #    - Harpy
-  - !type:CharacterJobRequirement
-    jobs:
-    - CargoTechnician
+  - !type:CharacterDepartmentRequirement
+      departments:
+        - Logistics
 
 - type: loadout
   id: LoadoutClothingUniformLogisThong
@@ -44,9 +45,9 @@
   items:
   - ClothingUniformLogisThong
   requirements:
-  - !type:CharacterJobRequirement
-    jobs:
-    - CargoTechnician
+  - !type:CharacterDepartmentRequirement
+      departments:
+        - Logistics
 
 - type: loadout
   id: LoadoutCargoNeckCollar
@@ -55,7 +56,7 @@
   requirements:
   - !type:CharacterDepartmentRequirement
     departments:
-    - Logistics
+      - Logistics
   items:
   - ClothingNeckCollarLogi
 

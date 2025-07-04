@@ -1,10 +1,12 @@
-# SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT <77995199+DEATHB4DEFEAT@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 VMSolidus <evilexecutive@gmail.com>
-# SPDX-FileCopyrightText: 2025 Lonofera <108367450+LonoferaRS@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 MajorMoth <61519600+MajorMoth@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 Rosycup <178287475+Rosycup@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 mart <martgitomen@gmail.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT
+# SPDX-FileCopyrightText: 2024 VMSolidus
+# SPDX-FileCopyrightText: 2025 Blitz
+# SPDX-FileCopyrightText: 2025 BlitzTheSquishy
+# SPDX-FileCopyrightText: 2025 Lonofera
+# SPDX-FileCopyrightText: 2025 MajorMoth
+# SPDX-FileCopyrightText: 2025 Rosycup
+# SPDX-FileCopyrightText: 2025 mart
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -51,6 +53,7 @@
     - !type:CharacterDepartmentRequirement
       departments:
         - Engineering
+
 # Belt
 
 # Ears
@@ -237,36 +240,35 @@
     - ClothingOuterVestHazard
 
 # Shoes
+- type: loadout
+  id: LoadoutEngineeringShoesBootsWork
+  category: JobsEngineeringAAUncategorized
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutEngineeringShoes
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Engineering
+  items:
+    - ClothingShoesBootsWork
+
+- type: loadout
+  id: LoadoutEngineeringShoesBootsWinter
+  category: JobsEngineeringAAUncategorized
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutEngineeringShoes
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Engineering
+  items:
+    - ClothingShoesBootsWinterEngi
 
 # Uniforms
-- type: loadout
-  id: LoadoutEngineeringUniformSuit
-  category: JobsEngineeringAAUncategorized
-  cost: 0
-  exclusive: true
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutEngineeringUniforms
-    - !type:CharacterJobRequirement
-      jobs:
-        - StationEngineer
-  items:
-    - ClothingUniformJumpsuitEngineering
-
-- type: loadout
-  id: LoadoutEngineeringUniformSkirt
-  category: JobsEngineeringAAUncategorized
-  cost: 0
-  exclusive: true
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutEngineeringUniforms
-    - !type:CharacterJobRequirement
-      jobs:
-        - StationEngineer
-  items:
-    - ClothingUniformJumpskirtEngineering
-
 - type: loadout
   id: LoadoutEngineeringUniformHazard
   category: JobsEngineeringAAUncategorized
@@ -298,7 +300,7 @@
 - type: loadout
   id: LoadoutClothingUniformJumpsuitRepairmanCybersun
   category: JobsEngineeringAAUncategorized
-  cost: 0
+  cost: 1
   exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement

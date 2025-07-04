@@ -1,5 +1,6 @@
-# SPDX-FileCopyrightText: 2025 Blitz <73762869+BlitzTheSquishy@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Blitz
+# SPDX-FileCopyrightText: 2025 portfiend
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -9,3 +10,27 @@
   completetime: 2
   materials:
     Steel: 150
+
+- type: latheRecipe
+  id: CaneAnatomical
+  result: CaneAnatomical
+  completetime: 2
+  materials:
+    Steel: 100
+    Plastic: 100
+
+- type: latheRecipe
+  id: CaneFoldable
+  result: CaneFoldableFolded
+  completetime: 2
+  materials:
+    Steel: 100
+    Plastic: 100
+
+- type: latheRecipe
+  id: CaneQuad
+  result: CaneQuad
+  completetime: 2
+  materials:
+    Steel: 100
+    Plastic: 100

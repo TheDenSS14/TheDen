@@ -20,11 +20,14 @@
 # SPDX-FileCopyrightText: 2024 ArchPigeon <bookmaster3@gmail.com>
 # SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT <77995199+DEATHB4DEFEAT@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2024 Errant <35878406+Errant-4@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 coderabbitai[bot] <136622811+coderabbitai[bot]@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2024 gluesniffler <159397573+gluesniffler@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2024 gluesniffler <linebarrelerenthusiast@gmail.com>
 # SPDX-FileCopyrightText: 2025 Blitz <73762869+BlitzTheSquishy@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Brandon Li <48413902+aspiringLich@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Skubman <ba.fallaria@gmail.com>
+# SPDX-FileCopyrightText: 2025 Steve <marlumpy@gmail.com>
+# SPDX-FileCopyrightText: 2025 marc-pelletier <113944176+marc-pelletier@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
@@ -765,7 +768,7 @@
         - !type:ReagentThreshold
           reagent: Zauker
           min: 0.25
-          max: 10
+          max: 12
         scaleByQuantity: true
         ignoreResistances: true
         damage:
@@ -774,6 +777,18 @@
             Heat: 2
             Poison: 2
             Bloodloss: 1
+      - !type:HealthChange
+        conditions:
+        - !type:ReagentThreshold
+          reagent: Zauker
+          min: 12
+        ignoreResistances: true
+        damage:
+          types:
+            Slash: 30
+            Heat: 10
+            Poison: 10
+            Bloodloss: 5
 
 - type: reagent
   id: Halon

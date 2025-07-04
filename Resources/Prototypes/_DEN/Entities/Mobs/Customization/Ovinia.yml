@@ -1,6 +1,8 @@
-# SPDX-FileCopyrightText: 2025 Blitz <73762869+BlitzTheSquishy@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 juniwoofs <180479595+juniwoofs@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Blitz
+# SPDX-FileCopyrightText: 2025 BlitzTheSquishy
+# SPDX-FileCopyrightText: 2025 Mono
+# SPDX-FileCopyrightText: 2025 juniwoofs
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -32,7 +34,7 @@
   id: OviniaNeckfluff
   bodyPart: NeckFluff
   markingCategory: NeckFluff
-  speciesRestriction: [ Ovinia ]
+  speciesRestriction: [ Ovinia, IPC, Human, Felinid, Vulpkanin, Tajaran, Slime, Oni, Canid, Chitinid, Rodentia, Kitsune ]
   sprites:
   - sprite: _DEN/Mobs/Customization/Ovinia/head_markings.rsi
     state: ovinia-neck-fluff
@@ -74,6 +76,42 @@
   - sprite: _DEN/Mobs/Customization/Ovinia/horn_markings.rsi
     state: ovinia-curved-horns
 
+- type: marking
+  id: OviniaDeerHorns
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  speciesRestriction: [ Ovinia, Human ]
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Ovinia/horn_markings.rsi
+    state: ovinia-deer-horns
+
+- type: marking
+  id: OviniaDevilHorns
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  speciesRestriction: [ Ovinia, Human ]
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Ovinia/horn_markings.rsi
+    state: ovinia-devil-horns
+
+- type: marking
+  id: OviniaBaphometHorns
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  speciesRestriction: [ Ovinia, Human ]
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Ovinia/horn_markings.rsi
+    state: ovinia-baphomet-horns
+
+- type: marking
+  id: OviniaIbexHorns
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  speciesRestriction: [ Ovinia, Human ]
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Ovinia/horn_markings.rsi
+    state: ovinia-ibex-horns
+
 # Snout Markings
 - type: marking
   id: OviniaFace
@@ -83,6 +121,17 @@
   sprites:
   - sprite: _DEN/Mobs/Customization/Ovinia/snout_markings.rsi
     state: ovinia-face
+  - sprite: _DEN/Mobs/Customization/Ovinia/snout_markings.rsi
+    state: ovinia-nose
+
+- type: marking
+  id: OviniaBlaze
+  bodyPart: Snout
+  markingCategory: Snout
+  speciesRestriction: [ Ovinia ]
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Ovinia/snout_markings.rsi
+    state: ovinia-blaze
   - sprite: _DEN/Mobs/Customization/Ovinia/snout_markings.rsi
     state: ovinia-nose
 
