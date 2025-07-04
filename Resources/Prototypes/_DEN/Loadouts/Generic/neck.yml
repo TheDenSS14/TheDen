@@ -13,3 +13,51 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutNeck
+
+- type: loadout
+  id: LoadoutNeckScarfColorable
+  category: Neck
+  cost: 0
+  exclusive: true
+  customColorTint: true
+  items:
+    - ClothingNeckScarfColorable
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutNeck
+
+- type: loadout
+  id: LoadoutNeckScarfStripedColorable
+  category: Neck
+  cost: 0
+  exclusive: true
+  customColorTint: true
+  items:
+    - ClothingNeckScarfStripedColorable
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutNeck
+
+- type: loadout
+  id: LoadoutNeckMantleColorable
+  category: Neck
+  cost: 0
+  exclusive: true
+  customColorTint: true
+  items:
+    - ClothingNeckMantleColorable
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutNeck
+
+- type: loadout
+  id: LoadoutNeckCloakColorable
+  category: Neck
+  cost: 0
+  exclusive: true
+  customColorTint: true
+  items:
+    - ClothingNeckCloakColorable
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutNeck
