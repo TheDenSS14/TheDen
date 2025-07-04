@@ -130,9 +130,15 @@
       - DisposalReady
   - type: RatKingRummageable
   - type: RequireProjectileTarget
+  - type: DeviceNetwork
+    deviceNetId: Wireless
+    receiveFrequencyId: BasicDevice
+  - type: WirelessNetworkConnection
+    range: 200
   - type: DeviceLinkSink
     ports:
       - FillbotAnyItem
+      - RemoteFlush
 
 - type: entity
   id: MailingUnit
@@ -187,3 +193,4 @@
   - type: DeviceLinkSink
     ports:
       - FillbotAnyItem
+      - RemoteFlush

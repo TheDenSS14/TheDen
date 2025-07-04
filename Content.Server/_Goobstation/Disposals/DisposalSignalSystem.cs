@@ -24,6 +24,9 @@ public sealed class DisposalSignalSystem : EntitySystem
     public static readonly ProtoId<SinkPortPrototype> EjectPort = "DisposalEject";
     public static readonly ProtoId<SinkPortPrototype> TogglePort = "Toggle";
 
+    [DataField, ViewVariables(VVAccess.ReadWrite)]
+    public ProtoId<SinkPortPrototype> RemoteFlush = "RemoteFlush";
+
     public override void Initialize()
     {
         base.Initialize();
@@ -33,7 +36,7 @@ public sealed class DisposalSignalSystem : EntitySystem
 
     private void OnSignalReceived(Entity<DisposalUnitComponent> ent, ref SignalReceivedEvent args)
     {
-        if (args.Port == FlushPort)
+        if (args.Port == FlushPort || args.Port == RemoteFlush)
             _disposal.ToggleEngage(ent, ent);
         else if (args.Port == EjectPort)
             _disposal.TryEjectContents(ent, ent);
