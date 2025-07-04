@@ -218,4 +218,17 @@
         - Kagebun
       languagesUnderstood:
         - Kagebun
-
+        
+- type: trait
+  id: VoxPidgin
+  category: TraitsSpeechLanguages
+  points: -1
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Vox
+  functions:
+    - !type:TraitModifyLanguages
+      languagesUnderstood:
+        - VoxPidgin
