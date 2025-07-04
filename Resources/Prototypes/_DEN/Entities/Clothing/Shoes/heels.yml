@@ -1,5 +1,21 @@
 - type: entity
-  parent: ClothingShoesBaseButcherable
+  abstract: true
+  id: ClothingShoeBaseHeelStocking
+  parent: ClothingShoeBaseButcherable
+  components:
+  - type: FootstepModifier
+    footstepSoundCollection: 
+      collection: FootstepHighHeels
+  - type: HideLayerClothing
+    force: true
+    slots:
+    - RFoot
+    - LFoot
+    - RLeg
+    - LLeg
+
+- type: entity
+  parent: ClothingShoeBaseHeelStocking
   id: ClothingShoesHeelsStockingsBlackBlack
   name: black gothic heelstockings
   description: Heels with stockings. Meant to be worn together, they shape the legs just right—sharp, impossible to ignore once they're on.
@@ -8,19 +24,9 @@
     sprite: _DEN/Clothing/Shoes/Heels/blackheels_blackstockings.rsi
   - type: Clothing
     sprite: _DEN/Clothing/Shoes/Heels/blackheels_blackstockings.rsi
-  - type: FootstepModifier
-    footstepSoundCollection:
-      collection: FootstepHighHeels
-  - type: HideLayerClothing
-    force: true
-    slots:
-    - RFoot
-    - LFoot
-    - RLeg
-    - LLeg
 
 - type: entity
-  parent: ClothingShoesBaseButcherable
+  parent: ClothingShoeBaseHeelStocking
   id: ClothingShoesHeelsStockingsWhiteWhite
   name: white classic heelstockings
   description: Heels with stockings. Meant to be worn together, they shape the legs just right—sharp, impossible to ignore once they're on.
@@ -29,19 +35,9 @@
     sprite: _DEN/Clothing/Shoes/Heels/whiteheels_whitestockings.rsi
   - type: Clothing
     sprite: _DEN/Clothing/Shoes/Heels/whiteheels_whitestockings.rsi
-  - type: FootstepModifier
-    footstepSoundCollection:
-      collection: FootstepHighHeels
-  - type: HideLayerClothing
-    force: true
-    slots:
-    - RFoot
-    - LFoot
-    - RLeg
-    - LLeg
 
 - type: entity
-  parent: ClothingShoesBaseButcherable
+  parent: ClothingShoeBaseHeelStocking
   id: ClothingShoesHeelsStockingsWhiteBlack
   name: black cheerleader heelstockings
   description: Heels with stockings. Meant to be worn together, they shape the legs just right—sharp, impossible to ignore once they're on.
@@ -50,19 +46,9 @@
     sprite: _DEN/Clothing/Shoes/Heels/whiteheels_blackstockings.rsi
   - type: Clothing
     sprite: _DEN/Clothing/Shoes/Heels/whiteheels_blackstockings.rsi
-  - type: FootstepModifier
-    footstepSoundCollection:
-      collection: FootstepHighHeels
-  - type: HideLayerClothing
-    force: true
-    slots:
-    - RFoot
-    - LFoot
-    - RLeg
-    - LLeg
 
 - type: entity
-  parent: ClothingShoesBaseButcherable
+  parent: ClothingShoeBaseHeelStocking
   id: ClothingShoesHeelsStockingsBlackWhite
   name: white cheerleader heelstockings
   description: Heels with stockings. Meant to be worn together, they shape the legs just right—sharp, impossible to ignore once they're on.
@@ -71,20 +57,9 @@
     sprite: _DEN/Clothing/Shoes/Heels/blackheels_whitestockings.rsi
   - type: Clothing
     sprite: _DEN/Clothing/Shoes/Heels/blackheels_whitestockings.rsi
-  - type: FootstepModifier
-    footstepSoundCollection:
-      collection: FootstepHighHeels
-  - type: HideLayerClothing
-    force: true
-    slots:
-    - RFoot
-    - LFoot
-    - RLeg
-    - LLeg
-
 
 - type: entity
-  parent: ClothingShoesBaseButcherable
+  parent: ClothingShoeBaseHeelStocking
   id: ClothingShoesHeelsStockingsBlackLatex
   name: black latex heelstockings
   description: Heels with stockings. Meant to be worn together, they shape the legs just right—sharp, impossible to ignore once they're on.
@@ -93,19 +68,9 @@
     sprite: _DEN/Clothing/Shoes/Heels/latexstockings_blackheels.rsi
   - type: Clothing
     sprite: _DEN/Clothing/Shoes/Heels/latexstockings_blackheels.rsi
-  - type: FootstepModifier
-    footstepSoundCollection:
-      collection: FootstepHighHeels
-  - type: HideLayerClothing
-    force: true
-    slots:
-    - RFoot
-    - LFoot
-    - RLeg
-    - LLeg
 
 - type: entity
-  parent: ClothingShoesBaseButcherable
+  parent: ClothingShoeBaseHeelStocking
   id: ClothingShoesHeelsStockingsWhiteLatex
   name: white latex heelstockings
   description: Heels with stockings. Meant to be worn together, they shape the legs just right—sharp, impossible to ignore once they're on.
@@ -114,19 +79,9 @@
     sprite: _DEN/Clothing/Shoes/Heels/latexstockings_whiteheels.rsi
   - type: Clothing
     sprite: _DEN/Clothing/Shoes/Heels/latexstockings_whiteheels.rsi
-  - type: FootstepModifier
-    footstepSoundCollection:
-      collection: FootstepHighHeels
-  - type: HideLayerClothing
-    force: true
-    slots:
-    - RFoot
-    - LFoot
-    - RLeg
-    - LLeg
 
 - type: entity
-  parent: ClothingShoesBaseButcherable
+  parent: ClothingShoeBaseHeelStocking
   id: ClothingShoesHeelsStockingsBlackWPlain 
   name: secretary heelstockings
   description: Heels with stockings. Meant to be worn together, they shape the legs just right—sharp, impossible to ignore once they're on.
@@ -135,19 +90,9 @@
     sprite: _DEN/Clothing/Shoes/Heels/blackheels_plainwhitestockings.rsi
   - type: Clothing
     sprite: _DEN/Clothing/Shoes/Heels/blackheels_plainwhitestockings.rsi
-  - type: FootstepModifier
-    footstepSoundCollection:
-      collection: FootstepHighHeels
-  - type: HideLayerClothing
-    force: true
-    slots:
-    - RFoot
-    - LFoot
-    - RLeg
-    - LLeg
 
 - type: entity
-  parent: ClothingShoesBaseButcherable
+  parent: ClothingShoeBaseHeelStocking
   id: ClothingShoesHeelsStockingsBlackBPlain
   name: lacive heelstockings
   description: Heels with stockings. Meant to be worn together, they shape the legs just right—sharp, impossible to ignore once they're on.
@@ -156,19 +101,9 @@
     sprite: _DEN/Clothing/Shoes/Heels/blackheels_plainblackstockings.rsi
   - type: Clothing
     sprite: _DEN/Clothing/Shoes/Heels/blackheels_plainblackstockings.rsi
-  - type: FootstepModifier
-    footstepSoundCollection:
-      collection: FootstepHighHeels
-  - type: HideLayerClothing
-    force: true
-    slots:
-    - RFoot
-    - LFoot
-    - RLeg
-    - LLeg
 
 - type: entity
-  parent: ClothingShoesBaseButcherable
+  parent: ClothingShoeBaseHeelStocking
   id: ClothingShoesHeelsStockingsWhiteWPlain
   name: all-white heelstockings
   description: Heels with stockings. Meant to be worn together, they shape the legs just right—sharp, impossible to ignore once they're on.
@@ -177,19 +112,9 @@
     sprite: _DEN/Clothing/Shoes/Heels/whiteheels_plainwhitestockings.rsi
   - type: Clothing
     sprite: _DEN/Clothing/Shoes/Heels/whiteheels_plainwhitestockings.rsi
-  - type: FootstepModifier
-    footstepSoundCollection:
-      collection: FootstepHighHeels
-  - type: HideLayerClothing
-    force: true
-    slots:
-    - RFoot
-    - LFoot
-    - RLeg
-    - LLeg
 
 - type: entity
-  parent: ClothingShoesBaseButcherable
+  parent: ClothingShoeBaseHeelStocking
   id: ClothingShoesHeelsStockingsWhiteBPlain
   name: office heelstockings
   description: Heels with stockings. Meant to be worn together, they shape the legs just right—sharp, impossible to ignore once they're on.
@@ -198,13 +123,4 @@
     sprite: _DEN/Clothing/Shoes/Heels/whiteheels_plainblackstockings.rsi
   - type: Clothing
     sprite: _DEN/Clothing/Shoes/Heels/whiteheels_plainblackstockings.rsi
-  - type: FootstepModifier
-    footstepSoundCollection:
-      collection: FootstepHighHeels
-  - type: HideLayerClothing
-    force: true
-    slots:
-    - RFoot
-    - LFoot
-    - RLeg
-    - LLeg
+ 
