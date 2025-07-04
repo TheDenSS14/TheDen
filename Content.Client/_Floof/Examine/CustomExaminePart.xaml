@@ -1,0 +1,61 @@
+<controls:CustomExaminePart
+    xmlns="https://spacestation14.io"
+    xmlns:controls="clr-namespace:Content.Client._Floof.Examine"
+    xmlns:graphics="clr-namespace:Robust.Client.Graphics;assembly=Robust.Client">
+
+    <PanelContainer>
+        <PanelContainer.PanelOverride>
+            <graphics:StyleBoxFlat BackgroundColor="#353540" />
+        </PanelContainer.PanelOverride>
+
+        <BoxContainer Orientation="Vertical" HorizontalExpand="True" Margin="5">
+            <Label Name="TitleLabel" HorizontalAlignment="Center"/>
+
+            <TextEdit
+                Name="Content"
+                HorizontalExpand="True"
+                SetHeight="150"
+                ToolTip="{Loc 'custom-exam-part-content-tooltip'}"
+                TooltipDelay="0.5"/>
+
+            <Label
+                Name="ContentLength"
+                Margin="2"
+                HorizontalAlignment="Right"
+                HorizontalExpand="True"/>
+
+            <CheckBox Name="NsfwCheckbox" Text="{Loc 'custom-exam-part-title-nsfw'}" />
+
+            <BoxContainer Orientation="Horizontal" HorizontalExpand="True">
+                <Label
+                    Text="{Loc 'custom-exam-title-distance'}"/>
+
+                <SpinBox
+                    Name="DistanceSpin"
+                    Value="20"
+                    HorizontalExpand="True"/>
+
+                <Button Text="?" Disabled="True" ToolTip="{Loc 'custom-exam-part-distance-tooltip'}" TooltipDelay="0.5"/>
+            </BoxContainer>
+
+            <BoxContainer Orientation="Horizontal" HorizontalExpand="True">
+                <Label Text="{Loc 'custom-exam-title-expiration'}"/>
+
+                <SpinBox
+                    Name="ExpirationSpin"
+                    Value="60"
+                    HorizontalExpand="True"/>
+
+                <Button Name="ExpirationHelpLabel" Text="?" Disabled="True" TooltipDelay="0.5"/>
+            </BoxContainer>
+
+            <Label
+                Name="ExpireTimeLeft"
+                Margin="2"
+                HorizontalAlignment="Right"/>
+
+            <Label Name="TextCounter" />
+        </BoxContainer>
+    </PanelContainer>
+
+</controls:CustomExaminePart>

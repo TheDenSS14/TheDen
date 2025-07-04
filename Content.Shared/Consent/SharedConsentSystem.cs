@@ -9,6 +9,8 @@ using Content.Shared.Mind.Components;
 using Content.Shared.Verbs;
 using Robust.Shared.Utility;
 using Robust.Shared.Network;
+using Robust.Shared.Prototypes;
+
 
 namespace Content.Shared.Consent;
 
@@ -50,5 +52,10 @@ public abstract partial class SharedConsentSystem : EntitySystem
     protected virtual FormattedMessage GetConsentText(NetUserId userId)
     {
         return new FormattedMessage();
+    }
+
+    public virtual bool HasConsent(Entity<MindContainerComponent?> ent, ProtoId<ConsentTogglePrototype> consentId)
+    {
+        return false; // Implemented only on server side, prediction is *just a week away*
     }
 }
