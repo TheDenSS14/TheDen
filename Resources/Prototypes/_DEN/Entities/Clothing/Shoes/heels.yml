@@ -4,8 +4,8 @@
 
 - type: entity
   abstract: true
-  id: ClothingShoeBaseHeelStocking
-  parent: ClothingShoeBaseButcherable
+  id: ClothingShoesBaseHeelStocking
+  parent: ClothingShoesBaseButcherable
   components:
   - type: FootstepModifier
     footstepSoundCollection: 
@@ -19,7 +19,7 @@
     - LLeg
 
 - type: entity
-  parent: ClothingShoeBaseHeelStocking
+  parent: ClothingShoesBaseHeelStocking
   id: ClothingShoesHeelsStockingsBlackBlack
   name: black gothic heelstockings
   description: Heels with stockings. Meant to be worn together, they shape the legs just right—sharp, impossible to ignore once they're on.
@@ -30,7 +30,7 @@
     sprite: _DEN/Clothing/Shoes/Heels/blackheels_blackstockings.rsi
 
 - type: entity
-  parent: ClothingShoeBaseHeelStocking
+  parent: ClothingShoesBaseHeelStocking
   id: ClothingShoesHeelsStockingsWhiteWhite
   name: white classic heelstockings
   description: Heels with stockings. Meant to be worn together, they shape the legs just right—sharp, impossible to ignore once they're on.
@@ -41,7 +41,7 @@
     sprite: _DEN/Clothing/Shoes/Heels/whiteheels_whitestockings.rsi
 
 - type: entity
-  parent: ClothingShoeBaseHeelStocking
+  parent: ClothingShoesBaseHeelStocking
   id: ClothingShoesHeelsStockingsWhiteBlack
   name: black cheerleader heelstockings
   description: Heels with stockings. Meant to be worn together, they shape the legs just right—sharp, impossible to ignore once they're on.
@@ -52,7 +52,7 @@
     sprite: _DEN/Clothing/Shoes/Heels/whiteheels_blackstockings.rsi
 
 - type: entity
-  parent: ClothingShoeBaseHeelStocking
+  parent: ClothingShoesBaseHeelStocking
   id: ClothingShoesHeelsStockingsBlackWhite
   name: white cheerleader heelstockings
   description: Heels with stockings. Meant to be worn together, they shape the legs just right—sharp, impossible to ignore once they're on.
@@ -63,7 +63,7 @@
     sprite: _DEN/Clothing/Shoes/Heels/blackheels_whitestockings.rsi
 
 - type: entity
-  parent: ClothingShoeBaseHeelStocking
+  parent: ClothingShoesBaseHeelStocking
   id: ClothingShoesHeelsStockingsBlackLatex
   name: black latex heelstockings
   description: Heels with stockings. Meant to be worn together, they shape the legs just right—sharp, impossible to ignore once they're on.
@@ -74,7 +74,7 @@
     sprite: _DEN/Clothing/Shoes/Heels/latexstockings_blackheels.rsi
 
 - type: entity
-  parent: ClothingShoeBaseHeelStocking
+  parent: ClothingShoesBaseHeelStocking
   id: ClothingShoesHeelsStockingsWhiteLatex
   name: white latex heelstockings
   description: Heels with stockings. Meant to be worn together, they shape the legs just right—sharp, impossible to ignore once they're on.
@@ -85,7 +85,7 @@
     sprite: _DEN/Clothing/Shoes/Heels/latexstockings_whiteheels.rsi
 
 - type: entity
-  parent: ClothingShoeBaseHeelStocking
+  parent: ClothingShoesBaseHeelStocking
   id: ClothingShoesHeelsStockingsBlackWPlain 
   name: secretary heelstockings
   description: Heels with stockings. Meant to be worn together, they shape the legs just right—sharp, impossible to ignore once they're on.
@@ -96,7 +96,7 @@
     sprite: _DEN/Clothing/Shoes/Heels/blackheels_plainwhitestockings.rsi
 
 - type: entity
-  parent: ClothingShoeBaseHeelStocking
+  parent: ClothingShoesBaseHeelStocking
   id: ClothingShoesHeelsStockingsBlackBPlain
   name: lacive heelstockings
   description: Heels with stockings. Meant to be worn together, they shape the legs just right—sharp, impossible to ignore once they're on.
@@ -107,7 +107,7 @@
     sprite: _DEN/Clothing/Shoes/Heels/blackheels_plainblackstockings.rsi
 
 - type: entity
-  parent: ClothingShoeBaseHeelStocking
+  parent: ClothingShoesBaseHeelStocking
   id: ClothingShoesHeelsStockingsWhiteWPlain
   name: all-white heelstockings
   description: Heels with stockings. Meant to be worn together, they shape the legs just right—sharp, impossible to ignore once they're on.
@@ -118,7 +118,7 @@
     sprite: _DEN/Clothing/Shoes/Heels/whiteheels_plainwhitestockings.rsi
 
 - type: entity
-  parent: ClothingShoeBaseHeelStocking
+  parent: ClothingShoesBaseHeelStocking
   id: ClothingShoesHeelsStockingsWhiteBPlain
   name: office heelstockings
   description: Heels with stockings. Meant to be worn together, they shape the legs just right—sharp, impossible to ignore once they're on.
