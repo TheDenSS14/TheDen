@@ -35,7 +35,6 @@
       - id: Ointment
       - id: Gauze
       - id: PillCanisterTricordrazine
-      - id: PillCanisterGranibitulari # Funkychem
       # see https://github.com/tgstation/blob/master/code/game/objects/items/storage/firstaid.dm for example contents
 
 - type: entity
@@ -47,8 +46,8 @@
     contents:
       - id: Ointment
         amount: 2
-      - id: PillCanisterAiuri # Funkychem
-      - id: PillCanisterLenturi # funky
+      - id: PillCanisterKelotane
+      - id: PillCanisterDermaline
 
 - type: entity
   id: MedkitBruteFilled
@@ -59,10 +58,8 @@
     contents:
       - id: Brutepack
       - id: Gauze
-      - id: SyringeSaline # Funkychem - Handles the fact there's too many species blood types AND 10x more effective.
-        amount: 2
-      - id: PillCanisterLibital # Funkychem
-      - id: PillCanisterProbital # funky
+      - id: PillCanisterIron
+      - id: PillCanisterCopper
 
 - type: entity
   id: MedkitToxinFilled
@@ -74,8 +71,7 @@
       - id: SyringeIpecac
       - id: SyringeEthylredoxrazine
       - id: AntiPoisonMedipen
-        amount: 2 # Funkychem
-      - id: PillCanisterMultiver
+      - id: PillCanisterDylovene
       - id: PillCanisterCharcoal
 
 - type: entity
@@ -88,10 +84,7 @@
       - id: ClothingMaskBreathMedical
       - id: EmergencyOxygenTankFilled
       - id: EmergencyMedipen
-        amount: 2 # Funkychem
-   #   - id: SyringeInaprovaline
-      - id: SyringeConvermol # Funkychem - only kit to have 1 pill type, generally makes sense to have 2.
-        amount: 2
+      - id: SyringeInaprovaline
       - id: PillCanisterDexalin
 
 - type: entity
@@ -103,7 +96,6 @@
     contents:
       - id: SyringePhalanximine
       - id: RadAutoInjector
-        amount: 1 # Funkychem
       - id: PillCanisterPotassiumIodide
       - id: PillCanisterHyronalin
 
@@ -117,8 +109,6 @@
       - id: MedicatedSuture
       - id: RegenerativeMesh
       - id: Bloodpack
-        amount: 1
-      - id: SyringeSaline # Funky
         amount: 2
 
 - type: entity
@@ -130,9 +120,7 @@
     contents:
       - id: MedicatedSuture
       - id: RegenerativeMesh
-      - id: SyringeRevivopine # Funkychem
-        amount: 1
-      - id: SyringeSaline
+      - id: SyringeEphedrine
       - id: BruteAutoInjector
       - id: BurnAutoInjector
       - id: EmergencyMedipen
