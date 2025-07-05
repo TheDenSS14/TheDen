@@ -1,30 +1,31 @@
-// SPDX-FileCopyrightText: 2022 EmoGarbage404
-// SPDX-FileCopyrightText: 2022 Flipp Syder
-// SPDX-FileCopyrightText: 2022 Moony
-// SPDX-FileCopyrightText: 2022 Nemanja
-// SPDX-FileCopyrightText: 2022 Paul Ritter
-// SPDX-FileCopyrightText: 2022 Rane
-// SPDX-FileCopyrightText: 2022 T-Stalker
-// SPDX-FileCopyrightText: 2022 ZeroDayDaemon
-// SPDX-FileCopyrightText: 2022 mirrorcult
-// SPDX-FileCopyrightText: 2022 wrexbe
-// SPDX-FileCopyrightText: 2023 Adrian16199
-// SPDX-FileCopyrightText: 2023 Colin-Tel
-// SPDX-FileCopyrightText: 2023 DrSmugleaf
-// SPDX-FileCopyrightText: 2023 Fluffiest Floofers
-// SPDX-FileCopyrightText: 2023 PHCodes
-// SPDX-FileCopyrightText: 2023 Visne
-// SPDX-FileCopyrightText: 2024 Aiden
-// SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT
-// SPDX-FileCopyrightText: 2024 Errant
-// SPDX-FileCopyrightText: 2024 FoxxoTrystan
-// SPDX-FileCopyrightText: 2024 Memeji
-// SPDX-FileCopyrightText: 2024 Timemaster99
-// SPDX-FileCopyrightText: 2024 VMSolidus
-// SPDX-FileCopyrightText: 2024 metalgearsloth
-// SPDX-FileCopyrightText: 2025 Blitz
-// SPDX-FileCopyrightText: 2025 Skubman
-// SPDX-FileCopyrightText: 2025 sleepyyapril
+// SPDX-FileCopyrightText: 2022 EmoGarbage404 <98561806+EmoGarbage404@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 Flipp Syder <76629141+vulppine@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 Moony <moonheart08@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 Paul Ritter <ritter.paul1@googlemail.com>
+// SPDX-FileCopyrightText: 2022 Rane <60792108+Elijahrane@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 T-Stalker <43253663+DogZeroX@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 ZeroDayDaemon <60460608+ZeroDayDaemon@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 metalgearsloth <comedian_vs_clown@hotmail.com>
+// SPDX-FileCopyrightText: 2022 mirrorcult <lunarautomaton6@gmail.com>
+// SPDX-FileCopyrightText: 2022 wrexbe <81056464+wrexbe@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Adrian16199 <144424013+Adrian16199@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Colin-Tel <113523727+Colin-Tel@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Fluffiest Floofers <thebluewulf@gmail.com>
+// SPDX-FileCopyrightText: 2023 PHCodes <47927305+PHCodes@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Visne <39844191+Visne@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Aiden <aiden@djkraz.com>
+// SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT <77995199+DEATHB4DEFEAT@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Errant <35878406+errant-4@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 FoxxoTrystan <45297731+FoxxoTrystan@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Memeji <greyalphawolf7@gmail.com>
+// SPDX-FileCopyrightText: 2024 Timemaster99 <57200767+Timemaster99@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 VMSolidus <evilexecutive@gmail.com>
+// SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Blitz <73762869+BlitzTheSquishy@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Skubman <ba.fallaria@gmail.com>
+// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -169,7 +170,7 @@ public sealed partial class SpeciesPrototype : IPrototype
     ///     The minimum height for this species
     /// </summary>
     [DataField]
-    public float MinHeight = 0.6f;
+    public float MinHeight = 0.75f;
 
     /// <summary>
     ///     The default height for this species
@@ -181,13 +182,13 @@ public sealed partial class SpeciesPrototype : IPrototype
     ///     The maximum height for this species
     /// </summary>
     [DataField]
-    public float MaxHeight = 1.7f;
+    public float MaxHeight = 1.25f;
 
     /// <summary>
     ///     The minimum width for this species
     /// </summary>
     [DataField]
-    public float MinWidth = 0.6f;
+    public float MinWidth = 0.7f;
 
     /// <summary>
     ///     The default width for this species
@@ -199,7 +200,7 @@ public sealed partial class SpeciesPrototype : IPrototype
     ///     The maximum width for this species
     /// </summary>
     [DataField]
-    public float MaxWidth = 1.7f;
+    public float MaxWidth = 1.3f;
 
     /// <summary>
     ///     The average height in centimeters for this species, used to calculate player facing height values in UI elements
