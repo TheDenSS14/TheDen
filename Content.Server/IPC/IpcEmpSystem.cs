@@ -1,3 +1,7 @@
+// SPDX-FileCopyrightText: 2025 BlitzTheSquishy
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Content.Server.Emp;
 using Content.Server.Ipc;
 using Content.Server.Stunnable;
