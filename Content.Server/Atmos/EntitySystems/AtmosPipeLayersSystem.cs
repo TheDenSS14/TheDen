@@ -1,3 +1,8 @@
+// SPDX-FileCopyrightText: 2025 ArtisticRoomba
+// SPDX-FileCopyrightText: 2025 chromiumboy
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Content.Server.Atmos.Components;
 using Content.Server.NodeContainer;
 using Content.Server.NodeContainer.EntitySystems;
