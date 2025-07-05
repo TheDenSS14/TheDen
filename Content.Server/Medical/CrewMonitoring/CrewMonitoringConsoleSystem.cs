@@ -13,7 +13,9 @@
 // SPDX-FileCopyrightText: 2025 Aiden
 // SPDX-FileCopyrightText: 2025 Baptr0b0t
 // SPDX-FileCopyrightText: 2025 GoobBot
+// SPDX-FileCopyrightText: 2025 Quanteey
 // SPDX-FileCopyrightText: 2025 Ted Lukin
+// SPDX-FileCopyrightText: 2025 Vanessa Louwagie
 // SPDX-FileCopyrightText: 2025 pheenty
 // SPDX-FileCopyrightText: 2025 sleepyyapril
 //
