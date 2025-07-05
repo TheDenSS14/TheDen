@@ -13,7 +13,7 @@
 
 - type: entity
   id: XenoVents
-  parent: BaseGameRule
+  parent: BaseVentCritterSpawn
   categories: [ HideSpawnMenu ]
   components:
   - type: StationEvent
@@ -21,9 +21,11 @@
     earliestStart: 15
     reoccurrenceDelay: 12
     minimumPlayers: 10
-    weight: 6 # Really weak compared to other critters
+    weight: 8 # Really weak compared to other critters
     duration: 30
   - type: VentCrittersRule
+    specialEntries:
+      - id: MobXenoPraetorian
     table: !type:GroupSelector # DeltaV: EntityTable instead of spawn entries
       children:
       - id: MobXeno
@@ -47,7 +49,7 @@
 - type: entity
   id: XenoVentsWeak
   parent: XenoVents
-  categories: [ HideSpawnMenu ]
+  # categories: [ HideSpawnMenu ]
   components:
   - type: StationEvent
     startAnnouncement: true
@@ -55,6 +57,8 @@
     minimumPlayers: 1
     duration: 30
   - type: VentCrittersRule
+    specialEntries:
+      - id: MobXenoDrone
     table: !type:GroupSelector # DeltaV: EntityTable instead of spawn entries
       children:
       - id: MobXeno

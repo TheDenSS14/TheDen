@@ -307,8 +307,26 @@
   - type: MeteorSwarmRule
 
 - type: entity
-  id: MothroachSpawn
+  id: BaseVentCritterSpawn
+  abstract: true
   parent: BaseGameRule
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: StationEvent
+    earliestStart: 5
+    minimumPlayers: 1
+    weight: 8
+    duration: 30
+  - type: TriggerOnSpawn
+  - type: SmokeOnTrigger
+    duration: 31
+    spreadAmount: 30
+  - type: SoundOnTrigger
+    sound: /Audio/Effects/smoke.ogg
+
+- type: entity
+  id: MothroachSpawn
+  parent: BaseVentCritterSpawn
   categories: [ HideSpawnMenu ]
   components:
   - type: StationEvent
@@ -324,14 +342,14 @@
 
 - type: entity
   id: MouseMigration
-  parent: BaseGameRule
+  parent: BaseVentCritterSpawn
   categories: [ HideSpawnMenu ]
   components:
   - type: StationEvent
     startAnnouncement: true
     startDelay: 10
     earliestStart: 15
-    weight: 3
+    weight: 6
     duration: 50
   - type: VentCrittersRule
     table: !type:GroupSelector # DeltaV: EntityTable instead of spawn entries
@@ -352,14 +370,14 @@
 
 - type: entity
   id: RoingusMigration
-  parent: BaseGameRule
+  parent: BaseVentCritterSpawn
   categories: [ HideSpawnMenu ]
   components:
   - type: StationEvent
     startAnnouncement: true
     startDelay: 10
     earliestStart: 15
-    weight: 6
+    weight: 3
     duration: 50
   - type: VentCrittersRule
     table: !type:GroupSelector # DeltaV: EntityTable instead of spawn entries
@@ -369,7 +387,7 @@
 
 - type: entity
   id: CockroachMigration
-  parent: BaseGameRule
+  parent: BaseVentCritterSpawn
   categories: [ HideSpawnMenu ]
   components:
   - type: StationEvent
@@ -387,7 +405,7 @@
 
 - type: entity
   id: SnailMigrationLowPop
-  parent: BaseGameRule
+  parent: BaseVentCritterSpawn
   categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
   - type: StationEvent
@@ -405,7 +423,7 @@
 
 - type: entity
   id: SnailMigration
-  parent: BaseStationEventShortDelay
+  parent: BaseVentCritterSpawn
   categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
   - type: StationEvent
@@ -498,7 +516,7 @@
 
 - type: entity
   id: SlimesSpawn
-  parent: BaseGameRule
+  parent: BaseVentCritterSpawn
   categories: [ HideSpawnMenu ]
   components:
   - type: StationEvent
@@ -506,7 +524,7 @@
     startDelay: 10
     earliestStart: 20
     minimumPlayers: 15
-    weight: 5
+    weight: 7
     duration: 30 # DeltaV: was 60, used as a delay now
   - type: VentCrittersRule
     table: !type:GroupSelector # DeltaV: EntityTable instead of spawn entries
@@ -517,13 +535,13 @@
 
 - type: entity
   id: SnakeSpawn
-  parent: BaseStationEventShortDelay
+  parent: BaseVentCritterSpawn
   components:
   - type: StationEvent
     startAnnouncement: true
     earliestStart: 20
     minimumPlayers: 15
-    weight: 5
+    weight: 7
     duration: 30 # DeltaV: was 60, used as a delay now
   - type: VentCrittersRule
     table: !type:GroupSelector # DeltaV: EntityTable instead of spawn entries
@@ -534,7 +552,7 @@
 
 - type: entity
   id: SpiderSpawn
-  parent: BaseGameRule
+  parent: BaseVentCritterSpawn
   categories: [ HideSpawnMenu ]
   components:
   - type: StationEvent
@@ -542,7 +560,7 @@
     startDelay: 10
     earliestStart: 20
     minimumPlayers: 15
-    weight: 5
+    weight: 7
     duration: 30 # DeltaV: was 60, used as a delay now
   - type: VentCrittersRule
     table: !type:GroupSelector # DeltaV: EntityTable instead of spawn entries
@@ -551,14 +569,14 @@
 
 - type: entity
   id: SpiderClownSpawn
-  parent: BaseGameRule
+  parent: BaseVentCritterSpawn
   categories: [ HideSpawnMenu ]
   components:
   - type: StationEvent
     startAnnouncement: true
     earliestStart: 30 # funkystation delay
     minimumPlayers: 30 # DeltaV - was 20
-    weight: 1 # DeltaV - was 1.5
+    weight: 2 # DeltaV - was 1.5
     duration: 30 # DeltaV: was 60, used as a delay now
   - type: VentCrittersRule
     table: !type:GroupSelector # DeltaV: EntityTable instead of spawn entries

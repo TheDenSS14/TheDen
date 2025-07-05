@@ -7,7 +7,7 @@
 
 - type: entity
   id: ArgocyteVents
-  parent: BaseGameRule
+  parent: BaseVentCritterSpawn
   categories: [ HideSpawnMenu ]
   components:
   - type: StationEvent
@@ -15,9 +15,11 @@
     earliestStart: 20
     reoccurrenceDelay: 12
     minimumPlayers: 35
-    weight: 6 # Really weak compared to other critters
+    weight: 7 # Really weak compared to other critters
     duration: 30
   - type: VentCrittersRule
+    specialEntries:
+      - id: MobArgocyteFounder
     table: !type:GroupSelector # DeltaV: EntityTable instead of spawn entries
       children:
       - id: MobArgocyteBarrier
@@ -53,7 +55,7 @@
     earliestStart: 20
     reoccurrenceDelay: 12
     minimumPlayers: 20
-    weight: 6 # Really weak compared to other critters
+    weight: 8 # Really weak compared to other critters
     duration: 30
   - type: VentCrittersRule
     table: !type:GroupSelector # DeltaV: EntityTable instead of spawn entries
@@ -75,7 +77,7 @@
 
 - type: entity
   id: TickVents
-  parent: BaseGameRule
+  parent: BaseVentCritterSpawn
   categories: [ HideSpawnMenu ]
   components:
   - type: StationEvent
@@ -93,7 +95,7 @@
 
 - type: entity
   id: CarpVents
-  parent: BaseGameRule
+  parent: BaseVentCritterSpawn
   categories: [ HideSpawnMenu ]
   components:
   - type: StationEvent
@@ -101,9 +103,11 @@
     earliestStart: 20
     reoccurrenceDelay: 12
     minimumPlayers: 30
-    weight: 6 # Really weak compared to other critters
+    weight: 8 # Really weak compared to other critters
     duration: 30
   - type: VentCrittersRule
+    specialEntries:
+      - id: MobShark
     table: !type:GroupSelector # DeltaV: EntityTable instead of spawn entries
       children:
       - id: MobCarp
@@ -129,8 +133,13 @@
     earliestStart: 20
     reoccurrenceDelay: 12
     minimumPlayers: 20
-    weight: 6 # Really weak compared to other critters
+    weight: 7 # Really weak compared to other critters
     duration: 30
+  - type: SoundOnTrigger
+    removeOnTrigger: true
+    sound:
+      path: /Audio/_DEN/VentCritters/vent_xeno.ogg
+      volume: 5
   - type: VentCrittersRule
     table: !type:GroupSelector # DeltaV: EntityTable instead of spawn entries
       children:
@@ -145,7 +154,7 @@
 
 - type: entity
   id: SpaceVents
-  parent: BaseGameRule
+  parent: BaseVentCritterSpawn
   categories: [ HideSpawnMenu ]
   components:
   - type: StationEvent
@@ -153,7 +162,7 @@
     earliestStart: 20
     reoccurrenceDelay: 12
     minimumPlayers: 35
-    weight: 6 # Really weak compared to other critters
+    weight: 7 # Really weak compared to other critters
     duration: 30
   - type: VentCrittersRule
     table: !type:GroupSelector # DeltaV: EntityTable instead of spawn entries
