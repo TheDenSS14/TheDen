@@ -7054,3 +7054,177 @@ Entries:
   id: 662
   time: '2025-07-04T06:00:02.0000000+00:00'
   url: https://github.com/TheDenSS14/TheDen/pull/968
+- author: portfiend
+  changes:
+    - type: Fix
+      message: Skeletons can now offer and receive items.
+  id: 663
+  time: '2025-07-04T06:24:14.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/963
+- author: ArtisticRoomba
+  changes:
+    - type: Tweak
+      message: >-
+        Tesla coils can now hold a max capacity of 5 MJ, and receive 5 MJ of
+        energy when struck by lightning.
+    - type: Tweak
+      message: >-
+        Tesla coils can now only output a maximum of 350 kW to the grid. This
+        was done to make power flow smoother (it was triggering epilepsy in
+        extreme circumstances).
+    - type: Fix
+      message: >-
+        The TEG now outputs smoother power when pressure across the circulators
+        flutter. (This was causing epilepsy in extreme circumstances).
+  id: 664
+  time: '2025-07-04T07:34:48.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/971
+- author: sleepyyapril
+  changes:
+    - type: Tweak
+      message: All species have the same minimum and maximum height and width.
+  id: 665
+  time: '2025-07-04T07:35:00.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/970
+- author: mart33no
+  changes:
+    - type: Tweak
+      message: Disposal units can be flushed via signal
+  id: 666
+  time: '2025-07-04T14:07:53.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/979
+- author: sleepyyapril
+  changes:
+    - type: Remove
+      message: Removed FunkyChem. See PR for an explanation.
+  id: 667
+  time: '2025-07-04T22:52:00.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/978
+- author: IAmNotGray
+  changes:
+    - type: Add
+      message: >-
+        (TORTUGA) Atmospherics now has a plasma miner, and a LOT more space for
+        storing gas!
+    - type: Tweak
+      message: >-
+        (TORTUGA) Tweaked a few rooms to make them look as good as other areas
+        of the station.
+    - type: Fix
+      message: >-
+        (TORTUGA) A few disposal/decal issues have been fixed. Remember, you
+        should come to Tortuga's mapping thread with any issues the station may
+        have, or for your own greivances!
+  id: 668
+  time: '2025-07-05T00:00:19.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/967
+- author: sleepyyapril
+  changes:
+    - type: Add
+      message: >-
+        Re-added salbutamol, oxandrolone, pentetic acid, granibitulari,
+        convermol, salicylic acid, deunomia
+    - type: Add
+      message: >-
+        Re-added liquid exotium, stasicillin, negacordrazine, stabilised
+        stimulants, and revivopine.
+  id: 669
+  time: '2025-07-05T01:22:25.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/984
+- author: Deathninja5551
+  changes:
+    - type: Fix
+      message: Gave Vox their poison recovery back.
+  id: 670
+  time: '2025-07-05T01:28:53.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/976
+- author: portfiend
+  changes:
+    - type: Fix
+      message: Skewers now Work Properly and you're gonna have to take my word for it.
+  id: 671
+  time: '2025-07-05T01:29:12.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/980
+- author: KyuPolaris
+  changes:
+    - type: Fix
+      message: Fixed the Awoosue (awoo appearing in emote wheels/menus for non-awooers)
+    - type: Fix
+      message: >-
+        Awoo and Howl can now be triggered with simply just the emote "howl" or
+        "awoo" for precedent with other emotes
+    - type: Add
+      message: Added some arachnid emotes to Arachne, embrace the spider
+    - type: Add
+      message: Added bark and howl to Kitsune
+    - type: Tweak
+      message: Nerfed Gekker (-7 db)
+  id: 672
+  time: '2025-07-05T01:30:47.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/953
+- author: sleepyyapril
+  changes:
+    - type: Add
+      message: >-
+        Crew can opt in to being the Kill or Teach target of Traitors, or even
+        outright remove themself from being one.
+  id: 673
+  time: '2025-07-05T01:38:25.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/985
+- author: sleepyyapril
+  changes:
+    - type: Fix
+      message: Salbutamol now has a proper recipe.
+  id: 674
+  time: '2025-07-05T04:43:47.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/988
+- author: BlitzTheSquishy
+  changes:
+    - type: Add
+      message: Readd the welding fuel to the chem dispenser and chemvend
+  id: 675
+  time: '2025-07-05T04:44:03.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/987
+- author: BlitzTheSquishy
+  changes:
+    - type: Tweak
+      message: >-
+        Antag Mark roles (those for antags) have been tweaked so that they are
+        mutually exclusive.
+    - type: Tweak
+      message: >-
+        Command, Dignitaries and Security are now never under the purview of
+        being protected by the syndicate due to increased loyalty to NT
+    - type: Tweak
+      message: >-
+        By default all players are eligible to be target of "Teach a lesson"
+        objectives
+  id: 676
+  time: '2025-07-05T06:38:19.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/991
+- author: sleepyyapril
+  changes:
+    - type: Add
+      message: >-
+        You can now add visual descriptions to your character in-game by
+        clicking on your character or by using the right click menu and
+        selecting "custom examine". This works on all entities that can
+        consciously perform actions.
+    - type: Add
+      message: >-
+        The game will now show a disclaimer about requiring you to be 18 to
+        play. Accepting this only means you consent to being 18 or older.
+    - type: Tweak
+      message: >-
+        Added health information to the default examine window, so more people
+        see how wounded you are.
+  id: 677
+  time: '2025-07-05T07:17:43.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/993
+- author: sleepyyapril
+  changes:
+    - type: Fix
+      message: Fixed Barrier being unplayable.
+  id: 678
+  time: '2025-07-05T07:17:57.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/992

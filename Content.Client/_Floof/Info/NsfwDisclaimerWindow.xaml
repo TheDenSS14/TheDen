@@ -1,0 +1,16 @@
+<controls:FancyWindow xmlns="https://spacestation14.io"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls"
+    Title="{Loc 'nsfw-disclaimer-title'}"
+    MinSize="200 200"
+    MaxWidth="500">
+
+    <BoxContainer Orientation="Vertical" HorizontalExpand="True" Margin="4 4 4 4">
+        <RichTextLabel Name="DisclaimerText" Text="{Loc 'nsfw-disclaimer-text'}"/>
+
+        <BoxContainer Orientation="Horizontal" HorizontalExpand="True" HorizontalAlignment="Right" Margin="0 4 0 0">
+            <Button Name="DeclineButton" Text="{Loc 'nsfw-disclaimer-decline'}" StyleClasses="OpenRight"/>
+            <Button Name="AcceptButton" Text="{Loc 'nsfw-disclaimer-accept'}" StyleClasses="OpenLeft"/>
+        </BoxContainer>
+    </BoxContainer>
+</controls:FancyWindow>

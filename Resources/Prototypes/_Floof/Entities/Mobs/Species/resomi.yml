@@ -11,6 +11,7 @@
 # SPDX-FileCopyrightText: 2025 VMSolidus
 # SPDX-FileCopyrightText: 2025 Zac1107
 # SPDX-FileCopyrightText: 2025 chly
+# SPDX-FileCopyrightText: 2025 portfiend
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
@@ -45,7 +46,6 @@
       sprite: _Floof/Mobs/Effects/onfire.rsi
       normalState: Resomi_minor_burning
       alternateState: Resomi_burning
-    - type: OfferItem
     - type: LayingDown
     - type: BloodstreamAffectedByMass
       power: 0.6
