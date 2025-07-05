@@ -60,7 +60,7 @@
     strippingWindowPos: 0,1
     displayName: Neck
     offset: 0.015624, -0.0625
-
+# Used by the service borg due to it having an odd number of horizontal pixels, leading to mantles and other neck items appearing shifted on their sprites.
 - type: inventoryTemplate
   id: borgTallOddNumHorizontalPixels
   slots:
