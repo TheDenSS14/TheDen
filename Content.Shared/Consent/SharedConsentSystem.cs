@@ -1,5 +1,6 @@
-// SPDX-FileCopyrightText: 2024 Pierson Arnold <greyalphawolf7@gmail.com>
-// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Pierson Arnold
+// SPDX-FileCopyrightText: 2025 Mnemotechnican
+// SPDX-FileCopyrightText: 2025 sleepyyapril
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -9,6 +10,8 @@ using Content.Shared.Mind.Components;
 using Content.Shared.Verbs;
 using Robust.Shared.Utility;
 using Robust.Shared.Network;
+using Robust.Shared.Prototypes;
+
 
 namespace Content.Shared.Consent;
 
@@ -50,5 +53,10 @@ public abstract partial class SharedConsentSystem : EntitySystem
     protected virtual FormattedMessage GetConsentText(NetUserId userId)
     {
         return new FormattedMessage();
+    }
+
+    public virtual bool HasConsent(Entity<MindContainerComponent?> ent, ProtoId<ConsentTogglePrototype> consentId)
+    {
+        return false; // Implemented only on server side, prediction is *just a week away*
     }
 }

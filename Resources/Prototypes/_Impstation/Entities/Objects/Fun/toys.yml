@@ -1,0 +1,202 @@
+# SPDX-FileCopyrightText: 2025 hivehum
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  parent: BasePlushie
+  id: PlushieUrsaMinor
+  name: ursa minor plushie
+  description: You get the feeling that this plushie is higher ranked than you.
+  components:
+  - type: Sprite
+    sprite: _Impstation/Objects/Fun/toys.rsi
+    state: minor
+  - type: FlavorProfile
+    flavors:
+    - stardust
+
+- type: entity
+  parent: BasePlushie
+  id: PlushieBug
+  name: bug plushie
+  description: What the hell is this ugly thing? Better throw it away.
+  components:
+  - type: Sprite
+    sprite: _Impstation/Objects/Fun/toys.rsi
+    state: plushie_bug
+  - type: EmitSoundOnUse
+    sound:
+      path: /Audio/Voice/Arachnid/arachnid_scream.ogg #YAY!!!
+  - type: EmitSoundOnLand
+    sound:
+      path: /Audio/Voice/Arachnid/arachnid_scream.ogg
+  - type: EmitSoundOnActivate
+    sound:
+      path: /Audio/Voice/Arachnid/arachnid_scream.ogg
+  - type: EmitSoundOnTrigger
+    sound:
+      path: /Audio/Voice/Arachnid/arachnid_scream.ogg
+  - type: EmitSoundOnCollide
+    sound:
+      path: /Audio/Voice/Arachnid/arachnid_scream.ogg
+  - type: MeleeWeapon
+    soundHit:
+      path: /Audio/Voice/Arachnid/arachnid_scream.ogg
+  - type: Item
+    sprite: _Impstation/Objects/Fun/toys.rsi
+    inhandVisuals:
+      left:
+      - state: plushie_bug-inhand-left
+      right:
+      - state: plushie_bug-inhand-right
+  - type: Food
+    requiresSpecialDigestion: false
+    useSound:
+      path: /Audio/Voice/Arachnid/arachnid_scream.ogg #OW!!! OWIE!!
+  - type: FlavorProfile
+    flavors:
+    - whimsy
+  - type: Extractable
+    grindableSolutionName: bugblood #AUUUUH!!!!!!
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 10
+        reagents:
+        - ReagentId: HeartbreakerToxin #anti-mice countermeasures
+          Quantity: 10
+      bugblood:
+        maxVol: 10
+        reagents:
+        - ReagentId: CopperBlood
+          Quantity: 10
+  - type: Clothing
+    quickEquip: false
+    sprite: _Impstation/Objects/Fun/toys.rsi
+    equippedPrefix: bug
+    slots:
+    - HEAD
+    clothingVisuals:
+      head:
+      - state: bug-equipped-HELMET
+        offset: "0, 0.06"
+
+- type: entity
+  parent: BasePlushie
+  id: PlushieGiantBear
+  name: ursa massive plushie
+  description: If I have to carry this for one second longer I might die.
+  components:
+  - type: Sprite
+    sprite: _Impstation/Objects/Fun/toys.rsi
+    state: giantbearplush
+  - type: Item
+    size: Large
+    sprite: _Impstation/Objects/Fun/toys.rsi
+    inhandVisuals:
+      left:
+      - state: giantbearplush-inhand
+      right:
+      - state: giantbearplush-inhand
+  - type: EmitSoundOnUse
+    sound:
+      path: /Audio/Animals/bear.ogg
+  - type: EmitSoundOnLand
+    sound:
+      path: /Audio/Animals/bear.ogg
+  - type: MeleeWeapon
+    soundHit:
+      path: /Audio/Weapons/Xeno/alien_claw_flesh3.ogg
+  - type: HeldSpeedModifier
+    walkModifier: 0.5
+    sprintModifier: 0.5
+  - type: DamageOtherOnHit # if you get hit by this you deserve it
+    damage:
+      types:
+        Blunt: 15
+    soundHit: /Audio/Animals/bear.ogg
+    staminaCost: 50
+  - type: MultiHandedItem
+
+- type: entity
+  parent: BasePlushie
+  id: PlushieDoll
+  name: sentimental ragdoll
+  description: A cute little ragdoll! Aw, it even has buttons for eyes...
+  components:
+  - type: Sprite
+    sprite: _Impstation/Objects/Fun/toys.rsi
+    state: doll_base
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: doll_base-inhand-left
+      right:
+      - state: doll_base-inhand-right
+
+- type: entity
+  parent: BasePlushie
+  id: PlushieDollHair
+  name: sentimental doll
+  description: Make sure to brush its hair and tuck it into bed every night.
+  components:
+  - type: Sprite
+    sprite: _Impstation/Objects/Fun/toys.rsi
+    state: doll_hair
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: doll_hair-inhand-left
+      right:
+      - state: doll_hair-inhand-right
+
+- type: entity
+  parent: [ BasePlushie, BaseHandheldInstrument ]
+  id: PlushieDwarf
+  name: dwarf plushie?
+  description: You can hear a faint whistling from the inside. #alternate description: It's a stone plushie. You didn't make it.
+  components:
+  - type: Sprite
+    sprite: _Impstation/Objects/Fun/toys.rsi
+    layers:
+    - state: plushie_dwarf
+    - state: plushie_dwarf_unshaded
+      shader: unshaded
+  - type: PointLight
+    radius: 1.2
+    color: "#00CCFF"
+  - type: Instrument
+    program: 75
+  - type: EmitSoundOnLand
+    sound:
+      path: /Audio/Effects/break_stone.ogg
+  - type: EmitSoundOnCollide
+    sound:
+      path: /Audio/Effects/break_stone.ogg
+  - type: MeleeWeapon
+    wideAnimationRotation: -135
+    attackRate: 1
+    damage:
+      types:
+        Blunt: 3
+    soundHit:
+      path: /Audio/Effects/break_stone.ogg
+  - type: DamageOtherOnHit
+    damage:
+      types:
+        Blunt: 6
+    soundHit:
+      collection: Ronck
+  - type: Tag
+    tags:
+    - WoodwindInstrument
+
+- type: entity
+  parent: BasePlushie
+  id: PlushieGriffy
+  name: griffy plushie
+  description: A plush version of Griffy, The Sec Safety Dog! Made of the recycled scraps from Griffy performers that have fallen in the line of duty.
+  components:
+  - type: Sprite
+    sprite: _Impstation/Objects/Fun/toys.rsi
+    state: plushie_mascotgriffy

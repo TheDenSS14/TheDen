@@ -1,5 +1,6 @@
-// SPDX-FileCopyrightText: 2024 Pierson Arnold <greyalphawolf7@gmail.com>
-// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Pierson Arnold
+// SPDX-FileCopyrightText: 2025 Mnemotechnican
+// SPDX-FileCopyrightText: 2025 sleepyyapril
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -31,7 +32,7 @@ public sealed class ConsentSystem : SharedConsentSystem
         return message;
     }
 
-    public bool HasConsent(Entity<MindContainerComponent?> ent, ProtoId<ConsentTogglePrototype> consentId)
+    public override bool HasConsent(Entity<MindContainerComponent?> ent, ProtoId<ConsentTogglePrototype> consentId)
     {
         if (!Resolve(ent, ref ent.Comp)
             || _serverMindSystem.GetMind(ent, ent) is not { } mind)

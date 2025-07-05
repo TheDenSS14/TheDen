@@ -12,8 +12,6 @@
 # SPDX-FileCopyrightText: 2025 MajorMoth
 # SPDX-FileCopyrightText: 2025 Raikyr0
 # SPDX-FileCopyrightText: 2025 Rosycup
-# SPDX-FileCopyrightText: 2025 Rosycup <***>
-# SPDX-FileCopyrightText: 2025 Rosycup <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>
 # SPDX-FileCopyrightText: 2025 SX-7
 # SPDX-FileCopyrightText: 2025 Sapphire
 # SPDX-FileCopyrightText: 2025 Skubman
@@ -587,6 +585,10 @@
   category: TraitsPhysicalAugmentations
   points: -6
   requirements:
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - BionicArmNoVisuals
     - !type:CharacterJobRequirement
       inverted: true
       jobs:
@@ -608,6 +610,36 @@
         - description: examine-bionic-arm-message
           fontSize: 12
           requireDetailRange: true
+
+- type: trait
+  id: BionicArmNoVisuals
+  category: TraitsPhysicalAugmentations
+  points: -6
+  requirements:
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - BionicArm
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Prisoner # Bionics should be "Confiscated" from long term prisoners.
+        - Gladiator
+  functions:
+    - !type:TraitPushDescription
+      descriptionExtensions:
+        - description: examine-bionic-arm-message
+          fontSize: 12
+          requireDetailRange: true
+    - !type:TraitAddComponentToBodyPart
+      parts:
+      - Arm
+      components:
+      - type: Prying
+        speedModifier: 1.5
+        pryPowered: true
+      - type: UseDelay # For insta prying
+        delay: 1
 
 - type: trait
   id: PlateletFactories
@@ -961,6 +993,7 @@
       inverted: true
       traits:
         - WheelchairBound
+        - BionicLegNoVisuals
     - !type:CharacterSpeciesRequirement
       inverted: true
       species:
@@ -981,6 +1014,44 @@
       partSymmetry: Right
       protoId: SpeedRightLeg
       slotId: "right leg"
+
+- type: trait
+  id: BionicLegNoVisuals
+  category: TraitsPhysicalAugmentations
+  points: -8
+  requirements:
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Prisoner # Bionics should be "Confiscated" from long term prisoners.
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - WheelchairBound
+        - BionicLeg
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Arachne
+  functions:
+    - !type:TraitAddComponentToBodyPart
+      parts:
+      - Leg
+      components:
+      - type: MovementBodyPart
+        walkSpeed: 3.125
+        sprintSpeed: 5.625
+      - type: StepTriggerImmune
+        whitelist:
+          types:
+          - Shard
+          - Mousetrap
+          - SlipEntity
+    - !type:TraitPushDescription
+      descriptionExtensions:
+        - description: examine-bionic-leg-message
+          fontSize: 12
+          requireDetailRange: true
 
 - type: trait
   id: FlareShieldingModule
@@ -1284,6 +1355,7 @@
           - Pill
           - Crayon
           - Paper
+          - VampireFood # Ok they can have a little food..
 
 # Commented out upon request for the time being
 #- type: trait

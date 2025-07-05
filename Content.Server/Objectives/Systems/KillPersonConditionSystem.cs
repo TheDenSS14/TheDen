@@ -1,16 +1,18 @@
-// SPDX-FileCopyrightText: 2023 deltanedas <39013340+deltanedas@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2023 deltanedas <@deltanedas:kde.org>
-// SPDX-FileCopyrightText: 2024 Errant <35878406+Errant-4@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 FoxxoTrystan <trystan.garnierhein@gmail.com>
-// SPDX-FileCopyrightText: 2024 flyingkarii <flyingkarii@gmail.com>
-// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 sleepyyapril <flyingkarii@gmail.com>
+// SPDX-FileCopyrightText: 2023 deltanedas
+// SPDX-FileCopyrightText: 2024 Errant
+// SPDX-FileCopyrightText: 2024 FoxxoTrystan
+// SPDX-FileCopyrightText: 2024 flyingkarii
+// SPDX-FileCopyrightText: 2025 BlitzTheSquishy
+// SPDX-FileCopyrightText: 2025 Memeji Dankiri
+// SPDX-FileCopyrightText: 2025 sleepyyapril
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
-        using Content.Server.CriminalRecords.Systems;
+using Content.Server.CriminalRecords.Systems;
 using Content.Server.GameTicking;
 using Content.Server.KillTracking;
+using Content.Server._Floof.Traits.Components;
+using Content.Server.Administration.Toolshed;
 using Content.Server.Objectives.Components;
 using Content.Server.Players;
 using Content.Server.Shuttles.Systems;
@@ -89,14 +91,58 @@ public sealed class KillPersonConditionSystem : EntitySystem
         }
 
         // Floofstation Edit Start
-        foreach (var mind in allHumans)
-            if (_job.MindTryGetJob(mind, out var prototype) && !prototype.CanBeAntagTarget)
-                allHumans.Remove(mind);
+        if (comp.ObjectiveType > 0)
+        {
+            allHumans = MarkedList(allHumans, comp.ObjectiveType);
+        }
+        else
+        {
+            //Cancel the objective if no target type was declared.
+            //Prevent potential edge cases of people that didn't opt in getting assigned.
+            args.Cancelled = true;
+            return;
+            //Legacy code below
+            /*          foreach (var mind in allHumans)
+                                        if (_job.MindTryGetJob(mind, out _, out var prototype) && !prototype.CanBeAntagTarget)
+                                           allHumans.Remove(mind); */
+        }
+        //If the culled list is now empty
+        if (allHumans.Count == 0)
+        {
+            args.Cancelled = true;
+            return;
+        }
         // Floofstation Edit End
 
         _target.SetTarget(uid, _random.Pick(allHumans), target);
     }
-
+    // Floofstation - added this entire function
+    public HashSet<Entity<MindComponent>> MarkedList(HashSet<Entity<MindComponent>> markedList, ObjectiveTypes objType)
+    {
+        if (objType.HasFlag(ObjectiveTypes.TraitorKill))//Culls from the list of all alive minds anyone that hasn't opted into kill targetting.
+        {
+            foreach (var mind in markedList)
+            {
+                if (!TryComp<MarkedComponent>(mind.Comp.CurrentEntity, out var targetMarked)
+                    || targetMarked.TargetType.HasFlag(ObjectiveTypes.TraitorNonTargetable))
+                {
+                    markedList.Remove(mind);
+                }
+            }
+        }
+        if (objType.HasFlag(ObjectiveTypes.TraitorTeach))//Culls from the list of all alive minds anyone that hasn't opted into teach targetting.
+        {
+            foreach (var mind in markedList)
+            {
+                if (TryComp<MarkedComponent>(mind.Comp.CurrentEntity, out var targetMarked)
+                    && targetMarked.TargetType.HasFlag(ObjectiveTypes.TraitorNonTargetable))
+                {
+                    markedList.Remove(mind);
+                }
+            }
+        }
+        return markedList;
+    }
     private void OnHeadAssigned(EntityUid uid, PickRandomHeadComponent comp, ref ObjectiveAssignedEvent args)
     {
         // invalid prototype
@@ -126,8 +172,14 @@ public sealed class KillPersonConditionSystem : EntitySystem
                 allHeads.Add(mind);
         }
 
+        var pickCatch = new PickRandomPersonComponent();//Floofstation: Prepares for an edge case where there are no command members.
         if (allHeads.Count == 0)
-            allHeads = allHumans.Select(x => x.Owner).ToList(); // fallback to non-head target
+        {
+            pickCatch.ObjectiveType = ObjectiveTypes.TraitorTeach;//Floofstation: Sets the objective type
+            OnPersonAssigned(uid, pickCatch, ref args);//Floofstation: Assigns a target from the Marked if possible
+            return;//Floofstation: Escapes
+            // allHeads = allHumans.Select(x => x.Owner).ToList(); // fallback to non-head target //Floofstation: Disabled to prevent non-consenting targets.
+        }
 
         _target.SetTarget(uid, _random.Pick(allHeads), target);
     }

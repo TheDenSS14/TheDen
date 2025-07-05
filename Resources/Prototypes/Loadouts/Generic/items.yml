@@ -830,13 +830,14 @@
 #         - Brigmedic
 
  # 5 zillion ghostroles, more people will take them if theyre less common.
- # - type: loadout
- # id: LoadoutItemPAI
- # category: GeneralItems
- # cost: 3
- # canBeHeirloom: true
- # items:
- #   - PersonalAI
+ # DEN: it has been ordained - PAIs allowed
+- type: loadout
+  id: LoadoutItemPAI
+  category: GeneralItems
+  cost: 3
+  canBeHeirloom: true
+  items:
+    - PersonalAI
 
 - type: loadout
   id: LoadoutItemCrayonBox
