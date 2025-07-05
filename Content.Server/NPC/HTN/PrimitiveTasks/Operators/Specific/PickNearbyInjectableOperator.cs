@@ -1,13 +1,12 @@
-// SPDX-FileCopyrightText: 2022 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2022 metalgearsloth <metalgearsloth@gmail.com>
-// SPDX-FileCopyrightText: 2023 Arendian <137322659+Arendian@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2023 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2023 Jezithyr <jezithyr@gmail.com>
-// SPDX-FileCopyrightText: 2023 TemporalOroboros <TemporalOroboros@gmail.com>
-// SPDX-FileCopyrightText: 2023 deltanedas <39013340+deltanedas@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 metalgearsloth
+// SPDX-FileCopyrightText: 2023 Arendian
+// SPDX-FileCopyrightText: 2023 DrSmugleaf
+// SPDX-FileCopyrightText: 2023 Jezithyr
+// SPDX-FileCopyrightText: 2023 TemporalOroboros
+// SPDX-FileCopyrightText: 2023 deltanedas
 // SPDX-FileCopyrightText: 2023 deltanedas <@deltanedas:kde.org>
-// SPDX-FileCopyrightText: 2024 sleepyyapril <flyingkarii@gmail.com>
-// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 portfiend
+// SPDX-FileCopyrightText: 2025 sleepyyapril
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -30,7 +29,7 @@ public sealed partial class PickNearbyInjectableOperator : HTNOperator
 {
     [Dependency] private readonly IEntityManager _entManager = default!;
     private EntityLookupSystem _lookup = default!;
-    private MedibotSystem _medibot = default!;
+    private SharedMedibotSystem _medibot = default!;
     private PathfindingSystem _pathfinding = default!;
 
     [DataField("rangeKey")] public string RangeKey = NPCBlackboard.MedibotInjectRange;
@@ -51,7 +50,7 @@ public sealed partial class PickNearbyInjectableOperator : HTNOperator
     {
         base.Initialize(sysManager);
         _lookup = sysManager.GetEntitySystem<EntityLookupSystem>();
-        _medibot = sysManager.GetEntitySystem<MedibotSystem>();
+        _medibot = sysManager.GetEntitySystem<SharedMedibotSystem>();
         _pathfinding = sysManager.GetEntitySystem<PathfindingSystem>();
     }
 

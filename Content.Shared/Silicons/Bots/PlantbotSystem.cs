@@ -1,5 +1,6 @@
-// SPDX-FileCopyrightText: 2025 Timfa <timfalken@hotmail.com>
-// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Timfa
+// SPDX-FileCopyrightText: 2025 portfiend
+// SPDX-FileCopyrightText: 2025 sleepyyapril
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -11,9 +12,9 @@ namespace Content.Shared.Silicons.Bots;
 /// <summary>
 /// Handles emagging Plantbots
 /// </summary>
-public sealed class PlantbotSystem : EntitySystem
+public abstract class SharedPlantbotSystem : EntitySystem
 {
-    [Dependency] private readonly SharedAudioSystem _audio = default!;
+    [Dependency] protected readonly SharedAudioSystem AudioSystem = default!;
 
     public override void Initialize()
     {
@@ -24,7 +25,7 @@ public sealed class PlantbotSystem : EntitySystem
 
     private void OnEmagged(EntityUid uid, PlantbotComponent comp, ref GotEmaggedEvent args)
     {
-        _audio.PlayPredicted(comp.EmagSparkSound, uid, args.UserUid);
+        AudioSystem.PlayPredicted(comp.EmagSparkSound, uid, args.UserUid);
 
         comp.IsEmagged = true;
         args.Handled = true;

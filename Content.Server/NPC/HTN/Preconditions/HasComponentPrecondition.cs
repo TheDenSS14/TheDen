@@ -1,9 +1,6 @@
-// SPDX-FileCopyrightText: 2023 DrSmugleaf
-// SPDX-FileCopyrightText: 2023 metalgearsloth
 // SPDX-FileCopyrightText: 2025 portfiend
-// SPDX-FileCopyrightText: 2025 sleepyyapril
 //
-// SPDX-License-Identifier: MIT
+// SPDX-License-Identifier: AGPL-3.0-or-later
 
 using Content.Shared.Hands.Components;
 using Robust.Shared.Prototypes;
@@ -11,9 +8,9 @@ using Robust.Shared.Prototypes;
 namespace Content.Server.NPC.HTN.Preconditions;
 
 /// <summary>
-/// Returns true if the active hand entity has the specified components.
+/// Returns true if the entity has the specified components.
 /// </summary>
-public sealed partial class ActiveHandComponentPrecondition : HTNPrecondition
+public sealed partial class HasComponentPrecondition : HTNPrecondition
 {
     [Dependency] private readonly IEntityManager _entManager = default!;
 
@@ -25,14 +22,10 @@ public sealed partial class ActiveHandComponentPrecondition : HTNPrecondition
 
     public override bool IsMet(NPCBlackboard blackboard)
     {
-        if (!blackboard.TryGetValue<Hand>(NPCBlackboard.ActiveHand, out var hand, _entManager) || hand.HeldEntity == null)
-        {
-            return Invert;
-        }
-
+        var owner = blackboard.GetValue<EntityUid>(NPCBlackboard.Owner);
         foreach (var comp in Components)
         {
-            var hasComp = _entManager.HasComponent(hand.HeldEntity, comp.Value.Component.GetType());
+            var hasComp = _entManager.HasComponent(owner, comp.Value.Component.GetType());
 
             if (!Invert && !hasComp || Invert && hasComp)
                 return false;

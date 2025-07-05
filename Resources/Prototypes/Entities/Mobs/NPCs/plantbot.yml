@@ -7,9 +7,10 @@
   parent: MobSiliconBase
   id: MobPlantbot
   name: plantbot
-  description: A botanist's best friend!.
+  description: A botanist's best friend!
   components:
   - type: Plantbot
+    doAfterLength: 2.0
   - type: Sprite
     sprite: Mobs/Silicon/Bots/plantbot.rsi
     state: plantbot
@@ -57,3 +58,4 @@
     damageContainers:
     - Inorganic
     - Silicon
+  - type: DoAfter

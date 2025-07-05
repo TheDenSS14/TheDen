@@ -1,9 +1,11 @@
-// SPDX-FileCopyrightText: 2025 Timfa <timfalken@hotmail.com>
-// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Timfa
+// SPDX-FileCopyrightText: 2025 portfiend
+// SPDX-FileCopyrightText: 2025 sleepyyapril
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 using Robust.Shared.Audio;
+using Robust.Shared.Prototypes;
 
 namespace Content.Shared.Silicons.Bots;
 
@@ -12,7 +14,7 @@ namespace Content.Shared.Silicons.Bots;
 /// Currently no clientside prediction done, only exists in shared for emag handling.
 /// </summary>
 [RegisterComponent]
-[Access(typeof(PlantbotSystem))]
+[Access(typeof(SharedPlantbotSystem))]
 public sealed partial class PlantbotComponent : Component
 {
     /// <summary>
@@ -40,4 +42,27 @@ public sealed partial class PlantbotComponent : Component
     };
 
     public bool IsEmagged = false;
+
+    [DataField, ViewVariables(VVAccess.ReadWrite)]
+    public float RequiredWaterLevelToService = 80f;
+
+    [DataField, ViewVariables(VVAccess.ReadWrite)]
+    public float RequiredWeedsAmountToWeed = 1f;
+
+    [DataField, ViewVariables(VVAccess.ReadWrite)]
+    public float WaterTransferAmount = 10f;
+
+    [DataField, ViewVariables(VVAccess.ReadWrite)]
+    public float WeedsRemovedAmount = 1f;
+
+    [DataField, ViewVariables(VVAccess.ReadWrite)]
+    public float DoAfterLength = 2.0f;
+
+    [DataField, ViewVariables]
+    public EntProtoId WaterPlantActionId = "ActionPlantbotWaterPlant";
+    public EntityUid? WaterPlantActionEntity;
+
+    [DataField, ViewVariables]
+    public EntProtoId WeedPlantActionId = "ActionPlantbotRemoveWeeds";
+    public EntityUid? WeedPlantActionEntity;
 }

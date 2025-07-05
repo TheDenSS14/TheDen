@@ -1,18 +1,18 @@
-// SPDX-FileCopyrightText: 2023 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2023 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2023 TemporalOroboros <TemporalOroboros@gmail.com>
-// SPDX-FileCopyrightText: 2023 TemporalOroboros <temporaloroboros@gmail.com>
+// SPDX-FileCopyrightText: 2023 DrSmugleaf
+// SPDX-FileCopyrightText: 2023 Leon Friedrich
+// SPDX-FileCopyrightText: 2023 TemporalOroboros
 // SPDX-FileCopyrightText: 2023 deltanedas <@deltanedas:kde.org>
-// SPDX-FileCopyrightText: 2023 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 Kara <lunarautomaton6@gmail.com>
-// SPDX-FileCopyrightText: 2024 LordCarve <27449516+LordCarve@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 SimpleStation14 <130339894+SimpleStation14@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 VMSolidus <evilexecutive@gmail.com>
-// SPDX-FileCopyrightText: 2024 deltanedas <39013340+deltanedas@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 RedFoxIV <38788538+RedFoxIV@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 Solaris <60526456+SolarisBirb@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 metalgearsloth
+// SPDX-FileCopyrightText: 2024 Kara
+// SPDX-FileCopyrightText: 2024 LordCarve
+// SPDX-FileCopyrightText: 2024 Nemanja
+// SPDX-FileCopyrightText: 2024 SimpleStation14
+// SPDX-FileCopyrightText: 2024 VMSolidus
+// SPDX-FileCopyrightText: 2024 deltanedas
+// SPDX-FileCopyrightText: 2025 RedFoxIV
+// SPDX-FileCopyrightText: 2025 Solaris
+// SPDX-FileCopyrightText: 2025 portfiend
+// SPDX-FileCopyrightText: 2025 sleepyyapril
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -33,6 +33,7 @@ using Content.Shared.Mobs.Systems;
 using Content.Shared.NPC.Systems;
 using Content.Shared.Nutrition.Components;
 using Content.Shared.Nutrition.EntitySystems;
+using Content.Shared.Tag;
 using Content.Shared.Tools.Systems;
 using Content.Shared.Turrets;
 using Content.Shared.Weapons.Melee;
@@ -62,6 +63,7 @@ public sealed class NPCUtilitySystem : EntitySystem
     [Dependency] private readonly NpcFactionSystem _npcFaction = default!;
     [Dependency] private readonly OpenableSystem _openable = default!;
     [Dependency] private readonly PuddleSystem _puddle = default!;
+    [Dependency] private readonly TagSystem _tag = default!;
     [Dependency] private readonly SharedTransformSystem _transform = default!;
     [Dependency] private readonly SolutionContainerSystem _solutions = default!;
     [Dependency] private readonly WeldableSystem _weldable = default!;
@@ -538,6 +540,10 @@ public sealed class NPCUtilitySystem : EntitySystem
 
                 break;
             }
+            case TagFilter tagFilter:
+                // TODO: Holy smokes this entire function i should refactor this later
+                entities.RemoveWhere(ent => !_tag.HasAnyTag(ent, tagFilter.Tags));
+                break;
             default:
                 throw new NotImplementedException();
         }
