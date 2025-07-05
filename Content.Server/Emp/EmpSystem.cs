@@ -11,6 +11,7 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 using Content.Server.Explosion.EntitySystems;
+using Content.Server.Ipc;
 using Content.Server.Power.Components;
 using Content.Server.Power.EntitySystems;
 using Content.Server.Radio;
@@ -91,6 +92,10 @@ public sealed class EmpSystem : SharedEmpSystem
             if (disabled.DisabledUntil == TimeSpan.Zero)
             {
                 disabled.DisabledUntil = Timing.CurTime;
+            }
+            if (TryComp<IpcEmpComponent>(uid, out var ipcComp))
+            {
+                duration *= ipcComp.StatusMultiplier;
             }
             disabled.DisabledUntil = disabled.DisabledUntil + TimeSpan.FromSeconds(duration);
 

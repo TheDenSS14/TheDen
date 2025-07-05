@@ -461,3 +461,20 @@
   id: ManifestedSpirit
   coefficients:
     Holy: 2
+
+# IPCs are very resiliant to bleeding their oil, but can
+- type: damageModifierSet
+  id: BloodlossIPC
+  coefficients:
+    Blunt: 0.001
+    Slash: 0.001
+    Piercing: 0.001
+    Shock: 0.0
+    Cold: 0.0
+    Heat: 0.0
+    Poison: 0.0
+    Radiation: 0.0
+    Asphyxiation: 0.0
+    Bloodloss: 0.0
+    Cellular: 0.0
+    Caustic: 0.0

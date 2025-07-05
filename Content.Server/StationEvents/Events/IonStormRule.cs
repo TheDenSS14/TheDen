@@ -29,6 +29,7 @@ using Content.Server._CD.Traits;
 using Content.Server.Chat.Managers;
 using Content.Shared.Chat;
 using Robust.Shared.Player;
+using Content.Server.Ipc;
 
 namespace Content.Server.StationEvents.Events;
 
@@ -83,6 +84,20 @@ public sealed class IonStormRule : StationEventSystem<IonStormRuleComponent>
 
         if (!TryGetRandomStation(out var chosenStation))
             return;
+
+        var ipcQuery = EntityQueryEnumerator<IpcIonAlertComponent>();
+        while (ipcQuery.MoveNext(out var ent, out var ipcComp))
+        {
+            if (!RobustRandom.Prob(ipcComp.AlertChance))
+                continue;
+
+            if (!TryComp<ActorComponent>(ent, out var actor))
+                continue;
+
+            var msg = Loc.GetString("station-event-ion-storm-IPC");
+            var wrappedMessage = Loc.GetString("chat-manager-server-wrap-message", ("message", msg));
+            _chatManager.ChatMessageToOne(ChatChannel.Server, msg, wrappedMessage, default, false, actor.PlayerSession.Channel, colorOverride: Color.Yellow);
+        }
 
         // CD Change - Go through everyone with the SynthComponent and inform them a storm is happening.
         var synthQuery = EntityQueryEnumerator<SynthComponent>();

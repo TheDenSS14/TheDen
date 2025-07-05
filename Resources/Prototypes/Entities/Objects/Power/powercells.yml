@@ -107,6 +107,8 @@
   - type: Construction
     graph: PowerCellPotato
     node: potatobattery
+  - type: BatteryDrinkerSource
+    maxAmount: 24 # 3 sips to fully drain
 
 - type: entity
   name: small-capacity power cell
@@ -131,6 +133,8 @@
   - type: Tag
     tags:
       - PowerCellSmall
+  - type: BatteryDrinkerSource
+    maxAmount: 120 # 3 sips to fully drain
 
 - type: entity
   id: PowerCellSmallPrinted
@@ -169,6 +173,8 @@
   - type: MachinePart
     part: PowerCell
     rating: 2
+  - type: BatteryDrinkerSource
+    maxAmount: 240 # 3 sips to fully drain
 
 - type: entity
   id: PowerCellMediumPrinted
@@ -207,6 +213,8 @@
   - type: MachinePart
     part: PowerCell
     rating: 3
+  - type: BatteryDrinkerSource
+    maxAmount: 360 # 3 sips to fully drain
 
 - type: entity
   id: PowerCellHighPrinted
@@ -245,6 +253,8 @@
   - type: MachinePart
     part: PowerCell
     rating: 4
+  - type: BatteryDrinkerSource
+    maxAmount: 600 # 3 sips to fully drain
 
 - type: entity
   id: PowerCellHyperPrinted
@@ -495,3 +505,17 @@
       visible: false
   - type: Battery
     startingCharge: 0
+
+# IPC
+- type: entity
+  id: PowerCellIPC
+  parent: PowerCellHyper
+  name: IPC Power Cell
+  description: A powercell for an IPC! This cell has a unique EMP resistant casing. This should be in an IPC.
+  components:
+  - type: Item
+    size: Normal
+  - type: EmpImmune
+  - type: Battery
+    maxCharge: 1500
+    startingCharge: 1500
