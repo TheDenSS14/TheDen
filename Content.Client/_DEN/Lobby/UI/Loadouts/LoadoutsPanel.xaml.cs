@@ -68,6 +68,26 @@ public sealed partial class LoadoutsPanel : BoxContainer
 
         LoadoutsShowUnusableButton.OnToggled += args => SetShowUnusable(args.Pressed);
         LoadoutsRemoveUnusableButton.OnPressed += _ => TryRemoveUnusableLoadouts();
+        SearchLineEdit.OnTextChanged += args => ApplyLoadoutSearchFilter(args.Text);
+    }
+
+    private void ApplyLoadoutSearchFilter(string filter)
+    {
+        filter = filter.ToLowerInvariant();
+
+        foreach (var selector in _preferenceSelectors)
+        {
+            var id = selector.Loadout.ID.ToLowerInvariant();
+            var locName = Loc.GetString($"loadout-{selector.Loadout.ID}").ToLowerInvariant();
+
+            var visible = string.IsNullOrWhiteSpace(filter)
+                          || id.Contains(filter)
+                          || locName.Contains(filter);
+
+            selector.Visible = visible && (_showUnusable || selector.Valid);
+        }
+
+        LoadoutsTabs.UpdateTabMerging();
     }
 
     public void SetProfile(HumanoidCharacterProfile? profile)

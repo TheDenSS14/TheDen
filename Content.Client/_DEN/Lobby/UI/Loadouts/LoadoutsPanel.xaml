@@ -4,8 +4,10 @@
     HorizontalExpand="True"
     Orientation="Vertical"
     Margin="10">
+
     <Label Name="LoadoutPointsLabel" HorizontalAlignment="Stretch" Align="Center" />
     <ProgressBar Name="LoadoutPointsBar" MaxValue="1" Value="1" MaxHeight="8" Margin="0 5" />
+
     <BoxContainer HorizontalExpand="True" Margin="0 0 0 5">
         <Button
             Name="LoadoutsShowUnusableButton"
@@ -24,4 +26,10 @@
             StyleClasses="OpenLeft" />
     </BoxContainer>
     <ui:NeoTabContainer Name="LoadoutsTabs" VerticalExpand="True" SeparatorMargin="0" />
+
+    <BoxContainer Orientation="Horizontal" Margin="0 5 0 0">
+        <LineEdit Name="SearchLineEdit" PlaceHolder="{Loc object-tab-object-search}" HorizontalExpand="True"
+                  SizeFlagsStretchRatio="1" />
+    </BoxContainer>
+
 </BoxContainer>
