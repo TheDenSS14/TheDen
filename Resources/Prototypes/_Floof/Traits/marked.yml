@@ -1,4 +1,15 @@
 - type: trait
+  id: TraitorNonTargetable
+  category: Marked
+  points: 0
+  slots: 0
+  functions:
+  - !type:TraitAddComponent
+    components:
+    - type: Marked
+      targetType: TraitorNonTargetable
+
+- type: trait
   id: TraitorKillTarget
   category: Marked
   points: 2
