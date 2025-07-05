@@ -1,0 +1,25 @@
+# SPDX-FileCopyrightText: 2025 portfiend
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  parent: ClothingNeckScarfBase
+  id: ClothingNeckScarfStripedColorable
+  name: striped scarf
+  description: A stylish striped scarf. The perfect winter accessory for those with a keen fashion sense, and those who just can't handle a cold breeze on their necks.
+  components:
+  - type: Sprite
+    sprite: _DEN/Clothing/Neck/Scarfs/colorable_striped.rsi
+  - type: Clothing
+    sprite: _DEN/Clothing/Neck/Scarfs/colorable_striped.rsi
+
+- type: entity
+  parent: ClothingNeckScarfBase
+  id: ClothingNeckScarfColorable
+  name: plain scarf
+  description: A stylish scarf. The perfect winter accessory for those with a keen fashion sense, and those who just can't handle a cold breeze on their necks.
+  components:
+  - type: Sprite
+    sprite: _DEN/Clothing/Neck/Scarfs/colorable.rsi
+  - type: Clothing
+    sprite: _DEN/Clothing/Neck/Scarfs/colorable.rsi

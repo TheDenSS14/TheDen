@@ -1,7 +1,7 @@
 # SPDX-FileCopyrightText: 2022 Fishfish458
 # SPDX-FileCopyrightText: 2022 Leon Friedrich
 # SPDX-FileCopyrightText: 2022 Visne
-# SPDX-FileCopyrightText: 2022 fishfish458 <fishfish458>
+# SPDX-FileCopyrightText: 2022 fishfish458
 # SPDX-FileCopyrightText: 2022 theashtronaut
 # SPDX-FileCopyrightText: 2023 Ed
 # SPDX-FileCopyrightText: 2023 Julian Giebel
@@ -13,11 +13,11 @@
 # SPDX-FileCopyrightText: 2024 Skubman
 # SPDX-FileCopyrightText: 2024 degradka
 # SPDX-FileCopyrightText: 2024 deltanedas
-# SPDX-FileCopyrightText: 2024 deltanedas <@deltanedas:kde.org>
 # SPDX-FileCopyrightText: 2024 metalgearsloth
 # SPDX-FileCopyrightText: 2025 Aiden
 # SPDX-FileCopyrightText: 2025 GoobBot
 # SPDX-FileCopyrightText: 2025 Killerqu00
+# SPDX-FileCopyrightText: 2025 Quanteey
 # SPDX-FileCopyrightText: 2025 Ted Lukin
 # SPDX-FileCopyrightText: 2025 pheenty
 # SPDX-FileCopyrightText: 2025 sleepyyapril
@@ -89,6 +89,11 @@
     useRate: 10
   - type: StaticPrice
     price: 750
+  - type: Tag
+    tags: []
+  - type: CrewMonitoringConsole # DeltaV - disable crew crit / dead beeping alerts
+    alertsEnabled: false
+
 
 - type: entity
   id: SpyCrewMonitorEmpty
@@ -113,6 +118,8 @@
     sprite: Objects/Specific/Medical/syndihandheldcrewmonitor.rsi
   - type: PowerCellDraw
     useRate: 40
+  - type: CrewMonitoringConsole # DeltaV - disable crew crit / dead beeping alerts
+    alertsEnabled: false
 
 - type: entity
   id: SyndiCrewMonitorEmpty

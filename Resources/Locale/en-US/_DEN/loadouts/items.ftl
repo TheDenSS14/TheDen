@@ -3,6 +3,11 @@
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
+loadout-name-LoadoutNeckScarfColorable = scarf (colorable)
+loadout-name-LoadoutNeckScarfStripedColorable = striped scarf (colorable)
+loadout-name-LoadoutNeckMantleColorable = mantle (colorable)
+loadout-name-LoadoutNeckCloakColorable = cloak (colorable)
+
 loadout-name-LoadoutClothingWaistApron = waist apron (colorable)
 loadout-name-LoadoutClothingWaistApronCheckered = waist apron (checkered, colorable)
 loadout-name-LoadoutClothingWaistApronStripesHorizontal = waist apron (horizontal stripes, colorable)

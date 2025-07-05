@@ -1,12 +1,3 @@
-# SPDX-FileCopyrightText: 2025 Rosycup <178287475+Rosycup@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
-#
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
-
-
-# add "group: Exotic" to put new exotic chemicals in the guidebook's tab
-# For new chems: Exotic should only be strong gimmick / strong inverted chems / parts of said chems.
-
 - type: reagent
   id: ExoticReagent
   name: reagent-name-exotic
@@ -123,26 +114,3 @@
             Airloss: -10
             Brute: -15
             Burn: -20
-
-- type: reagent
-  id: Corgium
-  name: reagent-name-corgium
-  group: Exotic
-  desc: reagent-desc-corgium
-  physicalDesc: reagent-physical-desc-fluffy
-  flavor: medicine
-  color: "#ffaa00"
-  metabolisms:
-    Poison:
-      effects:
-      - !type:Polymorph
-        prototype: CorgiMorph # PERMANENT. There's a reason this chem's an exotic chem, not a low-mid level chem. Exotic's primary toxin.
-        conditions:
-          - !type:ReagentThreshold
-            min: 20
-      - !type:AdjustReagent
-        reagent: Corgium
-        amount: -20
-        conditions:
-        - !type:ReagentThreshold
-          min: 20

@@ -1,0 +1,37 @@
+# SPDX-FileCopyrightText: 2025 Memeji Dankiri
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: trait
+  id: TraitorNonTargetable
+  category: Marked
+  points: 0
+  slots: 0
+  functions:
+  - !type:TraitAddComponent
+    components:
+    - type: Marked
+      targetType: TraitorNonTargetable
+
+- type: trait
+  id: TraitorKillTarget
+  category: Marked
+  points: 2
+  slots: 0
+  functions:
+  - !type:TraitAddComponent
+    components:
+    - type: Marked
+      targetType: TraitorKill
+
+- type: trait
+  id: TraitorTeachTarget
+  category: Marked
+  points: 1
+  slots: 0
+  functions:
+  - !type:TraitAddComponent
+    components:
+    - type: Marked
+      targetType: TraitorTeach
