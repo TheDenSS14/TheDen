@@ -123,7 +123,6 @@ public sealed class KillPersonConditionSystem : EntitySystem
             foreach (var mind in markedList)
             {
                 if (!TryComp<MarkedComponent>(mind.Comp.CurrentEntity, out var targetMarked)
-                    || !targetMarked.TargetType.HasFlag(ObjectiveTypes.TraitorKill)
                     || targetMarked.TargetType.HasFlag(ObjectiveTypes.TraitorNonTargetable))
                 {
                     markedList.Remove(mind);
@@ -134,9 +133,8 @@ public sealed class KillPersonConditionSystem : EntitySystem
         {
             foreach (var mind in markedList)
             {
-                if (!TryComp<MarkedComponent>(mind.Comp.CurrentEntity, out var targetMarked)
-                    || !targetMarked.TargetType.HasFlag(ObjectiveTypes.TraitorTeach)
-                    || targetMarked.TargetType.HasFlag(ObjectiveTypes.TraitorNonTargetable))
+                if (TryComp<MarkedComponent>(mind.Comp.CurrentEntity, out var targetMarked)
+                    && targetMarked.TargetType.HasFlag(ObjectiveTypes.TraitorNonTargetable))
                 {
                     markedList.Remove(mind);
                 }
