@@ -2,6 +2,7 @@
 // SPDX-FileCopyrightText: 2024 Errant
 // SPDX-FileCopyrightText: 2024 FoxxoTrystan
 // SPDX-FileCopyrightText: 2024 flyingkarii
+// SPDX-FileCopyrightText: 2025 BlitzTheSquishy
 // SPDX-FileCopyrightText: 2025 Memeji Dankiri
 // SPDX-FileCopyrightText: 2025 sleepyyapril
 //
