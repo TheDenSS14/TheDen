@@ -16,7 +16,7 @@ public sealed partial class PickRandomPersonComponent : Component
 {
     [DataField]
     public bool NeedsOrganic; // Goobstation: Only pick non-silicon players.
-    
+
     //Floofstation Target Consent Traits: Start
     [DataField]
     public ObjectiveTypes ObjectiveType;
@@ -27,7 +27,8 @@ public sealed partial class PickRandomPersonComponent : Component
 [Flags]
 public enum ObjectiveTypes
 {
-    Unspecified = 0,
+    Unspecified = -1,
+    TraitorNonTargetable = 0,
     TraitorKill = 1 << 0,
     TraitorTeach = 1 << 1
 }
