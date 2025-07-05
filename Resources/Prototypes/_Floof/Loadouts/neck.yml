@@ -198,19 +198,3 @@
       departments:
         - Command
 
-# Harness.
-# Placing it here because it should in THEORY always get equipped on the neck slot by default
-# Unless that slot is occupied (after we fix loadouts overriding one another)
-# In reality it should go in uncategorized and spawn in your inventory, but that is not possible right now
-- type: loadout
-  id: LoadoutHarnessColorable
-  category: Neck
-  cost: 1
-  exclusive: false
-  customColorTint: true
-  canBeHeirloom: true
-  items:
-    - ClothingUncategorizedHarnessColorable
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutNeck
