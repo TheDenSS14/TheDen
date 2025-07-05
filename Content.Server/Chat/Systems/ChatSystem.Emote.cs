@@ -18,6 +18,8 @@
 
 using System.Collections.Frozen;
 using System.Linq;
+using Content.Shared._DEN.Chat;
+using Content.Shared.CCVar;
 using Content.Shared.Chat;
 using Content.Shared.Chat.Prototypes;
 using Content.Shared.Speech;
@@ -32,6 +34,24 @@ public partial class ChatSystem
 {
     private FrozenDictionary<string, EmotePrototype> _wordEmoteDict = FrozenDictionary<string, EmotePrototype>.Empty;
     private IReadOnlyList<string> Punctuation { get; } = new List<string> { ",", ".", "!", "?", "-", "~", "'", "\"", };
+
+    private float _emotesMultiplier = 1f;
+
+    private void InitializeEmotes()
+    {
+        SubscribeNetworkEvent<EmotesVolumeChanged>(OnEmotesVolumeChanged);
+    }
+
+    private void OnEmotesVolumeChanged(EmotesVolumeChanged ev)
+    {
+        if (_emotesMultiplier < 0f)
+            return;
+
+        _sawmill.Info($"{_emotesMultiplier}");
+
+        _emotesMultiplier = ev.EmotesVolumeMultiplier / 100f;
+        _emotesMultiplier *= 3f;
+    }
 
     protected override void OnPrototypeReload(PrototypesReloadedEventArgs obj)
     {
@@ -175,6 +195,7 @@ public partial class ChatSystem
 
         // if general params for all sounds set - use them
         var param = proto.GeneralParams ?? sound.Params;
+        param.Volume *= _emotesMultiplier;
         _audio.PlayPvs(sound, uid, param);
         return true;
     }
@@ -189,8 +210,11 @@ public partial class ChatSystem
         if (!sounds.TryGetValue(emoteId, out var sound))
             return false;
 
+        var pvsParams = audioParams ?? sound.Params;
+        pvsParams.Volume *= _emotesMultiplier;
+
         // if general params for all sounds set - use them
-        _audio.PlayPvs(sound, uid, audioParams ?? sound.Params);
+        _audio.PlayPvs(sound, uid, pvsParams);
         return true;
     }
 
