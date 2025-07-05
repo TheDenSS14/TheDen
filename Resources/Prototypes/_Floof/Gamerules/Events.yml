@@ -135,11 +135,6 @@
     minimumPlayers: 20
     weight: 7 # Really weak compared to other critters
     duration: 30
-  - type: SoundOnTrigger
-    removeOnTrigger: true
-    sound:
-      path: /Audio/_DEN/VentCritters/vent_xeno.ogg
-      volume: 5
   - type: VentCrittersRule
     table: !type:GroupSelector # DeltaV: EntityTable instead of spawn entries
       children:
