@@ -11,10 +11,17 @@
   - name: head
     slotTexture: head
     slotFlags: HEAD
-    uiWindowPos: 1,0
+    uiWindowPos: 1,1
     strippingWindowPos: 0,0
     displayName: Head
     offset: 0, -0.09375
+  - name: neck
+    slotTexture: neck
+    slotFlags: NECK
+    uiWindowPos: 1,0
+    strippingWindowPos: 0,1
+    displayName: Neck
+    offset: 0.015624, -0.15625
 
 - type: inventoryTemplate
   id: borgShort
@@ -22,10 +29,18 @@
   - name: head
     slotTexture: head
     slotFlags: HEAD
-    uiWindowPos: 1,0
+    uiWindowPos: 1,1
     strippingWindowPos: 0,0
     displayName: Head
     offset: 0, -0.1875
+  - name: neck
+    slotTexture: neck
+    slotFlags: NECK
+    uiWindowPos: 1,0
+    strippingWindowPos: 0,1
+    displayName: Neck
+    offset: 0.015624, -0.25
+
 
 - type: inventoryTemplate
   id: borgTall
@@ -33,9 +48,35 @@
   - name: head
     slotTexture: head
     slotFlags: HEAD
-    uiWindowPos: 1,0
+    uiWindowPos: 1,1
     strippingWindowPos: 0,0
     displayName: Head
+    offset: 0, -0.03125
+  - name: neck
+    slotTexture: neck
+    slotFlags: NECK
+    uiWindowPos: 1,0
+    strippingWindowPos: 0,1
+    displayName: Neck
+    offset: 0.015624, -0.0625
+
+- type: inventoryTemplate
+  id: borgTallOddNumHorizontalPixels
+  slots:
+  - name: head
+    slotTexture: head
+    slotFlags: HEAD
+    uiWindowPos: 1,1
+    strippingWindowPos: 0,0
+    displayName: Head
+    offset: 0, -0.03125
+  - name: neck
+    slotTexture: neck
+    slotFlags: NECK
+    uiWindowPos: 1,0
+    strippingWindowPos: 0,1
+    displayName: Neck
+    offset: 0, -0.0625
 
 # taller than tall
 - type: inventoryTemplate
@@ -44,7 +85,14 @@
   - name: head
     slotTexture: head
     slotFlags: HEAD
-    uiWindowPos: 1,0
+    uiWindowPos: 1,1
     strippingWindowPos: 0,0
     displayName: Head
     offset: 0, 0.09375
+  - name: neck
+    slotTexture: neck
+    slotFlags: NECK
+    uiWindowPos: 1,0
+    strippingWindowPos: 0,1
+    displayName: Neck
+    offset: 0, -0.1875

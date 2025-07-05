@@ -128,7 +128,7 @@
     laws: Crewsimov
   - type: IonStormTarget
   - type: Inventory
-    templateId: borg
+    templateId: borg # Handles actual inventory stuffs like hats
   - type: Hands
     showInHands: false
     disableExplosionRecursion: true
@@ -391,6 +391,6 @@
     color: "#dd200b"
   - type: Damageable #Goobstation - Ion Damage
     damageContainer: Silicon
-    damageModifierSet: SiliconProtected 
+    damageModifierSet: SiliconProtected
   - type: ExplosionResistance
     damageCoefficient: 0.5

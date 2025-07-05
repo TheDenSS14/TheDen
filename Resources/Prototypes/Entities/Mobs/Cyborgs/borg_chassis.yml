@@ -431,7 +431,7 @@
   - type: AccessReader
     access: [["Service"], ["Command"], ["Research"]]
   - type: Inventory
-    templateId: borgTall
+    templateId: borgTallOddNumHorizontalPixels
 
 - type: entity
   id: BorgChassisSyndicateAssault
@@ -482,6 +482,8 @@
           shader: unshaded
           map: ["light"]
           visible: false
+    - type: Inventory
+      templateId: borgDutch
     - type: BorgChassis
       maxModules: 3
       moduleWhitelist:
@@ -521,6 +523,8 @@
           shader: unshaded
           map: ["light"]
           visible: false
+    - type: Inventory
+      templateId: borgShort
     - type: BorgChassis
       maxModules: 3
       moduleWhitelist:
