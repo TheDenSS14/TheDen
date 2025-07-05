@@ -571,6 +571,15 @@
   - type: SpaceGarbage
   - type: StaticPrice
     price: 0
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 10
+        reagents:
+        - ReagentId: ToxinTrash
+          Quantity: 5
+  - type: Food
+    requiresSpecialDigestion: true
 
 - type: entity
   categories: [ HideSpawnMenu ]
