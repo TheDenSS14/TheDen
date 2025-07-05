@@ -1022,6 +1022,20 @@
     - !type:LoadoutMakeFollower
 
 - type: loadout
+  id: LoadoutItemPetRosy
+  category: GeneralItems
+  cost: 2
+  canBeHeirloom: true
+  customColorTint: true
+  items:
+    - MobRosyMothroachPet
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutPets
+  functions:
+    - !type:LoadoutMakeFollower
+
+- type: loadout
   id: LoadoutItemBlackDeck
   category: GeneralItems
   cost: 3

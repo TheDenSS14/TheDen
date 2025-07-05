@@ -59,3 +59,19 @@
         1.0
       FollowRange: !type:Single
         2.0
+
+- type: entity
+  parent: MobRosyMothroach
+  id: MobRosyMothroachPet
+  suffix: Pet # TheDen
+  components:
+  - type: HTN
+    rootTask:
+      task: FollowCompound
+    blackboard:
+      IdleRange: !type:Single
+        1.5
+      FollowCloseRange: !type:Single
+        1.0
+      FollowRange: !type:Single
+        2.0
