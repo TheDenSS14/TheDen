@@ -69,6 +69,13 @@ public sealed partial class LoadoutsPanel : BoxContainer
         LoadoutsShowUnusableButton.OnToggled += args => SetShowUnusable(args.Pressed);
         LoadoutsRemoveUnusableButton.OnPressed += _ => TryRemoveUnusableLoadouts();
         SearchLineEdit.OnTextChanged += args => ApplyLoadoutSearchFilter(args.Text);
+
+        ClearSearchButton.OnPressed += _ =>
+        {
+            SearchLineEdit.Clear();
+            ApplyLoadoutSearchFilter(string.Empty);
+        };
+
     }
 
     private void ApplyLoadoutSearchFilter(string filter)
