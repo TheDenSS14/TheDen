@@ -769,3 +769,19 @@
             Poison: 2
       - !type:SatiateHunger
         factor: -6
+
+- type: reagent
+  id: ToxinTrash
+  name: reagent-name-toxintrash
+  group: Toxins
+  desc: reagent-desc-toxintrash
+  flavor: trashy
+  physicalDesc: reagent-physical-desc-nondescript
+  metabolisms:
+    Food:
+      effects:
+      - !type:SatiateHunger
+        factor: 1
+        conditions:
+        - !type:OrganType
+          type: Vox
