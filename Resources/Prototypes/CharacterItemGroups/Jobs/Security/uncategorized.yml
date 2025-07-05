@@ -4,6 +4,7 @@
 # SPDX-FileCopyrightText: 2025 Blu
 # SPDX-FileCopyrightText: 2025 Jakumba
 # SPDX-FileCopyrightText: 2025 Lonofera
+# SPDX-FileCopyrightText: 2025 M3739
 # SPDX-FileCopyrightText: 2025 Rosycup
 # SPDX-FileCopyrightText: 2025 Skubman
 # SPDX-FileCopyrightText: 2025 Tabitha
@@ -183,11 +184,13 @@
 #  maxItems: 1
 #  items:
 #
-#- type: characterItemGroup
-#  id: LoadoutSecurityNeck
-#  maxItems: 1
-#  items:
-#
+- type: characterItemGroup 
+  id: LoadoutSecurityNeck # Floof - M3739 - #988
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutSecurityNeckNeckerchief
+
 - type: characterItemGroup
   id: LoadoutSecurityMask
   maxItems: 1

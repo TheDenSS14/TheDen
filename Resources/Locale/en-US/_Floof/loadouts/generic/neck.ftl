@@ -1,0 +1,1 @@
+loadout-name-LoadoutNeckNeckerchiefColorable = neckerchief (colorable)

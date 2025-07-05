@@ -1,9 +1,11 @@
-# SPDX-FileCopyrightText: 2024 Pierson Arnold <greyalphawolf7@gmail.com>
-# SPDX-FileCopyrightText: 2024 ShatteredSwords <135023515+ShatteredSwords@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 fox <daytimer253@gmail.com>
-# SPDX-FileCopyrightText: 2025 Blitz <73762869+BlitzTheSquishy@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 Rosycup <178287475+Rosycup@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Pierson Arnold
+# SPDX-FileCopyrightText: 2024 ShatteredSwords
+# SPDX-FileCopyrightText: 2024 fox
+# SPDX-FileCopyrightText: 2025 Blitz
+# SPDX-FileCopyrightText: 2025 M3739
+# SPDX-FileCopyrightText: 2025 Rosycup
+# SPDX-FileCopyrightText: 2025 Tabitha
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -84,3 +86,117 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutNeck # TheDen
+
+# Tied Scarves
+# TODO: Rename all "tied scarves" to "neckerchiefs" or equivalent
+
+- type: loadout
+  id: LoadoutNeckNeckerchiefColorable
+  category: Neck
+  cost: 0
+  exclusive: true
+  customColorTint: true
+  items: 
+    - ClothingNeckNeckerchief
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutNeck
+
+- type: loadout
+  id: LoadoutSecurityNeckNeckerchief
+  category: JobsSecurityAUncategorized
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingNeckNeckerchiefSecurity
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSecurityNeck
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Security
+        
+- type: loadout
+  id: LoadoutMedicalNeckNeckerchief
+  category: JobsMedicalAUncategorized
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingNeckNeckerchiefMedical
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMedicalNeck
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Medical
+        
+- type: loadout
+  id: LoadoutCargoNeckNeckerchief
+  category: JobsLogisticsAUncategorized
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingNeckNeckerchiefCargo
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutLogisticsNeck
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Logistics
+        
+- type: loadout
+  id: LoadoutScienceNeckNeckerchief
+  category: JobsEpistemicsAAUncategorized
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingNeckNeckerchiefScience
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutEpistemicsNeck
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Epistemics
+        
+- type: loadout
+  id: LoadoutEngineeringNeckNeckerchief
+  category: JobsEngineeringAAUncategorized
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingNeckNeckerchiefEngineering
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutEngineeringNeck
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Engineering
+        
+- type: loadout
+  id: LoadoutServiceNeckNeckerchief
+  category: JobsServiceAUncategorized
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingNeckNeckerchiefService
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutServiceNeck
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Civilian
+        
+- type: loadout
+  id: LoadoutCommandNeckNeckerchief
+  category: JobsCommandAUncategorized
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingNeckNeckerchiefCommand
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutCommandNeck
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Command
+
