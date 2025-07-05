@@ -23,6 +23,7 @@ using System.Linq;
 using Content.Shared.CrewMonitoring;
 using Content.Server.DeviceNetwork;
 using Content.Server.DeviceNetwork.Systems;
+using Content.Server.Power.Components; // TheDen
 using Content.Server.Power.EntitySystems; // DeltaV
 using Content.Server.PowerCell;
 using Content.Shared.Medical.CrewMonitoring;
@@ -32,6 +33,7 @@ using Robust.Server.GameObjects;
 using Robust.Shared.Audio; // DeltaV
 using Robust.Shared.Audio.Systems; // DeltaV
 using Robust.Shared.Timing; // DeltaV
+
 
 namespace Content.Server.Medical.CrewMonitoring;
 
@@ -77,7 +79,7 @@ public sealed class CrewMonitoringConsoleSystem : EntitySystem
             return;
 
         // station power (for the machine version)
-        if (!this.IsPowered(uid, EntityManager))
+        if (this.HasComp<ApcPowerReceiverComponent>(uid) && !this.IsPowered(uid, EntityManager)) // TheDen - DeltaV does IsPowered differently
             return;
 
         // cell power (for the handheld)
