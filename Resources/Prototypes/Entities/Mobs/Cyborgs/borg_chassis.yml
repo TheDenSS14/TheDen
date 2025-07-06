@@ -451,6 +451,8 @@
           shader: unshaded
           map: ["light"]
           visible: false
+    - type: Inventory
+      templateId: borgTallAndBigHead
     - type: BorgChassis
       maxModules: 3
       moduleWhitelist:

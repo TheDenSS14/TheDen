@@ -52,7 +52,7 @@
     uiWindowPos: 1,1
     strippingWindowPos: 0,0
     displayName: Head
-    offset: 0, -0.03125
+    offset: 0.015624, -0.03125
   - name: neck
     slotTexture: neck
     slotFlags: NECK
@@ -60,6 +60,26 @@
     strippingWindowPos: 0,1
     displayName: Neck
     offset: 0.015624, -0.0625
+# Used by the syndicate assault borg because wow, does it have a big head and really low neck
+- type: inventoryTemplate
+  id: borgTallAndBigHead
+  slots:
+  - name: head
+    slotTexture: head
+    slotFlags: HEAD
+    uiWindowPos: 1,1
+    strippingWindowPos: 0,0
+    displayName: Head
+    offset: 0.015624, -0.03125
+  - name: neck
+    slotTexture: neck
+    slotFlags: NECK
+    uiWindowPos: 1,0
+    strippingWindowPos: 0,1
+    displayName: Neck
+    offset: 0.015624, -0.1875
+
+
 # Used by the service borg due to it having an odd number of horizontal pixels, leading to mantles and other neck items appearing shifted on their sprites.
 - type: inventoryTemplate
   id: borgTallOddNumHorizontalPixels
