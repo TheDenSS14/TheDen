@@ -45,3 +45,17 @@
       group: LoadoutAirTank
   items:
     - DoubleEmergencyWaterVaporTankFilled
+
+# Tank Harness
+- type: loadout
+  id: LoadoutSpeciesTankHarness
+  category: Species
+  cost: 0
+  items:
+    - ClothingOuterVestTank
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      species:
+        - Vox
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutOuter
