@@ -73,7 +73,7 @@ public sealed class VentCrittersRule : StationEventSystem<VentCrittersRuleCompon
         base.Added(uid, comp, gameRule, args);
     }
 
-    protected override async void Ended(EntityUid uid, VentCrittersRuleComponent comp, GameRuleComponent gameRule, GameRuleEndedEvent args)
+    protected override void Ended(EntityUid uid, VentCrittersRuleComponent comp, GameRuleComponent gameRule, GameRuleEndedEvent args)
     {
         if (_location == null)
             return;
