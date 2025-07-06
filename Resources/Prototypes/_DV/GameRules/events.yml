@@ -24,6 +24,7 @@
     weight: 8 # Really weak compared to other critters
     duration: 30
   - type: VentCrittersRule
+    sound: /Audio/_DEN/VentCritters/vent_xeno.ogg #Den
     specialEntries:
       - id: MobXenoPraetorian
     table: !type:GroupSelector # DeltaV: EntityTable instead of spawn entries

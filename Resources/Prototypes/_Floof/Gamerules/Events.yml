@@ -18,6 +18,7 @@
     weight: 7 # Really weak compared to other critters
     duration: 30
   - type: VentCrittersRule
+    sound: /Audio/_DEN/VentCritters/vent_xeno.ogg #Den
     specialEntries:
       - id: MobArgocyteFounder
     table: !type:GroupSelector # DeltaV: EntityTable instead of spawn entries
@@ -106,6 +107,7 @@
     weight: 8 # Really weak compared to other critters
     duration: 30
   - type: VentCrittersRule
+    sound: /Audio/_DEN/VentCritters/vent_carp.ogg #Den
     specialEntries:
       - id: MobShark
     table: !type:GroupSelector # DeltaV: EntityTable instead of spawn entries

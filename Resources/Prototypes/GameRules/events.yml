@@ -317,12 +317,6 @@
     minimumPlayers: 1
     weight: 8
     duration: 30
-  - type: TriggerOnSpawn
-  - type: SmokeOnTrigger
-    duration: 31
-    spreadAmount: 30
-  - type: SoundOnTrigger
-    sound: /Audio/Effects/smoke.ogg
 
 - type: entity
   id: MothroachSpawn
@@ -333,7 +327,7 @@
     earliestStart: 15
     minimumPlayers: 1
     weight: 4
-    duration: 60
+    duration: 30
   - type: VentCrittersRule
     table: !type:GroupSelector # DeltaV: EntityTable instead of spawn entries
       children:
@@ -350,7 +344,7 @@
     startDelay: 10
     earliestStart: 15
     weight: 6
-    duration: 50
+    duration: 30
   - type: VentCrittersRule
     table: !type:GroupSelector # DeltaV: EntityTable instead of spawn entries
       children:
@@ -378,7 +372,7 @@
     startDelay: 10
     earliestStart: 15
     weight: 3
-    duration: 50
+    duration: 30
   - type: VentCrittersRule
     table: !type:GroupSelector # DeltaV: EntityTable instead of spawn entries
       children:
@@ -394,7 +388,7 @@
     startAnnouncement: true
     startDelay: 10
     weight: 3
-    duration: 50
+    duration: 30
   - type: VentCrittersRule
     table: !type:GroupSelector # DeltaV: EntityTable instead of spawn entries
       children:
@@ -412,7 +406,7 @@
     startAnnouncement: true
     startDelay: 10
     weight: 3
-    duration: 50
+    duration: 30
   - type: VentCrittersRule
     table: !type:GroupSelector # DeltaV: EntityTable instead of spawn entries
       children:
@@ -430,7 +424,7 @@
     startAnnouncement: true
     earliestStart: 15
     weight: 3
-    duration: 50
+    duration: 30
     minimumPlayers: 30
   - type: VentCrittersRule
     table: !type:GroupSelector # DeltaV: EntityTable instead of spawn entries
@@ -527,11 +521,54 @@
     weight: 7
     duration: 30 # DeltaV: was 60, used as a delay now
   - type: VentCrittersRule
+    sound: /Audio/_DEN/VentCritters/vent_slime.ogg #Den
     table: !type:GroupSelector # DeltaV: EntityTable instead of spawn entries
       children:
       - id: MobAdultSlimesBlueAngry
       - id: MobAdultSlimesGreenAngry
       - id: MobAdultSlimesYellowAngry
+
+- type: entity
+  id: reagentslimeVents
+  parent: BaseGameRule
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: StationEvent
+    startAnnouncement: true
+    earliestStart: 20
+    reoccurrenceDelay: 12
+    minimumPlayers: 30
+    weight: 6 # Really weak compared to other critters
+    duration: 30
+  - type: VentCrittersRule
+    sound: /Audio/_DEN/VentCritters/vent_slime.ogg #Den
+    table: !type:GroupSelector # DeltaV: EntityTable instead of spawn entries
+      children:
+      - id: ReagentSlimeBeer
+      - id: ReagentSlimePax
+      - id: ReagentSlimeNocturine
+      - id: ReagentSlimeTHC
+      - id: ReagentSlimeToxin
+      - id: ReagentSlimeNapalm
+      - id: ReagentSlimeOmnizine
+      - id: ReagentSlimeMuteToxin
+      - id: ReagentSlimeNorepinephricAcid
+      - id: ReagentSlimeEphedrine
+      - id: ReagentSlimeRobustHarvest
+      - id: ReagentSlimeIchor
+      - id: ReagentSlimeBleach
+      - id: ReagentSlimeSoap
+      - id: ReagentSlimeSpacelube
+      - id: ReagentSlimeBuzzachloricbees
+      - id: ReagentSlimeWehjuice
+      - id: ReagentCognizine
+      - id: ReagentSlimeNecrosol
+      - id: ReagentSlimeSpaceDrugs
+      - id: ReagentSlimeUnstableMutagen
+      - id: ReagentSlimeLead
+      - id: ReagentSlimechlorinetriflouride
+      - id: ReagentSlimePotassium
+      - id: ReagentSlimeLotophagoiOil
 
 - type: entity
   id: SnakeSpawn

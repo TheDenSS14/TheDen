@@ -11,6 +11,7 @@
 using Content.Server.StationEvents.Events;
 using Content.Shared.EntityTable.EntitySelectors;
 using Content.Shared.Storage;
+using Robust.Shared.Audio;
 using Robust.Shared.Map; // DeltaV
 
 namespace Content.Server.StationEvents.Components;
@@ -57,4 +58,7 @@ public sealed partial class VentCrittersRuleComponent : Component
     /// </summary>
     [DataField]
     public int PlayerRatio = 20;
+
+    [DataField("sound")]
+    public SoundSpecifier? Sound = new SoundPathSpecifier("/Audio/_DEN/VentCritters/vent_harmless_critter.ogg");
 }
