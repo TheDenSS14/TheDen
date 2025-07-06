@@ -7,11 +7,17 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 # Paramedic
-#- type: characterItemGroup
-#  id: LoadoutParamedicBackpacks
-#  maxItems: 1
-#  items:
-#
+- type: characterItemGroup
+  id: LoadoutParamedicBackpacks
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutMedicalBackpacksBackpack
+    - type: loadout
+      id: LoadoutMedicalBackpacksDuffel
+    - type: loadout
+      id: LoadoutMedicalBackpacksSatchel
+
 #- type: characterItemGroup
 #  id: LoadoutParamedicBelt
 #  maxItems: 1
