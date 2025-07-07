@@ -167,7 +167,17 @@
         damage:
           types:
             Poison:
-              -7
+              -1
+      - !type:HealthChange
+        conditions:
+        - !type:OrganType
+          type: Plasmaman
+        scaleByQuantity: false
+        ignoreResistances: true
+        damage:
+          types:
+            Poison:
+              -10
       # We need a metabolism effect on reagent removal
       - !type:AdjustAlert
         alertType: Toxins
