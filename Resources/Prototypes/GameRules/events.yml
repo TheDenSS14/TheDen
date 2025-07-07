@@ -312,6 +312,7 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: StationEvent
+    startAnnouncement: true
     earliestStart: 15
     minimumPlayers: 1
     weight: 4
