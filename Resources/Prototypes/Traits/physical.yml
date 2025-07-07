@@ -19,6 +19,7 @@
 # SPDX-FileCopyrightText: 2025 TheOneTrueWolfio
 # SPDX-FileCopyrightText: 2025 VMSolidus
 # SPDX-FileCopyrightText: 2025 foxcurl
+# SPDX-FileCopyrightText: 2025 juniwoofs
 # SPDX-FileCopyrightText: 2025 portfiend
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
@@ -408,6 +409,7 @@
       traits:
         - Claws
         - StrikingCalluses
+        - SharpTeeth
   functions:
     - !type:TraitModifyUnarmed
       soundHit:
@@ -423,7 +425,6 @@
           damage:
             types:
               Blunt: 0
-
 
 - type: trait
   id: Claws
@@ -445,6 +446,7 @@
       traits:
         - Talons
         - StrikingCalluses
+        - SharpTeeth
   functions:
     - !type:TraitModifyUnarmed
       soundHit:
@@ -454,6 +456,36 @@
         types:
           Slash: 5 # Trade stamina damage on hit for a very minor amount of extra bleed.
                   # Blunt also deals bleed damage, so this is more of a sidegrade.
+    - !type:TraitRemoveComponent
+      components:
+        - type: DamageOnHit
+          damage:
+            types:
+              Blunt: 0
+
+- type: trait
+  id: SharpTeeth #TheDen
+  category: TraitsPhysicalBiological
+  points: -2
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Feroxi # They got the bite already
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - Talons
+        - StrikingCalluses
+        - Claws
+  functions:
+    - !type:TraitModifyUnarmed
+      soundHit:
+        path: /Audio/Effects/bite.ogg
+      animation: WeaponArcBite
+      damage:
+        types:
+          Piercing: 7 #as strong as feroxi bite for an extra cost
     - !type:TraitRemoveComponent
       components:
         - type: DamageOnHit
@@ -484,6 +516,7 @@
       traits:
         - Talons
         - Claws
+        - SharpTeeth
   functions:
     - !type:TraitModifyUnarmed
       soundHit:
@@ -517,6 +550,7 @@
       traits:
         - Claws
         - Talons
+        - SharpTeeth
     - !type:CharacterLogicOrRequirement
       requirements:
         - !type:CharacterTraitRequirement

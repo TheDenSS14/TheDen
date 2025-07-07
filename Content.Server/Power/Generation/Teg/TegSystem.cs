@@ -2,7 +2,6 @@
 // SPDX-FileCopyrightText: 2023 Leon Friedrich
 // SPDX-FileCopyrightText: 2023 Pieter-Jan Briers
 // SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT
-// SPDX-FileCopyrightText: 2025 ArtisticRoomba
 // SPDX-FileCopyrightText: 2025 metalgearsloth
 // SPDX-FileCopyrightText: 2025 sleepyyapril
 //
@@ -182,7 +181,7 @@ public sealed class TegSystem : EntitySystem
         component.LastGeneration = electricalEnergy;
 
         // Turn energy (at atmos tick rate) into wattage.
-        var power = electricalEnergy / args.dt;
+        var power = electricalEnergy * _atmosphere.AtmosTickRate;
         // Add ramp factor. This magics slight power into existence, but allows us to ramp up.
         supplier.MaxSupply = power * component.RampFactor;
 
