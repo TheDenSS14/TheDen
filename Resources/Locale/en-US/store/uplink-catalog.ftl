@@ -586,6 +586,9 @@ uplink-home-run-bat-desc = Rigged bat pre-coated in blood for Syndicate tee-ball
 uplink-combat-bakery-name = Combat Bakery Kit
 uplink-combat-bakery-desc = A kit of clandestine baked weapons. Contains a baguette sword, a pair of throwing croissants, and a syndicate microwave board for making more. Once the job is done, eat the evidence.
 
+uplink-contraband-lighter-name = Contraband Lighter box
+uplink-contraband-lighter-desc = A mystery box guaranteed to contain a syndicate branded lighter. No fuel required
+
 uplink-smuggler-satchel-name = Smuggler's Satchel
 uplink-smuggler-satchel-desc = A handy, suspicious looking satchel. Just flat enough to fit underneath floor tiles.
 
