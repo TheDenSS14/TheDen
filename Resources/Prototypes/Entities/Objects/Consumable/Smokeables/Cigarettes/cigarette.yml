@@ -1,26 +1,25 @@
-# SPDX-FileCopyrightText: 2021 Swept <sweptwastaken@protonmail.com>
-# SPDX-FileCopyrightText: 2021 Vera Aguilera Puerto <6766154+Zumorica@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2022 Kara <lunarautomaton6@gmail.com>
-# SPDX-FileCopyrightText: 2022 Peptide90 <78795277+Peptide90@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2022 Rane <60792108+Elijahrane@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2022 Visne <39844191+Visne@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2022 Vordenburg <114301317+Vordenburg@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2022 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2022 metalgearsloth <metalgearsloth@gmail.com>
-# SPDX-FileCopyrightText: 2023 Brayden H <35241666+hord-brayden@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2023 Guilherme Ornel <86210200+joshepvodka@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2023 Jeff <velcroboy333@hotmail.com>
-# SPDX-FileCopyrightText: 2023 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2023 Tollhouse <mistertollhouse@gmail.com>
-# SPDX-FileCopyrightText: 2023 Velcroboy <107660393+IamVelcroboy@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2023 lzk <124214523+lzk228@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2023 ninruB <38016303+asperger-sind@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 Debug <49997488+DebugOk@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 VMSolidus <evilexecutive@gmail.com>
-# SPDX-FileCopyrightText: 2025 Rosycup <178287475+Rosycup@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2021 Swept
+# SPDX-FileCopyrightText: 2021 Vera Aguilera Puerto
+# SPDX-FileCopyrightText: 2022 Kara
+# SPDX-FileCopyrightText: 2022 Peptide90
+# SPDX-FileCopyrightText: 2022 Rane
+# SPDX-FileCopyrightText: 2022 Visne
+# SPDX-FileCopyrightText: 2022 Vordenburg
+# SPDX-FileCopyrightText: 2022 metalgearsloth
+# SPDX-FileCopyrightText: 2023 Brayden H
+# SPDX-FileCopyrightText: 2023 Guilherme Ornel
+# SPDX-FileCopyrightText: 2023 Jeff
+# SPDX-FileCopyrightText: 2023 Nemanja
+# SPDX-FileCopyrightText: 2023 Tollhouse
+# SPDX-FileCopyrightText: 2023 Velcroboy
+# SPDX-FileCopyrightText: 2023 lzk
+# SPDX-FileCopyrightText: 2023 ninruB
+# SPDX-FileCopyrightText: 2024 Debug
+# SPDX-FileCopyrightText: 2024 VMSolidus
+# SPDX-FileCopyrightText: 2025 Rosycup
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: AGPL-3.0-or-later
 
 - type: entity
   id: Cigarette
@@ -45,10 +44,6 @@
   - type: Construction
     graph: smokeableCigarette
     node: cigarette
-  - type: FoodSequenceElement
-    entries:
-      Taco: Cig
-      Burger: CigBurger
 
 - type: entity
   id: SoakedCigarette
@@ -109,7 +104,7 @@
             Quantity: 5
           - ReagentId: Omnizine # Floof - Herbals aren't nicotine
             Quantity: 5
-          - ReagentId: Multiver # Floof - Herbals aren't nicotine
+          - ReagentId: Dylovene # Floof - Herbals aren't nicotine
             Quantity: 5
 
 - type: entity
@@ -157,10 +152,10 @@
           - ReagentId: Tricordrazine
             Quantity: 10
 
-- type: entity # Funkychem
-  id: CigaretteMultiver
+- type: entity
+  id: CigaretteDylovene
   parent: SoakedCigarette
-  name: Lacking Liver Damage # Funkychem - Reference to 13 multiver dealing liver damage when 14's intentionally doesn't
+  name: Urinal Cake Disolver
   components:
   - type: SolutionContainerManager
     solutions:
@@ -169,13 +164,13 @@
         reagents:
           - ReagentId: Nicotine
             Quantity: 10
-          - ReagentId: Multiver
+          - ReagentId: Dylovene
             Quantity: 10
 
-- type: entity # Funkychem
-  id: CigaretteAiuri
+- type: entity
+  id: CigaretteDermaline
   parent: SoakedCigarette
-  name: Does Not Meet Expectations # Funkychem - Reference to the fact bicar became advanced and derm didn't in cigarettes
+  name: Aloe Peanut Butter Medley
   components:
   - type: SolutionContainerManager
     solutions:
@@ -184,7 +179,7 @@
         reagents:
           - ReagentId: Nicotine
             Quantity: 10
-          - ReagentId: Aiuri
+          - ReagentId: Dermaline
             Quantity: 10
 
 - type: entity
@@ -217,8 +212,8 @@
           - ReagentId: Ipecac
             Quantity: 2
 
-- type: entity # Funkychem
-  id: CigaretteSalicylicAcid
+- type: entity
+  id: CigaretteBicaridine
   parent: SoakedCigarette
   name: Wet Dog Enhanced Cigarette
   components:
@@ -229,13 +224,13 @@
         reagents:
           - ReagentId: Nicotine
             Quantity: 10
-          - ReagentId: SalicylicAcid
+          - ReagentId: Bicaridine
             Quantity: 10
 
 - type: entity
   id: CigaretteDexalin
   parent: SoakedCigarette
-  name: No Successor Plus # Funkychem - Dex+ reference lol
+  name: Rocky Mountain Musk
   components:
   - type: SolutionContainerManager
     solutions:

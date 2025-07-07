@@ -103,12 +103,6 @@ guide-entry-forensics = Forensics
 guide-entry-defusal = Large Bomb Defusal
 guide-entry-criminal-records = Criminal Records
 guide-entry-species = Species
-guide-entry-yourfirstcharacter = Your First Character
-
-guide-entry-references = Tables & References
-guide-entry-drinks = Drinks
-# funky station
-guide-entry-exotic = Exotic
 
 guide-entry-antagonists = Antagonists
 guide-entry-nuclear-operatives = Nuclear Operatives

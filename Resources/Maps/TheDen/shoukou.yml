@@ -60,8 +60,8 @@ meta:
   engineVersion: 260.2.0
   forkId: ""
   forkVersion: ""
-  time: 07/03/2025 00:38:46
-  entityCount: 16460
+  time: 07/04/2025 22:52:01
+  entityCount: 16461
 maps:
 - 1
 grids:
@@ -3619,13 +3619,13 @@ entities:
             2: 3
           -10,-10:
             0: 63232
-            6: 14
+            4: 14
           -10,-12:
             0: 14
             3: 3584
           -10,-11:
-            4: 14
-            5: 3584
+            5: 14
+            6: 3584
           -10,-13:
             0: 61166
           -9,-13:
@@ -4488,6 +4488,29 @@ entities:
           temperature: 293.15
           moles:
           - 0
+          - 6666.982
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+        - volume: 2500
+          temperature: 293.15
+          moles:
+          - 0
           - 0
           - 0
           - 6666.982
@@ -4512,29 +4535,6 @@ entities:
           moles:
           - 6666.982
           - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-        - volume: 2500
-          temperature: 293.15
-          moles:
-          - 0
-          - 6666.982
           - 0
           - 0
           - 0
@@ -6446,7 +6446,7 @@ entities:
     - type: Transform
       pos: -20.5,-43.5
       parent: 2
-- proto: AirlockExternalGlassShuttleMining
+- proto: AirlockExternalGlassShuttleMiningFilled
   entities:
   - uid: 4891
     components:
@@ -6566,7 +6566,7 @@ entities:
       pos: 24.5,16.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -23116.125
+      secondsUntilStateChange: -23233.682
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -6986,7 +6986,7 @@ entities:
       pos: 15.5,8.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -36774.742
+      secondsUntilStateChange: -36892.3
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -7460,7 +7460,7 @@ entities:
       pos: 18.5,-7.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -263488.94
+      secondsUntilStateChange: -263606.5
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -46943,7 +46943,7 @@ entities:
       pos: 24.5,16.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -23122.424
+      secondsUntilStateChange: -23239.98
       state: Closing
     - type: DeviceNetwork
       deviceLists:
@@ -77581,6 +77581,12 @@ entities:
       parent: 2
 - proto: PosterContrabandTheBigGasTruth
   entities:
+  - uid: 4894
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: -44.5,-63.5
+      parent: 2
   - uid: 15911
     components:
     - type: Transform
@@ -104638,7 +104644,7 @@ entities:
   - uid: 10082
     components:
     - type: MetaData
-      desc: The iconic sidearm of the NT's finest. It has the HOS's name carved in the grip... when did they get such a beautiful revovler.                                    Uses .45 magnum ammo.
+      desc: The iconic sidearm of the NT's finest. It has the HOS's name carved in the grip... when did they get such a beautiful revolver?                                    Uses .45 magnum ammo.
     - type: Transform
       parent: 9899
     - type: Physics

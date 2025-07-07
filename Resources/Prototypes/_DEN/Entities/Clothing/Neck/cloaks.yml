@@ -1,0 +1,12 @@
+# SPDX-FileCopyrightText: 2025 portfiend
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  parent: ClothingNeckBase
+  id: ClothingNeckCloakColorable
+  name: plain cloak
+  description: A stylish single-color cloak. Doesn't make you any more important, but it's certainly attention-catching.
+  components:
+  - type: Sprite
+    sprite: _DEN/Clothing/Neck/Cloaks/colorable.rsi
