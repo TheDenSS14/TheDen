@@ -96,6 +96,40 @@
     - id: FlippoLighter #Not the steal objective, only difference from normal detective trenchcoat
 
 - type: entity
+  parent: [ClothingOuterStorageBase, AllowSuitStorageClothing]
+  id: ClothingOuterOpenCoatDetective
+  name: open detective trenchcoat
+  description: A rugged canvas trenchcoat, designed and created by TX Fabrication Corp. Wearing it makes you feel for the plight of the Tibetans.
+  components:
+  - type: Sprite
+    sprite: Clothing/OuterClothing/Coats/detectivecoatgoob.rsi
+  - type: Clothing
+    sprite: Clothing/OuterClothing/Coats/detectivecoatgoob.rsi
+  - type: StorageFill
+    contents:
+    - id: SmokingPipeFilledTobacco
+    - id: FlippoEngravedLighter
+  - type: TemperatureProtection
+    coefficient: 0.1
+  - type: Armor #same as regular sec armor
+    modifiers:
+      coefficients:
+        Blunt: 0.70
+        Slash: 0.70
+        Piercing: 0.70
+        Heat: 0.80
+
+- type: entity
+  parent: ClothingOuterCoatDetective
+  id: ClothingOuterOpenCoatDetectiveLoadout
+  suffix: Loadout # TheDen
+  components:
+  - type: StorageFill
+    contents:
+    - id: SmokingPipeFilledTobacco
+    - id: FlippoLighter #Not the steal objective, only difference from normal detective trenchcoat    
+
+- type: entity
   parent: ClothingOuterStorageBase
   id: ClothingOuterCoatGentle
   name: gentle coat

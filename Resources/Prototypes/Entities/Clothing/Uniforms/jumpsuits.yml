@@ -448,6 +448,15 @@
       sprite: Clothing/Uniforms/Jumpsuit/detective_grey.rsi
 
 - type: entity
+  parent: [ClothingUniformBase]
+  id: ClothingUniformJumpsuitNanotrasenDetective
+  name: Nanotrasen Detective Uniform
+  description: A detective jumpsuit issued directly from Nanotrasen's security division. Gives a more official, corporate look compared to the P.I suits often worn by detectives.
+  components:
+  - type: Sprite
+    sprite: Clothing/Uniforms/Jumpsuit/detectivedv.rsi
+
+- type: entity
   parent: [ClothingUniformBase, ClothingUniformFoldableBase]
   id: ClothingUniformJumpsuitEngineering
   name: engineering jumpsuit

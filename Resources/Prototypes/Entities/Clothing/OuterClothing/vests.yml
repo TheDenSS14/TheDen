@@ -172,3 +172,23 @@
     sprite: Clothing/OuterClothing/Vests/vest_thick.rsi
   - type: Clothing
     sprite: Clothing/OuterClothing/Vests/vest_thick.rsi
+
+- type: entity
+  parent: [ClothingOuterStorageBase, AllowSuitStorageClothing]
+  id: ClothingOuterVestHoSVestWeb
+  name: head of security's web vest
+  description: An advanced web vest for the head of security. Offers superior bullet and heat protection to their greatcoat at the cost of no casutic protection and lesser protection against cuts and bludgeoning.
+  components:
+  - type: Sprite
+    sprite: Clothing/OuterClothing/Armor/web_vest_hos.rsi 
+  - type: Clothing
+    sprite: Clothing/OuterClothing/Armor/web_vest_hos.rsi 
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.80
+        Slash: 0.80
+        Piercing: 0.40 
+        Heat: 0.50
+  - type: ExplosionResistance
+    damageCoefficient: 0.60
