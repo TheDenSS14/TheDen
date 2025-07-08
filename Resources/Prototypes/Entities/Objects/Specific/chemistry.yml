@@ -437,6 +437,9 @@
     solutions:
       injector:
         maxVol: 15
+  - type: Tag
+    tags:
+    - Syringe
   - type: FillableOneTimeInjector
     transferAmount: 15
     maxTransferAmount: 15
