@@ -40,6 +40,20 @@
     - ClothingOuterCoatDetective
 
 - type: loadout
+  id: LoadoutClothingOuterOpenCoatDetective
+  category: JobsSecurityDetective
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutDetectiveOuter
+    - !type:CharacterJobRequirement
+      jobs:
+        - Detective
+  items:
+    - ClothingOuterOpenCoatDetective
+
+- type: loadout
   id: LoadoutOuterVestDetective
   category: JobsSecurityDetective
   cost: 0
@@ -56,3 +70,16 @@
 # Shoes
 
 # Uniforms
+- type: loadout
+  id: LoadoutClothingUniformJumpsuitNanotrasenDetective
+  category: JobsSecurityDetective
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutDetectiveUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - Detective
+  items:
+    - ClothingUniformJumpsuitNanotrasenDetective
