@@ -5,6 +5,7 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
+using Content.Server.Paper;
 using Content.Shared.Access.Components;
 using Content.Shared.Administration.Logs;
 using Content.Shared.Audio;
@@ -14,7 +15,6 @@ using Content.Shared._DV.NanoChat; // DeltaV
 using Content.Shared.Database;
 using Content.Shared.Hands.EntitySystems;
 using Content.Shared.Labels.EntitySystems;
-using Content.Shared.Paper;
 using Content.Shared.Popups;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Random;
@@ -39,8 +39,8 @@ public sealed partial class LogProbeCartridgeSystem : EntitySystem // DeltaV - M
     public override void Initialize()
     {
         base.Initialize();
-
         InitializeNanoChat(); // DeltaV
+
         SubscribeLocalEvent<LogProbeCartridgeComponent, CartridgeUiReadyEvent>(OnUiReady);
         SubscribeLocalEvent<LogProbeCartridgeComponent, CartridgeAfterInteractEvent>(AfterInteract);
         SubscribeLocalEvent<LogProbeCartridgeComponent, CartridgeMessageEvent>(OnMessage);
@@ -136,14 +136,14 @@ public sealed partial class LogProbeCartridgeSystem : EntitySystem // DeltaV - M
         }
 
         var paperComp = Comp<PaperComponent>(paper);
-        _paper.SetContent((paper, paperComp), builder.ToString());
+        _paper.SetContent(paper, builder.ToString(), paperComp);
 
         _adminLogger.Add(LogType.EntitySpawn, LogImpact.Low, $"{ToPrettyString(user):user} printed out LogProbe logs ({paper}) of {ent.Comp.EntityName}");
     }
 
     private void UpdateUiState(Entity<LogProbeCartridgeComponent> ent, EntityUid loaderUid)
     {
-        var state = new LogProbeUiState(ent.Comp.PulledAccessLogs, ent.Comp.ScannedNanoChatData); // DeltaV - NanoChat support
-        _cartridgeLoaderSystem?.UpdateCartridgeUiState(loaderUid, state);
+        var state = new LogProbeUiState(ent.Comp.EntityName, ent.Comp.PulledAccessLogs, ent.Comp.ScannedNanoChatData); // DeltaV - NanoChat support
+        _cartridge?.UpdateCartridgeUiState(loaderUid, state);
     }
 }

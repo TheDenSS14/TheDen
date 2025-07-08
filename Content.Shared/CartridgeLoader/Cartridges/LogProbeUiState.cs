@@ -28,7 +28,7 @@ public sealed class LogProbeUiState : BoundUserInterfaceState
     /// </summary>
     public NanoChatData? NanoChatData { get; }
 
-    public LogProbeUiState(List<PulledAccessLog> pulledLogs, NanoChatData? nanoChatData = null) // DeltaV - NanoChat support
+    public LogProbeUiState(string entityName, List<PulledAccessLog> pulledLogs, NanoChatData? nanoChatData = null) // DeltaV - NanoChat support
     {
         EntityName = entityName;
         PulledLogs = pulledLogs;
