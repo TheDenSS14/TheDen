@@ -1,25 +1,24 @@
-# SPDX-FileCopyrightText: 2021 Swept <sweptwastaken@protonmail.com>
-# SPDX-FileCopyrightText: 2022 Moony <moonheart08@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2022 Peptide90 <78795277+Peptide90@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2022 Rane <60792108+Elijahrane@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2023 Ahion <58528255+Ahion@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2023 Alekshhh <44923899+Alekshhh@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2023 GoodWheatley <109803540+GoodWheatley@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2023 JoeHammad1844 <130668733+JoeHammad1844@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2023 LankLTE <135308300+LankLTE@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2023 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2023 Puro <103608145+PuroSlavKing@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2023 Sir Winters <7543955+Owai-Seek@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2023 Whisper <121047731+QuietlyWhisper@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2023 brainfood1183 <113240905+brainfood1183@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2023 freeman2651 <104049107+freeman2651@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2023 liltenhead <104418166+liltenhead@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2023 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2023 metalgearsloth <comedian_vs_clown@hotmail.com>
-# SPDX-FileCopyrightText: 2023 vanx <61917534+Vaaankas@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 Debug <49997488+DebugOk@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2021 Swept
+# SPDX-FileCopyrightText: 2022 Moony
+# SPDX-FileCopyrightText: 2022 Peptide90
+# SPDX-FileCopyrightText: 2022 Rane
+# SPDX-FileCopyrightText: 2023 Ahion
+# SPDX-FileCopyrightText: 2023 Alekshhh
+# SPDX-FileCopyrightText: 2023 GoodWheatley
+# SPDX-FileCopyrightText: 2023 JoeHammad1844
+# SPDX-FileCopyrightText: 2023 LankLTE
+# SPDX-FileCopyrightText: 2023 Nemanja
+# SPDX-FileCopyrightText: 2023 Puro
+# SPDX-FileCopyrightText: 2023 Sir Winters
+# SPDX-FileCopyrightText: 2023 Whisper
+# SPDX-FileCopyrightText: 2023 brainfood1183
+# SPDX-FileCopyrightText: 2023 freeman2651
+# SPDX-FileCopyrightText: 2023 liltenhead
+# SPDX-FileCopyrightText: 2023 metalgearsloth
+# SPDX-FileCopyrightText: 2023 vanx
+# SPDX-FileCopyrightText: 2024 Debug
+# SPDX-FileCopyrightText: 2024 slarticodefast
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -35,7 +34,6 @@
       - id: Ointment
       - id: Gauze
       - id: PillCanisterTricordrazine
-      - id: PillCanisterGranibitulari # Funkychem
       # see https://github.com/tgstation/blob/master/code/game/objects/items/storage/firstaid.dm for example contents
 
 - type: entity
@@ -47,8 +45,8 @@
     contents:
       - id: Ointment
         amount: 2
-      - id: PillCanisterAiuri # Funkychem
-      - id: PillCanisterLenturi # funky
+      - id: PillCanisterKelotane
+      - id: PillCanisterDermaline
 
 - type: entity
   id: MedkitBruteFilled
@@ -59,10 +57,8 @@
     contents:
       - id: Brutepack
       - id: Gauze
-      - id: SyringeSaline # Funkychem - Handles the fact there's too many species blood types AND 10x more effective.
-        amount: 2
-      - id: PillCanisterLibital # Funkychem
-      - id: PillCanisterProbital # funky
+      - id: PillCanisterIron
+      - id: PillCanisterCopper
 
 - type: entity
   id: MedkitToxinFilled
@@ -74,8 +70,7 @@
       - id: SyringeIpecac
       - id: SyringeEthylredoxrazine
       - id: AntiPoisonMedipen
-        amount: 2 # Funkychem
-      - id: PillCanisterMultiver
+      - id: PillCanisterDylovene
       - id: PillCanisterCharcoal
 
 - type: entity
@@ -88,10 +83,7 @@
       - id: ClothingMaskBreathMedical
       - id: EmergencyOxygenTankFilled
       - id: EmergencyMedipen
-        amount: 2 # Funkychem
-   #   - id: SyringeInaprovaline
-      - id: SyringeConvermol # Funkychem - only kit to have 1 pill type, generally makes sense to have 2.
-        amount: 2
+      - id: SyringeInaprovaline
       - id: PillCanisterDexalin
 
 - type: entity
@@ -103,7 +95,6 @@
     contents:
       - id: SyringePhalanximine
       - id: RadAutoInjector
-        amount: 1 # Funkychem
       - id: PillCanisterPotassiumIodide
       - id: PillCanisterHyronalin
 
@@ -117,8 +108,6 @@
       - id: MedicatedSuture
       - id: RegenerativeMesh
       - id: Bloodpack
-        amount: 1
-      - id: SyringeSaline # Funky
         amount: 2
 
 - type: entity
@@ -130,9 +119,7 @@
     contents:
       - id: MedicatedSuture
       - id: RegenerativeMesh
-      - id: SyringeRevivopine # Funkychem
-        amount: 1
-      - id: SyringeSaline
+      - id: SyringeEphedrine
       - id: BruteAutoInjector
       - id: BurnAutoInjector
       - id: EmergencyMedipen

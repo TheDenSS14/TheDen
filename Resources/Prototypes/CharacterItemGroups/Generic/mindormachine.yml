@@ -1,7 +1,7 @@
-# SPDX-FileCopyrightText: 2025 BloodfiendishOperator <141253729+Diggy0@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 Raikyr0 <Kurohana@hotmail.com.au>
-# SPDX-FileCopyrightText: 2025 VMSolidus <evilexecutive@gmail.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 BloodfiendishOperator
+# SPDX-FileCopyrightText: 2025 Raikyr0
+# SPDX-FileCopyrightText: 2025 VMSolidus
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -45,6 +45,8 @@
     - type: trait
       id: BionicArm
     - type: trait
+      id: BionicArmNoVisuals
+    - type: trait
       id: PlateletFactories
     - type: trait
       id: DermalArmor
@@ -54,6 +56,8 @@
       id: NaniteAutoRepairBots
     - type: trait
       id: BionicLeg
+    - type: trait
+      id: BionicLegNoVisuals
     - type: trait
       id: FlareShieldingModule
     - type: trait

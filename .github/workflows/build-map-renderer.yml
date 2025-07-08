@@ -25,7 +25,6 @@ on:
 
 jobs:
   build:
-    if: github.actor != 'TheDen-Bot'
     strategy:
       matrix:
         os: [ubuntu-latest]
