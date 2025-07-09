@@ -21,6 +21,7 @@
 # SPDX-FileCopyrightText: 2025 Tonk-GCR
 # SPDX-FileCopyrightText: 2025 portfiend
 # SPDX-FileCopyrightText: 2025 sleepyyapril
+# SPDX-FileCopyrightText: 2025 AlinaNova21 
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -1419,3 +1420,11 @@
   cost: 1
   items:
     - PrizeBall
+
+- type: loadout
+  id: PlushieDragon
+  category: GeneralToys
+  cost: 1
+  canBeHeirloom: true
+  items:
+    - PlushieDragon
