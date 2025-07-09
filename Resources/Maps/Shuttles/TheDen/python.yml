@@ -4,8 +4,8 @@ meta:
   engineVersion: 260.2.0
   forkId: ""
   forkVersion: ""
-  time: 07/09/2025 20:02:07
-  entityCount: 341
+  time: 07/09/2025 20:04:46
+  entityCount: 345
 maps: []
 grids:
 - 1
@@ -225,7 +225,8 @@ entities:
             1: 50414
             0: 4352
           0,2:
-            1: 52428
+            1: 19660
+            2: 32768
           0,3:
             1: 2244
             0: 17920
@@ -285,6 +286,29 @@ entities:
           moles:
           - 21.824879
           - 82.10312
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+        - volume: 2500
+          temperature: 293.14975
+          moles:
+          - 20.940317
+          - 78.77548
           - 0
           - 0
           - 0
@@ -442,6 +466,35 @@ entities:
     - type: Transform
       pos: 3.5,7.5
       parent: 1
+- proto: AmeJar
+  entities:
+  - uid: 343
+    components:
+    - type: Transform
+      parent: 342
+    - type: Physics
+      angularDamping: 0
+      linearDamping: 0
+      canCollide: False
+    - type: InsideEntityStorage
+  - uid: 344
+    components:
+    - type: Transform
+      parent: 342
+    - type: Physics
+      angularDamping: 0
+      linearDamping: 0
+      canCollide: False
+    - type: InsideEntityStorage
+  - uid: 345
+    components:
+    - type: Transform
+      parent: 342
+    - type: Physics
+      angularDamping: 0
+      linearDamping: 0
+      canCollide: False
+    - type: InsideEntityStorage
 - proto: AmeShielding
   entities:
   - uid: 13
@@ -1075,6 +1128,48 @@ entities:
     - type: Transform
       pos: 8.5,8.5
       parent: 1
+- proto: ClosetWallRadiation
+  entities:
+  - uid: 342
+    components:
+    - type: Transform
+      pos: 3.5,12.5
+      parent: 1
+    - type: EntityStorage
+      air:
+        volume: 101.325
+        immutable: False
+        temperature: 293.14383
+        moles:
+        - 0.8845623
+        - 3.3276393
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+    - type: ContainerContainer
+      containers:
+        entity_storage: !type:Container
+          showEnts: False
+          occludes: True
+          ents:
+          - 343
+          - 344
+          - 345
 - proto: ComputerRadar
   entities:
   - uid: 125
