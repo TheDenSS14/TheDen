@@ -127,12 +127,14 @@
 - type: entity
   parent: ClothingShoesBaseWinterBoots
   id: ClothingShoesBootsWinterJani
-  name: custodial winter boots
+  description: Warm insulated purple shoes with no-slip soles for janitorial work. # The Den - new description
+  name: janitorial winter boots # The Den - changes to janitorial from custodial
   components:
   - type: Sprite
     sprite: _DV/Clothing/Shoes/Boots/winterbootsjani.rsi
   - type: Clothing
     sprite: _DV/Clothing/Shoes/Boots/winterbootsjani.rsi
+  - type: NoSlip # The Den - added noslip
 
 - type: entity
   parent: ClothingShoesBaseWinterBoots
