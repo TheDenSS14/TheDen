@@ -109,3 +109,6 @@ reagent-desc-lotophagoi-oil = A super potent drug that is much better at inducin
 
 reagent-name-ectoplasm = ectoplasm
 reagent-desc-ectoplasm = The physical component of semi-corporeal spirits.
+
+reagent-name-toxintrash = trash 
+reagent-desc-toxintrash = An awful-smelling fluid. Deadly to non-vox.

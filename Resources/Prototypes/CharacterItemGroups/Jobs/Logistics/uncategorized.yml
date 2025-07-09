@@ -1,5 +1,5 @@
 # SPDX-FileCopyrightText: 2024 VMSolidus
-# SPDX-FileCopyrightText: 2025 BlitzTheSquishy
+# SPDX-FileCopyrightText: 2025 M3739
 # SPDX-FileCopyrightText: 2025 MajorMoth
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
@@ -54,11 +54,13 @@
 #  maxItems: 1
 #  items:
 #
-#- type: characterItemGroup
-#  id: LoadoutLogisticsNeck
-#  maxItems: 1
-#  items:
-#
+- type: characterItemGroup
+  id: LoadoutLogisticsNeck
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutCargoNeckNeckerchief # Floof - M3739 - #988
+
 #- type: characterItemGroup
 #  id: LoadoutLogisticsMask
 #  maxItems: 1

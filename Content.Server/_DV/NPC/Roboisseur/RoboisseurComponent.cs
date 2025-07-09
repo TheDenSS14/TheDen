@@ -1,9 +1,8 @@
-// SPDX-FileCopyrightText: 2023 Debug <sidneymaatman@gmail.com>
-// SPDX-FileCopyrightText: 2023 Fluffiest Floofers <thebluewulf@gmail.com>
-// SPDX-FileCopyrightText: 2024 Debug <49997488+DebugOk@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 sleepyyapril <flyingkarii@gmail.com>
-// SPDX-FileCopyrightText: 2025 BlitzTheSquishy <73762869+BlitzTheSquishy@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Fluffiest Floofers
+// SPDX-FileCopyrightText: 2024 Debug
+// SPDX-FileCopyrightText: 2025 BlitzTheSquishy
+// SPDX-FileCopyrightText: 2025 portfiend
+// SPDX-FileCopyrightText: 2025 sleepyyapril
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -99,137 +98,15 @@ namespace Content.Server.Roboisseur.Roboisseur
         };
 
         [DataField("tier2Protos")]
-        public List<String> Tier2Protos = new()
-        {
-            "FoodBurgerEmpowered",
-            "FoodSoupClown",
-            "FoodSoupChiliClown",
-            "FoodBurgerSuper",
-            "FoodNoodlesCopy",
-            // "FoodMothMallow",
-            "FoodPizzaCorncob",
-            "FoodPizzaDonkpocket",
-            "FoodSoupMonkey",
-            "FoodMothSeedSoup",
-            "FoodTartGrape",
-            "FoodMealCubancarp",
-            "FoodMealSashimi",
-            "FoodBurgerCarp",
-            "FoodMealSoftTaco",
-            "FoodMothMacBalls",
-            "FoodSoupNettle",
-            "FoodBurgerDuck",
-            "FoodBurgerBaseball"
-        };
+        public List<String> Tier2Protos = new();
 
         [DataField("tier3Protos")]
-        public List<String> Tier3Protos = new()
-        {
-            "FoodBurgerGhost",
-            "FoodSaladWatermelonFruitBowl",
-            "FoodBakedCannabisBrownieBatch",
-            "FoodPizzaDank",
-            "FoodBurgerBear",
-            "FoodBurgerMime",
-            "FoodCakeSuppermatter",
-            "FoodSoupChiliCold",
-            "FoodSoupBisque",
-            "FoodCakeSlime",
-            "FoodBurgerCrazy"
-        };
+        public List<String> Tier3Protos = new();
 
         [DataField("robossuierRewards")]
-        public IReadOnlyList<String> RobossuierRewards = new[]
-        {
-            "DrinkIceCreamGlass",
-            "FoodFrozenPopsicleOrange",
-            "FoodFrozenPopsicleBerry",
-            "FoodFrozenPopsicleJumbo",
-            "FoodFrozenSnowconeBerry",
-            "FoodFrozenSnowconeFruit",
-            "FoodFrozenSnowconeClown",
-            "FoodFrozenSnowconeMime",
-            "FoodFrozenSnowconeRainbow",
-            "FoodFrozenCornuto",
-            "FoodFrozenSundae",
-            "FoodFrozenFreezy",
-            "FoodFrozenSandwichStrawberry",
-            "FoodFrozenSandwich",
-        };
+        public IReadOnlyList<String> RobossuierRewards = new List<string>();
 
         [DataField("blacklistedProtos")]
-        public IReadOnlyList<String> BlacklistedProtos = new[]
-        {
-            "FoodBurgerSpell",
-            "FoodBreadBanana",
-            "FoodMothSqueakingFry",
-            "FoodMothFleetSalad",
-            "FoodBreadMeatSpider",
-            "FoodBurgerHuman",
-            "FoodNoodlesBoiled",
-            "FoodMothOatStew",
-            "FoodKebabSkewer",
-            "FoodSoupTomato",
-            "FoodDonkpocketBerryWarm",
-            "FoodBreadButteredToast",
-            "FoodMothCottonSoup",
-            "LeavesTobaccoDried",
-            "FoodSoupEyeball",
-            "FoodMothKachumbariSalad",
-            "FoodMeatRatdoubleKebab",
-            "FoodBurgerCorgi",
-            "FoodBreadPlain",
-            "FoodBreadBun",
-            "FoodBurgerCat",
-            "FoodSoupTomatoBlood",
-            "FoodMothSaladBase",
-            "FoodPieXeno",
-            "FoodPiePumpkin",
-            "FoodPiePumpkinSlice",
-            "FoodDonkpocketTeriyakiWarm",
-            "FoodMothBakedCheese",
-            "FoodMothPizzaCotton",
-            "AloeCream",
-            "FoodSnackPopcorn",
-            "FoodBurgerSoy",
-            "FoodMothToastedSeeds",
-            "FoodMothCornmealPorridge",
-            "FoodMothBakedCorn",
-            // "FoodBreadMoldySlice",
-            "FoodRiceBoiled",
-            "FoodMothEyeballSoup",
-            "FoodBreadCreamcheese",
-            "FoodSoupOnion",
-            "FoodBurgerAppendix",
-            "FoodBurgerRat",
-            "RegenerativeMesh",
-            "FoodCheeseCurds",
-            "FoodDonkpocketHonkWarm",
-            "FoodOatmeal",
-            "FoodBreadJellySlice",
-            "FoodMothCottonSalad",
-            // "FoodBreadMoldy",
-            "FoodDonkpocketSpicyWarm",
-            "FoodCannabisButter",
-            "FoodNoodles",
-            "FoodBreadMeat",
-            "LeavesCannabisDried",
-            "FoodBurgerCheese",
-            "FoodDonkpocketDankWarm",
-            "FoodSpaceshroomCooked",
-            "FoodMealFries",
-            "MedicatedSuture",
-            "FoodDonkpocketWarm",
-            "FoodCakePlain",
-            "DisgustingSweptSoup",
-            "FoodBurgerPlain",
-            "FoodBreadGarlicSlice",
-            "FoodSoupMushroom",
-            "FoodSoupWingFangChu",
-            "FoodBreadMeatXeno",
-            "FoodCakeBrain",
-            "FoodBurgerBrain",
-            "FoodSaladCaesar"
-        };
+        public IReadOnlyList<String> BlacklistedProtos = new List<string>();
     }
 }
