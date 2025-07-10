@@ -50,15 +50,23 @@ public sealed class HyposprayStatusControl : Control
         PrevMaxVolume = solution.MaxVolume;
         PrevOnlyAffectsMobs = _parent.Comp.OnlyAffectsMobs;
 
-        var modeStringLocalized = Loc.GetString(_parent.Comp.OnlyAffectsMobs switch
-        {
-            false => "hypospray-all-mode-text",
-            true => "hypospray-mobs-only-mode-text",
-        });
+        var modeStringLocalized = Loc.GetString(GetLocalizedMode(_parent.Comp));
 
         _label.SetMarkup(Loc.GetString("hypospray-volume-label",
             ("currentVolume", solution.Volume),
             ("totalVolume", solution.MaxVolume),
             ("modeString", modeStringLocalized)));
+    }
+
+    private string GetLocalizedMode(HyposprayComponent comp)
+    {
+        if (comp.InjectOnly)
+            return "hypospray-inject-only-mode-text";
+
+        return comp.OnlyAffectsMobs switch
+        {
+            false => "hypospray-all-mode-text",
+            true => "hypospray-mobs-only-mode-text",
+        };
     }
 }
