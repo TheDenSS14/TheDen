@@ -147,6 +147,8 @@
         - Borg
         - MedicalBorg
         - Mime
+    - !type:CharacterItemGroupRequirement
+      group: TraitsMuted
   functions:
     - !type:TraitAddComponent
       components:
