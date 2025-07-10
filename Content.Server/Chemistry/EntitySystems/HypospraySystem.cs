@@ -99,8 +99,7 @@ public sealed class HypospraySystem : SharedHypospraySystem
         TryDoInject(entity, args.HitEntities.First(), args.User);
     }
 
-    public bool TryDoInject(Entity<HyposprayComponent> entity, EntityUid target, EntityUid user,
-        DuplicateConditions? conditions = null)
+    public bool TryDoInject(Entity<HyposprayComponent> entity, EntityUid target, EntityUid user)
     {
         var (_, component) = entity;
 
@@ -119,11 +118,9 @@ public sealed class HypospraySystem : SharedHypospraySystem
             BreakOnMove = target != user,
             BreakOnWeightlessMove = false,
             NeedHand = component.NeedHands,
-            Broadcast = true
+            Broadcast = true,
+            DuplicateCondition = DuplicateConditions.SameEvent
         };
-
-        if (conditions != null)
-            doAfterEventArgs.DuplicateCondition = conditions.Value;
 
         _doAfter.TryStartDoAfter(doAfterEventArgs);
         return true;

@@ -1,4 +1,3 @@
-using Content.Server.Actions;
 using Content.Server.Chat.Systems;
 using Content.Server.Chemistry.EntitySystems;
 using Content.Server.Hands.Systems;
@@ -11,23 +10,19 @@ using Content.Shared.Chemistry.Components;
 using Content.Shared.Chemistry.EntitySystems;
 using Content.Shared.Chemistry.Hypospray.Events;
 using Content.Shared.Damage;
-using Content.Shared.DoAfter;
 using Content.Shared.Emag.Components;
+using Content.Shared.Interaction;
 using Content.Shared.Interaction.Events;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Silicons.Bots;
-using Robust.Shared.Containers;
 
 namespace Content.Server.Silicons.Bots;
 
 public sealed class MedibotSystem : SharedMedibotSystem
 {
-    [Dependency] private readonly ActionsSystem _actions = default!;
     [Dependency] private readonly ChatSystem _chat = default!;
-    [Dependency] private readonly SharedContainerSystem _container = default!;
     [Dependency] private readonly HandsSystem _hands = default!;
     [Dependency] private readonly InteractionSystem _interaction = default!;
-    [Dependency] private readonly HypospraySystem _hypospray = default!;
     [Dependency] private readonly PopupSystem _popup = default!;
     [Dependency] private readonly SharedSolutionContainerSystem _solutionContainer = default!;
 
@@ -38,16 +33,16 @@ public sealed class MedibotSystem : SharedMedibotSystem
             after: [typeof(HypospraySystem)]);
         SubscribeLocalEvent<MedibotInjectorComponent, UseInHandEvent>(CancelUseInHand,
             before: [typeof(HypospraySystem)]);
-
+        SubscribeLocalEvent<MedibotInjectorComponent, AfterInteractEvent>(OnAfterInteract,
+            before: [typeof(HypospraySystem)]);
     }
 
-    private void AfterInjected(EntityUid uid, MedibotInjectorComponent injectorComponent,
-        ref HyposprayDoAfterEvent args)
+    private void AfterInjected(Entity<MedibotInjectorComponent> injector, ref HyposprayDoAfterEvent args)
     {
-        if (!args.Handled || args.Cancelled || injectorComponent.Medibot == null)
+        if (!args.Handled || args.Cancelled || !HasComp<MedibotComponent>(args.User))
             return;
 
-        _chat.TrySendInGameICMessage(injectorComponent.Medibot.Value,
+        _chat.TrySendInGameICMessage(args.User,
             Loc.GetString("medibot-finish-inject"),
             InGameICChatType.Speak,
             hideChat: true,
@@ -57,6 +52,29 @@ public sealed class MedibotSystem : SharedMedibotSystem
     private void CancelUseInHand(Entity<MedibotInjectorComponent> injector, ref UseInHandEvent args)
     {
         args.Handled = true;
+    }
+
+    private void OnAfterInteract(Entity<MedibotInjectorComponent> injector, ref AfterInteractEvent args)
+    {
+        var medibot = args.User;
+
+        if (!TryComp<MedibotComponent>(medibot, out var medibotComp)
+            || !TryComp<HyposprayComponent>(args.Used, out var hypospray)
+            || !_solutionContainer.TryGetSolution(args.Used, hypospray.SolutionName, out var injectorSolution)
+            || !TryComp<MobStateComponent>(args.Target, out var state)
+            || !TryGetTreatment(medibotComp, state.CurrentState, out var treatment))
+            return;
+
+        _solutionContainer.RemoveAllSolution(injectorSolution.Value);
+
+        if (!CanInjectTarget((medibot, medibotComp), args.Target.Value, out var reason))
+        {
+            _popup.PopupEntity(reason, args.Target.Value, medibot);
+            args.Handled = true;
+            return;
+        }
+
+        _solutionContainer.TryAddReagent(injectorSolution.Value, treatment.Reagent, treatment.Quantity, out _);
     }
 
     /// <summary>
