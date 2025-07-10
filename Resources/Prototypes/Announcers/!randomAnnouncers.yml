@@ -10,7 +10,16 @@
   id: RandomAnnouncers
   weights:
     Intern: 0
-    MedBot: 0
-    Michael: 1
-    NEIL: 0
-    VoxFem: 0
+    MedBot: 3
+    Michael: 5
+    NEIL: 3
+    VoxFem: 5
+
+# DEN note: This was determined via poll in July 2025.
+# Here are the results of that poll:
+#   "Any" votes: 9 (assumed to be okay with any announcers)
+#   Intern:  58 votes, 79% rating, weight: 4.53 (Vetoed)
+#   Medbot:  41 votes, 59% rating, weight: 3.38
+#   NEIL:    38 votes, 55% rating, weight: 3.18
+#   VoxFem:  63 votes, 85% rating, weight: 4.86
+#   Michael: 10 votes to remove him, 88% rating, weight: 5.0
