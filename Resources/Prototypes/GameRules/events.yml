@@ -320,7 +320,9 @@
     table: !type:GroupSelector # DeltaV: EntityTable instead of spawn entries
       children:
       - id: MobMothroach
-        weight: 1
+        weight: 0.99
+      - id: MobRosyMothroach
+        weight: 0.01
 
 - type: entity
   id: MouseMigration
