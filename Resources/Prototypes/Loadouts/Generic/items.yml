@@ -589,16 +589,16 @@
     - BoxSurvival
   requirements:
     - !type:CharacterDepartmentRequirement
-       inverted: true
-       departments:
-         - Security
-         - Medical
-         - Engineering
+      inverted: true
+      departments:
+        - Security
+        - Medical
+        - Engineering
     - !type:CharacterJobRequirement
-       inverted: true
-       jobs:
-         - Clown
-         - Mime
+      inverted: true
+      jobs:
+        - Clown
+        - Mime
 
 - type: loadout
   id: LoadoutItemBoxSurvivalEngineering
@@ -608,8 +608,8 @@
     - BoxSurvivalEngineering
   requirements:
     - !type:CharacterDepartmentRequirement
-       departments:
-         - Engineering
+      departments:
+        - Engineering
 
 - type: loadout
   id: LoadoutItemBoxSurvivalSecurity
@@ -619,12 +619,12 @@
     - BoxSurvivalSecurity
   requirements:
     - !type:CharacterDepartmentRequirement
-       departments:
-         - Security
+      departments:
+        - Security
     - !type:CharacterJobRequirement
-       inverted: true
-       jobs:
-         - Brigmedic
+      inverted: true
+      jobs:
+        - Brigmedic
 
 - type: loadout
   id: LoadoutItemBoxSurvivalBrigmedic
@@ -634,8 +634,8 @@
     - BoxSurvivalBrigmedic
   requirements:
     - !type:CharacterJobRequirement
-       jobs:
-         - Brigmedic
+      jobs:
+        - Brigmedic
 
 - type: loadout
   id: LoadoutItemBoxSurvivalMedical
@@ -645,8 +645,8 @@
     - BoxSurvivalMedical
   requirements:
     - !type:CharacterDepartmentRequirement
-       departments:
-         - Medical
+      departments:
+        - Medical
 
 - type: loadout
   id: LoadoutItemBoxHug
@@ -656,8 +656,8 @@
     - BoxHug
   requirements:
     - !type:CharacterJobRequirement
-       jobs:
-         - Clown
+      jobs:
+        - Clown
 
 - type: loadout # TheDen
   id: LoadoutItemBoxMime
@@ -667,8 +667,8 @@
     - BoxMime
   requirements:
     - !type:CharacterJobRequirement
-       jobs:
-         - Mime
+      jobs:
+        - Mime
 
 # Medkits
 - type: loadout
@@ -688,16 +688,16 @@
   items:
     - MedkitBruteFilled
   requirements: #TheDen
-  - !type:CharacterLogicXorRequirement
-    requirements:
-    - !type:CharacterDepartmentRequirement
-      departments:
-      - Medical
-    - !type:CharacterJobRequirement
-      jobs:
-      - Brigmedic
-  - !type:CharacterItemGroupRequirement
-    group: LoadoutBoxKits
+    - !type:CharacterLogicXorRequirement
+      requirements:
+        - !type:CharacterDepartmentRequirement
+          departments:
+            - Medical
+        - !type:CharacterJobRequirement
+          jobs:
+            - Brigmedic
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBoxKits
 
 - type: loadout
   id: LoadoutMedkitBurnFilled
@@ -706,16 +706,16 @@
   items:
     - MedkitBurnFilled
   requirements: #TheDen
-  - !type:CharacterLogicXorRequirement
-    requirements:
-    - !type:CharacterDepartmentRequirement
-      departments:
-      - Medical
-    - !type:CharacterJobRequirement
-      jobs:
-      - Brigmedic
-  - !type:CharacterItemGroupRequirement
-    group: LoadoutBoxKits
+    - !type:CharacterLogicXorRequirement
+      requirements:
+        - !type:CharacterDepartmentRequirement
+          departments:
+            - Medical
+        - !type:CharacterJobRequirement
+          jobs:
+            - Brigmedic
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBoxKits
 
 - type: loadout
   id: LoadoutMedkitToxinFilled
@@ -724,16 +724,16 @@
   items:
     - MedkitToxinFilled
   requirements: #TheDen
-  - !type:CharacterLogicXorRequirement
-    requirements:
-    - !type:CharacterDepartmentRequirement
-      departments:
-      - Medical
-    - !type:CharacterJobRequirement
-      jobs:
-      - Brigmedic
-  - !type:CharacterItemGroupRequirement
-    group: LoadoutBoxKits
+    - !type:CharacterLogicXorRequirement
+      requirements:
+        - !type:CharacterDepartmentRequirement
+          departments:
+            - Medical
+        - !type:CharacterJobRequirement
+          jobs:
+            - Brigmedic
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBoxKits
 
 - type: loadout
   id: LoadoutMedkitOxygenFilled
@@ -742,16 +742,16 @@
   items:
     - MedkitOxygenFilled
   requirements: #TheDen
-  - !type:CharacterLogicXorRequirement
-    requirements:
-    - !type:CharacterDepartmentRequirement
-      departments:
-      - Medical
-    - !type:CharacterJobRequirement
-      jobs:
-      - Brigmedic
-  - !type:CharacterItemGroupRequirement
-    group: LoadoutBoxKits
+    - !type:CharacterLogicXorRequirement
+      requirements:
+        - !type:CharacterDepartmentRequirement
+          departments:
+            - Medical
+        - !type:CharacterJobRequirement
+          jobs:
+            - Brigmedic
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBoxKits
 
 - type: loadout
   id: LoadoutMedkitRadiationFilled
@@ -760,16 +760,16 @@
   items:
     - MedkitRadiationFilled
   requirements: #TheDen
-  - !type:CharacterLogicXorRequirement
-    requirements:
-    - !type:CharacterDepartmentRequirement
-      departments:
-      - Medical
-    - !type:CharacterJobRequirement
-      jobs:
-      - Brigmedic
-  - !type:CharacterItemGroupRequirement
-    group: LoadoutBoxKits
+    - !type:CharacterLogicXorRequirement
+      requirements:
+        - !type:CharacterDepartmentRequirement
+          departments:
+            - Medical
+        - !type:CharacterJobRequirement
+          jobs:
+            - Brigmedic
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBoxKits
 
 - type: loadout
   id: LoadoutMedkitAdvancedFilled
@@ -778,16 +778,16 @@
   items:
     - MedkitAdvancedFilled
   requirements: #TheDen
-  - !type:CharacterLogicXorRequirement
-    requirements:
-    - !type:CharacterDepartmentRequirement
-      departments:
-      - Medical
-    - !type:CharacterJobRequirement
-      jobs:
-      - Brigmedic
-  - !type:CharacterItemGroupRequirement
-    group: LoadoutBoxKits
+    - !type:CharacterLogicXorRequirement
+      requirements:
+        - !type:CharacterDepartmentRequirement
+          departments:
+            - Medical
+        - !type:CharacterJobRequirement
+          jobs:
+            - Brigmedic
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBoxKits
 
 - type: loadout
   id: LoadoutMedkitCombatFilled
@@ -797,9 +797,9 @@
     - MedkitCombatFilled
   requirements:
     - !type:CharacterJobRequirement
-       jobs:
-         - ChiefMedicalOfficer
-         - Brigmedic
+      jobs:
+        - ChiefMedicalOfficer
+        - Brigmedic
     - !type:CharacterItemGroupRequirement
       group: LoadoutBoxKits
 
@@ -813,9 +813,9 @@
     - !type:CharacterJobRequirement
       inverted: true
       jobs:
-      - Prisoner
+        - Prisoner
   items:
-  - WeaponCivilianDisabler
+    - WeaponCivilianDisabler
 
 #- type: loadout - Already a flash in the sec loadouts (plus one default in bag, and if oyu want more than TWO flashes, sectech is right there)
 #  id: LoadoutItemFlash
@@ -831,8 +831,8 @@
 #       jobs:
 #         - Brigmedic
 
- # 5 zillion ghostroles, more people will take them if theyre less common.
- # DEN: it has been ordained - PAIs allowed
+# 5 zillion ghostroles, more people will take them if theyre less common.
+# DEN: it has been ordained - PAIs allowed
 - type: loadout
   id: LoadoutItemPAI
   category: GeneralItems
@@ -922,8 +922,8 @@
   items:
     - AACTablet
   requirements: #TheDen
-  - !type:CharacterItemGroupRequirement
-    group: AACTabletVersions
+    - !type:CharacterItemGroupRequirement
+      group: AACTabletVersions
 
 - type: loadout
   id: LoadoutItemAACTablet_SAS
@@ -932,8 +932,8 @@
   items:
     - AACTablet_SAS
   requirements: #TheDen
-  - !type:CharacterItemGroupRequirement
-    group: AACTabletVersions
+    - !type:CharacterItemGroupRequirement
+      group: AACTabletVersions
 
 - type: loadout
   id: LoadoutItemCaneBlind
@@ -1045,9 +1045,9 @@
     - !type:CharacterItemGroupRequirement
       group: LoadoutCards
     - !type:CharacterDepartmentRequirement
-       departments:
-         - Command
-         - Dignitary # TheDen
+      departments:
+        - Command
+        - Dignitary # TheDen
 
 - type: loadout
   id: LoadoutItemFoodLollipop
@@ -1068,7 +1068,7 @@
       group: LoadoutWritables
 
 - type: loadout
-  id: LoadoutPlushieNuke
+  id: PlushieNuke
   category: GeneralToys
   cost: 2
   canBeHeirloom: true
@@ -1076,7 +1076,7 @@
     - PlushieNuke
 
 - type: loadout
-  id: LoadoutPlushieSharkBlue
+  id: PlushieSharkBlue
   category: GeneralToys
   cost: 1
   canBeHeirloom: true
@@ -1084,16 +1084,15 @@
     - PlushieSharkBlue
 
 - type: loadout
-  id: LoadoutPlushieSharkPink
+  id: PlushieSharkPink
   category: GeneralToys
   cost: 1
   canBeHeirloom: true
   items:
     - PlushieSharkPink
 
-
 - type: loadout
-  id: LoadoutPlushieSharkGrey
+  id: PlushieSharkGrey
   category: GeneralToys
   cost: 1
   canBeHeirloom: true
@@ -1101,7 +1100,7 @@
     - PlushieSharkGrey
 
 - type: loadout
-  id: LoadoutPlushieLizard
+  id: PlushieLizard
   category: GeneralToys
   cost: 1
   canBeHeirloom: true
@@ -1109,7 +1108,7 @@
     - PlushieLizard
 
 - type: loadout
-  id: LoadoutPlushieArachind
+  id: PlushieArachind
   category: GeneralToys
   cost: 1
   canBeHeirloom: true
@@ -1117,7 +1116,7 @@
     - PlushieArachind
 
 - type: loadout
-  id: LoadoutPlushieMoth
+  id: PlushieMoth
   category: GeneralToys
   cost: 1
   canBeHeirloom: true
@@ -1125,7 +1124,7 @@
     - PlushieMoth
 
 - type: loadout
-  id: LoadoutPlushieHampter
+  id: PlushieHampter
   category: GeneralToys
   cost: 1
   canBeHeirloom: true
@@ -1133,7 +1132,7 @@
     - PlushieHampter
 
 - type: loadout
-  id: LoadoutPlushieRouny
+  id: PlushieRouny
   category: GeneralToys
   cost: 1
   canBeHeirloom: true
@@ -1141,7 +1140,7 @@
     - PlushieRouny
 
 - type: loadout
-  id: LoadoutPlushieCarp
+  id: PlushieCarp
   category: GeneralToys
   cost: 1
   canBeHeirloom: true
@@ -1149,7 +1148,7 @@
     - PlushieCarp
 
 - type: loadout
-  id: LoadoutPlushieSlime
+  id: PlushieSlime
   category: GeneralToys
   cost: 1
   canBeHeirloom: true
@@ -1157,7 +1156,7 @@
     - PlushieSlime
 
 - type: loadout
-  id: LoadoutPlushieVox
+  id: PlushieVox
   category: GeneralToys
   cost: 1
   canBeHeirloom: true
@@ -1165,7 +1164,7 @@
     - PlushieVox
 
 - type: loadout
-  id: LoadoutPlushieHuman
+  id: PlushieHuman
   category: GeneralToys
   cost: 1
   canBeHeirloom: true
@@ -1173,7 +1172,7 @@
     - PlushieHuman
 
 - type: loadout
-  id: LoadoutPlushieArachne
+  id: PlushieArachne
   category: GeneralToys
   cost: 1
   canBeHeirloom: true
@@ -1181,7 +1180,7 @@
     - PlushieArachne
 
 - type: loadout
-  id: LoadoutPlushieVulp
+  id: PlushieVulp
   category: GeneralToys
   cost: 1
   canBeHeirloom: true
@@ -1189,7 +1188,7 @@
     - PlushieVulp
 
 - type: loadout
-  id: LoadoutPlushieShadowkin
+  id: PlushieShadowkin
   category: GeneralToys
   cost: 1
   canBeHeirloom: true
@@ -1197,19 +1196,19 @@
     - PlushieShadowkin
 
 - type: loadout #TheDen
-  id: LoadoutToyThrongler
+  id: ToyThrongler
   category: GeneralToys
   cost: 100
   canBeHeirloom: true
   requirements:
     - !type:CharacterJobRequirement
-       jobs:
-         - DeathSquad
+      jobs:
+        - DeathSquad
   items:
     - ThronglerToy
 
 - type: loadout #TheDen
-  id: LoadoutToyAmongPequeno
+  id: ToyAmongPequeno
   category: GeneralToys
   cost: 1
   canBeHeirloom: true
@@ -1217,7 +1216,7 @@
     - ToyAmongPequeno
 
 - type: loadout #TheDen
-  id: LoadoutPlushieCorgi
+  id: PlushieCorgi
   category: GeneralToys
   cost: 1
   canBeHeirloom: true
@@ -1225,7 +1224,7 @@
     - PlushieCorgi
 
 - type: loadout #TheDen
-  id: LoadoutPlushieGirlyCorgi
+  id: PlushieGirlyCorgi
   category: GeneralToys
   cost: 1
   canBeHeirloom: true
@@ -1233,7 +1232,7 @@
     - PlushieGirlyCorgi
 
 - type: loadout #TheDen
-  id: LoadoutPlushieRobotCorgi
+  id: PlushieRobotCorgi
   category: GeneralToys
   cost: 1
   canBeHeirloom: true
@@ -1241,7 +1240,7 @@
     - PlushieRobotCorgi
 
 - type: loadout #TheDen
-  id: LoadoutPlushieMothBartender
+  id: PlushieMothBartender
   category: GeneralToys
   cost: 1
   canBeHeirloom: true
@@ -1249,7 +1248,7 @@
     - PlushieMothBartender
 
 - type: loadout #TheDen
-  id: LoadoutPlushieMothMusician
+  id: PlushieMothMusician
   category: GeneralToys
   cost: 1
   canBeHeirloom: true
@@ -1257,7 +1256,7 @@
     - PlushieMothMusician
 
 - type: loadout #TheDen
-  id: LoadoutPlushieMort
+  id: PlushieMort
   category: GeneralToys
   cost: 1
   canBeHeirloom: true
@@ -1265,7 +1264,7 @@
     - PlushieMort
 
 - type: loadout #TheDen
-  id: LoadoutPlushieXeno
+  id: PlushieXeno
   category: GeneralToys
   cost: 1
   canBeHeirloom: true
@@ -1273,7 +1272,7 @@
     - PlushieXeno
 
 - type: loadout #TheDen
-  id: LoadoutPlushieCatBlack
+  id: PlushieCatBlack
   category: GeneralToys
   cost: 1
   canBeHeirloom: true
@@ -1281,7 +1280,7 @@
     - PlushieCatBlack
 
 - type: loadout #TheDen
-  id: LoadoutPlushieCatGrey
+  id: PlushieCatGrey
   category: GeneralToys
   cost: 1
   canBeHeirloom: true
@@ -1289,7 +1288,7 @@
     - PlushieCatGrey
 
 - type: loadout #TheDen
-  id: LoadoutPlushieCatOrange
+  id: PlushieCatOrange
   category: GeneralToys
   cost: 1
   canBeHeirloom: true
@@ -1297,7 +1296,7 @@
     - PlushieCatOrange
 
 - type: loadout #TheDen
-  id: LoadoutPlushieCatSiames
+  id: PlushieCatSiames
   category: GeneralToys
   cost: 1
   canBeHeirloom: true
@@ -1305,7 +1304,7 @@
     - PlushieCatSiames
 
 - type: loadout #TheDen
-  id: LoadoutPlushieCatTabby
+  id: PlushieCatTabby
   category: GeneralToys
   cost: 1
   canBeHeirloom: true
@@ -1313,7 +1312,7 @@
     - PlushieCatTabby
 
 - type: loadout #TheDen
-  id: LoadoutPlushieCatTuxedo
+  id: PlushieCatTuxedo
   category: GeneralToys
   cost: 1
   canBeHeirloom: true
@@ -1321,7 +1320,7 @@
     - PlushieCatTuxedo
 
 - type: loadout #TheDen
-  id: LoadoutPlushieCatWhite
+  id: PlushieCatWhite
   category: GeneralToys
   cost: 1
   canBeHeirloom: true
@@ -1329,7 +1328,7 @@
     - PlushieCatWhite
 
 - type: loadout #TheDen
-  id: LoadoutPlushieBlackFox
+  id: PlushieBlackFox
   category: GeneralToys
   cost: 1
   canBeHeirloom: true
@@ -1337,7 +1336,7 @@
     - PlushieBlackFox
 
 - type: loadout #TheDen
-  id: LoadoutPlushieBlueFox
+  id: PlushieBlueFox
   category: GeneralToys
   cost: 1
   canBeHeirloom: true
@@ -1345,7 +1344,7 @@
     - PlushieBlueFox
 
 - type: loadout #TheDen
-  id: LoadoutPlushieCoffeeFox
+  id: PlushieCoffeeFox
   category: GeneralToys
   cost: 1
   canBeHeirloom: true
@@ -1353,7 +1352,7 @@
     - PlushieCoffeeFox
 
 - type: loadout #TheDen
-  id: LoadoutPlushieCrimsonFox
+  id: PlushieCrimsonFox
   category: GeneralToys
   cost: 1
   canBeHeirloom: true
@@ -1361,7 +1360,7 @@
     - PlushieCrimsonFox
 
 - type: loadout #TheDen
-  id: LoadoutPlushieMarbleFox
+  id: PlushieMarbleFox
   category: GeneralToys
   cost: 1
   canBeHeirloom: true
@@ -1369,7 +1368,7 @@
     - PlushieMarbleFox
 
 - type: loadout #TheDen
-  id: LoadoutPlushieOrangeFox
+  id: PlushieOrangeFox
   category: GeneralToys
   cost: 1
   canBeHeirloom: true
@@ -1377,7 +1376,7 @@
     - PlushieOrangeFox
 
 - type: loadout #TheDen
-  id: LoadoutPlushiePinkFox
+  id: PlushiePinkFox
   category: GeneralToys
   cost: 1
   canBeHeirloom: true
@@ -1385,7 +1384,7 @@
     - PlushiePinkFox
 
 - type: loadout #TheDen
-  id: LoadoutPlushiePurpleFox
+  id: PlushiePurpleFox
   category: GeneralToys
   cost: 1
   canBeHeirloom: true
@@ -1393,7 +1392,7 @@
     - PlushiePurpleFox
 
 - type: loadout #TheDen
-  id: LoadoutPlushieRedFox
+  id: PlushieRedFox
   category: GeneralToys
   cost: 1
   canBeHeirloom: true
@@ -1401,7 +1400,7 @@
     - PlushieRedFox
 
 - type: loadout #TheDen
-  id: LoadoutPlushieDeer
+  id: PlushieDeer
   category: GeneralToys
   cost: 1
   canBeHeirloom: true
@@ -1409,14 +1408,14 @@
     - PlushieDeer
 
 - type: loadout #TheDen
-  id: LoadoutMysteryFigureBox
+  id: MysteryFigureBox
   category: GeneralToys
   cost: 1
   items:
     - MysteryFigureBox
 
 - type: loadout #TheDen
-  id: LoadoutPrizeBall
+  id: PrizeBall
   category: GeneralToys
   cost: 1
   items:
