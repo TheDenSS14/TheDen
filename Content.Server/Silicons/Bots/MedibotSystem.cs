@@ -29,7 +29,6 @@ namespace Content.Server.Silicons.Bots;
 public sealed class MedibotSystem : SharedMedibotSystem
 {
     [Dependency] private readonly ChatSystem _chat = default!;
-    [Dependency] private readonly HandsSystem _hands = default!;
     [Dependency] private readonly InteractionSystem _interaction = default!;
     [Dependency] private readonly PopupSystem _popup = default!;
     [Dependency] private readonly SharedSolutionContainerSystem _solutionContainer = default!;
