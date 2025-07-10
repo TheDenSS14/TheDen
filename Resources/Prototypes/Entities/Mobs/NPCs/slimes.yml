@@ -203,6 +203,11 @@
     size: Huge
   - type: Sprite
     color: "#FFFFFF55"
+    layers:
+    - map: [ "enum.DamageStateVisualLayers.Base" ]
+      state: blue_adult_slime
+    - map: [ "enum.DamageStateVisualLayers.BaseUnshaded" ]
+      state: aslime-mischievous
   - type: MeleeWeapon
     attackRate: 2
     damage:
@@ -212,6 +217,7 @@
     states:
       Alive:
         Base: blue_adult_slime
+        BaseUnshaded: aslime-mischievous
       Dead:
         Base: blue_adult_slime_dead
 
@@ -220,10 +226,17 @@
   id: MobAdultSlimesBlue
   parent: MobAdultSlimes
   components:
+  - type: Sprite
+    layers:
+    - map: [ "enum.DamageStateVisualLayers.Base" ]
+      state: blue_adult_slime
+    - map: [ "enum.DamageStateVisualLayers.BaseUnshaded" ]
+      state: aslime-mischievous
   - type: DamageStateVisuals
     states:
       Alive:
         Base: blue_adult_slime
+        BaseUnshaded: aslime-mischievous
       Dead:
         Base: blue_adult_slime_dead
 
@@ -233,6 +246,12 @@
   id: MobAdultSlimesBlueAngry
   suffix: Angry
   components:
+    - type: Sprite
+      layers:
+      - map: [ "enum.DamageStateVisualLayers.Base" ]
+        state: blue_adult_slime
+      - map: [ "enum.DamageStateVisualLayers.BaseUnshaded" ]
+        state: aslime-angry
     - type: NpcFactionMember
       factions:
         - SimpleHostile
@@ -243,6 +262,13 @@
       - MindRoleGhostRoleTeamAntagonist
       raffle:
         settings: short
+    - type: DamageStateVisuals
+      states:
+        Alive:
+          Base: blue_adult_slime
+          BaseUnshaded: aslime-angry
+        Dead:
+          Base: blue_adult_slime_dead
 
 - type: entity
   name: green slime
@@ -253,10 +279,13 @@
       layers:
       - map: [ "enum.DamageStateVisualLayers.Base" ]
         state: green_adult_slime
+      - map: [ "enum.DamageStateVisualLayers.BaseUnshaded" ]
+        state: aslime-mischievous
     - type: DamageStateVisuals
       states:
         Alive:
           Base: green_adult_slime
+          BaseUnshaded: aslime-mischievous
         Dead:
           Base: green_adult_slime_dead
     - type: MeleeWeapon
@@ -273,6 +302,12 @@
   id: MobAdultSlimesGreenAngry
   suffix: Angry
   components:
+    - type: Sprite
+      layers:
+      - map: [ "enum.DamageStateVisualLayers.Base" ]
+        state: green_adult_slime
+      - map: [ "enum.DamageStateVisualLayers.BaseUnshaded" ]
+        state: aslime-angry
     - type: NpcFactionMember
       factions:
         - SimpleHostile
@@ -283,6 +318,13 @@
       - MindRoleGhostRoleTeamAntagonist
       raffle:
         settings: short
+    - type: DamageStateVisuals
+      states:
+        Alive:
+          Base: green_adult_slime
+          BaseUnshaded: aslime-angry
+        Dead:
+          Base: green_adult_slime_dead
 
 - type: entity
   name: yellow slime
@@ -293,10 +335,13 @@
       layers:
       - map: [ "enum.DamageStateVisualLayers.Base" ]
         state: yellow_adult_slime
+      - map: [ "enum.DamageStateVisualLayers.BaseUnshaded" ]
+        state: aslime-mischievous
     - type: DamageStateVisuals
       states:
         Alive:
           Base: yellow_adult_slime
+          BaseUnshaded: aslime-mischievous
         Dead:
           Base: yellow_adult_slime_dead
     - type: MeleeWeapon
@@ -313,6 +358,12 @@
   id: MobAdultSlimesYellowAngry
   suffix: Angry
   components:
+    - type: Sprite
+      layers:
+      - map: [ "enum.DamageStateVisualLayers.Base" ]
+        state: yellow_adult_slime
+      - map: [ "enum.DamageStateVisualLayers.BaseUnshaded" ]
+        state: aslime-angry
     - type: NpcFactionMember
       factions:
         - SimpleHostile
@@ -323,3 +374,10 @@
       - MindRoleGhostRoleTeamAntagonist
       raffle:
         settings: short
+    - type: DamageStateVisuals
+      states:
+        Alive:
+          Base: yellow_adult_slime
+          BaseUnshaded: aslime-angry
+        Dead:
+          Base: yellow_adult_slime_dead
