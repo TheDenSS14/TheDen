@@ -47,6 +47,11 @@
   - type: SentienceTarget
     flavorKind: station-event-random-sentience-flavor-mechanical
   - type: Anchorable
+  # TODO: Reimplement emagged weldbot behavior
+  # - type: CombatMode
+  # - type: EmagReplaceFactions
+  #   factions:
+  #   - Syndicate
   - type: InnateTool
     tools:
     - id: WeldbotWelder
