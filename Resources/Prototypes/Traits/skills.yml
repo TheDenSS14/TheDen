@@ -206,10 +206,8 @@
       inverted: true
       species:
         - Harpy
-    - !type:CharacterTraitRequirement
-      inverted: true
-      traits:
-        - Muted
+    - !type:CharacterItemGroupRequirement
+      group: TraitsMuted
   functions:
     - !type:TraitAddComponent
       components:
@@ -224,10 +222,8 @@
     - !type:CharacterSpeciesRequirement
       species:
         - Harpy
-    - !type:CharacterTraitRequirement
-      inverted: true
-      traits:
-        - Muted
+    - !type:CharacterItemGroupRequirement
+      group: TraitsMuted
   functions:
     - !type:TraitReplaceComponent
       components:

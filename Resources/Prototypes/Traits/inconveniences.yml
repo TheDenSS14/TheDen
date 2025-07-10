@@ -75,8 +75,9 @@
       inverted: true
       traits:
         - Foreigner
-        - Muted
         - XenoglossyPower
+    - !type:CharacterItemGroupRequirement
+      group: TraitsMuted
     - !type:CharacterJobRequirement
       inverted: true
       jobs:
@@ -97,8 +98,9 @@
       inverted: true
       traits:
         - ForeignerLight
-        - Muted
         - XenoglossyPower
+    - !type:CharacterItemGroupRequirement
+      group: TraitsMuted
     - !type:CharacterJobRequirement
       inverted: true
       jobs:

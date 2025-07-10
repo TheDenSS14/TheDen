@@ -15,10 +15,8 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: TraitsLanguagesBasic
-    - !type:CharacterTraitRequirement
-      inverted: true
-      traits:
-        - Muted
+    - !type:CharacterItemGroupRequirement
+      group: TraitsMuted
   functions:
     - !type:TraitModifyLanguages
       languagesSpoken:
