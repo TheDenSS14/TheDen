@@ -329,7 +329,7 @@
   components:
     - type: InstantAction
       icon: { sprite: Interface/Actions/psionics.rsi, state: pyrokinetic_flare }
-      useDelay: 25
+      useDelay: 120
       checkCanInteract: false
       event: !type:AnomalyPowerActionEvent
         settings:
