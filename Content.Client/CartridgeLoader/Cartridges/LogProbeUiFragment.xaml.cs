@@ -1,7 +1,9 @@
-// SPDX-FileCopyrightText: 2023 Chief-Engineer <119664036+Chief-Engineer@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 Milon <milonpl.git@proton.me>
-// SPDX-FileCopyrightText: 2025 BlitzTheSquishy <73762869+BlitzTheSquishy@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Chief-Engineer
+// SPDX-FileCopyrightText: 2024 Milon
+// SPDX-FileCopyrightText: 2025 BlitzTheSquishy
+// SPDX-FileCopyrightText: 2025 Jakumba
+// SPDX-FileCopyrightText: 2025 deltanedas
+// SPDX-FileCopyrightText: 2025 sleepyyapril
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -18,14 +20,24 @@ namespace Content.Client.CartridgeLoader.Cartridges;
 [GenerateTypedNameReferences]
 public sealed partial class LogProbeUiFragment : BoxContainer
 {
+    /// <summary>
+    /// Action invoked when the print button gets pressed.
+    /// </summary>
+    public Action? OnPrintPressed;
+
     public LogProbeUiFragment()
     {
         RobustXamlLoader.Load(this);
+
+        PrintButton.OnPressed += _ => OnPrintPressed?.Invoke();
     }
 
     // DeltaV begin - Update to handle both types of data
     public void UpdateState(LogProbeUiState state)
     {
+        EntityName.Text = state.EntityName;
+        PrintButton.Disabled = string.IsNullOrEmpty(state.EntityName);
+
         ProbedDeviceContainer.RemoveAllChildren();
 
         if (state.NanoChatData != null)

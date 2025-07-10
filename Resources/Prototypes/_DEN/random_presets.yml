@@ -5,13 +5,13 @@
 - type: presetPicker
   id: HighDanger
   possibleWeightedPresets:
-    SurvivalIrregularExtended: 0.6
-    Hellshift: 0.2
-    Nukeops: 0.2
+    Survival: 0.5
+    Hellshift: 0.25
+    Nukeops: 0.25
 
 - type: presetPicker
   id: LowDanger
   possibleWeightedPresets:
-    Survival: 0.6
+    SurvivalIrregularExtended: 0.6
     Extended: 0.2
     Traitor: 0.2

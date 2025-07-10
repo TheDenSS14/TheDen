@@ -1,0 +1,21 @@
+# SPDX-FileCopyrightText: 2025 Tanix
+# SPDX-FileCopyrightText: 2025 portfiend
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
+#Tank Harness
+- type: entity
+  parent: [ClothingOuterBase, AllowSuitStorageClothing]
+  id: ClothingOuterVestTank
+  name: tank harness
+  description: A simple harness that can hold a gas tank.
+  components:
+  - type: Sprite
+    sprite: Clothing/OuterClothing/Vests/tankharness.rsi
+  - type: Clothing
+    sprite: Clothing/OuterClothing/Vests/tankharness.rsi
+  - type: Item
+    size: Normal # Make smaller than typical outer clothing
+    shape:
+    - 0, 0, 0, 1

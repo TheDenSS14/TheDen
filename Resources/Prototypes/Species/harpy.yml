@@ -1,6 +1,7 @@
 # SPDX-FileCopyrightText: 2023 Fluffiest Floofers
 # SPDX-FileCopyrightText: 2024 FoxxoTrystan
 # SPDX-FileCopyrightText: 2025 Aikakakah
+# SPDX-FileCopyrightText: 2025 Blitz
 # SPDX-FileCopyrightText: 2025 BloodfiendishOperator
 # SPDX-FileCopyrightText: 2025 Rosycup
 # SPDX-FileCopyrightText: 2025 Sapphire
@@ -22,8 +23,12 @@
   markingLimits: MobHarpyMarkingLimits
   dollPrototype: MobHarpyDummy
   skinColoration: HumanAnimal
+  minHeight: 0.6
   defaultHeight: 0.8
+  maxHeight: 1.1
+  minWidth: 0.55
   defaultWidth: 0.8
+  maxWidth: 1.15
   customName: true
 
 - type: speciesBaseSprites

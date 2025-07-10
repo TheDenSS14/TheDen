@@ -39,14 +39,16 @@
   reactants:
     Phenol:
       amount: 1
-    Dermaline:
-      amount: 1
-    SulfuricAcid:
+    Sodium:
       amount: 1
     Carbon:
       amount: 1
+    Oxygen:
+      amount: 1
+    SulfuricAcid:
+      amount: 1
   products:
-    SalicylicAcid: 4
+    SalicylicAcid: 5
 
 # airloss
 - type: reaction
@@ -60,6 +62,20 @@
       amount: 1
   products:
     Granibitulari: 3
+
+- type: reaction
+  id: Salbutamol
+  reactants:
+    Dexalin:
+      amount: 1
+    Inaprovaline:
+      amount: 1
+    Phenol:
+      amount: 1
+    Lithium:
+      amount: 1
+  products:
+    Salbutamol: 4
 
 - type: reaction
   id: Convermol

@@ -1,12 +1,14 @@
-// SPDX-FileCopyrightText: 2025 portfiend <109661617+portfiend@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 portfiend
+// SPDX-FileCopyrightText: 2025 sleepyyapril
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 using System.Linq;
 using Content.Server.Administration.Logs;
 using Content.Server.Body.Components;
+using Content.Server.Body.Systems;
 using Content.Shared.Body.Components;
+using Content.Shared.Body.Part;
 using Content.Shared.Body.Prototypes;
 using Content.Shared.Body.Systems;
 using Content.Shared.Database;
@@ -69,6 +71,41 @@ public sealed partial class TraitAddMetabolizer : TraitFunction
             logManager.Add(LogType.Hunger,
                 LogImpact.Low,
                 $"Added metabolizers {string.Join(",", Metabolizers)} to {entityManager.ToPrettyString(organId)} in {entityManager.ToPrettyString(uid)} (REPLACE: {Replace}). New metabolizer list: {string.Join(",", metabolizer.MetabolizerTypes)}");
+        }
+    }
+}
+
+/// <summary>
+/// A trait function that will add metabolizers to the entity's organs.
+/// </summary>
+[UsedImplicitly]
+public sealed partial class TraitAddComponentToBodyPart : TraitFunction
+{
+    /// <summary>
+    /// What components to add to the limb
+    /// </summary>
+    [DataField(required: true)]
+    public ComponentRegistry Components = new();
+
+    /// <summary>
+    /// Whether this trait should replace all metabolizers instead of simply adding them.
+    /// </summary>
+    [DataField]
+    public HashSet<BodyPartType> Parts = new();
+
+    public override void OnPlayerSpawn(EntityUid uid,
+        IComponentFactory factory,
+        IEntityManager entityManager,
+        ISerializationManager serializationManager)
+    {
+        var body = entityManager.System<BodySystem>();
+
+        foreach (var bodyPart in body.GetBodyChildren(uid))
+        {
+            if (!Parts.Contains(bodyPart.Component.PartType))
+                continue;
+
+            entityManager.AddComponents(bodyPart.Id, Components);
         }
     }
 }
