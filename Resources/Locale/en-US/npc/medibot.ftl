@@ -12,4 +12,5 @@ medibot-finish-inject = All done.
 
 medibot-error-injected-too-recently = Injected too recently!
 medibot-error-invalid-treatment = Invalid treatment!
-medibot-error-can-not-inject = No injection tool found!
+medibot-error-no-injection-tool = No injection tool found!
+medibot-error-no-bloodstream = No bloodstream found!

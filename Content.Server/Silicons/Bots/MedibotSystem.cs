@@ -1,6 +1,8 @@
 using Content.Server.Actions;
 using Content.Server.Chat.Systems;
 using Content.Server.Chemistry.EntitySystems;
+using Content.Server.Hands.Systems;
+using Content.Server.Interaction;
 using Content.Server.NPC.Components;
 using Content.Server.Popups;
 using Content.Shared._DEN.Silicons.Bots.Components;
@@ -23,6 +25,8 @@ public sealed class MedibotSystem : SharedMedibotSystem
     [Dependency] private readonly ActionsSystem _actions = default!;
     [Dependency] private readonly ChatSystem _chat = default!;
     [Dependency] private readonly SharedContainerSystem _container = default!;
+    [Dependency] private readonly HandsSystem _hands = default!;
+    [Dependency] private readonly InteractionSystem _interaction = default!;
     [Dependency] private readonly HypospraySystem _hypospray = default!;
     [Dependency] private readonly PopupSystem _popup = default!;
     [Dependency] private readonly SharedSolutionContainerSystem _solutionContainer = default!;
@@ -56,6 +60,50 @@ public sealed class MedibotSystem : SharedMedibotSystem
     }
 
     /// <summary>
+    ///     Checks if a target can be injected by this medibot.
+    /// </summary>
+    /// <param name="entity">The medibot performing the injection.</param>
+    /// <param name="target">The target receiving treatment.</param>
+    /// <param name="reason">The reason why the medibot cannot inject the target</param>
+    /// <returns>Whether or not the medibot can inject a target.</returns>
+    public bool CanInjectTarget(Entity<MedibotComponent> entity, EntityUid target, out string reason)
+    {
+        var uid = entity.Owner;
+        var medibot = entity.Comp;
+        reason = "";
+
+        if (!_interaction.TryGetUsedEntity(uid, out var used, true)
+            || !HasComp<MedibotInjectorComponent>(used))
+        {
+            reason = Loc.GetString("medibot-error-no-injection-tool");
+            return false;
+        }
+
+        if (!_solutionContainer.TryGetInjectableSolution(target, out var _, out var _))
+        {
+            reason = Loc.GetString("medibot-error-no-bloodstream");
+            return false;
+        }
+
+        if (HasComp<NPCRecentlyInjectedComponent>(target))
+        {
+            reason = Loc.GetString("medibot-error-injected-too-recently");
+            return false;
+        }
+
+        if (!TryComp<MobStateComponent>(target, out var state)
+            || !TryComp<DamageableComponent>(target, out var damage)
+            || !TryGetTreatment(medibot, state.CurrentState, out var treatment)
+            || !HasComp<EmaggedComponent>(uid) && !treatment.IsValid(damage.TotalDamage))
+        {
+            reason = Loc.GetString("medibot-error-invalid-treatment");
+            return false;
+        }
+
+        return true;
+    }
+
+    /// <summary>
     ///     Ensures that the medibot can inject the patient, and then attempts to do so with a DoAfter.
     /// </summary>
     /// <param name="entity">The medibot entity performing the injection.</param>
@@ -65,22 +113,23 @@ public sealed class MedibotSystem : SharedMedibotSystem
     public bool TryInjectTarget(Entity<MedibotComponent> entity, EntityUid target, bool sayTheLine = false)
     {
         var uid = entity.Owner;
-        var medibot = entity.Comp;
+        var targetCoords = Transform(target).Coordinates;
 
-        if (HasComp<NPCRecentlyInjectedComponent>(target))
+        if (!CanInjectTarget(entity, target, out var reason))
         {
-            _popup.PopupEntity(Loc.GetString("medibot-error-injected-too-recently"), target, uid);
+            _popup.PopupEntity(reason, target, uid);
             return false;
         }
 
-        if (!TryComp<MobStateComponent>(target, out var state)
-            || !TryComp<DamageableComponent>(target, out var damage)
-            || !TryGetTreatment(medibot, state.CurrentState, out var treatment)
-            || !HasComp<EmaggedComponent>(uid) && !treatment.IsValid(damage.TotalDamage))
-        {
-            _popup.PopupEntity(Loc.GetString("medibot-error-invalid-treatment"), target, uid);
+        if (!_interaction.TryGetUsedEntity(uid, out var used, true)
+            || !_interaction.InteractUsing(
+            uid,
+            used.Value,
+            target,
+            targetCoords,
+            checkCanInteract: true,
+            checkCanUse: true))
             return false;
-        }
 
         if (sayTheLine)
             _chat.TrySendInGameICMessage(uid,
@@ -90,7 +139,6 @@ public sealed class MedibotSystem : SharedMedibotSystem
                 hideLog: true);
 
         _popup.PopupEntity(Loc.GetString("injector-component-injecting-user"), target, uid);
-        // TODO: use hypospray function instead
         return true;
     }
 
