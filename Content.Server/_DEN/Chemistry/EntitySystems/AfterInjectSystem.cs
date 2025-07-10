@@ -1,3 +1,7 @@
+// SPDX-FileCopyrightText: 2025 portfiend
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Content.Server.Chemistry.Components;
 using Content.Server.Chemistry.EntitySystems;
 using Content.Shared.Chemistry.EntitySystems;
