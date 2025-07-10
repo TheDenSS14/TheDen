@@ -1,15 +1,16 @@
 using System.Diagnostics.CodeAnalysis;
 using Content.Server.Chat.Systems;
+using Content.Server.DoAfter;
 using Content.Server.Hands.Systems;
 using Content.Server.Repairable;
+using Content.Server.Tools;
 using Content.Shared.Chat;
 using Content.Shared.Chemistry.Components.SolutionManager;
 using Content.Shared.Chemistry.EntitySystems;
 using Content.Shared.Damage;
-using Content.Shared.Damage.Prototypes;
 using Content.Shared.DoAfter;
-using Content.Shared.Emag.Components;
 using Content.Shared.Hands.Components;
+using Content.Shared.NPC;
 using Content.Shared.Silicons.Bots;
 using Content.Shared.Tag;
 using Content.Shared.Tools.Components;
@@ -22,6 +23,7 @@ public sealed class WeldbotSystem : SharedWeldbotSystem
     [Dependency] private readonly ChatSystem _chat = default!;
     [Dependency] private readonly IPrototypeManager _proto = default!;
     [Dependency] private readonly TagSystem _tag = default!;
+    [Dependency] private readonly ToolSystem _tool = default!;
     [Dependency] private readonly SharedSolutionContainerSystem _solutionContainer = default!;
 
     public const string SiliconTag = "SiliconMob";
@@ -32,6 +34,7 @@ public sealed class WeldbotSystem : SharedWeldbotSystem
         base.Initialize();
 
         SubscribeLocalEvent<WeldbotComponent, RepairedEvent>(OnRepairedObject);
+        SubscribeLocalEvent<WeldbotComponent, ToolUserAttemptUseEvent>(PreventRedundantWelding);
     }
 
     public void OnRepairedObject(EntityUid uid, WeldbotComponent component, RepairedEvent args)
@@ -128,5 +131,30 @@ public sealed class WeldbotSystem : SharedWeldbotSystem
 
         var tagProto = _proto.Index<TagPrototype>(tag);
         return _tag.HasTag(tagComp, tagProto);
+    }
+
+    public void PreventRedundantWelding(Entity<WeldbotComponent> weldbot, ref ToolUserAttemptUseEvent args)
+    {
+        // Weldbots with no AI (i.e. they are player controlled) are unaffected.
+        if (!HasComp<ActiveNPCComponent>(weldbot.Owner))
+            return;
+
+        if (!TryComp<DoAfterComponent>(weldbot.Owner, out var doAfter))
+            return;
+
+        // TODO: Wow, this sucks! Here's a list of reasons why:
+        // Always assumes the weldbot has one tool.
+        // Always assumes that single tool is a welder / repair tool.
+        // Always assumes that the tool is being used to repair the target.
+        // Weirdly hard-coded for tool events.
+        // Unfortunately, DoAfter doesn't really have a good way to check if
+        // a specific DoAfterEvent is in progress, so this will have to do.
+
+        // This event is executed before the DoAfterSystem checks for duplicates (and cancels them).
+        // So if we cancel this event, then the check for duplicates never happens, and our weldbot
+        // can continue welding on the same DoAfter attempt it is already using.
+        // Without this, it'll get in an infinite loop of cancelling its repair attempts.
+        if (_tool.IsUsingAnyToolOnTarget((weldbot.Owner, doAfter), args.Target))
+            args.Cancelled = true;
     }
 }
