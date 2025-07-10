@@ -10,10 +10,19 @@ namespace Content.Shared.Silicon.WeldingHealing;
 
 public abstract partial class SharedWeldingHealableSystem : EntitySystem
 {
-    [Serializable, NetSerializable]
-    protected sealed partial class SiliconRepairFinishedEvent : SimpleDoAfterEvent
-    {
-        public float Delay;
-    }
 }
 
+[Serializable, NetSerializable]
+public sealed partial class SiliconRepairFinishedEvent : SimpleDoAfterEvent
+{
+    public float Delay;
+}
+
+/// <summary>
+///     Fired when an entity repairs a silicon.
+/// </summary>
+public sealed partial class RepairedSiliconEvent : EntityEventArgs
+{
+    public bool Finished;
+    public EntityUid? Target;
+}

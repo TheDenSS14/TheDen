@@ -11,6 +11,7 @@ using Content.Shared.Damage;
 using Content.Shared.DoAfter;
 using Content.Shared.Hands.Components;
 using Content.Shared.NPC;
+using Content.Shared.Silicon.WeldingHealing;
 using Content.Shared.Silicons.Bots;
 using Content.Shared.Tag;
 using Content.Shared.Tools.Components;
@@ -34,19 +35,33 @@ public sealed class WeldbotSystem : SharedWeldbotSystem
         base.Initialize();
 
         SubscribeLocalEvent<WeldbotComponent, RepairedEvent>(OnRepairedObject);
+        SubscribeLocalEvent<WeldbotComponent, RepairedSiliconEvent>(OnRepairedSilicon);
         SubscribeLocalEvent<WeldbotComponent, ToolUserAttemptUseEvent>(PreventRedundantWelding);
     }
 
-    public void OnRepairedObject(EntityUid uid, WeldbotComponent component, RepairedEvent args)
+    public void OnRepairedObject(Entity<WeldbotComponent> weldbot, ref RepairedEvent args)
     {
-        if (WeldingIsFinished(args.Ent.Owner))
-        {
-            _chat.TrySendInGameICMessage(uid,
-                Loc.GetString("weldbot-finish-weld"),
-                InGameICChatType.Speak,
-                hideChat: true,
-                hideLog: true);
-        }
+        AnnounceIfFinished(weldbot, args.Ent.Owner);
+    }
+
+    public void OnRepairedSilicon(Entity<WeldbotComponent> weldbot, ref RepairedSiliconEvent args)
+    {
+        if (args.Target == null)
+            return;
+
+        AnnounceIfFinished(weldbot, args.Target.Value);
+    }
+
+    private void AnnounceIfFinished(Entity<WeldbotComponent> weldbot, EntityUid target)
+    {
+        if (!WeldingIsFinished(target))
+            return;
+
+        _chat.TrySendInGameICMessage(weldbot.Owner,
+            Loc.GetString("weldbot-finish-weld"),
+            InGameICChatType.Speak,
+            hideChat: true,
+            hideLog: true);
     }
 
     public bool WeldingIsFinished(EntityUid target)

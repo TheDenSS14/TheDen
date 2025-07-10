@@ -61,6 +61,16 @@ public sealed class WeldingHealableSystem : SharedWeldingHealableSystem
             ("tool", args.Used!));
         _popup.PopupEntity(str, uid, args.User);
 
+        // DEN: Inform entity performing repairs when they complete it.
+        var repairedSilicon = new RepairedSiliconEvent()
+        {
+            Finished = !HasDamage((args.Target.Value, damageable), component, args.User),
+            Target = args.Target.Value,
+        };
+
+        RaiseLocalEvent(args.User, repairedSilicon);
+        // END DEN
+
         if (!args.Used.HasValue)
             return;
 
