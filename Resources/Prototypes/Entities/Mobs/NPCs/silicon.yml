@@ -326,8 +326,6 @@
   description: No substitute for a doctor, but better than nothing.
   components:
   - type: Medibot
-    injectorProto: MedibotInjector
-    injectActionId: ActionMedibotInject
     treatments:
       Alive:
         reagent: Tricordrazine
@@ -359,6 +357,7 @@
   - type: InnateTool
     tools:
     - id: MedibotInjector
+  - type: DoAfter
   - type: Hands
     showInHands: false
   - type: Body

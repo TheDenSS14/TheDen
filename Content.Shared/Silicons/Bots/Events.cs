@@ -1,14 +1,8 @@
 using Content.Shared.Actions;
-using Content.Shared.Chat;
 using Content.Shared.DoAfter;
-using Content.Shared.Magic;
 using Robust.Shared.Serialization;
 
 namespace Content.Shared.Silicons.Bots;
-
-[ByRefEvent]
-public sealed partial class MedibotInjectTargetActionEvent : EntityTargetActionEvent
-{ }
 
 [ByRefEvent]
 public sealed partial class PlantbotWaterPlantActionEvent : EntityTargetActionEvent

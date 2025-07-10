@@ -34,22 +34,6 @@ public sealed partial class MedibotComponent : Component
     /// </summary>
     [DataField("injectSound")]
     public SoundSpecifier InjectSound = new SoundPathSpecifier("/Audio/Items/hypospray.ogg");
-
-    /// <summary>
-    /// Contains the medibot's injector.
-    /// </summary>
-    [ViewVariables]
-    public ContainerSlot InjectorSlot = default!;
-
-    [DataField("slotId"), ViewVariables]
-    public string SlotId = "injector";
-
-    [DataField, ViewVariables]
-    public EntProtoId InjectorProto = "MedibotInjector";
-
-    [DataField, ViewVariables]
-    public EntProtoId InjectActionId = "ActionMedibotInject";
-    public EntityUid? InjectActionEntity;
 }
 
 /// <summary>

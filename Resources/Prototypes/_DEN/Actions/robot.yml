@@ -1,33 +1,4 @@
 - type: entity
-  id: ActionMedibotInject
-  name: Inject
-  description: Inject a target with medicinal chemicals.
-  categories: [ HideSpawnMenu ]
-  components:
-  - type: Sprite
-    sprite: Objects/Specific/Chemistry/syringe.rsi
-    state: "syringe_base0"
-  - type: EntityTargetAction
-    checkCanAccess: true
-    range: 1.5
-    useDelay: 5
-    itemIconStyle: BigAction
-    canTargetSelf: false
-    interactOnMiss: false
-    whitelist:
-      requireAll: true
-      components:
-      - InjectableSolution
-      - MobState
-    blacklist:
-      components:
-      - Silicon
-    icon:
-      sprite: Objects/Specific/Chemistry/syringe.rsi
-      state: "syringe_base0"
-    event: !type:MedibotInjectTargetActionEvent
-
-- type: entity
   id: ActionPlantbotWaterPlant
   name: Water Plant
   description: Adds water to a plant.
