@@ -60,6 +60,20 @@
     Protein: 4
 
 - type: reaction
+  id: AmmoniaBloodBreakdown
+  source: true
+  requiredMixerCategories:
+  - Centrifuge
+  reactants:
+    AmmoniaBlood:
+      amount: 30
+  products:
+    Water: 17
+    Nitrogen: 4.5
+    Chlorine: 2.5
+    Protein: 6
+
+- type: reaction
   id: ZombieBloodBreakdown
   source: true
   requiredMixerCategories:
