@@ -1,3 +1,7 @@
+// SPDX-FileCopyrightText: 2025 portfiend
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Content.Server.Administration;
 using Content.Server.Announcements.Systems;
 using Content.Shared.Administration;
