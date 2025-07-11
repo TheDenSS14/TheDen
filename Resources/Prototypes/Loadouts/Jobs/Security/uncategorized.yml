@@ -1158,6 +1158,20 @@
   items:
     - ClothingOuterArmorBasicSlim
 
+- type: loadout
+  id: LoadoutClothingLongcoatSec
+  category: JobsSecurityAUncategorized
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSecurityOuter
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Security
+  items:
+    - ClothingLongcoatSec
+
 # Shoes
 - type: loadout
   id: LoadoutSecurityShoesJackboots

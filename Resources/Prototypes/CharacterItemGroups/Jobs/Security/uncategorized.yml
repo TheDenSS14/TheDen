@@ -184,7 +184,7 @@
 #  maxItems: 1
 #  items:
 #
-- type: characterItemGroup 
+- type: characterItemGroup
   id: LoadoutSecurityNeck # Floof - M3739 - #988
   maxItems: 1
   items:
@@ -216,6 +216,8 @@
       id: LoadoutClothingOuterArmorBasic
     - type: loadout
       id: LoadoutClothingOuterArmorSlim
+    - type: loadout
+      id: LoadoutClothingLongcoatSec
 
 - type: characterItemGroup
   id: LoadoutSecurityShoes
