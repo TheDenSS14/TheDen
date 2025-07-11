@@ -67,12 +67,16 @@ public sealed class MedibotSystem : SharedMedibotSystem
 
         if (!TryComp<MedibotComponent>(medibot, out var medibotComp)
             || !TryComp<HyposprayComponent>(args.Used, out var hypospray)
-            || !_solutionContainer.TryGetSolution(args.Used, hypospray.SolutionName, out var injectorSolution)
-            || !TryComp<MobStateComponent>(args.Target, out var state)
-            || !TryGetTreatment(medibotComp, state.CurrentState, out var treatment))
+            || !_solutionContainer.TryGetSolution(args.Used, hypospray.SolutionName, out var injectorSolution))
             return;
 
         _solutionContainer.RemoveAllSolution(injectorSolution.Value);
+
+        if (!TryComp<MobStateComponent>(args.Target, out var state)
+            || !TryComp<DamageableComponent>(args.Target, out var damage)
+            || !TryGetTreatment(medibotComp, state.CurrentState, out var treatment)
+            || !treatment.IsValid(damage.TotalDamage))
+            return;
 
         if (!CanInjectTarget((medibot, medibotComp), args.Target.Value, out var reason))
         {
