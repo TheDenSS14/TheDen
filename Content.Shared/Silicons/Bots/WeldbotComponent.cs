@@ -29,14 +29,9 @@ public sealed partial class WeldbotComponent : Component
 
     public bool IsEmagged = false;
 
+    // TODO: Reimplement emag functionality for weldbot.
     [DataField, ViewVariables(VVAccess.ReadWrite)]
     public float EmaggedBurnDamage = 10;
-
-    [DataField, ViewVariables(VVAccess.ReadWrite)]
-    public float SiliconRepairAmount = 30;
-
-    [DataField, ViewVariables(VVAccess.ReadWrite)]
-    public float StructureRepairAmount = 5;
 
     [DataField, ViewVariables(VVAccess.ReadWrite)]
     public float ExpectedFuelCost = 10.0f;
