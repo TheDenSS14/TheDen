@@ -59,6 +59,12 @@ public partial class StatusIconData : IComparable<StatusIconData>
     public bool HideOnStealth = true;
 
     /// <summary>
+    /// Floof: Whether or not to hide the icon when the entity is fully concealed under a table.
+    /// </summary>
+    [DataField]
+    public bool HideUnderTables = true;
+
+    /// <summary>
     /// Specifies what entities and components/tags this icon can be shown to.
     /// </summary>
     [DataField]
