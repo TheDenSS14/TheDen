@@ -465,18 +465,6 @@ entities:
     - type: Transform
       pos: 7.5,3.5
       parent: 2
-- proto: LootSpawnerMedicalMinor
-  entities:
-  - uid: 53
-    components:
-    - type: Transform
-      pos: 6.5,7.5
-      parent: 2
-  - uid: 54
-    components:
-    - type: Transform
-      pos: 7.5,7.5
-      parent: 2
 - proto: MiningWindow
   entities:
   - uid: 55
