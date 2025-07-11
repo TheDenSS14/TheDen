@@ -1,0 +1,5 @@
+- type: entityTable
+  id: FillServiceGenericDV
+  table: !type:AllSelector
+    children:
+    - id: LunchboxServiceFilledRandom
