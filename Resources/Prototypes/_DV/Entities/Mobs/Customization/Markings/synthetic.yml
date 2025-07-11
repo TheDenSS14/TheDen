@@ -310,6 +310,15 @@
   - sprite: _DV/Mobs/Customization/SynthLizIPC/snout_markings.rsi
     state: protogen_snout_bolt_2
 
+- type: marking
+  id: IPCHeadMuzzle
+  bodyPart: Snout
+  markingCategory: Snout
+  speciesRestriction: [IPC]
+  sprites:
+  - sprite: _EE/Mobs/Customization/Tajaran/head.rsi
+    state: muzzle
+
 # Tails
 - type: marking
   id: SynthLizardTail
