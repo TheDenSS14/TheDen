@@ -121,6 +121,7 @@
     tags:
     - DoorBumpOpener
     - SiliconMob
+    - SiliconEmotes
   - type: MobState
     allowedStates:
       - Alive
@@ -158,6 +159,10 @@
     - Robotics
   - type: Speech
     speechVerb: Robotic
+    speechSounds: Pai
+  - type: Vocal
+    sounds:
+      Unsexed: UnisexSilicon
   - type: TypingIndicator
     proto: robot
   - type: ZombieImmune
