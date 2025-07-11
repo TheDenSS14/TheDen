@@ -7,6 +7,8 @@
 # SPDX-FileCopyrightText: 2024 Tmanzxd
 # SPDX-FileCopyrightText: 2024 VMSolidus
 # SPDX-FileCopyrightText: 2024 gluesniffler
+# SPDX-FileCopyrightText: 2025 Alina Shumann
+# SPDX-FileCopyrightText: 2025 AlinaNova21
 # SPDX-FileCopyrightText: 2025 Blitz
 # SPDX-FileCopyrightText: 2025 BlitzTheSquishy
 # SPDX-FileCopyrightText: 2025 EctoplasmIsGood
@@ -1419,3 +1421,11 @@
   cost: 1
   items:
     - PrizeBall
+
+- type: loadout
+  id: LoadoutPlushieDragon
+  category: GeneralToys
+  cost: 1
+  canBeHeirloom: true
+  items:
+    - PlushieDragon

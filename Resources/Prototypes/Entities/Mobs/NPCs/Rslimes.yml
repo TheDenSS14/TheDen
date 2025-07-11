@@ -1,10 +1,9 @@
-# SPDX-FileCopyrightText: 2024 Fansana <116083121+Fansana@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 Fansana <fansana95@googlemail.com>
-# SPDX-FileCopyrightText: 2024 FoxxoTrystan <trystan.garnierhein@gmail.com>
-# SPDX-FileCopyrightText: 2024 VMSolidus <evilexecutive@gmail.com>
-# SPDX-FileCopyrightText: 2024 fenndragon <fenndragon@gmail.com>
-# SPDX-FileCopyrightText: 2024 sleepyyapril <flyingkarii@gmail.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Fansana
+# SPDX-FileCopyrightText: 2024 FoxxoTrystan
+# SPDX-FileCopyrightText: 2024 VMSolidus
+# SPDX-FileCopyrightText: 2024 fenndragon
+# SPDX-FileCopyrightText: 2025 Jakumba
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -245,44 +244,3 @@
       - map: [ "enum.DamageStateVisualLayers.Base" ]
         state: alive
         color: "#c6c8cc"
-
-- type: entity
-  id: reagentslimeVents
-  parent: BaseGameRule
-  categories: [ HideSpawnMenu ]
-  components:
-  - type: StationEvent
-    startAnnouncement: true
-    earliestStart: 20
-    reoccurrenceDelay: 12
-    minimumPlayers: 30
-    weight: 6 # Really weak compared to other critters
-    duration: 30
-  - type: VentCrittersRule
-    table: !type:GroupSelector # DeltaV: EntityTable instead of spawn entries
-      children:
-      - id: ReagentSlimeBeer
-      - id: ReagentSlimePax
-      - id: ReagentSlimeNocturine
-      - id: ReagentSlimeTHC
-      - id: ReagentSlimeToxin
-      - id: ReagentSlimeNapalm
-      - id: ReagentSlimeOmnizine
-      - id: ReagentSlimeMuteToxin
-      - id: ReagentSlimeNorepinephricAcid
-      - id: ReagentSlimeEphedrine
-      - id: ReagentSlimeRobustHarvest
-      - id: ReagentSlimeIchor
-      - id: ReagentSlimeBleach
-      - id: ReagentSlimeSoap
-      - id: ReagentSlimeSpacelube
-      - id: ReagentSlimeBuzzachloricbees
-      - id: ReagentSlimeWehjuice
-      - id: ReagentCognizine
-      - id: ReagentSlimeNecrosol
-      - id: ReagentSlimeSpaceDrugs
-      - id: ReagentSlimeUnstableMutagen
-      - id: ReagentSlimeLead
-      - id: ReagentSlimechlorinetriflouride
-      - id: ReagentSlimePotassium
-      - id: ReagentSlimeLotophagoiOil

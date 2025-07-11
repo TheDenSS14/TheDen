@@ -22,7 +22,7 @@ RELEASE_DIR = "release"
 # Forks should change these to publish to their own infrastructure.
 #
 
-ROBUST_CDN_URL = "https://backup.denstation.net/cdn/"
+ROBUST_CDN_URL = "https://denstation.net/cdn/"
 FORK_ID = "theden"
 
 def main():

@@ -1,0 +1,54 @@
+# SPDX-FileCopyrightText: 2025 BlitzTheSquishy
+# SPDX-FileCopyrightText: 2025 Memeji Dankiri
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: trait
+  id: TraitorNonTargetable
+  category: Marked
+  points: -1
+  slots: 0
+  requirements:
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - TraitorKillTarget
+    - !type:CharacterDepartmentRequirement
+      inverted: true
+      departments:
+        - Command
+        - Dignitary
+        - Security
+  functions:
+    - !type:TraitAddComponent
+      components:
+        - type: Marked
+          targetType: TraitorNonTargetable
+
+- type: trait
+  id: TraitorKillTarget
+  category: Marked
+  points: 1
+  slots: 0
+  requirements:
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - TraitorNonTargetable
+  functions:
+    - !type:TraitAddComponent
+      components:
+        - type: Marked
+          targetType: TraitorKill
+
+#- type: trait - Pointless trait given this is default
+#  id: TraitorTeachTarget
+#  category: Marked
+#  points: 1
+#  slots: 0
+#  functions:
+#    - !type:TraitAddComponent
+#      components:
+#        - type: Marked
+#          targetType: TraitorTeach

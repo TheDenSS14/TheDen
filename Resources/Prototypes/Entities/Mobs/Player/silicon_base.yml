@@ -12,6 +12,7 @@
 # SPDX-FileCopyrightText: 2025 Sapphire
 # SPDX-FileCopyrightText: 2025 Skubman
 # SPDX-FileCopyrightText: 2025 Spatison
+# SPDX-FileCopyrightText: 2025 portfiend
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
@@ -352,6 +353,7 @@
     - type: LayingDown
     - type: RMCSetPose
     - type: ModifyUndies  # FLOOF Add
+    - type: OfferItem
 
 
 - type: damageModifierSet
