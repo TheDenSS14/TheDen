@@ -3,6 +3,7 @@
 # SPDX-FileCopyrightText: 2024 Pierson Arnold
 # SPDX-FileCopyrightText: 2024 Tmanzxd
 # SPDX-FileCopyrightText: 2024 gluesniffler
+# SPDX-FileCopyrightText: 2025 Adrian16199
 # SPDX-FileCopyrightText: 2025 Blitz
 # SPDX-FileCopyrightText: 2025 BlitzTheSquishy
 # SPDX-FileCopyrightText: 2025 Blu
@@ -1157,6 +1158,20 @@
         - Security
   items:
     - ClothingOuterArmorBasicSlim
+
+- type: loadout
+  id: LoadoutClothingLongcoatSec
+  category: JobsSecurityAUncategorized
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSecurityOuter
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Security
+  items:
+    - ClothingLongcoatSec
 
 # Shoes
 - type: loadout
