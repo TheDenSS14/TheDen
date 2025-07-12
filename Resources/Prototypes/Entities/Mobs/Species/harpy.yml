@@ -81,8 +81,12 @@
     visuals:
       enum.HarpyVisualLayers.Singing:
         singingLayer:
-          False:  {visible: false}
-          True:  {visible: true}
+          False: {visible: false}
+          True: {visible: true}
+      enum.CreamPiedVisuals.Creamed:
+        clownedon:
+          True: {visible: true}
+          False: {visible: false}
   - type: MovementSpeedModifier
     baseWalkSpeed: 3
     baseSprintSpeed: 5.5

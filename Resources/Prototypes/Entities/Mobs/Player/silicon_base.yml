@@ -20,7 +20,13 @@
 - type: entity
   save: false
   id: PlayerSiliconHumanoidBase
-  parent: [BaseMob, MobDamageable, MobCombat, MobAtmosExposed, MobFlammable]
+  parent:
+  - BaseMob
+  - MobDamageable
+  - MobCombat
+  - MobAtmosExposed
+  - MobFlammable
+  - BaseSpeciesLayers
   abstract: true
   components:
     - type: ContentEye
@@ -169,11 +175,15 @@
           clownedon: # Not 'creampied' bc I can already see Skyrat complaining about conflicts.
             True: { visible: true }
             False: { visible: false }
+    - type: CreamPied
+      layerKey: clownedon
+      layer:
+        sprite: Effects/creampie.rsi
+        state: creampie_human
     - type: Cuffable
     - type: Mood
     - type: AnimationPlayer
     - type: Buckle
-    - type: CreamPied
     - type: Stripping
     - type: Strippable
     - type: ComplexInteraction
