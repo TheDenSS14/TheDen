@@ -151,6 +151,7 @@
 # SPDX-FileCopyrightText: 2025 Eagle-0
 # SPDX-FileCopyrightText: 2025 EctoplasmIsGood
 # SPDX-FileCopyrightText: 2025 Eris
+# SPDX-FileCopyrightText: 2025 Jakumba
 # SPDX-FileCopyrightText: 2025 KekaniCreates
 # SPDX-FileCopyrightText: 2025 MajorMoth
 # SPDX-FileCopyrightText: 2025 Rosycup
@@ -615,7 +616,6 @@
     - ClothingEyesNightVisionGoggles
     - ClothingEyesNightVisionDiagnosticGoggles
     - ClothingEyesThermalVisionGoggles
-    - RCDAmmo #DeltaV
     - RCD #EE
     - RPD
     - RadioHandheld
@@ -1674,6 +1674,7 @@
       - ClothingNeckMantleMag
       - HandHeldAtmosMonitor
       - HandHeldPowerMonitor
+
       # Routers and monitors
       - PowerComputerCircuitboard
       - AlertsComputerCircuitboard
@@ -1689,6 +1690,10 @@
       - GyroscopeMachineCircuitboard
       - MiniGravityGeneratorCircuitboard
       - ShuttleGunKineticCircuitboard
+      # MechanicalCompression
+      - RCDAmmo
+      - RCD
+      - RPD
   - type: MaterialStorage
     whitelist:
       tags:

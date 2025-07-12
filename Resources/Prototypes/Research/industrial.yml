@@ -21,14 +21,17 @@
 # SPDX-FileCopyrightText: 2024 gluesniffler
 # SPDX-FileCopyrightText: 2024 zelezniciar1
 # SPDX-FileCopyrightText: 2025 AirFryerBuyOneGetOneFree
+# SPDX-FileCopyrightText: 2025 Jakumba
 # SPDX-FileCopyrightText: 2025 MajorMoth
 # SPDX-FileCopyrightText: 2025 Solaris
 # SPDX-FileCopyrightText: 2025 Spatison
+# SPDX-FileCopyrightText: 2025 Steve
 # SPDX-FileCopyrightText: 2025 Timfa
 # SPDX-FileCopyrightText: 2025 VMSolidus
 # SPDX-FileCopyrightText: 2025 Your Name
 # SPDX-FileCopyrightText: 2025 deltanedas
 # SPDX-FileCopyrightText: 2025 dootythefrooty
+# SPDX-FileCopyrightText: 2025 marc-pelletier
 # SPDX-FileCopyrightText: 2025 mart
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
@@ -82,6 +85,13 @@
   cost: 10000
   recipeUnlocks:
   - FlatpackerMachineCircuitboard
+  # Begin Den Additions
+  - RCDAmmo
+  - RCD
+  - RPD
+  - BorgModuleRCD
+  - BorgModuleRPD
+  # End Den Additions
 
 - type: technology
   id: IndustrialEngineering
