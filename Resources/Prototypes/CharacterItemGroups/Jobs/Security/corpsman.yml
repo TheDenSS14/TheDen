@@ -98,10 +98,12 @@
       id: LoadoutClothingUniformJumpsuitCorpsmanSummer
 
 
-#- type: characterItemGroup
-#  id: LoadoutCorpsmanOuter
-#  maxItems: 1
-#  items:
+- type: characterItemGroup
+  id: LoadoutCorpsmanOuter
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutClothingOuterLongCoatCorpsman
 #
 #- type: characterItemGroup
 #  id: LoadoutCorpsmanShoes
