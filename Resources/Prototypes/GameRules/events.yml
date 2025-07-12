@@ -108,7 +108,7 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: StationEvent
-    weight: 2
+    weight: 5 # Den
     reoccurrenceDelay: 5
     earliestStart: 1
     duration: 1
@@ -133,7 +133,7 @@
   - type: StationEvent
     startAnnouncement: true
     minimumPlayers: 25
-    weight: 3
+    weight: 5 # Den
     duration: 1
   - type: BureaucraticErrorRule
 
@@ -168,8 +168,8 @@
   components:
   - type: StationEvent
     weight: 6.5
-    earliestStart: 40
-    reoccurrenceDelay: 40
+    earliestStart: 90 # Den
+    reoccurrenceDelay: 60 # Den
     minimumPlayers: 30
     duration: null
   - type: SpaceSpawnRule
@@ -197,7 +197,7 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: StationEvent
-    weight: 6
+    weight: 6.5 # Den
     duration: 1
     earliestStart: 90 # Floof
     reoccurrenceDelay: 60 # Floof
@@ -297,7 +297,7 @@
   components:
   - type: StationEvent
     earliestStart: 30
-    weight: 7.5
+    weight: 8.5 # Den
     minimumPlayers: 20 # Floof
     startAnnouncement: true
     endAnnouncement: true
@@ -326,7 +326,7 @@
   - type: StationEvent
     earliestStart: 15
     minimumPlayers: 1
-    weight: 4
+    weight: 6 # Den
     duration: 30
   - type: VentCrittersRule
     table: !type:GroupSelector # DeltaV: EntityTable instead of spawn entries
@@ -345,7 +345,7 @@
     startAnnouncement: true
     startDelay: 10
     earliestStart: 15
-    weight: 6
+    weight: 8 # Den
     duration: 30
   - type: VentCrittersRule
     table: !type:GroupSelector # DeltaV: EntityTable instead of spawn entries
@@ -373,7 +373,7 @@
     startAnnouncement: true
     startDelay: 10
     earliestStart: 15
-    weight: 3
+    weight: 4 # Den
     duration: 30
   - type: VentCrittersRule
     table: !type:GroupSelector # DeltaV: EntityTable instead of spawn entries
@@ -389,7 +389,7 @@
   - type: StationEvent
     startAnnouncement: true
     startDelay: 10
-    weight: 3
+    weight: 5 # Den
     duration: 30
   - type: VentCrittersRule
     table: !type:GroupSelector # DeltaV: EntityTable instead of spawn entries
@@ -446,7 +446,7 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: StationEvent
-    weight: 5
+    weight: 6 # Den
     startAnnouncement: true
     endAnnouncement: true
     startDelay: 24
@@ -696,8 +696,8 @@
   id: LoneOpsSpawn
   components:
   - type: StationEvent
-    earliestStart: 35
-    weight: 5.5
+    earliestStart: 90 # Den
+    weight: 4.5 # Den
     minimumPlayers: 20
     duration: 1
   - type: RuleGrids
@@ -732,7 +732,7 @@
   components:
   - type: StationEvent
     earliestStart: 25
-    weight: 8
+    weight: 9 # Den
     minimumPlayers: 15
     reoccurrenceDelay: 30
     startAnnouncement: false
@@ -786,7 +786,7 @@
   id: IonStorm
   components:
   - type: StationEvent
-    weight: 10
+    weight: 12 # Den
     reoccurrenceDelay: 20
     duration: 1
   - type: IonStormRule
@@ -815,15 +815,15 @@
 #       weight: 3
 #     - type: AirlockVirusRule
 
-- type: entity
-  parent: BaseGameRule
-  id: SmugglerStashVariationPass
-  components:
-  - type: StationEvent
-    earliestStart: 0
-    duration: 1
-    minimumPlayers: 1
-    maxOccurrences: 2
-    weight: 10
-  - type: RandomSpawnRule
-    prototype: RandomSatchelSpawner
+# - type: entity
+#  parent: BaseGameRule
+#  id: SmugglerStashVariationPass
+#  components:
+#  - type: StationEvent
+#    earliestStart: 0
+#    duration: 1
+#    minimumPlayers: 1
+#    maxOccurrences: 2
+#    weight: 10
+#  - type: RandomSpawnRule
+#    prototype: RandomSatchelSpawner
