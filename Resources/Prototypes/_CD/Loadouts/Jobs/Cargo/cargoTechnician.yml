@@ -1,5 +1,6 @@
 # SPDX-FileCopyrightText: 2024 VMSolidus
 # SPDX-FileCopyrightText: 2025 Blitz
+# SPDX-FileCopyrightText: 2025 BlitzTheSquishy
 # SPDX-FileCopyrightText: 2025 Rosycup
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
@@ -7,12 +8,15 @@
 
 - type: loadout
   id: LoadoutCargoOuterCoatCargoBomber
-  category: JobsLogisticsCargoTechnician # TheDen
+  category: JobsLogisticsAUncategorized # TheDen
   cost: 1
   exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutCargoTechnicianOuter
+      group: LoadoutLogisticsOuter
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Logistics
   items:
     - ClothingOuterCoatCargoBomber
 
@@ -24,6 +28,9 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutCargoTechnicianUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - CargoTechnician
   items:
     - ClothingUniformJumpsuitCargoLight
 
@@ -35,6 +42,9 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutCargoTechnicianUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - CargoTechnician
   items:
     - ClothingUniformJumpsuitCargoDark
 
@@ -46,6 +56,9 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutCargoTechnicianUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - CargoTechnician
   items:
     - ClothingUniformJumpskirtCargoLight
 
@@ -57,16 +70,22 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutCargoTechnicianUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - CargoTechnician
   items:
     - ClothingUniformJumpskirtCargoDark
 
 - type: loadout
   id: LoadoutCargoTechnicianBootsSteel
-  category: JobsLogisticsCargoTechnician
+  category: JobsLogisticsAUncategorized
   cost: 0
   exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutCargoTechnicianShoes
+      group: LoadoutLogisticsShoes
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Logistics
   items:
     - ClothingShoesBootsSteel
