@@ -92,9 +92,25 @@
     RArm: MobHumanRArm
     LHand: MobHumanLHand
     RHand: MobHumanRHand
+    LLeg: MobArachneSpiderBody
+    RLeg: MobArachneSpiderBodyFront
 
 - type: humanoidBaseSprite
   id: MobArachneEyes
   baseSprite:
     sprite: Mobs/Species/eyes.rsi
     state: eyes
+
+- type: humanoidBaseSprite
+  id: MobArachneSpiderBody
+  matchSkin: false
+  baseSprite:
+    sprite: Mobs/Species/arachne.rsi
+    state: spider_body
+
+- type: humanoidBaseSprite
+  id: MobArachneSpiderBodyFront
+  matchSkin: false
+  baseSprite:
+    sprite: Mobs/Species/arachne.rsi
+    state: spider_body_front
