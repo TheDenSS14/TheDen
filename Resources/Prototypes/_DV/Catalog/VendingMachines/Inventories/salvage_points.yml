@@ -13,6 +13,8 @@
 - type: shopInventory
   id: SalvageVendorInventory
   listings:
+  - id: ClothingBackpackDuffelSalvageConscription
+    cost: 1250
   # TODO: marker beacons 1/10/30 for 10 each
   - id: DrinkWhiskeyBottleFull
     cost: 100
@@ -104,18 +106,20 @@
     cost: 1250
   - id: WeaponProtoKineticPistol
     cost: 1250
-  - id: WeaponSniperMosinEmpty
-    cost: 1500
   - id: WeaponRevolverArgentiEmpty
     cost: 4400
-  - id: WeaponRifleNovaliteC1Empty
-    cost: 5200
-  - id: ClothingBackpackDuffelSalvageConscription
-    cost: 1250
-  - id: WeaponRifleGestioEmpty
+  - id: WeaponPistolMk58Salvage
     cost: 6400
+  - id: WeaponPistolPollockSalvage
+    cost: 6800
+  - id: WeaponSniperMosinEmpty
+    cost: 5500
   - id: WeaponRifleSVTEmpty
     cost: 6400
+  - id: WeaponRifleNovaliteC1Empty
+    cost: 7200
+  - id: WeaponRifleGestioEmpty
+    cost: 9000
   - id: OreBagOfHolding
     cost: 6600
  # - id: WeaponPlasmaCutter -- TODO: Port from goob
