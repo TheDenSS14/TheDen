@@ -1,4 +1,5 @@
 # SPDX-FileCopyrightText: 2025 DeNatus
+# SPDX-FileCopyrightText: 2025 portfiend
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -8,7 +9,7 @@
   id: ClothingShoesBaseSocks
   components:
   - type: Clothing
-    renderLayer: jumpsuit
+    renderLayer: socks
   - type: HideLayerClothing
     force: true
     slots:

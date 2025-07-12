@@ -70,13 +70,12 @@
 # SPDX-FileCopyrightText: 2023 avery
 # SPDX-FileCopyrightText: 2023 brainfood1183
 # SPDX-FileCopyrightText: 2023 deltanedas
-# SPDX-FileCopyrightText: 2023 deltanedas <@deltanedas:kde.org>
 # SPDX-FileCopyrightText: 2023 faint
 # SPDX-FileCopyrightText: 2023 forthbridge
 # SPDX-FileCopyrightText: 2023 keronshb
 # SPDX-FileCopyrightText: 2023 liltenhead
 # SPDX-FileCopyrightText: 2023 lzk
-# SPDX-FileCopyrightText: 2023 notquitehadouken <1isthisameme>
+# SPDX-FileCopyrightText: 2023 notquitehadouken
 # SPDX-FileCopyrightText: 2023 qwerltaz
 # SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT
 # SPDX-FileCopyrightText: 2024 FoxxoTrystan
@@ -118,64 +117,10 @@
   - MobPolymorphable
   - MobCombat
   - StripableInventoryBase
+  - BaseSpeciesLayers
   id: BaseMobSpecies
   abstract: true
   components:
-  - type: Sprite
-    layers:
-    - map: [ "enum.HumanoidVisualLayers.Nipples" ]
-    - map: [ "enum.HumanoidVisualLayers.Genitals" ]
-    - map: [ "enum.HumanoidVisualLayers.TailBehind" ]
-    - map: [ "enum.HumanoidVisualLayers.Chest" ]
-    - map: [ "enum.HumanoidVisualLayers.Head" ]
-    - map: [ "enum.HumanoidVisualLayers.Snout" ]
-    - map: [ "enum.HumanoidVisualLayers.Eyes" ]
-    - map: [ "enum.HumanoidVisualLayers.Face" ]
-    - map: [ "enum.HumanoidVisualLayers.RArm" ]
-    - map: [ "enum.HumanoidVisualLayers.LArm" ]
-    - map: [ "enum.HumanoidVisualLayers.RLeg" ]
-    - map: [ "enum.HumanoidVisualLayers.LLeg" ]
-#     - shader: StencilClear
-#      sprite: Mobs/Species/Human/parts.rsi
-#      state: l_leg
-    - map: [ "enum.HumanoidVisualLayers.Underwear" ]
-    - map: [ "enum.HumanoidVisualLayers.Undershirt" ]
-    - map: ["jumpsuit"]
-    - map: ["enum.HumanoidVisualLayers.LFoot"]
-    - map: ["enum.HumanoidVisualLayers.RFoot"]
-    - map: ["enum.HumanoidVisualLayers.LHand"]
-    - map: ["enum.HumanoidVisualLayers.RHand"]
-    - map: [ "gloves" ]
-    - map: [ "ears" ]
-    - map: [ "innerBelt" ]
-    - map: [ "innerNeck" ]
-    - map: [ "outerClothing" ]
-    - map: [ "shoes" ]
-    - map: [ "enum.HumanoidVisualLayers.TailOversuit" ]
-    - map: [ "eyes" ]
-    - map: [ "belt" ]
-    - map: [ "id" ]
-    - map: [ "neck" ]
-    - map: [ "back" ]
-    - map: [ "enum.HumanoidVisualLayers.FacialHair" ]
-    - map: [ "enum.HumanoidVisualLayers.Hair" ]
-    - map: [ "enum.HumanoidVisualLayers.HeadSide" ]
-    - map: [ "enum.HumanoidVisualLayers.HeadTop" ]
-    - map: [ "enum.HumanoidVisualLayers.Tail" ]
-    - map: [ "enum.HumanoidVisualLayers.Wings" ]
-    - map: [ "mask" ]
-    - map: [ "head" ]
-    - map: [ "pocket1" ]
-    - map: [ "pocket2" ]
-    - map: ["enum.HumanoidVisualLayers.Handcuffs"]
-      color: "#ffffff"
-      sprite: Objects/Misc/handcuffs.rsi
-      state: body-overlay-2
-      visible: false
-    - map: [ "clownedon" ] # Dynamically generated
-      sprite: "Effects/creampie.rsi"
-      state: "creampie_human"
-      visible: false
   - type: DamageVisuals
     thresholds: [ 10, 20, 30, 50, 70, 100 ]
     targetLayers:
@@ -311,6 +256,10 @@
     factions:
     - NanoTrasen
   - type: CreamPied
+    layerKey: clownedon
+    layer:
+      sprite: Effects/creampie.rsi
+      state: creampie_human
   - type: Stripping
   - type: UserInterface
     interfaces:
@@ -462,7 +411,7 @@
 - type: entity
   save: false
   id: BaseSpeciesDummy
-  parent: InventoryBase
+  parent: [ InventoryBase, BaseSpeciesLayers ]
   abstract: true
   components:
   - type: Hands
@@ -476,57 +425,6 @@
   - type: Sprite
     drawdepth: Mobs
     noRot: true
-    # TODO BODY Turn these into individual body parts?
-    layers:
-    - map: [ "enum.HumanoidVisualLayers.Genitals" ]
-    - map: [ "enum.HumanoidVisualLayers.Nipples" ]
-    - map: [ "enum.HumanoidVisualLayers.TailBehind" ]
-    - map: [ "enum.HumanoidVisualLayers.Chest" ]
-    - map: [ "enum.HumanoidVisualLayers.Head" ]
-    - map: [ "enum.HumanoidVisualLayers.Snout" ]
-    - map: [ "enum.HumanoidVisualLayers.Eyes" ]
-    - map: [ "enum.HumanoidVisualLayers.Face" ]
-    - map: [ "enum.HumanoidVisualLayers.RArm" ]
-    - map: [ "enum.HumanoidVisualLayers.LArm" ]
-    - map: [ "enum.HumanoidVisualLayers.RLeg" ]
-    - map: [ "enum.HumanoidVisualLayers.LLeg" ]
-#     - shader: StencilClear
-#      sprite: Mobs/Species/Human/parts.rsi
-#      state: l_leg
-    - map: [ "enum.HumanoidVisualLayers.Underwear" ]
-    - map: [ "enum.HumanoidVisualLayers.Undershirt" ]
-    - map: ["jumpsuit"]
-    - map: ["enum.HumanoidVisualLayers.LFoot"]
-    - map: ["enum.HumanoidVisualLayers.RFoot"]
-    - map: ["enum.HumanoidVisualLayers.LHand"]
-    - map: ["enum.HumanoidVisualLayers.RHand"]
-    - map: ["enum.HumanoidVisualLayers.Handcuffs"]
-      color: "#ffffff"
-      sprite: Objects/Misc/handcuffs.rsi
-      state: body-overlay-2
-      visible: false
-    - map: [ "gloves" ]
-    - map: [ "ears" ]
-    - map: [ "innerBelt" ]
-    - map: [ "innerNeck" ]
-    - map: [ "outerClothing" ]
-    - map: [ "shoes" ]
-    - map: [ "eyes" ]
-    - map: [ "belt" ]
-    - map: [ "id" ]
-    - map: [ "neck" ]
-    - map: [ "enum.HumanoidVisualLayers.TailOversuit" ]
-    - map: [ "back" ]
-    - map: [ "enum.HumanoidVisualLayers.NeckFluff" ]
-    - map: [ "enum.HumanoidVisualLayers.FacialHair" ]
-    - map: [ "enum.HumanoidVisualLayers.Hair" ]
-    - map: [ "enum.HumanoidVisualLayers.HeadSide" ]
-    - map: [ "enum.HumanoidVisualLayers.HeadTop" ]
-    - map: [ "enum.HumanoidVisualLayers.Tail" ]
-    - map: [ "mask" ]
-    - map: [ "head" ]
-    - map: [ "pocket1" ]
-    - map: [ "pocket2" ]
   - type: Appearance
   - type: HumanoidAppearance
     species: Human

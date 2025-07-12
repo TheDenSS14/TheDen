@@ -9,101 +9,28 @@
 # SPDX-FileCopyrightText: 2025 Skubman
 # SPDX-FileCopyrightText: 2025 Tabitha
 # SPDX-FileCopyrightText: 2025 VMSolidus
+# SPDX-FileCopyrightText: 2025 portfiend
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 - type: entity
+  abstract: true
+  parent: TaurSpeciesLayers
+  id: BaseArachneAppearance
+  components:
+  - type: Inventory
+    templateId: anytaur
+  - type: HumanoidAppearance
+    species: Arachne
+
+- type: entity
   save: false
   name: Urist McArachne
-  parent: BaseMobHuman
+  parent: [ BaseArachneAppearance, BaseMobHuman ]
   id: MobArachneBase
   abstract: true
   components:
-  - type: Sprite
-    # Arachne are one of the species that needs a manual visual layers setup.
-    layers:
-    - map: [ "enum.HumanoidVisualLayers.LLeg" ]
-      sprite: Mobs/Species/arachne.rsi
-      state: spider_body
-    - map: [ "enum.HumanoidVisualLayers.Chest" ]
-      color: "#e8b59b"
-      sprite: Mobs/Species/Human/parts.rsi
-      state: torso_m
-    - map: [ "enum.HumanoidVisualLayers.RLeg" ]
-      sprite: Mobs/Species/arachne.rsi
-      state: spider_body_front
-    - map: [ "enum.HumanoidVisualLayers.Head" ]
-      color: "#e8b59b"
-      sprite: Mobs/Species/Human/parts.rsi
-      state: head_m
-    - map: [ "enum.HumanoidVisualLayers.Snout" ]
-    - map: [ "enum.HumanoidVisualLayers.Eyes" ]
-      color: "#008800"
-      sprite: Mobs/Species/eyes.rsi
-      state: eyes
-    - map: [ "enum.HumanoidVisualLayers.Face" ]
-    - map: [ "enum.HumanoidVisualLayers.RArm" ]
-      color: "#e8b59b"
-      sprite: Mobs/Species/Human/parts.rsi
-      state: r_arm
-    - map: [ "enum.HumanoidVisualLayers.LArm" ]
-      color: "#e8b59b"
-      sprite: Mobs/Species/Human/parts.rsi
-      state: l_arm
-#     - shader: StencilClear
-#      sprite: Mobs/Species/Human/parts.rsi
-#      state: l_leg
-    - shader: StencilMask
-      map: [ "enum.HumanoidVisualLayers.StencilMask" ]
-      sprite: Mobs/Customization/anytaur_masking_helpers.rsi
-      state: unisex_full
-      visible: false
-    - map: [ "enum.HumanoidVisualLayers.Undershirt" ]
-    - map: [ "jumpsuit" ]
-    - map: [ "enum.HumanoidVisualLayers.LHand" ]
-      color: "#e8b59b"
-      sprite: Mobs/Species/Human/parts.rsi
-      state: l_hand
-    - map: [ "enum.HumanoidVisualLayers.RHand" ]
-      color: "#e8b59b"
-      sprite: Mobs/Species/Human/parts.rsi
-      state: r_hand
-    - map: [ "enum.HumanoidVisualLayers.Handcuffs" ]
-      color: "#ffffff"
-      sprite: Objects/Misc/handcuffs.rsi
-      state: body-overlay-2
-      visible: false
-    - map: [ "id" ]
-    - map: [ "gloves" ]
-    - map: [ "shoes" ]
-    - map: [ "ears" ]
-    - map: [ "innerBelt" ]
-    - map: [ "innerNeck" ]
-    - map: [ "outerClothing" ]
-    - map: [ "eyes" ]
-    - map: [ "belt" ]
-    - map: [ "neck" ]
-    - map: [ "back" ]
-    - map: [ "enum.HumanoidVisualLayers.FacialHair" ]
-    - map: [ "enum.HumanoidVisualLayers.Hair" ]
-      state: bald
-      sprite: Mobs/Customization/human_hair.rsi
-    - map: [ "mask" ]
-    - map: [ "enum.HumanoidVisualLayers.HeadSide" ] # This is not in the default order so earrings are rendered above masks
-    - map: [ "head" ]
-    - map: [ "pocket1" ]
-    - map: [ "pocket2" ]
-    - map: [ "enum.HumanoidVisualLayers.Tail" ]
-      sprite: Mobs/Customization/masking_helpers.rsi
-      state: none
-      visible: false
-    - map: [ "clownedon" ] # Dynamically generated
-      sprite: "Effects/creampie.rsi"
-      state: "creampie_human"
-      visible: false
-  - type: HumanoidAppearance
-    species: Arachne
   - type: Sericulture
     action: ActionSericulture
     productionLength: 2
@@ -131,8 +58,6 @@
       Male: MaleArachne
       Female: FemaleArachne
       Unsexed: MaleArachne
-  - type: Inventory
-    templateId: anytaur
   - type: LanguageKnowledge
     speaks:
     - TauCetiBasic
@@ -187,88 +112,7 @@
 - type: entity
   save: false
   name: Urist McHands
-  parent: MobHumanDummy
+  parent: [ BaseArachneAppearance, MobHumanDummy ]
   id: MobArachneDummy
   categories: [ HideSpawnMenu ]
   description: A dummy arachne meant to be used in character setup.
-  components:
-  - type: Sprite
-    layers:
-    - map: [ "enum.HumanoidVisualLayers.LLeg" ]
-      sprite: Mobs/Species/arachne.rsi
-      state: spider_body
-    - map: [ "enum.HumanoidVisualLayers.Chest" ]
-      color: "#e8b59b"
-      sprite: Mobs/Species/Human/parts.rsi
-      state: torso_m
-    - map: [ "enum.HumanoidVisualLayers.RLeg" ]
-      sprite: Mobs/Species/arachne.rsi
-      state: spider_body_front
-    - map: [ "enum.HumanoidVisualLayers.Head" ]
-      color: "#e8b59b"
-      sprite: Mobs/Species/Human/parts.rsi
-      state: head_m
-    - map: [ "enum.HumanoidVisualLayers.Snout" ]
-    - map: [ "enum.HumanoidVisualLayers.Eyes" ]
-      color: "#008800"
-      sprite: Mobs/Species/eyes.rsi
-      state: eyes
-    - map: [ "enum.HumanoidVisualLayers.Face" ]
-    - map: [ "enum.HumanoidVisualLayers.RArm" ]
-      color: "#e8b59b"
-      sprite: Mobs/Species/Human/parts.rsi
-      state: r_arm
-    - map: [ "enum.HumanoidVisualLayers.LArm" ]
-      color: "#e8b59b"
-      sprite: Mobs/Species/Human/parts.rsi
-      state: l_arm
-#     - shader: StencilClear
-#      sprite: Mobs/Species/Human/parts.rsi
-#      state: l_leg
-    - shader: StencilMask
-      map: [ "enum.HumanoidVisualLayers.StencilMask" ]
-      sprite: Mobs/Customization/anytaur_masking_helpers.rsi
-      state: unisex_full
-      visible: false
-    - map: [ "jumpsuit" ]
-    - map: [ "enum.HumanoidVisualLayers.LHand" ]
-      color: "#e8b59b"
-      sprite: Mobs/Species/Human/parts.rsi
-      state: l_hand
-    - map: [ "enum.HumanoidVisualLayers.RHand" ]
-      color: "#e8b59b"
-      sprite: Mobs/Species/Human/parts.rsi
-      state: r_hand
-    - map: [ "enum.HumanoidVisualLayers.Handcuffs" ]
-      color: "#ffffff"
-      sprite: Objects/Misc/handcuffs.rsi
-      state: body-overlay-2
-      visible: false
-    - map: [ "id" ]
-    - map: [ "gloves" ]
-    - map: [ "shoes" ]
-    - map: [ "ears" ]
-    - map: [ "innerBelt" ]
-    - map: [ "innerNeck" ]
-    - map: [ "outerClothing" ]
-    - map: [ "eyes" ]
-    - map: [ "belt" ]
-    - map: [ "neck" ]
-    - map: [ "back" ]
-    - map: [ "enum.HumanoidVisualLayers.FacialHair" ]
-    - map: [ "enum.HumanoidVisualLayers.Hair" ]
-      state: bald
-      sprite: Mobs/Customization/human_hair.rsi
-    - map: [ "mask" ]
-    - map: [ "enum.HumanoidVisualLayers.HeadSide" ] # This is not in the default order so earrings are rendered above masks
-    - map: [ "head" ]
-    - map: [ "pocket1" ]
-    - map: [ "pocket2" ]
-    - map: [ "enum.HumanoidVisualLayers.Tail" ]
-      sprite: Mobs/Customization/masking_helpers.rsi
-      state: none
-      visible: false
-  - type: Inventory
-    templateId: anytaur
-  - type: HumanoidAppearance
-    species: Arachne
