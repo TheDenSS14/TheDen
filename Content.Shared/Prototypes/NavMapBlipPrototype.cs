@@ -1,5 +1,6 @@
-// SPDX-FileCopyrightText: 2024 chromiumboy <50505512+chromiumboy@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 ArtisticRoomba
+// SPDX-FileCopyrightText: 2025 chromiumboy
+// SPDX-FileCopyrightText: 2025 sleepyyapril
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -44,4 +45,17 @@ public sealed partial class NavMapBlipPrototype : IPrototype
     /// </summary>
     [DataField]
     public float Scale { get; private set; } = 1f;
+
+    /// <summary>
+    /// Describes how the blip should be positioned.
+    /// It's up to the individual system to enforce this
+    /// </summary>
+    [DataField]
+    public NavMapBlipPlacement Placement { get; private set; } = NavMapBlipPlacement.Centered;
+}
+
+public enum NavMapBlipPlacement
+{
+    Centered,   // The blip appears in the center of the tile
+    Offset      // The blip is offset from the center of the tile (determined by the system using the blips)
 }
