@@ -61,3 +61,4 @@ loadout-name-LoadoutItemPetHamster = pet hamster (colorable)
 loadout-name-LoadoutItemPetMothroach = pet mothroach (colorable)
 loadout-name-LoadoutItemPetCockroach = pet cockroach (colorable)
 loadout-name-LoadoutItemPetRoingus = pet roingus (colorable)
+loadout-name-LoadoutItemPetRosy = pet rosy mothroach

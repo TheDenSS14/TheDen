@@ -140,7 +140,7 @@
 - type: loadout
   id: LoadoutCommandHoSBRDIR25
   category: JobsSecurityHeadOfSecurity
-  cost: 7 # Cracked
+  cost: 0 # It's now about on par with other antiques, i feel it's reasonable to lower it back down to 0
   canBeHeirloom: true
   requirements:
     - !type:CharacterItemGroupRequirement
@@ -303,6 +303,20 @@
         - HeadOfSecurity
   items:
     - ClothingOuterArmorHosSamurai
+
+- type: loadout
+  id: LoadoutCommandHOSOuterVestHoSVestWeb
+  category: JobsSecurityHeadOfSecurity
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutHeadOfSecurityOuter
+    - !type:CharacterJobRequirement
+      jobs:
+        - HeadOfSecurity
+  items:
+    - ClothingOuterVestHoSVestWeb
 
 - type: loadout
   id: LoadoutCommandHOSOuterLongcoat

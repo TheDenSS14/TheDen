@@ -12,6 +12,7 @@
 # SPDX-FileCopyrightText: 2024 Emisse
 # SPDX-FileCopyrightText: 2024 Memeji
 # SPDX-FileCopyrightText: 2024 VMSolidus
+# SPDX-FileCopyrightText: 2024 Whatstone
 # SPDX-FileCopyrightText: 2024 Whisper
 # SPDX-FileCopyrightText: 2024 coderabbitai[bot]
 # SPDX-FileCopyrightText: 2024 icekot8
@@ -420,6 +421,10 @@
       orGroup: fauna
       maxAmount: 1
       prob: 0.03
+    - id: MobRosyMothroach # Frontier
+      orGroup: fauna # Frontier
+      prob: 0.2 # Frontier
+      maxAmount: 2 # Frontier
     - id: MobMouse
       orGroup: fauna
     - id: MobParrot
