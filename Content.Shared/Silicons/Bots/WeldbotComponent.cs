@@ -12,7 +12,7 @@ namespace Content.Shared.Silicons.Bots;
 /// Currently no clientside prediction done, only exists in shared for emag handling.
 /// </summary>
 [RegisterComponent]
-[Access(typeof(WeldbotSystem))]
+[Access(typeof(SharedWeldbotSystem))]
 public sealed partial class WeldbotComponent : Component
 {
     /// <summary>
@@ -21,11 +21,18 @@ public sealed partial class WeldbotComponent : Component
     [DataField]
     public SoundSpecifier WeldSound = new SoundPathSpecifier("/Audio/Items/welder2.ogg");
 
-        [DataField]
-        public SoundSpecifier EmagSparkSound = new SoundCollectionSpecifier("sparks")
-        {
-            Params = AudioParams.Default.WithVolume(8f)
-        };
+    [DataField]
+    public SoundSpecifier EmagSparkSound = new SoundCollectionSpecifier("sparks")
+    {
+        Params = AudioParams.Default.WithVolume(8f)
+    };
 
     public bool IsEmagged = false;
+
+    // TODO: Reimplement emag functionality for weldbot.
+    [DataField, ViewVariables(VVAccess.ReadWrite)]
+    public float EmaggedBurnDamage = 10;
+
+    [DataField, ViewVariables(VVAccess.ReadWrite)]
+    public float ExpectedFuelCost = 10.0f;
 }

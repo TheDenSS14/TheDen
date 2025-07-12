@@ -11,7 +11,20 @@
 - type: htnCompound
   id: WeldbotCompound
   branches:
-    - tasks:
+    # TODO: Reimplement emagged weldbot behavior
+    # - preconditions:
+    #   - !type:HasComponentPrecondition
+    #     components:
+    #     - type: Emagged
+    #   tasks:
+    #     - !type:HTNCompoundTask
+    #       task: AttackNearbySiliconsCompound
+    - preconditions:
+      - !type:HasComponentPrecondition
+        invert: true
+        components:
+        - type: Emagged
+      tasks:
         - !type:HTNCompoundTask
           task: WeldNearbyCompound
     - tasks:
@@ -26,11 +39,10 @@
           operator: !type:PickNearbyWeldableOperator
             targetKey: WeldTarget
             targetMoveKey: TargetCoordinates
-
-        - !type:HTNPrimitiveTask
-          operator: !type:SpeakOperator
-            speech: weldbot-start-weld
-            hidden: true
+          preconditions:
+          - !type:ActiveHandComponentPrecondition
+            components:
+            - type: Welder
 
         - !type:HTNPrimitiveTask
           operator: !type:MoveToOperator
@@ -51,3 +63,43 @@
         - !type:HTNPrimitiveTask
           operator: !type:WeldbotWeldOperator
             targetKey: WeldTarget
+          preconditions:
+          - !type:ActiveHandComponentPrecondition
+            components:
+            - type: Welder
+
+# TODO: Reimplement emagged weldbot behavior
+# I was running into an issue where, despite using this utilityquery,
+# the weldbot would attack non-silicons in interaction range (e.g. if it was being dragged.)
+# I want it to only hit silicons but this did not work
+
+# - type: utilityQuery
+#   id: NearbyMeleeTargetsForWelderbot
+#   query:
+#     - !type:NearbyHostilesQuery
+#     - !type:TagFilter
+#       tags:
+#       - SiliconMob
+#   considerations:
+#     - !type:TargetIsAliveCon
+#       curve: !type:BoolCurve
+#     - !type:TargetDistanceCon
+#       curve: !type:PresetCurve
+#         preset: TargetDistance
+#     - !type:TargetHealthCon
+#       curve: !type:PresetCurve
+#         preset: TargetHealth
+#     - !type:TargetAccessibleCon
+#       curve: !type:BoolCurve
+#     - !type:TargetInLOSOrCurrentCon
+#       curve: !type:BoolCurve
+
+# - type: htnCompound
+#   id: AttackNearbySiliconsCompound
+#   branches:
+#   - tasks:
+#     - !type:HTNPrimitiveTask
+#       operator: !type:UtilityOperator
+#         proto: NearbyMeleeTargetsForWelderbot
+#     - !type:HTNCompoundTask
+#       task: MeleeAttackTargetCompound

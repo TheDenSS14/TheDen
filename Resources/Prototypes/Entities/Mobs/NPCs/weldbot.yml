@@ -10,6 +10,7 @@
   description: No substitute for an engineer, but better than nothing.
   components:
   - type: Weldbot
+    expectedFuelCost: 15.0
   - type: Sprite
     sprite: Mobs/Silicon/Bots/weldbot.rsi
     state: weldbot
@@ -20,6 +21,7 @@
     graph: WeldBot
     node: bot
   - type: NoSlip
+  - type: DoAfter
   - type: Destructible
     thresholds:
     - trigger:
@@ -44,6 +46,19 @@
   - type: SentienceTarget
     flavorKind: station-event-random-sentience-flavor-mechanical
   - type: Anchorable
+  # TODO: Reimplement emagged weldbot behavior
+  # - type: CombatMode
+  # - type: EmagReplaceFactions
+  #   factions:
+  #   - Syndicate
+  - type: InnateTool
+    tools:
+    - id: WeldbotWelder
+  - type: Hands
+    showInHands: false
+  - type: Body
+    prototype: SiliconHand
+    requiredLegs: 0
   - type: InteractionPopup
     interactSuccessString: petting-success-weldbot
     interactFailureString: petting-failure-weldbot

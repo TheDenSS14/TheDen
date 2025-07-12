@@ -1,7 +1,8 @@
-// SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT <77995199+DEATHB4DEFEAT@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 Timemaster99 <57200767+Timemaster99@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 VMSolidus <evilexecutive@gmail.com>
-// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT
+// SPDX-FileCopyrightText: 2024 Timemaster99
+// SPDX-FileCopyrightText: 2024 VMSolidus
+// SPDX-FileCopyrightText: 2025 portfiend
+// SPDX-FileCopyrightText: 2025 sleepyyapril
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -48,15 +49,28 @@ public sealed class WeldingHealableSystem : SharedWeldingHealableSystem
 
         _damageableSystem.TryChangeDamage(uid, component.Damage, true, false, origin: args.User);
 
-        Entity<SolutionComponent>? sol = new();
-        if (!_solutionContainer.ResolveSolution(((EntityUid) args.Used, solutionContainer), welder.FuelSolutionName, ref sol, out _))
+        var tool = args.Used.Value;
+        if (!_solutionContainer.TryGetSolution((tool, solutionContainer),
+            welder.FuelSolutionName,
+            out var solution))
             return;
-        _solutionContainer.RemoveReagent(sol.Value, welder.FuelReagent, component.FuelCost);
+
+        _solutionContainer.RemoveReagent(solution.Value, welder.FuelReagent, component.FuelCost);
 
         var str = Loc.GetString("comp-repairable-repair",
             ("target", uid),
             ("tool", args.Used!));
         _popup.PopupEntity(str, uid, args.User);
+
+        // DEN: Inform entity performing repairs when they complete it.
+        var repairedSilicon = new RepairedSiliconEvent()
+        {
+            Finished = !HasDamage((args.Target.Value, damageable), component, args.User),
+            Target = args.Target.Value,
+        };
+
+        RaiseLocalEvent(args.User, repairedSilicon);
+        // END DEN
 
         if (!args.Used.HasValue)
             return;

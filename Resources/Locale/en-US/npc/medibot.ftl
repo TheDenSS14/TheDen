@@ -7,3 +7,10 @@
 
 medibot-start-inject = Hold still, please.
 medibot-finish-inject = All done.
+
+# error messasges
+
+medibot-error-injected-too-recently = Injected too recently!
+medibot-error-invalid-treatment = Invalid treatment!
+medibot-error-no-injection-tool = No injection tool found!
+medibot-error-no-bloodstream = No bloodstream found!
