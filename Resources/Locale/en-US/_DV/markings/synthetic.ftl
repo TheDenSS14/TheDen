@@ -95,6 +95,7 @@ marking-SyntheticLizardSnoutBasic = Synth Lizard Snout Basic
 marking-SyntheticLizardSnoutBasic-synth_lizard_snout_basic = Primary
 
 marking-IPCHeadMuzzle = Tajaran Muzzle
+marking-IPCHeadMuzzle-muzzle = Muzzle
 
 # Heads
 marking-SyntheticLizardHeadM = Synth Lizard Head Masculine
