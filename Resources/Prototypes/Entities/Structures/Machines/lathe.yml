@@ -615,7 +615,6 @@
     - ClothingEyesNightVisionGoggles
     - ClothingEyesNightVisionDiagnosticGoggles
     - ClothingEyesThermalVisionGoggles
-    - RCDAmmo #DeltaV
     - RCD #EE
     - RPD
     - RadioHandheld
@@ -1674,6 +1673,7 @@
       - ClothingNeckMantleMag
       - HandHeldAtmosMonitor
       - HandHeldPowerMonitor
+
       # Routers and monitors
       - PowerComputerCircuitboard
       - AlertsComputerCircuitboard
@@ -1689,6 +1689,10 @@
       - GyroscopeMachineCircuitboard
       - MiniGravityGeneratorCircuitboard
       - ShuttleGunKineticCircuitboard
+      # MechanicalCompression
+      - RCDAmmo
+      - RCD
+      - RPD
   - type: MaterialStorage
     whitelist:
       tags:
