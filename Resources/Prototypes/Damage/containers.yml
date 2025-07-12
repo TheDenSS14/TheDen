@@ -3,16 +3,18 @@
 # SPDX-FileCopyrightText: 2022 keronshb <54602815+keronshb@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2023 Emisse <99158783+Emisse@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2023 Justin Pfeifler <jrpl101998@gmail.com>
+# SPDX-FileCopyrightText: 2024 BombasterDS <115770678+BombasterDS@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2024 Ed <96445749+TheShuEd@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 SlamBamActionman <83650252+SlamBamActionman@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2024 Tonydatguy <154929293+Tonydatguy@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 VMSolidus <evilexecutive@gmail.com>
 # SPDX-FileCopyrightText: 2024 gluesniffler <159397573+gluesniffler@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 gluesniffler <linebarrelerenthusiast@gmail.com>
-# SPDX-FileCopyrightText: 2025 EctoplasmIsGood <109397347+EctoplasmIsGood@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 M3739 <47579354+M3739@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+# SPDX-FileCopyrightText: 2025 SolsticeOfTheWinter <solsticeofthewinter@gmail.com>
+# SPDX-FileCopyrightText: 2025 deltanedas <39013340+deltanedas@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 deltanedas <@deltanedas:kde.org>
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: AGPL-3.0-or-later
 
 - type: damageContainer
   id: Biological
@@ -22,6 +24,8 @@
     - Toxin
     - Airloss
     - Genetic
+  supportedTypes: # Goobstation
+    - Holy
 
 - type: damageContainer
   id: Inorganic
@@ -44,7 +48,7 @@
   id: Silicon
   supportedGroups:
     - Brute
-    - Electronic #Goobstation
+#    - Electronic #Goobstation
   supportedTypes:
     - Heat
     - Shock
@@ -71,20 +75,9 @@
     - Heat
 
 - type: damageContainer
-  id: HalfSpirit
-  supportedGroups:
-    - Burn
-    - Brute
-    - Airloss
-    - Metaphysical 
-  supportedTypes:
-    - Poison
-
-
-- type: damageContainer
   id: ManifestedSpirit
   supportedGroups:
-    - Metaphysical
+#    - Metaphysical
     - Brute
   supportedTypes:
     - Heat
@@ -99,4 +92,16 @@
   - Toxin
   - Airloss
   - Genetic
-  - Metaphysical
+  supportedTypes: # Goobstation
+  - Holy
+
+- type: damageContainer
+  id: HalfSpirit
+  supportedGroups:
+    - Burn
+    - Brute
+    - Airloss
+    - Metaphysical 
+  supportedTypes:
+    - Poison
+    - Holy
