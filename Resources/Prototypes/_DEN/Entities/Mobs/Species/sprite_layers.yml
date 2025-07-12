@@ -88,9 +88,6 @@
           state: body-overlay-2
         - map: ["clownedon"]
           visible: false
-          # TODO: Move to cream pie component
-          # sprite: "Effects/creampie.rsi"
-          # state: "creampie_human"
 
 # Taur: Leg layers changed. No shoes.
 - type: entity
@@ -121,6 +118,13 @@
         - map: ["enum.HumanoidVisualLayers.RArm"]
         - map: ["enum.HumanoidVisualLayers.LArm"]
 
+        # Mask
+        - shader: StencilMask
+          map: [ "enum.HumanoidVisualLayers.StencilMask" ]
+          sprite: Mobs/Customization/anytaur_masking_helpers.rsi
+          state: unisex_full
+          visible: false
+
         # Base equipment
         - map: ["enum.HumanoidVisualLayers.Underwear"]
         - map: ["enum.HumanoidVisualLayers.Undershirt"]
@@ -149,6 +153,9 @@
 
         # Markings that go above equipment
         - map: ["enum.HumanoidVisualLayers.Tail"]
+          sprite: Mobs/Customization/masking_helpers.rsi
+          state: none
+          visible: false
         - map: ["enum.HumanoidVisualLayers.NeckFluff"]
         - map: ["enum.HumanoidVisualLayers.FacialHair"]
         - map: ["enum.HumanoidVisualLayers.Hair"]
@@ -170,9 +177,6 @@
           state: body-overlay-2
         - map: ["clownedon"]
           visible: false
-          # TODO: Move to cream pie component
-          # sprite: "Effects/creampie.rsi"
-          # state: "creampie_human"
 
 # Harpy: Right arm (wings) go above everything. Music notes layer. No shoes.
 # Note: Harpies have a displacement map that moves equipment from their hands to their ankles;
@@ -253,9 +257,6 @@
           state: body-overlay-2
         - map: ["clownedon"]
           visible: false
-          # TODO: Move to cream pie component
-          # sprite: "Effects/creampie.rsi"
-          # state: "creampie_human"
         - map: ["singingLayer"]
           sprite: Effects/harpysinger.rsi
           state: singing_music_notes
@@ -337,9 +338,6 @@
           state: body-overlay-2
         - map: ["clownedon"]
           visible: false
-          # TODO: Move to cream pie component
-          # sprite: "Effects/creampie.rsi"
-          # state: "creampie_human"
 
 # Sprite layers not accounted for:
 # Syndie guard:
