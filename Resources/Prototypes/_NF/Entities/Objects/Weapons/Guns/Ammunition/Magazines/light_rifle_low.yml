@@ -29,7 +29,7 @@
 - type: entity
   id: MagazineLightRifleLowCapacity
   name: "reduced-capacity rifle magazine (.30 rifle)"
-  parent: BaseMagazineLightRifleEmpty
+  parent: MagazineLightRifleLowCapacityEmpty
   components:
   - type: BallisticAmmoProvider
     proto: CartridgeLightRifle
