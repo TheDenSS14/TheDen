@@ -48,10 +48,10 @@
   - type: Speech
     speechSounds: Vulpkanin
     speechVerb: Vulpkanin
-  - type: Sprite
-    # TODO:
-    # sprite: "_DV/Effects/creampie.rsi"
-    # state: "creampie_vulpkanin"
+  - type: CreamPied
+    layer:
+      sprite: _DV/Effects/creampie.rsi
+      state: creampie_vulpkanin
   - type: MeleeWeapon
     hidden: true
     soundHit:

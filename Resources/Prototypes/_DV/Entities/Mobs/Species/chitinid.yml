@@ -127,10 +127,10 @@
       289: 0.6
       275: 0.4
       250: 0.3
-  - type: Sprite
-    # TODO:
-    # sprite: "Effects/creampie.rsi"
-    # state: "creampie_moth"
+  - type: CreamPied
+    layer:
+      sprite: Effects/creampie.rsi
+      state: creampie_moth
   - type: Chitinid
   - type: BlockInjection
     blockReason: chitinid

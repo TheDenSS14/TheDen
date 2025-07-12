@@ -119,10 +119,10 @@
       Unsexed: UnisexArachnid
   - type: TypingIndicator
     proto: spider
-  - type: Sprite
-    # TODO:
-    # sprite: "Effects/creampie.rsi"
-    # state: "creampie_arachnid"
+  - type: CreamPied
+    layer:
+      sprite: Effects/creampie.rsi
+      state: creampie_arachnid
   - type: Spider
   - type: IgnoreSpiderWeb
   - type: FootPrints

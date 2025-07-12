@@ -48,12 +48,13 @@
             layerKey: dummy
             parameterTexture: displacementMap
             parameterUV: displacementUV
-    # TODO:
-    # sprite: "Effects/creampie.rsi"
-    # state: "creampie_vox"
+  - type: CreamPied
+    layer:
+      sprite: Effects/creampie.rsi
+      state: creampie_vox
 
 - type: entity
-  parent: [BaseMobSpeciesOrganic, BaseVoxAppearance]
+  parent: [BaseVoxAppearance, BaseMobSpeciesOrganic]
   id: BaseMobVox
   abstract: true
   components:
@@ -122,6 +123,6 @@
     rightBarePrint: "footprint-right-bare-lizard"
 
 - type: entity
-  parent: [BaseSpeciesDummy, BaseVoxAppearance]
+  parent: [BaseVoxAppearance, BaseSpeciesDummy]
   id: MobVoxDummy
   categories: [ HideSpawnMenu ]

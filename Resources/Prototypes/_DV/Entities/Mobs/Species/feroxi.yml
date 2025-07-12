@@ -53,10 +53,10 @@
       Male: MaleFeroxi
       Female: FemaleFeroxi
       Unsexed: MaleFeroxi
-  - type: Sprite
-    # TODO
-    # sprite: "_DV/Effects/creampie.rsi"
-    # state: "creampie_feroxi"
+  - type: CreamPied
+    layer:
+      sprite: _DV/Effects/creampie.rsi
+      state: creampie_feroxi
   - type: MeleeWeapon
     hidden: true
     soundHit:

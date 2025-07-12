@@ -40,7 +40,7 @@
 - type: entity
   save: false
   name: Urist McHarpy
-  parent: [ BaseMobHuman, BaseHarpyAppearance ]
+  parent: [ BaseHarpyAppearance, BaseMobHuman ]
   id: MobHarpyBase
   abstract: true
   components:
@@ -118,7 +118,7 @@
   save: false
   categories: [ HideSpawnMenu ]
   name: Urist McBirb
-  parent: [ MobHumanDummy, HarpySpeciesLayers ]
+  parent: [ HarpySpeciesLayers, MobHumanDummy ]
   id: MobHarpyDummy
   description: A dummy Harpy meant to be used in character setup.
 

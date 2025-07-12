@@ -26,7 +26,7 @@
 - type: entity
   save: false
   name: Urist McArachne
-  parent: [ BaseMobHuman, BaseArachneAppearance ]
+  parent: [ BaseArachneAppearance, BaseMobHuman ]
   id: MobArachneBase
   abstract: true
   components:
@@ -111,7 +111,7 @@
 - type: entity
   save: false
   name: Urist McHands
-  parent: [ MobHumanDummy, BaseArachneAppearance ]
+  parent: [ BaseArachneAppearance, MobHumanDummy ]
   id: MobArachneDummy
   categories: [ HideSpawnMenu ]
   description: A dummy arachne meant to be used in character setup.

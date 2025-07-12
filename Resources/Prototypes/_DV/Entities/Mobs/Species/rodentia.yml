@@ -85,10 +85,10 @@
         - MobMask
         layer:
         - MobLayer
-  - type: Sprite
-    # TODO:
-    # sprite: "_DV/Effects/creampie.rsi"
-    # state: "creampie_rodentia"
+  - type: CreamPied
+    layer:
+      sprite: _DV/Effects/creampie.rsi
+      state: creampie_rodentia
   - type: MeleeWeapon
     hidden: true
     soundHit:

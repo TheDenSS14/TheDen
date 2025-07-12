@@ -108,10 +108,10 @@
       250: 0.55
   - type: TemperatureProtection # moff fluff acts as insulation
     coefficient: 0.5 # less than vulp fur but still significant
-  - type: Sprite
-    # TODO:
-    # sprite: "Effects/creampie.rsi"
-    # state: "creampie_moth"
+  - type: CreamPied
+    layer:
+      sprite: Effects/creampie.rsi
+      state: creampie_moth
   - type: FootPrints
   - type: CanMoveInAir
 

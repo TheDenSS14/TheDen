@@ -122,10 +122,6 @@
   id: BaseMobSpecies
   abstract: true
   components:
-  - type: Sprite
-    # TODO:
-    # state: "creampie_human"
-    # visible: false
   - type: DamageVisuals
     thresholds: [ 10, 20, 30, 50, 70, 100 ]
     targetLayers:
@@ -261,6 +257,10 @@
     factions:
     - NanoTrasen
   - type: CreamPied
+    layerKey: clownedon
+    layer:
+      sprite: Effects/creampie.rsi
+      state: creampie_human
   - type: Stripping
   - type: UserInterface
     interfaces:
