@@ -313,7 +313,6 @@
         - map: ["neck"]
 
         # Markings that go above equipment
-        - map: ["enum.HumanoidVisualLayers.Tail"]
         - map: ["enum.HumanoidVisualLayers.NeckFluff"]
         - map: ["enum.HumanoidVisualLayers.FacialHair"]
         - map: ["enum.HumanoidVisualLayers.Hair"]
@@ -324,6 +323,7 @@
         # Equipment that goes above all markings
         - map: ["suitstorage"] # Deviation from default.
         # TODO: Figure out if base layers ought to have this too. If so, delete vox layer set.
+        - map: ["enum.HumanoidVisualLayers.Tail"] # Has to be drawn above gas tank.
         - map: ["mask"]
         - map: ["head"]
         - map: ["pocket1"]
@@ -340,3 +340,9 @@
           # TODO: Move to cream pie component
           # sprite: "Effects/creampie.rsi"
           # state: "creampie_human"
+
+# Sprite layers not accounted for:
+# Syndie guard:
+  # - sprite: Objects/Weapons/Guns/Pistols/viper.rsi
+  #   state: inhand-left
+# Plasmamen have jumpsuit above hands/feet
