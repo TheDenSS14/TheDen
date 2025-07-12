@@ -258,6 +258,19 @@
   items:
   - ClothingLongcoatBrigmedic
 
+- type: loadout
+  id: LoadoutClothingOuterplatecarrierCorpsman
+  category: JobsSecurityCorpsman
+  cost: 0
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutCorpsmanOuter
+  - !type:CharacterJobRequirement
+    jobs:
+      - Brigmedic
+  items:
+  - ClothingOuterArmorPlateCarrier
+
 # Shoes
 
 # Uniforms
