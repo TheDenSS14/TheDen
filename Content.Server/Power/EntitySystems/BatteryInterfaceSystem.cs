@@ -1,4 +1,8 @@
-﻿using Content.Server.Power.Components;
+// SPDX-FileCopyrightText: 2025 Pieter-Jan Briers
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
+using Content.Server.Power.Components;
 using Content.Shared.Power;
 using Robust.Server.GameObjects;
 

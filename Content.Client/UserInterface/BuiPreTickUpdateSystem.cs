@@ -1,4 +1,8 @@
-﻿using Robust.Client.GameObjects;
+// SPDX-FileCopyrightText: 2025 Pieter-Jan Briers
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
+using Robust.Client.GameObjects;
 using Robust.Client.Player;
 using Robust.Shared.ContentPack;
 using Robust.Shared.Timing;

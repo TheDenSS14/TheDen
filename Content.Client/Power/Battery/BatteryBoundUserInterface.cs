@@ -1,4 +1,8 @@
-﻿using Content.Client.UserInterface;
+// SPDX-FileCopyrightText: 2025 Pieter-Jan Briers
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
+using Content.Client.UserInterface;
 using Content.Shared.Power;
 using JetBrains.Annotations;
 using Robust.Client.Timing;
