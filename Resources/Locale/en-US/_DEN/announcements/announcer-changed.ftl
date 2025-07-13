@@ -1,0 +1,19 @@
+announcer-changed-announcement = As a result of {$reason}, a new announcer has been appointed to your station.
+
+announcer-changed-reason-1 = technical difficulties
+announcer-changed-reason-2 = a change in staff
+announcer-changed-reason-3 = internal direction
+announcer-changed-reason-4 = scheduled maintenance
+announcer-changed-reason-5 = unscheduled maintenance
+announcer-changed-reason-6 = a performance review
+announcer-changed-reason-7 = research statistics
+announcer-changed-reason-8 = unforeseen circumstances
+announcer-changed-reason-9 = recent events
+announcer-changed-reason-10 = equipment damage
+announcer-changed-reason-11 = our omnipotent whims
+announcer-changed-reason-12 = sudden connection loss
+announcer-changed-reason-13 = a scheduled work break
+announcer-changed-reason-14 = low morale
+announcer-changed-reason-15 = the last announcer falling asleep on the job
+announcer-changed-reason-16 = budget cuts
+announcer-changed-reason-17 = internal consensus

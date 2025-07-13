@@ -167,6 +167,19 @@
   fireStates: 6
   fireStacks: 2
 
+- type: explosion
+  id: GibBomb # this is specifcally for admeme explosives that are meant to gib
+  damagePerIntensity:
+    types:
+      Heat: 1
+      Blunt: 20
+      Piercing: 1
+  tileBreakChance: [0]
+  tileBreakIntensity: [0]
+  lightColor: Orange
+  texturePath: /Textures/Effects/fire.rsi
+  fireStates: 1
+
 # STOP
 # BEFORE YOU ADD MORE EXPLOSION TYPES CONSIDER IF AN EXISTING ONE IS SUITABLE
 # ADDING NEW ONES IS PROHIBITIVELY EXPENSIVE

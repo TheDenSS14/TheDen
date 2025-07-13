@@ -29,6 +29,25 @@
         - type: Hunger
           decayRateMultiplier: 1.33
 
+# Yo mama so bloated she has a duplicate version of the same trait but with less features
+- type: trait
+  id: MutedNoSign
+  category: Mental
+  points: 6
+  requirements:
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Borg
+        - MedicalBorg
+        - Mime
+    - !type:CharacterItemGroupRequirement
+      group: TraitsMuted
+  functions:
+    - !type:TraitAddComponent
+      components:
+        - type: Muted
+
 # Amputee traits
 
 ## Arms
