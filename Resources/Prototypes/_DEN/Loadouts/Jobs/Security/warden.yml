@@ -1,13 +1,14 @@
-# SPDX-FileCopyrightText: 2025 Blitz <73762869+BlitzTheSquishy@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 Rosycup <178287475+Rosycup@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Blitz
+# SPDX-FileCopyrightText: 2025 Rosycup
+# SPDX-FileCopyrightText: 2025 Vanessa Louwagie
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 - type: loadout
   id: LoadoutWardenGreatsword
   category: JobsSecurityWarden
-  cost: 5
+  cost: 0
   exclusive: true
   canBeHeirloom: true
   requirements:
@@ -18,6 +19,48 @@
         - Warden
   items:
     - Greatsword
+
+- type: loadout
+  id: LoadoutWardenEnergySword
+  category: JobsSecurityWarden
+  cost: 0
+  canBeHeirloom: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutWardenWeapons
+    - !type:CharacterJobRequirement
+      jobs:
+        - Warden
+  items:
+    - EnergySwordWarden
+
+- type: loadout
+  id: LoadoutWardenKatana
+  category: JobsSecurityWarden
+  cost: 0
+  canBeHeirloom: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutWardenWeapons
+    - !type:CharacterJobRequirement
+      jobs:
+        - Warden
+  items:
+    - ClothingBeltKatanaSheathFilledWarden
+
+- type: loadout
+  id: LoadoutWardenShield
+  category: JobsSecurityWarden
+  cost: 0
+  canBeHeirloom: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutWardenWeapons
+    - !type:CharacterJobRequirement
+      jobs:
+        - Warden
+  items:
+    - EnergyShieldWarden
 
 - type: loadout
   id: LoadoutUniformJumpsuitWarden
