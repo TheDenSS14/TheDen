@@ -299,9 +299,9 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutSalvageSpecialistNeck
-    - !type:CharacterJobRequirement
-      jobs:
-        - SalvageSpecialist
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Logistics
     - !type:CharacterPlaytimeRequirement
       tracker: JobSalvageSpecialist
       min: 36000 # 10 hours
@@ -317,9 +317,9 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutSalvageSpecialistNeck
-    - !type:CharacterJobRequirement
-      jobs:
-        - SalvageSpecialist
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Logistics
   items:
     - ClothingNeckCloakMiner
 
