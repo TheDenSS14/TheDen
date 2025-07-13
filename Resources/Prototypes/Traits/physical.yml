@@ -688,6 +688,10 @@
       inverted: true
       species:
         - IPC
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - HealingFactor
   functions: # TODO: Code Platelet factories as an actual obtainable implant, and replace this with TraitAddImplant
     - !type:TraitReplaceComponent
       components:
@@ -1422,3 +1426,30 @@
     - !type:TraitAddComponent
       components:
         - type: Synth
+
+- type: trait
+  id: HealingFactor
+  category: TraitsPhysicalBiological
+  points: -6
+  requirements:
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - PlateletFactories
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - IPC
+  functions:
+    - !type:TraitReplaceComponent
+      components:
+        - type: PassiveDamage
+          allowedStates:
+          - Alive
+          - Critical
+          damageCap: 400
+          damage:
+            groups:
+              Brute: -0.2
+              Burn: -0.2
+              Airloss: -0.3
