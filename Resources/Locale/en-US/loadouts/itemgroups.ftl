@@ -71,7 +71,7 @@ character-item-group-LoadoutCommandMask = Command Masks
 character-item-group-LoadoutCommandOuter = Command Outerwear
 character-item-group-LoadoutCommandShoes = Command Shoes
 character-item-group-LoadoutCommandUniforms = Command Uniforms
-character-item-group-LoadoutCommandSelfDefence = Command Self Defence
+character-item-group-LoadoutCommandSelfDefense = Command Self Defense
 
 # Command - Captain
 character-item-group-LoadoutCaptainBackpacks = Captain Backpacks
@@ -122,7 +122,7 @@ character-item-group-LoadoutMagistrateUniforms = Magistrate Uniforms
 # Dignitary - Nanotrasen Representative
 character-item-group-LoadoutNanorepBackpacks = Nanotrasen Representative Backpacks
 character-item-group-LoadoutNanorepUniforms = Nanotrasen Representative Uniforms
-character-item-group-LoadoutNanorepWeapon = Nanotrasen Representative Weapon
+character-item-group-LoadoutNanotrasenRepresentativeWeapon = Weapon = Nanotrasen Representative Weapon
 character-item-group-LoadoutNanorepOuter = Nanotrasen Representative Outerwear
 
 # Dignitary - Nanotrasen Representative
