@@ -1,0 +1,350 @@
+# SPDX-FileCopyrightText: 2025 portfiend
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+#
+# I am sick of species-relayed sprite layer technical debt. I am SICK OF IT. So, this is it.
+# These are the layers you will use.
+#
+# If you want to add a new layer, put it in ALL of these layer sets.
+# Layers should only be removed if they physically cannot be worn by that species (e.g. harpies and shoes).
+#
+# If you have a genuine reason why your species needs the layers to be in a different order,
+# or a species to have a layer that no other species does (e.g. a specific equipment layer, NOT a marking layer,)
+# only then can you make a new species layer order. I am serious.
+#
+# This is the solution we must use in a world where every time you need a new species layer order,
+# it must be rewritten from nothing.
+#
+# - PORT, "The Den" Maintainer, July 2025
+#
+
+- type: entity
+  abstract: true
+  id: BaseSpeciesLayers
+  components:
+    - type: Sprite
+      layers:
+        # Torso
+        - map: ["enum.HumanoidVisualLayers.TailBehind"]
+        - map: ["enum.HumanoidVisualLayers.Chest"]
+        - map: ["enum.HumanoidVisualLayers.Nipples"]
+        - map: ["enum.HumanoidVisualLayers.Genitals"]
+
+        # Head base
+        - map: ["enum.HumanoidVisualLayers.Head"]
+        - map: ["enum.HumanoidVisualLayers.Snout"]
+        - map: ["enum.HumanoidVisualLayers.Eyes"]
+        - map: ["enum.HumanoidVisualLayers.Face"]
+
+        # Limbs
+        - map: ["enum.HumanoidVisualLayers.RArm"]
+        - map: ["enum.HumanoidVisualLayers.LArm"]
+        - map: ["enum.HumanoidVisualLayers.RLeg"]
+        - map: ["enum.HumanoidVisualLayers.LLeg"]
+
+        # Base equipment
+        - map: ["enum.HumanoidVisualLayers.Underwear"]
+        - map: ["enum.HumanoidVisualLayers.Undershirt"]
+        - map: ["socks"]
+        - map: ["jumpsuit"]
+
+        # Hands/feet
+        - map: ["enum.HumanoidVisualLayers.LFoot"]
+        - map: ["enum.HumanoidVisualLayers.RFoot"]
+        - map: ["enum.HumanoidVisualLayers.LHand"]
+        - map: ["enum.HumanoidVisualLayers.RHand"]
+
+        # "Above body" equipment
+        - map: ["gloves"]
+        - map: ["shoes"]
+        - map: ["innerBelt"]
+        - map: ["innerNeck"]
+        - map: ["outerClothing"]
+        - map: ["enum.HumanoidVisualLayers.TailOversuit"]
+        - map: ["belt"]
+        - map: ["back"]
+        - map: ["id"]
+        - map: ["ears"]
+        - map: ["eyes"]
+        - map: ["neck"]
+
+        # Markings that go above equipment
+        - map: ["enum.HumanoidVisualLayers.Tail"]
+        - map: ["enum.HumanoidVisualLayers.NeckFluff"]
+        - map: ["enum.HumanoidVisualLayers.FacialHair"]
+        - map: ["enum.HumanoidVisualLayers.Hair"]
+        - map: ["enum.HumanoidVisualLayers.HeadSide"]
+        - map: ["enum.HumanoidVisualLayers.HeadTop"]
+        - map: ["enum.HumanoidVisualLayers.Wings"]
+
+        # Equipment that goes above all markings
+        - map: ["mask"]
+        - map: ["head"]
+        - map: ["pocket1"]
+        - map: ["pocket2"]
+
+        # Always on top!
+        - map: ["enum.HumanoidVisualLayers.Handcuffs"]
+          visible: false
+          color: "#ffffff"
+          sprite: Objects/Misc/handcuffs.rsi
+          state: body-overlay-2
+        - map: ["clownedon"]
+          visible: false
+
+# Taur: Leg layers changed. No shoes.
+- type: entity
+  abstract: true
+  id: TaurSpeciesLayers
+  components:
+    - type: Sprite
+      layers:
+        # Taur body back
+        - map: ["enum.HumanoidVisualLayers.LLeg"]
+
+        # Torso
+        - map: ["enum.HumanoidVisualLayers.TailBehind"]
+        - map: ["enum.HumanoidVisualLayers.Chest"]
+        - map: ["enum.HumanoidVisualLayers.Nipples"]
+        - map: ["enum.HumanoidVisualLayers.Genitals"]
+
+        # Taur body front
+        - map: ["enum.HumanoidVisualLayers.RLeg"]
+
+        # Head base
+        - map: ["enum.HumanoidVisualLayers.Head"]
+        - map: ["enum.HumanoidVisualLayers.Snout"]
+        - map: ["enum.HumanoidVisualLayers.Eyes"]
+        - map: ["enum.HumanoidVisualLayers.Face"]
+
+        # Limbs
+        - map: ["enum.HumanoidVisualLayers.RArm"]
+        - map: ["enum.HumanoidVisualLayers.LArm"]
+
+        # Mask
+        - shader: StencilMask
+          map: [ "enum.HumanoidVisualLayers.StencilMask" ]
+          sprite: Mobs/Customization/anytaur_masking_helpers.rsi
+          state: unisex_full
+          visible: false
+
+        # Base equipment
+        - map: ["enum.HumanoidVisualLayers.Underwear"]
+        - map: ["enum.HumanoidVisualLayers.Undershirt"]
+        # - map: ["socks"]
+        - map: ["jumpsuit"]
+
+        # Hands/feet
+        # - map: ["enum.HumanoidVisualLayers.LFoot"]
+        # - map: ["enum.HumanoidVisualLayers.RFoot"]
+        - map: ["enum.HumanoidVisualLayers.LHand"]
+        - map: ["enum.HumanoidVisualLayers.RHand"]
+
+        # "Above body" equipment
+        - map: ["gloves"]
+        # - map: ["shoes"]
+        - map: ["innerBelt"]
+        - map: ["innerNeck"]
+        - map: ["outerClothing"]
+        - map: ["enum.HumanoidVisualLayers.TailOversuit"]
+        - map: ["belt"]
+        - map: ["back"]
+        - map: ["id"]
+        - map: ["ears"]
+        - map: ["eyes"]
+        - map: ["neck"]
+
+        # Markings that go above equipment
+        - map: ["enum.HumanoidVisualLayers.Tail"]
+          sprite: Mobs/Customization/masking_helpers.rsi
+          state: none
+          visible: false
+        - map: ["enum.HumanoidVisualLayers.NeckFluff"]
+        - map: ["enum.HumanoidVisualLayers.FacialHair"]
+        - map: ["enum.HumanoidVisualLayers.Hair"]
+        - map: ["enum.HumanoidVisualLayers.HeadSide"]
+        - map: ["enum.HumanoidVisualLayers.HeadTop"]
+        - map: ["enum.HumanoidVisualLayers.Wings"]
+
+        # Equipment that goes above all markings
+        - map: ["mask"]
+        - map: ["head"]
+        - map: ["pocket1"]
+        - map: ["pocket2"]
+
+        # Always on top!
+        - map: ["enum.HumanoidVisualLayers.Handcuffs"]
+          visible: false
+          color: "#ffffff"
+          sprite: Objects/Misc/handcuffs.rsi
+          state: body-overlay-2
+        - map: ["clownedon"]
+          visible: false
+
+# Harpy: Right arm (wings) go above everything. Music notes layer. No shoes.
+# Note: Harpies have a displacement map that moves equipment from their hands to their ankles;
+# e.g. gloves will look like leg warmers/socks.
+- type: entity
+  abstract: true
+  id: HarpySpeciesLayers
+  components:
+    - type: Sprite
+      layers:
+        # Torso
+        - map: ["enum.HumanoidVisualLayers.TailBehind"]
+        - map: ["enum.HumanoidVisualLayers.Chest"]
+        - map: ["enum.HumanoidVisualLayers.Nipples"]
+        - map: ["enum.HumanoidVisualLayers.Genitals"]
+
+        # Head base
+        - map: ["enum.HumanoidVisualLayers.Head"]
+        - map: ["enum.HumanoidVisualLayers.Snout"]
+        - map: ["enum.HumanoidVisualLayers.Eyes"]
+        - map: ["enum.HumanoidVisualLayers.Face"]
+
+        # Limbs
+        # RArm has to move up; see below.
+        - map: ["enum.HumanoidVisualLayers.LArm"]
+        - map: ["enum.HumanoidVisualLayers.RLeg"]
+        - map: ["enum.HumanoidVisualLayers.LLeg"]
+
+        # Base equipment
+        - map: ["enum.HumanoidVisualLayers.Underwear"]
+        - map: ["enum.HumanoidVisualLayers.Undershirt"]
+        # - map: ["socks"]
+        - map: ["jumpsuit"]
+
+        # Hands/feet
+        - map: ["enum.HumanoidVisualLayers.LFoot"]
+        - map: ["enum.HumanoidVisualLayers.RFoot"]
+        - map: ["enum.HumanoidVisualLayers.LHand"]
+        - map: ["enum.HumanoidVisualLayers.RHand"]
+
+        # "Above body" equipment
+        - map: ["gloves"]
+        # - map: ["shoes"]
+        - map: ["innerBelt"]
+        - map: ["innerNeck"]
+        - map: ["outerClothing"]
+        - map: ["enum.HumanoidVisualLayers.TailOversuit"]
+        - map: ["belt"]
+        - map: ["back"]
+        - map: ["id"]
+        - map: ["ears"]
+        - map: ["eyes"]
+        - map: ["neck"]
+
+        # Markings that go above equipment
+        - map: ["enum.HumanoidVisualLayers.Tail"]
+        - map: ["enum.HumanoidVisualLayers.NeckFluff"]
+        - map: ["enum.HumanoidVisualLayers.FacialHair"]
+        - map: ["enum.HumanoidVisualLayers.Hair"]
+        - map: ["enum.HumanoidVisualLayers.HeadSide"]
+        - map: ["enum.HumanoidVisualLayers.HeadTop"]
+        - map: ["enum.HumanoidVisualLayers.Wings"]
+
+        # Harpy's wings have to layer over everything!
+        - map: ["enum.HumanoidVisualLayers.RArm"]
+
+        # Equipment that goes above all markings
+        - map: ["mask"]
+        - map: ["head"]
+        - map: ["pocket1"]
+        - map: ["pocket2"]
+
+        # Always on top!
+        - map: ["enum.HumanoidVisualLayers.Handcuffs"]
+          visible: false
+          color: "#ffffff"
+          sprite: Objects/Misc/handcuffs.rsi
+          state: body-overlay-2
+        - map: ["clownedon"]
+          visible: false
+        - map: ["singingLayer"]
+          sprite: Effects/harpysinger.rsi
+          state: singing_music_notes
+          visible: false
+
+# Vox: As much as I hate it, they have suitstorage where other species don't, so they get a layer set.
+- type: entity
+  abstract: true
+  id: VoxSpeciesLayers
+  components:
+    - type: Sprite
+      layers:
+        # Torso
+        - map: ["enum.HumanoidVisualLayers.TailBehind"]
+        - map: ["enum.HumanoidVisualLayers.Chest"]
+        - map: ["enum.HumanoidVisualLayers.Nipples"]
+        - map: ["enum.HumanoidVisualLayers.Genitals"]
+
+        # Head base
+        - map: ["enum.HumanoidVisualLayers.Head"]
+        - map: ["enum.HumanoidVisualLayers.Snout"]
+        - map: ["enum.HumanoidVisualLayers.Eyes"]
+        - map: ["enum.HumanoidVisualLayers.Face"]
+
+        # Limbs
+        - map: ["enum.HumanoidVisualLayers.RArm"]
+        - map: ["enum.HumanoidVisualLayers.LArm"]
+        - map: ["enum.HumanoidVisualLayers.RLeg"]
+        - map: ["enum.HumanoidVisualLayers.LLeg"]
+
+        # Base equipment
+        - map: ["enum.HumanoidVisualLayers.Underwear"]
+        - map: ["enum.HumanoidVisualLayers.Undershirt"]
+        - map: ["socks"]
+        - map: ["jumpsuit"]
+
+        # Hands/feet
+        - map: ["enum.HumanoidVisualLayers.LFoot"]
+        - map: ["enum.HumanoidVisualLayers.RFoot"]
+        - map: ["enum.HumanoidVisualLayers.LHand"]
+        - map: ["enum.HumanoidVisualLayers.RHand"]
+
+        # "Above body" equipment
+        - map: ["gloves"]
+        - map: ["shoes"]
+        - map: ["innerBelt"]
+        - map: ["innerNeck"]
+        - map: ["outerClothing"]
+        - map: ["enum.HumanoidVisualLayers.TailOversuit"]
+        - map: ["belt"]
+        - map: ["back"]
+        - map: ["id"]
+        - map: ["ears"]
+        - map: ["eyes"]
+        - map: ["neck"]
+
+        # Markings that go above equipment
+        - map: ["enum.HumanoidVisualLayers.NeckFluff"]
+        - map: ["enum.HumanoidVisualLayers.FacialHair"]
+        - map: ["enum.HumanoidVisualLayers.Hair"]
+        - map: ["enum.HumanoidVisualLayers.HeadSide"]
+        - map: ["enum.HumanoidVisualLayers.HeadTop"]
+        - map: ["enum.HumanoidVisualLayers.Wings"]
+
+        # Equipment that goes above all markings
+        - map: ["suitstorage"] # Deviation from default.
+        # TODO: Figure out if base layers ought to have this too. If so, delete vox layer set.
+        - map: ["enum.HumanoidVisualLayers.Tail"] # Has to be drawn above gas tank.
+        - map: ["mask"]
+        - map: ["head"]
+        - map: ["pocket1"]
+        - map: ["pocket2"]
+
+        # Always on top!
+        - map: ["enum.HumanoidVisualLayers.Handcuffs"]
+          visible: false
+          color: "#ffffff"
+          sprite: Objects/Misc/handcuffs.rsi
+          state: body-overlay-2
+        - map: ["clownedon"]
+          visible: false
+
+# Sprite layers not accounted for:
+# Syndie guard:
+  # - sprite: Objects/Weapons/Guns/Pistols/viper.rsi
+  #   state: inhand-left
+# Plasmamen have jumpsuit above hands/feet
