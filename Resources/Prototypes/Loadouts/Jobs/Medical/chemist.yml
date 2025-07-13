@@ -221,9 +221,9 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutChemistEyes
-    - !type:CharacterJobRequirement
-       jobs:
-         - Chemist
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Medical
   items:
     - ClothingEyesGlassesChemist
 
@@ -236,9 +236,9 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutChemistGloves
-    - !type:CharacterJobRequirement
-       jobs:
-         - Chemist
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Medical
   items:
     - ClothingHandsGlovesChemist
 
@@ -255,9 +255,9 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutChemistNeck
-    - !type:CharacterJobRequirement
-       jobs:
-         - Chemist
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Medical
   items:
     - ClothingNeckTieChem
 
@@ -300,9 +300,9 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutChemistOuter
-    - !type:CharacterJobRequirement
-       jobs:
-         - Chemist
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Medical
   items:
     - ClothingOuterApronChemist
 
@@ -315,9 +315,9 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutChemistShoes
-    - !type:CharacterJobRequirement
-       jobs:
-         - Chemist
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Medical
   items:
     - ClothingShoesEnclosedChem
 
