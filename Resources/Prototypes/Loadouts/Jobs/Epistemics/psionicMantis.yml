@@ -8,6 +8,18 @@
 # Backpacks
 
 # Belt
+- type: loadout
+  id: LoadoutPsionicMantisBeltMantis
+  category: JobsEpistemicsPsionicMantis
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutPsionicMantisEquipment
+    - !type:CharacterJobRequirement
+      jobs:
+        - ForensicMantis
+  items:
+    - ClothingBeltMantis
 
 # Ears
 
@@ -99,6 +111,19 @@
 # Gloves
 
 # Head
+- type: loadout
+  id: LoadoutPsionicMantisHeadMantisFez
+  category: JobsEpistemicsPsionicMantis
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutPsionicMantisHead
+    - !type:CharacterJobRequirement
+      jobs:
+        - ForensicMantis
+  items:
+    - ClothingHeadHatFezMantis
 
 # Id
 
@@ -121,8 +146,34 @@
   items:
     - ClothingOuterWinterCoatMantis
 
+- type: loadout
+  id: LoadoutScienceOuterJacketMantis
+  category: JobsEpistemicsPsionicMantis
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutPsionicMantisOuter
+    - !type:CharacterJobRequirement
+      jobs:
+        - ForensicMantis
+  items:
+    - ClothingOuterCoatMantis
 
 # Shoes
+- type: loadout
+  id: LoadoutPsionicMantisShoes
+  category: JobsEpistemicsPsionicMantis
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutPsionicMantisUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - ForensicMantis
+  items:
+    - ClothingShoesBootsMantis
 
 # Uniforms
 - type: loadout

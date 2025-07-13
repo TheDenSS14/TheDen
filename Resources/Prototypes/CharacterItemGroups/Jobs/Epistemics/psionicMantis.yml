@@ -9,17 +9,19 @@
 #  id: LoadoutPsionicMantisBackpacks
 #  maxItems: 1
 #  items:
-#
-#- type: characterItemGroup
-#  id: LoadoutPsionicMantisBelt
-#  maxItems: 1
-#  items:
-#
+
+- type: characterItemGroup
+  id: LoadoutPsionicMantisBelt
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutPsionicMantisBeltMantis
+
 #- type: characterItemGroup
 #  id: LoadoutPsionicMantisEars
 #  maxItems: 1
 #  items:
-#
+
 - type: characterItemGroup
   id: LoadoutPsionicMantisEquipment
   maxItems: 3
@@ -46,12 +48,14 @@
 #  id: LoadoutPsionicMantisGloves
 #  maxItems: 1
 #  items:
-#
-#- type: characterItemGroup
-#  id: LoadoutPsionicMantisHead
-#  maxItems: 1
-#  items:
-#
+
+- type: characterItemGroup
+  id: LoadoutPsionicMantisHead
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutPsionicMantisHeadMantisFez
+
 #- type: characterItemGroup
 #  id: LoadoutPsionicMantisId
 #  maxItems: 1
@@ -66,19 +70,23 @@
 #  id: LoadoutPsionicMantisMask
 #  maxItems: 1
 #  items:
-#
+
 - type: characterItemGroup
   id: LoadoutPsionicMantisOuter
   maxItems: 1
   items:
     - type: loadout
       id: LoadoutScienceOuterWinterCoatMantis
+    - type: loadout
+      id: LoadoutScienceOuterJacketMantis
 
-#- type: characterItemGroup
-#  id: LoadoutPsionicMantisShoes
-#  maxItems: 1
-#  items:
-#
+- type: characterItemGroup
+  id: LoadoutPsionicMantisShoes
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutPsionicMantisShoesMantisBoots
+
 - type: characterItemGroup
   id: LoadoutPsionicMantisUniforms
   maxItems: 1
