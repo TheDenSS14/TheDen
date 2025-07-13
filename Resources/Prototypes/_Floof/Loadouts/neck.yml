@@ -96,7 +96,7 @@
   cost: 0
   exclusive: true
   customColorTint: true
-  items: 
+  items:
     - ClothingNeckNeckerchief
   requirements:
     - !type:CharacterItemGroupRequirement
@@ -115,7 +115,7 @@
     - !type:CharacterDepartmentRequirement
       departments:
         - Security
-        
+
 - type: loadout
   id: LoadoutMedicalNeckNeckerchief
   category: JobsMedicalAUncategorized
@@ -129,7 +129,7 @@
     - !type:CharacterDepartmentRequirement
       departments:
         - Medical
-        
+
 - type: loadout
   id: LoadoutCargoNeckNeckerchief
   category: JobsLogisticsAUncategorized
@@ -143,7 +143,7 @@
     - !type:CharacterDepartmentRequirement
       departments:
         - Logistics
-        
+
 - type: loadout
   id: LoadoutScienceNeckNeckerchief
   category: JobsEpistemicsAAUncategorized
@@ -157,7 +157,7 @@
     - !type:CharacterDepartmentRequirement
       departments:
         - Epistemics
-        
+
 - type: loadout
   id: LoadoutEngineeringNeckNeckerchief
   category: JobsEngineeringAAUncategorized
@@ -171,7 +171,7 @@
     - !type:CharacterDepartmentRequirement
       departments:
         - Engineering
-        
+
 - type: loadout
   id: LoadoutServiceNeckNeckerchief
   category: JobsServiceAUncategorized
@@ -185,7 +185,11 @@
     - !type:CharacterDepartmentRequirement
       departments:
         - Civilian
-        
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Passenger
+
 - type: loadout
   id: LoadoutCommandNeckNeckerchief
   category: JobsCommandAUncategorized
