@@ -68,7 +68,7 @@
 #  id: LoadoutWardenMask
 #  maxItems: 1
 #  items:
-#
+
 - type: characterItemGroup
   id: LoadoutWardenOuter
   maxItems: 1
@@ -77,6 +77,8 @@
       id: LoadoutClothingOuterWinterCoatWarden
     - type: loadout
       id: LoadoutClothingOuterCoatWarden
+    - type: loadout
+      id: LoadoutWardenOuterCoatLongCoat
 
 #- type: characterItemGroup
 #  id: LoadoutWardenShoes

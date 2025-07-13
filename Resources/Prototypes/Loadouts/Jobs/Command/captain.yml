@@ -467,6 +467,21 @@
   items:
     - ClothingOuterCoatCapTrench
 
+- type: loadout
+  id: LoadoutCaptainOuterLongCoat
+  category: JobsCommandCaptain
+  cost: 0
+  exclusive: true
+  canBeHeirloom: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutCaptainOuter
+    - !type:CharacterJobRequirement
+      jobs:
+        - Captain
+  items:
+    - ClothingLongcoatCap
+
 # Shoes
 - type: loadout
   id: LoadoutCaptainShoesLaceup

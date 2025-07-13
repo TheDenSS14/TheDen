@@ -1157,6 +1157,26 @@
   items:
     - ClothingOuterArmorBasicSlim
 
+- type: loadout
+  id: LoadoutSecurityOuterLongCoat
+  category: JobsSecurityAUncategorized
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSecurityOuter
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Security
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Brigmedic # Corpsman has ClothingLongcoatBrigmedic
+        - Warden # Warden has ClothingLongcoatWarden
+        - HeadOfSecurity # HoS has ClothingLongcoatHoS
+  items:
+    - ClothingLongcoatSec
+
 # Shoes
 - type: loadout
   id: LoadoutSecurityShoesJackboots

@@ -244,6 +244,19 @@
     - ClothingMaskBreathMedical
 
 # Outer
+- type: loadout
+  id: LoadoutCorpsmanOuterLongCoat
+  category: JobsSecurityCorpsman
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutCorpsmanOuter
+    - !type:CharacterJobRequirement
+      jobs:
+        - Brigmedic
+  items:
+    - ClothingLongcoatBrigmedic
 
 # Shoes
 

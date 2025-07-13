@@ -65,13 +65,15 @@
 #  id: LoadoutLogisticsOfficerMask
 #  maxItems: 1
 #  items:
-#
+
 - type: characterItemGroup
   id: LoadoutLogisticsOfficerOuter
   maxItems: 1
   items:
     - type: loadout
       id: LoadoutCommandQMOuterCoatCargoForeman
+    - type: loadout
+      id: LoadoutLogisticsOfficerOuterLongCoat
 
 - type: characterItemGroup
   id: LoadoutLogisticsOfficerShoes

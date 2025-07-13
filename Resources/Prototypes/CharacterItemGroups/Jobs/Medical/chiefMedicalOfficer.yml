@@ -79,7 +79,7 @@
 #  id: LoadoutChiefMedicalOfficerMask
 #  maxItems: 1
 #  items:
-#
+
 - type: characterItemGroup
   id: LoadoutChiefMedicalOfficerOuter
   maxItems: 1
@@ -88,6 +88,8 @@
       id: LoadoutCommandCMOOuterWinter
     - type: loadout
       id: LoadoutCommandCMOOuterLab
+    - type: loadout
+      id: LoadoutChiefMedicalOfficerOuterLongCoat
 
 - type: characterItemGroup
   id: LoadoutChiefMedicalOfficerShoes

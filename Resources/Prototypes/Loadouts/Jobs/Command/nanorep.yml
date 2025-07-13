@@ -50,6 +50,19 @@
 # Mask
 
 # Outer
+- type: loadout
+  id: LoadoutNanotrasenRepresentativeOuterLongCoat
+  category: JobsCommandNanorep
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutNanorepOuter
+    - !type:CharacterJobRequirement
+      jobs:
+        - NanotrasenRepresentative
+  items:
+    - ClothingLongcoatCC
 
 # Shoes
 

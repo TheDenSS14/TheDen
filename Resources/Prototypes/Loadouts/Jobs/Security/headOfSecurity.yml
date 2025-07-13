@@ -317,6 +317,20 @@
   items:
     - ClothingOuterVestHoSVestWeb
 
+- type: loadout
+  id: LoadoutHeadOfSecurityOuterLongCoat
+  category: JobsSecurityHeadOfSecurity
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutHeadOfSecurityOuter
+    - !type:CharacterJobRequirement
+      jobs:
+        - HeadOfSecurity
+  items:
+    - ClothingLongcoatHoS
+
 # Shoes
 - type: loadout
   id: LoadoutCommandHOSShoesBootsWinter

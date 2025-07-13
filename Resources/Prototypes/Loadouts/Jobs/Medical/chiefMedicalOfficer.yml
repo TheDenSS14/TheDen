@@ -207,6 +207,20 @@
   items:
     - ClothingOuterCoatLabCmo
 
+- type: loadout
+  id: LoadoutChiefMedicalOfficerOuterLongCoat
+
+  category: JobsMedicalChiefMedicalOfficer
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutChiefMedicalOfficerOuter
+    - !type:CharacterJobRequirement
+      jobs:
+        - ChiefMedicalOfficer
+  items:
+    - ClothingLongcoatCMO
+
 # Shoes
 - type: loadout
   id: LoadoutCommandCMOShoesBootsWinter

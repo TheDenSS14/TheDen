@@ -84,7 +84,7 @@
 #  id: LoadoutMystagogueMask
 #  maxItems: 1
 #  items:
-#
+
 - type: characterItemGroup
   id: LoadoutMystagogueOuter
   maxItems: 1
@@ -93,6 +93,8 @@
       id: LoadoutCommandRDOuterWinter
     - type: loadout
       id: LoadoutCommandRDOuterMysta
+    - type: loadout
+      id: LoadoutMystagogueOuterLongCoat
 
 - type: characterItemGroup
   id: LoadoutMystagogueShoes

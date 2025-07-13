@@ -80,6 +80,20 @@
   items:
     - ClothingOuterCoatWarden
 
+- type: loadout
+  id: LoadoutWardenOuterCoatLongCoat
+  category: JobsSecurityWarden
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutWardenOuter
+    - !type:CharacterJobRequirement
+      jobs:
+        - Warden
+  items:
+    - ClothingLongcoatWarden
+
 # Shoes
 
 # Uniforms

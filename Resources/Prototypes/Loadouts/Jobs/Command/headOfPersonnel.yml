@@ -305,6 +305,20 @@
   items:
     - ClothingOuterArmorDuraVest
 
+- type: loadout
+  id: LoadoutHeadOfPersonnelOuterLongCoat
+  category: JobsCommandHeadOfPersonnel
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutHeadOfPersonnelOuter
+    - !type:CharacterJobRequirement
+      jobs:
+        - HeadOfPersonnel
+  items:
+    - ClothingLongcoatHoP
+
 # Shoes
 - type: loadout
   id: LoadoutHeadOfPersonnelShoesLaceup

@@ -534,6 +534,20 @@
   items:
     - ClothingOuterWinterCE
 
+- type: loadout
+  id: LoadoutChiefEngineerOuterLongCoat
+  category: JobsEngineeringChiefEngineer
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutChiefEngineerOuter
+    - !type:CharacterJobRequirement
+      jobs:
+        - ChiefEngineer
+  items:
+    - ClothingLongcoatCE
+
 # Shoes
 - type: loadout
   id: LoadoutChiefEngineerShoesBootsWinter

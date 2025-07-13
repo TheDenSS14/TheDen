@@ -897,3 +897,47 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutOuter
+
+- type: loadout
+  id: LoadoutOuterLongCoatAL
+  category: Outer
+  cost: 1
+  customColorTint: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutOuter
+  items:
+    - ClothingLongcoatAL
+
+- type: loadout
+  id: LoadoutOuterLongCoatNT
+  category: Outer
+  cost: 1
+  customColorTint: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutOuter
+  items:
+    - ClothingLongcoatNT
+
+- type: loadout
+  id: LoadoutOuterLongCoatBlack
+  category: Outer
+  cost: 1
+  customColorTint: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutOuter
+  items:
+    - ClothingLongcoatBlack
+
+- type: loadout
+  id: LoadoutOuterLongCoatBrown
+  category: Outer
+  cost: 1
+  customColorTint: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutOuter
+  items:
+    - ClothingLongcoatBrown
