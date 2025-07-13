@@ -2,6 +2,7 @@
 # SPDX-FileCopyrightText: 2025 Blitz
 # SPDX-FileCopyrightText: 2025 BlitzTheSquishy
 # SPDX-FileCopyrightText: 2025 GNUtopia
+# SPDX-FileCopyrightText: 2025 Jakumba
 # SPDX-FileCopyrightText: 2025 Rosycup
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
@@ -15,17 +16,19 @@
 # Ears
 
 # Equipment
-- type: loadout
-  id: LoadoutMiscCQCManual
-  category: JobsServiceAUncategorized
-  cost: 4
-  requirements:
-    - !type:CharacterJobRequirement
-      jobs:
-        - Boxer
-        - MartialArtist
-  items:
-    - NTCQCManual
+# - type: loadout
+#   id: LoadoutMiscCQCManual
+#   category: JobsServiceAUncategorized
+#   cost: 4
+#   requirements:
+#     - !type:CharacterLogicOrRequirement
+#       requirements:
+#       - !type:CharacterJobRequirement
+#         jobs:
+#           - Boxer
+#           - MartialArtist
+#   items:
+#     - NTCQCManual
 
 # Eyes
 
