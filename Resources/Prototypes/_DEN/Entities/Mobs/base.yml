@@ -1,0 +1,12 @@
+- type: entity
+  abstract: true
+  parent: StripableInventoryBase
+  id: RenamableStrippableBase
+  components:
+  - type: Renamable
+  - type: UserInterface
+    interfaces:
+      enum.SharedRenamableInterfaceKey.Key:
+        type: RenamableBoundUserInterface
+      enum.StrippingUiKey.Key:
+        type: StrippableBoundUserInterface

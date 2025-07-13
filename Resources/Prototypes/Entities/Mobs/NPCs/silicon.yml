@@ -319,7 +319,7 @@
       path: /Audio/Ambience/Objects/periodic_beep.ogg
 
 - type: entity
-  parent: [MobSiliconBase, StripableInventoryBase ]
+  parent: [RenamableStrippableBase, MobSiliconBase] # DEN: Make robots stripable AND renameable
   id: MobMedibot
   name: medibot
   description: No substitute for a doctor, but better than nothing.
@@ -372,7 +372,7 @@
     templateId: medibot
 
 - type: entity
-  parent: [MobSiliconBase, StripableInventoryBase ]
+  parent: [RenamableStrippableBase, MobSiliconBase] # DEN: Make robots stripable AND renameable
   id: MobMimeBot
   name: mimebot
   description: Why not give mimebot a friendly wave.
