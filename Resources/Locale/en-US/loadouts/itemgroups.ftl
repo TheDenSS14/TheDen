@@ -166,7 +166,7 @@ character-item-group-LoadoutNanorepMask = Nanotrasen Representative Masks
 character-item-group-LoadoutNanorepOuter = Nanotrasen Representative Outerwear
 character-item-group-LoadoutNanorepShoes = Nanotrasen Representative Shoes
 character-item-group-LoadoutNanorepUniforms = Nanotrasen Representative Uniforms
-character-item-group-LoadoutNanorepWeapon = Weapon = Nanotrasen Representative Weapon
+character-item-group-LoadoutNanorepWeapon = Nanotrasen Representative Weapon
 
 # Engineering
 character-item-group-LoadoutEngineeringBackpacks = Engineering Backpacks
