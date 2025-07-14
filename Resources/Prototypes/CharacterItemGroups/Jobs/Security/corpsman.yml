@@ -87,17 +87,6 @@
       id: LoadoutClothingMaskBreathMedical
 
 - type: characterItemGroup
-  id: LoadoutCorpsmanUniform
-  maxItems: 1
-  items:
-    - type: loadout
-      id: LoadoutClothingUniformJumpsuitCorpsman
-    - type: loadout
-      id: LoadoutClothingUniformJumpskirtCorpsman
-    - type: loadout
-      id: LoadoutClothingUniformJumpsuitCorpsmanSummer
-
-- type: characterItemGroup
   id: LoadoutCorpsmanOuter
   maxItems: 1
   items:
@@ -108,8 +97,14 @@
 #  id: LoadoutCorpsmanShoes
 #  maxItems: 1
 #  items:
-#
-#- type: characterItemGroup
-#  id: LoadoutCorpsmanUniforms
-#  maxItems: 1
-#  items:
+
+- type: characterItemGroup
+  id: LoadoutCorpsmanUniforms
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutClothingUniformJumpsuitCorpsman
+    - type: loadout
+      id: LoadoutClothingUniformJumpskirtCorpsman
+    - type: loadout
+      id: LoadoutClothingUniformJumpsuitCorpsmanSummer

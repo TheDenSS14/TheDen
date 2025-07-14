@@ -111,7 +111,7 @@ character-item-group-LoadoutBlueshieldOfficerVests = Blueshield Officer Vests
 character-item-group-LoadoutBlueshieldOfficerUniforms = Blueshield Officer Uniforms
 character-item-group-LoadoutBlueshieldOfficerSecondary = Blueshield Officer Secondary Weapon
 character-item-group-LoadoutBlueshieldOfficerPrimary = Blueshield Officer Primary Weapon
-character-item-group-LoadoutBlueshieldOfficerHats = Blueshield Officer Hats
+character-item-group-LoadoutBlueshieldOfficerHead = Blueshield Officer Headgear
 
 # Dignitary - Magistrate
 character-item-group-LoadoutMagistrateHead = Magistrate Headgear
@@ -160,7 +160,7 @@ character-item-group-LoadoutAtmosphericTechnicianShoes = Atmospheric Technician 
 character-item-group-LoadoutAtmosphericTechnicianUniforms = Atmospheric Technician Uniforms
 
 # Engineering - Chief Engineer
-character-item-group-LoadoutChiefEngineerBackpack = Chief Engineer Backpacks
+character-item-group-LoadoutChiefEngineerBackpacks = Chief Engineer Backpacks
 character-item-group-LoadoutChiefEngineerBelt = Chief Engineer Belt
 character-item-group-LoadoutChiefEngineerEars = Chief Engineer Ears
 character-item-group-LoadoutChiefEngineerEquipment = Chief Engineer Equipment
@@ -594,7 +594,7 @@ character-item-group-LoadoutCorpsmanNeck = Corpsman Neckwear
 character-item-group-LoadoutCorpsmanMask = Corpsman Masks
 character-item-group-LoadoutCorpsmanOuter = Corpsman Outerwear
 character-item-group-LoadoutCorpsmanShoes = Corpsman Shoes
-character-item-group-LoadoutCorpsmanUniform = Corpsman Uniforms
+character-item-group-LoadoutCorpsmanUniforms = Corpsman Uniforms
 
 # Security - Detective
 character-item-group-LoadoutDetectiveBackpacks = Detective Backpacks
