@@ -1,7 +1,8 @@
-# SPDX-FileCopyrightText: 2024 VMSolidus <evilexecutive@gmail.com>
-# SPDX-FileCopyrightText: 2025 Lonofera <108367450+LonoferaRS@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 MajorMoth <61519600+MajorMoth@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 VMSolidus
+# SPDX-FileCopyrightText: 2025 Adrian16199
+# SPDX-FileCopyrightText: 2025 Lonofera
+# SPDX-FileCopyrightText: 2025 MajorMoth
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -95,18 +96,17 @@
     - ClothingOuterCoatWarden
 
 - type: loadout
-  id: LoadoutWardenOuterCoatLongCoat
+  id: LoadoutClothingOuterLongCoatWarden
   category: JobsSecurityWarden
   cost: 0
-  exclusive: true
   requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutWardenOuter
-    - !type:CharacterJobRequirement
-      jobs:
-        - Warden
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutWardenOuter
+  - !type:CharacterJobRequirement
+    jobs:
+      - Warden
   items:
-    - ClothingLongcoatWarden
+  - ClothingLongcoatWarden
 
 - type: loadout
   id: LoadoutWardenOuterCoatWinterCoatArmoured

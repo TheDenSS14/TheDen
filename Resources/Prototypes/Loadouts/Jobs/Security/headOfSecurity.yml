@@ -1,6 +1,7 @@
 # SPDX-FileCopyrightText: 2024 Angelo Fallaria
 # SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT
 # SPDX-FileCopyrightText: 2024 gluesniffler
+# SPDX-FileCopyrightText: 2025 Adrian16199
 # SPDX-FileCopyrightText: 2025 Alice
 # SPDX-FileCopyrightText: 2025 Blitz
 # SPDX-FileCopyrightText: 2025 BlueHNT
@@ -318,18 +319,18 @@
     - ClothingOuterVestHoSVestWeb
 
 - type: loadout
-  id: LoadoutHeadOfSecurityOuterLongCoat
+  id: LoadoutCommandHOSOuterLongcoat
   category: JobsSecurityHeadOfSecurity
   cost: 0
   exclusive: true
   requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutHeadOfSecurityOuter
-    - !type:CharacterJobRequirement
-      jobs:
-        - HeadOfSecurity
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutHeadOfSecurityOuter
+  - !type:CharacterJobRequirement
+    jobs:
+    - HeadOfSecurity
   items:
-    - ClothingLongcoatHoS
+  - ClothingLongcoatHoS
 
 # Shoes
 - type: loadout
