@@ -65,14 +65,9 @@ public sealed partial class LoadoutPreferenceSelector : Control
             _preference = value;
             NameEdit.Text = value.CustomName ?? "";
             DescriptionEdit.TextRope = new Rope.Leaf(value.CustomDescription ?? "");
-            ColorEdit.Color = Color.FromHex(value.CustomColorTint, Color.White);
 
-            if (Loadout.CustomColorTint
-                && value.CustomColorTint != null
-                && _entityManager.TryGetComponent<PaintedComponent>(DummyEntityUid, out var paint))
-            {
-                UpdatePaint((DummyEntityUid, paint), _entityManager);
-            }
+            // This triggers an update to the color visuals of the loadout item.
+            ColorEdit.Color = Color.FromHex(value.CustomColorTint, Color.White);
 
             HeirloomButton.Pressed = value.CustomHeirloom ?? false;
             PreferenceButton.Pressed = value.Selected;
@@ -185,8 +180,8 @@ public sealed partial class LoadoutPreferenceSelector : Control
                 ? ColorEdit.Color.ToHex()
                 : null;
 
-            if (_entityManager.TryGetComponent<PaintedComponent>(dummyLoadoutItem, out var paint))
-                UpdatePaint(new Entity<PaintedComponent>(dummyLoadoutItem, paint), entityManager);
+            if (_entityManager.TryGetComponent<PaintedComponent>(DummyEntityUid, out var paint))
+                UpdatePaint((DummyEntityUid, paint), _entityManager);
         };
     }
 
