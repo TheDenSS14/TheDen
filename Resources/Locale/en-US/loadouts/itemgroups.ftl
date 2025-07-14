@@ -47,7 +47,7 @@ character-item-group-LoadoutJOBBelt = JOB Belt
 character-item-group-LoadoutJOBEars = JOB Ears
 character-item-group-LoadoutJOBEquipment = JOB Equipment
 character-item-group-LoadoutJOBEyes = JOB Eyewear
-character-item-group-LoadoutJOBloves = JOB Gloves
+character-item-group-LoadoutJOBGloves = JOB Gloves
 character-item-group-LoadoutJOBHead = JOB Headgear
 character-item-group-LoadoutJOBId = JOB ID
 character-item-group-LoadoutJOBNeck = JOB Neckwear
@@ -61,7 +61,6 @@ character-item-group-LoadoutCommandBackpacks = Command Backpacks
 character-item-group-LoadoutCommandBelt = Command Belt
 character-item-group-LoadoutCommandEars = Command Ears
 character-item-group-LoadoutCommandEquipment = Command Equipment
-character-item-group-LoadoutSelfDefense = Command Self Defense Gear
 character-item-group-LoadoutCommandEyes = Command Eyewear
 character-item-group-LoadoutCommandGloves = Command Gloves
 character-item-group-LoadoutCommandHead = Command Headgear
@@ -75,59 +74,99 @@ character-item-group-LoadoutCommandSelfDefense = Command Self Defense
 
 # Command - Captain
 character-item-group-LoadoutCaptainBackpacks = Captain Backpacks
-character-item-group-LoadoutCaptainBelt = Captain's Belt
+character-item-group-LoadoutCaptainBelt = Captain Belt
 character-item-group-LoadoutCaptainEars = Captain Ears
 character-item-group-LoadoutCaptainEquipment = Captain Equipment
-character-item-group-LoadoutCaptainTrinkets = Captain's Trinkets
-character-item-group-LoadoutCaptainWeapon = Captain's Personal Weapon
-character-item-group-LoadoutCaptainEyes = Captain's Eyewear
-character-item-group-LoadoutCaptainGloves = Captain's Gloves
-character-item-group-LoadoutCaptainHead = Captain's Headgear
-character-item-group-LoadoutCaptainId = Captain's ID
-character-item-group-LoadoutCaptainNeck = Captain's Neckwear
-character-item-group-LoadoutCaptainMask = Captain's Masks
-character-item-group-LoadoutCaptainOuter = Captain's Outerwear
-character-item-group-LoadoutCaptainShoes = Captain's Shoes
-character-item-group-LoadoutCaptainUniforms = Captain's Uniforms
+character-item-group-LoadoutCaptainEyes = Captai Eyewear
+character-item-group-LoadoutCaptainGloves = Captain Gloves
+character-item-group-LoadoutCaptainHead = Captain Headgear
+character-item-group-LoadoutCaptainId = Captain ID
+character-item-group-LoadoutCaptainNeck = Captain Neckwear
+character-item-group-LoadoutCaptainMask = Captain Masks
+character-item-group-LoadoutCaptainOuter = Captain Outerwear
+character-item-group-LoadoutCaptainShoes = Captain Shoes
+character-item-group-LoadoutCaptainUniforms = Captain Uniforms
+character-item-group-LoadoutCaptainWeapon = Captain Personal Weapon
+character-item-group-LoadoutCaptainTrinkets = Captain Trinkets
 
 # Command - Head Of Personnel
 character-item-group-LoadoutHeadOfPersonnelBackpacks = Head of Personnel Backpacks
 character-item-group-LoadoutHeadOfPersonnelBelt = Head of Personnel Belt
 character-item-group-LoadoutHeadOfPersonnelEars = Head of Personnel Ears
 character-item-group-LoadoutHeadOfPersonnelEquipment = Head of Personnel Equipment
-character-item-group-LoadoutHeadOfPersonnelTrinkets = Head of Personnel Trinkets
 character-item-group-LoadoutHeadOfPersonnelEyes = Head of Personnel Eyewear
 character-item-group-LoadoutHeadOfPersonnelGloves = Head of Personnel Gloves
 character-item-group-LoadoutHeadOfPersonnelHead = Head of Personnel Headgear
 character-item-group-LoadoutHeadOfPersonnelId = Head of Personnel ID
 character-item-group-LoadoutHeadOfPersonnelNeck = Head of Personnel Neckwear
+character-item-group-LoadoutHeadOfPersonnelMask = Head of Personnel Masks
 character-item-group-LoadoutHeadOfPersonnelOuter = Head of Personnel Outerwear
 character-item-group-LoadoutHeadOfPersonnelShoes = Head of Personnel Shoes
 character-item-group-LoadoutHeadOfPersonnelUniforms = Head of Personnel Uniforms
+character-item-group-LoadoutHeadOfPersonnelTrinkets = Head of Personnel Trinkets
+
+# Command - Administrative Assistant
+character-item-group-LoadoutAdminAssistantBackpacks = Administrative Assistant Backpacks
+character-item-group-LoadoutAdminAssistantBelt = Administrative Assistant Belt
+character-item-group-LoadoutAdminAssistantEars = Administrative Assistant Ears
+character-item-group-LoadoutAdminAssistantEquipment = Administrative Assistant Equipment
+character-item-group-LoadoutAdminAssistantEyes = Administrative Assistant Eyewear
+character-item-group-LoadoutAdminAssistantGloves = Administrative Assistant Gloves
+character-item-group-LoadoutAdminAssistantHead = Administrative Assistant Headgear
+character-item-group-LoadoutAdminAssistantId = Administrative Assistant ID
+character-item-group-LoadoutAdminAssistantNeck = Administrative Assistant Neckwear
+character-item-group-LoadoutAdminAssistantMask = Administrative Assistant Masks
+character-item-group-LoadoutAdminAssistantOuter = Administrative Assistant Outerwear
+character-item-group-LoadoutAdminAssistantShoes = Administrative Assistant Shoes
+character-item-group-LoadoutAdminAssistantUniforms = Administrative Assistant Uniforms
 
 # Dignitary - BlueshieldOfficer
 character-item-group-LoadoutBlueshieldOfficerBackpacks = Blueshield Officer Backpacks
-character-item-group-LoadoutBlueshieldOfficerVests = Blueshield Officer Vests
-character-item-group-LoadoutBlueshieldOfficerUniforms = Blueshield Officer Uniforms
-character-item-group-LoadoutBlueshieldOfficerSecondary = Blueshield Officer Secondary Weapon
-character-item-group-LoadoutBlueshieldOfficerPrimary = Blueshield Officer Primary Weapon
+character-item-group-LoadoutBlueshieldOfficerBelt = Blueshield Officer Belt
+character-item-group-LoadoutBlueshieldOfficerEars = Blueshield Officer Ears
+character-item-group-LoadoutBlueshieldOfficerEquipment = Blueshield Officer Equipment
+character-item-group-LoadoutBlueshieldOfficerEyes = Blueshield Officer Eyewear
+character-item-group-LoadoutBlueshieldOfficerGloves = Blueshield Officer Gloves
 character-item-group-LoadoutBlueshieldOfficerHead = Blueshield Officer Headgear
+character-item-group-LoadoutBlueshieldOfficerId = Blueshield Officer ID
+character-item-group-LoadoutBlueshieldOfficerNeck = Blueshield Officer Neckwear
+character-item-group-LoadoutBlueshieldOfficerMask = Blueshield Officer Masks
+character-item-group-LoadoutBlueshieldOfficerOuter = Blueshield Officer Outerwear
+character-item-group-LoadoutBlueshieldOfficerShoes = Blueshield Officer Shoes
+character-item-group-LoadoutBlueshieldOfficerUniforms = Blueshield Officer Uniforms
+character-item-group-LoadoutBlueshieldOfficerPrimary = Blueshield Officer Primary Weapon
+character-item-group-LoadoutBlueshieldOfficerSecondary = Blueshield Officer Secondary Weapon
 
 # Dignitary - Magistrate
+character-item-group-LoadoutMagistrateBackpacks = Magistrate Backpacks
+character-item-group-LoadoutMagistrateBelt = Magistrate Belt
+character-item-group-LoadoutMagistrateEars = Magistrate Ears
+character-item-group-LoadoutMagistrateEquipment = Magistrate Equipment
+character-item-group-LoadoutMagistrateEyes = Magistrate Eyewear
+character-item-group-LoadoutMagistrateGloves = Magistrate Gloves
 character-item-group-LoadoutMagistrateHead = Magistrate Headgear
+character-item-group-LoadoutMagistrateId = Magistrate ID
 character-item-group-LoadoutMagistrateNeck = Magistrate Neckwear
+character-item-group-LoadoutMagistrateMask = Magistrate Masks
 character-item-group-LoadoutMagistrateOuter = Magistrate Outerwear
+character-item-group-LoadoutMagistrateShoes = Magistrate Shoes
 character-item-group-LoadoutMagistrateUniforms = Magistrate Uniforms
 
 # Dignitary - Nanotrasen Representative
 character-item-group-LoadoutNanorepBackpacks = Nanotrasen Representative Backpacks
-character-item-group-LoadoutNanorepUniforms = Nanotrasen Representative Uniforms
-character-item-group-LoadoutNanotrasenRepresentativeWeapon = Weapon = Nanotrasen Representative Weapon
+character-item-group-LoadoutNanorepBelt = Nanotrasen Representative Belt
+character-item-group-LoadoutNanorepEars = Nanotrasen Representative Ears
+character-item-group-LoadoutNanorepEquipment = Nanotrasen Representative Equipment
+character-item-group-LoadoutNanorepEyes = Nanotrasen Representative Eyewear
+character-item-group-LoadoutNanorepGloves = Nanotrasen Representative Gloves
+character-item-group-LoadoutNanorepHead = Nanotrasen Representative Headgear
+character-item-group-LoadoutNanorepId = Nanotrasen Representative ID
+character-item-group-LoadoutNanorepNeck = Nanotrasen Representative Neckwear
+character-item-group-LoadoutNanorepMask = Nanotrasen Representative Masks
 character-item-group-LoadoutNanorepOuter = Nanotrasen Representative Outerwear
-
-# Dignitary - Nanotrasen Representative
-character-item-group-LoadoutAdminAssistantUniforms= Administrative Assistant Uniforms
-character-item-group-LoadoutAdminAssistantGloves= Administrative Assistant Gloves
+character-item-group-LoadoutNanorepShoes = Nanotrasen Representative Shoes
+character-item-group-LoadoutNanorepUniforms = Nanotrasen Representative Uniforms
+character-item-group-LoadoutNanorepWeapon = Weapon = Nanotrasen Representative Weapon
 
 # Engineering
 character-item-group-LoadoutEngineeringBackpacks = Engineering Backpacks
@@ -150,7 +189,7 @@ character-item-group-LoadoutAtmosphericTechnicianBelt = Atmospheric Technician B
 character-item-group-LoadoutAtmosphericTechnicianEars = Atmospheric Technician Ears
 character-item-group-LoadoutAtmosphericTechnicianEquipment = Atmospheric Technician Equipment
 character-item-group-LoadoutAtmosphericTechnicianEyes = Atmospheric Technician Eyewear
-character-item-group-LoadoutAtmosphericTechniciangloves = Atmospheric Technician Gloves
+character-item-group-LoadoutAtmosphericTechnicianGloves = Atmospheric Technician Gloves
 character-item-group-LoadoutAtmosphericTechnicianHead = Atmospheric Technician Headgear
 character-item-group-LoadoutAtmosphericTechnicianId = Atmospheric Technician ID
 character-item-group-LoadoutAtmosphericTechnicianNeck = Atmospheric Technician Neckwear
@@ -555,7 +594,6 @@ character-item-group-LoadoutSecurityBackpacks = Security Backpacks
 character-item-group-LoadoutSecurityBelt = Security Belt
 character-item-group-LoadoutSecurityEars = Security Ears
 character-item-group-LoadoutSecurityEquipment = Security Equipment
-character-item-group-LoadoutSecurityWeapons = Security Duty Weapon
 character-item-group-LoadoutSecurityEyes = Security Eyewear
 character-item-group-LoadoutSecurityGloves = Security Gloves
 character-item-group-LoadoutSecurityHead = Security Headgear
@@ -565,6 +603,7 @@ character-item-group-LoadoutSecurityMask = Security Masks
 character-item-group-LoadoutSecurityOuter = Security Outerwear
 character-item-group-LoadoutSecurityShoes = Security Shoes
 character-item-group-LoadoutSecurityUniforms = Security Uniforms
+character-item-group-LoadoutSecurityWeapons = Security Duty Weapon
 
 # Security - Security Cadet
 character-item-group-LoadoutCadetBackpacks = Security Cadet Backpacks
@@ -616,7 +655,6 @@ character-item-group-LoadoutHeadOfSecurityBackpacks = Head Of Security Backpacks
 character-item-group-LoadoutHeadOfSecurityBelt = Head Of Security Belt
 character-item-group-LoadoutHeadOfSecurityEars = Head Of Security Ears
 character-item-group-LoadoutHeadOfSecurityEquipment = Head Of Security Equipment
-character-item-group-LoadoutHeadOfSecurityWeapon = Head of Security's Antique Weapon Collection
 character-item-group-LoadoutHeadOfSecurityEyes = Head Of Security Eyewear
 character-item-group-LoadoutHeadOfSecurityGloves = Head Of Security Gloves
 character-item-group-LoadoutHeadOfSecurityHead = Head Of Security Headgear
@@ -627,6 +665,7 @@ character-item-group-LoadoutHeadOfSecurityOuter = Head Of Security Outerwear
 character-item-group-LoadoutHeadOfSecurityShoes = Head Of Security Shoes
 character-item-group-LoadoutHeadOfSecurityUniforms = Head Of Security Uniforms
 character-item-group-LoadoutHeadOfSecurityTrinkets = Head Of Security Trinkets
+character-item-group-LoadoutHeadOfSecurityWeapon = Head of Security Antique Weapon Collection
 
 # Security - Security Officer
 character-item-group-LoadoutSecurityOfficerBackpacks = Security Officer Backpacks
@@ -663,7 +702,6 @@ character-item-group-LoadoutWardenBackpacks = Warden Backpacks
 character-item-group-LoadoutWardenBelt = Warden Belt
 character-item-group-LoadoutWardenEars = Warden Ears
 character-item-group-LoadoutWardenEquipment = Warden Equipment
-character-item-group-LoadoutWardenWeapons = Warden's Antique Weapon Collection
 character-item-group-LoadoutWardenEyes = Warden Eyewear
 character-item-group-LoadoutWardenGloves = Warden Gloves
 character-item-group-LoadoutWardenHead = Warden Headgear
@@ -673,6 +711,7 @@ character-item-group-LoadoutWardenMask = Warden Masks
 character-item-group-LoadoutWardenOuter = Warden Outerwear
 character-item-group-LoadoutWardenShoes = Warden Shoes
 character-item-group-LoadoutWardenUniforms = Warden Uniforms
+character-item-group-LoadoutWardenWeapons = Warden Antique Weapon Collection
 
 # Service
 character-item-group-LoadoutServiceBackpacks = Service Backpacks
@@ -694,8 +733,6 @@ character-item-group-LoadoutBartenderBackpacks = Bartender Backpacks
 character-item-group-LoadoutBartenderBelt = Bartender Belt
 character-item-group-LoadoutBartenderEars = Bartender Ears
 character-item-group-LoadoutBartenderEquipment = Bartender Equipment
-character-item-group-LoadoutBartenderAmmo = Bartender Ammo
-character-item-group-LoadoutBartenderWeapon = Bartender Weapon
 character-item-group-LoadoutBartenderEyes = Bartender Eyewear
 character-item-group-LoadoutBartenderGloves = Bartender Gloves
 character-item-group-LoadoutBartenderHead = Bartender Headgear
@@ -705,6 +742,8 @@ character-item-group-LoadoutBartenderMask = Bartender Masks
 character-item-group-LoadoutBartenderOuter = Bartender Outerwear
 character-item-group-LoadoutBartenderShoes = Bartender Shoes
 character-item-group-LoadoutBartenderUniforms = Bartender Uniforms
+character-item-group-LoadoutBartenderWeapon = Bartender Weapon
+character-item-group-LoadoutBartenderAmmo = Bartender Ammo
 
 # Service - Botanist
 character-item-group-LoadoutBotanistBackpacks = Botanist Backpacks
@@ -832,7 +871,7 @@ character-item-group-LoadoutPrisonerBelt = Prisoner Belt
 character-item-group-LoadoutPrisonerEars = Prisoner Ears
 character-item-group-LoadoutPrisonerEquipment = Prisoner Equipment
 character-item-group-LoadoutPrisonerEyes = Prisoner Eyewear
-character-item-group-LoadoutPrisonerloves = Prisoner Gloves
+character-item-group-LoadoutPrisonerGloves = Prisoner Gloves
 character-item-group-LoadoutPrisonerHead = Prisoner Headgear
 character-item-group-LoadoutPrisonerId = Prisoner ID
 character-item-group-LoadoutPrisonerNeck = Prisoner Neckwear
