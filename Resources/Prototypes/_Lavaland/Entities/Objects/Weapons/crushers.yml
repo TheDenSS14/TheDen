@@ -34,6 +34,18 @@
     count: 1
   - type: DisarmMalus
   - type: MegafaunaWeaponLooter
+  - type: Clothing
+    quickEquip: false
+    slots:
+    - back
+    - suitStorage
+    - belt
+  - type: ExtendDescription
+    descriptionList:
+      - description: "gun-legality-salvage"
+        fontSize: 12
+        color: "#ff4f00"
+        requireDetailRange: false
 
 - type: entity
   parent: [LavalandWeaponKineticBase]
@@ -136,7 +148,6 @@
     boost:
       types: # BLOOD FOR THE BLOOD GOD ITS A FUCKING HAMMER
         Blunt: 75
-
 
 - type: entity
   parent: [LavalandWeaponKineticBase, ClothingHandsBase]

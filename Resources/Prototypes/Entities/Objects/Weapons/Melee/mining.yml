@@ -235,6 +235,12 @@
     leech:
       groups:
         Brute: -10
+  - type: ExtendDescription
+    descriptionList:
+      - description: "gun-legality-salvage"
+        fontSize: 12
+        color: "#ff4f00"
+        requireDetailRange: false
   # Lavaland Change Start
   - type: DamageBoostOnMarker
     boost:

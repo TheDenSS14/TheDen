@@ -71,6 +71,7 @@
     sprite: Objects/Weapons/Guns/Basic/kinetic_accelerator.rsi
     quickEquip: false
     slots:
+    - back
     - suitStorage
     - Belt
   - type: UseDelay
@@ -99,3 +100,9 @@
         Blunt: 2.5
   - type: DamageOtherOnHit
     staminaCost: 8
+  - type: ExtendDescription
+    descriptionList:
+      - description: "gun-legality-salvage"
+        fontSize: 12
+        color: "#ff4f00"
+        requireDetailRange: false
