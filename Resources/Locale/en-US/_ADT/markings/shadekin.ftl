@@ -102,23 +102,23 @@ marking-EarsShadekinBull = Straight Ears
 marking-EarsShadekinBull-bull_default = Ears
 marking-EarsShadekinBullSmooth = Straight Ears, Outlined
 marking-EarsShadekinBullSmooth-bull_default = Ears
-marking-EarsShadekinBullSmooth-bull_smooth = Inner Ears
+marking-EarsShadekinBullSmooth-bull_smooth = Inner ears
 marking-EarsShadekinAqua = Aqua Ears
 marking-EarsShadekinAqua-aqua_default = Ears
 marking-EarsShadekinAquaIncolor = Aqua Ears, Colored
 marking-EarsShadekinAquaIncolor-aqua_default = Ears
-marking-EarsShadekinAquaIncolor-aqua_incolor = Inner Ears
+marking-EarsShadekinAquaIncolor-aqua_incolor = Inner ears
 
 marking-TailShadekinShorter = Short Tail
 marking-TailShadekinShorter-shadekin_shorter = Tail
 marking-TailShadekinShorterBrush = Short Tail, Furry
 marking-TailShadekinShorterBrush-shadekin_shorter = Tail
-marking-TailShadekinShorterBrush-shorter_brush = Tail Tip
+marking-TailShadekinShorterBrush-shorter_brush = Tail tip
 marking-TailShadekinMedium = Medium Tail
 marking-TailShadekinMedium-shadekin_medium = Tail
 marking-TailShadekinMediumTwoColored = Medium Tail, Two-Toned
 marking-TailShadekinMediumTwoColored-shadekin_medium = Tail
-marking-TailShadekinMediumTwoColored-medium_twocolored = Tail Underside
+marking-TailShadekinMediumTwoColored-medium_twocolored = Tail underside
 
 marking-BodyShadekinArrow = Arrow Marking
 marking-BodyShadekinArrow-body_arrow = Marking
