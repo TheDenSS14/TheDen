@@ -144,3 +144,36 @@
     - !type:TraitAddComponent
       components:
         - type: Wagging
+
+- type: trait
+  id: HealingFactor
+  category: TraitsPhysicalBiological
+  points: -6
+  requirements:
+  - !type:CharacterJobRequirement
+    inverted: true
+    jobs:
+      - StationAi
+      - Borg
+      - MedicalBorg
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - PlateletFactories
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - IPC
+  functions:
+    - !type:TraitReplaceComponent
+      components:
+        - type: PassiveDamage
+          allowedStates:
+          - Alive
+          - Critical
+          damageCap: 400
+          damage:
+            types:
+              Brute: -0.2
+              Burn: -0.2
+              Bloodloss: -0.3
