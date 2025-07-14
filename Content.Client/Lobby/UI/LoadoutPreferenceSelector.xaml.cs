@@ -364,13 +364,9 @@ public sealed partial class LoadoutPreferenceSelector : Control
 
     private void UpdatePaint(Entity<PaintedComponent> entity, IEntityManager entityManager)
     {
-        if (_preference.CustomColorTint != null)
-        {
+        entity.Comp.Enabled = _preference.CustomColorTint != null;
+        if (entity.Comp.Enabled)
             entity.Comp.Color = Color.FromHex(_preference.CustomColorTint);
-            entity.Comp.Enabled = true;
-        }
-        else
-            entity.Comp.Enabled = false;
 
         var app = entityManager.System<SharedAppearanceSystem>();
         app.TryGetData(entity, PaintVisuals.Painted, out bool value);
