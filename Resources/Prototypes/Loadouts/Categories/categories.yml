@@ -248,6 +248,7 @@
     - JobsSecurityCorpsman
     - JobsSecurityDetective
     - JobsSecurityHeadOfSecurity
+    - JobsSecurityPrisonGuard
     - JobsSecuritySecurityOfficer
     - JobsSecuritySeniorOfficer
     - JobsSecurityWarden
@@ -266,6 +267,9 @@
 
 - type: loadoutCategory
   id: JobsSecurityHeadOfSecurity
+
+- type: loadoutCategory
+  id: JobsSecurityPrisonGuard
 
 - type: loadoutCategory
   id: JobsSecuritySecurityOfficer
