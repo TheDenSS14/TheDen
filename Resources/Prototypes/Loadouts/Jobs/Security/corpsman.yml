@@ -89,13 +89,72 @@
   cost: 2
   exclusive: true
   requirements:
-#    - !type:CharacterItemGroupRequirement - TheDen - For easier 1 character all jobs cahracters
-#      group: LoadoutSecurityEyes
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutCorpsmanEyes
     - !type:CharacterJobRequirement
       jobs:
         - Brigmedic
   items:
     - ClothingEyesGlassesCorpsman
+
+- type: loadout
+  id: LoadoutClothingEyesCorpsmanHudMedSec
+  category: JobsSecurityCorpsman
+  cost: 1
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutCorpsmanEyes
+    - !type:CharacterJobRequirement
+      jobs:
+        - Brigmedic
+  items:
+    - ClothingEyesHudMedSec
+
+- type: loadout
+  id: LoadoutClothingEyesCorpsmanHudMed
+  category: JobsSecurityCorpsman
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutCorpsmanEyes
+    - !type:CharacterJobRequirement
+      jobs:
+        - Brigmedic
+  items:
+    - ClothingEyesHudMedical
+
+- type: loadout
+  id: LoadoutMedicalEyesCorpsmanEyepatchHudMedical
+  category: JobsMedicalAUncategorized
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutCorpsmanEyes
+    - !type:CharacterJobRequirement
+      jobs:
+        - Brigmedic
+  items:
+    - ClothingEyesEyepatchHudMedical
+
+- type: loadout
+  id: LoadoutClothingEyesCorpsmanHudMedPrescription
+  category: JobsSecurityCorpsman
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutCorpsmanEyes
+    - !type:CharacterJobRequirement
+      jobs:
+        - Brigmedic
+    - !type:CharacterTraitRequirement
+      traits:
+        - Nearsighted
+  items:
+    - ClothingEyesPrescriptionMedHud
 
 # Gloves
 - type: loadout

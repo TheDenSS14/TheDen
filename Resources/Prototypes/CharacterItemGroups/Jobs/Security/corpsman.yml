@@ -35,12 +35,22 @@
 #  id: LoadoutCorpsmanEquipment
 #  maxItems: 1
 #  items:
-#
-#- type: characterItemGroup
-#  id: LoadoutCorpsmanEyes
-#  maxItems: 1
-#  items:
-#
+
+- type: characterItemGroup
+  id: LoadoutCorpsmanEyes
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutClothingEyesGlassesCorpsman
+    - type: loadout
+      id: LoadoutClothingEyesCorpsmanHudMedSec
+    - type: loadout
+      id: LoadoutClothingEyesCorpsmanHudMed
+    - type: loadout
+      id: LoadoutMedicalEyesCorpsmanEyepatchHudMedical
+    - type: loadout
+      id: LoadoutClothingEyesCorpsmanHudMedPrescription
+
 - type: characterItemGroup
   id: LoadoutCorpsmanGloves
   maxItems: 1
@@ -65,7 +75,7 @@
 #  id: LoadoutCorpsmanId
 #  maxItems: 1
 #  items:
-#
+
 - type: characterItemGroup
   id: LoadoutCorpsmanNeck
   maxItems: 1

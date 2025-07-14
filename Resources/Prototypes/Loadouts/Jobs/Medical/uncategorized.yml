@@ -177,14 +177,9 @@
   cost: 0
   exclusive: true
   requirements:
-    - !type:CharacterLogicOrRequirement
-      requirements:
-        - !type:CharacterDepartmentRequirement
-          departments:
-            - Medical
-        - !type:CharacterJobRequirement
-          jobs:
-            - Brigmedic
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Medical
   items:
     - ClothingEyesHudMedical
 
@@ -196,14 +191,9 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutMedicalEyes
-    - !type:CharacterLogicOrRequirement
-      requirements:
-        - !type:CharacterDepartmentRequirement
-          departments:
-            - Medical
-        - !type:CharacterJobRequirement
-          jobs:
-            - Brigmedic
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Medical
   items:
     - ClothingEyesEyepatchHudMedical
 
@@ -215,14 +205,9 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutMedicalEyes
-    - !type:CharacterLogicOrRequirement
-      requirements:
-        - !type:CharacterDepartmentRequirement
-          departments:
-            - Medical
-        - !type:CharacterJobRequirement
-          jobs:
-            - Brigmedic
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Medical
     - !type:CharacterTraitRequirement
       traits:
         - Nearsighted
