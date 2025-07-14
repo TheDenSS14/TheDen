@@ -17,6 +17,18 @@
 # Eyes
 
 # Gloves
+- type: loadout
+  id: LoadoutClothingHandsJanitorRubber
+  category: JobsServiceJanitor
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutJanitorGloves
+    - !type:CharacterJobRequirement
+      jobs:
+        - Janitor
+  items:
+    - ClothingHandsGlovesJanitor
 
 # Head
 
