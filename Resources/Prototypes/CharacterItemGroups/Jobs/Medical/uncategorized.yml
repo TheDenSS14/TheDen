@@ -49,7 +49,7 @@
 #  id: LoadoutMedicalEquipment
 #  maxItems: 1
 #  items:
-#
+
 - type: characterItemGroup
   id: LoadoutMedicalEyes
   maxItems: 1
@@ -71,6 +71,8 @@
       id: LoadoutMedicalGlovesNitrile
     - type: loadout
       id: LoadoutMedicalGlovesLatex
+    - type: loadout
+      id: LoadoutClothingHandsMedicWarmers
 
 - type: characterItemGroup
   id: LoadoutMedicalHead
@@ -110,6 +112,8 @@
       id: LoadoutMedicalBedsheetMedical
     - type: loadout
       id: LoadoutMedicalNeckNeckerchief # Floof - M3739 - #988
+    - type: loadout
+      id: LoadoutMedicalNeckCollar
 
 - type: characterItemGroup
   id: LoadoutMedicalMask
@@ -143,6 +147,8 @@
       id: LoadoutMedicalBootsWinterViro
     - type: loadout
       id: LoadoutMedicalBootsWinterGen
+    - type: loadout
+      id: LoadoutClothingUnderSocksMedic
 
 - type: characterItemGroup
   id: LoadoutMedicalUniforms
@@ -166,3 +172,5 @@
       id: LoadoutMedicalUniformScrubsWhite
     - type: loadout
       id: LoadoutMedicalUniformNurse
+    - type: loadout
+      id: LoadoutClothingUniformMedicThong

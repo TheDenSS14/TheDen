@@ -22,6 +22,8 @@
       inverted: true
       jobs:
         - Passenger
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutServiceGloves
 
 - type: loadout
   id: LoadoutClothingUnderSocksService
@@ -43,6 +45,8 @@
       inverted: true
       jobs:
         - Passenger
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutServiceShoes
 
 - type: loadout
   id: LoadoutClothingUniformServiceThong
@@ -59,6 +63,8 @@
       inverted: true
       jobs:
         - Passenger
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutServiceUniforms
 
 - type: loadout
   id: LoadoutClothingUniformServiceUni
@@ -75,6 +81,8 @@
       inverted: true
       jobs:
         - Passenger
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutServiceUniforms
 
 #Bartender
 - type: loadout
@@ -88,6 +96,8 @@
     - !type:CharacterJobRequirement
       jobs:
         - Bartender
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBartenderGloves
 
 - type: loadout
   id: LoadoutClothingUnderSocksBartender
@@ -105,6 +115,8 @@
     - !type:CharacterJobRequirement
       jobs:
         - Bartender
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBartenderShoes
 
 - type: loadout
   id: LoadoutClothingUniformBartenderThong
@@ -117,6 +129,8 @@
     - !type:CharacterJobRequirement
       jobs:
         - Bartender
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBartenderUniforms
 
 - type: loadout
   id: LoadoutServiceBartenderBunnyEars
@@ -129,6 +143,8 @@
         - Bartender
   items:
     - ClothingHeadHatBunny
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBartenderHead
 
 - type: loadout
   id: LoadoutServiceBartenderBunnySuit
@@ -141,6 +157,8 @@
         - Bartender
   items:
     - ClothingCostumeBunnySuit
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBartenderUniforms
 
 #Chef
 - type: loadout
@@ -154,6 +172,8 @@
     - !type:CharacterJobRequirement
       jobs:
         - Chef
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutChefGloves
 
 - type: loadout
   id: LoadoutClothingUnderSocksChef
@@ -171,6 +191,8 @@
     - !type:CharacterJobRequirement
       jobs:
         - Chef
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutChefShoes
 
 - type: loadout
   id: LoadoutClothingUniformChefThong
@@ -183,6 +205,8 @@
     - !type:CharacterJobRequirement
       jobs:
         - Chef
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutChefUniforms
 
 #Musician
 - type: loadout
@@ -196,6 +220,8 @@
     - !type:CharacterJobRequirement
       jobs:
         - Musician
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMusicianGloves
 
 - type: loadout
   id: LoadoutClothingUnderSocksMusician
@@ -213,6 +239,8 @@
     - !type:CharacterJobRequirement
       jobs:
         - Musician
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMusicianShoes
 
 - type: loadout
   id: LoadoutClothingUniformMusicianThong
@@ -225,6 +253,8 @@
     - !type:CharacterJobRequirement
       jobs:
         - Musician
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMusicianUniforms
 
 - type: loadout
   id: LoadoutClothingUniformMusicKingBlack
@@ -237,6 +267,8 @@
     - !type:CharacterJobRequirement
       jobs:
         - Musician
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMusicianUniforms
 
 - type: loadout
   id: LoadoutClothingUniformMusicKing
@@ -249,6 +281,8 @@
     - !type:CharacterJobRequirement
       jobs:
         - Musician
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMusicianUniforms
 
 #Janitorial
 - type: loadout
@@ -262,6 +296,8 @@
     - !type:CharacterJobRequirement
       jobs:
         - Janitor
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutJanitorGloves
 
 - type: loadout
   id: LoadoutClothingUnderSocksJanitor
@@ -279,6 +315,8 @@
     - !type:CharacterJobRequirement
       jobs:
         - Janitor
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutJanitorShoes
 
 - type: loadout
   id: LoadoutClothingUniformJanitorThong
@@ -291,6 +329,8 @@
     - !type:CharacterJobRequirement
       jobs:
         - Janitor
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutJanitorUniforms
 
 - type: loadout
   id: LoadoutClothingNeckCloakJanitor
@@ -304,15 +344,16 @@
     - !type:CharacterPlaytimeRequirement
       tracker: JobJanitor
       min: 36000 # 10 hours
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutJanitorNeck
   items:
     - ClothingNeckCloakJanitor
 
-#TO BE ADDED - Botanist
-#TO BE ADDED - Reporter
+# TO BE ADDED - Botanist
 
-# Misc
+# TO BE ADDED - Reporter
+
 # Mime
-
 - type: loadout
   id: LoadoutClothingHandsStripeWhiteWarmers
   category: JobsServiceMime
@@ -324,6 +365,8 @@
     - !type:CharacterJobRequirement
       jobs:
         - Mime
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMimeGloves
 
 - type: loadout
   id: LoadoutClothingUnderSocksStripedWhite
@@ -341,6 +384,8 @@
     - !type:CharacterJobRequirement
       jobs:
         - Mime
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMimeShoes
 
 - type: loadout
   id: LoadoutClothingUniformStripedThongWhite
@@ -353,4 +398,7 @@
     - !type:CharacterJobRequirement
       jobs:
         - Mime
-#TO BE ADDED - Clown
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMimeUniforms
+
+# TO BE ADDED - Clown

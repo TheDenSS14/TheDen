@@ -11,11 +11,13 @@
   cost: 0
   exclusive: true
   items:
-  - ClothingHandsLOLogisWarmers
+    - ClothingHandsLOLogisWarmers
   requirements:
-  - !type:CharacterJobRequirement
-    jobs:
-    - Quartermaster
+    - !type:CharacterJobRequirement
+      jobs:
+        - Quartermaster
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutLogisticsOfficerGloves
 
 - type: loadout
   id: LoadoutClothingUnderSocksLOLogis
@@ -23,16 +25,18 @@
   cost: 0
   exclusive: true
   items:
-  - ClothingUnderSocksLOLogis
+    - ClothingUnderSocksLOLogis
   requirements:
-#  - !type:CharacterSpeciesRequirement - TheDen
-#    inverted: true
-#    species:
-#    - Diona
-#    - Harpy
-  - !type:CharacterJobRequirement
-    jobs:
-    - Quartermaster
+    #- !type:CharacterSpeciesRequirement - TheDen
+    #  inverted: true
+    #  species:
+    #  - Diona
+    #  - Harpy
+    - !type:CharacterJobRequirement
+      jobs:
+        - Quartermaster
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutLogisticsOfficerShoes
 
 - type: loadout
   id: LoadoutClothingUniformLOLogisThong
@@ -40,8 +44,10 @@
   cost: 0
   exclusive: true
   items:
-  - ClothingUniformLOLogisThong
+    - ClothingUniformLOLogisThong
   requirements:
-  - !type:CharacterJobRequirement
-    jobs:
-    - Quartermaster
+    - !type:CharacterJobRequirement
+      jobs:
+        - Quartermaster
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutLogisticsOfficerUniforms

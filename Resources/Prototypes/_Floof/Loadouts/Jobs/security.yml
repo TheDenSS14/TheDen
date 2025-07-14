@@ -18,6 +18,8 @@
     - !type:CharacterDepartmentRequirement
       departments:
         - Security
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSecurityGloves
 
 - type: loadout
   id: LoadoutClothingUnderSocksSecurity
@@ -35,6 +37,8 @@
     - !type:CharacterDepartmentRequirement
       departments:
         - Security
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSecurityShoes
 
 - type: loadout
   id: LoadoutClothingUniformSecurityThong
@@ -47,6 +51,8 @@
     - !type:CharacterDepartmentRequirement
       departments:
         - Security
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSecurityUniforms
 
 - type: loadout
   id: LoadoutSecurityNeckCollar
@@ -58,6 +64,8 @@
         - Security
   items:
     - ClothingNeckCollarSec
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSecurityNeck
 
 # Detective
 - type: loadout
@@ -71,6 +79,8 @@
     - !type:CharacterJobRequirement
       jobs:
         - Detective
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutDetectiveGloves
 
 - type: loadout
   id: LoadoutClothingUnderSocksDetective
@@ -88,6 +98,8 @@
     - !type:CharacterJobRequirement
       jobs:
         - Detective
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutDetectiveShoes
 
 - type: loadout
   id: LoadoutClothingUniformDetectiveThong
@@ -100,3 +112,5 @@
     - !type:CharacterJobRequirement
       jobs:
         - Detective
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutDetectiveUniforms

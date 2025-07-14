@@ -18,6 +18,8 @@
     - !type:CharacterDepartmentRequirement
       departments:
         - Logistics
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutLogisticsGloves
 
 - type: loadout
   id: LoadoutClothingUnderSocksLogis
@@ -35,6 +37,8 @@
     - !type:CharacterDepartmentRequirement
       departments:
         - Logistics
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutLogisticsShoes
 
 - type: loadout
   id: LoadoutClothingUniformLogisThong
@@ -47,6 +51,8 @@
     - !type:CharacterDepartmentRequirement
       departments:
         - Logistics
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutLogisticsUniforms
 
 - type: loadout
   id: LoadoutCargoNeckCollar
@@ -58,6 +64,8 @@
         - Logistics
   items:
     - ClothingNeckCollarLogi
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutLogisticsNeck
 
 # Courier
 - type: loadout
@@ -71,6 +79,8 @@
     - !type:CharacterJobRequirement
       jobs:
         - MailCarrier
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutCourierGloves
 
 - type: loadout
   id: LoadoutClothingUnderSocksCourier
@@ -88,6 +98,8 @@
     - !type:CharacterJobRequirement
       jobs:
         - MailCarrier
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutCourierShoes
 
 - type: loadout
   id: LoadoutClothingUniformCourierThong
@@ -100,3 +112,5 @@
     - !type:CharacterJobRequirement
       jobs:
         - MailCarrier
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutCourierUniforms

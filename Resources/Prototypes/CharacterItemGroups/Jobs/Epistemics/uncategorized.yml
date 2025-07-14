@@ -31,7 +31,7 @@
 #  id: LoadoutEpistemicsEquipment
 #  maxItems: 1
 #  items:
-#
+
 - type: characterItemGroup
   id: LoadoutEpistemicsEyes
   maxItems: 1
@@ -49,9 +49,8 @@
       id: LoadoutScienceHandsGlovesColorPurple
     - type: loadout
       id: LoadoutScienceHandsGlovesLatex
-# TheDen - Roboticist only
-#   - type: loadout
-#     id: LoadoutScienceHandsGlovesRobohands
+    - type: loadout
+      id: LoadoutClothingHandsEpiWarmers
 
 - type: characterItemGroup
   id: LoadoutEpistemicsHead
@@ -68,7 +67,7 @@
 #  id: LoadoutEpistemicsId
 #  maxItems: 1
 #  items:
-#
+
 - type: characterItemGroup
   id: LoadoutEpistemicsNeck
   maxItems: 1
@@ -81,12 +80,14 @@
       id: LoadoutScienceNeckScarfStripedBlack
     - type: loadout
       id: LoadoutScienceNeckNeckerchief # Floof - M3739 - #988
+    - type: loadout
+      id: LoadoutScienceNeckCollar
 
 #- type: characterItemGroup
 #  id: LoadoutEpistemicsMask
 #  maxItems: 1
 #  items:
-#
+
 - type: characterItemGroup
   id: LoadoutEpistemicsOuter
   maxItems: 1
@@ -95,9 +96,6 @@
       id: LoadoutScienceOuterCoat
     - type: loadout
       id: LoadoutScienceOuterLabcoat
-# TheDen - Roboticist only
-#   - type: loadout
-#     id: LoadoutScienceOuterCoatRobo
     - type: loadout
       id: LoadoutScienceOuterWinterSci
     - type: loadout
@@ -110,8 +108,12 @@
   items:
     - type: loadout
       id: LoadoutScienceShoesBootsWinterSci
+    - type: loadout
+      id: LoadoutClothingUnderSocksEpi
 
-#- type: characterItemGroup
-#  id: LoadoutEpistemicsUniforms
-#  maxItems: 1
-#  items:
+- type: characterItemGroup
+  id: LoadoutEpistemicsUniforms
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutClothingUniformEpiThong

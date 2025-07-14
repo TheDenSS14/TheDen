@@ -23,7 +23,7 @@
 #  id: LoadoutMusicianEars
 #  maxItems: 1
 #  items:
-#
+
 - type: characterItemGroup
   id: LoadoutMusicianEquipment
   maxItems: 3
@@ -127,12 +127,14 @@
 #  id: LoadoutMusicianEyes
 #  maxItems: 1
 #  items:
-#
-#- type: characterItemGroup
-#  id: LoadoutMusicianGloves
-#  maxItems: 1
-#  items:
-#
+
+- type: characterItemGroup
+  id: LoadoutMusicianGloves
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutClothingHandsMusicianWarmers
+
 #- type: characterItemGroup
 #  id: LoadoutMusicianHead
 #  maxItems: 1
@@ -152,20 +154,28 @@
 #  id: LoadoutMusicianMask
 #  maxItems: 1
 #  items:
-#
+
 - type: characterItemGroup
   id: LoadoutMusicianOuter
   maxItems: 1
   items:
     - type: loadout
       id: LoadoutServiceWinterCoatMusician
-#
-#- type: characterItemGroup
-#  id: LoadoutMusicianShoes
-#  maxItems: 1
-#  items:
-#
-#- type: characterItemGroup
-#  id: LoadoutMusicianUniforms
-#  maxItems: 1
-#  items:
+
+- type: characterItemGroup
+  id: LoadoutMusicianShoes
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutClothingUnderSocksMusician
+
+- type: characterItemGroup
+  id: LoadoutMusicianUniforms
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutClothingUniformMusicianThong
+    - type: loadout
+      id: LoadoutClothingUniformMusicKingBlack
+    - type: loadout
+      id: LoadoutClothingUniformMusicKing

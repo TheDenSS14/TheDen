@@ -18,6 +18,8 @@
     - !type:CharacterDepartmentRequirement
       departments:
         - Epistemics
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutEpistemicsGloves
 
 - type: loadout
   id: LoadoutClothingUnderSocksEpi
@@ -35,6 +37,8 @@
     - !type:CharacterDepartmentRequirement
       departments:
         - Epistemics
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutEpistemicsShoes
 
 - type: loadout
   id: LoadoutClothingUniformEpiThong
@@ -47,6 +51,8 @@
     - !type:CharacterDepartmentRequirement
       departments:
         - Epistemics
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutEpistemicsUniforms
 
 - type: loadout
   id: LoadoutScienceNeckCollar
@@ -58,6 +64,8 @@
         - Epistemics
   items:
     - ClothingNeckCollarEpi
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutEpistemicsNeck
 
 # Psionic mantis
 - type: loadout
@@ -71,6 +79,8 @@
     - !type:CharacterJobRequirement
       jobs:
         - ForensicMantis
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutPsionicMantisGloves
 
 - type: loadout
   id: LoadoutClothingUnderSocksMantisEpi
@@ -88,6 +98,8 @@
     - !type:CharacterJobRequirement
       jobs:
         - ForensicMantis
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutPsionicMantisShoes
 
 - type: loadout
   id: LoadoutClothingUniformMantisEpiThong
@@ -100,6 +112,8 @@
     - !type:CharacterJobRequirement
       jobs:
         - ForensicMantis
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutPsionicMantisUniforms
 
 # Chaplain
 - type: loadout
@@ -113,6 +127,8 @@
     - !type:CharacterJobRequirement
       jobs:
         - Chaplain
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutChaplainGloves
 
 - type: loadout
   id: LoadoutClothingUnderSocksChaplain
@@ -130,6 +146,8 @@
     - !type:CharacterJobRequirement
       jobs:
         - Chaplain
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutChaplainShoes
 
 - type: loadout
   id: LoadoutClothingUniformChaplainThong
@@ -142,6 +160,8 @@
     - !type:CharacterJobRequirement
       jobs:
         - Chaplain
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutChaplainUniforms
 
 - type: loadout
   id: LoadoutClothingChaplainEpiMantle
@@ -154,3 +174,5 @@
     - !type:CharacterJobRequirement
       jobs:
         - Chaplain
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutChaplainNeck

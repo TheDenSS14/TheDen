@@ -44,10 +44,12 @@
 #  maxItems: 1
 #  items:
 #
-#- type: characterItemGroup
-#  id: LoadoutParamedicGloves
-#  maxItems: 1
-#  items:
+- type: characterItemGroup
+  id: LoadoutParamedicGloves
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutClothingHandsParaMedicWarmers
 
 - type: characterItemGroup
   id: LoadoutParamedicHead
@@ -86,6 +88,8 @@
   items:
     - type: loadout
       id: LoadoutMedicalShoesBootsWinterParamedic
+    - type: loadout
+      id: LoadoutClothingUnderSocksParaMedic
 
 - type: characterItemGroup
   id: LoadoutParamedicUniforms
@@ -99,3 +103,5 @@
       id: LoadoutClothingUniformJumpsuitParamedicNT
     - type: loadout
       id: LoadoutClothingUniformJumpsuitParamedicCybersun
+    - type: loadout
+      id: LoadoutClothingUniformParaMedicThong

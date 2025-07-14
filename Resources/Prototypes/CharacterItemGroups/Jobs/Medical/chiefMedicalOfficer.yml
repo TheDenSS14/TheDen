@@ -43,12 +43,14 @@
 #  id: LoadoutChiefMedicalOfficerEyes
 #  maxItems: 1
 #  items:
-#
-#- type: characterItemGroup
-#  id: LoadoutChiefMedicalOfficerGloves
-#  maxItems: 1
-#  items:
-#
+
+- type: characterItemGroup
+  id: LoadoutChiefMedicalOfficerGloves
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutClothingHandsCMOWarmers
+
 - type: characterItemGroup
   id: LoadoutChiefMedicalOfficerHead
   maxItems: 1
@@ -102,6 +104,8 @@
       id: LoadoutChiefMedicalOfficerShoesLaceup
     - type: loadout
       id: LoadoutChiefMedicalOfficerShoesLeather
+    - type: loadout
+      id: LoadoutClothingUnderSocksCMO
 
 - type: characterItemGroup
   id: LoadoutChiefMedicalOfficerUniforms
@@ -115,3 +119,5 @@
       id: LoadoutChiefMedicalOfficerTurtleskirt
     - type: loadout
       id: LoadoutChiefMedicalOfficerTurtlesuit
+    - type: loadout
+      id: LoadoutClothingUniformCMOThong

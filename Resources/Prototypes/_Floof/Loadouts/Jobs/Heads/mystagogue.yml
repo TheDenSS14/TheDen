@@ -16,6 +16,8 @@
   - !type:CharacterJobRequirement
     jobs:
     - ResearchDirector
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMystagogueGloves
 
 - type: loadout
   id: LoadoutClothingUnderSocksEpiHead
@@ -25,14 +27,16 @@
   items:
   - ClothingUnderSocksEpiHead
   requirements:
-#  - !type:CharacterSpeciesRequirement - TheDen
-#    inverted: true
-#    species:
-#    - Diona
-#    - Harpy
+    #- !type:CharacterSpeciesRequirement - TheDen
+    #  inverted: true
+    #  species:
+    #  - Diona
+    #  - Harpy
   - !type:CharacterJobRequirement
     jobs:
     - ResearchDirector
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMystagogueShoes
 
 - type: loadout
   id: LoadoutClothingUniformEpiHeadThong
@@ -45,3 +49,5 @@
   - !type:CharacterJobRequirement
     jobs:
     - ResearchDirector
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMystagogueUniforms

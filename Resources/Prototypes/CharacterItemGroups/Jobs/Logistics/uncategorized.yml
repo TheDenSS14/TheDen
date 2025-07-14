@@ -39,11 +39,13 @@
 #  id: LoadoutLogisticsEyes
 #  maxItems: 1
 #  items:
-#
-#- type: characterItemGroup
-#  id: LoadoutLogisticsGloves
-#  maxItems: 1
-#  items:
+
+- type: characterItemGroup
+  id: LoadoutLogisticsGloves
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutClothingHandsLogisWarmers
 
 - type: characterItemGroup
   id: LoadoutLogisticsHead
@@ -56,13 +58,15 @@
 #  id: LoadoutLogisticsId
 #  maxItems: 1
 #  items:
-#
+
 - type: characterItemGroup
   id: LoadoutLogisticsNeck
   maxItems: 1
   items:
     - type: loadout
       id: LoadoutCargoNeckNeckerchief # Floof - M3739 - #988
+    - type: loadout
+      id: LoadoutCargoNeckCollar
 
 #- type: characterItemGroup
 #  id: LoadoutLogisticsMask
@@ -86,8 +90,12 @@
       id: LoadoutCargoShoesBootsWinterCargo
     - type: loadout
       id: LoadoutCargoTechnicianBootsSteel
+    - type: loadout
+      id: LoadoutClothingUnderSocksLogis
 
-#- type: characterItemGroup
-#  id: LoadoutLogisticsUniforms
-#  maxItems: 1
-#  items:
+- type: characterItemGroup
+  id: LoadoutLogisticsUniforms
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutClothingUniformLogisThong

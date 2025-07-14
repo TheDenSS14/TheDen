@@ -15,7 +15,7 @@
 #  id: LoadoutHeadOfSecurityBackpacks
 #  maxItems: 1
 #  items:
-#
+
 - type: characterItemGroup
   id: LoadoutHeadOfSecurityBelt
   maxItems: 1
@@ -60,12 +60,14 @@
 #  id: LoadoutHeadOfSecurityEyes
 #  maxItems: 1
 #  items:
-#
-#- type: characterItemGroup
-#  id: LoadoutHeadOfSecurityGloves
-#  maxItems: 1
-#  items:
-#
+
+- type: characterItemGroup
+  id: LoadoutHeadOfSecurityGloves
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutClothingHandsHeadSecurityWarmers
+
 - type: characterItemGroup
   id: LoadoutHeadOfSecurityHead
   maxItems: 1
@@ -119,6 +121,8 @@
   items:
     - type: loadout
       id: LoadoutCommandHOSShoesBootsWinter
+    - type: loadout
+      id: LoadoutClothingUnderSocksHeadSecurity
 
 - type: characterItemGroup
   id: LoadoutHeadOfSecurityUniforms
@@ -148,6 +152,8 @@
       id: LoadoutCommandHOSJumpsuit
     - type: loadout
       id: LoadoutCommandHOSJumpskirt
+    - type: loadout
+      id: LoadoutClothingUniformHeadSecurityThong
 
 - type: characterItemGroup
   id: LoadoutHeadOfSecurityTrinkets

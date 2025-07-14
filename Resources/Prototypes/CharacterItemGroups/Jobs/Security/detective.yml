@@ -30,12 +30,14 @@
 #  id: LoadoutDetectiveEyes
 #  maxItems: 1
 #  items:
-#
-#- type: characterItemGroup
-#  id: LoadoutDetectiveGloves
-#  maxItems: 1
-#  items:
-#
+
+- type: characterItemGroup
+  id: LoadoutDetectiveGloves
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutDetectiveGloves
+
 #- type: characterItemGroup
 #  id: LoadoutDetectiveHead
 #  maxItems: 1
@@ -55,7 +57,7 @@
 #  id: LoadoutDetectiveMask
 #  maxItems: 1
 #  items:
-#
+
 - type: characterItemGroup
   id: LoadoutDetectiveOuter
   maxItems: 1
@@ -67,11 +69,13 @@
     - type: loadout
       id: LoadoutOuterCoatOpenCoatDetective
 
-#- type: characterItemGroup
-#  id: LoadoutDetectiveShoes
-#  maxItems: 1
-#  items:
-#
+- type: characterItemGroup
+  id: LoadoutDetectiveShoes
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutClothingUnderSocksDetective
+
 - type: characterItemGroup
   id: LoadoutDetectiveUniforms
   maxItems: 1
@@ -86,3 +90,5 @@
       id: LoadoutUniformJumpskirtDetectiveGrey
     - type: loadout
       id: LoadoutUniformJumpsuitNanotrasenDetective
+    - type: loadout
+      id: LoadoutClothingUniformDetectiveThong
