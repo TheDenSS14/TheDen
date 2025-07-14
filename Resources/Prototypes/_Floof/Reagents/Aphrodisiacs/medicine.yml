@@ -17,7 +17,7 @@
   color: "#45072f"
   metabolisms:
     Medicine:
-      metabolismRate : 0.1
+      metabolismRate : 0.01
       effects:
       - !type:PopupMessage
         type: Local
@@ -70,7 +70,7 @@
   color: "#ae0072"
   metabolisms:
     Medicine:
-      metabolismRate : 0.1
+      metabolismRate : 0.01
       effects:
       - !type:PopupMessage
         type: Local
