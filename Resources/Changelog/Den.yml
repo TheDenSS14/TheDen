@@ -7595,3 +7595,157 @@ Entries:
   id: 721
   time: '2025-07-13T02:24:00.0000000+00:00'
   url: https://github.com/TheDenSS14/TheDen/pull/1054
+- author: sleepyyapril
+  changes:
+    - type: Add
+      message: >-
+        Added rotate and flip object keys with R, Shift R, and F (see your
+        settings)
+    - type: Fix
+      message: Fixed round end summary not showing up with F9
+    - type: Fix
+      message: Fixed ninja not showing up in round end summary
+  id: 722
+  time: '2025-07-13T20:22:52.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1060
+- author: 'Jakumba '
+  changes:
+    - type: Tweak
+      message: >-
+        Added RPD/RCD and compressed matter to the Engineering Tech Fab, behind
+        Mechanical Compression research
+    - type: Tweak
+      message: >-
+        Increased the cost of compressed matter to compensate for it's
+        availability
+  id: 723
+  time: '2025-07-13T20:24:10.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1051
+- author: MajorMoth
+  changes:
+    - type: Add
+      message: Ported the improved SMES UI from wizden.
+  id: 724
+  time: '2025-07-13T20:24:28.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1058
+- author: WhiteHusky
+  changes:
+    - type: Add
+      message: Pipe layers for multiple pipes in one direction.
+  id: 725
+  time: '2025-07-13T20:27:10.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/960
+- author: juniwoofs
+  changes:
+    - type: Tweak
+      message: Tweaked the spawn rate and times of various events. (see pr for details)
+  id: 726
+  time: '2025-07-13T20:39:13.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1045
+- author: BlitzTheSquishy
+  changes:
+    - type: Tweak
+      message: Slimes received updated sprites! They also have faces now!
+  id: 727
+  time: '2025-07-13T20:54:48.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1057
+- author: ShepardToTheStars
+  changes:
+    - type: Add
+      message: Space Ninjas now have a new intro song.
+    - type: Add
+      message: >-
+        Space Ninjas now have some traits - Light Step, Parkour Training, and
+        Thieving.
+    - type: Tweak
+      message: Reduced the amount of technology that Space Ninjas need to steal.
+    - type: Tweak
+      message: >-
+        Space Ninja objectives are now more random and they can be asked to
+        steal things or kill people!
+  id: 728
+  time: '2025-07-13T21:09:22.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1024
+- author: portfiend
+  changes:
+    - type: Fix
+      message: >-
+        EVERY SINGLE SPECIES HAS THE SAME LAYER ORDER (unless they NEED it to be
+        different - these are Vox, Harpy, Arachne). JESUS FUCKING CHRIST
+    - type: Tweak
+      message: Socks now have their own layer underneath jumpsuits.
+  id: 729
+  time: '2025-07-13T20:25:58.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1050
+- author: ShepardToTheStars
+  changes:
+    - type: Add
+      message: >-
+        Added some variety to the warden's antique weapons on the loadout
+        screen.
+    - type: Tweak
+      message: Removed loadout cost for the Warden's antique greatsword.
+  id: 730
+  time: '2025-07-13T20:35:06.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1059
+- author: portfiend
+  changes:
+    - type: Add
+      message: >-
+        Player-controlled Medibots, Plantbots, and Weldbots can now use their
+        respective abilities. Medibots get an innate injector (fine-tuned for
+        each patient), Weldbots get an innate welder, and Plantbots have UI
+        actions for watering and weeding plants.
+    - type: Add
+      message: >-
+        Player-controlled bots are now capable of examining their surroundings
+        and other people. You know. For consent.
+    - type: Add
+      message: >-
+        Bots now have emotes (your usual pings, buzzes, and whirrs that all
+        silicons have) and pAI vocal sounds. 
+    - type: Remove
+      message: Plantbots can no longer see diagnostic health bars for other robots.
+  id: 731
+  time: '2025-07-13T20:38:22.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/795
+- author: sleepyyapril
+  changes:
+    - type: Remove
+      message: The ninja no longer gets the emag objective
+  id: 732
+  time: '2025-07-13T21:30:51.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1062
+- author: sleepyyapril
+  changes:
+    - type: Fix
+      message: >-
+        Ghosts will now follow the AI when it activates a holopad or answers a
+        holo-call
+    - type: Fix
+      message: >-
+        Ghosts are no longer sent to the void if the player they are following
+        is polymorphed.
+  id: 733
+  time: '2025-07-13T22:58:43.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1064
+- author: muburu
+  changes:
+    - type: Add
+      message: Space Dragons now have randomly generated names.
+    - type: Tweak
+      message: Dragons can now pry open doors, including firelocks.
+  id: 734
+  time: '2025-07-13T22:59:01.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1063
+- author: portfiend
+  changes:
+    - type: Fix
+      message: >-
+        Medibots and Mimebots can be stripped again (allowing you to put hats on
+        them).
+    - type: Fix
+      message: Fillbots can be renamed again.
+  id: 735
+  time: '2025-07-13T23:11:26.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1065

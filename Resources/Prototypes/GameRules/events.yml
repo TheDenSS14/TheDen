@@ -42,8 +42,10 @@
 # SPDX-FileCopyrightText: 2025 Rosycup
 # SPDX-FileCopyrightText: 2025 Tabitha
 # SPDX-FileCopyrightText: 2025 VMSolidus
+# SPDX-FileCopyrightText: 2025 Vanessa Louwagie
 # SPDX-FileCopyrightText: 2025 Your Name
 # SPDX-FileCopyrightText: 2025 empty0set
+# SPDX-FileCopyrightText: 2025 juniwoofs
 # SPDX-FileCopyrightText: 2025 portfiend
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
@@ -108,7 +110,7 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: StationEvent
-    weight: 2
+    weight: 5 # Den
     reoccurrenceDelay: 5
     earliestStart: 1
     duration: 1
@@ -133,7 +135,7 @@
   - type: StationEvent
     startAnnouncement: true
     minimumPlayers: 25
-    weight: 3
+    weight: 5 # Den
     duration: 1
   - type: BureaucraticErrorRule
 
@@ -168,8 +170,8 @@
   components:
   - type: StationEvent
     weight: 6.5
-    earliestStart: 40
-    reoccurrenceDelay: 40
+    earliestStart: 90 # Den
+    reoccurrenceDelay: 60 # Den
     minimumPlayers: 30
     duration: null
   - type: SpaceSpawnRule
@@ -197,8 +199,8 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: StationEvent
-    weight: 6
-    duration: 1
+    weight: 5.5 # Den
+    duration: null
     earliestStart: 90 # Floof
     reoccurrenceDelay: 60 # Floof
     minimumPlayers: 30 # Floof
@@ -206,12 +208,19 @@
   - type: AntagLoadProfileRule
   - type: AntagObjectives
     objectives:
-    - StealResearchObjective
-    - DoorjackObjective
+    #- StealResearchObjective # DeltaV: Moved to random objectives
+  #  - DoorjackObjective # Den: bad objective, use cooler ones
     - SpiderChargeObjective
-    - TerrorObjective
-    - MassArrestObjective
+    #- TerrorObjective # DeltaV: Moved to random objectives
+    #- MassArrestObjective # DeltaV: Moved to random objectives
     - NinjaSurviveObjective
+  - type: AntagRandomObjectives # DeltaV: Random objectives for hacking and killing
+    sets:
+    - groups: NinjaHackingObjectiveGroups
+      maxPicks: 2 # only pick 2 of 3 of them to reduce metagaming
+    - groups: NinjaBonusObjectiveGroups
+      maxPicks: 2 # 2 kill or steal objectives max
+    maxDifficulty: 100 # ignore difficulty, use maxPicks instead
   - type: AntagSelection
     agentName: ninja-round-end-agent-name
     definitions:
@@ -237,6 +246,21 @@
         - NamesNinjaTitle
         - NamesNinja
         nameFormat: name-format-ninja
+      - type: FootstepVolumeModifier # TheDen - Add Light Step - Ninjas should be trained to be silent, no?
+        sprintVolumeModifier: -15
+        walkVolumeModifier: -15
+      - type: Thieving # TheDen - Add Thieving - Ninjas should be good at pickpocketing!
+        ignoreStripHidden: true
+        stealth: Subtle
+        stripTimeReduction: 0
+        stripTimeMultiplier: 0.667
+      - type: ClimbDelayModifier #TheDen - Add Parkour Training
+        climbDelayMultiplier: 0.5
+      - type: SlippableModifier
+        paralyzeTimeMultiplier: 0.7
+      - type: SpeedModifiedByContactModifier
+        walkModifierEffectiveness: 0.5
+        sprintModifierEffectiveness: 0.5
       mindRoles:
       - MindRoleNinja
 
@@ -297,7 +321,7 @@
   components:
   - type: StationEvent
     earliestStart: 30
-    weight: 7.5
+    weight: 8.5 # Den
     minimumPlayers: 20 # Floof
     startAnnouncement: true
     endAnnouncement: true
@@ -326,7 +350,7 @@
   - type: StationEvent
     earliestStart: 15
     minimumPlayers: 1
-    weight: 4
+    weight: 6 # Den
     duration: 30
   - type: VentCrittersRule
     table: !type:GroupSelector # DeltaV: EntityTable instead of spawn entries
@@ -345,7 +369,7 @@
     startAnnouncement: true
     startDelay: 10
     earliestStart: 15
-    weight: 6
+    weight: 8 # Den
     duration: 30
   - type: VentCrittersRule
     table: !type:GroupSelector # DeltaV: EntityTable instead of spawn entries
@@ -373,7 +397,7 @@
     startAnnouncement: true
     startDelay: 10
     earliestStart: 15
-    weight: 3
+    weight: 4 # Den
     duration: 30
   - type: VentCrittersRule
     table: !type:GroupSelector # DeltaV: EntityTable instead of spawn entries
@@ -389,7 +413,7 @@
   - type: StationEvent
     startAnnouncement: true
     startDelay: 10
-    weight: 3
+    weight: 5 # Den
     duration: 30
   - type: VentCrittersRule
     table: !type:GroupSelector # DeltaV: EntityTable instead of spawn entries
@@ -446,7 +470,7 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: StationEvent
-    weight: 5
+    weight: 6 # Den
     startAnnouncement: true
     endAnnouncement: true
     startDelay: 24
@@ -696,8 +720,8 @@
   id: LoneOpsSpawn
   components:
   - type: StationEvent
-    earliestStart: 35
-    weight: 5.5
+    earliestStart: 90 # Den
+    weight: 4.5 # Den
     minimumPlayers: 20
     duration: 1
   - type: RuleGrids
@@ -732,7 +756,7 @@
   components:
   - type: StationEvent
     earliestStart: 25
-    weight: 8
+    weight: 9 # Den
     minimumPlayers: 15
     reoccurrenceDelay: 30
     startAnnouncement: false
@@ -786,7 +810,7 @@
   id: IonStorm
   components:
   - type: StationEvent
-    weight: 10
+    weight: 12 # Den
     reoccurrenceDelay: 20
     duration: 1
   - type: IonStormRule
@@ -815,15 +839,15 @@
 #       weight: 3
 #     - type: AirlockVirusRule
 
-- type: entity
-  parent: BaseGameRule
-  id: SmugglerStashVariationPass
-  components:
-  - type: StationEvent
-    earliestStart: 0
-    duration: 1
-    minimumPlayers: 1
-    maxOccurrences: 2
-    weight: 10
-  - type: RandomSpawnRule
-    prototype: RandomSatchelSpawner
+# - type: entity
+#  parent: BaseGameRule
+#  id: SmugglerStashVariationPass
+#  components:
+#  - type: StationEvent
+#    earliestStart: 0
+#    duration: 1
+#    minimumPlayers: 1
+#    maxOccurrences: 2
+#    weight: 10
+#  - type: RandomSpawnRule
+#    prototype: RandomSatchelSpawner

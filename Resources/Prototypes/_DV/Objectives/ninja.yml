@@ -1,0 +1,86 @@
+# SPDX-FileCopyrightText: 2024 deltanedas
+# SPDX-FileCopyrightText: 2025 Vanessa Louwagie
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+# Kill
+
+- type: entity
+  categories: [ HideSpawnMenu ]
+  abstract: true
+  parent: [ BaseNinjaObjective, BaseTeachLessonObjective ]
+  id: BaseNinjaTeachLessonObjective
+  description: This fool has spoken out against the Spider Clan. Teach them the error of their ways.
+  components:
+  - type: Objective
+    unique: true
+    icon:
+      sprite: Objects/Weapons/Throwable/throwing_star.rsi
+      state: icon
+  - type: TargetObjective
+    title: objective-condition-ninja-teach-person-title
+
+- type: entity
+  categories: [ HideSpawnMenu ]
+  parent: BaseNinjaTeachLessonObjective
+  id: NinjaTeachLessonRandomHeadObjective
+  components:
+  - type: PickRandomHead
+
+- type: entity
+  categories: [ HideSpawnMenu ]
+  parent: BaseNinjaTeachLessonObjective
+  id: NinjaTeachLessonRandomPersonObjective
+  components:
+  - type: PickRandomPerson
+
+- type: entity
+  categories: [ HideSpawnMenu ]
+  parent: [ BaseNinjaObjective, BaseKillObjective ]
+  id: NinjaKillRandomHeadObjective
+  description: The Spider Clan is in need of more saboteur cyborgs. This head's brain will be perfect.
+  components:
+  - type: Objective
+    icon:
+      sprite: Objects/Weapons/Melee/energykatana.rsi
+      state: icon
+  - type: TargetObjective
+    title: objective-ninja-kill-head-title
+  - type: PickRandomHead
+  - type: KillPersonCondition
+    requireDead: true
+
+# Steal
+
+- type: entity
+  categories: [ HideSpawnMenu ]
+  abstract: true
+  parent: [ BaseNinjaObjective, BaseStealObjective ]
+  id: BaseNinjaStealObjective
+  components:
+  - type: StealCondition
+    verifyMapExistence: false
+
+- type: entity
+  categories: [ HideSpawnMenu ]
+  parent: BaseNinjaStealObjective
+  id: NinjaIanDossierStealObjective
+  components:
+  - type: StealCondition
+    stealGroup: BookIanDossier
+
+- type: entity
+  categories: [ HideSpawnMenu ]
+  parent: BaseNinjaStealObjective
+  id: NinjaLuckyBillStealObjective
+  components:
+  - type: StealCondition
+    stealGroup: SpaceCashLuckyBill
+
+- type: entity
+  categories: [ HideSpawnMenu ]
+  parent: BaseNinjaStealObjective
+  id: NinjaCaptainsCloakStealObjective
+  components:
+  - type: StealCondition
+    stealGroup: CaptainsCloak
