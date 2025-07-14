@@ -1012,6 +1012,19 @@
     - ClothingEyesGlassesSecurityVisor
 
 # Gloves
+- type: loadout
+  id: LoadoutClothingHandsGlovesSecurityBlack
+  category: JobsSecurityAUncategorized
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSecurityGloves
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Security
+  items:
+    - ClothingHandsGlovesColorBlack
 
 # Head
 - type: loadout
