@@ -1,0 +1,93 @@
+# Boxer
+#- type: characterItemGroup
+#  id: LoadoutBoxerBackpacks
+#  maxItems: 1
+#  items:
+
+- type: characterItemGroup
+  id: LoadoutBoxerBelt
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutBoxerBeltChampion
+
+#- type: characterItemGroup
+#  id: LoadoutBoxerEars
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutBoxerEquipment
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutBoxerEyes
+#  maxItems: 1
+#  items:
+
+- type: characterItemGroup
+  id: LoadoutBoxerGloves
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutBoxerGlovesBoxingBlue
+    - type: loadout
+      id: LoadoutBoxerGlovesBoxingGreen
+    - type: loadout
+      id: LoadoutBoxerGlovesBoxingRed
+    - type: loadout
+      id: LoadoutBoxerGlovesBoxingYellow
+    - type: loadout
+      id: LoadoutBoxerGlovesSexCompBlue
+    - type: loadout
+      id: LoadoutBoxerGlovesSexCompRed
+
+- type: characterItemGroup
+  id: LoadoutBoxerHead
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutBoxerHeadSecCompCirclet
+
+#- type: characterItemGroup
+#  id: LoadoutBoxerId
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutBoxerNeck
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutBoxerMask
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutBoxerOuter
+#  maxItems: 1
+#  items:
+
+- type: characterItemGroup
+  id: LoadoutBoxerShoes
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutBoxerShoesSexCompBlue
+    - type: loadout
+      id: LoadoutBoxerShoesSexCompRed
+
+- type: characterItemGroup
+  id: LoadoutBoxerUniforms
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutBoxerUniformShorts
+    - type: loadout
+      id: LoadoutBoxerUniformShortsWithTop
+    - type: loadout
+      id: LoadoutBoxerUniformSexCompBlue
+    - type: loadout
+      id: LoadoutBoxerUniformSexCompRed
