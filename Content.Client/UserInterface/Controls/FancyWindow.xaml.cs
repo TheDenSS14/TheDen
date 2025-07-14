@@ -1,13 +1,12 @@
-// SPDX-FileCopyrightText: 2021 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
-// SPDX-FileCopyrightText: 2021 metalgearsloth <comedian_vs_clown@hotmail.com>
-// SPDX-FileCopyrightText: 2022 Eoin Mcloughlin <helloworld@eoinrul.es>
-// SPDX-FileCopyrightText: 2022 eoineoineoin <eoin.mcloughlin+gh@gmail.com>
-// SPDX-FileCopyrightText: 2022 mirrorcult <lunarautomaton6@gmail.com>
-// SPDX-FileCopyrightText: 2022 wrexbe <81056464+wrexbe@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2023 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT <77995199+DEATHB4DEFEAT@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 Leon Friedrich <60421075+electrojr@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 Eoin Mcloughlin
+// SPDX-FileCopyrightText: 2022 eoineoineoin
+// SPDX-FileCopyrightText: 2022 mirrorcult
+// SPDX-FileCopyrightText: 2022 wrexbe
+// SPDX-FileCopyrightText: 2023 metalgearsloth
+// SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT
+// SPDX-FileCopyrightText: 2024 Leon Friedrich
+// SPDX-FileCopyrightText: 2025 Pieter-Jan Briers
+// SPDX-FileCopyrightText: 2025 sleepyyapril
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -92,6 +91,56 @@ namespace Content.Client.UserInterface.Controls
             }
 
             return mode;
+        }
+    }
+
+    /// <summary>
+    /// Helper functions for working with <see cref="FancyWindow"/>.
+    /// </summary>
+    public static class FancyWindowExt
+    {
+        /// <summary>
+        /// Sets information for a window (title and guidebooks) based on an entity.
+        /// </summary>
+        /// <param name="window">The window to modify.</param>
+        /// <param name="entityManager">Entity manager used to retrieve the information.</param>
+        /// <param name="entity">The entity that this window represents.</param>
+        /// <seealso cref="SetTitleFromEntity"/>
+        /// <seealso cref="SetGuidebookFromEntity"/>
+        public static void SetInfoFromEntity(this FancyWindow window, IEntityManager entityManager, EntityUid entity)
+        {
+            window.SetTitleFromEntity(entityManager, entity);
+            window.SetGuidebookFromEntity(entityManager, entity);
+        }
+
+        /// <summary>
+        /// Set a window's title to the name of an entity.
+        /// </summary>
+        /// <param name="window">The window to modify.</param>
+        /// <param name="entityManager">Entity manager used to retrieve the information.</param>
+        /// <param name="entity">The entity that this window represents.</param>
+        /// <seealso cref="SetInfoFromEntity"/>
+        public static void SetTitleFromEntity(
+            this FancyWindow window,
+            IEntityManager entityManager,
+            EntityUid entity)
+        {
+            window.Title = entityManager.GetComponent<MetaDataComponent>(entity).EntityName;
+        }
+
+        /// <summary>
+        /// Set a window's guidebook IDs to those of an entity.
+        /// </summary>
+        /// <param name="window">The window to modify.</param>
+        /// <param name="entityManager">Entity manager used to retrieve the information.</param>
+        /// <param name="entity">The entity that this window represents.</param>
+        /// <seealso cref="SetInfoFromEntity"/>
+        public static void SetGuidebookFromEntity(
+            this FancyWindow window,
+            IEntityManager entityManager,
+            EntityUid entity)
+        {
+            window.HelpGuidebookIds = entityManager.GetComponentOrNull<GuideHelpComponent>(entity)?.Guides;
         }
     }
 }

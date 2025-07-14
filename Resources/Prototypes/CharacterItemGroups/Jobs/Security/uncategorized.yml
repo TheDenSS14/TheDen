@@ -1,5 +1,6 @@
 # SPDX-FileCopyrightText: 2024 Unkn0wn_Gh0st
 # SPDX-FileCopyrightText: 2024 gluesniffler
+# SPDX-FileCopyrightText: 2025 Adrian16199
 # SPDX-FileCopyrightText: 2025 Blitz
 # SPDX-FileCopyrightText: 2025 Blu
 # SPDX-FileCopyrightText: 2025 Jakumba
@@ -184,7 +185,7 @@
 #  maxItems: 1
 #  items:
 #
-- type: characterItemGroup 
+- type: characterItemGroup
   id: LoadoutSecurityNeck # Floof - M3739 - #988
   maxItems: 1
   items:
@@ -216,6 +217,8 @@
       id: LoadoutClothingOuterArmorBasic
     - type: loadout
       id: LoadoutClothingOuterArmorSlim
+    - type: loadout
+      id: LoadoutClothingLongcoatSec
 
 - type: characterItemGroup
   id: LoadoutSecurityShoes

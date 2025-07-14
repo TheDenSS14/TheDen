@@ -290,7 +290,7 @@ ghost-role-information-BreadDog-rules = You're an edible dog made of bread. Your
 
 ghost-role-information-space-ninja-name = Space Ninja
 ghost-role-information-space-ninja-description = Use stealth and deception to sabotage the station.
-ghost-role-information-space-ninja-rules = You are an elite mercenary of the Spider Clan. You aren't required to follow your objectives, yet your NINJA HONOR demands you try.
+ghost-role-information-space-ninja-rules = You are an elite mercenary of the [color=#33cc00]Spider Clan[/color]. You aren't required to follow your objectives, yet your NINJA HONOR demands you try.
 
 ghost-role-information-syndicate-reinforcement-name = Syndicate Agent
 ghost-role-information-syndicate-reinforcement-description = Someone needs reinforcements. You, the first person the syndicate could find, will help them.

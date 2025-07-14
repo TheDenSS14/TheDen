@@ -1,7 +1,9 @@
-# SPDX-FileCopyrightText: 2024 RichardRahl123 <130261520+RichardRahl123@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 KyuPolaris <tabi@kyuudev.me>
-# SPDX-FileCopyrightText: 2025 MajorMoth <61519600+MajorMoth@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 RichardRahl123
+# SPDX-FileCopyrightText: 2024 Whatstone
+# SPDX-FileCopyrightText: 2025 KyuPolaris
+# SPDX-FileCopyrightText: 2025 MajorMoth
+# SPDX-FileCopyrightText: 2025 Tabitha
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -333,3 +335,11 @@
   reagents:
     Soysauce: 5
     Water: 15
+
+- type: microwaveMealRecipe
+  id: RecipeRosyMothRoachburger
+  name: rosy mothroachburger recipe
+  result: FoodBurgerRosyMothRoach
+  solids:
+    FoodBreadBun: 1
+    MobRosyMothroach: 1

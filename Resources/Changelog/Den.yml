@@ -7461,3 +7461,325 @@ Entries:
   id: 705
   time: '2025-07-11T00:40:43.0000000+00:00'
   url: https://github.com/TheDenSS14/TheDen/pull/1039
+- author: portfiend
+  changes:
+    - type: Add
+      message: Characters can now select a "muted without sign language" trait.
+  id: 706
+  time: '2025-07-11T03:17:44.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1037
+- author: portfiend
+  changes:
+    - type: Add
+      message: >-
+        New announcers now have a chance of rolling at the beginning of a round
+        in place of Michael.
+    - type: Add
+      message: >-
+        Admins have a new command, /setannouncer, which allows them to change
+        the announcer at any time as they please. Check the PR for usage
+        instructions, or just run that command without parameters (it will tell
+        you how to use it).
+  id: 707
+  time: '2025-07-11T03:17:53.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1035
+- author: SimpleGopnik
+  changes:
+    - type: Add
+      message: Cyborgs are now able to wear neck items, as well as be given awards
+    - type: Fix
+      message: Cyborgs now have their hats centered
+  id: 708
+  time: '2025-07-08T04:59:20.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1007
+- author: Deathninja5551
+  changes:
+    - type: Add
+      message: >-
+        Added Ammonia/Anaerobic Blood chemical interactions. They can now be
+        centrifuged and boiled.
+    - type: Fix
+      message: Vox parts now correctly contain Anaerobic Blood.
+  id: 709
+  time: '2025-07-11T23:54:16.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1038
+- author: KyuPolaris
+  changes:
+    - type: Add
+      message: Added disposable syringe into the med/emt belt whitelist
+  id: 710
+  time: '2025-07-12T00:00:29.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1021
+- author: KyuPolaris
+  changes:
+    - type: Add
+      message: Added the Rosy Mothroach Variant from frontier
+  id: 711
+  time: '2025-07-12T00:02:08.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/990
+- author: SubspaceEmber
+  changes:
+    - type: Tweak
+      message: Ported musician and boxer service access.
+  id: 712
+  time: '2025-07-12T00:28:27.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1029
+- author: trashalice
+  changes:
+    - type: Add
+      message: A new vest to hos, jumpsuit and coat to detective
+    - type: Tweak
+      message: >-
+        the BRDI is back to 0 loadout points considering it's been nerfed
+        heavily
+  id: 713
+  time: '2025-07-12T07:16:22.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1023
+- author: SubspaceEmber
+  changes:
+    - type: Tweak
+      message: >-
+        Changed name and description for janitorial winter boots and added
+        noslip 
+  id: 714
+  time: '2025-07-12T07:17:09.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1030
+- author: Adrian16199
+  changes:
+    - type: Add
+      message: Added small tajaran snoot for IPC feline enjoyers.
+  id: 715
+  time: '2025-07-12T08:20:52.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1040
+- author: Swiss_Fox
+  changes:
+    - type: Add
+      message: Added the new salvage shuttle, the Python!
+  id: 716
+  time: '2025-07-12T09:30:47.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1032
+- author: Deathninja5551
+  changes:
+    - type: Add
+      message: Ported the Experiment plushie from Casualties Unknown
+  id: 717
+  time: '2025-07-12T16:58:05.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1049
+- author: Jakumba
+  changes:
+    - type: Tweak
+      message: Salvage gun and price rebalance, check github for full details!
+  id: 718
+  time: '2025-07-12T18:20:42.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1048
+- author: Jakumba
+  changes:
+    - type: Tweak
+      message: The Deserter dropship now has an hour worth of limited fuel.
+  id: 719
+  time: '2025-07-12T18:22:36.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1047
+- author: NatusExVacuo
+  changes:
+    - type: Tweak
+      message: >-
+        Acoustic Guitars have been treated for termites and built with hardier
+        wood
+  id: 720
+  time: '2025-07-13T02:21:55.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1052
+- author: Jakumba
+  changes:
+    - type: Remove
+      message: CQC Manual from Boxer & Martial Artist loadout
+  id: 721
+  time: '2025-07-13T02:24:00.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1054
+- author: sleepyyapril
+  changes:
+    - type: Add
+      message: >-
+        Added rotate and flip object keys with R, Shift R, and F (see your
+        settings)
+    - type: Fix
+      message: Fixed round end summary not showing up with F9
+    - type: Fix
+      message: Fixed ninja not showing up in round end summary
+  id: 722
+  time: '2025-07-13T20:22:52.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1060
+- author: 'Jakumba '
+  changes:
+    - type: Tweak
+      message: >-
+        Added RPD/RCD and compressed matter to the Engineering Tech Fab, behind
+        Mechanical Compression research
+    - type: Tweak
+      message: >-
+        Increased the cost of compressed matter to compensate for it's
+        availability
+  id: 723
+  time: '2025-07-13T20:24:10.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1051
+- author: MajorMoth
+  changes:
+    - type: Add
+      message: Ported the improved SMES UI from wizden.
+  id: 724
+  time: '2025-07-13T20:24:28.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1058
+- author: WhiteHusky
+  changes:
+    - type: Add
+      message: Pipe layers for multiple pipes in one direction.
+  id: 725
+  time: '2025-07-13T20:27:10.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/960
+- author: juniwoofs
+  changes:
+    - type: Tweak
+      message: Tweaked the spawn rate and times of various events. (see pr for details)
+  id: 726
+  time: '2025-07-13T20:39:13.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1045
+- author: BlitzTheSquishy
+  changes:
+    - type: Tweak
+      message: Slimes received updated sprites! They also have faces now!
+  id: 727
+  time: '2025-07-13T20:54:48.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1057
+- author: ShepardToTheStars
+  changes:
+    - type: Add
+      message: Space Ninjas now have a new intro song.
+    - type: Add
+      message: >-
+        Space Ninjas now have some traits - Light Step, Parkour Training, and
+        Thieving.
+    - type: Tweak
+      message: Reduced the amount of technology that Space Ninjas need to steal.
+    - type: Tweak
+      message: >-
+        Space Ninja objectives are now more random and they can be asked to
+        steal things or kill people!
+  id: 728
+  time: '2025-07-13T21:09:22.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1024
+- author: portfiend
+  changes:
+    - type: Fix
+      message: >-
+        EVERY SINGLE SPECIES HAS THE SAME LAYER ORDER (unless they NEED it to be
+        different - these are Vox, Harpy, Arachne). JESUS FUCKING CHRIST
+    - type: Tweak
+      message: Socks now have their own layer underneath jumpsuits.
+  id: 729
+  time: '2025-07-13T20:25:58.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1050
+- author: ShepardToTheStars
+  changes:
+    - type: Add
+      message: >-
+        Added some variety to the warden's antique weapons on the loadout
+        screen.
+    - type: Tweak
+      message: Removed loadout cost for the Warden's antique greatsword.
+  id: 730
+  time: '2025-07-13T20:35:06.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1059
+- author: portfiend
+  changes:
+    - type: Add
+      message: >-
+        Player-controlled Medibots, Plantbots, and Weldbots can now use their
+        respective abilities. Medibots get an innate injector (fine-tuned for
+        each patient), Weldbots get an innate welder, and Plantbots have UI
+        actions for watering and weeding plants.
+    - type: Add
+      message: >-
+        Player-controlled bots are now capable of examining their surroundings
+        and other people. You know. For consent.
+    - type: Add
+      message: >-
+        Bots now have emotes (your usual pings, buzzes, and whirrs that all
+        silicons have) and pAI vocal sounds. 
+    - type: Remove
+      message: Plantbots can no longer see diagnostic health bars for other robots.
+  id: 731
+  time: '2025-07-13T20:38:22.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/795
+- author: sleepyyapril
+  changes:
+    - type: Remove
+      message: The ninja no longer gets the emag objective
+  id: 732
+  time: '2025-07-13T21:30:51.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1062
+- author: sleepyyapril
+  changes:
+    - type: Fix
+      message: >-
+        Ghosts will now follow the AI when it activates a holopad or answers a
+        holo-call
+    - type: Fix
+      message: >-
+        Ghosts are no longer sent to the void if the player they are following
+        is polymorphed.
+  id: 733
+  time: '2025-07-13T22:58:43.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1064
+- author: muburu
+  changes:
+    - type: Add
+      message: Space Dragons now have randomly generated names.
+    - type: Tweak
+      message: Dragons can now pry open doors, including firelocks.
+  id: 734
+  time: '2025-07-13T22:59:01.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1063
+- author: portfiend
+  changes:
+    - type: Fix
+      message: >-
+        Medibots and Mimebots can be stripped again (allowing you to put hats on
+        them).
+    - type: Fix
+      message: Fillbots can be renamed again.
+  id: 735
+  time: '2025-07-13T23:11:26.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1065
+- author: Adrian16199
+  changes:
+    - type: Add
+      message: >-
+        Added (security officer, warden, corpsman, HoS) armored longcoat to
+        loadouts
+    - type: Fix
+      message: >-
+        (Security officer, warden, corpsman, HoS) armored longcoat now can store
+        guns/oxygen tanks
+  id: 736
+  time: '2025-07-14T03:46:38.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1042
+- author: This_Is_Gray
+  changes:
+    - type: Add
+      message: (ANVIL) There's a new RP room in maints. Go find it and have fun!
+    - type: Tweak
+      message: >-
+        (ANVIL) Some autolathes have been swapped out with departmental lathes
+        where applicable.
+    - type: Fix
+      message: >-
+        (ANVIL) I've hopefully fixed the station beacons. Please point out any
+        that are missing to me in the station's mapping thread!
+    - type: Fix
+      message: (TORTUGA) The dorms buttons have been fixed.
+    - type: Tweak
+      message: >-
+        (TORTUGA As with Anvil, autolathes have been swapped with departmental
+        lathes.
+  id: 737
+  time: '2025-07-14T04:10:57.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1053

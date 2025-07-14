@@ -27,5 +27,5 @@ public sealed partial class CCVars
     ///     Max chaos chosen for a round will deviate from this
     /// </summary>
     public static readonly CVarDef<float>
-        EventsRampingAverageChaos = CVarDef.Create("events.ramping_average_chaos", 0.2f, CVar.ARCHIVE | CVar.SERVERONLY);
+        EventsRampingAverageChaos = CVarDef.Create("events.ramping_average_chaos", 0.6f, CVar.ARCHIVE | CVar.SERVERONLY);
 }

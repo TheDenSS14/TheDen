@@ -9,6 +9,14 @@ trait-description-MobilityWalkWhenAmputee =
     You are [color=#1e90ff]well-practiced[/color] at mobility with missing legs.
     As long as you have [color=yellow]at least one working leg[/color], you can stand and walk around [color=#1e90ff]even if you are missing a leg.[/color]
 
+character-item-group-TraitsMuted = Muted
+
+trait-name-MutedNoSign = Muted (No Sign Language)
+trait-description-MutedNoSign =
+    Either due to to an abnormality in your body development, or due to some body augmentation, you are unable to utilize spoken language.
+    Consequently, you may encounter difficulties in communicating with others or using radio communication.
+    This trait [color=red]does not come with knowledge of Galactic Sign Language[/color].
+
 # Amputee Traits
 
 character-item-group-TraitsLegAmputee = Leg Amputee
