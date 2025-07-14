@@ -850,6 +850,21 @@ character-item-group-LoadoutLawyerOuter = Lawyer Outerwear
 character-item-group-LoadoutLawyerShoes = Lawyer Shoes
 character-item-group-LoadoutLawyerUniforms = Lawyer Uniforms
 
+# Service - Martial Artist
+character-item-group-LoadoutMartialArtistBackpacks = Martial Artist Backpacks
+character-item-group-LoadoutMartialArtistBelt = Martial Artist Belt
+character-item-group-LoadoutMartialArtistEars = Martial Artist Ears
+character-item-group-LoadoutMartialArtistEquipment = Martial Artist Equipment
+character-item-group-LoadoutMartialArtistEyes = Martial Artist Eyewear
+character-item-group-LoadoutMartialArtistGloves = Martial Artist Gloves
+character-item-group-LoadoutMartialArtistHead = Martial Artist Headgear
+character-item-group-LoadoutMartialArtistId = Martial Artist ID
+character-item-group-LoadoutMartialArtistNeck = Martial Artist Neckwear
+character-item-group-LoadoutMartialArtistMask = Martial Artist Masks
+character-item-group-LoadoutMartialArtistOuter = Martial Artist Outerwear
+character-item-group-LoadoutMartialArtistShoes = Martial Artist Shoes
+character-item-group-LoadoutMartialArtistUniforms = Martial Artist Uniforms
+
 # Service - Mime
 character-item-group-LoadoutMimeBackpacks = Mime Backpacks
 character-item-group-LoadoutMimeBelt = Mime Belt
@@ -894,6 +909,36 @@ character-item-group-LoadoutReporterMask = Reporter Masks
 character-item-group-LoadoutReporterOuter = Reporter Outerwear
 character-item-group-LoadoutReporterShoes = Reporter Shoes
 character-item-group-LoadoutReporterUniforms = Reporter Uniforms
+
+# Service - Zookeeper
+character-item-group-LoadoutZookeeperBackpacks = Zookeeper Backpacks
+character-item-group-LoadoutZookeeperBelt = Zookeeper Belt
+character-item-group-LoadoutZookeeperEars = Zookeeper Ears
+character-item-group-LoadoutZookeeperEquipment = Zookeeper Equipment
+character-item-group-LoadoutZookeeperEyes = Zookeeper Eyewear
+character-item-group-LoadoutZookeeperGloves = Zookeeper Gloves
+character-item-group-LoadoutZookeeperHead = Zookeeper Headgear
+character-item-group-LoadoutZookeeperId = Zookeeper ID
+character-item-group-LoadoutZookeeperNeck = Zookeeper Neckwear
+character-item-group-LoadoutZookeeperMask = Zookeeper Masks
+character-item-group-LoadoutZookeeperOuter = Zookeeper Outerwear
+character-item-group-LoadoutZookeeperShoes = Zookeeper Shoes
+character-item-group-LoadoutZookeeperUniforms = Zookeeper Uniforms
+
+# Misc - Gladiator
+character-item-group-LoadoutGladiatorBackpacks = Gladiator Backpacks
+character-item-group-LoadoutGladiatorBelt = Gladiator Belt
+character-item-group-LoadoutGladiatorEars = Gladiator Ears
+character-item-group-LoadoutGladiatorEquipment = Gladiator Equipment
+character-item-group-LoadoutGladiatorEyes = Gladiator Eyewear
+character-item-group-LoadoutGladiatorGloves = Gladiator Gloves
+character-item-group-LoadoutGladiatorHead = Gladiator Headgear
+character-item-group-LoadoutGladiatorId = Gladiator ID
+character-item-group-LoadoutGladiatorNeck = Gladiator Neckwear
+character-item-group-LoadoutGladiatorMask = Gladiator Masks
+character-item-group-LoadoutGladiatorOuter = Gladiator Outerwear
+character-item-group-LoadoutGladiatorShoes = Gladiator Shoes
+character-item-group-LoadoutGladiatorUniforms = Gladiator Uniforms
 
 # Misc - Prisoner
 character-item-group-LoadoutPrisonerBackpacks = Prisoner Backpacks

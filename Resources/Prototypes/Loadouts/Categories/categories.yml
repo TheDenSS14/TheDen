@@ -335,12 +335,16 @@
   subCategories: # this can also be for unique/station-specific jobs like boxer/gladiator
     - JobsZMiscAUncategorized
     - JobsZMiscPrisoner
+    - JobsZMiscGladiator
 
 - type: loadoutCategory
   id: JobsZMiscAUncategorized
 
 - type: loadoutCategory
   id: JobsZMiscPrisoner
+
+- type: loadoutCategory
+  id: JobsZMiscGladiator
 
 # Now Leaving: Jobs Category
 

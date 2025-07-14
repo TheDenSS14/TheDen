@@ -100,14 +100,17 @@ loadout-category-JobsServiceChef = Chef
 loadout-category-JobsServiceClown = Clown
 loadout-category-JobsServiceJanitor = Janitor
 loadout-category-JobsServiceLawyer = Lawyer
+loadout-category-JobsServiceMartialArtist = Martial Artist
 loadout-category-JobsServiceMime = Mime
 loadout-category-JobsServiceMusician = Musician
 loadout-category-JobsServiceReporter = Reporter
+loadout-category-JobsServiceZookeeper = Zookeeper
 
 # Misc
 loadout-category-JobsZMisc = Misc
 loadout-category-JobsZMiscAUncategorized = All Misc
 loadout-category-JobsZMiscPrisoner = Prisoner
+loadout-category-JobsZMiscGladiator = Gladiator
 
 loadout-category-Mask = Mask
 loadout-category-Neck = Neck
