@@ -62,10 +62,10 @@
     - !type:CharacterDepartmentRequirement
       departments:
         - Security
-  items:
-    - ClothingNeckCollarSec
     - !type:CharacterItemGroupRequirement
       group: LoadoutSecurityNeck
+  items:
+    - ClothingNeckCollarSec
 
 # Detective
 - type: loadout

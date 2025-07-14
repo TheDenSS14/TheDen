@@ -62,10 +62,10 @@
     - !type:CharacterDepartmentRequirement
       departments:
         - Logistics
-  items:
-    - ClothingNeckCollarLogi
     - !type:CharacterItemGroupRequirement
       group: LoadoutLogisticsNeck
+  items:
+    - ClothingNeckCollarLogi
 
 # Courier
 - type: loadout

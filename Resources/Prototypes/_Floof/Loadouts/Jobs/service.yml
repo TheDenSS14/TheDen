@@ -141,10 +141,10 @@
     - !type:CharacterJobRequirement
       jobs:
         - Bartender
-  items:
-    - ClothingHeadHatBunny
     - !type:CharacterItemGroupRequirement
       group: LoadoutBartenderHead
+  items:
+    - ClothingHeadHatBunny
 
 - type: loadout
   id: LoadoutServiceBartenderBunnySuit
@@ -155,10 +155,10 @@
     - !type:CharacterJobRequirement
       jobs:
         - Bartender
-  items:
-    - ClothingCostumeBunnySuit
     - !type:CharacterItemGroupRequirement
       group: LoadoutBartenderUniforms
+  items:
+    - ClothingCostumeBunnySuit
 
 #Chef
 - type: loadout
@@ -400,5 +400,4 @@
         - Mime
     - !type:CharacterItemGroupRequirement
       group: LoadoutMimeUniforms
-
 # TO BE ADDED - Clown
