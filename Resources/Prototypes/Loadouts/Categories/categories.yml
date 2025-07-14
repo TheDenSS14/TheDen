@@ -287,14 +287,16 @@
     - JobsServiceAUncategorized
     - JobsServiceBartender
     - JobsServiceBotanist
+    - JobsServiceBoxer
     - JobsServiceChef
     - JobsServiceClown
     - JobsServiceJanitor
     - JobsServiceLawyer
+    - JobsServiceMartialArtist
     - JobsServiceMime
     - JobsServiceMusician
     - JobsServiceReporter
-    - JobsServiceBoxer
+    - JobsServiceZookeeper
 
 - type: loadoutCategory
   id: JobsServiceAUncategorized
@@ -304,6 +306,9 @@
 
 - type: loadoutCategory
   id: JobsServiceBotanist
+
+- type: loadoutCategory
+  id: JobsServiceBoxer
 
 - type: loadoutCategory
   id: JobsServiceChef
@@ -318,6 +323,9 @@
   id: JobsServiceLawyer
 
 - type: loadoutCategory
+  id: JobsServiceMartialArtist
+
+- type: loadoutCategory
   id: JobsServiceMime
 
 - type: loadoutCategory
@@ -327,7 +335,7 @@
   id: JobsServiceReporter
 
 - type: loadoutCategory
-  id: JobsServiceBoxer
+  id: JobsServiceZookeeper
 
   # Misc
 - type: loadoutCategory
