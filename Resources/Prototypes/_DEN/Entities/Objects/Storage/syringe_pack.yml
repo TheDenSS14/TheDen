@@ -1,0 +1,29 @@
+- type: entity
+  parent: BaseItem
+  id: SyringeDispenserEmpty
+  name: syringe dispenser
+  description: An easy to carry storage solution for disposable syringes.
+  suffix: Empty
+  components:
+  - type: Item
+    size: Normal
+  - type: Sprite
+    sprite: Objects/Storage/boxes.rsi
+    layers:
+    - state: boxwide
+    - state: syringe
+  - type: BallisticAmmoProvider
+    whitelist:
+      tags:
+      - DisposableSyringePackaged
+
+- type: entity
+  parent: SyringeDispenserEmpty
+  id: SyringeDispenserFull
+  name: syringe dispenser
+  description: An easy to carry storage solution for disposable syringes.
+  suffix: Full
+  components:
+  - type: BallisticAmmoProvider
+    proto: DisposableSyringePackaged
+    capacity: 30

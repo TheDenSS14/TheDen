@@ -1,0 +1,23 @@
+- type: latheRecipe
+  id: DisposableSyringePackaged
+  result: DisposableSyringePackaged
+  completetime: 0.1
+  materials:
+    Plastic: 10
+    Steel: 2
+
+- type: latheRecipe
+  id: SyringeDispenserEmpty
+  result: SyringeDispenserEmpty
+  completetime: 1
+  materials:
+    Cardboard: 50
+
+- type: latheRecipe
+  id: SyringeDispenserFull
+  result: SyringeDispenserFull
+  completetime: 4
+  materials:
+    Cardboard: 50
+    Plastic: 300
+    Steel: 60
