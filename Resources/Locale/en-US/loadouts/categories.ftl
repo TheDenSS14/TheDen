@@ -94,6 +94,7 @@ loadout-category-JobsService = Service
 loadout-category-JobsServiceAUncategorized = All Service
 loadout-category-JobsServiceBartender = Bartender
 loadout-category-JobsServiceBotanist = Botanist
+loadout-category-JobsServiceBoxer = Boxer
 loadout-category-JobsServiceChef = Chef
 loadout-category-JobsServiceClown = Clown
 loadout-category-JobsServiceJanitor = Janitor

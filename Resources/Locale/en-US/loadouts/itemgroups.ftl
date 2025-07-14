@@ -760,6 +760,21 @@ character-item-group-LoadoutBotanistOuter = Botanist Outerwear
 character-item-group-LoadoutBotanistShoes = Botanist Shoes
 character-item-group-LoadoutBotanistUniforms = Botanist Uniforms
 
+# Service - Boxer
+character-item-group-LoadoutBoxerBackpacks = Boxer Backpacks
+character-item-group-LoadoutBoxerBelt = Boxer Belt
+character-item-group-LoadoutBoxerEars = Boxer Ears
+character-item-group-LoadoutBoxerEquipment = Boxer Equipment
+character-item-group-LoadoutBoxerEyes = Boxer Eyewear
+character-item-group-LoadoutBoxerGloves = Boxer Gloves
+character-item-group-LoadoutBoxerHead = Boxer Headgear
+character-item-group-LoadoutBoxerId = Boxer ID
+character-item-group-LoadoutBoxerNeck = Boxer Neckwear
+character-item-group-LoadoutBoxerMask = Boxer Masks
+character-item-group-LoadoutBoxerOuter = Boxer Outerwear
+character-item-group-LoadoutBoxerShoes = Boxer Shoes
+character-item-group-LoadoutBoxerUniforms = Boxer Uniforms
+
 # Service - Chef
 character-item-group-LoadoutChefBackpacks = Chef Backpacks
 character-item-group-LoadoutChefBelt = Chef Belt
