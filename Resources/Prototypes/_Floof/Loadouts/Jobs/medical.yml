@@ -10,7 +10,7 @@
 - type: loadout
   id: LoadoutClothingHandsMedicWarmers
   category: JobsMedicalAUncategorized
-  cost: 2
+  cost: 0
   exclusive: true
   items:
     - ClothingHandsMedicWarmers
@@ -22,7 +22,7 @@
 - type: loadout
   id: LoadoutClothingUnderSocksMedic
   category: JobsMedicalAUncategorized
-  cost: 2
+  cost: 0
   exclusive: true
   items:
     - ClothingUnderSocksMedic
@@ -39,7 +39,7 @@
 - type: loadout
   id: LoadoutClothingUniformMedicThong
   category: JobsMedicalAUncategorized
-  cost: 2
+  cost: 0
   exclusive: true
   items:
     - ClothingUniformMedicThong
@@ -51,7 +51,7 @@
 - type: loadout
   id: LoadoutMedicalNeckCollar
   category: JobsMedicalAUncategorized
-  cost: 1
+  cost: 0
   requirements:
     - !type:CharacterLogicOrRequirement
       requirements:
@@ -68,7 +68,7 @@
 - type: loadout
   id: LoadoutClothingHandsChemistsWarmers
   category: JobsMedicalChemist
-  cost: 2
+  cost: 0
   exclusive: true
   items:
     - ClothingHandsChemistsWarmers
@@ -80,7 +80,7 @@
 - type: loadout
   id: LoadoutClothingUnderSocksChemists
   category: JobsMedicalChemist
-  cost: 2
+  cost: 0
   exclusive: true
   items:
     - ClothingUnderSocksChemists
@@ -97,7 +97,7 @@
 - type: loadout
   id: LoadoutClothingUniformChemistsThong
   category: JobsMedicalChemist
-  cost: 2
+  cost: 0
   exclusive: true
   items:
     - ClothingUniformChemistsThong
@@ -110,7 +110,7 @@
 - type: loadout
   id: LoadoutClothingHandsParaMedicWarmers
   category: JobsMedicalParamedic
-  cost: 1
+  cost: 0
   exclusive: true
   items:
     - ClothingHandsParaMedicWarmers
@@ -122,7 +122,7 @@
 - type: loadout
   id: LoadoutClothingUnderSocksParaMedic
   category: JobsMedicalParamedic
-  cost: 1
+  cost: 0
   exclusive: true
   items:
     - ClothingUnderSocksParaMedic
@@ -139,7 +139,7 @@
 - type: loadout
   id: LoadoutClothingUniformParaMedicThong
   category: JobsMedicalParamedic
-  cost: 1
+  cost: 0
   exclusive: true
   items:
     - ClothingUniformParaMedicThong

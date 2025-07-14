@@ -10,7 +10,7 @@
 - type: loadout
   id: LoadoutClothingHandsLogisWarmers
   category: JobsLogisticsAUncategorized
-  cost: 2
+  cost: 0
   exclusive: true
   items:
     - ClothingHandsLogisWarmers
@@ -22,7 +22,7 @@
 - type: loadout
   id: LoadoutClothingUnderSocksLogis
   category: JobsLogisticsAUncategorized
-  cost: 2
+  cost: 0
   exclusive: true
   items:
     - ClothingUnderSocksLogis
@@ -39,7 +39,7 @@
 - type: loadout
   id: LoadoutClothingUniformLogisThong
   category: JobsLogisticsAUncategorized
-  cost: 2
+  cost: 0
   exclusive: true
   items:
     - ClothingUniformLogisThong
@@ -51,7 +51,7 @@
 - type: loadout
   id: LoadoutCargoNeckCollar
   category: JobsLogisticsAUncategorized
-  cost: 1
+  cost: 0
   requirements:
     - !type:CharacterDepartmentRequirement
       departments:
@@ -63,7 +63,7 @@
 - type: loadout
   id: LoadoutClothingHandsCourierWarmers
   category: JobsLogisticsCourier
-  cost: 1
+  cost: 0
   exclusive: true
   items:
     - ClothingHandsCourierWarmers
@@ -75,7 +75,7 @@
 - type: loadout
   id: LoadoutClothingUnderSocksCourier
   category: JobsLogisticsCourier
-  cost: 2
+  cost: 0
   exclusive: true
   items:
     - ClothingUnderSocksCourier
@@ -92,7 +92,7 @@
 - type: loadout
   id: LoadoutClothingUniformCourierThong
   category: JobsLogisticsCourier
-  cost: 1
+  cost: 0
   exclusive: true
   items:
     - ClothingUniformCourierThong
