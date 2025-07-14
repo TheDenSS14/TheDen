@@ -764,5 +764,5 @@ trait-description-Monotonous = You speak in a way that others see as total disin
 
 trait-name-HealingFactor = Healing Factor
 trait-description-HealingFactor =
-    Whether due to mutation, natural hardiness or just sheer determination, you're harder to kill than most. You slowly regenerate from some common forms of damage.
-    Your natural healing is no longer capped, and you will slowly recover from brute, burn and airloss damage while you are still alive.
+    Whether due to mutation or natural hardiness, you're harder to kill than most. You slowly regenerate from some common forms of damage.
+    Your natural healing is no longer capped, and you will slowly recover from brute, burn and bloodloss damage while you are still alive.
