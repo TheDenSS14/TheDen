@@ -587,12 +587,12 @@
   speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid]
   layering:
     m_tail_leopard_BEHIND_primary: TailBehind
-    m_tail_leopard_BEHIND_secondary: TailBehind
+    m_tail_leopard_BEHIND_tertiary: TailBehind
     m_tail_leopard_FRONT_primary: TailOversuit
-    m_tail_leopard_FRONT_secondary: TailOversuit
+    m_tail_leopard_FRONT_tertiary: TailOversuit
   colorLinks:
     m_tail_leopard_BEHIND_primary: m_tail_leopard_FRONT_primary
-    m_tail_leopard_BEHIND_secondary: m_tail_leopard_FRONT_secondary
+    m_tail_leopard_BEHIND_tertiary: m_tail_leopard_FRONT_secondary
   sprites:
   - sprite: Floof/Mobs/Customization/skyrattails.rsi
     state: m_tail_leopard_FRONT_primary
@@ -717,16 +717,16 @@
   markingCategory: Tail
   speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid]
   layering:
-    m_tail_leopard_BEHIND_primary: TailBehind
-    m_tail_leopard_BEHIND_secondary: TailBehind
-    m_tail_leopard_BEHIND_tertiary: TailBehind
-    m_tail_leopard_FRONT_primary: Tail
-    m_tail_leopard_FRONT_secondary: Tail
-    m_tail_leopard_FRONT_tertiary: Tail
+    m_tail_pede_BEHIND_primary: TailBehind
+    m_tail_pede_BEHIND_secondary: TailBehind
+    m_tail_pede_BEHIND_tertiary: TailBehind
+    m_tail_pede_FRONT_primary: Tail
+    m_tail_pede_FRONT_secondary: Tail
+    m_tail_pede_FRONT_tertiary: Tail
   colorLinks:
-    m_tail_leopard_BEHIND_primary: m_tail_leopard_FRONT_primary
-    m_tail_leopard_BEHIND_secondary: m_tail_leopard_FRONT_secondary
-    m_tail_leopard_BEHIND_tertiary: m_tail_leopard_FRONT_tertiary
+    m_tail_pede_BEHIND_primary: m_tail_pede_FRONT_primary
+    m_tail_pede_BEHIND_secondary: m_tail_pede_FRONT_secondary
+    m_tail_pede_BEHIND_tertiary: m_tail_pede_FRONT_tertiary
   sprites:
   - sprite: Floof/Mobs/Customization/skyrattails.rsi
     state: m_tail_pede_FRONT_primary
