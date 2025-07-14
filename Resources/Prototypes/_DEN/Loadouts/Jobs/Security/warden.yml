@@ -63,6 +63,20 @@
     - EnergyShieldWarden
 
 - type: loadout
+  id: LoadoutWardenShotgun
+  category: JobsSecurityWarden
+  cost: 0
+  canBeHeirloom: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutWardenWeapons
+    - !type:CharacterJobRequirement
+      jobs:
+        - Warden
+  items:
+    - WeaponEnergyShotgunWarden
+
+- type: loadout
   id: LoadoutUniformJumpsuitWarden
   category: JobsSecurityWarden
   cost: 0
