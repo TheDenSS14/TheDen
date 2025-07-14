@@ -26,6 +26,12 @@
             Slash: 1.35
             Piercing: 1.25
   requirements:
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - StationAi
+        - Borg
+        - MedicalBorg
     - !type:CharacterSpeciesRequirement
       species:
         - Oni
@@ -51,6 +57,12 @@
             Slash: 1.25
             Piercing: 1.35
   requirements:
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - StationAi
+        - Borg
+        - MedicalBorg
     - !type:CharacterSpeciesRequirement
       species:
         - Oni
@@ -75,6 +87,12 @@
             Slash: 1.30
             Piercing: 1.30
   requirements:
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - StationAi
+        - Borg
+        - MedicalBorg
     - !type:CharacterSpeciesRequirement
       species:
         - Oni
@@ -101,6 +119,12 @@
       - type: PotentiaModifier
         potentiaMultiplier: 1.15
   requirements:
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - StationAi
+        - Borg
+        - MedicalBorg
     - !type:CharacterSpeciesRequirement
       species:
         - Oni
@@ -135,6 +159,12 @@
       components:
         - type: Psionic
   requirements:
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - StationAi
+        - Borg
+        - MedicalBorg
     - !type:CharacterSpeciesRequirement
       species:
         - Shadowkin
@@ -151,6 +181,12 @@
           flapInterval: 0.75
           needsHands: false
   requirements:
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - StationAi
+        - Borg
+        - MedicalBorg
     - !type:CharacterSpeciesRequirement
       species:
         - Moth
