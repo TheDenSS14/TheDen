@@ -16,11 +16,12 @@ marking-LizardCrestLargeTop-primary = Crest (Large) primary
 marking-LizardCrestLargeTop-secondary = Crest (Large) secondary
 
 marking-SnoutEasternDNW = Eastern Dragon (No Whiskers)
-marking-SnoutEasternDNW-primary = Eastern Dragon (No Whiskers) primary
-marking-SnoutEasternDNW-secondary = Eastern Dragon (No Whiskers) secondary
+marking-SnoutEasternDNW-easterndnw_primary = Primary
+marking-SnoutEasternDNW-easterndnw_secondary = Secondary
 
 marking-SnoutEasternDW = Eastern Dragon (Whiskers)
-marking-SnoutEasternDW-primary = Eastern Dragon (Whiskers) primary
+marking-SnoutEasternDW-easterndw_primary = Primary
+marking-SnoutEasternDW-easterndnw_secondary = Secondary
 
 marking-SnoutMagusSkull = Magus Skull
 marking-SnoutMagusSkull-extra_magus = Magus Skull extra
