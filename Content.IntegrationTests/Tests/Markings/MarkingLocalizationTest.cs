@@ -8,6 +8,8 @@ using Robust.Shared.Localization;
 using Content.Shared.Humanoid.Markings;
 using System.Linq;
 using System.Collections.Generic;
+using Robust.Client.Utility;
+using Robust.Shared.Utility;
 
 namespace Content.IntegrationTests.Tests.Traits;
 
@@ -18,6 +20,13 @@ namespace Content.IntegrationTests.Tests.Traits;
 [TestOf(typeof(MarkingPrototype))]
 public sealed class MarkingLocalizationTest
 {
+    // These do not show layer locales, so layer locales do not matter.
+    private static readonly HashSet<MarkingCategories> IgnoredLayerLocales =
+    [
+        MarkingCategories.Hair,
+        MarkingCategories.FacialHair
+    ];
+
     [Test]
     public async Task TestMarkingLocalization()
     {
@@ -26,14 +35,27 @@ public sealed class MarkingLocalizationTest
 
         var locale = server.ResolveDependency<ILocalizationManager>();
         var proto = server.ResolveDependency<IPrototypeManager>();
+        var marking = server.ResolveDependency<MarkingManager>();
 
         await server.WaitAssertion(() =>
         {
             var missingStrings = new List<string>();
 
             foreach (var markingProto in proto.EnumeratePrototypes<MarkingPrototype>().OrderBy(a => a.ID))
+            {
                 if (!locale.HasString($"marking-{markingProto.ID}") && string.IsNullOrEmpty(markingProto.Name))
                     missingStrings.Add($"\"{markingProto.ID}\", \"marking-{markingProto.ID}\"");
+
+                // In these cases, layer names do not display anyway, so the layers do not need to be localized.
+                if (markingProto.ForcedColoring
+                    || IgnoredLayerLocales.Contains(markingProto.MarkingCategory))
+                    continue;
+
+                var layerStrings = marking.GetMarkingStateNames(markingProto, false);
+                foreach (var layer in layerStrings)
+                    if (!locale.HasString(layer))
+                        missingStrings.Add(layer);
+            }
 
             Assert.That(!missingStrings.Any(), Is.True, $"The following markings are missing localization strings:\n  {string.Join("\n  ", missingStrings)}");
         });

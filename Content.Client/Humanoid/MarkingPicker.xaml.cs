@@ -190,25 +190,6 @@ public sealed partial class MarkingPicker : Control
 
     private string GetMarkingName(MarkingPrototype marking) => Loc.GetString($"marking-{marking.ID}");
 
-    private List<string> GetMarkingStateNames(MarkingPrototype marking)
-    {
-        List<string> result = new();
-        foreach (var markingState in marking.Sprites)
-        {
-            switch (markingState)
-            {
-                case SpriteSpecifier.Rsi rsi:
-                    result.Add(Loc.GetString($"marking-{marking.ID}-{rsi.RsiState}"));
-                    break;
-                case SpriteSpecifier.Texture texture:
-                    result.Add(Loc.GetString($"marking-{marking.ID}-{texture.TexturePath.Filename}"));
-                    break;
-            }
-        }
-
-        return result;
-    }
-
     private IReadOnlyDictionary<string, MarkingPrototype> GetMarkings(MarkingCategories category)
     {
         return IgnoreSpecies
@@ -409,7 +390,7 @@ public sealed partial class MarkingPicker : Control
             return;
         }
 
-        var stateNames = GetMarkingStateNames(prototype);
+        var stateNames = _markingManager.GetMarkingStateNames(prototype);
         _currentMarkingColors.Clear();
         CMarkingColors.DisposeAllChildren();
         List<ColorSelectorSliders> colorSliders = new();
