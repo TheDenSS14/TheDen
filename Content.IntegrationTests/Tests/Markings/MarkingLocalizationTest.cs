@@ -8,8 +8,6 @@ using Robust.Shared.Localization;
 using Content.Shared.Humanoid.Markings;
 using System.Linq;
 using System.Collections.Generic;
-using Robust.Client.Utility;
-using Robust.Shared.Utility;
 
 namespace Content.IntegrationTests.Tests.Traits;
 
@@ -53,7 +51,7 @@ public sealed class MarkingLocalizationTest
 
                 var layerStrings = marking.GetMarkingStateNames(markingProto, false);
                 foreach (var layer in layerStrings)
-                    if (!locale.HasString(layer))
+                    if (!locale.HasString(layer) && !LayerIsLinked(markingProto, layer))
                         missingStrings.Add(layer);
             }
 
@@ -61,5 +59,16 @@ public sealed class MarkingLocalizationTest
         });
 
         await pair.CleanReturnAsync();
+    }
+
+    // This function is a little gross but whatever
+    private bool LayerIsLinked(MarkingPrototype marking, string layerKey)
+    {
+        if (marking.ColorLinks == null || marking.ColorLinks.Count == 0)
+            return false;
+
+        var markingPrefix = $"marking-{marking.ID}-";
+        var layerId = layerKey[markingPrefix.Length..];
+        return marking.ColorLinks.ContainsKey(layerId);
     }
 }
