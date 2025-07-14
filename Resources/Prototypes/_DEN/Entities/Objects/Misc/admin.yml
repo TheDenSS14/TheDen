@@ -62,7 +62,7 @@
       - id: LightReplacer
       - id: SprayPainter
       - id: GeigerCounter
-      - id: AccessConfigurator
+      - id: AccessConfiguratorUniversal
       - id: AdminRCD
   - type: Storage
     grid:
@@ -78,7 +78,7 @@
   components:
   - type: Item
     size: Normal
-    shape: 
+    shape:
     - 0,0,1,1
   - type: Storage
     maxItemSize: Normal
