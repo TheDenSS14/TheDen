@@ -66,8 +66,14 @@ public sealed partial class LoadoutPreferenceSelector : Control
             NameEdit.Text = value.CustomName ?? "";
             DescriptionEdit.TextRope = new Rope.Leaf(value.CustomDescription ?? "");
             ColorEdit.Color = Color.FromHex(value.CustomColorTint, Color.White);
-            if (value.CustomColorTint != null)
-                UpdatePaint(new(DummyEntityUid, _entityManager.GetComponent<PaintedComponent>(DummyEntityUid)), _entityManager);
+
+            if (Loadout.CustomColorTint
+                && value.CustomColorTint != null
+                && _entityManager.TryGetComponent<PaintedComponent>(DummyEntityUid, out var paint))
+            {
+                UpdatePaint((DummyEntityUid, paint), _entityManager);
+            }
+
             HeirloomButton.Pressed = value.CustomHeirloom ?? false;
             PreferenceButton.Pressed = value.Selected;
         }
@@ -255,8 +261,12 @@ public sealed partial class LoadoutPreferenceSelector : Control
         if (!entities.TryGetValue(previewKey, out var dummyLoadoutItem))
         {
             dummyLoadoutItem = _entityManager.SpawnEntity(Loadout.Items.First(), MapCoordinates.Nullspace);
-            _entityManager.EnsureComponent<AppearanceComponent>(dummyLoadoutItem);
-            _entityManager.EnsureComponent<PaintedComponent>(dummyLoadoutItem);
+            if (Loadout.CustomColorTint)
+            {
+                _entityManager.EnsureComponent<AppearanceComponent>(dummyLoadoutItem);
+                _entityManager.EnsureComponent<PaintedComponent>(dummyLoadoutItem);
+            }
+
             entities.Add(previewKey, dummyLoadoutItem);
         }
 
