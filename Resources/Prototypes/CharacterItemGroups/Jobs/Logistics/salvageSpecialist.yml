@@ -107,11 +107,13 @@
     - type: loadout
       id: LoadoutCargoOuterWinterMiner
 
-#- type: characterItemGroup
-#  id: LoadoutSalvageSpecialistShoes
-#  maxItems: 1
-#  items:
-#
+- type: characterItemGroup
+  id: LoadoutSalvageSpecialistShoes
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutSalvageSpecialistShoesBoots
+
 - type: characterItemGroup
   id: LoadoutSalvageSpecialistUniforms
   maxItems: 1
