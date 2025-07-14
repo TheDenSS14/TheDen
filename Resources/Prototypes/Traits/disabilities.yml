@@ -42,6 +42,7 @@
     - !type:CharacterJobRequirement
       inverted: true
       jobs:
+        - StationAi
         - Borg
         - MedicalBorg
     - !type:CharacterTraitRequirement
@@ -70,6 +71,7 @@
     - !type:CharacterJobRequirement
       inverted: true
       jobs:
+        - StationAi
         - Borg
         - MedicalBorg
     - !type:CharacterTraitRequirement
@@ -98,6 +100,7 @@
     - !type:CharacterJobRequirement
       inverted: true
       jobs:
+        - StationAi
         - Borg
         - MedicalBorg
     - !type:CharacterSpeciesRequirement
@@ -115,6 +118,13 @@
   id: Pacifist
   category: Mental
   points: 8
+  requirements:
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - StationAi
+        - Borg
+        - MedicalBorg
   functions:
     - !type:TraitAddComponent
       components:
@@ -124,6 +134,13 @@
   id: Paracusia
   category: Auditory
   points: 2
+  requirements:
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - StationAi
+        - Borg
+        - MedicalBorg
   functions:
     - !type:TraitAddComponent
       components:
@@ -142,6 +159,7 @@
     - !type:CharacterJobRequirement
       inverted: true
       jobs:
+        - StationAi
         - Borg
         - MedicalBorg
         - Mime
@@ -165,6 +183,7 @@
     - !type:CharacterJobRequirement
       inverted: true
       jobs:
+        - StationAi
         - Borg
         - MedicalBorg
     - !type:CharacterLifepathRequirement
@@ -183,6 +202,7 @@
     - !type:CharacterJobRequirement
       inverted: true
       jobs:
+        - StationAi
         - Borg
         - MedicalBorg
     - !type:CharacterSpeciesRequirement
@@ -203,6 +223,7 @@
     - !type:CharacterJobRequirement
       inverted: true
       jobs:
+        - StationAi
         - Borg
         - MedicalBorg
     - !type:CharacterSpeciesRequirement
@@ -219,6 +240,12 @@
   category: TraitsPhysicalDisabilities
   points: 5
   requirements:
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - StationAi
+        - Borg
+        - MedicalBorg
     - !type:CharacterTraitRequirement
       inverted: true
       traits:
@@ -243,6 +270,12 @@
   category: TraitsPhysicalDisabilities
   points: 5
   requirements:
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - StationAi
+        - Borg
+        - MedicalBorg
     - !type:CharacterTraitRequirement
       inverted: true
       traits:
@@ -266,6 +299,12 @@
   category: TraitsPhysicalDisabilities
   points: 8
   requirements:
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - StationAi
+        - Borg
+        - MedicalBorg
     - !type:CharacterTraitRequirement
       inverted: true
       traits:
@@ -292,6 +331,7 @@
     - !type:CharacterJobRequirement
       inverted: true
       jobs:
+        - StationAi
         - Borg
         - MedicalBorg
     - !type:CharacterSpeciesRequirement
@@ -314,6 +354,7 @@
     - !type:CharacterJobRequirement
       inverted: true
       jobs:
+        - StationAi
         - Borg
         - MedicalBorg
     - !type:CharacterSpeciesRequirement
@@ -336,6 +377,12 @@
   category: Visual
   points: 1
   requirements:
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - StationAi
+        - Borg
+        - MedicalBorg
     - !type:CharacterSpeciesRequirement
       inverted: true
       species:
@@ -369,6 +416,9 @@
     - !type:CharacterJobRequirement
       inverted: true
       jobs:
+        - StationAi
+        - Borg
+        - MedicalBorg
         - Clown # This trait functions exactly as is for the Clown's trait.
     - !type:CharacterDepartmentRequirement
       inverted: true

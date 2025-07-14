@@ -16,11 +16,12 @@
   category: TraitsPhysicalBiological
   points: -2
   requirements:
-  - !type:CharacterJobRequirement
-    inverted: true
-    jobs:
-    - Borg
-    - MedicalBorg
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - StationAi
+        - Borg
+        - MedicalBorg
   - !type:CharacterSpeciesRequirement
     inverted: true
     species:
@@ -68,11 +69,12 @@
   category: TraitsPhysicalBiological
   points: 2 # Has pros and cons, not sure
   requirements:
-  - !type:CharacterJobRequirement
-    inverted: true
-    jobs:
-    - Borg
-    - MedicalBorg
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - StationAi
+        - Borg
+        - MedicalBorg
   - !type:CharacterTraitRequirement
     inverted: true
     traits:

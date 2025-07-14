@@ -83,6 +83,12 @@
   category: TraitsSpeechSounds
   points: -2
   requirements:
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - StationAi
+        - Borg
+        - MedicalBorg
     - !type:CharacterItemGroupRequirement
       group: TraitsRaceSounds
     - !type:CharacterSpeciesRequirement

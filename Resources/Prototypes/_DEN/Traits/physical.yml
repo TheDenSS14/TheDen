@@ -16,8 +16,9 @@
   - !type:CharacterJobRequirement
     inverted: true
     jobs:
-    - Borg
-    - MedicalBorg
+      - StationAi
+      - Borg
+      - MedicalBorg
   - !type:CharacterTraitRequirement
     inverted: true
     traits:
@@ -39,8 +40,9 @@
   - !type:CharacterJobRequirement
     inverted: true
     jobs:
-    - Borg
-    - MedicalBorg
+      - StationAi
+      - Borg
+      - MedicalBorg
   - !type:CharacterTraitRequirement
     inverted: true
     traits:
@@ -62,8 +64,9 @@
   - !type:CharacterJobRequirement
     inverted: true
     jobs:
-    - Borg
-    - MedicalBorg
+      - StationAi
+      - Borg
+      - MedicalBorg
   - !type:CharacterTraitRequirement
     inverted: true
     traits:
@@ -85,8 +88,9 @@
   - !type:CharacterJobRequirement
     inverted: true
     jobs:
-    - Borg
-    - MedicalBorg
+      - StationAi
+      - Borg
+      - MedicalBorg
   - !type:CharacterSpeciesRequirement
     inverted: true
     species:
@@ -112,8 +116,9 @@
   - !type:CharacterJobRequirement
     inverted: true
     jobs:
-    - Borg
-    - MedicalBorg
+      - StationAi
+      - Borg
+      - MedicalBorg
   - !type:CharacterSpeciesRequirement
     inverted: true
     species:
@@ -138,8 +143,9 @@
   - !type:CharacterJobRequirement
     inverted: true
     jobs:
-    - Borg
-    - MedicalBorg
+      - StationAi
+      - Borg
+      - MedicalBorg
   functions:
     - !type:TraitAddComponent
       components:
