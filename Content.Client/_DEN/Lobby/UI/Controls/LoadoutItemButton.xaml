@@ -12,7 +12,7 @@
         HorizontalAlignment="Stretch"
         VerticalAlignment="Center"
         Orientation="Horizontal"
-        SeparationOverride="10">
+        SeparationOverride="5">
         <Label
             Name="CostLabel"
             Text="0"
@@ -31,7 +31,8 @@
             VerticalAlignment="Center" />
         <Label
             Name="LoadoutNameLabel"
-            HorizontalExpand="False" />
+            HorizontalExpand="False"
+            Margin="0 0 15 0" />
         <Button
             Name="CustomizeButton"
             VerticalAlignment="Center"
