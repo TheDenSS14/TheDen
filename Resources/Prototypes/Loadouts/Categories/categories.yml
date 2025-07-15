@@ -20,6 +20,7 @@
 - type: loadoutCategory
   id: Uncategorized
   root: true
+  order: -10
 
 - type: loadoutCategory
   id: Backpacks
@@ -40,11 +41,13 @@
 - type: loadoutCategory
   id: Items
   root: true
+  order: 4
   subCategories:
     - GeneralItems
-    - GeneralToys
     - GeneralInstruments
+    - ItemsLewd
     - GeneralTowels
+    - GeneralToys
 
 - type: loadoutCategory
   id: GeneralItems
@@ -58,6 +61,7 @@
 - type: loadoutCategory
   id: Jobs
   root: true
+  order: 5
   subCategories:
     - JobsAUncategorized
     - JobsCommand

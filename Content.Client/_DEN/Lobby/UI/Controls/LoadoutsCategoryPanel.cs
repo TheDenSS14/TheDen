@@ -1,6 +1,7 @@
 using System.Linq;
 using Content.Client.Stylesheets;
 using Content.Shared.Clothing.Loadouts.Prototypes;
+using Content.Shared.Mobs;
 using Robust.Client.UserInterface.Controls;
 using Robust.Shared.Prototypes;
 
@@ -54,6 +55,15 @@ public sealed partial class LoadoutsCategoryPanel : ScrollContainer
         var rootCategories = _prototype.EnumeratePrototypes<LoadoutCategoryPrototype>()
             .Where(c => c.Root)
             .ToList();
+
+        rootCategories.Sort((a, b) =>
+        {
+            var prio = a.Ordering.CompareTo(b.Ordering);
+            if (prio != 0) // Order by priority first
+                return prio;
+
+            return a.ID.CompareTo(b.ID);
+        });
 
         _rootCategoryBox = CreateCategoryListBox(null, null);
         PopulateCategoryListBox(_rootCategoryBox, rootCategories, null);

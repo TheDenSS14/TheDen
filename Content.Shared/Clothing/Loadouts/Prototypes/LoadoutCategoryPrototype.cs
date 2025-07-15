@@ -22,4 +22,10 @@ public sealed partial class LoadoutCategoryPrototype : IPrototype
 
     [DataField]
     public List<ProtoId<LoadoutCategoryPrototype>> SubCategories = new();
+
+    /// <summary>
+    ///     Only used for "root" loadouts.
+    /// </summary>
+    [DataField("order")]
+    public int Ordering = 1;
 }
