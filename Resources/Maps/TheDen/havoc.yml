@@ -44,6 +44,7 @@
 # SPDX-FileCopyrightText: 2024 juniwoofs
 # SPDX-FileCopyrightText: 2025 Gawdayumeet
 # SPDX-FileCopyrightText: 2025 Ian Hanley
+# SPDX-FileCopyrightText: 2025 MajorMoth
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 # SPDX-FileCopyrightText: 2025 therealDLondon
 #
@@ -91801,50 +91802,6 @@ entities:
     - type: Transform
       pos: -6.5,-1.5
       parent: 2
-- proto: LootSpawnerMedicalMinor
-  entities:
-  - uid: 11274
-    components:
-    - type: Transform
-      pos: -42.5,-14.5
-      parent: 2
-  - uid: 11276
-    components:
-    - type: Transform
-      pos: -41.5,-14.5
-      parent: 2
-  - uid: 11277
-    components:
-    - type: Transform
-      pos: -47.5,-14.5
-      parent: 2
-  - uid: 11278
-    components:
-    - type: Transform
-      pos: -45.5,-14.5
-      parent: 2
-  - uid: 11279
-    components:
-    - type: Transform
-      pos: -45.5,-17.5
-      parent: 2
-  - uid: 11280
-    components:
-    - type: Transform
-      pos: -47.5,-17.5
-      parent: 2
-  - uid: 14990
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 39.5,49.5
-      parent: 2
-  - uid: 14991
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 41.5,49.5
-      parent: 2
 - proto: LunchboxCommandFilledRandom
   entities:
   - uid: 15105
@@ -111680,13 +111637,6 @@ entities:
       angularDamping: 0
       linearDamping: 0
       canCollide: False
-- proto: SyringeRevivopine
-  entities:
-  - uid: 16052
-    components:
-    - type: Transform
-      pos: -23.58206,58.660038
-      parent: 2
 - proto: SyringeSaline
   entities:
   - uid: 9111

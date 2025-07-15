@@ -64,6 +64,7 @@ marking-SyntheticLizardSnoutBarlessTertUnder-synth_lizard_snout_barless_tert_und
 marking-SyntheticLizardSnoutBarlessUnder = Synth Lizard Snout Barless Under
 marking-SyntheticLizardSnoutBarlessUnder-synth_lizard_snout_barless_under_1 = Primary
 marking-SyntheticLizardSnoutBarlessUnder-synth_lizard_snout_barless_under_2 = Secondary
+marking-SyntheticLizardSnoutBarlessUnder-synth_lizard_snout_barless_under_3 = Screen
 
 marking-SyntheticLizardSnoutLong = Synth Lizard Snout Long
 marking-SyntheticLizardSnoutLong-synth_lizard_snout_long = Primary

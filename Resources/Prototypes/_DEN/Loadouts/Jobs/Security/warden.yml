@@ -1,5 +1,7 @@
 # SPDX-FileCopyrightText: 2025 Blitz
+# SPDX-FileCopyrightText: 2025 Jakumba
 # SPDX-FileCopyrightText: 2025 Rosycup
+# SPDX-FileCopyrightText: 2025 Vanessa
 # SPDX-FileCopyrightText: 2025 Vanessa Louwagie
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
@@ -61,6 +63,20 @@
         - Warden
   items:
     - EnergyShieldWarden
+
+- type: loadout
+  id: LoadoutWardenShotgun
+  category: JobsSecurityWarden
+  cost: 0
+  canBeHeirloom: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutWardenWeapons
+    - !type:CharacterJobRequirement
+      jobs:
+        - Warden
+  items:
+    - WeaponEnergyShotgunWarden
 
 - type: loadout
   id: LoadoutUniformJumpsuitWarden

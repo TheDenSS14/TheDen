@@ -1,4 +1,5 @@
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Jakumba
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -83,6 +84,12 @@
   category: TraitsSpeechSounds
   points: -2
   requirements:
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - StationAi
+        - Borg
+        - MedicalBorg
     - !type:CharacterItemGroupRequirement
       group: TraitsRaceSounds
     - !type:CharacterSpeciesRequirement
