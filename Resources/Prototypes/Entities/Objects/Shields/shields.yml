@@ -340,9 +340,9 @@
       #Have it break into brass when clock cult is in
 
 - type: entity
-  name: energy shield
+  name: BaseEnergyShield
   parent: BaseItem
-  id: EnergyShield
+  id: BaseEnergyShield
   description: Exotic energy shield, when folded, can even fit in your pocket.
   components:
     - type: ItemToggle
@@ -414,30 +414,36 @@
     - type: Appearance
     - type: Damageable
       damageContainer: Shield
-    - type: Destructible
-      thresholds:
-        - trigger:
-            !type:DamageTrigger
-            damage: 180
-          behaviors:
-            - !type:DoActsBehavior
-              acts: [ "Destruction" ]
-        - trigger:
-            !type:DamageTrigger
-            damage: 100
-          behaviors:
-            - !type:DoActsBehavior
-              acts: [ "Destruction" ]
-            - !type:PlaySoundBehavior
-              sound:
-                collection: GlassBreak
-            - !type:SpawnEntitiesBehavior
-              spawn:
-                BrokenEnergyShield:
-                  min: 1
-                  max: 1
-    - type: StaticPrice
-      price: 350
+
+- type: entity
+  name: energy shield
+  parent: BaseEnergyShield
+  id: EnergyShield
+  components:
+  - type: Destructible
+    thresholds:
+      - trigger:
+          !type:DamageTrigger
+          damage: 180
+        behaviors:
+          - !type:DoActsBehavior
+            acts: [ "Destruction" ]
+      - trigger:
+          !type:DamageTrigger
+          damage: 100
+        behaviors:
+          - !type:DoActsBehavior
+            acts: [ "Destruction" ]
+          - !type:PlaySoundBehavior
+            sound:
+              collection: GlassBreak
+          - !type:SpawnEntitiesBehavior
+            spawn:
+              BrokenEnergyShield:
+                min: 1
+                max: 1
+  - type: StaticPrice
+    price: 350
 
 - type: entity
   name: broken energy shield
