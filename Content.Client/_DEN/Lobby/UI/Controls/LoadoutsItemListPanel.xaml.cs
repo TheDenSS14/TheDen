@@ -42,8 +42,15 @@ public sealed partial class LoadoutsItemListPanel : ScrollContainer
         PopulateLoadouts();
     }
 
-    public void PopulateLoadouts()
+    public void PopulateLoadouts(bool reset = false)
     {
+        if (reset)
+        {
+            CategoryContents.RemoveAllChildren();
+            _categoryLists.Clear();
+            _loadoutButtons.Clear();
+        }
+
         var groups = _prototype.EnumeratePrototypes<LoadoutPrototype>()
             .OrderBy(l => l.ID)
             .GroupBy(l => l.Category);
@@ -51,15 +58,19 @@ public sealed partial class LoadoutsItemListPanel : ScrollContainer
         foreach (var group in groups)
         {
             var category = group.Key;
+
             if (!_categoryLists.TryGetValue(category, out var listBox))
             {
                 listBox = CreateLoadoutListBox(category);
-                Content.AddChild(listBox);
+                CategoryContents.AddChild(listBox);
                 _categoryLists.Add(category, listBox);
             }
 
             foreach (var loadout in group)
             {
+                if (_loadoutButtons.TryGetValue(loadout, out var _))
+                    continue;
+
                 var button = new LoadoutItemButton(loadout);
                 listBox.AddChild(button);
                 _loadoutButtons.Add(loadout, button);
