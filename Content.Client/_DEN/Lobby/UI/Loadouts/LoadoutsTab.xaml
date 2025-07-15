@@ -1,0 +1,35 @@
+<BoxContainer xmlns="https://spacestation14.io"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:ui="clr-namespace:Content.Client.UserInterface.Controls"
+    HorizontalExpand="True"
+    VerticalExpand="True"
+    Orientation="Vertical">
+
+    <BoxContainer
+        Name="PointsBox"
+        Orientation="Vertical"
+        HorizontalExpand="True"
+        SeparationOverride="2"
+        Margin="5">
+        <Label
+            Name="PointsLabel"
+            HorizontalAlignment="Stretch"
+            Align="Center" />
+        <ProgressBar
+            Name="PointsBar"
+            HorizontalExpand="True"
+            Margin="25 0"
+            MaxValue="1"
+            Value="1"
+            MaxHeight="8" />
+    </BoxContainer>
+
+    <BoxContainer
+        Name="LoadoutConfigPanels"
+        HorizontalExpand="True"
+        VerticalExpand="True"
+        Orientation="Horizontal"
+        Align="Begin"
+        Margin="5" />
+
+</BoxContainer>
