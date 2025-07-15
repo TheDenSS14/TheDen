@@ -171,3 +171,21 @@
         - Security
   items:
     - TowelColorRed
+
+- type: loadout
+  id: LoadoutClothingBackSecurityMessenger
+  category: JobsSecurityAUncategorized
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSecurityBackpacks
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Security
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Brigmedic # Mostly for corpsman recognizibility
+  items:
+    - ClothingBackpackMessengerSecurity

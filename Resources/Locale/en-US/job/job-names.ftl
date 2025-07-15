@@ -106,6 +106,7 @@ job-name-zombie = Zombie
 job-title-visitor = Visitor
 job-title-cluwne = Cluwne
 job-title-universal = Universal
+job-title-admin = Admin
 
 # Role timers - Make these alphabetical or I cut you
 JobAtmosphericTechnician = Atmospheric Technician
