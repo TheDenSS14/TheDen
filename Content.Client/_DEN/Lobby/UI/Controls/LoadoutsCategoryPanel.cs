@@ -57,7 +57,7 @@ public sealed partial class LoadoutsCategoryPanel : ScrollContainer
         PopulateCategoryListBox(_rootCategoryBox, rootCategories, null);
         AddChild(_rootCategoryBox);
 
-        SelectLoadoutCategory(null);
+        SelectLoadoutCategory(null, true);
     }
 
     #region Initialization
@@ -161,7 +161,7 @@ public sealed partial class LoadoutsCategoryPanel : ScrollContainer
     #endregion Initialization
     #region Callbacks
 
-    private void SelectLoadoutCategory(LoadoutCategoryPrototype? category)
+    private void SelectLoadoutCategory(LoadoutCategoryPrototype? category, bool force = false)
     {
         _currentCategory = category?.ID;
         OnCategorySelected?.Invoke(_currentCategory);
@@ -169,15 +169,15 @@ public sealed partial class LoadoutsCategoryPanel : ScrollContainer
         if (category != null && category.SubCategories.Count == 0)
             return;
 
-        UpdateVisibleCategoryList();
+        UpdateVisibleCategoryList(force);
     }
 
-    private void UpdateVisibleCategoryList()
+    private void UpdateVisibleCategoryList(bool force = false)
     {
         var currentVisibleBox = GetCategoryListBox(_visibleCategory);
         var newVisibleBox = GetCategoryListBox(_currentCategory);
 
-        if (currentVisibleBox != newVisibleBox)
+        if (force || currentVisibleBox != newVisibleBox)
         {
             currentVisibleBox.Visible = false;
             _visibleCategory = _currentCategory;
