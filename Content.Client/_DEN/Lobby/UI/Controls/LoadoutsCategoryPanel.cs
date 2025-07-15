@@ -1,4 +1,5 @@
 using System.Linq;
+using Content.Client._DEN.Lobby.UI.Loadouts;
 using Content.Client.Stylesheets;
 using Content.Shared.Clothing.Loadouts.Prototypes;
 using Content.Shared.Mobs;
@@ -68,8 +69,6 @@ public sealed partial class LoadoutsCategoryPanel : ScrollContainer
         _rootCategoryBox = CreateCategoryListBox(null, null);
         PopulateCategoryListBox(_rootCategoryBox, rootCategories, null);
         AddChild(_rootCategoryBox);
-
-        SelectLoadoutCategory(null, true);
     }
 
     #region Initialization
@@ -114,7 +113,7 @@ public sealed partial class LoadoutsCategoryPanel : ScrollContainer
     {
         var categoryBoxName = CategoryBoxNamePrefix + (category?.ID ?? RootCategoryId);
         var categoryLabelText = category != null
-            ? GetCategoryName(category.ID)
+            ? LoadoutsTab.GetCategoryName(category.ID)
             : Loc.GetString(RootCategoryName);
 
         var categoryList = new LoadoutCategoryList()
@@ -133,7 +132,7 @@ public sealed partial class LoadoutsCategoryPanel : ScrollContainer
 
     private Button CreateCategoryButton(LoadoutCategoryPrototype category)
     {
-        var labelText = GetCategoryName(category.ID);
+        var labelText = LoadoutsTab.GetCategoryName(category.ID);
         var isLeaf = category.SubCategories.Count == 0;
 
         // TODO: Find a better way to denote branches/categories.
@@ -159,7 +158,7 @@ public sealed partial class LoadoutsCategoryPanel : ScrollContainer
     private Button CreateReturnButton(LoadoutCategoryPrototype? parent)
     {
         var parentName = parent != null
-            ? GetCategoryName(parent.ID)
+            ? LoadoutsTab.GetCategoryName(parent.ID)
             : Loc.GetString(RootCategoryName);
 
         var returnButton = new Button()
@@ -176,7 +175,7 @@ public sealed partial class LoadoutsCategoryPanel : ScrollContainer
     #endregion Initialization
     #region Callbacks
 
-    private void SelectLoadoutCategory(LoadoutCategoryPrototype? category, bool force = false)
+    public void SelectLoadoutCategory(LoadoutCategoryPrototype? category, bool force = false)
     {
         _currentCategory = category?.ID;
         OnCategorySelected?.Invoke(_currentCategory);
@@ -224,8 +223,6 @@ public sealed partial class LoadoutsCategoryPanel : ScrollContainer
 
         return categoryBox;
     }
-
-    private string GetCategoryName(string categoryId) => Loc.GetString($"loadout-category-{categoryId}");
 
     #endregion Helpers
 }

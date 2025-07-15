@@ -1,0 +1,60 @@
+<ScrollContainer
+    xmlns="https://spacestation14.io"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:ui="clr-namespace:Content.Client.UserInterface.Controls"
+    HorizontalExpand="True"
+    HorizontalAlignment="Stretch"
+    VerticalExpand="True"
+    VScrollEnabled="True">
+    <BoxContainer Name="Content"
+        HorizontalExpand="True"
+        HorizontalAlignment="Stretch"
+        Orientation="Vertical"
+        SeparationOverride="10"
+        Margin="4">
+        <BoxContainer Name="Header"
+            HorizontalExpand="True"
+            HorizontalAlignment="Stretch"
+            SeparationOverride="2"
+            Orientation="Vertical">
+            <Label Name="CategoryTitle" HorizontalExpand="True" Align="Center" />
+
+            <BoxContainer
+                Name="SearchBar"
+                Orientation="Horizontal"
+                HorizontalExpand="True"
+                SeparationOverride="5">
+                <LineEdit
+                    Name="SearchLineEdit"
+                    PlaceHolder="{Loc object-tab-object-search}"
+                    HorizontalExpand="True" />
+                <Button
+                    Name="ClearSearchButton"
+                    Text="{Loc loadout-item-list-panel-clear-search}"
+                    ToolTip="{Loc 'humanoid-profile-editor-loadouts-clear-search-tooltip'}"
+                    MinWidth="60" />
+            </BoxContainer>
+
+            <BoxContainer Name="Buttons" HorizontalExpand="True" Orientation="Horizontal">
+                <Button
+                    Name="LoadoutsShowUnusableButton"
+                    Text="{Loc 'humanoid-profile-editor-loadouts-show-unusable-button'}"
+                    ToolTip="{Loc 'humanoid-profile-editor-loadouts-show-unusable-button-tooltip'}"
+                    ToggleMode="True"
+                    HorizontalAlignment="Stretch"
+                    HorizontalExpand="True"
+                    StyleClasses="OpenRight" />
+                <Button
+                    Name="LoadoutsRemoveUnusableButton"
+                    Text="Remove Unusable"
+                    ToolTip="{Loc 'humanoid-profile-editor-loadouts-remove-unusable-button-tooltip'}"
+                    HorizontalAlignment="Stretch"
+                    HorizontalExpand="True"
+                    StyleClasses="OpenLeft" />
+            </BoxContainer>
+        </BoxContainer>
+
+        <!-- Contents generated dynamically -->
+
+    </BoxContainer>
+</ScrollContainer>
