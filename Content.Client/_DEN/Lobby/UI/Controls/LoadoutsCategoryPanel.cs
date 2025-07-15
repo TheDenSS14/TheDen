@@ -1,4 +1,5 @@
 using System.Linq;
+using Content.Client.Stylesheets;
 using Content.Shared.Clothing.Loadouts.Prototypes;
 using Robust.Client.UserInterface.Controls;
 using Robust.Shared.Prototypes;
@@ -37,6 +38,7 @@ public sealed partial class LoadoutsCategoryPanel : ScrollContainer
     private const string RootCategoryId = "Root";
     private const string RootCategoryName = "loadouts-category-panel-root-category";
     private const string ReturnToCategoryString = "loadouts-category-panel-return-button";
+    private const string BranchButtonStyleClass = StyleNano.StyleClassAltButton;
 
     private Dictionary<ProtoId<LoadoutCategoryPrototype>, LoadoutCategoryList> _subcategoryBoxes = new();
     private LoadoutCategoryList _rootCategoryBox;
@@ -137,6 +139,9 @@ public sealed partial class LoadoutsCategoryPanel : ScrollContainer
             Name = CategoryButtonNamePrefix + category.ID,
         };
 
+        if (!isLeaf)
+            button.AddStyleClass(BranchButtonStyleClass);
+
         button.OnPressed += _ => SelectLoadoutCategory(category);
         return button;
     }
@@ -147,13 +152,13 @@ public sealed partial class LoadoutsCategoryPanel : ScrollContainer
             ? GetCategoryName(parent.ID)
             : Loc.GetString(RootCategoryName);
 
-        // TODO: Give the return button a distinctive style.
         var returnButton = new Button()
         {
             HorizontalExpand = true,
             Text = Loc.GetString(ReturnToCategoryString, ("parent", parentName)),
         };
 
+        returnButton.AddStyleClass(BranchButtonStyleClass);
         returnButton.OnPressed += _ => SelectLoadoutCategory(parent);
         return returnButton;
     }

@@ -259,6 +259,14 @@ namespace Content.Client.Stylesheets
         //Delta-V - Manifest pronouns
         public const string StyleClassCrewManifestGender = "CrewManifestGender";
 
+        // Den - Alt button colors
+        public const string StyleClassAltButton = "altButtonColor";
+
+        public static readonly Color AltButtonColorDefault = Color.FromHex("#3b3e4eff");
+        public static readonly Color AltButtonColorHovered = Color.FromHex("#424854");
+        public static readonly Color AltButtonColorPressed = Color.FromHex("#3c6e5b");
+        public static readonly Color AltButtonColorDisabled = Color.FromHex("#212030");
+        // End Den
 
         public override Stylesheet Stylesheet { get; }
 
@@ -1946,6 +1954,26 @@ namespace Content.Client.Stylesheets
                 Element<PanelContainer>()
                     .Class(StyleClassInset)
                     .Prop(PanelContainer.StylePropertyPanel, insetBack),
+
+                // Den - Alt Button Colors
+
+                Element<ContainerButton>().Class(StyleClassAltButton)
+                    .Pseudo(ContainerButton.StylePseudoClassNormal)
+                    .Prop(Control.StylePropertyModulateSelf, AltButtonColorDefault),
+
+                Element<ContainerButton>().Class(StyleClassAltButton)
+                    .Pseudo(ContainerButton.StylePseudoClassHover)
+                    .Prop(Control.StylePropertyModulateSelf, AltButtonColorHovered),
+
+                Element<ContainerButton>().Class(StyleClassAltButton)
+                    .Pseudo(ContainerButton.StylePseudoClassPressed)
+                    .Prop(Control.StylePropertyModulateSelf, AltButtonColorPressed),
+
+                Element<ContainerButton>().Class(StyleClassAltButton)
+                    .Pseudo(ContainerButton.StylePseudoClassDisabled)
+                    .Prop(Control.StylePropertyModulateSelf, AltButtonColorDisabled),
+
+                // End
             }).ToList());
         }
     }
