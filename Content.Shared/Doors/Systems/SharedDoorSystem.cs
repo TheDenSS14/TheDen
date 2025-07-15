@@ -601,6 +601,10 @@ public abstract partial class SharedDoorSystem : EntitySystem
             if (otherPhysics.Comp == physics)
                 continue;
 
+            //Excludes anything with this marker
+            if (HasComp<IgnoreDoorCollisionComponent>(otherPhysics.Owner))
+                continue;
+
             if (!otherPhysics.Comp.CanCollide)
                 continue;
 
