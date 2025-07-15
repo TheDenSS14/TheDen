@@ -7863,3 +7863,55 @@ Entries:
   id: 746
   time: '2025-07-15T08:44:09.0000000+00:00'
   url: https://github.com/TheDenSS14/TheDen/pull/1078
+- author: Quanteey
+  changes:
+    - type: Fix
+      message: >-
+        Mindshield implants no longer state that they "ensure loyalty" in the
+        description.
+  id: 747
+  time: '2025-07-15T11:51:24.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1082
+- author: Simyon264
+  changes:
+    - type: Tweak
+      message: Instrument names are now shown in the midi channel selector.
+  id: 748
+  time: '2025-07-15T11:51:48.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1079
+- author: ashkitten
+  changes:
+    - type: Tweak
+      message: >-
+        Typing indicator no longer shows up when typing in channels whose
+        participation is meant to be secret (Admin, Console, OOC, Telepathic)
+    - type: Tweak
+      message: Allow using sign language while speech-blocked
+    - type: Fix
+      message: >-
+        Whispering in sign language now properly checks that your hands are
+        available
+  id: 749
+  time: '2025-07-15T12:28:32.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1083
+- author: sleepyyapril
+  changes:
+    - type: Add
+      message: Added new messenger bags, go check the nearest vendor.
+  id: 750
+  time: '2025-07-15T13:00:55.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1080
+- author: sleepyyapril
+  changes:
+    - type: Add
+      message: >-
+        Tape recorders and cassettes can now be crafted in autolathes and
+        service techfabs for recording crew speech. Tape recorders respect
+        languages, but the print-out is translated.
+    - type: Add
+      message: Reporters and detectives start with a tape recorder and cassettes.
+    - type: Add
+      message: Added tape recorders to loadout.
+  id: 751
+  time: '2025-07-15T13:01:04.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1081
