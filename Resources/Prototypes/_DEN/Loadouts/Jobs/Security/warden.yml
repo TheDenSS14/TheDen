@@ -79,6 +79,23 @@
     - WeaponEnergyShotgunWarden
 
 - type: loadout
+  id: LoadoutWardenGlovesKravMaga
+  category: JobsSecurityWarden
+  cost: 0
+  exclusive: true
+  canBeHeirloom: true
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - Warden
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutWardenWeapons
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutWardenGloves
+  items:
+    - ClothingHandsGlovesKravMaga
+
+- type: loadout
   id: LoadoutUniformJumpsuitWarden
   category: JobsSecurityWarden
   cost: 0
