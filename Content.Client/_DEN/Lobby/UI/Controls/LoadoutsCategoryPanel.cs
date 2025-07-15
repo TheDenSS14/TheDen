@@ -103,6 +103,15 @@ public sealed partial class LoadoutsCategoryPanel : ScrollContainer
     private BoxContainer CreateCategoryListBox(LoadoutCategoryPrototype? category, LoadoutCategoryPrototype? parent)
     {
         var categoryBoxName = CategoryBoxNamePrefix + (category?.ID ?? RootCategoryId);
+        var categoryTitleLabel = new Label()
+        {
+            HorizontalExpand = true,
+            Align = Label.AlignMode.Center,
+            FontOverride = CategoryNameFont,
+            Margin = _categoryTitleMargin,
+            Text = category != null ? GetCategoryName(category.ID) : Loc.GetString(RootCategoryName),
+        };
+
         var box = new BoxContainer()
         {
             HorizontalExpand = true,
@@ -113,21 +122,11 @@ public sealed partial class LoadoutsCategoryPanel : ScrollContainer
             Align = BoxContainer.AlignMode.Begin,
             Visible = _currentCategory == category?.ID,
             Name = categoryBoxName,
+            Children = { categoryTitleLabel },
         };
-
-        var categoryTitleLabel = new Label()
-        {
-            HorizontalExpand = true,
-            Align = Label.AlignMode.Center,
-            FontOverride = CategoryNameFont,
-            Margin = _categoryTitleMargin,
-            Text = category != null ? GetCategoryName(category.ID) : Loc.GetString(RootCategoryName),
-        };
-
-        box.AddChild(categoryTitleLabel);
 
         if (category != null)
-            CreateReturnButton(box, parent);
+            box.AddChild(CreateReturnButton(parent));
 
         return box;
     }
@@ -152,7 +151,7 @@ public sealed partial class LoadoutsCategoryPanel : ScrollContainer
         return button;
     }
 
-    private void CreateReturnButton(BoxContainer categoryBox, LoadoutCategoryPrototype? parent)
+    private Button CreateReturnButton(LoadoutCategoryPrototype? parent)
     {
         var parentName = parent != null
             ? GetCategoryName(parent.ID)
@@ -166,7 +165,7 @@ public sealed partial class LoadoutsCategoryPanel : ScrollContainer
         };
 
         returnButton.OnPressed += _ => SelectLoadoutCategory(parent);
-        categoryBox.AddChild(returnButton);
+        return returnButton;
     }
 
     #endregion Initialization
