@@ -15,7 +15,7 @@
         <BoxContainer Name="Header"
             HorizontalExpand="True"
             HorizontalAlignment="Stretch"
-            SeparationOverride="2"
+            SeparationOverride="4"
             Orientation="Vertical">
             <Label Name="CategoryTitle" HorizontalExpand="True" Align="Center" />
 
@@ -35,9 +35,9 @@
                     MinWidth="60" />
             </BoxContainer>
 
-            <BoxContainer Name="Buttons" HorizontalExpand="True" Orientation="Horizontal">
+            <BoxContainer Name="UnusableButtons" HorizontalExpand="True" Orientation="Horizontal">
                 <Button
-                    Name="LoadoutsShowUnusableButton"
+                    Name="ShowUnusableButton"
                     Text="{Loc 'humanoid-profile-editor-loadouts-show-unusable-button'}"
                     ToolTip="{Loc 'humanoid-profile-editor-loadouts-show-unusable-button-tooltip'}"
                     ToggleMode="True"
@@ -45,7 +45,7 @@
                     HorizontalExpand="True"
                     StyleClasses="OpenRight" />
                 <Button
-                    Name="LoadoutsRemoveUnusableButton"
+                    Name="RemoveUnusableButton"
                     Text="Remove Unusable"
                     ToolTip="{Loc 'humanoid-profile-editor-loadouts-remove-unusable-button-tooltip'}"
                     HorizontalAlignment="Stretch"
