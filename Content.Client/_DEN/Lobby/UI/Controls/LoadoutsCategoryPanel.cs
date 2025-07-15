@@ -1,8 +1,5 @@
 using System.Linq;
-using Content.Client.Resources;
 using Content.Shared.Clothing.Loadouts.Prototypes;
-using Robust.Client.Graphics;
-using Robust.Client.ResourceManagement;
 using Robust.Client.UserInterface.Controls;
 using Robust.Shared.Prototypes;
 
@@ -29,7 +26,6 @@ namespace Content.Client._DEN.Lobby.UI.Controls;
 public sealed partial class LoadoutsCategoryPanel : ScrollContainer
 {
     [Dependency] private readonly IPrototypeManager _prototype = default!;
-    [Dependency] private readonly IResourceCache _resourceCache = default!;
 
     /// <summary>
     ///     Fires when a category button is clicked, indicating the loadout category has been selected.
@@ -37,17 +33,13 @@ public sealed partial class LoadoutsCategoryPanel : ScrollContainer
     public event Action<ProtoId<LoadoutCategoryPrototype>?>? OnCategorySelected;
 
     private const string CategoryBoxNamePrefix = "CategoryList";
+    private const string CategoryButtonNamePrefix = "CategoryButton";
     private const string RootCategoryId = "Root";
     private const string RootCategoryName = "loadouts-category-panel-root-category";
     private const string ReturnToCategoryString = "loadouts-category-panel-return-button";
-    private const string CategoryNameFontPath = "/Fonts/NotoSans/NotoSans-Bold.ttf";
-    private const int CategoryNameFontSize = 16;
-    private readonly Thickness _categoryTitleMargin = new(0, 5);
 
-    private Font CategoryNameFont => _resourceCache.GetFont(CategoryNameFontPath, CategoryNameFontSize);
-
-    private Dictionary<ProtoId<LoadoutCategoryPrototype>, BoxContainer> _subcategoryBoxes = new();
-    private BoxContainer _rootCategoryBox;
+    private Dictionary<ProtoId<LoadoutCategoryPrototype>, LoadoutCategoryList> _subcategoryBoxes = new();
+    private LoadoutCategoryList _rootCategoryBox;
     private ButtonGroup _categoryGroup = new(isNoneSetAllowed: true);
 
     private ProtoId<LoadoutCategoryPrototype>? _visibleCategory = null;
@@ -70,7 +62,7 @@ public sealed partial class LoadoutsCategoryPanel : ScrollContainer
 
     #region Initialization
 
-    private void PopulateCategoryListBox(BoxContainer categoryBox,
+    private void PopulateCategoryListBox(LoadoutCategoryList categoryBox,
         List<LoadoutCategoryPrototype> categories,
         LoadoutCategoryPrototype? parentCategory)
     {
@@ -86,10 +78,15 @@ public sealed partial class LoadoutsCategoryPanel : ScrollContainer
                 AddChild(subcategoryBox);
                 _subcategoryBoxes.Add(category.ID, subcategoryBox);
             }
+            else if (categoryBox.FirstLeafButton == null)
+            {
+                categoryBox.FirstLeafCategory = category;
+                categoryBox.FirstLeafButton = button;
+            }
         }
     }
 
-    private void PopulateCategoryListBox(BoxContainer categoryBox,
+    private void PopulateCategoryListBox(LoadoutCategoryList categoryBox,
         List<ProtoId<LoadoutCategoryPrototype>> categoryIds,
         LoadoutCategoryPrototype? parentCategory)
     {
@@ -100,51 +97,44 @@ public sealed partial class LoadoutsCategoryPanel : ScrollContainer
         PopulateCategoryListBox(categoryBox, categories, parentCategory);
     }
 
-    private BoxContainer CreateCategoryListBox(LoadoutCategoryPrototype? category, LoadoutCategoryPrototype? parent)
+    private LoadoutCategoryList CreateCategoryListBox(LoadoutCategoryPrototype? category,
+        LoadoutCategoryPrototype? parent)
     {
         var categoryBoxName = CategoryBoxNamePrefix + (category?.ID ?? RootCategoryId);
-        var categoryTitleLabel = new Label()
+        var categoryLabelText = category != null
+            ? GetCategoryName(category.ID)
+            : Loc.GetString(RootCategoryName);
+
+        var categoryList = new LoadoutCategoryList()
         {
-            HorizontalExpand = true,
-            Align = Label.AlignMode.Center,
-            FontOverride = CategoryNameFont,
-            Margin = _categoryTitleMargin,
-            Text = category != null ? GetCategoryName(category.ID) : Loc.GetString(RootCategoryName),
+            Name = categoryBoxName,
+            Visible = _currentCategory == category?.ID,
         };
 
-        var box = new BoxContainer()
-        {
-            HorizontalExpand = true,
-            VerticalExpand = true,
-            Orientation = BoxContainer.LayoutOrientation.Vertical,
-            VerticalAlignment = VAlignment.Top,
-            HorizontalAlignment = HAlignment.Stretch,
-            Align = BoxContainer.AlignMode.Begin,
-            Visible = _currentCategory == category?.ID,
-            Name = categoryBoxName,
-            Children = { categoryTitleLabel },
-        };
+        categoryList.SetLabelText(categoryLabelText);
 
         if (category != null)
-            box.AddChild(CreateReturnButton(parent));
+            categoryList.AddChild(CreateReturnButton(parent));
 
-        return box;
+        return categoryList;
     }
 
     private Button CreateCategoryButton(LoadoutCategoryPrototype category)
     {
         var labelText = GetCategoryName(category.ID);
+        var isLeaf = category.SubCategories.Count == 0;
 
         // TODO: Find a better way to denote branches/categories.
-        if (category.SubCategories.Count > 0)
+        if (!isLeaf)
             labelText += " ...";
 
         var button = new Button()
         {
             HorizontalExpand = true,
             Text = labelText,
-            ToggleMode = true,
-            Group = _categoryGroup,
+            ToggleMode = isLeaf,
+            Group = isLeaf ? _categoryGroup : null,
+            Name = CategoryButtonNamePrefix + category.ID,
         };
 
         button.OnPressed += _ => SelectLoadoutCategory(category);
@@ -171,8 +161,6 @@ public sealed partial class LoadoutsCategoryPanel : ScrollContainer
     #endregion Initialization
     #region Callbacks
 
-    // TODO: Select the first button (if it is not a branch) in the newly-displayed category upon going up/down the hierarchy.
-    // For example: If you go to Root, Belt will be selected. If you go to Jobs, then Uncategorized will be selected, etc...
     private void SelectLoadoutCategory(LoadoutCategoryPrototype? category)
     {
         _currentCategory = category?.ID;
@@ -198,13 +186,21 @@ public sealed partial class LoadoutsCategoryPanel : ScrollContainer
             // Deselect buttons if we move through the hierarchy.
             if (_categoryGroup.Pressed != null)
                 _categoryGroup.Pressed.Pressed = false;
+
+            // Select the first non-branch button. This causes a redundant update but the UX
+            // (of selecting the first category in the newly-visible panel) is worth it I feel.
+            if (newVisibleBox.FirstLeafButton != null)
+            {
+                newVisibleBox.FirstLeafButton.Pressed = true;
+                SelectLoadoutCategory(newVisibleBox.FirstLeafCategory);
+            }
         }
     }
 
     #endregion Callbacks
     #region Helpers
 
-    private BoxContainer GetCategoryListBox(ProtoId<LoadoutCategoryPrototype>? category)
+    private LoadoutCategoryList GetCategoryListBox(ProtoId<LoadoutCategoryPrototype>? category)
     {
         var categoryBox = _rootCategoryBox;
 
