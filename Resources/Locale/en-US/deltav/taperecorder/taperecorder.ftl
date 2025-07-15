@@ -22,6 +22,6 @@ tape-recorder-menu-print-button = Print record transcript
 tape-recorder-menu-cassette-label = Cassette tape: {$cassetteName}
 tape-recorder-menu-no-cassette-label = Cassette tape is not inserted
 
-tape-recorder-print-start-text = [bold]Start of recorded transcript[/bold]
+tape-recorder-print-start-text = [bold]Start of recorded transcript (Translated)[/bold]
 tape-recorder-print-message-text = [bold][{$time}] {$source}: [/bold] {$message}
 tape-recorder-print-end-text = [bold]End of recorded transcript[/bold]

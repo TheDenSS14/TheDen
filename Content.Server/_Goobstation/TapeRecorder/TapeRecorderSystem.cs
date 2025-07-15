@@ -15,7 +15,9 @@ using Content.Shared.Speech;
 using Content.Shared._Goobstation.TapeRecorder;
 using Robust.Shared.Prototypes;
 using System.Text;
+using Content.Server.Language;
 using Content.Server.Paper;
+using Content.Shared.Language;
 
 
 namespace Content.Server._Goobstation.TapeRecorder;
@@ -26,6 +28,7 @@ public sealed class TapeRecorderSystem : SharedTapeRecorderSystem
     [Dependency] private readonly HandsSystem _hands = default!;
     [Dependency] private readonly IPrototypeManager _proto = default!;
     [Dependency] private readonly PaperSystem _paper = default!;
+    [Dependency] private readonly LanguageSystem _language = default!;
 
     public override void Initialize()
     {
@@ -53,9 +56,12 @@ public sealed class TapeRecorderSystem : SharedTapeRecorderSystem
             voice.NameOverride = message.Name ?? ent.Comp.DefaultName;
             // TODO: mimic the exact string chosen when the message was recorded
             var verb = message.Verb ?? SharedChatSystem.DefaultSpeechVerb;
-            speech.SpeechVerb = _proto.Index<SpeechVerbPrototype>(verb);
+
+            _proto.TryIndex(message.Language, out var languageOverride);
+            speech.SpeechVerb = _proto.Index(verb);
+
             //Play the message
-            _chat.TrySendInGameICMessage(ent, message.Message, InGameICChatType.Speak, false);
+            _chat.TrySendInGameICMessage(ent, message.Message, InGameICChatType.Speak, false, languageOverride: languageOverride);
         }
     }
 
@@ -81,10 +87,21 @@ public sealed class TapeRecorderSystem : SharedTapeRecorderSystem
         var nameEv = new TransformSpeakerNameEvent(args.Source, Name(args.Source));
         RaiseLocalEvent(args.Source, nameEv);
 
+        var language = _language.GetLanguage(args.Source);
+
+        // Den: ignore sign language
+        if (!language.SpeechOverride.RequireSpeech)
+            return;
+
         //Add a new entry to the tape
         var verb = _chat.GetSpeechVerb(args.Source, args.Message);
         var name = nameEv.VoiceName;
-        cassette.Comp.Buffer.Add(new TapeCassetteRecordedMessage(cassette.Comp.CurrentPosition, name, verb, args.Message));
+        cassette.Comp.Buffer.Add(new(
+            cassette.Comp.CurrentPosition,
+            name,
+            verb,
+            args.Message,
+            language.ID));
     }
 
     private void OnPrintMessage(Entity<TapeRecorderComponent> ent, ref PrintTapeRecorderMessage args)
@@ -117,6 +134,7 @@ public sealed class TapeRecorderSystem : SharedTapeRecorderSystem
 
         text.AppendLine(Loc.GetString("tape-recorder-print-start-text"));
         text.AppendLine();
+
         foreach (var message in cassette.Comp.RecordedData)
         {
             var name = message.Name ?? ent.Comp.DefaultName;
@@ -127,6 +145,7 @@ public sealed class TapeRecorderSystem : SharedTapeRecorderSystem
                 ("source", name),
                 ("message", message.Message)));
         }
+
         text.AppendLine();
         text.Append(Loc.GetString("tape-recorder-print-end-text"));
 

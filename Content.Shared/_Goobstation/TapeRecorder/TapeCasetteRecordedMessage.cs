@@ -6,6 +6,7 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
+using Content.Shared.Language;
 using Content.Shared.Speech;
 using Robust.Shared.Prototypes;
 
@@ -21,7 +22,7 @@ public sealed partial class TapeCassetteRecordedMessage : IComparable<TapeCasset
     /// Number of seconds since the start of the tape that this event was recorded at
     /// </summary>
     [DataField(required: true)]
-    public float Timestamp = 0;
+    public float Timestamp;
 
     /// <summary>
     /// The name of the entity that spoke
@@ -41,12 +42,24 @@ public sealed partial class TapeCassetteRecordedMessage : IComparable<TapeCasset
     [DataField]
     public string Message = string.Empty;
 
-    public TapeCassetteRecordedMessage(float timestamp, string name, ProtoId<SpeechVerbPrototype> verb, string message)
+    /// <summary>
+    /// The language of what was spoken
+    /// </summary>
+    [DataField]
+    public ProtoId<LanguagePrototype>? Language;
+
+    public TapeCassetteRecordedMessage(
+        float timestamp,
+        string name,
+        ProtoId<SpeechVerbPrototype> verb,
+        string message,
+        ProtoId<LanguagePrototype>? language)
     {
         Timestamp = timestamp;
         Name = name;
         Verb = verb;
         Message = message;
+        Language = language;
     }
 
     public int CompareTo(TapeCassetteRecordedMessage? other)

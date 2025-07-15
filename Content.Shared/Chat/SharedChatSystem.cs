@@ -26,6 +26,7 @@
 
 using System.Collections.Frozen;
 using System.Text.RegularExpressions;
+using Content.Shared.Language;
 using Content.Shared.Popups;
 using Content.Shared.Radio;
 using Content.Shared.Speech;
@@ -218,7 +219,8 @@ public abstract class SharedChatSystem : EntitySystem
         ICommonSession? player = null,
         string? nameOverride = null,
         bool checkRadioPrefix = true,
-        bool ignoreActionBlocker = false
+        bool ignoreActionBlocker = false,
+        LanguagePrototype? languageOverride = null
     ) { }
 
     public string SanitizeMessageCapital(string message)
