@@ -60,6 +60,31 @@ public sealed partial class LoadoutItemButton : ContainerButton
         CustomizeButton.OnToggled += v => OnCustomizeToggled?.Invoke(Loadout.ID);
     }
 
+    protected override void Deparented()
+    {
+        if (PreviewEntity != null)
+            _entity.QueueDeleteEntity(PreviewEntity);
+
+        base.Deparented();
+    }
+
+    private void InitPreview()
+    {
+        if (PreviewEntity != null)
+            _entity.QueueDeleteEntity(PreviewEntity);
+
+        var previewProto = Loadout.Items.First();
+        PreviewEntity = _entity.Spawn(previewProto, MapCoordinates.Nullspace);
+
+        if (Loadout.CustomColorTint)
+        {
+            _entity.EnsureComponent<AppearanceComponent>(PreviewEntity.Value);
+            _entity.EnsureComponent<PaintedComponent>(PreviewEntity.Value);
+        }
+
+        PreviewSprite.SetEntity(PreviewEntity);
+    }
+
     // This is structured the way it is to reduce redundant style updates.
     private void UpdateCheckbox()
     {
@@ -87,30 +112,5 @@ public sealed partial class LoadoutItemButton : ContainerButton
         }
 
         return name;
-    }
-
-    private void InitPreview()
-    {
-        if (PreviewEntity != null)
-            _entity.QueueDeleteEntity(PreviewEntity);
-
-        var previewProto = Loadout.Items.First();
-        PreviewEntity = _entity.Spawn(previewProto, MapCoordinates.Nullspace);
-
-        if (Loadout.CustomColorTint)
-        {
-            _entity.EnsureComponent<AppearanceComponent>(PreviewEntity.Value);
-            _entity.EnsureComponent<PaintedComponent>(PreviewEntity.Value);
-        }
-
-        PreviewSprite.SetEntity(PreviewEntity);
-    }
-
-    protected override void Deparented()
-    {
-        if (PreviewEntity != null)
-            _entity.QueueDeleteEntity(PreviewEntity);
-
-        base.Deparented();
     }
 }
