@@ -4,11 +4,11 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-using Content.Goobstation.Shared.TapeRecorder;
+using Content.Shared._Goobstation.TapeRecorder;
 using Robust.Client.UserInterface;
 using Robust.Shared.Timing;
 
-namespace Content.Goobstation.Client.TapeRecorder.UI;
+namespace Content.Client._Goobstation.TapeRecorder.UI;
 
 public sealed class TapeRecorderBoundUserInterface(EntityUid owner, Enum uiKey) : BoundUserInterface(owner, uiKey)
 {

@@ -22,7 +22,7 @@ using Robust.Shared.Timing;
 using System.Diagnostics.CodeAnalysis;
 using System.Text;
 
-namespace Content.Goobstation.Shared.TapeRecorder;
+namespace Content.Shared._Goobstation.TapeRecorder;
 
 public abstract class SharedTapeRecorderSystem : EntitySystem
 {

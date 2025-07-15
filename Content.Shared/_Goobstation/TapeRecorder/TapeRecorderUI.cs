@@ -6,7 +6,7 @@
 
 using Robust.Shared.Serialization;
 
-namespace Content.Goobstation.Shared.TapeRecorder;
+namespace Content.Shared._Goobstation.TapeRecorder;
 
 [Serializable, NetSerializable]
 public enum TapeRecorderVisuals : byte

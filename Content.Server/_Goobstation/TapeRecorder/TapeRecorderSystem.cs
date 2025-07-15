@@ -9,13 +9,14 @@ using Content.Server.Hands.Systems;
 using Content.Server.Speech;
 using Content.Server.Speech.Components;
 using Content.Shared.Chat;
-using Content.Shared.Paper;
 using Content.Shared.Speech;
-using Content.Goobstation.Shared.TapeRecorder;
+using Content.Shared._Goobstation.TapeRecorder;
 using Robust.Shared.Prototypes;
 using System.Text;
+using Content.Server.Paper;
 
-namespace Content.Goobstation.Server.TapeRecorder;
+
+namespace Content.Server._Goobstation.TapeRecorder;
 
 public sealed class TapeRecorderSystem : SharedTapeRecorderSystem
 {
@@ -127,7 +128,7 @@ public sealed class TapeRecorderSystem : SharedTapeRecorderSystem
         text.AppendLine();
         text.Append(Loc.GetString("tape-recorder-print-end-text"));
 
-        _paper.SetContent((paper, paperComp), text.ToString());
+        _paper.SetContent(paper, text.ToString());
 
         comp.CooldownEndTime = Timing.CurTime + comp.PrintCooldown;
     }

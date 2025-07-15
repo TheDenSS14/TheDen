@@ -6,7 +6,7 @@
 
 using Robust.Shared.GameStates;
 
-namespace Content.Goobstation.Shared.TapeRecorder;
+namespace Content.Shared._Goobstation.TapeRecorder;
 
 /// <summary>
 /// Added to tape records that are updating, winding or rewinding the tape.

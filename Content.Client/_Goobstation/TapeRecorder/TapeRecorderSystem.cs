@@ -4,9 +4,9 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-using Content.Goobstation.Shared.TapeRecorder;
+using Content.Shared._Goobstation.TapeRecorder;
 
-namespace Content.Goobstation.Client.TapeRecorder;
+namespace Content.Client._Goobstation.TapeRecorder;
 
 /// <summary>
 /// Required for client side prediction stuff

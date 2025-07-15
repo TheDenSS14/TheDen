@@ -7,7 +7,7 @@
 using Content.Shared.Speech;
 using Robust.Shared.Prototypes;
 
-namespace Content.Goobstation.Shared.TapeRecorder;
+namespace Content.Shared._Goobstation.TapeRecorder;
 
 /// <summary>
 /// Every chat event recorded on a tape is saved in this format
