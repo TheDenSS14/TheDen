@@ -12,7 +12,7 @@ using Content.Shared.Access.Components;
 using Content.Shared.Access.Systems;
 using Content.Shared.Database;
 using Content.Shared.Examine;
-using Content.Shared.Interaction.Events;
+using Content.Shared.Interaction;
 using Content.Shared.Popups;
 using Content.Shared.Verbs;
 using Content.Shared.Weapons.Ranged.Components;
@@ -32,7 +32,7 @@ public sealed class BatteryWeaponFireModesSystem : EntitySystem
     {
         base.Initialize();
 
-        SubscribeLocalEvent<BatteryWeaponFireModesComponent, UseInHandEvent>(OnUseInHandEvent);
+        SubscribeLocalEvent<BatteryWeaponFireModesComponent, ActivateInWorldEvent>(OnInteractHandEvent);
         SubscribeLocalEvent<BatteryWeaponFireModesComponent, GetVerbsEvent<Verb>>(OnGetVerb);
         SubscribeLocalEvent<BatteryWeaponFireModesComponent, ExaminedEvent>(OnExamined);
     }
@@ -90,12 +90,12 @@ public sealed class BatteryWeaponFireModesSystem : EntitySystem
         }
     }
 
-    private void OnUseInHandEvent(EntityUid uid, BatteryWeaponFireModesComponent component, UseInHandEvent args)
+    private void OnInteractHandEvent(EntityUid uid, BatteryWeaponFireModesComponent component, ActivateInWorldEvent args)
     {
-        if (component.FireModes.Count < 2)
+        if (!args.Complex)
             return;
 
-        if (TryComp<AccessReaderComponent>(uid, out var accessReader) && !_accessReaderSystem.IsAllowed(args.User, uid, accessReader))
+        if (component.FireModes.Count < 2)
             return;
 
         CycleFireMode(uid, component, args.User);
@@ -131,9 +131,10 @@ public sealed class BatteryWeaponFireModesSystem : EntitySystem
 
         if (TryComp<AppearanceComponent>(uid, out var appearance))
             _appearanceSystem.SetData(uid, BatteryWeaponFireModeVisuals.State, prototype.ID, appearance);
-
         if (user != null)
+        {
             _popupSystem.PopupClient(Loc.GetString("gun-set-fire-mode", ("mode", prototype.Name)), uid, user.Value);
+        }
 
         if (TryComp(uid, out ProjectileBatteryAmmoProviderComponent? projectileBatteryAmmoProviderComponent))
         {
@@ -142,13 +143,15 @@ public sealed class BatteryWeaponFireModesSystem : EntitySystem
             projectileBatteryAmmoProviderComponent.Prototype = fireMode.Prototype;
             projectileBatteryAmmoProviderComponent.FireCost = fireMode.FireCost;
 
-            float FireCostDiff = (float)fireMode.FireCost / (float)OldFireCost;
-            projectileBatteryAmmoProviderComponent.Shots = (int)Math.Round(projectileBatteryAmmoProviderComponent.Shots / FireCostDiff);
-            projectileBatteryAmmoProviderComponent.Capacity = (int)Math.Round(projectileBatteryAmmoProviderComponent.Capacity / FireCostDiff);
+            float FireCostDiff = (float) fireMode.FireCost / (float) OldFireCost;
+            projectileBatteryAmmoProviderComponent.Shots = (int) Math.Round(projectileBatteryAmmoProviderComponent.Shots / FireCostDiff);
+            projectileBatteryAmmoProviderComponent.Capacity = (int) Math.Round(projectileBatteryAmmoProviderComponent.Capacity / FireCostDiff);
 
             Dirty(uid, projectileBatteryAmmoProviderComponent);
             var updateClientAmmoEvent = new UpdateClientAmmoEvent();
             RaiseLocalEvent(uid, ref updateClientAmmoEvent);
+
+
         }
     }
 }

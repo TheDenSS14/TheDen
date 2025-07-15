@@ -1053,20 +1053,23 @@
   - type: ProjectileBatteryAmmoProvider
     proto: BulletLaserSpread
     fireCost: 150
-  - type: BatteryWeaponFireModes
+  - type: EnergyGun
     fireModes:
     - proto: BulletLaserSpread
       fireCost: 150
+      name: lethal
     - proto: BulletLaserSpreadSlug
       fireCost: 300
+      name: slug
     - proto: BulletDisablerSmgSpread
       fireCost: 120
+      name: disabler
   - type: Item
     size: Large
     shape:
     - 0,0,3,1
     sprite: Objects/Weapons/Guns/Battery/inhands_64x.rsi
-    heldPrefix: energy
+    heldPrefix: energy1
   - type: Tag
     tags:
     - HighRiskItem
