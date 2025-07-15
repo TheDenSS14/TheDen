@@ -39,3 +39,16 @@
   parent: WeaponEnergyShotgun
   id: WeaponEnergyShotgunWarden
   description: One of a few surviving prototypes of an energy shotgun, which never made it to mass production. It offers the possibility of both lethal and non-lethal shots, making it a versatile weapon.
+  components:
+  - type: ProjectileBatteryAmmoProvider
+    proto: BulletLaserSpread
+    fireCost: 200
+  - type: BatteryWeaponFireModes
+    fireModes:
+    - proto: BulletLaserSpread
+      fireCost: 200
+    - proto: BulletDisablerSmgSpread
+      fireCost: 100
+  - type: Battery
+    maxCharge: 1000
+    startingCharge: 1000
