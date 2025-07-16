@@ -33,6 +33,11 @@ public sealed partial class LoadoutsItemListPanel : BoxContainer
     /// </summary>
     public event Action<LoadoutPreference>? OnPreferenceChanged;
 
+    /// <summary>
+    ///     Fired when a loadout item's "customize" button is clicked.
+    /// </summary>
+    public event Action<LoadoutPreference>? OnCustomizeToggled;
+
     // Dependencies
     // Events
     // Constants
@@ -88,40 +93,41 @@ public sealed partial class LoadoutsItemListPanel : BoxContainer
         try
         {
 
-        if (reset)
-        {
-            CategoryContents.RemoveAllChildren();
-            _categoryLists.Clear();
-            _loadoutButtons.Clear();
-        }
-
-        var groups = _prototype.EnumeratePrototypes<LoadoutPrototype>()
-            .OrderBy(l => l.ID)
-            .GroupBy(l => l.Category);
-
-        foreach (var group in groups)
-        {
-            var category = group.Key;
-
-            if (!_categoryLists.TryGetValue(category, out var listBox))
+            if (reset)
             {
-                listBox = CreateLoadoutListBox(category);
-                CategoryContents.AddChild(listBox);
-                _categoryLists.Add(category, listBox);
+                CategoryContents.RemoveAllChildren();
+                _categoryLists.Clear();
+                _loadoutButtons.Clear();
             }
 
-            foreach (var loadout in group)
+            var groups = _prototype.EnumeratePrototypes<LoadoutPrototype>()
+                .OrderBy(l => l.ID)
+                .GroupBy(l => l.Category);
+
+            foreach (var group in groups)
             {
-                if (_loadoutButtons.TryGetValue(loadout, out var _))
-                    continue;
+                var category = group.Key;
 
-                var button = new LoadoutItemButton(loadout);
-                button.OnPreferenceChanged += p => OnButtonPreferenceChanged(button, p);
+                if (!_categoryLists.TryGetValue(category, out var listBox))
+                {
+                    listBox = CreateLoadoutListBox(category);
+                    CategoryContents.AddChild(listBox);
+                    _categoryLists.Add(category, listBox);
+                }
 
-                listBox.AddChild(button);
-                _loadoutButtons.Add(loadout, button);
+                foreach (var loadout in group)
+                {
+                    if (_loadoutButtons.TryGetValue(loadout, out var _))
+                        continue;
+
+                    var button = new LoadoutItemButton(loadout);
+                    button.OnPreferenceChanged += p => OnButtonPreferenceChanged(button, p);
+                    button.OnCustomizeToggled += _ => OnCustomizeToggled?.Invoke(button.Preference);
+
+                    listBox.AddChild(button);
+                    _loadoutButtons.Add(loadout, button);
+                }
             }
-        }
 
         }
         finally
@@ -242,5 +248,13 @@ public sealed partial class LoadoutsItemListPanel : BoxContainer
         }
 
         CategoryTitle.Text = titleText;
+    }
+
+    public EntityUid? GetPreviewEntity(LoadoutPrototype loadout)
+    {
+        if (_loadoutButtons.TryGetValue(loadout, out var button))
+            return button.PreviewEntity;
+
+        return null;
     }
 }
