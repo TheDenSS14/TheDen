@@ -2809,3 +2809,22 @@
   - type: Tag
     tags:
     - Flower
+
+- type: entity
+  name: lilac
+  description: A bold, frilly, yet delciate flower, often used to convey first love.
+  id: Lilac
+  parent: ProduceBase
+  components:
+  - type: Sprite
+    sprite: Objects/Specific/Hydroponics/lilac.rsi
+    scale: 0.75,0.75
+ # - type: SolutionContainerManager
+ # - type: Produce
+ #   seedId: lilac
+  - type: PotencyVisuals
+    minimumScale: 0.75 # reduce this in size because the sprite is way too big
+    maximumScale: 1.5
+  - type: Tag
+    tags:
+    - Flower
