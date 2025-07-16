@@ -15,6 +15,26 @@
     revertOnCrit: true
     duration: 20
 
+#- type: polymorph
+#  id: MouseSentient
+#  configuration:
+#    entity: MobMouseSentient
+#    forced: true
+#    inventory: Transfer
+#    revertOnDeath: true
+#    transferName: true
+#    revertOnCrit: true
+
+- type: polymorph
+  id: MobFrogPolymorph
+  configuration:
+    entity: MobFrog
+    forced: true
+    inventory: Transfer
+    revertOnDeath: true
+    transferName: true
+    revertOnCrit: true
+
 - type: polymorph
   id: BinglePolymorph
   configuration:
@@ -25,3 +45,26 @@
     inventory: Drop
     revertOnDeath: false
     revertOnCrit: false
+
+- type: polymorph
+  id: ShadowJaunt
+  configuration:
+    entity: PolymorphShadowJaunt
+    forced: true
+    duration: 4
+#    attachToGridOrMap: true
+
+- type: polymorph
+  id: ShadowJauntPermanent
+  configuration:
+    entity: PolymorphShadowJaunt
+    forced: true
+#    attachToGridOrMap: true
+
+- type: polymorph
+  id: ShadowJaunt180
+  configuration:
+    entity: PolymorphShadowJaunt
+    forced: true
+    duration: 180
+#    attachToGridOrMap: true
