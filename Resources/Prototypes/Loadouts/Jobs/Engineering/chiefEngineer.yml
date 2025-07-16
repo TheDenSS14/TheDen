@@ -52,6 +52,20 @@
   items:
     - ClothingBackpackDuffelChiefEngineerFilled
 
+- type: loadout
+  id: LoadoutEngineeringChiefEngineerBackpackMessenger
+  category: JobsEngineeringChiefEngineer
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutChiefEngineerBackpacks
+    - !type:CharacterJobRequirement
+      jobs:
+        - ChiefEngineer
+  items:
+    - ClothingBackpackMessengerChiefEngineerFilled
+
 # Belt
 - type: loadout
   id: LoadoutChiefEngineerBelt

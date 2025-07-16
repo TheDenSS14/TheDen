@@ -205,6 +205,15 @@
       - state: clasp-inhand-right
         color: "#eeeeee"
 
+- type: entity
+  categories: [ HideSpawnMenu ]
+  parent: ClothingBackpackMessengerEngineering
+  id: ClothingBackpackMessengerChiefEngineerFilled
+  components:
+  - type: StorageFill
+    contents:
+      - id: Flash
+
 # Cargo
 - type: entity
   parent: ClothingBackpackMessengerBase
