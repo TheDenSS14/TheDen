@@ -159,39 +159,56 @@
   items:
     - WeaponLeverChester
 
-# - type: loadout
-#   id: LoadoutMagazineShotgunLeverRifle
-#   category: JobsCommandBlueshieldOfficer
-#   cost: 2
-#   exclusive: true
-#   requirements:
-#     - !type:CharacterDepartmentTimeRequirement
-#       department: Security
-#       min: 3600 # 1 hours
-#     - !type:CharacterItemGroupRequirement
-#       group: LoadoutSecurityEquipment
-#     - !type:CharacterJobRequirement
-#       jobs:
-#         - BlueshieldOfficer
-#   items:
-#     - MagazineShotgunLeverRifle
+- type: loadout
+  id: LoadoutMagazineShotgunLeverRifle
+  category: JobsCommandBlueshieldOfficer
+  cost: 2
+  exclusive: true
+  requirements:
+    - !type:CharacterDepartmentTimeRequirement
+      department: Security
+      min: 3600 # 1 hours
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSecurityEquipment
+    - !type:CharacterJobRequirement
+      jobs:
+        - BlueshieldOfficer
+  items:
+    - MagazineShotgunLeverRifle
 
-# - type: loadout
-#   id: LoadoutMagazineShotgunLeverRifleSpare
-#   category: JobsCommandBlueshieldOfficer
-#   cost: 4
-#   exclusive: true
-#   requirements:
-#     - !type:CharacterDepartmentTimeRequirement
-#       department: Security
-#       min: 3600 # 1 hours
-#     - !type:CharacterItemGroupRequirement
-#       group: LoadoutSecurityEquipment
-#     - !type:CharacterJobRequirement
-#       jobs:
-#         - BlueshieldOfficer
-#   items:
-#     - MagazineShotgunLeverRifle
+- type: loadout
+  id: LoadoutMagazineRifleBRDIR25
+  category: JobsCommandBlueshieldOfficer
+  cost: 2
+  exclusive: true
+  requirements:
+    - !type:CharacterDepartmentTimeRequirement
+      department: Security
+      min: 3600 # 1 hours
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSecurityEquipment
+    - !type:CharacterJobRequirement
+      jobs:
+        - BlueshieldOfficer
+  items:
+    - MagazineCaselessRifle
+
+- type: loadout
+  id: LoadoutMagazineRifleBSOAk
+  category: JobsCommandBlueshieldOfficer
+  cost: 2
+  exclusive: true
+  requirements:
+    - !type:CharacterDepartmentTimeRequirement
+      department: Security
+      min: 3600 # 1 hours
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSecurityEquipment
+    - !type:CharacterJobRequirement
+      jobs:
+        - BlueshieldOfficer
+  items:
+    - MagazineLightRifle
 
 - type: loadout
   id: LoadoutBSORifleBRDIR25
