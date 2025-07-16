@@ -48,6 +48,20 @@
       jobs:
         - Psychologist
 
+- type: loadout
+  id: LoadoutPsychologistBackpackMessenger
+  category: JobsMedicalPsychologist
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingBackpackMessengerPsychologistFilled
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutPsychologistBackpacks
+    - !type:CharacterJobRequirement
+      jobs:
+        - Psychologist
+
 # Belt
 
 # Ears

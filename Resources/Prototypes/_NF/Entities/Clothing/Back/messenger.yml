@@ -350,6 +350,15 @@
     contents:
       - id: Flash
 
+- type: entity
+  categories: [ HideSpawnMenu ]
+  parent: ClothingBackpackMessengerMedical
+  id: ClothingBackpackMessengerPsychologistFilled
+  components:
+  - type: StorageFill
+    contents:
+      - id: RubberStampPsychologist
+
 ## Science
 - type: entity
   parent: ClothingBackpackMessengerBase
