@@ -157,7 +157,7 @@ public sealed partial class ResearchSystem
         }
         Dirty(uid, component);
 
-        var ev = new TechnologyDatabaseModifiedEvent(addedRecipes);
+        var ev = new TechnologyDatabaseModifiedEvent(addedRecipes, technology.RecipeUnlocks);
         RaiseLocalEvent(uid, ref ev);
     }
 

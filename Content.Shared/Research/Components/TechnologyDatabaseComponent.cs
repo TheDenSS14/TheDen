@@ -67,7 +67,15 @@ public sealed partial class TechnologyDatabaseComponent : Component
 /// server to all of it's clients.
 /// </remarks>
 [ByRefEvent]
-public readonly record struct TechnologyDatabaseModifiedEvent(List<string>? NewlyUnlockedRecipes) // Goobstation - Lathe message on recipes update
+public readonly record struct TechnologyDatabaseModifiedEvent // Goobstation - Lathe message on recipes update
 {
-    public readonly List<ProtoId<LatheRecipePrototype>>? UnlockedRecipes;
+    public readonly List<string> NewlyUnlockedRecipes;
+
+    public readonly List<ProtoId<LatheRecipePrototype>> UnlockedRecipes;
+
+    public TechnologyDatabaseModifiedEvent( List<string>? newlyUnlockedRecipes = null, List<ProtoId<LatheRecipePrototype>>? unlockedRecipes = null)
+    {
+        NewlyUnlockedRecipes = newlyUnlockedRecipes ?? new();
+        UnlockedRecipes = unlockedRecipes ?? new();
+    }
 };
