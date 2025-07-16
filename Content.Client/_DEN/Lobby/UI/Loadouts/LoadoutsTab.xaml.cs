@@ -16,12 +16,6 @@ public sealed partial class LoadoutsTab : BoxContainer
 {
     [Dependency] private readonly IConfigurationManager _configuration = default!;
 
-    /// <remarks>
-    /// 250 is about how wide the text "Nanotrasen Representative" is. Any smaller and it'll
-    /// resize itself unpredictably.
-    /// </remarks>
-    private const float CategoryPanelWidth = 250f;
-
     /// <summary>
     ///     Fired when a loadout preference changes.
     /// </summary>
@@ -38,15 +32,7 @@ public sealed partial class LoadoutsTab : BoxContainer
         IoCManager.InjectDependencies(this);
         RobustXamlLoader.Load(this);
 
-        _categoryPanel = new LoadoutsCategoryPanel()
-        {
-            HorizontalExpand = false,
-            VerticalExpand = true,
-            VScrollEnabled = true,
-            HorizontalAlignment = HAlignment.Stretch,
-            SetWidth = CategoryPanelWidth,
-        };
-
+        _categoryPanel = new LoadoutsCategoryPanel();
         _itemListPanel = new LoadoutsItemListPanel();
 
         LoadoutConfigPanels.AddChild(_categoryPanel);
