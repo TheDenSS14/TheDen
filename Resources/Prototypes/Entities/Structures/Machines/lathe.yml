@@ -1834,7 +1834,8 @@
       - Sheet
       - RawMaterial
       - Ingot
-
+  - type: LatheAnnouncing
+    channels: [Engineering]
 
 - type: entity
   id: CargoTechFab
@@ -1889,7 +1890,8 @@
       - Sheet
       - RawMaterial
       - Ingot
-
+  - type: LatheAnnouncing
+    channels: [Supply]
 
 - type: entity
   id: ServiceTechFab
@@ -1974,6 +1976,8 @@
       - Sheet
       - RawMaterial
       - Ingot
+  - type: LatheAnnouncing
+    channels: [Service]
 
 # ===
 # Floof section end
