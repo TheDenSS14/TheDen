@@ -1,0 +1,13 @@
+- type: loadout
+  id: LoadoutBackpackMessengerChemistry
+  category: JobsMedicalChemist
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingBackpackMessengerChemistry
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutChemistBackpacks
+    - !type:CharacterJobRequirement
+      jobs:
+        - Chemist

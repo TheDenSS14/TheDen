@@ -34,3 +34,49 @@
         - Medical
   items:
     - TowelColorLightBlue
+
+- type: loadout
+  id: LoadoutBackpackMessengerMedical
+  category: JobsMedicalAUncategorized
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingBackpackMessengerMedical
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMedicalBackpacks
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Medical
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Chemist # Chemist has their own variant
+
+- type: loadout
+  id: LoadoutBackpackMessengerVirology
+  category: JobsMedicalAUncategorized
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingBackpackMessengerVirology
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMedicalBackpacks
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Medical
+
+- type: loadout
+  id: LoadoutBackpackMessengerGenetics
+  category: JobsMedicalAUncategorized
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingBackpackMessengerGenetics
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMedicalBackpacks
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Medical

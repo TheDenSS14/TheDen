@@ -1,4 +1,5 @@
 # SPDX-FileCopyrightText: 2024 Pierson Arnold
+# SPDX-FileCopyrightText: 2025 Jakumba
 # SPDX-FileCopyrightText: 2025 Rosycup
 # SPDX-FileCopyrightText: 2025 Tabitha
 # SPDX-FileCopyrightText: 2025 portfiend
@@ -9,10 +10,12 @@
 - type: trait
   id: CumProducer
   category: Lewd
+  slots: 0
   requirements:
     - !type:CharacterJobRequirement
       inverted: true
       jobs:
+        - StationAi
         - Borg
         - MedicalBorg
   functions:
@@ -42,10 +45,12 @@
 - type: trait
   id: MilkProducer
   category: Lewd
+  slots: 0
   requirements:
     - !type:CharacterJobRequirement
       inverted: true
       jobs:
+        - StationAi
         - Borg
         - MedicalBorg
   functions:
@@ -75,10 +80,12 @@
 - type: trait
   id: SquirtProducer
   category: Lewd
+  slots: 0
   requirements:
     - !type:CharacterJobRequirement
       inverted: true
       jobs:
+        - StationAi
         - Borg
         - MedicalBorg
   functions:
@@ -113,6 +120,7 @@
     - !type:CharacterJobRequirement
       inverted: true
       jobs:
+        - StationAi
         - Borg
         - MedicalBorg
   functions:

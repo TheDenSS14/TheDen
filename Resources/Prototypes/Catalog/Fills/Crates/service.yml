@@ -29,6 +29,8 @@
 # SPDX-FileCopyrightText: 2024 SimpleStation14
 # SPDX-FileCopyrightText: 2024 Whatstone
 # SPDX-FileCopyrightText: 2024 lzk
+# SPDX-FileCopyrightText: 2025 MajorMoth
+# SPDX-FileCopyrightText: 2025 Tabitha
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
@@ -357,8 +359,8 @@
           prob: 0.15
         - id: LightBulbBroken
           prob: 0.15
-        - id: MobMouseDead
-          prob: 0.1
+        #- id: MobMouseDead # you gotta go buddy, can't be causing test fails now
+        #  prob: 0.1
         - id: Syringe
           prob: 0.1
         - id: ShardGlassPlasma

@@ -2,7 +2,6 @@
 # SPDX-FileCopyrightText: 2025 Alice
 # SPDX-FileCopyrightText: 2025 Angelo Fallaria
 # SPDX-FileCopyrightText: 2025 Blitz
-# SPDX-FileCopyrightText: 2025 BlitzTheSquishy
 # SPDX-FileCopyrightText: 2025 EctoplasmIsGood
 # SPDX-FileCopyrightText: 2025 Rosycup
 # SPDX-FileCopyrightText: 2025 Skubman
@@ -56,6 +55,20 @@
         - Captain
 
 - type: loadout
+  id: LoadoutClothingBackpackMessengerCaptain
+  category: JobsCommandCaptain
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingBackpackMessengerCaptain
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutCaptainBackpacks
+    - !type:CharacterJobRequirement
+      jobs:
+        - Captain
+
+- type: loadout
   id: LoadoutBackpackCaptainFilled
   category: JobsCommandCaptain
   cost: 0
@@ -96,6 +109,7 @@
     - !type:CharacterJobRequirement
       jobs:
         - Captain
+
 
 # Belt
 - type: loadout

@@ -1,34 +1,35 @@
-// SPDX-FileCopyrightText: 2022 Alex Evgrashin <aevgrashin@yandex.ru>
-// SPDX-FileCopyrightText: 2022 Fishfish458 <47410468+Fishfish458@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2022 Flipp Syder <76629141+vulppine@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2022 Mervill <mervills.email@gmail.com>
-// SPDX-FileCopyrightText: 2022 Paul Ritter <ritter.paul1@googlemail.com>
-// SPDX-FileCopyrightText: 2022 ShadowCommander <10494922+ShadowCommander@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2022 TekuNut <13456422+TekuNut@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2022 fishfish458 <fishfish458>
-// SPDX-FileCopyrightText: 2022 wrexbe <81056464+wrexbe@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2023 Arendian <137322659+Arendian@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2023 Dawid Bla <46636558+DawBla@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2023 Debug <49997488+DebugOk@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2023 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2023 Kevin Zheng <kevinz5000@gmail.com>
-// SPDX-FileCopyrightText: 2023 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2023 Pieter-Jan Briers <pieterjan.briers@gmail.com>
-// SPDX-FileCopyrightText: 2023 Repo <47093363+Titian3@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2023 Slava0135 <40753025+Slava0135@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2023 TemporalOroboros <TemporalOroboros@gmail.com>
-// SPDX-FileCopyrightText: 2023 Tom Leys <tom@crump-leys.com>
-// SPDX-FileCopyrightText: 2023 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2023 metalgearsloth <comedian_vs_clown@hotmail.com>
-// SPDX-FileCopyrightText: 2024 Fildrance <fildrance@gmail.com>
-// SPDX-FileCopyrightText: 2024 Kot <1192090+koteq@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
-// SPDX-FileCopyrightText: 2024 Remuchi <72476615+Remuchi@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 exincore <me@exin.xyz>
-// SPDX-FileCopyrightText: 2024 nikthechampiongr <32041239+nikthechampiongr@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 sleepyyapril <flyingkarii@gmail.com>
-// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 Alex Evgrashin
+// SPDX-FileCopyrightText: 2022 Fishfish458
+// SPDX-FileCopyrightText: 2022 Flipp Syder
+// SPDX-FileCopyrightText: 2022 Mervill
+// SPDX-FileCopyrightText: 2022 Paul Ritter
+// SPDX-FileCopyrightText: 2022 ShadowCommander
+// SPDX-FileCopyrightText: 2022 TekuNut
+// SPDX-FileCopyrightText: 2022 fishfish458
+// SPDX-FileCopyrightText: 2022 wrexbe
+// SPDX-FileCopyrightText: 2023 Arendian
+// SPDX-FileCopyrightText: 2023 Dawid Bla
+// SPDX-FileCopyrightText: 2023 Debug
+// SPDX-FileCopyrightText: 2023 DrSmugleaf
+// SPDX-FileCopyrightText: 2023 Kevin Zheng
+// SPDX-FileCopyrightText: 2023 Leon Friedrich
+// SPDX-FileCopyrightText: 2023 Repo
+// SPDX-FileCopyrightText: 2023 Slava0135
+// SPDX-FileCopyrightText: 2023 TemporalOroboros
+// SPDX-FileCopyrightText: 2023 Tom Leys
+// SPDX-FileCopyrightText: 2023 metalgearsloth
+// SPDX-FileCopyrightText: 2024 Fildrance
+// SPDX-FileCopyrightText: 2024 Kot
+// SPDX-FileCopyrightText: 2024 Nemanja
+// SPDX-FileCopyrightText: 2024 Pieter-Jan Briers
+// SPDX-FileCopyrightText: 2024 Plykiya
+// SPDX-FileCopyrightText: 2024 Remuchi
+// SPDX-FileCopyrightText: 2024 exincore
+// SPDX-FileCopyrightText: 2024 nikthechampiongr
+// SPDX-FileCopyrightText: 2024 slarticodefast
+// SPDX-FileCopyrightText: 2025 SleepyScarecrow
+// SPDX-FileCopyrightText: 2025 Vanessa
+// SPDX-FileCopyrightText: 2025 sleepyyapril
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -57,6 +58,8 @@ using Robust.Shared.Physics.Systems;
 using Robust.Shared.Timing;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Network;
+using Robust.Shared.Map.Components;
+using Robust.Shared.Physics;
 
 namespace Content.Shared.Doors.Systems;
 
@@ -84,19 +87,11 @@ public abstract partial class SharedDoorSystem : EntitySystem
     public const string DoorBumpTag = "DoorBumpOpener";
 
     /// <summary>
-    ///     A body must have an intersection percentage larger than this in order to be considered as colliding with a
-    ///     door. Used for safety close-blocking and crushing.
-    /// </summary>
-    /// <remarks>
-    ///     The intersection percentage relies on WORLD AABBs. So if this is too small, and the grid is rotated 45
-    ///     degrees, then an entity outside of the airlock may be crushed.
-    /// </remarks>
-    public const float IntersectPercentage = 0.2f;
-
-    /// <summary>
     ///     A set of doors that are currently opening, closing, or just queued to open/close after some delay.
     /// </summary>
     private readonly HashSet<Entity<DoorComponent>> _activeDoors = new();
+
+    private readonly HashSet<Entity<PhysicsComponent>> _doorIntersecting = new();
 
     public override void Initialize()
     {
@@ -197,7 +192,6 @@ public abstract partial class SharedDoorSystem : EntitySystem
             _activeDoors.Add(ent);
 
         RaiseLocalEvent(ent, new DoorStateChangedEvent(door.State));
-        AppearanceSystem.SetData(ent, DoorVisuals.State, door.State);
     }
 
     protected bool SetState(EntityUid uid, DoorState state, DoorComponent? door = null)
@@ -245,6 +239,7 @@ public abstract partial class SharedDoorSystem : EntitySystem
         door.State = state;
         Dirty(uid, door);
         RaiseLocalEvent(uid, new DoorStateChangedEvent(state));
+
         AppearanceSystem.SetData(uid, DoorVisuals.State, door.State);
         return true;
     }
@@ -506,17 +501,17 @@ public abstract partial class SharedDoorSystem : EntitySystem
         if (!Resolve(uid, ref door, ref physics))
             return false;
 
-        door.Partial = true;
-
-        // Make sure no entity waled into the airlock when it started closing.
+        // Make sure no entity walked into the airlock when it started closing.
         if (!CanClose(uid, door))
         {
             door.NextStateChange = GameTiming.CurTime + door.OpenTimeTwo;
-            door.State = DoorState.Opening;
-            AppearanceSystem.SetData(uid, DoorVisuals.State, DoorState.Opening);
+            door.State = DoorState.Open;
+            AppearanceSystem.SetData(uid, DoorVisuals.State, DoorState.Open);
+            Dirty(uid, door);
             return false;
         }
 
+        door.Partial = true;
         SetCollidable(uid, true, door, physics);
         door.NextStateChange = GameTiming.CurTime + door.CloseTimeTwo;
         Dirty(uid, door);
@@ -589,32 +584,46 @@ public abstract partial class SharedDoorSystem : EntitySystem
         if (!Resolve(uid, ref physics))
             yield break;
 
+        var xform = Transform(uid);
+        // Getting the world bounds from the gridUid allows us to use the version of
+        // GetCollidingEntities that returns Entity<PhysicsComponent>
+        if (!TryComp<MapGridComponent>(xform.GridUid, out var mapGridComp))
+            yield break;
+        var tileRef = _mapSystem.GetTileRef(xform.GridUid.Value, mapGridComp, xform.Coordinates);
+
+        _doorIntersecting.Clear();
+
+        _entityLookup.GetLocalEntitiesIntersecting(xform.GridUid.Value, tileRef.GridIndices, _doorIntersecting, gridComp: mapGridComp);
+
         // TODO SLOTH fix electro's code.
         // ReSharper disable once InconsistentNaming
-        var doorAABB = _entityLookup.GetWorldAABB(uid);
 
-        foreach (var otherPhysics in PhysicsSystem.GetCollidingEntities(Transform(uid).MapID, doorAABB))
+        foreach (var otherPhysics in _doorIntersecting)
         {
-            if (otherPhysics == physics)
+            if (otherPhysics.Comp == physics)
+                continue;
+
+            //Excludes anything with this marker
+            if (HasComp<IgnoreDoorCollisionComponent>(otherPhysics.Owner))
+                continue;
+
+            if (!otherPhysics.Comp.CanCollide)
                 continue;
 
             //TODO: Make only shutters ignore these objects upon colliding instead of all airlocks
             // Excludes Glasslayer for windows, GlassAirlockLayer for windoors, TableLayer for tables
-            if (!otherPhysics.CanCollide || otherPhysics.CollisionLayer == (int)CollisionGroup.GlassLayer || otherPhysics.CollisionLayer == (int)CollisionGroup.GlassAirlockLayer || otherPhysics.CollisionLayer == (int)CollisionGroup.TableLayer)
+            if (otherPhysics.Comp.CollisionLayer == (int) CollisionGroup.GlassLayer || otherPhysics.Comp.CollisionLayer == (int) CollisionGroup.GlassAirlockLayer || otherPhysics.Comp.CollisionLayer == (int) CollisionGroup.TableLayer)
                 continue;
 
             //If the colliding entity is a slippable item ignore it by the airlock
-            if (otherPhysics.CollisionLayer == (int)CollisionGroup.SlipLayer && otherPhysics.CollisionMask == (int)CollisionGroup.ItemMask)
+            if (otherPhysics.Comp.CollisionLayer == (int) CollisionGroup.SlipLayer && otherPhysics.Comp.CollisionMask == (int) CollisionGroup.ItemMask)
                 continue;
 
             //For when doors need to close over conveyor belts
-            if (otherPhysics.CollisionLayer == (int) CollisionGroup.ConveyorMask)
+            if (otherPhysics.Comp.CollisionLayer == (int) CollisionGroup.ConveyorMask)
                 continue;
 
-            if ((physics.CollisionMask & otherPhysics.CollisionLayer) == 0 && (otherPhysics.CollisionMask & physics.CollisionLayer) == 0)
-                continue;
-
-            if (_entityLookup.GetWorldAABB(otherPhysics.Owner).IntersectPercentage(doorAABB) < IntersectPercentage)
+            if ((physics.CollisionMask & otherPhysics.Comp.CollisionLayer) == 0 && (otherPhysics.Comp.CollisionMask & physics.CollisionLayer) == 0)
                 continue;
 
             yield return otherPhysics.Owner;
@@ -644,7 +653,7 @@ public abstract partial class SharedDoorSystem : EntitySystem
         var otherUid = args.OtherEntity;
 
         if (Tags.HasTag(otherUid, DoorBumpTag))
-            TryOpen(uid, door, otherUid, quiet: door.State == DoorState.Denying);
+            TryOpen(uid, door, otherUid, quiet: door.State == DoorState.Denying, predicted: true);
     }
     #endregion
 
@@ -736,6 +745,8 @@ public abstract partial class SharedDoorSystem : EntitySystem
         }
 
         door.NextStateChange = GameTiming.CurTime + delay.Value;
+        Dirty(uid, door);
+
         _activeDoors.Add((uid, door));
     }
 
@@ -744,7 +755,7 @@ public abstract partial class SharedDoorSystem : EntitySystem
         var (uid, door, physics) = ent;
         if (door.BumpOpen)
         {
-            foreach (var other in PhysicsSystem.GetContactingEntities(uid, physics, approximate: true))
+            foreach (var other in PhysicsSystem.GetContactingEntities(uid, physics))
             {
                 if (Tags.HasTag(other, DoorBumpTag) && TryOpen(uid, door, other, quiet: true))
                     break;

@@ -1,13 +1,14 @@
-// SPDX-FileCopyrightText: 2022 Flipp Syder <76629141+vulppine@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2023 DEATHB4DEFEAT <77995199+DEATHB4DEFEAT@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2023 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2023 Morb <14136326+Morb0@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2023 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2023 Visne <39844191+Visne@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2023 csqrb <56765288+CaptainSqrBeard@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 SimpleStation14 <130339894+SimpleStation14@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 Rosycup <178287475+Rosycup@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 Flipp Syder
+// SPDX-FileCopyrightText: 2023 DEATHB4DEFEAT
+// SPDX-FileCopyrightText: 2023 Leon Friedrich
+// SPDX-FileCopyrightText: 2023 Morb
+// SPDX-FileCopyrightText: 2023 Nemanja
+// SPDX-FileCopyrightText: 2023 Visne
+// SPDX-FileCopyrightText: 2023 csqrb
+// SPDX-FileCopyrightText: 2024 SimpleStation14
+// SPDX-FileCopyrightText: 2025 Rosycup
+// SPDX-FileCopyrightText: 2025 portfiend
+// SPDX-FileCopyrightText: 2025 sleepyyapril
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -189,25 +190,6 @@ public sealed partial class MarkingPicker : Control
     }
 
     private string GetMarkingName(MarkingPrototype marking) => Loc.GetString($"marking-{marking.ID}");
-
-    private List<string> GetMarkingStateNames(MarkingPrototype marking)
-    {
-        List<string> result = new();
-        foreach (var markingState in marking.Sprites)
-        {
-            switch (markingState)
-            {
-                case SpriteSpecifier.Rsi rsi:
-                    result.Add(Loc.GetString($"marking-{marking.ID}-{rsi.RsiState}"));
-                    break;
-                case SpriteSpecifier.Texture texture:
-                    result.Add(Loc.GetString($"marking-{marking.ID}-{texture.TexturePath.Filename}"));
-                    break;
-            }
-        }
-
-        return result;
-    }
 
     private IReadOnlyDictionary<string, MarkingPrototype> GetMarkings(MarkingCategories category)
     {
@@ -409,7 +391,7 @@ public sealed partial class MarkingPicker : Control
             return;
         }
 
-        var stateNames = GetMarkingStateNames(prototype);
+        var stateNames = _markingManager.GetMarkingStateNames(prototype);
         _currentMarkingColors.Clear();
         CMarkingColors.DisposeAllChildren();
         List<ColorSelectorSliders> colorSliders = new();

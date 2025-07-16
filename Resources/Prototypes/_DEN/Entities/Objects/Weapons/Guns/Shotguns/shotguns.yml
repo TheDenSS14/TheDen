@@ -1,6 +1,7 @@
-# SPDX-FileCopyrightText: 2025 Blitz <73762869+BlitzTheSquishy@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 Rosycup <178287475+Rosycup@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Blitz
+# SPDX-FileCopyrightText: 2025 Jakumba
+# SPDX-FileCopyrightText: 2025 Rosycup
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -32,3 +33,9 @@
         Blunt: 7.5
   - type: DamageOtherOnHit
     staminaCost: 6
+
+- type: entity
+  name: antique energy shotgun
+  parent: WeaponEnergyShotgun
+  id: WeaponEnergyShotgunWarden
+  description: One of a few surviving prototypes of an energy shotgun, which never made it to mass production. It offers the possibility of both lethal and non-lethal shots, making it a versatile weapon.

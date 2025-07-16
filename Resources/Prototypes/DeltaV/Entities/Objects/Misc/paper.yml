@@ -1,0 +1,22 @@
+# SPDX-FileCopyrightText: 2024 DisposableCrewmember42
+# SPDX-FileCopyrightText: 2024 VMSolidus
+# SPDX-FileCopyrightText: 2024 deltanedas
+# SPDX-FileCopyrightText: 2025 BombasterDS2
+# SPDX-FileCopyrightText: 2025 GoobBot
+# SPDX-FileCopyrightText: 2025 Rosycup
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+# contents set by FugitiveRule or a creative admeme
+- type: entity
+  parent: PaperStationWarrant
+  id: PaperFugitiveReport
+  name: fugitive report
+  description: An arrest warrant for a space fugitive sent from GALPOL.
+
+- type: entity
+  parent: Paper
+  id: TapeRecorderTranscript
+  name: record transcript
+  # TODO: could have a unique sprite in the future
