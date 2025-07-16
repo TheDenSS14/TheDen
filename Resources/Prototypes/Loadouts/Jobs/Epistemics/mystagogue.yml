@@ -49,6 +49,20 @@
   items:
     - ClothingBackpackDuffelResearchDirectorFilled
 
+- type: loadout
+  id: LoadoutMystagogueBackpacksMessenger
+  category: JobsEpistemicsMystagogue
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMystagogueBackpacks
+    - !type:CharacterJobRequirement
+      jobs:
+        - ResearchDirector
+  items:
+    - ClothingBackpackMessengerResearchDirectorFilled
+
 # Belt
 
 # Ears

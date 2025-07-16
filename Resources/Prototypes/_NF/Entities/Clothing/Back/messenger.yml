@@ -360,6 +360,15 @@
   - type: Sprite
     sprite: _NF/Clothing/Back/Messenger/science.rsi
 
+- type: entity
+  categories: [ HideSpawnMenu ]
+  parent: ClothingBackpackMessengerScience
+  id: ClothingBackpackMessengerResearchDirectorFilled
+  components:
+  - type: StorageFill
+    contents:
+      - id: Flash
+
 # Civilian
 - type: entity
   parent: ClothingBackpackMessengerBase
