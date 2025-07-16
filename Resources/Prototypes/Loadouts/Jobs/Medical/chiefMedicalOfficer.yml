@@ -52,6 +52,20 @@
       jobs:
         - ChiefMedicalOfficer
 
+- type: loadout
+  id: LoadoutBackpackMessengerCMO
+  category: JobsMedicalChiefMedicalOfficer
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingBackpackMessengerCMOFilled
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutChiefMedicalOfficerBackpacks
+    - !type:CharacterJobRequirement
+      jobs:
+        - ChiefMedicalOfficer
+
 # Belt
 - type: loadout
   id: LoadoutChiefMedicalOfficerBeltMedical

@@ -341,6 +341,15 @@
   - type: Sprite
     sprite: _NF/Clothing/Back/Messenger/genetics.rsi
 
+- type: entity
+  categories: [ HideSpawnMenu ]
+  parent: ClothingBackpackMessengerMedical
+  id: ClothingBackpackMessengerCMOFilled
+  components:
+  - type: StorageFill
+    contents:
+      - id: Flash
+
 ## Science
 - type: entity
   parent: ClothingBackpackMessengerBase
