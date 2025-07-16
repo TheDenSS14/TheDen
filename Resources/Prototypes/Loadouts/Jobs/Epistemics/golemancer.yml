@@ -51,6 +51,20 @@
       jobs:
         - Roboticist
 
+- type: loadout
+  id: LoadoutBackpackMessengerRobotics
+  category: JobsEpistemicsGolemancer
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingBackpackMessengerRobotics
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutGolemancerBackpacks
+    - !type:CharacterJobRequirement
+      jobs:
+        - Roboticist
+
 # Belt
 
 # Ears

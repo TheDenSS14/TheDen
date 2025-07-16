@@ -378,6 +378,42 @@
     contents:
       - id: Flash
 
+- type: entity
+  parent: ClothingBackpackMessengerBase
+  id: ClothingBackpackMessengerRobotics
+  name: robotics messenger bag
+  description: A robust bag for holding cybernetics.
+  components:
+  - type: Sprite
+    layers:
+    - state: icon-base
+      color: "#D6D6D6"
+    - state: icon-sling
+      color: "#A02D06"
+    - state: icon-clasp
+      color: "#A02D06"
+  - type: Clothing
+    clothingVisuals:
+      back:
+      - state: base-equipped-BACKPACK
+        color: "#D6D6D6"
+      - state: sling-equipped-BACKPACK
+        color: "#A02D06"
+      - state: clasp-equipped-BACKPACK
+        color: "#A02D06"
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: base-inhand-left
+        color: "#D6D6D6"
+      - state: clasp-inhand-left
+        color: "#A02D06"
+      right:
+      - state: base-inhand-right
+        color: "#D6D6D6"
+      - state: clasp-inhand-right
+        color: "#A02D06"
+
 # Civilian
 - type: entity
   parent: ClothingBackpackMessengerBase
