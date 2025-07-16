@@ -27,3 +27,7 @@
     - !type:CharacterDepartmentRequirement
       departments:
         - Engineering
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - ChiefEngineer # CE has ClothingBackpackMessengerChiefEngineerFilled

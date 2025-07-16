@@ -51,7 +51,8 @@
     - !type:CharacterJobRequirement
       inverted: true
       jobs:
-        - Chemist # Chemist has their own variant
+        - ChiefMedicalOfficer # CMO has ClothingBackpackMessengerCMOFilled
+        - Psychologist # Psych has ClothingBackpackMessengerPsychologistFilled
 
 - type: loadout
   id: LoadoutBackpackMessengerVirology
