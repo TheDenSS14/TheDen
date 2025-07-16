@@ -50,6 +50,7 @@ public sealed partial class LoadoutItemButton : ContainerButton
         {
             _preference = value;
             Pressed = value.Selected;
+            UpdateCheckbox();
         }
     }
 
