@@ -101,7 +101,7 @@ public sealed class VocalSystem : EntitySystem
         if (sounds == null)
             args.Handled = _chat.TryPlayEmoteSound(uid, component.EmoteSounds, args.Emote.ID);
         else
-            args.Handled = _chat.TryPlayEmoteSound(uid, sounds, args.Emote.ID);
+            args.Handled = _chat.TryPlayEmoteSound(uid, sounds, args.Emote.ID, component.EmoteSounds?.GeneralParams);
     }
 
     private void OnScreamAction(EntityUid uid, VocalComponent component, ScreamActionEvent args)
