@@ -70,6 +70,15 @@
         color: "#f6d56a"
 
 - type: entity
+  categories: [ HideSpawnMenu ]
+  parent: ClothingBackpackMessengerCaptain
+  id: ClothingBackpackMessengerCaptainFilled
+  components:
+  - type: StorageFill
+    contents:
+      - id: Flash
+
+- type: entity
   parent: ClothingBackpackMessengerBase
   id: ClothingBackpackMessengerCentcomm
   name: centcomm messenger bag
