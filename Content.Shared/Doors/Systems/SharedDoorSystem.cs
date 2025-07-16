@@ -27,6 +27,8 @@
 // SPDX-FileCopyrightText: 2024 exincore
 // SPDX-FileCopyrightText: 2024 nikthechampiongr
 // SPDX-FileCopyrightText: 2024 slarticodefast
+// SPDX-FileCopyrightText: 2025 SleepyScarecrow
+// SPDX-FileCopyrightText: 2025 Vanessa
 // SPDX-FileCopyrightText: 2025 sleepyyapril
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
@@ -599,6 +601,10 @@ public abstract partial class SharedDoorSystem : EntitySystem
         foreach (var otherPhysics in _doorIntersecting)
         {
             if (otherPhysics.Comp == physics)
+                continue;
+
+            //Excludes anything with this marker
+            if (HasComp<IgnoreDoorCollisionComponent>(otherPhysics.Owner))
                 continue;
 
             if (!otherPhysics.Comp.CanCollide)

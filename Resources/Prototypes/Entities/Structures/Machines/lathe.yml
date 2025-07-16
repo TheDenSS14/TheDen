@@ -239,6 +239,7 @@
 # SPDX-FileCopyrightText: 2025 ArtisticRoomba
 # SPDX-FileCopyrightText: 2025 Aviu00
 # SPDX-FileCopyrightText: 2025 Blitz
+# SPDX-FileCopyrightText: 2025 BlitzTheSquishy
 # SPDX-FileCopyrightText: 2025 Blu
 # SPDX-FileCopyrightText: 2025 BombasterDS
 # SPDX-FileCopyrightText: 2025 BombasterDS2
@@ -294,6 +295,7 @@
 # SPDX-FileCopyrightText: 2025 kosticia
 # SPDX-FileCopyrightText: 2025 marc-pelletier
 # SPDX-FileCopyrightText: 2025 mart
+# SPDX-FileCopyrightText: 2025 pathetic meowmeow
 # SPDX-FileCopyrightText: 2025 portfiend
 # SPDX-FileCopyrightText: 2025 slarticodefast
 # SPDX-FileCopyrightText: 2025 username
@@ -1553,6 +1555,8 @@
       - Gauze
       - Metal
       - Diamond
+  - type: LatheAnnouncing
+    channels: [Security]
 
 - type: entity
   id: AmmoTechFab
@@ -1739,6 +1743,8 @@
     board: MedicalTechFabCircuitboard
   - type: StealTarget
     stealGroup: MedicalTechFabCircuitboard
+  - type: LatheAnnouncing
+    channels: [Medical]
 
 # THIS ENTIRE SECTION BELONGS TO FLOOF - port to EE if possible
 # ===
@@ -1830,7 +1836,8 @@
       - Sheet
       - RawMaterial
       - Ingot
-
+  - type: LatheAnnouncing
+    channels: [Engineering]
 
 - type: entity
   id: CargoTechFab
@@ -1885,7 +1892,8 @@
       - Sheet
       - RawMaterial
       - Ingot
-
+  - type: LatheAnnouncing
+    channels: [Supply]
 
 - type: entity
   id: ServiceTechFab
@@ -1970,6 +1978,8 @@
       - Sheet
       - RawMaterial
       - Ingot
+  - type: LatheAnnouncing
+    channels: [Service]
 
 # ===
 # Floof section end
