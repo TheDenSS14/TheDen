@@ -53,6 +53,7 @@
       enum.CrewMonitoringUIKey.Key:
         type: CrewMonitoringBoundUserInterface
   - type: CrewMonitoringConsole
+    alertsEnabled: false # TheDen - They already have a notification and the beep goes off when anyone dies, so just disable
   - type: DeviceNetwork
     deviceNetId: Wireless
     receiveFrequencyId: CrewMonitor
