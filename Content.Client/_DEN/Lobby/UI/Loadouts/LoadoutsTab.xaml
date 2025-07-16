@@ -9,7 +9,7 @@
         Name="PointsBox"
         Orientation="Vertical"
         HorizontalExpand="True"
-        SeparationOverride="2"
+        SeparationOverride="5"
         Margin="5">
         <Label
             Name="PointsLabel"
@@ -18,7 +18,6 @@
         <ProgressBar
             Name="PointsBar"
             HorizontalExpand="True"
-            Margin="25 0"
             MaxValue="1"
             Value="1"
             MaxHeight="8" />

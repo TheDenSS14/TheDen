@@ -1,11 +1,10 @@
-<ScrollContainer
+<BoxContainer
     xmlns="https://spacestation14.io"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:ui="clr-namespace:Content.Client.UserInterface.Controls"
     HorizontalExpand="True"
     HorizontalAlignment="Stretch"
-    VerticalExpand="True"
-    VScrollEnabled="True">
+    VerticalExpand="True">
     <BoxContainer Name="Content"
         HorizontalExpand="True"
         HorizontalAlignment="Stretch"
@@ -54,12 +53,14 @@
             </BoxContainer>
         </BoxContainer>
 
-
-        <BoxContainer Name="CategoryContents"
+        <ScrollContainer Name="CategoryContents"
             HorizontalExpand="True"
-            HorizontalAlignment="Stretch" />
+            HorizontalAlignment="Stretch"
+            VerticalExpand="True"
+            VerticalAlignment="Stretch"
+            VScrollEnabled="True" />
 
         <!-- Contents generated dynamically -->
 
     </BoxContainer>
-</ScrollContainer>
+</BoxContainer>
