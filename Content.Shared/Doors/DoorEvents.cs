@@ -9,6 +9,8 @@
 // SPDX-FileCopyrightText: 2023 nikthechampiongr
 // SPDX-FileCopyrightText: 2024 Remuchi
 // SPDX-FileCopyrightText: 2024 slarticodefast
+// SPDX-FileCopyrightText: 2025 Pieter-Jan Briers
+// SPDX-FileCopyrightText: 2025 Vanessa
 // SPDX-FileCopyrightText: 2025 sleepyyapril
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
