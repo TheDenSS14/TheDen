@@ -20,7 +20,7 @@
   - type: Projectile
     damage:
       types:
-        Piercing: 15
+        Piercing: 10
 
 - type: entity
   id: HighCaliberPelletShotgunSpread
@@ -29,7 +29,7 @@
   components:
   - type: ProjectileSpread
     proto: HighCaliberPelletShotgun
-    count: 6
+    count: 8
     spread: 15
 
 # Incendiary
@@ -101,8 +101,8 @@
     - type: Projectile
       damage:
         types:
-          Radiation: 8
-          Piercing: 8
+          Radiation: 5
+          Piercing: 5
 
 - type: entity
   id: HighCaliberPelletShotgunUraniumSpread
@@ -111,7 +111,7 @@
   components:
     - type: ProjectileSpread
       proto: HighCaliberPelletShotgunUranium
-      count: 6
+      count: 8
       spread: 6
 
 ## Slugs
