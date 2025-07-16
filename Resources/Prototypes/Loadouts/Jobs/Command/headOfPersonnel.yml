@@ -51,6 +51,20 @@
     - ClothingBackpackDuffelHOPFilled
 
 - type: loadout
+  id: LoadoutHeadOfPersonnelBackpacksMessengerFilled
+  category: JobsCommandHeadOfPersonnel
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutHeadOfPersonnelBackpacks
+    - !type:CharacterJobRequirement
+      jobs:
+        - HeadOfPersonnel
+  items:
+    - ClothingBackpackMessengerHOPFilled
+
+- type: loadout
   id: LoadoutCommandHOPBackIan
   category: JobsCommandHeadOfPersonnel
   cost: 0

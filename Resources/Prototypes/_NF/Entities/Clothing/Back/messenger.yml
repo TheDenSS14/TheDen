@@ -79,6 +79,15 @@
       - id: Flash
 
 - type: entity
+  categories: [ HideSpawnMenu ]
+  parent: ClothingBackpackMessenger
+  id: ClothingBackpackMessengerHOPFilled
+  components:
+  - type: StorageFill
+    contents:
+      - id: Flash
+
+- type: entity
   parent: ClothingBackpackMessengerBase
   id: ClothingBackpackMessengerCentcomm
   name: centcomm messenger bag
