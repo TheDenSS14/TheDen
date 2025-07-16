@@ -528,46 +528,46 @@
 - type: entity
   parent: ClothingBackpackMessengerBase
   id: ClothingBackpackMessengerBrigmedic
-  name: brigmedic messenger bag
+  name: corpsman messenger bag
   description: A robust bag for storing extra surgery tools for inmate tort... treating.
   components:
   - type: Sprite
     layers:
     - state: icon-base
-      color: "#88242d"
+      color: "#282828"
     - state: icon-base-top
-      color: "#a52f29"
+      color: "#4c4b4f"
     - state: icon-sling
-      color: "#ffffff" # 1f2026
+      color: "#B0BDCA"
     - state: icon-clasp
-      color: "#ffffff"
+      color: "#2F74B8"
   - type: Clothing
     clothingVisuals:
       back:
       - state: base-equipped-BACKPACK
-        color: "#88242d"
+        color: "#282828"
       - state: base-top-equipped-BACKPACK
-        color: "#a52f29"
+        color: "#4c4b4f"
       - state: sling-equipped-BACKPACK
-        color: "#1f2026" # ffffff
+        color: "#B0BDCA"
       - state: clasp-equipped-BACKPACK
-        color: "#ffffff"
+        color: "#2F74B8"
   - type: Item
     inhandVisuals:
       left:
       - state: base-inhand-left
-        color: "#88242d"
+        color: "#282828"
       - state: base-top-inhand-left
-        color: "#a52f29"
+        color: "#4c4b4f"
       - state: clasp-inhand-left
-        color: "#ffffff"
+        color: "#2F74B8"
       right:
       - state: base-inhand-right
-        color: "#88242d"
+        color: "#282828"
       - state: base-top-inhand-right
-        color: "#a52f29"
+        color: "#4c4b4f"
       - state: clasp-inhand-right
-        color: "#ffffff"
+        color: "#2F74B8"
 
 # HOLDING
 - type: entity
