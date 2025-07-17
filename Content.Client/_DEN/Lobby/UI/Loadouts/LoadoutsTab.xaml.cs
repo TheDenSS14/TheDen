@@ -112,6 +112,7 @@ public sealed partial class LoadoutsTab : BoxContainer
 
     public void Reset()
     {
+        SetCustomizePreference(null);
         _itemListPanel.PopulateLoadouts(reset: true);
     }
 
