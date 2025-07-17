@@ -54,7 +54,7 @@ public sealed partial class TegGeneratorComponent : Component
     /// </summary>
     [ViewVariables(VVAccess.ReadWrite)]
     [DataField("rampFactor")]
-    public float RampFactor = 1.05f;
+    public float RampFactor = 1.5f;
 
     /// <summary>
     /// Minimum position for the ramp. Avoids TEG taking too long to start.

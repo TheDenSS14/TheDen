@@ -1,9 +1,10 @@
-// SPDX-FileCopyrightText: 2023 AJCM-git <60196617+AJCM-git@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2023 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
-// SPDX-FileCopyrightText: 2024 deltanedas <39013340+deltanedas@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 AJCM-git
+// SPDX-FileCopyrightText: 2023 Nemanja
+// SPDX-FileCopyrightText: 2024 Pieter-Jan Briers
+// SPDX-FileCopyrightText: 2024 deltanedas
+// SPDX-FileCopyrightText: 2024 metalgearsloth
+// SPDX-FileCopyrightText: 2025 slarticodefast
+// SPDX-FileCopyrightText: 2025 sleepyyapril
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -27,13 +28,13 @@ public sealed partial class PowerCellDrawComponent : Component
     /// <summary>
     /// Whether there is any charge available to draw.
     /// </summary>
-    [ViewVariables(VVAccess.ReadWrite), DataField("canDraw"), AutoNetworkedField]
+    [DataField, AutoNetworkedField]
     public bool CanDraw;
 
     /// <summary>
     /// Whether there is sufficient charge to use.
     /// </summary>
-    [ViewVariables(VVAccess.ReadWrite), DataField("canUse"), AutoNetworkedField]
+    [DataField, AutoNetworkedField]
     public bool CanUse;
 
     #endregion
@@ -46,17 +47,20 @@ public sealed partial class PowerCellDrawComponent : Component
     public bool Enabled = true;
 
     /// <summary>
-    /// How much the entity draws while the UI is open.
+    /// How much the entity draws while the UI is open (in Watts).
     /// Set to 0 if you just wish to check for power upon opening the UI.
     /// </summary>
-    [ViewVariables(VVAccess.ReadWrite), DataField("drawRate")]
+    [DataField]
     public float DrawRate = 1f;
 
     /// <summary>
-    /// How much power is used whenever the entity is "used".
+    /// How much power is used whenever the entity is "used" (in Joules).
     /// This is used to ensure the UI won't open again without a minimum use power.
     /// </summary>
-    [ViewVariables(VVAccess.ReadWrite), DataField("useRate")]
+    /// <remarks>
+    /// This is not a rate how the datafield name implies, but a one-time cost.
+    /// </remarks>
+    [DataField]
     public float UseRate;
 
     /// <summary>

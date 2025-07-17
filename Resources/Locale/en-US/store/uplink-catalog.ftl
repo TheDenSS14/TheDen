@@ -588,3 +588,6 @@ uplink-combat-bakery-desc = A kit of clandestine baked weapons. Contains a bague
 
 uplink-smuggler-satchel-name = Smuggler's Satchel
 uplink-smuggler-satchel-desc = A handy, suspicious looking satchel. Just flat enough to fit underneath floor tiles.
+
+uplink-business-card-name = Syndicate business card.
+uplink-business-card-desc = A business card that you can give to someone to demonstrate your involvement in the syndicate or leave at the crime scene in order to make fun of the detective. You can buy no more than three of them.
