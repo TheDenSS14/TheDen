@@ -107,6 +107,7 @@ public sealed partial class LoadoutsItemListPanel : BoxContainer
         }
 
         SearchLineEdit.OnTextChanged += args => UpdateSearchFilter(args.Text);
+        ClearSearchButton.OnPressed += _ => SearchLineEdit.SetText(string.Empty, invokeEvent: true);
         ShowUnusableButton.OnToggled += _ => UpdateButtonVisibility();
         RemoveUnusableButton.OnPressed += _ => RemoveUnusableLoadouts();
     }
