@@ -76,7 +76,21 @@ public sealed partial class LoadoutsItemListPanel : BoxContainer
         _controller = UserInterfaceManager.GetUIController<LobbyUIController>();
 
         CategoryTitle.FontOverride = CategoryNameFont;
-        PopulateLoadouts();
+
+        var stopwatch = new Stopwatch();
+        stopwatch.Start();
+
+        try
+        {
+            PopulateLoadouts();
+        }
+        finally
+        {
+            stopwatch.Stop();
+            Logger.GetSawmill("LoadoutsItemListPanel")
+                .Debug($"All loadout items loaded in {stopwatch.Elapsed.TotalMilliseconds}ms");
+        }
+
 
         ShowUnusableButton.OnToggled += _ => UpdateButtonVisibility();
     }
@@ -100,52 +114,40 @@ public sealed partial class LoadoutsItemListPanel : BoxContainer
 
     public void PopulateLoadouts(bool reset = false)
     {
-        var stopwatch = new Stopwatch();
-        stopwatch.Start();
-
-        try
+        if (reset)
         {
-
-            if (reset)
-            {
-                CategoryContents.RemoveAllChildren();
-                _categoryLists.Clear();
-                _loadoutButtons.Clear();
-            }
-
-            var groups = _prototype.EnumeratePrototypes<LoadoutPrototype>()
-                .OrderBy(l => l.ID)
-                .GroupBy(l => l.Category);
-
-            foreach (var group in groups)
-            {
-                var category = group.Key;
-
-                if (!_categoryLists.TryGetValue(category, out var listBox))
-                {
-                    listBox = CreateLoadoutListBox(category);
-                    CategoryContents.AddChild(listBox);
-                    _categoryLists.Add(category, listBox);
-                }
-
-                foreach (var loadout in group)
-                {
-                    if (_loadoutButtons.TryGetValue(loadout, out var _))
-                        continue;
-
-                    var button = new LoadoutItemButton(loadout);
-                    button.OnPreferenceChanged += p => OnButtonPreferenceChanged(button, p);
-                    button.OnCustomizeToggled += _ => OnCustomizeToggled?.Invoke(button.Preference);
-
-                    listBox.AddChild(button);
-                    _loadoutButtons.Add(loadout, button);
-                }
-            }
-
+            CategoryContents.RemoveAllChildren();
+            _categoryLists.Clear();
+            _loadoutButtons.Clear();
         }
-        finally
+
+        var groups = _prototype.EnumeratePrototypes<LoadoutPrototype>()
+            .OrderBy(l => l.ID)
+            .GroupBy(l => l.Category);
+
+        foreach (var group in groups)
         {
-            Logger.GetSawmill("LoadoutsItemListPanel").Debug($"All loadout items loaded in {stopwatch.Elapsed.TotalMilliseconds}ms");
+            var category = group.Key;
+
+            if (!_categoryLists.TryGetValue(category, out var listBox))
+            {
+                listBox = CreateLoadoutListBox(category);
+                CategoryContents.AddChild(listBox);
+                _categoryLists.Add(category, listBox);
+            }
+
+            foreach (var loadout in group)
+            {
+                if (_loadoutButtons.TryGetValue(loadout, out var _))
+                    continue;
+
+                var button = new LoadoutItemButton(loadout);
+                button.OnPreferenceChanged += p => OnButtonPreferenceChanged(button, p);
+                button.OnCustomizeToggled += _ => OnCustomizeToggled?.Invoke(button.Preference);
+
+                listBox.AddChild(button);
+                _loadoutButtons.Add(loadout, button);
+            }
         }
     }
 
