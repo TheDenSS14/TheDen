@@ -28,31 +28,19 @@ public sealed partial class LoadoutsTab : BoxContainer
     /// </summary>
     public event Action<List<LoadoutPrototype>>? OnRemoveUnusableLoadouts;
 
-    private LoadoutsCategoryPanel _categoryPanel;
-    private LoadoutsItemListPanel _itemListPanel;
-    private LoadoutsCustomizationPanel _customizationPanel;
-
     private int MaxPoints => _configuration.GetCVar(CCVars.GameLoadoutsPoints);
-    private LoadoutPreference? CurrentlyCustomizing => _customizationPanel.Preference;
+    private LoadoutPreference? CurrentlyCustomizing => CustomizationPanel.Preference;
 
     public LoadoutsTab()
     {
         IoCManager.InjectDependencies(this);
         RobustXamlLoader.Load(this);
 
-        _categoryPanel = new();
-        _itemListPanel = new();
-        _customizationPanel = new();
-
-        LoadoutConfigPanels.AddChild(_categoryPanel);
-        LoadoutConfigPanels.AddChild(_itemListPanel);
-        LoadoutConfigPanels.AddChild(_customizationPanel);
-
-        _itemListPanel.OnPointsUpdaated += UpdatePointsDisplay;
-        _itemListPanel.OnCustomizeToggled += ToggleCustomizePreference;
-        _itemListPanel.OnRemoveUnusableLoadouts += RemoveUnusableLoadouts;
-        _itemListPanel.OnPreferenceChanged += UpdateLoadoutPreference;
-        _itemListPanel.OnPreferenceChanged += p =>
+        ItemListPanel.OnPointsUpdaated += UpdatePointsDisplay;
+        ItemListPanel.OnCustomizeToggled += ToggleCustomizePreference;
+        ItemListPanel.OnRemoveUnusableLoadouts += RemoveUnusableLoadouts;
+        ItemListPanel.OnPreferenceChanged += UpdateLoadoutPreference;
+        ItemListPanel.OnPreferenceChanged += p =>
         {
             // If we're equipping a new loadout
             if (p.Selected)
@@ -66,15 +54,15 @@ public sealed partial class LoadoutsTab : BoxContainer
                 SetCustomizePreference(null);
         };
 
-        _categoryPanel.OnCategorySelected += _itemListPanel.SetVisibleCategory;
-        _categoryPanel.SelectLoadoutCategory(null, true);
+        CategoryPanel.OnCategorySelected += ItemListPanel.SetVisibleCategory;
+        CategoryPanel.SelectLoadoutCategory(null, true);
 
-        _customizationPanel.OnCustomizationSaved += UpdateLoadoutPreference;
+        CustomizationPanel.OnCustomizationSaved += UpdateLoadoutPreference;
     }
 
     public void SetProfile(HumanoidCharacterProfile? profile)
     {
-        _itemListPanel.SetProfile(profile);
+        ItemListPanel.SetProfile(profile);
 
         // If the customization panel is open, then we need to sync the panel's Preference
         // with the preference stored in the new profile.
@@ -92,19 +80,19 @@ public sealed partial class LoadoutsTab : BoxContainer
 
     public void SetCharacterDummy(EntityUid? dummy)
     {
-        _itemListPanel.SetCharacterDummy(dummy);
+        ItemListPanel.SetCharacterDummy(dummy);
     }
 
     private void SetCustomizePreference(LoadoutPreference? preference)
     {
-        _customizationPanel.Preference = preference;
+        CustomizationPanel.Preference = preference;
         EntityUid? previewSprite = null;
 
         if (preference != null
             && _prototype.TryIndex<LoadoutPrototype>(preference.LoadoutName, out var loadout))
-            previewSprite = _itemListPanel.GetPreviewEntity(loadout);
+            previewSprite = ItemListPanel.GetPreviewEntity(loadout);
 
-        _customizationPanel.SetPreviewSprite(previewSprite);
+        CustomizationPanel.SetPreviewSprite(previewSprite);
     }
 
     private void ToggleCustomizePreference(LoadoutPreference preference)
@@ -119,7 +107,7 @@ public sealed partial class LoadoutsTab : BoxContainer
     public void Reset()
     {
         SetCustomizePreference(null);
-        _itemListPanel.PopulateLoadouts(reset: true);
+        ItemListPanel.PopulateLoadouts(reset: true);
     }
 
     private void UpdateLoadoutPreference(LoadoutPreference preference)
@@ -129,7 +117,7 @@ public sealed partial class LoadoutsTab : BoxContainer
 
     private void RemoveUnusableLoadouts()
     {
-        var unusable = _itemListPanel.UnusableLoadouts;
+        var unusable = ItemListPanel.UnusableLoadouts;
         OnRemoveUnusableLoadouts?.Invoke(unusable);
     }
 

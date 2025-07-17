@@ -1,6 +1,7 @@
 <BoxContainer xmlns="https://spacestation14.io"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:ui="clr-namespace:Content.Client.UserInterface.Controls"
+    xmlns:denUi="clr-namespace:Content.Client._DEN.Lobby.UI.Controls"
     HorizontalExpand="True"
     VerticalExpand="True"
     Orientation="Vertical">
@@ -29,6 +30,12 @@
         VerticalExpand="True"
         Orientation="Horizontal"
         Align="Begin"
-        Margin="5" />
+        Margin="5">
+
+        <denUi:LoadoutsCategoryPanel Name="CategoryPanel" />
+        <denUi:LoadoutsItemListPanel Name="ItemListPanel" />
+        <denUi:LoadoutsCustomizationPanel Name="CustomizationPanel" />
+
+    </BoxContainer>
 
 </BoxContainer>
