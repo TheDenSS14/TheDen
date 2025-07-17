@@ -273,6 +273,9 @@ public sealed partial class LoadoutsItemListPanel : BoxContainer
             out var reasons
         );
 
+        if (button.Unusable == !isValid)
+            return;
+
         button.SetUnusable(!isValid, reasons);
         button.Visible = isValid || ShowUnusableButton.Pressed;
     }
