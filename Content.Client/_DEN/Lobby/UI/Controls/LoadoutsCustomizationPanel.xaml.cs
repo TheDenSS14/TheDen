@@ -14,6 +14,11 @@ public sealed partial class LoadoutsCustomizationPanel : ScrollContainer
 {
     [Dependency] private readonly IPrototypeManager _prototype = default!;
 
+    /// <summary>
+    ///     Fired when the loadout customization is saved.
+    /// </summary>
+    public event Action<LoadoutPreference>? OnCustomizationSaved;
+
     private readonly Thickness _miscButtonPadding = new(4f);
     private LoadoutPreference? _preference;
 
@@ -46,6 +51,9 @@ public sealed partial class LoadoutsCustomizationPanel : ScrollContainer
         CustomDescriptionEdit.OnTextChanged += _ => UpdateDirty();
         CustomColorSliders.OnColorChanged += _ => UpdateDirty();
         HeirloomCheckBox.OnToggled += _ => UpdateDirty();
+
+        SaveButton.OnPressed += _ => Save();
+        ResetButton.OnPressed += _ => SetFieldsToPreference();
     }
 
     public void SetPreviewSprite(EntityUid? uid) => PreviewSprite.SetEntity(uid);
@@ -63,10 +71,7 @@ public sealed partial class LoadoutsCustomizationPanel : ScrollContainer
         CustomColorBox.Visible = loadout.CustomColorTint;
         HeirloomCheckBox.Visible = loadout.CanBeHeirloom;
 
-        CustomNameEdit.Text = _preference.CustomName ?? string.Empty;
-        CustomDescriptionEdit.TextRope = new Rope.Leaf(_preference.CustomDescription ?? string.Empty);
-        CustomColorSliders.Color = Color.FromHex(_preference.CustomColorTint, Color.White);
-        HeirloomCheckBox.Pressed = _preference.CustomHeirloom ?? false;
+        SetFieldsToPreference();
 
         var firstItem = loadout.Items.First();
         if (!_prototype.TryIndex<EntityPrototype>(firstItem, out var ent))
@@ -78,24 +83,61 @@ public sealed partial class LoadoutsCustomizationPanel : ScrollContainer
         CustomDescriptionEdit.Placeholder = new Rope.Leaf(GetDescription(ent));
     }
 
+    private void SetFieldsToPreference()
+    {
+        CustomNameEdit.Text = _preference?.CustomName ?? string.Empty;
+        CustomDescriptionEdit.TextRope = new Rope.Leaf(_preference?.CustomDescription ?? string.Empty);
+        CustomColorSliders.Color = Color.FromHex(_preference?.CustomColorTint, Color.White);
+        HeirloomCheckBox.Pressed = _preference?.CustomHeirloom ?? false;
+
+        UpdateDirty();
+    }
+
     private void UpdateDirty()
     {
         if (_preference == null)
             return;
 
-        var name = _preference.CustomName ?? string.Empty;
-        var desc = _preference.CustomDescription ?? string.Empty;
-        var color = _preference.CustomColorTint != null ? Color.FromHex(_preference.CustomColorTint) : Color.White;
-        var heirloom = _preference.CustomHeirloom;
+        var prefName = _preference.CustomName ?? string.Empty;
+        var prefDesc = _preference.CustomDescription ?? string.Empty;
+        var prefColor = Color.FromHex(_preference?.CustomColorTint, Color.White);
+        var prefHeirloom = _preference?.CustomHeirloom;
 
-        var nameEqual = CustomNameEdit.Text == name;
-        var descEqual = Rope.Collapse(CustomDescriptionEdit.TextRope) == desc;
-        var colorEqual = !CustomColorBox.Visible || CustomColorSliders.Color == color;
-        var heirloomEqual = !HeirloomCheckBox.Visible || HeirloomCheckBox.Pressed == heirloom;
+        var nameEqual = CustomNameEdit.Text == prefName;
+        var descEqual = Rope.Collapse(CustomDescriptionEdit.TextRope) == prefDesc;
+        var colorEqual = !CustomColorBox.Visible || CustomColorSliders.Color == prefColor;
+        var heirloomEqual = !HeirloomCheckBox.Visible || HeirloomCheckBox.Pressed == prefHeirloom;
 
         var isEqual = nameEqual && descEqual && colorEqual && heirloomEqual;
 
         SetDirty(!isEqual);
+    }
+
+    private void Save()
+    {
+        if (_preference == null)
+            return;
+
+        var name = CustomNameEdit.Text == string.Empty ? null : CustomNameEdit.Text;
+        var desc = Rope.Collapse(CustomDescriptionEdit.TextRope);
+        if (desc == string.Empty)
+            desc = null;
+
+        var color = CustomColorSliders.Visible ? CustomColorSliders.Color.ToHex() : null;
+        var heirloom = HeirloomCheckBox.Visible && HeirloomCheckBox.Pressed;
+
+        var newPref = new LoadoutPreference(
+            loadoutName: _preference.LoadoutName,
+            customName: name,
+            customDescription: desc,
+            customColorTint: color,
+            customHeirloom: heirloom
+        )
+        {
+            Selected = _preference.Selected
+        };
+
+        OnCustomizationSaved?.Invoke(newPref);
     }
 
     private string GetName(EntityPrototype entity)

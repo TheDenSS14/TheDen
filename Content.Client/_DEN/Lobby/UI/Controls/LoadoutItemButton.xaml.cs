@@ -18,6 +18,8 @@ public sealed partial class LoadoutItemButton : ContainerButton
 {
     [Dependency] private readonly IEntityManager _entity = default!;
 
+    private readonly SharedAppearanceSystem _appearance;
+
     /// <summary>
     ///     Fired when this button's loadout preference changes (on/off, appearance, etc).
     /// </summary>
@@ -51,6 +53,7 @@ public sealed partial class LoadoutItemButton : ContainerButton
             _preference = value;
             Pressed = value.Selected;
             UpdateCheckbox();
+            UpdatePaint();
         }
     }
 
@@ -60,14 +63,16 @@ public sealed partial class LoadoutItemButton : ContainerButton
     {
         IoCManager.InjectDependencies(this);
         RobustXamlLoader.Load(this);
+        _appearance = _entity.System<SharedAppearanceSystem>();
 
         Loadout = loadout;
+        InitPreview();
+
         Preference = _preference = new(Loadout.ID);
 
         CustomizeButton.AddStyleClass(CustomizeButtonStyleClass);
         CustomizeButton.Label.Margin = _customizeButtonPadding;
 
-        InitPreview();
         LoadoutNameLabel.Text = GetName();
         CostLabel.Text = Loadout.Cost.ToString();
 
@@ -110,6 +115,19 @@ public sealed partial class LoadoutItemButton : ContainerButton
             EnabledCheckbox.RemoveStyleClass(CheckboxCheckedStyleClass);
 
         CustomizeButton.Visible = Pressed;
+    }
+
+    private void UpdatePaint()
+    {
+        if (!_entity.TryGetComponent<PaintedComponent>(PreviewEntity, out var paint))
+            return;
+
+        paint.Enabled = _preference.CustomColorTint != null;
+        if (_preference.CustomColorTint != null)
+            paint.Color = Color.FromHex(_preference.CustomColorTint);
+
+        _appearance.TryGetData(PreviewEntity.Value, PaintVisuals.Painted, out bool isPainted);
+        _appearance.SetData(PreviewEntity.Value, PaintVisuals.Painted, !isPainted);
     }
 
     private void OnButtonToggled(ButtonToggledEventArgs args)

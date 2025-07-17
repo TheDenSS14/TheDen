@@ -19,7 +19,7 @@ public sealed partial class LoadoutsTab : BoxContainer
     [Dependency] private readonly IPrototypeManager _prototype = default!;
 
     /// <summary>
-    ///     Fired when a loadout preference changes.
+    ///     Fired when a loadout preference changes, prompting the character editor to update the profile.
     /// </summary>
     public event Action<LoadoutPreference>? OnPreferenceChanged;
 
@@ -63,6 +63,8 @@ public sealed partial class LoadoutsTab : BoxContainer
 
         _categoryPanel.OnCategorySelected += _itemListPanel.SetVisibleCategory;
         _categoryPanel.SelectLoadoutCategory(null, true);
+
+        _customizationPanel.OnCustomizationSaved += UpdateLoadoutPreference;
     }
 
     public void SetProfile(HumanoidCharacterProfile? profile)
