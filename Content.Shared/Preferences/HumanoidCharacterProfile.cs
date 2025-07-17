@@ -459,11 +459,23 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
         string? customColor = null,
         bool? customHeirloom = null)
     {
-        var list = new HashSet<LoadoutPreference>(_loadoutPreferences);
+        var newPref = new LoadoutPreference(loadoutId,
+            customName,
+            customDescription,
+            customColor,
+            customHeirloom)
+        { Selected = pref };
 
-        list.RemoveWhere(l => l.LoadoutName == loadoutId);
-        if (pref)
-            list.Add(new(loadoutId, customName, customDescription, customColor, customHeirloom) { Selected = pref });
+        return WithLoadoutPreference(newPref);
+    }
+
+    public HumanoidCharacterProfile WithLoadoutPreference(LoadoutPreference preference)
+    {
+        var list = new HashSet<LoadoutPreference>(_loadoutPreferences);
+        list.RemoveWhere(l => l.LoadoutName == preference.LoadoutName);
+
+        if (preference.Selected)
+            list.Add(preference);
 
         return new HumanoidCharacterProfile(this) { _loadoutPreferences = list };
     }

@@ -612,9 +612,8 @@ namespace Content.Client.Lobby.UI
             ShowLoadouts.Visible = loadoutsEnabled;
             cfgManager.OnValueChanged(CCVars.GameLoadoutsEnabled, LoadoutsChanged);
 
-            LoadoutsTab.OnRemoveUnusableAction += RemoveUnusableLoadouts;
-            LoadoutsTab.OnLoadoutSelectedAction += SelectLoadout;
-            UpdateLoadouts();
+            LoadoutsTab.OnRemoveUnusableLoadouts += RemoveUnusableLoadouts;
+            LoadoutsTab.OnPreferenceChanged += SelectLoadout;
 
             #endregion
 
@@ -939,17 +938,17 @@ namespace Content.Client.Lobby.UI
 
             if (Profile == null || !_prototypeManager.HasIndex<SpeciesPrototype>(Profile.Species))
             {
-                LoadoutsTab.SetPreviewDummy(PreviewDummy);
+                LoadoutsTab.SetCharacterDummy(PreviewDummy);
                 return;
             }
 
             PreviewDummy = _controller.LoadProfileEntity(Profile, ShowClothes.Pressed, ShowLoadouts.Pressed);
             SpriteView.SetEntity(PreviewDummy);
+            LoadoutsTab.SetCharacterDummy(PreviewDummy);
             SkinFurToggle.Visible = _prototypeManager
                 .Index<SpeciesPrototype>(Profile.Species)
                 .SkinColoration == HumanoidSkinColor.HumanAnimal;
 
-            LoadoutsTab.SetPreviewDummy(PreviewDummy);
             _entManager.System<MetaDataSystem>().SetEntityName(PreviewDummy, Profile.Name);
         }
 
@@ -1002,8 +1001,6 @@ namespace Content.Client.Lobby.UI
             UpdateCMarkingsFacialHair();
             UpdateHeightWidthSliders();
             UpdateWeight();
-            LoadoutsTab.SetProfile(Profile);
-            UpdateCharacterRequired();
 
             // Begin CD - Character Records
             Records.Update(profile);
@@ -1017,6 +1014,11 @@ namespace Content.Client.Lobby.UI
             RefreshLifepaths();
             RefreshFlavorText();
             ReloadPreview();
+
+            // DEN: I'm moving this down here because Loadouts rely on the species (and character dummy) to be
+            // up-to-date before it reloads its loadout requirements, and moving loadout updates out of
+            // UpdateCharacterRequired is undesirable.
+            UpdateCharacterRequired();
 
             if (Profile != null)
                 PreferenceUnavailableButton.SelectId((int) Profile.PreferenceUnavailable);
@@ -2515,7 +2517,7 @@ namespace Content.Client.Lobby.UI
                 var temp = TraitPointsBar.Value + points;
                 return preference ? !(temp < 0) : temp < 0;
             }
-            
+
             bool CheckSlots(int slots, bool preference)
             {
                 var temp = _traitCount + slots;
@@ -2591,36 +2593,29 @@ namespace Content.Client.Lobby.UI
 
         public void UpdateLoadouts(bool reload = false)
         {
+            if (reload)
+                LoadoutsTab.Reset();
+
             LoadoutsTab.SetProfile(Profile);
-            LoadoutsTab.UpdateLoadouts(reload);
             ReloadProfilePreview();
         }
 
-        private void SelectLoadout(LoadoutPreference preference, bool selected)
+        private void SelectLoadout(LoadoutPreference preference)
         {
-            // TODO: figure out why WithLoadoutPreference doesn't just use LoadoutPreference
-            Profile = Profile?.WithLoadoutPreference(
-                preference.LoadoutName,
-                selected,
-                preference.CustomName,
-                preference.CustomDescription,
-                preference.CustomColorTint,
-                preference.CustomHeirloom);
-
+            Profile = Profile?.WithLoadoutPreference(preference);
             IsDirty = true;
             SetProfile(Profile, CharacterSlot);
         }
 
-        private void RemoveUnusableLoadouts(HashSet<LoadoutPrototype> loadouts)
+        private void RemoveUnusableLoadouts(List<LoadoutPrototype> loadouts)
         {
             foreach (var loadout in loadouts)
                 Profile = Profile?.WithLoadoutPreference(loadout.ID, false);
 
-            UpdateLoadouts();
             UpdateCharacterRequired();
         }
 
-        // TODO: This one is redundant IRT loadouts because of LoadoutsPanel.xaml, but traits still use them
+        // TODO: This one is redundant IRT loadouts, but traits still use them
         private BoxContainer? FindCategory(string id, NeoTabContainer parent)
         {
             BoxContainer? match = null;
