@@ -1,6 +1,7 @@
 using System.Diagnostics;
 using System.Linq;
 using Content.Client._DEN.Lobby.UI.Loadouts;
+using Content.Client.Administration.UI;
 using Content.Client.Lobby;
 using Content.Client.Players.PlayTimeTracking;
 using Content.Client.Resources;
@@ -46,6 +47,11 @@ public sealed partial class LoadoutsItemListPanel : BoxContainer
     /// </summary>
     public event Action<LoadoutPreference>? OnCustomizeToggled;
 
+    /// <summary>
+    ///     Fired when "remove unusable loadouts" is clicked and confirmed.
+    /// </summary>
+    public event Action? OnRemoveUnusableLoadouts;
+
     // Dependencies
     // Events
     // Constants
@@ -63,15 +69,17 @@ public sealed partial class LoadoutsItemListPanel : BoxContainer
     private Dictionary<string, LoadoutPreference> _profilePreferenceLookup = new();
     private Dictionary<ProtoId<LoadoutCategoryPrototype>, BoxContainer> _categoryLists = new();
     private Dictionary<LoadoutPrototype, LoadoutItemButton> _loadoutButtons = new();
+    private Dictionary<Button, ConfirmationData> _confirmationData = new();
     private ProtoId<LoadoutCategoryPrototype>? _currentCategory = null;
+
+    public List<LoadoutPrototype> UnusableLoadouts => _loadoutButtons.Values
+        .Where(b => b.Preference.Selected && b.Unusable)
+        .Select(b => b.Loadout)
+        .ToList();
 
     private HumanoidCharacterProfile? _profile = null;
     private EntityUid? _characterDummy = null;
     private int MaxPoints => _configuration.GetCVar(CCVars.GameLoadoutsPoints);
-    private IEnumerable<LoadoutPrototype> UnusableLoadouts => _loadoutButtons.Values
-        .Where(b => b.Preference.Selected && b.Unusable)
-        .Select(b => b.Loadout);
-
     private int _points = 0;
 
     public LoadoutsItemListPanel()
@@ -99,6 +107,7 @@ public sealed partial class LoadoutsItemListPanel : BoxContainer
 
 
         ShowUnusableButton.OnToggled += _ => UpdateButtonVisibility();
+        RemoveUnusableButton.OnPressed += _ => RemoveUnusableLoadouts();
     }
 
     public void SetProfile(HumanoidCharacterProfile? profile)
@@ -115,11 +124,38 @@ public sealed partial class LoadoutsItemListPanel : BoxContainer
         var unusable = UnusableLoadouts.Count();
         var removeUnusableText = Loc.GetString(RemoveUnusableLocale, (RemoveUnusableParameter, unusable));
         RemoveUnusableButton.Text = removeUnusableText;
+
+        AdminUIHelpers.RemoveConfirm(RemoveUnusableButton, _confirmationData);
     }
 
     public void SetCharacterDummy(EntityUid? dummy)
     {
         _characterDummy = dummy;
+    }
+
+    public void SetVisibleCategory(ProtoId<LoadoutCategoryPrototype>? category)
+    {
+        if (_currentCategory == category)
+            return;
+
+        var titleText = string.Empty;
+
+        // Hide previous box
+        if (_currentCategory != null
+            && _categoryLists.TryGetValue(_currentCategory.Value, out var oldBox))
+            oldBox.Visible = false;
+
+        _currentCategory = category;
+
+        // Show new box
+        if (_currentCategory != null)
+        {
+            titleText = LoadoutsTab.GetCategoryName(_currentCategory.Value);
+            if (_categoryLists.TryGetValue(_currentCategory.Value, out var listBox))
+                listBox.Visible = true;
+        }
+
+        CategoryTitle.Text = titleText;
     }
 
     public void PopulateLoadouts(bool reset = false)
@@ -241,19 +277,12 @@ public sealed partial class LoadoutsItemListPanel : BoxContainer
         button.Visible = isValid || ShowUnusableButton.Pressed;
     }
 
-    private void RecalculatePoints()
+    private void RemoveUnusableLoadouts()
     {
-        _points = MaxPoints;
+        if (!AdminUIHelpers.TryConfirm(RemoveUnusableButton, _confirmationData))
+            return;
 
-        if (_profile?.LoadoutPreferences != null)
-        {
-            _points -= _profile.LoadoutPreferences
-                .Where(p => p.Selected)
-                .Select(p => _prototype.Index<LoadoutPrototype>(p.LoadoutName))
-                .Sum(l => l.Cost);
-        }
-
-        OnPointsUpdaated?.Invoke(_points);
+        OnRemoveUnusableLoadouts?.Invoke();
     }
 
     private void OnButtonPreferenceChanged(LoadoutItemButton button, LoadoutPreference preference)
@@ -280,6 +309,21 @@ public sealed partial class LoadoutsItemListPanel : BoxContainer
         OnPreferenceChanged?.Invoke(preference);
     }
 
+    private void RecalculatePoints()
+    {
+        _points = MaxPoints;
+
+        if (_profile?.LoadoutPreferences != null)
+        {
+            _points -= _profile.LoadoutPreferences
+                .Where(p => p.Selected)
+                .Select(p => _prototype.Index<LoadoutPrototype>(p.LoadoutName))
+                .Sum(l => l.Cost);
+        }
+
+        OnPointsUpdaated?.Invoke(_points);
+    }
+
     private bool ValidateSelection(LoadoutPrototype loadout, bool attemptSelected)
     {
         var cost = loadout.Cost;
@@ -293,31 +337,6 @@ public sealed partial class LoadoutsItemListPanel : BoxContainer
         // (I.e: Has enough points to deselect)
         // ...Shouldn't happen unless you're making loadouts with negative point costs for some reason.
         return _points + cost < 0;
-    }
-
-    public void SetVisibleCategory(ProtoId<LoadoutCategoryPrototype>? category)
-    {
-        if (_currentCategory == category)
-            return;
-
-        var titleText = string.Empty;
-
-        // Hide previous box
-        if (_currentCategory != null
-            && _categoryLists.TryGetValue(_currentCategory.Value, out var oldBox))
-            oldBox.Visible = false;
-
-        _currentCategory = category;
-
-        // Show new box
-        if (_currentCategory != null)
-        {
-            titleText = LoadoutsTab.GetCategoryName(_currentCategory.Value);
-            if (_categoryLists.TryGetValue(_currentCategory.Value, out var listBox))
-                listBox.Visible = true;
-        }
-
-        CategoryTitle.Text = titleText;
     }
 
     public EntityUid? GetPreviewEntity(LoadoutPrototype loadout)

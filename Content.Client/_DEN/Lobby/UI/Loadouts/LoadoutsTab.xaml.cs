@@ -23,6 +23,11 @@ public sealed partial class LoadoutsTab : BoxContainer
     /// </summary>
     public event Action<LoadoutPreference>? OnPreferenceChanged;
 
+    /// <summary>
+    ///     Fired when requesting to remove unusable loadouts.
+    /// </summary>
+    public event Action<List<LoadoutPrototype>>? OnRemoveUnusableLoadouts;
+
     private LoadoutsCategoryPanel _categoryPanel;
     private LoadoutsItemListPanel _itemListPanel;
     private LoadoutsCustomizationPanel _customizationPanel;
@@ -45,6 +50,7 @@ public sealed partial class LoadoutsTab : BoxContainer
 
         _itemListPanel.OnPointsUpdaated += UpdatePointsDisplay;
         _itemListPanel.OnCustomizeToggled += ToggleCustomizePreference;
+        _itemListPanel.OnRemoveUnusableLoadouts += RemoveUnusableLoadouts;
         _itemListPanel.OnPreferenceChanged += UpdateLoadoutPreference;
         _itemListPanel.OnPreferenceChanged += p =>
         {
@@ -119,6 +125,12 @@ public sealed partial class LoadoutsTab : BoxContainer
     private void UpdateLoadoutPreference(LoadoutPreference preference)
     {
         OnPreferenceChanged?.Invoke(preference);
+    }
+
+    private void RemoveUnusableLoadouts()
+    {
+        var unusable = _itemListPanel.UnusableLoadouts;
+        OnRemoveUnusableLoadouts?.Invoke(unusable);
     }
 
     private void UpdatePointsDisplay(int points)
