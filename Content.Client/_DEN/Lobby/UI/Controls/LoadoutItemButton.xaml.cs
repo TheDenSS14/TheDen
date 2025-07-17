@@ -14,7 +14,7 @@ using Robust.Shared.Prototypes;
 namespace Content.Client._DEN.Lobby.UI.Controls;
 
 [GenerateTypedNameReferences]
-public sealed partial class LoadoutItemButton : ContainerButton
+public sealed partial class LoadoutItemButton : BoxContainer
 {
     [Dependency] private readonly IEntityManager _entity = default!;
 
@@ -32,7 +32,7 @@ public sealed partial class LoadoutItemButton : ContainerButton
 
     private const string CheckboxCheckedStyleClass = CheckBox.StyleClassCheckBoxChecked;
     private const string CustomizeButtonStyleClass = StyleNano.StyleClassAltButton;
-    private readonly Thickness _customizeButtonPadding = new Thickness(0, 10);
+    private readonly Thickness _customizeButtonPadding = new Thickness(5, 0);
 
     // Dependencies
     // Events
@@ -43,6 +43,8 @@ public sealed partial class LoadoutItemButton : ContainerButton
     // Dynamic Private Variables
 
     public LoadoutPrototype Loadout;
+    public bool Pressed => ItemToggleButton.Pressed;
+
     private LoadoutPreference _preference;
 
     public LoadoutPreference Preference
@@ -51,7 +53,7 @@ public sealed partial class LoadoutItemButton : ContainerButton
         set
         {
             _preference = value;
-            Pressed = value.Selected;
+            ItemToggleButton.Pressed = value.Selected;
             UpdateCheckbox();
             UpdatePaint();
         }
@@ -65,19 +67,19 @@ public sealed partial class LoadoutItemButton : ContainerButton
         RobustXamlLoader.Load(this);
         _appearance = _entity.System<SharedAppearanceSystem>();
 
-        Loadout = loadout;
-        InitPreview();
-
-        Preference = _preference = new(Loadout.ID);
-
         CustomizeButton.AddStyleClass(CustomizeButtonStyleClass);
         CustomizeButton.Label.Margin = _customizeButtonPadding;
+
+        Loadout = loadout;
+        InitPreview();
+        Preference = _preference = new(Loadout.ID);
+
 
         LoadoutNameLabel.Text = GetName();
         CostLabel.Text = Loadout.Cost.ToString();
 
-        OnToggled += OnButtonToggled;
-        OnToggled += _ => UpdateCheckbox();
+        ItemToggleButton.OnToggled += OnButtonToggled;
+        ItemToggleButton.OnToggled += _ => UpdateCheckbox();
         CustomizeButton.OnPressed += _ => OnCustomizeToggled?.Invoke(Loadout.ID);
     }
 
@@ -109,12 +111,12 @@ public sealed partial class LoadoutItemButton : ContainerButton
     // This is structured the way it is to reduce redundant style updates.
     private void UpdateCheckbox()
     {
-        if (Pressed && !EnabledCheckbox.HasStyleClass(CheckboxCheckedStyleClass))
+        if (ItemToggleButton.Pressed && !EnabledCheckbox.HasStyleClass(CheckboxCheckedStyleClass))
             EnabledCheckbox.AddStyleClass(CheckboxCheckedStyleClass);
-        else if (!Pressed && EnabledCheckbox.HasStyleClass(CheckboxCheckedStyleClass))
+        else if (!ItemToggleButton.Pressed && EnabledCheckbox.HasStyleClass(CheckboxCheckedStyleClass))
             EnabledCheckbox.RemoveStyleClass(CheckboxCheckedStyleClass);
 
-        CustomizeButton.Visible = Pressed;
+        CustomizeButton.Visible = ItemToggleButton.Pressed;
     }
 
     private void UpdatePaint()
@@ -132,7 +134,7 @@ public sealed partial class LoadoutItemButton : ContainerButton
         _appearance.SetData(PreviewEntity.Value, PaintVisuals.Painted, !isPainted, appearance);
     }
 
-    private void OnButtonToggled(ButtonToggledEventArgs args)
+    private void OnButtonToggled(BaseButton.ButtonToggledEventArgs args)
     {
         _preference.Selected = args.Pressed;
         OnPreferenceChanged?.Invoke(_preference);
@@ -141,7 +143,7 @@ public sealed partial class LoadoutItemButton : ContainerButton
     public void SetSelected(bool selected)
     {
         _preference.Selected = selected;
-        Pressed = selected;
+        ItemToggleButton.Pressed = selected;
     }
 
     private string GetName()

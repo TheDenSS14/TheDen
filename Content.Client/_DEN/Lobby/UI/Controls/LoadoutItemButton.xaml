@@ -1,43 +1,46 @@
-<ContainerButton
+<BoxContainer
     xmlns="https://spacestation14.io"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:ui="clr-namespace:Content.Client.UserInterface.Controls"
     HorizontalExpand="True"
     HorizontalAlignment="Stretch"
-    ToggleMode="True"
-    StyleClasses="button">
-    <BoxContainer
-        HorizontalExpand="True"
-        VerticalExpand="True"
-        HorizontalAlignment="Stretch"
-        VerticalAlignment="Center"
-        Orientation="Horizontal"
-        SeparationOverride="5">
-        <Label
-            Name="CostLabel"
-            Text="0"
-            Align="Center"
-            StyleClasses="LabelHeading"
-            SetWidth="32"
-            ClipText="True"/>
-        <TextureRect
-            Name="EnabledCheckbox"
-            VerticalAlignment="Center"
-            StyleClasses="checkBox"/>
-        <SpriteView
-            Name="PreviewSprite"
-            Scale="2.0, 2.0"
-            OverrideDirection="South"
-            VerticalAlignment="Center" />
-        <Label
-            Name="LoadoutNameLabel"
+    SeparationOverride="5">
+    <ContainerButton
+        Name="ItemToggleButton"
+        ToggleMode="True"
+        StyleClasses="button">
+        <BoxContainer
             HorizontalExpand="True"
-            Margin="0 0 15 0" />
-        <Button
-            Name="CustomizeButton"
+            VerticalExpand="True"
+            HorizontalAlignment="Stretch"
             VerticalAlignment="Center"
-            Margin="0 5 0 5"
-            Text="{Loc loadout-item-button-customize-button}"
-            Visible="False" />
-    </BoxContainer>
-</ContainerButton>
+            Orientation="Horizontal"
+            SeparationOverride="5">
+            <Label
+                Name="CostLabel"
+                Text="0"
+                Align="Center"
+                StyleClasses="LabelHeading"
+                SetWidth="32"
+                ClipText="True"/>
+            <TextureRect
+                Name="EnabledCheckbox"
+                VerticalAlignment="Center"
+                StyleClasses="checkBox"/>
+            <SpriteView
+                Name="PreviewSprite"
+                Scale="2.0, 2.0"
+                OverrideDirection="South"
+                VerticalAlignment="Center" />
+            <Label
+                Name="LoadoutNameLabel"
+                Margin="0 0 10 0" />
+        </BoxContainer>
+    </ContainerButton>
+    <Button
+        Name="CustomizeButton"
+        VerticalExpand="True"
+        VerticalAlignment="Stretch"
+        Text="{Loc loadout-item-button-customize-button}"
+        Visible="False" />
+</BoxContainer>

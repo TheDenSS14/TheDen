@@ -84,7 +84,7 @@ public sealed partial class LoadoutsTab : BoxContainer
         }
     }
 
-    public void SetPreviewDummy(EntityUid? dummy)
+    public void SetCharacterDummy(EntityUid? dummy)
     {
         _itemListPanel.SetCharacterDummy(dummy);
     }
