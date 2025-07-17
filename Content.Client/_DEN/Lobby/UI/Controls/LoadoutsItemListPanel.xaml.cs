@@ -1,3 +1,4 @@
+using System.Diagnostics;
 using System.Linq;
 using Content.Client._DEN.Lobby.UI.Loadouts;
 using Content.Client.Lobby;
@@ -16,7 +17,6 @@ using Robust.Client.UserInterface.Controls;
 using Robust.Client.UserInterface.XAML;
 using Robust.Shared.Configuration;
 using Robust.Shared.Prototypes;
-using Robust.Shared.Timing;
 
 namespace Content.Client._DEN.Lobby.UI.Controls;
 
@@ -55,6 +55,8 @@ public sealed partial class LoadoutsItemListPanel : BoxContainer
     // Dynamic Private Variables
 
     private const string CategoryNameFontPath = "/Fonts/NotoSans/NotoSans-Bold.ttf";
+    private const string RemoveUnusableLocale = "humanoid-profile-editor-loadouts-remove-unusable-button";
+    private const string RemoveUnusableParameter = "count";
     private const int CategoryNameFontSize = 16;
     private Font CategoryNameFont => _resourceCache.GetFont(CategoryNameFontPath, CategoryNameFontSize);
 
@@ -66,6 +68,10 @@ public sealed partial class LoadoutsItemListPanel : BoxContainer
     private HumanoidCharacterProfile? _profile = null;
     private EntityUid? _characterDummy = null;
     private int MaxPoints => _configuration.GetCVar(CCVars.GameLoadoutsPoints);
+    private IEnumerable<LoadoutPrototype> UnusableLoadouts => _loadoutButtons.Values
+        .Where(b => b.Preference.Selected && b.Unusable)
+        .Select(b => b.Loadout);
+
     private int _points = 0;
 
     public LoadoutsItemListPanel()
@@ -105,6 +111,10 @@ public sealed partial class LoadoutsItemListPanel : BoxContainer
         RecalculatePoints();
         UpdatePreferences();
         UpdateRequirements();
+
+        var unusable = UnusableLoadouts.Count();
+        var removeUnusableText = Loc.GetString(RemoveUnusableLocale, (RemoveUnusableParameter, unusable));
+        RemoveUnusableButton.Text = removeUnusableText;
     }
 
     public void SetCharacterDummy(EntityUid? dummy)
