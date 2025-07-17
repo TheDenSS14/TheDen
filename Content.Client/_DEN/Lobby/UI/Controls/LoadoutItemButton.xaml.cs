@@ -51,6 +51,7 @@ public sealed partial class LoadoutItemButton : BoxContainer
     public LoadoutPrototype Loadout;
     public bool Pressed => ItemToggleButton.Pressed;
     public bool Unusable => ItemToggleButton.HasStyleClass(UnusableStyleClass);
+    public bool Unwearable => ItemToggleButton.HasStyleClass(UnwearableStyleClass);
 
     private LoadoutPreference _preference;
 
@@ -123,6 +124,11 @@ public sealed partial class LoadoutItemButton : BoxContainer
         var message = FormattedMessage.FromMarkupPermissive(tooltipText.ToString());
         formattedTooltip.SetMessage(message);
         ItemToggleButton.TooltipSupplier = _ => formattedTooltip;
+    }
+
+    public void SetUnwearable(bool unwearable)
+    {
+        SetStyleClass(UnwearableStyleClass, unwearable);
     }
 
     public void SetStyleClass(string styleClass, bool enabled)

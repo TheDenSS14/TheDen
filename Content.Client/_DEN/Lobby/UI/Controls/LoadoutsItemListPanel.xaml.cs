@@ -6,6 +6,7 @@ using Content.Client.Lobby;
 using Content.Client.Players.PlayTimeTracking;
 using Content.Client.Resources;
 using Content.Shared.CCVar;
+using Content.Shared.Clothing.Components;
 using Content.Shared.Clothing.Loadouts.Prototypes;
 using Content.Shared.Clothing.Loadouts.Systems;
 using Content.Shared.Customization.Systems;
@@ -73,7 +74,7 @@ public sealed partial class LoadoutsItemListPanel : BoxContainer
     private ProtoId<LoadoutCategoryPrototype>? _currentCategory = null;
 
     public List<LoadoutPrototype> UnusableLoadouts => _loadoutButtons.Values
-        .Where(b => b.Preference.Selected && b.Unusable)
+        .Where(b => b.Preference.Selected && (b.Unusable || b.Unwearable))
         .Select(b => b.Loadout)
         .ToList();
 
@@ -235,7 +236,7 @@ public sealed partial class LoadoutsItemListPanel : BoxContainer
     private void UpdateButtonVisibility()
     {
         foreach (var button in _loadoutButtons.Values)
-            button.Visible = ShowUnusableButton.Pressed || !button.Unusable;
+            button.Visible = ShowUnusableButton.Pressed || !(button.Unusable || button.Unwearable);
     }
 
     private void UpdateRequirements()
@@ -248,7 +249,10 @@ public sealed partial class LoadoutsItemListPanel : BoxContainer
         var whitelisted = _jobRequirements.IsWhitelisted();
 
         foreach (var button in _loadoutButtons.Values)
+        {
             UpdateButtonRequirements(button, mainJob, playtimes, whitelisted);
+            UpdateButtonWearable(button);
+        }
     }
 
     private void UpdateButtonRequirements(LoadoutItemButton button,
@@ -278,6 +282,22 @@ public sealed partial class LoadoutsItemListPanel : BoxContainer
 
         button.SetUnusable(!isValid, reasons);
         button.Visible = isValid || ShowUnusableButton.Pressed;
+    }
+
+    private void UpdateButtonWearable(LoadoutItemButton button)
+    {
+        var wearable = true;
+
+        if (_characterDummy == null
+            || button.PreviewEntity == null
+            || _entity.HasComponent<ClothingComponent>(button.PreviewEntity.Value)
+            && !_characterRequirements.CanEntityWearItem(_characterDummy.Value, button.PreviewEntity.Value))
+            wearable = false;
+
+        if (button.Unwearable == !wearable)
+            return;
+
+        button.SetUnwearable(!wearable);
     }
 
     private void RemoveUnusableLoadouts()
