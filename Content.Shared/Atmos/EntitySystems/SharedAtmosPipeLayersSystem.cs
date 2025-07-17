@@ -37,7 +37,10 @@ public abstract partial class SharedAtmosPipeLayersSystem : EntitySystem
 
         SubscribeLocalEvent<AtmosPipeLayersComponent, ExaminedEvent>(OnExamined);
         SubscribeLocalEvent<AtmosPipeLayersComponent, GetVerbsEvent<Verb>>(OnGetVerb);
+        /* FIXME: Vents and thermomachines depend on being screwdriven and this interferes with that.
+            For the time being this will be disabled. Using the Verbs will work per usual.
         SubscribeLocalEvent<AtmosPipeLayersComponent, InteractUsingEvent>(OnInteractUsing);
+        */
         SubscribeLocalEvent<AtmosPipeLayersComponent, UseInHandEvent>(OnUseInHandEvent);
         SubscribeLocalEvent<AtmosPipeLayersComponent, TrySetNextPipeLayerCompletedEvent>(OnSetNextPipeLayerCompleted);
         SubscribeLocalEvent<AtmosPipeLayersComponent, TrySettingPipeLayerCompletedEvent>(OnSettingPipeLayerCompleted);
