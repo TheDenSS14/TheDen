@@ -6,6 +6,7 @@
     VerticalExpand="True"
     VScrollEnabled="True"
     HorizontalAlignment="Stretch"
-    SetWidth="250" />
+    SetWidth="260" />
 <!-- 250 is about the width of the text "Nanotrasen Representative";
-    any smaller and the control will resize itself inconsistently. -->
+    any smaller and the control will resize itself inconsistently.
+    A little leeway is made for the equipped loadout number. -->

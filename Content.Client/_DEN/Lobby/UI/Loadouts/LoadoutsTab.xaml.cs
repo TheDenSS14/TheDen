@@ -63,6 +63,7 @@ public sealed partial class LoadoutsTab : BoxContainer
     public void SetProfile(HumanoidCharacterProfile? profile)
     {
         ItemListPanel.SetProfile(profile);
+        CategoryPanel.UpdateLoadoutCounts(profile);
 
         // If the customization panel is open, then we need to sync the panel's Preference
         // with the preference stored in the new profile.

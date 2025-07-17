@@ -52,6 +52,13 @@ public sealed partial class LoadoutItemButton : BoxContainer
     public bool Pressed => ItemToggleButton.Pressed;
     public bool Unusable => ItemToggleButton.HasStyleClass(UnusableStyleClass);
     public bool Unwearable => ItemToggleButton.HasStyleClass(UnwearableStyleClass);
+    public string LoadoutName => LoadoutNameLabel.Text ?? string.Empty;
+
+    /// <summary>
+    ///     Whether or not this button matches the current search filter.
+    ///     Used externally.
+    /// </summary>
+    public bool MatchFilter = true;
 
     private LoadoutPreference _preference;
 
