@@ -54,7 +54,7 @@ public sealed partial class LoadoutItemButton : BoxContainer
         {
             _preference = value;
             ItemToggleButton.Pressed = value.Selected;
-            UpdateCheckbox();
+            UpdatePressedVisuals();
             UpdatePaint();
         }
     }
@@ -79,7 +79,7 @@ public sealed partial class LoadoutItemButton : BoxContainer
         CostLabel.Text = Loadout.Cost.ToString();
 
         ItemToggleButton.OnToggled += OnButtonToggled;
-        ItemToggleButton.OnToggled += _ => UpdateCheckbox();
+        ItemToggleButton.OnToggled += _ => UpdatePressedVisuals();
         CustomizeButton.OnPressed += _ => OnCustomizeToggled?.Invoke(Loadout.ID);
     }
 
@@ -101,14 +101,8 @@ public sealed partial class LoadoutItemButton : BoxContainer
         PreviewSprite.SetEntity(PreviewEntity);
     }
 
-    // This is structured the way it is to reduce redundant style updates.
-    private void UpdateCheckbox()
+    private void UpdatePressedVisuals()
     {
-        if (ItemToggleButton.Pressed && !EnabledCheckbox.HasStyleClass(CheckboxCheckedStyleClass))
-            EnabledCheckbox.AddStyleClass(CheckboxCheckedStyleClass);
-        else if (!ItemToggleButton.Pressed && EnabledCheckbox.HasStyleClass(CheckboxCheckedStyleClass))
-            EnabledCheckbox.RemoveStyleClass(CheckboxCheckedStyleClass);
-
         CustomizeButton.Visible = ItemToggleButton.Pressed;
     }
 
@@ -142,6 +136,7 @@ public sealed partial class LoadoutItemButton : BoxContainer
     {
         _preference.Selected = selected;
         ItemToggleButton.Pressed = selected;
+        UpdatePressedVisuals();
     }
 
     private string GetName()
