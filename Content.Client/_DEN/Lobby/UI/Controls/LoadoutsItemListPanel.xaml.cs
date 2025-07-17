@@ -106,7 +106,7 @@ public sealed partial class LoadoutsItemListPanel : BoxContainer
                 .Debug($"All loadout items loaded in {stopwatch.Elapsed.TotalMilliseconds}ms");
         }
 
-
+        SearchLineEdit.OnTextChanged += args => UpdateSearchFilter(args.Text);
         ShowUnusableButton.OnToggled += _ => UpdateButtonVisibility();
         RemoveUnusableButton.OnPressed += _ => RemoveUnusableLoadouts();
     }
@@ -212,6 +212,23 @@ public sealed partial class LoadoutsItemListPanel : BoxContainer
         return listBox;
     }
 
+    private void UpdateSearchFilter(string filter)
+    {
+        filter = filter.ToLowerInvariant();
+
+        foreach (var (loadout, button) in _loadoutButtons)
+        {
+            var id = loadout.ID.ToLowerInvariant();
+            var name = button.LoadoutName.ToLowerInvariant();
+            var match = string.IsNullOrWhiteSpace(filter)
+                || id.Contains(filter)
+                || name.Contains(filter);
+
+            button.MatchFilter = match;
+            UpdateButtonVisible(button);
+        }
+    }
+
     private void UpdatePreferences()
     {
         var profilePrefs = _profile?.LoadoutPreferences ?? new();
@@ -236,7 +253,13 @@ public sealed partial class LoadoutsItemListPanel : BoxContainer
     private void UpdateButtonVisibility()
     {
         foreach (var button in _loadoutButtons.Values)
-            button.Visible = ShowUnusableButton.Pressed || !(button.Unusable || button.Unwearable);
+            UpdateButtonVisible(button);
+    }
+
+    private void UpdateButtonVisible(LoadoutItemButton button)
+    {
+        button.Visible = button.MatchFilter &&
+            (ShowUnusableButton.Pressed || !(button.Unusable || button.Unwearable));
     }
 
     private void UpdateRequirements()
