@@ -119,15 +119,17 @@ public sealed partial class LoadoutItemButton : ContainerButton
 
     private void UpdatePaint()
     {
-        if (!_entity.TryGetComponent<PaintedComponent>(PreviewEntity, out var paint))
+        if (!Preference.Selected
+            || !_entity.TryGetComponent<PaintedComponent>(PreviewEntity, out var paint)
+            || !_entity.TryGetComponent<AppearanceComponent>(PreviewEntity, out var appearance))
             return;
 
         paint.Enabled = _preference.CustomColorTint != null;
         if (_preference.CustomColorTint != null)
             paint.Color = Color.FromHex(_preference.CustomColorTint);
 
-        _appearance.TryGetData(PreviewEntity.Value, PaintVisuals.Painted, out bool isPainted);
-        _appearance.SetData(PreviewEntity.Value, PaintVisuals.Painted, !isPainted);
+        _appearance.TryGetData(PreviewEntity.Value, PaintVisuals.Painted, out bool isPainted, appearance);
+        _appearance.SetData(PreviewEntity.Value, PaintVisuals.Painted, !isPainted, appearance);
     }
 
     private void OnButtonToggled(ButtonToggledEventArgs args)
