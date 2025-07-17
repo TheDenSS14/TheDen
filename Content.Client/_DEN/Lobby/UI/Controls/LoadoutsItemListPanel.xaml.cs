@@ -77,6 +77,8 @@ public sealed partial class LoadoutsItemListPanel : BoxContainer
 
         CategoryTitle.FontOverride = CategoryNameFont;
         PopulateLoadouts();
+
+        ShowUnusableButton.OnToggled += _ => UpdateButtonVisibility();
     }
 
     public void SetProfile(HumanoidCharacterProfile? profile)
@@ -182,6 +184,12 @@ public sealed partial class LoadoutsItemListPanel : BoxContainer
         }
     }
 
+    private void UpdateButtonVisibility()
+    {
+        foreach (var button in _loadoutButtons.Values)
+            button.Visible = ShowUnusableButton.Pressed || !button.Unusable;
+    }
+
     private void UpdateRequirements()
     {
         if (_profile == null)
@@ -218,6 +226,7 @@ public sealed partial class LoadoutsItemListPanel : BoxContainer
         );
 
         button.SetUnusable(!isValid, reasons);
+        button.Visible = isValid || ShowUnusableButton.Pressed;
     }
 
     private void RecalculatePoints()

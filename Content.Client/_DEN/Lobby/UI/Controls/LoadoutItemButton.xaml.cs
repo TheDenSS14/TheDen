@@ -50,6 +50,7 @@ public sealed partial class LoadoutItemButton : BoxContainer
 
     public LoadoutPrototype Loadout;
     public bool Pressed => ItemToggleButton.Pressed;
+    public bool Unusable => ItemToggleButton.HasStyleClass(UnusableStyleClass);
 
     private LoadoutPreference _preference;
 
