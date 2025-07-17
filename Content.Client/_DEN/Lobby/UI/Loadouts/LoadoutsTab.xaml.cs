@@ -27,7 +27,6 @@ public sealed partial class LoadoutsTab : BoxContainer
     private LoadoutsItemListPanel _itemListPanel;
     private LoadoutsCustomizationPanel _customizationPanel;
 
-    private HumanoidCharacterProfile? _profile = null;
     private int MaxPoints => _configuration.GetCVar(CCVars.GameLoadoutsPoints);
     private LoadoutPreference? CurrentlyCustomizing => _customizationPanel.Preference;
 
@@ -69,14 +68,15 @@ public sealed partial class LoadoutsTab : BoxContainer
 
     public void SetProfile(HumanoidCharacterProfile? profile)
     {
-        _profile = profile;
         _itemListPanel.SetProfile(profile);
 
+        // If the customization panel is open, then we need to sync the panel's Preference
+        // with the preference stored in the new profile.
         if (CurrentlyCustomizing?.LoadoutName != null
-            && _profile?.LoadoutPreferences != null
-            && _profile.LoadoutPreferences.Count > 0)
+            && profile?.LoadoutPreferences != null
+            && profile.LoadoutPreferences.Count > 0)
         {
-            var newPref = _profile.LoadoutPreferences
+            var newPref = profile.LoadoutPreferences
                 .FirstOrDefault(p => p.LoadoutName == CurrentlyCustomizing.LoadoutName);
 
             if (newPref != null)
