@@ -1524,6 +1524,13 @@
       - WeaponPistolMk58
       - WeaponPistolN1984
       - WeaponPistolViper
+      - MagazineCaselessRifleIncendiary
+      - MagazineCaselessRifleUranium
+      - MagazineBoxCaselessRifleIncendiary
+      - MagazineBoxCaselessRifleUranium
+  - type: EmagLatheRecipes
+    emagDynamicRecipes:
+      - EnergySwordDouble
       - WeaponPistolCobra
       - MagazineRifleShrapnel
       - MagazinePistolShrapnel
@@ -1531,19 +1538,11 @@
       - MagazineMagnumShrapnel
       - MagazineLightRifleShrapnel
       - MagazineCaselessRifleShrapnel
-      - MagazineCaselessRifleIncendiary
-      - MagazineCaselessRifleUranium
       - MagazineBoxPistolShrapnel
       - MagazineBoxMagnumShrapnel
       - MagazineBoxLightRifleShrapnel
       - MagazineBoxRifleShrapnel
       - MagazineBoxCaselessRifleShrapnel
-      - MagazineBoxCaselessRifleIncendiary
-      - MagazineBoxCaselessRifleUranium
-  - type: EmagLatheRecipes
-    emagDynamicRecipes:
-      - EnergySwordDouble
-      - WeaponPistolCobra
   - type: MaterialStorage
     whitelist:
       tags:
