@@ -100,10 +100,7 @@ public sealed partial class LoadoutItemButton : BoxContainer
         PreviewEntity = _entity.Spawn(previewProto, MapCoordinates.Nullspace);
 
         if (Loadout.CustomColorTint)
-        {
             _entity.EnsureComponent<AppearanceComponent>(PreviewEntity.Value);
-            _entity.EnsureComponent<PaintedComponent>(PreviewEntity.Value);
-        }
 
         PreviewSprite.SetEntity(PreviewEntity);
     }
@@ -122,13 +119,23 @@ public sealed partial class LoadoutItemButton : BoxContainer
     private void UpdatePaint()
     {
         if (!Preference.Selected
-            || !_entity.TryGetComponent<PaintedComponent>(PreviewEntity, out var paint)
             || !_entity.TryGetComponent<AppearanceComponent>(PreviewEntity, out var appearance))
             return;
 
-        paint.Enabled = _preference.CustomColorTint != null;
-        if (_preference.CustomColorTint != null)
+        // This is probably not the most efficient way of doing it (adding/removing the component),
+        // but I could not get it to work intuitively with the way the old system does it,
+        // because it seems like paint.Enabled is completely ignored by paint visuals for some reason.
+        // I.e. if you turned paint.Enabled off, it would ignore that and paint it anyway.
+        // Doing it this way does, however, decrease startup impact.
+        var hasColor = _preference.CustomColorTint != null;
+        if (hasColor)
+        {
+            var paint = _entity.EnsureComponent<PaintedComponent>(PreviewEntity.Value);
+            paint.Enabled = true;
             paint.Color = Color.FromHex(_preference.CustomColorTint);
+        }
+        else
+            _entity.RemoveComponent<PaintedComponent>(PreviewEntity.Value);
 
         _appearance.TryGetData(PreviewEntity.Value, PaintVisuals.Painted, out bool isPainted, appearance);
         _appearance.SetData(PreviewEntity.Value, PaintVisuals.Painted, !isPainted, appearance);
