@@ -17,10 +17,6 @@
   descriptionKey: nationality_description_solarian
   hostile:
   - Bieselite
-  requirements:
-    - !type:CharacterSpeciesRequirement
-      species:
-        - Human
   functions:
     - !type:TraitModifyLanguages
       languagesSpoken:
@@ -33,10 +29,6 @@
   id: Valyrian
   nameKey: nationality_name_valyrian
   descriptionKey: nationality_description_valyrian
-  requirements:
-    - !type:CharacterSpeciesRequirement
-      species:
-        - Harpy
   functions:
     - !type:TraitModifyLanguages
       languagesSpoken:
