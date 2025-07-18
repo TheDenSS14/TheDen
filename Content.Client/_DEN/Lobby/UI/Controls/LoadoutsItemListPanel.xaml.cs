@@ -58,15 +58,6 @@ public sealed partial class LoadoutsItemListPanel : BoxContainer
     /// </summary>
     public event Action<string>? OnOpenGuidebook;
 
-
-    // Dependencies
-    // Events
-    // Constants
-    // Data Lists
-    // Private Class Members
-    // Public Variables
-    // Dynamic Private Variables
-
     private const string CategoryNameFontPath = "/Fonts/NotoSans/NotoSans-Bold.ttf";
     private const string RemoveUnusableLocale = "humanoid-profile-editor-loadouts-remove-unusable-button";
     private const string RemoveUnusableParameter = "count";
