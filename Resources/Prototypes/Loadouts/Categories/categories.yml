@@ -248,6 +248,7 @@
     - JobsSecurityCorpsman
     - JobsSecurityDetective
     - JobsSecurityHeadOfSecurity
+    - JobsSecurityPrisonGuard
     - JobsSecuritySecurityOfficer
     - JobsSecuritySeniorOfficer
     - JobsSecurityWarden
@@ -268,6 +269,9 @@
   id: JobsSecurityHeadOfSecurity
 
 - type: loadoutCategory
+  id: JobsSecurityPrisonGuard
+
+- type: loadoutCategory
   id: JobsSecuritySecurityOfficer
 
 - type: loadoutCategory
@@ -283,13 +287,16 @@
     - JobsServiceAUncategorized
     - JobsServiceBartender
     - JobsServiceBotanist
+    - JobsServiceBoxer
     - JobsServiceChef
     - JobsServiceClown
     - JobsServiceJanitor
     - JobsServiceLawyer
+    - JobsServiceMartialArtist
     - JobsServiceMime
     - JobsServiceMusician
     - JobsServiceReporter
+    - JobsServiceZookeeper
 
 - type: loadoutCategory
   id: JobsServiceAUncategorized
@@ -299,6 +306,9 @@
 
 - type: loadoutCategory
   id: JobsServiceBotanist
+
+- type: loadoutCategory
+  id: JobsServiceBoxer
 
 - type: loadoutCategory
   id: JobsServiceChef
@@ -313,6 +323,9 @@
   id: JobsServiceLawyer
 
 - type: loadoutCategory
+  id: JobsServiceMartialArtist
+
+- type: loadoutCategory
   id: JobsServiceMime
 
 - type: loadoutCategory
@@ -321,18 +334,25 @@
 - type: loadoutCategory
   id: JobsServiceReporter
 
+- type: loadoutCategory
+  id: JobsServiceZookeeper
+
   # Misc
 - type: loadoutCategory
   id: JobsZMisc # this breaks convention a bit but the oddballs should be after everything else
   subCategories: # this can also be for unique/station-specific jobs like boxer/gladiator
     - JobsZMiscAUncategorized
     - JobsZMiscPrisoner
+    - JobsZMiscGladiator
 
 - type: loadoutCategory
   id: JobsZMiscAUncategorized
 
 - type: loadoutCategory
   id: JobsZMiscPrisoner
+
+- type: loadoutCategory
+  id: JobsZMiscGladiator
 
 # Now Leaving: Jobs Category
 

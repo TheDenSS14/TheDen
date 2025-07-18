@@ -19,7 +19,7 @@
 # SPDX-FileCopyrightText: 2022 Zymem
 # SPDX-FileCopyrightText: 2022 and_a
 # SPDX-FileCopyrightText: 2022 areit
-# SPDX-FileCopyrightText: 2022 fishfish458 <fishfish458>
+# SPDX-FileCopyrightText: 2022 fishfish458
 # SPDX-FileCopyrightText: 2022 keronshb
 # SPDX-FileCopyrightText: 2022 mirrorcult
 # SPDX-FileCopyrightText: 2023 AJCM
@@ -60,7 +60,7 @@
 # SPDX-FileCopyrightText: 2023 brainfood1183
 # SPDX-FileCopyrightText: 2023 chromiumboy
 # SPDX-FileCopyrightText: 2023 crazybrain23
-# SPDX-FileCopyrightText: 2023 deltanedas <@deltanedas:kde.org>
+# SPDX-FileCopyrightText: 2023 deltanedas
 # SPDX-FileCopyrightText: 2023 dontbetank
 # SPDX-FileCopyrightText: 2023 eclips_e
 # SPDX-FileCopyrightText: 2023 lapatison
@@ -97,10 +97,10 @@
 # SPDX-FileCopyrightText: 2024 Verm
 # SPDX-FileCopyrightText: 2024 VividPups
 # SPDX-FileCopyrightText: 2024 WarMechanic
-# SPDX-FileCopyrightText: 2024 deltanedas
 # SPDX-FileCopyrightText: 2024 fenndragon
 # SPDX-FileCopyrightText: 2024 metalgearsloth
 # SPDX-FileCopyrightText: 2024 ninruB
+# SPDX-FileCopyrightText: 2024 pofitlo
 # SPDX-FileCopyrightText: 2024 takemysoult
 # SPDX-FileCopyrightText: 2025 Ducks
 # SPDX-FileCopyrightText: 2025 MajorMoth
@@ -2036,6 +2036,17 @@
     Telecrystal: 3
   categories:
   - UplinkPointless
+
+- type: listing
+  id: UplinkSyndicateBusinessCard
+  name: uplink-business-card-name
+  description: uplink-business-card-desc
+  productEntity: SyndicateBusinessCard
+  categories:
+    - UplinkPointless
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 3
 
 # Job Specific
 

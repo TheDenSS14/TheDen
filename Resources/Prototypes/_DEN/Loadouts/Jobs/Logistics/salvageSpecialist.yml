@@ -24,3 +24,18 @@
         - SalvageSpecialist
   items:
     - LavalandJaunter
+
+- type: loadout
+  id: LoadoutSalvageMessengerBackpack
+  category: JobsLogisticsSalvageSpecialist
+  cost: 0
+  exclusive: true
+  customColorTint: true
+  items:
+    - ClothingBackpackMessengerSalvage
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSalvageSpecialistBackpacks
+    - !type:CharacterJobRequirement
+      jobs:
+        - SalvageSpecialist

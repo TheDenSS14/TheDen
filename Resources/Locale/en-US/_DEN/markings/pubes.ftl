@@ -3,10 +3,10 @@
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
-marking-pubesUpper-pubes = Genitals
+marking-pubesUpper-upper = Genitals
 marking-pubesUpper = Pubic Hair (high)
 
-marking-pubesLower-pubes = Genitals
+marking-pubesLower-lower = Genitals
 marking-pubesLower = Pubic Hair (low)
 
 markings-category-Genitals = Genitals

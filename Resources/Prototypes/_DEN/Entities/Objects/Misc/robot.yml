@@ -1,0 +1,68 @@
+- type: entity
+  parent: BaseItem
+  id: MedibotInjector
+  name: medibot syringe
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: Objects/Specific/Chemistry/syringe.rsi
+    layers:
+      - state: syringe1
+        map: ["enum.SolutionContainerLayers.Fill"]
+        visible: false
+      - state: syringe_base0
+        map: ["enum.SolutionContainerLayers.Base"]
+  - type: Icon
+    sprite: Objects/Specific/Chemistry/syringe.rsi
+    state: "syringe_base0"
+  - type: Item
+    size: Tiny
+    sprite: Objects/Specific/Chemistry/syringe.rsi
+  - type: Appearance
+  - type: SolutionContainerVisuals
+    maxFillLevels: 2
+    fillBaseName: syringe
+    inHandsMaxFillLevels: 3
+    inHandsFillBaseName: -fill-
+  - type: SolutionContainerManager
+    solutions:
+      injector:
+        maxVol: 30
+  - type: Hypospray
+    solutionName: injector
+    transferAmount: 30
+    onlyAffectsMobs: true
+    injectOnly: true
+    injectTime: 3.0
+    maxPressure: 0 # For some reason this determines whether or not it uses inject time??
+  - type: UseDelay
+    delay: 2.0
+  - type: AddComponentAfterInjection
+    addComponents:
+    - type: NPCRecentlyInjected
+  - type: MedibotInjector
+
+- type: entity
+  parent: Welder
+  id: WeldbotWelder
+  name: weldbot tool
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      Welder:
+        reagents:
+        - ReagentId: WeldingFuel
+          Quantity: 50
+        maxVol: 50
+  - type: SolutionRegeneration
+    solution: Welder
+    generated:
+      reagents:
+      - ReagentId: WeldingFuel
+        Quantity: 1
+  - type: Welder
+    tankSafe: true
+  - type: Tool
+    useSound:
+      collection: Welder

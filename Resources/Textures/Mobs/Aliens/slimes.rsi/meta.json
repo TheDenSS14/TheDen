@@ -1,7 +1,7 @@
 {
   "version": 1,
   "license": "CC-BY-SA-3.0",
-  "copyright": "Taken from the tgstation at https://github.com/tgstation/tgstation/blob/bb89e65aebb14d6ba0ce7fc43363fbc3f1279e79/icons/mob/simple/slimes.dmi",
+  "copyright": "Taken from the tgstation at https://github.com/tgstation/tgstation/blob/832cecdbb1118fc8b45fbc1d41a1a928d5be2eef/icons/mob/simple/slimes.dmi",
   "size": {
     "x": 32,
     "y": 32
@@ -11,8 +11,10 @@
       "name": "blue_adult_slime",
       "delays": [
         [
-          0.3,
-          0.3
+          0.15,
+          0.15,
+          0.15,
+          0.15
         ]
       ]
     },
@@ -23,8 +25,10 @@
       "name": "green_adult_slime",
       "delays": [
         [
-          0.3,
-          0.3
+          0.15,
+          0.15,
+          0.15,
+          0.15
         ]
       ]
     },
@@ -35,8 +39,10 @@
       "name": "yellow_adult_slime",
       "delays": [
         [
-          0.3,
-          0.3
+          0.15,
+          0.15,
+          0.15,
+          0.15
         ]
       ]
 	},
@@ -51,6 +57,12 @@
       "name": "rainbow_slime_extract",
       "delays": [
         [
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1,
           0.1,
           0.1,
           0.1,
@@ -106,9 +118,23 @@
           0.1,
           0.1,
           0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1,
           0.1
         ]
       ]
+    },
+	{
+      "name": "aslime-angry",
+      "directions": 4
+    },
+	{
+      "name": "aslime-mischievous",
+      "directions": 4
     }
   ]
 }

@@ -106,3 +106,17 @@
         - Mime
   items:
     - TowelColorMime
+
+- type: loadout
+  id: LoadoutBackpackMessengerMime
+  category: JobsServiceMime
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingBackpackMessengerMime
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMimeBackpacks
+    - !type:CharacterJobRequirement
+      jobs:
+        - Mime

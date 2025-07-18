@@ -1,0 +1,73 @@
+# SPDX-FileCopyrightText: 2025 BlitzTheSquishy
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+# Prison Guard
+#- type: characterItemGroup
+#  id: LoadoutPrisonGuardBackpacks
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutPrisonGuardBelt
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutPrisonGuardEars
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutPrisonGuardEquipment
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutPrisonGuardEyes
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutPrisonGuardGloves
+#  maxItems: 1
+#  items:
+
+- type: characterItemGroup
+  id: LoadoutPrisonGuardHead
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutClothingHeadHatCapPrisonGuard
+
+#- type: characterItemGroup
+#  id: LoadoutPrisonGuardId
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutPrisonGuardNeck
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutPrisonGuardMask
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutPrisonGuardOuter
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutPrisonGuardShoes
+#  maxItems: 1
+#  items:
+
+- type: characterItemGroup
+  id: LoadoutPrisonGuardUniforms
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutUniformJumpsuitPrisonGuard

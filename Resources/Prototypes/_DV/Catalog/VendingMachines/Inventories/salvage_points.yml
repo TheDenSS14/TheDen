@@ -1,18 +1,19 @@
-# SPDX-FileCopyrightText: 2024 deltanedas <39013340+deltanedas@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 sleepyyapril <flyingkarii@gmail.com>
-# SPDX-FileCopyrightText: 2025 AeraAulin <133451603+AeraAuling@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 BloodfiendishOperator <141253729+Diggy0@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 Eris <eris@erisws.com>
-# SPDX-FileCopyrightText: 2025 Rosycup <178287475+Rosycup@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 Rosycup <benjho049@gmail.com>
-# SPDX-FileCopyrightText: 2025 VMSolidus <evilexecutive@gmail.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 deltanedas
+# SPDX-FileCopyrightText: 2025 AeraAulin
+# SPDX-FileCopyrightText: 2025 BloodfiendishOperator
+# SPDX-FileCopyrightText: 2025 Eris
+# SPDX-FileCopyrightText: 2025 Jakumba
+# SPDX-FileCopyrightText: 2025 Rosycup
+# SPDX-FileCopyrightText: 2025 VMSolidus
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 - type: shopInventory
   id: SalvageVendorInventory
   listings:
+  - id: ClothingBackpackDuffelSalvageConscription
+    cost: 1250
   # TODO: marker beacons 1/10/30 for 10 each
   - id: DrinkWhiskeyBottleFull
     cost: 100
@@ -104,18 +105,20 @@
     cost: 1250
   - id: WeaponProtoKineticPistol
     cost: 1250
-  - id: WeaponSniperMosinEmpty
-    cost: 1500
   - id: WeaponRevolverArgentiEmpty
     cost: 4400
-  - id: WeaponRifleNovaliteC1Empty
-    cost: 5200
-  - id: ClothingBackpackDuffelSalvageConscription
-    cost: 1250
-  - id: WeaponRifleGestioEmpty
+  - id: WeaponPistolMk58Salvage
     cost: 6400
+  - id: WeaponPistolPollockSalvage
+    cost: 6800
+  - id: WeaponSniperMosinEmpty
+    cost: 5500
   - id: WeaponRifleSVTEmpty
     cost: 6400
+  - id: WeaponRifleNovaliteC1Empty
+    cost: 7200
+  - id: WeaponRifleGestioEmpty
+    cost: 9000
   - id: OreBagOfHolding
     cost: 6600
  # - id: WeaponPlasmaCutter -- TODO: Port from goob

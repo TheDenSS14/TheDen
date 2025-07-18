@@ -11,40 +11,46 @@
 - type: loadout
   id: LoadoutClothingHandsCommandWarmers
   category: JobsCommandHeadOfPersonnel
-  cost: 2
+  cost: 0
   exclusive: true
   items:
-  - ClothingHandsCommandWarmers
+    - ClothingHandsCommandWarmers
   requirements:
-  - !type:CharacterJobRequirement
-    jobs:
-    - HeadOfPersonnel
+    - !type:CharacterJobRequirement
+      jobs:
+        - HeadOfPersonnel
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutHeadOfPersonnelGloves
 
 - type: loadout
   id: LoadoutClothingUnderSocksCommand
   category: JobsCommandHeadOfPersonnel
-  cost: 2
+  cost: 0
   exclusive: true
   items:
-  - ClothingUnderSocksCommand
+    - ClothingUnderSocksCommand
   requirements:
-#  - !type:CharacterSpeciesRequirement - TheDen
-#    inverted: true
-#    species:
-#    - Diona
-#    - Harpy
-  - !type:CharacterJobRequirement
-    jobs:
-    - HeadOfPersonnel
+    #- !type:CharacterSpeciesRequirement - TheDen
+    #  inverted: true
+    #  species:
+    #  - Diona
+    #  - Harpy
+    - !type:CharacterJobRequirement
+      jobs:
+        - HeadOfPersonnel
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutHeadOfPersonnelShoes
 
 - type: loadout
   id: LoadoutClothingUniformCommandThong
   category: JobsCommandHeadOfPersonnel
-  cost: 2
+  cost: 0
   exclusive: true
   items:
-  - ClothingUniformCommandThong
+    - ClothingUniformCommandThong
   requirements:
-  - !type:CharacterJobRequirement
-    jobs:
-    - HeadOfPersonnel
+    - !type:CharacterJobRequirement
+      jobs:
+        - HeadOfPersonnel
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutHeadOfPersonnelUniforms

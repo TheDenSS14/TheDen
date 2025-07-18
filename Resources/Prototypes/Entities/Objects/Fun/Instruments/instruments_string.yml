@@ -4,12 +4,13 @@
 # SPDX-FileCopyrightText: 2023 I.K
 # SPDX-FileCopyrightText: 2023 LankLTE
 # SPDX-FileCopyrightText: 2023 RiceMar1244
-# SPDX-FileCopyrightText: 2023 notquitehadouken <1isthisameme>
+# SPDX-FileCopyrightText: 2023 notquitehadouken
 # SPDX-FileCopyrightText: 2024 Debug
 # SPDX-FileCopyrightText: 2024 OldDanceJacket
 # SPDX-FileCopyrightText: 2024 Skubman
 # SPDX-FileCopyrightText: 2024 VMSolidus
 # SPDX-FileCopyrightText: 2024 dge21
+# SPDX-FileCopyrightText: 2025 DeNatus
 # SPDX-FileCopyrightText: 2025 M3739
 # SPDX-FileCopyrightText: 2025 MajorMoth
 # SPDX-FileCopyrightText: 2025 Rosycup
@@ -206,32 +207,32 @@
     - suitStorage
     sprite: Objects/Fun/Instruments/guitar.rsi
   - type: Wieldable
-  - type: Damageable # Smash it! Does 20 damage a hit, but breaks after 1 hit.
-    damageContainer: Inorganic
-  - type: Destructible
-    thresholds:
-    - trigger:
-        !type:DamageTrigger
-        damage: 20
-      behaviors:
-      - !type:PlaySoundBehavior
-        sound:
-          path: /Audio/Weapons/guitarsmash.ogg
-      - !type:SpawnEntitiesBehavior
-        spawn:
-          MaterialWoodPlank:
-            min: 2
-            max: 4
-      - !type:DoActsBehavior
-        acts: [ "Destruction" ]
-  - type: DamageOnHit # This makes it destroy after one hit.
-    damage:
-      types:
-        Blunt: 20
-  - type: DamageOnLand
-    damage:
-      types:
-        Blunt: 20
+#Den  - type: Damageable # Smash it! Does 20 damage a hit, but breaks after 1 hit.
+#Den    damageContainer: Inorganic
+#Den  - type: Destructible
+#Den    thresholds:
+#Den    - trigger:
+#Den        !type:DamageTrigger
+#Den        damage: 20
+#Den      behaviors:
+#Den      - !type:PlaySoundBehavior
+#Den        sound:
+#Den          path: /Audio/Weapons/guitarsmash.ogg
+#Den      - !type:SpawnEntitiesBehavior
+#Den        spawn:
+#Den          MaterialWoodPlank:
+#Den            min: 2
+#Den            max: 4
+#Den      - !type:DoActsBehavior
+#Den        acts: [ "Destruction" ]
+#Den  - type: DamageOnHit # This makes it destroy after one hit.
+#Den    damage:
+#Den      types:
+#Den        Blunt: 20
+#Den  - type: DamageOnLand
+#Den    damage:
+#Den      types:
+#Den        Blunt: 20
   - type: MeleeWeapon
     range: 1.5
     wideAnimationRotation: 45

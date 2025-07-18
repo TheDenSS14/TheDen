@@ -1,7 +1,8 @@
-# SPDX-FileCopyrightText: 2024 VMSolidus <evilexecutive@gmail.com>
-# SPDX-FileCopyrightText: 2025 BlitzTheSquishy <73762869+BlitzTheSquishy@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 Skubman <ba.fallaria@gmail.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 VMSolidus
+# SPDX-FileCopyrightText: 2025 Blitz
+# SPDX-FileCopyrightText: 2025 BlitzTheSquishy
+# SPDX-FileCopyrightText: 2025 Skubman
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -34,12 +35,14 @@
 #  id: LoadoutCourierEyes
 #  maxItems: 1
 #  items:
-#
-#- type: characterItemGroup
-#  id: LoadoutCourierGloves
-#  maxItems: 1
-#  items:
-#
+
+- type: characterItemGroup
+  id: LoadoutCourierGloves
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutClothingHandsCourierWarmers
+
 - type: characterItemGroup
   id: LoadoutCourierHead
   maxItems: 1
@@ -63,21 +66,21 @@
 #  id: LoadoutCourierMask
 #  maxItems: 1
 #  items:
-#
+
 - type: characterItemGroup
   id: LoadoutCourierOuter
   maxItems: 1
   items:
     - type: loadout
       id: LoadoutCourierOuterMail
-    - type: loadout
-      id: LoadoutCourierOuterCourier
 
-#- type: characterItemGroup
-#  id: LoadoutCourierShoes
-#  maxItems: 1
-#  items:
-#
+- type: characterItemGroup
+  id: LoadoutCourierShoes
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutClothingUnderSocksCourier
+
 - type: characterItemGroup
   id: LoadoutCourierUniforms
   maxItems: 1
@@ -92,3 +95,5 @@
       id: LoadoutCourierUniformMailSkirt
     - type: loadout
       id: LoadoutCourierUniformEnvirosuitMailCarrier
+    - type: loadout
+      id: LoadoutClothingUniformCourierThong

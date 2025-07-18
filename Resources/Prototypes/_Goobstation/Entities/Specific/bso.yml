@@ -1,16 +1,16 @@
+# SPDX-FileCopyrightText: 2025 Aiden
+# SPDX-FileCopyrightText: 2025 Aidenkrz
+# SPDX-FileCopyrightText: 2025 Baptr0b0t
 # SPDX-FileCopyrightText: 2025 Eagle-0
+# SPDX-FileCopyrightText: 2025 GoobBot
+# SPDX-FileCopyrightText: 2025 Lincoln McQueen
 # SPDX-FileCopyrightText: 2025 Rosycup
+# SPDX-FileCopyrightText: 2025 Solstice
 # SPDX-FileCopyrightText: 2025 Ted Lukin
+# SPDX-FileCopyrightText: 2025 Vanessa Louwagie
+# SPDX-FileCopyrightText: 2025 gus
+# SPDX-FileCopyrightText: 2025 pheenty
 # SPDX-FileCopyrightText: 2025 sleepyyapril
-# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 Aidenkrz <aiden@djkraz.com>
-# SPDX-FileCopyrightText: 2025 Baptr0b0t <152836416+Baptr0b0t@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
-# SPDX-FileCopyrightText: 2025 Lincoln McQueen <lincoln.mcqueen@gmail.com>
-# SPDX-FileCopyrightText: 2025 Solstice <solsticeofthewinter@gmail.com>
-# SPDX-FileCopyrightText: 2025 Ted Lukin <66275205+pheenty@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 gus <august.eymann@gmail.com>
-# SPDX-FileCopyrightText: 2025 pheenty <fedorlukin2006@gmail.com>
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -53,6 +53,7 @@
       enum.CrewMonitoringUIKey.Key:
         type: CrewMonitoringBoundUserInterface
   - type: CrewMonitoringConsole
+    alertsEnabled: false # TheDen - They already have a notification and the beep goes off when anyone dies, so just disable
   - type: DeviceNetwork
     deviceNetId: Wireless
     receiveFrequencyId: CrewMonitor

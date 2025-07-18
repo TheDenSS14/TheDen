@@ -1,0 +1,13 @@
+- type: loadout
+  id: LoadoutAtmosphericTechnicianBackpackMessenger
+  category: JobsEngineeringAtmosphericTechnician
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutAtmosphericTechnicianBackpacks
+    - !type:CharacterJobRequirement
+      jobs:
+        - AtmosphericTechnician
+  items:
+    - ClothingBackpackMessengerAtmospherics

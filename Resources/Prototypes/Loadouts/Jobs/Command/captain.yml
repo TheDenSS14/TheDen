@@ -1,13 +1,12 @@
-# SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT <77995199+DEATHB4DEFEAT@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 Alice <alicecoupland45@gmail.com>
-# SPDX-FileCopyrightText: 2025 Angelo Fallaria <ba.fallaria@gmail.com>
-# SPDX-FileCopyrightText: 2025 Blitz <73762869+BlitzTheSquishy@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 EctoplasmIsGood <109397347+EctoplasmIsGood@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 Rosycup <178287475+Rosycup@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 Skubman <ba.fallaria@gmail.com>
-# SPDX-FileCopyrightText: 2025 VMSolidus <evilexecutive@gmail.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <flyingkarii@gmail.com>
+# SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT
+# SPDX-FileCopyrightText: 2025 Alice
+# SPDX-FileCopyrightText: 2025 Angelo Fallaria
+# SPDX-FileCopyrightText: 2025 Blitz
+# SPDX-FileCopyrightText: 2025 EctoplasmIsGood
+# SPDX-FileCopyrightText: 2025 Rosycup
+# SPDX-FileCopyrightText: 2025 Skubman
+# SPDX-FileCopyrightText: 2025 VMSolidus
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -56,6 +55,20 @@
         - Captain
 
 - type: loadout
+  id: LoadoutClothingBackpackMessengerCaptain
+  category: JobsCommandCaptain
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingBackpackMessengerCaptain
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutCaptainBackpacks
+    - !type:CharacterJobRequirement
+      jobs:
+        - Captain
+
+- type: loadout
   id: LoadoutBackpackCaptainFilled
   category: JobsCommandCaptain
   cost: 0
@@ -90,6 +103,20 @@
   exclusive: true
   items:
     - ClothingBackpackDuffelCaptainFilled
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutCaptainBackpacks
+    - !type:CharacterJobRequirement
+      jobs:
+        - Captain
+
+- type: loadout
+  id: LoadoutClothingBackpackMessengerCaptainFilled
+  category: JobsCommandCaptain
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingBackpackMessengerCaptainFilled
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutCaptainBackpacks
@@ -387,6 +414,7 @@
   id: LoadoutCommandCapMaskGas
   category: JobsCommandCaptain
   cost: 0
+  exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutCaptainMask
@@ -400,6 +428,7 @@
   id: LoadoutCommandCapMaskGasCombat
   category: JobsCommandCaptain
   cost: 0
+  exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutCaptainMask
@@ -466,6 +495,21 @@
         - Captain
   items:
     - ClothingOuterCoatCapTrench
+
+- type: loadout
+  id: LoadoutCaptainOuterLongCoat
+  category: JobsCommandCaptain
+  cost: 0
+  exclusive: true
+  canBeHeirloom: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutCaptainOuter
+    - !type:CharacterJobRequirement
+      jobs:
+        - Captain
+  items:
+    - ClothingLongcoatCap
 
 # Shoes
 - type: loadout
