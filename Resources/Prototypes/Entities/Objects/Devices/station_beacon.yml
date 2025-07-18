@@ -596,6 +596,22 @@
   - type: NavMapBeacon
     defaultText: station-beacon-janitor-closet #Delta V - Add for closet/outpost
 
+- type: entity
+  parent: DefaultStationBeaconService
+  id: DefaultStationBeaconClown
+  suffix: Clown
+  components:
+  - type: NavMapBeacon
+    defaultText: station-beacon-clown
+
+- type: entity
+  parent: DefaultStationBeaconService
+  id: DefaultStationBeaconMime
+  suffix: Mime
+  components:
+  - type: NavMapBeacon
+    defaultText: station-beacon-mime
+
 # Silicon
 - type: entity
   parent: DefaultStationBeacon
