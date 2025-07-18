@@ -8113,3 +8113,16 @@ Entries:
   id: 772
   time: '2025-07-18T08:27:14.0000000+00:00'
   url: https://github.com/TheDenSS14/TheDen/pull/1116
+- author: portfiend
+  changes:
+    - type: Fix
+      message: >-
+        Fixed selfdamage command improperly using "Brute" damage when only two
+        arguments are provided.
+    - type: Tweak
+      message: >-
+        Selfdamage command has improved console response messages - now you'll
+        be given details if the command succeeded!
+  id: 773
+  time: '2025-07-18T16:45:06.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1123
