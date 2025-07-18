@@ -130,6 +130,13 @@
                 Name="CustomColorSliders"
                 Color="#fff"
                 HorizontalExpand="True" />
+            <CheckBox
+                Name="AllowCustomColorCheckBox"
+                Access="Public"
+                HorizontalAlignment="Center"
+                Text="{Loc 'loadout-customization-panel-custom-color-button'}"
+                ToolTip="{Loc 'loadout-customization-panel-custom-color-tooltip'}"
+                />
         </BoxContainer>
 
     </BoxContainer>

@@ -41,22 +41,32 @@ public sealed partial class LoadoutsCustomizationPanel : ScrollContainer
         // adding a little padding to these buttons for flair
         foreach (var child in MiscButtonsBox.Children)
             if (child is CheckBox checkBox)
-            {
-                checkBox.AddStyleClass(ContainerButton.StyleClassButton);
-                if (checkBox.Label.Parent is BoxContainer)
-                    checkBox.Label.Parent.Margin = _miscButtonPadding;
-            }
+                AddCheckboxStyle(checkBox);
+
+        AddCheckboxStyle(AllowCustomColorCheckBox);
 
         CustomNameEdit.OnTextChanged += _ => UpdateDirty();
         CustomDescriptionEdit.OnTextChanged += _ => UpdateDirty();
-        CustomColorSliders.OnColorChanged += _ => UpdateDirty();
+        CustomColorSliders.OnColorChanged += _ =>
+        {
+            AllowCustomColorCheckBox.Pressed = true;
+            UpdateDirty();
+        };
         HeirloomCheckBox.OnToggled += _ => UpdateDirty();
+        AllowCustomColorCheckBox.OnToggled += _ => UpdateDirty();
 
         SaveButton.OnPressed += _ => Save();
         ResetButton.OnPressed += _ => SetFieldsToPreference();
     }
 
     public void SetPreviewSprite(EntityUid? uid) => PreviewSprite.SetEntity(uid);
+
+    private void AddCheckboxStyle(CheckBox box)
+    {
+        box.AddStyleClass(ContainerButton.StyleClassButton);
+        if (box.Label.Parent is BoxContainer)
+            box.Label.Parent.Margin = _miscButtonPadding;
+    }
 
     private void UpdateCustomizationFields()
     {
@@ -89,6 +99,7 @@ public sealed partial class LoadoutsCustomizationPanel : ScrollContainer
         CustomDescriptionEdit.TextRope = new Rope.Leaf(_preference?.CustomDescription ?? string.Empty);
         CustomColorSliders.Color = Color.FromHex(_preference?.CustomColorTint, Color.White);
         HeirloomCheckBox.Pressed = _preference?.CustomHeirloom ?? false;
+        AllowCustomColorCheckBox.Pressed = _preference?.CustomColorTint != null;
 
         UpdateDirty();
     }
@@ -100,12 +111,15 @@ public sealed partial class LoadoutsCustomizationPanel : ScrollContainer
 
         var prefName = _preference.CustomName ?? string.Empty;
         var prefDesc = _preference.CustomDescription ?? string.Empty;
-        var prefColor = Color.FromHex(_preference?.CustomColorTint, Color.White);
+        var prefColor = Color.TryFromHex(_preference?.CustomColorTint)
+            ?? (AllowCustomColorCheckBox.Pressed ? Color.White : null);
         var prefHeirloom = _preference?.CustomHeirloom;
 
         var nameEqual = CustomNameEdit.Text == prefName;
         var descEqual = Rope.Collapse(CustomDescriptionEdit.TextRope) == prefDesc;
-        var colorEqual = !CustomColorBox.Visible || CustomColorSliders.Color == prefColor;
+        var colorEqual = !CustomColorBox.Visible
+            || AllowCustomColorCheckBox.Pressed && CustomColorSliders.Color == prefColor
+            || !AllowCustomColorCheckBox.Pressed && prefColor == null;
         var heirloomEqual = !HeirloomCheckBox.Visible || HeirloomCheckBox.Pressed == prefHeirloom;
 
         var isEqual = nameEqual && descEqual && colorEqual && heirloomEqual;
@@ -123,7 +137,9 @@ public sealed partial class LoadoutsCustomizationPanel : ScrollContainer
         if (desc == string.Empty)
             desc = null;
 
-        var color = CustomColorSliders.Visible ? CustomColorSliders.Color.ToHex() : null;
+        var color = CustomColorSliders.Visible && AllowCustomColorCheckBox.Pressed
+            ? CustomColorSliders.Color.ToHex()
+            : null;
         var heirloom = HeirloomCheckBox.Visible && HeirloomCheckBox.Pressed;
 
         var newPref = new LoadoutPreference(
