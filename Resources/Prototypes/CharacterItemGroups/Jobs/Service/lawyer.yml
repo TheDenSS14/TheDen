@@ -44,12 +44,16 @@
 #  id: LoadoutLawyerId
 #  maxItems: 1
 #  items:
-#
-#- type: characterItemGroup
-#  id: LoadoutLawyerNeck
-#  maxItems: 1
-#  items:
-#
+
+- type: characterItemGroup
+  id: LoadoutLawyerNeck
+  maxItems: 1
+  items:
+    - type: loadout
+      id: ClothingNeckLawyerBadge
+    - type: loadout
+      id: ClothingNeckProsecutorBadge
+
 #- type: characterItemGroup
 #  id: LoadoutLawyerMask
 #  maxItems: 1

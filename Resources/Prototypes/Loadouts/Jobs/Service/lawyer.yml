@@ -21,6 +21,33 @@
 # Id
 
 # Neck
+- type: loadout
+  id: LoadoutServiceLawyerNeckLawyerBadge
+  category: JobsServiceLawyer
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutLawyerNeck
+    - !type:CharacterJobRequirement
+      jobs:
+        - Lawyer
+  items:
+    - ClothingNeckLawyerBadge
+
+- type: loadout
+  id: LoadoutServiceLawyerNeckProsecutorBadge
+  category: JobsServiceLawyer
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutLawyerNeck
+    - !type:CharacterJobRequirement
+      jobs:
+        - Lawyer
+  items:
+    - ClothingNeckProsecutorBadge
 
 # Mask
 
