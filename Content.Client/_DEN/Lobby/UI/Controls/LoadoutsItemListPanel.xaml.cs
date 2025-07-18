@@ -283,6 +283,7 @@ public sealed partial class LoadoutsItemListPanel : BoxContainer
         {
             UpdateButtonRequirements(button, mainJob, playtimes, whitelisted);
             UpdateButtonWearable(button);
+            UpdateButtonVisible(button);
         }
     }
 
@@ -312,7 +313,6 @@ public sealed partial class LoadoutsItemListPanel : BoxContainer
             return;
 
         button.SetUnusable(!isValid, reasons);
-        button.Visible = isValid || ShowUnusableButton.Pressed;
     }
 
     private void UpdateButtonWearable(LoadoutItemButton button)
