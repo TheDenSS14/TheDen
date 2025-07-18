@@ -47,6 +47,20 @@
   items:
     - ClothingHeadHatBeretWarden
 
+- type: loadout
+  id: LoadoutWardenHeadWardenCap
+  category: JobsSecurityWarden
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutWardenHead
+    - !type:CharacterJobRequirement
+      jobs:
+        - Warden
+  items:
+    - ClothingHeadHatWarden
+
 # Id
 
 # Neck
@@ -58,6 +72,7 @@
   id: LoadoutClothingOuterWinterCoatWarden
   category: JobsSecurityWarden
   cost: 0
+  exclusive: true
   requirements:
   - !type:CharacterItemGroupRequirement
     group: LoadoutWardenOuter
@@ -85,6 +100,7 @@
   id: LoadoutClothingOuterLongCoatWarden
   category: JobsSecurityWarden
   cost: 0
+  exclusive: true
   requirements:
   - !type:CharacterItemGroupRequirement
     group: LoadoutWardenOuter
@@ -93,6 +109,20 @@
       - Warden
   items:
   - ClothingLongcoatWarden
+
+- type: loadout
+  id: LoadoutWardenOuterCoatWinterCoatArmoured
+  category: JobsSecurityWarden
+  cost: 0
+  exclusive: true
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutWardenOuter
+  - !type:CharacterJobRequirement
+    jobs:
+      - Warden
+  items:
+  - ClothingOuterWinterWarden
 
 # Shoes
 

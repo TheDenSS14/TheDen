@@ -9,6 +9,8 @@
 // SPDX-FileCopyrightText: 2023 nikthechampiongr
 // SPDX-FileCopyrightText: 2024 Remuchi
 // SPDX-FileCopyrightText: 2024 slarticodefast
+// SPDX-FileCopyrightText: 2025 Pieter-Jan Briers
+// SPDX-FileCopyrightText: 2025 Vanessa
 // SPDX-FileCopyrightText: 2025 sleepyyapril
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
@@ -59,16 +61,21 @@ namespace Content.Shared.Doors
     /// </summary>
     /// <remarks>
     /// This event is raised both when the door is initially closed, and when it is just about to become "partially"
-    /// closed (opaque & collidable). If canceled while partially closing, it will start opening again. Useful in case
+    /// closed (opaque &amp; collidable). If canceled while partially closing, it will start opening again. Useful in case
     /// an entity entered the door just as it was about to become "solid".
     /// </remarks>
     public sealed class BeforeDoorClosedEvent : CancellableEntityEventArgs
     {
+        /// <summary>
+        /// If true, this check is being performed when the door is partially closing.
+        /// </summary>
+        public bool Partial;
         public bool PerformCollisionCheck;
         public EntityUid? User = null;
 
-        public BeforeDoorClosedEvent(bool performCollisionCheck)
+        public BeforeDoorClosedEvent(bool performCollisionCheck, bool partial = false)
         {
+            Partial = partial;
             PerformCollisionCheck = performCollisionCheck;
         }
     }

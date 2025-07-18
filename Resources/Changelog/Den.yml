@@ -7993,3 +7993,123 @@ Entries:
   id: 761
   time: '2025-07-17T14:53:11.0000000+00:00'
   url: https://github.com/TheDenSS14/TheDen/pull/1105
+- author: metalgearsloth
+  changes:
+    - type: Tweak
+      message: You no longer face items for a single frame when clicking while moving.
+  id: 762
+  time: '2025-07-17T20:05:04.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1108
+- author: Wheels
+  changes:
+    - type: Fix
+      message: Consent menu descriptions should no longer overflow
+  id: 763
+  time: '2025-07-17T20:07:14.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1109
+- author: sleepyyapril
+  changes:
+    - type: Tweak
+      message: Now using WizDen's battery code
+  id: 764
+  time: '2025-07-17T20:44:56.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1110
+- author: PJB3005
+  changes:
+    - type: Fix
+      message: Unpowered doors can be pried closed again.
+  id: 765
+  time: '2025-07-17T21:20:42.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1094
+- author: SleepyScarecrow
+  changes:
+    - type: Add
+      message: 'The Singulo drink now has a recipe, using Vodka, Wine, and Anti-Noblium '
+    - type: Fix
+      message: Fixed guidebook entries
+  id: 766
+  time: '2025-07-17T21:21:24.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1093
+- author: sleepyyapril
+  changes:
+    - type: Tweak
+      message: >-
+        Maximum number of traitors per event from 2 to 6, requiring 60 people to
+        hit 6.
+    - type: Remove
+      message: Removed die a glorious death objective.
+  id: 767
+  time: '2025-07-18T02:48:59.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1112
+- author: Jakumba
+  changes:
+    - type: Fix
+      message: healing factor now actually, heals.
+  id: 768
+  time: '2025-07-18T02:49:30.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1104
+- author: MajorMoth
+  changes:
+    - type: Fix
+      message: 'Fixed the bug where things got inserted into slimes upon use by slimes. '
+    - type: Fix
+      message: >-
+        Things expanding inside pockets (past pocket capacity) now get forced
+        out.
+    - type: Fix
+      message: >-
+        Removed the electrolyzer and bluespace gas sender from staticRecipes. No
+        more roundstart exotech. Gotta have epi research it first, like
+        intended.
+    - type: Fix
+      message: >-
+        Fixed reinforced plasma windows getting treated as walls internally.
+        This will allow shutters to close on them again.
+  id: 769
+  time: '2025-07-18T02:49:55.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1103
+- author: Jakumba
+  changes:
+    - type: Tweak
+      message: Many balance changes, please see github for a full patch note list.
+  id: 770
+  time: '2025-07-18T02:50:31.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1085
+- author: BlitzTheSquishy
+  changes:
+    - type: Add
+      message: Adds missing messenger bags to loadouts
+    - type: Add
+      message: >-
+        Boxer, Martial Artist, Zookeeper, Gladiator and Prison Guard are added
+        as loadout categories.
+    - type: Add
+      message: Adds a lot of starting role items into loadouts.
+    - type: Add
+      message: >-
+        Gives all loadouts (that Adrian didn't touch) long coats if one was
+        available. 
+    - type: Tweak
+      message: >-
+        Enables some items from specialist roles to be opened to the entire
+        department.
+    - type: Tweak
+      message: >-
+        Nukes the cost of all arm warmers/thongs/thigh highs/collars except the
+        valid ones (which remain at 1 cost)
+    - type: Tweak
+      message: >-
+        Changes a lot of loadout items, please recheck your loadouts for any
+        errors.
+    - type: Remove
+      message: Blitz's sanity.
+  id: 771
+  time: '2025-07-18T04:28:00.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/955
+- author: Jakumba
+  changes:
+    - type: Fix
+      message: Bishop Cybernetics employer description
+  id: 772
+  time: '2025-07-18T08:27:14.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1116

@@ -1,7 +1,6 @@
 # SPDX-FileCopyrightText: 2024 fox
-# SPDX-FileCopyrightText: 2024 sleepyyapril <***>
-# SPDX-FileCopyrightText: 2024 sleepyyapril <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>
 # SPDX-FileCopyrightText: 2025 Blitz
+# SPDX-FileCopyrightText: 2025 BlitzTheSquishy
 # SPDX-FileCopyrightText: 2025 Rosycup
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
@@ -10,94 +9,108 @@
 # General logistics
 - type: loadout
   id: LoadoutClothingHandsLogisWarmers
-  category: JobsLogisticsCargoTechnician
-  cost: 2
+  category: JobsLogisticsAUncategorized
+  cost: 0
   exclusive: true
   items:
-  - ClothingHandsLogisWarmers
+    - ClothingHandsLogisWarmers
   requirements:
-  - !type:CharacterDepartmentRequirement
+    - !type:CharacterDepartmentRequirement
       departments:
         - Logistics
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutLogisticsGloves
 
 - type: loadout
   id: LoadoutClothingUnderSocksLogis
-  category: JobsLogisticsCargoTechnician
-  cost: 2
+  category: JobsLogisticsAUncategorized
+  cost: 0
   exclusive: true
   items:
-  - ClothingUnderSocksLogis
+    - ClothingUnderSocksLogis
   requirements:
-#  - !type:CharacterSpeciesRequirement - TheDen
-#    inverted: true
-#    species:
-#    - Diona
-#    - Harpy
-  - !type:CharacterDepartmentRequirement
+    #- !type:CharacterSpeciesRequirement - TheDen
+    #  inverted: true
+    #  species:
+    #  - Diona
+    #  - Harpy
+    - !type:CharacterDepartmentRequirement
       departments:
         - Logistics
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutLogisticsShoes
 
 - type: loadout
   id: LoadoutClothingUniformLogisThong
-  category: JobsLogisticsCargoTechnician
-  cost: 2
+  category: JobsLogisticsAUncategorized
+  cost: 0
   exclusive: true
   items:
-  - ClothingUniformLogisThong
+    - ClothingUniformLogisThong
   requirements:
-  - !type:CharacterDepartmentRequirement
+    - !type:CharacterDepartmentRequirement
       departments:
         - Logistics
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutLogisticsUniforms
 
 - type: loadout
   id: LoadoutCargoNeckCollar
   category: JobsLogisticsAUncategorized
-  cost: 1
+  cost: 0
   requirements:
-  - !type:CharacterDepartmentRequirement
-    departments:
-      - Logistics
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Logistics
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutLogisticsNeck
   items:
-  - ClothingNeckCollarLogi
+    - ClothingNeckCollarLogi
 
 # Courier
 - type: loadout
   id: LoadoutClothingHandsCourierWarmers
   category: JobsLogisticsCourier
-  cost: 1
+  cost: 0
   exclusive: true
   items:
-  - ClothingHandsCourierWarmers
+    - ClothingHandsCourierWarmers
   requirements:
-  - !type:CharacterJobRequirement
-    jobs:
-    - MailCarrier
+    - !type:CharacterJobRequirement
+      jobs:
+        - MailCarrier
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutCourierGloves
 
 - type: loadout
   id: LoadoutClothingUnderSocksCourier
   category: JobsLogisticsCourier
-  cost: 2
+  cost: 0
   exclusive: true
   items:
-  - ClothingUnderSocksCourier
+    - ClothingUnderSocksCourier
   requirements:
-#  - !type:CharacterSpeciesRequirement - TheDen
-#    inverted: true
-#    species:
-#    - Diona
-#    - Harpy
-  - !type:CharacterJobRequirement
-    jobs:
-    - MailCarrier
+    #- !type:CharacterSpeciesRequirement - TheDen
+    #  inverted: true
+    #  species:
+    #  - Diona
+    #  - Harpy
+    - !type:CharacterJobRequirement
+      jobs:
+        - MailCarrier
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutCourierShoes
 
 - type: loadout
   id: LoadoutClothingUniformCourierThong
   category: JobsLogisticsCourier
-  cost: 1
+  cost: 0
   exclusive: true
   items:
-  - ClothingUniformCourierThong
+    - ClothingUniformCourierThong
   requirements:
-  - !type:CharacterJobRequirement
-    jobs:
-    - MailCarrier
+    - !type:CharacterJobRequirement
+      jobs:
+        - MailCarrier
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutCourierUniforms

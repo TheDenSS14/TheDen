@@ -52,6 +52,20 @@
       jobs:
         - ChiefMedicalOfficer
 
+- type: loadout
+  id: LoadoutBackpackMessengerCMO
+  category: JobsMedicalChiefMedicalOfficer
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingBackpackMessengerCMOFilled
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutChiefMedicalOfficerBackpacks
+    - !type:CharacterJobRequirement
+      jobs:
+        - ChiefMedicalOfficer
+
 # Belt
 - type: loadout
   id: LoadoutChiefMedicalOfficerBeltMedical
@@ -108,6 +122,7 @@
   id: LoadoutClothingHeadMirror
   category: JobsMedicalChiefMedicalOfficer
   cost: 0
+  exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutChiefMedicalOfficerHead
@@ -185,6 +200,7 @@
   id: LoadoutCommandCMOOuterWinter
   category: JobsMedicalChiefMedicalOfficer
   cost: 0
+  exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutChiefMedicalOfficerOuter
@@ -198,6 +214,7 @@
   id: LoadoutCommandCMOOuterLab
   category: JobsMedicalChiefMedicalOfficer
   cost: 0
+  exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutChiefMedicalOfficerOuter
@@ -206,6 +223,20 @@
         - ChiefMedicalOfficer
   items:
     - ClothingOuterCoatLabCmo
+
+- type: loadout
+  id: LoadoutChiefMedicalOfficerOuterLongCoat
+  category: JobsMedicalChiefMedicalOfficer
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutChiefMedicalOfficerOuter
+    - !type:CharacterJobRequirement
+      jobs:
+        - ChiefMedicalOfficer
+  items:
+    - ClothingLongcoatCMO
 
 # Shoes
 - type: loadout

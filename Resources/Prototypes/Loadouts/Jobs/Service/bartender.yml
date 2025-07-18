@@ -19,7 +19,6 @@
   id: LoadoutServiceBartenderBoxBeanbags
   category: JobsServiceBartender
   cost: 0
-  exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutBartenderAmmo
@@ -33,7 +32,6 @@
   id: LoadoutServiceBartenderBoxLightRifleRubber
   category: JobsServiceBartender
   cost: 0
-  exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutBartenderAmmo
@@ -47,7 +45,6 @@
   id: LoadoutServiceBartenderBoxRifleRubber
   category: JobsServiceBartender
   cost: 0
-  exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutBartenderAmmo
@@ -89,7 +86,6 @@
   id: LoadoutServiceBartenderBoxMagnumRubber
   category: JobsServiceBartender
   cost: 0
-  exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutBartenderAmmo
@@ -103,7 +99,6 @@
   id: LoadoutServiceBartenderArgentiNonlethal
   category: JobsServiceBartender
   cost: 0
-  exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutBartenderWeapon
@@ -117,7 +112,6 @@
   id: LoadoutServiceBartenderRepeaterNonlethal
   category: JobsServiceBartender
   cost: 0
-  exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutBartenderWeapon
@@ -185,6 +179,7 @@
   id: LoadoutServiceBartenderWinterCoat
   category: JobsServiceBartender
   cost: 0
+  exclusive: true
   requirements:
   - !type:CharacterItemGroupRequirement
     group: LoadoutBartenderOuter

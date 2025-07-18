@@ -27,3 +27,7 @@
     - !type:CharacterDepartmentRequirement
       departments:
         - Epistemics
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - ResearchDirector # MG has ClothingBackpackMessengerResearchDirectorFilled

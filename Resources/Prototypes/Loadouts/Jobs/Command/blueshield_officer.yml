@@ -1,7 +1,9 @@
 # SPDX-FileCopyrightText: 2025 Alice
 # SPDX-FileCopyrightText: 2025 Blitz
+# SPDX-FileCopyrightText: 2025 BlitzTheSquishy
 # SPDX-FileCopyrightText: 2025 BramvanZijp
 # SPDX-FileCopyrightText: 2025 EctoplasmIsGood
+# SPDX-FileCopyrightText: 2025 Jakumba
 # SPDX-FileCopyrightText: 2025 MajorMoth
 # SPDX-FileCopyrightText: 2025 Rosycup
 # SPDX-FileCopyrightText: 2025 SixplyDev
@@ -146,7 +148,7 @@
 - type: loadout
   id: LoadoutBSORifleChester
   category: JobsCommandBlueshieldOfficer
-  cost: 0
+  cost: 6
   canBeHeirloom: true
   guideEntry: SecurityWeapons
   requirements:
@@ -162,7 +164,6 @@
   id: LoadoutMagazineShotgunLeverRifle
   category: JobsCommandBlueshieldOfficer
   cost: 2
-  exclusive: true
   requirements:
     - !type:CharacterDepartmentTimeRequirement
       department: Security
@@ -176,10 +177,9 @@
     - MagazineShotgunLeverRifle
 
 - type: loadout
-  id: LoadoutMagazineShotgunLeverRifleSpare
+  id: LoadoutMagazineRifleBRDIR25
   category: JobsCommandBlueshieldOfficer
-  cost: 4
-  exclusive: true
+  cost: 2
   requirements:
     - !type:CharacterDepartmentTimeRequirement
       department: Security
@@ -190,12 +190,28 @@
       jobs:
         - BlueshieldOfficer
   items:
-    - MagazineShotgunLeverRifle
+    - MagazineCaselessRifle
+
+- type: loadout
+  id: LoadoutMagazineRifleBSOAk
+  category: JobsCommandBlueshieldOfficer
+  cost: 2
+  requirements:
+    - !type:CharacterDepartmentTimeRequirement
+      department: Security
+      min: 3600 # 1 hours
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSecurityEquipment
+    - !type:CharacterJobRequirement
+      jobs:
+        - BlueshieldOfficer
+  items:
+    - MagazineLightRifle
 
 - type: loadout
   id: LoadoutBSORifleBRDIR25
   category: JobsCommandBlueshieldOfficer
-  cost: 9 # Significant upgrade over a Chester, offered here for the STYLE. Intentionally priced at you not being able to buy all 3 medical items alongside it, plus being unable to buy it alongside the CQC Manual.
+  cost: 6 # Significant upgrade over a Chester, offered here for the STYLE. Intentionally priced at you not being able to buy all 3 medical items alongside it, plus being unable to buy it alongside the CQC Manual.
   canBeHeirloom: true
   guideEntry: SecurityWeapons
   requirements:
@@ -306,7 +322,7 @@
   exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutBlueshieldOfficerHats
+      group: LoadoutBlueshieldOfficerHead
     - !type:CharacterJobRequirement
       jobs:
         - BlueshieldOfficer
@@ -320,7 +336,7 @@
   exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutBlueshieldOfficerHats
+      group: LoadoutBlueshieldOfficerHead
     - !type:CharacterJobRequirement
       jobs:
         - BlueshieldOfficer
@@ -334,7 +350,7 @@
   exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutBlueshieldOfficerHats
+      group: LoadoutBlueshieldOfficerHead
     - !type:CharacterJobRequirement
       jobs:
         - BlueshieldOfficer
@@ -355,7 +371,7 @@
   exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutBlueshieldOfficerVests
+      group: LoadoutBlueshieldOfficerOuter
     - !type:CharacterJobRequirement
       jobs:
         - BlueshieldOfficer
@@ -369,7 +385,7 @@
   exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutBlueshieldOfficerVests
+      group: LoadoutBlueshieldOfficerOuter
     - !type:CharacterJobRequirement
       jobs:
         - BlueshieldOfficer
@@ -383,7 +399,7 @@
   exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutBlueshieldOfficerVests
+      group: LoadoutBlueshieldOfficerOuter
     - !type:CharacterJobRequirement
       jobs:
         - BlueshieldOfficer
@@ -397,7 +413,7 @@
   exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutBlueshieldOfficerVests
+      group: LoadoutBlueshieldOfficerOuter
     - !type:CharacterJobRequirement
       jobs:
         - BlueshieldOfficer
@@ -411,7 +427,7 @@
   exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutBlueshieldOfficerVests
+      group: LoadoutBlueshieldOfficerOuter
     - !type:CharacterJobRequirement
       jobs:
         - BlueshieldOfficer
@@ -425,7 +441,7 @@
   exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutBlueshieldOfficerVests
+      group: LoadoutBlueshieldOfficerOuter
     - !type:CharacterJobRequirement
       jobs:
         - BlueshieldOfficer
@@ -439,7 +455,7 @@
   exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutBlueshieldOfficerVests
+      group: LoadoutBlueshieldOfficerOuter
     - !type:CharacterJobRequirement
       jobs:
         - BlueshieldOfficer

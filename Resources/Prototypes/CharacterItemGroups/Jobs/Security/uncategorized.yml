@@ -2,6 +2,7 @@
 # SPDX-FileCopyrightText: 2024 gluesniffler
 # SPDX-FileCopyrightText: 2025 Adrian16199
 # SPDX-FileCopyrightText: 2025 Blitz
+# SPDX-FileCopyrightText: 2025 BlitzTheSquishy
 # SPDX-FileCopyrightText: 2025 Blu
 # SPDX-FileCopyrightText: 2025 Jakumba
 # SPDX-FileCopyrightText: 2025 Lonofera
@@ -44,7 +45,7 @@
 #  id: LoadoutSecurityEars
 #  maxItems: 1
 #  items:
-#
+
 - type: characterItemGroup
   maxItems: 5
   id: LoadoutSecurityEquipment
@@ -162,11 +163,15 @@
     - type: loadout
       id: LoadoutClothingEyesGlassesCorpsman
 
-#- type: characterItemGroup
-#  id: LoadoutSecurityGloves
-#  maxItems: 1
-#  items:
-#
+- type: characterItemGroup
+  id: LoadoutSecurityGloves
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutClothingHandsSecurityWarmers
+    - type: loadout
+      id: LoadoutClothingHandsGlovesSecurityBlack
+
 - type: characterItemGroup
   id: LoadoutSecurityHead
   maxItems: 1
@@ -186,13 +191,15 @@
 #  id: LoadoutSecurityId
 #  maxItems: 1
 #  items:
-#
+
 - type: characterItemGroup
   id: LoadoutSecurityNeck # Floof - M3739 - #988
   maxItems: 1
   items:
     - type: loadout
       id: LoadoutSecurityNeckNeckerchief
+    - type: loadout
+      id: LoadoutSecurityNeckCollar
 
 - type: characterItemGroup
   id: LoadoutSecurityMask
@@ -230,6 +237,8 @@
       id: LoadoutSecurityShoesJackboots
     - type: loadout
       id: LoadoutClothingShoesBootsCombat
+    - type: loadout
+      id: LoadoutClothingUnderSocksSecurity
 
 - type: characterItemGroup
   id: LoadoutSecurityUniforms
@@ -257,3 +266,5 @@
       id: LoadoutSecurityUniformJumpsuit
     - type: loadout
       id: LoadoutSecurityUniformJumpskirt
+    - type: loadout
+      id: LoadoutClothingUniformSecurityThong

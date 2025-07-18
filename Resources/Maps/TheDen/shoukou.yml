@@ -60,8 +60,8 @@ meta:
   engineVersion: 260.2.0
   forkId: ""
   forkVersion: ""
-  time: 07/07/2025 23:37:09
-  entityCount: 16477
+  time: 07/17/2025 21:38:50
+  entityCount: 16478
 maps:
 - 1
 grids:
@@ -6550,7 +6550,7 @@ entities:
       pos: 24.5,16.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -24706.275
+      secondsUntilStateChange: -25035.293
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -6970,7 +6970,7 @@ entities:
       pos: 15.5,8.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -38364.895
+      secondsUntilStateChange: -38693.914
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -7444,7 +7444,7 @@ entities:
       pos: 18.5,-7.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -265079.1
+      secondsUntilStateChange: -265408.12
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -46992,7 +46992,7 @@ entities:
       pos: 24.5,16.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -24712.574
+      secondsUntilStateChange: -25041.592
       state: Closing
     - type: DeviceNetwork
       deviceLists:
@@ -72702,53 +72702,6 @@ entities:
     - type: Transform
       pos: 66.5,-32.5
       parent: 2
-- proto: GunSafe
-  entities:
-  - uid: 9899
-    components:
-    - type: MetaData
-      desc: A standard-issue Nanotrasen storage unit. Has a large "Head of Security" stamp on it.
-    - type: Transform
-      pos: 31.5,5.5
-      parent: 2
-    - type: EntityStorage
-      air:
-        volume: 200
-        immutable: False
-        temperature: 293.14673
-        moles:
-        - 1.8977377
-        - 7.139109
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-    - type: ContainerContainer
-      containers:
-        entity_storage: !type:Container
-          showEnts: False
-          occludes: True
-          ents:
-          - 10082
-          - 10083
-        paper_label: !type:ContainerSlot
-          showEnts: False
-          occludes: True
-          ent: null
 - proto: GunSafeEnergyGunMini
   entities:
   - uid: 16068
@@ -89166,13 +89119,11 @@ entities:
       parent: 2
 - proto: SpeedLoaderMagnum
   entities:
-  - uid: 10083
+  - uid: 16478
     components:
     - type: Transform
-      parent: 9899
-    - type: Physics
-      canCollide: False
-    - type: InsideEntityStorage
+      pos: 31.743073,5.4288487
+      parent: 2
 - proto: SpiderWeb
   entities:
   - uid: 15100
@@ -92679,6 +92630,11 @@ entities:
       parent: 2
 - proto: TableReinforcedGlass
   entities:
+  - uid: 629
+    components:
+    - type: Transform
+      pos: 31.5,5.5
+      parent: 2
   - uid: 12070
     components:
     - type: Transform
@@ -93039,11 +92995,6 @@ entities:
       parent: 2
 - proto: TableWoodReinforced
   entities:
-  - uid: 629
-    components:
-    - type: Transform
-      pos: -26.5,-6.5
-      parent: 2
   - uid: 1449
     components:
     - type: Transform
@@ -104689,17 +104640,15 @@ entities:
       parent: 2
     - type: ChamberMagazineAmmoProvider
       boltClosed: True
-- proto: WeaponRevolverMateba
+- proto: WeaponRevolverSnubSecurity
   entities:
-  - uid: 10082
+  - uid: 10083
     components:
     - type: MetaData
-      desc: The iconic sidearm of the NT's finest. It has the HOS's name carved in the grip... when did they get such a beautiful revolver?                                    Uses .45 magnum ammo.
+      name: antique snubbed .45
     - type: Transform
-      parent: 9899
-    - type: Physics
-      canCollide: False
-    - type: InsideEntityStorage
+      pos: 31.517315,5.6082067
+      parent: 2
 - proto: WeaponShotgunHandmade
   entities:
   - uid: 10544
@@ -105502,6 +105451,17 @@ entities:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 29.5,-7.5
+      parent: 2
+  - uid: 9899
+    components:
+    - type: Transform
+      pos: 31.5,5.5
+      parent: 2
+  - uid: 10082
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 31.5,5.5
       parent: 2
   - uid: 12437
     components:
