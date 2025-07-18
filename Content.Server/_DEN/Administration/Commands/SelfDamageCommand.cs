@@ -9,6 +9,7 @@ using Content.Shared.Damage;
 using Content.Shared.Damage.Prototypes;
 using Robust.Shared.Console;
 using Robust.Shared.Prototypes;
+using Robust.Shared.Utility;
 
 namespace Content.Server._DEN.Administration.Commands;
 
@@ -21,6 +22,8 @@ sealed class SelfDamageCommand : IConsoleCommand
     public string Command => "selfdamage";
     public string Description => Loc.GetString("self-damage-command-description");
     public string Help => Loc.GetString("self-damage-command-help", ("command", Command));
+
+    private string _defaultDamageType = "Brute";
 
     private string[] _ignoreTypesGroups = new[]
     {
@@ -71,59 +74,73 @@ sealed class SelfDamageCommand : IConsoleCommand
     {
         if (!float.TryParse(args[0], out var amount))
         {
-            shell.WriteLine(Loc.GetString("damage-command-error-quantity", ("arg", args[1])));
+            shell.WriteError(Loc.GetString("damage-command-error-quantity", ("arg", args[0])));
             func = null;
             return false;
         }
 
-        var damageTypeOrGroup = args.Length > 2 ? args[1] : "Brute";
+        if (!args.TryGetValue(1, out var damageTypeOrGroup))
+            damageTypeOrGroup = _defaultDamageType;
 
         if (_ignoreTypesGroups.Contains(damageTypeOrGroup))
         {
-            shell.WriteLine("You cannot use this damage type or group.");
+            shell.WriteError(Loc.GetString("damage-command-error-forbidden-damage-type", ("arg", damageTypeOrGroup)));
             func = null;
             return false;
         }
 
         if (amount <= 0)
         {
-            shell.WriteLine("You cannot do negative or zero damage.");
+            shell.WriteError(Loc.GetString("damage-command-error-negative-or-zero"));
             func = null;
             return false;
         }
 
+        DamageSpecifier? damageSpecifier = null;
+
         if (_prototypeManager.TryIndex<DamageGroupPrototype>(damageTypeOrGroup, out var damageGroup))
-        {
-            func = (entity, ignoreResistances) =>
-            {
-                var damage = new DamageSpecifier(damageGroup, amount);
-                _entManager.System<DamageableSystem>().TryChangeDamage(entity, damage, ignoreResistances);
-            };
+            damageSpecifier = new DamageSpecifier(damageGroup, amount);
+        else if (_prototypeManager.TryIndex<DamageTypePrototype>(damageTypeOrGroup, out var damageType))
+            damageSpecifier = new DamageSpecifier(damageType, amount);
 
-            return true;
+        if (damageSpecifier == null)
+        {
+            shell.WriteLine(Loc.GetString("damage-command-error-type", ("arg", damageTypeOrGroup)));
+            func = null;
+            return false;
         }
 
-        if (_prototypeManager.TryIndex<DamageTypePrototype>(damageTypeOrGroup, out var damageType))
+        func = (entity, ignoreResistances) =>
         {
-            func = (entity, ignoreResistances) =>
+            var name = entity.ToString();
+            if (_entManager.TryGetComponent<MetaDataComponent>(entity, out var meta))
+                name = meta.EntityName;
+
+            var damageResult = _entManager.System<DamageableSystem>()
+                .TryChangeDamage(entity, damageSpecifier, ignoreResistances);
+
+            if (damageResult == null)
             {
-                var damage = new DamageSpecifier(damageType, amount);
-                _entManager.System<DamageableSystem>().TryChangeDamage(entity, damage, ignoreResistances);
-            };
+                shell.WriteError(Loc.GetString("damage-command-fail-message",
+                    ("entity", name)));
+                return;
+            }
 
-            return true;
-        }
+            shell.WriteLine(Loc.GetString("damage-command-success-message",
+                ("damage", damageResult.GetTotal()),
+                ("type", damageTypeOrGroup),
+                ("entity", name)));
+        };
 
-        shell.WriteLine(Loc.GetString("damage-command-error-type", ("arg", args[0])));
-        func = null;
-        return false;
+        return true;
     }
 
     public void Execute(IConsoleShell shell, string argStr, string[] args)
     {
         if (args.Length < 1 || args.Length > 3)
         {
-            shell.WriteLine(Loc.GetString("damage-command-error-args"));
+            shell.WriteError(Loc.GetString("damage-command-error-args"));
+            shell.WriteLine(Help);
             return;
         }
 
@@ -133,7 +150,7 @@ sealed class SelfDamageCommand : IConsoleCommand
             target = playerEntity;
         else
         {
-            shell.WriteLine(Loc.GetString("self-damage-command-error-player"));
+            shell.WriteError(Loc.GetString("self-damage-command-error-player"));
             return;
         }
 
@@ -145,7 +162,7 @@ sealed class SelfDamageCommand : IConsoleCommand
         {
             if (!bool.TryParse(args[2], out ignoreResistances))
             {
-                shell.WriteLine(Loc.GetString("damage-command-error-bool", ("arg", args[2])));
+                shell.WriteError(Loc.GetString("damage-command-error-bool", ("arg", args[2])));
                 return;
             }
         }
