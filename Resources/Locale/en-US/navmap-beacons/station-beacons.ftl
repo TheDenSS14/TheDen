@@ -73,7 +73,6 @@ station-beacon-kitchen = Kitchen
 station-beacon-bar = Bar
 station-beacon-botany = Botany
 station-beacon-janitor = Janitor
-station-beacon-clown = Clown
 station-beacon-mime = Mime
 
 station-beacon-ai = AI
