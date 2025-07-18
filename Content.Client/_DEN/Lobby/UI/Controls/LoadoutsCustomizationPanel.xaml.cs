@@ -124,7 +124,8 @@ public sealed partial class LoadoutsCustomizationPanel : ScrollContainer
         var colorEqual = !CustomColorBox.Visible
             || AllowCustomColorCheckBox.Pressed && CustomColorSliders.Color == prefColor
             || !AllowCustomColorCheckBox.Pressed && prefColor == null;
-        var heirloomEqual = !HeirloomCheckBox.Visible || HeirloomCheckBox.Pressed == prefHeirloom;
+        var heirloomEqual = !HeirloomCheckBox.Visible
+            || HeirloomCheckBox.Pressed == (prefHeirloom ?? false);
 
         var isEqual = nameEqual && descEqual && colorEqual && heirloomEqual;
 
