@@ -74,6 +74,7 @@ station-beacon-bar = Bar
 station-beacon-botany = Botany
 station-beacon-janitor = Janitor
 station-beacon-mime = Mime
+station-beacon-musician = Musician
 
 station-beacon-ai = AI
 station-beacon-ai-sat = AI Sat

@@ -620,6 +620,14 @@
   - type: NavMapBeacon
     defaultText: station-beacon-mime
 
+- type: entity
+  parent: DefaultStationBeaconService
+  id: DefaultStationBeaconMusician
+  suffix: Musician
+  components:
+  - type: NavMapBeacon
+    defaultText: station-beacon-musician
+
 # Silicon
 - type: entity
   parent: DefaultStationBeacon
