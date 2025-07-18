@@ -10,7 +10,11 @@ using Robust.Client.UserInterface.XAML;
 
 namespace Content.Client._DEN.Lobby.UI.Controls;
 
-// This basically exists just to cut out a lot of style-setting boilerplate.
+/// <summary>
+///     A button used to switch between loadout category panels.
+///     "Leaf" category buttons use standard button styling; otherwise,
+///     "branch" (non-leaf) category buttons point to a list of subcategories.
+/// </summary>
 [GenerateTypedNameReferences]
 public sealed partial class LoadoutCategoryButton : Button
 {
@@ -31,12 +35,20 @@ public sealed partial class LoadoutCategoryButton : Button
             AddStyleClass(BranchButtonStyleClass);
     }
 
+    /// <summary>
+    ///     Sets the name text part of the loadout category.
+    /// </summary>
+    /// <param name="text">Label text to use.</param>
     public void SetLabelText(string text)
     {
         _labelText = text;
         UpdateLabel();
     }
 
+    /// <summary>
+    ///     Sets the number of currently-equipped loadouts for this category.
+    /// </summary>
+    /// <param name="count">The number of currently-equipped loadouts.</param>
     public void SetLoadoutCount(int count)
     {
         _loadoutCount = count;

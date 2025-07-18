@@ -174,6 +174,19 @@ public sealed partial class LoadoutsCategoryPanel : ScrollContainer
     #endregion Initialization
     #region Callbacks
 
+    /// <summary>
+    ///     Selects a loadout category, which means moving up/down the category tree if necessary
+    ///     and changing the visible loadout item list.
+    /// </summary>
+    /// <remarks>
+    ///     When the loadout category is set, the UI is updated "lazily", which means the visible
+    ///     category box only changes if the newly-selected category is actually different from the
+    ///     current one. Thus, the "force" property is relevant if you want to ignore this check
+    ///     and do it anyway - for example, on first-time UI initialization, when the "root" category
+    ///     is selected but not yet visible.
+    /// </remarks>
+    /// <param name="category">The category to select.</param>
+    /// <param name="force">Whether the UI should be forced to update.</param>
     public void SelectLoadoutCategory(LoadoutCategoryPrototype? category, bool force = false)
     {
         _currentCategory = category?.ID;
@@ -213,6 +226,14 @@ public sealed partial class LoadoutsCategoryPanel : ScrollContainer
     #endregion Callbacks
     #region Helpers
 
+    /// <summary>
+    ///     Updates the loadout count labels of all loadout categories.
+    /// </summary>
+    /// <remarks>
+    ///     These only need to be updated all at once if the entire profile changes, otherwise
+    ///     you can update one label at a time e.g. when items are toggled.
+    /// </remarks>
+    /// <param name="profile">The profile to sync loadout counts to.</param>
     public void UpdateLoadoutCounts(HumanoidCharacterProfile? profile)
     {
         var counts = profile?.LoadoutPreferences

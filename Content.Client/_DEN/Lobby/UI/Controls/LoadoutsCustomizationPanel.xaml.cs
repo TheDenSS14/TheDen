@@ -13,6 +13,14 @@ using Robust.Shared.Utility;
 
 namespace Content.Client._DEN.Lobby.UI.Controls;
 
+/// <summary>
+///     This panel handles changing customization for individual loadout items
+///     - name, description, color tint, and heirloom. It only customizes one item at a time.
+/// </summary>
+/// <remarks>
+///     This gets its own panel so that we only have to make one color slider for the entire
+///     loadout tab - the old way of doing things caused major performance issues.
+/// </remarks>
 [GenerateTypedNameReferences]
 public sealed partial class LoadoutsCustomizationPanel : ScrollContainer
 {
@@ -26,6 +34,16 @@ public sealed partial class LoadoutsCustomizationPanel : ScrollContainer
     private readonly Thickness _miscButtonPadding = new(4f);
     private LoadoutPreference? _preference;
 
+    /// <summary>
+    ///     The current preference of this loadout item. This includes whether or not it is selected,
+    ///     and custom name, description, color tint, and heirloom status.
+    /// </summary>
+    /// <remarks>
+    ///     This does some back-and-forth syncing between this panel and relevant LoadoutItemButtons;
+    ///     make sure that when you update the preference of a loadout that's currently being
+    ///     customized, it should be synced back here, and vice versa. Customization handles all
+    ///     properties of the LoadoutPreference except selection.
+    /// </remarks>
     public LoadoutPreference? Preference
     {
         get => _preference;
@@ -63,6 +81,16 @@ public sealed partial class LoadoutsCustomizationPanel : ScrollContainer
         ResetButton.OnPressed += _ => SetFieldsToPreference();
     }
 
+    /// <summary>
+    ///     Sets the current preview entity for the loadout being customized.
+    /// </summary>
+    /// <remarks>
+    ///     Note that this entity doesn't really "belong" to the customization panel; it "belongs"
+    ///     to a button in LoadoutsItemListPanel. So if you want to modify this entity in any way
+    ///     (e.g. changing its paint color), that should be handled in the loadout button rather than
+    ///     in here.
+    /// </remarks>
+    /// <param name="uid">The preview entity to use.</param>
     public void SetPreviewSprite(EntityUid? uid) => PreviewSprite.SetEntity(uid);
 
     private void AddCheckboxStyle(CheckBox box)

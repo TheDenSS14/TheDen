@@ -22,6 +22,12 @@ using Robust.Shared.Utility;
 
 namespace Content.Client._DEN.Lobby.UI.Controls;
 
+/// <summary>
+///     A control that represents one loadout item in the loadout item list.
+///     Each loadout item button displays their cost, icon, and name. It also displays a guidebook entry
+///     button (if it has one) and the "customize" button (if it is currently selected).
+///     This button may also be dynamically shown/hidden depending on if it is "unwearable/unusable" or not.
+/// </summary>
 [GenerateTypedNameReferences]
 public sealed partial class LoadoutItemButton : StyledButtonGroup
 {
@@ -53,10 +59,29 @@ public sealed partial class LoadoutItemButton : StyledButtonGroup
 
     private List<string> _reasons = new();
 
+    /// <summary>
+    ///     The loadout prototype represented by this button.
+    /// </summary>
     public LoadoutPrototype Loadout;
+
+    /// <summary>
+    ///     Whether or not this button is visually currently selected.
+    /// </summary>
     public bool Pressed => ItemToggleButton.Pressed;
+
+    /// <summary>
+    ///     Whether or not this loadout is "unusable" (character does not meet the requirements to use it).
+    /// </summary>
     public bool Unusable => ItemToggleButton.HasStyleClass(UnusableStyleClass);
+
+    /// <summary>
+    ///     Whether or not this loadout is "unwearable" (character lacks the slots to equip it).
+    /// </summary>
     public bool Unwearable => ItemToggleButton.HasStyleClass(UnwearableStyleClass);
+
+    /// <summary>
+    ///     The name of this loadout item.
+    /// </summary>
     public string LoadoutName => LoadoutNameLabel.Text ?? string.Empty;
 
     /// <summary>
@@ -66,6 +91,15 @@ public sealed partial class LoadoutItemButton : StyledButtonGroup
     public bool MatchFilter = true;
 
     private LoadoutPreference _preference;
+
+    /// <summary>
+    ///     The current preference of this loadout item. This includes whether or not it is selected,
+    ///     and custom name, description, color tint, and heirloom status.
+    /// </summary>
+    /// <remarks>
+    ///     This control only changes the "selected" property of the loadout preference; everything else is
+    ///     handled in the customization panel.
+    /// </remarks>
     public LoadoutPreference Preference
     {
         get => _preference;
@@ -78,6 +112,9 @@ public sealed partial class LoadoutItemButton : StyledButtonGroup
         }
     }
 
+    /// <summary>
+    ///     The entity being used as this loadout's icon.
+    /// </summary>
     public EntityUid? PreviewEntity { get; private set; }
 
     public LoadoutItemButton(LoadoutPrototype loadout)
@@ -117,25 +154,32 @@ public sealed partial class LoadoutItemButton : StyledButtonGroup
         base.Deparented();
     }
 
+    /// <summary>
+    ///     Set the unusable status of this loadout. Whether or not a loadout is usable is based on
+    ///     requiremments - playtime, currently-equipped job, species, etc.
+    /// </summary>
+    /// <param name="unusable">Whether or not this loadout is unusable.</param>
+    /// <param name="reasons">A list of requirements to use this loadout.</param>
     public void SetUnusable(bool unusable, List<string> reasons)
     {
         SetStyleClass(UnusableStyleClass, unusable);
         _reasons = reasons;
     }
 
+    /// <summary>
+    ///     Set the unwearable status of this loadout. A loadout is unwearable if it is a clothing item
+    ///     that this character doesn't have a slot for, e.g. because of their species.
+    /// </summary>
+    /// <param name="unwearable">Whether or not this loadout is unwearable.</param>
     public void SetUnwearable(bool unwearable)
     {
         SetStyleClass(UnwearableStyleClass, unwearable);
     }
 
-    public void SetStyleClass(string styleClass, bool enabled)
-    {
-        if (enabled && !ItemToggleButton.HasStyleClass(styleClass))
-            ItemToggleButton.AddStyleClass(styleClass);
-        else if (!enabled && ItemToggleButton.HasStyleClass(styleClass))
-            ItemToggleButton.RemoveStyleClass(styleClass);
-    }
-
+    /// <summary>
+    ///     Set the selected status of this button (without invoking a preference update event).
+    /// </summary>
+    /// <param name="selected">Whether or not this button should be selected.</param>
     public void SetSelected(bool selected)
     {
         _preference.Selected = selected;
@@ -151,6 +195,14 @@ public sealed partial class LoadoutItemButton : StyledButtonGroup
         var previewProto = Loadout.Items.First();
         PreviewEntity = _entity.Spawn(previewProto, MapCoordinates.Nullspace);
         PreviewSprite.SetEntity(PreviewEntity);
+    }
+
+    private void SetStyleClass(string styleClass, bool enabled)
+    {
+        if (enabled && !ItemToggleButton.HasStyleClass(styleClass))
+            ItemToggleButton.AddStyleClass(styleClass);
+        else if (!enabled && ItemToggleButton.HasStyleClass(styleClass))
+            ItemToggleButton.RemoveStyleClass(styleClass);
     }
 
     private void UpdatePressedVisuals()

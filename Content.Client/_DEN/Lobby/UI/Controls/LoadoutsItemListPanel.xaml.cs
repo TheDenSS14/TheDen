@@ -26,6 +26,16 @@ using Robust.Shared.Prototypes;
 
 namespace Content.Client._DEN.Lobby.UI.Controls;
 
+/// <summary>
+///     This panel contains all loadout item buttons, the buttons you actually click on
+///     to toggle the loadout preferences on/off. It also handles searching, removing
+///     unusable loadouts, and managing the wearable/usable states of each button.
+/// </summary>
+/// <remarks>
+///     Due to having a list of all loadout buttons, this panel acts as the de-facto
+///     "source of truth" for what loadouts exist. That's why this class, and LoadoutItemButton
+///     are so complex. In the future I would like to separate these concerns a little better.
+/// </remarks>
 [GenerateTypedNameReferences]
 public sealed partial class LoadoutsItemListPanel : BoxContainer
 {
@@ -74,6 +84,10 @@ public sealed partial class LoadoutsItemListPanel : BoxContainer
     private Dictionary<Button, ConfirmationData> _confirmationData = new();
     private ProtoId<LoadoutCategoryPrototype>? _currentCategory = null;
 
+    /// <summary>
+    ///     A list of all currently-requipped loadouts that are either unusable
+    ///     or unwearable.
+    /// </summary>
     public List<LoadoutPrototype> UnusableLoadouts => _loadoutButtons.Values
         .Where(b => b.Preference.Selected && (b.Unusable || b.Unwearable))
         .Select(b => b.Loadout)
@@ -113,6 +127,16 @@ public sealed partial class LoadoutsItemListPanel : BoxContainer
         RemoveUnusableButton.OnPressed += _ => RemoveUnusableLoadouts();
     }
 
+    /// <summary>
+    ///     Sets the current profile that this panel uses. This also updates the currently-selected
+    ///     status of loadout buttons, recalculates how many points are being spent, and updates
+    ///     the requirements for this panel.
+    /// </summary>
+    /// <remarks>
+    ///     This function is HEAVY; it's pretty vital that this only gets called (at most) once in a
+    ///     frame, because calling it twice will cause noticeable, unnecessary lag.
+    /// </remarks>
+    /// <param name="profile">The character profile to sync loadout states to.</param>
     public void SetProfile(HumanoidCharacterProfile? profile)
     {
         _profile = profile;
@@ -131,11 +155,23 @@ public sealed partial class LoadoutsItemListPanel : BoxContainer
         AdminUIHelpers.RemoveConfirm(RemoveUnusableButton, _confirmationData);
     }
 
+    /// <summary>
+    ///     Sets the character preview dummy the loadout tab will use.
+    /// </summary>
+    /// <remarks>
+    ///     This is used for checking is a loadout can be worn by the current character, as
+    ///     the dummy (ideally) should have the same inventory slots as the player species.
+    /// </remarks>
+    /// <param name="dummy">The dummy entity to use.</param>
     public void SetCharacterDummy(EntityUid? dummy)
     {
         _characterDummy = dummy;
     }
 
+    /// <summary>
+    ///     Sets the currently visible category panel for loadout items.
+    /// </summary>
+    /// <param name="category">ID of the category to make visible.</param>
     public void SetVisibleCategory(ProtoId<LoadoutCategoryPrototype>? category)
     {
         if (_currentCategory == category)
@@ -161,6 +197,10 @@ public sealed partial class LoadoutsItemListPanel : BoxContainer
         CategoryTitle.Text = titleText;
     }
 
+    /// <summary>
+    ///     Initializes all category boxes containing lists of loadout items.
+    /// </summary>
+    /// <param name="reset">When this is true, all categories/buttons will be deleted first.</param>
     public void PopulateLoadouts(bool reset = false)
     {
         if (reset)

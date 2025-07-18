@@ -71,6 +71,14 @@ public sealed partial class LoadoutsTab : BoxContainer
         CustomizationPanel.OnCustomizationSaved += UpdateLoadoutPreference;
     }
 
+    /// <summary>
+    ///     Syncs the loadout tab's UI to a new profile.
+    /// </summary>
+    /// <remarks>
+    ///     This gets updated every time a loadout changes, or when the profile updates elsewhere in
+    ///     the character editor (species, jobs...)
+    /// </remarks>
+    /// <param name="profile">The profile to sync.</param>
     public void SetProfile(HumanoidCharacterProfile? profile)
     {
         ItemListPanel.SetProfile(profile);
@@ -90,6 +98,14 @@ public sealed partial class LoadoutsTab : BoxContainer
         }
     }
 
+    /// <summary>
+    ///     Sets the character preview dummy the loadout tab will use.
+    /// </summary>
+    /// <remarks>
+    ///     This is used for checking is a loadout can be worn by the current character, as
+    ///     the dummy (ideally) should have the same inventory slots as the player species.
+    /// </remarks>
+    /// <param name="dummy">The dummy entity to use.</param>
     public void SetCharacterDummy(EntityUid? dummy)
     {
         ItemListPanel.SetCharacterDummy(dummy);
@@ -116,8 +132,16 @@ public sealed partial class LoadoutsTab : BoxContainer
         SetCustomizePreference(newPreference);
     }
 
+    /// <summary>
+    ///     Deletes the UI's contents and remakes it from scratch.
+    /// </summary>
+    /// <remarks>
+    ///     This is called when a loadout prototype is modified while in-game.
+    /// </remarks>
     public void Reset()
     {
+        // TODO: This is bugged, can't figure out why. The UI will successfully create all of the
+        // item buttons again, but they won't actually display for some unknown reason.
         SetCustomizePreference(null);
         ItemListPanel.PopulateLoadouts(reset: true);
     }
@@ -151,5 +175,14 @@ public sealed partial class LoadoutsTab : BoxContainer
         OnOpenGuidebook?.Invoke(entries);
     }
 
-    public static string GetCategoryName(string categoryId) => Loc.GetString($"loadout-category-{categoryId}");
+    /// <summary>
+    ///     Gets the category name for a given category ID.
+    /// </summary>
+    /// <remarks>
+    ///     This is public static, because both the item list and the category panel use it.
+    /// </remarks>
+    /// <param name="categoryId">The category ID.</param>
+    /// <returns>A localized category name.</returns>
+    public static string GetCategoryName(string categoryId)
+        => Loc.GetString($"loadout-category-{categoryId}");
 }

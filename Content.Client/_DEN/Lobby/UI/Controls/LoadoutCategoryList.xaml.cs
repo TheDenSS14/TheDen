@@ -12,7 +12,10 @@ using Robust.Client.UserInterface.XAML;
 
 namespace Content.Client._DEN.Lobby.UI.Controls;
 
-// This basically exists just to cut out a lot of style-setting boilerplate.
+/// <summary>
+///     A container with a list of category buttons that are used to navigate between
+///     tabs of the loadout UI.
+/// </summary>
 [GenerateTypedNameReferences]
 public sealed partial class LoadoutCategoryList : BoxContainer
 {
@@ -22,7 +25,15 @@ public sealed partial class LoadoutCategoryList : BoxContainer
     private const int CategoryNameFontSize = 16;
     private Font CategoryNameFont => _resourceCache.GetFont(CategoryNameFontPath, CategoryNameFontSize);
 
+    /// <summary>
+    ///     This represents the first leaf category in this list.
+    ///     When this category list is opened, the leaf category will be automatically selected.
+    /// </summary>
     public LoadoutCategoryPrototype? FirstLeafCategory;
+    /// <summary>
+    ///     This represents the first leaf category button in this list.
+    ///     When this category list is opened, the leaf button will be automatically selected.
+    /// </summary>
     public Button? FirstLeafButton;
 
     public LoadoutCategoryList()
@@ -33,6 +44,10 @@ public sealed partial class LoadoutCategoryList : BoxContainer
         CategoryTitleLabel.FontOverride = CategoryNameFont;
     }
 
+    /// <summary>
+    ///     Sets the header text for this category.
+    /// </summary>
+    /// <param name="name">The header text to use.</param>
     public void SetLabelText(string name)
     {
         CategoryTitleLabel.Text = name;
