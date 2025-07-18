@@ -4,8 +4,8 @@ meta:
   engineVersion: 260.2.0
   forkId: ""
   forkVersion: ""
-  time: 07/18/2025 08:46:37
-  entityCount: 26601
+  time: 07/18/2025 09:43:46
+  entityCount: 26603
 maps:
 - 1
 grids:
@@ -11565,7 +11565,7 @@ entities:
       pos: 76.5,-12.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -16661.195
+      secondsUntilStateChange: -16857.795
       state: Opening
     - type: DeviceLinkSink
       invokeCounter: 1
@@ -12997,7 +12997,7 @@ entities:
       pos: 2.5,27.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -21650.324
+      secondsUntilStateChange: -21846.924
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -13496,8 +13496,6 @@ entities:
       pos: -53.5,-12.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 2332
   - uid: 4534
@@ -13507,8 +13505,6 @@ entities:
       pos: -42.5,-10.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 4523
   - uid: 5246
@@ -61369,7 +61365,7 @@ entities:
       pos: 65.5,-16.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -33974.793
+      secondsUntilStateChange: -34171.39
       state: Closing
   - uid: 23609
     components:
@@ -61377,7 +61373,7 @@ entities:
       pos: 65.5,-17.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -33973.86
+      secondsUntilStateChange: -34170.457
       state: Closing
   - uid: 23610
     components:
@@ -61385,7 +61381,7 @@ entities:
       pos: 65.5,-18.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -33973.258
+      secondsUntilStateChange: -34169.855
       state: Closing
 - proto: CurtainsWhiteOpen
   entities:
@@ -107199,8 +107195,6 @@ entities:
       pos: -52.5,-12.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 2332
   - uid: 4293
@@ -107221,8 +107215,6 @@ entities:
       pos: -41.5,-11.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 4523
   - uid: 5179
@@ -121874,6 +121866,13 @@ entities:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: 41.5,-10.5
+      parent: 2
+- proto: MouseTimedSpawner
+  entities:
+  - uid: 23830
+    components:
+    - type: Transform
+      pos: 28.5,-11.5
       parent: 2
 - proto: Multitool
   entities:
@@ -143001,6 +143000,13 @@ entities:
     - type: Transform
       pos: 9.5,10.5
       parent: 2
+- proto: SpawnPointObserver
+  entities:
+  - uid: 23829
+    components:
+    - type: Transform
+      pos: 0.5,0.5
+      parent: 2
 - proto: SpawnPointParamedic
   entities:
   - uid: 26144
@@ -145306,6 +145312,11 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 82.5,-22.5
       parent: 2
+    - type: SurveillanceCamera
+      setupAvailableNetworks:
+      - SurveillanceCameraCommand
+      nameSet: True
+      id: AI Core Room
   - uid: 26346
     components:
     - type: Transform
@@ -146267,6 +146278,8 @@ entities:
     - type: SurveillanceCamera
       setupAvailableNetworks:
       - SurveillanceCameraScience
+      nameSet: True
+      id: Xenobiology Main
   - uid: 23597
     components:
     - type: Transform
@@ -146311,11 +146324,8 @@ entities:
     - type: SurveillanceCamera
       setupAvailableNetworks:
       - SurveillanceCameraSecurity
-    - type: UserInterface
-      actors:
-        enum.SurveillanceCameraSetupUiKey.Camera:
-        - invalid
-    - type: ActiveUserInterface
+      nameSet: True
+      id: Perma External Access Airlock
   - uid: 23474
     components:
     - type: Transform
@@ -146324,11 +146334,8 @@ entities:
     - type: SurveillanceCamera
       setupAvailableNetworks:
       - SurveillanceCameraSecurity
-    - type: UserInterface
-      actors:
-        enum.SurveillanceCameraSetupUiKey.Camera:
-        - invalid
-    - type: ActiveUserInterface
+      nameSet: True
+      id: Perma External Access
   - uid: 23475
     components:
     - type: Transform
@@ -167062,7 +167069,7 @@ entities:
       lastSignals:
         DoorStatus: True
     - type: Door
-      secondsUntilStateChange: -2673.4429
+      secondsUntilStateChange: -2870.0425
       state: Opening
 - proto: WindoorKitchenLocked
   entities:
