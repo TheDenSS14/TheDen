@@ -132,6 +132,7 @@
     defaultTarget: complete
 
 # Prototypes for various default beacon configurations.
+# Command
 - type: entity
   parent: DefaultStationBeacon
   id: DefaultStationBeaconCommand
@@ -173,6 +174,7 @@
   - type: NavMapBeacon
     defaultText: station-beacon-hop
 
+# Security
 - type: entity
   parent: DefaultStationBeacon
   id: DefaultStationBeaconSecurity
@@ -239,14 +241,6 @@
     defaultText: station-beacon-courtroom
 
 - type: entity
-  parent: DefaultStationBeaconService #Delta V - Lawer is Service until Justice Dept is a thing
-  id: DefaultStationBeaconLawOffice
-  suffix: Law Office
-  components:
-  - type: NavMapBeacon
-    defaultText: station-beacon-law
-
-- type: entity
   parent: DefaultStationBeaconSecurity
   id: DefaultStationBeaconSecurityCheckpoint
   suffix: Sec Checkpoint
@@ -254,6 +248,7 @@
   - type: NavMapBeacon
     defaultText: station-beacon-security-checkpoint
 
+# Medical
 - type: entity
   parent: DefaultStationBeacon
   id: DefaultStationBeaconMedical
@@ -311,6 +306,7 @@
   - type: NavMapBeacon
     defaultText: station-beacon-surgery
 
+# Epistemics
 - type: entity
   parent: DefaultStationBeacon
   id: DefaultStationBeaconScience
@@ -369,6 +365,15 @@
     defaultText: station-beacon-anomaly-gen
 
 - type: entity
+  parent: DefaultStationBeaconScience #Delta V - Chapel in Epi
+  id: DefaultStationBeaconChapel
+  suffix: Chapel
+  components:
+  - type: NavMapBeacon
+    defaultText: station-beacon-chapel
+
+# Logistics
+- type: entity
   parent: DefaultStationBeacon
   id: DefaultStationBeaconSupply
   suffix: Logistics #Delta V - Renamed
@@ -409,6 +414,7 @@
   - type: NavMapBeacon
     defaultText: station-beacon-salvage
 
+# Engineering
 - type: entity
   parent: DefaultStationBeacon
   id: DefaultStationBeaconEngineering
@@ -506,6 +512,7 @@
   - type: NavMapBeacon
     defaultText: station-beacon-tech-vault
 
+# Service
 - type: entity
   parent: DefaultStationBeacon
   id: DefaultStationBeaconService
@@ -514,6 +521,14 @@
   - type: NavMapBeacon
     defaultText: station-beacon-service
     color: "#9FED58"
+
+- type: entity
+  parent: DefaultStationBeaconService #Delta V - Lawer is Service until Justice Dept is a thing
+  id: DefaultStationBeaconLawOffice
+  suffix: Law Office
+  components:
+  - type: NavMapBeacon
+    defaultText: station-beacon-law
 
 - type: entity
   parent: DefaultStationBeaconService
@@ -547,6 +562,7 @@
   - type: NavMapBeacon
     defaultText: station-beacon-janitor-closet #Delta V - Add for closet/outpost
 
+# Silicon
 - type: entity
   parent: DefaultStationBeacon
   id: DefaultStationBeaconAI
@@ -572,6 +588,7 @@
   - type: NavMapBeacon
     defaultText: station-beacon-ai-core
 
+# Misc
 - type: entity
   parent: DefaultStationBeacon
   id: DefaultStationBeaconArrivals
@@ -595,14 +612,6 @@
   components:
   - type: NavMapBeacon
     defaultText: station-beacon-eva-storage
-
-- type: entity
-  parent: DefaultStationBeaconScience #Delta V - Chapel in Epi
-  id: DefaultStationBeaconChapel
-  suffix: Chapel
-  components:
-  - type: NavMapBeacon
-    defaultText: station-beacon-chapel
 
 - type: entity
   parent: DefaultStationBeacon
