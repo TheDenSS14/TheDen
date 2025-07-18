@@ -16,6 +16,7 @@
   id: LoadoutClothingHeadHatCapPrisonGuard
   category: JobsSecurityPrisonGuard
   cost: 0
+  exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutPrisonGuardHead
@@ -40,6 +41,7 @@
   id: LoadoutUniformJumpsuitPrisonGuard
   category: JobsSecurityPrisonGuard
   cost: 0
+  exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutPrisonGuardUniforms

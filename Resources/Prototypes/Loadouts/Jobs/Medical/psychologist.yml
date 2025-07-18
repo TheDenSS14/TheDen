@@ -143,6 +143,7 @@
   id: LoadoutPsychologistJumpsuit
   category: JobsMedicalPsychologist
   cost: 0
+  exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutPsychologistUniforms

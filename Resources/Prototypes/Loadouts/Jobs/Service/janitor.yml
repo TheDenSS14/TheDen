@@ -21,6 +21,7 @@
   id: LoadoutClothingHandsJanitorRubber
   category: JobsServiceJanitor
   cost: 0
+  exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutJanitorGloves
@@ -43,6 +44,7 @@
   id: LoadoutServiceWinterCoatJanitor
   category: JobsServiceJanitor
   cost: 0
+  exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutJanitorOuter
@@ -57,6 +59,7 @@
   id: LoadoutClothingShoesGaloshes
   category: JobsServiceJanitor
   cost: 0
+  exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutJanitorShoes
@@ -70,6 +73,7 @@
   id: LoadoutClothingShoesPurpleGaloshes
   category: JobsServiceJanitor
   cost: 0
+  exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutJanitorOuter

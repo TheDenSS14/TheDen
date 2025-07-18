@@ -414,6 +414,7 @@
   id: LoadoutCommandCapMaskGas
   category: JobsCommandCaptain
   cost: 0
+  exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutCaptainMask
@@ -427,6 +428,7 @@
   id: LoadoutCommandCapMaskGasCombat
   category: JobsCommandCaptain
   cost: 0
+  exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutCaptainMask

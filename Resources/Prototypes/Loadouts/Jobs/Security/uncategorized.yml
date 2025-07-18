@@ -1066,6 +1066,7 @@
   id: LoadoutSecurityHeadHelmetInsulated
   category: JobsSecurityAUncategorized
   cost: 1
+  exclusive: true
   guideEntry: PsionicInsulation
   requirements:
     - !type:CharacterItemGroupRequirement
@@ -1101,6 +1102,7 @@
   id: LoadoutClothingOuterWinterCoatSec
   category: JobsSecurityAUncategorized
   cost: 0
+  exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutSecurityOuter

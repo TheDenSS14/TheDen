@@ -56,6 +56,7 @@
   id: LoadoutCommandCapCollar
   category: JobsCommandCaptain
   cost: 0
+  exclusive: true
   requirements:
     - !type:CharacterJobRequirement
       jobs:

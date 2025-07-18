@@ -72,6 +72,7 @@
   id: LoadoutClothingOuterWinterCoatWarden
   category: JobsSecurityWarden
   cost: 0
+  exclusive: true
   requirements:
   - !type:CharacterItemGroupRequirement
     group: LoadoutWardenOuter
@@ -99,6 +100,7 @@
   id: LoadoutClothingOuterLongCoatWarden
   category: JobsSecurityWarden
   cost: 0
+  exclusive: true
   requirements:
   - !type:CharacterItemGroupRequirement
     group: LoadoutWardenOuter
@@ -112,6 +114,7 @@
   id: LoadoutWardenOuterCoatWinterCoatArmoured
   category: JobsSecurityWarden
   cost: 0
+  exclusive: true
   requirements:
   - !type:CharacterItemGroupRequirement
     group: LoadoutWardenOuter

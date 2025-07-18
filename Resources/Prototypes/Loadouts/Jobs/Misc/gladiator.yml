@@ -24,6 +24,7 @@
   id: LoadoutGladiatorClothingOuterGladiatorArmor
   category: JobsZMiscGladiator
   cost: 1
+  exclusive: true
   requirements:
     - !type:CharacterJobRequirement
       jobs:
@@ -40,6 +41,7 @@
   id: LoadoutGladiatorClothingUniformGladiator
   category: JobsZMiscGladiator
   cost: 1
+  exclusive: true
   requirements:
     - !type:CharacterJobRequirement
       jobs:
