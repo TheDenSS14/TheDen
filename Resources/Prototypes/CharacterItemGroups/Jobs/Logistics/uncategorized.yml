@@ -1,4 +1,6 @@
 # SPDX-FileCopyrightText: 2024 VMSolidus
+# SPDX-FileCopyrightText: 2025 Blitz
+# SPDX-FileCopyrightText: 2025 BlitzTheSquishy
 # SPDX-FileCopyrightText: 2025 M3739
 # SPDX-FileCopyrightText: 2025 MajorMoth
 # SPDX-FileCopyrightText: 2025 Tabitha
@@ -39,47 +41,63 @@
 #  id: LoadoutLogisticsEyes
 #  maxItems: 1
 #  items:
-#
-#- type: characterItemGroup
-#  id: LoadoutLogisticsGloves
-#  maxItems: 1
-#  items:
+
+- type: characterItemGroup
+  id: LoadoutLogisticsGloves
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutClothingHandsLogisWarmers
 
 - type: characterItemGroup
   id: LoadoutLogisticsHead
   maxItems: 1
   items:
-      - type: loadout
-        id: LoadoutClothingHeadHatBeretLogi
+    - type: loadout
+      id: LoadoutClothingHeadHatBeretLogi
 
 #- type: characterItemGroup
 #  id: LoadoutLogisticsId
 #  maxItems: 1
 #  items:
-#
+
 - type: characterItemGroup
   id: LoadoutLogisticsNeck
   maxItems: 1
   items:
     - type: loadout
       id: LoadoutCargoNeckNeckerchief # Floof - M3739 - #988
+    - type: loadout
+      id: LoadoutCargoNeckCollar
 
 #- type: characterItemGroup
 #  id: LoadoutLogisticsMask
 #  maxItems: 1
 #  items:
-#
-#- type: characterItemGroup
-#  id: LoadoutLogisticsOuter
-#  maxItems: 1
-#  items:
-#
-#- type: characterItemGroup
-#  id: LoadoutLogisticsShoes
-#  maxItems: 1
-#  items:
-#
-#- type: characterItemGroup
-#  id: LoadoutLogisticsUniforms
-#  maxItems: 1
-#  items:
+
+- type: characterItemGroup
+  id: LoadoutLogisticsOuter
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutCargoOuterWinterCargo
+    - type: loadout
+      id: LoadoutCargoOuterCoatCargoBomber
+
+- type: characterItemGroup
+  id: LoadoutLogisticsShoes
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutCargoShoesBootsWinterCargo
+    - type: loadout
+      id: LoadoutCargoTechnicianBootsSteel
+    - type: loadout
+      id: LoadoutClothingUnderSocksLogis
+
+- type: characterItemGroup
+  id: LoadoutLogisticsUniforms
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutClothingUniformLogisThong

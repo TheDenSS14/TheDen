@@ -70,6 +70,24 @@
         color: "#f6d56a"
 
 - type: entity
+  categories: [ HideSpawnMenu ]
+  parent: ClothingBackpackMessengerCaptain
+  id: ClothingBackpackMessengerCaptainFilled
+  components:
+  - type: StorageFill
+    contents:
+      - id: Flash
+
+- type: entity
+  categories: [ HideSpawnMenu ]
+  parent: ClothingBackpackMessenger
+  id: ClothingBackpackMessengerHOPFilled
+  components:
+  - type: StorageFill
+    contents:
+      - id: Flash
+
+- type: entity
   parent: ClothingBackpackMessengerBase
   id: ClothingBackpackMessengerCentcomm
   name: centcomm messenger bag
@@ -186,6 +204,15 @@
         color: "#a48965"
       - state: clasp-inhand-right
         color: "#eeeeee"
+
+- type: entity
+  categories: [ HideSpawnMenu ]
+  parent: ClothingBackpackMessengerEngineering
+  id: ClothingBackpackMessengerChiefEngineerFilled
+  components:
+  - type: StorageFill
+    contents:
+      - id: Flash
 
 # Cargo
 - type: entity
@@ -314,6 +341,68 @@
   - type: Sprite
     sprite: _NF/Clothing/Back/Messenger/genetics.rsi
 
+- type: entity
+  categories: [ HideSpawnMenu ]
+  parent: ClothingBackpackMessengerMedical
+  id: ClothingBackpackMessengerCMOFilled
+  components:
+  - type: StorageFill
+    contents:
+      - id: Flash
+
+- type: entity
+  categories: [ HideSpawnMenu ]
+  parent: ClothingBackpackMessengerMedical
+  id: ClothingBackpackMessengerPsychologistFilled
+  components:
+  - type: StorageFill
+    contents:
+      - id: RubberStampPsychologist
+
+- type: entity
+  parent: ClothingBackpackMessengerBase
+  id: ClothingBackpackMessengerParamedic
+  name: paramedic messenger bag
+  description: A robust bag for saving lives.
+  components:
+  - type: Sprite
+    layers:
+    - state: icon-base
+      color: "#364660"
+    - state: icon-sling
+      color: "#3A3A3A"
+    - state: icon-decor-accent
+      color: "#F6F6F6"
+    - state: icon-clasp
+      color: "#5A96BB"
+  - type: Clothing
+    clothingVisuals:
+      back:
+      - state: base-equipped-BACKPACK
+        color: "#364660"
+      - state: sling-equipped-BACKPACK
+        color: "#3A3A3A"
+      - state: decor-accent-equipped-BACKPACK
+        color: "#F6F6F6"
+      - state: clasp-equipped-BACKPACK
+        color: "#5A96BB"
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: base-inhand-left
+        color: "#364660"
+      - state: decor-accent-inhand-left
+        color: "#F6F6F6"
+      - state: clasp-inhand-left
+        color: "#5A96BB"
+      right:
+      - state: base-inhand-right
+        color: "#364660"
+      - state: decor-accent-inhand-right
+        color: "#F6F6F6"
+      - state: clasp-inhand-right
+        color: "#5A96BB"
+
 ## Science
 - type: entity
   parent: ClothingBackpackMessengerBase
@@ -323,6 +412,51 @@
   components:
   - type: Sprite
     sprite: _NF/Clothing/Back/Messenger/science.rsi
+
+- type: entity
+  categories: [ HideSpawnMenu ]
+  parent: ClothingBackpackMessengerScience
+  id: ClothingBackpackMessengerResearchDirectorFilled
+  components:
+  - type: StorageFill
+    contents:
+      - id: Flash
+
+- type: entity
+  parent: ClothingBackpackMessengerBase
+  id: ClothingBackpackMessengerRobotics
+  name: robotics messenger bag
+  description: A robust bag for holding cybernetics.
+  components:
+  - type: Sprite
+    layers:
+    - state: icon-base
+      color: "#D6D6D6"
+    - state: icon-sling
+      color: "#A02D06"
+    - state: icon-clasp
+      color: "#A02D06"
+  - type: Clothing
+    clothingVisuals:
+      back:
+      - state: base-equipped-BACKPACK
+        color: "#D6D6D6"
+      - state: sling-equipped-BACKPACK
+        color: "#A02D06"
+      - state: clasp-equipped-BACKPACK
+        color: "#A02D06"
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: base-inhand-left
+        color: "#D6D6D6"
+      - state: clasp-inhand-left
+        color: "#A02D06"
+      right:
+      - state: base-inhand-right
+        color: "#D6D6D6"
+      - state: clasp-inhand-right
+        color: "#A02D06"
 
 # Civilian
 - type: entity
@@ -426,58 +560,58 @@
       - state: base-top-inhand-left
         color: "#4c4b4f"
       - state: clasp-inhand-left
-        color: "#eca615"
+        color: "#a52f29"
       right:
       - state: base-inhand-right
         color: "#282828"
       - state: base-top-inhand-right
         color: "#4c4b4f"
       - state: clasp-inhand-right
-        color: "#eca615"
+        color: "#a52f29"
 
 - type: entity
   parent: ClothingBackpackMessengerBase
   id: ClothingBackpackMessengerBrigmedic
-  name: brigmedic messenger bag
+  name: corpsman messenger bag
   description: A robust bag for storing extra surgery tools for inmate tort... treating.
   components:
   - type: Sprite
     layers:
     - state: icon-base
-      color: "#88242d"
+      color: "#282828"
     - state: icon-base-top
-      color: "#a52f29"
+      color: "#4c4b4f"
     - state: icon-sling
-      color: "#ffffff" # 1f2026
+      color: "#B0BDCA"
     - state: icon-clasp
-      color: "#ffffff"
+      color: "#2F74B8"
   - type: Clothing
     clothingVisuals:
       back:
       - state: base-equipped-BACKPACK
-        color: "#88242d"
+        color: "#282828"
       - state: base-top-equipped-BACKPACK
-        color: "#a52f29"
+        color: "#4c4b4f"
       - state: sling-equipped-BACKPACK
-        color: "#1f2026" # ffffff
+        color: "#B0BDCA"
       - state: clasp-equipped-BACKPACK
-        color: "#ffffff"
+        color: "#2F74B8"
   - type: Item
     inhandVisuals:
       left:
       - state: base-inhand-left
-        color: "#88242d"
+        color: "#282828"
       - state: base-top-inhand-left
-        color: "#a52f29"
+        color: "#4c4b4f"
       - state: clasp-inhand-left
-        color: "#ffffff"
+        color: "#2F74B8"
       right:
       - state: base-inhand-right
-        color: "#88242d"
+        color: "#282828"
       - state: base-top-inhand-right
-        color: "#a52f29"
+        color: "#4c4b4f"
       - state: clasp-inhand-right
-        color: "#ffffff"
+        color: "#2F74B8"
 
 # HOLDING
 - type: entity

@@ -1013,6 +1013,19 @@
     - ClothingEyesGlassesSecurityVisor
 
 # Gloves
+- type: loadout
+  id: LoadoutClothingHandsGlovesSecurityBlack
+  category: JobsSecurityAUncategorized
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSecurityGloves
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Security
+  items:
+    - ClothingHandsGlovesColorBlack
 
 # Head
 - type: loadout
@@ -1029,9 +1042,9 @@
     - !type:CharacterJobRequirement
       inverted: true
       jobs:
-        - Brigmedic # Corpsman has a Corpsman specific variant
-        - Warden # Warden has a Warden specific variant
-        - HeadOfSecurity # HoS has a HoS specific variant
+        - Brigmedic # Corpsman has ClothingHeadHatBeretBrigmedic & ClothingHeadHatBeretCorpsman
+        - Warden # Warden has ClothingHeadHatBeretWarden
+        - HeadOfSecurity # HoS has ClothingHeadHatBeretHoS
   items:
     - ClothingHeadHatBeretSecurity
 
@@ -1053,6 +1066,7 @@
   id: LoadoutSecurityHeadHelmetInsulated
   category: JobsSecurityAUncategorized
   cost: 1
+  exclusive: true
   guideEntry: PsionicInsulation
   requirements:
     - !type:CharacterItemGroupRequirement
@@ -1088,6 +1102,7 @@
   id: LoadoutClothingOuterWinterCoatSec
   category: JobsSecurityAUncategorized
   cost: 0
+  exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutSecurityOuter
@@ -1097,9 +1112,8 @@
     - !type:CharacterJobRequirement
       inverted: true
       jobs:
-        - Brigmedic # Corpsman has a Corpsman specific variant
-        - Warden # Warden has a Warden specific variant
-        - HeadOfSecurity # HoS has a HoS specific variant
+        - Warden # Warden has ClothingOuterWinterWardenUnarmored (Where is ClothingOuterWinterWarden???)
+        - HeadOfSecurity # HoS has ClothingOuterWinterHoS & ClothingOuterWinterHoSUnarmored
   items:
     - ClothingOuterWinterSec
 
@@ -1170,6 +1184,12 @@
     - !type:CharacterDepartmentRequirement
       departments:
         - Security
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Brigmedic # Corpsman has ClothingLongcoatBrigmedic
+        - Warden # Warden has ClothingLongcoatWarden
+        - HeadOfSecurity # HoS has ClothingLongcoatHoS
   items:
     - ClothingLongcoatSec
 
@@ -1217,9 +1237,8 @@
     - !type:CharacterJobRequirement
       inverted: true
       jobs:
-        - Brigmedic # Corpsman has a Corpsman specific variant
-        - Warden # Warden has a Warden specific variant
-        - HeadOfSecurity # HoS has a HoS specific variant
+        - Warden # Warden has ClothingUniformJumpsuitWardenBlue
+        - HeadOfSecurity # HoS has ClothingUniformJumpsuitHoSBlue
   items:
     - ClothingUniformJumpsuitSecBlue
 
@@ -1237,9 +1256,8 @@
     - !type:CharacterJobRequirement
       inverted: true
       jobs:
-        - Brigmedic # Corpsman has a Corpsman specific variant
-        - Warden # Warden has a Warden specific variant
-        - HeadOfSecurity # HoS has a HoS specific variant
+        - Warden # Warden has ClothingUniformJumpsuitWardenGrey
+        - HeadOfSecurity # HoS has ClothingUniformJumpsuitHoSGrey
   items:
     - ClothingUniformJumpsuitSecGrey
 
@@ -1257,9 +1275,8 @@
     - !type:CharacterJobRequirement
       inverted: true
       jobs:
-        - Brigmedic # Corpsman has a Corpsman specific variant
-        - Warden # Warden has a Warden specific variant
-        - HeadOfSecurity # HoS has a HoS specific variant
+        - Warden # Warden has ClothingUniformJumpskirtWardenGrey
+        - HeadOfSecurity # HoS has ClothingUniformJumpskirtHoSGrey
   items:
     - ClothingUniformJumpskirtSecGrey
 
@@ -1277,9 +1294,8 @@
     - !type:CharacterJobRequirement
       inverted: true
       jobs:
-        - Brigmedic # Corpsman has a Corpsman specific variant
-        - Warden # Warden has a Warden specific variant
-        - HeadOfSecurity # HoS has a HoS specific variant
+        - Warden # Warden has ClothingUniformJumpskirtWardenBlue
+        - HeadOfSecurity # HoS has ClothingUniformJumpskirtHoSBlue
   items:
     - ClothingUniformJumpskirtSecBlue
 
@@ -1297,8 +1313,7 @@
     - !type:CharacterJobRequirement
       inverted: true
       jobs:
-        - Warden # Warden has a Warden specific variant
-        - HeadOfSecurity # HoS has a HoS specific variant
+        - HeadOfSecurity # HoS has ClothingUniformJumpsuitHosFormal & ClothingUniformJumpskirtHosFormal
   items:
     - ClothingUniformJumpsuitSecFormal
 
@@ -1316,9 +1331,7 @@
     - !type:CharacterJobRequirement
       inverted: true
       jobs:
-        - Brigmedic # Corpsman has a Corpsman specific variant
-        - Warden # Warden probably should have warden clothes only
-        - HeadOfSecurity # HoS probably should have HoS clothes only
+        - Brigmedic # Corpsman has ClothingUniformJumpsuitCorpsmanSummer
   items:
     - ClothingUniformJumpsuitSecSummer
 

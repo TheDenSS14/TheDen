@@ -1,4 +1,5 @@
 # SPDX-FileCopyrightText: 2024 VMSolidus
+# SPDX-FileCopyrightText: 2025 BlitzTheSquishy
 # SPDX-FileCopyrightText: 2025 Rosycup
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
@@ -109,11 +110,13 @@
     - type: loadout
       id: LoadoutCargoOuterWinterMiner
 
-#- type: characterItemGroup
-#  id: LoadoutSalvageSpecialistShoes
-#  maxItems: 1
-#  items:
-#
+- type: characterItemGroup
+  id: LoadoutSalvageSpecialistShoes
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutSalvageSpecialistShoesBoots
+
 - type: characterItemGroup
   id: LoadoutSalvageSpecialistUniforms
   maxItems: 1

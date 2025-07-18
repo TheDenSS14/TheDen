@@ -1,0 +1,120 @@
+# Martial Artist
+# Backpacks
+
+# Belt
+- type: loadout
+  id: LoadoutMartialArtistBeltMartialBlack
+  category: JobsServiceMartialArtist
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMartialArtistBelt
+    - !type:CharacterJobRequirement
+      jobs:
+        - MartialArtist
+  items:
+    - ClothingBeltMartialBlack
+
+# Ears
+
+# Equipment
+
+# Eyes
+
+# Gloves
+- type: loadout
+  id: LoadoutMartialArtistGlovesBoxingBlue
+  category: JobsServiceMartialArtist
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMartialArtistGloves
+    - !type:CharacterJobRequirement
+      jobs:
+        - MartialArtist
+  items:
+    - ClothingHandsGlovesBoxingBlue
+
+- type: loadout
+  id: LoadoutMartialArtistGlovesBoxingGreen
+  category: JobsServiceMartialArtist
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMartialArtistGloves
+    - !type:CharacterJobRequirement
+      jobs:
+        - MartialArtist
+  items:
+    - ClothingHandsGlovesBoxingGreen
+
+- type: loadout
+  id: LoadoutMartialArtistGlovesBoxingRed
+  category: JobsServiceMartialArtist
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMartialArtistGloves
+    - !type:CharacterJobRequirement
+      jobs:
+        - MartialArtist
+  items:
+    - ClothingHandsGlovesBoxingRed
+
+- type: loadout
+  id: LoadoutMartialArtistGlovesBoxingYellow
+  category: JobsServiceMartialArtist
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMartialArtistGloves
+    - !type:CharacterJobRequirement
+      jobs:
+        - MartialArtist
+  items:
+    - ClothingHandsGlovesBoxingYellow
+
+# Head
+
+# Id
+
+# Neck
+
+# Mask
+
+# Outer
+
+# Shoes
+- type: loadout
+  id: LoadoutMartialArtistShoesGeta
+  category: JobsServiceMartialArtist
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMartialArtistShoes
+    - !type:CharacterJobRequirement
+      jobs:
+        - MartialArtist
+  items:
+    - ClothingShoesGeta
+
+# Uniforms
+- type: loadout
+  id: LoadoutMartialArtistUniformGi
+  category: JobsServiceMartialArtist
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMartialArtistUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - MartialArtist
+  items:
+    - ClothingUniformMartialGi
