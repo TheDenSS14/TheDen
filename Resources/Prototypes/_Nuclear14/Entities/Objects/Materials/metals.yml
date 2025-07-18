@@ -76,17 +76,17 @@
     stackType: Aluminium
     baseLayer: base
     layerStates:
-    - ingot_aluminum
-    - ingot_aluminum
-    - ingot_aluminum
+    - ingot_aluminium
+    - ingot_aluminium
+    - ingot_aluminium
   - type: Sprite
     sprite: /Textures/_Nuclear14/Objects/Misc/materials.rsi
-    state: ingot_aluminum
+    state: ingot_aluminium
     layers:
-    - state: ingot_aluminum
+    - state: ingot_aluminium
       map: ["base"]
   - type: Item
-    heldPrefix: ingot_aluminum
+    heldPrefix: ingot_aluminium
   - type: Appearance
   - type: Extractable
     grindableSolutionName: aluminium
@@ -104,7 +104,7 @@
   suffix: Single
   components:
   - type: Sprite
-    state: ingot_aluminum
+    state: ingot_aluminium
   - type: Stack
     count: 1
 
