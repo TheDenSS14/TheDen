@@ -157,27 +157,27 @@
   - ChemicalPayload
   # TODO: Add "Explosive Ammunition" to this tech to make it waaaay more interesting.
 
-- type: technology
-  id: ShrapnelMunitions
-  name: research-technology-shrapnel-munitions
-  icon:
-    sprite: Objects/Weapons/Guns/Ammunition/Casings/shotgun_shell.rsi
-    state: base
-  discipline: Arsenal
-  tier: 2
-  cost: 7500
-  recipeUnlocks:
-  - MagazineRifleShrapnel
-  - MagazinePistolShrapnel
-  - MagazinePistolSubMachineGunShrapnel
-  - MagazineMagnumShrapnel
-  - MagazineLightRifleShrapnel
-  - MagazineCaselessRifleShrapnel
-  - MagazineBoxPistolShrapnel
-  - MagazineBoxMagnumShrapnel
-  - MagazineBoxLightRifleShrapnel
-  - MagazineBoxRifleShrapnel
-  - MagazineBoxCaselessRifleShrapnel
+# - type: technology
+#   id: ShrapnelMunitions
+#   name: research-technology-shrapnel-munitions
+#   icon:
+#     sprite: Objects/Weapons/Guns/Ammunition/Casings/shotgun_shell.rsi
+#     state: base
+#   discipline: Arsenal
+#   tier: 2
+#   cost: 7500
+#   recipeUnlocks:
+#   - MagazineRifleShrapnel
+#   - MagazinePistolShrapnel
+#   - MagazinePistolSubMachineGunShrapnel
+#   - MagazineMagnumShrapnel
+#   - MagazineLightRifleShrapnel
+#   - MagazineCaselessRifleShrapnel
+#   - MagazineBoxPistolShrapnel
+#   - MagazineBoxMagnumShrapnel
+#   - MagazineBoxLightRifleShrapnel
+#   - MagazineBoxRifleShrapnel
+#   - MagazineBoxCaselessRifleShrapnel
 
 - type: technology
   id: AdvancedWeapons
