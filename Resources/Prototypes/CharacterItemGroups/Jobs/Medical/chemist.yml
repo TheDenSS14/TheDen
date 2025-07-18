@@ -72,6 +72,8 @@
   items:
     - type: loadout
       id: LoadoutMedicalHandsGlovesChemist
+    - type: loadout
+      id: LoadoutClothingHandsChemistsWarmers
 
 #- type: characterItemGroup
 #  id: LoadoutChemistHead
@@ -82,7 +84,7 @@
 #  id: LoadoutChemistId
 #  maxItems: 1
 #  items:
-#
+
 - type: characterItemGroup
   id: LoadoutChemistNeck
   maxItems: 1
@@ -94,7 +96,7 @@
 #  id: LoadoutChemistMask
 #  maxItems: 1
 #  items:
-#
+
 - type: characterItemGroup
   id: LoadoutChemistOuter
   maxItems: 1
@@ -114,6 +116,8 @@
       id: LoadoutMedicalShoesEnclosedChem
     - type: loadout
       id: LoadoutMedicalShoesWinterChem
+    - type: loadout
+      id: LoadoutClothingUnderSocksChemists
 
 - type: characterItemGroup
   id: LoadoutChemistUniforms
@@ -125,3 +129,5 @@
       id: LoadoutMedicalUniformJumpsuitChemistry
     - type: loadout
       id: LoadoutMedicalUniformJumpskirtChemistry
+    - type: loadout
+      id: LoadoutClothingUniformChemistsThong

@@ -52,7 +52,48 @@
   items:
     - ClothingBackpackSatchelParamed
 
+- type: loadout
+  id: LoadoutMedicalBackpacksMessenger
+  category: JobsMedicalParamedic
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutParamedicBackpacks
+    - !type:CharacterJobRequirement
+      jobs:
+        - Paramedic
+  items:
+    - ClothingBackpackMessengerParamedic
+
 # Belt
+- type: loadout
+  id: LoadoutParamedicBeltEMT
+  category: JobsMedicalParamedic
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutParamedicBelt
+    - !type:CharacterJobRequirement
+      jobs:
+        - Paramedic
+  items:
+    - ClothingBeltMedicalEMT
+
+- type: loadout
+  id: LoadoutParamedicBeltEMTFilled
+  category: JobsMedicalParamedic
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutParamedicBelt
+    - !type:CharacterJobRequirement
+      jobs:
+        - Paramedic
+  items:
+    - ClothingBeltMedicalEMTFilled
 
 # Ears
 
@@ -71,9 +112,9 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutParamedicHead
-    - !type:CharacterJobRequirement
-      jobs:
-        - Paramedic
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Medical
   items:
     - ClothingHeadHatParamedicsoft
 

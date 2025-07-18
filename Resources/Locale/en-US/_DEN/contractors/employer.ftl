@@ -3,7 +3,7 @@ employer_name_donkco = Donk Co.
 employer_description_donkco = From a humble lunch wagon in Nova Scotia, the popularity of the Donk Pocket among coal miners paved the way for Donk's expansion. Now serving as Canada's largest business, Donk Co. exists as a sprawling mega corporation whose quick and ready-to-eat Donk Pockets come in a variety of flavours. Boasting the best PR department and one of the largest logistics fleets in the galaxy, it's a wonder why Donk Co. has agreed to Nanotrasen's harsh corporate contract.
 
 employer_name_bishopcybernetics = Bishop Cybernetics
-employer_name_description = Bishop's focus is on high-class, stylish cybernetics. A favorite among transhumanists, Bishop manufactures not only prostheses but also brain augmentation, synthetic organ replacements, and odds and ends like implanted wrist-watches. Their business model tends towards smaller, boutique operations, giving it a reputation for high price and luxury.
+employer_description_bishopcybernetics = Bishop's focus is on high-class, stylish cybernetics. A favorite among transhumanists, Bishop manufactures not only prostheses but also brain augmentation, synthetic organ replacements, and odds and ends like implanted wrist-watches. Their business model tends towards smaller, boutique operations, giving it a reputation for high price and luxury.
 
 employer_name_fivepointsarmory = Five Points Armoury
 employer_description_fivepointsarmory = Founded by Colonel "Five-Fingers" Devland of the old Five Points Correctional Facility while the site was being decommissioned in the late 2020s. In the present day, Five Points provides the bulk of security equipment for all of NT's installations and to many civilian police and security forces on Earth and abroad.

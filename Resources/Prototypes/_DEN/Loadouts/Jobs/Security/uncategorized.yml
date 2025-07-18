@@ -1,9 +1,8 @@
-# SPDX-FileCopyrightText: 2025 Blitz <73762869+BlitzTheSquishy@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 Rosycup <178287475+Rosycup@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 Rosycup <benjho049@gmail.com>
-# SPDX-FileCopyrightText: 2025 Skubman <ba.fallaria@gmail.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <flyingkarii@gmail.com>
+# SPDX-FileCopyrightText: 2025 Blitz
+# SPDX-FileCopyrightText: 2025 BlitzTheSquishy
+# SPDX-FileCopyrightText: 2025 Rosycup
+# SPDX-FileCopyrightText: 2025 Skubman
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -33,9 +32,9 @@
       group: LoadoutSecurityEquipment
     - !type:CharacterLogicOrRequirement
       requirements:
-      - !type:CharacterDepartmentRequirement
-        departments:
-          - Security
+        - !type:CharacterDepartmentRequirement
+          departments:
+            - Security
   items:
     - MagazineShotgunBeanbag
 
@@ -53,9 +52,9 @@
       group: LoadoutSecurityWeapons
     - !type:CharacterLogicOrRequirement
       requirements:
-      - !type:CharacterDepartmentRequirement
-        departments:
-          - Security
+        - !type:CharacterDepartmentRequirement
+          departments:
+            - Security
   items:
     - WeaponShotgunSawnSecurity
 
@@ -71,9 +70,9 @@
       group: LoadoutSecurityWeapons
     - !type:CharacterLogicOrRequirement
       requirements:
-      - !type:CharacterDepartmentRequirement
-        departments:
-          - Security
+        - !type:CharacterDepartmentRequirement
+          departments:
+            - Security
   items:
     - PlasteelArmingSwordSecurity
 
@@ -144,6 +143,12 @@
     - !type:CharacterDepartmentRequirement
       departments:
         - Security
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Brigmedic # Corpsman has ClothingUniformJumpsuitBrigmedic
+        - Warden # Warden has ClothingUniformJumpsuitWarden
+        - HeadOfSecurity # HoS has ClothingUniformJumpsuitHoS
   items:
     - ClothingUniformJumpsuitSec
 
@@ -158,6 +163,12 @@
     - !type:CharacterDepartmentRequirement
       departments:
         - Security
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Brigmedic # Corpsman has ClothingUniformJumpskirtBrigmedic
+        - Warden # Warden has ClothingUniformJumpskirtWarden
+        - HeadOfSecurity # HoS has ClothingUniformJumpskirtHoS
   items:
     - ClothingUniformJumpskirtSec
 

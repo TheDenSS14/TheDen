@@ -37,12 +37,14 @@
 #  id: LoadoutMimeEyes
 #  maxItems: 1
 #  items:
-#
-#- type: characterItemGroup
-#  id: LoadoutMimeGloves
-#  maxItems: 1
-#  items:
-#
+
+- type: characterItemGroup
+  id: LoadoutMimeGloves
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutClothingHandsStripeWhiteWarmers
+
 #- type: characterItemGroup
 #  id: LoadoutMimeHead
 #  maxItems: 1
@@ -52,13 +54,15 @@
 #  id: LoadoutMimeId
 #  maxItems: 1
 #  items:
-#
+
 - type: characterItemGroup
   id: LoadoutMimeNeck
   maxItems: 1
   items:
     - type: loadout
       id: LoadoutServiceMimeBedsheetMime
+    - type: loadout
+      id: LoadoutServiceMimeNeckScarfStripedZebra
 
 - type: characterItemGroup
   id: LoadoutMimeMask
@@ -84,6 +88,8 @@
   items:
     - type: loadout
       id: LoadoutServiceMimeShoesBootsWinter
+    - type: loadout
+      id: LoadoutClothingUnderSocksStripedWhite
 
 - type: characterItemGroup
   id: LoadoutMimeUniforms
@@ -93,3 +99,5 @@
       id: LoadoutServiceJumpsuitMime
     - type: loadout
       id: LoadoutServiceJumpskirtMime
+    - type: loadout
+      id: LoadoutClothingUniformStripedThongWhite

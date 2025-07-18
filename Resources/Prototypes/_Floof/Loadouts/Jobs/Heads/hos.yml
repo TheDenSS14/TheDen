@@ -8,40 +8,46 @@
 - type: loadout
   id: LoadoutClothingHandsHeadSecurityWarmers
   category: JobsSecurityHeadOfSecurity
-  cost: 1
+  cost: 0
   exclusive: true
   items:
-  - ClothingHandsHeadSecurityWarmers
+    - ClothingHandsHeadSecurityWarmers
   requirements:
-  - !type:CharacterJobRequirement
-    jobs:
-    - HeadOfSecurity
+    - !type:CharacterJobRequirement
+      jobs:
+        - HeadOfSecurity
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutHeadOfSecurityGloves
 
 - type: loadout
   id: LoadoutClothingUnderSocksHeadSecurity
   category: JobsSecurityHeadOfSecurity
-  cost: 1
+  cost: 0
   exclusive: true
   items:
-  - ClothingUnderSocksHeadSecurity
+    - ClothingUnderSocksHeadSecurity
   requirements:
-#  - !type:CharacterSpeciesRequirement - TheDen
-#    inverted: true
-#    species:
-#    - Diona
-#    - Harpy
-  - !type:CharacterJobRequirement
-    jobs:
-    - HeadOfSecurity
+    #- !type:CharacterSpeciesRequirement - TheDen
+    #  inverted: true
+    #  species:
+    #  - Diona
+    #  - Harpy
+    - !type:CharacterJobRequirement
+      jobs:
+        - HeadOfSecurity
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutHeadOfSecurityShoes
 
 - type: loadout
   id: LoadoutClothingUniformHeadSecurityThong
   category: JobsSecurityHeadOfSecurity
-  cost: 1
+  cost: 0
   exclusive: true
   items:
-  - ClothingUniformHeadSecurityThong
+    - ClothingUniformHeadSecurityThong
   requirements:
-  - !type:CharacterJobRequirement
-    jobs:
-    - HeadOfSecurity
+    - !type:CharacterJobRequirement
+      jobs:
+        - HeadOfSecurity
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutHeadOfSecurityUniforms

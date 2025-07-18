@@ -1,6 +1,7 @@
 # SPDX-FileCopyrightText: 2025 Adrian16199
 # SPDX-FileCopyrightText: 2025 Alice
 # SPDX-FileCopyrightText: 2025 Blitz
+# SPDX-FileCopyrightText: 2025 BlitzTheSquishy
 # SPDX-FileCopyrightText: 2025 BlueHNT
 # SPDX-FileCopyrightText: 2025 Lonofera
 # SPDX-FileCopyrightText: 2025 Rosycup
@@ -15,7 +16,7 @@
 #  id: LoadoutHeadOfSecurityBackpacks
 #  maxItems: 1
 #  items:
-#
+
 - type: characterItemGroup
   id: LoadoutHeadOfSecurityBelt
   maxItems: 1
@@ -60,12 +61,14 @@
 #  id: LoadoutHeadOfSecurityEyes
 #  maxItems: 1
 #  items:
-#
-#- type: characterItemGroup
-#  id: LoadoutHeadOfSecurityGloves
-#  maxItems: 1
-#  items:
-#
+
+- type: characterItemGroup
+  id: LoadoutHeadOfSecurityGloves
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutClothingHandsHeadSecurityWarmers
+
 - type: characterItemGroup
   id: LoadoutHeadOfSecurityHead
   maxItems: 1
@@ -95,7 +98,7 @@
 #  id: LoadoutHeadOfSecurityMask
 #  maxItems: 1
 #  items:
-#
+
 - type: characterItemGroup
   id: LoadoutHeadOfSecurityOuter
   maxItems: 1
@@ -119,6 +122,8 @@
   items:
     - type: loadout
       id: LoadoutCommandHOSShoesBootsWinter
+    - type: loadout
+      id: LoadoutClothingUnderSocksHeadSecurity
 
 - type: characterItemGroup
   id: LoadoutHeadOfSecurityUniforms
@@ -148,6 +153,8 @@
       id: LoadoutCommandHOSJumpsuit
     - type: loadout
       id: LoadoutCommandHOSJumpskirt
+    - type: loadout
+      id: LoadoutClothingUniformHeadSecurityThong
 
 - type: characterItemGroup
   id: LoadoutHeadOfSecurityTrinkets
