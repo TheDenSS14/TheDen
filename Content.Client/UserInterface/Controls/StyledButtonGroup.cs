@@ -13,8 +13,8 @@ using static Content.Client.Stylesheets.StyleBase;
 namespace Content.Client.UserInterface.Controls;
 
 /// Automatically styles a group of HORIZONTAL buttons based on visibility, count, and position
-[GenerateTypedNameReferences]
-public sealed partial class StyledButtonGroup : BoxContainer
+[GenerateTypedNameReferences, Virtual]
+public partial class StyledButtonGroup : BoxContainer
 {
     public StyledButtonGroup()
     {
@@ -27,11 +27,11 @@ public sealed partial class StyledButtonGroup : BoxContainer
 
     public void UpdateStyles()
     {
-        var children = Children.Where(c => c.Visible && c is Button).ToArray();
+        var children = Children.Where(c => c.Visible && c is BaseButton).ToArray();
         for (var i = 0; i < children.Length; i++)
         {
             var child = children[i];
-            var button = (child as Button)!;
+            var button = (child as BaseButton)!;
 
             button.RemoveStyleClass(ButtonOpenRight);
             button.RemoveStyleClass(ButtonOpenLeft);

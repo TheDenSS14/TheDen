@@ -53,6 +53,12 @@ public sealed partial class LoadoutsItemListPanel : BoxContainer
     /// </summary>
     public event Action? OnRemoveUnusableLoadouts;
 
+    /// <summary>
+    ///     Fired when a loadout item's "guidebook" button is clicked.
+    /// </summary>
+    public event Action<string>? OnOpenGuidebook;
+
+
     // Dependencies
     // Events
     // Constants
@@ -192,6 +198,7 @@ public sealed partial class LoadoutsItemListPanel : BoxContainer
                 var button = new LoadoutItemButton(loadout);
                 button.OnPreferenceChanged += p => OnButtonPreferenceChanged(button, p);
                 button.OnCustomizeToggled += _ => OnCustomizeToggled?.Invoke(button.Preference);
+                button.OnOpenGuidebook += args => OnOpenGuidebook?.Invoke(args);
 
                 listBox.AddChild(button);
                 _loadoutButtons.Add(loadout, button);

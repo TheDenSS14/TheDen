@@ -167,7 +167,6 @@ namespace Content.Client.Lobby.UI
         private Dictionary<Button, ConfirmationData> _confirmationData = new();
         private List<TraitPreferenceSelector> _traitPreferences = new();
         private int _traitCount;
-        private HashSet<LoadoutPreferenceSelector> _loadoutPreferences = new();
 
         private Direction _previewRotation = Direction.North;
         private ColorSelectorSliders _rgbSkinColorSelector;
@@ -604,7 +603,6 @@ namespace Content.Client.Lobby.UI
             // Set up the loadouts tab
             LoadoutsTab.Orphan();
             CTabContainer.AddTab(LoadoutsTab, Loc.GetString("humanoid-profile-editor-loadouts-tab"));
-            _loadoutPreferences = new();
 
             // Show/Hide the loadouts tab if they ever get enabled/disabled
             var loadoutsEnabled = cfgManager.GetCVar(CCVars.GameLoadoutsEnabled);
@@ -614,6 +612,7 @@ namespace Content.Client.Lobby.UI
 
             LoadoutsTab.OnRemoveUnusableLoadouts += RemoveUnusableLoadouts;
             LoadoutsTab.OnPreferenceChanged += SelectLoadout;
+            LoadoutsTab.OnOpenGuidebook += args => OnOpenGuidebook?.Invoke(args);
 
             #endregion
 
@@ -2318,7 +2317,6 @@ namespace Content.Client.Lobby.UI
             {
                 foreach (var tab in TraitsTabs.Tabs)
                     TraitsTabs.RemoveTab(tab);
-                _loadoutPreferences.Clear();
             }
 
 
