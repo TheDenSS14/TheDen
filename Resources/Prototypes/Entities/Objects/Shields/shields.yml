@@ -1,28 +1,29 @@
-# SPDX-FileCopyrightText: 2022 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
-# SPDX-FileCopyrightText: 2022 Visne <39844191+Visne@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2022 keronshb <54602815+keronshb@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2023 Darkie <darksaiyanis@gmail.com>
-# SPDX-FileCopyrightText: 2023 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2023 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2023 Michael Cu <43478115+michaelcu@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2023 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2023 Nim <128169402+Nimfar11@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2023 PixelTK <85175107+PixelTheKermit@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2023 Slava0135 <40753025+Slava0135@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2023 lzk <124214523+lzk228@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2023 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT <77995199+DEATHB4DEFEAT@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 Debug <49997488+DebugOk@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 Kara <lunarautomaton6@gmail.com>
-# SPDX-FileCopyrightText: 2024 Nairod <110078045+nairodian@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 Remuchi <72476615+Remuchi@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 degradka <69397649+degradka@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 deltanedas <39013340+deltanedas@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 liltenhead <104418166+liltenhead@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 KekaniCreates <87507256+KekaniCreates@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 Rosycup <178287475+Rosycup@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 Pieter-Jan Briers
+# SPDX-FileCopyrightText: 2022 Visne
+# SPDX-FileCopyrightText: 2022 keronshb
+# SPDX-FileCopyrightText: 2023 Darkie
+# SPDX-FileCopyrightText: 2023 DrSmugleaf
+# SPDX-FileCopyrightText: 2023 Leon Friedrich
+# SPDX-FileCopyrightText: 2023 Michael Cu
+# SPDX-FileCopyrightText: 2023 Nemanja
+# SPDX-FileCopyrightText: 2023 Nim
+# SPDX-FileCopyrightText: 2023 PixelTK
+# SPDX-FileCopyrightText: 2023 Slava0135
+# SPDX-FileCopyrightText: 2023 lzk
+# SPDX-FileCopyrightText: 2023 metalgearsloth
+# SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT
+# SPDX-FileCopyrightText: 2024 Debug
+# SPDX-FileCopyrightText: 2024 Kara
+# SPDX-FileCopyrightText: 2024 Nairod
+# SPDX-FileCopyrightText: 2024 Remuchi
+# SPDX-FileCopyrightText: 2024 degradka
+# SPDX-FileCopyrightText: 2024 deltanedas
+# SPDX-FileCopyrightText: 2024 liltenhead
+# SPDX-FileCopyrightText: 2024 slarticodefast
+# SPDX-FileCopyrightText: 2025 Jakumba
+# SPDX-FileCopyrightText: 2025 KekaniCreates
+# SPDX-FileCopyrightText: 2025 Rosycup
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -340,9 +341,9 @@
       #Have it break into brass when clock cult is in
 
 - type: entity
-  name: energy shield
+  name: BaseEnergyShield
   parent: BaseItem
-  id: EnergyShield
+  id: BaseEnergyShield
   description: Exotic energy shield, when folded, can even fit in your pocket.
   components:
     - type: ItemToggle
@@ -414,30 +415,36 @@
     - type: Appearance
     - type: Damageable
       damageContainer: Shield
-    - type: Destructible
-      thresholds:
-        - trigger:
-            !type:DamageTrigger
-            damage: 180
-          behaviors:
-            - !type:DoActsBehavior
-              acts: [ "Destruction" ]
-        - trigger:
-            !type:DamageTrigger
-            damage: 100
-          behaviors:
-            - !type:DoActsBehavior
-              acts: [ "Destruction" ]
-            - !type:PlaySoundBehavior
-              sound:
-                collection: GlassBreak
-            - !type:SpawnEntitiesBehavior
-              spawn:
-                BrokenEnergyShield:
-                  min: 1
-                  max: 1
-    - type: StaticPrice
-      price: 350
+
+- type: entity
+  name: energy shield
+  parent: BaseEnergyShield
+  id: EnergyShield
+  components:
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 180
+      behaviors:
+        - !type:DoActsBehavior
+          acts: [ "Destruction" ]
+    - trigger:
+        !type:DamageTrigger
+        damage: 100
+      behaviors:
+        - !type:DoActsBehavior
+          acts: [ "Destruction" ]
+        - !type:PlaySoundBehavior
+          sound:
+            collection: GlassBreak
+        - !type:SpawnEntitiesBehavior
+          spawn:
+            BrokenEnergyShield:
+              min: 1
+              max: 1
+  - type: StaticPrice
+    price: 350
 
 - type: entity
   name: broken energy shield
