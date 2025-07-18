@@ -33,6 +33,7 @@
       - !type:AdjustReagent
         reagent: Ethanol
         amount: 0.09
+  noRandom: true # The Den
 
 - type: reagent
   id: A.B.Lustine
@@ -56,6 +57,7 @@
       - !type:AdjustReagent
         reagent: Pomelustine
         amount: 0.25
+  noRandom: true # The Den
 
 - type: reagent
   id: Anisette
@@ -191,6 +193,7 @@
       - !type:AdjustReagent
         reagent: Pomelustine
         amount: 0.5
+  noRandom: true # The Den
 
 - type: reagent
   id: CafeDeCacao
@@ -329,6 +332,7 @@
       - !type:AdjustReagent
         reagent: Pomelustine
         amount: 1
+  noRandom: true # The Den
 
 - type: reagent
   id: DirtyWastelander
@@ -372,6 +376,7 @@
       effects:
       - !type:SatiateThirst
         factor: 3
+  noRandom: true # The Den
 
 - type: reagent
   id: DragonsBlood
@@ -438,6 +443,7 @@
       effects:
       - !type:SatiateThirst
         factor: 2
+  noRandom: true # The Den
 
 - type: reagent
   id: EmeraldSwinger
@@ -553,6 +559,7 @@
       - !type:AdjustReagent
         reagent: Pomelustine
         amount: 0.25
+  noRandom: true # The Den
 
 - type: reagent
   id: HolyVice
@@ -599,6 +606,7 @@
       - !type:AdjustReagent
         reagent: Libidozenithizine
         amount: 0.25
+  noRandom: true # The Den
 
 - type: reagent
   id: KoboldKooler
@@ -619,6 +627,7 @@
       effects:
       - !type:SatiateThirst
         factor: 3
+  noRandom: true # The Den
 
 - type: reagent
   id: KoboldKorkscrew
@@ -639,6 +648,7 @@
       effects:
       - !type:SatiateThirst
         factor: 3
+  noRandom: true # The Den
 
 - type: reagent
   id: Lamplight
@@ -677,6 +687,7 @@
           shouldHave: true
         reagent: Philterex
         amount: 0.25
+  noRandom: true # The Den
 
 - type: reagent
   id: LemonPopsicle
@@ -723,6 +734,7 @@
       - !type:AdjustReagent
         reagent: Pomelustine
         amount: 0.5
+  noRandom: true # The Den
 
 - type: reagent
   id: MarieJulep
@@ -871,6 +883,7 @@
       - !type:AdjustReagent
         reagent: Ethanol
         amount: 0.05
+  noRandom: true # The Den
 
 - type: reagent
   id: Pomonade
@@ -891,6 +904,7 @@
       effects:
       - !type:SatiateThirst
         factor: 3
+  noRandom: true # The Den
 
 - type: reagent
   id: PomPassion
@@ -914,6 +928,7 @@
       - !type:AdjustReagent
         reagent: Ethanol
         amount: 0.0415
+  noRandom: true # The Den
 
 - type: reagent
   id: PomTwist
@@ -937,6 +952,7 @@
       - !type:AdjustReagent
         reagent: Pomelustine
         amount: 0.25
+  noRandom: true # The Den
 
 - type: reagent
   id: PrairieOyster
@@ -1000,6 +1016,7 @@
       effects:
       - !type:SatiateThirst
         factor: 3
+  noRandom: true # The Den
 
 - type: reagent
   id: RandyStallion
@@ -1026,7 +1043,7 @@
       - !type:AdjustReagent
         reagent: Pomelustine
         amount: 0.25
-
+  noRandom: true # The Den
 
 - type: reagent
   id: RedRocket
@@ -1050,6 +1067,7 @@
       - !type:AdjustReagent
         reagent: Ethanol
         amount: 0.0415
+  noRandom: true # The Den
 
 - type: reagent
   id: SalvagersDelight
@@ -1096,6 +1114,7 @@
       - !type:AdjustReagent
         reagent: Ethanol
         amount: 0.023
+  noRandom: true # The Den
 
 # horrifyingly, this is a real drink from a real cocktail book online
 - type: reagent
@@ -1117,6 +1136,7 @@
       effects:
       - !type:SatiateThirst
         factor: 3
+  noRandom: true # The Den
 
 - type: reagent
   id: SilverStallion
@@ -1137,6 +1157,7 @@
       effects:
       - !type:SatiateThirst
         factor: 2
+  noRandom: true # The Den
 
 - type: reagent
   id: SlimesDelight
@@ -1193,6 +1214,7 @@
       effects:
       - !type:SatiateThirst
         factor: 3
+  noRandom: true # The Den
 
 - type: reagent
   id: SpecialSundae
@@ -1216,6 +1238,7 @@
       - !type:AdjustReagent
         reagent: Pomelustine
         amount: 0.025
+  noRandom: true # The Den
 
 - type: reagent
   id: SyndicatesOverseer
@@ -1325,6 +1348,7 @@
       - !type:AdjustReagent
         reagent: Ethanol
         amount: 0.05
+  noRandom: true # The Den
 
 - type: reagent
   id: TheWaterslide
@@ -1417,6 +1441,7 @@
       - !type:AdjustReagent
         reagent: Pomelustine
         amount: 0.25
+  noRandom: true # The Den
 
 - type: reagent
   id: AxelsAle
@@ -1443,6 +1468,7 @@
       - !type:AdjustReagent
         reagent: Ethanol
         amount: 0.095
+  noRandom: true # The Den
 
 - type: reagent
   id: JennTonic
@@ -1512,6 +1538,7 @@
       - !type:AdjustReagent
         reagent: Pomelustine
         amount: 0.05
+  noRandom: true # The Den
 
 - type: reagent
   id: SyndicateEggnog
