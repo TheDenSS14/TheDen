@@ -50,9 +50,10 @@
 // SPDX-FileCopyrightText: 2024 Skye
 // SPDX-FileCopyrightText: 2024 chromiumboy
 // SPDX-FileCopyrightText: 2024 gluesniffler
-// SPDX-FileCopyrightText: 2024 portfiend
+// SPDX-FileCopyrightText: 2025 MajorMoth
 // SPDX-FileCopyrightText: 2025 Solaris
 // SPDX-FileCopyrightText: 2025 Tabitha
+// SPDX-FileCopyrightText: 2025 portfiend
 // SPDX-FileCopyrightText: 2025 sleepyyapril
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
