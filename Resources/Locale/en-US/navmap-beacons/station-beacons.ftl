@@ -39,6 +39,7 @@ station-beacon-cryonics = Cryopods
 station-beacon-cmo = CMO
 station-beacon-morgue = Morgue
 station-beacon-surgery = Surgery
+station-beacon-paramedic = Paramedic
 
 station-beacon-science = Science
 station-beacon-research-and-development = Research

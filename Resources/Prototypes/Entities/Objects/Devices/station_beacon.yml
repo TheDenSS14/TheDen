@@ -340,6 +340,14 @@
   - type: NavMapBeacon
     defaultText: station-beacon-surgery
 
+- type: entity
+  parent: DefaultStationBeaconMedical
+  id: DefaultStationBeaconParamedic
+  suffix: Paramedic
+  components:
+  - type: NavMapBeacon
+    defaultText: station-beacon-paramedic
+
 # Epistemics
 - type: entity
   parent: DefaultStationBeacon
