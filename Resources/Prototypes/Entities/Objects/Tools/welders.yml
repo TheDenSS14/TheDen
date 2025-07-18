@@ -267,7 +267,7 @@
     generated:
       reagents:
       - ReagentId: WeldingFuel
-        Quantity: 0.5
+        Quantity: 1
   - type: Tool
     speedModifier: 2
   - type: Fixtures
@@ -281,7 +281,6 @@
         - ItemMask
         restitution: 0.3
         friction: 0.2
-        Quantity: 1
   - type: RequiresEyeProtection
     statusEffectTime: 5 # less harmful; sunglasses can block it
 
