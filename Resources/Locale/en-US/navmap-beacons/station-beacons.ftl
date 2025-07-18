@@ -16,6 +16,11 @@ station-beacon-vault = Vault
 station-beacon-captain = Captain
 station-beacon-hop = HOP
 
+station-beacon-dignitary = Dignitary
+station-beacon-bso = BSO
+station-beacon-ntrep = NT Rep
+station-beacon-magistrate = Magistrate
+
 station-beacon-security = Security
 station-beacon-brig = Brig
 station-beacon-warden = Warden
