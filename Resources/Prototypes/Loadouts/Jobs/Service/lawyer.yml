@@ -22,7 +22,7 @@
 
 # Neck
 - type: loadout
-  id: LoadoutServiceLawyerNeckLawyerBadge
+  id: LoadoutServiceLawyerNeckBadgeLawyer
   category: JobsServiceLawyer
   cost: 0
   exclusive: true
@@ -33,10 +33,10 @@
       jobs:
         - Lawyer
   items:
-    - ClothingNeckLawyerBadge
+    - ClothingNeckLawyerbadge
 
 - type: loadout
-  id: LoadoutServiceLawyerNeckProsecutorBadge
+  id: LoadoutServiceLawyerNeckBadgeProsecutor
   category: JobsServiceLawyer
   cost: 0
   exclusive: true
@@ -47,7 +47,7 @@
       jobs:
         - Lawyer
   items:
-    - ClothingNeckProsecutorBadge
+    - ClothingNeckProsecutorbadge
 
 # Mask
 
