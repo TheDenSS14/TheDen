@@ -186,6 +186,15 @@ namespace Content.Shared.Chemistry.Reagent
         [DataField]
         public SoundSpecifier FootstepSound = new SoundCollectionSpecifier("FootstepWater", AudioParams.Default.WithVolume(6));
 
+        // The Den start
+        /// <summary>
+        /// This helps exclude certain reagents from systems that pick a completely random reagent. 
+        /// </summary>
+        [DataField]
+
+        public bool NoRandom = false;
+        // The Den end
+
         public FixedPoint2 ReactionTile(TileRef tile, FixedPoint2 reactVolume)
         {
             var removed = FixedPoint2.Zero;

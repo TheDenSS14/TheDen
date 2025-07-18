@@ -195,7 +195,7 @@ public sealed class OracleSystem : EntitySystem
         if (_random.Prob(oracle.Comp.AbnormalReagentChance))
         {
             var allReagents = _protoMan.EnumeratePrototypes<ReagentPrototype>()
-                .Where(x => !x.Abstract)
+                .Where(x => !x.Abstract && !x.NoRandom)
                 .Select(x => x.ID).ToList();
 
             reagent = _random.Pick(allReagents);
