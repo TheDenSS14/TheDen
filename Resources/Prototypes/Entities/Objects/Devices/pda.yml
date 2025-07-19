@@ -113,10 +113,17 @@
   - type: Pda
     state: pda
     paiSlot:
-      priority: -2
+      priority: -3 # Was -2, Passport takes Priority
       whitelist:
         components:
         - PAI
+    # Begin The Den Changes
+    passportSlot:
+      priority: -2
+      whitelist:
+        components:
+        - Passport
+    # End The Den Changes
     penSlot:
       startingItem: Pen
       priority: -1
@@ -140,16 +147,6 @@
       Cartridge-Slot: !type:ContainerSlot {}
       program-container: !type:Container
       passport: !type:ContainerSlot {}
-  - type: ItemSlots
-    slots:
-      passport:
-        insertVerbText: Put in Passport
-        ejectVerbText: Take out Passport
-        name: Passport
-        whitelist:
-          components:
-          - Passport
-        insertOnInteract: true
   - type: Clothing
     quickEquip: false
     slots:
