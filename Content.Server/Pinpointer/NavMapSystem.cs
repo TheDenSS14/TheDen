@@ -182,10 +182,13 @@ public sealed partial class NavMapSystem : SharedNavMapSystem
 
     private void OnNavMapBeaconMapInit(EntityUid uid, NavMapBeaconComponent component, MapInitEvent args)
     {
-        if (component.DefaultText == null || component.Text != null)
-            return;
+        // I hate how I nested this, but it looks cleaner than the alternative
+        if (component.Text == null && component.DefaultText == null)
+            if (component.DefaultText == null)
+                return;
+            else
+                component.Text = Loc.GetString(component.DefaultText);
 
-        component.Text = Loc.GetString(component.DefaultText);
         Dirty(uid, component);
 
         UpdateNavMapBeaconData(uid, component);
