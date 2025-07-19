@@ -58,7 +58,9 @@
 // SPDX-FileCopyrightText: 2024 Vasilis
 // SPDX-FileCopyrightText: 2024 deltanedas
 // SPDX-FileCopyrightText: 2024 metalgearsloth
+// SPDX-FileCopyrightText: 2025 MajorMoth
 // SPDX-FileCopyrightText: 2025 Rosycup
+// SPDX-FileCopyrightText: 2025 portfiend
 // SPDX-FileCopyrightText: 2025 sleepyyapril
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
@@ -181,7 +183,7 @@ namespace Content.Client.Entry
             _prototypeManager.RegisterIgnore("htnPrimitive");
             _prototypeManager.RegisterIgnore("gameMap");
             _prototypeManager.RegisterIgnore("gameMapPool");
-            _prototypeManager.RegisterIgnore("lobbyBackground");
+            // _prototypeManager.RegisterIgnore("lobbyBackground"); # DEN: Unignore
             _prototypeManager.RegisterIgnore("gamePreset");
             _prototypeManager.RegisterIgnore("noiseChannel");
             _prototypeManager.RegisterIgnore("playerConnectionWhitelist");
