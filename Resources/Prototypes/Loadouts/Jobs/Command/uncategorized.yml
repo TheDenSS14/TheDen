@@ -1,6 +1,7 @@
-# SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT <77995199+DEATHB4DEFEAT@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 VMSolidus <evilexecutive@gmail.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT
+# SPDX-FileCopyrightText: 2024 VMSolidus
+# SPDX-FileCopyrightText: 2025 BlitzTheSquishy
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -16,59 +17,74 @@
   id: LoadoutCommandTelescopicBaton
   category: JobsCommandAUncategorized
   cost: 3
-  exclusive: true
   canBeHeirloom: true
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutCommandSelfDefense
     - !type:CharacterDepartmentRequirement
       departments:
-      - Command
+        - Command
+        - Dignitary
   items:
-  - TelescopicBaton
+    - TelescopicBaton
 
 - type: loadout
   id: LoadoutCommandDisabler
   category: JobsCommandAUncategorized
   cost: 2
-  exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutCommandSelfDefense
     - !type:CharacterDepartmentRequirement
       departments:
-      - Command
+        - Command
+        - Dignitary
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - HeadOfSecurity
+        - BlueshieldOfficer
+        - NanotrasenRepresentative
   items:
-  - WeaponDisabler
+    - WeaponDisabler
 
 - type: loadout
   id: LoadoutCommandStunBaton
   category: JobsCommandAUncategorized
   cost: 1
-  exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutCommandSelfDefense
     - !type:CharacterDepartmentRequirement
       departments:
-      - Command
+        - Command
+        - Dignitary
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - HeadOfSecurity
+        - BlueshieldOfficer
   items:
-  - Stunbaton
+    - Stunbaton
 
 - type: loadout
   id: LoadoutCommandFlash
   category: JobsCommandAUncategorized
   cost: 0
-  exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutCommandSelfDefense
     - !type:CharacterDepartmentRequirement
       departments:
-      - Command
+        - Command
+        - Dignitary
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - HeadOfSecurity
+        - BlueshieldOfficer
   items:
-  - Flash
-
+    - Flash
 # Eyes
 
 # Gloves

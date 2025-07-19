@@ -1,0 +1,143 @@
+<ScrollContainer
+    xmlns="https://spacestation14.io"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:graphics="clr-namespace:Robust.Client.Graphics;assembly=Robust.Client"
+    xmlns:ui="clr-namespace:Content.Client.UserInterface.Controls"
+    HorizontalExpand="False"
+    VerticalExpand="True"
+    VScrollEnabled="True"
+    MinWidth="320"
+    MaxWidth="400"
+    HorizontalAlignment="Stretch">
+    <BoxContainer
+        Name="CustomizeItemBox"
+        Orientation="Vertical"
+        HorizontalExpand="True"
+        HorizontalAlignment="Stretch"
+        Margin="4"
+        Visible="False"
+        SeparationOverride="10">
+
+        <BoxContainer
+            Name="ItemDataBox"
+            Orientation="Vertical"
+            HorizontalExpand="True"
+            HorizontalAlignment="Stretch"
+            Align="Center"
+            Margin="0 20 0 0"
+            SeparationOverride="5">
+            <PanelContainer
+                HorizontalExpand="False"
+                HorizontalAlignment="Center">
+                <PanelContainer.PanelOverride>
+                    <graphics:StyleBoxFlat BackgroundColor="#222222" />
+                </PanelContainer.PanelOverride>
+                <SpriteView
+                    Name="PreviewSprite"
+                    Scale="3.0, 3.0"
+                    MinWidth="96"
+                    MinHeight="96"
+                    MaxWidth="128"
+                    MaxHeight="128"
+                    OverrideDirection="South" />
+            </PanelContainer>
+            <Label
+                Name="ItemNameLabel"
+                Text="Item Name"
+                ClipText="True"
+                Align="Center"/>
+        </BoxContainer>
+
+        <BoxContainer
+            Name="ButtonBox"
+            Orientation="Horizontal"
+            HorizontalExpand="True"
+            HorizontalAlignment="Stretch"
+            Align="Center">
+            <Button
+                Name="SaveButton"
+                Text="{Loc 'humanoid-profile-editor-loadouts-customize-save'}"
+                HorizontalAlignment="Stretch"
+                HorizontalExpand="True"
+                StyleClasses="OpenRight" />
+            <Button
+                Name="ResetButton"
+                Text="{Loc 'loadout-customization-panel-reset-button'}"
+                HorizontalAlignment="Stretch"
+                HorizontalExpand="True"
+                StyleClasses="OpenLeft" />
+        </BoxContainer>
+
+        <BoxContainer
+            Name="CustomNameBox"
+            Orientation="Vertical"
+            HorizontalExpand="True">
+            <Label
+                Text="{Loc 'humanoid-profile-editor-loadouts-customize-name'}" />
+            <LineEdit
+                Name="CustomNameEdit"
+                HorizontalExpand="True" />
+        </BoxContainer>
+
+        <BoxContainer
+            Name="CustomDescriptionBox"
+            Orientation="Vertical"
+            HorizontalExpand="True">
+            <Label
+                Text="{Loc 'humanoid-profile-editor-loadouts-customize-description'}" />
+            <PanelContainer
+                HorizontalExpand="True">
+                <PanelContainer.PanelOverride>
+                    <graphics:StyleBoxFlat BackgroundColor="#222222" />
+                </PanelContainer.PanelOverride>
+
+                <ui:ResizableControl
+                    AllowedResizeDirection="Vertical"
+                    HorizontalExpand="True"
+                    MinSize="128 64">
+                    <TextEdit
+                        Name="CustomDescriptionEdit"
+                        HorizontalExpand="True"
+                        VerticalExpand="True"
+                        Margin="3" />
+                </ui:ResizableControl>
+            </PanelContainer>
+        </BoxContainer>
+
+        <BoxContainer
+            Name="MiscButtonsBox"
+            Orientation="Horizontal"
+            HorizontalExpand="True"
+            HorizontalAlignment="Stretch"
+            Align="Center"
+            SeparationOverride="5">
+            <CheckBox
+                Name="HeirloomCheckBox"
+                Access="Public"
+                Text="{Loc 'humanoid-profile-editor-loadouts-heirloom'}"
+                ToolTip="{Loc 'humanoid-profile-editor-loadouts-heirloom-tooltip'}" />
+        </BoxContainer>
+
+        <BoxContainer
+            Name="CustomColorBox"
+            Orientation="Vertical"
+            HorizontalExpand="True"
+            HorizontalAlignment="Stretch"
+            SeparationOverride="5">
+            <Label
+                Text="{Loc 'humanoid-profile-editor-loadouts-customize-color'}" />
+            <ColorSelectorSliders
+                Name="CustomColorSliders"
+                Color="#fff"
+                HorizontalExpand="True" />
+            <CheckBox
+                Name="AllowCustomColorCheckBox"
+                Access="Public"
+                HorizontalAlignment="Center"
+                Text="{Loc 'loadout-customization-panel-custom-color-button'}"
+                ToolTip="{Loc 'loadout-customization-panel-custom-color-tooltip'}"
+                />
+        </BoxContainer>
+
+    </BoxContainer>
+</ScrollContainer>

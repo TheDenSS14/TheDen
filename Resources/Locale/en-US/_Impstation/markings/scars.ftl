@@ -5,7 +5,7 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 marking-ArmProstheticLeft = Prosthetic (Left Arm)
-marking-ArmProstheticLeft-arm_r_prosthetic = Prosthetic (Left Arm)
+marking-ArmProstheticLeft-arm_l_prosthetic = Prosthetic (Left Arm)
 marking-ArmTwistingLeft = Twisted Scar (Left Arm)
 marking-ArmTwistingLeft-arm_l_twisting = Twisted Scar (Left Arm)
 marking-ArmProstheticRight = Prosthetic (Right Arm)
@@ -39,7 +39,7 @@ marking-HeadTwisting-head_twisting = Twisted Scar
 marking-LegProstheticLeft = Prosthetic (Left Leg)
 marking-LegProstheticLeft-leg_l_prosthetic = Prosthetic (Left Leg)
 marking-LegTwistingLeft = Twisted Scar (Left Leg)
-marking-LegTwistingLeft-leg_t_twisting = Twisted Scar (Left Leg)
+marking-LegTwistingLeft-leg_l_twisting = Twisted Scar (Left Leg)
 marking-LegProstheticRight = Prosthetic (Right Leg)
 marking-LegProstheticRight-leg_r_prosthetic = Prosthetic (Right Leg)
 marking-LegTwistingRight = Twisted Scar (Right Leg)

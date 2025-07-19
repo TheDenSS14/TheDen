@@ -8,51 +8,60 @@
 - type: loadout
   id: LoadoutClothingHandsEngiWarmers
   category: JobsEngineeringAAUncategorized
-  cost: 2
+  cost: 0
   exclusive: true
   items:
-  - ClothingHandsEngiWarmers
+    - ClothingHandsEngiWarmers
   requirements:
-  - !type:CharacterDepartmentRequirement
-    departments:
-    - Engineering
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Engineering
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutEngineeringGloves
 
 - type: loadout
   id: LoadoutClothingUnderSocksEngi
   category: JobsEngineeringAAUncategorized
-  cost: 2
+  cost: 0
   exclusive: true
   items:
-  - ClothingUnderSocksEngi
+    - ClothingUnderSocksEngi
   requirements:
-#  - !type:CharacterSpeciesRequirement - TheDen
-#    inverted: true
-#    species:
-#    - Diona
-#    - Harpy
-  - !type:CharacterDepartmentRequirement
-    departments:
-    - Engineering
+    #- !type:CharacterSpeciesRequirement - TheDen
+    #  inverted: true
+    #  species:
+    #  - Diona
+    #  - Harpy
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Engineering
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutEngineeringShoes
 
 - type: loadout
   id: LoadoutClothingUniformEngiThong
   category: JobsEngineeringAAUncategorized
-  cost: 2
+  cost: 0
   exclusive: true
   items:
-  - ClothingUniformEngiThong
+    - ClothingUniformEngiThong
   requirements:
-  - !type:CharacterDepartmentRequirement
-    departments:
-    - Engineering
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Engineering
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutEngineeringUniforms
 
 - type: loadout
   id: LoadoutEngineeringNeckCollar
   category: JobsEngineeringAAUncategorized
-  cost: 1
+  cost: 0
+  exclusive: true
   requirements:
-  - !type:CharacterDepartmentRequirement
-    departments:
-    - Engineering
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Engineering
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutEngineeringNeck
   items:
-  - ClothingNeckCollarEngi
+    - ClothingNeckCollarEngi

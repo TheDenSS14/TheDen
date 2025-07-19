@@ -1,10 +1,10 @@
-# SPDX-FileCopyrightText: 2024 VMSolidus <evilexecutive@gmail.com>
-# SPDX-FileCopyrightText: 2025 Blitz <73762869+BlitzTheSquishy@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 BlitzTheSquishy <73762869+BlitzTheSquishy@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 MajorMoth <61519600+MajorMoth@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 Rosycup <178287475+Rosycup@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 mart <martgitomen@gmail.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 VMSolidus
+# SPDX-FileCopyrightText: 2025 Blitz
+# SPDX-FileCopyrightText: 2025 BlitzTheSquishy
+# SPDX-FileCopyrightText: 2025 MajorMoth
+# SPDX-FileCopyrightText: 2025 Rosycup
+# SPDX-FileCopyrightText: 2025 mart
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -17,7 +17,7 @@
   exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutChiefEngineerBackpack
+      group: LoadoutChiefEngineerBackpacks
     - !type:CharacterJobRequirement
       jobs:
         - ChiefEngineer
@@ -31,7 +31,7 @@
   exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutChiefEngineerBackpack
+      group: LoadoutChiefEngineerBackpacks
     - !type:CharacterJobRequirement
       jobs:
         - ChiefEngineer
@@ -45,12 +45,26 @@
   exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutChiefEngineerBackpack
+      group: LoadoutChiefEngineerBackpacks
     - !type:CharacterJobRequirement
       jobs:
         - ChiefEngineer
   items:
     - ClothingBackpackDuffelChiefEngineerFilled
+
+- type: loadout
+  id: LoadoutEngineeringChiefEngineerBackpackMessenger
+  category: JobsEngineeringChiefEngineer
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutChiefEngineerBackpacks
+    - !type:CharacterJobRequirement
+      jobs:
+        - ChiefEngineer
+  items:
+    - ClothingBackpackMessengerChiefEngineerFilled
 
 # Belt
 - type: loadout
@@ -533,6 +547,20 @@
         - ChiefEngineer
   items:
     - ClothingOuterWinterCE
+
+- type: loadout
+  id: LoadoutChiefEngineerOuterLongCoat
+  category: JobsEngineeringChiefEngineer
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutChiefEngineerOuter
+    - !type:CharacterJobRequirement
+      jobs:
+        - ChiefEngineer
+  items:
+    - ClothingLongcoatCE
 
 # Shoes
 - type: loadout

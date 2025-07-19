@@ -1,8 +1,8 @@
-# SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT <77995199+DEATHB4DEFEAT@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 Fansana <116083121+Fansana@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 Fansana <fansana95@googlemail.com>
-# SPDX-FileCopyrightText: 2024 Mnemotechnican <69920617+Mnemotechnician@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT
+# SPDX-FileCopyrightText: 2024 Fansana
+# SPDX-FileCopyrightText: 2024 Mnemotechnican
+# SPDX-FileCopyrightText: 2025 portfiend
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -10,7 +10,16 @@
   id: RandomAnnouncers
   weights:
     Intern: 0
-    MedBot: 0
-    Michael: 1
-    NEIL: 0
-    VoxFem: 0
+    MedBot: 3
+    Michael: 5
+    NEIL: 3
+    VoxFem: 5
+
+# DEN note: This was determined via poll in July 2025.
+# Here are the results of that poll:
+#   "Any" votes: 9 (assumed to be okay with any announcers)
+#   Intern:  58 votes, 79% rating, weight: 4.53 (Vetoed)
+#   Medbot:  41 votes, 59% rating, weight: 3.38
+#   NEIL:    38 votes, 55% rating, weight: 3.18
+#   VoxFem:  63 votes, 85% rating, weight: 4.86
+#   Michael: 10 votes to remove him, 88% rating, weight: 5.0

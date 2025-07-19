@@ -7,6 +7,7 @@
 # SPDX-FileCopyrightText: 2024 IProduceWidgets
 # SPDX-FileCopyrightText: 2025 Blitz
 # SPDX-FileCopyrightText: 2025 BlitzTheSquishy
+# SPDX-FileCopyrightText: 2025 Jakumba
 # SPDX-FileCopyrightText: 2025 VMSolidus
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
@@ -50,14 +51,14 @@
 # Magazines
 - type: entity
   id: MagazineLightRifleBox
-  name: "belt box (.20 rifle)"
-  parent: BaseMagazineRifle
+  name: "belt box (.30 rifle)"
+  parent: BaseMagazineLightRifle
   components:
   - type: Tag
     tags:
       - MagazineLightRifleBox
   - type: BallisticAmmoProvider
-    proto: CartridgeRifle
+    proto: CartridgeLightRifle
     capacity: 100
   - type: Item
   - type: Sprite
@@ -70,43 +71,43 @@
 
 - type: entity
   id: MagazineLightRifleBoxPractice
-  name: "belt box (.20 rifle practice)"
+  name: "belt box (.30 rifle practice)"
   parent: MagazineLightRifleBox
   components:
   - type: BallisticAmmoProvider
-    proto: CartridgeRiflePractice
+    proto: CartridgeLightRiflePractice
 
 - type: entity
   id: MagazineLightRifleBoxRubber
-  name: "belt box (.20 rifle rubber)"
+  name: "belt box (.30 rifle rubber)"
   parent: MagazineLightRifleBox
   components:
   - type: BallisticAmmoProvider
-    proto: CartridgeRifleRubber
+    proto: CartridgeLightRifleRubber
 
 - type: entity
   id: MagazineLightRifleBoxIncendiary
-  name: "belt box (.20 rifle incendiary)"
+  name: "belt box (.30 rifle incendiary)"
   parent: MagazineLightRifleBox
   components:
   - type: BallisticAmmoProvider
-    proto: CartridgeRifleIncendiary
+    proto: CartridgeLightRifleIncendiary
 
 - type: entity
   id: MagazineLightRifleBoxUranium
-  name: "belt box (.20 rifle uranium)"
+  name: "belt box (.30 rifle uranium)"
   parent: MagazineLightRifleBox
   components:
   - type: BallisticAmmoProvider
-    proto: CartridgeRifleUranium
+    proto: CartridgeLightRifleUranium
 
 - type: entity
   id: MagazineLightRifleBoxShrapnel
-  name: belt box (.20 rifle shrapnel)
+  name: belt box (.30 rifle shrapnel)
   parent: MagazineLightRifleBox
   components:
   - type: BallisticAmmoProvider
-    proto: CartridgeRifleShrapnel
+    proto: CartridgeLightRifleShrapnel
 
 - type: entity
   id: MagazineLightRifle

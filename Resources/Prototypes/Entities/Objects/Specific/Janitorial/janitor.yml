@@ -58,6 +58,7 @@
 # SPDX-FileCopyrightText: 2025 VMSolidus
 # SPDX-FileCopyrightText: 2025 Your Name
 # SPDX-FileCopyrightText: 2025 fishbait
+# SPDX-FileCopyrightText: 2025 hoshizora
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
@@ -91,6 +92,9 @@
         Blunt: 6
     staminaCost: 8
   - type: Spillable
+    solution: absorbed
+    spillWhenThrown: false
+  - type: DrainableSolution
     solution: absorbed
   - type: Wieldable
   - type: IncreaseDamageOnWield
@@ -149,6 +153,9 @@
           Blunt: 7
       staminaCost: 8
     - type: Spillable
+      solution: absorbed
+      spillWhenThrown: false
+    - type: DrainableSolution
       solution: absorbed
     - type: Wieldable
     - type: IncreaseDamageOnWield
@@ -341,6 +348,9 @@
       sprite: Objects/Specific/Janitorial/rag.rsi
       state: rag
     - type: Spillable
+      solution: absorbed
+      spillWhenThrown: false
+    - type: DrainableSolution
       solution: absorbed
     - type: MeleeWeapon
       soundHit:

@@ -1,9 +1,9 @@
-# SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT <77995199+DEATHB4DEFEAT@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 VMSolidus <evilexecutive@gmail.com>
-# SPDX-FileCopyrightText: 2025 Blitz <73762869+BlitzTheSquishy@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 BlitzTheSquishy <73762869+BlitzTheSquishy@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 Lonofera <108367450+LonoferaRS@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT
+# SPDX-FileCopyrightText: 2024 VMSolidus
+# SPDX-FileCopyrightText: 2025 Blitz
+# SPDX-FileCopyrightText: 2025 BlitzTheSquishy
+# SPDX-FileCopyrightText: 2025 Lonofera
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -25,10 +25,8 @@
     - !type:CharacterJobRequirement
       inverted: true
       jobs:
-        - Chemist # For chemist recognizibility
-        - Paramedic # For paramedic recognizibility
-        - Psychologist # Psych has a Psych specific variant
-        - ChiefMedicalOfficer # CMO has a CMO specific variant
+        - ChiefMedicalOfficer # CMO has ClothingBackpackCMOFilled
+        - Psychologist # Psych has ClothingBackpackPsychologistFilled
 
 - type: loadout
   id: LoadoutBackpackVirology
@@ -43,13 +41,6 @@
     - !type:CharacterDepartmentRequirement
       departments:
         - Medical
-    - !type:CharacterJobRequirement
-      inverted: true
-      jobs:
-        - Chemist # For chemist recognizibility
-        - Paramedic # For paramedic recognizibility
-        - Psychologist # Psych has a Psych specific variant
-        - ChiefMedicalOfficer # CMO has a CMO specific variant
 
 - type: loadout
   id: LoadoutBackpackGenetics
@@ -64,13 +55,6 @@
     - !type:CharacterDepartmentRequirement
       departments:
         - Medical
-    - !type:CharacterJobRequirement
-      inverted: true
-      jobs:
-        - Chemist # For chemist recognizibility
-        - Paramedic # For paramedic recognizibility
-        - Psychologist # Psych has a Psych specific variant
-        - ChiefMedicalOfficer # CMO has a CMO specific variant
 
 - type: loadout
   id: LoadoutBackpackSatchelMedical
@@ -88,10 +72,8 @@
     - !type:CharacterJobRequirement
       inverted: true
       jobs:
-        - Chemist # For chemist recognizibility
-        - Paramedic # For paramedic recognizibility
-        - Psychologist # Psych has a Psych specific variant
-        - ChiefMedicalOfficer # CMO has a CMO specific variant
+        - ChiefMedicalOfficer # CMO has ClothingBackpackSatchelCMOFilled
+        - Psychologist # Psych has ClothingBackpackSatchelPsychologistFilled
 
 - type: loadout
   id: LoadoutBackpackSatchelVirology
@@ -106,13 +88,6 @@
     - !type:CharacterDepartmentRequirement
       departments:
         - Medical
-    - !type:CharacterJobRequirement
-      inverted: true
-      jobs:
-        - Chemist # For chemist recognizibility
-        - Paramedic # For paramedic recognizibility
-        - Psychologist # Psych has a Psych specific variant
-        - ChiefMedicalOfficer # CMO has a CMO specific variant
 
 - type: loadout
   id: LoadoutBackpackSatchelGenetics
@@ -127,13 +102,6 @@
     - !type:CharacterDepartmentRequirement
       departments:
         - Medical
-    - !type:CharacterJobRequirement
-      inverted: true
-      jobs:
-        - Chemist # For chemist recognizibility
-        - Paramedic # For paramedic recognizibility
-        - Psychologist # Psych has a Psych specific variant
-        - ChiefMedicalOfficer # CMO has a CMO specific variant
 
 - type: loadout
   id: LoadoutBackpackDuffelMedical
@@ -151,10 +119,8 @@
     - !type:CharacterJobRequirement
       inverted: true
       jobs:
-        - Chemist # For chemist recognizibility
-        - Paramedic # For paramedic recognizibility
-        - Psychologist # Psych has a Psych specific variant
-        - ChiefMedicalOfficer # CMO has a CMO specific variant
+        - ChiefMedicalOfficer # CMO has ClothingBackpackDuffelCMOFilled
+        - Psychologist # Psych has ClothingBackpackDuffelPsychologistFilled
 
 - type: loadout
   id: LoadoutBackpackDuffelVirology
@@ -169,13 +135,6 @@
     - !type:CharacterDepartmentRequirement
       departments:
         - Medical
-    - !type:CharacterJobRequirement
-      inverted: true
-      jobs:
-        - Chemist # For chemist recognizibility
-        - Paramedic # For paramedic recognizibility
-        - Psychologist # Psych has a Psych specific variant
-        - ChiefMedicalOfficer # CMO has a CMO specific variant
 
 - type: loadout
   id: LoadoutBackpackDuffelGenetics
@@ -190,13 +149,6 @@
     - !type:CharacterDepartmentRequirement
       departments:
         - Medical
-    - !type:CharacterJobRequirement
-      inverted: true
-      jobs:
-        - Chemist # For chemist recognizibility
-        - Paramedic # For paramedic recognizibility
-        - Psychologist # Psych has a Psych specific variant
-        - ChiefMedicalOfficer # CMO has a CMO specific variant
 
 - type: loadout
   id: LoadoutBackpackMedicalDuffelSurgeryFilled
@@ -211,13 +163,6 @@
     - !type:CharacterDepartmentRequirement
       departments:
         - Medical
-    - !type:CharacterJobRequirement
-      inverted: true
-      jobs:
-        - Chemist # For chemist recognizibility
-        - Paramedic # For paramedic recognizibility
-        - Psychologist # Psych has a Psych specific variant
-        - ChiefMedicalOfficer # CMO has a CMO specific variant
 
 # Belt
 
@@ -232,8 +177,6 @@
   cost: 0
   exclusive: true
   requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutMedicalEyes
     - !type:CharacterDepartmentRequirement
       departments:
         - Medical
@@ -491,18 +434,13 @@
   id: LoadoutMedicalOuterWinterCoat
   category: JobsMedicalAUncategorized
   cost: 0
+  exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutMedicalOuter
     - !type:CharacterDepartmentRequirement
       departments:
         - Medical
-    - !type:CharacterJobRequirement
-      inverted: true
-      jobs:
-        - Chemist # For chemist recognizibility
-        - Paramedic # For paramedic recognizibility
-        - ChiefMedicalOfficer # For CMO recognizibility
   items:
     - ClothingOuterWinterMed
 
@@ -539,19 +477,13 @@
   id: LoadoutMedicalOuterWinterCoatViro
   category: JobsMedicalAUncategorized
   cost: 0
+  exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutMedicalOuter
     - !type:CharacterDepartmentRequirement
       departments:
         - Medical
-    - !type:CharacterJobRequirement
-      inverted: true
-      jobs:
-        - Chemist # For chemist recognizibility
-        - Paramedic # For paramedic recognizibility
-        - Psychologist # Doesnt suit a psych, has access to base medical
-        - ChiefMedicalOfficer # For CMO recognizibility
   items:
     - ClothingOuterWinterViro
 
@@ -559,19 +491,13 @@
   id: LoadoutMedicalOuterWinterCoatGen
   category: JobsMedicalAUncategorized
   cost: 0
+  exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutMedicalOuter
     - !type:CharacterDepartmentRequirement
       departments:
         - Medical
-    - !type:CharacterJobRequirement
-      inverted: true
-      jobs:
-        - Chemist # For chemist recognizibility
-        - Paramedic # For paramedic recognizibility
-        - Psychologist # Doesnt suit a psych, has access to base medical
-        - ChiefMedicalOfficer # For CMO recognizibility
   items:
     - ClothingOuterWinterGen
 
@@ -580,18 +506,13 @@
   id: LoadoutMedicalBootsWinter
   category: JobsMedicalAUncategorized
   cost: 0
+  exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutMedicalShoes
     - !type:CharacterDepartmentRequirement
       departments:
         - Medical
-    - !type:CharacterJobRequirement
-      inverted: true
-      jobs:
-        - Chemist # For chemist recognizibility
-        - Paramedic # For paramedic recognizibility
-        - ChiefMedicalOfficer # For CMO recognizibility
   items:
     - ClothingShoesBootsWinterMed
 
@@ -599,19 +520,13 @@
   id: LoadoutMedicalBootsWinterViro
   category: JobsMedicalAUncategorized
   cost: 0
+  exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutMedicalShoes
     - !type:CharacterDepartmentRequirement
       departments:
         - Medical
-    - !type:CharacterJobRequirement
-      inverted: true
-      jobs:
-        - Chemist # For chemist recognizibility
-        - Paramedic # For paramedic recognizibility
-        - Psychologist # Doesnt suit a psych, has access to base medical
-        - ChiefMedicalOfficer # For CMO recognizibility
   items:
     - ClothingShoesBootsWinterViro
 
@@ -619,19 +534,13 @@
   id: LoadoutMedicalBootsWinterGen
   category: JobsMedicalAUncategorized
   cost: 0
+  exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutMedicalShoes
     - !type:CharacterDepartmentRequirement
       departments:
         - Medical
-    - !type:CharacterJobRequirement
-      inverted: true
-      jobs:
-        - Chemist # For chemist recognizibility
-        - Paramedic # For paramedic recognizibility
-        - Psychologist # Doesnt suit a psych, has access to base medical
-        - ChiefMedicalOfficer # For CMO recognizibility
   items:
     - ClothingShoesBootsWinterGenetics
 

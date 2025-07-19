@@ -30,3 +30,17 @@
         - Botanist
   items:
     - ClothingUniformJumpskirtHydroponics
+
+- type: loadout
+  id: LoadoutServiceBotanistMessengerHydroponics
+  category: JobsServiceBotanist
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBotanistBackpacks
+    - !type:CharacterJobRequirement
+      jobs:
+        - Botanist
+  items:
+    - ClothingBackpackMessengerHydroponics

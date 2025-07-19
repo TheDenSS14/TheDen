@@ -1,5 +1,6 @@
-# SPDX-FileCopyrightText: 2024 VMSolidus <evilexecutive@gmail.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 VMSolidus
+# SPDX-FileCopyrightText: 2025 BlitzTheSquishy
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -13,6 +14,8 @@
       id: LoadoutHeadOfPersonnelBackpacksSatchelFilled
     - type: loadout
       id: LoadoutHeadOfPersonnelBackpacksDuffelFilled
+    - type: loadout
+      id: ClothingBackpackMessengerHOPFilled
     - type: loadout
       id: LoadoutCommandHOPBackIan
     - type: loadout
@@ -57,6 +60,8 @@
       id: LoadoutHeadOfPersonnelGlovesHoP
     - type: loadout
       id: LoadoutHeadOfPersonnelGlovesInspection
+    - type: loadout
+      id: LoadoutClothingHandsCommandWarmers
 
 - type: characterItemGroup
   id: LoadoutHeadOfPersonnelHead
@@ -102,6 +107,8 @@
       id: LoadoutHeadOfPersonnelOuterArmoredCoat
     - type: loadout
       id: LoadoutHeadOfPersonnelOuterDuraVest
+    - type: loadout
+      id: LoadoutHeadOfPersonnelOuterLongCoat
 
 - type: characterItemGroup
   id: LoadoutHeadOfPersonnelShoes
@@ -113,6 +120,8 @@
       id: LoadoutHeadOfPersonnelShoesLeather
     - type: loadout
       id: LoadoutCommandHOPShoesBootsWinter
+    - type: loadout
+      id: LoadoutClothingUnderSocksCommand
 
 - type: characterItemGroup
   id: LoadoutHeadOfPersonnelUniforms
@@ -128,3 +137,5 @@
       id: LoadoutCommandHOPJumpsuitMess
     - type: loadout
       id: LoadoutCommandHOPJumpskirtMess
+    - type: loadout
+      id: LoadoutClothingUniformCommandThong

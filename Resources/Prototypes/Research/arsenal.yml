@@ -8,7 +8,7 @@
 # SPDX-FileCopyrightText: 2023 Stanislav4ix
 # SPDX-FileCopyrightText: 2023 T-Stalker
 # SPDX-FileCopyrightText: 2023 Vordenburg
-# SPDX-FileCopyrightText: 2023 deltanedas <@deltanedas:kde.org>
+# SPDX-FileCopyrightText: 2023 deltanedas
 # SPDX-FileCopyrightText: 2024 Alzore
 # SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT
 # SPDX-FileCopyrightText: 2024 Debug
@@ -16,10 +16,10 @@
 # SPDX-FileCopyrightText: 2024 Fluffiest Floofers
 # SPDX-FileCopyrightText: 2024 Ghost581
 # SPDX-FileCopyrightText: 2024 John Space
-# SPDX-FileCopyrightText: 2024 deltanedas
 # SPDX-FileCopyrightText: 2024 gluesniffler
 # SPDX-FileCopyrightText: 2024 takemysoult
 # SPDX-FileCopyrightText: 2025 Blu
+# SPDX-FileCopyrightText: 2025 Jakumba
 # SPDX-FileCopyrightText: 2025 MajorMoth
 # SPDX-FileCopyrightText: 2025 Rosycup
 # SPDX-FileCopyrightText: 2025 Solaris
@@ -157,27 +157,27 @@
   - ChemicalPayload
   # TODO: Add "Explosive Ammunition" to this tech to make it waaaay more interesting.
 
-- type: technology
-  id: ShrapnelMunitions
-  name: research-technology-shrapnel-munitions
-  icon:
-    sprite: Objects/Weapons/Guns/Ammunition/Casings/shotgun_shell.rsi
-    state: base
-  discipline: Arsenal
-  tier: 2
-  cost: 7500
-  recipeUnlocks:
-  - MagazineRifleShrapnel
-  - MagazinePistolShrapnel
-  - MagazinePistolSubMachineGunShrapnel
-  - MagazineMagnumShrapnel
-  - MagazineLightRifleShrapnel
-  - MagazineCaselessRifleShrapnel
-  - MagazineBoxPistolShrapnel
-  - MagazineBoxMagnumShrapnel
-  - MagazineBoxLightRifleShrapnel
-  - MagazineBoxRifleShrapnel
-  - MagazineBoxCaselessRifleShrapnel
+# - type: technology
+#   id: ShrapnelMunitions
+#   name: research-technology-shrapnel-munitions
+#   icon:
+#     sprite: Objects/Weapons/Guns/Ammunition/Casings/shotgun_shell.rsi
+#     state: base
+#   discipline: Arsenal
+#   tier: 2
+#   cost: 7500
+#   recipeUnlocks:
+#   - MagazineRifleShrapnel
+#   - MagazinePistolShrapnel
+#   - MagazinePistolSubMachineGunShrapnel
+#   - MagazineMagnumShrapnel
+#   - MagazineLightRifleShrapnel
+#   - MagazineCaselessRifleShrapnel
+#   - MagazineBoxPistolShrapnel
+#   - MagazineBoxMagnumShrapnel
+#   - MagazineBoxLightRifleShrapnel
+#   - MagazineBoxRifleShrapnel
+#   - MagazineBoxCaselessRifleShrapnel
 
 - type: technology
   id: AdvancedWeapons

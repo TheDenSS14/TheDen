@@ -1,15 +1,16 @@
-# SPDX-FileCopyrightText: 2023 Velcroboy <107660393+IamVelcroboy@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2023 chromiumboy <50505512+chromiumboy@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2023 rosieposie <52761126+rosieposieeee@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT <77995199+DEATHB4DEFEAT@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 Debug <49997488+DebugOk@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 SimpleStation14 <130339894+SimpleStation14@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 Timemaster99 <57200767+Timemaster99@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 VMSolidus <evilexecutive@gmail.com>
-# SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 Skubman <ba.fallaria@gmail.com>
-# SPDX-FileCopyrightText: 2025 Solaris <60526456+SolarisBirb@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Velcroboy
+# SPDX-FileCopyrightText: 2023 chromiumboy
+# SPDX-FileCopyrightText: 2023 rosieposie
+# SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT
+# SPDX-FileCopyrightText: 2024 Debug
+# SPDX-FileCopyrightText: 2024 SimpleStation14
+# SPDX-FileCopyrightText: 2024 Timemaster99
+# SPDX-FileCopyrightText: 2024 TsjipTsjip
+# SPDX-FileCopyrightText: 2024 VMSolidus
+# SPDX-FileCopyrightText: 2024 metalgearsloth
+# SPDX-FileCopyrightText: 2025 Skubman
+# SPDX-FileCopyrightText: 2025 Solaris
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -116,3 +117,91 @@
           - ItemMask
           restitution: 0.3
           friction: 0.2
+
+- type: entity
+  parent: AccessConfigurator
+  id: AccessConfiguratorUniversal
+  name: universal access configurator
+  suffix: Admin
+  description: A modified access configurator used only by the mythical Administrator.
+  components:
+  - type: Sprite
+    sprite: Objects/Tools/universal_access_configurator.rsi
+  - type: Clothing
+    sprite: Objects/Tools/universal_access_configurator.rsi
+  - type: AccessOverrider
+    accessLevels:
+    # WizDen
+    - Armory
+    - Atmospherics
+    - Bar
+    - BasicSilicon
+    - Borg
+    - Brig
+    - Detective
+    - Captain
+    - Cargo
+    - CentralCommand
+    - Chapel
+    - Chemistry
+    - ChiefEngineer
+    - ChiefMedicalOfficer
+    - Command
+    - Engineering
+    - External
+    - HeadOfPersonnel
+    - HeadOfSecurity
+    - Hydroponics
+    - Janitor
+    - Kitchen
+    - Lawyer
+    - Maintenance
+    - Medical
+    - NuclearOperative
+    - Quartermaster
+    - Research
+    - ResearchDirector
+    - Salvage
+    - Security
+    - Service
+    - StationAi
+    - SyndicateAgent
+    - Theatre
+    # Delta-V
+    - Boxer
+    - ChiefJustice
+    - Clerk
+    - Clown
+    - Corpsman
+    - DV-SpareSafe
+    - Justice
+    - Library
+    - Mantis
+    - Mime
+    - Musician
+    - Orders
+    - Prosecutor
+    - Psychologist
+    - Reporter
+    - Robotics
+    - Zookeeper
+    # EE
+    - SAN
+    # Goobstation
+    - BlueshieldOfficer
+    - Magistrate
+    - NanotrasenRepresentative
+    # Nyanotrasen
+    - Mail
+    privilegedIdSlot:
+      name: id-card-console-privileged-id
+      ejectSound: /Audio/Machines/id_swipe.ogg
+      insertSound: /Audio/Weapons/Guns/MagIn/batrifle_magin.ogg
+      ejectOnBreak: true
+      swap: false
+      whitelist:
+        components:
+        - IdCard
+    denialSound:
+      path: /Audio/Machines/custom_deny.ogg
+    doAfter: 0.5
