@@ -475,13 +475,3 @@
     useDelay: 45
     priority: 5
 # Goobstation end
-
-- type: damageModifierSet
-  id: Dragon
-  coefficients:
-    Blunt: 0.7
-    Slash: 0.7
-    Piercing: 1.1
-    Heat: 0.35
-  flatReductions:
-    Heat: 9
