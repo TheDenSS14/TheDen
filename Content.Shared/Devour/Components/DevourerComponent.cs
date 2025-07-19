@@ -1,7 +1,8 @@
-// SPDX-FileCopyrightText: 2023 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2023 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2023 PilgrimViis <PilgrimViis@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 DrSmugleaf
+// SPDX-FileCopyrightText: 2023 Leon Friedrich
+// SPDX-FileCopyrightText: 2023 PilgrimViis
+// SPDX-FileCopyrightText: 2025 Jakumba
+// SPDX-FileCopyrightText: 2025 sleepyyapril
 //
 // SPDX-License-Identifier: MIT
 
@@ -68,7 +69,19 @@ public sealed partial class DevourerComponent : Component
     };
 
     /// <summary>
+    /// The chemical ID injected upon devouring
+    /// </summary>
+    [DataField("chemical", customTypeSerializer: typeof(PrototypeIdSerializer<ReagentPrototype>))]
+    public string Chemical = "Ichor";
+
+    /// <summary>
     /// The amount of ichor injected per devour
+    /// </summary>
+    [ViewVariables(VVAccess.ReadWrite), DataField("healRate")]
+    public float HealRate = 15f;
+
+    /// <summary>
+    /// The amount of raw damage recovered upon deveouring
     /// </summary>
     [ViewVariables(VVAccess.ReadWrite), DataField("healDamage")]
     public DamageSpecifier HealDamage = new();
