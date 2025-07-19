@@ -25,6 +25,7 @@ namespace Content.Server.Devour;
 public sealed class DevourSystem : SharedDevourSystem
 {
     [Dependency] private readonly DamageableSystem _damageable = default!;
+    [Dependency] private readonly BloodstreamSystem _bloodstreamSystem = default!;
 
     public override void Initialize()
     {
@@ -39,10 +40,15 @@ public sealed class DevourSystem : SharedDevourSystem
         if (args.Handled || args.Cancelled || !TryComp<DamageableComponent>(uid, out var damageable))
             return;
 
+        // Don't bother trying to heal/inject ichor if target isn't humanoid
         if (component.FoodPreference == FoodPreference.All ||
             (component.FoodPreference == FoodPreference.Humanoid && HasComp<HumanoidAppearanceComponent>(args.Args.Target)))
         {
             _damageable.TryChangeDamage(uid, component.HealDamage, true, false, damageable);
+
+            var ichorInjection = new Solution(component.Chemical, component.HealRate);
+
+            _bloodstreamSystem.TryAddToChemicals(uid, ichorInjection);
 
             if (component.ShouldStoreDevoured && args.Args.Target is not null && args.AllowDevouring)
                 ContainerSystem.Insert(args.Args.Target.Value, component.Stomach);

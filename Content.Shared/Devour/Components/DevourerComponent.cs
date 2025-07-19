@@ -68,7 +68,19 @@ public sealed partial class DevourerComponent : Component
     };
 
     /// <summary>
+    /// The chemical ID injected upon devouring
+    /// </summary>
+    [DataField("chemical", customTypeSerializer: typeof(PrototypeIdSerializer<ReagentPrototype>))]
+    public string Chemical = "Ichor";
+
+    /// <summary>
     /// The amount of ichor injected per devour
+    /// </summary>
+    [ViewVariables(VVAccess.ReadWrite), DataField("healRate")]
+    public float HealRate = 15f;
+
+    /// <summary>
+    /// The amount of raw damage recovered upon deveouring
     /// </summary>
     [ViewVariables(VVAccess.ReadWrite), DataField("healDamage")]
     public DamageSpecifier HealDamage = new();

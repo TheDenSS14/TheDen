@@ -140,6 +140,11 @@
   components:
   - type: Body # Shitmed
     prototype: SpaceDragon
+  - type: SurgeryTarget # Shitmed
+  - type: UserInterface # Shitmed
+    interfaces:
+      enum.SurgeryUIKey.Key:
+        type: SurgeryBui
   - type: Bloodstream
     maxBleedAmount: 0
     bloodMaxVolume: 650
@@ -233,6 +238,17 @@
   - type: Flammable
     damage:
       types: {}
+  - type: StatusEffects # Overwriting basesimplemob to remove flash, getting flashed as dragon just feelsbad
+    allowed:
+    - SlowedDown
+    - Stutter
+    - Electrocution
+    - ForcedSleep
+    - TemporaryBlindness
+    - Pacified
+    - RadiationProtection
+    - Drowsiness
+    - Adrenalin
   - type: Temperature
     heatDamageThreshold: 800
   - type: Metabolizer
@@ -263,13 +279,15 @@
         Slash: 15
   - type: AntiRottingContainer
   - type: Devourer
-    foodPreference: Humanoid
-    shouldStoreDevoured: true
     healDamage:
       types:
         Heat: -35
       groups:
         Brute: -35
+    shouldStoreDevoured: true
+    chemical: Ichor
+    healRate: 15.0
+    foodPreference: Humanoid
     whitelist:
       components:
       - MobState
@@ -282,10 +300,10 @@
     - CannotSuicide
     - DoorBumpOpener
   # Goobstation - Collective mind
-  - type: CollectiveMind
-    defaultChannel: Dragonmind
-    channels:
-    - Dragonmind
+  # - type: CollectiveMind
+  #   defaultChannel: Dragonmind
+  #   channels:
+  #   - Dragonmind
   - type: Damageable # Goobstation
     damageContainer: Biological
     damageModifierSet: Dragon
@@ -296,10 +314,7 @@
     activateSound: null
     deactivateSound: null
   - type: ThermalVision # Goobstation - Thermal vision
-  - type: Puller
-    needsHands: false
-  - type: Damageable
-    damageModifierSet: Dragon
+  - type: Fauna # Lavaland Change
   - type: PassiveDamage # Around 19 damage a minute healed - don't let it heal.
     allowedStates:
     - Alive
@@ -319,17 +334,6 @@
     speedModifier: 2.5 # fast because dragon strong
     useSound:
       path: /Audio/Items/crowbar.ogg
-
-- type: damageModifierSet
-  id: Dragon
-  coefficients:
-    Blunt: 0.7
-    Slash: 0.7
-    Piercing: 1.1
-    Heat: 0.35
-  flatReductions:
-    Heat: 9
-  - type: Fauna # Lavaland Change
 
 - type: entity
   parent: BaseMobDragon
@@ -357,7 +361,7 @@
   categories: [ HideSpawnMenu ]
   id: DragonsBreathGun
   name: dragon's lung
-  description: For dragon's breathing
+  description: For dragon's breathing.
   components:
   - type: RechargeBasicEntityAmmo
     rechargeCooldown: 5
@@ -380,6 +384,7 @@
   components:
   - type: GhostRole
     description: ghost-role-information-space-dragon-dungeon-description
+    rules: ghost-role-information-space-dragon-dungeon-rules
     raffle:
       settings: default
   - type: SlowOnDamage
@@ -426,10 +431,10 @@
     priority: 1
 
 - type: entity
-  categories: [ HideSpawnMenu ]
   id: ActionDragonsBreath
   name: "[color=orange]Dragon's Breath[/color]"
   description: Spew out flames at anyone foolish enough to attack you!
+  categories: [ HideSpawnMenu ]
   components:
   - type: WorldTargetAction
     # TODO: actual sprite
@@ -445,6 +450,7 @@
   id: ActionRiseFish
   name: Summon Carp Horde
   description: Summons 3 carps on the spot to protect you from danger!
+  categories: [ HideSpawnMenu ]
   components:
   - type: InstantAction
     icon:
@@ -458,6 +464,7 @@
   id: ActionDragonRoar
   name: Wing flap
   description: Flap your wings to stun all enemies around you!
+  categories: [ HideSpawnMenu ]
   components:
   - type: InstantAction
     icon:
@@ -467,3 +474,13 @@
     useDelay: 45
     priority: 5
 # Goobstation end
+
+- type: damageModifierSet
+  id: Dragon
+  coefficients:
+    Blunt: 0.7
+    Slash: 0.7
+    Piercing: 1.1
+    Heat: 0.35
+  flatReductions:
+    Heat: 9
