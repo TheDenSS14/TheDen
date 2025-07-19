@@ -8,6 +8,7 @@
 // SPDX-FileCopyrightText: 2023 keronshb
 // SPDX-FileCopyrightText: 2024 deltanedas
 // SPDX-FileCopyrightText: 2025 GoobBot
+// SPDX-FileCopyrightText: 2025 Jakumba
 // SPDX-FileCopyrightText: 2025 Rouden
 // SPDX-FileCopyrightText: 2025 Roudenn
 // SPDX-FileCopyrightText: 2025 sleepyyapril
