@@ -41,10 +41,6 @@ public sealed partial class EvenHealthChange : EntityEffect
         var heals = false;
         var deals = false;
 
-        var damagableSystem = entSys.GetEntitySystem<DamageableSystem>();
-        var universalReagentDamageModifier = damagableSystem.UniversalReagentDamageModifier;
-        var universalReagentHealModifier = damagableSystem.UniversalReagentHealModifier;
-
         foreach (var (group, amount) in Damage)
         {
             var groupProto = prototype.Index(group);
@@ -55,12 +51,10 @@ public sealed partial class EvenHealthChange : EntityEffect
             if (sign < 0)
             {
                 heals = true;
-                mod = universalReagentHealModifier;
             }
             else if (sign > 0)
             {
                 deals = true;
-                mod = universalReagentDamageModifier;
             }
 
             damages.Add(
@@ -93,8 +87,6 @@ public sealed partial class EvenHealthChange : EntityEffect
         }
 
         var damagableSystem = args.EntityManager.System<DamageableSystem>();
-        var universalReagentDamageModifier = damagableSystem.UniversalReagentDamageModifier;
-        var universalReagentHealModifier = damagableSystem.UniversalReagentHealModifier;
 
         var dspec = new DamageSpecifier();
 
@@ -116,22 +108,7 @@ public sealed partial class EvenHealthChange : EntityEffect
                 dspec.DamageDict[damageId] = existing + damageAmount / sum * amount;
             }
         }
-
-        if (universalReagentDamageModifier != 1 || universalReagentHealModifier != 1)
-        {
-            foreach (var (type, val) in dspec.DamageDict)
-            {
-                if (val < 0f)
-                {
-                    dspec.DamageDict[type] = val * universalReagentHealModifier;
-                }
-                if (val > 0f)
-                {
-                    dspec.DamageDict[type] = val * universalReagentDamageModifier;
-                }
-            }
-        }
-
+        
         damagableSystem.TryChangeDamage(
             args.TargetEntity,
             dspec * scale,
