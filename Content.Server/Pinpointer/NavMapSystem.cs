@@ -183,7 +183,7 @@ public sealed partial class NavMapSystem : SharedNavMapSystem
     private void OnNavMapBeaconMapInit(EntityUid uid, NavMapBeaconComponent component, MapInitEvent args)
     {
         // I hate how I nested this, but it looks cleaner than the alternative
-        if (component.Text == null && component.DefaultText == null)
+        if (component.Text == null)
             if (component.DefaultText == null)
                 return;
             else
