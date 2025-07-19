@@ -38,6 +38,7 @@ namespace Content.Server.GameTicking
         private string? DiscordRoundEndRole { get; set; }
 
         private WebhookIdentifier? _webhookIdentifier;
+        private WebhookIdentifier? _eventsLoggingChannelIdentifier;
 
         [ViewVariables]
         private string? RoundEndSoundCollection { get; set; }
@@ -76,6 +77,15 @@ namespace Content.Server.GameTicking
                     _discord.GetWebhook(value, data => _webhookIdentifier = data.ToIdentifier());
                 }
             }, true);
+
+            Subs.CVar(_configurationManager, CCVars.DiscordNewRoundWebhook, value =>
+            {
+                if (!string.IsNullOrWhiteSpace(value))
+                {
+                    _discord.GetWebhook(value, data => _eventsLoggingChannelIdentifier = data.ToIdentifier());
+                }
+            }, true);
+
             Subs.CVar(_configurationManager, CCVars.DiscordRoundEndRoleWebhook, value =>
             {
                 DiscordRoundEndRole = value;

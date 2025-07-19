@@ -743,14 +743,23 @@ namespace Content.Server.GameTicking
         {
             try
             {
-                if (_webhookIdentifier == null)
-                    return;
+                if (_webhookIdentifier != null)
+                {
+                    var content = Loc.GetString("discord-round-notifications-new");
+                    var payload = new WebhookPayload { Content = content };
 
-                var content = Loc.GetString("discord-round-notifications-new");
+                    await _discord.CreateMessage(_webhookIdentifier.Value, payload);
+                }
 
-                var payload = new WebhookPayload { Content = content };
+                if (_eventsLoggingChannelIdentifier != null)
+                {
+                    var newRoundContent = Loc.GetString(
+                        "discord-round-notifications-end-next-round",
+                        ("nextRound", RoundId));
+                    var newRoundPayload = new WebhookPayload { Content = newRoundContent };
 
-                await _discord.CreateMessage(_webhookIdentifier.Value, payload);
+                    await _discord.CreateMessage(_eventsLoggingChannelIdentifier.Value, newRoundPayload);
+                }
             }
             catch (Exception e)
             {
