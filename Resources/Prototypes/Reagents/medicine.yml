@@ -904,11 +904,10 @@
       effects:
       - !type:EvenHealthChange
         damage:
-          groups:
-            Burn: -3
-            Toxin: -3
-            Airloss: -3
-            Brute: -3 # Was 2, Buffed due to limb damage changes
+          Burn: -3
+          Toxin: -3
+          Airloss: -3
+          Brute: -3 # Was 2, Buffed due to limb damage changes
 
 - type: reagent
   id: Ultravasculine
