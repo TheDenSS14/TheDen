@@ -17,4 +17,9 @@ public sealed class NaturalBloodRegenerationAttemptEvent : CancellableEntityEven
     ///     How much blood the mob will regenerate on this tick. Can be negative.
     /// </summary>
     public FixedPoint2 Amount;
+
+    /// <summary>
+    ///     Whether or not blood should pool below the person.
+    /// </summary>
+    public bool AllowBloodPooling;
 }

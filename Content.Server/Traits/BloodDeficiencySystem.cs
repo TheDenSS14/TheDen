@@ -25,6 +25,10 @@ public sealed class BloodDeficiencySystem : EntitySystem
         if (!ent.Comp.Active || !TryComp<BloodstreamComponent>(ent.Owner, out var bloodstream))
             return;
 
+        // We should only be stopping blood from pooling when the source is ONLY blood deficiency.
+        if (args.Amount >= 0)
+            args.AllowBloodPooling = false;
+
         args.Amount = FixedPoint2.Min(args.Amount, 0) // If the blood regen amount already was negative, we keep it.
                       - bloodstream.BloodMaxVolume * ent.Comp.BloodLossPercentage;
     }
