@@ -154,7 +154,6 @@
     Shock: 0.8
     Heat: 0.8
     # Ion: 2.0 # double damage from ion
-  ignoreArmorPierceFlags: All # Goobstation
 
 - type: damageModifierSet
   id: DevilDealPositive
@@ -168,7 +167,6 @@
     Poison: 0.50
     Radiation : 0.50
     Holy: 1.50
-  ignoreArmorPierceFlags: All # Goobstation
 
 - type: damageModifierSet
   id: DevilDealNegative
@@ -181,7 +179,6 @@
     Poison: 2
     Radiation : 2
     Holy: 2
-  ignoreArmorPierceFlags: All # Goobstation
 
 - type: damageModifierSet
   id: StructuralImmunity
