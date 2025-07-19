@@ -30,7 +30,7 @@
     grid:
     - 0,0,3,2
   - type: Item
-    size: Large
+    size: Normal # TheDen - Just make all medkits the same size. Everyone just uses combat medkits anyways.
     sprite: Objects/Specific/Medical/firstaidkits.rsi
     heldPrefix: firstaid
   - type: PhysicalComposition
