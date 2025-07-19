@@ -322,6 +322,11 @@ public abstract class SharedStunSystem : EntitySystem
 
             _movementSpeedModifier.RefreshMovementSpeedModifiers(uid);
 
+            // goob edit
+            _jitter.DoJitter(uid, time, refresh);
+            _stutter.DoStutter(uid, time, refresh);
+            // goob edit end
+
             return true;
         }
 

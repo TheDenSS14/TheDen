@@ -346,7 +346,7 @@
       groups:
         Brute: -4
         Burn: -4
-        Airloss: -3
+        # Airloss: -3 Den - our dragons don't bleed
   - type: GhostRole
     mindRoles:
     - MindRoleDragon
@@ -463,7 +463,7 @@
 - type: entity
   id: ActionDragonRoar
   name: Wing flap
-  description: Flap your wings to stun all enemies around you!
+  description: Flap your wings to snare all enemies around you!
   categories: [ HideSpawnMenu ]
   components:
   - type: InstantAction
@@ -471,6 +471,6 @@
       sprite: _Goobstation/Actions/dragon.rsi
       state: wing_flap
     event: !type:DragonRoarActionEvent
-    useDelay: 45
+    useDelay: 30
     priority: 5
 # Goobstation end

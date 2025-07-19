@@ -107,7 +107,7 @@ namespace Content.Server.Dragon
         public float RoarRange = 3f;
 
         [DataField]
-        public float RoarStunTime = 2f;
+        public float RoarStunTime = 4f;
 
         [DataField]
         public float CarpRiftHealingRange = 3f;
