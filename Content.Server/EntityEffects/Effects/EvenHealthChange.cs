@@ -1,4 +1,5 @@
 // SPDX-FileCopyrightText: 2025 Nemanja
+// SPDX-FileCopyrightText: 2025 Sir Warock
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
