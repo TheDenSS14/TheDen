@@ -44,8 +44,10 @@ public sealed class DevourSystem : SharedDevourSystem
         if (component.FoodPreference == FoodPreference.All ||
             (component.FoodPreference == FoodPreference.Humanoid && HasComp<HumanoidAppearanceComponent>(args.Args.Target)))
         {
+            // Immediately heal damage
             _damageable.TryChangeDamage(uid, component.HealDamage, true, false, damageable);
 
+            // Regeneration for a few seconds after
             var ichorInjection = new Solution(component.Chemical, component.HealRate);
 
             _bloodstreamSystem.TryAddToChemicals(uid, ichorInjection);

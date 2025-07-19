@@ -299,11 +299,6 @@
     tags:
     - CannotSuicide
     - DoorBumpOpener
-  # Goobstation - Collective mind
-  # - type: CollectiveMind
-  #   defaultChannel: Dragonmind
-  #   channels:
-  #   - Dragonmind
   - type: Damageable # Goobstation
     damageContainer: Biological
     damageModifierSet: Dragon
@@ -328,12 +323,18 @@
     - NamesDragon
     - NamesDragonTitle
     nameFormat: name-format-dragon
+  - type: Tool
+    speedModifier: 3.5
+    qualities:
+      - Prying
   - type: Prying
     pryPowered: true
     force: true
-    speedModifier: 2.5 # fast because dragon strong
+    speedModifier: 3.5 # fast because dragon strong
     useSound:
       path: /Audio/Items/crowbar.ogg
+  - type: Hands
+  - type: ComplexInteraction
 
 - type: entity
   parent: BaseMobDragon

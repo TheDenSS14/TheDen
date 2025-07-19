@@ -75,6 +75,15 @@ public abstract class SharedDevourSystem : EntitySystem
             HandleMobState((uid, component), target, targetState);
             return;
         }
+        if (HasComp<ItemComponent>(target))
+        {
+            _doAfterSystem.TryStartDoAfter(new DoAfterArgs(EntityManager, uid, component.DevourTime, new DevourDoAfterEvent(), uid, target: target, used: uid)
+            {
+                BreakOnMove = true,
+            });
+            return;
+        }
+
         // Goobstation start - Item devouring
         if (HasComp<ItemComponent>(target))
         {
@@ -126,7 +135,6 @@ public abstract class SharedDevourSystem : EntitySystem
                     isDevourable = false;
                     devourable.AttemptedDevouring = true;
 
-                    _damageableSystem.TryChangeDamage(ent.Owner, ent.Comp.HealDamage, true, false, damageable);
                     _popupSystem.PopupClient(Loc.GetString("devour-action-popup-message-fail-no-consent"), ent, ent);
                 }
 
