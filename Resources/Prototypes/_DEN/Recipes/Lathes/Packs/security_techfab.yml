@@ -4,6 +4,7 @@
 - type: latheRecipePack
   id: SecurityTechFabStaticAwfulDen
   recipes:
+  - Signaller
   - BoxLethalshot
   - BoxShotgunFlare
   - BoxShotgunPractice
@@ -93,7 +94,6 @@
   - BolaEnergy
   - ClothingHeadHelmetBasic
   - MagazineShotgunBeanbag
-  - ShellTranquilizer
   - MagazineMagnumEmpty # Goobstation
   - MagazineMagnum # Goobstation
   - MagazineShotgunLeverRifle # Goobstation
@@ -101,6 +101,7 @@
   - MagazineBoxShotgunHighCaliber # Goobstation
   - MagazineBoxShotgunSlugHighCaliber # Goobstation
   - MagazineBoxShotgunPracticeHighCaliber # Goobstation
+  - MagazineBoxShotgunBeanbagHighCaliber # Goobstation
   - BoxBeanbag
   - CartridgePistolRubber
   - CartridgeMagnumRubber
@@ -147,7 +148,6 @@
   - CrossbowModern # Frontier
   - BoxShotgunIncendiary
   - BoxShotgunUranium
-  - EncryptionKeySyndie
   - CartridgeLightRifleIncendiary
   - CartridgeMagnumIncendiary
   - CartridgePistolIncendiary
@@ -186,7 +186,6 @@
   - MagazineShotgunIncendiary
   - MagazineBoxShotgunIncendiaryHighCaliber # Goobstation
   - MagazineBoxShotgunUraniumHighCaliber # Goobstation
-  - MagazineBoxShotgunBeanbagHighCaliber # Goobstation
   - PortableRecharger
   - PowerCageHigh
   - PowerCageMedium
@@ -195,7 +194,6 @@
   - ShuttleGunFriendshipCircuitboard
   - ShuttleGunPerforatorCircuitboard
   - ShuttleGunSvalinnMachineGunCircuitboard
-  - Signaller
   - SignalTrigger
   - SpeedLoaderMagnumIncendiary
   - SpeedLoaderMagnumUranium
@@ -264,19 +262,8 @@
   - WeaponPistolN1984
   - WeaponPistolViper
   - WeaponPistolCobra
-  - MagazineRifleShrapnel
-  - MagazinePistolShrapnel
-  - MagazinePistolSubMachineGunShrapnel
-  - MagazineMagnumShrapnel
-  - MagazineLightRifleShrapnel
-  - MagazineCaselessRifleShrapnel
   - MagazineCaselessRifleIncendiary
   - MagazineCaselessRifleUranium
-  - MagazineBoxPistolShrapnel
-  - MagazineBoxMagnumShrapnel
-  - MagazineBoxLightRifleShrapnel
-  - MagazineBoxRifleShrapnel
-  - MagazineBoxCaselessRifleShrapnel
   - MagazineBoxCaselessRifleIncendiary
   - MagazineBoxCaselessRifleUranium
 

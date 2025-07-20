@@ -22,7 +22,6 @@
   - SolarTrackerElectronics # Actual solar panels are not manufacturable
   - EmitterCircuitboard
   # Atmos machines
-  - ThermomachineFreezerMachineCircuitBoard
   - HellfireFreezerMachineCircuitBoard
   - PortableScrubberMachineCircuitBoard
   # Tools
@@ -59,3 +58,8 @@
   - RCDAmmo
   - RCD
   - RPD
+
+- type: latheRecipePack
+  id: EngineeringTechFabStaticAwfulDen
+  recipes:
+  - ThermomachineFreezerMachineCircuitBoard

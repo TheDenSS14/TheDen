@@ -24,8 +24,12 @@
   - ShuttleGunKineticCircuitboard
   # Machines and computers
   - CargoTelepadMachineCircuitboard
-  - OreProcessorMachineCircuitboard
-  - RadioHandheld
   - JetpackBlue
   - JetpackMini
   # NOTE: advanced tools, industrial ore processor, expeds board are not added here as those are the very few things epi provides for cargo
+
+- type: latheRecipePack
+  id: CargoTechFabStaticAwfulDen
+  recipes:
+  - OreProcessorMachineCircuitboard
+  - RadioHandheld

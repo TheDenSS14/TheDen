@@ -47,6 +47,7 @@
   - BorgModuleHarvesting
   - BorgModuleMusique
   - BorgModuleClowning
+  - BorgModuleDiagnosis
   - HamtrHarness
   - HamtrLArm
   - HamtrRArm
@@ -88,6 +89,16 @@
   - BiofabricatorMachineCircuitboard
   - BiomassReclaimerMachineCircuitboard
   - AdvancedMicrowaveMachineCircuitBoard # DeltaV
+  - HydroponicsTrayMachineCircuitboard
+  - HolopadMachineCircuitboard
+  - DoorElectronics
+  - FirelockElectronics
+  - FireAlarmElectronics
+  - IntercomElectronics
+  - MailingUnitElectronics
+  - StationMapElectronics
+  - BaseComputerModularCircuitBoard # Arcadis - Modular Computer System
+  - DiskBurnerMachineCircuitboard # Arcadis - Modular Computer System
 
 # TODO: Add recipes to manufacture Vacsuits.
 # - type: technology
@@ -138,10 +149,14 @@
   - ClothingShoesBootsMagSci
   - ClothingNeckMantleMag
   - ClothingShoesBootsMoon
+  - CloningPodMachineCircuitboard
   - CloningConsoleComputerCircuitboard
   - MedicalScannerMachineCircuitboard
   - MetempsychoticMachineCircuitboard
   - EnvirosuitExtinguisherRefill
+  - CrewMonitoringComputerCircuitboard
+  - HandheldCrewMonitor
+  - SeedExtractorMachineCircuitboard
 
 - type: technology
   id: HONKMech
@@ -192,6 +207,7 @@
   - ClothingShoesBootsSpeed
   - BluespaceBeaker
   - SyringeBluespace
+  - ReagentGrinderIndustrialMachineCircuitboard
   # TODO: Add things like frontier's Hyposprays.
   softCapContribution: 1.5
 
