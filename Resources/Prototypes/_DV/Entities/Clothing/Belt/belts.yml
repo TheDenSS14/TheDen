@@ -84,10 +84,10 @@
           - Medkit
           - Portafib
           - Rollerbed
+        requireAll: false
       sidearm:
         name: clothing-belt-sidearm
         whitelist:
           tags:
           - Sidearm
         insertOnInteract: true
-        requireAll: false
