@@ -56,8 +56,8 @@ meta:
   engineVersion: 260.2.0
   forkId: ""
   forkVersion: ""
-  time: 07/19/2025 05:29:03
-  entityCount: 27162
+  time: 07/20/2025 04:26:47
+  entityCount: 27166
 maps:
 - 1
 grids:
@@ -11648,7 +11648,7 @@ entities:
       pos: 76.5,-12.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -21668.2
+      secondsUntilStateChange: -21815.066
       state: Opening
     - type: DeviceLinkSink
       invokeCounter: 1
@@ -13069,7 +13069,7 @@ entities:
       pos: 2.5,27.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -26657.328
+      secondsUntilStateChange: -26804.195
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -63836,7 +63836,7 @@ entities:
       pos: 65.5,-16.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -38981.797
+      secondsUntilStateChange: -39128.664
       state: Closing
   - uid: 23609
     components:
@@ -63844,7 +63844,7 @@ entities:
       pos: 65.5,-17.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -38980.863
+      secondsUntilStateChange: -39127.73
       state: Closing
   - uid: 23610
     components:
@@ -63852,7 +63852,7 @@ entities:
       pos: 65.5,-18.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -38980.26
+      secondsUntilStateChange: -39127.13
       state: Closing
 - proto: CurtainsWhiteOpen
   entities:
@@ -70920,6 +70920,16 @@ entities:
     - type: Transform
       pos: -15.381725,15.517849
       parent: 2
+  - uid: 27164
+    components:
+    - type: Transform
+      pos: -4.703714,3.5808597
+      parent: 2
+  - uid: 27165
+    components:
+    - type: Transform
+      pos: -4.2930565,3.605977
+      parent: 2
 - proto: DrinkGoldenCup
   entities:
   - uid: 6060
@@ -71248,6 +71258,13 @@ entities:
     - type: Transform
       pos: -43.62683,25.621397
       parent: 2
+- proto: DrinkPremiumWhiskeyBottleFull
+  entities:
+  - uid: 27163
+    components:
+    - type: Transform
+      pos: -4.5089664,3.8616614
+      parent: 2
 - proto: DrinkSakeCup
   entities:
   - uid: 5308
@@ -71297,8 +71314,11 @@ entities:
   - uid: 14343
     components:
     - type: Transform
-      pos: -42.2707,27.697134
+      pos: -42.319405,27.740486
       parent: 2
+    - type: Physics
+      angularDamping: 0
+      linearDamping: 0
 - proto: DrinkSpaceUpCan
   entities:
   - uid: 13721
@@ -71473,6 +71493,18 @@ entities:
     components:
     - type: Transform
       pos: 80.44441,-12.535444
+      parent: 2
+- proto: DVSmartFridgeMedical
+  entities:
+  - uid: 1275
+    components:
+    - type: Transform
+      pos: 29.5,7.5
+      parent: 2
+  - uid: 6151
+    components:
+    - type: Transform
+      pos: 48.5,-25.5
       parent: 2
 - proto: EggBoxBroken
   entities:
@@ -141443,6 +141475,23 @@ entities:
       rot: 1.5707963267948966 rad
       pos: 12.5,-3.5
       parent: 2
+  - uid: 21892
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: -41.5,25.5
+      parent: 2
+  - uid: 21896
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: -41.5,24.5
+      parent: 2
+  - uid: 21897
+    components:
+    - type: Transform
+      pos: -42.5,26.5
+      parent: 2
   - uid: 22149
     components:
     - type: Transform
@@ -141658,6 +141707,11 @@ entities:
       rot: 1.5707963267948966 rad
       pos: -49.5,19.5
       parent: 2
+  - uid: 27042
+    components:
+    - type: Transform
+      pos: -43.5,26.5
+      parent: 2
   - uid: 27045
     components:
     - type: Transform
@@ -141781,28 +141835,6 @@ entities:
     components:
     - type: Transform
       pos: 10.5,-5.5
-      parent: 2
-  - uid: 21892
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: -41.5,24.5
-      parent: 2
-  - uid: 21896
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: -41.5,25.5
-      parent: 2
-  - uid: 21897
-    components:
-    - type: Transform
-      pos: -42.5,26.5
-      parent: 2
-  - uid: 27042
-    components:
-    - type: Transform
-      pos: -43.5,26.5
       parent: 2
 - proto: shuttle_manipulator
   entities:
@@ -142369,10 +142401,10 @@ entities:
       parent: 2
     - type: DeviceLinkSource
       linkedPorts:
-        21892:
+        21896:
         - - Pressed
           - Toggle
-        21896:
+        21892:
         - - Pressed
           - Toggle
         21897:
@@ -144193,18 +144225,6 @@ entities:
     - type: Transform
       pos: 45.53497,-37.41632
       parent: 2
-- proto: SmartFridge
-  entities:
-  - uid: 1275
-    components:
-    - type: Transform
-      pos: 29.5,7.5
-      parent: 2
-  - uid: 6151
-    components:
-    - type: Transform
-      pos: 48.5,-25.5
-      parent: 2
 - proto: SMESBasic
   entities:
   - uid: 750
@@ -145318,6 +145338,14 @@ entities:
     components:
     - type: Transform
       pos: -24.5,33.5
+      parent: 2
+- proto: SpawnMobMonkeyPunpun
+  entities:
+  - uid: 27166
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: -11.5,19.5
       parent: 2
 - proto: SpawnMobPossumMorty
   entities:
@@ -170659,7 +170687,7 @@ entities:
       lastSignals:
         DoorStatus: True
     - type: Door
-      secondsUntilStateChange: -7680.4473
+      secondsUntilStateChange: -7827.314
       state: Opening
 - proto: WindoorKitchenLocked
   entities:
