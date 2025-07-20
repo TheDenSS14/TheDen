@@ -78,11 +78,12 @@
     slots:
       medkit:
         name: clothing-belt-medkit
+        priority: -1
         whitelist:
           tags:
           - Medkit
           - Portafib
-          - Rollerbed      
+          - Rollerbed
       sidearm:
         name: clothing-belt-sidearm
         whitelist:

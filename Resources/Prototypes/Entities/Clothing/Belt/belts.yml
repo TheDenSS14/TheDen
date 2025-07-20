@@ -822,6 +822,7 @@
         insertOnInteract: true
       jaunter:
         name: clothing-belt-jaunter
+        priority: -1
         whitelist:
           tags:
           - Jaunter
@@ -860,6 +861,7 @@
     slots:
       medkit:
         name: clothing-belt-medkit
+        priority: -1
         whitelist:
           tags:
           - Medkit
