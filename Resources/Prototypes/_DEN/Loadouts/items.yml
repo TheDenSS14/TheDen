@@ -345,6 +345,25 @@
     - TowelColorGray
 
 - type: loadout
+  id: LoadoutTowelSyndicate
+  category: GeneralTowels
+  cost: 5
+  canBeHeirloom: true
+  requirements:
+  - !type:CharacterPlaytimeRequirement
+    tracker: JobPrisoner
+    min: 108000 # 30 hours
+  - !type:CharacterDepartmentRequirement
+    inverted: true
+    departments:
+    - Security
+    - Dignitary
+    - Command
+    - Justice
+  items:
+  - TowelColorSyndicate
+
+- type: loadout
   id: LoadoutItemCigsStinky # Den - Introduction to Stinky Steve's Weed Emporium
   category: GeneralItems
   cost: 1 # Same price as Dan's, which just feels right
