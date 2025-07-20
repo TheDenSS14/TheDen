@@ -84,18 +84,13 @@
           - Medkit
           - Portafib
           - Rollerbed
+        insertOnInteract: false
       sidearm:
         name: clothing-belt-sidearm
         whitelist:
           tags:
           - Sidearm
         insertOnInteract: false
-  - type: ContainerContainer
-    containers:
-      storagebase: !type:Container
-        ents: []
-      medkit: !type:ContainerSlot {}
-      sidearm: !type:ContainerSlot {}
   - type: ItemMapper # DeltaV - adjust for DeltaV sprites.
     mapLayers:
       medkit:
@@ -120,4 +115,5 @@
       storagebase: !type:Container
         ents: []
       holster: !type:ContainerSlot {}
+      medkit: !type:ContainerSlot {}
   - type: Appearance

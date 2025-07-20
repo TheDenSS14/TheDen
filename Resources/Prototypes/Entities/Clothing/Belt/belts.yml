@@ -413,6 +413,10 @@
         whitelist:
           tags:
           - Wrench
+      medkit:
+        whitelist:
+          components:
+          - Medkit
     sprite: Clothing/Belt/belt_overlay.rsi
   # DeltaV - Add medkit slot to medical belts
   - type: ItemSlots
@@ -424,6 +428,12 @@
           - Medkit
           - Portafib
           - Rollerbed
+        insertOnInteract: false
+  - type: ContainerContainer
+    containers:
+      storagebase: !type:Container
+        ents: []
+      medkit: !type:ContainerSlot {}
   # End of DeltaV - Add medkit slot to medical belts.
   - type: Appearance
 
@@ -609,22 +619,6 @@
         - Whistle
         - HolosignProjector
         - BalloonPopper
-  - type: ItemMapper
-    mapLayers:
-      flashbang:
-        whitelist:
-          components:
-          - FlashOnTrigger
-      stunbaton:
-        whitelist:
-          components:
-          - Stunbaton
-      tear_gas_grenade:
-        whitelist:
-          components:
-          - SmokeOnTrigger
-    sprite: Clothing/Belt/belt_overlay.rsi
-  - type: Appearance
   - type: ItemSlots
     slots:
       holster:
