@@ -90,3 +90,34 @@
           tags:
           - Sidearm
         insertOnInteract: false
+  - type: ContainerContainer
+    containers:
+      storagebase: !type:Container
+        ents: []
+      medkit: !type:ContainerSlot {}
+      sidearm: !type:ContainerSlot {}
+  - type: ItemMapper # DeltaV - adjust for DeltaV sprites.
+    mapLayers:
+      medkit:
+        whitelist:
+          components:
+          - Medkit
+      baton:
+        whitelist:
+          components:
+          - Stunbaton
+      gasgrenade:
+        whitelist:
+          tags:
+            - Grenade
+      slp:
+        whitelist:
+          tags:
+          - Sidearm
+    sprite: _DV/Clothing/Belt/belt_overlay.rsi
+  - type: ContainerContainer
+    containers:
+      storagebase: !type:Container
+        ents: []
+      holster: !type:ContainerSlot {}
+  - type: Appearance
