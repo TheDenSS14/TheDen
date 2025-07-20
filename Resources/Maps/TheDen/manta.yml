@@ -1,63 +1,11 @@
-# SPDX-FileCopyrightText: 2021 AJCM-git
-# SPDX-FileCopyrightText: 2021 E F R
-# SPDX-FileCopyrightText: 2021 Elijahrane
-# SPDX-FileCopyrightText: 2021 Mith-randalf
-# SPDX-FileCopyrightText: 2021 Paul Ritter
-# SPDX-FileCopyrightText: 2021 buletsponge
-# SPDX-FileCopyrightText: 2021 wrexbe
-# SPDX-FileCopyrightText: 2022 0x6273
-# SPDX-FileCopyrightText: 2022 20kdc
-# SPDX-FileCopyrightText: 2022 Cheackraze
-# SPDX-FileCopyrightText: 2022 Kara
-# SPDX-FileCopyrightText: 2022 Moony
-# SPDX-FileCopyrightText: 2022 Morbo
-# SPDX-FileCopyrightText: 2022 Myctai
-# SPDX-FileCopyrightText: 2022 Nemanja
-# SPDX-FileCopyrightText: 2022 Peptide90
-# SPDX-FileCopyrightText: 2022 TaralGit
-# SPDX-FileCopyrightText: 2022 TimrodDX
-# SPDX-FileCopyrightText: 2022 Veritius
-# SPDX-FileCopyrightText: 2022 and_a
-# SPDX-FileCopyrightText: 2022 corentt
-# SPDX-FileCopyrightText: 2022 metalgearsloth
-# SPDX-FileCopyrightText: 2022 mirrorcult
-# SPDX-FileCopyrightText: 2022 moonheart08
-# SPDX-FileCopyrightText: 2023 Carolyn3114
-# SPDX-FileCopyrightText: 2023 Checkraze
-# SPDX-FileCopyrightText: 2023 Debug
-# SPDX-FileCopyrightText: 2023 Emisse
-# SPDX-FileCopyrightText: 2023 Eoin Mcloughlin
-# SPDX-FileCopyrightText: 2023 Fluffiest Floofers
-# SPDX-FileCopyrightText: 2023 Haltell
-# SPDX-FileCopyrightText: 2023 Leon Friedrich
-# SPDX-FileCopyrightText: 2023 Scribbles0
-# SPDX-FileCopyrightText: 2023 Ubaser
-# SPDX-FileCopyrightText: 2023 WIN-AOO91TUKDC7\geniy
-# SPDX-FileCopyrightText: 2023 deltanedas
-# SPDX-FileCopyrightText: 2023 eoineoineoin
-# SPDX-FileCopyrightText: 2023 not-gavnaed
-# SPDX-FileCopyrightText: 2024 Colin-Tel
-# SPDX-FileCopyrightText: 2024 FoxxoTrystan
-# SPDX-FileCopyrightText: 2024 Ichaie
-# SPDX-FileCopyrightText: 2024 Velcroboy
-# SPDX-FileCopyrightText: 2025 John Willis
-# SPDX-FileCopyrightText: 2025 Jonathan
-# SPDX-FileCopyrightText: 2025 Mike32oz
-# SPDX-FileCopyrightText: 2025 VMSolidus
-# SPDX-FileCopyrightText: 2025 juniwoofs
-# SPDX-FileCopyrightText: 2025 sheepie
-# SPDX-FileCopyrightText: 2025 sleepyyapril
-#
-# SPDX-License-Identifier: AGPL-3.0-or-later
-
 meta:
   format: 7
   category: Map
   engineVersion: 260.2.0
   forkId: ""
   forkVersion: ""
-  time: 07/20/2025 04:26:47
-  entityCount: 27166
+  time: 07/20/2025 17:31:39
+  entityCount: 27187
 maps:
 - 1
 grids:
@@ -11648,7 +11596,7 @@ entities:
       pos: 76.5,-12.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -21815.066
+      secondsUntilStateChange: -21869.748
       state: Opening
     - type: DeviceLinkSink
       invokeCounter: 1
@@ -13069,7 +13017,7 @@ entities:
       pos: 2.5,27.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -26804.195
+      secondsUntilStateChange: -26858.877
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -63836,7 +63784,7 @@ entities:
       pos: 65.5,-16.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -39128.664
+      secondsUntilStateChange: -39183.348
       state: Closing
   - uid: 23609
     components:
@@ -63844,7 +63792,7 @@ entities:
       pos: 65.5,-17.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -39127.73
+      secondsUntilStateChange: -39182.414
       state: Closing
   - uid: 23610
     components:
@@ -63852,7 +63800,7 @@ entities:
       pos: 65.5,-18.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -39127.13
+      secondsUntilStateChange: -39181.812
       state: Closing
 - proto: CurtainsWhiteOpen
   entities:
@@ -146402,6 +146350,103 @@ entities:
     - type: Transform
       pos: 23.5,48.5
       parent: 2
+- proto: SpawnPointPrisoner
+  entities:
+  - uid: 27169
+    components:
+    - type: Transform
+      pos: -13.5,38.5
+      parent: 2
+  - uid: 27170
+    components:
+    - type: Transform
+      pos: -13.5,41.5
+      parent: 2
+  - uid: 27171
+    components:
+    - type: Transform
+      pos: -13.5,44.5
+      parent: 2
+  - uid: 27172
+    components:
+    - type: Transform
+      pos: -16.5,45.5
+      parent: 2
+  - uid: 27173
+    components:
+    - type: Transform
+      pos: -22.5,40.5
+      parent: 2
+  - uid: 27174
+    components:
+    - type: Transform
+      pos: -22.5,39.5
+      parent: 2
+  - uid: 27175
+    components:
+    - type: Transform
+      pos: -22.5,38.5
+      parent: 2
+  - uid: 27176
+    components:
+    - type: Transform
+      pos: -27.5,36.5
+      parent: 2
+  - uid: 27177
+    components:
+    - type: Transform
+      pos: -27.5,37.5
+      parent: 2
+  - uid: 27178
+    components:
+    - type: Transform
+      pos: -26.5,35.5
+      parent: 2
+  - uid: 27179
+    components:
+    - type: Transform
+      pos: -25.5,35.5
+      parent: 2
+  - uid: 27180
+    components:
+    - type: Transform
+      pos: -24.5,49.5
+      parent: 2
+  - uid: 27181
+    components:
+    - type: Transform
+      pos: -22.5,49.5
+      parent: 2
+  - uid: 27182
+    components:
+    - type: Transform
+      pos: -24.5,46.5
+      parent: 2
+  - uid: 27183
+    components:
+    - type: Transform
+      pos: -24.5,45.5
+      parent: 2
+  - uid: 27184
+    components:
+    - type: Transform
+      pos: -19.5,47.5
+      parent: 2
+  - uid: 27185
+    components:
+    - type: Transform
+      pos: -17.5,48.5
+      parent: 2
+  - uid: 27186
+    components:
+    - type: Transform
+      pos: -17.5,33.5
+      parent: 2
+  - uid: 27187
+    components:
+    - type: Transform
+      pos: -15.5,35.5
+      parent: 2
 - proto: SpawnPointProsecutor
   entities:
   - uid: 26064
@@ -146418,6 +146463,18 @@ entities:
     components:
     - type: Transform
       pos: -8.5,-16.5
+      parent: 2
+- proto: SpawnPointPsychologist
+  entities:
+  - uid: 27167
+    components:
+    - type: Transform
+      pos: 32.5,-2.5
+      parent: 2
+  - uid: 27168
+    components:
+    - type: Transform
+      pos: 37.5,-3.5
       parent: 2
 - proto: SpawnPointQuartermaster
   entities:
@@ -170687,7 +170744,7 @@ entities:
       lastSignals:
         DoorStatus: True
     - type: Door
-      secondsUntilStateChange: -7827.314
+      secondsUntilStateChange: -7881.9956
       state: Opening
 - proto: WindoorKitchenLocked
   entities:
