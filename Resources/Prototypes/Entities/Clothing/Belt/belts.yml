@@ -744,7 +744,7 @@
         - CartridgeAmmo
   - type: ItemSlots
     slots:
-      item:
+      sidearm:
         name: clothing-belt-sidearm
         whitelist:
           tags:
@@ -778,7 +778,7 @@
       - id: Handcuffs
 
 - type: entity
-  parent: ClothingBeltStorageBase
+  parent: ClothingBeltMilitaryWebbing
   id: ClothingBeltMercWebbing
   name: mercenary webbing
   description: Ideal for storing everything from ammo to weapons and combat essentials.
@@ -789,7 +789,7 @@
     sprite: Clothing/Belt/mercwebbing.rsi
 
 - type: entity
-  parent: ClothingBeltStorageBase
+  parent: ClothingBeltMilitaryWebbing
   id: ClothingBeltSalvageWebbing
   name: salvage rig
   description: Universal unloading system for work in space.
@@ -813,12 +813,17 @@
     damageCoefficient: 0.5
   - type: ItemSlots
     slots:
-      item:
+      sidearm:
         name: clothing-belt-sidearm
         whitelist:
           tags:
           - Sidearm
         insertOnInteract: true
+      jaunter:
+        name: clothing-belt-jaunter
+        whitelist:
+          tags:
+          - Jaunter
 
 - type: entity
   parent: [ClothingBeltMilitaryWebbing]

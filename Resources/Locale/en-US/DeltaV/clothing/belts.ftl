@@ -5,8 +5,11 @@
 
 # Add sidearm and medkit slots to security belts + webbing, medical webbing respectively
 clothing-belt-sidearm = Sidearm
-clothing-belt-medkit = Medical Tool
+clothing-belt-medkit = Medical tool
 
 # Add slots to the daishou
 clothing-belt-katana = Katana
 clothing-belt-wakizashi = Wakizashi
+
+# Add jaunter slot to salvage gear
+clothing-belt-jaunter = Jaunter pouch
