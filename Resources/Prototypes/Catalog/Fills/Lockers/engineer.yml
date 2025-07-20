@@ -214,7 +214,7 @@
     - id: HolofanProjector
     - id: RCD
     - id: RCDAmmo
-    - id: AirGrenade
+    # - id: AirGrenade # NYI - TODO: Cherry-pick https://github.com/space-wizards/space-station-14/pull/37531
 
 - type: entityTable
   id: FillAtmosphericsHardsuit
@@ -267,7 +267,7 @@
     - id: trayScanner
     - id: RCD
     - id: RCDAmmo
-    - id: MetalFoamGrenade
+    # - id: MetalFoamGrenade # NYI - TODO: Cherry-pick https://github.com/space-wizards/space-station-14/pull/37476
 
 - type: entityTable
   id: FillEngineerHardsuit
