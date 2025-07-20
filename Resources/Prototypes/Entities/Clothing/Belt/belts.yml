@@ -297,7 +297,7 @@
         whitelist:
           tags:
           - Sidearm
-        insertOnInteract: true
+        insertOnInteract: false
 
 - type: entity
   parent: ClothingBeltStorageBase
@@ -630,7 +630,7 @@
         whitelist:
           tags:
           - Sidearm
-        insertOnInteract: true
+        insertOnInteract: false
 
 - type: entity
   parent: [ClothingBeltBase, ClothingSlotBase]
@@ -719,7 +719,7 @@
         whitelist:
           tags:
           - Sidearm
-        insertOnInteract: true
+        insertOnInteract: false
 
 - type: entity
   parent: ClothingBeltStorageBase
@@ -749,7 +749,7 @@
         whitelist:
           tags:
           - Sidearm
-        insertOnInteract: true
+        insertOnInteract: false
 
 - type: entity
   parent: ClothingBeltSecurity
@@ -818,13 +818,14 @@
         whitelist:
           tags:
           - Sidearm
-        insertOnInteract: true
+        insertOnInteract: false
       jaunter:
         name: clothing-belt-jaunter
         priority: -1
         whitelist:
           tags:
           - Jaunter
+        insertOnInteract: false
 
 - type: entity
   parent: [ClothingBeltMilitaryWebbing]
@@ -871,7 +872,7 @@
         whitelist:
           tags:
           - Sidearm
-        insertOnInteract: true
+        insertOnInteract: false
 
 - type: entity
   parent: ClothingBeltBase
