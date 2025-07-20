@@ -141,14 +141,15 @@
         - IdCard
   - type: Item
     size: Small
+  - type: ItemSlots
   - type: ContainerContainer
     containers:
       PDA-id: !type:ContainerSlot {}
       PDA-pen: !type:ContainerSlot {}
       PDA-pai: !type:ContainerSlot {}
+      PDA-passport: !type:ContainerSlot {}
       Cartridge-Slot: !type:ContainerSlot {}
       program-container: !type:Container
-      passport: !type:ContainerSlot {}
   - type: Clothing
     quickEquip: false
     slots:
