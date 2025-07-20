@@ -8,27 +8,16 @@
 # SPDX-FileCopyrightText: 2025 sleepyyapril <flyingkarii@gmail.com>
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
-# ## Static
-# - type: latheRecipePack
-#   id: SecurityBoardsStaticGoob
-#   recipes:
-#   - ContrabandDetectorCircuitboard
+## Static
+- type: latheRecipePack
+  id: MedicalBoardsGoob
+  recipes:
+  - AutodocCircuitboard
 
-# ## Dynamic
-# - type: latheRecipePack
-#   id: MedicalBoardsStaticGoob
-#   recipes:
-#   - OperatingTableCircuitboard
-
-# - type: latheRecipePack
-#   id: MedicalBoardsGoob
-#   recipes:
-#   - AutodocCircuitboard
-
-# - type: latheRecipePack
-#   id: EngineeringBoardsGoob
-#   recipes:
-#   - RoboticArmCircuitboard
-#   - ConstructorCircuitboard
-#   - StorageBinCircuitboard
-#   - InteractorCircuitboard
+- type: latheRecipePack
+  id: EngineeringBoardsGoob
+  recipes:
+  - RoboticArmCircuitboard
+  - ConstructorCircuitboard
+  - StorageBinCircuitboard
+  - InteractorCircuitboard

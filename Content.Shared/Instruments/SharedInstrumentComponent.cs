@@ -1,19 +1,17 @@
-// SPDX-FileCopyrightText: 2020 Tyler Young <tyler.young@impromptu.ninja>
-// SPDX-FileCopyrightText: 2020 Vera Aguilera Puerto <zddm@outlook.es>
-// SPDX-FileCopyrightText: 2020 Víctor Aguilera Puerto <6766154+Zumorica@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2020 Víctor Aguilera Puerto <zddm@outlook.es>
-// SPDX-FileCopyrightText: 2020 zumorica <zddm@outlook.es>
-// SPDX-FileCopyrightText: 2021 Acruid <shatter66@gmail.com>
-// SPDX-FileCopyrightText: 2021 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2021 Visne <39844191+Visne@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2022 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
-// SPDX-FileCopyrightText: 2022 Vera Aguilera Puerto <gradientvera@outlook.com>
-// SPDX-FileCopyrightText: 2022 mirrorcult <lunarautomaton6@gmail.com>
-// SPDX-FileCopyrightText: 2022 wrexbe <81056464+wrexbe@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2023 Vera Aguilera Puerto <6766154+Zumorica@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2023 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 VMSolidus <evilexecutive@gmail.com>
-// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2020 Tyler Young
+// SPDX-FileCopyrightText: 2020 Víctor Aguilera Puerto
+// SPDX-FileCopyrightText: 2020 zumorica
+// SPDX-FileCopyrightText: 2021 Acruid
+// SPDX-FileCopyrightText: 2021 DrSmugleaf
+// SPDX-FileCopyrightText: 2021 Visne
+// SPDX-FileCopyrightText: 2022 Pieter-Jan Briers
+// SPDX-FileCopyrightText: 2022 mirrorcult
+// SPDX-FileCopyrightText: 2022 wrexbe
+// SPDX-FileCopyrightText: 2023 Vera Aguilera Puerto
+// SPDX-FileCopyrightText: 2023 metalgearsloth
+// SPDX-FileCopyrightText: 2025 Simon
+// SPDX-FileCopyrightText: 2025 VMSolidus
+// SPDX-FileCopyrightText: 2025 sleepyyapril
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -50,6 +48,18 @@ public abstract partial class SharedInstrumentComponent : Component
 
     [ViewVariables]
     public BitArray FilteredChannels { get; set; } = new(RobustMidiEvent.MaxChannels, true);
+}
+
+/// <summary>
+/// Component that indicates that musical instrument was activated (ui opened).
+/// </summary>
+[RegisterComponent, NetworkedComponent]
+[AutoGenerateComponentState(true)]
+public sealed partial class ActiveInstrumentComponent : Component
+{
+    [DataField]
+    [AutoNetworkedField]
+    public MidiTrack?[] Tracks = [];
 }
 
 [Serializable, NetSerializable]
@@ -155,4 +165,73 @@ public sealed class InstrumentMidiEventEvent : EntityEventArgs
 public enum InstrumentUiKey
 {
     Key,
+}
+
+/// <summary>
+/// Sets the MIDI channels on an instrument.
+/// </summary>
+[Serializable, NetSerializable]
+public sealed class InstrumentSetChannelsEvent : EntityEventArgs
+{
+    public NetEntity Uid { get; }
+    public MidiTrack?[] Tracks { get; set; }
+
+    public InstrumentSetChannelsEvent(NetEntity uid, MidiTrack?[] tracks)
+    {
+        Uid = uid;
+        Tracks = tracks;
+    }
+}
+
+/// <summary>
+/// Represents a single midi track with the track name, instrument name and bank instrument name extracted.
+/// </summary>
+[Serializable, NetSerializable]
+public sealed class MidiTrack
+{
+    /// <summary>
+    /// The first specified Track Name
+    /// </summary>
+    public string? TrackName;
+    /// <summary>
+    /// The first specified instrument name
+    /// </summary>
+    public string? InstrumentName;
+
+    /// <summary>
+    /// The first program change resolved to the name.
+    /// </summary>
+    public string? ProgramName;
+
+    public override string ToString()
+    {
+        return $"Track Name: {TrackName}; Instrument Name: {InstrumentName}; Program Name: {ProgramName}";
+    }
+
+    /// <summary>
+    /// Truncates the fields based on the limit inputted into this method.
+    /// </summary>
+    public void TruncateFields(int limit)
+    {
+        if (InstrumentName != null)
+            InstrumentName = Truncate(InstrumentName, limit);
+
+        if (TrackName != null)
+            TrackName = Truncate(TrackName, limit);
+
+        if (ProgramName != null)
+            ProgramName = Truncate(ProgramName, limit);
+    }
+
+    private const string Postfix = "…";
+    // TODO: Make a general method to use in RT? idk if we have that.
+    private string Truncate(string input, int limit)
+    {
+        if (string.IsNullOrEmpty(input) || limit <= 0 || input.Length <= limit)
+            return input;
+
+        var truncatedLength = limit - Postfix.Length;
+
+        return input.Substring(0, truncatedLength) + Postfix;
+    }
 }

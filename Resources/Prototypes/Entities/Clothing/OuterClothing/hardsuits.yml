@@ -53,6 +53,7 @@
 # SPDX-FileCopyrightText: 2025 Jakumba
 # SPDX-FileCopyrightText: 2025 MajorMoth
 # SPDX-FileCopyrightText: 2025 VMSolidus
+# SPDX-FileCopyrightText: 2025 VividPups
 # SPDX-FileCopyrightText: 2025 corresp0nd
 # SPDX-FileCopyrightText: 2025 mart
 # SPDX-FileCopyrightText: 2025 sleepyyapril
@@ -711,7 +712,7 @@
     - MonkeyWearable
     - Hardsuit
     - WhitelistChameleon
-    - HidesHarpyWings
+    # HidesHarpyWings #Floof change, caused vulp tails to be hidden in hardsuits(with singer trait only)
   - type: StaminaDamageResistance
     coefficient: 0.5 # 50%
 
@@ -732,7 +733,7 @@
     tags:
     - Hardsuit
     - WhitelistChameleon
-    - HidesHarpyWings
+    # HidesHarpyWings  Floof Change
   - type: StaminaDamageResistance
     coefficient: 0.5 # 50%
 

@@ -1,27 +1,28 @@
-// SPDX-FileCopyrightText: 2022 CrudeWax <75271456+CrudeWax@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2022 Flipp Syder <76629141+vulppine@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2022 TekuNut <13456422+TekuNut@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2022 metalgearsloth <metalgearsloth@gmail.com>
-// SPDX-FileCopyrightText: 2022 mirrorcult <lunarautomaton6@gmail.com>
-// SPDX-FileCopyrightText: 2023 AJCM-git <60196617+AJCM-git@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2023 Debug <49997488+DebugOk@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2023 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2023 DrSmugleaf <drsmugleaf@gmail.com>
-// SPDX-FileCopyrightText: 2023 Jezithyr <jezithyr@gmail.com>
-// SPDX-FileCopyrightText: 2023 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2023 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2023 Pieter-Jan Briers <pieterjan.briers@gmail.com>
-// SPDX-FileCopyrightText: 2023 PilgrimViis <PilgrimViis@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2023 Visne <39844191+Visne@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2023 deltanedas <@deltanedas:kde.org>
-// SPDX-FileCopyrightText: 2023 keronshb <54602815+keronshb@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2023 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 Errant <35878406+Errant-4@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 Kara <lunarautomaton6@gmail.com>
-// SPDX-FileCopyrightText: 2024 SimpleStation14 <130339894+SimpleStation14@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 VMSolidus <evilexecutive@gmail.com>
-// SPDX-FileCopyrightText: 2024 deltanedas <39013340+deltanedas@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 CrudeWax
+// SPDX-FileCopyrightText: 2022 Flipp Syder
+// SPDX-FileCopyrightText: 2022 TekuNut
+// SPDX-FileCopyrightText: 2022 mirrorcult
+// SPDX-FileCopyrightText: 2023 AJCM-git
+// SPDX-FileCopyrightText: 2023 Debug
+// SPDX-FileCopyrightText: 2023 DrSmugleaf
+// SPDX-FileCopyrightText: 2023 Jezithyr
+// SPDX-FileCopyrightText: 2023 Leon Friedrich
+// SPDX-FileCopyrightText: 2023 Nemanja
+// SPDX-FileCopyrightText: 2023 Pieter-Jan Briers
+// SPDX-FileCopyrightText: 2023 PilgrimViis
+// SPDX-FileCopyrightText: 2023 Visne
+// SPDX-FileCopyrightText: 2023 keronshb
+// SPDX-FileCopyrightText: 2023 metalgearsloth
+// SPDX-FileCopyrightText: 2024 Errant
+// SPDX-FileCopyrightText: 2024 Kara
+// SPDX-FileCopyrightText: 2024 SimpleStation14
+// SPDX-FileCopyrightText: 2024 VMSolidus
+// SPDX-FileCopyrightText: 2024 deltanedas
+// SPDX-FileCopyrightText: 2025 GoobBot
+// SPDX-FileCopyrightText: 2025 Jakumba
+// SPDX-FileCopyrightText: 2025 Rouden
+// SPDX-FileCopyrightText: 2025 Roudenn
+// SPDX-FileCopyrightText: 2025 sleepyyapril
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -42,6 +43,14 @@ using Content.Shared.Zombies;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Map;
 using Robust.Shared.Map.Components;
+using Content.Shared.Sprite; // Goobstation
+using Content.Server.Stunnable; // Goobstation
+using Content.Shared.Chemistry.Components; // Goobstation
+using Content.Shared.Devour.Components; // Goobstation
+using Content.Shared.NPC.Components; // Goobstation
+using Robust.Shared.Serialization.Manager; // Goobstation
+using Content.Server.Body.Systems;
+using Content.Shared.Damage; // Goobstation
 
 namespace Content.Server.Dragon;
 
@@ -57,6 +66,11 @@ public sealed partial class DragonSystem : EntitySystem
     [Dependency] private readonly SharedTransformSystem _transform = default!;
     [Dependency] private readonly SharedMapSystem _map = default!;
     [Dependency] private readonly MobStateSystem _mobState = default!;
+    [Dependency] private readonly EntityLookupSystem _lookup = default!; // Goobstation
+    [Dependency] private readonly StunSystem _stun = default!; // Goobstation
+    [Dependency] private readonly ISerializationManager _serManager = default!; // Goobstation
+    [Dependency] private readonly DamageableSystem _damage = default!; // Goobstation
+
 
     private EntityQuery<CarpRiftsConditionComponent> _objQuery;
 
@@ -84,15 +98,23 @@ public sealed partial class DragonSystem : EntitySystem
         SubscribeLocalEvent<DragonComponent, RefreshMovementSpeedModifiersEvent>(OnDragonMove);
         SubscribeLocalEvent<DragonComponent, MobStateChangedEvent>(OnMobStateChanged);
         SubscribeLocalEvent<DragonComponent, EntityZombifiedEvent>(OnZombified);
+        SubscribeLocalEvent<DragonComponent, DragonRoarActionEvent>(OnDragonRoar); // Goobstation
+        SubscribeLocalEvent<DragonComponent, DragonSpawnCarpHordeActionEvent>(OnRiseFish); // Goobstation
     }
 
     public override void Update(float frameTime)
     {
         base.Update(frameTime);
 
-        var query = EntityQueryEnumerator<DragonComponent>();
-        while (query.MoveNext(out var uid, out var comp))
+        var query = EntityQueryEnumerator<DragonComponent, TransformComponent>(); // Goobstation - added Transform and Devourer components
+        while (query.MoveNext(out var uid, out var comp, out var xform)) // Goobstation - added Transform and Devourer components
         {
+            // Goobstation start
+            // Heal the dragon a bit if it's near the carp rift.
+            if (_lookup.GetEntitiesInRange<DragonRiftComponent>(xform.Coordinates, comp.CarpRiftHealingRange).Count > 0)
+                _damage.TryChangeDamage(uid, comp.CarpRiftHealing * frameTime, true, false);
+            // Goobstation end
+
             if (comp.WeakenedAccumulator > 0f)
             {
                 comp.WeakenedAccumulator -= frameTime;
@@ -137,6 +159,8 @@ public sealed partial class DragonSystem : EntitySystem
     {
         Roar(uid, component);
         _actions.AddAction(uid, ref component.SpawnRiftActionEntity, component.SpawnRiftAction);
+        _actions.AddAction(uid, ref component.SpawnCarpsActionEntity, component.SpawnCarpsAction); // Goobstation
+        _actions.AddAction(uid, ref component.RoarActionEntity, component.RoarAction); // Goobstation
     }
 
     private void OnShutdown(EntityUid uid, DragonComponent component, ComponentShutdown args)
@@ -303,4 +327,52 @@ public sealed partial class DragonSystem : EntitySystem
         _movement.RefreshMovementSpeedModifiers(uid);
         _popup.PopupEntity(Loc.GetString("carp-rift-destroyed"), uid, uid);
     }
+    #region Goobstation
+
+    private void OnRiseFish(EntityUid uid, DragonComponent component, DragonSpawnCarpHordeActionEvent args)
+    {
+        if (args.Handled)
+            return;
+
+        Roar(uid, component);
+        var xform = Transform(uid);
+        for (int i = 0; i < component.CarpAmount; i++)
+        {
+            var ent = Spawn(component.CarpProtoId, xform.Coordinates);
+
+            // Update their look to match the leader.
+            if (TryComp<RandomSpriteComponent>(uid, out var randomSprite))
+            {
+                var spawnedSprite = EnsureComp<RandomSpriteComponent>(ent);
+                _serManager.CopyTo(randomSprite, ref spawnedSprite, notNullableOverride: true);
+                Dirty(ent, spawnedSprite);
+            }
+        }
+
+        args.Handled = true;
+    }
+
+    private void OnDragonRoar(EntityUid uid, DragonComponent component, DragonRoarActionEvent args)
+    {
+        if (args.Handled)
+            return;
+
+        Roar(uid, component);
+
+        // TODO: add pushing (like from push horn but stronger) after upstream is merged
+
+        var xform = Transform(uid);
+        var nearMobs = _lookup.GetEntitiesInRange<NpcFactionMemberComponent>(xform.Coordinates, component.RoarRange, LookupFlags.Uncontained);
+        foreach (var mob in nearMobs)
+        {
+            if (_faction.IsEntityFriendly(uid, (mob.Owner, mob.Comp)))
+                continue;
+
+            _stun.TrySlowdown(mob, TimeSpan.FromSeconds(component.RoarStunTime), false, 0.25f, 0.25f);
+        }
+
+        args.Handled = true;
+    }
+
+    #endregion
 }

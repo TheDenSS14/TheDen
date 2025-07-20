@@ -27,3 +27,6 @@ loadout-description-LoadoutSeniorPhysicianBeltMedicalAdvancedFilled =
 # The Den additions (Loadout fixes)
 loadout-name-LoadoutMedicalInternBeltMedical = medical belt (empty)
 loadout-name-LoadoutMedicalInternBeltMedicalFilled = medical belt (filled)
+
+loadout-name-LoadoutParamedicBeltEMT = EMT belt (empty)
+loadout-name-LoadoutParamedicBeltEMTFilled = EMT belt (filled)

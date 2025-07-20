@@ -21,6 +21,10 @@
     - !type:CharacterDepartmentRequirement
       departments:
         - Epistemics
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - ResearchDirector # MG has ClothingBackpackResearchDirectorFilled
 
 - type: loadout
   id: LoadoutBackpackSatchelScience
@@ -35,6 +39,10 @@
     - !type:CharacterDepartmentRequirement
       departments:
         - Epistemics
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - ResearchDirector # MG has ClothingBackpackSatchelResearchDirectorFilled
 
 - type: loadout
   id: LoadoutBackpackDuffelScience
@@ -49,6 +57,10 @@
     - !type:CharacterDepartmentRequirement
       departments:
         - Epistemics
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - ResearchDirector # MG has ClothingBackpackDuffelResearchDirectorFilled
 
 # Belt
 
@@ -257,6 +269,9 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutGolemancerOuter
+    - !type:CharacterJobRequirement
+      jobs:
+        - Roboticist
   items:
     - ClothingOuterCoatRobo
 
@@ -293,6 +308,7 @@
   id: LoadoutOuterRobeTechPriest
   category: JobsEpistemicsAAUncategorized # TheDen - Wrong category
   cost: 0
+  exclusive: true
   items:
     - ClothingOuterRobeTechPriest
   requirements:

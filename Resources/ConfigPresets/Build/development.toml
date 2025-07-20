@@ -16,6 +16,9 @@ lobbyenabled = false
 # Dev map for faster loading & convenience
 map = "Dev"
 role_timers = false
+traits_max = 25
+traits_default_points = 20
+loadouts_points = 30
 
 [gateway]
 generator_enabled = false
@@ -42,3 +45,6 @@ see_own_notes = true
 
 [lavaland] # Lavaland Change
 enabled = false
+
+[rules]
+exempt_local = true

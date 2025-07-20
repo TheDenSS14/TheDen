@@ -1,0 +1,31 @@
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+# TODO: I know it's horrid, but if you separate every single one into their proper forks, I'll pay you.
+# There are existing packs for some of these recipes, and some which have items that don't exist. I'm sorry.
+
+- type: latheRecipePack
+  id: CargoTechFabDynamicAwfulDen
+  recipes:
+  # Weapons and tools
+  - WeaponGrapplingGun
+  - WeaponTetherGun
+  - WeaponForceGun
+  - WeaponProtoKineticAccelerator
+  - MiningDrill
+  - HandHeldMassScanner
+  # Shuttle building
+  - ShuttleConsoleCircuitboard
+  - RadarConsoleCircuitboard
+  - ThrusterMachineCircuitboard
+  - GyroscopeMachineCircuitboard
+  - MiniGravityGeneratorCircuitboard
+  - ShuttleGunKineticCircuitboard
+  # Machines and computers
+  - CargoTelepadMachineCircuitboard
+  - OreProcessorMachineCircuitboard
+  - RadioHandheld
+  - JetpackBlue
+  - JetpackMini
+  # NOTE: advanced tools, industrial ore processor, expeds board are not added here as those are the very few things epi provides for cargo

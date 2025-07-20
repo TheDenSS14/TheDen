@@ -1,0 +1,52 @@
+# Prison Guard
+# Backpacks
+
+# Belt
+
+# Ears
+
+# Equipment
+
+# Eyes
+
+# Gloves
+
+# Head
+- type: loadout
+  id: LoadoutClothingHeadHatCapPrisonGuard
+  category: JobsSecurityPrisonGuard
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutPrisonGuardHead
+    - !type:CharacterJobRequirement
+      jobs:
+        - PrisonGuard
+  items:
+    - ClothingHeadPrisonGuard
+
+# Id
+
+# Neck
+
+# Mask
+
+# Outer
+
+# Shoes
+
+# Uniforms
+- type: loadout
+  id: LoadoutUniformJumpsuitPrisonGuard
+  category: JobsSecurityPrisonGuard
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutPrisonGuardUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - PrisonGuard
+  items:
+    - ClothingUniformJumpsuitPrisonGuard

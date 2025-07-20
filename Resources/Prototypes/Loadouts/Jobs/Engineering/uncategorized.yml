@@ -25,6 +25,10 @@
     - !type:CharacterDepartmentRequirement
       departments:
         - Engineering
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - ChiefEngineer # CE has ClothingBackpackChiefEngineerFilled
 
 - type: loadout
   id: LoadoutBackpackSatchelEngineering
@@ -39,6 +43,10 @@
     - !type:CharacterDepartmentRequirement
       departments:
         - Engineering
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - ChiefEngineer # CE has ClothingBackpackSatchelChiefEngineerFilled
 
 - type: loadout
   id: LoadoutBackpackDuffelEngineering
@@ -53,6 +61,10 @@
     - !type:CharacterDepartmentRequirement
       departments:
         - Engineering
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - ChiefEngineer # CE has ClothingBackpackDuffelChiefEngineerFilled
 
 # Belt
 
@@ -216,14 +228,15 @@
   id: LoadoutEngineeringWinterCoat
   category: JobsEngineeringAAUncategorized
   cost: 0
+  exclusive: true
   requirements:
-  - !type:CharacterItemGroupRequirement
-    group: LoadoutEngineeringOuter
-  - !type:CharacterDepartmentRequirement
-    departments:
-      - Engineering
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutEngineeringOuter
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Engineering
   items:
-  - ClothingOuterWinterEngi
+    - ClothingOuterWinterEngi
 
 - type: loadout
   id: LoadoutEngineeringOuterHazard

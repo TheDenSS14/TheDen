@@ -5,6 +5,7 @@
 # SPDX-FileCopyrightText: 2025 M3739
 # SPDX-FileCopyrightText: 2025 MajorMoth
 # SPDX-FileCopyrightText: 2025 Rosycup
+# SPDX-FileCopyrightText: 2025 Tabitha
 # SPDX-FileCopyrightText: 2025 mart
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
@@ -21,6 +22,8 @@
       id: LoadoutBackpackSatchelEngineering
     - type: loadout
       id: LoadoutBackpackDuffelEngineering
+    - type: loadout
+      id: LoadoutBackpackMessengerEngineering
 
 #- type: characterItemGroup
 #  id: LoadoutEngineeringBelt
@@ -36,7 +39,6 @@
 #  id: LoadoutEngineeringEquipment
 #  maxItems: 1
 #  items:
-#
 
 - type: characterItemGroup
   id: LoadoutEngineeringEyes
@@ -54,6 +56,8 @@
       id: LoadoutEngineeringGlovesCombat
     - type: loadout
       id: LoadoutEngineeringGlovesMerc
+    - type: loadout
+      id: LoadoutClothingHandsEngiWarmers
 
 - type: characterItemGroup
   id: LoadoutEngineeringHead
@@ -75,19 +79,21 @@
 #  id: LoadoutEngineeringId
 #  maxItems: 1
 #  items:
-#
+
 - type: characterItemGroup
   id: LoadoutEngineeringNeck
   maxItems: 1
   items:
     - type: loadout
       id: LoadoutEngineeringNeckNeckerchief # Floof - M3739 - #988
+    - type: loadout
+      id: LoadoutEngineeringNeckCollar
 
 #- type: characterItemGroup
 #  id: LoadoutEngineeringMask
 #  maxItems: 1
 #  items:
-#
+
 - type: characterItemGroup
   id: LoadoutEngineeringOuter
   items:
@@ -104,6 +110,8 @@
       id: LoadoutEngineeringShoesBootsWork
     - type: loadout
       id: LoadoutEngineeringShoesBootsWinter
+    - type: loadout
+      id: LoadoutClothingUnderSocksEngi
 
 - type: characterItemGroup
   id: LoadoutEngineeringUniforms
@@ -118,3 +126,5 @@
       id: LoadoutClothingUniformJumpsuitRepairmanNT
     - type: loadout
       id: LoadoutClothingUniformJumpsuitRepairmanCybersun
+    - type: loadout
+      id: LoadoutClothingUniformEngiThong

@@ -64,7 +64,7 @@ marking-FaceLipcornerLeft = Lip Corner (Left)
 marking-FaceLipcornerLeft-lipcorner_l = Lip Corner (Left)
 
 marking-FaceGlabella = Glabella
-marking-FaceGlabella-blabella = Glabella
+marking-FaceGlabella-glabella = Glabella
 
 marking-FaceLowercheekRight = Lower Cheek (Right)
 marking-FaceLowercheekRight-lowercheek_r = Lower Cheek (Right)

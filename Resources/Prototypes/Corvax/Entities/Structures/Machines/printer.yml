@@ -1,6 +1,6 @@
-# SPDX-FileCopyrightText: 2025 KekaniCreates <87507256+KekaniCreates@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 Will-Oliver-Br <164823659+Will-Oliver-Br@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 KekaniCreates
+# SPDX-FileCopyrightText: 2025 Will-Oliver-Br
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -31,72 +31,11 @@
     producingSound: /Audio/Machines/scanning.ogg
     idleState: icon
     runningState: building
-    staticRecipes:
-      - PrintedDocumentReportStationRecipe
-      # - PrintedDocumentReportOnEliminationOfViolationsRecipe
-      - PrintedDocumentReportDepartmentRecipe
-      - PrintedDocumentReportEmployeePerformanceRecipe
-      - PrintedDocumentReportOnTheChaptersMeetingRecipe
-      # - PrintedDocumentInternalAffairsAgentsReportRecipe
-      - PrintedDocumentConditionReportRecipe
-      - PrintedDocumentReportStudyObjectRecipe
-      #- PrintedDocumentExperimentReportRecipe
-      #- PrintedDocumentDisposalReportRecipe
-      - PrintedDocumentApplicationAppointmentInterimRecipe
-      - PrintedDocumentApplicationEmploymentRecipe
-      - PrintedDocumentLetterResignationRecipe
-      - PrintedDocumentApplicationAccessRecipe
-      - PrintedDocumentApplicationEquipmentRecipe
-      #- PrintedDocumentAppealRecipe
-      - PrintedDocumentEvacuationShuttleRequestRecipe
-      - PrintedDocumentShuttleRegistrationRequestRecipe
-      #- PrintedDocumentRequestCallMembersCentralCommitteeDSORecipe
-      #- PrintedDocumentRequestRequestToEstablishThreatLevelRecipe
-      #- PrintedDocumentRequestChangeSalaryRecipe
-      - PrintedDocumentRequestForNonlistedEmploymentRecipe
-      - PrintedDocumentRequestForPromotionRecipe
-      - PrintedDocumentRequestDocumentsRecipe
-      - PrintedDocumentRequestEuthanasiaRecipe
-      - PrintedDocumentRequestConstructionWorkRecipe
-      - PrintedDocumentRequestModernizationRecipe
-      #- PrintedDocumentComplaintViolationLaborRulesRecipe
-      - PrintedDocumentComplaintOffenseRecipe
-      - PrintedDocumentPermissionEquipmentRecipe
-      #- PrintedDocumentPermissionToTravelInCaseOfThreatRecipe
-      - PrintedDocumentSearchPermissionRecipe
-      - PrintedDocumentPermissionToCarryWeaponsRecipe
-      - PrintedDocumentPrescriptionDrugAuthorizationRecipe
-      - PrintedDocumentPermissionDisposeBodyRecipe
-      - PrintedDocumentConstructionPermitRecipe
-      #- PrintedDocumentPermissionToExtendMarriageRecipe
-      - PrintedDocumentOrderDismissalRecipe
-      - PrintedDocumentOrderDeprivationAccessRecipe
-      - PrintedDocumentOrderEncouragementRecipe
-      - PrintedDocumentOrderParolePrisonerRecipe
-      - PrintedDocumentOrderRecognizingSentienceCreatureRecipe
-      - PrintedDocumentOrderMedicalInterventionRecipe
-      - PrintedDocumentProductManufacturingOrderRecipe
-      #- PrintedDocumentOrderPurchaseResourcesEquipmentRecipe
-      #- PrintedDocumentOrderingSpecialEquipmentRecipe
-      #- PrintedDocumentOrderPurchaseWeaponsRecipe
-      #- PrintedDocumentCertificateRecipe
-      - PrintedDocumentCertificateAdvancedTrainingRecipe
-      - PrintedDocumentCertificateOffenseRecipe
-      - PrintedDocumentDeathCertificateRecipe
-      - PrintedDocumentMarriageCertificateRecipe
-      - PrintedDocumentDivorceCertificateRecipe
-      - PrintedDocumentClosingIndictmentRecipe
-      - PrintedDocumentSentenceRecipe
-      - PrintedDocumentJudgmentRecipe
-      - PrintedDocumentStatementHealtheRecipe
-      - PrintedDocumentDecisionToStartTrialRecipe
+    staticPacks:
+    - DocumentPrinterStaticAwfulDen
   - type: EmagLatheRecipes
-    emagStaticRecipes:
-        - PrintedDocumentErrorLoadingFormHeaderRecipe
-        - PrintedDocumentNoticeOfLiquidationRecipe
-        - PrintedDocumentBusinessDealRecipe
-        - PrintedDocumentNoteBeginningMilitaryActionsRecipe
-        - PrintedDocumentReportAccomplishmentGoalsRecipe
+    emagStaticPacks:
+    - DocumentPrinterStaticEmagAwfulDen
   - type: Fixtures
     fixtures:
       fix1:
