@@ -8231,7 +8231,16 @@ Entries:
   time: '2025-07-19T04:20:59.0000000+00:00'
   url: https://github.com/TheDenSS14/TheDen/pull/1135
 - author: WhiteHusky
-  changes: []
+  changes:
+    - type: Remove
+      message: >-
+        Removed using a screwdriver directly on pipes to change its layer as it
+        conflicts with deconstruction of vents and thermomachines. You can still
+        right-click and use the verbs instead or hold the device and use while
+        having a screwdriver in the off-hand. This will be revisited for a
+        better solution.
+    - type: Fix
+      message: Vents and thermomachines can be deconstructed again.
   id: 785
   time: '2025-07-19T04:54:27.0000000+00:00'
   url: https://github.com/TheDenSS14/TheDen/pull/1106
