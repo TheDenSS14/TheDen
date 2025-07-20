@@ -100,3 +100,13 @@
   - type: Tag
     tags:
       - BeltSlotNotBelt
+  - type: ItemSlots
+    slots:
+      medkit:
+        name: clothing-belt-medkit
+        whitelist:
+          tags:
+          - Medkit
+          - Portafib
+          - Rollerbed
+        requireAll: false

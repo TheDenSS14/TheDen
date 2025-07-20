@@ -73,3 +73,19 @@
     sprite: _DV/Clothing/Belt/corpsman.rsi
   - type: Clothing
     sprite: _DV/Clothing/Belt/corpsman.rsi
+  - type: ItemSlots
+    slots:
+      medkit:
+        name: clothing-belt-medkit
+        whitelist:
+          tags:
+          - Medkit
+          - Portafib
+          - Rollerbed      
+      sidearm:
+        name: clothing-belt-sidearm
+        whitelist:
+          tags:
+          - Sidearm
+        insertOnInteract: true
+        requireAll: false

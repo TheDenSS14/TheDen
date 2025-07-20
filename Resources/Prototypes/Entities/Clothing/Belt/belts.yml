@@ -289,6 +289,14 @@
           - SmokeOnTrigger
     sprite: Clothing/Belt/belt_overlay.rsi
   - type: Appearance
+  - type: ItemSlots
+    slots:
+      item:
+        name: clothing-belt-sidearm
+        whitelist:
+          tags:
+          - Sidearm
+        insertOnInteract: true
 
 - type: entity
   parent: ClothingBeltStorageBase
@@ -412,12 +420,9 @@
         whitelist:
           tags:
           - Medkit
-        insertOnInteract: false
-  - type: ContainerContainer
-    containers:
-      storagebase: !type:Container
-        ents: []
-      medkit: !type:ContainerSlot {}
+          - Portafib
+          - Rollerbed
+        requireAll: false
   # End of DeltaV - Add medkit slot to medical belts.
   - type: Appearance
 
@@ -618,6 +623,14 @@
           - SmokeOnTrigger
     sprite: Clothing/Belt/belt_overlay.rsi
   - type: Appearance
+  - type: ItemSlots
+    slots:
+      item:
+        name: clothing-belt-sidearm
+        whitelist:
+          tags:
+          - Sidearm
+        insertOnInteract: true
 
 - type: entity
   parent: [ClothingBeltBase, ClothingSlotBase]
@@ -699,6 +712,14 @@
   - type: Storage
     grid:
     - 0,0,3,1
+  - type: ItemSlots
+    slots:
+      item:
+        name: clothing-belt-sidearm
+        whitelist:
+          tags:
+          - Sidearm
+        insertOnInteract: true
 
 - type: entity
   parent: ClothingBeltStorageBase
@@ -721,6 +742,14 @@
         - Gun
         - BallisticAmmoProvider
         - CartridgeAmmo
+  - type: ItemSlots
+    slots:
+      item:
+        name: clothing-belt-sidearm
+        whitelist:
+          tags:
+          - Sidearm
+        insertOnInteract: true
 
 - type: entity
   parent: ClothingBeltSecurity
@@ -782,9 +811,17 @@
     sprite: Clothing/Belt/militarywebbing.rsi
   - type: ExplosionResistance
     damageCoefficient: 0.5
+  - type: ItemSlots
+    slots:
+      item:
+        name: clothing-belt-sidearm
+        whitelist:
+          tags:
+          - Sidearm
+        insertOnInteract: true
 
 - type: entity
-  parent: [ClothingBeltStorageBase, ContentsExplosionResistanceBase]
+  parent: [ClothingBeltMilitaryWebbing]
   id: ClothingBeltMilitaryWebbingDeserters
   name: chest rig
   description: A set of tactical webbing worn by sol alliance boarding parties.
@@ -813,6 +850,22 @@
     size: Huge
   - type: ExplosionResistance
     damageCoefficient: 0.1
+  - type: ItemSlots
+    slots:
+      medkit:
+        name: clothing-belt-medkit
+        whitelist:
+          tags:
+          - Medkit
+          - Portafib
+          - Rollerbed
+      sidearm:
+        name: clothing-belt-sidearm
+        whitelist:
+          tags:
+          - Sidearm
+        insertOnInteract: true
+        requireAll: false
 
 - type: entity
   parent: ClothingBeltBase
