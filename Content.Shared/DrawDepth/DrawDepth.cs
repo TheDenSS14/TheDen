@@ -12,9 +12,11 @@
 // SPDX-FileCopyrightText: 2023 Flareguy
 // SPDX-FileCopyrightText: 2023 Vordenburg
 // SPDX-FileCopyrightText: 2025 ArtisticRoomba
+// SPDX-FileCopyrightText: 2025 Carlen White
 // SPDX-FileCopyrightText: 2025 EctoplasmIsGood
 // SPDX-FileCopyrightText: 2025 Solaris
 // SPDX-FileCopyrightText: 2025 chromiumboy
+// SPDX-FileCopyrightText: 2025 qwerltaz
 // SPDX-FileCopyrightText: 2025 sleepyyapril
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
