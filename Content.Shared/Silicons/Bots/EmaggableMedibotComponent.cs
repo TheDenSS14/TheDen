@@ -1,8 +1,9 @@
-// SPDX-FileCopyrightText: 2023 Pieter-Jan Briers <pieterjan.briers@gmail.com>
-// SPDX-FileCopyrightText: 2023 deltanedas <39013340+deltanedas@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Pieter-Jan Briers
+// SPDX-FileCopyrightText: 2023 deltanedas
 // SPDX-FileCopyrightText: 2023 deltanedas <@deltanedas:kde.org>
-// SPDX-FileCopyrightText: 2023 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 metalgearsloth
+// SPDX-FileCopyrightText: 2025 portfiend
+// SPDX-FileCopyrightText: 2025 sleepyyapril
 //
 // SPDX-License-Identifier: MIT
 
@@ -16,7 +17,7 @@ namespace Content.Shared.Silicons.Bots;
 /// Replaces the medibot's meds with these when emagged. Could be poison, could be fun.
 /// </summary>
 [RegisterComponent, NetworkedComponent]
-[Access(typeof(MedibotSystem))]
+[Access(typeof(SharedMedibotSystem))]
 public sealed partial class EmaggableMedibotComponent : Component
 {
     /// <summary>

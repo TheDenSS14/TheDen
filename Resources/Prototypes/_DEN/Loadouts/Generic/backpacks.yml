@@ -1,0 +1,11 @@
+- type: loadout
+  id: LoadoutClothingBackpackMessenger
+  category: Backpacks
+  cost: 0
+  exclusive: true
+  customColorTint: true
+  items:
+    - ClothingBackpackMessenger
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBackpacks

@@ -1,0 +1,173 @@
+
+# TODO: I know it's horrid, but if you separate every single one into their proper forks, I'll pay you.
+# There are existing packs for some of these recipes, and some which have items that don't exist. I'm sorry.
+
+- type: latheRecipePack
+  id: ProtolatheStaticAwfulDen
+  recipes:
+  - LargeBeaker
+  - Dropper
+  - ClothingEyesGlassesChemical
+  - N14MaterialCircuitry
+
+- type: latheRecipePack
+  id: ProtolatheDynamicAwfulDen
+  recipes:
+  - PowerDrill
+  - MiningDrill
+  - MiningDrillDiamond
+  - AnomalyScanner
+  - AnomalyLocator
+  - AnomalyLocatorWide
+  - HandheldCrewMonitor
+  - Scalpel
+  - Retractor
+  - Cautery
+  - Drill
+  - WeaponParticleDecelerator
+  - HoloprojectorField
+  - Saw
+  - Hemostat
+  - CryostasisBeaker
+  - SyringeCryostasis
+  - Syringe
+  - DisposableSyringe
+  - Implanter
+  - PillCanister
+  - ChemistryEmptyBottle01
+  - AdvancedCapacitorStockPart
+  - AdvancedMatterBinStockPart
+  - NanoManipulatorStockPart
+  - SuperCapacitorStockPart
+  - SuperMatterBinStockPart
+  - PicoManipulatorStockPart
+  - BluespaceCapacitorStockPart
+  - BluespaceManipulatorStockPart
+  - BluespaceMatterBinStockPart
+  - AdvMopItem
+  - TrashBagBluespace #DEN - Sanitation Station
+  - WeaponSprayNozzle
+  - ClothingBackpackWaterTank
+  - MegaSprayBottle
+  - TimerTrigger
+  - ChemicalPayload
+  - FlashPayload
+  - Signaller
+  - SignallerAdvanced
+  - SignalTrigger
+  - VoiceTrigger
+  - Igniter
+  - HandHeldMassScanner
+  - HandHeldAtmosMonitor #DEN
+  - HandHeldPowerMonitor #DEN
+  - PowerCellMicrortg
+  - PowerCellMicroreactor
+  - PowerCellHigh
+  - WeaponPistolCHIMP
+  - ClothingMaskWeldingGas
+  - MineralScannerEmpty
+  - AdvancedMineralScannerEmpty
+  - WeaponGauntletGorilla
+  - SynthesizerInstrument
+  - RPED
+  - ClothingShoesBootsMagSci
+  - ClothingShoesBootsMoon
+  - ClothingShoesBootsSpeed
+  - ClothingShoesBootsMagAdv
+  - ClothingNeckMantleMag
+  - NodeScanner
+  - HolofanProjector
+  - BluespaceBeaker
+  - SyringeBluespace
+  - WeaponForceGun
+  - WeaponLaserSvalinn
+  - WeaponCivilianDisabler
+  - WeaponProtoKineticAccelerator
+  - WeaponTetherGun
+  - WeaponGrapplingGun
+  - ClothingBackpackHolding
+  - ClothingBackpackSatchelHolding
+  - ClothingBackpackDuffelHolding
+  - ClothingBackpackMessengerHolding # Den - im dumb
+  - WelderExperimental
+  - JawsOfLife
+  - CoreSilver # Nyanotrasen - Silver Golem core
+  - OreBagOfHolding
+  - DeviceQuantumSpinInverter
+  - PKAUpgradeDamage # Lavaland Change
+  - PKAUpgradeRange # Lavaland Change
+  - PKAUpgradeFireRate # Lavaland Change
+  - XenoTranslator
+  - AdvancedGalaticCommonTranslatorImplanter
+  - BubblishTranslatorImplanter
+  - NekomimeticTranslatorImplanter
+  - DraconicTranslatorImplanter
+  - CanilunztTranslatorImplanter
+  - SolCommonTranslatorImplanter
+  - RootSpeakTranslatorImplanter
+  - AnimalTranslator
+  - MofficTranslatorImplanter
+  - NehinaTranslatorImplanter
+  - RodentianTranslatorImplanter
+  - AlasetaTranslatorImplanter
+  - CaprineTranslatorImplanter
+  - ClothingEyesNightVisionGoggles
+  - ClothingEyesNightVisionDiagnosticGoggles
+  - ClothingEyesThermalVisionGoggles
+  - RCD #EE
+  - RPD
+  - RadioHandheld
+  # Shitmed Change
+  - EnergyScalpel
+  - EnergyCautery
+  - AdvancedRetractor
+  - ArachnicTranslatorImplanter # Floofstation
+  - ArachnicTranslator # Floofstation
+  - VehicleWheelchairFolded # Goobstation
+
+- type: latheRecipePack
+  id: ProtolatheDynamicEmagAwfulDen
+  recipes:
+  - BoxBeanbag
+  - BoxShotgunIncendiary
+  - BoxShotgunUranium
+  - ExplosivePayload
+  - GrenadeBlast
+  - GrenadeEMP
+  - GrenadeFlash
+  - HoloprojectorSecurity
+  - MagazineBoxLightRifleIncendiary
+  - MagazineBoxLightRifleUranium
+  - MagazineBoxMagnumIncendiary
+  - MagazineBoxMagnumUranium
+  - MagazineBoxPistolIncendiary
+  - MagazineBoxPistolUranium
+  - MagazineBoxRifleIncendiary
+  - MagazineBoxRifleUranium
+  - MagazineGrenadeEmpty
+  - MagazineLightRifleIncendiary
+  - MagazineLightRifleUranium
+  - MagazinePistolIncendiary
+  - MagazinePistolUranium
+  - MagazineRifleIncendiary
+  - MagazineRifleUranium
+  - MagazineShotgunBeanbag
+  - MagazineShotgunIncendiary
+  - MagazineShotgunIncendiary
+  - PortableRecharger
+  - PowerCageHigh
+  - PowerCageMedium
+  - PowerCageSmall
+  - ShellTranquilizer
+  - SpeedLoaderMagnumIncendiary
+  - SpeedLoaderMagnumUranium
+  - TelescopicShield
+  - Truncheon
+  - WeaponAdvancedLaser
+  - WeaponLaserCannon
+  - WeaponLaserCarbine
+  - WeaponXrayCannon
+  - WeaponEnergyGun       # DeltaV - Energy Gun
+  - WeaponEnergyGunMini   # DeltaV - Miniature Energy Gun
+  - WeaponEnergyGunPistol # DeltaV - PDW-9 Energy Pistol
+  - WeaponGunLaserCarbineAutomatic # DeltaV - IK-60 Laser Carbine

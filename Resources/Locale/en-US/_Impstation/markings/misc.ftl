@@ -73,7 +73,7 @@ marking-DwarfMarkKangarooRHand-dwarfmarkkangaroo = Mark of the Kangaroo (Right)
 marking-DwarfMarkCobra = Mark of the Cobra
 marking-DwarfMarkCobra-dwarfmarkcobra = Mark of the Cobra
 marking-DwarfMarkSpider = Mark of the Spider
-marking-DwarfMarkSpider-dwafmarkspider = Mark of the Spider
+marking-DwarfMarkSpider-dwarfmarkspider = Mark of the Spider
 
 # humans
 marking-VitiligoHeadL = Vitiligo (Left Eye)

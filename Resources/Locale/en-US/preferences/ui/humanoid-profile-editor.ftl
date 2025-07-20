@@ -115,7 +115,7 @@ humanoid-profile-editor-job-priority-never-button = Never
 humanoid-profile-editor-naming-rules-warning = Warning: Offensive or LRP IC names and descriptions will lead to admin intervention on this server. Read our \[Rules\] for more.
 
 humanoid-profile-editor-loadouts-tab = Loadout
-humanoid-profile-editor-loadouts-points-label = You have {$points}/{$max} points
+humanoid-profile-editor-loadouts-points-label = You have {$points}/{$max} points remaining.
 humanoid-profile-editor-loadouts-show-unusable-button = Show Unusable Loadouts
 humanoid-profile-editor-loadouts-show-unusable-button-tooltip =
     When enabled, loadouts that your current character setup cannot use will be highlighted in red.

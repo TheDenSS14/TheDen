@@ -40,6 +40,7 @@
 # SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT
 # SPDX-FileCopyrightText: 2024 Debug
 # SPDX-FileCopyrightText: 2024 Flareguy
+# SPDX-FileCopyrightText: 2024 Ghagliiarghii
 # SPDX-FileCopyrightText: 2024 Kara
 # SPDX-FileCopyrightText: 2024 Magnus Larsen
 # SPDX-FileCopyrightText: 2024 Mr. 27
@@ -55,10 +56,13 @@
 # SPDX-FileCopyrightText: 2025 KekaniCreates
 # SPDX-FileCopyrightText: 2025 Rosycup
 # SPDX-FileCopyrightText: 2025 Savante-Sam
+# SPDX-FileCopyrightText: 2025 Tiniest Shark
 # SPDX-FileCopyrightText: 2025 VMSolidus
 # SPDX-FileCopyrightText: 2025 Your Name
 # SPDX-FileCopyrightText: 2025 fishbait
+# SPDX-FileCopyrightText: 2025 hoshizora
 # SPDX-FileCopyrightText: 2025 sleepyyapril
+# SPDX-FileCopyrightText: 2025 wheelwrightt
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -91,6 +95,9 @@
         Blunt: 6
     staminaCost: 8
   - type: Spillable
+    solution: absorbed
+    spillWhenThrown: false
+  - type: DrainableSolution
     solution: absorbed
   - type: Wieldable
   - type: IncreaseDamageOnWield
@@ -149,6 +156,9 @@
           Blunt: 7
       staminaCost: 8
     - type: Spillable
+      solution: absorbed
+      spillWhenThrown: false
+    - type: DrainableSolution
       solution: absorbed
     - type: Wieldable
     - type: IncreaseDamageOnWield
@@ -323,6 +333,39 @@
         Blunt: 3
   - type: Plunger
 
+- type: entity
+  name: golden plunger
+  id: GoldenPlunger
+  parent: Plunger
+  description: A plunger with a plastic suction cup coated in a thin layer of gold given as a token of appreciation for years of service. Still used to unclog drains.
+  components:
+  - type: Tag
+    tags:
+    - GoldenPlunger
+  - type: Sprite
+    sprite: Objects/Specific/Janitorial/golden_plunger.rsi
+    state: plunger
+  - type: Item
+    sprite: Objects/Specific/Janitorial/golden_plunger.rsi
+    heldPrefix: plunger
+  - type: Clothing
+    sprite: Objects/Specific/Janitorial/golden_plunger.rsi
+    slots:
+      - HEAD
+    clothingVisuals:
+      head:
+        - state: equipped-HELMET
+          offset: "0, 0.15625"
+  - type: PointLight
+    radius: 1.5
+    energy: 0.75
+    color: "#ffc20e"
+  - type: PhysicalComposition
+    materialComposition:
+      Plastic: 50
+      Gold: 10
+      Wood: 25
+
 - type: weightedRandomEntity
   id: PlungerLoot
   weights:
@@ -341,6 +384,9 @@
       sprite: Objects/Specific/Janitorial/rag.rsi
       state: rag
     - type: Spillable
+      solution: absorbed
+      spillWhenThrown: false
+    - type: DrainableSolution
       solution: absorbed
     - type: MeleeWeapon
       soundHit:

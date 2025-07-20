@@ -41,6 +41,8 @@ marking-LizardTailSmooth-tail_smooth_primary = Lizard Tail
 marking-LizardTailSmooth-tail_smooth_secondary = Under Tone
 marking-LizardTailSmooth = Lizard Tail (Smooth)
 marking-LizardTailSmoothAnimated = Lizard Tail (Smooth) (Animated)
+marking-LizardTailSmoothAnimated-tail_smooth_wagging_primary = Tail primary
+marking-LizardTailSmoothAnimated-tail_smooth_wagging_secondary = Tail secondary
 
 marking-LizardTailLarge-tail_large = Lizard Tail (Large)
 marking-LizardTailLarge = Lizard Tail (Large)
@@ -48,14 +50,17 @@ marking-LizardTailLarge = Lizard Tail (Large)
 marking-LizardTailSpikes-tail_spikes = Lizard Tail (Spiky)
 marking-LizardTailSpikes = Lizard Tail (Spiky)
 marking-LizardTailSpikesAnimated = Lizard Tail (Spiky) (Animated)
+marking-LizardTailSpikesAnimated-tail_spikes_wagging = Tail
 
 marking-LizardTailLTiger-tail_ltiger = Lizard Tail (Light Tiger Stripes)
 marking-LizardTailLTiger = Lizard Tail (Light Tiger Stripes)
 marking-LizardTailLTigerAnimated = Lizard Tail (Light Tiger Stripes) (Animated)
+marking-LizardTailLTigerAnimated-tail_ltiger_wagging = Tail
 
 marking-LizardTailDTiger-tail_dtiger = Lizard Tail (Dark Tiger Stripes)
 marking-LizardTailDTiger = Lizard Tail (Dark Tiger Stripes)
 marking-LizardTailDTigerAnimated = Lizard Tail (Dark Tiger Stripes) (Animated)
+marking-LizardTailDTigerAnimated-tail_dtiger_wagging = Tail
 
 marking-LizardSnoutRound-snout_round = Lizard Snout (Round)
 marking-LizardSnoutRound = Lizard Snout (Round)

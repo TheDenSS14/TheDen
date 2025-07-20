@@ -85,7 +85,7 @@ marking-UnderwearClassicpantiesassblastusa = Panties, USA
 marking-UnderwearClassicpantiesassblastusa-panties_assblastusa = Panties, USA
 
 marking-UnderwearClassicpantiesbeekini = Panties, Bee-kini
-marking-UnderwearClassicpantiesbeekini-panties_bee = Panties, Kee-kini
+marking-UnderwearClassicpantiesbeekini-panties_bee-kini = Panties, Bee-kini
 
 marking-UnderwearClassicpantiescommie = Panties, Combloc
 marking-UnderwearClassicpantiescommie-panties_commie = Panties, Combloc
@@ -157,7 +157,7 @@ marking-UndershirtBraassblastusa = Bra, USA
 marking-UndershirtBraassblastusa-bra_assblastusa = Bra, USA
 
 marking-UndershirtBrabeekini = Bra, Bee-kini
-marking-UndershirtBrabeekini-bra_bee = Bra, Bee-kini
+marking-UndershirtBrabeekini-bra_bee-kini = Bra, Bee-kini
 
 marking-UndershirtBracommie = Bra, Combloc
 marking-UndershirtBracommie-bra_commie = Bra, Combloc

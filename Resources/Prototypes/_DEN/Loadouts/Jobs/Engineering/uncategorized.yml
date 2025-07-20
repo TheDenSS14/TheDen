@@ -13,3 +13,21 @@
         - Engineering
   items:
     - TowelColorOrange
+
+- type: loadout
+  id: LoadoutBackpackMessengerEngineering
+  category: JobsEngineeringAAUncategorized
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingBackpackMessengerEngineering
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutEngineeringBackpacks
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Engineering
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - ChiefEngineer # CE has ClothingBackpackMessengerChiefEngineerFilled

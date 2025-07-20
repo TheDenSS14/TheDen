@@ -114,7 +114,7 @@ namespace Content.IntegrationTests.Tests
 
             await Assert.MultipleAsync(async () =>
             {
-                foreach (var proto in pair.GetPrototypesWithComponent<StorageFillComponent>())
+                foreach (var (proto, component) in pair.GetPrototypesWithComponent<StorageFillComponent>())
                 {
                     if (proto.HasComponent<EntityStorageComponent>(compFact))
                         continue;
@@ -199,7 +199,7 @@ namespace Content.IntegrationTests.Tests
 
             var itemSys = entMan.System<SharedItemSystem>();
 
-            foreach (var proto in pair.GetPrototypesWithComponent<StorageFillComponent>())
+            foreach (var (proto, fill) in pair.GetPrototypesWithComponent<StorageFillComponent>())
             {
                 if (proto.HasComponent<StorageComponent>(compFact))
                     continue;
@@ -212,7 +212,6 @@ namespace Content.IntegrationTests.Tests
                     if (entStorage == null)
                         return;
 
-                    var fill = (StorageFillComponent) proto.Components[id].Component;
                     var size = GetFillSize(fill, true, protoMan, itemSys);
                     Assert.That(size, Is.LessThanOrEqualTo(entStorage.Capacity),
                         $"{proto.ID} storage fill is too large.");

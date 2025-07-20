@@ -52,7 +52,7 @@ marking-SnoutFWolfAlt = Wolf Snout Alt F
 marking-SnoutFWolfAlt-snout_fwolfalt = Wolf Snout Alt F
 
 marking-SnoutWolfAlt = Wolf Snout Alt
-marking-SnoutWolfAlt-snout_wolfalt = Wolf Snout Alt
+marking-SnoutWolfAlt-snout_wolfalt_primary = Snout
 
 marking-SnoutSCanid = Canid Snout S
 marking-SnoutSCanid-snout_scanid_primary = Primary
@@ -99,12 +99,13 @@ marking-SnoutFBird-snout_fbird_secondary = Bird Beak F (Secondary)
 marking-SnoutFBird-snout_fbird_tertiary = Bird Beak F (Tertiary)
 
 marking-SnoutBird = Bird Beak
-marking-SnoutBird-snout_bird_ADJ_primary = Bird Beak (Primary)
-marking-SnoutBird-snout_bird_ADJ_secondary = Bird Beak (Secondary)
-marking-SnoutBird-snout_bird_ADJ_tertiary = Bird Beak (Tertiary)
+marking-SnoutBird-snout_bird_primary = Beak primary
+marking-SnoutBird-snout_bird_secondary = Beak secondary
+marking-SnoutBird-snout_bird_tertiary = Beak tertiary
 
 marking-SnoutBigBeak = Big Beak
-marking-SnoutBigBeak-snout_bigbeakshort_ADJ_primary = Big Beak
+marking-SnoutBigBeak-snout_bigbeak_primary = Beak primary
+marking-SnoutBigBeakShort-snout_bigbeakshort_primary = Beak secondary
 
 marking-SnoutFBigBeak = Big Beak F
 marking-SnoutFBigBeak-snout_bigbeak = Big Beak F
@@ -144,7 +145,7 @@ marking-SnoutHookBeak = Hooked Bird Beak
 marking-SnoutHookBeak-snout_hookbeak_primary = Hooked Bird Beak
 
 marking-SnoutHookBeakBig = Big, Hooked Bird Beak
-marking-SnoutHookBeakBig-snout_hookbeakbig_ADJ_primary = Big, Hooked Bird Beak
+marking-SnoutHookBeakBig-snout_hookbeakbig_primary = Beak
 
 ### MISC SNOUTS ###
 
@@ -338,11 +339,18 @@ marking-TailCrow-m_tail_crow_BEHIND_primary = Crow Tail
 marking-TailCrow-m_tail_crow_FRONT_primary = Crow Tail
 marking-TailCrow = Crow Tail
 
-marking-TailDatashark-m_tail_datashark_BEHIND_primary = Shark.NET Tail (Primary)
-marking-TailDatashark-m_tail_datashark_BEHIND_secondary = Shark.NET Tail (Secondary)
-marking-TailDatashark-m_tail_datashark_FRONT_primary = Shark.NET Tail (Primary)
-marking-TailDatashark-m_tail_datashark_FRONT_secondary = Shark.NET Tail (Secondary)
+# DEN: These don't work
+# marking-TailDatashark-m_tail_datashark_BEHIND_primary = Shark.NET Tail (Primary)
+# marking-TailDatashark-m_tail_datashark_BEHIND_secondary = Shark.NET Tail (Secondary)
+# marking-TailDatashark-m_tail_datashark_FRONT_primary = Shark.NET Tail (Primary)
+# marking-TailDatashark-m_tail_datashark_FRONT_secondary = Shark.NET Tail (Secondary)
 marking-TailDatashark = Shark.NET Tail
+# Why are these here...
+marking-TailDatashark-datashark_ears_inner = Inner ears
+marking-TailDatashark-datashark_ears = Ears
+marking-TailDatashark-datashark_fin = Fin
+marking-TailDatashark-datashark_tail = Tail
+marking-TailDatashark-datashark_taildata = Tail stripes
 
 marking-TailDeer-m_tail_deer_BEHIND_primary = Deer Tail 1 (Primary)
 marking-TailDeer-m_tail_deer_BEHIND_secondary = Deer Tail 1 (Secondary)
@@ -430,11 +438,11 @@ marking-TailLeopard-m_tail_leopard_BEHIND_primary = Leopard Tail (Primary)
 marking-TailLeopard-m_tail_leopard_BEHIND_secondary = Leopard Tail (Secondary)
 marking-TailLeopard-m_tail_leopard_FRONT_primary = Leopard Tail (Primary)
 marking-TailLeopard-m_tail_leopard_FRONT_secondary = Leopard Tail (Secondary)
+marking-TailLeopard-m_tail_leopard_FRONT_tertiary = Leopard Tail (Tertiary)
 marking-TailLeopard = Leopard Tail
 
-marking-TailLTiger-m_tail_ltiger_BEHIND_primary = Lizard, Tiger 2
-marking-TailLTiger-m_tail_ltiger_FRONT_primary = Lizard, Tiger 2
 marking-TailLTiger = Lizard, Tiger 2
+marking-TailLTiger-m_tail_ltiger_FRONT = Tail
 
 marking-TailLunasune-m_tail_lunasune_BEHIND = Kitsune, Luna
 marking-TailLunasune-m_tail_lunasune_FRONT = Kitsune, Luna
@@ -510,9 +518,8 @@ marking-TailRaptor-m_tail_raptor_FRONT_secondary = Raptor Tail (Secondary)
 marking-TailRaptor-m_tail_raptor_FRONT_tertiary = Raptor Tail (tertiary)
 marking-TailRaptor = Raptor Tail
 
-marking-TailReptileSlim_tail_reptileslim_BEHIND = Lizard, Slim
-marking-TailReptileSlim_tail_reptileslim_FRONT = Lizard, Slim
 marking-TailReptileSlim = Lizard, Slim
+marking-TailReptileSlim-m_tail_reptileslim_FRONT = Tail
 
 # yes its actually sabresune, im calling it sabersune cus f pooj
 marking-TailSabresune-m_tail_sabresune_BEHIND_primary = Kitsune, Sabertooth (Primary)
@@ -549,14 +556,13 @@ marking-TailSharkADT = Shark Tail Alt
 marking-TailShark-m_tail_shark_FRONT_primary = Tail
 marking-TailShark = Shark Tail
 
-marking-TailSharkNoFin-tail_sharknofin_BEHIND_primary = Shark Tail w/o Fin
-marking-TailSharkNoFin-tail_sharknofin_FRONT_primary = Shark Tail w/o Fin
 marking-TailSharkNoFin = Shark Tail w/o Fin
+marking-TailSharkNoFin-m_tail_sharknofin_FRONT_primary = Tail
 
-marking-TailShepherd-m_tail_sheperd_BEHIND_secondary = German Shepherd (Primary)
-marking-TailShepherd-m_tail_sheperd_BEHIND_tertiary = German Shepherd (Secondary)
-marking-TailShepherd-m_tail_sheperd_FRONT_secondary = German Shepherd (Primary)
-marking-TailShepherd-m_tail_sheperd_FRONT_tertiary = German Shepherd (Secondary)
+marking-TailShepherd-m_tail_shepherd_BEHIND_secondary = German Shepherd (Primary)
+marking-TailShepherd-m_tail_shepherd_BEHIND_tertiary = German Shepherd (Secondary)
+marking-TailShepherd-m_tail_shepherd_FRONT_secondary = German Shepherd (Primary)
+marking-TailShepherd-m_tail_shepherd_FRONT_tertiary = German Shepherd (Secondary)
 marking-TailShepherd = German Shepherd Tail
 
 marking-TailSkunk-m_tail_skunk_BEHIND_primary = Skunk Tail (Primary)
@@ -567,9 +573,8 @@ marking-TailSkunk-m_tail_skunk_FRONT_secondary = Skunk Tail (Secondary)
 marking-TailSkunk-m_tail_skunk_FRONT_tertiary = Skunk Tail (tertiary)
 marking-TailSkunk = Skunk Tail
 
-marking-TailSmooth_tail_smooth_BEHIND = Lizard, Smooth
-marking-TailSmooth_tail_smooth_FRONT = Lizard, Smooth
 marking-TailSmooth = Lizard, Smooth
+marking-TailSmooth-m_tail_smooth_FRONT = Tail
 
 marking-TailSnakeDual-m_tail_snakedual_BEHIND_primary = Lizard, Snake w/ Tip (Primary)
 marking-TailSnakeDual-m_tail_snakedual_BEHIND_secondary = Lizard, Snake w/ Tip (Secondary)
@@ -589,9 +594,8 @@ marking-TailSnakeStripeAlt-m_tail_snakestripealt_FRONT_primary = Lizard, Snake w
 marking-TailSnakeStripeAlt-m_tail_snakestripealt_FRONT_secondary = Lizard, Snake w/ Cute Stripes (Secondary)
 marking-TailSnakeStripeAlt = Lizard, Snake w/ Cute Stripes
 
-marking-TailSnakeTail-m_tail_snaketail_BEHIND_primary = Lizard, Snake
-marking-TailSnakeTail-m_tail_snaketail_FRONT_primary = Lizard, Snake
 marking-TailSnakeTail = Lizard, Snake
+marking-TailSnakeTail-m_tail_snaketail_FRONT = Tail
 
 marking-TailSnakeUnder-m_tail_snakeunder_BEHIND_primary = Lizard, Snake w/ Underbelly (Primary)
 marking-TailSnakeUnder-m_tail_snakeunder_BEHIND_secondary = Lizard, Snake w/ Underbelly (Secondary)

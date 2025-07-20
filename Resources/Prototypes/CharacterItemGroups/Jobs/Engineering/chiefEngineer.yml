@@ -1,13 +1,14 @@
-# SPDX-FileCopyrightText: 2024 VMSolidus <evilexecutive@gmail.com>
-# SPDX-FileCopyrightText: 2025 MajorMoth <61519600+MajorMoth@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 Rosycup <178287475+Rosycup@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 mart <martgitomen@gmail.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 VMSolidus
+# SPDX-FileCopyrightText: 2025 BlitzTheSquishy
+# SPDX-FileCopyrightText: 2025 MajorMoth
+# SPDX-FileCopyrightText: 2025 Rosycup
+# SPDX-FileCopyrightText: 2025 mart
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 - type: characterItemGroup
-  id: LoadoutChiefEngineerBackpack
+  id: LoadoutChiefEngineerBackpacks
   maxItems: 1
   items:
     - type: loadout
@@ -16,6 +17,8 @@
       id: LoadoutEngineeringChiefEngineerBackpackSatchel
     - type: loadout
       id: LoadoutEngineeringChiefEngineerBackpackDuffel
+    - type: loadout
+      id: LoadoutEngineeringChiefEngineerBackpackMessenger
 
 - type: characterItemGroup
   id: LoadoutChiefEngineerBelt
@@ -97,10 +100,12 @@
 #  maxItems: 1
 #  items:
 
-#- type: characterItemGroup
-#  id: LoadoutChiefEngineerGloves
-#  maxItems: 1
-#  items:
+- type: characterItemGroup
+  id: LoadoutChiefEngineerGloves
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutClothingHandsChiefEngiWarmers
 
 #- type: characterItemGroup
 #  id: LoadoutChiefEngineerHead
@@ -136,6 +141,8 @@
   items:
     - type: loadout
       id: LoadoutCommandCEOuterWinter
+    - type: loadout
+      id: LoadoutChiefEngineerOuterLongCoat
 
 - type: characterItemGroup
   id: LoadoutChiefEngineerShoes
@@ -143,6 +150,8 @@
   items:
     - type: loadout
       id: LoadoutChiefEngineerShoesBootsWinter
+    - type: loadout
+      id: LoadoutClothingUnderSocksChiefEngi
 
 - type: characterItemGroup
   id: LoadoutChiefEngineerUniforms
@@ -160,3 +169,5 @@
       id: LoadoutClothingUniformJumpsuitChiefEngineerNT
     - type: loadout
       id: LoadoutClothingUniformJumpsuitChiefEngineerCybersun
+    - type: loadout
+      id: LoadoutClothingUniformChiefEngiThong

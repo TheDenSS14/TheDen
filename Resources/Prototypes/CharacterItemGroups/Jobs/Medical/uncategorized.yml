@@ -5,6 +5,7 @@
 # SPDX-FileCopyrightText: 2025 Lonofera
 # SPDX-FileCopyrightText: 2025 M3739
 # SPDX-FileCopyrightText: 2025 Rosycup
+# SPDX-FileCopyrightText: 2025 Tabitha
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
@@ -33,6 +34,12 @@
     - type: loadout
       id: LoadoutBackpackDuffelGenetics
     - type: loadout
+      id: LoadoutBackpackMessengerMedical
+    - type: loadout
+      id: LoadoutBackpackMessengerVirology
+    - type: loadout
+      id: LoadoutBackpackMessengerGenetics
+    - type: loadout
       id: LoadoutBackpackMedicalDuffelSurgeryFilled
 
 #- type: characterItemGroup
@@ -49,7 +56,7 @@
 #  id: LoadoutMedicalEquipment
 #  maxItems: 1
 #  items:
-#
+
 - type: characterItemGroup
   id: LoadoutMedicalEyes
   maxItems: 1
@@ -71,6 +78,8 @@
       id: LoadoutMedicalGlovesNitrile
     - type: loadout
       id: LoadoutMedicalGlovesLatex
+    - type: loadout
+      id: LoadoutClothingHandsMedicWarmers
 
 - type: characterItemGroup
   id: LoadoutMedicalHead
@@ -110,6 +119,8 @@
       id: LoadoutMedicalBedsheetMedical
     - type: loadout
       id: LoadoutMedicalNeckNeckerchief # Floof - M3739 - #988
+    - type: loadout
+      id: LoadoutMedicalNeckCollar
 
 - type: characterItemGroup
   id: LoadoutMedicalMask
@@ -143,6 +154,8 @@
       id: LoadoutMedicalBootsWinterViro
     - type: loadout
       id: LoadoutMedicalBootsWinterGen
+    - type: loadout
+      id: LoadoutClothingUnderSocksMedic
 
 - type: characterItemGroup
   id: LoadoutMedicalUniforms
@@ -166,3 +179,5 @@
       id: LoadoutMedicalUniformScrubsWhite
     - type: loadout
       id: LoadoutMedicalUniformNurse
+    - type: loadout
+      id: LoadoutClothingUniformMedicThong

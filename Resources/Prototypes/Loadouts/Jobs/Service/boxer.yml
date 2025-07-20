@@ -1,0 +1,217 @@
+# Uncategorized
+# Backpacks
+
+# Belt
+- type: loadout
+  id: LoadoutBoxerBeltChampion
+  category: JobsServiceBoxer
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBoxerBelt
+    - !type:CharacterJobRequirement
+      jobs:
+        - Boxer
+  items:
+    - ClothingBeltChampion
+
+# Ears
+
+# Equipment
+
+# Eyes
+
+# Gloves
+- type: loadout
+  id: LoadoutBoxerGlovesBoxingBlue
+  category: JobsServiceBoxer
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBoxerGloves
+    - !type:CharacterJobRequirement
+      jobs:
+        - Boxer
+  items:
+    - ClothingHandsGlovesBoxingBlue
+
+- type: loadout
+  id: LoadoutBoxerGlovesBoxingGreen
+  category: JobsServiceBoxer
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBoxerGloves
+    - !type:CharacterJobRequirement
+      jobs:
+        - Boxer
+  items:
+    - ClothingHandsGlovesBoxingGreen
+
+- type: loadout
+  id: LoadoutBoxerGlovesBoxingRed
+  category: JobsServiceBoxer
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBoxerGloves
+    - !type:CharacterJobRequirement
+      jobs:
+        - Boxer
+  items:
+    - ClothingHandsGlovesBoxingRed
+
+- type: loadout
+  id: LoadoutBoxerGlovesBoxingYellow
+  category: JobsServiceBoxer
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBoxerGloves
+    - !type:CharacterJobRequirement
+      jobs:
+        - Boxer
+  items:
+    - ClothingHandsGlovesBoxingYellow
+
+- type: loadout
+  id: LoadoutBoxerGlovesSexCompBlue
+  category: JobsServiceBoxer
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBoxerGloves
+    - !type:CharacterJobRequirement
+      jobs:
+        - Boxer
+  items:
+    - ClothingHandsSexCompGlovesBlue
+
+- type: loadout
+  id: LoadoutBoxerGlovesSexCompRed
+  category: JobsServiceBoxer
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBoxerGloves
+    - !type:CharacterJobRequirement
+      jobs:
+        - Boxer
+  items:
+    - ClothingHandsSexCompGlovesRed
+
+# Head
+- type: loadout
+  id: LoadoutBoxerHeadSecCompCirclet
+  category: JobsServiceBoxer
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBoxerHead
+    - !type:CharacterJobRequirement
+      jobs:
+        - Boxer
+  items:
+    - ClothingHeadSexCompCirclet
+
+# Id
+
+# Neck
+
+# Mask
+
+# Outer
+
+# Shoes
+- type: loadout
+  id: LoadoutBoxerShoesSexCompBlue
+  category: JobsServiceBoxer
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBoxerShoes
+    - !type:CharacterJobRequirement
+      jobs:
+        - Boxer
+  items:
+    - ClothingUnderSexCompBootsBlue
+
+- type: loadout
+  id: LoadoutBoxerShoesSexCompRed
+  category: JobsServiceBoxer
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBoxerShoes
+    - !type:CharacterJobRequirement
+      jobs:
+        - Boxer
+  items:
+    - ClothingUnderSexCompBootsRed
+
+# Uniforms
+- type: loadout
+  id: LoadoutBoxerUniformShorts
+  category: JobsServiceBoxer
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBoxerUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - Boxer
+  items:
+    - UniformShortsRed
+
+- type: loadout
+  id: LoadoutBoxerUniformShortsWithTop
+  category: JobsServiceBoxer
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBoxerUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - Boxer
+  items:
+    - UniformShortsRedWithTop
+
+- type: loadout
+  id: LoadoutBoxerUniformSexCompBlue
+  category: JobsServiceBoxer
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBoxerUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - Boxer
+  items:
+    - ClothingUniformSexCompBlue
+
+- type: loadout
+  id: LoadoutBoxerUniformSexCompRed
+  category: JobsServiceBoxer
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBoxerUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - Boxer
+  items:
+    - ClothingUniformSexCompRed

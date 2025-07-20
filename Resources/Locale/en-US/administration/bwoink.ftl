@@ -24,6 +24,10 @@ bwoink-system-typing-indicator = {$players} {$count ->
 *[other] are
 } typing...
 
+admin-ahelp-admin-only = Admin Only
+admin-ahelp-admin-only-tooltip = If checked, then the message won't be visible for the player,
+    but will be visible for other admins and still will be Discord relayed.
+
 admin-bwoink-play-sound = Bwoink?
 bwoink-system-rate-limited = System: you are sending messages too quickly.
 bwoink-system-player-disconnecting = has disconnected.
@@ -31,3 +35,5 @@ bwoink-system-player-reconnecting = has reconnected.
 bwoink-system-player-banned = has been banned for: {$banReason}
 
 bwoink-title-none-selected = None selected
+bwoink-message-admin-only = (Admin Only)
+bwoink-message-silent = (S)

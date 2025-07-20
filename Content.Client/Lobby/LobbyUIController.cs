@@ -158,9 +158,37 @@ public sealed class LobbyUIController : UIController, IOnStateEntered<LobbyState
         RefreshLobbyPreview();
         var (characterGui, profileEditor) = EnsureGui();
         characterGui.ReloadCharacterPickers();
-        profileEditor.SetProfile(
-            (HumanoidCharacterProfile?) _preferencesManager.Preferences?.SelectedCharacter,
-            _preferencesManager.Preferences?.SelectedCharacterIndex);
+
+        var profile = (HumanoidCharacterProfile?) _preferencesManager.Preferences?.SelectedCharacter;
+
+        // TODO DEN: Kill this with fire
+        // I had to add this because, genuinely, someone configured the server database end of
+        // this to be a Loadout instead of a LoadoutPreference. The problem is that Loadouts do not
+        // have a "Selected" field, so when you switched between characters, the character data
+        // would be refreshed from the database, it would cast the Loadouts to LoadoutPreferences with
+        // Selected set to false. This causes a visual bug in LoadoutsTab where, if you switch off
+        // of a character with loadouts and then back to that character, the loadout buttons will
+        // appear unchecked even though the loadouts are selected and other loadouts are filtered correctly.
+        //
+        // I can't even fix this issue without making a (potentially breaking) change to the database
+        // schema, so this is the shitfix I'm using. I hate it too.
+        //
+        // When we replace the server-side of loadouts with something more flexible, this will be
+        // unnecessary, because we won't be using LoadoutPreference anyway.
+        if (profile != null)
+        {
+            foreach (var pref in profile.LoadoutPreferences)
+                profile = profile.WithLoadoutPreference(
+                    loadoutId: pref.LoadoutName,
+                    pref: true,
+                    customName: pref.CustomName,
+                    customDescription: pref.CustomDescription,
+                    customColor: pref.CustomColorTint,
+                    customHeirloom: pref.CustomHeirloom
+                );
+        }
+
+        profileEditor.SetProfile(profile, _preferencesManager.Preferences?.SelectedCharacterIndex);
     }
 
     /// Refreshes the character preview in the lobby chat

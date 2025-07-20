@@ -57,6 +57,7 @@
   id: LoadoutSalvageBeltMercWebbing
   category: JobsLogisticsSalvageSpecialist
   cost: 0
+  exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutSalvageSpecialistBelt
@@ -70,6 +71,7 @@
   id: LoadoutSalvageBeltSalvageWebbing
   category: JobsLogisticsSalvageSpecialist
   cost: 0
+  exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutSalvageSpecialistBelt
@@ -83,6 +85,7 @@
   id: LoadoutSalvageBeltMilitaryWebbing
   category: JobsLogisticsSalvageSpecialist
   cost: 0
+  exclusive: true
   customColorTint: true
   requirements:
     - !type:CharacterItemGroupRequirement
@@ -299,9 +302,9 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutSalvageSpecialistNeck
-    - !type:CharacterJobRequirement
-      jobs:
-        - SalvageSpecialist
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Logistics
     - !type:CharacterPlaytimeRequirement
       tracker: JobSalvageSpecialist
       min: 36000 # 10 hours
@@ -317,9 +320,9 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutSalvageSpecialistNeck
-    - !type:CharacterJobRequirement
-      jobs:
-        - SalvageSpecialist
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Logistics
   items:
     - ClothingNeckCloakMiner
 
@@ -341,6 +344,19 @@
     - ClothingOuterWinterMiner
 
 # Shoes
+- type: loadout
+  id: LoadoutSalvageSpecialistShoesBoots
+  category: JobsLogisticsSalvageSpecialist
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSalvageSpecialistShoes
+    - !type:CharacterJobRequirement
+      jobs:
+        - SalvageSpecialist
+  items:
+    - ClothingShoesBootsSalvage
 
 # Uniforms
 - type: loadout
