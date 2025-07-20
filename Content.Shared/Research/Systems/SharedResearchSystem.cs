@@ -2,6 +2,7 @@
 // SPDX-FileCopyrightText: 2024 Nemanja
 // SPDX-FileCopyrightText: 2024 SimpleStation14
 // SPDX-FileCopyrightText: 2024 Tayrtahn
+// SPDX-FileCopyrightText: 2025 Blitz
 // SPDX-FileCopyrightText: 2025 VMSolidus
 // SPDX-FileCopyrightText: 2025 pathetic meowmeow
 // SPDX-FileCopyrightText: 2025 sleepyyapril
@@ -307,7 +308,8 @@ public abstract class SharedResearchSystem : EntitySystem
         component.UnlockedRecipes.Add(recipe);
         Dirty(uid, component);
 
-        var ev = new TechnologyDatabaseModifiedEvent(new List<string> { recipe });
+        var recipes = new List<ProtoId<LatheRecipePrototype>> { recipe };
+        var ev = new TechnologyDatabaseModifiedEvent(null, recipes);
         RaiseLocalEvent(uid, ref ev);
     }
 }

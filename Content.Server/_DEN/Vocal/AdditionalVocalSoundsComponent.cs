@@ -1,4 +1,4 @@
-// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 sleepyyapril
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -18,4 +18,7 @@ public sealed partial class AdditionalVocalSoundsComponent : Component
 {
     [DataField]
     public ProtoId<EmoteSoundsPrototype> AdditionalSounds { get; set; }
+
+    [DataField]
+    public bool ReplaceExistingEmotes { get; set; }
 }

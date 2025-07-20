@@ -25,3 +25,6 @@ loadout-name-LoadoutItemCaneWalkingColorable = cane (colorable)
 loadout-name-LoadoutItemCaneWalkingAnatomical = anatomical grip cane (colorable)
 loadout-name-LoadoutItemCaneWalkingFoldable = folding cane (colorable)
 loadout-name-LoadoutItemCaneWalkingQuad = quad cane (colorable)
+
+loadout-name-LoadoutServiceItemGoldenPlunger = golden plunger
+

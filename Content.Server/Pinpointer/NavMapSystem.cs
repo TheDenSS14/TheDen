@@ -6,10 +6,12 @@
 // SPDX-FileCopyrightText: 2024 Leon Friedrich
 // SPDX-FileCopyrightText: 2024 Nemanja
 // SPDX-FileCopyrightText: 2024 VMSolidus
+// SPDX-FileCopyrightText: 2025 Blitz
 // SPDX-FileCopyrightText: 2025 BlitzTheSquishy
 // SPDX-FileCopyrightText: 2025 Falcon
 // SPDX-FileCopyrightText: 2025 Tayrtahn
 // SPDX-FileCopyrightText: 2025 sleepyyapril
+// SPDX-FileCopyrightText: 2025 themias
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -118,7 +120,7 @@ public sealed partial class NavMapSystem : SharedNavMapSystem
         foreach (var change in ev.Changes)
         {
             if (!change.EmptyChanged || !_navQuery.TryComp(ev.Entity, out var navMap))
-                return;
+                continue;
 
             var tile = change.GridIndices;
             var chunkOrigin = SharedMapSystem.GetChunkIndices(tile, ChunkSize);
@@ -133,7 +135,7 @@ public sealed partial class NavMapSystem : SharedNavMapSystem
             {
                 tileData = 0;
                 if (PruneEmpty((ev.Entity, navMap), chunk))
-                    return;
+                    continue;
             }
             else
             {
@@ -220,6 +222,7 @@ public sealed partial class NavMapSystem : SharedNavMapSystem
         beacon.Text = args.Text;
         beacon.Color = args.Color;
         beacon.Enabled = args.Enabled;
+        Dirty(ent, beacon);
 
         UpdateBeaconEnabledVisuals((ent, beacon));
         UpdateNavMapBeaconData(ent, beacon);
@@ -257,6 +260,16 @@ public sealed partial class NavMapSystem : SharedNavMapSystem
         // Clear stale data
         component.Chunks.Clear();
         component.Beacons.Clear();
+
+        // Refresh beacons
+        var query = EntityQueryEnumerator<NavMapBeaconComponent, TransformComponent>();
+        while (query.MoveNext(out var qUid, out var qNavComp, out var qTransComp))
+        {
+            if (qTransComp.ParentUid != uid)
+                continue;
+
+            UpdateNavMapBeaconData(qUid, qNavComp);
+        }
 
         // Loop over all tiles
         var tileRefs = _mapSystem.GetAllTiles(uid, mapGrid);

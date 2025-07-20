@@ -160,3 +160,327 @@
     - !type:TraitSetAdditionalEmoteSound
       emoteSound: Feroxi
       useSex: true
+
+- type: trait
+  id: HarpySounds
+  category: TraitsSpeechSounds
+  points: -2
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: TraitsRaceSounds
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Harpy
+  functions:
+    - !type:TraitAddTag
+      tags:
+      - HarpyEmotes
+    - !type:TraitSetAdditionalEmoteSound
+      emoteSound: SoundsHarpyExclusive
+      useSex: false
+
+- type: trait
+  id: RodentiaSounds
+  category: TraitsSpeechSounds
+  points: -2
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: TraitsRaceSounds
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Rodentia
+  functions:
+    - !type:TraitAddTag
+      tags:
+      - RodentiaEmotes
+    - !type:TraitSetAdditionalEmoteSound
+      emoteSound: Rodentia
+      useSex: true
+
+- type: trait
+  id: ResomiSounds
+  category: TraitsSpeechSounds
+  points: -2
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: TraitsRaceSounds
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Resomi
+  functions:
+    - !type:TraitAddTag
+      tags:
+      - ResomiEmotes
+    - !type:TraitSetAdditionalEmoteSound
+      emoteSound: Avali
+      useSex: true
+
+- type: trait
+  id: KitsuneSounds
+  category: TraitsSpeechSounds
+  points: -2
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: TraitsRaceSounds
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Kitsune
+  functions:
+    - !type:TraitAddTag
+      tags:
+      - KitsuneEmotes
+    - !type:TraitSetAdditionalEmoteSound
+      emoteSound: Kitsune
+      useSex: true
+
+# REPLACE SOUNDS 
+
+- type: trait
+  id: VulpkaninSoundsReplace
+  category: TraitsSpeechSounds
+  points: -2
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: TraitsRaceSounds
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Vulpkanin
+  functions:
+    - !type:TraitAddTag
+      tags:
+      - VulpEmotes
+    - !type:TraitSetAdditionalEmoteSound
+      emoteSound: Vulpkanin
+      useSex: true
+      replace: true
+
+- type: trait
+  id: FelinidSoundsReplace
+  category: TraitsSpeechSounds
+  points: -2
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: TraitsRaceSounds
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Felinid
+  functions:
+    - !type:TraitAddTag
+      tags:
+      - FelinidEmotes
+    - !type:TraitSetAdditionalEmoteSound
+      emoteSound: Felinid
+      useSex: true
+      replace: true
+
+- type: trait
+  id: OniSoundsReplace
+  category: TraitsSpeechSounds
+  points: -2
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: TraitsRaceSounds
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Oni
+  functions:
+    - !type:TraitAddTag
+      tags:
+      - OniEmotes
+    - !type:TraitSetAdditionalEmoteSound
+      emoteSound: Oni
+      useSex: true
+      replace: true
+
+- type: trait
+  id: ShadowkinSoundsReplace
+  category: TraitsSpeechSounds
+  points: -2
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: TraitsRaceSounds
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Shadowkin
+  functions:
+    - !type:TraitAddTag
+      tags:
+      - ShadowkinEmotes
+    - !type:TraitSetAdditionalEmoteSound
+      emoteSound: Shadowkin
+      useSex: true
+      replace: true
+
+- type: trait
+  id: SiliconSoundsReplace
+  category: TraitsSpeechSounds
+  points: -2
+  requirements:
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - StationAi
+        - Borg
+        - MedicalBorg
+    - !type:CharacterItemGroupRequirement
+      group: TraitsRaceSounds
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - IPC
+  functions:
+    - !type:TraitAddTag
+      tags:
+      - SiliconEmotes
+    - !type:TraitSetAdditionalEmoteSound
+      emoteSound: UnisexIPC
+      useSex: false
+      replace: true
+
+- type: trait
+  id: ReptilianSoundsReplace
+  category: TraitsSpeechSounds
+  points: -2
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: TraitsRaceSounds
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Reptilian
+  functions:
+    - !type:TraitAddTag
+      tags:
+      - UnathiEmotes
+    - !type:TraitSetAdditionalEmoteSound
+      emoteSound: Reptilian
+      useSex: true
+      replace: true
+
+- type: trait
+  id: OviniaSoundsReplace
+  category: TraitsSpeechSounds
+  points: -2
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: TraitsRaceSounds
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Ovinia
+  functions:
+    - !type:TraitAddTag
+      tags:
+      - OviniaEmotes
+    - !type:TraitSetAdditionalEmoteSound
+      emoteSound: Ovinia
+      useSex: true
+      replace: true
+
+- type: trait
+  id: FeroxiSoundsReplace
+  category: TraitsSpeechSounds
+  points: -2
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: TraitsRaceSounds
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Feroxi
+  functions:
+    - !type:TraitAddTag
+      tags:
+      - FeroxiEmotes
+    - !type:TraitSetAdditionalEmoteSound
+      emoteSound: Feroxi
+      useSex: true
+      replace: true
+
+- type: trait
+  id: HarpySoundsReplace
+  category: TraitsSpeechSounds
+  points: -2
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: TraitsRaceSounds
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Harpy
+  functions:
+    - !type:TraitAddTag
+      tags:
+      - HarpyEmotes
+    - !type:TraitSetAdditionalEmoteSound
+      emoteSound: SoundsHarpyExclusive
+      useSex: false
+      replace: true
+
+- type: trait
+  id: RodentiaSoundsReplace
+  category: TraitsSpeechSounds
+  points: -2
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: TraitsRaceSounds
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Rodentia
+  functions:
+    - !type:TraitAddTag
+      tags:
+      - RodentiaEmotes
+    - !type:TraitSetAdditionalEmoteSound
+      emoteSound: Rodentia
+      useSex: true
+      replace: true
+
+- type: trait
+  id: ResomiSoundsReplace
+  category: TraitsSpeechSounds
+  points: -2
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: TraitsRaceSounds
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Resomi
+  functions:
+    - !type:TraitAddTag
+      tags:
+      - ResomiEmotes
+    - !type:TraitSetAdditionalEmoteSound
+      emoteSound: Avali
+      useSex: true
+      replace: true
+
+- type: trait
+  id: KitsuneSoundsReplace
+  category: TraitsSpeechSounds
+  points: -2
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: TraitsRaceSounds
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Kitsune
+  functions:
+    - !type:TraitAddTag
+      tags:
+      - KitsuneEmotes
+    - !type:TraitSetAdditionalEmoteSound
+      emoteSound: Kitsune
+      useSex: true
+      replace: true

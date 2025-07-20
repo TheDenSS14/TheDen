@@ -573,6 +573,6 @@ public sealed class BloodstreamSystem : EntitySystem
         if (usedThirst > 0 && thirstComp is not null)
             _thirst.ModifyThirst(ent, thirstComp, (float) -usedThirst);
 
-        return TryModifyBloodLevel(ent, ev.Amount, ent.Comp);
+        return TryModifyBloodLevel(ent, ev.Amount, ent.Comp, createPuddle: ev.AllowBloodPooling);
     }
 }

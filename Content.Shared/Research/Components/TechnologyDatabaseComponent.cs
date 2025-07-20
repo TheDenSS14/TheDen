@@ -1,6 +1,7 @@
 // SPDX-FileCopyrightText: 2023 Debug
 // SPDX-FileCopyrightText: 2023 DrSmugleaf
 // SPDX-FileCopyrightText: 2023 Nemanja
+// SPDX-FileCopyrightText: 2025 Blitz
 // SPDX-FileCopyrightText: 2025 BlitzTheSquishy
 // SPDX-FileCopyrightText: 2025 EctoplasmIsGood
 // SPDX-FileCopyrightText: 2025 VMSolidus
@@ -71,13 +72,14 @@ public sealed partial class TechnologyDatabaseComponent : Component
 [ByRefEvent]
 public readonly record struct TechnologyDatabaseModifiedEvent // Goobstation - Lathe message on recipes update
 {
-    public readonly List<string> NewlyUnlockedRecipes;
-
+    public readonly ProtoId<TechnologyPrototype>? Technology;
     public readonly List<ProtoId<LatheRecipePrototype>> UnlockedRecipes;
 
-    public TechnologyDatabaseModifiedEvent( List<string>? newlyUnlockedRecipes = null, List<ProtoId<LatheRecipePrototype>>? unlockedRecipes = null)
+    public TechnologyDatabaseModifiedEvent(
+        ProtoId<TechnologyPrototype>? technology,
+        List<ProtoId<LatheRecipePrototype>>? unlockedRecipes = null)
     {
-        NewlyUnlockedRecipes = newlyUnlockedRecipes ?? new();
+        Technology = technology;
         UnlockedRecipes = unlockedRecipes ?? new();
     }
 };
