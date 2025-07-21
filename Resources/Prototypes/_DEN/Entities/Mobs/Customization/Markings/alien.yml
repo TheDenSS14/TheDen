@@ -39,11 +39,10 @@
 # such as if the species has very large eyes.
 
 - type: marking
+  parent: BaseMarkingSpeciesStandardEyes
   id: AlienEyes
   bodyPart: Eyes
   markingCategory: Face
-  speciesRestriction: [ Moth, Chitinid, Shadowkin, Plasmaman, Arachne, Arachnid, Resomi, IPC, Vox ]
-  invertSpeciesRestriction: true
   coloring:
     default:
       type:
@@ -53,11 +52,10 @@
     state: eyes_alien
 
 - type: marking
+  parent: BaseMarkingSpeciesStandardEyes
   id: AlienEyesBig
   bodyPart: Eyes
   markingCategory: Face
-  speciesRestriction: [ Moth, Chitinid, Shadowkin, Plasmaman, Arachne, Arachnid, Resomi, IPC, Vox ]
-  invertSpeciesRestriction: true
   coloring:
     default:
       type:
@@ -67,11 +65,10 @@
     state: eyes_alien_big
 
 - type: marking
+  parent: BaseMarkingSpeciesStandardEyes
   id: AlienEyesThree
   bodyPart: Eyes
   markingCategory: Face
-  speciesRestriction: [ Moth, Chitinid, Shadowkin, Plasmaman, Arachne, Arachnid, Resomi, IPC, Vox ]
-  invertSpeciesRestriction: true
   coloring:
     default:
       type:
@@ -81,11 +78,10 @@
     state: eyes_alien_three
 
 - type: marking
+  parent: BaseMarkingSpeciesStandardEyes
   id: AlienEyesWide
   bodyPart: Eyes
   markingCategory: Face
-  speciesRestriction: [ Moth, Chitinid, Shadowkin, Plasmaman, Arachne, Arachnid, Resomi, IPC, Vox ]
-  invertSpeciesRestriction: true
   coloring:
     default:
       type:
@@ -97,11 +93,10 @@
 # OVERLAYS
 
 - type: marking
+  parent: BaseMarkingSpeciesShortFace
   id: AlienOverlayHead
   bodyPart: Head
   markingCategory: Head
-  # Specifically includes "flat-faced" species; not recommended to add this to species with prominent snouts.
-  speciesRestriction: [ Human, Felinid, Canid, Harpy, Oni, Ovinia, Rodentia, Tajaran ]
   sprites:
   - sprite: _DEN/Mobs/Customization/Head/alien_markings.rsi
     state: head

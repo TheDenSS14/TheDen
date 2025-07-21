@@ -61,6 +61,24 @@
     - Tajaran
     - Vulpkanin
 
+# Excluded species:
+# - Species with weird eye shapes/positions.
+# - Species for whom changing the eye shape looks bad or makes no sense.
+- type: marking
+  abstract: true
+  id: BaseMarkingSpeciesStandardEyes
+  speciesRestriction:
+  - Moth
+  - Chitinid
+  - Shadowkin
+  - Plasmaman
+  - Arachne
+  - Arachnid
+  - Resomi
+  - IPC
+  - Vox
+  invertSpeciesRestriction: true
+
 # Species that use the human head and body sprites specifically.
 # Included species: Humans, demihumans, species that use human sprites.
 # Use for: Markings designed for the human body.
