@@ -415,7 +415,7 @@
           - Wrench
       medkit:
         whitelist:
-          components:
+          tags:
           - Medkit
     sprite: Clothing/Belt/belt_overlay.rsi
   # DeltaV - Add medkit slot to medical belts
@@ -920,7 +920,7 @@
     mapLayers:
       medkit:
         whitelist:
-          components:
+          tags:
           - Medkit
       baton:
         whitelist:
