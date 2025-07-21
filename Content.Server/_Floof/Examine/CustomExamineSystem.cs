@@ -19,7 +19,8 @@ public sealed class CustomExamineSystem : SharedCustomExamineSystem
     private void OnSetCustomExamineMessage(SetCustomExamineMessage msg, EntitySessionEventArgs args)
     {
         var target = GetEntity(msg.Target);
-        if (!CanChangeExamine(args.SenderSession, target))
+        if (args.SenderSession.AttachedEntity == null
+            || !CanChangeExamine(args.SenderSession.AttachedEntity.Value, target))
             return;
 
         var comp = EnsureComp<CustomExamineComponent>(target);
