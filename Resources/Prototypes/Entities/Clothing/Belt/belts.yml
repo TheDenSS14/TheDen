@@ -275,30 +275,35 @@
         - Handcuff
         - BallisticAmmoProvider
         - Ammo
-  - type: ItemMapper
-    mapLayers:
-      flashbang:
-        whitelist:
-          components:
-          - FlashOnTrigger
-      stunbaton:
-        whitelist:
-          components:
-          - Stunbaton
-      tear_gas_grenade:
-        whitelist:
-          components:
-          - SmokeOnTrigger
-    sprite: Clothing/Belt/belt_overlay.rsi
-  - type: Appearance
   - type: ItemSlots
     slots:
-      item:
+      holster:
         name: clothing-belt-sidearm
         whitelist:
           tags:
           - Sidearm
         insertOnInteract: false
+  - type: ItemMapper # DeltaV - adjust for DeltaV sprites.
+    mapLayers:
+      baton:
+        whitelist:
+          components:
+          - Stunbaton
+      gasgrenade:
+        whitelist:
+          tags:
+            - Grenade
+      slp:
+        whitelist:
+          tags:
+          - Sidearm
+    sprite: _DV/Clothing/Belt/belt_overlay.rsi
+  - type: ContainerContainer
+    containers:
+      storagebase: !type:Container
+        ents: []
+      holster: !type:ContainerSlot {}
+  - type: Appearance
 
 - type: entity
   parent: ClothingBeltStorageBase
@@ -589,9 +594,9 @@
   description: Can hold security gear like handcuffs and flashes.
   components:
   - type: Sprite
-    sprite: Clothing/Belt/security.rsi
+    sprite: _DV/Clothing/Belt/securitywebbing.rsi # DeltaV - resprite
   - type: Clothing
-    sprite: Clothing/Belt/security.rsi
+    sprite: _DV/Clothing/Belt/securitywebbing.rsi # DeltaV - resprite
   - type: ExplosionResistance # Goobstation
     damageCoefficient: 0.9
   - type: Storage
@@ -786,9 +791,9 @@
   description: Unique and versatile chest rig, can hold security gear.
   components:
   - type: Sprite
-    sprite: Clothing/Belt/securitywebbing.rsi
+    sprite: _DV/Clothing/Belt/securitywebbing.rsi # DeltaV - resprite
   - type: Clothing
-    sprite: Clothing/Belt/securitywebbing.rsi
+    sprite: _DV/Clothing/Belt/securitywebbing.rsi # DeltaV - resprite
 
 - type: entity
   parent: ClothingBeltSecurityWebbing
