@@ -73,6 +73,8 @@ public sealed class ChasmSystem : EntitySystem
 
     private void OnStepTriggered(EntityUid uid, ChasmComponent component, ref StepTriggeredOffEvent args)
     {
+        return;
+        
         // already doomed
         if (HasComp<ChasmFallingComponent>(args.Tripper))
             return;
