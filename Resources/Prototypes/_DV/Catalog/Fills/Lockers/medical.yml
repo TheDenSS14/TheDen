@@ -1,33 +1,29 @@
 - type: entityTable
-  id: FillLockerMedicalLunchboxDV
+  id: FillLockerMedicalDoctorDV
+  table: !type:AllSelector
+    children:
+    - id: LunchboxMedicalFilledRandom
+      prob: 0.3
+    - id: NitrousOxideTankFilled
+      prob: 0.3
+
+- type: entityTable
+  id: FillLockerChemistryDV
   table: !type:AllSelector
     children:
     - id: LunchboxMedicalFilledRandom
       prob: 0.3
 
 - type: entityTable
-  id: FillLockerMedicalDoctorDV
+  id: FillLockerParamedicDV
   table: !type:AllSelector
     children:
-    - id: FillLockerMedicalLunchboxDV
-    - id: NitrousOxideTankFilled
+    - id: LunchboxMedicalFilledRandom
       prob: 0.3
-
-- type: entityTable
-  id: LockerFillChemistryDV
-  table: !type:AllSelector
-    children:
-    - id: FillLockerMedicalLunchboxDV
-
-- type: entityTable
-  id: LockerFillParamedicDV
-  table: !type:AllSelector
-    children:
-    - id: FillLockerMedicalLunchboxDV
     - id: ClothingShoesBootsWinterParamedic  #DeltaV - Add departmental winter boots
 
 - type: entityTable
-  id: LockerFillParamedicHardsuitDV
+  id: FillLockerParamedicHardsuitDV
   table: !type:AllSelector
     children:
     - id: ClothingOuterHardsuitVoidParamed

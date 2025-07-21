@@ -31,11 +31,11 @@
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 - type: entityTable
-  id: LockerFillMedicine
+  id: FillLockerMedicine
   table: !type:AllSelector
     children:
     - id: BoxSyringe
-    - id: ChemistryBottleEpinephrine
+    - id: EpinephrineChemistryBottle
     - id: Brutepack
       amount: !type:ConstantNumberSelector
         value: 2
@@ -55,7 +55,7 @@
   - type: EntityTableContainerFill
     containers:
       entity_storage: !type:NestedSelector
-        tableId: LockerFillMedicine
+        tableId: FillLockerMedicine
 
 - type: entity
   parent: LockerWallMedical
@@ -66,10 +66,10 @@
   - type: EntityTableContainerFill
     containers:
       entity_storage: !type:NestedSelector
-        tableId: LockerFillMedicine
+        tableId: FillLockerMedicine
 
 - type: entityTable
-  id: LockerFillMedicalDoctor
+  id: FillLockerMedicalDoctor
   table: !type:AllSelector
     children:
     - id: HandheldHealthAnalyzer
@@ -91,31 +91,20 @@
       entity_storage: !type:AllSelector
         children:
         - !type:NestedSelector
-          tableId: LockerFillMedicalDoctor
+          tableId: FillLockerMedicalDoctor
         - !type:NestedSelector
-          tableId: LockerFillMedicalDoctorDEN # The Den Additions (and surgical scrub probability rework)
+          tableId: FillLockerMedicalDoctorDEN # The Den Additions (and surgical scrub probability rework)
         - !type:NestedSelector
-          tableId: LockerFillMedicalDoctorDV # DeltaV Additions
+          tableId: FillLockerMedicalDoctorDV # DeltaV Additions
 
 - type: entity
   parent: LockerWallMedical
   id: LockerWallMedicalDoctorFilled
   name: medical doctor's wall locker
   suffix: Filled
-  components:
-  - type: EntityTableContainerFill
-    containers:
-      entity_storage: !type:AllSelector
-        children:
-        - !type:NestedSelector
-          tableId: LockerFillMedicalDoctor
-        - !type:NestedSelectorg
-          tableId: LockerFillMedicalDoctorDEN # The Den Additions (and surgical scrub probability rework)
-        - !type:NestedSelector
-          tableId: LockerFillMedicalDoctorDV # DeltaV Additions
 
 - type: entityTable
-  id: LockerFillChemistry
+  id: FillLockerChemistry
   table: !type:AllSelector
     children:
     - id: BoxSyringe
@@ -143,12 +132,12 @@
       entity_storage: !type:AllSelector
         children:
         - !type:NestedSelector
-          tableId: LockerFillChemistry
+          tableId: FillLockerChemistry
         - !type:NestedSelector
-          tableId: LockerFillChemistryDV
+          tableId: FillLockerChemistryDV
 
 - type: entityTable
-  id: LockerFillParamedic
+  id: FillLockerParamedic
   table: !type:AllSelector
     children:
     - id: ClothingOuterCoatParamedicWB
@@ -174,9 +163,9 @@
       entity_storage: !type:AllSelector
         children:
         - !type:NestedSelector
-          tableId: LockerFillParamedic
+          tableId: FillLockerParamedic
         - !type:NestedSelector
-          tableId: LockerFillParamedicDV # DeltaV Additions
+          tableId: FillLockerParamedicDV # DeltaV Additions
 
 - type: entity
   id: LockerParamedicFilledHardsuit #DeltaV - Paramedic Locker with suit
@@ -188,8 +177,10 @@
       entity_storage: !type:AllSelector
         children:
         - !type:NestedSelector
-          tableId: LockerFillParamedic
+          tableId: FillLockerParamedic
         - !type:NestedSelector
-          tableId: LockerFillParamedicDV # DeltaV Additions
+          tableId: FillLockerParamedicDV # DeltaV Additions
         - !type:NestedSelector
-          tableId: LockerFillParamedicHardsuitDV # DeltaV - Seperate the voidsuit out
+          tableId: FillLockerParamedicHardsuitDV # DeltaV - Seperate the voidsuit out
+        - !type:NestedSelector
+          tableId: FillLockerParamedicHardsuitDEN # The Den additions (Magboots)
