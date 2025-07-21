@@ -13,7 +13,7 @@ on:
 
 jobs:
   labeler:
-    if: github.actor != 'DeltaV-Bot' && github.actor != 'SimpleStation14'
+    if: github.actor != 'TheDen-Bot'
     permissions:
       contents: read
       pull-requests: write

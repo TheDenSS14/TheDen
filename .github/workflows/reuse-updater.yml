@@ -17,6 +17,7 @@ on:
 
 jobs:
   update_headers:
+    if: github.actor != 'TheDen-Bot'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Code
@@ -51,7 +52,7 @@ jobs:
             echo "Error fetching PR files from GitHub API."
             exit 1
           fi
-          
+
           if ! echo "$PR_FILES_JSON" | jq -e . > /dev/null; then
              echo "Warning: Received empty or invalid JSON from GitHub API for PR files."
              PR_FILES="" # Set PR_FILES to empty to avoid errors below
@@ -114,4 +115,3 @@ jobs:
           skip_dirty_check: false
           skip_fetch: true
 
-    

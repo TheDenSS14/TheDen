@@ -22,6 +22,7 @@ on:
 jobs:
   validate_rsis:
     name: Validate RSIs
+    if: github.actor != 'TheDen-Bot'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3.6.0
