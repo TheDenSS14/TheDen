@@ -173,3 +173,31 @@
     - Feroxi
     - Reptilian
     - Vulpkanin
+
+# Body features.
+
+# Excluded species:
+# - Species who couldn't wear normal pants without them falling off.
+# - Species whose sprites wouldn't fit in pants anyway.
+# Not excluded: Species that have tails.
+- type: marking
+  abstract: true
+  id: BaseMarkingSpeciesWithAss
+  invertSpeciesRestriction: true
+  speciesRestriction:
+    - Arachne
+    - Plasmaman
+
+# Specific marking types.
+
+- type: marking
+  abstract: true
+  parent: BaseMarkingSpeciesWithAss
+  id: BaseMarkingUnderpants
+  bodyPart: Underwear
+  markingCategory: Underwear
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"

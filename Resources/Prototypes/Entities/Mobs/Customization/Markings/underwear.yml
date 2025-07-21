@@ -6,76 +6,36 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 - type: marking
+  parent: BaseMarkingUnderpants
   id: UnderwearDefault
-  bodyPart: Underwear
-  markingCategory: Underwear
-  invertSpeciesRestriction: True
-  speciesRestriction: [Arachne, Plasmamen]
-  coloring:
-    default:
-      type:
-        !type:SimpleColoring
-          color: "#FFFFFF"
   sprites:
   - sprite: Mobs/Customization/underwear.rsi
     state: boxers
 
 - type: marking
+  parent: BaseMarkingUnderpants
   id: UnderwearBriefs
-  bodyPart: Underwear
-  markingCategory: Underwear
-  invertSpeciesRestriction: True
-  speciesRestriction: [Arachne, Plasmamen]
-  coloring:
-    default:
-      type:
-        !type:SimpleColoring
-          color: "#FFFFFF"
   sprites:
   - sprite: Mobs/Customization/underwear.rsi
     state: briefs
 
 - type: marking
+  parent: BaseMarkingUnderpants
   id: UnderwearLowriders
-  bodyPart: Underwear
-  markingCategory: Underwear
-  invertSpeciesRestriction: True
-  speciesRestriction: [Arachne, Plasmamen]
-  coloring:
-    default:
-      type:
-        !type:SimpleColoring
-          color: "#FFFFFF"
   sprites:
   - sprite: Mobs/Customization/underwear.rsi
     state: lowriders
 
 - type: marking
+  parent: BaseMarkingUnderpants
   id: UnderwearSatin
-  bodyPart: Underwear
-  markingCategory: Underwear
-  invertSpeciesRestriction: True
-  speciesRestriction: [Arachne, Plasmamen]
-  coloring:
-    default:
-      type:
-        !type:SimpleColoring
-          color: "#FFFFFF"
   sprites:
   - sprite: Mobs/Customization/underwear.rsi
     state: satin
 
 - type: marking
+  parent: BaseMarkingUnderpants
   id: UnderwearTanga
-  bodyPart: Underwear
-  markingCategory: Underwear
-  invertSpeciesRestriction: True
-  speciesRestriction: [Arachne, Plasmamen]
-  coloring:
-    default:
-      type:
-        !type:SimpleColoring
-          color: "#FFFFFF"
   sprites:
   - sprite: Mobs/Customization/underwear.rsi
     state: tanga
