@@ -11,11 +11,11 @@
 ## PLUSH SEAMS
 
 - type: marking
+  parent: BaseMarkingSpeciesStandardFeet
   id: OverlayPlushSeamsHuman
   bodyPart: LLeg
   markingCategory: Overlay
   speciesRestriction:
-    [ Arachnid, Canid, Felinid, Feroxi, Human, IPC, Oni, Reptilian, Rodentia, SlimePerson, Tajaran, Vulpkanin, Kitsune ]
   coloring:
     default:
       type:
@@ -26,10 +26,10 @@
     state: human
 
 - type: marking
+  parent: BaseMarkingSpeciesHumanHead
   id: OverlayPlushSeamsHeadHuman
   bodyPart: Head
   markingCategory: Head
-  speciesRestriction: [ Human, Canid, Felinid, Oni, Harpy, Arachne, SlimePerson, Kitsune ]
   coloring:
     default:
       type:
@@ -68,11 +68,10 @@
     state: head_longsnout # TODO: Individual markings for these species
 
 - type: marking
+  parent: BaseMarkingSpeciesStandardFeet
   id: OverlayPlushSeamsHandsFeet
   bodyPart: RHand
   markingCategory: Overlay
-  speciesRestriction:
-    [ Arachnid, Canid, Felinid, Feroxi, Human, IPC, Oni, Reptilian, Rodentia, SlimePerson, Tajaran, Vulpkanin, Kitsune ]
   coloring:
     default:
       type:
@@ -83,11 +82,10 @@
     state: handsfeet
 
 - type: marking
+  parent: BaseMarkingSpeciesStandardFeet
   id: OverlayPlushSeamsFeet
   bodyPart: RFoot
   markingCategory: Overlay
-  speciesRestriction:
-    [ Arachnid, Canid, Felinid, Feroxi, Human, IPC, Oni, Reptilian, Rodentia, SlimePerson, Tajaran, Vulpkanin, Kitsune ]
   coloring:
     default:
       type:
@@ -98,12 +96,10 @@
     state: feet
 
 - type: marking
+  parent: BaseMarkingSpeciesStandardHands
   id: OverlayPlushSeamsHands
   bodyPart: RHand
   markingCategory: Overlay
-  speciesRestriction:
-    [ Arachnid, Canid, Felinid, Feroxi, Human, IPC, Oni, Reptilian, Rodentia, SlimePerson, Tajaran, Vulpkanin,
-      Ovinia, Shadowkin, Arachne, Kitsune ]
   coloring:
     default:
       type:
@@ -346,10 +342,10 @@
 ## BODY OVERLAYS
 
 - type: marking
+  parent: BaseMarkingSpeciesHumanBody
   id: OverlayPlushTorsoHumanM
   bodyPart: Chest
   markingCategory: Chest
-  speciesRestriction: [ Human, Felinid, Canid, Oni, Arachne, Kitsune ]
   coloring:
     default:
       type:
@@ -359,10 +355,10 @@
     state: torso_plush_human_m
 
 - type: marking
+  parent: BaseMarkingSpeciesHumanBody
   id: OverlayPlushTorsoHumanF
   bodyPart: Chest
   markingCategory: Chest
-  speciesRestriction: [ Human, Felinid, Canid, Oni, Arachne, Kitsune ]
   coloring:
     default:
       type:
@@ -372,11 +368,11 @@
     state: torso_plush_human_f
 
 - type: marking
+  parent: BaseMarkingSpeciesStandardFeet
   id: OverlayPlushFootLeft
   bodyPart: LFoot
   markingCategory: LeftFoot
   speciesRestriction:
-    [ Arachnid, Canid, Felinid, Feroxi, Human, IPC, Oni, Reptilian, Rodentia, SlimePerson, Tajaran, Vulpkanin, Kitsune ]
   coloring:
     default:
       type:
@@ -387,11 +383,10 @@
     state: l_foot_plush
 
 - type: marking
+  parent: BaseMarkingSpeciesStandardFeet
   id: OverlayPlushFootRight
   bodyPart: RFoot
   markingCategory: RightFoot
-  speciesRestriction:
-    [ Arachnid, Canid, Felinid, Feroxi, Human, IPC, Oni, Reptilian, Rodentia, SlimePerson, Tajaran, Vulpkanin, Kitsune ]
   coloring:
     default:
       type:

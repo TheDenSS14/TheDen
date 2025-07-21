@@ -9,11 +9,96 @@
 - type: marking
   abstract: true
   id: BaseMarkingSpeciesStandardHead
-  speciesRestriction: [ Resomi ]
+  speciesRestriction: [Resomi]
   invertSpeciesRestriction: true
 
 - type: marking
   abstract: true
   id: BaseMarkingSpeciesStandardBody
-  speciesRestriction: [ Resomi ]
+  speciesRestriction: [Resomi]
   invertSpeciesRestriction: true
+
+- type: marking
+  abstract: true
+  id: BaseMarkingSpeciesStandardHands
+  speciesRestriction:
+    # Human body
+    - Arachne
+    - Canid
+    - Felinid
+    - Human
+    - Kitsune
+    - Oni
+    # Others
+    - Arachnid
+    - Feroxi
+    - IPC
+    - Reptilian
+    - Rodentia
+    - SlimePerson
+    - Tajaran
+    - Vulpkanin
+    - Ovinia
+    - Shadowkin
+
+- type: marking
+  abstract: true
+  id: BaseMarkingSpeciesStandardFeet
+  speciesRestriction:
+    # Human body
+    - Canid
+    - Felinid
+    - Human
+    - Kitsune
+    - Oni
+    # Others
+    - Arachnid
+    - Feroxi
+    - IPC
+    - Reptilian
+    - Rodentia
+    - SlimePerson
+    - Tajaran
+    - Vulpkanin
+
+# Species that use the human head and body sprites specifically.
+# Included species: Humans, demihumans, species that use human sprites.
+# Use for: Markings designed for the human body.
+# Avoid using for: Markings designed to be used for furry/custom-sprited species.
+
+- type: marking
+  abstract: true
+  id: BaseMarkingSpeciesHumanHead
+  speciesRestriction:
+    - Arachne
+    - Canid
+    - Felinid
+    - Harpy
+    - Human
+    - Kitsune
+    - Oni
+    - SlimePerson # Close enough
+
+- type: marking
+  abstract: true
+  id: BaseMarkingSpeciesHumanBody
+  speciesRestriction:
+    - Arachne
+    - Canid
+    - Felinid
+    - Human
+    - Kitsune
+    - Oni
+    - SlimePerson # Close enough
+
+# No taurs.
+- type: marking
+  abstract: true
+  id: BaseMarkingSpeciesHumanLegs
+  speciesRestriction:
+    - Canid
+    - Felinid
+    - Human
+    - Kitsune
+    - Oni
+    - SlimePerson # Close enough
