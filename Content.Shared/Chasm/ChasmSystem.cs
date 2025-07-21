@@ -40,6 +40,7 @@ public sealed class ChasmSystem : EntitySystem
         SubscribeLocalEvent<ChasmFallingComponent, UpdateCanMoveEvent>(OnUpdateCanMove);
     }
 
+    /*
     public override void Update(float frameTime)
     {
         base.Update(frameTime);
@@ -68,6 +69,7 @@ public sealed class ChasmSystem : EntitySystem
             QueueDel(uid);
         }
     }
+    */
 
     private void OnStepTriggered(EntityUid uid, ChasmComponent component, ref StepTriggeredOffEvent args)
     {
