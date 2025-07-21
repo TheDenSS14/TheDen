@@ -12,15 +12,26 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 using Robust.Shared.Prototypes;
+using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype.Array;
 using Robust.Shared.Utility;
 
 namespace Content.Shared.Humanoid.Markings
 {
     [Prototype("marking")]
-    public sealed partial class MarkingPrototype : IPrototype
+    public sealed partial class MarkingPrototype : IPrototype, IInheritingPrototype
     {
+
         [IdDataField]
         public string ID { get; private set; } = "uwu";
+
+        // DEN: Make markings inheriting.
+        [ParentDataField(typeof(AbstractPrototypeIdArraySerializer<MarkingPrototype>))]
+        public string[]? Parents { get; }
+
+        [NeverPushInheritance]
+        [AbstractDataField]
+        public bool Abstract { get; }
+        // End DEN
 
         public string Name { get; private set; } = default!;
 
