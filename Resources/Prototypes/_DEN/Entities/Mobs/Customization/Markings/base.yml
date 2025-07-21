@@ -26,7 +26,11 @@
 # Vulpkanin
 
 # Species that use the "standard" body/head shape.
-# Excluded species: Different body/head size and shape.
+# Excluded species:
+# - Different body/head size and shape.
+# - For example: digitigrade legs, radical body size differences.
+# Not excluded species:
+# - Snouts, tails, other "additions" to the base.
 # Use for: Markings that fit reasonably well on the humanoid sprite base.
 # Avoid using for: Markings that look weird on snouted species. (Sides/back/top of head are fine.)
 - type: marking
