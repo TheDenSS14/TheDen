@@ -1,24 +1,21 @@
 # SPDX-FileCopyrightText: 2025 Velcroboy
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
-
-- type: entityTable
-  id: FillLockerEngineerDV
-  table: !type:AllSelector
-    children:
-    - id: LunchboxEngineeringFilledRandom
-      prob: 0.3
-
-- type: entityTable
-  id: FillLockerAtmosphericsDV
-  table: !type:AllSelector
-    children:
-    - id: LunchboxEngineeringFilledRandom
-      prob: 0.3
-
 - type: entityTable
   id: FillLockerEngineeringLunchboxDV
   table: !type:AllSelector
     children:
     - id: LunchboxEngineeringFilledRandom
       prob: 0.3
+
+- type: entityTable
+  id: FillLockerEngineerDV
+  table: !type:AllSelector
+    children:
+    - id: LunchboxEngineeringFilledRandom
+
+- type: entityTable
+  id: FillLockerAtmosphericsDV
+  table: !type:AllSelector
+    children:
+    - id: LunchboxEngineeringFilledRandom
