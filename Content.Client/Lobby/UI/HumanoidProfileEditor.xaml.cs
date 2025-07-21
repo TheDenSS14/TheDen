@@ -117,6 +117,12 @@ using Content.Client._CD.Records.UI;
 using Content.Shared._CD.Records;
 // End CD - Character Records
 
+// DEN TODO: THIS NEEDS SEVERE OVERHAUL
+// here are some relevant standards i am writing down for those adding things to this UI:
+// NEVER set IsDirty directly. use SetDirty() instead.
+// SetDirty() should be called any time the profile updates
+// and any time an input is changed (e.g. text edits, button toggles.)
+
 namespace Content.Client.Lobby.UI
 {
     [GenerateTypedNameReferences]
@@ -1687,6 +1693,9 @@ namespace Content.Client.Lobby.UI
             ReloadProfilePreview();
         }
 
+        /// <summary>
+        ///     DO NOT SET THIS DIRECTLY. ALWAYS use SetDirty() instead.
+        /// </summary>
         private bool IsDirty
         {
             get => _isDirty;
