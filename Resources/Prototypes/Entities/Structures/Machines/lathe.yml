@@ -488,6 +488,8 @@
     dynamicPacks:
     - ProtolatheDynamicAwfulDen
   - type: EmagLatheRecipes
+    emagStaticPacks:
+    - ProtolatheStaticEmagAwfulDen
     emagDynamicPacks:
     - ProtolatheDynamicEmagAwfulDen
 
@@ -786,7 +788,9 @@
   - type: Lathe
     idleState: icon
     runningState: icon
-    # Static recipes are inherited from the autolathe. This only adds some dynamic ones.
+    staticPacks: 
+    - EngineeringTechFabStaticAwfulDen
+    - AutolatheStaticAwfulDen
     dynamicPacks:
     - EngineeringTechFabDynamicAwfulDen
   - type: MaterialStorage
@@ -822,7 +826,9 @@
   - type: Lathe
     idleState: icon
     runningState: icon
-    # Static recipes are inherited from the autolathe. This only adds some dynamic ones.
+    staticPacks: 
+    - AutolatheStaticAwfulDen
+    - CargoTechFabStaticAwfulDen
     dynamicPacks:
     - CargoTechFabDynamicAwfulDen
   - type: MaterialStorage
