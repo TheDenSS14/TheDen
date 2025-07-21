@@ -1,0 +1,88 @@
+- type: entityTable
+  id: LockerFillMedicalDoctorDEN
+  table: !type:AllSelector
+    children:
+    - !type:GroupSelector
+      children:
+      - id: FillLockerMedicalScrubsGreenDEN
+        weight: 0.11
+      - id: FillLockerMedicalScrubsBlueDEN
+        weight: 0.11
+      - id: FillLockerMedicalScrubsPurpleDEN
+        weight: 0.12
+      - id: FillLockerMedicalScrubsCyanDEN
+        weight: 0.12
+      - id: FillLockerMedicalScrubsBlackDEN
+        weight: 0.12
+      - id: FillLockerMedicalScrubsPinkDEN
+        weight: 0.12
+      - id: FillLockerMedicalScrubsRainbowDEN
+        weight: 0.14 # Better chance to be GAY! :D
+      - id: FillLockerMedicalScrubsWhiteDEN
+        weight: 0.12
+      - id: FillLockerMedicalScrubsCybersunDEN
+        weight: 0.04
+
+## Medical Scrubs - Each set is paired with each other and probabilities rolled in the main table
+- type: entityTable
+  id: FillLockerMedicalScrubsGreenDEN
+  table: !type:AllSelector
+    children:
+    - id: ClothingHeadHatSurgcapGreen
+    - id: UniformScrubsColorGreen
+
+- type: entityTable
+  id: FillLockerMedicalScrubsBlueDEN
+  table: !type:AllSelector
+    children:
+    - id: ClothingHeadHatSurgcapBlue
+    - id: UniformScrubsColorBlue
+
+- type: entityTable
+  id: FillLockerMedicalScrubsPurpleDEN
+  table: !type:AllSelector
+    children:
+    - id: ClothingHeadHatSurgcapPurple
+    - id: UniformScrubsColorPurple
+
+- type: entityTable
+  id: FillLockerMedicalScrubsCyanDEN
+  table: !type:AllSelector
+    children:
+    - id: ClothingHeadHatSurgcapCyan
+    - id: UniformScrubsColorCyan
+
+- type: entityTable
+  id: FillLockerMedicalScrubsBlackDEN
+  table: !type:AllSelector
+    children:
+    - id: ClothingHeadHatSurgcapBlack
+    - id: UniformScrubsColorBlack
+
+- type: entityTable
+  id: FillLockerMedicalScrubsPinkDEN
+  table: !type:AllSelector
+    children:
+    - id: ClothingHeadHatSurgcapPink
+    - id: UniformScrubsColorPink
+
+- type: entityTable
+  id: FillLockerMedicalScrubsRainbowDEN
+  table: !type:AllSelector
+    children:
+    - id: ClothingHeadHatSurgcapRainbow
+    - id: UniformScrubsColorRainbow
+
+- type: entityTable
+  id: FillLockerMedicalScrubsWhiteDEN
+  table: !type:AllSelector
+    children:
+    - id: ClothingHeadHatSurgcapWhite
+    - id: UniformScrubsColorWhite
+
+- type: entityTable
+  id: FillLockerMedicalScrubsCybersunDEN
+  table: !type:AllSelector
+    children:
+    - id: ClothingHeadHatSurgcapCybersun
+    - id: UniformScrubsColorCybersun
