@@ -42,16 +42,6 @@
     - id: ClothingHeadHatHoodBioVirology
 
 - type: entity
-  id: ClosetL3ScienceFilled
-  suffix: Filled, Epistemics # DeltaV - Epistemics Department replacing Science
-  parent: ClosetL3Virology
-  components:
-  - type: StorageFill
-    contents:
-      - id: ClothingOuterBioScientist
-      - id: ClothingHeadHatHoodBioScientist
-
-- type: entity
   id: ClosetL3SecurityFilled
   suffix: Filled, Security
   parent: ClosetL3Security
@@ -87,8 +77,8 @@
 
 - type: entity
   id: ClosetL3ScienceFilled
-  suffix: Filled, Science
-  parent: ClosetL3Science
+  suffix: Filled, Epistemics # DeltaV - Epistemics Department replacing Science
+  parent: ClosetL3Virology
   components:
   - type: EntityTableContainerFill
     containers:

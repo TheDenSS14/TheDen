@@ -1,4 +1,10 @@
 - type: entityTable
+  id: FillLockerAtmosphericsDEN
+  table: !type:AllSelector
+    children:
+    - id: AccessConfigurator
+
+- type: entityTable
   id: FillLockerEngineerDEN
   table: !type:AllSelector
     children:

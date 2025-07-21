@@ -157,18 +157,6 @@
   suffix: Filled, Hardsuit
   parent: LockerAtmospherics
   components:
-  - type: StorageFill
-    contents:
-      - id: ClothingOuterHardsuitAtmos
-      - id: ClothingMaskGasAtmos
-      - id: ClothingOuterSuitAtmosFire
-      - id: ClothingHeadHelmetAtmosFire
-      - id: GasAnalyzer
-      - id: MedkitOxygenFilled
-      - id: HolofanProjector
-      - id: DoorRemoteFirefight
-      - id: RCD
-      - id: RCDAmmo
   - type: EntityTableContainerFill
     containers:
       entity_storage: !type:AllSelector
@@ -180,7 +168,7 @@
         - !type:NestedSelector
           tableId: FillLockerAtmosphericsDV # DeltaV Addtitions
         - !type:NestedSelector
-          tableId: FillLockerAtmosphericsGoonstation # Goob Additions
+          tableId: FillLockerAtmosphericsGoobstation # Goob Additions
         - !type:NestedSelector
           tableId: FillAtmosphericsHardsuit
 
@@ -200,7 +188,7 @@
         - !type:NestedSelector
           tableId: FillLockerAtmosphericsDV # DeltaV Additions
         - !type:NestedSelector
-          tableId: FillLockerAtmosphericsGoonstation # Goob Additions
+          tableId: FillLockerAtmosphericsGoobstation # Goob Additions
 
 - type: entityTable
   id: FillLockerAtmospherics
