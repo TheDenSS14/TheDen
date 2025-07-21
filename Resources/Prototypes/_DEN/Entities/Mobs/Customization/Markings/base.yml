@@ -1,11 +1,34 @@
 # Markings are inheriting now, so these are basically used to consolidate common species restriction patterns.
 # A little bit lame way of doing it but it's probably better than redefining the list each time.
 
+# Arachne
+# Arachnid
+# Canid
+# Chitinid
+# Diona
+# Felinid
+# Feroxi
+# Harpy
+# Human
+# IPC
+# Kitsune
+# Moth
+# Oni
+# Ovinia
+# Plasmaman
+# Reptilian
+# Resomi
+# Rodentia
+# Shadowkin
+# SlimePerson
+# Tajaran
+# Vox
+# Vulpkanin
+
 # Species that use the "standard" body/head shape.
-# Excluded species: Dramatically different body/head size and shape.
+# Excluded species: Different body/head size and shape.
 # Use for: Markings that fit reasonably well on the humanoid sprite base.
 # Avoid using for: Markings that look weird on snouted species. (Sides/back/top of head are fine.)
-
 - type: marking
   abstract: true
   id: BaseMarkingSpeciesStandardHead
@@ -21,45 +44,31 @@
 - type: marking
   abstract: true
   id: BaseMarkingSpeciesStandardHands
+  invertSpeciesRestriction: true
   speciesRestriction:
-    # Human body
-    - Arachne
-    - Canid
-    - Felinid
-    - Human
-    - Kitsune
-    - Oni
-    # Others
-    - Arachnid
-    - Feroxi
-    - IPC
-    - Reptilian
-    - Rodentia
-    - SlimePerson
-    - Tajaran
-    - Vulpkanin
-    - Ovinia
-    - Shadowkin
+    - Chitinid
+    - Diona
+    - Harpy
+    - Moth
+    - Plasmaman
+    - Resomi
+    - Vox
 
 - type: marking
   abstract: true
   id: BaseMarkingSpeciesStandardFeet
+  invertSpeciesRestriction: true
   speciesRestriction:
-    # Human body
-    - Canid
-    - Felinid
-    - Human
-    - Kitsune
-    - Oni
-    # Others
-    - Arachnid
-    - Feroxi
-    - IPC
-    - Reptilian
-    - Rodentia
-    - SlimePerson
-    - Tajaran
-    - Vulpkanin
+    - Arachne
+    - Chitinid
+    - Diona
+    - Harpy
+    - Moth
+    - Ovinia
+    - Plasmaman
+    - Resomi
+    - Shadowkin
+    - Vox
 
 # Excluded species:
 # - Species with weird eye shapes/positions.
