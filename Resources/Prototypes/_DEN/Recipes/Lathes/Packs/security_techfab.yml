@@ -1,9 +1,15 @@
+# SPDX-FileCopyrightText: 2025 MajorMoth
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 # TODO: I know it's horrid, but if you separate every single one into their proper forks, I'll pay you.
 # There are existing packs for some of these recipes, and some which have items that don't exist. I'm sorry.
 
 - type: latheRecipePack
   id: SecurityTechFabStaticAwfulDen
   recipes:
+  - Signaller
   - BoxLethalshot
   - BoxShotgunFlare
   - BoxShotgunPractice
@@ -93,7 +99,6 @@
   - BolaEnergy
   - ClothingHeadHelmetBasic
   - MagazineShotgunBeanbag
-  - ShellTranquilizer
   - MagazineMagnumEmpty # Goobstation
   - MagazineMagnum # Goobstation
   - MagazineShotgunLeverRifle # Goobstation
@@ -101,6 +106,7 @@
   - MagazineBoxShotgunHighCaliber # Goobstation
   - MagazineBoxShotgunSlugHighCaliber # Goobstation
   - MagazineBoxShotgunPracticeHighCaliber # Goobstation
+  - MagazineBoxShotgunBeanbagHighCaliber # Goobstation
   - BoxBeanbag
   - CartridgePistolRubber
   - CartridgeMagnumRubber
@@ -147,7 +153,6 @@
   - CrossbowModern # Frontier
   - BoxShotgunIncendiary
   - BoxShotgunUranium
-  - EncryptionKeySyndie
   - CartridgeLightRifleIncendiary
   - CartridgeMagnumIncendiary
   - CartridgePistolIncendiary
@@ -186,7 +191,6 @@
   - MagazineShotgunIncendiary
   - MagazineBoxShotgunIncendiaryHighCaliber # Goobstation
   - MagazineBoxShotgunUraniumHighCaliber # Goobstation
-  - MagazineBoxShotgunBeanbagHighCaliber # Goobstation
   - PortableRecharger
   - PowerCageHigh
   - PowerCageMedium
@@ -195,7 +199,6 @@
   - ShuttleGunFriendshipCircuitboard
   - ShuttleGunPerforatorCircuitboard
   - ShuttleGunSvalinnMachineGunCircuitboard
-  - Signaller
   - SignalTrigger
   - SpeedLoaderMagnumIncendiary
   - SpeedLoaderMagnumUranium
@@ -264,19 +267,8 @@
   - WeaponPistolN1984
   - WeaponPistolViper
   - WeaponPistolCobra
-  - MagazineRifleShrapnel
-  - MagazinePistolShrapnel
-  - MagazinePistolSubMachineGunShrapnel
-  - MagazineMagnumShrapnel
-  - MagazineLightRifleShrapnel
-  - MagazineCaselessRifleShrapnel
   - MagazineCaselessRifleIncendiary
   - MagazineCaselessRifleUranium
-  - MagazineBoxPistolShrapnel
-  - MagazineBoxMagnumShrapnel
-  - MagazineBoxLightRifleShrapnel
-  - MagazineBoxRifleShrapnel
-  - MagazineBoxCaselessRifleShrapnel
   - MagazineBoxCaselessRifleIncendiary
   - MagazineBoxCaselessRifleUranium
 
