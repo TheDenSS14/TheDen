@@ -1,0 +1,19 @@
+# Markings are inheriting now, so these are basically used to consolidate common species restriction patterns.
+# A little bit lame way of doing it but it's probably better than redefining the list each time.
+
+# Species that use the "standard" body/head shape.
+# Excluded species: Dramatically different body/head size and shape.
+# Use for: Markings that fit reasonably well on the humanoid sprite base.
+# Avoid using for: Markings that look weird on snouted species. (Sides/back/top of head are fine.)
+
+- type: marking
+  abstract: true
+  id: BaseMarkingSpeciesStandardHead
+  speciesRestriction: [ Resomi ]
+  invertSpeciesRestriction: true
+
+- type: marking
+  abstract: true
+  id: BaseMarkingSpeciesStandardBody
+  speciesRestriction: [ Resomi ]
+  invertSpeciesRestriction: true

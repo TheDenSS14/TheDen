@@ -272,11 +272,10 @@
 ## ACCESSORIES / ADDONS
 
 - type: marking
+  parent: BaseMarkingSpeciesStandardBody
   id: ChestZipper
   bodyPart: LLeg
   markingCategory: Overlay
-  speciesRestriction: [ Resomi ]
-  invertSpeciesRestriction: true
   coloring:
     default:
       type:
@@ -287,11 +286,10 @@
     state: zipper
 
 - type: marking
+  parent: BaseMarkingSpeciesStandardBody
   id: ChestWindupKeyGold
   bodyPart: LLeg
   markingCategory: Overlay
-  speciesRestriction: [ Resomi ]
-  invertSpeciesRestriction: true
   coloring:
     default:
       type:
@@ -302,11 +300,10 @@
     state: windup_gold
 
 - type: marking
+  parent: BaseMarkingSpeciesStandardBody
   id: ChestWindupKeySilver
   bodyPart: LLeg
   markingCategory: Overlay
-  speciesRestriction: [ Resomi ]
-  invertSpeciesRestriction: true
   coloring:
     default:
       type:
@@ -319,11 +316,10 @@
 # Because these follow the Animated namescheme, the animated keys are compatible with wagging.
 
 - type: marking
+  parent: BaseMarkingSpeciesStandardBody
   id: ChestWindupKeyGoldAnimated
   bodyPart: LLeg
   markingCategory: Overlay
-  speciesRestriction: [ Resomi ]
-  invertSpeciesRestriction: true
   coloring:
     default:
       type:
@@ -334,11 +330,10 @@
     state: windup_gold_animated
 
 - type: marking
+  parent: BaseMarkingSpeciesStandardBody
   id: ChestWindupKeySilverAnimated
   bodyPart: LLeg
   markingCategory: Overlay
-  speciesRestriction: [ Resomi ]
-  invertSpeciesRestriction: true
   coloring:
     default:
       type:

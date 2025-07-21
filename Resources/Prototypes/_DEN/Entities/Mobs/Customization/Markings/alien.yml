@@ -8,31 +8,28 @@
 # Species restrictions are inverted as they work pretty much fine unless they don't - erring on the side of leniency.
 
 - type: marking
+  parent: BaseMarkingSpeciesStandardHead
   id: AlienAntenna
   bodyPart: HeadSide
   markingCategory: HeadSide
-  speciesRestriction: [ Resomi ]
-  invertSpeciesRestriction: true
   sprites:
   - sprite: _DEN/Mobs/Customization/Head/alien_markings.rsi
     state: alien_antenna_double
 
 - type: marking
+  parent: BaseMarkingSpeciesStandardHead
   id: AlienAntennaSide
   bodyPart: HeadSide
   markingCategory: HeadSide
-  speciesRestriction: [ Resomi ]
-  invertSpeciesRestriction: true
   sprites:
   - sprite: _DEN/Mobs/Customization/Head/alien_markings.rsi
     state: alien_antenna_side
 
 - type: marking
+  parent: BaseMarkingSpeciesStandardHead
   id: AlienAntennaSingle
   bodyPart: HeadSide
   markingCategory: HeadSide
-  speciesRestriction: [ Resomi ]
-  invertSpeciesRestriction: true
   sprites:
   - sprite: _DEN/Mobs/Customization/Head/alien_markings.rsi
     state: alien_antenna_single
