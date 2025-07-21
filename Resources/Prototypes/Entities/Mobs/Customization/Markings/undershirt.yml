@@ -6,151 +6,71 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 - type: marking
+  parent: BaseMarkingUndershirt
   id: UndershirtDefault
-  bodyPart: Undershirt
-  markingCategory: Undershirt
-  invertSpeciesRestriction: True
-  speciesRestriction: [Plasmamen]
-  coloring:
-    default:
-      type:
-        !type:SimpleColoring
-          color: "#FFFFFF"
   sprites:
   - sprite: Mobs/Customization/undershirt.rsi
     state: undershirt
 
 - type: marking
+  parent: BaseMarkingUndershirt
   id: UndershirtRolled
-  bodyPart: Undershirt
-  markingCategory: Undershirt
-  invertSpeciesRestriction: True
-  speciesRestriction: [Plasmamen]
-  coloring:
-    default:
-      type:
-        !type:SimpleColoring
-          color: "#FFFFFF"
   sprites:
   - sprite: Mobs/Customization/undershirt.rsi
     state: rolled_undershirt
 
 - type: marking
+  parent: BaseMarkingUndershirt
   id: UndershirtSleeveless
-  bodyPart: Undershirt
-  markingCategory: Undershirt
-  invertSpeciesRestriction: True
-  speciesRestriction: [Plasmamen]
-  coloring:
-    default:
-      type:
-        !type:SimpleColoring
-          color: "#FFFFFF"
   sprites:
   - sprite: Mobs/Customization/undershirt.rsi
     state: sleeveless
 
 - type: marking
+  parent: BaseMarkingUndershirt
   id: UndershirtRolledSleeveless
-  bodyPart: Undershirt
-  markingCategory: Undershirt
-  invertSpeciesRestriction: True
-  speciesRestriction: [Plasmamen]
-  coloring:
-    default:
-      type:
-        !type:SimpleColoring
-          color: "#FFFFFF"
   sprites:
   - sprite: Mobs/Customization/undershirt.rsi
     state: rolled_undershirt_sleeveless
 
 - type: marking
+  parent: BaseMarkingUndershirt
   id: UndershirtGrossSleeveless
-  bodyPart: Undershirt
-  markingCategory: Undershirt
-  invertSpeciesRestriction: True
-  speciesRestriction: [Plasmamen]
-  coloring:
-    default:
-      type:
-        !type:SimpleColoring
-          color: "#FFFFFF"
   sprites:
   - sprite: Mobs/Customization/undershirt.rsi
     state: gross_sleeveless
 
 - type: marking
+  parent: BaseMarkingUndershirt
   id: UndershirtNanotrasen
-  bodyPart: Undershirt
-  markingCategory: Undershirt
-  invertSpeciesRestriction: True
-  speciesRestriction: [Plasmamen]
-  coloring:
-    default:
-      type:
-        !type:SimpleColoring
-          color: "#FFFFFF"
   sprites:
   - sprite: Mobs/Customization/undershirt.rsi
     state: nanotrasen
 
 - type: marking
+  parent: BaseMarkingUndershirt
   id: UndershirtBinder
-  bodyPart: Undershirt
-  markingCategory: Undershirt
-  invertSpeciesRestriction: True
-  speciesRestriction: [Plasmamen]
-  coloring:
-    default:
-      type:
-        !type:SimpleColoring
-          color: "#FFFFFF"
   sprites:
   - sprite: Mobs/Customization/undershirt.rsi
     state: binder
 
 - type: marking
+  parent: BaseMarkingUndershirt
   id: UndershirtBraClassic
-  bodyPart: Undershirt
-  markingCategory: Undershirt
-  invertSpeciesRestriction: True
-  speciesRestriction: [Plasmamen]
-  coloring:
-    default:
-      type:
-        !type:SimpleColoring
-          color: "#FFFFFF"
   sprites:
   - sprite: Mobs/Customization/undershirt.rsi
     state: classic
 
 - type: marking
+  parent: BaseMarkingUndershirt
   id: UndershirtBraSports
-  bodyPart: Undershirt
-  markingCategory: Undershirt
-  invertSpeciesRestriction: True
-  speciesRestriction: [Plasmamen]
-  coloring:
-    default:
-      type:
-        !type:SimpleColoring
-          color: "#FFFFFF"
   sprites:
   - sprite: Mobs/Customization/undershirt.rsi
     state: sports
 
 - type: marking
+  parent: BaseMarkingUndershirt
   id: UndershirtBraStrapless
-  bodyPart: Undershirt
-  markingCategory: Undershirt
-  invertSpeciesRestriction: True
-  speciesRestriction: [Plasmamen]
-  coloring:
-    default:
-      type:
-        !type:SimpleColoring
-          color: "#FFFFFF"
   sprites:
   - sprite: Mobs/Customization/undershirt.rsi
     state: strapless

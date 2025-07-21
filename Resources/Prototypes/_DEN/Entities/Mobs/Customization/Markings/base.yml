@@ -37,13 +37,17 @@
   abstract: true
   id: BaseMarkingSpeciesStandardHead
   invertSpeciesRestriction: true
-  speciesRestriction: [Resomi]
+  speciesRestriction:
+  - Resomi
+  - Plasmaman
 
 - type: marking
   abstract: true
   id: BaseMarkingSpeciesStandardBody
   invertSpeciesRestriction: true
-  speciesRestriction: [Resomi]
+  speciesRestriction:
+  - Resomi
+  - Plasmaman
 
 - type: marking
   abstract: true
@@ -187,6 +191,7 @@
   speciesRestriction:
     - Arachne
     - Plasmaman
+    - Resomi
 
 # Specific marking types.
 
@@ -198,6 +203,16 @@
   markingCategory: Underwear
   coloring:
     default:
-      type:
-        !type:SimpleColoring
-          color: "#FFFFFF"
+      type: !type:SimpleColoring
+        color: "#FFFFFF"
+
+- type: marking
+  abstract: true
+  parent: BaseMarkingSpeciesStandardBody
+  id: BaseMarkingUndershirt
+  bodyPart: Undershirt
+  markingCategory: Undershirt
+  coloring:
+    default:
+      type: !type:SimpleColoring
+        color: "#FFFFFF"
