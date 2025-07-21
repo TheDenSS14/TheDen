@@ -1,4 +1,5 @@
 // SPDX-FileCopyrightText: 2025 Mnemotechnican
+// SPDX-FileCopyrightText: 2025 sleepyyapril
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -18,25 +19,27 @@ namespace Content.Client._Floof.Examine;
 public sealed class CustomExamineSystem : SharedCustomExamineSystem
 {
     [Dependency] private IPlayerManager _player = default!;
-    [Dependency] private IGameTiming _timing = default!;
+    [Dependency] private readonly IEntityManager _entityManager = default!;
 
+    private SharedCustomExamineSystem _sharedCustomExamineSystem = default!;
     private CustomExamineSettingsWindow? _window = null;
 
     public override void Initialize()
     {
         base.Initialize();
         SubscribeLocalEvent<GetVerbsEvent<Verb>>(OnGetVerbs);
-        SubscribeLocalEvent<ActivateInWorldEvent>(OnActivateInWorld, after: [typeof(StrippableSystem)]);
         SubscribeLocalEvent<CustomExamineComponent, AfterAutoHandleStateEvent>(OnStateUpdate);
+
+        _sharedCustomExamineSystem = _entityManager.System<SharedCustomExamineSystem>();
     }
 
     private void OnGetVerbs(GetVerbsEvent<Verb> args)
     {
-        if (_player.LocalSession is null || !CanChangeExamine(_player.LocalSession, args.Target))
+        if (_player.LocalEntity is null || !CanChangeExamine(_player.LocalEntity.Value, args.Target))
             return;
 
         var target = args.Target;
-        args.Verbs.Add(new Verb
+        args.Verbs.Add(new()
         {
             Act = () => OpenUi(target),
             Text = Loc.GetString("custom-examine-verb"),
@@ -46,59 +49,51 @@ public sealed class CustomExamineSystem : SharedCustomExamineSystem
         });
     }
 
-    private void OnActivateInWorld(ActivateInWorldEvent ev)
-    {
-        // This one works only if user == target, because otherwise it would conflict with stripping ui
-        if (ev.User != ev.Target || _player.LocalEntity != ev.User || ev.Handled)
-            return;
-
-        if (!_timing.IsFirstTimePredicted)
-            return;
-
-        OpenUi(ev.Target);
-    }
-
     private void OnStateUpdate(Entity<CustomExamineComponent> ent, ref AfterAutoHandleStateEvent args)
     {
-        if (_window == null)
-            return;
-
-        _window.SetData(ent.Comp.PublicData, ent.Comp.SubtleData);
+        _window?.SetData(ent.Comp.PublicData, ent.Comp.SubtleData);
     }
 
     private void OpenUi(EntityUid target)
     {
-        if (_window == null)
-        {
-            _window = new();
-            _window.Public.MaxContentLength = PublicMaxLength;
-            _window.Subtle.MaxContentLength = SubtleMaxLength;
-            _window.OnClose += () => _window = null;
+        if (_player.LocalEntity != null
+            && !_sharedCustomExamineSystem.CanChangeExamine(target, _player.LocalEntity.Value))
+            return;
 
-            _window.OnReset += () =>
-            {
-                if (TryComp<CustomExamineComponent>(target, out var comp2))
-                    _window.SetData(comp2.PublicData, comp2.SubtleData, force: true);
-            };
-            _window.OnSave += (data) =>
-            {
-                var ev = new SetCustomExamineMessage
-                {
-                    PublicData = data.publicData,
-                    SubtleData = data.subtleData,
-                    Target = GetNetEntity(target)
-                };
-                RaiseNetworkEvent(ev);
-            };
-        }
+        if (_window == null)
+            EnsureWindow(target);
 
         // This will create a local component if it didn't exist before, but after sending the data to server it will become shared.
         var comp = EnsureComp<CustomExamineComponent>(target);
-        _window.SetData(comp.PublicData, comp.SubtleData);
+        _window?.SetData(comp.PublicData, comp.SubtleData);
 
-        if (_window.IsOpen)
+        if (_window!.IsOpen)
             _window.Close();
         else
             _window.OpenCenteredAt(new(0.5f, 0.75f)); // mid-top-center
+    }
+
+    private void EnsureWindow(EntityUid target)
+    {
+        _window = new();
+        _window.Public.MaxContentLength = PublicMaxLength;
+        _window.Subtle.MaxContentLength = SubtleMaxLength;
+        _window.OnClose += () => _window = null;
+
+        _window.OnReset += () =>
+        {
+            if (TryComp<CustomExamineComponent>(target, out var comp2))
+                _window.SetData(comp2.PublicData, comp2.SubtleData, force: true);
+        };
+        _window.OnSave += (data) =>
+        {
+            var ev = new SetCustomExamineMessage
+            {
+                PublicData = data.publicData,
+                SubtleData = data.subtleData,
+                Target = GetNetEntity(target)
+            };
+            RaiseNetworkEvent(ev);
+        };
     }
 }
