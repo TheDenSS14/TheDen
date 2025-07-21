@@ -36,14 +36,14 @@
 - type: marking
   abstract: true
   id: BaseMarkingSpeciesStandardHead
-  speciesRestriction: [Resomi]
   invertSpeciesRestriction: true
+  speciesRestriction: [Resomi]
 
 - type: marking
   abstract: true
   id: BaseMarkingSpeciesStandardBody
-  speciesRestriction: [Resomi]
   invertSpeciesRestriction: true
+  speciesRestriction: [Resomi]
 
 - type: marking
   abstract: true
@@ -80,6 +80,7 @@
 - type: marking
   abstract: true
   id: BaseMarkingSpeciesStandardEyes
+  invertSpeciesRestriction: true
   speciesRestriction:
     - Moth
     - Chitinid
@@ -90,7 +91,6 @@
     - Resomi
     - IPC
     - Vox
-  invertSpeciesRestriction: true
 
 # Species that use the human head and body sprites specifically.
 # Included species: Humans, demihumans, species that use human sprites.
