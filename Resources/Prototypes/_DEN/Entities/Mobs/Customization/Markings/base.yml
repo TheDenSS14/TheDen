@@ -102,3 +102,43 @@
     - Kitsune
     - Oni
     - SlimePerson # Close enough
+
+# Face shapes.
+
+# Included species: Species with standard-ish heads and no/short snout.
+# Short snout protrudes one pixel from the head.
+- type: marking
+  abstract: true
+  id: BaseMarkingSpeciesShortFace
+  speciesRestriction:
+    # Human head
+    - Arachne
+    - Canid
+    - Felinid
+    - Harpy
+    - Human
+    - Kitsune
+    - Oni
+    - SlimePerson
+    # Short snout
+    - Ovinia
+    - Rodentia
+    - Tajaran
+
+# Included species: Species whose snouts extend 1 pixel from the head.
+- type: marking
+  abstract: true
+  id: BaseMarkingSpeciesShortSnout
+  speciesRestriction:
+    - Ovinia
+    - Rodentia
+    - Tajaran
+
+# Included species: Species whose snouts extend 3-4 pixels from the head.
+- type: marking
+  abstract: true
+  id: BaseMarkingSpeciesLongSnout
+  speciesRestriction:
+    - Feroxi
+    - Reptilian
+    - Vulpkanin

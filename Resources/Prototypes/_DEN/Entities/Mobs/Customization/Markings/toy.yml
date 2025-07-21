@@ -15,7 +15,6 @@
   id: OverlayPlushSeamsHuman
   bodyPart: LLeg
   markingCategory: Overlay
-  speciesRestriction:
   coloring:
     default:
       type:
@@ -40,10 +39,10 @@
     state: head_human
 
 - type: marking
+  parent: BaseMarkingSpeciesShortSnout
   id: OverlayPlushSeamsHeadSmallSnout
   bodyPart: Head
   markingCategory: Head
-  speciesRestriction: [ Rodentia, Tajaran, Ovinia ]
   coloring:
     default:
       type:
@@ -54,10 +53,10 @@
     state: head_shortsnout
 
 - type: marking
+  parent: BaseMarkingSpeciesLongSnout
   id: OverlayPlushSeamsHeadLongSnout
   bodyPart: HeadTop
   markingCategory: Head
-  speciesRestriction: [ Vulpkanin, Feroxi, Reptilian ]
   coloring:
     default:
       type:
