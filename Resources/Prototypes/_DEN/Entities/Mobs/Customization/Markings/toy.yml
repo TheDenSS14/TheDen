@@ -6,258 +6,191 @@
 
 # TODO: Refactor the marking system to allow grouping marking layer colors, applying layers to different body parts in the same marking, better layer sorting, etc. and then fix these prototypes to account for that.
 
+- type: marking
+  abstract: true
+  id: BaseMarkingSeams
+  markingCategory: Overlay
+  coloring:
+    default:
+      type:
+        !type:TattooColoring
+      fallbackColor: "#666666"
+
+- type: marking
+  abstract: true
+  parent: BaseMarkingSeams
+  id: BaseMarkingSeamsHead
+  markingCategory: Head
+
 # OVERLAYS
 
 ## PLUSH SEAMS
 
 - type: marking
-  parent: BaseMarkingSpeciesStandardFeet
+  parent:
+  - BaseMarkingSpeciesStandardFeet
+  - BaseMarkingSeams
   id: OverlayPlushSeamsHuman
   bodyPart: LLeg
-  markingCategory: Overlay
-  coloring:
-    default:
-      type:
-        !type:TattooColoring
-      fallbackColor: "#666666"
   sprites:
   - sprite: _DEN/Mobs/Customization/Body/Toy/seams.rsi
     state: human
 
 - type: marking
-  parent: BaseMarkingSpeciesHumanHead
+  parent:
+  - BaseMarkingSpeciesHumanHead
+  - BaseMarkingSeamsHead
   id: OverlayPlushSeamsHeadHuman
   bodyPart: Head
-  markingCategory: Head
-  coloring:
-    default:
-      type:
-        !type:TattooColoring
-      fallbackColor: "#666666"
   sprites:
   - sprite: _DEN/Mobs/Customization/Body/Toy/seams.rsi
     state: head_human
 
 - type: marking
-  parent: BaseMarkingSpeciesShortSnout
+  parent:
+  - BaseMarkingSpeciesShortSnout
+  - BaseMarkingSeamsHead
   id: OverlayPlushSeamsHeadSmallSnout
   bodyPart: Head
-  markingCategory: Head
-  coloring:
-    default:
-      type:
-        !type:TattooColoring
-      fallbackColor: "#666666"
   sprites:
   - sprite: _DEN/Mobs/Customization/Body/Toy/seams.rsi
     state: head_shortsnout
 
 - type: marking
-  parent: BaseMarkingSpeciesLongSnout
+  parent:
+  - BaseMarkingSpeciesLongSnout
+  - BaseMarkingSeamsHead
   id: OverlayPlushSeamsHeadLongSnout
   bodyPart: HeadTop
-  markingCategory: Head
-  coloring:
-    default:
-      type:
-        !type:TattooColoring
-      fallbackColor: "#666666"
   sprites:
   - sprite: _DEN/Mobs/Customization/Body/Toy/seams.rsi
     state: head_longsnout # TODO: Individual markings for these species
 
 - type: marking
-  parent: BaseMarkingSpeciesStandardFeet
+  parent:
+  - BaseMarkingSpeciesStandardFeet
+  - BaseMarkingSeams
   id: OverlayPlushSeamsHandsFeet
   bodyPart: RHand
-  markingCategory: Overlay
-  coloring:
-    default:
-      type:
-        !type:TattooColoring
-      fallbackColor: "#666666"
   sprites:
   - sprite: _DEN/Mobs/Customization/Body/Toy/seams.rsi
     state: handsfeet
 
 - type: marking
-  parent: BaseMarkingSpeciesStandardFeet
+  parent:
+  - BaseMarkingSpeciesStandardFeet
+  - BaseMarkingSeams
   id: OverlayPlushSeamsFeet
   bodyPart: RFoot
-  markingCategory: Overlay
-  coloring:
-    default:
-      type:
-        !type:TattooColoring
-      fallbackColor: "#666666"
   sprites:
   - sprite: _DEN/Mobs/Customization/Body/Toy/seams.rsi
     state: feet
 
 - type: marking
-  parent: BaseMarkingSpeciesStandardHands
+  parent:
+  - BaseMarkingSpeciesStandardHands
+  - BaseMarkingSeams
   id: OverlayPlushSeamsHands
   bodyPart: RHand
-  markingCategory: Overlay
-  coloring:
-    default:
-      type:
-        !type:TattooColoring
-      fallbackColor: "#666666"
   sprites:
   - sprite: _DEN/Mobs/Customization/Body/Toy/seams.rsi
     state: hands
 
 - type: marking
+  parent: BaseMarkingSeams
   id: OverlayPlushSeamsOvinia
   bodyPart: LLeg
-  markingCategory: Overlay
   speciesRestriction: [ Ovinia ]
-  coloring:
-    default:
-      type:
-        !type:TattooColoring
-      fallbackColor: "#666666"
   sprites:
   - sprite: _DEN/Mobs/Customization/Body/Toy/seams.rsi
     state: ovinia
 
 - type: marking
+  parent: BaseMarkingSeams
   id: OverlayPlushSeamsOviniaFeet
   bodyPart: RFoot
-  markingCategory: Overlay
   speciesRestriction: [ Ovinia ]
-  coloring:
-    default:
-      type:
-        !type:TattooColoring
-      fallbackColor: "#666666"
   sprites:
   - sprite: _DEN/Mobs/Customization/Body/Toy/seams.rsi
     state: ovinia_feet
 
 - type: marking
+  parent: BaseMarkingSeams
   id: OverlayPlushSeamsShadowkin
   bodyPart: LLeg
-  markingCategory: Overlay
   speciesRestriction: [ Shadowkin ]
-  coloring:
-    default:
-      type:
-        !type:TattooColoring
-      fallbackColor: "#666666"
   sprites:
   - sprite: _DEN/Mobs/Customization/Body/Toy/seams.rsi
     state: shadowkin
 
 - type: marking
+  parent: BaseMarkingSeams
   id: OverlayPlushSeamsShadowkinFeet
   bodyPart: RFoot
-  markingCategory: Overlay
   speciesRestriction: [ Shadowkin ]
-  coloring:
-    default:
-      type:
-        !type:TattooColoring
-      fallbackColor: "#666666"
   sprites:
   - sprite: _DEN/Mobs/Customization/Body/Toy/seams.rsi
     state: shadowkin_feet
 
 - type: marking
+  parent: BaseMarkingSeams
   id: OverlayPlushSeamsBuggy
   bodyPart: LLeg
-  markingCategory: Overlay
   speciesRestriction: [ Moth, Chitinid ]
-  coloring:
-    default:
-      type:
-        !type:TattooColoring
-      fallbackColor: "#666666"
   sprites:
   - sprite: _DEN/Mobs/Customization/Body/Toy/seams.rsi
     state: buggy
 
 - type: marking
+  parent: BaseMarkingSeams
   id: OverlayPlushSeamsBuggyFeet
   bodyPart: RFoot
-  markingCategory: Overlay
   speciesRestriction: [ Moth, Chitinid ]
-  coloring:
-    default:
-      type:
-        !type:TattooColoring
-      fallbackColor: "#666666"
   sprites:
   - sprite: _DEN/Mobs/Customization/Body/Toy/seams.rsi
     state: buggy_feet
 
 - type: marking
+  parent: BaseMarkingSeams
   id: OverlayPlushSeamsArachne
   bodyPart: LArm
-  markingCategory: Overlay
   speciesRestriction: [ Arachne ]
-  coloring:
-    default:
-      type:
-        !type:TattooColoring
-      fallbackColor: "#666666"
   sprites:
   - sprite: _DEN/Mobs/Customization/Body/Toy/seams.rsi
     state: arachne
 
 - type: marking
+  parent: BaseMarkingSeams
   id: OverlayPlushSeamsHarpy
   bodyPart: LLeg
-  markingCategory: Overlay
   speciesRestriction: [ Harpy ]
-  coloring:
-    default:
-      type:
-        !type:TattooColoring
-      fallbackColor: "#666666"
   sprites:
   - sprite: _DEN/Mobs/Customization/Body/Toy/seams.rsi
     state: harpy
 
 - type: marking
+  parent: BaseMarkingSeams
   id: OverlayPlushSeamsHarpyFeet
   bodyPart: RFoot
-  markingCategory: Overlay
   speciesRestriction: [ Harpy ]
-  coloring:
-    default:
-      type:
-        !type:TattooColoring
-      fallbackColor: "#666666"
   sprites:
   - sprite: _DEN/Mobs/Customization/Body/Toy/seams.rsi
     state: harpy_feet
 
 - type: marking
+  parent: BaseMarkingSeams
   id: OverlayPlushSeamsVox
   bodyPart: LLeg
-  markingCategory: Overlay
   speciesRestriction: [ Vox ]
-  coloring:
-    default:
-      type:
-        !type:TattooColoring
-      fallbackColor: "#666666"
   sprites:
   - sprite: _DEN/Mobs/Customization/Body/Toy/seams.rsi
     state: vox
 
 - type: marking
+  parent: BaseMarkingSeams
   id: OverlayPlushSeamsVoxFeet
   bodyPart: RFoot
-  markingCategory: Overlay
   speciesRestriction: [ Vox ]
-  coloring:
-    default:
-      type:
-        !type:TattooColoring
-      fallbackColor: "#666666"
   sprites:
   - sprite: _DEN/Mobs/Customization/Body/Toy/seams.rsi
     state: vox_feet

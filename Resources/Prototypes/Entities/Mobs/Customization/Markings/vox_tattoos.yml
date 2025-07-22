@@ -4,57 +4,41 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 - type: marking
+  parent: BaseMarkingTattoo # DEN - Marking Inheritance
   id: TattooVoxHeartLeftArm
   bodyPart: LArm
   markingCategory: LeftArm
   speciesRestriction: [Vox]
-  coloring:
-    default:
-      type:
-        !type:TattooColoring
-      fallbackColor: "#666666"
   sprites:
   - sprite: Mobs/Customization/vox_tattoos.rsi
     state: heart_l_arm
 
 - type: marking
+  parent: BaseMarkingTattoo # DEN - Marking Inheritance
   id: TattooVoxHeartRightArm
   bodyPart: RArm
   markingCategory: RightArm
   speciesRestriction: [Vox]
-  coloring:
-    default:
-      type:
-        !type:TattooColoring
-      fallbackColor: "#666666"
   sprites:
   - sprite: Mobs/Customization/vox_tattoos.rsi
     state: heart_r_arm
 
 - type: marking
+  parent: BaseMarkingTattoo # DEN - Marking Inheritance
   id: TattooVoxHiveChest
   bodyPart: Chest
   markingCategory: Chest
   speciesRestriction: [Vox]
-  coloring:
-    default:
-      type:
-        !type:TattooColoring
-      fallbackColor: "#666666"
   sprites:
   - sprite: Mobs/Customization/vox_tattoos.rsi
     state: hive_s
 
 - type: marking
+  parent: BaseMarkingTattoo # DEN - Marking Inheritance
   id: TattooVoxNightlingChest
   bodyPart: Chest
   markingCategory: Chest
   speciesRestriction: [Vox]
-  coloring:
-    default:
-      type:
-        !type:TattooColoring
-      fallbackColor: "#666666"
   sprites:
   - sprite: Mobs/Customization/vox_tattoos.rsi
     state: nightling_s

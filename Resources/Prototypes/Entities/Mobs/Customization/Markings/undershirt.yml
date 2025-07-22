@@ -6,70 +6,70 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 - type: marking
-  parent: BaseMarkingUndershirt
+  parent: BaseMarkingUndershirt # DEN - Marking Inheritance
   id: UndershirtDefault
   sprites:
   - sprite: Mobs/Customization/undershirt.rsi
     state: undershirt
 
 - type: marking
-  parent: BaseMarkingUndershirt
+  parent: BaseMarkingUndershirt # DEN - Marking Inheritance
   id: UndershirtRolled
   sprites:
   - sprite: Mobs/Customization/undershirt.rsi
     state: rolled_undershirt
 
 - type: marking
-  parent: BaseMarkingUndershirt
+  parent: BaseMarkingUndershirt # DEN - Marking Inheritance
   id: UndershirtSleeveless
   sprites:
   - sprite: Mobs/Customization/undershirt.rsi
     state: sleeveless
 
 - type: marking
-  parent: BaseMarkingUndershirt
+  parent: BaseMarkingUndershirt # DEN - Marking Inheritance
   id: UndershirtRolledSleeveless
   sprites:
   - sprite: Mobs/Customization/undershirt.rsi
     state: rolled_undershirt_sleeveless
 
 - type: marking
-  parent: BaseMarkingUndershirt
+  parent: BaseMarkingUndershirt # DEN - Marking Inheritance
   id: UndershirtGrossSleeveless
   sprites:
   - sprite: Mobs/Customization/undershirt.rsi
     state: gross_sleeveless
 
 - type: marking
-  parent: BaseMarkingUndershirt
+  parent: BaseMarkingUndershirt # DEN - Marking Inheritance
   id: UndershirtNanotrasen
   sprites:
   - sprite: Mobs/Customization/undershirt.rsi
     state: nanotrasen
 
 - type: marking
-  parent: BaseMarkingUndershirt
+  parent: BaseMarkingUndershirt # DEN - Marking Inheritance
   id: UndershirtBinder
   sprites:
   - sprite: Mobs/Customization/undershirt.rsi
     state: binder
 
 - type: marking
-  parent: BaseMarkingUndershirt
+  parent: BaseMarkingUndershirt # DEN - Marking Inheritance
   id: UndershirtBraClassic
   sprites:
   - sprite: Mobs/Customization/undershirt.rsi
     state: classic
 
 - type: marking
-  parent: BaseMarkingUndershirt
+  parent: BaseMarkingUndershirt # DEN - Marking Inheritance
   id: UndershirtBraSports
   sprites:
   - sprite: Mobs/Customization/undershirt.rsi
     state: sports
 
 - type: marking
-  parent: BaseMarkingUndershirt
+  parent: BaseMarkingUndershirt # DEN - Marking Inheritance
   id: UndershirtBraStrapless
   sprites:
   - sprite: Mobs/Customization/undershirt.rsi

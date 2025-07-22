@@ -6,35 +6,35 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 - type: marking
-  parent: BaseMarkingUnderpants
+  parent: BaseMarkingUnderpants # DEN - Marking Inheritance
   id: UnderwearDefault
   sprites:
   - sprite: Mobs/Customization/underwear.rsi
     state: boxers
 
 - type: marking
-  parent: BaseMarkingUnderpants
+  parent: BaseMarkingUnderpants # DEN - Marking Inheritance
   id: UnderwearBriefs
   sprites:
   - sprite: Mobs/Customization/underwear.rsi
     state: briefs
 
 - type: marking
-  parent: BaseMarkingUnderpants
+  parent: BaseMarkingUnderpants # DEN - Marking Inheritance
   id: UnderwearLowriders
   sprites:
   - sprite: Mobs/Customization/underwear.rsi
     state: lowriders
 
 - type: marking
-  parent: BaseMarkingUnderpants
+  parent: BaseMarkingUnderpants # DEN - Marking Inheritance
   id: UnderwearSatin
   sprites:
   - sprite: Mobs/Customization/underwear.rsi
     state: satin
 
 - type: marking
-  parent: BaseMarkingUnderpants
+  parent: BaseMarkingUnderpants # DEN - Marking Inheritance
   id: UnderwearTanga
   sprites:
   - sprite: Mobs/Customization/underwear.rsi

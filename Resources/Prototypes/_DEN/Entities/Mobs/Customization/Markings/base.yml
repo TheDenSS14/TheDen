@@ -40,14 +40,17 @@
   speciesRestriction:
     - Resomi
     - Plasmaman
+    - Vox
 
 - type: marking
   abstract: true
   id: BaseMarkingSpeciesStandardBody
+  bodyPart: Chest
   invertSpeciesRestriction: true
   speciesRestriction:
     - Resomi
     - Plasmaman
+    - Vox
 
 - type: marking
   abstract: true
@@ -84,17 +87,89 @@
 - type: marking
   abstract: true
   id: BaseMarkingSpeciesStandardEyes
+  bodyPart: Eyes
   invertSpeciesRestriction: true
   speciesRestriction:
     - Moth
     - Chitinid
     - Shadowkin
-    - Plasmaman
     - Arachne
     - Arachnid
     - Resomi
     - IPC
     - Vox
+
+# "Organic" species with standard heads/bodies.
+# Excluded: Same as standard. Species that lack skin.
+# Good for tattoos.
+
+- type: marking
+  abstract: true
+  id: BaseMarkingSpeciesStandardHeadOrganic
+  invertSpeciesRestriction: true
+  speciesRestriction:
+    # Non-standard
+    - Resomi
+    - Plasmaman
+    - Vox
+    # Skinless / inorganic
+    - Diona
+    - IPC
+    - SlimePerson
+
+- type: marking
+  abstract: true
+  id: BaseMarkingSpeciesStandardBodyOrganic
+  bodyPart: Chest
+  invertSpeciesRestriction: true
+  speciesRestriction:
+    # Non-standard
+    - Resomi
+    - Plasmaman
+    - Vox
+    # Skinless / inorganic
+    - Diona
+    - IPC
+    - SlimePerson
+
+- type: marking
+  abstract: true
+  id: BaseMarkingSpeciesStandardArmsOrganic
+  invertSpeciesRestriction: true
+  speciesRestriction:
+    # Non-standard
+    - Chitinid
+    - Diona
+    - Harpy
+    - Moth
+    - Plasmaman
+    - Resomi
+    - Vox
+    # Skinless / inorganic
+    - Diona
+    - IPC
+    - SlimePerson
+
+- type: marking
+  abstract: true
+  id: BaseMarkingSpeciesStandardLegsOrganic
+  invertSpeciesRestriction: true
+  speciesRestriction:
+    # Non-standard
+    - Arachne
+    - Chitinid
+    - Diona
+    - Harpy
+    - Moth
+    - Ovinia
+    - Plasmaman
+    - Resomi
+    - Shadowkin
+    - Vox
+    # Skinless / inorganic
+    - Diona
+    - IPC
+    - SlimePerson
 
 # Species that use the human head and body sprites specifically.
 # Included species: Humans, demihumans, species that use human sprites.
@@ -216,3 +291,12 @@
     default:
       type: !type:SimpleColoring
         color: "#FFFFFF"
+
+- type: marking
+  abstract: true
+  id: BaseMarkingTattoo
+  coloring:
+    default:
+      type:
+        !type:TattooColoring
+      fallbackColor: "#666666"
