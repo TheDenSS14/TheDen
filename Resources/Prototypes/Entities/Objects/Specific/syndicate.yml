@@ -120,11 +120,11 @@
 - type: entity
   parent: BaseUplinkRadio
   id: BaseUplinkRadioNukeOps
-  suffix: 250 TC, NukeOps
+  suffix: 350 TC, NukeOps
   components:
   - type: Store
     balance:
-      Telecrystal: 250 # 5x TC, +cost of a tacsuit they no longer spawn with.
+      Telecrystal: 350 # 5x TC, +cost of a tacsuit they no longer spawn with.
   - type: Tag
     tags:
     - NukeOpsUplink
@@ -132,11 +132,11 @@
 - type: entity
   parent: BaseUplinkRadio
   id: BaseUplinkRadioLoneOps
-  suffix: 350 TC, LoneOps
+  suffix: 500 TC, LoneOps
   components:
   - type: Store
     balance:
-      Telecrystal: 350 # 5x TC, +cost of a tacsuit they no longer spawn with.
+      Telecrystal: 500 # 5x TC, +cost of a tacsuit they no longer spawn with.
   - type: Tag
     tags:
     - NukeOpsUplink
