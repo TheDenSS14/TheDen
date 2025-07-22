@@ -124,7 +124,8 @@
       150: Dead # DeltaV - Was 50
   - type: SlowOnDamage
     speedModifierThresholds:
-      25: 0.5
+      75: 0.8
+      125: 0.5
   - type: Stamina
     critThreshold: 200
   - type: Bloodstream
@@ -226,7 +227,8 @@
     critThreshold: 300
   - type: SlowOnDamage
     speedModifierThresholds:
-      50: 0.7
+      125: 0.8
+      200: 0.5
   - type: Fixtures
     fixtures:
       fix1:
@@ -261,7 +263,8 @@
       160: Dead # DeltaV - Was 80
   - type: SlowOnDamage
     speedModifierThresholds:
-      40: 0.7
+      80: 0.8
+      120: 0.5
   - type: MeleeWeapon
     damage:
 # Begin DeltaV Changes
@@ -300,7 +303,9 @@
       600: Dead # DeltaV - Was 300
   - type: SlowOnDamage
     speedModifierThresholds:
-      150: 0.7
+      300: 0.9
+      400: 0.8
+      500: 0.7
   - type: MovementSpeedModifier
   - type: MeleeWeapon
     damage:
@@ -359,7 +364,8 @@
 # End DeltaV Changes
   - type: SlowOnDamage
     speedModifierThresholds:
-      50: 0.7
+      100: 0.8
+      150: 0.5
   - type: Fixtures
     fixtures:
       fix1:
@@ -443,7 +449,8 @@
       100: Dead # DeltaV - Was 50
   - type: SlowOnDamage
     speedModifierThresholds:
-      25: 0.7
+      50: 0.8
+      75: 0.5
   - type: HTN
     rootTask:
       task: SimpleRangedHostileCompound
