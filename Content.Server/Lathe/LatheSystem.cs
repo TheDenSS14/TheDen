@@ -67,6 +67,7 @@ using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
 using Content.Server.Chat.Systems;
 using Content.Server.Radio.EntitySystems;
+using Content.Server.Station.Systems;
 using Content.Shared.Chat;
 
 namespace Content.Server.Lathe
@@ -90,6 +91,7 @@ namespace Content.Server.Lathe
         [Dependency] private readonly StackSystem _stack = default!;
         [Dependency] private readonly TransformSystem _transform = default!;
         [Dependency] private readonly RadioSystem _radio = default!;
+        [Dependency] private readonly StationSystem _station = default!;
 
         /// <summary>
         /// Per-tick cache
@@ -406,10 +408,16 @@ namespace Content.Server.Lathe
             ref TechnologyDatabaseModifiedEvent args
         )
         {
-            if (args.UnlockedRecipes.Count == 0)
+            if (!Exists(ent) || !Exists(args.Server))
                 return;
 
-            if (!TryGetAvailableRecipes(ent.Owner, out var potentialRecipes))
+            var latheStation = _station.GetOwningStation(ent);
+            var serverStation = _station.GetOwningStation(args.Server);
+
+            if (args.UnlockedRecipes.Count == 0
+                || !TryGetAvailableRecipes(ent.Owner, out var potentialRecipes)
+                || latheStation == null // no grid
+                || serverStation != latheStation) // server is on a separate grid than lathe
                 return;
 
             var recipeNames = new List<string>();
@@ -417,13 +425,9 @@ namespace Content.Server.Lathe
 
             foreach (var recipeId in args.UnlockedRecipes)
             {
-                if (string.IsNullOrWhiteSpace(recipeId))
-                    continue;
-
-                if (!_proto.TryIndex(recipeId, out var recipe))
-                    continue;
-
-                if (potentialRecipes.All(targetRecipe => targetRecipe.Id != recipeId))
+                if (string.IsNullOrWhiteSpace(recipeId)
+                    || !_proto.TryIndex(recipeId, out var recipe)
+                    || potentialRecipes.All(targetRecipe => targetRecipe.Id != recipeId))
                     continue;
 
                 var itemName = GetRecipeName(recipe);

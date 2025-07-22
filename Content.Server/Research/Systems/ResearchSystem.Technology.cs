@@ -161,10 +161,10 @@ public sealed partial class ResearchSystem
             component.UnlockedRecipes.Add(unlock);
             addedRecipes.Add(unlock);
         }
-        
+
         Dirty(uid, component);
 
-        var ev = new TechnologyDatabaseModifiedEvent(technology.ID, addedRecipes); // Goobstation - Lathe message on recipes update
+        var ev = new TechnologyDatabaseModifiedEvent(uid, technology.ID, addedRecipes); // Goobstation - Lathe message on recipes update
         RaiseLocalEvent(uid, ref ev);
     }
 
