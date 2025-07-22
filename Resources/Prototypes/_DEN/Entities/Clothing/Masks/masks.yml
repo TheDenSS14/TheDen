@@ -16,6 +16,8 @@
     sprite: _DEN/Clothing/Mask/securitycombatgasmask.rsi
   - type: Clothing
     sprite: _DEN/Clothing/Mask/securitycombatgasmask.rsi
+  - type: IngestionBlocker # Goobstation
+    blockSmokeIngestion: true
 
 - type: entity
   parent: ClothingMaskGasExplorer

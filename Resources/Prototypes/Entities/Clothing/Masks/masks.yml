@@ -169,6 +169,8 @@
     sprite: Clothing/Mask/gascaptaincombat.rsi
   - type: Clothing
     sprite: Clothing/Mask/gascaptaincombat.rsi
+  - type: IngestionBlocker # Goobstation
+    blockSmokeIngestion: true
 
 - type: entity
   parent: ClothingMaskGasAtmos
@@ -446,6 +448,8 @@
     - Hair
     - Snout
     hideOnToggle: true
+  - type: IngestionBlocker # Goobstation
+    blockSmokeIngestion: true
 
 - type: entity
   parent: ClothingMaskGasExplorer
