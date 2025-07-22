@@ -4,125 +4,92 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 - type: marking
-  id: AvianSnoutBeakFishing
+  abstract: true
+  parent: BaseMarkingSpeciesHumanHead
+  id: BaseMarkingAvianBeak
   bodyPart: Snout
   markingCategory: Snout
   coloring:
     default:
-      type: !type:TattooColoring
-  speciesRestriction: [Harpy, Human, Dwarf, Felinid, Oni, SlimePerson, Arachne, Lamia, Canid]
+      type:
+        !type:TattooColoring
+      fallbackColor: "#666666"
+
+- type: marking
+  parent: BaseMarkingAvianBeak
+  id: AvianSnoutBeakFishing
   sprites:
   - sprite: _DEN/Mobs/Customization/Head/beak.rsi
     state: fishing
 
 - type: marking
+  parent: BaseMarkingAvianBeak
   id: AvianSnoutBeakGeneralist
-  bodyPart: Snout
-  markingCategory: Snout
-  coloring:
-    default:
-      type: !type:TattooColoring
-  speciesRestriction: [Harpy, Human, Dwarf, Felinid, Oni, SlimePerson, Arachne, Lamia, Canid]
   sprites:
   - sprite: _DEN/Mobs/Customization/Head/beak.rsi
     state: generalist
 
 - type: marking
+  parent: BaseMarkingAvianBeak
   id: AvianSnoutBeakGrainEating
-  bodyPart: Snout
-  markingCategory: Snout
-  coloring:
-    default:
-      type: !type:TattooColoring
-  speciesRestriction: [Harpy, Human, Dwarf, Felinid, Oni, SlimePerson, Arachne, Lamia, Canid]
   sprites:
   - sprite: _DEN/Mobs/Customization/Head/beak.rsi
     state: graineating
 
 - type: marking
+  parent: BaseMarkingAvianBeak
   id: AvianSnoutBeakGull
-  bodyPart: Snout
-  markingCategory: Snout
-  coloring:
-    default:
-      type: !type:TattooColoring
-  speciesRestriction: [Harpy, Human, Dwarf, Felinid, Oni, SlimePerson, Arachne, Lamia, Canid]
   sprites:
   - sprite: _DEN/Mobs/Customization/Head/beak.rsi
     state: gull
 
 - type: marking
+  parent: BaseMarkingAvianBeak
   id: AvianSnoutBeakInsectCatching
-  bodyPart: Snout
-  markingCategory: Snout
-  coloring:
-    default:
-      type: !type:TattooColoring
-  speciesRestriction: [Harpy, Human, Dwarf, Felinid, Oni, SlimePerson, Arachne, Lamia, Canid]
   sprites:
   - sprite: _DEN/Mobs/Customization/Head/beak.rsi
     state: insectcatching
 
 - type: marking
+  parent: BaseMarkingAvianBeak
   id: AvianSnoutBeakNectarFeeding
-  bodyPart: Snout
-  markingCategory: Snout
-  coloring:
-    default:
-      type: !type:TattooColoring
-  speciesRestriction: [Harpy, Human, Dwarf, Felinid, Oni, SlimePerson, Arachne, Lamia, Canid]
   sprites:
   - sprite: _DEN/Mobs/Customization/Head/beak.rsi
     state: nectarfeeding
 
 - type: marking
+  parent: BaseMarkingAvianBeak
   id: AvianSnoutBeakParrot
-  bodyPart: Snout
-  markingCategory: Snout
-  coloring:
-    default:
-      type: !type:TattooColoring
-  speciesRestriction: [Harpy, Human, Dwarf, Felinid, Oni, SlimePerson, Arachne, Lamia, Canid]
   sprites:
   - sprite: _DEN/Mobs/Customization/Head/beak.rsi
     state: parrot
 
 - type: marking
+  parent: BaseMarkingAvianBeak
   id: AvianSnoutBeakPursuit
-  bodyPart: Snout
-  markingCategory: Snout
-  coloring:
-    default:
-      type: !type:TattooColoring
-  speciesRestriction: [Harpy, Human, Dwarf, Felinid, Oni, SlimePerson, Arachne, Lamia, Canid]
   sprites:
   - sprite: _DEN/Mobs/Customization/Head/beak.rsi
     state: pursuit
 
 - type: marking
+  parent: BaseMarkingAvianBeak
   id: AvianSnoutBeakRaptorial
-  bodyPart: Snout
-  markingCategory: Snout
-  coloring:
-    default:
-      type: !type:TattooColoring
-  speciesRestriction: [Harpy, Human, Dwarf, Felinid, Oni, SlimePerson, Arachne, Lamia, Canid]
   sprites:
   - sprite: _DEN/Mobs/Customization/Head/beak.rsi
     state: raptorial
 
 - type: marking
+  parent: BaseMarkingAvianBeak
   id: AvianSnoutBeakScavenging
-  bodyPart: Snout
-  markingCategory: Snout
   coloring:
     default:
-      type: !type:TattooColoring
+      type:
+        !type:TattooColoring
+      fallbackColor: "#666666"
     layers:
       scavenging_caruncle:
         type: !type:SimpleColoring
           color: "#cf7b7b"
-  speciesRestriction: [Harpy, Human, Dwarf, Felinid, Oni, SlimePerson, Arachne, Lamia, Canid]
   sprites:
   - sprite: _DEN/Mobs/Customization/Head/beak.rsi
     state: scavenging_beak
@@ -131,12 +98,7 @@
 
 - type: marking
   id: AvianSnoutBeakSniffer
-  bodyPart: Snout
-  markingCategory: Snout
-  coloring:
-    default:
-      type: !type:TattooColoring
-  speciesRestriction: [Harpy, Human, Dwarf, Felinid, Oni, SlimePerson, Arachne, Lamia, Canid]
+  parent: BaseMarkingAvianBeak
   sprites:
   - sprite: _DEN/Mobs/Customization/Head/beak.rsi
     state: sniffer
