@@ -6,254 +6,166 @@
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
+# Base
+# Included species: Anything that can have nipples in the normal position. really.
+# Not included: Species that lack nipple sexual dimorphism. Put those in the Vulp piercing's species list.
+# (For context, on most species, male and female sprites have different nipple placements)
 - type: marking
-  id: PiercingCross
+  abstract: true
+  id: BaseMarkingNipplePiercing
   bodyPart: Chest
   markingCategory: Nipples
-  speciesRestriction: [Felinid, Oni, Arachne, SlimePerson, Rodentia, Human, Feroxi, Canid, Kitsune]
+  sexRestriction: [Female]
+  invertSpeciesRestriction: true
+  speciesRestriction:
+    - Resomi
+    - Plasmaman
+    - Vox
+    - Diona
+    - IPC
   coloring:
     default:
-      type:
-        !type:SimpleColoring
+      type: !type:SimpleColoring
         color: "#FFFFFF"
+
+# Note: This is marked "vulp", but it's moreso for species where the male/female sprites have same nipple placement.
+- type: marking
+  abstract: true
+  parent: BaseMarkingNipplePiercing
+  id: BaseMarkingNipplePiercingVulp
+  speciesRestriction: [Vulpkanin]
+  sexRestriction: null
+
+- type: marking
+  abstract: true
+  parent: BaseMarkingNipplePiercing
+  id: BaseMarkingNipplePiercingMale
+  sexRestriction: [Male, Unsexed]
+
+# Markings
+
+- type: marking
+  parent: BaseMarkingNipplePiercing
+  id: PiercingCross
   sprites:
   - sprite: _DEN/Mobs/Customization/Body/piercings.rsi
     state: cross
 
 - type: marking
+  parent: BaseMarkingNipplePiercingVulp
   id: PiercingCrossVulp
-  bodyPart: Chest
-  markingCategory: Nipples
-  speciesRestriction: [Vulpkanin]
-  coloring:
-    default:
-      type:
-        !type:SimpleColoring
-        color: "#FFFFFF"
   sprites:
   - sprite: _DEN/Mobs/Customization/Body/piercings.rsi
     state: crossvulp
 
 - type: marking
+  parent: BaseMarkingNipplePiercingMale
   id: PiercingCrossMale
-  bodyPart: Chest
-  markingCategory: Nipples
-  speciesRestriction: [Felinid, Oni, Arachne, SlimePerson, Rodentia, Human, Feroxi, Canid, Kitsune]
-  coloring:
-    default:
-      type:
-        !type:SimpleColoring
-        color: "#FFFFFF"
   sprites:
   - sprite: _DEN/Mobs/Customization/Body/piercings.rsi
     state: crossvulp
 
 - type: marking
+  parent: BaseMarkingNipplePiercing
   id: PiercingHori
-  bodyPart: Chest
-  markingCategory: Nipples
-  speciesRestriction: [Felinid, Oni, Arachne, SlimePerson, Rodentia, Human, Feroxi, Canid, Kitsune]
-  coloring:
-    default:
-      type:
-        !type:SimpleColoring
-        color: "#FFFFFF"
   sprites:
   - sprite: _DEN/Mobs/Customization/Body/piercings.rsi
     state: hori
 
 - type: marking
+  parent: BaseMarkingNipplePiercingVulp
   id: PiercingHoriVulp
-  bodyPart: Chest
-  markingCategory: Nipples
-  speciesRestriction: [Vulpkanin]
-  coloring:
-    default:
-      type:
-        !type:SimpleColoring
-        color: "#FFFFFF"
   sprites:
   - sprite: _DEN/Mobs/Customization/Body/piercings.rsi
     state: horivulp
 
 - type: marking
+  parent: BaseMarkingNipplePiercingMale
   id: PiercingHoriMale
-  bodyPart: Chest
-  markingCategory: Nipples
-  speciesRestriction: [Felinid, Oni, Arachne, SlimePerson, Rodentia, Human, Feroxi, Canid, Kitsune]
-  coloring:
-    default:
-      type:
-        !type:SimpleColoring
-        color: "#FFFFFF"
   sprites:
   - sprite: _DEN/Mobs/Customization/Body/piercings.rsi
     state: horivulp
 
 - type: marking
+  parent: BaseMarkingNipplePiercing
   id: PiercingKnocker
-  bodyPart: Chest
-  markingCategory: Nipples
-  speciesRestriction: [Felinid, Oni, Arachne, SlimePerson, Rodentia, Human, Feroxi, Canid, Kitsune]
-  coloring:
-    default:
-      type:
-        !type:SimpleColoring
-        color: "#FFFFFF"
   sprites:
   - sprite: _DEN/Mobs/Customization/Body/piercings.rsi
     state: knocker
 
 - type: marking
+  parent: BaseMarkingNipplePiercingVulp
   id: PiercingKnockerVulp
-  bodyPart: Chest
-  markingCategory: Nipples
-  speciesRestriction: [Vulpkanin]
-  coloring:
-    default:
-      type:
-        !type:SimpleColoring
-        color: "#FFFFFF"
   sprites:
   - sprite: _DEN/Mobs/Customization/Body/piercings.rsi
     state: knockervulp
 
 - type: marking
+  parent: BaseMarkingNipplePiercingMale
   id: PiercingKnockerMale
-  bodyPart: Chest
-  markingCategory: Nipples
-  speciesRestriction: [Felinid, Oni, Arachne, SlimePerson, Rodentia, Human, Feroxi, Canid, Kitsune]
-  coloring:
-    default:
-      type:
-        !type:SimpleColoring
-        color: "#FFFFFF"
   sprites:
   - sprite: _DEN/Mobs/Customization/Body/piercings.rsi
     state: knockervulp
 
 - type: marking
+  parent: BaseMarkingNipplePiercing
   id: PiercingPlus
-  bodyPart: Chest
-  markingCategory: Nipples
-  speciesRestriction: [Felinid, Oni, Arachne, SlimePerson, Rodentia, Human, Feroxi, Canid, Kitsune]
-  coloring:
-    default:
-      type:
-        !type:SimpleColoring
-        color: "#FFFFFF"
   sprites:
   - sprite: _DEN/Mobs/Customization/Body/piercings.rsi
     state: plus
 
 - type: marking
+  parent: BaseMarkingNipplePiercingVulp
   id: PiercingPlusVulp
-  bodyPart: Chest
-  markingCategory: Nipples
-  speciesRestriction: [Vulpkanin]
-  coloring:
-    default:
-      type:
-        !type:SimpleColoring
-        color: "#FFFFFF"
   sprites:
   - sprite: _DEN/Mobs/Customization/Body/piercings.rsi
     state: plusvulp
 
 - type: marking
+  parent: BaseMarkingNipplePiercingMale
   id: PiercingPlusMale
-  bodyPart: Chest
-  markingCategory: Nipples
-  speciesRestriction: [Felinid, Oni, Arachne, SlimePerson, Rodentia, Human, Feroxi, Canid, Kitsune]
-  coloring:
-    default:
-      type:
-        !type:SimpleColoring
-        color: "#FFFFFF"
   sprites:
   - sprite: _DEN/Mobs/Customization/Body/piercings.rsi
     state: plusvulp
 
 - type: marking
+  parent: BaseMarkingNipplePiercing
   id: PiercingVert
-  bodyPart: Chest
-  markingCategory: Nipples
-  speciesRestriction: [Felinid, Oni, Arachne, SlimePerson, Rodentia, Human, Feroxi, Canid, Kitsune]
-  coloring:
-    default:
-      type:
-        !type:SimpleColoring
-        color: "#FFFFFF"
   sprites:
   - sprite: _DEN/Mobs/Customization/Body/piercings.rsi
     state: vert
 
 - type: marking
+  parent: BaseMarkingNipplePiercingVulp
   id: PiercingVertVulp
-  bodyPart: Chest
-  markingCategory: Nipples
-  speciesRestriction: [Vulpkanin]
-  coloring:
-    default:
-      type:
-        !type:SimpleColoring
-        color: "#FFFFFF"
   sprites:
   - sprite: _DEN/Mobs/Customization/Body/piercings.rsi
     state: vertvulp
 
 - type: marking
+  parent: BaseMarkingNipplePiercingMale
   id: PiercingVertMale
-  bodyPart: Chest
-  markingCategory: Nipples
-  speciesRestriction: [Felinid, Oni, Arachne, SlimePerson, Rodentia, Human, Feroxi, Canid, Kitsune]
-  coloring:
-    default:
-      type:
-        !type:SimpleColoring
-        color: "#FFFFFF"
   sprites:
   - sprite: _DEN/Mobs/Customization/Body/piercings.rsi
     state: vertvulp
 
 - type: marking
+  parent: BaseMarkingNipplePiercing
   id: PiercingRings
-  bodyPart: Chest
-  markingCategory: Nipples
-  speciesRestriction: [Felinid, Oni, Arachne, SlimePerson, Rodentia, Human, Feroxi, Canid, Kitsune]
-  coloring:
-    default:
-      type:
-        !type:SimpleColoring
-        color: "#FFFFFF"
   sprites:
   - sprite: _DEN/Mobs/Customization/Body/piercings.rsi
     state: ring
 
 - type: marking
+  parent: BaseMarkingNipplePiercingVulp
   id: PiercingRingsVulp
-  bodyPart: Chest
-  markingCategory: Nipples
-  speciesRestriction: [Vulpkanin]
-  coloring:
-    default:
-      type:
-        !type:SimpleColoring
-        color: "#FFFFFF"
   sprites:
   - sprite: _DEN/Mobs/Customization/Body/piercings.rsi
     state: ringvulp
 
 - type: marking
+  parent: BaseMarkingNipplePiercingMale
   id: PiercingRingsMale
-  bodyPart: Chest
-  markingCategory: Nipples
-  speciesRestriction: [Felinid, Oni, Arachne, SlimePerson, Rodentia, Human, Feroxi, Canid, Kitsune]
-  coloring:
-    default:
-      type:
-        !type:SimpleColoring
-        color: "#FFFFFF"
   sprites:
   - sprite: _DEN/Mobs/Customization/Body/piercings.rsi
     state: ringvulp
