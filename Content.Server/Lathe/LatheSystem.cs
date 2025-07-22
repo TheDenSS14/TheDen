@@ -186,9 +186,12 @@ namespace Content.Server.Lathe
         [PublicAPI]
         public bool TryGetAvailableRecipes(EntityUid uid, [NotNullWhen(true)] out List<ProtoId<LatheRecipePrototype>>? recipes, [NotNullWhen(true)] LatheComponent? component = null, bool getUnavailable = false)
         {
-            recipes = null;
             if (!Resolve(uid, ref component))
+            {
+                recipes = null;
                 return false;
+            }
+
             recipes = GetAvailableRecipes(uid, component, getUnavailable);
             return true;
         }
@@ -403,7 +406,7 @@ namespace Content.Server.Lathe
             ref TechnologyDatabaseModifiedEvent args
         )
         {
-            if (args.UnlockedRecipes == null || args.UnlockedRecipes.Count == 0)
+            if (args.UnlockedRecipes.Count == 0)
                 return;
 
             if (!TryGetAvailableRecipes(ent.Owner, out var potentialRecipes))
@@ -417,10 +420,10 @@ namespace Content.Server.Lathe
                 if (string.IsNullOrWhiteSpace(recipeId))
                     continue;
 
-                if (potentialRecipes.Contains(new(recipeId)))
+                if (!_proto.TryIndex(recipeId, out var recipe))
                     continue;
 
-                if (!_proto.TryIndex(recipeId, out var recipe))
+                if (potentialRecipes.All(targetRecipe => targetRecipe.Id != recipeId))
                     continue;
 
                 var itemName = GetRecipeName(recipe);
