@@ -7,92 +7,97 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 - type: marking
+  abstract: true
+  id: BaseMarkingKemonoLimb
+  speciesRestriction: [Human, Canid, Felinid, Kitsune]
+
+- type: marking
+  parent: BaseMarkingKemonoLimb
   id: FurredLeftArm
   bodyPart: LArm
   markingCategory: LeftArm
-  speciesRestriction: [Human, Canid, Kitsune]
   sprites:
   - sprite: _DEN/Mobs/Customization/Body/kemonomimi-limbs.rsi
     state: furred_l_arm
 
 - type: marking
+  parent: BaseMarkingKemonoLimb
   id: FurredRightArm
   bodyPart: RArm
   markingCategory: RightArm
-  speciesRestriction: [Human, Canid, Kitsune]
   sprites:
   - sprite: _DEN/Mobs/Customization/Body/kemonomimi-limbs.rsi
     state: furred_r_arm
 
 - type: marking
+  parent: BaseMarkingKemonoLimb
   id: FurredLeftLeg
   bodyPart: LLeg
   markingCategory: LeftLeg
-  speciesRestriction: [Human, Canid, Kitsune]
   sprites:
   - sprite: _DEN/Mobs/Customization/Body/kemonomimi-limbs.rsi
     state: furred_l_leg
 
 - type: marking
+  parent: BaseMarkingKemonoLimb
   id: FurredRightLeg
   bodyPart: RLeg
   markingCategory: RightLeg
-  speciesRestriction: [Human, Canid, Kitsune]
   sprites:
   - sprite: _DEN/Mobs/Customization/Body/kemonomimi-limbs.rsi
     state: furred_r_leg
 
 - type: marking
+  parent: BaseMarkingKemonoLimb
   id: FurredLeftFoot
   bodyPart: LFoot
   markingCategory: LeftFoot
-  speciesRestriction: [Human, Canid, Kitsune]
   sprites:
   - sprite: _DEN/Mobs/Customization/Body/kemonomimi-limbs.rsi
     state: furred_l_foot
 
 - type: marking
+  parent: BaseMarkingKemonoLimb
   id: FurredRightFoot
   bodyPart: RFoot
   markingCategory: RightFoot
-  speciesRestriction: [Human, Canid, Kitsune]
   sprites:
   - sprite: _DEN/Mobs/Customization/Body/kemonomimi-limbs.rsi
     state: furred_r_foot
 
 - type: marking
+  parent: BaseMarkingKemonoLimb
   id: FurredLeftHand
   bodyPart: LHand
   markingCategory: LeftHand
-  speciesRestriction: [Human, Canid, Kitsune]
   sprites:
   - sprite: _DEN/Mobs/Customization/Body/kemonomimi-limbs.rsi
     state: furred_l_hand
 
 - type: marking
+  parent: BaseMarkingKemonoLimb
   id: FurredRightHand
   bodyPart: RHand
   markingCategory: RightHand
-  speciesRestriction: [Human, Canid, Kitsune]
   sprites:
   - sprite: _DEN/Mobs/Customization/Body/kemonomimi-limbs.rsi
     state: furred_r_hand
 
 - type: marking
+  parent: BaseMarkingKemonoLimb
   id: FurredTorsoFemale
   bodyPart: Chest
   markingCategory: Chest
-  speciesRestriction: [Human, Canid, Kitsune]
   sexRestriction: [Female]
   sprites:
   - sprite: _DEN/Mobs/Customization/Body/kemonomimi-limbs.rsi
     state: furred_torso_f
 
 - type: marking
+  parent: BaseMarkingKemonoLimb
   id: FurredTorsoMale
   bodyPart: Chest
   markingCategory: Chest
-  speciesRestriction: [Human, Canid, Kitsune]
   sexRestriction: [Male]
   sprites:
   - sprite: _DEN/Mobs/Customization/Body/kemonomimi-limbs.rsi
