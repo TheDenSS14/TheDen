@@ -1,0 +1,26 @@
+# SPDX-FileCopyrightText: 2025 MajorMoth
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  parent: ClothingNeckCollarBase
+  id: ClothingNeckCollarBomb
+  name: bomb collar
+  description: A collar with an explosive attached to it.
+  components:
+  - type: Sprite
+    sprite: Nyanotrasen/Clothing/Neck/Misc/shock.rsi
+  - type: Clothing
+    sprite: Nyanotrasen/Clothing/Neck/Misc/shock.rsi
+    equipDelay: 2
+    unequipDelay: 20
+  - type: DeviceLinkSink
+    ports:
+      - Trigger
+  - type: TriggerOnSignal
+  - type: ExplodeOnTrigger
+  - type: Explosive
+    explosionType: GibBomb
+    totalIntensity: 25
+    intensitySlope: 25
+    maxIntensity: 20

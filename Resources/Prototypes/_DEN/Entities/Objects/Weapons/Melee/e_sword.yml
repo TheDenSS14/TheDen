@@ -1,0 +1,14 @@
+# SPDX-FileCopyrightText: 2025 Vanessa Louwagie
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  name: antique energy sword
+  parent: EnergySword
+  id: EnergySwordWarden
+  description: An elegant weapon in pristine repair, this otherwise plain titanium hilt is engraved with the words, "For those we have lost. For those we can yet save".
+  components:
+    - type: EnergySword
+      activatedColor: "#FFFFFF" #COOL UNIQUE WHITE!
+      colorOptions:
+       - "#FFFFFF"

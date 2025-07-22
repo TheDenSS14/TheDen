@@ -1,4 +1,5 @@
 # SPDX-FileCopyrightText: 2025 Forzii
+# SPDX-FileCopyrightText: 2025 Jakumba
 # SPDX-FileCopyrightText: 2025 Rosycup
 # SPDX-FileCopyrightText: 2025 portfiend
 # SPDX-FileCopyrightText: 2025 sleepyyapril
@@ -13,6 +14,7 @@
     - !type:CharacterJobRequirement
       inverted: true
       jobs:
+        - StationAi
         - Borg
         - MedicalBorg
     - !type:CharacterSpeciesRequirement
@@ -28,6 +30,26 @@
       components:
         - type: Hunger
           decayRateMultiplier: 1.33
+
+# Yo mama so bloated she has a duplicate version of the same trait but with less features
+- type: trait
+  id: MutedNoSign
+  category: Mental
+  points: 6
+  requirements:
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - StationAi
+        - Borg
+        - MedicalBorg
+        - Mime
+    - !type:CharacterItemGroupRequirement
+      group: TraitsMuted
+  functions:
+    - !type:TraitAddComponent
+      components:
+        - type: Muted
 
 # Amputee traits
 
@@ -45,6 +67,7 @@
     - !type:CharacterJobRequirement
       inverted: true
       jobs:
+        - StationAi
         - Borg
         - MedicalBorg
     - !type:CharacterTraitRequirement
@@ -64,6 +87,7 @@
     - !type:CharacterJobRequirement
       inverted: true
       jobs:
+        - StationAi
         - Borg
         - MedicalBorg
     - !type:CharacterTraitRequirement
@@ -85,6 +109,7 @@
     - !type:CharacterJobRequirement
       inverted: true
       jobs:
+        - StationAi
         - Borg
         - MedicalBorg
     - !type:CharacterItemGroupRequirement
@@ -110,6 +135,7 @@
     - !type:CharacterJobRequirement
       inverted: true
       jobs:
+        - StationAi
         - Borg
         - MedicalBorg
     - !type:CharacterItemGroupRequirement
@@ -139,6 +165,7 @@
     - !type:CharacterJobRequirement
       inverted: true
       jobs:
+        - StationAi
         - Borg
         - MedicalBorg
     - !type:CharacterItemGroupRequirement
@@ -159,6 +186,7 @@
     - !type:CharacterJobRequirement
       inverted: true
       jobs:
+        - StationAi
         - Borg
         - MedicalBorg
     - !type:CharacterItemGroupRequirement
@@ -179,6 +207,7 @@
     - !type:CharacterJobRequirement
       inverted: true
       jobs:
+        - StationAi
         - Borg
         - MedicalBorg
     - !type:CharacterItemGroupRequirement

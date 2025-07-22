@@ -6,6 +6,7 @@
 // SPDX-FileCopyrightText: 2024 deltanedas
 // SPDX-FileCopyrightText: 2025 MajorMoth
 // SPDX-FileCopyrightText: 2025 VMSolidus
+// SPDX-FileCopyrightText: 2025 slarticodefast
 // SPDX-FileCopyrightText: 2025 sleepyyapril
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
@@ -32,23 +33,15 @@ public sealed partial class PowerCellSystem
             if (!comp.Enabled)
                 continue;
 
-            // Any delay between zero and 1/tickrate will be equivalent to 1/tickrate delay.
-            // Setting delay to zero makes the draw "continuous"
-            float drawRate = comp.DrawRate;
-            if (comp.Delay == TimeSpan.Zero)
-                drawRate *= frameTime;
-            else
-            {
-                if (Timing.CurTime < comp.NextUpdateTime)
-                    continue;
-            }
+            if (Timing.CurTime < comp.NextUpdateTime)
+                continue;
 
             comp.NextUpdateTime += comp.Delay;
 
             if (!TryGetBatteryFromSlot(uid, out var batteryEnt, out var battery, slot))
                 continue;
 
-            if (_battery.TryUseCharge(batteryEnt.Value, drawRate, battery))
+            if (_battery.TryUseCharge(batteryEnt.Value, comp.DrawRate * (float)comp.Delay.TotalSeconds, battery))
                 continue;
 
             var ev = new PowerCellSlotEmptyEvent();

@@ -1,0 +1,52 @@
+# Zookeeper
+# Backpacks
+
+# Belt
+
+# Ears
+
+# Equipment
+
+# Eyes
+
+# Gloves
+
+# Head
+- type: loadout
+  id: LoadoutServiceZookeeperHeadSafari
+  category: JobsServiceZookeeper
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutZookeeperHead
+    - !type:CharacterJobRequirement
+      jobs:
+        - Zookeeper
+  items:
+    - ClothingHeadSafari
+
+# Id
+
+# Neck
+
+# Mask
+
+# Outer
+
+# Shoes
+
+# Uniforms
+- type: loadout
+  id: LoadoutServiceZookeeperUniformSafari
+  category: JobsServiceZookeeper
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutZookeeperUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - Zookeeper
+  items:
+    - ClothingUniformJumpsuitSafari

@@ -1,6 +1,8 @@
-# SPDX-FileCopyrightText: 2024 VMSolidus <evilexecutive@gmail.com>
-# SPDX-FileCopyrightText: 2025 Blitz <73762869+BlitzTheSquishy@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 VMSolidus
+# SPDX-FileCopyrightText: 2025 Alice
+# SPDX-FileCopyrightText: 2025 Blitz
+# SPDX-FileCopyrightText: 2025 BlitzTheSquishy
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -29,12 +31,14 @@
 #  id: LoadoutDetectiveEyes
 #  maxItems: 1
 #  items:
-#
-#- type: characterItemGroup
-#  id: LoadoutDetectiveGloves
-#  maxItems: 1
-#  items:
-#
+
+- type: characterItemGroup
+  id: LoadoutDetectiveGloves
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutDetectiveGloves
+
 #- type: characterItemGroup
 #  id: LoadoutDetectiveHead
 #  maxItems: 1
@@ -54,7 +58,7 @@
 #  id: LoadoutDetectiveMask
 #  maxItems: 1
 #  items:
-#
+
 - type: characterItemGroup
   id: LoadoutDetectiveOuter
   maxItems: 1
@@ -63,12 +67,16 @@
       id: LoadoutClothingOuterCoatDetective
     - type: loadout
       id: LoadoutOuterVestDetective
+    - type: loadout
+      id: LoadoutOuterCoatOpenCoatDetective
 
-#- type: characterItemGroup
-#  id: LoadoutDetectiveShoes
-#  maxItems: 1
-#  items:
-#
+- type: characterItemGroup
+  id: LoadoutDetectiveShoes
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutClothingUnderSocksDetective
+
 - type: characterItemGroup
   id: LoadoutDetectiveUniforms
   maxItems: 1
@@ -81,3 +89,7 @@
       id: LoadoutUniformJumpsuitDetectiveGrey
     - type: loadout
       id: LoadoutUniformJumpskirtDetectiveGrey
+    - type: loadout
+      id: LoadoutUniformJumpsuitNanotrasenDetective
+    - type: loadout
+      id: LoadoutClothingUniformDetectiveThong

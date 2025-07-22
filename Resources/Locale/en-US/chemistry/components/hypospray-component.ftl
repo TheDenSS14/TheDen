@@ -11,6 +11,7 @@
 
 hypospray-all-mode-text = Only Injects
 hypospray-mobs-only-mode-text = Draws and Injects
+hypospray-inject-only-mode-text = Only Injects
 hypospray-invalid-text = Invalid
 hypospray-volume-label = Volume: [color=white]{$currentVolume}/{$totalVolume}u[/color]
     Mode: [color=white]{$modeString}[/color]
@@ -19,7 +20,6 @@ hypospray-volume-label = Volume: [color=white]{$currentVolume}/{$totalVolume}u[/
 
 hypospray-component-inject-other-message = You inject {$other}.
 hypospray-component-inject-self-message = You inject yourself.
-hypospray-component-inject-self-clumsy-message = Oops! You injected yourself.
 hypospray-component-empty-message = Nothing to inject.
 hypospray-component-feel-prick-message = You feel a tiny prick!
 hypospray-component-transfer-already-full-message = {$owner} is already full!

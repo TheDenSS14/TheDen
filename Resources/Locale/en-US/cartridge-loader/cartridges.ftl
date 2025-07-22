@@ -34,6 +34,10 @@ log-probe-scan = Downloaded logs from {$device}!
 log-probe-label-time = Time
 log-probe-label-accessor = Accessed by
 log-probe-label-number = #
+log-probe-print-button = Print Logs
+log-probe-printout-device = Scanned Device: {$name}
+log-probe-printout-header = Latest logs:
+log-probe-printout-entry = #{$number} / {$time} / {$accessor}
 
 glimmer-monitor-program-name = Glimmer Monitor
 glimmer-monitor-current-glimmer = Current Glimmer: {$glimmer}Ψ

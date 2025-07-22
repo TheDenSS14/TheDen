@@ -20,7 +20,13 @@
 - type: entity
   save: false
   id: PlayerSiliconHumanoidBase
-  parent: [BaseMob, MobDamageable, MobCombat, MobAtmosExposed, MobFlammable]
+  parent:
+  - BaseMob
+  - MobDamageable
+  - MobCombat
+  - MobAtmosExposed
+  - MobFlammable
+  - BaseSpeciesLayers
   abstract: true
   components:
     - type: ContentEye
@@ -116,66 +122,6 @@
     - type: Icon
       sprite: Mobs/Species/IPC/parts.rsi
       state: full
-    - type: Sprite
-      noRot: true
-      drawdepth: Mobs
-      layers:
-        - map: ["enum.HumanoidVisualLayers.Chest"]
-        - map: ["enum.HumanoidVisualLayers.Head"]
-        - map: ["enum.HumanoidVisualLayers.Snout"]
-        - map: ["enum.HumanoidVisualLayers.Eyes"]
-        - map: ["enum.HumanoidVisualLayers.Face"]
-        - map: ["enum.HumanoidVisualLayers.RArm"]
-        - map: ["enum.HumanoidVisualLayers.LArm"]
-        - map: ["enum.HumanoidVisualLayers.RLeg"]
-        - map: ["enum.HumanoidVisualLayers.LLeg"]
-#     - shader: StencilClear
-#      sprite: Mobs/Species/Human/parts.rsi
-#      state: l_leg
-        - shader: StencilMask
-          map: ["enum.HumanoidVisualLayers.StencilMask"]
-          sprite: Mobs/Customization/masking_helpers.rsi
-          state: female_full
-          visible: false
-        - map: ["enum.HumanoidVisualLayers.LFoot"]
-        - map: ["enum.HumanoidVisualLayers.RFoot"]
-        - map: ["socks"]
-        - map: [ "enum.HumanoidVisualLayers.Underwear" ]
-        - map: [ "enum.HumanoidVisualLayers.Undershirt" ]
-        - map: ["jumpsuit"]
-        - map: ["enum.HumanoidVisualLayers.LHand"]
-        - map: ["enum.HumanoidVisualLayers.RHand"]
-        - map: ["enum.HumanoidVisualLayers.Handcuffs"]
-          color: "#ffffff"
-          sprite: Objects/Misc/handcuffs.rsi
-          state: body-overlay-2
-          visible: false
-        - map: ["id"]
-        - map: ["gloves"]
-        - map: ["shoes"]
-        - map: ["ears"]
-        - map: ["innerBelt"]
-        - map: ["innerNeck"]
-        - map: ["outerClothing"]
-        - map: ["eyes"]
-        - map: ["belt"]
-        - map: ["neck"]
-        - map: ["back"]
-        - map: [ "enum.HumanoidVisualLayers.NeckFluff" ]
-        - map: ["enum.HumanoidVisualLayers.FacialHair"]
-        - map: ["enum.HumanoidVisualLayers.Hair"]
-        - map: ["enum.HumanoidVisualLayers.HeadSide"]
-        - map: ["enum.HumanoidVisualLayers.HeadTop"]
-        - map: ["enum.HumanoidVisualLayers.Tail"]
-        - map: ["mask"]
-        - map: ["head"]
-        - map: ["pocket1"]
-        - map: ["pocket2"]
-        - map: ["clownedon"] # Dynamically generated
-          sprite: "Effects/creampie.rsi"
-          state: "creampie_human"
-          visible: false
-
     #- type: Bloodstream This is left commented out because it's not necessary for a robot, but you may want it.
     #  damageBleedModifiers: BloodlossIPC
     #  bloodReagent: Oil
@@ -229,11 +175,15 @@
           clownedon: # Not 'creampied' bc I can already see Skyrat complaining about conflicts.
             True: { visible: true }
             False: { visible: false }
+    - type: CreamPied
+      layerKey: clownedon
+      layer:
+        sprite: Effects/creampie.rsi
+        state: creampie_human
     - type: Cuffable
     - type: Mood
     - type: AnimationPlayer
     - type: Buckle
-    - type: CreamPied
     - type: Stripping
     - type: Strippable
     - type: ComplexInteraction

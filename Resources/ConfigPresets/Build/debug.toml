@@ -7,9 +7,17 @@
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
+[game]
+traits_max = 25
+traits_default_points = 20
+loadouts_points = 30
+
 [events]
 # Annoying - setting to false disabled all events.
 enabled = true
 
 [shuttle]
 auto_call_time = 0
+
+[rules]
+exempt_local = true

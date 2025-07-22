@@ -1,9 +1,11 @@
-// SPDX-FileCopyrightText: 2025 VMSolidus <evilexecutive@gmail.com>
-// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 VMSolidus
+// SPDX-FileCopyrightText: 2025 sleepyyapril
+// SPDX-FileCopyrightText: 2025 ssdaniel24
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 using Robust.Shared.Configuration;
+using Robust.Shared.Maths;
 
 namespace Content.Shared.CCVar;
 
@@ -74,4 +76,24 @@ public sealed partial class CCVars
     /// </summary>
     public static readonly CVarDef<string> DiscordAuthApiKey =
         CVarDef.Create("discord.auth_api_key", "", CVar.SERVERONLY | CVar.CONFIDENTIAL);
+
+    /// <summary>
+    ///     URL of the Discord webhook which will receive station news acticles at the round end.
+    ///     If left empty, disables the webhook.
+    /// </summary>
+    public static readonly CVarDef<string> DiscordNewsWebhook =
+        CVarDef.Create("discord.news_webhook", string.Empty, CVar.SERVERONLY | CVar.CONFIDENTIAL);
+
+    /// <summary>
+    ///     HEX color of station news discord webhook's embed.
+    /// </summary>
+    public static readonly CVarDef<string> DiscordNewsWebhookEmbedColor =
+        CVarDef.Create("discord.news_webhook_embed_color", Color.LawnGreen.ToHex(), CVar.SERVERONLY);
+
+    /// <summary>
+    ///     Whether or not articles should be sent mid-round instead of all at once at the round's end
+    /// </summary>
+    public static readonly CVarDef<bool> DiscordNewsWebhookSendDuringRound =
+        CVarDef.Create("discord.news_webhook_send_during_round", false, CVar.SERVERONLY);
+
 }

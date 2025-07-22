@@ -1,0 +1,70 @@
+# SPDX-FileCopyrightText: 2025 MajorMoth
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+# TODO: I know it's horrid, but if you separate every single one into their proper forks, I'll pay you.
+# There are existing packs for some of these recipes, and some which have items that don't exist. I'm sorry.
+
+- type: latheRecipePack
+  id: EngineeringTechFabDynamicAwfulDen
+  recipes:
+  # Machines and computers
+  - TurboItemRechargerCircuitboard
+  - SheetifierMachineCircuitboard
+  - PortableGeneratorPacmanMachineCircuitboard
+  - PortableGeneratorSuperPacmanMachineCircuitboard
+  - RoboticArmCircuitboard
+  - ConstructorCircuitboard
+  - StorageBinCircuitboard
+  - InteractorCircuitboard
+  - LatheUpgradeKitHyper
+  - LatheUpgradeKitCryo
+  - UpgradeKitAutomation
+  - PortableGeneratorJrPacmanMachineCircuitboard
+  # - AutolatheHyperConvectionMachineCircuitboard
+  - SolarControlComputerCircuitboard
+  - SolarTrackerElectronics # Actual solar panels are not manufacturable
+  - EmitterCircuitboard
+  # Atmos machines
+  - HellfireFreezerMachineCircuitBoard
+  - PortableScrubberMachineCircuitBoard
+  # Tools
+  - PowerCellHigh
+  - PowerCellMicroreactor
+  - SignallerAdvanced
+  - HolofanProjector
+  - HoloprojectorField
+  - WelderExperimental
+  - PowerDrill # Can make two of the three advanced tools - jaws of life are too OP to give them away
+  - WeaponParticleDecelerator
+  - ClothingMaskWeldingGas
+  - ClothingShoesBootsMagSci
+  - ClothingNeckMantleMag
+  - HandHeldAtmosMonitor
+  - HandHeldPowerMonitor
+
+  # Routers and monitors
+  - PowerComputerCircuitboard
+  - AlertsComputerCircuitboard
+  - SurveillanceCameraRouterCircuitboard
+  - SurveillanceCameraMonitorCircuitboard
+  - SurveillanceWirelessCameraMonitorCircuitboard
+  - SurveillanceCameraWirelessRouterCircuitboard
+  - TelecomServerCircuitboard
+  # Shuttle building
+  - ShuttleConsoleCircuitboard
+  - RadarConsoleCircuitboard
+  - ThrusterMachineCircuitboard
+  - GyroscopeMachineCircuitboard
+  - MiniGravityGeneratorCircuitboard
+  - ShuttleGunKineticCircuitboard
+  # MechanicalCompression
+  - RCDAmmo
+  - RCD
+  - RPD
+
+- type: latheRecipePack
+  id: EngineeringTechFabStaticAwfulDen
+  recipes:
+  - ThermomachineFreezerMachineCircuitBoard

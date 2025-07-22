@@ -1,11 +1,13 @@
-# SPDX-FileCopyrightText: 2025 Alice <alicecoupland45@gmail.com>
-# SPDX-FileCopyrightText: 2025 Blitz <73762869+BlitzTheSquishy@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 BlueHNT <79374236+BlueHNT@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 Lonofera <108367450+LonoferaRS@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 Rosycup <178287475+Rosycup@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 VMSolidus <evilexecutive@gmail.com>
-# SPDX-FileCopyrightText: 2025 mart <martgitomen@gmail.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Adrian16199
+# SPDX-FileCopyrightText: 2025 Alice
+# SPDX-FileCopyrightText: 2025 Blitz
+# SPDX-FileCopyrightText: 2025 BlitzTheSquishy
+# SPDX-FileCopyrightText: 2025 BlueHNT
+# SPDX-FileCopyrightText: 2025 Lonofera
+# SPDX-FileCopyrightText: 2025 Rosycup
+# SPDX-FileCopyrightText: 2025 VMSolidus
+# SPDX-FileCopyrightText: 2025 mart
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -14,7 +16,7 @@
 #  id: LoadoutHeadOfSecurityBackpacks
 #  maxItems: 1
 #  items:
-#
+
 - type: characterItemGroup
   id: LoadoutHeadOfSecurityBelt
   maxItems: 1
@@ -59,12 +61,14 @@
 #  id: LoadoutHeadOfSecurityEyes
 #  maxItems: 1
 #  items:
-#
-#- type: characterItemGroup
-#  id: LoadoutHeadOfSecurityGloves
-#  maxItems: 1
-#  items:
-#
+
+- type: characterItemGroup
+  id: LoadoutHeadOfSecurityGloves
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutClothingHandsHeadSecurityWarmers
+
 - type: characterItemGroup
   id: LoadoutHeadOfSecurityHead
   maxItems: 1
@@ -94,7 +98,7 @@
 #  id: LoadoutHeadOfSecurityMask
 #  maxItems: 1
 #  items:
-#
+
 - type: characterItemGroup
   id: LoadoutHeadOfSecurityOuter
   maxItems: 1
@@ -107,6 +111,10 @@
       id: LoadoutCommandHOSOuterWinterUnarmored
     - type: loadout
       id: LoadoutCommandHOSOuterArmorHosSamurai
+    - type: loadout
+      id: LoadoutCommandHeadofSecurityVestWeb
+    - type: loadout
+      id: LoadoutCommandHOSOuterLongcoat
 
 - type: characterItemGroup
   id: LoadoutHeadOfSecurityShoes
@@ -114,6 +122,8 @@
   items:
     - type: loadout
       id: LoadoutCommandHOSShoesBootsWinter
+    - type: loadout
+      id: LoadoutClothingUnderSocksHeadSecurity
 
 - type: characterItemGroup
   id: LoadoutHeadOfSecurityUniforms
@@ -143,6 +153,8 @@
       id: LoadoutCommandHOSJumpsuit
     - type: loadout
       id: LoadoutCommandHOSJumpskirt
+    - type: loadout
+      id: LoadoutClothingUniformHeadSecurityThong
 
 - type: characterItemGroup
   id: LoadoutHeadOfSecurityTrinkets

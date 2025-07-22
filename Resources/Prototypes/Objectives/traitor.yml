@@ -15,6 +15,7 @@
 # SPDX-FileCopyrightText: 2025 Memeji Dankiri
 # SPDX-FileCopyrightText: 2025 Timfa
 # SPDX-FileCopyrightText: 2025 sleepyyapril
+# SPDX-FileCopyrightText: 2025 wheelwrightt
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -83,24 +84,24 @@
       state: shuttle
   - type: EscapeShuttleCondition
 
-- type: entity
-  categories: [HideSpawnMenu]
-  parent: BaseTraitorObjective
-  id: DieObjective
-  name: Die a glorious death
-  description: Die.
-  components:
-  - type: Objective
-    difficulty: 0.5
-    icon:
-      sprite: Mobs/Ghosts/ghost_human.rsi
-      state: icon
-  - type: ObjectiveBlacklistRequirement
-    blacklist:
-      components:
-      - EscapeShuttleCondition
-      - StealCondition
-  - type: DieCondition
+# - type: entity
+#   categories: [HideSpawnMenu]
+#   parent: BaseTraitorObjective
+#   id: DieObjective
+#   name: Die a glorious death
+#   description: Die.
+#   components:
+#   - type: Objective
+#     difficulty: 0.5
+#     icon:
+#       sprite: Mobs/Ghosts/ghost_human.rsi
+#       state: icon
+#   - type: ObjectiveBlacklistRequirement
+#     blacklist:
+#       components:
+#       - EscapeShuttleCondition
+#       - StealCondition
+#   - type: DieCondition
 
 - type: entity
   categories: [HideSpawnMenu]
@@ -352,6 +353,7 @@
     difficulty: 3.5
   - type: StealCondition
     stealGroup: SupermatterSliver
+    verifyMapExistence: true
     objectiveNoOwnerText: objective-condition-steal-smsliver-title
     descriptionText: objective-condition-steal-smsliver-description
 

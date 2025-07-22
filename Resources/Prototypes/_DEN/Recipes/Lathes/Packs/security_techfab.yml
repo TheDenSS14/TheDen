@@ -1,0 +1,279 @@
+# SPDX-FileCopyrightText: 2025 MajorMoth
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+# TODO: I know it's horrid, but if you separate every single one into their proper forks, I'll pay you.
+# There are existing packs for some of these recipes, and some which have items that don't exist. I'm sorry.
+
+- type: latheRecipePack
+  id: SecurityTechFabStaticAwfulDen
+  recipes:
+  - Signaller
+  - BoxLethalshot
+  - BoxShotgunFlare
+  - BoxShotgunPractice
+  - BoxShotgunSlug
+  - ClothingEyesHudSecurity
+  - CombatKnife
+  - Flash
+  - ForensicPad
+  - Handcuffs
+  - ShellShotgun
+  - ShellShotgunSlug
+  - ShellShotgunFlare
+  - ShellTranquilizer
+  - MagazineBoxLightRifle
+  - MagazineBoxLightRiflePractice
+  - MagazineBoxMagnum
+  - MagazineBoxMagnumPractice
+  - MagazineBoxPistol
+  - MagazineBoxPistolPractice
+  - MagazineBoxRifle
+  - MagazineBoxRiflePractice
+  - MagazineBoxLightRifle
+  - MagazineLightRifle
+  - MagazineLightRifleEmpty
+  - MagazinePistol
+  - MagazinePistolEmpty
+  - MagazinePistolSubMachineGun
+  - MagazinePistolSubMachineGunEmpty
+  - MagazinePistolSubMachineGunTopMounted
+  - MagazinePistolSubMachineGunTopMountedEmpty
+  # .35 Caseless Pistol
+  - MagazinePistolCaselessRiflePractice # EE
+  - MagazinePistolCaselessRifle # EE
+  - MagazinePistolCaselessRifleRubber # EE
+  # .35 Caseless (Civilian) Rifle
+  - MagazineCaselessRifleShortPractice # EE
+  - MagazineCaselessRifleShort # EE
+  - MagazineCaselessRifleShortRubber # EE
+  # .35 Caseless (Military) Rifle
+  - MagazineCaselessRiflePractice # EE
+  - MagazineCaselessRifle # EE
+  - MagazineCaselessRifleRubber # EE
+  # .35 Caseless (Box Mag) Rifle
+  - MagazineBoxCaselessRiflePractice # EE
+  - MagazineBoxCaselessRifle # EE
+  - MagazineBoxCaselessRifleRubber # EE
+  - MagazineMagnum
+  - MagazineMagnumEmpty
+  - MagazineRifle
+  - MagazineRifleEmpty
+  - MagazineShotgun
+  - MagazineShotgunEmpty
+  - MagazineShotgunSlug
+  - RiotShield
+  - SpeedLoaderMagnum
+  - SpeedLoaderMagnumEmpty
+  - Stunbaton
+  - TargetClown
+  - ClothingOuterArmorPlateCarrier
+  - ClothingOuterArmorDuraVest
+  - TargetHuman
+  - TargetSyndicate
+  - WeaponDisablerPractice
+  - WeaponFlareGunSecurity
+  - WeaponLaserCarbinePractice
+  - Zipties
+  - GrenadeFlashBang # Goobstation
+  - ShockCollar
+  # DeltaV - .38 special ammo - Add various .38 special ammo to security techfab
+  - MagazineBoxSpecial
+  - MagazineBoxSpecialPractice
+  - SpeedLoaderSpecial
+  - MagazinePistolSpecial
+  - HandheldGPSBasic
+  - HandheldStationMap
+  - MagazineNovaliteC1Empty
+  - MagazineNovaliteC1
+  - MagazineLightRifleLowCapacityEmpty
+  - MagazineLightRifleLowCapacity
+  - SpeedLoaderRifleHeavy
+  - SpeedLoaderRifleHeavyEmpty
+  - WeaponRifleNovaliteC1
+  - WeaponRifleGestio
+  - ClothingEyesGlassesSecurity
+  - TelescopicShield
+  - HoloprojectorSecurity
+  - BolaEnergy
+  - ClothingHeadHelmetBasic
+  - MagazineShotgunBeanbag
+  - MagazineMagnumEmpty # Goobstation
+  - MagazineMagnum # Goobstation
+  - MagazineShotgunLeverRifle # Goobstation
+  - MagazineShotgunLeverRifleEmpty # Goobstation
+  - MagazineBoxShotgunHighCaliber # Goobstation
+  - MagazineBoxShotgunSlugHighCaliber # Goobstation
+  - MagazineBoxShotgunPracticeHighCaliber # Goobstation
+  - MagazineBoxShotgunBeanbagHighCaliber # Goobstation
+  - BoxBeanbag
+  - CartridgePistolRubber
+  - CartridgeMagnumRubber
+  - CartridgeLightRifleRubber
+  - CartridgeRifleRubber
+  - MagazineRifleRubber
+  - MagazinePistolRubber
+  - MagazinePistolSubMachineGunRubber
+  - MagazineMagnumRubber
+  - MagazineLightRifleRubber
+  - SpeedLoaderMagnumRubber
+  - MagazineBoxPistolRubber
+  - MagazineBoxMagnumRubber
+  - MagazineBoxLightRifleRubber
+  - MagazineBoxRifleRubber
+  - CartridgeSpecialRubber
+  - MagazineBoxSpecialRubber
+  - MagazineBoxLightRifleRubber # Frontier
+  - MagazineBoxMagnumRubber # Frontier
+  - MagazineBoxPistolRubber # Frontier
+  - MagazineBoxRifleRubber # Frontier
+  - SpeedLoaderRifleHeavyRubber
+  - BoxShotgunBirdshot
+  - BoxShotgun00Buckshot
+  - BoxShotgun0000Buckshot
+  - RadioHandheldSecurity
+  - WeaponCaseShort # Frontier
+  - WeaponCaseLong # Frontier
+  - WeaponCaseHeavy # Frontier
+  - WeaponCaseShortAmmo # Frontier
+  - WeaponCaseShortExplosives # Frontier
+  - WeaponCaseShortDocuments # Frontier
+  - CrossbowBolt # Frontier
+  - CrossbowBoltBroadhead # Frontier
+  - ClothingBeltQuiverCrossbow # Frontier
+
+- type: latheRecipePack
+  id: SecurityTechFabDynamicAwfulDen
+  recipes:
+  - JetpackBlue
+  - JetpackMini
+  - Truncheon
+  - Terminus
+  - CrossbowModern # Frontier
+  - BoxShotgunIncendiary
+  - BoxShotgunUranium
+  - CartridgeLightRifleIncendiary
+  - CartridgeMagnumIncendiary
+  - CartridgePistolIncendiary
+  - CartridgeRifleIncendiary
+  - CrossbowBoltIncendiary # Frontier
+  - CartridgeLightRifleUranium
+  - CartridgeMagnumUranium
+  - CartridgePistolUranium
+  - CartridgeRifleUranium
+  - CrossbowBoltUranium # Frontier
+  - ExplosivePayload
+  - FlashPayload
+  - GrenadeBlast
+  - GrenadeEMP
+  - GrenadeFlash
+  - MagazineBoxLightRifleIncendiary
+  - MagazineBoxLightRifleUranium
+  - MagazineBoxMagnumIncendiary
+  - MagazineBoxMagnumUranium
+  - MagazineBoxPistolIncendiary
+  - MagazineBoxPistolUranium
+  - MagazineBoxRifleIncendiary
+  - MagazineBoxRifleUranium
+  - ShellSoulbreaker
+  - MagazineGrenadeEmpty
+  - MagazineLightRifleIncendiary
+  - MagazineLightRifleUranium
+  - MagazinePistolIncendiary
+  - MagazinePistolUranium
+  - MagazinePistolSubMachineGunIncendiary
+  - MagazinePistolSubMachineGunUranium
+  - MagazineMagnumIncendiary
+  - MagazineMagnumUranium
+  - MagazineRifleIncendiary
+  - MagazineRifleUranium
+  - MagazineShotgunIncendiary
+  - MagazineBoxShotgunIncendiaryHighCaliber # Goobstation
+  - MagazineBoxShotgunUraniumHighCaliber # Goobstation
+  - PortableRecharger
+  - PowerCageHigh
+  - PowerCageMedium
+  - PowerCageSmall
+  - ShuttleGunDusterCircuitboard
+  - ShuttleGunFriendshipCircuitboard
+  - ShuttleGunPerforatorCircuitboard
+  - ShuttleGunSvalinnMachineGunCircuitboard
+  - SignalTrigger
+  - SpeedLoaderMagnumIncendiary
+  - SpeedLoaderMagnumUranium
+  - SpeedLoaderRifleHeavyIncendiary
+  - SpeedLoaderRifleHeavyUranium
+  - TimerTrigger
+  - VoiceTrigger
+  - WeaponAdvancedLaser
+  - WeaponDisabler
+  - WeaponDisablerSMG
+  - WeaponLaserCannon
+  - WeaponLaserCarbine
+  - ClothingEyesNightVisionSecurityGoggles
+  - ClothingHeadHelmetInsulated # Nyanotrasen - Insulative headgear
+  - ClothingHeadCage # Nyanotrasen - Insulative headgear
+  - WeaponXrayCannon
+  - WeaponEnergyGun
+  - WeaponEnergyGunMini
+  - WeaponEnergyGunPistol
+  - WeaponGunLaserCarbineAutomatic
+  - CartridgeSpecialIncendiary
+  - CartridgeSpecialUranium
+  - CartridgeSpecialHoly
+  - CartridgeSpecialMindbreaker
+  - MagazineBoxSpecialIncendiary
+  - MagazineBoxSpecialUranium
+  - MagazineBoxSpecialMindbreaker
+  - SecurityCyberneticEyes
+  - MedicalCyberneticEyes
+  - WeaponGrapplingGun
+  # Floof section - port to EE later
+  - JawsOfLife
+  - HandHeldMassScanner
+  - HoloprojectorField
+  - RadarConsoleCircuitboard
+  - SurveillanceCameraRouterCircuitboard
+  - SurveillanceCameraMonitorCircuitboard
+  - SurveillanceWirelessCameraMonitorCircuitboard
+  - SurveillanceCameraWirelessRouterCircuitboard
+  # Floof section end
+  - ClothingOuterHardsuitCombatStandard
+  - ClothingOuterHardsuitCombatMedical
+  - ClothingOuterHardsuitCombatRiot
+  - ClothingOuterHardsuitCombatAdvanced
+  - ClothingOuterHardsuitShanlinUnpainted
+  - ClothingOuterHardsuitShiweiUnpainted
+  - ClothingOuterHardsuitJuggernautReverseEngineered
+  - WeaponMechCombatImmolationGun
+  - WeaponMechCombatSolarisLaser
+  - WeaponMechCombatFiredartLaser
+  - WeaponMechCombatUltraRifle
+  - WeaponMechCombatShotgun
+  - WeaponMechCombatShotgunIncendiary
+  - WeaponMechCombatDisabler
+  - WeaponMechCombatFlashbangLauncher
+  - WeaponMechCombatMissileRack8
+  - EnergySword
+  - EnergyCutlass
+  - WeaponEnergyTurretAIMachineCircuitboard
+  - WeaponEnergyTurretStationMachineCircuitboard
+  - WeaponEnergyTurretAIControlPanelElectronics
+  - WeaponEnergyTurretStationControlPanelElectronics
+  - WeaponSubMachineGunFPA90
+  - WeaponSubMachineGunBRDIR25
+  - WeaponPistolMk58
+  - WeaponPistolN1984
+  - WeaponPistolViper
+  - WeaponPistolCobra
+  - MagazineCaselessRifleIncendiary
+  - MagazineCaselessRifleUranium
+  - MagazineBoxCaselessRifleIncendiary
+  - MagazineBoxCaselessRifleUranium
+
+- type: latheRecipePack
+  id: SecurityTechFabEmagDynamicAwfulDen
+  recipes:
+  - EnergySwordDouble
+  - WeaponPistolCobra

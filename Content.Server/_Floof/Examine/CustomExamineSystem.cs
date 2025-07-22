@@ -1,4 +1,5 @@
 // SPDX-FileCopyrightText: 2025 Mnemotechnican
+// SPDX-FileCopyrightText: 2025 sleepyyapril
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -19,7 +20,8 @@ public sealed class CustomExamineSystem : SharedCustomExamineSystem
     private void OnSetCustomExamineMessage(SetCustomExamineMessage msg, EntitySessionEventArgs args)
     {
         var target = GetEntity(msg.Target);
-        if (!CanChangeExamine(args.SenderSession, target))
+        if (args.SenderSession.AttachedEntity == null
+            || !CanChangeExamine(args.SenderSession.AttachedEntity.Value, target))
             return;
 
         var comp = EnsureComp<CustomExamineComponent>(target);

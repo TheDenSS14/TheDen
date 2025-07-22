@@ -1,0 +1,173 @@
+# SPDX-FileCopyrightText: 2025 MajorMoth
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+# TODO: I know it's horrid, but if you separate every single one into their proper forks, I'll pay you.
+# There are existing packs for some of these recipes, and some which have items that don't exist. I'm sorry.
+
+- type: latheRecipePack
+  id: AutolatheStaticAwfulDen
+  recipes:
+  - Wirecutter
+  - Igniter
+  - Signaller
+  - Screwdriver
+  - Welder
+  - Wrench
+  - Crowbar
+  - Multitool
+  - NetworkConfigurator
+  - AccessConfigurator
+  - SprayPainter
+  - FlashlightLantern
+  - CableStack
+  - CableMVStack
+  - CableHVStack
+  - HandheldGPSBasic
+  - TRayScanner
+  - AirTank
+  - GasAnalyzer
+  - UtilityBelt
+  - Fulton
+  - FultonBeacon
+  - Pickaxe
+  - ModularReceiver
+  - AppraisalTool
+  - SheetRGlass
+  - Beaker
+  - Syringe
+  - DisposableSyringe
+  - HandLabeler
+  - LightTube
+  - LedLightTube
+  - SodiumLightTube
+  - ExteriorLightTube
+  - LightBulb
+  - LedLightBulb
+  - Bucket
+  - DrinkMug
+  - DrinkMugMetal
+  - DrinkGlass
+  - DrinkShotGlass
+  - DrinkGlassCoupeShaped
+  - CustomDrinkJug
+  - FoodPlate
+  - FoodPlateSmall
+  - FoodPlatePlastic
+  - FoodPlateSmallPlastic
+  - FoodBowlBig
+  - FoodPlateTin
+  - FoodKebabSkewer
+  - IceCreamBowl
+  - SprayBottle
+  - MopItem
+  - Holoprojector
+  - Mousetrap
+  - LightReplacer
+  - TrashBag
+  - PowerCellSmall
+  - PowerCellMedium
+  - RollerBedSpawnFolded
+  - CheapRollerBedSpawnFolded
+  - EmergencyRollerBedSpawnFolded
+  - MicroManipulatorStockPart
+  - MatterBinStockPart
+  - CapacitorStockPart
+  - ConveyorBeltAssembly
+  - IntercomElectronics
+  - FirelockElectronics
+  - DoorElectronics
+  - AirAlarmElectronics
+  - StationMapElectronics
+  - FireAlarmElectronics
+  - MailingUnitElectronics
+  - SignalTimerElectronics
+  - APCElectronics
+  - SMESMachineCircuitboard
+  - SubstationMachineCircuitboard
+  - WallmountSubstationElectronics
+  - CellRechargerCircuitboard
+  - BorgChargerCircuitboard
+  - WeaponCapacitorRechargerCircuitboard
+  - FreezerElectronics
+  - HandheldStationMap
+  - ClothingHeadHatWelding
+  - ShockCollar # FloofStation
+  - LeashBasic # FloofStation
+  - ProgramDiskUnburnt # Arcadis - Modular Computer System
+  - FauxTileAstroGrass
+  - FauxTileMowedAstroGrass
+  - FauxTileJungleAstroGrass
+  - FauxTileAstroIce
+  - FauxTileAstroSnow
+  - CanilunztTranslator
+  - BubblishTranslator
+  - NekomimeticTranslator
+  - DraconicTranslator
+  - SolCommonTranslator
+  - NovuNedericTranslator
+  - RootSpeakTranslator
+  - BasicGalaticCommonTranslatorImplanter
+  - MofficTranslator
+  - N14MaterialCircuitry
+  - VehicleWheelchairFolded # Goobstation
+  - TapeRecorder # Den
+  - CassetteTape # Den
+
+- type: latheRecipePack
+  id: AutolatheEmagStaticAwfulDen
+  recipes:
+  - BoxLethalshot
+  - BoxShotgunFlare
+  - BoxShotgunSlug
+  - MagazineBoxLightRifle
+  - MagazineBoxMagnum
+  - MagazineBoxPistol
+  - MagazineBoxRifle
+  - MagazineLightRifle
+  - MagazineLightRifleEmpty
+  - MagazinePistol
+  - MagazinePistolEmpty
+  - MagazinePistolSubMachineGun
+  - MagazinePistolSubMachineGunEmpty
+  - MagazinePistolSubMachineGunTopMounted
+  - MagazinePistolSubMachineGunTopMountedEmpty
+  - MagazineRifle
+  - MagazineRifleEmpty
+  - MagazineShotgun
+  - MagazineShotgunEmpty
+  - MagazineShotgunSlug
+  - RiotShield
+  - SpeedLoaderMagnum
+  - SpeedLoaderMagnumEmpty
+  - GrenadeFlashBang # Goobstation
+  # .35 Caseless Pistol
+  - MagazinePistolCaselessRiflePractice # EE
+  - MagazinePistolCaselessRifle # EE
+  - MagazinePistolCaselessRifleRubber # EE
+  # .35 Caseless (Civilian) Rifle
+  - MagazineCaselessRifleShortPractice # EE
+  - MagazineCaselessRifleShort # EE
+  - MagazineCaselessRifleShortRubber # EE
+  # .35 Caseless (Military) Rifle
+  - MagazineCaselessRiflePractice # EE
+  - MagazineCaselessRifle # EE
+  - MagazineCaselessRifleRubber # EE
+  # .35 Caseless (Box Mag) Rifle
+  - MagazineBoxCaselessRiflePractice # EE
+  - MagazineBoxCaselessRifle # EE
+  - MagazineBoxCaselessRifleRubber # EE
+  - BolaEnergy # Goobstation
+  - MagazinePistolCaselessRifle # Goobstation
+  - MagazineBoxCaselessRifle # Goobstation
+  - MagazineMagnumEmpty # Goobstation
+  - MagazineMagnum # Goobstation
+  - MagazineShotgunLeverRifleEmpty # Goobstation
+  - MagazineShotgunLeverRifle # Goobstation
+  - MagazineBoxShotgunHighCaliber # Goobstation
+  - MagazineBoxShotgunSlugHighCaliber # Goobstation
+  - MagazineBoxShotgunIncendiaryHighCaliber # Goobstation
+  - MagazineBoxShotgunUraniumHighCaliber # Goobstation
+  - MagazineBoxShotgunBeanbagHighCaliber # Goobstation
+  - MagazineBoxShotgunPracticeHighCaliber # Goobstation

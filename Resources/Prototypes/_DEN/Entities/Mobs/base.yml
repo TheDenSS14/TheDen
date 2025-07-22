@@ -1,0 +1,16 @@
+# SPDX-FileCopyrightText: 2025 portfiend
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  abstract: true
+  parent: StripableInventoryBase
+  id: RenamableStrippableBase
+  components:
+  - type: Renamable
+  - type: UserInterface
+    interfaces:
+      enum.SharedRenamableInterfaceKey.Key:
+        type: RenamableBoundUserInterface
+      enum.StrippingUiKey.Key:
+        type: StrippableBoundUserInterface
