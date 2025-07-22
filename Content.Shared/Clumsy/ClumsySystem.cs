@@ -142,14 +142,11 @@ public sealed class ClumsySystem : EntitySystem
 
     private void OnBeforeClimbEvent(Entity<ClumsyComponent> ent, ref SelfBeforeClimbEvent args)
     {
-        // checks if ClumsyVaulting is false, if so, skips.
-        if (!ent.Comp.ClumsyVaulting)
-            return;
-
         // TODO: Replace with RandomPredicted once the engine PR is merged
         var seed = SharedRandomExtensions.HashCodeCombine(new() { (int)_timing.CurTick.Value, GetNetEntity(ent).Id });
         var rand = new System.Random(seed);
-        if (!_cfg.GetCVar(CCVars.GameTableBonk) && !rand.Prob(ent.Comp.ClumsyDefaultCheck))
+        // If someone is putting you on the table, always get past the guard.
+        if (!_cfg.GetCVar(CCVars.GameTableBonk) && args.PuttingOnTable == ent.Owner && !rand.Prob(ent.Comp.ClumsyDefaultCheck))
             return;
 
         HitHeadClumsy(ent, args.BeingClimbedOn);
