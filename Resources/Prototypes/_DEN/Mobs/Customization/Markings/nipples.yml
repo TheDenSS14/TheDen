@@ -5,114 +5,102 @@
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
+# Markings
+
+# Note: Most species have slightly different nipple placements on the male/female sprites.
+# For species where both sexes have the same nipple placement, they can be added to UnisexSpecies.
+# Exclude species that can't have nipples / have nipples in the "wrong" position.
+
 - type: marking
-  id: NipplesBase
+  abstract: true
+  id: BaseMarkingNipple
   bodyPart: Chest
   markingCategory: Nipples
-  speciesRestriction: [Felinid, Oni, Arachne, SlimePerson, Rodentia, Human, Feroxi, Canid]
+  sexRestriction: [Female]
+  invertSpeciesRestriction: true
+  speciesRestriction:
+    # No nip steve
+    - Resomi
+    - Plasmaman
+    - Vox
+    - Diona
+    - IPC
+    # Unisex species
+    - Vulpkanin
   coloring:
     default:
       type:
-        !type:SimpleColoring
-        color: "#FFFFFF"
+        !type:TattooColoring
+      fallbackTypes:
+      - !type:SkinColoring
+
+- type: marking
+  abstract: true
+  parent: BaseMarkingNipple
+  id: BaseMarkingNippleMale
+  invertSexRestriction: true
+
+- type: marking
+  abstract: true
+  parent: BaseMarkingNipple
+  id: BaseMarkingNippleUnisexSpecies
+  speciesRestriction: [Vulpkanin]
+  invertSpeciesRestriction: false
+  sexRestriction: null
+
+# Markings
+
+- type: marking
+  parent: BaseMarkingNipple
+  id: NipplesBase
   sprites:
   - sprite: _DEN/Mobs/Customization/Body/nipples.rsi
     state: nipples
 
 - type: marking
+  parent: BaseMarkingNippleUnisexSpecies
+  id: NipplesBaseVulp
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Body/nipples.rsi
+    state: nipplesvulp
+
+- type: marking
+  parent: BaseMarkingNippleMale
+  id: NipplesMale
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Body/nipples.rsi
+    state: nipplesvulp
+
+- type: marking
+  parent: BaseMarkingNipple
   id: Nipples6
-  bodyPart: Chest
-  markingCategory: Nipples
-  speciesRestriction: [Felinid, Rodentia, Human, Canid]
-  coloring:
-    default:
-      type:
-        !type:SimpleColoring
-        color: "#FFFFFF"
   sprites:
   - sprite: _DEN/Mobs/Customization/Body/nipples.rsi
     state: nipples6
 
 - type: marking
+  parent: BaseMarkingNippleUnisexSpecies
   id: Nipples6Vulp
-  bodyPart: Chest
-  markingCategory: Nipples
-  speciesRestriction: [Vulpkanin]
-  coloring:
-    default:
-      type:
-        !type:SimpleColoring
-        color: "#FFFFFF"
   sprites:
   - sprite: _DEN/Mobs/Customization/Body/nipples.rsi
     state: nipples6vulp
 
 - type: marking
-  id: Nipples6Male
-  bodyPart: Chest
-  markingCategory: Nipples
-  speciesRestriction: [Felinid, Rodentia, Human, Canid]
-  coloring:
-    default:
-      type:
-        !type:SimpleColoring
-        color: "#FFFFFF"
+  parent: BaseMarkingNippleMale
   sprites:
   - sprite: _DEN/Mobs/Customization/Body/nipples.rsi
     state: nipples6vulp
 
 - type: marking
+  parent: BaseMarkingNipple
   id: NipplesLarge
-  bodyPart: Chest
-  markingCategory: Nipples
-  speciesRestriction: [Felinid, Oni, Arachne, SlimePerson, Rodentia, Human, Feroxi, Canid]
-  coloring:
-    default:
-      type:
-        !type:SimpleColoring
-        color: "#FFFFFF"
   sprites:
   - sprite: _DEN/Mobs/Customization/Body/nipples.rsi
     state: nippleslarge
 
 - type: marking
-  id: NipplesBaseVulp
-  bodyPart: Chest
-  markingCategory: Nipples
-  speciesRestriction: [Vulpkanin]
-  coloring:
-    default:
-      type:
-        !type:SimpleColoring
-        color: "#FFFFFF"
-  sprites:
-  - sprite: _DEN/Mobs/Customization/Body/nipples.rsi
-    state: nipplesvulp
-
-- type: marking
-  id: NipplesMale
-  bodyPart: Chest
-  markingCategory: Nipples
-  speciesRestriction: [Vulpkanin, Felinid, Oni, Arachne, SlimePerson, Rodentia, Human, Tajaran, Feroxi, Canid]
-  coloring:
-    default:
-      type:
-        !type:SimpleColoring
-        color: "#FFFFFF"
-  sprites:
-  - sprite: _DEN/Mobs/Customization/Body/nipples.rsi
-    state: nipplesvulp
-
-- type: marking
+  parent: BaseMarkingNippleUnisexSpecies
   id: NipplesLargeVulp
-  bodyPart: Chest
-  markingCategory: Nipples
-  speciesRestriction: [Vulpkanin]
-  coloring:
-    default:
-      type:
-        !type:SimpleColoring
-        color: "#FFFFFF"
   sprites:
   - sprite: _DEN/Mobs/Customization/Body/nipples.rsi
     state: nippleslargevulp
