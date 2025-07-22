@@ -81,6 +81,23 @@
     - Shadowkin
     - Vox
 
+# Excluded species: Anything in the other "standard body" restrictions.
+- type: marking
+  abstract: true
+  id: BaseMarkingSpeciesStandardFullBody
+  invertSpeciesRestriction: true
+  speciesRestriction:
+    - Arachne
+    - Chitinid
+    - Diona
+    - Harpy
+    - Moth
+    - Ovinia
+    - Plasmaman
+    - Resomi
+    - Shadowkin
+    - Vox
+
 # Excluded species:
 # - Species with weird eye shapes/positions.
 # - Species for whom changing the eye shape looks bad or makes no sense.
