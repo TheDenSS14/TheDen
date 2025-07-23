@@ -1,3 +1,4 @@
+# SPDX-FileCopyrightText: 2025 Vanessa
 # SPDX-FileCopyrightText: 2025 Vanessa Louwagie
 # SPDX-FileCopyrightText: 2025 Velcroboy
 #
@@ -8,6 +9,7 @@
   table: !type:AllSelector
     children:
     - id: AccessConfigurator
+    - id: DoorRemoteFirefight
 
 - type: entityTable
   id: FillLockerEngineerDEN
