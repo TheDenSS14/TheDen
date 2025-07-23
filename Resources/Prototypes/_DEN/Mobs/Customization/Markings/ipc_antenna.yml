@@ -6,10 +6,8 @@
 # Ported from Hyperstation.
 
 - type: marking
-  speciesRestriction: [IPC]
+  parent: BaseMarkingIPCAntenna
   id: IPCAntennaDogUp
-  bodyPart: HeadTop
-  markingCategory: HeadTop
   sprites:
   - sprite: _DEN/Mobs/Customization/IPC/ipc_antennae.rsi
     state: dog_up_base
@@ -17,10 +15,8 @@
     state: dog_up_accent
 
 - type: marking
-  speciesRestriction: [IPC]
+  parent: BaseMarkingIPCAntenna
   id: IPCAntennaDogDown
-  bodyPart: HeadTop
-  markingCategory: HeadTop
   sprites:
   - sprite: _DEN/Mobs/Customization/IPC/ipc_antennae.rsi
     state: dog_down_base
@@ -28,10 +24,8 @@
     state: dog_down_accent
 
 - type: marking
-  speciesRestriction: [IPC]
+  parent: BaseMarkingIPCAntenna
   id: IPCAntennaHeadphones
-  bodyPart: HeadTop
-  markingCategory: HeadTop
   sprites:
   - sprite: _DEN/Mobs/Customization/IPC/ipc_antennae.rsi
     state: headphones_base
@@ -39,19 +33,15 @@
     state: headphones_accent
 
 - type: marking
-  speciesRestriction: [IPC]
+  parent: BaseMarkingIPCAntenna
   id: IPCAntennaFins
-  bodyPart: HeadTop
-  markingCategory: HeadTop
   sprites:
   - sprite: _DEN/Mobs/Customization/IPC/ipc_antennae.rsi
     state: fins
 
 - type: marking
-  speciesRestriction: [IPC]
+  parent: BaseMarkingIPCAntenna
   id: IPCAntennaCatEars
-  bodyPart: HeadTop
-  markingCategory: HeadTop
   sprites:
   - sprite: _DEN/Mobs/Customization/IPC/ipc_antennae.rsi
     state: cat_ears

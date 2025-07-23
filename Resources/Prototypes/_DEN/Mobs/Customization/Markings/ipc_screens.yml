@@ -4,13 +4,8 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 - type: marking
-  speciesRestriction: [ IPC ]
+  parent: BaseMarkingIPCScreen
   id: ScreenCovering
-  bodyPart: Face
-  markingCategory: Face
-  sprites:
-    - sprite: _DEN/Mobs/Customization/IPC/ipc_screens.rsi
-      state: ipc_screen_covering
   coloring:
     default:
       type:
@@ -18,19 +13,15 @@
       fallbackTypes:
         - !type:SimpleColoring
             color: "#EEEEEE"
+  sprites:
+    - sprite: _DEN/Mobs/Customization/IPC/ipc_screens.rsi
+      state: ipc_screen_covering
 
 #  IPC "Visor" ported and edited from Hyperstation (SS13).
 # I was originally gonna add all 6 colors, but they seemed redundant in favor of just making one recolorable visor.
 - type: marking
-  speciesRestriction: [ IPC ]
+  parent: BaseMarkingIPCScreen
   id: ScreenVisorRecolorable
-  bodyPart: Face
-  markingCategory: Face
-  sprites:
-    - sprite: _DEN/Mobs/Customization/IPC/ipc_screen_visors.rsi
-      state: ipc_screen_visor_background
-    - sprite: _DEN/Mobs/Customization/IPC/ipc_screen_visors.rsi
-      state: ipc_screen_visor_eyes
   coloring:
     layers:
       ipc_screen_visor_background:
@@ -41,3 +32,8 @@
         type:
           !type:SimpleColoring
             color: "#111111"
+  sprites:
+    - sprite: _DEN/Mobs/Customization/IPC/ipc_screen_visors.rsi
+      state: ipc_screen_visor_background
+    - sprite: _DEN/Mobs/Customization/IPC/ipc_screen_visors.rsi
+      state: ipc_screen_visor_eyes

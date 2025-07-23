@@ -329,11 +329,10 @@
     state: r_foot_plush
 
 - type: marking
+  parent: BaseMarkingSpeciesStandardBody
   id: OverlayPlushBellyF
   bodyPart: Chest
   markingCategory: Chest
-  speciesRestriction: [ Diona, Resomi ]
-  invertSpeciesRestriction: true
   coloring:
     default:
       type:
@@ -344,11 +343,10 @@
     state: belly_plush_f
 
 - type: marking
+  parent: BaseMarkingSpeciesStandardBody
   id: OverlayPlushBellyM
   bodyPart: Chest
   markingCategory: Chest
-  speciesRestriction: [ Diona, Resomi ]
-  invertSpeciesRestriction: true
   coloring:
     default:
       type:
