@@ -5,6 +5,21 @@
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
+# DEN - Add inheritance
+- type: marking
+  abstract: true
+  id: BaseMarkingScalieTail
+  bodyPart: Tail
+  markingCategory: Tail
+  speciesRestriction:
+  - Feroxi
+  - Human
+  - IPC
+  - Oni
+  - Reptilian
+  - SlimePerson
+# End DEN
+
 - type: marking
   id: ReptilianDrawingKhar
   bodyPart: Chest
@@ -238,19 +253,17 @@
     state: horns_twoago
 
 - type: marking
+  parent: # DEN - Add inheritance
+  - BaseMarkingScalieTail
   id: TailAxolotl
-  bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [Reptilian, SlimePerson, Human, IPC]
   sprites:
     - sprite: _ADT/Mobs/Customization/Reptilian/reptilian_tails.rsi
       state: axolotl
 
 - type: marking
+  parent: # DEN - Add inheritance
+  - BaseMarkingScalieTail
   id: TailDatashark
-  bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [Reptilian, SlimePerson, Human, IPC]
   sprites:
     - sprite: _ADT/Mobs/Customization/Reptilian/reptilian_tails.rsi
       state: datashark_ears_inner
@@ -264,10 +277,9 @@
       state: datashark_taildata
 
 - type: marking
+  parent: # DEN - Add inheritance
+  - BaseMarkingScalieTail
   id: TailEasternDragon
-  bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [Reptilian, SlimePerson, Human, IPC, Oni]
   sprites:
     - sprite: _ADT/Mobs/Customization/Reptilian/reptilian_tails.rsi
       state: easternd_primary
@@ -275,10 +287,9 @@
       state: easternd_secondary
 
 - type: marking
+  parent: # DEN - Add inheritance
+  - BaseMarkingScalieTail
   id: TailFish
-  bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [Reptilian, SlimePerson, Human, IPC]
   sprites:
     - sprite: _ADT/Mobs/Customization/Reptilian/reptilian_tails.rsi
       state: fish_primary
@@ -286,19 +297,25 @@
       state: fish_secondary
 
 - type: marking
+  parent: # DEN - Add inheritance
+  - BaseMarkingScalieTail
   id: TailMaw
-  bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [Reptilian, SlimePerson, Human, IPC, Vulpkanin]
+  speciesRestriction:
+  - Feroxi
+  - Human
+  - IPC
+  - Oni
+  - Reptilian
+  - SlimePerson
+  - Vulpkanin # merry christmas
   sprites:
     - sprite: _ADT/Mobs/Customization/Reptilian/reptilian_tails.rsi
       state: maw
 
 - type: marking
+  parent: # DEN - Add inheritance
+  - BaseMarkingScalieTail
   id: TailSharkADT
-  bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [Reptilian, SlimePerson, Human, IPC]
   sprites:
     - sprite: _ADT/Mobs/Customization/Reptilian/reptilian_tails.rsi
       state: shark_fin
@@ -306,10 +323,9 @@
       state: shark_tail
 
 - type: marking
+  parent: # DEN - Add inheritance
+  - BaseMarkingScalieTail
   id: TailSnake
-  bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [Reptilian, SlimePerson, Human, IPC, Oni]
   sprites:
     - sprite: _ADT/Mobs/Customization/Reptilian/reptilian_tails.rsi
       state: snake

@@ -8,10 +8,9 @@
 
 - type: marking
   abstract: true
+  parent: BaseMarkingHorns
   id: BaseMarkingOviniaHorns
-  bodyPart: HeadTop
-  markingCategory: HeadTop
-  speciesRestriction: [ Ovinia, Human ]
+  speciesRestriction: [ Ovinia, Human, Oni ]
 
 - type: marking
   abstract: true

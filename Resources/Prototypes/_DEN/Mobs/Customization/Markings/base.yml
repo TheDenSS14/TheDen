@@ -322,3 +322,15 @@
       type:
         !type:TattooColoring
       fallbackColor: "#666666"
+
+- type: marking
+  abstract: true
+  id: BaseMarkingHorns
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+
+- type: marking
+  abstract: true
+  id: BaseMarkingFullBody
+  bodyPart: LLeg # TODO: Make a layer for this
+  markingCategory: Overlay

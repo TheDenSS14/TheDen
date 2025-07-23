@@ -3,209 +3,221 @@
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
+# DEN - Add inheritance
 - type: marking
+  abstract: true
+  id: BaseMarkingSpeciesDemon
+  speciesRestriction:
+  - Human
+  - IPC
+  - Oni
+# End DEN
+
+- type: marking
+  parent: # DEN - Add inheritance
+  - BaseMarkingSpeciesDemon
+  - BaseMarkingFullBody
   id: DemonChestCowSpots
   bodyPart: LLeg
   markingCategory: Overlay
-  speciesRestriction: [Human, IPC, Oni]
   sprites:
   - sprite: _ADT/Mobs/Customization/Demon/custom.rsi
     state: cow_spots
 
 - type: marking
+  parent: # DEN - Add inheritance
+  - BaseMarkingSpeciesDemon
+  - BaseMarkingFullBody
   id: DemonChestGuard
-  bodyPart: LLeg
-  markingCategory: Overlay
-  speciesRestriction: [Human, IPC, Oni]
   sprites:
   - sprite: _ADT/Mobs/Customization/Demon/custom.rsi
     state: guards_stripes
 
 - type: marking
+  parent: # DEN - Add inheritance
+  - BaseMarkingSpeciesDemon
+  - BaseMarkingFullBody
   id: DemonChestLinesEmperos
-  bodyPart: LLeg
-  markingCategory: Overlay
-  speciesRestriction: [Human, IPC, Oni]
   sprites:
   - sprite: _ADT/Mobs/Customization/Demon/custom.rsi
     state: lines_emperos
 
 - type: marking
+  parent: # DEN - Add inheritance
+  - BaseMarkingSpeciesDemon
+  - BaseMarkingFullBody
   id: DemonChestQueenLines
-  bodyPart: LLeg
-  markingCategory: Overlay
-  speciesRestriction: [Human, IPC, Oni]
   sprites:
   - sprite: _ADT/Mobs/Customization/Demon/custom.rsi
     state: queen_lines
 
 - type: marking
+  parent: # DEN - Add inheritance
+  - BaseMarkingSpeciesDemon
+  - BaseMarkingFullBody
   id: DemonChestTreeLines
-  bodyPart: LLeg
-  markingCategory: Overlay
-  speciesRestriction: [Human, IPC, Oni]
   sprites:
   - sprite: _ADT/Mobs/Customization/Demon/custom.rsi
     state: tree_lines
 
 - type: marking
+  parent: # DEN - Add inheritance
+  - BaseMarkingSpeciesDemon
+  - BaseMarkingFullBody
   id: DemonChestTrinitySpots
-  bodyPart: Chest
-  markingCategory: Overlay
-  speciesRestriction: [Human, IPC, Oni]
   sprites:
   - sprite: _ADT/Mobs/Customization/Demon/custom.rsi
     state: trinity_spots
 
 - type: marking
+  parent: BaseMarkingSpeciesDemon # DEN - Add inheritance
   id: DemonCowEars
   bodyPart: HeadSide
   markingCategory: HeadSide
-  speciesRestriction: [Oni, Harpy, Arachne, Lamia, Human, IPC]
   sprites:
   - sprite: _ADT/Mobs/Customization/Demon/custom.rsi
     state: cow_ears
 
 - type: marking
+  parent: BaseMarkingSpeciesDemon # DEN - Add inheritance
   id: DemonEars
   bodyPart: HeadSide
   markingCategory: HeadSide
-  speciesRestriction: [Oni, Harpy, Arachne, Lamia, Human, IPC]
   sprites:
   - sprite: _ADT/Mobs/Customization/Demon/custom.rsi
     state: demon_ears
 
 - type: marking
+  parent: BaseMarkingSpeciesDemon # DEN - Add inheritance
   id: DemonElfEars
   bodyPart: HeadSide
   markingCategory: HeadSide
-  speciesRestriction: [Oni, Harpy, Arachne, Lamia, Human, IPC]
   sprites:
   - sprite: _ADT/Mobs/Customization/Demon/custom.rsi
     state: ears_elf
 
 - type: marking
+  parent: # DEN - Add inheritance
+  - BaseMarkingSpeciesDemon
+  - BaseMarkingHorns
   id: DemonCowHorns
-  bodyPart: HeadTop
-  markingCategory: HeadTop
-  speciesRestriction: [Human, IPC, Oni]
   sprites:
   - sprite: _ADT/Mobs/Customization/Demon/custom.rsi
     state: cow_horns
 
 - type: marking
+  parent: # DEN - Add inheritance
+  - BaseMarkingSpeciesDemon
+  - BaseMarkingHorns
   id: DemonHornsDeer
-  bodyPart: HeadTop
-  markingCategory: HeadTop
-  speciesRestriction: [Human, IPC, Oni]
   sprites:
   - sprite: _ADT/Mobs/Customization/Demon/custom.rsi
     state: deer_antlers_horns
 
 - type: marking
+  parent: # DEN - Add inheritance
+  - BaseMarkingSpeciesDemon
+  - BaseMarkingHorns
   id: DemonHornsSmall
-  bodyPart: HeadTop
-  markingCategory: HeadTop
-  speciesRestriction: [Human, IPC, Oni]
   sprites:
   - sprite: _ADT/Mobs/Customization/Demon/custom.rsi
     state: small_horns
 
 - type: marking
+  parent: # DEN - Add inheritance
+  - BaseMarkingSpeciesDemon
+  - BaseMarkingHorns
   id: DemonHornsBuffalo
-  bodyPart: HeadTop
-  markingCategory: HeadTop
-  speciesRestriction: [Human, IPC, Oni]
   sprites:
   - sprite: _ADT/Mobs/Customization/Demon/custom.rsi
     state: horns_buffalo
 
 - type: marking
+  parent: # DEN - Add inheritance
+  - BaseMarkingSpeciesDemon
+  - BaseMarkingHorns
   id: DemonHornsCarpicorn
-  bodyPart: HeadTop
-  markingCategory: HeadTop
-  speciesRestriction: [Human, IPC, Oni]
   sprites:
   - sprite: _ADT/Mobs/Customization/Demon/custom.rsi
     state: horns_capricorn
 
 - type: marking
+  parent: # DEN - Add inheritance
+  - BaseMarkingSpeciesDemon
+  - BaseMarkingHorns
   id: DemonHornsDevil
-  bodyPart: HeadTop
-  markingCategory: HeadTop
-  speciesRestriction: [Human, IPC, Oni]
   sprites:
   - sprite: _ADT/Mobs/Customization/Demon/custom.rsi
     state: horns_devil
 
 - type: marking
+  parent: # DEN - Add inheritance
+  - BaseMarkingSpeciesDemon
+  - BaseMarkingHorns
   id: DemonHornsDevil2
-  bodyPart: HeadTop
-  markingCategory: HeadTop
-  speciesRestriction: [Human, IPC, Oni]
   sprites:
   - sprite: _ADT/Mobs/Customization/Demon/custom.rsi
     state: horns_devil2
 
 - type: marking
+  parent: # DEN - Add inheritance
+  - BaseMarkingSpeciesDemon
+  - BaseMarkingHorns
   id: DemonHornsDevil3
-  bodyPart: HeadTop
-  markingCategory: HeadTop
-  speciesRestriction: [Human, IPC, Oni]
   sprites:
   - sprite: _ADT/Mobs/Customization/Demon/custom.rsi
     state: horns_devil3
 
 - type: marking
+  parent: # DEN - Add inheritance
+  - BaseMarkingSpeciesDemon
+  - BaseMarkingHorns
   id: DemonHornsDevil4
-  bodyPart: HeadTop
-  markingCategory: HeadTop
-  speciesRestriction: [Human, IPC, Oni]
   sprites:
   - sprite: _ADT/Mobs/Customization/Demon/custom.rsi
     state: horns_devil4
 
 - type: marking
+  parent: # DEN - Add inheritance
+  - BaseMarkingSpeciesDemon
+  - BaseMarkingHorns
   id: DemonHornsRam
-  bodyPart: HeadTop
-  markingCategory: HeadTop
-  speciesRestriction: [Human, IPC, Oni]
   sprites:
   - sprite: _ADT/Mobs/Customization/Demon/custom.rsi
     state: horns_ram
 
 - type: marking
+  parent: # DEN - Add inheritance
+  - BaseMarkingSpeciesDemon
+  - BaseMarkingHorns
   id: DemonHornsUnicorn
-  bodyPart: HeadTop
-  markingCategory: HeadTop
-  speciesRestriction: [Human, IPC, Oni]
   sprites:
   - sprite: _ADT/Mobs/Customization/Demon/custom.rsi
     state: horns_unicorn
 
 - type: marking
+  parent: BaseMarkingSpeciesDemon # DEN - Add inheritance
   id: DemomTail1
   bodyPart: Tail
   markingCategory: Tail
-  speciesRestriction: [Human, IPC]
   sprites:
   - sprite: _ADT/Mobs/Customization/Demon/custom.rsi
     state: demon_tail
 
 - type: marking
+  parent: BaseMarkingSpeciesDemon # DEN - Add inheritance
   id: DemomTailLong
   bodyPart: Tail
   markingCategory: Tail
-  speciesRestriction: [Human, IPC]
   sprites:
   - sprite: _ADT/Mobs/Customization/Demon/custom.rsi
     state: long
 
 - type: marking
+  parent: BaseMarkingSpeciesDemon # DEN - Add inheritance
   id: DemomTailUp
   bodyPart: Tail
   markingCategory: Tail
-  speciesRestriction: [Human, IPC]
   sprites:
   - sprite: _ADT/Mobs/Customization/Demon/custom.rsi
     state: up

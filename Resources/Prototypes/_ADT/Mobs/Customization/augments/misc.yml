@@ -4,24 +4,21 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 - type: marking
+  parent: # DEN - Add inheritance
+  - BaseMarkingSpeciesStandardHeadOrganic
   id: Malstrem
   bodyPart: Eyes
   markingCategory: Head
-  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Vulpkanin, Arachne, Lamia, Tajaran]
-  forcedColoring: false
-  followSkinColor: false
   sprites:
   - sprite: _ADT/Mobs/Customization/augments/headaugs.rsi
     state: malstrem
 
 - type: marking
+  parent: # DEN - Add inheritance
+  - BaseMarkingSpeciesStandardHeadOrganic
   id: Beholder
   bodyPart: Eyes
   markingCategory: Head
-  speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Vulpkanin, Arachne, Lamia, Tajaran]
-  forcedColoring: false
-  followSkinColor: false
   sprites:
   - sprite: _ADT/Mobs/Customization/augments/headaugs.rsi
     state: beholder
-
