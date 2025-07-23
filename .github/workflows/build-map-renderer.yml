@@ -25,6 +25,7 @@ on:
 
 jobs:
   build:
+    if: github.actor != 'TheDen-Bot' && github.event.pull_request.draft == false
     strategy:
       matrix:
         os: [ubuntu-latest]

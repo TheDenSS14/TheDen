@@ -33,10 +33,10 @@ on:
 
 jobs:
   build:
-    if: github.actor != 'PJBot' && github.event.pull_request.draft == false && github.actor != 'DeltaV-Bot' && github.actor != 'SimpleStation14'
+    if: github.actor != 'TheDen-Bot' && github.event.pull_request.draft == false
     strategy:
       matrix:
-        os: [ubuntu-latest]
+        os: [ubuntu-latest] # change to self-hosted runner with more RAM
 
     runs-on: ${{ matrix.os }}
 

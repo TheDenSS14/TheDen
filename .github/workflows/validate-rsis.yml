@@ -21,6 +21,7 @@ on:
 
 jobs:
   validate_rsis:
+    if: github.actor != 'TheDen-Bot' && github.event.pull_request.draft == false
     name: Validate RSIs
     runs-on: ubuntu-latest
     steps:

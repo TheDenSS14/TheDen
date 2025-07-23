@@ -20,6 +20,7 @@ on:
 
 jobs:
   yaml-schema-validation:
+    if: github.actor != 'TheDen-Bot' && github.event.pull_request.draft == false
     name: YAML map schema validator
     runs-on: ubuntu-latest
     steps:
