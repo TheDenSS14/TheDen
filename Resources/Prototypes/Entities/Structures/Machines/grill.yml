@@ -23,7 +23,7 @@
     powerLoad: 0 # off by default
   - type: EntityHeater
   - type: ItemPlacer
-    maxEntities: 120 # big grill, many steaks
+    maxEntities: 4 # big grill, many steaks
     whitelist:
       components:
       - Temperature
