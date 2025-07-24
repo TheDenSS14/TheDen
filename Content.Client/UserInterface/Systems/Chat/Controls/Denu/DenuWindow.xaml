@@ -1,33 +1,46 @@
 ﻿<controls:DenuWindow
     xmlns="https://spacestation14.io"
-    xmlns:controls="clr-namespace:Content.Client.UserInterface.Systems.Chat.Controls.Denu">
+    xmlns:controls="clr-namespace:Content.Client.UserInterface.Systems.Chat.Controls.Denu"
+    MinSize="400 400">
 
-    <BoxContainer Orientation="Vertical" Margin="8" SeparationOverride="8">
-        <CheckBox Name="AutoFormatterCheckBox" Text="Auto Formatter"
-                  ToolTip="Enables the auto-formatter in subtledetailed" />
+    <TabContainer Name="Tabs" VerticalExpand="True" HorizontalExpand="True">
 
-        <CheckBox Name="RemoveAsterisksCheckBox" Text="Remove Asterisks"
-                  ToolTip="Removes any provided asterisks from your message" />
+        <BoxContainer Orientation="Vertical" Margin="8" SeparationOverride="8">
+            <CheckBox Name="AutoFormatterCheckBox" Text="Auto Formatter"
+                      ToolTip="Enables the auto-formatter in subtledetailed" />
 
-        <controls:ToggleButton Name="TypingToggleButton" Text="Typing Toggle" ToolTip="Keeps the typing indicator on"
-                               UpdatePeriod="500" />
+            <CheckBox Name="RemoveAsterisksCheckBox" Text="Remove Asterisks"
+                      ToolTip="Removes any provided asterisks from your message" />
 
-        <PanelContainer StyleClasses="LowDivider" />
+            <controls:ToggleButton Name="TypingToggleButton" Text="Typing Toggle" ToolTip="Keeps the typing indicator on"
+                                   UpdatePeriod="500" />
 
-        <Label Text="Dialogue Colour" VerticalAlignment="Center" />
+            <PanelContainer StyleClasses="LowDivider" />
 
-        <ColorSelectorSliders Name="DialogueColorSelector" />
+            <Collapsible>
+                <CollapsibleHeading Title="Dialogue Colour" />
+                <CollapsibleBody>
+                    <ColorSelectorSliders Name="DialogueColorSelector" />
+                </CollapsibleBody>
+            </Collapsible>
 
-        <PanelContainer StyleClasses="LowDivider" />
+            <PanelContainer StyleClasses="LowDivider" />
 
-        <Label Text="Emote Colour" VerticalAlignment="Center" />
+            <Collapsible>
+                <CollapsibleHeading Title="Emote Colour" />
+                <CollapsibleBody>
+                    <ColorSelectorSliders Name="EmoteColorSelector" />
+                </CollapsibleBody>
+            </Collapsible>
 
-        <ColorSelectorSliders Name="EmoteColorSelector" />
+            <PanelContainer StyleClasses="LowDivider" />
 
-        <PanelContainer StyleClasses="LowDivider" />
+            <RichTextLabel Name="TextPreview" Text="Hello! *italic* **bold** ***bolditalic*** *looks at you*" />
 
-        <RichTextLabel Name="TextPreview" Text="Hello! *italic* **bold** ***bolditalic*** *looks at you*" />
+        </BoxContainer>
 
-    </BoxContainer>
+        <BoxContainer Orientation="Vertical" Margin="8" SeparationOverride="8" />
+
+    </TabContainer>
 
 </controls:DenuWindow>
