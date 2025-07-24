@@ -5,10 +5,8 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 - type: marking
+  parent: BaseMarkingCyberlimbHead # DEN - Add Inheritance
   id: CyberLimbsMarkingMorpheusHead
-  bodyPart: Head
-  markingCategory: Head
-  speciesRestriction: [IPC]
   coloring:
     default:
       type:
@@ -19,10 +17,8 @@
     state: head
 
 - type: marking
+  parent: BaseMarkingCyberlimbHead # DEN - Add Inheritance
   id: CyberLimbsMarkingMorpheusHeadAlt
-  bodyPart: Head
-  markingCategory: Head
-  speciesRestriction: [IPC]
   coloring:
     default:
       type:
@@ -33,10 +29,8 @@
     state: head
 
 - type: marking
+  parent: BaseMarkingCyberlimbChest # DEN - Add Inheritance
   id: CyberLimbsMarkingMorpheusChest
-  bodyPart: Chest
-  markingCategory: Chest
-  speciesRestriction: [IPC]
   coloring:
     default:
       type:
@@ -47,10 +41,10 @@
     state: torso
 
 - type: marking
+  parent: BaseMarkingCyberlimbProstheticArm # DEN - Add Inheritance
   id: CyberLimbsMarkingMorpheusLArm
   bodyPart: LArm
   markingCategory: LeftArm
-  speciesRestriction: [IPC]
   coloring:
     default:
       type:
@@ -61,10 +55,10 @@
     state: l_arm
 
 - type: marking
+  parent: BaseMarkingCyberlimbProstheticArm # DEN - Add Inheritance
   id: CyberLimbsMarkingMorpheusLHand
   bodyPart: LHand
   markingCategory: LeftHand
-  speciesRestriction: [IPC]
   coloring:
     default:
       type:
@@ -75,10 +69,10 @@
     state: l_hand
 
 - type: marking
+  parent: BaseMarkingCyberlimbProstheticLegs # DEN - Add Inheritance
   id: CyberLimbsMarkingMorpheusLLeg
   bodyPart: LLeg
   markingCategory: LeftLeg
-  speciesRestriction: [IPC]
   coloring:
     default:
       type:
@@ -88,12 +82,11 @@
   - sprite: Mobs/Customization/cyberlimbs/morpheus/morpheus_main.rsi
     state: l_leg
 
-
 - type: marking
+  parent: BaseMarkingCyberlimbProstheticLegs # DEN - Add Inheritance
   id: CyberLimbsMarkingMorpheusLFoot
   bodyPart: LFoot
   markingCategory: LeftFoot
-  speciesRestriction: [IPC]
   coloring:
     default:
       type:
@@ -103,13 +96,11 @@
   - sprite: Mobs/Customization/cyberlimbs/morpheus/morpheus_main.rsi
     state: l_foot
 
-
-
 - type: marking
+  parent: BaseMarkingCyberlimbProstheticArm # DEN - Add Inheritance
   id: CyberLimbsMarkingMorpheusRArm
   bodyPart: RArm
   markingCategory: RightArm
-  speciesRestriction: [IPC]
   coloring:
     default:
       type:
@@ -119,12 +110,11 @@
   - sprite: Mobs/Customization/cyberlimbs/morpheus/morpheus_main.rsi
     state: r_arm
 
-
 - type: marking
+  parent: BaseMarkingCyberlimbProstheticArm # DEN - Add Inheritance
   id: CyberLimbsMarkingMorpheusRHand
   bodyPart: RHand
   markingCategory: RightHand
-  speciesRestriction: [IPC]
   coloring:
     default:
       type:
@@ -135,10 +125,10 @@
     state: r_hand
 
 - type: marking
+  parent: BaseMarkingCyberlimbProstheticLegs # DEN - Add Inheritance
   id: CyberLimbsMarkingMorpheusRLeg
   bodyPart: RLeg
   markingCategory: RightLeg
-  speciesRestriction: [IPC]
   coloring:
     default:
       type:
@@ -148,12 +138,11 @@
   - sprite: Mobs/Customization/cyberlimbs/morpheus/morpheus_main.rsi
     state: r_leg
 
-
 - type: marking
+  parent: BaseMarkingCyberlimbProstheticLegs # DEN - Add Inheritance
   id: CyberLimbsMarkingMorpheusRFoot
   bodyPart: RFoot
   markingCategory: RightFoot
-  speciesRestriction: [IPC]
   coloring:
     default:
       type:

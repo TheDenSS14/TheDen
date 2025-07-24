@@ -1,0 +1,72 @@
+- type: marking
+  abstract: true
+  id: BaseMarkingIPCAntenna
+  speciesRestriction: [IPC]
+
+- type: marking
+  abstract: true
+  id: BaseMarkingIPCScreen
+  bodyPart: Face
+  markingCategory: Face
+  speciesRestriction: [IPC]
+
+- type: marking
+  abstract: true
+  id: BaseMarkingCyberlimb
+  speciesRestriction: [IPC]
+  coloring:
+    default:
+      type:
+        !type:SkinColoring
+      fallbackTypes:
+      - !type:SimpleColoring
+          color: "#FFFFFF"
+
+- type: marking
+  abstract: true
+  id: BaseMarkingCyberlimbHead
+  bodyPart: Head
+  markingCategory: Head
+
+- type: marking
+  abstract: true
+  id: BaseMarkingCyberlimbChest
+  bodyPart: Chest
+  markingCategory: Chest
+
+# Excluded species:
+# - Species who do not have arms.
+# - Species for whom arm prosthetics would not fit on their sprite.
+# - Species without skin and flesh.
+# NEVER exclude IPC from this list. This is also their body sprite.
+# TODO: Make custom prosthetic sprites for Moth and Chitinid and then add them to this list.
+- type: marking
+  abstract: true
+  parent: BaseMarkingCyberlimb
+  id: BaseMarkingCyberlimbProstheticArm
+  speciesRestriction:
+  - Diona
+  - Harpy
+  - Plasmaman
+  - Resomi
+  - Vox
+
+# Excluded species:
+# - Species who do not have legs.
+# - Species for whom leg prosthetics would not fit on their sprite.
+# - Species without skin and flesh.
+# NEVER exclude IPC from this list. This is also their body sprite.
+# TODO: Make custom prosthetic sprites for Moth and Chitinid and then add them to this list.
+- type: marking
+  abstract: true
+  parent: BaseMarkingCyberlimb
+  id: BaseMarkingCyberlimbProstheticLegs
+  speciesRestriction:
+  - Arachne
+  - Diona
+  - Harpy
+  - Ovinia
+  - Plasmaman
+  - Resomi
+  - Shadowkin
+  - Vox

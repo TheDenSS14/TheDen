@@ -6,19 +6,15 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 - type: marking
+  parent: BaseMarkingCyberlimbHead # DEN - Add Inheritance
   id: CyberLimbsMarkingWardtakahashiHead
-  bodyPart: Head
-  markingCategory: Head
-  speciesRestriction: [IPC]
   sprites:
   - sprite: Mobs/Customization/cyberlimbs/wardtakahashi/wardtakahashi_monitor.rsi
     state: head
 
 - type: marking
+  parent: BaseMarkingCyberlimbHead # DEN - Add Inheritance
   id: CyberLimbsMarkingWardtakahashiHeadAlt
-  bodyPart: Head
-  markingCategory: Head
-  speciesRestriction: [IPC]
   sprites:
   - sprite: Mobs/Customization/cyberlimbs/wardtakahashi/wardtakahashi_main.rsi
     state: head
@@ -26,96 +22,87 @@
     state: head-2
 
 - type: marking
+  parent: BaseMarkingCyberlimbHead # DEN - Add Inheritance
   id: CyberLimbsMarkingWardtakahashiHeadAlt1
-  bodyPart: Head
-  markingCategory: Head
-  speciesRestriction: [IPC]
   sprites:
   - sprite: Mobs/Customization/cyberlimbs/wardtakahashi/wardtakahashi_alt1.rsi
     state: head
 
 - type: marking
+  parent: BaseMarkingCyberlimbChest # DEN - Add Inheritance
   id: CyberLimbsMarkingWardtakahashiChest
-  bodyPart: Chest
-  markingCategory: Chest
-  speciesRestriction: [IPC]
   sprites:
   - sprite: Mobs/Customization/cyberlimbs/wardtakahashi/wardtakahashi_main.rsi
     state: torso
 
 - type: marking
+  parent: BaseMarkingCyberlimbProstheticArm # DEN - Add Inheritance
   id: CyberLimbsMarkingWardtakahashiLArm
   bodyPart: LArm
   markingCategory: LeftArm
-  speciesRestriction: [IPC]
   sprites:
   - sprite: Mobs/Customization/cyberlimbs/wardtakahashi/wardtakahashi_main.rsi
     state: l_arm
 
 - type: marking
+  parent: BaseMarkingCyberlimbProstheticArm # DEN - Add Inheritance
   id: CyberLimbsMarkingWardtakahashiLHand
   bodyPart: LHand
   markingCategory: LeftHand
-  speciesRestriction: [IPC]
   sprites:
   - sprite: Mobs/Customization/cyberlimbs/wardtakahashi/wardtakahashi_main.rsi
     state: l_hand
 
 - type: marking
+  parent: BaseMarkingCyberlimbProstheticLegs # DEN - Add Inheritance
   id: CyberLimbsMarkingWardtakahashiLLeg
   bodyPart: LLeg
   markingCategory: LeftLeg
-  speciesRestriction: [IPC]
   sprites:
   - sprite: Mobs/Customization/cyberlimbs/wardtakahashi/wardtakahashi_main.rsi
     state: l_leg
 
-
 - type: marking
+  parent: BaseMarkingCyberlimbProstheticLegs # DEN - Add Inheritance
   id: CyberLimbsMarkingWardtakahashiLFoot
   bodyPart: LFoot
   markingCategory: LeftFoot
-  speciesRestriction: [IPC]
   sprites:
   - sprite: Mobs/Customization/cyberlimbs/wardtakahashi/wardtakahashi_main.rsi
     state: l_foot
 
-
-
 - type: marking
+  parent: BaseMarkingCyberlimbProstheticArm # DEN - Add Inheritance
   id: CyberLimbsMarkingWardtakahashiRArm
   bodyPart: RArm
   markingCategory: RightArm
-  speciesRestriction: [IPC]
   sprites:
   - sprite: Mobs/Customization/cyberlimbs/wardtakahashi/wardtakahashi_main.rsi
     state: r_arm
 
-
 - type: marking
+  parent: BaseMarkingCyberlimbProstheticArm # DEN - Add Inheritance
   id: CyberLimbsMarkingWardtakahashiRHand
   bodyPart: RHand
   markingCategory: RightHand
-  speciesRestriction: [IPC]
   sprites:
   - sprite: Mobs/Customization/cyberlimbs/wardtakahashi/wardtakahashi_main.rsi
     state: r_hand
 
 - type: marking
+  parent: BaseMarkingCyberlimbProstheticLegs # DEN - Add Inheritance
   id: CyberLimbsMarkingWardtakahashiRLeg
   bodyPart: RLeg
   markingCategory: RightLeg
-  speciesRestriction: [IPC]
   sprites:
   - sprite: Mobs/Customization/cyberlimbs/wardtakahashi/wardtakahashi_main.rsi
     state: r_leg
 
-
 - type: marking
+  parent: BaseMarkingCyberlimbProstheticLegs # DEN - Add Inheritance
   id: CyberLimbsMarkingWardtakahashiRFoot
   bodyPart: RFoot
   markingCategory: RightFoot
-  speciesRestriction: [IPC]
   sprites:
   - sprite: Mobs/Customization/cyberlimbs/wardtakahashi/wardtakahashi_main.rsi
     state: r_foot

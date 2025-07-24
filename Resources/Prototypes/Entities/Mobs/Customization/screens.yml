@@ -8,15 +8,6 @@
 ## CANT SET THESE SCREENS TO "shader: unshaded"
 ## RobustToolbox/Robust.Shared/Utility/SpriteSpecifier.cs
 
-# DEN - Base
-- type: marking
-  abstract: true
-  id: BaseMarkingIPCScreen
-  bodyPart: Face
-  markingCategory: Face
-  speciesRestriction: [IPC]
-# End DEN
-
 - type: marking
   parent: BaseMarkingIPCScreen # DEN - Add inheritance
   id: ScreenStatic

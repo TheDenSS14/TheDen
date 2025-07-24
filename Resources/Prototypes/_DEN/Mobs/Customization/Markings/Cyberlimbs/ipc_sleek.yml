@@ -6,17 +6,8 @@
 # Ported and edited from Hyperstation (SS13).
 
 - type: marking
+  parent: BaseMarkingCyberlimbChest
   id: IPCLimbsSleekChest
-  bodyPart: Chest
-  markingCategory: Chest
-  speciesRestriction: [IPC]
-  coloring:
-    default:
-      type:
-        !type:SkinColoring
-      fallbackTypes:
-      - !type:SimpleColoring
-          color: "#FFFFFF"
   sprites:
   - sprite: _DEN/Mobs/Customization/Cyberlimbs/sleek.rsi
     state: torso_base
@@ -24,17 +15,10 @@
     state: torso_joint
 
 - type: marking
+  parent: BaseMarkingCyberlimbProstheticArm
   id: IPCLimbsSleekLArm
   bodyPart: LArm
   markingCategory: LeftArm
-  speciesRestriction: [IPC]
-  coloring:
-    default:
-      type:
-        !type:SkinColoring
-      fallbackTypes:
-      - !type:SimpleColoring
-          color: "#FFFFFF"
   sprites:
   - sprite: _DEN/Mobs/Customization/Cyberlimbs/sleek.rsi
     state: l_arm_base
@@ -42,17 +26,10 @@
     state: l_arm_joint
 
 - type: marking
+  parent: BaseMarkingCyberlimbProstheticArm
   id: IPCLimbsSleekLHand
   bodyPart: LHand
   markingCategory: LeftHand
-  speciesRestriction: [IPC]
-  coloring:
-    default:
-      type:
-        !type:SkinColoring
-      fallbackTypes:
-      - !type:SimpleColoring
-          color: "#FFFFFF"
   sprites:
   - sprite: _DEN/Mobs/Customization/Cyberlimbs/sleek.rsi
     state: l_hand_base
@@ -60,17 +37,10 @@
     state: l_hand_joint
 
 - type: marking
+  parent: BaseMarkingCyberlimbProstheticLegs
   id: IPCLimbsSleekLLeg
   bodyPart: LLeg
   markingCategory: LeftLeg
-  speciesRestriction: [IPC]
-  coloring:
-    default:
-      type:
-        !type:SkinColoring
-      fallbackTypes:
-      - !type:SimpleColoring
-          color: "#FFFFFF"
   sprites:
   - sprite: _DEN/Mobs/Customization/Cyberlimbs/sleek.rsi
     state: l_leg_base
@@ -78,33 +48,19 @@
     state: l_leg_joint
 
 - type: marking
+  parent: BaseMarkingCyberlimbProstheticLegs
   id: IPCLimbsSleekLFoot
   bodyPart: LFoot
   markingCategory: LeftFoot
-  speciesRestriction: [IPC]
-  coloring:
-    default:
-      type:
-        !type:SkinColoring
-      fallbackTypes:
-      - !type:SimpleColoring
-          color: "#FFFFFF"
   sprites:
   - sprite: _DEN/Mobs/Customization/Cyberlimbs/sleek.rsi
     state: l_foot_base
 
 - type: marking
+  parent: BaseMarkingCyberlimbProstheticArm
   id: IPCLimbsSleekRArm
   bodyPart: RArm
   markingCategory: RightArm
-  speciesRestriction: [IPC]
-  coloring:
-    default:
-      type:
-        !type:SkinColoring
-      fallbackTypes:
-      - !type:SimpleColoring
-          color: "#FFFFFF"
   sprites:
   - sprite: _DEN/Mobs/Customization/Cyberlimbs/sleek.rsi
     state: r_arm_base
@@ -112,17 +68,10 @@
     state: r_arm_joint
 
 - type: marking
+  parent: BaseMarkingCyberlimbProstheticArm
   id: IPCLimbsSleekRHand
   bodyPart: RHand
   markingCategory: RightHand
-  speciesRestriction: [IPC]
-  coloring:
-    default:
-      type:
-        !type:SkinColoring
-      fallbackTypes:
-      - !type:SimpleColoring
-          color: "#FFFFFF"
   sprites:
   - sprite: _DEN/Mobs/Customization/Cyberlimbs/sleek.rsi
     state: r_hand_base
@@ -130,17 +79,10 @@
     state: r_hand_joint
 
 - type: marking
+  parent: BaseMarkingCyberlimbProstheticLegs
   id: IPCLimbsSleekRLeg
   bodyPart: RLeg
   markingCategory: RightLeg
-  speciesRestriction: [IPC]
-  coloring:
-    default:
-      type:
-        !type:SkinColoring
-      fallbackTypes:
-      - !type:SimpleColoring
-          color: "#FFFFFF"
   sprites:
   - sprite: _DEN/Mobs/Customization/Cyberlimbs/sleek.rsi
     state: r_leg_base
@@ -148,17 +90,10 @@
     state: r_leg_joint
 
 - type: marking
+  parent: BaseMarkingCyberlimbProstheticLegs
   id: IPCLimbsSleekRFoot
   bodyPart: RFoot
   markingCategory: RightFoot
-  speciesRestriction: [IPC]
-  coloring:
-    default:
-      type:
-        !type:SkinColoring
-      fallbackTypes:
-      - !type:SimpleColoring
-          color: "#FFFFFF"
   sprites:
   - sprite: _DEN/Mobs/Customization/Cyberlimbs/sleek.rsi
     state: r_foot_base

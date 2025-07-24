@@ -3,13 +3,6 @@
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
-# DEN - Base
-- type: marking
-  abstract: true
-  id: BaseMarkingIPCAntenna
-  speciesRestriction: [IPC]
-# End DEN
-
 - type: marking
   parent: BaseMarkingIPCAntenna # DEN - Add inheritance
   id: RobotAntennaTv

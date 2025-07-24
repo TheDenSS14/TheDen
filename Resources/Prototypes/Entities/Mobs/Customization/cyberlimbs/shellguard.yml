@@ -5,10 +5,8 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 - type: marking
+  parent: BaseMarkingCyberlimbHead # DEN - Add Inheritance
   id: CyberLimbsMarkingShellguardHead
-  bodyPart: Head
-  markingCategory: Head
-  speciesRestriction: [IPC]
   sprites:
   - sprite: Mobs/Customization/cyberlimbs/shellguard/shellguard_monitor.rsi
     state: head-1
@@ -16,10 +14,8 @@
     state: head-2
 
 - type: marking
+  parent: BaseMarkingCyberlimbHead # DEN - Add Inheritance
   id: CyberLimbsMarkingShellguardHeadAlt
-  bodyPart: Head
-  markingCategory: Head
-  speciesRestriction: [IPC]
   sprites:
   - sprite: Mobs/Customization/cyberlimbs/shellguard/shellguard_alt1.rsi
     state: head-1
@@ -27,10 +23,8 @@
     state: head-2
 
 - type: marking
+  parent: BaseMarkingCyberlimbChest # DEN - Add Inheritance
   id: CyberLimbsMarkingShellguardChest
-  bodyPart: Chest
-  markingCategory: Chest
-  speciesRestriction: [IPC]
   sprites:
   - sprite: Mobs/Customization/cyberlimbs/shellguard/shellguard_main.rsi
     state: torso-1
@@ -38,10 +32,10 @@
     state: torso-2
 
 - type: marking
+  parent: BaseMarkingCyberlimbProstheticArm # DEN - Add Inheritance
   id: CyberLimbsMarkingShellguardLArm
   bodyPart: LArm
   markingCategory: LeftArm
-  speciesRestriction: [IPC]
   sprites:
   - sprite: Mobs/Customization/cyberlimbs/shellguard/shellguard_main.rsi
     state: l_arm-1
@@ -49,10 +43,10 @@
     state: l_arm-2
 
 - type: marking
+  parent: BaseMarkingCyberlimbProstheticArm # DEN - Add Inheritance
   id: CyberLimbsMarkingShellguardLHand
   bodyPart: LHand
   markingCategory: LeftHand
-  speciesRestriction: [IPC]
   sprites:
   - sprite: Mobs/Customization/cyberlimbs/shellguard/shellguard_main.rsi
     state: l_hand-1
@@ -60,47 +54,43 @@
     state: l_hand-2
 
 - type: marking
+  parent: BaseMarkingCyberlimbProstheticLegs # DEN - Add Inheritance
   id: CyberLimbsMarkingShellguardLLeg
   bodyPart: LLeg
   markingCategory: LeftLeg
-  speciesRestriction: [IPC]
   sprites:
   - sprite: Mobs/Customization/cyberlimbs/shellguard/shellguard_main.rsi
     state: l_leg-1
   - sprite: Mobs/Customization/cyberlimbs/shellguard/shellguard_main.rsi
     state: l_leg-2
 
-
 - type: marking
+  parent: BaseMarkingCyberlimbProstheticLegs # DEN - Add Inheritance
   id: CyberLimbsMarkingShellguardLFoot
   bodyPart: LFoot
   markingCategory: LeftFoot
-  speciesRestriction: [IPC]
   sprites:
   - sprite: Mobs/Customization/cyberlimbs/shellguard/shellguard_main.rsi
     state: l_foot-1
   - sprite: Mobs/Customization/cyberlimbs/shellguard/shellguard_main.rsi
     state: l_foot-2
 
-
-
 - type: marking
+  parent: BaseMarkingCyberlimbProstheticArm # DEN - Add Inheritance
   id: CyberLimbsMarkingShellguardRArm
   bodyPart: RArm
   markingCategory: RightArm
-  speciesRestriction: [IPC]
   sprites:
   - sprite: Mobs/Customization/cyberlimbs/shellguard/shellguard_main.rsi
     state: r_arm-1
   - sprite: Mobs/Customization/cyberlimbs/shellguard/shellguard_main.rsi
     state: r_arm-2
 
-
 - type: marking
+  parent: BaseMarkingCyberlimbProstheticArm # DEN - Add Inheritance
   id: CyberLimbsMarkingShellguardRHand
   bodyPart: RHand
   markingCategory: RightHand
-  speciesRestriction: [IPC]
   sprites:
   - sprite: Mobs/Customization/cyberlimbs/shellguard/shellguard_main.rsi
     state: r_hand-1
@@ -108,22 +98,21 @@
     state: r_hand-2
 
 - type: marking
+  parent: BaseMarkingCyberlimbProstheticLegs # DEN - Add Inheritance
   id: CyberLimbsMarkingShellguardRLeg
   bodyPart: RLeg
   markingCategory: RightLeg
-  speciesRestriction: [IPC]
   sprites:
   - sprite: Mobs/Customization/cyberlimbs/shellguard/shellguard_main.rsi
     state: r_leg-1
   - sprite: Mobs/Customization/cyberlimbs/shellguard/shellguard_main.rsi
     state: r_leg-2
 
-
 - type: marking
+  parent: BaseMarkingCyberlimbProstheticLegs # DEN - Add Inheritance
   id: CyberLimbsMarkingShellguardRFoot
   bodyPart: RFoot
   markingCategory: RightFoot
-  speciesRestriction: [IPC]
   sprites:
   - sprite: Mobs/Customization/cyberlimbs/shellguard/shellguard_main.rsi
     state: r_foot-1

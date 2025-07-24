@@ -13,10 +13,8 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 - type: marking
+  parent: BaseMarkingCyberlimbHead # DEN - Add Inheritance
   id: CyberLimbsMarkingHesphiastosHead
-  bodyPart: Head
-  markingCategory: Head
-  speciesRestriction: [IPC]
   sprites:
   - sprite: Mobs/Customization/cyberlimbs/hesphiastos/hesphiastos_monitor.rsi
     state: head-1
@@ -24,10 +22,8 @@
     state: head-2
 
 - type: marking
+  parent: BaseMarkingCyberlimbHead # DEN - Add Inheritance
   id: CyberLimbsMarkingHesphiastosHeadAlt
-  bodyPart: Head
-  markingCategory: Head
-  speciesRestriction: [IPC]
   sprites:
   - sprite: Mobs/Customization/cyberlimbs/hesphiastos/hesphiastos_alt1.rsi
     state: head-1
@@ -37,10 +33,8 @@
     state: head-3
 
 - type: marking
+  parent: BaseMarkingCyberlimbChest # DEN - Add Inheritance
   id: CyberLimbsMarkingHesphiastosChest
-  bodyPart: Chest
-  markingCategory: Chest
-  speciesRestriction: [IPC]
   sprites:
   - sprite: Mobs/Customization/cyberlimbs/hesphiastos/hesphiastos_main.rsi
     state: torso-1
@@ -48,10 +42,10 @@
     state: torso-2
 
 - type: marking
+  parent: BaseMarkingCyberlimbProstheticArm # DEN - Add Inheritance
   id: CyberLimbsMarkingHesphiastosLArm
   bodyPart: LArm
   markingCategory: LeftArm
-  speciesRestriction: [IPC, Moth, Dwarf, Human, Arachnid, Felinid, Oni, Vulpkanin, HumanoidFoxes, Reptilian, Arachne, Lamia, Tajaran, Rodentia, Kitsune] # Einstein Engines - Tajaran
   sprites:
   - sprite: Mobs/Customization/cyberlimbs/hesphiastos/hesphiastos_main.rsi
     state: l_arm-1
@@ -59,10 +53,10 @@
     state: l_arm-2
 
 - type: marking
+  parent: BaseMarkingCyberlimbProstheticArm # DEN - Add Inheritance
   id: CyberLimbsMarkingHesphiastosLHand
   bodyPart: LHand
   markingCategory: LeftHand
-  speciesRestriction: [IPC, Moth, Dwarf, Human, Arachnid, Felinid, Oni, Vulpkanin, HumanoidFoxes, Reptilian, Arachne, Lamia, Tajaran, Rodentia, Kitsune] # Einstein Engines - Tajaran
   sprites:
   - sprite: Mobs/Customization/cyberlimbs/hesphiastos/hesphiastos_main.rsi
     state: l_hand-1
@@ -70,71 +64,65 @@
     state: l_hand-2
 
 - type: marking
+  parent: BaseMarkingCyberlimbProstheticLegs # DEN - Add Inheritance
   id: CyberLimbsMarkingHesphiastosLLeg
   bodyPart: LLeg
   markingCategory: LeftLeg
-  speciesRestriction: [IPC, Moth, Dwarf, Human, Arachnid, Felinid, Oni, Vulpkanin, HumanoidFoxes, Reptilian, Tajaran, Rodentia, Kitsune] # Einstein Engines - Tajaran
   sprites:
   - sprite: Mobs/Customization/cyberlimbs/hesphiastos/hesphiastos_main.rsi
     state: l_leg-1
   - sprite: Mobs/Customization/cyberlimbs/hesphiastos/hesphiastos_main.rsi
     state: l_leg-2
 
-
 - type: marking
+  parent: BaseMarkingCyberlimbProstheticLegs # DEN - Add Inheritance
   id: CyberLimbsMarkingHesphiastosLFoot
   bodyPart: LFoot
   markingCategory: LeftFoot
-  speciesRestriction: [IPC, Moth, Dwarf, Human, Arachnid, Felinid, Oni, Vulpkanin, HumanoidFoxes, Reptilian, Tajaran, Rodentia, Kitsune] # Einstein Engines - Tajaran
   sprites:
   - sprite: Mobs/Customization/cyberlimbs/hesphiastos/hesphiastos_main.rsi
     state: l_foot-1
   - sprite: Mobs/Customization/cyberlimbs/hesphiastos/hesphiastos_main.rsi
     state: l_foot-2
 
-
-
 - type: marking
+  parent: BaseMarkingCyberlimbProstheticArm # DEN - Add Inheritance
   id: CyberLimbsMarkingHesphiastosRArm
   bodyPart: RArm
   markingCategory: RightArm
-  speciesRestriction: [IPC, Moth, Dwarf, Human, Arachnid, Felinid, Oni, Vulpkanin, HumanoidFoxes, Reptilian, Arachne, Lamia, Tajaran, Rodentia, Kitsune] # Einstein Engines - Tajaran
   sprites:
   - sprite: Mobs/Customization/cyberlimbs/hesphiastos/hesphiastos_main.rsi
     state: r_arm-1
   - sprite: Mobs/Customization/cyberlimbs/hesphiastos/hesphiastos_main.rsi
     state: r_arm-2
 
-
 - type: marking
+  parent: BaseMarkingCyberlimbProstheticArm # DEN - Add Inheritance
   id: CyberLimbsMarkingHesphiastosRHand
   bodyPart: RHand
   markingCategory: RightHand
-  speciesRestriction: [IPC, Moth, Dwarf, Human, Arachnid, Felinid, Oni, Vulpkanin, HumanoidFoxes, Reptilian, Arachne, Lamia, Tajaran, Rodentia, Kitsune] # Einstein Engines - Tajaran
   sprites:
   - sprite: Mobs/Customization/cyberlimbs/hesphiastos/hesphiastos_main.rsi
     state: r_hand-1
   - sprite: Mobs/Customization/cyberlimbs/hesphiastos/hesphiastos_main.rsi
     state: r_hand-2
 
-
 - type: marking
+  parent: BaseMarkingCyberlimbProstheticLegs # DEN - Add Inheritance
   id: CyberLimbsMarkingHesphiastosRLeg
   bodyPart: RLeg
   markingCategory: RightLeg
-  speciesRestriction: [IPC, Moth, Dwarf, Human, Arachnid, Felinid, Oni, Vulpkanin, HumanoidFoxes, Reptilian, Tajaran, Rodentia, Kitsune] # Einstein Engines - Tajaran
   sprites:
   - sprite: Mobs/Customization/cyberlimbs/hesphiastos/hesphiastos_main.rsi
     state: r_leg-1
   - sprite: Mobs/Customization/cyberlimbs/hesphiastos/hesphiastos_main.rsi
     state: r_leg-2
 
-
 - type: marking
+  parent: BaseMarkingCyberlimbProstheticLegs # DEN - Add Inheritance
   id: CyberLimbsMarkingHesphiastosRFoot
   bodyPart: RFoot
   markingCategory: RightFoot
-  speciesRestriction: [IPC, Moth, Dwarf, Human, Arachnid, Felinid, Oni, Vulpkanin, HumanoidFoxes, Reptilian, Tajaran, Rodentia, Kitsune] # Einstein Engines - Tajaran
   sprites:
   - sprite: Mobs/Customization/cyberlimbs/hesphiastos/hesphiastos_main.rsi
     state: r_foot-1
