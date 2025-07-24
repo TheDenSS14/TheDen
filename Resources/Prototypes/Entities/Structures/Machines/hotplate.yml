@@ -38,9 +38,7 @@
         mask:
         - TabletopMachineMask
         layer:
-        - Impassable
-        - MidImpassable
-        - LowImpassable
+        - TabletopMachineLayer # DEN - Allow unpacking on tables
         hard: false
   - type: ApcPowerReceiver
     powerLoad: 300

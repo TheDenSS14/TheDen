@@ -23,10 +23,21 @@
     powerLoad: 0 # off by default
   - type: EntityHeater
   - type: ItemPlacer
-    maxEntities: 4 # big grill, many steaks
+    maxEntities: 120 # big grill, many steaks
     whitelist:
       components:
       - Temperature
+  - type: Fixtures # DEN - Allow anchoring on tables
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.15,-0.045,0.15,0.2"
+        mask:
+        - TabletopMachineMask
+        layer:
+        - TabletopMachineLayer
+        hard: false
   - type: PlaceableSurface
   - type: Machine
     board: ElectricGrillMachineCircuitboard
