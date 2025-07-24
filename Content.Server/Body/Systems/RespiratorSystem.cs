@@ -95,7 +95,7 @@ public sealed class RespiratorSystem : EntitySystem
         if (TryComp<PullableComponent>(uid, out var pullable)
             && pullable.GrabStage == GrabStage.Suffocate)
             return false;
-        
+
         return !HasComp<KravMagaBlockedBreathingComponent>(uid);
     }
     // Goobstation end
@@ -121,7 +121,7 @@ public sealed class RespiratorSystem : EntitySystem
 
             respirator.NextUpdate += respirator.UpdateInterval;
 
-            if (_mobState.IsDead(uid))
+            if (_mobState.IsDead(uid) || HasComp<BreathingImmunityComponent>(uid)) // Shitmed: BreathingImmunity
                 continue;
 
             if (HasComp<RespiratorImmuneComponent>(uid))
