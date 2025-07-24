@@ -37,6 +37,7 @@ using Content.Server.EntityEffects.EffectConditions;
 using Content.Server.EntityEffects.Effects;
 using Content.Shared._Goobstation.MartialArts.Components; // Goobstation - Martial Arts
 using Content.Server.Popups;
+using Content.Shared._Shitmed.Body.Components;
 using Content.Shared.Alert;
 using Content.Shared.Atmos;
 using Content.Shared.Body.Components;
