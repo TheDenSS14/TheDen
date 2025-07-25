@@ -805,18 +805,6 @@
       group: LoadoutBoxKits
 
 #Misc GeneralItems
-- type: loadout
-  id: LoadoutCivilianDisabler
-  category: GeneralItems
-  cost: 5
-  canBeHeirloom: true
-  requirements:
-    - !type:CharacterJobRequirement
-      inverted: true
-      jobs:
-        - Prisoner
-  items:
-    - WeaponCivilianDisabler
 
 #- type: loadout - Already a flash in the sec loadouts (plus one default in bag, and if oyu want more than TWO flashes, sectech is right there)
 #  id: LoadoutItemFlash
