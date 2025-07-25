@@ -46,6 +46,29 @@
       group: LoadoutAirTank
   items:
     - DoubleEmergencyWaterVaporTankFilled
+    
+# Feroxi Extra Water
+- type: loadout
+  id: LoadoutSpeciesExtraWater
+  category: Species
+  cost: 0
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      species:
+        - Feroxi
+  items:
+    - DrinkWaterBottleFull
+    
+- type: loadout
+  id: LoadoutSpeciesWaterjug
+  category: Species
+  cost: 2
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      species:
+        - Feroxi
+  items:
+    - JugWater
 
 # Tank Harness
 - type: loadout
