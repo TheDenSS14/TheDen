@@ -13,6 +13,7 @@
 # SPDX-FileCopyrightText: 2025 Skubman
 # SPDX-FileCopyrightText: 2025 Tad "Taddy" Johnson
 # SPDX-FileCopyrightText: 2025 VMSolidus
+# SPDX-FileCopyrightText: 2025 juniwoofs
 # SPDX-FileCopyrightText: 2025 neuPanda
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
@@ -421,7 +422,7 @@
     - SpeedLoaderSpecialRubber
 
 - type: loadout
-  id: LoadoutMagazineMagnum
+  id: LoadoutMagazineSpecial
   category: JobsSecurityAUncategorized
   cost: 4
   exclusive: true
@@ -440,10 +441,10 @@
           jobs:
             - BlueshieldOfficer
   items:
-    - MagazineMagnum
+    - MagazinePistolSpecial
 
 - type: loadout
-  id: LoadoutMagazineMagnumRubber
+  id: LoadoutMagazineSpecialRubber
   category: JobsSecurityAUncategorized
   cost: 4
   exclusive: true
@@ -462,10 +463,10 @@
           jobs:
             - BlueshieldOfficer
   items:
-    - MagazineMagnumRubber
+    - MagazinePistolSpecialRubber
 
 - type: loadout
-  id: LoadoutMagazineMagnumSpare
+  id: LoadoutMagazineSpecialSpare
   category: JobsSecurityAUncategorized
   cost: 4
   exclusive: true
@@ -484,10 +485,10 @@
           jobs:
             - BlueshieldOfficer
   items:
-    - MagazineMagnum
+    - MagazinePistolSpecial
 
 - type: loadout
-  id: LoadoutMagazineMagnumRubberSpare
+  id: LoadoutMagazineSpecialRubberSpare
   category: JobsSecurityAUncategorized
   cost: 4
   exclusive: true
@@ -506,7 +507,7 @@
           jobs:
             - BlueshieldOfficer
   items:
-    - MagazineMagnumRubber
+    - MagazinePistolSpecialRubber
 
 - type: loadout
   id: LoadoutSpeedLoaderRifleHeavy
