@@ -421,7 +421,7 @@
     - SpeedLoaderSpecialRubber
 
 - type: loadout
-  id: LoadoutMagazineMagnum
+  id: LoadoutMagazineSpecial
   category: JobsSecurityAUncategorized
   cost: 4
   exclusive: true
@@ -440,10 +440,10 @@
           jobs:
             - BlueshieldOfficer
   items:
-    - MagazineMagnum
+    - MagazineSpecial
 
 - type: loadout
-  id: LoadoutMagazineMagnumRubber
+  id: LoadoutMagazineSpecialRubber
   category: JobsSecurityAUncategorized
   cost: 4
   exclusive: true
@@ -462,10 +462,10 @@
           jobs:
             - BlueshieldOfficer
   items:
-    - MagazineMagnumRubber
+    - MagazineSpecialRubber
 
 - type: loadout
-  id: LoadoutMagazineMagnumSpare
+  id: LoadoutMagazineSpecialSpare
   category: JobsSecurityAUncategorized
   cost: 4
   exclusive: true
@@ -484,10 +484,10 @@
           jobs:
             - BlueshieldOfficer
   items:
-    - MagazineMagnum
+    - MagazinePistolSpecial
 
 - type: loadout
-  id: LoadoutMagazineMagnumRubberSpare
+  id: LoadoutMagazineSpecialRubberSpare
   category: JobsSecurityAUncategorized
   cost: 4
   exclusive: true
@@ -506,7 +506,7 @@
           jobs:
             - BlueshieldOfficer
   items:
-    - MagazineMagnumRubber
+    - MagazineSpecialRubber
 
 - type: loadout
   id: LoadoutSpeedLoaderRifleHeavy
