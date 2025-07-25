@@ -171,6 +171,8 @@
   id: WeaponRevolverInspector
   description: A detective's best friend. Uses .45 magnum ammo.
   components:
+  - type: Gun #TheDen
+    fireRate: 2 #TheDen
   - type: Sprite
     sprite: Objects/Weapons/Guns/Revolvers/inspector.rsi
   - type: Clothing
