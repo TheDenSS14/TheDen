@@ -12,6 +12,7 @@
 # SPDX-FileCopyrightText: 2025 John Willis
 # SPDX-FileCopyrightText: 2025 Rosycup
 # SPDX-FileCopyrightText: 2025 VMSolidus
+# SPDX-FileCopyrightText: 2025 Vanessa
 # SPDX-FileCopyrightText: 2025 Vanessa Louwagie
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 # SPDX-FileCopyrightText: 2025 therealDLondon
@@ -23,7 +24,7 @@
   mapName: 'Edge'
   mapPath: /Maps/TheDen/edge.yml
   minPlayers: 5
-  maxPlayers: 80
+  maxPlayers: 100 # The Den: we hit 80 and had no maps lmao
   stations:
     Edge:
       stationProto: StandardNanotrasenStation

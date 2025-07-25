@@ -2,6 +2,7 @@
 // SPDX-FileCopyrightText: 2023 Visne
 // SPDX-FileCopyrightText: 2024 themias
 // SPDX-FileCopyrightText: 2025 Falcon
+// SPDX-FileCopyrightText: 2025 Sir Warock
 // SPDX-FileCopyrightText: 2025 metalgearsloth
 // SPDX-FileCopyrightText: 2025 qwerltaz
 // SPDX-FileCopyrightText: 2025 sleepyyapril
@@ -97,7 +98,7 @@ public sealed class SubFloorHideSystem : SharedSubFloorHideSystem
         args.Sprite.Visible = hasVisibleLayer || revealed;
 
         // allows a t-ray to show wires/pipes above carpets/puddles
-        if (scannerRevealed)
+        if (scannerRevealed || ShowAll)
         {
             if (component.OriginalDrawDepth is not null)
                 return;
