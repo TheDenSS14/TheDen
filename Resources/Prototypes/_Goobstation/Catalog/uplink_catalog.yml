@@ -71,29 +71,25 @@
   description: uplink-cqc-desc
   productEntity: CQCManual
   cost:
-    Telecrystal: 60
+    Telecrystal: 120
   categories:
   - UplinkDeception
-  conditions:
-  - !type:StoreWhitelistCondition
-    whitelist:
-      tags:
-      - NukeOpsUplink
 
-- type: listing
-  id: UplinkMysteriousScroll
-  name: uplink-sleeping-carp-name
-  description: uplink-sleeping-carp-desc
-  productEntity: SleepingCarpScroll
-  cost:
-    Telecrystal: 100
-  categories:
-  - UplinkWeaponry
-  conditions:
-  - !type:StoreWhitelistCondition
-    blacklist:
-      tags:
-      - NukeOpsUplink
+
+#- type: listing
+#  id: UplinkMysteriousScroll
+#  name: uplink-sleeping-carp-name
+#  description: uplink-sleeping-carp-desc
+#  productEntity: SleepingCarpScroll
+#  cost:
+#    Telecrystal: 100
+#  categories:
+#  - UplinkWeaponry
+#  conditions:
+#  - !type:StoreWhitelistCondition
+#    blacklist:
+#      tags:
+#      - NukeOpsUplink
 
 # - type: listing
 #   id: UplinkMiniatureEnergyCrossbow
