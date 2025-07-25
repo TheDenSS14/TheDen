@@ -2,6 +2,7 @@
 // SPDX-FileCopyrightText: 2023 Visne
 // SPDX-FileCopyrightText: 2024 themias
 // SPDX-FileCopyrightText: 2025 Falcon
+// SPDX-FileCopyrightText: 2025 Sir Warock
 // SPDX-FileCopyrightText: 2025 metalgearsloth
 // SPDX-FileCopyrightText: 2025 qwerltaz
 // SPDX-FileCopyrightText: 2025 sleepyyapril
