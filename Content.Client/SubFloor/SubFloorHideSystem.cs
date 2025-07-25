@@ -97,7 +97,7 @@ public sealed class SubFloorHideSystem : SharedSubFloorHideSystem
         args.Sprite.Visible = hasVisibleLayer || revealed;
 
         // allows a t-ray to show wires/pipes above carpets/puddles
-        if (scannerRevealed)
+        if (scannerRevealed || ShowAll)
         {
             if (component.OriginalDrawDepth is not null)
                 return;
