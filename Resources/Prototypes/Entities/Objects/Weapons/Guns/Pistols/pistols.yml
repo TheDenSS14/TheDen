@@ -530,7 +530,7 @@
 
 - type: entity
   name: N1984
-  parent: WeaponPistolN1984Security
+  parent: WeaponPistolN1984
   id: WeaponPistolN1984NonLethal
   suffix: Non-lethal
   components:
@@ -546,6 +546,33 @@
         priority: 2
         whitelist:
           tags:
+            - MagazineMagnum
+      gun_chamber:
+        name: Chamber
+        startingItem: CartridgeMagnumRubber
+        priority: 1
+        whitelist:
+          tags:
+            - CartridgeMagnum
+
+- type: entity
+  name: N1984
+  parent: WeaponPistolN1984Security
+  id: WeaponPistolN1984SecurityNonLethal
+  suffix: Non-lethal
+  components:
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Pistols/N1984.rsi
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: MagazinePistolSpecialRubber
+        insertSound: /Audio/Weapons/Guns/MagIn/pistol_magin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/pistol_magout.ogg
+        priority: 2
+        whitelist:
+          tags:
             - MagazinePistolSpecial
       gun_chamber:
         name: Chamber
@@ -553,15 +580,4 @@
         priority: 1
         whitelist:
           tags:
-            - CartridgeSpecialRubber
-
-- type: entity
-  name: N1984
-  parent: WeaponPistolN1984NonLethal
-  id: WeaponPistolN1984SecurityNonLethal
-  description: The sidearm of any self respecting officer.     Comes in .45 magnum, the lord's caliber.
-               The serial number on the handguard marks this gun as belonging to an NT Security Officer.
-  suffix: Security, Non-lethal # TheDen
-  components:
-  - type: GuideHelp
-    guides: [ SecurityWeapons ]
+            - CartridgeSpecial
