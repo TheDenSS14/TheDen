@@ -1,3 +1,5 @@
+// SPDX-FileCopyrightText: 2025 B_Kirill
+// SPDX-FileCopyrightText: 2025 MajorMoth
 // SPDX-FileCopyrightText: 2025 Pieter-Jan Briers
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
