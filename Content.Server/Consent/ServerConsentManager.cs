@@ -26,7 +26,6 @@ public sealed class ServerConsentManager : IServerConsentManager
     [Dependency] private readonly IServerNetManager _netManager = default!;
     [Dependency] private readonly IServerDbManager _db = default!;
     [Dependency] private readonly ISharedAdminLogManager _adminLogger = default!;
-    [Dependency] private readonly SharedConsentSystem _consent = default!;
 
     /// <summary>
     /// Stores consent settigns for all connected players, including guests.
