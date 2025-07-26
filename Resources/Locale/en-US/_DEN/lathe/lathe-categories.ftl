@@ -4,3 +4,7 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 lathe-category-towel = Towels
+lathe-category-assistance-devices = Assistance Devices
+lathe-category-hygiene-products = Hygiene Products
+
+
