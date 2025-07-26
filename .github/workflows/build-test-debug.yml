@@ -35,6 +35,7 @@ jobs:
   build:
     if: github.actor != 'PJBot' && github.event.pull_request.draft == false && github.actor != 'DeltaV-Bot' && github.actor != 'SimpleStation14'
     strategy:
+      fail-fast: false
       matrix:
         os: [ubuntu-latest]
 
