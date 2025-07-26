@@ -14,7 +14,9 @@
 // SPDX-FileCopyrightText: 2024 MilenVolf
 // SPDX-FileCopyrightText: 2024 VMSolidus
 // SPDX-FileCopyrightText: 2025 ArtisticRoomba
+// SPDX-FileCopyrightText: 2025 Carlen White
 // SPDX-FileCopyrightText: 2025 Falcon
+// SPDX-FileCopyrightText: 2025 Perry Fraser
 // SPDX-FileCopyrightText: 2025 RedFoxIV
 // SPDX-FileCopyrightText: 2025 Tayrtahn
 // SPDX-FileCopyrightText: 2025 chromiumboy
