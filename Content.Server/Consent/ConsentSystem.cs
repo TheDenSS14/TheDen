@@ -27,14 +27,29 @@ public sealed class ConsentSystem : SharedConsentSystem
     {
         base.Initialize();
 
-        SubscribeLocalEvent<PlayerAttachedEvent>(OnPlayerAttached);
-        SubscribeLocalEvent<PlayerDetachedEvent>(OnPlayerDetached);
+        SubscribeLocalEvent<MindGotAddedEvent>(OnPlayerAttached);
+        SubscribeLocalEvent<MindGotRemovedEvent>(OnPlayerDetached);
     }
 
-    private void OnPlayerAttached(PlayerAttachedEvent msg, EntitySessionEventArgs args)
+    private void OnPlayerAttached(MindGotAddedEvent args) => EnsureConsentComponent(args.Container);
+
+    private void OnPlayerDetached(MindGotRemovedEvent args)
     {
-        var consentComponent = EnsureComp<ConsentComponent>(msg.Entity);
-        var consentSettings = _consent.GetPlayerConsentSettings(args.SenderSession.UserId);
+        if (!HasComp<ConsentComponent>(args.Container))
+            return;
+
+        RemComp<ConsentComponent>(args.Container);
+    }
+
+    public void EnsureConsentComponent(EntityUid uid)
+    {
+        var consentComponent = EnsureComp<ConsentComponent>(uid);
+        var session = _playerManager.TryGetSessionByEntity(uid, out var sessionEntity) ? sessionEntity : null;
+
+        if (session == null)
+            return;
+
+        var consentSettings = _consent.GetPlayerConsentSettings(session.UserId);
 
         foreach (var (protoId, consentSetting) in consentSettings.Toggles)
         {
@@ -42,15 +57,7 @@ public sealed class ConsentSystem : SharedConsentSystem
                 consentComponent.Consents.Add(protoId);
         }
 
-        Dirty(msg.Entity, consentComponent);
-    }
-
-    private void OnPlayerDetached(PlayerDetachedEvent msg, EntitySessionEventArgs args)
-    {
-        if (!HasComp<ConsentComponent>(msg.Entity))
-            return;
-
-        RemComp<ConsentComponent>(msg.Entity);
+        Dirty(uid, consentComponent);
     }
 
     protected override FormattedMessage GetConsentText(NetUserId userId)
