@@ -6,6 +6,7 @@
 # SPDX-FileCopyrightText: 2025 BlitzTheSquishy
 # SPDX-FileCopyrightText: 2025 EctoplasmIsGood
 # SPDX-FileCopyrightText: 2025 MajorMoth
+# SPDX-FileCopyrightText: 2025 Tanix
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
@@ -261,20 +262,6 @@
     - ClothingNeckStethoscope
 
 # Mask
-- type: loadout
-  id: LoadoutClothingMaskGasSecurity
-  category: JobsSecurityCorpsman
-  cost: 0
-  exclusive: true
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutCorpsmanMask
-    - !type:CharacterJobRequirement
-      jobs:
-        - Brigmedic
-  items:
-    - ClothingMaskGasSecurity
-
 - type: loadout
   id: LoadoutClothingMaskSterileCorpsman
   category: JobsSecurityCorpsman

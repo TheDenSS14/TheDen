@@ -1,0 +1,199 @@
+# SPDX-FileCopyrightText: 2025 Mono
+#
+# SPDX-License-Identifier: MIT
+
+# Den-specific AI icons file, if you are ever going to port this upstream, merge with the respective upstream YML
+
+# Icons
+- type: stationAiCustomization
+  parent: StationAiIconBase
+  id: StationAiIconAnima
+  name: station-ai-icon-anima
+  layerData:
+    Occupied:
+      sprite: _DEN/Mobs/Silicon/station_ai.rsi
+      state: ai_anima
+    Dead:
+      sprite: Mobs/Silicon/station_ai.rsi
+      state: ai_dead
+
+- type: stationAiCustomization
+  parent: StationAiIconBase
+  id: StationAiIconBorb
+  name: station-ai-icon-borb
+  layerData:
+    Occupied:
+      sprite: _DEN/Mobs/Silicon/station_ai.rsi
+      state: ai_borb
+    Dead:
+      sprite: Mobs/Silicon/station_ai.rsi
+      state: ai_dead
+
+- type: stationAiCustomization
+  parent: StationAiIconBase
+  id: StationAiIconDarkMatter
+  name: station-ai-icon-darkmatter
+  layerData:
+    Occupied:
+      sprite: _DEN/Mobs/Silicon/station_ai.rsi
+      state: ai_darkmatter
+    Dead:
+      sprite: Mobs/Silicon/station_ai.rsi
+      state: ai_dead
+
+- type: stationAiCustomization
+  parent: StationAiIconBase
+  id: StationAiIconFirewall
+  name: station-ai-icon-firewall
+  layerData:
+    Occupied:
+      sprite: _DEN/Mobs/Silicon/station_ai.rsi
+      state: ai_firewall
+    Dead:
+      sprite: Mobs/Silicon/station_ai.rsi
+      state: ai_red_dead
+
+- type: stationAiCustomization
+  parent: StationAiIconBase
+  id: StationAiIconFuzzy
+  name: station-ai-icon-fuzzy
+  layerData:
+    Occupied:
+      sprite: _DEN/Mobs/Silicon/station_ai.rsi
+      state: ai_fuzzy
+    Dead:
+      sprite: _DEN/Mobs/Silicon/station_ai.rsi
+      state: ai_broken_dead
+
+- type: stationAiCustomization
+  parent: StationAiIconBase
+  id: StationAiIconGlitchman
+  name: station-ai-icon-glitchman
+  layerData:
+    Occupied:
+      sprite: _DEN/Mobs/Silicon/station_ai.rsi
+      state: ai_glitchman
+    Dead:
+      sprite: _DEN/Mobs/Silicon/station_ai.rsi
+      state: ai_glitchman_dead
+
+- type: stationAiCustomization
+  parent: StationAiIconBase
+  id: StationAiIconRedDot
+  name: station-ai-icon-hal-9000
+  layerData:
+    Occupied:
+      sprite: _DEN/Mobs/Silicon/station_ai.rsi
+      state: ai_hal_9000
+    Dead:
+      sprite: _DEN/Mobs/Silicon/station_ai.rsi
+      state: ai_red_dead
+
+- type: stationAiCustomization
+  parent: StationAiIconBase
+  id: StationAiIconLamp
+  name: station-ai-icon-lamp
+  layerData:
+    Occupied:
+      sprite: _DEN/Mobs/Silicon/station_ai.rsi
+      state: ai_lamp
+    Dead:
+      sprite: Mobs/Silicon/station_ai.rsi
+      state: ai_lamp_dead
+
+- type: stationAiCustomization
+  parent: StationAiIconBase
+  id: StationAiIconLizard
+  name: station-ai-icon-liz
+  layerData:
+    Occupied:
+      sprite: _DEN/Mobs/Silicon/station_ai.rsi
+      state: ai_liz
+    Dead:
+      sprite: Mobs/Silicon/station_ai.rsi
+      state: ai_dead
+
+- type: stationAiCustomization
+  parent: StationAiIconBase
+  id: StationAiIconMatrix
+  name: station-ai-icon-matrix
+  layerData:
+    Occupied:
+      sprite: _DEN/Mobs/Silicon/station_ai.rsi
+      state: ai_matrix
+    Dead:
+      sprite: _DEN/Mobs/Silicon/station_ai.rsi
+      state: ai_green_dead
+
+- type: stationAiCustomization
+  parent: StationAiIconBase
+  id: StationAiIconNanotrasen
+  name: station-ai-icon-nanotrasen
+  layerData:
+    Occupied:
+      sprite: _DEN/Mobs/Silicon/station_ai.rsi
+      state: ai_nanotrasen
+    Dead:
+      sprite: Mobs/Silicon/station_ai.rsi
+      state: ai_dead
+
+- type: stationAiCustomization
+  parent: StationAiIconBase
+  id: StationAiIconTriumvirate
+  name: station-ai-icon-triumvirate
+  layerData:
+    Occupied:
+      sprite: _DEN/Mobs/Silicon/station_ai.rsi
+      state: ai_triumvirate
+    Dead:
+      sprite: Mobs/Silicon/station_ai.rsi
+      state: ai_dead
+
+- type: stationAiCustomization
+  parent: StationAiIconBase
+  id: StationAiIconVox
+  name: station-ai-icon-vox
+  layerData:
+    Occupied:
+      sprite: _DEN/Mobs/Silicon/station_ai.rsi
+      state: ai_vox
+    Dead:
+      sprite: Mobs/Silicon/station_ai.rsi
+      state: ai_dead
+
+# Holos
+- type: stationAiCustomization
+  id: StationAiHologramAngel
+  name: station-ai-hologram-angel
+  previewKey: Hologram
+  layerData:
+    Hologram:
+      sprite: _DEN/Mobs/Silicon/holograms.rsi
+      state: ai_angel
+
+- type: stationAiCustomization
+  id: StationAiHologramBorb
+  name: station-ai-hologram-borb
+  previewKey: Hologram
+  layerData:
+    Hologram:
+      sprite: _DEN/Mobs/Silicon/holograms.rsi
+      state: ai_borb
+
+- type: stationAiCustomization
+  id: StationAiHologramCloudkat
+  name: station-ai-hologram-cloudkat
+  previewKey: Hologram
+  layerData:
+    Hologram:
+      sprite: _DEN/Mobs/Silicon/holograms.rsi
+      state: ai_cloudkat
+
+- type: stationAiCustomization
+  id: StationAiHologramPhoenix
+  name: station-ai-hologram-frostphoenix
+  previewKey: Hologram
+  layerData:
+    Hologram:
+      sprite: _DEN/Mobs/Silicon/holograms.rsi
+      state: ai_frostphoenix
