@@ -15,32 +15,33 @@ namespace Content.Shared.Consent;
 public sealed class PlayerConsentSettings
 {
     public string Freetext;
-    public Dictionary<ProtoId<ConsentTogglePrototype>, string> Toggles;
+    public Dictionary<ProtoId<ConsentTogglePrototype>, bool> Toggles;
 
     public PlayerConsentSettings()
     {
         Freetext = string.Empty;
-        Toggles = new Dictionary<ProtoId<ConsentTogglePrototype>, string>();
+        Toggles = new();
     }
 
     public PlayerConsentSettings(
         string freetext,
-        Dictionary<ProtoId<ConsentTogglePrototype>, string> toggles)
+        Dictionary<ProtoId<ConsentTogglePrototype>, bool> toggles)
     {
-        Freetext = freetext;
+        Freetext = freetext.Trim();
         Toggles = toggles;
     }
 
     public void EnsureValid(IConfigurationManager configManager, IPrototypeManager prototypeManager)
     {
         var maxLength = configManager.GetCVar(CCVars.ConsentFreetextMaxLength);
-        Freetext = Freetext.Trim();
+
         if (Freetext.Length > maxLength)
             Freetext = Freetext.Substring(0, maxLength);
 
         Toggles = Toggles.Where(t =>
             prototypeManager.HasIndex<ConsentTogglePrototype>(t.Key)
-            && t.Value == "on"
-        ).ToDictionary();
+            && t.Value
+        )
+            .ToDictionary();
     }
 }

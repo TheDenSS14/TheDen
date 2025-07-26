@@ -26,11 +26,12 @@ public sealed class ServerConsentManager : IServerConsentManager
     [Dependency] private readonly IServerNetManager _netManager = default!;
     [Dependency] private readonly IServerDbManager _db = default!;
     [Dependency] private readonly ISharedAdminLogManager _adminLogger = default!;
+    [Dependency] private readonly SharedConsentSystem _consent = default!;
 
     /// <summary>
     /// Stores consent settigns for all connected players, including guests.
     /// </summary>
-    private readonly Dictionary<NetUserId, PlayerConsentSettings> _consent = new();
+    private readonly Dictionary<NetUserId, PlayerConsentSettings> _consents = new();
 
     public void Initialize()
     {
@@ -41,14 +42,14 @@ public sealed class ServerConsentManager : IServerConsentManager
     {
         var userId = message.MsgChannel.UserId;
 
-        if (!_consent.TryGetValue(userId, out var consentSettings))
+        if (!_consents.TryGetValue(userId, out var consentSettings))
         {
             return;
         }
 
         message.Consent.EnsureValid(_configManager, _prototypeManager);
 
-        _consent[userId] = message.Consent;
+        _consents[userId] = message.Consent;
 
         var session = _playerManager.GetSessionByChannel(message.MsgChannel);
         var togglesPretty = String.Join(", ", message.Consent.Toggles.Select(t => $"[{t.Key}: {t.Value}]"));
@@ -73,7 +74,7 @@ public sealed class ServerConsentManager : IServerConsentManager
         }
 
         consent.EnsureValid(_configManager, _prototypeManager);
-        _consent[session.UserId] = consent;
+        _consents[session.UserId] = consent;
 
         var message = new MsgUpdateConsent() { Consent = consent };
         _netManager.ServerSendMessage(message, session.Channel);
@@ -81,16 +82,14 @@ public sealed class ServerConsentManager : IServerConsentManager
 
     public void OnClientDisconnected(ICommonSession session)
     {
-        _consent.Remove(session.UserId);
+        _consents.Remove(session.UserId);
     }
 
     /// <inheritdoc />
     public PlayerConsentSettings GetPlayerConsentSettings(NetUserId userId)
     {
-        if (_consent.TryGetValue(userId, out var consent))
-        {
+        if (_consents.TryGetValue(userId, out var consent))
             return consent;
-        }
 
         // A player that has disconnected does not consent to anything.
         return new PlayerConsentSettings();

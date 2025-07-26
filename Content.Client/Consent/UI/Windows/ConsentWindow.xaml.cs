@@ -54,12 +54,12 @@ public sealed partial class ConsentWindow : FancyWindow
     private PlayerConsentSettings GetSettings()
     {
         var text = Rope.Collapse(ConsentFreetext.TextRope);
-        var toggles = new Dictionary<ProtoId<ConsentTogglePrototype>, string>();
+        var toggles = new Dictionary<ProtoId<ConsentTogglePrototype>, bool>();
 
         foreach (var entry in _entries)
         {
             if (entry.Button != null && entry.Button.Pressed)
-                toggles[entry.Consent.ID] = "on";
+                toggles[entry.Consent.ID] = true;
         }
 
         return new(text, toggles);
@@ -116,11 +116,10 @@ public sealed partial class ConsentWindow : FancyWindow
         var consent = _consentManager.GetConsent();
         foreach (var toggle in consent.Toggles)
         {
-            if (toggle.Key == prototype.ID && toggle.Value == "on")
+            if (toggle.Key == prototype.ID && toggle.Value)
             {
                 buttonOn.Pressed = true;
                 buttonOff.Pressed = false;
-                continue;
             }
         }
 

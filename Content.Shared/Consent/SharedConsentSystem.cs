@@ -4,6 +4,8 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
+using System.Diagnostics.CodeAnalysis;
+using System.Linq;
 using Content.Shared.Examine;
 using Content.Shared.Mind;
 using Content.Shared.Mind.Components;
@@ -50,12 +52,9 @@ public abstract partial class SharedConsentSystem : EntitySystem
         });
     }
 
-    protected virtual FormattedMessage GetConsentText(NetUserId userId)
-    {
-        return new FormattedMessage();
-    }
+    protected virtual FormattedMessage GetConsentText(NetUserId userId) => new();
 
-    public virtual bool HasConsent(Entity<MindContainerComponent?> ent, ProtoId<ConsentTogglePrototype> consentId)
+    public virtual bool HasConsent(EntityUid uid, ProtoId<ConsentTogglePrototype> consentId)
     {
         return false; // Implemented only on server side, prediction is *just a week away*
     }
