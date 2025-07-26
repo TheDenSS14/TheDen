@@ -1,11 +1,8 @@
-﻿using System;
-using System.Linq;
+﻿using System.Linq;
 using System.Numerics;
 using Content.Client.UserInterface.Controls;
-using Content.Client.UserInterface.Systems.Chat.Controls.Denu.Utils;
 using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.Controls;
-using Robust.Shared.Maths;
 using Robust.Shared.Timing;
 
 
@@ -50,7 +47,7 @@ public abstract class AnimatedWindow : FancyWindow
     {
         base.FrameUpdate(args);
         UpdateAnimation(args);
-        
+
         if (!_animatingOpen && !_animatingClose && Size.X < 50 && Size.Y < 50)
         {
             RestoreToValidSize();
@@ -61,7 +58,7 @@ public abstract class AnimatedWindow : FancyWindow
     {
         Vector2 targetSize = _lastClosedSize ?? new Vector2(400, 600);
         Vector2 targetPosition = _lastClosedPosition ?? Position;
-        
+
         SetSize = targetSize;
         LayoutContainer.SetPosition(this, targetPosition);
         RestoreOriginalConstraints();
@@ -81,7 +78,7 @@ public abstract class AnimatedWindow : FancyWindow
             _originalMinSize = MinSize;
             _originalMaxSize = MaxSize;
         }
-        
+
         MinSize = Vector2.Zero;
         MaxSize = new Vector2(10000f, 10000f);
     }
@@ -131,12 +128,12 @@ public abstract class AnimatedWindow : FancyWindow
         {
             return _lastClosedSize.Value;
         }
-        
+
         if (DesiredSize.X > 0 && DesiredSize.Y > 0)
         {
             return DesiredSize;
         }
-        
+
         return Size;
     }
 
@@ -152,7 +149,7 @@ public abstract class AnimatedWindow : FancyWindow
             _originalMinSize = MinSize;
             _originalMaxSize = MaxSize;
         }
-        
+
         MinSize = Vector2.Zero;
         MaxSize = new Vector2(10000f, 10000f);
     }
@@ -244,7 +241,7 @@ public abstract class AnimatedWindow : FancyWindow
     protected override void Resized()
     {
         base.Resized();
-        
+
         if (!_animatingOpen && !_animatingClose && Size.X > 0 && Size.Y > 0)
         {
             _lastClosedSize = Size;
@@ -259,7 +256,7 @@ public abstract class AnimatedWindow : FancyWindow
             RecurseChildren(child, predicate, action, continueOnPredicateFail);
         }
     }
-    
+
     protected void RecurseChildren(Control root, Func<Control, bool> predicate, Action<Control> action, bool continueOnPredicateFail = true)
     {
         if (predicate(root))
