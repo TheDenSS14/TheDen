@@ -120,6 +120,7 @@
           - MobLayer
   - type: Inventory
     templateId: diona
+    speciesId: diona #imp
   - type: Speech
     speechVerb: Plant
     allowedEmotes: ['Chirp']
@@ -167,5 +168,6 @@
   components:
   - type: Inventory
     templateId: diona
+    speciesId: diona #imp
   - type: HumanoidAppearance
     species: Diona
