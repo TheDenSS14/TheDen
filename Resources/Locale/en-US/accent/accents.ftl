@@ -146,3 +146,6 @@ accent-words-nymph-1 = Chirp!
 accent-words-nymph-2 = Churr...
 accent-words-nymph-3 = Cheep?
 accent-words-nymph-4 = Chrrup!
+
+# Accent Toggle
+accent-clothing-component-toggle = Toggle Accent
