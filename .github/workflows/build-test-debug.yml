@@ -23,6 +23,10 @@
 
 name: Build & Test Debug
 
+concurrency:
+  group: debug_build_test-pr${{ github.event.pull_request.number }}
+  cancel-in-progress: true # we don't want to clog up the queue by making changes to a PR
+
 on:
   push:
     branches: [ master, staging, trying ]
