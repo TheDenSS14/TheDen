@@ -7,10 +7,10 @@ using Robust.Client.UserInterface.Controls;
 using Robust.Shared.Timing;
 
 
-namespace Content.Client.UserInterface.Systems.Chat.Controls.Denu;
+namespace Content.Client.UserInterface.Systems.Chat.Controls.Denu.Components;
 
 
-public class ToggleButton : Button
+public class ToggleCheckbox : CheckBox
 {
     public long UpdatePeriod { get; set; } = 1000;
     public Action OnToggledOn { get; set; } = () => { };
@@ -19,9 +19,8 @@ public class ToggleButton : Button
 
     long _lastUpdate = 0;
 
-    public ToggleButton()
+    public ToggleCheckbox()
     {
-        ToggleMode = true;
         OnToggled += e => OnToggleChanged(e.Pressed);
     }
 
