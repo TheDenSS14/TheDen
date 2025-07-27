@@ -28,8 +28,8 @@ public sealed class MessageFormatter
 
     private class FormattingContext
     {
-        public StringBuilder Result { get; } = new StringBuilder();
-        public Stack<FormattingRule> FormattingStack { get; } = new Stack<FormattingRule>();
+        public StringBuilder Result { get; } = new();
+        public Stack<FormattingRule> FormattingStack { get; } = new();
         public required IFormattingState CurrentState { get; set; }
     }
 
@@ -102,24 +102,24 @@ public sealed class MessageFormatter
     public static string Format(string input, FormatterConfig config)
     {
         var context = new FormattingContext { CurrentState = new NormalFormattingState(config) };
-        int i = 0;
+        int index = 0;
 
-        while (i < input.Length)
+        while (index < input.Length)
         {
-            if (config.AllowEscaping && TryHandleEscape(input, i, context.Result, config.EscapableTokens, out int consumed))
+            if (config.AllowEscaping && TryHandleEscape(input, index, context.Result, config.EscapableTokens, out int consumed))
             {
-                i += consumed;
+                index += consumed;
                 continue;
             }
 
-            int length = context.CurrentState.ProcessToken(context, input, i, config);
+            int length = context.CurrentState.ProcessToken(context, input, index, config);
             if (length > 0)
             {
-                i += length;
+                index += length;
                 continue;
             }
 
-            context.Result.Append(input[i++]);
+            context.Result.Append(input[index++]);
         }
 
         while (context.FormattingStack.Count > 0)
@@ -202,21 +202,21 @@ public sealed class MessageFormatter
 
     private static int FindNextUnescapedMark(string input, int start, string mark)
     {
-        int j = start;
-        while (j < input.Length)
+        int index = start;
+        while (index < input.Length)
         {
-            if (input[j] == EscapeCharacter && j + 1 < input.Length)
+            if (input[index] == EscapeCharacter && index + 1 < input.Length)
             {
-                j += 2;
+                index += 2;
                 continue;
             }
 
-            if (j + mark.Length <= input.Length && input.Substring(j, mark.Length) == mark)
+            if (index + mark.Length <= input.Length && input.Substring(index, mark.Length) == mark)
             {
-                return j;
+                return index;
             }
 
-            j++;
+            index++;
         }
 
         return -1;
