@@ -39,6 +39,10 @@ using Content.Shared.Popups;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Content.Server.Kitchen.EntitySystems;
+using Content.Server.StationRecords.Systems;
+using Content.Shared.Roles;
+using Content.Shared.StationRecords;
+
 
 namespace Content.Server.Access.Systems;
 
@@ -49,6 +53,7 @@ public sealed class IdCardSystem : SharedIdCardSystem
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
     [Dependency] private readonly IAdminLogManager _adminLogger = default!;
     [Dependency] private readonly MicrowaveSystem _microwave = default!;
+    [Dependency] private readonly StationRecordsSystem _record = default!;
 
     public override void Initialize()
     {
@@ -121,5 +126,51 @@ public sealed class IdCardSystem : SharedIdCardSystem
                     $"{ToPrettyString(args.Microwave)} added {random.ID} access to {ToPrettyString(uid):entity}");
 
         }
+    }
+
+    public void UpdateStationRecord(EntityUid idCard, string newFullName, ProtoId<AccessLevelPrototype> newJobTitle, JobPrototype? newJobProto)
+    {
+        if (!TryComp<StationRecordKeyStorageComponent>(idCard, out var keyStorage)
+            || keyStorage.Key is not { } key
+            || !_record.TryGetRecord<GeneralStationRecord>(key, out var record))
+        {
+            return;
+        }
+
+        record.Name = newFullName;
+        record.JobTitle = newJobTitle;
+
+        if (newJobProto != null)
+        {
+            record.JobPrototype = newJobProto.ID;
+            record.JobIcon = newJobProto.Icon;
+        }
+
+        _record.Synchronize(key);
+    }
+
+    public void UpdateStationRecord(EntityUid idCard,
+        JobPrototype? newJobProto = null,
+        string? newFullName = null,
+        string? newJobTitle = null)
+    {
+        if (!TryComp<StationRecordKeyStorageComponent>(idCard, out var keyStorage)
+            || keyStorage.Key is not { } key
+            || !_record.TryGetRecord<GeneralStationRecord>(key, out var record))
+            return;
+
+        if (newFullName != null)
+            record.Name = newFullName;
+
+        if (newJobTitle != null)
+            record.JobTitle = newJobTitle;
+
+        if (newJobProto != null)
+        {
+            record.JobPrototype = newJobProto.ID;
+            record.JobIcon = newJobProto.Icon;
+        }
+
+        _record.Synchronize(key);
     }
 }

@@ -73,7 +73,7 @@ public abstract class SharedIdCardSystem : EntitySystem
     {
         // check held item?
         if (TryComp(uid, out HandsComponent? hands) &&
-            hands.ActiveHandEntity is EntityUid heldItem &&
+            hands.ActiveHandEntity is { } heldItem &&
             TryGetIdCard(heldItem, out idCard))
         {
             return true;

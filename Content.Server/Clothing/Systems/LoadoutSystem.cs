@@ -52,7 +52,7 @@ public sealed class LoadoutSystem : EntitySystem
     {
         _sawmill = _log.GetSawmill("loadouts");
 
-        SubscribeLocalEvent<PlayerSpawnCompleteEvent>(OnPlayerSpawnComplete);
+        SubscribeLocalEvent<PlayerSpawnCompleteEvent>(OnPlayerSpawnComplete, before: [typeof(SharedLoadoutSystem)]);
     }
 
 

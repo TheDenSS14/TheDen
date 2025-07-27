@@ -187,7 +187,7 @@ public sealed class IdCardConsoleSystem : SharedIdCardConsoleSystem
         _adminLogger.Add(LogType.Action, LogImpact.Medium,
             $"{ToPrettyString(player):player} has modified {ToPrettyString(targetId):entity} with the following accesses: [{string.Join(", ", addedTags.Union(removedTags))}] [{string.Join(", ", newAccessList)}]");
 
-        UpdateStationRecord(uid, targetId, newFullName, newJobTitle, job);
+        _idCard.UpdateStationRecord(targetId, newFullName, newJobTitle, job);
     }
 
     /// <summary>
@@ -206,26 +206,5 @@ public sealed class IdCardConsoleSystem : SharedIdCardConsoleSystem
 
         var privilegedId = component.PrivilegedIdSlot.Item;
         return privilegedId != null && _accessReader.IsAllowed(privilegedId.Value, uid, reader);
-    }
-
-    private void UpdateStationRecord(EntityUid uid, EntityUid targetId, string newFullName, ProtoId<AccessLevelPrototype> newJobTitle, JobPrototype? newJobProto)
-    {
-        if (!TryComp<StationRecordKeyStorageComponent>(targetId, out var keyStorage)
-            || keyStorage.Key is not { } key
-            || !_record.TryGetRecord<GeneralStationRecord>(key, out var record))
-        {
-            return;
-        }
-
-        record.Name = newFullName;
-        record.JobTitle = newJobTitle;
-
-        if (newJobProto != null)
-        {
-            record.JobPrototype = newJobProto.ID;
-            record.JobIcon = newJobProto.Icon;
-        }
-
-        _record.Synchronize(key);
     }
 }

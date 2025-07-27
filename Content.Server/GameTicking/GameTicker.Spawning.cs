@@ -46,6 +46,7 @@
 using System.Globalization;
 using System.Linq;
 using System.Numerics;
+using Content.Server._DEN.Job;
 using Content.Server.Administration.Managers;
 using Content.Server.Administration.Systems;
 using Content.Server.GameTicking.Events;
@@ -53,6 +54,7 @@ using Content.Server.RandomMetadata;
 using Content.Server.Spawners.Components;
 using Content.Server.Speech.Components;
 using Content.Server.Station.Components;
+using Content.Shared._DEN.Job;
 using Content.Shared.CCVar;
 using Content.Shared.Chat;
 using Content.Shared.Database;
@@ -78,6 +80,7 @@ namespace Content.Server.GameTicking
         [Dependency] private readonly IAdminManager _adminManager = default!;
         [Dependency] private readonly SharedJobSystem _jobs = default!;
         [Dependency] private readonly AdminSystem _admin = default!;
+        [Dependency] private readonly AlternateJobTitleSystem _alternate = default!;
 
         [ValidatePrototypeId<EntityPrototype>]
         public const string ObserverPrototypeName = "MobObserver";
@@ -317,8 +320,16 @@ namespace Content.Server.GameTicking
 
             _mind.TransferTo(newMind, mob);
 
-            _roles.MindAddJobRole(newMind, silent: silent, jobPrototype:jobId);
+            _roles.MindAddJobRole(newMind, silent: silent, jobPrototype: jobId);
             var jobName = _jobs.MindTryGetJobName(newMind);
+            var jobNameEvent = new GetJobNameEvent(jobPrototype)
+            {
+                JobName = jobName
+            };
+
+            RaiseLocalEvent(ref jobNameEvent);
+            jobName = jobNameEvent.JobName;
+
             _admin.UpdatePlayerList(player);
 
             if (lateJoin && !silent)
