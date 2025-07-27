@@ -5,7 +5,6 @@
 
 using System;
 using System.Numerics;
-using Pidgin;
 using Robust.Client.Graphics;
 using Robust.Client.UserInterface.Controls;
 using Robust.Shared.Utility;
@@ -92,7 +91,7 @@ public sealed class TextPreviewPanel : PanelContainer
             _outputPanel.Clear();
             _outputPanel.AddMessage(message);
         }
-        catch (ParseException)
+        catch (Exception)
         {
             _outputPanel.Clear();
             _outputPanel.AddText(markup);
