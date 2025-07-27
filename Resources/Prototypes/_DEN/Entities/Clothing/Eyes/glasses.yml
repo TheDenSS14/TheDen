@@ -23,3 +23,37 @@
     tags:
     - WhitelistChameleon
     - HudMedical
+
+- type: entity
+  parent: [ClothingEyesBase, ShowMedicalIcons]
+  id: ClothingEyesGlassesMedical
+  name: medical glasses
+  description: Shielded Medical Glasses designed for fashionable doctors. Now with a cool blue hue!
+  components:
+  - type: Sprite
+    sprite: _DV/Clothing/Eyes/Glasses/corpsglasses.rsi
+  - type: Clothing
+    sprite: _DV/Clothing/Eyes/Glasses/corpsglasses.rsi
+  - type: FlashImmunity
+  - type: EyeProtection
+    protectionTime: 5
+  - type: Construction
+    graph: GlassesMedicalHUD
+    node: glassesMedical
+  - type: ShowHealthBars
+    damageContainers:
+    - Biological
+  - type: ShowHealthIcons
+    damageContainers:
+    - Biological
+  - type: Tag
+    tags:
+    - HamsterWearable
+    - WhitelistChameleon
+    - SecDogWearable
+    - HudMedical
+  - type: GuideHelp
+    guides:
+    - Medical
+  - type: IdentityBlocker
+    coverage: EYES

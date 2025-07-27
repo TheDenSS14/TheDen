@@ -1,0 +1,14 @@
+﻿# Eyes
+- type: loadout
+  id: LoadoutCommandCMOMedicalGlasses
+  category: JobsMedicalChiefMedicalOfficer
+  cost: 7
+  exclusive: true
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutEyes
+  - !type:CharacterJobRequirement
+    jobs:
+    - ChiefMedicalOfficer
+  items:
+  - ClothingEyesGlassesMedical
