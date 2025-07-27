@@ -282,7 +282,7 @@
         whitelist:
           tags:
           - Sidearm
-        insertOnInteract: false
+        insertOnInteract: true
   - type: ItemMapper # DeltaV - adjust for DeltaV sprites.
     mapLayers:
       baton:
@@ -433,7 +433,7 @@
           - Medkit
           - Portafib
           - Rollerbed
-        insertOnInteract: false
+        insertOnInteract: true
   - type: ContainerContainer
     containers:
       storagebase: !type:Container
@@ -631,7 +631,7 @@
         whitelist:
           tags:
           - Sidearm
-        insertOnInteract: false
+        insertOnInteract: true
   - type: ItemMapper # DeltaV - adjust for DeltaV sprites.
     mapLayers:
       baton:
@@ -741,7 +741,7 @@
         whitelist:
           tags:
           - Sidearm
-        insertOnInteract: false
+        insertOnInteract: true
   - type: ContainerContainer
     containers:
       storagebase: !type:Container
@@ -776,7 +776,7 @@
         whitelist:
           tags:
           - Sidearm
-        insertOnInteract: false
+        insertOnInteract: true
   - type: ContainerContainer
     containers:
       storagebase: !type:Container
@@ -851,14 +851,14 @@
         whitelist:
           tags:
           - Sidearm
-        insertOnInteract: false
+        insertOnInteract: true
       jaunter:
         name: clothing-belt-jaunter
         priority: -1
         whitelist:
           tags:
           - Jaunter
-        insertOnInteract: false
+        insertOnInteract: true
   - type: ItemMapper # DeltaV - adjust for DeltaV sprites.
     mapLayers:
       slp:
@@ -914,13 +914,13 @@
           - Medkit
           - Portafib
           - Rollerbed
-        insertOnInteract: false
+        insertOnInteract: true
       holster:
         name: clothing-belt-sidearm
         whitelist:
           tags:
           - Sidearm
-        insertOnInteract: false
+        insertOnInteract: true
   - type: ItemMapper # DeltaV - adjust for DeltaV sprites.
     mapLayers:
       medkit:
