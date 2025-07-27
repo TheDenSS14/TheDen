@@ -22,8 +22,8 @@ public sealed class AlternateJobTitleSystem : EntitySystem
     [Dependency] private readonly ILogManager _log = default!;
     [Dependency] private readonly JobSystem _job = default!;
     [Dependency] private readonly MindSystem _mind = default!;
-    private ProtoId<AlternateJobTitlePrototype> DebugJobPrototype { get; set; } = "Captain";
 
+    private ProtoId<AlternateJobTitlePrototype> DebugJobPrototype => "Captain";
     private ISawmill _sawmill = default!;
 
     /// <inheritdoc/>
@@ -64,7 +64,7 @@ public sealed class AlternateJobTitleSystem : EntitySystem
         SetupJobName(ev.Mob);
     }
 
-    public void SetupJobName(EntityUid playerEntity)
+    private void SetupJobName(EntityUid playerEntity)
     {
         var hasId = _idCard.TryFindIdCard(playerEntity, out var idCard);
         var mindId = _mind.GetMind(playerEntity);
