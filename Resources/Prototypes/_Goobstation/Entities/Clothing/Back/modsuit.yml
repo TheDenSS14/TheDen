@@ -67,7 +67,7 @@
     slots:
       cell_slot: true
   - type: PowerCellDraw
-    drawRate: 2.5 # Sealed draw rate
+    drawRate: 0.75 # Sealed draw rate
   - type: PowerCellSlot
     cellSlotId: cell_slot
     fitsInCharger: false

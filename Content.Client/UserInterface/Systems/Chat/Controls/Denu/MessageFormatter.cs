@@ -1,11 +1,8 @@
-// SPDX-FileCopyrightText: 2025 Cam
-// SPDX-FileCopyrightText: 2025 Cami
-// SPDX-FileCopyrightText: 2025 sleepyyapril
+// SPDX-FileCopyrightText: 2025 Cami <147159915+Camdot@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
 //
-// SPDX-License-Identifier: AGPL-3.0-or-later
+// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
-using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
@@ -15,216 +12,118 @@ namespace Content.Client.UserInterface.Systems.Chat.Controls.Denu;
 
 public sealed class MessageFormatter
 {
-    private const char EscapeCharacter = '\\';
-
-    public record FormattingRule(string Mark, string StartTag, string EndTag, bool InsideDialogueOnly, bool IsToggle);
-
-    public class FormatterConfig
+    private static readonly (string mark, string start, string end, bool onlyNested)[] Rules =
     {
-        public required List<FormattingRule> Rules { get; set; }
+        ("***", "[bolditalic]", "[/bolditalic]", false),
+        ("**", "[bold]", "[/bold]", false),
+        ("\"", "[color={DialogueColor}]\"", "\"[/color]", false),
+        ("*", "[italic]", "[/italic]", true),
+        ("*", "[italic][color={EmoteColor}]*", "*[/color][/italic]", false),
+    };
 
-        public required Dictionary<string, string> Replacements { get; set; }
-
-        public bool AllowEscaping { get; set; }
-
-        public required HashSet<char> EscapableTokens { get; set; }
-
-        public bool RemoveAsterisks { get; set; }
-    }
-
-    private class FormattingContext
+    public static string Format(string input, string dialogueColor = "#FFFFFF", string emoteColor = "#FF13FF", bool removeAsterisks = false)
     {
-        public StringBuilder Result { get; } = new StringBuilder();
-        public Stack<FormattingRule> FormattingStack { get; } = new Stack<FormattingRule>();
-        public required IFormattingState CurrentState { get; set; }
-    }
-
-    private interface IFormattingState
-    {
-        FormattingRule[] OrderedRules { get; }
-        int ProcessToken(FormattingContext context, string input, int position, FormatterConfig config);
-    }
-
-    private class NormalFormattingState : IFormattingState
-    {
-        public FormattingRule[] OrderedRules { get; }
-
-        public NormalFormattingState(FormatterConfig config)
-        {
-            OrderedRules = config.Rules.Where(r => !r.InsideDialogueOnly).OrderByDescending(r => r.Mark.Length).ToArray();
-        }
-
-        public int ProcessToken(FormattingContext context, string input, int position, FormatterConfig config)
-        {
-            foreach (var rule in OrderedRules)
-            {
-                if (!CanApplyRule(input, position, rule))
-                    continue;
-
-                if (rule.IsToggle)
-                {
-                    context.Result.Append(rule.StartTag);
-                    context.CurrentState = new DialogueFormattingState(config);
-                    return rule.Mark.Length;
-                }
-
-                return HandleStackableRule(context, input, position, rule);
-            }
-
-            return 0;
-        }
-    }
-
-    private class DialogueFormattingState : IFormattingState
-    {
-        public FormattingRule[] OrderedRules { get; }
-
-        public DialogueFormattingState(FormatterConfig config)
-        {
-            OrderedRules = config.Rules.Where(r => !(!r.InsideDialogueOnly && r.Mark == "*")).OrderByDescending(r => r.Mark.Length).ToArray();
-        }
-
-        public int ProcessToken(FormattingContext context, string input, int position, FormatterConfig config)
-        {
-            foreach (var rule in OrderedRules)
-            {
-                if (!CanApplyRule(input, position, rule))
-                    continue;
-
-                if (rule.IsToggle)
-                {
-                    context.Result.Append(rule.EndTag);
-                    context.CurrentState = new NormalFormattingState(config);
-                    return rule.Mark.Length;
-                }
-
-                return HandleStackableRule(context, input, position, rule);
-            }
-
-            return 0;
-        }
-    }
-
-    public static string Format(string input, FormatterConfig config)
-    {
-        var context = new FormattingContext { CurrentState = new NormalFormattingState(config) };
-        int i = 0;
+        var result = new StringBuilder();
+        var stack = new Stack<string>();
+        var inDialogue = false;
+        var i = 0;
 
         while (i < input.Length)
         {
-            if (config.AllowEscaping && TryHandleEscape(input, i, context.Result, config.EscapableTokens, out int consumed))
-            {
-                i += consumed;
-                continue;
-            }
+            var (processed, length, dialogueToggled) = ProcessNextToken(input, i, stack, inDialogue, result);
 
-            int length = context.CurrentState.ProcessToken(context, input, i, config);
-            if (length > 0)
+            if (processed)
             {
                 i += length;
+                if (dialogueToggled)
+                    inDialogue = !inDialogue;
                 continue;
             }
 
-            context.Result.Append(input[i++]);
+            result.Append(input[i++]);
         }
 
-        while (context.FormattingStack.Count > 0)
-        {
-            var rule = context.FormattingStack.Pop();
-            context.Result.Append(rule.EndTag);
-        }
+        result.Replace("{DialogueColor}", dialogueColor);
+        result.Replace("{EmoteColor}", emoteColor);
 
-        if (context.CurrentState is DialogueFormattingState)
-        {
-            var toggleRule = config.Rules.First(r => r.IsToggle);
-            context.Result.Append(toggleRule.EndTag);
-        }
+        if (removeAsterisks)
+            result.Replace("*", "");
 
-        ApplyReplacements(context.Result, config.Replacements);
-
-        if (config.RemoveAsterisks)
-        {
-            context.Result.Replace("*", "");
-        }
-
-        return context.Result.ToString();
+        return result.ToString();
     }
 
-    private static bool TryHandleEscape(string input, int position, StringBuilder result, HashSet<char> escapableTokens, out int consumed)
+    private static (bool processed, int length, bool dialogueToggled) ProcessNextToken(
+        string input, int position, Stack<string> stack, bool inDialogue, StringBuilder result
+    )
     {
-        consumed = 0;
-        if (input[position] != EscapeCharacter || position + 1 >= input.Length)
+        foreach (var rule in Rules.OrderByDescending(r => r.mark.Length))
+        {
+            if (!CanApplyRule(input, position, rule, inDialogue))
+                continue;
+
+            if (rule.mark == "\"")
+                return ProcessDialogue(rule, inDialogue, result);
+
+            if (IsClosingTag(stack, rule.mark))
+                return ProcessClosingTag(rule, stack, result);
+
+            if (HasMatchingClosingTag(input, position, rule.mark))
+                return ProcessOpeningTag(rule, stack, result);
+
+            result.Append(rule.mark);
+            return (true, rule.mark.Length, false);
+        }
+
+        return (false, 0, false);
+    }
+
+    private static bool CanApplyRule(string input, int position, (string mark, string start, string end, bool onlyNested) rule, bool inDialogue)
+    {
+        if (position + rule.mark.Length > input.Length)
             return false;
 
-        char next = input[position + 1];
-        if (!escapableTokens.Contains(next))
+        if (input.Substring(position, rule.mark.Length) != rule.mark)
             return false;
 
-        result.Append(next);
-        consumed = 2;
+        if (rule.onlyNested && !inDialogue)
+            return false;
+
+        if (!rule.onlyNested && inDialogue && rule.mark == "*")
+            return false;
+
         return true;
     }
 
-    private static void ApplyReplacements(StringBuilder result, Dictionary<string, string> replacements)
+    private static (bool processed, int length, bool dialogueToggled) ProcessDialogue(
+        (string mark, string start, string end, bool onlyNested) rule, bool inDialogue, StringBuilder result
+    )
     {
-        foreach (var kvp in replacements)
-        {
-            result.Replace("{" + kvp.Key + "}", kvp.Value);
-        }
+        result.Append(inDialogue ? rule.end : rule.start);
+        return (true, rule.mark.Length, true);
     }
 
-    private static bool CanApplyRule(string input, int position, FormattingRule rule)
-    {
-        if (position + rule.Mark.Length > input.Length)
-            return false;
+    private static bool IsClosingTag(Stack<string> stack, string mark) =>
+        stack.Count > 0 && stack.Peek() == mark;
 
-        return input.Substring(position, rule.Mark.Length) == rule.Mark;
+    private static (bool processed, int length, bool dialogueToggled) ProcessClosingTag(
+        (string mark, string start, string end, bool onlyNested) rule, Stack<string> stack, StringBuilder result
+    )
+    {
+        result.Append(rule.end);
+        stack.Pop();
+        return (true, rule.mark.Length, false);
     }
 
-    private static int HandleStackableRule(FormattingContext context, string input, int position, FormattingRule rule)
+    private static bool HasMatchingClosingTag(string input, int position, string mark) =>
+        input.IndexOf(mark, position + mark.Length, StringComparison.Ordinal) != -1;
+
+    private static (bool processed, int length, bool dialogueToggled) ProcessOpeningTag(
+        (string mark, string start, string end, bool onlyNested) rule, Stack<string> stack, StringBuilder result
+    )
     {
-        if (context.FormattingStack.Count > 0 && context.FormattingStack.Peek() == rule)
-        {
-            context.Result.Append(rule.EndTag);
-            context.FormattingStack.Pop();
-            return rule.Mark.Length;
-        }
-
-        if (HasMatchingClosingTag(input, position, rule.Mark))
-        {
-            context.Result.Append(rule.StartTag);
-            context.FormattingStack.Push(rule);
-            return rule.Mark.Length;
-        }
-
-        context.Result.Append(rule.Mark);
-        return rule.Mark.Length;
+        result.Append(rule.start);
+        stack.Push(rule.mark);
+        return (true, rule.mark.Length, false);
     }
 
-    private static bool HasMatchingClosingTag(string input, int position, string mark)
-    {
-        return FindNextUnescapedMark(input, position + mark.Length, mark) != -1;
-    }
-
-    private static int FindNextUnescapedMark(string input, int start, string mark)
-    {
-        int j = start;
-        while (j < input.Length)
-        {
-            if (input[j] == EscapeCharacter && j + 1 < input.Length)
-            {
-                j += 2;
-                continue;
-            }
-
-            if (j + mark.Length <= input.Length && input.Substring(j, mark.Length) == mark)
-            {
-                return j;
-            }
-
-            j++;
-        }
-
-        return -1;
-    }
 }
