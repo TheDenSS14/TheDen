@@ -1,4 +1,9 @@
-﻿using System;
+// SPDX-FileCopyrightText: 2025 Cam
+// SPDX-FileCopyrightText: 2025 sleepyyapril
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
+using System;
 using System.Numerics;
 using Pidgin;
 using Robust.Client.Graphics;
