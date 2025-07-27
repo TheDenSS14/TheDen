@@ -95,8 +95,7 @@ namespace Content.Shared.Damage
 
         [DataField]
         public Dictionary<MobState, ProtoId<HealthIconPrototype>> HealthIcons = new()
-        {
-            { MobState.Alive, "HealthIconFine" },
+        {   // Den: Nuked Alive Icon so speech bubbles are visible
             { MobState.Critical, "HealthIconCritical" },
             { MobState.Dead, "HealthIconDead" },
         };
