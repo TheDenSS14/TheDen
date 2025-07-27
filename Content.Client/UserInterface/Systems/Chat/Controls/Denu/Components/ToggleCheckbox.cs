@@ -1,5 +1,6 @@
-// SPDX-FileCopyrightText: 2025 Cami <147159915+Camdot@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Cam
+// SPDX-FileCopyrightText: 2025 Cami
+// SPDX-FileCopyrightText: 2025 sleepyyapril
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
