@@ -387,3 +387,20 @@
     requires:
     - TauCetiBasic
     - Caprine
+
+- type: entity
+  id: VoxPidginTranslator
+  parent: [ TranslatorPoweredBase ]
+  name: Vox-Pidgin translator
+  description: Translates speech between Vox-Pidgin and Galactic Common. Helps process those loud screeches into real, legible words.
+  components:
+  - type: HandheldTranslator
+    spoken:
+    - TauCetiBasic
+    - VoxPidgin
+    understood:
+    - TauCetiBasic
+    - VoxPidgin
+    requires:
+    - TauCetiBasic
+    - VoxPidgin
