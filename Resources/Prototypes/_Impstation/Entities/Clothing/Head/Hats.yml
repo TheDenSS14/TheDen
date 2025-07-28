@@ -1,0 +1,22 @@
+# SPDX-FileCopyrightText: 2025 juniwoofs
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatCircusClown
+  name: circus clown hat
+  description: "Rumors suggest that the pointed end represents the narrowing path all clowns walk to their Last Laugh."
+  components:
+  - type: Icon
+    sprite: _Impstation/Clothing/Head/Hats/circusclownhat.rsi
+    state: "icon"
+  - type: Sprite
+    state: "icon"
+    sprite: _Impstation/Clothing/Head/Hats/circusclownhat.rsi
+  - type: Clothing
+    clothingVisuals:
+      head:
+      - state: equipped-HELMET
+        offset: "0, 0.15" #this shit is so fiddly and i don't understand it at all
+    sprite: _Impstation/Clothing/Head/Hats/circusclownhat.rsi

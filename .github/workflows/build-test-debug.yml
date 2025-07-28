@@ -39,11 +39,11 @@ on:
 jobs:
   build:
     if: github.actor != 'TheDen-Bot' && github.event.pull_request.draft == false
-    strategy:
-      matrix:
-        os: [ubuntu-latest] # change to self-hosted runner with more RAM
+    #strategy: # using a single self-hosted runner, this will not be needed anytime soon
+    #  matrix:
+    #    os: [ubuntu-latest]
 
-    runs-on: ${{ matrix.os }}
+    runs-on: self-hosted
 
     steps:
     - name: Checkout Master

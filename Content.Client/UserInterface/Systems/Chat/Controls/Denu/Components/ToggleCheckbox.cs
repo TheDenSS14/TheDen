@@ -18,11 +18,14 @@ public class ToggleCheckbox : CheckBox
     public Action OnToggledOff { get; set; } = () => { };
     public Action WhileToggled { get; set; } = () => { };
 
-    long _lastUpdate = 0;
+    private IGameTiming _gameTiming = default!;
+
+    private double _lastUpdate = 0;
 
     public ToggleCheckbox()
     {
         OnToggled += e => OnToggleChanged(e.Pressed);
+        _gameTiming = IoCManager.Resolve<IGameTiming>();
     }
 
     private void OnToggleChanged(bool pressed)
@@ -40,7 +43,7 @@ public class ToggleCheckbox : CheckBox
         if (!Pressed)
             return;
 
-        var currentTime = DateTimeOffset.Now.ToUnixTimeMilliseconds();
+        var currentTime = _gameTiming.RealTime.TotalMilliseconds;
         if (_lastUpdate + UpdatePeriod > currentTime)
             return;
 
@@ -48,4 +51,3 @@ public class ToggleCheckbox : CheckBox
         WhileToggled.Invoke();
     }
 }
-

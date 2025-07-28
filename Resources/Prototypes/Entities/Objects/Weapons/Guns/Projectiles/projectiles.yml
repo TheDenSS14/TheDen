@@ -53,9 +53,11 @@
 # SPDX-FileCopyrightText: 2025 Eris
 # SPDX-FileCopyrightText: 2025 Jakumba
 # SPDX-FileCopyrightText: 2025 Rosycup
+# SPDX-FileCopyrightText: 2025 Sir Warock
 # SPDX-FileCopyrightText: 2025 Solaris
 # SPDX-FileCopyrightText: 2025 Timfa
 # SPDX-FileCopyrightText: 2025 VMSolidus
+# SPDX-FileCopyrightText: 2025 Vanessa
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
@@ -345,7 +347,7 @@
     impactEffect: BulletImpactEffectDisabler
     damage:
       types:
-        Heat: 5
+        Heat: 0
         #Ion: 10 #Goobstation
     soundHit:
       collection: WeakHit
@@ -389,7 +391,7 @@
     impactEffect: BulletImpactEffectDisabler
     damage:
       types:
-        Heat: 0.3
+        Heat: 0
     soundHit:
       collection: WeakHit
     forceSound: true
@@ -428,7 +430,7 @@
     impactEffect: BulletImpactEffectDisabler
     damage:
       types:
-        Heat: 1
+        Heat: 0
         #Ion: 5 #Goobstation
     soundHit:
       collection: WeakHit
@@ -1171,7 +1173,7 @@
     impactEffect: BulletImpactEffectDisabler
     damage:
       types:
-        Heat: 2
+        Heat: 0
     soundHit:
       collection: WeakHit
     forceSound: true
