@@ -1,0 +1,59 @@
+# SPDX-FileCopyrightText: 2025 Vanessa Louwagie
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entityTable
+  id: FillLockerMedicalDoctorDEN
+  table: !type:GroupSelector
+    children:
+    - !type:AllSelector
+      weight: 12
+      children:
+      - id: ClothingHeadHatSurgcapPurple
+      - id: UniformScrubsColorPurple
+    - !type:AllSelector
+      weight: 11
+      children:
+      - id: ClothingHeadHatSurgcapGreen
+      - id: UniformScrubsColorGreen
+    - !type:AllSelector
+      weight: 11
+      children:
+      - id: ClothingHeadHatSurgcapBlue
+      - id: UniformScrubsColorBlue
+    - !type:AllSelector
+      weight: 12
+      children:
+      - id: ClothingHeadHatSurgcapCyan
+      - id: UniformScrubsColorCyan
+    - !type:AllSelector
+      weight: 12
+      children:
+      - id: ClothingHeadHatSurgcapBlack
+      - id: UniformScrubsColorBlack
+    - !type:AllSelector
+      weight: 12
+      children:
+      - id: ClothingHeadHatSurgcapPink
+      - id: UniformScrubsColorPink
+    - !type:AllSelector
+      weight: 14 # Better chance to be GAY! :D
+      children:
+      - id: ClothingHeadHatSurgcapRainbow
+      - id: UniformScrubsColorRainbow
+    - !type:AllSelector
+      weight: 12
+      children:
+      - id: ClothingHeadHatSurgcapWhite
+      - id: UniformScrubsColorWhite
+    - !type:AllSelector
+      weight: 4
+      children:
+      - id: ClothingHeadHatSurgcapCybersun
+      - id: UniformScrubsColorCybersun
+
+- type: entityTable
+  id: FillLockerParamedicHardsuitDEN
+  table: !type:AllSelector
+    children:
+    - id: ClothingShoesBootsMagParamed

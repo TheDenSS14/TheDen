@@ -10,6 +10,8 @@
 # SPDX-FileCopyrightText: 2025 Rosycup
 # SPDX-FileCopyrightText: 2025 Skubman
 # SPDX-FileCopyrightText: 2025 VMSolidus
+# SPDX-FileCopyrightText: 2025 Vanessa
+# SPDX-FileCopyrightText: 2025 Vanessa Louwagie
 # SPDX-FileCopyrightText: 2025 Velcroboy
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
@@ -271,13 +273,14 @@
   parent: SuitStorageBase
   suffix: Paramedic
   components:
-  - type: StorageFill
-    contents:
-        - id: NitrogenTankFilled
-        - id: OxygenTankFilled
-        - id: ClothingOuterHardsuitVoidParamed
-        - id: ClothingMaskBreathMedical
-        - id: ClothingShoesBootsMagParamed # The Den
+  - type: EntityTableContainerFill
+    containers:
+      entity_storage: !type:AllSelector
+        children:
+        - !type:NestedSelector
+          tableId: FillLockerParamedicHardsuitDV # DeltaV - Seperate the voidsuit out
+        - !type:NestedSelector
+          tableId: FillLockerParamedicHardsuitDEN # The Den additions (Magboots)
   - type: AccessReader
     access: [ [ "Paramedic" ] ]
 

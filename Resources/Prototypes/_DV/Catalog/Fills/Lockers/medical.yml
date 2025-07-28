@@ -1,0 +1,36 @@
+# SPDX-FileCopyrightText: 2025 Vanessa Louwagie
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entityTable
+  id: FillLockerMedicalDoctorDV
+  table: !type:AllSelector
+    children:
+    - id: LunchboxMedicalFilledRandom
+      prob: 0.3
+    - id: NitrousOxideTankFilled
+      prob: 0.3
+
+- type: entityTable
+  id: FillLockerChemistryDV
+  table: !type:AllSelector
+    children:
+    - id: LunchboxMedicalFilledRandom
+      prob: 0.3
+
+- type: entityTable
+  id: FillLockerParamedicDV
+  table: !type:AllSelector
+    children:
+    - id: LunchboxMedicalFilledRandom
+      prob: 0.3
+    - id: ClothingShoesBootsWinterParamedic  #DeltaV - Add departmental winter boots
+
+- type: entityTable
+  id: FillLockerParamedicHardsuitDV
+  table: !type:AllSelector
+    children:
+    - id: ClothingOuterHardsuitVoidParamed
+    - id: OxygenTankFilled
+    - id: NitrogenTankFilled
+    - id: ClothingMaskBreath
