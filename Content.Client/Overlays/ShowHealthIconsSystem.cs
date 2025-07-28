@@ -88,11 +88,12 @@ public sealed class ShowHealthIconsSystem : EquipmentHudSystem<ShowHealthIconsCo
         {
             if (TryComp<MobStateComponent>(entity, out var state))
             {
+                if (state.CurrentState != MobState.Alive) // Den: Nuke Alive Icon so they don't hide speech bubbles
+                    return result;
                 // Since there is no MobState for a rotting mob, we have to deal with this case first.
                 if (HasComp<RottingComponent>(entity) && _prototypeMan.TryIndex(damageableComponent.RottingIcon, out var rottingIcon))
                     result.Add(rottingIcon);
-                // Den: Nuke Alive Icon so one can see typing bubbles
-                else if (state.CurrentState != MobState.Alive && damageableComponent.HealthIcons.TryGetValue(state.CurrentState, out var value) && _prototypeMan.TryIndex(value, out var icon))
+                else if (damageableComponent.HealthIcons.TryGetValue(state.CurrentState, out var value) && _prototypeMan.TryIndex(value, out var icon))
                     result.Add(icon);
             }
         }
