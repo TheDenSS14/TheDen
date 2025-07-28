@@ -84,13 +84,13 @@
           - Medkit
           - Portafib
           - Rollerbed
-        insertOnInteract: false
+        insertOnInteract: true
       holster:
         name: clothing-belt-sidearm
         whitelist:
           tags:
           - Sidearm
-        insertOnInteract: false
+        insertOnInteract: true
   - type: ItemMapper # DeltaV - adjust for DeltaV sprites.
     mapLayers:
       medkit:

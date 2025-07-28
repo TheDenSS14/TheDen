@@ -584,7 +584,7 @@
   - type: EmagLatheRecipes
     emagDynamicPacks:
     - ExosuitFabricatorDynamicEmagAwfulDen
-    
+
   - type: MaterialStorage
     whitelist:
       tags:
@@ -674,9 +674,6 @@
     - SecurityTechFabStaticAwfulDen
     dynamicPacks:
     - SecurityTechFabDynamicAwfulDen
-  - type: EmagLatheRecipes
-    emagDynamicPacks:
-    - SecurityTechFabEmagDynamicAwfulDen
   - type: MaterialStorage
     whitelist:
       tags:
@@ -788,7 +785,7 @@
   - type: Lathe
     idleState: icon
     runningState: icon
-    staticPacks: 
+    staticPacks:
     - EngineeringTechFabStaticAwfulDen
     - AutolatheStaticAwfulDen
     dynamicPacks:
@@ -826,7 +823,7 @@
   - type: Lathe
     idleState: icon
     runningState: icon
-    staticPacks: 
+    staticPacks:
     - AutolatheStaticAwfulDen
     - CargoTechFabStaticAwfulDen
     dynamicPacks:

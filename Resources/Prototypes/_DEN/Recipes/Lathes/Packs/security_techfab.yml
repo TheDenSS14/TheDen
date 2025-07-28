@@ -1,3 +1,4 @@
+# SPDX-FileCopyrightText: 2025 Jakumba
 # SPDX-FileCopyrightText: 2025 MajorMoth
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
@@ -91,8 +92,6 @@
   - MagazineLightRifleLowCapacity
   - SpeedLoaderRifleHeavy
   - SpeedLoaderRifleHeavyEmpty
-  - WeaponRifleNovaliteC1
-  - WeaponRifleGestio
   - ClothingEyesGlassesSecurity
   - TelescopicShield
   - HoloprojectorSecurity
@@ -124,10 +123,6 @@
   - MagazineBoxRifleRubber
   - CartridgeSpecialRubber
   - MagazineBoxSpecialRubber
-  - MagazineBoxLightRifleRubber # Frontier
-  - MagazineBoxMagnumRubber # Frontier
-  - MagazineBoxPistolRubber # Frontier
-  - MagazineBoxRifleRubber # Frontier
   - SpeedLoaderRifleHeavyRubber
   - BoxShotgunBirdshot
   - BoxShotgun00Buckshot
@@ -255,7 +250,6 @@
   - WeaponMechCombatDisabler
   - WeaponMechCombatFlashbangLauncher
   - WeaponMechCombatMissileRack8
-  - EnergySword
   - EnergyCutlass
   - WeaponEnergyTurretAIMachineCircuitboard
   - WeaponEnergyTurretStationMachineCircuitboard
@@ -266,14 +260,7 @@
   - WeaponPistolMk58
   - WeaponPistolN1984
   - WeaponPistolViper
-  - WeaponPistolCobra
   - MagazineCaselessRifleIncendiary
   - MagazineCaselessRifleUranium
   - MagazineBoxCaselessRifleIncendiary
   - MagazineBoxCaselessRifleUranium
-
-- type: latheRecipePack
-  id: SecurityTechFabEmagDynamicAwfulDen
-  recipes:
-  - EnergySwordDouble
-  - WeaponPistolCobra
