@@ -25,6 +25,7 @@
   - type: StorageFill
     contents:
         - id: OxygenTankFilled
+        - id: NitrogenTankFilled #Den
         - id: ClothingOuterHardsuitEVA
         - id: ClothingHeadHelmetEVA
         - id: ClothingMaskBreath
@@ -38,6 +39,7 @@
   - type: StorageFill
     contents:
         - id: OxygenTankFilled
+        - id: NitrogenTankFilled #Den
         - id: ClothingOuterHardsuitEVA
         - id: ClothingHeadHelmetEVALarge
         - id: ClothingMaskBreath
@@ -51,6 +53,7 @@
   - type: StorageFill
     contents:
         - id: OxygenTankFilled
+        - id: NitrogenTankFilled #Den
         - id: ClothingOuterSuitEmergency
         - id: ClothingMaskBreath
 
@@ -63,6 +66,7 @@
   - type: StorageFill
     contents:
         - id: OxygenTankFilled
+        - id: NitrogenTankFilled #Den
         - id: ClothingOuterHardsuitEVAPrisoner
         - id: ClothingHeadHelmetEVALarge
         - id: ClothingMaskBreath
@@ -76,6 +80,7 @@
   - type: StorageFill
     contents:
         - id: OxygenTankFilled
+        - id: NitrogenTankFilled #Den
         - id: ClothingOuterHardsuitSyndicate
         - id: ClothingHeadHelmetSyndicate
         - id: ClothingMaskGasSyndicate
@@ -89,6 +94,7 @@
   - type: StorageFill
     contents:
         - id: OxygenTankFilled
+        - id: NitrogenTankFilled #Den
         - id: ClothingOuterHardsuitPirateEVA
         - id: ClothingMaskGas
 
@@ -115,6 +121,7 @@
   - type: StorageFill
     contents:
         - id: OxygenTankFilled
+        - id: NitrogenTankFilled #Den
         - id: ClothingOuterHardsuitBasic
         - id: ClothingMaskBreath
 
@@ -154,6 +161,8 @@
     contents:
         - id: OxygenTankFilled
           amount: 2 #DeltaV - Double the tanks
+        - id: NitrogenTankFilled #Den
+          amount: 2
         - id: ClothingOuterHardsuitCombatOfficer # DeltaV - ClothingOuterHardsuitSecurity replaced in favour of security combat hardsuit.
           amount: 2 #DeltaV - Double the suits
         - id: ClothingMaskBreath
@@ -170,6 +179,7 @@
   - type: StorageFill
     contents:
         - id: OxygenTankFilled
+        - id: NitrogenTankFilled #Den
         - id: JetpackVoidFilled
         - id: ClothingShoesBootsMagAdv
         - id: ClothingOuterHardsuitEngineeringWhite
@@ -186,6 +196,7 @@
   - type: StorageFill
     contents:
         - id: OxygenTankFilled
+        - id: NitrogenTankFilled #Den
         - id: ClothingOuterHardsuitMedical
         - id: ClothingMaskBreathMedical
   - type: AccessReader
@@ -200,6 +211,7 @@
   - type: StorageFill
     contents:
         - id: OxygenTankFilled
+        - id: NitrogenTankFilled #Den
         - id: ClothingOuterHardsuitRd
         - id: ClothingMaskBreath
   - type: AccessReader
@@ -214,6 +226,7 @@
   - type: StorageFill
     contents:
         - id: OxygenTankFilled
+        - id: NitrogenTankFilled #Den
         - id: JetpackSecurityFilled
         - id: ClothingOuterHardsuitCombatHoS # DeltaV - ClothingOuterHardsuitSecurityRed replaced in favour of head of security's advanced combat hardsuit.
         - id: ClothingMaskGasSwat
@@ -229,6 +242,7 @@
   - type: StorageFill
     contents:
         - id: OxygenTankFilled
+        - id: NitrogenTankFilled #Den
         - id: ClothingOuterHardsuitCombatWarden # DeltaV - ClothingOuterHardsuitWarden replaced in favour of warden's riot combat hardsuit.
         - id: ClothingMaskBreath
   - type: AccessReader
@@ -243,6 +257,7 @@
   - type: StorageFill
     contents:
         - id: OxygenTankFilled
+        - id: NitrogenTankFilled #Den
         - id: ClothingOuterHardsuitCap
         - id: ClothingMaskGasCaptain
         - id: ClothingMaskGasCaptainCombat #TheDen
@@ -258,6 +273,7 @@
   - type: StorageFill
     contents:
       - id: OxygenTankFilled
+      - id: NitrogenTankFilled #Den
       - id: ClothingShoesBootsMag
       - id: ClothingOuterHardsuitSpatio
       - id: ClothingMaskGasExplorer
@@ -307,6 +323,7 @@
   - type: StorageFill
     contents:
         - id: OxygenTankFilled
+        - id: NitrogenTankFilled #Den
         - id: ClothingOuterHardsuitSyndie
         - id: ClothingShoesBootsMagSyndie
         - id: ClothingMaskGasSyndicate
@@ -320,6 +337,7 @@
   - type: StorageFill
     contents:
         - id: OxygenTankFilled
+        - id: NitrogenTankFilled #Den
         - id: ClothingOuterHardsuitPirateCap
         - id: ClothingMaskGas
 
@@ -332,6 +350,7 @@
   - type: StorageFill
     contents:
         - id: OxygenTankFilled
+        - id: NitrogenTankFilled #Den
         - id: ClothingOuterHardsuitWizard
         - id: ClothingMaskBreath
 
@@ -344,6 +363,7 @@
     - type: StorageFill
       contents:
           - id: OxygenTankFilled
+          - id: NitrogenTankFilled #Den
           - id: ClothingOuterHardsuitShanlinUnpainted
           - id: ClothingMaskBreath
 
@@ -355,5 +375,6 @@
     - type: StorageFill
       contents:
           - id: OxygenTankFilled
+          - id: NitrogenTankFilled #Den
           - id: ClothingOuterHardsuitShiweiUnpainted
           - id: ClothingMaskBreath
