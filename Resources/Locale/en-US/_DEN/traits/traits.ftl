@@ -71,4 +71,4 @@ trait-description-HandsFreePulling =
     some sort of telekinesis that allows you to drag things around without your hands.
     These could come from gene modifications, inherited genetics,
     or even custom implantations or modifications.
-    You're able to drag things around without using your hands due to your abnormally strong tail.
+    You're able to drag things around without using your hands due to your abnormally strong tail or other modifications.
