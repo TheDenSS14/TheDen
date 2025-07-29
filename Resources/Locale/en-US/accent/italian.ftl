@@ -46,13 +46,13 @@ accent-italian-words-11 = good
 accent-italian-words-replace-11 = molto bene
 
 accent-italian-words-12 = greytide
-accent-italian-words-replace-12 = greytide
+accent-italian-words-replace-12 = curvisti
 
 accent-italian-words-13 = greytider
-accent-italian-words-replace-13 = greytider
+accent-italian-words-replace-13 = curvisti
 
 accent-italian-words-14 = greytiders
-accent-italian-words-replace-14 = greytiders
+accent-italian-words-replace-14 = curvisti
 
 accent-italian-words-15 = hello
 accent-italian-words-replace-15 = ciao
@@ -76,13 +76,13 @@ accent-italian-words-21 = nuke
 accent-italian-words-replace-21 = spiciest-a meatball
 
 accent-italian-words-22 = op
-accent-italian-words-replace-22 = op
+accent-italian-words-replace-22 = greek
 
 accent-italian-words-23 = operative
-accent-italian-words-replace-23 = operative
+accent-italian-words-replace-23 = greek
 
 accent-italian-words-24 = operatives
-accent-italian-words-replace-24 = operatives
+accent-italian-words-replace-24 = greeks
 
 accent-italian-words-25 = sec
 accent-italian-words-replace-25 = polizia
