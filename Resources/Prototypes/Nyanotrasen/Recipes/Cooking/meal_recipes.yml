@@ -179,11 +179,11 @@
   name: buttered baked corn recipe
   result: FoodMothButteredBakedCorn
   time: 5
-  # reagents: # Whenever we can actually melt butter
-  #   Butter: 5
+  reagents: # Whenever we can actually melt butter
+    Butter: 5 # DEN: The time is now.
   solids:
     FoodMothBakedCorn: 1
-    FoodButter: 1
+    # FoodButter: 1 # DEN: Gootbye
 
 - type: microwaveMealRecipe
   id: RecipeMothMozzarellaSticks
@@ -242,7 +242,7 @@
   reagents:
     Milk: 5
     Flour: 5
-    Cream: 5 # Butter when it gets meltable
+    Butter: 5 # DEN: Use butter
   solids:
     FoodBowlBig: 1
     FoodCheeseSlice: 1
@@ -347,7 +347,7 @@
   time: 10
   reagents:
     Milk: 5
-    Cream: 5 # Butter when it's meltable
+    Butter: 5 # DEN: Use butter
   solids:
     FoodMothCornmealPorridge: 1
     FoodCurdCheese: 1

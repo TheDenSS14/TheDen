@@ -569,6 +569,8 @@
   - type: SliceableFood
     count: 3
     slice: FoodButterSlice
+  - type: Extractable # DEN - Make extractable like cannabis butter
+    grindableSolutionName: food
 
 - type: entity
   name: butter slice
@@ -588,6 +590,8 @@
   - type: Tag
     tags:
     - Slice
+  - type: Extractable # DEN - Make extractable like cannabis butter
+    grindableSolutionName: food
 
 - type: entity
   name: stick of cannabis butter
