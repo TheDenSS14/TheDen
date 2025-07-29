@@ -230,7 +230,7 @@ public sealed class HealthExaminableSystem : EntitySystem
         using (args.PushGroup(nameof(HealthExaminableComponent)))
         {
             // only show the default health inspect, leave self-aware to the actual health examine action
-            args.PushMessage(CreateMarkup(args.Examiner, component, damage, false));
+            args.PushMessage(CreateMarkup(examinedUid, component, damage, false));
         }
     }
 }
