@@ -1469,6 +1469,7 @@
       inverted: true
       traits:
         - Weakling
+        - PrehensileTail
   functions:
     - !type:TraitReplaceComponent
       components:
@@ -1499,6 +1500,7 @@
       inverted: true
       traits:
         - Bodybuilder
+        - PrehensileTail
   functions:
     - !type:TraitReplaceComponent
       components:
@@ -1578,3 +1580,29 @@
     - !type:TraitAddComponent
       components:
         - type: Synth
+
+- type: trait
+  id: PrehensileTail
+  category: TraitsPhysicalBiological
+  points: -10
+  requirements:
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - StationAi
+        - Borg
+        - MedicalBorg
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - Bodybuilder
+        - Weakling
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Reptilian
+  functions:
+    - !type:TraitReplaceComponent
+      components:
+        - type: Puller
+          needsHands: false

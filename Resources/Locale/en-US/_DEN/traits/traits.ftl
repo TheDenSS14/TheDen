@@ -65,3 +65,9 @@ trait-description-SharpTeeth =
     or even custom made implants designed to turn teeth into tiny knives.
     Your unarmed melee attacks deal Piercing damage instead of the standard damage type for your species.
     This has no effect on damage dealt with any form of armed melee.
+trait-name-PrehensileTail = Prehensile Tail
+trait-description-PrehensileTail =
+    You were born with or have had your tail modified to be stronger than normal.
+    These could come from gene modifications, inherited genetics,
+    or even custom reinforcement implants made to strengthen your tail.
+    You're able to drag things around without using your hands due to your abnormally strong tail.
