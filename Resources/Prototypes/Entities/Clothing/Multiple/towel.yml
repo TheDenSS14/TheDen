@@ -1,7 +1,7 @@
-# SPDX-FileCopyrightText: 2024 IProduceWidgets <107586145+IProduceWidgets@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 Tap <tapiocaphobe@gmail.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <flyingkarii@gmail.com>
+# SPDX-FileCopyrightText: 2024 IProduceWidgets
+# SPDX-FileCopyrightText: 2024 Tap
+# SPDX-FileCopyrightText: 2025 hoshizora
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -24,6 +24,9 @@
     equipSound: 
     unequipSound: 
   - type: Spillable
+    solution: absorbed
+    spillWhenThrown: false
+  - type: DrainableSolution
     solution: absorbed
   - type: Absorbent
     pickupAmount: 15

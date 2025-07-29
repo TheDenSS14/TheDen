@@ -647,6 +647,7 @@
   id: LoadoutServiceWinterCoatMusician
   category: JobsServiceMusician
   cost: 0
+  exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutMusicianOuter
@@ -659,3 +660,16 @@
 # Shoes
 
 # Uniforms
+- type: loadout
+  id: LoadoutServiceMusicianUniformMusician
+  category: JobsServiceMusician
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMusicianUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - Musician
+  items:
+    - ClothingUniformJumpsuitMusician

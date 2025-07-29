@@ -1,10 +1,11 @@
-# SPDX-FileCopyrightText: 2025 ElusiveCoin <elusivecoin@gmail.com>
-# SPDX-FileCopyrightText: 2025 Rosycup <178287475+Rosycup@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 Tabitha <64847293+KyuPolaris@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 TheOneTrueWolfio <Wolfgangleader3@gmail.com>
-# SPDX-FileCopyrightText: 2025 foxcurl <kitshoffeitt@gmail.com>
-# SPDX-FileCopyrightText: 2025 portfiend <109661617+portfiend@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 ElusiveCoin
+# SPDX-FileCopyrightText: 2025 Jakumba
+# SPDX-FileCopyrightText: 2025 Rosycup
+# SPDX-FileCopyrightText: 2025 Tabitha
+# SPDX-FileCopyrightText: 2025 TheOneTrueWolfio
+# SPDX-FileCopyrightText: 2025 foxcurl
+# SPDX-FileCopyrightText: 2025 portfiend
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -16,8 +17,9 @@
   - !type:CharacterJobRequirement
     inverted: true
     jobs:
-    - Borg
-    - MedicalBorg
+      - StationAi
+      - Borg
+      - MedicalBorg
   - !type:CharacterTraitRequirement
     inverted: true
     traits:
@@ -39,8 +41,9 @@
   - !type:CharacterJobRequirement
     inverted: true
     jobs:
-    - Borg
-    - MedicalBorg
+      - StationAi
+      - Borg
+      - MedicalBorg
   - !type:CharacterTraitRequirement
     inverted: true
     traits:
@@ -62,8 +65,9 @@
   - !type:CharacterJobRequirement
     inverted: true
     jobs:
-    - Borg
-    - MedicalBorg
+      - StationAi
+      - Borg
+      - MedicalBorg
   - !type:CharacterTraitRequirement
     inverted: true
     traits:
@@ -85,8 +89,9 @@
   - !type:CharacterJobRequirement
     inverted: true
     jobs:
-    - Borg
-    - MedicalBorg
+      - StationAi
+      - Borg
+      - MedicalBorg
   - !type:CharacterSpeciesRequirement
     inverted: true
     species:
@@ -112,8 +117,9 @@
   - !type:CharacterJobRequirement
     inverted: true
     jobs:
-    - Borg
-    - MedicalBorg
+      - StationAi
+      - Borg
+      - MedicalBorg
   - !type:CharacterSpeciesRequirement
     inverted: true
     species:
@@ -134,13 +140,48 @@
   id: TailWag
   category: TraitsPhysicalBiological
   points: 0
+  slots: 0
   requirements:
   - !type:CharacterJobRequirement
     inverted: true
     jobs:
-    - Borg
-    - MedicalBorg
+      - StationAi
+      - Borg
+      - MedicalBorg
   functions:
     - !type:TraitAddComponent
       components:
         - type: Wagging
+
+- type: trait
+  id: HealingFactor
+  category: TraitsPhysicalBiological
+  points: -6
+  requirements:
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - StationAi
+        - Borg
+        - MedicalBorg
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - IPC
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - PlateletFactories
+  functions:
+    - !type:TraitReplaceComponent
+      components:
+        - type: PassiveDamage
+          allowedStates:
+          - Alive
+          - Critical
+          damageCap: 400
+          damage:
+            groups:
+              Brute: -0.2
+              Burn: -0.2
+              Airloss: -0.3

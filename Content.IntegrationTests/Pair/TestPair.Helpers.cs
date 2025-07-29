@@ -1,12 +1,11 @@
-// SPDX-FileCopyrightText: 2023 Debug <49997488+DebugOk@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2023 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2023 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 MilenVolf <63782763+MilenVolf@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 VMSolidus <evilexecutive@gmail.com>
-// SPDX-FileCopyrightText: 2025 Falcon <falcon@zigtag.dev>
-// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 sleepyyapril <flyingkarii@gmail.com>
+// SPDX-FileCopyrightText: 2023 Debug
+// SPDX-FileCopyrightText: 2023 DrSmugleaf
+// SPDX-FileCopyrightText: 2023 metalgearsloth
+// SPDX-FileCopyrightText: 2024 Leon Friedrich
+// SPDX-FileCopyrightText: 2024 MilenVolf
+// SPDX-FileCopyrightText: 2024 VMSolidus
+// SPDX-FileCopyrightText: 2025 Falcon
+// SPDX-FileCopyrightText: 2025 sleepyyapril
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -118,14 +117,21 @@ public sealed partial class TestPair
     /// <summary>
     /// Retrieve all entity prototypes that have some component.
     /// </summary>
-    public List<EntityPrototype> GetPrototypesWithComponent<T>(
+    public List<(EntityPrototype, T)> GetPrototypesWithComponent<T>(
         HashSet<string>? ignored = null,
         bool ignoreAbstract = true,
         bool ignoreTestPrototypes = true)
-        where T : IComponent
+        where T : IComponent, new()
     {
-        var id = Server.ResolveDependency<IComponentFactory>().GetComponentName(typeof(T));
-        var list = new List<EntityPrototype>();
+        if (!Server.ResolveDependency<IComponentFactory>().TryGetRegistration<T>(out var reg)
+            && !Client.ResolveDependency<IComponentFactory>().TryGetRegistration<T>(out reg))
+        {
+            Assert.Fail($"Unknown component: {typeof(T).Name}");
+            return new();
+        }
+
+        var id = reg.Name;
+        var list = new List<(EntityPrototype, T)>();
         foreach (var proto in Server.ProtoMan.EnumeratePrototypes<EntityPrototype>())
         {
             if (ignored != null && ignored.Contains(proto.ID))
@@ -137,8 +143,8 @@ public sealed partial class TestPair
             if (ignoreTestPrototypes && IsTestPrototype(proto))
                 continue;
 
-            if (proto.Components.ContainsKey(id))
-                list.Add(proto);
+            if (proto.Components.TryGetComponent(id, out var cmp))
+                list.Add((proto, (T)cmp));
         }
 
         return list;

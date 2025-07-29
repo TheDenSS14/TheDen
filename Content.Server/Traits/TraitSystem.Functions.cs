@@ -903,6 +903,9 @@ public sealed partial class TraitSetAdditionalEmoteSound : TraitFunction
     [DataField, AlwaysPushInheritance]
     public bool UseSex { get; private set; }
 
+    [DataField("replace"), AlwaysPushInheritance]
+    public bool ReplaceExistingEmotes { get; private set; }
+
     public override void OnPlayerSpawn(EntityUid uid,
         IComponentFactory factory,
         IEntityManager entityManager,
@@ -927,6 +930,7 @@ public sealed partial class TraitSetAdditionalEmoteSound : TraitFunction
         if (string.IsNullOrEmpty(protoId) || !prototypeManager.TryIndex<EmoteSoundsPrototype>(protoId, out _))
             return;
 
+        additionalVocalSounds.ReplaceExistingEmotes = ReplaceExistingEmotes;
         additionalVocalSounds.AdditionalSounds = protoId;
     }
 }

@@ -1,8 +1,9 @@
-# SPDX-FileCopyrightText: 2023 Fluffiest Floofers <thebluewulf@gmail.com>
-# SPDX-FileCopyrightText: 2023 PHCodes <47927305+PHCodes@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 Mnemotechnican <69920617+Mnemotechnician@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 VMSolidus <evilexecutive@gmail.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Fluffiest Floofers
+# SPDX-FileCopyrightText: 2023 PHCodes
+# SPDX-FileCopyrightText: 2024 Mnemotechnican
+# SPDX-FileCopyrightText: 2024 VMSolidus
+# SPDX-FileCopyrightText: 2025 Sir Warock
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -35,13 +36,13 @@
         amount: -1
       - !type:ModifyBloodLevel
         amount: 2
+      - !type:EvenHealthChange
+        damage:
+          Burn: -4
+          Brute: -4
       - !type:HealthChange
         damage:
-          groups:
-            Burn: -5
-            Brute: -4
           types:
-            Caustic: -3
             Poison: -3
             Bloodloss: -3
 
@@ -95,11 +96,8 @@
           reagent: LotophagoiOil
           min: 20
       - !type:GenericStatusEffect
-        key: Stutter
-        component: ScrambledAccent
-      - !type:GenericStatusEffect
         key: SlurredSpeech
-        component: TelepathicRepeater
+        component: ScrambledAccent
       - !type:ChemAddMoodlet
         moodPrototype: LotoTranscendence
         conditions:

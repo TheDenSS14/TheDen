@@ -8,40 +8,46 @@
 - type: loadout
   id: LoadoutClothingHandsChiefEngiWarmers
   category: JobsEngineeringChiefEngineer
-  cost: 1
+  cost: 0
   exclusive: true
   items:
-  - ClothingHandsChiefEngiWarmers
+    - ClothingHandsChiefEngiWarmers
   requirements:
-  - !type:CharacterJobRequirement
-    jobs:
-    - ChiefEngineer
+    - !type:CharacterJobRequirement
+      jobs:
+        - ChiefEngineer
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutChiefEngineerGloves
 
 - type: loadout
   id: LoadoutClothingUnderSocksChiefEngi
   category: JobsEngineeringChiefEngineer
-  cost: 1
+  cost: 0
   exclusive: true
   items:
-  - ClothingUnderSocksChiefEngi
+    - ClothingUnderSocksChiefEngi
   requirements:
-#  - !type:CharacterSpeciesRequirement - TheDen
-#    inverted: true
-#    species:
-#    - Diona
-#    - Harpy
-  - !type:CharacterJobRequirement
-    jobs:
-    - ChiefEngineer
+    #- !type:CharacterSpeciesRequirement - TheDen
+    #  inverted: true
+    #  species:
+    #  - Diona
+    #  - Harpy
+    - !type:CharacterJobRequirement
+      jobs:
+        - ChiefEngineer
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutChiefEngineerShoes
 
 - type: loadout
   id: LoadoutClothingUniformChiefEngiThong
   category: JobsEngineeringChiefEngineer
-  cost: 1
+  cost: 0
   exclusive: true
   items:
-  - ClothingUniformChiefEngiThong
+    - ClothingUniformChiefEngiThong
   requirements:
-  - !type:CharacterJobRequirement
-    jobs:
-    - ChiefEngineer
+    - !type:CharacterJobRequirement
+      jobs:
+        - ChiefEngineer
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutChiefEngineerUniforms

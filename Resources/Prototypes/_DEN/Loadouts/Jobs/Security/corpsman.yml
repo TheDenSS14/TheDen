@@ -10,7 +10,7 @@
   exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutCorpsmanUniform
+      group: LoadoutCorpsmanUniforms
     - !type:CharacterJobRequirement
       jobs:
         - Brigmedic
@@ -24,9 +24,23 @@
   exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutCorpsmanUniform
+      group: LoadoutCorpsmanUniforms
     - !type:CharacterJobRequirement
       jobs:
         - Brigmedic
   items:
     - ClothingUniformJumpskirtBrigmedic
+
+- type: loadout
+  id: LoadoutCorpsmanBackpackMessenger
+  category: JobsSecurityCorpsman
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutCorpsmanBackpacks
+    - !type:CharacterJobRequirement
+      jobs:
+        - Brigmedic
+  items:
+    - ClothingBackpackMessengerBrigmedic

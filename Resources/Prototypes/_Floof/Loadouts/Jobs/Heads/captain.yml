@@ -8,51 +8,60 @@
 - type: loadout
   id: LoadoutClothingHandsCaptainWarmers
   category: JobsCommandCaptain
-  cost: 2
+  cost: 0
   exclusive: true
   items:
-  - ClothingHandsCaptainWarmers
+    - ClothingHandsCaptainWarmers
   requirements:
-  - !type:CharacterJobRequirement
-    jobs:
-    - Captain
+    - !type:CharacterJobRequirement
+      jobs:
+        - Captain
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutCaptainGloves
 
 - type: loadout
   id: LoadoutClothingUnderSocksCaptain
   category: JobsCommandCaptain
-  cost: 2
+  cost: 0
   exclusive: true
   items:
-  - ClothingUnderSocksCaptain
+    - ClothingUnderSocksCaptain
   requirements:
-#  - !type:CharacterSpeciesRequirement - TheDen
-#    inverted: true
-#    species:
-#    - Diona
-#    - Harpy
-  - !type:CharacterJobRequirement
-    jobs:
-    - Captain
+    #- !type:CharacterSpeciesRequirement - TheDen
+    #  inverted: true
+    #  species:
+    #  - Diona
+    #  - Harpy
+    - !type:CharacterJobRequirement
+      jobs:
+        - Captain
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutCaptainShoes
 
 - type: loadout
   id: LoadoutClothingUniformCaptainThong
   category: JobsCommandCaptain
-  cost: 2
+  cost: 0
   exclusive: true
   items:
-  - ClothingUniformCaptainThong
+    - ClothingUniformCaptainThong
   requirements:
-  - !type:CharacterJobRequirement
-    jobs:
-    - Captain
+    - !type:CharacterJobRequirement
+      jobs:
+        - Captain
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutCaptainUniforms
 
 - type: loadout
   id: LoadoutCommandCapCollar
   category: JobsCommandCaptain
-  cost: 1
+  cost: 0
+  exclusive: true
   requirements:
-  - !type:CharacterJobRequirement
-    jobs:
-    - Captain
+    - !type:CharacterJobRequirement
+      jobs:
+        - Captain
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutCaptainNeck
   items:
-  - ClothingNeckCollarCmd
+    - ClothingNeckCollarCmd

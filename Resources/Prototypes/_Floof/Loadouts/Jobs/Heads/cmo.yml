@@ -8,40 +8,46 @@
 - type: loadout
   id: LoadoutClothingHandsCMOWarmers
   category: JobsMedicalChiefMedicalOfficer
-  cost: 2
+  cost: 0
   exclusive: true
   items:
-  - ClothingHandsCMOWarmers
+    - ClothingHandsCMOWarmers
   requirements:
-  - !type:CharacterJobRequirement
-    jobs:
-    - ChiefMedicalOfficer
+    - !type:CharacterJobRequirement
+      jobs:
+        - ChiefMedicalOfficer
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutChiefMedicalOfficerGloves
 
 - type: loadout
   id: LoadoutClothingUnderSocksCMO
   category: JobsMedicalChiefMedicalOfficer
-  cost: 2
+  cost: 0
   exclusive: true
   items:
-  - ClothingUnderSocksCMO
+    - ClothingUnderSocksCMO
   requirements:
-#  - !type:CharacterSpeciesRequirement - TheDen
-#    inverted: true
-#    species:
-#    - Diona
-#    - Harpy
-  - !type:CharacterJobRequirement
-    jobs:
-    - ChiefMedicalOfficer
+    #- !type:CharacterSpeciesRequirement - TheDen
+    #  inverted: true
+    #  species:
+    #  - Diona
+    #  - Harpy
+    - !type:CharacterJobRequirement
+      jobs:
+        - ChiefMedicalOfficer
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutChiefMedicalOfficerShoes
 
 - type: loadout
   id: LoadoutClothingUniformCMOThong
   category: JobsMedicalChiefMedicalOfficer
-  cost: 2
+  cost: 0
   exclusive: true
   items:
-  - ClothingUniformCMOThong
+    - ClothingUniformCMOThong
   requirements:
-  - !type:CharacterJobRequirement
-    jobs:
-    - ChiefMedicalOfficer
+    - !type:CharacterJobRequirement
+      jobs:
+        - ChiefMedicalOfficer
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutChiefMedicalOfficerUniforms

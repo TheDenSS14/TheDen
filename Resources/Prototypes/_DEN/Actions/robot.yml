@@ -1,0 +1,49 @@
+- type: entity
+  id: ActionPlantbotWaterPlant
+  name: Water Plant
+  description: Adds water to a plant.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: Objects/Tools/bucket.rsi
+    state: icon
+  - type: EntityTargetAction
+    checkCanAccess: true
+    range: 1.5
+    useDelay: 2
+    itemIconStyle: BigAction
+    canTargetSelf: true
+    interactOnMiss: false
+    # NOTE: this won't work because plantholder is serverside and this check will always fail on client
+    # im choosing to leave out this check rather than making plantholder replicated; the server will validate it anyway
+    # whitelist:
+    #   components:
+    #   - PlantHolder
+    icon:
+      sprite: Objects/Tools/bucket.rsi
+      state: icon
+    event: !type:PlantbotWaterPlantActionEvent
+
+- type: entity
+  id: ActionPlantbotRemoveWeeds
+  name: Remove Weeds
+  description: Removes weeds from a plant.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: Objects/Tools/Hydroponics/hoe.rsi
+    state: icon
+  - type: EntityTargetAction
+    checkCanAccess: true
+    range: 1.5
+    useDelay: 2
+    itemIconStyle: BigAction
+    canTargetSelf: true
+    interactOnMiss: false
+    # whitelist:
+    #   components:
+    #   - PlantHolder
+    icon:
+      sprite: Objects/Tools/Hydroponics/hoe.rsi
+      state: icon
+    event: !type:PlantbotRemoveWeedsActionEvent

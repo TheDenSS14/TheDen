@@ -65,6 +65,7 @@
 # SPDX-FileCopyrightText: 2024 metalgearsloth
 # SPDX-FileCopyrightText: 2025 Blitz
 # SPDX-FileCopyrightText: 2025 Eagle-0
+# SPDX-FileCopyrightText: 2025 Jakumba
 # SPDX-FileCopyrightText: 2025 Rosycup
 # SPDX-FileCopyrightText: 2025 Savante-Sam
 # SPDX-FileCopyrightText: 2025 Skubman
@@ -72,7 +73,10 @@
 # SPDX-FileCopyrightText: 2025 Tabitha
 # SPDX-FileCopyrightText: 2025 Timfa
 # SPDX-FileCopyrightText: 2025 VMSolidus
+# SPDX-FileCopyrightText: 2025 Vanessa
+# SPDX-FileCopyrightText: 2025 Vanessa Louwagie
 # SPDX-FileCopyrightText: 2025 sleepyyapril
+# SPDX-FileCopyrightText: 2025 wheelwrightt
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -271,21 +275,34 @@
         - Handcuff
         - BallisticAmmoProvider
         - Ammo
-  - type: ItemMapper
-    mapLayers:
-      flashbang:
+  - type: ItemSlots
+    slots:
+      holster:
+        name: clothing-belt-sidearm
         whitelist:
-          components:
-          - FlashOnTrigger
-      stunbaton:
+          tags:
+          - Sidearm
+        insertOnInteract: true
+  - type: ItemMapper # DeltaV - adjust for DeltaV sprites.
+    mapLayers:
+      baton:
         whitelist:
           components:
           - Stunbaton
-      tear_gas_grenade:
+      gasgrenade:
         whitelist:
-          components:
-          - SmokeOnTrigger
-    sprite: Clothing/Belt/belt_overlay.rsi
+          tags:
+            - Grenade
+      slp:
+        whitelist:
+          tags:
+          - Sidearm
+    sprite: _DV/Clothing/Belt/belt_overlay.rsi
+  - type: ContainerContainer
+    containers:
+      storagebase: !type:Container
+        ents: []
+      holster: !type:ContainerSlot {}
   - type: Appearance
 
 - type: entity
@@ -302,10 +319,10 @@
     whitelist:
       tags:
         - Wrench
-        - Screwdriver 
-        - Crowbar 
-        - Mousetrap 
-        - Rag 
+        - Screwdriver
+        - Crowbar
+        - Mousetrap
+        - Rag
         - Bottle
         - Spray
         - Soap
@@ -360,6 +377,9 @@
         - PillCanister
         - Radio
         - DiscreteHealthAnalyzer
+        - SurgeryTool
+        - Dropper
+        - Vial # DeltaV - vial gaming
       components:
         - SurgeryTool # Shitmed Change
         - Hypospray
@@ -398,6 +418,10 @@
         whitelist:
           tags:
           - Wrench
+      medkit:
+        whitelist:
+          tags:
+          - Medkit
     sprite: Clothing/Belt/belt_overlay.rsi
   # DeltaV - Add medkit slot to medical belts
   - type: ItemSlots
@@ -407,7 +431,9 @@
         whitelist:
           tags:
           - Medkit
-        insertOnInteract: false
+          - Portafib
+          - Rollerbed
+        insertOnInteract: true
   - type: ContainerContainer
     containers:
       storagebase: !type:Container
@@ -568,11 +594,11 @@
   description: Can hold security gear like handcuffs and flashes.
   components:
   - type: Sprite
-    sprite: Clothing/Belt/security.rsi
+    sprite: _DV/Clothing/Belt/security.rsi # DeltaV - resprite
   - type: Clothing
-    sprite: Clothing/Belt/security.rsi
+    sprite: _DV/Clothing/Belt/security.rsi # DeltaV - resprite
   - type: ExplosionResistance # Goobstation
-    damageCoefficient: 0.5
+    damageCoefficient: 0.9
   - type: Storage
     whitelist:
       tags:
@@ -585,6 +611,7 @@
         - MagazineMagnum
         - CombatKnife
         - Truncheon
+        - HolofanProjector
       components:
         - Stunbaton
         - FlashOnTrigger
@@ -597,21 +624,34 @@
         - Whistle
         - HolosignProjector
         - BalloonPopper
-  - type: ItemMapper
-    mapLayers:
-      flashbang:
+  - type: ItemSlots
+    slots:
+      holster:
+        name: clothing-belt-sidearm
         whitelist:
-          components:
-          - FlashOnTrigger
-      stunbaton:
+          tags:
+          - Sidearm
+        insertOnInteract: true
+  - type: ItemMapper # DeltaV - adjust for DeltaV sprites.
+    mapLayers:
+      baton:
         whitelist:
           components:
           - Stunbaton
-      tear_gas_grenade:
+      gasgrenade:
         whitelist:
-          components:
-          - SmokeOnTrigger
-    sprite: Clothing/Belt/belt_overlay.rsi
+          tags:
+            - Grenade
+      slp:
+        whitelist:
+          tags:
+          - Sidearm
+    sprite: _DV/Clothing/Belt/belt_overlay.rsi
+  - type: ContainerContainer
+    containers:
+      storagebase: !type:Container
+        ents: []
+      holster: !type:ContainerSlot {}
   - type: Appearance
 
 - type: entity
@@ -694,6 +734,19 @@
   - type: Storage
     grid:
     - 0,0,3,1
+  - type: ItemSlots
+    slots:
+      holster:
+        name: clothing-belt-sidearm
+        whitelist:
+          tags:
+          - Sidearm
+        insertOnInteract: true
+  - type: ContainerContainer
+    containers:
+      storagebase: !type:Container
+        ents: []
+      holster: !type:ContainerSlot {}
 
 - type: entity
   parent: ClothingBeltStorageBase
@@ -716,6 +769,20 @@
         - Gun
         - BallisticAmmoProvider
         - CartridgeAmmo
+  - type: ItemSlots
+    slots:
+      holster:
+        name: clothing-belt-sidearm
+        whitelist:
+          tags:
+          - Sidearm
+        insertOnInteract: true
+  - type: ContainerContainer
+    containers:
+      storagebase: !type:Container
+        ents: []
+      holster: !type:ContainerSlot {}
+  - type: Appearance # DeltaV
 
 - type: entity
   parent: ClothingBeltSecurity
@@ -724,9 +791,9 @@
   description: Unique and versatile chest rig, can hold security gear.
   components:
   - type: Sprite
-    sprite: Clothing/Belt/securitywebbing.rsi
+    sprite: _DV/Clothing/Belt/securitywebbing.rsi # DeltaV - resprite
   - type: Clothing
-    sprite: Clothing/Belt/securitywebbing.rsi
+    sprite: _DV/Clothing/Belt/securitywebbing.rsi # DeltaV - resprite
 
 - type: entity
   parent: ClothingBeltSecurityWebbing
@@ -744,7 +811,7 @@
       - id: Handcuffs
 
 - type: entity
-  parent: ClothingBeltStorageBase
+  parent: ClothingBeltMilitaryWebbing
   id: ClothingBeltMercWebbing
   name: mercenary webbing
   description: Ideal for storing everything from ammo to weapons and combat essentials.
@@ -755,7 +822,7 @@
     sprite: Clothing/Belt/mercwebbing.rsi
 
 - type: entity
-  parent: ClothingBeltStorageBase
+  parent: ClothingBeltMilitaryWebbing
   id: ClothingBeltSalvageWebbing
   name: salvage rig
   description: Universal unloading system for work in space.
@@ -777,9 +844,38 @@
     sprite: Clothing/Belt/militarywebbing.rsi
   - type: ExplosionResistance
     damageCoefficient: 0.5
+  - type: ItemSlots
+    slots:
+      holster:
+        name: clothing-belt-sidearm
+        whitelist:
+          tags:
+          - Sidearm
+        insertOnInteract: true
+      jaunter:
+        name: clothing-belt-jaunter
+        priority: -1
+        whitelist:
+          tags:
+          - Jaunter
+        insertOnInteract: true
+  - type: ItemMapper # DeltaV - adjust for DeltaV sprites.
+    mapLayers:
+      slp:
+        whitelist:
+          tags:
+          - Sidearm
+    sprite: _DV/Clothing/Belt/belt_overlay.rsi
+  - type: ContainerContainer
+    containers:
+      storagebase: !type:Container
+        ents: []
+      holster: !type:ContainerSlot {}
+      jaunter: !type:ContainerSlot {}
+  - type: Appearance
 
 - type: entity
-  parent: [ClothingBeltStorageBase, ContentsExplosionResistanceBase]
+  parent: [ClothingBeltMilitaryWebbing]
   id: ClothingBeltMilitaryWebbingDeserters
   name: chest rig
   description: A set of tactical webbing worn by sol alliance boarding parties.
@@ -808,6 +904,49 @@
     size: Huge
   - type: ExplosionResistance
     damageCoefficient: 0.1
+  - type: ItemSlots
+    slots:
+      medkit:
+        name: clothing-belt-medkit
+        priority: -1
+        whitelist:
+          tags:
+          - Medkit
+          - Portafib
+          - Rollerbed
+        insertOnInteract: true
+      holster:
+        name: clothing-belt-sidearm
+        whitelist:
+          tags:
+          - Sidearm
+        insertOnInteract: true
+  - type: ItemMapper # DeltaV - adjust for DeltaV sprites.
+    mapLayers:
+      medkit:
+        whitelist:
+          tags:
+          - Medkit
+      baton:
+        whitelist:
+          components:
+          - Stunbaton
+      gasgrenade:
+        whitelist:
+          tags:
+            - Grenade
+      slp:
+        whitelist:
+          tags:
+          - Sidearm
+    sprite: _DV/Clothing/Belt/belt_overlay.rsi
+  - type: ContainerContainer
+    containers:
+      storagebase: !type:Container
+        ents: []
+      holster: !type:ContainerSlot {}
+      medkit: !type:ContainerSlot {}
+  - type: Appearance
 
 - type: entity
   parent: ClothingBeltBase

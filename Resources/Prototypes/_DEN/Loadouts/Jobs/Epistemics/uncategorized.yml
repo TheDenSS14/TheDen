@@ -13,3 +13,21 @@
         - Epistemics
   items:
     - TowelColorPurple
+
+- type: loadout
+  id: LoadoutBackpackMessengerScience
+  category: JobsEpistemicsAAUncategorized
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingBackpackMessengerScience
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutEpistemicsBackpacks
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Epistemics
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - ResearchDirector # MG has ClothingBackpackMessengerResearchDirectorFilled

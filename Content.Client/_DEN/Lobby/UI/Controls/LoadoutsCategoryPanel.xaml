@@ -1,0 +1,12 @@
+<ScrollContainer
+    xmlns="https://spacestation14.io"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:ui="clr-namespace:Content.Client.UserInterface.Controls"
+    HorizontalExpand="False"
+    VerticalExpand="True"
+    VScrollEnabled="True"
+    HorizontalAlignment="Stretch"
+    SetWidth="260" />
+<!-- 250 is about the width of the text "Nanotrasen Representative";
+    any smaller and the control will resize itself inconsistently.
+    A little leeway is made for the equipped loadout number. -->

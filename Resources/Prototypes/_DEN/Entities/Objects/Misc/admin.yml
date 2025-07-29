@@ -1,10 +1,11 @@
+# SPDX-FileCopyrightText: 2025 BlitzTheSquishy
 # SPDX-FileCopyrightText: 2025 MajorMoth
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
 - type: entity
   id: BoxFolderAdmin
-  parent: BoxBase
+  parent: [ BoxBase, ContentsExplosionResistanceBase]
   name: admin folder
   description: A special folder for more than just paper.
   categories: [ AdminTools ]
@@ -38,10 +39,12 @@
       - id: Paper
         amount: 6
       - id: FoodLollipop
+  - type: ExplosionResistance
+    damageCoefficient: 0
 
 - type: entity
   id: AdminToolbelt
-  parent: ClothingBeltChiefEngineer
+  parent: [ClothingBeltChiefEngineer, ContentsExplosionResistanceBase]
   name: admin toolbelt
   description: A magical toolbelt that is NOT a bigger chief engineer's toolbelt.
   categories: [ AdminTools ]
@@ -62,23 +65,25 @@
       - id: LightReplacer
       - id: SprayPainter
       - id: GeigerCounter
-      - id: AccessConfigurator
+      - id: AccessConfiguratorUniversal
       - id: AdminRCD
   - type: Storage
     grid:
     - 0,0,6,3
     whitelist: null
+  - type: ExplosionResistance
+    damageCoefficient: 0
 
 - type: entity
   id: AdminMaterialBox
-  parent: BoxCardboard
+  parent: [BoxCardboard, ContentsExplosionResistanceBase]
   name: admin material box
   description: A box of basic materials.
   categories: [ AdminTools ]
   components:
   - type: Item
     size: Normal
-    shape: 
+    shape:
     - 0,0,1,1
   - type: Storage
     maxItemSize: Normal
@@ -92,6 +97,8 @@
     - id: MaterialWoodPlank
     - id: MaterialCloth
     - id: PartRodMetal
+  - type: ExplosionResistance
+    damageCoefficient: 0
 
 - type: entity
   id: AdminRCD
@@ -118,3 +125,18 @@
     charges: 100
   - type: AutoRecharge
     rechargeDuration: 0
+
+- type: entity
+  parent: [ClothingBackpackSatchelHolding, ContentsExplosionResistanceBase]
+  id: ClothingBackpackSatchelHoldingAdmin
+  categories: [ AdminTools ]
+  components:
+  - type: StorageFill
+    contents:
+    - id: DrinkGlass
+    - id: AdminMaterialBox
+    - id: TrashBananaPeel
+    - id: PowerCellMicroreactor
+      amount: 2
+  - type: ExplosionResistance
+    damageCoefficient: 0

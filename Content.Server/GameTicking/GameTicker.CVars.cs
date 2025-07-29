@@ -1,13 +1,12 @@
-// SPDX-FileCopyrightText: 2021 Vera Aguilera Puerto <gradientvera@outlook.com>
-// SPDX-FileCopyrightText: 2022 Moony <moonheart08@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2022 Vera Aguilera Puerto <6766154+Zumorica@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2022 mirrorcult <lunarautomaton6@gmail.com>
-// SPDX-FileCopyrightText: 2022 wrexbe <81056464+wrexbe@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2023 Morb <14136326+Morb0@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
-// SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 Moony
+// SPDX-FileCopyrightText: 2022 Vera Aguilera Puerto
+// SPDX-FileCopyrightText: 2022 mirrorcult
+// SPDX-FileCopyrightText: 2022 wrexbe
+// SPDX-FileCopyrightText: 2023 Morb
+// SPDX-FileCopyrightText: 2024 DrSmugleaf
+// SPDX-FileCopyrightText: 2024 Pieter-Jan Briers
+// SPDX-FileCopyrightText: 2024 metalgearsloth
+// SPDX-FileCopyrightText: 2025 sleepyyapril
 //
 // SPDX-License-Identifier: MIT
 
@@ -38,6 +37,7 @@ namespace Content.Server.GameTicking
         private string? DiscordRoundEndRole { get; set; }
 
         private WebhookIdentifier? _webhookIdentifier;
+        private WebhookIdentifier? _eventsLoggingChannelIdentifier;
 
         [ViewVariables]
         private string? RoundEndSoundCollection { get; set; }
@@ -76,6 +76,15 @@ namespace Content.Server.GameTicking
                     _discord.GetWebhook(value, data => _webhookIdentifier = data.ToIdentifier());
                 }
             }, true);
+
+            Subs.CVar(_configurationManager, CCVars.DiscordNewRoundWebhook, value =>
+            {
+                if (!string.IsNullOrWhiteSpace(value))
+                {
+                    _discord.GetWebhook(value, data => _eventsLoggingChannelIdentifier = data.ToIdentifier());
+                }
+            }, true);
+
             Subs.CVar(_configurationManager, CCVars.DiscordRoundEndRoleWebhook, value =>
             {
                 DiscordRoundEndRole = value;

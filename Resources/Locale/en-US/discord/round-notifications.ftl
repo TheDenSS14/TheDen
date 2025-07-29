@@ -18,4 +18,5 @@ discord-round-notifications-started = :bell: Round #{$id} has started with the f
 
 discord-round-notifications-end = Round #{$id} has ended. It lasted for {$hours} hours, {$minutes} minutes, and {$seconds} seconds. 
 discord-round-notifications-end-ping = <@&{$roleId}>, the server will reboot shortly!
+discord-round-notifications-end-next-round = ## Round #{$nextRound}
 discord-round-notifications-unknown = Unknown

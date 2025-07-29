@@ -19,6 +19,7 @@
 # SPDX-FileCopyrightText: 2025 Sapphire
 # SPDX-FileCopyrightText: 2025 Skubman
 # SPDX-FileCopyrightText: 2025 Tabitha
+# SPDX-FileCopyrightText: 2025 Tanix
 # SPDX-FileCopyrightText: 2025 Timfa
 # SPDX-FileCopyrightText: 2025 Tonk-GCR
 # SPDX-FileCopyrightText: 2025 portfiend
@@ -589,16 +590,16 @@
     - BoxSurvival
   requirements:
     - !type:CharacterDepartmentRequirement
-       inverted: true
-       departments:
-         - Security
-         - Medical
-         - Engineering
+      inverted: true
+      departments:
+        - Security
+        - Medical
+        - Engineering
     - !type:CharacterJobRequirement
-       inverted: true
-       jobs:
-         - Clown
-         - Mime
+      inverted: true
+      jobs:
+        - Clown
+        - Mime
 
 - type: loadout
   id: LoadoutItemBoxSurvivalEngineering
@@ -608,8 +609,8 @@
     - BoxSurvivalEngineering
   requirements:
     - !type:CharacterDepartmentRequirement
-       departments:
-         - Engineering
+      departments:
+        - Engineering
 
 - type: loadout
   id: LoadoutItemBoxSurvivalSecurity
@@ -619,12 +620,12 @@
     - BoxSurvivalSecurity
   requirements:
     - !type:CharacterDepartmentRequirement
-       departments:
-         - Security
+      departments:
+        - Security
     - !type:CharacterJobRequirement
-       inverted: true
-       jobs:
-         - Brigmedic
+      inverted: true
+      jobs:
+        - Brigmedic
 
 - type: loadout
   id: LoadoutItemBoxSurvivalBrigmedic
@@ -634,8 +635,8 @@
     - BoxSurvivalBrigmedic
   requirements:
     - !type:CharacterJobRequirement
-       jobs:
-         - Brigmedic
+      jobs:
+        - Brigmedic
 
 - type: loadout
   id: LoadoutItemBoxSurvivalMedical
@@ -645,8 +646,8 @@
     - BoxSurvivalMedical
   requirements:
     - !type:CharacterDepartmentRequirement
-       departments:
-         - Medical
+      departments:
+        - Medical
 
 - type: loadout
   id: LoadoutItemBoxHug
@@ -656,8 +657,8 @@
     - BoxHug
   requirements:
     - !type:CharacterJobRequirement
-       jobs:
-         - Clown
+      jobs:
+        - Clown
 
 - type: loadout # TheDen
   id: LoadoutItemBoxMime
@@ -667,8 +668,8 @@
     - BoxMime
   requirements:
     - !type:CharacterJobRequirement
-       jobs:
-         - Mime
+      jobs:
+        - Mime
 
 # Medkits
 - type: loadout
@@ -688,16 +689,16 @@
   items:
     - MedkitBruteFilled
   requirements: #TheDen
-  - !type:CharacterLogicXorRequirement
-    requirements:
-    - !type:CharacterDepartmentRequirement
-      departments:
-      - Medical
-    - !type:CharacterJobRequirement
-      jobs:
-      - Brigmedic
-  - !type:CharacterItemGroupRequirement
-    group: LoadoutBoxKits
+    - !type:CharacterLogicOrRequirement
+      requirements:
+        - !type:CharacterDepartmentRequirement
+          departments:
+            - Medical
+        - !type:CharacterJobRequirement
+          jobs:
+            - Brigmedic
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBoxKits
 
 - type: loadout
   id: LoadoutMedkitBurnFilled
@@ -706,16 +707,16 @@
   items:
     - MedkitBurnFilled
   requirements: #TheDen
-  - !type:CharacterLogicXorRequirement
-    requirements:
-    - !type:CharacterDepartmentRequirement
-      departments:
-      - Medical
-    - !type:CharacterJobRequirement
-      jobs:
-      - Brigmedic
-  - !type:CharacterItemGroupRequirement
-    group: LoadoutBoxKits
+    - !type:CharacterLogicOrRequirement
+      requirements:
+        - !type:CharacterDepartmentRequirement
+          departments:
+            - Medical
+        - !type:CharacterJobRequirement
+          jobs:
+            - Brigmedic
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBoxKits
 
 - type: loadout
   id: LoadoutMedkitToxinFilled
@@ -724,16 +725,16 @@
   items:
     - MedkitToxinFilled
   requirements: #TheDen
-  - !type:CharacterLogicXorRequirement
-    requirements:
-    - !type:CharacterDepartmentRequirement
-      departments:
-      - Medical
-    - !type:CharacterJobRequirement
-      jobs:
-      - Brigmedic
-  - !type:CharacterItemGroupRequirement
-    group: LoadoutBoxKits
+    - !type:CharacterLogicOrRequirement
+      requirements:
+        - !type:CharacterDepartmentRequirement
+          departments:
+            - Medical
+        - !type:CharacterJobRequirement
+          jobs:
+            - Brigmedic
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBoxKits
 
 - type: loadout
   id: LoadoutMedkitOxygenFilled
@@ -742,16 +743,16 @@
   items:
     - MedkitOxygenFilled
   requirements: #TheDen
-  - !type:CharacterLogicXorRequirement
-    requirements:
-    - !type:CharacterDepartmentRequirement
-      departments:
-      - Medical
-    - !type:CharacterJobRequirement
-      jobs:
-      - Brigmedic
-  - !type:CharacterItemGroupRequirement
-    group: LoadoutBoxKits
+    - !type:CharacterLogicOrRequirement
+      requirements:
+        - !type:CharacterDepartmentRequirement
+          departments:
+            - Medical
+        - !type:CharacterJobRequirement
+          jobs:
+            - Brigmedic
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBoxKits
 
 - type: loadout
   id: LoadoutMedkitRadiationFilled
@@ -760,16 +761,16 @@
   items:
     - MedkitRadiationFilled
   requirements: #TheDen
-  - !type:CharacterLogicXorRequirement
-    requirements:
-    - !type:CharacterDepartmentRequirement
-      departments:
-      - Medical
-    - !type:CharacterJobRequirement
-      jobs:
-      - Brigmedic
-  - !type:CharacterItemGroupRequirement
-    group: LoadoutBoxKits
+    - !type:CharacterLogicOrRequirement
+      requirements:
+        - !type:CharacterDepartmentRequirement
+          departments:
+            - Medical
+        - !type:CharacterJobRequirement
+          jobs:
+            - Brigmedic
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBoxKits
 
 - type: loadout
   id: LoadoutMedkitAdvancedFilled
@@ -778,16 +779,16 @@
   items:
     - MedkitAdvancedFilled
   requirements: #TheDen
-  - !type:CharacterLogicXorRequirement
-    requirements:
-    - !type:CharacterDepartmentRequirement
-      departments:
-      - Medical
-    - !type:CharacterJobRequirement
-      jobs:
-      - Brigmedic
-  - !type:CharacterItemGroupRequirement
-    group: LoadoutBoxKits
+    - !type:CharacterLogicOrRequirement
+      requirements:
+        - !type:CharacterDepartmentRequirement
+          departments:
+            - Medical
+        - !type:CharacterJobRequirement
+          jobs:
+            - Brigmedic
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBoxKits
 
 - type: loadout
   id: LoadoutMedkitCombatFilled
@@ -797,9 +798,9 @@
     - MedkitCombatFilled
   requirements:
     - !type:CharacterJobRequirement
-       jobs:
-         - ChiefMedicalOfficer
-         - Brigmedic
+      jobs:
+        - ChiefMedicalOfficer
+        - Brigmedic
     - !type:CharacterItemGroupRequirement
       group: LoadoutBoxKits
 
@@ -813,9 +814,9 @@
     - !type:CharacterJobRequirement
       inverted: true
       jobs:
-      - Prisoner
+        - Prisoner
   items:
-  - WeaponCivilianDisabler
+    - WeaponCivilianDisabler
 
 #- type: loadout - Already a flash in the sec loadouts (plus one default in bag, and if oyu want more than TWO flashes, sectech is right there)
 #  id: LoadoutItemFlash
@@ -922,8 +923,8 @@
   items:
     - AACTablet
   requirements: #TheDen
-  - !type:CharacterItemGroupRequirement
-    group: AACTabletVersions
+    - !type:CharacterItemGroupRequirement
+      group: AACTabletVersions
 
 - type: loadout
   id: LoadoutItemAACTablet_SAS
@@ -932,8 +933,8 @@
   items:
     - AACTablet_SAS
   requirements: #TheDen
-  - !type:CharacterItemGroupRequirement
-    group: AACTabletVersions
+    - !type:CharacterItemGroupRequirement
+      group: AACTabletVersions
 
 - type: loadout
   id: LoadoutItemCaneBlind
@@ -1024,6 +1025,20 @@
     - !type:LoadoutMakeFollower
 
 - type: loadout
+  id: LoadoutItemPetRosy
+  category: GeneralItems
+  cost: 2
+  canBeHeirloom: true
+  customColorTint: true
+  items:
+    - MobRosyMothroachPet
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutPets
+  functions:
+    - !type:LoadoutMakeFollower
+
+- type: loadout
   id: LoadoutItemBlackDeck
   category: GeneralItems
   cost: 3
@@ -1045,9 +1060,9 @@
     - !type:CharacterItemGroupRequirement
       group: LoadoutCards
     - !type:CharacterDepartmentRequirement
-       departments:
-         - Command
-         - Dignitary # TheDen
+      departments:
+        - Command
+        - Dignitary # TheDen
 
 - type: loadout
   id: LoadoutItemFoodLollipop
@@ -1090,7 +1105,6 @@
   canBeHeirloom: true
   items:
     - PlushieSharkPink
-
 
 - type: loadout
   id: PlushieSharkGrey
@@ -1203,8 +1217,8 @@
   canBeHeirloom: true
   requirements:
     - !type:CharacterJobRequirement
-       jobs:
-         - DeathSquad
+      jobs:
+        - DeathSquad
   items:
     - ThronglerToy
 
@@ -1429,3 +1443,11 @@
   canBeHeirloom: true
   items:
     - PlushieDragon
+
+- type: loadout
+  id: LoadoutPlushieExperiment
+  category: GeneralToys
+  cost: 1
+  canBeHeirloom: true
+  items:
+    - PlushieExperiment

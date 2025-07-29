@@ -1,9 +1,12 @@
-// SPDX-FileCopyrightText: 2023 Debug <49997488+DebugOk@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2023 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2023 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 EctoplasmIsGood <109397347+EctoplasmIsGood@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 VMSolidus <evilexecutive@gmail.com>
-// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Debug
+// SPDX-FileCopyrightText: 2023 DrSmugleaf
+// SPDX-FileCopyrightText: 2023 Nemanja
+// SPDX-FileCopyrightText: 2025 Blitz
+// SPDX-FileCopyrightText: 2025 BlitzTheSquishy
+// SPDX-FileCopyrightText: 2025 EctoplasmIsGood
+// SPDX-FileCopyrightText: 2025 VMSolidus
+// SPDX-FileCopyrightText: 2025 pathetic meowmeow
+// SPDX-FileCopyrightText: 2025 sleepyyapril
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -69,10 +72,17 @@ public sealed partial class TechnologyDatabaseComponent : Component
 [ByRefEvent]
 public readonly record struct TechnologyDatabaseModifiedEvent // Goobstation - Lathe message on recipes update
 {
-    public readonly List<ProtoId<LatheRecipePrototype>> UnlockedRecipes;
+    public readonly EntityUid Server;
+    public readonly ProtoId<TechnologyPrototype>? Technology;
+    public readonly List<ProtoId<LatheRecipePrototype>> UnlockedRecipes = new();
 
-    public TechnologyDatabaseModifiedEvent(List<ProtoId<LatheRecipePrototype>>? unlockedRecipes = null)
+    public TechnologyDatabaseModifiedEvent(
+        EntityUid server,
+        ProtoId<TechnologyPrototype>? technology,
+        List<ProtoId<LatheRecipePrototype>>? unlockedRecipes = null)
     {
+        Server = server;
+        Technology = technology;
         UnlockedRecipes = unlockedRecipes ?? new();
     }
 };
