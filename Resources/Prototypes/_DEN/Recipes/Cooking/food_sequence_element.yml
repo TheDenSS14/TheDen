@@ -59,6 +59,24 @@
 # Fruits / Vegetables
 
 - type: foodSequenceElement
+  id: Chanterelle
+  name: food-sequence-content-mushroom
+  sprites:
+    sprite: Objects/Specific/Hydroponics/chanterelle.rsi
+    state: produce
+  tags:
+  - Vegetable
+
+- type: foodSequenceElement
+  id: ChanterelleBurger
+  name: food-sequence-content-mushroom
+  sprites:
+  - sprite: _DEN/Objects/Consumable/Food/burger_sequence.rsi
+    state: chanterelle
+  tags:
+  - Vegetable
+
+- type: foodSequenceElement
   id: ChiliPepperBurger
   name: food-sequence-content-chili
   sprites:
