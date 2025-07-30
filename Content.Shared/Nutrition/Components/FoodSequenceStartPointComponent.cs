@@ -152,13 +152,20 @@ public record struct FoodSequenceVisualLayer
     /// </summary>
     public Vector2 LocalOffset { get; set; } = Vector2.Zero;
 
+    /// <summary>
+    /// DEN: The name of the original item used. Used for examine texts.
+    /// </summary>
+    public string Name;
+
     public FoodSequenceVisualLayer(ProtoId<FoodSequenceElementPrototype> proto,
         SpriteSpecifier? sprite,
+        string name,
         Vector2 scale,
         Vector2 offset)
     {
         Proto = proto;
         Sprite = sprite;
+        Name = name;
         Scale = scale;
         LocalOffset = offset;
     }
