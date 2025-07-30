@@ -1522,7 +1522,7 @@
     node: cutlet
   - type: FoodSequenceElement
     entries:
-      Burger: MeatCutlet
+      Burger: MeatCutletBurger # DEN - Patty sprite
       Taco: MeatCutlet
 
 - type: entity
@@ -1614,7 +1614,7 @@
     node: chicken cutlet
   - type: FoodSequenceElement
     entries:
-      Burger: ChickenCutlet
+      Burger: ChickenCutletBurger # DEN - Patty sprite
       Taco: ChickenCutlet
 
 - type: entity
@@ -1733,7 +1733,7 @@
     node: xeno cutlet
   - type: FoodSequenceElement
     entries:
-      Burger: XenoCutlet
+      Burger: XenoCutletBurger # DEN - Patty sprite
       Taco: XenoCutlet
 
 - type: entity

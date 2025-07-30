@@ -1,0 +1,57 @@
+# This is the actual ingredient version, not the other one that puts an entire tofuburger in the burger
+- type: foodSequenceElement
+  id: TofuBurger
+  name: food-sequence-content-tofu
+  sprites:
+  - sprite: _DEN/Objects/Consumable/Food/burger_sequence.rsi
+    state: tofu
+  tags:
+  - Tofu
+
+# Burger patty sprites
+
+- type: foodSequenceElement
+  id: MeatCutletBurger
+  sprites:
+  - sprite: _DEN/Objects/Consumable/Food/burger_sequence.rsi
+    state: meat
+  tags:
+  - Cooked
+  - Cutlet
+  - Meat
+
+- type: foodSequenceElement
+  id: ChickenCutletBurger
+  name: food-sequence-content-chicken
+  sprites:
+  - sprite: _DEN/Objects/Consumable/Food/burger_sequence.rsi
+    state: bird
+  tags:
+  - Cooked
+  - Cutlet
+  - Meat
+  - Chicken
+
+- type: foodSequenceElement
+  id: DuckCutlet
+  name: food-sequence-content-duck
+  sprites:
+  - sprite: _DEN/Objects/Consumable/Food/burger_sequence.rsi
+    state: bird
+  tags:
+  - Cooked
+  - Cutlet
+  - Meat
+  - Duck
+
+- type: foodSequenceElement
+  id: XenoCutletBurger
+  name: food-sequence-content-xeno
+  sprites:
+  - sprite: _DEN/Objects/Consumable/Food/burger_sequence.rsi
+    state: xeno
+  tags:
+  - Cooked
+  - Cutlet
+  - Meat
+  - Xeno

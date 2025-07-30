@@ -327,8 +327,8 @@
   id: BearCutletBurger
   name: food-sequence-burger-content-bear
   sprites:
-  - sprite: Objects/Consumable/Food/meat.rsi
-    state: cutlet-cooked
+  - sprite: _DEN/Objects/Consumable/Food/burger_sequence.rsi # DEN - Patty sprites
+    state: bear
   tags:
   - Cooked
   - Cutlet
@@ -351,8 +351,8 @@
   id: PenguinCutletBurger
   name: food-sequence-burger-content-penguin
   sprites:
-  - sprite: Objects/Consumable/Food/meat.rsi
-    state: cutlet-cooked
+  - sprite: _DEN/Objects/Consumable/Food/burger_sequence.rsi # DEN - Patty sprites
+    state: bird
   tags:
   - Cooked
   - Cutlet
@@ -384,6 +384,7 @@
   - Cooked
   - Cutlet
   - Meat
+  - Duck # DEN
 
 # Spider cutlet
 
@@ -402,8 +403,8 @@
   id: LizardCutletBurger
   name: food-sequence-burger-content-lizard
   sprites:
-  - sprite: Objects/Consumable/Food/meat.rsi
-    state: cutlet-cooked
+  - sprite: _DEN/Objects/Consumable/Food/burger_sequence.rsi # DEN - Patty sprites
+    state: lizard
   tags:
   - Cooked
   - Cutlet
@@ -426,8 +427,8 @@
   id: SpiderCutletBurger
   name: food-sequence-burger-content-spider
   sprites:
-  - sprite: Objects/Consumable/Food/meat.rsi
-    state: spidercutlet-cooked
+  - sprite: _DEN/Objects/Consumable/Food/burger_sequence.rsi # DEN - Patty sprites
+    state: spider
   tags:
   - Cooked
   - Cutlet
@@ -445,6 +446,7 @@
   - Cooked
   - Cutlet
   - Meat
+  - Xeno # DNE
 
 # Brain
 
