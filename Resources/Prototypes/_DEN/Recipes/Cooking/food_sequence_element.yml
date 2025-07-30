@@ -85,3 +85,23 @@
   tags:
   - Fruit
   - Vegetable
+
+- type: foodSequenceElement
+  id: BloodTomatoBurger
+  name: food-sequence-content-tomato
+  sprites:
+  - sprite: _DEN/Objects/Consumable/Food/burger_sequence.rsi
+    state: bloodtomato
+  tags:
+  - Fruit
+  - Vegetable
+
+- type: foodSequenceElement
+  id: BlueTomatoBurger
+  name: food-sequence-content-tomato
+  sprites:
+  - sprite: _DEN/Objects/Consumable/Food/burger_sequence.rsi
+    state: bluetomato
+  tags:
+  - Fruit
+  - Vegetable
