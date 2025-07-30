@@ -26,18 +26,44 @@
     - HudMedical
 
 - type: entity
-  parent: [ClothingEyesBase, ShowMedicalIcons]
-  id: ClothingEyesGlassesMedical
+  parent: [ClothingEyesGlassesCheapSunglasses, ShowMedicalIcons]
+  id: ClothingEyesGlassesCheapMedical
   name: medical glasses
+  description: Medical Glasses designed for fashionable doctors. Now with a cool blue hue!
+  components:
+  - type: Sprite
+    sprite: _DEN/Clothing/Eyes/Glasses/medicalglasses.rsi
+  - type: Clothing
+    sprite: _DEN/Clothing/Eyes/Glasses/medicalglasses.rsi
+  - type: Construction
+    graph: GlassesCheapMedicalHUD
+    node: glassesCheapMedical
+  - type: ShowHealthBars
+    damageContainers:
+    - Biological
+  - type: ShowHealthIcons
+    damageContainers:
+    - Biological
+  - type: Tag
+    tags:
+    - HamsterWearable
+    - WhitelistChameleon
+    - SecDogWearable
+    - HudMedical
+  - type: GuideHelp
+    guides:
+    - Medical
+
+- type: entity
+  parent: [ClothingEyesGlassesSunglasses, ShowMedicalIcons]
+  id: ClothingEyesGlassesMedical
+  name: shielded medical glasses
   description: Shielded Medical Glasses designed for fashionable doctors. Now with a cool blue hue!
   components:
   - type: Sprite
-    sprite: _DV/Clothing/Eyes/Glasses/corpsglasses.rsi
+    sprite: _DEN/Clothing/Eyes/Glasses/medicalglasses.rsi
   - type: Clothing
-    sprite: _DV/Clothing/Eyes/Glasses/corpsglasses.rsi
-  - type: FlashImmunity
-  - type: EyeProtection
-    protectionTime: 5
+    sprite: _DEN/Clothing/Eyes/Glasses/medicalglasses.rsi
   - type: Construction
     graph: GlassesMedicalHUD
     node: glassesMedical
@@ -56,5 +82,3 @@
   - type: GuideHelp
     guides:
     - Medical
-  - type: IdentityBlocker
-    coverage: EYES

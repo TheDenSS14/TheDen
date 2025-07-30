@@ -4,11 +4,22 @@
 
 - type: construction
   name: medical glasses
+  id: ClothingEyesGlassesCheapMedical
+  graph: GlassesCheapMedicalHUD
+  startNode: start
+  targetNode: glassesCheapMedical
+  category: construction-category-clothing
+  description: A pair of sunglasses, modified to have a built-in medical HUD.
+  icon: { sprite: _DEN/Clothing/Eyes/Glasses/medicalglasses.rsi, state: icon }
+  objectType: Item
+
+- type: construction
+  name: shielded medical glasses
   id: ClothingEyesGlassesMedical
   graph: GlassesMedicalHUD
   startNode: start
   targetNode: glassesMedical
   category: construction-category-clothing
   description: A pair of shielded sunglasses, modified to have a built-in medical HUD.
-  icon: { sprite: _DV/Clothing/Eyes/Glasses/corpsglasses.rsi, state: icon }
+  icon: { sprite: _DEN/Clothing/Eyes/Glasses/medicalglasses.rsi, state: icon }
   objectType: Item
