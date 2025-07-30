@@ -1,0 +1,39 @@
+- type: metamorphRecipe
+  id: MetamorphFoodBurgerTofu
+  key: Burger
+  result: FoodBurgerTofu
+  rules:
+  - !type:SequenceLength
+    range:
+      min: 2
+      max: 3
+  - !type:IngredientsWithTags # 1-2 tofu slices
+    tags:
+    - Tofu
+    count:
+      min: 1
+      max: 2
+  - !type:LastElementHasTags # last bun
+    tags:
+    - Bun
+
+- type: metamorphRecipe
+  id: MetamorphFoodBurgerXeno
+  key: Burger
+  result: FoodBurgerXeno
+  rules:
+  - !type:SequenceLength
+    range:
+      min: 2
+      max: 3
+  - !type:IngredientsWithTags # 1-2 xeno cutlets
+    tags:
+    - Cooked
+    - Meat
+    - Xeno # DEN
+    count:
+      min: 1
+      max: 2
+  - !type:LastElementHasTags # last bun
+    tags:
+    - Bun

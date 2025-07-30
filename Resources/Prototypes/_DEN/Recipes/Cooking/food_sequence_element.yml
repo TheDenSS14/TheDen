@@ -33,7 +33,7 @@
   - Chicken
 
 - type: foodSequenceElement
-  id: DuckCutlet
+  id: DuckCutletBurger
   name: food-sequence-content-duck
   sprites:
   - sprite: _DEN/Objects/Consumable/Food/burger_sequence.rsi
@@ -55,3 +55,33 @@
   - Cutlet
   - Meat
   - Xeno
+
+# Fruits / Vegetables
+
+- type: foodSequenceElement
+  id: ChiliPepperBurger
+  name: food-sequence-content-chili
+  sprites:
+  - sprite: _DEN/Objects/Consumable/Food/burger_sequence.rsi
+    state: chili
+  tags:
+  - Vegetable
+
+- type: foodSequenceElement
+  id: ChillyPepperBurger
+  name: food-sequence-content-chilly
+  sprites:
+  - sprite: _DEN/Objects/Consumable/Food/burger_sequence.rsi
+    state: chilly
+  tags:
+  - Vegetable
+
+- type: foodSequenceElement
+  id: TomatoBurger
+  name: food-sequence-content-tomato
+  sprites:
+  - sprite: _DEN/Objects/Consumable/Food/burger_sequence.rsi
+    state: tomato
+  tags:
+  - Fruit
+  - Vegetable

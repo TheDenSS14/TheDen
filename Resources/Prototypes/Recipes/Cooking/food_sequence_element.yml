@@ -508,7 +508,7 @@
   id: Cabbage
   name: food-sequence-content-cabbage
   sprites:
-  - sprite: Objects/Specific/Hydroponics/carrot.rsi
+  - sprite: Objects/Specific/Hydroponics/cabbage.rsi
     state: produce
   tags:
   - Vegetable
@@ -517,8 +517,8 @@
   id: CabbageBurger
   name: food-sequence-burger-content-cabbage
   sprites:
-  - sprite: Objects/Specific/Hydroponics/cabbage.rsi
-    state: produce
+  - sprite: _DEN/Objects/Consumable/Food/burger_sequence.rsi # DEN sprite
+    state: leaf
   tags:
   - Vegetable
 
