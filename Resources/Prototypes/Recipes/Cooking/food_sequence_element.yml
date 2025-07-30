@@ -328,7 +328,7 @@
   name: food-sequence-burger-content-bear
   sprites:
   - sprite: _DEN/Objects/Consumable/Food/burger_sequence.rsi # DEN - Patty sprites
-    state: bear
+    state: bearmeat
   tags:
   - Cooked
   - Cutlet
@@ -352,7 +352,7 @@
   name: food-sequence-burger-content-penguin
   sprites:
   - sprite: _DEN/Objects/Consumable/Food/burger_sequence.rsi # DEN - Patty sprites
-    state: bird
+    state: birdmeat
   tags:
   - Cooked
   - Cutlet
@@ -404,7 +404,7 @@
   name: food-sequence-burger-content-lizard
   sprites:
   - sprite: _DEN/Objects/Consumable/Food/burger_sequence.rsi # DEN - Patty sprites
-    state: lizard
+    state: lizardmeat
   tags:
   - Cooked
   - Cutlet
@@ -428,7 +428,7 @@
   name: food-sequence-burger-content-spider
   sprites:
   - sprite: _DEN/Objects/Consumable/Food/burger_sequence.rsi # DEN - Patty sprites
-    state: spider
+    state: spidermeat
   tags:
   - Cooked
   - Cutlet
