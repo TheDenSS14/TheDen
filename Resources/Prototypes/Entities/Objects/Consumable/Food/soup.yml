@@ -43,7 +43,7 @@
   - type: Item
     storedRotation: -90
   - type: Food
-    trash: 
+    trash:
     - FoodBowlBig
     utensil: Spoon
   - type: SolutionContainerManager
@@ -125,6 +125,11 @@
           Quantity: 10
         - ReagentId: Vitamin
           Quantity: 5
+  - type: Tag # DEN - Moth edible
+    tags:
+    - Soup
+    - ClothMade
+    - VoxFood
 
 # Salad
 
@@ -244,6 +249,11 @@
           Quantity: 2
         - ReagentId: Allicin
           Quantity: 3
+  - type: Tag # DEN - Moth edible
+    tags:
+    - Soup
+    - ClothMade
+    - VoxFood
 
 - type: entity
   name: caesar salad
@@ -270,6 +280,11 @@
           Quantity: 8
         - ReagentId: Vitamin
           Quantity: 6
+  - type: Tag # DEN - Moth edible
+    tags:
+    - Soup
+    - ClothMade
+    - VoxFood
 
 - type: entity
   name: kimchi salad
@@ -297,6 +312,11 @@
           Quantity: 2
         - ReagentId: Allicin
           Quantity: 2
+  - type: Tag # DEN - Moth edible
+    tags:
+    - Soup
+    - ClothMade
+    - VoxFood
 
 - type: entity
   name: fruit salad
@@ -510,6 +530,11 @@
           Quantity: 5
         - ReagentId: Sugar
           Quantity: 5
+  - type: Tag # DEN - Moth edible
+    tags:
+    - Soup
+    - ClothMade
+    - VoxFood
 
 - type: entity
   name: black-eyed gumbo
@@ -570,6 +595,11 @@
           Quantity: 2
         - ReagentId: Milk
           Quantity: 10
+  - type: Tag # DEN - Moth edible
+    tags:
+    - Soup
+    - ClothMade
+    - VoxFood
 
 - type: entity
   name: space liberty duff
@@ -1008,7 +1038,7 @@
     flavors:
       - miso
   - type: Food
-    trash: 
+    trash:
     - FoodBowlFancy
   - type: Sprite
     layers:
@@ -1182,6 +1212,11 @@
             Quantity: 5
           - ReagentId: Allicin
             Quantity: 5
+  - type: Tag # DEN - Moth edible
+    tags:
+    - Soup
+    - VoxFood
+    - ClothMade
 
 - type: entity
   name: bisque
