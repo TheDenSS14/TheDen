@@ -25,6 +25,17 @@
     - ClothingEyesGlassesMedicalVisor
 
 - type: loadout
+  id: LoadoutMedicalEyesGlassesMedicalGlasses
+  category: JobsMedicalAUncategorized
+  cost: 0
+  exclusive: true
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutEyes
+  items:
+  - ClothingEyesGlassesCheapMedical
+
+- type: loadout
   id: LoadoutTowelLightBlue
   category: JobsMedicalAUncategorized
   cost: 1

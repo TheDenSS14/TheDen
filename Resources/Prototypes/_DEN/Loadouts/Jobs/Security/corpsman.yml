@@ -44,3 +44,17 @@
         - Brigmedic
   items:
     - ClothingBackpackMessengerBrigmedic
+
+- type: loadout
+  id: LoadoutCorpsmanMedicalGlasses
+  category: JobsSecurityCorpsman
+  cost: 1
+  exclusive: true
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutEyes
+  - !type:CharacterJobRequirement
+    jobs:
+    - Brigmedic
+  items:
+  - ClothingEyesGlassesMedical
