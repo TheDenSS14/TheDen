@@ -38,6 +38,8 @@ humanoid-profile-editor-sex-label = Sex:
 humanoid-profile-editor-sex-male-text = Male
 humanoid-profile-editor-sex-female-text = Female
 humanoid-profile-editor-sex-unsexed-text = None
+# TheDen - Add Voice
+humanoid-profile-editor-voice-label = Voice:
 humanoid-profile-editor-age-label = Age:
 humanoid-profile-editor-skin-color-label = Skin color:
 humanoid-profile-editor-height-label = Height: {$height}cm ({$feet}'{$inches}")

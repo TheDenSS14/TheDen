@@ -129,6 +129,9 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
     public Sex Sex { get; private set; } = Sex.Male;
 
     [DataField]
+    public Sex Voice { get; private set; } = Sex.Male;
+
+    [DataField]
     public Gender Gender { get; private set; } = Gender.Male;
 
     [DataField]
@@ -189,6 +192,7 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
         float width,
         int age,
         Sex sex,
+        Sex voice,
         Gender gender,
         string? displayPronouns,
         string? stationAiName,
@@ -217,6 +221,7 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
         Width = width;
         Age = age;
         Sex = sex;
+        Voice = voice; // TheDen - Add voice
         Gender = gender;
         DisplayPronouns = displayPronouns;
         StationAiName = stationAiName;
@@ -248,7 +253,8 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
             other.Height,
             other.Width,
             other.Age,
-            other.Sex,
+            other.Sex, // TheDen - Add voice
+            other.Voice,
             other.Gender,
             other.DisplayPronouns,
             other.StationAiName,
@@ -347,6 +353,7 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
         {
             Name = name,
             Sex = sex,
+            Voice = sex, // TheDen - Add voice
             Age = age,
             Gender = gender,
             Species = species,
@@ -363,6 +370,7 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
         {
             Name = profile.Name,
             Sex = profile.Sex,
+            Voice = profile.Voice, // TheDen - Add voice
             Age = profile.Age,
             Gender = profile.Gender,
             Species = profile.Species,
@@ -382,6 +390,9 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
     public HumanoidCharacterProfile WithLifepath(string lifepath) => new(this) { Lifepath = lifepath };
     // EE - Contractors Change End
     public HumanoidCharacterProfile WithSex(Sex sex) => new(this) { Sex = sex };
+
+    // TheDen - Add voice
+    public HumanoidCharacterProfile WithVoice(Sex voice) => new(this) { Voice = voice };
     public HumanoidCharacterProfile WithGender(Gender gender) => new(this) { Gender = gender };
     public HumanoidCharacterProfile WithDisplayPronouns(string? displayPronouns) => new(this) { DisplayPronouns = displayPronouns };
     public HumanoidCharacterProfile WithStationAiName(string? stationAiName) => new(this) { StationAiName = stationAiName };
@@ -491,6 +502,7 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
             && Name == other.Name
             && Age == other.Age
             && Sex == other.Sex
+            && Voice == other.Voice // TheDen - Add voice
             && Gender == other.Gender
             && Species == other.Species
             // EE - Contractors Change Start
@@ -529,10 +541,26 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
             _ => Sex.Male // Invalid enum values.
         };
 
+        // Start TheDen - Add voice
+        var voice = Voice switch
+        {
+            Sex.Male => Sex.Male,
+            Sex.Female => Sex.Female,
+            Sex.Unsexed => Sex.Unsexed,
+            _ => Sex.Male // Invalid enum values.
+        };
+        // End TheDen
+
         // ensure the species can be that sex and their age fits the founds
         if (!speciesPrototype.Sexes.Contains(sex))
         {
             sex = speciesPrototype.Sexes[0];
+        }
+
+        // TheDen - Add voice
+        if (!speciesPrototype.Sexes.Contains(voice))
+        {
+            voice = speciesPrototype.Sexes[0];
         }
 
         var age = Math.Clamp(Age, speciesPrototype.MinAge, speciesPrototype.MaxAge);
@@ -654,6 +682,7 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
         FlavorText = flavortext;
         Age = age;
         Sex = sex;
+        Voice = voice; // TheDen - Add voice
         Gender = gender;
         Appearance = appearance;
         SpawnPriority = spawnPriority;
@@ -712,6 +741,7 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
         hashCode.Add(Lifepath);
         hashCode.Add(Age);
         hashCode.Add((int) Sex);
+        hashCode.Add((int) Voice); // TheDen - Add voice
         hashCode.Add((int) Gender);
         hashCode.Add(Appearance);
         hashCode.Add((int) SpawnPriority);

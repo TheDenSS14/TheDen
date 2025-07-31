@@ -262,6 +262,16 @@ namespace Content.Client.Lobby.UI
 
             #endregion Sex
 
+            #region Voice
+
+            VoiceButton.OnItemSelected += args =>
+            {
+                VoiceButton.SelectId(args.Id);
+                SetVoice((Sex) args.Id);
+            };
+
+            #endregion
+
             #region Age
 
             AgeEdit.OnTextChanged += args =>
@@ -983,6 +993,7 @@ namespace Content.Client.Lobby.UI
 
             UpdateNameEdit();
             UpdateSexControls();
+            UpdateVoiceControls(); // TheDen - Add voice
             UpdateGenderControls();
             UpdateDisplayPronounsControls();
             UpdateStationAiControls();
@@ -1546,23 +1557,34 @@ namespace Content.Client.Lobby.UI
         private void SetSex(Sex newSex)
         {
             Profile = Profile?.WithSex(newSex);
-            // for convenience, default to most common gender when new sex is selected
+            // for convenience, default to most common gender and voice when new sex is selected
             switch (newSex)
             {
                 case Sex.Male:
                     Profile = Profile?.WithGender(Gender.Male);
+                    Profile = Profile?.WithVoice(Sex.Male); // TheDen - Add voice
                     break;
                 case Sex.Female:
                     Profile = Profile?.WithGender(Gender.Female);
+                    Profile = Profile?.WithVoice(Sex.Female); // TheDen - Add voice
                     break;
                 default:
                     Profile = Profile?.WithGender(Gender.Epicene);
+                    Profile = Profile?.WithVoice(Sex.Unsexed); // TheDen - Add voice
                     break;
             }
             UpdateGenderControls();
             Markings.SetSex(newSex);
             ReloadProfilePreview();
             SetDirty();
+        }
+
+        // TheDen - Add voice
+        private void SetVoice(Sex newVoice)
+        {
+            Profile = Profile?.WithVoice(newVoice);
+            ReloadPreview();
+            IsDirty = true;
         }
 
         private void SetGender(Gender newGender)
@@ -1761,6 +1783,38 @@ namespace Content.Client.Lobby.UI
                 SexButton.SelectId((int) sexes[0]);
         }
 
+        // TheDen - Add voice
+        private void UpdateVoiceControls()
+        {
+            if (Profile == null)
+                return;
+
+            if (Profile == null)
+                return;
+
+            VoiceButton.Clear();
+
+            var sexes = new List<Sex>();
+
+            // Add species sex options, default to just none if we are in bizzaro world and have no species
+            if (_prototypeManager.TryIndex<SpeciesPrototype>(Profile.Species, out var speciesProto))
+            {
+                foreach (var sex in speciesProto.Sexes)
+                    sexes.Add(sex);
+            }
+            else
+                sexes.Add(Sex.Unsexed);
+
+            // Add button for each sex
+            foreach (var sex in sexes)
+                VoiceButton.AddItem(Loc.GetString($"humanoid-profile-editor-sex-{sex.ToString().ToLower()}-text"), (int) sex);
+
+            if (sexes.Contains(Profile.Voice))
+                VoiceButton.SelectId((int) Profile.Voice);
+            else
+                VoiceButton.SelectId((int) sexes[0]);
+        }
+
         private void UpdateSkinColor()
         {
             if (Profile == null)
@@ -1880,6 +1934,7 @@ namespace Content.Client.Lobby.UI
                 return;
 
             PronounsButton.SelectId((int) Profile.Gender);
+            VoiceButton.SelectId((int) Profile.Voice); // TheDen - Add voice
         }
 
         private void UpdateDisplayPronounsControls()
