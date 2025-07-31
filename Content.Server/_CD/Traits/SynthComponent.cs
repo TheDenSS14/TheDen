@@ -10,11 +10,4 @@ namespace Content.Server._CD.Traits;
 /// Set players' blood to coolant, and is used to notify them of ion storms
 /// </summary>
 [RegisterComponent, Access(typeof(SynthSystem))]
-public sealed partial class SynthComponent : Component
-{
-    /// <summary>
-    /// The chance that the synth is alerted of an ion storm
-    /// </summary>
-    [DataField]
-    public float AlertChance = 0.7f; // TheDen - 0.7, was 0.3
-}
+public sealed partial class SynthComponent : Component { }

@@ -25,12 +25,9 @@ using Content.Shared.Silicons.Laws;
 using Content.Shared.Silicons.Laws.Components;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
-// Used in CD's System
-using Content.Server._CD.Traits;
 using Content.Server.Chat.Managers;
+using Content.Server._DEN.Announcements; // TheDen - Moved ion storm notification to its own component
 using Content.Shared.Chat;
-using Content.Shared.Silicon.Components;
-using Content.Shared.Silicon.Systems;
 using Robust.Shared.Player;
 
 namespace Content.Server.StationEvents.Events;
@@ -87,20 +84,11 @@ public sealed class IonStormRule : StationEventSystem<IonStormRuleComponent>
         if (!TryGetRandomStation(out var chosenStation))
             return;
 
-        // CD Change - Go through everyone with the SynthComponent and inform them a storm is happening.
-        var synthQuery = EntityQueryEnumerator<SynthComponent>();
-        while (synthQuery.MoveNext(out var ent, out var synthComp))
+        // Start TheDen - Moved ion storm notification to its own component
+        var ipcQuery = EntityQueryEnumerator<IonStormNotifierComponent>();
+        while (ipcQuery.MoveNext(out var ent, out var notifierComponent))
         {
-            DispatchIonStormNotification(ent, synthComp.AlertChance); // TheDen - Move to external function
-        }
-        // End of CD change
-
-        // Start TheDen - Query all IPCs for Ion Storm rule
-        var ipcQuery = EntityQueryEnumerator<SiliconComponent>();
-        while (ipcQuery.MoveNext(out var ent, out var siliconComponent))
-        {
-            if (siliconComponent.EntityType.Equals(SiliconType.Player))
-                DispatchIonStormNotification(ent, siliconComponent.IonNotificationChance);
+            DispatchIonStormNotification(ent, notifierComponent.Chance, notifierComponent.Loc);
         }
         // End TheDen
 
@@ -209,7 +197,7 @@ public sealed class IonStormRule : StationEventSystem<IonStormRuleComponent>
     }
 
     // TheDen - Move Ion Storm Notification to separate function
-    private void DispatchIonStormNotification(EntityUid ent, float alertChance)
+    private void DispatchIonStormNotification(EntityUid ent, float alertChance, string loc)
     {
         if (!RobustRandom.Prob(alertChance)) // TheDen - Negate so AlertChance is accurate
             return;
@@ -217,7 +205,7 @@ public sealed class IonStormRule : StationEventSystem<IonStormRuleComponent>
         if (!TryComp<ActorComponent>(ent, out var actor))
             return;
 
-        var msg = Loc.GetString("station-event-ion-storm-synth");
+        var msg = Loc.GetString(loc);
         var wrappedMessage = Loc.GetString("chat-manager-server-wrap-message", ("message", msg));
         _chatManager.ChatMessageToOne(ChatChannel.Server, msg, wrappedMessage, default, false, actor.PlayerSession.Channel, colorOverride: Color.Yellow);
     }
