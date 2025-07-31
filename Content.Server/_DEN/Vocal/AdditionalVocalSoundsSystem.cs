@@ -28,7 +28,7 @@ public sealed class AdditionalVocalSoundsSystem : EntitySystem
 
     public Dictionary<string, SoundSpecifier> GetVocalSounds(Entity<AdditionalVocalSoundsComponent> ent, EmoteSoundsPrototype? baseSounds = null )
     {
-        var result = baseSounds?.Sounds ?? new Dictionary<string, SoundSpecifier>();
+        var result = baseSounds?.Sounds != null ? new(baseSounds.Sounds) : new Dictionary<string, SoundSpecifier>();
 
         if (string.IsNullOrEmpty(ent.Comp.AdditionalSounds))
             return result;

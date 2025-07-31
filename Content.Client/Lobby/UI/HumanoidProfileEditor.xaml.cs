@@ -1794,25 +1794,13 @@ namespace Content.Client.Lobby.UI
 
             VoiceButton.Clear();
 
-            var sexes = new List<Sex>();
+            var sexes = new List<Sex>([Sex.Male, Sex.Female, Sex.Unsexed]);
 
-            // Add species sex options, default to just none if we are in bizzaro world and have no species
-            if (_prototypeManager.TryIndex<SpeciesPrototype>(Profile.Species, out var speciesProto))
-            {
-                foreach (var sex in speciesProto.Sexes)
-                    sexes.Add(sex);
-            }
-            else
-                sexes.Add(Sex.Unsexed);
-
-            // Add button for each sex
+            // Add button for each voice
             foreach (var sex in sexes)
                 VoiceButton.AddItem(Loc.GetString($"humanoid-profile-editor-sex-{sex.ToString().ToLower()}-text"), (int) sex);
 
-            if (sexes.Contains(Profile.Voice))
-                VoiceButton.SelectId((int) Profile.Voice);
-            else
-                VoiceButton.SelectId((int) sexes[0]);
+            VoiceButton.SelectId((int) Profile.PreferredVoice);
         }
 
         private void UpdateSkinColor()
@@ -1934,7 +1922,7 @@ namespace Content.Client.Lobby.UI
                 return;
 
             PronounsButton.SelectId((int) Profile.Gender);
-            VoiceButton.SelectId((int) Profile.Voice); // TheDen - Add voice
+            VoiceButton.SelectId((int) Profile.PreferredVoice); // TheDen - Add voice
         }
 
         private void UpdateDisplayPronounsControls()

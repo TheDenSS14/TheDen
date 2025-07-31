@@ -63,7 +63,7 @@ public sealed class KitsuneSystem : SharedKitsuneSystem
         }
 
         if (TryComp<HumanoidAppearanceComponent>(oldEntity, out var humanoidAppearance))
-            RaiseLocalEvent(newEntity, new VoiceChangedEvent(Sex.Unsexed, humanoidAppearance.Voice)); // TheDen - Add Voice
+            RaiseLocalEvent(newEntity, new VoiceChangedEvent(Sex.Unsexed, humanoidAppearance.PreferredVoice)); // TheDen - Add Voice
 
         // Code after this point will not run when reverting to human form.
         if (HasComp<KitsuneFoxComponent>(oldEntity))

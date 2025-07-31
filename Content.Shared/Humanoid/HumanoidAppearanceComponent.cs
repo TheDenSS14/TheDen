@@ -43,7 +43,7 @@ public sealed partial class HumanoidAppearanceComponent : Component
 
     // TheDen - Add Voice
     [DataField, AutoNetworkedField]
-    public Sex Voice;
+    public Sex PreferredVoice;
 
     [DataField, AutoNetworkedField]
     public Gender Gender;

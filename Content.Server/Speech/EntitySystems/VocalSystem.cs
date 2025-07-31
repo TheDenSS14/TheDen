@@ -86,7 +86,7 @@ public sealed class VocalSystem : EntitySystem
             || TryComp<ReplacementAccentComponent>(uid, out var replacement) && replacement.Accent == MuzzleAccent)
             return;
 
-        var sounds = component.EmoteSounds?.Sounds;
+        Dictionary<string, SoundSpecifier> sounds = component.EmoteSounds?.Sounds != null ? new(component.EmoteSounds.Sounds) : new();
 
         if (TryComp<AdditionalVocalSoundsComponent>(uid, out var additionalVocalSounds))
             sounds = _additionalVocalSounds.GetVocalSounds((uid, additionalVocalSounds), component.EmoteSounds);
@@ -94,7 +94,7 @@ public sealed class VocalSystem : EntitySystem
         // snowflake case for wilhelm scream easter egg
         if (args.Emote.ID == component.ScreamId)
         {
-            args.Handled = TryPlayScreamSound(uid, component);
+            args.Handled = TryPlayScreamSound(uid, component, sounds);
             return;
         }
 
@@ -114,7 +114,7 @@ public sealed class VocalSystem : EntitySystem
         args.Handled = true;
     }
 
-    private bool TryPlayScreamSound(EntityUid uid, VocalComponent component)
+    private bool TryPlayScreamSound(EntityUid uid, VocalComponent component, Dictionary<string, SoundSpecifier> sounds)
     {
         if (_random.Prob(component.WilhelmProbability))
         {
@@ -122,7 +122,7 @@ public sealed class VocalSystem : EntitySystem
             return true;
         }
 
-        return _chat.TryPlayEmoteSound(uid, component.EmoteSounds, component.ScreamId);
+        return _chat.TryPlayEmoteSound(uid, sounds, component.ScreamId);
     }
 
     // Start TheDen - Add Voice
@@ -131,7 +131,7 @@ public sealed class VocalSystem : EntitySystem
         if (component.Sounds == null)
             return;
 
-        voice ??= CompOrNull<HumanoidAppearanceComponent>(uid)?.Voice ?? Sex.Unsexed;
+        voice ??= CompOrNull<HumanoidAppearanceComponent>(uid)?.PreferredVoice ?? Sex.Unsexed;
 
         if (!component.Sounds.TryGetValue(voice.Value, out var protoId))
             return;

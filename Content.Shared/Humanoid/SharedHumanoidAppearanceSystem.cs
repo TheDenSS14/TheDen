@@ -195,7 +195,7 @@ public abstract class SharedHumanoidAppearanceSystem : EntitySystem
         targetHumanoid.EyeColor = sourceHumanoid.EyeColor;
         targetHumanoid.Age = sourceHumanoid.Age;
         SetSex(target, sourceHumanoid.Sex, false, targetHumanoid);
-        SetVoice(target, sourceHumanoid.Voice, false, targetHumanoid); // TheDen - Add Voice
+        SetVoice(target, sourceHumanoid.PreferredVoice, false, targetHumanoid); // TheDen - Add Voice
         targetHumanoid.CustomBaseLayers = new(sourceHumanoid.CustomBaseLayers);
         targetHumanoid.MarkingSet = new(sourceHumanoid.MarkingSet);
 
@@ -376,12 +376,26 @@ public abstract class SharedHumanoidAppearanceSystem : EntitySystem
     /// <param name="humanoid">Humanoid component of the entity</param>
     public void SetVoice(EntityUid uid, Sex voice, bool sync = true, HumanoidAppearanceComponent? humanoid = null)
     {
-        if (!Resolve(uid, ref humanoid) || humanoid.Voice == voice)
+        if (!Resolve(uid, ref humanoid) || humanoid.PreferredVoice == voice)
             return;
 
-        var oldVoice = humanoid.Voice;
-        humanoid.Sex = voice;
+        var oldVoice = humanoid.PreferredVoice;
+        humanoid.PreferredVoice = voice;
         // humanoid.MarkingSet.EnsureSexes(voice, _markingManager);
+
+        List<Sex> sexes = new();
+
+        if (_proto.TryIndex(humanoid.Species, out var speciesProto))
+        {
+            foreach (var sex in speciesProto.Sexes)
+                sexes.Add(sex);
+        }
+        else
+            sexes.Add(Sex.Unsexed);
+
+        if (!sexes.Contains(voice))
+            voice = sexes[0];
+
         RaiseLocalEvent(uid, new VoiceChangedEvent(oldVoice, voice));
 
         if (sync)
@@ -466,7 +480,7 @@ public abstract class SharedHumanoidAppearanceSystem : EntitySystem
 
         SetSpecies(uid, profile.Species, false, humanoid);
         SetSex(uid, profile.Sex, false, humanoid);
-        SetVoice(uid, profile.Voice, false, humanoid); // TheDen - Add Voice
+        SetVoice(uid, profile.PreferredVoice, false, humanoid); // TheDen - Add Voice
         humanoid.EyeColor = profile.Appearance.EyeColor;
         var ev = new EyeColorInitEvent();
         RaiseLocalEvent(uid, ref ev);

@@ -112,7 +112,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
                             </BoxContainer>
                             <!-- Voice // TheDen - Add Voice -->
                             <BoxContainer HorizontalExpand="True">
-                                <Label Text="{Loc 'humanoid-profile-editor-voice-label}'}" />
+                                <Label Text="{Loc 'humanoid-profile-editor-voice-label'}" />
                                 <Control HorizontalExpand="True" />
                                 <OptionButton Name="VoiceButton" HorizontalAlignment="Right" />
                             </BoxContainer>

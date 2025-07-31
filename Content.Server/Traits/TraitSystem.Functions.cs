@@ -914,12 +914,12 @@ public sealed partial class TraitSetAdditionalEmoteSound : TraitFunction
         var additionalVocalSounds = entityManager.EnsureComponent<AdditionalVocalSoundsComponent>(uid);
         var appearanceComponent = entityManager.GetComponentOrNull<HumanoidAppearanceComponent>(uid);
         var prototypeManager = IoCManager.Resolve<IPrototypeManager>();
-        var sex = appearanceComponent?.Sex ?? Sex.Unsexed;
+        var voice = appearanceComponent?.PreferredVoice ?? Sex.Unsexed;
         var emotePrefix = string.Empty;
 
         if (UseSex)
         {
-            if (sex == Sex.Female)
+            if (voice == Sex.Female)
                 emotePrefix = "Female";
             else
                 emotePrefix = "Male";
