@@ -51,6 +51,7 @@
 // SPDX-FileCopyrightText: 2024 WarMechanic
 // SPDX-FileCopyrightText: 2024 metalgearsloth
 // SPDX-FileCopyrightText: 2025 Blitz
+// SPDX-FileCopyrightText: 2025 Falcon
 // SPDX-FileCopyrightText: 2025 Lyndomen
 // SPDX-FileCopyrightText: 2025 Peptide90
 // SPDX-FileCopyrightText: 2025 Raikyr0
@@ -261,6 +262,18 @@ namespace Content.Client.Lobby.UI
             };
 
             #endregion Sex
+
+            // Begin TheDen - Add Voice
+            #region Voice
+
+            VoiceButton.OnItemSelected += args =>
+            {
+                VoiceButton.SelectId(args.Id);
+                SetVoice((Sex) args.Id);
+            };
+
+            #endregion
+            // End TheDen
 
             #region Age
 
@@ -983,6 +996,7 @@ namespace Content.Client.Lobby.UI
 
             UpdateNameEdit();
             UpdateSexControls();
+            UpdateVoiceControls(); // TheDen - Add Voice
             UpdateGenderControls();
             UpdateDisplayPronounsControls();
             UpdateStationAiControls();
@@ -1546,23 +1560,34 @@ namespace Content.Client.Lobby.UI
         private void SetSex(Sex newSex)
         {
             Profile = Profile?.WithSex(newSex);
-            // for convenience, default to most common gender when new sex is selected
+            // for convenience, default to most common gender and voice when new sex is selected
             switch (newSex)
             {
                 case Sex.Male:
                     Profile = Profile?.WithGender(Gender.Male);
+                    Profile = Profile?.WithVoice(Sex.Male); // TheDen - Add Voice
                     break;
                 case Sex.Female:
                     Profile = Profile?.WithGender(Gender.Female);
+                    Profile = Profile?.WithVoice(Sex.Female); // TheDen - Add Voice
                     break;
                 default:
                     Profile = Profile?.WithGender(Gender.Epicene);
+                    Profile = Profile?.WithVoice(Sex.Unsexed); // TheDen - Add Voice
                     break;
             }
             UpdateGenderControls();
             Markings.SetSex(newSex);
             ReloadProfilePreview();
             SetDirty();
+        }
+
+        // TheDen - Add Voice
+        private void SetVoice(Sex newVoice)
+        {
+            Profile = Profile?.WithVoice(newVoice);
+            ReloadPreview();
+            IsDirty = true;
         }
 
         private void SetGender(Gender newGender)
@@ -1761,6 +1786,26 @@ namespace Content.Client.Lobby.UI
                 SexButton.SelectId((int) sexes[0]);
         }
 
+        // TheDen - Add Voice
+        private void UpdateVoiceControls()
+        {
+            if (Profile == null)
+                return;
+
+            if (Profile == null)
+                return;
+
+            VoiceButton.Clear();
+
+            var sexes = new List<Sex>([Sex.Male, Sex.Female, Sex.Unsexed]);
+
+            // Add button for each voice
+            foreach (var sex in sexes)
+                VoiceButton.AddItem(Loc.GetString($"humanoid-profile-editor-sex-{sex.ToString().ToLower()}-text"), (int) sex);
+
+            VoiceButton.SelectId((int) Profile.PreferredVoice);
+        }
+
         private void UpdateSkinColor()
         {
             if (Profile == null)
@@ -1880,6 +1925,7 @@ namespace Content.Client.Lobby.UI
                 return;
 
             PronounsButton.SelectId((int) Profile.Gender);
+            VoiceButton.SelectId((int) Profile.PreferredVoice); // TheDen - Add Voice
         }
 
         private void UpdateDisplayPronounsControls()

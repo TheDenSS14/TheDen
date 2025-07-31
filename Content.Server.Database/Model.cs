@@ -27,6 +27,7 @@
 // SPDX-FileCopyrightText: 2024 Simon
 // SPDX-FileCopyrightText: 2024 SimpleStation14
 // SPDX-FileCopyrightText: 2024 VMSolidus
+// SPDX-FileCopyrightText: 2025 Falcon
 // SPDX-FileCopyrightText: 2025 Lyndomen
 // SPDX-FileCopyrightText: 2025 Timfa
 // SPDX-FileCopyrightText: 2025 sleepyyapril
@@ -454,6 +455,7 @@ namespace Content.Server.Database
         public string Lifepath { get; set; } = null!;
         public int Age { get; set; }
         public string Sex { get; set; } = null!;
+        public string Voice { get; set; } = null!; // TheDen - Add Voice
         public string Gender { get; set; } = null!;
         public string? DisplayPronouns { get; set; }
         public string? StationAiName { get; set; }

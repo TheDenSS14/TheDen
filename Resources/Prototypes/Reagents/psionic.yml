@@ -104,6 +104,14 @@
         - !type:ReagentThreshold
           reagent: LotophagoiOil
           min: 5
+      - !type:GenericStatusEffect
+        key: PsionicallyInsulated
+        time: 120
+        type: Remove
+      - !type:GenericStatusEffect
+        key: PsionicsDisabled
+        time: 120
+        type: Remove
 
 - type: reagent
   id: Ectoplasm

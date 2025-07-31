@@ -4,6 +4,7 @@
 # SPDX-FileCopyrightText: 2025 Tabitha
 # SPDX-FileCopyrightText: 2025 TheOneTrueWolfio
 # SPDX-FileCopyrightText: 2025 foxcurl
+# SPDX-FileCopyrightText: 2025 juniwoofs
 # SPDX-FileCopyrightText: 2025 portfiend
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
@@ -185,3 +186,29 @@
               Brute: -0.2
               Burn: -0.2
               Airloss: -0.3
+
+- type: trait
+  id: HandsFreePulling
+  category: TraitsPhysicalBiological
+  points: -10
+  requirements:
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - StationAi
+        - Borg
+        - MedicalBorg
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - Bodybuilder
+        - Weakling
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Reptilian
+  functions:
+    - !type:TraitReplaceComponent
+      components:
+        - type: Puller
+          needsHands: false

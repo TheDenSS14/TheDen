@@ -29,6 +29,7 @@
 // SPDX-FileCopyrightText: 2024 SimpleStation14
 // SPDX-FileCopyrightText: 2024 VMSolidus
 // SPDX-FileCopyrightText: 2024 nikthechampiongr
+// SPDX-FileCopyrightText: 2025 Falcon
 // SPDX-FileCopyrightText: 2025 Lyndomen
 // SPDX-FileCopyrightText: 2025 Timfa
 // SPDX-FileCopyrightText: 2025 sleepyyapril
@@ -239,6 +240,12 @@ namespace Content.Server.Database
             if (Enum.TryParse<Sex>(profile.Sex, true, out var sexVal))
                 sex = sexVal;
 
+            // Start TheDen - Add Voice
+            var voice = sex;
+            if (Enum.TryParse<Sex>(profile.Voice, true, out var voiceVal))
+                voice = voiceVal;
+            // End TheDen - Add Voice
+
             var clothing = ClothingPreference.Jumpsuit;
             if (Enum.TryParse<ClothingPreference>(profile.Clothing, true, out var clothingVal))
                 clothing = clothingVal;
@@ -287,6 +294,7 @@ namespace Content.Server.Database
                 profile.Width,
                 profile.Age,
                 sex,
+                voice, // TheDen - Add Voice
                 gender,
                 profile.DisplayPronouns,
                 profile.StationAiName,
@@ -336,6 +344,7 @@ namespace Content.Server.Database
             profile.Lifepath = humanoid.Lifepath;
             profile.Age = humanoid.Age;
             profile.Sex = humanoid.Sex.ToString();
+            profile.Voice = humanoid.PreferredVoice.ToString(); // TheDen - Add Voice
             profile.Gender = humanoid.Gender.ToString();
             profile.DisplayPronouns = humanoid.DisplayPronouns;
             profile.StationAiName = humanoid.StationAiName;
