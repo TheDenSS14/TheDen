@@ -128,4 +128,10 @@ public sealed partial class SiliconComponent : Component
     /// </summary>
     [DataField]
     public bool DoSiliconsDreamOfElectricSheep;
+
+    /// <summary>
+    ///     Chance to be sent the Ion Storm notification
+    /// </summary>
+    [DataField]
+    public float IonNotificationChance = 0.7f;
 }

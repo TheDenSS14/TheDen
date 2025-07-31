@@ -28,6 +28,8 @@ using Robust.Shared.Random;
 using Content.Server._CD.Traits;
 using Content.Server.Chat.Managers;
 using Content.Shared.Chat;
+using Content.Shared.Silicon.Components;
+using Content.Shared.Silicon.Systems;
 using Robust.Shared.Player;
 
 namespace Content.Server.StationEvents.Events;
@@ -88,17 +90,18 @@ public sealed class IonStormRule : StationEventSystem<IonStormRuleComponent>
         var synthQuery = EntityQueryEnumerator<SynthComponent>();
         while (synthQuery.MoveNext(out var ent, out var synthComp))
         {
-            if (!RobustRandom.Prob(synthComp.AlertChance)) // TheDen - Negate so AlertChance is accurate
-                continue;
-
-            if (!TryComp<ActorComponent>(ent, out var actor))
-                continue;
-
-            var msg = Loc.GetString("station-event-ion-storm-synth");
-            var wrappedMessage = Loc.GetString("chat-manager-server-wrap-message", ("message", msg));
-            _chatManager.ChatMessageToOne(ChatChannel.Server, msg, wrappedMessage, default, false, actor.PlayerSession.Channel, colorOverride: Color.Yellow);
+            DispatchIonStormNotification(ent, synthComp.AlertChance); // TheDen - Move to external function
         }
         // End of CD change
+
+        // Start TheDen - Query all IPCs for Ion Storm rule
+        var ipcQuery = EntityQueryEnumerator<SiliconComponent>();
+        while (ipcQuery.MoveNext(out var ent, out var siliconComponent))
+        {
+            if (siliconComponent.EntityType.Equals(SiliconType.Player))
+                DispatchIonStormNotification(ent, siliconComponent.IonNotificationChance);
+        }
+        // End TheDen
 
         var query = EntityQueryEnumerator<SiliconLawBoundComponent, TransformComponent, IonStormTargetComponent>();
         while (query.MoveNext(out var ent, out var lawBound, out var xform, out var target))
@@ -202,6 +205,20 @@ public sealed class IonStormRule : StationEventSystem<IonStormRuleComponent>
             var ev = new IonStormLawsEvent(laws);
             RaiseLocalEvent(ent, ref ev);
         }
+    }
+
+    // TheDen - Move Ion Storm Notification to separate function
+    private void DispatchIonStormNotification(EntityUid ent, float alertChance)
+    {
+        if (!RobustRandom.Prob(alertChance)) // TheDen - Negate so AlertChance is accurate
+            return;
+
+        if (!TryComp<ActorComponent>(ent, out var actor))
+            return;
+
+        var msg = Loc.GetString("station-event-ion-storm-synth");
+        var wrappedMessage = Loc.GetString("chat-manager-server-wrap-message", ("message", msg));
+        _chatManager.ChatMessageToOne(ChatChannel.Server, msg, wrappedMessage, default, false, actor.PlayerSession.Channel, colorOverride: Color.Yellow);
     }
 
     // for your own sake direct your eyes elsewhere
