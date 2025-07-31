@@ -347,7 +347,7 @@
     impactEffect: BulletImpactEffectDisabler
     damage:
       types:
-        Heat: 0
+        Heat: 5
         #Ion: 10 #Goobstation
     soundHit:
       collection: WeakHit
@@ -391,7 +391,7 @@
     impactEffect: BulletImpactEffectDisabler
     damage:
       types:
-        Heat: 0
+        Heat: 0.3
     soundHit:
       collection: WeakHit
     forceSound: true
@@ -430,7 +430,7 @@
     impactEffect: BulletImpactEffectDisabler
     damage:
       types:
-        Heat: 0
+        Heat: 1
         #Ion: 5 #Goobstation
     soundHit:
       collection: WeakHit
@@ -1173,7 +1173,7 @@
     impactEffect: BulletImpactEffectDisabler
     damage:
       types:
-        Heat: 0
+        Heat: 2
     soundHit:
       collection: WeakHit
     forceSound: true
