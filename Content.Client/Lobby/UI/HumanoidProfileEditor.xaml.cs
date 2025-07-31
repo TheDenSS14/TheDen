@@ -263,6 +263,7 @@ namespace Content.Client.Lobby.UI
 
             #endregion Sex
 
+            // Begin TheDen - Add Voice
             #region Voice
 
             VoiceButton.OnItemSelected += args =>
@@ -272,6 +273,7 @@ namespace Content.Client.Lobby.UI
             };
 
             #endregion
+            // End TheDen
 
             #region Age
 
@@ -994,7 +996,7 @@ namespace Content.Client.Lobby.UI
 
             UpdateNameEdit();
             UpdateSexControls();
-            UpdateVoiceControls(); // TheDen - Add voice
+            UpdateVoiceControls(); // TheDen - Add Voice
             UpdateGenderControls();
             UpdateDisplayPronounsControls();
             UpdateStationAiControls();
@@ -1563,15 +1565,15 @@ namespace Content.Client.Lobby.UI
             {
                 case Sex.Male:
                     Profile = Profile?.WithGender(Gender.Male);
-                    Profile = Profile?.WithVoice(Sex.Male); // TheDen - Add voice
+                    Profile = Profile?.WithVoice(Sex.Male); // TheDen - Add Voice
                     break;
                 case Sex.Female:
                     Profile = Profile?.WithGender(Gender.Female);
-                    Profile = Profile?.WithVoice(Sex.Female); // TheDen - Add voice
+                    Profile = Profile?.WithVoice(Sex.Female); // TheDen - Add Voice
                     break;
                 default:
                     Profile = Profile?.WithGender(Gender.Epicene);
-                    Profile = Profile?.WithVoice(Sex.Unsexed); // TheDen - Add voice
+                    Profile = Profile?.WithVoice(Sex.Unsexed); // TheDen - Add Voice
                     break;
             }
             UpdateGenderControls();
@@ -1580,7 +1582,7 @@ namespace Content.Client.Lobby.UI
             SetDirty();
         }
 
-        // TheDen - Add voice
+        // TheDen - Add Voice
         private void SetVoice(Sex newVoice)
         {
             Profile = Profile?.WithVoice(newVoice);
@@ -1784,7 +1786,7 @@ namespace Content.Client.Lobby.UI
                 SexButton.SelectId((int) sexes[0]);
         }
 
-        // TheDen - Add voice
+        // TheDen - Add Voice
         private void UpdateVoiceControls()
         {
             if (Profile == null)
@@ -1923,7 +1925,7 @@ namespace Content.Client.Lobby.UI
                 return;
 
             PronounsButton.SelectId((int) Profile.Gender);
-            VoiceButton.SelectId((int) Profile.PreferredVoice); // TheDen - Add voice
+            VoiceButton.SelectId((int) Profile.PreferredVoice); // TheDen - Add Voice
         }
 
         private void UpdateDisplayPronounsControls()

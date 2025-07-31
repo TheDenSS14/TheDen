@@ -455,7 +455,7 @@ namespace Content.Server.Database
         public string Lifepath { get; set; } = null!;
         public int Age { get; set; }
         public string Sex { get; set; } = null!;
-        public string Voice { get; set; } = null!; // TheDen - Add voice
+        public string Voice { get; set; } = null!; // TheDen - Add Voice
         public string Gender { get; set; } = null!;
         public string? DisplayPronouns { get; set; }
         public string? StationAiName { get; set; }

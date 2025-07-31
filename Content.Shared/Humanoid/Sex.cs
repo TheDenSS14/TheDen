@@ -29,6 +29,7 @@ namespace Content.Shared.Humanoid
         Unsexed,
     }
 
+    // TheDen - Add Voice
     /// <summary>
     ///     Raised when entity has changed their voice.
     ///     This doesn't handle gender changes.

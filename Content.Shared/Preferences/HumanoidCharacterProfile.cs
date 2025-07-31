@@ -129,6 +129,7 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
     [DataField]
     public Sex Sex { get; private set; } = Sex.Male;
 
+    // TheDen - Add Voice
     [DataField]
     public Sex PreferredVoice { get; private set; } = Sex.Male;
 
@@ -193,7 +194,7 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
         float width,
         int age,
         Sex sex,
-        Sex preferredVoice,
+        Sex preferredVoice, // TheDen - Add Voice
         Gender gender,
         string? displayPronouns,
         string? stationAiName,
@@ -222,7 +223,7 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
         Width = width;
         Age = age;
         Sex = sex;
-        PreferredVoice = preferredVoice; // TheDen - Add voice
+        PreferredVoice = preferredVoice; // TheDen - Add Voice
         Gender = gender;
         DisplayPronouns = displayPronouns;
         StationAiName = stationAiName;
@@ -255,7 +256,7 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
             other.Width,
             other.Age,
             other.Sex,
-            other.PreferredVoice, // TheDen - Add voice
+            other.PreferredVoice, // TheDen - Add Voice
             other.Gender,
             other.DisplayPronouns,
             other.StationAiName,
@@ -354,7 +355,7 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
         {
             Name = name,
             Sex = sex,
-            PreferredVoice = sex, // TheDen - Add voice
+            PreferredVoice = sex, // TheDen - Add Voice
             Age = age,
             Gender = gender,
             Species = species,
@@ -371,7 +372,7 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
         {
             Name = profile.Name,
             Sex = profile.Sex,
-            PreferredVoice = profile.PreferredVoice, // TheDen - Add voice
+            PreferredVoice = profile.PreferredVoice, // TheDen - Add Voice
             Age = profile.Age,
             Gender = profile.Gender,
             Species = profile.Species,
@@ -392,7 +393,7 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
     // EE - Contractors Change End
     public HumanoidCharacterProfile WithSex(Sex sex) => new(this) { Sex = sex };
 
-    // TheDen - Add voice
+    // TheDen - Add Voice
     public HumanoidCharacterProfile WithVoice(Sex voice) => new(this) { PreferredVoice = voice };
     public HumanoidCharacterProfile WithGender(Gender gender) => new(this) { Gender = gender };
     public HumanoidCharacterProfile WithDisplayPronouns(string? displayPronouns) => new(this) { DisplayPronouns = displayPronouns };
@@ -503,7 +504,7 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
             && Name == other.Name
             && Age == other.Age
             && Sex == other.Sex
-            && PreferredVoice == other.PreferredVoice // TheDen - Add voice
+            && PreferredVoice == other.PreferredVoice // TheDen - Add Voice
             && Gender == other.Gender
             && Species == other.Species
             // EE - Contractors Change Start
@@ -542,7 +543,7 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
             _ => Sex.Male // Invalid enum values.
         };
 
-        // Start TheDen - Add voice
+        // Start TheDen - Add Voice
         var voice = PreferredVoice switch
         {
             Sex.Male => Sex.Male,
@@ -677,7 +678,7 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
         FlavorText = flavortext;
         Age = age;
         Sex = sex;
-        PreferredVoice = voice; // TheDen - Add voice
+        PreferredVoice = voice; // TheDen - Add Voice
         Gender = gender;
         Appearance = appearance;
         SpawnPriority = spawnPriority;
@@ -736,7 +737,7 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
         hashCode.Add(Lifepath);
         hashCode.Add(Age);
         hashCode.Add((int) Sex);
-        hashCode.Add((int) PreferredVoice); // TheDen - Add voice
+        hashCode.Add((int) PreferredVoice); // TheDen - Add Voice
         hashCode.Add((int) Gender);
         hashCode.Add(Appearance);
         hashCode.Add((int) SpawnPriority);

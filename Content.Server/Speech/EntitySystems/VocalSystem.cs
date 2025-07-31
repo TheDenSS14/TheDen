@@ -53,7 +53,7 @@ public sealed class VocalSystem : EntitySystem
 
         SubscribeLocalEvent<VocalComponent, MapInitEvent>(OnMapInit);
         SubscribeLocalEvent<VocalComponent, ComponentShutdown>(OnShutdown);
-        SubscribeLocalEvent<VocalComponent, VoiceChangedEvent>(OnVoiceChanged);
+        SubscribeLocalEvent<VocalComponent, VoiceChangedEvent>(OnVoiceChanged); // TheDen - Add Voice
         SubscribeLocalEvent<VocalComponent, EmoteEvent>(OnEmote);
         SubscribeLocalEvent<VocalComponent, ScreamActionEvent>(OnScreamAction);
     }
@@ -75,6 +75,7 @@ public sealed class VocalSystem : EntitySystem
         }
     }
 
+    // TheDen - Add Voice
     private void OnVoiceChanged(EntityUid uid, VocalComponent component, VoiceChangedEvent args)
     {
         LoadSounds(uid, component, args.NewVoice);
@@ -88,7 +89,7 @@ public sealed class VocalSystem : EntitySystem
             || TryComp<ReplacementAccentComponent>(uid, out var replacement) && replacement.Accent == MuzzleAccent)
             return;
 
-        Dictionary<string, SoundSpecifier> sounds = component.EmoteSounds?.Sounds != null ? new(component.EmoteSounds.Sounds) : new();
+        Dictionary<string, SoundSpecifier> sounds = component.EmoteSounds?.Sounds != null ? new(component.EmoteSounds.Sounds) : new(); // TheDen - Add Voice
 
         if (TryComp<AdditionalVocalSoundsComponent>(uid, out var additionalVocalSounds))
             sounds = _additionalVocalSounds.GetVocalSounds((uid, additionalVocalSounds), component.EmoteSounds);
@@ -96,7 +97,7 @@ public sealed class VocalSystem : EntitySystem
         // snowflake case for wilhelm scream easter egg
         if (args.Emote.ID == component.ScreamId)
         {
-            args.Handled = TryPlayScreamSound(uid, component, sounds);
+            args.Handled = TryPlayScreamSound(uid, component, sounds); // TheDen - Add Voice
             return;
         }
 
@@ -116,7 +117,7 @@ public sealed class VocalSystem : EntitySystem
         args.Handled = true;
     }
 
-    private bool TryPlayScreamSound(EntityUid uid, VocalComponent component, Dictionary<string, SoundSpecifier> sounds)
+    private bool TryPlayScreamSound(EntityUid uid, VocalComponent component, Dictionary<string, SoundSpecifier> sounds) // TheDen - Add Voice
     {
         if (_random.Prob(component.WilhelmProbability))
         {
@@ -124,10 +125,10 @@ public sealed class VocalSystem : EntitySystem
             return true;
         }
 
-        return _chat.TryPlayEmoteSound(uid, sounds, component.ScreamId);
+        return _chat.TryPlayEmoteSound(uid, sounds, component.ScreamId); // TheDen - Add Voice
     }
 
-    // Start TheDen - Add Voice
+    // TheDen - Add Voice
     private void LoadSounds(EntityUid uid, VocalComponent component, Sex? voice = null)
     {
         if (component.Sounds == null)
@@ -139,5 +140,4 @@ public sealed class VocalSystem : EntitySystem
             return;
         _proto.TryIndex(protoId, out component.EmoteSounds);
     }
-    // End TheDen
 }
