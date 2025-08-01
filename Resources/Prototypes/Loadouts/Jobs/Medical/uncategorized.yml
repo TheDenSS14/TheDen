@@ -177,6 +177,8 @@
   cost: 0
   exclusive: true
   requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMedicalEyes
     - !type:CharacterDepartmentRequirement
       departments:
         - Medical
