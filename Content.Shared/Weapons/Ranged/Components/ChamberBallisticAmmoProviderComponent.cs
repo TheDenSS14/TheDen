@@ -1,3 +1,13 @@
+// SPDX-FileCopyrightText: 2022 Kara
+// SPDX-FileCopyrightText: 2022 metalgearsloth
+// SPDX-FileCopyrightText: 2023 TaralGit
+// SPDX-FileCopyrightText: 2023 and_a
+// SPDX-FileCopyrightText: 2024 BramvanZijp
+// SPDX-FileCopyrightText: 2025 BlitzTheSquishy
+// SPDX-FileCopyrightText: 2025 sleepyyapril
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Robust.Shared.Audio;
 
 namespace Content.Shared.Weapons.Ranged.Components;
