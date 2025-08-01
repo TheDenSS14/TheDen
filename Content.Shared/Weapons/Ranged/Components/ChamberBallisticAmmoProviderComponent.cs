@@ -37,6 +37,11 @@ public sealed partial class ChamberBallisticAmmoProviderComponent : BallisticAmm
     [ViewVariables(VVAccess.ReadWrite), DataField("canRack"), AutoNetworkedField]
     public bool CanRack = true;
 
+    /// <summary>
+    ///  Some weapons such as bolt actions would have their internal magazines blocked, whiles ones such as shotguns, would not.
+    /// </summary>
+    public bool ReloadWhenBolted = true;
+
     [ViewVariables(VVAccess.ReadWrite), DataField("soundBoltClosed"), AutoNetworkedField]
     public SoundSpecifier? BoltClosedSound = new SoundPathSpecifier("/Audio/Weapons/Guns/Bolt/rifle_bolt_closed.ogg");
 

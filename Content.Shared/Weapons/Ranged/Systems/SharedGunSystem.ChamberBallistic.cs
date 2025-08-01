@@ -453,7 +453,8 @@ public abstract partial class SharedGunSystem
             args.Used == args.Target ||
             Deleted(args.Target) ||
             !TryComp<BallisticAmmoProviderComponent>(args.Target, out var targetComponent) ||
-            targetComponent.Whitelist == null)
+            targetComponent.Whitelist == null ||
+            component.BoltClosed == true && component.ReloadWhenBolted == false)
         {
             return;
         }
