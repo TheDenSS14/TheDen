@@ -40,6 +40,7 @@ public sealed partial class ChamberBallisticAmmoProviderComponent : BallisticAmm
     /// <summary>
     ///  Some weapons such as bolt actions would have their internal magazines blocked, whiles ones such as shotguns, would not.
     /// </summary>
+    [ViewVariables(VVAccess.ReadWrite), DataField("reloadWhenBolted"), AutoNetworkedField]
     public bool ReloadWhenBolted = true;
 
     [ViewVariables(VVAccess.ReadWrite), DataField("soundBoltClosed"), AutoNetworkedField]
