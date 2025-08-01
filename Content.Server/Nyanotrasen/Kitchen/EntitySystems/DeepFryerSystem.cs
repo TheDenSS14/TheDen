@@ -124,7 +124,6 @@ public sealed partial class DeepFryerSystem : SharedDeepfryerSystem
         SubscribeLocalEvent<DeepFryerComponent, RefreshPartsEvent>(OnRefreshParts);
         SubscribeLocalEvent<DeepFryerComponent, MachineDeconstructedEvent>(OnDeconstruct);
         SubscribeLocalEvent<DeepFryerComponent, DestructionEventArgs>(OnDestruction);
-        SubscribeLocalEvent<DeepFryerComponent, ThrowHitByEvent>(OnThrowHitBy);
         SubscribeLocalEvent<DeepFryerComponent, SolutionChangedEvent>(OnSolutionChange);
         SubscribeLocalEvent<DeepFryerComponent, ContainerRelayMovementEntityEvent>(OnRelayMovement);
         SubscribeLocalEvent<DeepFryerComponent, InteractUsingEvent>(OnInteractUsing);
@@ -138,6 +137,9 @@ public sealed partial class DeepFryerSystem : SharedDeepfryerSystem
         SubscribeLocalEvent<DeepFryerComponent, DeepFryerClearSlagMessage>(OnClearSlagStart);
         SubscribeLocalEvent<DeepFryerComponent, DeepFryerRemoveAllItemsMessage>(OnRemoveAllItems);
         SubscribeLocalEvent<DeepFryerComponent, ClearSlagDoAfterEvent>(OnClearSlag);
+
+        // DEN: Can't insert blacklisted items.
+        SubscribeLocalEvent<DeepFryerComponent, ContainerIsInsertingAttemptEvent>(OnAttemptInsert);
 
         SubscribeLocalEvent<DeepFriedComponent, ComponentInit>(OnInitDeepFried);
         SubscribeLocalEvent<DeepFriedComponent, ExaminedEvent>(OnExamineFried);
@@ -185,6 +187,10 @@ public sealed partial class DeepFryerSystem : SharedDeepfryerSystem
 
     private void OnDragDropOn(EntityUid uid, DeepFryerComponent component, ref DragDropTargetEvent args)
     {
+        // DEN: Do not insert blacklisted items.
+        if (_whitelistSystem.IsBlacklistPass(component.Blacklist, args.Dragged))
+            return;
+
         _containerSystem.Insert(args.Dragged, component.Storage);
         args.Handled = true;
     }
@@ -475,58 +481,6 @@ public sealed partial class DeepFryerSystem : SharedDeepfryerSystem
 
         component.StorageMaxEntities = component.BaseStorageMaxEntities +
                                        (int) (component.StoragePerPartRating * (ratingStorage - 1));
-    }
-
-    /// <summary>
-    ///     Allow thrown items to land in a basket.
-    /// </summary>
-    private void OnThrowHitBy(EntityUid uid, DeepFryerComponent component, ThrowHitByEvent args)
-    {
-        if (args.Handled)
-            return;
-
-        // Chefs never miss this. :)
-        var missChance = HasComp<ProfessionalChefComponent>(args.User) ? 0f : ThrowMissChance;
-
-        if (!CanInsertItem(uid, component, args.Thrown) ||
-            _random.Prob(missChance) ||
-            !_containerSystem.Insert(args.Thrown, component.Storage))
-        {
-            _popupSystem.PopupEntity(
-                Loc.GetString("deep-fryer-thrown-missed"),
-                uid);
-
-            if (args.User != null)
-            {
-                _adminLogManager.Add(LogType.Action, LogImpact.Low,
-                    $"{ToPrettyString(args.User.Value)} threw {ToPrettyString(args.Thrown)} at {ToPrettyString(uid)}, and it missed.");
-            }
-
-            return;
-        }
-
-        if (GetOilVolume(uid, component) < component.SafeOilVolume)
-        {
-            _popupSystem.PopupEntity(
-                Loc.GetString("deep-fryer-thrown-hit-oil-low"),
-                uid);
-        }
-        else
-        {
-            _popupSystem.PopupEntity(
-                Loc.GetString("deep-fryer-thrown-hit-oil"),
-                uid);
-        }
-
-        if (args.User != null)
-        {
-            _adminLogManager.Add(LogType.Action, LogImpact.Low,
-                $"{ToPrettyString(args.User.Value)} threw {ToPrettyString(args.Thrown)} at {ToPrettyString(uid)}, and it landed inside.");
-        }
-
-        AfterInsert(uid, component, args.Thrown);
-
-        args.Handled = true;
     }
 
     private void OnSolutionChange(EntityUid uid, DeepFryerComponent component, SolutionChangedEvent args)

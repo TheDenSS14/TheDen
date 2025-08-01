@@ -15,6 +15,7 @@ using Content.Shared.Item;
 using Content.Shared.Nyanotrasen.Kitchen.UI;
 using Content.Shared.Storage;
 using Content.Shared.Tools.Components;
+using Robust.Shared.Containers;
 
 namespace Content.Server.Nyanotrasen.Kitchen.EntitySystems;
 
@@ -25,6 +26,8 @@ public sealed partial class DeepFryerSystem
         // Keep this consistent with the checks in TryInsertItem.
         return HasComp<ItemComponent>(item) &&
                !HasComp<StorageComponent>(item) &&
+               // DEN: Can't insert blacklisted items.
+               !_whitelistSystem.IsBlacklistPass(component.Blacklist, item) &&
                component.Storage.ContainedEntities.Count < component.StorageMaxEntities;
     }
 
@@ -43,6 +46,17 @@ public sealed partial class DeepFryerSystem
         {
             _popupSystem.PopupEntity(
                 Loc.GetString("deep-fryer-storage-no-fit",
+                    ("item", item)),
+                uid,
+                user);
+            return false;
+        }
+
+        // DEN: Can't insert blacklisted items.
+        if (_whitelistSystem.IsBlacklistPass(component.Blacklist, item))
+        {
+            _popupSystem.PopupEntity(
+                Loc.GetString("deep-fryer-item-blacklisted",
                     ("item", item)),
                 uid,
                 user);
@@ -87,7 +101,7 @@ public sealed partial class DeepFryerSystem
 
     private void OnInsertItem(EntityUid uid, DeepFryerComponent component, DeepFryerInsertItemMessage args)
     {
-        var user =  args.Actor; // Floof - fix
+        var user = args.Actor; // Floof - fix
 
         if (!TryComp<HandsComponent>(user, out var handsComponent) ||
             handsComponent.ActiveHandEntity == null)
@@ -95,5 +109,13 @@ public sealed partial class DeepFryerSystem
 
         if (handsComponent.ActiveHandEntity != null)
             TryInsertItem(uid, component, user, handsComponent.ActiveHandEntity.Value);
+    }
+
+    // DEN: Can't insert blacklisted items.
+    private void OnAttemptInsert(Entity<DeepFryerComponent> ent, ref ContainerIsInsertingAttemptEvent args)
+    {
+        if (args.Container.ID == ent.Comp.StorageName
+            && _whitelistSystem.IsBlacklistPass(ent.Comp.Blacklist, args.EntityUid))
+            args.Cancel();
     }
 }
