@@ -15,6 +15,7 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using Content.Shared.Containers.ItemSlots;
+using Content.Shared.DoAfter;
 using Content.Shared.Examine;
 using Content.Shared.Interaction;
 using Content.Shared.Interaction.Events;
@@ -48,6 +49,10 @@ public abstract partial class SharedGunSystem
         SubscribeLocalEvent<ChamberBallisticAmmoProviderComponent, UseInHandEvent>(OnChamberUse);
 
         SubscribeLocalEvent<ChamberBallisticAmmoProviderComponent, ExaminedEvent>(OnChamberBallisticExamine);
+
+        SubscribeLocalEvent<ChamberBallisticAmmoProviderComponent, InteractUsingEvent>(OnBallisticInteractUsing);
+        SubscribeLocalEvent<ChamberBallisticAmmoProviderComponent, AfterInteractEvent>(OnBallisticAfterInteract);
+        SubscribeLocalEvent<ChamberBallisticAmmoProviderComponent, AmmoFillDoAfterEvent>(OnBallisticAmmoFillDoAfter);
     }
 
     private void OnBallisticInit(EntityUid uid, ChamberBallisticAmmoProviderComponent component, ComponentInit args)
@@ -417,6 +422,51 @@ public abstract partial class SharedGunSystem
             chamberEnt = slot.ContainedEntity;
             args.Ammo.Add((chamberEnt.Value, EnsureShootable(chamberEnt.Value)));
         }
+    }
+
+    private void OnBallisticInteractUsing(EntityUid uid, ChamberBallisticAmmoProviderComponent component, InteractUsingEvent args)
+    {
+        if (args.Handled)
+            return;
+
+        if (_whitelistSystem.IsWhitelistFailOrNull(component.Whitelist, args.Used))
+            return;
+
+        if (GetBallisticShots(component) >= component.Capacity)
+            return;
+
+        component.Entities.Add(args.Used);
+        Containers.Insert(args.Used, component.Container);
+        // Not predicted so
+        Audio.PlayPredicted(component.SoundInsert, uid, args.User);
+        args.Handled = true;
+        UpdateBallisticAppearance(uid, component);
+        Dirty(uid, component);
+    }
+
+    private void OnBallisticAfterInteract(EntityUid uid, ChamberBallisticAmmoProviderComponent component, AfterInteractEvent args)
+    {
+        if (args.Handled ||
+            !component.MayTransfer ||
+            !Timing.IsFirstTimePredicted ||
+            args.Target == null ||
+            args.Used == args.Target ||
+            Deleted(args.Target) ||
+            !TryComp<BallisticAmmoProviderComponent>(args.Target, out var targetComponent) ||
+            targetComponent.Whitelist == null)
+        {
+            return;
+        }
+
+        args.Handled = true;
+
+        // Continuous loading
+        _doAfter.TryStartDoAfter(new DoAfterArgs(EntityManager, args.User, component.FillDelay, new AmmoFillDoAfterEvent(), used: uid, target: args.Target, eventTarget: uid)
+        {
+            BreakOnMove = false, // DeltaV - reload while moving
+            BreakOnDamage = false,
+            NeedHand = true
+        });
     }
 
     private void OnBallisticAmmoFillDoAfter(EntityUid uid, ChamberBallisticAmmoProviderComponent component, AmmoFillDoAfterEvent args)
