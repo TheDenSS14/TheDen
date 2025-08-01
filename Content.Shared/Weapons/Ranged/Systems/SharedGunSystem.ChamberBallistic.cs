@@ -435,6 +435,9 @@ public abstract partial class SharedGunSystem
         if (GetBallisticShots(component) >= component.Capacity)
             return;
 
+        if (component.BoltClosed == true && component.ReloadWhenBolted == false)
+            return;
+
         component.Entities.Add(args.Used);
         Containers.Insert(args.Used, component.Container);
         // Not predicted so
@@ -442,101 +445,5 @@ public abstract partial class SharedGunSystem
         args.Handled = true;
         UpdateBallisticAppearance(uid, component);
         Dirty(uid, component);
-    }
-
-    private void OnBallisticAfterInteract(EntityUid uid, ChamberBallisticAmmoProviderComponent component, AfterInteractEvent args)
-    {
-        if (args.Handled ||
-            !component.MayTransfer ||
-            !Timing.IsFirstTimePredicted ||
-            args.Target == null ||
-            args.Used == args.Target ||
-            Deleted(args.Target) ||
-            !TryComp<BallisticAmmoProviderComponent>(args.Target, out var targetComponent) ||
-            targetComponent.Whitelist == null ||
-            component.BoltClosed == true && component.ReloadWhenBolted == false)
-        {
-            return;
-        }
-
-        args.Handled = true;
-
-        // Continuous loading
-        _doAfter.TryStartDoAfter(new DoAfterArgs(EntityManager, args.User, component.FillDelay, new AmmoFillDoAfterEvent(), used: uid, target: args.Target, eventTarget: uid)
-        {
-            BreakOnMove = false, // DeltaV - reload while moving
-            BreakOnDamage = false,
-            NeedHand = true
-        });
-    }
-
-    private void OnBallisticAmmoFillDoAfter(EntityUid uid, ChamberBallisticAmmoProviderComponent component, AmmoFillDoAfterEvent args)
-    {
-        if (Deleted(args.Target) ||
-            !TryComp<BallisticAmmoProviderComponent>(args.Target, out var target) ||
-            target.Whitelist == null)
-            return;
-
-        if (target.Entities.Count + target.UnspawnedCount == target.Capacity)
-        {
-            Popup(
-                Loc.GetString("gun-ballistic-transfer-target-full",
-                    ("entity", args.Target)),
-                args.Target,
-                args.User);
-            return;
-        }
-
-        if (component.Entities.Count + component.UnspawnedCount == 0)
-        {
-            Popup(
-                Loc.GetString("gun-ballistic-transfer-empty",
-                    ("entity", uid)),
-                uid,
-                args.User);
-            return;
-        }
-
-        void SimulateInsertAmmo(EntityUid ammo, EntityUid ammoProvider, EntityCoordinates coordinates)
-        {
-            var evInsert = new InteractUsingEvent(args.User, ammo, ammoProvider, coordinates);
-            RaiseLocalEvent(ammoProvider, evInsert);
-        }
-
-        List<(EntityUid? Entity, IShootable Shootable)> ammo = new();
-        var evTakeAmmo = new TakeAmmoEvent(1, ammo, Transform(uid).Coordinates, args.User);
-        RaiseLocalEvent(uid, evTakeAmmo);
-
-        foreach (var (ent, _) in ammo)
-        {
-            if (ent == null)
-                continue;
-
-            if (_whitelistSystem.IsWhitelistFail(target.Whitelist, ent.Value))
-            {
-                Popup(
-                    Loc.GetString("gun-ballistic-transfer-invalid",
-                        ("ammoEntity", ent.Value),
-                        ("targetEntity", args.Target.Value)),
-                    uid,
-                    args.User);
-
-                SimulateInsertAmmo(ent.Value, uid, Transform(uid).Coordinates);
-            }
-            else
-            {
-                // play sound to be cool
-                Audio.PlayPredicted(component.SoundInsert, uid, args.User);
-                SimulateInsertAmmo(ent.Value, args.Target.Value, Transform(args.Target.Value).Coordinates);
-            }
-
-            if (IsClientSide(ent.Value))
-                Del(ent.Value);
-        }
-
-        // repeat if there is more space in the target and more ammo to fill it
-        var moreSpace = target.Entities.Count + target.UnspawnedCount < target.Capacity;
-        var moreAmmo = component.Entities.Count + component.UnspawnedCount > 0;
-        args.Repeat = moreSpace && moreAmmo;
     }
 }
