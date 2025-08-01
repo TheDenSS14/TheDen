@@ -257,7 +257,7 @@
   time: 10
   solids:
     FoodBreadBun: 1
-    FoodMeatFish: 1
+    FoodMeatFishCooked: 1 # DEN - Use cooked fish
     FoodCheeseSlice: 1
 
 - type: microwaveMealRecipe
@@ -822,7 +822,7 @@
     FoodBowlBig: 1
     FoodTomato: 1
     FoodMushroom: 1
-    FoodMeatFish: 1
+    FoodMeatFishCooked: 1 # DEN - Use cooked fsh
 
 - type: microwaveMealRecipe
   id: RecipeMeatballSoup
@@ -1232,7 +1232,7 @@
     FoodDough: 1
     FoodCheeseSlice: 2
     FoodChiliPepper: 1
-    FoodMeatFish: 2
+    FoodMeatFishCooked: 1 # DEN - Use cooked fish
 
 - type: microwaveMealRecipe
   id: RecipeSashimi
@@ -1242,7 +1242,7 @@
   reagents:
     TableSalt: 1
   solids:
-    FoodMeatFish: 2
+    FoodMeatFishCutlet: 2 # DEN - Use cutlets
 
 - type: microwaveMealRecipe
   id: RecipeMisoColaSoup
@@ -2010,7 +2010,7 @@
   time: 10
   solids:
     FoodTacoShell: 1
-    FoodMeatFish: 1
+    FoodMeatFishCutletCooked: 1 # DEN - Use cooked fish cutlet
     FoodOnionSlice: 2
     FoodTomato: 1
     FoodCabbage: 1
