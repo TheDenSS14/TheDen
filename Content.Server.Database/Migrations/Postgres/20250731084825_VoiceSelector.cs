@@ -14,13 +14,20 @@ namespace Content.Server.Database.Migrations.Postgres
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-
+            migrationBuilder.AddColumn<bool>(
+                name: "voice",
+                table: "profile",
+                type: "boolean",
+                defaultValue: "",
+                nullable: false);
         }
 
         /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
-
+            migrationBuilder.DropColumn(
+                name: "voice",
+                table: "profile");
         }
     }
 }
