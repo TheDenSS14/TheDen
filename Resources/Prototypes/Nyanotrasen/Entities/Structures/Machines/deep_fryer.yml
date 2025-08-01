@@ -170,6 +170,6 @@
       vat_entities: !type:Container
       machine_board: !type:Container
       machine_parts: !type:Container
-  - type: ThrowInsertContainer
+  - type: ThrowInsertContainer # TODO: Sounds
     containerId: vat_entities
   - type: PowerSwitch

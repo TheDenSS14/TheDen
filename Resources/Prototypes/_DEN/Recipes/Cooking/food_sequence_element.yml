@@ -8,6 +8,29 @@
   tags:
   - Tofu
 
+# Meat
+
+- type: foodSequenceElement
+  id: MeatFish
+  name: food-sequence-content-fish
+  sprites:
+  - sprite: _DEN/Objects/Consumable/Food/meat.rsi
+    state: cooked_fish
+  tags:
+  - Cooked
+  - Meat
+
+- type: foodSequenceElement
+  id: FishCutlet
+  name: food-sequence-content-fish
+  sprites:
+  - sprite: _DEN/Objects/Consumable/Food/meat.rsi
+    state: cutlet_fish
+  tags:
+  - Cooked
+  - Cutlet
+  - Meat
+
 # Burger patty sprites
 
 - type: foodSequenceElement
@@ -15,6 +38,17 @@
   sprites:
   - sprite: _DEN/Objects/Consumable/Food/burger_sequence.rsi
     state: meat
+  tags:
+  - Cooked
+  - Cutlet
+  - Meat
+
+- type: foodSequenceElement
+  id: FishCutletBurger
+  name: food-sequence-content-fish
+  sprites:
+  - sprite: _DEN/Objects/Consumable/Food/burger_sequence.rsi
+    state: fishmeat
   tags:
   - Cooked
   - Cutlet

@@ -212,6 +212,17 @@
       reagents:
       - ReagentId: CarpoToxin
         Quantity: 5
+  # DEN - Allow you to make cooked fish
+  - type: Construction
+    graph: FishSteak
+    node: start
+    defaultTarget: cooked carp
+  - type: InternalTemperature
+    conductivity: 0.43
+  - type: SliceableFood
+    count: 3
+    slice: FoodMeatFishCutlet
+  # End DEN
 
 - type: entity
   name: raw bacon
