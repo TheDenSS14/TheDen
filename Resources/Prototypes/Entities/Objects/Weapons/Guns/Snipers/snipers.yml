@@ -105,8 +105,82 @@
     - LickObject
 
 - type: entity
+  name: BaseWeaponSniperBolting
+  parent: BaseItem
+  id: BaseWeaponSniperBolting
+  description: A rooty tooty point and shooty.
+  abstract: true
+  components:
+  - type: Sprite
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+  - type: Item
+    size: Huge
+  - type: Clothing
+    sprite: Objects/Weapons/Guns/Snipers/bolt_gun_wood.rsi
+    quickEquip: false
+    slots:
+    - Back
+    - suitStorage
+  - type: AmmoCounter
+  - type: Wieldable
+  - type: GunRequiresWield
+  - type: Gun
+    fireRate: 0.75
+    selectedMode: SemiAuto
+    availableModes:
+    - SemiAuto
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/sniper.ogg
+  - type: ChamberBallisticAmmoProvider
+    capacity: 10
+    proto: CartridgeLightRifle
+    whitelist:
+      tags:
+      - CartridgeLightRifle
+  - type: ItemSlots
+    gun_chamber:
+      name: Chamber
+      startingItem: CartridgeLightRifle
+      priority: 1
+      whitelist:
+        tags:
+          - CartridgeLightRifle
+  - type: ContainerContainer
+    containers:
+      gun_chamber: !type:ContainerSlot
+      ballistic-ammo: !type:Container
+  - type: StaticPrice
+    price: 500
+  - type: Execution
+  - type: MeleeWeapon
+    attackRate: 1.3333
+    damage:
+      types:
+        Blunt: 8.0
+    bluntStaminaDamageFactor: 1.25
+    swapKeys: true
+    disableHeavy: true
+    wideAnimationRotation: 135
+    animation: WeaponArcThrust
+    soundHit:
+      collection: MetalThud
+  - type: IncreaseDamageOnWield
+    damage:
+      types:
+        Blunt: 2.5
+  - type: DamageOtherOnHit
+    staminaCost: 7.5
+  - type: InteractionVerbs
+    allowedVerbs:
+    - HugObject
+    - KissObject
+    - LickObject
+
+- type: entity
   name: Kardashev-Mosin
-  parent: [BaseWeaponSniper, BaseGunWieldable]
+  parent: [BaseWeaponSniperBolting, BaseGunWieldable]
   id: WeaponSniperMosin
   description: A weapon for hunting, or endless trench warfare, with a bayonet attached at the barrel. Uses .30 rifle ammo.
   components:
@@ -117,7 +191,7 @@
   - type: Wieldable
   - type: MeleeRequiresWield
   - type: GunRequiresWield
-  - type: BallisticAmmoProvider
+  - type: ChamberBallisticAmmoProvider
     capacity: 5
     proto: CartridgeLightRifle
   - type: Gun
@@ -161,7 +235,7 @@
   description: A weapon for hunting, or endless trench warfare. Uses .30 rifle rubber ammo.
   suffix: Non-Lethal
   components:
-  - type: BallisticAmmoProvider
+  - type: ChamberBallisticAmmoProvider
     proto: CartridgeLightRifleRubber
     whitelist:
       tags:
@@ -175,7 +249,7 @@
   description: A weapon for hunting, or endless trench warfare. Uses .30 rifle ammo.
   suffix: Empty
   components:
-  - type: BallisticAmmoProvider
+  - type: ChamberBallisticAmmoProvider
     proto: null
   - type: ExtendDescription
     descriptionList:
@@ -186,7 +260,7 @@
 
 - type: entity
   name: Hristov
-  parent: [BaseWeaponSniper, BaseGunWieldable]
+  parent: [BaseWeaponSniperBolting, BaseGunWieldable]
   id: WeaponSniperHristov
   description: A portable anti-materiel rifle. Fires armor piercing 14.5mm shells. Uses .60 anti-materiel ammo.
   components:
@@ -194,7 +268,15 @@
     sprite: Objects/Weapons/Guns/Snipers/heavy_sniper.rsi
   - type: Clothing
     sprite: Objects/Weapons/Guns/Snipers/heavy_sniper.rsi
-  - type: BallisticAmmoProvider
+  - type: ItemSlots
+    gun_chamber:
+      name: Chamber
+      startingItem: CartridgeAntiMateriel
+      priority: 1
+      whitelist:
+        tags:
+          - CartridgeAntiMateriel
+  - type: ChamberBallisticAmmoProvider
     whitelist:
       tags:
       - CartridgeAntiMateriel
