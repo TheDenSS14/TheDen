@@ -1,6 +1,7 @@
 # SPDX-FileCopyrightText: 2025 Blitz
 # SPDX-FileCopyrightText: 2025 BlitzTheSquishy
 # SPDX-FileCopyrightText: 2025 Rosycup
+# SPDX-FileCopyrightText: 2025 Sir Warock
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
@@ -23,6 +24,17 @@
             - Brigmedic
   items:
     - ClothingEyesGlassesMedicalVisor
+
+- type: loadout
+  id: LoadoutMedicalEyesGlassesMedicalGlasses
+  category: JobsMedicalAUncategorized
+  cost: 0
+  exclusive: true
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutEyes
+  items:
+  - ClothingEyesGlassesCheapMedical
 
 - type: loadout
   id: LoadoutTowelLightBlue

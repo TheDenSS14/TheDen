@@ -1,5 +1,6 @@
-# SPDX-FileCopyrightText: 2025 Blitz <73762869+BlitzTheSquishy@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Blitz
+# SPDX-FileCopyrightText: 2025 Sir Warock
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -44,3 +45,17 @@
         - Brigmedic
   items:
     - ClothingBackpackMessengerBrigmedic
+
+- type: loadout
+  id: LoadoutCorpsmanMedicalGlasses
+  category: JobsSecurityCorpsman
+  cost: 1
+  exclusive: true
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutEyes
+  - !type:CharacterJobRequirement
+    jobs:
+    - Brigmedic
+  items:
+  - ClothingEyesGlassesMedical

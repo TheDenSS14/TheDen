@@ -1,0 +1,23 @@
+# SPDX-FileCopyrightText: 2025 January Nelson
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  id: BaseObviousCloak
+  abstract: true
+  components:
+  - type: WearerGetsExamineText
+    examineText: obvious-desc-colors
+    thing: obvious-thing-cloak
+    warnExamine: false # for funny jokes!
+
+- type: entity
+  parent: [ ClothingNeckBase, BaseObviousCloak ]
+  id: ClothingNeckCloakBear
+  name: druid cloak
+  description: This cloak has a wild-looking shape on it.
+  components:
+  - type: Sprite
+    sprite: Clothing/Neck/Cloaks/bear.rsi
+  - type: WearerGetsExamineText
+    thingType: obvious-type-pride-bear
