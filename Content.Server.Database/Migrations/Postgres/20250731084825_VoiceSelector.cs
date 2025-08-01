@@ -17,7 +17,7 @@ namespace Content.Server.Database.Migrations.Postgres
             migrationBuilder.AddColumn<bool>(
                 name: "voice",
                 table: "profile",
-                type: "boolean",
+                type: "text",
                 defaultValue: "",
                 nullable: false);
         }
