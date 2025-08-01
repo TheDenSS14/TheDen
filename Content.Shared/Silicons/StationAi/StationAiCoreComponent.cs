@@ -1,6 +1,6 @@
-// SPDX-FileCopyrightText: 2024 chromiumboy <50505512+chromiumboy@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 metalgearsloth
+// SPDX-FileCopyrightText: 2025 chromiumboy
+// SPDX-FileCopyrightText: 2025 sleepyyapril
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -46,3 +46,10 @@ public sealed partial class StationAiCoreComponent : Component
 
     public const string Container = "station_ai_mind_slot";
 }
+
+/// <summary>
+/// This event is raised on a station AI 'eye' that is being replaced with a new one 
+/// </summary>
+/// <param name="NewRemoteEntity">The entity UID of the replacement entity</param>
+[ByRefEvent]
+public record struct StationAiRemoteEntityReplacementEvent(EntityUid? NewRemoteEntity);

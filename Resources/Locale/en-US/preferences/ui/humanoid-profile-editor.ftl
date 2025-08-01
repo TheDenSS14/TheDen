@@ -38,6 +38,8 @@ humanoid-profile-editor-sex-label = Sex:
 humanoid-profile-editor-sex-male-text = Male
 humanoid-profile-editor-sex-female-text = Female
 humanoid-profile-editor-sex-unsexed-text = None
+# TheDen - Add Voice
+humanoid-profile-editor-voice-label = Preferred Voice:
 humanoid-profile-editor-age-label = Age:
 humanoid-profile-editor-skin-color-label = Skin color:
 humanoid-profile-editor-height-label = Height: {$height}cm ({$feet}'{$inches}")
@@ -115,7 +117,7 @@ humanoid-profile-editor-job-priority-never-button = Never
 humanoid-profile-editor-naming-rules-warning = Warning: Offensive or LRP IC names and descriptions will lead to admin intervention on this server. Read our \[Rules\] for more.
 
 humanoid-profile-editor-loadouts-tab = Loadout
-humanoid-profile-editor-loadouts-points-label = You have {$points}/{$max} points
+humanoid-profile-editor-loadouts-points-label = You have {$points}/{$max} points remaining.
 humanoid-profile-editor-loadouts-show-unusable-button = Show Unusable Loadouts
 humanoid-profile-editor-loadouts-show-unusable-button-tooltip =
     When enabled, loadouts that your current character setup cannot use will be highlighted in red.

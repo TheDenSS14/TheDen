@@ -51,6 +51,7 @@
 // SPDX-FileCopyrightText: 2024 WarMechanic
 // SPDX-FileCopyrightText: 2024 metalgearsloth
 // SPDX-FileCopyrightText: 2025 Blitz
+// SPDX-FileCopyrightText: 2025 Falcon
 // SPDX-FileCopyrightText: 2025 Lyndomen
 // SPDX-FileCopyrightText: 2025 Peptide90
 // SPDX-FileCopyrightText: 2025 Raikyr0
@@ -167,7 +168,6 @@ namespace Content.Client.Lobby.UI
         private Dictionary<Button, ConfirmationData> _confirmationData = new();
         private List<TraitPreferenceSelector> _traitPreferences = new();
         private int _traitCount;
-        private HashSet<LoadoutPreferenceSelector> _loadoutPreferences = new();
 
         private Direction _previewRotation = Direction.North;
         private ColorSelectorSliders _rgbSkinColorSelector;
@@ -262,6 +262,18 @@ namespace Content.Client.Lobby.UI
             };
 
             #endregion Sex
+
+            // Begin TheDen - Add Voice
+            #region Voice
+
+            VoiceButton.OnItemSelected += args =>
+            {
+                VoiceButton.SelectId(args.Id);
+                SetVoice((Sex) args.Id);
+            };
+
+            #endregion
+            // End TheDen
 
             #region Age
 
@@ -604,7 +616,6 @@ namespace Content.Client.Lobby.UI
             // Set up the loadouts tab
             LoadoutsTab.Orphan();
             CTabContainer.AddTab(LoadoutsTab, Loc.GetString("humanoid-profile-editor-loadouts-tab"));
-            _loadoutPreferences = new();
 
             // Show/Hide the loadouts tab if they ever get enabled/disabled
             var loadoutsEnabled = cfgManager.GetCVar(CCVars.GameLoadoutsEnabled);
@@ -612,9 +623,9 @@ namespace Content.Client.Lobby.UI
             ShowLoadouts.Visible = loadoutsEnabled;
             cfgManager.OnValueChanged(CCVars.GameLoadoutsEnabled, LoadoutsChanged);
 
-            LoadoutsTab.OnRemoveUnusableAction += RemoveUnusableLoadouts;
-            LoadoutsTab.OnLoadoutSelectedAction += SelectLoadout;
-            UpdateLoadouts();
+            LoadoutsTab.OnRemoveUnusableLoadouts += RemoveUnusableLoadouts;
+            LoadoutsTab.OnPreferenceChanged += SelectLoadout;
+            LoadoutsTab.OnOpenGuidebook += args => OnOpenGuidebook?.Invoke(args);
 
             #endregion
 
@@ -939,17 +950,17 @@ namespace Content.Client.Lobby.UI
 
             if (Profile == null || !_prototypeManager.HasIndex<SpeciesPrototype>(Profile.Species))
             {
-                LoadoutsTab.SetPreviewDummy(PreviewDummy);
+                LoadoutsTab.SetCharacterDummy(PreviewDummy);
                 return;
             }
 
             PreviewDummy = _controller.LoadProfileEntity(Profile, ShowClothes.Pressed, ShowLoadouts.Pressed);
             SpriteView.SetEntity(PreviewDummy);
+            LoadoutsTab.SetCharacterDummy(PreviewDummy);
             SkinFurToggle.Visible = _prototypeManager
                 .Index<SpeciesPrototype>(Profile.Species)
                 .SkinColoration == HumanoidSkinColor.HumanAnimal;
 
-            LoadoutsTab.SetPreviewDummy(PreviewDummy);
             _entManager.System<MetaDataSystem>().SetEntityName(PreviewDummy, Profile.Name);
         }
 
@@ -985,6 +996,7 @@ namespace Content.Client.Lobby.UI
 
             UpdateNameEdit();
             UpdateSexControls();
+            UpdateVoiceControls(); // TheDen - Add Voice
             UpdateGenderControls();
             UpdateDisplayPronounsControls();
             UpdateStationAiControls();
@@ -1002,8 +1014,6 @@ namespace Content.Client.Lobby.UI
             UpdateCMarkingsFacialHair();
             UpdateHeightWidthSliders();
             UpdateWeight();
-            LoadoutsTab.SetProfile(Profile);
-            UpdateCharacterRequired();
 
             // Begin CD - Character Records
             Records.Update(profile);
@@ -1017,6 +1027,11 @@ namespace Content.Client.Lobby.UI
             RefreshLifepaths();
             RefreshFlavorText();
             ReloadPreview();
+
+            // DEN: I'm moving this down here because Loadouts rely on the species (and character dummy) to be
+            // up-to-date before it reloads its loadout requirements, and moving loadout updates out of
+            // UpdateCharacterRequired is undesirable.
+            UpdateCharacterRequired();
 
             if (Profile != null)
                 PreferenceUnavailableButton.SelectId((int) Profile.PreferenceUnavailable);
@@ -1545,23 +1560,34 @@ namespace Content.Client.Lobby.UI
         private void SetSex(Sex newSex)
         {
             Profile = Profile?.WithSex(newSex);
-            // for convenience, default to most common gender when new sex is selected
+            // for convenience, default to most common gender and voice when new sex is selected
             switch (newSex)
             {
                 case Sex.Male:
                     Profile = Profile?.WithGender(Gender.Male);
+                    Profile = Profile?.WithVoice(Sex.Male); // TheDen - Add Voice
                     break;
                 case Sex.Female:
                     Profile = Profile?.WithGender(Gender.Female);
+                    Profile = Profile?.WithVoice(Sex.Female); // TheDen - Add Voice
                     break;
                 default:
                     Profile = Profile?.WithGender(Gender.Epicene);
+                    Profile = Profile?.WithVoice(Sex.Unsexed); // TheDen - Add Voice
                     break;
             }
             UpdateGenderControls();
             Markings.SetSex(newSex);
             ReloadProfilePreview();
             SetDirty();
+        }
+
+        // TheDen - Add Voice
+        private void SetVoice(Sex newVoice)
+        {
+            Profile = Profile?.WithVoice(newVoice);
+            ReloadPreview();
+            IsDirty = true;
         }
 
         private void SetGender(Gender newGender)
@@ -1760,6 +1786,26 @@ namespace Content.Client.Lobby.UI
                 SexButton.SelectId((int) sexes[0]);
         }
 
+        // TheDen - Add Voice
+        private void UpdateVoiceControls()
+        {
+            if (Profile == null)
+                return;
+
+            if (Profile == null)
+                return;
+
+            VoiceButton.Clear();
+
+            var sexes = new List<Sex>([Sex.Male, Sex.Female, Sex.Unsexed]);
+
+            // Add button for each voice
+            foreach (var sex in sexes)
+                VoiceButton.AddItem(Loc.GetString($"humanoid-profile-editor-sex-{sex.ToString().ToLower()}-text"), (int) sex);
+
+            VoiceButton.SelectId((int) Profile.PreferredVoice);
+        }
+
         private void UpdateSkinColor()
         {
             if (Profile == null)
@@ -1879,6 +1925,7 @@ namespace Content.Client.Lobby.UI
                 return;
 
             PronounsButton.SelectId((int) Profile.Gender);
+            VoiceButton.SelectId((int) Profile.PreferredVoice); // TheDen - Add Voice
         }
 
         private void UpdateDisplayPronounsControls()
@@ -2316,7 +2363,6 @@ namespace Content.Client.Lobby.UI
             {
                 foreach (var tab in TraitsTabs.Tabs)
                     TraitsTabs.RemoveTab(tab);
-                _loadoutPreferences.Clear();
             }
 
 
@@ -2515,7 +2561,7 @@ namespace Content.Client.Lobby.UI
                 var temp = TraitPointsBar.Value + points;
                 return preference ? !(temp < 0) : temp < 0;
             }
-            
+
             bool CheckSlots(int slots, bool preference)
             {
                 var temp = _traitCount + slots;
@@ -2591,36 +2637,29 @@ namespace Content.Client.Lobby.UI
 
         public void UpdateLoadouts(bool reload = false)
         {
+            if (reload)
+                LoadoutsTab.Reset();
+
             LoadoutsTab.SetProfile(Profile);
-            LoadoutsTab.UpdateLoadouts(reload);
             ReloadProfilePreview();
         }
 
-        private void SelectLoadout(LoadoutPreference preference, bool selected)
+        private void SelectLoadout(LoadoutPreference preference)
         {
-            // TODO: figure out why WithLoadoutPreference doesn't just use LoadoutPreference
-            Profile = Profile?.WithLoadoutPreference(
-                preference.LoadoutName,
-                selected,
-                preference.CustomName,
-                preference.CustomDescription,
-                preference.CustomColorTint,
-                preference.CustomHeirloom);
-
+            Profile = Profile?.WithLoadoutPreference(preference);
             IsDirty = true;
             SetProfile(Profile, CharacterSlot);
         }
 
-        private void RemoveUnusableLoadouts(HashSet<LoadoutPrototype> loadouts)
+        private void RemoveUnusableLoadouts(List<LoadoutPrototype> loadouts)
         {
             foreach (var loadout in loadouts)
                 Profile = Profile?.WithLoadoutPreference(loadout.ID, false);
 
-            UpdateLoadouts();
             UpdateCharacterRequired();
         }
 
-        // TODO: This one is redundant IRT loadouts because of LoadoutsPanel.xaml, but traits still use them
+        // TODO: This one is redundant IRT loadouts, but traits still use them
         private BoxContainer? FindCategory(string id, NeoTabContainer parent)
         {
             BoxContainer? match = null;

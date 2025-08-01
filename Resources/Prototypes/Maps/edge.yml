@@ -12,6 +12,8 @@
 # SPDX-FileCopyrightText: 2025 John Willis
 # SPDX-FileCopyrightText: 2025 Rosycup
 # SPDX-FileCopyrightText: 2025 VMSolidus
+# SPDX-FileCopyrightText: 2025 Vanessa
+# SPDX-FileCopyrightText: 2025 Vanessa Louwagie
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 # SPDX-FileCopyrightText: 2025 therealDLondon
 #
@@ -22,7 +24,7 @@
   mapName: 'Edge'
   mapPath: /Maps/TheDen/edge.yml
   minPlayers: 5
-  maxPlayers: 80
+  maxPlayers: 100 # The Den: we hit 80 and had no maps lmao
   stations:
     Edge:
       stationProto: StandardNanotrasenStation
@@ -64,12 +66,12 @@
             SeniorEngineer: [ 1, 2 ]
           #medical
             ChiefMedicalOfficer: [ 1, 1 ]
-            Chemist: [ 1, 1 ]
-            Paramedic: [ 1, 2 ]
+            Chemist: [ 2, 2 ]
+            Paramedic: [ 2, 2 ]
             Psychologist: [ 1, 1 ]
             MedicalDoctor: [ 3, 4 ]
             MedicalIntern: [ 2, 4 ]
-            SeniorPhysician: [ 1, 1 ]
+            SeniorPhysician: [ 1, 2 ]
           #science
             ResearchDirector: [ 1, 1 ]
             Chaplain: [ 1, 1 ]

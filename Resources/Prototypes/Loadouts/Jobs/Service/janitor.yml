@@ -17,6 +17,19 @@
 # Eyes
 
 # Gloves
+- type: loadout
+  id: LoadoutClothingHandsJanitorRubber
+  category: JobsServiceJanitor
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutJanitorGloves
+    - !type:CharacterJobRequirement
+      jobs:
+        - Janitor
+  items:
+    - ClothingHandsGlovesJanitor
 
 # Head
 
@@ -31,6 +44,7 @@
   id: LoadoutServiceWinterCoatJanitor
   category: JobsServiceJanitor
   cost: 0
+  exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutJanitorOuter
@@ -45,6 +59,7 @@
   id: LoadoutClothingShoesGaloshes
   category: JobsServiceJanitor
   cost: 0
+  exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutJanitorShoes
@@ -58,6 +73,7 @@
   id: LoadoutClothingShoesPurpleGaloshes
   category: JobsServiceJanitor
   cost: 0
+  exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutJanitorOuter

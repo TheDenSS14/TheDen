@@ -14,3 +14,16 @@
       - NanotrasenRepresentative
   items:
     - TowelColorCentcom
+
+- type: loadout
+  id: LoadoutClothingBackpackMessengerCentcomm
+  category: JobsCommandNanorep
+  cost: 0
+  exclusive: true
+  canBeHeirloom: true
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+      - NanotrasenRepresentative
+  items:
+    - ClothingBackpackMessengerCentcomm

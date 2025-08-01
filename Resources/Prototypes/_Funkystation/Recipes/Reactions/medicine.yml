@@ -39,14 +39,16 @@
   reactants:
     Phenol:
       amount: 1
-    Dermaline:
-      amount: 1
-    SulfuricAcid:
+    Sodium:
       amount: 1
     Carbon:
       amount: 1
+    Oxygen:
+      amount: 1
+    SulfuricAcid:
+      amount: 1
   products:
-    SalicylicAcid: 4
+    SalicylicAcid: 5
 
 # airloss
 - type: reaction

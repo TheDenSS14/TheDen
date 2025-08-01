@@ -104,6 +104,7 @@
   id: LoadoutMedicalDoctorJumpsuit
   category: JobsMedicalMedicalDoctor
   cost: 0
+  exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutMedicalDoctorUniforms
@@ -117,6 +118,7 @@
   id: LoadoutMedicalDoctorJumpskirt
   category: JobsMedicalMedicalDoctor
   cost: 0
+  exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutMedicalDoctorUniforms
@@ -130,6 +132,7 @@
   id: LoadoutMedicalDoctorJumpsuitViro
   category: JobsMedicalMedicalDoctor
   cost: 0
+  exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutMedicalDoctorUniforms
@@ -143,6 +146,7 @@
   id: LoadoutMedicalDoctorJumpskirtViro
   category: JobsMedicalMedicalDoctor
   cost: 0
+  exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutMedicalDoctorUniforms
@@ -156,6 +160,7 @@
   id: LoadoutMedicalDoctorJumpsuitGen
   category: JobsMedicalMedicalDoctor
   cost: 0
+  exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutMedicalDoctorUniforms
@@ -169,6 +174,7 @@
   id: LoadoutMedicalDoctorJumpskirtGen
   category: JobsMedicalMedicalDoctor
   cost: 0
+  exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutMedicalDoctorUniforms

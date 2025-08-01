@@ -49,11 +49,11 @@ marking-LizardHornsBighorn-horns_bighorn_r = Right horn
 
 # TAILS
 marking-SnakeLargeTail = Lizard, large snake tail
-marking-SnakeLargeTail-tail_snake_large = Inner
-marking-SnakeLargeTail-tail_snake_large_overlay = Outer
+marking-SnakeLargeTail-snake_large = Inner
+marking-SnakeLargeTail-snake_large_overlay = Outer
 marking-SnakeLargeTailAnimated = Lizard, large snake tail
-marking-SnakeLargeTail-tail_snake_large_wagging = Inner
-marking-SnakeLargeTail-tail_snake_large_wagging_overlay = Outer
+marking-SnakeLargeTailAnimated-snake_large_wagging = Inner
+marking-SnakeLargeTailAnimated-snake_large_wagging_overlay = Outer
 
 # SPINES
 marking-LizardChestSpinesAquatic = Lizard, chest, spines (Aquatic)
@@ -74,7 +74,7 @@ marking-LizardChestSpinesLongMembraneWithoutTail-spines_longmembrane_alt = spine
 marking-LizardChestSpinesShort = Lizard, chest, spines (Short)
 marking-LizardChestSpinesShort-spines_short = Spikes
 marking-LizardChestSpinesShortWithoutTail = Lizard, chest, spines (Short, without tail)
-marking-LizardChestSpinesShortWithoutTail-spines_short = Spikes
+marking-LizardChestSpinesShortWithoutTail-spines_short_alt = Spikes
 
 marking-LizardChestSpinesShortMembrane = Lizard, chest, spines (Short, Membrane)
 marking-LizardChestSpinesShortMembrane-spines_shortmembrane = Spikes

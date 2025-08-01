@@ -13,7 +13,7 @@ marking-ScarsVoxRoadrashRightHead = Road Rash (Right)
 marking-ScarsVoxBigslashLeftHead-bigslash_l_head = Big Slash (Left)
 marking-ScarsVoxBigslashLeftHead = Big Slash (Left)
 
-marking-ScarsVoxBigslashRightHead-roadrash_r_head = Big Slash (Right)
+marking-ScarsVoxBigslashRightHead-bigslash_r_head = Big Slash (Right)
 marking-ScarsVoxBigslashRightHead = Big Slash (Right)
 
 marking-ScarsVoxSlashLeftHead-slash_l_head = Slash (Left)

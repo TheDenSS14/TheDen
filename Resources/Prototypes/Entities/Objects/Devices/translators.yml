@@ -1,13 +1,13 @@
-# SPDX-FileCopyrightText: 2024 FoxxoTrystan <45297731+FoxxoTrystan@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 FoxxoTrystan <trystan.garnierhein@gmail.com>
-# SPDX-FileCopyrightText: 2024 Mnemotechnican <69920617+Mnemotechnician@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 VMSolidus <evilexecutive@gmail.com>
-# SPDX-FileCopyrightText: 2024 fox <daytimer253@gmail.com>
-# SPDX-FileCopyrightText: 2024 sleepyyapril <flyingkarii@gmail.com>
-# SPDX-FileCopyrightText: 2025 Blitz <73762869+BlitzTheSquishy@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 SX-7 <92227810+SX-7@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 Timfa <timfalken@hotmail.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 FoxxoTrystan
+# SPDX-FileCopyrightText: 2024 Mnemotechnican
+# SPDX-FileCopyrightText: 2024 VMSolidus
+# SPDX-FileCopyrightText: 2024 fox
+# SPDX-FileCopyrightText: 2025 Blitz
+# SPDX-FileCopyrightText: 2025 Carlen White
+# SPDX-FileCopyrightText: 2025 SX-7
+# SPDX-FileCopyrightText: 2025 Tanix
+# SPDX-FileCopyrightText: 2025 Timfa
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -51,7 +51,8 @@
   components:
   - type: ItemToggle
   - type: PowerCellDraw
-    drawRate: 1
+    drawRate: 1.2
+  - type: ToggleCellDraw
   - type: ItemSlots
     slots:
       cell_slot:
@@ -387,3 +388,20 @@
     requires:
     - TauCetiBasic
     - Caprine
+
+- type: entity
+  id: VoxPidginTranslator
+  parent: [ TranslatorPoweredBase ]
+  name: Vox-Pidgin translator
+  description: Translates speech between Vox-Pidgin and Galactic Common. Helps process those loud screeches into real, legible words.
+  components:
+  - type: HandheldTranslator
+    spoken:
+    - TauCetiBasic
+    - VoxPidgin
+    understood:
+    - TauCetiBasic
+    - VoxPidgin
+    requires:
+    - TauCetiBasic
+    - VoxPidgin

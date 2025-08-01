@@ -1,10 +1,13 @@
-# SPDX-FileCopyrightText: 2024 VMSolidus <evilexecutive@gmail.com>
-# SPDX-FileCopyrightText: 2025 BlitzTheSquishy <73762869+BlitzTheSquishy@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 Lonofera <108367450+LonoferaRS@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 MajorMoth <61519600+MajorMoth@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 Rosycup <178287475+Rosycup@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 mart <martgitomen@gmail.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 VMSolidus
+# SPDX-FileCopyrightText: 2025 Blitz
+# SPDX-FileCopyrightText: 2025 BlitzTheSquishy
+# SPDX-FileCopyrightText: 2025 Lonofera
+# SPDX-FileCopyrightText: 2025 M3739
+# SPDX-FileCopyrightText: 2025 MajorMoth
+# SPDX-FileCopyrightText: 2025 Rosycup
+# SPDX-FileCopyrightText: 2025 Tabitha
+# SPDX-FileCopyrightText: 2025 mart
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -19,6 +22,8 @@
       id: LoadoutBackpackSatchelEngineering
     - type: loadout
       id: LoadoutBackpackDuffelEngineering
+    - type: loadout
+      id: LoadoutBackpackMessengerEngineering
 
 #- type: characterItemGroup
 #  id: LoadoutEngineeringBelt
@@ -34,7 +39,6 @@
 #  id: LoadoutEngineeringEquipment
 #  maxItems: 1
 #  items:
-#
 
 - type: characterItemGroup
   id: LoadoutEngineeringEyes
@@ -52,6 +56,8 @@
       id: LoadoutEngineeringGlovesCombat
     - type: loadout
       id: LoadoutEngineeringGlovesMerc
+    - type: loadout
+      id: LoadoutClothingHandsEngiWarmers
 
 - type: characterItemGroup
   id: LoadoutEngineeringHead
@@ -73,17 +79,21 @@
 #  id: LoadoutEngineeringId
 #  maxItems: 1
 #  items:
-#
-#- type: characterItemGroup
-#  id: LoadoutEngineeringNeck
-#  maxItems: 1
-#  items:
-#
+
+- type: characterItemGroup
+  id: LoadoutEngineeringNeck
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutEngineeringNeckNeckerchief # Floof - M3739 - #988
+    - type: loadout
+      id: LoadoutEngineeringNeckCollar
+
 #- type: characterItemGroup
 #  id: LoadoutEngineeringMask
 #  maxItems: 1
 #  items:
-#
+
 - type: characterItemGroup
   id: LoadoutEngineeringOuter
   items:
@@ -100,6 +110,8 @@
       id: LoadoutEngineeringShoesBootsWork
     - type: loadout
       id: LoadoutEngineeringShoesBootsWinter
+    - type: loadout
+      id: LoadoutClothingUnderSocksEngi
 
 - type: characterItemGroup
   id: LoadoutEngineeringUniforms
@@ -114,3 +126,5 @@
       id: LoadoutClothingUniformJumpsuitRepairmanNT
     - type: loadout
       id: LoadoutClothingUniformJumpsuitRepairmanCybersun
+    - type: loadout
+      id: LoadoutClothingUniformEngiThong

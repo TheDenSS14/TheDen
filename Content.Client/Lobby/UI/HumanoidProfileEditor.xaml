@@ -110,6 +110,12 @@ SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
                                 <Control HorizontalExpand="True"/>
                                 <OptionButton Name="SexButton" HorizontalAlignment="Right" />
                             </BoxContainer>
+                            <!-- Voice // TheDen - Add Voice -->
+                            <BoxContainer HorizontalExpand="True">
+                                <Label Text="{Loc 'humanoid-profile-editor-voice-label'}" />
+                                <Control HorizontalExpand="True" />
+                                <OptionButton Name="VoiceButton" HorizontalAlignment="Right" />
+                            </BoxContainer>
                             <!-- Pronouns -->
                             <BoxContainer HorizontalExpand="True">
                                 <Label Text="{Loc 'humanoid-profile-editor-pronouns-label'}" />
@@ -272,7 +278,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
                 <ui:NeoTabContainer Name="TraitsTabs" VerticalExpand="True" SeparatorMargin="0" />
             </BoxContainer>
-            <denLoadouts:LoadoutsPanel Name="LoadoutsTab" />
+            <denLoadouts:LoadoutsTab Name="LoadoutsTab" HorizontalExpand="True" VerticalExpand="True" />
             <BoxContainer Name="MarkingsTab" HorizontalExpand="True" Orientation="Vertical" Margin="10">
                 <ScrollContainer HorizontalExpand="True" HScrollEnabled="True" VerticalExpand="True" VScrollEnabled="True">
                     <!-- Markings -->
@@ -283,7 +289,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
     </BoxContainer>
     <!-- Right side -->
     <BoxContainer Orientation="Vertical" VerticalExpand="True" VerticalAlignment="Center">
-        <SpriteView Name="SpriteView" Scale="8 8" SizeFlagsStretchRatio="1" />
+        <SpriteView Name="SpriteView" Scale="8 8" SizeFlagsStretchRatio="1" MaxWidth="360" />
         <BoxContainer Orientation="Horizontal" HorizontalAlignment="Center" Margin="0 5">
             <Button Name="SpriteRotateLeft" Text="◀" StyleClasses="OpenRight" />
             <cc:VSeparator Margin="2 0 3 0" />

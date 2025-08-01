@@ -1,3 +1,4 @@
+# SPDX-FileCopyrightText: 2025 Adrian16199
 # SPDX-FileCopyrightText: 2025 Blitz
 # SPDX-FileCopyrightText: 2025 BlitzTheSquishy
 # SPDX-FileCopyrightText: 2025 Falcon
@@ -309,6 +310,15 @@
     state: protogen_snout_bolt_1
   - sprite: _DV/Mobs/Customization/SynthLizIPC/snout_markings.rsi
     state: protogen_snout_bolt_2
+
+- type: marking
+  id: IPCHeadMuzzle
+  bodyPart: Snout
+  markingCategory: Snout
+  speciesRestriction: [IPC]
+  sprites:
+  - sprite: _EE/Mobs/Customization/Tajaran/head.rsi
+    state: muzzle
 
 # Tails
 - type: marking

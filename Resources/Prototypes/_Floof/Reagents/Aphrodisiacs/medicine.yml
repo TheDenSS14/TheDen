@@ -1,9 +1,11 @@
-# SPDX-FileCopyrightText: 2024 FoxxoTrystan <trystan.garnierhein@gmail.com>
-# SPDX-FileCopyrightText: 2024 ShatteredSwords <135023515+ShatteredSwords@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 SleepyScarecrow <sharedjunkemail69@gmail.com>
-# SPDX-FileCopyrightText: 2025 Rosycup <178287475+Rosycup@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 SleepyScarecrow <136123749+SleepyScarecrow@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 FoxxoTrystan
+# SPDX-FileCopyrightText: 2024 ShatteredSwords
+# SPDX-FileCopyrightText: 2025 MajorMoth
+# SPDX-FileCopyrightText: 2025 Rosycup
+# SPDX-FileCopyrightText: 2025 SleepyScarecrow
+# SPDX-FileCopyrightText: 2025 Vanessa
+# SPDX-FileCopyrightText: 2025 Vanessa Louwagie
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -17,7 +19,7 @@
   color: "#45072f"
   metabolisms:
     Medicine:
-      metabolismRate : 0.1
+      metabolismRate : 0.01
       effects:
       - !type:PopupMessage
         type: Local
@@ -59,6 +61,7 @@
         conditions:
           - !type:ReagentThreshold
             max: 0.1
+  noRandom: true # The Den
 
 - type: reagent
   id: Philterex
@@ -70,7 +73,7 @@
   color: "#ae0072"
   metabolisms:
     Medicine:
-      metabolismRate : 0.1
+      metabolismRate : 0.01
       effects:
       - !type:PopupMessage
         type: Local
@@ -137,3 +140,4 @@
         conditions:
           - !type:ReagentThreshold
             max: 0.1
+  noRandom: true # The Den

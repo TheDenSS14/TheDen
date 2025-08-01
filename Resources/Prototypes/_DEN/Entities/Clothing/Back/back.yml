@@ -1,0 +1,30 @@
+# SPDX-FileCopyrightText: 2025 Tabitha
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  parent: ClothingBackpackSatchel
+  id: ClothingBackpackSatchelParamed
+  name: paramedic satchel
+  description: A sterile satchel used by emergency responders.
+  components:
+  - type: Sprite
+    sprite: _DEN/Clothing/Back/para-satchel.rsi
+
+- type: entity
+  parent: ClothingBackpackDuffel
+  id: ClothingBackpackDuffelParamed
+  name: paramedic duffel bag
+  description: A large duffel bag for holding extra lifesaving equipment.
+  components:
+    - type: Sprite
+      sprite: _DEN/Clothing/Back/para-duffel.rsi
+
+- type: entity
+  parent: ClothingBackpack
+  id: ClothingBackpackParamedic
+  name: paramedic backpack
+  description: It's a backpack especially designed for use in any rescue.
+  components:
+  - type: Sprite
+    sprite: _DEN/Clothing/Back/para-backpack.rsi

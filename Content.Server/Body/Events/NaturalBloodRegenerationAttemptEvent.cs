@@ -1,5 +1,5 @@
-// SPDX-FileCopyrightText: 2024 Mnemotechnican <69920617+Mnemotechnician@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Mnemotechnican
+// SPDX-FileCopyrightText: 2025 sleepyyapril
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -17,4 +17,9 @@ public sealed class NaturalBloodRegenerationAttemptEvent : CancellableEntityEven
     ///     How much blood the mob will regenerate on this tick. Can be negative.
     /// </summary>
     public FixedPoint2 Amount;
+
+    /// <summary>
+    ///     Whether or not blood should pool below the person.
+    /// </summary>
+    public bool AllowBloodPooling;
 }
