@@ -90,12 +90,39 @@ public abstract partial class SharedGunSystem
             !Timing.IsFirstTimePredicted ||
             args.Target == null ||
             args.Used == args.Target ||
-            Deleted(args.Target) ||
-            !TryComp<BallisticAmmoProviderComponent>(args.Target, out var targetComponent) ||
-            targetComponent.Whitelist == null)
+            Deleted(args.Target))
         {
             return;
         }
+
+        // Try to get the target BallisticAmmoProviderComponent or ChamberBallisticAmmoProviderComponent
+        BallisticAmmoProviderComponent? targetComponent = null;
+
+        if (TryComp<BallisticAmmoProviderComponent>(args.Target, out var ballisticTarget))
+        {
+            targetComponent = ballisticTarget;
+        }
+        else if (TryComp<ChamberBallisticAmmoProviderComponent>(args.Target, out var chamberBallisticTarget))
+        {
+            // If the bolt is closed and reloading is not allowed when bolted, show popup and return
+            if (chamberBallisticTarget.BoltClosed == true && !chamberBallisticTarget.ReloadWhenBolted)
+            {
+            Popup(Loc.GetString("gun-chamber-ballistic-transfer-target-bolt-closed",
+                ("entity", args.Target)),
+                args.Target,
+                args.User);
+            return;
+            }
+
+            targetComponent = chamberBallisticTarget;
+        }
+
+        // If no valid target component was found, return
+        if (targetComponent == null)
+            return;
+
+        if (targetComponent.Whitelist == null)
+            return;
 
         args.Handled = true;
 
@@ -110,9 +137,26 @@ public abstract partial class SharedGunSystem
 
     private void OnBallisticAmmoFillDoAfter(EntityUid uid, BallisticAmmoProviderComponent component, AmmoFillDoAfterEvent args)
     {
-        if (Deleted(args.Target) ||
-            !TryComp<BallisticAmmoProviderComponent>(args.Target, out var target) ||
-            target.Whitelist == null)
+        if (Deleted(args.Target))
+            return;
+
+        // Try to get the target BallisticAmmoProviderComponent or ChamberBallisticAmmoProviderComponent
+        // Assinging target prior is necessary or else this code would have to be duplicated in its entirety
+        BallisticAmmoProviderComponent? target = null;
+        if (TryComp<BallisticAmmoProviderComponent>(args.Target, out var ballisticTarget))
+        {
+            target = ballisticTarget;
+        }
+        else if (TryComp<ChamberBallisticAmmoProviderComponent>(args.Target, out var chamberBallisticTarget))
+        {
+            target = chamberBallisticTarget;
+        }
+        else
+        {
+            return;
+        }
+
+        if (target.Whitelist == null)
             return;
 
         if (target.Entities.Count + target.UnspawnedCount == target.Capacity)

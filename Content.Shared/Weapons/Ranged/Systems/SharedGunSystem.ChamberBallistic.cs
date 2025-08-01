@@ -15,7 +15,6 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using Content.Shared.Containers.ItemSlots;
-using Content.Shared.DoAfter;
 using Content.Shared.Examine;
 using Content.Shared.Interaction;
 using Content.Shared.Interaction.Events;
@@ -31,8 +30,8 @@ public abstract partial class SharedGunSystem
 {
     protected virtual void InitializeChamberBallistic()
     {
-        SubscribeLocalEvent<ChamberBallisticAmmoProviderComponent, ComponentInit>(OnBallisticInit);
-        SubscribeLocalEvent<ChamberBallisticAmmoProviderComponent, MapInitEvent>(OnBallisticMapInit);
+        SubscribeLocalEvent<ChamberBallisticAmmoProviderComponent, ComponentInit>(OnChamberBallisticInit);
+        SubscribeLocalEvent<ChamberBallisticAmmoProviderComponent, MapInitEvent>(OnChamberBallisticMapInit);
         SubscribeLocalEvent<ChamberBallisticAmmoProviderComponent, ComponentStartup>(OnChamberStartup);
         SubscribeLocalEvent<ChamberBallisticAmmoProviderComponent, TakeAmmoEvent>(OnChamberBallisticTakeAmmo);
         SubscribeLocalEvent<ChamberBallisticAmmoProviderComponent, GetAmmoCountEvent>(OnChamberAmmoCount);
@@ -51,11 +50,9 @@ public abstract partial class SharedGunSystem
         SubscribeLocalEvent<ChamberBallisticAmmoProviderComponent, ExaminedEvent>(OnChamberBallisticExamine);
 
         SubscribeLocalEvent<ChamberBallisticAmmoProviderComponent, InteractUsingEvent>(OnBallisticInteractUsing);
-        SubscribeLocalEvent<ChamberBallisticAmmoProviderComponent, AfterInteractEvent>(OnBallisticAfterInteract);
-        SubscribeLocalEvent<ChamberBallisticAmmoProviderComponent, AmmoFillDoAfterEvent>(OnBallisticAmmoFillDoAfter);
     }
 
-    private void OnBallisticInit(EntityUid uid, ChamberBallisticAmmoProviderComponent component, ComponentInit args)
+    private void OnChamberBallisticInit(EntityUid uid, ChamberBallisticAmmoProviderComponent component, ComponentInit args)
     {
         component.Container = Containers.EnsureContainer<Container>(uid, "ballistic-ammo");
         // TODO: This is called twice though we need to support loading appearance data (and we need to call it on MapInit
@@ -63,7 +60,7 @@ public abstract partial class SharedGunSystem
         UpdateBallisticAppearance(uid, component);
     }
 
-    private void OnBallisticMapInit(EntityUid uid, ChamberBallisticAmmoProviderComponent component, MapInitEvent args)
+    private void OnChamberBallisticMapInit(EntityUid uid, ChamberBallisticAmmoProviderComponent component, MapInitEvent args)
     {
         // TODO this should be part of the prototype, not set on map init.
         // Alternatively, just track spawned count, instead of unspawned count.
