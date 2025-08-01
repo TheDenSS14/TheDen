@@ -6,6 +6,8 @@
 // SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT
 // SPDX-FileCopyrightText: 2024 Mnemotechnican
 // SPDX-FileCopyrightText: 2025 Cam
+// SPDX-FileCopyrightText: 2025 Cami
+// SPDX-FileCopyrightText: 2025 Falcon
 // SPDX-FileCopyrightText: 2025 Tabitha
 // SPDX-FileCopyrightText: 2025 VMSolidus
 // SPDX-FileCopyrightText: 2025 sleepyyapril
@@ -51,7 +53,7 @@ public sealed class VocalSystem : EntitySystem
 
         SubscribeLocalEvent<VocalComponent, MapInitEvent>(OnMapInit);
         SubscribeLocalEvent<VocalComponent, ComponentShutdown>(OnShutdown);
-        SubscribeLocalEvent<VocalComponent, SexChangedEvent>(OnSexChanged);
+        SubscribeLocalEvent<VocalComponent, VoiceChangedEvent>(OnVoiceChanged); // TheDen - Add Voice
         SubscribeLocalEvent<VocalComponent, EmoteEvent>(OnEmote);
         SubscribeLocalEvent<VocalComponent, ScreamActionEvent>(OnScreamAction);
     }
@@ -73,9 +75,10 @@ public sealed class VocalSystem : EntitySystem
         }
     }
 
-    private void OnSexChanged(EntityUid uid, VocalComponent component, SexChangedEvent args)
+    // TheDen - Add Voice
+    private void OnVoiceChanged(EntityUid uid, VocalComponent component, VoiceChangedEvent args)
     {
-        LoadSounds(uid, component, args.NewSex);
+        LoadSounds(uid, component, args.NewVoice);
     }
 
     private void OnEmote(EntityUid uid, VocalComponent component, ref EmoteEvent args)
@@ -86,7 +89,7 @@ public sealed class VocalSystem : EntitySystem
             || TryComp<ReplacementAccentComponent>(uid, out var replacement) && replacement.Accent == MuzzleAccent)
             return;
 
-        var sounds = component.EmoteSounds?.Sounds;
+        Dictionary<string, SoundSpecifier> sounds = component.EmoteSounds?.Sounds != null ? new(component.EmoteSounds.Sounds) : new(); // TheDen - Add Voice
 
         if (TryComp<AdditionalVocalSoundsComponent>(uid, out var additionalVocalSounds))
             sounds = _additionalVocalSounds.GetVocalSounds((uid, additionalVocalSounds), component.EmoteSounds);
@@ -94,7 +97,7 @@ public sealed class VocalSystem : EntitySystem
         // snowflake case for wilhelm scream easter egg
         if (args.Emote.ID == component.ScreamId)
         {
-            args.Handled = TryPlayScreamSound(uid, component);
+            args.Handled = TryPlayScreamSound(uid, component, sounds); // TheDen - Add Voice
             return;
         }
 
@@ -114,7 +117,7 @@ public sealed class VocalSystem : EntitySystem
         args.Handled = true;
     }
 
-    private bool TryPlayScreamSound(EntityUid uid, VocalComponent component)
+    private bool TryPlayScreamSound(EntityUid uid, VocalComponent component, Dictionary<string, SoundSpecifier> sounds) // TheDen - Add Voice
     {
         if (_random.Prob(component.WilhelmProbability))
         {
@@ -122,17 +125,18 @@ public sealed class VocalSystem : EntitySystem
             return true;
         }
 
-        return _chat.TryPlayEmoteSound(uid, component.EmoteSounds, component.ScreamId);
+        return _chat.TryPlayEmoteSound(uid, sounds, component.ScreamId); // TheDen - Add Voice
     }
 
-    private void LoadSounds(EntityUid uid, VocalComponent component, Sex? sex = null)
+    // TheDen - Add Voice
+    private void LoadSounds(EntityUid uid, VocalComponent component, Sex? voice = null)
     {
         if (component.Sounds == null)
             return;
 
-        sex ??= CompOrNull<HumanoidAppearanceComponent>(uid)?.Sex ?? Sex.Unsexed;
+        voice ??= CompOrNull<HumanoidAppearanceComponent>(uid)?.PreferredVoice ?? Sex.Unsexed;
 
-        if (!component.Sounds.TryGetValue(sex.Value, out var protoId))
+        if (!component.Sounds.TryGetValue(voice.Value, out var protoId))
             return;
         _proto.TryIndex(protoId, out component.EmoteSounds);
     }
