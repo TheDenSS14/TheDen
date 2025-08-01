@@ -121,6 +121,7 @@ public abstract partial class SharedGunSystem : EntitySystem
         SubscribeLocalEvent<GunComponent, MeleeHitEvent>(OnGunMelee);
 
         // Ammo providers
+        InitializeChamberBallistic();
         InitializeBallistic();
         InitializeBattery();
         InitializeCartridge();
