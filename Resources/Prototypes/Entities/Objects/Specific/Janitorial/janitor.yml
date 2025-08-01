@@ -416,6 +416,7 @@
     - type: AddAccentClothing
       accent: ReplacementAccent
       replacement: mumble
+      toggleable: false # DEN - No alt verb for toggling accent
     - type: Butcherable
       butcheringType: Knife
       spawned:

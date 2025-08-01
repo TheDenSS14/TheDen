@@ -39,4 +39,10 @@ public sealed partial class AddAccentClothingComponent : Component
     ///     Who is currently wearing the item?
     /// </summary>
     public EntityUid Wearer; // Frontier
+
+    /// <summary>
+    ///     DEN: Can you toggle the accent on/off with an alt verb? Default is true.
+    /// </summary>
+    [DataField]
+    public bool Toggleable = true;
 }

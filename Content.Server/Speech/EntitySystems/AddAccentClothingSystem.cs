@@ -70,7 +70,9 @@ public sealed class AddAccentClothingSystem : EntitySystem
     /// </summary>
     private void OnGetAltVerbs(EntityUid uid, AddAccentClothingComponent component, GetVerbsEvent<AlternativeVerb> args)
     {
-        if (!args.CanInteract || args.User != component.Wearer) //only the wearer can toggle the effect
+        if (!args.CanInteract
+            || !component.Toggleable // DEN - Allow some accent clothing to not be toggleable
+            || args.User != component.Wearer) //only the wearer can toggle the effect
             return;
 
         AlternativeVerb verb = new()
@@ -100,7 +102,7 @@ public sealed class AddAccentClothingSystem : EntitySystem
                 return;
 
             // add accent to the user
-            var accentComponent = (Component)_componentFactory.GetComponent(componentType);
+            var accentComponent = (Component) _componentFactory.GetComponent(componentType);
             AddComp(component.Wearer, accentComponent);
 
             // snowflake case for replacement accent

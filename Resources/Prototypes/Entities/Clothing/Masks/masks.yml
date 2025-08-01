@@ -385,6 +385,7 @@
   - type: AddAccentClothing
     accent: ReplacementAccent
     replacement: mumble
+    toggleable: false # DEN - No alt verb for toggling accent
   - type: Tag
     tags:
     - IPCMaskWearable
@@ -424,6 +425,7 @@
   - type: Unremoveable
   - type: AddAccentClothing
     accent: StutteringAccent
+    toggleable: false # DEN - No alt verb for toggling accent
 
 - type: entity
   parent: ClothingMaskGasExplorer
