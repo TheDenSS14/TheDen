@@ -218,7 +218,7 @@
 
 - type: entity
   id: OrganHumanStomach
-  parent: BaseHumanOrgan
+  parent: [ButcherIntoIntestineBase, BaseHumanOrgan] # DEN - Butcher into sausage casing
   name: stomach
   description: "Gross. This is hard to stomach."
   components:
