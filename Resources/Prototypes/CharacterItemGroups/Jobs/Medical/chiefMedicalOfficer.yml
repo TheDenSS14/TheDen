@@ -41,10 +41,12 @@
 #  maxItems: 1
 #  items:
 #
-#- type: characterItemGroup
-#  id: LoadoutChiefMedicalOfficerEyes
-#  maxItems: 1
-#  items:
+- type: characterItemGroup
+  id: LoadoutChiefMedicalOfficerEyes
+  maxItems: 1
+  items:
+    - type: loadout
+      id: ClothingEyesGlassesMedical
 
 - type: characterItemGroup
   id: LoadoutChiefMedicalOfficerGloves
