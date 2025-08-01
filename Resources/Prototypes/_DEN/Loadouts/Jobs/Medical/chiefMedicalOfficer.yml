@@ -9,10 +9,10 @@
   cost: 2
   exclusive: true
   requirements:
-  - !type:CharacterItemGroupRequirement
-    group: LoadoutEyes
-  - !type:CharacterJobRequirement
-    jobs:
-    - ChiefMedicalOfficer
+    - !type:CharacterItemGroupRequirement
+        group: LoadoutChiefMedicalOfficerEyes
+    - !type:CharacterJobRequirement
+      jobs:
+        - ChiefMedicalOfficer
   items:
   - ClothingEyesGlassesMedical
