@@ -10,6 +10,8 @@
 
 # Meat
 
+# NOTE: Fish does not have the "meat" tag as I do not consider it very interchangeable with regular meat.
+# This also prevents conflicts with the "cheeseburger" recipe
 - type: foodSequenceElement
   id: MeatFish
   name: food-sequence-content-fish
@@ -18,7 +20,7 @@
     state: cooked_fish
   tags:
   - Cooked
-  - Meat
+  - Fish
 
 - type: foodSequenceElement
   id: FishCutlet
@@ -29,7 +31,7 @@
   tags:
   - Cooked
   - Cutlet
-  - Meat
+  - Fish
 
 # Burger patty sprites
 
@@ -52,7 +54,7 @@
   tags:
   - Cooked
   - Cutlet
-  - Meat
+  - Fish
 
 - type: foodSequenceElement
   id: ChickenCutletBurger

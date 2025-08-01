@@ -8,6 +8,7 @@
     tags:
     - Cooked
     - Meat
+    - Fish
   - type: FlavorProfile
     flavors:
       - fishy
@@ -20,9 +21,9 @@
         maxVol: 15
         reagents:
         - ReagentId: Nutriment
-          Quantity: 10
+          Quantity: 6.66
         - ReagentId: Protein
-          Quantity: 5
+          Quantity: 3.33
   - type: Construction
     graph: FishSteak
     node: cooked carp
@@ -45,6 +46,7 @@
     - Raw
     - Cutlet
     - Meat
+    - Fish
   - type: FlavorProfile
     flavors:
       - fishy
@@ -73,6 +75,10 @@
     - Cooked
     - Cutlet
     - Meat
+    - Fish
+  - type: FlavorProfile
+    flavors:
+      - fishy
   - type: Sprite
     sprite: _DEN/Objects/Consumable/Food/meat.rsi
     state: cutlet_fish
