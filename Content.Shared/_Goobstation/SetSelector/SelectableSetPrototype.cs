@@ -6,7 +6,7 @@
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
 
-namespace Content.Goobstation.Shared.SetSelector;
+namespace Content.Shared._Goobstation.SetSelector;
 
 /// <summary>
 /// A prototype that defines a set available for selection for <see>

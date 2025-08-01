@@ -3,10 +3,10 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-using Content.Goobstation.Shared.SetSelector;
+using Content.Shared._Goobstation.SetSelector;
 using Robust.Client.UserInterface;
 
-namespace Content.Goobstation.Client.SetSelector;
+namespace Content.Client._Goobstation.SetSelector;
 
 public sealed class SetSelectorBoundUserInterface(EntityUid owner, Enum uiKey) : BoundUserInterface(owner, uiKey)
 {

@@ -6,7 +6,7 @@
 using Robust.Shared.Audio;
 using Robust.Shared.Prototypes;
 
-namespace Content.Goobstation.Shared.SetSelector;
+namespace Content.Shared._Goobstation.SetSelector;
 
 /// <summary>
 /// This component stores the possible contents of the selector,

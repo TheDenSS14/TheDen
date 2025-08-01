@@ -10,7 +10,7 @@ using Robust.Shared.Audio.Systems;
 using Robust.Shared.Containers;
 using Robust.Shared.Prototypes;
 
-namespace Content.Goobstation.Shared.SetSelector;
+namespace Content.Shared._Goobstation.SetSelector;
 
 /// <summary>
 /// <see cref="SetSelectorComponent"/>

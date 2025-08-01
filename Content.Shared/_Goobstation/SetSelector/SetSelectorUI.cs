@@ -6,7 +6,7 @@
 using Robust.Shared.Serialization;
 using Robust.Shared.Utility;
 
-namespace Content.Goobstation.Shared.SetSelector;
+namespace Content.Shared._Goobstation.SetSelector;
 
 [Serializable, NetSerializable]
 public sealed class SetSelectorBoundUserInterfaceState(Dictionary<int, SelectableSetInfo> sets, int max)
