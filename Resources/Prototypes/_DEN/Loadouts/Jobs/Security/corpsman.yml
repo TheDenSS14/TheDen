@@ -59,3 +59,16 @@
     - Brigmedic
   items:
   - ClothingEyesGlassesMedical
+
+- type: loadout
+  id: LoadoutCorpsmanEyesGlassesMedicalVisor
+  category: JobsSecurityCorpsman
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutCorpsmanEyes
+    - !type:CharacterJobRequirement
+      jobs:
+        - Brigmedic
+  items:
+    - ClothingEyesGlassesMedicalVisor
