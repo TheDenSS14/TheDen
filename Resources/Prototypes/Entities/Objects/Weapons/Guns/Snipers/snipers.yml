@@ -141,11 +141,11 @@
       tags:
       - CartridgeLightRifle
     autoCycle: false
+    reloadWhenBolted: false
   - type: ItemSlots
     gun_chamber:
       name: Chamber
       startingItem: CartridgeLightRifle
-      priority: 1
       whitelist:
         tags:
           - CartridgeLightRifle
@@ -153,6 +153,7 @@
     containers:
       gun_chamber: !type:ContainerSlot
       ballistic-ammo: !type:Container
+        ents: []
   - type: StaticPrice
     price: 500
   - type: Execution
