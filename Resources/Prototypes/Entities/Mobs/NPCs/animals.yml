@@ -3782,7 +3782,9 @@
   - type: Butcherable
     spawned:
     - id: FoodMeat
-      amount: 6
+      amount: 3
+    - id: FoodMeatBacon # DEN - Pigs give bacon
+      amount: 3
   - type: Grammar
     attributes:
       gender: epicene
