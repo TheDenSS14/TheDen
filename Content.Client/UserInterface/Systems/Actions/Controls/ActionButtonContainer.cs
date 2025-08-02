@@ -1,12 +1,12 @@
-// SPDX-FileCopyrightText: 2022 Jezithyr <Jezithyr.@gmail.com>
-// SPDX-FileCopyrightText: 2023 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2023 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2023 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2023 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT <77995199+DEATHB4DEFEAT@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 SimpleStation14 <130339894+SimpleStation14@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 sleepyyapril <flyingkarii@gmail.com>
+// SPDX-FileCopyrightText: 2022 Jezithyr
+// SPDX-FileCopyrightText: 2023 DrSmugleaf
+// SPDX-FileCopyrightText: 2023 Leon Friedrich
+// SPDX-FileCopyrightText: 2023 Nemanja
+// SPDX-FileCopyrightText: 2023 metalgearsloth
+// SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT
+// SPDX-FileCopyrightText: 2024 SimpleStation14
+// SPDX-FileCopyrightText: 2024 eoineoineoin
+// SPDX-FileCopyrightText: 2025 sleepyyapril
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -40,14 +40,26 @@ public class ActionButtonContainer : GridContainer
         get => (ActionButton) GetChild(index);
     }
 
-    private void BuildActionButtons(int count)
+    public void SetActionData(ActionsSystem system, params EntityUid?[] actionTypes)
     {
+        var uniqueCount = Math.Min(system.GetClientActions().Count(), actionTypes.Length + 1);
         var keys = ContentKeyFunctions.GetHotbarBoundKeys();
 
-        Children.Clear();
-        for (var index = 0; index < count; index++)
+        for (var i = 0; i < uniqueCount; i++)
         {
-            Children.Add(MakeButton(index));
+            if (i >= ChildCount)
+            {
+                AddChild(MakeButton(i));
+            }
+
+            if (!actionTypes.TryGetValue(i, out var action))
+                action = null;
+            ((ActionButton) GetChild(i)).UpdateData(action, system);
+        }
+
+        for (var i = ChildCount - 1; i >= uniqueCount; i--)
+        {
+            RemoveChild(GetChild(i));
         }
 
         ActionButton MakeButton(int index)
@@ -64,20 +76,6 @@ public class ActionButtonContainer : GridContainer
             }
 
             return button;
-        }
-    }
-
-    public void SetActionData(ActionsSystem system, params EntityUid?[] actionTypes)
-    {
-        var uniqueCount = Math.Min(system.GetClientActions().Count(), actionTypes.Length + 1);
-        if (ChildCount != uniqueCount)
-            BuildActionButtons(uniqueCount);
-
-        for (var i = 0; i < uniqueCount; i++)
-        {
-            if (!actionTypes.TryGetValue(i, out var action))
-                action = null;
-            ((ActionButton) GetChild(i)).UpdateData(action, system);
         }
     }
 
