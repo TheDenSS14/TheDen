@@ -30,6 +30,7 @@
 # SPDX-FileCopyrightText: 2023 crazybrain23
 # SPDX-FileCopyrightText: 2023 deltanedas
 # SPDX-FileCopyrightText: 2023 keronshb
+# SPDX-FileCopyrightText: 2024 BramvanZijp
 # SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT
 # SPDX-FileCopyrightText: 2024 Debug
 # SPDX-FileCopyrightText: 2024 Emisse
@@ -38,6 +39,7 @@
 # SPDX-FileCopyrightText: 2025 EctoplasmIsGood
 # SPDX-FileCopyrightText: 2025 Eris
 # SPDX-FileCopyrightText: 2025 Tabitha
+# SPDX-FileCopyrightText: 2025 Vanessa Louwagie
 # SPDX-FileCopyrightText: 2025 VividPups
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 # SPDX-FileCopyrightText: 2025 wheelwrightt
@@ -233,11 +235,11 @@
     drawRate: 1.8 # 200 seconds on the default cell
   - type: ToggleCellDraw
   # throwing star ability (Broken)
-  # - type: ItemCreator
-  #  action: ActionCreateThrowingStar
-  #  charge: 14.4
-  #  spawnedPrototype: ThrowingStarNinja
-  #  noPowerPopup: ninja-no-power
+  - type: ItemCreator
+    action: ActionCreateThrowingStar
+    charge: 14.4
+    spawnedPrototype: ThrowingStarNinja
+    noPowerPopup: ninja-no-power
   # core ninja suit stuff
   - type: NinjaSuit
   - type: UseDelay
@@ -249,13 +251,17 @@
   - type: ContainerContainer
     containers:
       cell_slot: !type:ContainerSlot
+  - type: Item # The Den - Make it smaller so it can fit in a bag for more ninja strats
+    size: Normal
   - type: ItemSlots
     slots:
       cell_slot:
         name: power-cell-slot-component-slot-name-default
         startingItem: PowerCellSmall
         disableEject: true
-  - type: Unremoveable
+        whitelist:
+          tags:
+            - PowerCell
 
 - type: entity
   parent: ClothingOuterBase
