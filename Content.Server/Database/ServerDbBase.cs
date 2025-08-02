@@ -1237,9 +1237,9 @@ INSERT INTO player_round (players_id, rounds_id) VALUES ({players[player]}, {id}
             }
 
             currentConsentSettings.ConsentFreetext = consentSettings.Freetext;
-            Dictionary<ProtoId<ConsentTogglePrototype>, string> currentConsentToggles = currentConsentSettings.ConsentToggles.ToDictionary(
+            var currentConsentToggles = currentConsentSettings.ConsentToggles.ToDictionary(
                 keySelector: t => new ProtoId<ConsentTogglePrototype>(t.ToggleProtoId),
-                elementSelector: t => t.ToggleProtoState
+                elementSelector: t => t.ToggleProtoState == "on"
             );
 
             // Remove and update toggles
@@ -1247,7 +1247,8 @@ INSERT INTO player_round (players_id, rounds_id) VALUES ({players[player]}, {id}
             {
                 if (consentSettings.Toggles.TryGetValue(toggle.Key, out var toggleState))
                 {
-                    currentConsentSettings.ConsentToggles.Where(t => t.ToggleProtoId == toggle.Key).First().ToggleProtoState = toggleState;
+                    currentConsentSettings.ConsentToggles.First(t => t.ToggleProtoId == toggle.Key)
+                        .ToggleProtoState = toggleState ? "on" : "off";
                 }
                 else
                 {
@@ -1263,7 +1264,7 @@ INSERT INTO player_round (players_id, rounds_id) VALUES ({players[player]}, {id}
                 currentConsentSettings.ConsentToggles.Add(new()
                 {
                     ToggleProtoId = toggle.Key,
-                    ToggleProtoState = toggle.Value,
+                    ToggleProtoState = toggle.Value ? "on" : "off",
                 });
             }
 
@@ -1286,7 +1287,7 @@ INSERT INTO player_round (players_id, rounds_id) VALUES ({players[player]}, {id}
 
             return new(consentSettings.ConsentFreetext, consentSettings.ConsentToggles.ToDictionary(
                 keySelector: t => new ProtoId<ConsentTogglePrototype>(t.ToggleProtoId),
-                elementSelector: t => t.ToggleProtoState
+                elementSelector: t => t.ToggleProtoState == "on"
             ));
         }
 
