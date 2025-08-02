@@ -1,0 +1,340 @@
+# SPDX-FileCopyrightText: 2025 portfiend
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+# Markings are inheriting now, so these are basically used to consolidate common species restriction patterns.
+# A little bit lame way of doing it but it's probably better than redefining the list each time.
+
+# Arachne
+# Arachnid
+# Canid
+# Chitinid
+# Diona
+# Felinid
+# Feroxi
+# Harpy
+# Human
+# IPC
+# Kitsune
+# Moth
+# Oni
+# Ovinia
+# Plasmaman
+# Reptilian
+# Resomi
+# Rodentia
+# Shadowkin
+# SlimePerson
+# Tajaran
+# Vox
+# Vulpkanin
+
+# Species that use the "standard" body/head shape.
+# Excluded species:
+# - Different body/head size and shape.
+# - For example: digitigrade legs, radical body size differences.
+# Not excluded species:
+# - Snouts, tails, other "additions" to the base.
+# Use for: Markings that fit reasonably well on the humanoid sprite base.
+# Avoid using for: Markings that look weird on snouted species. (Sides/back/top of head are fine.)
+- type: marking
+  abstract: true
+  id: BaseMarkingSpeciesStandardHead
+  invertSpeciesRestriction: true
+  speciesRestriction:
+    - Resomi
+    - Plasmaman
+    - Vox
+
+- type: marking
+  abstract: true
+  id: BaseMarkingSpeciesStandardBody
+  bodyPart: Chest
+  invertSpeciesRestriction: true
+  speciesRestriction:
+    - Resomi
+    - Plasmaman
+    - Vox
+
+- type: marking
+  abstract: true
+  id: BaseMarkingSpeciesStandardHands
+  invertSpeciesRestriction: true
+  speciesRestriction:
+    - Chitinid
+    - Diona
+    - Harpy
+    - Moth
+    - Plasmaman
+    - Resomi
+    - Vox
+
+- type: marking
+  abstract: true
+  id: BaseMarkingSpeciesStandardFeet
+  invertSpeciesRestriction: true
+  speciesRestriction:
+    - Arachne
+    - Chitinid
+    - Diona
+    - Harpy
+    - Moth
+    - Ovinia
+    - Plasmaman
+    - Resomi
+    - Shadowkin
+    - Vox
+
+# Excluded species: Anything in the other "standard body" restrictions.
+- type: marking
+  abstract: true
+  id: BaseMarkingSpeciesStandardFullBody
+  invertSpeciesRestriction: true
+  speciesRestriction:
+    - Arachne
+    - Chitinid
+    - Diona
+    - Harpy
+    - Moth
+    - Ovinia
+    - Plasmaman
+    - Resomi
+    - Shadowkin
+    - Vox
+
+# Excluded species:
+# - Species with weird eye shapes/positions.
+# - Species for whom changing the eye shape looks bad or makes no sense.
+- type: marking
+  abstract: true
+  id: BaseMarkingSpeciesStandardEyes
+  bodyPart: Eyes
+  invertSpeciesRestriction: true
+  speciesRestriction:
+    - Moth
+    - Chitinid
+    - Shadowkin
+    - Arachne
+    - Arachnid
+    - Resomi
+    - IPC
+    - Vox
+
+# "Organic" species with standard heads/bodies.
+# Excluded: Same as standard. Species that lack skin.
+# Good for tattoos.
+
+- type: marking
+  abstract: true
+  id: BaseMarkingSpeciesStandardHeadOrganic
+  invertSpeciesRestriction: true
+  speciesRestriction:
+    # Non-standard
+    - Resomi
+    - Plasmaman
+    - Vox
+    # Skinless / inorganic
+    - Diona
+    - IPC
+    - SlimePerson
+
+- type: marking
+  abstract: true
+  id: BaseMarkingSpeciesStandardBodyOrganic
+  bodyPart: Chest
+  invertSpeciesRestriction: true
+  speciesRestriction:
+    # Non-standard
+    - Resomi
+    - Plasmaman
+    - Vox
+    # Skinless / inorganic
+    - Diona
+    - IPC
+    - SlimePerson
+
+- type: marking
+  abstract: true
+  id: BaseMarkingSpeciesStandardArmsOrganic
+  invertSpeciesRestriction: true
+  speciesRestriction:
+    # Non-standard
+    - Chitinid
+    - Diona
+    - Harpy
+    - Moth
+    - Plasmaman
+    - Resomi
+    - Vox
+    # Skinless / inorganic
+    - Diona
+    - IPC
+    - SlimePerson
+
+- type: marking
+  abstract: true
+  id: BaseMarkingSpeciesStandardLegsOrganic
+  invertSpeciesRestriction: true
+  speciesRestriction:
+    # Non-standard
+    - Arachne
+    - Chitinid
+    - Diona
+    - Harpy
+    - Moth
+    - Ovinia
+    - Plasmaman
+    - Resomi
+    - Shadowkin
+    - Vox
+    # Skinless / inorganic
+    - Diona
+    - IPC
+    - SlimePerson
+
+# Species that use the human head and body sprites specifically.
+# Included species: Humans, demihumans, species that use human sprites.
+# Use for: Markings designed for the human body.
+# Avoid using for: Markings designed to be used for furry/custom-sprited species.
+
+- type: marking
+  abstract: true
+  id: BaseMarkingSpeciesHumanHead
+  speciesRestriction:
+    - Arachne
+    - Canid
+    - Dwarf
+    - Felinid
+    - Harpy
+    - Human
+    - Kitsune
+    - Lamia
+    - Oni
+    - SlimePerson # Close enough
+
+- type: marking
+  abstract: true
+  id: BaseMarkingSpeciesHumanBody
+  speciesRestriction:
+    - Arachne
+    - Canid
+    - Dwarf
+    - Felinid
+    - Human
+    - Kitsune
+    - Lamia
+    - Oni
+    - SlimePerson # Close enough
+
+# No taurs.
+- type: marking
+  abstract: true
+  id: BaseMarkingSpeciesHumanLegs
+  speciesRestriction:
+    - Canid
+    - Dwarf
+    - Felinid
+    - Human
+    - Kitsune
+    - Oni
+    - SlimePerson # Close enough
+
+# Face shapes.
+
+# Included species: Species with standard-ish heads and no/short snout.
+# Short snout protrudes one pixel from the head.
+- type: marking
+  abstract: true
+  id: BaseMarkingSpeciesShortFace
+  speciesRestriction:
+    # Human head
+    - Arachne
+    - Canid
+    - Felinid
+    - Harpy
+    - Human
+    - Kitsune
+    - Oni
+    - SlimePerson
+    # Short snout
+    - Ovinia
+    - Rodentia
+    - Tajaran
+
+# Included species: Species whose snouts extend 1 pixel from the head.
+- type: marking
+  abstract: true
+  id: BaseMarkingSpeciesShortSnout
+  speciesRestriction:
+    - Ovinia
+    - Rodentia
+    - Tajaran
+
+# Included species: Species whose snouts extend 3-4 pixels from the head.
+- type: marking
+  abstract: true
+  id: BaseMarkingSpeciesLongSnout
+  speciesRestriction:
+    - Feroxi
+    - Reptilian
+    - Vulpkanin
+
+# Body features.
+
+# Excluded species:
+# - Species who couldn't wear normal pants without them falling off.
+# - Species whose sprites wouldn't fit in pants anyway.
+# Not excluded: Species that have tails.
+- type: marking
+  abstract: true
+  id: BaseMarkingSpeciesWithAss
+  invertSpeciesRestriction: true
+  speciesRestriction:
+    - Arachne
+    - Plasmaman
+    - Resomi
+
+# Specific marking types.
+
+- type: marking
+  abstract: true
+  parent: BaseMarkingSpeciesWithAss
+  id: BaseMarkingUnderpants
+  bodyPart: Underwear
+  markingCategory: Underwear
+  coloring:
+    default:
+      type: !type:SimpleColoring
+        color: "#FFFFFF"
+
+- type: marking
+  abstract: true
+  parent: BaseMarkingSpeciesStandardBody
+  id: BaseMarkingUndershirt
+  bodyPart: Undershirt
+  markingCategory: Undershirt
+  coloring:
+    default:
+      type: !type:SimpleColoring
+        color: "#FFFFFF"
+
+- type: marking
+  abstract: true
+  id: BaseMarkingTattoo
+  coloring:
+    default:
+      type:
+        !type:TattooColoring
+      fallbackColor: "#666666"
+
+- type: marking
+  abstract: true
+  id: BaseMarkingHorns
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+
+- type: marking
+  abstract: true
+  id: BaseMarkingFullBody
+  bodyPart: LLeg # TODO: Make a layer for this
+  markingCategory: Overlay
