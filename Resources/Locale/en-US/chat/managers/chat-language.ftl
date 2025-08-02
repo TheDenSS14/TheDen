@@ -37,6 +37,7 @@ chat-language-Chittin-name = Chittin
 chat-language-Nehina-name = Nēhina
 chat-language-Rodentian-name = Rodentian
 chat-language-Kagebun-name = Kagebun
+chat-language-Aural-name = Aural
 
 # Animal Languages
 

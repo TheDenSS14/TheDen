@@ -529,6 +529,15 @@
         - !type:OrganType
           type: FeroxiDehydrated
         factor: 2
+      - !type:Oxygenate # Imp - Thaven can breathe anything
+        conditions:
+        - !type:OrganType
+          type: Thaven
+      - !type:SatiateThirst # Imp - Thaven breathing water vapor get thirsty slower
+        conditions:
+        - !type:OrganType
+          type: Thaven
+        factor: 0.1
       # DeltaV Converts H2O into CO2 for Feroxi
       - !type:ModifyLungGas
         conditions:

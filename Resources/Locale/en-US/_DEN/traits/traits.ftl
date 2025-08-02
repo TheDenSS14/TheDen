@@ -65,6 +65,7 @@ trait-description-SharpTeeth =
     or even custom made implants designed to turn teeth into tiny knives.
     Your unarmed melee attacks deal Piercing damage instead of the standard damage type for your species.
     This has no effect on damage dealt with any form of armed melee.
+
 trait-name-HandsFreePulling = Hands Free Pulling
 trait-description-HandsFreePulling =
     You were born with or have had your tail modified to be stronger than normal or have aquired
@@ -72,3 +73,9 @@ trait-description-HandsFreePulling =
     These could come from gene modifications, inherited genetics,
     or even custom implantations or modifications.
     You're able to drag things around without using your hands due to your abnormally strong tail or other modifications.
+
+trait-name-Aural = Aural
+trait-description-Aural =
+    The songlike language of ancient thaven society, known for its fluid rhythm, melodic tones, and dense vocalizations. It's often described by outsiders as speaking in tongues.
+    Naturally resonant underwater, exposure to Aural has been reported to trigger strange sensory effects in non-thaven listeners - most commonly a soft tingling behind the ears.
+    Though hauntingly beautiful, it is notoriously difficult to learn; thaven polyglots often switch languages mid-conversation to spare others from butchering the sound.

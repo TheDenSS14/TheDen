@@ -114,7 +114,7 @@
           Piercing: 5
           Slash: 10
     - type: TypingIndicator
-      proto: alien
+      proto: thaven # TheDen - Use DeltaV's thaven typing indicator, looks like a carp
     - type: Tag
       tags:
         - Carp
@@ -143,6 +143,12 @@
       activateSound: null
       deactivateSound: null
     - type: Fauna # Lavaland Change
+    - type: Bloodstream # Imp - Gives carp drug blood.
+      bloodReagent: ShimmeringBlood
+    - type: LanguageKnowledge # TheDen - They understand the thaven language
+      understands:
+      - TauCetiBasic
+      - Aural
 
 - type: entity
   parent: BaseMobCarp

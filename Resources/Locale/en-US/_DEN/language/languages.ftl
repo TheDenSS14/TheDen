@@ -14,3 +14,9 @@ language-Caprine-description = A language spoken by the Ovinia, the language is 
 
 language-VoxPidgin-name = Vox-Pidgin
 language-VoxPidgin-description = A language spoken by the Vox. This language uses mainly the glottal and velar sounds, with a large emphasis on the plosive group, alongside the frontal vowels, relying on heavy usage of a hindtongue not present in many other species.
+
+language-Aural-name = Aural
+language-Aural-description =
+    The songlike language of ancient thaven society, known for its fluid rhythm, melodic tones, and dense vocalizations. It's often described by outsiders as speaking in tongues.
+    Naturally resonant underwater, exposure to Aural has been reported to trigger strange sensory effects in non-thaven listeners - most commonly a soft tingling behind the ears.
+    Though hauntingly beautiful, it is notoriously difficult to learn; thaven polyglots often switch languages mid-conversation to spare others from butchering the sound.

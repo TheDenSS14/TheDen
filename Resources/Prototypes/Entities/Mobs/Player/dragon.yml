@@ -147,6 +147,7 @@
   - type: Bloodstream
     maxBleedAmount: 0
     bloodMaxVolume: 650
+    bloodReagent: ShimmeringBlood # Imp - Gives dragon drug blood.
   - type: GhostRole
     allowMovement: true
     allowSpeech: true
@@ -334,11 +335,15 @@
       path: /Audio/Items/crowbar.ogg
   - type: Hands
   - type: ComplexInteraction
-  - type: LanguageKnowledge
+  - type: TypingIndicator # TheDen - Use DeltaV's thaven typing indicator, looks like a carp
+    proto: thaven
+  - type: LanguageKnowledge # TheDen - They speak and understand the thaven language
     speaks:
     - TauCetiBasic
+    - Aural
     understands:
     - TauCetiBasic
+    - Aural
 
 - type: entity
   parent: BaseMobDragon
