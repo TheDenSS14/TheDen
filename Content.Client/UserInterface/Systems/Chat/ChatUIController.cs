@@ -26,9 +26,11 @@
 // SPDX-FileCopyrightText: 2024 SlamBamActionman
 // SPDX-FileCopyrightText: 2024 VMSolidus
 // SPDX-FileCopyrightText: 2024 metalgearsloth
+// SPDX-FileCopyrightText: 2025 88tv
 // SPDX-FileCopyrightText: 2025 Cami
 // SPDX-FileCopyrightText: 2025 Falcon
 // SPDX-FileCopyrightText: 2025 ash lea
+// SPDX-FileCopyrightText: 2025 lzk
 // SPDX-FileCopyrightText: 2025 sleepyyapril
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
@@ -818,7 +820,7 @@ public sealed partial class ChatUIController : UIController
         _typingIndicator?.ClientSubmittedChatText();
 
         var text = box.ChatInput.Input.Text;
-        
+
         box.ChatInput.Input.Clear();
         box.ChatInput.Input.ReleaseKeyboardFocus();
         UpdateSelectedChannel(box);
@@ -849,7 +851,7 @@ public sealed partial class ChatUIController : UIController
         {
             text = _denuUIController.FormatMessage(text);
         }
-        
+
         _manager.SendMessage(text, prefixChannel == 0 ? channel : prefixChannel);
     }
 
@@ -1014,6 +1016,11 @@ public sealed partial class ChatUIController : UIController
         // Floof: only show typing indicator if we're not typing in an anonymous channel
         if ((channel & ChatSelectChannel.Anonymous) == ChatSelectChannel.None)
             _typingIndicator?.ClientChangedChatText();
+    }
+
+    public void NotifyChatFocus(bool isFocused)
+    {
+        _typingIndicator?.ClientChangedChatFocus(isFocused);
     }
 
     public void Repopulate()
