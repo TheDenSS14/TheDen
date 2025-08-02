@@ -239,11 +239,13 @@
     radius: 7
     energy: 3
 
+# Goliath Hardsuit
 - type: entity
   parent: ClothingHeadHardsuitWithLightBase
   id: ClothingHeadHelmetHardsuitGoliath
   name: goliath hardsuit helmet
   description: A sturdy hardsuit helmet, infused with a goliath's hide and an eerie, unblinking eye cut from its mass.
+  categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
   - type: Sprite
     sprite: Clothing/Head/Hardsuits/goliathhelm.rsi
