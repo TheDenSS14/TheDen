@@ -1531,6 +1531,11 @@
       inverted: true
       species:
         - IPC
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+      - BloodExaminer # DEN
+      - HollowFangs
   functions:
   - !type:TraitAddComponent
     components:
