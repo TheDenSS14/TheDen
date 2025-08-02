@@ -31,6 +31,8 @@ ent-ClothingOuterHardsuitVoidParamed = "Sukunabikona" hardsuit
     .desc = A standard-issue hardsuit manufactured by Zeng-Hu Pharmaceuticals, used by paramedics due to its lightweight frame.
     The label mentions that it offers some protection against chemical spills.
     Technical identifier: ZhP-24m
+ent-ClothingOuterHardsuitGoliath = "Goliath" hardsuit
+    .desc = A modified Kriti hardsuit, adorned with a patchwork of thick, chitinous goliath hide.
 ent-ClothingOuterHardsuitMaxim = Mysterious tacsuit
     .desc = An old looking tactical combat hardsuit. It has a faded red logo on it along with the words "Maxim".
     It feels very sturdy and doesn't seem to have any weight... Though it has an ominous aura to it.
