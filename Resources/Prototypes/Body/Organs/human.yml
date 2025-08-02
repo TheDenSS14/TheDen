@@ -30,6 +30,7 @@
 # SPDX-FileCopyrightText: 2024 VMSolidus
 # SPDX-FileCopyrightText: 2024 gluesniffler
 # SPDX-FileCopyrightText: 2025 Angelo Fallaria
+# SPDX-FileCopyrightText: 2025 portfiend
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
@@ -218,7 +219,7 @@
 
 - type: entity
   id: OrganHumanStomach
-  parent: BaseHumanOrgan
+  parent: [ButcherIntoIntestineBase, BaseHumanOrgan] # DEN - Butcher into sausage casing
   name: stomach
   description: "Gross. This is hard to stomach."
   components:

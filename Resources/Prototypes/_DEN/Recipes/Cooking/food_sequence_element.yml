@@ -1,0 +1,165 @@
+# SPDX-FileCopyrightText: 2025 portfiend
+#
+# SPDX-License-Identifier: MIT
+
+# This is the actual ingredient version, not the other one that puts an entire tofuburger in the burger
+- type: foodSequenceElement
+  id: TofuBurger
+  name: food-sequence-content-tofu
+  sprites:
+  - sprite: _DEN/Objects/Consumable/Food/burger_sequence.rsi
+    state: tofu
+  tags:
+  - Tofu
+
+# Meat
+
+# NOTE: Fish does not have the "meat" tag as I do not consider it very interchangeable with regular meat.
+# This also prevents conflicts with the "cheeseburger" recipe
+- type: foodSequenceElement
+  id: MeatFish
+  name: food-sequence-content-fish
+  sprites:
+  - sprite: _DEN/Objects/Consumable/Food/meat.rsi
+    state: cooked_fish
+  tags:
+  - Cooked
+  - Fish
+
+- type: foodSequenceElement
+  id: FishCutlet
+  name: food-sequence-content-fish
+  sprites:
+  - sprite: _DEN/Objects/Consumable/Food/meat.rsi
+    state: cutlet_fish
+  tags:
+  - Cooked
+  - Cutlet
+  - Fish
+
+# Burger patty sprites
+
+- type: foodSequenceElement
+  id: MeatCutletBurger
+  sprites:
+  - sprite: _DEN/Objects/Consumable/Food/burger_sequence.rsi
+    state: meat
+  tags:
+  - Cooked
+  - Cutlet
+  - Meat
+
+- type: foodSequenceElement
+  id: FishCutletBurger
+  name: food-sequence-content-fish
+  sprites:
+  - sprite: _DEN/Objects/Consumable/Food/burger_sequence.rsi
+    state: fishmeat
+  tags:
+  - Cooked
+  - Cutlet
+  - Fish
+
+- type: foodSequenceElement
+  id: ChickenCutletBurger
+  name: food-sequence-content-chicken
+  sprites:
+  - sprite: _DEN/Objects/Consumable/Food/burger_sequence.rsi
+    state: birdmeat
+  tags:
+  - Cooked
+  - Cutlet
+  - Meat
+  - Chicken
+
+- type: foodSequenceElement
+  id: DuckCutletBurger
+  name: food-sequence-content-duck
+  sprites:
+  - sprite: _DEN/Objects/Consumable/Food/burger_sequence.rsi
+    state: birdmeat
+  tags:
+  - Cooked
+  - Cutlet
+  - Meat
+  - Duck
+
+- type: foodSequenceElement
+  id: XenoCutletBurger
+  name: food-sequence-content-xeno
+  sprites:
+  - sprite: _DEN/Objects/Consumable/Food/burger_sequence.rsi
+    state: xenomeat
+  tags:
+  - Cooked
+  - Cutlet
+  - Meat
+  - Xeno
+
+# Fruits / Vegetables
+
+- type: foodSequenceElement
+  id: Chanterelle
+  name: food-sequence-content-mushroom
+  sprites:
+  - sprite: Objects/Specific/Hydroponics/chanterelle.rsi
+    state: produce
+  tags:
+  - Vegetable
+
+- type: foodSequenceElement
+  id: ChanterelleBurger
+  name: food-sequence-content-mushroom
+  sprites:
+  - sprite: _DEN/Objects/Consumable/Food/burger_sequence.rsi
+    state: chanterelle
+  tags:
+  - Vegetable
+
+- type: foodSequenceElement
+  id: ChiliPepperBurger
+  name: food-sequence-content-chili
+  sprites:
+  - sprite: _DEN/Objects/Consumable/Food/burger_sequence.rsi
+    state: chili
+  tags:
+  - Vegetable
+
+- type: foodSequenceElement
+  id: ChillyPepperBurger
+  name: food-sequence-content-chilly
+  sprites:
+  - sprite: _DEN/Objects/Consumable/Food/burger_sequence.rsi
+    state: chilly
+  tags:
+  - Vegetable
+
+- type: foodSequenceElement
+  id: TomatoBurger
+  name: food-sequence-content-tomato
+  sprites:
+  - sprite: _DEN/Objects/Consumable/Food/burger_sequence.rsi
+    state: tomato
+  tags:
+  - Fruit
+  - Vegetable
+
+- type: foodSequenceElement
+  id: BloodTomatoBurger
+  name: food-sequence-content-tomato
+  sprites:
+  - sprite: _DEN/Objects/Consumable/Food/burger_sequence.rsi
+    state: bloodtomato
+  tags:
+  - Fruit
+  - Vegetable
+
+- type: foodSequenceElement
+  id: BlueTomatoBurger
+  name: food-sequence-content-tomato
+  sprites:
+  - sprite: _DEN/Objects/Consumable/Food/burger_sequence.rsi
+    state: bluetomato
+  tags:
+  - Fruit
+  - Vegetable

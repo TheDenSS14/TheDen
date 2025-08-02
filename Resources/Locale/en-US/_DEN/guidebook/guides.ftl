@@ -13,3 +13,5 @@ guide-entry-species-lore-oni = Oni Lore
 guide-entry-species-lore-reptilian = Unathi Lore
 guide-entry-species-lore-shadowkin = Shadowkin Lore
 guide-entry-species-lore-tajaran = Tajaran Lore
+
+guide-entry-cooking-food-sequence = Sequence Cooking

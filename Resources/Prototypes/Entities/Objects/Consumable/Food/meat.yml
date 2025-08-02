@@ -199,6 +199,7 @@
     tags:
     - Raw
     - Meat
+    - Fish # DEN
   - type: Sprite
     state: fish
   - type: SolutionContainerManager
@@ -212,6 +213,17 @@
       reagents:
       - ReagentId: CarpoToxin
         Quantity: 5
+  # DEN - Allow you to make cooked fish
+  - type: Construction
+    graph: FishSteak
+    node: start
+    defaultTarget: cooked carp
+  - type: InternalTemperature
+    conductivity: 0.43
+  - type: SliceableFood
+    count: 3
+    slice: FoodMeatFishCutlet
+  # End DEN
 
 - type: entity
   name: raw bacon
@@ -1522,7 +1534,7 @@
     node: cutlet
   - type: FoodSequenceElement
     entries:
-      Burger: MeatCutlet
+      Burger: MeatCutletBurger # DEN - Patty sprite
       Taco: MeatCutlet
 
 - type: entity
@@ -1614,7 +1626,7 @@
     node: chicken cutlet
   - type: FoodSequenceElement
     entries:
-      Burger: ChickenCutlet
+      Burger: ChickenCutletBurger # DEN - Patty sprite
       Taco: ChickenCutlet
 
 - type: entity
@@ -1644,7 +1656,7 @@
     node: duck cutlet
   - type: FoodSequenceElement
     entries:
-      Burger: DuckCutlet
+      Burger: DuckCutletBurger # DEN - Patty sprite
       Taco: DuckCutlet
 
 - type: entity
@@ -1733,7 +1745,7 @@
     node: xeno cutlet
   - type: FoodSequenceElement
     entries:
-      Burger: XenoCutlet
+      Burger: XenoCutletBurger # DEN - Patty sprite
       Taco: XenoCutlet
 
 - type: entity

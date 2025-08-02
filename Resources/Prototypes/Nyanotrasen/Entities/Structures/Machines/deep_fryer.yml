@@ -1,7 +1,8 @@
-# SPDX-FileCopyrightText: 2023 JJ <47927305+PHCodes@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT <77995199+DEATHB4DEFEAT@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 Debug <49997488+DebugOk@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 JJ
+# SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT
+# SPDX-FileCopyrightText: 2024 Debug
+# SPDX-FileCopyrightText: 2025 portfiend
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -35,7 +36,7 @@
     rotateWhilePulling: false
   - type: Physics
     bodyType: Static
-  - type: Climbable
+  # - type: Climbable # DEN - Can't insert entities, no reason to have this.
   - type: Fixtures
     fixtures:
       fix1:
@@ -56,6 +57,9 @@
       # gained by doing special handling for Stacks, especially since most
       # of the items that use Stack aren't even remotely edible.
       - Stack
+      - HumanoidAppearance # DEN - Don't kill players. Note: I think this means monkeys too. C'est la vie
+      - Brain # DEN: Don't do this either.
+      - BorgBrain # DEN: Do not.
     whitelist:
       components:
       # It's what meat is.
@@ -169,4 +173,6 @@
       vat_entities: !type:Container
       machine_board: !type:Container
       machine_parts: !type:Container
+  - type: ThrowInsertContainer # TODO: Sounds
+    containerId: vat_entities
   - type: PowerSwitch
