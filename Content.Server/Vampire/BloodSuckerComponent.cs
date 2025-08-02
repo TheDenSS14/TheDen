@@ -3,6 +3,8 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
+using Content.Server._DEN.Body.Systems;
+
 namespace Content.Server.Vampiric
 {
     [RegisterComponent]
@@ -45,5 +47,10 @@ namespace Content.Server.Vampiric
         /// </summary>
         [DataField("webRequired")]
         public bool WebRequired = false;
+
+        /// <summary>
+        ///     DEN: Used to track BloodExaminer, but only if it is added by this component.
+        /// </summary>
+        public BloodExaminerComponent? AddedBloodExaminer;
     }
 }
