@@ -17,7 +17,7 @@ public sealed partial class BloodSuckerSystem
     // DEN: Remove blood examiner if this component added it.
     private void OnShutdown(Entity<BloodSuckerComponent> ent, ref ComponentShutdown args)
     {
-        if (ent.Comp.AddedBloodExaminer != null)
+        if (ent.Comp.AddedBloodExaminer != null && HasComp<BloodExaminerComponent>(ent))
             RemCompDeferred(ent, ent.Comp.AddedBloodExaminer);
     }
 }
