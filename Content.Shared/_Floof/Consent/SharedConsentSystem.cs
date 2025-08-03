@@ -9,13 +9,12 @@ using Content.Shared.Examine;
 using Content.Shared.Mind;
 using Content.Shared.Mind.Components;
 using Content.Shared.Verbs;
-using Robust.Shared.Utility;
 using Robust.Shared.Network;
-using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
+using Robust.Shared.Utility;
 
 
-namespace Content.Shared.Consent;
+namespace Content.Shared._Floof.Consent;
 
 public abstract partial class SharedConsentSystem : EntitySystem
 {

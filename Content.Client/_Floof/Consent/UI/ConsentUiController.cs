@@ -4,23 +4,18 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
-using Content.Client.Consent.UI.Windows;
+using Content.Client._Floof.Consent.UI.Windows;
 using Content.Client.Gameplay;
 using Content.Client.UserInterface.Controls;
 using Content.Client.UserInterface.Systems.MenuBar.Widgets;
 using Content.Shared.Input;
-using Robust.Client.Input;
-using Robust.Client.UserInterface;
-using Robust.Client.UserInterface.Controllers;
-using Robust.Client.UserInterface.Controllers.Implementations;
-using Robust.Shared.Input.Binding;
-using Robust.Shared.Map;
-using Robust.Shared.Player;
-using Robust.Shared.Utility;
 using JetBrains.Annotations;
+using Robust.Client.Input;
+using Robust.Client.UserInterface.Controllers;
+using Robust.Shared.Input.Binding;
 using static Robust.Client.UserInterface.Controls.BaseButton;
 
-namespace Content.Client.Consent.UI;
+namespace Content.Client._Floof.Consent.UI;
 
 [UsedImplicitly]
 public sealed class ConsentUiController : UIController, IOnStateChanged<GameplayState>

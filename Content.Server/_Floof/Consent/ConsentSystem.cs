@@ -4,15 +4,13 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
-using Content.Shared.Consent;
 using Content.Server.Mind;
-using Content.Shared.Mind;
-using Content.Shared.Mind.Components;
+using Content.Shared._Floof.Consent;
 using Robust.Shared.Network;
-using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
 
-namespace Content.Server.Consent;
+
+namespace Content.Server._Floof.Consent;
 
 public sealed class ConsentSystem : SharedConsentSystem
 {

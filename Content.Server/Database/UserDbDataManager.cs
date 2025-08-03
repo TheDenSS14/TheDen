@@ -13,13 +13,16 @@
 
 using System.Threading;
 using System.Threading.Tasks;
+using Content.Server._Floof.Consent;
 using Content.Server.Players.PlayTimeTracking;
 using Content.Server.Preferences.Managers;
 using Robust.Server.Player;
 using Robust.Shared.Network;
 using Robust.Shared.Player;
 using Robust.Shared.Utility;
-using Content.Server.Consent; // Floofstation
+
+
+// Floofstation
 
 namespace Content.Server.Database;
 

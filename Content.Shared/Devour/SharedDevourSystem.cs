@@ -17,8 +17,8 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
+using Content.Shared._Floof.Consent;
 using Content.Shared.Actions;
-using Content.Shared.Consent;
 using Content.Shared.Damage;
 using Content.Shared.Devour.Components;
 using Content.Shared.DoAfter;

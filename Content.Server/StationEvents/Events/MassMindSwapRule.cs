@@ -6,16 +6,16 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
+using Content.Server._Floof.Consent;
 using Robust.Server.GameObjects;
 using Robust.Shared.Random;
 using Content.Server.Abilities.Psionics;
-using Content.Server.Consent;
 using Content.Shared.GameTicking.Components;
 using Content.Server.GameTicking.Rules.Components;
 using Content.Server.Psionics;
 using Content.Server.StationEvents.Components;
+using Content.Shared._Floof.Consent;
 using Content.Shared.Abilities.Psionics;
-using Content.Shared.Consent;
 using Content.Shared.Mind.Components;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Mobs.Systems;

@@ -7,8 +7,8 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using Content.Server.Database;
+using Content.Shared._Floof.Consent;
 using Content.Shared.Administration.Logs;
-using Content.Shared.Consent;
 using Content.Shared.Database;
 using Robust.Server.Player;
 using Robust.Shared.Configuration;
@@ -16,7 +16,8 @@ using Robust.Shared.Network;
 using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 
-namespace Content.Server.Consent;
+
+namespace Content.Server._Floof.Consent;
 
 public sealed class ServerConsentManager : IServerConsentManager
 {

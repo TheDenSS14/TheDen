@@ -4,6 +4,7 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
+using Content.Server._Floof.Consent;
 using Content.Shared.Abilities.Psionics;
 using Content.Shared.Actions.Events;
 using Content.Shared.Floofstation.Hypno;
@@ -22,7 +23,6 @@ using Content.Shared.Administration.Logs;
 using Content.Shared.Mobs.Systems;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Psionics;
-using Content.Server.Consent;
 using Content.Shared.Mind.Components;
 
 

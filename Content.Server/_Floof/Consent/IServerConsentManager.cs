@@ -5,12 +5,12 @@
 
 using System.Threading;
 using System.Threading.Tasks;
-
-using Content.Shared.Consent;
+using Content.Shared._Floof.Consent;
 using Robust.Shared.Network;
 using Robust.Shared.Player;
 
-namespace Content.Server.Consent;
+
+namespace Content.Server._Floof.Consent;
 
 public interface IServerConsentManager
 {

@@ -11,7 +11,7 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
-using Content.Server.Consent;
+using Content.Server._Floof.Consent;
 using Content.Shared.Actions;
 using Content.Shared.Abilities.Psionics;
 using Content.Shared.Speech;
@@ -27,7 +27,7 @@ using Content.Shared.Mind;
 using Content.Shared.Actions.Events;
 using Content.Server.DoAfter;
 using Content.Server.Ghost;
-using Content.Shared.Consent;
+using Content.Shared._Floof.Consent;
 using Content.Shared.DoAfter;
 using Robust.Shared.Prototypes;
 
