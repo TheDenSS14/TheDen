@@ -63,7 +63,7 @@ namespace Content.Server.Abilities.Psionics
 
             if (!_consent.HasConsent(args.Target, "Hypno"))
             {
-                _popups.PopupEntity(Loc.GetString("has-no-consent"), uid, uid, PopupType.Large);
+                _popups.PopupEntity(Loc.GetString("has-no-consent", ("target", args.Target)), uid, uid, PopupType.Large);
                 return;
             }
 

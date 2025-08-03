@@ -17,7 +17,6 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
-using Content.Shared._DEN.Devourable;
 using Content.Shared.Actions;
 using Content.Shared.Consent;
 using Content.Shared.Damage;
@@ -31,19 +30,22 @@ using Content.Shared.Whitelist;
 using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Containers;
+using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization;
 
 namespace Content.Shared.Devour;
 
 public abstract class SharedDevourSystem : EntitySystem
 {
-    [Dependency] protected readonly SharedAudioSystem _audioSystem = default!;
+    [Dependency] protected readonly SharedAudioSystem AudioSystem = default!;
     [Dependency] private readonly SharedDoAfterSystem _doAfterSystem = default!;
     [Dependency] private readonly SharedPopupSystem _popupSystem = default!;
     [Dependency] private readonly SharedActionsSystem _actionsSystem = default!;
     [Dependency] protected readonly SharedContainerSystem ContainerSystem = default!;
     [Dependency] private readonly EntityWhitelistSystem _whitelistSystem = default!;
-    [Dependency] private readonly DamageableSystem _damageableSystem = default!;
+    [Dependency] private readonly SharedConsentSystem _consentSystem = default!;
+
+    private ProtoId<ConsentTogglePrototype> DevourConsent = "NoDragonDevour";
 
     public override void Initialize()
     {
@@ -102,7 +104,7 @@ public abstract class SharedDevourSystem : EntitySystem
         _popupSystem.PopupClient(Loc.GetString("devour-action-popup-message-structure"), uid, uid);
 
         if (component.SoundStructureDevour != null)
-            _audioSystem.PlayPredicted(component.SoundStructureDevour, uid, uid, component.SoundStructureDevour.Params);
+            AudioSystem.PlayPredicted(component.SoundStructureDevour, uid, uid, component.SoundStructureDevour.Params);
 
         _doAfterSystem.TryStartDoAfter(
             new(
@@ -120,29 +122,23 @@ public abstract class SharedDevourSystem : EntitySystem
 
     private void HandleMobState(Entity<DevourerComponent> ent, EntityUid target, MobStateComponent? targetState)
     {
-        TryComp<DevourableComponent>(target, out var devourable);
-
-        if (!TryComp<DamageableComponent>(ent, out var damageable))
+        if (!TryComp<DamageableComponent>(ent, out _))
             return;
 
         switch (targetState?.CurrentState)
         {
             case MobState.Critical:
             case MobState.Dead:
-                if (devourable != null && devourable.AttemptedDevouring)
-                    return;
+                var isDevourable = !_consentSystem.HasConsent(target, DevourConsent);
 
-                var isDevourable = true;
-
-                if (devourable != null && !devourable.IsDevourable)
-                {
-                    isDevourable = false;
-                    devourable.AttemptedDevouring = true;
-
-                    _popupSystem.PopupClient(Loc.GetString("devour-action-popup-message-fail-no-consent"), ent, ent);
-                }
-
-                _doAfterSystem.TryStartDoAfter(new(EntityManager, ent, ent.Comp.DevourTime, new DevourDoAfterEvent(isDevourable), ent, target: target, used: ent)
+                _doAfterSystem.TryStartDoAfter(new(
+                    EntityManager,
+                    ent,
+                    ent.Comp.DevourTime,
+                    new DevourDoAfterEvent(isDevourable),
+                    ent,
+                    target: target,
+                    used: ent)
                 {
                     BreakOnMove = true,
                 });

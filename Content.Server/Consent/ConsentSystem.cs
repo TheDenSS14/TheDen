@@ -21,33 +21,27 @@ public sealed class ConsentSystem : SharedConsentSystem
 
     protected override FormattedMessage GetConsentText(NetUserId userId)
     {
-        var text = _consent.GetPlayerConsentSettings(userId).Freetext;
+        TryGetConsent(userId, out var consent);
+        var text = consent?.Freetext ?? string.Empty;
+
         if (text == string.Empty)
-        {
             text = Loc.GetString("consent-examine-not-set");
-        }
 
         var message = new FormattedMessage();
         message.AddText(text);
         return message;
     }
 
-    public override bool HasConsent(Entity<MindContainerComponent?> ent, ProtoId<ConsentTogglePrototype> consentId)
+    public override void SetConsent(NetUserId userId, PlayerConsentSettings? consentSettings)
     {
-        if (!Resolve(ent, ref ent.Comp)
-            || _serverMindSystem.GetMind(ent, ent) is not { } mind)
+        base.SetConsent(userId, consentSettings);
+
+        if (consentSettings == null)
         {
-            return true; // NPCs as well as player characters without a mind consent to everything
+            UserConsents.Remove(userId);
+            return;
         }
 
-        if (!TryComp<MindComponent>(mind, out var mindComponent)
-            || mindComponent.UserId is not { } userId)
-        {
-            // Not sure if this is ever reached? MindComponent seems to always have UserId.
-            Log.Warning("HasConsent No UserId or missing MindComponent");
-            return false; // For entities that have a mind but with no user attached, consent to nothing.
-        }
-
-        return _consent.GetPlayerConsentSettings(userId).Toggles.TryGetValue(consentId, out var val) && val == "on";
+        UserConsents[userId] = consentSettings;
     }
 }

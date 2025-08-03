@@ -63,7 +63,6 @@ public abstract class SharedMindSystem : EntitySystem
     [Dependency] private readonly SharedPlayerSystem _player = default!;
     [Dependency] private readonly MetaDataSystem _metadata = default!;
 
-    [ViewVariables]
     protected readonly Dictionary<NetUserId, EntityUid> UserMinds = new();
 
     public override void Initialize()
