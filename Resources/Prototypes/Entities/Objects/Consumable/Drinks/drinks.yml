@@ -2394,6 +2394,342 @@
     sprite: Objects/Consumable/Drinks/xenobasher.rsi
     state: icon
 
+- type: entity
+  parent: DrinkGlass
+  id: DrinkJaegermisterGlass
+  suffix: jaegermister
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 30
+        reagents:
+        - ReagentId: Jaegermister
+          Quantity: 30
+  - type: Icon
+    sprite: Objects/Consumable/Drinks/jaegermister.rsi
+    state: icon
+
+- type: entity
+  parent: DrinkGlass
+  id: DrinkJaegerbombGlass
+  suffix: jaegerbomb
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 30
+        reagents:
+        - ReagentId: Jaegerbomb
+          Quantity: 30
+  - type: Icon
+    sprite: Objects/Consumable/Drinks/jaegermister.rsi
+    state: icon
+
+- type: entity
+  parent: DrinkGlass
+  id: DrinkJaegeritaGlass
+  suffix: jaegerita
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 30
+        reagents:
+        - ReagentId: Jaegerita
+          Quantity: 30
+  - type: Icon
+    sprite: Objects/Consumable/Drinks/jaegermister.rsi
+    state: icon
+
+- type: entity
+  parent: DrinkGlass
+  id: DrinkSurferGlass
+  suffix: surfer
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 30
+        reagents:
+        - ReagentId: Surfer
+          Quantity: 30
+  - type: Icon
+    sprite: Objects/Consumable/Drinks/jaegermister.rsi
+    state: icon
+
+- type: entity
+  parent: DrinkGlass
+  id: DrinkSurferOnAcidGlass
+  suffix: surfer on acid
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 30
+        reagents:
+        - ReagentId: SurferOnAcid
+          Quantity: 30
+  - type: Icon
+    sprite: Objects/Consumable/Drinks/jaegermister.rsi
+    state: icon
+
+- type: entity
+  parent: DrinkGlass
+  id: DrinkFizzballGlass
+  suffix: fizzball
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 30
+        reagents:
+        - ReagentId: Fizzball
+          Quantity: 30
+  - type: Icon
+    sprite: Objects/Consumable/Drinks/jaegermister.rsi
+    state: icon
+
+- type: entity
+  parent: DrinkGlass
+  id: DrinkTuxedoSunsetGlass
+  suffix: tuxedo sunset
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 30
+        reagents:
+        - ReagentId: TuxedoSunset
+          Quantity: 30
+  - type: Icon
+    sprite: Objects/Consumable/Drinks/jaegermister.rsi
+    state: icon
+
+- type: entity
+  parent: DrinkGlass
+  id: DrinkInsideScoopGlass
+  suffix: inside scoop
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 30
+        reagents:
+        - ReagentId: InsideScoop
+          Quantity: 30
+  - type: Icon
+    sprite: Objects/Consumable/Drinks/jaegermister.rsi
+    state: icon
+
+- type: entity
+  parent: DrinkGlass
+  id: DrinkFizzballFloatGlass
+  suffix: fizzball float
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 30
+        reagents:
+        - ReagentId: FizzballFloat
+          Quantity: 30
+  - type: Icon
+    sprite: Objects/Consumable/Drinks/jaegermister.rsi
+    state: icon
+
+- type: entity
+  parent: DrinkGlass
+  id: DrinkChartruseGlass
+  suffix: chartruse
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 30
+        reagents:
+        - ReagentId: Chartruse
+          Quantity: 30
+  - type: Icon
+    sprite: Objects/Consumable/Drinks/jaegermister.rsi
+    state: icon
+
+- type: entity
+  parent: DrinkGlass
+  id: DrinkDeathFlipGlass
+  suffix: death flip
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 30
+        reagents:
+        - ReagentId: DeathFlip
+          Quantity: 30
+  - type: Icon
+    sprite: Objects/Consumable/Drinks/jaegermister.rsi
+    state: icon
+
+- type: entity
+  parent: DrinkGlass
+  id: DrinkBloodyJaegerGlass
+  suffix: bloody jaeger
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 30
+        reagents:
+        - ReagentId: BloodyJaeger
+          Quantity: 30
+  - type: Icon
+    sprite: Objects/Consumable/Drinks/jaegermister.rsi
+    state: icon
+
+- type: entity
+  parent: DrinkGlass
+  id: DrinkPopQuizGlass
+  suffix: pop quiz
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 30
+        reagents:
+        - ReagentId: PopQuiz
+          Quantity: 30
+  - type: Icon
+    sprite: Objects/Consumable/Drinks/jaegermister.rsi
+    state: icon
+
+- type: entity
+  parent: DrinkGlass
+  id: DrinkNaughtyBartenderGlass
+  suffix: naughty bartender
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 30
+        reagents:
+        - ReagentId: NaughtyBartender
+          Quantity: 30
+  - type: Icon
+    sprite: Objects/Consumable/Drinks/jaegermister.rsi
+    state: icon
+
+- type: entity
+  parent: DrinkGlass
+  id: DrinkAtlanticOceanGlass
+  suffix: atlantic ocean
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 30
+        reagents:
+        - ReagentId: AtlanticOcean
+          Quantity: 30
+  - type: Icon
+    sprite: Objects/Consumable/Drinks/jaegermister.rsi
+    state: icon
+
+- type: entity
+  parent: DrinkGlass
+  id: DrinkCafeCocktailGlass
+  suffix: cafe cocktail
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 30
+        reagents:
+        - ReagentId: CafeCocktail
+          Quantity: 30
+  - type: Icon
+    sprite: Objects/Consumable/Drinks/jaegermister.rsi
+    state: icon
+
+- type: entity
+  parent: DrinkGlass
+  id: DrinkCinnamonCookieGlass
+  suffix: cinnamon cookie
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 30
+        reagents:
+        - ReagentId: CinnamonCookie
+          Quantity: 30
+  - type: Icon
+    sprite: Objects/Consumable/Drinks/jaegermister.rsi
+    state: icon
+
+- type: entity
+  parent: DrinkGlass
+  id: DrinkThoughtsAndPrayersGlass
+  suffix: thoughts and prayers
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 30
+        reagents:
+        - ReagentId: ThoughtsAndPrayers
+          Quantity: 30
+  - type: Icon
+    sprite: Objects/Consumable/Drinks/jaegermister.rsi
+    state: icon
+
+- type: entity
+  parent: DrinkGlass
+  id: DrinkMutuallyAssuredDestructionGlass
+  suffix: mutually assured destruction
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 30
+        reagents:
+        - ReagentId: MutuallyAssuredDestruction
+          Quantity: 30
+  - type: Icon
+    sprite: Objects/Consumable/Drinks/jaegermister.rsi
+    state: icon
+
+- type: entity
+  parent: DrinkGlass
+  id: DrinkZenithGlass
+  suffix: zenith
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 30
+        reagents:
+        - ReagentId: Zenith
+          Quantity: 30
+  - type: Icon
+    sprite: Objects/Consumable/Drinks/jaegermister.rsi
+    state: icon
+
+- type: entity
+  parent: DrinkGlass
+  id: DrinkBloodRedLicoriceGlass
+  suffix: blood-red-licorice
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 30
+        reagents:
+        - ReagentId: BloodRedLicorice
+          Quantity: 30
+  - type: Icon
+    sprite: Objects/Consumable/Drinks/jaegermister.rsi
+    state: icon
+
 # TODO: MOVE
 
 - type: entity

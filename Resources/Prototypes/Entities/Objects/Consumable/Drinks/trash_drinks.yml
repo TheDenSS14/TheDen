@@ -418,3 +418,11 @@
   components:
   - type: Sprite
     sprite: Objects/Consumable/Drinks/oatmilk.rsi
+
+- type: entity
+  name: jaegermister bottle
+  parent: DrinkBottleBaseEmpty
+  id: DrinkBottleJaegermister
+  components:
+  - type: Sprite
+    sprite: Objects/Consumable/TrashDrinks/jaegermisterbottle_empty.rsi

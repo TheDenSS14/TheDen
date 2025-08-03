@@ -2358,6 +2358,541 @@
   fizziness: 0.25
 
 - type: reagent
+  id: Jaegermister
+  name: reagent-name-jaegermister
+  parent: BaseAlcohol
+  desc: reagent-desc-jaegermister
+  physicalDesc: reagent-physical-desc-inky
+  flavor: jaegermister
+  color: "#3A0E0F"
+  metamorphicSprite:
+    sprite: Objects/Consumable/Drinks/jaegermister.rsi
+    state: icon_empty
+  metamorphicMaxFillLevels: 6
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: false
+  metabolisms:
+    Drink:
+      effects:
+        - !type:SatiateThirst
+          factor: 2
+        - !type:AdjustReagent
+          reagent: Ethanol
+          amount: 0.2
+  fizziness: 0.25
+
+- type: reagent
+  id: Jaegerbomb
+  name: reagent-name-jaegerbomb
+  parent: BaseAlcohol
+  desc: reagent-desc-jaegerbomb
+  physicalDesc: reagent-physical-desc-cloudy
+  flavor: jaegerbomb
+  color: "#400101"
+  metamorphicSprite:
+    sprite: Objects/Consumable/Drinks/jaegermister.rsi
+    state: icon_empty
+  metamorphicMaxFillLevels: 6
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: false
+  metabolisms:
+    Drink:
+      effects:
+        - !type:SatiateThirst
+          factor: 2
+        - !type:AdjustReagent
+          reagent: Ethanol
+          amount: 0.1
+  fizziness: 0.25
+
+- type: reagent
+  id: Jaegerita
+  name: reagent-name-jaegerita
+  parent: BaseAlcohol
+  desc: reagent-desc-jaegerita
+  physicalDesc: reagent-physical-desc-milky
+  flavor: jaegerita
+  color: "#400101"
+  metamorphicSprite:
+    sprite: Objects/Consumable/Drinks/jaegermister.rsi
+    state: icon_empty
+  metamorphicMaxFillLevels: 6
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: false
+  metabolisms:
+    Drink:
+      effects:
+        - !type:SatiateThirst
+          factor: 2
+        - !type:AdjustReagent
+          reagent: Ethanol
+          amount: 0.1
+  fizziness: 0.25
+
+- type: reagent
+  id: Surfer
+  name: reagent-name-surfer
+  parent: BaseAlcohol
+  desc: reagent-desc-surfer
+  physicalDesc: reagent-physical-desc-tropical
+  flavor: surfer
+  color: "#400101"
+  metamorphicSprite:
+    sprite: Objects/Consumable/Drinks/jaegermister.rsi
+    state: icon_empty
+  metamorphicMaxFillLevels: 6
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: false
+  metabolisms:
+    Drink:
+      effects:
+        - !type:SatiateThirst
+          factor: 2
+        - !type:AdjustReagent
+          reagent: Ethanol
+          amount: 0.12
+  fizziness: 0.25
+
+- type: reagent
+  id: SurferOnAcid
+  name: reagent-name-surfer-on-acid
+  parent: BaseAlcohol
+  desc: reagent-desc-surfer-on-acid
+  physicalDesc: reagent-physical-desc-oily
+  flavor: surfer-on-acid
+  color: "#400101"
+  metamorphicSprite:
+    sprite: Objects/Consumable/Drinks/jaegermister.rsi
+    state: icon_empty
+  metamorphicMaxFillLevels: 6
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: false
+  metabolisms:
+    Drink:
+      effects:
+        - !type:SatiateThirst
+          factor: 2
+        - !type:AdjustReagent
+          reagent: Ethanol
+          amount: 0.15
+        - !type:AdjustReagent
+          reagent: LotophagoiOil
+          amount: 0.12
+  fizziness: 0.25
+
+- type: reagent
+  id: Fizzball
+  name: reagent-name-fizzball
+  parent: BaseAlcohol
+  desc: reagent-desc-fizzball
+  physicalDesc: reagent-physical-desc-fizzy
+  flavor: fizzball
+  color: "#400101"
+  metamorphicSprite:
+    sprite: Objects/Consumable/Drinks/jaegermister.rsi
+    state: icon_empty
+  metamorphicMaxFillLevels: 6
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: false
+  metabolisms:
+    Drink:
+      effects:
+        - !type:SatiateThirst
+          factor: 2
+        - !type:AdjustReagent
+          reagent: Ethanol
+          amount: 0.08
+  fizziness: 0.25
+
+- type: reagent
+  id: TuxedoSunset
+  name: reagent-name-tuxedo-sunset
+  parent: BaseAlcohol
+  desc: reagent-desc-tuxedo-sunset
+  physicalDesc: reagent-physical-desc-cold
+  flavor: tuxedo-sunset
+  color: "#400101"
+  metamorphicSprite:
+    sprite: Objects/Consumable/Drinks/jaegermister.rsi
+    state: icon_empty
+  metamorphicMaxFillLevels: 6
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: false
+  metabolisms:
+    Drink:
+      effects:
+        - !type:SatiateThirst
+          factor: 2
+        - !type:AdjustReagent
+          reagent: Ethanol
+          amount: 0.08
+  fizziness: 0.25
+
+- type: reagent
+  id: InsideScoop
+  name: reagent-name-inside-scoop
+  parent: BaseAlcohol
+  desc: reagent-desc-inside-scoop
+  physicalDesc: reagent-physical-desc-fizzy-and-creamy
+  flavor: inside-scoop
+  color: "#400101"
+  metamorphicSprite:
+    sprite: Objects/Consumable/Drinks/jaegermister.rsi
+    state: icon_empty
+  metamorphicMaxFillLevels: 6
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: false
+  metabolisms:
+    Drink:
+      effects:
+        - !type:SatiateThirst
+          factor: 2
+        - !type:AdjustReagent
+          reagent: Ethanol
+          amount: 0.08
+
+
+  fizziness: 0.25
+
+- type: reagent
+  id: FizzballFloat
+  name: reagent-name-fizzball-float
+  parent: BaseAlcohol
+  desc: reagent-desc-fizzball-float
+  physicalDesc: reagent-physical-desc-fizzy-and-creamy
+  flavor: fizzball-float
+  color: "#400101"
+  metamorphicSprite:
+    sprite: Objects/Consumable/Drinks/jaegermister.rsi
+    state: icon_empty
+  metamorphicMaxFillLevels: 6
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: false
+  metabolisms:
+    Drink:
+      effects:
+        - !type:SatiateThirst
+          factor: 2
+        - !type:AdjustReagent
+          reagent: Ethanol
+          amount: 0.08
+  fizziness: 0.25
+
+- type: reagent
+  id: Chartruse
+  name: reagent-name-chartruse
+  parent: BaseAlcohol
+  desc: reagent-desc-chartruse
+  physicalDesc: reagent-physical-desc-tangy
+  flavor: chartruse
+  color: "#400101"
+  metamorphicSprite:
+    sprite: Objects/Consumable/Drinks/jaegermister.rsi
+    state: icon_empty
+  metamorphicMaxFillLevels: 6
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: false
+  metabolisms:
+    Drink:
+      effects:
+        - !type:SatiateThirst
+          factor: 2
+        - !type:AdjustReagent
+          reagent: Ethanol
+          amount: 0.15
+  fizziness: 0.25
+
+- type: reagent
+  id: DeathFlip
+  name: reagent-name-death-flip
+  parent: BaseAlcohol
+  desc: reagent-desc-death-flip
+  physicalDesc: reagent-physical-desc-exhilarating
+  flavor: death-flip
+  color: "#400101"
+  metamorphicSprite:
+    sprite: Objects/Consumable/Drinks/jaegermister.rsi
+    state: icon_empty
+  metamorphicMaxFillLevels: 6
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: false
+  metabolisms:
+    Drink:
+      effects:
+        - !type:SatiateThirst
+          factor: 2
+        - !type:AdjustReagent
+          reagent: Ethanol
+          amount: 0.15
+        - !type:GenericStatusEffect
+          key: KnockedDown
+          component: KnockedDown
+          time: 0.5
+          type: Add
+          refresh: false
+        - !type:GenericStatusEffect
+          key: Drowsiness
+          time: 1.0
+          type: Remove
+        - !type:GenericStatusEffect
+          key: Stutter
+          component: StutteringAccent
+          time: 1
+          type: Add
+          refresh: false
+  fizziness: 0.25
+
+- type: reagent
+  id: BloodyJaeger
+  name: reagent-name-bloody-jaeger
+  parent: BaseAlcohol
+  desc: reagent-desc-bloody-jaeger
+  physicalDesc: reagent-physical-desc-acrid
+  flavor: bloody-jaeger
+  color: "#400101"
+  metamorphicSprite:
+    sprite: Objects/Consumable/Drinks/jaegermister.rsi
+    state: icon_empty
+  metamorphicMaxFillLevels: 6
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: false
+  metabolisms:
+    Drink:
+      effects:
+        - !type:SatiateThirst
+          factor: 2
+        - !type:AdjustReagent
+          reagent: Ethanol
+          amount: 0.12
+  fizziness: 0.25
+
+- type: reagent
+  id: PopQuiz
+  name: reagent-name-pop-quiz
+  parent: BaseAlcohol
+  desc: reagent-desc-pop-quiz
+  physicalDesc: reagent-physical-desc-tart
+  flavor: pop-quiz
+  color: "#400101"
+  metamorphicSprite:
+    sprite: Objects/Consumable/Drinks/jaegermister.rsi
+    state: icon_empty
+  metamorphicMaxFillLevels: 6
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: false
+  metabolisms:
+    Drink:
+      effects:
+        - !type:SatiateThirst
+          factor: 2
+        - !type:AdjustReagent
+          reagent: Ethanol
+          amount: 0.08
+  fizziness: 0.25
+
+- type: reagent
+  id: NaughtyBartender
+  name: reagent-name-naughty-bartender
+  parent: BaseAlcohol
+  desc: reagent-desc-naughty-bartender
+  physicalDesc: reagent-physical-desc-soothing
+  flavor: naughty-bartender
+  color: "#400101"
+  metamorphicSprite:
+    sprite: Objects/Consumable/Drinks/jaegermister.rsi
+    state: icon_empty
+  metamorphicMaxFillLevels: 6
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: false
+  metabolisms:
+    Drink:
+      effects:
+        - !type:SatiateThirst
+          factor: 2
+        - !type:AdjustReagent
+          reagent: Ethanol
+          amount: 0.1
+  fizziness: 0.25
+
+- type: reagent
+  id: AtlanticOcean
+  name: reagent-name-atlantic-ocean
+  parent: BaseAlcohol
+  desc: reagent-desc-atlantic-ocean
+  physicalDesc: reagent-physical-desc-pulpy
+  flavor: atlantic-ocean
+  color: "#400101"
+  metamorphicSprite:
+    sprite: Objects/Consumable/Drinks/jaegermister.rsi
+    state: icon_empty
+  metamorphicMaxFillLevels: 6
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: false
+  metabolisms:
+    Drink:
+      effects:
+        - !type:SatiateThirst
+          factor: 2
+        - !type:AdjustReagent
+          reagent: Ethanol
+          amount: 0.16
+        - !type:AdjustReagent
+          reagent: Pomelustine
+          amount: 0.5
+  fizziness: 0.25
+
+- type: reagent
+  id: CafeCocktail
+  name: reagent-name-cafe-cocktail
+  parent: BaseAlcohol
+  desc: reagent-desc-cafe-cocktail
+  physicalDesc: reagent-physical-desc-crisp
+  flavor: cafe-cocktail
+  color: "#400101"
+  metamorphicSprite:
+    sprite: Objects/Consumable/Drinks/jaegermister.rsi
+    state: icon_empty
+  metamorphicMaxFillLevels: 6
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: false
+  metabolisms:
+    Drink:
+      effects:
+        - !type:SatiateThirst
+          factor: 2
+        - !type:AdjustReagent
+          reagent: Ethanol
+          amount: 0.12
+  fizziness: 0.25
+
+- type: reagent
+  id: CinnamonCookie
+  name: reagent-name-cinnamon-cookie
+  parent: BaseAlcohol
+  desc: reagent-desc-cinnamon-cookie
+  physicalDesc: reagent-physical-desc-spicy
+  flavor: cinnamon-cookie
+  color: "#400101"
+  metamorphicSprite:
+    sprite: Objects/Consumable/Drinks/jaegermister.rsi
+    state: icon_empty
+  metamorphicMaxFillLevels: 6
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: false
+  metabolisms:
+    Drink:
+      effects:
+        - !type:SatiateThirst
+          factor: 2
+        - !type:AdjustReagent
+          reagent: Ethanol
+          amount: 0.1
+  fizziness: 0.25
+
+- type: reagent
+  id: ThoughtsAndPrayers
+  name: reagent-name-thoughts-and-prayers
+  parent: BaseAlcohol
+  desc: reagent-desc-thoughts-and-prayers
+  physicalDesc: reagent-physical-desc-ethereal
+  flavor: thoughts-and-prayers
+  color: "#400101"
+  metamorphicSprite:
+    sprite: Objects/Consumable/Drinks/jaegermister.rsi
+    state: icon_empty
+  metamorphicMaxFillLevels: 6
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: false
+  metabolisms:
+    Drink:
+      effects:
+        - !type:SatiateThirst
+          factor: 2
+        - !type:AdjustReagent
+          reagent: Ethanol
+          amount: 0.12
+        - !type:AdjustReagent
+          reagent: Silencer
+          amount: 0.05
+        - !type:AdjustReagent
+          reagent: LotophagoiOil
+          amount: 0.1
+  fizziness: 0.25
+
+- type: reagent
+  id: MutuallyAssuredDestruction
+  name: reagent-name-mutually-assured-destruction
+  parent: BaseAlcohol
+  desc: reagent-desc-mutually-assured-destruction
+  physicalDesc: reagent-physical-desc-overpowering
+  flavor: mutually-assured-destruction
+  color: "#400101"
+  metamorphicSprite:
+    sprite: Objects/Consumable/Drinks/jaegermister.rsi
+    state: icon_empty
+  metamorphicMaxFillLevels: 6
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: false
+  metabolisms:
+    Drink:
+      effects:
+        - !type:SatiateThirst
+          factor: 2
+        - !type:AdjustReagent
+          reagent: Ethanol
+          amount: 0.3
+  fizziness: 0.25
+
+- type: reagent
+  id: Zenith
+  name: reagent-name-zenith
+  parent: BaseAlcohol
+  desc: reagent-desc-zenith
+  physicalDesc: reagent-physical-desc-volatile
+  flavor: zenith
+  color: "#400101"
+  metamorphicSprite:
+    sprite: Objects/Consumable/Drinks/jaegermister.rsi
+    state: icon_empty
+  metamorphicMaxFillLevels: 6
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: false
+  metabolisms:
+    Drink:
+      effects:
+        - !type:SatiateThirst
+          factor: 2
+        - !type:AdjustReagent
+          reagent: Ethanol
+          amount: 0.35
+          ## TODO: add something more here...
+  fizziness: 0.25
+
+- type: reagent
+  id: BloodRedLicorice
+  name: reagent-name-blood-red-licorice
+  parent: BaseAlcohol
+  desc: reagent-desc-blood-red-licorice
+  physicalDesc: reagent-physical-desc-volatile
+  flavor: blood-red-licorice
+  color: "#400101"
+  metamorphicSprite:
+    sprite: Objects/Consumable/Drinks/jaegermister.rsi
+    state: icon_empty
+  metamorphicMaxFillLevels: 6
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: false
+  metabolisms:
+    Drink:
+      effects:
+        - !type:SatiateThirst
+          factor: 2
+        - !type:AdjustReagent
+          reagent: Ethanol
+          amount: 0.1
+  fizziness: 0.25
+
+- type: reagent
   id: BloodMoon
   name: reagent-name-blood-moon
   parent: BaseAlcohol
