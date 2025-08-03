@@ -28,23 +28,21 @@ public sealed class ServerConsentManager : IServerConsentManager
     [Dependency] private readonly ISharedAdminLogManager _adminLogger = default!;
     [Dependency] private readonly IEntityManager _entityManager = default!;
 
-    private ConsentSystem? _consentSystem;
-
     public void Initialize()
     {
-        _consentSystem = _entityManager.System<ConsentSystem>();
         _netManager.RegisterNetMessage<MsgUpdateConsent>(HandleUpdateConsentMessage);
     }
 
     private async void HandleUpdateConsentMessage(MsgUpdateConsent message)
     {
         var userId = message.MsgChannel.UserId;
+        var consentSystem = _entityManager.System<ConsentSystem>();
 
-        if (!_consentSystem!.TryGetConsent(userId, out _))
+        if (!consentSystem.TryGetConsent(userId, out _))
             return;
 
         message.Consent.EnsureValid(_configManager, _prototypeManager);
-        _consentSystem.SetConsent(userId, message.Consent);
+        consentSystem.SetConsent(userId, message.Consent);
 
         var session = _playerManager.GetSessionByChannel(message.MsgChannel);
         var togglesPretty = String.Join(", ", message.Consent.Toggles.Select(t => $"[{t.Key}: {t.Value}]"));
@@ -61,12 +59,13 @@ public sealed class ServerConsentManager : IServerConsentManager
     public async Task LoadData(ICommonSession session, CancellationToken cancel)
     {
         var consent = new PlayerConsentSettings();
+        var consentSystem = _entityManager.System<ConsentSystem>();
 
         if (ShouldStoreInDb(session.AuthType))
             consent = await _db.GetPlayerConsentSettingsAsync(session.UserId);
 
         consent.EnsureValid(_configManager, _prototypeManager);
-        _consentSystem!.SetConsent(session.UserId, consent);
+        consentSystem.SetConsent(session.UserId, consent);
 
         var message = new MsgUpdateConsent() { Consent = consent };
         _netManager.ServerSendMessage(message, session.Channel);
@@ -74,13 +73,15 @@ public sealed class ServerConsentManager : IServerConsentManager
 
     public void OnClientDisconnected(ICommonSession session)
     {
-        _consentSystem!.SetConsent(session.UserId, null);
+        var consentSystem = _entityManager.System<ConsentSystem>();
+        consentSystem.SetConsent(session.UserId, null);
     }
 
     /// <inheritdoc />
     public PlayerConsentSettings GetPlayerConsentSettings(NetUserId userId)
     {
-        if (_consentSystem!.TryGetConsent(userId, out var consent))
+        var consentSystem = _entityManager.System<ConsentSystem>();
+        if (consentSystem.TryGetConsent(userId, out var consent))
             return consent;
 
         // A player that has disconnected does not consent to anything.
