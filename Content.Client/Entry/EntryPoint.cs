@@ -58,6 +58,7 @@
 // SPDX-FileCopyrightText: 2024 Vasilis
 // SPDX-FileCopyrightText: 2024 deltanedas
 // SPDX-FileCopyrightText: 2024 metalgearsloth
+// SPDX-FileCopyrightText: 2025 MajorMoth
 // SPDX-FileCopyrightText: 2025 Rosycup
 // SPDX-FileCopyrightText: 2025 sleepyyapril
 //
