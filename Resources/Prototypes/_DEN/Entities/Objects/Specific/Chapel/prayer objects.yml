@@ -15,7 +15,7 @@
     soundHit:
      collection: WeakHit
   - type: Sprite
-    sprite: _DEN\Objects\Specific\Chapel\prayerrugs.rsi
+    sprite: _DEN/Objects/Specific/Chapel/prayerrugs.rsi
 
 - type: entity
   id: PrayerRugBlue
@@ -24,9 +24,10 @@
   parent: PrayerRugBase
   components:
   - type: Sprite
-    sprite: _DEN\Objects\Specific\Chapel\prayerrugs.rsi
+    sprite: _DEN/Objects/Specific/Chapel/prayerrugs.rsi
     state: prugblue
   - type: Icon
+    sprite: _DEN/Objects/Specific/Chapel/prayerrugs.rsi
     state: iconblue
 
 - type: entity
@@ -36,9 +37,10 @@
   parent: PrayerRugBase
   components:
   - type: Sprite
-    sprite: _DEN\Objects\Specific\Chapel\prayerrugs.rsi
+    sprite: _DEN/Objects/Specific/Chapel/prayerrugs.rsi
     state: pruggreen
   - type: Icon
+    sprite: _DEN/Objects/Specific/Chapel/prayerrugs.rsi
     state: icongreen
 
 - type: entity
@@ -48,8 +50,9 @@
   parent: PrayerRugBase
   components:
   - type: Sprite
-    sprite: _DEN\Objects\Specific\Chapel\prayerrugs.rsi
+    sprite: _DEN/Objects/Specific/Chapel/prayerrugs.rsi
     state: prugred
   - type: Icon
+    sprite: _DEN/Objects/Specific/Chapel/prayerrugs.rsi
     state: iconred
 
