@@ -1,0 +1,78 @@
+
+<Document>
+# Sequence Cooking
+
+Tired of the same boring burgers and tacos? Looking to put the "art" back into "culinary arts"? Perhaps you're looking to open your own restaurant chain at the heart of a Nanotrasen station... well, we can't approve your business license, but we do have just the advanced Taco Tech for you!
+
+First, pick the ingredient that will serve as the basis of your meal:
+
+<Box>
+<GuideEntityEmbed Entity="FoodBreadBun" Caption="burger"/>
+<GuideEntityEmbed Entity="FoodKebabSkewer" Caption="kebab"/>
+<GuideEntityEmbed Entity="FoodTacoShell" Caption="taco"/>
+</Box>
+<Box>
+<GuideEntityEmbed Entity="FoodBreadBun" Caption="bun"/>
+<GuideEntityEmbed Entity="KitchenKnife" Caption="slice"/>
+<GuideEntityEmbed Entity="FoodBreadBunBottom" Caption="bottom bun"/>
+<GuideEntityEmbed Entity="FoodBreadBunTop" Caption="top bun"/>
+</Box>
+
+Then, you can simply stack ingredients directly on your base with your hands. Note that [italic]not all ingredients[/italic] may be usable in a burger or taco... but don't be afraid to experiment! You might be surprised by what you can add to a burger or taco.
+
+<Box>
+<GuideEntityEmbed Entity="FoodMeatCutletCooked" Caption=""/>
+<GuideEntityEmbed Entity="FoodCheeseSlice" Caption=""/>
+<GuideEntityEmbed Entity="FoodTomato" Caption=""/>
+<GuideEntityEmbed Entity="FoodChiliPepper" Caption=""/>
+</Box>
+<Box>
+<GuideEntityEmbed Entity="FoodCabbage" Caption=""/>
+<GuideEntityEmbed Entity="OrganHumanBrain" Caption=""/>
+<GuideEntityEmbed Entity="FoodCorn" Caption=""/>
+<GuideEntityEmbed Entity="FoodOrange" Caption=""/>
+</Box>
+
+<Box HorizontalAlignment="Center" VerticalAlignment="Stretch">
+  [italic]Don't forget to finish your burger with a top bun![/italic]
+</Box>
+
+There are some interesting quirks of this system. For example, generally, you can only use [color=orange]cooked[/color] meat, not raw.
+
+Another one is that the chemical composition of your meal is based on the ingredients used to fill it. For example, if you have a steak with barbecue sauce on it, and add that to a burger, then the burger will have barbecue sauce on it as well.
+
+This may have some [color=orange]interesting[/color] applications - I'm sure you can think of a few!
+
+## Metamorphic Recipes
+
+In some cases, you can create pre-existing food items through a cooking sequence. This mainly applies to [bold]burgers[/bold] - using cutlets in place of meat from the original recipe, certain recipes can be recreated.
+
+<Box>
+<GuideEntityEmbed Entity="FoodBreadBunBottom" Caption="bun"/>
+<GuideEntityEmbed Entity="FoodMeatCutletCooked" Caption="cutlet"/>
+<GuideEntityEmbed Entity="FoodCheeseSlice" Caption="cheese"/>
+<GuideEntityEmbed Entity="FoodBreadBunTop" Caption="bun"/>
+</Box>
+<Box>
+<GuideEntityEmbed Entity="FoodBurgerCheese"/>
+</Box>
+
+You may notice that by cutting a steak into three cutlets, this method of making cheeseburgers can [color=orange]save resources[/color] compared to the original, microwave-based cheeseburger recipe. Again, don't be afraid to experiment.
+
+In addition, metamorphic recipes are a bit more flexible compared to the original microwave recipe. You could use a different type of meat cutlet, or you could add two cutlets or cheese wedges instead of one - it would still work. For metamorphic recipes that use chemical reagents, you might even be able to get away with saving a few units.
+
+<Box>
+<GuideEntityEmbed Entity="FoodBreadBunBottom" Caption="bun"/>
+<GuideEntityEmbed Entity="FoodMeatBearCutletCooked" Caption="bear"/>
+<GuideEntityEmbed Entity="FoodMeatDuckCutletCooked" Caption="duck"/>
+<GuideEntityEmbed Entity="FoodCheeseSlice" Caption="cheese"/>
+<GuideEntityEmbed Entity="FoodBreadBunTop" Caption="bun"/>
+</Box>
+<Box>
+<GuideEntityEmbed Entity="FoodBreadBunBottom" Caption="bun"/>
+<GuideEntityEmbed Entity="FoodMeatChickenCutletCooked" Caption="chicken"/>
+<GuideEntityEmbed Entity="ReagentContainerMayo" Caption="mayonnaise"/>
+<GuideEntityEmbed Entity="FoodBreadBunTop" Caption="bun"/>
+</Box>
+
+</Document>

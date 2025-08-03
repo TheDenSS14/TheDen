@@ -1,4 +1,6 @@
+# SPDX-FileCopyrightText: 2024 V
 # SPDX-FileCopyrightText: 2025 January Nelson
+# SPDX-FileCopyrightText: 2025 sheepie
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -21,3 +23,12 @@
     sprite: Clothing/Neck/Cloaks/bear.rsi
   - type: WearerGetsExamineText
     thingType: obvious-type-pride-bear
+
+- type: entity
+  parent: ClothingNeckBase
+  id: ClothingNeckCloakCaptaingreatcoat
+  name: captain's greatcoat
+  description: A pompous and ornate blue greatcoat with a nice gold trim, worn as a cape thanks to the gold aguilettes holding it around your neck.
+  components:
+  - type: Sprite
+    sprite: Clothing/Neck/Cloaks/captaingreatcoat.rsi
