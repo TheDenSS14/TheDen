@@ -1,0 +1,55 @@
+#prayer rugs
+
+- type: entity
+  id: PrayerRugBase
+  abstract: True
+  parent: BaseItem
+  name: prayer rug
+  description: A rug for performing salah, the daily prayers in Islam. Now to figure out the qibla...
+  components:
+  - type: Rotatable
+  - type: DamageOnHighSpeedImpact
+    damage:
+     types:
+        Holy: 5
+    soundHit:
+     collection: WeakHit
+  - type: Sprite
+    sprite: _DEN\Objects\Specific\Chapel\prayerrugs.rsi
+
+- type: entity
+  id: PrayerRugBlue
+  abstract: False
+  name: blue prayer rug
+  parent: PrayerRugBase
+  components:
+  - type: Sprite
+    sprite: _DEN\Objects\Specific\Chapel\prayerrugs.rsi
+    state: prugblue
+  - type: Icon
+    state: iconblue
+
+- type: entity
+  id: PrayerRugGreen
+  abstract: False
+  name: green prayer rug
+  parent: PrayerRugBase
+  components:
+  - type: Sprite
+    sprite: _DEN\Objects\Specific\Chapel\prayerrugs.rsi
+    state: pruggreen
+  - type: Icon
+    state: icongreen
+
+- type: entity
+  id: PrayerRugRed
+  abstract: False
+  name: red prayer rug
+  parent: PrayerRugBase
+  components:
+  - type: Sprite
+    sprite: _DEN\Objects\Specific\Chapel\prayerrugs.rsi
+    state: prugred
+  - type: Icon
+    state: iconred
+

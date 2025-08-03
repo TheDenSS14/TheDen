@@ -1,7 +1,7 @@
 - type: entity
-  parent: Bible
+  parent: HolyBookBible
   id: HolyBookQuran
-  name: the quran
+  name: quran
   description: The holy book of Islam as revealed to the Prophet Muhammad.
   components:
   - type: Sprite
@@ -13,9 +13,9 @@
   - type: Clothing
 
 - type: entity
-  parent: Bible
+  parent: HolyBookBible
   id: HolyBookTanakh
-  name: the tanakh
+  name: tanakh
   description: The foundational texts of Judaism, consisting of the Torah, the Nevi'im, and the Ketuvim.
   components:
   - type: Sprite
