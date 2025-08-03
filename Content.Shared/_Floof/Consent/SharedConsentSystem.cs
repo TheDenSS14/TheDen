@@ -88,18 +88,7 @@ public abstract partial class SharedConsentSystem : EntitySystem
             || mind.Session == null
             || !UserConsents.TryGetValue(mind.Session.UserId, out var consentSettings)
             || !consentSettings.Toggles.TryGetValue(consentId, out var toggle))
-        {
-            var mindExists = _mindSystem.TryGetMind(ent.Owner, out _, out _);
-            var mindSessionExists = mind != null && mind.Session == null;
-            var userConsentExists = mind != null
-                && mind.Session != null
-                && UserConsents.TryGetValue(mind.Session.UserId, out var settings);
-
-            _sawmill.Info($"Mind exists: {mindExists}");
-            _sawmill.Info($"Mind session exists: {mindSessionExists}");
-            _sawmill.Info($"User consent exists: {userConsentExists}");
             return false;
-        }
 
         return toggle == "on";
     }
