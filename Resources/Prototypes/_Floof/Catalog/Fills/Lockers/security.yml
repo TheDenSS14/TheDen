@@ -1,0 +1,11 @@
+- type: entityTable
+  id: FillLockerWardenFloof
+  table: !type:AllSelector
+    children:
+      - id: ClothingLongcoatWarden
+
+- type: entityTable
+  id: FillLockerBrigmedicFloof
+  table: !type:AllSelector
+    children:
+      - id: ClothingLongcoatBrigmedic

@@ -41,7 +41,7 @@
       amount: 2
     - id: MagazineLightRifle
       amount: 4
-      
+
 - type: entity
   parent: GunSafe
   id: GunSafeAdjutantShotgun
@@ -53,7 +53,7 @@
       amount: 2
     - id: MagazineShotgun
       amount: 4
-      
+
 - type: entity
   parent: GunSafe
   id: GunSafeEnergyGun
@@ -63,7 +63,7 @@
     contents:
     - id: WeaponEnergyGun
       amount: 3
-      
+
 - type: entity
   parent: GunSafe
   id: GunSafeEnergyGunMini
@@ -73,3 +73,75 @@
     contents:
     - id: WeaponEnergyGunMini
       amount: 3
+
+- type: entityTable
+  id: FillSuitStorageSecurityDV # DeltaV - This adds a 2nd suit
+  table: !type:AllSelector
+    children:
+    - id: OxygenTankFilled
+    - id: ClothingOuterHardsuitSecurity
+    - id: ClothingMaskBreath
+    - id: NitrogenTankFilled # Nitrogen for the Vox and Slime friends!
+      amount: !type:ConstantNumberSelector
+        value: 2
+
+- type: entityTable
+  id: FillLockerWardenDV
+  table: !type:AllSelector
+    children:
+      - id: ClothingOuterHardsuitCombatWarden # DeltaV - ClothingOuterHardsuitWarden replaced in favour of warden's riot combat hardsuit.
+      - id: BoxPDAPrisoner # Delta-V
+      - id: ClothingShoesBootsWinterWarden #Delta V: Add departmental winter boots
+      - id: BoxEncryptionKeyPrisoner #Delta-V
+      - id: BoxPrisonerHeadset
+      - id: LunchboxSecurityFilledRandom # DeltaV Lunchboxes!
+        prob: 0.3
+
+
+- type: entityTable
+  id: FillLockerSecurityDV
+  table: !type:AllSelector
+    children:
+      - id: ClothingUniformJumpsuitSecBlue # DeltaV - consistency with other sec uniforms
+        prob: 0.3
+      - id: ClothingUniformJumpsuitSec # DeltaV - consistency with other sec uniforms
+        prob: 0.3
+      - id: ClothingUniformJumpskirtSecGrey # DeltaV - consistency with other sec uniforms
+        prob: 0.3
+      - id: ClothingUniformJumpskirtSecBlue # DeltaV - consistency with other sec uniforms
+        prob: 0.3
+      - id: ClothingUniformJumpskirtSec # DeltaV - consistency with other sec uniforms
+        prob: 0.3
+      - id: ClothingHeadHelmetInsulated # Nyanotrasen - Insulative headgear
+        prob: 0.4
+      - id: ClothingOuterArmorPlateCarrier # DeltaV - ClothingOuterArmorBasic replaced in favour of plate carrier and stabproof vest
+      - id: ClothingOuterArmorDuraVest
+      - id: ClothingOuterStasecSweater # DeltaV - in case the officers get cold :3
+        prob: 0.75
+      - id: ClothingUniformJumpsuitSecFormal # DeltaV - emergency parade time, Central's coming to visit
+        prob: 0.25
+
+- type: entityTable
+  id: FillLockerBrigmedicDV
+  table: !type:AllSelector
+    children:
+      - id: LunchboxSecurityFilledRandom # DeltaV Lunchboxes!
+        prob: 0.3
+      - id: ClothingEyesGlassesCorpsman # DeltaV - Corpsman Glasses
+      - id: BoxBodyBag # moved from bag fill
+      - id: ClothingHeadHatBeretCorpsman
+
+- type: entityTable
+  id: FillLockerBrigmedicHarduitDV
+  table: !type:AllSelector
+    children:
+    - id: ClothingOuterHardsuitCombatCorpsman
+    - id: OxygenTankFilled
+    - id: ClothingMaskBreath
+    - id: NitrogenTankFilled # TheDen - Added NitrogenTank because not everyone breathes O2
+
+- type: entityTable
+  id: FillLockerDetectiveDV
+  table: !type:AllSelector
+    children:
+      - id: BoxTapeRecorder

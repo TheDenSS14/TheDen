@@ -1,0 +1,38 @@
+# Cybersun Armoring Corporation
+- type: entity
+  id: SuitStorageShanlin
+  parent: SuitStorageBase
+  suffix: CSA-51a
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      entity_storage: !type:NestedSelector
+        tableId: FillSuitStorageShanlinDEN
+
+- type: entityTable
+  id: FillSuitStorageShanlinDEN
+  table: !type:AllSelector
+    children:
+      - id: OxygenTankFilled
+      - id: ClothingOuterHardsuitShanlinUnpainted
+      - id: ClothingMaskBreath
+      - id: NitrogenTankFilled # TheDen - Added NitrogenTank because not everyone breathes O2s
+
+- type: entity
+  id: SuitStorageShiwei
+  parent: SuitStorageBase
+  suffix: CSA-54UA
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      entity_storage: !type:NestedSelector
+        tableId: FillSuitStorageShiweiDEN
+
+- type: entityTable
+  id: FillSuitStorageShiweiDEN
+  table: !type:AllSelector
+    children:
+      - id: OxygenTankFilled
+      - id: ClothingOuterHardsuitShiweiUnpainted
+      - id: ClothingMaskBreath
+      - id: NitrogenTankFilled # TheDen - Added NitrogenTank because not everyone breathes O2s

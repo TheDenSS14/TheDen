@@ -1,0 +1,6 @@
+- type: entityTable
+  id: FillLockerWardenDEN # DeltaV - This adds a 2nd suit
+  table: !type:AllSelector
+    children:
+    - id: ClothingEyesHudSecurity
+    - id: ClothingHeadsetAltSecurity
