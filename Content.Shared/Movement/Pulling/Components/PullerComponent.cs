@@ -41,16 +41,22 @@ public sealed partial class PullerComponent : Component
     [DataField]
     public TimeSpan PushChangeCooldown = TimeSpan.FromSeconds(0.1f), PushDuration = TimeSpan.FromSeconds(5f);
 
-    // Before changing how this is updated, please see SharedPullerSystem.RefreshMovementSpeed
-    public float WalkSpeedModifier => Pulling == default ? 1.0f : 0.95f;
+    [DataField("walkSpeedModifier")]
+    public float PullWalkSpeedModifier = 0.95f; // DEN - Allow pull speed to be changed
 
-    public float SprintSpeedModifier => Pulling == default ? 1.0f : 0.95f;
-	
+    [DataField("sprintSpeedModifier")]
+    public float PullSprintSpeedModifier = 0.95f; // DEN - Allow pull speed to be changed
+
+    // Before changing how this is updated, please see SharedPullerSystem.RefreshMovementSpeed
+    public float WalkSpeedModifier => Pulling == default ? 1.0f : PullWalkSpeedModifier;
+
+    public float SprintSpeedModifier => Pulling == default ? 1.0f : PullSprintSpeedModifier;
+
     /// <summary>
     /// whether or not to apply speed modifiers to the puller
     /// </summary>
 	[AutoNetworkedField, DataField]
-	public bool ApplySpeedModifier = true;
+    public bool ApplySpeedModifier = true;
 
     /// <summary>
     ///     Entity currently being pulled/pushed if applicable.
