@@ -161,13 +161,11 @@
   components:
   - type: StorageFill
     contents:
-        - id: OxygenTankFilled
+        - id: JetpackSecurityFilled
           amount: 2 #DeltaV - Double the tanks
-        - id: NitrogenTankFilled #Den
-          amount: 2
         - id: ClothingOuterHardsuitCombatOfficer # DeltaV - ClothingOuterHardsuitSecurity replaced in favour of security combat hardsuit.
           amount: 2 #DeltaV - Double the suits
-        - id: ClothingMaskBreath
+        - id: ClothingMaskGasSecurity
           amount: 2 #Delta-V Double the masks
   - type: AccessReader
     access: [["Security"]]
@@ -227,8 +225,6 @@
   components:
   - type: StorageFill
     contents:
-        - id: OxygenTankFilled
-        - id: NitrogenTankFilled #Den
         - id: JetpackSecurityFilled
         - id: ClothingOuterHardsuitCombatHoS # DeltaV - ClothingOuterHardsuitSecurityRed replaced in favour of head of security's advanced combat hardsuit.
         - id: ClothingMaskGasSwat
@@ -243,10 +239,9 @@
   components:
   - type: StorageFill
     contents:
-        - id: OxygenTankFilled
-        - id: NitrogenTankFilled #Den
+        - id: JetpackSecurityFilled
         - id: ClothingOuterHardsuitCombatWarden # DeltaV - ClothingOuterHardsuitWarden replaced in favour of warden's riot combat hardsuit.
-        - id: ClothingMaskBreath
+        - id: ClothingMaskGasSecurity
   - type: AccessReader
     access: [["Armory"]]
 
@@ -307,10 +302,9 @@
   components:
   - type: StorageFill
     contents:
-      - id: NitrogenTankFilled
-      - id: OxygenTankFilled
+      - id: JetpackSecurityFilled
       - id: ClothingOuterHardsuitCombatCorpsman
-      - id: ClothingMaskBreath
+      - id: ClothingMaskGasSecurity
   - type: AccessReader
     access: [ [ "Corpsman" ] ]
 

@@ -87,7 +87,6 @@
     contents:
       - id: FlashlightSeclite
       - id: WeaponDisabler
-        prob: 0.3
       - id: ClothingBeltSecurityFilled
       # - id: ClothingHandsGlovesKravMaga # Goobstation - Martial Arts
       - id: Flash
@@ -100,8 +99,7 @@
       - id: RubberStampWarden
       - id: DoorRemoteArmory
       - id: ClothingOuterHardsuitCombatWarden # DeltaV - ClothingOuterHardsuitWarden replaced in favour of warden's riot combat hardsuit.
-      - id: OxygenTankFilled #Den
-      - id: NitrogenTankFilled #Den
+      - id: JetpackSecurityFilled #Den
       - id: HoloprojectorSecurity
       - id: ClothingEyesHudSecurity
       - id: BoxPDAPrisoner # Delta-V
@@ -109,7 +107,6 @@
       - id: BoxEncryptionKeyPrisoner #Delta-V
       - id: BoxPrisonerHeadset
       - id: LunchboxSecurityFilledRandom # Delta-v Lunchboxes!
-        prob: 0.3
 
 - type: entity
   id: LockerWardenFilled
@@ -120,7 +117,6 @@
     contents:
       - id: FlashlightSeclite
       - id: WeaponDisabler
-        prob: 0.3
       - id: ClothingBeltSecurityFilled
       # - id: ClothingHandsGlovesKravMaga # Goobstation - Martial Arts
       - id: Flash
@@ -139,7 +135,6 @@
       - id: BoxEncryptionKeyPrisoner #Delta-V
       - id: BoxPrisonerHeadset
       - id: LunchboxSecurityFilledRandom # Delta-v Lunchboxes!
-        prob: 0.3
 
 - type: entity
   id: LockerSecurityFilled
@@ -149,32 +144,16 @@
   - type: StorageFill
     contents:
       - id: FlashlightSeclite
-        prob: 0.8
-      - id: ClothingUniformJumpsuitSecGrey
-        prob: 0.3
-      - id: ClothingUniformJumpsuitSecBlue # DeltaV - consistency with other sec uniforms
-        prob: 0.3
       - id: ClothingUniformJumpsuitSec # DeltaV - consistency with other sec uniforms
-        prob: 0.3
-      - id: ClothingUniformJumpskirtSecGrey # DeltaV - consistency with other sec uniforms
-        prob: 0.3
-      - id: ClothingUniformJumpskirtSecBlue # DeltaV - consistency with other sec uniforms
-        prob: 0.3
       - id: ClothingUniformJumpskirtSec # DeltaV - consistency with other sec uniforms
-        prob: 0.3
       - id: ClothingHeadHelmetBasic
       - id: ClothingHeadHelmetInsulated # Nyanotrasen - Insulative headgear
-        prob: 0.4
       - id: ClothingOuterArmorPlateCarrier # DeltaV - ClothingOuterArmorBasic replaced in favour of plate carrier and stabproof vest
       - id: ClothingOuterArmorDuraVest
       - id: ClothingOuterStasecSweater # DeltaV - in case the officers get cold :3
-        prob: 0.75
-      - id: ClothingUniformJumpsuitSecFormal # DeltaV - emergency parade time, Central's coming to visit
-        prob: 0.25
       - id: ClothingBeltSecurityFilled
       # - id: ClothingBeltCorporateJudo # Goobstation - Martial Arts
       - id: Flash
-        prob: 0.5
       - id: ClothingEyesGlassesSunglasses
       - id: ClothingHeadsetAltSecurityRegular # Goobstation
       - id: ClothingHandsGlovesColorBlack
@@ -183,9 +162,7 @@
         prob: 0.1
       - id: ClothingEyesHudSecurity
       - id: HoloprojectorSecurity
-        prob: 0.6
       - id: LunchboxSecurityFilledRandom # Delta-v Lunchboxes!
-        prob: 0.3
 
 - type: entity
   id: LockerBrigmedicFilled
@@ -198,7 +175,6 @@
       - id: WeaponDisabler
       - id: TrackingImplanter
         amount: 2
-##      - id: ClothingOuterHardsuitCombatCorpsman # DeltaV - ClothingOuterHardsuitBrigmedic replaced in favour of corpsman's combat hardsuit; removing from standard filled locker to place in hardsuit filled locker.
       - id: BoxSterileMask
       - id: BoxLatexGloves # extra ppe
       - id: BoxBodyBag # moved from bag fill
@@ -206,8 +182,6 @@
 ##      - id: ClothingOuterCoatAMG # DeltaV - removed until I can resprite it or replace it.
       - id: ClothingUniformJumpsuitBrigmedic
       - id: ClothingUniformJumpskirtBrigmedic
-##      - id: ClothingUniformJumpskirtOfLife # DeltaV - nah
-##        prob: 0.1
       - id: ClothingLongcoatBrigmedic # Floofstation
       - id: MedkitCombatFilled #for when maps don't map in combat kits :<
         # corpsman gets WAY too much medicine, especially when there's medkits mapped into the office. removed all the other random medkits
@@ -226,7 +200,6 @@
       - id: WeaponDisabler
       - id: TrackingImplanter
         amount: 2
-##      - id: ClothingOuterHardsuitCombatCorpsman # DeltaV - ClothingOuterHardsuitBrigmedic replaced in favour of corpsman's combat hardsuit; removing from standard filled locker to place in hardsuit filled locker.
       - id: BoxSterileMask
       - id: BoxLatexGloves # extra ppe
       - id: BoxBodyBag # moved from bag fill
@@ -234,15 +207,12 @@
 ##      - id: ClothingOuterCoatAMG # DeltaV - removed until I can resprite it or replace it.
       - id: ClothingUniformJumpsuitBrigmedic
       - id: ClothingUniformJumpskirtBrigmedic
-##      - id: ClothingUniformJumpskirtOfLife # DeltaV - nah
-##        prob: 0.1
       - id: ClothingLongcoatBrigmedic # Floofstation
       - id: MedkitCombatFilled #for when maps don't map in combat kits :<
         # corpsman gets WAY too much medicine, especially when there's medkits mapped into the office. removed all the other random medkits
       - id: LunchboxSecurityFilledRandom # Delta-v Lunchboxes!
       - id: ClothingOuterHardsuitCombatCorpsman
-      - id: OxygenTankFilled #Den
-      - id: NitrogenTankFilled #Den
+      - id: JetpackSecurityFilled
 
 # DeltaV - end addition
 
@@ -254,7 +224,6 @@
   - type: StorageFill
     contents:
       - id: ClothingEyesHudSecurity
-        prob: 0.3
       - id: ClothingHeadHatFedoraBrown
       - id: ClothingNeckTieDet
       - id: ClothingOuterVestDetective
@@ -269,7 +238,6 @@
       - id: HoloprojectorSecurity
       - id: BoxEvidenceMarkers
       - id: LunchboxSecurityFilledRandom # Delta-v Lunchboxes!
-        prob: 0.3
       - id: HandLabeler
       - id: BoxTapeRecorder # DeltaV
 
