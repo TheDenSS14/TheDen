@@ -1,3 +1,10 @@
+# SPDX-FileCopyrightText: 2025 Blitz
+# SPDX-FileCopyrightText: 2025 MajorMoth
+# SPDX-FileCopyrightText: 2025 Rosycup
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 - type: entity
   parent: ClothingMaskGasExplorer
   id: ClothingMaskGasSecurityCombat
@@ -8,6 +15,8 @@
     sprite: _DEN/Clothing/Mask/securitycombatgasmask.rsi
   - type: Clothing
     sprite: _DEN/Clothing/Mask/securitycombatgasmask.rsi
+  - type: IngestionBlocker # Goobstation
+    blockSmokeIngestion: true
 
 - type: entity
   parent: ClothingMaskGasExplorer

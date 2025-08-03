@@ -1,3 +1,11 @@
+# SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT
+# SPDX-FileCopyrightText: 2024 VMSolidus
+# SPDX-FileCopyrightText: 2025 Blitz
+# SPDX-FileCopyrightText: 2025 BlitzTheSquishy
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 # Uniforms
 # Backpacks
 - type: loadout
@@ -13,6 +21,10 @@
     - !type:CharacterDepartmentRequirement
       departments:
         - Epistemics
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - ResearchDirector # MG has ClothingBackpackResearchDirectorFilled
 
 - type: loadout
   id: LoadoutBackpackSatchelScience
@@ -27,6 +39,10 @@
     - !type:CharacterDepartmentRequirement
       departments:
         - Epistemics
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - ResearchDirector # MG has ClothingBackpackSatchelResearchDirectorFilled
 
 - type: loadout
   id: LoadoutBackpackDuffelScience
@@ -41,6 +57,10 @@
     - !type:CharacterDepartmentRequirement
       departments:
         - Epistemics
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - ResearchDirector # MG has ClothingBackpackDuffelResearchDirectorFilled
 
 # Belt
 
@@ -288,6 +308,7 @@
   id: LoadoutOuterRobeTechPriest
   category: JobsEpistemicsAAUncategorized # TheDen - Wrong category
   cost: 0
+  exclusive: true
   items:
     - ClothingOuterRobeTechPriest
   requirements:

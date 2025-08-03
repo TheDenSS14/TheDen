@@ -1,3 +1,18 @@
+# SPDX-FileCopyrightText: 2023 Fluffiest Floofers
+# SPDX-FileCopyrightText: 2023 PHCodes
+# SPDX-FileCopyrightText: 2024 FoxxoTrystan
+# SPDX-FileCopyrightText: 2024 Mnemotechnican
+# SPDX-FileCopyrightText: 2025 Blitz
+# SPDX-FileCopyrightText: 2025 GNUtopia
+# SPDX-FileCopyrightText: 2025 Quanteey
+# SPDX-FileCopyrightText: 2025 Raikyr0
+# SPDX-FileCopyrightText: 2025 RocketBoss360
+# SPDX-FileCopyrightText: 2025 VMSolidus
+# SPDX-FileCopyrightText: 2025 dootythefrooty
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 - type: entity
   id: ActionDispel
   name: action-name-dispel
@@ -313,7 +328,7 @@
   components:
     - type: InstantAction
       icon: { sprite: Interface/Actions/psionics.rsi, state: pyrokinetic_flare }
-      useDelay: 25
+      useDelay: 120
       checkCanInteract: false
       event: !type:AnomalyPowerActionEvent
         settings:

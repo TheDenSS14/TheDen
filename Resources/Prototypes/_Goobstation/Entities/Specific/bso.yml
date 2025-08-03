@@ -1,6 +1,22 @@
+# SPDX-FileCopyrightText: 2025 Aiden
+# SPDX-FileCopyrightText: 2025 Aidenkrz
+# SPDX-FileCopyrightText: 2025 Baptr0b0t
+# SPDX-FileCopyrightText: 2025 Eagle-0
+# SPDX-FileCopyrightText: 2025 GoobBot
+# SPDX-FileCopyrightText: 2025 Lincoln McQueen
+# SPDX-FileCopyrightText: 2025 Rosycup
+# SPDX-FileCopyrightText: 2025 Solstice
+# SPDX-FileCopyrightText: 2025 Ted Lukin
+# SPDX-FileCopyrightText: 2025 Vanessa Louwagie
+# SPDX-FileCopyrightText: 2025 gus
+# SPDX-FileCopyrightText: 2025 pheenty
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 - type: entity
   parent: BaseItem
-  id: BSOManual
+  id: NTCQCManual
   name: Nanotrasen CQC Manual
   description: A small, blue manual. There are drawn instructions of tactical hand-to-hand combat.
   components:
@@ -13,3 +29,38 @@
   - type: StaticPrice
     price: 3000
   - type: GrantCqc
+
+
+- type: entity
+  parent: [BaseHandheldComputer]
+  id: HandheldCrewMonitorBSO
+  name: handheld command monitor
+  description: A handheld crew monitor modified for blueshield officer's needs. Designed to inject a tracking device into command personnel and alarm you about them being in danger.
+  components:
+  - type: Sprite
+    sprite: _Goobstation/Objects/Specific/Security/bso_monitor.rsi
+    state: scanner
+  - type: Item
+    size: Small
+  - type: CrewMonitorScanning
+    whitelist:
+      components:
+      - CommandStaff
+  - type: ActivatableUI
+    key: enum.CrewMonitoringUIKey.Key
+  - type: UserInterface
+    interfaces:
+      enum.CrewMonitoringUIKey.Key:
+        type: CrewMonitoringBoundUserInterface
+  - type: CrewMonitoringConsole
+    alertsEnabled: false # TheDen - They already have a notification and the beep goes off when anyone dies, so just disable
+  - type: DeviceNetwork
+    deviceNetId: Wireless
+    receiveFrequencyId: CrewMonitor
+  - type: WirelessNetworkConnection
+    range: 500
+  - type: StationLimitedNetwork
+  - type: StaticPrice
+    price: 1000
+  - type: Speech
+    speechSounds: Borg

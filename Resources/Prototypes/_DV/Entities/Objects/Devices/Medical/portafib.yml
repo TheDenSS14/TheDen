@@ -1,3 +1,12 @@
+# SPDX-FileCopyrightText: 2023 rosieposie
+# SPDX-FileCopyrightText: 2024 Debug
+# SPDX-FileCopyrightText: 2024 Skubman
+# SPDX-FileCopyrightText: 2025 Jakumba
+# SPDX-FileCopyrightText: 2025 Rosycup
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 - type: entity
   id: Portafib
   parent: Defibrillator
@@ -12,6 +21,9 @@
     useRate: 140
   - type: StaticPrice
     price: 100
+  - type: Tag
+    tags:
+    - Portafib
 
 - type: entity
   id: PortafibEmpty

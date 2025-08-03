@@ -1,6 +1,14 @@
-﻿using System.Linq;
+// SPDX-FileCopyrightText: 2022 Nemanja
+// SPDX-FileCopyrightText: 2023 DrSmugleaf
+// SPDX-FileCopyrightText: 2025 sleepyyapril
+//
+// SPDX-License-Identifier: MIT
+
+using System.Linq;
 using Content.Server.Instruments;
 using Content.Server.Xenoarchaeology.XenoArtifacts.Triggers.Components;
+using Content.Shared.Instruments;
+
 
 namespace Content.Server.Xenoarchaeology.XenoArtifacts.Triggers.Systems;
 

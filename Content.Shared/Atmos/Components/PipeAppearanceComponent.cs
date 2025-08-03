@@ -1,3 +1,11 @@
+// SPDX-FileCopyrightText: 2023 DrSmugleaf
+// SPDX-FileCopyrightText: 2023 Leon Friedrich
+// SPDX-FileCopyrightText: 2025 ArtisticRoomba
+// SPDX-FileCopyrightText: 2025 chromiumboy
+// SPDX-FileCopyrightText: 2025 sleepyyapril
+//
+// SPDX-License-Identifier: MIT
+
 using Robust.Shared.Utility;
 
 namespace Content.Shared.Atmos.Components;
@@ -5,6 +13,8 @@ namespace Content.Shared.Atmos.Components;
 [RegisterComponent]
 public sealed partial class PipeAppearanceComponent : Component
 {
-    [DataField("sprite")]
-    public SpriteSpecifier.Rsi Sprite = new(new("Structures/Piping/Atmospherics/pipe.rsi"), "pipeConnector");
+    [DataField]
+    public SpriteSpecifier.Rsi[] Sprite = [new(new("Structures/Piping/Atmospherics/pipe.rsi"), "pipeConnector"),
+        new(new("Structures/Piping/Atmospherics/pipe_alt1.rsi"), "pipeConnector"),
+        new(new("Structures/Piping/Atmospherics/pipe_alt2.rsi"), "pipeConnector")];
 }

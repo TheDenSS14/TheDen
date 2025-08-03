@@ -1,3 +1,15 @@
+# SPDX-FileCopyrightText: 2021 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2021 Vera Aguilera Puerto <6766154+Zumorica@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 ShadowCommander <10494922+ShadowCommander@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 mirrorcult <lunarautomaton6@gmail.com>
+# SPDX-FileCopyrightText: 2023 Chief-Engineer <119664036+Chief-Engineer@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Moony <moony@hellomouse.net>
+# SPDX-FileCopyrightText: 2024 no <165581243+pissdemon@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 delete-verb-get-data-text = Delete
 edit-solutions-verb-get-data-text = Edit Solutions
 explode-verb-get-data-text = Explode
@@ -14,3 +26,5 @@ admin-verbs-erase-description = Removes the player from the round and crew manif
     Players are shown a popup indicating them to play as if they never existed.
 toolshed-verb-mark = Mark
 toolshed-verb-mark-description = Places this entity into the $marked variable, a list of entities, replacing it's prior value.
+
+export-entity-verb-get-data-text = Export sprite

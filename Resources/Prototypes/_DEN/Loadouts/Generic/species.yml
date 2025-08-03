@@ -1,3 +1,15 @@
+# SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT
+# SPDX-FileCopyrightText: 2024 Fansana
+# SPDX-FileCopyrightText: 2024 VMSolidus
+# SPDX-FileCopyrightText: 2025 Blitz
+# SPDX-FileCopyrightText: 2025 EctoplasmIsGood
+# SPDX-FileCopyrightText: 2025 Possum
+# SPDX-FileCopyrightText: 2025 Possumongus
+# SPDX-FileCopyrightText: 2025 Tanix
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 - type: loadout
   id: LoadoutSpeciesEmergencyWaterVaporTank
   category: Species
@@ -36,3 +48,42 @@
       group: LoadoutAirTank
   items:
     - DoubleEmergencyWaterVaporTankFilled
+    
+# Feroxi Extra Water
+- type: loadout
+  id: LoadoutSpeciesExtraWater
+  category: Species
+  cost: 0
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      species:
+        - Feroxi
+  items:
+    - DrinkWaterBottleFull
+    
+- type: loadout
+  id: LoadoutSpeciesWaterjug
+  category: Species
+  cost: 2
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      species:
+        - Feroxi
+  items:
+    - DrinkWaterPlasticJug
+
+# Tank Harness
+- type: loadout
+  id: LoadoutSpeciesTankHarness
+  category: Species
+  cost: 0
+  items:
+    - ClothingOuterVestTank
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      species:
+        - Vox
+        - Feroxi
+        - SlimePerson
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutOuter

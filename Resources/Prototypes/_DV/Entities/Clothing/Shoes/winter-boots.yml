@@ -1,3 +1,10 @@
+# SPDX-FileCopyrightText: 2023 Velcroboy
+# SPDX-FileCopyrightText: 2025 Rosycup
+# SPDX-FileCopyrightText: 2025 SubspaceEmber
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 - type: entity
   parent: ClothingShoesBaseWinterBoots
   id: ClothingShoesBootsWinterAtmos
@@ -121,12 +128,14 @@
 - type: entity
   parent: ClothingShoesBaseWinterBoots
   id: ClothingShoesBootsWinterJani
-  name: custodial winter boots
+  name: janitorial winter boots # The Den - changes to janitorial from custodial
+  description: Warm insulated purple shoes with no-slip soles for janitorial work. # The Den - new description
   components:
   - type: Sprite
     sprite: _DV/Clothing/Shoes/Boots/winterbootsjani.rsi
   - type: Clothing
     sprite: _DV/Clothing/Shoes/Boots/winterbootsjani.rsi
+  - type: NoSlip # The Den - added noslip
 
 - type: entity
   parent: ClothingShoesBaseWinterBoots

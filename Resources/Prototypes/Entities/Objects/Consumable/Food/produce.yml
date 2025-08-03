@@ -1,3 +1,72 @@
+# SPDX-FileCopyrightText: 2021 20kdc
+# SPDX-FileCopyrightText: 2021 Elijahrane
+# SPDX-FileCopyrightText: 2021 Galactic Chimp
+# SPDX-FileCopyrightText: 2021 Paul Ritter
+# SPDX-FileCopyrightText: 2021 ShadowCommander
+# SPDX-FileCopyrightText: 2021 Swept
+# SPDX-FileCopyrightText: 2021 SweptWasTaken
+# SPDX-FileCopyrightText: 2021 Ygg01
+# SPDX-FileCopyrightText: 2022 Flipp Syder
+# SPDX-FileCopyrightText: 2022 Jacob Tong
+# SPDX-FileCopyrightText: 2022 Jessica M
+# SPDX-FileCopyrightText: 2022 Kara
+# SPDX-FileCopyrightText: 2022 Michael Phillips
+# SPDX-FileCopyrightText: 2022 Peptide90
+# SPDX-FileCopyrightText: 2022 Pieter-Jan Briers
+# SPDX-FileCopyrightText: 2022 Rane
+# SPDX-FileCopyrightText: 2022 TaralGit
+# SPDX-FileCopyrightText: 2022 Willhelm53
+# SPDX-FileCopyrightText: 2022 and_a
+# SPDX-FileCopyrightText: 2022 hubismal
+# SPDX-FileCopyrightText: 2022 keronshb
+# SPDX-FileCopyrightText: 2022 mirrorcult
+# SPDX-FileCopyrightText: 2023 612
+# SPDX-FileCopyrightText: 2023 Doru991
+# SPDX-FileCopyrightText: 2023 DoubleRiceEddiedd
+# SPDX-FileCopyrightText: 2023 Feluk6174
+# SPDX-FileCopyrightText: 2023 Fluffiest Floofers
+# SPDX-FileCopyrightText: 2023 IProduceWidgets
+# SPDX-FileCopyrightText: 2023 Kevin Zheng
+# SPDX-FileCopyrightText: 2023 LankLTE
+# SPDX-FileCopyrightText: 2023 Leon Friedrich
+# SPDX-FileCopyrightText: 2023 Nemanja
+# SPDX-FileCopyrightText: 2023 Puro
+# SPDX-FileCopyrightText: 2023 Slava0135
+# SPDX-FileCopyrightText: 2023 Stealthbomber16
+# SPDX-FileCopyrightText: 2023 Vladislav Kadira
+# SPDX-FileCopyrightText: 2023 ZeroDayDaemon
+# SPDX-FileCopyrightText: 2023 brainfood1183
+# SPDX-FileCopyrightText: 2023 crazybrain23
+# SPDX-FileCopyrightText: 2023 deltanedas
+# SPDX-FileCopyrightText: 2023 drteaspoon420
+# SPDX-FileCopyrightText: 2023 kerisargit
+# SPDX-FileCopyrightText: 2023 lapatison
+# SPDX-FileCopyrightText: 2023 metalgearsloth
+# SPDX-FileCopyrightText: 2024 Adrian16199
+# SPDX-FileCopyrightText: 2024 BombasterDS
+# SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT
+# SPDX-FileCopyrightText: 2024 Debug
+# SPDX-FileCopyrightText: 2024 Ed
+# SPDX-FileCopyrightText: 2024 EdenTheLiznerd
+# SPDX-FileCopyrightText: 2024 FoxxoTrystan
+# SPDX-FileCopyrightText: 2024 Jeff
+# SPDX-FileCopyrightText: 2024 SimpleStation14
+# SPDX-FileCopyrightText: 2024 SleepyScarecrow
+# SPDX-FileCopyrightText: 2024 Ubaser
+# SPDX-FileCopyrightText: 2024 VMSolidus
+# SPDX-FileCopyrightText: 2024 Velcroboy
+# SPDX-FileCopyrightText: 2024 lzk
+# SPDX-FileCopyrightText: 2024 potato1234_x
+# SPDX-FileCopyrightText: 2024 slarticodefast
+# SPDX-FileCopyrightText: 2025 Hedera
+# SPDX-FileCopyrightText: 2025 Hederadaii
+# SPDX-FileCopyrightText: 2025 Rosycup
+# SPDX-FileCopyrightText: 2025 Tanix
+# SPDX-FileCopyrightText: 2025 portfiend
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 # When adding new food also add to random spawner located in Resources\Prototypes\Entities\Markers\Spawners\Random\Food_Drinks\food_produce.yml
 # For produce that can't be immediately eaten
 
@@ -276,7 +345,7 @@
     flavors:
       - banana
   - type: Food
-    trash: 
+    trash:
     - TrashBananaPeel
   - type: SolutionContainerManager
     solutions:
@@ -316,7 +385,7 @@
       - banana
       - nothing
   - type: Food
-    trash: 
+    trash:
     - TrashMimanaPeel
   - type: SolutionContainerManager
     solutions:
@@ -399,6 +468,8 @@
   - type: Extractable
     grindableSolutionName: food
   - type: SpaceGarbage
+  - type: Food
+    requiresSpecialDigestion: true
 
 - type: entity
   name: baked banana peel
@@ -852,7 +923,7 @@
   - type: FoodSequenceElement
     entries:
       Skewer: TomatoSkewer
-      Burger: Tomato
+      Burger: TomatoBurger # DEN - Tomato slice
       Taco: Tomato
 
 - type: entity
@@ -901,7 +972,7 @@
     - Vegetable
   - type: FoodSequenceElement
     entries:
-      Burger: BlueTomato
+      Burger: BlueTomatoBurger # DEN - Tomato slice
       Taco: BlueTomato
 
 - type: entity
@@ -946,10 +1017,11 @@
     tags:
     - Fruit # Fuck you they're a fruit
     - Vegetable
+    - VampireFood
   - type: FoodSequenceElement
     entries:
       Skewer: TomatoSkewer
-      Burger: BloodTomato
+      Burger: BloodTomatoBurger  # DEN - Tomato slice
       Taco: BloodTomato
 
 - type: entity
@@ -1097,7 +1169,7 @@
     flavors:
       - corn
   - type: Food
-    trash: 
+    trash:
     - FoodCornTrash
   - type: SolutionContainerManager
     solutions:
@@ -1233,6 +1305,10 @@
   - type: Tag
     tags:
     - Vegetable
+  - type: FoodSequenceElement # DEN - Use as ingredient
+    entries:
+      Taco: Chanterelle
+      Burger: ChanterelleBurger
 
 # Slices
 
@@ -1373,7 +1449,7 @@
   - type: FoodSequenceElement
     entries:
       Taco: ChiliPepper
-      Burger: ChiliPepper
+      Burger: ChiliPepperBurger # DEN - Pepper slices
       Skewer: ChiliPepperSkewer
 
 - type: entity
@@ -1404,7 +1480,7 @@
   - type: FoodSequenceElement
     entries:
       Taco: ChillyPepper
-      Burger: ChillyPepper
+      Burger: ChillyPepperBurger # DEN - Pepper slices
       Skewer: ChillyPepperSkewer
 
 - type: entity
@@ -1423,7 +1499,7 @@
         reagents:
         - ReagentId: Aloe
           Quantity: 10
-        - ReagentId: Aiuri
+        - ReagentId: Dermaline
           Quantity: 10
   - type: Sprite
     sprite: Objects/Specific/Hydroponics/aloe.rsi
@@ -1459,7 +1535,7 @@
         reagents:
         - ReagentId: Nutriment
           Quantity: 2
-        - ReagentId: SalicylicAcid
+        - ReagentId: Bicaridine
           Quantity: 20
   - type: Sprite
     sprite: Objects/Specific/Hydroponics/poppy.rsi
@@ -1491,7 +1567,7 @@
         reagents:
         - ReagentId: Nutriment
           Quantity: 2
-        - ReagentId: SalicylicAcid
+        - ReagentId: Bicaridine
           Quantity: 20
   - type: Sprite
     sprite: Objects/Specific/Hydroponics/lily.rsi
@@ -1522,7 +1598,7 @@
       food:
         maxVol: 40
         reagents:
-        - ReagentId: PenteticAcid
+        - ReagentId: Ultravasculine
           Quantity: 20
         - ReagentId: Epinephrine
           Quantity: 20
@@ -1552,9 +1628,9 @@
       food:
         maxVol: 24
         reagents:
-        - ReagentId: Probital
+        - ReagentId: Bicaridine
           Quantity: 5
-        - ReagentId: Lenturi
+        - ReagentId: Kelotane
           Quantity: 5
         - ReagentId: Nutriment
           Quantity: 2
@@ -1656,12 +1732,12 @@
   name: glasstle
   parent: FoodProduceBase
   id: FoodGlasstle
-  description: A fragile crystal plant with lot of spiky thorns. 
+  description: A fragile crystal plant with lot of spiky thorns.
   components:
   - type: Item
     size: Small
     sprite: Objects/Specific/Hydroponics/glasstle.rsi
-    heldPrefix: produce  
+    heldPrefix: produce
   - type: FlavorProfile
     flavors:
       - sharp
@@ -1678,7 +1754,7 @@
     seedId: glasstle
   - type: Extractable
     grindableSolutionName: food
-  - type: Damageable 
+  - type: Damageable
     damageContainer: Inorganic
   - type: ToolRefinable
     refineResult:
@@ -1701,7 +1777,7 @@
             max: 1
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
-  - type: DamageOnHit 
+  - type: DamageOnHit
     damage:
       types:
         Blunt: 10
@@ -1773,7 +1849,7 @@
   - type: Produce
     seedId: gatfruit
   - type: Food
-    trash: 
+    trash:
     - WeaponRevolverPython
   - type: Tag
     tags:
@@ -2061,7 +2137,7 @@
           Quantity: 10
         - ReagentId: Vitamin
           Quantity: 5
-        - ReagentId: Holywater
+        - ReagentId: HolyWater
           Quantity: 10
   - type: Sprite
     sprite: Objects/Specific/Hydroponics/holymelon.rsi
@@ -2126,7 +2202,7 @@
           Quantity: 2
         - ReagentId: Vitamin
           Quantity: 1
-        - ReagentId: Holywater
+        - ReagentId: HolyWater
           Quantity: 2
   - type: Extractable
     juiceSolution:
@@ -2219,7 +2295,7 @@
     flavors:
       - bungo
   - type: Food
-    trash: 
+    trash:
     - FoodBungoPit
   - type: SolutionContainerManager
     solutions:
@@ -2426,7 +2502,7 @@
         - ReagentId: Nutriment
           Quantity: 10
   - type: Sprite
-    sprite: Floof/Objects/Specific/Hydroponics/pomegranate.rsi
+    sprite: _Floof/Objects/Specific/Hydroponics/pomegranate.rsi
   - type: Produce
     seedId: pomegranate
   - type: Extractable
@@ -2452,7 +2528,7 @@
       - sweet
       - spooky
   - type: Sprite
-    sprite: Floof/Objects/Specific/Hydroponics/pomegranate.rsi
+    sprite: _Floof/Objects/Specific/Hydroponics/pomegranate.rsi
   - type: SolutionContainerManager
     solutions:
       food:
@@ -2604,17 +2680,61 @@
     - Beetroot
     - Vegetable
 
+# Flowers
+# Roses
 - type: entity
   name: red rose
-  description: A symbol of love. Smells nice, too.
+  description: A red rose - age old symbol of passionate love and desire.
   id: RedRose
   parent: ProduceBase
   components:
   - type: Sprite
     sprite: Objects/Specific/Hydroponics/red_rose.rsi
+    scale: 0.75,0.75
  # - type: SolutionContainerManager
  # - type: Produce
  #   seedId: red_rose
+  - type: PotencyVisuals
+    minimumScale: 0.75 # reduce this in size because the sprite is way too big
+    maximumScale: 1.5
+  - type: Tag
+    tags:
+    - Flower
+
+- type: entity
+  name: white rose
+  description: A white rose - often a symbol of new everlasting love and loyalty.
+  id: WhiteRose
+  parent: ProduceBase
+  components:
+  - type: Sprite
+    sprite: Objects/Specific/Hydroponics/white_rose.rsi
+    scale: 0.75,0.75
+ # - type: SolutionContainerManager
+ # - type: Produce
+ #   seedId: white_rose
+  - type: PotencyVisuals
+    minimumScale: 0.75 # reduce this in size because the sprite is way too big
+    maximumScale: 1.5
+  - type: Tag
+    tags:
+    - Flower
+
+- type: entity
+  name: pink rose
+  description: A pink rose - sometimes used to express admiration and appreciation.
+  id: PinkRose
+  parent: ProduceBase
+  components:
+  - type: Sprite
+    sprite: Objects/Specific/Hydroponics/pink_rose.rsi
+    scale: 0.75,0.75
+ # - type: SolutionContainerManager
+ # - type: Produce
+ #   seedId: pink_rose
+  - type: PotencyVisuals
+    minimumScale: 0.75 # reduce this in size because the sprite is way too big
+    maximumScale: 1.5
   - type: Tag
     tags:
     - Flower
@@ -2627,9 +2747,89 @@
   components:
   - type: Sprite
     sprite: Objects/Specific/Hydroponics/jasmine.rsi
+    scale: 0.75,0.75
  # - type: SolutionContainerManager
  # - type: Produce
  #   seedId: jasmine
+  - type: PotencyVisuals
+    minimumScale: 0.75 # reduce this in size because the sprite is way too big
+    maximumScale: 1.5
+  - type: Tag
+    tags:
+    - Flower
+
+- type: entity
+  name: lavender
+  description: Sprigs of small purple flowers known for their soothing oils and calming scent.
+  id: Lavender
+  parent: ProduceBase
+  components:
+  - type: Sprite
+    sprite: Objects/Specific/Hydroponics/lavender.rsi
+    scale: 0.75,0.75
+ # - type: SolutionContainerManager
+ # - type: Produce
+ #   seedId: lavender
+  - type: PotencyVisuals
+    minimumScale: 0.75 # reduce this in size because the sprite is way too big
+    maximumScale: 1.5
+  - type: Tag
+    tags:
+    - Flower
+
+- type: entity
+  name: orchid
+  description: An elegent and fragile flower, the white variety often symbolising purity and new beginnings.
+  id: Orchid
+  parent: ProduceBase
+  components:
+  - type: Sprite
+    sprite: Objects/Specific/Hydroponics/orchid.rsi
+    scale: 0.5,0.5
+ # - type: SolutionContainerManager
+ # - type: Produce
+ #   seedId: orchid
+  - type: PotencyVisuals
+    minimumScale: 0.5 # reduce this in size because the sprite is way too big
+    maximumScale: 1
+  - type: Tag
+    tags:
+    - Flower
+
+- type: entity
+  name: tulip
+  description: A pretty red tulip, often a symbol of vibrant love and sometimes wealth and prosperity.
+  id: Tulip
+  parent: ProduceBase
+  components:
+  - type: Sprite
+    sprite: Objects/Specific/Hydroponics/tulip.rsi
+    scale: 0.75,0.75
+ # - type: SolutionContainerManager
+ # - type: Produce
+ #   seedId: tulip
+  - type: PotencyVisuals
+    minimumScale: 0.75 # reduce this in size because the sprite is way too big
+    maximumScale: 1.5
+  - type: Tag
+    tags:
+    - Flower
+
+- type: entity
+  name: lilac
+  description: A bold, frilly, yet delciate flower, often used to convey first love.
+  id: Lilac
+  parent: ProduceBase
+  components:
+  - type: Sprite
+    sprite: Objects/Specific/Hydroponics/lilac.rsi
+    scale: 0.75,0.75
+ # - type: SolutionContainerManager
+ # - type: Produce
+ #   seedId: lilac
+  - type: PotencyVisuals
+    minimumScale: 0.75 # reduce this in size because the sprite is way too big
+    maximumScale: 1.5
   - type: Tag
     tags:
     - Flower

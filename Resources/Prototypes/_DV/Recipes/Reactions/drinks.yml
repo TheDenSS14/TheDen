@@ -1,3 +1,14 @@
+# SPDX-FileCopyrightText: 2023 Colin-Tel
+# SPDX-FileCopyrightText: 2023 Velcroboy
+# SPDX-FileCopyrightText: 2023 leo
+# SPDX-FileCopyrightText: 2024 Debug
+# SPDX-FileCopyrightText: 2024 dge21
+# SPDX-FileCopyrightText: 2025 Blitz
+# SPDX-FileCopyrightText: 2025 Rosycup
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 - type: reaction
   id: HealthViolation
   reactants:
@@ -87,7 +98,7 @@
     BlueCuracao:
       amount: 1
   products:
-    Mothamphetamine: 3  
+    Mothamphetamine: 3
 
 - type: reaction
   id: DoubleIceCream
@@ -112,3 +123,17 @@
       amount: 1
   products:
     DrGibbBloodRed: 6
+
+- type: reaction
+  id: LemonLimeBitters
+  reactants:
+    Lemonade:
+      amount: 5
+    JuiceLime:
+      amount: 2
+    Sugar:
+      amount: 2
+    Angobitters:
+      amount: 1
+  products:
+    LemonLimeBitters: 10

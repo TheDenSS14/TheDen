@@ -1,6 +1,40 @@
+# SPDX-FileCopyrightText: 2025 Blitz
+# SPDX-FileCopyrightText: 2025 portfiend
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+# SPDX-FileCopyrightText: 2025 wheelwrightt
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 - type: latheRecipe
   id: ClothingNeckVetCone
   result: ClothingNeckVetCone
   completetime: 2
   materials:
     Steel: 150
+
+- type: latheRecipe
+  id: CaneAnatomical
+  result: CaneAnatomical
+  category: Assistance Devices
+  completetime: 2
+  materials:
+    Steel: 100
+    Plastic: 100
+
+- type: latheRecipe
+  id: CaneFoldable
+  result: CaneFoldableFolded
+  category: Assistance Devices
+  completetime: 2
+  materials:
+    Steel: 100
+    Plastic: 100
+
+- type: latheRecipe
+  id: CaneQuad
+  result: CaneQuad
+  category: Assistance Devices
+  completetime: 2
+  materials:
+    Steel: 100
+    Plastic: 100

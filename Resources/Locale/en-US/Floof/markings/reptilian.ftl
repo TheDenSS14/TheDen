@@ -1,3 +1,9 @@
+# SPDX-FileCopyrightText: 2024 Fansana <116083121+Fansana@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Rosycup <178287475+Rosycup@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 marking-LizardFloofNeckfull = Neck Floof (Full)
 marking-LizardFloofNeckfull-floof_neckfull = Neck Floof
 
@@ -10,11 +16,12 @@ marking-LizardCrestLargeTop-primary = Crest (Large) primary
 marking-LizardCrestLargeTop-secondary = Crest (Large) secondary
 
 marking-SnoutEasternDNW = Eastern Dragon (No Whiskers)
-marking-SnoutEasternDNW-primary = Eastern Dragon (No Whiskers) primary
-marking-SnoutEasternDNW-secondary = Eastern Dragon (No Whiskers) secondary
+marking-SnoutEasternDNW-easterndnw_primary = Primary
+marking-SnoutEasternDNW-easterndnw_secondary = Secondary
 
 marking-SnoutEasternDW = Eastern Dragon (Whiskers)
-marking-SnoutEasternDW-primary = Eastern Dragon (Whiskers) primary
+marking-SnoutEasternDW-easterndw_primary = Primary
+marking-SnoutEasternDW-easterndnw_secondary = Secondary
 
 marking-SnoutMagusSkull = Magus Skull
 marking-SnoutMagusSkull-extra_magus = Magus Skull extra

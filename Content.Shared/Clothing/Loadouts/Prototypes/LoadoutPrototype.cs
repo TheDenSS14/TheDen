@@ -1,3 +1,11 @@
+// SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT
+// SPDX-FileCopyrightText: 2024 VMSolidus
+// SPDX-FileCopyrightText: 2025 Falcon
+// SPDX-FileCopyrightText: 2025 Raikyr0
+// SPDX-FileCopyrightText: 2025 sleepyyapril
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 using Content.Shared.Customization.Systems;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization.Manager;
@@ -16,7 +24,7 @@ public sealed partial class LoadoutPrototype : IPrototype
     public ProtoId<LoadoutCategoryPrototype> Category = "Uncategorized";
 
     [DataField(required: true)]
-    public List<ProtoId<EntityPrototype>> Items = new();
+    public List<EntProtoId> Items = new();
 
     /// Components to give each item on spawn
     [DataField]
@@ -24,6 +32,12 @@ public sealed partial class LoadoutPrototype : IPrototype
 
     [DataField]
     public int Cost = 1;
+
+    /// <summary>
+    ///     How many item group selections this uses. Defaulted to 1:1, but can be any number.
+    /// </summary>
+    [DataField]
+    public int Slots = 1;
 
     /// Should this item override other items in the same slot
     [DataField]

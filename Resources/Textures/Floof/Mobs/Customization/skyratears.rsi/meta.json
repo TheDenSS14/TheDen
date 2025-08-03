@@ -1,0 +1,943 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "Taken from Skyrat.",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "m_ears_bigwolf_FRONT_primary",
+      "directions": 4
+    },
+    {
+      "name": "ears_fox_secondary",
+      "directions": 4
+    },
+    {
+      "name": "m_ears_bigwolf_FRONT_tertiary",
+      "directions": 4
+    },
+    {
+      "name": "m_ears_bigwolf_ADJ_primary",
+      "directions": 4
+    },
+    {
+      "name": "m_ears_bigwolfinner_FRONT",
+      "directions": 4
+    },
+    {
+      "name": "m_ears_bigwolfinner_ADJ",
+      "directions": 4
+    },
+    {
+      "name": "m_ears_bigwolfdark_FRONT_primary",
+      "directions": 4
+    },
+    {
+      "name": "m_ears_bigwolfdark_FRONT_tertiary",
+      "directions": 4
+    },
+    {
+      "name": "m_ears_bigwolfdark_ADJ_primary",
+      "directions": 4
+    },
+    {
+      "name": "m_ears_bigwolfinnerdark_FRONT",
+      "directions": 4
+    },
+    {
+      "name": "m_ears_bigwolfinnerdark_ADJ",
+      "directions": 4
+    },
+    {
+      "name": "m_ears_fox_FRONT_primary",
+      "directions": 4
+    },
+    {
+      "name": "m_ears_fox_ADJ_primary",
+      "directions": 4
+    },
+    {
+      "name": "m_ears_fox_ADJ_secondary",
+      "directions": 4
+    },
+    {
+      "name": "ears_fox_primary",
+      "directions": 4
+    },
+    {
+      "name": "m_ears_fox_FRONT_secondary",
+      "directions": 4
+    },
+    {
+      "name": "m_ears_fennec_ADJ_primary",
+      "directions": 4
+    },
+    {
+      "name": "m_ears_fennec_ADJ_tertiary",
+      "directions": 4
+    },
+    {
+      "name": "m_ears_fennec_FRONT_primary",
+      "directions": 4
+    },
+    {
+      "name": "m_ears_fennec_FRONT_tertiary",
+      "directions": 4
+    },
+    {
+      "name": "m_ears_mouse_ADJ_primary",
+      "directions": 4
+    },
+    {
+      "name": "m_ears_mouse_FRONT_primary",
+      "directions": 4
+    },
+    {
+      "name": "m_ears_mouse_ADJ_secondary",
+      "directions": 4
+    },
+    {
+      "name": "m_ears_mouse_FRONT_secondary",
+      "directions": 4
+    },
+    {
+      "name": "m_ears_mouse_FRONT_tertiary",
+      "directions": 4
+    },
+    {
+      "name": "m_ears_mouse_two_FRONT_primary",
+      "directions": 4
+    },
+    {
+      "name": "m_ears_mouse_two_ADJ_primary",
+      "directions": 4
+    },
+    {
+      "name": "m_ears_mouse_two_FRONT_secondary",
+      "directions": 4
+    },
+    {
+      "name": "m_ears_mouse_two_ADJ_secondary",
+      "directions": 4
+    },
+    {
+      "name": "m_ears_mouse_two_FRONT_tertiary",
+      "directions": 4
+    },
+    {
+      "name": "m_ears_murid_ADJ_primary",
+      "directions": 4
+    },
+    {
+      "name": "m_ears_murid_ADJ_secondary",
+      "directions": 4
+    },
+    {
+      "name": "m_ears_murid_FRONT_primary",
+      "directions": 4
+    },
+    {
+      "name": "m_ears_murid_FRONT_secondary",
+      "directions": 4
+    },
+    {
+      "name": "m_ears_otie_ADJ_primary",
+      "directions": 4
+    },
+    {
+      "name": "m_ears_otie_ADJ_secondary",
+      "directions": 4
+    },
+    {
+      "name": "m_ears_otie_FRONT_primary",
+      "directions": 4
+    },
+    {
+      "name": "m_ears_otie_FRONT_secondary",
+      "directions": 4
+    },
+    {
+      "name": "m_ears_deer_ADJ",
+      "directions": 4
+    },
+    {
+      "name": "m_ears_deer_FRONT",
+      "directions": 4
+    },
+    {
+      "name": "m_horns_guilmon",
+      "directions": 4
+    },
+    {
+      "name": "m_ears_rabbit_ADJ_primary",
+      "directions": 4
+    },
+    {
+      "name": "m_ears_rabbit_ADJ_secondary",
+      "directions": 4
+    },
+    {
+      "name": "m_ears_rabbit_FRONT_primary",
+      "directions": 4
+    },
+    {
+      "name": "m_ears_rabbit_FRONT_secondary",
+      "directions": 4
+    },
+    {
+      "name": "m_ears_sabresune_ADJ_primary",
+      "directions": 4
+    },
+    {
+      "name": "m_ears_sabresune_ADJ_secondary",
+      "directions": 4
+    },
+    {
+      "name": "m_ears_sabresune_FRONT_primary",
+      "directions": 4
+    },
+    {
+      "name": "m_ears_sabresune_FRONT_secondary",
+      "directions": 4
+    },
+    {
+      "name": "m_ears_extra_sabresune_ADJ",
+      "directions": 4
+    },
+    {
+      "name": "m_ears_extra_sabresune_FRONT",
+      "directions": 4
+    },
+    {
+      "name": "m_ears_sergal_ADJ_primary",
+      "directions": 4
+    },
+    {
+      "name": "m_ears_sergal_FRONT_primary",
+      "directions": 4
+    },
+    {
+      "name": "m_ears_sergal_FRONT_secondary",
+      "directions": 4
+    },
+    {
+      "name": "m_ears_jellyfish_ADJ",
+      "directions": 4
+    },
+    {
+      "name": "m_ears_jellyfish_FRONT",
+      "directions": 4
+    },
+    {
+      "name": "m_ears_horn1_FRONT",
+      "directions": 4
+    },
+    {
+      "name": "m_ears_lunasune_ADJ_primary",
+      "directions": 4
+    },
+    {
+      "name": "m_ears_lunasune_ADJ_secondary",
+      "directions": 4
+    },
+    {
+      "name": "m_ears_lunasune_FRONT_primary",
+      "directions": 4
+    },
+    {
+      "name": "m_ears_lunasune_FRONT_secondary",
+      "directions": 4
+    },
+    {
+      "name": "m_ears_hawk_ADJ_primary",
+      "directions": 4
+    },
+    {
+      "name": "m_ears_hawk_FRONT_primary",
+      "directions": 4
+    },
+    {
+      "name": "m_ears_possum_ADJ_primary",
+      "directions": 4
+    },
+    {
+      "name": "m_ears_possum_ADJ_secondary",
+      "directions": 4
+    },
+    {
+      "name": "m_ears_possum_FRONT_primary",
+      "directions": 4
+    },
+    {
+      "name": "m_ears_possum_FRONT_secondary",
+      "directions": 4
+    },
+    {
+      "name": "m_ears_elf_FRONT",
+      "directions": 4
+    },
+    {
+      "name": "m_ears_elf_ADJ",
+      "directions": 4
+    },
+    {
+      "name": "m_ears_bat_ADJ_primary",
+      "directions": 4
+    },
+    {
+      "name": "m_ears_bat_ADJ_secondary",
+      "directions": 4
+    },
+    {
+      "name": "m_ears_bunny_ADJ_primary",
+      "directions": 4
+    },
+    {
+      "name": "m_ears_bunny_ADJ_secondary",
+      "directions": 4
+    },
+    {
+      "name": "m_ears_bunny_FRONT_primary",
+      "directions": 4
+    },
+    {
+      "name": "m_ears_antenna_simple1_ADJ_primary",
+      "directions": 4
+    },
+    {
+      "name": "m_ears_antenna_simple1_FRONT_primary",
+      "directions": 4
+    },
+    {
+      "name": "m_ears_antenna_simple2_ADJ_primary",
+      "directions": 4
+    },
+    {
+      "name": "m_ears_antenna_simple2_FRONT_primary",
+      "directions": 4
+    },
+    {
+      "name": "m_ears_antenna_fuzzball_ADJ_secondary",
+      "directions": 4
+    },
+    {
+      "name": "m_ears_antenna_fuzzball_ADJ_tertiary",
+      "directions": 4
+    },
+    {
+      "name": "m_ears_antenna_fuzzball_FRONT_secondary",
+      "directions": 4
+    },
+    {
+      "name": "m_ears_antenna_fuzzball_FRONT_tertiary",
+      "directions": 4
+    },
+    {
+      "name": "m_ears_antenna_simple1v2_ADJ_primary",
+      "directions": 4
+    },
+    {
+      "name": "m_ears_antenna_simple1v2_FRONT_primary",
+      "directions": 4
+    },
+    {
+      "name": "m_ears_antenna_simple2v2_ADJ_primary",
+      "directions": 4
+    },
+    {
+      "name": "m_ears_antenna_simple2v2_FRONT_primary",
+      "directions": 4
+    },
+    {
+      "name": "m_ears_antenna_fuzzballv2_ADJ_primary",
+      "directions": 4
+    },
+    {
+      "name": "m_ears_antenna_fuzzballv2_ADJ_tertiary",
+      "directions": 4
+    },
+    {
+      "name": "m_ears_antenna_fuzzballv2_FRONT_primary",
+      "directions": 4
+    },
+    {
+      "name": "m_ears_antenna_fuzzballv2_FRONT_tertiary",
+      "directions": 4
+    },
+    {
+      "name": "m_ears_cobrahood_ADJ_primary",
+      "directions": 4
+    },
+    {
+      "name": "m_ears_cobrahood_ADJ_secondary",
+      "directions": 4
+    },
+    {
+      "name": "m_ears_cobraears_ADJ_primary",
+      "directions": 4
+    },
+    {
+      "name": "m_ears_cobraears_ADJ_secondary",
+      "directions": 4
+    },
+    {
+      "name": "m_ears_rabbitlop_FRONT_primary",
+      "directions": 4
+    },
+    {
+      "name": "m_ears_rabbitlop_FRONT_secondary",
+      "directions": 4
+    },
+    {
+      "name": "m_ears_rabbitlop_ADJ_primary",
+      "directions": 4
+    },
+    {
+      "name": "m_ears_rabbitlop_ADJ_secondary",
+      "directions": 4
+    },
+    {
+      "name": "m_ears_catbig_ADJ_primary",
+      "directions": 4
+    },
+    {
+      "name": "m_ears_catbig_ADJ_secondary",
+      "directions": 4
+    },
+    {
+      "name": "m_ears_catbig_FRONT_primary",
+      "directions": 4
+    },
+    {
+      "name": "m_ears_catbig_FRONT_secondary",
+      "directions": 4
+    },
+    {
+      "name": "m_ears_catnormal_ADJ_primary",
+      "directions": 4
+    },
+    {
+      "name": "m_ears_catnormal_ADJ_secondary",
+      "directions": 4
+    },
+    {
+      "name": "m_ears_catnormal_FRONT_primary",
+      "directions": 4
+    },
+    {
+      "name": "m_ears_catnormal_FRONT_secondary",
+      "directions": 4
+    },
+    {
+      "name": "m_ears_perky_ADJ_primary",
+      "directions": 4
+    },
+    {
+      "name": "m_ears_perky_ADJ_secondary",
+      "directions": 4
+    },
+    {
+      "name": "m_ears_perky_FRONT_primary",
+      "directions": 4
+    },
+    {
+      "name": "m_ears_perky_FRONT_secondary",
+      "directions": 4
+    },
+    {
+      "name": "m_ears_wolf_ADJ_primary",
+      "directions": 4
+    },
+    {
+      "name": "m_ears_wolf_ADJ_tertiary",
+      "directions": 4
+    },
+    {
+      "name": "m_ears_wolf_FRONT_primary",
+      "directions": 4
+    },
+    {
+      "name": "m_ears_wolf_FRONT_tertiary",
+      "directions": 4
+    },
+    {
+      "name": "m_ears_pede_ADJ_primary",
+      "directions": 4
+    },
+    {
+      "name": "m_ears_pede_ADJ_secondary",
+      "directions": 4
+    },
+    {
+      "name": "m_ears_pede_FRONT_primary",
+      "directions": 4
+    },
+    {
+      "name": "m_ears_pede_FRONT_secondary",
+      "directions": 4
+    },
+    {
+      "name": "m_ears_raccoon_ADJ_primary",
+      "directions": 4
+    },
+    {
+      "name": "m_ears_raccoon_ADJ_secondary",
+      "directions": 4
+    },
+    {
+      "name": "m_ears_raccoon_FRONT_primary",
+      "directions": 4
+    },
+    {
+      "name": "m_ears_raccoon_FRONT_secondary",
+      "directions": 4
+    },
+    {
+      "name": "m_ears_skunk_ADJ_primary",
+      "directions": 4
+    },
+    {
+      "name": "m_ears_skunk_ADJ_secondary",
+      "directions": 4
+    },
+    {
+      "name": "m_ears_skunk_FRONT_primary",
+      "directions": 4
+    },
+    {
+      "name": "m_ears_skunk_FRONT_secondary",
+      "directions": 4
+    },
+    {
+      "name": "m_ears_squirrel_ADJ_primary",
+      "directions": 4
+    },
+    {
+      "name": "m_ears_squirrel_ADJ_secondary",
+      "directions": 4
+    },
+    {
+      "name": "m_ears_squirrel_FRONT_primary",
+      "directions": 4
+    },
+    {
+      "name": "m_ears_squirrel_FRONT_secondary",
+      "directions": 4
+    },
+    {
+      "name": "m_ears_kangaroo_ADJ_primary",
+      "directions": 4
+    },
+    {
+      "name": "m_ears_kangaroo_ADJ_secondary",
+      "directions": 4
+    },
+    {
+      "name": "m_ears_kangaroo_FRONT_primary",
+      "directions": 4
+    },
+    {
+      "name": "m_ears_kangaroo_FRONT_secondary",
+      "directions": 4
+    },
+    {
+      "name": "m_ears_axolotl_FRONT",
+      "directions": 4
+    },
+    {
+      "name": "m_ears_axolotl_ADJ",
+      "directions": 4
+    },
+    {
+      "name": "m_ears_bear_ADJ",
+      "directions": 4
+    },
+    {
+      "name": "m_ears_bear_FRONT",
+      "directions": 4
+    },
+    {
+      "name": "m_ears_cow_ADJ",
+      "directions": 4
+    },
+    {
+      "name": "m_ears_cow_FRONT",
+      "directions": 4
+    },
+    {
+      "name": "m_ears_eevee_ADJ_primary",
+      "directions": 4
+    },
+    {
+      "name": "m_ears_eevee_ADJ_secondary",
+      "directions": 4
+    },
+    {
+      "name": "m_ears_eevee_FRONT_primary",
+      "directions": 4
+    },
+    {
+      "name": "m_ears_eevee_FRONT_secondary",
+      "directions": 4
+    },
+    {
+      "name": "m_ears_eevee_alt_ADJ_primary",
+      "directions": 4
+    },
+    {
+      "name": "m_ears_eevee_alt_ADJ_secondary",
+      "directions": 4
+    },
+    {
+      "name": "m_ears_eevee_alt_FRONT_primary",
+      "directions": 4
+    },
+    {
+      "name": "m_ears_eevee_alt_FRONT_secondary",
+      "directions": 4
+    },
+    {
+      "name": "m_ears_elephant_ADJ",
+      "directions": 4
+    },
+    {
+      "name": "m_ears_elephant_FRONT",
+      "directions": 4
+    },
+    {
+      "name": "m_ears_fish_ADJ",
+      "directions": 4
+    },
+    {
+      "name": "m_ears_fish_FRONT",
+      "directions": 4
+    },
+    {
+      "name": "m_ears_lab_ADJ",
+      "directions": 4
+    },
+    {
+      "name": "m_ears_lab_FRONT",
+      "directions": 4
+    },
+    {
+      "name": "m_ears_miqote_FRONT_primary",
+      "directions": 4
+    },
+    {
+      "name": "m_ears_miqote_FRONT_secondary",
+      "directions": 4
+    },
+    {
+      "name": "m_ears_miqote_ADJ_primary",
+      "directions": 4
+    },
+    {
+      "name": "m_ears_miqote_ADJ_secondary",
+      "directions": 4
+    },
+    {
+      "name": "m_ears_protogen_ADJs_primary",
+      "directions": 4
+    },
+    {
+      "name": "m_ears_protogen_ADJs_secondary",
+      "directions": 4
+    },
+    {
+      "name": "m_ears_protogen_FRONT_primary",
+      "directions": 4
+    },
+    {
+      "name": "m_ears_protogen_FRONT_secondary",
+      "directions": 4
+    },
+    {
+      "name": "m_ears_bunnyalt_ADJ_primary",
+      "directions": 4
+    },
+    {
+      "name": "m_ears_bunnyalt_ADJ_secondary",
+      "directions": 4
+    },
+    {
+      "name": "m_ears_bunnyalt_FRONT_primary",
+      "directions": 4
+    },
+    {
+      "name": "m_ears_bunnyalt_FRONT_secondary",
+      "directions": 4
+    },
+    {
+      "name": "m_ears_deerear_ADJ_primary",
+      "directions": 4
+    },
+    {
+      "name": "m_ears_deerear_ADJ_secondary",
+      "directions": 4
+    },
+    {
+      "name": "m_ears_deerear_FRONT_primary",
+      "directions": 4
+    },
+    {
+      "name": "m_ears_deerear_FRONT_secondary",
+      "directions": 4
+    },
+    {
+      "name": "m_ears_rabbitalt_ADJ_primary",
+      "directions": 4
+    },
+    {
+      "name": "m_ears_rabbitalt_ADJ_secondary",
+      "directions": 4
+    },
+    {
+      "name": "m_ears_rabbitalt_ADJ_tertiary",
+      "directions": 4
+    },
+    {
+      "name": "m_ears_rabbitalt_FRONT_primary",
+      "directions": 4
+    },
+    {
+      "name": "m_ears_rabbitalt_FRONT_secondary",
+      "directions": 4
+    },
+    {
+      "name": "m_ears_rabbitalt_FRONT_tertiary",
+      "directions": 4
+    },
+    {
+      "name": "m_ears_teshari_regular_FRONT_primary",
+      "directions": 4
+    },
+    {
+      "name": "m_ears_teshari_regular_FRONT_tertiary",
+      "directions": 4
+    },
+    {
+      "name": "m_ears_teshari_regular_ADJ_primary",
+      "directions": 4
+    },
+    {
+      "name": "m_ears_teshari_regular_ADJ_tertiary",
+      "directions": 4
+    },
+    {
+      "name": "m_ears_teshari_feathers_bushy_FRONT_primary",
+      "directions": 4
+    },
+    {
+      "name": "m_ears_teshari_feathers_bushy_FRONT_tertiary",
+      "directions": 4
+    },
+    {
+      "name": "m_ears_teshari_feathers_bushy_ADJ_primary",
+      "directions": 4
+    },
+    {
+      "name": "m_ears_teshari_feathers_bushy_ADJ_tertiary",
+      "directions": 4
+    },
+    {
+      "name": "m_ears_teshari_feathers_spiky_ADJ_primary",
+      "directions": 4
+    },
+    {
+      "name": "m_ears_teshari_feathers_spiky_FRONT_primary",
+      "directions": 4
+    },
+    {
+      "name": "m_ears_teshari_feathers_spiky_FRONT_tertiary",
+      "directions": 4
+    },
+    {
+      "name": "m_ears_teshari_feathers_mohawk_FRONT_primary",
+      "directions": 4
+    },
+    {
+      "name": "m_ears_teshari_feathers_mohawk_FRONT_tertiary",
+      "directions": 4
+    },
+    {
+      "name": "m_ears_teshari_feathers_mohawk_ADJ_primary",
+      "directions": 4
+    },
+    {
+      "name": "m_ears_teshari_feathers_mohawk_ADJ_tertiary",
+      "directions": 4
+    },
+    {
+      "name": "m_ears_teshari_feathers_pointy_ADJ_primary",
+      "directions": 4
+    },
+    {
+      "name": "m_ears_teshari_feathers_pointy_FRONT_primary",
+      "directions": 4
+    },
+    {
+      "name": "m_ears_teshari_feathers_pointy_FRONT_tertiary",
+      "directions": 4
+    },
+    {
+      "name": "m_ears_teshari_feathers_upright_ADJ_primary",
+      "directions": 4
+    },
+    {
+      "name": "m_ears_teshari_feathers_upright_FRONT_primary",
+      "directions": 4
+    },
+    {
+      "name": "m_ears_teshari_feathers_upright_FRONT_tertiary",
+      "directions": 4
+    },
+    {
+      "name": "m_ears_teshari_feathers_mane_ADJ_primary",
+      "directions": 4
+    },
+    {
+      "name": "m_ears_teshari_feathers_mane_FRONT_primary",
+      "directions": 4
+    },
+    {
+      "name": "m_ears_teshari_feathers_mane_FRONT_tertiary",
+      "directions": 4
+    },
+    {
+      "name": "m_ears_teshari_feathers_droopy_ADJ_primary",
+      "directions": 4
+    },
+    {
+      "name": "m_ears_teshari_feathers_droopy_ADJ_tertiary",
+      "directions": 4
+    },
+    {
+      "name": "m_ears_teshari_feathers_droopy_FRONT_primary",
+      "directions": 4
+    },
+    {
+      "name": "m_ears_teshari_feathers_droopy_FRONT_tertiary",
+      "directions": 4
+    },
+    {
+      "name": "m_ears_teshari_feathers_longway_ADJ_primary",
+      "directions": 4
+    },
+    {
+      "name": "m_ears_teshari_feathers_longway_FRONT_primary",
+      "directions": 4
+    },
+    {
+      "name": "m_ears_teshari_feathers_longway_FRONT_tertiary",
+      "directions": 4
+    },
+    {
+      "name": "m_ears_teshari_feathers_tree_ADJ_primary",
+      "directions": 4
+    },
+    {
+      "name": "m_ears_teshari_feathers_tree_FRONT_primary",
+      "directions": 4
+    },
+    {
+      "name": "m_ears_teshari_feathers_tree_FRONT_tertiary",
+      "directions": 4
+    },
+    {
+      "name": "m_ears_teshari_feathers_mushroom_ADJ",
+      "directions": 4
+    },
+    {
+      "name": "m_ears_teshari_feathers_mushroom_FRONT",
+      "directions": 4
+    },
+    {
+      "name": "m_ears_teshari_feathers_backstrafe_ADJ",
+      "directions": 4
+    },
+    {
+      "name": "m_ears_teshari_feathers_backstrafe_FRONT",
+      "directions": 4
+    },
+    {
+      "name": "m_ears_teshari_feathers_thinmohawk_ADJ",
+      "directions": 4
+    },
+    {
+      "name": "m_ears_teshari_feathers_thinmohawk_FRONT",
+      "directions": 4
+    },
+    {
+      "name": "m_ears_teshari_feathers_thinmane_ADJ",
+      "directions": 4
+    },
+    {
+      "name": "m_ears_teshari_feathers_thinmane_FRONT",
+      "directions": 4
+    },
+    {
+      "name": "m_ears_deer2_FRONT",
+      "directions": 4
+    },
+    {
+      "name": "m_ears_deer2_ADJ",
+      "directions": 4
+    },
+    {
+      "name": "m_ears_elfwide_ADJ",
+      "directions": 4
+    },
+    {
+      "name": "m_ears_elfwide_FRONT",
+      "directions": 4
+    },
+    {
+      "name": "m_ears_elfbroad_ADJ",
+      "directions": 4
+    },
+    {
+      "name": "m_ears_elfbroad_FRONT",
+      "directions": 4
+    },
+    {
+      "name": "m_ears_elflonger_ADJ",
+      "directions": 4
+    },
+    {
+      "name": "m_ears_elflonger_FRONT",
+      "directions": 4
+    },
+    {
+      "name": "m_ears_four_ears_2_ADJ_primary",
+      "directions": 4
+    },
+    {
+      "name": "m_ears_four_ears_2_FRONT_primary",
+      "directions": 4
+    },
+    {
+      "name": "m_ears_four_ears_2_FRONT_tertiary",
+      "directions": 4
+    },
+    {
+      "name": "m_ears_hammerhead_FRONT_primary",
+      "directions": 4
+    },
+    {
+      "name": "m_ears_hammerhead_FRONT_secondary",
+      "directions": 4
+    },
+    {
+      "name": "m_earsinner_bigwolfinner_FRONT",
+      "directions": 4
+    },
+    {
+      "name": "m_earsinner_bigwolfinnerdark_FRONT",
+      "directions": 4
+    }
+  ]
+}

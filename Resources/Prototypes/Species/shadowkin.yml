@@ -1,3 +1,15 @@
+# SPDX-FileCopyrightText: 2024 FoxxoTrystan
+# SPDX-FileCopyrightText: 2025 Aikakakah
+# SPDX-FileCopyrightText: 2025 Blitz
+# SPDX-FileCopyrightText: 2025 BloodfiendishOperator
+# SPDX-FileCopyrightText: 2025 KekaniCreates
+# SPDX-FileCopyrightText: 2025 Rosycup
+# SPDX-FileCopyrightText: 2025 SixplyDev
+# SPDX-FileCopyrightText: 2025 VMSolidus
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 - type: species
   id: Shadowkin
   name: species-name-shadowkin
@@ -9,8 +21,8 @@
   dollPrototype: MobShadowkinDummy
   skinColoration: Hues
   naming: First
-  maleFirstNames: names_shadowkin
-  femaleFirstNames: names_shadowkin
+  maleFirstNames: NamesShadowkin
+  femaleFirstNames: NamesShadowkin
   minAge: 18
   maxAge: 250
   youngAge: 80
@@ -29,6 +41,8 @@
 - type: speciesBaseSprites
   id: MobShadowkinSprites
   sprites:
+    TailBehind: MobHumanoidAnyMarking
+    TailOversuit: MobHumanoidAnyMarking
     Head: MobShadowkinHead
     Snout: MobShadowkinAnyMarkingFollowSkin
     Underwear: MobHumanoidAnyMarking
@@ -67,11 +81,11 @@
     Nipples:
       points: 2
       required: false
-    Underwear:
-      points: 1
-      required: false
     Undershirt:
-      points: 1
+      points: 2 # FLOOF CHANGE
+      required: false
+    Underwear:
+      points: 2 # FLOOF CHANGE
       required: false
     RightLeg:
       points: 6

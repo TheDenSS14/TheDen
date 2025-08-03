@@ -1,3 +1,13 @@
+// SPDX-FileCopyrightText: 2024 FoxxoTrystan
+// SPDX-FileCopyrightText: 2024 Mnemotechnican
+// SPDX-FileCopyrightText: 2024 Rane
+// SPDX-FileCopyrightText: 2024 ShatteredSwords
+// SPDX-FileCopyrightText: 2025 MajorMoth
+// SPDX-FileCopyrightText: 2025 VMSolidus
+// SPDX-FileCopyrightText: 2025 sleepyyapril
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using Content.Server.Botany;
@@ -185,7 +195,7 @@ public sealed class OracleSystem : EntitySystem
         if (_random.Prob(oracle.Comp.AbnormalReagentChance))
         {
             var allReagents = _protoMan.EnumeratePrototypes<ReagentPrototype>()
-                .Where(x => !x.Abstract)
+                .Where(x => !x.Abstract && !x.NoRandom)
                 .Select(x => x.ID).ToList();
 
             reagent = _random.Pick(allReagents);

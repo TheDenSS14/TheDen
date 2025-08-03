@@ -1,3 +1,11 @@
+# SPDX-FileCopyrightText: 2023 LankLTE <135308300+LankLTE@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 MilenVolf <63782763+MilenVolf@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Nairod <110078045+Nairodian@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Ubaser <134914314+UbaserB@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: MIT
+
 marking-MothAntennasDefault-default = Antennae
 marking-MothAntennasDefault = Antennae (Default)
 
@@ -394,3 +402,83 @@ marking-MothLArmWitchwing = Moth Left Arm (Witch Wing)
 
 marking-MothRArmWitchwing-witchwing_r_arm = Right Arm
 marking-MothRArmWitchwing = Moth Right Arm (Witch Wing)
+
+
+
+marking-MothHeadLovers = Moth Head (Lovers, Greyscale)
+marking-MothHeadLovers-lovers-head = Colour
+
+marking-MothChestLovers = Moth Chest (Lovers, Greyscale)
+marking-MothChestLovers-lovers-chest = Colour
+
+marking-MothLArmLovers = Moth Left Arm (Lovers, Greyscale)
+marking-MothLArmLovers-lovers-leftarm = Colour
+
+marking-MothRArmLovers = Moth Right Arm (Lovers, Greyscale)
+marking-MothRArmLovers-lovers-rightarm = Colour
+
+marking-MothLLegLovers = Moth Left Leg (Lovers, Greyscale)
+marking-MothLLegLovers-lovers-leftleg = Colour
+
+marking-MothRLegLovers = Moth Right Leg (Lovers, Greyscale)
+marking-MothRLegLovers-lovers-rightleg = Colour
+
+
+
+marking-MothHeadPoison = Moth Head (Poison, Greyscale)
+marking-MothHeadPoison-poison-head = Colour
+
+marking-MothChestPoison = Moth Chest (Poison, Greyscale)
+marking-MothChestPoison-poison-chest = Colour
+
+marking-MothLArmPoison = Moth Left Arm (Poison, Greyscale)
+marking-MothLArmPoison-poison-leftarm = Colour
+
+marking-MothRArmPoison = Moth Right Arm (Poison, Greyscale)
+marking-MothRArmPoison-poison-rightarm = Colour
+
+marking-MothLLegPoison = Moth Left Leg (Poison, Greyscale)
+marking-MothLLegPoison-poison-leftleg = Colour
+
+marking-MothRLegPoison = Moth Right Leg (Poison, Greyscale)
+marking-MothRLegPoison-poison-rightleg = Colour
+
+
+
+marking-MothHeadReddish = Moth Head (Reddish, Greyscale)
+marking-MothHeadReddish-reddish-head = Colour
+
+marking-MothChestReddish = Moth Chest (Reddish, Greyscale)
+marking-MothChestReddish-reddish-chest = Colour
+
+marking-MothLArmReddish = Moth Left Arm (Reddish, Greyscale)
+marking-MothLArmReddish-reddish-leftarm = Colour
+
+marking-MothRArmReddish = Moth Right Arm (Reddish, Greyscale)
+marking-MothRArmReddish-reddish-rightarm = Colour
+
+marking-MothLLegReddish = Moth Left Leg (Reddish, Greyscale)
+marking-MothLLegReddish-reddish-leftleg = Colour
+
+marking-MothRLegReddish = Moth Right Leg (Reddish, Greyscale)
+marking-MothRLegReddish-reddish-rightleg = Colour
+
+
+
+marking-MothHeadWitchking = Moth Head (Witchking, Greyscale)
+marking-MothHeadWitchking-witchking-head = Colour
+
+marking-MothChestWitchking = Moth Chest (Witchking, Greyscale)
+marking-MothChestWitchking-witchking-chest = Colour
+
+marking-MothLArmWitchking = Moth Left Arm (Witchking, Greyscale)
+marking-MothLArmWitchking-witchking-leftarm = Colour
+
+marking-MothRArmWitchking = Moth Right Arm (Witchking, Greyscale)
+marking-MothRArmWitchking-witchking-rightarm = Colour
+
+marking-MothLLegWitchking = Moth Left Leg (Witchking, Greyscale)
+marking-MothLLegWitchking-witchking-leftleg = Colour
+
+marking-MothRLegWitchking = Moth Right Leg (Witchking, Greyscale)
+marking-MothRLegWitchking-witchking-rightleg = Colour

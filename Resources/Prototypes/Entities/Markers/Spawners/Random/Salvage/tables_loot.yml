@@ -1,3 +1,10 @@
+# SPDX-FileCopyrightText: 2024 Nemanja
+# SPDX-FileCopyrightText: 2025 Eris
+# SPDX-FileCopyrightText: 2025 Raikyr0
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 # Scrap: Worthless items that can be recycled into materials
 
 - type: entityTable
@@ -232,7 +239,7 @@
     - id: ClothingEyesGlassesMeson
     - id: ClothingBeltSalvageWebbing
     - id: SeismicCharge
-#    - id: MineralScanner
+    - id: MineralScanner
       weight: 0.5
     - id: WeaponCrusher
       weight: 0.5
@@ -245,9 +252,9 @@
   id: SalvageEquipmentLegendary
   table: !type:GroupSelector
     children:
-#    - id: AdvancedMineralScanner
-#    - id: BlueprintFulton
-#    - id: BlueprintSeismicCharge
+    - id: AdvancedMineralScanner
+#    - id: BlueprintFulton # DEN: we don't have this
+#    - id: BlueprintSeismicCharge # DEN: we don't have this
     - id: WeaponCrusherGlaive
     - id: ClothingOuterHardsuitSalvage
     - id: OmnizineChemistryBottle

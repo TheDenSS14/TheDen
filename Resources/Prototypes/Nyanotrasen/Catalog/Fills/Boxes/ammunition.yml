@@ -1,5 +1,14 @@
+# SPDX-FileCopyrightText: 2023 Colin-Tel
+# SPDX-FileCopyrightText: 2023 Tad "Taddy" Johnson
+# SPDX-FileCopyrightText: 2024 Debug
+# SPDX-FileCopyrightText: 2025 BlitzTheSquishy
+# SPDX-FileCopyrightText: 2025 VMSolidus
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 - type: entity
-  name: box of soulbreaker cartridges
+  name: shell box (12 gauge soulbreaker)
   parent: BaseAmmoProvider
   id: BoxShellSoulbreaker
   description: A box full of anti-psionic soulbreaker cartridges, designed for riot shotguns.
@@ -16,10 +25,10 @@
 
 
 - type: entity
-  name: box of .45 magnum Universal magazines
+  name: box of Universal magazines (.45 magnum)
   parent: BoxMagazine
   id: BoxMagazineUniversalMagnum
-  description: A box full of .45 magnum magazines.
+  description: A box full of Universal magazines (.45 magnum).
   components:
   - type: StorageFill
     contents:
@@ -34,10 +43,10 @@
         - BallisticAmmoProvider
 
 - type: entity
-  name: box of .45 magnum Universal (practice) magazines
+  name: box of Universal magazines (.45 magnum practice)
   parent: BoxMagazine
   id: BoxMagazineUniversalMagnumPractice
-  description: A box full of .45 magnum practice magazines.
+  description: A box full of Universal magazines (.45 magnum practice).
   components:
   - type: StorageFill
     contents:
@@ -52,10 +61,10 @@
         - BallisticAmmoProvider
 
 - type: entity
-  name: box of .45 magnum Universal (rubber) magazines
+  name: box of Universal magazines (.45 magnum rubber)
   parent: BoxMagazine
   id: BoxMagazineUniversalMagnumRubber
-  description: A box full of .45 magnum rubber magazines.
+  description: A box full of Universal magazines (.45 magnum rubber).
   components:
   - type: StorageFill
     contents:
@@ -70,10 +79,10 @@
         - BallisticAmmoProvider
 
 - type: entity
-  name: box of .30 rifle speed loaders
+  name: box of stripper clips (.30 rifle)
   parent: BoxMagazine
   id: BoxSpeedLoaderLightRifle
-  description: A box full of .30 rifle speed loaders.
+  description: A box full of stripper clips (.30 rifle).
   components:
   - type: StorageFill
     contents:

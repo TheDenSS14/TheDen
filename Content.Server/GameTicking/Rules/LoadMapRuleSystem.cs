@@ -1,10 +1,23 @@
+// SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT
+// SPDX-FileCopyrightText: 2024 Plykiya
+// SPDX-FileCopyrightText: 2024 VMSolidus
+// SPDX-FileCopyrightText: 2024 deltanedas
+// SPDX-FileCopyrightText: 2025 Falcon
+// SPDX-FileCopyrightText: 2025 Leon Friedrich
+// SPDX-FileCopyrightText: 2025 sleepyyapril
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
+using System.Linq;
 using Content.Server.GameTicking.Rules.Components;
 using Content.Server.GridPreloader;
 using Content.Shared.GameTicking.Components;
 using Robust.Server.GameObjects;
-using Robust.Server.Maps;
+using Robust.Shared.EntitySerialization;
+using Robust.Shared.EntitySerialization.Systems;
 using Robust.Shared.Map;
 using Robust.Shared.Prototypes;
+using Robust.Shared.Utility;
 
 namespace Content.Server.GameTicking.Rules;
 
@@ -13,7 +26,6 @@ public sealed class LoadMapRuleSystem : GameRuleSystem<LoadMapRuleComponent>
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
     [Dependency] private readonly MapSystem _map = default!;
     [Dependency] private readonly MapLoaderSystem _mapLoader = default!;
-    [Dependency] private readonly MetaDataSystem _metaData = default!;
     [Dependency] private readonly TransformSystem _transform = default!;
     [Dependency] private readonly GridPreloaderSystem _gridPreloader = default!;
 
@@ -27,29 +39,50 @@ public sealed class LoadMapRuleSystem : GameRuleSystem<LoadMapRuleComponent>
             return;
         }
 
-        // grid preloading needs map to init after moving it
-        var mapUid = _map.CreateMap(out var mapId, runMapInit: comp.PreloadedGrid == null);
-
-        Log.Info($"Created map {mapId} for {ToPrettyString(uid):rule}");
-
+        MapId mapId;
         IReadOnlyList<EntityUid> grids;
         if (comp.GameMap != null)
         {
+            // Component has one of three modes, only one of the three fields should ever be populated.
+            DebugTools.AssertNull(comp.MapPath);
+            DebugTools.AssertNull(comp.GridPath);
+            DebugTools.AssertNull(comp.PreloadedGrid);
+
             var gameMap = _prototypeManager.Index(comp.GameMap.Value);
-            grids = GameTicker.LoadGameMap(gameMap, mapId, new MapLoadOptions());
+            grids = GameTicker.LoadGameMap(gameMap, out mapId, null);
+            Log.Info($"Created map {mapId} for {ToPrettyString(uid):rule}");
         }
         else if (comp.MapPath is {} path)
         {
-            var options = new MapLoadOptions { LoadMap = true };
-            if (!_mapLoader.TryLoad(mapId, path.ToString(), out var roots, options))
+            DebugTools.AssertNull(comp.GridPath);
+            DebugTools.AssertNull(comp.PreloadedGrid);
+
+            var opts = DeserializationOptions.Default with {InitializeMaps = true};
+            if (!_mapLoader.TryLoadMap(path, out var map, out var gridSet, opts))
             {
                 Log.Error($"Failed to load map from {path}!");
-                Del(mapUid);
                 ForceEndSelf(uid, rule);
                 return;
             }
 
-            grids = roots;
+            grids = gridSet.Select( x => x.Owner).ToList();
+            mapId = map.Value.Comp.MapId;
+        }
+        else if (comp.GridPath is { } gPath)
+        {
+            DebugTools.AssertNull(comp.PreloadedGrid);
+
+            // I fucking love it when "map paths" choses to ar
+            _map.CreateMap(out mapId);
+            var opts = DeserializationOptions.Default with {InitializeMaps = true};
+            if (!_mapLoader.TryLoadGrid(mapId, gPath, out var grid, opts))
+            {
+                Log.Error($"Failed to load grid from {gPath}!");
+                ForceEndSelf(uid, rule);
+                return;
+            }
+
+            grids = new List<EntityUid> {grid.Value.Owner};
         }
         else if (comp.PreloadedGrid is {} preloaded)
         {
@@ -57,11 +90,11 @@ public sealed class LoadMapRuleSystem : GameRuleSystem<LoadMapRuleComponent>
             if (!_gridPreloader.TryGetPreloadedGrid(preloaded, out var loadedShuttle))
             {
                 Log.Error($"Failed to get a preloaded grid with {preloaded}!");
-                Del(mapUid);
                 ForceEndSelf(uid, rule);
                 return;
             }
 
+            var mapUid = _map.CreateMap(out mapId, runMapInit: false);
             _transform.SetParent(loadedShuttle.Value, mapUid);
             grids = new List<EntityUid>() { loadedShuttle.Value };
             _map.InitializeMap(mapUid);
@@ -69,7 +102,6 @@ public sealed class LoadMapRuleSystem : GameRuleSystem<LoadMapRuleComponent>
         else
         {
             Log.Error($"No valid map prototype or map path associated with the rule {ToPrettyString(uid)}");
-            Del(mapUid);
             ForceEndSelf(uid, rule);
             return;
         }

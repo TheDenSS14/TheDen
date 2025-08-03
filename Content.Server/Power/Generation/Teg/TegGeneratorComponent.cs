@@ -1,4 +1,12 @@
-﻿namespace Content.Server.Power.Generation.Teg;
+// SPDX-FileCopyrightText: 2023 DrSmugleaf
+// SPDX-FileCopyrightText: 2023 Kara
+// SPDX-FileCopyrightText: 2023 Pieter-Jan Briers
+// SPDX-FileCopyrightText: 2025 ArtisticRoomba
+// SPDX-FileCopyrightText: 2025 sleepyyapril
+//
+// SPDX-License-Identifier: MIT
+
+namespace Content.Server.Power.Generation.Teg;
 
 /// <summary>
 /// The centerpiece for the thermo-electric generator (TEG).
@@ -46,7 +54,7 @@ public sealed partial class TegGeneratorComponent : Component
     /// </summary>
     [ViewVariables(VVAccess.ReadWrite)]
     [DataField("rampFactor")]
-    public float RampFactor = 1.05f;
+    public float RampFactor = 1.5f;
 
     /// <summary>
     /// Minimum position for the ramp. Avoids TEG taking too long to start.

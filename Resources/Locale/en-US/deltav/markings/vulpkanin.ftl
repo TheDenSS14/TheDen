@@ -1,3 +1,12 @@
+# SPDX-FileCopyrightText: 2023 Fluffiest Floofers <thebluewulf@gmail.com>
+# SPDX-FileCopyrightText: 2024 FoxxoTrystan <45297731+FoxxoTrystan@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Kr8art <kraitkraft@gmail.com>
+# SPDX-FileCopyrightText: 2025 Rosycup <178287475+Rosycup@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Sapphire <98045970+sapphirescript@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 marking-VulpEar-vulp = Vulpkanin ears (base)
 marking-VulpEar-vulp-inner = Vulpkanin ears (inner)
 marking-VulpEar = Vulpkanin
@@ -99,11 +108,15 @@ marking-VulpTail-vulp = Vulpkanin tail (base)
 marking-VulpTail-vulp-fade = Vulpkanin tail (fade)
 marking-VulpTail = Vulpkanin
 marking-VulpTailAnimated = Vulpkanin (animated)
+marking-VulpTailAnimated-vulp_wag = Tail
+marking-VulpTailAnimated-vulp_wag-tip = Tail tip
 
 marking-VulpTailTip-vulp = Vulpkanin tail (base)
 marking-VulpTailTip-vulp-tip = Vulpkanin tail (tip)
 marking-VulpTailTip = Vulpkanin (tip)
 marking-VulpTailTipAnimated = Vulpkanin (tip) (animated)
+marking-VulpTailTipAnimated-vulp_wag = Tail
+marking-VulpTailTipAnimated-vulp_wag-tip = Tail tip
 
 marking-VulpTailAlt-vulp_alt = Vulpkanin tail (base)
 marking-VulpTailAlt-vulp_alt-fade = Vulpkanin tail (fade)
@@ -121,19 +134,25 @@ marking-VulpTailFox-fox = Fox tail (base)
 marking-VulpTailFox-fox-fade = Fox tail (fade)
 marking-VulpTailFox = Vulpkanin Fox
 marking-VulpTailFoxAnimated = Vulpkanin Fox (animated)
+marking-VulpTailFoxAnimated-fox_wag = Tail
+marking-VulpTailFoxAnimated-fox_wag-fade =  Tail fade
 
 marking-VulpTailFoxTip-fox = Fox tail (base)
 marking-VulpTailFoxTip-fox-tip = Fox tail (fade)
 marking-VulpTailFoxTip = Vulpkanin Fox (tip)
 marking-VulpTailFoxTipAnimated = Vulpkanin Fox (tip) (animated)
+marking-VulpTailFoxTipAnimated-fox_wag = Tail
+marking-VulpTailFoxTipAnimated-fox_wag-tip = Tail tip
 
 marking-VulpTailBushy-bushfluff = Bush tail
 marking-VulpTailBushy = Vulpkanin Bush
 marking-VulpTailBushyAnimated = Vulpkanin Bush (animated)
+marking-VulpTailBushyAnimated-bushfluff_wag = Bush tail
 
 marking-VulpTailCoyote-coyote = Coyote tail
 marking-VulpTailCoyote = Vulpkanin Coyote
 marking-VulpTailCoyoteAnimated = Vulpkanin Coyote (animated)
+marking-VulpTailCoyoteAnimated-coyote_wag = Coyote tail
 
 marking-VulpTailHusky-husky-inner = Husky tail (inner)
 marking-VulpTailHusky-husky-outer = Husky tail (outer)
@@ -161,10 +180,13 @@ marking-VulpTailFluffy = Vulpkanin Fluffy
 marking-VulpTailCorgi-corgi = Corgi tail
 marking-VulpTailCorgi = Vulpkanin Corgi
 marking-VulpTailCorgiAnimated = Vulpkanin Corgi (animated)
+marking-VulpTailCorgiAnimated-corgi_wag = Corgi tail
 
 marking-VulpTailDalmatian-dalmatian = Dalmatian tail
 marking-VulpTailDalmatian = Vulpkanin Dalmatian
 marking-VulpTailDalmatianAnimated = Vulpkanin Dalmatian (animated)
+marking-VulpTailDalmatianAnimated-dalmatian_wag = Dalmation tail
+
 
 marking-VulpBellyCrest-belly_crest = Belly
 marking-VulpBellyCrest = Vulpkanin Belly Crest

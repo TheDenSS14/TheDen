@@ -1,0 +1,174 @@
+# SPDX-FileCopyrightText: 2024 fenndragon
+# SPDX-FileCopyrightText: 2025 Jakumba
+# SPDX-FileCopyrightText: 2025 Rosycup
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
+- type: entity
+  id: ArgocyteVents
+  parent: BaseVentCritterSpawn
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: StationEvent
+    startAnnouncement: true
+    earliestStart: 20
+    reoccurrenceDelay: 12
+    minimumPlayers: 35
+    weight: 7 # Really weak compared to other critters
+    duration: 30
+  - type: VentCrittersRule
+    sound: /Audio/_DEN/VentCritters/vent_xeno.ogg #Den
+    specialEntries:
+      - id: MobArgocyteFounder
+    table: !type:GroupSelector # DeltaV: EntityTable instead of spawn entries
+      children:
+      - id: MobArgocyteBarrier
+        weight: 0.1
+      - id: MobArgocyteSkitter
+        weight: 0.1
+      - id: MobArgocyteSwiper
+        weight: 0.1
+      - id: MobArgocyteMolder
+        weight: 0.1
+      - id: MobArgocytePouncer
+        weight: 0.1
+      - id: MobArgocyteGlider
+        weight: 0.1
+      - id: MobArgocyteHarvester
+        weight: 0.1
+      - id: MobArgocyteCrawler
+        weight: 0.1
+      - id: MobArgocyteEnforcer
+        weight: 0.05
+      - id: MobArgocyteFounder
+        weight: 0.05
+      - id: MobArgocyteLeviathing
+        weight: 0.025
+
+- type: entity
+  id: ArgocyteVentsWeak
+  parent: ArgocyteVents
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: StationEvent
+    startAnnouncement: true
+    earliestStart: 20
+    reoccurrenceDelay: 12
+    minimumPlayers: 20
+    weight: 8 # Really weak compared to other critters
+    duration: 30
+  - type: VentCrittersRule
+    table: !type:GroupSelector # DeltaV: EntityTable instead of spawn entries
+      children:
+      - id: MobArgocyteSlurva
+        weight: 0.3
+      - id: MobArgocyteBarrier
+        weight: 0.1
+      - id: MobArgocyteSkitter
+        weight: 0.1
+      - id: MobArgocyteSwiper
+        weight: 0.1
+      - id: MobArgocyteMolder
+        weight: 0.2
+      - id: MobArgocytePouncer
+        weight: 0.1
+      - id: MobArgocyteGlider
+        weight: 0.1
+
+- type: entity
+  id: TickVents
+  parent: BaseVentCritterSpawn
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: StationEvent
+    startAnnouncement: true
+    earliestStart: 20
+    reoccurrenceDelay: 12
+    minimumPlayers: 20
+    weight: 6 # Really weak compared to other critters
+    duration: 30
+  - type: VentCrittersRule
+    table: !type:GroupSelector # DeltaV: EntityTable instead of spawn entries
+      children:
+      - id: MobTick
+        weight: 1
+
+- type: entity
+  id: CarpVents
+  parent: BaseVentCritterSpawn
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: StationEvent
+    startAnnouncement: true
+    earliestStart: 20
+    reoccurrenceDelay: 12
+    minimumPlayers: 30
+    weight: 8 # Really weak compared to other critters
+    duration: 30
+  - type: VentCrittersRule
+    sound: /Audio/_DEN/VentCritters/vent_carp.ogg #Den
+    specialEntries:
+      - id: MobShark
+    table: !type:GroupSelector # DeltaV: EntityTable instead of spawn entries
+      children:
+      - id: MobCarp
+        weight: 0.25
+      - id: MobCarpMagic
+        weight: 0.2
+      - id: MobCarpHolo
+        weight: 0.1
+      - id: MobCarpRainbow
+        weight: 0.2
+      - id: MobShark
+        weight: 0.2
+      - id: MobCarpDragon
+        weight: 0.01
+
+- type: entity
+  id: CarpVentsWeak
+  parent: CarpVents
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: StationEvent
+    startAnnouncement: true
+    earliestStart: 20
+    reoccurrenceDelay: 12
+    minimumPlayers: 20
+    weight: 7 # Really weak compared to other critters
+    duration: 30
+  - type: VentCrittersRule
+    table: !type:GroupSelector # DeltaV: EntityTable instead of spawn entries
+      children:
+      - id: MobCarp
+        weight: 0.3
+      - id: MobCarpMagic
+        weight: 0.3
+      - id: MobCarpRainbow
+        weight: 0.3
+      - id: MobShark
+        weight: 0.1
+
+- type: entity
+  id: SpaceVents
+  parent: BaseVentCritterSpawn
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: StationEvent
+    startAnnouncement: true
+    earliestStart: 20
+    reoccurrenceDelay: 12
+    minimumPlayers: 35
+    weight: 7 # Really weak compared to other critters
+    duration: 30
+  - type: VentCrittersRule
+    table: !type:GroupSelector # DeltaV: EntityTable instead of spawn entries
+      children:
+      - id: MobBearSpace
+        weight: 0.3
+      - id: MobKangarooSpace
+        weight: 0.3
+      - id: MobSpiderSpace
+        weight: 0.25
+      - id: MobCobraSpace
+        weight: 0.15

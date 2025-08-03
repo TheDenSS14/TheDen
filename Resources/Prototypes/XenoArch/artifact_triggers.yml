@@ -1,3 +1,14 @@
+# SPDX-FileCopyrightText: 2022 Kara <lunarautomaton6@gmail.com>
+# SPDX-FileCopyrightText: 2023 Debug <49997488+DebugOk@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 liltenhead <104418166+liltenhead@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Ed <96445749+TheShuEd@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 wafehling <wafehling@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 RocketBoss360 <rocketboss360@gmail.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 - type: artifactTrigger
   id: TriggerInteraction
   targetDepth: 0
@@ -113,20 +124,6 @@
       Acidic: [ Touch ]
     reactions:
     - reagents: [ Blood, CopperBlood, InsectBlood, Slime, AmmoniaBlood, ZombieBlood, BlackBlood  ]
-      methods: [ Touch ]
-      effects:
-      - !type:ActivateArtifact
-
-- type: artifactTrigger
-  id: TriggerMedical
-  targetDepth: 2
-  triggerHint: artifact-trigger-hint-medical
-  components:
-  - type: Reactive
-    groups:
-      Acidic: [ Touch ]
-    reactions: # Funkychem
-    - reagents: [ Multiver, PenteticAcid, Diphenhydramine, Arithrazine, Probital, Libital, SalicylicAcid, Lenturi, Oxandrolone, Dexalin, Salbutamol, Convermol, Tricordrazine, Leporazine, Bruizine, Lacerinol, Puncturase, Pyrazine, Insuzine, Aiuri, Hyronalin, Inaprovaline, Epinephrine ]
       methods: [ Touch ]
       effects:
       - !type:ActivateArtifact

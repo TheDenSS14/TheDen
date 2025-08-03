@@ -1,3 +1,14 @@
+# SPDX-FileCopyrightText: 2024 VMSolidus
+# SPDX-FileCopyrightText: 2025 Adrian16199
+# SPDX-FileCopyrightText: 2025 Alice
+# SPDX-FileCopyrightText: 2025 Blitz
+# SPDX-FileCopyrightText: 2025 BlitzTheSquishy
+# SPDX-FileCopyrightText: 2025 MajorMoth
+# SPDX-FileCopyrightText: 2025 Tanix
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 # Corpsman
 - type: characterItemGroup
   id: LoadoutCorpsmanBackpacks
@@ -9,6 +20,8 @@
       id: LoadoutCorpsmanBackpackSatchel
     - type: loadout
       id: LoadoutCorpsmanBackpackDuffel
+    - type: loadout
+      id: LoadoutCorpsmanBackpackMessenger
 
 - type: characterItemGroup
   id: LoadoutCorpsmanBelt
@@ -26,12 +39,22 @@
 #  id: LoadoutCorpsmanEquipment
 #  maxItems: 1
 #  items:
-#
-#- type: characterItemGroup
-#  id: LoadoutCorpsmanEyes
-#  maxItems: 1
-#  items:
-#
+
+- type: characterItemGroup
+  id: LoadoutCorpsmanEyes
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutClothingEyesGlassesCorpsman
+    - type: loadout
+      id: LoadoutClothingEyesCorpsmanHudMedSec
+    - type: loadout
+      id: LoadoutClothingEyesCorpsmanHudMed
+    - type: loadout
+      id: LoadoutMedicalEyesCorpsmanEyepatchHudMedical
+    - type: loadout
+      id: LoadoutClothingEyesCorpsmanHudMedPrescription
+
 - type: characterItemGroup
   id: LoadoutCorpsmanGloves
   maxItems: 1
@@ -56,7 +79,7 @@
 #  id: LoadoutCorpsmanId
 #  maxItems: 1
 #  items:
-#
+
 - type: characterItemGroup
   id: LoadoutCorpsmanNeck
   maxItems: 1
@@ -71,14 +94,24 @@
   maxItems: 1
   items:
     - type: loadout
-      id: LoadoutClothingMaskGasSecurity
-    - type: loadout
-      id: LoadoutClothingMaskSterile
+      id: LoadoutClothingMaskSterileCorpsman
     - type: loadout
       id: LoadoutClothingMaskBreathMedical
 
 - type: characterItemGroup
-  id: LoadoutCorpsmanUniform
+  id: LoadoutCorpsmanOuter
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutClothingOuterLongCoatCorpsman
+
+#- type: characterItemGroup
+#  id: LoadoutCorpsmanShoes
+#  maxItems: 1
+#  items:
+
+- type: characterItemGroup
+  id: LoadoutCorpsmanUniforms
   maxItems: 1
   items:
     - type: loadout
@@ -87,19 +120,3 @@
       id: LoadoutClothingUniformJumpskirtCorpsman
     - type: loadout
       id: LoadoutClothingUniformJumpsuitCorpsmanSummer
-
-
-#- type: characterItemGroup
-#  id: LoadoutCorpsmanOuter
-#  maxItems: 1
-#  items:
-#
-#- type: characterItemGroup
-#  id: LoadoutCorpsmanShoes
-#  maxItems: 1
-#  items:
-#
-#- type: characterItemGroup
-#  id: LoadoutCorpsmanUniforms
-#  maxItems: 1
-#  items:

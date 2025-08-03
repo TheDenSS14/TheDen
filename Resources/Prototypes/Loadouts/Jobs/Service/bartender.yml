@@ -1,3 +1,12 @@
+# SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT <77995199+DEATHB4DEFEAT@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 sleepyyapril <flyingkarii@gmail.com>
+# SPDX-FileCopyrightText: 2025 GNUtopia <93669372+GNUtopia@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Lonofera <108367450+LonoferaRS@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 VMSolidus <evilexecutive@gmail.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 # Bartender
 # Backpacks
 
@@ -10,7 +19,6 @@
   id: LoadoutServiceBartenderBoxBeanbags
   category: JobsServiceBartender
   cost: 0
-  exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutBartenderAmmo
@@ -24,7 +32,6 @@
   id: LoadoutServiceBartenderBoxLightRifleRubber
   category: JobsServiceBartender
   cost: 0
-  exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutBartenderAmmo
@@ -38,7 +45,6 @@
   id: LoadoutServiceBartenderBoxRifleRubber
   category: JobsServiceBartender
   cost: 0
-  exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutBartenderAmmo
@@ -80,7 +86,6 @@
   id: LoadoutServiceBartenderBoxMagnumRubber
   category: JobsServiceBartender
   cost: 0
-  exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutBartenderAmmo
@@ -94,7 +99,6 @@
   id: LoadoutServiceBartenderArgentiNonlethal
   category: JobsServiceBartender
   cost: 0
-  exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutBartenderWeapon
@@ -108,7 +112,6 @@
   id: LoadoutServiceBartenderRepeaterNonlethal
   category: JobsServiceBartender
   cost: 0
-  exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutBartenderWeapon
@@ -176,6 +179,7 @@
   id: LoadoutServiceBartenderWinterCoat
   category: JobsServiceBartender
   cost: 0
+  exclusive: true
   requirements:
   - !type:CharacterItemGroupRequirement
     group: LoadoutBartenderOuter

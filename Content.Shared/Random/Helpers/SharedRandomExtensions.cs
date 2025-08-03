@@ -1,3 +1,17 @@
+// SPDX-FileCopyrightText: 2021 DrSmugleaf
+// SPDX-FileCopyrightText: 2022 moonheart08
+// SPDX-FileCopyrightText: 2023 Vordenburg
+// SPDX-FileCopyrightText: 2023 forthbridge
+// SPDX-FileCopyrightText: 2023 metalgearsloth
+// SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT
+// SPDX-FileCopyrightText: 2024 Nemanja
+// SPDX-FileCopyrightText: 2024 Tayrtahn
+// SPDX-FileCopyrightText: 2025 Blitz
+// SPDX-FileCopyrightText: 2025 slarticodefast
+// SPDX-FileCopyrightText: 2025 sleepyyapril
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using Content.Shared.Dataset;
@@ -13,9 +27,13 @@ namespace Content.Shared.Random.Helpers
             return random.Pick(prototype.Values);
         }
 
+        /// <summary>
+        /// Randomly selects an entry from <paramref name="prototype"/>, attempts to localize it, and returns the result.
+        /// </summary>
         public static string Pick(this IRobustRandom random, LocalizedDatasetPrototype prototype)
         {
-            return random.Pick(prototype.Values);
+            var index = random.Next(prototype.Values.Count);
+            return Loc.GetString(prototype.Values[index]);
         }
 
         public static string Pick(this IWeightedRandomPrototype prototype, System.Random random)
@@ -179,6 +197,26 @@ namespace Content.Shared.Random.Helpers
 
             // Shouldn't happen
             throw new InvalidOperationException($"Invalid weighted pick for {prototype.ID}!");
+        }
+
+        /// <summary>
+        /// A very simple, deterministic djb2 hash function for generating a combined seed for the random number generator.
+        /// We can't use HashCode.Combine because that is initialized with a random value, creating different results on the server and client.
+        /// </summary>
+        /// <example>
+        /// Combine the current game tick with a NetEntity Id in order to not get the same random result if this is called multiple times in the same tick.
+        /// <code>
+        /// var seed = SharedRandomExtensions.HashCodeCombine(new() { (int)_timing.CurTick.Value, GetNetEntity(ent).Id });
+        /// </code>
+        /// </example>
+        public static int HashCodeCombine(List<int> values)
+        {
+            int hash = 5381;
+            foreach (var value in values)
+            {
+                hash = (hash << 5) + hash + value;
+            }
+            return hash;
         }
     }
 }

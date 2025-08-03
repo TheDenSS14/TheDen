@@ -1,3 +1,24 @@
+// SPDX-FileCopyrightText: 2022 Paul Ritter
+// SPDX-FileCopyrightText: 2022 keronshb
+// SPDX-FileCopyrightText: 2023 Debug
+// SPDX-FileCopyrightText: 2023 Doru991
+// SPDX-FileCopyrightText: 2023 DrSmugleaf
+// SPDX-FileCopyrightText: 2023 Leon Friedrich
+// SPDX-FileCopyrightText: 2023 Nemanja
+// SPDX-FileCopyrightText: 2023 Psychpsyo
+// SPDX-FileCopyrightText: 2023 TemporalOroboros
+// SPDX-FileCopyrightText: 2023 metalgearsloth
+// SPDX-FileCopyrightText: 2024 Jezithyr
+// SPDX-FileCopyrightText: 2024 VMSolidus
+// SPDX-FileCopyrightText: 2024 gluesniffler
+// SPDX-FileCopyrightText: 2024 sleepyyapril <***>
+// SPDX-FileCopyrightText: 2024 sleepyyapril <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>
+// SPDX-FileCopyrightText: 2025 M3739
+// SPDX-FileCopyrightText: 2025 portfiend
+// SPDX-FileCopyrightText: 2025 sleepyyapril
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 using System.Linq;
 using System.Numerics;
 using Content.Shared.Body.Components;
@@ -25,6 +46,7 @@ using Content.Shared.Humanoid;
 using Content.Shared.Inventory.Events;
 using Content.Shared.Standing;
 using Robust.Shared.Timing;
+using Content.Shared._DEN.Body;
 
 namespace Content.Shared.Body.Systems;
 
@@ -58,6 +80,7 @@ public partial class SharedBodySystem
         SubscribeLocalEvent<BodyComponent, StandAttemptEvent>(OnStandAttempt); // Shitmed Change
         SubscribeLocalEvent<BodyComponent, ProfileLoadFinishedEvent>(OnProfileLoadFinished); // Shitmed change
         SubscribeLocalEvent<BodyComponent, IsEquippingAttemptEvent>(OnBeingEquippedAttempt); // Shitmed Change
+        SubscribeLocalEvent<BodyComponent, CannotSupportStandingEvent>(OnTrySupportStanding);
 
     }
 
@@ -308,7 +331,7 @@ public partial class SharedBodySystem
 
     public virtual HashSet<EntityUid> GibBody(
         EntityUid bodyId,
-        bool gibOrgans = false,
+        bool acidify = false,
         BodyComponent? body = null,
         bool launchGibs = true,
         Vector2? splatDirection = null,
@@ -338,7 +361,7 @@ public partial class SharedBodySystem
                 playAudio: false, launchGibs: true, launchDirection: splatDirection, launchImpulse: GibletLaunchImpulse * splatModifier,
                 launchImpulseVariance: GibletLaunchImpulseVariance, launchCone: splatCone);
 
-            if (!gibOrgans)
+            if (!acidify)
                 continue;
 
             foreach (var organ in GetPartOrgans(part.Id, part.Component))
@@ -350,6 +373,11 @@ public partial class SharedBodySystem
         }
 
         var bodyTransform = Transform(bodyId);
+        _audioSystem.PlayPredicted(gibSoundOverride, bodyTransform.Coordinates, null);
+
+        if (acidify)
+            return gibs;
+
         if (TryComp<InventoryComponent>(bodyId, out var inventory))
         {
             foreach (var item in _inventory.GetHandOrInventoryEntities(bodyId))
@@ -358,7 +386,6 @@ public partial class SharedBodySystem
                 gibs.Add(item);
             }
         }
-        _audioSystem.PlayPredicted(gibSoundOverride, bodyTransform.Coordinates, null);
         return gibs;
     }
 
@@ -458,7 +485,15 @@ public partial class SharedBodySystem
 
     private void OnStandAttempt(Entity<BodyComponent> ent, ref StandAttemptEvent args)
     {
-        if (ent.Comp.LegEntities.Count < ent.Comp.RequiredLegs)
+        var cannotStand = new CannotSupportStandingEvent(ent.Comp.LegEntities.Count);
+        RaiseLocalEvent(ent.Owner, cannotStand, false);
+        if (cannotStand.Forced || !cannotStand.Cancelled)
+            args.Cancel();
+    }
+
+    private void OnTrySupportStanding(Entity<BodyComponent> ent, ref CannotSupportStandingEvent args)
+    {
+        if (args.LegCount >= ent.Comp.RequiredLegs)
             args.Cancel();
     }
 

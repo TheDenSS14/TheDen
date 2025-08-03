@@ -1,3 +1,16 @@
+# SPDX-FileCopyrightText: 2024 VMSolidus
+# SPDX-FileCopyrightText: 2025 Adrian16199
+# SPDX-FileCopyrightText: 2025 Blitz
+# SPDX-FileCopyrightText: 2025 Jakumba
+# SPDX-FileCopyrightText: 2025 Lonofera
+# SPDX-FileCopyrightText: 2025 MajorMoth
+# SPDX-FileCopyrightText: 2025 Rosycup
+# SPDX-FileCopyrightText: 2025 Vanessa
+# SPDX-FileCopyrightText: 2025 Vanessa Louwagie
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 # Warden
 #- type: characterItemGroup
 #  id: LoadoutWardenBackpacks
@@ -25,6 +38,17 @@
   items:
     - type: loadout
       id: LoadoutWardenGreatsword
+    - type: loadout
+      id: LoadoutWardenEnergySword #TheDen
+    - type: loadout
+      id: LoadoutWardenKatana #TheDen
+    - type: loadout
+      id: LoadoutWardenShield #TheDen
+    - type: loadout
+      id: LoadoutWardenShotgun #TheDen
+    - type: loadout
+      id: LoadoutWardenGlovesKravMaga #TheDen
+
 
 #- type: characterItemGroup
 #  id: LoadoutWardenEyes
@@ -37,6 +61,8 @@
   items:
     - type: loadout
       id: LoadoutClothingHandsGlovesCombat
+    - type: loadout
+      id: LoadoutWardenGlovesKravMaga #TheDen
 
 - type: characterItemGroup
   id: LoadoutWardenHead
@@ -44,6 +70,8 @@
   items:
     - type: loadout
       id: LoadoutClothingHeadHatBeretWarden
+    - type: loadout
+      id: LoadoutWardenHeadWardenCap
 
 #- type: characterItemGroup
 #  id: LoadoutWardenId
@@ -59,7 +87,7 @@
 #  id: LoadoutWardenMask
 #  maxItems: 1
 #  items:
-#
+
 - type: characterItemGroup
   id: LoadoutWardenOuter
   maxItems: 1
@@ -68,6 +96,10 @@
       id: LoadoutClothingOuterWinterCoatWarden
     - type: loadout
       id: LoadoutClothingOuterCoatWarden
+    - type: loadout
+      id: LoadoutClothingOuterLongCoatWarden
+    - type: loadout
+      id: LoadoutWardenOuterCoatWinterCoatArmoured
 
 #- type: characterItemGroup
 #  id: LoadoutWardenShoes

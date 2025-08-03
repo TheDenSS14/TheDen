@@ -1,3 +1,10 @@
+// SPDX-FileCopyrightText: 2022 Leon Friedrich
+// SPDX-FileCopyrightText: 2023 Visne
+// SPDX-FileCopyrightText: 2025 Linkbro
+// SPDX-FileCopyrightText: 2025 sleepyyapril
+//
+// SPDX-License-Identifier: MIT
+
 using Content.Client.SubFloor;
 using Content.Shared.Wires;
 using Robust.Client.GameObjects;
@@ -27,5 +34,7 @@ public sealed class CableVisualizerSystem : VisualizerSystem<CableVisualizerComp
             mask = WireVisDirFlags.None;
 
         args.Sprite.LayerSetState(0, $"{component.StatePrefix}{(int) mask}");
+        if (component.ExtraLayerPrefix != null)
+            args.Sprite.LayerSetState(1, $"{component.ExtraLayerPrefix}{(int) mask}");
     }
 }

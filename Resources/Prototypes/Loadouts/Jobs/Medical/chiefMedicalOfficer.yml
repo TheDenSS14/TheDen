@@ -1,5 +1,70 @@
+# SPDX-FileCopyrightText: 2024 VMSolidus <evilexecutive@gmail.com>
+# SPDX-FileCopyrightText: 2025 Angelo Fallaria <ba.fallaria@gmail.com>
+# SPDX-FileCopyrightText: 2025 Blitz <73762869+BlitzTheSquishy@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 BlitzTheSquishy <73762869+BlitzTheSquishy@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 KyuPolaris <tabi@kyuudev.me>
+# SPDX-FileCopyrightText: 2025 Skubman <ba.fallaria@gmail.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 # Chief Medical Officer
 # Backpacks
+- type: loadout
+  id: LoadoutBackpackCMO
+  category: JobsMedicalChiefMedicalOfficer
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingBackpackCMOFilled
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutChiefMedicalOfficerBackpacks
+    - !type:CharacterJobRequirement
+      jobs:
+        - ChiefMedicalOfficer
+
+- type: loadout
+  id: LoadoutBackpackSatchelCMO
+  category: JobsMedicalChiefMedicalOfficer
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingBackpackSatchelCMOFilled
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutChiefMedicalOfficerBackpacks
+    - !type:CharacterJobRequirement
+      jobs:
+        - ChiefMedicalOfficer
+
+- type: loadout
+  id: LoadoutBackpackDuffelCMO
+  category: JobsMedicalChiefMedicalOfficer
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingBackpackDuffelCMOFilled
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutChiefMedicalOfficerBackpacks
+    - !type:CharacterJobRequirement
+      jobs:
+        - ChiefMedicalOfficer
+
+- type: loadout
+  id: LoadoutBackpackMessengerCMO
+  category: JobsMedicalChiefMedicalOfficer
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingBackpackMessengerCMOFilled
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutChiefMedicalOfficerBackpacks
+    - !type:CharacterJobRequirement
+      jobs:
+        - ChiefMedicalOfficer
 
 # Belt
 - type: loadout
@@ -57,6 +122,7 @@
   id: LoadoutClothingHeadMirror
   category: JobsMedicalChiefMedicalOfficer
   cost: 0
+  exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutChiefMedicalOfficerHead
@@ -134,6 +200,7 @@
   id: LoadoutCommandCMOOuterWinter
   category: JobsMedicalChiefMedicalOfficer
   cost: 0
+  exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutChiefMedicalOfficerOuter
@@ -147,6 +214,7 @@
   id: LoadoutCommandCMOOuterLab
   category: JobsMedicalChiefMedicalOfficer
   cost: 0
+  exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutChiefMedicalOfficerOuter
@@ -155,6 +223,20 @@
         - ChiefMedicalOfficer
   items:
     - ClothingOuterCoatLabCmo
+
+- type: loadout
+  id: LoadoutChiefMedicalOfficerOuterLongCoat
+  category: JobsMedicalChiefMedicalOfficer
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutChiefMedicalOfficerOuter
+    - !type:CharacterJobRequirement
+      jobs:
+        - ChiefMedicalOfficer
+  items:
+    - ClothingLongcoatCMO
 
 # Shoes
 - type: loadout

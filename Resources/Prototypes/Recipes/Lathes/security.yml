@@ -1,3 +1,55 @@
+# SPDX-FileCopyrightText: 2021 SETh lafuente
+# SPDX-FileCopyrightText: 2021 SethLafuente
+# SPDX-FileCopyrightText: 2021 Swept
+# SPDX-FileCopyrightText: 2021 SweptWasTaken
+# SPDX-FileCopyrightText: 2021 Tarlan2
+# SPDX-FileCopyrightText: 2021 Vera Aguilera Puerto
+# SPDX-FileCopyrightText: 2022 Kara
+# SPDX-FileCopyrightText: 2022 Peptide90
+# SPDX-FileCopyrightText: 2022 Rane
+# SPDX-FileCopyrightText: 2022 Ripmorld
+# SPDX-FileCopyrightText: 2022 ZeroDayDaemon
+# SPDX-FileCopyrightText: 2022 keronshb
+# SPDX-FileCopyrightText: 2022 metalgearsloth
+# SPDX-FileCopyrightText: 2023 Boaz1111
+# SPDX-FileCopyrightText: 2023 Gagarinten-Noverdo
+# SPDX-FileCopyrightText: 2023 HerCoyote23
+# SPDX-FileCopyrightText: 2023 Kevin Zheng
+# SPDX-FileCopyrightText: 2023 Leon Friedrich
+# SPDX-FileCopyrightText: 2023 Moony
+# SPDX-FileCopyrightText: 2023 Nairod
+# SPDX-FileCopyrightText: 2023 Nim
+# SPDX-FileCopyrightText: 2023 Puro
+# SPDX-FileCopyrightText: 2023 Scribbles0
+# SPDX-FileCopyrightText: 2023 Stanislav4ix
+# SPDX-FileCopyrightText: 2023 Vordenburg
+# SPDX-FileCopyrightText: 2023 Whisper
+# SPDX-FileCopyrightText: 2023 chromiumboy
+# SPDX-FileCopyrightText: 2023 deltanedas
+# SPDX-FileCopyrightText: 2023 lapatison
+# SPDX-FileCopyrightText: 2023 liltenhead
+# SPDX-FileCopyrightText: 2024 Alzore
+# SPDX-FileCopyrightText: 2024 Angelo Fallaria
+# SPDX-FileCopyrightText: 2024 BramvanZijp
+# SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT
+# SPDX-FileCopyrightText: 2024 Debug
+# SPDX-FileCopyrightText: 2024 Ed
+# SPDX-FileCopyrightText: 2024 FoxxoTrystan
+# SPDX-FileCopyrightText: 2024 Ghost581
+# SPDX-FileCopyrightText: 2024 Nemanja
+# SPDX-FileCopyrightText: 2024 gluesniffler
+# SPDX-FileCopyrightText: 2024 takemysoult
+# SPDX-FileCopyrightText: 2025 Blu
+# SPDX-FileCopyrightText: 2025 Jakumba
+# SPDX-FileCopyrightText: 2025 Rosycup
+# SPDX-FileCopyrightText: 2025 Solstice
+# SPDX-FileCopyrightText: 2025 Spatison
+# SPDX-FileCopyrightText: 2025 Timfa
+# SPDX-FileCopyrightText: 2025 VMSolidus
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 - type: latheRecipe
   id: Handcuffs
   result: Handcuffs
@@ -1263,17 +1315,6 @@
     Gold: 100
 
 - type: latheRecipe
-  id: EnergySword
-  result: EnergySword
-  completetime: 10
-  materials:
-    Tungsten: 300
-    Gold: 300
-    Bluespace: 300
-    Plasma: 300
-    Diamond: 100
-
-- type: latheRecipe
   id: EnergyCutlass
   result: EnergyCutlass
   completetime: 10
@@ -1283,17 +1324,6 @@
     Bluespace: 300
     Plasma: 300
     Diamond: 100
-
-- type: latheRecipe
-  id: EnergySwordDouble
-  result: EnergySwordDouble
-  completetime: 20
-  materials:
-    Tungsten: 600
-    Gold: 600
-    Bluespace: 600
-    Plasma: 600
-    Diamond: 200
 
 - type: latheRecipe
   id: WeaponSubMachineGunFPA90
@@ -1350,17 +1380,6 @@
     Aluminum: 900
     Plasteel: 100
     Plastic: 150
-    Silver: 100
-
-- type: latheRecipe
-  id: WeaponPistolCobra
-  result: WeaponPistolCobraEmpty
-  category: Weapons
-  completetime: 6
-  materials:
-    Aluminum: 600
-    Plasteel: 100
-    Plastic: 450
     Silver: 100
 
 - type: latheRecipe

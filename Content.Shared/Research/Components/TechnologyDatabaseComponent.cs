@@ -1,3 +1,15 @@
+// SPDX-FileCopyrightText: 2023 Debug
+// SPDX-FileCopyrightText: 2023 DrSmugleaf
+// SPDX-FileCopyrightText: 2023 Nemanja
+// SPDX-FileCopyrightText: 2025 Blitz
+// SPDX-FileCopyrightText: 2025 BlitzTheSquishy
+// SPDX-FileCopyrightText: 2025 EctoplasmIsGood
+// SPDX-FileCopyrightText: 2025 VMSolidus
+// SPDX-FileCopyrightText: 2025 pathetic meowmeow
+// SPDX-FileCopyrightText: 2025 sleepyyapril
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 using Content.Shared.Lathe;
 using Content.Shared.Research.Prototypes;
 using Content.Shared.Research.Systems;
@@ -60,10 +72,17 @@ public sealed partial class TechnologyDatabaseComponent : Component
 [ByRefEvent]
 public readonly record struct TechnologyDatabaseModifiedEvent // Goobstation - Lathe message on recipes update
 {
-    public readonly List<ProtoId<LatheRecipePrototype>> UnlockedRecipes;
+    public readonly EntityUid Server;
+    public readonly ProtoId<TechnologyPrototype>? Technology;
+    public readonly List<ProtoId<LatheRecipePrototype>> UnlockedRecipes = new();
 
-    public TechnologyDatabaseModifiedEvent(List<ProtoId<LatheRecipePrototype>>? unlockedRecipes = null)
+    public TechnologyDatabaseModifiedEvent(
+        EntityUid server,
+        ProtoId<TechnologyPrototype>? technology,
+        List<ProtoId<LatheRecipePrototype>>? unlockedRecipes = null)
     {
+        Server = server;
+        Technology = technology;
         UnlockedRecipes = unlockedRecipes ?? new();
     }
 };

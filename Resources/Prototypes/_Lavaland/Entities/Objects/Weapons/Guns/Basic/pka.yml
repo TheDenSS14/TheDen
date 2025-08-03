@@ -1,3 +1,9 @@
+# SPDX-FileCopyrightText: 2025 Eris
+# SPDX-FileCopyrightText: 2025 Jakumba
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 - type: entity
   name: proto-kinetic shotgun
   id: WeaponProtoKineticShotgun
@@ -37,6 +43,7 @@
   - type: Item
     shape:
     - 0,0,4,0
+  - type: Wieldable # Frontier
 
 - type: entity
   name: proto-kinetic repeater
@@ -87,6 +94,8 @@
   - type: Item
     shape:
     - 0,0,2,1
+  - type: Wieldable # Frontier
+
 
 - type: entity
   name: proto-kinetic pistol

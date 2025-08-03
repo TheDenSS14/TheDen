@@ -1,3 +1,13 @@
+# SPDX-FileCopyrightText: 2024 Errant <35878406+errant-4@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Jeff <velcroboy333@hotmail.com>
+# SPDX-FileCopyrightText: 2024 Krunklehorn <42424291+Krunklehorn@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Velcroboy <107660393+IamVelcroboy@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Velcroboy <velcroboy333@hotmail.com>
+# SPDX-FileCopyrightText: 2024 sleepyyapril <flyingkarii@gmail.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 station-beacon-general = General
 
 station-beacon-command = Command
@@ -5,6 +15,11 @@ station-beacon-bridge = Bridge
 station-beacon-vault = Vault
 station-beacon-captain = Captain
 station-beacon-hop = HOP
+
+station-beacon-dignitary = Dignitary
+station-beacon-bso = BSO
+station-beacon-ntrep = NT Rep
+station-beacon-magistrate = Magistrate
 
 station-beacon-security = Security
 station-beacon-brig = Brig
@@ -24,6 +39,7 @@ station-beacon-cryonics = Cryopods
 station-beacon-cmo = CMO
 station-beacon-morgue = Morgue
 station-beacon-surgery = Surgery
+station-beacon-paramedic = Paramedic
 
 station-beacon-science = Science
 station-beacon-research-and-development = Research
@@ -57,6 +73,8 @@ station-beacon-kitchen = Kitchen
 station-beacon-bar = Bar
 station-beacon-botany = Botany
 station-beacon-janitor = Janitor
+station-beacon-mime = Mime
+station-beacon-musician = Musician
 
 station-beacon-ai = AI
 station-beacon-ai-sat = AI Sat

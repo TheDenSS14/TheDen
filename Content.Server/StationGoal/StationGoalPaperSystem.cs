@@ -1,3 +1,10 @@
+// SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT <77995199+DEATHB4DEFEAT@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 VMSolidus <evilexecutive@gmail.com>
+// SPDX-FileCopyrightText: 2025 Blitz <73762869+BlitzTheSquishy@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 using System.Text.RegularExpressions;
 using Content.Server.GameTicking;
 using Content.Server.Fax;
@@ -28,8 +35,8 @@ public sealed class StationGoalPaperSystem : EntitySystem
 
     [ValidatePrototypeId<WeightedRandomPrototype>]
     private const string RandomPrototype = "StationGoals";
-    [ValidatePrototypeId<DatasetPrototype>]
-    private const string RandomSignature = "names_last";
+    [ValidatePrototypeId<LocalizedDatasetPrototype>]
+    private const string RandomSignature = "NamesLast";
 
     public override void Initialize()
     {
@@ -88,7 +95,7 @@ public sealed class StationGoalPaperSystem : EntitySystem
     {
         var enumerator = EntityManager.EntityQueryEnumerator<FaxMachineComponent>();
         var wasSent = false;
-        var signerName = _prototype.Index<DatasetPrototype>(RandomSignature);
+        var signerName = _prototype.Index<LocalizedDatasetPrototype>(RandomSignature);
 
         while (enumerator.MoveNext(out var uid, out var fax))
         {
@@ -103,7 +110,7 @@ public sealed class StationGoalPaperSystem : EntitySystem
                     ("date", DateTime.Now.AddYears(1000).ToString("yyyy MMMM dd")),
                     ("station", string.IsNullOrEmpty(stationId) ? "???" : stationId),
                     ("content", goal.Text),
-                    ("name", _random.Pick(signerName.Values))
+                    ("name", _random.Pick(signerName))
                 ),
                 Loc.GetString("station-goal-fax-paper-name"),
                 "StationGoalPaper"

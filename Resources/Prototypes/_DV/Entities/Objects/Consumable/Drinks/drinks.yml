@@ -1,3 +1,14 @@
+# SPDX-FileCopyrightText: 2023 Colin-Tel
+# SPDX-FileCopyrightText: 2023 Fluffiest Floofers
+# SPDX-FileCopyrightText: 2023 leo
+# SPDX-FileCopyrightText: 2024 SimpleStation14
+# SPDX-FileCopyrightText: 2024 dge21
+# SPDX-FileCopyrightText: 2025 Blitz
+# SPDX-FileCopyrightText: 2025 Rosycup
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 - type: entity
   parent: DrinkGlass
   id: DrinkHealthViolationGlass
@@ -148,4 +159,20 @@
           Quantity: 30
   - type: Icon
     sprite: _DV/Objects/Consumable/Drinks/doubleicecreamglass.rsi
+    state: icon
+
+- type: entity
+  parent: DrinkGlass
+  id: LemonLimeBittersGlass
+  suffix: lemon lime bitters
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 30
+        reagents:
+        - ReagentId: LemonLimeBitters
+          Quantity: 30
+  - type: Icon
+    sprite: _DV/Objects/Consumable/Drinks/lemonlimebitters.rsi
     state: icon

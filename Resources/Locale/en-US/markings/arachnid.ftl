@@ -1,3 +1,9 @@
+# SPDX-FileCopyrightText: 2023 Nairod <110078045+Nairodian@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 PixelTK <85175107+PixelTheKermit@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: MIT
+
 marking-ArachnidCheliceraeDownwards = Chelicerae (Downwards)
 marking-ArachnidCheliceraeDownwards-downwards = Chelicerae
 

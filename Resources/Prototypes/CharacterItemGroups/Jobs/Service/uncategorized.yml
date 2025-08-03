@@ -1,3 +1,10 @@
+# SPDX-FileCopyrightText: 2024 VMSolidus
+# SPDX-FileCopyrightText: 2025 Blitz
+# SPDX-FileCopyrightText: 2025 M3739
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 # All Service
 #- type: characterItemGroup
 #  id: LoadoutServiceBackpacks
@@ -22,12 +29,14 @@
 #  id: LoadoutServiceEyes
 #  maxItems: 1
 #  items:
-#
-#- type: characterItemGroup
-#  id: LoadoutServiceGloves
-#  maxItems: 1
-#  items:
-#
+
+- type: characterItemGroup
+  id: LoadoutServiceGloves
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutClothingHandsServiceWarmers
+
 #- type: characterItemGroup
 #  id: LoadoutServiceHead
 #  maxItems: 1
@@ -37,12 +46,14 @@
 #  id: LoadoutServiceId
 #  maxItems: 1
 #  items:
-#
-#- type: characterItemGroup
-#  id: LoadoutServiceNeck
-#  maxItems: 1
-#  items:
-#
+
+- type: characterItemGroup
+  id: LoadoutServiceNeck
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutServiceNeckNeckerchief # Floof - M3739 - #988
+
 #- type: characterItemGroup
 #  id: LoadoutServiceMask
 #  maxItems: 1
@@ -52,13 +63,19 @@
 #  id: LoadoutServiceOuter
 #  maxItems: 1
 #  items:
-#
-#- type: characterItemGroup
-#  id: LoadoutServiceShoes
-#  maxItems: 1
-#  items:
-#
-#- type: characterItemGroup
-#  id: LoadoutServiceUniforms
-#  maxItems: 1
-#  items:
+
+- type: characterItemGroup
+  id: LoadoutServiceShoes
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutClothingUnderSocksService
+
+- type: characterItemGroup
+  id: LoadoutServiceUniforms
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutClothingUniformServiceThong
+    - type: loadout
+      id: LoadoutClothingUniformServiceUni

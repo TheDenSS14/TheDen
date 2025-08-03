@@ -1,3 +1,11 @@
+# SPDX-FileCopyrightText: 2024 FoxxoTrystan <45297731+FoxxoTrystan@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 VMSolidus <evilexecutive@gmail.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
+supermatter-announcer = Automatic Supermatter Engine
+
 supermatter-examine-integrity =
     Its integrity is [color=yellow]{$integrity}%[/color].
 supermatter-healing =
@@ -13,7 +21,7 @@ supermatter-delam-overmass =
 supermatter-delam-tesla =
     CRYSTAL DELAMINATION IMMINENT! Crystal hyperstructure integrity has reached critical power surge failure! Energy ball formation imminent!
 supermatter-delam-cascade =
-    CRYSTAL DELAMINATION IMMINENT! Harmonic frequency limits exceeded, casualty destabilization field could not be engaged!
+    CRYSTAL DELAMINATION IMMINENT! Harmonic frequency limits exceeded, causality destabilization field could not be engaged!
 supermatter-delam-cancel =
     Crystalline hyperstructure returning to safe operating parameters. Failsafe has been disengaged. Integrity: {$integrity}%.
 supermatter-delam-player =
@@ -25,15 +33,30 @@ supermatter-seconds-before-delam-countdown =
 supermatter-seconds-before-delam-imminent =
     {$seconds}...
 
+supermatter-threshold-power =
+    Warning: Hyperstructure has reached dangerous power level.
+supermatter-threshold-powerloss =
+    DANGER: CHARGE INERTIA CHAIN REACTION IN PROGRESS.
+supermatter-threshold-mole =
+    Warning: Critical coolant mass reached.
+
 supermatter-tamper-begin =
     You begin carefully cutting a piece off the supermatter crystal...
 supermatter-tamper-end =
     You feel the power of a thousand suns laying on your palms. Or is it all the radiation?
 supermatter-announcement-cc-tamper =
     Our automatic casualty system has detected that the supermatter crystal structural integrity was compromised by an external force.
-    Engineering department, report to the supermatter engine immediately.
+        Engineering department, report to the supermatter engine immediately.
 
 supermatter-collide =
-    {CAPITALIZE(THE($target))} slams into the {$sm}!
+    {CAPITALIZE(THE($target))} slams into {THE($sm)}!
 supermatter-collide-mob =
     {CAPITALIZE(THE($target))}'s body flashes into dust!
+supermatter-collide-insert =
+    {CAPITALIZE(THE($target))} touches {THE($sm)} with {THE($item)} and it flashes into dust!
+supermatter-collide-insert-user =
+    You touch {THE($sm)} with {THE($item)} and it flashes into dust!
+supermatter-collide-insert-unremoveable =
+    {CAPITALIZE(THE($target))} touches {THE($sm)} with {THE($item)} and flashes into dust!
+supermatter-collide-insert-unremoveable-user =
+    You touch {THE($sm)} with {THE($item)} and flash into dust!

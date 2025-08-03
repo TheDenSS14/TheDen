@@ -1,3 +1,18 @@
+// SPDX-FileCopyrightText: 2023 Debug
+// SPDX-FileCopyrightText: 2023 DrSmugleaf
+// SPDX-FileCopyrightText: 2023 Leon Friedrich
+// SPDX-FileCopyrightText: 2023 csqrb
+// SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT
+// SPDX-FileCopyrightText: 2024 FoxxoTrystan
+// SPDX-FileCopyrightText: 2024 VMSolidus
+// SPDX-FileCopyrightText: 2024 deltanedas
+// SPDX-FileCopyrightText: 2025 Aikakakah
+// SPDX-FileCopyrightText: 2025 Falcon
+// SPDX-FileCopyrightText: 2025 Lyndomen
+// SPDX-FileCopyrightText: 2025 sleepyyapril
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 using Content.Shared.Humanoid.Markings;
 using Content.Shared.Humanoid.Prototypes;
 using Content.Shared.Preferences; // DeltaV
@@ -25,6 +40,10 @@ public sealed partial class HumanoidAppearanceComponent : Component
     public HashSet<HumanoidVisualLayers> PermanentlyHidden = new();
 
     // Couldn't these be somewhere else?
+
+    // TheDen - Add Voice
+    [DataField, AutoNetworkedField]
+    public Sex PreferredVoice;
 
     [DataField, AutoNetworkedField]
     public Gender Gender;
@@ -78,6 +97,15 @@ public sealed partial class HumanoidAppearanceComponent : Component
     /// </summary>
     [DataField, AutoNetworkedField]
     public HashSet<HumanoidVisualLayers> HiddenLayers = new();
+
+    /// <summary>
+    /// The specific markings that are hidden, whether or not the layer is hidden.
+    /// This is so we can just turn off a single marking, or part of a single marking.
+    /// (cus underwear, its for underwear, so you can take off your bra and still have your shirt on)
+    /// FLOOF ADD
+    /// </summary>
+    [DataField, AutoNetworkedField]
+    public HashSet<string> HiddenMarkings = new();
 
     [DataField, AutoNetworkedField]
     public Sex Sex = Sex.Male;

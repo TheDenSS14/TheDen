@@ -1,3 +1,8 @@
+# SPDX-FileCopyrightText: 2025 Blitz <73762869+BlitzTheSquishy@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 - type: loadout
   id: LoadoutTowelCentcom
   category: JobsCommandNanorep
@@ -9,3 +14,16 @@
       - NanotrasenRepresentative
   items:
     - TowelColorCentcom
+
+- type: loadout
+  id: LoadoutClothingBackpackMessengerCentcomm
+  category: JobsCommandNanorep
+  cost: 0
+  exclusive: true
+  canBeHeirloom: true
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+      - NanotrasenRepresentative
+  items:
+    - ClothingBackpackMessengerCentcomm

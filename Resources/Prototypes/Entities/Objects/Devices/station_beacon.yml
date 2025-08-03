@@ -1,3 +1,18 @@
+# SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT
+# SPDX-FileCopyrightText: 2024 Errant
+# SPDX-FileCopyrightText: 2024 Jeff
+# SPDX-FileCopyrightText: 2024 Kara
+# SPDX-FileCopyrightText: 2024 Krunklehorn
+# SPDX-FileCopyrightText: 2024 Nemanja
+# SPDX-FileCopyrightText: 2024 SimpleStation14
+# SPDX-FileCopyrightText: 2024 Velcroboy
+# SPDX-FileCopyrightText: 2025 BlitzTheSquishy
+# SPDX-FileCopyrightText: 2025 Falcon
+# SPDX-FileCopyrightText: 2025 metalgearsloth
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 - type: entity
   parent: BaseItem
   id: DefaultStationBeacon
@@ -34,6 +49,8 @@
         type: NavMapBeaconBoundUserInterface
   - type: Item
     size: Small
+  - type: Visibility
+    layer: 1
   - type: SubFloorHide
   - type: Anchorable
   - type: Construction
@@ -112,6 +129,7 @@
     defaultTarget: complete
 
 # Prototypes for various default beacon configurations.
+# Command
 - type: entity
   parent: DefaultStationBeacon
   id: DefaultStationBeaconCommand
@@ -153,6 +171,41 @@
   - type: NavMapBeacon
     defaultText: station-beacon-hop
 
+# Dignitary
+- type: entity
+  parent: DefaultStationBeacon
+  id: DefaultStationBeaconDignitary
+  suffix: Dignitary
+  components:
+  - type: NavMapBeacon
+    defaultText: station-beacon-dignitary
+    color: "#33FE6D"
+
+- type: entity
+  parent: DefaultStationBeaconDignitary
+  id: DefaultStationBeaconBSO
+  suffix: BSO
+  components:
+  - type: NavMapBeacon
+    defaultText: station-beacon-bso
+
+- type: entity
+  parent: DefaultStationBeaconDignitary
+  id: DefaultStationBeaconNTRep
+  suffix: NT Rep
+  components:
+  - type: NavMapBeacon
+    defaultText: station-beacon-ntrep
+
+- type: entity
+  parent: DefaultStationBeaconDignitary
+  id: DefaultStationBeaconMagistrate
+  suffix: Magistrate
+  components:
+  - type: NavMapBeacon
+    defaultText: station-beacon-magistrate
+
+# Security
 - type: entity
   parent: DefaultStationBeacon
   id: DefaultStationBeaconSecurity
@@ -219,14 +272,6 @@
     defaultText: station-beacon-courtroom
 
 - type: entity
-  parent: DefaultStationBeaconService #Delta V - Lawer is Service until Justice Dept is a thing
-  id: DefaultStationBeaconLawOffice
-  suffix: Law Office
-  components:
-  - type: NavMapBeacon
-    defaultText: station-beacon-law
-
-- type: entity
   parent: DefaultStationBeaconSecurity
   id: DefaultStationBeaconSecurityCheckpoint
   suffix: Sec Checkpoint
@@ -234,6 +279,7 @@
   - type: NavMapBeacon
     defaultText: station-beacon-security-checkpoint
 
+# Medical
 - type: entity
   parent: DefaultStationBeacon
   id: DefaultStationBeaconMedical
@@ -292,6 +338,15 @@
     defaultText: station-beacon-surgery
 
 - type: entity
+  parent: DefaultStationBeaconMedical
+  id: DefaultStationBeaconParamedic
+  suffix: Paramedic
+  components:
+  - type: NavMapBeacon
+    defaultText: station-beacon-paramedic
+
+# Epistemics
+- type: entity
   parent: DefaultStationBeacon
   id: DefaultStationBeaconScience
   suffix: Epistemics #Delta V - Renamed
@@ -349,6 +404,15 @@
     defaultText: station-beacon-anomaly-gen
 
 - type: entity
+  parent: DefaultStationBeaconScience #Delta V - Chapel in Epi
+  id: DefaultStationBeaconChapel
+  suffix: Chapel
+  components:
+  - type: NavMapBeacon
+    defaultText: station-beacon-chapel
+
+# Logistics
+- type: entity
   parent: DefaultStationBeacon
   id: DefaultStationBeaconSupply
   suffix: Logistics #Delta V - Renamed
@@ -389,6 +453,7 @@
   - type: NavMapBeacon
     defaultText: station-beacon-salvage
 
+# Engineering
 - type: entity
   parent: DefaultStationBeacon
   id: DefaultStationBeaconEngineering
@@ -486,6 +551,7 @@
   - type: NavMapBeacon
     defaultText: station-beacon-tech-vault
 
+# Service
 - type: entity
   parent: DefaultStationBeacon
   id: DefaultStationBeaconService
@@ -494,6 +560,14 @@
   - type: NavMapBeacon
     defaultText: station-beacon-service
     color: "#9FED58"
+
+- type: entity
+  parent: DefaultStationBeaconService #Delta V - Lawer is Service until Justice Dept is a thing
+  id: DefaultStationBeaconLawOffice
+  suffix: Law Office
+  components:
+  - type: NavMapBeacon
+    defaultText: station-beacon-law
 
 - type: entity
   parent: DefaultStationBeaconService
@@ -528,6 +602,31 @@
     defaultText: station-beacon-janitor-closet #Delta V - Add for closet/outpost
 
 - type: entity
+  parent: DefaultStationBeaconService
+  id: DefaultStationBeaconClown
+  suffix: Clown
+  components:
+  - type: NavMapBeacon
+    defaultText: station-beacon-clown
+
+- type: entity
+  parent: DefaultStationBeaconService
+  id: DefaultStationBeaconMime
+  suffix: Mime
+  components:
+  - type: NavMapBeacon
+    defaultText: station-beacon-mime
+
+- type: entity
+  parent: DefaultStationBeaconService
+  id: DefaultStationBeaconMusician
+  suffix: Musician
+  components:
+  - type: NavMapBeacon
+    defaultText: station-beacon-musician
+
+# Silicon
+- type: entity
   parent: DefaultStationBeacon
   id: DefaultStationBeaconAI
   suffix: AI
@@ -552,6 +651,7 @@
   - type: NavMapBeacon
     defaultText: station-beacon-ai-core
 
+# Misc
 - type: entity
   parent: DefaultStationBeacon
   id: DefaultStationBeaconArrivals
@@ -575,14 +675,6 @@
   components:
   - type: NavMapBeacon
     defaultText: station-beacon-eva-storage
-
-- type: entity
-  parent: DefaultStationBeaconScience #Delta V - Chapel in Epi
-  id: DefaultStationBeaconChapel
-  suffix: Chapel
-  components:
-  - type: NavMapBeacon
-    defaultText: station-beacon-chapel
 
 - type: entity
   parent: DefaultStationBeacon

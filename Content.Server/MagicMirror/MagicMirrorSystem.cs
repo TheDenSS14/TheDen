@@ -1,11 +1,31 @@
+// SPDX-FileCopyrightText: 2022 DrSmugleaf
+// SPDX-FileCopyrightText: 2022 Flipp Syder
+// SPDX-FileCopyrightText: 2023 Debug
+// SPDX-FileCopyrightText: 2023 Leon Friedrich
+// SPDX-FileCopyrightText: 2023 csqrb
+// SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT
+// SPDX-FileCopyrightText: 2024 Ed
+// SPDX-FileCopyrightText: 2024 Nemanja
+// SPDX-FileCopyrightText: 2024 Pieter-Jan Briers
+// SPDX-FileCopyrightText: 2024 metalgearsloth
+// SPDX-FileCopyrightText: 2024 nikthechampiongr
+// SPDX-FileCopyrightText: 2025 sleepyyapril
+// SPDX-FileCopyrightText: 2025 wheelwrightt
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 using System.Linq;
 using Content.Server.DoAfter;
 using Content.Server.Humanoid;
 using Content.Shared.DoAfter;
 using Content.Shared.Humanoid;
 using Content.Shared.Humanoid.Markings;
+using Content.Shared.IdentityManagement;
 using Content.Shared.Interaction;
+using Content.Shared.Inventory;
 using Content.Shared.MagicMirror;
+using Content.Shared.Popups;
+using Content.Shared.Tag;
 using Robust.Shared.Audio.Systems;
 
 namespace Content.Server.MagicMirror;
@@ -19,6 +39,9 @@ public sealed class MagicMirrorSystem : SharedMagicMirrorSystem
     [Dependency] private readonly DoAfterSystem _doAfterSystem = default!;
     [Dependency] private readonly MarkingManager _markings = default!;
     [Dependency] private readonly HumanoidAppearanceSystem _humanoid = default!;
+    [Dependency] private readonly SharedPopupSystem _popup = default!;
+    [Dependency] private readonly InventorySystem _inventory = default!;
+    [Dependency] private readonly TagSystem _tagSystem = default!;
 
     public override void Initialize()
     {
@@ -46,8 +69,25 @@ public sealed class MagicMirrorSystem : SharedMagicMirrorSystem
         if (component.Target is not { } target)
             return;
 
+        // Check if the target getting their hair altered has any clothes that hides their hair
+        if (CheckHeadSlotOrClothes(message.Actor, component.Target.Value))
+        {
+            _popup.PopupEntity(
+                component.Target == message.Actor
+                    ? Loc.GetString("magic-mirror-blocked-by-hat-self")
+                    : Loc.GetString("magic-mirror-blocked-by-hat-self-target"),
+                message.Actor,
+                message.Actor,
+                PopupType.Medium);
+            return;
+        }
+
         _doAfterSystem.Cancel(component.DoAfter);
         component.DoAfter = null;
+
+        var doafterTime = component.SelectSlotTime;
+        if (component.Target == message.Actor)
+            doafterTime /= 3;
 
         var doAfter = new MagicMirrorSelectDoAfterEvent()
         {
@@ -56,7 +96,7 @@ public sealed class MagicMirrorSystem : SharedMagicMirrorSystem
             Marking = message.Marking,
         };
 
-        _doAfterSystem.TryStartDoAfter(new DoAfterArgs(EntityManager, message.Actor, component.SelectSlotTime, doAfter, uid, target: target, used: uid)
+        _doAfterSystem.TryStartDoAfter(new DoAfterArgs(EntityManager, message.Actor, doafterTime, doAfter, uid, target: target, used: uid)
         {
             DistanceThreshold = SharedInteractionSystem.InteractionRange,
             BreakOnDamage = true,
@@ -65,6 +105,15 @@ public sealed class MagicMirrorSystem : SharedMagicMirrorSystem
             NeedHand = true
         },
             out var doAfterId);
+
+        if (component.Target == message.Actor)
+        {
+            _popup.PopupEntity(Loc.GetString("magic-mirror-change-slot-self"), component.Target.Value, component.Target.Value, PopupType.Medium);
+        }
+        else
+        {
+            _popup.PopupEntity(Loc.GetString("magic-mirror-change-slot-target", ("user", Identity.Name(message.Actor, EntityManager))), component.Target.Value, component.Target.Value, PopupType.Medium);
+        }
 
         component.DoAfter = doAfterId;
         _audio.PlayPvs(component.ChangeHairSound, uid);
@@ -102,8 +151,25 @@ public sealed class MagicMirrorSystem : SharedMagicMirrorSystem
         if (component.Target is not { } target)
             return;
 
+                // Check if the target getting their hair altered has any clothes that hides their hair
+        if (CheckHeadSlotOrClothes(message.Actor, component.Target.Value))
+        {
+            _popup.PopupEntity(
+                component.Target == message.Actor
+                    ? Loc.GetString("magic-mirror-blocked-by-hat-self")
+                    : Loc.GetString("magic-mirror-blocked-by-hat-self-target"),
+                message.Actor,
+                message.Actor,
+                PopupType.Medium);
+            return;
+        }
+
         _doAfterSystem.Cancel(component.DoAfter);
         component.DoAfter = null;
+
+        var doafterTime = component.ChangeSlotTime;
+        if (component.Target == message.Actor)
+            doafterTime /= 3;
 
         var doAfter = new MagicMirrorChangeColorDoAfterEvent()
         {
@@ -112,7 +178,7 @@ public sealed class MagicMirrorSystem : SharedMagicMirrorSystem
             Colors = message.Colors,
         };
 
-        _doAfterSystem.TryStartDoAfter(new DoAfterArgs(EntityManager, message.Actor, component.ChangeSlotTime, doAfter, uid, target: target, used: uid)
+        _doAfterSystem.TryStartDoAfter(new DoAfterArgs(EntityManager, message.Actor, doafterTime, doAfter, uid, target: target, used: uid)
         {
             BreakOnDamage = true,
             BreakOnMove = true,
@@ -120,6 +186,15 @@ public sealed class MagicMirrorSystem : SharedMagicMirrorSystem
             NeedHand = true
         },
             out var doAfterId);
+
+        if (component.Target == message.Actor)
+        {
+            _popup.PopupEntity(Loc.GetString("magic-mirror-change-color-self"), component.Target.Value, component.Target.Value, PopupType.Medium);
+        }
+        else
+        {
+            _popup.PopupEntity(Loc.GetString("magic-mirror-change-color-target", ("user", Identity.Name(message.Actor, EntityManager))), component.Target.Value, component.Target.Value, PopupType.Medium);
+        }
 
         component.DoAfter = doAfterId;
     }
@@ -156,8 +231,25 @@ public sealed class MagicMirrorSystem : SharedMagicMirrorSystem
         if (component.Target is not { } target)
             return;
 
+        // Check if the target getting their hair altered has any clothes that hides their hair
+        if (CheckHeadSlotOrClothes(message.Actor, component.Target.Value))
+        {
+            _popup.PopupEntity(
+                component.Target == message.Actor
+                    ? Loc.GetString("magic-mirror-blocked-by-hat-self")
+                    : Loc.GetString("magic-mirror-blocked-by-hat-self-target"),
+                message.Actor,
+                message.Actor,
+                PopupType.Medium);
+            return;
+        }
+
         _doAfterSystem.Cancel(component.DoAfter);
         component.DoAfter = null;
+
+        var doafterTime = component.RemoveSlotTime;
+        if (component.Target == message.Actor)
+            doafterTime /= 3;
 
         var doAfter = new MagicMirrorRemoveSlotDoAfterEvent()
         {
@@ -165,7 +257,7 @@ public sealed class MagicMirrorSystem : SharedMagicMirrorSystem
             Slot = message.Slot,
         };
 
-        _doAfterSystem.TryStartDoAfter(new DoAfterArgs(EntityManager, message.Actor, component.RemoveSlotTime, doAfter, uid, target: target, used: uid)
+        _doAfterSystem.TryStartDoAfter(new DoAfterArgs(EntityManager, message.Actor, doafterTime, doAfter, uid, target: target, used: uid)
         {
             DistanceThreshold = SharedInteractionSystem.InteractionRange,
             BreakOnDamage = true,
@@ -173,6 +265,15 @@ public sealed class MagicMirrorSystem : SharedMagicMirrorSystem
             NeedHand = true
         },
             out var doAfterId);
+
+        if (component.Target == message.Actor)
+        {
+            _popup.PopupEntity(Loc.GetString("magic-mirror-remove-slot-self"), component.Target.Value, component.Target.Value, PopupType.Medium);
+        }
+        else
+        {
+            _popup.PopupEntity(Loc.GetString("magic-mirror-remove-slot-target", ("user", Identity.Name(message.Actor, EntityManager))), component.Target.Value, component.Target.Value, PopupType.Medium);
+        }
 
         component.DoAfter = doAfterId;
         _audio.PlayPvs(component.ChangeHairSound, uid);
@@ -210,15 +311,32 @@ public sealed class MagicMirrorSystem : SharedMagicMirrorSystem
         if (component.Target == null)
             return;
 
+        // Check if the target getting their hair altered has any clothes that hides their hair
+        if (CheckHeadSlotOrClothes(message.Actor, component.Target.Value))
+        {
+            _popup.PopupEntity(
+                component.Target == message.Actor
+                    ? Loc.GetString("magic-mirror-blocked-by-hat-self")
+                    : Loc.GetString("magic-mirror-blocked-by-hat-self-target"),
+                message.Actor,
+                message.Actor,
+                PopupType.Medium);
+            return;
+        }
+
         _doAfterSystem.Cancel(component.DoAfter);
         component.DoAfter = null;
+
+        var doafterTime = component.AddSlotTime;
+        if (component.Target == message.Actor)
+            doafterTime /= 3;
 
         var doAfter = new MagicMirrorAddSlotDoAfterEvent()
         {
             Category = message.Category,
         };
 
-        _doAfterSystem.TryStartDoAfter(new DoAfterArgs(EntityManager, message.Actor, component.AddSlotTime, doAfter, uid, target: component.Target.Value, used: uid)
+        _doAfterSystem.TryStartDoAfter(new DoAfterArgs(EntityManager, message.Actor, doafterTime, doAfter, uid, target: component.Target.Value, used: uid)
         {
             BreakOnDamage = true,
             BreakOnMove = true,
@@ -226,6 +344,15 @@ public sealed class MagicMirrorSystem : SharedMagicMirrorSystem
             NeedHand = true
         },
             out var doAfterId);
+
+        if (component.Target == message.Actor)
+        {
+            _popup.PopupEntity(Loc.GetString("magic-mirror-add-slot-self"), component.Target.Value, component.Target.Value, PopupType.Medium);
+        }
+        else
+        {
+            _popup.PopupEntity(Loc.GetString("magic-mirror-add-slot-target", ("user", Identity.Name(message.Actor, EntityManager))), component.Target.Value, component.Target.Value, PopupType.Medium);
+        }
 
         component.DoAfter = doAfterId;
         _audio.PlayPvs(component.ChangeHairSound, uid);
@@ -264,5 +391,33 @@ public sealed class MagicMirrorSystem : SharedMagicMirrorSystem
     {
         ent.Comp.Target = null;
         Dirty(ent);
+    }
+
+    /// <summary>
+    /// Helper function that checks if the wearer has anything on their head
+    /// Or if they have any clothes that hides their hair
+    /// </summary>
+    private bool CheckHeadSlotOrClothes(EntityUid user, EntityUid target)
+    {
+        if (TryComp<InventoryComponent>(target, out var inventoryComp))
+        {
+            // any hat whatsoever will block haircutting
+            if (_inventory.TryGetSlotEntity(target, "head", out var hat, inventoryComp))
+            {
+                return true;
+            }
+
+            // maybe there's some kind of armor that has the HidesHair tag as well, so check every slot for it
+            var slots = _inventory.GetSlotEnumerator((target, inventoryComp), SlotFlags.WITHOUT_POCKET);
+            while (slots.MoveNext(out var slot))
+            {
+                if (slot.ContainedEntity != null && _tagSystem.HasTag(slot.ContainedEntity.Value, "HidesHair"))
+                {
+                    return true;
+                }
+            }
+        }
+
+        return false;
     }
 }

@@ -1,3 +1,10 @@
+// SPDX-FileCopyrightText: 2025 Falcon <falcon@zigtag.dev>
+// SPDX-FileCopyrightText: 2025 Timfa <timfalken@hotmail.com>
+// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 sleepyyapril <flyingkarii@gmail.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 using Content.Shared._EE.Contractors.Components;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization.Manager;
@@ -35,5 +42,5 @@ public sealed partial class NationalityPrototype : IPrototype
     public TraitFunction[] Functions { get; private set; } = Array.Empty<TraitFunction>();
 
     [DataField]
-    public ProtoId<EntityPrototype> PassportPrototype { get; } = new();
+    public EntProtoId PassportPrototype { get; } = new();
 }

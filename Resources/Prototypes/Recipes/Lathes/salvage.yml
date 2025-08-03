@@ -1,3 +1,31 @@
+# SPDX-FileCopyrightText: 2023 metalgearsloth
+# SPDX-FileCopyrightText: 2024 Alzore
+# SPDX-FileCopyrightText: 2024 Nemanja
+# SPDX-FileCopyrightText: 2024 deltanedas
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
+- type: latheRecipe
+  id: MineralScannerEmpty
+  result: MineralScannerEmpty
+  completetime: 3
+  materials:
+    Steel: 1000
+    Glass: 300
+    Plastic: 300
+    Gold: 500
+
+- type: latheRecipe
+  id: AdvancedMineralScannerEmpty
+  result: AdvancedMineralScannerEmpty
+  completetime: 1
+  materials:
+    Steel: 1000
+    Glass: 300
+    Plastic: 300
+    Uranium: 500
+
 - type: latheRecipe
   id: Fulton
   result: Fulton1

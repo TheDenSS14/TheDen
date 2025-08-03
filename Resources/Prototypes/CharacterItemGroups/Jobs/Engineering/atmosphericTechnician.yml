@@ -1,13 +1,24 @@
+# SPDX-FileCopyrightText: 2024 VMSolidus
+# SPDX-FileCopyrightText: 2025 Blitz
+# SPDX-FileCopyrightText: 2025 BlitzTheSquishy
+# SPDX-FileCopyrightText: 2025 Lonofera
+# SPDX-FileCopyrightText: 2025 mart
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 - type: characterItemGroup
   id: LoadoutAtmosphericTechnicianBackpacks
   maxItems: 1
   items:
     - type: loadout
-      id: LoadingEngineeringAtmosBackpackBackpack
+      id: LoadoutAtmosphericTechnicianBackpackBackpack
     - type: loadout
-      id: LoadingEngineeringAtmosBackpackSatchel
+      id: LoadoutAtmosphericTechnicianBackpackSatchel
     - type: loadout
-      id: LoadingEngineeringAtmosBackpackDuffel
+      id: LoadoutAtmosphericTechnicianBackpackDuffel
+    - type: loadout
+      id: LoadoutAtmosphericTechnicianBackpackMessenger
 
 - type: characterItemGroup
   id: LoadoutAtmosphericTechnicianBelt
@@ -104,7 +115,7 @@
     - type: loadout
       id: LoadoutAtmosphericTechnicianShoesWhite
     - type: loadout
-      id: LoadoutAtmosphericTechnicianShoesWork
+      id: LoadoutAtmosphericTechnicianShoesBootsWinter
 
 - type: characterItemGroup
   id: LoadoutAtmosphericTechnicianUniforms

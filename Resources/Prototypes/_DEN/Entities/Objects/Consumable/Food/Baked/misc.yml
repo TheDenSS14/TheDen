@@ -1,0 +1,36 @@
+# SPDX-FileCopyrightText: 2025 Tabitha <64847293+KyuPolaris@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  name: tirggel
+  parent: FoodBakedBase
+  id: FoodBakedTirggel
+  description: A small hard biscuit from Earth, baked with honey and often eaten during festivals.
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Consumable/Food/Baked/tirggel.rsi
+    layers:
+      - state: icon
+        map: [ "enum.DamageStateVisualLayers.Base" ]
+  - type: RandomSprite
+    available:
+      - enum.DamageStateVisualLayers.Base:
+          angel: ""
+          animal: ""
+          house: ""
+          tree: ""
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 10
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 3
+        - ReagentId: Honey
+          Quantity: 3
+        - ReagentId: Sugar
+          Quantity: 3
+  - type: FlavorProfile # DeltaV - custom flavor, see Resources/Locale/en-US/_DV/flavors/flavor_profiles.ftl
+    flavors:
+     - tirggel

@@ -1,9 +1,24 @@
-﻿[game]
+# SPDX-FileCopyrightText: 2022 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
+# SPDX-FileCopyrightText: 2023 Chief-Engineer <119664036+Chief-Engineer@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Riggle <27156122+RigglePrime@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 metalgearsloth <comedian_vs_clown@hotmail.com>
+# SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT <77995199+DEATHB4DEFEAT@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Eris <eris@erisws.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
+[game]
 # Straight in-game baby
 lobbyenabled = false
 # Dev map for faster loading & convenience
 map = "Dev"
 role_timers = false
+traits_max = 25
+traits_default_points = 20
+loadouts_points = 30
 
 [gateway]
 generator_enabled = false
@@ -28,5 +43,8 @@ preload_grids = false
 [admin]
 see_own_notes = true
 
-# [lavaland] # Lavaland Change
-# enabled = false -- DISABLED TEMPORARILY
+[lavaland] # Lavaland Change
+enabled = false
+
+[rules]
+exempt_local = true

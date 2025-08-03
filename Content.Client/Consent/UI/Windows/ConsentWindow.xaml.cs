@@ -1,3 +1,9 @@
+// SPDX-FileCopyrightText: 2024 Pierson Arnold
+// SPDX-FileCopyrightText: 2025 sleepyyapril
+// SPDX-FileCopyrightText: 2025 wheelwrightt
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 using Content.Client.UserInterface.Controls;
 using Content.Shared.CCVar;
 using Content.Shared.Consent;
@@ -124,9 +130,10 @@ public sealed partial class ConsentWindow : FancyWindow
 
         container.AddChild(header);
 
-        var desc = new Label
+        var desc = new RichTextLabel
         {
             Text = Loc.GetString($"consent-{prototype.ID}-desc"),
+            MaxWidth = 850,
         };
 
         container.AddChild(desc);

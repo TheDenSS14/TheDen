@@ -1,3 +1,10 @@
+# SPDX-FileCopyrightText: 2024 VMSolidus <evilexecutive@gmail.com>
+# SPDX-FileCopyrightText: 2025 Lonofera <108367450+LonoferaRS@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 MajorMoth <61519600+MajorMoth@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 # Janitor
 # Backpacks
 
@@ -10,6 +17,19 @@
 # Eyes
 
 # Gloves
+- type: loadout
+  id: LoadoutClothingHandsJanitorRubber
+  category: JobsServiceJanitor
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutJanitorGloves
+    - !type:CharacterJobRequirement
+      jobs:
+        - Janitor
+  items:
+    - ClothingHandsGlovesJanitor
 
 # Head
 
@@ -24,6 +44,7 @@
   id: LoadoutServiceWinterCoatJanitor
   category: JobsServiceJanitor
   cost: 0
+  exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutJanitorOuter
@@ -38,6 +59,7 @@
   id: LoadoutClothingShoesGaloshes
   category: JobsServiceJanitor
   cost: 0
+  exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutJanitorShoes
@@ -51,6 +73,7 @@
   id: LoadoutClothingShoesPurpleGaloshes
   category: JobsServiceJanitor
   cost: 0
+  exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutJanitorOuter

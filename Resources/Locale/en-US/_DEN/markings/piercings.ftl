@@ -1,55 +1,60 @@
-marking-PiercingCross-piercings = Nipples
+# SPDX-FileCopyrightText: 2025 KekaniCreates <87507256+KekaniCreates@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 marking-PiercingCross = Nipple Piercing (Cross)
+marking-PiercingCross-cross = Piercing
 
-marking-PiercingCrossVulp-piercings = Nipples
 marking-PiercingCrossVulp = Nipple Piercing (Cross)
+marking-PiercingCrossVulp-crossvulp = Piercing
 
-marking-PiercingCrossMale-piercings = Nipples
 marking-PiercingCrossMale = Nipple Piercing (Male, Cross)
+marking-PiercingCrossMale-crossvulp = Piercing
 
-marking-PiercingHori-piercings = Nipples
 marking-PiercingHori = Nipple Piercing (Horizontal)
+marking-PiercingHori-hori = Piercing
 
-marking-PiercingHoriVulp-piercings = Nipples
 marking-PiercingHoriVulp = Nipple Piercing (Horizontal)
+marking-PiercingHoriVulp-horivulp = Piercing
 
-marking-PiercingHoriMale-piercings = Nipples
 marking-PiercingHoriMale = Nipple Piercing (Male, Horizontal)
+marking-PiercingHoriMale-horivulp = Piercing
 
-marking-PiercingKnocker-piercings = Nipples
 marking-PiercingKnocker = Nipple Piercing (Knockers)
+marking-PiercingKnocker-knocker = Piercing
 
-marking-PiercingKnockerVulp-piercings = Nipples
 marking-PiercingKnockerVulp = Nipple Piercing (Knockers)
+marking-PiercingKnockerVulp-knockervulp = Piercing
 
-marking-PiercingKnockerMale-piercings = Nipples
 marking-PiercingKnockerMale = Nipple Piercing (Male, Knockers)
+marking-PiercingKnockerMale-knockervulp = Piercing
 
-marking-PiercingPlus-piercings = Nipples
 marking-PiercingPlus = Nipple Piercing (Plus)
+marking-PiercingPlus-plus = Piercing
 
-marking-PiercingPlusVulp-piercings = Nipples
 marking-PiercingPlusVulp = Nipple Piercing (Plus)
+marking-PiercingPlusVulp-plusvulp = Piercing
 
-marking-PiercingPlusMale-piercings = Nipples
 marking-PiercingPlusMale = Nipple Piercing (Male, Plus)
+marking-PiercingPlusMale-plusvulp = Piercing
 
-marking-PiercingVert-piercings = Nipples
 marking-PiercingVert = Nipple Piercing (Vertical)
+marking-PiercingVert-vert = Piercing
 
-marking-PiercingVertVulp-piercings = Nipples
 marking-PiercingVertVulp = Nipple Piercing (Vertical)
+marking-PiercingVertVulp-vertvulp = Piercing
 
-marking-PiercingVertMale-piercings = Nipples
 marking-PiercingVertMale = Nipple Piercing (Male, Vertical)
+marking-PiercingVertMale-vertvulp = Piercing
 
-marking-PiercingRings-piercings = Nipples
 marking-PiercingRings = Nipple Piercing (Rings)
+marking-PiercingRings-ring = Piercing
 
-marking-PiercingRingsVulp-piercings = Nipples
 marking-PiercingRingsVulp = Nipple Piercing (Rings)
+marking-PiercingRingsVulp-ringvulp = Piercing
 
-marking-PiercingRingsMale-piercings = Nipples
 marking-PiercingRingsMale = Nipple Piercing (Male, Rings)
+marking-PiercingRingsMale-ringvulp = Piercing
 
 markings-category-Nipples = Nipples

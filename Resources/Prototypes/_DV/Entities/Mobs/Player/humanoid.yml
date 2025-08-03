@@ -1,3 +1,14 @@
+# SPDX-FileCopyrightText: 2023 VMSolidus <evilexecutive@gmail.com>
+# SPDX-FileCopyrightText: 2024 Fluffiest Floofers <9823203+FluffiestFloof@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 FoxxoTrystan <45297731+FoxxoTrystan@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 FoxxoTrystan <trystan.garnierhein@gmail.com>
+# SPDX-FileCopyrightText: 2024 gluesniffler <159397573+gluesniffler@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Blitz <73762869+BlitzTheSquishy@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Rosycup <178287475+Rosycup@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 - type: entity # Delta-V part of PirateRadioSpawn
   id: RandomHumanoidSpawnerListener
   name: Syndicate Listener
@@ -30,8 +41,8 @@
       state: mobster
     - type: RandomMetadata
       nameSegments:
-      - fake_human_first
-      - names_last
+      - NamesFakeHumanFirst
+      - NamesLast
     - type: RandomHumanoidSpawner
       settings: Mobster
 
@@ -51,8 +62,8 @@
       prototypes: [ MobsterGear ]
     - type: RandomMetadata
       nameSegments:
-      - fake_human_first
-      - names_last
+      - NamesFakeHumanFirst
+      - NamesLast
 
 - type: entity
   id: RandomHumanoidSpawnerMobsterAlt
@@ -65,8 +76,8 @@
       state: mobster
     - type: RandomMetadata
       nameSegments:
-      - fake_human_first
-      - names_last
+      - NamesFakeHumanFirst
+      - NamesLast
     - type: RandomHumanoidSpawner
       settings: MobsterAlt
 
@@ -86,5 +97,5 @@
       prototypes: [ MobsterGearAlt ]
     - type: RandomMetadata
       nameSegments:
-      - fake_human_first
-      - names_last
+      - NamesFakeHumanFirst
+      - NamesLast

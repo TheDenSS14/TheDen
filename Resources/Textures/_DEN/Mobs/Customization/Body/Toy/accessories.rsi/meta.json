@@ -1,0 +1,43 @@
+{
+    "version": 1,
+    "license": "CC0-1.0",
+    "copyright": "Sprites by portfiend",
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "states": [
+        {
+            "name": "zipper",
+            "directions": 4
+        },
+        {
+            "name": "windup_gold",
+            "directions": 4
+        },
+        {
+            "name": "windup_silver",
+            "directions": 4
+        },
+        {
+            "name": "windup_gold_animated",
+            "directions": 4,
+            "delays": [
+                [0.3, 0.3],
+                [0.3, 0.3],
+                [0.3, 0.3],
+                [0.3, 0.3]
+            ]
+        },
+        {
+            "name": "windup_silver_animated",
+            "directions": 4,
+            "delays": [
+                [0.3, 0.3],
+                [0.3, 0.3],
+                [0.3, 0.3],
+                [0.3, 0.3]
+            ]
+        }
+    ]
+}

@@ -1,4 +1,18 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+SPDX-FileCopyrightText: 2017 PJB3005 <pieterjan.briers@gmail.com>
+SPDX-FileCopyrightText: 2018 Pieter-Jan Briers <pieterjan.briers@gmail.com>
+SPDX-FileCopyrightText: 2019 Acruid <shatter66@gmail.com>
+SPDX-FileCopyrightText: 2020 Tyler Young <tyler.young@impromptu.ninja>
+SPDX-FileCopyrightText: 2021 Paul Ritter <ritter.paul1@googlemail.com>
+SPDX-FileCopyrightText: 2021 Swept <sweptwastaken@protonmail.com>
+SPDX-FileCopyrightText: 2023 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
+SPDX-FileCopyrightText: 2024 stellar-novas <stellar_novas@riseup.net>
+SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+
+SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+-->
+
 <!--
 This is a dummy .csproj file to check things like submodules.
 Better this than other errors.
@@ -12,10 +26,10 @@ You want to handle the Build, Clean and Rebuild tasks to prevent missing task er
 If you want to learn more about these kinds of things, check out Microsoft's official documentation about MSBuild:
 https://docs.microsoft.com/en-us/visualstudio/msbuild/msbuild
 -->
-<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <ProjectGuid>{C899FCA4-7037-4E49-ABC2-44DE72487110}</ProjectGuid>
-    <TargetFrameworkMoniker>.NETFramework, Version=v4.7.2</TargetFrameworkMoniker>
+    <TargetFramework>net4.7.2</TargetFramework>
     <RestorePackages>false</RestorePackages>
   </PropertyGroup>
   <PropertyGroup>

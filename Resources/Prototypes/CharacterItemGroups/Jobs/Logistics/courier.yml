@@ -1,14 +1,26 @@
+# SPDX-FileCopyrightText: 2024 VMSolidus
+# SPDX-FileCopyrightText: 2025 Blitz
+# SPDX-FileCopyrightText: 2025 BlitzTheSquishy
+# SPDX-FileCopyrightText: 2025 Skubman
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 # Courier
 #- type: characterItemGroup
 #  id: LoadoutCourierBackpacks
 #  maxItems: 1
 #  items:
-#
-#- type: characterItemGroup
-#  id: LoadoutCourierBelt
-#  maxItems: 1
-#  items:
-#
+
+- type: characterItemGroup
+  id: LoadoutCourierBelt
+  maxItems: 1
+  items:
+    - type: loadout
+      id: CourierBag
+    - type: loadout
+      id: MailBag
+
 #- type: characterItemGroup
 #  id: LoadoutCourierEars
 #  maxItems: 1
@@ -23,18 +35,22 @@
 #  id: LoadoutCourierEyes
 #  maxItems: 1
 #  items:
-#
-#- type: characterItemGroup
-#  id: LoadoutCourierGloves
-#  maxItems: 1
-#  items:
-#
+
+- type: characterItemGroup
+  id: LoadoutCourierGloves
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutClothingHandsCourierWarmers
+
 - type: characterItemGroup
   id: LoadoutCourierHead
   maxItems: 1
   items:
     - type: loadout
       id: LoadoutCourierHeadMail
+    - type: loadout
+      id: LoadoutCourierHeadCourier
 
 #- type: characterItemGroup
 #  id: LoadoutCourierId
@@ -50,7 +66,7 @@
 #  id: LoadoutCourierMask
 #  maxItems: 1
 #  items:
-#
+
 - type: characterItemGroup
   id: LoadoutCourierOuter
   maxItems: 1
@@ -58,11 +74,13 @@
     - type: loadout
       id: LoadoutCourierOuterMail
 
-#- type: characterItemGroup
-#  id: LoadoutCourierShoes
-#  maxItems: 1
-#  items:
-#
+- type: characterItemGroup
+  id: LoadoutCourierShoes
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutClothingUnderSocksCourier
+
 - type: characterItemGroup
   id: LoadoutCourierUniforms
   maxItems: 1
@@ -77,3 +95,5 @@
       id: LoadoutCourierUniformMailSkirt
     - type: loadout
       id: LoadoutCourierUniformEnvirosuitMailCarrier
+    - type: loadout
+      id: LoadoutClothingUniformCourierThong

@@ -1,0 +1,89 @@
+# SPDX-FileCopyrightText: 2023 Adrian16199
+# SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT
+# SPDX-FileCopyrightText: 2024 Memeji
+# SPDX-FileCopyrightText: 2024 ShatteredSwords
+# SPDX-FileCopyrightText: 2024 fox
+# SPDX-FileCopyrightText: 2025 Jakumba
+# SPDX-FileCopyrightText: 2025 Rosycup
+# SPDX-FileCopyrightText: 2025 Tabitha
+# SPDX-FileCopyrightText: 2025 portfiend
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
+- type: trait
+  id: HollowFangs
+  category: TraitsPhysicalBiological
+  points: -2
+  requirements:
+  - !type:CharacterJobRequirement
+    inverted: true
+    jobs:
+      - StationAi
+      - Borg
+      - MedicalBorg
+  - !type:CharacterSpeciesRequirement
+    inverted: true
+    species:
+    - IPC
+  - !type:CharacterTraitRequirement
+    inverted: true
+    traits:
+    - Vampirism
+  functions:
+    - !type:TraitAddComponent
+      components:
+        - type: Vampirism
+          succDelay: 5
+          metabolizerPrototypes:
+          - Animal
+
+- type: trait
+  id: Weakness
+  category: TraitsPhysicalDisabilities
+  points: 5
+  requirements:
+  - !type:CharacterJobRequirement
+    inverted: true
+    jobs:
+    - Borg
+    - MedicalBorg
+  - !type:CharacterSpeciesRequirement
+    inverted: true
+    species:
+    - Oni
+    - IPC
+  - !type:CharacterTraitRequirement
+    inverted: true
+    traits:
+    - Lethargy
+    - Vigor
+  functions:
+    - !type:TraitAddComponent
+      components:
+        - type: StaminaCritModifier
+          critThresholdModifier: -50
+
+- type: trait
+  id: Lightweight
+  category: TraitsPhysicalBiological
+  points: 2 # Has pros and cons, not sure
+  requirements:
+  - !type:CharacterJobRequirement
+    inverted: true
+    jobs:
+      - StationAi
+      - Borg
+      - MedicalBorg
+  - !type:CharacterTraitRequirement
+    inverted: true
+    traits:
+    - Heavyweight
+    - UltraLightweight
+    - UltraHeavyweight
+  functions:
+    - !type:TraitAddComponent
+      components:
+        - type: FixtureDensityModifier
+          min: 100
+          factor: 0.66

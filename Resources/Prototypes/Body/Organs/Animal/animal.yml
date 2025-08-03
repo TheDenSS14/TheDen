@@ -1,4 +1,19 @@
-﻿- type: entity
+# SPDX-FileCopyrightText: 2022 DrSmugleaf
+# SPDX-FileCopyrightText: 2022 rolfero
+# SPDX-FileCopyrightText: 2023 Henry
+# SPDX-FileCopyrightText: 2023 Kara
+# SPDX-FileCopyrightText: 2023 Lazzi0706
+# SPDX-FileCopyrightText: 2023 Whisper
+# SPDX-FileCopyrightText: 2023 lzk
+# SPDX-FileCopyrightText: 2024 Jezithyr
+# SPDX-FileCopyrightText: 2024 fox
+# SPDX-FileCopyrightText: 2024 gluesniffler
+# SPDX-FileCopyrightText: 2025 portfiend
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
+- type: entity
   id: BaseAnimalOrganUnGibbable
   parent: BaseItem
   abstract: true
@@ -64,7 +79,7 @@
 
 - type: entity
   id: OrganAnimalStomach
-  parent: BaseAnimalOrgan
+  parent: [ButcherIntoIntestineBase, BaseAnimalOrgan] # DEN - Butcher into sausage casing
   name: stomach
   categories: [ HideSpawnMenu ]
   components:
@@ -93,12 +108,20 @@
   id: OrganMouseStomach
   parent: OrganAnimalStomach
   name: stomach
+  suffix: "mouse"
   categories: [ HideSpawnMenu ]
   components:
   - type: SolutionContainerManager
     solutions:
       stomach:
         maxVol: 30
+      food: # DEN fix whatever
+        maxVol: 5
+        reagents:
+        - ReagentId: UncookedAnimalProteins
+          Quantity: 5
+  - type: Metabolizer
+    metabolizerTypes: [ Animal, Detritivore ]
 
 - type: entity
   id: OrganAnimalLiver
@@ -137,6 +160,13 @@
     - id: Narcotic
   - type: Heart # Shitmed
 
+- type: entity
+  id: OrganMouseHeart
+  parent: OrganAnimalHeart
+  suffix: "mouse"
+  components:
+  - type: Metabolizer
+    metabolizerTypes: [ Animal, Detritivore ]
 
 - type: entity
   id: OrganAnimalKidneys

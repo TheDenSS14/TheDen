@@ -1,4 +1,13 @@
-﻿- type: stealTargetGroup
+# SPDX-FileCopyrightText: 2024 Debug
+# SPDX-FileCopyrightText: 2024 VMSolidus
+# SPDX-FileCopyrightText: 2024 deltanedas
+# SPDX-FileCopyrightText: 2025 MajorMoth
+# SPDX-FileCopyrightText: 2025 Rosycup
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
+- type: stealTargetGroup
   id: SpaceCashLuckyBill
   name: logistics officer's lucky bill
   sprite:
@@ -26,3 +35,17 @@
     sprite: _DV/Objects/Misc/stamps.rsi
     state: stamp-notary
 
+- type: stealTargetGroup
+  id: AnimalSilvia
+  name: Silvia
+  sprite:
+    sprite: DeltaV/Mobs/Pets/silvia.rsi
+    state: silvia
+
+# Ninja
+- type: stealTargetGroup
+  id: CaptainsCloak
+  name: steal-target-groups-captains-cloak
+  sprite:
+    sprite: Clothing/Neck/Cloaks/cap.rsi
+    state: icon

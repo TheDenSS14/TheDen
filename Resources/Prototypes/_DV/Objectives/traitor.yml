@@ -1,3 +1,15 @@
+# SPDX-FileCopyrightText: 2023 Fluffiest Floofers
+# SPDX-FileCopyrightText: 2024 Debug
+# SPDX-FileCopyrightText: 2024 VMSolidus
+# SPDX-FileCopyrightText: 2024 deltanedas
+# SPDX-FileCopyrightText: 2025 Blitz
+# SPDX-FileCopyrightText: 2025 MajorMoth
+# SPDX-FileCopyrightText: 2025 Memeji Dankiri
+# SPDX-FileCopyrightText: 2025 Rosycup
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 - type: entity # Logistics Officer steal objective.
   categories: [ HideSpawnMenu ]
   parent: BaseTraitorStealObjective
@@ -74,4 +86,16 @@
   - type: TargetObjective
     title: objective-condition-teach-person-title
   - type: PickRandomPerson
+    objectiveType: TraitorTeach
   - type: TeachLessonCondition
+
+- type: entity
+  abstract: true
+  parent: BaseTraitorStealObjective
+  id: SilviaStealObjective
+  components:
+  - type: NotJobRequirement
+    job: ChiefMedicalOfficer
+  - type: StealCondition
+    stealGroup: AnimalSilvia
+    owner: job-name-cmo

@@ -1,3 +1,10 @@
+# SPDX-FileCopyrightText: 2025 Eris
+# SPDX-FileCopyrightText: 2025 Jakumba
+# SPDX-FileCopyrightText: 2025 VMSolidus
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 - type: entity
   parent: [Clothing, ContentsExplosionResistanceBase]
   id: ClothingModsuitStandard
@@ -60,7 +67,7 @@
     slots:
       cell_slot: true
   - type: PowerCellDraw
-    drawRate: 1 # Sealed draw rate
+    drawRate: 0.75 # Sealed draw rate
   - type: PowerCellSlot
     cellSlotId: cell_slot
     fitsInCharger: false

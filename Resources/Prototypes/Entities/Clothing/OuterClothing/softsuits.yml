@@ -1,3 +1,23 @@
+# SPDX-FileCopyrightText: 2023 Ed
+# SPDX-FileCopyrightText: 2023 Flareguy
+# SPDX-FileCopyrightText: 2023 Nemanja
+# SPDX-FileCopyrightText: 2023 Sailor
+# SPDX-FileCopyrightText: 2023 Tony
+# SPDX-FileCopyrightText: 2023 brainfood1183
+# SPDX-FileCopyrightText: 2023 crazybrain23
+# SPDX-FileCopyrightText: 2023 metalgearsloth
+# SPDX-FileCopyrightText: 2024 Emisse
+# SPDX-FileCopyrightText: 2024 Mr. 27
+# SPDX-FileCopyrightText: 2024 Ubaser
+# SPDX-FileCopyrightText: 2024 degradka
+# SPDX-FileCopyrightText: 2024 gluesniffler
+# SPDX-FileCopyrightText: 2025 Eris
+# SPDX-FileCopyrightText: 2025 VMSolidus
+# SPDX-FileCopyrightText: 2025 VividPups
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 #Basic EVA
 - type: entity
   parent: ClothingOuterEVASuitBase
@@ -15,7 +35,7 @@
     - MonkeyWearable
     - WhitelistChameleon
     - AllowLamiaHardsuit
-    - HidesHarpyWings
+    # HidesHarpyWings #Floof change, caused vulp tails to be hidden in hardsuits(with singer trait only)
 
 #Syndicate EVA
 - type: entity
@@ -34,7 +54,7 @@
     - MonkeyWearable
     - WhitelistChameleon
     - AllowLamiaHardsuit
-    - HidesHarpyWings
+    # HidesHarpyWings  Floof Change
 
 #Emergency EVA
 - type: entity
@@ -77,7 +97,7 @@
     - MonkeyWearable
     - WhitelistChameleon
     - AllowLamiaHardsuit
-    - HidesHarpyWings
+    # HidesHarpyWings  Floof Change
 
 #NTSRA Voidsuit / Ancient Voidsuit
 - type: entity

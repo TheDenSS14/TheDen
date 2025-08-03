@@ -1,3 +1,10 @@
+# SPDX-FileCopyrightText: 2025 Blitz <73762869+BlitzTheSquishy@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 John Willis <143434770+CerberusWolfie@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 VMSolidus <evilexecutive@gmail.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 # Mystagogue
 # Backpacks
 - type: loadout
@@ -41,6 +48,20 @@
         - ResearchDirector
   items:
     - ClothingBackpackDuffelResearchDirectorFilled
+
+- type: loadout
+  id: LoadoutMystagogueBackpacksMessenger
+  category: JobsEpistemicsMystagogue
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMystagogueBackpacks
+    - !type:CharacterJobRequirement
+      jobs:
+        - ResearchDirector
+  items:
+    - ClothingBackpackMessengerResearchDirectorFilled
 
 # Belt
 
@@ -252,6 +273,20 @@
         - ResearchDirector
   items:
     - ClothingOuterCoatRndMysta
+
+- type: loadout
+  id: LoadoutMystagogueOuterLongCoat
+  category: JobsEpistemicsMystagogue
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMystagogueOuter
+    - !type:CharacterJobRequirement
+      jobs:
+        - ResearchDirector
+  items:
+    - ClothingLongcoatRD
 
 # Shoes
 - type: loadout

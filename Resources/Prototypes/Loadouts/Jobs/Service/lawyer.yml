@@ -1,3 +1,8 @@
+# SPDX-FileCopyrightText: 2024 VMSolidus <evilexecutive@gmail.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 # Lawyer
 # Backpacks
 
@@ -16,6 +21,33 @@
 # Id
 
 # Neck
+- type: loadout
+  id: LoadoutServiceLawyerNeckBadgeLawyer
+  category: JobsServiceLawyer
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutLawyerNeck
+    - !type:CharacterJobRequirement
+      jobs:
+        - Lawyer
+  items:
+    - ClothingNeckLawyerbadge
+
+- type: loadout
+  id: LoadoutServiceLawyerNeckBadgeProsecutor
+  category: JobsServiceLawyer
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutLawyerNeck
+    - !type:CharacterJobRequirement
+      jobs:
+        - Lawyer
+  items:
+    - ClothingNeckProsecutorbadge
 
 # Mask
 

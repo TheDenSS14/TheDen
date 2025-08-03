@@ -1,3 +1,15 @@
+# SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT
+# SPDX-FileCopyrightText: 2024 VMSolidus
+# SPDX-FileCopyrightText: 2025 Blitz
+# SPDX-FileCopyrightText: 2025 BlitzTheSquishy
+# SPDX-FileCopyrightText: 2025 Lonofera
+# SPDX-FileCopyrightText: 2025 M3739
+# SPDX-FileCopyrightText: 2025 Rosycup
+# SPDX-FileCopyrightText: 2025 Tabitha
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 # All Medical
 - type: characterItemGroup
   id: LoadoutMedicalBackpacks
@@ -22,6 +34,12 @@
     - type: loadout
       id: LoadoutBackpackDuffelGenetics
     - type: loadout
+      id: LoadoutBackpackMessengerMedical
+    - type: loadout
+      id: LoadoutBackpackMessengerVirology
+    - type: loadout
+      id: LoadoutBackpackMessengerGenetics
+    - type: loadout
       id: LoadoutBackpackMedicalDuffelSurgeryFilled
 
 #- type: characterItemGroup
@@ -38,7 +56,7 @@
 #  id: LoadoutMedicalEquipment
 #  maxItems: 1
 #  items:
-#
+
 - type: characterItemGroup
   id: LoadoutMedicalEyes
   maxItems: 1
@@ -60,6 +78,8 @@
       id: LoadoutMedicalGlovesNitrile
     - type: loadout
       id: LoadoutMedicalGlovesLatex
+    - type: loadout
+      id: LoadoutClothingHandsMedicWarmers
 
 - type: characterItemGroup
   id: LoadoutMedicalHead
@@ -81,6 +101,8 @@
       id: LoadoutMedicalHeadSurgcapWhite
     - type: loadout
       id: LoadoutMedicalHeadSurgcapCybersun
+    - type: loadout
+      id: LoadoutMedicalHeadNurse
 
 #- type: characterItemGroup
 #  id: LoadoutMedicalId
@@ -95,28 +117,46 @@
       id: LoadoutMedicalNeckStethoscope
     - type: loadout
       id: LoadoutMedicalBedsheetMedical
+    - type: loadout
+      id: LoadoutMedicalNeckNeckerchief # Floof - M3739 - #988
+    - type: loadout
+      id: LoadoutMedicalNeckCollar
 
-#- type: characterItemGroup
-#  id: LoadoutMedicalMask
-#  maxItems: 1
-#  items:
-#
+- type: characterItemGroup
+  id: LoadoutMedicalMask
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutClothingMaskSterileMedical
+
 - type: characterItemGroup
   id: LoadoutMedicalOuter
   maxItems: 1
   items:
     - type: loadout
       id: LoadoutMedicalOuterWinterCoat
+    - type: loadout
+      id: LoadoutMedicalOuterWinterCoatViro
+    - type: loadout
+      id: LoadoutMedicalOuterWinterCoatGen
 #    - type: loadout - TheDen
 #      id: LoadoutMedicalOuterLabcoat
 #    - type: loadout
 #      id: LoadoutMedicalOuterCybersunWindbreaker
 
-#- type: characterItemGroup
-#  id: LoadoutMedicalShoes
-#  maxItems: 1
-#  items:
-#
+- type: characterItemGroup
+  id: LoadoutMedicalShoes
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutMedicalBootsWinter
+    - type: loadout
+      id: LoadoutMedicalBootsWinterViro
+    - type: loadout
+      id: LoadoutMedicalBootsWinterGen
+    - type: loadout
+      id: LoadoutClothingUnderSocksMedic
+
 - type: characterItemGroup
   id: LoadoutMedicalUniforms
   maxItems: 1
@@ -137,3 +177,7 @@
       id: LoadoutMedicalUniformScrubsCybersun
     - type: loadout
       id: LoadoutMedicalUniformScrubsWhite
+    - type: loadout
+      id: LoadoutMedicalUniformNurse
+    - type: loadout
+      id: LoadoutClothingUniformMedicThong

@@ -1,9 +1,17 @@
+# SPDX-FileCopyrightText: 2025 Timfa
+# SPDX-FileCopyrightText: 2025 portfiend
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 - type: entity
   parent: MobSiliconBase
   id: MobFillBot
   name: fillbot
   description: It picks up things and puts them somewhere else.
   components:
+  # DEN: Remove UserInterface component. I don't know if they're meant to be strippable,
+  # but they're sure not designed for it so I am just not bothering.
   - type: Fillbot
   - type: Sprite
     sprite: Mobs/Silicon/Bots/fillbot.rsi
@@ -17,10 +25,6 @@
     baseWalkSpeed: 2
     baseSprintSpeed: 3
   - type: NoSlip
-  - type: UserInterface
-    interfaces:
-      enum.StrippingUiKey.Key:
-        type: StrippableBoundUserInterface
   - type: Hands
     showInHands: false
   - type: ComplexInteraction

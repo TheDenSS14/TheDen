@@ -1,3 +1,8 @@
+# SPDX-FileCopyrightText: 2025 Blitz <73762869+BlitzTheSquishy@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 - type: loadout
   id: LoadoutTowelOrange
   category: JobsEngineeringAAUncategorized
@@ -8,3 +13,21 @@
         - Engineering
   items:
     - TowelColorOrange
+
+- type: loadout
+  id: LoadoutBackpackMessengerEngineering
+  category: JobsEngineeringAAUncategorized
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingBackpackMessengerEngineering
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutEngineeringBackpacks
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Engineering
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - ChiefEngineer # CE has ClothingBackpackMessengerChiefEngineerFilled

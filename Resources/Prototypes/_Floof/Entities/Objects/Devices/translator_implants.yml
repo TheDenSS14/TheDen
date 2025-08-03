@@ -1,0 +1,22 @@
+# SPDX-FileCopyrightText: 2024 XavierSomething <tylernguyen203@gmail.com>
+# SPDX-FileCopyrightText: 2024 fox <daytimer253@gmail.com>
+# SPDX-FileCopyrightText: 2024 sleepyyapril <flyingkarii@gmail.com>
+# SPDX-FileCopyrightText: 2025 Rosycup <178287475+Rosycup@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
+- type: entity
+  parent: BaseSubdermalImplant
+  id: ArachnicTranslatorImplant
+  name: Arachnic translator implant
+  description: A translator implant that sadly doesn't help you communicate with space spiders. It does allow you to communicate with Arachnid people!
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: TranslatorImplant
+    understood:
+    - Arachnic
+    spoken:
+    - Arachnic
+    requires:
+    - TauCetiBasic

@@ -1,3 +1,16 @@
+# SPDX-FileCopyrightText: 2024 Angelo Fallaria
+# SPDX-FileCopyrightText: 2024 Blu
+# SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT
+# SPDX-FileCopyrightText: 2024 FoxxoTrystan
+# SPDX-FileCopyrightText: 2024 ShatteredSwords
+# SPDX-FileCopyrightText: 2024 VMSolidus
+# SPDX-FileCopyrightText: 2025 Blitz
+# SPDX-FileCopyrightText: 2025 DeuteronomyLamb
+# SPDX-FileCopyrightText: 2025 Skubman
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 # Colored
 - type: loadout
   id: LoadoutShoesBlack
@@ -502,3 +515,124 @@
       group: LoadoutShoes
   items:
     - ClothingShoesSandalsFlipFlopsAlt
+
+- type: loadout
+  id: LoadoutShoesBlackheelsBlackstockings
+  category: Shoes
+  cost: 1
+  exclusive: true
+  customColorTint: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutShoes
+  items:
+    - ClothingShoesHeelsStockingsBlackBlack
+
+- type: loadout
+  id: LoadoutShoesBlackheelsWhitetockings
+  category: Shoes
+  cost: 1
+  exclusive: true
+  customColorTint: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutShoes
+  items:
+    - ClothingShoesHeelsStockingsBlackWhite
+
+- type: loadout
+  id: LoadoutShoesBlackheelsPlainBlackstockings
+  category: Shoes
+  cost: 1
+  exclusive: true
+  customColorTint: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutShoes
+  items:
+    - ClothingShoesHeelsStockingsBlackBPlain
+
+- type: loadout
+  id: LoadoutShoesBlackheelsPlainWhitestockings
+  category: Shoes
+  cost: 1
+  exclusive: true
+  customColorTint: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutShoes
+  items:
+    - ClothingShoesHeelsStockingsBlackWPlain
+
+- type: loadout
+  id: LoadoutShoesBlackheelsLatexstockings
+  category: Shoes
+  cost: 1
+  exclusive: true
+  customColorTint: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutShoes
+  items:
+    - ClothingShoesHeelsStockingsBlackLatex
+
+- type: loadout
+  id: LoadoutShoesWhiteheelsBlackstockings
+  category: Shoes
+  cost: 1
+  exclusive: true
+  customColorTint: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutShoes
+  items:
+    - ClothingShoesHeelsStockingsWhiteBlack
+
+- type: loadout
+  id: LoadoutShoesWhiteheelsPlainBlackstockings
+  category: Shoes
+  cost: 1
+  exclusive: true
+  customColorTint: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutShoes
+  items:
+    - ClothingShoesHeelsStockingsWhiteBPlain
+
+- type: loadout
+  id: LoadoutShoesWhiteheelsWhitestockings
+  category: Shoes
+  cost: 1
+  exclusive: true
+  customColorTint: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutShoes
+  items:
+    - ClothingShoesHeelsStockingsWhiteWhite
+
+- type: loadout
+  id: LoadoutShoesWhiteheelsPlainWhitestockings
+  category: Shoes
+  cost: 1
+  exclusive: true
+  customColorTint: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutShoes
+  items:
+    - ClothingShoesHeelsStockingsWhiteWPlain
+
+- type: loadout
+  id: LoadoutShoesWhiteheelsLatexstockings
+  category: Shoes
+  cost: 1
+  exclusive: true
+  customColorTint: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutShoes
+  items:
+    - ClothingShoesHeelsStockingsWhiteLatex
+

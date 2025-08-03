@@ -1,4 +1,27 @@
-﻿# TODO: Add descriptions (many)
+# SPDX-FileCopyrightText: 2021 Paul Ritter
+# SPDX-FileCopyrightText: 2021 Pieter-Jan Briers
+# SPDX-FileCopyrightText: 2021 Swept
+# SPDX-FileCopyrightText: 2021 Vera Aguilera Puerto
+# SPDX-FileCopyrightText: 2022 20kdc
+# SPDX-FileCopyrightText: 2022 DrSmugleaf
+# SPDX-FileCopyrightText: 2022 Jezithyr
+# SPDX-FileCopyrightText: 2022 Nemanja
+# SPDX-FileCopyrightText: 2022 Visne
+# SPDX-FileCopyrightText: 2022 mirrorcult
+# SPDX-FileCopyrightText: 2023 Kit0vras
+# SPDX-FileCopyrightText: 2023 Leon Friedrich
+# SPDX-FileCopyrightText: 2023 Whisper
+# SPDX-FileCopyrightText: 2023 lzk
+# SPDX-FileCopyrightText: 2023 metalgearsloth
+# SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT
+# SPDX-FileCopyrightText: 2024 gluesniffler
+# SPDX-FileCopyrightText: 2025 Blitz
+# SPDX-FileCopyrightText: 2025 Tanix
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
+# TODO: Add descriptions (many)
 # TODO BODY: Part damage
 - type: entity
   id: PartVox
@@ -23,7 +46,7 @@
       reagents:
       - ReagentId: Fat
         Quantity: 3
-      - ReagentId: Blood
+      - ReagentId: AmmoniaBlood
         Quantity: 10
   # Shitmed Change Start
   - type: Gibbable
@@ -80,7 +103,7 @@
         reagents:
         - ReagentId: Fat
           Quantity: 3
-        - ReagentId: Blood
+        - ReagentId: AmmoniaBlood
           Quantity: 10
     # Shitmed Change Start
     - type: BodyPart
@@ -147,7 +170,7 @@
         reagents:
         - ReagentId: Fat
           Quantity: 5
-        - ReagentId: Blood
+        - ReagentId: AmmoniaBlood
           Quantity: 10
 
 - type: entity

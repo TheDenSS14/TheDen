@@ -1,3 +1,42 @@
+// SPDX-FileCopyrightText: 2020 20kdc
+// SPDX-FileCopyrightText: 2020 DamianX
+// SPDX-FileCopyrightText: 2020 Víctor Aguilera Puerto
+// SPDX-FileCopyrightText: 2021 Acruid
+// SPDX-FileCopyrightText: 2021 Metal Gear Sloth
+// SPDX-FileCopyrightText: 2021 Remie Richards
+// SPDX-FileCopyrightText: 2021 ShadowCommander
+// SPDX-FileCopyrightText: 2021 Swept
+// SPDX-FileCopyrightText: 2021 ike709
+// SPDX-FileCopyrightText: 2022 AJCM-git
+// SPDX-FileCopyrightText: 2022 Moony
+// SPDX-FileCopyrightText: 2022 Rane
+// SPDX-FileCopyrightText: 2022 T-Stalker
+// SPDX-FileCopyrightText: 2022 Veritius
+// SPDX-FileCopyrightText: 2022 Visne
+// SPDX-FileCopyrightText: 2022 mirrorcult
+// SPDX-FileCopyrightText: 2022 wrexbe
+// SPDX-FileCopyrightText: 2023 DrSmugleaf
+// SPDX-FileCopyrightText: 2023 Echo
+// SPDX-FileCopyrightText: 2023 Flipp Syder
+// SPDX-FileCopyrightText: 2023 Morb
+// SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT
+// SPDX-FileCopyrightText: 2024 Debug
+// SPDX-FileCopyrightText: 2024 FoxxoTrystan
+// SPDX-FileCopyrightText: 2024 Krunklehorn
+// SPDX-FileCopyrightText: 2024 Leon Friedrich
+// SPDX-FileCopyrightText: 2024 Mr. 27
+// SPDX-FileCopyrightText: 2024 Pieter-Jan Briers
+// SPDX-FileCopyrightText: 2024 metalgearsloth
+// SPDX-FileCopyrightText: 2025 Falcon
+// SPDX-FileCopyrightText: 2025 Lyndomen
+// SPDX-FileCopyrightText: 2025 Spatison
+// SPDX-FileCopyrightText: 2025 Timfa
+// SPDX-FileCopyrightText: 2025 VMSolidus
+// SPDX-FileCopyrightText: 2025 portfiend
+// SPDX-FileCopyrightText: 2025 sleepyyapril
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 using System.Linq;
 using System.Text.RegularExpressions;
 using Content.Shared.CCVar;
@@ -15,6 +54,7 @@ using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Serialization;
 using Robust.Shared.Utility;
+using Content.Shared._CD.Records; // CD - Character Records
 
 namespace Content.Shared.Preferences;
 
@@ -89,6 +129,10 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
     [DataField]
     public Sex Sex { get; private set; } = Sex.Male;
 
+    // TheDen - Add Voice
+    [DataField]
+    public Sex PreferredVoice { get; private set; } = Sex.Male;
+
     [DataField]
     public Gender Gender { get; private set; } = Gender.Male;
 
@@ -131,6 +175,11 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
     public PreferenceUnavailableMode PreferenceUnavailable { get; private set; } =
         PreferenceUnavailableMode.SpawnAsOverflow;
 
+    // Start CD - Character records
+    [DataField("cosmaticDriftCharacterRecords")]
+    public PlayerProvidedCharacterRecords? CDCharacterRecords;
+    // End CD - Character records
+
     public HumanoidCharacterProfile(
         string name,
         string flavortext,
@@ -145,6 +194,7 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
         float width,
         int age,
         Sex sex,
+        Sex preferredVoice, // TheDen - Add Voice
         Gender gender,
         string? displayPronouns,
         string? stationAiName,
@@ -157,7 +207,8 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
         PreferenceUnavailableMode preferenceUnavailable,
         HashSet<string> antagPreferences,
         HashSet<string> traitPreferences,
-        HashSet<LoadoutPreference> loadoutPreferences)
+        HashSet<LoadoutPreference> loadoutPreferences,
+        PlayerProvidedCharacterRecords? cdCharacterRecords)
     {
         Name = name;
         FlavorText = flavortext;
@@ -172,6 +223,7 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
         Width = width;
         Age = age;
         Sex = sex;
+        PreferredVoice = preferredVoice; // TheDen - Add Voice
         Gender = gender;
         DisplayPronouns = displayPronouns;
         StationAiName = stationAiName;
@@ -185,6 +237,7 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
         _antagPreferences = antagPreferences;
         _traitPreferences = traitPreferences;
         _loadoutPreferences = loadoutPreferences;
+        CDCharacterRecords = cdCharacterRecords;
     }
 
     /// <summary>Copy constructor</summary>
@@ -203,6 +256,7 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
             other.Width,
             other.Age,
             other.Sex,
+            other.PreferredVoice, // TheDen - Add Voice
             other.Gender,
             other.DisplayPronouns,
             other.StationAiName,
@@ -215,7 +269,8 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
             other.PreferenceUnavailable,
             new HashSet<string>(other.AntagPreferences),
             new HashSet<string>(other.TraitPreferences),
-            new HashSet<LoadoutPreference>(other.LoadoutPreferences))
+            new HashSet<LoadoutPreference>(other.LoadoutPreferences),
+            other.CDCharacterRecords)
     {
     }
 
@@ -300,6 +355,7 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
         {
             Name = name,
             Sex = sex,
+            PreferredVoice = sex, // TheDen - Add Voice
             Age = age,
             Gender = gender,
             Species = species,
@@ -307,6 +363,23 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
             Nationality = SharedHumanoidAppearanceSystem.DefaultNationality,
             Employer = SharedHumanoidAppearanceSystem.DefaultEmployer,
             Lifepath = SharedHumanoidAppearanceSystem.DefaultLifepath,
+        };
+    }
+
+    public static HumanoidCharacterProfile RandomBody(HumanoidCharacterProfile profile)
+    {
+        return new HumanoidCharacterProfile()
+        {
+            Name = profile.Name,
+            Sex = profile.Sex,
+            PreferredVoice = profile.PreferredVoice, // TheDen - Add Voice
+            Age = profile.Age,
+            Gender = profile.Gender,
+            Species = profile.Species,
+            Appearance = HumanoidCharacterAppearance.Random(profile.Species, profile.Sex),
+            Nationality = profile.Nationality,
+            Employer = profile.Employer,
+            Lifepath = profile.Lifepath,
         };
     }
 
@@ -319,6 +392,9 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
     public HumanoidCharacterProfile WithLifepath(string lifepath) => new(this) { Lifepath = lifepath };
     // EE - Contractors Change End
     public HumanoidCharacterProfile WithSex(Sex sex) => new(this) { Sex = sex };
+
+    // TheDen - Add Voice
+    public HumanoidCharacterProfile WithVoice(Sex voice) => new(this) { PreferredVoice = voice };
     public HumanoidCharacterProfile WithGender(Gender gender) => new(this) { Gender = gender };
     public HumanoidCharacterProfile WithDisplayPronouns(string? displayPronouns) => new(this) { DisplayPronouns = displayPronouns };
     public HumanoidCharacterProfile WithStationAiName(string? stationAiName) => new(this) { StationAiName = stationAiName };
@@ -366,6 +442,13 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
         return new(this) { _antagPreferences = list };
     }
 
+    // Begin CD - Character Records
+    public HumanoidCharacterProfile WithCDCharacterRecords(PlayerProvidedCharacterRecords records)
+    {
+        return new HumanoidCharacterProfile(this) { CDCharacterRecords = records };
+    }
+    // End CD - Character Records
+
     public HumanoidCharacterProfile WithTraitPreference(string traitId, bool pref)
     {
         var list = new HashSet<string>(_traitPreferences);
@@ -386,11 +469,23 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
         string? customColor = null,
         bool? customHeirloom = null)
     {
-        var list = new HashSet<LoadoutPreference>(_loadoutPreferences);
+        var newPref = new LoadoutPreference(loadoutId,
+            customName,
+            customDescription,
+            customColor,
+            customHeirloom)
+        { Selected = pref };
 
-        list.RemoveWhere(l => l.LoadoutName == loadoutId);
-        if (pref)
-            list.Add(new(loadoutId, customName, customDescription, customColor, customHeirloom) { Selected = pref });
+        return WithLoadoutPreference(newPref);
+    }
+
+    public HumanoidCharacterProfile WithLoadoutPreference(LoadoutPreference preference)
+    {
+        var list = new HashSet<LoadoutPreference>(_loadoutPreferences);
+        list.RemoveWhere(l => l.LoadoutName == preference.LoadoutName);
+
+        if (preference.Selected)
+            list.Add(preference);
 
         return new HumanoidCharacterProfile(this) { _loadoutPreferences = list };
     }
@@ -409,6 +504,7 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
             && Name == other.Name
             && Age == other.Age
             && Sex == other.Sex
+            && PreferredVoice == other.PreferredVoice // TheDen - Add Voice
             && Gender == other.Gender
             && Species == other.Species
             // EE - Contractors Change Start
@@ -423,7 +519,9 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
             && _traitPreferences.SequenceEqual(other._traitPreferences)
             && LoadoutPreferences.SequenceEqual(other.LoadoutPreferences)
             && Appearance.MemberwiseEquals(other.Appearance)
-            && FlavorText == other.FlavorText;
+            && FlavorText == other.FlavorText
+            && (CDCharacterRecords == null || other.CDCharacterRecords == null
+                || CDCharacterRecords.MemberwiseEquals(other.CDCharacterRecords));
     }
 
     public void EnsureValid(ICommonSession session, IDependencyCollection collection)
@@ -444,6 +542,16 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
             Sex.Unsexed => Sex.Unsexed,
             _ => Sex.Male // Invalid enum values.
         };
+
+        // Start TheDen - Add Voice
+        var voice = PreferredVoice switch
+        {
+            Sex.Male => Sex.Male,
+            Sex.Female => Sex.Female,
+            Sex.Unsexed => Sex.Unsexed,
+            _ => Sex.Male // Invalid enum values.
+        };
+        // End TheDen
 
         // ensure the species can be that sex and their age fits the founds
         if (!speciesPrototype.Sexes.Contains(sex))
@@ -529,6 +637,17 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
             _ => SpawnPriorityPreference.None // Invalid enum values.
         };
 
+        // Begin CD - Character Records
+        if (CDCharacterRecords == null)
+        {
+            CDCharacterRecords = PlayerProvidedCharacterRecords.DefaultRecords();
+        }
+        else
+        {
+            CDCharacterRecords!.EnsureValid();
+        }
+        // End CD - Character Records
+
         var priorities = new Dictionary<string, JobPriority>(JobPriorities
             .Where(p => prototypeManager.TryIndex<JobPrototype>(p.Key, out var job) && job.SetPreference && p.Value switch
             {
@@ -559,6 +678,7 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
         FlavorText = flavortext;
         Age = age;
         Sex = sex;
+        PreferredVoice = voice; // TheDen - Add Voice
         Gender = gender;
         Appearance = appearance;
         SpawnPriority = spawnPriority;
@@ -617,6 +737,7 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
         hashCode.Add(Lifepath);
         hashCode.Add(Age);
         hashCode.Add((int) Sex);
+        hashCode.Add((int) PreferredVoice); // TheDen - Add Voice
         hashCode.Add((int) Gender);
         hashCode.Add(Appearance);
         hashCode.Add((int) SpawnPriority);

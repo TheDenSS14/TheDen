@@ -1,4 +1,15 @@
-﻿#nullable enable
+// SPDX-FileCopyrightText: 2023 Debug
+// SPDX-FileCopyrightText: 2023 DrSmugleaf
+// SPDX-FileCopyrightText: 2023 metalgearsloth
+// SPDX-FileCopyrightText: 2024 Leon Friedrich
+// SPDX-FileCopyrightText: 2024 MilenVolf
+// SPDX-FileCopyrightText: 2024 VMSolidus
+// SPDX-FileCopyrightText: 2025 Falcon
+// SPDX-FileCopyrightText: 2025 sleepyyapril
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
+#nullable enable
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
@@ -34,9 +45,9 @@ public sealed partial class TestPair
             mapData.GridCoords = new EntityCoordinates(mapData.Grid, 0, 0);
             var plating = tileDefinitionManager[tile];
             var platingTile = new Tile(plating.TileId);
-            mapData.Grid.Comp.SetTile(mapData.GridCoords, platingTile);
+            Server.System<SharedMapSystem>().SetTile(mapData.Grid.Owner, mapData.Grid.Comp, mapData.GridCoords, platingTile);
             mapData.MapCoords = new MapCoordinates(0, 0, mapData.MapId);
-            mapData.Tile = mapData.Grid.Comp.GetAllTiles().First();
+            mapData.Tile = Server.System<SharedMapSystem>().GetAllTiles(mapData.Grid.Owner, mapData.Grid.Comp).First();
         });
 
         TestMap = mapData;
@@ -106,14 +117,21 @@ public sealed partial class TestPair
     /// <summary>
     /// Retrieve all entity prototypes that have some component.
     /// </summary>
-    public List<EntityPrototype> GetPrototypesWithComponent<T>(
+    public List<(EntityPrototype, T)> GetPrototypesWithComponent<T>(
         HashSet<string>? ignored = null,
         bool ignoreAbstract = true,
         bool ignoreTestPrototypes = true)
-        where T : IComponent
+        where T : IComponent, new()
     {
-        var id = Server.ResolveDependency<IComponentFactory>().GetComponentName(typeof(T));
-        var list = new List<EntityPrototype>();
+        if (!Server.ResolveDependency<IComponentFactory>().TryGetRegistration<T>(out var reg)
+            && !Client.ResolveDependency<IComponentFactory>().TryGetRegistration<T>(out reg))
+        {
+            Assert.Fail($"Unknown component: {typeof(T).Name}");
+            return new();
+        }
+
+        var id = reg.Name;
+        var list = new List<(EntityPrototype, T)>();
         foreach (var proto in Server.ProtoMan.EnumeratePrototypes<EntityPrototype>())
         {
             if (ignored != null && ignored.Contains(proto.ID))
@@ -125,8 +143,8 @@ public sealed partial class TestPair
             if (ignoreTestPrototypes && IsTestPrototype(proto))
                 continue;
 
-            if (proto.Components.ContainsKey(id))
-                list.Add(proto);
+            if (proto.Components.TryGetComponent(id, out var cmp))
+                list.Add((proto, (T)cmp));
         }
 
         return list;

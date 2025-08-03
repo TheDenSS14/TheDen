@@ -1,3 +1,15 @@
+// SPDX-FileCopyrightText: 2023 Debug
+// SPDX-FileCopyrightText: 2023 Nemanja
+// SPDX-FileCopyrightText: 2024 LankLTE
+// SPDX-FileCopyrightText: 2024 Mephisto72
+// SPDX-FileCopyrightText: 2024 VMSolidus
+// SPDX-FileCopyrightText: 2024 deltanedas
+// SPDX-FileCopyrightText: 2025 Falcon
+// SPDX-FileCopyrightText: 2025 foxcurl
+// SPDX-FileCopyrightText: 2025 sleepyyapril
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 using System.Linq;
 using Content.Server.Silicons.Laws;
 using Content.Server.Station.Components;
@@ -13,9 +25,8 @@ using Content.Shared.Silicons.Laws;
 using Content.Shared.Silicons.Laws.Components;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
-// Used in CD's System
-using Content.Server._CD.Traits;
 using Content.Server.Chat.Managers;
+using Content.Server._DEN.Announcements; // TheDen - Moved ion storm notification to its own component
 using Content.Shared.Chat;
 using Robust.Shared.Player;
 
@@ -73,21 +84,13 @@ public sealed class IonStormRule : StationEventSystem<IonStormRuleComponent>
         if (!TryGetRandomStation(out var chosenStation))
             return;
 
-        // CD Change - Go through everyone with the SynthComponent and inform them a storm is happening.
-        var synthQuery = EntityQueryEnumerator<SynthComponent>();
-        while (synthQuery.MoveNext(out var ent, out var synthComp))
+        // Start TheDen - Moved ion storm notification to its own component
+        var ipcQuery = EntityQueryEnumerator<IonStormNotifierComponent>();
+        while (ipcQuery.MoveNext(out var ent, out var notifierComponent))
         {
-            if (!RobustRandom.Prob(synthComp.AlertChance)) // TheDen - Negate so AlertChance is accurate
-                continue;
-
-            if (!TryComp<ActorComponent>(ent, out var actor))
-                continue;
-
-            var msg = Loc.GetString("station-event-ion-storm-synth");
-            var wrappedMessage = Loc.GetString("chat-manager-server-wrap-message", ("message", msg));
-            _chatManager.ChatMessageToOne(ChatChannel.Server, msg, wrappedMessage, default, false, actor.PlayerSession.Channel, colorOverride: Color.Yellow);
+            DispatchIonStormNotification(ent, notifierComponent.Chance, notifierComponent.Loc);
         }
-        // End of CD change
+        // End TheDen
 
         var query = EntityQueryEnumerator<SiliconLawBoundComponent, TransformComponent, IonStormTargetComponent>();
         while (query.MoveNext(out var ent, out var lawBound, out var xform, out var target))
@@ -191,6 +194,20 @@ public sealed class IonStormRule : StationEventSystem<IonStormRuleComponent>
             var ev = new IonStormLawsEvent(laws);
             RaiseLocalEvent(ent, ref ev);
         }
+    }
+
+    // TheDen - Move Ion Storm Notification to separate function
+    private void DispatchIonStormNotification(EntityUid ent, float alertChance, string loc)
+    {
+        if (!RobustRandom.Prob(alertChance)) // TheDen - Negate so AlertChance is accurate
+            return;
+
+        if (!TryComp<ActorComponent>(ent, out var actor))
+            return;
+
+        var msg = Loc.GetString(loc);
+        var wrappedMessage = Loc.GetString("chat-manager-server-wrap-message", ("message", msg));
+        _chatManager.ChatMessageToOne(ChatChannel.Server, msg, wrappedMessage, default, false, actor.PlayerSession.Channel, colorOverride: Color.Yellow);
     }
 
     // for your own sake direct your eyes elsewhere

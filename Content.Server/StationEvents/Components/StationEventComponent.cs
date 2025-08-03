@@ -1,3 +1,17 @@
+// SPDX-FileCopyrightText: 2022 Kara
+// SPDX-FileCopyrightText: 2022 Leon Friedrich
+// SPDX-FileCopyrightText: 2023 DrSmugleaf
+// SPDX-FileCopyrightText: 2023 LudwigVonChesterfield
+// SPDX-FileCopyrightText: 2023 Nemanja
+// SPDX-FileCopyrightText: 2023 Slava0135
+// SPDX-FileCopyrightText: 2023 metalgearsloth
+// SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT
+// SPDX-FileCopyrightText: 2024 Pieter-Jan Briers
+// SPDX-FileCopyrightText: 2025 portfiend
+// SPDX-FileCopyrightText: 2025 sleepyyapril
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 using Robust.Shared.Audio;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom;
 
@@ -7,6 +21,7 @@ namespace Content.Server.StationEvents.Components;
 ///     Defines basic data for a station event
 /// </summary>
 [RegisterComponent, AutoGenerateComponentPause]
+[Access(Other = AccessPermissions.ReadExecute)]
 public sealed partial class StationEventComponent : Component
 {
     public const float WeightVeryLow = 0.0f;
@@ -73,6 +88,7 @@ public sealed partial class StationEventComponent : Component
     /// When the station event starts.
     /// </summary>
     [DataField("startTime", customTypeSerializer: typeof(TimeOffsetSerializer))]
+    [Access(Other = AccessPermissions.ReadWriteExecute)]
     [AutoPausedField]
     public TimeSpan StartTime;
 
@@ -80,6 +96,7 @@ public sealed partial class StationEventComponent : Component
     /// When the station event ends.
     /// </summary>
     [DataField("endTime", customTypeSerializer: typeof(TimeOffsetSerializer))]
+    [Access(Other = AccessPermissions.ReadWriteExecute)]
     [AutoPausedField]
     public TimeSpan? EndTime;
 }

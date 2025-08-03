@@ -1,14 +1,36 @@
+# SPDX-FileCopyrightText: 2024 VMSolidus
+# SPDX-FileCopyrightText: 2025 Blitz
+# SPDX-FileCopyrightText: 2025 BlitzTheSquishy
+# SPDX-FileCopyrightText: 2025 MajorMoth
+# SPDX-FileCopyrightText: 2025 Rosycup
+# SPDX-FileCopyrightText: 2025 Tabitha
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 # Paramedic
-#- type: characterItemGroup
-#  id: LoadoutParamedicBackpacks
-#  maxItems: 1
-#  items:
-#
-#- type: characterItemGroup
-#  id: LoadoutParamedicBelt
-#  maxItems: 1
-#  items:
-#
+- type: characterItemGroup
+  id: LoadoutParamedicBackpacks
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutMedicalBackpacksBackpack
+    - type: loadout
+      id: LoadoutMedicalBackpacksDuffel
+    - type: loadout
+      id: LoadoutMedicalBackpacksSatchel
+    - type: loadout
+      id: LoadoutMedicalBackpacksMessenger
+
+- type: characterItemGroup
+  id: LoadoutParamedicBelt
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutParamedicBeltEMT
+    - type: loadout
+      id: LoadoutParamedicBeltEMTFilled
+
 #- type: characterItemGroup
 #  id: LoadoutParamedicEars
 #  maxItems: 1
@@ -24,18 +46,20 @@
 #  maxItems: 1
 #  items:
 #
-#- type: characterItemGroup
-#  id: LoadoutParamedicGloves
-#  maxItems: 1
-#  items:
-#
+- type: characterItemGroup
+  id: LoadoutParamedicGloves
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutClothingHandsParaMedicWarmers
+
 - type: characterItemGroup
   id: LoadoutParamedicHead
   maxItems: 1
   items:
     - type: loadout
       id: LoadoutMedicalHeadHatParamedicsoft
-#
+
 #- type: characterItemGroup
 #  id: LoadoutParamedicId
 #  maxItems: 1
@@ -50,7 +74,7 @@
 #  id: LoadoutParamedicMask
 #  maxItems: 1
 #  items:
-#
+
 - type: characterItemGroup
   id: LoadoutParamedicOuter
   maxItems: 1
@@ -66,6 +90,8 @@
   items:
     - type: loadout
       id: LoadoutMedicalShoesBootsWinterParamedic
+    - type: loadout
+      id: LoadoutClothingUnderSocksParaMedic
 
 - type: characterItemGroup
   id: LoadoutParamedicUniforms
@@ -79,3 +105,5 @@
       id: LoadoutClothingUniformJumpsuitParamedicNT
     - type: loadout
       id: LoadoutClothingUniformJumpsuitParamedicCybersun
+    - type: loadout
+      id: LoadoutClothingUniformParaMedicThong

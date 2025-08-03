@@ -1,3 +1,8 @@
+# SPDX-FileCopyrightText: 2025 BloodfiendishOperator <141253729+Diggy0@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 marking-DionaFlowersHead_colorable-flowers_head_primary_colorable = Stems
 marking-DionaFlowersHead_colorable-flowers_head_secondary_colorable = Flowers
 
@@ -52,6 +57,20 @@ marking-DionaWildflowerHead_colorable-wildflower_flowers2_colorable = Flowers 2
 marking-DionaWildflowerHead_colorable-wildflower_flowers3_colorable = Flowers 3
 marking-DionaWildflowerHead_colorable-wildflower_flowers4_colorable = Flowers 4
 
+marking-DionaBracketHead_colorable-bracket_colorable = Bracket
+marking-DionaBrushHead_colorable-brush_colorable = Brush
+marking-DionaFicusHead_colorable-ficus_colorable = Ficus
+marking-DionaLaurelHead_colorable-laurel_colorable = Laurel
+marking-DionaLeafCover_colorable-leaf_cover_colorable = Leaf cover
+marking-DionaLeafyHeadTop_colorable-leafy_colorable = Leaf
+marking-DionaMeadowHeadTop_colorable-meadow_colorable = Grass
+marking-DionaOakHead_colorable-oak_colorable = Leaf
+marking-DionaPalmHead_colorable-palm_colorable = Leaf
+marking-DionaRootHead_colorable-root_colorable = Root
+marking-DionaShrubHeadTop_colorable-shrub_colorable = Shrub
+marking-DionaThornsBody_colorable-thorns_body_colorable = Thorns
+marking-DionaThornsHead_colorable-thorns_head_colorable = Thorns
+
 marking-DionaBloomHead_colorable = Diona Everbloom (Flower, Colorable)
 marking-DionaBracketHead_colorable = Diona Bracket (Mushrooms, Colorable)
 marking-DionaBrushHead_colorable = Diona Brush (Lians, Colorable)
@@ -80,3 +99,4 @@ marking-DionaVineHeadTop_colorable = Diona Vines (Vines, Colorable)
 marking-DionaVinelHead_colorable = Diona Vines Long (Vines, Colorable)
 marking-DionaVinesHead_colorable = Diona Vines Short (Vines, Colorable)
 marking-DionaWildflowerHead_colorable = Diona Wild Flowers (Flowers, Colorable)
+

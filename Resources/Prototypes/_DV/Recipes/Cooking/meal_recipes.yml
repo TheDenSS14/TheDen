@@ -1,3 +1,13 @@
+# SPDX-FileCopyrightText: 2023 2digitman
+# SPDX-FileCopyrightText: 2024 Colin-Tel
+# SPDX-FileCopyrightText: 2024 DisposableCrewmember42
+# SPDX-FileCopyrightText: 2024 Fluffiest Floofers
+# SPDX-FileCopyrightText: 2025 Rosycup
+# SPDX-FileCopyrightText: 2025 portfiend
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 - type: microwaveMealRecipe
   id: RecipeGrilledCheese
   name: grilled cheese
@@ -6,7 +16,7 @@
   solids:
     FoodBreadPlainSlice: 2
     FoodCheeseSlice: 1
-    FoodButter: 1
+    FoodButterSlice: 1 # DEN - Butter slice
 
 - type: microwaveMealRecipe
   id: RecipeScrambledEggs
@@ -18,7 +28,7 @@
   solids:
     FoodBowlBig: 1
     FoodEgg: 3
-    FoodButter: 1
+    FoodButterSlice: 1 # DEN - Butter slice
 
 - type: microwaveMealRecipe
   id: RecipePumpkinPie

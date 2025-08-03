@@ -1,9 +1,19 @@
+# SPDX-FileCopyrightText: 2024 FoxxoTrystan
+# SPDX-FileCopyrightText: 2024 Ichaie
+# SPDX-FileCopyrightText: 2024 Leon Friedrich
+# SPDX-FileCopyrightText: 2025 John Willis
+# SPDX-FileCopyrightText: 2025 VMSolidus
+# SPDX-FileCopyrightText: 2025 juniwoofs
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 - type: gameMap
   id: Baikal
   mapName: 'Baikal'
   mapPath: /Maps/TheDen/baikal.yml
-  minPlayers: 20
-  maxPlayers: 80
+  minPlayers: 25
+  maxPlayers: 100 # The Den: we hit 80 and had no maps lmao
   stations:
     Baikal:
       stationProto: StandardNanotrasenStation
@@ -14,7 +24,7 @@
             !type:NanotrasenNameGenerator
             prefixCreator: 'TD'
         - type: StationEmergencyShuttle
-          emergencyShuttlePath: /Maps/Shuttles/emergency.yml
+          emergencyShuttlePath: /Maps/Shuttles/_DV/NTES_Seal.yml
         - type: StationJobs
           availableJobs:
             #service

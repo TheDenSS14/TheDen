@@ -1,3 +1,19 @@
+# SPDX-FileCopyrightText: 2023 OctoRocket
+# SPDX-FileCopyrightText: 2023 Raitononai
+# SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT
+# SPDX-FileCopyrightText: 2024 UBlueberry
+# SPDX-FileCopyrightText: 2024 VMSolidus
+# SPDX-FileCopyrightText: 2024 lzk
+# SPDX-FileCopyrightText: 2024 metalgearsloth
+# SPDX-FileCopyrightText: 2025 Blitz
+# SPDX-FileCopyrightText: 2025 Jakumba
+# SPDX-FileCopyrightText: 2025 Lawdog
+# SPDX-FileCopyrightText: 2025 Peptide90
+# SPDX-FileCopyrightText: 2025 Skubman
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 - type: trait
   id: PirateAccent
   category: TraitsSpeechAccents
@@ -17,6 +33,7 @@
     - !type:CharacterJobRequirement
       inverted: true
       jobs:
+        - StationAi
         - Borg
         - MedicalBorg
     - !type:CharacterItemGroupRequirement
@@ -41,7 +58,7 @@
     - !type:TraitAddComponent
       components:
         - type: SouthernAccent
-        
+
 - type: trait
   id: GermanAccent
   category: TraitsSpeechAccents
@@ -52,7 +69,7 @@
     - !type:TraitAddComponent
       components:
         - type: GermanAccent
-        
+
 - type: trait
   id: ItalianAccent
   category: TraitsSpeechAccents
@@ -101,6 +118,7 @@
     - !type:CharacterJobRequirement
       inverted: true
       jobs:
+        - StationAi
         - Borg
         - MedicalBorg
     - !type:CharacterTraitRequirement
@@ -120,6 +138,7 @@
     - !type:CharacterJobRequirement
       inverted: true
       jobs:
+        - StationAi
         - Borg
         - MedicalBorg
     - !type:CharacterTraitRequirement
@@ -139,6 +158,7 @@
     - !type:CharacterJobRequirement
       inverted: true
       jobs:
+        - StationAi
         - Borg
         - MedicalBorg
     - !type:CharacterSpeciesRequirement
@@ -153,6 +173,13 @@
 - type: trait
   id: Liar
   category: Mental
+  requirements:
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - StationAi
+        - Borg
+        - MedicalBorg
   functions:
     - !type:TraitAddComponent
       components:

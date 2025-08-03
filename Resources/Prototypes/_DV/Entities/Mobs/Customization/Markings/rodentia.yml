@@ -1,3 +1,15 @@
+# SPDX-FileCopyrightText: 2024 Memeji
+# SPDX-FileCopyrightText: 2024 Sushiburger <***>
+# SPDX-FileCopyrightText: 2024 Sushiburger <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>
+# SPDX-FileCopyrightText: 2025 Erol509
+# SPDX-FileCopyrightText: 2025 Falcon
+# SPDX-FileCopyrightText: 2025 Rosycup
+# SPDX-FileCopyrightText: 2025 Tabitha
+# SPDX-FileCopyrightText: 2025 kc the sheep
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 # HEAD
 
 ## DEFAULTS
@@ -6,7 +18,7 @@
   id: RodentiaHeadTopEarDefault
   markingCategory: HeadTop
   bodyPart: HeadTop
-  speciesRestriction: []
+  speciesRestriction: [IPC]
   coloring:
     default:
       type: !type:TattooColoring
@@ -20,7 +32,7 @@
   id: RodentiaTailDefault
   markingCategory: Tail
   bodyPart: Tail
-  speciesRestriction: []
+  speciesRestriction: [IPC]
   coloring:
     default:
       type: !type:TattooColoring
@@ -149,7 +161,7 @@
   id: RodentiaSnoutBat
   markingCategory: Snout
   bodyPart: Snout
-  speciesRestriction: [Rodentia]
+  speciesRestriction: [Rodentia, IPC]
   sprites:
     - sprite: _DV/Mobs/Customization/Rodentia/snout_markings.rsi
       state: bat
@@ -160,7 +172,7 @@
   id: RodentiaSnoutBatCounter
   markingCategory: Snout
   bodyPart: Snout
-  speciesRestriction: [Rodentia, SlimePerson, Human]
+  speciesRestriction: [Rodentia, SlimePerson, IPC, Human]
   sprites:
     - sprite: _DV/Mobs/Customization/Rodentia/snout_markings.rsi
       state: bat
@@ -173,7 +185,7 @@
   id: RodentiaSnoutFlat
   markingCategory: Snout
   bodyPart: Snout
-  speciesRestriction: [Rodentia, SlimePerson, Human]
+  speciesRestriction: [Rodentia, SlimePerson, IPC, Human]
   sprites:
     - sprite: _DV/Mobs/Customization/Rodentia/snout_markings.rsi
       state: flat
@@ -184,7 +196,7 @@
   id: RodentiaSnoutFlatCounter
   markingCategory: Snout
   bodyPart: Snout
-  speciesRestriction: [Rodentia, SlimePerson, Human]
+  speciesRestriction: [Rodentia, SlimePerson, IPC, Human]
   sprites:
     - sprite: _DV/Mobs/Customization/Rodentia/snout_markings.rsi
       state: flat
@@ -197,7 +209,7 @@
   id: RodentiaSnoutRound
   markingCategory: Snout
   bodyPart: Snout
-  speciesRestriction: [Rodentia, SlimePerson, Human]
+  speciesRestriction: [Rodentia, SlimePerson, IPC, Human]
   sprites:
     - sprite: _DV/Mobs/Customization/Rodentia/snout_markings.rsi
       state: round
@@ -208,7 +220,7 @@
   id: RodentiaSnoutRoundCounter
   markingCategory: Snout
   bodyPart: Snout
-  speciesRestriction: [Rodentia, SlimePerson, Human]
+  speciesRestriction: [Rodentia, SlimePerson, IPC, Human]
   sprites:
     - sprite: _DV/Mobs/Customization/Rodentia/snout_markings.rsi
       state: round
@@ -223,7 +235,7 @@
   id: RodentiaCheeksRound
   markingCategory: HeadSide
   bodyPart: HeadSide
-  speciesRestriction: [Rodentia, SlimePerson, Human]
+  speciesRestriction: [Rodentia, SlimePerson, IPC, Human]
   sprites:
     - sprite: _DV/Mobs/Customization/Rodentia/cheek_markings.rsi
       state: cheeks
@@ -232,7 +244,7 @@
   id: RodentiaCheeksRoundCounter
   markingCategory: HeadSide
   bodyPart: HeadSide
-  speciesRestriction: [Rodentia, SlimePerson, Human]
+  speciesRestriction: [Rodentia, SlimePerson, IPC, Human]
   sprites:
     - sprite: _DV/Mobs/Customization/Rodentia/cheek_markings.rsi
       state: cheeks
@@ -243,7 +255,7 @@
   id: RodentiaCheeksFluff
   markingCategory: HeadSide
   bodyPart: HeadSide
-  speciesRestriction: [Rodentia, SlimePerson, Human]
+  speciesRestriction: [Rodentia, SlimePerson, IPC, Human]
   sprites:
     - sprite: _DV/Mobs/Customization/Rodentia/cheek_markings.rsi
       state: fluff
@@ -252,7 +264,7 @@
   id: RodentiaCheeksFluffCounter
   markingCategory: HeadSide
   bodyPart: HeadSide
-  speciesRestriction: [Rodentia, SlimePerson, Human]
+  speciesRestriction: [Rodentia, SlimePerson, IPC, Human]
   sprites:
     - sprite: _DV/Mobs/Customization/Rodentia/cheek_markings.rsi
       state: fluff
@@ -263,7 +275,7 @@
   id: RodentiaCheeksFluffAlt
   markingCategory: HeadSide
   bodyPart: HeadSide
-  speciesRestriction: [Rodentia, SlimePerson, Human]
+  speciesRestriction: [Rodentia, SlimePerson, IPC, Human]
   sprites:
     - sprite: _DV/Mobs/Customization/Rodentia/cheek_markings.rsi
       state: fluff_alt
@@ -272,7 +284,7 @@
   id: RodentiaCheeksFluffAltCounter
   markingCategory: HeadSide
   bodyPart: HeadSide
-  speciesRestriction: [Rodentia, SlimePerson, Human]
+  speciesRestriction: [Rodentia, SlimePerson, IPC, Human]
   sprites:
     - sprite: _DV/Mobs/Customization/Rodentia/cheek_markings.rsi
       state: fluff_alt
@@ -283,7 +295,7 @@
   id: RodentiaCheeksWhiskers
   markingCategory: Head # for no-cost markings
   bodyPart: HeadTop # for layering
-  speciesRestriction: [Rodentia, Human]
+  speciesRestriction: [Rodentia, IPC, Human, Kitsune]
   sprites:
     - sprite: _DV/Mobs/Customization/Rodentia/cheek_markings.rsi
       state: whiskers

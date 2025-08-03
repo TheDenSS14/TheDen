@@ -1,7 +1,18 @@
+// SPDX-FileCopyrightText: 2023 Debug
+// SPDX-FileCopyrightText: 2023 DrSmugleaf
+// SPDX-FileCopyrightText: 2023 ubis1
+// SPDX-FileCopyrightText: 2024 Nemanja
+// SPDX-FileCopyrightText: 2025 Leon Friedrich
+// SPDX-FileCopyrightText: 2025 deltanedas
+// SPDX-FileCopyrightText: 2025 sleepyyapril
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using Content.Shared.Emag.Systems;
 using Content.Shared.Examine;
+using Content.Shared.Lathe.Prototypes;
 using Content.Shared.Localizations;
 using Content.Shared.Materials;
 using Content.Shared.Research.Prototypes;
@@ -30,6 +41,37 @@ public abstract class SharedLatheSystem : EntitySystem
         SubscribeLocalEvent<PrototypesReloadedEventArgs>(OnPrototypesReloaded);
 
         BuildInverseRecipeDictionary();
+    }
+
+    /// <summary>
+    /// Get the set of all recipes that a lathe could possibly ever create (e.g., if all techs were unlocked).
+    /// </summary>
+    public HashSet<ProtoId<LatheRecipePrototype>> GetAllPossibleRecipes(LatheComponent component)
+    {
+        var recipes = new HashSet<ProtoId<LatheRecipePrototype>>();
+        foreach (var pack in component.StaticPacks)
+        {
+            recipes.UnionWith(_proto.Index(pack).Recipes);
+        }
+
+        foreach (var pack in component.DynamicPacks)
+        {
+            recipes.UnionWith(_proto.Index(pack).Recipes);
+        }
+
+        return recipes;
+    }
+
+    /// <summary>
+    /// Add every recipe in the list of recipe packs to a single hashset.
+    /// </summary>
+    public void AddRecipesFromPacks(HashSet<ProtoId<LatheRecipePrototype>> recipes, IEnumerable<ProtoId<LatheRecipePackPrototype>> packs)
+    {
+        foreach (var id in packs)
+        {
+            var pack = _proto.Index(id);
+            recipes.UnionWith(pack.Recipes);
+        }
     }
 
     private void OnExamined(Entity<LatheComponent> ent, ref ExaminedEvent args)

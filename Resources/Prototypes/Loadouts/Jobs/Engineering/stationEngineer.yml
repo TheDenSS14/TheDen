@@ -1,3 +1,8 @@
+# SPDX-FileCopyrightText: 2024 VMSolidus <evilexecutive@gmail.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 # Station Engineer
 # Backpack
 
@@ -197,6 +202,7 @@
   id: LoadoutStationEngineerUniformsSuit
   category: JobsEngineeringStationEngineer
   cost: 0
+  exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutStationEngineerUniforms
@@ -210,6 +216,7 @@
   id: LoadoutStationEngineerUniformsSkirt
   category: JobsEngineeringStationEngineer
   cost: 0
+  exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutStationEngineerUniforms

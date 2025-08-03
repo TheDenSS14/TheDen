@@ -1,0 +1,46 @@
+# SPDX-FileCopyrightText: 2024 neuPanda
+# SPDX-FileCopyrightText: 2025 Rosycup
+# SPDX-FileCopyrightText: 2025 Sir Warock
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
+- type: reagent
+  id : Traumoxadone
+  name: reagent-name-traumoxadone
+  group: Medicine
+  desc: reagent-desc-traumoxadone
+  physicalDesc: reagent-physical-desc-soothing
+  flavor: medicine
+  color: "#880077"
+  worksOnTheDead: true
+  metabolisms:
+    Medicine:
+      effects:
+      - !type:EvenHealthChange # The Den
+        conditions:
+        - !type:Temperature
+          max: 213.0
+        damage:
+          Brute: -7 # The Den, same as Aloxadone for Burns
+
+- type: reagent
+  id : Stelloxadone
+  name: reagent-name-stelloxadone
+  group: Medicine
+  desc: reagent-desc-stelloxadone
+  physicalDesc: reagent-physical-desc-soothing
+  flavor: medicine
+  color: "#FFA861"
+  worksOnTheDead: true
+  metabolisms:
+    Medicine:
+      effects:
+      - !type:EvenHealthChange # The Den
+        conditions:
+        - !type:Temperature
+          max: 213.0
+        damage:
+          Toxin: -7   # The Den, same as the other Cryochems
+          Genetic: 1  # The Den
+          Brute: 3    # The Den

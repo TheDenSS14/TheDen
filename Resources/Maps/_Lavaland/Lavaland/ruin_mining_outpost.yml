@@ -1,3 +1,18 @@
+# SPDX-FileCopyrightText: 2021 Paul Ritter
+# SPDX-FileCopyrightText: 2021 wrexbe
+# SPDX-FileCopyrightText: 2022 20kdc
+# SPDX-FileCopyrightText: 2022 Nemanja
+# SPDX-FileCopyrightText: 2023 Leon Friedrich
+# SPDX-FileCopyrightText: 2024 Emisse
+# SPDX-FileCopyrightText: 2024 Velcroboy
+# SPDX-FileCopyrightText: 2024 metalgearsloth
+# SPDX-FileCopyrightText: 2025 Eris
+# SPDX-FileCopyrightText: 2025 MajorMoth
+# SPDX-FileCopyrightText: 2025 VMSolidus
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 meta:
   format: 6
   postmapinit: false
@@ -449,18 +464,6 @@ entities:
     components:
     - type: Transform
       pos: 7.5,3.5
-      parent: 2
-- proto: LootSpawnerMedicalMinor
-  entities:
-  - uid: 53
-    components:
-    - type: Transform
-      pos: 6.5,7.5
-      parent: 2
-  - uid: 54
-    components:
-    - type: Transform
-      pos: 7.5,7.5
       parent: 2
 - proto: MiningWindow
   entities:

@@ -1,3 +1,12 @@
+# SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT <77995199+DEATHB4DEFEAT@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 VMSolidus <evilexecutive@gmail.com>
+# SPDX-FileCopyrightText: 2025 Lonofera <108367450+LonoferaRS@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 MajorMoth <61519600+MajorMoth@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 SleepyScarecrow <136123749+SleepyScarecrow@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 # Musician
 # Backpacks
 
@@ -380,7 +389,7 @@
     - MarimbaFlatpack
 
 - type: loadout
-  id: LoadoutItemChurchOrganInstrumentMusician
+  id: LoadoutItemPipeOrganInstrumentMusician
   category: JobsServiceMusician
   cost: 0
   canBeHeirloom: true
@@ -391,7 +400,7 @@
       jobs:
         - Musician
   items:
-    - ChurchOrganFlatpack
+    - PipeOrganFlatpack
 
 - type: loadout
   id: LoadoutItemTubaInstrumentMusician
@@ -638,6 +647,7 @@
   id: LoadoutServiceWinterCoatMusician
   category: JobsServiceMusician
   cost: 0
+  exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutMusicianOuter
@@ -650,3 +660,16 @@
 # Shoes
 
 # Uniforms
+- type: loadout
+  id: LoadoutServiceMusicianUniformMusician
+  category: JobsServiceMusician
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMusicianUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - Musician
+  items:
+    - ClothingUniformJumpsuitMusician

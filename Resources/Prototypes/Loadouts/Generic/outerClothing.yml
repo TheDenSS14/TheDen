@@ -1,3 +1,18 @@
+# SPDX-FileCopyrightText: 2024 Angelo Fallaria
+# SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT
+# SPDX-FileCopyrightText: 2024 LovelyLophi
+# SPDX-FileCopyrightText: 2024 ShatteredSwords
+# SPDX-FileCopyrightText: 2025 Blitz
+# SPDX-FileCopyrightText: 2025 BlitzTheSquishy
+# SPDX-FileCopyrightText: 2025 KyuPolaris
+# SPDX-FileCopyrightText: 2025 Rosycup
+# SPDX-FileCopyrightText: 2025 Skubman
+# SPDX-FileCopyrightText: 2025 Tonk-GCR
+# SPDX-FileCopyrightText: 2025 VMSolidus
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 - type: loadout
   id: LoadoutOuterCoatBomberjacket
   category: Outer
@@ -882,3 +897,47 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutOuter
+
+- type: loadout
+  id: LoadoutOuterLongCoatAL
+  category: Outer
+  cost: 1
+  customColorTint: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutOuter
+  items:
+    - ClothingLongcoatAL
+
+- type: loadout
+  id: LoadoutOuterLongCoatNT
+  category: Outer
+  cost: 1
+  customColorTint: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutOuter
+  items:
+    - ClothingLongcoatNT
+
+- type: loadout
+  id: LoadoutOuterLongCoatBlack
+  category: Outer
+  cost: 1
+  customColorTint: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutOuter
+  items:
+    - ClothingLongcoatBlack
+
+- type: loadout
+  id: LoadoutOuterLongCoatBrown
+  category: Outer
+  cost: 1
+  customColorTint: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutOuter
+  items:
+    - ClothingLongcoatBrown

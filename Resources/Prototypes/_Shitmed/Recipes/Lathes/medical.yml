@@ -1,3 +1,9 @@
+# SPDX-FileCopyrightText: 2024 gluesniffler
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+# SPDX-FileCopyrightText: 2025 wheelwrightt
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 # Shitmed Recipes
 
 - type: latheRecipe
@@ -23,6 +29,7 @@
 - type: latheRecipe
   id: EnergyScalpel
   result: EnergyScalpel
+  category: Tools
   completetime: 2
   materials:
     Steel: 600
@@ -32,6 +39,7 @@
 - type: latheRecipe
   id: AdvancedRetractor
   result: AdvancedRetractor
+  category: Tools
   completetime: 2
   materials:
     Steel: 600
@@ -41,6 +49,7 @@
 - type: latheRecipe
   id: EnergyCautery
   result: EnergyCautery
+  category: Tools
   completetime: 2
   materials:
     Steel: 600
@@ -50,6 +59,7 @@
 - type: latheRecipe
   id: OmnimedTool
   result: OmnimedTool
+  category: Tools
   completetime: 2
   materials:
     Steel: 1200

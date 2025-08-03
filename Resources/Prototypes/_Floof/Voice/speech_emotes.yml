@@ -1,0 +1,49 @@
+# SPDX-FileCopyrightText: 2024 FoxxoTrystan
+# SPDX-FileCopyrightText: 2024 neuPanda
+# SPDX-FileCopyrightText: 2025 Blitz
+# SPDX-FileCopyrightText: 2025 M3739
+# SPDX-FileCopyrightText: 2025 Rosycup
+# SPDX-FileCopyrightText: 2025 Suyo
+# SPDX-FileCopyrightText: 2025 Tabitha
+# SPDX-FileCopyrightText: 2025 mart
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
+- type: emote
+  id: Gekker
+  name: chat-emote-name-gekker
+  category: Vocal
+  whitelist:
+    tags:
+    - VulpEmotes
+    - HarpyEmotes
+    - KitsuneEmotes # Floof - M3739 - #937 
+  chatMessages: [ gekkers ]
+  chatTriggers:
+  - gekkers
+
+- type: emote
+  id: Yip
+  name: chat-emote-name-yip
+  category: Vocal
+  icon: _Impstation/Interface/Emotes/hiss.png
+  whitelist:
+    tags:
+    - VulpEmotes
+    - HarpyEmotes
+    - UnathiEmotes
+    - KitsuneEmotes
+  chatMessages: [ yips ]
+  chatTriggers:
+  - yip
+  - yips
+  - yipped
+
+- type: emote
+  id: Yap
+  name: chat-emote-name-yap
+  chatMessages: [ yaps ]
+  chatTriggers:
+  - yap
+  - yaps

@@ -1,3 +1,39 @@
+// SPDX-FileCopyrightText: 2022 EmoGarbage404
+// SPDX-FileCopyrightText: 2022 Moony
+// SPDX-FileCopyrightText: 2022 Rane
+// SPDX-FileCopyrightText: 2022 Will Robson
+// SPDX-FileCopyrightText: 2022 keronshb
+// SPDX-FileCopyrightText: 2022 mirrorcult
+// SPDX-FileCopyrightText: 2022 wrexbe
+// SPDX-FileCopyrightText: 2023 DrSmugleaf
+// SPDX-FileCopyrightText: 2023 Ilushkins33
+// SPDX-FileCopyrightText: 2023 Jezithyr
+// SPDX-FileCopyrightText: 2023 Kara
+// SPDX-FileCopyrightText: 2023 LankLTE
+// SPDX-FileCopyrightText: 2023 Phill101
+// SPDX-FileCopyrightText: 2023 Pieter-Jan Briers
+// SPDX-FileCopyrightText: 2023 TemporalOroboros
+// SPDX-FileCopyrightText: 2023 Visne
+// SPDX-FileCopyrightText: 2023 Vordenburg
+// SPDX-FileCopyrightText: 2023 Whisper
+// SPDX-FileCopyrightText: 2023 faint
+// SPDX-FileCopyrightText: 2023 metalgearsloth
+// SPDX-FileCopyrightText: 2023 themias
+// SPDX-FileCopyrightText: 2024 Angelo Fallaria
+// SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT
+// SPDX-FileCopyrightText: 2024 Leon Friedrich
+// SPDX-FileCopyrightText: 2024 LordCarve
+// SPDX-FileCopyrightText: 2024 Mnemotechnican
+// SPDX-FileCopyrightText: 2024 Nemanja
+// SPDX-FileCopyrightText: 2024 Remuchi
+// SPDX-FileCopyrightText: 2024 Skubman
+// SPDX-FileCopyrightText: 2024 SlamBamActionman
+// SPDX-FileCopyrightText: 2024 VMSolidus
+// SPDX-FileCopyrightText: 2025 ash lea
+// SPDX-FileCopyrightText: 2025 sleepyyapril
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 using Content.Server.Body.Components;
 using Content.Server.Body.Events;
 using Content.Server.Chemistry.Containers.EntitySystems;
@@ -241,33 +277,42 @@ public sealed class BloodstreamSystem : EntitySystem
     /// </summary>
     private void OnHealthBeingExamined(Entity<BloodstreamComponent> ent, ref HealthBeingExaminedEvent args)
     {
+        if (ent.Comp.MaxBleedAmount == 0)
+            return;
+
         // Shows profusely bleeding at half the max bleed rate.
         if (ent.Comp.BleedAmount > ent.Comp.MaxBleedAmount / 2)
         {
-            args.Message.PushNewline();
+            // Floof: allow empty messages for basic examine
+            if (!args.Message.IsEmpty)
+                args.Message.PushNewline();
             if (!args.IsSelfAware)
-                args.Message.AddMarkup(Loc.GetString("bloodstream-component-profusely-bleeding", ("target", ent.Owner)));
+                args.Message.AddMarkupPermissive(Loc.GetString("bloodstream-component-profusely-bleeding", ("target", ent.Owner)));
             else
-                args.Message.AddMarkup(Loc.GetString("bloodstream-component-selfaware-profusely-bleeding"));
+                args.Message.AddMarkupPermissive(Loc.GetString("bloodstream-component-selfaware-profusely-bleeding"));
         }
         // Shows bleeding message when bleeding, but less than profusely.
         else if (ent.Comp.BleedAmount > 0)
         {
-            args.Message.PushNewline();
+            // Floof: allow empty messages for basic examine
+            if (!args.Message.IsEmpty)
+                args.Message.PushNewline();
             if (!args.IsSelfAware)
-                args.Message.AddMarkup(Loc.GetString("bloodstream-component-bleeding", ("target", ent.Owner)));
+                args.Message.AddMarkupPermissive(Loc.GetString("bloodstream-component-bleeding", ("target", ent.Owner)));
             else
-                args.Message.AddMarkup(Loc.GetString("bloodstream-component-selfaware-bleeding"));
+                args.Message.AddMarkupPermissive(Loc.GetString("bloodstream-component-selfaware-bleeding"));
         }
 
         // If the mob's blood level is below the damage threshhold, the pale message is added.
         if (GetBloodLevelPercentage(ent, ent) < ent.Comp.BloodlossThreshold)
         {
-            args.Message.PushNewline();
+            // Floof: allow empty messages for basic examine
+            if (!args.Message.IsEmpty)
+                args.Message.PushNewline();
             if (!args.IsSelfAware)
-                args.Message.AddMarkup(Loc.GetString("bloodstream-component-looks-pale", ("target", ent.Owner)));
+                args.Message.AddMarkupPermissive(Loc.GetString("bloodstream-component-looks-pale", ("target", ent.Owner)));
             else
-                args.Message.AddMarkup(Loc.GetString("bloodstream-component-selfaware-looks-pale"));
+                args.Message.AddMarkupPermissive(Loc.GetString("bloodstream-component-selfaware-looks-pale"));
         }
     }
 
@@ -528,6 +573,6 @@ public sealed class BloodstreamSystem : EntitySystem
         if (usedThirst > 0 && thirstComp is not null)
             _thirst.ModifyThirst(ent, thirstComp, (float) -usedThirst);
 
-        return TryModifyBloodLevel(ent, ev.Amount, ent.Comp);
+        return TryModifyBloodLevel(ent, ev.Amount, ent.Comp, createPuddle: ev.AllowBloodPooling);
     }
 }

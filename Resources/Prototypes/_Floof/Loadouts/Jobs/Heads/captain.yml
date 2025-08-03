@@ -1,0 +1,67 @@
+# SPDX-FileCopyrightText: 2024 fox <daytimer253@gmail.com>
+# SPDX-FileCopyrightText: 2025 Blitz <73762869+BlitzTheSquishy@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Rosycup <178287475+Rosycup@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
+- type: loadout
+  id: LoadoutClothingHandsCaptainWarmers
+  category: JobsCommandCaptain
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingHandsCaptainWarmers
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - Captain
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutCaptainGloves
+
+- type: loadout
+  id: LoadoutClothingUnderSocksCaptain
+  category: JobsCommandCaptain
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingUnderSocksCaptain
+  requirements:
+    #- !type:CharacterSpeciesRequirement - TheDen
+    #  inverted: true
+    #  species:
+    #  - Diona
+    #  - Harpy
+    - !type:CharacterJobRequirement
+      jobs:
+        - Captain
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutCaptainShoes
+
+- type: loadout
+  id: LoadoutClothingUniformCaptainThong
+  category: JobsCommandCaptain
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingUniformCaptainThong
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - Captain
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutCaptainUniforms
+
+- type: loadout
+  id: LoadoutCommandCapCollar
+  category: JobsCommandCaptain
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - Captain
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutCaptainNeck
+  items:
+    - ClothingNeckCollarCmd

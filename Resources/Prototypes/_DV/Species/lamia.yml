@@ -1,3 +1,13 @@
+# SPDX-FileCopyrightText: 2025 Blitz
+# SPDX-FileCopyrightText: 2025 BlitzTheSquishy
+# SPDX-FileCopyrightText: 2025 Rosycup
+# SPDX-FileCopyrightText: 2025 Skubman
+# SPDX-FileCopyrightText: 2025 Spatison
+# SPDX-FileCopyrightText: 2025 VMSolidus
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 - type: species
   id: Lamia
   name: Lamia
@@ -8,9 +18,10 @@
   defaultSkinTone: "#c0967f"
   markingLimits: MobLamiaMarkingLimits
   skinColoration: HumanToned
-  maleFirstNames: names_cyno_male
-  femaleFirstNames: names_cyno_female
-  lastNames: names_cyno_last
+  maleFirstNames: NamesCynoMale
+  femaleFirstNames: NamesCynoFemale
+  lastNames: NamesCynoLast
+  customName: true
 
 - type: markingPoints
   id: MobLamiaMarkingLimits

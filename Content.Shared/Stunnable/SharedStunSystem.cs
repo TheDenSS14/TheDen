@@ -1,3 +1,33 @@
+// SPDX-FileCopyrightText: 2021 Paul Ritter
+// SPDX-FileCopyrightText: 2021 Vera Aguilera Puerto
+// SPDX-FileCopyrightText: 2021 mirrorcult
+// SPDX-FileCopyrightText: 2021 pointer-to-null
+// SPDX-FileCopyrightText: 2022 Acruid
+// SPDX-FileCopyrightText: 2022 Chief-Engineer
+// SPDX-FileCopyrightText: 2022 Rane
+// SPDX-FileCopyrightText: 2022 keronshb
+// SPDX-FileCopyrightText: 2022 wrexbe
+// SPDX-FileCopyrightText: 2023 Debug
+// SPDX-FileCopyrightText: 2023 DrSmugleaf
+// SPDX-FileCopyrightText: 2023 Jezithyr
+// SPDX-FileCopyrightText: 2023 Kara
+// SPDX-FileCopyrightText: 2023 Pieter-Jan Briers
+// SPDX-FileCopyrightText: 2023 deltanedas
+// SPDX-FileCopyrightText: 2023 metalgearsloth
+// SPDX-FileCopyrightText: 2024 Leon Friedrich
+// SPDX-FileCopyrightText: 2024 Mnemotechnican
+// SPDX-FileCopyrightText: 2024 Nemanja
+// SPDX-FileCopyrightText: 2024 Remuchi
+// SPDX-FileCopyrightText: 2024 Tayrtahn
+// SPDX-FileCopyrightText: 2024 VMSolidus
+// SPDX-FileCopyrightText: 2025 Eagle-0
+// SPDX-FileCopyrightText: 2025 Jakumba
+// SPDX-FileCopyrightText: 2025 RedFoxIV
+// SPDX-FileCopyrightText: 2025 Tirochora
+// SPDX-FileCopyrightText: 2025 sleepyyapril
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 using Content.Shared.ActionBlocker;
 using Content.Shared.Administration.Logs;
 using Content.Shared.Interaction;
@@ -22,6 +52,9 @@ using Robust.Shared.Containers;
 using Robust.Shared.Physics.Components;
 using Robust.Shared.Physics.Events;
 using Robust.Shared.Physics.Systems;
+using Content.Shared.Actions.Events;
+using Content.Shared.Climbing.Components;
+using Content.Shared._Goobstation.MartialArts.Components;
 
 namespace Content.Shared.Stunnable;
 
@@ -54,6 +87,7 @@ public abstract class SharedStunSystem : EntitySystem
         SubscribeLocalEvent<KnockedDownComponent, ComponentInit>(OnKnockInit);
         SubscribeLocalEvent<KnockedDownComponent, ComponentShutdown>(OnKnockShutdown);
         SubscribeLocalEvent<KnockedDownComponent, StandAttemptEvent>(OnStandAttempt);
+        SubscribeLocalEvent<KnockedDownComponent, DisarmAttemptEvent>(KnockdownStun);
 
         SubscribeLocalEvent<SlowedDownComponent, ComponentInit>(OnSlowInit);
         SubscribeLocalEvent<SlowedDownComponent, ComponentShutdown>(OnSlowRemove);
@@ -166,6 +200,7 @@ public abstract class SharedStunSystem : EntitySystem
     {
         if (component.LifeStage <= ComponentLifeStage.Running)
             args.Cancel();
+        component.FollowUp = false;
     }
 
     private void OnSlowInit(EntityUid uid, SlowedDownComponent component, ComponentInit args)
@@ -285,6 +320,11 @@ public abstract class SharedStunSystem : EntitySystem
 
             _movementSpeedModifier.RefreshMovementSpeedModifiers(uid);
 
+            // goob edit
+            _jitter.DoJitter(uid, time, refresh);
+            _stutter.DoStutter(uid, time, refresh);
+            // goob edit end
+
             return true;
         }
 
@@ -310,6 +350,16 @@ public abstract class SharedStunSystem : EntitySystem
     private void OnKnockedTileFriction(EntityUid uid, KnockedDownComponent component, ref TileFrictionEvent args)
     {
         args.Modifier *= KnockDownModifier;
+    }
+
+    // should make it so that one time when somebody gets knocked over, you can push them for a short stun.
+    // On the slate for a rework once I make combos eat inputs, but that's not my goal right now.
+    private void KnockdownStun(Entity<KnockedDownComponent> ent, ref DisarmAttemptEvent args)
+    {
+        if (ent.Comp.FollowUp || !TryComp<ClimbingComponent>(ent, out var component) || !component.IsClimbing)
+            return;
+        TryParalyze(ent, TimeSpan.FromSeconds(1.5f), false);
+        ent.Comp.FollowUp = true;
     }
 
     #region Attempt Event Handling

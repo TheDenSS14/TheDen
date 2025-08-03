@@ -1,4 +1,50 @@
+// SPDX-FileCopyrightText: 2021 20kdc
+// SPDX-FileCopyrightText: 2021 Galactic Chimp
+// SPDX-FileCopyrightText: 2021 Javier Guardia Fernández
+// SPDX-FileCopyrightText: 2021 Paul Ritter
+// SPDX-FileCopyrightText: 2022 Acruid
+// SPDX-FileCopyrightText: 2022 Jessica M
+// SPDX-FileCopyrightText: 2022 Julian Giebel
+// SPDX-FileCopyrightText: 2022 KIBORG04
+// SPDX-FileCopyrightText: 2022 Mervill
+// SPDX-FileCopyrightText: 2022 Morber
+// SPDX-FileCopyrightText: 2022 Rane
+// SPDX-FileCopyrightText: 2022 Vera Aguilera Puerto
+// SPDX-FileCopyrightText: 2022 Veritius
+// SPDX-FileCopyrightText: 2022 keronshb
+// SPDX-FileCopyrightText: 2022 mirrorcult
+// SPDX-FileCopyrightText: 2022 moonheart08
+// SPDX-FileCopyrightText: 2022 theashtronaut
+// SPDX-FileCopyrightText: 2023 Chief-Engineer
+// SPDX-FileCopyrightText: 2023 Debug
+// SPDX-FileCopyrightText: 2023 Kara
+// SPDX-FileCopyrightText: 2023 Moony
+// SPDX-FileCopyrightText: 2023 Morb
+// SPDX-FileCopyrightText: 2023 Nemanja
+// SPDX-FileCopyrightText: 2023 Riggle
+// SPDX-FileCopyrightText: 2023 ShadowCommander
+// SPDX-FileCopyrightText: 2023 Tom Leys
+// SPDX-FileCopyrightText: 2023 Visne
+// SPDX-FileCopyrightText: 2023 Vordenburg
+// SPDX-FileCopyrightText: 2023 metalgearsloth
+// SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT
+// SPDX-FileCopyrightText: 2024 DrSmugleaf
+// SPDX-FileCopyrightText: 2024 Errant
+// SPDX-FileCopyrightText: 2024 Fildrance
+// SPDX-FileCopyrightText: 2024 Hannah Giovanna Dawson
+// SPDX-FileCopyrightText: 2024 Pieter-Jan Briers
+// SPDX-FileCopyrightText: 2024 Vasilis
+// SPDX-FileCopyrightText: 2024 Wrexbe (Josh)
+// SPDX-FileCopyrightText: 2024 wrexbe
+// SPDX-FileCopyrightText: 2025 Falcon
+// SPDX-FileCopyrightText: 2025 Leon Friedrich
+// SPDX-FileCopyrightText: 2025 VMSolidus
+// SPDX-FileCopyrightText: 2025 sleepyyapril
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 using System.Linq;
+using System.Numerics;
 using Content.Server.Announcements;
 using Content.Server.Discord;
 using Content.Server.GameTicking.Events;
@@ -13,10 +59,12 @@ using Content.Shared.Players;
 using Content.Shared.Preferences;
 using JetBrains.Annotations;
 using Prometheus;
-using Robust.Server.Maps;
 using Robust.Shared.Asynchronous;
 using Robust.Shared.Audio;
+using Robust.Shared.EntitySerialization;
+using Robust.Shared.EntitySerialization.Systems;
 using Robust.Shared.Map;
+using Robust.Shared.Map.Components;
 using Robust.Shared.Network;
 using Robust.Shared.Player;
 using Robust.Shared.Random;
@@ -94,9 +142,6 @@ namespace Content.Server.GameTicking
 
             AddGamePresetRules();
 
-            DefaultMap = _mapManager.CreateMap();
-            _mapManager.AddUninitializedMap(DefaultMap);
-
             var maps = new List<GameMapPrototype>();
 
             // the map might have been force-set by something
@@ -134,46 +179,202 @@ namespace Content.Server.GameTicking
             // Let game rules dictate what maps we should load.
             RaiseLocalEvent(new LoadingMapsEvent(maps));
 
-            foreach (var map in maps)
+            if (maps.Count == 0)
             {
-                var toLoad = DefaultMap;
-                if (maps[0] != map)
-                {
-                    // Create other maps for the others since we need to.
-                    toLoad = _mapManager.CreateMap();
-                    _mapManager.AddUninitializedMap(toLoad);
-                }
+                _map.CreateMap(out var mapId, runMapInit: false);
+                DefaultMap = mapId;
+                return;
+            }
 
-                LoadGameMap(map, toLoad, null);
+            for (var i = 0; i < maps.Count; i++)
+            {
+                LoadGameMap(maps[i], out var mapId);
+                DebugTools.Assert(!_map.IsInitialized(mapId));
+
+                if (i == 0)
+                    DefaultMap = mapId;
             }
         }
 
+        public PreGameMapLoad RaisePreLoad(
+            GameMapPrototype proto,
+            DeserializationOptions? opts = null,
+            Vector2? offset = null,
+            Angle? rot = null)
+        {
+            offset ??= proto.MaxRandomOffset != 0f
+                ? _robustRandom.NextVector2(proto.MaxRandomOffset)
+                : Vector2.Zero;
+
+            rot ??= proto.RandomRotation
+                ? _robustRandom.NextAngle()
+                : Angle.Zero;
+
+            opts ??= DeserializationOptions.Default;
+            var ev = new PreGameMapLoad(proto, opts.Value, offset.Value, rot.Value);
+            RaiseLocalEvent(ev);
+            return ev;
+        }
 
         /// <summary>
         ///     Loads a new map, allowing systems interested in it to handle loading events.
         ///     In the base game, this is required to be used if you want to load a station.
+        ///     This does not initialze maps, unles specified via the <see cref="DeserializationOptions"/>.
         /// </summary>
-        /// <param name="map">Game map prototype to load in.</param>
-        /// <param name="targetMapId">Map to load into.</param>
-        /// <param name="loadOptions">Map loading options, includes offset.</param>
+        /// <remarks>
+        /// This is basically a wrapper around a <see cref="MapLoaderSystem"/> method that auto generate
+        /// some <see cref="MapLoadOptions"/> using information in a prototype, and raise some events to allow content
+        /// to modify the options and react to the map creation.
+        /// </remarks>
+        /// <param name="proto">Game map prototype to load in.</param>
+        /// <param name="mapId">The id of the map that was loaded.</param>
+        /// <param name="options">Entity loading options, including whether the maps should be initialized.</param>
         /// <param name="stationName">Name to assign to the loaded station.</param>
         /// <returns>All loaded entities and grids.</returns>
-        public IReadOnlyList<EntityUid> LoadGameMap(GameMapPrototype map, MapId targetMapId, MapLoadOptions? loadOptions, string? stationName = null)
+        public IReadOnlyList<EntityUid> LoadGameMap(
+            GameMapPrototype proto,
+            out MapId mapId,
+            DeserializationOptions? options = null,
+            string? stationName = null,
+            Vector2? offset = null,
+            Angle? rot = null)
         {
-            // Okay I specifically didn't set LoadMap here because this is typically called onto a new map.
-            // whereas the command can also be used on an existing map.
-            var loadOpts = loadOptions ?? new MapLoadOptions();
+            var ev = RaisePreLoad(proto, options, offset, rot);
 
-            var ev = new PreGameMapLoad(targetMapId, map, loadOpts);
-            RaiseLocalEvent(ev);
+            if (ev.GameMap.IsGrid)
+            {
+                var mapUid = _map.CreateMap(out mapId);
+                if (!_loader.TryLoadGrid(mapId,
+                        ev.GameMap.MapPath,
+                        out var grid,
+                        ev.Options,
+                        ev.Offset,
+                        ev.Rotation))
+                {
+                    throw new Exception($"Failed to load game-map grid {ev.GameMap.ID}");
+                }
 
-            var gridIds = _map.LoadMap(targetMapId, ev.GameMap.MapPath.ToString(), ev.Options);
+                _metaData.SetEntityName(mapUid, proto.MapName);
+                var g = new List<EntityUid> {grid.Value.Owner};
+                RaiseLocalEvent(new PostGameMapLoad(proto, mapId, g, stationName));
+                return g;
+            }
 
-            _metaData.SetEntityName(_mapManager.GetMapEntityId(targetMapId), $"station map - {map.MapName}");
+            if (!_loader.TryLoadMap(ev.GameMap.MapPath,
+                    out var map,
+                    out var grids,
+                    ev.Options,
+                    ev.Offset,
+                    ev.Rotation))
+            {
+                throw new Exception($"Failed to load game map {ev.GameMap.ID}");
+            }
 
-            var gridUids = gridIds.ToList();
-            RaiseLocalEvent(new PostGameMapLoad(map, targetMapId, gridUids, stationName));
+            mapId = map.Value.Comp.MapId;
+            _metaData.SetEntityName(map.Value.Owner, proto.MapName);
+            var gridUids = grids.Select(x => x.Owner).ToList();
+            RaiseLocalEvent(new PostGameMapLoad(proto, mapId, gridUids, stationName));
+            return gridUids;
+        }
 
+        /// <summary>
+        /// Variant of <see cref="LoadGameMap"/> that attempts to assign the provided <see cref="MapId"/> to the
+        /// loaded map.
+        /// </summary>
+        public IReadOnlyList<EntityUid> LoadGameMapWithId(
+            GameMapPrototype proto,
+            MapId mapId,
+            DeserializationOptions? opts = null,
+            string? stationName = null,
+            Vector2? offset = null,
+            Angle? rot = null)
+        {
+            var ev = RaisePreLoad(proto, opts, offset, rot);
+
+            if (ev.GameMap.IsGrid)
+            {
+                var mapUid = _map.CreateMap(mapId);
+                if (!_loader.TryLoadGrid(mapId,
+                        ev.GameMap.MapPath,
+                        out var grid,
+                        ev.Options,
+                        ev.Offset,
+                        ev.Rotation))
+                {
+                    throw new Exception($"Failed to load game-map grid {ev.GameMap.ID}");
+                }
+
+                _metaData.SetEntityName(mapUid, proto.MapName);
+                var g = new List<EntityUid> {grid.Value.Owner};
+                RaiseLocalEvent(new PostGameMapLoad(proto, mapId, g, stationName));
+                return g;
+            }
+
+            if (!_loader.TryLoadMapWithId(
+                    mapId,
+                    ev.GameMap.MapPath,
+                    out var map,
+                    out var grids,
+                    ev.Options,
+                    ev.Offset,
+                    ev.Rotation))
+            {
+                throw new Exception($"Failed to load map");
+            }
+
+            _metaData.SetEntityName(map.Value.Owner, proto.MapName);
+            var gridUids = grids.Select(x => x.Owner).ToList();
+            RaiseLocalEvent(new PostGameMapLoad(proto, mapId, gridUids, stationName));
+            return gridUids;
+        }
+
+        /// <summary>
+        /// Variant of <see cref="LoadGameMap"/> that loads and then merges a game map onto an existing map.
+        /// </summary>
+        public IReadOnlyList<EntityUid> MergeGameMap(
+            GameMapPrototype proto,
+            MapId targetMap,
+            DeserializationOptions? opts = null,
+            string? stationName = null,
+            Vector2? offset = null,
+            Angle? rot = null)
+        {
+            // TODO MAP LOADING use a new event?
+            // This is quite different from the other methods, which will actually create a **new** map.
+            var ev = RaisePreLoad(proto, opts, offset, rot);
+
+            if (ev.GameMap.IsGrid)
+            {
+                if (!_loader.TryLoadGrid(targetMap,
+                        ev.GameMap.MapPath,
+                        out var grid,
+                        ev.Options,
+                        ev.Offset,
+                        ev.Rotation))
+                {
+                    throw new Exception($"Failed to load game-map grid {ev.GameMap.ID}");
+                }
+
+                var g = new List<EntityUid> {grid.Value.Owner};
+                // TODO MAP LOADING use a new event?
+                RaiseLocalEvent(new PostGameMapLoad(proto, targetMap, g, stationName));
+                return g;
+            }
+
+            if (!_loader.TryMergeMap(targetMap,
+                    ev.GameMap.MapPath,
+                    out var grids,
+                    ev.Options,
+                    ev.Offset,
+                    ev.Rotation))
+            {
+                throw new Exception($"Failed to load map");
+            }
+
+            var gridUids = grids.Select(x => x.Owner).ToList();
+
+            // TODO MAP LOADING use a new event?
+            RaiseLocalEvent(new PostGameMapLoad(proto, targetMap, gridUids, stationName));
             return gridUids;
         }
 
@@ -273,7 +474,7 @@ namespace Content.Server.GameTicking
             }
 
             // MapInitialize *before* spawning players, our codebase is too shit to do it afterwards...
-            _mapManager.DoMapInitialize(DefaultMap);
+            _map.InitializeMap(DefaultMap);
 
             SpawnPlayers(readyPlayers, readyPlayerProfiles, force);
 
@@ -534,14 +735,23 @@ namespace Content.Server.GameTicking
         {
             try
             {
-                if (_webhookIdentifier == null)
-                    return;
+                if (_webhookIdentifier != null)
+                {
+                    var content = Loc.GetString("discord-round-notifications-new");
+                    var payload = new WebhookPayload { Content = content };
 
-                var content = Loc.GetString("discord-round-notifications-new");
+                    await _discord.CreateMessage(_webhookIdentifier.Value, payload);
+                }
 
-                var payload = new WebhookPayload { Content = content };
+                if (_eventsLoggingChannelIdentifier != null)
+                {
+                    var newRoundContent = Loc.GetString(
+                        "discord-round-notifications-end-next-round",
+                        ("nextRound", RoundId));
+                    var newRoundPayload = new WebhookPayload { Content = newRoundContent };
 
-                await _discord.CreateMessage(_webhookIdentifier.Value, payload);
+                    await _discord.CreateMessage(_eventsLoggingChannelIdentifier.Value, newRoundPayload);
+                }
             }
             catch (Exception e)
             {
@@ -722,20 +932,13 @@ namespace Content.Server.GameTicking
     ///     You likely want to subscribe to this after StationSystem.
     /// </remarks>
     [PublicAPI]
-    public sealed class PreGameMapLoad : EntityEventArgs
+    public sealed class PreGameMapLoad(GameMapPrototype gameMap, DeserializationOptions options, Vector2 offset, Angle rotation) : EntityEventArgs
     {
-        public readonly MapId Map;
-        public GameMapPrototype GameMap;
-        public MapLoadOptions Options;
-
-        public PreGameMapLoad(MapId map, GameMapPrototype gameMap, MapLoadOptions options)
-        {
-            Map = map;
-            GameMap = gameMap;
-            Options = options;
-        }
+        public readonly GameMapPrototype GameMap = gameMap;
+        public DeserializationOptions Options = options;
+        public Vector2 Offset = offset;
+        public Angle Rotation = rotation;
     }
-
 
     /// <summary>
     ///     Event raised after the game loads a given map.

@@ -1,3 +1,18 @@
+# SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT
+# SPDX-FileCopyrightText: 2024 Radezolid
+# SPDX-FileCopyrightText: 2024 VMSolidus
+# SPDX-FileCopyrightText: 2024 gluesniffler
+# SPDX-FileCopyrightText: 2025 Blitz
+# SPDX-FileCopyrightText: 2025 GNUtopia
+# SPDX-FileCopyrightText: 2025 John Willis
+# SPDX-FileCopyrightText: 2025 KekaniCreates
+# SPDX-FileCopyrightText: 2025 Skubman
+# SPDX-FileCopyrightText: 2025 Tabitha
+# SPDX-FileCopyrightText: 2025 portfiend
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 # Alphabetically ordered, except for Uncategorized since it is always first
 # AUncategorized is always first in subcategories to stay consistent with the root Uncategorized
 # AUncategorized is not a spelling mistake, and might have more As added as needed
@@ -5,6 +20,7 @@
 - type: loadoutCategory
   id: Uncategorized
   root: true
+  order: -10
 
 - type: loadoutCategory
   id: Backpacks
@@ -25,11 +41,13 @@
 - type: loadoutCategory
   id: Items
   root: true
+  order: 4
   subCategories:
     - GeneralItems
-    - GeneralToys
     - GeneralInstruments
+    - ItemsLewd
     - GeneralTowels
+    - GeneralToys
 
 - type: loadoutCategory
   id: GeneralItems
@@ -43,6 +61,7 @@
 - type: loadoutCategory
   id: Jobs
   root: true
+  order: 5
   subCategories:
     - JobsAUncategorized
     - JobsCommand
@@ -233,6 +252,7 @@
     - JobsSecurityCorpsman
     - JobsSecurityDetective
     - JobsSecurityHeadOfSecurity
+    - JobsSecurityPrisonGuard
     - JobsSecuritySecurityOfficer
     - JobsSecuritySeniorOfficer
     - JobsSecurityWarden
@@ -253,6 +273,9 @@
   id: JobsSecurityHeadOfSecurity
 
 - type: loadoutCategory
+  id: JobsSecurityPrisonGuard
+
+- type: loadoutCategory
   id: JobsSecuritySecurityOfficer
 
 - type: loadoutCategory
@@ -268,13 +291,16 @@
     - JobsServiceAUncategorized
     - JobsServiceBartender
     - JobsServiceBotanist
+    - JobsServiceBoxer
     - JobsServiceChef
     - JobsServiceClown
     - JobsServiceJanitor
     - JobsServiceLawyer
+    - JobsServiceMartialArtist
     - JobsServiceMime
     - JobsServiceMusician
     - JobsServiceReporter
+    - JobsServiceZookeeper
 
 - type: loadoutCategory
   id: JobsServiceAUncategorized
@@ -284,6 +310,9 @@
 
 - type: loadoutCategory
   id: JobsServiceBotanist
+
+- type: loadoutCategory
+  id: JobsServiceBoxer
 
 - type: loadoutCategory
   id: JobsServiceChef
@@ -298,6 +327,9 @@
   id: JobsServiceLawyer
 
 - type: loadoutCategory
+  id: JobsServiceMartialArtist
+
+- type: loadoutCategory
   id: JobsServiceMime
 
 - type: loadoutCategory
@@ -306,18 +338,25 @@
 - type: loadoutCategory
   id: JobsServiceReporter
 
+- type: loadoutCategory
+  id: JobsServiceZookeeper
+
   # Misc
 - type: loadoutCategory
   id: JobsZMisc # this breaks convention a bit but the oddballs should be after everything else
   subCategories: # this can also be for unique/station-specific jobs like boxer/gladiator
     - JobsZMiscAUncategorized
     - JobsZMiscPrisoner
+    - JobsZMiscGladiator
 
 - type: loadoutCategory
   id: JobsZMiscAUncategorized
 
 - type: loadoutCategory
   id: JobsZMiscPrisoner
+
+- type: loadoutCategory
+  id: JobsZMiscGladiator
 
 # Now Leaving: Jobs Category
 

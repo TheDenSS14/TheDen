@@ -1,7 +1,37 @@
+# SPDX-FileCopyrightText: 2024 Angelo Fallaria
+# SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT
+# SPDX-FileCopyrightText: 2024 gluesniffler
+# SPDX-FileCopyrightText: 2025 Adrian16199
+# SPDX-FileCopyrightText: 2025 Alice
+# SPDX-FileCopyrightText: 2025 Blitz
+# SPDX-FileCopyrightText: 2025 BlueHNT
+# SPDX-FileCopyrightText: 2025 Lonofera
+# SPDX-FileCopyrightText: 2025 Rosycup
+# SPDX-FileCopyrightText: 2025 VMSolidus
+# SPDX-FileCopyrightText: 2025 mart
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 # Head Of Security
 # Backpacks
 
 # Belt
+
+- type: loadout
+  id: LoadoutCommandHoSJudoBelt
+  category: JobsSecurityHeadOfSecurity
+  cost: 6
+  exclusive: true
+  canBeHeirloom: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutHeadOfSecurityBelt
+    - !type:CharacterJobRequirement
+      jobs:
+        - HeadOfSecurity
+  items:
+    - ClothingBeltCorporateJudo
 
 # Ears
 
@@ -111,7 +141,7 @@
 - type: loadout
   id: LoadoutCommandHoSBRDIR25
   category: JobsSecurityHeadOfSecurity
-  cost: 7 # Cracked
+  cost: 0 # It's now about on par with other antiques, i feel it's reasonable to lower it back down to 0
   canBeHeirloom: true
   requirements:
     - !type:CharacterItemGroupRequirement
@@ -121,6 +151,20 @@
         - HeadOfSecurity
   items:
     - WeaponSubMachineGunBRDIR25HoS
+
+- type: loadout
+  id: LoadoutCommandAntiqueTerminus
+  category: JobsSecurityHeadOfSecurity
+  cost: 0
+  canBeHeirloom: true
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutHeadOfSecurityWeapon
+  - !type:CharacterJobRequirement
+    jobs:
+    - HeadOfSecurity
+  items:
+  - AntiqueTerminus
 
 # Eyes
 
@@ -260,6 +304,34 @@
         - HeadOfSecurity
   items:
     - ClothingOuterArmorHosSamurai
+
+- type: loadout
+  id: LoadoutCommandHOSOuterVestHoSVestWeb
+  category: JobsSecurityHeadOfSecurity
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutHeadOfSecurityOuter
+    - !type:CharacterJobRequirement
+      jobs:
+        - HeadOfSecurity
+  items:
+    - ClothingOuterVestHoSVestWeb
+
+- type: loadout
+  id: LoadoutCommandHOSOuterLongcoat
+  category: JobsSecurityHeadOfSecurity
+  cost: 0
+  exclusive: true
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutHeadOfSecurityOuter
+  - !type:CharacterJobRequirement
+    jobs:
+    - HeadOfSecurity
+  items:
+  - ClothingLongcoatHoS
 
 # Shoes
 - type: loadout

@@ -1,6 +1,11 @@
+# SPDX-FileCopyrightText: 2025 Blitz <73762869+BlitzTheSquishy@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 - type: loadout
   id: LoadoutTowelYellow
-  category:  JobsServiceClown
+  category: JobsServiceClown
   cost: 1
   requirements:
     - !type:CharacterJobRequirement
@@ -8,3 +13,19 @@
         - Clown
   items:
     - TowelColorYellow
+
+- type: loadout
+  id: LoadoutBackpackMessengerClown
+  category: JobsServiceClown
+  cost: 0
+  exclusive: true
+  customColorTint: true
+  canBeHeirloom: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutClownBackpacks
+    - !type:CharacterJobRequirement
+      jobs:
+        - Clown
+  items:
+    - ClothingBackpackMessengerClown

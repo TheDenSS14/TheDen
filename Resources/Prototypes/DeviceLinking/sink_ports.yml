@@ -1,3 +1,22 @@
+# SPDX-FileCopyrightText: 2022 Chris V
+# SPDX-FileCopyrightText: 2022 Leon Friedrich
+# SPDX-FileCopyrightText: 2022 Rane
+# SPDX-FileCopyrightText: 2022 fishfish458
+# SPDX-FileCopyrightText: 2023 0x6273
+# SPDX-FileCopyrightText: 2023 AJCM-git
+# SPDX-FileCopyrightText: 2023 Julian Giebel
+# SPDX-FileCopyrightText: 2023 Kevin Zheng
+# SPDX-FileCopyrightText: 2023 Nemanja
+# SPDX-FileCopyrightText: 2023 deltanedas
+# SPDX-FileCopyrightText: 2023 metalgearsloth
+# SPDX-FileCopyrightText: 2024 Ed
+# SPDX-FileCopyrightText: 2025 Spatison
+# SPDX-FileCopyrightText: 2025 Timfa
+# SPDX-FileCopyrightText: 2025 mart
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 - type: sinkPort
   id: AutoClose
   name: signal-port-name-hold-open
@@ -114,11 +133,11 @@
   description: signal-port-description-set-particle-sigma
 
 - type: sinkPort
-  id: MaterialSiloUtilizer
-  name: signal-port-name-material-silo-utilizer
-  description: signal-port-description-material-silo-utilizer
-
-- type: sinkPort
   id: FillbotAnyItem # used by Fillbot
   name: signal-port-name-fill-any-item
   description: signal-port-description-fill-any-item
+
+- type: sinkPort
+  id: RemoteFlush
+  name: signal-port-name-remote-flush
+  description: signal-port-description-remote-flush

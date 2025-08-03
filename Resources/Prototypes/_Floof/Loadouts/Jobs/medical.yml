@@ -1,0 +1,170 @@
+# SPDX-FileCopyrightText: 2024 fox
+# SPDX-FileCopyrightText: 2025 Blitz
+# SPDX-FileCopyrightText: 2025 BlitzTheSquishy
+# SPDX-FileCopyrightText: 2025 Rosycup
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
+# General medical
+- type: loadout
+  id: LoadoutClothingHandsMedicWarmers
+  category: JobsMedicalAUncategorized
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingHandsMedicWarmers
+  requirements:
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Medical
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMedicalGloves
+
+- type: loadout
+  id: LoadoutClothingUnderSocksMedic
+  category: JobsMedicalAUncategorized
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingUnderSocksMedic
+  requirements:
+    #- !type:CharacterSpeciesRequirement - TheDen
+    #  inverted: true
+    #  species:
+    #  - Diona
+    #  - Harpy
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Medical
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMedicalShoes
+
+- type: loadout
+  id: LoadoutClothingUniformMedicThong
+  category: JobsMedicalAUncategorized
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingUniformMedicThong
+  requirements:
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Medical
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMedicalUniforms
+
+- type: loadout
+  id: LoadoutMedicalNeckCollar
+  category: JobsMedicalAUncategorized
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterLogicOrRequirement
+      requirements:
+        - !type:CharacterDepartmentRequirement
+          departments:
+            - Medical
+        - !type:CharacterJobRequirement
+          jobs:
+            - Brigmedic
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMedicalNeck
+  items:
+    - ClothingNeckCollarMed
+
+# Chemist
+- type: loadout
+  id: LoadoutClothingHandsChemistsWarmers
+  category: JobsMedicalChemist
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingHandsChemistsWarmers
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - Chemist
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutChemistGloves
+
+- type: loadout
+  id: LoadoutClothingUnderSocksChemists
+  category: JobsMedicalChemist
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingUnderSocksChemists
+  requirements:
+    #- !type:CharacterSpeciesRequirement - TheDen
+    #  inverted: true
+    #  species:
+    #  - Diona
+    #  - Harpy
+    - !type:CharacterJobRequirement
+      jobs:
+        - Chemist
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutChemistShoes
+
+- type: loadout
+  id: LoadoutClothingUniformChemistsThong
+  category: JobsMedicalChemist
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingUniformChemistsThong
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - Chemist
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutChemistUniforms
+
+# Paramedic
+- type: loadout
+  id: LoadoutClothingHandsParaMedicWarmers
+  category: JobsMedicalParamedic
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingHandsParaMedicWarmers
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - Paramedic
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutParamedicGloves
+
+- type: loadout
+  id: LoadoutClothingUnderSocksParaMedic
+  category: JobsMedicalParamedic
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingUnderSocksParaMedic
+  requirements:
+    #- !type:CharacterSpeciesRequirement - TheDen
+    #  inverted: true
+    #  species:
+    #  - Diona
+    #  - Harpy
+    - !type:CharacterJobRequirement
+      jobs:
+        - Paramedic
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutParamedicShoes
+
+- type: loadout
+  id: LoadoutClothingUniformParaMedicThong
+  category: JobsMedicalParamedic
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingUniformParaMedicThong
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - Paramedic
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutParamedicUniforms

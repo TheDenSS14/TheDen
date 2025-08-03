@@ -1,3 +1,9 @@
+# SPDX-FileCopyrightText: 2024 Ghagliiarghii
+# SPDX-FileCopyrightText: 2025 Blitz
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 - type: loadout
   id: LoadoutServiceJumpsuitJanitor
   category: JobsServiceJanitor
@@ -67,3 +73,19 @@
     - !type:CharacterJobRequirement
       jobs:
         - Janitor
+
+- type: loadout
+  id: LoadoutServiceItemGoldenPlunger
+  category: JobsServiceJanitor
+  cost: 1
+  exclusive: true
+  canBeHeirloom: true
+  items:
+    - GoldenPlunger
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - Janitor
+    - !type:CharacterPlaytimeRequirement
+      tracker: JobJanitor
+      min: 187200 #52 hrs (1 hour per week for 1 year)

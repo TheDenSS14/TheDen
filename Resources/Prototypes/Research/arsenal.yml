@@ -1,3 +1,35 @@
+# SPDX-FileCopyrightText: 2023 Boaz1111
+# SPDX-FileCopyrightText: 2023 HerCoyote23
+# SPDX-FileCopyrightText: 2023 Kevin Zheng
+# SPDX-FileCopyrightText: 2023 Nairod
+# SPDX-FileCopyrightText: 2023 Nemanja
+# SPDX-FileCopyrightText: 2023 Nim
+# SPDX-FileCopyrightText: 2023 RiceMar1244
+# SPDX-FileCopyrightText: 2023 Stanislav4ix
+# SPDX-FileCopyrightText: 2023 T-Stalker
+# SPDX-FileCopyrightText: 2023 Vordenburg
+# SPDX-FileCopyrightText: 2023 deltanedas
+# SPDX-FileCopyrightText: 2024 Alzore
+# SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT
+# SPDX-FileCopyrightText: 2024 Debug
+# SPDX-FileCopyrightText: 2024 Ed
+# SPDX-FileCopyrightText: 2024 Fluffiest Floofers
+# SPDX-FileCopyrightText: 2024 Ghost581
+# SPDX-FileCopyrightText: 2024 John Space
+# SPDX-FileCopyrightText: 2024 gluesniffler
+# SPDX-FileCopyrightText: 2024 takemysoult
+# SPDX-FileCopyrightText: 2025 Blu
+# SPDX-FileCopyrightText: 2025 Jakumba
+# SPDX-FileCopyrightText: 2025 MajorMoth
+# SPDX-FileCopyrightText: 2025 Rosycup
+# SPDX-FileCopyrightText: 2025 Solaris
+# SPDX-FileCopyrightText: 2025 Solstice
+# SPDX-FileCopyrightText: 2025 Timfa
+# SPDX-FileCopyrightText: 2025 VMSolidus
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 # Tier 1
 
 # STOP. STOP ADDING NEW WEAPONS AS A SINGLE RESEARCH ENTRY. ADD NEW WEAPONS HERE, NOT ON THEIR OWN.
@@ -25,9 +57,11 @@
   - WeaponDisabler
   - WeaponCivilianDisabler
   - WeaponMechCombatDisabler # Goobstation
+  - WeaponMechCombatFlashbangLauncher
   #- WeaponPistolMk58 #todo: Add a bunch of basic ballistic guns to the list and make lathe recipes for them.
   - MechEquipmentKineticAccelerator # Goobstation
   - WeaponPistolMk58
+  - CrossbowModern
   # These are roundstart but not replenishable for salvage
 
 - type: technology
@@ -50,6 +84,7 @@
   - SpeedLoaderMagnumIncendiary
   - SpeedLoaderRifleHeavyIncendiary
   - MagazineShotgunIncendiary
+  - MagazineBoxShotgunIncendiaryHighCaliber # Goobstation
   - MagazineBoxPistolIncendiary
   - MagazineBoxMagnumIncendiary
   - MagazineBoxLightRifleIncendiary
@@ -57,6 +92,11 @@
   - MagazineBoxCaselessRifleIncendiary
   - CartridgeSpecialIncendiary
   - MagazineBoxSpecialIncendiary
+  - CrossbowBoltIncendiary
+  - CartridgeLightRifleIncendiary
+  - CartridgeMagnumIncendiary
+  - CartridgePistolIncendiary
+  - CartridgeRifleIncendiary
 
 - type: technology
   id: UraniumMunitions
@@ -84,8 +124,12 @@
   - BoxShotgunUranium
   - CartridgeSpecialUranium
   - MagazineBoxSpecialUranium
-
-# Tier 2
+  - CrossbowBoltUranium
+  - CartridgeLightRifleUranium
+  - CartridgeMagnumUranium
+  - CartridgePistolUranium
+  - CartridgeRifleUranium
+  - MagazineBoxShotgunUraniumHighCaliber # Goobstation
 
 - type: technology
   id: AdvancedTacsuits
@@ -120,27 +164,27 @@
   - ChemicalPayload
   # TODO: Add "Explosive Ammunition" to this tech to make it waaaay more interesting.
 
-- type: technology
-  id: ShrapnelMunitions
-  name: research-technology-shrapnel-munitions
-  icon:
-    sprite: Objects/Weapons/Guns/Ammunition/Casings/shotgun_shell.rsi
-    state: base
-  discipline: Arsenal
-  tier: 2
-  cost: 7500
-  recipeUnlocks:
-  - MagazineRifleShrapnel
-  - MagazinePistolShrapnel
-  - MagazinePistolSubMachineGunShrapnel
-  - MagazineMagnumShrapnel
-  - MagazineLightRifleShrapnel
-  - MagazineCaselessRifleShrapnel
-  - MagazineBoxPistolShrapnel
-  - MagazineBoxMagnumShrapnel
-  - MagazineBoxLightRifleShrapnel
-  - MagazineBoxRifleShrapnel
-  - MagazineBoxCaselessRifleShrapnel
+# - type: technology
+#   id: ShrapnelMunitions
+#   name: research-technology-shrapnel-munitions
+#   icon:
+#     sprite: Objects/Weapons/Guns/Ammunition/Casings/shotgun_shell.rsi
+#     state: base
+#   discipline: Arsenal
+#   tier: 2
+#   cost: 7500
+#   recipeUnlocks:
+#   - MagazineRifleShrapnel
+#   - MagazinePistolShrapnel
+#   - MagazinePistolSubMachineGunShrapnel
+#   - MagazineMagnumShrapnel
+#   - MagazineLightRifleShrapnel
+#   - MagazineCaselessRifleShrapnel
+#   - MagazineBoxPistolShrapnel
+#   - MagazineBoxMagnumShrapnel
+#   - MagazineBoxLightRifleShrapnel
+#   - MagazineBoxRifleShrapnel
+#   - MagazineBoxCaselessRifleShrapnel
 
 - type: technology
   id: AdvancedWeapons
@@ -167,7 +211,6 @@
   - WeaponMechCombatSolarisLaser # Goobstation
   - WeaponPistolN1984
   - WeaponPistolViper
-#  - WeaponPistolCobra
   - Terminus
   technologyPrerequisites:
   - BasicWeapons
@@ -226,8 +269,6 @@
   - PowerCageHigh
   - ShuttleGunDusterCircuitboard
   - WeaponMechCombatImmolationGun # Goobstation
-  - EnergySword # TODO: Add a bunch of stupidly exotic energy weapons to act as a reaaaaaally nice incentive for research to consider this.
-#  - EnergySwordDouble
   - EnergyCutlass
   - WeaponSubMachineGunFPA90
   - WeaponSubMachineGunBRDIR25

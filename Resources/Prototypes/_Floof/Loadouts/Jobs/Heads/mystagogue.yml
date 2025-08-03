@@ -1,0 +1,53 @@
+# SPDX-FileCopyrightText: 2024 fox <daytimer253@gmail.com>
+# SPDX-FileCopyrightText: 2025 Blitz <73762869+BlitzTheSquishy@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Rosycup <178287475+Rosycup@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
+- type: loadout
+  id: LoadoutClothingHandsEpiHeadWarmers
+  category: JobsEpistemicsMystagogue
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingHandsEpiHeadWarmers
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - ResearchDirector
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMystagogueGloves
+
+- type: loadout
+  id: LoadoutClothingUnderSocksEpiHead
+  category: JobsEpistemicsMystagogue
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingUnderSocksEpiHead
+  requirements:
+    #- !type:CharacterSpeciesRequirement - TheDen
+    #  inverted: true
+    #  species:
+    #  - Diona
+    #  - Harpy
+    - !type:CharacterJobRequirement
+      jobs:
+        - ResearchDirector
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMystagogueShoes
+
+- type: loadout
+  id: LoadoutClothingUniformEpiHeadThong
+  category: JobsEpistemicsMystagogue
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingUniformEpiHeadThong
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - ResearchDirector
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMystagogueUniforms

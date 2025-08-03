@@ -1,3 +1,10 @@
+// SPDX-FileCopyrightText: 2024 Debug
+// SPDX-FileCopyrightText: 2025 Mnemotechnican
+// SPDX-FileCopyrightText: 2025 RedFoxIV
+// SPDX-FileCopyrightText: 2025 sleepyyapril
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 using Content.Shared.Actions;
 using Content.Shared.Bed.Sleep;
 using Content.Shared.DoAfter;
@@ -117,11 +124,15 @@ public abstract partial class SharedPseudoItemSystem : EntitySystem
     protected virtual void OnGettingPickedUpAttempt(EntityUid uid, PseudoItemComponent component,
         GettingPickedUpAttemptEvent args)
     {
-        if (args.User == args.Item)
-            return;
-
-        Transform(uid).AttachToGridOrMap();
         args.Cancel();
+        // Floof - this is a terrible idea. This triggers every time ANY system checks if a pseudo-item can be picked up.
+        // WHY DID YOU DO THAT, NYANOTRASEN???
+
+        // if (args.User == args.Item)
+        //     return;
+
+        // Transform(uid).AttachToGridOrMap();
+        // args.Cancel();
     }
 
     private void OnDropAttempt(EntityUid uid, PseudoItemComponent component, DropAttemptEvent args)

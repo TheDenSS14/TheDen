@@ -1,3 +1,27 @@
+# SPDX-FileCopyrightText: 2023 Emisse
+# SPDX-FileCopyrightText: 2023 Fluffiest Floofers
+# SPDX-FileCopyrightText: 2023 Kara
+# SPDX-FileCopyrightText: 2023 Nemanja
+# SPDX-FileCopyrightText: 2023 deltanedas
+# SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT
+# SPDX-FileCopyrightText: 2024 Danger Revolution!
+# SPDX-FileCopyrightText: 2024 Debug
+# SPDX-FileCopyrightText: 2024 Ed
+# SPDX-FileCopyrightText: 2024 Mnemotechnican
+# SPDX-FileCopyrightText: 2024 Mr. 27
+# SPDX-FileCopyrightText: 2024 Naive817
+# SPDX-FileCopyrightText: 2024 Pieter-Jan Briers
+# SPDX-FileCopyrightText: 2024 gluesniffler
+# SPDX-FileCopyrightText: 2024 liltenhead
+# SPDX-FileCopyrightText: 2024 metalgearsloth
+# SPDX-FileCopyrightText: 2025 Blitz
+# SPDX-FileCopyrightText: 2025 SimpleGopnik
+# SPDX-FileCopyrightText: 2025 Simplegopnik
+# SPDX-FileCopyrightText: 2025 dootythefrooty
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 - type: entity
   id: BorgChassisSelectable
   parent: BaseBorgChassisNT
@@ -406,7 +430,7 @@
   - type: AccessReader
     access: [["Service"], ["Command"], ["Research"]]
   - type: Inventory
-    templateId: borgTall
+    templateId: borgTallOddNumHorizontalPixels
 
 - type: entity
   id: BorgChassisSyndicateAssault
@@ -425,6 +449,8 @@
           shader: unshaded
           map: ["light"]
           visible: false
+    - type: Inventory
+      templateId: borgTallAndBigHead
     - type: BorgChassis
       maxModules: 3
       moduleWhitelist:
@@ -457,6 +483,8 @@
           shader: unshaded
           map: ["light"]
           visible: false
+    - type: Inventory
+      templateId: borgDutch
     - type: BorgChassis
       maxModules: 3
       moduleWhitelist:
@@ -496,6 +524,8 @@
           shader: unshaded
           map: ["light"]
           visible: false
+    - type: Inventory
+      templateId: borgShort
     - type: BorgChassis
       maxModules: 3
       moduleWhitelist:

@@ -1,7 +1,42 @@
+# SPDX-FileCopyrightText: 2024 VMSolidus
+# SPDX-FileCopyrightText: 2025 Blitz
+# SPDX-FileCopyrightText: 2025 BlitzTheSquishy
+# SPDX-FileCopyrightText: 2025 Skubman
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 # Courier
 # Backpacks
 
 # Belt
+- type: loadout
+  id: LoadoutCourierBag
+  category: JobsLogisticsCourier
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutCourierBelt
+    - !type:CharacterJobRequirement
+      jobs:
+        - MailCarrier
+  items:
+    - CourierBag
+
+- type: loadout
+  id: LoadoutCourierBagMail
+  category: JobsLogisticsCourier
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutCourierBelt
+    - !type:CharacterJobRequirement
+      jobs:
+        - MailCarrier
+  items:
+    - MailBag
 
 # Ears
 
@@ -20,11 +55,25 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutCourierHead
-    - !type:CharacterJobRequirement
-      jobs:
-        - MailCarrier
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Logistics
   items:
     - ClothingHeadMailCarrier
+
+- type: loadout
+  id: LoadoutCourierHeadCourier
+  category: JobsLogisticsCourier
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutCourierHead
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Logistics
+  items:
+    - ClothingHeadCourier
 
 # Id
 

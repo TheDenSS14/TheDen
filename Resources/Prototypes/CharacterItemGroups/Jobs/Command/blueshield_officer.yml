@@ -1,3 +1,15 @@
+# SPDX-FileCopyrightText: 2025 Alice
+# SPDX-FileCopyrightText: 2025 BlitzTheSquishy
+# SPDX-FileCopyrightText: 2025 BramvanZijp
+# SPDX-FileCopyrightText: 2025 EctoplasmIsGood
+# SPDX-FileCopyrightText: 2025 Rosycup
+# SPDX-FileCopyrightText: 2025 SixplyDev
+# SPDX-FileCopyrightText: 2025 Tabitha
+# SPDX-FileCopyrightText: 2025 VMSolidus
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 - type: characterItemGroup
   id: LoadoutBlueshieldOfficerBackpacks
   maxItems: 1
@@ -8,6 +20,10 @@
       id: LoadoutClothingSatchelBlueshield
     - type: loadout
       id: LoadoutClothingDuffelBlueshield
+    - type: loadout
+      id: LoadoutClothingModsuitBlueshield
+    - type: loadout
+      id: LoadoutClothingBackpackMessengerBlueshield
 
 #- type: characterItemGroup
 #  id: LoadoutJOBBelt
@@ -58,7 +74,7 @@
 #  items:
 
 - type: characterItemGroup
-  id: LoadoutBlueshieldOfficerHats
+  id: LoadoutBlueshieldOfficerHead
   maxItems: 1
   items:
     - type: loadout
@@ -84,7 +100,7 @@
 #  items:
 
 - type: characterItemGroup
-  id: LoadoutBlueshieldOfficerVests
+  id: LoadoutBlueshieldOfficerOuter
   maxItems: 1
   items:
     - type: loadout

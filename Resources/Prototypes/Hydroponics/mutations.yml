@@ -1,3 +1,10 @@
+# SPDX-FileCopyrightText: 2023 Doru991 <75124791+Doru991@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT <77995199+DEATHB4DEFEAT@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Whisper <121047731+QuietlyWhisper@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 - type: weightedRandomFillSolution
   id: RandomPickBotanyReagent
   fills:
@@ -10,7 +17,6 @@
     - Honk
     - BuzzochloricBees
     - Stimulants
-    - ExoticReagent # Funkychem
   - quantity: 5
     weight: 1
     reagents:
@@ -18,11 +24,9 @@
     - Toxin
     - Leporazine
     - Epinephrine
-    - Convermol # Funkychem
     - CarpoToxin
     - SulfuricAcid
     - Licoxide
-    - Pestiline # Funkychem
     - Napalm
     - ChlorineTrifluoride
     - Radium
@@ -44,14 +48,14 @@
     - Pax
     - Cryoxadone
     - Ethylredoxrazine
-    - Multiver # Funkychem
+    - Dylovene
     - Histamine
     - Blood
     - WeldingFuel
     - Mercury
     - Silver
     - Phenol
-    - PenteticAcid # Funkychem
+    - Ultravasculine
     - Carbon
     - THC
     - Nicotine
@@ -63,12 +67,8 @@
   - quantity: 10
     weight: 3
     reagents:
-    - Libital # Funkychem - Start
-    - Probital
-    - SalicylicAcid
-    - Aiuri
-    - Lenturi
-    - Oxandrolone # funky end
+    - Bicaridine
+    - Dermaline
     - Ephedrine
     - NorepinephricAcid
     - Tricordrazine
@@ -101,7 +101,7 @@
     weight: 3.5
     reagents:
     - Vitamin
-    - Dexalin # Funkychem
+    - Kelotane
     - Inaprovaline
     - Oil
     - Slime

@@ -1,3 +1,38 @@
+// SPDX-FileCopyrightText: 2022 Dylan Corrales
+// SPDX-FileCopyrightText: 2022 Jezithyr
+// SPDX-FileCopyrightText: 2023 Chief-Engineer
+// SPDX-FileCopyrightText: 2023 DrSmugleaf
+// SPDX-FileCopyrightText: 2023 Flipp Syder
+// SPDX-FileCopyrightText: 2023 KP
+// SPDX-FileCopyrightText: 2023 Kot
+// SPDX-FileCopyrightText: 2023 Leon Friedrich
+// SPDX-FileCopyrightText: 2023 Morb
+// SPDX-FileCopyrightText: 2023 PHCodes
+// SPDX-FileCopyrightText: 2023 Vasilis
+// SPDX-FileCopyrightText: 2023 Vasilis The Pikachu
+// SPDX-FileCopyrightText: 2023 Visne
+// SPDX-FileCopyrightText: 2023 deathride58
+// SPDX-FileCopyrightText: 2023 gus
+// SPDX-FileCopyrightText: 2023 router
+// SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT
+// SPDX-FileCopyrightText: 2024 Debug
+// SPDX-FileCopyrightText: 2024 FoxxoTrystan
+// SPDX-FileCopyrightText: 2024 Julian Giebel
+// SPDX-FileCopyrightText: 2024 Kara
+// SPDX-FileCopyrightText: 2024 Pieter-Jan Briers
+// SPDX-FileCopyrightText: 2024 ShatteredSwords
+// SPDX-FileCopyrightText: 2024 SimpleStation14
+// SPDX-FileCopyrightText: 2024 Sk1tch
+// SPDX-FileCopyrightText: 2024 SlamBamActionman
+// SPDX-FileCopyrightText: 2024 VMSolidus
+// SPDX-FileCopyrightText: 2024 metalgearsloth
+// SPDX-FileCopyrightText: 2025 Cami
+// SPDX-FileCopyrightText: 2025 Falcon
+// SPDX-FileCopyrightText: 2025 ash lea
+// SPDX-FileCopyrightText: 2025 sleepyyapril
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 using System.Globalization;
 using System.Linq;
 using System.Numerics;
@@ -13,6 +48,7 @@ using Content.Client.Mind;
 using Content.Client.Roles;
 using Content.Client.Stylesheets;
 using Content.Client.UserInterface.Screens;
+using Content.Client.UserInterface.Systems.Chat.Controls.Denu;
 using Content.Client.UserInterface.Systems.Chat.Widgets;
 using Content.Client.UserInterface.Systems.Gameplay;
 using Content.Shared.Administration;
@@ -59,6 +95,7 @@ public sealed partial class ChatUIController : UIController
     [Dependency] private readonly IStateManager _state = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly IReplayRecordingManager _replayRecording = default!;
+    [Dependency] private readonly DenuUIController _denuUIController = default!;
 
     [UISystemDependency] private readonly ExamineSystem? _examine = default;
     [UISystemDependency] private readonly GhostSystem? _ghost = default;
@@ -175,6 +212,8 @@ public sealed partial class ChatUIController : UIController
     public ChatChannel FilterableChannels { get; private set; }
     public ChatSelectChannel SelectableChannels { get; private set; }
     private ChatSelectChannel PreferredChannel { get; set; } = ChatSelectChannel.OOC;
+
+    private bool _registeredEvent = false;
 
     public event Action<ChatSelectChannel>? CanSendChannelsChanged;
     public event Action<ChatChannel>? FilterableChannelsChanged;
@@ -312,6 +351,16 @@ public sealed partial class ChatUIController : UIController
                 chatBox = separatedScreen.ChatBox;
                 chatSizeRaw = _config.GetCVar(CCVars.SeparatedScreenChatSize);
                 SetChatSizing(chatSizeRaw, separatedScreen, setting);
+
+                if (!_registeredEvent)
+                {
+                    _config.OnValueChanged(
+                        CCVars.ChatExtraInfo,
+                        newValue => OnChatExtraInfoChanged(newValue, separatedScreen),
+                        true);
+                    _registeredEvent = true;
+                }
+
                 break;
             case OverlayChatGameScreen overlayScreen:
                 chatBox = overlayScreen.ChatBox;
@@ -328,6 +377,11 @@ public sealed partial class ChatUIController : UIController
         }
 
         chatBox.Main = setting;
+    }
+
+    private void OnChatExtraInfoChanged(bool newValue, SeparatedChatGameScreen chatBox)
+    {
+        chatBox.UserActionsPanel.Visible = newValue;
     }
 
     private void SetChatSizing(string sizing, InGameScreen screen, bool setting)
@@ -721,6 +775,10 @@ public sealed partial class ChatUIController : UIController
             box.ChatInput.ChannelSelector.UpdateChannelSelectButton(box.SelectedChannel, null);
         else
             box.ChatInput.ChannelSelector.UpdateChannelSelectButton(prefixChannel, radioChannel);
+
+        // Floof: stop showing typing indicator immediately if we switch to an anonymous channel
+        if ((box.SelectedChannel & ChatSelectChannel.Anonymous) != ChatSelectChannel.None)
+            _typingIndicator?.ClientSubmittedChatText();
     }
 
     public (ChatSelectChannel chatChannel, string text, RadioChannelPrototype? radioChannel) SplitInputContents(string text)
@@ -760,6 +818,7 @@ public sealed partial class ChatUIController : UIController
         _typingIndicator?.ClientSubmittedChatText();
 
         var text = box.ChatInput.Input.Text;
+        
         box.ChatInput.Input.Clear();
         box.ChatInput.Input.ReleaseKeyboardFocus();
         UpdateSelectedChannel(box);
@@ -786,6 +845,11 @@ public sealed partial class ChatUIController : UIController
             text = $";{text}";
         }
 
+        if (_denuUIController!.AutoFormatterEnabled)
+        {
+            text = _denuUIController.FormatMessage(text);
+        }
+        
         _manager.SendMessage(text, prefixChannel == 0 ? channel : prefixChannel);
     }
 
@@ -945,9 +1009,11 @@ public sealed partial class ChatUIController : UIController
         return MapLocalIfGhost(PreferredChannel);
     }
 
-    public void NotifyChatTextChange()
+    public void NotifyChatTextChange(ChatSelectChannel channel)
     {
-        _typingIndicator?.ClientChangedChatText();
+        // Floof: only show typing indicator if we're not typing in an anonymous channel
+        if ((channel & ChatSelectChannel.Anonymous) == ChatSelectChannel.None)
+            _typingIndicator?.ClientChangedChatText();
     }
 
     public void Repopulate()

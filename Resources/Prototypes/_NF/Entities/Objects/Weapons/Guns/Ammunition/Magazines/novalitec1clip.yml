@@ -1,8 +1,16 @@
+# SPDX-FileCopyrightText: 2025 Blitz
+# SPDX-FileCopyrightText: 2025 BlitzTheSquishy
+# SPDX-FileCopyrightText: 2025 Jakumba
+# SPDX-FileCopyrightText: 2025 VMSolidus
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 # Empty mags
 - type: entity
   parent: BaseMagazineRifle
   id: MagazineNovaliteC1Empty
-  name: "clip (.20 rifle any)"
+  name: "en-bloc clip (.20 rifle any)"
   suffix: empty
   components:
   - type: Tag
@@ -35,7 +43,7 @@
 - type: entity
   parent: MagazineNovaliteC1Empty
   id: MagazineNovaliteC1
-  name: "clip (.20 rifle)"
+  name: "en-bloc clip (.20 rifle)"
   suffix: full
   components:
   - type: BallisticAmmoProvider
@@ -50,7 +58,7 @@
 - type: entity
   parent: MagazineNovaliteC1Empty
   id: MagazineNovaliteC1Rubber
-  name: "clip (.20 rifle rubber)"
+  name: "en-bloc clip (.20 rifle rubber)"
   suffix: full
   components:
   - type: BallisticAmmoProvider

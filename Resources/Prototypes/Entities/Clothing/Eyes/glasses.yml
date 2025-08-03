@@ -1,3 +1,49 @@
+# SPDX-FileCopyrightText: 2021 Leon Friedrich
+# SPDX-FileCopyrightText: 2021 Paul Ritter
+# SPDX-FileCopyrightText: 2021 Swept
+# SPDX-FileCopyrightText: 2021 Vera Aguilera Puerto
+# SPDX-FileCopyrightText: 2022 Emisse
+# SPDX-FileCopyrightText: 2022 Kara
+# SPDX-FileCopyrightText: 2022 Rane
+# SPDX-FileCopyrightText: 2022 Veritius
+# SPDX-FileCopyrightText: 2022 metalgearsloth
+# SPDX-FileCopyrightText: 2022 mirrorcult
+# SPDX-FileCopyrightText: 2022 rolfero
+# SPDX-FileCopyrightText: 2023 Adrian16199
+# SPDX-FileCopyrightText: 2023 DerbyX
+# SPDX-FileCopyrightText: 2023 Jackal298
+# SPDX-FileCopyrightText: 2023 Kevin Zheng
+# SPDX-FileCopyrightText: 2023 MACMAN2003
+# SPDX-FileCopyrightText: 2023 MisterMecky
+# SPDX-FileCopyrightText: 2023 Nemanja
+# SPDX-FileCopyrightText: 2023 PrPleGoo
+# SPDX-FileCopyrightText: 2023 Tad "Taddy" Johnson
+# SPDX-FileCopyrightText: 2023 Visne
+# SPDX-FileCopyrightText: 2023 Whisper
+# SPDX-FileCopyrightText: 2023 brainfood1183
+# SPDX-FileCopyrightText: 2023 crazybrain23
+# SPDX-FileCopyrightText: 2023 deltanedas
+# SPDX-FileCopyrightText: 2023 lzk228
+# SPDX-FileCopyrightText: 2023 potato1234_x
+# SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT
+# SPDX-FileCopyrightText: 2024 Danger Revolution!
+# SPDX-FileCopyrightText: 2024 Debug
+# SPDX-FileCopyrightText: 2024 FoxxoTrystan
+# SPDX-FileCopyrightText: 2024 ShatteredSwords
+# SPDX-FileCopyrightText: 2024 SimpleStation14
+# SPDX-FileCopyrightText: 2024 themias
+# SPDX-FileCopyrightText: 2025 EctoplasmIsGood
+# SPDX-FileCopyrightText: 2025 Fansana
+# SPDX-FileCopyrightText: 2025 John Willis
+# SPDX-FileCopyrightText: 2025 Piras314
+# SPDX-FileCopyrightText: 2025 Sir Warock
+# SPDX-FileCopyrightText: 2025 Skubman
+# SPDX-FileCopyrightText: 2025 Spatison
+# SPDX-FileCopyrightText: 2025 Tirochora
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 - type: entity
   parent: ClothingEyesBase
   id: ClothingEyesGlassesGar
@@ -195,6 +241,7 @@
     - HamsterWearable
     - WhitelistChameleon
     - SecDogWearable # DeltaV - let Laika wear sunglasses
+    - CheapSunglasses
   - type: IdentityBlocker
     coverage: EYES
 
@@ -207,6 +254,12 @@
   - type: FlashImmunity
   - type: EyeProtection
     protectionTime: 5
+  - type: Tag
+    tags:
+    - Sunglasses
+    - HamsterWearable
+    - WhitelistChameleon
+    - SecDogWearable # DeltaV - let Laika wear sunglasses
 
 - type: entity
   parent: [ClothingEyesBase, ShowSecurityIcons]
@@ -264,6 +317,7 @@
   - type: Tag
     tags:
     - WhitelistChameleon
+    - CheapSunglasses
 
 - type: entity
   parent: ClothingEyesGlassesSunglasses
@@ -278,6 +332,7 @@
   - type: Tag
     tags:
     - WhitelistChameleon
+    - Sunglasses
 
 - type: entity
   parent: ClothingEyesGlassesSecurity
@@ -306,6 +361,7 @@
   - type: Tag
     tags:
     - WhitelistChameleon
+    - CheapSunglasses
 
 - type: entity
   parent: ClothingEyesGlassesSunglasses
@@ -320,6 +376,7 @@
   - type: Tag
     tags:
     - WhitelistChameleon
+    - Sunglasses
 
 - type: entity
   parent: ClothingEyesGlassesSecurity
@@ -348,6 +405,7 @@
   - type: Tag
     tags:
     - WhitelistChameleon
+    - CheapSunglasses
 
 - type: entity
   parent: ClothingEyesGlassesSunglasses
@@ -362,6 +420,7 @@
   - type: Tag
     tags:
     - WhitelistChameleon
+    - Sunglasses
 
 - type: entity
   parent: ClothingEyesGlassesSecurity

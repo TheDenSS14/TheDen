@@ -1,3 +1,16 @@
+# SPDX-FileCopyrightText: 2023 Fluffiest Floofers
+# SPDX-FileCopyrightText: 2024 Avalon
+# SPDX-FileCopyrightText: 2024 DisposableCrewmember42
+# SPDX-FileCopyrightText: 2024 Mnemotechnican
+# SPDX-FileCopyrightText: 2024 VMSolidus
+# SPDX-FileCopyrightText: 2024 Whatstone
+# SPDX-FileCopyrightText: 2025 Rosycup
+# SPDX-FileCopyrightText: 2025 SixplyDev
+# SPDX-FileCopyrightText: 2025 portfiend
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 # DeltaV Mail
 - type: entity
   categories: [ HideSpawnMenu ]
@@ -794,6 +807,22 @@
       orGroup: Plushie
     - id: PlushieChitinid
       orGroup: Plushie
+    - id: PlushieOvinia
+      orGroup: Plushie
+    - id: PlushieTeddyBear
+      orGroup: Plushie
+    - id: PlushieTeddyBearRecolorableRandom
+      orGroup: Plushie
+    - id: SqueakySmileyGuy
+      orGroup: Plushie
+    - id: SqueakySmileyGuyRandom
+      orGroup: Plushie
+    - id: SqueakySmileyBall
+      orGroup: Plushie
+    - id: PlushieAlienGerm
+      orGroup: Plushie
+    - id: PlushieAlienGermMini
+      orGroup: Plushie
 
 # Random snacks, replaces MailChocolate (lousy animal organs)
 - type: entity
@@ -1577,7 +1606,11 @@
         # Uncommon
       - id: MobMothroach
         orGroup: Critter
-        prob: 0.2
+        prob: 0.15
+        # Rare
+      - id: MobRosyMothroach
+        orGroup: Critter
+        prob: 0.05
       # Small reptiles (weight: 1)
       - id: MobLizard
         orGroup: Critter

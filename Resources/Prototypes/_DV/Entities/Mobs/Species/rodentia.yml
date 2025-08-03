@@ -1,3 +1,54 @@
+# SPDX-FileCopyrightText: 2023 110078045+Nairodian@users.noreply.githu
+# SPDX-FileCopyrightText: 2023 120885811+TadJohnson00@users.noreply.githu
+# SPDX-FileCopyrightText: 2023 135308300+LankLTE@users.noreply.githu
+# SPDX-FileCopyrightText: 2023 144424013+Adrian16199@users.noreply.githu
+# SPDX-FileCopyrightText: 2023 63782763+MilenVolf@users.noreply.githu
+# SPDX-FileCopyrightText: 2023 Adrian16199
+# SPDX-FileCopyrightText: 2023 Debug
+# SPDX-FileCopyrightText: 2023 Kara
+# SPDX-FileCopyrightText: 2023 LankLTE
+# SPDX-FileCopyrightText: 2023 MilenVolf
+# SPDX-FileCopyrightText: 2023 Nairod
+# SPDX-FileCopyrightText: 2023 Tad "Taddy" Johnson
+# SPDX-FileCopyrightText: 2023 lunarautomaton6@gmai
+# SPDX-FileCopyrightText: 2023 sidneymaatman@gmai
+# SPDX-FileCopyrightText: 2024 39416235+Memeji@users.noreply.githu
+# SPDX-FileCopyrightText: 2024 45297731+FoxxoTrystan@users.noreply.githu
+# SPDX-FileCopyrightText: 2024 69920617+Mnemotechnician@users.noreply.githu
+# SPDX-FileCopyrightText: 2024 Angelo Fallaria
+# SPDX-FileCopyrightText: 2024 Fluffiest Floofers
+# SPDX-FileCopyrightText: 2024 FoxxoTrystan
+# SPDX-FileCopyrightText: 2024 Memeji
+# SPDX-FileCopyrightText: 2024 Memeji Dankiri
+# SPDX-FileCopyrightText: 2024 Mnemotechnican
+# SPDX-FileCopyrightText: 2024 VMSolidus
+# SPDX-FileCopyrightText: 2024 ba.fallaria@gmai
+# SPDX-FileCopyrightText: 2024 daytimer253@gmai
+# SPDX-FileCopyrightText: 2024 evilexecutive@gmai
+# SPDX-FileCopyrightText: 2024 flyingkarii@gmai
+# SPDX-FileCopyrightText: 2024 fox
+# SPDX-FileCopyrightText: 2024 greyalphawolf7@gmai
+# SPDX-FileCopyrightText: 2024 thebluewulf@gmai
+# SPDX-FileCopyrightText: 2024 trystan.garnierhein@gmai
+# SPDX-FileCopyrightText: 2025 109661617+portfiend@users.noreply.githu
+# SPDX-FileCopyrightText: 2025 123355664+sleepyyapril@users.noreply.githu
+# SPDX-FileCopyrightText: 2025 178287475+Rosycup@users.noreply.githu
+# SPDX-FileCopyrightText: 2025 34693534+Maezel@users.noreply.githu
+# SPDX-FileCopyrightText: 2025 64847293+KyuPolaris@users.noreply.githu
+# SPDX-FileCopyrightText: 2025 87507256+KekaniCreates@users.noreply.githu
+# SPDX-FileCopyrightText: 2025 Blitz
+# SPDX-FileCopyrightText: 2025 BlitzTheSquishy
+# SPDX-FileCopyrightText: 2025 Forzii
+# SPDX-FileCopyrightText: 2025 KekaniCreates
+# SPDX-FileCopyrightText: 2025 Mae
+# SPDX-FileCopyrightText: 2025 Rosycup
+# SPDX-FileCopyrightText: 2025 Tabitha
+# SPDX-FileCopyrightText: 2025 github@pawsitive.mozmai
+# SPDX-FileCopyrightText: 2025 portfiend
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 - type: entity
   save: false
   name: Urist McRat
@@ -9,7 +60,7 @@
     species: Rodentia
   - type: Thirst
   - type: Hunger
-    baseDecayRate: 0.0221666666 # Floofstation, changed from 0.0467 so it's actually 33% faster. Original number came from DeltaV, which has a much higher base hunger rate
+    decayRateMultiplier: 1.33
   - type: Carriable # Carrying system from nyanotrasen.
   - type: Inventory
     speciesId: rodentia
@@ -34,53 +85,10 @@
         - MobMask
         layer:
         - MobLayer
-  - type: Sprite
-    scale: 0.8, 0.8
-    layers:
-      - map: [ "enum.HumanoidVisualLayers.Nipples" ]
-      - map: [ "enum.HumanoidVisualLayers.Genitals" ]
-      - map: [ "enum.HumanoidVisualLayers.Chest" ]
-      - map: [ "enum.HumanoidVisualLayers.Head" ]
-      - map: [ "enum.HumanoidVisualLayers.Snout" ]
-      - map: [ "enum.HumanoidVisualLayers.Eyes" ]
-      - map: [ "enum.HumanoidVisualLayers.RArm" ]
-      - map: [ "enum.HumanoidVisualLayers.LArm" ]
-      - map: [ "enum.HumanoidVisualLayers.RLeg" ]
-      - map: [ "enum.HumanoidVisualLayers.LLeg" ]
-      - map: [ "enum.HumanoidVisualLayers.Underwear" ]
-      - map: [ "enum.HumanoidVisualLayers.Undershirt" ]
-      - map: [ "jumpsuit" ] # TheDen, moved jumpsuit layer over underwear/undershirt
-      - map: [ "enum.HumanoidVisualLayers.LHand" ]
-      - map: [ "enum.HumanoidVisualLayers.RHand" ]
-      - map: [ "enum.HumanoidVisualLayers.LFoot" ]
-      - map: [ "enum.HumanoidVisualLayers.RFoot" ]
-      - map: [ "enum.HumanoidVisualLayers.Handcuffs" ]
-        color: "#ffffff"
-        sprite: Objects/Misc/handcuffs.rsi
-        state: body-overlay-2
-        visible: false
-      - map: [ "id" ]
-      - map: [ "gloves" ]
-      - map: [ "shoes" ]
-      - map: [ "ears" ]
-      - map: [ "outerClothing" ]
-      - map: [ "eyes" ]
-      - map: [ "belt" ]
-      - map: [ "neck" ]
-      - map: [ "back" ]
-      - map: [ "enum.HumanoidVisualLayers.FacialHair" ]
-      - map: [ "enum.HumanoidVisualLayers.Hair" ]
-      - map: [ "enum.HumanoidVisualLayers.HeadSide" ]
-      - map: [ "enum.HumanoidVisualLayers.HeadTop" ]
-      - map: [ "enum.HumanoidVisualLayers.Tail" ]
-      - map: [ "mask" ]
-      - map: [ "head" ]
-      - map: [ "pocket1" ]
-      - map: [ "pocket2" ]
-      - map: [ "clownedon" ] # Dynamically generated
-        sprite: "_DV/Effects/creampie.rsi"
-        state: "creampie_rodentia"
-        visible: false
+  - type: CreamPied
+    layer:
+      sprite: _DV/Effects/creampie.rsi
+      state: creampie_rodentia
   - type: MeleeWeapon
     hidden: true
     soundHit:
@@ -128,6 +136,12 @@
     drinkDelayMultiplier: 0.5
   - type: Flammable
     fireStackIncreaseMultiplier: 1.25
+  - type: Tag
+    tags:
+    - CanPilot
+    - FootstepSound
+    - DoorBumpOpener
+    - RodentiaEmotes
 
 - type: entity
   save: false

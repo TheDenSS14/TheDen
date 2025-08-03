@@ -1,3 +1,17 @@
+# SPDX-FileCopyrightText: 2023 Colin-Tel
+# SPDX-FileCopyrightText: 2023 Fluffiest Floofers
+# SPDX-FileCopyrightText: 2023 Tad "Taddy" Johnson
+# SPDX-FileCopyrightText: 2024 Aikakakah
+# SPDX-FileCopyrightText: 2024 SimpleStation14
+# SPDX-FileCopyrightText: 2024 dge21
+# SPDX-FileCopyrightText: 2024 leo
+# SPDX-FileCopyrightText: 2025 Blitz
+# SPDX-FileCopyrightText: 2025 Rosycup
+# SPDX-FileCopyrightText: 2025 SleepyScarecrow
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 - type: reagent
   id: HealthViolation
   name: reagent-name-healthviolation
@@ -229,3 +243,24 @@
   metamorphicFillBaseName: fill-
   metamorphicChangeColor: false
   fizziness: 0.4
+
+- type: reagent
+  id: LemonLimeBitters
+  name: reagent-name-lemon-lime-bitters
+  parent: BaseDrink
+  desc: reagent-desc-lemon-lime-bitters
+  physicalDesc: reagent-physical-desc-fizzy
+  flavor: lemonlimebitters
+  color: "#ffa37e"
+  metamorphicSprite:
+    sprite: _DV/Objects/Consumable/Drinks/lemonlimebitters.rsi
+    state: icon_empty
+  metamorphicMaxFillLevels: 4
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: false
+  fizziness: 0.2
+  metabolisms:
+    Drink:
+      effects:
+      - !type:SatiateThirst
+        factor: 2

@@ -1,3 +1,9 @@
+# SPDX-FileCopyrightText: 2025 BloodfiendishOperator <141253729+Diggy0@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Jakumba <jkmcbennett@hotmail.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 marking-MothBodyClaw = Claw Scars
 marking-MothBodyClaw-moth_body_claw = Claw Scars
 marking-MothBurnLeft = Burn Scar (Left)
@@ -55,7 +61,7 @@ marking-HandProstheticRightMoth-hand_r_prosthetic_moth = Prosthetic Hand (Right)
 marking-HandTwistingRightMoth = Twisted Scar (Right Hand)
 marking-HandTwistingRightMoth-hand_r_twisting_moth = Twisted Scar (Right Hand)
 marking-BadmoltMoth = Bad Molt
-marking-BadmoltMoth-hand_badmolt_moth = Bad Molt
+marking-BadmoltMoth-head_badmolt_moth = Bad Molt
 marking-HeadChimeraMoth = Chimera
 marking-HeadChimeraMoth-head_chimera_moth = Chimera
 marking-EyebagsMoth = Eyebags

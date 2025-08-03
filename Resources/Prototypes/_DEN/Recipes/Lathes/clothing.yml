@@ -1,3 +1,10 @@
+# SPDX-FileCopyrightText: 2025 Blitz
+# SPDX-FileCopyrightText: 2025 Tanix
+# SPDX-FileCopyrightText: 2025 portfiend
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 # Towels
 - type: latheRecipe
   id: TowelColorWhite
@@ -217,3 +224,10 @@
   completetime: 3
   materials:
     Cloth: 150
+
+- type: latheRecipe
+  id: ClothingOuterVestTank
+  result: ClothingOuterVestTank
+  completetime: 5
+  materials:
+    Cloth: 100

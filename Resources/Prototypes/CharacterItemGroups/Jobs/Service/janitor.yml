@@ -1,3 +1,11 @@
+# SPDX-FileCopyrightText: 2024 VMSolidus <evilexecutive@gmail.com>
+# SPDX-FileCopyrightText: 2025 Blitz <73762869+BlitzTheSquishy@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Lonofera <108367450+LonoferaRS@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 MajorMoth <61519600+MajorMoth@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 # Janitor
 #- type: characterItemGroup
 #  id: LoadoutJanitorBackpacks
@@ -23,12 +31,16 @@
 #  id: LoadoutJanitorEyes
 #  maxItems: 1
 #  items:
-#
-#- type: characterItemGroup
-#  id: LoadoutJanitorGloves
-#  maxItems: 1
-#  items:
-#
+
+- type: characterItemGroup
+  id: LoadoutJanitorGloves
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutClothingHandsJanitorWarmers
+    - type: loadout
+      id: LoadoutClothingHandsJanitorRubber
+
 #- type: characterItemGroup
 #  id: LoadoutJanitorHead
 #  maxItems: 1
@@ -38,24 +50,26 @@
 #  id: LoadoutJanitorId
 #  maxItems: 1
 #  items:
-#
-#- type: characterItemGroup
-#  id: LoadoutJanitorNeck
-#  maxItems: 1
-#  items:
-#
+
+- type: characterItemGroup
+  id: LoadoutJanitorNeck
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutClothingNeckCloakJanitor
+
 #- type: characterItemGroup
 #  id: LoadoutJanitorMask
 #  maxItems: 1
 #  items:
-#
+
 - type: characterItemGroup
   id: LoadoutJanitorOuter
   maxItems: 1
   items:
     - type: loadout
       id: LoadoutServiceWinterCoatJanitor
-#
+
 - type: characterItemGroup
   id: LoadoutJanitorShoes
   maxItems: 1
@@ -64,6 +78,8 @@
       id: LoadoutClothingShoesGaloshes
     - type: loadout
       id: LoadoutClothingShoesPurpleGaloshes
+    - type: loadout
+      id: LoadoutClothingUnderSocksJanitor
 
 # The Den - Maid outfits for janitors too
 - type: characterItemGroup
@@ -86,3 +102,5 @@
       id: LoadoutServiceUniformJumpskirtJanimaid
     - type: loadout
       id: LoadoutServiceUniformJumpskirtJanimaidmini
+    - type: loadout
+      id: LoadoutClothingUniformJanitorThong

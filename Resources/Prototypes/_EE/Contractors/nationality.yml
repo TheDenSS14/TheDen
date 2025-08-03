@@ -1,3 +1,9 @@
+# SPDX-FileCopyrightText: 2025 Jakumba
+# SPDX-FileCopyrightText: 2025 Timfa
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 - type: nationality
   id: Bieselite
   nameKey: nationality_name_bieselite
@@ -12,10 +18,6 @@
   descriptionKey: nationality_description_solarian
   hostile:
   - Bieselite
-  requirements:
-    - !type:CharacterSpeciesRequirement
-      species:
-        - Human
   functions:
     - !type:TraitModifyLanguages
       languagesSpoken:
@@ -28,10 +30,6 @@
   id: Valyrian
   nameKey: nationality_name_valyrian
   descriptionKey: nationality_description_valyrian
-  requirements:
-    - !type:CharacterSpeciesRequirement
-      species:
-        - Harpy
   functions:
     - !type:TraitModifyLanguages
       languagesSpoken:

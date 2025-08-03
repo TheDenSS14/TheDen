@@ -1,3 +1,21 @@
+// SPDX-FileCopyrightText: 2022 CrudeWax
+// SPDX-FileCopyrightText: 2022 Leon Friedrich
+// SPDX-FileCopyrightText: 2022 metalgearsloth
+// SPDX-FileCopyrightText: 2022 mirrorcult
+// SPDX-FileCopyrightText: 2023 DrSmugleaf
+// SPDX-FileCopyrightText: 2023 PilgrimViis
+// SPDX-FileCopyrightText: 2023 Visne
+// SPDX-FileCopyrightText: 2023 keronshb
+// SPDX-FileCopyrightText: 2024 deltanedas
+// SPDX-FileCopyrightText: 2025 GoobBot
+// SPDX-FileCopyrightText: 2025 Jakumba
+// SPDX-FileCopyrightText: 2025 Rouden
+// SPDX-FileCopyrightText: 2025 Roudenn
+// SPDX-FileCopyrightText: 2025 sleepyyapril
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
+using Content.Shared.Damage;
 using Content.Shared.NPC.Prototypes;
 using Robust.Shared.Audio;
 using Robust.Shared.Prototypes;
@@ -65,5 +83,42 @@ namespace Content.Server.Dragon
         /// </summary>
         [DataField]
         public ProtoId<NpcFactionPrototype> Faction = "Dragon";
+
+        #region Goobstation
+
+        [DataField]
+        public EntityUid? SpawnCarpsActionEntity;
+
+        [DataField]
+        public EntProtoId SpawnCarpsAction = "ActionRiseFish";
+
+        [DataField]
+        public EntProtoId CarpProtoId = "MobCarpDragon";
+
+        [DataField]
+        public int CarpAmount = 3;
+
+        [DataField]
+        public EntityUid? RoarActionEntity;
+
+        [DataField]
+        public EntProtoId RoarAction = "ActionDragonRoar";
+
+        [DataField]
+        public float RoarRange = 3f;
+
+        [DataField]
+        public float RoarStunTime = 4f;
+
+        [DataField]
+        public float CarpRiftHealingRange = 3f;
+
+        /// <summary>
+        /// Amount of healing the dragon receives when standing near a carp rift per second.
+        /// </summary>
+        [DataField]
+        public DamageSpecifier CarpRiftHealing;
+
+        #endregion
     }
 }

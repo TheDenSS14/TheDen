@@ -1,3 +1,10 @@
+# SPDX-FileCopyrightText: 2025 BloodfiendishOperator
+# SPDX-FileCopyrightText: 2025 Raikyr0
+# SPDX-FileCopyrightText: 2025 VMSolidus
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 - type: characterItemGroup
   id: TraitsMind
   maxItems: 2
@@ -38,6 +45,8 @@
     - type: trait
       id: BionicArm
     - type: trait
+      id: BionicArmNoVisuals
+    - type: trait
       id: PlateletFactories
     - type: trait
       id: DermalArmor
@@ -47,6 +56,8 @@
       id: NaniteAutoRepairBots
     - type: trait
       id: BionicLeg
+    - type: trait
+      id: BionicLegNoVisuals
     - type: trait
       id: FlareShieldingModule
     - type: trait

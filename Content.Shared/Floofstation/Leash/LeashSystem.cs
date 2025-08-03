@@ -1,3 +1,13 @@
+// SPDX-FileCopyrightText: 2024 Fansana <116083121+Fansana@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 fox <daytimer253@gmail.com>
+// SPDX-FileCopyrightText: 2025 Falcon <falcon@zigtag.dev>
+// SPDX-FileCopyrightText: 2025 FoxxoTrystan <45297731+FoxxoTrystan@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Rosycup <178287475+Rosycup@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 sleepyyapril <flyingkarii@gmail.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 using System.Linq;
 using Content.Shared.Clothing.Components;
 using Content.Shared.DoAfter;
@@ -38,7 +48,7 @@ public sealed class LeashSystem : EntitySystem
     [Dependency] private readonly SharedTransformSystem _xform = default!;
 
     public static VerbCategory LeashLengthConfigurationCategory =
-        new("verb-categories-leash-config", "/Textures/Floof/Interface/VerbIcons/resize.svg.192dpi.png");
+        new("verb-categories-leash-config", "/Textures/_Floof/Interface/VerbIcons/resize.svg.192dpi.png");
 
     #region Lifecycle
 
@@ -316,7 +326,7 @@ public sealed class LeashSystem : EntitySystem
 
         if (TryComp<ClothingComponent>(ent, out var clothing))
         {
-            if (clothing.InSlot == null || !_container.TryGetContainingContainer(ent, out var container))
+            if (clothing.InSlot == null || !_container.TryGetContainingContainer(ent.Owner, out var container))
                 return false;
 
             leashTarget = container.Owner;

@@ -1,3 +1,12 @@
+# SPDX-FileCopyrightText: 2025 Blitz
+# SPDX-FileCopyrightText: 2025 BlitzTheSquishy
+# SPDX-FileCopyrightText: 2025 Lonofera
+# SPDX-FileCopyrightText: 2025 MajorMoth
+# SPDX-FileCopyrightText: 2025 VMSolidus
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 # Golemancer
 # Backpacks
 - type: loadout
@@ -42,6 +51,19 @@
       jobs:
         - Roboticist
 
+- type: loadout
+  id: LoadoutBackpackMessengerRobotics
+  category: JobsEpistemicsGolemancer
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingBackpackMessengerRobotics
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutGolemancerBackpacks
+    - !type:CharacterJobRequirement
+      jobs:
+        - Roboticist
 
 # Belt
 
@@ -105,15 +127,30 @@
   id: LoadoutScienceUniformWinterCoatRoboticist
   category: JobsEpistemicsGolemancer
   cost: 0
+  exclusive: true
   requirements:
-  - !type:CharacterItemGroupRequirement
-    group: LoadoutGolemancerOuter # The Den - Wrong category
-  - !type:CharacterJobRequirement
-    jobs:
-    - Roboticist
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutGolemancerOuter # The Den - Wrong category
+    - !type:CharacterJobRequirement
+      jobs:
+        - Roboticist
   items:
-  - ClothingOuterWinterRobo
+    - ClothingOuterWinterRobo
+
 # Shoes
+- type: loadout
+  id: LoadoutScienceShoesBootsWinterRoboticist
+  category: JobsEpistemicsGolemancer
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutGolemancerShoes
+    - !type:CharacterJobRequirement
+      jobs:
+        - Roboticist
+  items:
+    - ClothingShoesBootsWinterRobo
 
 # Uniforms
 - type: loadout

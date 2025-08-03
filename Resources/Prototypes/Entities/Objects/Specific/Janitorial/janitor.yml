@@ -1,3 +1,72 @@
+# SPDX-FileCopyrightText: 2021 Swept
+# SPDX-FileCopyrightText: 2021 Ygg01
+# SPDX-FileCopyrightText: 2022 Alex Evgrashin
+# SPDX-FileCopyrightText: 2022 Easypoller
+# SPDX-FileCopyrightText: 2022 Fishfish458
+# SPDX-FileCopyrightText: 2022 Jacob Tong
+# SPDX-FileCopyrightText: 2022 Jessica M
+# SPDX-FileCopyrightText: 2022 Kara D
+# SPDX-FileCopyrightText: 2022 Mervill
+# SPDX-FileCopyrightText: 2022 Profane McBane
+# SPDX-FileCopyrightText: 2022 Rane
+# SPDX-FileCopyrightText: 2022 Willhelm53
+# SPDX-FileCopyrightText: 2022 fishfish458
+# SPDX-FileCopyrightText: 2022 keronshb
+# SPDX-FileCopyrightText: 2022 mirrorcult
+# SPDX-FileCopyrightText: 2022 rolfero
+# SPDX-FileCopyrightText: 2023 Alex
+# SPDX-FileCopyrightText: 2023 Arimah
+# SPDX-FileCopyrightText: 2023 CrigCrag
+# SPDX-FileCopyrightText: 2023 EnDecc
+# SPDX-FileCopyrightText: 2023 Jeff
+# SPDX-FileCopyrightText: 2023 Lei Yunxing
+# SPDX-FileCopyrightText: 2023 Nemanja
+# SPDX-FileCopyrightText: 2023 Panzer
+# SPDX-FileCopyrightText: 2023 Psychpsyo
+# SPDX-FileCopyrightText: 2023 ShadowCommander
+# SPDX-FileCopyrightText: 2023 Sir Winters
+# SPDX-FileCopyrightText: 2023 TNE
+# SPDX-FileCopyrightText: 2023 Topy
+# SPDX-FileCopyrightText: 2023 Vasilis
+# SPDX-FileCopyrightText: 2023 Velcroboy
+# SPDX-FileCopyrightText: 2023 Vordenburg
+# SPDX-FileCopyrightText: 2023 deltanedas
+# SPDX-FileCopyrightText: 2023 lapatison
+# SPDX-FileCopyrightText: 2023 lzk
+# SPDX-FileCopyrightText: 2023 metalgearsloth
+# SPDX-FileCopyrightText: 2023 themias
+# SPDX-FileCopyrightText: 2024 AJCM-git
+# SPDX-FileCopyrightText: 2024 Aexxie
+# SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT
+# SPDX-FileCopyrightText: 2024 Debug
+# SPDX-FileCopyrightText: 2024 Flareguy
+# SPDX-FileCopyrightText: 2024 Ghagliiarghii
+# SPDX-FileCopyrightText: 2024 Kara
+# SPDX-FileCopyrightText: 2024 Magnus Larsen
+# SPDX-FileCopyrightText: 2024 Mr. 27
+# SPDX-FileCopyrightText: 2024 OldDanceJacket
+# SPDX-FileCopyrightText: 2024 SimpleStation14
+# SPDX-FileCopyrightText: 2024 Skubman
+# SPDX-FileCopyrightText: 2024 Vero
+# SPDX-FileCopyrightText: 2024 brainfood1183
+# SPDX-FileCopyrightText: 2024 dge21
+# SPDX-FileCopyrightText: 2024 slarticodefast
+# SPDX-FileCopyrightText: 2024 zzylex
+# SPDX-FileCopyrightText: 2025 Blitz
+# SPDX-FileCopyrightText: 2025 KekaniCreates
+# SPDX-FileCopyrightText: 2025 Rosycup
+# SPDX-FileCopyrightText: 2025 Savante-Sam
+# SPDX-FileCopyrightText: 2025 Tiniest Shark
+# SPDX-FileCopyrightText: 2025 VMSolidus
+# SPDX-FileCopyrightText: 2025 Your Name
+# SPDX-FileCopyrightText: 2025 fishbait
+# SPDX-FileCopyrightText: 2025 hoshizora
+# SPDX-FileCopyrightText: 2025 portfiend
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+# SPDX-FileCopyrightText: 2025 wheelwrightt
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 - type: entity
   parent: BaseItem
   name: mop
@@ -27,6 +96,9 @@
         Blunt: 6
     staminaCost: 8
   - type: Spillable
+    solution: absorbed
+    spillWhenThrown: false
+  - type: DrainableSolution
     solution: absorbed
   - type: Wieldable
   - type: IncreaseDamageOnWield
@@ -85,6 +157,9 @@
           Blunt: 7
       staminaCost: 8
     - type: Spillable
+      solution: absorbed
+      spillWhenThrown: false
+    - type: DrainableSolution
       solution: absorbed
     - type: Wieldable
     - type: IncreaseDamageOnWield
@@ -259,6 +334,39 @@
         Blunt: 3
   - type: Plunger
 
+- type: entity
+  name: golden plunger
+  id: GoldenPlunger
+  parent: Plunger
+  description: A plunger with a plastic suction cup coated in a thin layer of gold given as a token of appreciation for years of service. Still used to unclog drains.
+  components:
+  - type: Tag
+    tags:
+    - GoldenPlunger
+  - type: Sprite
+    sprite: Objects/Specific/Janitorial/golden_plunger.rsi
+    state: plunger
+  - type: Item
+    sprite: Objects/Specific/Janitorial/golden_plunger.rsi
+    heldPrefix: plunger
+  - type: Clothing
+    sprite: Objects/Specific/Janitorial/golden_plunger.rsi
+    slots:
+      - HEAD
+    clothingVisuals:
+      head:
+        - state: equipped-HELMET
+          offset: "0, 0.15625"
+  - type: PointLight
+    radius: 1.5
+    energy: 0.75
+    color: "#ffc20e"
+  - type: PhysicalComposition
+    materialComposition:
+      Plastic: 50
+      Gold: 10
+      Wood: 25
+
 - type: weightedRandomEntity
   id: PlungerLoot
   weights:
@@ -271,17 +379,20 @@
   parent: BaseItem
   name: damp rag
   id: RagItem
-  description: For cleaning up messes, you suppose. Never seems to dry out fully. 
+  description: For cleaning up messes, you suppose. Never seems to dry out fully.
   components:
     - type: Sprite
       sprite: Objects/Specific/Janitorial/rag.rsi
       state: rag
     - type: Spillable
       solution: absorbed
+      spillWhenThrown: false
+    - type: DrainableSolution
+      solution: absorbed
     - type: MeleeWeapon
-      soundHit: 
-        path: "/Audio/Floof/Lewd/whip.ogg" 
-      animation: WeaponArcThrust 
+      soundHit:
+        path: "/Audio/_Floof/Lewd/whip.ogg"
+      animation: WeaponArcThrust
       wideAnimationRotation: -90
       maxTargets: 1
       damage:
@@ -306,26 +417,27 @@
     - type: AddAccentClothing
       accent: ReplacementAccent
       replacement: mumble
+      toggleable: false # DEN - No alt verb for toggling accent
     - type: Butcherable
       butcheringType: Knife
       spawned:
       - id: MaterialCloth1
-        amount: 1  
+        amount: 1
     - type: Item
       size: Small
       sprite: Objects/Specific/Janitorial/rag.rsi
     - type: Absorbent
-      pickupAmount: 30 
+      pickupAmount: 30
     - type: Construction
       graph: Rag
       node: rag
     - type: SolutionContainerManager
       solutions:
         absorbed:
-          maxVol: 30 
+          maxVol: 30
     - type: PaintRemover
     - type: UseDelay
-      delay: 1.25 
+      delay: 1.25
     - type: Tag
       tags:
         - Mop

@@ -1,3 +1,27 @@
+# SPDX-FileCopyrightText: 2023 Moony
+# SPDX-FileCopyrightText: 2023 Nemanja
+# SPDX-FileCopyrightText: 2023 deltanedas
+# SPDX-FileCopyrightText: 2024 Carolyn3114
+# SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT
+# SPDX-FileCopyrightText: 2024 Debug
+# SPDX-FileCopyrightText: 2024 Ed
+# SPDX-FileCopyrightText: 2024 Emisse
+# SPDX-FileCopyrightText: 2024 Fansana
+# SPDX-FileCopyrightText: 2024 Flareguy
+# SPDX-FileCopyrightText: 2024 FoxxoTrystan
+# SPDX-FileCopyrightText: 2024 Julian Giebel
+# SPDX-FileCopyrightText: 2024 Ubaser
+# SPDX-FileCopyrightText: 2024 Velcroboy
+# SPDX-FileCopyrightText: 2024 metalgearsloth
+# SPDX-FileCopyrightText: 2025 Ichaie
+# SPDX-FileCopyrightText: 2025 Rane
+# SPDX-FileCopyrightText: 2025 Rosycup
+# SPDX-FileCopyrightText: 2025 VMSolidus
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+# SPDX-FileCopyrightText: 2025 therealDLondon
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 - type: entity
   id: BaseStation
   abstract: true
@@ -61,7 +85,7 @@
           - /Maps/Shuttles/trading_outpost.yml
         mining:
           paths:
-          - /Maps/Shuttles/pathfinder.yml
+          - /Maps/Shuttles/TheDen/python.yml
         # Spawn last
         ruins:
           hide: true
@@ -103,7 +127,7 @@
           addComponents:
           - type: ProtectedGrid
           paths:
-          - /Maps/Shuttles/pathfinder.yml
+          - /Maps/Shuttles/TheDen/python.yml
         ruins:
           hide: true
           nameGrid: true
@@ -130,7 +154,7 @@
           - /Maps/Shuttles/cargo_core.yml
         mining:
           paths:
-          - /Maps/Shuttles/pathfinder.yml
+          - /Maps/Shuttles/TheDen/python.yml
         ruins:
           hide: true
           nameGrid: true

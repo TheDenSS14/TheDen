@@ -1,3 +1,18 @@
+# SPDX-FileCopyrightText: 2023 Henry
+# SPDX-FileCopyrightText: 2023 Kara
+# SPDX-FileCopyrightText: 2023 LankLTE
+# SPDX-FileCopyrightText: 2023 PixelTK
+# SPDX-FileCopyrightText: 2023 Whisper
+# SPDX-FileCopyrightText: 2023 brainfood1183
+# SPDX-FileCopyrightText: 2023 lzk
+# SPDX-FileCopyrightText: 2024 Tayrtahn
+# SPDX-FileCopyrightText: 2024 degradka
+# SPDX-FileCopyrightText: 2024 gluesniffler
+# SPDX-FileCopyrightText: 2025 Blitz
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 - type: entity
   id: BaseArachnidOrgan
   parent: BaseItem
@@ -100,7 +115,7 @@
     state: heart-on
   - type: Metabolizer
     updateInterval: 1.5
-    maxReagents: 3
+    maxReagents: 2
     metabolizerTypes: [Arachnid]
     groups:
     - id: Medicine

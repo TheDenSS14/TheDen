@@ -1,3 +1,9 @@
+# SPDX-FileCopyrightText: 2025 BloodfiendishOperator <141253729+Diggy0@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Jakumba <jkmcbennett@hotmail.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 # this file is subject to getting its shit moved to other files at a later date#
 
 # arachnids
@@ -67,7 +73,7 @@ marking-DwarfMarkKangarooRHand-dwarfmarkkangaroo = Mark of the Kangaroo (Right)
 marking-DwarfMarkCobra = Mark of the Cobra
 marking-DwarfMarkCobra-dwarfmarkcobra = Mark of the Cobra
 marking-DwarfMarkSpider = Mark of the Spider
-marking-DwarfMarkSpider-dwafmarkspider = Mark of the Spider
+marking-DwarfMarkSpider-dwarfmarkspider = Mark of the Spider
 
 # humans
 marking-VitiligoHeadL = Vitiligo (Left Eye)

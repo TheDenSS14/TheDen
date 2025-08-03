@@ -1,0 +1,27 @@
+# SPDX-FileCopyrightText: 2025 portfiend
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: characterItemGroup
+  id: TraitsLegAmputee
+  maxItems: 1
+  items:
+    - type: trait
+      id: AmputeeLeftLeg
+    - type: trait
+      id: AmputeeRightLeg
+    - type: trait
+      id: WheelchairAmputeeLeftLeg
+    - type: trait
+      id: WheelchairAmputeeRightLeg
+    - type: trait
+      id: AmputeeBothLegs
+
+- type: characterItemGroup
+  id: TraitsMuted
+  maxItems: 1
+  items:
+    - type: trait
+      id: Muted
+    - type: trait
+      id: MutedNoSign

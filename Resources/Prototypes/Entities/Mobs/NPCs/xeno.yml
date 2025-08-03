@@ -1,3 +1,62 @@
+# SPDX-FileCopyrightText: 2020 AJCM-git
+# SPDX-FileCopyrightText: 2020 Metal Gear Sloth
+# SPDX-FileCopyrightText: 2020 Paul Ritter
+# SPDX-FileCopyrightText: 2020 Víctor Aguilera Puerto
+# SPDX-FileCopyrightText: 2021 FoLoKe
+# SPDX-FileCopyrightText: 2021 Pieter-Jan Briers
+# SPDX-FileCopyrightText: 2021 Swept
+# SPDX-FileCopyrightText: 2022 Alex Evgrashin
+# SPDX-FileCopyrightText: 2022 Carou02
+# SPDX-FileCopyrightText: 2022 CrudeWax
+# SPDX-FileCopyrightText: 2022 EmoGarbage404
+# SPDX-FileCopyrightText: 2022 Flipp Syder
+# SPDX-FileCopyrightText: 2022 Jacob Tong
+# SPDX-FileCopyrightText: 2022 Júlio César Ueti
+# SPDX-FileCopyrightText: 2022 Kara
+# SPDX-FileCopyrightText: 2022 Pancake
+# SPDX-FileCopyrightText: 2022 Peptide90
+# SPDX-FileCopyrightText: 2022 Rane
+# SPDX-FileCopyrightText: 2022 T-Stalker
+# SPDX-FileCopyrightText: 2022 Veritius
+# SPDX-FileCopyrightText: 2022 keronshb
+# SPDX-FileCopyrightText: 2022 mirrorcult
+# SPDX-FileCopyrightText: 2022 rolfero
+# SPDX-FileCopyrightText: 2023 Debug
+# SPDX-FileCopyrightText: 2023 DrSmugleaf
+# SPDX-FileCopyrightText: 2023 Fluffiest Floofers
+# SPDX-FileCopyrightText: 2023 I.K
+# SPDX-FileCopyrightText: 2023 Jezithyr
+# SPDX-FileCopyrightText: 2023 Leon Friedrich
+# SPDX-FileCopyrightText: 2023 Nairod
+# SPDX-FileCopyrightText: 2023 Nim
+# SPDX-FileCopyrightText: 2023 PHCodes
+# SPDX-FileCopyrightText: 2023 Velcroboy
+# SPDX-FileCopyrightText: 2023 Vordenburg
+# SPDX-FileCopyrightText: 2023 lzk
+# SPDX-FileCopyrightText: 2023 lzk228
+# SPDX-FileCopyrightText: 2023 metalgearsloth
+# SPDX-FileCopyrightText: 2023 nikthechampiongr
+# SPDX-FileCopyrightText: 2023 notquitehadouken
+# SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT
+# SPDX-FileCopyrightText: 2024 FoxxoTrystan
+# SPDX-FileCopyrightText: 2024 Mnemotechnican
+# SPDX-FileCopyrightText: 2024 Nemanja
+# SPDX-FileCopyrightText: 2024 Verm
+# SPDX-FileCopyrightText: 2024 Whisper
+# SPDX-FileCopyrightText: 2024 deltanedas
+# SPDX-FileCopyrightText: 2024 fenndragon
+# SPDX-FileCopyrightText: 2024 fox
+# SPDX-FileCopyrightText: 2025 Avalon
+# SPDX-FileCopyrightText: 2025 Eris
+# SPDX-FileCopyrightText: 2025 Rosycup
+# SPDX-FileCopyrightText: 2025 Sir Warock
+# SPDX-FileCopyrightText: 2025 Spatison
+# SPDX-FileCopyrightText: 2025 VMSolidus
+# SPDX-FileCopyrightText: 2025 Vanessa
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 # Hacky for the stress test so don't even consider adding to this
 - type: entity
   name: Burrower
@@ -21,15 +80,10 @@
         true
       NavSmash: !type:Bool
         true
-  - type: Tool
-    speedModifier: 1.5
-    qualities:
-      - Prying
   - type: Prying
-    pryPowered: !type:Bool
-        true
-    force: !type:Bool
-      true
+    pryPowered: true
+    force: true
+    speedModifier: 3 # DeltaV - Was 1.5
     useSound:
       path: /Audio/Items/crowbar.ogg
   - type: Reactive
@@ -69,11 +123,11 @@
   - type: MobThresholds
     thresholds:
       0: Alive
-      50: Critical
-      100: Dead
+      150: Dead # DeltaV - Was 50
   - type: SlowOnDamage
     speedModifierThresholds:
-      25: 0.5
+      75: 0.8
+      125: 0.5
   - type: Stamina
     critThreshold: 200
   - type: Bloodstream
@@ -86,8 +140,11 @@
      collection: AlienClaw
     animation: WeaponArcBite
     damage:
-      groups:
-        Brute: 6
+# Begin Delta V Changes
+      types:
+        Slash: 12
+        Structural: 35
+# End DeltaV Changes
   - type: DamageStateVisuals
     rotate: true
     states:
@@ -167,13 +224,13 @@
   - type: MobThresholds
     thresholds:
       0: Alive
-      100: Critical
-      150: Dead
+      250: Dead  # DeltaV - Was 100
   - type: Stamina
     critThreshold: 300
   - type: SlowOnDamage
     speedModifierThresholds:
-      50: 0.7
+      125: 0.8
+      200: 0.5
   - type: Fixtures
     fixtures:
       fix1:
@@ -185,6 +242,10 @@
         - MobMask
         layer:
         - MobLayer
+  - type: MeleeWeapon # DeltaV - Make Xenos Scary
+    damage:
+      types:
+        Slash: 20
 
 - type: entity
   name: Drone
@@ -201,15 +262,17 @@
   - type: MobThresholds
     thresholds:
       0: Alive
-      80: Critical
-      130: Dead
+      160: Dead # DeltaV - Was 80
   - type: SlowOnDamage
     speedModifierThresholds:
-      40: 0.7
+      80: 0.8
+      120: 0.5
   - type: MeleeWeapon
     damage:
-      groups:
-        Brute: 6
+# Begin DeltaV Changes
+      types:
+        Slash: 10
+# End DeltaV Changes
   - type: MovementSpeedModifier
     baseSprintSpeed: 4
   - type: Fixtures
@@ -239,16 +302,20 @@
   - type: MobThresholds
     thresholds:
       0: Alive
-      300: Critical
-      350: Dead
+      600: Dead # DeltaV - Was 300
   - type: SlowOnDamage
     speedModifierThresholds:
-      150: 0.7
+      300: 0.9
+      400: 0.8
+      500: 0.7
   - type: MovementSpeedModifier
   - type: MeleeWeapon
     damage:
-     groups:
-       Brute: 12
+# Begin DeltaV Changes
+     types:
+       Slash: 35
+       Structural: 60
+# End DeltaV Changes
   - type: Fixtures
     fixtures:
       fix1:
@@ -286,17 +353,21 @@
   - type: MobThresholds
     thresholds:
       0: Alive
-      100: Critical
-      150: Dead
+      200: Dead # DeltaV - Was 100
   - type: MovementSpeedModifier
     baseSprintSpeed: 4
   - type: MeleeWeapon
+    attackRate: 2 # DeltaV - One of the deadliest if you get too close
     damage:
-     groups:
-       Brute: 10
+# Begin DeltaV Changes
+     types:
+       Slash: 20
+       Structural: 40
+# End DeltaV Changes
   - type: SlowOnDamage
     speedModifierThresholds:
-      50: 0.7
+      100: 0.8
+      150: 0.5
   - type: Fixtures
     fixtures:
       fix1:
@@ -324,9 +395,12 @@
   - type: MovementSpeedModifier
     baseSprintSpeed: 6.0
   - type: MeleeWeapon
+# Begin DeltaV Changes
+    attackRate: 2
     damage:
-     groups:
-       Brute: 10
+     types:
+       Slash: 10
+# End DeltaV Changes
   - type: Fixtures
     fixtures:
       fix1:
@@ -338,6 +412,10 @@
         - MobMask
         layer:
         - MobLayer
+  - type: MobThresholds # DeltaV - Make Xenos Scary
+    thresholds:
+      0: Alive
+      125: Dead
 
 - type: entity
   name: Rouny
@@ -370,10 +448,11 @@
   - type: MobThresholds
     thresholds:
       0: Alive
-      50: Dead
+      100: Dead # DeltaV - Was 50
   - type: SlowOnDamage
     speedModifierThresholds:
-      25: 0.7
+      50: 0.8
+      75: 0.5
   - type: HTN
     rootTask:
       task: SimpleRangedHostileCompound

@@ -1,0 +1,403 @@
+# SPDX-FileCopyrightText: 2024 fox
+# SPDX-FileCopyrightText: 2025 Blitz
+# SPDX-FileCopyrightText: 2025 BlitzTheSquishy
+# SPDX-FileCopyrightText: 2025 Rosycup
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
+#General Service
+- type: loadout
+  id: LoadoutClothingHandsServiceWarmers
+  category: JobsServiceAUncategorized
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingHandsServiceWarmers
+  requirements:
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Civilian
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Passenger
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutServiceGloves
+
+- type: loadout
+  id: LoadoutClothingUnderSocksService
+  category: JobsServiceAUncategorized
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingUnderSocksService
+  requirements:
+    #- !type:CharacterSpeciesRequirement - TheDen
+    #  inverted: true
+    #  species:
+    #  - Diona
+    #  - Harpy
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Civilian
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Passenger
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutServiceShoes
+
+- type: loadout
+  id: LoadoutClothingUniformServiceThong
+  category: JobsServiceAUncategorized
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingUniformServiceThong
+  requirements:
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Civilian
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Passenger
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutServiceUniforms
+
+- type: loadout
+  id: LoadoutClothingUniformServiceUni
+  category: JobsServiceAUncategorized
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingUniformServiceUni
+  requirements:
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Civilian
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Passenger
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutServiceUniforms
+
+#Bartender
+- type: loadout
+  id: LoadoutClothingHandsBartenderWarmers
+  category: JobsServiceBartender
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingHandsBartenderWarmers
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - Bartender
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBartenderGloves
+
+- type: loadout
+  id: LoadoutClothingUnderSocksBartender
+  category: JobsServiceBartender
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingUnderSocksBartender
+  requirements:
+    #- !type:CharacterSpeciesRequirement - TheDen
+    #  inverted: true
+    #  species:
+    #  - Diona
+    #  - Harpy
+    - !type:CharacterJobRequirement
+      jobs:
+        - Bartender
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBartenderShoes
+
+- type: loadout
+  id: LoadoutClothingUniformBartenderThong
+  category: JobsServiceBartender
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingUniformBartenderThong
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - Bartender
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBartenderUniforms
+
+- type: loadout
+  id: LoadoutServiceBartenderBunnyEars
+  category: JobsServiceBartender
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - Bartender
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBartenderHead
+  items:
+    - ClothingHeadHatBunny
+
+- type: loadout
+  id: LoadoutServiceBartenderBunnySuit
+  category: JobsServiceBartender
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - Bartender
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBartenderUniforms
+  items:
+    - ClothingCostumeBunnySuit
+
+#Chef
+- type: loadout
+  id: LoadoutClothingHandsChefWarmers
+  category: JobsServiceChef
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingHandsChefWarmers
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - Chef
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutChefGloves
+
+- type: loadout
+  id: LoadoutClothingUnderSocksChef
+  category: JobsServiceChef
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingUnderSocksChef
+  requirements:
+    #- !type:CharacterSpeciesRequirement - TheDen
+    #  inverted: true
+    #  species:
+    #  - Diona
+    #  - Harpy
+    - !type:CharacterJobRequirement
+      jobs:
+        - Chef
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutChefShoes
+
+- type: loadout
+  id: LoadoutClothingUniformChefThong
+  category: JobsServiceChef
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingUniformChefThong
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - Chef
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutChefUniforms
+
+#Musician
+- type: loadout
+  id: LoadoutClothingHandsMusicianWarmers
+  category: JobsServiceMusician
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingHandsMusicianWarmers
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - Musician
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMusicianGloves
+
+- type: loadout
+  id: LoadoutClothingUnderSocksMusician
+  category: JobsServiceMusician
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingUnderSocksMusician
+  requirements:
+    #- !type:CharacterSpeciesRequirement - TheDen
+    #  inverted: true
+    #  species:
+    #  - Diona
+    #  - Harpy
+    - !type:CharacterJobRequirement
+      jobs:
+        - Musician
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMusicianShoes
+
+- type: loadout
+  id: LoadoutClothingUniformMusicianThong
+  category: JobsServiceMusician
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingUniformMusicianThong
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - Musician
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMusicianUniforms
+
+- type: loadout
+  id: LoadoutClothingUniformMusicKingBlack
+  category: JobsServiceMusician
+  cost: 1
+  exclusive: true
+  items:
+    - ClothingUniformMusicKingBlack
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - Musician
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMusicianUniforms
+
+- type: loadout
+  id: LoadoutClothingUniformMusicKing
+  category: JobsServiceMusician
+  cost: 1
+  exclusive: true
+  items:
+    - ClothingUniformMusicKing
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - Musician
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMusicianUniforms
+
+#Janitorial
+- type: loadout
+  id: LoadoutClothingHandsJanitorWarmers
+  category: JobsServiceJanitor
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingHandsJanitorWarmers
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - Janitor
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutJanitorGloves
+
+- type: loadout
+  id: LoadoutClothingUnderSocksJanitor
+  category: JobsServiceJanitor
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingUnderSocksJanitor
+  requirements:
+    #- !type:CharacterSpeciesRequirement - TheDen
+    #  inverted: true
+    #  species:
+    #  - Diona
+    #  - Harpy
+    - !type:CharacterJobRequirement
+      jobs:
+        - Janitor
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutJanitorShoes
+
+- type: loadout
+  id: LoadoutClothingUniformJanitorThong
+  category: JobsServiceJanitor
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingUniformJanitorThong
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - Janitor
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutJanitorUniforms
+
+- type: loadout
+  id: LoadoutClothingNeckCloakJanitor
+  category: JobsServiceJanitor
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - Janitor
+    - !type:CharacterPlaytimeRequirement
+      tracker: JobJanitor
+      min: 36000 # 10 hours
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutJanitorNeck
+  items:
+    - ClothingNeckCloakJanitor
+
+# TO BE ADDED - Botanist
+
+# TO BE ADDED - Reporter
+
+# Mime
+- type: loadout
+  id: LoadoutClothingHandsStripeWhiteWarmers
+  category: JobsServiceMime
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingHandsStripeWhiteWarmers
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - Mime
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMimeGloves
+
+- type: loadout
+  id: LoadoutClothingUnderSocksStripedWhite
+  category: JobsServiceMime
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingUnderSocksStripedWhite
+  requirements:
+    #- !type:CharacterSpeciesRequirement - TheDen
+    #  inverted: true
+    #  species:
+    #  - Diona
+    #  - Harpy
+    - !type:CharacterJobRequirement
+      jobs:
+        - Mime
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMimeShoes
+
+- type: loadout
+  id: LoadoutClothingUniformStripedThongWhite
+  category: JobsServiceMime
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingUniformStripedThongWhite
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - Mime
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMimeUniforms
+# TO BE ADDED - Clown

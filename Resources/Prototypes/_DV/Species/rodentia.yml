@@ -1,3 +1,15 @@
+# SPDX-FileCopyrightText: 2024 FoxxoTrystan
+# SPDX-FileCopyrightText: 2024 Memeji
+# SPDX-FileCopyrightText: 2024 Memeji Dankiri
+# SPDX-FileCopyrightText: 2025 Aikakakah
+# SPDX-FileCopyrightText: 2025 Blitz
+# SPDX-FileCopyrightText: 2025 BlitzTheSquishy
+# SPDX-FileCopyrightText: 2025 KekaniCreates
+# SPDX-FileCopyrightText: 2025 Rosycup
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 - type: species
   id: Rodentia
   name: species-name-rodentia
@@ -8,9 +20,9 @@
   markingLimits: MobRodentiaMarkingLimits
   dollPrototype: MobRodentiaDummy
   skinColoration: Hues
-  maleFirstNames: names_rodentia_male
-  femaleFirstNames: names_rodentia_female
-  lastNames: names_rodentia_last
+  maleFirstNames: NamesRodentiaMale
+  femaleFirstNames: NamesRodentiaFemale
+  lastNames: NamesRodentiaLast
   naming: LastFirst
   minHeight: 0.65
   defaultHeight: 0.8
@@ -23,12 +35,15 @@
 - type: speciesBaseSprites
   id: MobRodentiaSprites
   sprites:
+    TailBehind: MobHumanoidAnyMarking
+    TailOversuit: MobHumanoidAnyMarking
     Head: MobRodentiaHead
     Hair: MobHumanoidAnyMarking
     FacialHair: MobHumanoidAnyMarking
     Snout: MobHumanoidAnyMarking
     Underwear: MobHumanoidAnyMarking
     Undershirt: MobHumanoidAnyMarking
+    NeckFluff: MobHumanoidAnyMarking
     Chest: MobRodentiaTorso
     HeadTop: MobHumanoidAnyMarking
     HeadSide: MobHumanoidAnyMarking
@@ -102,11 +117,11 @@
     Nipples:
       points: 2
       required: false
-    Underwear:
-      points: 1
-      required: false
     Undershirt:
-      points: 1
+      points: 2 # FLOOF CHANGE
+      required: false
+    Underwear:
+      points: 2 # FLOOF CHANGE
       required: false
 
 - type: humanoidBaseSprite

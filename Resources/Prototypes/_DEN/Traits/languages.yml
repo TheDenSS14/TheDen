@@ -1,3 +1,11 @@
+# SPDX-FileCopyrightText: 2025 Blitz
+# SPDX-FileCopyrightText: 2025 KekaniCreates
+# SPDX-FileCopyrightText: 2025 Tabitha
+# SPDX-FileCopyrightText: 2025 Tanix
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 - type: trait
   id: Nekomimetic
   category: TraitsSpeechLanguages
@@ -195,3 +203,32 @@
       languagesUnderstood:
         - Alaseta
 
+- type: trait
+  id: Kagebun
+  category: TraitsSpeechLanguages
+  points: -2
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+      - Kitsune
+  functions:
+    - !type:TraitModifyLanguages
+      languagesSpoken:
+        - Kagebun
+      languagesUnderstood:
+        - Kagebun
+        
+- type: trait
+  id: VoxPidgin
+  category: TraitsSpeechLanguages
+  points: -1
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Vox
+  functions:
+    - !type:TraitModifyLanguages
+      languagesUnderstood:
+        - VoxPidgin

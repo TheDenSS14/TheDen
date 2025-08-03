@@ -1,4 +1,9 @@
-﻿using Robust.Shared.Configuration;
+// SPDX-FileCopyrightText: 2025 VMSolidus <evilexecutive@gmail.com>
+// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
+using Robust.Shared.Configuration;
 
 namespace Content.Shared.CCVar;
 
@@ -22,5 +27,5 @@ public sealed partial class CCVars
     ///     Max chaos chosen for a round will deviate from this
     /// </summary>
     public static readonly CVarDef<float>
-        EventsRampingAverageChaos = CVarDef.Create("events.ramping_average_chaos", 0.2f, CVar.ARCHIVE | CVar.SERVERONLY);
+        EventsRampingAverageChaos = CVarDef.Create("events.ramping_average_chaos", 0.6f, CVar.ARCHIVE | CVar.SERVERONLY);
 }

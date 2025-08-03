@@ -1,3 +1,13 @@
+# SPDX-FileCopyrightText: 2024 VMSolidus
+# SPDX-FileCopyrightText: 2024 gluesniffler
+# SPDX-FileCopyrightText: 2025 Lonofera
+# SPDX-FileCopyrightText: 2025 M3739
+# SPDX-FileCopyrightText: 2025 MajorMoth
+# SPDX-FileCopyrightText: 2025 SleepyScarecrow
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 # Musician
 #- type: characterItemGroup
 #  id: LoadoutMusicianBackpacks
@@ -13,7 +23,7 @@
 #  id: LoadoutMusicianEars
 #  maxItems: 1
 #  items:
-#
+
 - type: characterItemGroup
   id: LoadoutMusicianEquipment
   maxItems: 3
@@ -47,6 +57,8 @@
       id: LoadoutItemKalimbaInstrumentMusician
     - type: loadout
       id: LoadoutItemWoodblockInstrumentMusician
+    - type: loadout
+      id: LoadoutItemDrumKitInstrumentMusician # Floof - M3739 - #1124
   # String
     - type: loadout
       id: LoadoutItemElectricGuitarInstrumentMusician
@@ -76,7 +88,7 @@
     - type: loadout
       id: LoadoutItemMarimbaInstrumentMusician
     - type: loadout
-      id: LoadoutItemChurchOrganInstrumentMusician
+      id: LoadoutItemPipeOrganInstrumentMusician
     - type: loadout
       id: LoadoutItemTubaInstrumentMusician
     - type: loadout
@@ -115,12 +127,14 @@
 #  id: LoadoutMusicianEyes
 #  maxItems: 1
 #  items:
-#
-#- type: characterItemGroup
-#  id: LoadoutMusicianGloves
-#  maxItems: 1
-#  items:
-#
+
+- type: characterItemGroup
+  id: LoadoutMusicianGloves
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutClothingHandsMusicianWarmers
+
 #- type: characterItemGroup
 #  id: LoadoutMusicianHead
 #  maxItems: 1
@@ -140,20 +154,30 @@
 #  id: LoadoutMusicianMask
 #  maxItems: 1
 #  items:
-#
+
 - type: characterItemGroup
   id: LoadoutMusicianOuter
   maxItems: 1
   items:
     - type: loadout
       id: LoadoutServiceWinterCoatMusician
-#
-#- type: characterItemGroup
-#  id: LoadoutMusicianShoes
-#  maxItems: 1
-#  items:
-#
-#- type: characterItemGroup
-#  id: LoadoutMusicianUniforms
-#  maxItems: 1
-#  items:
+
+- type: characterItemGroup
+  id: LoadoutMusicianShoes
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutClothingUnderSocksMusician
+
+- type: characterItemGroup
+  id: LoadoutMusicianUniforms
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutClothingUniformMusicianThong
+    - type: loadout
+      id: LoadoutClothingUniformMusicKingBlack
+    - type: loadout
+      id: LoadoutClothingUniformMusicKing
+    - type: loadout
+      id: LoadoutServiceMusicianUniformMusician

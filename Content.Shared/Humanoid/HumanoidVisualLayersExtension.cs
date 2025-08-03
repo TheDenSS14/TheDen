@@ -1,3 +1,15 @@
+// SPDX-FileCopyrightText: 2022 DrSmugleaf
+// SPDX-FileCopyrightText: 2022 Flipp Syder
+// SPDX-FileCopyrightText: 2022 Jezithyr
+// SPDX-FileCopyrightText: 2023 Leon Friedrich
+// SPDX-FileCopyrightText: 2023 Visne
+// SPDX-FileCopyrightText: 2024 gluesniffler
+// SPDX-FileCopyrightText: 2025 BlitzTheSquishy
+// SPDX-FileCopyrightText: 2025 Skubman
+// SPDX-FileCopyrightText: 2025 sleepyyapril
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 using Content.Shared.Body.Components;
 using Content.Shared.Body.Part;
 
@@ -37,8 +49,9 @@ namespace Content.Shared.Humanoid
                 case HumanoidVisualLayers.Head:
                     yield return HumanoidVisualLayers.Head;
                     yield return HumanoidVisualLayers.Eyes;
-                    yield return HumanoidVisualLayers.HeadSide;
+                    yield return HumanoidVisualLayers.NeckFluff;
                     yield return HumanoidVisualLayers.HeadTop;
+                    yield return HumanoidVisualLayers.HeadSide;
                     yield return HumanoidVisualLayers.Hair;
                     yield return HumanoidVisualLayers.FacialHair;
                     yield return HumanoidVisualLayers.Snout;
@@ -73,6 +86,9 @@ namespace Content.Shared.Humanoid
                     break;
                 case HumanoidVisualLayers.Chest:
                     yield return HumanoidVisualLayers.Chest;
+                    yield return HumanoidVisualLayers.Tail;
+                    yield return HumanoidVisualLayers.TailBehind;
+                    yield return HumanoidVisualLayers.TailOversuit;
                     yield return HumanoidVisualLayers.Wings;
                     yield return HumanoidVisualLayers.Tail;
                     break;

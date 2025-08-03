@@ -1,3 +1,17 @@
+# SPDX-FileCopyrightText: 2023 Ubaser
+# SPDX-FileCopyrightText: 2023 liltenhead
+# SPDX-FileCopyrightText: 2024 Blazeror
+# SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT
+# SPDX-FileCopyrightText: 2024 Debug
+# SPDX-FileCopyrightText: 2024 Trevor Day
+# SPDX-FileCopyrightText: 2024 themias
+# SPDX-FileCopyrightText: 2025 Minemoder5000
+# SPDX-FileCopyrightText: 2025 Vanessa
+# SPDX-FileCopyrightText: 2025 Vanessa Louwagie
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 # TODO: Have a seperate lid state that can be popped on and off (not as a seperate item) that changes whether the vial can be spilled or not.
 
 - type: entity
@@ -10,6 +24,7 @@
     tags:
     - Trash
     - CentrifugeCompatible
+    - Vial # Delta V - vial gaming in belts
   - type: PhysicalComposition
     materialComposition:
       Glass: 25
@@ -107,12 +122,59 @@
   name: vestine vial
   parent: BaseChemistryEmptyVial
   components:
-    - type: SolutionContainerManager
-      solutions:
-        beaker:
-          maxVol: 30
-          reagents:
-            - ReagentId: Vestine
-              Quantity: 30
-    - type: Tag
-      tags: []
+  - type: Label
+    currentLabel: reagent-name-vestine
+  - type: SolutionContainerManager
+    solutions:
+      beaker:
+        maxVol: 30
+        reagents:
+        - ReagentId: Vestine
+          Quantity: 30
+  # - type: Tag # Delta V - removed empty tag array so it inherits tags from the parent
+  #   tags: []
+
+- type: entity
+  id: RadiumChemistryVial
+  parent: BaseChemistryEmptyVial
+  suffix: radium
+  components:
+  - type: Label
+    currentLabel: reagent-name-radium
+  - type: SolutionContainerManager
+    solutions:
+      beaker:
+        maxVol: 30
+        reagents:
+          - ReagentId: Radium
+            Quantity: 5
+
+- type: entity
+  id: ChlorineChemistryVial
+  parent: BaseChemistryEmptyVial
+  suffix: chlorine
+  components:
+  - type: Label
+    currentLabel: reagent-name-chlorine
+  - type: SolutionContainerManager
+    solutions:
+      beaker:
+        maxVol: 30
+        reagents:
+          - ReagentId: Chlorine
+            Quantity: 5
+
+- type: entity
+  id: PlasmaChemistryVial
+  parent: BaseChemistryEmptyVial
+  suffix: plasma
+  components:
+  - type: Label
+    currentLabel: reagent-name-plasma
+  - type: SolutionContainerManager
+    solutions:
+      beaker:
+        maxVol: 30
+        reagents:
+          - ReagentId: Plasma
+            Quantity: 10

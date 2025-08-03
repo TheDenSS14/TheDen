@@ -1,3 +1,13 @@
+# SPDX-FileCopyrightText: 2024 KyuPolaris
+# SPDX-FileCopyrightText: 2025 GNUtopia
+# SPDX-FileCopyrightText: 2025 Tabitha
+# SPDX-FileCopyrightText: 2025 Timfa
+# SPDX-FileCopyrightText: 2025 VMSolidus
+# SPDX-FileCopyrightText: 2025 portfiend
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 - type: trait
   id: SignLanguage
   category: TraitsSpeechLanguages
@@ -5,10 +15,8 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: TraitsLanguagesBasic
-    - !type:CharacterTraitRequirement
-      inverted: true
-      traits:
-        - Muted
+    - !type:CharacterItemGroupRequirement
+      group: TraitsMuted
   functions:
     - !type:TraitModifyLanguages
       languagesSpoken:

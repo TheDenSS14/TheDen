@@ -1,3 +1,10 @@
+# SPDX-FileCopyrightText: 2025 Adrian16199
+# SPDX-FileCopyrightText: 2025 Erol509
+# SPDX-FileCopyrightText: 2025 SX-7
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 # Tajaran Tails
 
 - type: marking
@@ -279,7 +286,7 @@
   id: TajaranEarsTall
   bodyPart: HeadTop
   markingCategory: HeadTop
-  speciesRestriction: [Tajaran]
+  speciesRestriction: [Tajaran, IPC]
   sprites:
   - sprite: _EE/Mobs/Customization/Tajaran/felinid_ears.rsi
     state: tall_outer

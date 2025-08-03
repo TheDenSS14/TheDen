@@ -1,3 +1,13 @@
+# SPDX-FileCopyrightText: 2024 VMSolidus
+# SPDX-FileCopyrightText: 2025 Blitz
+# SPDX-FileCopyrightText: 2025 BlitzTheSquishy
+# SPDX-FileCopyrightText: 2025 GNUtopia
+# SPDX-FileCopyrightText: 2025 Lonofera
+# SPDX-FileCopyrightText: 2025 portfiend
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 # Bartender
 #- type: characterItemGroup
 #  id: LoadoutBartenderBackpacks
@@ -13,7 +23,6 @@
 #  id: LoadoutBartenderEars
 #  maxItems: 1
 #  items:
-#
 
 - type: characterItemGroup
   id: LoadoutBartenderAmmo
@@ -43,12 +52,14 @@
 #  id: LoadoutBartenderEyes
 #  maxItems: 1
 #  items:
-#
-#- type: characterItemGroup
-#  id: LoadoutBartenderGloves
-#  maxItems: 1
-#  items:
-#
+
+- type: characterItemGroup
+  id: LoadoutBartenderGloves
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutClothingHandsBartenderWarmers
+
 - type: characterItemGroup
   id: LoadoutBartenderHead
   items:
@@ -58,6 +69,10 @@
       id: LoadoutServiceHeadBartenderIdris
     - type: loadout
       id: LoadoutServiceHeadBartenderOrion
+    - type: loadout
+      id: LoadoutServiceHeadHatTophat
+    - type: loadout
+      id: LoadoutServiceBartenderBunnyEars
 
 #- type: characterItemGroup
 #  id: LoadoutBartenderId
@@ -73,7 +88,7 @@
 #  id: LoadoutBartenderMask
 #  maxItems: 1
 #  items:
-#
+
 - type: characterItemGroup
   id: LoadoutBartenderOuter
   items:
@@ -89,12 +104,16 @@
       id: LoadoutServiceOuterBartenderOrion
     - type: loadout # DEN
       id: LoadoutServiceOuterBartenderApron
+    - type: loadout
+      id: LoadoutServiceOuterVest
 
-#- type: characterItemGroup
-#  id: LoadoutBartenderShoes
-#  maxItems: 1
-#  items:
-#
+- type: characterItemGroup
+  id: LoadoutBartenderShoes
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutClothingUnderSocksBartender
+
 - type: characterItemGroup
   id: LoadoutBartenderUniforms
   items:
@@ -112,3 +131,7 @@
       id: LoadoutServiceBartenderUniformSkirt
     - type: loadout
       id: LoadoutServiceUniformJumpsuitBartenderGrey
+    - type: loadout
+      id: LoadoutClothingUniformBartenderThong
+    - type: loadout
+      id: LoadoutServiceBartenderBunnySuit

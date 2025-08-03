@@ -1,0 +1,50 @@
+# SPDX-FileCopyrightText: 2024 ShatteredSwords
+# SPDX-FileCopyrightText: 2024 fenndragon
+# SPDX-FileCopyrightText: 2025 Fansana
+# SPDX-FileCopyrightText: 2025 M3739
+# SPDX-FileCopyrightText: 2025 Rosycup
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
+- type: cargoProduct
+  id: FunPrizeBall
+  icon:
+    sprite: Objects/Fun/prizeticket.rsi
+    state: prizeball
+  product: CratePrizeBall
+  cost: 5000
+  category: cargoproduct-category-name-fun
+  group: market
+
+- type: cargoProduct
+  id: FunPlushieCrate
+  icon:
+    sprite: Objects/Fun/toys.rsi
+    state: plushie_h
+  product: CrateFunPlushie
+  cost: 3500
+  category: cargoproduct-category-name-fun
+  group: market
+  
+- type: cargoProduct
+  id: FunLizardPlushieCrate
+  icon:
+    sprite: Objects/Fun/toys.rsi
+    state: plushie_lizard
+  product: CrateFunLizardPlushieBulk
+  cost: 2500
+  category: cargoproduct-category-name-fun
+  group: market
+
+# instruments
+
+- type: cargoProduct
+  id: FunInstrumentsDrumKit
+  icon:
+    sprite: GreyStation/Objects/Fun/Instruments/structureinstruments.rsi
+    state: drumkit
+  product: CrateFunInstrumentsDrumKit
+  cost: 2500
+  category: cargoproduct-category-name-fun
+  group: market

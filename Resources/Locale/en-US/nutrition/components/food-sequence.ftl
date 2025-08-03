@@ -1,3 +1,15 @@
+# SPDX-FileCopyrightText: 2024 Ed <96445749+TheShuEd@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 IProduceWidgets <107586145+IProduceWidgets@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 RumiTiger <154005209+RumiTiger@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Ubaser <134914314+UbaserB@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 sleepyyapril <flyingkarii@gmail.com>
+# SPDX-FileCopyrightText: 2025 Hedera <185189451+Hederadaii@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Rosycup <178287475+Rosycup@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 food-sequence-no-space = You can't put any more!
 
 food-sequence-standart-gen = {$prefix}{$content}{$suffix}
@@ -30,7 +42,7 @@ food-sequence-content-cocoa = cocoa
 food-sequence-content-corn = corn
 food-sequence-content-chili = chili
 food-sequence-content-chilly = chilly
-food-sequence-content-mushroom = shrooms
+food-sequence-content-mushroom = shroom
 food-sequence-content-aloe = aloe
 food-sequence-content-poppy = poppy
 food-sequence-content-lily = lily
@@ -97,7 +109,7 @@ food-sequence-burger-content-rat = rat
 food-sequence-burger-content-lizard = lizzy
 food-sequence-burger-content-plant = plant
 food-sequence-burger-content-rotten = trash
-food-sequence-burger-content-spider = web
+food-sequence-burger-content-spider = spider
 food-sequence-burger-content-carrot = carro
 food-sequence-burger-content-cabbage = cabba
 food-sequence-burger-content-garlic = garli

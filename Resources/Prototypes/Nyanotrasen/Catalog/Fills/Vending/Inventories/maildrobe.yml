@@ -1,6 +1,14 @@
+# SPDX-FileCopyrightText: 2023 Fluffiest Floofers
+# SPDX-FileCopyrightText: 2024 Mnemotechnican
+# SPDX-FileCopyrightText: 2025 Ted Lukin
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 - type: vendingMachineInventory
   id: MailDrobeInventory
   startingInventory:
+    ClothingBackpackMessengerMailman: 2
     ClothingUniformMailCarrier: 2
     ClothingUniformSkirtMailCarrier: 2
     WeaponMailLake: 1 # Frontier

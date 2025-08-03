@@ -1,6 +1,14 @@
+// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 sleepyyapril <flyingkarii@gmail.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 using System.Threading;
+using Content.Server.GameTicking.Events;
 using Content.Server.Voting;
 using Content.Shared.CCVar;
+using Content.Shared.Database;
+using Content.Shared.GameTicking;
 using Robust.Shared.Player;
 using Timer = Robust.Shared.Timing.Timer;
 
@@ -10,20 +18,24 @@ namespace Content.Server.RoundEnd;
 
 public sealed partial class RoundEndSystem
 {
+    private CancellationTokenSource? _timerCancellation;
+
+    private bool _hasHardEndWarningRun;
+
     private void InitializeDen()
     {
-        InitializeTimer();
-
         SubscribeLocalEvent<CanCallOrRecallEvent>(CheckIfCanCallOrRecall);
-        SubscribeLocalEvent<ShuttleAutoCallAttemptedEvent>(OnShuttleAutoCallAttempted);
     }
 
     private TimeSpan WarnAt() => RoundHardEnd - RoundHardEndWarningTime;
 
-    private void InitializeTimer()
+    private void UpdateForWarning()
     {
-        Timer.Spawn(WarnAt(), SendWarningAnnouncement);
-        Timer.Spawn(RoundHardEnd, UpdateRoundEnd);
+        if (_hasHardEndWarningRun || _gameTicker.RoundDuration() < WarnAt())
+            return;
+
+        _hasHardEndWarningRun = true;
+        SendWarningAnnouncement();
     }
 
     private void CheckIfCanCallOrRecall(ref CanCallOrRecallEvent ev)
@@ -38,8 +50,11 @@ public sealed partial class RoundEndSystem
             return;
 
         var votedYes = (bool) args.Winner;
+        var logText = votedYes ? "staying" : "leaving";
 
-        if (votedYes || !CanCallOrRecallIgnoringCooldown())
+        _adminLogger.Add(LogType.Vote, LogImpact.Low, $"Round extension vote ended in favor of {logText}.");
+
+        if (votedYes)
             return;
 
         RequestRoundEnd(null, false, "round-end-system-shuttle-auto-called-announcement");
@@ -49,9 +64,9 @@ public sealed partial class RoundEndSystem
     /// <summary>
     /// Send recall vote.
     /// </summary>
-    private void OnShuttleAutoCallAttempted(ref ShuttleAutoCallAttemptedEvent ev)
+    private void CreateAutoCallVote()
     {
-        if (!CanCallOrRecallIgnoringCooldown())
+        if (RoundHardEnd - _gameTicker.RoundDuration() < TimeSpan.FromMinutes(30))
             return;
 
         var alone = _playerManager.PlayerCount == 1;
@@ -71,6 +86,8 @@ public sealed partial class RoundEndSystem
         options.Options.Add((localeYes, true));
         options.Options.Add((localeNo, false));
 
+        _adminLogger.Add(LogType.Vote, LogImpact.Low, $"Server vote started for round extension.");
+
         var recallVote = _voteManager.CreateVote(options);
         recallVote.OnFinished += (_, args) => ShuttleRecallVoteFinished(args);
     }
@@ -87,14 +104,14 @@ public sealed partial class RoundEndSystem
         int time;
         string units;
 
-        if (warnAt.TotalSeconds < 60)
+        if (RoundHardEndWarningTime.TotalSeconds < 60)
         {
-            time = warnAt.Seconds;
+            time = RoundHardEndWarningTime.Seconds;
             units = "eta-units-seconds";
         }
         else
         {
-            time = warnAt.Minutes;
+            time = RoundHardEndWarningTime.Minutes;
             units = "eta-units-minutes";
         }
 

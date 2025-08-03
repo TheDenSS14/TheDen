@@ -1,0 +1,26 @@
+<!--
+SPDX-FileCopyrightText: 2025 deltanedas <39013340+deltanedas@users.noreply.github.com>
+SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+
+SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+-->
+
+<controls:FancyWindow xmlns="https://spacestation14.io"
+        xmlns:controls="using:Content.Client.UserInterface.Controls"
+        Title="{Loc 'pressure-filter-window-title'}"
+        MinSize="350 150">
+    <BoxContainer Orientation="Vertical" Align="Center" Margin="10">
+        <BoxContainer Orientation="Horizontal" Margin="5">
+            <Label Text="{Loc 'pressure-filter-min-pressure'}" Margin="5 0"/>
+            <LineEdit Name="MinEdit" PlaceHolder="0" HorizontalExpand="True"/>
+            <Label Text="{Loc 'units-k-pascal'}" MinWidth="40"/>
+	        <Button Name="MinConfirmButton" Text="{Loc 'generic-confirm'}" MaxSize="100 50"/>
+        </BoxContainer>
+        <BoxContainer Orientation="Horizontal" Margin="5">
+            <Label Text="{Loc 'pressure-filter-max-pressure'}" Margin="5 0"/>
+            <LineEdit Name="MaxEdit" PlaceHolder="101.325" HorizontalExpand="True"/>
+            <Label Text="{Loc 'units-k-pascal'}" MinWidth="40"/>
+	        <Button Name="MaxConfirmButton" Text="{Loc 'generic-confirm'}" MaxSize="100 50"/>
+        </BoxContainer>
+    </BoxContainer>
+</controls:FancyWindow>

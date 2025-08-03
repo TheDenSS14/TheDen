@@ -1,3 +1,10 @@
+# SPDX-FileCopyrightText: 2023 Nemanja
+# SPDX-FileCopyrightText: 2024 Alzore
+# SPDX-FileCopyrightText: 2025 Tanix
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 - type: reaction
   id: BloodBreakdown
   source: true
@@ -52,6 +59,20 @@
     Sugar: 2
     CarbonDioxide: 3
     Protein: 4
+
+- type: reaction
+  id: AmmoniaBloodBreakdown
+  source: true
+  requiredMixerCategories:
+  - Centrifuge
+  reactants:
+    AmmoniaBlood:
+      amount: 30
+  products:
+    Water: 17
+    Nitrogen: 4.5
+    Chlorine: 2.5
+    Protein: 6
 
 - type: reaction
   id: ZombieBloodBreakdown

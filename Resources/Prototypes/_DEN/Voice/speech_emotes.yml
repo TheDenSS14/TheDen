@@ -1,8 +1,17 @@
+# SPDX-FileCopyrightText: 2025 Tabitha
+# SPDX-FileCopyrightText: 2025 TheOneTrueWolfio
+# SPDX-FileCopyrightText: 2025 juniwoofs
+# SPDX-FileCopyrightText: 2025 mart
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+# SPDX-FileCopyrightText: 2025 wheelwrightt
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 - type: emote
   id: CowMoo
   name: chat-emote-name-cowmoo
   category: Vocal
-  icon: Interface/Emotes/caw.png
+  icon: _DEN/Interface/Emotes/moo.png
   whitelist:
     tags:
     - HarpyEmotes
@@ -22,8 +31,7 @@
   id: Baa
   name: chat-emote-name-baa
   category: Vocal
-  available: false
-  icon: Interface/Emotes/caw.png
+  icon: _DEN/Interface/Emotes/baa.png
   whitelist:
     tags:
     - HarpyEmotes
@@ -44,3 +52,58 @@
     - bahs
     - bahed
     - bah'd
+
+# Unathi
+- type: emote
+  id: Trill
+  name: chat-emote-name-trill
+  category: Vocal
+  available: false
+  icon: Interface/Emotes/weh.png
+  whitelist:
+    tags:
+    - HarpyEmotes
+    - UnathiEmotes
+  blacklist:
+    components:
+    - BorgChassis
+  chatMessages: [ trills ]
+  chatTriggers:
+    - trill
+    - trills
+    - trilled
+
+# Resomi
+- type: emote
+  id: Coo
+  name: chat-emote-name-coo
+  category: Vocal
+  icon: Interface/Emotes/caw.png
+  whitelist:
+    tags:
+    - HarpyEmotes
+    - ResomiEmotes
+  blacklist:
+    components:
+    - BorgChassis
+  chatMessages: [ coos ]
+  chatTriggers:
+    - coos
+    - coo
+
+- type: emote
+  id: AvaliHonk
+  name: chat-emote-name-avali-honk
+  category: Vocal
+  icon: Interface/Emotes/caw.png
+  whitelist:
+    tags:
+    - HarpyEmotes
+    - ResomiEmotes
+  blacklist:
+    components:
+    - BorgChassis
+  chatMessages: [ hornks ]
+  chatTriggers:
+  - hornk
+  - hornks

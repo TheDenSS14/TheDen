@@ -1,4 +1,9 @@
-﻿using Content.Shared.Chat;
+// SPDX-FileCopyrightText: 2024 Remuchi
+// SPDX-FileCopyrightText: 2025 sleepyyapril
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
+using Content.Shared.Chat;
 using Content.Shared.Chemistry.Reagent;
 using Content.Shared.Damage;
 using Content.Shared.Humanoid;
@@ -36,7 +41,7 @@ public sealed partial class CultRuneBaseComponent : Component
     [DataField]
     public bool CanBeErased = true;
 
-    public ProtoId<ReagentPrototype> HolyWaterPrototype = "Holywater";
+    public ProtoId<ReagentPrototype> HolyWaterPrototype = "HolyWater";
 }
 
 public sealed class TryInvokeCultRuneEvent(EntityUid user, HashSet<EntityUid> invokers) : CancellableEntityEventArgs

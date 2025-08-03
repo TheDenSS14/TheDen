@@ -1,3 +1,18 @@
+# SPDX-FileCopyrightText: 2022 Emisse
+# SPDX-FileCopyrightText: 2022 mirrorcult
+# SPDX-FileCopyrightText: 2023 AsikKEsel
+# SPDX-FileCopyrightText: 2023 Ed
+# SPDX-FileCopyrightText: 2023 Fluffiest Floofers
+# SPDX-FileCopyrightText: 2023 Tad "Taddy" Johnson
+# SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT
+# SPDX-FileCopyrightText: 2024 Danger Revolution!
+# SPDX-FileCopyrightText: 2025 January Nelson
+# SPDX-FileCopyrightText: 2025 Kill_Me_I_Noobs
+# SPDX-FileCopyrightText: 2025 Rosycup
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 - type: entity
   parent: ClothingNeckBase
   id: ClothingNeckMedalBase
@@ -32,6 +47,10 @@
       enum.CrewMedalUiKey.Key:
         type: CrewMedalBoundUserInterface
     # Corvax-Next-CrewMedals-End
+  - type: WearerGetsExamineText # imp
+    thing: obvious-thing-medal
+    examineText: obvious-x-medal-nothing
+    pocketEvident: true
 
 - type: entity
   parent: ClothingNeckMedalBase

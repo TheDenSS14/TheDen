@@ -1,3 +1,13 @@
+# SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT <77995199+DEATHB4DEFEAT@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 VMSolidus <evilexecutive@gmail.com>
+# SPDX-FileCopyrightText: 2025 Blitz <73762869+BlitzTheSquishy@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 BlitzTheSquishy <73762869+BlitzTheSquishy@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Lonofera <108367450+LonoferaRS@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 mart <martgitomen@gmail.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 # Atmospheric Technician
 # Backpacks
 - type: loadout
@@ -74,6 +84,7 @@
 # Ears
 
 # Equipment
+
 - type: loadout
   id: LoadoutAtmosphericTechnicianEquipmentBoxInflatable
   category: JobsEngineeringAtmosphericTechnician
@@ -301,6 +312,7 @@
   id: LoadoutAtmosphericTechnicianWinterCoat
   category: JobsEngineeringAtmosphericTechnician
   cost: 0
+  exclusive: true
   requirements:
   - !type:CharacterItemGroupRequirement
     group: LoadoutAtmosphericTechnicianOuter
@@ -342,7 +354,7 @@
     - ClothingShoesColorWhite
 
 - type: loadout
-  id: LoadoutAtmosphericTechnicianShoesWork
+  id: LoadoutAtmosphericTechnicianShoesBootsWinter
   category: JobsEngineeringAtmosphericTechnician
   cost: 0
   exclusive: true
@@ -353,7 +365,7 @@
       jobs:
         - AtmosphericTechnician
   items:
-    - ClothingShoesBootsWork
+    - ClothingShoesBootsWinterAtmos
 
 # Uniforms
 - type: loadout

@@ -1,4 +1,13 @@
-﻿using Content.Shared.DeltaV.CartridgeLoader.Cartridges; // DeltaV
+// SPDX-FileCopyrightText: 2023 Chief-Engineer
+// SPDX-FileCopyrightText: 2024 Milon
+// SPDX-FileCopyrightText: 2025 BlitzTheSquishy
+// SPDX-FileCopyrightText: 2025 Jakumba
+// SPDX-FileCopyrightText: 2025 deltanedas
+// SPDX-FileCopyrightText: 2025 sleepyyapril
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
+using Content.Shared._DV.CartridgeLoader.Cartridges; // DeltaV
 using Robust.Shared.Serialization;
 
 namespace Content.Shared.CartridgeLoader.Cartridges;
@@ -6,6 +15,11 @@ namespace Content.Shared.CartridgeLoader.Cartridges;
 [Serializable, NetSerializable]
 public sealed class LogProbeUiState : BoundUserInterfaceState
 {
+    /// <summary>
+    /// The name of the scanned entity.
+    /// </summary>
+    public string EntityName;
+
     /// <summary>
     /// The list of probed network devices
     /// </summary>
@@ -16,8 +30,9 @@ public sealed class LogProbeUiState : BoundUserInterfaceState
     /// </summary>
     public NanoChatData? NanoChatData { get; }
 
-    public LogProbeUiState(List<PulledAccessLog> pulledLogs, NanoChatData? nanoChatData = null) // DeltaV - NanoChat support
+    public LogProbeUiState(string entityName, List<PulledAccessLog> pulledLogs, NanoChatData? nanoChatData = null) // DeltaV - NanoChat support
     {
+        EntityName = entityName;
         PulledLogs = pulledLogs;
         NanoChatData = nanoChatData; // DeltaV
     }

@@ -1,3 +1,11 @@
+# SPDX-FileCopyrightText: 2024 VMSolidus
+# SPDX-FileCopyrightText: 2025 BlitzTheSquishy
+# SPDX-FileCopyrightText: 2025 John Willis
+# SPDX-FileCopyrightText: 2025 mart
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 # Chaplain
 #- type: characterItemGroup
 #  id: LoadoutChaplainBackpacks
@@ -25,6 +33,8 @@
     - type: loadout
       id: LoadoutChaplainEquipmentCandles
     - type: loadout
+      id: LoadoutChaplainEquipmentInfiniteCandles
+    - type: loadout
       id: LoadoutChaplainEquipmentCandlesSmall
     - type: loadout
       id: LoadoutChaplainPillCanisterSpaceDrugs
@@ -38,11 +48,13 @@
     - type: loadout
       id: LoadoutChaplainEyesEpiGlasses
 
-#- type: characterItemGroup
-#  id: LoadoutChaplainGloves
-#  maxItems: 1
-#  items:
-#
+- type: characterItemGroup
+  id: LoadoutChaplainGloves
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutClothingHandChaplainWarmers
+
 - type: characterItemGroup
   id: LoadoutChaplainHead
   maxItems: 1
@@ -60,13 +72,15 @@
 #  id: LoadoutChaplainId
 #  maxItems: 1
 #  items:
-#
+
 - type: characterItemGroup
   id: LoadoutChaplainNeck
   maxItems: 1
   items:
     - type: loadout
       id: LoadoutScienceNeckStoleChaplain
+    - type: loadout
+      id: LoadoutClothingChaplainEpiMantle
 
 - type: characterItemGroup
   id: LoadoutChaplainMask
@@ -88,11 +102,13 @@
     - type: loadout
       id: LoadoutScienceOuterHoodieChaplain
 
-#- type: characterItemGroup
-#  id: LoadoutChaplainShoes
-#  maxItems: 1
-#  items:
-#
+- type: characterItemGroup
+  id: LoadoutChaplainShoes
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutClothingUnderSocksChaplain
+
 - type: characterItemGroup
   id: LoadoutChaplainUniforms
   maxItems: 1
@@ -105,3 +121,5 @@
       id: LoadoutScienceUniformJumpsuitMonasticRobeDark
     - type: loadout
       id: LoadoutScienceUniformJumpsuitMonasticRobeLight
+    - type: loadout
+      id: LoadoutClothingUniformChaplainThong

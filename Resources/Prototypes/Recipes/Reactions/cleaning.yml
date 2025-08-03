@@ -1,3 +1,17 @@
+# SPDX-FileCopyrightText: 2021 Swept
+# SPDX-FileCopyrightText: 2021 Vera Aguilera Puerto
+# SPDX-FileCopyrightText: 2021 metalgearsloth
+# SPDX-FileCopyrightText: 2021 mirrorcult
+# SPDX-FileCopyrightText: 2023 Boaz1111
+# SPDX-FileCopyrightText: 2023 Debug
+# SPDX-FileCopyrightText: 2023 Psychpsyo
+# SPDX-FileCopyrightText: 2023 TemporalOroboros
+# SPDX-FileCopyrightText: 2024 lzk
+# SPDX-FileCopyrightText: 2025 Tanix
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+#
+# SPDX-License-Identifier: MIT
+
 - type: reaction
   id: Bleach
   reactants:
@@ -9,6 +23,15 @@
       amount: 1
   products:
     Bleach: 5
+
+- type: reaction
+  id: AmmoniaFromBlood
+  minTemp: 370
+  reactants:
+    AmmoniaBlood:
+      amount: 2
+  products:
+    Ammonia: 1
 
 - type: reaction
   id: SpaceCleaner

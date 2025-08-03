@@ -1,3 +1,45 @@
+# SPDX-FileCopyrightText: 2022 CrudeWax
+# SPDX-FileCopyrightText: 2022 EmoGarbage404
+# SPDX-FileCopyrightText: 2022 Flipp Syder
+# SPDX-FileCopyrightText: 2022 Jessica M
+# SPDX-FileCopyrightText: 2022 Sam Weaver
+# SPDX-FileCopyrightText: 2022 ShadowCommander
+# SPDX-FileCopyrightText: 2022 lapatison
+# SPDX-FileCopyrightText: 2022 mirrorcult
+# SPDX-FileCopyrightText: 2023 Alex Evgrashin
+# SPDX-FileCopyrightText: 2023 CrigCrag
+# SPDX-FileCopyrightText: 2023 Doru991
+# SPDX-FileCopyrightText: 2023 Kara
+# SPDX-FileCopyrightText: 2023 LankLTE
+# SPDX-FileCopyrightText: 2023 Leon Friedrich
+# SPDX-FileCopyrightText: 2023 Maxtone
+# SPDX-FileCopyrightText: 2023 Moony
+# SPDX-FileCopyrightText: 2023 Nemanja
+# SPDX-FileCopyrightText: 2023 PHCodes
+# SPDX-FileCopyrightText: 2023 ProPandaBear
+# SPDX-FileCopyrightText: 2023 QuantumSeanyGlass
+# SPDX-FileCopyrightText: 2023 Rane
+# SPDX-FileCopyrightText: 2023 Ubaser
+# SPDX-FileCopyrightText: 2023 Visne
+# SPDX-FileCopyrightText: 2023 Whisper
+# SPDX-FileCopyrightText: 2023 brainfood1183
+# SPDX-FileCopyrightText: 2023 metalgearsloth
+# SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT
+# SPDX-FileCopyrightText: 2024 Debug
+# SPDX-FileCopyrightText: 2024 EdenTheLiznerd
+# SPDX-FileCopyrightText: 2024 Errant
+# SPDX-FileCopyrightText: 2024 FoxxoTrystan
+# SPDX-FileCopyrightText: 2024 SimpleStation14
+# SPDX-FileCopyrightText: 2024 Tayrtahn
+# SPDX-FileCopyrightText: 2024 Vasilis
+# SPDX-FileCopyrightText: 2024 Verm
+# SPDX-FileCopyrightText: 2024 slarticodefast
+# SPDX-FileCopyrightText: 2025 Tanix
+# SPDX-FileCopyrightText: 2025 portfiend
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 - type: reagent
   id: Toxin
   name: reagent-name-toxin
@@ -92,6 +134,10 @@
     Poison:
       effects:
         - !type:HealthChange
+          conditions:
+          - !type:OrganType
+            type: Detritivore
+            shouldHave: false
           damage:
             types:
               Poison: 2
@@ -99,7 +145,25 @@
           conditions:
           - !type:ReagentThreshold
             min: 2
+          - !type:OrganType
+            type: Detritivore
+            shouldHave: false
           probability: 0.2
+        - !type:PopupMessage
+          conditions:
+          - !type:OrganType
+            type: Detritivore
+            shouldHave: false
+          type: Local
+          visualType: MediumCaution
+          messages: [ "generic-reagent-effect-sick" ]
+          probability: 0.4
+    Food:
+      effects:
+      - !type:SatiateHunger
+        conditions:
+        - !type:OrganType
+          type: Detritivore
 
 - type: reagent
   id: Mold
@@ -114,9 +178,19 @@
     Poison:
       effects:
       - !type:HealthChange
+        conditions:
+        - !type:OrganType
+          type: Detritivore
+          shouldHave: false
         damage:
           types:
             Poison: 1
+    Food:
+      effects:
+      - !type:SatiateHunger
+        conditions:
+          - !type:OrganType
+            type: Detritivore
 
 - type: reagent
   id: PolytrinicAcid
@@ -489,6 +563,9 @@
           - !type:OrganType
             type: Animal
             shouldHave: false
+          - !type:OrganType # It'd be silly if you could stomach Rotting Food but not raw meat on its own.
+            type: Detritivore
+            shouldHave: false
         type: Local
         visualType: MediumCaution
         messages: [ "generic-reagent-effect-sick" ]
@@ -499,10 +576,16 @@
           - !type:OrganType
             type: Animal
             shouldHave: false
+          - !type:OrganType
+            type: Detritivore
+            shouldHave: false
       - !type:HealthChange
         conditions:
         - !type:OrganType
           type: Animal
+          shouldHave: false
+        - !type:OrganType
+          type: Detritivore
           shouldHave: false
         damage:
           types:
@@ -520,6 +603,14 @@
           type: Shadowkin
         reagent: Protein
         amount: 0.5
+      # - !type:AdjustReagent
+      #   conditions:
+      #   - !type:OrganType
+      #     type: Detritivore
+      #   reagent: Protein
+      #   amount: 0.5
+        # this is commented because i realized this would cause redundancy with animal organs. uhhhh.
+        # TODO: these last three should be a single effect with a "or" conditional or smth
 
 - type: reagent
   id: Allicin
@@ -676,3 +767,19 @@
             Poison: 2
       - !type:SatiateHunger
         factor: -6
+
+- type: reagent
+  id: ToxinTrash
+  name: reagent-name-toxintrash
+  group: Toxins
+  desc: reagent-desc-toxintrash
+  flavor: trashy
+  physicalDesc: reagent-physical-desc-nondescript
+  metabolisms:
+    Food:
+      effects:
+      - !type:SatiateHunger
+        factor: 1
+        conditions:
+        - !type:OrganType
+          type: Vox

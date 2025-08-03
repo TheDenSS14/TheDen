@@ -1,3 +1,15 @@
+# SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT
+# SPDX-FileCopyrightText: 2024 VMSolidus
+# SPDX-FileCopyrightText: 2025 Blitz
+# SPDX-FileCopyrightText: 2025 BlitzTheSquishy
+# SPDX-FileCopyrightText: 2025 Lonofera
+# SPDX-FileCopyrightText: 2025 MajorMoth
+# SPDX-FileCopyrightText: 2025 Rosycup
+# SPDX-FileCopyrightText: 2025 mart
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 # All Engineering Department Jobs
 # Backpacks
 - type: loadout
@@ -13,6 +25,10 @@
     - !type:CharacterDepartmentRequirement
       departments:
         - Engineering
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - ChiefEngineer # CE has ClothingBackpackChiefEngineerFilled
 
 - type: loadout
   id: LoadoutBackpackSatchelEngineering
@@ -27,6 +43,10 @@
     - !type:CharacterDepartmentRequirement
       departments:
         - Engineering
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - ChiefEngineer # CE has ClothingBackpackSatchelChiefEngineerFilled
 
 - type: loadout
   id: LoadoutBackpackDuffelEngineering
@@ -41,6 +61,11 @@
     - !type:CharacterDepartmentRequirement
       departments:
         - Engineering
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - ChiefEngineer # CE has ClothingBackpackDuffelChiefEngineerFilled
+
 # Belt
 
 # Ears
@@ -203,14 +228,15 @@
   id: LoadoutEngineeringWinterCoat
   category: JobsEngineeringAAUncategorized
   cost: 0
+  exclusive: true
   requirements:
-  - !type:CharacterItemGroupRequirement
-    group: LoadoutEngineeringOuter
-  - !type:CharacterDepartmentRequirement
-    departments:
-      - Engineering
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutEngineeringOuter
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Engineering
   items:
-  - ClothingOuterWinterEngi
+    - ClothingOuterWinterEngi
 
 - type: loadout
   id: LoadoutEngineeringOuterHazard
@@ -227,36 +253,35 @@
     - ClothingOuterVestHazard
 
 # Shoes
+- type: loadout
+  id: LoadoutEngineeringShoesBootsWork
+  category: JobsEngineeringAAUncategorized
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutEngineeringShoes
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Engineering
+  items:
+    - ClothingShoesBootsWork
+
+- type: loadout
+  id: LoadoutEngineeringShoesBootsWinter
+  category: JobsEngineeringAAUncategorized
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutEngineeringShoes
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Engineering
+  items:
+    - ClothingShoesBootsWinterEngi
 
 # Uniforms
-- type: loadout
-  id: LoadoutEngineeringUniformSuit
-  category: JobsEngineeringAAUncategorized
-  cost: 0
-  exclusive: true
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutEngineeringUniforms
-    - !type:CharacterJobRequirement
-      jobs:
-        - StationEngineer
-  items:
-    - ClothingUniformJumpsuitEngineering
-
-- type: loadout
-  id: LoadoutEngineeringUniformSkirt
-  category: JobsEngineeringAAUncategorized
-  cost: 0
-  exclusive: true
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutEngineeringUniforms
-    - !type:CharacterJobRequirement
-      jobs:
-        - StationEngineer
-  items:
-    - ClothingUniformJumpskirtEngineering
-
 - type: loadout
   id: LoadoutEngineeringUniformHazard
   category: JobsEngineeringAAUncategorized
@@ -288,7 +313,7 @@
 - type: loadout
   id: LoadoutClothingUniformJumpsuitRepairmanCybersun
   category: JobsEngineeringAAUncategorized
-  cost: 0
+  cost: 1
   exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement

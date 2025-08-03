@@ -1,3 +1,14 @@
+# SPDX-FileCopyrightText: 2025 Blitz
+# SPDX-FileCopyrightText: 2025 BloodfiendishOperator
+# SPDX-FileCopyrightText: 2025 KekaniCreates
+# SPDX-FileCopyrightText: 2025 Rosycup
+# SPDX-FileCopyrightText: 2025 SX-7
+# SPDX-FileCopyrightText: 2025 Tonk-GCR
+# SPDX-FileCopyrightText: 2025 portfiend
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 - type: species
   id: Tajaran
   name: species-name-tajaran
@@ -13,9 +24,9 @@
   minWidth: 0.6
   defaultWidth: 0.8
   maxWidth: 1.15
-  maleFirstNames: names_tajaran_first
-  femaleFirstNames: names_tajaran_first
-  lastNames: names_tajaran_last
+  maleFirstNames: NamesTajaranFirst
+  femaleFirstNames: NamesTajaranFirst
+  lastNames: NamesTajaranLast
   customName: true
 
 
@@ -36,9 +47,6 @@
       points: 1
       required: true
       defaultMarkings: [ TajaranEarsBasic ]
-    Chest:
-      points: 1
-      required: false
     Genitals:
       points: 1
       required: false

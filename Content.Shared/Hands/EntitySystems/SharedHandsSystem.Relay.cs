@@ -1,5 +1,13 @@
+// SPDX-FileCopyrightText: 2023 Nemanja
+// SPDX-FileCopyrightText: 2025 portfiend
+// SPDX-FileCopyrightText: 2025 sleepyyapril
+//
+// SPDX-License-Identifier: MIT
+
+using Content.Shared._DEN.Movement.Systems;
 using Content.Shared.Hands.Components;
 using Content.Shared.Movement.Systems;
+using Content.Shared.Standing;
 
 namespace Content.Shared.Hands.EntitySystems;
 
@@ -8,6 +16,8 @@ public abstract partial class SharedHandsSystem
     private void InitializeRelay()
     {
         SubscribeLocalEvent<HandsComponent, RefreshMovementSpeedModifiersEvent>(RelayEvent);
+        SubscribeLocalEvent<HandsComponent, CannotSupportStandingEvent>(RelayEvent);
+        SubscribeLocalEvent<HandsComponent, ModifyLegLossSpeedPenaltyEvent>(RelayEvent);
     }
 
     private void RelayEvent<T>(Entity<HandsComponent> entity, ref T args) where T : EntityEventArgs

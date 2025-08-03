@@ -1,3 +1,12 @@
+# SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT
+# SPDX-FileCopyrightText: 2024 VMSolidus
+# SPDX-FileCopyrightText: 2025 Blitz
+# SPDX-FileCopyrightText: 2025 BlitzTheSquishy
+# SPDX-FileCopyrightText: 2025 Lonofera
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 # Uncategorized
 # Backpacks
 - type: loadout
@@ -13,6 +22,11 @@
     - !type:CharacterDepartmentRequirement
       departments:
         - Medical
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - ChiefMedicalOfficer # CMO has ClothingBackpackCMOFilled
+        - Psychologist # Psych has ClothingBackpackPsychologistFilled
 
 - type: loadout
   id: LoadoutBackpackVirology
@@ -55,6 +69,11 @@
     - !type:CharacterDepartmentRequirement
       departments:
         - Medical
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - ChiefMedicalOfficer # CMO has ClothingBackpackSatchelCMOFilled
+        - Psychologist # Psych has ClothingBackpackSatchelPsychologistFilled
 
 - type: loadout
   id: LoadoutBackpackSatchelVirology
@@ -97,6 +116,11 @@
     - !type:CharacterDepartmentRequirement
       departments:
         - Medical
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - ChiefMedicalOfficer # CMO has ClothingBackpackDuffelCMOFilled
+        - Psychologist # Psych has ClothingBackpackDuffelPsychologistFilled
 
 - type: loadout
   id: LoadoutBackpackDuffelVirology
@@ -153,8 +177,6 @@
   cost: 0
   exclusive: true
   requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutMedicalEyes
     - !type:CharacterDepartmentRequirement
       departments:
         - Medical
@@ -339,6 +361,28 @@
   items:
     - ClothingHeadHatSurgcapCybersun
 
+- type: loadout
+  id: LoadoutMedicalHeadNurse
+  category: JobsMedicalAUncategorized
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMedicalHead
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Medical
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Chemist # Jobs too special/specific for nurse roleplay (no longer MD exclusive)
+        - Paramedic
+        - Psychologist
+        - SeniorPhysician
+        - ChiefMedicalOfficer
+  items:
+    - ClothingHeadNurseHat
+
 # Id
 
 # Neck
@@ -371,20 +415,34 @@
     - BedsheetMedical
 
 # Mask
+- type: loadout
+  id: LoadoutClothingMaskSterileMedical
+  category: JobsMedicalAUncategorized
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMedicalMask
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Medical
+  items:
+    - ClothingMaskSterile
 
 # Outer
 - type: loadout
   id: LoadoutMedicalOuterWinterCoat
   category: JobsMedicalAUncategorized
   cost: 0
+  exclusive: true
   requirements:
-  - !type:CharacterItemGroupRequirement
-    group: LoadoutMedicalOuter
-  - !type:CharacterDepartmentRequirement
-    departments:
-    - Medical
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMedicalOuter
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Medical
   items:
-  - ClothingOuterWinterMed
+    - ClothingOuterWinterMed
 
 - type: loadout
   id: LoadoutMedicalOuterLabcoat
@@ -415,7 +473,76 @@
   items:
     - ClothingOuterCoatCybersunWindbreaker
 
+- type: loadout
+  id: LoadoutMedicalOuterWinterCoatViro
+  category: JobsMedicalAUncategorized
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMedicalOuter
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Medical
+  items:
+    - ClothingOuterWinterViro
+
+- type: loadout
+  id: LoadoutMedicalOuterWinterCoatGen
+  category: JobsMedicalAUncategorized
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMedicalOuter
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Medical
+  items:
+    - ClothingOuterWinterGen
+
 # Shoes
+- type: loadout
+  id: LoadoutMedicalBootsWinter
+  category: JobsMedicalAUncategorized
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMedicalShoes
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Medical
+  items:
+    - ClothingShoesBootsWinterMed
+
+- type: loadout
+  id: LoadoutMedicalBootsWinterViro
+  category: JobsMedicalAUncategorized
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMedicalShoes
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Medical
+  items:
+    - ClothingShoesBootsWinterViro
+
+- type: loadout
+  id: LoadoutMedicalBootsWinterGen
+  category: JobsMedicalAUncategorized
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMedicalShoes
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Medical
+  items:
+    - ClothingShoesBootsWinterGenetics
 
 # Uniforms
 - type: loadout
@@ -534,3 +661,25 @@
         - Medical
   items:
     - UniformScrubsColorWhite
+
+- type: loadout
+  id: LoadoutMedicalUniformNurse
+  category: JobsMedicalAUncategorized
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMedicalUniforms
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Medical
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Chemist # Jobs too special/specific for nurse roleplay (no longer MD exclusive)
+        - Paramedic
+        - Psychologist
+        - SeniorPhysician
+        - ChiefMedicalOfficer
+  items:
+    - ClothingUniformJumpskirtNurse

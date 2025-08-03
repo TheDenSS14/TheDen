@@ -1,8 +1,15 @@
+# SPDX-FileCopyrightText: 2025 Blitz
+# SPDX-FileCopyrightText: 2025 Jakumba
+# SPDX-FileCopyrightText: 2025 Rosycup
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 - type: entity
   name: soul-shatter
   parent: BaseWeaponShotgun
   id: WeaponShotgunSoulshatter
-  description: A flashy, pocket-sized shotgun with a marble style grip. Provides no tactical advantage. Uses .50 shotgun shells.
+  description: A flashy, pocket-sized shotgun with a marble style grip. Provides no tactical advantage. Uses 12 gauge shells.
   components:
   - type: Sprite
     sprite: _DEN/Objects/Weapons/Guns/Shotguns/soulshatter.rsi
@@ -26,3 +33,21 @@
         Blunt: 7.5
   - type: DamageOtherOnHit
     staminaCost: 6
+
+- type: entity
+  name: antique energy shotgun
+  parent: [WeaponEnergyShotgun]
+  id: WeaponEnergyShotgunWarden
+  description: One of a few surviving prototypes of an energy shotgun, which never made it to mass production. It offers the possibility of both lethal and non-lethal shots, making it a versatile weapon.
+  components:
+  - type: EnergyGun
+    fireModes:
+    - proto: WardenEnergyShotgunLethalMode
+      fireCost: 200
+      name: lethal
+    - proto: WardenEnergyShotgunDisablerMode
+      fireCost: 100
+      name: disabler
+  - type: Battery
+    maxCharge: 1200
+    startingCharge: 1200

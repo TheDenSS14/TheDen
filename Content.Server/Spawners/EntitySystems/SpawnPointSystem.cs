@@ -1,7 +1,24 @@
+// SPDX-FileCopyrightText: 2022 Moony
+// SPDX-FileCopyrightText: 2022 Pieter-Jan Briers
+// SPDX-FileCopyrightText: 2023 Bakke
+// SPDX-FileCopyrightText: 2023 DrSmugleaf
+// SPDX-FileCopyrightText: 2023 Flipp Syder
+// SPDX-FileCopyrightText: 2023 ShadowCommander
+// SPDX-FileCopyrightText: 2023 Tom Leys
+// SPDX-FileCopyrightText: 2023 Visne
+// SPDX-FileCopyrightText: 2024 Errant
+// SPDX-FileCopyrightText: 2024 Krunklehorn
+// SPDX-FileCopyrightText: 2024 Leon Friedrich
+// SPDX-FileCopyrightText: 2024 metalgearsloth
+// SPDX-FileCopyrightText: 2024 sleepyyapril
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Content.Server.GameTicking;
 using Content.Server.Spawners.Components;
 using Content.Server.Station.Systems;
 using Robust.Shared.Map;
+using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 
 namespace Content.Server.Spawners.EntitySystems;
@@ -12,6 +29,7 @@ public sealed class SpawnPointSystem : EntitySystem
     [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly StationSystem _stationSystem = default!;
     [Dependency] private readonly StationSpawningSystem _stationSpawning = default!;
+    [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
 
     public override void Initialize()
     {
@@ -27,8 +45,13 @@ public sealed class SpawnPointSystem : EntitySystem
         var points = EntityQueryEnumerator<SpawnPointComponent, TransformComponent>();
         var possiblePositions = new List<EntityCoordinates>();
 
-        while ( points.MoveNext(out var uid, out var spawnPoint, out var xform))
+        _prototypeManager.TryIndex(args.Job, out var jobPrototype);
+
+        while (points.MoveNext(out var uid, out var spawnPoint, out var xform))
         {
+            if (spawnPoint.Job?.ID != args.Job && jobPrototype?.AlwaysUseSpawner == true)
+                continue;
+
             if (args.Station != null && _stationSystem.GetOwningStation(uid, xform) != args.Station)
                 continue;
 
@@ -40,7 +63,7 @@ public sealed class SpawnPointSystem : EntitySystem
 
                 switch (args.DesiredSpawnPointType)
                 {
-                    case SpawnPointType.Job when isMatchingJob:
+                    case SpawnPointType.Job when isMatchingJob || jobPrototype != null && jobPrototype.AlwaysUseSpawner:
                     case SpawnPointType.LateJoin when spawnPoint.SpawnType == SpawnPointType.LateJoin:
                     case SpawnPointType.Observer when spawnPoint.SpawnType == SpawnPointType.Observer:
                         possiblePositions.Add(xform.Coordinates);
@@ -57,7 +80,14 @@ public sealed class SpawnPointSystem : EntitySystem
 
             if (_gameTicker.RunLevel != GameRunLevel.InRound &&
                 spawnPoint.SpawnType == SpawnPointType.Job &&
-                (args.Job == null || spawnPoint.Job is not null && spawnPoint.Job == args.Job))
+                (args.Job == null || spawnPoint.Job?.ID == args.Job))
+            {
+                possiblePositions.Add(xform.Coordinates);
+            }
+
+            // shitcode.
+            if (jobPrototype?.AlwaysUseSpawner == true
+                && spawnPoint.Job?.ID == args.Job)
             {
                 possiblePositions.Add(xform.Coordinates);
             }

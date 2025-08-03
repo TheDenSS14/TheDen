@@ -1,3 +1,15 @@
+# SPDX-FileCopyrightText: 2024 VMSolidus
+# SPDX-FileCopyrightText: 2025 Alice
+# SPDX-FileCopyrightText: 2025 Angelo Fallaria
+# SPDX-FileCopyrightText: 2025 Blitz
+# SPDX-FileCopyrightText: 2025 BlitzTheSquishy
+# SPDX-FileCopyrightText: 2025 EctoplasmIsGood
+# SPDX-FileCopyrightText: 2025 Rosycup
+# SPDX-FileCopyrightText: 2025 Skubman
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 - type: characterItemGroup
   id: LoadoutCaptainBackpacks
   maxItems: 1
@@ -9,11 +21,15 @@
     - type: loadout
       id: LoadoutBackpackDuffelCaptain
     - type: loadout
+      id: LoadoutClothingBackpackMessengerCaptain
+    - type: loadout
       id: LoadoutBackpackCaptainFilled
     - type: loadout
       id: LoadoutBackpackSatchelCaptainFilled
     - type: loadout
       id: LoadoutBackpackDuffelCaptainFilled
+    - type: loadout
+      id: LoadoutClothingBackpackMessengerCaptainFilled
 
 - type: characterItemGroup
   id: LoadoutCaptainBelt
@@ -55,6 +71,8 @@
       id: LoadoutCaptainPulsePistol
     - type: loadout
       id: LoadoutCaptainTerminus
+    - type: loadout
+      id: LoadoutCaptainRevolverShotgun
 
 - type: characterItemGroup
   id: LoadoutCaptainEyes
@@ -71,6 +89,8 @@
       id: LoadoutCaptainGlovesCapGloves
     - type: loadout
       id: LoadoutCaptainGlovesInspection
+    - type: loadout
+      id: LoadoutClothingHandsCaptainWarmers
 
 - type: characterItemGroup
   id: LoadoutCaptainHead
@@ -102,6 +122,8 @@
       id: LoadoutCommandCapNeckCloakFormal
     - type: loadout
       id: LoadoutCaptainNeckGoldMedal
+    - type: loadout
+      id: LoadoutCommandCapCollar
 
 - type: characterItemGroup
   id: LoadoutCaptainMask
@@ -124,6 +146,8 @@
       id: LoadoutCaptainOuterTrench
     - type: loadout
       id: LoadoutCaptainOuterDogi
+    - type: loadout
+      id: LoadoutCaptainOuterLongCoat
 
 - type: characterItemGroup
   id: LoadoutCaptainShoes
@@ -137,6 +161,8 @@
       id: LoadoutCaptainShoesWinter
     - type: loadout
       id: LoadoutCaptainShoesCombat
+    - type: loadout
+      id: LoadoutClothingUnderSocksCaptain
 
 - type: characterItemGroup
   id: LoadoutCaptainUniforms
@@ -150,3 +176,5 @@
       id: LoadoutCommandCapJumpsuitFormal
     - type: loadout
       id: LoadoutCommandCapJumpskirtFormal
+    - type: loadout
+      id: LoadoutClothingUniformCaptainThong

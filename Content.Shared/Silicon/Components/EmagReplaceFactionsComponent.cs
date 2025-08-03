@@ -1,3 +1,9 @@
+// SPDX-FileCopyrightText: 2025 Timfa
+// SPDX-FileCopyrightText: 2025 portfiend
+// SPDX-FileCopyrightText: 2025 sleepyyapril
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 using Content.Shared.Silicons.Bots;
 using Robust.Shared.Audio;
 using Robust.Shared.GameStates;
@@ -8,7 +14,7 @@ namespace Content.Shared.Silicon.Components;
 /// Replaces the entities' factions when emagged.
 /// </summary>
 [RegisterComponent, NetworkedComponent]
-[Access(typeof(MedibotSystem))]
+[Access(typeof(SharedMedibotSystem))]
 public sealed partial class EmagReplaceFactionsComponent : Component
 {
     /// <summary>

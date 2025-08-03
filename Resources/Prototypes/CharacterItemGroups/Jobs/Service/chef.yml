@@ -1,3 +1,10 @@
+# SPDX-FileCopyrightText: 2024 VMSolidus
+# SPDX-FileCopyrightText: 2025 Blitz
+# SPDX-FileCopyrightText: 2025 portfiend
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 # Chef
 #- type: characterItemGroup
 #  id: LoadoutChefBackpacks
@@ -23,12 +30,14 @@
 #  id: LoadoutChefEyes
 #  maxItems: 1
 #  items:
-#
-#- type: characterItemGroup
-#  id: LoadoutChefGloves
-#  maxItems: 1
-#  items:
-#
+
+- type: characterItemGroup
+  id: LoadoutChefGloves
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutClothingHandsChefWarmers
+
 - type: characterItemGroup
   id: LoadoutChefHead
   items:
@@ -48,12 +57,14 @@
 #  id: LoadoutChefNeck
 #  maxItems: 1
 #  items:
-#
-#- type: characterItemGroup
-#  id: LoadoutChefMask
-#  maxItems: 1
-#  items:
-#
+
+- type: characterItemGroup
+  id: LoadoutChefMask
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutServiceMaskItalianMoustache
+
 - type: characterItemGroup
   id: LoadoutChefOuter
   items:
@@ -63,12 +74,18 @@
       id: LoadoutServiceOuterChefIdris
     - type: loadout
       id: LoadoutServiceOuterChefOrion
+    - type: loadout
+      id: LoadoutServiceOuterWinterChef
+    - type: loadout
+      id: LoadoutServiceOuterApronChef
 
-#- type: characterItemGroup
-#  id: LoadoutChefShoes
-#  maxItems: 1
-#  items:
-#
+- type: characterItemGroup
+  id: LoadoutChefShoes
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutClothingUnderSocksChef
+
 - type: characterItemGroup
   id: LoadoutChefUniforms
   items:
@@ -82,3 +99,5 @@
       id: LoadoutServiceJumpsuitChef
     - type: loadout
       id: LoadoutServiceJumpskirtChef
+    - type: loadout
+      id: LoadoutClothingUniformChefThong

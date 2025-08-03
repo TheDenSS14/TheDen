@@ -1,3 +1,48 @@
+# SPDX-FileCopyrightText: 2021 20kdc
+# SPDX-FileCopyrightText: 2021 Pieter-Jan Briers
+# SPDX-FileCopyrightText: 2021 Swept
+# SPDX-FileCopyrightText: 2021 SweptWasTaken
+# SPDX-FileCopyrightText: 2021 Vera Aguilera Puerto
+# SPDX-FileCopyrightText: 2021 Ygg01
+# SPDX-FileCopyrightText: 2022 CrudeWax
+# SPDX-FileCopyrightText: 2022 EmoGarbage404
+# SPDX-FileCopyrightText: 2022 Flipp Syder
+# SPDX-FileCopyrightText: 2022 Greenrock64
+# SPDX-FileCopyrightText: 2022 Moony
+# SPDX-FileCopyrightText: 2022 Peptide90
+# SPDX-FileCopyrightText: 2022 Radosvik
+# SPDX-FileCopyrightText: 2022 Rane
+# SPDX-FileCopyrightText: 2022 ZeroDayDaemon
+# SPDX-FileCopyrightText: 2022 mirrorcult
+# SPDX-FileCopyrightText: 2023 Kara
+# SPDX-FileCopyrightText: 2023 Kevin Zheng
+# SPDX-FileCopyrightText: 2023 Kit0vras
+# SPDX-FileCopyrightText: 2023 LankLTE
+# SPDX-FileCopyrightText: 2023 Leon Friedrich
+# SPDX-FileCopyrightText: 2023 Nemanja
+# SPDX-FileCopyrightText: 2023 Nim
+# SPDX-FileCopyrightText: 2023 Timothy Teakettle
+# SPDX-FileCopyrightText: 2023 Velcroboy
+# SPDX-FileCopyrightText: 2023 deltanedas
+# SPDX-FileCopyrightText: 2023 lzk
+# SPDX-FileCopyrightText: 2023 metalgearsloth
+# SPDX-FileCopyrightText: 2023 potato1234_x
+# SPDX-FileCopyrightText: 2024 Debug
+# SPDX-FileCopyrightText: 2024 Ed
+# SPDX-FileCopyrightText: 2024 Errant
+# SPDX-FileCopyrightText: 2024 IProduceWidgets
+# SPDX-FileCopyrightText: 2024 PoorMansDreams
+# SPDX-FileCopyrightText: 2024 SimpleStation14
+# SPDX-FileCopyrightText: 2024 deathride58
+# SPDX-FileCopyrightText: 2024 slarticodefast
+# SPDX-FileCopyrightText: 2025 Blitz
+# SPDX-FileCopyrightText: 2025 Hedera
+# SPDX-FileCopyrightText: 2025 Rosycup
+# SPDX-FileCopyrightText: 2025 portfiend
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 # Base
 
 - type: entity
@@ -68,6 +113,18 @@
     entity: FoodMeatRotten
     # once it would say bloated, turn into the rotten prototype
     stage: 1
+  - type: ReplaceSolutionWhenRotten
+    solution: food
+    duration: 1.5
+    replacements:
+      - solution:
+          reagents:
+          - ReagentId: GastroToxin
+            Quantity: 0.02 # 4u replaced after 300 seconds
+        whitelist:
+        - Nutriment
+        - UncookedAnimalProteins
+        amount: 0.02
 
 # bruh
 - type: Tag
@@ -142,6 +199,7 @@
     tags:
     - Raw
     - Meat
+    - Fish # DEN
   - type: Sprite
     state: fish
   - type: SolutionContainerManager
@@ -155,6 +213,17 @@
       reagents:
       - ReagentId: CarpoToxin
         Quantity: 5
+  # DEN - Allow you to make cooked fish
+  - type: Construction
+    graph: FishSteak
+    node: start
+    defaultTarget: cooked carp
+  - type: InternalTemperature
+    conductivity: 0.43
+  - type: SliceableFood
+    count: 3
+    slice: FoodMeatFishCutlet
+  # End DEN
 
 - type: entity
   name: raw bacon
@@ -302,7 +371,7 @@
     solutions:
       food:
         reagents:
-        - ReagentId: SalicylicAcid # Funkychem
+        - ReagentId: Bicaridine
           Quantity: 20
   - type: StaticPrice
     price: 750
@@ -1465,7 +1534,7 @@
     node: cutlet
   - type: FoodSequenceElement
     entries:
-      Burger: MeatCutlet
+      Burger: MeatCutletBurger # DEN - Patty sprite
       Taco: MeatCutlet
 
 - type: entity
@@ -1557,7 +1626,7 @@
     node: chicken cutlet
   - type: FoodSequenceElement
     entries:
-      Burger: ChickenCutlet
+      Burger: ChickenCutletBurger # DEN - Patty sprite
       Taco: ChickenCutlet
 
 - type: entity
@@ -1587,7 +1656,7 @@
     node: duck cutlet
   - type: FoodSequenceElement
     entries:
-      Burger: DuckCutlet
+      Burger: DuckCutletBurger # DEN - Patty sprite
       Taco: DuckCutlet
 
 - type: entity
@@ -1676,7 +1745,7 @@
     node: xeno cutlet
   - type: FoodSequenceElement
     entries:
-      Burger: XenoCutlet
+      Burger: XenoCutletBurger # DEN - Patty sprite
       Taco: XenoCutlet
 
 - type: entity

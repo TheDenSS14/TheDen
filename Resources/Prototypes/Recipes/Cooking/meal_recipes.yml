@@ -1,3 +1,73 @@
+# SPDX-FileCopyrightText: 2020 FL-OZ
+# SPDX-FileCopyrightText: 2020 Hugo Laloge
+# SPDX-FileCopyrightText: 2020 Víctor Aguilera Puerto
+# SPDX-FileCopyrightText: 2021 20kdc
+# SPDX-FileCopyrightText: 2021 AJCM-git
+# SPDX-FileCopyrightText: 2021 Elijahrane
+# SPDX-FileCopyrightText: 2021 Ephememory
+# SPDX-FileCopyrightText: 2021 Leon Friedrich
+# SPDX-FileCopyrightText: 2021 Matz05
+# SPDX-FileCopyrightText: 2021 Metal Gear Sloth
+# SPDX-FileCopyrightText: 2021 Swept
+# SPDX-FileCopyrightText: 2021 SweptWasTaken
+# SPDX-FileCopyrightText: 2021 Vera Aguilera Puerto
+# SPDX-FileCopyrightText: 2022 CrudeWax
+# SPDX-FileCopyrightText: 2022 Justin Trotter
+# SPDX-FileCopyrightText: 2022 Kevin Zheng
+# SPDX-FileCopyrightText: 2022 Michael Phillips
+# SPDX-FileCopyrightText: 2022 Nemanja
+# SPDX-FileCopyrightText: 2022 Pieter-Jan Briers
+# SPDX-FileCopyrightText: 2022 Rane
+# SPDX-FileCopyrightText: 2022 mirrorcult
+# SPDX-FileCopyrightText: 2023 Arendian
+# SPDX-FileCopyrightText: 2023 Debug
+# SPDX-FileCopyrightText: 2023 Doru991
+# SPDX-FileCopyrightText: 2023 DoubleRiceEddiedd
+# SPDX-FileCopyrightText: 2023 Feluk6174
+# SPDX-FileCopyrightText: 2023 Fluffiest Floofers
+# SPDX-FileCopyrightText: 2023 LankLTE
+# SPDX-FileCopyrightText: 2023 Moony
+# SPDX-FileCopyrightText: 2023 SonicHDC
+# SPDX-FileCopyrightText: 2023 Timothy Teakettle
+# SPDX-FileCopyrightText: 2023 Velcroboy
+# SPDX-FileCopyrightText: 2023 ZeroDayDaemon
+# SPDX-FileCopyrightText: 2023 chromiumboy
+# SPDX-FileCopyrightText: 2023 dahnte
+# SPDX-FileCopyrightText: 2023 deathride58
+# SPDX-FileCopyrightText: 2023 forthbridge
+# SPDX-FileCopyrightText: 2023 lapatison
+# SPDX-FileCopyrightText: 2023 lzk
+# SPDX-FileCopyrightText: 2023 metalgearsloth
+# SPDX-FileCopyrightText: 2023 nmajask
+# SPDX-FileCopyrightText: 2023 phunnyguy
+# SPDX-FileCopyrightText: 2023 potato1234_x
+# SPDX-FileCopyrightText: 2023 Арт
+# SPDX-FileCopyrightText: 2024 Alice Arimah Heurlin
+# SPDX-FileCopyrightText: 2024 Alzore
+# SPDX-FileCopyrightText: 2024 Brandon Hu
+# SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT
+# SPDX-FileCopyrightText: 2024 DrEnzyme
+# SPDX-FileCopyrightText: 2024 Ed
+# SPDX-FileCopyrightText: 2024 GreyMario
+# SPDX-FileCopyrightText: 2024 IProduceWidgets
+# SPDX-FileCopyrightText: 2024 Nim
+# SPDX-FileCopyrightText: 2024 RumiTiger
+# SPDX-FileCopyrightText: 2024 SlamBamActionman
+# SPDX-FileCopyrightText: 2024 Tayrtahn
+# SPDX-FileCopyrightText: 2024 TurboTrackerss14
+# SPDX-FileCopyrightText: 2024 Ubaser
+# SPDX-FileCopyrightText: 2024 degradka
+# SPDX-FileCopyrightText: 2024 deltanedas
+# SPDX-FileCopyrightText: 2024 dootythefrooty
+# SPDX-FileCopyrightText: 2024 mkanke-real
+# SPDX-FileCopyrightText: 2024 themias
+# SPDX-FileCopyrightText: 2025 Hedera
+# SPDX-FileCopyrightText: 2025 Tabitha
+# SPDX-FileCopyrightText: 2025 portfiend
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 - type: microwaveMealRecipe
   id: RecipeBun
   name: bun recipe
@@ -184,7 +254,7 @@
   time: 10
   solids:
     FoodBreadBun: 1
-    FoodMeatFish: 1
+    FoodMeatFishCooked: 1 # DEN - Use cooked fish
     FoodCheeseSlice: 1
 
 - type: microwaveMealRecipe
@@ -625,7 +695,7 @@
     Flour: 15
     Egg: 6
   solids:
-    FoodButter: 1
+    FoodButterSlice: 1  # DEN - Butter slice
 
 - type: microwaveMealRecipe
   id: RecipePastaTomato
@@ -652,7 +722,7 @@
   time: 10
   solids:
     FoodNoodlesBoiled: 1
-    FoodButter: 1
+    FoodButterSlice: 1  # DEN - Butter slice
 
 - type: microwaveMealRecipe
   id: RecipeChowMein
@@ -749,7 +819,7 @@
     FoodBowlBig: 1
     FoodTomato: 1
     FoodMushroom: 1
-    FoodMeatFish: 1
+    FoodMeatFishCooked: 1 # DEN - Use cooked fsh
 
 - type: microwaveMealRecipe
   id: RecipeMeatballSoup
@@ -958,7 +1028,7 @@
   solids:
     FoodBowlBig: 1
     FoodOnionSlice: 1
-    FoodButter: 1
+    FoodButterSlice: 1  # DEN - Butter slice
     FoodMeatSnailCooked: 1
 
 - type: microwaveMealRecipe
@@ -1115,12 +1185,11 @@
   result: FoodTartGapple
   time: 15
   reagents:
-    Gold: 10
     Sugar: 5
     Milk: 5
   solids:
     FoodDoughPie: 1
-    FoodApple: 2 #in absence of the real gapple i'm substituting one apple with 10u gold (one ingot)
+    FoodGoldenApple: 2 # gapples now real
     FoodPlateTin: 1
 
 - type: microwaveMealRecipe
@@ -1160,7 +1229,7 @@
     FoodDough: 1
     FoodCheeseSlice: 2
     FoodChiliPepper: 1
-    FoodMeatFish: 2
+    FoodMeatFishCooked: 1 # DEN - Use cooked fish
 
 - type: microwaveMealRecipe
   id: RecipeSashimi
@@ -1170,7 +1239,7 @@
   reagents:
     TableSalt: 1
   solids:
-    FoodMeatFish: 2
+    FoodMeatFishCutlet: 2 # DEN - Use cutlets
 
 - type: microwaveMealRecipe
   id: RecipeMisoColaSoup
@@ -1890,7 +1959,7 @@
   solids:
     FoodCorn: 1
     FoodPlate: 1
-    FoodButter: 1
+    FoodButterSlice: 1 # DEN - Butter slice
 
 - type: microwaveMealRecipe
   id: RecipePeaSoup
@@ -1938,7 +2007,7 @@
   time: 10
   solids:
     FoodTacoShell: 1
-    FoodMeatFish: 1
+    FoodMeatFishCutletCooked: 1 # DEN - Use cooked fish cutlet
     FoodOnionSlice: 2
     FoodTomato: 1
     FoodCabbage: 1
@@ -2008,5 +2077,5 @@
     TableSalt: 5
     UncookedAnimalProteins: 6
   solids:
-    FoodGarlic: 1
-    OrganHumanAppendix: 1
+    # FoodGarlic: 1 # DEN - No longer needs garlic
+    FoodSausageCasing: 1 # DEN - Use sausage casings

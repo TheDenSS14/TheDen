@@ -1,4 +1,16 @@
+# SPDX-FileCopyrightText: 2023 Fluffiest Floofers
+# SPDX-FileCopyrightText: 2023 deltanedas
+# SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT
+# SPDX-FileCopyrightText: 2024 Errant
+# SPDX-FileCopyrightText: 2024 SimpleStation14
+# SPDX-FileCopyrightText: 2024 Vyacheslav Kovalevsky
+# SPDX-FileCopyrightText: 2025 Vanessa Louwagie
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 - type: entity
+  categories: [ HideSpawnMenu ]
   abstract: true
   parent: BaseObjective
   id: BaseNinjaObjective
@@ -6,7 +18,7 @@
   - type: Objective
     # difficulty isn't used all since objectives are picked
     difficulty: 1.5
-    issuer: spiderclan
+    issuer: Spider Clan
   - type: RoleRequirement
     roles:
       mindRoles:
@@ -39,8 +51,8 @@
       sprite: Structures/Machines/server.rsi
       state: server
   - type: NumberObjective
-    min: 9
-    max: 13
+    min: 4 # TheDen - lowered to 4-7 techs. Won't screw over Epi as bad.
+    max: 7
     title: objective-condition-steal-research-title
   - type: StealResearchCondition
 
@@ -48,7 +60,8 @@
   categories: [ HideSpawnMenu ]
   parent: [BaseNinjaObjective, BaseCodeObjective]
   id: SpiderChargeObjective
-  description: This bomb can be detonated in a specific location. Note that the bomb will not work anywhere else!
+  name: Detonate the Spider Clan Charge. # TheDen - Technically you can put the charge anywhere. Its a feature, not a bug.
+  description: Sabotage can be an effective distraction. Make sure to make it count!
   components:
   - type: Objective
     icon:

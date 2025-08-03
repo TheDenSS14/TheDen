@@ -1,3 +1,11 @@
+# SPDX-FileCopyrightText: 2024 RichardRahl123 <130261520+RichardRahl123@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 dustylens <54123313+dustylens@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 KyuPolaris <tabi@kyuudev.me>
+# SPDX-FileCopyrightText: 2025 MajorMoth <61519600+MajorMoth@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 - type: flavor
   id: pear
   flavorType: Complex
@@ -32,3 +40,23 @@
   id: cucumber
   flavorType: Complex
   description: flavor-complex-cucumber
+
+- type: flavor
+  id: wassail
+  flavorType: Complex
+  description: flavor-complex-wassail
+  
+- type: flavor
+  id: finenoodles
+  flavorType: Complex
+  description: flavor-complex-fine-noodles
+
+- type: flavor
+  id: richbroth
+  flavorType: Complex
+  description: flavor-complex-rich-broth
+
+- type: flavor
+  id: tangy
+  flavorType: Complex
+  description: flavor-complex-tangy

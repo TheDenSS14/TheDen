@@ -1,4 +1,13 @@
-﻿using Content.Server.Actions;
+// SPDX-FileCopyrightText: 2024 ArchPigeon <bookmaster3@gmail.com>
+// SPDX-FileCopyrightText: 2024 FoxxoTrystan <45297731+FoxxoTrystan@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Krunklehorn <42424291+Krunklehorn@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Morb <14136326+Morb0@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 sleepyyapril <flyingkarii@gmail.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
+using Content.Server.Actions;
 using Content.Server.Humanoid;
 using Content.Shared.Humanoid;
 using Content.Shared.Humanoid.Markings;
@@ -54,15 +63,16 @@ public sealed class WaggingSystem : EntitySystem
 
     public bool TryToggleWagging(EntityUid uid, WaggingComponent? wagging = null, HumanoidAppearanceComponent? humanoid = null)
     {
-        if (!Resolve(uid, ref wagging, ref humanoid)
-            || !humanoid.MarkingSet.Markings.TryGetValue(MarkingCategories.Tail, out var markings)
-            || markings.Count == 0
-            || !_actions.TryGetActionData(wagging.ActionEntity, out var actionData)
-            || actionData.Toggled != wagging.Wagging)
+        if (!Resolve(uid, ref wagging, ref humanoid))
+            return false;
+
+        if (!humanoid.MarkingSet.Markings.TryGetValue(MarkingCategories.Tail, out var markings))
+            return false;
+
+        if (markings.Count == 0)
             return false;
 
         wagging.Wagging = !wagging.Wagging;
-        _actions.SetToggled(wagging.ActionEntity, wagging.Wagging);
 
         for (var idx = 0; idx < markings.Count; idx++) // Animate all possible tails
         {

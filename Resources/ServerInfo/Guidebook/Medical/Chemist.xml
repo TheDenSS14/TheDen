@@ -1,3 +1,11 @@
+<!--
+SPDX-FileCopyrightText: 2023 Sir Winters <7543955+Owai-Seek@users.noreply.github.com>
+SPDX-FileCopyrightText: 2024 Tunguso4ka <71643624+Tunguso4ka@users.noreply.github.com>
+SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+
+SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+-->
+
 <Document>
 # Chemist
 Now you've done it, you picked the one job where -math- is mandatory. Grab your beaker, pull up a chair, and get cracking, it's time to cook up some chems.
@@ -38,37 +46,13 @@ You can also use the hand labeler to organize individual bottles or bags without
 
 ## Extra Content:
 
-  Chemistry is a versatile role with plenty to experiment with. Generally, the only requirement is making enough chemicals to heal any patients that come in, but how you do so, and what you do afterward, is up to you.
+Speaking of experimentation, there are a few more toy you can use when it comes to chemistry. This job requires a lot of trial and error, but it was worth mentioning that these things exist! It's up to you to figure out what to make with them.
 
-  This job requires a lot of trial and error, so it's up to you to figure out what to make with the tools available to you. These tools and products can be dangerous or helpful, for example...
+<Box>
+<GuideEntityEmbed Entity="ModularGrenade"/>
+<GuideEntityEmbed Entity="CableApcStack"/>
+<GuideEntityEmbed Entity="ChemicalPayload"/>
+<GuideEntityEmbed Entity="TimerTrigger"/>
+</Box>
 
-  <Box>
-    <GuideEntityEmbed Entity="ModularGrenade"/>
-    <GuideEntityEmbed Entity="CableApcStack"/>
-    <GuideEntityEmbed Entity="ChemicalPayload"/>
-    <GuideEntityEmbed Entity="TimerTrigger"/>
-  </Box>
-  Have you tried making Fluorosurfactant before? What about Napalm?
-
-  <Box>
-    <GuideEntityEmbed Entity="RegenerativeMesh"/>
-    <GuideEntityEmbed Entity="MedicatedSuture"/>
-  </Box>
-  Sometimes you will see "advanced" topicals, but did you know that you can make them as well?
-
-  Ask the chef to borrow their microwave and try out the following recipes:
-
-  - 1 Poppy
-  - 1 Bruise Pack
-  - 1 Piece of Cloth
-  - 20u Tranexamic Acid
-  - 20u Cryptobiolin
-
-  or
-
-  - 1 Aloe
-  - 1 Ointment
-  - 1 Piece of Cloth
-  - 20u Oxandrolone
-  - 20u Sigynate
 </Document>

@@ -1,3 +1,38 @@
+# SPDX-FileCopyrightText: 2019 Víctor Aguilera Puerto
+# SPDX-FileCopyrightText: 2020 AJCM-git
+# SPDX-FileCopyrightText: 2021 Leon Friedrich
+# SPDX-FileCopyrightText: 2021 Swept
+# SPDX-FileCopyrightText: 2021 Tarlan2
+# SPDX-FileCopyrightText: 2021 Vera Aguilera Puerto
+# SPDX-FileCopyrightText: 2022 Fishfish458
+# SPDX-FileCopyrightText: 2022 Peptide90
+# SPDX-FileCopyrightText: 2022 Pieter-Jan Briers
+# SPDX-FileCopyrightText: 2022 Rane
+# SPDX-FileCopyrightText: 2022 fishfish458
+# SPDX-FileCopyrightText: 2022 keronshb
+# SPDX-FileCopyrightText: 2022 mirrorcult
+# SPDX-FileCopyrightText: 2023 CrigCrag
+# SPDX-FileCopyrightText: 2023 IntegerTempest
+# SPDX-FileCopyrightText: 2023 LightVillet
+# SPDX-FileCopyrightText: 2023 Moony
+# SPDX-FileCopyrightText: 2023 Whisper
+# SPDX-FileCopyrightText: 2023 deltanedas
+# SPDX-FileCopyrightText: 2023 nmajask
+# SPDX-FileCopyrightText: 2024 Alzore
+# SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT
+# SPDX-FileCopyrightText: 2024 Nemanja
+# SPDX-FileCopyrightText: 2024 XavierSomething
+# SPDX-FileCopyrightText: 2024 gluesniffler
+# SPDX-FileCopyrightText: 2024 lzk
+# SPDX-FileCopyrightText: 2024 metalgearsloth
+# SPDX-FileCopyrightText: 2025 KekaniCreates
+# SPDX-FileCopyrightText: 2025 Skubman
+# SPDX-FileCopyrightText: 2025 Spatison
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+# SPDX-FileCopyrightText: 2025 wheelwrightt
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 - type: latheRecipe
   id: Scalpel
   result: Scalpel
@@ -247,6 +282,7 @@
 - type: latheRecipe
   id: WhiteCane
   result: WhiteCane
+  category: Assistance Devices
   completetime: 2
   materials:
     Steel: 100
@@ -274,6 +310,7 @@
 - type: latheRecipe
   id: tampon
   result: tampon
+  category: Hygiene Products
   completetime: 1
   materials:
     Cloth: 10 #It doesn't really stop that much bleeding, so... fuck it
@@ -281,6 +318,7 @@
 - type: latheRecipe
   id: pad
   result: pad
+  category: Hygiene Products
   completetime: 1
   materials:
     Cloth: 100 #Less health than a gauze, but not by much.
@@ -288,6 +326,7 @@
 - type: latheRecipe
   id: liner
   result: liner
+  category: Hygiene Products
   completetime: 1
   materials:
     Cloth: 65 #Middle-of-the-road between Tampon and Pad.
@@ -295,6 +334,7 @@
 - type: latheRecipe
   id: CondomWrapped
   result: CondomWrapped
+  category: Hygiene Products
   completetime: 1
   materials:
     Plastic: 10 #we don't really have latex, and plastic is incredibly rare. As it's just an RP item right now, that bitch is tiny.

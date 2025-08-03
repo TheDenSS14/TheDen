@@ -1,3 +1,9 @@
+# SPDX-FileCopyrightText: 2024 VMSolidus
+# SPDX-FileCopyrightText: 2025 BlitzTheSquishy
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 # Psychologist
 - type: characterItemGroup
   id: LoadoutPsychologistBackpacks
@@ -9,6 +15,8 @@
       id: LoadoutPsychologistBackpackSatchel
     - type: loadout
       id: LoadoutPsychologistBackpackDuffel
+    - type: loadout
+      id: LoadoutPsychologistBackpackMessenger
 
 #- type: characterItemGroup
 #  id: LoadoutPsychologistBelt

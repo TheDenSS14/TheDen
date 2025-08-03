@@ -1,4 +1,14 @@
-﻿using Content.Shared.ActionBlocker;
+// SPDX-FileCopyrightText: 2023 DrSmugleaf
+// SPDX-FileCopyrightText: 2023 Kara
+// SPDX-FileCopyrightText: 2023 metalgearsloth
+// SPDX-FileCopyrightText: 2024 Pieter-Jan Briers
+// SPDX-FileCopyrightText: 2024 SimpleStation14
+// SPDX-FileCopyrightText: 2025 Eris
+// SPDX-FileCopyrightText: 2025 sleepyyapril
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
+using Content.Shared.ActionBlocker;
 using Content.Shared.Buckle.Components;
 using Content.Shared.Movement.Events;
 using Content.Shared.StepTrigger.Systems;
@@ -29,6 +39,7 @@ public sealed class ChasmSystem : EntitySystem
         SubscribeLocalEvent<ChasmFallingComponent, UpdateCanMoveEvent>(OnUpdateCanMove);
     }
 
+    /*
     public override void Update(float frameTime)
     {
         base.Update(frameTime);
@@ -57,9 +68,12 @@ public sealed class ChasmSystem : EntitySystem
             QueueDel(uid);
         }
     }
+    */
 
     private void OnStepTriggered(EntityUid uid, ChasmComponent component, ref StepTriggeredOffEvent args)
     {
+        return;
+        
         // already doomed
         if (HasComp<ChasmFallingComponent>(args.Tripper))
             return;

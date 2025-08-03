@@ -1,8 +1,14 @@
+# SPDX-FileCopyrightText: 2020 Swept
+# SPDX-FileCopyrightText: 2025 DeNatus
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+#
+# SPDX-License-Identifier: MIT
+
 # These are technically shoes for now, as we don't actually have underwear. But
 # I would cry if we didn't have them. -swept
 
 - type: entity
-  parent: ClothingShoesBase
+  parent: ClothingShoesBaseSocks #TheDen
   id: ClothingUnderSocksBee
   name: bee socks
   description: Make them loins buzz!
@@ -13,7 +19,7 @@
     sprite: Clothing/Under/Socks/bee.rsi
 
 - type: entity
-  parent: ClothingShoesBase
+  parent: ClothingShoesBaseSocks #TheDen
   id: ClothingUnderSocksCoder
   name: coder socks
   description: It's time to code sisters!!11!

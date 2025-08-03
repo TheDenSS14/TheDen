@@ -1,0 +1,73 @@
+# SPDX-FileCopyrightText: 2024 Fansana <116083121+Fansana@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Rosycup <178287475+Rosycup@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
+- type: construction
+  name: wooden railing
+  id: RailingWood
+  graph: RailingWood
+  startNode: start
+  targetNode: railingWood
+  category: construction-category-structures
+  description: Basic railing meant to protect you from falling.
+  icon:
+    sprite: _Floof/Structures/Walls/railing.rsi
+    state: wood_side
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+  - !type:TileNotBlocked
+
+- type: construction
+  name: wooden railing corner
+  id: RailingWoodCorner
+  graph: RailingWood
+  startNode: start
+  targetNode: railingWoodCorner
+  category: construction-category-structures
+  description: Basic railing meant to protect you from falling.
+  icon:
+    sprite: _Floof/Structures/Walls/railing.rsi
+    state: wood_corner
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+  - !type:TileNotBlocked
+
+- type: construction
+  name: wooden railing corner small
+  id: RailingWoodCornerSmall
+  graph: RailingWood
+  startNode: start
+  targetNode: railingWoodCornerSmall
+  category: construction-category-structures
+  description: Basic railing meant to protect you from falling.
+  icon:
+    sprite: _Floof/Structures/Walls/railing.rsi
+    state: wood_corner_small
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+  - !type:TileNotBlocked
+
+- type: construction
+  name: wooden railing round
+  id: RailingWoodRound
+  graph: RailingWood
+  startNode: start
+  targetNode: railingWoodRound
+  category: construction-category-structures
+  description: Basic railing meant to protect you from falling.
+  icon:
+    sprite: _Floof/Structures/Walls/railing.rsi
+    state: wood_round
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+  - !type:TileNotBlocked

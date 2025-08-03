@@ -1,3 +1,49 @@
+# SPDX-FileCopyrightText: 2021 Pieter-Jan Briers
+# SPDX-FileCopyrightText: 2021 Swept
+# SPDX-FileCopyrightText: 2021 Ygg01
+# SPDX-FileCopyrightText: 2022 CrudeWax
+# SPDX-FileCopyrightText: 2022 Emisse
+# SPDX-FileCopyrightText: 2022 Jessica M
+# SPDX-FileCopyrightText: 2022 Julian Giebel
+# SPDX-FileCopyrightText: 2022 Kai Shiba
+# SPDX-FileCopyrightText: 2022 Kara
+# SPDX-FileCopyrightText: 2022 Moony
+# SPDX-FileCopyrightText: 2022 Myctai
+# SPDX-FileCopyrightText: 2022 Peptide90
+# SPDX-FileCopyrightText: 2022 Rane
+# SPDX-FileCopyrightText: 2022 mirrorcult
+# SPDX-FileCopyrightText: 2022 rolfero
+# SPDX-FileCopyrightText: 2023 Alekshhh
+# SPDX-FileCopyrightText: 2023 Brandon Hu
+# SPDX-FileCopyrightText: 2023 Ed
+# SPDX-FileCopyrightText: 2023 GoodWheatley
+# SPDX-FileCopyrightText: 2023 Guilherme Ornel
+# SPDX-FileCopyrightText: 2023 Interrobang01
+# SPDX-FileCopyrightText: 2023 JoeHammad1844
+# SPDX-FileCopyrightText: 2023 MisterMecky
+# SPDX-FileCopyrightText: 2023 Nemanja
+# SPDX-FileCopyrightText: 2023 Nim
+# SPDX-FileCopyrightText: 2023 Psychpsyo
+# SPDX-FileCopyrightText: 2023 Puro
+# SPDX-FileCopyrightText: 2023 Sailor
+# SPDX-FileCopyrightText: 2023 Vasilis
+# SPDX-FileCopyrightText: 2023 crazybrain23
+# SPDX-FileCopyrightText: 2023 deltanedas
+# SPDX-FileCopyrightText: 2023 dontbetank
+# SPDX-FileCopyrightText: 2023 liltenhead
+# SPDX-FileCopyrightText: 2023 lzk
+# SPDX-FileCopyrightText: 2023 metalgearsloth
+# SPDX-FileCopyrightText: 2023 vanx
+# SPDX-FileCopyrightText: 2024 Alzore
+# SPDX-FileCopyrightText: 2024 Debug
+# SPDX-FileCopyrightText: 2024 Plykiya
+# SPDX-FileCopyrightText: 2024 drteaspoon420
+# SPDX-FileCopyrightText: 2025 Blahaj-the-Shonk
+# SPDX-FileCopyrightText: 2025 MajorMoth
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 - type: entity
   name: hypospray
   parent: BaseItem
@@ -79,7 +125,7 @@
 
 - type: entity
   name: experimental hypospray
-  suffix: Admeme
+  categories: [ AdminTools ]
   parent: SyndiHypo
   description: The ultimate application of bluespace technology and rapid chemical administration.
   id: AdminHypo
@@ -160,7 +206,7 @@
   - type: Tag
     tags: []
 
-- type: entity # Funkychem
+- type: entity
   name: poison auto-injector
   parent: ChemicalMedipen
   id: AntiPoisonMedipen
@@ -187,11 +233,11 @@
   - type: Tag
     tags: []
 
-- type: entity # Funkychem
+- type: entity
   name: brute auto-injector
   parent: ChemicalMedipen
   id: BruteAutoInjector
-  description: A rapid dose of libital, salicylic acid and tranexamic acid, intended for combat applications.
+  description: A rapid dose of bicaridine and tranexamic acid, intended for combat applications
   components:
   - type: Sprite
     sprite: Objects/Specific/Medical/medipen.rsi
@@ -210,22 +256,20 @@
   - type: SolutionContainerManager
     solutions:
       pen:
-        maxVol: 30
+        maxVol: 20
         reagents:
-        - ReagentId: SalicylicAcid
-          Quantity: 10
+        - ReagentId: Bicaridine
+          Quantity: 15
         - ReagentId: TranexamicAcid
           Quantity: 5
-        - ReagentId: Libital
-          Quantity: 15
   - type: Tag
     tags: []
 
-- type: entity # Funkychem
+- type: entity
   name: burn auto-injector
   parent: ChemicalMedipen
   id: BurnAutoInjector
-  description: A rapid dose of aiuri, oxandrolone and lenturi, intended for combat applications.
+  description: A rapid dose of dermaline and leporazine, intended for combat applications
   components:
   - type: Sprite
     sprite: Objects/Specific/Medical/medipen.rsi
@@ -244,22 +288,20 @@
   - type: SolutionContainerManager
     solutions:
       pen:
-        maxVol: 30
+        maxVol: 20
         reagents:
-        - ReagentId: Aiuri
+        - ReagentId: Dermaline
           Quantity: 10
-        - ReagentId: Oxandrolone
-          Quantity: 10
-        - ReagentId: Lenturi
+        - ReagentId: Leporazine
           Quantity: 10
   - type: Tag
     tags: []
 
-- type: entity # Funkychem
+- type: entity
   name: rad auto-injector
   parent: ChemicalMedipen
   id: RadAutoInjector
-  description: A rapid dose of anti-radiation. Contains arithrazine and libital.
+  description: A rapid dose of anti-radiation. Contains arithrazine and bicaridine.
   components:
   - type: Sprite
     sprite: Objects/Specific/Medical/medipen.rsi
@@ -282,7 +324,7 @@
         reagents:
         - ReagentId: Arithrazine
           Quantity: 15
-        - ReagentId: Libital
+        - ReagentId: Bicaridine
           Quantity: 5
   - type: Tag
     tags: []
@@ -310,20 +352,20 @@
   - type: SolutionContainerManager
     solutions:
       pen:
-        maxVol: 20 # Funkychem
+        maxVol: 15
         reagents:
-        - ReagentId: Puncturase # Funkychem
-          Quantity: 15
+        - ReagentId: Puncturase
+          Quantity: 10
         - ReagentId: TranexamicAcid
           Quantity: 5
   - type: Tag
     tags: []
 
-- type: entity # Funkychem
+- type: entity
   name: pyrazine auto-injector
   parent: ChemicalMedipen
   id: PyraAutoInjector
-  description: A rapid dose of pyrazine and aiuri, intended for combat applications.
+  description: A rapid dose of pyrazine and dermaline, intended for combat applications.
   components:
   - type: Sprite
     sprite: Objects/Specific/Medical/medipen.rsi
@@ -342,20 +384,20 @@
   - type: SolutionContainerManager
     solutions:
       pen:
-        maxVol: 25
+        maxVol: 20
         reagents:
         - ReagentId: Pyrazine
           Quantity: 10
-        - ReagentId: Aiuri
-          Quantity: 15
+        - ReagentId: Dermaline
+          Quantity: 10
   - type: Tag
     tags: []
 
-- type: entity # Funkychem
+- type: entity
   name: airloss auto-injector
   parent: ChemicalMedipen
   id: AirlossAutoInjector
-  description: A rapid dose of saline and salbutamol, intended to get someone up quickly.
+  description: A rapid dose of saline and dexalin plus, intended to get someone up quickly.
   components:
   - type: Sprite
     sprite: Objects/Specific/Medical/medipen.rsi
@@ -374,12 +416,12 @@
   - type: SolutionContainerManager
     solutions:
       pen:
-        maxVol: 30
+        maxVol: 40
         reagents:
         - ReagentId: Saline
-          Quantity: 15
-        - ReagentId: Salbutamol
-          Quantity: 15
+          Quantity: 20
+        - ReagentId: DexalinPlus
+          Quantity: 20
   - type: Tag
     tags: []
 
@@ -525,7 +567,7 @@
   - type: SolutionContainerVisuals
     maxFillLevels: 1
     changeColor: false
-    emptySpriteName: advcombatpen_empty
+    emptySpriteName: stimpen_empty
   - type: SolutionContainerManager
     solutions:
       pen:

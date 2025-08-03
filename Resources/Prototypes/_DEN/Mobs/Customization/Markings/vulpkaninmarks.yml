@@ -1,0 +1,58 @@
+# SPDX-FileCopyrightText: 2025 LaconiumDragona <riascazadofelra@gmail.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
+- type: marking
+  id: NeckChestfluff
+  bodyPart: Chest
+  markingCategory: Chest
+  speciesRestriction: [Vulpkanin]
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Vulpkanin/vulpkanin.rsi
+    state: chestfloof
+
+
+- type: marking
+  id: TailBrushtip
+  bodyPart: Tail
+  markingCategory: Tail
+  speciesRestriction: [Vulpkanin]
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Vulpkanin/vulpkanin.rsi
+    state: brushtiptail
+  - sprite: _DEN/Mobs/Customization/Vulpkanin/vulpkanin.rsi
+    state: brushtiptail2
+
+- type: marking
+  id: SnoutCheesegal
+  bodyPart: Snout
+  markingCategory: Snout
+  speciesRestriction: [Vulpkanin]
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Vulpkanin/cheesegal.rsi
+    state:  sergsnoutredux-1
+  - sprite: _DEN/Mobs/Customization/Vulpkanin/cheesegal.rsi
+    state:  sergsnoutredux-2
+
+- type: marking
+  id: EarsCheesegal
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  speciesRestriction: [Vulpkanin]
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Vulpkanin/cheesegal.rsi
+    state: sergears-1
+  - sprite: _DEN/Mobs/Customization/Vulpkanin/cheesegal.rsi
+    state: sergears-2
+
+- type: marking
+  id: TailCheesegal
+  bodyPart: Tail
+  markingCategory: Tail
+  speciesRestriction: [Vulpkanin]
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Vulpkanin/cheesegal.rsi
+    state: sergtail-1
+  - sprite: _DEN/Mobs/Customization/Vulpkanin/cheesegal.rsi
+    state: sergtail-2

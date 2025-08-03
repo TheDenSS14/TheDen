@@ -1,13 +1,26 @@
+# SPDX-FileCopyrightText: 2025 ElusiveCoin
+# SPDX-FileCopyrightText: 2025 Jakumba
+# SPDX-FileCopyrightText: 2025 Rosycup
+# SPDX-FileCopyrightText: 2025 Tabitha
+# SPDX-FileCopyrightText: 2025 TheOneTrueWolfio
+# SPDX-FileCopyrightText: 2025 foxcurl
+# SPDX-FileCopyrightText: 2025 juniwoofs
+# SPDX-FileCopyrightText: 2025 portfiend
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 - type: trait
   id: Heavyweight
-  category: Physical
+  category: TraitsPhysicalBiological
   points: -2 # Has pros and cons, not sure
   requirements:
   - !type:CharacterJobRequirement
     inverted: true
     jobs:
-    - Borg
-    - MedicalBorg
+      - StationAi
+      - Borg
+      - MedicalBorg
   - !type:CharacterTraitRequirement
     inverted: true
     traits:
@@ -23,14 +36,15 @@
 
 - type: trait
   id: UltraHeavyweight
-  category: Physical
+  category: TraitsPhysicalBiological
   points: -4 # Has pros and cons, not sure
   requirements:
   - !type:CharacterJobRequirement
     inverted: true
     jobs:
-    - Borg
-    - MedicalBorg
+      - StationAi
+      - Borg
+      - MedicalBorg
   - !type:CharacterTraitRequirement
     inverted: true
     traits:
@@ -46,14 +60,15 @@
 
 - type: trait
   id: UltraLightweight
-  category: Physical
+  category: TraitsPhysicalBiological
   points: 4 # Has pros and cons, not sure
   requirements:
   - !type:CharacterJobRequirement
     inverted: true
     jobs:
-    - Borg
-    - MedicalBorg
+      - StationAi
+      - Borg
+      - MedicalBorg
   - !type:CharacterTraitRequirement
     inverted: true
     traits:
@@ -69,19 +84,21 @@
 
 - type: trait
   id: ZeroGTraining
-  category: Physical
+  category: TraitsPhysicalFeats
   points: -2 # Suggested value, tweak as appropriate
   requirements:
   - !type:CharacterJobRequirement
     inverted: true
     jobs:
-    - Borg
-    - MedicalBorg
+      - StationAi
+      - Borg
+      - MedicalBorg
   - !type:CharacterSpeciesRequirement
     inverted: true
     species:
     - Moth
     - Harpy
+    - Resomi #Species trait
   - !type:CharacterTraitRequirement
     inverted: true
     traits:
@@ -95,14 +112,15 @@
 
 - type: trait
   id: ZeroGAverse
-  category: Physical
+  category: TraitsPhysicalDisabilities
   points: 2 # Suggested value, tweak as appropriate
   requirements:
   - !type:CharacterJobRequirement
     inverted: true
     jobs:
-    - Borg
-    - MedicalBorg
+      - StationAi
+      - Borg
+      - MedicalBorg
   - !type:CharacterSpeciesRequirement
     inverted: true
     species:
@@ -121,15 +139,76 @@
 
 - type: trait
   id: TailWag
-  category: Physical
+  category: TraitsPhysicalBiological
   points: 0
+  slots: 0
   requirements:
   - !type:CharacterJobRequirement
     inverted: true
     jobs:
-    - Borg
-    - MedicalBorg
+      - StationAi
+      - Borg
+      - MedicalBorg
   functions:
     - !type:TraitAddComponent
       components:
         - type: Wagging
+
+- type: trait
+  id: HealingFactor
+  category: TraitsPhysicalBiological
+  points: -6
+  requirements:
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - StationAi
+        - Borg
+        - MedicalBorg
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - IPC
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - PlateletFactories
+  functions:
+    - !type:TraitReplaceComponent
+      components:
+        - type: PassiveDamage
+          allowedStates:
+          - Alive
+          - Critical
+          damageCap: 400
+          damage:
+            groups:
+              Brute: -0.2
+              Burn: -0.2
+              Airloss: -0.3
+
+- type: trait
+  id: HandsFreePulling
+  category: TraitsPhysicalBiological
+  points: -10
+  requirements:
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - StationAi
+        - Borg
+        - MedicalBorg
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - Bodybuilder
+        - Weakling
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Reptilian
+  functions:
+    - !type:TraitReplaceComponent
+      components:
+        - type: Puller
+          needsHands: false

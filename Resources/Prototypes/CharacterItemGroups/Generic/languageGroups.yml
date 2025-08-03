@@ -1,3 +1,14 @@
+# SPDX-FileCopyrightText: 2024 KyuPolaris <tabi@kyuudev.me>
+# SPDX-FileCopyrightText: 2024 VMSolidus <evilexecutive@gmail.com>
+# SPDX-FileCopyrightText: 2025 Blitz <73762869+BlitzTheSquishy@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 SX-7 <92227810+SX-7@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Skubman <ba.fallaria@gmail.com>
+# SPDX-FileCopyrightText: 2025 Tabitha <64847293+KyuPolaris@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Timfa <timfalken@hotmail.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 - type: characterItemGroup
   id: TraitsLanguagesBasic
   maxItems: 2
@@ -46,6 +57,8 @@
       id: SiikMaas
     - type: trait
       id: Nehina
+    - type: trait
+      id: Kagebun
 
 - type: characterItemGroup
   id: TraitsAccents
@@ -75,6 +88,10 @@
       id: MobsterAccent
     - type: trait
       id: SkeletonAccent
+    - type: trait
+      id: SharpInflection
+    - type: trait
+      id: Monotonous
 
 - type: characterItemGroup
   id: TraitsLanguagesTajaran

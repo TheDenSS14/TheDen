@@ -1,3 +1,11 @@
+# SPDX-FileCopyrightText: 2025 Blitz
+# SPDX-FileCopyrightText: 2025 M3739
+# SPDX-FileCopyrightText: 2025 Rosycup
+# SPDX-FileCopyrightText: 2025 Tabitha
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 - type: emote
   id: HarpyRing
   name: chat-emote-name-harpyring
@@ -100,6 +108,7 @@
     tags:
     - VulpEmotes
     - HarpyEmotes
+    - KitsuneEmotes
   blacklist:
     components:
     - BorgChassis
@@ -132,6 +141,7 @@
     tags:
     - VulpEmotes
     - HarpyEmotes
+    - KitsuneEmotes # Floof - M3739 - #937 - I checked, foxes do in fact whine
   blacklist:
     components:
     - BorgChassis
@@ -147,6 +157,7 @@
   whitelist:
     tags:
     - VulpEmotes
+    - KitsuneEmotes
     - HarpyEmotes
   blacklist:
     components:
@@ -154,6 +165,8 @@
   chatMessages: [ howls ]
   chatTriggers:
     - howls
+    - howl
+    - awoo
 
 - type: emote
   id: Awoo
@@ -161,8 +174,9 @@
   category: Vocal
   whitelist:
     components:
-    - Vocal
+    - VulpEmotes
     - HarpyEmotes
+    - KitsuneEmotes
   blacklist:
     components:
     - BorgChassis
@@ -175,7 +189,6 @@
   id: Gnash
   name: delta-chat-emote-name-gnash
   category: Vocal
-  available: false
   whitelist:
     tags:
     - FeroxiEmotes

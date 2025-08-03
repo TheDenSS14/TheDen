@@ -1,3 +1,10 @@
+# SPDX-FileCopyrightText: 2024 VMSolidus
+# SPDX-FileCopyrightText: 2025 BlitzTheSquishy
+# SPDX-FileCopyrightText: 2025 Rosycup
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 # Salvage Specialist
 - type: characterItemGroup
   id: LoadoutSalvageSpecialistBackpacks
@@ -9,6 +16,8 @@
       id: LoadoutSalvageBackpackSatchel
     - type: loadout
       id: LoadoutSalvageBackpackDuffel
+    - type: loadout
+      id: LoadoutSalvageMessengerBackpack
 
 - type: characterItemGroup
   id: LoadoutSalvageSpecialistBelt
@@ -101,11 +110,13 @@
     - type: loadout
       id: LoadoutCargoOuterWinterMiner
 
-#- type: characterItemGroup
-#  id: LoadoutSalvageSpecialistShoes
-#  maxItems: 1
-#  items:
-#
+- type: characterItemGroup
+  id: LoadoutSalvageSpecialistShoes
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutSalvageSpecialistShoesBoots
+
 - type: characterItemGroup
   id: LoadoutSalvageSpecialistUniforms
   maxItems: 1

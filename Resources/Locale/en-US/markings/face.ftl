@@ -1,3 +1,8 @@
+# SPDX-FileCopyrightText: 2025 Skubman <ba.fallaria@gmail.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 marking-FaceBindi = Bindi
 marking-FaceBindi-bindi = Bindi
 
@@ -59,7 +64,7 @@ marking-FaceLipcornerLeft = Lip Corner (Left)
 marking-FaceLipcornerLeft-lipcorner_l = Lip Corner (Left)
 
 marking-FaceGlabella = Glabella
-marking-FaceGlabella-blabella = Glabella
+marking-FaceGlabella-glabella = Glabella
 
 marking-FaceLowercheekRight = Lower Cheek (Right)
 marking-FaceLowercheekRight-lowercheek_r = Lower Cheek (Right)

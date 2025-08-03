@@ -1,17 +1,39 @@
+# SPDX-FileCopyrightText: 2022 Peptide90
+# SPDX-FileCopyrightText: 2022 Rane
+# SPDX-FileCopyrightText: 2023 Julian Giebel
+# SPDX-FileCopyrightText: 2023 Nemanja
+# SPDX-FileCopyrightText: 2023 Whisper
+# SPDX-FileCopyrightText: 2023 mhamster
+# SPDX-FileCopyrightText: 2024 SimpleStation14
+# SPDX-FileCopyrightText: 2024 VMSolidus
+# SPDX-FileCopyrightText: 2025 Velcroboy
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 - type: entity
   id: LockerScienceFilled
   suffix: Filled
   parent: LockerScientist
   components:
-  - type: StorageFill
-    contents:
-      - id: ClothingHandsGlovesLatex
-      - id: ClothingHeadsetScience
-      - id: ClothingMaskSterile
-      - id: ClothingOuterCoatRnd
-      - id: AnomalyScanner
-      - id: NodeScanner
-      - id: NetworkConfigurator
-        prob: 0.5
-      - id: LunchboxEpistemicsFilledRandom # Delta-V Lunchboxes!
-        prob: 0.3
+  - type: EntityTableContainerFill
+    containers:
+      entity_storage: !type:AllSelector
+        children:
+        - !type:NestedSelector
+          tableId: FillLockerScientist
+        - !type:NestedSelector
+          tableId: FillLockerScientistDV # DeltaV Additions
+
+- type: entityTable
+  id: FillLockerScientist
+  table: !type:AllSelector
+    children:
+    - id: ClothingHandsGlovesLatex
+    - id: ClothingHeadsetScience
+    - id: ClothingMaskSterile
+    - id: ClothingOuterCoatRnd
+    - id: AnomalyScanner
+    - id: NodeScanner
+    - id: NetworkConfigurator
+      prob: 0.5

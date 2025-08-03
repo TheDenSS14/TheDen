@@ -1,3 +1,9 @@
+# SPDX-FileCopyrightText: 2025 Eris
+# SPDX-FileCopyrightText: 2025 Jakumba
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 - type: entity
   parent: BaseItem
   id: LavalandJaunter
@@ -10,3 +16,6 @@
   - type: Item
     size: Small
   - type: PreventChasmFalling
+  - type: Tag
+    tags:
+      - Jaunter

@@ -1,0 +1,16 @@
+# SPDX-FileCopyrightText: 2025 Rosycup <178287475+Rosycup@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
+- type: construction
+  name: quiver (bolts)
+  id: CraftQuiverBolt
+  graph: CraftQuiverBolt
+  startNode: start
+  targetNode: CraftQuiverBolt
+  category: construction-category-clothing
+  objectType: Item
+  icon:
+    sprite: _NF/Clothing/Belt/crossbow_quiver.rsi
+    state: icon

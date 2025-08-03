@@ -1,10 +1,62 @@
+# SPDX-FileCopyrightText: 2021 Pieter-Jan Briers
+# SPDX-FileCopyrightText: 2021 Swept
+# SPDX-FileCopyrightText: 2022 20kdc
+# SPDX-FileCopyrightText: 2022 DrSmugleaf
+# SPDX-FileCopyrightText: 2022 Jezithyr
+# SPDX-FileCopyrightText: 2024 Errant
+# SPDX-FileCopyrightText: 2024 gluesniffler
+# SPDX-FileCopyrightText: 2025 Tanix
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 - type: entity
   id: OrganVoxLungs
   name: vox lungs
   parent: OrganHumanLungs
   suffix: "vox"
+  description: "The blue, anaerobic lungs of a vox, they intake nitrogen to breathe. Any form of gaseous oxygen is lethally toxic if breathed in."
   components:
   - type: Metabolizer
     metabolizerTypes: [ Vox ]
   - type: Lung
     alert: LowNitrogen
+
+- type: entity
+  parent: OrganHumanStomach
+  id: OrganVoxStomach
+  name: stomach
+  description: "A stomach that smells of ammonia."
+  components:
+  - type: Metabolizer
+    metabolizerTypes: [Vox]
+  - type: Stomach
+    specialDigestible:
+      tags:
+      - Trash
+      - Fruit
+      - ReptilianFood
+      - Meat
+      - Pill
+      - Crayon
+      - Paper
+      - VoxFood
+      - Vegetable
+
+- type: entity
+  parent: OrganHumanLiver
+  id: OrganVoxLiver
+  name: liver
+  description: "Smells flammable."
+  components:
+  - type: Metabolizer
+    metabolizerTypes: [Vox]
+
+- type: entity
+  parent: OrganHumanHeart
+  id: OrganVoxHeart
+  name: heart
+  description: "The strange heart of a vox."
+  components:
+  - type: Metabolizer
+    metabolizerTypes: [Vox]

@@ -1,3 +1,8 @@
+# SPDX-FileCopyrightText: 2025 MajorMoth
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 # parent, no touchy with automation
 
 - type: entity
@@ -10,21 +15,6 @@
     hasDrawn: true
 
 # all prefilled syringes in alphabetical order
-
-- type: entity
-  suffix: aiuri
-  parent: PrefilledSyringe
-  id: SyringeAiuri
-  components:
-  - type: SolutionContainerManager
-    solutions:
-      injector:
-        maxVol: 15
-        reagents:
-        - ReagentId: Aiuri
-          Quantity: 15
-  - type: Label
-    currentLabel: aiuri
 
 - type: entity
   suffix: ambuzol
@@ -42,6 +32,21 @@
     currentLabel: ambuzol
 
 - type: entity
+  suffix: bicaridine
+  parent: PrefilledSyringe
+  id: SyringeBicaridine
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      injector:
+        maxVol: 15
+        reagents:
+        - ReagentId: Bicaridine
+          Quantity: 15
+  - type: Label
+    currentLabel: bicaridine
+
+- type: entity
   suffix: cognizine
   parent: PrefilledSyringe
   id: SyringeCognizine
@@ -49,27 +54,27 @@
   - type: SolutionContainerManager
     solutions:
       injector:
-        maxVol: 5
+        maxVol: 15
         reagents:
         - ReagentId: Cognizine
-          Quantity: 5
+          Quantity: 15
   - type: Label
     currentLabel: cognizine
 
 - type: entity
-  suffix: convermol
+  suffix: dermaline
   parent: PrefilledSyringe
-  id: SyringeConvermol
+  id: SyringeDermaline
   components:
   - type: SolutionContainerManager
     solutions:
       injector:
-        maxVol: 9
+        maxVol: 15
         reagents:
-        - ReagentId: Convermol
-          Quantity: 9
+        - ReagentId: Dermaline
+          Quantity: 15
   - type: Label
-    currentLabel: convermol
+    currentLabel: dermaline
 
 - type: entity
   suffix: ephedrine
@@ -139,42 +144,12 @@
   - type: SolutionContainerManager
     solutions:
       injector:
-        maxVol: 8
+        maxVol: 15
         reagents:
         - ReagentId: Ipecac
-          Quantity: 8
+          Quantity: 15
   - type: Label
     currentLabel: ipecac
-
-- type: entity
-  suffix: libital
-  parent: PrefilledSyringe
-  id: SyringeLibital
-  components:
-  - type: SolutionContainerManager
-    solutions:
-      injector:
-        maxVol: 15
-        reagents:
-        - ReagentId: Libital
-          Quantity: 15
-  - type: Label
-    currentLabel: libital
-
-- type: entity
-  suffix: opporozidone
-  parent: PrefilledSyringe
-  id: SyringeOpporozidone
-  components:
-  - type: SolutionContainerManager
-    solutions:
-      injector:
-        maxVol: 15
-        reagents:
-        - ReagentId: Opporozidone
-          Quantity: 15
-  - type: Label
-    currentLabel: opporozidone
 
 - type: entity
   suffix: phalanximine
@@ -190,21 +165,6 @@
           Quantity: 15
   - type: Label
     currentLabel: phalanximine
-
-- type: entity
-  suffix: revivopine
-  parent: PrefilledSyringe
-  id: SyringeRevivopine
-  components:
-  - type: SolutionContainerManager
-    solutions:
-      injector:
-        maxVol: 15
-        reagents:
-        - ReagentId: Revivopine
-          Quantity: 15
-  - type: Label
-    currentLabel: revivopine
 
 - type: entity
   suffix: romerol
@@ -274,9 +234,10 @@
   - type: SolutionContainerManager
     solutions:
       injector:
-        maxVol: 5
+        maxVol: 15
         reagents:
         - ReagentId: TranexamicAcid
-          Quantity: 5
+          Quantity: 15
   - type: Label
     currentLabel: tranexamic acid
+

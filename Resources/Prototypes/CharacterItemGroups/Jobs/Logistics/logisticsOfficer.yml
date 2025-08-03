@@ -1,3 +1,12 @@
+# SPDX-FileCopyrightText: 2024 VMSolidus
+# SPDX-FileCopyrightText: 2025 BlitzTheSquishy
+# SPDX-FileCopyrightText: 2025 Lonofera
+# SPDX-FileCopyrightText: 2025 MajorMoth
+# SPDX-FileCopyrightText: 2025 Rosycup
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 # Logistics Officer
 #- type: characterItemGroup
 #  id: LoadoutLogisticsOfficerBackpacks
@@ -23,12 +32,14 @@
 #  id: LoadoutLogisticsOfficerEyes
 #  maxItems: 1
 #  items:
-#
-#- type: characterItemGroup
-#  id: LoadoutLogisticsOfficerGloves
-#  maxItems: 1
-#  items:
-#
+
+- type: characterItemGroup
+  id: LoadoutLogisticsOfficerGloves
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutClothingHandsLOLogisWarmers
+
 - type: characterItemGroup
   id: LoadoutLogisticsOfficerHead
   maxItems: 1
@@ -56,13 +67,15 @@
 #  id: LoadoutLogisticsOfficerMask
 #  maxItems: 1
 #  items:
-#
+
 - type: characterItemGroup
   id: LoadoutLogisticsOfficerOuter
   maxItems: 1
   items:
     - type: loadout
       id: LoadoutCommandQMOuterCoatCargoForeman
+    - type: loadout
+      id: LoadoutLogisticsOfficerOuterLongCoat
 
 - type: characterItemGroup
   id: LoadoutLogisticsOfficerShoes
@@ -70,6 +83,8 @@
   items:
     - type: loadout
       id: LoadoutCommandQMShoesBootsWinter
+    - type: loadout
+      id: LoadoutClothingUnderSocksLOLogis
 
 - type: characterItemGroup
   id: LoadoutLogisticsOfficerUniforms
@@ -81,3 +96,5 @@
       id: LoadoutCommandQMUniformTurtleneckSkirt
     - type: loadout
       id: LoadoutCommandQMUniformForeman
+    - type: loadout
+      id: LoadoutClothingUniformLOLogisThong

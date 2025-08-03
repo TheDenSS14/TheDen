@@ -1,3 +1,16 @@
+// SPDX-FileCopyrightText: 2023 Debug <sidneymaatman@gmail.com>
+// SPDX-FileCopyrightText: 2023 JJ <47927305+PHCodes@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 PHCodes <47927305+PHCodes@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Debug <49997488+DebugOk@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 FoxxoTrystan <45297731+FoxxoTrystan@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 FoxxoTrystan <trystan.garnierhein@gmail.com>
+// SPDX-FileCopyrightText: 2024 VMSolidus <evilexecutive@gmail.com>
+// SPDX-FileCopyrightText: 2025 Falcon <falcon@zigtag.dev>
+// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 sleepyyapril <flyingkarii@gmail.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 using Content.Server.Consent;
 using Content.Shared.Actions;
 using Content.Shared.Abilities.Psionics;
@@ -10,14 +23,13 @@ using Content.Server.Mind;
 using Content.Shared.Mobs.Systems;
 using Content.Server.Popups;
 using Content.Server.Psionics;
-using Content.Server.GameTicking;
 using Content.Shared.Mind;
 using Content.Shared.Actions.Events;
 using Content.Server.DoAfter;
+using Content.Server.Ghost;
 using Content.Shared.Consent;
 using Content.Shared.DoAfter;
 using Robust.Shared.Prototypes;
-
 
 namespace Content.Server.Abilities.Psionics
 {

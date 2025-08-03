@@ -1,3 +1,29 @@
+# SPDX-FileCopyrightText: 2023 Kara
+# SPDX-FileCopyrightText: 2023 Nemanja
+# SPDX-FileCopyrightText: 2023 Nim
+# SPDX-FileCopyrightText: 2023 Slava0135
+# SPDX-FileCopyrightText: 2023 brainfood1183
+# SPDX-FileCopyrightText: 2023 metalgearsloth
+# SPDX-FileCopyrightText: 2024 AJCM-git
+# SPDX-FileCopyrightText: 2024 Aiden
+# SPDX-FileCopyrightText: 2024 Alzore
+# SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT
+# SPDX-FileCopyrightText: 2024 Ed
+# SPDX-FileCopyrightText: 2024 Emisse
+# SPDX-FileCopyrightText: 2024 Memeji
+# SPDX-FileCopyrightText: 2024 VMSolidus
+# SPDX-FileCopyrightText: 2024 Whatstone
+# SPDX-FileCopyrightText: 2024 Whisper
+# SPDX-FileCopyrightText: 2024 coderabbitai[bot]
+# SPDX-FileCopyrightText: 2024 icekot8
+# SPDX-FileCopyrightText: 2025 MajorMoth
+# SPDX-FileCopyrightText: 2025 Rosycup
+# SPDX-FileCopyrightText: 2025 Steve
+# SPDX-FileCopyrightText: 2025 marc-pelletier
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 - type: artifactEffect
   id: EffectBadFeeling
   targetDepth: 0
@@ -182,8 +208,11 @@
     - Water
     - Sulfur
     - Blood # Floof - Artifact tweaks
-    - Cum # Floof - Artifact tweaks
-    - Pomelustine # Floof - Artifact tweaks
+#   The Den start
+#   These often end up breaking consent. Removed.
+#   - Cum # Floof - Artifact tweaks
+#   - Pomelustine # Floof - Artifact tweaks
+#   The Den end
 
 - type: artifactEffect
   id: EffectCold
@@ -392,6 +421,10 @@
       orGroup: fauna
       maxAmount: 1
       prob: 0.03
+    - id: MobRosyMothroach # Frontier
+      orGroup: fauna # Frontier
+      prob: 0.2 # Frontier
+      maxAmount: 2 # Frontier
     - id: MobMouse
       orGroup: fauna
     - id: MobParrot
@@ -458,6 +491,17 @@
     - Ammonia
     - NitrousOxide
     - Frezon
+    - BZ
+    - Healium
+    - Nitrium
+    - Pluoxium
+    - Hydrogen
+    - HyperNoblium
+    - ProtoNitrate
+    - Zauker
+    - Halon
+    - Helium
+    - AntiNoblium
 
 - type: artifactEffect
   id: EffectBlink
@@ -473,11 +517,11 @@
   components:
   - type: FoamArtifact
     reagents:
-    - Aiuri # Funkychem
+    - Dermaline
     - Arithrazine
-    - Libital # Funkychem
+    - Bicaridine
     - Inaprovaline
-    - Multiver # Funkychem
+    - Kelotane
     - Dexalin
     - Omnizine
 
@@ -491,24 +535,26 @@
       maxVol: 500
       canReact: false
     possibleChemicals:
-    - Lenturi # Funkychem
+    - Dermaline
     - Arithrazine
-    - Libital # Funkychem
-    - Probital # Funkychem
+    - Bicaridine
     - Inaprovaline
-    - Aiuri # Funkychem
+    - Kelotane
     - Dexalin
     - Omnizine
     - Napalm
     - Toxin
     - Epinephrine
     - Cognizine
-    - PenteticAcid # Funkychem
+    - Ultravasculine
     - Desoxyephedrine
     - Pax
     - Siderlac
-    - Libidozenithizine # Floof - Artifact tweaks
-    - Philterex # Floof - Artifact tweaks
+#   The Den start
+#   These often end up breaking consent. Removed.
+#   - Libidozenithizine # Floof - Artifact tweaks
+#   - Philterex # Floof - Artifact tweaks
+#   The Den end
 
 - type: artifactEffect
   id: EffectEmp

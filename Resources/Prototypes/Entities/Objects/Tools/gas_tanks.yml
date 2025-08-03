@@ -1,3 +1,45 @@
+# SPDX-FileCopyrightText: 2020 Víctor Aguilera Puerto
+# SPDX-FileCopyrightText: 2020 a.rudenko
+# SPDX-FileCopyrightText: 2020 chairbender
+# SPDX-FileCopyrightText: 2021 Kara D
+# SPDX-FileCopyrightText: 2021 Pieter-Jan Briers
+# SPDX-FileCopyrightText: 2021 Swept
+# SPDX-FileCopyrightText: 2021 Vera Aguilera Puerto
+# SPDX-FileCopyrightText: 2022 Alex Evgrashin
+# SPDX-FileCopyrightText: 2022 Bright0
+# SPDX-FileCopyrightText: 2022 Kara
+# SPDX-FileCopyrightText: 2022 Leon Friedrich
+# SPDX-FileCopyrightText: 2022 Moony
+# SPDX-FileCopyrightText: 2022 Myctai
+# SPDX-FileCopyrightText: 2022 Rane
+# SPDX-FileCopyrightText: 2022 ZeroDayDaemon
+# SPDX-FileCopyrightText: 2022 iller_saver
+# SPDX-FileCopyrightText: 2023 Danger Revolution!
+# SPDX-FileCopyrightText: 2023 DangerRevoltion
+# SPDX-FileCopyrightText: 2023 DrSmugleaf
+# SPDX-FileCopyrightText: 2023 Errant
+# SPDX-FileCopyrightText: 2023 I.K
+# SPDX-FileCopyrightText: 2023 Nemanja
+# SPDX-FileCopyrightText: 2023 Vordenburg
+# SPDX-FileCopyrightText: 2023 Vyacheslav Kovalevsky
+# SPDX-FileCopyrightText: 2023 deltanedas
+# SPDX-FileCopyrightText: 2023 keronshb
+# SPDX-FileCopyrightText: 2023 metalgearsloth
+# SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT
+# SPDX-FileCopyrightText: 2024 Debug
+# SPDX-FileCopyrightText: 2024 Ilya246
+# SPDX-FileCopyrightText: 2024 OldDanceJacket
+# SPDX-FileCopyrightText: 2024 V
+# SPDX-FileCopyrightText: 2024 Verm
+# SPDX-FileCopyrightText: 2024 dge21
+# SPDX-FileCopyrightText: 2024 lzk
+# SPDX-FileCopyrightText: 2024 themias
+# SPDX-FileCopyrightText: 2025 Skubman
+# SPDX-FileCopyrightText: 2025 Tanix
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 - type: entity
   abstract: true
   parent: BaseItem
@@ -143,6 +185,35 @@
         restitution: 0.3
         friction: 0.2
 
+- type: entity #Imp
+  parent: GasTankRoundBase
+  id: EmergencyOxygenTankCommand
+  name: command emergency oxygen tank
+  description: An easily portable tank for emergencies. Contains very little oxygen, but at least it looks nice. It can hold 0.66 L of gas.
+  components:
+  - type: Sprite
+    sprite: Objects/Tanks/emergency_command.rsi
+  - type: Item
+    size: Small
+    sprite: Objects/Tanks/emergency_command.rsi
+  - type: GasTank
+    air:
+      volume: 0.66
+      temperature: 293.15
+  - type: Clothing
+    sprite: Objects/Tanks/emergency_command.rsi
+    slots:
+    - Pocket
+    - Belt
+    - suitStorage
+  - type: MeleeWeapon
+    damage:
+      types:
+        Blunt: 5
+  - type: PhysicalComposition
+    materialComposition:
+      Steel: 100
+
 - type: entity
   parent: EmergencyOxygenTank
   id: EmergencyNitrogenTank
@@ -155,6 +226,35 @@
     sprite: Objects/Tanks/emergency_red.rsi
   - type: Clothing
     sprite: Objects/Tanks/emergency_red.rsi
+
+- type: entity #Imp
+  parent: GasTankRoundBase
+  id: EmergencyNitrogenTankCommand
+  name: command emergency nitrogen tank
+  description: An easily portable tank for emergencies. Contains very little nitrogen, but at least it looks nice. It can hold 0.66 L of gas.
+  components:
+  - type: Sprite
+    sprite: Objects/Tanks/emergency_red_command.rsi
+  - type: Item
+    size: Small
+    sprite: Objects/Tanks/emergency_red_command.rsi
+  - type: GasTank
+    air:
+      volume: 0.66
+      temperature: 293.15
+  - type: Clothing
+    sprite: Objects/Tanks/emergency_red_command.rsi
+    slots:
+    - Pocket
+    - Belt
+    - suitStorage
+  - type: MeleeWeapon
+    damage:
+      types:
+        Blunt: 5
+  - type: PhysicalComposition
+    materialComposition:
+      Steel: 100
 
 - type: entity
   parent: EmergencyOxygenTank
@@ -197,6 +297,23 @@
         restitution: 0.3
         friction: 0.2
 
+- type: entity #Imp
+  parent: EmergencyOxygenTankCommand
+  id: ExtendedEmergencyOxygenTankCommand
+  name: extended command emergency oxygen tank
+  description: An emergency tank with extended capacity. Technically rated for prolonged use, and it looks nice. It can hold 1.5 L of gas.
+  components:
+  - type: Sprite
+    sprite: Objects/Tanks/emergency_command.rsi
+  - type: Item
+    sprite: Objects/Tanks/emergency_command.rsi
+  - type: GasTank
+    air:
+      volume: 1.5
+      temperature: 293.15
+  - type: Clothing
+    sprite: Objects/Tanks/emergency_command.rsi
+
 - type: entity
   parent: ExtendedEmergencyOxygenTank
   id: ExtendedEmergencyNitrogenTank
@@ -209,6 +326,19 @@
     sprite: Objects/Tanks/emergency_extended_red.rsi
   - type: Clothing
     sprite: Objects/Tanks/emergency_extended_red.rsi
+
+- type: entity #Imp
+  parent: ExtendedEmergencyOxygenTankCommand
+  id: ExtendedEmergencyNitrogenTankCommand
+  name: extended command emergency nitrogen tank
+  description: An emergency tank with extended capacity. Technically rated for prolonged use, and it looks nice. It can hold 1.5 L of gas.
+  components:
+  - type: Sprite
+    sprite: Objects/Tanks/emergency_red_command.rsi
+  - type: Item
+    sprite: Objects/Tanks/emergency_red_command.rsi
+  - type: Clothing
+    sprite: Objects/Tanks/emergency_red_command.rsi
 
 - type: entity
   parent: ExtendedEmergencyOxygenTank

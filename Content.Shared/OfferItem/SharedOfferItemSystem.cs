@@ -1,6 +1,14 @@
+// SPDX-FileCopyrightText: 2024 Spatison
+// SPDX-FileCopyrightText: 2025 Mnemotechnican
+// SPDX-FileCopyrightText: 2025 sleepyyapril
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 using Content.Shared.Interaction;
 using Content.Shared.IdentityManagement;
 using Content.Shared.Hands.Components;
+using Content.Shared.Inventory.VirtualItem;
+
 
 namespace Content.Shared.OfferItem;
 
@@ -38,12 +46,13 @@ public abstract partial class SharedOfferItemSystem : EntitySystem
         if (offerItem.Item == null)
             return;
 
+        // Floof - if the held item is a pseudo-item, show the underlying item in the popup
         _popup.PopupEntity(Loc.GetString("offer-item-try-give",
-            ("item", Identity.Entity(offerItem.Item.Value, EntityManager)),
+            ("item", Identity.Entity(offerItem.GetRealEntity(EntityManager), EntityManager)), // FLoof - resolve virtual items
             ("target", Identity.Entity(uid, EntityManager))), component.Target.Value, component.Target.Value);
         _popup.PopupEntity(Loc.GetString("offer-item-try-give-target",
             ("user", Identity.Entity(component.Target.Value, EntityManager)),
-            ("item", Identity.Entity(offerItem.Item.Value, EntityManager))), component.Target.Value, uid);
+            ("item", Identity.Entity(offerItem.GetRealEntity(EntityManager), EntityManager))), component.Target.Value, uid); // FLoof - resolve virtual items
 
         args.Handled = true;
     }
@@ -73,21 +82,21 @@ public abstract partial class SharedOfferItemSystem : EntitySystem
             if (component.Item != null)
             {
                 _popup.PopupEntity(Loc.GetString("offer-item-no-give",
-                    ("item", Identity.Entity(component.Item.Value, EntityManager)),
+                    ("item", Identity.Entity(component.GetRealEntity(EntityManager), EntityManager)), // FLoof - resolve virtual items
                     ("target", Identity.Entity(component.Target.Value, EntityManager))), uid, uid);
                 _popup.PopupEntity(Loc.GetString("offer-item-no-give-target",
                     ("user", Identity.Entity(uid, EntityManager)),
-                    ("item", Identity.Entity(component.Item.Value, EntityManager))), uid, component.Target.Value);
+                    ("item", Identity.Entity(component.GetRealEntity(EntityManager), EntityManager))), uid, component.Target.Value); // FLoof - resolve virtual items
             }
 
             else if (offerItem.Item != null)
             {
                 _popup.PopupEntity(Loc.GetString("offer-item-no-give",
-                    ("item", Identity.Entity(offerItem.Item.Value, EntityManager)),
+                    ("item", Identity.Entity(offerItem.GetRealEntity(EntityManager), EntityManager)), // FLoof - resolve virtual items
                     ("target", Identity.Entity(uid, EntityManager))), component.Target.Value, component.Target.Value);
                 _popup.PopupEntity(Loc.GetString("offer-item-no-give-target",
                     ("user", Identity.Entity(component.Target.Value, EntityManager)),
-                    ("item", Identity.Entity(offerItem.Item.Value, EntityManager))), component.Target.Value, uid);
+                    ("item", Identity.Entity(offerItem.GetRealEntity(EntityManager), EntityManager))), component.Target.Value, uid); // FLoof - resolve virtual items
             }
 
             offerItem.IsInOfferMode = false;
@@ -127,11 +136,11 @@ public abstract partial class SharedOfferItemSystem : EntitySystem
         if (offerItem.Item != null)
         {
             _popup.PopupEntity(Loc.GetString("offer-item-no-give",
-                ("item", Identity.Entity(offerItem.Item.Value, EntityManager)),
+                ("item", Identity.Entity(offerItem.GetRealEntity(EntityManager), EntityManager)), // FLoof - resolve virtual items
                 ("target", Identity.Entity(uid, EntityManager))), component.Target.Value, component.Target.Value);
             _popup.PopupEntity(Loc.GetString("offer-item-no-give-target",
-                ("user", Identity.Entity(component.Target.Value, EntityManager)),
-                ("item", Identity.Entity(offerItem.Item.Value, EntityManager))), component.Target.Value, uid);
+                ("user", Identity.Entity(component.Target.Value, EntityManager)), // FLoof - resolve virtual items
+                ("item", Identity.Entity(offerItem.GetRealEntity(EntityManager), EntityManager))), component.Target.Value, uid);
         }
 
         if (!offerItem.IsInReceiveMode)

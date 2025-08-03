@@ -1,3 +1,25 @@
+// SPDX-FileCopyrightText: 2020 DTanxxx
+// SPDX-FileCopyrightText: 2020 Radrark
+// SPDX-FileCopyrightText: 2020 ShadowCommander
+// SPDX-FileCopyrightText: 2020 Víctor Aguilera Puerto
+// SPDX-FileCopyrightText: 2021 Acruid
+// SPDX-FileCopyrightText: 2021 DrSmugleaf
+// SPDX-FileCopyrightText: 2022 Andreas Kämper
+// SPDX-FileCopyrightText: 2022 Leon Friedrich
+// SPDX-FileCopyrightText: 2022 Paul Ritter
+// SPDX-FileCopyrightText: 2022 mirrorcult
+// SPDX-FileCopyrightText: 2022 wrexbe
+// SPDX-FileCopyrightText: 2023 Kara
+// SPDX-FileCopyrightText: 2023 Vera Aguilera Puerto
+// SPDX-FileCopyrightText: 2024 Hannah Giovanna Dawson
+// SPDX-FileCopyrightText: 2024 Pieter-Jan Briers
+// SPDX-FileCopyrightText: 2024 metalgearsloth
+// SPDX-FileCopyrightText: 2024 slarticodefast
+// SPDX-FileCopyrightText: 2025 Simon
+// SPDX-FileCopyrightText: 2025 sleepyyapril
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 using System.IO;
 using System.Numerics;
 using System.Threading.Tasks;
@@ -11,6 +33,7 @@ using Robust.Client.UserInterface.XAML;
 using Robust.Shared.Containers;
 using Robust.Shared.Input;
 using Robust.Shared.Timing;
+using Robust.Shared.Utility;
 using static Robust.Client.UserInterface.Controls.BaseButton;
 using Range = Robust.Client.UserInterface.Controls.Range;
 
@@ -145,10 +168,6 @@ namespace Content.Client.Instruments.UI
             if (!PlayCheck())
                 return;
 
-            await using var memStream = new MemoryStream((int) file.Length);
-
-            await file.CopyToAsync(memStream);
-
             if (!_entManager.TryGetComponent<InstrumentComponent>(Entity, out var instrument))
             {
                 return;
@@ -156,7 +175,7 @@ namespace Content.Client.Instruments.UI
 
             if (!_entManager.System<InstrumentSystem>()
                     .OpenMidi(Entity,
-                    memStream.GetBuffer().AsSpan(0, (int) memStream.Length),
+                        file.CopyToArray(),
                     instrument))
             {
                 return;

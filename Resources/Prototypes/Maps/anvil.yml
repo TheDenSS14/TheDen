@@ -1,0 +1,101 @@
+# SPDX-FileCopyrightText: 2023 Bakke
+# SPDX-FileCopyrightText: 2023 Carolyn3114
+# SPDX-FileCopyrightText: 2023 Colin-Tel
+# SPDX-FileCopyrightText: 2023 Fluffiest Floofers
+# SPDX-FileCopyrightText: 2024 FoxxoTrystan
+# SPDX-FileCopyrightText: 2024 SimpleStation14
+# SPDX-FileCopyrightText: 2024 Velcroboy
+# SPDX-FileCopyrightText: 2024 flyingkarii
+# SPDX-FileCopyrightText: 2025 John Willis
+# SPDX-FileCopyrightText: 2025 Mono
+# SPDX-FileCopyrightText: 2025 Rosycup
+# SPDX-FileCopyrightText: 2025 This_Is_Gray
+# SPDX-FileCopyrightText: 2025 VMSolidus
+# SPDX-FileCopyrightText: 2025 astriloqua
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: gameMap
+  id: Anvil
+  mapName: 'Anvil'
+  mapPath: /Maps/TheDen/anvil.yml
+  minPlayers: 15
+  maxPlayers: 100 # The Den: we hit 80 and had no maps lmao
+  stations:
+    Anvil:
+      stationProto: StandardNanotrasenStation
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: '{0} Anvil Station {1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: 'DV'
+        - type: StationEmergencyShuttle
+          emergencyShuttlePath: /Maps/Shuttles/_DV/NTES_Hammerhead.yml
+        - type: StationJobs
+          availableJobs:
+          #civilian
+            Passenger: [ -1, -1 ]
+          #command
+            Captain: [ 1, 1 ]
+            BlueshieldOfficer: [ 1, 1]
+            NanotrasenRepresentative: [ 1, 1 ]
+            Magistrate: [ 1, 1 ]
+            HeadOfPersonnel: [ 1, 1 ]
+            ChiefEngineer: [ 1, 1 ]
+            ChiefMedicalOfficer: [ 1, 1 ]
+            HeadOfSecurity: [ 1, 1 ]
+            ResearchDirector: [ 1, 1 ]
+            Quartermaster: [ 1, 1 ]
+            StationAi: [ 1, 1 ]
+            AdministrativeAssistant: [ 1, 1 ]
+          #engineering
+            SeniorEngineer: [ 2, 2]
+            AtmosphericTechnician: [ 2, 2 ]
+            StationEngineer: [ 3, 5 ]
+            TechnicalAssistant: [ 2, 3 ]
+          #justice
+            Clerk: [ 1, 1 ]
+            Lawyer: [ 1, 1 ]
+            Prosecutor: [ 1, 1 ]
+          #medical
+            SeniorPhysician: [ 2, 2 ]
+            Chemist: [ 2, 2 ]
+            Paramedic: [ 1, 2 ]
+            MedicalDoctor: [ 3, 5 ]
+            MedicalIntern: [ 2, 3 ]
+            Psychologist: [ 1, 1 ]
+          #security
+            Brigmedic: [ 1, 1 ]
+            Detective: [ 1, 1 ]
+            Prisoner: [ 3, 3 ]
+            PrisonGuard: [ 1, 2 ]
+            SeniorOfficer: [ 2, 2 ]
+            SecurityOfficer: [ 2, 3 ]
+            SecurityCadet: [ 1, 2 ]
+            Warden: [ 1, 1 ]
+          #service
+            Bartender: [ 2, 2 ]
+            Botanist: [ 2, 2 ]
+            Chef: [ 2, 2 ]
+            Clown: [ 1, 1 ]
+            Janitor: [ 2, 2 ]
+            Mime: [ 1, 1 ]
+            Musician: [ 2, 3 ]
+            Reporter: [ 1, 1 ]
+            ServiceWorker: [ 1, 3 ] 
+            Librarian: [ 1, 1 ]
+            MartialArtist: [ 2, 2 ]
+          #science
+            Chaplain: [ 1, 1 ]
+            ForensicMantis: [ 1, 1 ]
+            Scientist: [ 4, 6 ]
+            ResearchAssistant: [ 4, 6 ]
+            Roboticist: [ 1, 2 ]
+            Borg: [ 2, 3 ]
+            SeniorResearcher: [ 2, 2 ]
+          #supply
+            CargoTechnician: [ 2, 3 ]
+            MailCarrier: [ 2, 2 ]
+            SalvageSpecialist: [ 2, 3 ]

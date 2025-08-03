@@ -1,3 +1,9 @@
+# SPDX-FileCopyrightText: 2025 Rosycup <178287475+Rosycup@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <flyingkarii@gmail.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 - type: loadout
   id: LoadoutItemDoubleDildo
   category: ItemsLewd
@@ -27,6 +33,39 @@
   exclusive: true
   items:
   - ClothingMaskGasDroneHoodless
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutLewd
+
+- type: loadout
+  id: LoadoutItemPillCanisterPomelustine
+  category: ItemsLewd
+  cost: 3
+  exclusive: true
+  items:
+  - PillCanisterPomelustine
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutLewd
+
+- type: loadout
+  id: LoadoutItemPillCanisterPhilterex
+  category: ItemsLewd
+  cost: 4
+  exclusive: true
+  items:
+  - PillCanisterPhilterex
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutLewd
+
+- type: loadout
+  id: LoadoutItemPillCanisterLibidozenithizine
+  category: ItemsLewd
+  cost: 6
+  exclusive: true
+  items:
+  - PillCanisterLibidozenithizine
   requirements:
   - !type:CharacterItemGroupRequirement
     group: LoadoutLewd

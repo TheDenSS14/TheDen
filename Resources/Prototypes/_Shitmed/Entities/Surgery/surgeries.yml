@@ -1,3 +1,11 @@
+# SPDX-FileCopyrightText: 2024 Skubman
+# SPDX-FileCopyrightText: 2024 gluesniffler
+# SPDX-FileCopyrightText: 2025 M3739
+# SPDX-FileCopyrightText: 2025 Spatison
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 - type: entity
   id: SurgeryBase
   categories: [ HideSpawnMenu ]
@@ -387,6 +395,21 @@
   components:
   - type: SurgeryPartCondition
     part: Torso
+    
+# Floof - M3739 - #1194 - Begin Changes    
+- type: entity
+  parent: SurgeryRemoveBrain
+  id: SurgeryRemoveCoreTorso
+  name: Remove Core
+  categories: [ HideSpawnMenu ]
+  components:
+    - type: SurgeryPartCondition
+      part: Torso
+    - type: SurgeryOrganCondition
+      organ:
+        - type: Brain
+      slotId: core
+# Floof - M3739 - #1194 - End Changes
 
 - type: entity
   parent: SurgeryBase
@@ -417,6 +440,23 @@
   components:
   - type: SurgeryPartCondition
     part: Torso
+
+# Floof - M3739 - #1194 - Begin Changes      
+- type: entity
+  parent: SurgeryInsertBrain
+  id: SurgeryInsertCoreTorso
+  name: Insert Core
+  categories: [ HideSpawnMenu ]
+  components:
+    - type: SurgeryPartCondition
+      part: Torso
+    - type: SurgeryOrganCondition
+      organ:
+        - type: Brain
+      inverse: true
+      reattaching: true
+      slotId: core
+# Floof - M3739 - #1194 - End Changes
 
 - type: entity
   parent: SurgeryBase

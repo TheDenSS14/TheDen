@@ -1,14 +1,22 @@
+# SPDX-FileCopyrightText: 2024 VMSolidus
+# SPDX-FileCopyrightText: 2025 Blitz
+# SPDX-FileCopyrightText: 2025 BlitzTheSquishy
+# SPDX-FileCopyrightText: 2025 Rosycup
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 - type: loadout
   id: LoadoutCargoOuterCoatCargoBomber
-  category: JobsLogisticsCargoTechnician # TheDen
+  category: JobsLogisticsAUncategorized # TheDen
   cost: 1
   exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutCargoTechnicianOuter
-    - !type:CharacterJobRequirement
-      jobs:
-        - CargoTechnician
+      group: LoadoutLogisticsOuter
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Logistics
   items:
     - ClothingOuterCoatCargoBomber
 
@@ -70,14 +78,14 @@
 
 - type: loadout
   id: LoadoutCargoTechnicianBootsSteel
-  category: JobsLogisticsCargoTechnician
+  category: JobsLogisticsAUncategorized
   cost: 0
   exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutCargoTechnicianShoes
-    - !type:CharacterJobRequirement
-      jobs:
-        - CargoTechnician
+      group: LoadoutLogisticsShoes
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Logistics
   items:
     - ClothingShoesBootsSteel

@@ -1,5 +1,18 @@
-﻿using Content.Shared.Atmos;
+// SPDX-FileCopyrightText: 2022 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 mirrorcult <lunarautomaton6@gmail.com>
+// SPDX-FileCopyrightText: 2023 Ilya246 <ilyukarno@gmail.com>
+// SPDX-FileCopyrightText: 2023 Kevin Zheng <kevinz5000@gmail.com>
+// SPDX-FileCopyrightText: 2023 TemporalOroboros <TemporalOroboros@gmail.com>
+// SPDX-FileCopyrightText: 2025 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
+using Content.Client.Power.EntitySystems;
+using Content.Shared.Atmos;
 using Content.Shared.Atmos.Piping.Unary.Components;
+using Content.Shared.Atmos.Piping.Unary.Systems;
+using Content.Shared.Power.Components;
 using JetBrains.Annotations;
 using Robust.Client.GameObjects;
 using Robust.Client.UserInterface;
@@ -36,6 +49,8 @@ namespace Content.Client.Atmos.UI
 
             _window.ToggleStatusButton.OnPressed += _ => OnToggleStatusButtonPressed();
             _window.TemperatureSpinbox.OnValueChanged += _ => OnTemperatureChanged(_window.TemperatureSpinbox.Value);
+            _window.Entity = Owner;
+            Update();
         }
 
         private void OnToggleStatusButtonPressed()
@@ -43,7 +58,7 @@ namespace Content.Client.Atmos.UI
             if (_window is null) return;
 
             _window.SetActive(!_window.Active);
-            SendMessage(new GasThermomachineToggleMessage());
+            SendPredictedMessage(new GasThermomachineToggleMessage());
         }
 
         private void OnTemperatureChanged(float value)
@@ -60,25 +75,32 @@ namespace Content.Client.Atmos.UI
                 return;
             }
 
-            SendMessage(new GasThermomachineChangeTemperatureMessage(actual));
+            SendPredictedMessage(new GasThermomachineChangeTemperatureMessage(actual));
         }
 
-        /// <summary>
-        /// Update the UI state based on server-sent info
-        /// </summary>
-        /// <param name="state"></param>
-        protected override void UpdateState(BoundUserInterfaceState state)
+        public override void Update()
         {
-            base.UpdateState(state);
-            if (_window == null || state is not GasThermomachineBoundUserInterfaceState cast)
+            if (_window == null || !EntMan.TryGetComponent(Owner, out GasThermoMachineComponent? thermo))
                 return;
 
-            _minTemp = cast.MinTemperature;
-            _maxTemp = cast.MaxTemperature;
-            _isHeater = cast.IsHeater;
+            var system = EntMan.System<SharedGasThermoMachineSystem>();
+            _minTemp = thermo.MinTemperature;
+            _maxTemp = thermo.MaxTemperature;
+            _isHeater = system.IsHeater(thermo);
 
-            _window.SetTemperature(cast.Temperature);
-            _window.SetActive(cast.Enabled);
+            _window.SetTemperature(thermo.TargetTemperature);
+
+            var receiverSys = EntMan.System<PowerReceiverSystem>();
+            SharedApcPowerReceiverComponent? receiver = null;
+
+            receiverSys.ResolveApc(Owner, ref receiver);
+
+            // Also set in frameupdates.
+            if (receiver != null)
+            {
+                _window.SetActive(!receiver.PowerDisabled);
+            }
+
             _window.Title = _isHeater switch
             {
                 false => Loc.GetString("comp-gas-thermomachine-ui-title-freezer"),

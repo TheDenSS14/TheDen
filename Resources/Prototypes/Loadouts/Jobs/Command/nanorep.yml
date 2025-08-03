@@ -1,3 +1,9 @@
+# SPDX-FileCopyrightText: 2025 BlitzTheSquishy
+# SPDX-FileCopyrightText: 2025 Timfa
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 # Uncategorized
 # Backpacks
 - type: loadout
@@ -26,7 +32,7 @@
   canBeHeirloom: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutNanotrasenRepresentativeWeapon
+      group: LoadoutNanorepWeapon
     - !type:CharacterJobRequirement
       jobs:
         - NanotrasenRepresentative
@@ -45,6 +51,19 @@
 # Mask
 
 # Outer
+- type: loadout
+  id: LoadoutNanotrasenRepresentativeOuterLongCoat
+  category: JobsCommandNanorep
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutNanorepOuter
+    - !type:CharacterJobRequirement
+      jobs:
+        - NanotrasenRepresentative
+  items:
+    - ClothingLongcoatCC
 
 # Shoes
 

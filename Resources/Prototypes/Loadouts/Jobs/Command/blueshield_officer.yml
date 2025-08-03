@@ -1,3 +1,19 @@
+# SPDX-FileCopyrightText: 2025 Alice
+# SPDX-FileCopyrightText: 2025 Blitz
+# SPDX-FileCopyrightText: 2025 BlitzTheSquishy
+# SPDX-FileCopyrightText: 2025 BramvanZijp
+# SPDX-FileCopyrightText: 2025 EctoplasmIsGood
+# SPDX-FileCopyrightText: 2025 Jakumba
+# SPDX-FileCopyrightText: 2025 MajorMoth
+# SPDX-FileCopyrightText: 2025 Rosycup
+# SPDX-FileCopyrightText: 2025 SixplyDev
+# SPDX-FileCopyrightText: 2025 Solstice
+# SPDX-FileCopyrightText: 2025 Tabitha
+# SPDX-FileCopyrightText: 2025 VMSolidus
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 # Uncategorized
 # Backpacks
 - type: loadout
@@ -41,6 +57,34 @@
         - BlueshieldOfficer
   items:
     - ClothingBackpackDuffelBlueshield
+
+- type: loadout
+  id: LoadoutClothingModsuitBlueshield
+  category: JobsCommandBlueshieldOfficer
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBlueshieldOfficerBackpacks
+    - !type:CharacterJobRequirement
+      jobs:
+        - BlueshieldOfficer
+  items:
+    - ClothingModsuitPraetorian #Blueshield modsuit
+
+- type: loadout
+  id: LoadoutClothingBackpackMessengerBlueshield
+  category: JobsCommandBlueshieldOfficer
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBlueshieldOfficerBackpacks
+    - !type:CharacterJobRequirement
+      jobs:
+        - BlueshieldOfficer
+  items:
+    - ClothingBackpackMessengerBlueshield
 
 # Belt
 
@@ -104,7 +148,7 @@
 - type: loadout
   id: LoadoutBSORifleChester
   category: JobsCommandBlueshieldOfficer
-  cost: 0
+  cost: 6
   canBeHeirloom: true
   guideEntry: SecurityWeapons
   requirements:
@@ -117,10 +161,9 @@
     - WeaponLeverChester
 
 - type: loadout
-  id: LoadoutMagazineMagnumMagnumLeverRifle
+  id: LoadoutMagazineShotgunLeverRifle
   category: JobsCommandBlueshieldOfficer
   cost: 2
-  exclusive: true
   requirements:
     - !type:CharacterDepartmentTimeRequirement
       department: Security
@@ -131,13 +174,12 @@
       jobs:
         - BlueshieldOfficer
   items:
-    - MagazineMagnumLeverRifle
+    - MagazineShotgunLeverRifle
 
 - type: loadout
-  id: LoadoutMagazineMagnumMagnumLeverRifleSpare
+  id: LoadoutMagazineRifleBRDIR25
   category: JobsCommandBlueshieldOfficer
-  cost: 4
-  exclusive: true
+  cost: 2
   requirements:
     - !type:CharacterDepartmentTimeRequirement
       department: Security
@@ -148,12 +190,28 @@
       jobs:
         - BlueshieldOfficer
   items:
-    - MagazineMagnumLeverRifle
+    - MagazineCaselessRifle
+
+- type: loadout
+  id: LoadoutMagazineRifleBSOAk
+  category: JobsCommandBlueshieldOfficer
+  cost: 2
+  requirements:
+    - !type:CharacterDepartmentTimeRequirement
+      department: Security
+      min: 3600 # 1 hours
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSecurityEquipment
+    - !type:CharacterJobRequirement
+      jobs:
+        - BlueshieldOfficer
+  items:
+    - MagazineLightRifle
 
 - type: loadout
   id: LoadoutBSORifleBRDIR25
   category: JobsCommandBlueshieldOfficer
-  cost: 9 # Significant upgrade over a Chester, offered here for the STYLE. Intentionally priced at you not being able to buy all 3 medical items alongside it, plus being unable to buy it alongside the CQC Manual.
+  cost: 6 # Significant upgrade over a Chester, offered here for the STYLE. Intentionally priced at you not being able to buy all 3 medical items alongside it, plus being unable to buy it alongside the CQC Manual.
   canBeHeirloom: true
   guideEntry: SecurityWeapons
   requirements:
@@ -221,38 +279,16 @@
   items:
     - MedkitCombatFilled
 
-- type: loadout
-  id: LoadoutBSOPortafib
-  category: JobsCommandBlueshieldOfficer
-  cost: 2
-  requirements:
-    - !type:CharacterJobRequirement
-      jobs:
-        - BlueshieldOfficer
-  items:
-    - Portafib
-
-- type: loadout
-  id: LoadoutBSOCrewMonitor
-  category: JobsCommandBlueshieldOfficer
-  cost: 2 # BSO's main job is to keep command safe, they should be able to monitor their status & location without that costing too many points.
-  requirements:
-    - !type:CharacterJobRequirement
-      jobs:
-        - BlueshieldOfficer
-  items:
-    - HandheldCrewMonitor
-
-- type: loadout
-  id: LoadoutBSOCQCManual
-  category: JobsCommandBlueshieldOfficer
-  cost: 8 # You can run this alongside the 3 medical items, but then you will be restricted to free gear for everything else such as weapons or other utilities.
-  requirements: # Knowledge does not occupy a weapon slot. You are a trained bodyguard, so it makes sense to have it. Balanced out by costing over half of your loadout points.
-    - !type:CharacterJobRequirement
-      jobs:
-        - BlueshieldOfficer
-  items:
-    - BSOManual
+# - type: loadout
+#   id: LoadoutBSOCQCManual
+#   category: JobsCommandBlueshieldOfficer
+#   cost: 8 # You can run this alongside the 3 medical items, but then you will be restricted to free gear for everything else such as weapons or other utilities.
+#   requirements: # Knowledge does not occupy a weapon slot. You are a trained bodyguard, so it makes sense to have it. Balanced out by costing over half of your loadout points.
+#     - !type:CharacterJobRequirement
+#       jobs:
+#         - BlueshieldOfficer
+#   items:
+#     - NTCQCManual
 
 - type: loadout
   id: LoadoutBSOTerminus
@@ -286,7 +322,7 @@
   exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutBlueshieldOfficerHats
+      group: LoadoutBlueshieldOfficerHead
     - !type:CharacterJobRequirement
       jobs:
         - BlueshieldOfficer
@@ -300,7 +336,7 @@
   exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutBlueshieldOfficerHats
+      group: LoadoutBlueshieldOfficerHead
     - !type:CharacterJobRequirement
       jobs:
         - BlueshieldOfficer
@@ -314,7 +350,7 @@
   exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutBlueshieldOfficerHats
+      group: LoadoutBlueshieldOfficerHead
     - !type:CharacterJobRequirement
       jobs:
         - BlueshieldOfficer
@@ -335,7 +371,7 @@
   exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutBlueshieldOfficerVests
+      group: LoadoutBlueshieldOfficerOuter
     - !type:CharacterJobRequirement
       jobs:
         - BlueshieldOfficer
@@ -349,7 +385,7 @@
   exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutBlueshieldOfficerVests
+      group: LoadoutBlueshieldOfficerOuter
     - !type:CharacterJobRequirement
       jobs:
         - BlueshieldOfficer
@@ -363,7 +399,7 @@
   exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutBlueshieldOfficerVests
+      group: LoadoutBlueshieldOfficerOuter
     - !type:CharacterJobRequirement
       jobs:
         - BlueshieldOfficer
@@ -377,7 +413,7 @@
   exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutBlueshieldOfficerVests
+      group: LoadoutBlueshieldOfficerOuter
     - !type:CharacterJobRequirement
       jobs:
         - BlueshieldOfficer
@@ -391,7 +427,7 @@
   exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutBlueshieldOfficerVests
+      group: LoadoutBlueshieldOfficerOuter
     - !type:CharacterJobRequirement
       jobs:
         - BlueshieldOfficer
@@ -405,7 +441,7 @@
   exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutBlueshieldOfficerVests
+      group: LoadoutBlueshieldOfficerOuter
     - !type:CharacterJobRequirement
       jobs:
         - BlueshieldOfficer
@@ -419,7 +455,7 @@
   exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutBlueshieldOfficerVests
+      group: LoadoutBlueshieldOfficerOuter
     - !type:CharacterJobRequirement
       jobs:
         - BlueshieldOfficer

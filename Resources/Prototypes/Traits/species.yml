@@ -1,6 +1,18 @@
+# SPDX-FileCopyrightText: 2024 Angelo Fallaria
+# SPDX-FileCopyrightText: 2024 FoxxoTrystan
+# SPDX-FileCopyrightText: 2024 VMSolidus
+# SPDX-FileCopyrightText: 2025 GNUtopia
+# SPDX-FileCopyrightText: 2025 Jakumba
+# SPDX-FileCopyrightText: 2025 Raikyr0
+# SPDX-FileCopyrightText: 2025 SixplyDev
+# SPDX-FileCopyrightText: 2025 portfiend
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 - type: trait
   id: Swashbuckler
-  category: Physical
+  category: TraitsPhysicalFeats
   points: -1
   functions:
     - !type:TraitReplaceComponent
@@ -12,6 +24,12 @@
             Slash: 1.35
             Piercing: 1.25
   requirements:
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - StationAi
+        - Borg
+        - MedicalBorg
     - !type:CharacterSpeciesRequirement
       species:
         - Oni
@@ -25,7 +43,7 @@
 
 - type: trait
   id: Spearmaster
-  category: Physical
+  category: TraitsPhysicalFeats
   points: -1
   functions:
     - !type:TraitReplaceComponent
@@ -37,6 +55,12 @@
             Slash: 1.25
             Piercing: 1.35
   requirements:
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - StationAi
+        - Borg
+        - MedicalBorg
     - !type:CharacterSpeciesRequirement
       species:
         - Oni
@@ -49,7 +73,7 @@
 
 - type: trait
   id: WeaponsGeneralist
-  category: Physical
+  category: TraitsPhysicalFeats
   points: -1
   functions:
     - !type:TraitReplaceComponent
@@ -61,6 +85,12 @@
             Slash: 1.30
             Piercing: 1.30
   requirements:
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - StationAi
+        - Borg
+        - MedicalBorg
     - !type:CharacterSpeciesRequirement
       species:
         - Oni
@@ -87,6 +117,12 @@
       - type: PotentiaModifier
         potentiaMultiplier: 1.15
   requirements:
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - StationAi
+        - Borg
+        - MedicalBorg
     - !type:CharacterSpeciesRequirement
       species:
         - Oni
@@ -121,13 +157,19 @@
       components:
         - type: Psionic
   requirements:
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - StationAi
+        - Borg
+        - MedicalBorg
     - !type:CharacterSpeciesRequirement
       species:
         - Shadowkin
 
 - type: trait
   id: MothFlight
-  category: Physical
+  category: TraitsPhysicalBiological
   points: -5
   functions:
     - !type:TraitAddComponent
@@ -137,6 +179,12 @@
           flapInterval: 0.75
           needsHands: false
   requirements:
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - StationAi
+        - Borg
+        - MedicalBorg
     - !type:CharacterSpeciesRequirement
       species:
         - Moth

@@ -1,3 +1,12 @@
+# SPDX-FileCopyrightText: 2024 Angelo Fallaria <ba.fallaria@gmail.com>
+# SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT <77995199+DEATHB4DEFEAT@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 VMSolidus <evilexecutive@gmail.com>
+# SPDX-FileCopyrightText: 2024 sleepyyapril <flyingkarii@gmail.com>
+# SPDX-FileCopyrightText: 2025 Tabitha <64847293+KyuPolaris@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 loadout-description-LoadoutItemBlackDeck = A black box containing the standard 53 playing cards. Please gamble responsibly.
 loadout-description-LoadoutItemNTDeck = A Nanotrasen-branded box containing the standard 53 playing cards. Please gamble responsibly.
 loadout-description-LoadoutItemCig = Cool guys always have one.
@@ -52,3 +61,4 @@ loadout-name-LoadoutItemPetHamster = pet hamster (colorable)
 loadout-name-LoadoutItemPetMothroach = pet mothroach (colorable)
 loadout-name-LoadoutItemPetCockroach = pet cockroach (colorable)
 loadout-name-LoadoutItemPetRoingus = pet roingus (colorable)
+loadout-name-LoadoutItemPetRosy = pet rosy mothroach

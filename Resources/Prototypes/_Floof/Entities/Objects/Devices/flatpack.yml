@@ -1,0 +1,32 @@
+# SPDX-FileCopyrightText: 2025 M3739
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  parent: BaseFlatpack
+  id: MedBiofabFlatpack
+  name: medical biofabricator flatpack
+  description: A flatpack used for constructing a medical biofabricator.
+  components:
+  - type: Flatpack
+    entity: MedicalBiofabricator
+
+- type: entity
+  parent: BaseFlatpack
+  id: OperatingTableFlatpack
+  name: operating table flatpack
+  description: A flatpack used for constructing an operating table.
+  components:
+  - type: Flatpack
+    entity: OperatingTable
+    
+# Instruments
+
+- type: entity
+  parent: InstrumentFlatpack
+  id: DrumKitFlatpack
+  name: drum kit flatpack
+  description: A flatpack used for constructing a drum kit.
+  components:
+    - type: Flatpack
+      entity: DrumkitInstrument

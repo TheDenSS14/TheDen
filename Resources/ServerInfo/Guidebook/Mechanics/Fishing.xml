@@ -1,0 +1,65 @@
+<!--
+SPDX-FileCopyrightText: 2025 portfiend <109661617+portfiend@users.noreply.github.com>
+SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+
+SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+-->
+
+<Document>
+  # Fishing
+
+  Certain liquids can be fished in to obtain fish and other treasures. It's a great way to pass the time, and your spoils may be of interest to the Chef or Logistics.
+
+  To start fishing, you will need to obtain a [color=#a4885c]fishing rod[/color] (of course). You can try assembling one by hand with some wood and cloth (crafting menu), otherwise a standard rod will need to be purchased from Logistics.
+
+  <Box>
+  <GuideEntityEmbed Entity="FishingRodMakeshift"/>
+  <GuideEntityEmbed Entity="FishingRod"/>
+  <GuideEntityEmbed Entity="FishingRodGolden"/>
+  </Box>
+
+  ## How to fish
+
+  <Box>
+  <GuideEntityEmbed Entity="FishingSpotWater"/>
+  <GuideEntityEmbed Entity="ToiletEmpty"/>
+  <GuideEntityEmbed Entity="FloorLavaEntity"/>
+  <GuideEntityEmbed Entity="FloorLiquidPlasmaEntity"/>
+  <GuideEntityEmbed Entity="FloorWaterEntity"/>
+  </Box>
+
+  Your first step, after obtaining a fishing rod, is to find a [color=#a4885c]liquid source[/color]. Not all sources of liquid make good fishing spots; you can't fish out of your sink, for instance. A good place to find fishing spots are [color=#a4885c]salvage expeditions[/color]; many planets contain naturally-occuring sources of liquid.
+
+  Second, take your fishing rod into your hands. You should see an [color=#a4885c]action[/color] allowing you to [color=#a4885c]throw your lure[/color]. Activate this action, then click where you want to cast your lure. When you cast upon a valid fishing spot, the lure should "attach" to the spot. You can also [color=#a4885c]reel[/color] the lure at any time.
+
+  Third, wait until something gets caught on your lure.
+
+  You will see a bar appear next to you that will start rapidly decreasing. If you hook something, [bold]mash the [color=#a4885c]"use"[/color] key[/bold] (bound to [color=#a4885c][keybind="ActivateItemInHand"/][/color]) [bold]as fast as you can![/bold]
+
+  If you succeed, your catch will come flying from the water (or other liquid) - hopefully a fish. Congratulations! You just caught something!
+
+  ## What can I do with this?
+
+  <Box>
+  <GuideEntityEmbed Entity="FishBumpy" Caption="" />
+  <GuideEntityEmbed Entity="FishFirefish" Caption="" />
+  <GuideEntityEmbed Entity="FishLubefish" Caption="" />
+  </Box>
+
+  Fish will fetch you a nice price on the market, scaling with their rarity. Otherwise, most fish can be butchered for their meat. Some fish are special and may have secret, special uses for them.
+
+  What about all of that junk you keep fishing up, you ask? What, you've never seen it before? Some of these bits and pieces can be reclaimed for their materials.
+
+  ## Improving your fishing
+
+  Rods have different [color=#a4885c]efficiency[/color] levels, which determine their effectiveness at fishing. If you're really struggling up against your catches, it might be time to put away that mess of tape and twigs and get yourself a real rod.
+
+  Fish that you catch have three different tiers - Common, Rare, and Legendary. Each one (as well as other junk you can fish up) varies in [color=#a4885c]difficulty[/color], making them harder to catch.
+
+  Not only this, but each type of fishing spot is stocked with different fish (and garbage). If the toilet is giving you nothing but trash, it might be time to take the shuttle and go exploring.
+
+  <Box>
+  <GuideEntityEmbed Entity="FishSlimefish" Caption=""/>
+  </Box>
+
+</Document>

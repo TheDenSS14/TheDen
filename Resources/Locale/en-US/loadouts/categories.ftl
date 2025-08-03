@@ -1,3 +1,14 @@
+# SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT <77995199+DEATHB4DEFEAT@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 VMSolidus <evilexecutive@gmail.com>
+# SPDX-FileCopyrightText: 2024 gluesniffler <159397573+gluesniffler@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 GNUtopia <erainach14@gmail.com>
+# SPDX-FileCopyrightText: 2025 John Willis <143434770+CerberusWolfie@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Skubman <ba.fallaria@gmail.com>
+# SPDX-FileCopyrightText: 2025 Tabitha <64847293+KyuPolaris@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 # Alphabetically ordered, except for Uncategorized since it is always first
 
 loadout-category-Uncategorized = Uncategorized
@@ -46,7 +57,7 @@ loadout-category-JobsEpistemicsGolemancer = Roboticist
 loadout-category-JobsEpistemicsMystagogue = Mystagogue
 loadout-category-JobsEpistemicsMystic = Senior Researcher
 loadout-category-JobsEpistemicsNoviciate = Research Assistant
-loadout-category-JobsEpistemicsPsionicMantis = Psionic Mantis
+loadout-category-JobsEpistemicsPsionicMantis = Mantis
 
 # Logistics
 loadout-category-JobsLogistics = Logistics
@@ -74,6 +85,7 @@ loadout-category-JobsSecurityCadet = Cadet
 loadout-category-JobsSecurityCorpsman = Corpsman
 loadout-category-JobsSecurityDetective = Detective
 loadout-category-JobsSecurityHeadOfSecurity = Head of Security
+loadout-category-JobsSecurityPrisonGuard = Prison Guard
 loadout-category-JobsSecuritySecurityOfficer = Security Officer
 loadout-category-JobsSecuritySeniorOfficer = Senior Officer
 loadout-category-JobsSecurityWarden = Warden
@@ -83,18 +95,22 @@ loadout-category-JobsService = Service
 loadout-category-JobsServiceAUncategorized = All Service
 loadout-category-JobsServiceBartender = Bartender
 loadout-category-JobsServiceBotanist = Botanist
+loadout-category-JobsServiceBoxer = Boxer
 loadout-category-JobsServiceChef = Chef
 loadout-category-JobsServiceClown = Clown
 loadout-category-JobsServiceJanitor = Janitor
 loadout-category-JobsServiceLawyer = Lawyer
+loadout-category-JobsServiceMartialArtist = Martial Artist
 loadout-category-JobsServiceMime = Mime
 loadout-category-JobsServiceMusician = Musician
 loadout-category-JobsServiceReporter = Reporter
+loadout-category-JobsServiceZookeeper = Zookeeper
 
 # Misc
 loadout-category-JobsZMisc = Misc
 loadout-category-JobsZMiscAUncategorized = All Misc
 loadout-category-JobsZMiscPrisoner = Prisoner
+loadout-category-JobsZMiscGladiator = Gladiator
 
 loadout-category-Mask = Mask
 loadout-category-Neck = Neck

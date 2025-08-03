@@ -1,3 +1,9 @@
+// SPDX-FileCopyrightText: 2023 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 csqrb <56765288+CaptainSqrBeard@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 using Robust.Shared.Utility;
 
 namespace Content.Shared.Humanoid.Markings;
@@ -26,12 +32,12 @@ public static class MarkingColoring
     /// <summary>
     ///     Returns list of colors for marking layers
     /// </summary>
-    public static List<Color> GetMarkingLayerColors
-    (
+    public static List<Color> GetMarkingLayerColors(
         MarkingPrototype prototype,
         Color? skinColor,
         Color? eyeColor,
-        MarkingSet markingSet
+        MarkingSet markingSet,
+        List<string>? ignores = null
     )
     {
         var colors = new List<Color>();

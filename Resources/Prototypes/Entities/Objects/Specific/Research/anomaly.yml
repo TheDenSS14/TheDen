@@ -1,3 +1,19 @@
+# SPDX-FileCopyrightText: 2023 Ed
+# SPDX-FileCopyrightText: 2023 Nemanja
+# SPDX-FileCopyrightText: 2023 PHCodes
+# SPDX-FileCopyrightText: 2023 Pieter-Jan Briers
+# SPDX-FileCopyrightText: 2023 chromiumboy
+# SPDX-FileCopyrightText: 2023 lzk
+# SPDX-FileCopyrightText: 2023 metalgearsloth
+# SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT
+# SPDX-FileCopyrightText: 2024 Debug
+# SPDX-FileCopyrightText: 2024 Jezithyr
+# SPDX-FileCopyrightText: 2024 deltanedas
+# SPDX-FileCopyrightText: 2024 dge21
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 - type: entity
   parent: BaseItem
   id: AnomalyScanner
@@ -70,7 +86,7 @@
   suffix: Powered
   components:
   - type: PowerCellDraw
-    drawRate: 1
+    drawRate: 1.2
     useRate: 0
   - type: ToggleCellDraw
 
@@ -104,7 +120,7 @@
   suffix: Powered
   components:
   - type: PowerCellDraw
-    drawRate: 1
+    drawRate: 1.2
     useRate: 0
   - type: ToggleCellDraw
 

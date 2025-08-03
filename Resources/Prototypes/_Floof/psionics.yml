@@ -1,0 +1,44 @@
+# SPDX-FileCopyrightText: 2024 FoxxoTrystan <trystan.garnierhein@gmail.com>
+# SPDX-FileCopyrightText: 2025 Rosycup <178287475+Rosycup@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <flyingkarii@gmail.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
+- type: psionicPower
+  id: HypnosisPower
+  name: Psionic Hypnosis
+  initializeFunctions:
+    - !type:AddPsionicActions
+      actions:
+        - ActionHypno
+    - !type:AddPsionicPowerComponents
+      components:
+        - type: PsionicHypno
+    - !type:PsionicFeedbackPopup
+    - !type:PsionicFeedbackSelfChat
+      feedbackMessage: hypnosis-power-initialization-feedback
+    - !type:PsionicModifyGlimmer
+      glimmerModifier: 4
+    - !type:AddPsionicAssayFeedback
+      assayFeedback: hypnosis-power-feedback
+    - !type:AddPsionicStatSources
+      amplificationModifier: 0.5
+      dampeningModifier: 0.5
+  removalFunctions:
+    - !type:RemovePsionicActions
+    - !type:RemovePsionicPowerComponents
+      components:
+        - type: PsionicHypno
+    - !type:RemovePsionicStatSources
+    - !type:RemoveAssayFeedback
+      assayFeedback: hypnosis-power-feedback
+  
+  
+  ##actions:
+  #  - ActionHypno
+  #components:
+  #  - type: PsionicHypno
+  #initializationFeedback: hypnosis-power-initialization-feedback
+  #metapsionicFeedback: hypnosis-power-feedback
+  #powerSlotCost: 0

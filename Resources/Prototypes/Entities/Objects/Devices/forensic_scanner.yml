@@ -1,3 +1,19 @@
+# SPDX-FileCopyrightText: 2022 Kara
+# SPDX-FileCopyrightText: 2022 Vordenburg
+# SPDX-FileCopyrightText: 2022 ike709
+# SPDX-FileCopyrightText: 2023 Chief-Engineer
+# SPDX-FileCopyrightText: 2023 Ed
+# SPDX-FileCopyrightText: 2023 Eoin Mcloughlin
+# SPDX-FileCopyrightText: 2023 crazybrain23
+# SPDX-FileCopyrightText: 2023 eoineoineoin
+# SPDX-FileCopyrightText: 2023 lzk
+# SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT
+# SPDX-FileCopyrightText: 2024 Debug
+# SPDX-FileCopyrightText: 2025 deltanedas
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 - type: entity
   name: forensic scanner
   parent: BaseItem
@@ -56,3 +72,13 @@
   - type: GuideHelp
     guides:
     - Forensics
+
+- type: entity
+  parent: ForensicReportPaper
+  id: PaperAccessLogs
+  name: access logs
+  description: A printout from the detective's trusty LogProbe.
+  components:
+  - type: PaperVisuals
+    headerImagePath: null
+    headerMargin: 0.0, 0.0, 0.0, 0.0

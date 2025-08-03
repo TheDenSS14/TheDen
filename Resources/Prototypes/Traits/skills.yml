@@ -1,3 +1,26 @@
+# SPDX-FileCopyrightText: 2024 Angelo Fallaria
+# SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT
+# SPDX-FileCopyrightText: 2024 Fansana
+# SPDX-FileCopyrightText: 2024 FoxxoTrystan
+# SPDX-FileCopyrightText: 2024 Memeji
+# SPDX-FileCopyrightText: 2024 Mnemotechnican
+# SPDX-FileCopyrightText: 2024 ShatteredSwords
+# SPDX-FileCopyrightText: 2024 Timemaster99
+# SPDX-FileCopyrightText: 2024 WarMechanic
+# SPDX-FileCopyrightText: 2024 foxfoxthepirate
+# SPDX-FileCopyrightText: 2025 GNUtopia
+# SPDX-FileCopyrightText: 2025 Jakumba
+# SPDX-FileCopyrightText: 2025 Rosycup
+# SPDX-FileCopyrightText: 2025 SX-7
+# SPDX-FileCopyrightText: 2025 Skubman
+# SPDX-FileCopyrightText: 2025 Tabitha
+# SPDX-FileCopyrightText: 2025 VMSolidus
+# SPDX-FileCopyrightText: 2025 Will Oliver
+# SPDX-FileCopyrightText: 2025 portfiend
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 - type: trait
   id: CPRTraining
   category: Mental
@@ -10,6 +33,9 @@
     - !type:CharacterJobRequirement
       inverted: true
       jobs:
+        - StationAi
+        - Borg
+        - MedicalBorg
         - MedicalDoctor
         - Chemist
         - MedicalIntern
@@ -22,6 +48,13 @@
   id: SelfAware
   category: Mental
   points: -4
+  requirements:
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - StationAi
+        - Borg
+        - MedicalBorg
   functions:
     - !type:TraitAddComponent
       components:
@@ -40,12 +73,13 @@
 
 - type: trait
   id: HeavyweightDrunk
-  category: Physical
+  category: TraitsPhysicalBiological
   points: -1
   requirements:
     - !type:CharacterJobRequirement
       inverted: true
       jobs:
+        - StationAi
         - Borg
         - MedicalBorg
     - !type:CharacterTraitRequirement
@@ -66,12 +100,13 @@
 
 - type: trait
   id: LiquorLifeline
-  category: Physical
-  points: -6
+  category: TraitsPhysicalBiological
+  points: -4
   requirements:
     - !type:CharacterJobRequirement
       inverted: true
       jobs:
+        - StationAi
         - Borg
         - MedicalBorg
     - !type:CharacterTraitRequirement
@@ -93,7 +128,7 @@
 
 - type: trait
   id: Thieving
-  category: Physical
+  category: TraitsPhysicalFeats
   points: -8
   functions:
     - !type:TraitReplaceComponent
@@ -104,6 +139,12 @@
           stripTimeReduction: 0
           stripTimeMultiplier: 0.667
   requirements:
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - StationAi
+        - Borg
+        - MedicalBorg
     - !type:CharacterSpeciesRequirement
       inverted: true
       species:
@@ -111,7 +152,7 @@
 
 - type: trait
   id: Voracious
-  category: Physical
+  category: TraitsPhysicalFeats
   points: -2
   functions:
     - !type:TraitReplaceComponent
@@ -120,6 +161,12 @@
           foodDelayMultiplier: 0.5
           drinkDelayMultiplier: 0.5
   requirements:
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - StationAi
+        - Borg
+        - MedicalBorg
     - !type:CharacterSpeciesRequirement
       inverted: true
       species:
@@ -129,9 +176,15 @@
 
 - type: trait
   id: ParkourTraining
-  category: Physical
+  category: TraitsPhysicalFeats
   points: -5
   requirements:
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - StationAi
+        - Borg
+        - MedicalBorg
     - !type:CharacterTraitRequirement
       inverted: true
       traits:
@@ -165,6 +218,12 @@
           sprintVolumeModifier: -10
           walkVolumeModifier: -10
   requirements:
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - StationAi
+        - Borg
+        - MedicalBorg
     - !type:CharacterSpeciesRequirement
       inverted: true
       species:
@@ -176,14 +235,18 @@
   category: Auditory
   points: 0
   requirements:
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - StationAi
+        - Borg
+        - MedicalBorg
     - !type:CharacterSpeciesRequirement
       inverted: true
       species:
         - Harpy
-    - !type:CharacterTraitRequirement
-      inverted: true
-      traits:
-        - Muted
+    - !type:CharacterItemGroupRequirement
+      group: TraitsMuted
   functions:
     - !type:TraitAddComponent
       components:
@@ -195,13 +258,17 @@
   category: Auditory
   points: -10
   requirements:
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - StationAi
+        - Borg
+        - MedicalBorg
     - !type:CharacterSpeciesRequirement
       species:
         - Harpy
-    - !type:CharacterTraitRequirement
-      inverted: true
-      traits:
-        - Muted
+    - !type:CharacterItemGroupRequirement
+      group: TraitsMuted
   functions:
     - !type:TraitReplaceComponent
       components:
@@ -220,6 +287,7 @@
     - !type:CharacterJobRequirement
       inverted: true
       jobs:
+        - StationAi
         - Borg
         - MedicalBorg
         - ResearchDirector
@@ -263,6 +331,7 @@
     - !type:CharacterJobRequirement
       inverted: true
       jobs:
+        - StationAi
         - Borg
         - MedicalBorg
         - ResearchDirector
@@ -301,6 +370,9 @@
     - !type:CharacterJobRequirement
       inverted: true
       jobs:
+        - StationAi
+        - Borg
+        - MedicalBorg
         - ResearchDirector
         - ForensicMantis
     - !type:CharacterLogicOrRequirement
@@ -324,7 +396,7 @@
 
 - type: trait
   id: TrapAvoider
-  category: Physical
+  category: TraitsPhysicalFeats
   points: -3
   functions:
     - !type:TraitAddComponent
@@ -337,6 +409,12 @@
               - Mousetrap
               - SlipEntity
   requirements:
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - StationAi
+        - Borg
+        - MedicalBorg
     - !type:CharacterSpeciesRequirement
       inverted: true
       species:
@@ -354,6 +432,12 @@
       components:
         - type: PsionicInsulation
   requirements:
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - StationAi
+        - Borg
+        - MedicalBorg
     - !type:CharacterSpeciesRequirement
       species:
         - IPC
@@ -367,6 +451,12 @@
       addFactions:
         - AnimalFriend
   requirements:
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - StationAi
+        - Borg
+        - MedicalBorg
     - !type:CharacterSpeciesRequirement
       inverted: true
       species:

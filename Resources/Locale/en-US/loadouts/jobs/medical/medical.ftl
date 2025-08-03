@@ -1,3 +1,9 @@
+# SPDX-FileCopyrightText: 2024 VMSolidus <evilexecutive@gmail.com>
+# SPDX-FileCopyrightText: 2025 Blitz <73762869+BlitzTheSquishy@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 loadout-description-LoadoutMedicalUniformJumpskirtSenior = A skirt fit for the best of the best.
 loadout-description-LoadoutMedicalUniformJumpsuitSenior = A suit fit for the best of the best.
 loadout-description-LoadoutMedicalHeadBeretSeniorPhysician = A beret fit for the best of the best.
@@ -21,3 +27,6 @@ loadout-description-LoadoutSeniorPhysicianBeltMedicalAdvancedFilled =
 # The Den additions (Loadout fixes)
 loadout-name-LoadoutMedicalInternBeltMedical = medical belt (empty)
 loadout-name-LoadoutMedicalInternBeltMedicalFilled = medical belt (filled)
+
+loadout-name-LoadoutParamedicBeltEMT = EMT belt (empty)
+loadout-name-LoadoutParamedicBeltEMTFilled = EMT belt (filled)

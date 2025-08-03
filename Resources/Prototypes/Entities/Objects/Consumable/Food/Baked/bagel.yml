@@ -1,3 +1,10 @@
+# SPDX-FileCopyrightText: 2024 DrEnzyme
+# SPDX-FileCopyrightText: 2025 KyuPolaris
+# SPDX-FileCopyrightText: 2025 Tanix
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 # When adding new food also add to random spawner located in Resources\Prototypes\Entities\Markers\Spawners\Random\Food_Drinks\food_baked_whole.yml & food_baked_single.yml
 # Base
 
@@ -20,6 +27,9 @@
         reagents:
         - ReagentId: Nutriment
           Quantity: 5
+  - type: Tag
+    tags:
+    - VoxFood
 
 - type: entity
   id: FoodBagel

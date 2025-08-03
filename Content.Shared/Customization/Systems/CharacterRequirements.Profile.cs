@@ -1,3 +1,11 @@
+// SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT
+// SPDX-FileCopyrightText: 2025 Raikyr0
+// SPDX-FileCopyrightText: 2025 Timfa
+// SPDX-FileCopyrightText: 2025 VMSolidus
+// SPDX-FileCopyrightText: 2025 sleepyyapril
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 using System.Linq;
 using Content.Shared.Clothing.Loadouts.Prototypes;
 using Content.Shared.Humanoid;
@@ -408,9 +416,16 @@ public sealed partial class CharacterItemGroupRequirement : CharacterRequirement
             .ToList();
         var count = items.Count;
 
-        // If prototype is selected, remove one from the count
+        // If prototype is selected, decrease the count. Or increase it via negative number. Not my monkey, not my circus.
         if (items.ToList().Contains(prototype.ID))
-            count--;
+        {
+            // This disgusting ELIF nest requires an engine PR to make less terrible.
+            if (prototypeManager.TryIndex<LoadoutPrototype>(prototype.ID, out var loadoutPrototype))
+                count -= loadoutPrototype.Slots;
+            else if (prototypeManager.TryIndex<TraitPrototype>(prototype.ID, out var traitPrototype))
+                count -= traitPrototype.ItemGroupSlots;
+            else count--;
+        }
 
         reason = Loc.GetString(
             "character-item-group-requirement",

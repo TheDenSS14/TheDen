@@ -1,3 +1,17 @@
+// SPDX-FileCopyrightText: 2022 Flipp Syder
+// SPDX-FileCopyrightText: 2023 DEATHB4DEFEAT
+// SPDX-FileCopyrightText: 2023 Leon Friedrich
+// SPDX-FileCopyrightText: 2023 Morb
+// SPDX-FileCopyrightText: 2023 Nemanja
+// SPDX-FileCopyrightText: 2023 Visne
+// SPDX-FileCopyrightText: 2023 csqrb
+// SPDX-FileCopyrightText: 2024 SimpleStation14
+// SPDX-FileCopyrightText: 2025 Rosycup
+// SPDX-FileCopyrightText: 2025 portfiend
+// SPDX-FileCopyrightText: 2025 sleepyyapril
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 using System.Linq;
 using Content.Shared.Humanoid;
 using Content.Shared.Humanoid.Markings;
@@ -176,25 +190,6 @@ public sealed partial class MarkingPicker : Control
     }
 
     private string GetMarkingName(MarkingPrototype marking) => Loc.GetString($"marking-{marking.ID}");
-
-    private List<string> GetMarkingStateNames(MarkingPrototype marking)
-    {
-        List<string> result = new();
-        foreach (var markingState in marking.Sprites)
-        {
-            switch (markingState)
-            {
-                case SpriteSpecifier.Rsi rsi:
-                    result.Add(Loc.GetString($"marking-{marking.ID}-{rsi.RsiState}"));
-                    break;
-                case SpriteSpecifier.Texture texture:
-                    result.Add(Loc.GetString($"marking-{marking.ID}-{texture.TexturePath.Filename}"));
-                    break;
-            }
-        }
-
-        return result;
-    }
 
     private IReadOnlyDictionary<string, MarkingPrototype> GetMarkings(MarkingCategories category)
     {
@@ -396,18 +391,43 @@ public sealed partial class MarkingPicker : Control
             return;
         }
 
-        var stateNames = GetMarkingStateNames(prototype);
+        var stateNames = _markingManager.GetMarkingStateNames(prototype);
         _currentMarkingColors.Clear();
         CMarkingColors.DisposeAllChildren();
         List<ColorSelectorSliders> colorSliders = new();
         for (int i = 0; i < prototype.Sprites.Count; i++)
         {
+            // first, check if the coloration is parented to another marking
+            // and if so, just kinda sorta dont display it
+            var skipdraw = false;
+            if (prototype.ColorLinks?.Count > 0)
+            {
+                var name = prototype.Sprites[i] switch
+                {
+                    SpriteSpecifier.Rsi rsi => rsi.RsiState,
+                    SpriteSpecifier.Texture texture => texture.TexturePath.Filename,
+                    _ => null
+                };
+
+                if (name != null && prototype.ColorLinks.ContainsKey(name))
+                {
+                    // dont show it, cus its parented to another marking
+                    skipdraw = true;
+                }
+            }
             var colorContainer = new BoxContainer
             {
                 Orientation = LayoutOrientation.Vertical,
             };
 
-            CMarkingColors.AddChild(colorContainer);
+            // so.
+            // the color selector sliders decide which destination color to modify
+            // based on its index in the list of color selectors.
+            // this is a problem if we, say, want to *not* show a certain slider
+            // cus then it'll modify the wrong color, unless the color happened to
+            // be in index 0.
+            if(!skipdraw)
+                CMarkingColors.AddChild(colorContainer);
 
             ColorSelectorSliders colorSelector = new ColorSelectorSliders();
             colorSliders.Add(colorSelector);

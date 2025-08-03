@@ -1,3 +1,11 @@
+# SPDX-FileCopyrightText: 2024 Mnemotechnican <69920617+Mnemotechnician@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 M3739 <47579354+M3739@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Rosycup <178287475+Rosycup@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 VMSolidus <evilexecutive@gmail.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 - type: entity
   name: glimmer mite
   parent: MobCockroach
@@ -86,7 +94,7 @@
   - type: LifeDrainer
     damage:
       types:
-        Asphyxiation: 200
+        Asphyxiation: 5
     whitelist:
       components:
       - Psionic
@@ -119,12 +127,12 @@
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
   - type: Damageable
-    damageContainer: CorporealSpirit
+    damageContainer: ManifestedSpirit # Floof - M3739 - #937 - CorporealSpirit container superseded by ManifestedSpirit
     damageModifierSet: CorporealSpirit
   - type: DamageOnDispel
     damage:
       types:
-        Heat: 100
+        Heat: 20
   - type: SlowOnDamage
     speedModifierThresholds:
       10: 0.8

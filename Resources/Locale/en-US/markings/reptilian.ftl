@@ -1,3 +1,18 @@
+# SPDX-FileCopyrightText: 2022 Flipp Syder <76629141+vulppine@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 T-Stalker <43253663+DogZeroX@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 metalgearsloth <comedian_vs_clown@hotmail.com>
+# SPDX-FileCopyrightText: 2023 pigeonpeas <147350443+pigeonpeas@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT <77995199+DEATHB4DEFEAT@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 KittenColony <149278380+KittenColony@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Nairod <110078045+Nairodian@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Ubaser <134914314+UbaserB@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Sapphire <98045970+sapphirescript@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <flyingkarii@gmail.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 marking-LizardFrillsShort-frills_short = Lizard Frills (Short)
 marking-LizardFrillsShort = Lizard Frills (Short)
 
@@ -26,6 +41,8 @@ marking-LizardTailSmooth-tail_smooth_primary = Lizard Tail
 marking-LizardTailSmooth-tail_smooth_secondary = Under Tone
 marking-LizardTailSmooth = Lizard Tail (Smooth)
 marking-LizardTailSmoothAnimated = Lizard Tail (Smooth) (Animated)
+marking-LizardTailSmoothAnimated-tail_smooth_wagging_primary = Tail primary
+marking-LizardTailSmoothAnimated-tail_smooth_wagging_secondary = Tail secondary
 
 marking-LizardTailLarge-tail_large = Lizard Tail (Large)
 marking-LizardTailLarge = Lizard Tail (Large)
@@ -33,14 +50,17 @@ marking-LizardTailLarge = Lizard Tail (Large)
 marking-LizardTailSpikes-tail_spikes = Lizard Tail (Spiky)
 marking-LizardTailSpikes = Lizard Tail (Spiky)
 marking-LizardTailSpikesAnimated = Lizard Tail (Spiky) (Animated)
+marking-LizardTailSpikesAnimated-tail_spikes_wagging = Tail
 
 marking-LizardTailLTiger-tail_ltiger = Lizard Tail (Light Tiger Stripes)
 marking-LizardTailLTiger = Lizard Tail (Light Tiger Stripes)
 marking-LizardTailLTigerAnimated = Lizard Tail (Light Tiger Stripes) (Animated)
+marking-LizardTailLTigerAnimated-tail_ltiger_wagging = Tail
 
 marking-LizardTailDTiger-tail_dtiger = Lizard Tail (Dark Tiger Stripes)
 marking-LizardTailDTiger = Lizard Tail (Dark Tiger Stripes)
 marking-LizardTailDTigerAnimated = Lizard Tail (Dark Tiger Stripes) (Animated)
+marking-LizardTailDTigerAnimated-tail_dtiger_wagging = Tail
 
 marking-LizardSnoutRound-snout_round = Lizard Snout (Round)
 marking-LizardSnoutRound = Lizard Snout (Round)

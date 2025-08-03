@@ -1,62 +1,133 @@
+# SPDX-FileCopyrightText: 2021 20kdc
+# SPDX-FileCopyrightText: 2021 Swept
+# SPDX-FileCopyrightText: 2021 Vera Aguilera Puerto
+# SPDX-FileCopyrightText: 2022 Alex Evgrashin
+# SPDX-FileCopyrightText: 2022 CrzyPotato
+# SPDX-FileCopyrightText: 2022 ElectroJr
+# SPDX-FileCopyrightText: 2022 Jessica M
+# SPDX-FileCopyrightText: 2022 Lamrr
+# SPDX-FileCopyrightText: 2022 Leon Friedrich
+# SPDX-FileCopyrightText: 2022 Pancake
+# SPDX-FileCopyrightText: 2022 Peptide90
+# SPDX-FileCopyrightText: 2022 Rane
+# SPDX-FileCopyrightText: 2022 Sam Weaver
+# SPDX-FileCopyrightText: 2022 ZeroDayDaemon
+# SPDX-FileCopyrightText: 2022 metalgearsloth
+# SPDX-FileCopyrightText: 2022 zlodo
+# SPDX-FileCopyrightText: 2023 Aexxie
+# SPDX-FileCopyrightText: 2023 Nairod
+# SPDX-FileCopyrightText: 2023 Tom Leys
+# SPDX-FileCopyrightText: 2023 c4llv07e
+# SPDX-FileCopyrightText: 2024 Aidenkrz
+# SPDX-FileCopyrightText: 2024 August Eymann
+# SPDX-FileCopyrightText: 2024 BombasterDS
+# SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT
+# SPDX-FileCopyrightText: 2024 Emisse
+# SPDX-FileCopyrightText: 2024 Flareguy
+# SPDX-FileCopyrightText: 2024 Nemanja
+# SPDX-FileCopyrightText: 2024 Pieter-Jan Briers
+# SPDX-FileCopyrightText: 2024 SimpleStation14
+# SPDX-FileCopyrightText: 2024 Steve
+# SPDX-FileCopyrightText: 2024 a_person
+# SPDX-FileCopyrightText: 2024 lzk
+# SPDX-FileCopyrightText: 2024 starch
+# SPDX-FileCopyrightText: 2025 Aiden
+# SPDX-FileCopyrightText: 2025 GoobBot
+# SPDX-FileCopyrightText: 2025 MajorMoth
+# SPDX-FileCopyrightText: 2025 Solaris
+# SPDX-FileCopyrightText: 2025 Theodore Lukin
+# SPDX-FileCopyrightText: 2025 VMSolidus
+# SPDX-FileCopyrightText: 2025 Vanessa
+# SPDX-FileCopyrightText: 2025 Vanessa Louwagie
+# SPDX-FileCopyrightText: 2025 Velcroboy
+# SPDX-FileCopyrightText: 2025 juniwoofs
+# SPDX-FileCopyrightText: 2025 marc-pelletier
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 - type: entity
   id: ClosetToolFilled
   parent: ClosetTool
   suffix: Filled
   components:
-  - type: StorageFill
-    contents:
-      - id: ClothingOuterVestHazard
-        prob: 0.4
-      - id: FlashlightLantern
-        prob: 0.7
-      - id: Screwdriver
-        prob: 0.7
-      - id: Wrench
-        prob: 0.7
-      - id: Welder
-        prob: 0.7
-      - id: Crowbar
-        prob: 0.7
-      - id: Wirecutter
-        prob: 0.7
-      - id: Multitool
-        prob: 0.2
-      - id: trayScanner
-        prob: 0.7
-      - id: GasAnalyzer
-        prob: 0.7
-      - id: ClothingBeltUtility
-        prob: 0.2
-      - id: ClothingHandsGlovesColorYellow
-        prob: 0.05
+  - type: EntityTableContainerFill
+    containers:
+      entity_storage: !type:NestedSelector
+        tableId: FillClosetTool
+
+- type: entityTable
+  id: FillClosetTool
+  table: !type:AllSelector
+    children:
+    - id: ClothingOuterVestHazard
+      prob: 0.4
+    - id: FlashlightLantern
+      prob: 0.7
+    - id: Screwdriver
+      prob: 0.7
+    - id: Wrench
+      prob: 0.7
+    - id: Welder
+      prob: 0.7
+    - id: Crowbar
+      prob: 0.7
+    - id: Wirecutter
+      prob: 0.7
+    - id: Multitool
+      prob: 0.2
+    - id: trayScanner
+      prob: 0.7
+    - id: GasAnalyzer
+      prob: 0.7
+    - id: ClothingBeltUtility
+      prob: 0.2
+    - id: ClothingHandsGlovesColorYellow
+      prob: 0.05
+    - !type:GroupSelector
+      prob: 0.4
+      children:
       - id: ClothingHeadHatHardhatRed
-        prob: 0.4
-      - id: CableApcStack
-        prob: 0.3
-      - id: CableApcStack
-        prob: 0.3
-      - id: CableApcStack
-        prob: 0.3
-      - id: SprayPainter
-        prob: 0.7
+      - id: ClothingHeadHatHardhatBlue
+      - id: ClothingHeadHatHardhatOrange
+      - id: ClothingHeadHatHardhatWhite
+      - id: ClothingHeadHatHardhatYellow
+      - id: ClothingHeadHatHardhatYellowDark
+    - id: CableApcStack
+      prob: 0.3
+      rolls: !type:ConstantNumberSelector
+        value: 3
+    - id: SprayPainter
+      prob: 0.7
 
 - type: entity
   id: LockerElectricalSuppliesFilled
   suffix: Filled
   parent: LockerElectricalSupplies
   components:
-  - type: StorageFill
-    contents:
-      - id: ToolboxElectricalFilled
-        prob: 0.7
-      - id: FirelockElectronics
-        prob: 0.05
-      - id: APCElectronics
-        prob: 0.1
-      - id: CableMVStack
-        prob: 0.2
+  - type: EntityTableContainerFill
+    containers:
+      entity_storage: !type:NestedSelector
+        tableId: FillElectricalSupplies
+
+- type: entityTable
+  id: FillElectricalSupplies
+  table: !type:AllSelector
+    children:
+    - id: ToolboxElectricalFilled
+      prob: 0.7
+    - id: FirelockElectronics
+      prob: 0.05
+    - id: APCElectronics
+      prob: 0.1
+    - !type:GroupSelector
+      prob: 0.5
+      children:
       - id: CableApcStack
-        prob: 0.3
+        weight: 5
+      - id: CableMVStack
+      - id: CableHVStack
+        weight: 0.5
 
 - type: entity
   id: LockerWeldingSuppliesFilled
@@ -85,87 +156,134 @@
   suffix: Filled, Hardsuit
   parent: LockerAtmospherics
   components:
-  - type: StorageFill
-    contents:
-      - id: ClothingOuterHardsuitAtmos
-      - id: ClothingMaskGasAtmos
-      - id: ClothingOuterSuitAtmosFire
-      - id: ClothingHeadHelmetAtmosFire
-      - id: GasAnalyzer
-      - id: MedkitOxygenFilled
-      - id: HolofanProjector
-      - id: DoorRemoteFirefight
-      - id: RCD
-      - id: RCDAmmo
-      - id: RPD
-      - id: RCDAmmo # Extra Compressed matter for the RPD
-      - id: LunchboxEngineeringFilledRandom # Delta-V Lunchboxes!
-        prob: 0.3
-      - id: AccessConfigurator
+  - type: EntityTableContainerFill
+    containers:
+      entity_storage: !type:AllSelector
+        children:
+        - !type:NestedSelector
+          tableId: FillLockerAtmospherics
+        - !type:NestedSelector
+          tableId: FillLockerAtmosphericsDEN # The Den Additions
+        - !type:NestedSelector
+          tableId: FillLockerAtmosphericsDV # DeltaV Addtitions
+        - !type:NestedSelector
+          tableId: FillLockerAtmosphericsGoobstation # Goob Additions
+        - !type:NestedSelector
+          tableId: FillAtmosphericsHardsuit
 
 - type: entity
   id: LockerAtmosphericsFilled
   suffix: Filled
   parent: LockerAtmospherics
   components:
-  - type: StorageFill
-    contents:
-      - id: ClothingMaskGasAtmos
-      - id: ClothingOuterSuitAtmosFire
-      - id: ClothingHeadHelmetAtmosFire
-      - id: GasAnalyzer
-      - id: MedkitOxygenFilled
-      - id: HolofanProjector
-      - id: DoorRemoteFirefight
-      - id: RCD
-      - id: RCDAmmo
-      - id: RPD
-      - id: RCDAmmo # Extra Compressed matter for the RPD
-      - id: LunchboxEngineeringFilledRandom # Delta-V Lunchboxes!
-        prob: 0.3
-      - id: AccessConfigurator
+  - type: EntityTableContainerFill
+    containers:
+      entity_storage: !type:AllSelector
+        children:
+        - !type:NestedSelector
+          tableId: FillLockerAtmospherics
+        - !type:NestedSelector
+          tableId: FillLockerAtmosphericsDEN # The Den Additions
+        - !type:NestedSelector
+          tableId: FillLockerAtmosphericsDV # DeltaV Additions
+        - !type:NestedSelector
+          tableId: FillLockerAtmosphericsGoobstation # Goob Additions
+
+- type: entityTable
+  id: FillLockerAtmospherics
+  table: !type:AllSelector
+    children:
+    - id: ClothingMaskGasAtmos
+    - id: ClothingOuterSuitAtmosFire
+    - id: ClothingHeadHelmetAtmosFire
+    - id: GasAnalyzer
+    - id: MedkitOxygenFilled
+    - id: HolofanProjector
+    - id: RCD
+    - id: RCDAmmo
+    # - id: AirGrenade # NYI - TODO: Cherry-pick https://github.com/space-wizards/space-station-14/pull/37531
+
+- type: entityTable
+  id: FillAtmosphericsHardsuit
+  table: !type:AllSelector
+    children:
+    - id: ClothingOuterHardsuitAtmos
+    - id: OxygenTankFilled
+    - id: NitrogenTankFilled #Den
+    - id: ClothingMaskBreath
 
 - type: entity
   id: LockerEngineerFilledHardsuit
   suffix: Filled, Hardsuit
   parent: LockerEngineer
   components:
-  - type: StorageFill
-    contents:
-      - id: ClothingOuterHardsuitEngineering
-      - id: ClothingHandsGlovesColorYellow
-      - id: ClothingMaskGas
-      - id: ClothingShoesBootsMag
-      - id: RCD
-      - id: RCDAmmo
-      - id: LunchboxEngineeringFilledRandom # Delta-V Lunchboxes!
-        prob: 0.3
-      - id: AccessConfigurator
+  - type: EntityTableContainerFill
+    containers:
+      entity_storage: !type:AllSelector
+        children:
+        - !type:NestedSelector
+          tableId: FillLockerEngineer
+        - !type:NestedSelector
+          tableId: FillEngineerHardsuit
+        - !type:NestedSelector
+          tableId: FillLockerEngineerDEN # The Den Additions
+        - !type:NestedSelector
+          tableId: FillLockerEngineerDV # DeltaV Additions
 
 - type: entity
   id: LockerEngineerFilled
   suffix: Filled
   parent: LockerEngineer
   components:
-  - type: StorageFill
-    contents:
-      - id: ClothingHandsGlovesColorYellow
-      - id: ClothingMaskGas
-      - id: trayScanner
-      - id: RCD
-      - id: RCDAmmo
-      - id: LunchboxEngineeringFilledRandom # Delta-V Lunchboxes!
-        prob: 0.3
-      - id: AccessConfigurator
+  - type: EntityTableContainerFill
+    containers:
+      entity_storage: !type:AllSelector
+        children:
+        - !type:NestedSelector
+          tableId: FillLockerEngineer
+        - !type:NestedSelector
+          tableId: FillLockerEngineerDEN # The Den Additions
+        - !type:NestedSelector
+          tableId: FillLockerEngineerDV # DeltaV Additions
+
+- type: entityTable
+  id: FillLockerEngineer
+  table: !type:AllSelector
+    children:
+    - id: ClothingHandsGlovesColorYellow
+    - id: ClothingMaskGas
+    - id: trayScanner
+    - id: RCD
+    - id: RCDAmmo
+    # - id: MetalFoamGrenade # NYI - TODO: Cherry-pick https://github.com/space-wizards/space-station-14/pull/37476
+
+- type: entityTable
+  id: FillEngineerHardsuit
+  table: !type:AllSelector
+    children:
+    - id: ClothingOuterHardsuitEngineering
+    - id: OxygenTankFilled
+    - id: NitrogenTankFilled #Den
+    - id: ClothingShoesBootsMag
+    - id: ClothingMaskBreath
 
 - type: entity
   id: ClosetRadiationSuitFilled
   parent: ClosetRadiationSuit
   suffix: Filled
   components:
-  - type: StorageFill
-    contents:
-      - id: ClothingOuterSuitRad
-        amount: 2
-      - id: GeigerCounter
-        amount: 2
+  - type: EntityTableContainerFill
+    containers:
+      entity_storage: !type:NestedSelector
+        tableId: FillRadiationSuit
+
+- type: entityTable
+  id: FillRadiationSuit
+  table: !type:AllSelector
+    children:
+    - id: ClothingOuterSuitRad
+      amount: !type:ConstantNumberSelector
+        value: 2
+    - id: GeigerCounter
+      amount: !type:ConstantNumberSelector
+        value: 2

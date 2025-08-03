@@ -1,3 +1,84 @@
+# SPDX-FileCopyrightText: 2021 Alex Evgrashin
+# SPDX-FileCopyrightText: 2021 SETh lafuente
+# SPDX-FileCopyrightText: 2021 SethLafuente
+# SPDX-FileCopyrightText: 2021 Swept
+# SPDX-FileCopyrightText: 2021 Vera Aguilera Puerto
+# SPDX-FileCopyrightText: 2022 0x6273
+# SPDX-FileCopyrightText: 2022 Fishfish458
+# SPDX-FileCopyrightText: 2022 Jessica M
+# SPDX-FileCopyrightText: 2022 Lamrr
+# SPDX-FileCopyrightText: 2022 Leon Friedrich
+# SPDX-FileCopyrightText: 2022 Peptide90
+# SPDX-FileCopyrightText: 2022 Rane
+# SPDX-FileCopyrightText: 2022 Ripmorld
+# SPDX-FileCopyrightText: 2022 Willhelm53
+# SPDX-FileCopyrightText: 2022 WlarusFromDaSpace
+# SPDX-FileCopyrightText: 2022 ZeroDayDaemon
+# SPDX-FileCopyrightText: 2022 fishfish458
+# SPDX-FileCopyrightText: 2022 mirrorcult
+# SPDX-FileCopyrightText: 2022 router
+# SPDX-FileCopyrightText: 2023 Aexxie
+# SPDX-FileCopyrightText: 2023 Alekshhh
+# SPDX-FileCopyrightText: 2023 AsikKEsel
+# SPDX-FileCopyrightText: 2023 Colin-Tel
+# SPDX-FileCopyrightText: 2023 Emisse
+# SPDX-FileCopyrightText: 2023 EnDecc
+# SPDX-FileCopyrightText: 2023 Fluffiest Floofers
+# SPDX-FileCopyrightText: 2023 Kara
+# SPDX-FileCopyrightText: 2023 Kevin Zheng
+# SPDX-FileCopyrightText: 2023 KingFroozy
+# SPDX-FileCopyrightText: 2023 Lei Yunxing
+# SPDX-FileCopyrightText: 2023 Nairod
+# SPDX-FileCopyrightText: 2023 Pieter-Jan Briers
+# SPDX-FileCopyrightText: 2023 PursuitInAshes
+# SPDX-FileCopyrightText: 2023 Raitononai
+# SPDX-FileCopyrightText: 2023 RobbyTheFish
+# SPDX-FileCopyrightText: 2023 Skarletto
+# SPDX-FileCopyrightText: 2023 Tad "Taddy" Johnson
+# SPDX-FileCopyrightText: 2023 Ubaser
+# SPDX-FileCopyrightText: 2023 Whisper
+# SPDX-FileCopyrightText: 2023 chromiumboy
+# SPDX-FileCopyrightText: 2023 crazybrain23
+# SPDX-FileCopyrightText: 2023 lapatison
+# SPDX-FileCopyrightText: 2023 lzk228
+# SPDX-FileCopyrightText: 2023 metalgearsloth
+# SPDX-FileCopyrightText: 2023 ssdaniel24
+# SPDX-FileCopyrightText: 2024 Adrian16199
+# SPDX-FileCopyrightText: 2024 ArchRBX
+# SPDX-FileCopyrightText: 2024 Boaz1111
+# SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT
+# SPDX-FileCopyrightText: 2024 Dakota Haven
+# SPDX-FileCopyrightText: 2024 Debug
+# SPDX-FileCopyrightText: 2024 Flareguy
+# SPDX-FileCopyrightText: 2024 FoxxoTrystan
+# SPDX-FileCopyrightText: 2024 FungiFellow
+# SPDX-FileCopyrightText: 2024 Guess-My-Name
+# SPDX-FileCopyrightText: 2024 Hanz
+# SPDX-FileCopyrightText: 2024 Jeff
+# SPDX-FileCopyrightText: 2024 Lonely Fox
+# SPDX-FileCopyrightText: 2024 Nim
+# SPDX-FileCopyrightText: 2024 ScarKy0
+# SPDX-FileCopyrightText: 2024 SimpleStation14
+# SPDX-FileCopyrightText: 2024 Velcroboy
+# SPDX-FileCopyrightText: 2024 gluesniffler
+# SPDX-FileCopyrightText: 2025 Angelo Fallaria
+# SPDX-FileCopyrightText: 2025 Blitz
+# SPDX-FileCopyrightText: 2025 BlitzTheSquishy
+# SPDX-FileCopyrightText: 2025 BlueHNT
+# SPDX-FileCopyrightText: 2025 Gregg
+# SPDX-FileCopyrightText: 2025 Jakumba
+# SPDX-FileCopyrightText: 2025 John Willis
+# SPDX-FileCopyrightText: 2025 Nemanja
+# SPDX-FileCopyrightText: 2025 Rosycup
+# SPDX-FileCopyrightText: 2025 Skubman
+# SPDX-FileCopyrightText: 2025 Solaris
+# SPDX-FileCopyrightText: 2025 VMSolidus
+# SPDX-FileCopyrightText: 2025 Will-Oliver-Br
+# SPDX-FileCopyrightText: 2025 juniwoofs
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 - type: entity
   id: LockerQuarterMasterFilled
   suffix: Filled
@@ -42,8 +123,9 @@
       - id: ClothingLongcoatCap # Floofstation
       - id: NukeDisk
       - id: PinpointerNuclear
-      - id: CaptainIDCard
       - id: ClothingOuterHardsuitCap
+      - id: OxygenTankFilled #Den
+      - id: NitrogenTankFilled #Den
       - id: CommsComputerCircuitboard
       - id: ClothingHeadsetAltCommand
       - id: PlushieNuke
@@ -67,7 +149,6 @@
       - id: ClothingLongcoatCap # Floofstation
       - id: NukeDisk
       - id: PinpointerNuclear
-      - id: CaptainIDCard
       - id: CommsComputerCircuitboard
       - id: ClothingHeadsetAltCommand
       - id: PlushieNuke
@@ -91,7 +172,6 @@
       - id: ClothingLongcoatCap # Floofstation
       - id: NukeDisk
       - id: PinpointerNuclear
-      - id: CaptainIDCard
       - id: CommsComputerCircuitboard
       - id: ClothingHeadsetAltCommand
       - id: PlushieNuke
@@ -136,6 +216,8 @@
   - type: StorageFill
     contents:
       - id: ClothingOuterHardsuitEngineeringWhite
+      - id: OxygenTankFilled #Den
+      - id: NitrogenTankFilled #Den
       - id: ClothingLongcoatCE # Floofstation
       - id: ClothingMaskBreath
       - id: ClothingEyesGlassesMeson
@@ -204,6 +286,8 @@
       - id: ClothingMaskSterile
       - id: ClothingHeadHatBeretCmo
       - id: ClothingOuterHardsuitMedical
+      - id: OxygenTankFilled #Den
+      - id: NitrogenTankFilled #Den
       - id: ClothingLongcoatCMO # Floofstation
       - id: Hypospray
       - id: HandheldCrewMonitor
@@ -259,6 +343,8 @@
       - id: ProtolatheMachineCircuitboard
       - id: CircuitImprinterMachineCircuitboard
       - id: ClothingOuterHardsuitRd
+      - id: OxygenTankFilled #Den
+      - id: NitrogenTankFilled #Den
       - id: HandTeleporter
       - id: DoorRemoteResearch
       - id: ClothingBeltUtilityFilled
@@ -300,6 +386,7 @@
       - id: RDIDCard # Delta-V
       - id: ClothingHeadsetAltScience
       - id: EncryptionKeyBinary
+      - id: Intellicard
       - id: LunchboxCommandFilledRandom # Delta-V Lunchboxes!
         prob: 0.3
       - id: PsiWatchCartridge
@@ -323,6 +410,8 @@
       - id: ClothingLongcoatHoS # Floofstation
       - id: ClothingMaskNeckGaiter
       - id: ClothingOuterHardsuitCombatHoS # DeltaV - ClothingOuterHardsuitSecurityRed replaced in favour of head of security's advanced combat hardsuit.
+      - id: OxygenTankFilled #Den
+      - id: NitrogenTankFilled #Den
       - id: ClothingBeltSecurityFilled
       - id: ClothingHeadsetAltSecurity
       - id: ClothingEyesGlassesSunglasses
@@ -381,6 +470,8 @@
     contents:
     - id: WeaponRevolverDeckard
     - id: ClothingOuterHardsuitBasic
+    - id: OxygenTankFilled #Den
+    - id: NitrogenTankFilled #Den
     - id: JetpackBlue
     - id: SpaceCash1000
     - id: BeachBall

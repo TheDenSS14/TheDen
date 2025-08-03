@@ -1,10 +1,20 @@
+# SPDX-FileCopyrightText: 2023 Dorragon
+# SPDX-FileCopyrightText: 2024 Kr8art
+# SPDX-FileCopyrightText: 2024 Milon
+# SPDX-FileCopyrightText: 2024 Tad "Taddy" Johnson
+# SPDX-FileCopyrightText: 2025 Rosycup
+# SPDX-FileCopyrightText: 2025 portfiend
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 - type: cargoProduct
   id: CrateVendingMachineRestockPride
   icon:
     sprite: Objects/Specific/Service/vending_machine_restock.rsi
     state: base
   product: CrateVendingMachineRestockPrideFilled
-  cost: 1200
+  cost: 1500 # DEN - Price raised a little to prevent arbitrage
   category: Service
   group: market
 

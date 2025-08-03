@@ -1,3 +1,15 @@
+// SPDX-FileCopyrightText: 2022 Moony
+// SPDX-FileCopyrightText: 2022 Vera Aguilera Puerto
+// SPDX-FileCopyrightText: 2022 mirrorcult
+// SPDX-FileCopyrightText: 2022 wrexbe
+// SPDX-FileCopyrightText: 2023 Morb
+// SPDX-FileCopyrightText: 2024 DrSmugleaf
+// SPDX-FileCopyrightText: 2024 Pieter-Jan Briers
+// SPDX-FileCopyrightText: 2024 metalgearsloth
+// SPDX-FileCopyrightText: 2025 sleepyyapril
+//
+// SPDX-License-Identifier: MIT
+
 using Content.Server.Discord;
 using Content.Shared.CCVar;
 using Content.Shared.GameTicking;
@@ -25,6 +37,7 @@ namespace Content.Server.GameTicking
         private string? DiscordRoundEndRole { get; set; }
 
         private WebhookIdentifier? _webhookIdentifier;
+        private WebhookIdentifier? _eventsLoggingChannelIdentifier;
 
         [ViewVariables]
         private string? RoundEndSoundCollection { get; set; }
@@ -63,6 +76,15 @@ namespace Content.Server.GameTicking
                     _discord.GetWebhook(value, data => _webhookIdentifier = data.ToIdentifier());
                 }
             }, true);
+
+            Subs.CVar(_configurationManager, CCVars.DiscordNewRoundWebhook, value =>
+            {
+                if (!string.IsNullOrWhiteSpace(value))
+                {
+                    _discord.GetWebhook(value, data => _eventsLoggingChannelIdentifier = data.ToIdentifier());
+                }
+            }, true);
+
             Subs.CVar(_configurationManager, CCVars.DiscordRoundEndRoleWebhook, value =>
             {
                 DiscordRoundEndRole = value;

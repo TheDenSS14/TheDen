@@ -1,3 +1,9 @@
+# SPDX-FileCopyrightText: 2025 Rosycup
+# SPDX-FileCopyrightText: 2025 Sir Warock
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 - type: entity
   parent: ClothingEyesHudMedical
   id: ClothingEyesGlassesMedicalVisor
@@ -18,3 +24,61 @@
     tags:
     - WhitelistChameleon
     - HudMedical
+
+- type: entity
+  parent: [ClothingEyesGlassesCheapSunglasses, ShowMedicalIcons]
+  id: ClothingEyesGlassesCheapMedical
+  name: medical glasses
+  description: Medical Glasses designed for fashionable doctors. Now with a cool blue hue!
+  components:
+  - type: Sprite
+    sprite: _DEN/Clothing/Eyes/Glasses/medicalglasses.rsi
+  - type: Clothing
+    sprite: _DEN/Clothing/Eyes/Glasses/medicalglasses.rsi
+  - type: Construction
+    graph: GlassesCheapMedicalHUD
+    node: glassesCheapMedical
+  - type: ShowHealthBars
+    damageContainers:
+    - Biological
+  - type: ShowHealthIcons
+    damageContainers:
+    - Biological
+  - type: Tag
+    tags:
+    - HamsterWearable
+    - WhitelistChameleon
+    - SecDogWearable
+    - HudMedical
+  - type: GuideHelp
+    guides:
+    - Medical
+
+- type: entity
+  parent: [ClothingEyesGlassesSunglasses, ShowMedicalIcons]
+  id: ClothingEyesGlassesMedical
+  name: shielded medical glasses
+  description: Shielded Medical Glasses designed for fashionable doctors. Now with a cool blue hue!
+  components:
+  - type: Sprite
+    sprite: _DEN/Clothing/Eyes/Glasses/medicalglasses.rsi
+  - type: Clothing
+    sprite: _DEN/Clothing/Eyes/Glasses/medicalglasses.rsi
+  - type: Construction
+    graph: GlassesMedicalHUD
+    node: glassesMedical
+  - type: ShowHealthBars
+    damageContainers:
+    - Biological
+  - type: ShowHealthIcons
+    damageContainers:
+    - Biological
+  - type: Tag
+    tags:
+    - HamsterWearable
+    - WhitelistChameleon
+    - SecDogWearable
+    - HudMedical
+  - type: GuideHelp
+    guides:
+    - Medical

@@ -1,3 +1,15 @@
+# SPDX-FileCopyrightText: 2023 Adrian16199
+# SPDX-FileCopyrightText: 2023 Fluffiest Floofers
+# SPDX-FileCopyrightText: 2023 VMSolidus
+# SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT
+# SPDX-FileCopyrightText: 2025 M3739
+# SPDX-FileCopyrightText: 2025 Sapphire
+# SPDX-FileCopyrightText: 2025 Tabitha
+# SPDX-FileCopyrightText: 2025 mart
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 # vocal emotes
 - type: emote
   id: Hiss
@@ -8,12 +20,17 @@
     tags:
     - FelinidEmotes
     - HarpyEmotes
+    - UnathiEmotes
+    - ArachneEmotes
   blacklist:
     components:
     - BorgChassis
   chatMessages: [ hisses ]
   chatTriggers:
+    - hiss
     - hisses
+    - hissed
+    - hissing
 
 - type: emote
   id: Meow
@@ -59,6 +76,7 @@
     tags:
     - FelinidEmotes
     - HarpyEmotes
+    - KitsuneEmotes
   blacklist:
     components:
     - BorgChassis

@@ -1,75 +1,79 @@
+# SPDX-FileCopyrightText: 2023 Colin-Tel
+# SPDX-FileCopyrightText: 2023 Fluffiest Floofers
+# SPDX-FileCopyrightText: 2023 PHCodes
+# SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT
+# SPDX-FileCopyrightText: 2024 Danger Revolution!
+# SPDX-FileCopyrightText: 2024 Mnemotechnican
+# SPDX-FileCopyrightText: 2024 VMSolidus
+# SPDX-FileCopyrightText: 2025 Jakumba
+# SPDX-FileCopyrightText: 2025 Rosycup
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 - type: entity
   id: XenoVents
-  parent: BaseGameRule
+  parent: BaseVentCritterSpawn
   categories: [ HideSpawnMenu ]
   components:
   - type: StationEvent
     startAnnouncement: true
-    earliestStart: 20
+    earliestStart: 15
     reoccurrenceDelay: 12
-    minimumPlayers: 15
-    weight: 6 # Really weak compared to other critters
-    duration: 60
+    minimumPlayers: 10
+    weight: 8 # Really weak compared to other critters
+    duration: 30
   - type: VentCrittersRule
-    entries:
-    - id: MobXeno
-      prob: 0.01
-    - id: MobXenoRouny
-      prob: 0.005
-    - id: MobXenoDrone
-      prob: 0.005
-    - id: MobXenoSpitter
-      prob: 0.005
-    - id: MobXenoRunner
-      prob: 0.005
-    - id: MobXenoPraetorian
-      prob: 0.005
-    - id: MobXenoRavager
-      prob: 0.005
-    - id: MobXenoQueen
-      prob: 0.005
+    sound: /Audio/_DEN/VentCritters/vent_xeno.ogg #Den
+    specialEntries:
+      - id: MobXenoPraetorian
+    table: !type:GroupSelector # DeltaV: EntityTable instead of spawn entries
+      children:
+      - id: MobXeno
+        weight: 0.55
+      - id: MobXenoRouny
+        weight: 0.01
+      - id: MobXenoDrone
+        weight: 0.25
+      - id: MobXenoSpitter
+        weight: 0.05
+      - id: MobXenoRunner
+        weight: 0.08
+      - id: MobXenoPraetorian
+        weight: 0.03
+      - id: MobXenoRavager
+        weight: 0.02
+      - id: MobXenoQueen
+        weight: 0.01
 
 # Weaker version of xenos, meant to provide some dangers in low pop.
 - type: entity
   id: XenoVentsWeak
   parent: XenoVents
-  categories: [ HideSpawnMenu ]
+  # categories: [ HideSpawnMenu ]
   components:
   - type: StationEvent
     startAnnouncement: true
     reoccurrenceDelay: 12
     minimumPlayers: 1
+    duration: 30
   - type: VentCrittersRule
-    entries:
-    - id: MobXeno
-      prob: 0.006
-    - id: MobXenoDrone
-      prob: 0.004
-    - id: MobXenoSpitter
-      prob: 0.003
-    - id: MobXenoRouny
-      prob: 0.001
-    - id: MobXenoRunner
-      prob: 0.001
-    - id: MobXenoPraetorian
-      prob: 0.001
-    - id: MobXenoRavager
-      prob: 0.001
-
-- type: entity
-  id: MothroachSpawn
-  parent: BaseGameRule
-  categories: [ HideSpawnMenu ]
-  components:
-  - type: StationEvent
-    earliestStart: 15
-    minimumPlayers: 1
-    weight: 4
-    duration: 60
-  - type: VentCrittersRule
-    entries:
-    - id: MobMothroach
-      prob: 0.05
+    specialEntries:
+      - id: MobXenoDrone
+    table: !type:GroupSelector # DeltaV: EntityTable instead of spawn entries
+      children:
+      - id: MobXeno
+        weight: 0.55
+      - id: MobXenoRouny
+        weight: 0.01
+      - id: MobXenoDrone
+        weight: 0.25
+      - id: MobXenoSpitter
+        weight: 0.05
+      - id: MobXenoRunner
+        weight: 0.08
+      - id: MobXenoRavager
+        weight: 0.02
 
 - type: entity
   id: PirateRadioSpawn

@@ -1,3 +1,9 @@
+// SPDX-FileCopyrightText: 2024 Spatison
+// SPDX-FileCopyrightText: 2025 Mnemotechnican
+// SPDX-FileCopyrightText: 2025 sleepyyapril
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 using Content.Server.Popups;
 using Content.Shared.Hands.Components;
 using Content.Shared.Alert;
@@ -8,11 +14,19 @@ using Robust.Shared.Player;
 
 namespace Content.Server.OfferItem;
 
-public sealed class OfferItemSystem : SharedOfferItemSystem
+// Floofstation - partial
+public sealed partial class OfferItemSystem : SharedOfferItemSystem
 {
     [Dependency] private readonly AlertsSystem _alertsSystem = default!;
     [Dependency] private readonly SharedHandsSystem _hands = default!;
     [Dependency] private readonly PopupSystem _popup = default!;
+
+    // Floofstation
+    public override void Initialize()
+    {
+        base.Initialize();
+        InitializeTransfers();
+    }
 
     public override void Update(float frameTime)
     {
@@ -52,6 +66,7 @@ public sealed class OfferItemSystem : SharedOfferItemSystem
     /// </summary>
     public void Receive(EntityUid uid, OfferItemComponent? component = null)
     {
+        // Floofstation note: (uid, component) is the receiver. (component.Target, offerItem) is the offerer. Why? I don't fucking know.
         if (!Resolve(uid, ref component) ||
             !TryComp<OfferItemComponent>(component.Target, out var offerItem) ||
             offerItem.Hand == null ||
@@ -61,18 +76,21 @@ public sealed class OfferItemSystem : SharedOfferItemSystem
 
         if (offerItem.Item != null)
         {
-            if (!_hands.TryPickup(uid, offerItem.Item.Value, handsComp: hands))
+            // Floof - check if there's something else handling it first
+            var realItem = offerItem.GetRealEntity(EntityManager);
+            if (!TryHandleExtendedTransfer(component.Target.Value, uid, offerItem.Item.Value, realItem)
+                && !_hands.TryPickup(uid, offerItem.Item.Value, handsComp: hands))
             {
                 _popup.PopupEntity(Loc.GetString("offer-item-full-hand"), uid, uid);
                 return;
             }
 
             _popup.PopupEntity(Loc.GetString("offer-item-give",
-                ("item", Identity.Entity(offerItem.Item.Value, EntityManager)),
+                ("item", Identity.Entity(realItem, EntityManager)), // FLoof - resolve virtual items
                 ("target", Identity.Entity(uid, EntityManager))), component.Target.Value, component.Target.Value);
             _popup.PopupEntity(Loc.GetString("offer-item-give-other",
                     ("user", Identity.Entity(component.Target.Value, EntityManager)),
-                    ("item", Identity.Entity(offerItem.Item.Value, EntityManager)),
+                    ("item", Identity.Entity(realItem, EntityManager)), // FLoof - resolve virtual items
                     ("target", Identity.Entity(uid, EntityManager)))
                 , component.Target.Value, Filter.PvsExcept(component.Target.Value, entityManager: EntityManager), true);
         }

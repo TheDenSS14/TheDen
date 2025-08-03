@@ -1,3 +1,13 @@
+# SPDX-FileCopyrightText: 2024 VMSolidus
+# SPDX-FileCopyrightText: 2025 Blitz
+# SPDX-FileCopyrightText: 2025 BlitzTheSquishy
+# SPDX-FileCopyrightText: 2025 MajorMoth
+# SPDX-FileCopyrightText: 2025 Rosycup
+# SPDX-FileCopyrightText: 2025 mart
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 # Chief Engineer
 # Backpacks
 - type: loadout
@@ -7,7 +17,7 @@
   exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutChiefEngineerBackpack
+      group: LoadoutChiefEngineerBackpacks
     - !type:CharacterJobRequirement
       jobs:
         - ChiefEngineer
@@ -21,7 +31,7 @@
   exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutChiefEngineerBackpack
+      group: LoadoutChiefEngineerBackpacks
     - !type:CharacterJobRequirement
       jobs:
         - ChiefEngineer
@@ -35,12 +45,26 @@
   exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutChiefEngineerBackpack
+      group: LoadoutChiefEngineerBackpacks
     - !type:CharacterJobRequirement
       jobs:
         - ChiefEngineer
   items:
     - ClothingBackpackDuffelChiefEngineerFilled
+
+- type: loadout
+  id: LoadoutEngineeringChiefEngineerBackpackMessenger
+  category: JobsEngineeringChiefEngineer
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutChiefEngineerBackpacks
+    - !type:CharacterJobRequirement
+      jobs:
+        - ChiefEngineer
+  items:
+    - ClothingBackpackMessengerChiefEngineerFilled
 
 # Belt
 - type: loadout
@@ -74,6 +98,32 @@
 # Ears
 
 # Equipment
+- type: loadout
+  id: LoadoutChiefEngineerEquipmentHandHeldAtmosMonitor
+  category: JobsEngineeringChiefEngineer
+  cost: 2
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutChiefEngineerEquipment
+  - !type:CharacterJobRequirement
+    jobs:
+    - ChiefEngineer
+  items:
+  - HandHeldAtmosMonitor
+
+- type: loadout
+  id: LoadoutChiefEngineerEquipmentHandHeldPowerMonitor
+  category: JobsEngineeringChiefEngineer
+  cost: 2
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutChiefEngineerEquipment
+  - !type:CharacterJobRequirement
+    jobs:
+    - ChiefEngineer
+  items:
+  - HandHeldPowerMonitor
+
 - type: loadout
   id: LoadoutChiefEngineerEquipmentBoxInflatable
   category: JobsEngineeringChiefEngineer
@@ -498,6 +548,20 @@
   items:
     - ClothingOuterWinterCE
 
+- type: loadout
+  id: LoadoutChiefEngineerOuterLongCoat
+  category: JobsEngineeringChiefEngineer
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutChiefEngineerOuter
+    - !type:CharacterJobRequirement
+      jobs:
+        - ChiefEngineer
+  items:
+    - ClothingLongcoatCE
+
 # Shoes
 - type: loadout
   id: LoadoutChiefEngineerShoesBootsWinter
@@ -587,7 +651,7 @@
 - type: loadout
   id: LoadoutClothingUniformJumpsuitChiefEngineerCybersun
   category: JobsEngineeringChiefEngineer
-  cost: 0
+  cost: 1
   exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement

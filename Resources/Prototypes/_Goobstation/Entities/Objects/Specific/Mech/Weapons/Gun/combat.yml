@@ -1,3 +1,10 @@
+# SPDX-FileCopyrightText: 2024 John Space
+# SPDX-FileCopyrightText: 2024 gluesniffler
+# SPDX-FileCopyrightText: 2025 MajorMoth
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 - type: entity
   id: WeaponMechCombatPulseRifle
   name: eZ-14 mk2 Heavy pulse rifle
@@ -143,7 +150,8 @@
   id: WeaponMechCombatTaser
   name: PBT "Pacifier" Mounted Taser
   description: A mounted non-lethal taser that allows you to stun intruders.
-  suffix: Mech Weapon, Gun, Combat, Disabler, admeme
+  suffix: Mech Weapon, Gun, Combat, BulletDisabler
+  categories: [ AdminTools ]
   parent: [ BaseMechWeaponRange, CombatMechEquipment ]
   components:
   - type: Sprite

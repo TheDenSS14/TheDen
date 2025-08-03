@@ -1,3 +1,19 @@
+# SPDX-FileCopyrightText: 2024 FoxxoTrystan
+# SPDX-FileCopyrightText: 2024 VMSolidus
+# SPDX-FileCopyrightText: 2024 gluesniffler
+# SPDX-FileCopyrightText: 2025 Aikakakah
+# SPDX-FileCopyrightText: 2025 BloodfiendishOperator
+# SPDX-FileCopyrightText: 2025 KekaniCreates
+# SPDX-FileCopyrightText: 2025 Rosycup
+# SPDX-FileCopyrightText: 2025 Sapphire
+# SPDX-FileCopyrightText: 2025 Skubman
+# SPDX-FileCopyrightText: 2025 Spatison
+# SPDX-FileCopyrightText: 2025 Tabitha
+# SPDX-FileCopyrightText: 2025 portfiend
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 - type: species
   id: Arachne
   name: species-name-arachne
@@ -39,7 +55,7 @@
       points: 2
       required: false
     Undershirt:
-      points: 1
+      points: 2 # FLOOF CHANGE
       required: false
     RightArm:
       points: 6
@@ -58,6 +74,8 @@
 - type: speciesBaseSprites
   id: MobArachneSprites
   sprites:
+    TailBehind: MobHumanoidAnyMarking
+    TailOversuit: MobHumanoidAnyMarking
     Head: MobHumanHead
     Face: MobHumanoidAnyMarking
     HeadSide: MobHumanoidAnyMarking
@@ -71,9 +89,25 @@
     RArm: MobHumanRArm
     LHand: MobHumanLHand
     RHand: MobHumanRHand
+    LLeg: MobArachneSpiderBody
+    RLeg: MobArachneSpiderBodyFront
 
 - type: humanoidBaseSprite
   id: MobArachneEyes
   baseSprite:
     sprite: Mobs/Species/eyes.rsi
     state: eyes
+
+- type: humanoidBaseSprite
+  id: MobArachneSpiderBody
+  matchSkin: false
+  baseSprite:
+    sprite: Mobs/Species/arachne.rsi
+    state: spider_body
+
+- type: humanoidBaseSprite
+  id: MobArachneSpiderBodyFront
+  matchSkin: false
+  baseSprite:
+    sprite: Mobs/Species/arachne.rsi
+    state: spider_body_front

@@ -1,3 +1,27 @@
+# SPDX-FileCopyrightText: 2023 Alex
+# SPDX-FileCopyrightText: 2023 Ed
+# SPDX-FileCopyrightText: 2023 I.K
+# SPDX-FileCopyrightText: 2023 Kara
+# SPDX-FileCopyrightText: 2023 brainfood1183
+# SPDX-FileCopyrightText: 2023 notquitehadouken
+# SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT
+# SPDX-FileCopyrightText: 2024 Fansana
+# SPDX-FileCopyrightText: 2024 Nairod
+# SPDX-FileCopyrightText: 2024 Nemanja
+# SPDX-FileCopyrightText: 2024 ShatteredSwords
+# SPDX-FileCopyrightText: 2024 Tonydatguy
+# SPDX-FileCopyrightText: 2024 Whisper
+# SPDX-FileCopyrightText: 2024 fenndragon
+# SPDX-FileCopyrightText: 2024 gluesniffler
+# SPDX-FileCopyrightText: 2024 liltenhead
+# SPDX-FileCopyrightText: 2025 Blitz
+# SPDX-FileCopyrightText: 2025 Eris
+# SPDX-FileCopyrightText: 2025 MajorMoth
+# SPDX-FileCopyrightText: 2025 VMSolidus
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 - type: entity
   abstract: true
   id: MobElementalBase
@@ -340,7 +364,7 @@
         - ReagentSlimePax
         - ReagentSlimeNocturine
         - ReagentSlimeTHC
-        - ReagentSlimeSalicylicAcid # Funkychem
+        - ReagentSlimeBicaridine
         - ReagentSlimeToxin
         - ReagentSlimeNapalm
         - ReagentSlimeOmnizine
@@ -348,10 +372,13 @@
         - ReagentSlimeNorepinephricAcid
         - ReagentSlimeEphedrine
         - ReagentSlimeRobustHarvest
-        - ReagentSlimeCum # Floofstation
-        - ReagentSlimePomelustine # Floofstation
-        - ReagentSlimePhilterex # Floofstation
-        - ReagentSlimeLibidozenithizine # Floofstation
+#       The Den start
+#       These often end up breaking consent. Removed.
+#       - ReagentSlimeCum # Floofstation
+#       - ReagentSlimePomelustine # Floofstation
+#       - ReagentSlimePhilterex # Floofstation
+#       - ReagentSlimeLibidozenithizine # Floofstation
+#       The Den end
         - ReagentSlimeIchor
         - ReagentSlimeBleach
         - ReagentSlimeSoap
@@ -444,21 +471,21 @@
         color: "#808080"
 
 - type: entity
-  id: ReagentSlimeSalicylicAcid
+  id: ReagentSlimeBicaridine
   parent: ReagentSlime
-  suffix: Salicylic Acid
+  suffix: Bicaridine
   components:
   - type: Bloodstream
-    bloodReagent: SalicylicAcid
+    bloodReagent: Bicaridine
   - type: PointLight
-    color: "#f9e0e9"
+    color: "#ffaa00"
   - type: Sprite
     drawdepth: Mobs
     sprite: Mobs/Aliens/elemental.rsi
     layers:
       - map: [ "enum.DamageStateVisualLayers.Base" ]
         state: alive
-        color: "#f9e0e9"
+        color: "#ffaa00"
 
 - type: entity
   id: ReagentSlimeToxin

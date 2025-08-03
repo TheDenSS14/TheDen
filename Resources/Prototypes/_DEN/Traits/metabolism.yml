@@ -1,0 +1,26 @@
+# SPDX-FileCopyrightText: 2025 Jakumba
+# SPDX-FileCopyrightText: 2025 portfiend
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
+- type: trait
+  id: Detritivore
+  category: TraitsPhysicalBiological
+  points: -1
+  requirements:
+  - !type:CharacterJobRequirement
+    inverted: true
+    jobs:
+      - StationAi
+      - Borg
+      - MedicalBorg
+  - !type:CharacterSpeciesRequirement
+    inverted: true
+    species:
+      - IPC
+      - Rodentia
+  functions:
+  - !type:TraitAddMetabolizer
+    metabolizers:
+    - Detritivore

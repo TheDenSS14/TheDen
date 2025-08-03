@@ -1,3 +1,15 @@
+// SPDX-FileCopyrightText: 2022 metalgearsloth
+// SPDX-FileCopyrightText: 2023 Arendian
+// SPDX-FileCopyrightText: 2023 DrSmugleaf
+// SPDX-FileCopyrightText: 2023 Jezithyr
+// SPDX-FileCopyrightText: 2023 TemporalOroboros
+// SPDX-FileCopyrightText: 2023 deltanedas
+// SPDX-FileCopyrightText: 2023 deltanedas <@deltanedas:kde.org>
+// SPDX-FileCopyrightText: 2025 portfiend
+// SPDX-FileCopyrightText: 2025 sleepyyapril
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 using System.Threading;
 using System.Threading.Tasks;
 using Content.Server.NPC.Components;
@@ -17,7 +29,7 @@ public sealed partial class PickNearbyInjectableOperator : HTNOperator
 {
     [Dependency] private readonly IEntityManager _entManager = default!;
     private EntityLookupSystem _lookup = default!;
-    private MedibotSystem _medibot = default!;
+    private SharedMedibotSystem _medibot = default!;
     private PathfindingSystem _pathfinding = default!;
 
     [DataField("rangeKey")] public string RangeKey = NPCBlackboard.MedibotInjectRange;
@@ -38,7 +50,7 @@ public sealed partial class PickNearbyInjectableOperator : HTNOperator
     {
         base.Initialize(sysManager);
         _lookup = sysManager.GetEntitySystem<EntityLookupSystem>();
-        _medibot = sysManager.GetEntitySystem<MedibotSystem>();
+        _medibot = sysManager.GetEntitySystem<SharedMedibotSystem>();
         _pathfinding = sysManager.GetEntitySystem<PathfindingSystem>();
     }
 

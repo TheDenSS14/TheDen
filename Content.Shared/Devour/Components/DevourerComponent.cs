@@ -1,4 +1,13 @@
+// SPDX-FileCopyrightText: 2023 DrSmugleaf
+// SPDX-FileCopyrightText: 2023 Leon Friedrich
+// SPDX-FileCopyrightText: 2023 PilgrimViis
+// SPDX-FileCopyrightText: 2025 Jakumba
+// SPDX-FileCopyrightText: 2025 sleepyyapril
+//
+// SPDX-License-Identifier: MIT
+
 using Content.Shared.Chemistry.Reagent;
+using Content.Shared.Damage;
 using Content.Shared.Whitelist;
 using Robust.Shared.Audio;
 using Robust.Shared.Containers;
@@ -70,6 +79,12 @@ public sealed partial class DevourerComponent : Component
     /// </summary>
     [ViewVariables(VVAccess.ReadWrite), DataField("healRate")]
     public float HealRate = 15f;
+
+    /// <summary>
+    /// The amount of raw damage recovered upon deveouring
+    /// </summary>
+    [ViewVariables(VVAccess.ReadWrite), DataField("healDamage")]
+    public DamageSpecifier HealDamage = new();
 
     /// <summary>
     /// The favorite food not only feeds you, but also heals

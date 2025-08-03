@@ -1,3 +1,10 @@
+# SPDX-FileCopyrightText: 2024 VMSolidus
+# SPDX-FileCopyrightText: 2025 BlitzTheSquishy
+# SPDX-FileCopyrightText: 2025 John Willis
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 # Mystagogue
 - type: characterItemGroup
   id: LoadoutMystagogueBackpacks
@@ -9,6 +16,8 @@
       id: LoadoutMystagogueBackpacksSatchel
     - type: loadout
       id: LoadoutMystagogueBackpacksDuffel
+    - type: loadout
+      id: LoadoutMystagogueBackpacksMessenger
 
 #- type: characterItemGroup
 #  id: LoadoutMystagogueBelt
@@ -19,7 +28,7 @@
 #  id: LoadoutMystagogueEars
 #  maxItems: 1
 #  items:
-#
+
 - type: characterItemGroup
   id: LoadoutMystagogueEquipment
   maxItems: 3
@@ -40,11 +49,13 @@
     - type: loadout
       id: LoadoutMystagogueEyesEpiGlasses
 
-#- type: characterItemGroup
-#  id: LoadoutMystagogueGloves
-#  maxItems: 1
-#  items:
-#
+- type: characterItemGroup
+  id: LoadoutMystagogueGloves
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutClothingHandsEpiHeadWarmers
+
 - type: characterItemGroup
   id: LoadoutMystagogueHead
   maxItems: 1
@@ -78,7 +89,7 @@
 #  id: LoadoutMystagogueMask
 #  maxItems: 1
 #  items:
-#
+
 - type: characterItemGroup
   id: LoadoutMystagogueOuter
   maxItems: 1
@@ -87,6 +98,8 @@
       id: LoadoutCommandRDOuterWinter
     - type: loadout
       id: LoadoutCommandRDOuterMysta
+    - type: loadout
+      id: LoadoutMystagogueOuterLongCoat
 
 - type: characterItemGroup
   id: LoadoutMystagogueShoes
@@ -94,6 +107,8 @@
   items:
     - type: loadout
       id: LoadoutCommandRDShoesBootsWinter
+    - type: loadout
+      id: LoadoutClothingUnderSocksEpiHead
 
 - type: characterItemGroup
   id: LoadoutMystagogueUniforms
@@ -103,3 +118,5 @@
       id: LoadoutMystagogueUniformJumpsuit
     - type: loadout
       id: LoadoutMystagogueUniformJumpskirt
+    - type: loadout
+      id: LoadoutClothingUniformEpiHeadThong

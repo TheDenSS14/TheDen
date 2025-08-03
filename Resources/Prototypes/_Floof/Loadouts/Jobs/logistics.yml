@@ -1,0 +1,116 @@
+# SPDX-FileCopyrightText: 2024 fox
+# SPDX-FileCopyrightText: 2025 Blitz
+# SPDX-FileCopyrightText: 2025 BlitzTheSquishy
+# SPDX-FileCopyrightText: 2025 Rosycup
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
+# General logistics
+- type: loadout
+  id: LoadoutClothingHandsLogisWarmers
+  category: JobsLogisticsAUncategorized
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingHandsLogisWarmers
+  requirements:
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Logistics
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutLogisticsGloves
+
+- type: loadout
+  id: LoadoutClothingUnderSocksLogis
+  category: JobsLogisticsAUncategorized
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingUnderSocksLogis
+  requirements:
+    #- !type:CharacterSpeciesRequirement - TheDen
+    #  inverted: true
+    #  species:
+    #  - Diona
+    #  - Harpy
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Logistics
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutLogisticsShoes
+
+- type: loadout
+  id: LoadoutClothingUniformLogisThong
+  category: JobsLogisticsAUncategorized
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingUniformLogisThong
+  requirements:
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Logistics
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutLogisticsUniforms
+
+- type: loadout
+  id: LoadoutCargoNeckCollar
+  category: JobsLogisticsAUncategorized
+  cost: 0
+  requirements:
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Logistics
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutLogisticsNeck
+  items:
+    - ClothingNeckCollarLogi
+
+# Courier
+- type: loadout
+  id: LoadoutClothingHandsCourierWarmers
+  category: JobsLogisticsCourier
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingHandsCourierWarmers
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - MailCarrier
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutCourierGloves
+
+- type: loadout
+  id: LoadoutClothingUnderSocksCourier
+  category: JobsLogisticsCourier
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingUnderSocksCourier
+  requirements:
+    #- !type:CharacterSpeciesRequirement - TheDen
+    #  inverted: true
+    #  species:
+    #  - Diona
+    #  - Harpy
+    - !type:CharacterJobRequirement
+      jobs:
+        - MailCarrier
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutCourierShoes
+
+- type: loadout
+  id: LoadoutClothingUniformCourierThong
+  category: JobsLogisticsCourier
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingUniformCourierThong
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - MailCarrier
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutCourierUniforms

@@ -1,3 +1,10 @@
+# SPDX-FileCopyrightText: 2024 DisposableCrewmember42
+# SPDX-FileCopyrightText: 2024 VMSolidus
+# SPDX-FileCopyrightText: 2025 Rosycup
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 - type: entity
   name: station warrant
   parent: Paper
@@ -17,7 +24,7 @@
       map: ["enum.PaperVisualLayers.Stamp"]
       visible: false
   - type: PaperVisuals
-    headerImagePath: "/Textures/_DV/Interface/Paper/paper_heading_warrant.svg.200dpi.png"
+    headerImagePath: "/Textures/DeltaV/Interface/Paper/paper_heading_warrant.svg.200dpi.png"
     headerMargin: 0.0, 0.0, 10.0, 16.0
     backgroundImagePath: "/Textures/Interface/Paper/paper_background_default.svg.96dpi.png"
     backgroundModulate: "#e0bc99"

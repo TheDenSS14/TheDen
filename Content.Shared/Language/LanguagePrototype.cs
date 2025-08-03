@@ -1,3 +1,13 @@
+// SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT
+// SPDX-FileCopyrightText: 2024 FoxxoTrystan
+// SPDX-FileCopyrightText: 2024 Mnemotechnican
+// SPDX-FileCopyrightText: 2024 VMSolidus
+// SPDX-FileCopyrightText: 2024 fox
+// SPDX-FileCopyrightText: 2024 sleepyyapril
+// SPDX-FileCopyrightText: 2024 themias
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Content.Shared.Chat;
 using Robust.Shared.Prototypes;
 
@@ -7,7 +17,7 @@ namespace Content.Shared.Language;
 public sealed partial class LanguagePrototype : IPrototype
 {
     [IdDataField]
-    public string ID { get; private set;  } = default!;
+    public string ID { get; private set; } = default!;
 
     /// <summary>
     ///     Whether this language will display its name in chat behind a player's name.
@@ -66,7 +76,7 @@ public sealed partial class SpeechOverrideInfo
 
     /// <summary>
     ///     If true, the message will be relayed to the Empathy Chat and
-    ///     anyone with that language will also hear Empathy Chat. (Unless user has ShadowkinBlackeyeComponent)
+    ///     anyone with that language will also hear Empathy Chat.
     ///     This is mostly only use for "Marish" but... fuckit modularity :p
     /// </summary>
     [DataField]
@@ -78,6 +88,20 @@ public sealed partial class SpeechOverrideInfo
     /// </summary>
     [DataField]
     public bool RequireSpeech = true;
+
+    // Floof section start
+    /// <summary>
+    ///     If true, requires the entity to have usable hands and be able to interact (not be cuffed, etc).
+    /// </summary>
+    [DataField]
+    public bool RequireHands = false;
+
+    /// <summary>
+    ///     If true, the listener must have a line of sight on the speaker to hear the message.
+    /// </summary>
+    [DataField]
+    public bool RequireLOS = false;
+    // Floof section end
 
     /// <summary>
     ///     If not null, all messages in this language will be forced to be spoken in this chat type.

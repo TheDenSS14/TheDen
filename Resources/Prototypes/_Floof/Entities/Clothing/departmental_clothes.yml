@@ -1,0 +1,1010 @@
+# SPDX-FileCopyrightText: 2024 Dakota Haven
+# SPDX-FileCopyrightText: 2024 Fansana
+# SPDX-FileCopyrightText: 2024 FoxxoTrystan
+# SPDX-FileCopyrightText: 2024 ShatteredSwords
+# SPDX-FileCopyrightText: 2024 cynical
+# SPDX-FileCopyrightText: 2025 Blitz
+# SPDX-FileCopyrightText: 2025 BlitzTheSquishy
+# SPDX-FileCopyrightText: 2025 DeNatus
+# SPDX-FileCopyrightText: 2025 Rosycup
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
+#Command Outfits
+#
+#Captain
+
+- type: entity
+  parent: ClothingHandsBase
+  id: ClothingHandsCaptainWarmers
+  name: captain's arm-warmers
+  description: A pair of rather nice arm-warmers, styled for a captain.
+  components:
+  - type: Sprite
+    sprite: _Floof/Clothing/Departmental/Command/captwarmer.rsi
+  - type: Clothing
+    sprite: _Floof/Clothing/Departmental/Command/captwarmer.rsi
+  - type: Fiber
+    fiberMaterial: fibers-durathread
+    fiberColor: fibers-regal-blue
+  - type: FingerprintMask
+
+- type: entity
+  parent: ClothingShoesBaseSocks #TheDen
+  id: ClothingUnderSocksCaptain
+  name: captain's thigh-high socks
+  description: A pair of thigh-high socks, styled for a captain.
+  components:
+  - type: Sprite
+    sprite: _Floof/Clothing/Departmental/Command/captsocks.rsi
+  - type: Clothing
+    sprite: _Floof/Clothing/Departmental/Command/captsocks.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformCaptainThong
+  name: captain's thong
+  description: Styled for a captain, but is this even considered a piece of clothing?
+  components:
+  - type: Sprite
+    sprite: _Floof/Clothing/Departmental/Command/captthong.rsi
+  - type: Clothing
+    sprite: _Floof/Clothing/Departmental/Command/captthong.rsi
+  - type: Tag #DeltaV, needed for species with nonhuman legs/can only wear skirts
+    tags:
+    - Skirt
+
+#General Command
+
+- type: entity
+  parent: ClothingHandsBase
+  id: ClothingHandsCommandWarmers
+  name: head of personel's arm-warmers
+  description: A pair of rather nice arm-warmers, styled for the head of personel.
+  components:
+  - type: Sprite
+    sprite: _Floof/Clothing/Departmental/Command/commandwarmer.rsi
+  - type: Clothing
+    sprite: _Floof/Clothing/Departmental/Command/commandwarmer.rsi
+  - type: Fiber
+    fiberMaterial: fibers-durathread
+    fiberColor: fibers-blue
+  - type: FingerprintMask
+
+- type: entity
+  parent: ClothingShoesBaseSocks #TheDen
+  id: ClothingUnderSocksCommand
+  name: head of personel's thigh-high socks
+  description: A pair of thigh-high socks, styled for the head of personel.
+  components:
+  - type: Sprite
+    sprite: _Floof/Clothing/Departmental/Command/commandsocks.rsi
+  - type: Clothing
+    sprite: _Floof/Clothing/Departmental/Command/commandsocks.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformCommandThong
+  name: head of personel's thong
+  description: Styled for a head of personel, but is this even considered a piece of clothing?
+  components:
+  - type: Sprite
+    sprite: _Floof/Clothing/Departmental/Command/commandthong.rsi
+  - type: Clothing
+    sprite: _Floof/Clothing/Departmental/Command/commandthong.rsi
+  - type: Tag #DeltaV, needed for species with nonhuman legs/can only wear skirts
+    tags:
+    - Skirt
+
+#Engineering Outfits
+#
+#General Engineering
+- type: entity
+  parent: ClothingHandsBase
+  id: ClothingHandsEngiWarmers
+  name: engineering arm-warmers
+  description: A pair of rather nice arm-warmers, styled for Engineering roles.
+  components:
+  - type: Sprite
+    sprite: _Floof/Clothing/Departmental/Engineering/engiwarmer.rsi
+  - type: Clothing
+    sprite: _Floof/Clothing/Departmental/Engineering/engiwarmer.rsi
+  - type: Fiber
+    fiberMaterial: fibers-insulative
+    fiberColor: fibers-yellow
+  - type: FingerprintMask
+
+- type: entity
+  parent: ClothingShoesBaseSocks #TheDen
+  id: ClothingUnderSocksEngi
+  name: engineering thigh-high socks
+  description: A pair of thigh-high socks, styled for Engineering roles.
+  components:
+  - type: Sprite
+    sprite: _Floof/Clothing/Departmental/Engineering/engisocks.rsi
+  - type: Clothing
+    sprite: _Floof/Clothing/Departmental/Engineering/engisocks.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformEngiThong
+  name: engineering thong
+  description: Styled for a engineering, but is this even considered a piece of clothing?
+  components:
+  - type: Sprite
+    sprite: _Floof/Clothing/Departmental/Engineering/engithong.rsi
+  - type: Clothing
+    sprite: _Floof/Clothing/Departmental/Engineering/engithong.rsi
+  - type: Tag #DeltaV, needed for species with nonhuman legs/can only wear skirts
+    tags:
+    - Skirt
+
+#Head of Engi / Chief Engineer
+- type: entity
+  parent: ClothingHandsBase
+  id: ClothingHandsChiefEngiWarmers
+  name: chief engineer's arm-warmers
+  description: A pair of rather nice arm-warmers, styled for Engineering roles.
+  components:
+  - type: Sprite
+    sprite: _Floof/Clothing/Departmental/Engineering/chiefengiwarmer.rsi
+  - type: Clothing
+    sprite: _Floof/Clothing/Departmental/Engineering/chiefengiwarmer.rsi
+  - type: Fiber
+    fiberMaterial: fibers-insulative
+    fiberColor: fibers-white
+  - type: FingerprintMask
+
+- type: entity
+  parent: ClothingShoesBaseSocks #TheDen
+  id: ClothingUnderSocksChiefEngi
+  name: chief engineer's thigh-high socks
+  description: A pair of thigh-high socks, styled for Logistic roles.
+  components:
+  - type: Sprite
+    sprite: _Floof/Clothing/Departmental/Engineering/chiefengisocks.rsi
+  - type: Clothing
+    sprite: _Floof/Clothing/Departmental/Engineering/chiefengisocks.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformChiefEngiThong
+  name: chief engineer's thong
+  description: Styled for a Logistics, but is this even considered a piece of clothing?
+  components:
+  - type: Sprite
+    sprite: _Floof/Clothing/Departmental/Engineering/chiefengithong.rsi
+  - type: Clothing
+    sprite: _Floof/Clothing/Departmental/Engineering/chiefengithong.rsi
+  - type: Tag #DeltaV, needed for species with nonhuman legs/can only wear skirts
+    tags:
+    - Skirt
+
+#Epistemics Outfits
+#
+#General Epistemics
+- type: entity
+  parent: ClothingHandsBase
+  id: ClothingHandsEpiWarmers
+  name: epistemics arm-warmers
+  description: A pair of rather nice arm-warmers, styled for Epistemic roles.
+  components:
+  - type: Sprite
+    sprite: _Floof/Clothing/Departmental/Epistemics/epiwarmer.rsi
+  - type: Clothing
+    sprite: _Floof/Clothing/Departmental/Epistemics/epiwarmer.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Caustic: 0.85
+  - type: Fiber
+    fiberMaterial: fibers-synthetic
+    fiberColor: fibers-white
+  - type: FingerprintMask
+
+- type: entity
+  parent: ClothingShoesBaseSocks #TheDen
+  id: ClothingUnderSocksEpi
+  name: epistemics thigh-high socks
+  description: A pair of thigh-high socks, styled for Epistemic roles.
+  components:
+  - type: Sprite
+    sprite: _Floof/Clothing/Departmental/Epistemics/episocks.rsi
+  - type: Clothing
+    sprite: _Floof/Clothing/Departmental/Epistemics/episocks.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformEpiThong
+  name: epistemics thong
+  description: Styled for a Epistemics, but is this even considered a piece of clothing?
+  components:
+  - type: Sprite
+    sprite: _Floof/Clothing/Departmental/Epistemics/epithong.rsi
+  - type: Clothing
+    sprite: _Floof/Clothing/Departmental/Epistemics/epithong.rsi
+  - type: Tag #DeltaV, needed for species with nonhuman legs/can only wear skirts
+    tags:
+    - Skirt
+
+#Chaplain
+- type: entity
+  parent: ClothingHandsBase
+  id: ClothingHandsChaplainWarmers
+  name: chaplain arm-warmers
+  description: A pair of rather nice arm-warmers, oddly, styled for a Chaplain.
+  components:
+  - type: Sprite
+    sprite: _Floof/Clothing/Departmental/Epistemics/chaplainwarmer.rsi
+  - type: Clothing
+    sprite: _Floof/Clothing/Departmental/Epistemics/chaplainwarmer.rsi
+  - type: Fiber
+    fiberMaterial: fibers-synthetic
+    fiberColor: fibers-black
+  - type: FingerprintMask
+
+- type: entity
+  parent: ClothingShoesBaseSocks #TheDen
+  id: ClothingUnderSocksChaplain
+  name: chaplain thigh-high socks
+  description: A pair of thigh-high socks, oddly, styled for a Chaplain.
+  components:
+  - type: Sprite
+    sprite: _Floof/Clothing/Departmental/Epistemics/chaplainsocks.rsi
+  - type: Clothing
+    sprite: _Floof/Clothing/Departmental/Epistemics/chaplainsocks.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformChaplainThong
+  name: chaplain thong
+  description: Oddly, styled for a Chaplain, but is this even considered a piece of clothing?
+  components:
+  - type: Sprite
+    sprite: _Floof/Clothing/Departmental/Epistemics/chaplainthong.rsi
+  - type: Clothing
+    sprite: _Floof/Clothing/Departmental/Epistemics/chaplainthong.rsi
+  - type: Tag #DeltaV, needed for species with nonhuman legs/can only wear skirts
+    tags:
+    - Skirt
+
+- type: entity
+  parent: ClothingOuterWinterCoatToggleable
+  id: ClothingOuterEpiChaplainMantle
+  name: chaplain mantle
+  components:
+  - type: Sprite
+    sprite: _Floof/Clothing/Departmental/Epistemics/chaplainmantle.rsi
+  - type: Clothing
+    sprite: _Floof/Clothing/Departmental/Epistemics/chaplainmantle.rsi
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHatHoodEpiChaplainHood
+
+- type: entity
+  parent: ClothingHeadHatHoodWinterBase
+  id: ClothingHeadHatHoodEpiChaplainHood
+  categories: [ HideSpawnMenu ]
+  name: chaplain mantle hood
+  components:
+  - type: Sprite
+    sprite: _Floof/Clothing/Departmental/Epistemics/chaplainmantlehood.rsi
+  - type: Clothing
+    sprite: _Floof/Clothing/Departmental/Epistemics/chaplainmantlehood.rsi
+
+#Head of Epi / Research Director
+- type: entity
+  parent: ClothingHandsBase
+  id: ClothingHandsEpiHeadWarmers
+  name: research director's arm-warmers
+  description: A pair of rather nice arm-warmers, styled for the research director.
+  components:
+  - type: Sprite
+    sprite: _Floof/Clothing/Departmental/Epistemics/directorepiwarmer.rsi
+  - type: Clothing
+    sprite: _Floof/Clothing/Departmental/Epistemics/directorepiwarmer.rsi
+  - type: Fiber
+    fiberMaterial: fibers-synthetic
+    fiberColor: fibers-purple
+  - type: FingerprintMask
+
+- type: entity
+  parent: ClothingShoesBaseSocks #TheDen
+  id: ClothingUnderSocksEpiHead
+  name: research director's thigh-high socks
+  description: A pair of thigh-high socks, styled for the research director.
+  components:
+  - type: Sprite
+    sprite: _Floof/Clothing/Departmental/Epistemics/directorepisocks.rsi
+  - type: Clothing
+    sprite: _Floof/Clothing/Departmental/Epistemics/directorepisocks.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformEpiHeadThong
+  name: research director's thong
+  description: Oddly, styled for the research director, but is this even considered a piece of clothing?
+  components:
+  - type: Sprite
+    sprite: _Floof/Clothing/Departmental/Epistemics/directorepithong.rsi
+  - type: Clothing
+    sprite: _Floof/Clothing/Departmental/Epistemics/directorepithong.rsi
+  - type: Tag #DeltaV, needed for species with nonhuman legs/can only wear skirts
+    tags:
+    - Skirt
+
+#Psionic Mantis - ForensicMantis
+- type: entity
+  parent: ClothingHandsBase
+  id: ClothingHandsMantisEpiWarmers
+  name: psionic mantis' arm-warmers
+  description: A pair of rather nice arm-warmers, styled for a Psionic Mantis.
+  components:
+  - type: Sprite
+    sprite: _Floof/Clothing/Departmental/Epistemics/mantisepiwarmer.rsi
+  - type: Clothing
+    sprite: _Floof/Clothing/Departmental/Epistemics/mantisepiwarmer.rsi
+  - type: Fiber
+    fiberMaterial: fibers-synthetic
+    fiberColor: fibers-blue
+  - type: FingerprintMask
+
+- type: entity
+  parent: ClothingShoesBaseSocks #TheDen
+  id: ClothingUnderSocksMantisEpi
+  name: psionic mantis' thigh-high socks
+  description: A pair of thigh-high socks, styled for a Psionic Mantis.
+  components:
+  - type: Sprite
+    sprite: _Floof/Clothing/Departmental/Epistemics/mantisepisocks.rsi
+  - type: Clothing
+    sprite: _Floof/Clothing/Departmental/Epistemics/mantisepisocks.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformMantisEpiThong
+  name: psionic mantis' thong
+  description: Styled for a Psionic Mantis, but is this even considered a piece of clothing?
+  components:
+  - type: Sprite
+    sprite: _Floof/Clothing/Departmental/Epistemics/mantisepithong.rsi
+  - type: Clothing
+    sprite: _Floof/Clothing/Departmental/Epistemics/mantisepithong.rsi
+  - type: Tag #DeltaV, needed for species with nonhuman legs/can only wear skirts
+    tags:
+    - Skirt
+
+#Logistics Outfits
+#
+#General Logistics
+- type: entity
+  parent: ClothingHandsBase
+  id: ClothingHandsLogisWarmers
+  name: logistics arm-warmers
+  description: A pair of rather nice arm-warmers, styled for Logistic roles.
+  components:
+  - type: Sprite
+    sprite: _Floof/Clothing/Departmental/Logistics/logiwarmer.rsi
+  - type: Clothing
+    sprite: _Floof/Clothing/Departmental/Logistics/logiwarmer.rsi
+  - type: Fiber
+    fiberMaterial: fibers-synthetic
+    fiberColor: fibers-brown
+  - type: FingerprintMask
+
+- type: entity
+  parent: ClothingShoesBaseSocks #TheDen
+  id: ClothingUnderSocksLogis
+  name: logistics thigh-high socks
+  description: A pair of thigh-high socks, styled for Logistic roles.
+  components:
+  - type: Sprite
+    sprite: _Floof/Clothing/Departmental/Logistics/logisocks.rsi
+  - type: Clothing
+    sprite: _Floof/Clothing/Departmental/Logistics/logisocks.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformLogisThong
+  name: logistics thong
+  description: Styled for a Logistics, but is this even considered a piece of clothing?
+  components:
+  - type: Sprite
+    sprite: _Floof/Clothing/Departmental/Logistics/logithong.rsi
+  - type: Clothing
+    sprite: _Floof/Clothing/Departmental/Logistics/logithong.rsi
+  - type: Tag #DeltaV, needed for species with nonhuman legs/can only wear skirts
+    tags:
+    - Skirt
+
+#Quartermaster/ Logistics Officer
+- type: entity
+  parent: ClothingHandsBase
+  id: ClothingHandsLOLogisWarmers
+  name: logistics officer arm-warmers
+  description: A pair of rather nice arm-warmers, styled for Logistic roles.
+  components:
+  - type: Sprite
+    sprite: _Floof/Clothing/Departmental/Logistics/qmlogiwarmer.rsi
+  - type: Clothing
+    sprite: _Floof/Clothing/Departmental/Logistics/qmlogiwarmer.rsi
+  - type: Fiber
+    fiberMaterial: fibers-synthetic
+    fiberColor: fibers-brown
+  - type: FingerprintMask
+
+- type: entity
+  parent: ClothingShoesBaseSocks #TheDen
+  id: ClothingUnderSocksLOLogis
+  name: logistics officer thigh-high socks
+  description: A pair of thigh-high socks, styled for Logistic roles.
+  components:
+  - type: Sprite
+    sprite: _Floof/Clothing/Departmental/Logistics/qmlogisocks.rsi
+  - type: Clothing
+    sprite: _Floof/Clothing/Departmental/Logistics/qmlogisocks.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformLOLogisThong
+  name: logistics officer thong
+  description: Styled for a Logistics, but is this even considered a piece of clothing?
+  components:
+  - type: Sprite
+    sprite: _Floof/Clothing/Departmental/Logistics/qmlogithong.rsi
+  - type: Clothing
+    sprite: _Floof/Clothing/Departmental/Logistics/qmlogithong.rsi
+  - type: Tag #DeltaV, needed for species with nonhuman legs/can only wear skirts
+    tags:
+    - Skirt
+
+#Courier / MailCarrier
+- type: entity
+  parent: ClothingHandsBase
+  id: ClothingHandsCourierWarmers
+  name: courier arm-warmers
+  description: A pair of rather nice arm-warmers, styled for Couriers.
+  components:
+  - type: Sprite
+    sprite: _Floof/Clothing/Departmental/Logistics/mailcarrierwarmer.rsi
+  - type: Clothing
+    sprite: _Floof/Clothing/Departmental/Logistics/mailcarrierwarmer.rsi
+  - type: Fiber
+    fiberMaterial: fibers-synthetic
+    fiberColor: fibers-brown
+  - type: FingerprintMask
+
+- type: entity
+  parent: ClothingShoesBaseSocks #TheDen
+  id: ClothingUnderSocksCourier
+  name: courier thigh-high socks
+  description: A pair of thigh-high socks, styled for Couriers.
+  components:
+  - type: Sprite
+    sprite: _Floof/Clothing/Departmental/Logistics/mailcarriersocks.rsi
+  - type: Clothing
+    sprite: _Floof/Clothing/Departmental/Logistics/mailcarriersocks.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformCourierThong
+  name: courier thong
+  description: Styled for a Couriers, but is this even considered a piece of clothing?
+  components:
+  - type: Sprite
+    sprite: _Floof/Clothing/Departmental/Logistics/mailcarrierthong.rsi
+  - type: Clothing
+    sprite: _Floof/Clothing/Departmental/Logistics/mailcarrierthong.rsi
+  - type: Tag #DeltaV, needed for species with nonhuman legs/can only wear skirts
+    tags:
+    - Skirt
+
+#Medical Outfits
+#
+#General Medical
+- type: entity
+  parent: ClothingHandsBase
+  id: ClothingHandsMedicWarmers
+  name: medical arm-warmers
+  description: A pair of rather nice arm-warmers, styled for Medic roles.
+  components:
+  - type: Sprite
+    sprite: _Floof/Clothing/Departmental/Medical/medicalwarmer.rsi
+  - type: Clothing
+    sprite: _Floof/Clothing/Departmental/Medical/medicalwarmer.rsi
+  - type: Fiber
+    fiberMaterial: fibers-latex
+    fiberColor: fibers-white
+  - type: FingerprintMask
+
+- type: entity
+  parent: ClothingShoesBaseSocks #TheDen
+  id: ClothingUnderSocksMedic
+  name: medical thigh-high socks
+  description: A pair of thigh-high socks, styled for Medic roles.
+  components:
+  - type: Sprite
+    sprite: _Floof/Clothing/Departmental/Medical/medicalsocks.rsi
+  - type: Clothing
+    sprite: _Floof/Clothing/Departmental/Medical/medicalsocks.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformMedicThong
+  name: medical thong
+  description: Styled for a Medics, but is this even considered a piece of clothing?
+  components:
+  - type: Sprite
+    sprite: _Floof/Clothing/Departmental/Medical/medicalthong.rsi
+  - type: Clothing
+    sprite: _Floof/Clothing/Departmental/Medical/medicalthong.rsi
+  - type: Tag #DeltaV, needed for species with nonhuman legs/can only wear skirts
+    tags:
+    - Skirt
+
+#Chemist
+- type: entity
+  parent: ClothingHandsBase
+  id: ClothingHandsChemistsWarmers
+  name: chemist arm-warmers
+  description: A pair of rather nice arm-warmers, styled for Chemists.
+  components:
+  - type: Sprite
+    sprite: _Floof/Clothing/Departmental/Medical/chemistwarmer.rsi
+  - type: Clothing
+    sprite: _Floof/Clothing/Departmental/Medical/chemistwarmer.rsi
+  - type: Fiber
+    fiberMaterial: fibers-latex
+    fiberColor: fibers-white
+  - type: FingerprintMask
+
+- type: entity
+  parent: ClothingShoesBaseSocks #TheDen
+  id: ClothingUnderSocksChemists
+  name: chemist thigh-high socks
+  description: A pair of thigh-high socks, styled for Chemists.
+  components:
+  - type: Sprite
+    sprite: _Floof/Clothing/Departmental/Medical/chemistsocks.rsi
+  - type: Clothing
+    sprite: _Floof/Clothing/Departmental/Medical/chemistsocks.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformChemistsThong
+  name: chemist thong
+  description: Styled for a Chemists, but is this even considered a piece of clothing?
+  components:
+  - type: Sprite
+    sprite: _Floof/Clothing/Departmental/Medical/chemistthong.rsi
+  - type: Clothing
+    sprite: _Floof/Clothing/Departmental/Medical/chemistthong.rsi
+  - type: Tag #DeltaV, needed for species with nonhuman legs/can only wear skirts
+    tags:
+    - Skirt
+
+#Paramedic
+- type: entity
+  parent: ClothingHandsBase
+  id: ClothingHandsParaMedicWarmers
+  name: paramedic arm-warmers
+  description: A pair of rather nice arm-warmers, styled for Paramedic roles.
+  components:
+  - type: Sprite
+    sprite: _Floof/Clothing/Departmental/Medical/paramedwarmer.rsi
+  - type: Clothing
+    sprite: _Floof/Clothing/Departmental/Medical/paramedwarmer.rsi
+  - type: Fiber
+    fiberMaterial: fibers-latex
+    fiberColor: fibers-blue
+  - type: FingerprintMask
+
+- type: entity
+  parent: ClothingShoesBaseSocks #TheDen
+  id: ClothingUnderSocksParaMedic
+  name: paramedic thigh-high socks
+  description: A pair of thigh-high socks, styled for Paramedic roles.
+  components:
+  - type: Sprite
+    sprite: _Floof/Clothing/Departmental/Medical/paramedsocks.rsi
+  - type: Clothing
+    sprite: _Floof/Clothing/Departmental/Medical/paramedsocks.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformParaMedicThong
+  name: paramedic thong
+  description: Styled for a Paramedics, but is this even considered a piece of clothing?
+  components:
+  - type: Sprite
+    sprite: _Floof/Clothing/Departmental/Medical/paramedthong.rsi
+  - type: Clothing
+    sprite: _Floof/Clothing/Departmental/Medical/paramedthong.rsi
+  - type: Tag #DeltaV, needed for species with nonhuman legs/can only wear skirts
+    tags:
+    - Skirt
+
+#Chief Medical Officer
+- type: entity
+  parent: ClothingHandsBase
+  id: ClothingHandsCMOWarmers
+  name: chief med officer's arm-warmers
+  description: A pair of rather nice arm-warmers, styled for the CMO.
+  components:
+  - type: Sprite
+    sprite: _Floof/Clothing/Departmental/Medical/cmowarmer.rsi
+  - type: Clothing
+    sprite: _Floof/Clothing/Departmental/Medical/cmowarmer.rsi
+  - type: Fiber
+    fiberMaterial: fibers-latex
+    fiberColor: fibers-blue
+  - type: FingerprintMask
+
+- type: entity
+  parent: ClothingShoesBaseSocks #TheDen
+  id: ClothingUnderSocksCMO
+  name: chief med officer's thigh-high socks
+  description: A pair of thigh-high socks, styled for the CMO.
+  components:
+  - type: Sprite
+    sprite: _Floof/Clothing/Departmental/Medical/cmosocks.rsi
+  - type: Clothing
+    sprite: _Floof/Clothing/Departmental/Medical/cmosocks.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformCMOThong
+  name: chief med officer's thong
+  description: Styled for the CMO, but is this even considered a piece of clothing?
+  components:
+  - type: Sprite
+    sprite: _Floof/Clothing/Departmental/Medical/cmothong.rsi
+  - type: Clothing
+    sprite: _Floof/Clothing/Departmental/Medical/cmothong.rsi
+  - type: Tag #DeltaV, needed for species with nonhuman legs/can only wear skirts
+    tags:
+    - Skirt
+
+#Security Outfits
+#
+#General Security
+- type: entity
+  parent: ClothingHandsBase
+  id: ClothingHandsSecurityWarmers
+  name: security arm-warmers
+  description: A pair of rather nice arm-warmers, styled for Security roles.
+  components:
+  - type: Sprite
+    sprite: _Floof/Clothing/Departmental/Security/secwarmer.rsi
+  - type: Clothing
+    sprite: _Floof/Clothing/Departmental/Security/secwarmer.rsi
+  - type: Fiber
+    fiberMaterial: fibers-durathread
+    fiberColor: fibers-black
+  - type: FingerprintMask
+
+- type: entity
+  parent: ClothingShoesBaseSocks #TheDen
+  id: ClothingUnderSocksSecurity
+  name: security thigh-high socks
+  description: A pair of thigh-high socks, styled for Security roles.
+  components:
+  - type: Sprite
+    sprite: _Floof/Clothing/Departmental/Security/secsocks.rsi
+  - type: Clothing
+    sprite: _Floof/Clothing/Departmental/Security/secsocks.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformSecurityThong
+  name: security thong
+  description: Styled for a Security, but is this even considered a piece of clothing?
+  components:
+  - type: Sprite
+    sprite: _Floof/Clothing/Departmental/Security/secthong.rsi
+  - type: Clothing
+    sprite: _Floof/Clothing/Departmental/Security/secthong.rsi
+  - type: Tag #DeltaV, needed for species with nonhuman legs/can only wear skirts
+    tags:
+    - Skirt
+
+#Head of Security
+- type: entity
+  parent: ClothingHandsBase
+  id: ClothingHandsHeadSecurityWarmers
+  name: HoS arm-warmers
+  description: A pair of rather nice arm-warmers, styled for HoS.
+  components:
+  - type: Sprite
+    sprite: _Floof/Clothing/Departmental/Security/hoswarmer.rsi
+  - type: Clothing
+    sprite: _Floof/Clothing/Departmental/Security/hoswarmer.rsi
+  - type: Fiber
+    fiberMaterial: fibers-durathread
+    fiberColor: fibers-black
+  - type: FingerprintMask
+
+- type: entity
+  parent: ClothingShoesBaseSocks #TheDen
+  id: ClothingUnderSocksHeadSecurity
+  name: HoS thigh-high socks
+  description: A pair of thigh-high socks, styled for the HoS.
+  components:
+  - type: Sprite
+    sprite: _Floof/Clothing/Departmental/Security/hossocks.rsi
+  - type: Clothing
+    sprite: _Floof/Clothing/Departmental/Security/hossocks.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformHeadSecurityThong
+  name: HoS thong
+  description: Styled for the HoS, but is this even considered a piece of clothing?
+  components:
+  - type: Sprite
+    sprite: _Floof/Clothing/Departmental/Security/hosthong.rsi
+  - type: Clothing
+    sprite: _Floof/Clothing/Departmental/Security/hosthong.rsi
+  - type: Tag #DeltaV, needed for species with nonhuman legs/can only wear skirts
+    tags:
+    - Skirt
+
+  #Detective
+- type: entity
+  parent: ClothingHandsBase
+  id: ClothingHandsDetectiveWarmers
+  name: detective's arm-warmers
+  description: A pair of rather nice arm-warmers, styled for a Detective.
+  components:
+  - type: Sprite
+    sprite: _Floof/Clothing/Departmental/Security/detectwarmer.rsi
+  - type: Clothing
+    sprite: _Floof/Clothing/Departmental/Security/detectwarmer.rsi
+  - type: Fiber
+    fiberMaterial: fibers-synthetic
+    fiberColor: fibers-brown
+  - type: FingerprintMask
+
+- type: entity
+  parent: ClothingShoesBaseSocks #TheDen
+  id: ClothingUnderSocksDetective
+  name: detective's thigh-high socks
+  description: A pair of thigh-high socks, styled for a Detective.
+  components:
+  - type: Sprite
+    sprite: _Floof/Clothing/Departmental/Security/detectsocks.rsi
+  - type: Clothing
+    sprite: _Floof/Clothing/Departmental/Security/detectsocks.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformDetectiveThong
+  name: detective's thong
+  description: Styled for a Detective, but is this even considered a piece of clothing?
+  components:
+  - type: Sprite
+    sprite: _Floof/Clothing/Departmental/Security/detectthong.rsi
+  - type: Clothing
+    sprite: _Floof/Clothing/Departmental/Security/detectthong.rsi
+  - type: Tag #DeltaV, needed for species with nonhuman legs/can only wear skirts
+    tags:
+    - Skirt
+
+#Service Outfits
+#
+#General Service
+- type: entity
+  parent: ClothingHandsBase
+  id: ClothingHandsServiceWarmers
+  name: service arm-warmers
+  description: A pair of rather nice arm-warmers, styled for Service workers.
+  components:
+  - type: Sprite
+    sprite: _Floof/Clothing/Departmental/Service/servicewarmer.rsi
+  - type: Clothing
+    sprite: _Floof/Clothing/Departmental/Service/servicewarmer.rsi
+  - type: Fiber
+    fiberMaterial: fibers-synthetic
+    fiberColor: fibers-grey
+  - type: FingerprintMask
+
+- type: entity
+  parent: ClothingShoesBaseSocks #TheDen
+  id: ClothingUnderSocksService
+  name: service thigh-high socks
+  description: A pair of thigh-high socks, styled for Service workers.
+  components:
+  - type: Sprite
+    sprite: _Floof/Clothing/Departmental/Service/servicesocks.rsi
+  - type: Clothing
+    sprite: _Floof/Clothing/Departmental/Service/servicesocks.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformServiceThong
+  name: service thong
+  description: Styled for a Service workers, but is this even considered a piece of clothing?
+  components:
+  - type: Sprite
+    sprite: _Floof/Clothing/Departmental/Service/servicethong.rsi
+  - type: Clothing
+    sprite: _Floof/Clothing/Departmental/Service/servicethong.rsi
+  - type: Tag #DeltaV, needed for species with nonhuman legs/can only wear skirts
+    tags:
+    - Skirt
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformServiceUni
+  name: universal service jumpsuit
+  description: A jumpsuit styled for service workers.
+  components:
+  - type: Sprite
+    sprite: _Floof/Clothing/Departmental/Service/universalservicejumpsuit.rsi
+  - type: Clothing
+    sprite: _Floof/Clothing/Departmental/Service/universalservicejumpsuit.rsi
+
+#Janitorial
+- type: entity
+  parent: ClothingHandsBase
+  id: ClothingHandsJanitorWarmers
+  name: rubber arm-warmers
+  description: A pair of rather nice arm-warmers, styled for Janitorial.
+  components:
+  - type: Sprite
+    sprite: _Floof/Clothing/Departmental/Service/janitorwarmer.rsi
+  - type: Clothing
+    sprite: _Floof/Clothing/Departmental/Service/janitorwarmer.rsi
+  - type: Fiber
+    fiberMaterial: fibers-rubber
+    fiberColor: fibers-yellow
+  - type: FingerprintMask
+
+- type: entity
+  parent: ClothingShoesBaseSocks #TheDen
+  id: ClothingUnderSocksJanitor
+  name: rubber thigh-high socks
+  description: A pair of thigh-high socks, styled for Janitorial.
+  components:
+  - type: Sprite
+    sprite: _Floof/Clothing/Departmental/Service/janitorsocks.rsi
+  - type: Clothing
+    sprite: _Floof/Clothing/Departmental/Service/janitorsocks.rsi
+  - type: NoSlip
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJanitorThong
+  name: rubber thong
+  description: Styled for a Janitorial, but is this even considered a piece of clothing?
+  components:
+  - type: Sprite
+    sprite: _Floof/Clothing/Departmental/Service/janitorthong.rsi
+  - type: Clothing
+    sprite: _Floof/Clothing/Departmental/Service/janitorthong.rsi
+  - type: Tag #DeltaV, needed for species with nonhuman legs/can only wear skirts
+    tags:
+    - Skirt
+
+#Bartender
+- type: entity
+  parent: ClothingHandsBase
+  id: ClothingHandsBartenderWarmers
+  name: bartender arm-warmers
+  description: A pair of rather nice arm-warmers, styled for Bartenders.
+  components:
+  - type: Sprite
+    sprite: _Floof/Clothing/Departmental/Service/bartenderwarmer.rsi
+  - type: Clothing
+    sprite: _Floof/Clothing/Departmental/Service/bartenderwarmer.rsi
+  - type: Fiber
+    fiberMaterial: fibers-synthetic
+    fiberColor: fibers-black
+  - type: FingerprintMask
+
+- type: entity
+  parent: ClothingShoesBaseSocks #TheDen
+  id: ClothingUnderSocksBartender
+  name: bartender thigh-high socks
+  description: A pair of thigh-high socks, styled for Bartenders.
+  components:
+  - type: Sprite
+    sprite: _Floof/Clothing/Departmental/Service/bartendersocks.rsi
+  - type: Clothing
+    sprite: _Floof/Clothing/Departmental/Service/bartendersocks.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformBartenderThong
+  name: bartender thong
+  description: Styled for a Bartenders, but is this even considered a piece of clothing?
+  components:
+  - type: Sprite
+    sprite: _Floof/Clothing/Departmental/Service/bartenderthong.rsi
+  - type: Clothing
+    sprite: _Floof/Clothing/Departmental/Service/bartenderthong.rsi
+  - type: Tag #DeltaV, needed for species with nonhuman legs/can only wear skirts
+    tags:
+    - Skirt
+
+#Musician
+- type: entity
+  parent: ClothingHandsBase
+  id: ClothingHandsMusicianWarmers
+  name: musician arm-warmers
+  description: A pair of rather nice arm-warmers, styled for musicians.
+  components:
+  - type: Sprite
+    sprite: _Floof/Clothing/Departmental/Service/musicianwarmer.rsi
+  - type: Clothing
+    sprite: _Floof/Clothing/Departmental/Service/musicianwarmer.rsi
+  - type: Fiber
+    fiberMaterial: fibers-synthetic
+    fiberColor: fibers-purple
+  - type: FingerprintMask
+
+- type: entity
+  parent: ClothingShoesBaseSocks #TheDen
+  id: ClothingUnderSocksMusician
+  name: musician thigh-high socks
+  description: A pair of thigh-high socks, styled for musicians.
+  components:
+  - type: Sprite
+    sprite: _Floof/Clothing/Departmental/Service/musiciansocks.rsi
+  - type: Clothing
+    sprite: _Floof/Clothing/Departmental/Service/musiciansocks.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformMusicianThong
+  name: musician thong
+  description: Styled for a musicians, but is this even considered a piece of clothing?
+  components:
+  - type: Sprite
+    sprite: _Floof/Clothing/Departmental/Service/musicianthong.rsi
+  - type: Clothing
+    sprite: _Floof/Clothing/Departmental/Service/musicianthong.rsi
+  - type: Tag #DeltaV, needed for species with nonhuman legs/can only wear skirts
+    tags:
+    - Skirt
+
+#Chef
+- type: entity
+  parent: ClothingHandsBase
+  id: ClothingHandsChefWarmers
+  name: chef arm-warmers
+  description: A pair of rather nice arm-warmers, styled for Chef.
+  components:
+  - type: Sprite
+    sprite: _Floof/Clothing/Departmental/Service/chefwarmer.rsi
+  - type: Clothing
+    sprite: _Floof/Clothing/Departmental/Service/chefwarmer.rsi
+  - type: Fiber
+    fiberMaterial: fibers-synthetic
+    fiberColor: fibers-white
+  - type: FingerprintMask
+
+- type: entity
+  parent: ClothingShoesBaseSocks #TheDen
+  id: ClothingUnderSocksChef
+  name: chef thigh-high socks
+  description: A pair of thigh-high socks, styled for a Chef.
+  components:
+  - type: Sprite
+    sprite: _Floof/Clothing/Departmental/Service/chefsocks.rsi
+  - type: Clothing
+    sprite: _Floof/Clothing/Departmental/Service/chefsocks.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformChefThong
+  name: chef thong
+  description: Styled for a Chef, but is this even considered a piece of clothing?
+  components:
+  - type: Sprite
+    sprite: _Floof/Clothing/Departmental/Service/chefthong.rsi
+  - type: Clothing
+    sprite: _Floof/Clothing/Departmental/Service/chefthong.rsi
+  - type: Tag #DeltaV, needed for species with nonhuman legs/can only wear skirts
+    tags:
+    - Skirt

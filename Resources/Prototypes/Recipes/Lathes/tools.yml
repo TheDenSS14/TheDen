@@ -1,3 +1,41 @@
+# SPDX-FileCopyrightText: 2020 Víctor Aguilera Puerto
+# SPDX-FileCopyrightText: 2021 20kdc
+# SPDX-FileCopyrightText: 2021 Paul
+# SPDX-FileCopyrightText: 2021 Paul Ritter
+# SPDX-FileCopyrightText: 2021 SETh lafuente
+# SPDX-FileCopyrightText: 2021 SethLafuente
+# SPDX-FileCopyrightText: 2021 Swept
+# SPDX-FileCopyrightText: 2021 Tarlan2
+# SPDX-FileCopyrightText: 2021 Vera Aguilera Puerto
+# SPDX-FileCopyrightText: 2022 Anthemic
+# SPDX-FileCopyrightText: 2022 CrzyPotato
+# SPDX-FileCopyrightText: 2022 Fishfish458
+# SPDX-FileCopyrightText: 2022 Kevin Zheng
+# SPDX-FileCopyrightText: 2022 Peptide90
+# SPDX-FileCopyrightText: 2022 Pieter-Jan Briers
+# SPDX-FileCopyrightText: 2022 Rane
+# SPDX-FileCopyrightText: 2022 Rinkashikachi
+# SPDX-FileCopyrightText: 2022 fishfish458
+# SPDX-FileCopyrightText: 2023 AJCM-git
+# SPDX-FileCopyrightText: 2023 Alekshhh
+# SPDX-FileCopyrightText: 2023 CrigCrag
+# SPDX-FileCopyrightText: 2023 Julian Giebel
+# SPDX-FileCopyrightText: 2023 Moony
+# SPDX-FileCopyrightText: 2023 c4llv07e
+# SPDX-FileCopyrightText: 2023 crazybrain23
+# SPDX-FileCopyrightText: 2023 lzk228
+# SPDX-FileCopyrightText: 2024 Ed
+# SPDX-FileCopyrightText: 2024 Nemanja
+# SPDX-FileCopyrightText: 2024 SimpleStation14
+# SPDX-FileCopyrightText: 2024 sleepyyapril
+# SPDX-FileCopyrightText: 2025 Jakumba
+# SPDX-FileCopyrightText: 2025 Solaris
+# SPDX-FileCopyrightText: 2025 VMSolidus
+# SPDX-FileCopyrightText: 2025 mart
+# SPDX-FileCopyrightText: 2025 portfiend
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 - type: latheRecipe
   id: Wirecutter
   icon:
@@ -42,25 +80,19 @@
   id: CableStack
   result: CableApcStack1
   category: Parts
-  completetime: 2
+  completetime: 0.1
   materials:
     Copper: 30
 
 - type: latheRecipe
+  parent: CableStack
   id: CableMVStack
   result: CableMVStack1
-  category: Parts
-  completetime: 2
-  materials:
-    Copper: 30
 
 - type: latheRecipe
+  parent: CableStack
   id: CableHVStack
   result: CableHVStack1
-  category: Parts
-  completetime: 2
-  materials:
-    Copper: 30
 
 - type: latheRecipe
   id: Crowbar
@@ -144,8 +176,9 @@
   category: Tools
   completetime: 2.4
   materials:
-    Steel: 500
-    Plastic: 250
+    Steel: 2000
+    Glass: 2000
+    Plastic: 1000
 
 - type: latheRecipe
   id: HandHeldMassScanner

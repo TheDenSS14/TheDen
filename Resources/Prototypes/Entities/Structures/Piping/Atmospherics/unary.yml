@@ -1,3 +1,50 @@
+# SPDX-FileCopyrightText: 2021 20kdc
+# SPDX-FileCopyrightText: 2021 Kara D
+# SPDX-FileCopyrightText: 2021 Swept
+# SPDX-FileCopyrightText: 2022 Flipp Syder
+# SPDX-FileCopyrightText: 2022 Jack Fox
+# SPDX-FileCopyrightText: 2022 Jane Lewis
+# SPDX-FileCopyrightText: 2022 Julian Giebel
+# SPDX-FileCopyrightText: 2022 Moony
+# SPDX-FileCopyrightText: 2022 TekuNut
+# SPDX-FileCopyrightText: 2022 Vera Aguilera Puerto
+# SPDX-FileCopyrightText: 2022 Veritius
+# SPDX-FileCopyrightText: 2022 Visne
+# SPDX-FileCopyrightText: 2022 corentt
+# SPDX-FileCopyrightText: 2022 mirrorcult
+# SPDX-FileCopyrightText: 2022 vulppine
+# SPDX-FileCopyrightText: 2023 AJCM-git
+# SPDX-FileCopyrightText: 2023 DrSmugleaf
+# SPDX-FileCopyrightText: 2023 Ed
+# SPDX-FileCopyrightText: 2023 Ilya246
+# SPDX-FileCopyrightText: 2023 Kevin Zheng
+# SPDX-FileCopyrightText: 2023 Leon Friedrich
+# SPDX-FileCopyrightText: 2023 Menshin
+# SPDX-FileCopyrightText: 2023 Morb
+# SPDX-FileCopyrightText: 2023 Pieter-Jan Briers
+# SPDX-FileCopyrightText: 2023 Skarletto
+# SPDX-FileCopyrightText: 2023 deltanedas
+# SPDX-FileCopyrightText: 2023 lzk
+# SPDX-FileCopyrightText: 2023 qwerltaz
+# SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT
+# SPDX-FileCopyrightText: 2024 FoxxoTrystan
+# SPDX-FileCopyrightText: 2024 Kara
+# SPDX-FileCopyrightText: 2024 Nemanja
+# SPDX-FileCopyrightText: 2024 Partmedia
+# SPDX-FileCopyrightText: 2024 ScarKy0
+# SPDX-FileCopyrightText: 2024 Tayrtahn
+# SPDX-FileCopyrightText: 2024 VMSolidus
+# SPDX-FileCopyrightText: 2024 chromiumboy
+# SPDX-FileCopyrightText: 2024 osjarw
+# SPDX-FileCopyrightText: 2025 Falcon
+# SPDX-FileCopyrightText: 2025 Solaris
+# SPDX-FileCopyrightText: 2025 Steve
+# SPDX-FileCopyrightText: 2025 marc-pelletier
+# SPDX-FileCopyrightText: 2025 metalgearsloth
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 - type: entity
   parent: GasPipeBase
   abstract: true
@@ -22,7 +69,8 @@
 
 - type: entity
   parent: [GasUnaryBase, AirSensorBase]
-  id: GasVentPump
+  id: GasVentPumpBase
+  abstract: true
   name: air vent
   description: Has a valve and a pump attached to it.
   placement:
@@ -36,13 +84,16 @@
       tags:
         - GasVent
         - Unstackable
+    - type: SubFloorHide
+      visibleLayers:
+      - enum.SubfloorLayers.FirstLayer
     - type: Sprite
       drawdepth: FloorObjects
       sprite: Structures/Piping/Atmospherics/vent.rsi
       noRot: true
       layers:
         - sprite: Structures/Piping/Atmospherics/pipe.rsi
-          state: pipeHalf
+          state: pipeUnaryConnectors
           map: [ "enum.PipeVisualLayers.Pipe" ]
         - state: vent_off
           map: [ "enabled", "enum.SubfloorLayers.FirstLayer" ]
@@ -72,6 +123,21 @@
       navMapBlip: GasVentOpening
 
 - type: entity
+  parent: GasVentPumpBase
+  id: GasVentPump
+  components:
+  - type: VentCritterSpawnLocation
+    canSpawn: true
+
+- type: entity
+  parent: GasVentPumpBase
+  id: GasVentPumpNoSpawns
+  suffix: No Spawns
+  components:
+  - type: VentCritterSpawnLocation
+    canSpawn: false
+
+- type: entity
   parent: GasUnaryBase
   id: GasPassiveVent
   name: passive vent
@@ -79,14 +145,16 @@
   placement:
     mode: SnapgridCenter
   components:
-    # TODO ATMOS: Find sprite for this.
+    - type: SubFloorHide
+      visibleLayers:
+      - enum.SubfloorLayers.FirstLayer
     - type: Sprite
       drawdepth: FloorObjects
       sprite: Structures/Piping/Atmospherics/vent.rsi
       noRot: true
       layers:
         - sprite: Structures/Piping/Atmospherics/pipe.rsi
-          state: pipeHalf
+          state: pipeUnaryConnectors
           map: [ "enum.PipeVisualLayers.Pipe" ]
         - state: vent_off
           map: [ "enum.SubfloorLayers.FirstLayer" ]
@@ -115,13 +183,16 @@
       tags:
         - GasScrubber
         - Unstackable
+    - type: SubFloorHide
+      visibleLayers:
+      - enum.SubfloorLayers.FirstLayer
     - type: Sprite
       drawdepth: FloorObjects
       sprite: Structures/Piping/Atmospherics/scrubber.rsi
       noRot: true
       layers:
         - sprite: Structures/Piping/Atmospherics/pipe.rsi
-          state: pipeHalf
+          state: pipeUnaryConnectors
           map: [ "enum.PipeVisualLayers.Pipe" ]
         - state: scrub_off
           map: [ "enabled", "enum.SubfloorLayers.FirstLayer" ]
@@ -163,7 +234,7 @@
       drawdepth: FloorObjects
       sprite: Structures/Piping/Atmospherics/outletinjector.rsi
       layers:
-        - state: pipeHalf
+        - state: pipeUnaryConnectors
           sprite: Structures/Piping/Atmospherics/pipe.rsi
           map: [ "enum.PipeVisualLayers.Pipe" ]
         - state: injector
@@ -172,6 +243,7 @@
           shader: unshaded
           map: [ "enum.LightLayers.Unshaded" ]
           color: "#990000"
+    - type: Appearance
     - type: GenericVisualizer
       visuals:
        # toggle color of the unshaded light:
@@ -179,7 +251,6 @@
          enum.LightLayers.Unshaded:
            True: { color: "#5eff5e" }
            False: { color: "#990000" }
-    - type: Appearance
     - type: PipeColorVisuals
     - type: GasOutletInjector
     - type: Construction
@@ -208,6 +279,12 @@
     - type: Rotatable
     - type: GasThermoMachine
     - type: AtmosPipeColor
+    - type: AtmosPipeLayers
+      spriteLayersRsiPaths:
+        enum.PipeVisualLayers.Pipe:
+          Primary: Structures/Piping/Atmospherics/thermomachine.rsi
+          Secondary: Structures/Piping/Atmospherics/thermomachine_alt1.rsi
+          Tertiary: Structures/Piping/Atmospherics/thermomachine_alt2.rsi
     - type: AtmosDevice
     - type: UserInterface
       interfaces:
@@ -335,11 +412,11 @@
   description: An advanced machine that cools gas in connected pipes. Has the side effect of chilling the surrounding area. Cold as Hell!
   components:
   - type: Sprite
-    sprite: Structures/Piping/Atmospherics/hellfirethermomachine.rsi
+    sprite: _Funkystation/Structures/Piping/Atmospherics/hellfirethermomachine.rsi # Assmos
   - type: GasThermoMachine
-    minTemperature: 23.15
-    heatCapacity: 40000
-    energyLeakPercentage: 0.15
+    minTemperature: 3.15 # Assmos
+    heatCapacity: 60000 # Assmos
+    energyLeakPercentage: 0.1 # Assmos
   - type: Machine
     board: HellfireFreezerMachineCircuitBoard
 
@@ -350,11 +427,11 @@
   description: An advanced machine that heats gas in connected pipes. Has the side effect of leaking heat into the surrounding area. Hot as Hell!
   components:
   - type: Sprite
-    sprite: Structures/Piping/Atmospherics/hellfirethermomachine.rsi
+    sprite: _Funkystation/Structures/Piping/Atmospherics/hellfirethermomachine.rsi # Assmos
   - type: GasThermoMachine
-    maxTemperature: 1193.15
-    heatCapacity: 40000
-    energyLeakPercentage: 0.15
+    maxTemperature: 1593.15 # Assmos
+    heatCapacity: 60000 # Assmos
+    energyLeakPercentage: 0.1 # Assmos
   - type: Machine
     board: HellfireHeaterMachineCircuitBoard
 
@@ -382,6 +459,7 @@
       map: ["enum.SolutionContainerLayers.Fill"]
       visible: false
     - state: trans
+  - type: Appearance
   - type: GenericVisualizer
     visuals:
       enum.PowerDeviceVisuals.Powered:
@@ -391,11 +469,16 @@
   - type: SolutionContainerVisuals
     maxFillLevels: 7
     fillBaseName: fill-
-  - type: Appearance
   - type: PipeColorVisuals
   - type: Rotatable
   - type: GasCondenser
   - type: AtmosPipeColor
+  - type: AtmosPipeLayers
+    spriteLayersRsiPaths:
+      enum.PipeVisualLayers.Pipe:
+        Primary: Structures/Piping/Atmospherics/condenser.rsi
+        Secondary: Structures/Piping/Atmospherics/condenser_alt1.rsi
+        Tertiary: Structures/Piping/Atmospherics/condenser_alt2.rsi
   - type: AtmosDevice
   #- type: PipeRestrictOverlap # Allow pipe stacking on device.
   - type: ApcPowerReceiver
@@ -444,3 +527,65 @@
   - type: PowerSwitch
   - type: AtmosMonitoringConsoleDevice
     navMapBlip: Thermoregulator
+
+
+
+# Assmos
+- type: entity
+  parent: GasThermoMachineFreezer
+  id: GasThermoMachineUpgradedFreezer
+  name: upgraded freezer
+  description: An advanced machine that cools gas in connected pipes. This looks like an upgraded model.
+  components:
+  - type: Sprite
+    sprite: _Funkystation/Structures/Piping/Atmospherics/upgradedthermomachine.rsi
+  - type: GasThermoMachine
+    minTemperature: 23.15
+    heatCapacity: 20000
+  - type: Machine
+    board: ThermomachineUpgradedFreezerMachineCircuitBoard
+
+# Assmos
+- type: entity
+  parent: GasThermoMachineHeater
+  id: GasThermoMachineUpgradedHeater
+  name: upgraded heater
+  description: An advanced machine that heats gas in connected pipes. This looks like an upgraded model.
+  components:
+  - type: Sprite
+    sprite: _Funkystation/Structures/Piping/Atmospherics/upgradedthermomachine.rsi
+  - type: GasThermoMachine
+    maxTemperature: 1193.15
+    heatCapacity: 20000
+  - type: Machine
+    board: ThermomachineUpgradedHeaterMachineCircuitBoard
+
+# Assmos
+- type: entity
+  parent: GasThermoMachineFreezer
+  id: GasThermoMachineAdvancedFreezer
+  name: advanced freezer
+  description: An advanced machine that cools gas in connected pipes. This looks like a particularly advanced model.
+  components:
+  - type: Sprite
+    sprite: _Funkystation/Structures/Piping/Atmospherics/advancedthermomachine.rsi
+  - type: GasThermoMachine
+    minTemperature: 13.15
+    heatCapacity: 40000
+  - type: Machine
+    board: ThermomachineAdvancedFreezerMachineCircuitBoard
+
+# Assmos
+- type: entity
+  parent: GasThermoMachineHeater
+  id: GasThermoMachineAdvancedHeater
+  name: advanced heater
+  description: An advanced machine that heats gas in connected pipes. This looks like a particularly advanced model.
+  components:
+  - type: Sprite
+    sprite: _Funkystation/Structures/Piping/Atmospherics/advancedthermomachine.rsi
+  - type: GasThermoMachine
+    maxTemperature: 1393.15
+    heatCapacity: 40000
+  - type: Machine
+    board: ThermomachineAdvancedHeaterMachineCircuitBoard

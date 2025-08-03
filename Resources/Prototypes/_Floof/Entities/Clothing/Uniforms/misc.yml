@@ -1,0 +1,285 @@
+# SPDX-FileCopyrightText: 2024 Dakota Haven <TotallyDemonicDragon@Gmail.com>
+# SPDX-FileCopyrightText: 2024 FoxxoTrystan <trystan.garnierhein@gmail.com>
+# SPDX-FileCopyrightText: 2024 SleepyScarecrow <sharedjunkemail69@gmail.com>
+# SPDX-FileCopyrightText: 2024 cynical <superpilotboy@gmail.com>
+# SPDX-FileCopyrightText: 2025 Aikakakah <145503852+Aikakakah@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Rosycup <178287475+Rosycup@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 cynical <132783285+cynical24@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformNudityPermit
+  name: public nudity permit
+  description: This permit entitles the bearer to conduct their duties without a uniform. Normally issued to furred crewmembers or those with nothing to hide.
+  components:
+  - type: Item
+    size: Small
+  - type: Sprite
+    sprite: _Floof/Clothing/Uniforms/nuditypermit.rsi
+  - type: Clothing
+    sprite: _Floof/Clothing/Uniforms/nuditypermit.rsi
+    equipDelay: 0
+    unequipDelay: 0
+  - type: Tag #DeltaV, needed for species with nonhuman legs/can only wear skirts
+    tags:
+    - Skirt
+
+- type: entity
+  parent: ClothingUniformBaseSwitch
+  id: ClothingUniformLoinClothBlack
+  name: black loin-cloth
+  description: A piece of cloth wrapped around the waist.
+  components:
+  - type: Sprite
+    sprite: _Floof/Clothing/Uniforms/loinclothblack.rsi
+  - type: Clothing
+    sprite: _Floof/Clothing/Uniforms/loinclothblack.rsi
+    unequipDelay: 0
+  - type: Tag #DeltaV, needed for species with nonhuman legs/can only wear skirts
+    tags:
+    - Skirt
+
+- type: entity
+  parent: ClothingUniformBaseSwitch
+  id: ClothingUniformLoinClothWhite
+  name: white loin-cloth
+  description: A piece of cloth wrapped around the waist.
+  components:
+  - type: Sprite
+    sprite: _Floof/Clothing/Uniforms/loinclothwhite.rsi
+  - type: Clothing
+    sprite: _Floof/Clothing/Uniforms/loinclothwhite.rsi
+    unequipDelay: 0
+  - type: Tag #DeltaV, needed for species with nonhuman legs/can only wear skirts
+    tags:
+    - Skirt
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformThongPlain
+  name: plain thong
+  description: Is this even considered a piece of clothing?
+  components:
+  - type: Sprite
+    sprite: _Floof/Clothing/Uniforms/plainthong.rsi
+  - type: Clothing
+    sprite: _Floof/Clothing/Uniforms/plainthong.rsi
+  - type: Tag #DeltaV, needed for species with nonhuman legs/can only wear skirts
+    tags:
+    - Skirt
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformThongBee
+  name: bee thong
+  description: Is this even considered a piece of clothing?
+  components:
+  - type: Sprite
+    sprite: _Floof/Clothing/Uniforms/beethong.rsi
+  - type: Clothing
+    sprite: _Floof/Clothing/Uniforms/beethong.rsi
+  - type: Tag #DeltaV, needed for species with nonhuman legs/can only wear skirts
+    tags:
+    - Skirt
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformThongCoder
+  name: coder thong
+  description: Is this even considered a piece of clothing?
+  components:
+  - type: Sprite
+    sprite: _Floof/Clothing/Uniforms/coderthong.rsi
+  - type: Clothing
+    sprite: _Floof/Clothing/Uniforms/coderthong.rsi
+  - type: Tag #DeltaV, needed for species with nonhuman legs/can only wear skirts
+    tags:
+    - Skirt
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformThongCoderValid
+  name: coder valid thong
+  description: Is this even considered a piece of clothing?
+  components:
+  - type: Sprite
+    sprite: _Floof/Clothing/Uniforms/codervalidthong.rsi
+  - type: Clothing
+    sprite: _Floof/Clothing/Uniforms/codervalidthong.rsi
+  - type: Tag #DeltaV, needed for species with nonhuman legs/can only wear skirts
+    tags:
+    - Skirt
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformStripedThongWhite
+  name: striped white thong
+  description: Is this even considered a piece of clothing?
+  components:
+  - type: Sprite
+    sprite: _Floof/Clothing/Uniforms/stripethongwhite.rsi
+  - type: Clothing
+    sprite: _Floof/Clothing/Uniforms/stripethongwhite.rsi
+  - type: Tag #DeltaV, needed for species with nonhuman legs/can only wear skirts
+    tags:
+    - Skirt
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformStripedThongPurple
+  name: striped purple thong
+  description: Is this even considered a piece of clothing?
+  components:
+  - type: Sprite
+    sprite: _Floof/Clothing/Uniforms/stripethongpurple.rsi
+  - type: Clothing
+    sprite: _Floof/Clothing/Uniforms/stripethongpurple.rsi
+  - type: Tag #DeltaV, needed for species with nonhuman legs/can only wear skirts
+    tags:
+    - Skirt
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformStripedThongRainbow
+  name: striped rainbow thong
+  description: Is this even considered a piece of clothing?
+  components:
+  - type: Sprite
+    sprite: _Floof/Clothing/Uniforms/stripethongrainbow.rsi
+  - type: Clothing
+    sprite: _Floof/Clothing/Uniforms/stripethongrainbow.rsi
+  - type: Tag #DeltaV, needed for species with nonhuman legs/can only wear skirts
+    tags:
+    - Skirt
+
+
+#Other Outfits
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformSexCompRed
+  name: red sex competition outfit
+  description: It looks like it should be part of a competition, but wheres the rest?
+  components:
+  - type: Sprite
+    sprite: _Floof/Clothing/Uniforms/sexcompred.rsi
+  - type: Clothing
+    sprite: _Floof/Clothing/Uniforms/sexcompred.rsi
+  - type: Tag #DeltaV, needed for species with nonhuman legs/can only wear skirts
+    tags:
+    - Skirt
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformSexCompBlue
+  name: blue sex competition outfit
+  description: It looks like it should be part of a competition, but wheres the rest?
+  components:
+  - type: Sprite
+    sprite: _Floof/Clothing/Uniforms/sexcompblue.rsi
+  - type: Clothing
+    sprite: _Floof/Clothing/Uniforms/sexcompblue.rsi
+  - type: Tag #DeltaV, needed for species with nonhuman legs/can only wear skirts
+    tags:
+    - Skirt
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformReotaSuit
+  name: casual suit
+  description: A rather casual looking suit
+  components:
+  - type: Sprite
+    sprite: _Floof/Clothing/Uniforms/reotasuit.rsi
+  - type: Clothing
+    sprite: _Floof/Clothing/Uniforms/reotasuit.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformMusicKing
+  name: musician king
+  description: A musicians outfit, fit for a king
+  components:
+  - type: Sprite
+    sprite: _Floof/Clothing/Uniforms/musicianking.rsi
+  - type: Clothing
+    sprite: _Floof/Clothing/Uniforms/musicianking.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformMusicKingBlack
+  name: musician king black
+  description: A musicians outfit, fit for a king
+  components:
+  - type: Sprite
+    sprite: _Floof/Clothing/Uniforms/musiciankingblack.rsi
+  - type: Clothing
+    sprite: _Floof/Clothing/Uniforms/musiciankingblack.rsi
+
+- type: entity
+  parent: ClothingUniformSkirtBase
+  id: ClothingUniformRedDancersGarb
+  name: red dancers garb
+  description: A red top and matching skirt that reveals a LOT of thigh!
+  components:
+  - type: Sprite
+    sprite: _Floof/Clothing/Uniforms/reddancersgarb.rsi
+  - type: Clothing
+    sprite: _Floof/Clothing/Uniforms/reddancersgarb.rsi
+
+- type: entity
+  parent: ClothingUniformSkirtBase
+  id: ClothingUniformBandedDancersGarb
+  name: banded dancers garb
+  description: A red top and matching skirt that rides high but hides the thigh!
+  components:
+  - type: Sprite
+    sprite: _Floof/Clothing/Uniforms/bandeddancersgarb.rsi
+  - type: Clothing
+    sprite: _Floof/Clothing/Uniforms/bandeddancersgarb.rsi
+
+- type: entity
+  parent: ClothingUniformSkirtBase
+  id: ClothingUniformRedSidelessDress
+  name: red sideless dress
+  description: A red dress that leaves VERY LITTLE to the imagination.  Great for laying on top of pianos!
+  components:
+  - type: Sprite
+    sprite: _Floof/Clothing/Uniforms/redsidelessdress.rsi
+  - type: Clothing
+    sprite: _Floof/Clothing/Uniforms/redsidelessdress.rsi
+
+- type: entity
+  parent: ClothingUniformSkirtBase
+  id: ClothingUniformPurpleNightclubDress
+  name: purple nightclub dress
+  description: A purple dress made more for taking off than for wearing.
+  components:
+  - type: Sprite
+    sprite: _Floof/Clothing/Uniforms/purplenightclubdress.rsi
+  - type: Clothing
+    sprite: _Floof/Clothing/Uniforms/purplenightclubdress.rsi
+
+- type: entity
+  parent: ClothingUniformSkirtBase
+  id: ClothingUniformBlackPetticoatDress
+  name: black petticoat dress
+  description: Aahhh, yes dahling.  You're ravashing!
+  components:
+  - type: Sprite
+    sprite: _Floof/Clothing/Uniforms/blackpetticoatdress.rsi
+  - type: Clothing
+    sprite: _Floof/Clothing/Uniforms/blackpetticoatdress.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformBlueFancyLad
+  name: blue fancy lad outfit
+  description: Crisp blue, velvety blacks. Smoother than melted butter on ice.
+  components:
+  - type: Sprite
+    sprite: _Floof/Clothing/Uniforms/bluefancylad.rsi
+  - type: Clothing
+    sprite: _Floof/Clothing/Uniforms/bluefancylad.rsi

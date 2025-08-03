@@ -1,10 +1,15 @@
-﻿namespace Content.Shared.Chat;
+// SPDX-FileCopyrightText: 2022 DrSmugleaf
+// SPDX-FileCopyrightText: 2022 Jezithyr
+// SPDX-FileCopyrightText: 2023 Chief-Engineer
+// SPDX-FileCopyrightText: 2024 themias
+// SPDX-FileCopyrightText: 2025 sleepyyapril
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
+namespace Content.Shared.Chat;
 
 public static class ChatChannelExtensions
 {
-    private static Color _subtleColor = Color.FromHex("#d3d3ff");
-    private static Color _subtleOOCColor = Color.FromHex("#ff7782");
-
     public static Color TextColor(this ChatChannel channel)
     {
         return channel switch
@@ -18,9 +23,11 @@ public static class ChatChannelExtensions
             ChatChannel.AdminAlert => Color.Red,
             ChatChannel.AdminChat => Color.HotPink,
             ChatChannel.Whisper => Color.DarkGray,
-            ChatChannel.Subtle => _subtleColor,
-            ChatChannel.SubtleOOC => _subtleOOCColor,
             _ => Color.LightGray
         };
     }
+
+    // Floofstation
+    public static bool IsExemptFromLanguages(this ChatChannel channel) =>
+        channel is ChatChannel.LOOC or ChatChannel.Emotes or ChatChannel.Notifications or ChatChannel.Visual;
 }

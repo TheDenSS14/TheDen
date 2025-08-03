@@ -1,3 +1,8 @@
+# SPDX-FileCopyrightText: 2022 rolfero <45628623+rolfero@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: MIT
+
 # APC
 construction-examine-condition-apc-open = First, screw open the APC.
 construction-examine-condition-apc-close = First, screw shut the APC.

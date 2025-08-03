@@ -1,4 +1,15 @@
-﻿using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype;
+// SPDX-FileCopyrightText: 2022 Alex Evgrashin
+// SPDX-FileCopyrightText: 2022 mirrorcult
+// SPDX-FileCopyrightText: 2022 wrexbe
+// SPDX-FileCopyrightText: 2023 DrSmugleaf
+// SPDX-FileCopyrightText: 2025 Alkheemist
+// SPDX-FileCopyrightText: 2025 portfiend
+// SPDX-FileCopyrightText: 2025 sleepyyapril
+// SPDX-FileCopyrightText: 2025 wheelwrightt
+//
+// SPDX-License-Identifier: MIT
+
+using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype;
 
 namespace Content.Server.Speech.Components;
 
@@ -25,4 +36,15 @@ public sealed partial class AddAccentClothingComponent : Component
     ///     Is that clothing is worn and affecting someones accent?
     /// </summary>
     public bool IsActive = false;
+
+    /// <summary>
+    ///     Who is currently wearing the item?
+    /// </summary>
+    public EntityUid Wearer; // Frontier
+
+    /// <summary>
+    ///     DEN: Can you toggle the accent on/off with an alt verb? Default is true.
+    /// </summary>
+    [DataField]
+    public bool Toggleable = true;
 }

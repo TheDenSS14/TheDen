@@ -1,13 +1,29 @@
+# SPDX-FileCopyrightText: 2023 Nemanja
+# SPDX-FileCopyrightText: 2023 deltanedas
+# SPDX-FileCopyrightText: 2024 Pieter-Jan Briers
+# SPDX-FileCopyrightText: 2025 SimpleGopnik
+# SPDX-FileCopyrightText: 2025 Simplegopnik
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 - type: inventoryTemplate
   id: borg
   slots:
   - name: head
     slotTexture: head
     slotFlags: HEAD
-    uiWindowPos: 1,0
+    uiWindowPos: 1,1
     strippingWindowPos: 0,0
     displayName: Head
-    offset: 0, -0.09375
+    offset: 0.015625, -0.09375
+  - name: neck
+    slotTexture: neck
+    slotFlags: NECK
+    uiWindowPos: 1,0
+    strippingWindowPos: 0,1
+    displayName: Neck
+    offset: 0.015625, -0.15625
 
 - type: inventoryTemplate
   id: borgShort
@@ -15,10 +31,18 @@
   - name: head
     slotTexture: head
     slotFlags: HEAD
-    uiWindowPos: 1,0
+    uiWindowPos: 1,1
     strippingWindowPos: 0,0
     displayName: Head
-    offset: 0, -0.1875
+    offset: 0.015625, -0.1875
+  - name: neck
+    slotTexture: neck
+    slotFlags: NECK
+    uiWindowPos: 1,0
+    strippingWindowPos: 0,1
+    displayName: Neck
+    offset: 0.015625, -0.25
+
 
 - type: inventoryTemplate
   id: borgTall
@@ -26,9 +50,55 @@
   - name: head
     slotTexture: head
     slotFlags: HEAD
-    uiWindowPos: 1,0
+    uiWindowPos: 1,1
     strippingWindowPos: 0,0
     displayName: Head
+    offset: 0.015624, -0.03125
+  - name: neck
+    slotTexture: neck
+    slotFlags: NECK
+    uiWindowPos: 1,0
+    strippingWindowPos: 0,1
+    displayName: Neck
+    offset: 0.015624, -0.0625
+# Used by the syndicate assault borg because wow, does it have a big head and really low neck
+- type: inventoryTemplate
+  id: borgTallAndBigHead
+  slots:
+  - name: head
+    slotTexture: head
+    slotFlags: HEAD
+    uiWindowPos: 1,1
+    strippingWindowPos: 0,0
+    displayName: Head
+    offset: 0.015624, -0.03125
+  - name: neck
+    slotTexture: neck
+    slotFlags: NECK
+    uiWindowPos: 1,0
+    strippingWindowPos: 0,1
+    displayName: Neck
+    offset: 0.015624, -0.1875
+
+
+# Used by the service borg due to it having an odd number of horizontal pixels, leading to mantles and other neck items appearing shifted on their sprites.
+- type: inventoryTemplate
+  id: borgTallOddNumHorizontalPixels
+  slots:
+  - name: head
+    slotTexture: head
+    slotFlags: HEAD
+    uiWindowPos: 1,1
+    strippingWindowPos: 0,0
+    displayName: Head
+    offset: 0, -0.03125
+  - name: neck
+    slotTexture: neck
+    slotFlags: NECK
+    uiWindowPos: 1,0
+    strippingWindowPos: 0,1
+    displayName: Neck
+    offset: 0, -0.0625
 
 # taller than tall
 - type: inventoryTemplate
@@ -37,7 +107,14 @@
   - name: head
     slotTexture: head
     slotFlags: HEAD
-    uiWindowPos: 1,0
+    uiWindowPos: 1,1
     strippingWindowPos: 0,0
     displayName: Head
     offset: 0, 0.09375
+  - name: neck
+    slotTexture: neck
+    slotFlags: NECK
+    uiWindowPos: 1,0
+    strippingWindowPos: 0,1
+    displayName: Neck
+    offset: 0, -0.1875

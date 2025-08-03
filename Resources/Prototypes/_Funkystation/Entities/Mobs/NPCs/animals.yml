@@ -1,3 +1,9 @@
+# SPDX-FileCopyrightText: 2025 Blitz
+# SPDX-FileCopyrightText: 2025 Tabitha
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 - type: entity
   name: roingus
   description: Bounce!
@@ -41,6 +47,22 @@
 - type: entity
   parent: MobRoingus
   id: MobRoingusPet
+  suffix: Pet # TheDen
+  components:
+  - type: HTN
+    rootTask:
+      task: FollowCompound
+    blackboard:
+      IdleRange: !type:Single
+        1.5
+      FollowCloseRange: !type:Single
+        1.0
+      FollowRange: !type:Single
+        2.0
+
+- type: entity
+  parent: MobRosyMothroach
+  id: MobRosyMothroachPet
   suffix: Pet # TheDen
   components:
   - type: HTN

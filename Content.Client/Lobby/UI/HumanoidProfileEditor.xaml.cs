@@ -1,3 +1,72 @@
+// SPDX-FileCopyrightText: 2020 20kdc
+// SPDX-FileCopyrightText: 2020 DamianX
+// SPDX-FileCopyrightText: 2020 Exp
+// SPDX-FileCopyrightText: 2020 ike709
+// SPDX-FileCopyrightText: 2021 Acruid
+// SPDX-FileCopyrightText: 2021 Galactic Chimp
+// SPDX-FileCopyrightText: 2021 Metal Gear Sloth
+// SPDX-FileCopyrightText: 2021 Pancake
+// SPDX-FileCopyrightText: 2021 RemberBL
+// SPDX-FileCopyrightText: 2021 Remie Richards
+// SPDX-FileCopyrightText: 2021 Swept
+// SPDX-FileCopyrightText: 2021 Vera Aguilera Puerto
+// SPDX-FileCopyrightText: 2021 bgare89
+// SPDX-FileCopyrightText: 2022 Alex Evgrashin
+// SPDX-FileCopyrightText: 2022 CommieFlowers
+// SPDX-FileCopyrightText: 2022 DrSmugleaf
+// SPDX-FileCopyrightText: 2022 EmoGarbage404
+// SPDX-FileCopyrightText: 2022 Flipp Syder
+// SPDX-FileCopyrightText: 2022 Jezithyr
+// SPDX-FileCopyrightText: 2022 Leeroy
+// SPDX-FileCopyrightText: 2022 Moony
+// SPDX-FileCopyrightText: 2022 Morber
+// SPDX-FileCopyrightText: 2022 Rane
+// SPDX-FileCopyrightText: 2022 S1ss3l
+// SPDX-FileCopyrightText: 2022 Veritius
+// SPDX-FileCopyrightText: 2022 mirrorcult
+// SPDX-FileCopyrightText: 2022 rolfero
+// SPDX-FileCopyrightText: 2022 wrexbe
+// SPDX-FileCopyrightText: 2023 Debug
+// SPDX-FileCopyrightText: 2023 ElectroJr
+// SPDX-FileCopyrightText: 2023 James Simonson
+// SPDX-FileCopyrightText: 2023 Morb
+// SPDX-FileCopyrightText: 2023 PrPleGoo
+// SPDX-FileCopyrightText: 2023 Ray
+// SPDX-FileCopyrightText: 2023 Visne
+// SPDX-FileCopyrightText: 2023 Ygg01
+// SPDX-FileCopyrightText: 2023 csqrb
+// SPDX-FileCopyrightText: 2023 deltanedas
+// SPDX-FileCopyrightText: 2024 AJCM-git
+// SPDX-FileCopyrightText: 2024 Aiden
+// SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT
+// SPDX-FileCopyrightText: 2024 FoxxoTrystan
+// SPDX-FileCopyrightText: 2024 Kot
+// SPDX-FileCopyrightText: 2024 Krunklehorn
+// SPDX-FileCopyrightText: 2024 Leon Friedrich
+// SPDX-FileCopyrightText: 2024 Mnemotechnican
+// SPDX-FileCopyrightText: 2024 Pieter-Jan Briers
+// SPDX-FileCopyrightText: 2024 ShatteredSwords
+// SPDX-FileCopyrightText: 2024 VMSolidus
+// SPDX-FileCopyrightText: 2024 Vasilis
+// SPDX-FileCopyrightText: 2024 WarMechanic
+// SPDX-FileCopyrightText: 2024 metalgearsloth
+// SPDX-FileCopyrightText: 2025 Blitz
+// SPDX-FileCopyrightText: 2025 Falcon
+// SPDX-FileCopyrightText: 2025 Lyndomen
+// SPDX-FileCopyrightText: 2025 Peptide90
+// SPDX-FileCopyrightText: 2025 Raikyr0
+// SPDX-FileCopyrightText: 2025 Rosycup
+// SPDX-FileCopyrightText: 2025 SX-7
+// SPDX-FileCopyrightText: 2025 Sapphire
+// SPDX-FileCopyrightText: 2025 Skubman
+// SPDX-FileCopyrightText: 2025 Timfa
+// SPDX-FileCopyrightText: 2025 Tirochora
+// SPDX-FileCopyrightText: 2025 dootythefrooty
+// SPDX-FileCopyrightText: 2025 portfiend
+// SPDX-FileCopyrightText: 2025 sleepyyapril
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 using System.IO;
 using System.Linq;
 using System.Numerics;
@@ -7,6 +76,8 @@ using Content.Client.Humanoid;
 using Content.Client.Message;
 using Content.Client.Players.PlayTimeTracking;
 using Content.Client.UserInterface.Controls;
+using Content.Client.Sprite;
+using Content.Client.Stylesheets;
 using Content.Client.UserInterface.Systems.Guidebook;
 using Content.Shared._EE.Contractors.Prototypes;
 using Content.Shared.CCVar;
@@ -21,6 +92,7 @@ using Content.Shared.Humanoid;
 using Content.Shared.Humanoid.Markings;
 using Content.Shared.Humanoid.Prototypes;
 using Content.Shared.Preferences;
+using Content.Shared.Random.Helpers;
 using Content.Shared.Roles;
 using Content.Shared.StatusIcon;
 using Content.Shared.Traits;
@@ -32,6 +104,7 @@ using Robust.Client.UserInterface.XAML;
 using Robust.Client.Utility;
 using Robust.Client.Player;
 using Robust.Shared.Configuration;
+using Robust.Shared.ContentPack;
 using Robust.Shared.Enums;
 using Robust.Shared.Map;
 using Robust.Shared.Physics;
@@ -39,6 +112,11 @@ using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Utility;
 using Direction = Robust.Shared.Maths.Direction;
+// Begin CD - Character Records
+using System.Globalization;
+using Content.Client._CD.Records.UI;
+using Content.Shared._CD.Records;
+// End CD - Character Records
 
 namespace Content.Client.Lobby.UI
 {
@@ -51,6 +129,7 @@ namespace Content.Client.Lobby.UI
         private readonly IPlayerManager _playerManager;
         private readonly IPrototypeManager _prototypeManager;
         private readonly IClientPreferencesManager _preferencesManager;
+        private readonly IResourceManager _resManager;
         private readonly MarkingManager _markingManager;
         private readonly JobRequirementsManager _requirements;
         private readonly CharacterRequirementsSystem _characterRequirementsSystem;
@@ -65,6 +144,7 @@ namespace Content.Client.Lobby.UI
         /// If we're attempting to save
         public event Action? Save;
         private bool _exporting;
+        private bool _imaging;
         private bool _isDirty;
 
         /// The character slot for the current profile
@@ -88,7 +168,6 @@ namespace Content.Client.Lobby.UI
         private Dictionary<Button, ConfirmationData> _confirmationData = new();
         private List<TraitPreferenceSelector> _traitPreferences = new();
         private int _traitCount;
-        private HashSet<LoadoutPreferenceSelector> _loadoutPreferences = new();
 
         private Direction _previewRotation = Direction.North;
         private ColorSelectorSliders _rgbSkinColorSelector;
@@ -107,8 +186,8 @@ namespace Content.Client.Lobby.UI
         [ValidatePrototypeId<LocalizedDatasetPrototype>]
         private const string StationAiNames = "NamesAI";
 
-        [ValidatePrototypeId<DatasetPrototype>]
-        private const string CyborgNames = "names_borg";
+        [ValidatePrototypeId<LocalizedDatasetPrototype>]
+        private const string CyborgNames = "NamesBorg";
 
         public HumanoidProfileEditor(
             IClientPreferencesManager preferencesManager,
@@ -117,6 +196,7 @@ namespace Content.Client.Lobby.UI
             IFileDialogManager dialogManager,
             IPlayerManager playerManager,
             IPrototypeManager prototypeManager,
+            IResourceManager resManager,
             JobRequirementsManager requirements,
             MarkingManager markings,
             IRobustRandom random
@@ -130,6 +210,7 @@ namespace Content.Client.Lobby.UI
             _prototypeManager = prototypeManager;
             _markingManager = markings;
             _preferencesManager = preferencesManager;
+            _resManager = resManager;
             _requirements = requirements;
             _random = random;
 
@@ -139,6 +220,9 @@ namespace Content.Client.Lobby.UI
             ImportButton.OnPressed += args => { ImportProfile(); };
             ExportButton.OnPressed += args => { ExportProfile(); };
             SaveButton.OnPressed += args => { Save?.Invoke(); };
+            ExportImageButton.OnPressed += args => { ExportImage(); };
+            OpenImagesButton.OnPressed += args => { _resManager.UserData.OpenOsWindow(ContentSpriteSystem.Exports); };
+
             ResetButton.OnPressed += args =>
             {
                 SetProfile(
@@ -153,6 +237,7 @@ namespace Content.Client.Lobby.UI
             NameEdit.OnTextChanged += args => { SetName(args.Text); };
             NameRandomize.OnPressed += _ => RandomizeName();
             RandomizeEverything.OnPressed += _ => { RandomizeProfile(); };
+            RandomizeBodyButton.OnPressed += _ => { RandomizeBody(); };
             WarningLabel.SetMarkup($"[color=red]{Loc.GetString("humanoid-profile-editor-naming-rules-warning")}[/color]");
 
             #endregion Name
@@ -177,6 +262,18 @@ namespace Content.Client.Lobby.UI
             };
 
             #endregion Sex
+
+            // Begin TheDen - Add Voice
+            #region Voice
+
+            VoiceButton.OnItemSelected += args =>
+            {
+                VoiceButton.SelectId(args.Id);
+                SetVoice((Sex) args.Id);
+            };
+
+            #endregion
+            // End TheDen
 
             #region Age
 
@@ -386,7 +483,7 @@ namespace Content.Client.Lobby.UI
                 ReloadProfilePreview();
             };
 
-            HairStylePicker.OnSlotAdd += delegate()
+            HairStylePicker.OnSlotAdd += delegate ()
             {
                 if (Profile is null)
                     return;
@@ -407,7 +504,7 @@ namespace Content.Client.Lobby.UI
                 ReloadProfilePreview();
             };
 
-            FacialHairPicker.OnSlotAdd += delegate()
+            FacialHairPicker.OnSlotAdd += delegate ()
             {
                 if (Profile is null)
                     return;
@@ -519,7 +616,6 @@ namespace Content.Client.Lobby.UI
             // Set up the loadouts tab
             LoadoutsTab.Orphan();
             CTabContainer.AddTab(LoadoutsTab, Loc.GetString("humanoid-profile-editor-loadouts-tab"));
-            _loadoutPreferences = new();
 
             // Show/Hide the loadouts tab if they ever get enabled/disabled
             var loadoutsEnabled = cfgManager.GetCVar(CCVars.GameLoadoutsEnabled);
@@ -527,10 +623,9 @@ namespace Content.Client.Lobby.UI
             ShowLoadouts.Visible = loadoutsEnabled;
             cfgManager.OnValueChanged(CCVars.GameLoadoutsEnabled, LoadoutsChanged);
 
-            LoadoutsShowUnusableButton.OnToggled += args => UpdateLoadouts(args.Pressed);
-            LoadoutsRemoveUnusableButton.OnPressed += _ => TryRemoveUnusableLoadouts();
-
-            UpdateLoadouts(false);
+            LoadoutsTab.OnRemoveUnusableLoadouts += RemoveUnusableLoadouts;
+            LoadoutsTab.OnPreferenceChanged += SelectLoadout;
+            LoadoutsTab.OnOpenGuidebook += args => OnOpenGuidebook?.Invoke(args);
 
             #endregion
 
@@ -545,6 +640,16 @@ namespace Content.Client.Lobby.UI
             Markings.OnMarkingRankChange += OnMarkingChange;
 
             #endregion Markings
+
+            // Begin CD - Character Records
+            #region CosmaticRecords
+
+            RecordsTab.Orphan();
+            Records.SetRecordUpdateFunction(UpdateProfileRecords);
+            CTabContainer.AddTab(RecordsTab, Loc.GetString("humanoid-profile-editor-cd-records-tab"));
+
+            #endregion CosmaticRecords
+            // End CD - Character Records
 
             RefreshFlavorText();
 
@@ -672,7 +777,7 @@ namespace Content.Client.Lobby.UI
             if (Profile != null && !nationalityIds.Contains(Profile.Nationality))
                 SetNationality(SharedHumanoidAppearanceSystem.DefaultNationality);
 
-            if(Profile != null)
+            if (Profile != null)
                 UpdateNationalityDescription(Profile.Nationality);
         }
 
@@ -706,7 +811,7 @@ namespace Content.Client.Lobby.UI
             if (Profile != null && !employerIds.Contains(Profile.Employer))
                 SetEmployer(SharedHumanoidAppearanceSystem.DefaultEmployer);
 
-            if(Profile != null)
+            if (Profile != null)
                 UpdateEmployerDescription(Profile.Employer);
         }
 
@@ -740,7 +845,7 @@ namespace Content.Client.Lobby.UI
             if (Profile != null && !lifepathIds.Contains(Profile.Lifepath))
                 SetLifepath(SharedHumanoidAppearanceSystem.DefaultLifepath);
 
-            if(Profile != null)
+            if (Profile != null)
                 UpdateLifepathDescription(Profile.Lifepath);
         }
 
@@ -844,16 +949,19 @@ namespace Content.Client.Lobby.UI
             PreviewDummy = EntityUid.Invalid;
 
             if (Profile == null || !_prototypeManager.HasIndex<SpeciesPrototype>(Profile.Species))
+            {
+                LoadoutsTab.SetCharacterDummy(PreviewDummy);
                 return;
+            }
 
             PreviewDummy = _controller.LoadProfileEntity(Profile, ShowClothes.Pressed, ShowLoadouts.Pressed);
             SpriteView.SetEntity(PreviewDummy);
-            if (_prototypeManager.Index<SpeciesPrototype>(Profile.Species).SkinColoration != HumanoidSkinColor.HumanAnimal)
-            {
-                SkinFurToggle.Visible = false;
-            }
-            else { SkinFurToggle.Visible = true; }
+            LoadoutsTab.SetCharacterDummy(PreviewDummy);
+            SkinFurToggle.Visible = _prototypeManager
+                .Index<SpeciesPrototype>(Profile.Species)
+                .SkinColoration == HumanoidSkinColor.HumanAnimal;
 
+            _entManager.System<MetaDataSystem>().SetEntityName(PreviewDummy, Profile.Name);
         }
 
         /// Reloads the dummy entity's clothes for preview
@@ -888,6 +996,7 @@ namespace Content.Client.Lobby.UI
 
             UpdateNameEdit();
             UpdateSexControls();
+            UpdateVoiceControls(); // TheDen - Add Voice
             UpdateGenderControls();
             UpdateDisplayPronounsControls();
             UpdateStationAiControls();
@@ -905,7 +1014,10 @@ namespace Content.Client.Lobby.UI
             UpdateCMarkingsFacialHair();
             UpdateHeightWidthSliders();
             UpdateWeight();
-            UpdateCharacterRequired();
+
+            // Begin CD - Character Records
+            Records.Update(profile);
+            // End CD - Character Records
 
             RefreshAntags();
             RefreshJobs();
@@ -916,9 +1028,14 @@ namespace Content.Client.Lobby.UI
             RefreshFlavorText();
             ReloadPreview();
 
+            // DEN: I'm moving this down here because Loadouts rely on the species (and character dummy) to be
+            // up-to-date before it reloads its loadout requirements, and moving loadout updates out of
+            // UpdateCharacterRequired is undesirable.
+            UpdateCharacterRequired();
 
             if (Profile != null)
                 PreferenceUnavailableButton.SelectId((int) Profile.PreferenceUnavailable);
+
         }
 
         /// A slim reload that only updates the entity itself and not any of the job entities, etc
@@ -944,7 +1061,6 @@ namespace Content.Client.Lobby.UI
 
             SetPreviewRotation(_previewRotation);
             TraitsTabs.UpdateTabMerging();
-            LoadoutsTabs.UpdateTabMerging();
         }
 
         private void LoadoutsChanged(bool enabled)
@@ -970,7 +1086,7 @@ namespace Content.Client.Lobby.UI
                 var dict = new Dictionary<ProtoId<GuideEntryPrototype>, GuideEntry>();
                 dict.Add(DefaultSpeciesGuidebook, guideRoot);
                 //TODO: Don't close the guidebook if its already open, just go to the correct page
-                guidebookController.OpenGuidebook(dict, includeChildren:true, selected: page);
+                guidebookController.OpenGuidebook(dict, includeChildren: true, selected: page);
             }
         }
 
@@ -1155,7 +1271,7 @@ namespace Content.Client.Lobby.UI
 
                     category.AddChild(new PanelContainer
                     {
-                        PanelOverride = new StyleBoxFlat {BackgroundColor = Color.FromHex("#464966")},
+                        PanelOverride = new StyleBoxFlat { BackgroundColor = Color.FromHex("#464966") },
                         Children =
                         {
                             new Label
@@ -1271,6 +1387,16 @@ namespace Content.Client.Lobby.UI
             }
         }
 
+        // Start CD - Character Records
+        private void UpdateProfileRecords(PlayerProvidedCharacterRecords records)
+        {
+            if (Profile is null)
+                return;
+            Profile = Profile.WithCDCharacterRecords(records);
+            IsDirty = true;
+        }
+        // End CD - Character Records
+
         private void OnFlavorTextChange(string content)
         {
             if (Profile is null)
@@ -1301,65 +1427,65 @@ namespace Content.Client.Lobby.UI
             switch (skin)
             {
                 case HumanoidSkinColor.HumanToned:
-                {
-                    if (!Skin.Visible)
                     {
-                        Skin.Visible = true;
-                        RgbSkinColorContainer.Visible = false;
+                        if (!Skin.Visible)
+                        {
+                            Skin.Visible = true;
+                            RgbSkinColorContainer.Visible = false;
+                        }
+
+                        var color = SkinColor.HumanSkinTone((int) Skin.Value);
+
+                        Markings.CurrentSkinColor = color;
+                        Profile = Profile.WithCharacterAppearance(Profile.Appearance.WithSkinColor(color));//
+                        break;
                     }
-
-                    var color = SkinColor.HumanSkinTone((int) Skin.Value);
-
-                    Markings.CurrentSkinColor = color;
-                    Profile = Profile.WithCharacterAppearance(Profile.Appearance.WithSkinColor(color));//
-                    break;
-                }
                 case HumanoidSkinColor.Hues:
-                {
-                    if (!RgbSkinColorContainer.Visible)
                     {
-                        Skin.Visible = false;
-                        RgbSkinColorContainer.Visible = true;
-                    }
+                        if (!RgbSkinColorContainer.Visible)
+                        {
+                            Skin.Visible = false;
+                            RgbSkinColorContainer.Visible = true;
+                        }
 
-                    Markings.CurrentSkinColor = _rgbSkinColorSelector.Color;
-                    Profile = Profile.WithCharacterAppearance(Profile.Appearance.WithSkinColor(_rgbSkinColorSelector.Color));
-                    break;
-                }
+                        Markings.CurrentSkinColor = _rgbSkinColorSelector.Color;
+                        Profile = Profile.WithCharacterAppearance(Profile.Appearance.WithSkinColor(_rgbSkinColorSelector.Color));
+                        break;
+                    }
                 case HumanoidSkinColor.TintedHues:
                 case HumanoidSkinColor.TintedHuesSkin: // DeltaV - Tone blending
-                {
-                    if (!RgbSkinColorContainer.Visible)
                     {
-                        Skin.Visible = false;
-                        RgbSkinColorContainer.Visible = true;
+                        if (!RgbSkinColorContainer.Visible)
+                        {
+                            Skin.Visible = false;
+                            RgbSkinColorContainer.Visible = true;
+                        }
+
+                        var color = skin switch // DeltaV - Tone blending
+                        {
+                            HumanoidSkinColor.TintedHues => SkinColor.TintedHues(_rgbSkinColorSelector.Color),
+                            HumanoidSkinColor.TintedHuesSkin => SkinColor.TintedHuesSkin(_rgbSkinColorSelector.Color, skinColor),
+                            _ => Color.White
+                        };
+
+                        Markings.CurrentSkinColor = color;
+                        Profile = Profile.WithCharacterAppearance(Profile.Appearance.WithSkinColor(color));
+                        break;
                     }
-
-                    var color = skin switch // DeltaV - Tone blending
-                    {
-                        HumanoidSkinColor.TintedHues => SkinColor.TintedHues(_rgbSkinColorSelector.Color),
-                        HumanoidSkinColor.TintedHuesSkin => SkinColor.TintedHuesSkin(_rgbSkinColorSelector.Color, skinColor),
-                        _ => Color.White
-                    };
-
-                    Markings.CurrentSkinColor = color;
-                    Profile = Profile.WithCharacterAppearance(Profile.Appearance.WithSkinColor(color));
-                    break;
-                }
                 case HumanoidSkinColor.VoxFeathers:
-                {
-                    if (!RgbSkinColorContainer.Visible)
                     {
-                        Skin.Visible = false;
-                        RgbSkinColorContainer.Visible = true;
+                        if (!RgbSkinColorContainer.Visible)
+                        {
+                            Skin.Visible = false;
+                            RgbSkinColorContainer.Visible = true;
+                        }
+
+                        var color = SkinColor.ClosestVoxColor(_rgbSkinColorSelector.Color);
+
+                        Markings.CurrentSkinColor = color;
+                        Profile = Profile.WithCharacterAppearance(Profile.Appearance.WithSkinColor(color));
+                        break;
                     }
-
-                    var color = SkinColor.ClosestVoxColor(_rgbSkinColorSelector.Color);
-
-                    Markings.CurrentSkinColor = color;
-                    Profile = Profile.WithCharacterAppearance(Profile.Appearance.WithSkinColor(color));
-                    break;
-                }
                 case HumanoidSkinColor.AnimalFur: // Einstein Engines - Tajaran
                     {
                         if (!RgbSkinColorContainer.Visible)
@@ -1373,28 +1499,28 @@ namespace Content.Client.Lobby.UI
                         Markings.CurrentSkinColor = color;
                         Profile = Profile.WithCharacterAppearance(Profile.Appearance.WithSkinColor(color));
                         break;
-                }
-                case HumanoidSkinColor.HumanAnimal:
-                {
-                    SkinFurToggle.Visible = true;
-                    if(!SkinFurToggle.Pressed)
-                    {
-                        Skin.Visible = false;
-                        RgbSkinColorContainer.Visible = true;
-                        Markings.CurrentSkinColor = _rgbSkinColorSelector.Color;
-                        Profile = Profile.WithCharacterAppearance(Profile.Appearance.WithSkinColor(_rgbSkinColorSelector.Color));
                     }
-                    else
+                case HumanoidSkinColor.HumanAnimal:
                     {
-                        Skin.Visible = true;
-                        RgbSkinColorContainer.Visible = false;
-                        var color = SkinColor.HumanSkinTone((int) Skin.Value);
-                        Markings.CurrentSkinColor = color;
-                        Profile = Profile.WithCharacterAppearance(Profile.Appearance.WithSkinColor(color));
+                        SkinFurToggle.Visible = true;
+                        if (!SkinFurToggle.Pressed)
+                        {
+                            Skin.Visible = false;
+                            RgbSkinColorContainer.Visible = true;
+                            Markings.CurrentSkinColor = _rgbSkinColorSelector.Color;
+                            Profile = Profile.WithCharacterAppearance(Profile.Appearance.WithSkinColor(_rgbSkinColorSelector.Color));
+                        }
+                        else
+                        {
+                            Skin.Visible = true;
+                            RgbSkinColorContainer.Visible = false;
+                            var color = SkinColor.HumanSkinTone((int) Skin.Value);
+                            Markings.CurrentSkinColor = color;
+                            Profile = Profile.WithCharacterAppearance(Profile.Appearance.WithSkinColor(color));
                         }
 
-                    break;
-                }
+                        break;
+                    }
             }
 
             SetDirty();
@@ -1407,6 +1533,17 @@ namespace Content.Client.Lobby.UI
             if (!disposing)
                 return;
 
+        }
+
+        protected override void EnteredTree()
+        {
+            base.EnteredTree();
+            ReloadPreview();
+        }
+
+        protected override void ExitedTree()
+        {
+            base.ExitedTree();
             _entManager.DeleteEntity(PreviewDummy);
             PreviewDummy = EntityUid.Invalid;
 
@@ -1423,23 +1560,34 @@ namespace Content.Client.Lobby.UI
         private void SetSex(Sex newSex)
         {
             Profile = Profile?.WithSex(newSex);
-            // for convenience, default to most common gender when new sex is selected
+            // for convenience, default to most common gender and voice when new sex is selected
             switch (newSex)
             {
                 case Sex.Male:
                     Profile = Profile?.WithGender(Gender.Male);
+                    Profile = Profile?.WithVoice(Sex.Male); // TheDen - Add Voice
                     break;
                 case Sex.Female:
                     Profile = Profile?.WithGender(Gender.Female);
+                    Profile = Profile?.WithVoice(Sex.Female); // TheDen - Add Voice
                     break;
                 default:
                     Profile = Profile?.WithGender(Gender.Epicene);
+                    Profile = Profile?.WithVoice(Sex.Unsexed); // TheDen - Add Voice
                     break;
             }
             UpdateGenderControls();
             Markings.SetSex(newSex);
             ReloadProfilePreview();
             SetDirty();
+        }
+
+        // TheDen - Add Voice
+        private void SetVoice(Sex newVoice)
+        {
+            Profile = Profile?.WithVoice(newVoice);
+            ReloadPreview();
+            IsDirty = true;
         }
 
         private void SetGender(Gender newGender)
@@ -1533,6 +1681,9 @@ namespace Content.Client.Lobby.UI
         {
             Profile = Profile?.WithName(newName);
             IsDirty = true;
+
+            if (Profile != null)
+                _entManager.System<MetaDataSystem>().SetEntityName(PreviewDummy, Profile.Name);
         }
 
         private void SetCustomSpecieName(string customname)
@@ -1550,14 +1701,14 @@ namespace Content.Client.Lobby.UI
         private void SetProfileHeight(float height)
         {
             Profile = Profile?.WithHeight(height);
-            IsDirty = true;
+            SetDirty();
             ReloadProfilePreview();
         }
 
         private void SetProfileWidth(float width)
         {
             Profile = Profile?.WithWidth(width);
-            IsDirty = true;
+            SetDirty();
             ReloadProfilePreview();
         }
 
@@ -1635,6 +1786,26 @@ namespace Content.Client.Lobby.UI
                 SexButton.SelectId((int) sexes[0]);
         }
 
+        // TheDen - Add Voice
+        private void UpdateVoiceControls()
+        {
+            if (Profile == null)
+                return;
+
+            if (Profile == null)
+                return;
+
+            VoiceButton.Clear();
+
+            var sexes = new List<Sex>([Sex.Male, Sex.Female, Sex.Unsexed]);
+
+            // Add button for each voice
+            foreach (var sex in sexes)
+                VoiceButton.AddItem(Loc.GetString($"humanoid-profile-editor-sex-{sex.ToString().ToLower()}-text"), (int) sex);
+
+            VoiceButton.SelectId((int) Profile.PreferredVoice);
+        }
+
         private void UpdateSkinColor()
         {
             if (Profile == null)
@@ -1645,52 +1816,52 @@ namespace Content.Client.Lobby.UI
             switch (skin)
             {
                 case HumanoidSkinColor.HumanToned:
-                {
-                    if (!Skin.Visible)
                     {
-                        Skin.Visible = true;
-                        RgbSkinColorContainer.Visible = false;
-                    }
+                        if (!Skin.Visible)
+                        {
+                            Skin.Visible = true;
+                            RgbSkinColorContainer.Visible = false;
+                        }
 
-                    Skin.Value = SkinColor.HumanSkinToneFromColor(Profile.Appearance.SkinColor);
-                    break;
-                }
+                        Skin.Value = SkinColor.HumanSkinToneFromColor(Profile.Appearance.SkinColor);
+                        break;
+                    }
                 case HumanoidSkinColor.Hues:
-                {
-                    if (!RgbSkinColorContainer.Visible)
                     {
-                        Skin.Visible = false;
-                        RgbSkinColorContainer.Visible = true;
-                    }
+                        if (!RgbSkinColorContainer.Visible)
+                        {
+                            Skin.Visible = false;
+                            RgbSkinColorContainer.Visible = true;
+                        }
 
-                    // Set the RGB values to the direct values otherwise
-                    _rgbSkinColorSelector.Color = Profile.Appearance.SkinColor;
-                    break;
-                }
+                        // Set the RGB values to the direct values otherwise
+                        _rgbSkinColorSelector.Color = Profile.Appearance.SkinColor;
+                        break;
+                    }
                 case HumanoidSkinColor.TintedHues:
-                {
-                    if (!RgbSkinColorContainer.Visible)
                     {
-                        Skin.Visible = false;
-                        RgbSkinColorContainer.Visible = true;
-                    }
+                        if (!RgbSkinColorContainer.Visible)
+                        {
+                            Skin.Visible = false;
+                            RgbSkinColorContainer.Visible = true;
+                        }
 
-                    // Set the RGB values to the direct values otherwise
-                    _rgbSkinColorSelector.Color = Profile.Appearance.SkinColor;
-                    break;
-                }
+                        // Set the RGB values to the direct values otherwise
+                        _rgbSkinColorSelector.Color = Profile.Appearance.SkinColor;
+                        break;
+                    }
                 case HumanoidSkinColor.VoxFeathers:
-                {
-                    if (!RgbSkinColorContainer.Visible)
                     {
-                        Skin.Visible = false;
-                        RgbSkinColorContainer.Visible = true;
+                        if (!RgbSkinColorContainer.Visible)
+                        {
+                            Skin.Visible = false;
+                            RgbSkinColorContainer.Visible = true;
+                        }
+
+                        _rgbSkinColorSelector.Color = SkinColor.ClosestVoxColor(Profile.Appearance.SkinColor);
+
+                        break;
                     }
-
-                    _rgbSkinColorSelector.Color = SkinColor.ClosestVoxColor(Profile.Appearance.SkinColor);
-
-                    break;
-                }
                 case HumanoidSkinColor.AnimalFur: // Einstein Engines - Tajaran
                     {
                         if (!RgbSkinColorContainer.Visible)
@@ -1702,7 +1873,7 @@ namespace Content.Client.Lobby.UI
                         _rgbSkinColorSelector.Color = SkinColor.ClosestAnimalFurColor(Profile.Appearance.SkinColor);
 
                         break;
-                }
+                    }
                 case HumanoidSkinColor.HumanAnimal:
                     {
                         SkinFurToggle.Visible = true;
@@ -1754,6 +1925,7 @@ namespace Content.Client.Lobby.UI
                 return;
 
             PronounsButton.SelectId((int) Profile.Gender);
+            VoiceButton.SelectId((int) Profile.PreferredVoice); // TheDen - Add Voice
         }
 
         private void UpdateDisplayPronounsControls()
@@ -1794,15 +1966,15 @@ namespace Content.Client.Lobby.UI
                 return;
 
             var newName = Profile.CyborgName ?? string.Empty;
-            
+
             if (newName != CyborgNameEdit.Text)
                 CyborgNameEdit.Text = newName;
 
             if (CyborgNameEdit.Text != string.Empty)
                 return;
 
-            var borgNames = _prototypeManager.Index<DatasetPrototype>(CyborgNames);
-            var randomName = _random.Pick(borgNames.Values);
+            var borgNames = _prototypeManager.Index<LocalizedDatasetPrototype>(CyborgNames);
+            var randomName = _random.Pick(borgNames);
             CyborgNameEdit.PlaceHolder = Loc.GetString(randomName);
         }
 
@@ -1829,12 +2001,7 @@ namespace Content.Client.Lobby.UI
             WidthSlider.MaxValue = species.MaxWidth;
             WidthSlider.SetValueWithoutEvent(Profile?.Width ?? species.DefaultWidth);
 
-            var height = MathF.Round(species.AverageHeight * HeightSlider.Value);
-            HeightLabel.Text = Loc.GetString("humanoid-profile-editor-height-label", ("height", (int) height));
-
-            var width = MathF.Round(species.AverageWidth * WidthSlider.Value);
-            WidthLabel.Text = Loc.GetString("humanoid-profile-editor-width-label", ("width", (int) width));
-
+            UpdateHeightWidthSliderLabels(species);
             UpdateDimensions(SliderUpdate.Both);
         }
 
@@ -1873,14 +2040,24 @@ namespace Content.Client.Lobby.UI
 
             SetProfileHeight(heightValue);
             SetProfileWidth(widthValue);
+            UpdateHeightWidthSliderLabels(species);
+            UpdateWeight();
+        }
 
+        private void UpdateHeightWidthSliderLabels(SpeciesPrototype species)
+        {
             var height = MathF.Round(species.AverageHeight * HeightSlider.Value);
-            HeightLabel.Text = Loc.GetString("humanoid-profile-editor-height-label", ("height", (int) height));
+            var (heightFt, heightIn) = CentimetersToFeetAndInches(height);
+            HeightLabel.Text = Loc.GetString("humanoid-profile-editor-height-label",
+                ("height", (int) height),
+                ("feet", heightFt),
+                ("inches", heightIn));
 
             var width = MathF.Round(species.AverageWidth * WidthSlider.Value);
-            WidthLabel.Text = Loc.GetString("humanoid-profile-editor-width-label", ("width", (int) width));
-
-            UpdateWeight();
+            var widthIn = CentimetersToInches(width);
+            WidthLabel.Text = Loc.GetString("humanoid-profile-editor-width-label",
+                ("width", (int) width),
+                ("inches", (int) widthIn));
         }
 
         private void UpdateWeight()
@@ -1891,18 +2068,26 @@ namespace Content.Client.Lobby.UI
             var species = _species.Find(x => x.ID == Profile.Species) ?? _species.First();
             _prototypeManager.Index(species.Prototype).TryGetComponent<FixturesComponent>(out var fixture);
 
+            // Arbitrary average weight given
+            var weight = 71.0f;
             if (fixture != null)
             {
                 var radius = fixture.Fixtures["fix1"].Shape.Radius;
                 var density = fixture.Fixtures["fix1"].Density;
                 var avg = (Profile.Width + Profile.Height) / 2;
-                var weight = MathF.Round(MathF.PI * MathF.Pow(radius * avg, 2) * density);
-                WeightLabel.Text = Loc.GetString("humanoid-profile-editor-weight-label", ("weight", (int) weight));
+                weight = MathF.Round(MathF.PI * MathF.Pow(radius * avg, 2) * density);
             }
-            else // Whelp, the fixture doesn't exist, guesstimate it instead
-                WeightLabel.Text = Loc.GetString("humanoid-profile-editor-weight-label", ("weight", (int) 71));
 
+            UpdateWeightLabel(weight);
             SpriteView.InvalidateMeasure();
+        }
+
+        private void UpdateWeightLabel(float weight)
+        {
+            var pounds = KilogramsToPounds(weight);
+            WeightLabel.Text = Loc.GetString("humanoid-profile-editor-weight-label",
+                ("weight", (int) weight),
+                ("pounds", (int) pounds));
         }
 
         private void UpdateHairPickers()
@@ -1939,7 +2124,7 @@ namespace Content.Client.Lobby.UI
 
             // hair color
             Color? hairColor = null;
-            if ( Profile.Appearance.HairStyleId != HairStyles.DefaultHairStyle &&
+            if (Profile.Appearance.HairStyleId != HairStyles.DefaultHairStyle &&
                 _markingManager.Markings.TryGetValue(Profile.Appearance.HairStyleId, out var hairProto))
             {
                 if (_markingManager.CanBeApplied(Profile.Species, Profile.Sex, hairProto, _prototypeManager))
@@ -1963,7 +2148,7 @@ namespace Content.Client.Lobby.UI
 
             // Facial hair color
             Color? facialHairColor = null;
-            if ( Profile.Appearance.FacialHairStyleId != HairStyles.DefaultFacialHairStyle &&
+            if (Profile.Appearance.FacialHairStyleId != HairStyles.DefaultFacialHairStyle &&
                 _markingManager.Markings.TryGetValue(Profile.Appearance.FacialHairStyleId, out var facialHairProto))
             {
                 if (_markingManager.CanBeApplied(Profile.Species, Profile.Sex, facialHairProto, _prototypeManager))
@@ -2007,6 +2192,18 @@ namespace Content.Client.Lobby.UI
             SpriteView.OverrideDirection = (Direction) ((int) direction % 4 * 2);
         }
 
+        private void RandomizeBody()
+        {
+            if (Profile == null)
+            {
+                return;
+            }
+
+            Profile = HumanoidCharacterProfile.RandomBody(Profile);
+            SetProfile(Profile, CharacterSlot);
+            SetDirty();
+        }
+
         private void RandomizeName()
         {
             if (Profile == null)
@@ -2014,8 +2211,22 @@ namespace Content.Client.Lobby.UI
             var name = HumanoidCharacterProfile.GetName(Profile.Species, Profile.Gender);
             SetName(name);
             UpdateNameEdit();
+
+            Records.Update(Profile); // CD - Character Records
         }
 
+        private async void ExportImage()
+        {
+            if (_imaging)
+                return;
+
+            var dir = SpriteView.OverrideDirection ?? Direction.South;
+
+            // I tried disabling the button but it looks sorta goofy as it only takes a frame or two to save
+            _imaging = true;
+            await _entManager.System<ContentSpriteSystem>().Export(PreviewDummy, dir, includeId: false);
+            _imaging = false;
+        }
         private async void ImportProfile()
         {
             if (_exporting || CharacterSlot == null || Profile == null)
@@ -2113,7 +2324,7 @@ namespace Content.Client.Lobby.UI
                     continue;
 
                 points += preferenceSelector.Trait.Points;
-                _traitCount += 1;
+                _traitCount += preferenceSelector.Trait.Slots;
             }
 
             TraitPointsBar.Value = points;
@@ -2152,7 +2363,6 @@ namespace Content.Client.Lobby.UI
             {
                 foreach (var tab in TraitsTabs.Tabs)
                     TraitsTabs.RemoveTab(tab);
-                _loadoutPreferences.Clear();
             }
 
 
@@ -2336,7 +2546,7 @@ namespace Content.Client.Lobby.UI
                     // Make sure they have enough trait points
                     preference = CheckPoints(preference ? selector.Trait.Points : -selector.Trait.Points, preference);
                     // Make sure they have enough trait slots
-                    preference = preference ? _traitCount < _cfgManager.GetCVar(CCVars.GameTraitsMax) : preference;
+                    preference = CheckSlots(preference ? selector.Trait.Slots : -selector.Trait.Slots, preference);
 
                     // Update Preferences
                     Profile = Profile?.WithTraitPreference(selector.Trait.ID, preference);
@@ -2350,6 +2560,13 @@ namespace Content.Client.Lobby.UI
             {
                 var temp = TraitPointsBar.Value + points;
                 return preference ? !(temp < 0) : temp < 0;
+            }
+
+            bool CheckSlots(int slots, bool preference)
+            {
+                var temp = _traitCount + slots;
+                var max = _cfgManager.GetCVar(CCVars.GameTraitsMax);
+                return preference ? !(temp > max) : temp > max;
             }
         }
 
@@ -2418,338 +2635,31 @@ namespace Content.Client.Lobby.UI
 
         #region Loadouts
 
-        #region Updates
-
-        private void UpdateLoadoutPreferences()
+        public void UpdateLoadouts(bool reload = false)
         {
-            var points = _cfgManager.GetCVar(CCVars.GameLoadoutsPoints);
-            LoadoutPointsBar.Value = points;
-            LoadoutPointsLabel.Text = Loc.GetString("humanoid-profile-editor-loadouts-points-label", ("points", points), ("max", points));
+            if (reload)
+                LoadoutsTab.Reset();
 
-            foreach (var preferenceSelector in _loadoutPreferences)
-            {
-                var loadoutId = preferenceSelector.Loadout.ID;
-                var loadoutPreference = Profile?.LoadoutPreferences.FirstOrDefault(l => l.LoadoutName == loadoutId) ?? preferenceSelector.Preference;
-                var preference = new LoadoutPreference(
-                    loadoutPreference.LoadoutName,
-                    loadoutPreference.CustomName,
-                    loadoutPreference.CustomDescription,
-                    loadoutPreference.CustomColorTint,
-                    loadoutPreference.CustomHeirloom)
-                    { Selected = loadoutPreference.Selected };
-
-                preferenceSelector.Preference = preference;
-
-                if (preference.Selected)
-                {
-                    points -= preferenceSelector.Loadout.Cost;
-                    LoadoutPointsBar.Value = points;
-                    LoadoutPointsLabel.Text = Loc.GetString("humanoid-profile-editor-loadouts-points-label", ("points", points), ("max", LoadoutPointsBar.MaxValue));
-                }
-            }
-
-            // Set the remove unusable button's label to have the correct amount of unusable loadouts
-            LoadoutsRemoveUnusableButton.Text = Loc.GetString("humanoid-profile-editor-loadouts-remove-unusable-button",
-                ("count", _loadouts
-                    .Where(l => _loadoutPreferences
-                        .Where(lps => lps.Preference.Selected).Select(lps => lps.Loadout).Contains(l.Key))
-                    .Count(l => !l.Value
-                        || !_loadoutPreferences.First(lps => lps.Loadout == l.Key).Wearable)));
-            AdminUIHelpers.RemoveConfirm(LoadoutsRemoveUnusableButton, _confirmationData);
-
-            IsDirty = true;
+            LoadoutsTab.SetProfile(Profile);
             ReloadProfilePreview();
         }
 
-        private Dictionary<LoadoutPrototype, bool> _loadouts = new();
-        private Dictionary<string, EntityUid> _dummyLoadouts = new();
-        public void UpdateLoadouts(bool? showUnusable = null, bool reload = false)
+        private void SelectLoadout(LoadoutPreference preference)
         {
-            showUnusable ??= LoadoutsShowUnusableButton.Pressed;
-
-            // Reset loadout points so you don't get -14 points or something for no reason
-            var points = _cfgManager.GetCVar(CCVars.GameLoadoutsPoints);
-            LoadoutPointsLabel.Text = Loc.GetString("humanoid-profile-editor-loadouts-points-label", ("points", points), ("max", points));
-            LoadoutPointsBar.MaxValue = points;
-            LoadoutPointsBar.Value = points;
-
-            // Reset the whole UI and delete caches
-            if (reload)
-            {
-                foreach (var tab in LoadoutsTabs.Tabs)
-                    LoadoutsTabs.RemoveTab(tab);
-                foreach (var uid in _dummyLoadouts)
-                    _entManager.QueueDeleteEntity(uid.Value);
-                _loadoutPreferences.Clear();
-            }
-
-
-            // Get the highest priority job to use for loadout filtering
-            var highJob = _controller.GetPreferredJob(Profile ?? HumanoidCharacterProfile.DefaultWithSpecies());
-
-            _loadouts.Clear();
-            foreach (var loadout in _prototypeManager.EnumeratePrototypes<LoadoutPrototype>())
-            {
-                var usable = _characterRequirementsSystem.CheckRequirementsValid(
-                    loadout.Requirements,
-                    highJob ?? new JobPrototype(),
-                    Profile ?? HumanoidCharacterProfile.DefaultWithSpecies(),
-                    _requirements.GetRawPlayTimeTrackers(),
-                    _requirements.IsWhitelisted(),
-                    loadout,
-                    _entManager,
-                    _prototypeManager,
-                    _cfgManager,
-                    out _
-                );
-                _loadouts.Add(loadout, usable);
-
-                var list = _loadoutPreferences.ToList();
-                if (list.FindIndex(lps => lps.Loadout.ID == loadout.ID) is not (not -1 and var i))
-                    continue;
-
-                var selector = list[i];
-                UpdateSelector(selector, usable);
-            }
-
-            if (_loadouts.Count == 0)
-            {
-                LoadoutsTabs.AddTab(new Label { Text = Loc.GetString("humanoid-profile-editor-loadouts-no-loadouts") },
-                    Loc.GetString("loadout-category-Uncategorized"));
-                return;
-            }
-
-
-            var uncategorized = LoadoutsTabs.Contents.FirstOrDefault(c => c.Name == "Uncategorized");
-            if (uncategorized == null)
-            {
-                uncategorized = new BoxContainer
-                {
-                    Name = "Uncategorized",
-                    Orientation = LayoutOrientation.Vertical,
-                    HorizontalExpand = true,
-                    VerticalExpand = true,
-                    // I hate ScrollContainers
-                    Children =
-                    {
-                        new ScrollContainer
-                        {
-                            HScrollEnabled = false,
-                            HorizontalExpand = true,
-                            VerticalExpand = true,
-                            Children =
-                            {
-                                new BoxContainer
-                                {
-                                    Orientation = LayoutOrientation.Vertical,
-                                    HorizontalExpand = true,
-                                    VerticalExpand = true,
-                                },
-                            },
-                        },
-                    },
-                };
-
-                LoadoutsTabs.AddTab(uncategorized, Loc.GetString("loadout-category-Uncategorized"));
-            }
-
-            // Create a Dictionary/tree of categories and subcategories
-            var cats = CreateTree(_prototypeManager.EnumeratePrototypes<LoadoutCategoryPrototype>()
-                .Where(c => c.Root)
-                .OrderBy(c => Loc.GetString($"loadout-category-{c.ID}"))
-                .ToList());
-            var categories = new Dictionary<string, object>();
-            foreach (var (key, value) in cats)
-                categories.Add(key, value);
-
-            // Create the UI elements for the category tree
-            CreateCategoryUI(categories, LoadoutsTabs);
-
-            // Fill categories with loadouts
-            foreach (var (loadout, usable) in _loadouts
-                .OrderBy(l => l.Key.ID)
-                .ThenBy(l => Loc.GetString($"loadout-name-{l.Key.ID}"))
-                .ThenBy(l => l.Key.Cost))
-            {
-                if (_loadoutPreferences.Select(lps => lps.Loadout.ID).Contains(loadout.ID))
-                {
-                    var first = _loadoutPreferences.First(lps => lps.Loadout.ID == loadout.ID);
-                    var prof = Profile?.LoadoutPreferences.FirstOrDefault(lp => lp.LoadoutName == loadout.ID);
-                    first.Preference = new(loadout.ID, prof?.CustomName, prof?.CustomDescription, prof?.CustomColorTint, prof?.CustomHeirloom);
-                    UpdateSelector(first, usable);
-                    continue;
-                }
-
-                var selector = new LoadoutPreferenceSelector(
-                    loadout, highJob ?? new JobPrototype(),
-                    Profile ?? HumanoidCharacterProfile.DefaultWithSpecies(), ref _dummyLoadouts,
-                    _entManager, _prototypeManager, _cfgManager, _characterRequirementsSystem, _requirements)
-                    { Preference = new(loadout.ID) };
-                UpdateSelector(selector, usable);
-                AddSelector(selector);
-
-                // Look for an existing category tab
-                var match = FindCategory(loadout.Category, LoadoutsTabs);
-
-                // If there is no category put it in Uncategorized (this shouldn't happen)
-                (match ?? uncategorized).Children.First().Children.First().AddChild(selector);
-            }
-
-            // Hide any empty tabs
-            HideEmptyTabs(_prototypeManager.EnumeratePrototypes<LoadoutCategoryPrototype>().ToList());
-
-            UpdateLoadoutPreferences();
-            return;
-
-
-            void UpdateSelector(LoadoutPreferenceSelector selector, bool usable)
-            {
-                selector.Valid = usable;
-                selector.ShowUnusable = showUnusable.Value;
-
-                foreach (var item in selector.Loadout.Items)
-                {
-                    if (_dummyLoadouts.TryGetValue(selector.Loadout.ID + selector.Loadout.Items.IndexOf(item), out var entity)
-                        && _entManager.GetComponent<MetaDataComponent>(entity).EntityPrototype!.ID == item)
-                    {
-                        if (!_entManager.HasComponent<ClothingComponent>(entity))
-                        {
-                            selector.Wearable = true;
-                            continue;
-                        }
-                        selector.Wearable = _characterRequirementsSystem.CanEntityWearItem(PreviewDummy, entity);
-                        continue;
-                    }
-
-                    entity = _entManager.SpawnEntity(item, MapCoordinates.Nullspace);
-                    _dummyLoadouts[selector.Loadout.ID + selector.Loadout.Items.IndexOf(item)] = entity;
-
-                    if (!_entManager.HasComponent<ClothingComponent>(entity))
-                    {
-                        selector.Wearable = true;
-                        continue;
-                    }
-                    selector.Wearable = _characterRequirementsSystem.CanEntityWearItem(PreviewDummy, entity);
-                }
-            }
-
-            void CreateCategoryUI(Dictionary<string, object> tree, NeoTabContainer parent)
-            {
-                foreach (var (key, value) in tree)
-                {
-                    // If the category's container exists already, ignore it
-                    if (parent.Contents.Any(c => c.Name == key))
-                        continue;
-
-                    // If the value is a list of LoadoutPrototypes, create a final tab for them
-                    if (value is List<LoadoutPrototype>)
-                    {
-                        var category = new BoxContainer
-                        {
-                            Name = key,
-                            Orientation = LayoutOrientation.Vertical,
-                            HorizontalExpand = true,
-                            VerticalExpand = true,
-                            Children =
-                            {
-                                new ScrollContainer
-                                {
-                                    HScrollEnabled = false,
-                                    HorizontalExpand = true,
-                                    VerticalExpand = true,
-                                    Children =
-                                    {
-                                        new BoxContainer
-                                        {
-                                            Orientation = LayoutOrientation.Vertical,
-                                            HorizontalExpand = true,
-                                            VerticalExpand = true,
-                                        },
-                                    },
-                                },
-                            },
-                        };
-
-                        parent.AddTab(category, Loc.GetString($"loadout-category-{key}"));
-                    }
-                    // If the value is a dictionary, create a new tab for it and recursively call this function to fill it
-                    else
-                    {
-                        var category = new NeoTabContainer
-                        {
-                            Name = key,
-                            HorizontalExpand = true,
-                            VerticalExpand = true,
-                            SeparatorMargin = new Thickness(0),
-                        };
-
-                        parent.AddTab(category, Loc.GetString($"loadout-category-{key}"));
-                        CreateCategoryUI((Dictionary<string, object>) value, category);
-                    }
-                }
-            }
-
-            void AddSelector(LoadoutPreferenceSelector selector)
-            {
-                _loadoutPreferences.Add(selector);
-                selector.PreferenceChanged += preference =>
-                {
-                    // Make sure they have enough loadout points
-                    var selected = preference.Selected
-                        ? CheckPoints(-selector.Loadout.Cost, preference.Selected)
-                        : CheckPoints(selector.Loadout.Cost, preference.Selected);
-
-                    // Update Preferences
-                    Profile = Profile?.WithLoadoutPreference(
-                        selector.Loadout.ID,
-                        selected,
-                        preference.CustomName,
-                        preference.CustomDescription,
-                        preference.CustomColorTint,
-                        preference.CustomHeirloom);
-                    IsDirty = true;
-                    UpdateLoadoutPreferences();
-                    SetProfile(Profile, CharacterSlot);
-                };
-            }
-
-            bool CheckPoints(int points, bool preference)
-            {
-                var temp = LoadoutPointsBar.Value + points;
-                return preference ? !(temp < 0) : temp < 0;
-            }
+            Profile = Profile?.WithLoadoutPreference(preference);
+            IsDirty = true;
+            SetProfile(Profile, CharacterSlot);
         }
 
-        #endregion
-
-        #region Functions
-
-        private Dictionary<string, object> CreateTree(List<LoadoutCategoryPrototype> cats)
+        private void RemoveUnusableLoadouts(List<LoadoutPrototype> loadouts)
         {
-            var tree = new Dictionary<string, object>();
-            foreach (var category in cats)
-            {
-                // If the category is already in the tree, ignore it
-                if (tree.ContainsKey(category.ID))
-                    continue;
+            foreach (var loadout in loadouts)
+                Profile = Profile?.WithLoadoutPreference(loadout.ID, false);
 
-                // Categories don't have a Parent field, so we need to instead check the SubCategories of every Category
-                var subCategories = category.SubCategories.Where(subCategory => !tree.ContainsKey(subCategory)).ToList();
-                // If there are no subcategories, add a loadout spot to the dictionary
-                if (subCategories.Count == 0)
-                {
-                    tree.Add(category.ID, new List<LoadoutPrototype>());
-                    continue;
-                }
-
-                // If there are subcategories, we need to add them to the dictionary as well
-                var subCategoryTree = CreateTree(subCategories.Select(c => _prototypeManager.Index(c)).ToList());
-                tree.Add(category.ID, subCategoryTree);
-            }
-
-            return tree;
+            UpdateCharacterRequired();
         }
 
+        // TODO: This one is redundant IRT loadouts, but traits still use them
         private BoxContainer? FindCategory(string id, NeoTabContainer parent)
         {
             BoxContainer? match = null;
@@ -2771,39 +2681,6 @@ namespace Content.Client.Lobby.UI
             return match;
         }
 
-        private void HideEmptyTabs(List<LoadoutCategoryPrototype> cats)
-        {
-            foreach (var tab in cats.Select(category => FindCategory(category.ID, LoadoutsTabs)))
-            {
-                // If it's empty, hide it
-                if (tab != null)
-                    ((NeoTabContainer) tab.Parent!.Parent!.Parent!.Parent!).SetTabVisible(tab, tab.Children.First().Children.First().Children.Any());
-
-                // If it has a parent tab container, hide it if it's empty
-                if (tab?.Parent?.Parent is NeoTabContainer parent)
-                {
-                    var parentCats = parent.Contents.Select(c => _prototypeManager.Index<LoadoutCategoryPrototype>(c.Name!)).ToList();
-                    HideEmptyTabs(parentCats);
-                }
-            }
-        }
-
-        private void TryRemoveUnusableLoadouts()
-        {
-            // Confirm the user wants to remove unusable loadouts
-            if (!AdminUIHelpers.TryConfirm(LoadoutsRemoveUnusableButton, _confirmationData))
-                return;
-
-            // Remove unusable and unwearable loadouts
-            foreach (var (loadout, _) in
-                _loadouts.Where(l =>
-                    !l.Value || !_loadoutPreferences.First(lps => lps.Loadout.ID == l.Key.ID).Wearable).ToList())
-                Profile = Profile?.WithLoadoutPreference(loadout.ID, false);
-            UpdateCharacterRequired();
-        }
-
-        #endregion
-
         #endregion
 
         private void UpdateCharacterRequired()
@@ -2813,7 +2690,33 @@ namespace Content.Client.Lobby.UI
             RefreshLifepaths();
             UpdateRoleRequirements();
             UpdateTraits(TraitsShowUnusableButton.Pressed);
-            UpdateLoadouts(LoadoutsShowUnusableButton.Pressed);
+            UpdateLoadouts();
+        }
+
+        private static (int feet, int inches) CentimetersToFeetAndInches(float centimeters)
+        {
+            var inchesPerFoot = 12;
+            var totalInches = CentimetersToInches(centimeters);
+            var feet = (int) (totalInches / inchesPerFoot);
+            var inches = (int) Math.Round(totalInches % inchesPerFoot);
+
+            if (inches == inchesPerFoot)
+            {
+                feet++;
+                inches = 0;
+            }
+
+            return (feet, inches);
+        }
+
+        private static float CentimetersToInches(float centimeters)
+        {
+            return centimeters * 0.393701f;
+        }
+
+        private static float KilogramsToPounds(float kilograms)
+        {
+            return kilograms * 2.20462f;
         }
     }
 }

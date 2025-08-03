@@ -1,0 +1,19 @@
+# SPDX-FileCopyrightText: 2024 Remuchi <72476615+Remuchi@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Rosycup <178287475+Rosycup@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
+- type: entity
+  id: RendingRunePlacementMarker
+  name: rending rune placement marker
+  description: Marker for rending rune placement. 5 should be enough for each map.
+  parent: MarkerBase
+  components:
+  - type: RendingRunePlacementMarker
+  - type: Sprite
+    sprite: Markers/jobs.rsi
+    layers:
+    - state: green
+    - sprite: _White/BloodCult/Entities/Runes/regular.rsi
+      state: revive

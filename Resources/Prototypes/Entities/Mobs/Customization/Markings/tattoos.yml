@@ -1,8 +1,27 @@
+# SPDX-FileCopyrightText: 2022 Scribbles0
+# SPDX-FileCopyrightText: 2022 T-Stalker
+# SPDX-FileCopyrightText: 2022 metalgearsloth
+# SPDX-FileCopyrightText: 2023 Adrian16199
+# SPDX-FileCopyrightText: 2023 Nairod
+# SPDX-FileCopyrightText: 2023 csqrb
+# SPDX-FileCopyrightText: 2024 FoxxoTrystan
+# SPDX-FileCopyrightText: 2024 Memeji
+# SPDX-FileCopyrightText: 2025 Blitz
+# SPDX-FileCopyrightText: 2025 M3739
+# SPDX-FileCopyrightText: 2025 Rosycup
+# SPDX-FileCopyrightText: 2025 Skubman
+# SPDX-FileCopyrightText: 2025 Tonk-GCR
+# SPDX-FileCopyrightText: 2025 VMSolidus
+# SPDX-FileCopyrightText: 2025 Zephyr
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
 - type: marking
   id: TattooHiveChest
   bodyPart: Chest
   markingCategory: Chest
-  speciesRestriction: [Human, Dwarf, Felinid, Oni, Shadowkin, Arachne, Lamia, Tajaran, Canid] # Delta V - Felinid, Oni; The Den - Canid
+  speciesRestriction: [Human, Dwarf, Felinid, Oni, Shadowkin, Arachne, Lamia, Tajaran, Canid, Kitsune] # Delta V - Felinid, Oni; The Den - Canid
   coloring:
     default:
       type:
@@ -16,7 +35,7 @@
   id: TattooNightlingChest
   bodyPart: Chest
   markingCategory: Chest
-  speciesRestriction: [Human, Dwarf, Felinid, Oni, Shadowkin, Arachne, Lamia, Tajaran, Canid] # Delta V - Felinid, Oni; The Den - Canid
+  speciesRestriction: [Human, Dwarf, Felinid, Oni, Shadowkin, Arachne, Lamia, Tajaran, Canid, Kitsune] # Delta V - Felinid, Oni; The Den - Canid
   coloring:
     default:
       type:
@@ -44,7 +63,7 @@
   id: TattooSilverburghLeftLeg
   bodyPart: LLeg
   markingCategory: LeftLeg
-  speciesRestriction: [Human, Dwarf, Felinid, Oni, Shadowkin, Tajaran, Canid] # Delta V - Felinid, Oni; The Den - Canid
+  speciesRestriction: [Human, Dwarf, Felinid, Oni, Shadowkin, Tajaran, Canid, Kitsune] # Delta V - Felinid, Oni; The Den - Canid
   coloring:
     default:
       type:
@@ -58,7 +77,7 @@
   id: TattooSilverburghRightLeg
   bodyPart: RLeg
   markingCategory: RightLeg
-  speciesRestriction: [Human, Dwarf, Felinid, Oni, Shadowkin, Tajaran, Canid] # Delta V - Felinid, Oni; The Den - Canid
+  speciesRestriction: [Human, Dwarf, Felinid, Oni, Shadowkin, Tajaran, Canid, Kitsune] # Delta V - Felinid, Oni; The Den - Canid
   coloring:
     default:
       type:
@@ -72,7 +91,7 @@
   id: TattooCampbellLeftArm
   bodyPart: LArm
   markingCategory: LeftArm
-  speciesRestriction: [Human, Dwarf, Felinid, Oni, Shadowkin, Arachne, Lamia, Tajaran, Canid] # Delta V - Felinid, Oni; The Den - Canid
+  speciesRestriction: [Human, Dwarf, Felinid, Oni, Shadowkin, Arachne, Lamia, Tajaran, Canid, Kitsune] # Delta V - Felinid, Oni; The Den - Canid
   coloring:
     default:
       type:
@@ -86,7 +105,7 @@
   id: TattooCampbellRightArm
   bodyPart: RArm
   markingCategory: RightArm
-  speciesRestriction: [Human, Dwarf, Felinid, Oni, Shadowkin, Arachne, Lamia, Tajaran, Canid] # Delta V - Felinid, Oni; The Den - Canid
+  speciesRestriction: [Human, Dwarf, Felinid, Oni, Shadowkin, Arachne, Lamia, Tajaran, Canid, Kitsune] # Delta V - Felinid, Oni; The Den - Canid
   coloring:
     default:
       type:
@@ -100,7 +119,7 @@
   id: TattooCampbellLeftLeg
   bodyPart: LLeg
   markingCategory: LeftLeg
-  speciesRestriction: [Human, Dwarf, Felinid, Oni, Shadowkin, Tajaran, Canid] # Delta V - Felinid, Oni; The Den - Canid
+  speciesRestriction: [Human, Dwarf, Felinid, Oni, Shadowkin, Tajaran, Canid, Kitsune] # Delta V - Felinid, Oni; The Den - Canid
   coloring:
     default:
       type:
@@ -114,7 +133,7 @@
   id: TattooCampbellRightLeg
   bodyPart: RLeg
   markingCategory: RightLeg
-  speciesRestriction: [Human, Dwarf, Felinid, Oni, Shadowkin, Tajaran, Canid] # Delta V - Felinid, Oni; The Den - Canid
+  speciesRestriction: [Human, Dwarf, Felinid, Oni, Shadowkin, Tajaran, Canid, Kitsune] # Delta V - Felinid, Oni; The Den - Canid
   coloring:
     default:
       type:
@@ -128,7 +147,7 @@
   id: TattooEyeRight
   bodyPart: Eyes
   markingCategory: Head
-  speciesRestriction: [Human, SlimePerson, Reptilian, Dwarf, Felinid, Oni, Harpy, Rodentia, Feroxi, Lamia, Plasmaman, Canid] # Delta V - Felinid, Oni, Harpy, Rodentia, Feroxi; The Den - Canid
+  speciesRestriction: [Human, SlimePerson, Reptilian, Dwarf, Felinid, Oni, Harpy, Rodentia, Feroxi, Lamia, Plasmaman, Canid, Kitsune, Vulpkanin] # Delta V - Felinid, Oni, Harpy, Rodentia, Feroxi; The Den - Canid; Funky - Vulpkanin
   coloring:
     default:
       type:
@@ -142,7 +161,7 @@
   id: TattooEyeLeft
   bodyPart: Eyes
   markingCategory: Head
-  speciesRestriction: [Human, SlimePerson, Reptilian, Dwarf, Felinid, Oni, Harpy, Rodentia, Feroxi, Lamia, Plasmaman, Canid] # Delta V - Felinid, Oni, Harpy, Rodentia, Feroxi; The Den - Canid
+  speciesRestriction: [Human, SlimePerson, Reptilian, Dwarf, Felinid, Oni, Harpy, Rodentia, Feroxi, Lamia, Plasmaman, Canid, Kitsune, Vulpkanin] # Delta V - Felinid, Oni, Harpy, Rodentia, Feroxi; The Den - Canid; Funky - Vulpkanin
   coloring:
     default:
       type:

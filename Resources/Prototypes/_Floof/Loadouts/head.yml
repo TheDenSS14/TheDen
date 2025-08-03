@@ -1,0 +1,205 @@
+# SPDX-FileCopyrightText: 2024 FoxxoTrystan <45297731+FoxxoTrystan@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 ShatteredSwords <135023515+ShatteredSwords@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Blitz <73762869+BlitzTheSquishy@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Rosycup <178287475+Rosycup@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
+# TheDen - loadout deduplication EE versions prefered over floof
+#- type: loadout
+#  id: LoadoutTacticalMaidHeadband
+#  category: Head
+#  cost: 1
+#  exclusive: true
+#  items:
+#    - ClothingHeadHatTacticalMaidHeadband
+#  requirements:
+#    - !type:CharacterDepartmentRequirement
+#       inverted: true
+#       departments:
+#         - Security
+#         - Command
+#    - !type:CharacterItemGroupRequirement
+#      group: LoadoutHead2
+
+- type: loadout
+  id: LoadoutHeadHatAnimalCat
+  category: Head
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingHeadHatAnimalCat
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutHead # TheDen
+
+- type: loadout
+  id: LoadoutHeadHatAnimalCatBrown
+  category: Head
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingHeadHatAnimalCatBrown
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutHead # TheDen
+
+- type: loadout
+  id: LoadoutHeadAnimalCatBlack
+  category: Head
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingHeadHatAnimalCatBlack
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutHead # TheDen
+
+- type: loadout
+  id: LoadoutHeadAnimalHeadslime
+  category: Head
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingHeadHatAnimalHeadslime
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutHead # TheDen
+
+- type: loadout
+  id: LoadoutHeadHatAnimalMonkey
+  category: Head
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingHeadHatAnimalMonkey
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutHead # TheDen
+
+# TheDen - loadout deduplication EE versions prefered over floof
+#- type: loadout
+#  id: LoadoutHeadHatWitch1
+#  category: Head
+#  cost: 0
+#  exclusive: true
+#  items:
+#    - ClothingHeadHatWitch1
+#  requirements:
+#    - !type:CharacterItemGroupRequirement
+#      group: LoadoutHead2
+
+- type: loadout
+  id: LoadoutHeadHatPlaguedoctor
+  category: Head
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingHeadHatPlaguedoctor
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutHead # TheDen
+
+- type: loadout
+  id: LoadoutHeadHatUshanka
+  category: Head
+  cost: 1 # TheDen - Gives an Accent
+  exclusive: true
+  items:
+    - ClothingHeadHatUshanka
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutHead # TheDen
+
+- type: loadout
+  id: LoadoutHeadHatWitch
+  category: Head
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingHeadHatWitch
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutHead # TheDen
+
+- type: loadout
+  id: LoadoutHeadHatTrucker
+  category: Head
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingHeadHatTrucker
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutHead # TheDen
+
+- type: loadout
+  id: LoadoutHeadPaperSack
+  category: Head
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingHeadPaperSack
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutHead # TheDen
+
+- type: loadout
+  id: LoadoutHeadHatFlowerWreath
+  category: Head
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingHeadHatFlowerWreath
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutHead # TheDen
+    - !type:CharacterSpeciesRequirement # TheDen - Sorry plasmamen, but this is to prevent you burning up on spawn :c
+      inverted: true
+      species:
+        - Plasmaman
+
+- type: loadout
+  id: LoadoutHeadHatSquid
+  category: Head
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingHeadHatSquid
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutHead # TheDen
+
+- type: loadout
+  id: LoadoutHeadHatRedRacoon
+  category: Head
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingHeadHatRedRacoon
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutHead # TheDen
+
+- type: loadout
+  id: LoadoutHeadHatDogEarsCosmetic
+  category: Head
+  cost: 1
+  exclusive: true
+  items:
+    - ClothingHeadHatDogEarsCosmetic
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutHead # TheDen
+
+- type: loadout
+  id: LoadoutHeadHatCatEarsCosmetic
+  category: Head
+  cost: 1
+  exclusive: true
+  items:
+    - ClothingHeadHatCatEarsCosmetic
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutHead # TheDen
