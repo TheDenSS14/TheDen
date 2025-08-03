@@ -1,9 +1,9 @@
-# SPDX-FileCopyrightText: 2024 Ed <96445749+TheShuEd@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 sleepyyapril <flyingkarii@gmail.com>
-# SPDX-FileCopyrightText: 2025 Hedera <185189451+Hederadaii@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 Rosycup <178287475+Rosycup@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Ed
+# SPDX-FileCopyrightText: 2024 slarticodefast
+# SPDX-FileCopyrightText: 2025 Hedera
+# SPDX-FileCopyrightText: 2025 Rosycup
+# SPDX-FileCopyrightText: 2025 portfiend
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -327,8 +327,8 @@
   id: BearCutletBurger
   name: food-sequence-burger-content-bear
   sprites:
-  - sprite: Objects/Consumable/Food/meat.rsi
-    state: cutlet-cooked
+  - sprite: _DEN/Objects/Consumable/Food/burger_sequence.rsi # DEN - Patty sprites
+    state: bearmeat
   tags:
   - Cooked
   - Cutlet
@@ -351,8 +351,8 @@
   id: PenguinCutletBurger
   name: food-sequence-burger-content-penguin
   sprites:
-  - sprite: Objects/Consumable/Food/meat.rsi
-    state: cutlet-cooked
+  - sprite: _DEN/Objects/Consumable/Food/burger_sequence.rsi # DEN - Patty sprites
+    state: birdmeat
   tags:
   - Cooked
   - Cutlet
@@ -384,6 +384,7 @@
   - Cooked
   - Cutlet
   - Meat
+  - Duck # DEN
 
 # Spider cutlet
 
@@ -402,8 +403,8 @@
   id: LizardCutletBurger
   name: food-sequence-burger-content-lizard
   sprites:
-  - sprite: Objects/Consumable/Food/meat.rsi
-    state: cutlet-cooked
+  - sprite: _DEN/Objects/Consumable/Food/burger_sequence.rsi # DEN - Patty sprites
+    state: lizardmeat
   tags:
   - Cooked
   - Cutlet
@@ -426,8 +427,8 @@
   id: SpiderCutletBurger
   name: food-sequence-burger-content-spider
   sprites:
-  - sprite: Objects/Consumable/Food/meat.rsi
-    state: spidercutlet-cooked
+  - sprite: _DEN/Objects/Consumable/Food/burger_sequence.rsi # DEN - Patty sprites
+    state: spidermeat
   tags:
   - Cooked
   - Cutlet
@@ -445,6 +446,7 @@
   - Cooked
   - Cutlet
   - Meat
+  - Xeno # DNE
 
 # Brain
 
@@ -506,17 +508,17 @@
   id: Cabbage
   name: food-sequence-content-cabbage
   sprites:
-  - sprite: Objects/Specific/Hydroponics/carrot.rsi
+  - sprite: Objects/Specific/Hydroponics/cabbage.rsi
     state: produce
   tags:
   - Vegetable
 
 - type: foodSequenceElement
   id: CabbageBurger
-  name: food-sequence-burger-content-cabbage
+  # name: food-sequence-burger-content-cabbage #DEN - No display text
   sprites:
-  - sprite: Objects/Specific/Hydroponics/cabbage.rsi
-    state: produce
+  - sprite: _DEN/Objects/Consumable/Food/burger_sequence.rsi # DEN sprite
+    state: leaf
   tags:
   - Vegetable
 

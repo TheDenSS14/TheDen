@@ -202,6 +202,7 @@
   id: LoadoutStationEngineerUniformsSuit
   category: JobsEngineeringStationEngineer
   cost: 0
+  exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutStationEngineerUniforms
@@ -215,6 +216,7 @@
   id: LoadoutStationEngineerUniformsSkirt
   category: JobsEngineeringStationEngineer
   cost: 0
+  exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutStationEngineerUniforms

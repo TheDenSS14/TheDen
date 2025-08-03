@@ -1,13 +1,29 @@
-# SPDX-FileCopyrightText: 2024 VMSolidus <evilexecutive@gmail.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 V
+# SPDX-FileCopyrightText: 2024 VMSolidus
+# SPDX-FileCopyrightText: 2025 M3739
+# SPDX-FileCopyrightText: 2025 Tabitha
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 # All Command
-#- type: characterItemGroup
-#  id: LoadoutCommandBackpacks
-#  maxItems: 1
-#  items:
+- type: characterItemGroup
+  id: LoadoutCommandBackpacks
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutCommandVeteranBackpack #Imp
+    - type: loadout
+      id: LoadoutCommandVeteranSatchel #Imp
+    - type: loadout
+      id: LoadoutCommandVeteranDuffel #Imp
+
+- type: characterItemGroup
+  id: LoadoutCommandTrinkets
+  maxItems: 3
+  items:
+    - type: loadout
+      id: DrinkCommandFlaskFull
 
 #- type: characterItemGroup
 #  id: LoadoutCommandBelt
@@ -57,10 +73,12 @@
 #  maxItems: 1
 #  items:
 
-#- type: characterItemGroup
-#  id: LoadoutCommandNeck
-#  maxItems: 1
-#  items:
+- type: characterItemGroup
+  id: LoadoutCommandNeck
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutCommandNeckNeckerchief # Floof - M3739 - #988
 
 #- type: characterItemGroup
 #  id: LoadoutCommandMask

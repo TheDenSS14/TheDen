@@ -8,40 +8,46 @@
 - type: loadout
   id: LoadoutClothingHandsEpiHeadWarmers
   category: JobsEpistemicsMystagogue
-  cost: 1
+  cost: 0
   exclusive: true
   items:
-  - ClothingHandsEpiHeadWarmers
+    - ClothingHandsEpiHeadWarmers
   requirements:
-  - !type:CharacterJobRequirement
-    jobs:
-    - ResearchDirector
+    - !type:CharacterJobRequirement
+      jobs:
+        - ResearchDirector
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMystagogueGloves
 
 - type: loadout
   id: LoadoutClothingUnderSocksEpiHead
   category: JobsEpistemicsMystagogue
-  cost: 1
+  cost: 0
   exclusive: true
   items:
-  - ClothingUnderSocksEpiHead
+    - ClothingUnderSocksEpiHead
   requirements:
-#  - !type:CharacterSpeciesRequirement - TheDen
-#    inverted: true
-#    species:
-#    - Diona
-#    - Harpy
-  - !type:CharacterJobRequirement
-    jobs:
-    - ResearchDirector
+    #- !type:CharacterSpeciesRequirement - TheDen
+    #  inverted: true
+    #  species:
+    #  - Diona
+    #  - Harpy
+    - !type:CharacterJobRequirement
+      jobs:
+        - ResearchDirector
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMystagogueShoes
 
 - type: loadout
   id: LoadoutClothingUniformEpiHeadThong
   category: JobsEpistemicsMystagogue
-  cost: 1
+  cost: 0
   exclusive: true
   items:
-  - ClothingUniformEpiHeadThong
+    - ClothingUniformEpiHeadThong
   requirements:
-  - !type:CharacterJobRequirement
-    jobs:
-    - ResearchDirector
+    - !type:CharacterJobRequirement
+      jobs:
+        - ResearchDirector
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMystagogueUniforms

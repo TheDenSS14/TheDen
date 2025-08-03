@@ -1,0 +1,62 @@
+<ui:StyledButtonGroup
+    xmlns="https://spacestation14.io"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:ui="clr-namespace:Content.Client.UserInterface.Controls"
+    Orientation="Horizontal"
+    HorizontalExpand="True"
+    HorizontalAlignment="Stretch"
+    SeparationOverride="1">
+    <ContainerButton
+        Name="ItemToggleButton"
+        HorizontalExpand="True"
+        ToggleMode="True"
+        StyleClasses="button">
+        <BoxContainer
+            HorizontalExpand="True"
+            VerticalExpand="True"
+            HorizontalAlignment="Stretch"
+            VerticalAlignment="Center"
+            Orientation="Horizontal"
+            SeparationOverride="5">
+            <Label
+                Name="CostLabel"
+                Text="0"
+                Align="Center"
+                StyleClasses="LabelHeading"
+                SetWidth="32"
+                ClipText="True"/>
+            <SpriteView
+                Name="PreviewSprite"
+                Scale="2.0, 2.0"
+                OverrideDirection="South"
+                VerticalAlignment="Center" />
+            <Label
+                Name="LoadoutNameLabel"
+                Margin="0 0 10 0" />
+        </BoxContainer>
+    </ContainerButton>
+
+    <ContainerButton
+        Name="GuidebookButton"
+        ToolTip="{Loc 'loadout-item-button-guidebook-tooltip'}"
+        VerticalExpand="True"
+        VerticalAlignment="Stretch"
+        Visible="False"
+        StyleClasses="button">
+        <TextureRect
+            Name="GuidebookButtonIcon"
+            TexturePath="/Textures/Interface/VerbIcons/information.svg.192dpi.png"
+            VerticalExpand="True"
+            VerticalAlignment="Stretch"
+            Stretch="KeepAspectCentered"
+            TextureScale="0.6 0.6"
+            Margin="0 5" />
+    </ContainerButton>
+
+    <Button
+        Name="CustomizeButton"
+        VerticalExpand="True"
+        VerticalAlignment="Stretch"
+        Text="{Loc loadout-item-button-customize-button}"
+        Visible="False" />
+</ui:StyledButtonGroup>

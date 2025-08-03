@@ -51,3 +51,24 @@ trait-description-Detritivore = Your hardy digestive system is well-equipped for
     Gastrotoxin and mold have no ill effects on you, and will restore your hunger.
     You can also digest uncooked animal proteins (raw meat) if you do not already have the ability
     to do so, and even rotting animal corpses will be safe for consumption.
+
+trait-name-VoxPidgin = Vox-Pidgin
+trait-description-VoxPidgin =
+    The common tongue of the various Vox ships making up the Shoal. It sounds like chaotic shrieking to everyone else.
+    The sounds in this language can only be produced by a Vox's unique Syrinx.
+    Note: [color=red]This trait only allows you to understand Vox-Pidgin. You will not be able to speak it.[/color]
+
+trait-name-SharpTeeth = Sharp Teeth
+trait-description-SharpTeeth =
+    You were born with or have had your teeth modified to be sharper.
+    These could come from gene modifications, a genetic legacy,
+    or even custom made implants designed to turn teeth into tiny knives.
+    Your unarmed melee attacks deal Piercing damage instead of the standard damage type for your species.
+    This has no effect on damage dealt with any form of armed melee.
+trait-name-HandsFreePulling = Hands Free Pulling
+trait-description-HandsFreePulling =
+    You were born with or have had your tail modified to be stronger than normal or have aquired
+    some sort of telekinesis that allows you to drag things around without your hands.
+    These could come from gene modifications, inherited genetics,
+    or even custom implantations or modifications.
+    You're able to drag things around without using your hands due to your abnormally strong tail or other modifications.

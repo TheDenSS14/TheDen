@@ -1,0 +1,73 @@
+# SPDX-FileCopyrightText: 2025 BlitzTheSquishy
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+# Gladiator
+#- type: characterItemGroup
+#  id: LoadoutGladiatorBackpacks
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutGladiatorBelt
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutGladiatorEars
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutGladiatorEquipment
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutGladiatorEyes
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutGladiatorGloves
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutGladiatorHead
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutGladiatorId
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutGladiatorNeck
+#  maxItems: 1
+#  items:
+#
+#- type: characterItemGroup
+#  id: LoadoutGladiatorMask
+#  maxItems: 1
+#  items:
+
+- type: characterItemGroup
+  id: LoadoutGladiatorOuter
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutGladiatorClothingOuterGladiatorArmor
+
+#- type: characterItemGroup
+#  id: LoadoutGladiatorShoes
+#  maxItems: 1
+#  items:
+
+- type: characterItemGroup
+  id: LoadoutGladiatorUniforms
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutGladiatorClothingUniformGladiator

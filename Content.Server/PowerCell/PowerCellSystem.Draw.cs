@@ -6,6 +6,7 @@
 // SPDX-FileCopyrightText: 2024 deltanedas
 // SPDX-FileCopyrightText: 2025 MajorMoth
 // SPDX-FileCopyrightText: 2025 VMSolidus
+// SPDX-FileCopyrightText: 2025 slarticodefast
 // SPDX-FileCopyrightText: 2025 sleepyyapril
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
@@ -40,7 +41,7 @@ public sealed partial class PowerCellSystem
             if (!TryGetBatteryFromSlot(uid, out var batteryEnt, out var battery, slot))
                 continue;
 
-            if (_battery.TryUseCharge(batteryEnt.Value, comp.DrawRate * (float) comp.Delay.TotalSeconds, battery)) // this fixes tcj's change which made the power draw of everything 30-60 times less
+            if (_battery.TryUseCharge(batteryEnt.Value, comp.DrawRate * (float)comp.Delay.TotalSeconds, battery))
                 continue;
 
             var ev = new PowerCellSlotEmptyEvent();

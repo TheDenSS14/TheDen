@@ -21,7 +21,7 @@
   mapName: 'Anvil'
   mapPath: /Maps/TheDen/anvil.yml
   minPlayers: 15
-  maxPlayers: 80
+  maxPlayers: 100 # The Den: we hit 80 and had no maps lmao
   stations:
     Anvil:
       stationProto: StandardNanotrasenStation
@@ -49,7 +49,9 @@
             ResearchDirector: [ 1, 1 ]
             Quartermaster: [ 1, 1 ]
             StationAi: [ 1, 1 ]
+            AdministrativeAssistant: [ 1, 1 ]
           #engineering
+            SeniorEngineer: [ 2, 2]
             AtmosphericTechnician: [ 2, 2 ]
             StationEngineer: [ 3, 5 ]
             TechnicalAssistant: [ 2, 3 ]

@@ -13,3 +13,22 @@
         - Logistics
   items:
     - TowelColorLightBrown
+
+- type: loadout
+  id: LoadoutBackpackMessengerCargo
+  category: JobsLogisticsAUncategorized
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingBackpackMessengerCargo
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutLogisticsBackpacks
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Logistics
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - SalvageSpecialist # For salvage recognizibility
+        - Quartermaster # LO has a LO specific variant

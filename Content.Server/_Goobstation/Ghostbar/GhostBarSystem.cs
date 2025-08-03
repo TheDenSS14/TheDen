@@ -1,8 +1,8 @@
-// SPDX-FileCopyrightText: 2024 Errant <35878406+Errant-4@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 Falcon <falcon@zigtag.dev>
-// SPDX-FileCopyrightText: 2025 Skubman <ba.fallaria@gmail.com>
-// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 sleepyyapril <flyingkarii@gmail.com>
+// SPDX-FileCopyrightText: 2024 Errant
+// SPDX-FileCopyrightText: 2025 Falcon
+// SPDX-FileCopyrightText: 2025 Skubman
+// SPDX-FileCopyrightText: 2025 portfiend
+// SPDX-FileCopyrightText: 2025 sleepyyapril
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -62,8 +62,11 @@ public sealed class GhostBarSystem : EntitySystem
     private ResPath MapPath = new("Maps/_Goobstation/Nonstations/ghostbar.yml");
     private void OnRoundStart(RoundStartingEvent ev)
     {
-        if (_mapLoader.TryLoadMap(MapPath, out var mapId, out _))
-            _mapSystem.SetPaused((mapId.Value.Owner, null), false);
+        if (!_mapLoader.TryLoadMap(MapPath, out var mapId, out _))
+            return;
+
+        _mapSystem.SetPaused((mapId.Value.Owner, null), false);
+        _mapSystem.InitializeMap(mapId.Value.Comp.MapId);
     }
 
     public void SpawnPlayer(GhostBarSpawnEvent msg, EntitySessionEventArgs args)

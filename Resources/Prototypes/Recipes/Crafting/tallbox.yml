@@ -1,6 +1,7 @@
-# SPDX-FileCopyrightText: 2023 iacore <74560659+iacore@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 SimpleStation14 <130339894+SimpleStation14@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 iacore
+# SPDX-FileCopyrightText: 2024 SimpleStation14
+# SPDX-FileCopyrightText: 2025 lzk
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -24,6 +25,17 @@
   category: construction-category-storage
   description: A tall steel box that can be locked.
   icon: { sprite: Structures/Storage/closet.rsi, state: secure_icon }
+  objectType: Structure
+
+- type: construction
+  id: ClosetFreezer
+  name: freezer
+  graph: ClosetFreezer
+  startNode: start
+  targetNode: done
+  category: construction-category-storage
+  description: A tall steel box with freezing abilities.
+  icon: { sprite: Structures/Storage/closet.rsi, state: freezer_icon }
   objectType: Structure
 
 - type: construction

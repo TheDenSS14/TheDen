@@ -57,7 +57,7 @@ loadout-category-JobsEpistemicsGolemancer = Roboticist
 loadout-category-JobsEpistemicsMystagogue = Mystagogue
 loadout-category-JobsEpistemicsMystic = Senior Researcher
 loadout-category-JobsEpistemicsNoviciate = Research Assistant
-loadout-category-JobsEpistemicsPsionicMantis = Psionic Mantis
+loadout-category-JobsEpistemicsPsionicMantis = Mantis
 
 # Logistics
 loadout-category-JobsLogistics = Logistics
@@ -85,6 +85,7 @@ loadout-category-JobsSecurityCadet = Cadet
 loadout-category-JobsSecurityCorpsman = Corpsman
 loadout-category-JobsSecurityDetective = Detective
 loadout-category-JobsSecurityHeadOfSecurity = Head of Security
+loadout-category-JobsSecurityPrisonGuard = Prison Guard
 loadout-category-JobsSecuritySecurityOfficer = Security Officer
 loadout-category-JobsSecuritySeniorOfficer = Senior Officer
 loadout-category-JobsSecurityWarden = Warden
@@ -94,18 +95,22 @@ loadout-category-JobsService = Service
 loadout-category-JobsServiceAUncategorized = All Service
 loadout-category-JobsServiceBartender = Bartender
 loadout-category-JobsServiceBotanist = Botanist
+loadout-category-JobsServiceBoxer = Boxer
 loadout-category-JobsServiceChef = Chef
 loadout-category-JobsServiceClown = Clown
 loadout-category-JobsServiceJanitor = Janitor
 loadout-category-JobsServiceLawyer = Lawyer
+loadout-category-JobsServiceMartialArtist = Martial Artist
 loadout-category-JobsServiceMime = Mime
 loadout-category-JobsServiceMusician = Musician
 loadout-category-JobsServiceReporter = Reporter
+loadout-category-JobsServiceZookeeper = Zookeeper
 
 # Misc
 loadout-category-JobsZMisc = Misc
 loadout-category-JobsZMiscAUncategorized = All Misc
 loadout-category-JobsZMiscPrisoner = Prisoner
+loadout-category-JobsZMiscGladiator = Gladiator
 
 loadout-category-Mask = Mask
 loadout-category-Neck = Neck

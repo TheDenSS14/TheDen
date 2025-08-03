@@ -1,16 +1,55 @@
-# SPDX-FileCopyrightText: 2023 Adrian16199 <144424013+Adrian16199@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2023 Fluffiest Floofers <thebluewulf@gmail.com>
-# SPDX-FileCopyrightText: 2024 SimpleStation14 <130339894+SimpleStation14@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 Blitz <73762869+BlitzTheSquishy@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 M3739 <47579354+M3739@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 Rosycup <178287475+Rosycup@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 Tabitha <64847293+KyuPolaris@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 mart <martgitomen@gmail.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Adrian16199
+# SPDX-FileCopyrightText: 2023 Fluffiest Floofers
+# SPDX-FileCopyrightText: 2024 SimpleStation14
+# SPDX-FileCopyrightText: 2025 Blitz
+# SPDX-FileCopyrightText: 2025 M3739
+# SPDX-FileCopyrightText: 2025 Rosycup
+# SPDX-FileCopyrightText: 2025 Tabitha
+# SPDX-FileCopyrightText: 2025 mart
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 # species
+
+- type: emoteSounds
+  id: SoundsHarpyExclusive
+  params:
+    variation: 0.125
+  sounds:
+    Scream:
+      collection: HarpyScreams
+    Yawn:
+      collection: MaleYawn
+    Laugh:
+      collection: HarpyLaugh
+    Sneeze:
+      collection: MaleSneezes
+    Cough:
+      collection: MaleCoughs
+    Sigh:
+      collection: MaleSigh
+    Crying:
+      collection: HarpyCry
+    Whistle:
+      collection: Whistles
+    Purr:
+      collection: HarpyPurrs
+    Honk:
+      collection: HarpyHonks
+    HarpyPew:
+      collection: HarpyPews
+    HarpyBang:
+      collection: HarpyBangs
+    HarpyRev:
+      collection: HarpyRevs
+    HarpyCaw:
+      collection: HarpyCaws
+    HarpyHoot:
+      collection: HarpyHoots
+    Chirp:
+      collection: HarpyChirps
+
 - type: emoteSounds
   id: SoundsHarpy
   params:
@@ -78,6 +117,8 @@
       collection: HarpyHoots
     Chirp:
       collection: HarpyChirps
+    Coo:
+      path: /Audio/_DEN/avali_coo.ogg
     Snarl:
       collection: VulpkaninSnarls
     Bark:
@@ -394,6 +435,12 @@
       collection: VulpkaninGekker
     Yap:
       collection: VulpkaninYap
+    Howl:
+      collection: VulpkaninHowls
+    Awoo:
+      collection: VulpkaninHowls
+    Bark:
+      collection: VulpkaninBarks
 #    Gasp: | Floof - M3739 - #937 - We do not have these... yet.
 #      collection: MaleGasp
 #    DefaultDeathgasp: 
@@ -438,6 +485,12 @@
       collection: Yip
     Yap:
       collection: VulpkaninYap
+    Howl:
+      collection: VulpkaninHowls
+    Awoo:
+      collection: VulpkaninHowls
+    Bark:
+      collection: VulpkaninBarks
 #    Gasp: | Floof - M3739 - #937 - We do not have these... yet.
 #      collection: FemaleGasp
 #    DefaultDeathgasp: 

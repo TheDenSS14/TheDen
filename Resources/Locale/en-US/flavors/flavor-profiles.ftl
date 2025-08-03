@@ -95,6 +95,7 @@ flavor-base-horrible = horrible
 flavor-base-terrible = terrible
 flavor-base-mindful = mindful
 flavor-base-tart = tart
+flavor-base-trashy = trashy
 
 # Complex flavors. Put a flavor here when you want something that's more
 # specific.

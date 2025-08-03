@@ -1,7 +1,7 @@
-// SPDX-FileCopyrightText: 2023 deltanedas <39013340+deltanedas@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2023 deltanedas <@deltanedas:kde.org>
-// SPDX-FileCopyrightText: 2024 SimpleStation14 <130339894+SimpleStation14@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 deltanedas
+// SPDX-FileCopyrightText: 2024 SimpleStation14
+// SPDX-FileCopyrightText: 2025 Vanessa Louwagie
+// SPDX-FileCopyrightText: 2025 sleepyyapril
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -34,7 +34,7 @@ public sealed class ResearchStealerSystem : SharedResearchStealerSystem
             return;
 
         var ev = new ResearchStolenEvent(uid, target, new());
-        var count = _random.Next(comp.MinToSteal, comp.MaxToSteal + 1);
+        var count = _random.Next(comp.MinToSteal, comp.MaxToSteal - 1); // TheDen - Make the objective a little more tough!
         for (var i = 0; i < count; i++)
         {
             if (database.UnlockedTechnologies.Count == 0)

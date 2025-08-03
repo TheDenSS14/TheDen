@@ -1,5 +1,5 @@
-# SPDX-FileCopyrightText: 2025 Timfa <timfalken@hotmail.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Timfa
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -32,57 +32,8 @@
   - type: Lathe
     idleState: icon
     runningState: building
-    staticRecipes:
-    - RevolutionaryManifesto
-    - BookSpaceEncyclopedia
-    - BookTheBookOfControl
-    - BookBartendersManual
-    - BookHowToCookForFortySpaceman
-    - BookLeafLoversSecret
-    - BookEngineersHandbook
-    - BookScientistsGuidebook
-    - BookSecurity
-    - BookHowToKeepStationClean
-    - BookHowToRockAndStone
-    - BookMedicalReferenceBook
-    - BookHowToSurvive
-    - BookChemicalCompendium
-    - BookAtmosDistro
-    - BookAtmosWaste
-    - BookAtmosAirAlarms
-    - BookAtmosVentsMore
-    - BookPsionicsGuidebook
-    - BookNarsieLegend
-    - BookTruth
-    - BookWorld
-    - BookIanAntarctica
-    - BookSlothClownSSS
-    - BookSlothClownPranks
-    - BookSlothClownMMD
-    - BookStruck
-    - BookSun
-    - BookPossum
-    - BookCafe
-    - BookFeather
-    - BookIanLostWolfPup
-    - BookIanRanch
-    - BookIanOcean
-    - BookIanMountain
-    - BookIanCity
-    - BookIanArctic
-    - BookIanDesert
-    - BookNames
-    - BookEarth
-    - BookAurora
-    - BookTemple
-    - BookWatched
-    - BookMedicalOfficer
-    - BookMorgue
-    - BookRufus
-    - BookMap
-    - BookJourney
-    - BookInspiration
-    - BookJanitorTale
+    staticPacks:
+    - BookpressStaticAwfulDen
 #  - type: EmagLatheRecipes
 #    emagStaticRecipes:
 #    - SuperIllegalDangerousBook

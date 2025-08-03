@@ -1,5 +1,6 @@
-# SPDX-FileCopyrightText: 2025 Eris <eris@erisws.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Eris
+# SPDX-FileCopyrightText: 2025 Jakumba
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -42,6 +43,7 @@
   - type: Item
     shape:
     - 0,0,4,0
+  - type: Wieldable # Frontier
 
 - type: entity
   name: proto-kinetic repeater
@@ -92,6 +94,8 @@
   - type: Item
     shape:
     - 0,0,2,1
+  - type: Wieldable # Frontier
+
 
 - type: entity
   name: proto-kinetic pistol

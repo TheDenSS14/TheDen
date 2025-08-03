@@ -1,6 +1,6 @@
-# SPDX-FileCopyrightText: 2024 VMSolidus <evilexecutive@gmail.com>
-# SPDX-FileCopyrightText: 2025 Blitz <73762869+BlitzTheSquishy@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 VMSolidus
+# SPDX-FileCopyrightText: 2025 Blitz
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -15,6 +15,8 @@
       id: LoadoutBackpackSatchelMime
     - type: loadout
       id: LoadoutBackpackDuffelMime
+    - type: loadout
+      id: LoadoutBackpackMessengerMime
 
 #- type: characterItemGroup
 #  id: LoadoutMimeBelt
@@ -35,12 +37,14 @@
 #  id: LoadoutMimeEyes
 #  maxItems: 1
 #  items:
-#
-#- type: characterItemGroup
-#  id: LoadoutMimeGloves
-#  maxItems: 1
-#  items:
-#
+
+- type: characterItemGroup
+  id: LoadoutMimeGloves
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutClothingHandsStripeWhiteWarmers
+
 #- type: characterItemGroup
 #  id: LoadoutMimeHead
 #  maxItems: 1
@@ -50,13 +54,15 @@
 #  id: LoadoutMimeId
 #  maxItems: 1
 #  items:
-#
+
 - type: characterItemGroup
   id: LoadoutMimeNeck
   maxItems: 1
   items:
     - type: loadout
       id: LoadoutServiceMimeBedsheetMime
+    - type: loadout
+      id: LoadoutServiceMimeNeckScarfStripedZebra
 
 - type: characterItemGroup
   id: LoadoutMimeMask
@@ -82,6 +88,8 @@
   items:
     - type: loadout
       id: LoadoutServiceMimeShoesBootsWinter
+    - type: loadout
+      id: LoadoutClothingUnderSocksStripedWhite
 
 - type: characterItemGroup
   id: LoadoutMimeUniforms
@@ -91,3 +99,5 @@
       id: LoadoutServiceJumpsuitMime
     - type: loadout
       id: LoadoutServiceJumpskirtMime
+    - type: loadout
+      id: LoadoutClothingUniformStripedThongWhite

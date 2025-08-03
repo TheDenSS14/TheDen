@@ -10,3 +10,5 @@ marking-WingsRobotic = Robotic Wings
 marking-WingsRobotic-robotic = Robotic Wings
 
 marking-WingsRoboticMerciful = Merciful Robotic Wings
+marking-WingsRoboticMerciful-merciful_base = Wing base
+marking-WingsRoboticMerciful-merciful_light = Wing light

@@ -1,9 +1,10 @@
-# SPDX-FileCopyrightText: 2024 VMSolidus <evilexecutive@gmail.com>
-# SPDX-FileCopyrightText: 2025 Angelo Fallaria <ba.fallaria@gmail.com>
-# SPDX-FileCopyrightText: 2025 BlitzTheSquishy <73762869+BlitzTheSquishy@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 KyuPolaris <tabi@kyuudev.me>
-# SPDX-FileCopyrightText: 2025 Skubman <ba.fallaria@gmail.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 VMSolidus
+# SPDX-FileCopyrightText: 2025 Angelo Fallaria
+# SPDX-FileCopyrightText: 2025 Blitz
+# SPDX-FileCopyrightText: 2025 BlitzTheSquishy
+# SPDX-FileCopyrightText: 2025 KyuPolaris
+# SPDX-FileCopyrightText: 2025 Skubman
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -18,6 +19,8 @@
       id: LoadoutBackpackSatchelCMO
     - type: loadout
       id: LoadoutBackpackDuffelCMO
+    - type: loadout
+      id: LoadoutBackpackMessengerCMO
 
 - type: characterItemGroup
   id: LoadoutChiefMedicalOfficerBelt
@@ -42,12 +45,14 @@
 #  id: LoadoutChiefMedicalOfficerEyes
 #  maxItems: 1
 #  items:
-#
-#- type: characterItemGroup
-#  id: LoadoutChiefMedicalOfficerGloves
-#  maxItems: 1
-#  items:
-#
+
+- type: characterItemGroup
+  id: LoadoutChiefMedicalOfficerGloves
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutClothingHandsCMOWarmers
+
 - type: characterItemGroup
   id: LoadoutChiefMedicalOfficerHead
   maxItems: 1
@@ -79,7 +84,7 @@
 #  id: LoadoutChiefMedicalOfficerMask
 #  maxItems: 1
 #  items:
-#
+
 - type: characterItemGroup
   id: LoadoutChiefMedicalOfficerOuter
   maxItems: 1
@@ -88,6 +93,8 @@
       id: LoadoutCommandCMOOuterWinter
     - type: loadout
       id: LoadoutCommandCMOOuterLab
+    - type: loadout
+      id: LoadoutChiefMedicalOfficerOuterLongCoat
 
 - type: characterItemGroup
   id: LoadoutChiefMedicalOfficerShoes
@@ -99,6 +106,8 @@
       id: LoadoutChiefMedicalOfficerShoesLaceup
     - type: loadout
       id: LoadoutChiefMedicalOfficerShoesLeather
+    - type: loadout
+      id: LoadoutClothingUnderSocksCMO
 
 - type: characterItemGroup
   id: LoadoutChiefMedicalOfficerUniforms
@@ -112,3 +121,5 @@
       id: LoadoutChiefMedicalOfficerTurtleskirt
     - type: loadout
       id: LoadoutChiefMedicalOfficerTurtlesuit
+    - type: loadout
+      id: LoadoutClothingUniformCMOThong

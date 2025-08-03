@@ -1,0 +1,17 @@
+<BoxContainer xmlns="https://spacestation14.io"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:ui="clr-namespace:Content.Client.UserInterface.Controls"
+    HorizontalExpand="True"
+    HorizontalAlignment="Stretch"
+    VerticalExpand="True"
+    VerticalAlignment="Top"
+    Orientation="Vertical"
+    Align="Center"
+    Margin="5">
+    <Label
+        Name="CategoryTitleLabel"
+        HorizontalExpand="True"
+        HorizontalAlignment="Stretch"
+        Align="Center"
+        Margin="0 5 0 5" />
+</BoxContainer>

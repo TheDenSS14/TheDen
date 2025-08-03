@@ -16,6 +16,11 @@ station-beacon-vault = Vault
 station-beacon-captain = Captain
 station-beacon-hop = HOP
 
+station-beacon-dignitary = Dignitary
+station-beacon-bso = BSO
+station-beacon-ntrep = NT Rep
+station-beacon-magistrate = Magistrate
+
 station-beacon-security = Security
 station-beacon-brig = Brig
 station-beacon-warden = Warden
@@ -34,6 +39,7 @@ station-beacon-cryonics = Cryopods
 station-beacon-cmo = CMO
 station-beacon-morgue = Morgue
 station-beacon-surgery = Surgery
+station-beacon-paramedic = Paramedic
 
 station-beacon-science = Science
 station-beacon-research-and-development = Research
@@ -67,6 +73,8 @@ station-beacon-kitchen = Kitchen
 station-beacon-bar = Bar
 station-beacon-botany = Botany
 station-beacon-janitor = Janitor
+station-beacon-mime = Mime
+station-beacon-musician = Musician
 
 station-beacon-ai = AI
 station-beacon-ai-sat = AI Sat

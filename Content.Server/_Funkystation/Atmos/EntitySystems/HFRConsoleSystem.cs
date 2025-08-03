@@ -15,6 +15,8 @@ using Content.Server.Power.Components;
 using Content.Server.NodeContainer.Nodes;
 using Content.Server.NodeContainer.EntitySystems;
 using Content.Server._Funkystation.Atmos.HFR.Systems;
+using Content.Shared.Construction.Components;
+
 
 namespace Content.Server._Funkystation.Atmos.Systems;
 
@@ -40,7 +42,8 @@ public sealed class HFRConsoleSystem : EntitySystem
         SubscribeLocalEvent<HFRConsoleComponent, HFRConsoleSetModeratorInputRateMessage>(OnSetModeratorInputRateMessage);
         SubscribeLocalEvent<HFRConsoleComponent, HFRConsoleSelectRecipeMessage>(OnSelectRecipeMessage);
         SubscribeLocalEvent<HFRConsoleComponent, MapInitEvent>(OnConsoleStartup);
-        SubscribeLocalEvent<HFRConsoleComponent, AnchorStateChangedEvent>(OnConsoleAnchorChanged);
+        SubscribeLocalEvent<HFRConsoleComponent, ReAnchorEvent>(OnConsoleReAnchor);
+        SubscribeLocalEvent<HFRConsoleComponent, UnanchorAttemptEvent>(OnConsoleUnanchor);
         SubscribeLocalEvent<HFRConsoleComponent, HFRConsoleToggleWasteRemoveMessage>(OnToggleWasteRemoveMessage);
         SubscribeLocalEvent<HFRConsoleComponent, HFRConsoleSetHeatingConductorMessage>(OnSetHeatingConductorMessage);
         SubscribeLocalEvent<HFRConsoleComponent, HFRConsoleSetCoolingVolumeMessage>(OnSetCoolingVolumeMessage);
@@ -51,6 +54,27 @@ public sealed class HFRConsoleSystem : EntitySystem
         SubscribeLocalEvent<HFRConsoleComponent, BeforeActivatableUIOpenEvent>(OnBeforeOpened);
     }
 
+    private void OnConsoleUnanchor(Entity<HFRConsoleComponent> ent, ref UnanchorAttemptEvent args)
+    {
+        _hfrSidePartSystem.TryFindCore(ent);
+        SetPowerState(ent, ent.Comp);
+    }
+
+    private void OnConsoleReAnchor(Entity<HFRConsoleComponent> ent, ref ReAnchorEvent args)
+    {
+        if (ent.Comp.CoreUid == null)
+            return;
+
+        if (EntityManager.TryGetComponent<HFRCoreComponent>(ent.Comp.CoreUid, out var coreComp))
+        {
+            coreComp.ConsoleUid = null;
+            _hfrSystem.ToggleActiveState(ent.Comp.CoreUid.Value, coreComp, false);
+        }
+
+        ent.Comp.CoreUid = null;
+        SetPowerState(ent, ent.Comp);
+    }
+
     private void OnBeforeOpened(Entity<HFRConsoleComponent> ent, ref BeforeActivatableUIOpenEvent args)
     {
         DirtyUI(ent, ent.Comp);
@@ -59,28 +83,6 @@ public sealed class HFRConsoleSystem : EntitySystem
     private void OnConsoleStartup(EntityUid uid, HFRConsoleComponent console, MapInitEvent args)
     {
         SetPowerState(uid, console);
-    }
-
-    private void OnConsoleAnchorChanged(EntityUid uid, HFRConsoleComponent console, ref AnchorStateChangedEvent args)
-    {
-        if (!args.Anchored)
-        {
-            if (console.CoreUid != null)
-            {
-                if (EntityManager.TryGetComponent<HFRCoreComponent>(console.CoreUid, out var coreComp))
-                {
-                    coreComp.ConsoleUid = null;
-                    _hfrSystem.ToggleActiveState(console.CoreUid.Value, coreComp, false);
-                }
-                console.CoreUid = null;
-            }
-            SetPowerState(uid, console);
-        }
-        else
-        {
-            _hfrSidePartSystem.TryFindCore(uid);
-            SetPowerState(uid, console);
-        }
     }
 
     public void SetPowerState(EntityUid uid, HFRConsoleComponent console)

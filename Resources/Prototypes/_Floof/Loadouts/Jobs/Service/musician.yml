@@ -1,0 +1,84 @@
+# SPDX-FileCopyrightText: 2025 M3739
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+# - type: loadout
+#   id: LoadoutClothingHandsMusicianWarmers
+#   category: JobsServiceMusician
+#   cost: 0
+#   exclusive: true
+#   items:
+#   - ClothingHandsMusicianWarmers
+#   requirements:
+#   - !type:CharacterJobRequirement
+#     jobs:
+#     - Musician
+
+# - type: loadout
+#   id: LoadoutClothingUnderSocksMusician
+#   category: JobsServiceMusician
+#   cost: 0
+#   exclusive: true
+#   items:
+#   - ClothingUnderSocksMusician
+#   requirements:
+#   - !type:CharacterSpeciesRequirement
+#     inverted: true
+#     species:
+#     - Diona
+#     - Harpy
+#   - !type:CharacterJobRequirement
+#     jobs:
+#     - Musician
+
+# - type: loadout
+#   id: LoadoutClothingUniformMusicianThong
+#   category: JobsServiceMusician
+#   cost: 0
+#   exclusive: true
+#   items:
+#   - ClothingUniformMusicianThong
+#   requirements:
+#   - !type:CharacterJobRequirement
+#     jobs:
+#     - Musician
+
+# - type: loadout
+#   id: LoadoutClothingUniformMusicKingBlack
+#   category: JobsServiceMusician
+#   cost: 2
+#   exclusive: true
+#   items:
+#   - ClothingUniformMusicKingBlack
+#   requirements:
+#   - !type:CharacterJobRequirement
+#     jobs:
+#     - Musician
+
+# - type: loadout
+#   id: LoadoutClothingUniformMusicKing
+#   category: JobsServiceMusician
+#   cost: 2
+#   exclusive: true
+#   items:
+#   - ClothingUniformMusicKing
+#   requirements:
+#   - !type:CharacterJobRequirement
+#     jobs:
+#     - Musician
+
+# Instrument Flatpacks
+
+- type: loadout
+  id: LoadoutItemDrumKitInstrumentMusician
+  category: JobsServiceMusician
+  cost: 2 # Is essentially multiple percussion instruments in one.
+  canBeHeirloom: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMusicianEquipment
+    - !type:CharacterJobRequirement
+      jobs:
+        - Musician
+  items:
+    - DrumKitFlatpack

@@ -1,7 +1,8 @@
-# SPDX-FileCopyrightText: 2024 VMSolidus <evilexecutive@gmail.com>
-# SPDX-FileCopyrightText: 2025 BlitzTheSquishy <73762869+BlitzTheSquishy@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 Skubman <ba.fallaria@gmail.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 VMSolidus
+# SPDX-FileCopyrightText: 2025 Blitz
+# SPDX-FileCopyrightText: 2025 BlitzTheSquishy
+# SPDX-FileCopyrightText: 2025 Skubman
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -54,9 +55,9 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutCourierHead
-    - !type:CharacterJobRequirement
-      jobs:
-        - MailCarrier
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Logistics
   items:
     - ClothingHeadMailCarrier
 
@@ -68,9 +69,9 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutCourierHead
-    - !type:CharacterJobRequirement
-      jobs:
-        - MailCarrier
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Logistics
   items:
     - ClothingHeadCourier
 
@@ -94,20 +95,6 @@
         - MailCarrier
   items:
     - ClothingOuterWinterCoatMail
-
-- type: loadout
-  id: LoadoutCourierOuterCourier
-  category: JobsLogisticsCourier
-  cost: 0
-  exclusive: true
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutCourierOuter
-    - !type:CharacterJobRequirement
-      jobs:
-        - MailCarrier
-  items:
-    - ClothingOuterWinterCargo
 
 # Shoes
 

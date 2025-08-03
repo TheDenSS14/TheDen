@@ -1,6 +1,10 @@
-# SPDX-FileCopyrightText: 2024 VMSolidus <evilexecutive@gmail.com>
-# SPDX-FileCopyrightText: 2025 MajorMoth <61519600+MajorMoth@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 VMSolidus
+# SPDX-FileCopyrightText: 2025 Blitz
+# SPDX-FileCopyrightText: 2025 BlitzTheSquishy
+# SPDX-FileCopyrightText: 2025 M3739
+# SPDX-FileCopyrightText: 2025 MajorMoth
+# SPDX-FileCopyrightText: 2025 Tabitha
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -15,6 +19,8 @@
       id: LoadoutBackpackSatchelCargo
     - type: loadout
       id: LoadoutBackpackDuffelCargo
+    - type: loadout
+      id: LoadoutBackpackMessengerCargo
 
 #- type: characterItemGroup
 #  id: LoadoutLogisticsBelt
@@ -35,45 +41,63 @@
 #  id: LoadoutLogisticsEyes
 #  maxItems: 1
 #  items:
-#
-#- type: characterItemGroup
-#  id: LoadoutLogisticsGloves
-#  maxItems: 1
-#  items:
+
+- type: characterItemGroup
+  id: LoadoutLogisticsGloves
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutClothingHandsLogisWarmers
 
 - type: characterItemGroup
   id: LoadoutLogisticsHead
   maxItems: 1
   items:
-      - type: loadout
-        id: LoadoutClothingHeadHatBeretLogi
+    - type: loadout
+      id: LoadoutClothingHeadHatBeretLogi
 
 #- type: characterItemGroup
 #  id: LoadoutLogisticsId
 #  maxItems: 1
 #  items:
-#
-#- type: characterItemGroup
-#  id: LoadoutLogisticsNeck
-#  maxItems: 1
-#  items:
-#
+
+- type: characterItemGroup
+  id: LoadoutLogisticsNeck
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutCargoNeckNeckerchief # Floof - M3739 - #988
+    - type: loadout
+      id: LoadoutCargoNeckCollar
+
 #- type: characterItemGroup
 #  id: LoadoutLogisticsMask
 #  maxItems: 1
 #  items:
-#
-#- type: characterItemGroup
-#  id: LoadoutLogisticsOuter
-#  maxItems: 1
-#  items:
-#
-#- type: characterItemGroup
-#  id: LoadoutLogisticsShoes
-#  maxItems: 1
-#  items:
-#
-#- type: characterItemGroup
-#  id: LoadoutLogisticsUniforms
-#  maxItems: 1
-#  items:
+
+- type: characterItemGroup
+  id: LoadoutLogisticsOuter
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutCargoOuterWinterCargo
+    - type: loadout
+      id: LoadoutCargoOuterCoatCargoBomber
+
+- type: characterItemGroup
+  id: LoadoutLogisticsShoes
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutCargoShoesBootsWinterCargo
+    - type: loadout
+      id: LoadoutCargoTechnicianBootsSteel
+    - type: loadout
+      id: LoadoutClothingUnderSocksLogis
+
+- type: characterItemGroup
+  id: LoadoutLogisticsUniforms
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutClothingUniformLogisThong
