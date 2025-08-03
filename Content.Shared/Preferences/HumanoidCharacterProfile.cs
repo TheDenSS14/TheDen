@@ -131,7 +131,7 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
 
     // TheDen - Add Voice
     [DataField]
-    public Sex PreferredVoice { get; private set; } = Sex.Male;
+    public Sex? PreferredVoice { get; private set; }
 
     [DataField]
     public Gender Gender { get; private set; } = Gender.Male;
@@ -256,7 +256,7 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
             other.Width,
             other.Age,
             other.Sex,
-            other.PreferredVoice, // TheDen - Add Voice
+            other.PreferredVoice ?? other.Sex, // TheDen - Add Voice
             other.Gender,
             other.DisplayPronouns,
             other.StationAiName,
@@ -549,7 +549,7 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
             Sex.Male => Sex.Male,
             Sex.Female => Sex.Female,
             Sex.Unsexed => Sex.Unsexed,
-            _ => Sex.Male // Invalid enum values.
+            _ => sex // Nothing means it imported with nothing, default to sex
         };
         // End TheDen
 
@@ -737,7 +737,7 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
         hashCode.Add(Lifepath);
         hashCode.Add(Age);
         hashCode.Add((int) Sex);
-        hashCode.Add((int) PreferredVoice); // TheDen - Add Voice
+        hashCode.Add((int) (PreferredVoice ?? Sex)); // TheDen - Add Voice
         hashCode.Add((int) Gender);
         hashCode.Add(Appearance);
         hashCode.Add((int) SpawnPriority);
