@@ -12,8 +12,8 @@
   categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
     - type: StationEvent
-      earliestStart: 75 # Den god please let cargo actually earn some money before having the ATS occupied for once.
-      weight: 3.5 # Den
+      earliestStart: 60 # Den god please let cargo actually earn some money before having the ATS occupied for once.
+      weight: 5.5 # Den
       minimumPlayers: 20
       duration: 1
       maxOccurrences: 1
