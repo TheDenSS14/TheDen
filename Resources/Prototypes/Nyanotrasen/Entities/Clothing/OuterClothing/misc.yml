@@ -48,7 +48,9 @@
   - type: Clothing
     sprite: Nyanotrasen/Clothing/Misc/hoodie_white.rsi
   - type: TemperatureProtection
-    coefficient: 0.4
+    heatingCoefficient: 1.1
+    coolingCoefficient: 0.1
+
 - type: entity
   parent: ClothingOuterStorageBase
   id: ClothingOuterCoatMNKBlackTopCoat
@@ -60,7 +62,9 @@
   - type: Clothing
     sprite: Nyanotrasen/Clothing/Misc/black_top_coat.rsi
   - type: TemperatureProtection
-    coefficient: 0.4
+    heatingCoefficient: 0.8
+    coolingCoefficient: 0.3
+
 - type: entity
   parent: ClothingOuterStorageBase
   id: ClothingOuterCoatMNKBlackJacket
