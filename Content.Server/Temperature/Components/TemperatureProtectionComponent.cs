@@ -1,4 +1,8 @@
-﻿using Content.Server.Temperature.Systems;
+// SPDX-FileCopyrightText: 2024 Nemanja
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
+using Content.Server.Temperature.Systems;
 
 namespace Content.Server.Temperature.Components;
 
