@@ -18,8 +18,8 @@
   - type: Clothing
     sprite: Nyanotrasen/Clothing/Misc/letterman_jacket_blue.rsi
   - type: TemperatureProtection
-    heatingCoefficient: 0.4
-    coolingCoefficient: 0.4
+    heatingCoefficient: 0.8
+    coolingCoefficient: 0.3
 
 - type: entity
   parent: ClothingOuterStorageBase
@@ -33,7 +33,8 @@
   - type: Clothing
     sprite: Nyanotrasen/Clothing/Misc/letterman_jacket_red.rsi
   - type: TemperatureProtection
-    coefficient: 0.4
+    heatingCoefficient: 0.8
+    coolingCoefficient: 0.3
 ## mnk
 
 - type: entity
@@ -71,7 +72,8 @@
   - type: Clothing
     sprite: Nyanotrasen/Clothing/Misc/black_jacket.rsi
   - type: TemperatureProtection
-    coefficient: 0.2
+    heatingCoefficient: 0.8
+    coolingCoefficient: 0.3
 
 - type: entity
   parent: ClothingOuterBase
