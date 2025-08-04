@@ -61,3 +61,58 @@
     damage:
       types:
         Piercing: 8
+
+- type: entity
+  id: PaperMailTheGameCertificate
+  name: Certificate of Failure
+  categories: [ HideSpawnMenu ]
+  suffix: "the game certificate"
+  parent: Paper
+  components:
+  - type: Paper
+    stampState: paper_stamp-centcom
+    stampedBy:
+    - stampedColor: '#006600FF'
+      stampedName: Central Command
+    content: |2
+
+      [color=#5b97bc]══════════════════[/color]
+      [color=#5b97bc]████░██░░░░██░░░░░[/color]
+      [color=#5b97bc]░███░████░░██░░░░░[/color]
+      [color=#5b97bc]░░██░████████░██░░[/color]
+      [color=#5b97bc]░░░░░██░░████░███░[/color]
+      [color=#5b97bc]░░░░░██░░░░██░████[/color]
+      [color=#5b97bc]══════════════════[/color]
+      [color=#5b97bc][head=3]Nanotrasen Corporation[/head][/color]
+      [color=#5b97bc][head=3]Department of Lost Causes[/head][/color]
+
+      [color=#ff6600]════════════════════════════════════════[/color]
+      [color=#ff6600]       CERTIFICATE OF FAILURE           [/color]
+      [color=#ff6600]                                        [/color]
+      [color=#ff6600]         YOU JUST LOST THE GAME         [/color]
+      [color=#ff6600]════════════════════════════════════════[/color]
+
+      [color=#cccc00]═══ UNFORTUNATE RECIPIENT ═══[/color]
+      [color=#008800]Kittenmin[/color]
+      [color=#888888]And literally everyone reading this[/color]
+
+      [color=#cccc00]═══ FAILURE ACHIEVEMENTS ═══[/color]
+      [color=#ff0000]✗ Thought about The Game[/color]
+      [color=#ff0000]✗ Made others think about The Game[/color]
+      [color=#ff0000]✗ Reset your streak to zero[/color]
+      [color=#ff0000]✗ Caused mass disappointment[/color]
+
+      [color=#ff0000]⚠ MANDATORY NOTIFICATION ⚠[/color]
+      [color=#ff6600]You are now required to announce your loss[/color]
+      [color=#ff6600]Sorry, them's the rules[/color]
+
+      [color=#000000]Previous Streak:[/color] [color=#ff0000]IRRELEVANT - NOW ZERO[/color]
+      [color=#000000]Time of Loss:[/color] [color=#008800]Right now[/color]
+      [color=#000000]Date:[/color] [color=#008800]2025.08.04[/color]
+
+      [color=#000000]Witnessed by:[/color] [color=#008800]Everyone unfortunate enough to read this[/color]
+
+      [color=#5b97bc]══════════════════════════════════════[/color]
+      [color=#888888]Certificate #OOPS - Nanotrasen Department of Poor Decisions[/color]
+      [color=#ff0000]*** CONGRATULATIONS! YOU PLAYED YOURSELF! ***[/color]
+      [color=#888888]P.S. Sorry for making you lose too[/color]
