@@ -175,7 +175,8 @@
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHatHoodChaplainHood
   - type: TemperatureProtection
-    coefficient: 0.1
+    heatingCoefficient: 1.1
+    coolingCoefficient: 0.1
 
 - type: entity
   parent: ClothingOuterBase
@@ -190,7 +191,8 @@
   - type: AddAccentClothing
     accent: SpanishAccent
   - type: TemperatureProtection
-    coefficient: 0.1
+    heatingCoefficient: 1.1
+    coolingCoefficient: 0.1
 
 - type: entity
   parent: ClothingOuterBase
@@ -227,7 +229,8 @@
   - type: AddAccentClothing
     accent: SpanishAccent
   - type: TemperatureProtection
-    coefficient: 0.1
+    heatingCoefficient: 1.1
+    coolingCoefficient: 0.1
 
 - type: entity
   parent: ClothingOuterBase
@@ -240,7 +243,8 @@
   - type: Clothing
     sprite: Clothing/OuterClothing/Misc/santa.rsi
   - type: TemperatureProtection
-    coefficient: 0.1
+    heatingCoefficient: 1.1
+    coolingCoefficient: 0.1
 
 - type: entity
   abstract: true
@@ -376,6 +380,7 @@
       - state: equipped-OUTERCLOTHING-lines
         color: "#000000"
   - type: TemperatureProtection
+    heatingCoefficient: 0.8
     coolingCoefficient: 0.3
 
 - type: entity
@@ -412,6 +417,7 @@
       - state: equipped-OUTERCLOTHING-lines
         color: "#000000"
   - type: TemperatureProtection
+    heatingCoefficient: 0.8
     coolingCoefficient: 0.3
 
 - type: entity
@@ -448,6 +454,7 @@
       - state: equipped-OUTERCLOTHING-lines
         color: "#000000"
   - type: TemperatureProtection
+    heatingCoefficient: 0.8
     coolingCoefficient: 0.3
 
 - type: entity
@@ -530,8 +537,9 @@
     sprite: Clothing/OuterClothing/Misc/cardigan_sweater.rsi
   - type: Clothing
     sprite: Clothing/OuterClothing/Misc/cardigan_sweater.rsi
-  - type: TemperatureProtection
-    coefficient: 0.1
+  - type: TemperatureProtection # It says half as warm.. so it's also twice as cold.
+    heatingCoefficient: 0.5
+    coolingCoefficient: 0.5
 
 - type: entity
   parent: [ClothingOuterFoldableBaseOpened, ClothingOuterCardiganSweater]
@@ -608,7 +616,8 @@
   - type: Clothing
     sprite: Clothing/OuterClothing/Misc/blazer_long.rsi
   - type: TemperatureProtection
-    coefficient: 0.1
+    heatingCoefficient: 1.1
+    coolingCoefficient: 0.1
 
 - type: entity
   parent: [ClothingOuterFoldableBaseOpened, ClothingOuterBlazerLong]

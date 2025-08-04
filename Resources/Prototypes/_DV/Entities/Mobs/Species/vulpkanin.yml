@@ -66,7 +66,8 @@
   - type: Damageable
     damageModifierSet: Vulpkanin
   - type: TemperatureProtection
-    coefficient: 0.1
+    heatingCoefficient: 1.1
+    coolingCoefficient: 0.1
   - type: Vocal
     sounds:
       Male: MaleVulpkanin

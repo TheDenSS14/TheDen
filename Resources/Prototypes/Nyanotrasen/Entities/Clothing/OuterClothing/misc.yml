@@ -17,7 +17,8 @@
   - type: Clothing
     sprite: Nyanotrasen/Clothing/Misc/letterman_jacket_blue.rsi
   - type: TemperatureProtection
-    coefficient: 0.4
+    heatingCoefficient: 0.4
+    coolingCoefficient: 0.4
 
 - type: entity
   parent: ClothingOuterStorageBase

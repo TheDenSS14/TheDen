@@ -104,7 +104,8 @@
       275: 0.7
       250: 0.55
   - type: TemperatureProtection # moff fluff acts as insulation
-    coefficient: 0.5 # less than vulp fur but still significant
+    heatingCoefficient: 1.05    # Less than a Vulpkanine, but still significant.
+    coolingCoefficient: 0.5
   - type: CreamPied
     layer:
       sprite: Effects/creampie.rsi
