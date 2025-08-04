@@ -46,6 +46,7 @@
 // SPDX-FileCopyrightText: 2024 fox
 // SPDX-FileCopyrightText: 2024 ike709
 // SPDX-FileCopyrightText: 2024 themias
+// SPDX-FileCopyrightText: 2025 AirFryerBuyOneGetOneFree
 // SPDX-FileCopyrightText: 2025 Falcon
 // SPDX-FileCopyrightText: 2025 RedFoxIV
 // SPDX-FileCopyrightText: 2025 Timfa
@@ -103,7 +104,9 @@ using Content.Server.Effects;
 using Content.Server.Hands.Systems;
 using Content.Shared.Examine;
 using Content.Shared.Popups;
-
+using Content.Server._Wizden.Chat.Systems;
+using Content.Server._Wizden.Chat.Systems;
+using Content.Server.Consent;
 
 namespace Content.Server.Chat.Systems;
 
@@ -142,6 +145,10 @@ public sealed partial class ChatSystem : SharedChatSystem
     [Dependency] private readonly EmpathyChatSystem _empathy = default!;
     [Dependency] private readonly SharedPopupSystem _popups = default!; // Floof
     [Dependency] private readonly HandsSystem _hands = default!; // Floof
+    [Dependency] private readonly LastMessageBeforeDeathSystem _lastMessageBeforeDeathSystem = default!; // Imp Edit LastMessageBeforeDeath Webhook
+    [Dependency] private readonly ConsentSystem _consent = default!;
+
+    private readonly string LastMessageConsent = "LastMessage";
 
     public const int VoiceRange = 10; // how far voice goes in world units
     public const int WhisperClearRange = 2; // how far whisper goes while still being understandable, in world units
@@ -335,6 +342,14 @@ public sealed partial class ChatSystem : SharedChatSystem
         // This is really terrible. I hate myself for doing this.
         if (language.SpeechOverride.ChatTypeOverride is { } chatTypeOverride)
             desiredType = chatTypeOverride;
+
+        if (player != null) // Imp Edit: Last Message Before Death System
+        {
+            if (desiredType != InGameICChatType.Speak) // DEN: we do NOT want sex sent!
+                return;
+
+            HandleLastMessageBeforeDeath(source, player, language, message);
+        }
 
         // This message may have a radio prefix, and should then be whispered to the resolved radio channel
         if (checkRadioPrefix)
@@ -959,6 +974,18 @@ public sealed partial class ChatSystem : SharedChatSystem
         }
 
         return !_chatManager.MessageCharacterLimit(player, message);
+    }
+
+    /// <summary>
+    ///     Imp Edit: First modify message to respect entity accent, then send it to LastMessage system to record last message info for player
+    /// </summary>
+    public void HandleLastMessageBeforeDeath(EntityUid source, ICommonSession player, LanguagePrototype language, string message)
+    {
+        if (_consent.HasConsent(source, LastMessageConsent))
+            return;
+
+        var newMessage = TransformSpeech(source, message, language);
+        _lastMessageBeforeDeathSystem.AddMessage(source, player, newMessage);
     }
 
     // ReSharper disable once InconsistentNaming

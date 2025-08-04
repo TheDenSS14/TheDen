@@ -9,7 +9,8 @@ using Robust.Shared.Network;
 using Robust.Shared.Serialization;
 using Robust.Shared.Utility;
 
-namespace Content.Shared.Consent;
+
+namespace Content.Shared._Floof.Consent;
 
 /// <summary>
 /// Sent client -> server to update consent settings, or server -> client to receive consent settings.

@@ -3,9 +3,11 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
-namespace Content.Shared.Consent;
-
 using Robust.Shared.Prototypes;
+
+
+namespace Content.Shared._Floof.Consent;
+
 
 /// <summary>
 /// TODO

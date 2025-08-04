@@ -16,6 +16,7 @@
 # SPDX-FileCopyrightText: 2025 Rosycup
 # SPDX-FileCopyrightText: 2025 SX-7
 # SPDX-FileCopyrightText: 2025 Sapphire
+# SPDX-FileCopyrightText: 2025 Sir Warock
 # SPDX-FileCopyrightText: 2025 Skubman
 # SPDX-FileCopyrightText: 2025 Tabitha
 # SPDX-FileCopyrightText: 2025 TheOneTrueWolfio
@@ -416,7 +417,7 @@
     - !type:TraitReplaceComponent
       components:
         - type: TemperatureProtection
-          coefficient: 0.1 # Enough resistance to walk into the chef's freezer, or tolerate daytime temperatures on Glacier without a jacket.
+          coolingCoefficient: 0.1   # Enough resistance to walk into the chef's freezer, or tolerate daytime temperatures on Glacier without a jacket.
 
 # These traits largely exist to demonstrate more of the "Component Removals" functionality. This way contributors
 # can get used to seeing that they can "Remove and Replace" a pre-existing component.

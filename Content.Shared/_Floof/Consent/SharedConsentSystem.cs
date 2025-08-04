@@ -4,25 +4,52 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
+using System.Diagnostics.CodeAnalysis;
 using Content.Shared.Examine;
 using Content.Shared.Mind;
 using Content.Shared.Mind.Components;
 using Content.Shared.Verbs;
-using Robust.Shared.Utility;
 using Robust.Shared.Network;
 using Robust.Shared.Prototypes;
+using Robust.Shared.Utility;
 
 
-namespace Content.Shared.Consent;
+namespace Content.Shared._Floof.Consent;
 
 public abstract partial class SharedConsentSystem : EntitySystem
 {
     [Dependency] private readonly SharedMindSystem _mindSystem = default!;
     [Dependency] private readonly ExamineSystemShared _examineSystem = default!;
+    [Dependency] private readonly ILogManager _log = default!;
+
+    private ISawmill _sawmill = default!;
+
+    /// <summary>
+    /// Stores consent settigns for all connected players, including guests.
+    /// </summary>
+    protected readonly Dictionary<NetUserId, PlayerConsentSettings> UserConsents = new();
 
     public override void Initialize()
     {
+        _sawmill = _log.GetSawmill("consent");
         SubscribeLocalEvent<MindContainerComponent, GetVerbsEvent<ExamineVerb>>(OnGetExamineVerbs);
+    }
+
+    public bool TryGetConsent(NetUserId userId, [NotNullWhen(true)] out PlayerConsentSettings? consentSettings)
+    {
+        var exists = UserConsents.TryGetValue(userId, out consentSettings);
+        return exists;
+    }
+
+    public virtual void SetConsent(NetUserId userId, PlayerConsentSettings? consentSettings)
+    {
+        if (consentSettings == null)
+        {
+            UserConsents.Remove(userId);
+            return;
+        }
+
+        UserConsents[userId] = consentSettings;
     }
 
     private void OnGetExamineVerbs(Entity<MindContainerComponent> ent, ref GetVerbsEvent<ExamineVerb> args)
@@ -52,11 +79,17 @@ public abstract partial class SharedConsentSystem : EntitySystem
 
     protected virtual FormattedMessage GetConsentText(NetUserId userId)
     {
-        return new FormattedMessage();
+        return new();
     }
 
-    public virtual bool HasConsent(Entity<MindContainerComponent?> ent, ProtoId<ConsentTogglePrototype> consentId)
+    public bool HasConsent(Entity<MindContainerComponent?> ent, ProtoId<ConsentTogglePrototype> consentId)
     {
-        return false; // Implemented only on server side, prediction is *just a week away*
+        if (!_mindSystem.TryGetMind(ent.Owner, out _, out var mind)
+            || mind.Session == null
+            || !UserConsents.TryGetValue(mind.Session.UserId, out var consentSettings)
+            || !consentSettings.Toggles.TryGetValue(consentId, out var toggle))
+            return false;
+
+        return toggle == "on";
     }
 }

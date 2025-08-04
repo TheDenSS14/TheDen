@@ -17,7 +17,6 @@
 # SPDX-FileCopyrightText: 2023 Fluffiest Floofers
 # SPDX-FileCopyrightText: 2023 Genkail
 # SPDX-FileCopyrightText: 2023 Nairod
-# SPDX-FileCopyrightText: 2023 Nemanja
 # SPDX-FileCopyrightText: 2023 Puro
 # SPDX-FileCopyrightText: 2023 Rainfall
 # SPDX-FileCopyrightText: 2023 Rainfey
@@ -32,6 +31,7 @@
 # SPDX-FileCopyrightText: 2024 ERROR404
 # SPDX-FileCopyrightText: 2024 Emisse
 # SPDX-FileCopyrightText: 2024 IProduceWidgets
+# SPDX-FileCopyrightText: 2024 Nemanja
 # SPDX-FileCopyrightText: 2024 SlamBamActionman
 # SPDX-FileCopyrightText: 2024 gluesniffler
 # SPDX-FileCopyrightText: 2025 August Sun
@@ -119,7 +119,10 @@
     highPressureMultiplier: 0.08
     lowPressureMultiplier: 1000
   - type: TemperatureProtection
-    coefficient: 0.005
+    heatingCoefficient: 0.005
+    coolingCoefficient: 0.005
+  - type: FireProtection
+    reduction: 0.2
 
 #Engineering Hardsuit
 - type: entity
@@ -679,7 +682,8 @@
     highPressureMultiplier: 0.08
     lowPressureMultiplier: 1000
   - type: TemperatureProtection
-    coefficient: 0.005
+    heatingCoefficient: 0.005
+    coolingCoefficient: 0.005
   - type: FireProtection
     reduction: 0.2
   - type: Armor
@@ -980,7 +984,8 @@
     highPressureMultiplier: 0.08
     lowPressureMultiplier: 1000
   - type: TemperatureProtection
-    coefficient: 0.005
+    heatingCoefficient: 0.005
+    coolingCoefficient: 0.005
   - type: Armor
     modifiers:
       coefficients:

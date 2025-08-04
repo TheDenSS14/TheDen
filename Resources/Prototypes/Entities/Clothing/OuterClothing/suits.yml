@@ -24,7 +24,6 @@
 # SPDX-FileCopyrightText: 2023 HerCoyote23
 # SPDX-FileCopyrightText: 2023 Kevin Zheng
 # SPDX-FileCopyrightText: 2023 Nairod
-# SPDX-FileCopyrightText: 2023 Nemanja
 # SPDX-FileCopyrightText: 2023 Slava0135
 # SPDX-FileCopyrightText: 2023 Ubaser
 # SPDX-FileCopyrightText: 2023 crazybrain23
@@ -34,6 +33,7 @@
 # SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT
 # SPDX-FileCopyrightText: 2024 Debug
 # SPDX-FileCopyrightText: 2024 Emisse
+# SPDX-FileCopyrightText: 2024 Nemanja
 # SPDX-FileCopyrightText: 2024 VMSolidus
 # SPDX-FileCopyrightText: 2024 lzk
 # SPDX-FileCopyrightText: 2025 EctoplasmIsGood
@@ -114,7 +114,8 @@
   - type: PressureProtection
     highPressureMultiplier: 0.04
   - type: TemperatureProtection
-    coefficient: 0.005
+    heatingCoefficient: 0.005
+    coolingCoefficient: 0.05
   - type: FireProtection
     reduction: 0.65 # doesnt have a full seal so not as good
   - type: Armor
@@ -149,7 +150,8 @@
       highPressureMultiplier: 0.02
       lowPressureMultiplier: 1000
     - type: TemperatureProtection
-      coefficient: 0.001
+      heatingCoefficient: 0.001
+      coolingCoefficient: 0.05
     - type: FireProtection
       reduction: 0.8 # atmos firesuit offers best protection, hardsuits are a little vulnerable
     - type: Armor
@@ -214,7 +216,8 @@
     highPressureMultiplier: 0.6
     lowPressureMultiplier: 1000
   - type: TemperatureProtection
-    coefficient: 0.01
+    heatingCoefficient: 0.01
+    coolingCoefficient: 0.01
   - type: Armor
     modifiers:
       coefficients:
@@ -359,7 +362,8 @@
     highPressureMultiplier: 0.6
     lowPressureMultiplier: 1000
   - type: TemperatureProtection
-    coefficient: 0.01
+    heatingCoefficient: 0.01
+    coolingCoefficient: 0.01
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitCarp
 

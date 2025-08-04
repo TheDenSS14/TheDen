@@ -9,7 +9,8 @@ using Robust.Shared.Configuration;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization;
 
-namespace Content.Shared.Consent;
+
+namespace Content.Shared._Floof.Consent;
 
 [Serializable, NetSerializable]
 public sealed class PlayerConsentSettings

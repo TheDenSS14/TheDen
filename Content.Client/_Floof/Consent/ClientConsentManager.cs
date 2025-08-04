@@ -3,10 +3,11 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
-using Content.Shared.Consent;
+using Content.Shared._Floof.Consent;
 using Robust.Shared.Network;
 
-namespace Content.Client.Consent;
+
+namespace Content.Client._Floof.Consent;
 
 public sealed class ClientConsentManager : IClientConsentManager
 {
