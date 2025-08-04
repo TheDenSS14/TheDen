@@ -136,7 +136,7 @@
     onAdd:
     - type: Prying
       speedModifier: 1.5
-      pryPowered: true
+      pryPowered: false
     - type: UseDelay # For insta prying
       delay: 1
 
@@ -150,7 +150,7 @@
     onAdd:
     - type: Prying
       speedModifier: 1.5
-      pryPowered: true
+      pryPowered: false
     - type: UseDelay # For insta prying
       delay: 1
 
@@ -162,15 +162,13 @@
   components:
   - type: MovementBodyPart
     walkSpeed: 3.125
-    sprintSpeed: 5.625
-  - type: BodyPart
+    sprintSpeed: 5.3
     onAdd:
     - type: StepTriggerImmune
       whitelist:
         types:
         - Shard
         - Mousetrap
-        - SlipEntity
 
 - type: entity
   parent: RightLegCybernetic
@@ -180,7 +178,7 @@
   components:
   - type: MovementBodyPart
     walkSpeed: 3.125
-    sprintSpeed: 5.625
+    sprintSpeed: 5.3
   - type: BodyPart
     onAdd:
     - type: StepTriggerImmune
@@ -188,4 +186,3 @@
         types:
         - Shard
         - Mousetrap
-        - SlipEntity
