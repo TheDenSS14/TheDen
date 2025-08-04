@@ -100,9 +100,9 @@
         Heat : 3 #per second, scales with temperature & other constants
   - type: TemperatureSpeed
     thresholds:
-      289: 0.85
-      275: 0.7
-      250: 0.55
+      289: 0.95
+      275: 0.85
+      250: 0.75
   - type: TemperatureProtection # moff fluff acts as insulation
     coefficient: 0.5 # less than vulp fur but still significant
   - type: CreamPied
