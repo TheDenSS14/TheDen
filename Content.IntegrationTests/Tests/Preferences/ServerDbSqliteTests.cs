@@ -67,6 +67,7 @@ namespace Content.IntegrationTests.Tests.Preferences
                 FlavorText = "The biggest boy around.",
                 Species = "Human",
                 Customspeciename = "",
+                PreferredVoice = Sex.Male, // TheDen - Beats type casting on import/export
                 Age = 21,
                 Appearance = new(
                     "Afro",

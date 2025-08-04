@@ -131,7 +131,7 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
 
     // TheDen - Add Voice
     [DataField]
-    public Sex? PreferredVoice { get; private set; }
+    public Sex? PreferredVoice { get; set; }
 
     [DataField]
     public Gender Gender { get; private set; } = Gender.Male;
@@ -194,7 +194,7 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
         float width,
         int age,
         Sex sex,
-        Sex preferredVoice, // TheDen - Add Voice
+        Sex? preferredVoice, // TheDen - Add Voice
         Gender gender,
         string? displayPronouns,
         string? stationAiName,
@@ -256,7 +256,7 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
             other.Width,
             other.Age,
             other.Sex,
-            other.PreferredVoice ?? other.Sex, // TheDen - Add Voice
+            other.PreferredVoice, // TheDen - Add Voice
             other.Gender,
             other.DisplayPronouns,
             other.StationAiName,
@@ -737,7 +737,7 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
         hashCode.Add(Lifepath);
         hashCode.Add(Age);
         hashCode.Add((int) Sex);
-        hashCode.Add((int) (PreferredVoice ?? Sex)); // TheDen - Add Voice
+        hashCode.Add(PreferredVoice); // TheDen - Add Voice
         hashCode.Add((int) Gender);
         hashCode.Add(Appearance);
         hashCode.Add((int) SpawnPriority);
