@@ -342,13 +342,8 @@ public sealed partial class ChatSystem : SharedChatSystem
         if (language.SpeechOverride.ChatTypeOverride is { } chatTypeOverride)
             desiredType = chatTypeOverride;
 
-        if (player != null) // Imp Edit: Last Message Before Death System
-        {
-            if (desiredType != InGameICChatType.Speak) // DEN: we do NOT want sex sent!
-                return;
-
+        if (player != null && desiredType == InGameICChatType.Speak) // Imp Edit: Last Message Before Death System
             HandleLastMessageBeforeDeath(source, player, language, message);
-        }
 
         // This message may have a radio prefix, and should then be whispered to the resolved radio channel
         if (checkRadioPrefix)
