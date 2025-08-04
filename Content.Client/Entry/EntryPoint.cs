@@ -58,16 +58,17 @@
 // SPDX-FileCopyrightText: 2024 Vasilis
 // SPDX-FileCopyrightText: 2024 deltanedas
 // SPDX-FileCopyrightText: 2024 metalgearsloth
+// SPDX-FileCopyrightText: 2025 MajorMoth
 // SPDX-FileCopyrightText: 2025 Rosycup
 // SPDX-FileCopyrightText: 2025 sleepyyapril
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
+using Content.Client._Floof.Consent;
 using Content.Client.Administration.Managers;
 using Content.Client.Changelog;
 using Content.Client.Chat.Managers;
 using Content.Client.DiscordAuth;
-using Content.Client.Consent;
 using Content.Client.JoinQueue;
 using Content.Client.DebugMon;
 using Content.Client.Eui;
