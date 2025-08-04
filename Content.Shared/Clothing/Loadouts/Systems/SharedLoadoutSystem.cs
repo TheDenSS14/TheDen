@@ -126,7 +126,7 @@ public sealed class SharedLoadoutSystem : EntitySystem
                 }
 
                 allLoadouts.Add((item, loadout, i));
-                if (i == 0 && loadout.CustomHeirloom == true) // Only the first item can be an heirloom
+                if (loadout.CustomHeirloom == true) // DEN - Any number of heirlooms
                     heirlooms.Add((item, loadout));
 
                 // Equip it
@@ -174,6 +174,11 @@ public sealed class SharedLoadoutSystem : EntitySystem
                 i++;
             }
         }
+
+        // DEN - This sux but this fix is needed before we blow up loadouts
+        heirlooms = heirlooms
+            .Where(h => !TerminatingOrDeleted(h.Item1))
+            .ToList();
 
         // Return a list of items that couldn't be equipped so the server can handle it if it wants
         // The server has more information about the inventory system than the client does and the client doesn't need to put loadouts in backpacks
