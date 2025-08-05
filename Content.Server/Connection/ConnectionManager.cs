@@ -309,7 +309,7 @@ namespace Content.Server.Connection
 
             if (!_cfg.GetCVar(CCVars.AdminsCountForMaxPlayers))
             {
-                softPlayerCount -= _adminManager.ActiveAdmins.Count();
+                softPlayerCount -= _adminManager.AllAdmins.Count();
             }
 
             if ((softPlayerCount >= _cfg.GetCVar(CCVars.SoftMaxPlayers) && !adminBypass) && !wasInGame)
