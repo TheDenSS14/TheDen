@@ -334,6 +334,11 @@
       path: /Audio/Items/crowbar.ogg
   - type: Hands
   - type: ComplexInteraction
+  - type: LanguageKnowledge
+    speaks:
+    - TauCetiBasic
+    understands:
+    - TauCetiBasic
 
 - type: entity
   parent: BaseMobDragon
@@ -346,7 +351,7 @@
       groups:
         Brute: -4
         Burn: -4
-        # Airloss: -3 Den - our dragons don't bleed
+        Airloss: -3 #Dragons may not bleed, but carp do
   - type: GhostRole
     mindRoles:
     - MindRoleDragon

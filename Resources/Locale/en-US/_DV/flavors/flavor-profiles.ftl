@@ -4,3 +4,5 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 flavor-complex-unholy-water = like something cold and wrong
+
+flavor-complex-lemon-lime-bitters = like an Aussie dessert

@@ -25,6 +25,7 @@
 // SPDX-FileCopyrightText: 2024 SimpleStation14
 // SPDX-FileCopyrightText: 2024 VMSolidus
 // SPDX-FileCopyrightText: 2024 sleepyyapril
+// SPDX-FileCopyrightText: 2025 Falcon
 // SPDX-FileCopyrightText: 2025 Lyndomen
 // SPDX-FileCopyrightText: 2025 Timfa
 //
@@ -1130,6 +1131,11 @@ namespace Content.Server.Database.Migrations.Postgres
                     b.Property<string>("StationAiName")
                         .HasColumnType("text")
                         .HasColumnName("station_ai_name");
+
+                    b.Property<string>("Voice")
+                        .IsRequired()
+                        .HasColumnType("text")
+                        .HasColumnName("voice");
 
                     b.Property<float>("Width")
                         .HasColumnType("real")

@@ -73,6 +73,7 @@
 # SPDX-FileCopyrightText: 2025 VMSolidus
 # SPDX-FileCopyrightText: 2025 fishbait
 # SPDX-FileCopyrightText: 2025 gus
+# SPDX-FileCopyrightText: 2025 juniwoofs
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
@@ -99,6 +100,8 @@
       - id: RubberStampWarden
       - id: DoorRemoteArmory
       - id: ClothingOuterHardsuitCombatWarden # DeltaV - ClothingOuterHardsuitWarden replaced in favour of warden's riot combat hardsuit.
+      - id: OxygenTankFilled #Den
+      - id: NitrogenTankFilled #Den
       - id: HoloprojectorSecurity
       - id: ClothingEyesHudSecurity
       - id: BoxPDAPrisoner # Delta-V
@@ -238,6 +241,8 @@
         # corpsman gets WAY too much medicine, especially when there's medkits mapped into the office. removed all the other random medkits
       - id: LunchboxSecurityFilledRandom # Delta-v Lunchboxes!
       - id: ClothingOuterHardsuitCombatCorpsman
+      - id: OxygenTankFilled #Den
+      - id: NitrogenTankFilled #Den
 
 # DeltaV - end addition
 

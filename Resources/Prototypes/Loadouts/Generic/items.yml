@@ -5,6 +5,7 @@
 # SPDX-FileCopyrightText: 2024 FoxxoTrystan
 # SPDX-FileCopyrightText: 2024 ShatteredSwords
 # SPDX-FileCopyrightText: 2024 Tmanzxd
+# SPDX-FileCopyrightText: 2024 V
 # SPDX-FileCopyrightText: 2024 VMSolidus
 # SPDX-FileCopyrightText: 2024 gluesniffler
 # SPDX-FileCopyrightText: 2025 Alina Shumann
@@ -595,6 +596,7 @@
         - Security
         - Medical
         - Engineering
+        - Command
     - !type:CharacterJobRequirement
       inverted: true
       jobs:
@@ -611,6 +613,10 @@
     - !type:CharacterDepartmentRequirement
       departments:
         - Engineering
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - ChiefEngineer
 
 - type: loadout
   id: LoadoutItemBoxSurvivalSecurity
@@ -626,6 +632,7 @@
       inverted: true
       jobs:
         - Brigmedic
+        - HeadOfSecurity
 
 - type: loadout
   id: LoadoutItemBoxSurvivalBrigmedic
