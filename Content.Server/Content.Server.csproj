@@ -51,6 +51,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
   <ItemGroup>
     <PackageReference Include="JetBrains.Annotations" PrivateAssets="All" />
     <PackageReference Include="MathNet.Numerics" PrivateAssets="All" />
+    <PackageReference Include="NetCord" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Content.Packaging\Content.Packaging.csproj" />
