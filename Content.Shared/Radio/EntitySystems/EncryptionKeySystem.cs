@@ -106,6 +106,7 @@ public sealed partial class EncryptionKeySystem : EntitySystem
         RaiseLocalEvent(uid, new EncryptionChannelsChangedEvent(component));
     }
 
+    // Start DEN: no longer need an encryption key for every radio channel
     private HashSet<string> GetChannels(HashSet<string> channels)
     {
         var result = new HashSet<string>(channels);
@@ -117,7 +118,7 @@ public sealed partial class EncryptionKeySystem : EntitySystem
 
         return result;
     }
-
+   // End DEN
     private void OnContainerModified(EntityUid uid, EncryptionKeyHolderComponent component, ContainerModifiedMessage args)
     {
         if (args.Container.ID == EncryptionKeyHolderComponent.KeyContainerName)
