@@ -1,4 +1,6 @@
 # SPDX-FileCopyrightText: 2024 Dark
+# SPDX-FileCopyrightText: 2024 V
+# SPDX-FileCopyrightText: 2025 juniwoofs
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -16,3 +18,26 @@
   - type: Tag
     tags:
     - ClownMask
+
+- type: entity
+  parent: ClothingMaskPullableBase
+  id: ClothingMaskBreathCommand
+  name: command breath mask
+  description: A fancy and comfortable breath mask, but functionally identical to the clear plastic ones.
+  components:
+  - type: Item
+    size: Tiny
+  - type: Sprite
+    sprite: Clothing/Mask/breathcommand.rsi
+  - type: Clothing
+    sprite: Clothing/Mask/breathcommand.rsi
+  - type: BreathMask
+  - type: IngestionBlocker
+  - type: Tag
+    tags:
+    - PetWearable
+    - WhitelistChameleon
+  - type: HideLayerClothing
+    slots:
+    - Snout
+    hideOnToggle: true

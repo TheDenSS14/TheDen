@@ -138,6 +138,7 @@
 # SPDX-FileCopyrightText: 2025 skyr0cket01
 # SPDX-FileCopyrightText: 2025 slarticodefast
 # SPDX-FileCopyrightText: 2025 sleepyyapril
+# SPDX-FileCopyrightText: 2025 wheelwrightt
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -3782,7 +3783,9 @@
   - type: Butcherable
     spawned:
     - id: FoodMeat
-      amount: 6
+      amount: 3
+    - id: FoodMeatBacon # DEN - Pigs give bacon
+      amount: 3
   - type: Grammar
     attributes:
       gender: epicene

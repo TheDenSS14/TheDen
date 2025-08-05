@@ -1,6 +1,7 @@
-# SPDX-FileCopyrightText: 2025 Blitz <73762869+BlitzTheSquishy@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 KekaniCreates <kekanisb@gmail.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Blitz
+# SPDX-FileCopyrightText: 2025 KekaniCreates
+# SPDX-FileCopyrightText: 2025 portfiend
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -100,6 +101,72 @@
   exclusive: true
   items:
   - ClothingNeckTransPin
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutNeck
+
+- type: loadout
+  id: LoadoutNeckOmnisexualPin
+  category: Neck
+  cost: 1
+  exclusive: true
+  items:
+  - ClothingNeckOmnisexualPin
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutNeck
+
+- type: loadout
+  id: LoadoutNeckGenderfluidPin
+  category: Neck
+  cost: 1
+  exclusive: true
+  items:
+  - ClothingNeckGenderfluidPin
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutNeck
+
+- type: loadout
+  id: LoadoutNeckGenderqueerPin
+  category: Neck
+  cost: 1
+  exclusive: true
+  items:
+  - ClothingNeckGenderqueerPin
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutNeck
+
+- type: loadout
+  id: LoadoutNeckAroacePin
+  category: Neck
+  cost: 1
+  exclusive: true
+  items:
+  - ClothingNeckAroacePin
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutNeck
+
+- type: loadout
+  id: LoadoutNeckPluralPin
+  category: Neck
+  cost: 1
+  exclusive: true
+  items:
+  - ClothingNeckPluralPin
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutNeck
+
+- type: loadout
+  id: LoadoutNeckAllyPin
+  category: Neck
+  cost: 1
+  exclusive: true
+  items:
+  - ClothingNeckAllyPin
   requirements:
   - !type:CharacterItemGroupRequirement
     group: LoadoutNeck
@@ -211,6 +278,28 @@
   exclusive: true
   items:
   - ClothingNeckCloakLesbian
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutNeck
+
+- type: loadout
+  id: LoadoutNeckCloakBear
+  category: Neck
+  cost: 1
+  exclusive: true
+  items:
+  - ClothingNeckCloakBear
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutNeck
+
+- type: loadout
+  id: LoadoutNeckCloakAroace
+  category: Neck
+  cost: 1
+  exclusive: true
+  items:
+  - ClothingNeckCloakAroace
   requirements:
   - !type:CharacterItemGroupRequirement
     group: LoadoutNeck
@@ -334,6 +423,17 @@
   exclusive: true
   items:
   - ClothingNeckScarfStripedLesbianLong
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutNeck
+
+- type: loadout
+  id: LoadoutNeckScarfStripedAroace
+  category: Neck
+  cost: 1
+  exclusive: true
+  items:
+  - ClothingNeckScarfStripedAroace
   requirements:
   - !type:CharacterItemGroupRequirement
     group: LoadoutNeck

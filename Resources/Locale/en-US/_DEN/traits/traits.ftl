@@ -65,3 +65,16 @@ trait-description-SharpTeeth =
     or even custom made implants designed to turn teeth into tiny knives.
     Your unarmed melee attacks deal Piercing damage instead of the standard damage type for your species.
     This has no effect on damage dealt with any form of armed melee.
+trait-name-HandsFreePulling = Hands Free Pulling
+trait-description-HandsFreePulling =
+    You were born with or have had your tail modified to be stronger than normal or have aquired
+    some sort of telekinesis that allows you to drag things around without your hands.
+    These could come from gene modifications, inherited genetics,
+    or even custom implantations or modifications.
+    You're able to drag things around without using your hands due to your abnormally strong tail or other modifications.
+
+trait-name-BloodExaminer = Blood Smell
+trait-description-BloodExaminer =
+    You can [color=yellow]identify the blood chemical of mobs[/color] when you stand close enough to them.
+    Note that this trait [color=orange]does not detect other chemicals in their blood stream[/color], only what
+    the mob's blood stream is actually made of - such as [color=lightblue]synth blood[/color] or [color=lightblue]insect blood[/color].
