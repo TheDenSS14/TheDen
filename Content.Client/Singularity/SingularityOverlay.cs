@@ -22,6 +22,10 @@ using Robust.Client.UserInterface.CustomControls;
 using Robust.Shared.Enums;
 using Robust.Shared.Prototypes;
 using System.Numerics;
+using Content.Shared._Impstation.CCVar;
+using Content.Shared.CCVar;
+using Robust.Shared.Configuration;
+
 
 namespace Content.Client.Singularity
 {
@@ -29,6 +33,7 @@ namespace Content.Client.Singularity
     {
         [Dependency] private readonly IEntityManager _entMan = default!;
         [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
+        [Dependency] private readonly IConfigurationManager _configManager = default!;
         private SharedTransformSystem? _xformSystem = null;
 
         /// <summary>
@@ -99,7 +104,8 @@ namespace Content.Client.Singularity
         {
             if (ScreenTexture == null || args.Viewport.Eye == null)
                 return;
-
+            if (_configManager.GetCVar(CCVars.ReducedMotion) || _configManager.GetCVar(ImpCCVars.DisableSinguloWarping))
+                return;
             _shader?.SetParameter("renderScale", args.Viewport.RenderScale * args.Viewport.Eye.Scale);
             _shader?.SetParameter("count", _count);
             _shader?.SetParameter("position", _positions);
