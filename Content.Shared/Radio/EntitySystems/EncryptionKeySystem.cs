@@ -97,7 +97,7 @@ public sealed partial class EncryptionKeySystem : EntitySystem
             if (!TryComp<EncryptionKeyComponent>(ent, out var key))
                 return;
 
-            var channels = GetChannels(key.Channels);
+            var channels = GetChannels(key.Channels); // DEN: no longer need an encryption key for a new radio channel
 
             component.Channels.UnionWith(channels);
             component.DefaultChannel ??= key.DefaultChannel;
