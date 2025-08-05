@@ -339,6 +339,11 @@
     - TauCetiBasic
     understands:
     - TauCetiBasic
+  - type: TypingIndicator # TheDen
+    proto: alien
+  - type: Emoting # TheDen - Let them emote
+  - type: BodyEmotes # TheDen
+    soundsId: GeneralBodyEmotes
 
 - type: entity
   parent: BaseMobDragon

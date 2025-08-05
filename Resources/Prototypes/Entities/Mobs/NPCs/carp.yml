@@ -143,6 +143,9 @@
       activateSound: null
       deactivateSound: null
     - type: Fauna # Lavaland Change
+    - type: Emoting # TheDen - Let them emote
+    - type: BodyEmotes # TheDen
+      soundsId: GeneralBodyEmotes
 
 - type: entity
   parent: BaseMobCarp
