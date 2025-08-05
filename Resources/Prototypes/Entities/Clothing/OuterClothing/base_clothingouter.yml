@@ -34,7 +34,7 @@
 
 - type: entity
   abstract: true
-  parent: Clothing
+  parent: [Clothing, AllowSuitStorageClothing]
   id: ClothingOuterBase
   components:
   - type: Clothing
