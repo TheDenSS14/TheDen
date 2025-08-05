@@ -41,8 +41,8 @@
 // SPDX-FileCopyrightText: 2024 Nemanja
 // SPDX-FileCopyrightText: 2024 Pierson Arnold
 // SPDX-FileCopyrightText: 2024 Pieter-Jan Briers
-// SPDX-FileCopyrightText: 2024 Simon
 // SPDX-FileCopyrightText: 2024 VMSolidus
+// SPDX-FileCopyrightText: 2025 Simon
 // SPDX-FileCopyrightText: 2025 sleepyyapril
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
@@ -57,6 +57,7 @@ using Content.Server.Chat.Managers;
 using Content.Server.Connection;
 using Content.Server.JoinQueue;
 using Content.Server.Database;
+using Content.Server.Discord.DiscordLink;
 using Content.Server.DiscordAuth;
 using Content.Server.EUI;
 using Content.Server.GameTicking;
@@ -196,6 +197,10 @@ namespace Content.Server.Entry
                 IoCManager.Resolve<IAdminManager>().Initialize();
                 IoCManager.Resolve<IAfkManager>().Initialize();
                 IoCManager.Resolve<RulesManager>().Initialize();
+
+                IoCManager.Resolve<DiscordLink>().Initialize();
+                IoCManager.Resolve<DiscordChatLink>().Initialize();
+
                 _euiManager.Initialize();
 
                 IoCManager.Resolve<IGameMapManager>().Initialize();
@@ -230,6 +235,9 @@ namespace Content.Server.Entry
             _playTimeTracking?.Shutdown();
             _dbManager?.Shutdown();
             IoCManager.Resolve<ServerApi>().Shutdown();
+
+            IoCManager.Resolve<DiscordLink>().Shutdown();
+            IoCManager.Resolve<DiscordChatLink>().Shutdown();
         }
 
         private static void LoadConfigPresets(IConfigurationManager cfg, IResourceManager res, ISawmill sawmill)
