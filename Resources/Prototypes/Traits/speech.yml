@@ -237,6 +237,25 @@
       emoteSound: Kitsune
       useSex: true
 
+- type: trait
+  id: MothSounds
+  category: TraitsSpeechSounds
+  points: -2
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: TraitsRaceSounds
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Moth
+  functions:
+    - !type:TraitAddTag
+      tags:
+      - MothEmotes
+    - !type:TraitSetAdditionalEmoteSound
+      emoteSound: Moth
+      useSex: true
+
 # REPLACE SOUNDS 
 
 - type: trait
@@ -482,5 +501,25 @@
       - KitsuneEmotes
     - !type:TraitSetAdditionalEmoteSound
       emoteSound: Kitsune
+      useSex: true
+      replace: true
+
+- type: trait
+  id: MothSoundsReplace
+  category: TraitsSpeechSounds
+  points: -2
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: TraitsRaceSounds
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Moth
+  functions:
+    - !type:TraitAddTag
+      tags:
+      - MothEmotes
+    - !type:TraitSetAdditionalEmoteSound
+      emoteSound: Moth
       useSex: true
       replace: true
