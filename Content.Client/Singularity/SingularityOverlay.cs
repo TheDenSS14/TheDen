@@ -106,6 +106,7 @@ namespace Content.Client.Singularity
                 return;
             if (_configManager.GetCVar(CCVars.ReducedMotion) || _configManager.GetCVar(ImpCCVars.DisableSinguloWarping))
                 return;
+
             _shader?.SetParameter("renderScale", args.Viewport.RenderScale * args.Viewport.Eye.Scale);
             _shader?.SetParameter("count", _count);
             _shader?.SetParameter("position", _positions);
@@ -124,6 +125,11 @@ namespace Content.Client.Singularity
         /// </summary>
         private void OnProjectFromScreenToMap(ref PixelToMapEvent args)
         {   // Mostly copypasta from the singularity shader.
+
+            //if the shader is disabled then no unwarping is needed
+            if (_configManager.GetCVar(CCVars.ReducedMotion) || _configManager.GetCVar(ImpCCVars.DisableSinguloWarping))
+                return;
+
             var maxDistance = MaxDistance * EyeManager.PixelsPerMeter;
             var finalCoords = args.VisiblePosition;
 
