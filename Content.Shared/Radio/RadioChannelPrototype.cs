@@ -52,4 +52,12 @@ public sealed partial class RadioChannelPrototype : IPrototype
     [DataField, ViewVariables]
     public bool ShowFrequency = false;
     // End Frontier
+
+    // DEN: radio channel uses other encryption key
+    /// <summary>
+    /// A list of channels to unlock alongside this one.
+    /// </summary>
+    [DataField]
+    public HashSet<ProtoId<RadioChannelPrototype>> UnlockChannels { get; set; } = new();
+    // End DEN
 }

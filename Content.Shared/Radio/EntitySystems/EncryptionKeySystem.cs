@@ -96,14 +96,28 @@ public sealed partial class EncryptionKeySystem : EntitySystem
 
         foreach (var ent in component.KeyContainer.ContainedEntities)
         {
-            if (TryComp<EncryptionKeyComponent>(ent, out var key))
-            {
-                component.Channels.UnionWith(key.Channels);
-                component.DefaultChannel ??= key.DefaultChannel;
-            }
+            if (!TryComp<EncryptionKeyComponent>(ent, out var key))
+                return;
+
+            var channels = GetChannels(key.Channels);
+
+            component.Channels.UnionWith(channels);
+            component.DefaultChannel ??= key.DefaultChannel;
         }
 
         RaiseLocalEvent(uid, new EncryptionChannelsChangedEvent(component));
+    }
+
+    private HashSet<string> GetChannels(HashSet<string> channels)
+    {
+        var result = new HashSet<string>(channels);
+
+        foreach (var extraChannel in channels
+            .Select(channel => _protoManager.Index<RadioChannelPrototype>(channel))
+            .SelectMany(proto => proto.UnlockChannels))
+            result.Add(extraChannel);
+
+        return result;
     }
 
     private void OnContainerModified(EntityUid uid, EncryptionKeyHolderComponent component, ContainerModifiedMessage args)
