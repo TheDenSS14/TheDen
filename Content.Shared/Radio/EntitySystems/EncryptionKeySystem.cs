@@ -119,6 +119,7 @@ public sealed partial class EncryptionKeySystem : EntitySystem
         return result;
     }
    // End DEN
+   
     private void OnContainerModified(EntityUid uid, EncryptionKeyHolderComponent component, ContainerModifiedMessage args)
     {
         if (args.Container.ID == EncryptionKeyHolderComponent.KeyContainerName)
