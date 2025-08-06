@@ -319,6 +319,47 @@
   - !type:TileNotBlocked
 
 - type: construction
+  id: Cardwall
+  graph: Cardwall
+  startNode: start
+  targetNode: cardwall
+  category: construction-category-structures
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canRotate: false
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  name: meat wall
+  id: MeatWall
+  graph: Girder
+  startNode: start
+  targetNode: meatWall
+  category: construction-category-structures
+  description: Sticky.
+  icon:
+    sprite: Structures/Walls/meat.rsi
+    state: full
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canRotate: false
+
+- type: construction
+  id: Cardwall
+  graph: Cardwall
+  startNode: start
+  targetNode: cardwall
+  category: construction-category-structures
+  conditions:
+  - !type:TileNotBlocked
+    failIfSpace: false
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canRotate: false
+
+- type: construction
   name: grille
   id: Grille
   graph: Grille
@@ -1641,8 +1682,29 @@
     state: closed
 
 - type: construction
-  name: plastic flaps
+  id: CardDoor
+  graph: DoorGraph
+  startNode: start
+  targetNode: cardDoor
+  category: construction-category-structures
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+
+- type: construction
   id: PlasticFlapsClear
+  graph: PlasticFlapsGraph
+  startNode: start
+  targetNode: cardDoor
+  category: construction-category-structures
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  id: PlasticFlapsOpaque
   graph: PlasticFlapsGraph
   startNode: start
   targetNode: plasticFlaps
