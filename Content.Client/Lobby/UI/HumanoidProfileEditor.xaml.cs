@@ -1803,7 +1803,7 @@ namespace Content.Client.Lobby.UI
             foreach (var sex in sexes)
                 VoiceButton.AddItem(Loc.GetString($"humanoid-profile-editor-sex-{sex.ToString().ToLower()}-text"), (int) sex);
 
-            VoiceButton.SelectId((int) Profile.PreferredVoice);
+            VoiceButton.SelectId((int) (Profile.PreferredVoice ?? Profile.Sex));
         }
 
         private void UpdateSkinColor()
@@ -1925,7 +1925,7 @@ namespace Content.Client.Lobby.UI
                 return;
 
             PronounsButton.SelectId((int) Profile.Gender);
-            VoiceButton.SelectId((int) Profile.PreferredVoice); // TheDen - Add Voice
+            VoiceButton.SelectId((int) (Profile.PreferredVoice ?? Profile.Sex)); // TheDen - Add Voice
         }
 
         private void UpdateDisplayPronounsControls()
