@@ -25,6 +25,7 @@
 // SPDX-FileCopyrightText: 2024 Pieter-Jan Briers
 // SPDX-FileCopyrightText: 2024 SimpleStation14
 // SPDX-FileCopyrightText: 2025 RedFoxIV
+// SPDX-FileCopyrightText: 2025 Simon
 // SPDX-FileCopyrightText: 2025 sleepyyapril
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
@@ -52,6 +53,7 @@ namespace Content.Server.Chat.Managers
         void TrySendOOCMessage(ICommonSession player, string message, OOCChatType type);
 
         void SendHookOOC(string sender, string message);
+        void SendHookAdmin(string sender, string message);
         void SendAdminAnnouncement(string message, AdminFlags? flagBlacklist = null, AdminFlags? flagWhitelist = null);
         void SendAdminAnnouncementMessage(ICommonSession player, string message, bool suppressLog = true);
 
