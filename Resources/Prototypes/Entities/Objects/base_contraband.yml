@@ -1,4 +1,12 @@
-﻿# "military grade" rival company gear
+﻿# improvised weapons, ieds, etc
+- type: entity
+  id: BaseImprovisedContraband
+  abstract: true
+  components:
+  - type: Contraband
+    severity: contrabandSeverityImprovised
+
+# "military grade" rival company gear
 - type: entity
   id: BaseRivalCompanyContraband
   abstract: true
@@ -6,7 +14,7 @@
   - type: Contraband
     severity: contrabandSeverityRivalCompany
 
-# improvised weapons etc
+# kitchen knives, eva suits, etc
 - type: entity
   id: BaseMinorContraband
   abstract: true
