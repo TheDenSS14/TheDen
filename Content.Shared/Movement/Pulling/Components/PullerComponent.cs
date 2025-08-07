@@ -1,13 +1,12 @@
-// SPDX-FileCopyrightText: 2024 Jezithyr <jezithyr@gmail.com>
-// SPDX-FileCopyrightText: 2024 Mnemotechnican <69920617+Mnemotechnician@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 SimpleStation14 <130339894+SimpleStation14@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 sleepyyapril <flyingkarii@gmail.com>
-// SPDX-FileCopyrightText: 2025 BramvanZijp <56019239+BramvanZijp@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 BramvanZijp <BramvanZijp@gmail.com>
-// SPDX-FileCopyrightText: 2025 Eagle-0 <114363363+Eagle-0@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Jezithyr
+// SPDX-FileCopyrightText: 2024 Mnemotechnican
+// SPDX-FileCopyrightText: 2024 Nemanja
+// SPDX-FileCopyrightText: 2024 SimpleStation14
+// SPDX-FileCopyrightText: 2024 metalgearsloth
+// SPDX-FileCopyrightText: 2025 BramvanZijp
+// SPDX-FileCopyrightText: 2025 Eagle-0
+// SPDX-FileCopyrightText: 2025 portfiend
+// SPDX-FileCopyrightText: 2025 sleepyyapril
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -41,16 +40,22 @@ public sealed partial class PullerComponent : Component
     [DataField]
     public TimeSpan PushChangeCooldown = TimeSpan.FromSeconds(0.1f), PushDuration = TimeSpan.FromSeconds(5f);
 
-    // Before changing how this is updated, please see SharedPullerSystem.RefreshMovementSpeed
-    public float WalkSpeedModifier => Pulling == default ? 1.0f : 0.95f;
+    [DataField("walkSpeedModifier")]
+    public float PullWalkSpeedModifier = 0.95f; // DEN - Allow pull speed to be changed
 
-    public float SprintSpeedModifier => Pulling == default ? 1.0f : 0.95f;
-	
+    [DataField("sprintSpeedModifier")]
+    public float PullSprintSpeedModifier = 0.95f; // DEN - Allow pull speed to be changed
+
+    // Before changing how this is updated, please see SharedPullerSystem.RefreshMovementSpeed
+    public float WalkSpeedModifier => Pulling == default ? 1.0f : PullWalkSpeedModifier;
+
+    public float SprintSpeedModifier => Pulling == default ? 1.0f : PullSprintSpeedModifier;
+
     /// <summary>
     /// whether or not to apply speed modifiers to the puller
     /// </summary>
 	[AutoNetworkedField, DataField]
-	public bool ApplySpeedModifier = true;
+    public bool ApplySpeedModifier = true;
 
     /// <summary>
     ///     Entity currently being pulled/pushed if applicable.

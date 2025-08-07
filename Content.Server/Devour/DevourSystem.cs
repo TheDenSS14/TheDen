@@ -14,16 +14,18 @@
 
 using Content.Server.Body.Components;
 using Content.Server.Body.Systems;
+using Content.Shared._DEN.Unrotting;
 using Content.Shared.Chemistry.Components;
 using Content.Shared.Damage;
 using Content.Shared.Devour;
 using Content.Shared.Devour.Components;
 using Content.Shared.Humanoid;
-using Content.Shared.Item; // Goobstation
+using Content.Shared.Item;
+using Content.Shared.Mobs; // Goobstation
 
 namespace Content.Server.Devour;
 
-public sealed class DevourSystem : SharedDevourSystem
+public sealed partial class DevourSystem : SharedDevourSystem
 {
     [Dependency] private readonly DamageableSystem _damageable = default!;
     [Dependency] private readonly BloodstreamSystem _bloodstreamSystem = default!;
@@ -34,6 +36,7 @@ public sealed class DevourSystem : SharedDevourSystem
 
         SubscribeLocalEvent<DevourerComponent, DevourDoAfterEvent>(OnDoAfter);
         SubscribeLocalEvent<DevourerComponent, BeingGibbedEvent>(OnGibContents);
+        SubscribeLocalEvent<DragonUnrottingComponent, MobStateChangedEvent>(OnMobStateChanged);
     }
 
     private void OnDoAfter(EntityUid uid, DevourerComponent component, DevourDoAfterEvent args)
@@ -70,8 +73,11 @@ public sealed class DevourSystem : SharedDevourSystem
         else if (args.Args.Target != null)
             QueueDel(args.Args.Target.Value);
 
-        if (args.AllowDevouring)
-            _audioSystem.PlayPvs(component.SoundDevour, uid);
+        if (args.AllowDevouring) // DEN: Dragon consent
+            AudioSystem.PlayPvs(component.SoundDevour, uid);
+
+        if (args.Args.Target is not null && !args.AllowDevouring)
+            EnsureComp<DragonUnrottingComponent>(args.Args.Target.Value);
     }
 
     private void OnGibContents(EntityUid uid, DevourerComponent component, ref BeingGibbedEvent args)
