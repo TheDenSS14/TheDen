@@ -1,77 +1,113 @@
-# SPDX-FileCopyrightText: 2022 Alex Evgrashin <aevgrashin@yandex.ru>
-# SPDX-FileCopyrightText: 2023 Morb <14136326+Morb0@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2023 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2023 PixelTK <85175107+PixelTheKermit@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2023 Puro <103608145+PuroSlavKing@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 Angelo Fallaria <ba.fallaria@gmail.com>
-# SPDX-FileCopyrightText: 2024 CaasGit <87243814+CaasGit@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 Errant <35878406+errant-4@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 lunarcomets <140772713+lunarcomets@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 Skubman <ba.fallaria@gmail.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 Alex Evgrashin
+# SPDX-FileCopyrightText: 2023 Morb
+# SPDX-FileCopyrightText: 2023 Nemanja
+# SPDX-FileCopyrightText: 2023 PixelTK
+# SPDX-FileCopyrightText: 2023 Puro
+# SPDX-FileCopyrightText: 2024 Angelo Fallaria
+# SPDX-FileCopyrightText: 2024 CaasGit
+# SPDX-FileCopyrightText: 2024 Errant
+# SPDX-FileCopyrightText: 2024 lunarcomets
+# SPDX-FileCopyrightText: 2025 88tv
+# SPDX-FileCopyrightText: 2025 Jakumba
+# SPDX-FileCopyrightText: 2025 Skubman
+# SPDX-FileCopyrightText: 2025 YoungThug
+# SPDX-FileCopyrightText: 2025 lzk
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 - type: typingIndicator
   id: default
   typingState: default0
+  idleState: default3
 
 - type: typingIndicator
   id: robot
   typingState: robot0
+  idleState: robot3
 
 - type: typingIndicator
   id: alien
   typingState: alien0
+  idleState: alien3
 
 - type: typingIndicator
   id: guardian
   typingState: guardian0
+  idleState: guardian3
 
 - type: typingIndicator
   id: holo
   typingState: holo0
+  idleState: holo3
   offset: 0, 0.0625
 
 - type: typingIndicator
   id: lawyer
   typingState: lawyer0
+  idleState: lawyer3
   offset: 0, 0.125
 
 - type: typingIndicator
   id: moth
   typingState: moth0
+  idleState: moth3
   offset: 0, 0.125
 
 - type: typingIndicator
   id: spider
   typingState: spider0
+  idleState: spider3
   offset: 0, 0.125
 
 - type: typingIndicator
   id: vox
   typingState: vox0
+  idleState: default3 # TODO add idle state sprite
   offset: -0.125, 0.125
 
 - type: typingIndicator
   id: lizard
   typingState: lizard0
+  idleState: lizard3
   offset: 0, 0.0625
 
 - type: typingIndicator
   id: slime
   typingState: slime0
+  idleState: slime3
+  offset: 0, 0.125
+
+- type: typingIndicator
+  id: gingerbread
+  typingState: gingerbread0
+  idleState: default3
+  offset: 0, 0.125
+
+- type: typingIndicator
+  id: diona
+  typingState: diona0
+  idleState: diona3
+  offset: 0, 0.125
+
+- type: typingIndicator
+  id: regal
+  typingState: regal0
+  idleState: regal3
   offset: 0, 0.125
 
 - type: typingIndicator
   id: oni
   typingState: oni0
+  idleState: default3
   offset: 0, 0.0625
 
 - type: typingIndicator
   id: plasmaman
   typingState: plasmaman0
+  idleState: default3
 
 - type: typingIndicator
   id: skeleton
   typingState: skeleton0
+  idleState: default3
