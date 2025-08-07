@@ -1,10 +1,10 @@
-// SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT <77995199+DEATHB4DEFEAT@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 sleepyyapril <flyingkarii@gmail.com>
-// SPDX-FileCopyrightText: 2025 Remuchi <72476615+Remuchi@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 Skubman <ba.fallaria@gmail.com>
-// SPDX-FileCopyrightText: 2025 Timfa <timfalken@hotmail.com>
-// SPDX-FileCopyrightText: 2025 VMSolidus <evilexecutive@gmail.com>
-// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT
+// SPDX-FileCopyrightText: 2025 Remuchi
+// SPDX-FileCopyrightText: 2025 Skubman
+// SPDX-FileCopyrightText: 2025 Timfa
+// SPDX-FileCopyrightText: 2025 VMSolidus
+// SPDX-FileCopyrightText: 2025 portfiend
+// SPDX-FileCopyrightText: 2025 sleepyyapril
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -126,7 +126,7 @@ public sealed class SharedLoadoutSystem : EntitySystem
                 }
 
                 allLoadouts.Add((item, loadout, i));
-                if (i == 0 && loadout.CustomHeirloom == true) // Only the first item can be an heirloom
+                if (loadout.CustomHeirloom == true) // DEN - Any number of heirlooms
                     heirlooms.Add((item, loadout));
 
                 // Equip it
@@ -174,6 +174,11 @@ public sealed class SharedLoadoutSystem : EntitySystem
                 i++;
             }
         }
+
+        // DEN - This sux but this fix is needed before we blow up loadouts
+        heirlooms = heirlooms
+            .Where(h => !TerminatingOrDeleted(h.Item1))
+            .ToList();
 
         // Return a list of items that couldn't be equipped so the server can handle it if it wants
         // The server has more information about the inventory system than the client does and the client doesn't need to put loadouts in backpacks

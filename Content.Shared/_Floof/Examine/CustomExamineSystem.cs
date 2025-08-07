@@ -1,11 +1,12 @@
 // SPDX-FileCopyrightText: 2025 Mnemotechnican
+// SPDX-FileCopyrightText: 2025 sleepyyapril
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using System.Text.RegularExpressions;
+using Content.Shared._Floof.Consent;
 using Content.Shared.ActionBlocker;
 using Content.Shared.Administration.Managers;
-using Content.Shared.Consent;
 using Content.Shared.Examine;
 using Content.Shared.Interaction;
 using Robust.Shared.Player;
@@ -71,10 +72,9 @@ public abstract class SharedCustomExamineSystem : EntitySystem
         }
     }
 
-    protected bool CanChangeExamine(ICommonSession actor, EntityUid examinee)
+    public bool CanChangeExamine(EntityUid examining, EntityUid examinee)
     {
-        return actor.AttachedEntity == examinee && _actionBlocker.CanConsciouslyPerformAction(examinee)
-            || _admin.IsAdmin(actor);
+        return examining == examinee && _actionBlocker.CanConsciouslyPerformAction(examinee);
     }
 
     private void CheckExpirations(Entity<CustomExamineComponent> ent)

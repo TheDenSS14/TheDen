@@ -17,6 +17,7 @@
 // SPDX-FileCopyrightText: 2024 ike709
 // SPDX-FileCopyrightText: 2024 metalgearsloth
 // SPDX-FileCopyrightText: 2025 Aikakakah
+// SPDX-FileCopyrightText: 2025 Falcon
 // SPDX-FileCopyrightText: 2025 Lyndomen
 // SPDX-FileCopyrightText: 2025 Tabitha
 // SPDX-FileCopyrightText: 2025 Timfa
@@ -195,6 +196,7 @@ public abstract class SharedHumanoidAppearanceSystem : EntitySystem
         targetHumanoid.EyeColor = sourceHumanoid.EyeColor;
         targetHumanoid.Age = sourceHumanoid.Age;
         SetSex(target, sourceHumanoid.Sex, false, targetHumanoid);
+        SetVoice(target, sourceHumanoid.PreferredVoice, false, targetHumanoid); // TheDen - Add Voice
         targetHumanoid.CustomBaseLayers = new(sourceHumanoid.CustomBaseLayers);
         targetHumanoid.MarkingSet = new(sourceHumanoid.MarkingSet);
 
@@ -359,10 +361,43 @@ public abstract class SharedHumanoidAppearanceSystem : EntitySystem
         if (!Resolve(uid, ref humanoid) || humanoid.Sex == sex)
             return;
 
-        var oldSex = humanoid.Sex;
         humanoid.Sex = sex;
         humanoid.MarkingSet.EnsureSexes(sex, _markingManager);
-        RaiseLocalEvent(uid, new SexChangedEvent(oldSex, sex));
+        if (sync)
+            Dirty(uid, humanoid);
+    }
+
+    // TheDen - Add Voice
+    /// <summary>
+    ///     Set a humanoid mob's voice. This will not change their gender.
+    /// </summary>
+    /// <param name="uid">The humanoid mob's UID.</param>
+    /// <param name="voice">The voice to set the mob to.</param>
+    /// <param name="sync">Whether to immediately synchronize this to the humanoid mob, or not.</param>
+    /// <param name="humanoid">Humanoid component of the entity</param>
+    public void SetVoice(EntityUid uid, Sex voice, bool sync = true, HumanoidAppearanceComponent? humanoid = null)
+    {
+        if (!Resolve(uid, ref humanoid) || humanoid.PreferredVoice == voice)
+            return;
+
+        var oldVoice = humanoid.PreferredVoice;
+        humanoid.PreferredVoice = voice;
+        // humanoid.MarkingSet.EnsureSexes(voice, _markingManager);
+
+        List<Sex> sexes = new();
+
+        if (_proto.TryIndex(humanoid.Species, out var speciesProto))
+        {
+            foreach (var sex in speciesProto.Sexes)
+                sexes.Add(sex);
+        }
+        else
+            sexes.Add(Sex.Unsexed);
+
+        if (!sexes.Contains(voice))
+            voice = sexes[0];
+
+        RaiseLocalEvent(uid, new VoiceChangedEvent(oldVoice, voice));
 
         if (sync)
             Dirty(uid, humanoid);
@@ -446,6 +481,7 @@ public abstract class SharedHumanoidAppearanceSystem : EntitySystem
 
         SetSpecies(uid, profile.Species, false, humanoid);
         SetSex(uid, profile.Sex, false, humanoid);
+        SetVoice(uid, profile.PreferredVoice ?? profile.Sex, false, humanoid); // TheDen - Add Voice
         humanoid.EyeColor = profile.Appearance.EyeColor;
         var ev = new EyeColorInitEvent();
         RaiseLocalEvent(uid, ref ev);

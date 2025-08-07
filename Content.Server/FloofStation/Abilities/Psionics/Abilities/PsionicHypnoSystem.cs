@@ -1,10 +1,10 @@
-// SPDX-FileCopyrightText: 2024 FoxxoTrystan <trystan.garnierhein@gmail.com>
-// SPDX-FileCopyrightText: 2024 sleepyyapril <flyingkarii@gmail.com>
-// SPDX-FileCopyrightText: 2025 Rosycup <178287475+Rosycup@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 FoxxoTrystan
+// SPDX-FileCopyrightText: 2025 Rosycup
+// SPDX-FileCopyrightText: 2025 sleepyyapril
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
+using Content.Server._Floof.Consent;
 using Content.Shared.Abilities.Psionics;
 using Content.Shared.Actions.Events;
 using Content.Shared.Floofstation.Hypno;
@@ -23,7 +23,6 @@ using Content.Shared.Administration.Logs;
 using Content.Shared.Mobs.Systems;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Psionics;
-using Content.Server.Consent;
 using Content.Shared.Mind.Components;
 
 
@@ -63,7 +62,7 @@ namespace Content.Server.Abilities.Psionics
 
             if (!_consent.HasConsent(args.Target, "Hypno"))
             {
-                _popups.PopupEntity(Loc.GetString("has-no-consent"), uid, uid, PopupType.Large);
+                _popups.PopupEntity(Loc.GetString("has-no-consent", ("target", args.Target)), uid, uid, PopupType.Large);
                 return;
             }
 

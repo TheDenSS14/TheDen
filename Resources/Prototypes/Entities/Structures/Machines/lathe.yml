@@ -213,6 +213,7 @@
 # SPDX-FileCopyrightText: 2024 lapatison
 # SPDX-FileCopyrightText: 2024 lunarcomets
 # SPDX-FileCopyrightText: 2024 lzk
+# SPDX-FileCopyrightText: 2024 medabunny
 # SPDX-FileCopyrightText: 2024 metalgearsloth
 # SPDX-FileCopyrightText: 2024 nikthechampiongr
 # SPDX-FileCopyrightText: 2024 ninruB
@@ -488,6 +489,8 @@
     dynamicPacks:
     - ProtolatheDynamicAwfulDen
   - type: EmagLatheRecipes
+    emagStaticPacks:
+    - ProtolatheStaticEmagAwfulDen
     emagDynamicPacks:
     - ProtolatheDynamicEmagAwfulDen
 
@@ -582,7 +585,7 @@
   - type: EmagLatheRecipes
     emagDynamicPacks:
     - ExosuitFabricatorDynamicEmagAwfulDen
-    
+
   - type: MaterialStorage
     whitelist:
       tags:
@@ -672,9 +675,6 @@
     - SecurityTechFabStaticAwfulDen
     dynamicPacks:
     - SecurityTechFabDynamicAwfulDen
-  - type: EmagLatheRecipes
-    emagDynamicPacks:
-    - SecurityTechFabEmagDynamicAwfulDen
   - type: MaterialStorage
     whitelist:
       tags:
@@ -786,7 +786,9 @@
   - type: Lathe
     idleState: icon
     runningState: icon
-    # Static recipes are inherited from the autolathe. This only adds some dynamic ones.
+    staticPacks:
+    - EngineeringTechFabStaticAwfulDen
+    - AutolatheStaticAwfulDen
     dynamicPacks:
     - EngineeringTechFabDynamicAwfulDen
   - type: MaterialStorage
@@ -822,7 +824,9 @@
   - type: Lathe
     idleState: icon
     runningState: icon
-    # Static recipes are inherited from the autolathe. This only adds some dynamic ones.
+    staticPacks:
+    - AutolatheStaticAwfulDen
+    - CargoTechFabStaticAwfulDen
     dynamicPacks:
     - CargoTechFabDynamicAwfulDen
   - type: MaterialStorage

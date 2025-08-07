@@ -1,0 +1,17 @@
+# SPDX-FileCopyrightText: 2024 V
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  parent: ClothingShoesBootsCombatFilled
+  id: ClothingShoesBootsCaptainjumpboots
+  name: jump boots
+  description: Polished leather boots with strong ankle support, originally designed for paratroopers, with rattling gold heel taps so they know you're coming.
+  components:
+  - type: Sprite
+    sprite: Clothing/Shoes/Boots/captainjumpboots.rsi
+  - type: Clothing
+    sprite: Clothing/Shoes/Boots/captainjumpboots.rsi
+  - type: FootstepModifier
+    footstepSoundCollection:
+      collection: FootstepSpurs

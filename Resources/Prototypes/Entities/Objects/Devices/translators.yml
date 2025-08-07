@@ -3,7 +3,9 @@
 # SPDX-FileCopyrightText: 2024 VMSolidus
 # SPDX-FileCopyrightText: 2024 fox
 # SPDX-FileCopyrightText: 2025 Blitz
+# SPDX-FileCopyrightText: 2025 Carlen White
 # SPDX-FileCopyrightText: 2025 SX-7
+# SPDX-FileCopyrightText: 2025 Tanix
 # SPDX-FileCopyrightText: 2025 Timfa
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
@@ -50,6 +52,7 @@
   - type: ItemToggle
   - type: PowerCellDraw
     drawRate: 1.2
+  - type: ToggleCellDraw
   - type: ItemSlots
     slots:
       cell_slot:
@@ -385,3 +388,20 @@
     requires:
     - TauCetiBasic
     - Caprine
+
+- type: entity
+  id: VoxPidginTranslator
+  parent: [ TranslatorPoweredBase ]
+  name: Vox-Pidgin translator
+  description: Translates speech between Vox-Pidgin and Galactic Common. Helps process those loud screeches into real, legible words.
+  components:
+  - type: HandheldTranslator
+    spoken:
+    - TauCetiBasic
+    - VoxPidgin
+    understood:
+    - TauCetiBasic
+    - VoxPidgin
+    requires:
+    - TauCetiBasic
+    - VoxPidgin

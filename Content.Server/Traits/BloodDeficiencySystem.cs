@@ -1,7 +1,7 @@
-// SPDX-FileCopyrightText: 2024 Angelo Fallaria <ba.fallaria@gmail.com>
-// SPDX-FileCopyrightText: 2024 Mnemotechnican <69920617+Mnemotechnician@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 Skubman <ba.fallaria@gmail.com>
-// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Angelo Fallaria
+// SPDX-FileCopyrightText: 2024 Mnemotechnican
+// SPDX-FileCopyrightText: 2024 Skubman
+// SPDX-FileCopyrightText: 2025 sleepyyapril
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -24,6 +24,10 @@ public sealed class BloodDeficiencySystem : EntitySystem
     {
         if (!ent.Comp.Active || !TryComp<BloodstreamComponent>(ent.Owner, out var bloodstream))
             return;
+
+        // We should only be stopping blood from pooling when the source is ONLY blood deficiency.
+        if (args.Amount >= 0)
+            args.AllowBloodPooling = false;
 
         args.Amount = FixedPoint2.Min(args.Amount, 0) // If the blood regen amount already was negative, we keep it.
                       - bloodstream.BloodMaxVolume * ent.Comp.BloodLossPercentage;

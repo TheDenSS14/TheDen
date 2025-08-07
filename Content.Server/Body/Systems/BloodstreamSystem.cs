@@ -30,6 +30,7 @@
 // SPDX-FileCopyrightText: 2024 SlamBamActionman
 // SPDX-FileCopyrightText: 2024 VMSolidus
 // SPDX-FileCopyrightText: 2025 ash lea
+// SPDX-FileCopyrightText: 2025 portfiend
 // SPDX-FileCopyrightText: 2025 sleepyyapril
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
@@ -48,6 +49,7 @@ using Content.Shared.Chemistry.Reaction;
 using Content.Shared.Damage;
 using Content.Shared.Damage.Prototypes;
 using Content.Shared.Drunk;
+using Content.Shared.Examine;
 using Content.Shared.FixedPoint;
 using Content.Shared.HealthExaminable;
 using Content.Shared.Mobs.Systems;
@@ -63,7 +65,7 @@ using Robust.Shared.Timing;
 
 namespace Content.Server.Body.Systems;
 
-public sealed class BloodstreamSystem : EntitySystem
+public sealed partial class BloodstreamSystem : EntitySystem
 {
     [Dependency] private readonly IGameTiming _gameTiming = default!;
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
@@ -95,6 +97,9 @@ public sealed class BloodstreamSystem : EntitySystem
         SubscribeLocalEvent<BloodstreamComponent, ReactionAttemptEvent>(OnReactionAttempt);
         SubscribeLocalEvent<BloodstreamComponent, SolutionRelayEvent<ReactionAttemptEvent>>(OnReactionAttempt);
         SubscribeLocalEvent<BloodstreamComponent, RejuvenateEvent>(OnRejuvenate);
+
+        // DEN - Examine text for bloodstreams. Used for blood examiner component.
+        SubscribeLocalEvent<BloodstreamComponent, ExaminedEvent>(OnExamined);
     }
 
     private void OnMapInit(Entity<BloodstreamComponent> ent, ref MapInitEvent args)
@@ -573,6 +578,6 @@ public sealed class BloodstreamSystem : EntitySystem
         if (usedThirst > 0 && thirstComp is not null)
             _thirst.ModifyThirst(ent, thirstComp, (float) -usedThirst);
 
-        return TryModifyBloodLevel(ent, ev.Amount, ent.Comp);
+        return TryModifyBloodLevel(ent, ev.Amount, ent.Comp, createPuddle: ev.AllowBloodPooling);
     }
 }

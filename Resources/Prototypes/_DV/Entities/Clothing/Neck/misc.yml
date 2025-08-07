@@ -1,11 +1,12 @@
-# SPDX-FileCopyrightText: 2024 VMSolidus <evilexecutive@gmail.com>
-# SPDX-FileCopyrightText: 2025 Rosycup <178287475+Rosycup@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 VMSolidus
+# SPDX-FileCopyrightText: 2025 January Nelson
+# SPDX-FileCopyrightText: 2025 Rosycup
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 - type: entity
-  parent: ClothingNeckBase
+  parent: [ ClothingNeckBase, BaseObviousBadge ] # imp
   id: ClothingNeckProsecutorbadge
   name: prosecutor badge
   description: A badge to show that the owner is a 'legitimate' prosecutor who passed the NT bar exam required to practice law.
@@ -16,4 +17,6 @@
     sprite: _DV/Clothing/Neck/Misc/prosecutorbadge.rsi
   - type: TypingIndicatorClothing
     proto: lawyer
+  - type: WearerGetsExamineText # imp
+    thingType: obvious-type-law-prosecution
 
