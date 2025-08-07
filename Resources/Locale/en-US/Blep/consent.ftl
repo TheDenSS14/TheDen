@@ -49,3 +49,6 @@ consent-NoDragonDevour-desc = With this on, you will no longer be able to be dev
 
 consent-NSFWDescriptions-name = Show NSFW Descriptions
 consent-NSFWDescriptions-desc = Toggle this on to see dynamic player descriptions that may contain NSFW/ERP content.
+
+consent-LastMessage-name = No Last Message Entries
+consent-LastMessage-desc = Toggle this on to never appear in the "last words" discord webhook. Local chat is the only one ever sent.
