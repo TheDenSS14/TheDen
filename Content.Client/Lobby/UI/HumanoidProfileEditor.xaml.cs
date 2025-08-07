@@ -1398,7 +1398,8 @@ namespace Content.Client.Lobby.UI
             if (Profile is null)
                 return;
             Profile = Profile.WithCDCharacterRecords(records);
-            SetDirty();
+            // SetDirty();
+            IsDirty = true; // TODO: when we fix character record saving, use SetDirty isntead
         }
         // End CD - Character Records
 
