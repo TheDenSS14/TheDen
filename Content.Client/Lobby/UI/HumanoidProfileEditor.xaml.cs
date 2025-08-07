@@ -1592,7 +1592,7 @@ namespace Content.Client.Lobby.UI
         {
             Profile = Profile?.WithVoice(newVoice);
             ReloadPreview();
-            IsDirty = true;
+            SetDirty();
         }
 
         private void SetGender(Gender newGender)
