@@ -228,13 +228,12 @@ public sealed partial class LoadoutPreference : Loadout
             && CustomName == other.CustomName
             && CustomDescription == other.CustomDescription
             && CustomHeirloom == other.CustomHeirloom
-            && CustomColorTint == other.CustomColorTint
-            && Selected == other.Selected;
+            && CustomColorTint == other.CustomColorTint;
     }
 
     public override int GetHashCode()
     {
-        return HashCode.Combine(LoadoutName, CustomName, CustomDescription, CustomHeirloom, CustomColorTint, Selected);
+        return HashCode.Combine(LoadoutName, CustomName, CustomDescription, CustomHeirloom, CustomColorTint);
     }
 }
 
