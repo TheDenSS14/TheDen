@@ -122,6 +122,7 @@ using Content.Shared._CD.Records;
 // NEVER set IsDirty directly. use SetDirty() instead.
 // SetDirty() should be called any time the profile updates
 // and any time an input is changed (e.g. text edits, button toggles.)
+// Do not SetDirty() just before/after doing SetProfile() - this is redundant.
 
 namespace Content.Client.Lobby.UI
 {
@@ -905,7 +906,6 @@ namespace Content.Client.Lobby.UI
                     var reason = _characterRequirementsSystem.GetRequirementsText(reasons);
                     selector.LockRequirements(reason);
                     Profile = Profile?.WithAntagPreference(antag.ID, false);
-                    SetDirty();
                 }
                 else
                     selector.UnlockRequirements();
@@ -1340,7 +1340,6 @@ namespace Content.Client.Lobby.UI
 
                         Profile = Profile?.WithJobPriority(job.ID, (JobPriority) priority);
                         ReloadPreview();
-                        SetDirty();
                         SetProfile(Profile, CharacterSlot);
                     };
 
@@ -2147,7 +2146,6 @@ namespace Content.Client.Lobby.UI
         {
             Profile = HumanoidCharacterProfile.Random();
             SetProfile(Profile, CharacterSlot);
-            SetDirty();
         }
 
         private void SetPreviewRotation(Direction direction)
@@ -2164,7 +2162,6 @@ namespace Content.Client.Lobby.UI
 
             Profile = HumanoidCharacterProfile.RandomBody(Profile);
             SetProfile(Profile, CharacterSlot);
-            SetDirty();
         }
 
         private void RandomizeName()
@@ -2511,7 +2508,6 @@ namespace Content.Client.Lobby.UI
 
                     // Update Preferences
                     Profile = Profile?.WithTraitPreference(selector.Trait.ID, preference);
-                    SetDirty();
                     UpdateTraitPreferences();
                     SetProfile(Profile, CharacterSlot);
                 };
@@ -2608,7 +2604,6 @@ namespace Content.Client.Lobby.UI
         private void SelectLoadout(LoadoutPreference preference)
         {
             Profile = Profile?.WithLoadoutPreference(preference);
-            SetDirty();
             SetProfile(Profile, CharacterSlot);
         }
 
