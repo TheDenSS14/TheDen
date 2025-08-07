@@ -19,7 +19,6 @@ public sealed partial class ContrabandComponent : Component
 
     /// <summary>
     ///     Which departments is this item restricted to?
-    ///     By default, command and sec are assumed to be fine with contraband.
     ///     If null, no departments are allowed to use this.
     /// </summary>
     [DataField]
