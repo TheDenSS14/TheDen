@@ -127,7 +127,7 @@ namespace Content.Client.Singularity
         {   // Mostly copypasta from the singularity shader.
 
             //if the shader is disabled then no unwarping is needed
-            if (_configManager.GetCVar(CCVars.ReducedMotion) || _configManager.GetCVar(ImpCCVars.DisableSinguloWarping))
+            if (_configManager.GetCVar(ImpCCVars.DisableSinguloWarping))
                 return;
 
             var maxDistance = MaxDistance * EyeManager.PixelsPerMeter;
