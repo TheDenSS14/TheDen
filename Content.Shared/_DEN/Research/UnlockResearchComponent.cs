@@ -15,7 +15,7 @@ public sealed partial class UnlockResearchComponent : Component
     public bool UnlockAll { get; set; }
 
     [DataField]
-    public int StartingPoints { get; set; } = 10000000;
+    public int StartingPoints { get; set; }
 
     [DataField]
     public HashSet<ProtoId<TechnologyPrototype>>? Technologies { get; set; }

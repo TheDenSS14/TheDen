@@ -36,6 +36,8 @@ public sealed class UnlockResearchSystem : EntitySystem
 
         if (ent.Comp.Technologies != null && ent.Comp.Technologies.Count > 0)
             UnlockSpecificResearch(ent, ent.Comp.Technologies);
+
+        _research.UpdateTechnologyCards(ent);
     }
 
     /// <summary>
