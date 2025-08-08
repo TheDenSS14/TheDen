@@ -26,18 +26,6 @@ public sealed class UnlockResearchSystem : EntitySystem
         SubscribeLocalEvent<UnlockResearchComponent, MapInitEvent>(OnMapInit);
     }
 
-    /// <summary>
-    /// Cache the technologies instead of enumerating prototypes every time.
-    /// </summary>
-    private void GenerateTechnologies()
-    {
-        var technologies = _prototype.EnumeratePrototypes<TechnologyPrototype>();
-        _technologies.Clear();
-
-        foreach (var technology in technologies)
-            _technologies.Add(technology);
-    }
-
     private void OnMapInit(Entity<UnlockResearchComponent> ent, ref MapInitEvent args)
     {
         if (ent.Comp.StartingPoints > 0)
@@ -48,6 +36,18 @@ public sealed class UnlockResearchSystem : EntitySystem
 
         if (ent.Comp.Technologies != null && ent.Comp.Technologies.Count > 0)
             UnlockSpecificResearch(ent, ent.Comp.Technologies);
+    }
+
+    /// <summary>
+    /// Cache the technologies instead of enumerating prototypes every time.
+    /// </summary>
+    private void GenerateTechnologies()
+    {
+        var technologies = _prototype.EnumeratePrototypes<TechnologyPrototype>();
+        _technologies.Clear();
+
+        foreach (var technology in technologies)
+            _technologies.Add(technology);
     }
 
     private void UnlockAllResearch(Entity<UnlockResearchComponent> ent)
