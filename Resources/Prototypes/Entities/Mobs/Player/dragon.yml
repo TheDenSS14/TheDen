@@ -120,6 +120,7 @@
 # SPDX-FileCopyrightText: 2025 Rinary
 # SPDX-FileCopyrightText: 2025 Rouden
 # SPDX-FileCopyrightText: 2025 Roudenn
+# SPDX-FileCopyrightText: 2025 Shaman
 # SPDX-FileCopyrightText: 2025 Spatison
 # SPDX-FileCopyrightText: 2025 Theodore Lukin
 # SPDX-FileCopyrightText: 2025 VMSolidus
@@ -339,6 +340,11 @@
     - TauCetiBasic
     understands:
     - TauCetiBasic
+  - type: TypingIndicator # TheDen
+    proto: alien
+  - type: Emoting # TheDen - Let them emote
+  - type: BodyEmotes # TheDen
+    soundsId: GeneralBodyEmotes
 
 - type: entity
   parent: BaseMobDragon

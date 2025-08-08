@@ -118,6 +118,13 @@ using Content.Client._CD.Records.UI;
 using Content.Shared._CD.Records;
 // End CD - Character Records
 
+// DEN TODO: THIS NEEDS SEVERE OVERHAUL
+// here are some relevant standards i am writing down for those adding things to this UI:
+// NEVER set IsDirty directly. use SetDirty() instead.
+// SetDirty() should be called any time the profile updates
+// and any time an input is changed (e.g. text edits, button toggles.)
+// Do not SetDirty() just before/after doing SetProfile() - this is redundant.
+
 namespace Content.Client.Lobby.UI
 {
     [GenerateTypedNameReferences]
@@ -421,7 +428,7 @@ namespace Content.Client.Lobby.UI
                 if (Profile is null)
                     return;
                 Profile = Profile.WithCharacterAppearance(Profile.Appearance.WithHairStyleName(newStyle.id));
-                IsDirty = true;
+                SetDirty();
                 ReloadProfilePreview();
             };
 
@@ -432,7 +439,7 @@ namespace Content.Client.Lobby.UI
                 Profile = Profile.WithCharacterAppearance(
                     Profile.Appearance.WithHairColor(newColor.marking.MarkingColors[0]));
                 UpdateCMarkingsHair();
-                IsDirty = true;
+                SetDirty();
                 ReloadProfilePreview();
             };
 
@@ -442,7 +449,7 @@ namespace Content.Client.Lobby.UI
                     return;
                 Profile = Profile.WithCharacterAppearance(
                     Profile.Appearance.WithFacialHairStyleName(newStyle.id));
-                IsDirty = true;
+                SetDirty();
                 ReloadProfilePreview();
             };
 
@@ -453,7 +460,7 @@ namespace Content.Client.Lobby.UI
                 Profile = Profile.WithCharacterAppearance(
                     Profile.Appearance.WithFacialHairColor(newColor.marking.MarkingColors[0]));
                 UpdateCMarkingsFacialHair();
-                IsDirty = true;
+                SetDirty();
                 ReloadProfilePreview();
             };
 
@@ -466,7 +473,7 @@ namespace Content.Client.Lobby.UI
                 );
                 UpdateHairPickers();
                 UpdateCMarkingsHair();
-                IsDirty = true;
+                SetDirty();
                 ReloadProfilePreview();
             };
 
@@ -479,7 +486,7 @@ namespace Content.Client.Lobby.UI
                 );
                 UpdateHairPickers();
                 UpdateCMarkingsFacialHair();
-                IsDirty = true;
+                SetDirty();
                 ReloadProfilePreview();
             };
 
@@ -500,7 +507,7 @@ namespace Content.Client.Lobby.UI
 
                 UpdateHairPickers();
                 UpdateCMarkingsHair();
-                IsDirty = true;
+                SetDirty();
                 ReloadProfilePreview();
             };
 
@@ -521,7 +528,7 @@ namespace Content.Client.Lobby.UI
 
                 UpdateHairPickers();
                 UpdateCMarkingsFacialHair();
-                IsDirty = true;
+                SetDirty();
                 ReloadProfilePreview();
             };
 
@@ -549,7 +556,7 @@ namespace Content.Client.Lobby.UI
                 Profile = Profile.WithCharacterAppearance(
                     Profile.Appearance.WithEyeColor(newColor));
                 Markings.CurrentEyeColor = Profile.Appearance.EyeColor;
-                IsDirty = true;
+                SetDirty();
                 ReloadProfilePreview();
             };
 
@@ -577,7 +584,7 @@ namespace Content.Client.Lobby.UI
                 PreferenceUnavailableButton.SelectId(args.Id);
 
                 Profile = Profile?.WithPreferenceUnavailable((PreferenceUnavailableMode) args.Id);
-                IsDirty = true;
+                SetDirty();
             };
 
             _jobCategories = new Dictionary<string, BoxContainer>();
@@ -677,7 +684,7 @@ namespace Content.Client.Lobby.UI
             UpdateSpeciesGuidebookIcon();
 
             ReloadPreview();
-            IsDirty = false;
+            SetDirty();
         }
 
         /// Refreshes the flavor text editor status
@@ -912,7 +919,6 @@ namespace Content.Client.Lobby.UI
                     var reason = _characterRequirementsSystem.GetRequirementsText(reasons);
                     selector.LockRequirements(reason);
                     Profile = Profile?.WithAntagPreference(antag.ID, false);
-                    SetDirty();
                 }
                 else
                     selector.UnlockRequirements();
@@ -991,7 +997,6 @@ namespace Content.Client.Lobby.UI
         {
             Profile = profile?.Clone();
             CharacterSlot = slot;
-            IsDirty = false;
             JobOverride = null;
 
             UpdateNameEdit();
@@ -1036,6 +1041,7 @@ namespace Content.Client.Lobby.UI
             if (Profile != null)
                 PreferenceUnavailableButton.SelectId((int) Profile.PreferenceUnavailable);
 
+            SetDirty();
         }
 
         /// A slim reload that only updates the entity itself and not any of the job entities, etc
@@ -1348,7 +1354,6 @@ namespace Content.Client.Lobby.UI
 
                         Profile = Profile?.WithJobPriority(job.ID, (JobPriority) priority);
                         ReloadPreview();
-                        SetDirty();
                         SetProfile(Profile, CharacterSlot);
                     };
 
@@ -1393,7 +1398,8 @@ namespace Content.Client.Lobby.UI
             if (Profile is null)
                 return;
             Profile = Profile.WithCDCharacterRecords(records);
-            IsDirty = true;
+            // SetDirty();
+            IsDirty = true; // TODO: when we fix character record saving, use SetDirty isntead
         }
         // End CD - Character Records
 
@@ -1403,7 +1409,7 @@ namespace Content.Client.Lobby.UI
                 return;
 
             Profile = Profile.WithFlavorText(content);
-            IsDirty = true;
+            SetDirty();
         }
 
         private void OnMarkingChange(MarkingSet markings)
@@ -1554,7 +1560,7 @@ namespace Content.Client.Lobby.UI
         {
             Profile = Profile?.WithAge(newAge);
             ReloadPreview();
-            IsDirty = true;
+            SetDirty();
         }
 
         private void SetSex(Sex newSex)
@@ -1587,14 +1593,14 @@ namespace Content.Client.Lobby.UI
         {
             Profile = Profile?.WithVoice(newVoice);
             ReloadPreview();
-            IsDirty = true;
+            SetDirty();
         }
 
         private void SetGender(Gender newGender)
         {
             Profile = Profile?.WithGender(newGender);
             ReloadPreview();
-            IsDirty = true;
+            SetDirty();
         }
 
         private void SetDisplayPronouns(string? displayPronouns)
@@ -1604,21 +1610,21 @@ namespace Content.Client.Lobby.UI
 
             Profile = Profile?.WithDisplayPronouns(displayPronouns);
             ReloadPreview();
-            IsDirty = true;
+            SetDirty();
         }
 
         private void SetStationAiName(string? stationAiName)
         {
             Profile = Profile?.WithStationAiName(stationAiName);
             ReloadPreview();
-            IsDirty = true;
+            SetDirty();
         }
 
         private void SetCyborgName(string? cyborgName)
         {
             Profile = Profile?.WithCyborgName(cyborgName);
             ReloadPreview();
-            IsDirty = true;
+            SetDirty();
         }
 
         private string GetFormattedPronounsFromGender()
@@ -1642,7 +1648,7 @@ namespace Content.Client.Lobby.UI
             UpdateHeightWidthSliders();
             UpdateWeight();
             UpdateSpeciesGuidebookIcon();
-            IsDirty = true;
+            SetDirty();
             ReloadProfilePreview();
             ReloadClothes(); // Species may have job-specific gear, reload the clothes
         }
@@ -1651,7 +1657,7 @@ namespace Content.Client.Lobby.UI
         {
             Profile = Profile?.WithNationality(newNationality);
             UpdateCharacterRequired();
-            IsDirty = true;
+            SetDirty();
             ReloadProfilePreview();
             ReloadClothes(); // Nationalities may have specific gear, reload the clothes
             UpdateNationalityDescription(newNationality);
@@ -1661,7 +1667,7 @@ namespace Content.Client.Lobby.UI
         {
             Profile = Profile?.WithEmployer(newEmployer);
             UpdateCharacterRequired();
-            IsDirty = true;
+            SetDirty();
             ReloadProfilePreview();
             ReloadClothes(); // Employers may have specific gear, reload the clothes
             UpdateEmployerDescription(newEmployer);
@@ -1671,7 +1677,7 @@ namespace Content.Client.Lobby.UI
         {
             Profile = Profile?.WithLifepath(newLifepath);
             UpdateCharacterRequired();
-            IsDirty = true;
+            SetDirty();
             ReloadProfilePreview();
             ReloadClothes(); // Lifepaths may have specific gear, reload the clothes
             UpdateLifepathDescription(newLifepath);
@@ -1680,7 +1686,7 @@ namespace Content.Client.Lobby.UI
         private void SetName(string newName)
         {
             Profile = Profile?.WithName(newName);
-            IsDirty = true;
+            SetDirty();
 
             if (Profile != null)
                 _entManager.System<MetaDataSystem>().SetEntityName(PreviewDummy, Profile.Name);
@@ -1689,13 +1695,13 @@ namespace Content.Client.Lobby.UI
         private void SetCustomSpecieName(string customname)
         {
             Profile = Profile?.WithCustomSpeciesName(customname);
-            IsDirty = true;
+            SetDirty();
         }
 
         private void SetSpawnPriority(SpawnPriorityPreference newSpawnPriority)
         {
             Profile = Profile?.WithSpawnPriorityPreference(newSpawnPriority);
-            IsDirty = true;
+            SetDirty();
         }
 
         private void SetProfileHeight(float height)
@@ -1712,6 +1718,9 @@ namespace Content.Client.Lobby.UI
             ReloadProfilePreview();
         }
 
+        /// <summary>
+        ///     DO NOT SET THIS DIRECTLY. ALWAYS use SetDirty() instead.
+        /// </summary>
         private bool IsDirty
         {
             get => _isDirty;
@@ -2184,7 +2193,6 @@ namespace Content.Client.Lobby.UI
         {
             Profile = HumanoidCharacterProfile.Random();
             SetProfile(Profile, CharacterSlot);
-            SetDirty();
         }
 
         private void SetPreviewRotation(Direction direction)
@@ -2201,7 +2209,6 @@ namespace Content.Client.Lobby.UI
 
             Profile = HumanoidCharacterProfile.RandomBody(Profile);
             SetProfile(Profile, CharacterSlot);
-            SetDirty();
         }
 
         private void RandomizeName()
@@ -2246,8 +2253,6 @@ namespace Content.Client.Lobby.UI
                 var profile = _entManager.System<HumanoidAppearanceSystem>().FromStream(file, _playerManager.LocalSession!);
                 var oldProfile = Profile;
                 SetProfile(profile, CharacterSlot);
-
-                IsDirty = !profile.MemberwiseEquals(oldProfile);
             }
             catch (Exception exc)
             {
@@ -2340,7 +2345,7 @@ namespace Content.Client.Lobby.UI
                     .Count(t => !t.Value)));
             AdminUIHelpers.RemoveConfirm(TraitsRemoveUnusableButton, _confirmationData);
 
-            IsDirty = true;
+            SetDirty();
             ReloadProfilePreview();
         }
 
@@ -2550,7 +2555,6 @@ namespace Content.Client.Lobby.UI
 
                     // Update Preferences
                     Profile = Profile?.WithTraitPreference(selector.Trait.ID, preference);
-                    IsDirty = true;
                     UpdateTraitPreferences();
                     SetProfile(Profile, CharacterSlot);
                 };
@@ -2647,7 +2651,6 @@ namespace Content.Client.Lobby.UI
         private void SelectLoadout(LoadoutPreference preference)
         {
             Profile = Profile?.WithLoadoutPreference(preference);
-            IsDirty = true;
             SetProfile(Profile, CharacterSlot);
         }
 
