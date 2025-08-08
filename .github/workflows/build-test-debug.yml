@@ -67,18 +67,18 @@ jobs:
         dotnet-version: 9.0.x
 
     - name: Install dependencies
-      run: ionice -c2 -n7 nice -n19 taskset -c 0-5 dotnet restore
+      run: dotnet restore
 
     - name: Build Project
-      run: ionice -c2 -n7 nice -n19 taskset -c 0-5 dotnet build --configuration DebugOpt --no-restore /p:WarningsAsErrors=nullable /m
+      run: dotnet build --configuration DebugOpt --no-restore /p:WarningsAsErrors=nullable /m
 
     - name: Run Content.Tests
-      run: ionice -c2 -n7 nice -n19 taskset -c 0-5 dotnet test --no-build --configuration DebugOpt Content.Tests/Content.Tests.csproj -- NUnit.ConsoleOut=0
+      run: dotnet test --no-build --configuration DebugOpt Content.Tests/Content.Tests.csproj -- NUnit.ConsoleOut=0
 
     - name: Run Content.IntegrationTests
       run: |
         export DOTNET_gcServer=1
-        ionice -c2 -n7 nice -n19 taskset -c 0-5 dotnet test --no-build --configuration DebugOpt Content.IntegrationTests/Content.IntegrationTests.csproj -- NUnit.ConsoleOut=0
+        dotnet test --no-build --configuration DebugOpt Content.IntegrationTests/Content.IntegrationTests.csproj -- NUnit.ConsoleOut=0
 
   ci-success:
     name: Build & Test Debug

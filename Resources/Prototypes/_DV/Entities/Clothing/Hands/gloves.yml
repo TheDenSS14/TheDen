@@ -67,3 +67,23 @@
     modifiers:
       coefficients:
         Caustic: 0.95
+  - type: SurgerySpeedModifier
+    speedModifier: 1.25
+
+- type: entity
+  parent: ClothingHandsBase
+  id: ClothingHandsGlovesHeavySurgical
+  name: heavy surgical gloves
+  description: A pair of thick self-sterilizing gloves that keep the hands and exposed organs firmly separated.
+  components:
+  - type: Sprite
+    sprite: _DV/Clothing/Hands/Gloves/cmogloves.rsi
+  - type: Clothing
+    sprite: _DV/Clothing/Hands/Gloves/cmogloves.rsi
+  - type: Fiber
+    fiberMaterial: fibers-rubber
+    fiberColor: fibers-teal
+  - type: Armor
+    modifiers: {}
+  - type: SurgerySpeedModifier
+    speedModifier: 1.5

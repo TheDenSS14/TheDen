@@ -250,6 +250,7 @@
   description: A sturdy hardsuit helmet, infused with a goliath's hide and an eerie, unblinking eye cut from its mass.
   categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
+  - type: BreathMask
   - type: Sprite
     sprite: Clothing/Head/Hardsuits/goliathhelm.rsi
     layers:
