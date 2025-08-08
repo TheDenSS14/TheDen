@@ -179,7 +179,7 @@
     - type: InteractionOutline
     - type: Sprite
       drawdepth: HighFloorObjects
-      sprite: Structures/conveyor.rsi
+      sprite: _DEN/Structures/conveyor.rsi # Den - Updated textures
       layers:
         - state: switch-off
           map: ["enabled", "enum.TwoWayLeverState.Middle"]
