@@ -51,11 +51,14 @@
 # SPDX-FileCopyrightText: 2024 lzk
 # SPDX-FileCopyrightText: 2024 themias
 # SPDX-FileCopyrightText: 2025 Angelo Fallaria
+# SPDX-FileCopyrightText: 2025 Crystal Clover
 # SPDX-FileCopyrightText: 2025 Eagle-0
 # SPDX-FileCopyrightText: 2025 EctoplasmIsGood
 # SPDX-FileCopyrightText: 2025 MajorMoth
 # SPDX-FileCopyrightText: 2025 Rosycup
 # SPDX-FileCopyrightText: 2025 Skubman
+# SPDX-FileCopyrightText: 2025 Vanessa Louwagie
+# SPDX-FileCopyrightText: 2025 portfiend
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
@@ -267,12 +270,12 @@
   id: ClothingMaskClownBase
   abstract: true
   name: clown wig and mask
-  description: A true prankster's facial attire. A clown is incomplete without his wig and mask.
+  description: A true prankster's facial attire. A clown is incomplete without a wig and mask. #imp
   components:
-  - type: Sprite
-    sprite: Clothing/Mask/clown.rsi
-  - type: Clothing
-    sprite: Clothing/Mask/clown.rsi
+  #- type: Sprite #imp edit
+  #  sprite: Clothing/Mask/clown.rsi #imp edit
+  #- type: Clothing #imp edit
+  #  sprite: Clothing/Mask/clown.rsi #imp edit
   - type: BreathMask
   - type: IdentityBlocker
   - type: Tag
@@ -285,9 +288,27 @@
     - Snout
 
 - type: entity
-  parent: ClothingMaskClownBase
+  parent: [ClothingMaskClownBase, BaseFoldable] #imp
   id: ClothingMaskClown
   components:
+  - type: Appearance #imp
+  - type: Sprite #imp
+    sprite: _DEN/Clothing/Mask/clown.rsi
+    layers:
+    - state: icon
+      map: [ "unfoldedLayer" ]
+    - state: icon-wigless
+      map: ["foldedLayer"]
+      visible: false
+  - type: Foldable #imp
+    canFoldInsideContainer: true
+    unfoldVerbText: untuck-verb-clothing-mask
+    foldVerbText: tuck-verb-clothing-mask
+  - type: FoldableClothing #imp
+    foldedEquippedPrefix: wigless
+    foldedHeldPrefix: wigless
+  - type: Clothing #imp
+    sprite: _DEN/Clothing/Mask/clown.rsi
   - type: Tag
     tags:
     - ClownMask
@@ -298,7 +319,7 @@
     - Snout
 
 - type: entity
-  parent: ClothingMaskClown
+  parent: ClothingMaskClownBase #imp
   id: ClothingMaskClownBanana
   name: banana clown wig and mask
   components:
@@ -385,6 +406,7 @@
   - type: AddAccentClothing
     accent: ReplacementAccent
     replacement: mumble
+    toggleable: false # DEN - No alt verb for toggling accent
   - type: Tag
     tags:
     - IPCMaskWearable
@@ -424,6 +446,7 @@
   - type: Unremoveable
   - type: AddAccentClothing
     accent: StutteringAccent
+    toggleable: false # DEN - No alt verb for toggling accent
 
 - type: entity
   parent: ClothingMaskGasExplorer
@@ -736,4 +759,3 @@
   - type: Tag
     tags:
     - IPCMaskWearable # Estacao Pirata - IPCs
-  - type: Unremoveable

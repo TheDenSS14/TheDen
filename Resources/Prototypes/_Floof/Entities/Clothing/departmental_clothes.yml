@@ -7,6 +7,7 @@
 # SPDX-FileCopyrightText: 2025 BlitzTheSquishy
 # SPDX-FileCopyrightText: 2025 DeNatus
 # SPDX-FileCopyrightText: 2025 Rosycup
+# SPDX-FileCopyrightText: 2025 portfiend
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
@@ -350,7 +351,7 @@
   - type: FingerprintMask
 
 - type: entity
-  parent: ClothingShoesBaseSocks #TheDen
+  parent: [ClothingShoesBaseSocks, ClothingShoesMilitaryBase] #TheDen
   id: ClothingUnderSocksMantisEpi
   name: psionic mantis' thigh-high socks
   description: A pair of thigh-high socks, styled for a Psionic Mantis.
@@ -684,7 +685,7 @@
   - type: FingerprintMask
 
 - type: entity
-  parent: ClothingShoesBaseSocks #TheDen
+  parent: [ClothingShoesBaseSocks, ClothingShoesMilitaryBase] #TheDen
   id: ClothingUnderSocksSecurity
   name: security thigh-high socks
   description: A pair of thigh-high socks, styled for Security roles.
@@ -725,7 +726,7 @@
   - type: FingerprintMask
 
 - type: entity
-  parent: ClothingShoesBaseSocks #TheDen
+  parent: [ClothingShoesBaseSocks, ClothingShoesMilitaryBase] #TheDen
   id: ClothingUnderSocksHeadSecurity
   name: HoS thigh-high socks
   description: A pair of thigh-high socks, styled for the HoS.
@@ -766,7 +767,7 @@
   - type: FingerprintMask
 
 - type: entity
-  parent: ClothingShoesBaseSocks #TheDen
+  parent: [ClothingShoesBaseSocks, ClothingShoesMilitaryBase] #TheDen
   id: ClothingUnderSocksDetective
   name: detective's thigh-high socks
   description: A pair of thigh-high socks, styled for a Detective.

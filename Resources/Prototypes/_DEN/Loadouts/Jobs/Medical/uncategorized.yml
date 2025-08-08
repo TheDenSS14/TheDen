@@ -32,7 +32,15 @@
   exclusive: true
   requirements:
   - !type:CharacterItemGroupRequirement
-    group: LoadoutEyes
+    group: LoadoutMedicalEyes
+  - !type:CharacterLogicOrRequirement
+    requirements:
+    - !type:CharacterDepartmentRequirement
+      departments:
+      - Medical
+    - !type:CharacterJobRequirement
+      jobs:
+      - Brigmedic
   items:
   - ClothingEyesGlassesCheapMedical
 
