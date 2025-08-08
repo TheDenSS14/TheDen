@@ -625,6 +625,6 @@
         path: /Audio/Ambience/Objects/gas_hiss.ogg
     - type: AtmosMonitoringConsoleDevice
       navMapBlip: Thermoregulator
-    - type: GuideHelp
-      guides:
-      - ManualValve
+    # - type: GuideHelp - # DEN: can we port these guides...
+    #   guides:
+    #   - ManualValve
