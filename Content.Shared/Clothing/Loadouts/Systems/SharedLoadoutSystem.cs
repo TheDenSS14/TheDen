@@ -223,6 +223,23 @@ public sealed partial class LoadoutPreference : Loadout
         string? customColorTint = null,
         bool? customHeirloom = null
     ) : base(loadoutName, customName, customDescription, customColorTint, customHeirloom) { }
+
+    public override bool Equals(object? obj)
+    {
+        if (obj is not LoadoutPreference other)
+            return false;
+
+        return LoadoutName == other.LoadoutName
+            && CustomName == other.CustomName
+            && CustomDescription == other.CustomDescription
+            && CustomHeirloom == other.CustomHeirloom
+            && CustomColorTint == other.CustomColorTint;
+    }
+
+    public override int GetHashCode()
+    {
+        return HashCode.Combine(LoadoutName, CustomName, CustomDescription, CustomHeirloom, CustomColorTint);
+    }
 }
 
 /// <summary>
