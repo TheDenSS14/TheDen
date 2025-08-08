@@ -1,4 +1,20 @@
 - type: entity
+  parent: VendingMachineMedical
+  id: VendingMachineMedicalAllAccess
+  suffix: All Access
+  components:
+  - type: AccessReader
+    access: []
+
+- type: entity
+  parent: VendingMachineMedicalAllAccess
+  id: VendingMachineMedicalEternity
+  suffix: All Access
+  components:
+  - type: AccessReader
+    access: []
+
+- type: entity
   parent: VendingMachineWallMedical
   id: VendingMachineWallMedicalAllAccess
   suffix: All Access
@@ -12,4 +28,4 @@
   suffix: Eternity
   components:
   - type: VendingMachine
-    pack: NanoMedInventoryEternity
+    pack: NanoMedPlusInventoryEternity
