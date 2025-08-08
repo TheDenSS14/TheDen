@@ -104,7 +104,7 @@ namespace Content.Client.Singularity
         {
             if (ScreenTexture == null || args.Viewport.Eye == null)
                 return;
-            if (_configManager.GetCVar(CCVars.ReducedMotion) || _configManager.GetCVar(ImpCCVars.DisableSinguloWarping))
+            if (_configManager.GetCVar(ImpCCVars.DisableSinguloWarping))
                 return;
 
             _shader?.SetParameter("renderScale", args.Viewport.RenderScale * args.Viewport.Eye.Scale);
