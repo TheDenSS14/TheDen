@@ -488,7 +488,9 @@ namespace Content.Client.Lobby.UI
                 if (Profile is null)
                     return;
 
-                var hair = _markingManager.MarkingsByCategoryAndSpecies(MarkingCategories.Hair, Profile.Species).Keys
+                // DEN - filter by sex
+                var hair = _markingManager
+                    .MarkingsByCategoryAndSpeciesAndSex(MarkingCategories.Hair, Profile.Species, Profile.Sex).Keys
                     .FirstOrDefault();
 
                 if (string.IsNullOrEmpty(hair))
@@ -509,7 +511,9 @@ namespace Content.Client.Lobby.UI
                 if (Profile is null)
                     return;
 
-                var hair = _markingManager.MarkingsByCategoryAndSpecies(MarkingCategories.FacialHair, Profile.Species).Keys
+                // DEN - filter by sex
+                var hair = _markingManager
+                    .MarkingsByCategoryAndSpeciesAndSex(MarkingCategories.FacialHair, Profile.Species, Profile.Sex).Keys
                     .FirstOrDefault();
 
                 if (string.IsNullOrEmpty(hair))
@@ -1577,6 +1581,7 @@ namespace Content.Client.Lobby.UI
                     break;
             }
             UpdateGenderControls();
+            UpdateHairPickers(); // DEN fix - filter by sex
             Markings.SetSex(newSex);
             ReloadProfilePreview();
             SetDirty();
@@ -2110,10 +2115,12 @@ namespace Content.Client.Lobby.UI
             HairStylePicker.UpdateData(
                 hairMarking,
                 Profile.Species,
+                Profile.Sex, // DEN fix - filter by sex
                 1);
             FacialHairPicker.UpdateData(
                 facialHairMarking,
                 Profile.Species,
+                Profile.Sex, // DEN fix - filter by sex
                 1);
         }
 
