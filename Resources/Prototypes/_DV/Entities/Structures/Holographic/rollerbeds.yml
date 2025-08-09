@@ -6,11 +6,18 @@
   components:
   - type: Item
     size: Small
-  - type: HealOnBuckle
-    damage:
-      types:
-        Asphyxiation: -0.4
-        Bloodloss: -0.4
+  - type: StabilizeOnBuckle
+    efficiency: 1
+    reducesBleeding: 3 # Stops full bleeding in 10 seconds, one per second.
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.35
+        density: 10
+        mask:
+        - MobMask
   - type: Sprite
     sprite: _DV/Structures/Furniture/rollerbeds.rsi
     noRot: true

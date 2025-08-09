@@ -23,6 +23,7 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
+using Content.Server._DEN.Bed.Components;
 using Content.Server.Administration.Logs;
 using Content.Server.Atmos.EntitySystems;
 using Content.Server.Body.Components;
@@ -38,6 +39,7 @@ using Content.Shared.Atmos;
 using Content.Shared.Body.Components;
 using Content.Shared._Shitmed.Body.Organ;
 using Content.Shared.Body.Prototypes;
+using Content.Shared.Buckle.Components;
 using Content.Shared.Chemistry.Components;
 using Content.Shared.Chemistry.Reagent; // Shitmed Change
 using Content.Shared.Damage;
@@ -117,10 +119,13 @@ public sealed class RespiratorSystem : EntitySystem
 
             respirator.NextUpdate += respirator.UpdateInterval;
 
-            if (_mobState.IsDead(uid) || HasComp<BreathingImmunityComponent>(uid)) // Shitmed: BreathingImmunity
-                continue;
-
-            if (HasComp<RespiratorImmuneComponent>(uid))
+            if (_mobState.IsDead(uid)
+                || HasComp<BreathingImmunityComponent>(uid) // Shitmed: BreathingImmunity
+                || HasComp<RespiratorImmuneComponent>(uid)
+                || TryComp<BuckleComponent>(uid, out var buckled)   //Den: stabilizing beds. I hate how I coded this
+                && buckled.BuckledTo != null
+                && HasComp<StabilizeOnBuckleComponent>(buckled.BuckledTo)
+                && _mobState.IsCritical(uid))
                 continue;
 
             UpdateSaturation(uid, -(float) respirator.UpdateInterval.TotalSeconds, respirator);

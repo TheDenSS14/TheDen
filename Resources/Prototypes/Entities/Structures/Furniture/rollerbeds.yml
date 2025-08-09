@@ -26,11 +26,8 @@
     noRot: true
   - type: Item
     size: Normal
-  - type: HealOnBuckle
-    damage:
-      types:
-        Asphyxiation: -0.15
-        Bloodloss: -0.15
+  - type: StabilizeOnBuckle
+    efficiency: 0.3
   - type: Sprite
     sprite: Structures/Furniture/rollerbeds.rsi
     noRot: true
@@ -55,7 +52,7 @@
         shape:
           !type:PhysShapeCircle
           radius: 0.35
-        density: 80
+        density: 40
         mask:
         - MobMask
   - type: Damageable
@@ -107,6 +104,7 @@
     folded: true
   - type: Strap
     enabled: False
+  - type: Fixtures
 
 - type: entity
   id: CheapRollerBed
