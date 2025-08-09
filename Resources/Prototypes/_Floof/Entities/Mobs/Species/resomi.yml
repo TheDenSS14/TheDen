@@ -147,7 +147,8 @@
       understands:
         - TauCetiBasic
     - type: TemperatureProtection
-      coefficient: 0.1 #same as vulp, temp tolerance trait
+      heatingCoefficient: 1.1
+      coolingCoefficient: 0.1
     - type: Tag
       tags:
       - CanPilot

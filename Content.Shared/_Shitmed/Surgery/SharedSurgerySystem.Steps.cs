@@ -1,9 +1,7 @@
-// SPDX-FileCopyrightText: 2024 Skubman <ba.fallaria@gmail.com>
-// SPDX-FileCopyrightText: 2024 gluesniffler <159397573+gluesniffler@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 gluesniffler <linebarrelerenthusiast@gmail.com>
-// SPDX-FileCopyrightText: 2024 sleepyyapril <flyingkarii@gmail.com>
-// SPDX-FileCopyrightText: 2024 sleepyyapril <***>
-// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Skubman
+// SPDX-FileCopyrightText: 2024 gluesniffler
+// SPDX-FileCopyrightText: 2025 pathetic meowmeow
+// SPDX-FileCopyrightText: 2025 sleepyyapril
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -787,6 +785,22 @@ public abstract partial class SharedSurgerySystem
 
         if (TryComp(user, out SurgerySpeedModifierComponent? surgerySpeedMod))
             speed *= surgerySpeedMod.SpeedModifier;
+
+        var ev = new SurgerySpeedModifyEvent(speed);
+        RaiseLocalEvent(user, ref ev);
+        if (TryComp<InventoryComponent>(user, out var inv))
+            _inventory.RelayEvent((user, inv), ref ev);
+        speed = ev.Multiplier;
+
+        if (!TryComp<BuckleComponent>(target, out var buckle) || buckle.BuckledTo is not { } buckledTo)
+            return stepComp.Duration / speed;
+
+        var buckledEvent = new SurgerySpeedModifyEvent(speed);
+        RaiseLocalEvent(buckledTo, ref buckledEvent);
+        if (TryComp<SurgerySpeedModifierComponent>(buckledTo, out var buckledModifier))
+        {
+            speed *= buckledModifier.SpeedModifier; //TODO: Please make this prettier. I have no clue what I'm doing ~SirWarock
+        }
 
         return stepComp.Duration / speed;
     }
