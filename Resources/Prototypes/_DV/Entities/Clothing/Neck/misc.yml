@@ -1,6 +1,8 @@
 # SPDX-FileCopyrightText: 2024 VMSolidus
 # SPDX-FileCopyrightText: 2025 January Nelson
 # SPDX-FileCopyrightText: 2025 Rosycup
+# SPDX-FileCopyrightText: 2025 Sir Warock
+# SPDX-FileCopyrightText: 2025 Tad "Taddy" Johnson
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
@@ -20,3 +22,33 @@
   - type: WearerGetsExamineText # imp
     thingType: obvious-type-law-prosecution
 
+- type: entity
+  parent: ClothingNeckBase
+  id: ClothingNeckCWPSec
+  name: security cold weather poncho
+  description: The Cold Weather Poncho, advertised as a masterpiece of elemental protection. The truth is that it's itchy, stuffy, and a little baggy - but at least it's not cold. This one is grey with Station Security markings.
+  components:
+  - type: Sprite
+    sprite: _DV/Clothing/Neck/Misc/cwpsec.rsi
+  - type: Clothing
+    sprite: _DV/Clothing/Neck/Misc/cwpsec.rsi
+  - type: Item
+    size: Normal
+  - type: TemperatureProtection
+    heatingCoefficient: 1.1
+    coolingCoefficient: 0.1
+  - type: Armor
+    modifiers:
+      coefficients:
+        Heat: 0.90
+
+- type: entity
+  parent: ClothingNeckCWPSec
+  id: ClothingNeckCWPArctic
+  name: cold weather poncho
+  description: The Cold Weather Poncho, advertised as a masterpiece of elemental protection. The truth is that it's itchy, stuffy, and a little baggy - but at least it's not cold.
+  components:
+  - type: Sprite
+    sprite: _DV/Clothing/Neck/Misc/cwparctic.rsi
+  - type: Clothing
+    sprite: _DV/Clothing/Neck/Misc/cwparctic.rsi
