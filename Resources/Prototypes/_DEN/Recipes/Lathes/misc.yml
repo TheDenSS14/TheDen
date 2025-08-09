@@ -1,3 +1,133 @@
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
+
+# Standard Tank
+- type: latheRecipe
+  id: OxygenTank
+  result: OxygenTank
+  completetime: 4
+  materials:
+    Steel: 300
+
+- type: latheRecipe
+  id: NitrogenTank
+  result: NitrogenTank
+  completetime: 4
+  materials:
+    Steel: 300
+
+- type: latheRecipe
+  id: NitrousOxideTank
+  result: NitrousOxideTank
+  completetime: 4
+  materials:
+    Steel: 300
+
+- type: latheRecipe
+  id: WaterVaporTank
+  result: WaterVaporTank
+  completetime: 4
+  materials:
+    Steel: 300
+
+- type: latheRecipe
+  id: PlasmaTank
+  result: PlasmaTank
+  completetime: 4
+  materials:
+    Steel: 300
+
+# Double Emergency Tank
+- type: latheRecipe
+  id: DoubleEmergencyOxygenTank
+  result: DoubleEmergencyOxygenTank
+  completetime: 3
+  materials:
+    Steel: 160
+
+- type: latheRecipe
+  id: DoubleEmergencyNitrogenTank
+  result: DoubleEmergencyNitrogenTank
+  completetime: 3
+  materials:
+    Steel: 160
+
+- type: latheRecipe
+  id: DoubleEmergencyWaterVaporTank
+  result: DoubleEmergencyWaterVaporTank
+  completetime: 3
+  materials:
+    Steel: 160
+
+- type: latheRecipe
+  id: DoubleEmergencyPlasmaTank
+  result: DoubleEmergencyPlasmaTank
+  completetime: 3
+  materials:
+    Steel: 160
+
+# Extended Emergency Tank
+- type: latheRecipe
+  id: ExtendedEmergencyOxygenTank
+  result: ExtendedEmergencyOxygenTank
+  completetime: 2
+  materials:
+    Steel: 100
+
+- type: latheRecipe
+  id: ExtendedEmergencyNitrogenTank
+  result: ExtendedEmergencyNitrogenTank
+  completetime: 2
+  materials:
+    Steel: 100
+
+- type: latheRecipe
+  id: ExtendedEmergencyWaterVaporTank
+  result: ExtendedEmergencyWaterVaporTank
+  completetime: 2
+  materials:
+    Steel: 100
+
+- type: latheRecipe
+  id: ExtendedEmergencyPlasmaTank
+  result: ExtendedEmergencyPlasmaTank
+  completetime: 2
+  materials:
+    Steel: 100
+
+# Emergency Tank
+- type: latheRecipe
+  id: EmergencyOxygenTank
+  result: EmergencyOxygenTank
+  completetime: 1
+  materials:
+    Steel: 40
+
+- type: latheRecipe
+  id: EmergencyNitrogenTank
+  result: EmergencyNitrogenTank
+  completetime: 1
+  materials:
+    Steel: 40
+
+- type: latheRecipe
+  id: EmergencyFunnyOxygenTank
+  result: EmergencyFunnyOxygenTank
+  completetime: 1
+  materials:
+    Steel: 42 # 42 is a (slightly) funny number
+
+- type: latheRecipe
+  id: EmergencyWaterVaporTank
+  result: EmergencyWaterVaporTank
+  completetime: 1
+  materials:
+    Steel: 40
+
+- type: latheRecipe
+  id: EmergencyPlasmaTank
+  result: EmergencyPlasmaTank
+  completetime: 1
+  materials:
+    Steel: 40
