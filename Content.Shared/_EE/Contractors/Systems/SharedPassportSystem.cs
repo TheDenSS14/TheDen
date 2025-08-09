@@ -73,6 +73,9 @@ public class SharedPassportSystem : EntitySystem
         if (Deleted(ev.Mob) || !Exists(ev.Mob))
             return;
 
+        if(ev.JobId=="StationAi" || ev.JobId=="Borg")//den edit
+            return;
+
         if (!_prototypeManager.TryIndex(
             ev.Profile.Nationality,
             out NationalityPrototype? nationalityPrototype) || !_prototypeManager.TryIndex(nationalityPrototype.PassportPrototype, out EntityPrototype? entityPrototype))
