@@ -15,7 +15,7 @@ public sealed partial class ContrabandComponent : Component
     /// </summary>
     [DataField]
     [AutoNetworkedField]
-    public ProtoId<ContrabandSeverityPrototype> Severity = "Restricted";
+    public ProtoId<ContrabandSeverityPrototype> Severity = "contrabandSeverityMinor";
 
     /// <summary>
     ///     Which departments is this item restricted to?
