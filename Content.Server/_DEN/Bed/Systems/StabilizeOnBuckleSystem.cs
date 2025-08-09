@@ -2,8 +2,6 @@
 using Content.Server.Actions;
 using Content.Shared.Bed.Sleep;
 using Content.Shared.Buckle.Components;
-using Content.Shared.Mobs.Systems;
-using Robust.Shared.Timing;
 using Robust.Shared.Utility;
 
 
@@ -23,7 +21,7 @@ namespace Content.Server._DEN.Bed.Systems
         private void OnStrapped(Entity<StabilizeOnBuckleComponent> bed, ref StrappedEvent args)
         {
             _actionsSystem.AddAction(args.Buckle, ref bed.Comp.SleepAction, SleepingSystem.SleepActionId, bed);
-
+            CopyComp(args.Strap.Owner, args.Buckle.Owner, bed.Comp, null);
             // Single action entity, cannot strap multiple entities to the same rollerbed.
             DebugTools.AssertEqual(args.Strap.Comp.BuckledEntities.Count, 1);
         }
@@ -32,6 +30,7 @@ namespace Content.Server._DEN.Bed.Systems
         {
             _actionsSystem.RemoveAction(args.Buckle, bed.Comp.SleepAction);
             _sleepingSystem.TryWaking(args.Buckle.Owner);
+            RemComp<StabilizeOnBuckleComponent>(args.Buckle.Owner);
         }
     }
 }

@@ -179,9 +179,7 @@ public sealed partial class BloodstreamSystem : EntitySystem
                 // The Bleeding rate is reduced by the bleed reduction amount in the bloodstream component.
                 TryModifyBleedAmount(uid, -bloodstream.BleedReductionAmount, bloodstream);
                 // The Bleeding rate is reduced by advanced, stabilizing beds, if critical.
-                if (TryComp<BuckleComponent>(uid, out var buckled)
-                    && buckled.BuckledTo != null
-                    && TryComp<StabilizeOnBuckleComponent>(buckled.BuckledTo, out var stabilizeBleeding)
+                if (TryComp<StabilizeOnBuckleComponent>(uid, out var stabilizeBleeding)
                     && _mobStateSystem.IsCritical(uid)
                     && stabilizeBleeding.ReducesBleeding != 0f)
                     TryModifyBleedAmount(uid, -stabilizeBleeding.ReducesBleeding, bloodstream);
@@ -194,10 +192,7 @@ public sealed partial class BloodstreamSystem : EntitySystem
                 // bloodloss damage is based on the base value, and modified by how low your blood level is.
                 var amt = bloodstream.BloodlossDamage / (0.1f + bloodPercentage);
                 // If strapped on a stabilizing bed, reduce bloodloss damage with applied efficiency, if critical.
-                // Also, I hate how I coded that, but i don't know any better way.
-                if ((TryComp<BuckleComponent>(uid, out var buckledBloodloss))
-                    && buckledBloodloss.BuckledTo != null
-                    && TryComp<StabilizeOnBuckleComponent>(buckledBloodloss.BuckledTo, out var stabilizeBloodloss)
+                if (TryComp<StabilizeOnBuckleComponent>(uid, out var stabilizeBloodloss)
                     && _mobStateSystem.IsCritical(uid))
                     amt *= (1 - stabilizeBloodloss.Efficiency);
 

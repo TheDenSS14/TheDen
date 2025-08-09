@@ -122,9 +122,7 @@ public sealed class RespiratorSystem : EntitySystem
             if (_mobState.IsDead(uid)
                 || HasComp<BreathingImmunityComponent>(uid) // Shitmed: BreathingImmunity
                 || HasComp<RespiratorImmuneComponent>(uid)
-                || TryComp<BuckleComponent>(uid, out var buckled)   //Den: stabilizing beds. I hate how I coded this
-                && buckled.BuckledTo != null
-                && HasComp<StabilizeOnBuckleComponent>(buckled.BuckledTo)
+                || HasComp<StabilizeOnBuckleComponent>(uid) // Den - Stabilizing Rollerbeds
                 && _mobState.IsCritical(uid))
                 continue;
 
