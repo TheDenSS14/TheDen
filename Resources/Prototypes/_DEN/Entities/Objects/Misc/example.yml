@@ -1,0 +1,15 @@
+﻿# Example Selector Item
+
+- type: entity
+  id: UndeterminedEngineerToolExample
+  name: example engineer tool selector
+  description: selectable-item-engineer-example-desc
+  parent: [ BaseItem, BaseSetSelector ]
+  components:
+  - type: Sprite
+    sprite: _Goobstation/Objects/Devices/unique_teleporters.rsi
+    state: standard
+  - type: SetSelector
+    possibleSets:
+    - RCDSelectorExample
+    - RPDSelectorExample
