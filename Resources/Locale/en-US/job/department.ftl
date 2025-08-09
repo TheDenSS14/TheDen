@@ -9,13 +9,13 @@
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
-department-Cargo = Cargo
+department-Cargo = Logistics
 department-Civilian = Civilian
 department-Command = Command
 department-Engineering = Engineering
 department-Medical = Medical
 department-Security = Security
-department-Science = Science
+department-Science = Epistemics
 department-Silicon = Silicons
 department-Specific = Station specific
 department-Dignitary = Dignitary

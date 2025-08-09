@@ -128,4 +128,10 @@ public sealed partial class CCVars : CVars
     public static readonly CVarDef<bool> GameHostnameInTitlebar =
         CVarDef.Create("game.hostname_in_titlebar", true, CVar.SERVER | CVar.REPLICATED);
 
+    /// <summary>
+    /// If true, contraband severity can be viewed in the examine menu
+    /// </summary>
+    public static readonly CVarDef<bool> ContrabandExamine =
+        CVarDef.Create("game.contraband_examine", true, CVar.SERVER | CVar.REPLICATED);
+
 }

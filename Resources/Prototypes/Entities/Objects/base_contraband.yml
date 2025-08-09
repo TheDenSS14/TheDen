@@ -1,0 +1,253 @@
+﻿# improvised weapons, ieds, etc
+- type: entity
+  id: BaseImprovisedContraband
+  abstract: true
+  components:
+  - type: Contraband
+    severity: contrabandSeverityImprovised
+
+# "military grade" rival company gear
+- type: entity
+  id: BaseRivalCompanyContraband
+  abstract: true
+  components:
+  - type: Contraband
+    severity: contrabandSeverityRivalCompany
+
+# kitchen knives, eva suits, etc
+- type: entity
+  id: BaseMinorContraband
+  abstract: true
+  components:
+  - type: Contraband
+    severity: contrabandSeverityMinor
+
+# major contraband, for things like guns or weaponry that don't belong to any department and aren't syndicate specific
+- type: entity
+  id: BaseMajorContraband
+  abstract: true
+  components:
+  - type: Contraband
+    severity: contrabandSeverityMajor
+
+# theft objective items
+- type: entity
+  id: BaseGrandTheftContraband
+  abstract: true
+  components:
+  - type: Contraband
+    severity: GrandTheft
+    allowedDepartments: [ Command ]
+
+# contraband that is by default restricted to everyone (nobody can have it)
+# this is a dummy prototype for others to use as a parent
+# do not make an actual item use this a parent
+# ========
+- type: entity
+  id: BaseRestrictedContraband
+  abstract: true
+  components:
+  - type: Contraband
+    severity: contrabandSeverityDepartmentRestricted
+    allowedDepartments: [  ]
+    allowedJobs: [  ]
+
+# contraband restricted to a single department
+# ========
+- type: entity
+  id: BaseCentcommContraband
+  parent: BaseRestrictedContraband
+  abstract: true
+  components:
+  - type: Contraband
+    allowedDepartments: [ CentralCommand ]
+    allowedJobs: [ NanotrasenRepresentative ]
+
+- type: entity
+  id: BaseCommandContraband
+  parent: BaseRestrictedContraband
+  abstract: true
+  components:
+  - type: Contraband
+    allowedDepartments: [ Command ]
+
+- type: entity
+  id: BaseSecurityContraband
+  parent: BaseRestrictedContraband
+  abstract: true
+  components:
+  - type: Contraband
+    allowedDepartments: [ Security ]
+
+- type: entity
+  id: BaseEngineeringContraband
+  parent: BaseRestrictedContraband
+  abstract: true
+  components:
+  - type: Contraband
+    allowedDepartments: [ Engineering ]
+
+- type: entity
+  id: BaseEpistemicsContraband
+  parent: BaseRestrictedContraband
+  abstract: true
+  components:
+  - type: Contraband
+    allowedDepartments: [ Epistemics ]
+
+- type: entity
+  id: BaseMedicalContraband
+  parent: BaseRestrictedContraband
+  abstract: true
+  components:
+  - type: Contraband
+    allowedDepartments: [ Medical ]
+    allowedJobs: [ BlueshieldOfficer, Brigmedic, Roboticist ]
+
+- type: entity
+  id: BaseCivilianContraband
+  parent: BaseRestrictedContraband
+  abstract: true
+  components:
+  - type: Contraband
+    allowedDepartments: [ Civilian ]
+
+- type: entity
+  id: BaseLogisticsContraband
+  parent: BaseRestrictedContraband
+  abstract: true
+  components:
+  - type: Contraband
+    allowedDepartments: [ Logistics ]
+
+- type: entity
+  id: BaseJusticeContraband
+  parent: BaseRestrictedContraband
+  abstract: true
+  components:
+  - type: Contraband
+    allowedDepartments: [ Justice ]
+    allowedJobs: [ Magistrate ]
+
+- type: entity
+  id: BaseDignitaryContraband
+  parent: BaseRestrictedContraband
+  abstract: true
+  components:
+  - type: Contraband
+    allowedDepartments: [ Dignitary ]
+
+# contraband restricted to multiple departments - some of these are used for singular items. really.
+# ========
+# literally just the master encryption key for this one
+- type: entity
+  id: BaseCentcommCommandDignitaryContraband
+  parent: BaseRestrictedContraband
+  abstract: true
+  components:
+  - type: Contraband
+    allowedDepartments: [ CentralCommand, Command, Dignitary ]
+
+# handcuffs, batons, disablers, armory door remote, etc.
+- type: entity
+  id: BaseSecurityCommandContraband
+  parent: BaseRestrictedContraband
+  abstract: true
+  components:
+  - type: Contraband
+    allowedDepartments: [ Security, Command ]
+
+# combat gloves
+- type: entity
+  id: BaseSecurityEngineeringContraband
+  parent: BaseRestrictedContraband
+  abstract: true
+  components:
+  - type: Contraband
+    allowedDepartments: [ Security, Engineering ]
+    allowedJobs: [ BlueshieldOfficer ]
+
+# flash payload (modular grenade)
+- type: entity
+  id: BaseSecurityEpistemicsCommandContraband
+  parent: BaseRestrictedContraband
+  abstract: true
+  components:
+  - type: Contraband
+    allowedDepartments: [ Security, Epistemics, Command ]
+
+# intellicard
+- type: entity
+  id: BaseSiliconEpistemicsCommandContraband
+  parent: BaseRestrictedContraband
+  abstract: true
+  components:
+  - type: Contraband
+    allowedDepartments: [ Epistemics, Silicon, Command ]
+
+# salvager weapons
+- type: entity
+  id: BaseSecurityLogisticsContraband
+  parent: BaseRestrictedContraband
+  abstract: true
+  components:
+  - type: Contraband
+    allowedDepartments: [ Security, Logistics ]
+
+# surgical tools
+- type: entity
+  id: BaseMedicalEpistemicsContraband
+  parent: BaseRestrictedContraband
+  abstract: true
+  components:
+  - type: Contraband
+    allowedDepartments: [ Medical, Epistemics ]
+    allowedJobs: [ BlueshieldOfficer, Brigmedic ]
+
+# special contraband types restricted to jobs for very specific items
+# ========
+- type: entity
+  id: BaseSecurityBartenderContraband
+  parent: BaseRestrictedContraband
+  abstract: true
+  components:
+  - type: Contraband
+    allowedDepartments: [ Security ]
+    allowedJobs: [ Bartender ]
+
+# galoshes, cleanades etc.
+- type: entity
+  id: BaseJanitorContraband
+  parent: BaseRestrictedContraband
+  abstract: true
+  components:
+  - type: Contraband
+    allowedJobs: [ Janitor ]
+
+# things that should be restricted further than engineering, stuff like atmos tech gear
+- type: entity
+  id: BaseAtmosphericTechnicianContraband
+  parent: BaseRestrictedContraband
+  abstract: true
+  components:
+  - type: Contraband
+    allowedJobs: [ AtmosphericTechnician, ChiefEngineer ]
+
+# bso gear that only bso should have
+- type: entity
+  id: BaseBlueshieldOfficerContraband
+  parent: BaseRestrictedContraband
+  abstract: true
+  components:
+  - type: Contraband
+    allowedJobs: [ BlueshieldOfficer ]
+
+# stuff that both the bso and sec should be cleared to have like handcuffs
+- type: entity
+  id: BaseSecurityBlueshieldOfficerContraband
+  parent: BaseRestrictedContraband
+  abstract: true
+  components:
+  - type: Contraband
+    allowedDepartments: [ Security ]
+    allowedJobs: [ BlueshieldOfficer ]
