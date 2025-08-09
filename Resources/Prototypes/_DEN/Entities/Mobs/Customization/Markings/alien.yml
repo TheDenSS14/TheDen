@@ -1,5 +1,5 @@
-# SPDX-FileCopyrightText: 2025 portfiend <109661617+portfiend@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 portfiend
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -8,31 +8,28 @@
 # Species restrictions are inverted as they work pretty much fine unless they don't - erring on the side of leniency.
 
 - type: marking
+  parent: BaseMarkingSpeciesStandardHead
   id: AlienAntenna
   bodyPart: HeadSide
   markingCategory: HeadSide
-  speciesRestriction: [ Resomi ]
-  invertSpeciesRestriction: true
   sprites:
   - sprite: _DEN/Mobs/Customization/Head/alien_markings.rsi
     state: alien_antenna_double
 
 - type: marking
+  parent: BaseMarkingSpeciesStandardHead
   id: AlienAntennaSide
   bodyPart: HeadSide
   markingCategory: HeadSide
-  speciesRestriction: [ Resomi ]
-  invertSpeciesRestriction: true
   sprites:
   - sprite: _DEN/Mobs/Customization/Head/alien_markings.rsi
     state: alien_antenna_side
 
 - type: marking
+  parent: BaseMarkingSpeciesStandardHead
   id: AlienAntennaSingle
   bodyPart: HeadSide
   markingCategory: HeadSide
-  speciesRestriction: [ Resomi ]
-  invertSpeciesRestriction: true
   sprites:
   - sprite: _DEN/Mobs/Customization/Head/alien_markings.rsi
     state: alien_antenna_single
@@ -42,11 +39,9 @@
 # such as if the species has very large eyes.
 
 - type: marking
+  parent: BaseMarkingSpeciesStandardEyes
   id: AlienEyes
-  bodyPart: Eyes
   markingCategory: Face
-  speciesRestriction: [ Moth, Chitinid, Shadowkin, Plasmaman, Arachne, Arachnid, Resomi, IPC, Vox ]
-  invertSpeciesRestriction: true
   coloring:
     default:
       type:
@@ -56,11 +51,9 @@
     state: eyes_alien
 
 - type: marking
+  parent: BaseMarkingSpeciesStandardEyes
   id: AlienEyesBig
-  bodyPart: Eyes
   markingCategory: Face
-  speciesRestriction: [ Moth, Chitinid, Shadowkin, Plasmaman, Arachne, Arachnid, Resomi, IPC, Vox ]
-  invertSpeciesRestriction: true
   coloring:
     default:
       type:
@@ -70,11 +63,9 @@
     state: eyes_alien_big
 
 - type: marking
+  parent: BaseMarkingSpeciesStandardEyes
   id: AlienEyesThree
-  bodyPart: Eyes
   markingCategory: Face
-  speciesRestriction: [ Moth, Chitinid, Shadowkin, Plasmaman, Arachne, Arachnid, Resomi, IPC, Vox ]
-  invertSpeciesRestriction: true
   coloring:
     default:
       type:
@@ -84,11 +75,9 @@
     state: eyes_alien_three
 
 - type: marking
+  parent: BaseMarkingSpeciesStandardEyes
   id: AlienEyesWide
-  bodyPart: Eyes
   markingCategory: Face
-  speciesRestriction: [ Moth, Chitinid, Shadowkin, Plasmaman, Arachne, Arachnid, Resomi, IPC, Vox ]
-  invertSpeciesRestriction: true
   coloring:
     default:
       type:
@@ -100,11 +89,10 @@
 # OVERLAYS
 
 - type: marking
+  parent: BaseMarkingSpeciesShortFace
   id: AlienOverlayHead
   bodyPart: Head
   markingCategory: Head
-  # Specifically includes "flat-faced" species; not recommended to add this to species with prominent snouts.
-  speciesRestriction: [ Human, Felinid, Canid, Harpy, Oni, Ovinia, Rodentia, Tajaran ]
   sprites:
   - sprite: _DEN/Mobs/Customization/Head/alien_markings.rsi
     state: head
