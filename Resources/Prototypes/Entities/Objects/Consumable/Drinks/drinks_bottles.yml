@@ -46,6 +46,8 @@
 # SPDX-FileCopyrightText: 2024 Verm
 # SPDX-FileCopyrightText: 2024 degradka
 # SPDX-FileCopyrightText: 2024 themias
+# SPDX-FileCopyrightText: 2025 Eightballll
+# SPDX-FileCopyrightText: 2025 eightballll
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
@@ -1046,3 +1048,21 @@
       drink:
         maxVol: 150
   - type: Drink
+
+- type: entity
+  parent: [DrinkBottleVisualsAll, DrinkBottleGlassBaseFull]
+  id: DrinkJaegermisterBottleFull
+  name: jaegermister bottle
+  description: A bittersweet alcohol that hasn't changed it's recipe in nearly a thousand years.
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        reagents:
+        - ReagentId: Jaegermister
+          Quantity: 100
+  - type: Label
+    currentLabel: jaegermister
+  - type: Sprite
+    sprite: Objects/Consumable/Drinks/jaegermisterbottle.rsi
+  - type: Sealable
