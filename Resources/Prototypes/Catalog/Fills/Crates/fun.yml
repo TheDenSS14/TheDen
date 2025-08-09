@@ -153,6 +153,10 @@
       # End DeltaV
       - !type:EntSelector
         id: PlushieOvinia
+      - !type:EntSelector # TheDen
+        id: PlushieThaven
+      - !type:EntSelector # TheDen
+        id: PlushieThavenWeird
     - !type:GroupSelector
       children:
       - !type:EntSelector

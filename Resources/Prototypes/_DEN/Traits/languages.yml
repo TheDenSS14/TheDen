@@ -218,7 +218,7 @@
         - Kagebun
       languagesUnderstood:
         - Kagebun
-        
+
 - type: trait
   id: VoxPidgin
   category: TraitsSpeechLanguages
@@ -232,3 +232,19 @@
     - !type:TraitModifyLanguages
       languagesUnderstood:
         - VoxPidgin
+
+- type: trait
+  id: Aural
+  category: TraitsSpeechLanguages
+  points: -2
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+      - Thaven
+  functions:
+    - !type:TraitModifyLanguages
+      languagesSpoken:
+        - Aural
+      languagesUnderstood:
+        - Aural

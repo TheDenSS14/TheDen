@@ -281,6 +281,9 @@
         type: ListViewSelectorBUI
       enum.SurgeryUIKey.Key:
         type: SurgeryBui
+      enum.ThavenMoodsUiKey.Key: # Impstation - Thaven moods
+        type: ThavenMoodsBoundUserInterface
+        requireInputValidation: false
   - type: Puller
   - type: Speech
     speechSounds: Alto

@@ -4,7 +4,6 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 marking-BurqaSolid = Burqa
-marking-BurqaSolidThaven = Burqa
 marking-BurqaSolidLizard = Burqa
 marking-BurqaSolidLizard-burqalizard = Burqa
 

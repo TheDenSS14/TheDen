@@ -96,6 +96,19 @@
   - Meat
   - Xeno
 
+# Organs
+
+# PORT: I wanted a special thaven brainburger sprite so here it is lol
+- type: foodSequenceElement
+  id: ThavenBrain
+  name: food-sequence-content-brain
+  sprites:
+  - sprite: _Impstation/Mobs/Species/Thaven/organs.rsi
+    state: brain
+  tags:
+  - Brain
+  - Raw
+
 # Fruits / Vegetables
 
 - type: foodSequenceElement

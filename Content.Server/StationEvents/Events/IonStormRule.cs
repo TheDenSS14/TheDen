@@ -5,7 +5,9 @@
 // SPDX-FileCopyrightText: 2024 VMSolidus
 // SPDX-FileCopyrightText: 2024 deltanedas
 // SPDX-FileCopyrightText: 2025 Falcon
+// SPDX-FileCopyrightText: 2025 Shaman
 // SPDX-FileCopyrightText: 2025 foxcurl
+// SPDX-FileCopyrightText: 2025 portfiend
 // SPDX-FileCopyrightText: 2025 sleepyyapril
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
@@ -29,6 +31,8 @@ using Content.Server.Chat.Managers;
 using Content.Server._DEN.Announcements; // TheDen - Moved ion storm notification to its own component
 using Content.Shared.Chat;
 using Robust.Shared.Player;
+using Content.Shared._Impstation.Thaven.Components;
+using Content.Server._Impstation.Thaven;
 
 namespace Content.Server.StationEvents.Events;
 
@@ -38,6 +42,7 @@ public sealed class IonStormRule : StationEventSystem<IonStormRuleComponent>
     [Dependency] private readonly ISharedAdminLogManager _adminLogger = default!;
     [Dependency] private readonly SiliconLawSystem _siliconLaw = default!;
     [Dependency] private readonly IChatManager _chatManager = default!; // Used for CD's System
+    [Dependency] private readonly ThavenMoodsSystem _thavenMoods = default!; // Used for CD's System
 
     // funny
     [ValidatePrototypeId<DatasetPrototype>]
@@ -89,6 +94,14 @@ public sealed class IonStormRule : StationEventSystem<IonStormRuleComponent>
         while (ipcQuery.MoveNext(out var ent, out var notifierComponent))
         {
             DispatchIonStormNotification(ent, notifierComponent.Chance, notifierComponent.Loc);
+        }
+
+        // TODO: This shit is so code
+        // We cant keep doin this shit for all ion storm related events man
+        var thavenMoodsQuery = EntityQueryEnumerator<ThavenMoodsComponent>();
+        while (thavenMoodsQuery.MoveNext(out var ent, out var moods))
+        {
+            _thavenMoods.OnIonStorm((ent, moods));
         }
         // End TheDen
 
