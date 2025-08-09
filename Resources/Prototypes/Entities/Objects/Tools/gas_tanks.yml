@@ -92,7 +92,7 @@
     staminaCost: 8
   - type: PhysicalComposition
     materialComposition:
-      Steel: 185
+      Steel: 150 # Den
   - type: StaticPrice
     price: 20
 
@@ -172,7 +172,7 @@
     staminaCost: 3.5
   - type: PhysicalComposition
     materialComposition:
-      Steel: 100
+      Steel: 20 # Den
   - type: Fixtures
     fixtures:
       fix1:
@@ -212,7 +212,7 @@
         Blunt: 5
   - type: PhysicalComposition
     materialComposition:
-      Steel: 100
+      Steel: 20 # Den
 
 - type: entity
   parent: EmergencyOxygenTank
@@ -254,7 +254,7 @@
         Blunt: 5
   - type: PhysicalComposition
     materialComposition:
-      Steel: 100
+      Steel: 20 # Den
 
 - type: entity
   parent: EmergencyOxygenTank
@@ -296,6 +296,9 @@
         - ItemMask
         restitution: 0.3
         friction: 0.2
+  - type: PhysicalComposition
+    materialComposition:
+      Steel: 50 # Den
 
 - type: entity #Imp
   parent: EmergencyOxygenTankCommand
@@ -313,6 +316,9 @@
       temperature: 293.15
   - type: Clothing
     sprite: Objects/Tanks/emergency_command.rsi
+  - type: PhysicalComposition
+    materialComposition:
+      Steel: 50 # Den
 
 - type: entity
   parent: ExtendedEmergencyOxygenTank
@@ -387,6 +393,9 @@
         - ItemMask
         restitution: 0.3
         friction: 0.2
+  - type: PhysicalComposition
+    materialComposition:
+      Steel: 80 # Den
 
 - type: entity
   parent: DoubleEmergencyOxygenTank
