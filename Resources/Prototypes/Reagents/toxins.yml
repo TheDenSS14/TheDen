@@ -35,6 +35,7 @@
 # SPDX-FileCopyrightText: 2024 Verm
 # SPDX-FileCopyrightText: 2024 slarticodefast
 # SPDX-FileCopyrightText: 2025 Tanix
+# SPDX-FileCopyrightText: 2025 TheLuggage05
 # SPDX-FileCopyrightText: 2025 portfiend
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
@@ -479,7 +480,7 @@
   boilingPoint: 554 # I'm not a chemist, but it boils at 295, lower than melting point, idk how it works so I gave it higher value
   metabolisms:
     Poison:
-      metabolismRate: 0.05
+      metabolismRate: 0.045 # imp, allowing it to build up over time
       effects:
       - !type:HealthChange
         conditions:
