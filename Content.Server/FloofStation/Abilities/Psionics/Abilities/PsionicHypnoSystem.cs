@@ -64,7 +64,6 @@ public sealed class PsionicHypnoSystem : EntitySystem
 
         Dirty(target, hypnotized);
         _adminLog.Add(LogType.Action, LogImpact.Low, $"{ToPrettyString(uid)} hypnotized {ToPrettyString(target)}");
-        RaiseLocalEvent(target, new MoodEffectEvent("BeingHypnotized"));
 
         if (_playerManager.TryGetSessionByEntity(target, out var session)
             || session is not null)
@@ -93,7 +92,6 @@ public sealed class PsionicHypnoSystem : EntitySystem
         _adminLog.Add(LogType.Action, LogImpact.Low, $"{ToPrettyString(hypnotized)} is no longer hypnotized.");
         _popups.PopupEntity(Loc.GetString("hypno-free"), hypnotized, hypnotized, PopupType.LargeCaution);
 
-        RaiseLocalEvent(hypnotized, new MoodEffectEvent("LostHypnosis"));
         NotifyMasters(hypnotized);
         RemComp<HypnotizedComponent>(hypnotized);
     }
