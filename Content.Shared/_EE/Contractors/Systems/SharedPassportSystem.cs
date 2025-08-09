@@ -73,7 +73,7 @@ public class SharedPassportSystem : EntitySystem
         if (Deleted(ev.Mob) || !Exists(ev.Mob))
             return;
 
-        if(ev.JobId=="StationAi" || ev.JobId=="Borg")//den edit
+        if (ev.JobId == "StationAi" || ev.JobId == "Borg") // DEN edit - TODO: unhardcode
             return;
 
         if (!_prototypeManager.TryIndex(
