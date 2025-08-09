@@ -51,15 +51,10 @@ namespace Content.Client._Funkystation.Atmos.UI
 
         public void SetPumpStatus(bool enabled)
         {
+            var text = enabled ? "comp-gas-pump-ui-status-enabled" : "comp-gas-pump-ui-status-disabled";
+            ToggleStatusButton.Text = Loc.GetString(text);
+
             PumpStatus = enabled;
-            if (enabled)
-            {
-                ToggleStatusButton.Text = Loc.GetString("comp-gas-pump-ui-status-enabled");
-            }
-            else
-            {
-                ToggleStatusButton.Text = Loc.GetString("comp-gas-pump-ui-status-disabled");
-            }
         }
     }
 }
