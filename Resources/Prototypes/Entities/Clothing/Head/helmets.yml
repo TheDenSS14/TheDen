@@ -13,7 +13,6 @@
 # SPDX-FileCopyrightText: 2022 Leon Friedrich
 # SPDX-FileCopyrightText: 2022 Mervill
 # SPDX-FileCopyrightText: 2022 Moony
-# SPDX-FileCopyrightText: 2022 Nemanja
 # SPDX-FileCopyrightText: 2022 Pancake
 # SPDX-FileCopyrightText: 2022 Peptide90
 # SPDX-FileCopyrightText: 2022 Rane
@@ -38,6 +37,7 @@
 # SPDX-FileCopyrightText: 2024 Blu
 # SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT
 # SPDX-FileCopyrightText: 2024 Flareguy
+# SPDX-FileCopyrightText: 2024 Nemanja
 # SPDX-FileCopyrightText: 2024 lzk
 # SPDX-FileCopyrightText: 2025 EctoplasmIsGood
 # SPDX-FileCopyrightText: 2025 Eris
@@ -277,7 +277,8 @@
     quickEquip: true
   - type: IngestionBlocker
   - type: TemperatureProtection
-    coefficient: 0.005
+    heatingCoefficient: 0.01
+    coolingCoefficient: 0.2
   - type: FireProtection
     reduction: 0.15 # not fully sealed so less protection
   - type: IdentityBlocker
@@ -303,7 +304,8 @@
     quickEquip: true
   - type: IngestionBlocker
   - type: TemperatureProtection
-    coefficient: 0.005
+    heatingCoefficient: 0.01
+    coolingCoefficient: 0.2
   - type: FireProtection
     reduction: 0.2
   - type: PressureProtection

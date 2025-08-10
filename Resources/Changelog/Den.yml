@@ -9243,3 +9243,364 @@ Entries:
   id: 892
   time: '2025-08-03T14:05:30.0000000+00:00'
   url: https://github.com/TheDenSS14/TheDen/pull/1295
+- author: sleepyyapril
+  changes:
+    - type: Fix
+      message: Fixed dragon not being able to chomp anyone.
+  id: 893
+  time: '2025-08-04T03:11:59.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1306
+- author: sleepyyapril
+  changes:
+    - type: Add
+      message: >-
+        Added last words webhook that only applies to local chat which you can
+        opt out of via the consent menu.
+  id: 894
+  time: '2025-08-04T08:18:26.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1307
+- author: Jakumba
+  changes:
+    - type: Tweak
+      message: Increased chance of Hellshift rolling on high danger
+    - type: Tweak
+      message: Increased chance of SAN Deserter mid round antag event spawning
+    - type: Remove
+      message: Removed NukeOps game mode from high danger, pending rework
+  id: 895
+  time: '2025-08-04T09:54:49.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1312
+- author: SirWarock
+  changes:
+    - type: Tweak
+      message: >-
+        Reduced on how much cold slows you down! You're not a walking popsicle
+        anymore!
+  id: 896
+  time: '2025-08-04T09:58:28.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1311
+- author: little-meow-meow
+  changes:
+    - type: Add
+      message: >-
+        AAC tablets sync to your radio headset and can send messages directly
+        over it!
+  id: 897
+  time: '2025-08-04T10:02:18.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1305
+- author: Jakumba
+  changes:
+    - type: Tweak
+      message: >-
+        Changed the color of admin chat to a pale green for easier
+        differentation.
+  id: 898
+  time: '2025-08-04T18:10:03.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1317
+- author: sleepyyapril
+  changes:
+    - type: Add
+      message: >-
+        The new Advertise radio channel is here! Tell everyone what you want
+        from them: advertise a store, tell people you're looking for friends in
+        bar, and whatever else counts as advertising an IC thing!
+  id: 899
+  time: '2025-08-05T15:04:50.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1325
+- author: Jakumba
+  changes:
+    - type: Fix
+      message: >-
+        Turrets and NPCs can now hit players who are laying down on the floor.
+        They (by default) have a 50% chance to miss players who are laying down,
+        meaning it still offers some protection, but not perfect protection from
+        turrets.
+  id: 900
+  time: '2025-08-05T16:38:11.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1314
+- author: sleepyyapril
+  changes:
+    - type: Tweak
+      message: Admins no longer count at All to the player count.
+  id: 901
+  time: '2025-08-05T17:04:38.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1327
+- author: portfiend
+  changes:
+    - type: Tweak
+      message: Clowns, Mimes, and Martial Artists now have Service access.
+    - type: Remove
+      message: Security no longer has Service access.
+  id: 902
+  time: '2025-08-05T17:28:22.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1320
+- author: sleepyyapril
+  changes:
+    - type: Add
+      message: >-
+        FunkyChem exotics now exist! See the exotic tab under chemicals for
+        details!
+  id: 903
+  time: '2025-08-05T17:48:01.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1328
+- author: portfiend
+  changes:
+    - type: Fix
+      message: >-
+        Security, HOS, Detective, and Psionic Mantic thigh-high socks can now
+        store knives again.
+  id: 904
+  time: '2025-08-06T04:47:28.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1339
+- author: portfiend
+  changes:
+    - type: Add
+      message: >-
+        You can now edit your OOC consent preferences anywhere, including the
+        lobby, with the `consentprefs` command.
+  id: 905
+  time: '2025-08-06T20:55:19.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1338
+- author: ZigTag
+  changes:
+    - type: Fix
+      message: voice should now be imported correctly
+  id: 906
+  time: '2025-08-06T20:57:42.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1297
+- author: Jakumba
+  changes:
+    - type: Add
+      message: Ported idle speech bubbles
+  id: 907
+  time: '2025-08-06T20:59:12.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1286
+- author: CrystalClover
+  changes:
+    - type: Fix
+      message: You can now select the Non-binary pin in your loadout.
+  id: 908
+  time: '2025-08-07T04:49:17.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1343
+- author: FutureExalt
+  changes:
+    - type: Tweak
+      message: >-
+        changed up the german accent to no be a little more accurate to native
+        germans.
+    - type: Remove
+      message: removed some weird racism present in the italian accent.
+  id: 909
+  time: '2025-08-07T15:08:00.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1266
+- author: juniwoofs
+  changes:
+    - type: Fix
+      message: Fixed Ovinia's idle typing sprite to not be a massive error
+  id: 910
+  time: '2025-08-07T19:57:09.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1348
+- author: Sha-Seng
+  changes:
+    - type: Fix
+      message: Dragons can emote again!
+    - type: Add
+      message: Carps can now also emote.
+  id: 911
+  time: '2025-08-07T20:02:21.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1326
+- author: CrystalClover
+  changes:
+    - type: Add
+      message: Clown wigs can now be tucked into their masks!
+    - type: Add
+      message: >-
+        Ancient clown wig and mask have been added to loadouts and the autodrobe
+        for those who are nostalgic.
+    - type: Tweak
+      message: Clown masks have recieved a slight redesign!
+  id: 912
+  time: '2025-08-07T23:44:27.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1329
+- author: BlitzTheSquishy
+  changes:
+    - type: Tweak
+      message: Conveyer belts are now much easier read the direction of!
+    - type: Tweak
+      message: Two-way lever changed to match also
+  id: 913
+  time: '2025-08-08T00:55:45.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1346
+- author: portfiend
+  changes:
+    - type: Fix
+      message: >-
+        Chaplains will now show up under the correct department in the crew
+        monitor.
+  id: 914
+  time: '2025-08-08T01:56:25.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1319
+- author: RosySaturniidae
+  changes:
+    - type: Add
+      message: >-
+        moths are no longer the sole arbiters of the chitter (dont look at
+        spiders)
+  id: 915
+  time: '2025-08-08T02:20:00.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1330
+- author: portfiend
+  changes:
+    - type: Fix
+      message: The character editor's "save" button should work properly again.
+  id: 916
+  time: '2025-08-08T04:52:24.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1349
+- author: TheLuggage05
+  changes:
+    - type: Add
+      message: >-
+        Added caramexinin--a new sweetener that lets you safely consume
+        theobromine if you couldn't before! Ask botany and chemistry for some
+        today.
+  id: 917
+  time: '2025-08-08T07:14:00.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1335
+- author: SirWarock
+  changes:
+    - type: Add
+      message: Added Mechanical Surgery Gloves, speeding up your surgical actions!
+    - type: Add
+      message: >-
+        Added Advanced Operating Tables, able to either stop rotting or speed up
+        surgical procedures on an entity!
+    - type: Add
+      message: Added CMO gloves that provide surgery speed boni!
+    - type: Tweak
+      message: >-
+        Removed Surgery Speed Modifiers from Roles and moved them to sterile
+        gloves. 
+  id: 918
+  time: '2025-08-08T09:30:17.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1303
+- author: ZigTag
+  changes:
+    - type: Fix
+      message: breath mask not on goliath hardsuit
+  id: 919
+  time: '2025-08-08T10:30:49.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1354
+- author: ZigTag
+  changes:
+    - type: Add
+      message: Added emergency JoLs.
+    - type: Tweak
+      message: >-
+        Added JoLs, a GPS locator, body bags, a roller bed, crew monitor and a
+        portafib into paramedic lockers. (Moved from backpack fills and job
+        gear)
+  id: 920
+  time: '2025-08-08T10:47:15.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1345
+- author: IAmNotGray
+  changes:
+    - type: Tweak
+      message: >-
+        (ANVIL) A couple of tweaks and a reworking of the Artifact Lab's chamber
+        input and output system. Please let me know if this *still* doesn't
+        work.
+    - type: Tweak
+      message: >-
+        (TORTUGA) Changed up the bar a little. You can now see past the wall
+        that previously obstructed view. Also, minor fixes!
+  id: 921
+  time: '2025-08-08T18:05:06.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1333
+- author: Gawdayumeet
+  changes:
+    - type: Tweak
+      message: >-
+        (HAVOC) The station of chaos and explosions is both nicer and more
+        awful. You're welcome~
+  id: 922
+  time: '2025-08-08T18:05:23.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1334
+- author: portfiend
+  changes:
+    - type: Tweak
+      message: Lewd traits have been given clearer descriptions as to what they do.
+    - type: Tweak
+      message: >-
+        Verbs associated with lewd traits now have an icon to indicate being
+        lewd verbs.
+  id: 923
+  time: '2025-08-09T10:25:25.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1353
+- author: Jakumba
+  changes:
+    - type: Fix
+      message: Fixed Diona "thinking" speech bubble
+  id: 924
+  time: '2025-08-09T15:47:52.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1360
+- author: Jakumba
+  changes:
+    - type: Fix
+      message: Fixed xenos thermal/night vision
+  id: 925
+  time: '2025-08-09T15:48:22.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1361
+- author: sleepyyapril
+  changes:
+    - type: Tweak
+      message: >-
+        Psionic Hypnosis now has an action use delay of 10, not 45, due to it
+        using consent anyway.
+    - type: Tweak
+      message: >-
+        Psionic Hypnosis now supports multiple subjects and multiple masters
+        with no limit. Abusing this for personal gain is against the rules.
+    - type: Tweak
+      message: Psionic Hypnosis no longer effects glimmer.
+    - type: Fix
+      message: >-
+        The big red text at the end of Psionic Hypnosis for the "master" was
+        fixed to not use your own name.
+  id: 926
+  time: '2025-08-09T17:13:41.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1362
+- author: MajorMoth
+  changes:
+    - type: Remove
+      message: Removed the bottle'o'cum and sex toy crate
+  id: 927
+  time: '2025-08-09T17:14:28.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1351
+- author: sev7ves
+  changes:
+    - type: Add
+      message: Added an option to disable the singulo screenwarp
+  id: 928
+  time: '2025-08-09T17:15:46.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1332
+- author: SirWarock
+  changes:
+    - type: Tweak
+      message: Allowed all outerclothing to have suit storage!!
+  id: 929
+  time: '2025-08-09T22:51:52.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1331
+- author: Jakumba
+  changes:
+    - type: Fix
+      message: Added missing space survival pen to command survival boxes
+  id: 930
+  time: '2025-08-09T22:52:44.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1363
+- author: Zephyrpak
+  changes:
+    - type: Tweak
+      message: Raised accent limit from 1 to 2
+  id: 931
+  time: '2025-08-09T22:57:20.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1366
