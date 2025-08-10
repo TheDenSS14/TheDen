@@ -86,7 +86,7 @@ public sealed class SpawnCharacter : LocalizedEntityCommands
         }
         else
             character = (HumanoidCharacterProfile) _prefs.GetPreferences(data.UserId).SelectedCharacter;
-        // BEGIN DEN - Make the spawn character command actually good
+
         var jobName = args.Length > 1 ? args[1] : "Passenger"; // just default to passenger
         var jobExists = _prototypeManager.TryIndex<JobPrototype>(jobName, out var jobProto);
 
@@ -126,7 +126,7 @@ public sealed class SpawnCharacter : LocalizedEntityCommands
         );
 
         mindSystem.TransferTo(mindId, mobUid);
-        // END DEN
+
         shell.WriteLine(Loc.GetString("cmd-spawncharacter-complete"));
     }
 
