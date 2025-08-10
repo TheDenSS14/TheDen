@@ -1,0 +1,7 @@
+- type: entity
+  parent: ResearchAndDevelopmentServer
+  id: ResearchAndDevelopmentServerAllTech
+  suffix: All Unlocked
+  components:
+  - type: UnlockResearch
+    unlockAll: true
