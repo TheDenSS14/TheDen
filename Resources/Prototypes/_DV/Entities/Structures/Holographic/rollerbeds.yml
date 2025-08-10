@@ -9,13 +9,14 @@
   - type: StabilizeOnBuckle
     efficiency: 1
     reducesBleeding: 3 # Stops full bleeding in 10 seconds, one per second.
+  - type: Physics
   - type: Fixtures
     fixtures:
       fix1:
         shape:
           !type:PhysShapeCircle
           radius: 0.35
-        density: 10
+        density: 5
         mask:
         - MobMask
   - type: Sprite
