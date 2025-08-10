@@ -449,7 +449,7 @@
   name: luxury pen
   parent: Pen
   id: LuxuryPen
-  description: A fancy and expensive pen that you only deserve to own if you're qualified to handle vast amounts of paperwork.
+  description: A fancy and expensive pen that you only deserve to owna if you're qualified to handle vast amounts of paperwork.
   components:
   - type: Sprite
     state: luxury_pen
@@ -511,8 +511,6 @@
 - type: entity
   name: CentComm pen
   parent: CyberPen
-  name: CentCom pen
-  parent: [CyberPen, BaseCentcommContraband]
   id: PenCentcom
   description: In an attempt to keep up with the "power" of the cybersun bureaucracy, NT made a replica of cyber pen, in their corporate style.
   components:
