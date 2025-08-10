@@ -6,6 +6,7 @@
 
 using Content.Client._DEN.Earmuffs;
 using Content.Client.Chat.TypingIndicator;
+using Robust.Client.Graphics;
 using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.Controls;
 using Robust.Client.UserInterface.Controllers;
@@ -19,6 +20,7 @@ public sealed class DenuUIController : UIController
 {
     [UISystemDependency] private readonly TypingIndicatorSystem _typingIndicatorSystem = default!;
     [UISystemDependency] private readonly EarmuffsSystem _earmuffsSystem = default!;
+    [Dependency] private readonly IOverlayManager _overlayManager = default!;
 
     private int? _lastEarmuffRange = null;
 
@@ -47,6 +49,7 @@ public sealed class DenuUIController : UIController
     };
 
     private DenuWindow? _denuWindow;
+    private CircleOverlay? _circleOverlay;
 
     public void CreateWindow()
     {
@@ -98,4 +101,26 @@ public sealed class DenuUIController : UIController
 
     public void HideTypingIndicator() =>
         _typingIndicatorSystem.ClientSubmittedChatText();
+
+    public void SetEarmuffRange(float range)
+    {
+        if (_circleOverlay == null)
+        {
+            _circleOverlay = new CircleOverlay();
+            _circleOverlay.OnFullyFaded += RemoveCircleOverlay;
+            _overlayManager.AddOverlay(_circleOverlay);
+        }
+        
+        _circleOverlay.Range = range;
+        _circleOverlay.ShowCircle();
+    }
+
+    private void RemoveCircleOverlay()
+    {
+        if (_circleOverlay != null)
+        {
+            _overlayManager.RemoveOverlay(_circleOverlay);
+            _circleOverlay = null;
+        }
+    }
 }

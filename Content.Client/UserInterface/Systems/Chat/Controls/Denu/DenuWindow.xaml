@@ -44,9 +44,16 @@
                 <PanelContainer StyleClasses="LowDivider" Margin="0 8" />
 
                 <Label Text="Message Example:" HorizontalExpand="True" />
-                <components:TextPreviewPanel Name="ExamplePreview" VerticalExpand="True" StyleClasses="AngleRect"
-                                             AutoExpandVertical="True" />
+                <components:TextPreviewPanel Name="ExamplePreview" VerticalExpand="True" StyleClasses="AngleRect" AutoExpandVertical="True" />
 
+                <PanelContainer StyleClasses="LowDivider" Margin="0 8" />
+                
+                <Label Text="Earmuff Distance:" HorizontalExpand="True" />
+                <BoxContainer Orientation="Horizontal" Margin="0 0" HorizontalExpand="True">
+                    <Slider Name="EarmuffSlider" MinValue="1" MaxValue="10" Value="10" HorizontalExpand="True" />
+                    <Label Name="EarmuffDistanceLabel" Text="10" Margin="10 0 0 0" MinWidth="30" />
+                </BoxContainer>
+                
             </BoxContainer>
         </ScrollContainer>
 
