@@ -39,8 +39,6 @@ public sealed class SpawnCharacter : LocalizedEntityCommands
     [Dependency] private readonly PlayTimeTrackingManager _playTimeTracking = default!;
 
     public override string Command => "spawncharacter";
-    public override string Description => Loc.GetString("cmd-spawncharacter-description");
-    public override string Help => Loc.GetString("cmd-spawncharacter-help");
 
     public override void Execute(IConsoleShell shell, string argStr, string[] args)
     {
