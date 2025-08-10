@@ -1030,6 +1030,20 @@
   items:
     - ClothingHandsGlovesColorBlack
 
+- type: loadout
+  id: LoadoutClothingHandsGlovesSecurityJack
+  category: JobsSecurityAUncategorized
+  cost: 3
+  exclusive: true
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutSecurityGloves
+  - !type:CharacterDepartmentRequirement
+    departments:
+    - Security
+  items:
+  - ClothingHandsGlovesJack
+
 # Head
 - type: loadout
   id: LoadoutSecurityHeadHatBeret
