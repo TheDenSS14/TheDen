@@ -106,6 +106,8 @@ using Content.Shared.Examine;
 using Content.Shared.Popups;
 using Content.Server._Wizden.Chat.Systems;
 using Content.Server._Floof.Consent;
+using Content.Shared._DEN.Earmuffs;
+
 
 namespace Content.Server.Chat.Systems;
 
@@ -1129,6 +1131,10 @@ public sealed partial class ChatSystem : SharedChatSystem
         {
             if (player.AttachedEntity is not { Valid: true } playerEntity)
                 continue;
+
+            // DEN edit: VRChat earmuffs, but on Den!
+            if (TryComp<EarmuffsComponent>(playerEntity, out var earmuffs))
+                voiceGetRange = earmuffs.HearRange;
 
             var transformEntity = xforms.GetComponent(playerEntity);
 
