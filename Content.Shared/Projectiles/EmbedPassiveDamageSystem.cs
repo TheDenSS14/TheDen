@@ -118,7 +118,8 @@ public sealed class EmbedPassiveDamageSystem : EntitySystem
             if (ent.Embedded is null || !Exists(ent.Embedded)
                 || ent.EmbeddedDamageable is null
                 || ent.EmbeddedMobState is null
-                || ent.EmbeddedMobState.CurrentState == MobState.Dead)
+                || ent.EmbeddedMobState.CurrentState == MobState.Dead
+                || ent.Deleted)
             {
                 _activeEmbeds.Remove(ent);
                 continue;
