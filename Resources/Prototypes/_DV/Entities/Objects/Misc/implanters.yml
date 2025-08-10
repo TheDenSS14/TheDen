@@ -12,9 +12,8 @@
     - type: Implanter
       implant: BionicSyrinxImplant
 
-# CentComm Implanter (Anti-Antag and Mindshield)
-- type: entity
-  parent: BaseImplantOnlyImplanter
+- type: entity # DeltaV - CentComm Implanter (Anti-Antag and Mindshield)
+  parent: BaseImplantOnlyImplanterCentcomm
   id: CentCommImplanter
   name: centcomm implanter
   components:
