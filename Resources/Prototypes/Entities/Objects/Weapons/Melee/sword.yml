@@ -96,7 +96,6 @@
     reflectProb: .2
     spread: 90
   - type: Item
-    size: Normal
     storedSprite:
       state: storage
       sprite: Objects/Weapons/Melee/captain_sabre_storage_64x.rsi #Done in 64x64 because it looks way too puny in 32x32
@@ -145,7 +144,6 @@
   - type: ThrowingAngle
     angle: 225
   - type: Item
-    size: Normal
     storedSprite:
       state: storage
       sprite: Objects/Weapons/Melee/katana_storage_64x.rsi #Done in 64x64 because it looks way too puny in 32x32
@@ -175,7 +173,6 @@
   - type: ThrowingAngle
     angle: 300
   - type: Item
-    size: Normal
     storedSprite:
       state: storage
       sprite: Objects/Weapons/Melee/energykatana_storage_64x.rsi #Done in 64x64 because it looks way too puny in 32x32
@@ -230,8 +227,11 @@
   - type: ThrowingAngle
     angle: 225
   - type: Item
-    size: Normal
-    sprite: Objects/Weapons/Melee/machete.rsi
+    storedSprite:
+      state: storage
+      sprite: Objects/Weapons/Melee/machete.rsi
+    shape:
+    - 0,0,0,2
 
 - type: entity
   name: claymore
@@ -266,7 +266,6 @@
   - type: ThrowingAngle
     angle: 225
   - type: Item
-    size: Normal
     storedSprite:
       state: storage
       sprite: Objects/Weapons/Melee/claymore_storage_64x.rsi #Done in 64x64 because it looks way too puny in 32x32
@@ -312,7 +311,11 @@
   - type: ThrowingAngle
     angle: 225
   - type: Item
-    size: Normal
+    storedSprite:
+      state: storage
+      sprite: Objects/Weapons/Melee/cutlass.rsi
+    shape:
+    - 0,0,0,2
     sprite: Objects/Weapons/Melee/cutlass.rsi
 
 - type: entity
