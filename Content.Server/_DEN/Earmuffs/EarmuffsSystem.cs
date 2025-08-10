@@ -17,6 +17,6 @@ public sealed class EarmuffsSystem : SharedEarmuffsSystem
             return;
 
         var earmuffs = EnsureComp<EarmuffsComponent>(attachedEntity);
-        earmuffs.HearRange = msg.HearRangePercentage;
+        earmuffs.HearRange = msg.HearRange;
     }
 }

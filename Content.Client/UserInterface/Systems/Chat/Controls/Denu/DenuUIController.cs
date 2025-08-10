@@ -58,17 +58,6 @@ public sealed class DenuUIController : UIController
 
         _denuWindow!.OnOpen += () => IsOpen = true;
         _denuWindow!.OnClose += () => IsOpen = false;
-        _denuWindow!.OnEarmuffSliderUpdated += OnEarmuffsUpdated;
-    }
-
-    private void OnEarmuffsUpdated(Range range)
-    {
-        var newValue = (int) range.Value;
-
-        if (_lastEarmuffRange == null || newValue == _lastEarmuffRange)
-            return;
-
-        _earmuffsSystem.UpdateEarmuffs(range);
     }
 
     public void OpenWindow()
@@ -102,17 +91,20 @@ public sealed class DenuUIController : UIController
     public void HideTypingIndicator() =>
         _typingIndicatorSystem.ClientSubmittedChatText();
 
-    public void SetEarmuffRange(float range)
+    public void SetEarmuffRange(float range, bool sendUpdate)
     {
         if (_circleOverlay == null)
         {
-            _circleOverlay = new CircleOverlay();
+            _circleOverlay = new();
             _circleOverlay.OnFullyFaded += RemoveCircleOverlay;
             _overlayManager.AddOverlay(_circleOverlay);
         }
-        
+
         _circleOverlay.Range = range;
         _circleOverlay.ShowCircle();
+
+        if (sendUpdate)
+            _earmuffsSystem.UpdateEarmuffs(range);
     }
 
     private void RemoveCircleOverlay()

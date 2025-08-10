@@ -1,3 +1,6 @@
+using Robust.Shared.Serialization;
+
+
 namespace Content.Shared._DEN.Earmuffs;
 
 
@@ -6,7 +9,8 @@ namespace Content.Shared._DEN.Earmuffs;
 /// </summary>
 public abstract class SharedEarmuffsSystem : EntitySystem;
 
-public sealed class EarmuffsUpdated(int hearRangePercentage) : EntityEventArgs
+[Serializable, NetSerializable]
+public sealed class EarmuffsUpdated(float hearRange) : EntityEventArgs
 {
-    public int HearRangePercentage { get; set; } = hearRangePercentage;
+    public float HearRange { get; init; } = hearRange;
 }

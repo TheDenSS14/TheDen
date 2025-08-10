@@ -8,5 +8,5 @@ namespace Content.Shared._DEN.Earmuffs;
 public sealed partial class EarmuffsComponent : Component
 {
     [DataField]
-    public int HearRange { get; set; }
+    public float HearRange { get; set; }
 }
