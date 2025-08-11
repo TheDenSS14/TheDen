@@ -48,9 +48,9 @@ using Content.Server._CD.Records;
 using Content.Server.Administration.Logs;
 using Content.Server.Administration.Managers;
 using Content.Shared._CD.Records;
+using Content.Shared._Floof.Consent;
 using Content.Shared.Administration.Logs;
 using Content.Shared.Clothing.Loadouts.Systems;
-using Content.Shared.Consent;
 using Content.Shared.Database;
 using Content.Shared.Humanoid;
 using Content.Shared.Humanoid.Markings;
@@ -344,7 +344,7 @@ namespace Content.Server.Database
             profile.Lifepath = humanoid.Lifepath;
             profile.Age = humanoid.Age;
             profile.Sex = humanoid.Sex.ToString();
-            profile.Voice = humanoid.PreferredVoice.ToString(); // TheDen - Add Voice
+            profile.Voice = (humanoid.PreferredVoice ?? humanoid.Sex).ToString(); // TheDen - Add Voice
             profile.Gender = humanoid.Gender.ToString();
             profile.DisplayPronouns = humanoid.DisplayPronouns;
             profile.StationAiName = humanoid.StationAiName;
