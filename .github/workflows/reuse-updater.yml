@@ -19,6 +19,7 @@ on:
 
 jobs:
   update_headers:
+    if: github.event.pull_request.merged == true
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Master
