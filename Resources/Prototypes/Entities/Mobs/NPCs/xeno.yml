@@ -201,12 +201,11 @@
     - Xeno
     understands:
     - Xeno
-  - type: ThermalVision
-    isActive: true
-    lightRadius: 15
+  - type: NightVision # Goobstation - Nigthvision
     color: "#808080"
     activateSound: null
     deactivateSound: null
+  - type: ThermalVision # Goobstation - Thermal vision
   - type: Fauna # Lavaland Change
 
 - type: entity

@@ -28,17 +28,6 @@
 - type: entity
   categories: [ HideSpawnMenu ]
   parent: ClothingBackpackMedical
-  id: ClothingBackpackParamedicFilledDV
-  components:
-  - type: StorageFill
-    contents:
-      - id: EmergencyRollerBedSpawnFolded
-      - id: BodyBagFolded
-      - id: Portafib
-
-- type: entity
-  categories: [ HideSpawnMenu ]
-  parent: ClothingBackpackMedical
   id: ClothingBackpackPsychologistFilled
   components:
   - type: StorageFill
