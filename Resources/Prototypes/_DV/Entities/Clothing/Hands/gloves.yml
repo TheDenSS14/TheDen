@@ -1,8 +1,8 @@
-# SPDX-FileCopyrightText: 2023 Colin-Tel <113523727+Colin-Tel@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 BriBrooo <45323530+Bribrooo@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 sleepyyapril <flyingkarii@gmail.com>
-# SPDX-FileCopyrightText: 2025 Rosycup <178287475+Rosycup@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Colin-Tel
+# SPDX-FileCopyrightText: 2024 BriBrooo
+# SPDX-FileCopyrightText: 2025 Rosycup
+# SPDX-FileCopyrightText: 2025 Sir Warock
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -67,5 +67,23 @@
     modifiers:
       coefficients:
         Caustic: 0.95
-  - type: TemperatureProtection
-    coefficient: 1
+  - type: SurgerySpeedModifier
+    speedModifier: 1.25
+
+- type: entity
+  parent: ClothingHandsBase
+  id: ClothingHandsGlovesHeavySurgical
+  name: heavy surgical gloves
+  description: A pair of thick self-sterilizing gloves that keep the hands and exposed organs firmly separated.
+  components:
+  - type: Sprite
+    sprite: _DV/Clothing/Hands/Gloves/cmogloves.rsi
+  - type: Clothing
+    sprite: _DV/Clothing/Hands/Gloves/cmogloves.rsi
+  - type: Fiber
+    fiberMaterial: fibers-rubber
+    fiberColor: fibers-teal
+  - type: Armor
+    modifiers: {}
+  - type: SurgerySpeedModifier
+    speedModifier: 1.5

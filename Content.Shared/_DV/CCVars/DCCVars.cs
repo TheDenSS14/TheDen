@@ -116,4 +116,16 @@ public sealed class DCCVars
     /// </summary>
     public static readonly CVarDef<int> MaxObjectiveSummaryLength =
         CVarDef.Create("game.max_objective_summary_length", 256, CVar.SERVER | CVar.REPLICATED);
+
+    /// <summary>
+    ///    Disables the drug warping effect for people who find the motion uncomfortable.
+    /// </summary>
+    public static readonly CVarDef<bool> DisableDrugWarping =
+        CVarDef.Create("accessibility.disable_Drug_warping", false, CVar.CLIENTONLY | CVar.ARCHIVE);
+
+    /// <summary>
+    ///    Disables the drunk effect for people who find the motion uncomfortable.
+    /// </summary>
+    public static readonly CVarDef<bool> DisableDrunkWarping =
+        CVarDef.Create("accessibility.disable_Drunk_warping", false, CVar.CLIENTONLY | CVar.ARCHIVE);
 }
