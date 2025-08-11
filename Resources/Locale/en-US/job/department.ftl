@@ -12,6 +12,7 @@
 department-Cargo = Logistics
 department-Civilian = Civilian
 department-Command = Command
+department-CentralCommand = Central Command
 department-Engineering = Engineering
 department-Medical = Medical
 department-Security = Security

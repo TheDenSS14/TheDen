@@ -10,14 +10,15 @@ concurrency:
   group: reuse_action
   cancel-in-progress: false
 on:
-  pull_request:
-    types: [closed]
-    branches:
-      - master
+  pull_request_target:
+    types:
+      - opened
+      - synchronize
+      - reopened
+      - ready_for_review
 
 jobs:
   update_headers:
-    if: github.event.pull_request.merged == true
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Master
