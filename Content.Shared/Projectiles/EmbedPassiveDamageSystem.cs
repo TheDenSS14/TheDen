@@ -18,7 +18,7 @@ public sealed class EmbedPassiveDamageSystem : EntitySystem
     [Dependency] private readonly DamageableSystem _damageable = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
 
-    private readonly HashSet<EmbedPassiveDamageComponent> _activeEmbeds = new();
+    private readonly HashSet<EntityUid> _activeEmbeds = new();
 
     public override void Initialize()
     {
@@ -67,7 +67,7 @@ public sealed class EmbedPassiveDamageSystem : EntitySystem
         component.EmbeddedBodyPart = args.BodyPart;
         component.NextDamage = _timing.CurTime + TimeSpan.FromSeconds(1f);
 
-        _activeEmbeds.Add(component);
+        _activeEmbeds.Add(uid);
         Dirty(uid, component);
     }
 
@@ -79,7 +79,7 @@ public sealed class EmbedPassiveDamageSystem : EntitySystem
         component.EmbeddedBodyPart = null;
         component.NextDamage = TimeSpan.Zero;
 
-        _activeEmbeds.Remove(component);
+        _activeEmbeds.Remove(uid);
         Dirty(uid, component);
     }
 
@@ -113,23 +113,29 @@ public sealed class EmbedPassiveDamageSystem : EntitySystem
     public override void Update(float frameTime)
     {
         var curTime = _timing.CurTime;
+        
         foreach (var ent in _activeEmbeds)
         {
-            if (ent.Embedded is null || !Exists(ent.Embedded)
-                || ent.EmbeddedDamageable is null
-                || ent.EmbeddedMobState is null
-                || ent.EmbeddedMobState.CurrentState == MobState.Dead
-                || ent.Deleted)
+            if (!Exists(ent) || !TryComp<EmbedPassiveDamageComponent>(ent, out var comp))
             {
                 _activeEmbeds.Remove(ent);
                 continue;
             }
 
-            if (ent.NextDamage > curTime)
+            if (comp.Embedded is null || !Exists(comp.Embedded)
+                || comp.EmbeddedDamageable is null
+                || comp.EmbeddedMobState is null
+                || comp.EmbeddedMobState.CurrentState == MobState.Dead)
+            {
+                _activeEmbeds.Remove(ent);
+                continue;
+            }
+
+            if (comp.NextDamage > curTime)
                 continue;
 
-            ent.NextDamage = curTime + TimeSpan.FromSeconds(1f);
-            _damageable.TryChangeDamage(ent.Embedded, ent.Damage, false, false, ent.EmbeddedDamageable, targetPart: ent.EmbeddedBodyPart);
+            comp.NextDamage = curTime + TimeSpan.FromSeconds(1f);
+            _damageable.TryChangeDamage(comp.Embedded, comp.Damage, false, false, comp.EmbeddedDamageable, targetPart: comp.EmbeddedBodyPart);
         }
     }
 }
