@@ -4,6 +4,7 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
+using System.Numerics;
 using Content.Client._DEN.Earmuffs;
 using Content.Client.Chat.TypingIndicator;
 using Robust.Client.Graphics;
@@ -21,8 +22,6 @@ public sealed class DenuUIController : UIController
     [UISystemDependency] private readonly TypingIndicatorSystem _typingIndicatorSystem = default!;
     [UISystemDependency] private readonly EarmuffsSystem _earmuffsSystem = default!;
     [Dependency] private readonly IOverlayManager _overlayManager = default!;
-
-    private int? _lastEarmuffRange = null;
 
     public bool AutoFormatterEnabled { get; set; } = false;
 
@@ -53,17 +52,23 @@ public sealed class DenuUIController : UIController
 
     public void CreateWindow()
     {
-        if (!UIManager.TryGetFirstWindow<DenuWindow>(out _denuWindow))
+        if (!UIManager.TryGetFirstWindow(out _denuWindow))
             _denuWindow = UIManager.CreateWindow<DenuWindow>();
 
-        _denuWindow!.OnOpen += () => IsOpen = true;
+        _denuWindow!.OnOpen += () =>
+        {
+            _denuWindow.RecenterWindow(new(0.5f, 0.5f));
+            IsOpen = true;
+        };
+
         _denuWindow!.OnClose += () => IsOpen = false;
     }
 
     public void OpenWindow()
     {
-        if (_denuWindow is null)
+        if (_denuWindow is not { Disposed: false })
             CreateWindow();
+
         _denuWindow!.OpenCentered();
     }
 
