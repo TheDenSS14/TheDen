@@ -1,4 +1,6 @@
+# SPDX-FileCopyrightText: 2025 Sir Warock
 # SPDX-FileCopyrightText: 2025 juniwoofs
+# SPDX-FileCopyrightText: 2025 sheepie
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
@@ -149,7 +151,8 @@
       highPressureMultiplier: 0.02
       lowPressureMultiplier: 1000
     - type: TemperatureProtection
-      coefficient: 0.001
+      heatingCoefficient: 0.001
+      coolingCoefficient: 0.001
     - type: ExplosionResistance
       damageCoefficient: 0.2
     - type: FireProtection

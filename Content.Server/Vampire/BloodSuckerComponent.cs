@@ -1,7 +1,10 @@
-// SPDX-FileCopyrightText: 2024 VMSolidus <evilexecutive@gmail.com>
-// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 VMSolidus
+// SPDX-FileCopyrightText: 2025 portfiend
+// SPDX-FileCopyrightText: 2025 sleepyyapril
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
+using Content.Server._DEN.Body.Systems;
 
 namespace Content.Server.Vampiric
 {
@@ -45,5 +48,10 @@ namespace Content.Server.Vampiric
         /// </summary>
         [DataField("webRequired")]
         public bool WebRequired = false;
+
+        /// <summary>
+        ///     DEN: Used to track BloodExaminer, but only if it is added by this component.
+        /// </summary>
+        public BloodExaminerComponent? AddedBloodExaminer;
     }
 }

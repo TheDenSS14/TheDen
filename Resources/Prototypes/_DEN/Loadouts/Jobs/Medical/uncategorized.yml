@@ -101,3 +101,17 @@
     - !type:CharacterDepartmentRequirement
       departments:
         - Medical
+
+- type: loadout
+  id: LoadoutMedicalHeadMirror
+  category: JobsMedicalAUncategorized
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingHeadMirror
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMedicalHead
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Medical

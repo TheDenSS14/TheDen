@@ -35,6 +35,9 @@
   icon: "JobIconNanotrasen"
   supervisors: job-supervisors-centcom
   canBeAntag: false
+  special:
+  - !type:AddImplantSpecial
+    implants: [ CentCommImplant ]
   accessGroups:
   - AllAccess
   access:
@@ -116,6 +119,8 @@
   - !type:AddComponentSpecial
     components:
     - type: BibleUser #Lets them heal with bibles
+  - !type:AddImplantSpecial
+    implants: [ CentCommImplant ]
 
 - type: startingGear
   id: ERTChaplainGear
@@ -167,6 +172,9 @@
   icon: "JobIconNanotrasen"
   supervisors: job-supervisors-centcom
   canBeAntag: false
+  special:
+  - !type:AddImplantSpecial
+    implants: [ CentCommImplant ]
   accessGroups:
   - AllAccess
   access:
@@ -220,6 +228,9 @@
   icon: "JobIconNanotrasen"
   supervisors: job-supervisors-centcom
   canBeAntag: false
+  special:
+  - !type:AddImplantSpecial
+    implants: [ CentCommImplant ]
   accessGroups:
   - AllAccess
   access:
@@ -293,6 +304,9 @@
   icon: "JobIconNanotrasen"
   supervisors: job-supervisors-centcom
   canBeAntag: false
+  special:
+  - !type:AddImplantSpecial
+    implants: [ CentCommImplant ]
   accessGroups:
   - AllAccess
   access:
@@ -344,6 +358,9 @@
   icon: "JobIconNanotrasen"
   supervisors: job-supervisors-centcom
   canBeAntag: false
+  special:
+  - !type:AddImplantSpecial
+    implants: [ CentCommImplant ]
   accessGroups:
   - AllAccess
   access:
