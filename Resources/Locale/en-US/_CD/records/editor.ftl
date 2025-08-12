@@ -21,7 +21,9 @@ humanoid-profile-editor-cd-records-work-authorization = Work Authorization:
 humanoid-profile-editor-cd-records-identifying-features = Identifying Features:
 
 # Medical
+# TheDen, changed Allergies to Allergies (incl. Drug)
 humanoid-profile-editor-cd-records-allergies = Allergies (incl. Drug):
+# TheDen, changed Drug Allergies to Patient Medical Concerns
 humanoid-profile-editor-cd-records-drug-allergies = Patient Medical Concerns:
 humanoid-profile-editor-cd-records-postmortem = Postmortem Instructions:
 
