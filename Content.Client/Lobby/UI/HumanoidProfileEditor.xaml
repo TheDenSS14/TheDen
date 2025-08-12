@@ -331,8 +331,12 @@ SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
                                     </BoxContainer>
                                     <!-- Hair -->
                                     <BoxContainer Margin="10" Orientation="Horizontal" SeparationOverride="10">
-                                        <humanoid:SingleMarkingPicker Name="HairStylePicker" Category="Hair" />
-                                        <humanoid:SingleMarkingPicker Name="FacialHairPicker" Category="FacialHair" />
+                                        <BoxContainer HorizontalExpand="True">
+                                            <humanoid:SingleMarkingPicker Name="HairStylePicker" Category="Hair" />
+                                        </BoxContainer>
+                                        <BoxContainer HorizontalExpand="True">
+                                            <humanoid:SingleMarkingPicker Name="FacialHairPicker" Category="FacialHair" />
+                                        </BoxContainer>
                                     </BoxContainer>
                                 </BoxContainer>
                             </CollapsibleBody>
