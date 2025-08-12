@@ -18,7 +18,12 @@
   - type: Item
     size: Normal
   - type: PowerCellDraw
-    useRate: 140
+    useRate: 200
+  - type: Defibrillator
+    zapHeal:
+      types:
+        Asphyxiation: -20
+    zapDamage: 10
   - type: StaticPrice
     price: 100
   - type: Tag
