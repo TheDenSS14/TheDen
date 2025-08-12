@@ -201,7 +201,35 @@
         color: "#FFFFFF"
   sprites:
   - sprite: _DEN/Mobs/Customization/Ovinia/body_markings.rsi
-    state: fawn
+    state: torso-fawn
+
+- type: marking
+  id: OviniaPatternCattleMasc
+  bodyPart: Chest
+  markingCategory: Chest
+  speciesRestriction: [ Ovinia ]
+  sexRestriction: [ Female ]
+  invertSexRestriction: true
+  coloring:
+    default:
+      type: !type:TattooColoring
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Ovinia/body_markings.rsi
+    state: torso-cow-m
+
+- type: marking
+  id: OviniaPatternCattleFem
+  bodyPart: Chest
+  markingCategory: Chest
+  speciesRestriction: [ Ovinia ]
+  sexRestriction: [ Male ]
+  invertSexRestriction: true
+  coloring:
+    default:
+      type: !type:TattooColoring
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Ovinia/body_markings.rsi
+    state: torso-cow-f
 
 # Leg Markings
 - type: marking

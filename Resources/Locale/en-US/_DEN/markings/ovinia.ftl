@@ -66,7 +66,13 @@ marking-OviniaTummy = Ovinia Tummy
 marking-OviniaTummy-ovinia-tummy = Tummy
 
 marking-OviniaPatternFawn = Fawn Spots
-marking-OviniaPatternFawn-fawn = Spots
+marking-OviniaPatternFawn-fawn = Spot
+
+marking-OviniaPatternCattleMasc = Splotches [M]
+marking-OviniaPatternCattleMasc-torso-cow-m = Splotch
+
+marking-OviniaPatternCattleFem = Splotches [F]
+marking-OviniaPatternCattleFem-torso-cow-f = Splotch
 
 marking-OviniaLeftLegValais = Valais Left Leg
 marking-OviniaLeftLegValais-ovinia-leg-valais-left = Valais Left Leg
