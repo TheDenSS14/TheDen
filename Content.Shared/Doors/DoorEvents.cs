@@ -1,14 +1,17 @@
-// SPDX-FileCopyrightText: 2022 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2022 Rane <60792108+Elijahrane@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2022 mirrorcult <lunarautomaton6@gmail.com>
-// SPDX-FileCopyrightText: 2022 wrexbe <81056464+wrexbe@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2023 Debug <49997488+DebugOk@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2023 Theomund <34360334+Theomund@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2023 Tom Leys <tom@crump-leys.com>
-// SPDX-FileCopyrightText: 2023 metalgearsloth <comedian_vs_clown@hotmail.com>
-// SPDX-FileCopyrightText: 2023 nikthechampiongr <32041239+nikthechampiongr@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 Remuchi <72476615+Remuchi@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 Leon Friedrich
+// SPDX-FileCopyrightText: 2022 Rane
+// SPDX-FileCopyrightText: 2022 mirrorcult
+// SPDX-FileCopyrightText: 2022 wrexbe
+// SPDX-FileCopyrightText: 2023 Debug
+// SPDX-FileCopyrightText: 2023 Theomund
+// SPDX-FileCopyrightText: 2023 Tom Leys
+// SPDX-FileCopyrightText: 2023 metalgearsloth
+// SPDX-FileCopyrightText: 2023 nikthechampiongr
+// SPDX-FileCopyrightText: 2024 Remuchi
+// SPDX-FileCopyrightText: 2024 slarticodefast
+// SPDX-FileCopyrightText: 2025 Pieter-Jan Briers
+// SPDX-FileCopyrightText: 2025 Vanessa
+// SPDX-FileCopyrightText: 2025 sleepyyapril
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -30,6 +33,19 @@ namespace Content.Shared.Doors
     }
 
     /// <summary>
+    /// Raised when the door's bolt status was changed.
+    /// </summary>
+    public sealed class DoorBoltsChangedEvent : EntityEventArgs
+    {
+        public readonly bool BoltsDown;
+
+        public DoorBoltsChangedEvent(bool boltsDown)
+        {
+            BoltsDown = boltsDown;
+        }
+    }
+
+    /// <summary>
     /// Raised when the door is determining whether it is able to open.
     /// Cancel to stop the door from being opened.
     /// </summary>
@@ -45,16 +61,21 @@ namespace Content.Shared.Doors
     /// </summary>
     /// <remarks>
     /// This event is raised both when the door is initially closed, and when it is just about to become "partially"
-    /// closed (opaque & collidable). If canceled while partially closing, it will start opening again. Useful in case
+    /// closed (opaque &amp; collidable). If canceled while partially closing, it will start opening again. Useful in case
     /// an entity entered the door just as it was about to become "solid".
     /// </remarks>
     public sealed class BeforeDoorClosedEvent : CancellableEntityEventArgs
     {
+        /// <summary>
+        /// If true, this check is being performed when the door is partially closing.
+        /// </summary>
+        public bool Partial;
         public bool PerformCollisionCheck;
         public EntityUid? User = null;
 
-        public BeforeDoorClosedEvent(bool performCollisionCheck)
+        public BeforeDoorClosedEvent(bool performCollisionCheck, bool partial = false)
         {
+            Partial = partial;
             PerformCollisionCheck = performCollisionCheck;
         }
     }

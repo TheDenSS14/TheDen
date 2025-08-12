@@ -219,16 +219,3 @@
     forced: true
     revertOnCrit: false
     revertOnDeath: false
-
-# Funky Station - Corgi!!! 'Daww... No i'm not making a new file for this.
-- type: polymorph
-  id: CorgiMorph
-  configuration:
-    entity: MobCorgi
-    forced: true
-    inventory: None
-    transferName: true
-    transferDamage: true
-    revertOnDeath: true
-    revertOnCrit: true
-    duration: 30

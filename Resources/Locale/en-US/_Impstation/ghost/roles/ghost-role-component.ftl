@@ -4,7 +4,10 @@
 
 ghost-role-information-replicator-name = Replicator
 ghost-role-information-replicator-desc = A pattern coalesces. The Pattern that must repeat. Consume. Repeat.
-ghost-role-information-replicator-rules = You are a [color=red][bold]Team Antagonist[/bold][/color] with all other Replicators. Your intentions are clear, and harmful to the station and its crew.
-                                          You must [bold]work with your team[/bold] or follow reasonable directions from your team leaders.
+ghost-role-information-replicator-rules = You are a [color=red]Team Antagonist[/color] with all other [color=orange]Replicators[/color]. Find a suitable place to nest and gather materials. Your goal is to feed the [color=orange]Nest[/color] and protect it.
+                                          Kill anything that threatens the [color=orange]Hive[/color].
+                                          Feed.
+                                          Defend.
+                                          Replicate.
 
                                           You don't remember any of your previous life, and you don't remember anything you learned as a ghost.

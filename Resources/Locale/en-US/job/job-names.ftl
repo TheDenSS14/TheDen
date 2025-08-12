@@ -60,7 +60,7 @@ job-name-hop = Head of Personnel
 job-name-captain = Captain
 job-name-ntrep = Nanotrasen Representative
 job-name-serviceworker = Service Worker
-job-name-centcomoff = CentCom Official
+job-name-centcomoff = CentComm Official
 job-name-reporter = Reporter
 job-name-musician = Musician
 job-name-librarian = Cataloguer
@@ -73,7 +73,7 @@ job-name-chaplain = Chaplain
 job-name-botanist = Botanist
 job-name-bartender = Bartender
 job-name-passenger = Passenger
-job-name-salvagespec = Salvage specialist
+job-name-salvagespec = Salvage Specialist
 job-name-station-ai = Station AI
 job-name-qm = Logistics Officer
 job-name-cargotech = Cargo Technician
@@ -106,6 +106,7 @@ job-name-zombie = Zombie
 job-title-visitor = Visitor
 job-title-cluwne = Cluwne
 job-title-universal = Universal
+job-title-admin = Admin
 
 # Role timers - Make these alphabetical or I cut you
 JobAtmosphericTechnician = Atmospheric Technician

@@ -1,0 +1,64 @@
+# SPDX-FileCopyrightText: 2024 Dark
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+#Head
+
+#Mask
+- type: loadout
+  id: LoadoutServiceClownNose
+  category: JobsServiceClown
+  cost: 0
+  exclusive: true
+  customColorTint: true
+  canBeHeirloom: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutClownMask
+    - !type:CharacterJobRequirement
+      jobs:
+        - Clown
+  items:
+    - ClothingMaskClownNose
+
+#Jumpsuit
+
+# Shoes
+
+#Neck
+- type: loadout
+  id: LoadoutServiceClownNeckRuffle
+  category: JobsServiceClown
+  cost: 0
+  exclusive: true
+  customColorTint: true
+  canBeHeirloom: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutClownNeck
+    - !type:CharacterJobRequirement
+      jobs:
+        - Clown
+  items:
+    - ClothingNeckRuffle
+
+# Uniforms
+- type: loadout
+  id: LoadoutServiceClownOutfitCircus
+  category: JobsServiceClown
+  cost: 0
+  exclusive: true
+  customColorTint: true
+  canBeHeirloom: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutClownUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - Clown
+  items:
+    - ClothingUniformCircusClown
+    - ClothingHeadHatCircusClown
+    - ClothingShoesCircus
+    - ClothingNeckRuffle
+    - ClothingMaskClownNose

@@ -8,20 +8,23 @@
 # SPDX-FileCopyrightText: 2025 BloodfiendishOperator
 # SPDX-FileCopyrightText: 2025 BramvanZijp
 # SPDX-FileCopyrightText: 2025 EctoplasmIsGood
+# SPDX-FileCopyrightText: 2025 Falcon
+# SPDX-FileCopyrightText: 2025 Jakumba
 # SPDX-FileCopyrightText: 2025 M3739
 # SPDX-FileCopyrightText: 2025 MajorMoth
 # SPDX-FileCopyrightText: 2025 Raikyr0
 # SPDX-FileCopyrightText: 2025 Rosycup
-# SPDX-FileCopyrightText: 2025 Rosycup <***>
-# SPDX-FileCopyrightText: 2025 Rosycup <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>
 # SPDX-FileCopyrightText: 2025 SX-7
 # SPDX-FileCopyrightText: 2025 Sapphire
+# SPDX-FileCopyrightText: 2025 Sir Warock
 # SPDX-FileCopyrightText: 2025 Skubman
 # SPDX-FileCopyrightText: 2025 Tabitha
 # SPDX-FileCopyrightText: 2025 TheOneTrueWolfio
 # SPDX-FileCopyrightText: 2025 VMSolidus
 # SPDX-FileCopyrightText: 2025 foxcurl
+# SPDX-FileCopyrightText: 2025 juniwoofs
 # SPDX-FileCopyrightText: 2025 portfiend
+# SPDX-FileCopyrightText: 2025 sheepie
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
@@ -34,6 +37,7 @@
     - !type:CharacterJobRequirement
       inverted: true
       jobs:
+        - StationAi
         - Borg
         - MedicalBorg
     - !type:CharacterSpeciesRequirement
@@ -59,6 +63,7 @@
     - !type:CharacterJobRequirement
       inverted: true
       jobs:
+        - StationAi
         - Borg
         - MedicalBorg
     - !type:CharacterSpeciesRequirement
@@ -83,6 +88,7 @@
     - !type:CharacterJobRequirement
       inverted: true
       jobs:
+        - StationAi
         - Borg
         - MedicalBorg
     - !type:CharacterSpeciesRequirement
@@ -108,6 +114,7 @@
     - !type:CharacterJobRequirement
       inverted: true
       jobs:
+        - StationAi
         - Borg
         - MedicalBorg
     - !type:CharacterSpeciesRequirement
@@ -132,6 +139,7 @@
     - !type:CharacterJobRequirement
       inverted: true
       jobs:
+        - StationAi
         - Borg
         - MedicalBorg
     - !type:CharacterTraitRequirement
@@ -158,6 +166,7 @@
     - !type:CharacterJobRequirement
       inverted: true
       jobs:
+        - StationAi
         - Borg
         - MedicalBorg
     - !type:CharacterTraitRequirement
@@ -184,6 +193,7 @@
     - !type:CharacterJobRequirement
       inverted: true
       jobs:
+        - StationAi
         - Borg
         - MedicalBorg
     - !type:CharacterSpeciesRequirement
@@ -209,6 +219,7 @@
     - !type:CharacterJobRequirement
       inverted: true
       jobs:
+        - StationAi
         - Borg
         - MedicalBorg
     - !type:CharacterSpeciesRequirement
@@ -233,6 +244,7 @@
     - !type:CharacterJobRequirement
       inverted: true
       jobs:
+        - StationAi
         - Borg
         - MedicalBorg
     - !type:CharacterTraitRequirement
@@ -254,6 +266,7 @@
     - !type:CharacterJobRequirement
       inverted: true
       jobs:
+        - StationAi
         - Borg
         - MedicalBorg
     - !type:CharacterTraitRequirement
@@ -274,6 +287,7 @@
     - !type:CharacterJobRequirement
       inverted: true
       jobs:
+        - StationAi
         - Borg
         - MedicalBorg
     - !type:CharacterSpeciesRequirement
@@ -298,6 +312,7 @@
     - !type:CharacterJobRequirement
       inverted: true
       jobs:
+        - StationAi
         - Borg
         - MedicalBorg
     - !type:CharacterSpeciesRequirement
@@ -322,6 +337,7 @@
   - !type:CharacterJobRequirement
     inverted: true
     jobs:
+      - StationAi
       - Borg
       - MedicalBorg
       - Boxer
@@ -352,6 +368,12 @@
   category: TraitsPhysicalBiological
   points: -2
   requirements:
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - StationAi
+        - Borg
+        - MedicalBorg
     - !type:CharacterSpeciesRequirement
       inverted: true
       species:
@@ -379,6 +401,12 @@
   category: TraitsPhysicalBiological
   points: -1
   requirements:
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - StationAi
+        - Borg
+        - MedicalBorg
     - !type:CharacterSpeciesRequirement
       inverted: true
       species:
@@ -389,7 +417,7 @@
     - !type:TraitReplaceComponent
       components:
         - type: TemperatureProtection
-          coefficient: 0.1 # Enough resistance to walk into the chef's freezer, or tolerate daytime temperatures on Glacier without a jacket.
+          coolingCoefficient: 0.1   # Enough resistance to walk into the chef's freezer, or tolerate daytime temperatures on Glacier without a jacket.
 
 # These traits largely exist to demonstrate more of the "Component Removals" functionality. This way contributors
 # can get used to seeing that they can "Remove and Replace" a pre-existing component.
@@ -399,6 +427,12 @@
   category: TraitsPhysicalBiological
   points: -1
   requirements:
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - StationAi
+        - Borg
+        - MedicalBorg
     - !type:CharacterSpeciesRequirement
       inverted: true
       species:
@@ -410,6 +444,7 @@
       traits:
         - Claws
         - StrikingCalluses
+        - SharpTeeth
   functions:
     - !type:TraitModifyUnarmed
       soundHit:
@@ -426,12 +461,17 @@
             types:
               Blunt: 0
 
-
 - type: trait
   id: Claws
   category: TraitsPhysicalBiological
   points: -1
   requirements:
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - StationAi
+        - Borg
+        - MedicalBorg
     - !type:CharacterSpeciesRequirement
       inverted: true
       species:
@@ -447,6 +487,7 @@
       traits:
         - Talons
         - StrikingCalluses
+        - SharpTeeth
   functions:
     - !type:TraitModifyUnarmed
       soundHit:
@@ -464,10 +505,52 @@
               Blunt: 0
 
 - type: trait
+  id: SharpTeeth #TheDen
+  category: TraitsPhysicalBiological
+  points: -2
+  requirements:
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+      - StationAi
+      - Borg
+      - MedicalBorg
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Feroxi # They got the bite already
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - Talons
+        - StrikingCalluses
+        - Claws
+  functions:
+    - !type:TraitModifyUnarmed
+      soundHit:
+        path: /Audio/Effects/bite.ogg
+      animation: WeaponArcBite
+      damage:
+        types:
+          Piercing: 7 #as strong as feroxi bite for an extra cost
+    - !type:TraitRemoveComponent
+      components:
+        - type: DamageOnHit
+          damage:
+            types:
+              Blunt: 0
+
+- type: trait
   id: NaturalWeaponRemoval
   category: TraitsPhysicalBiological
   points: 0
   requirements:
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+      - StationAi
+      - Borg
+      - MedicalBorg
     - !type:CharacterSpeciesRequirement
       inverted: true
       species:
@@ -486,6 +569,7 @@
       traits:
         - Talons
         - Claws
+        - SharpTeeth
   functions:
     - !type:TraitModifyUnarmed
       soundHit:
@@ -509,7 +593,10 @@
     - !type:CharacterJobRequirement
       inverted: true
       jobs:
-        - Prisoner # Bionics should be "Confiscated" from long term prisoners.
+      - StationAi
+      - Borg
+      - MedicalBorg
+      - Prisoner # Bionics should be "Confiscated" from long term prisoners.
     #- !type:CharacterSpeciesRequirement
     #  species:
     #    - Human # Entirely arbitrary, I've decided I want a trait unique to humans. Since they don't normally get anything exciting.
@@ -519,6 +606,7 @@
       traits:
         - Claws
         - Talons
+        - SharpTeeth
     - !type:CharacterLogicOrRequirement
       requirements:
         - !type:CharacterTraitRequirement
@@ -561,6 +649,9 @@
     - !type:CharacterJobRequirement
       inverted: true
       jobs:
+        - StationAi
+        - Borg
+        - MedicalBorg
         - Prisoner # Bionics should be "Confiscated" from long term prisoners.
     - !type:CharacterSpeciesRequirement
       inverted: true
@@ -587,9 +678,16 @@
   category: TraitsPhysicalAugmentations
   points: -6
   requirements:
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - BionicArmNoVisuals
     - !type:CharacterJobRequirement
       inverted: true
       jobs:
+        - StationAi
+        - Borg
+        - MedicalBorg
         - Prisoner # Bionics should be "Confiscated" from long term prisoners.
         - Gladiator
   functions:
@@ -610,6 +708,39 @@
           requireDetailRange: true
 
 - type: trait
+  id: BionicArmNoVisuals
+  category: TraitsPhysicalAugmentations
+  points: -6
+  requirements:
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - BionicArm
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - StationAi
+        - Borg
+        - MedicalBorg
+        - Prisoner # Bionics should be "Confiscated" from long term prisoners.
+        - Gladiator
+  functions:
+    - !type:TraitPushDescription
+      descriptionExtensions:
+        - description: examine-bionic-arm-message
+          fontSize: 12
+          requireDetailRange: true
+    - !type:TraitAddComponentToBodyPart
+      parts:
+      - Arm
+      components:
+      - type: Prying
+        speedModifier: 1.5
+        pryPowered: true
+      - type: UseDelay # For insta prying
+        delay: 1
+
+- type: trait
   id: PlateletFactories
   category: TraitsPhysicalAugmentations
   points: -10
@@ -617,11 +748,18 @@
     - !type:CharacterJobRequirement
       inverted: true
       jobs:
+        - StationAi
+        - Borg
+        - MedicalBorg
         - Prisoner # Bionics should be "Confiscated" from long term prisoners.
     - !type:CharacterSpeciesRequirement
       inverted: true
       species:
         - IPC
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - HealingFactor
   functions: # TODO: Code Platelet factories as an actual obtainable implant, and replace this with TraitAddImplant
     - !type:TraitReplaceComponent
       components:
@@ -646,6 +784,9 @@
     - !type:CharacterJobRequirement
       inverted: true
       jobs:
+        - StationAi
+        - Borg
+        - MedicalBorg
         - Prisoner # Bionics should be "Confiscated" from long term prisoners.
   functions:
     - !type:TraitAddArmor
@@ -665,6 +806,9 @@
     - !type:CharacterJobRequirement
       inverted: true
       jobs:
+        - StationAi
+        - Borg
+        - MedicalBorg
         - Prisoner # Bionics should be "Confiscated" from long term prisoners.
     - !type:CharacterSpeciesRequirement
         inverted: true
@@ -692,6 +836,13 @@
   category: TraitsPhysicalAugmentations
   points: -4
   requirements:
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - StationAi
+        - Borg
+        - MedicalBorg
+        - Prisoner # Bionics should be "Confiscated" from long term prisoners.
     - !type:CharacterDepartmentRequirement
       departments:
         - Security
@@ -713,6 +864,9 @@
     - !type:CharacterJobRequirement
       inverted: true
       jobs:
+        - StationAi
+        - Borg
+        - MedicalBorg
         - Prisoner # Bionics should be "Confiscated" from long term prisoners.
     - !type:CharacterDepartmentRequirement
       departments:
@@ -741,6 +895,9 @@
     - !type:CharacterJobRequirement
       inverted: true
       jobs:
+        - StationAi
+        - Borg
+        - MedicalBorg
         - Prisoner # Bionics should be "Confiscated" from long term prisoners.
     - !type:CharacterTraitRequirement
       traits:
@@ -771,6 +928,9 @@
     - !type:CharacterJobRequirement
       inverted: true
       jobs:
+        - StationAi
+        - Borg
+        - MedicalBorg
         - Prisoner # Bionics should be "Confiscated" from long term prisoners.
     - !type:CharacterTraitRequirement
       traits:
@@ -797,6 +957,9 @@
     - !type:CharacterJobRequirement
       inverted: true
       jobs:
+        - StationAi
+        - Borg
+        - MedicalBorg
         - Prisoner # Bionics should be "Confiscated" from long term prisoners.
     - !type:CharacterDepartmentRequirement
       departments:
@@ -840,6 +1003,7 @@
     - !type:CharacterJobRequirement
       inverted: true
       jobs:
+        - StationAi
         - Borg
         - MedicalBorg
     - !type:CharacterSpeciesRequirement
@@ -864,6 +1028,7 @@
     - !type:CharacterJobRequirement
       inverted: true
       jobs:
+        - StationAi
         - Borg
         - MedicalBorg
     - !type:CharacterSpeciesRequirement
@@ -888,6 +1053,9 @@
     - !type:CharacterJobRequirement
       inverted: true
       jobs:
+        - StationAi
+        - Borg
+        - MedicalBorg
         - Prisoner # Bionics should be "Confiscated" from long term prisoners.
     - !type:CharacterTraitRequirement
       traits:
@@ -905,6 +1073,9 @@
     - !type:CharacterJobRequirement
       inverted: true
       jobs:
+        - StationAi
+        - Borg
+        - MedicalBorg
         - Prisoner # Bionics should be "Confiscated" from long term prisoners.
     - !type:CharacterTraitRequirement
       traits:
@@ -929,6 +1100,9 @@
     - !type:CharacterJobRequirement
       inverted: true
       jobs:
+        - StationAi
+        - Borg
+        - MedicalBorg
         - Prisoner # Bionics should be "Confiscated" from long term prisoners.
     - !type:CharacterSpeciesRequirement
       species:
@@ -956,11 +1130,15 @@
     - !type:CharacterJobRequirement
       inverted: true
       jobs:
+        - StationAi
+        - Borg
+        - MedicalBorg
         - Prisoner # Bionics should be "Confiscated" from long term prisoners.
     - !type:CharacterTraitRequirement
       inverted: true
       traits:
         - WheelchairBound
+        - BionicLegNoVisuals
     - !type:CharacterSpeciesRequirement
       inverted: true
       species:
@@ -983,10 +1161,58 @@
       slotId: "right leg"
 
 - type: trait
+  id: BionicLegNoVisuals
+  category: TraitsPhysicalAugmentations
+  points: -8
+  requirements:
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - StationAi
+        - Borg
+        - MedicalBorg
+        - Prisoner # Bionics should be "Confiscated" from long term prisoners.
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - WheelchairBound
+        - BionicLeg
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Arachne
+  functions:
+    - !type:TraitAddComponentToBodyPart
+      parts:
+      - Leg
+      components:
+      - type: MovementBodyPart
+        walkSpeed: 3.125
+        sprintSpeed: 5.625
+      - type: StepTriggerImmune
+        whitelist:
+          types:
+          - Shard
+          - Mousetrap
+          - SlipEntity
+    - !type:TraitPushDescription
+      descriptionExtensions:
+        - description: examine-bionic-leg-message
+          fontSize: 12
+          requireDetailRange: true
+
+- type: trait
   id: FlareShieldingModule
   category: TraitsPhysicalAugmentations
   points: -4
   requirements:
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - StationAi
+        - Borg
+        - MedicalBorg
+        - Prisoner # Bionics should be "Confiscated" from long term prisoners.
     - !type:CharacterDepartmentRequirement
       departments:
         - Security
@@ -1015,6 +1241,9 @@
     - !type:CharacterJobRequirement
       inverted: true
       jobs:
+        - StationAi
+        - Borg
+        - MedicalBorg
         - Prisoner # Bionics should be "Confiscated" from long term prisoners.
     - !type:CharacterDepartmentRequirement
       departments:
@@ -1043,6 +1272,9 @@
     - !type:CharacterJobRequirement
       inverted: true
       jobs:
+        - StationAi
+        - Borg
+        - MedicalBorg
         - Prisoner # Bionics should be "Confiscated" from long term prisoners.
     - !type:CharacterSpeciesRequirement
       species:
@@ -1071,6 +1303,9 @@
     - !type:CharacterJobRequirement
       inverted: true
       jobs:
+        - StationAi
+        - Borg
+        - MedicalBorg
         - Prisoner # Bionics should be "Confiscated" from long term prisoners.
     - !type:CharacterSpeciesRequirement
       species:
@@ -1097,6 +1332,9 @@
     - !type:CharacterJobRequirement
       inverted: true
       jobs:
+        - StationAi
+        - Borg
+        - MedicalBorg
         - Prisoner # Bionics should be "Confiscated" from long term prisoners.
     - !type:CharacterDepartmentRequirement
       departments:
@@ -1141,6 +1379,9 @@
     - !type:CharacterJobRequirement
       inverted: true
       jobs:
+        - StationAi
+        - Borg
+        - MedicalBorg
         - Prisoner # Bionics should be "Confiscated" from long term prisoners.
     - !type:CharacterSpeciesRequirement
       species:
@@ -1158,6 +1399,9 @@
     - !type:CharacterJobRequirement
       inverted: true
       jobs:
+        - StationAi
+        - Borg
+        - MedicalBorg
         - Prisoner # Bionics should be "Confiscated" from long term prisoners.
     - !type:CharacterSpeciesRequirement
       species:
@@ -1217,10 +1461,17 @@
   category: TraitsPhysicalFeats
   points: -6
   requirements:
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - StationAi
+        - Borg
+        - MedicalBorg
     - !type:CharacterTraitRequirement
       inverted: true
       traits:
         - Weakling
+        - HandsFreePulling
   functions:
     - !type:TraitReplaceComponent
       components:
@@ -1230,6 +1481,7 @@
           softGrabSpeedModifier: 0.95
           hardGrabSpeedModifier: 0.85
           chokeGrabSpeedModifier: 0.7
+          pushAcceleration: 0.45 # DEN: 0.3 -> 0.45, 50% increase
     - !type:TraitPushDescription
       descriptionExtensions:
         - description: examine-bodybuilder-message
@@ -1241,10 +1493,17 @@
   category: TraitsPhysicalDisabilities
   points: 3
   requirements:
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - StationAi
+        - Borg
+        - MedicalBorg
     - !type:CharacterTraitRequirement
       inverted: true
       traits:
         - Bodybuilder
+        - HandsFreePulling
   functions:
     - !type:TraitReplaceComponent
       components:
@@ -1254,6 +1513,7 @@
           softGrabSpeedModifier: 0.8
           hardGrabSpeedModifier: 0.4
           chokeGrabSpeedModifier: 0.2
+          pushAcceleration: 0.15 # DEN: 0.3 -> 0.15, 50% decrease
     - !type:TraitPushDescription
       descriptionExtensions:
         - description: examine-weakling-message
@@ -1268,12 +1528,18 @@
     - !type:CharacterJobRequirement
       inverted: true
       jobs:
+        - StationAi
         - Borg
         - MedicalBorg
     - !type:CharacterSpeciesRequirement
       inverted: true
       species:
         - IPC
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+      - BloodExaminer # DEN
+      - HollowFangs
   functions:
   - !type:TraitAddComponent
     components:
@@ -1284,6 +1550,7 @@
           - Pill
           - Crayon
           - Paper
+          - VampireFood # Ok they can have a little food..
 
 # Commented out upon request for the time being
 #- type: trait
@@ -1308,6 +1575,12 @@
   category: TraitsPhysicalBiological
   points: -2 # Can detect ion storms, poison blood
   requirements:
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - StationAi
+        - Borg
+        - MedicalBorg
     - !type:CharacterSpeciesRequirement
       inverted: true
       species:
@@ -1316,3 +1589,4 @@
     - !type:TraitAddComponent
       components:
         - type: Synth
+        - type: IonStormNotifier

@@ -1,85 +1,25 @@
-# SPDX-FileCopyrightText: 2020 Swept <sweptwastaken@protonmail.com>
-# SPDX-FileCopyrightText: 2021 Mith-randalf <84274729+Mith-randalf@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2021 Peptide90 <78795277+Peptide90@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2022 Emisse <99158783+Emisse@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2022 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2022 Veritius <veritiusgaming@gmail.com>
-# SPDX-FileCopyrightText: 2022 mirrorcult <lunarautomaton6@gmail.com>
-# SPDX-FileCopyrightText: 2023 Flareguy <78941145+Flareguy@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2023 KingFroozy <140668342+KingFroozy@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT <77995199+DEATHB4DEFEAT@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 Danger Revolution! <142105406+DangerRevolution@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 SimpleStation14 <130339894+SimpleStation14@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 Tmanzxd <164098915+Tmanzxd@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 Blitz <73762869+BlitzTheSquishy@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 Rosycup <178287475+Rosycup@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 Skubman <ba.fallaria@gmail.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2020 Swept
+# SPDX-FileCopyrightText: 2021 Mith-randalf
+# SPDX-FileCopyrightText: 2021 Peptide90
+# SPDX-FileCopyrightText: 2022 Emisse
+# SPDX-FileCopyrightText: 2022 Nemanja
+# SPDX-FileCopyrightText: 2022 Veritius
+# SPDX-FileCopyrightText: 2022 mirrorcult
+# SPDX-FileCopyrightText: 2023 Flareguy
+# SPDX-FileCopyrightText: 2023 KingFroozy
+# SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT
+# SPDX-FileCopyrightText: 2024 Danger Revolution!
+# SPDX-FileCopyrightText: 2024 SimpleStation14
+# SPDX-FileCopyrightText: 2024 Tmanzxd
+# SPDX-FileCopyrightText: 2025 Alice
+# SPDX-FileCopyrightText: 2025 Blitz
+# SPDX-FileCopyrightText: 2025 Rosycup
+# SPDX-FileCopyrightText: 2025 Skubman
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
-#Web vest
-- type: entity
-  parent: [ClothingOuterStorageBase, AllowSuitStorageClothing]
-  id: ClothingOuterVestWeb
-  name: web vest
-  description: A synthetic armor vest. This one has added webbing and ballistic plates.
-  components:
-  - type: Sprite
-    sprite: Clothing/OuterClothing/Vests/webvest.rsi
-  - type: Clothing
-    sprite: Clothing/OuterClothing/Vests/webvest.rsi
-  - type: Armor
-    modifiers:
-      coefficients:
-        Blunt: 0.6 #ballistic plates = better protection
-        Slash: 0.6
-        Piercing: 0.3
-        Heat: 0.9
-  - type: ExplosionResistance
-    damageCoefficient: 0.9
-
-#Mercenary web vest
-- type: entity
-  parent: ClothingOuterVestWeb #web vest so it should have some pockets for ammo
-  id: ClothingOuterVestWebMerc
-  name: merc web vest
-  description: A high-quality armored vest made from a hard synthetic material. It's surprisingly flexible and light, despite formidable armor plating.
-  components:
-  - type: Sprite
-    sprite: Clothing/OuterClothing/Vests/mercwebvest.rsi
-  - type: Clothing
-    sprite: Clothing/OuterClothing/Vests/mercwebvest.rsi
-  - type: Armor
-    modifiers:
-      coefficients:
-        Blunt: 0.7 #slightly better overall protection but slightly worse than bulletproof armor against bullets seems sensible
-        Slash: 0.7
-        Piercing: 0.5
-        Heat: 0.9
-  - type: ExplosionResistance
-    damageCoefficient: 0.9
-
-#Detective's vest
-- type: entity
-  parent: ClothingOuterArmorBasic
-  id: ClothingOuterVestDetective
-  name: detective's vest
-  description: A hard-boiled private investigator's armored vest.
-  components:
-  - type: Sprite
-    sprite: Clothing/OuterClothing/Vests/detvest.rsi
-  - type: Clothing
-    sprite: Clothing/OuterClothing/Vests/detvest.rsi
-  - type: Armor #Based on /tg/ but slightly compensated to fit the fact that armor stacks in SS14.
-    modifiers:
-      coefficients:
-        Blunt: 0.70
-        Slash: 0.70
-        Piercing: 0.70 #Can save you, but bullets will still hurt. Will take about 10 shots from a Viper before critting, as opposed to 7 while unarmored and 16~ with a bulletproof vest.
-        Heat: 0.80
-  - type: ExplosionResistance
-    damageCoefficient: 0.90
+#NOTE: vests with armor belong to armor.yml
 
 #Hazard vest
 - type: entity
@@ -172,3 +112,23 @@
     sprite: Clothing/OuterClothing/Vests/vest_thick.rsi
   - type: Clothing
     sprite: Clothing/OuterClothing/Vests/vest_thick.rsi
+
+- type: entity
+  parent: [ClothingOuterStorageBase, AllowSuitStorageClothing]
+  id: ClothingOuterVestHoSVestWeb
+  name: head of security's web vest
+  description: An advanced web vest for the head of security. Offers superior bullet and heat protection to their greatcoat at the cost of no casutic protection and lesser protection against cuts and bludgeoning.
+  components:
+  - type: Sprite
+    sprite: Clothing/OuterClothing/Armor/web_vest_hos.rsi
+  - type: Clothing
+    sprite: Clothing/OuterClothing/Armor/web_vest_hos.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.80
+        Slash: 0.80
+        Piercing: 0.40
+        Heat: 0.50
+  - type: ExplosionResistance
+    damageCoefficient: 0.60

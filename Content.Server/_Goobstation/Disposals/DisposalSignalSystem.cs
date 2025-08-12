@@ -1,8 +1,8 @@
-// SPDX-FileCopyrightText: 2025 AirFryerBuyOneGetOneFree <airfryerbuyonegetonefree@gmail.com>
-// SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
-// SPDX-FileCopyrightText: 2025 deltanedas <@deltanedas:kde.org>
-// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 sleepyyapril <flyingkarii@gmail.com>
+// SPDX-FileCopyrightText: 2025 AirFryerBuyOneGetOneFree
+// SPDX-FileCopyrightText: 2025 GoobBot
+// SPDX-FileCopyrightText: 2025 deltanedas
+// SPDX-FileCopyrightText: 2025 mart
+// SPDX-FileCopyrightText: 2025 sleepyyapril
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -24,6 +24,9 @@ public sealed class DisposalSignalSystem : EntitySystem
     public static readonly ProtoId<SinkPortPrototype> EjectPort = "DisposalEject";
     public static readonly ProtoId<SinkPortPrototype> TogglePort = "Toggle";
 
+    [DataField, ViewVariables(VVAccess.ReadWrite)]
+    public ProtoId<SinkPortPrototype> RemoteFlush = "RemoteFlush";
+
     public override void Initialize()
     {
         base.Initialize();
@@ -33,7 +36,7 @@ public sealed class DisposalSignalSystem : EntitySystem
 
     private void OnSignalReceived(Entity<DisposalUnitComponent> ent, ref SignalReceivedEvent args)
     {
-        if (args.Port == FlushPort)
+        if (args.Port == FlushPort || args.Port == RemoteFlush)
             _disposal.ToggleEngage(ent, ent);
         else if (args.Port == EjectPort)
             _disposal.TryEjectContents(ent, ent);

@@ -106,3 +106,6 @@ signal-port-description-material-silo-utilizer = Utilizer for station material s
 
 signal-port-name-fill-any-item = Fillbot Target
 signal-port-description-fill-any-item = Target port for Fillbot insertion.
+
+signal-port-name-remote-flush = Remote Flush
+signal-port-description-remote-flush = Flushes the disposal unit remotely.

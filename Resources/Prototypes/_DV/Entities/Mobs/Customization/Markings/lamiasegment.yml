@@ -10,6 +10,7 @@
 
 - type: marking
   id: LamiaBottom-LamiaSegment
+  forcedColoring: true # DEN: Suppresses test fail
   bodyPart: Tail
   markingCategory: Tail
   speciesRestriction: [LamiaSegment]

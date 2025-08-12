@@ -16,3 +16,12 @@
       id: WheelchairAmputeeRightLeg
     - type: trait
       id: AmputeeBothLegs
+
+- type: characterItemGroup
+  id: TraitsMuted
+  maxItems: 1
+  items:
+    - type: trait
+      id: Muted
+    - type: trait
+      id: MutedNoSign

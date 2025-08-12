@@ -1,6 +1,8 @@
-# SPDX-FileCopyrightText: 2025 Blitz <73762869+BlitzTheSquishy@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 Rosycup <178287475+Rosycup@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Blitz
+# SPDX-FileCopyrightText: 2025 BlitzTheSquishy
+# SPDX-FileCopyrightText: 2025 Rosycup
+# SPDX-FileCopyrightText: 2025 Sir Warock
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -12,11 +14,35 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutMedicalEyes
-    - !type:CharacterDepartmentRequirement
-      departments:
-        - Medical
+    - !type:CharacterLogicOrRequirement
+      requirements:
+        - !type:CharacterDepartmentRequirement
+          departments:
+            - Medical
+        - !type:CharacterJobRequirement
+          jobs:
+            - Brigmedic
   items:
     - ClothingEyesGlassesMedicalVisor
+
+- type: loadout
+  id: LoadoutMedicalEyesGlassesMedicalGlasses
+  category: JobsMedicalAUncategorized
+  cost: 0
+  exclusive: true
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutMedicalEyes
+  - !type:CharacterLogicOrRequirement
+    requirements:
+    - !type:CharacterDepartmentRequirement
+      departments:
+      - Medical
+    - !type:CharacterJobRequirement
+      jobs:
+      - Brigmedic
+  items:
+  - ClothingEyesGlassesCheapMedical
 
 - type: loadout
   id: LoadoutTowelLightBlue
@@ -28,3 +54,64 @@
         - Medical
   items:
     - TowelColorLightBlue
+
+- type: loadout
+  id: LoadoutBackpackMessengerMedical
+  category: JobsMedicalAUncategorized
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingBackpackMessengerMedical
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMedicalBackpacks
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Medical
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - ChiefMedicalOfficer # CMO has ClothingBackpackMessengerCMOFilled
+        - Psychologist # Psych has ClothingBackpackMessengerPsychologistFilled
+
+- type: loadout
+  id: LoadoutBackpackMessengerVirology
+  category: JobsMedicalAUncategorized
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingBackpackMessengerVirology
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMedicalBackpacks
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Medical
+
+- type: loadout
+  id: LoadoutBackpackMessengerGenetics
+  category: JobsMedicalAUncategorized
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingBackpackMessengerGenetics
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMedicalBackpacks
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Medical
+
+- type: loadout
+  id: LoadoutMedicalHeadMirror
+  category: JobsMedicalAUncategorized
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingHeadMirror
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMedicalHead
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Medical

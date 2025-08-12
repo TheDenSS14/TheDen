@@ -1,0 +1,67 @@
+# SPDX-FileCopyrightText: 2025 Tanix
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+# TODO: I know it's horrid, but if you separate every single one into their proper forks, I'll pay you.
+# There are existing packs for some of these recipes, and some which have items that don't exist. I'm sorry.
+
+- type: latheRecipePack
+  id: ServiceTechFabStaticAwfulDen
+  recipes:
+  - HandheldStationMap
+  - ShockCollar
+  - CustomDrinkJug
+  - LeashBasic
+  - CellRechargerCircuitboard
+  - WeaponCapacitorRechargerCircuitboard
+  - Beaker
+  - LargeBeaker
+  - Syringe
+  - HandLabeler
+  - Signaller
+  - SprayBottle
+  - MopItem
+  - Bucket
+  - Holoprojector
+  - TapeRecorder
+  - CassetteTape
+  # Translators
+  - CanilunztTranslator
+  - BubblishTranslator
+  - NekomimeticTranslator
+  - DraconicTranslator
+  - SolCommonTranslator
+  - RootSpeakTranslator
+  - BasicGalaticCommonTranslatorImplanter
+  - MofficTranslator
+  - ArachnicTranslator
+  - VoxPidginTranslator
+  # Tiles
+  - FauxTileAstroGrass
+  - FauxTileMowedAstroGrass
+  - FauxTileJungleAstroGrass
+  - FauxTileAstroIce
+  - FauxTileAstroSnow
+
+- type: latheRecipePack
+  id: ServiceTechFabDynamicAwfulDen
+  recipes:
+  # Tools
+  - ClothingShoesBootsSpeed
+  - BluespaceBeaker
+  - AdvMopItem
+  - WeaponSprayNozzle
+  - ClothingBackpackWaterTank
+  - MegaSprayBottle
+  - TrashBagBluespace
+  # Machines and computers
+  - SeedExtractorMachineCircuitboard
+  - HydroponicsTrayMachineCircuitboard
+  - ReagentGrinderIndustrialMachineCircuitboard
+  - ComputerTelevisionCircuitboard
+  - SynthesizerInstrument
+  - DawInstrumentMachineCircuitboard
+  - MassMediaCircuitboard
+  - JukeboxCircuitBoard
+  - FatExtractorMachineCircuitboard

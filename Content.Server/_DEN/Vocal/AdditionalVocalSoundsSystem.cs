@@ -1,4 +1,5 @@
-// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Falcon
+// SPDX-FileCopyrightText: 2025 sleepyyapril
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -28,19 +29,23 @@ public sealed class AdditionalVocalSoundsSystem : EntitySystem
 
     public Dictionary<string, SoundSpecifier> GetVocalSounds(Entity<AdditionalVocalSoundsComponent> ent, EmoteSoundsPrototype? baseSounds = null )
     {
-
-        var result = baseSounds?.Sounds ?? new Dictionary<string, SoundSpecifier>();
+        var result = baseSounds?.Sounds != null ? new(baseSounds.Sounds) : new Dictionary<string, SoundSpecifier>();
 
         if (string.IsNullOrEmpty(ent.Comp.AdditionalSounds))
             return result;
 
-        var exists = _prototypeManager.TryIndex(ent.Comp.AdditionalSounds, out var sounds);
+        _prototypeManager.TryIndex(ent.Comp.AdditionalSounds, out var sounds);
 
-        if (!exists || sounds == null || sounds.Sounds.Count == 0)
+        if (sounds == null || sounds.Sounds.Count == 0)
             return result;
 
         foreach (var (soundId, specifier) in sounds.Sounds)
-            result.TryAdd(soundId, specifier);
+        {
+            if (ent.Comp.ReplaceExistingEmotes)
+                result[soundId] = specifier;
+            else
+                result.TryAdd(soundId, specifier);
+        }
 
         return result;
     }

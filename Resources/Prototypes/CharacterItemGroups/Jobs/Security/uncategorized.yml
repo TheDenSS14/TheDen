@@ -1,14 +1,20 @@
 # SPDX-FileCopyrightText: 2024 Unkn0wn_Gh0st
 # SPDX-FileCopyrightText: 2024 gluesniffler
+# SPDX-FileCopyrightText: 2025 Adrian16199
 # SPDX-FileCopyrightText: 2025 Blitz
+# SPDX-FileCopyrightText: 2025 BlitzTheSquishy
 # SPDX-FileCopyrightText: 2025 Blu
 # SPDX-FileCopyrightText: 2025 Jakumba
 # SPDX-FileCopyrightText: 2025 Lonofera
+# SPDX-FileCopyrightText: 2025 M3739
 # SPDX-FileCopyrightText: 2025 Rosycup
 # SPDX-FileCopyrightText: 2025 Skubman
 # SPDX-FileCopyrightText: 2025 Tabitha
 # SPDX-FileCopyrightText: 2025 Tad "Taddy" Johnson
+# SPDX-FileCopyrightText: 2025 Tanix
 # SPDX-FileCopyrightText: 2025 VMSolidus
+# SPDX-FileCopyrightText: 2025 juniwoofs
+# SPDX-FileCopyrightText: 2025 neuPanda
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
@@ -24,6 +30,8 @@
       id: LoadoutClothingBackSecuritySatchel
     - type: loadout
       id: LoadoutClothingBackSecurityDuffel
+    - type: loadout
+      id: LoadoutClothingBackSecurityMessenger
 
 - type: characterItemGroup
   id: LoadoutSecurityBelt
@@ -40,7 +48,7 @@
 #  id: LoadoutSecurityEars
 #  maxItems: 1
 #  items:
-#
+
 - type: characterItemGroup
   maxItems: 5
   id: LoadoutSecurityEquipment
@@ -74,13 +82,13 @@
     - type: loadout
       id: LoadoutSpeedLoaderSpecialRubberSpare
     - type: loadout
-      id: LoadoutMagazineMagnum
+      id: LoadoutMagazineSpecial
     - type: loadout
-      id: LoadoutMagazineMagnumRubber
+      id: LoadoutMagazineSpecialRubber
     - type: loadout
-      id: LoadoutMagazineMagnumSpare
+      id: LoadoutMagazineSpecialSpare
     - type: loadout
-      id: LoadoutMagazineMagnumRubberSpare
+      id: LoadoutMagazineSpecialRubberSpare
     - type: loadout
       id: LoadoutSpeedLoaderRifleHeavy
     - type: loadout
@@ -158,11 +166,15 @@
     - type: loadout
       id: LoadoutClothingEyesGlassesCorpsman
 
-#- type: characterItemGroup
-#  id: LoadoutSecurityGloves
-#  maxItems: 1
-#  items:
-#
+- type: characterItemGroup
+  id: LoadoutSecurityGloves
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutClothingHandsSecurityWarmers
+    - type: loadout
+      id: LoadoutClothingHandsGlovesSecurityBlack
+
 - type: characterItemGroup
   id: LoadoutSecurityHead
   maxItems: 1
@@ -182,16 +194,22 @@
 #  id: LoadoutSecurityId
 #  maxItems: 1
 #  items:
-#
-#- type: characterItemGroup
-#  id: LoadoutSecurityNeck
-#  maxItems: 1
-#  items:
-#
+
+- type: characterItemGroup
+  id: LoadoutSecurityNeck # Floof - M3739 - #988
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutSecurityNeckNeckerchief
+    - type: loadout
+      id: LoadoutSecurityNeckCollar
+
 - type: characterItemGroup
   id: LoadoutSecurityMask
   maxItems: 1
   items:
+    - type: loadout
+      id: LoadoutClothingMaskGasSecurity
     - type: loadout
       id: LoadoutSecurityMaskGasSwat
     - type: loadout
@@ -213,6 +231,8 @@
       id: LoadoutClothingOuterArmorBasic
     - type: loadout
       id: LoadoutClothingOuterArmorSlim
+    - type: loadout
+      id: LoadoutClothingLongcoatSec
 
 - type: characterItemGroup
   id: LoadoutSecurityShoes
@@ -222,6 +242,10 @@
       id: LoadoutSecurityShoesJackboots
     - type: loadout
       id: LoadoutClothingShoesBootsCombat
+    - type: loadout
+      id: LoadoutClothingUnderSocksSecurity
+    - type: loadout
+      id: LoadoutShoesSecheelsBlackstockings
 
 - type: characterItemGroup
   id: LoadoutSecurityUniforms
@@ -249,3 +273,5 @@
       id: LoadoutSecurityUniformJumpsuit
     - type: loadout
       id: LoadoutSecurityUniformJumpskirt
+    - type: loadout
+      id: LoadoutClothingUniformSecurityThong

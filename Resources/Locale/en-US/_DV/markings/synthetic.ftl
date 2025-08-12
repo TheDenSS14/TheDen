@@ -64,6 +64,7 @@ marking-SyntheticLizardSnoutBarlessTertUnder-synth_lizard_snout_barless_tert_und
 marking-SyntheticLizardSnoutBarlessUnder = Synth Lizard Snout Barless Under
 marking-SyntheticLizardSnoutBarlessUnder-synth_lizard_snout_barless_under_1 = Primary
 marking-SyntheticLizardSnoutBarlessUnder-synth_lizard_snout_barless_under_2 = Secondary
+marking-SyntheticLizardSnoutBarlessUnder-synth_lizard_snout_barless_under_3 = Screen
 
 marking-SyntheticLizardSnoutLong = Synth Lizard Snout Long
 marking-SyntheticLizardSnoutLong-synth_lizard_snout_long = Primary
@@ -93,6 +94,9 @@ marking-SyntheticLizardSnoutUnder-synth_lizard_snout_under_2 = Chin
 
 marking-SyntheticLizardSnoutBasic = Synth Lizard Snout Basic
 marking-SyntheticLizardSnoutBasic-synth_lizard_snout_basic = Primary
+
+marking-IPCHeadMuzzle = Tajaran Muzzle
+marking-IPCHeadMuzzle-muzzle = Muzzle
 
 # Heads
 marking-SyntheticLizardHeadM = Synth Lizard Head Masculine

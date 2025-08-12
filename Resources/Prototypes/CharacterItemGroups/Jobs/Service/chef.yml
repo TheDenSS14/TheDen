@@ -30,12 +30,14 @@
 #  id: LoadoutChefEyes
 #  maxItems: 1
 #  items:
-#
-#- type: characterItemGroup
-#  id: LoadoutChefGloves
-#  maxItems: 1
-#  items:
-#
+
+- type: characterItemGroup
+  id: LoadoutChefGloves
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutClothingHandsChefWarmers
+
 - type: characterItemGroup
   id: LoadoutChefHead
   items:
@@ -77,11 +79,13 @@
     - type: loadout
       id: LoadoutServiceOuterApronChef
 
-#- type: characterItemGroup
-#  id: LoadoutChefShoes
-#  maxItems: 1
-#  items:
-#
+- type: characterItemGroup
+  id: LoadoutChefShoes
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutClothingUnderSocksChef
+
 - type: characterItemGroup
   id: LoadoutChefUniforms
   items:
@@ -95,3 +99,5 @@
       id: LoadoutServiceJumpsuitChef
     - type: loadout
       id: LoadoutServiceJumpskirtChef
+    - type: loadout
+      id: LoadoutClothingUniformChefThong

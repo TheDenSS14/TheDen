@@ -1,6 +1,7 @@
-// SPDX-FileCopyrightText: 2023 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2023 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 DrSmugleaf
+// SPDX-FileCopyrightText: 2023 metalgearsloth
+// SPDX-FileCopyrightText: 2025 portfiend
+// SPDX-FileCopyrightText: 2025 sleepyyapril
 //
 // SPDX-License-Identifier: MIT
 
@@ -17,7 +18,7 @@ public sealed partial class ActiveHandComponentPrecondition : HTNPrecondition
     [Dependency] private readonly IEntityManager _entManager = default!;
 
     [DataField("invert")]
-    public bool Invert;
+    public bool Invert = false;
 
     [DataField("components", required: true)]
     public ComponentRegistry Components = new();
@@ -33,11 +34,8 @@ public sealed partial class ActiveHandComponentPrecondition : HTNPrecondition
         {
             var hasComp = _entManager.HasComponent(hand.HeldEntity, comp.Value.Component.GetType());
 
-            if (!hasComp ||
-                Invert && hasComp)
-            {
+            if (!Invert && !hasComp || Invert && hasComp)
                 return false;
-            }
         }
 
         return true;
