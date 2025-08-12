@@ -144,6 +144,15 @@
   - sprite: _DEN/Mobs/Customization/Ovinia/horn_markings.rsi
     state: ovinia-ibex-horns
 
+- type: marking
+  id: OviniaJacobHorns
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  speciesRestriction: [ Ovinia, Human ]
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Ovinia/horn_markings.rsi
+    state: jacob-horns
+
 # Snout Markings
 - type: marking
   id: OviniaFace
@@ -189,6 +198,28 @@
   sprites:
   - sprite: _DEN/Mobs/Customization/Ovinia/body_markings.rsi
     state: ovinia-tummy
+
+- type: marking
+  id: OviniaChestFullMasc
+  bodyPart: Chest
+  markingCategory: Chest
+  speciesRestriction: [ Ovinia ]
+  sexRestriction: [ Female ]
+  invertSexRestriction: true
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Ovinia/body_markings.rsi
+    state: full-m
+
+- type: marking
+  id: OviniaChestFullFem
+  bodyPart: Chest
+  markingCategory: Chest
+  speciesRestriction: [ Ovinia ]
+  sexRestriction: [ Male ]
+  invertSexRestriction: true
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Ovinia/body_markings.rsi
+    state: full-f
 
 - type: marking
   id: OviniaPatternFawn
