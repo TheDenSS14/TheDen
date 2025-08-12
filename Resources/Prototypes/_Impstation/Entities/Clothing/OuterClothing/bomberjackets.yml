@@ -12,10 +12,10 @@
   - type: Foldable
     unfoldVerbText: fold-unzip-verb
     foldVerbText: fold-zip-verb
-  - type: TemperatureProtection
+  - type: TemperatureProtection # Same stats as the winter coats
     heatingCoefficient: 1.1
     coolingCoefficient: 0.1
-  - type: Armor # Same stats as the winter coats
+  - type: Armor
     modifiers:
       coefficients:
         Slash: 0.95
@@ -62,7 +62,7 @@
   parent: ClothingOuterCoatBomberWhite
   id: ClothingOuterCoatBomberAtmos
   name: atmos bomber jacket
-  description: A blue bomber jacket, worn with the sleeves pushed up. Embroidered with a gush of air on the back. If you're feeling bold, you can loosen how it fits with a knife.
+  description: A blue bomber jacket, worn with the sleeves pushed up. Embroidered with a gust of air on the back. If you're feeling bold, you can loosen how it fits with a knife.
   components:
   - type: Sprite
     sprite: _Impstation/Clothing/OuterClothing/BomberJackets/bomber_atmos.rsi
@@ -78,7 +78,7 @@
   parent: ClothingOuterCoatBomberWhite
   id: ClothingOuterCoatBomberAtmosHolo
   name: holofan bomber jacket
-  description: A holographic bomber jacket, worn with the sleeves pushed up. Unlike its full counterpart, this does not protect against pressure differences. If you're feeling bold, you can loosen how it fits with a knife.
+  description: A holographic bomber jacket, worn with the sleeves pushed up. Unlike its inspiration, this does not protect against pressure differences. If you're feeling bold, you can loosen how it fits with a knife.
   components:
   - type: Sprite
     sprite: _Impstation/Clothing/OuterClothing/BomberJackets/bomber_atmos_holo.rsi
@@ -110,7 +110,7 @@
   parent: ClothingOuterCoatBomberWhite
   id: ClothingOuterCoatBomberScience
   name: science bomber jacket
-  description: A purple bomber jacket, worn with the sleeves pushed up. The mind's eye is embroidered on the back to symbolize the wearer's grasp of the noosphere. If you're feeling bold, you can loosen how it fits with a knife.
+  description: A purple bomber jacket, worn with the sleeves pushed up. The mind's eye is embroidered on the back to symbolize the wearer's knowledge of the noosphere. If you're feeling bold, you can loosen how it fits with a knife.
   components:
   - type: Sprite
     sprite: _Impstation/Clothing/OuterClothing/BomberJackets/bomber_science.rsi
@@ -123,7 +123,7 @@
       amount: 1
 
 - type: entity
-  parent: [ClothingOuterCoatBomberWhite, BaseSecurityContraband] # security contraband because this one's armored
+  parent: [ClothingOuterCoatBomberWhite, BaseSecurityContraband] # Security contraband because this one's armored
   id: ClothingOuterCoatBomberSecurity
   name: security bomber jacket
   description: A red bomber jacket with kevlar lining, worn with the sleeves pushed up. The shield on the back is sewn with special high-vis thread. If you're feeling bold, you can loosen how it fits with a knife.
@@ -137,16 +137,16 @@
     spawned:
     - id: ClothingOuterCoatBomberSecurityLoose # how long can IDs be lol
       amount: 1
-  - type: Armor # identical stats to the station security sweater we ported from delta-v which is also selectable in the secoff loadout
+  - type: Armor # Identical stats to the security winter coat
     modifiers:
       coefficients:
-        Blunt: 0.75
-        Slash: 0.75
-        Piercing: 0.75
+        Blunt: 0.85
+        Slash: 0.85
+        Piercing: 0.85
         Heat: 0.75
 
 - type: entity
-  parent: [ClothingOuterCoatBomberWhite, BaseSecurityContraband] # security contraband because this one's armored
+  parent: [ClothingOuterCoatBomberWhite, BaseSecurityContraband] # Security contraband because this one's armored
   id: ClothingOuterCoatBomberBrigmed
   name: brigmedic bomber jacket
   description: A white bomber jacket with kevlar lining, worn with the sleeves pushed up. Embroidered on the back is a reminder to do harm only some of the time. If you're feeling bold, you can loosen how it fits with a knife.
@@ -160,14 +160,13 @@
     spawned:
     - id: ClothingOuterCoatBomberBrigmedLoose
       amount: 1
-  - type: Armor # identical to the base-game armored medical gown
+  - type: Armor # Identical stats to the security winter coat
     modifiers:
       coefficients:
-        Blunt: 0.8
+        Blunt: 0.85
         Slash: 0.85
-        Piercing: 0.65
-        Heat: 0.85
-        Caustic: 0.75
+        Piercing: 0.85
+        Heat: 0.75
 
 # You can adjust your bomber jacket to fit loose around the shoulders by butchering it, or change it back the same way - think of it as clothing alterations
 # These bombers are all parented to their non-loose counterparts, instead of the basic white one
@@ -223,7 +222,7 @@
   parent: ClothingOuterCoatBomberAtmos
   id: ClothingOuterCoatBomberAtmosLoose
   name: atmos bomber jacket (loose)
-  description: A blue bomber jacket, worn low and loose. Embroidered with a gush of air on the back. If you're feeling modest, you can tighten how it fits with a knife.
+  description: A blue bomber jacket, worn low and loose. Embroidered with a gust of air on the back. If you're feeling modest, you can tighten how it fits with a knife.
   components:
   - type: Sprite
     sprite: _Impstation/Clothing/OuterClothing/BomberJackets/bomber_atmos_loose.rsi
@@ -239,7 +238,7 @@
   parent: ClothingOuterCoatBomberAtmosHolo
   id: ClothingOuterCoatBomberAtmosHoloLoose
   name: holofan bomber jacket (loose)
-  description: A holographic bomber jacket, worn low and loose. Unlike its full counterpart, this does not protect against pressure differences. If you're feeling modest, you can tighten how it fits with a knife.
+  description: A holographic bomber jacket, worn low and loose. Unlike its inspiration, this does not protect against pressure differences. If you're feeling modest, you can tighten how it fits with a knife.
   components:
   - type: Sprite
     sprite: _Impstation/Clothing/OuterClothing/BomberJackets/bomber_atmos_holo_loose.rsi
@@ -271,7 +270,7 @@
   parent: ClothingOuterCoatBomberScience
   id: ClothingOuterCoatBomberScienceLoose
   name: science bomber jacket (loose)
-  description: A purple bomber jacket, worn low and loose. The mind's eye is embroidered on the back to symbolize the wearer's grasp of the noosphere. If you're feeling modest, you can tighten how it fits with a knife.
+  description: A purple bomber jacket, worn low and loose. The mind's eye is embroidered on the back to symbolize the wearer's knowledge of the noosphere. If you're feeling modest, you can tighten how it fits with a knife.
   components:
   - type: Sprite
     sprite: _Impstation/Clothing/OuterClothing/BomberJackets/bomber_science_loose.rsi
@@ -313,4 +312,4 @@
     butcheringType: Knife
     spawned:
     - id: ClothingOuterCoatBomberBrigmed
-      amount: 1s
+      amount: 1
