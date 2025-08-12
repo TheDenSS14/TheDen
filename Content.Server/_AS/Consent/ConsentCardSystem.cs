@@ -36,7 +36,7 @@ public sealed class ConsentCardSystem : SharedConsentCardSystem
             Log.Error($"{ev.PlayerId} attempted to raise {ev.CardId} card but could not find an attached entity.");
             _adminLog.Add(LogType.Consent, LogImpact.Extreme,$"{ev.PlayerId} attempted to raise {ev.CardId} card but could not find an attached entity.");
             _chat.SendAdminAlert(Loc.GetString("unknown-consent-card-admin-message", ("player", session.Name), ("type", ev.CardId)));
-            _audio.PlayGlobal(new SoundPathSpecifier("/Audio/Effects/adminhelp.ogg"), Filter.Empty().AddPlayers(_admin.ActiveAdmins), false);
+            _audio.PlayGlobal(new SoundPathSpecifier("/Audio/Admin/ahelp_send.ogg"), Filter.Empty().AddPlayers(_admin.ActiveAdmins), false);
             return;
         }
 
@@ -49,7 +49,7 @@ public sealed class ConsentCardSystem : SharedConsentCardSystem
             Log.Error($"{ev.PlayerId} attempted to raise {ev.CardId} card but was not recognized as a consent card.");
             _adminLog.Add(LogType.Consent, LogImpact.Extreme, $"{ev.PlayerId} attempted to raise {ev.CardId} card but was not recognized as a consent card.");
             _chat.SendAdminAlert(Loc.GetString("unknown-consent-card-admin-message", ("player", session.Name), ("type", ev.CardId)));
-            _audio.PlayGlobal(new SoundPathSpecifier("/Audio/Effects/adminhelp.ogg"), Filter.Empty().AddPlayers(_admin.ActiveAdmins), false);
+            _audio.PlayGlobal(new SoundPathSpecifier("/Audio/Admin/ahelp_send.ogg"), Filter.Empty().AddPlayers(_admin.ActiveAdmins), false);
             return;
         }
 
@@ -60,7 +60,7 @@ public sealed class ConsentCardSystem : SharedConsentCardSystem
         _adminLog.Add(LogType.Consent, LogImpact.Extreme, $"{ev.PlayerId} raised {cardName} card.");
         if (cardComp.AdminMessage is {} adminMessage)
             _chat.SendAdminAlert(Loc.GetString(cardComp.AdminMessage, ("player", session.Name), ("type", cardName)));
-        _audio.PlayGlobal(new SoundPathSpecifier("/Audio/Effects/adminhelp.ogg"), Filter.Empty().AddPlayers(_admin.ActiveAdmins), false);
+        _audio.PlayGlobal(new SoundPathSpecifier("/Audio/Admin/ahelp_send.ogg"), Filter.Empty().AddPlayers(_admin.ActiveAdmins), false);
         _popup.PopupPredicted(string.Empty, Loc.GetString(cardComp.PopupMessage), playerEnt, playerEnt, PopupType.MediumCaution);
     }
 }

@@ -139,7 +139,7 @@ public sealed partial class ConsentWindow : FancyWindow
         var desc = new RichTextLabel
         {
             Text = Loc.GetString($"consent-{prototype.ID}-desc"),
-            MaxWidth = 850,
+            MaxWidth = 600,
         };
 
         container.AddChild(desc);
