@@ -1428,45 +1428,45 @@
   products:
     CinnamonCookie: 3
     
-- type: reaction
-  id: ThoughtsAndPrayers
-  reactants:
-    Silencer:
-      amount: 1
-    Brainbomb:
-      amount: 1
-    Hallelujah:
-      amount: 1
-  products:
-    ThoughtsAndPrayers: 3
+# - type: reaction
+#   id: ThoughtsAndPrayers
+#   reactants:
+#     Silencer:
+#       amount: 1
+#     Brainbomb:
+#       amount: 1
+#     Hallelujah:
+#       amount: 1
+#   products:
+#     ThoughtsAndPrayers: 3
 
-- type: reaction
-  id: MutuallyAssuredDestruction
-  reactants:
-    AtomicBomb:
-      amount: 1
-    XenoBasher:
-      amount: 1
-    DeathFlip:
-      amount: 1
-  products:
-    MutuallyAssuredDestruction: 3
+# - type: reaction
+#   id: MutuallyAssuredDestruction
+#   reactants:
+#     AtomicBomb:
+#       amount: 1
+#     XenoBasher:
+#       amount: 1
+#     DeathFlip:
+#       amount: 1
+#   products:
+#     MutuallyAssuredDestruction: 3
     
-- type: reaction
-  id: Zenith
-  requiredMixerCategories:
-  - Stir
-  reactants:
-    ThoughtsAndPrayers:
-      amount: 1
-    Eminence:
-      amount: 1
-    DoctorsDelight:
-      amount: 1
-    MutuallyAssuredDestruction:
-      amount: 1
-  products:
-    Zenith: 4
+# - type: reaction
+#   id: Zenith
+#   requiredMixerCategories:
+#   - Stir
+#   reactants:
+#     ThoughtsAndPrayers:
+#       amount: 1
+#     Eminence:
+#       amount: 1
+#     DoctorsDelight:
+#       amount: 1
+#     MutuallyAssuredDestruction:
+#       amount: 1
+#   products:
+#     Zenith: 4
   
 - type: reaction
   id: BloodRedLicorice

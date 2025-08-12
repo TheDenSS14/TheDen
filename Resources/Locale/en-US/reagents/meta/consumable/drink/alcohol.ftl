@@ -353,14 +353,14 @@ reagent-desc-cafe-cocktail = Something to sip on with a nice book.
 reagent-name-cinnamon-cookie = cinnamon cookie
 reagent-desc-cinnamon-cookie = A cocktail reminiscient of cookies at a bake sale.
 
-reagent-name-thoughts-and-prayers = thoughts and prayers
-reagent-desc-thoughts-and-prayers = A biohazard in a glass, guaranteed to make you rethink your life.
+# reagent-name-thoughts-and-prayers = thoughts and prayers
+# reagent-desc-thoughts-and-prayers = A biohazard in a glass, guaranteed to make you rethink your life.
 
-reagent-name-mutually-assured-destruction = mutually assured destruction
-reagent-desc-mutually-assured-destruction = You feel a sense of dread looking at this drink...
+# reagent-name-mutually-assured-destruction = mutually assured destruction
+# reagent-desc-mutually-assured-destruction = You feel a sense of dread looking at this drink...
 
-reagent-name-zenith = zenith
-reagent-desc-zenith = The lifelong goal of every bartender to make.
+# reagent-name-zenith = zenith
+# reagent-desc-zenith = The lifelong goal of every bartender to make.
 
 reagent-name-blood-red-licorice = blood-red licorice
 reagent-desc-blood-red-licorice = Station destruction has never tasted so sweet.

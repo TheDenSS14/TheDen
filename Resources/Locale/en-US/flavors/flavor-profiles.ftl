@@ -328,9 +328,9 @@ flavor-complex-naughty-bartender = like a fancy coffee
 flavor-complex-atlantic-ocean = like a tropical resort
 flavor-complex-cafe-cocktail = like a cold morning breeze
 flavor-complex-cinnamon-cookie = like grandma's baking
-flavor-complex-thoughts-and-prayers = like you can see through the veil
-flavor-complex-mutually-assured-destruction = like the end of the world
-flavor-complex-zenith = like everything you could ever dream of
+# flavor-complex-thoughts-and-prayers = like you can see through the veil
+# flavor-complex-mutually-assured-destruction = like the end of the world
+# flavor-complex-zenith = like everything you could ever dream of
 flavor-complex-blood-red-licorice = like carnage in a candy store
 
 ### This is exactly what pilk tastes like. I'm not even joking. I might've been a little drunk though
