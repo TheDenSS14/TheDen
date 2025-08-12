@@ -117,60 +117,82 @@ SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
                             <CollapsibleBody>
                                 <ui:AlternatingBGContainer Margin="10" Orientation="Vertical" HorizontalExpand="True" SeparationOverride="5">
                                     <!-- Station AI name -->
-                                    <BoxContainer Name="StationAiNameContainer" HorizontalExpand="True">
-                                        <Label Text="{Loc 'humanoid-profile-editor-station-ai-name-label'}" />
-                                        <Control HorizontalExpand="True"/>
-                                        <LineEdit Name="StationAINameEdit" MinSize="270 0" HorizontalAlignment="Right" />
+                                    <BoxContainer Orientation="Horizontal"
+                                        HorizontalExpand="True"
+                                        SeparationOverride="40">
+                                        <BoxContainer Name="StationAiNameContainer" HorizontalExpand="True">
+                                            <Label Text="{Loc 'humanoid-profile-editor-station-ai-name-label'}" />
+                                            <Control HorizontalExpand="True"/>
+                                            <LineEdit Name="StationAINameEdit" MinSize="270 0"
+                                                HorizontalAlignment="Right" />
+                                        </BoxContainer>
+                                        <!-- Species -->
+                                        <BoxContainer HorizontalExpand="True">
+                                            <Label Text="{Loc 'humanoid-profile-editor-species-label'}" />
+                                            <Control HorizontalExpand="True"/>
+                                            <TextureButton Name="SpeciesInfoButton" Scale="0.3 0.3" VerticalAlignment="Center"
+                                                ToolTip="{Loc 'humanoid-profile-editor-guidebook-button-tooltip'}"/>
+                                            <OptionButton Name="SpeciesButton" HorizontalAlignment="Right" />
+                                        </BoxContainer>
                                     </BoxContainer>
-                                    <!-- Cyborg name -->
-                                    <BoxContainer Name="CyborgNameContainer" HorizontalExpand="True">
-                                        <Label Text="{Loc 'humanoid-profile-editor-cyborg-name-label'}" />
-                                        <Control HorizontalExpand="True"/>
-                                        <LineEdit Name="CyborgNameEdit" MinSize="270 0" HorizontalAlignment="Right" />
+
+                                    <BoxContainer Orientation="Horizontal"
+                                        HorizontalExpand="True"
+                                        SeparationOverride="40">
+                                        <!-- Cyborg name -->
+                                        <BoxContainer Name="CyborgNameContainer" HorizontalExpand="True">
+                                            <Label Text="{Loc 'humanoid-profile-editor-cyborg-name-label'}" />
+                                            <Control HorizontalExpand="True"/>
+                                            <LineEdit Name="CyborgNameEdit" MinSize="270 0"
+                                                HorizontalAlignment="Right" />
+                                        </BoxContainer>
+                                        <!-- Custom Species Name -->
+                                        <BoxContainer Name="CCustomSpecieName" HorizontalExpand="True">
+                                            <Label Text="{Loc 'humanoid-profile-editor-customspeciename-label'}" />
+                                            <Control HorizontalExpand="True"/>
+                                                <LineEdit Name="CCustomSpecieNameEdit" MinSize="270 0" HorizontalAlignment="Right" />
+                                        </BoxContainer>
                                     </BoxContainer>
-                                    <!-- Species -->
-                                    <BoxContainer HorizontalExpand="True">
-                                        <Label Text="{Loc 'humanoid-profile-editor-species-label'}" />
-                                        <Control HorizontalExpand="True"/>
-                                        <TextureButton Name="SpeciesInfoButton" Scale="0.3 0.3" VerticalAlignment="Center"
-                                            ToolTip="{Loc 'humanoid-profile-editor-guidebook-button-tooltip'}"/>
-                                        <OptionButton Name="SpeciesButton" HorizontalAlignment="Right" />
-                                    </BoxContainer>
-                                    <!-- Species -->
-                                    <BoxContainer Name="CCustomSpecieName" HorizontalExpand="True">
-                                        <Label Text="{Loc 'humanoid-profile-editor-customspeciename-label'}" />
-                                        <Control HorizontalExpand="True"/>
-                                            <LineEdit Name="CCustomSpecieNameEdit" MinSize="270 0" HorizontalAlignment="Right" />
-                                    </BoxContainer>
+
                                     <!-- Age -->
                                     <BoxContainer HorizontalExpand="True">
                                         <Label Text="{Loc 'humanoid-profile-editor-age-label'}" />
                                         <Control HorizontalExpand="True"/>
                                         <LineEdit Name="AgeEdit" MinSize="40 0" HorizontalAlignment="Right" />
                                     </BoxContainer>
-                                    <!-- Sex -->
-                                    <BoxContainer HorizontalExpand="True">
-                                        <Label Text="{Loc 'humanoid-profile-editor-sex-label'}" />
-                                        <Control HorizontalExpand="True"/>
-                                        <OptionButton Name="SexButton" HorizontalAlignment="Right" />
+
+                                    <BoxContainer Orientation="Horizontal"
+                                        HorizontalExpand="True"
+                                        SeparationOverride="40">
+                                        <!-- Sex -->
+                                        <BoxContainer HorizontalExpand="True">
+                                            <Label Text="{Loc 'humanoid-profile-editor-sex-label'}" />
+                                            <Control HorizontalExpand="True"/>
+                                            <OptionButton Name="SexButton" HorizontalAlignment="Right" />
+                                        </BoxContainer>
+                                        <!-- Pronouns -->
+                                        <BoxContainer HorizontalExpand="True">
+                                            <Label Text="{Loc 'humanoid-profile-editor-pronouns-label'}" />
+                                            <Control HorizontalExpand="True"/>
+                                            <OptionButton Name="PronounsButton" HorizontalAlignment="Right" />
+                                        </BoxContainer>
                                     </BoxContainer>
-                                    <!-- Voice // TheDen - Add Voice -->
-                                    <BoxContainer HorizontalExpand="True">
-                                        <Label Text="{Loc 'humanoid-profile-editor-voice-label'}" />
-                                        <Control HorizontalExpand="True" />
-                                        <OptionButton Name="VoiceButton" HorizontalAlignment="Right" />
-                                    </BoxContainer>
-                                    <!-- Pronouns -->
-                                    <BoxContainer HorizontalExpand="True">
-                                        <Label Text="{Loc 'humanoid-profile-editor-pronouns-label'}" />
-                                        <Control HorizontalExpand="True"/>
-                                        <OptionButton Name="PronounsButton" HorizontalAlignment="Right" />
-                                    </BoxContainer>
-                                    <!-- Customizable, cosmetic pronouns -->
-                                    <BoxContainer Name="CosmeticPronousContainer" HorizontalExpand="True">
-                                        <Label Text="{Loc 'humanoid-profile-editor-display-pronouns-label'}" />
-                                        <Control HorizontalExpand="True"/>
-                                        <LineEdit Name="CosmeticPronounsNameEdit" MinSize="270 0" HorizontalAlignment="Right" />
+
+                                    <BoxContainer Orientation="Horizontal"
+                                        HorizontalExpand="True"
+                                        SeparationOverride="40">
+                                        <!-- Voice // TheDen - Add Voice -->
+                                        <BoxContainer HorizontalExpand="True">
+                                            <Label Text="{Loc 'humanoid-profile-editor-voice-label'}" />
+                                            <Control HorizontalExpand="True" />
+                                            <OptionButton Name="VoiceButton" HorizontalAlignment="Right" />
+                                        </BoxContainer>
+                                        <!-- Customizable, cosmetic pronouns -->
+                                        <BoxContainer Name="CosmeticPronousContainer" HorizontalExpand="True">
+                                            <Label Text="{Loc 'humanoid-profile-editor-display-pronouns-label'}" />
+                                            <Control HorizontalExpand="True"/>
+                                            <LineEdit Name="CosmeticPronounsNameEdit" MinSize="270 0" HorizontalAlignment="Right" />
+                                        </BoxContainer>
                                     </BoxContainer>
                                 </ui:AlternatingBGContainer>
                             </CollapsibleBody>
