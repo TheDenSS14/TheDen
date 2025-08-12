@@ -217,7 +217,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
                                         HorizontalExpand="True"
                                         Orientation="Horizontal"
                                         SeparationOverride="20">
-                                        <BoxContainer HorizontalExpand="True" VerticalAlignment="Top">
+                                        <BoxContainer HorizontalExpand="True" VerticalAlignment="Top" SizeFlagsStretchRatio="3">
                                             <Label Text="{Loc 'humanoid-profile-editor-nationality-label'}"
                                                 StyleClasses="LabelBig" />
                                             <Control HorizontalExpand="True" />
@@ -225,7 +225,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
                                                         ToolTip="{Loc 'humanoid-profile-editor-guidebook-button-tooltip'}"/>
                                             <OptionButton Name="NationalityButton" HorizontalAlignment="Right" />
                                         </BoxContainer>
-                                        <BoxContainer HorizontalExpand="True">
+                                        <BoxContainer HorizontalExpand="True" SizeFlagsStretchRatio="4">
                                             <RichTextLabel Name="NationalityDescriptionLabel" Text="" HorizontalExpand="False" MaxWidth="600" />
                                         </BoxContainer>
                                     </BoxContainer>
@@ -235,7 +235,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
                                         HorizontalExpand="True"
                                         Orientation="Horizontal"
                                         SeparationOverride="20">
-                                        <BoxContainer HorizontalExpand="True" VerticalAlignment="Top">
+                                        <BoxContainer HorizontalExpand="True" VerticalAlignment="Top" SizeFlagsStretchRatio="3">
                                             <Label Text="{Loc 'humanoid-profile-editor-employer-label'}"
                                                 StyleClasses="LabelBig" />
                                             <Control HorizontalExpand="True" />
@@ -243,7 +243,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
                                                         ToolTip="{Loc 'humanoid-profile-editor-guidebook-button-tooltip'}"/>
                                             <OptionButton Name="EmployerButton" HorizontalAlignment="Right" />
                                         </BoxContainer>
-                                        <BoxContainer HorizontalExpand="True">
+                                        <BoxContainer HorizontalExpand="True" SizeFlagsStretchRatio="4">
                                             <RichTextLabel Name="EmployerDescriptionLabel" Text="" HorizontalExpand="False" MaxWidth="600"/>
                                         </BoxContainer>
                                     </BoxContainer>
@@ -253,7 +253,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
                                         HorizontalExpand="True"
                                         Orientation="Horizontal"
                                         SeparationOverride="20">
-                                        <BoxContainer HorizontalExpand="True" VerticalAlignment="Top">
+                                        <BoxContainer HorizontalExpand="True" VerticalAlignment="Top" SizeFlagsStretchRatio="3">
                                             <Label Text="{Loc 'humanoid-profile-editor-lifepath-label'}"
                                                 StyleClasses="LabelBig" />
                                             <Control HorizontalExpand="True" />
@@ -261,7 +261,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
                                                         ToolTip="{Loc 'humanoid-profile-editor-guidebook-button-tooltip'}"/>
                                             <OptionButton Name="LifepathButton" HorizontalAlignment="Right" />
                                         </BoxContainer>
-                                        <BoxContainer HorizontalExpand="True">
+                                        <BoxContainer HorizontalExpand="True" SizeFlagsStretchRatio="4">
                                             <RichTextLabel Name="LifepathDescriptionLabel" Text="" HorizontalExpand="False" MaxWidth="600"/>
                                         </BoxContainer>
                                     </BoxContainer>
