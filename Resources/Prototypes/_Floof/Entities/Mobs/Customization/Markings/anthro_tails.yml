@@ -458,12 +458,21 @@
   id: TailHorse
   bodyPart: Tail
   markingCategory: Tail
-  speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid]
+  speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Ovinia]
   layering:
     m_tail_horse_BEHIND: TailBehind
     m_tail_horse_FRONT: TailOversuit
   colorLinks:
     m_tail_horse_BEHIND: m_tail_horse_FRONT
+  coloring:
+    default:
+      type:
+        !type:CategoryColoring
+          category: Hair
+      fallbackTypes:
+        - !type:CategoryColoring
+          category: FacialHair
+        - !type:SkinColoring
   sprites:
   - sprite: Floof/Mobs/Customization/skyrattails.rsi
     state: m_tail_horse_FRONT
