@@ -10,6 +10,18 @@ marking-OviniaEars-ovinia-ears-inner = Inner Ears
 marking-OviniaTail = Ovinia Tail (Default)
 marking-OviniaTail-ovinia-tail = Tail
 
+marking-OviniaEarsCow = Ovinia Ears (Side)
+marking-OviniaEarsCow-cow-ears = Outer Ears
+marking-OviniaEarsCow-cow-ears-inner = Inner Ears
+
+marking-OviniaEarsDeer = Ovinia Ears (Outward)
+marking-OviniaEarsDeer-deer-ears = Outer Ears
+marking-OviniaEarsDeer-deer-ears-inner = Inner Ears
+
+marking-OviniaEarsHorse = Ovinia Ears (Upward)
+marking-OviniaEarsHorse-horse-ears = Outer Ears
+marking-OviniaEarsHorse-horse-ears-inner = Inner Ears
+
 marking-OviniaNeckfluff = Ovinia Neck Fluff
 marking-OviniaNeckfluff-ovinia-neck-fluff = Neck Fluff
 
@@ -52,6 +64,9 @@ marking-OviniaSnout-ovinia-nose = Nose
 
 marking-OviniaTummy = Ovinia Tummy
 marking-OviniaTummy-ovinia-tummy = Tummy
+
+marking-OviniaPatternFawn = Fawn Spots
+marking-OviniaPatternFawn-fawn = Spots
 
 marking-OviniaLeftLegValais = Valais Left Leg
 marking-OviniaLeftLegValais-ovinia-leg-valais-left = Valais Left Leg
