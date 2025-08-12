@@ -89,6 +89,17 @@
   cost: 1
   exclusive: true
   items:
+  - ClothingNeckNonBinaryPin
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutNeck
+
+- type: loadout
+  id: LoadoutNeckPansexualPin
+  category: Neck
+  cost: 1
+  exclusive: true
+  items:
   - ClothingNeckPansexualPin
   requirements:
   - !type:CharacterItemGroupRequirement

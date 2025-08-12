@@ -1,6 +1,7 @@
-// SPDX-FileCopyrightText: 2024 deltanedas <39013340+deltanedas@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 Eris <eris@erisws.com>
-// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 deltanedas
+// SPDX-FileCopyrightText: 2025 Eris
+// SPDX-FileCopyrightText: 2025 Perry Fraser
+// SPDX-FileCopyrightText: 2025 sleepyyapril
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -33,9 +34,22 @@ public sealed class ComponentTogglerSystem : EntitySystem
 
         var target = component.Parent ? Transform(uid).ParentUid : uid;
 
+            EntityManager.AddComponents(target, component.Components);
+
+            // Begin DeltaV - allow swapping components
+            if (component.DeactivatedComponents is { } deactivatedComps)
+                EntityManager.RemoveComponents(target, deactivatedComps);
+            // End DeltaV
+
         if (activate)
             EntityManager.AddComponents(target, component.Components);
         else
+        {
             EntityManager.RemoveComponents(target, component.RemoveComponents ?? component.Components);
+            // Begin DeltaV - allow swapping components
+            if (component.DeactivatedComponents is { } reactivatedComps)
+                EntityManager.AddComponents(target, reactivatedComps);
+            // End DeltaV
+        }
     }
 }

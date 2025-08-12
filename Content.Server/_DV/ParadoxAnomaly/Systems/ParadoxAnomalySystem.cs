@@ -30,10 +30,10 @@ using Content.Shared.Roles.Jobs;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using System.Diagnostics.CodeAnalysis;
-using Content.Server.Consent;
+using Content.Server._Floof.Consent;
 using Content.Server.Roles.Jobs;
 using Content.Server.StationEvents.Events;
-using Content.Shared.Consent;
+using Content.Shared._Floof.Consent;
 using Content.Shared.Traits.Assorted.Components;
 
 

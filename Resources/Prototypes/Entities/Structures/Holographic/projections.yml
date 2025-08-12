@@ -66,10 +66,11 @@
         shape:
           !type:PhysShapeAabb
             bounds: "-0.5,-0.5,0.5,0.5"
-  #- type: TimedDespawn # DeltaV - no despawning for holofans
-  #  lifetime: 180
-  - type: Transform # DeltaV
-    noRot: true
+  - type: TimedDespawnDetailed
+    despawnAfter: 300
+    examineText: timed-despawn-holofan-examine
+    startSound:
+      path: /Audio/_DEN/holofan_sound_looped.ogg
   - type: Airtight
     noAirWhenFullyAirBlocked: false
   - type: Holofan # DeltaV - for whitelisting
@@ -85,7 +86,7 @@
 
 - type: entity
   id: HolosignSecurity
-  parent: HolosignWetFloor
+  parent: BaseHolosign
   name: holographic barrier
   description: A barrier of hard light that blocks movement, but pretty weak.
   components:
@@ -100,13 +101,17 @@
         fix1:
           shape:
             !type:PhysShapeAabb
-            bounds: "-0.3,-0.3,0.3,0.3"
+            bounds: "-0.5,-0.5,0.5,0.5"
           mask:
             - TableMask
           layer:
             - TableLayer
-    - type: TimedDespawn
-      lifetime: 180
+    - type: TimedDespawnDetailed
+      despawnAfter: 300
+      examineText: timed-despawn-holofan-examine
+      startSound:
+        path: /Audio/_DEN/holofan_sound_looped.ogg
+    - type: Holobarrier # DEN - for whitelisting
     - type: PointLight
       enabled: true
       radius: 3

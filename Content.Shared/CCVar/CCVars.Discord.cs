@@ -1,3 +1,5 @@
+// SPDX-FileCopyrightText: 2025 AirFryerBuyOneGetOneFree
+// SPDX-FileCopyrightText: 2025 Simon
 // SPDX-FileCopyrightText: 2025 VMSolidus
 // SPDX-FileCopyrightText: 2025 sleepyyapril
 // SPDX-FileCopyrightText: 2025 ssdaniel24
@@ -59,6 +61,28 @@ public sealed partial class CCVars
     public static readonly CVarDef<string> DiscordRoundEndRoleWebhook =
         CVarDef.Create("discord.round_end_role", string.Empty, CVar.SERVERONLY);
 
+
+    /// <summary>
+    ///     The token used to authenticate with Discord. For the Bot to function set: discord.token, discord.guild_id, and discord.prefix.
+    ///     If this is empty, the bot will not connect.
+    /// </summary>
+    public static readonly CVarDef<string> DiscordToken =
+        CVarDef.Create("discord.token", string.Empty, CVar.SERVERONLY | CVar.CONFIDENTIAL);
+
+    /// <summary>
+    ///     The Discord guild ID to use for commands as well as for several other features.
+    ///     If this is empty, the bot will not connect.
+    /// </summary>
+    public static readonly CVarDef<string> DiscordGuildId =
+        CVarDef.Create("discord.guild_id", string.Empty, CVar.SERVERONLY);
+
+    /// <summary>
+    ///     Prefix used for commands for the Discord bot.
+    ///     If this is empty, the bot will not connect.
+    /// </summary>
+    public static readonly CVarDef<string> DiscordPrefix =
+        CVarDef.Create("discord.prefix", "!", CVar.SERVERONLY);
+
     /// <summary>
     ///     Enable Discord linking, show linking button and modal window
     /// </summary>
@@ -95,5 +119,4 @@ public sealed partial class CCVars
     /// </summary>
     public static readonly CVarDef<bool> DiscordNewsWebhookSendDuringRound =
         CVarDef.Create("discord.news_webhook_send_during_round", false, CVar.SERVERONLY);
-
 }
