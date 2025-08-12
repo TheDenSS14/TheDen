@@ -16,3 +16,16 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutOuter
+
+#
+- type: loadout
+  id: LoadoutClothingOuterCoatBomberWhite
+  category: Outer
+  cost: 1
+  customColorTint: true
+  items:
+    -  ClothingOuterCoatBomberWhite
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutOuter
+
