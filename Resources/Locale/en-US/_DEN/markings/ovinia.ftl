@@ -101,4 +101,10 @@ marking-OviniaLeftArmValais-ovinia-arm-valais-left = Valais Left Arm
 marking-OviniaRightArmValais = Valais Right Arm
 marking-OviniaRightArmValais-ovinia-arm-valais-right = Valais Right Arm
 
+marking-OviniaLeftHandHoof = Hooved Left Hand
+marking-OviniaLeftHandHoof-hand-hoof-left = Hoof
+
+marking-OviniaRightHandHoof = Hooved Right Hand
+marking-OviniaRightHandHoof-hand-hoof-right = Hoof
+
 markings-category-NeckFluff = Neck Fluff

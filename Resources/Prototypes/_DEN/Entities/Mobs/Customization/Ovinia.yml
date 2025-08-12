@@ -318,3 +318,30 @@
   sprites:
   - sprite: _DEN/Mobs/Customization/Ovinia/body_markings.rsi
     state: ovinia-arm-valais-right
+
+# Hand Markings
+- type: marking
+  id: OviniaLeftHandHoof
+  bodyPart: LHand
+  markingCategory: LeftHand
+  speciesRestriction: [ Ovinia ]
+  forcedColoring: true
+  coloring:
+    default:
+      type: !type:SkinColoring
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Ovinia/body_markings.rsi
+    state: hand-hoof-left
+
+- type: marking
+  id: OviniaRightHandHoof
+  bodyPart: RHand
+  markingCategory: RightHand
+  speciesRestriction: [ Ovinia ]
+  forcedColoring: true
+  coloring:
+    default:
+      type: !type:SkinColoring
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Ovinia/body_markings.rsi
+    state: hand-hoof-right
