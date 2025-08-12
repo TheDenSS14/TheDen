@@ -3,7 +3,7 @@
   parent: ClothingOuterStorageFoldableBase
   id: ClothingOuterCoatBomberWhite
   name: lightweight bomber jacket
-  description: A lightweight bomber jacket, worn with the sleeves pushed up. If you're feeling bold, you can loosen how it fits with a knife.
+  description: A lightweight bomber jacket, worn with the sleeves pushed up. # TheDen - This one's not butcherable because that deletes the custom color
   components:
   - type: Sprite
     sprite: _Impstation/Clothing/OuterClothing/BomberJackets/bomber_white.rsi
@@ -20,11 +20,6 @@
       coefficients:
         Slash: 0.95
         Heat: 0.90
-  - type: Butcherable
-    butcheringType: Knife
-    spawned:
-    - id: ClothingOuterCoatBomberWhiteLoose
-      amount: 1
 
 - type: entity
   parent: ClothingOuterCoatBomberWhite
@@ -123,7 +118,7 @@
       amount: 1
 
 - type: entity
-  parent: [ClothingOuterCoatBomberWhite, BaseSecurityContraband] # Security contraband because this one's armored
+  parent: ClothingOuterCoatBomberWhite
   id: ClothingOuterCoatBomberSecurity
   name: security bomber jacket
   description: A red bomber jacket with kevlar lining, worn with the sleeves pushed up. The shield on the back is sewn with special high-vis thread. If you're feeling bold, you can loosen how it fits with a knife.
@@ -146,7 +141,7 @@
         Heat: 0.75
 
 - type: entity
-  parent: [ClothingOuterCoatBomberWhite, BaseSecurityContraband] # Security contraband because this one's armored
+  parent: ClothingOuterCoatBomberWhite
   id: ClothingOuterCoatBomberBrigmed
   name: brigmedic bomber jacket
   description: A white bomber jacket with kevlar lining, worn with the sleeves pushed up. Embroidered on the back is a reminder to do harm only some of the time. If you're feeling bold, you can loosen how it fits with a knife.
@@ -174,7 +169,7 @@
   parent: ClothingOuterCoatBomberWhite
   id: ClothingOuterCoatBomberWhiteLoose
   name: lightweight bomber jacket (loose)
-  description: A lightweight bomber jacket, worn low and loose. If you're feeling modest, you can tighten how it fits with a knife.
+  description: A lightweight bomber jacket, worn low and loose. # TheDen - This one's not butcherable because that deletes the custom color
   components:
   - type: Sprite
     sprite: _Impstation/Clothing/OuterClothing/BomberJackets/bomber_white_loose.rsi

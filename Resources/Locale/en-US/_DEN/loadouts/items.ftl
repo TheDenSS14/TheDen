@@ -21,6 +21,7 @@ loadout-name-LoadoutClothingWaistApronStripesVertical = waist apron (vertical st
 
 # hands
 loadout-name-LoadoutClothingOuterCoatBomberWhite = lightweight bomber jacket (colorable)
+loadout-name-LoadoutClothingOuterCoatBomberWhiteLoose = lightweight bomber jacket (loose, colorable)
 
 # plush
 loadout-name-PlushieTeddyBearRecolorable = teddy bear (colorable)
