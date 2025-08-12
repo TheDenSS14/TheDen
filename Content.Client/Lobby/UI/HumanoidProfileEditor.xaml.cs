@@ -361,9 +361,6 @@ namespace Content.Client.Lobby.UI
 
             #region Contractors
 
-            Background.Orphan();
-            CTabContainer.AddTab(Background, Loc.GetString("humanoid-profile-editor-background-tab"));
-
             RefreshNationalities();
             RefreshEmployers();
             RefreshLifepaths();
