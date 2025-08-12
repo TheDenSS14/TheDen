@@ -10,15 +10,14 @@ concurrency:
   group: reuse_action
   cancel-in-progress: false
 on:
-  pull_request_target:
-    types:
-      - opened
-      - synchronize
-      - reopened
-      - ready_for_review
+  pull_request:
+    types: [closed]
+    branches:
+      - master
 
 jobs:
   update_headers:
+    if: github.event.pull_request.merged == true
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Master
@@ -106,7 +105,7 @@ jobs:
         working-directory: ${{ github.workspace }}
 
       - name: Commit changes
-        uses: stefanzweifel/git-auto-commit-action@v5
+        uses: stefanzweifel/git-auto-commit-action@v6
         with:
           commit_message: "chore: automatically update REUSE headers"
           commit_user_name: ${{ vars.CHANGELOG_USER }}
