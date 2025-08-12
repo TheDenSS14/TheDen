@@ -155,10 +155,15 @@ SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
                                     </BoxContainer>
 
                                     <!-- Age -->
-                                    <BoxContainer HorizontalExpand="True">
-                                        <Label Text="{Loc 'humanoid-profile-editor-age-label'}" />
-                                        <Control HorizontalExpand="True"/>
-                                        <LineEdit Name="AgeEdit" MinSize="40 0" HorizontalAlignment="Right" />
+                                    <BoxContainer Orientation="Horizontal"
+                                        HorizontalExpand="True"
+                                        SeparationOverride="40">
+                                        <Control HorizontalExpand="True" />
+                                        <BoxContainer HorizontalExpand="True">
+                                            <Label Text="{Loc 'humanoid-profile-editor-age-label'}" />
+                                            <Control HorizontalExpand="True"/>
+                                            <LineEdit Name="AgeEdit" MinSize="40 0" HorizontalAlignment="Right" />
+                                        </BoxContainer>
                                     </BoxContainer>
 
                                     <BoxContainer Orientation="Horizontal"
@@ -206,44 +211,59 @@ SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
                                     StyleClasses="LabelHeading"/>
                             </CollapsibleHeading>
                             <CollapsibleBody>
-                                <ui:AlternatingBGContainer Margin="10" HorizontalExpand="True" Orientation="Vertical" SeparationOverride="10">
+                                <ui:AlternatingBGContainer Margin="10" HorizontalExpand="True" Orientation="Vertical" SeparationOverride="20">
                                     <!-- Nationality -->
-                                    <BoxContainer HorizontalExpand="True">
-                                        <Label Text="{Loc 'humanoid-profile-editor-nationality-label'}"
-                                            StyleClasses="LabelBig" />
-                                        <Control HorizontalExpand="True"/>
-                                        <TextureButton Name="NationalityInfoButton" Scale="0.3 0.3" VerticalAlignment="Center"
-                                                    ToolTip="{Loc 'humanoid-profile-editor-guidebook-button-tooltip'}"/>
-                                        <OptionButton Name="NationalityButton" HorizontalAlignment="Right" />
-                                    </BoxContainer>
-                                    <BoxContainer HorizontalExpand="False">
-                                        <RichTextLabel Name="NationalityDescriptionLabel" Text="" HorizontalExpand="False" MaxWidth="600" />
+                                    <BoxContainer
+                                        HorizontalExpand="True"
+                                        Orientation="Horizontal"
+                                        SeparationOverride="20">
+                                        <BoxContainer HorizontalExpand="True" VerticalAlignment="Top">
+                                            <Label Text="{Loc 'humanoid-profile-editor-nationality-label'}"
+                                                StyleClasses="LabelBig" />
+                                            <Control HorizontalExpand="True" />
+                                            <TextureButton Name="NationalityInfoButton" Scale="0.3 0.3" VerticalAlignment="Center"
+                                                        ToolTip="{Loc 'humanoid-profile-editor-guidebook-button-tooltip'}"/>
+                                            <OptionButton Name="NationalityButton" HorizontalAlignment="Right" />
+                                        </BoxContainer>
+                                        <BoxContainer HorizontalExpand="True">
+                                            <RichTextLabel Name="NationalityDescriptionLabel" Text="" HorizontalExpand="False" MaxWidth="600" />
+                                        </BoxContainer>
                                     </BoxContainer>
 
                                     <!-- Employer -->
-                                    <BoxContainer HorizontalExpand="True">
-                                        <Label Text="{Loc 'humanoid-profile-editor-employer-label'}"
-                                            StyleClasses="LabelBig" />
-                                        <Control HorizontalExpand="True"/>
-                                        <TextureButton Name="EmployerInfoButton" Scale="0.3 0.3" VerticalAlignment="Center"
-                                                    ToolTip="{Loc 'humanoid-profile-editor-guidebook-button-tooltip'}"/>
-                                        <OptionButton Name="EmployerButton" HorizontalAlignment="Right" />
-                                    </BoxContainer>
-                                    <BoxContainer HorizontalExpand="False">
-                                        <RichTextLabel Name="EmployerDescriptionLabel" Text="" HorizontalExpand="False" MaxWidth="600"/>
+                                    <BoxContainer
+                                        HorizontalExpand="True"
+                                        Orientation="Horizontal"
+                                        SeparationOverride="20">
+                                        <BoxContainer HorizontalExpand="True" VerticalAlignment="Top">
+                                            <Label Text="{Loc 'humanoid-profile-editor-employer-label'}"
+                                                StyleClasses="LabelBig" />
+                                            <Control HorizontalExpand="True" />
+                                            <TextureButton Name="EmployerInfoButton" Scale="0.3 0.3" VerticalAlignment="Center"
+                                                        ToolTip="{Loc 'humanoid-profile-editor-guidebook-button-tooltip'}"/>
+                                            <OptionButton Name="EmployerButton" HorizontalAlignment="Right" />
+                                        </BoxContainer>
+                                        <BoxContainer HorizontalExpand="True">
+                                            <RichTextLabel Name="EmployerDescriptionLabel" Text="" HorizontalExpand="False" MaxWidth="600"/>
+                                        </BoxContainer>
                                     </BoxContainer>
 
                                     <!-- Lifepath -->
-                                    <BoxContainer HorizontalExpand="True">
-                                        <Label Text="{Loc 'humanoid-profile-editor-lifepath-label'}"
-                                            StyleClasses="LabelBig" />
-                                        <Control HorizontalExpand="True"/>
-                                        <TextureButton Name="LifepathInfoButton" Scale="0.3 0.3" VerticalAlignment="Center"
-                                                    ToolTip="{Loc 'humanoid-profile-editor-guidebook-button-tooltip'}"/>
-                                        <OptionButton Name="LifepathButton" HorizontalAlignment="Right" />
-                                    </BoxContainer>
-                                    <BoxContainer HorizontalExpand="False">
-                                        <RichTextLabel Name="LifepathDescriptionLabel" Text="" HorizontalExpand="False" MaxWidth="600"/>
+                                    <BoxContainer
+                                        HorizontalExpand="True"
+                                        Orientation="Horizontal"
+                                        SeparationOverride="20">
+                                        <BoxContainer HorizontalExpand="True" VerticalAlignment="Top">
+                                            <Label Text="{Loc 'humanoid-profile-editor-lifepath-label'}"
+                                                StyleClasses="LabelBig" />
+                                            <Control HorizontalExpand="True" />
+                                            <TextureButton Name="LifepathInfoButton" Scale="0.3 0.3" VerticalAlignment="Center"
+                                                        ToolTip="{Loc 'humanoid-profile-editor-guidebook-button-tooltip'}"/>
+                                            <OptionButton Name="LifepathButton" HorizontalAlignment="Right" />
+                                        </BoxContainer>
+                                        <BoxContainer HorizontalExpand="True">
+                                            <RichTextLabel Name="LifepathDescriptionLabel" Text="" HorizontalExpand="False" MaxWidth="600"/>
+                                        </BoxContainer>
                                     </BoxContainer>
                                 </ui:AlternatingBGContainer>
                             </CollapsibleBody>
@@ -257,22 +277,29 @@ SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
                                     StyleClasses="LabelHeading"/>
                             </CollapsibleHeading>
                             <CollapsibleBody>
-                                <BoxContainer Orientation="Vertical" Margin="15 10 15 5" HorizontalExpand="True">
-                                    <!-- Height -->
-                                    <BoxContainer HorizontalExpand="True">
-                                        <Label Name="HeightLabel" MinWidth="110" HorizontalExpand="True" />
-                                        <Button Name="HeightReset" Text="{Loc 'ui-options-bind-reset'}" />
+                                <BoxContainer Orientation="Horizontal" HorizontalExpand="True" Margin="10"
+                                    SeparationOverride="20">
+                                    <BoxContainer Orientation="Vertical" HorizontalExpand="True"
+                                        SizeFlagsStretchRatio="2">
+                                        <!-- Height -->
+                                        <BoxContainer HorizontalExpand="True">
+                                            <Label Name="HeightLabel" MinWidth="110" HorizontalExpand="True" />
+                                            <Button Name="HeightReset" Text="{Loc 'ui-options-bind-reset'}" />
+                                        </BoxContainer>
+                                        <Slider Name="HeightSlider" MinValue="0.5" Value="1" MaxValue="1.5" HorizontalExpand="True" Margin="0 0 0 5" />
+                                        <!-- Width -->
+                                        <BoxContainer HorizontalExpand="True">
+                                            <Label Name="WidthLabel" MinWidth="110" HorizontalExpand="True" />
+                                            <Button Name="WidthReset" Text="{Loc 'ui-options-bind-reset'}" />
+                                        </BoxContainer>
+                                        <Slider Name="WidthSlider" MinValue="0.5" Value="1" MaxValue="1.5" HorizontalExpand="True" Margin="0 0 0 5" />
                                     </BoxContainer>
-                                    <Slider Name="HeightSlider" MinValue="0.5" Value="1" MaxValue="1.5" HorizontalExpand="True" Margin="0 0 0 5" />
-                                    <!-- Width -->
-                                    <BoxContainer HorizontalExpand="True">
-                                        <Label Name="WidthLabel" MinWidth="110" HorizontalExpand="True" />
-                                        <Button Name="WidthReset" Text="{Loc 'ui-options-bind-reset'}" />
-                                    </BoxContainer>
-                                    <Slider Name="WidthSlider" MinValue="0.5" Value="1" MaxValue="1.5" HorizontalExpand="True" Margin="0 0 0 5" />
-                                    <!--Weight -->
-                                    <BoxContainer HorizontalExpand="True" Margin="0 10 0 0">
-                                        <Label Name="WeightLabel" />
+                                    <BoxContainer Orientation="Vertical" HorizontalExpand="True"
+                                        SizeFlagsStretchRatio="1">
+                                        <!--Weight -->
+                                        <BoxContainer HorizontalExpand="True" Margin="0 10 0 0">
+                                            <Label Name="WeightLabel" />
+                                        </BoxContainer>
                                     </BoxContainer>
                                 </BoxContainer>
                             </CollapsibleBody>
