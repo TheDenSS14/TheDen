@@ -99,6 +99,10 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
     [DataField]
     public string FlavorText { get; set; } = string.Empty;
 
+    /// Detailed text that can appear for the character if <see cref="CCVars.FlavorText"/> and the viewer consent is enabled
+    [DataField]
+    public string NsfwFlavorText { get; set; } = string.Empty;
+
     /// Associated <see cref="SpeciesPrototype"/> for this profile
     [DataField]
     public string Species { get; set; } = SharedHumanoidAppearanceSystem.DefaultSpecies;
@@ -182,7 +186,8 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
 
     public HumanoidCharacterProfile(
         string name,
-        string flavortext,
+        string flavorText,
+        string nsfwFlavorText,
         string species,
         string customspeciename,
         // EE -- Contractors Change Start
@@ -211,7 +216,8 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
         PlayerProvidedCharacterRecords? cdCharacterRecords)
     {
         Name = name;
-        FlavorText = flavortext;
+        FlavorText = flavorText;
+        NsfwFlavorText = nsfwFlavorText;
         Species = species;
         Customspeciename = customspeciename;
         // EE -- Contractors Change Start
@@ -245,6 +251,7 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
         : this(
             other.Name,
             other.FlavorText,
+            other.NsfwFlavorText,
             other.Species,
             other.Customspeciename,
             // EE -- Contractors Change Start
