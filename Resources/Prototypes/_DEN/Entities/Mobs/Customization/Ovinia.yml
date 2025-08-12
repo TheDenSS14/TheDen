@@ -325,10 +325,10 @@
   bodyPart: LHand
   markingCategory: LeftHand
   speciesRestriction: [ Ovinia ]
-  forcedColoring: true
   coloring:
     default:
-      type: !type:SkinColoring
+      type: !type:SimpleColoring
+        color: "#07090f"
   sprites:
   - sprite: _DEN/Mobs/Customization/Ovinia/body_markings.rsi
     state: hand-hoof-left
@@ -338,10 +338,10 @@
   bodyPart: RHand
   markingCategory: RightHand
   speciesRestriction: [ Ovinia ]
-  forcedColoring: true
   coloring:
     default:
-      type: !type:SkinColoring
+      type: !type:SimpleColoring
+        color: "#07090f"
   sprites:
   - sprite: _DEN/Mobs/Customization/Ovinia/body_markings.rsi
     state: hand-hoof-right
