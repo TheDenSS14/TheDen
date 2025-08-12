@@ -115,7 +115,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
                                     StyleClasses="LabelHeading"/>
                             </CollapsibleHeading>
                             <CollapsibleBody>
-                                <BoxContainer Margin="10" Orientation="Vertical" HorizontalExpand="True" SeparationOverride="5">
+                                <ui:AlternatingBGContainer Margin="10" Orientation="Vertical" HorizontalExpand="True" SeparationOverride="5">
                                     <!-- Station AI name -->
                                     <BoxContainer Name="StationAiNameContainer" HorizontalExpand="True">
                                         <Label Text="{Loc 'humanoid-profile-editor-station-ai-name-label'}" />
@@ -172,7 +172,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
                                         <Control HorizontalExpand="True"/>
                                         <LineEdit Name="CosmeticPronounsNameEdit" MinSize="270 0" HorizontalAlignment="Right" />
                                     </BoxContainer>
-                                </BoxContainer>
+                                </ui:AlternatingBGContainer>
                             </CollapsibleBody>
                         </Collapsible>
 
@@ -184,7 +184,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
                                     StyleClasses="LabelHeading"/>
                             </CollapsibleHeading>
                             <CollapsibleBody>
-                                <BoxContainer Margin="10" HorizontalExpand="True" Orientation="Vertical" SeparationOverride="10">
+                                <ui:AlternatingBGContainer Margin="10" HorizontalExpand="True" Orientation="Vertical" SeparationOverride="10">
                                     <!-- Nationality -->
                                     <BoxContainer HorizontalExpand="True">
                                         <Label Text="{Loc 'humanoid-profile-editor-nationality-label'}"
@@ -223,7 +223,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
                                     <BoxContainer HorizontalExpand="False">
                                         <RichTextLabel Name="LifepathDescriptionLabel" Text="" HorizontalExpand="False" MaxWidth="600"/>
                                     </BoxContainer>
-                                </BoxContainer>
+                                </ui:AlternatingBGContainer>
                             </CollapsibleBody>
                         </Collapsible>
 
