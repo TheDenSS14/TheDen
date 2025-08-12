@@ -359,7 +359,7 @@ namespace Content.Client.Lobby.UI
 
             #endregion Species
 
-            #region Contractors
+            #region Background
 
             Background.Orphan();
             CTabContainer.AddTab(Background, Loc.GetString("humanoid-profile-editor-background-tab"));
@@ -2072,6 +2072,12 @@ namespace Content.Client.Lobby.UI
             WidthLabel.Text = Loc.GetString("humanoid-profile-editor-width-label",
                 ("width", (int) width),
                 ("inches", (int) widthIn));
+
+            // DEN - Show sprite scale multiplier
+            var sizeFormat = "0.00";
+            DimensionLabel.Text = Loc.GetString("humanoid-profile-editor-dimension-label",
+                ("width", WidthSlider.Value.ToString(sizeFormat)),
+                ("height", HeightSlider.Value.ToString(sizeFormat)));
         }
 
         private void UpdateWeight()
