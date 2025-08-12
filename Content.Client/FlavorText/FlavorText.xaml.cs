@@ -31,8 +31,11 @@ namespace Content.Client.FlavorText
             CFlavorTextNSFWInput.Placeholder = new Rope.Leaf(loc.GetString("flavor-text-nsfw-placeholder"));
             CFlavorTextNSFWInput.OnTextChanged  += _ => NsfwFlavorTextChanged();
 
-            FlavorTextTabs.SetTabTitle(0, loc.GetString("flavor-text-title"));
-            FlavorTextTabs.SetTabTitle(1, loc.GetString("flavor-text-nsfw-title"));
+            TabSFW.Orphan();
+            TabNSFW.Orphan();
+            
+            FlavorTextTabs.AddTab(TabSFW, loc.GetString("flavor-text-title"));
+            FlavorTextTabs.AddTab(TabNSFW, loc.GetString("flavor-text-nsfw-title"));
         }
 
         private void SfwFlavorTextChanged() =>
