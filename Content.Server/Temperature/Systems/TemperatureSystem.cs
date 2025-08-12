@@ -31,6 +31,7 @@ using Content.Shared.Atmos;
 using Content.Shared.Damage;
 using Content.Shared.Database;
 using Content.Shared.Inventory;
+using Content.Shared.Medical.Cryogenics;
 using Content.Shared.Rejuvenate;
 using Content.Shared.Temperature;
 using Robust.Shared.Physics.Components;
@@ -166,6 +167,13 @@ public sealed class TemperatureSystem : EntitySystem
 
         if (!ignoreHeatResistance)
         {
+            if (TryComp<TemperatureProtectionComponent>(uid, out var temp)
+            && !HasComp<InsideCryoPodComponent>(uid)) // Vulpkanines can't use Cryopod otherwise
+            {
+                heatAmount *= heatAmount < 0
+                    ? temp.CoolingCoefficient
+                    : temp.HeatingCoefficient;
+            }
             var ev = new ModifyChangedTemperatureEvent(heatAmount);
             RaiseLocalEvent(uid, ev);
             heatAmount = ev.TemperatureDelta;

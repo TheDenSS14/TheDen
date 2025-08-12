@@ -106,6 +106,8 @@ using Content.Shared.Examine;
 using Content.Shared.Popups;
 using Content.Server._Wizden.Chat.Systems;
 using Content.Server._Floof.Consent;
+using Content.Shared._DEN.Earmuffs;
+
 
 namespace Content.Server.Chat.Systems;
 
@@ -633,7 +635,6 @@ public sealed partial class ChatSystem : SharedChatSystem
             if (MessageRangeCheck(session, data, range) != MessageRangeCheckResult.Full)
                 continue; // Won't get logged to chat, and ghosts are too far away to see the pop-up, so we just won't send it to them.
 
-
             var canUnderstandLanguage = _language.CanUnderstand(
                 listener,
                 language.ID,
@@ -921,6 +922,12 @@ public sealed partial class ChatSystem : SharedChatSystem
         foreach (var (session, data) in GetRecipients(source, VoiceRange))
         {
             if (session.AttachedEntity is not { Valid: true } playerEntity)
+                continue;
+
+            // DEN edit: VRChat earmuffs, but on Den!
+            if (TryComp<EarmuffsComponent>(playerEntity, out var earmuffs)
+                && earmuffs.Running && earmuffs.HearRange < data.Range
+                && (channel == ChatChannel.Local || channel == ChatChannel.Emotes))
                 continue;
 
             if (Transform(playerEntity).GridUid != Transform(source).GridUid
