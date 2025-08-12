@@ -69,7 +69,7 @@ marking-OviniaTummy = Ovinia Tummy
 marking-OviniaTummy-ovinia-tummy = Tummy
 
 marking-OviniaPatternFawn = Fawn Spots
-marking-OviniaPatternFawn-fawn = Spot
+marking-OviniaPatternFawn-torso-fawn = Spot
 
 marking-OviniaChestFullMasc = Ovinia Torso [M]
 marking-OviniaChestFullMasc-full-m = Torso
