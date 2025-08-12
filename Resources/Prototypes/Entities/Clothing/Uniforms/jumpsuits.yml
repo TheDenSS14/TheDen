@@ -66,6 +66,7 @@
 # SPDX-FileCopyrightText: 2025 Rosycup
 # SPDX-FileCopyrightText: 2025 Skubman
 # SPDX-FileCopyrightText: 2025 VMSolidus
+# SPDX-FileCopyrightText: 2025 Vanessa Louwagie
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 # SPDX-FileCopyrightText: 2025 wheelwrightt
 #
@@ -228,7 +229,7 @@
 - type: entity
   parent: ClothingUniformBase
   id: ClothingUniformJumpsuitCentcomAgent
-  name: CentCom agent's jumpsuit
+  name: CentComm agent's jumpsuit
   description: A suit worn by CentCom's legal team. Smells of burnt coffee.
   components:
   - type: Sprite
@@ -239,7 +240,7 @@
 - type: entity
   parent: ClothingUniformBase
   id: ClothingUniformJumpsuitCentcomOfficial
-  name: CentCom official's jumpsuit
+  name: CentComm official's jumpsuit
   description: It's a jumpsuit worn by CentCom's officials.
   components:
   - type: Sprite
@@ -250,13 +251,13 @@
 - type: entity
   parent: ClothingUniformBase
   id: ClothingUniformJumpsuitCentcomOfficer
-  name: CentCom officer's jumpsuit
-  description: It's a jumpsuit worn by CentCom Officers.
+  name: CentComm officer's jumpsuit
+  description: It's a jumpsuit worn by CentComm Officers.
   components:
   - type: Sprite
-    sprite: Clothing/Uniforms/Jumpsuit/centcom_officer.rsi
+    sprite: _DV/Clothing/Uniforms/Jumpsuit/centcom_officer.rsi # DeltaV - Centcomm Drip
   - type: Clothing
-    sprite: Clothing/Uniforms/Jumpsuit/centcom_officer.rsi
+    sprite: _DV/Clothing/Uniforms/Jumpsuit/centcom_officer.rsi # DeltaV - Centcomm Drip
 
 - type: entity
   parent: ClothingUniformBase
@@ -1182,7 +1183,6 @@
     sprite: Clothing/Uniforms/Jumpsuit/ninja.rsi
   - type: Clothing
     sprite: Clothing/Uniforms/Jumpsuit/ninja.rsi
-  - type: Unremoveable
 
 - type: entity
   parent: [ClothingUniformBase, ClothingUniformFoldableBase]

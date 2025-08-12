@@ -62,3 +62,14 @@
     slots:
     - Snout
     hideOnToggle: true
+
+- type: entity
+  parent: ClothingMaskClown
+  id: ClothingMaskClownAncient
+  name: ancient clown wig and mask
+  description: A classic wig and mask from a bygone era.
+  components:
+  - type: Sprite
+    sprite: _DEN/Clothing/Mask/clown_ancient.rsi
+  - type: Clothing
+    sprite: _DEN/Clothing/Mask/clown_ancient.rsi
