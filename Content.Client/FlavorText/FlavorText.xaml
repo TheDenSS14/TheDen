@@ -9,7 +9,12 @@ SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 -->
 
 <Control Name="CFlavorText" HorizontalExpand="True" xmlns="https://spacestation14.io">
-    <BoxContainer Orientation="Vertical" HorizontalExpand="True">
-        <TextEdit Name="CFlavorTextInput" Access="Public" MinSize="220 100" Margin="10" HorizontalExpand="True" VerticalExpand="True" />
-    </BoxContainer>
+    <TabContainer Name="FlavorTextTabs">
+        <BoxContainer Name="TabSFW" Orientation="Vertical" HorizontalExpand="True">
+            <TextEdit Name="CFlavorTextSFWInput" Access="Public" MinSize="220 100" Margin="10" HorizontalExpand="True" VerticalExpand="True" />
+        </BoxContainer>
+        <BoxContainer Name="TabNSFW" Orientation="Vertical" HorizontalExpand="True">
+            <TextEdit Name="CFlavorTextNSFWInput" Access="Public" MinSize="220 100" Margin="10" HorizontalExpand="True" VerticalExpand="True" />
+        </BoxContainer>
+    </TabContainer>
 </Control>

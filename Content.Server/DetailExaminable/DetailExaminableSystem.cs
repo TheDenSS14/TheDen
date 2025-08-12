@@ -86,7 +86,7 @@ namespace Content.Server.DetailExaminable
             GetVerbsEvent<ExamineVerb> args
         )
         {
-            if (_consentSystem.HasConsent(args.User, _nsfwDescriptionsConsent)
+            if (!_consentSystem.HasConsent(args.User, _nsfwDescriptionsConsent)
                 || string.IsNullOrWhiteSpace(component.NsfwContent))
                 return null;
 

@@ -392,6 +392,7 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
 
     public HumanoidCharacterProfile WithName(string name) => new(this) { Name = name };
     public HumanoidCharacterProfile WithFlavorText(string flavorText) => new(this) { FlavorText = flavorText };
+    public HumanoidCharacterProfile WithNSFWFlavorText(string flavorText) => new(this) { NsfwFlavorText = flavorText};
     public HumanoidCharacterProfile WithAge(int age) => new(this) { Age = age };
     // EE - Contractors Change Start
     public HumanoidCharacterProfile WithNationality(string nationality) => new(this) { Nationality = nationality };
@@ -528,6 +529,7 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
             && _loadoutPreferences.SequenceEqual(other._loadoutPreferences)
             && Appearance.MemberwiseEquals(other.Appearance)
             && FlavorText == other.FlavorText
+            && NsfwFlavorText == other.NsfwFlavorText
             && (CDCharacterRecords == null || other.CDCharacterRecords == null
                 || CDCharacterRecords.MemberwiseEquals(other.CDCharacterRecords))
             // DEN additions below

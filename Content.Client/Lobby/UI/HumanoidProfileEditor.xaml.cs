@@ -146,7 +146,8 @@ namespace Content.Client.Lobby.UI
         private FlavorText.FlavorText? _flavorText;
         private BoxContainer _ccustomspecienamecontainerEdit => CCustomSpecieName;
         private LineEdit _customspecienameEdit => CCustomSpecieNameEdit;
-        private TextEdit? _flavorTextEdit;
+        private TextEdit? _flavorSfwTextEdit;
+        private TextEdit? _flavorNsfwTextEdit;
 
         /// If we're attempting to save
         public event Action? Save;
@@ -700,8 +701,13 @@ namespace Content.Client.Lobby.UI
                     return;
 
                 _flavorText = new();
-                _flavorText.OnFlavorTextChanged += OnFlavorTextChange;
-                _flavorTextEdit = _flavorText.CFlavorTextInput;
+
+                _flavorText.OnSfwFlavorTextChanged += OnSfwFlavorTextChange;
+                _flavorText.OnNsfwFlavorTextChanged += OnNsfwFlavorTextChange;
+
+                _flavorSfwTextEdit = _flavorText.CFlavorTextSFWInput;
+                _flavorNsfwTextEdit = _flavorText.CFlavorTextNSFWInput;
+
                 CTabContainer.AddTab(_flavorText, Loc.GetString("humanoid-profile-editor-flavortext-tab"));
             }
             else
@@ -710,11 +716,17 @@ namespace Content.Client.Lobby.UI
                     return;
 
                 CTabContainer.RemoveChild(_flavorText);
-                _flavorText.OnFlavorTextChanged -= OnFlavorTextChange;
+
+                _flavorText.OnSfwFlavorTextChanged -= OnSfwFlavorTextChange;
+                _flavorText.OnNsfwFlavorTextChanged -= OnNsfwFlavorTextChange;
+
                 _flavorText.Dispose();
+                _flavorSfwTextEdit?.Dispose();
+                _flavorNsfwTextEdit?.Dispose();
+
                 _flavorText = null;
-                _flavorTextEdit?.Dispose();
-                _flavorTextEdit = null;
+                _flavorSfwTextEdit = null;
+                _flavorNsfwTextEdit = null;
             }
         }
 
@@ -1407,12 +1419,21 @@ namespace Content.Client.Lobby.UI
         }
         // End CD - Character Records
 
-        private void OnFlavorTextChange(string content)
+        private void OnSfwFlavorTextChange(string content)
         {
             if (Profile is null)
                 return;
 
             Profile = Profile.WithFlavorText(content);
+            SetDirty();
+        }
+
+        private void OnNsfwFlavorTextChange(string content)
+        {
+            if (Profile is null)
+                return;
+
+            Profile = Profile.WithNSFWFlavorText(content);
             SetDirty();
         }
 
@@ -1753,8 +1774,11 @@ namespace Content.Client.Lobby.UI
 
         private void UpdateFlavorTextEdit()
         {
-            if (_flavorTextEdit != null)
-                _flavorTextEdit.TextRope = new Rope.Leaf(Profile?.FlavorText ?? "");
+            if (_flavorSfwTextEdit != null)
+                _flavorSfwTextEdit.TextRope = new Rope.Leaf(Profile?.FlavorText ?? "");
+
+            if (_flavorNsfwTextEdit != null)
+                _flavorNsfwTextEdit.TextRope = new Rope.Leaf(Profile?.NsfwFlavorText ?? "");
         }
 
         private void UpdateAgeEdit()
