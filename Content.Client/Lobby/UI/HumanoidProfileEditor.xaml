@@ -207,72 +207,6 @@ SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
                             <CollapsibleHeading>
                                 <Label
                                     Margin="20 0 0 0"
-                                    Text="{Loc 'humanoid-profile-editor-collapsible-background'}"
-                                    StyleClasses="LabelHeading"/>
-                            </CollapsibleHeading>
-                            <CollapsibleBody>
-                                <ui:AlternatingBGContainer Margin="10" HorizontalExpand="True" Orientation="Vertical" SeparationOverride="20">
-                                    <!-- Nationality -->
-                                    <BoxContainer
-                                        HorizontalExpand="True"
-                                        Orientation="Horizontal"
-                                        SeparationOverride="20">
-                                        <BoxContainer HorizontalExpand="True" VerticalAlignment="Top" SizeFlagsStretchRatio="3">
-                                            <Label Text="{Loc 'humanoid-profile-editor-nationality-label'}"
-                                                StyleClasses="LabelBig" />
-                                            <Control HorizontalExpand="True" />
-                                            <TextureButton Name="NationalityInfoButton" Scale="0.3 0.3" VerticalAlignment="Center"
-                                                        ToolTip="{Loc 'humanoid-profile-editor-guidebook-button-tooltip'}"/>
-                                            <OptionButton Name="NationalityButton" HorizontalAlignment="Right" />
-                                        </BoxContainer>
-                                        <BoxContainer HorizontalExpand="True" SizeFlagsStretchRatio="4">
-                                            <RichTextLabel Name="NationalityDescriptionLabel" Text="" HorizontalExpand="False" MaxWidth="600" />
-                                        </BoxContainer>
-                                    </BoxContainer>
-
-                                    <!-- Employer -->
-                                    <BoxContainer
-                                        HorizontalExpand="True"
-                                        Orientation="Horizontal"
-                                        SeparationOverride="20">
-                                        <BoxContainer HorizontalExpand="True" VerticalAlignment="Top" SizeFlagsStretchRatio="3">
-                                            <Label Text="{Loc 'humanoid-profile-editor-employer-label'}"
-                                                StyleClasses="LabelBig" />
-                                            <Control HorizontalExpand="True" />
-                                            <TextureButton Name="EmployerInfoButton" Scale="0.3 0.3" VerticalAlignment="Center"
-                                                        ToolTip="{Loc 'humanoid-profile-editor-guidebook-button-tooltip'}"/>
-                                            <OptionButton Name="EmployerButton" HorizontalAlignment="Right" />
-                                        </BoxContainer>
-                                        <BoxContainer HorizontalExpand="True" SizeFlagsStretchRatio="4">
-                                            <RichTextLabel Name="EmployerDescriptionLabel" Text="" HorizontalExpand="False" MaxWidth="600"/>
-                                        </BoxContainer>
-                                    </BoxContainer>
-
-                                    <!-- Lifepath -->
-                                    <BoxContainer
-                                        HorizontalExpand="True"
-                                        Orientation="Horizontal"
-                                        SeparationOverride="20">
-                                        <BoxContainer HorizontalExpand="True" VerticalAlignment="Top" SizeFlagsStretchRatio="3">
-                                            <Label Text="{Loc 'humanoid-profile-editor-lifepath-label'}"
-                                                StyleClasses="LabelBig" />
-                                            <Control HorizontalExpand="True" />
-                                            <TextureButton Name="LifepathInfoButton" Scale="0.3 0.3" VerticalAlignment="Center"
-                                                        ToolTip="{Loc 'humanoid-profile-editor-guidebook-button-tooltip'}"/>
-                                            <OptionButton Name="LifepathButton" HorizontalAlignment="Right" />
-                                        </BoxContainer>
-                                        <BoxContainer HorizontalExpand="True" SizeFlagsStretchRatio="4">
-                                            <RichTextLabel Name="LifepathDescriptionLabel" Text="" HorizontalExpand="False" MaxWidth="600"/>
-                                        </BoxContainer>
-                                    </BoxContainer>
-                                </ui:AlternatingBGContainer>
-                            </CollapsibleBody>
-                        </Collapsible>
-
-                        <Collapsible BodyVisible="True">
-                            <CollapsibleHeading>
-                                <Label
-                                    Margin="20 0 0 0"
                                     Text="{Loc 'humanoid-profile-editor-collapsible-dimensions'}"
                                     StyleClasses="LabelHeading"/>
                             </CollapsibleHeading>
@@ -343,6 +277,67 @@ SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
                         </Collapsible>
 
                     </BoxContainer>
+                </ScrollContainer>
+            </BoxContainer>
+
+            <BoxContainer Name="Background" HorizontalExpand="True" Orientation="Vertical">
+                <!-- Background Tab -->
+                <ScrollContainer HorizontalExpand="True" HScrollEnabled="True" VerticalExpand="True" VScrollEnabled="True">
+                    <ui:AlternatingBGContainer Margin="10" HorizontalExpand="True" Orientation="Vertical" SeparationOverride="20">
+                        <!-- Nationality -->
+                        <BoxContainer
+                            HorizontalExpand="True"
+                            Orientation="Horizontal"
+                            SeparationOverride="20">
+                            <BoxContainer HorizontalExpand="True" VerticalAlignment="Top" SizeFlagsStretchRatio="3">
+                                <Label Text="{Loc 'humanoid-profile-editor-nationality-label'}"
+                                    StyleClasses="LabelBig" />
+                                <Control HorizontalExpand="True" />
+                                <TextureButton Name="NationalityInfoButton" Scale="0.3 0.3" VerticalAlignment="Center"
+                                            ToolTip="{Loc 'humanoid-profile-editor-guidebook-button-tooltip'}"/>
+                                <OptionButton Name="NationalityButton" HorizontalAlignment="Right" />
+                            </BoxContainer>
+                            <BoxContainer HorizontalExpand="True" SizeFlagsStretchRatio="4">
+                                <RichTextLabel Name="NationalityDescriptionLabel" Text="" HorizontalExpand="False" MaxWidth="600" />
+                            </BoxContainer>
+                        </BoxContainer>
+
+                        <!-- Employer -->
+                        <BoxContainer
+                            HorizontalExpand="True"
+                            Orientation="Horizontal"
+                            SeparationOverride="20">
+                            <BoxContainer HorizontalExpand="True" VerticalAlignment="Top" SizeFlagsStretchRatio="3">
+                                <Label Text="{Loc 'humanoid-profile-editor-employer-label'}"
+                                    StyleClasses="LabelBig" />
+                                <Control HorizontalExpand="True" />
+                                <TextureButton Name="EmployerInfoButton" Scale="0.3 0.3" VerticalAlignment="Center"
+                                            ToolTip="{Loc 'humanoid-profile-editor-guidebook-button-tooltip'}"/>
+                                <OptionButton Name="EmployerButton" HorizontalAlignment="Right" />
+                            </BoxContainer>
+                            <BoxContainer HorizontalExpand="True" SizeFlagsStretchRatio="4">
+                                <RichTextLabel Name="EmployerDescriptionLabel" Text="" HorizontalExpand="False" MaxWidth="600"/>
+                            </BoxContainer>
+                        </BoxContainer>
+
+                        <!-- Lifepath -->
+                        <BoxContainer
+                            HorizontalExpand="True"
+                            Orientation="Horizontal"
+                            SeparationOverride="20">
+                            <BoxContainer HorizontalExpand="True" VerticalAlignment="Top" SizeFlagsStretchRatio="3">
+                                <Label Text="{Loc 'humanoid-profile-editor-lifepath-label'}"
+                                    StyleClasses="LabelBig" />
+                                <Control HorizontalExpand="True" />
+                                <TextureButton Name="LifepathInfoButton" Scale="0.3 0.3" VerticalAlignment="Center"
+                                            ToolTip="{Loc 'humanoid-profile-editor-guidebook-button-tooltip'}"/>
+                                <OptionButton Name="LifepathButton" HorizontalAlignment="Right" />
+                            </BoxContainer>
+                            <BoxContainer HorizontalExpand="True" SizeFlagsStretchRatio="4">
+                                <RichTextLabel Name="LifepathDescriptionLabel" Text="" HorizontalExpand="False" MaxWidth="600"/>
+                            </BoxContainer>
+                        </BoxContainer>
+                    </ui:AlternatingBGContainer>
                 </ScrollContainer>
             </BoxContainer>
 

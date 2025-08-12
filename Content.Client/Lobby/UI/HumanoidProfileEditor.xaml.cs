@@ -359,7 +359,10 @@ namespace Content.Client.Lobby.UI
 
             #endregion Species
 
-            #region Contractors
+            #region Background
+
+            Background.Orphan();
+            CTabContainer.AddTab(Background, Loc.GetString("humanoid-profile-editor-background-tab"));
 
             RefreshNationalities();
             RefreshEmployers();
