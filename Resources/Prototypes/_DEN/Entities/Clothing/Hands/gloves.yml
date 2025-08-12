@@ -13,3 +13,14 @@
     sprite: _DEN/Clothing/Hands/goldenring.rsi
   - type: Clothing
     sprite: _DEN/Clothing/Hands/goldenring.rsi
+
+- type: entity
+  parent: ClothingHandsBase
+  id: ClothingHandsSentimentalRing
+  name: sentimental ring
+  description: A simple ring. You can wear it on a chain around your neck, if you want.
+  components:
+  - type: Sprite
+    sprite: _DEN/Clothing/Hands/sentimentalring.rsi
+  - type: Clothing
+    sprite: _DEN/Clothing/Hands/sentimentalring.rsi

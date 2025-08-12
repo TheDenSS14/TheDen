@@ -88,6 +88,17 @@
   - type: Clothing
     sprite: _DEN/Clothing/Uniforms/Jumpsuit/shorts.rsi
 
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformBootyShorts
+  name: booty shorts
+  description: Any shorter and they'd no longer qualify as shorts.
+  components:
+  - type: Sprite
+    sprite: _DEN/Clothing/Uniforms/Jumpsuit/bootyshorts.rsi
+  - type: Clothing
+    sprite: _DEN/Clothing/Uniforms/Jumpsuit/bootyshorts.rsi
+
 # grabbed from ship_vs_ship.yml
 - type: entity
   parent: ClothingUniformJumpsuitRepairmanSyndie
