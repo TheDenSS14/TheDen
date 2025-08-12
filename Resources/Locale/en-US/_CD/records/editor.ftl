@@ -9,7 +9,9 @@ humanoid-profile-editor-cd-records-tab = Records
 # General
 humanoid-profile-editor-cd-records-height = Height (cm):
 humanoid-profile-editor-cd-records-weight = Weight (kg):
-humanoid-profile-editor-cd-records-contact-name = Emergency Contact Names(s):
+humanoid-profile-editor-cd-records-contact-name = Emergency Contact Name(s):
+# TheDen, added Place Of Residency
+humanoid-profile-editor-cd-records-residency = Current Place of Residency:
 
 # Employment
 humanoid-profile-editor-cd-records-employment = Employment
@@ -19,8 +21,8 @@ humanoid-profile-editor-cd-records-work-authorization = Work Authorization:
 humanoid-profile-editor-cd-records-identifying-features = Identifying Features:
 
 # Medical
-humanoid-profile-editor-cd-records-allergies = Allergies:
-humanoid-profile-editor-cd-records-drug-allergies = Drug Allergies:
+humanoid-profile-editor-cd-records-allergies = Allergies (incl. Drug):
+humanoid-profile-editor-cd-records-drug-allergies = Patient Medical Concerns:
 humanoid-profile-editor-cd-records-postmortem = Postmortem Instructions:
 
 # Entries
