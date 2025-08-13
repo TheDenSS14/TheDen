@@ -240,11 +240,11 @@
         - SecurityCadet # Gotta earn it
 
 - type: loadout
-  id: LoadoutSecurityOuterCoatBomberBrigmedic # Can also butcher the other version to get this
+  id: LoadoutSecurityOuterCoatBomberBrigmed # Can also butcher the other version to get this
   category: Outer
   cost: 0
   items:
-    -  ClothingOuterCoatBomberBrigmedic
+    -  ClothingOuterCoatBomberBrigmed
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutSecurityOuter
@@ -256,11 +256,11 @@
         - Brigmedic
 
 - type: loadout
-  id: LoadoutSecurityOuterCoatBomberBrigmedicLoose # Can also butcher the other version to get this
+  id: LoadoutSecurityOuterCoatBomberBrigmedLoose # Can also butcher the other version to get this
   category: Outer
   cost: 0
   items:
-    -  ClothingOuterCoatBomberBrigmedicLoose
+    -  ClothingOuterCoatBomberBrigmedLoose
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutSecurityOuter
