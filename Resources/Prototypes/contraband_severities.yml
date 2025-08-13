@@ -54,3 +54,11 @@
 - type: contrabandSeverity
   id: contrabandSeverityDebug
   examineText: contraband-examine-text-Debug
+
+# NSFW items should get this so it's obvious they are not meant to be out in public
+# examples:
+# 1. dildos
+# 2. condoms
+- type: contrabandSeverity
+  id: contrabandSeverityNSFW
+  examineText: contraband-examine-text-NSFW
