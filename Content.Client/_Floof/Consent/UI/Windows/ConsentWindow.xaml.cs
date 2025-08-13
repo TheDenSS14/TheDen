@@ -16,14 +16,18 @@ using Robust.Client.UserInterface.XAML;
 using Robust.Shared.Configuration;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
+using Content.Shared._AS.Consent;
+using Robust.Shared.Player;
 
 namespace Content.Client._Floof.Consent.UI.Windows;
 
 [GenerateTypedNameReferences]
 public sealed partial class ConsentWindow : FancyWindow
 {
+    [Dependency] private readonly SharedConsentCardSystem _card = default!;
     [Dependency] private readonly IClientConsentManager _consentManager = default!;
     [Dependency] private readonly IConfigurationManager _configManager = default!;
+    [Dependency] private readonly ISharedPlayerManager _player = default!;
     [Dependency] private readonly IPrototypeManager _protoManager = default!;
 
     private readonly Dictionary<string, int> _tabs = new();
@@ -64,6 +68,13 @@ public sealed partial class ConsentWindow : FancyWindow
 
         ConsentFreetext.Placeholder = new Rope.Leaf(Loc.GetString("consent-window-freetext-placeholder"));
         ConsentFreetext.OnTextChanged += _ => UnsavedChanges();
+
+        // Aurora - Add consent cards
+        XCard.OnPressed += _ =>
+        {
+            if (_player.LocalSession is {} player)
+                _card.RaiseConsentCard(player.UserId, "XCard");
+        };
     }
 
     private void InitializeCategories()

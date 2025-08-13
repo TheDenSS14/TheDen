@@ -11,6 +11,11 @@ SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
     xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:gfx="clr-namespace:Robust.Client.Graphics;assembly=Robust.Client"
+    xmlns:ui="clr-namespace:Content.Client._AS.UserInterface.Controls;assembly=Content.Client"
+    xmlns:xe="clr-namespace:Content.Client.UserInterface.XamlExtensions"
+    xmlns:style="clr-namespace:Content.Client.Stylesheets"
+    xmlns:xamlExtensions="clr-namespace:Content.Client.UserInterface.XamlExtensions"
+    xmlns:controls1="clr-namespace:Content.Client._AS.UserInterface.Controls"
     MinSize="620 670"
     Title="{Loc consent-window-title}"
     Resizable="False">
@@ -46,6 +51,20 @@ SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
                         <!-- The rest here is generated programmatically -->
                     </controls:NeoTabContainer>
                 </ScrollContainer>
+            </BoxContainer>
+            <BoxContainer Orientation="Vertical" HorizontalExpand="False" VerticalExpand="True" Margin="5">
+            <Label Text= "Consent Cards"/>
+                <ui:CardButton
+                    Name="XCard"
+                    Access="Internal"
+                    Icon="{xe:Tex '/Textures/_AS/Interface/x.svg.96dpi.png'}"
+                    Description="I am uncomfortable\nwith this scene."
+                    BackgroundColor="#FF2D2D38"
+                    HoverColor="#FF3D3D48"
+                    PressedColor="#FF4D4D58"
+                    MinSize="180 150"
+                    VerticalExpand="True"
+                />
             </BoxContainer>
         </controls:NeoTabContainer>
     </BoxContainer>
