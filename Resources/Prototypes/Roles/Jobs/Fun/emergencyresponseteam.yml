@@ -34,7 +34,6 @@
     eyes: ClothingEyesHudSyndicate
     gloves: ClothingHandsGlovesCombat
     outerClothing: ClothingOuterArmorBasicSlim
-    id: ERTSecurityPDA
     ears: ClothingHeadsetAltCentCom
     belt: ClothingBeltERTWebbingFilled
     pocket1: WeaponDisabler
@@ -100,6 +99,7 @@
     jumpsuit: ClothingUniformJumpsuitERTChaplain
     back: ClothingBackpackERTChaplainFilled
     neck: ClothingNeckStoleChaplain
+    id: ERTChaplainPDA
 
 # Engineer
 - type: job
@@ -156,6 +156,7 @@
     jumpsuit: ClothingUniformJumpsuitERTSecurity
     back: ClothingBackpackERTSecurityFilled
     head: ClothingHeadHelmetERTSecurity
+    id: ERTSecurityPDA
     pocket1: WeaponTaser
 
 
@@ -216,4 +217,3 @@
     shoes: ClothingShoesGaloshes
     head: ClothingHeadHelmetERTJanitor
     id: ERTJanitorPDA
-    belt: ClothingBeltJanitorFilled
