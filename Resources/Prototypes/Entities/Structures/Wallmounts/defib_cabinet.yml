@@ -26,11 +26,11 @@
       arc: 175
     - type: Transform
       anchored: true
+      noRot: false
     - type: Clickable
     - type: InteractionOutline
     - type: Sprite
       sprite: Structures/Wallmounts/defib_cabinet.rsi
-      noRot: false
       layers:
       - state: frame
       - state: fill
