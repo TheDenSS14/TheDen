@@ -28,7 +28,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 # The Den
 
-<p align="center"><img src="https://raw.githubusercontent.com/TheDenSS14/TheDen/master/Resources/Textures/Logo/logo.png" width="512px" /></p>
+<p align="center"><img src="https://raw.githubusercontent.com/TheDenSS14/TheDen/master/Resources/Textures/Logo/logo.png" width="800" /></p>
 
 ---
 

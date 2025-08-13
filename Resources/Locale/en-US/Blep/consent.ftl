@@ -16,9 +16,11 @@ consent-window-freetext-placeholder = Put your ERP info here, such as:
     If you are okay with IC noncon
     Which gender(s) you want your partners to be
     Likes and dislikes
-consent-window-toggles-label = Mechanics toggles
-consent-window-unsaved-changes = You have unsaved changes
-consent-window-char-limit-warning = Character limit exceeded ({$length} / {$maxLength})
+consent-window-toggles-label = Toggles
+consent-window-saved-changes = Your changes are saved.
+consent-window-unsaved-changes = You have unsaved changes!
+consent-window-char-limit = Character limit: {$length} / {$maxLength}
+consent-window-exceeded-char-limit = Exceeded character limit: {$length} / {$maxLength}
 
 # Verb
 consent-examine-verb = Consent Info
@@ -32,7 +34,7 @@ consent-Hypno-name = Hypnosis
 consent-Hypno-desc = Allow yourself to be hypnotized.
 
 consent-NoClone-name = Disallow Paradox Anomaly
-consent-NoClone-desc = Disallow yourself to be the target of a paradox anomaly clone. (on = no paradox anomaly)
+consent-NoClone-desc = Don't allow yourself to be the target of a paradox anomaly clone. (on = no paradox anomaly)
 
 consent-MindSwap-name = Mind Swap
 consent-MindSwap-desc = Should mind swap work on you?
@@ -46,3 +48,9 @@ consent-ChangelingTarget-desc = Should your body be allowed to be stolen by chan
 
 consent-NoDragonDevour-name = No Dragon Devour
 consent-NoDragonDevour-desc = With this on, you will no longer be able to be devoured by dragons. Your body will still not progress in rot until found.
+
+consent-NSFWDescriptions-name = Show NSFW Descriptions
+consent-NSFWDescriptions-desc = Toggle this on to see dynamic player descriptions that may contain NSFW/ERP content.
+
+consent-LastMessage-name = No Last Message Entries
+consent-LastMessage-desc = Toggle this on to never appear in the "last words" discord webhook. Local chat is the only one ever sent.

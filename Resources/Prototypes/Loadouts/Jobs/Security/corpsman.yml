@@ -1,11 +1,13 @@
-# SPDX-FileCopyrightText: 2024 Unkn0wn_Gh0st <shadowstalkermll@gmail.com>
-# SPDX-FileCopyrightText: 2024 VMSolidus <evilexecutive@gmail.com>
-# SPDX-FileCopyrightText: 2025 Alice <alicecoupland45@gmail.com>
-# SPDX-FileCopyrightText: 2025 Blitz <73762869+BlitzTheSquishy@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 BlitzTheSquishy <73762869+BlitzTheSquishy@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 EctoplasmIsGood <109397347+EctoplasmIsGood@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 MajorMoth <61519600+MajorMoth@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Unkn0wn_Gh0st
+# SPDX-FileCopyrightText: 2024 VMSolidus
+# SPDX-FileCopyrightText: 2025 Adrian16199
+# SPDX-FileCopyrightText: 2025 Alice
+# SPDX-FileCopyrightText: 2025 Blitz
+# SPDX-FileCopyrightText: 2025 BlitzTheSquishy
+# SPDX-FileCopyrightText: 2025 EctoplasmIsGood
+# SPDX-FileCopyrightText: 2025 MajorMoth
+# SPDX-FileCopyrightText: 2025 Tanix
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -89,13 +91,72 @@
   cost: 2
   exclusive: true
   requirements:
-#    - !type:CharacterItemGroupRequirement - TheDen - For easier 1 character all jobs cahracters
-#      group: LoadoutSecurityEyes
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutCorpsmanEyes
     - !type:CharacterJobRequirement
       jobs:
         - Brigmedic
   items:
     - ClothingEyesGlassesCorpsman
+
+- type: loadout
+  id: LoadoutClothingEyesCorpsmanHudMedSec
+  category: JobsSecurityCorpsman
+  cost: 1
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutCorpsmanEyes
+    - !type:CharacterJobRequirement
+      jobs:
+        - Brigmedic
+  items:
+    - ClothingEyesHudMedSec
+
+- type: loadout
+  id: LoadoutClothingEyesCorpsmanHudMed
+  category: JobsSecurityCorpsman
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutCorpsmanEyes
+    - !type:CharacterJobRequirement
+      jobs:
+        - Brigmedic
+  items:
+    - ClothingEyesHudMedical
+
+- type: loadout
+  id: LoadoutMedicalEyesCorpsmanEyepatchHudMedical
+  category: JobsMedicalAUncategorized
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutCorpsmanEyes
+    - !type:CharacterJobRequirement
+      jobs:
+        - Brigmedic
+  items:
+    - ClothingEyesEyepatchHudMedical
+
+- type: loadout
+  id: LoadoutClothingEyesCorpsmanHudMedPrescription
+  category: JobsSecurityCorpsman
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutCorpsmanEyes
+    - !type:CharacterJobRequirement
+      jobs:
+        - Brigmedic
+    - !type:CharacterTraitRequirement
+      traits:
+        - Nearsighted
+  items:
+    - ClothingEyesPrescriptionMedHud
 
 # Gloves
 - type: loadout
@@ -202,20 +263,6 @@
 
 # Mask
 - type: loadout
-  id: LoadoutClothingMaskGasSecurity
-  category: JobsSecurityCorpsman
-  cost: 0
-  exclusive: true
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutCorpsmanMask
-    - !type:CharacterJobRequirement
-      jobs:
-        - Brigmedic
-  items:
-    - ClothingMaskGasSecurity
-
-- type: loadout
   id: LoadoutClothingMaskSterileCorpsman
   category: JobsSecurityCorpsman
   cost: 0
@@ -244,6 +291,19 @@
     - ClothingMaskBreathMedical
 
 # Outer
+- type: loadout
+  id: LoadoutClothingOuterLongCoatCorpsman
+  category: JobsSecurityCorpsman
+  cost: 0
+  exclusive: true
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutCorpsmanOuter
+  - !type:CharacterJobRequirement
+    jobs:
+      - Brigmedic
+  items:
+  - ClothingLongcoatBrigmedic
 
 # Shoes
 
@@ -255,7 +315,7 @@
   exclusive: true
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutCorpsmanUniform
+      group: LoadoutCorpsmanUniforms
     - !type:CharacterJobRequirement
       jobs:
         - Brigmedic

@@ -1,0 +1,318 @@
+# SPDX-FileCopyrightText: 2025 Tanix
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+# TODO: I know it's horrid, but if you separate every single one into their proper forks, I'll pay you.
+# There are existing packs for some of these recipes, and some which have items that don't exist. I'm sorry.
+
+- type: latheRecipePack
+  id: UniformPrinterStaticAwfulDen
+  recipes:
+  - ClothingUniformJumpsuitColorGrey
+  - ClothingUniformJumpskirtColorGrey
+  - ClothingUniformJumpsuitBartender
+  - ClothingUniformJumpskirtBartender
+  - ClothingHeadHatCapcap
+  - ClothingHeadHatCaptain
+  - ClothingUniformJumpsuitCaptain
+  - ClothingUniformJumpskirtCaptain
+  - ClothingUniformJumpsuitCapFormal
+  - ClothingUniformJumpskirtCapFormalDress
+  - ClothingUniformJumpsuitCargo
+  - ClothingUniformJumpskirtCargo
+  - ClothingUniformJumpsuitSalvageSpecialist
+  - ClothingHeadHatBeretEngineering
+  - ClothingUniformJumpsuitChiefEngineer
+  - ClothingUniformJumpskirtChiefEngineer
+  - ClothingUniformJumpsuitChiefEngineerTurtle
+  - ClothingUniformJumpskirtChiefEngineerTurtle
+  - ClothingUniformJumpsuitChaplain
+  - ClothingUniformJumpskirtChaplain
+  - ClothingUniformJumpsuitChef
+  - ClothingUniformJumpskirtChef
+  - ClothingUniformJumpsuitChemistry
+  - ClothingUniformJumpskirtChemistry
+  - ClothingUniformJumpsuitClown
+  - ClothingHeadHatBeretCmo
+  - ClothingUniformJumpsuitCMO
+  - ClothingUniformJumpskirtCMO
+  - ClothingUniformJumpsuitCMOTurtle
+  - ClothingUniformJumpskirtCMOTurtle
+  - ClothingUniformJumpsuitDetective
+  - ClothingUniformJumpskirtDetective
+  - ClothingUniformJumpsuitEngineering
+  - ClothingUniformJumpskirtEngineering
+  - ClothingUniformJumpsuitSeniorEngineer
+  - ClothingUniformJumpskirtSeniorEngineer
+  - ClothingHeadHatHopcap
+  - ClothingUniformJumpsuitHoP
+  - ClothingUniformJumpskirtHoP
+  - ClothingHeadHatBeretHoS
+  - ClothingHeadHatHoshat
+  - ClothingUniformJumpsuitHoS
+  - ClothingUniformJumpskirtHoS
+  - ClothingUniformJumpsuitHoSBlue # DeltaV - alternate sec uniforms
+  - ClothingUniformJumpskirtHoSBlue # DeltaV - alternate sec uniforms
+  - ClothingUniformJumpsuitHoSGrey # DeltaV - alternate sec uniforms
+  - ClothingUniformJumpskirtHoSGrey # DeltaV - alternate sec uniforms
+  - ClothingUniformJumpsuitHosFormal
+  - ClothingUniformJumpskirtHosFormal
+  - ClothingUniformJumpsuitHoSAlt
+  - ClothingUniformJumpskirtHoSAlt
+  - ClothingUniformJumpsuitHoSBlue
+  - ClothingUniformJumpsuitHoSGrey
+  - ClothingUniformJumpsuitHoSParadeMale
+  - ClothingUniformJumpskirtHoSParadeMale
+  - ClothingUniformJumpsuitHydroponics
+  - ClothingUniformJumpskirtHydroponics
+  - ClothingUniformJumpsuitJanitor
+  - ClothingUniformJumpskirtJanitor
+  - ClothingUniformJumpsuitLawyerBlack
+  - ClothingUniformJumpsuitLibrarian
+  - ClothingUniformJumpskirtColorLightBrown
+  - ClothingUniformCourier # DeltaV - Courier Uniform
+  - ClothingUniformSkirtCourier # DeltaV - Courier Uniform
+  - ClothingUniformJumpsuitMantis # Nyanotrasen - Forensic Mantis
+  - ClothingUniformSkirtMantis # Nyanotrasen - Forensic Mantis
+  - ClothingHeadHatBeretSeniorPhysician
+  - ClothingUniformJumpsuitMedicalDoctor
+  - ClothingUniformJumpskirtMedicalDoctor
+  - ClothingUniformJumpsuitSeniorPhysician
+  - ClothingUniformJumpskirtSeniorPhysician
+  - ClothingUniformJumpsuitMime
+  - ClothingUniformJumpskirtMime
+  - ClothingUniformJumpsuitMusician
+  - ClothingUniformJumpsuitParamedic
+  - ClothingUniformJumpskirtParamedic
+  - ClothingUniformJumpsuitSeniorOfficer
+  - ClothingUniformJumpskirtSeniorOfficer
+  - ClothingUniformJumpsuitPrisoner
+  - ClothingUniformJumpskirtPrisoner
+  - ClothingHeadHatQMsoft
+  - ClothingHeadHatBeretQM
+  - ClothingUniformJumpsuitQM
+  - ClothingUniformJumpskirtQM
+  - ClothingUniformJumpsuitQMTurtleneck
+  - ClothingUniformJumpskirtQMTurtleneck
+  - ClothingUniformJumpsuitQMFormal
+  - ClothingHeadHatBeretRND
+  - ClothingUniformJumpsuitResearchDirector
+  - ClothingUniformJumpskirtResearchDirector
+  - ClothingUniformJumpsuitScientist
+  - ClothingUniformJumpskirtScientist
+  - ClothingUniformJumpsuitSeniorResearcher
+  - ClothingUniformJumpskirtSeniorResearcher
+  - ClothingHeadHatBeretSecurity
+  - ClothingUniformJumpsuitSec
+  - ClothingUniformJumpskirtSec
+  - ClothingUniformJumpsuitSecBlue # DeltaV - alternate sec uniforms
+  - ClothingUniformJumpskirtSecBlue # DeltaV - alternate sec uniforms
+  - ClothingUniformJumpsuitSecGrey # DeltaV - alternate sec uniforms
+  - ClothingUniformJumpskirtSecGrey # DeltaV - alternate sec uniforms
+  - ClothingHeadHatBeretBrigmedic
+  - ClothingUniformJumpsuitBrigmedic
+  - ClothingUniformJumpskirtBrigmedic
+  - ClothingHeadHatBeretWarden
+  - ClothingHeadHatWarden
+  - ClothingUniformJumpsuitWarden
+  - ClothingUniformJumpskirtWarden
+  - ClothingUniformJumpsuitWardenBlue # DeltaV - alternate sec uniforms
+  - ClothingUniformJumpskirtWardenBlue # DeltaV - alternate sec uniforms
+  - ClothingUniformJumpsuitWardenGrey # DeltaV - alternate sec uniforms
+  - ClothingUniformJumpskirtWardenGrey # DeltaV - alternate sec uniforms
+  - ClothingHeadHatParamedicsoft
+  # Winter outfits
+  - ClothingOuterWinterCap
+  - ClothingOuterWinterCE
+  - ClothingOuterWinterCMO
+  - ClothingOuterWinterHoP
+  - ClothingOuterWinterHoSUnarmored
+  - ClothingOuterWinterWardenUnarmored
+  - ClothingOuterWinterQM
+  - ClothingOuterWinterRD
+  - ClothingNeckMantleCap
+  - ClothingNeckMantleCE
+  - ClothingNeckMantleCMO
+  - ClothingNeckMantleHOP
+  - ClothingNeckMantleHOS
+  - ClothingNeckMantleRD
+  - ClothingNeckMantleQM
+  - ClothingOuterStasecSweater # DeltaV - added stasec sweater to uniform printer.
+  - ClothingOuterWinterMusician
+  - ClothingOuterWinterClown
+  - ClothingOuterWinterMime
+  - ClothingOuterWinterCoat
+  - ClothingOuterWinterJani
+  - ClothingOuterWinterBar
+  - ClothingOuterWinterChef
+  - ClothingOuterWinterHydro
+  - ClothingOuterWinterAtmos
+  - ClothingOuterWinterEngi
+  - ClothingOuterWinterCargo
+  - ClothingOuterWinterMiner
+  - ClothingOuterWinterMed
+  - ClothingOuterWinterPara
+  - ClothingOuterWinterChem
+  - ClothingOuterWinterGen
+  - ClothingOuterWinterViro
+  - ClothingOuterWinterSci
+  - ClothingOuterWinterRobo
+  - ClothingOuterWinterSec
+  # Ties
+  - ClothingNeckTieRed
+  - ClothingNeckTieDet
+  - ClothingNeckTieSci
+  # Scarfs - All scarfs avaible in winterdrobe
+  - ClothingNeckScarfStripedGreen
+  - ClothingNeckScarfStripedBlue
+  - ClothingNeckScarfStripedRed
+  - ClothingNeckScarfStripedBrown
+  - ClothingNeckScarfStripedLightBlue
+  - ClothingNeckScarfStripedOrange
+  - ClothingNeckScarfStripedBlack
+  - ClothingNeckScarfStripedPurple
+  # Carpets
+  - Carpet
+  - CarpetBlack
+  - CarpetPink
+  - CarpetBlue
+  - CarpetGreen
+  - CarpetOrange
+  - CarpetPurple
+  - CarpetCyan
+  - CarpetWhite
+  # Floofstation - Collars
+  - ClothingNeckCollarCmd
+  # Floofstation - Socks, Armwarmers ect
+  - ClothingHandsPlainWarmers
+  - ClothingUnderSocksPlain
+  - ClothingUniformThongPlain
+  - ClothingHandsStripeRainbowWarmers
+  - ClothingUnderSocksStripedRainbow
+  - ClothingUniformStripedThongRainbow
+  - ClothingHandsStripePurpleWarmers
+  - ClothingUnderSocksStripedPurple
+  - ClothingUniformStripedThongPurple
+  - ClothingHandsStripeWhiteWarmers
+  - ClothingUnderSocksStripedWhite
+  - ClothingUniformStripedThongWhite
+  - ClothingHandsCoderWarmers
+  - ClothingUnderSocksCoder
+  - ClothingUniformThongCoder
+  - ClothingHandsCoderValidWarmers
+  - ClothingUnderSocksCoderValid
+  - ClothingUniformThongCoderValid
+  - ClothingHandsBeeWarmers
+  - ClothingUnderSocksBee
+  - ClothingUniformThongBee
+  # Floofstation - Department Socks, Armwarmers ect
+  - ClothingHandsCaptainWarmers
+  - ClothingUnderSocksCaptain
+  - ClothingUniformCaptainThong
+  - ClothingHandsCommandWarmers
+  - ClothingUnderSocksCommand
+  - ClothingUniformCommandThong
+  - ClothingHandsEngiWarmers
+  - ClothingUnderSocksEngi
+  - ClothingUniformEngiThong
+  - ClothingHandsEpiWarmers
+  - ClothingUnderSocksEpi
+  - ClothingUniformEpiThong
+  - ClothingHandsChaplainWarmers
+  - ClothingUnderSocksChaplain
+  - ClothingUniformChaplainThong
+  - ClothingHandsLogisWarmers
+  - ClothingUnderSocksLogis
+  - ClothingUniformLogisThong
+  - ClothingHandsMedicWarmers
+  - ClothingUnderSocksMedic
+  - ClothingUniformMedicThong
+  - ClothingHandsSecurityWarmers
+  - ClothingUnderSocksSecurity
+  - ClothingUniformSecurityThong
+  - ClothingHandsServiceWarmers
+  - ClothingUnderSocksService
+  - ClothingUniformServiceThong
+  - ClothingHandsJanitorWarmers
+  - ClothingUnderSocksJanitor
+  - ClothingUniformJanitorThong
+  # DEN - AbsurdBeanies
+  - ClothingHeadHatBeanieBlackAbsurd
+  - ClothingHeadHatBeanieBlackWithPinAbsurd
+  - ClothingHeadHatBeanieBlueAbsurd
+  - ClothingHeadHatBeanieGoldAbsurd
+  - ClothingHeadHatBeanieGreenAbsurd
+  - ClothingHeadHatBeanieKhakiAbsurd
+  - ClothingHeadHatBeanieKhakiWithPinAbsurd
+  - ClothingHeadHatBeanieNavyBlueAbsurd
+  - ClothingHeadHatBeanieNavyBlueWithPinAbsurd
+  - ClothingHeadHatBeaniePurpleAbsurd
+  - ClothingHeadHatBeanieWhiteAbsurd
+  - ClothingHeadHatBeanieYellowAbsurd
+  - ClothingHeadHatBeanieRedAbsurd
+  # TheDen - Towels
+  - TowelColorWhite
+  - TowelColorPurple
+  - TowelColorRed
+  - TowelColorBlue
+  - TowelColorDarkBlue
+  - TowelColorLightBlue
+  - TowelColorTeal
+  - TowelColorBrown
+  - TowelColorLightBrown
+  - TowelColorGray
+  - TowelColorGreen
+  - TowelColorDarkGreen
+  - TowelColorGold
+  - TowelColorOrange
+  - TowelColorBlack
+  - TowelColorPink
+  - TowelColorYellow
+  - TowelColorMaroon
+  - TowelColorSilver
+  - TowelColorMime
+  - TowelColorNT
+  # TheDen - Aprons
+  - ClothingWaistApron
+  - ClothingWaistApronCheckered
+  - ClothingWaistApronStripesHorizontal
+  - ClothingWaistApronStripesVertical
+  # TheDen - Tank Harness
+  - ClothingOuterVestTank
+
+- type: latheRecipePack
+  id: UniformPrinterEmagStaticAwfulDen
+  recipes:
+  - ClothingHeadHatCentcomcap
+  - ClothingHeadHatCentcom
+  - ClothingUniformJumpsuitCentcomAgent
+  - ClothingUniformJumpsuitCentcomFormal
+  - ClothingUniformJumpskirtCentcomFormalDress
+  - ClothingUniformJumpsuitCentcomOfficer
+  - ClothingUniformJumpsuitCentcomOfficial
+  - ClothingHeadHatSyndieMAA
+  - ClothingHeadHatSyndie
+  - ClothingUniformJumpsuitOperative
+  - ClothingUniformJumpskirtOperative
+  - ClothingUniformJumpsuitSyndieFormal
+  - ClothingUniformJumpskirtSyndieFormalDress
+  - ClothingHeadPyjamaSyndicateBlack
+  - ClothingUniformJumpsuitPyjamaSyndicateBlack
+  - ClothingHeadPyjamaSyndicatePink
+  - ClothingUniformJumpsuitPyjamaSyndicatePink
+  - ClothingHeadPyjamaSyndicateRed
+  - ClothingUniformJumpsuitPyjamaSyndicateRed
+  - ClothingOuterWinterCentcom
+  - ClothingOuterWinterSyndie
+  - ClothingOuterWinterSyndieCap
+
+  # DV - CentComm Drip
+  - ClothingHeadHatBeretCentcomm
+  - ClothingUniformJumpskirtCentcomAgent
+  - ClothingUniformJumpskirtCentcomOfficer
+  - ClothingUniformJumpskirtCentcomOfficial
+
+  # TheDen - Towels
+  - TowelColorCentcom
+  - TowelColorSyndicate

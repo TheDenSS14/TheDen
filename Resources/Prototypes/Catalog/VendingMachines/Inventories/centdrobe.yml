@@ -1,33 +1,48 @@
-# SPDX-FileCopyrightText: 2023 Emisse <99158783+Emisse@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2023 MACMAN2003 <macman2003c@gmail.com>
-# SPDX-FileCopyrightText: 2023 Velcroboy <107660393+IamVelcroboy@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2023 potato1234_x <79580518+potato1234x@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 Aexxie <codyfox.077@gmail.com>
-# SPDX-FileCopyrightText: 2024 Pierson Arnold <greyalphawolf7@gmail.com>
-# SPDX-FileCopyrightText: 2024 Tunguso4ka <71643624+Tunguso4ka@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Emisse
+# SPDX-FileCopyrightText: 2023 MACMAN2003
+# SPDX-FileCopyrightText: 2023 Velcroboy
+# SPDX-FileCopyrightText: 2023 potato1234_x
+# SPDX-FileCopyrightText: 2024 Aexxie
+# SPDX-FileCopyrightText: 2024 Pierson Arnold
+# SPDX-FileCopyrightText: 2024 Tunguso4ka
+# SPDX-FileCopyrightText: 2025 Ted Lukin
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 - type: vendingMachineInventory
   id: CentDrobeInventory
   startingInventory:
-    ClothingShoesBootsLaceup: 3
-    ClothingShoesBootsJack: 3
-    ClothingHandsGlovesCombat: 3
-    ClothingEyesGlassesSunglasses: 3
-    ClothingUniformJumpsuitCentcomOfficer: 3
-    ClothingUniformJumpsuitCentcomOfficial: 3
-    ClothingUniformJumpsuitCentcomAgent: 3
-    ClothingUniformJumpsuitCentcomFormal: 3
-    ClothingUniformJumpskirtCentcomFormalDress: 3
-    ClothingHeadHatCentcom: 3
-    ClothingHeadHatCentcomcap: 3
-    ClothingMaskGasCentcom: 3
-    ClothingHeadsetCentCom: 3
-    ClothingOuterWinterCentcom: 3
+    CentCommImplanter: 5 # DeltaV - For admins
+    ClothingBackpackCentcom: 5 # DeltaV - Centcomm Drip
+    ClothingBackpackDuffelCentcom: 5 # DeltaV - Centcomm Drip
+    ClothingBackpackSatchelCentcom: 5 # DeltaV - Centcomm Drip
+    ClothingBackpackMessengerCentcomm: 5 # Frontier
+    ClothingHeadHatBeretCentcomm: 5 # DeltaV - Centcomm Drip
+    ClothingHeadHatCentcom: 5
+    ClothingHeadHatCentcomcap: 5
+    ClothingNeckCloakCentcom: 5
+    ClothingNeckMantleCentcom: 5 # DeltaV - Centcomm Drip
+    ClothingNeckCollarCC: 5 # Floofstation - Collar addition
+    ClothingUniformJumpsuitCentcomOfficer: 5
+    ClothingUniformJumpskirtCentcomOfficer: 5 # DeltaV - Centcomm Drip
+    ClothingUniformJumpsuitCentcomAgent: 5
+    ClothingUniformJumpskirtCentcomAgent: 5 # DeltaV - Centcomm Drip
+    ClothingUniformJumpsuitCentcomFormal: 5
+    ClothingUniformJumpskirtCentcomFormalDress: 5
+    ClothingUniformJumpsuitCentcomOfficial: 5
+    ClothingUniformJumpskirtCentcomOfficial: 5 # DeltaV - Centcomm Drip
+    ClothingHeadsetCentCom: 5
+    ClothingHandsGlovesCombat: 5
+    ClothingEyesGlassesSunglasses: 5
+    ClothingShoesBootsLaceup: 5
+    ClothingShoesBootsJack: 5
+    ClothingOuterWinterCentcom: 5
+    ClothingShoesBootsWinterCentCom: 5 #DeltaV - Add departmental winter boots
+    ClothingNeckScarfStripedCentcom: 5
+    ClothingMaskGasCentcom: 5
     ClothingOuterCoatExpensive: 1
-    ClothingNeckScarfStripedCentcom: 3
-    ClothingShoesBootsWinterCentCom: 2 #Delta V: Add departmental winter boots
-    ClothingNeckCloakCentcom: 3
-    ClothingNeckCollarCC: 3 # Floofstation - Collar addition
+  contrabandInventory:
+    ToyFigurineCaptain: 1
+    ToyFigurineHeadOfPersonnel: 1
+

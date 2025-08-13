@@ -1,0 +1,26 @@
+# SPDX-FileCopyrightText: 2024 Dark
+# SPDX-FileCopyrightText: 2024 V
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  parent: [ClothingUniformBase]
+  id: ClothingUniformCircusClown
+  name: circus clown jumpsuit
+  description: A replica of the regalia of the great Googoo Funnyball, who tragically disappeared in a mysterious circus fire.
+  components:
+  - type: Sprite
+    sprite: _Impstation/Clothing/Uniforms/Jumpsuit/circusclown.rsi
+  - type: Clothing
+    sprite: _Impstation/Clothing/Uniforms/Jumpsuit/circusclown.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitCaptaineveningattire
+  name: captain's evening attire
+  description: A comfortable captain's uniform with a low-cut collar and rolled-up sleeves, complete with a sword belt.
+  components:
+  - type: Sprite
+    sprite: Clothing/Uniforms/Jumpsuit/captaineveningattire.rsi
+  - type: Clothing
+    sprite: Clothing/Uniforms/Jumpsuit/captaineveningattire.rsi

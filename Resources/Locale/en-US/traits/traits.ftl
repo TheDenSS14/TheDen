@@ -509,8 +509,8 @@ trait-name-Nehina = Nēhina
 trait-description-Nehina =  A language spoken by the Feroxi, well adapted to speaking under the waters of ocean planets.
 
 trait-name-Kagebun = Kagebun
-trait-description-Kagebun = 
-    An ancient language primarily used by the yōkai, originating from their supernatural roots. 
+trait-description-Kagebun =
+    An ancient language primarily used by the yōkai, originating from their supernatural roots.
     To the uninitiated, it is a chorus of sounds ranging from eerie whispers to ritualistic chanting.
     To those who speak it, it is a living tongue that links them to the spirit world and their ancient pacts.
 
@@ -552,6 +552,11 @@ trait-description-Azaziba =
 
 trait-name-BionicArm = Bionic Arm
 trait-description-BionicArm =
+    One or more of your limbs have been replaced with an expensive, state of the art bionic. It could be either one made of highly realistic synthflesh,
+    or a more obvious metal limb. This limb provides enhanced strength to its user, allowing one to pry open barriers with their bare hands.
+
+trait-name-BionicArmNoVisuals = Bionic Arm (No Arm Resprite)
+trait-description-BionicArmNoVisuals =
     One or more of your limbs have been replaced with an expensive, state of the art bionic. It could be either one made of highly realistic synthflesh,
     or a more obvious metal limb. This limb provides enhanced strength to its user, allowing one to pry open barriers with their bare hands.
 
@@ -672,6 +677,11 @@ trait-description-BionicLeg =
     One or more of your limbs have been replaced with an expensive, state of the art bionic. It could be either one made of highly realistic synthflesh,
     or a more obvious metal limb. This limb provides enhanced speed to it's user, allowing you to run away from situations faster or get to a place faster.
 
+trait-name-BionicLegNoVisuals = Bionic Legs (No Leg Resprite)
+trait-description-BionicLegNoVisuals =
+    One or more of your limbs have been replaced with an expensive, state of the art bionic. It could be either one made of highly realistic synthflesh,
+    or a more obvious metal limb. This limb provides enhanced speed to it's user, allowing you to run away from situations faster or get to a place faster.
+
 trait-name-FlareShieldingModule = I.P.C Eye Module: Flare Shielding
 trait-description-FlareShieldingModule =
    Your eyes have been fitted with a photochromic lens that automatically darkens in response to intense stimuli.
@@ -751,3 +761,8 @@ trait-description-SharpInflection = You mumble... When you aren't shouting!!
 
 trait-name-Monotonous = Monotonous
 trait-description-Monotonous = You speak in a way that others see as total disinterest. Always.
+
+trait-name-HealingFactor = Healing Factor
+trait-description-HealingFactor =
+    Whether due to mutation or natural hardiness, you're harder to kill than most. You slowly regenerate from some common forms of damage.
+    Your natural healing is no longer capped, and you will slowly recover from brute, burn and bloodloss damage while you are still alive.

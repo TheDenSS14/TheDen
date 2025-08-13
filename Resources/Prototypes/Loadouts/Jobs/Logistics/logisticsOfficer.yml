@@ -98,6 +98,20 @@
   items:
   - ClothingOuterWinterQM
 
+- type: loadout
+  id: LoadoutLogisticsOfficerOuterLongCoat
+  category: JobsLogisticsLogisticsOfficer
+  cost: 0
+  exclusive: true
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutLogisticsOfficerOuter
+  - !type:CharacterJobRequirement
+    jobs:
+    - Quartermaster
+  items:
+  - ClothingLongcoatLO
+
 # Shoes
 - type: loadout
   id: LoadoutCommandQMShoesBootsWinter

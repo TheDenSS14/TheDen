@@ -1,15 +1,14 @@
-# SPDX-FileCopyrightText: 2024 FoxxoTrystan <45297731+FoxxoTrystan@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 FoxxoTrystan <trystan.garnierhein@gmail.com>
-# SPDX-FileCopyrightText: 2025 Eagle-0 <114363363+Eagle-0@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 Eris <eris@erisws.com>
-# SPDX-FileCopyrightText: 2025 RocketBoss360 <rocketboss360@gmail.com>
-# SPDX-FileCopyrightText: 2025 Rosycup <178287475+Rosycup@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 Sapphire <98045970+sapphirescript@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 SixplyDev <einlichen@gmail.com>
-# SPDX-FileCopyrightText: 2025 Skubman <ba.fallaria@gmail.com>
-# SPDX-FileCopyrightText: 2025 VMSolidus <evilexecutive@gmail.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <flyingkarii@gmail.com>
+# SPDX-FileCopyrightText: 2024 FoxxoTrystan
+# SPDX-FileCopyrightText: 2025 Eagle-0
+# SPDX-FileCopyrightText: 2025 Eris
+# SPDX-FileCopyrightText: 2025 RocketBoss360
+# SPDX-FileCopyrightText: 2025 Rosycup
+# SPDX-FileCopyrightText: 2025 Sapphire
+# SPDX-FileCopyrightText: 2025 SixplyDev
+# SPDX-FileCopyrightText: 2025 Skubman
+# SPDX-FileCopyrightText: 2025 VMSolidus
+# SPDX-FileCopyrightText: 2025 portfiend
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -90,7 +89,6 @@
     - type: Perishable
     - type: FireVisuals
       alternateState: Standing
-    - type: OfferItem
     - type: LayingDown
     - type: BloodstreamAffectedByMass
       power: 0.6
@@ -159,67 +157,6 @@
             - MobMask
           layer:
             - MobLayer
-    - type: Sprite
-      netsync: false
-      noRot: true
-      drawdepth: Mobs
-      scale: 0.85, 0.85
-      layers:
-        - map: [ "enum.HumanoidVisualLayers.TailBehind" ]
-        - map: ["enum.HumanoidVisualLayers.Chest"]
-        - map: ["enum.HumanoidVisualLayers.Head"]
-        - map: ["enum.HumanoidVisualLayers.Snout"]
-        - map: ["enum.HumanoidVisualLayers.Eyes"]
-          shader: unshaded
-        - map: ["enum.HumanoidVisualLayers.Face"]
-        - map: ["enum.HumanoidVisualLayers.RArm"]
-        - map: ["enum.HumanoidVisualLayers.LArm"]
-        - map: ["enum.HumanoidVisualLayers.RLeg"]
-        - map: ["enum.HumanoidVisualLayers.LLeg"]
-#     - shader: StencilClear
-#      sprite: Mobs/Species/Human/parts.rsi
-#      state: l_leg
-        - shader: StencilMask
-          map: ["enum.HumanoidVisualLayers.StencilMask"]
-          sprite: Mobs/Customization/masking_helpers.rsi
-          state: full
-          visible: false
-        - map: [ "enum.HumanoidVisualLayers.Underwear" ]
-        - map: [ "enum.HumanoidVisualLayers.Undershirt" ]
-        - map: ["enum.HumanoidVisualLayers.LFoot"]
-        - map: ["enum.HumanoidVisualLayers.RFoot"]
-        - map: ["socks"]
-        - map: ["underpants"]
-        - map: ["undershirt"]
-        - map: ["jumpsuit"]
-        - map: ["enum.HumanoidVisualLayers.LHand"]
-        - map: ["enum.HumanoidVisualLayers.RHand"]
-        - map: ["enum.HumanoidVisualLayers.Handcuffs"]
-          color: "#ffffff"
-          sprite: Objects/Misc/handcuffs.rsi
-          state: body-overlay-2
-          visible: false
-        - map: ["id"]
-        - map: ["gloves"]
-        - map: ["shoes"]
-        - map: ["ears"]
-        - map: ["innerBelt"]
-        - map: ["innerNeck"]
-        - map: ["outerClothing"]
-        - map: ["eyes"]
-        - map: ["belt"]
-        - map: ["neck"]
-        - map: [ "enum.HumanoidVisualLayers.TailOversuit" ]
-        - map: ["back"]
-        - map: ["enum.HumanoidVisualLayers.FacialHair"]
-        - map: ["enum.HumanoidVisualLayers.Hair"]
-        - map: ["enum.HumanoidVisualLayers.HeadSide"]
-        - map: ["enum.HumanoidVisualLayers.HeadTop"]
-        - map: ["mask"]
-        - map: ["head"]
-        - map: ["pocket1"]
-        - map: ["pocket2"]
-        - map: ["enum.HumanoidVisualLayers.Tail"]
     - type: MeleeWeapon
       soundHit:
         collection: AlienClaw
@@ -283,62 +220,3 @@
   components:
     - type: HumanoidAppearance
       species: Shadowkin
-    - type: Sprite
-      netsync: false
-      noRot: true
-      drawdepth: Mobs
-      scale: 0.85, 0.85 # Small
-      layers:
-        - map: [ "enum.HumanoidVisualLayers.TailBehind" ]
-        - map: ["enum.HumanoidVisualLayers.Chest"]
-        - map: ["enum.HumanoidVisualLayers.Head"]
-        - map: ["enum.HumanoidVisualLayers.Snout"]
-        - map: ["enum.HumanoidVisualLayers.Eyes"]
-          shader: unshaded
-        - map: ["enum.HumanoidVisualLayers.Face"]
-        - map: ["enum.HumanoidVisualLayers.RArm"]
-        - map: ["enum.HumanoidVisualLayers.LArm"]
-        - map: ["enum.HumanoidVisualLayers.RLeg"]
-        - map: ["enum.HumanoidVisualLayers.LLeg"]
-#     - shader: StencilClear
-#      sprite: Mobs/Species/Human/parts.rsi
-#      state: l_leg
-        - shader: StencilMask
-          map: ["enum.HumanoidVisualLayers.StencilMask"]
-          sprite: Mobs/Customization/masking_helpers.rsi
-          state: full
-          visible: false
-        - map: ["enum.HumanoidVisualLayers.LFoot"]
-        - map: ["enum.HumanoidVisualLayers.RFoot"]
-        - map: ["socks"]
-        - map: ["underpants"]
-        - map: ["undershirt"]
-        - map: ["jumpsuit"]
-        - map: ["enum.HumanoidVisualLayers.LHand"]
-        - map: ["enum.HumanoidVisualLayers.RHand"]
-        - map: ["enum.HumanoidVisualLayers.Handcuffs"]
-          color: "#ffffff"
-          sprite: Objects/Misc/handcuffs.rsi
-          state: body-overlay-2
-          visible: false
-        - map: ["id"]
-        - map: ["gloves"]
-        - map: ["shoes"]
-        - map: ["ears"]
-        - map: ["innerBelt"]
-        - map: ["innerNeck"]
-        - map: ["outerClothing"]
-        - map: ["eyes"]
-        - map: ["belt"]
-        - map: ["neck"]
-        - map: [ "enum.HumanoidVisualLayers.TailOversuit" ]
-        - map: ["back"]
-        - map: ["enum.HumanoidVisualLayers.FacialHair"]
-        - map: ["enum.HumanoidVisualLayers.Hair"]
-        - map: ["enum.HumanoidVisualLayers.HeadSide"]
-        - map: ["enum.HumanoidVisualLayers.HeadTop"]
-        - map: ["mask"]
-        - map: ["head"]
-        - map: ["pocket1"]
-        - map: ["pocket2"]
-        - map: ["enum.HumanoidVisualLayers.Tail"]

@@ -18,7 +18,7 @@ marking-LizardHornsKoboldEarspiercings-horns_kobold_ears = Ears
 marking-LizardHornsKoboldEarspiercings-horns_kobold_ears_piercings = Piercings
 
 marking-Fangs = Lizard Fangs
-marking-Fangs-Fangs = Fangs
+marking-Fangs-fangs = Fangs
 
 marking-LizardBeard = Lizard Beard
 marking-LizardBeard-beard = Beard

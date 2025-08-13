@@ -1,8 +1,9 @@
-// SPDX-FileCopyrightText: 2024 Aiden <aiden@djkraz.com>
-// SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT <77995199+DEATHB4DEFEAT@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 VMSolidus <evilexecutive@gmail.com>
-// SPDX-FileCopyrightText: 2024 sleepyyapril <flyingkarii@gmail.com>
-// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Aiden
+// SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT
+// SPDX-FileCopyrightText: 2024 VMSolidus
+// SPDX-FileCopyrightText: 2025 ash lea
+// SPDX-FileCopyrightText: 2025 portfiend
+// SPDX-FileCopyrightText: 2025 sleepyyapril
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -26,10 +27,11 @@ using Content.Shared.HealthExaminable;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Utility;
+using Content.Server._DEN.Body.Systems;
 
 namespace Content.Server.Vampiric
 {
-    public sealed class BloodSuckerSystem : EntitySystem
+    public sealed partial class BloodSuckerSystem : EntitySystem
     {
         [Dependency] private readonly BodySystem _bodySystem = default!;
         [Dependency] private readonly SharedSolutionContainerSystem _solutionSystem = default!;
@@ -49,6 +51,9 @@ namespace Content.Server.Vampiric
             SubscribeLocalEvent<BloodSuckerComponent, GetVerbsEvent<InnateVerb>>(AddSuccVerb);
             SubscribeLocalEvent<BloodSuckedComponent, HealthBeingExaminedEvent>(OnHealthExamined);
             SubscribeLocalEvent<BloodSuckedComponent, DamageChangedEvent>(OnDamageChanged);
+
+            SubscribeLocalEvent<BloodSuckerComponent, ComponentStartup>(OnStartup); // DEN
+            SubscribeLocalEvent<BloodSuckerComponent, ComponentShutdown>(OnShutdown); // DEN
             SubscribeLocalEvent<BloodSuckerComponent, BloodSuckDoAfterEvent>(OnDoAfter);
         }
 
@@ -83,7 +88,9 @@ namespace Content.Server.Vampiric
 
         private void OnHealthExamined(EntityUid uid, BloodSuckedComponent component, HealthBeingExaminedEvent args)
         {
-            args.Message.PushNewline();
+            // Floof: allow empty messages for basic examine
+            if (!args.Message.IsEmpty)
+                args.Message.PushNewline();
             args.Message.AddMarkup(Loc.GetString("bloodsucked-health-examine", ("target", uid)));
         }
 

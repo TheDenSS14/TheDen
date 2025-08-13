@@ -1,0 +1,22 @@
+# SPDX-FileCopyrightText: 2024 deltanedas
+# SPDX-FileCopyrightText: 2025 BombasterDS2
+# SPDX-FileCopyrightText: 2025 GoobBot
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  parent: BoxCardboard
+  id: BoxTapeRecorder
+  name: tape recorder box
+  description: A box with colorful cassette tapes and a tape recorder.
+  components:
+  - type: Sprite
+    layers:
+    - state: box_security
+    - sprite: DeltaV/Objects/Storage/boxes.rsi
+      state: recorder
+  - type: StorageFill
+    contents:
+    - id: CassetteTape
+      amount: 4
+    - id: TapeRecorder

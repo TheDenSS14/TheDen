@@ -1,7 +1,9 @@
-// SPDX-FileCopyrightText: 2023 Chief-Engineer <119664036+Chief-Engineer@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 Milon <milonpl.git@proton.me>
-// SPDX-FileCopyrightText: 2025 BlitzTheSquishy <73762869+BlitzTheSquishy@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Chief-Engineer
+// SPDX-FileCopyrightText: 2024 Milon
+// SPDX-FileCopyrightText: 2025 BlitzTheSquishy
+// SPDX-FileCopyrightText: 2025 Jakumba
+// SPDX-FileCopyrightText: 2025 deltanedas
+// SPDX-FileCopyrightText: 2025 sleepyyapril
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -14,6 +16,11 @@ namespace Content.Shared.CartridgeLoader.Cartridges;
 public sealed class LogProbeUiState : BoundUserInterfaceState
 {
     /// <summary>
+    /// The name of the scanned entity.
+    /// </summary>
+    public string EntityName;
+
+    /// <summary>
     /// The list of probed network devices
     /// </summary>
     public List<PulledAccessLog> PulledLogs;
@@ -23,8 +30,9 @@ public sealed class LogProbeUiState : BoundUserInterfaceState
     /// </summary>
     public NanoChatData? NanoChatData { get; }
 
-    public LogProbeUiState(List<PulledAccessLog> pulledLogs, NanoChatData? nanoChatData = null) // DeltaV - NanoChat support
+    public LogProbeUiState(string entityName, List<PulledAccessLog> pulledLogs, NanoChatData? nanoChatData = null) // DeltaV - NanoChat support
     {
+        EntityName = entityName;
         PulledLogs = pulledLogs;
         NanoChatData = nanoChatData; // DeltaV
     }

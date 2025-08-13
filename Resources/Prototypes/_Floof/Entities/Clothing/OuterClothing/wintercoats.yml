@@ -1,9 +1,10 @@
-# SPDX-FileCopyrightText: 2024 Lonely Fox <foxcumberland@gmail.com>
-# SPDX-FileCopyrightText: 2024 ShatteredSwords <135023515+ShatteredSwords@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 cynical <superpilotboy@gmail.com>
-# SPDX-FileCopyrightText: 2025 KekaniCreates <kekanisb@gmail.com>
-# SPDX-FileCopyrightText: 2025 Rosycup <178287475+Rosycup@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Lonely Fox
+# SPDX-FileCopyrightText: 2024 ShatteredSwords
+# SPDX-FileCopyrightText: 2024 cynical
+# SPDX-FileCopyrightText: 2025 Adrian16199
+# SPDX-FileCopyrightText: 2025 KekaniCreates
+# SPDX-FileCopyrightText: 2025 Rosycup
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -140,9 +141,10 @@
   - type: ClothingSpeedModifier
     walkModifier: 0.9
     sprintModifier: 0.9
+  - type: AllowSuitStorage
 
 - type: entity
-  parent: ClothingOuterWinterCoat
+  parent: ClothingLongcoatSec
   id: ClothingLongcoatWarden
   name: warden's armored longcoat
   description: A Double-Breasted longcoat, specifically. This one is black with silver buttons and red band and cuffs, fit for the Warden. Security longcoats sport protective plate carriers underneath, but are fairly heavy.
@@ -166,7 +168,7 @@
     sprintModifier: 0.9
 
 - type: entity
-  parent: ClothingOuterWinterCoat
+  parent: ClothingLongcoatSec
   id: ClothingLongcoatBrigmedic
   name: corpsman's armored longcoat
   description: A Double-Breasted longcoat, specifically. This one is black with silver buttons, red and blue bands, and sterile fabric cuffs fit for the Corpsman. Security longcoats sport protective plate carriers underneath, though this one comes with lighter plates that traditional Armored Longcoats.
@@ -190,7 +192,7 @@
     sprintModifier: 0.95
 
 - type: entity
-  parent: ClothingOuterWinterCoat
+  parent: ClothingLongcoatSec
   id: ClothingLongcoatHoS
   name: head of security's armored longcoat
   description: A Double-Breasted longcoat, specifically. This one is black with gold buttons and gray sleeves with velvet trim along the whole outfit. A heavier alternative to the Armored Coat.

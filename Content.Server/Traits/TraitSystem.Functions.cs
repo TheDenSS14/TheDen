@@ -1,5 +1,6 @@
 // SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT
 // SPDX-FileCopyrightText: 2025 BramvanZijp
+// SPDX-FileCopyrightText: 2025 Falcon
 // SPDX-FileCopyrightText: 2025 Raikyr0
 // SPDX-FileCopyrightText: 2025 RedFoxIV
 // SPDX-FileCopyrightText: 2025 Skubman
@@ -903,6 +904,9 @@ public sealed partial class TraitSetAdditionalEmoteSound : TraitFunction
     [DataField, AlwaysPushInheritance]
     public bool UseSex { get; private set; }
 
+    [DataField("replace"), AlwaysPushInheritance]
+    public bool ReplaceExistingEmotes { get; private set; }
+
     public override void OnPlayerSpawn(EntityUid uid,
         IComponentFactory factory,
         IEntityManager entityManager,
@@ -911,12 +915,12 @@ public sealed partial class TraitSetAdditionalEmoteSound : TraitFunction
         var additionalVocalSounds = entityManager.EnsureComponent<AdditionalVocalSoundsComponent>(uid);
         var appearanceComponent = entityManager.GetComponentOrNull<HumanoidAppearanceComponent>(uid);
         var prototypeManager = IoCManager.Resolve<IPrototypeManager>();
-        var sex = appearanceComponent?.Sex ?? Sex.Unsexed;
+        var voice = appearanceComponent?.PreferredVoice ?? Sex.Unsexed;
         var emotePrefix = string.Empty;
 
         if (UseSex)
         {
-            if (sex == Sex.Female)
+            if (voice == Sex.Female)
                 emotePrefix = "Female";
             else
                 emotePrefix = "Male";
@@ -927,6 +931,7 @@ public sealed partial class TraitSetAdditionalEmoteSound : TraitFunction
         if (string.IsNullOrEmpty(protoId) || !prototypeManager.TryIndex<EmoteSoundsPrototype>(protoId, out _))
             return;
 
+        additionalVocalSounds.ReplaceExistingEmotes = ReplaceExistingEmotes;
         additionalVocalSounds.AdditionalSounds = protoId;
     }
 }

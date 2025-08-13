@@ -1,0 +1,108 @@
+# SPDX-FileCopyrightText: 2024 V
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+# Neck
+- type: loadout
+  id: CaptainGreatcoat
+  category: JobsCommandCaptain
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutCaptainNeck
+    - !type:CharacterJobRequirement
+      jobs:
+        - Captain
+  items:
+    - ClothingNeckCloakCaptaingreatcoat
+
+#Uniforms
+- type: loadout
+  id: CaptainEveningAttire
+  category: JobsCommandCaptain
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutCaptainUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - Captain
+  items:
+    - ClothingUniformJumpsuitCaptaineveningattire
+
+#Head
+- type: loadout
+  id: CaptainCrusherCap
+  category: JobsCommandCaptain
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutCaptainHead
+    - !type:CharacterJobRequirement
+      jobs:
+        - Captain
+  items:
+    - ClothingHeadHatCaptaincrushercap
+
+#Outer clothing
+- type: loadout
+  id: CaptainRepeller
+  category: JobsCommandCaptain
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutCaptainOuter
+    - !type:CharacterJobRequirement
+      jobs:
+        - Captain
+  items:
+    - ClothingOuterArmorCaptainRepeller
+
+#Eyes
+- type: loadout
+  category: JobsCommandCaptain
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutCaptainEyes
+    - !type:CharacterJobRequirement
+      jobs:
+        - Captain
+  id: CaptainVisor
+  items:
+    - ClothingEyesGlassesCaptainvisor
+
+#Gloves
+- type: loadout
+  id: CaptainFlightGloves
+  category: JobsCommandCaptain
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutCaptainGloves
+    - !type:CharacterJobRequirement
+      jobs:
+        - Captain
+  items:
+    - ClothingHandsGlovesCaptainflightgloves
+
+#Shoes
+- type: loadout
+  id: CaptainJumpBoots
+  category: JobsCommandCaptain
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutCaptainShoes
+    - !type:CharacterJobRequirement
+      jobs:
+        - Captain
+  items:
+    - ClothingShoesBootsCaptainjumpboots

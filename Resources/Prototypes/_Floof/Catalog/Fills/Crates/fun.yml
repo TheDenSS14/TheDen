@@ -1,0 +1,13 @@
+# SPDX-FileCopyrightText: 2025 M3739
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  id: CrateFunInstrumentsDrumKit
+  parent: CrateGenericSteel
+  name: drum kit crate
+  description: Lay down a beat, and rock on with this crate containing a full drum kit!
+  components:
+    - type: StorageFill
+      contents:
+        - id: DrumkitInstrument

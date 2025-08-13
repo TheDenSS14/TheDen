@@ -1,0 +1,44 @@
+# SPDX-FileCopyrightText: 2025 Tanix
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+# Spoken by Vox.
+- type: language
+  id: VoxPidgin
+  isVisibleLanguage: true
+  speech:
+    color: "#B900AA" #didn't wish to go looking at fonts when they aren't used in 13 so didn't assign one; feel free to do so
+  obfuscation:
+    !type:SyllableObfuscation
+    minSyllables: 1
+    maxSyllables: 2 #some syllables are four letters long
+    replacement:
+    - ti
+    - ti
+    - ti
+    - hi
+    - hi
+    - ki
+    - ki
+    - ki
+    - ki
+    - ya
+    - ta
+    - ha
+    - ka
+    - ya
+    - yi
+    - chi
+    - cha
+    - kah
+    - SKRE
+    - AHK
+    - EHK
+    - RAWK
+    - KRA
+    - AAA
+    - EEE
+    - KI
+    - II
+    - KRI
+    - KA

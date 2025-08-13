@@ -17,16 +17,15 @@
 # SPDX-FileCopyrightText: 2024 XavierSomething
 # SPDX-FileCopyrightText: 2024 deltanedas
 # SPDX-FileCopyrightText: 2024 gluesniffler
-# SPDX-FileCopyrightText: 2024 sleepyyapril <***>
-# SPDX-FileCopyrightText: 2024 sleepyyapril <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>
+# SPDX-FileCopyrightText: 2024 sleepyyapril
 # SPDX-FileCopyrightText: 2025 Blitz
+# SPDX-FileCopyrightText: 2025 MajorMoth
 # SPDX-FileCopyrightText: 2025 Savante-Sam
 # SPDX-FileCopyrightText: 2025 Skubman
 # SPDX-FileCopyrightText: 2025 Stop-Signs
 # SPDX-FileCopyrightText: 2025 Tabitha
 # SPDX-FileCopyrightText: 2025 VMSolidus
 # SPDX-FileCopyrightText: 2025 Your Name
-# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -47,6 +46,7 @@
   - BorgModuleHarvesting
   - BorgModuleMusique
   - BorgModuleClowning
+  - BorgModuleDiagnosis
   - HamtrHarness
   - HamtrLArm
   - HamtrRArm
@@ -88,6 +88,16 @@
   - BiofabricatorMachineCircuitboard
   - BiomassReclaimerMachineCircuitboard
   - AdvancedMicrowaveMachineCircuitBoard # DeltaV
+  - HydroponicsTrayMachineCircuitboard
+  - HolopadMachineCircuitboard
+  - DoorElectronics
+  - FirelockElectronics
+  - FireAlarmElectronics
+  - IntercomElectronics
+  - MailingUnitElectronics
+  - StationMapElectronics
+  - BaseComputerModularCircuitBoard # Arcadis - Modular Computer System
+  - DiskBurnerMachineCircuitboard # Arcadis - Modular Computer System
 
 # TODO: Add recipes to manufacture Vacsuits.
 # - type: technology
@@ -131,17 +141,22 @@
   - SyringeCryostasis
   - AdvMopItem
   - MegaSprayBottle
-  - TrashBagBluespace 
+  - TrashBagBluespace
   - WeaponSprayNozzle
   - ClothingBackpackWaterTank
   - CargoTelepadMachineCircuitboard
   - ClothingShoesBootsMagSci
   - ClothingNeckMantleMag
   - ClothingShoesBootsMoon
+  - CloningPodMachineCircuitboard
   - CloningConsoleComputerCircuitboard
   - MedicalScannerMachineCircuitboard
   - MetempsychoticMachineCircuitboard
   - EnvirosuitExtinguisherRefill
+  - CrewMonitoringComputerCircuitboard
+  - HandheldCrewMonitor
+  - SeedExtractorMachineCircuitboard
+  - RollerBedHoloSpawnFolded
 
 - type: technology
   id: HONKMech
@@ -192,6 +207,7 @@
   - ClothingShoesBootsSpeed
   - BluespaceBeaker
   - SyringeBluespace
+  - ReagentGrinderIndustrialMachineCircuitboard
   # TODO: Add things like frontier's Hyposprays.
   softCapContribution: 1.5
 

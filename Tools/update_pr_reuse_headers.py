@@ -480,7 +480,7 @@ def process_file(file_path, default_license_id, pr_base_sha=None, pr_head_sha=No
         print(f"Error getting git user: {e}")
 
     # dirty changes, this entire script needs to be refactored!!!
-    email_removal_pattern = re.compile(r"^(.+) (<\S+@\S+>)$") # we match the name as the first capture group and the email as the 2nd
+    email_removal_pattern = re.compile(r"^(.+) (<\S+>)$") # we match the name as the first capture group and the email as the 2nd
     for author in list(git_authors.keys()):
         match = email_removal_pattern.match(author)
         if match:

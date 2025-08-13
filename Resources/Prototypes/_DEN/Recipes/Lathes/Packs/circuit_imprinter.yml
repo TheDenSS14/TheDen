@@ -1,0 +1,161 @@
+# SPDX-FileCopyrightText: 2025 MajorMoth
+# SPDX-FileCopyrightText: 2025 Sir Warock
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+# TODO: I know it's horrid, but if you separate every single one into their proper forks, I'll pay you.
+# There are existing packs for some of these recipes, and some which have items that don't exist. I'm sorry.
+
+- type: latheRecipePack
+  id: CircuitImprinterStaticAwfulDen
+  recipes:
+  - ProtolatheMachineCircuitboard
+  - AutolatheMachineCircuitboard
+  - BookPressMachineCircuitboard
+  - CircuitImprinterMachineCircuitboard
+  - BiogeneratorMachineCircuitboard
+  - OreProcessorMachineCircuitboard
+  - MaterialReclaimerMachineCircuitboard
+  - ElectrolysisUnitMachineCircuitboard
+  - CentrifugeMachineCircuitboard
+  - ChemDispenserMachineCircuitboard
+  - ChemMasterMachineCircuitboard
+  - CondenserMachineCircuitBoard
+  - HotplateMachineCircuitboard
+  - PrinterDocMachineCircuitboard  # Corvax-Printer
+  - UniformPrinterMachineCircuitboard
+  - FloorGreenCircuit
+  - FloorBlueCircuit
+  - MicrowaveMachineCircuitboard
+  - ReagentGrinderMachineCircuitboard
+  - ElectricGrillMachineCircuitboard
+  - BoozeDispenserMachineCircuitboard
+  - SodaDispenserMachineCircuitboard
+  - DeepFryerMachineCircuitboard #Nyano - Summary: adds deep fryer circuit board
+  - SpaceHeaterMachineCircuitBoard
+  - StationAnchorCircuitboard
+  - StasisBedMachineCircuitboard
+  - CryoPodMachineCircuitboard
+  - N14MaterialCircuitry
+  - CutterMachineCircuitboard
+  - SalvageMagnetMachineCircuitboard
+  - BorgChargerCircuitboard
+  - ElectrolyzerMachineCircuitboard # Assmos - /tg/ gases
+  - BluespaceGasSenderMachineBoard # Assmos - Bluespace Gas
+  - ThermomachineFreezerMachineCircuitBoard # Assmos - Moved to staticRecipes from dynamicRecipes
+  - SalvageExpeditionsComputerCircuitboard
+  - OperatingTableCircuitboard # Shitmed Change
+
+- type: latheRecipePack
+  id: CircuitImprinterDynamicAwfulDen
+  recipes:
+  - SeedExtractorMachineCircuitboard
+  - ReagentGrinderIndustrialMachineCircuitboard
+  - DroneElectronics
+  - HellfireFreezerMachineCircuitBoard
+  - PortableScrubberMachineCircuitBoard
+  - CloningPodMachineCircuitboard
+  - MedicalScannerMachineCircuitboard
+  - BiomassReclaimerMachineCircuitboard
+  - BiofabricatorMachineCircuitboard
+  - SurveillanceCameraRouterCircuitboard
+  - SurveillanceCameraMonitorCircuitboard
+  - SurveillanceWirelessCameraMonitorCircuitboard
+  - SurveillanceCameraWirelessRouterCircuitboard
+  - ComputerTelevisionCircuitboard
+  - JukeboxCircuitBoard
+  - SurveillanceWirelessCameraMovableCircuitboard
+  - SurveillanceWirelessCameraAnchoredCircuitboard
+  - SolarControlComputerCircuitboard
+  - SolarTrackerElectronics
+  - TurboItemRechargerCircuitboard
+  - PowerComputerCircuitboard
+  - AlertsComputerCircuitboard
+  # - AutolatheHyperConvectionMachineCircuitboard
+  # - ProtolatheHyperConvectionMachineCircuitboard
+  # - CircuitImprinterHyperConvectionMachineCircuitboard
+  - FatExtractorMachineCircuitboard
+  - FlatpackerMachineCircuitboard
+  - SheetifierMachineCircuitboard
+  - ShuttleConsoleCircuitboard
+  - RadarConsoleCircuitboard
+  - TechDiskComputerCircuitboard
+  - DawInstrumentMachineCircuitboard
+  - CloningConsoleComputerCircuitboard
+  - OreProcessorIndustrialMachineCircuitboard
+  - CargoTelepadMachineCircuitboard
+  - RipleyCentralElectronics
+  - RipleyPeripheralsElectronics
+  - HonkerCentralElectronics
+  - HonkerPeripheralsElectronics
+  - HonkerTargetingElectronics
+  - HamtrCentralElectronics
+  - HamtrPeripheralsElectronics
+  - PortableGeneratorPacmanMachineCircuitboard
+  - PortableGeneratorSuperPacmanMachineCircuitboard
+  - PortableGeneratorJrPacmanMachineCircuitboard
+  - PowerCageRechargerCircuitboard
+  - EmitterCircuitboard
+  - ThrusterMachineCircuitboard
+  - GyroscopeMachineCircuitboard
+  - MiniGravityGeneratorCircuitboard
+  - ShuttleGunKineticCircuitboard
+  - GasRecyclerMachineCircuitboard
+  - AnalysisComputerCircuitboard
+  - ExosuitFabricatorMachineCircuitboard
+  - AnomalyVesselCircuitboard
+  - AnomalyVesselExperimentalCircuitboard
+  - AnomalySynchronizerCircuitboard
+  - APECircuitboard
+  - ArtifactAnalyzerMachineCircuitboard
+  - ArtifactCrusherMachineCircuitboard
+  - TelecomServerCircuitboard
+  - MassMediaCircuitboard
+  - ReverseEngineeringMachineCircuitboard
+  - CrewMonitoringComputerCircuitboard
+  - DoorElectronics
+  - FireAlarmElectronics
+  - FirelockElectronics
+  - IntercomElectronics
+  - MailingUnitElectronics
+  - StationMapElectronics
+  - MetempsychoticMachineCircuitboard
+  - JukeboxCircuitBoard
+  - AutodocCircuitboard # Shitmed Change
+  - OperatingTableAdvancedCircuitboard
+  - MaterialSiloCircuitboard
+  - GygaxCentralElectronics
+  - GygaxPeripheralsElectronics
+  - GygaxTargetingElectronics
+  - DurandCentralElectronics
+  - DurandPeripheralsElectronics
+  - DurandTargetingElectronics
+  - ClarkeCentralElectronics
+  - ClarkePeripheralsElectronics
+  - SMESAdvancedMachineCircuitboard
+  - GygaxCentralElectronics
+  - GygaxPeripheralsElectronics
+  - GygaxTargetingElectronics
+  - DurandCentralElectronics
+  - DurandPeripheralsElectronics
+  - DurandTargetingElectronics
+  - ClarkeCentralElectronics
+  - ClarkePeripheralsElectronics
+  - BaseComputerModularCircuitBoard # Arcadis - Modular Computer System
+  - DiskBurnerMachineCircuitboard # Arcadis - Modular Computer System
+  - AdvancedMicrowaveMachineCircuitBoard
+  - HolopadMachineCircuitboard
+  - BluespaceGasSenderMachineBoard # Assmos - Bluespace Gas
+  - ThermomachineUpgradedFreezerMachineCircuitBoard # Assmos
+  - ThermomachineAdvancedFreezerMachineCircuitBoard # Assmos
+  - CrystallizerMachineCircuitboard # Assmos - Crystallizer
+  - ElectrolyzerMachineCircuitboard # Assmos - /tg/ gases
+
+- type: latheRecipePack
+  id: CircuitImprinterDynamicEmagAwfulDen
+  recipes:
+  - ShuttleGunDusterCircuitboard
+  - ShuttleGunFriendshipCircuitboard
+  - ShuttleGunPerforatorCircuitboard
+  - ShuttleGunSvalinnMachineGunCircuitboard

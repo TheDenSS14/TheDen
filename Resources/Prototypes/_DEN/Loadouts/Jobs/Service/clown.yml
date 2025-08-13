@@ -5,7 +5,7 @@
 
 - type: loadout
   id: LoadoutTowelYellow
-  category:  JobsServiceClown
+  category: JobsServiceClown
   cost: 1
   requirements:
     - !type:CharacterJobRequirement
@@ -13,3 +13,35 @@
         - Clown
   items:
     - TowelColorYellow
+
+- type: loadout
+  id: LoadoutBackpackMessengerClown
+  category: JobsServiceClown
+  cost: 0
+  exclusive: true
+  customColorTint: true
+  canBeHeirloom: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutClownBackpacks
+    - !type:CharacterJobRequirement
+      jobs:
+        - Clown
+  items:
+    - ClothingBackpackMessengerClown
+
+- type: loadout
+  id: LoadoutServiceClownMaskAncient
+  category: JobsServiceClown
+  cost: 0
+  exclusive: true
+  customColorTint: true
+  canBeHeirloom: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutClownMask
+    - !type:CharacterJobRequirement
+      jobs:
+        - Clown
+  items:
+    - ClothingMaskClownAncient

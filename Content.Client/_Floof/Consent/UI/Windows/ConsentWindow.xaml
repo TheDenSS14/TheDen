@@ -1,0 +1,71 @@
+<!--
+SPDX-FileCopyrightText: 2024 Pierson Arnold <greyalphawolf7@gmail.com>
+SPDX-FileCopyrightText: 2024 sleepyyapril <***>
+SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+
+SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+-->
+
+<controls:FancyWindow
+    xmlns="https://spacestation14.io"
+    xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:gfx="clr-namespace:Robust.Client.Graphics;assembly=Robust.Client"
+    xmlns:ui="clr-namespace:Content.Client._AS.UserInterface.Controls;assembly=Content.Client"
+    xmlns:xe="clr-namespace:Content.Client.UserInterface.XamlExtensions"
+    xmlns:style="clr-namespace:Content.Client.Stylesheets"
+    xmlns:xamlExtensions="clr-namespace:Content.Client.UserInterface.XamlExtensions"
+    xmlns:controls1="clr-namespace:Content.Client._AS.UserInterface.Controls"
+    MinSize="620 670"
+    Title="{Loc consent-window-title}"
+    Resizable="False">
+    <BoxContainer Orientation="Vertical" HorizontalExpand="True" Margin="5">
+        <Label Text="{Loc consent-window-text}" />
+        <Label Name="UnsavedChangesWarning" Text="{Loc consent-window-saved-changes}" />
+        <BoxContainer Orientation="Horizontal" Margin="5">
+            <Label Name="CharacterLimit" Access="Public" />
+            <Control HorizontalExpand="True" />
+            <Button
+                Name="SaveConsentSettings"
+                Access="Public"
+                Text="Save"
+                Disabled="True" />
+        </BoxContainer>
+        <Control HorizontalExpand="True" />
+        <controls:NeoTabContainer Name="ConsentTabs" VerticalExpand="True" HScrollEnabled="False" VScrollEnabled="False">
+            <BoxContainer Name="FreetextTab" Orientation="Vertical" HorizontalExpand="True" Margin="5">
+                <PanelContainer HorizontalExpand="True" VerticalExpand="True" MinWidth="200">
+                    <PanelContainer.PanelOverride>
+                        <gfx:StyleBoxFlat BackgroundColor="#1B1B1E" />
+                    </PanelContainer.PanelOverride>
+                    <TextEdit
+                        Name="ConsentFreetext"
+                        Access="Public"
+                        MinHeight="100"
+                        VerticalExpand="True" />
+                </PanelContainer>
+            </BoxContainer>
+            <BoxContainer Name="TogglesTab" Orientation="Vertical" HorizontalExpand="True" Margin="5">
+                <ScrollContainer HorizontalExpand="True" VerticalExpand="True" HScrollEnabled="False" VScrollEnabled="True" MinHeight="50">
+                    <controls:NeoTabContainer Name="CategoriesContainer" VerticalExpand="True" HScrollEnabled="False" VScrollEnabled="False">
+                        <!-- The rest here is generated programmatically -->
+                    </controls:NeoTabContainer>
+                </ScrollContainer>
+            </BoxContainer>
+            <BoxContainer Orientation="Vertical" HorizontalExpand="False" VerticalExpand="True" Margin="5">
+            <Label Text= "Consent Cards"/>
+                <ui:CardButton
+                    Name="XCard"
+                    Access="Internal"
+                    Icon="{xe:Tex '/Textures/_AS/Interface/x.svg.96dpi.png'}"
+                    Description="I am uncomfortable\nwith this scene."
+                    BackgroundColor="#FF2D2D38"
+                    HoverColor="#FF3D3D48"
+                    PressedColor="#FF4D4D58"
+                    MinSize="180 150"
+                    VerticalExpand="True"
+                />
+            </BoxContainer>
+        </controls:NeoTabContainer>
+    </BoxContainer>
+</controls:FancyWindow>

@@ -16,3 +16,6 @@ guide-entry-zavodskoi-interstellar = Zavodskoi Interstellar
 guide-entry-zeng-hu-pharmaceuticals = Zeng-Hu Pharmaceuticals
 
 guide-entry-loadout-info-security-weapons = Security Weapons
+
+guide-entry-nations = Nations
+guide-entry-sol-alliance = Sol Alliance

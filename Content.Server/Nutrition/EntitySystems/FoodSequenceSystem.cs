@@ -1,14 +1,17 @@
-// SPDX-FileCopyrightText: 2024 Ed <96445749+TheShuEd@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 sleepyyapril <flyingkarii@gmail.com>
-// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Ed
+// SPDX-FileCopyrightText: 2025 portfiend
+// SPDX-FileCopyrightText: 2025 sleepyyapril
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
+using System.Linq;
 using System.Numerics;
 using System.Text;
 using Content.Server.Nutrition.Components;
 using Content.Shared.Chemistry.EntitySystems;
+using Content.Shared.Examine;
 using Content.Shared.Interaction;
+using Content.Shared.Localizations;
 using Content.Shared.Mobs.Systems;
 using Content.Shared.Nutrition;
 using Content.Shared.Nutrition.Components;
@@ -38,6 +41,7 @@ public sealed class FoodSequenceSystem : SharedFoodSequenceSystem
         base.Initialize();
 
         SubscribeLocalEvent<FoodSequenceStartPointComponent, InteractUsingEvent>(OnInteractUsing);
+        SubscribeLocalEvent<FoodSequenceStartPointComponent, ExaminedEvent>(OnExamined); // DEN
 
         SubscribeLocalEvent<FoodMetamorphableByAddingComponent, FoodSequenceIngredientAddedEvent>(OnIngredientAdded);
     }
@@ -46,6 +50,21 @@ public sealed class FoodSequenceSystem : SharedFoodSequenceSystem
     {
         if (TryComp<FoodSequenceElementComponent>(args.Used, out var sequenceElement))
             TryAddFoodElement(ent, (args.Used, sequenceElement), args.User);
+    }
+
+    // DEN: Show ingredient list on examine
+    private void OnExamined(Entity<FoodSequenceStartPointComponent> ent, ref ExaminedEvent args)
+    {
+        var layers = ent.Comp.FoodLayers;
+        if (layers.Count == 0)
+            return;
+
+        var layerNames = layers.Select(l => l.Name).ToList();
+        var examineText = Loc.GetString("food-sequence-ingredient-list",
+            ("entity", ent),
+            ("ingredients", ContentLocalizationManager.FormatList(layerNames)));
+
+        args.PushText(examineText);
     }
 
     private void OnIngredientAdded(Entity<FoodMetamorphableByAddingComponent> ent, ref FoodSequenceIngredientAddedEvent args)
@@ -145,6 +164,7 @@ public sealed class FoodSequenceSystem : SharedFoodSequenceSystem
         var flip = start.Comp.AllowHorizontalFlip && _random.Prob(0.5f);
         var layer = new FoodSequenceVisualLayer(elementIndexed,
             _random.Pick(elementIndexed.Sprites),
+            name: Name(element), // DEN - Add examine text for foodsequences
             new Vector2(flip ? -1 : 1, 1),
             new Vector2(
                 _random.NextFloat(start.Comp.MinLayerOffset.X, start.Comp.MaxLayerOffset.X),

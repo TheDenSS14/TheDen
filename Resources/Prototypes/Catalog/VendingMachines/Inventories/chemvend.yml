@@ -1,12 +1,12 @@
-# SPDX-FileCopyrightText: 2023 IProduceWidgets <107586145+IProduceWidgets@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2023 Sailor <109166122+Equivocateur@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2023 deltanedas <39013340+deltanedas@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2023 freeman2651 <104049107+freeman2651@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2023 rosieposie <52761126+rosieposieeee@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 Debug <49997488+DebugOk@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 sleepyyapril <***>
-# SPDX-FileCopyrightText: 2024 wafehling <wafehling@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 IProduceWidgets
+# SPDX-FileCopyrightText: 2023 Sailor
+# SPDX-FileCopyrightText: 2023 deltanedas
+# SPDX-FileCopyrightText: 2023 freeman2651
+# SPDX-FileCopyrightText: 2023 rosieposie
+# SPDX-FileCopyrightText: 2024 Debug
+# SPDX-FileCopyrightText: 2024 wafehling
+# SPDX-FileCopyrightText: 2025 BlitzTheSquishy
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -14,15 +14,13 @@
   id: ChemVendInventory
   startingInventory:
     Jug: 8
-    BoxBottle: 1
-    BoxBeaker: 1
     JugAluminium: 2
     JugCarbon: 4
     JugChlorine: 1
     JugCopper: 2
     JugEthanol: 2
     JugFluorine: 1
-    JugHydrogen: 4
+    JugHydrogen: 3
     JugIodine: 1
     JugIron: 2
     JugLithium: 2
@@ -39,21 +37,18 @@
     JugWeldingFuel: 1
   emaggedInventory:
     ToxinChemistryBottle: 1
-    BluespaceBeaker: 1
 
 - type: vendingMachineInventory
   id: ChemVendInventorySyndicate
   startingInventory:
     Jug: 8
-    BoxBottle: 2
-    BoxBeaker: 1
     JugAluminium: 2
     JugCarbon: 4
     JugChlorine: 1
     JugCopper: 2
     JugEthanol: 2
     JugFluorine: 1
-    JugHydrogen: 4
+    JugHydrogen: 3
     JugIodine: 1
     JugIron: 2
     JugLithium: 2

@@ -1,29 +1,29 @@
-# SPDX-FileCopyrightText: 2023 AJCM-git <60196617+AJCM-git@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2023 Colin-Tel <113523727+Colin-Tel@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2023 Debug <49997488+DebugOk@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2023 I.K <45953835+notquitehadouken@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2023 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2023 Nairod <110078045+Nairodian@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2023 Nim <128169402+Nimfar11@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2023 lzk <124214523+lzk228@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2023 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2023 metalgearsloth <comedian_vs_clown@hotmail.com>
-# SPDX-FileCopyrightText: 2023 notquitehadouken <1isthisameme>
-# SPDX-FileCopyrightText: 2024 CaasGit <87243814+CaasGit@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT <77995199+DEATHB4DEFEAT@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 Fansana <fansana95@googlemail.com>
-# SPDX-FileCopyrightText: 2024 FoxxoTrystan <45297731+FoxxoTrystan@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 Mnemotechnican <69920617+Mnemotechnician@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 Mr. 27 <45323883+Dutch-VanDerLinde@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 Tayrtahn <tayrtahn@gmail.com>
-# SPDX-FileCopyrightText: 2024 Whisper <121047731+QuietlyWhisper@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 fox <daytimer253@gmail.com>
-# SPDX-FileCopyrightText: 2024 gluesniffler <159397573+gluesniffler@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 gluesniffler <linebarrelerenthusiast@gmail.com>
-# SPDX-FileCopyrightText: 2024 sleepyyapril <flyingkarii@gmail.com>
-# SPDX-FileCopyrightText: 2025 Eris <eris@erisws.com>
-# SPDX-FileCopyrightText: 2025 VMSolidus <evilexecutive@gmail.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 AJCM-git
+# SPDX-FileCopyrightText: 2023 Colin-Tel
+# SPDX-FileCopyrightText: 2023 Debug
+# SPDX-FileCopyrightText: 2023 I.K
+# SPDX-FileCopyrightText: 2023 Leon Friedrich
+# SPDX-FileCopyrightText: 2023 Nairod
+# SPDX-FileCopyrightText: 2023 Nim
+# SPDX-FileCopyrightText: 2023 lzk
+# SPDX-FileCopyrightText: 2023 metalgearsloth
+# SPDX-FileCopyrightText: 2023 notquitehadouken
+# SPDX-FileCopyrightText: 2024 CaasGit
+# SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT
+# SPDX-FileCopyrightText: 2024 Fansana
+# SPDX-FileCopyrightText: 2024 FoxxoTrystan
+# SPDX-FileCopyrightText: 2024 Mnemotechnican
+# SPDX-FileCopyrightText: 2024 Mr. 27
+# SPDX-FileCopyrightText: 2024 Tayrtahn
+# SPDX-FileCopyrightText: 2024 Whisper
+# SPDX-FileCopyrightText: 2024 fox
+# SPDX-FileCopyrightText: 2024 gluesniffler
+# SPDX-FileCopyrightText: 2025 Blitz
+# SPDX-FileCopyrightText: 2025 BlitzTheSquishy
+# SPDX-FileCopyrightText: 2025 Eris
+# SPDX-FileCopyrightText: 2025 Suyo
+# SPDX-FileCopyrightText: 2025 VMSolidus
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -170,9 +170,14 @@
   - type: Speech
     speechVerb: Slime
     speechSounds: Slime
-    allowedEmotes: ['Squish']
+    allowedEmotes: ['Squish', 'Bubble', 'Pop'] # Imp: add Bubble, Pop
   - type: TypingIndicator
     proto: slime
+  - type: Vocal # Imp
+    sounds: # Imp
+      Male: AnimalSlime # Imp
+      Female: AnimalSlime # Imp
+      Unsexed: AnimalSlime # Imp
   - type: NpcFactionMember
     factions:
     - SimpleNeutral
@@ -203,6 +208,11 @@
     size: Huge
   - type: Sprite
     color: "#FFFFFF55"
+    layers:
+    - map: [ "enum.DamageStateVisualLayers.Base" ]
+      state: blue_adult_slime
+    - map: [ "enum.DamageStateVisualLayers.BaseUnshaded" ]
+      state: aslime-mischievous
   - type: MeleeWeapon
     attackRate: 2
     damage:
@@ -212,6 +222,7 @@
     states:
       Alive:
         Base: blue_adult_slime
+        BaseUnshaded: aslime-mischievous
       Dead:
         Base: blue_adult_slime_dead
 
@@ -220,10 +231,17 @@
   id: MobAdultSlimesBlue
   parent: MobAdultSlimes
   components:
+  - type: Sprite
+    layers:
+    - map: [ "enum.DamageStateVisualLayers.Base" ]
+      state: blue_adult_slime
+    - map: [ "enum.DamageStateVisualLayers.BaseUnshaded" ]
+      state: aslime-mischievous
   - type: DamageStateVisuals
     states:
       Alive:
         Base: blue_adult_slime
+        BaseUnshaded: aslime-mischievous
       Dead:
         Base: blue_adult_slime_dead
 
@@ -233,6 +251,12 @@
   id: MobAdultSlimesBlueAngry
   suffix: Angry
   components:
+    - type: Sprite
+      layers:
+      - map: [ "enum.DamageStateVisualLayers.Base" ]
+        state: blue_adult_slime
+      - map: [ "enum.DamageStateVisualLayers.BaseUnshaded" ]
+        state: aslime-angry
     - type: NpcFactionMember
       factions:
         - SimpleHostile
@@ -243,6 +267,13 @@
       - MindRoleGhostRoleTeamAntagonist
       raffle:
         settings: short
+    - type: DamageStateVisuals
+      states:
+        Alive:
+          Base: blue_adult_slime
+          BaseUnshaded: aslime-angry
+        Dead:
+          Base: blue_adult_slime_dead
 
 - type: entity
   name: green slime
@@ -253,10 +284,13 @@
       layers:
       - map: [ "enum.DamageStateVisualLayers.Base" ]
         state: green_adult_slime
+      - map: [ "enum.DamageStateVisualLayers.BaseUnshaded" ]
+        state: aslime-mischievous
     - type: DamageStateVisuals
       states:
         Alive:
           Base: green_adult_slime
+          BaseUnshaded: aslime-mischievous
         Dead:
           Base: green_adult_slime_dead
     - type: MeleeWeapon
@@ -273,6 +307,12 @@
   id: MobAdultSlimesGreenAngry
   suffix: Angry
   components:
+    - type: Sprite
+      layers:
+      - map: [ "enum.DamageStateVisualLayers.Base" ]
+        state: green_adult_slime
+      - map: [ "enum.DamageStateVisualLayers.BaseUnshaded" ]
+        state: aslime-angry
     - type: NpcFactionMember
       factions:
         - SimpleHostile
@@ -283,6 +323,13 @@
       - MindRoleGhostRoleTeamAntagonist
       raffle:
         settings: short
+    - type: DamageStateVisuals
+      states:
+        Alive:
+          Base: green_adult_slime
+          BaseUnshaded: aslime-angry
+        Dead:
+          Base: green_adult_slime_dead
 
 - type: entity
   name: yellow slime
@@ -293,10 +340,13 @@
       layers:
       - map: [ "enum.DamageStateVisualLayers.Base" ]
         state: yellow_adult_slime
+      - map: [ "enum.DamageStateVisualLayers.BaseUnshaded" ]
+        state: aslime-mischievous
     - type: DamageStateVisuals
       states:
         Alive:
           Base: yellow_adult_slime
+          BaseUnshaded: aslime-mischievous
         Dead:
           Base: yellow_adult_slime_dead
     - type: MeleeWeapon
@@ -313,6 +363,12 @@
   id: MobAdultSlimesYellowAngry
   suffix: Angry
   components:
+    - type: Sprite
+      layers:
+      - map: [ "enum.DamageStateVisualLayers.Base" ]
+        state: yellow_adult_slime
+      - map: [ "enum.DamageStateVisualLayers.BaseUnshaded" ]
+        state: aslime-angry
     - type: NpcFactionMember
       factions:
         - SimpleHostile
@@ -323,3 +379,10 @@
       - MindRoleGhostRoleTeamAntagonist
       raffle:
         settings: short
+    - type: DamageStateVisuals
+      states:
+        Alive:
+          Base: yellow_adult_slime
+          BaseUnshaded: aslime-angry
+        Dead:
+          Base: yellow_adult_slime_dead

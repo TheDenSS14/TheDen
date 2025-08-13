@@ -14,7 +14,7 @@
 # SPDX-FileCopyrightText: 2022 Willhelm53
 # SPDX-FileCopyrightText: 2022 WlarusFromDaSpace
 # SPDX-FileCopyrightText: 2022 ZeroDayDaemon
-# SPDX-FileCopyrightText: 2022 fishfish458 <fishfish458>
+# SPDX-FileCopyrightText: 2022 fishfish458
 # SPDX-FileCopyrightText: 2022 mirrorcult
 # SPDX-FileCopyrightText: 2022 router
 # SPDX-FileCopyrightText: 2023 Aexxie
@@ -62,6 +62,7 @@
 # SPDX-FileCopyrightText: 2024 Velcroboy
 # SPDX-FileCopyrightText: 2024 gluesniffler
 # SPDX-FileCopyrightText: 2025 Angelo Fallaria
+# SPDX-FileCopyrightText: 2025 Blitz
 # SPDX-FileCopyrightText: 2025 BlitzTheSquishy
 # SPDX-FileCopyrightText: 2025 BlueHNT
 # SPDX-FileCopyrightText: 2025 Gregg
@@ -69,12 +70,13 @@
 # SPDX-FileCopyrightText: 2025 John Willis
 # SPDX-FileCopyrightText: 2025 Nemanja
 # SPDX-FileCopyrightText: 2025 Rosycup
-# SPDX-FileCopyrightText: 2025 Rosycup <***>
-# SPDX-FileCopyrightText: 2025 Rosycup <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>
+# SPDX-FileCopyrightText: 2025 Sir Warock
 # SPDX-FileCopyrightText: 2025 Skubman
 # SPDX-FileCopyrightText: 2025 Solaris
 # SPDX-FileCopyrightText: 2025 VMSolidus
 # SPDX-FileCopyrightText: 2025 Will-Oliver-Br
+# SPDX-FileCopyrightText: 2025 juniwoofs
+# SPDX-FileCopyrightText: 2025 sheepie
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
@@ -124,6 +126,8 @@
       - id: NukeDisk
       - id: PinpointerNuclear
       - id: ClothingOuterHardsuitCap
+      - id: OxygenTankFilled #Den
+      - id: NitrogenTankFilled #Den
       - id: CommsComputerCircuitboard
       - id: ClothingHeadsetAltCommand
       - id: PlushieNuke
@@ -214,6 +218,8 @@
   - type: StorageFill
     contents:
       - id: ClothingOuterHardsuitEngineeringWhite
+      - id: OxygenTankFilled #Den
+      - id: NitrogenTankFilled #Den
       - id: ClothingLongcoatCE # Floofstation
       - id: ClothingMaskBreath
       - id: ClothingEyesGlassesMeson
@@ -275,13 +281,15 @@
   - type: StorageFill
     contents:
       - id: MedkitFilled
-      - id: ClothingHandsGlovesNitrile
+      - id: ClothingHandsGlovesHeavySurgical # Shitmed: CMO gets special thick surgical gloves
       - id: ClothingEyesHudMedical
       - id: ClothingHeadsetAltMedical
       - id: ClothingBackpackDuffelSurgeryFilled
       - id: ClothingMaskSterile
       - id: ClothingHeadHatBeretCmo
       - id: ClothingOuterHardsuitMedical
+      - id: OxygenTankFilled #Den
+      - id: NitrogenTankFilled #Den
       - id: ClothingLongcoatCMO # Floofstation
       - id: Hypospray
       - id: HandheldCrewMonitor
@@ -306,7 +314,7 @@
   - type: StorageFill
     contents:
       - id: MedkitFilled
-      - id: ClothingHandsGlovesNitrile
+      - id: ClothingHandsGlovesHeavySurgical # Shitmed: CMO gets special thick surgical gloves
       - id: ClothingEyesHudMedical
       - id: ClothingHeadsetAltMedical
       - id: ClothingBackpackDuffelSurgeryFilled
@@ -337,6 +345,8 @@
       - id: ProtolatheMachineCircuitboard
       - id: CircuitImprinterMachineCircuitboard
       - id: ClothingOuterHardsuitRd
+      - id: OxygenTankFilled #Den
+      - id: NitrogenTankFilled #Den
       - id: HandTeleporter
       - id: DoorRemoteResearch
       - id: ClothingBeltUtilityFilled
@@ -402,6 +412,8 @@
       - id: ClothingLongcoatHoS # Floofstation
       - id: ClothingMaskNeckGaiter
       - id: ClothingOuterHardsuitCombatHoS # DeltaV - ClothingOuterHardsuitSecurityRed replaced in favour of head of security's advanced combat hardsuit.
+      - id: OxygenTankFilled #Den
+      - id: NitrogenTankFilled #Den
       - id: ClothingBeltSecurityFilled
       - id: ClothingHeadsetAltSecurity
       - id: ClothingEyesGlassesSunglasses
@@ -460,6 +472,8 @@
     contents:
     - id: WeaponRevolverDeckard
     - id: ClothingOuterHardsuitBasic
+    - id: OxygenTankFilled #Den
+    - id: NitrogenTankFilled #Den
     - id: JetpackBlue
     - id: SpaceCash1000
     - id: BeachBall

@@ -1,6 +1,6 @@
-# SPDX-FileCopyrightText: 2024 neuPanda <chriseparton@gmail.com>
-# SPDX-FileCopyrightText: 2025 Rosycup <178287475+Rosycup@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 neuPanda
+# SPDX-FileCopyrightText: 2025 Rosycup
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -10,3 +10,42 @@
   desc: reagent-desc-formaldehyde
   physicalDesc: reagent-physical-desc-sickly
   color: "#F26724"
+
+- type: reagent
+  id: SalicylicAcid
+  name: reagent-name-salicylicacid
+  desc: reagent-desc-salicylicacid
+  group: Medicine
+  physicalDesc: reagent-physical-desc-mucus-like
+  flavor: medicine
+  color: "#f9e0e9"
+  metabolisms:
+    Medicine:
+      metabolismRate: 0.2
+      effects:
+      - !type:HealthChange
+        conditions:
+        - !type:TotalDamage
+          max: 30
+        damage:
+          groups:
+            Brute: -0.6
+      - !type:HealthChange
+        conditions:
+        - !type:TotalDamage
+          min: 30
+        damage:
+          groups:
+            Brute: -2.4
+      - !type:HealthChange
+        conditions:
+        - !type:ReagentThreshold
+          min: 15.5
+        damage: # ODing causes damage but heals brute
+          groups:
+            Burn: 2 # will cause minor caustic damage
+            Brute: -2.4
+      - !type:Jitter
+        conditions:
+        - !type:ReagentThreshold
+          min: 15.5
