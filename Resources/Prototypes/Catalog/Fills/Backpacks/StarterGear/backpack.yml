@@ -241,71 +241,88 @@
 
 - type: entity
   categories: [ HideSpawnMenu ]
-  parent: ClothingBackpackERTLeader
+  parent: ClothingModsuitResponsoryLeader
   id: ClothingBackpackERTLeaderFilled
   components:
     - type: StorageFill
       contents:
-        - id: BoxSurvivalEngineering
-        - id: WeaponDisabler
-        - id: MedicatedSuture
-        - id: RegenerativeMesh
-        - id: BoxZiptie
-        - id: CrowbarRed
-        - id: MagazineMagnum
+      - id: BoxSurvivalEngineering
+      - id: Zipties
+      - id: Zipties
+      - id: Flare
+      - id: Flare
+      - id: WeaponDisablerSMG
+      - id: TelescopicShield
+      - id: TelescopicBaton
+      - id: GrenadeFlashBang
+      - id: GrenadeFlashBang
+      - id: MedkitCombatFilled
+      - id: PinpointerNuclear
 
 - type: entity
   categories: [ HideSpawnMenu ]
-  parent: ClothingBackpackERTSecurity
+  parent: ClothingModsuitResponsorySecurity
   id: ClothingBackpackERTSecurityFilled
   components:
     - type: StorageFill
       contents:
-        - id: BoxSurvivalEngineering
-        - id: WeaponDisabler
-        - id: MedicatedSuture
-        - id: RegenerativeMesh
-        - id: BoxZiptie
-        - id: CrowbarRed
-        - id: MagazinePistol
+      - id: BoxSurvivalEngineering
+      - id: Zipties
+      - id: Zipties
+      - id: Flare
+      - id: Flare
+      - id: WeaponDisablerSMG
+      - id: TelescopicShield
+      - id: TelescopicBaton
+      - id: GrenadeFlashBang
+      - id: GrenadeFlashBang
 
 - type: entity
   categories: [ HideSpawnMenu ]
-  parent: ClothingBackpackERTMedical
+  parent: ClothingModsuitResponsoryMedical
   id: ClothingBackpackERTMedicalFilled
   components:
     - type: StorageFill
       contents:
-        - id: BoxSurvivalMedical
-        - id: Hypospray
-        - id: MedkitAdvancedFilled
-        - id: CrowbarRed
-        - id: OmnizineChemistryBottle
-        - id: EpinephrineChemistryBottle
-        - id: EpinephrineChemistryBottle
+      - id: BoxSurvivalEngineering
+      - id: Zipties
+      - id: Zipties
+      - id: Flare
+      - id: Flare
+      - id: Hypospray
+      - id: MedkitAdvancedFilled
+      - id: OmnizineChemistryBottle
+      - id: OmnizineChemistryBottle
+      - id: EpinephrineChemistryBottle
+      - id: EpinephrineChemistryBottle
+      - id: RollerBedHoloSpawnFolded
+      - id: DefibrillatorCompact
 
 - type: entity
   categories: [ HideSpawnMenu ]
-  parent: ClothingBackpackERTEngineer
+  parent: ClothingModsuitResponsoryEngineering
   id: ClothingBackpackERTEngineerFilled
   components:
     - type: StorageFill
       contents:
         - id: BoxSurvivalEngineering
-        - id: trayScanner
+        - id: Zipties
+        - id: Zipties
         - id: RCD
+        - id: RPD
         - id: RCDAmmo
           amount: 2
-        - id: CableMVStack
-        - id: CableHVStack
-        - id: CableApcStack
-        - id: SheetPlasteel
-        - id: SheetSteel
-        - id: SheetGlass
+        - id: PowerDrill
+        - id: JawsOfLife
+        - id: WelderExperimental
+        - id: Multitool
+        - id: HolofanProjector
+        - id: GasAnalyzer
+        - id: trayScanner
 
 - type: entity
   categories: [ HideSpawnMenu ]
-  parent: ClothingBackpackERTJanitor
+  parent: ClothingModsuitResponsoryJanitorial
   id: ClothingBackpackERTJanitorFilled
   components:
     - type: StorageFill
@@ -315,12 +332,11 @@
         - id: BoxLightMixed
         - id: BoxLightMixed
         - id: Soap
-        - id: CrowbarRed
         - id: AdvMopItem
 
 - type: entity
   categories: [ HideSpawnMenu ]
-  parent: ClothingBackpackERTChaplain
+  parent: ClothingModsuitInquisitory
   id: ClothingBackpackERTChaplainFilled
   components:
     - type: StorageFill
@@ -332,7 +348,6 @@
         - id: Lantern
         - id: Lantern
         - id: Bible
-        - id: CrowbarRed
         - id: FoodBakedBunHotX
         - id: FoodBakedBunHotX
         - id: FoodBakedBunHotX

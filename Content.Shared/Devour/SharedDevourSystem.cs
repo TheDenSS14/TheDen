@@ -45,7 +45,7 @@ public abstract class SharedDevourSystem : EntitySystem
     [Dependency] private readonly EntityWhitelistSystem _whitelistSystem = default!;
     [Dependency] private readonly SharedConsentSystem _consentSystem = default!;
 
-    private ProtoId<ConsentTogglePrototype> DevourConsent = "NoDragonDevour";
+    private ProtoId<ConsentTogglePrototype> DevourConsent = "DragonDevour";
 
     public override void Initialize()
     {
@@ -129,7 +129,7 @@ public abstract class SharedDevourSystem : EntitySystem
         {
             case MobState.Critical:
             case MobState.Dead:
-                var isDevourable = !_consentSystem.HasConsent(target, DevourConsent);
+                var isDevourable = _consentSystem.HasConsent(target, DevourConsent);
 
                 _doAfterSystem.TryStartDoAfter(new(
                     EntityManager,

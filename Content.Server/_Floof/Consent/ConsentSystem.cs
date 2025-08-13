@@ -6,6 +6,7 @@
 
 using Content.Server.Mind;
 using Content.Shared._Floof.Consent;
+using Content.Shared.GameTicking;
 using Robust.Shared.Network;
 using Robust.Shared.Utility;
 
@@ -14,8 +15,7 @@ namespace Content.Server._Floof.Consent;
 
 public sealed class ConsentSystem : SharedConsentSystem
 {
-    [Dependency] private readonly IServerConsentManager _consent = default!;
-    [Dependency] private readonly MindSystem _serverMindSystem = default!;
+    [Dependency] private readonly ConsentSystem _consent = default!;
 
     protected override FormattedMessage GetConsentText(NetUserId userId)
     {

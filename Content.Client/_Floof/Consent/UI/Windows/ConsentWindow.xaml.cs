@@ -16,14 +16,18 @@ using Robust.Client.UserInterface.XAML;
 using Robust.Shared.Configuration;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
+using Content.Shared._AS.Consent;
+using Robust.Shared.Player;
 
 namespace Content.Client._Floof.Consent.UI.Windows;
 
 [GenerateTypedNameReferences]
 public sealed partial class ConsentWindow : FancyWindow
 {
+    [Dependency] private readonly SharedConsentCardSystem _card = default!;
     [Dependency] private readonly IClientConsentManager _consentManager = default!;
     [Dependency] private readonly IConfigurationManager _configManager = default!;
+    [Dependency] private readonly ISharedPlayerManager _player = default!;
     [Dependency] private readonly IPrototypeManager _protoManager = default!;
 
     private readonly Dictionary<string, int> _tabs = new();
@@ -41,9 +45,11 @@ public sealed partial class ConsentWindow : FancyWindow
 
         FreetextTab.Orphan();
         TogglesTab.Orphan();
+        ConsentCardsTab.Orphan();
 
         ConsentTabs.AddTab(FreetextTab, Loc.GetString("consent-window-freetext-label"));
         ConsentTabs.AddTab(TogglesTab, Loc.GetString("consent-window-toggles-label"));
+        ConsentTabs.AddTab(ConsentCardsTab, Loc.GetString("consent-window-cards-label"));
 
         InitializeCategories();
 
@@ -64,6 +70,13 @@ public sealed partial class ConsentWindow : FancyWindow
 
         ConsentFreetext.Placeholder = new Rope.Leaf(Loc.GetString("consent-window-freetext-placeholder"));
         ConsentFreetext.OnTextChanged += _ => UnsavedChanges();
+
+        // Aurora - Add consent cards
+        XCard.OnPressed += _ =>
+        {
+            if (_player.LocalSession is {} player)
+                _card.RaiseConsentCard(player.UserId, "XCard");
+        };
     }
 
     private void InitializeCategories()
@@ -109,8 +122,14 @@ public sealed partial class ConsentWindow : FancyWindow
 
         foreach (var entry in _entries)
         {
-            if (entry.Button != null && entry.Button.Pressed)
-                toggles[entry.Consent.ID] = "on";
+            if (entry.Button == null
+                || entry.Consent.DefaultValue == entry.Button.Pressed)
+                continue;
+
+            // DEN: I now have to save offs as well.
+            // Side note, who saved this to database as a string?
+            var value = entry.Button.Pressed ? "on" : "off";
+            toggles[entry.Consent.ID] = value;
         }
 
         return new(text, toggles);
@@ -162,12 +181,15 @@ public sealed partial class ConsentWindow : FancyWindow
             HorizontalExpand = true
         };
 
+        var defaultValue = toggle.DefaultValue;
+
         var buttonOff = new Button { Text = "Off" };
         buttonOff.StyleClasses.Add("OpenRight");
-        buttonOff.Pressed = true;
+        buttonOff.Pressed = !defaultValue;
 
         var buttonOn = new Button { Text = "On" };
         buttonOn.StyleClasses.Add("OpenLeft");
+        buttonOn.Pressed = defaultValue;
         state.Button = buttonOn;
 
         buttonOff.OnPressed += _ => ButtonOnPress(buttonOff, buttonOn);
