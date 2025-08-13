@@ -67,7 +67,7 @@
     id: ERTLeaderPDA
     belt: ClothingBeltERTLeaderWebbingFilled
     pocket1: WeaponTaser
-    pocket2: PinpointerNuclear
+    pocket2: ERTLeaderLoadoutSelector
 
 # Chaplain
 - type: job
@@ -128,7 +128,7 @@
     back: ClothingBackpackERTEngineerFilled
     head: ClothingHeadHelmetERTEngineer
     id: ERTEngineerPDA
-
+    pocket2: ERTEngineerLoadoutSelector
 
 # Security
 - type: job
@@ -158,6 +158,7 @@
     head: ClothingHeadHelmetERTSecurity
     id: ERTSecurityPDA
     pocket1: WeaponTaser
+    pocket2: ERTSecurityLoadoutSelector
 
 
 # Medical
@@ -189,6 +190,7 @@
     eyes: ClothingEyesHudSyndicateAgent
     gloves: ClothingHandsGlovesNitrile
     id: ERTMedicPDA
+    pocket2: ERTMedicalLoadoutSelector
 
 # Janitor
 - type: job
