@@ -25,9 +25,6 @@ public sealed partial class ConsentWindow : FancyWindow
     [Dependency] private readonly IClientConsentManager _consentManager = default!;
     [Dependency] private readonly IConfigurationManager _configManager = default!;
     [Dependency] private readonly IPrototypeManager _protoManager = default!;
-    [Dependency] private readonly ILogManager _logManager = default!;
-
-    private ISawmill _sawmill = default!;
 
     private readonly Dictionary<string, int> _tabs = new();
     private readonly HashSet<ConsentCategoryPrototype> _categories = new();
@@ -38,6 +35,12 @@ public sealed partial class ConsentWindow : FancyWindow
     {
         RobustXamlLoader.Load(this);
         IoCManager.InjectDependencies(this);
+
+        FreetextTab.Orphan();
+        TogglesTab.Orphan();
+
+        ConsentTabs.AddTab(FreetextTab, Loc.GetString("consent-window-freetext-label"));
+        ConsentTabs.AddTab(TogglesTab, Loc.GetString("consent-window-toggles-label"));
 
         InitializeCategories();
 
@@ -53,8 +56,6 @@ public sealed partial class ConsentWindow : FancyWindow
 
         ConsentFreetext.Placeholder = new Rope.Leaf(Loc.GetString("consent-window-freetext-placeholder"));
         ConsentFreetext.OnTextChanged += _ => UnsavedChanges();
-
-        _sawmill = _logManager.GetSawmill("consentwindow");
     }
 
     private void InitializeCategories()
@@ -191,9 +192,6 @@ public sealed partial class ConsentWindow : FancyWindow
         wrapper.AddChild(container);
         contents.AddChild(wrapper);
 
-        _sawmill.Info($"{tab}");
-        _sawmill.Info($"{category.ID}");
-
         _controls.Add(wrapper);
         _entries.Add(state);
     }
@@ -222,10 +220,6 @@ public sealed partial class ConsentWindow : FancyWindow
 
     public void UpdateUi()
     {
-        // ReSharper disable once ConditionIsAlwaysTrueOrFalseAccordingToNullableAPIContract
-        if (_sawmill == null)
-            _sawmill = _logManager.GetSawmill("consentwindow");
-
         var consent = _consentManager.GetConsent();
 
         ConsentFreetext.TextRope = new Rope.Leaf(consent.Freetext);
