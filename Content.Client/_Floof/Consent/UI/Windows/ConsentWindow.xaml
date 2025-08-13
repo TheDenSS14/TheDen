@@ -40,9 +40,12 @@ SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
         <Label Text="{Loc consent-window-toggles-label}" />
 
         <ScrollContainer HorizontalExpand="True" VerticalExpand="True" HScrollEnabled="False" VScrollEnabled="True" MinHeight="50">
-            <BoxContainer Name="ConsentList" Access="Public" HorizontalExpand="True" SeparationOverride="2" Orientation="Vertical">
+            <controls:NeoTabContainer Name="CategoriesContainer" VerticalExpand="True" HScrollEnabled="False" VScrollEnabled="False">
                 <!-- The rest here is generated programmatically -->
-            </BoxContainer>
+            </controls:NeoTabContainer>
+            <!-- <BoxContainer Name="ConsentList" Access="Public" HorizontalExpand="True" SeparationOverride="2" Orientation="Vertical"> -->
+            <!--      -->
+            <!-- </BoxContainer> -->
         </ScrollContainer>
     </BoxContainer>
 </controls:FancyWindow>
