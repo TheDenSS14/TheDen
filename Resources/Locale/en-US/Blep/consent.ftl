@@ -16,9 +16,11 @@ consent-window-freetext-placeholder = Put your ERP info here, such as:
     If you are okay with IC noncon
     Which gender(s) you want your partners to be
     Likes and dislikes
-consent-window-toggles-label = Mechanics toggles
-consent-window-unsaved-changes = You have unsaved changes
-consent-window-char-limit-warning = Character limit exceeded ({$length} / {$maxLength})
+consent-window-toggles-label = Toggles
+consent-window-saved-changes = Your changes are saved.
+consent-window-unsaved-changes = You have unsaved changes!
+consent-window-char-limit = Character limit: {$length} / {$maxLength}
+consent-window-exceeded-char-limit = Exceeded character limit: {$length} / {$maxLength}
 
 # Verb
 consent-examine-verb = Consent Info

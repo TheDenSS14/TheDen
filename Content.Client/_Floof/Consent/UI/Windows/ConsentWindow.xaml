@@ -16,8 +16,9 @@ SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
     Resizable="False">
     <BoxContainer Orientation="Vertical" HorizontalExpand="True" Margin="5">
         <Label Text="{Loc consent-window-text}" />
+        <Label Name="UnsavedChangesWarning" Text="{Loc consent-window-saved-changes}" />
         <BoxContainer Orientation="Horizontal" Margin="5">
-            <Label Name="SaveLabel" FontColorOverride="Red" Access="Public" />
+            <Label Name="CharacterLimit" Access="Public" />
             <Control HorizontalExpand="True" />
             <Button
                 Name="SaveConsentSettings"
@@ -25,24 +26,27 @@ SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
                 Text="Save"
                 Disabled="True" />
         </BoxContainer>
-        <Label Text="{Loc consent-window-freetext-label}" />
-        <PanelContainer HorizontalExpand="True" VerticalExpand="True" MinWidth="200">
-            <PanelContainer.PanelOverride>
-                <gfx:StyleBoxFlat BackgroundColor="#1B1B1E" />
-            </PanelContainer.PanelOverride>
-            <TextEdit
-                Name="ConsentFreetext"
-                Access="Public"
-                MinHeight="100"
-                VerticalExpand="True" />
-        </PanelContainer>
-        <Control MinSize="0 10" />
-        <Label Text="{Loc consent-window-toggles-label}" />
-
-        <ScrollContainer HorizontalExpand="True" VerticalExpand="True" HScrollEnabled="False" VScrollEnabled="True" MinHeight="50">
-            <BoxContainer Name="ConsentList" Access="Public" HorizontalExpand="True" SeparationOverride="2" Orientation="Vertical">
-                <!-- The rest here is generated programmatically -->
+        <Control HorizontalExpand="True" />
+        <controls:NeoTabContainer Name="ConsentTabs" VerticalExpand="True" HScrollEnabled="False" VScrollEnabled="False">
+            <BoxContainer Name="FreetextTab" Orientation="Vertical" HorizontalExpand="True" Margin="5">
+                <PanelContainer HorizontalExpand="True" VerticalExpand="True" MinWidth="200">
+                    <PanelContainer.PanelOverride>
+                        <gfx:StyleBoxFlat BackgroundColor="#1B1B1E" />
+                    </PanelContainer.PanelOverride>
+                    <TextEdit
+                        Name="ConsentFreetext"
+                        Access="Public"
+                        MinHeight="100"
+                        VerticalExpand="True" />
+                </PanelContainer>
             </BoxContainer>
-        </ScrollContainer>
+            <BoxContainer Name="TogglesTab" Orientation="Vertical" HorizontalExpand="True" Margin="5">
+                <ScrollContainer HorizontalExpand="True" VerticalExpand="True" HScrollEnabled="False" VScrollEnabled="True" MinHeight="50">
+                    <controls:NeoTabContainer Name="CategoriesContainer" VerticalExpand="True" HScrollEnabled="False" VScrollEnabled="False">
+                        <!-- The rest here is generated programmatically -->
+                    </controls:NeoTabContainer>
+                </ScrollContainer>
+            </BoxContainer>
+        </controls:NeoTabContainer>
     </BoxContainer>
 </controls:FancyWindow>
