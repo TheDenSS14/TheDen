@@ -31,3 +31,41 @@
       inverted: true
       jobs:
         - ChiefEngineer # CE has ClothingBackpackMessengerChiefEngineerFilled
+
+- type: loadout
+  id: LoadoutEngineerOuterCoatBomberEngineer # Can also butcher the loose version to get this
+  category: Outer
+  cost: 1
+  items:
+    -  ClothingOuterCoatBomberEngineer
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutEngineeringOuter
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Engineering
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - ChiefEngineer # Sorry, these are for the little guys
+        - AtmosphericTechnician # They get their own two!
+        - TechnicalAssistant # Gotta earn it
+
+- type: loadout
+  id: LoadoutEngineerOuterCoatBomberEngineerLoose # Can also butcher the base version to get this
+  category: Outer
+  cost: 1
+  items:
+    -  ClothingOuterCoatBomberEngineerLoose
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutEngineeringOuter
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Engineering
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - ChiefEngineer # Sorry, these are for the little guys
+        - AtmosphericTechnician # They get their own two!
+        - TechnicalAssistant # Gotta earn it

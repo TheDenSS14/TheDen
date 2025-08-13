@@ -11,3 +11,79 @@
         - AtmosphericTechnician
   items:
     - ClothingBackpackMessengerAtmospherics
+
+- type: loadout
+  id: LoadoutAtmosphericTechnicianOuterCoatBomberAtmos # Can also butcher the loose version to get this
+  category: Outer
+  cost: 1
+  items:
+    -  ClothingOuterCoatBomberAtmos
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutAtmosphericTechnicianOuter # The job restrictions may not be necessary with this but I'm not risking it
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Engineering
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - ChiefEngineer # Sorry, these are for the little guys
+        - AtmosphericTechnician # They get their own two!
+        - TechnicalAssistant # Gotta earn it
+
+- type: loadout
+  id: LoadoutAtmosphericTechnicianOuterCoatBomberAtmosLoose # Can also butcher the base version to get this
+  category: Outer
+  cost: 1
+  items:
+    -  ClothingOuterCoatBomberAtmosLoose
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutAtmosphericTechnicianOuter # The job restrictions may not be necessary with this but I'm not risking it
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Engineering
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - ChiefEngineer # Sorry, these are for the little guys
+        - AtmosphericTechnician # They get their own two!
+        - TechnicalAssistant # Gotta earn it
+
+- type: loadout
+  id: LoadoutAtmosphericTechnicianOuterCoatBomberAtmosHolo # Can also butcher the loose version to get this
+  category: Outer
+  cost: 1
+  items:
+    -  ClothingOuterCoatBomberAtmosHolo
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutAtmosphericTechnicianOuter # The job restrictions may not be necessary with this but I'm not risking it
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Engineering
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - ChiefEngineer # Sorry, these are for the little guys
+        - AtmosphericTechnician # They get their own two!
+        - TechnicalAssistant # Gotta earn it
+
+- type: loadout
+  id: LoadoutAtmosphericTechnicianOuterCoatBomberAtmosHoloLoose # Can also butcher the base version to get this
+  category: Outer
+  cost: 1
+  items:
+    -  ClothingOuterCoatBomberAtmosHoloLoose
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutAtmosphericTechnicianOuter # The job restrictions may not be necessary with this but I'm not risking it
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Engineering
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - ChiefEngineer # Sorry, these are for the little guys
+        - AtmosphericTechnician # They get their own two!
+        - TechnicalAssistant # Gotta earn it
