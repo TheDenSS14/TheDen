@@ -11,12 +11,14 @@ ui-options-function-open-consent-window = Open consent window
 consent-window-title = OOC Consent & Preferences
 consent-window-text = This information is shown to other players to help with RP and used to opt-in or out of certain gameplay systems.
 consent-window-freetext-label = Freetext
+consent-window-toggles-label = Toggles
+consent-window-cards-label = I Am Uncomfortable
 consent-window-freetext-placeholder = Put your ERP info here, such as:
     Sub/Dom/Switch
     If you are okay with IC noncon
     Which gender(s) you want your partners to be
     Likes and dislikes
-consent-window-toggles-label = Toggles
+
 consent-window-saved-changes = Your changes are saved.
 consent-window-unsaved-changes = You have unsaved changes!
 consent-window-char-limit = Character limit: {$length} / {$maxLength}

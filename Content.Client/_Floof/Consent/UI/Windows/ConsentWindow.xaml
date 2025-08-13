@@ -32,7 +32,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
                 Disabled="True" />
         </BoxContainer>
         <Control HorizontalExpand="True" />
-        <controls:NeoTabContainer Name="ConsentTabs" VerticalExpand="True" HScrollEnabled="False" VScrollEnabled="False">
+        <controls:NeoTabContainer Name="ConsentTabs" VerticalExpand="True" Orientation="Vertical" HScrollEnabled="False" VScrollEnabled="False">
             <BoxContainer Name="FreetextTab" Orientation="Vertical" HorizontalExpand="True" Margin="5">
                 <PanelContainer HorizontalExpand="True" VerticalExpand="True" MinWidth="200">
                     <PanelContainer.PanelOverride>
@@ -41,7 +41,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
                     <TextEdit
                         Name="ConsentFreetext"
                         Access="Public"
-                        MinHeight="100"
+                        MinHeight="200"
                         VerticalExpand="True" />
                 </PanelContainer>
             </BoxContainer>
@@ -52,8 +52,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
                     </controls:NeoTabContainer>
                 </ScrollContainer>
             </BoxContainer>
-            <BoxContainer Orientation="Vertical" HorizontalExpand="False" VerticalExpand="True" Margin="5">
-            <Label Text= "Consent Cards"/>
+            <BoxContainer Name="ConsentCardsTab" Orientation="Vertical" HorizontalExpand="True" VerticalExpand="True" Margin="5">
                 <ui:CardButton
                     Name="XCard"
                     Access="Internal"
@@ -62,8 +61,8 @@ SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
                     BackgroundColor="#FF2D2D38"
                     HoverColor="#FF3D3D48"
                     PressedColor="#FF4D4D58"
-                    MinSize="180 150"
-                    VerticalExpand="True"
+                    MinSize="0 200"
+                    HorizontalExpand="True"
                 />
             </BoxContainer>
         </controls:NeoTabContainer>

@@ -45,9 +45,11 @@ public sealed partial class ConsentWindow : FancyWindow
 
         FreetextTab.Orphan();
         TogglesTab.Orphan();
+        ConsentCardsTab.Orphan();
 
         ConsentTabs.AddTab(FreetextTab, Loc.GetString("consent-window-freetext-label"));
         ConsentTabs.AddTab(TogglesTab, Loc.GetString("consent-window-toggles-label"));
+        ConsentTabs.AddTab(ConsentCardsTab, Loc.GetString("consent-window-cards-label"));
 
         InitializeCategories();
 

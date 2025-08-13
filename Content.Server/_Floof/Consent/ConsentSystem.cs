@@ -17,20 +17,6 @@ public sealed class ConsentSystem : SharedConsentSystem
 {
     [Dependency] private readonly ConsentSystem _consent = default!;
 
-    public override void Initialize()
-    {
-        base.Initialize();
-
-        SubscribeLocalEvent<PlayerSpawnCompleteEvent>(OnPlayerSpawned);
-    }
-
-    private void OnPlayerSpawned(PlayerSpawnCompleteEvent ev)
-    {
-        var consent = _consent.HasConsent(ev.Mob, "TestConsent");
-
-        Log.Info(consent.ToString());
-    }
-
     protected override FormattedMessage GetConsentText(NetUserId userId)
     {
         TryGetConsent(userId, out var consent);
