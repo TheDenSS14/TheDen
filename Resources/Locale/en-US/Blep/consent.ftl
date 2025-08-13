@@ -33,8 +33,8 @@ consent-example1-desc = This is just here as an example for how to add consent t
 consent-Hypno-name = Hypnosis
 consent-Hypno-desc = Allow yourself to be hypnotized.
 
-consent-NoClone-name = Disallow Paradox Anomaly
-consent-NoClone-desc = Don't allow yourself to be the target of a paradox anomaly clone. (on = no paradox anomaly)
+consent-ParadoxClone-name = Paradox Anomaly
+consent-ParadoxClone-desc = Whether you should be able to be the target of a paradox anomaly.
 
 consent-MindSwap-name = Mind Swap
 consent-MindSwap-desc = Should mind swap work on you?
@@ -46,8 +46,8 @@ consent-MassMindSwap-desc = Should a mass mind swap from glimmer work on you?
 consent-ChangelingTarget-name = Changeling Target
 consent-ChangelingTarget-desc = Should your body be allowed to be stolen by changelings?
 
-consent-NoDragonDevour-name = No Dragon Devour
-consent-NoDragonDevour-desc = With this on, you will no longer be able to be devoured by dragons. Your body will still not progress in rot until found.
+consent-DragonDevour-name = Dragon Devour
+consent-DragonDevour-desc = Whether you should be able to be devoured by a space dragon. Your body will still not progress in rot until found.
 
 consent-NSFWDescriptions-name = Show NSFW Descriptions
 consent-NSFWDescriptions-desc = Toggle this on to see dynamic player descriptions that may contain NSFW/ERP content.
