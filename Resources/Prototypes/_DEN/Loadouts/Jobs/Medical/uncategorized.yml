@@ -104,7 +104,7 @@
 
 - type: loadout
   id: LoadoutMedicalOuterCoatBomberMedical # Can also butcher the other version to get this
-  category: Outer
+  category: JobsMedicalAUncategorized
   cost: 0
   items:
     -  ClothingOuterCoatBomberMedical
@@ -120,11 +120,10 @@
         - ChiefMedicalOfficer # Sorry, these are for the little guys
         - Brigmedic # They get their own and I dunno if they can access this loadout
         - MedicalIntern # Gotta earn it
-        - Psychologist # They wear suits, I dunno about medbay colors on them
 
 - type: loadout
   id: LoadoutMedicalOuterCoatBomberMedicalLoose # Can also butcher the other version to get this
-  category: Outer
+  category: JobsMedicalAUncategorized
   cost: 0
   items:
     -  ClothingOuterCoatBomberMedicalLoose
@@ -140,4 +139,3 @@
         - ChiefMedicalOfficer # Sorry, these are for the little guys
         - Brigmedic # They get their own and I dunno if they can access this loadout
         - MedicalIntern # Gotta earn it
-        - Psychologist # They wear suits, I dunno about medbay colors on them
