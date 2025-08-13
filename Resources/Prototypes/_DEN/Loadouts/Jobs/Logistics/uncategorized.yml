@@ -34,9 +34,9 @@
         - Quartermaster # LO has a LO specific variant
 
 - type: loadout
-  id: LoadoutLogisticsOuterCoatBomberCargo # Can also butcher the loose version to get this
+  id: LoadoutLogisticsOuterCoatBomberCargo # Can also butcher the other version to get this
   category: Outer
-  cost: 1
+  cost: 0
   items:
     -  ClothingOuterCoatBomberCargo
   requirements:
@@ -51,9 +51,9 @@
         - Quartermaster # Sorry, these are for the little guys
 
 - type: loadout
-  id: LoadoutLogisticsOuterCoatBomberCargoLoose # Can also butcher the base version to get this
+  id: LoadoutLogisticsOuterCoatBomberCargoLoose # Can also butcher the other version to get this
   category: Outer
-  cost: 1
+  cost: 0
   items:
     -  ClothingOuterCoatBomberCargoLoose
   requirements:

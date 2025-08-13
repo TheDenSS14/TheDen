@@ -31,3 +31,39 @@
       inverted: true
       jobs:
         - ResearchDirector # MG has ClothingBackpackMessengerResearchDirectorFilled
+
+- type: loadout
+  id: LoadoutMedicalOuterCoatBomberScience # Can also butcher the other version to get this
+  category: Outer
+  cost: 1
+  items:
+    -  ClothingOuterCoatBomberScience
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutEpistemicsOuter
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Epistemics
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - ResearchDirector # Sorry, these are for the little guys
+        - ResearchAssistant # Gotta earn it
+
+- type: loadout
+  id: LoadoutMedicalOuterCoatBomberScienceLoose # Can also butcher the other version to get this
+  category: Outer
+  cost: 1
+  items:
+    -  ClothingOuterCoatBomberScienceLoose
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutEpistemicsOuter
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Epistemics
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - ResearchDirector # Sorry, these are for the little guys
+        - ResearchAssistant # Gotta earn it

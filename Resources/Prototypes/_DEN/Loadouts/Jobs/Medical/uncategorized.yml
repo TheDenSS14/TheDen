@@ -103,39 +103,41 @@
         - Medical
 
 - type: loadout
-  id: LoadoutMedicalOuterCoatBomberAtmos # Can also butcher the loose version to get this
+  id: LoadoutMedicalOuterCoatBomberMedical # Can also butcher the other version to get this
   category: Outer
-  cost: 1
+  cost: 0
   items:
-    -  ClothingOuterCoatBomberAtmos
+    -  ClothingOuterCoatBomberMedical
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutMedicalOuter # The job restrictions may not be necessary with this but I'm not risking it
+      group: LoadoutMedicalOuter
     - !type:CharacterDepartmentRequirement
       departments:
-        - Engineering
+        - Medical
     - !type:CharacterJobRequirement
       inverted: true
       jobs:
-        - ChiefEngineer # Sorry, these are for the little guys
-        - AtmosphericTechnician # They get their own two!
-        - TechnicalAssistant # Gotta earn it
+        - ChiefMedicalOfficer # Sorry, these are for the little guys
+        - Brigmedic # They get their own and I dunno if they can access this loadout
+        - MedicalIntern # Gotta earn it
+        - Psychologist # They wear suits, I dunno about medbay colors on them
 
 - type: loadout
-  id: LoadoutMedicalOuterCoatBomberAtmosLoose # Can also butcher the base version to get this
+  id: LoadoutMedicalOuterCoatBomberMedicalLoose # Can also butcher the other version to get this
   category: Outer
-  cost: 1
+  cost: 0
   items:
-    -  ClothingOuterCoatBomberAtmosLoose
+    -  ClothingOuterCoatBomberMedicalLoose
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutMedicalOuter # The job restrictions may not be necessary with this but I'm not risking it
+      group: LoadoutMedicalOuter
     - !type:CharacterDepartmentRequirement
       departments:
-        - Engineering
+        - Medical
     - !type:CharacterJobRequirement
       inverted: true
       jobs:
-        - ChiefEngineer # Sorry, these are for the little guys
-        - AtmosphericTechnician # They get their own two!
-        - TechnicalAssistant # Gotta earn it
+        - ChiefMedicalOfficer # Sorry, these are for the little guys
+        - Brigmedic # They get their own and I dunno if they can access this loadout
+        - MedicalIntern # Gotta earn it
+        - Psychologist # They wear suits, I dunno about medbay colors on them
