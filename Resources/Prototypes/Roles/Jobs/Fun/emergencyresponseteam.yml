@@ -31,7 +31,7 @@
   equipment:
     shoes: ClothingShoesBootsCombatFilled
     mask: ClothingMaskGasERT
-    eyes: ClothingEyesHudSyndicate
+    eyes: ClothingEyesHudERT
     gloves: ClothingHandsGlovesCombat
     outerClothing: ClothingOuterArmorBasicSlim
     ears: ClothingHeadsetAltCentCom
@@ -127,6 +127,7 @@
     jumpsuit: ClothingUniformJumpsuitERTEngineer
     back: ClothingBackpackERTEngineerFilled
     head: ClothingHeadHelmetERTEngineer
+    eyes: ClothingEyesHudERTEngineer
     id: ERTEngineerPDA
     pocket2: ERTEngineerLoadoutSelector
 
@@ -168,7 +169,7 @@
   description: job-description-ertmedic
   playTimeTracker: JobERTMedical
   setPreference: false
-  startingGear: ERTMedicalGearEVA
+  startingGear: ERTMedicalGear
   icon: "JobIconNanotrasen"
   supervisors: job-supervisors-centcom
   canBeAntag: false
@@ -187,10 +188,10 @@
     jumpsuit: ClothingUniformJumpsuitERTMedic
     back: ClothingBackpackERTMedicalFilled
     head: ClothingHeadHelmetERTMedic
-    eyes: ClothingEyesHudSyndicateAgent
+    eyes: ClothingEyesHudERTMedic
     gloves: ClothingHandsGlovesNitrile
     id: ERTMedicPDA
-    pocket2: ERTMedicalLoadoutSelector
+    pocket2: ERTMedicLoadoutSelector
 
 # Janitor
 - type: job
@@ -213,6 +214,7 @@
 
 - type: startingGear
   id: ERTJanitorGear
+  parent: BaseERTGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitERTJanitor
     back: ClothingBackpackERTJanitorFilled
