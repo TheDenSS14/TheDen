@@ -31,6 +31,9 @@ public sealed partial class ConsentWindow : FancyWindow
     private readonly List<Control> _controls = new();
     private readonly List<EntryState> _entries = new();
 
+    private string? SavedChangesText;
+    private string? UnsavedChangesText;
+
     public ConsentWindow()
     {
         RobustXamlLoader.Load(this);
@@ -53,6 +56,11 @@ public sealed partial class ConsentWindow : FancyWindow
         _consentManager.OnServerDataLoaded += UpdateUi;
         if (_consentManager.HasLoaded)
             UpdateUi();
+
+        // Validate freetext length
+        var maxLength = _configManager.GetCVar(CCVars.ConsentFreetextMaxLength);
+        var length = Rope.Collapse(ConsentFreetext.TextRope).Length;
+        CharacterLimit.Text = Loc.GetString("consent-window-char-limit", ("length", length), ("maxLength", maxLength));
 
         ConsentFreetext.Placeholder = new Rope.Leaf(Loc.GetString("consent-window-freetext-placeholder"));
         ConsentFreetext.OnTextChanged += _ => UnsavedChanges();
@@ -115,14 +123,17 @@ public sealed partial class ConsentWindow : FancyWindow
 
         if (length > maxLength)
         {
-            SaveLabel.Text = Loc.GetString("consent-window-char-limit-warning", ("length", length), ("maxLength", maxLength));
             SaveConsentSettings.Disabled = true;
+            CharacterLimit.Text = Loc.GetString("consent-window-exceeded-char-limit", ("length", length), ("maxLength", maxLength));
+            CharacterLimit.FontColorOverride = Color.Red;
 
             return;
         }
 
         // If everything is valid, enable save button and inform user they need to save.
-        SaveLabel.Text = Loc.GetString("consent-window-unsaved-changes");
+        CharacterLimit.Text = Loc.GetString("consent-window-char-limit", ("length", length), ("maxLength", maxLength));
+        UnsavedChangesWarning.Text = UnsavedChangesText;
+        UnsavedChangesWarning.FontColorOverride = Color.Red;
         SaveConsentSettings.Disabled = false;
     }
 
@@ -141,7 +152,7 @@ public sealed partial class ConsentWindow : FancyWindow
         var header = new BoxContainer
         {
             Orientation = BoxContainer.LayoutOrientation.Horizontal,
-            Margin = new Thickness(5f, 5f)
+            Margin = new(5f, 5f)
         };
 
         var name = new Label
@@ -213,6 +224,9 @@ public sealed partial class ConsentWindow : FancyWindow
 
     private void ButtonOnPress(Button currentButton, Button otherbutton)
     {
+        if (currentButton == otherbutton)
+            return;
+
         currentButton.Pressed = true;
         otherbutton.Pressed = false;
         UnsavedChanges();
@@ -221,6 +235,12 @@ public sealed partial class ConsentWindow : FancyWindow
     public void UpdateUi()
     {
         var consent = _consentManager.GetConsent();
+
+        if (UnsavedChangesText == null && SavedChangesText == null)
+        {
+            SavedChangesText = Loc.GetString("consent-window-saved-changes");
+            UnsavedChangesText = Loc.GetString("consent-window-unsaved-changes");
+        }
 
         ConsentFreetext.TextRope = new Rope.Leaf(consent.Freetext);
         _entries.Clear();
@@ -233,8 +253,10 @@ public sealed partial class ConsentWindow : FancyWindow
         foreach (var prototype in _categories)
             AddConsentEntries(prototype);
 
+        CharacterLimit.FontColorOverride = null;
         SaveConsentSettings.Disabled = true;
-        SaveLabel.Text = "";
+        UnsavedChangesWarning.Text = SavedChangesText;
+        UnsavedChangesWarning.FontColorOverride = null;
     }
 
     private struct EntryState

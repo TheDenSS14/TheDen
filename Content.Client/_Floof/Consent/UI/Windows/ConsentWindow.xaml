@@ -16,8 +16,9 @@ SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
     Resizable="False">
     <BoxContainer Orientation="Vertical" HorizontalExpand="True" Margin="5">
         <Label Text="{Loc consent-window-text}" />
+        <Label Name="UnsavedChangesWarning" Text="{Loc consent-window-saved-changes}" />
         <BoxContainer Orientation="Horizontal" Margin="5">
-            <Label Name="SaveLabel" FontColorOverride="Red" Access="Public" />
+            <Label Name="CharacterLimit" Access="Public" />
             <Control HorizontalExpand="True" />
             <Button
                 Name="SaveConsentSettings"
@@ -25,6 +26,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
                 Text="Save"
                 Disabled="True" />
         </BoxContainer>
+        <Control HorizontalExpand="True" />
         <controls:NeoTabContainer Name="ConsentTabs" VerticalExpand="True" HScrollEnabled="False" VScrollEnabled="False">
             <BoxContainer Name="FreetextTab" Orientation="Vertical" HorizontalExpand="True" Margin="5">
                 <PanelContainer HorizontalExpand="True" VerticalExpand="True" MinWidth="200">
@@ -38,7 +40,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
                         VerticalExpand="True" />
                 </PanelContainer>
             </BoxContainer>
-            <BoxContainer Name="TogglesTab" Orientation="Vertical" HorizontalExpand="True" VerticalExpand="True" Margin="5">
+            <BoxContainer Name="TogglesTab" Orientation="Vertical" HorizontalExpand="True" Margin="5">
                 <ScrollContainer HorizontalExpand="True" VerticalExpand="True" HScrollEnabled="False" VScrollEnabled="True" MinHeight="50">
                     <controls:NeoTabContainer Name="CategoriesContainer" VerticalExpand="True" HScrollEnabled="False" VScrollEnabled="False">
                         <!-- The rest here is generated programmatically -->
