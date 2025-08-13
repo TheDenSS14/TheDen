@@ -16,12 +16,14 @@ loadout-name-LoadoutClothingWaistApronStripesHorizontal = waist apron (horizonta
 loadout-name-LoadoutClothingWaistApronStripesVertical = waist apron (vertical stripes, colorable)
 
 # outerclothing
-
-# innerclothing
-
-# hands
 loadout-name-LoadoutClothingOuterCoatBomberWhite = lightweight bomber jacket (colorable)
 loadout-name-LoadoutClothingOuterCoatBomberWhiteLoose = lightweight bomber jacket (loose, colorable)
+
+# innerclothing
+loadout-name-LoadoutClothingUniformBootyShorts = booty shorts (colorable)
+
+# hands
+loadout-name-LoadoutClothingHandsSentimentalRing = sentimental ring (colorable)
 
 # plush
 loadout-name-PlushieTeddyBearRecolorable = teddy bear (colorable)

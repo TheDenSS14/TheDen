@@ -276,6 +276,15 @@
   items:
   - ClothingBackpackNapsack
 
+- type: loadout
+  id: LoadoutClothingHandsSentimentalRing
+  category: GeneralItems
+  cost: 0
+  canBeHeirloom: true
+  customColorTint: true
+  items:
+    - ClothingHandsSentimentalRing
+
 # Towels
 - type: loadout
   id: LoadoutTowelWhite

@@ -67,3 +67,15 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutUniformsCivilian
+
+- type: loadout
+  id: LoadoutClothingUniformBootyShorts
+  category: Uniform
+  cost: 0
+  exclusive: true
+  customColorTint: true
+  items:
+    - ClothingUniformBootyShorts
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutUniformsCivilian
