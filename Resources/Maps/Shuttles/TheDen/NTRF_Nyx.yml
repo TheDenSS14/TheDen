@@ -4,8 +4,8 @@ meta:
   engineVersion: 260.2.0
   forkId: ""
   forkVersion: ""
-  time: 08/13/2025 21:16:59
-  entityCount: 498
+  time: 08/13/2025 22:28:43
+  entityCount: 500
 maps: []
 grids:
 - 1
@@ -1139,6 +1139,11 @@ entities:
     - type: Transform
       pos: 6.5,-0.5
       parent: 1
+  - uid: 500
+    components:
+    - type: Transform
+      pos: 5.5,-0.5
+      parent: 1
 - proto: CableMV
   entities:
   - uid: 131
@@ -1474,19 +1479,20 @@ entities:
     - type: Transform
       pos: 0.5,8.5
       parent: 1
+- proto: ComputerPowerMonitoring
+  entities:
+  - uid: 189
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 5.5,-0.5
+      parent: 1
 - proto: ComputerShuttle
   entities:
   - uid: 188
     components:
     - type: Transform
       pos: 0.5,12.5
-      parent: 1
-- proto: CrewMonitoringServer
-  entities:
-  - uid: 189
-    components:
-    - type: Transform
-      pos: 5.5,-0.5
       parent: 1
 - proto: DefibrillatorCabinetFilled
   entities:
@@ -2152,6 +2158,9 @@ entities:
   entities:
   - uid: 274
     components:
+    - type: MetaData
+      desc: Don't stand too close, and don't breath the purple smoke.
+      name: experimental phoron gas generator
     - type: Transform
       pos: 6.5,-0.5
       parent: 1
@@ -2422,6 +2431,13 @@ entities:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: 3.5,-3.5
+      parent: 1
+- proto: PosterLegitEnlist
+  entities:
+  - uid: 499
+    components:
+    - type: Transform
+      pos: -2.5,2.5
       parent: 1
 - proto: PosterLegitObey
   entities:
