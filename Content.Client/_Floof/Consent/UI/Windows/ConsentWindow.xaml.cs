@@ -120,8 +120,14 @@ public sealed partial class ConsentWindow : FancyWindow
 
         foreach (var entry in _entries)
         {
-            if (entry.Button != null && entry.Button.Pressed)
-                toggles[entry.Consent.ID] = "on";
+            if (entry.Button == null
+                || entry.Consent.DefaultValue == entry.Button.Pressed)
+                continue;
+
+            // DEN: I now have to save offs as well.
+            // Side note, who saved this to database as a string?
+            var value = entry.Button.Pressed ? "on" : "off";
+            toggles[entry.Consent.ID] = value;
         }
 
         return new(text, toggles);
@@ -173,12 +179,15 @@ public sealed partial class ConsentWindow : FancyWindow
             HorizontalExpand = true
         };
 
+        var defaultValue = toggle.DefaultValue;
+
         var buttonOff = new Button { Text = "Off" };
         buttonOff.StyleClasses.Add("OpenRight");
-        buttonOff.Pressed = true;
+        buttonOff.Pressed = !defaultValue;
 
         var buttonOn = new Button { Text = "On" };
         buttonOn.StyleClasses.Add("OpenLeft");
+        buttonOn.Pressed = defaultValue;
         state.Button = buttonOn;
 
         buttonOff.OnPressed += _ => ButtonOnPress(buttonOff, buttonOn);
