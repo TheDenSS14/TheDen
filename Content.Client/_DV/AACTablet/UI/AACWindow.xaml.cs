@@ -1,9 +1,10 @@
-// SPDX-FileCopyrightText: 2024 Milon <milonpl.git@proton.me>
-// SPDX-FileCopyrightText: 2024 portfiend <109661617+portfiend@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 BlitzTheSquishy <73762869+BlitzTheSquishy@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 MajorMoth <61519600+MajorMoth@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 SleepyScarecrow <136123749+SleepyScarecrow@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Milon
+// SPDX-FileCopyrightText: 2024 portfiend
+// SPDX-FileCopyrightText: 2025 BlitzTheSquishy
+// SPDX-FileCopyrightText: 2025 MajorMoth
+// SPDX-FileCopyrightText: 2025 SleepyScarecrow
+// SPDX-FileCopyrightText: 2025 little-meow-meow
+// SPDX-FileCopyrightText: 2025 sleepyyapril
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -29,7 +30,7 @@ public sealed partial class AACWindow : FancyWindow
     [Dependency] private readonly IEntityManager _entMan = default!;
     private readonly List<QuickPhrasePrototype> _phrases = [];
     private readonly Dictionary<string, List<QuickPhrasePrototype>> _filteredPhrases = new();
-    public event Action<List<ProtoId<QuickPhrasePrototype>>>? PhraseButtonPressed;
+    public event Action<List<ProtoId<QuickPhrasePrototype>>, string>? PhraseButtonPressed; // starcup: radio second parameter
 
     private const float SpaceWidth = 10f;
     private const float ParentWidth = 540f;
@@ -64,6 +65,7 @@ public sealed partial class AACWindow : FancyWindow
         SearchBar.OnTextChanged += FilterSearch;
         SendButton.OnPressed += SendBuffer;
         ClearButton.OnPressed += BackspaceBuffer;
+        RadioChannels.OnItemSelected += OnChannelSelected; // starcup
         PopulateGui();
         FilterSearch(null);
     }
@@ -89,7 +91,7 @@ public sealed partial class AACWindow : FancyWindow
 
     private void SendBuffer(BaseButton.ButtonEventArgs obj)
     {
-        PhraseButtonPressed?.Invoke(_phraseBuffer);
+        PhraseButtonPressed?.Invoke(_phraseBuffer, Prefix); // starcup: Prefix
         _phraseBuffer.Clear();
         BufferedString.Text = string.Empty;
     }
@@ -251,7 +253,7 @@ public sealed partial class AACWindow : FancyWindow
         {
             _phraseSingle.Clear();
             _phraseSingle.Add(phraseId);
-            PhraseButtonPressed?.Invoke(_phraseSingle);
+            PhraseButtonPressed?.Invoke(_phraseSingle, Prefix); // starcup: Prefix parameter
         }
     }
 }

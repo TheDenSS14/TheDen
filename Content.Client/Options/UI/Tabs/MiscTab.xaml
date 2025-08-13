@@ -41,6 +41,9 @@ SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
                        FontColorOverride="{xNamespace:Static s:StyleNano.NanoGold}"
                        StyleClasses="LabelKeyText"/>
                 <CheckBox Name="ReducedMotionCheckBox" Text="{Loc 'ui-options-reduced-motion'}" />
+                <CheckBox Name="DisableSinguloWarpingCheckBox" Text="{Loc 'ui-options-disable-singulo-warp'}" />
+                <CheckBox Name="DisableDrugWarpingCheckBox" Text="{Loc 'ui-options-disable-drug-warp'}" />
+                <CheckBox Name="DisableDrunkWarpingCheckBox" Text="{Loc 'ui-options-disable-drunk-warp'}" />
                 <CheckBox Name="EnableColorNameCheckBox" Text="{Loc 'ui-options-enable-color-name'}" />
                 <CheckBox Name="ColorblindFriendlyCheckBox" Text="{Loc 'ui-options-colorblind-friendly'}" />
                 <CheckBox Name="DisableFiltersCheckBox" Text="{Loc 'ui-options-no-filters'}" />

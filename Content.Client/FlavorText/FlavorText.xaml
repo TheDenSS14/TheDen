@@ -8,8 +8,15 @@ SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.
 SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 -->
 
-<Control Name="CFlavorText" HorizontalExpand="True" xmlns="https://spacestation14.io">
-    <BoxContainer Orientation="Vertical" HorizontalExpand="True">
-        <TextEdit Name="CFlavorTextInput" Access="Public" MinSize="220 100" Margin="10" HorizontalExpand="True" VerticalExpand="True" />
-    </BoxContainer>
+<Control Name="CFlavorText" HorizontalExpand="True"
+         xmlns="https://spacestation14.io"
+         xmlns:ui="clr-namespace:Content.Client.UserInterface.Controls">
+    <ui:NeoTabContainer Name="FlavorTextTabs"  VerticalExpand="True" HScrollEnabled="False" VScrollEnabled="False">
+        <BoxContainer Name="TabSFW" Orientation="Vertical" HorizontalExpand="True">
+            <TextEdit Name="CFlavorTextSFWInput" Access="Public" MinSize="220 100" Margin="10" HorizontalExpand="True" VerticalExpand="True" />
+        </BoxContainer>
+        <BoxContainer Name="TabNSFW" Orientation="Vertical" HorizontalExpand="True">
+            <TextEdit Name="CFlavorTextNSFWInput" Access="Public" MinSize="220 100" Margin="10" HorizontalExpand="True" VerticalExpand="True" />
+        </BoxContainer>
+    </ui:NeoTabContainer>
 </Control>

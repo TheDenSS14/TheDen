@@ -182,7 +182,9 @@ namespace Content.Server.Body.Components
         [DataField]
         public string ChemicalSolutionName = DefaultChemicalsSolutionName;
 
-        /// <summary>Name/Key that <see cref="TemporarySolution"/> is indexed by.</summary>
+        /// <summary>
+        ///     Name/Key that <see cref="TemporarySolution"/> is indexed by.
+        /// </summary>
         [DataField]
         public string BloodTemporarySolutionName = DefaultBloodTemporarySolutionName;
 

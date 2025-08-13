@@ -1,14 +1,14 @@
-// SPDX-FileCopyrightText: 2023 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2023 keronshb <54602815+keronshb@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2023 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT <77995199+DEATHB4DEFEAT@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 SimpleStation14 <130339894+SimpleStation14@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 VMSolidus <evilexecutive@gmail.com>
-// SPDX-FileCopyrightText: 2024 lzk <124214523+lzk228@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 M3739 <47579354+M3739@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 Skubman <ba.fallaria@gmail.com>
-// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 DrSmugleaf
+// SPDX-FileCopyrightText: 2023 metalgearsloth
+// SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT
+// SPDX-FileCopyrightText: 2024 Leon Friedrich
+// SPDX-FileCopyrightText: 2024 SimpleStation14
+// SPDX-FileCopyrightText: 2024 VMSolidus
+// SPDX-FileCopyrightText: 2024 keronshb
+// SPDX-FileCopyrightText: 2024 lzk
+// SPDX-FileCopyrightText: 2025 M3739
+// SPDX-FileCopyrightText: 2025 Skubman
+// SPDX-FileCopyrightText: 2025 sleepyyapril
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -63,6 +63,16 @@ public abstract partial class BaseActionComponent : Component
     ///     the decal. But this is probably useful for other actions, including maybe changing color on toggle.
     /// </remarks>
     [DataField("iconColor")] public Color IconColor = Color.White;
+
+    /// <summary>
+    ///     The original <see cref="IconColor"/> this action was.
+    /// </summary>
+    [DataField] public Color OriginalIconColor;
+
+    /// <summary>
+    ///     The color the action should turn to when disabled
+    /// </summary>
+    [DataField] public Color DisabledIconColor = Color.DimGray;
 
     /// <summary>
     ///     Keywords that can be used to search for this action in the action menu.
@@ -213,6 +223,8 @@ public abstract class BaseActionComponentState : ComponentState
     public SpriteSpecifier? Icon;
     public SpriteSpecifier? IconOn;
     public Color IconColor;
+    public Color OriginalIconColor;
+    public Color DisabledIconColor;
     public HashSet<string> Keywords;
     public bool Enabled;
     public bool Toggled;
@@ -243,6 +255,8 @@ public abstract class BaseActionComponentState : ComponentState
         Icon = component.Icon;
         IconOn = component.IconOn;
         IconColor = component.IconColor;
+        OriginalIconColor = component.OriginalIconColor;
+        DisabledIconColor = component.DisabledIconColor;
         Keywords = component.Keywords;
         Enabled = component.Enabled;
         Toggled = component.Toggled;
