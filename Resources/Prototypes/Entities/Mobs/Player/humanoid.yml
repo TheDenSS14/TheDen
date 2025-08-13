@@ -65,6 +65,13 @@
     - Shadowkin
     - Monkey # Shitmed Change
     - Kobold # Shitmed Change
+    - Vox # Den
+    - Feroxi # Den
+    - Plasmaman # Den
+    - Arachne # Den
+    - IPC # Den
+    - Diona # Den
+    - Harpy # Den
   components:
     - type: GhostRole
       name: ghost-role-information-Death-Squad-name
@@ -84,22 +91,6 @@
 
 ## ERT Leader
 
-- type: entity
-  id: RandomHumanoidSpawnerERTLeader
-  name: ERT leader
-  suffix: ERTRole, Basic
-  components:
-    - type: Sprite
-      sprite: Markers/jobs.rsi
-      state: ertleader
-    - type: RandomMetadata
-      nameSegments:
-      - NamesMilitaryFirstLeader
-      - NamesMilitaryLast
-      nameFormat: name-format-ert
-    - type: RandomHumanoidSpawner
-      settings: ERTLeader
-
 - type: randomHumanoidSettings
   id: ERTLeader
   randomizeName: false
@@ -113,6 +104,7 @@
     - Arachne # Den
     - IPC # Den
     - Diona # Den
+    - Harpy # Den
   components:
     - type: GhostRole
       name: ghost-role-information-ert-leader-name
@@ -129,52 +121,20 @@
       nameFormat: name-format-ert
 
 - type: entity
-  id: RandomHumanoidSpawnerERTLeaderEVA
-  parent: RandomHumanoidSpawnerERTLeader
+  id: RandomHumanoidSpawnerERTLeader
   name: ERT leader
-  suffix: ERTRole, Armored EVA
+  suffix: ERTRole, Basic
   components:
     - type: Sprite
       sprite: Markers/jobs.rsi
-      state: ertleadereva
+      state: ertleader
+    - type: RandomMetadata
+      nameSegments:
+      - NamesMilitaryFirstLeader
+      - NamesMilitaryLast
+      nameFormat: name-format-ert
     - type: RandomHumanoidSpawner
-      settings: ERTLeaderEVA
-
-- type: randomHumanoidSettings
-  id: ERTLeaderEVA
-  parent: ERTLeader
-  components:
-    - type: MindShield
-    - type: GhostRole
-      name: ghost-role-information-ert-leader-name
-      description: ghost-role-information-ert-leader-description
-      raffle:
-        settings: short
-    - type: GhostTakeoverAvailable
-    - type: Loadout
-      prototypes: [ ERTLeaderGearEVA ]
-
-- type: entity
-  id: RandomHumanoidSpawnerERTLeaderEVALecter
-  parent: RandomHumanoidSpawnerERTLeaderEVA
-  suffix: ERTRole, Lecter, EVA
-  components:
-    - type: RandomHumanoidSpawner
-      settings: ERTLeaderEVALecter
-
-- type: randomHumanoidSettings
-  id: ERTLeaderEVALecter
-  parent: ERTLeaderEVA
-  components:
-    - type: MindShield
-    - type: GhostRole
-      name: ghost-role-information-ert-leader-name
-      description: ghost-role-information-ert-leader-description
-      raffle:
-        settings: short
-    - type: GhostTakeoverAvailable
-    - type: Loadout
-      prototypes: [ ERTLeaderGearEVALecter ]
+      settings: ERTLeader
 
 ## ERT Chaplain
 
@@ -214,32 +174,6 @@
     - type: Loadout
       prototypes: [ ERTChaplainGear ]
 
-- type: entity
-  id: RandomHumanoidSpawnerERTChaplainEVA
-  parent: RandomHumanoidSpawnerERTChaplain
-  name: ERT chaplain
-  suffix: ERTRole, Enviro EVA
-  components:
-    - type: Sprite
-      sprite: Markers/jobs.rsi
-      state: chaplain #needs an ERT variant once a good suit it made.
-    - type: RandomHumanoidSpawner
-      settings: ERTChaplainEVA
-
-- type: randomHumanoidSettings
-  id: ERTChaplainEVA
-  parent: ERTChaplain
-  components:
-    - type: MindShield
-    - type: GhostRole
-      name: ghost-role-information-ert-chaplain-name
-      description: ghost-role-information-ert-chaplain-description
-      raffle:
-        settings: short
-    - type: GhostTakeoverAvailable
-    - type: Loadout
-      prototypes: [ ERTChaplainGearEVA ]
-
 ## ERT Janitor
 
 - type: entity
@@ -277,32 +211,6 @@
       nameFormat: name-format-ert
     - type: Loadout
       prototypes: [ ERTJanitorGear ]
-
-- type: entity
-  id: RandomHumanoidSpawnerERTJanitorEVA
-  parent: RandomHumanoidSpawnerERTJanitor
-  name: ERT janitor
-  suffix: ERTRole, Enviro EVA
-  components:
-    - type: Sprite
-      sprite: Markers/jobs.rsi
-      state: ertjanitoreva
-    - type: RandomHumanoidSpawner
-      settings: ERTJanitorEVA
-
-- type: randomHumanoidSettings
-  id: ERTJanitorEVA
-  parent: ERTJanitor
-  components:
-    - type: MindShield
-    - type: GhostRole
-      name: ghost-role-information-ert-janitor-name
-      description: ghost-role-information-ert-janitor-description
-      raffle:
-        settings: short
-    - type: GhostTakeoverAvailable
-    - type: Loadout
-      prototypes: [ ERTJanitorGearEVA ]
 
 ## ERT Engineer
 
@@ -342,32 +250,6 @@
     - type: Loadout
       prototypes: [ ERTEngineerGear ]
 
-- type: entity
-  id: RandomHumanoidSpawnerERTEngineerEVA
-  parent: RandomHumanoidSpawnerERTEngineer
-  name: ERT engineer
-  suffix: ERTRole, Enviro EVA
-  components:
-    - type: Sprite
-      sprite: Markers/jobs.rsi
-      state: ertengineereva
-    - type: RandomHumanoidSpawner
-      settings: ERTEngineerEVA
-
-- type: randomHumanoidSettings
-  id: ERTEngineerEVA
-  parent: ERTEngineer
-  components:
-    - type: MindShield
-    - type: GhostRole
-      name: ghost-role-information-ert-engineer-name
-      description: ghost-role-information-ert-engineer-description
-      raffle:
-        settings: short
-    - type: GhostTakeoverAvailable
-    - type: Loadout
-      prototypes: [ ERTEngineerGearEVA ]
-
 ## ERT Security
 
 - type: entity
@@ -406,54 +288,6 @@
     - type: Loadout
       prototypes: [ ERTSecurityGear ]
 
-- type: entity
-  id: RandomHumanoidSpawnerERTSecurityEVA
-  parent: RandomHumanoidSpawnerERTSecurity
-  name: ERT security
-  suffix: ERTRole, Armored EVA
-  components:
-    - type: Sprite
-      sprite: Markers/jobs.rsi
-      state: ertsecurityeva
-    - type: RandomHumanoidSpawner
-      settings: ERTSecurityEVA
-
-- type: randomHumanoidSettings
-  id: ERTSecurityEVA
-  parent: ERTSecurity
-  components:
-    - type: MindShield
-    - type: GhostRole
-      name: ghost-role-information-ert-security-name
-      description: ghost-role-information-ert-security-description
-      raffle:
-        settings: short
-    - type: GhostTakeoverAvailable
-    - type: Loadout
-      prototypes: [ ERTSecurityGearEVA ]
-
-- type: entity
-  id: RandomHumanoidSpawnerERTSecurityEVALecter
-  parent: RandomHumanoidSpawnerERTSecurityEVA
-  suffix: ERTRole, Lecter, EVA
-  components:
-    - type: RandomHumanoidSpawner
-      settings: ERTSecurityEVALecter
-
-- type: randomHumanoidSettings
-  id: ERTSecurityEVALecter
-  parent: ERTSecurityEVA
-  components:
-    - type: MindShield
-    - type: GhostRole
-      name: ghost-role-information-ert-security-name
-      description: ghost-role-information-ert-security-description
-      raffle:
-        settings: short
-    - type: GhostTakeoverAvailable
-    - type: Loadout
-      prototypes: [ ERTSecurityGearEVALecter ]
-
 ## ERT Medic
 
 - type: entity
@@ -491,32 +325,6 @@
       nameFormat: name-format-ert
     - type: Loadout
       prototypes: [ ERTMedicalGear ]
-
-- type: entity
-  id: RandomHumanoidSpawnerERTMedicalEVA
-  parent: RandomHumanoidSpawnerERTMedical
-  name: ERT medic
-  suffix: ERTRole, Armored EVA
-  components:
-    - type: Sprite
-      sprite: Markers/jobs.rsi
-      state: ertmedicaleva
-    - type: RandomHumanoidSpawner
-      settings: ERTMedicalEVA
-
-- type: randomHumanoidSettings
-  id: ERTMedicalEVA
-  parent: ERTMedical
-  components:
-    - type: MindShield
-    - type: GhostRole
-      name: ghost-role-information-ert-medical-name
-      description: ghost-role-information-ert-medical-description
-      raffle:
-        settings: short
-    - type: GhostTakeoverAvailable
-    - type: Loadout
-      prototypes: [ ERTMedicalGearEVA ]
 
 ## CBURN
 
