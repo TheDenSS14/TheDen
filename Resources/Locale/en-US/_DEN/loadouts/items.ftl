@@ -18,6 +18,12 @@ loadout-name-LoadoutClothingWaistApronStripesVertical = waist apron (vertical st
 # outerclothing
 loadout-name-LoadoutClothingOuterCoatTurtleneckHalfBlouse = turtleneck half blouse (colorable)
 
+# innerclothing
+loadout-name-LoadoutClothingUniformBootyShorts = booty shorts (colorable)
+
+# hands
+loadout-name-LoadoutClothingHandsSentimentalRing = sentimental ring (colorable)
+
 # plush
 loadout-name-PlushieTeddyBearRecolorable = teddy bear (colorable)
 loadout-name-PlushieTeddyBearRecolorablePlaid = teddy bear (colorable, plaid)
