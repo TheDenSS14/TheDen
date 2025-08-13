@@ -16,7 +16,7 @@ public sealed partial class ConsentCategoryPrototype : IPrototype
     public string ID { get; } = default!;
 
     [DataField]
-    public int Priority { get; set;  }
+    public int Priority { get; set; } = 100;
 
     [DataField]
     public HashSet<ProtoId<ConsentTogglePrototype>> Members { get; set; } = new();

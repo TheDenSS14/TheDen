@@ -69,7 +69,8 @@ public sealed partial class ConsentWindow : FancyWindow
     private void InitializeCategories()
     {
         var consentCategories = _protoManager
-            .EnumeratePrototypes<ConsentCategoryPrototype>();
+            .EnumeratePrototypes<ConsentCategoryPrototype>()
+            .OrderBy(category => category.Priority);
 
         _tabs.Clear();
         var tab = 0;
