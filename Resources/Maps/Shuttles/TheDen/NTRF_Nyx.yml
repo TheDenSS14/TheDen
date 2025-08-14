@@ -4,8 +4,8 @@ meta:
   engineVersion: 260.2.0
   forkId: ""
   forkVersion: ""
-  time: 08/14/2025 09:47:22
-  entityCount: 506
+  time: 08/14/2025 09:54:21
+  entityCount: 507
 maps: []
 grids:
 - 1
@@ -1587,6 +1587,15 @@ entities:
     - type: Transform
       pos: 0.5,-0.5
       parent: 1
+- proto: FloorDrain
+  entities:
+  - uid: 507
+    components:
+    - type: Transform
+      pos: -1.5,3.5
+      parent: 1
+    - type: Fixtures
+      fixtures: {}
 - proto: GasMixerFlipped
   entities:
   - uid: 201
