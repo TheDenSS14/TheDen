@@ -39,11 +39,6 @@ public sealed partial class RecordEditorGui : Control
             UpdateRecords(_records.WithContactName(args.Text));
         };
 
-        ResidencyEdit.OnTextChanged += args => // TheDen
-        {
-            UpdateRecords(_records.WithResidency(args.Text));
-        };
-
         #endregion
 
         #region Employment
@@ -135,7 +130,6 @@ public sealed partial class RecordEditorGui : Control
     private void UpdateWidgets()
     {
         ContactNameEdit.SetText(_records.EmergencyContactName);
-        ResidencyEdit.SetText(_records.Residency); // TheDen
 
         WorkAuthCheckBox.Pressed = _records.HasWorkAuthorization;
 

@@ -324,7 +324,6 @@ public sealed partial class CharacterRecordViewer : FancyWindow
         RecordContainerGender.Text = record.Gender.ToString();
         RecordContainerSpecies.Text = record.Species;
         RecordContainerContactName.SetValue(cr.EmergencyContactName);
-        RecordContainerResidency.SetValue(cr.Residency); // TheDen
 
         RecordContainerEmployment.Visible = false;
         RecordContainerMedical.Visible = false;

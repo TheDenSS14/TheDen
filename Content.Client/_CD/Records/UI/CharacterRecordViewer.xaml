@@ -58,9 +58,6 @@ SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
                                 <Label Name="RecordContainerSpecies" Align="Right" />
                             </BoxContainer>
                             <records:RecordLongItemDisplay Name="RecordContainerContactName" Title="{Loc 'humanoid-profile-editor-cd-records-contact-name'}"/>
-                            <!-- TheDen Start -->
-                            <records:RecordLongItemDisplay Name="RecordContainerResidency" Title="{Loc 'humanoid-profile-editor-cd-records-residency'}"/>
-                            <!-- TheDen End -->
                         </BoxContainer>
                         <!-- Employment -->
                         <BoxContainer Name="RecordContainerEmployment" Orientation="Vertical" HorizontalExpand="True" Visible="False" >
