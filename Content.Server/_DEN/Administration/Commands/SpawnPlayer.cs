@@ -2,7 +2,6 @@ using System.Linq;
 using Content.Server.Administration;
 using Content.Server.Clothing.Systems; // Einstein Engines
 using Content.Server.GameTicking;
-using Content.Server.Players;
 using Content.Server.Players.PlayTimeTracking; // Einstein Engines
 using Content.Server.Preferences.Managers;
 using Content.Server.Station.Systems;
@@ -10,12 +9,9 @@ using Content.Server.Traits; // Einstein Engines
 using Content.Shared.Administration;
 using Content.Shared.Roles;
 using Content.Shared.Mind;
-using Content.Shared.Players;
 using Content.Shared.Preferences;
 using Robust.Server.Player;
 using Robust.Shared.Console;
-using Robust.Shared.Network;
-using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 
 namespace Content.Server._DEN.Administration.Commands;
@@ -47,6 +43,7 @@ public sealed class SpawnPlayer : LocalizedEntityCommands
             return;
         }
 
+        // Parse the player
         if (!_playerManager.TryGetSessionByUsername(args[0], out var player))
         {
             shell.WriteError(Loc.GetString("cmd-spawnplayer-error-player", ("player", args[0])));
@@ -55,7 +52,7 @@ public sealed class SpawnPlayer : LocalizedEntityCommands
 
         character = (HumanoidCharacterProfile) _prefs.GetPreferences(player.UserId).SelectedCharacter;
 
-        // Parse out job if one is provided
+        // Parse the job_id
         var jobName = args.Length > 1 ? args[1] : "Passenger"; // just default to passenger
         var jobExists = _prototypeManager.TryIndex<JobPrototype>(jobName, out var jobProto);
 
@@ -94,6 +91,7 @@ public sealed class SpawnPlayer : LocalizedEntityCommands
             jobProto: jobProto // this applies 'special' things with the job's loadout, like mindshields
         );
 
+        // Parse out if we should transfer the mind, and do it if true. Will force even if player has an active 'non-ghost' character.
         if (args.Length > 2 && bool.TryParse(args[2], out bool transferMind) && transferMind)
         {
             mindSystem.TransferTo(mindId, mobUid, transferMind);
