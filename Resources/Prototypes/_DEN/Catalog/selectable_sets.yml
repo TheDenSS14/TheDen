@@ -21,6 +21,20 @@
 
 # ERT Loadouts
 
+# ERT Leader
+- type: selectableSet
+  id: ERTLeaderLoadout1
+  name: ert-leader-loadout-1-name
+  description: ert-leader-loadout-1-desc
+  sprite:
+      sprite: _Goobstation/Objects/Shields/blueshieldshield.rsi
+      state: icon-on
+  content:
+    - BlueShieldShield
+    - BlueshieldMace
+    - GrenadeStinger
+    - GrenadeStinger
+
 # ERT Security
 - type: selectableSet
   id: ERTSecurityLoadout1
@@ -71,8 +85,8 @@
 # ERT Engineer
 - type: selectableSet
   id: ERTEngineerLoadout1
-  name: ert-engineer-loadout-1-name
-  description: ert-engineer-loadout-1-desc
+  name: ert-security-loadout-3-name
+  description: ert-security-loadout-3-desc
   sprite:
     sprite: Objects/Weapons/Guns/Shotguns/enforcer.rsi
     state: icon

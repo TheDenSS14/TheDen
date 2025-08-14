@@ -61,9 +61,11 @@ public sealed class SetSelectorSystem : EntitySystem
 
         EntityUid spawnedStorage = default;
         var storagePrototype = selector.Comp.SpawnedStoragePrototype;
-        var spawnedStorageContainer =  selector.Comp.SpawnedStorageContainer;
+        var spawnedStorageContainer = selector.Comp.SpawnedStorageContainer;
+
         var openSpawnedStorage = selector.Comp.OpenSpawnedStorage;
         var coordinates = _transform.GetMapCoordinates(selector.Owner);
+
         _container.TryGetContainingContainer(selector, out var target);
         List<string> ignoredContainers = new() { "implant", "pocket1", "pocket2", "pocket3", "pocket4" } ;
 

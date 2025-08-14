@@ -101,7 +101,7 @@
     - !type:CharacterDepartmentRequirement
       departments:
         - Medical
-
+        
 - type: loadout
   id: LoadoutMedicalHeadMirror
   category: JobsMedicalAUncategorized
@@ -115,3 +115,41 @@
     - !type:CharacterDepartmentRequirement
       departments:
         - Medical
+
+- type: loadout
+  id: LoadoutMedicalOuterCoatBomberMedical # Can also butcher the other version to get this
+  category: JobsMedicalAUncategorized
+  cost: 0
+  items:
+    -  ClothingOuterCoatBomberMedical
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMedicalOuter
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Medical
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - ChiefMedicalOfficer # Sorry, these are for the little guys
+        - Brigmedic # They get their own and I dunno if they can access this loadout
+        - MedicalIntern # Gotta earn it
+
+- type: loadout
+  id: LoadoutMedicalOuterCoatBomberMedicalLoose # Can also butcher the other version to get this
+  category: JobsMedicalAUncategorized
+  cost: 0
+  items:
+    -  ClothingOuterCoatBomberMedicalLoose
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMedicalOuter
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Medical
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - ChiefMedicalOfficer # Sorry, these are for the little guys
+        - Brigmedic # They get their own and I dunno if they can access this loadout
+        - MedicalIntern # Gotta earn it

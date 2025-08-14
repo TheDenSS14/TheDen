@@ -4,17 +4,17 @@ selectable-set-rcd-desc = Literally just a RCD
 selectable-set-rpd-name = RPD
 selectable-set-rpd-desc = I don't know what you expected, its a RPD
 
+ert-leader-loadout-1-name = Paladin
+ert-leader-loadout-1-desc = Energy greatshield and power mace combo. Stinger grenades for flavor.
+
 ert-security-loadout-1-name = Advanced Recon
-ert-security-loadout-1-desc = an Annie assault rifle, magazines and stinger grenades
+ert-security-loadout-1-desc = An Annie assault rifle, magazines and stinger grenades
 
 ert-security-loadout-2-name = Combat Evolved
 ert-security-loadout-2-desc = A Pulse carbine, smoke, EMP and stinger grenades
 
 ert-security-loadout-3-name = Breach & Clear
 ert-security-loadout-3-desc = An Enforcer shotgun, extra drums of ammo and stinger grenades
-
-ert-engineer-loadout-1-name = Breach & Clear
-ert-engineer-loadout-1-desc = An Enforcer shotgun, extra drums of ammo and stinger grenades
 
 ert-engineer-loadout-2-name = Live Wire
 ert-engineer-loadout-2-desc = A Pulse carbine, tear gas & stinger grenades, with breaching charges

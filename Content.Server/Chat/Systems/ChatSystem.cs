@@ -717,7 +717,7 @@ public sealed partial class ChatSystem : SharedChatSystem
         var ent = Identity.Entity(source, EntityManager);
         var name = FormattedMessage.EscapeText(nameOverride ?? Name(ent));
         action = FormattedMessage.RemoveMarkupPermissive(action);
-
+        
         // DEN: use the format of 'detailed' when starting with '!'
         if (!separateNameAndMessage && action.StartsWith('!'))
         {
@@ -771,7 +771,7 @@ public sealed partial class ChatSystem : SharedChatSystem
         var ent = Identity.Entity(source, EntityManager);
         var name = FormattedMessage.EscapeText(nameOverride ?? Name(ent));
         action = FormattedMessage.RemoveMarkupPermissive(action).Trim();
-
+        
         // DEN: use the format of 'detailed' when starting with '!'
         if (!separateNameAndMessage && action.StartsWith('!'))
         {
