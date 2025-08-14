@@ -653,7 +653,7 @@ public sealed partial class ChatSystem : SharedChatSystem
                 result = perceivedMessage;
                 wrappedMessage = WrapWhisperMessage(source, "chat-manager-entity-whisper-wrap-message", name, result, language);
             }
-            else if (_interactionSystem.InRangeUnobstructed(source, listener, WhisperMuffledRange))
+            else if (_interactionSystem.InRangeUnobstructed(source, listener, WhisperMuffledRange, _subtleWhisperMask))
             {
                 // Scenario 2: if the listener is too far, they only hear fragments of the message
                 result = ObfuscateMessageReadability(perceivedMessage);
@@ -717,7 +717,10 @@ public sealed partial class ChatSystem : SharedChatSystem
         var ent = Identity.Entity(source, EntityManager);
         var name = FormattedMessage.EscapeText(nameOverride ?? Name(ent));
         action = FormattedMessage.RemoveMarkupPermissive(action);
-        var useSpace = !action.StartsWith("\'s") || !action.StartsWith(",");
+
+        Log.Info(action);
+
+        var useSpace = !(action.StartsWith("'") || action.StartsWith(","));
         var space = useSpace || separateNameAndMessage ? " " : "";
         var locString = "chat-manager-entity-me-wrap-message";
 
@@ -762,8 +765,8 @@ public sealed partial class ChatSystem : SharedChatSystem
         // get the entity's apparent name (if no override provided).
         var ent = Identity.Entity(source, EntityManager);
         var name = FormattedMessage.EscapeText(nameOverride ?? Name(ent));
-        action = FormattedMessage.RemoveMarkupPermissive(action);
-        var useSpace = !action.StartsWith("\'s") || !action.StartsWith(",");
+        action = FormattedMessage.RemoveMarkupPermissive(action).Trim();
+        var useSpace = !(action.StartsWith("'") || action.StartsWith(","));
         var space = useSpace || separateNameAndMessage ? " " : "";
         var locString = "chat-manager-entity-subtle-wrap-message";
 
