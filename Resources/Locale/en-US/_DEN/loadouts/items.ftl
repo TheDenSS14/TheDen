@@ -16,6 +16,7 @@ loadout-name-LoadoutClothingWaistApronStripesHorizontal = waist apron (horizonta
 loadout-name-LoadoutClothingWaistApronStripesVertical = waist apron (vertical stripes, colorable)
 
 # outerclothing
+loadout-name-LoadoutClothingOuterCoatTurtleneckHalfBlouse = turtleneck half blouse (colorable)
 
 # innerclothing
 loadout-name-LoadoutClothingUniformBootyShorts = booty shorts (colorable)
@@ -37,5 +38,5 @@ loadout-name-LoadoutItemCaneWalkingAnatomical = anatomical grip cane (colorable)
 loadout-name-LoadoutItemCaneWalkingFoldable = folding cane (colorable)
 loadout-name-LoadoutItemCaneWalkingQuad = quad cane (colorable)
 
-loadout-name-LoadoutServiceItemGoldenPlunger = golden plunger
+loadout-name-LoadoutServiceItemGoldenPlunger = golden plunger 
 

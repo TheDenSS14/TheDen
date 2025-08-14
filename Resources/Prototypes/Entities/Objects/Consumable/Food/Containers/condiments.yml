@@ -520,6 +520,32 @@
 
 - type: entity
   parent: BaseFoodCondimentBottle
+  id: FoodCondimentBottleMustard
+  name: mustard bottle
+  description: Mustard? More like Musthave!
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        reagents:
+        - ReagentId: Mustard
+          Quantity: 30
+  - type: Sprite
+    layers:
+    - state: bottle-empty
+      map: ["enum.OpenableVisuals.Layer"]
+    - state: label-m
+    - state: bottle-alpha-6
+      map: ["enum.SolutionContainerLayers.Fill"]
+      visible: true
+  - type: Icon
+    state: bottle-mustard
+  - type: Tag
+    tags:
+    - Mustard
+
+- type: entity
+  parent: BaseFoodCondimentBottle
   id: FoodCondimentBottleBBQ
   name: BBQ sauce bottle
   description: Hand wipes not included.

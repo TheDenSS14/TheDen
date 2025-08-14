@@ -18,3 +18,160 @@
     state: icon
   content:
   - RPD
+
+# ERT Loadouts
+
+# ERT Security
+- type: selectableSet
+  id: ERTSecurityLoadout1
+  name: ert-security-loadout-1-name
+  description: ert-security-loadout-1-desc
+  sprite:
+    sprite: _Goobstation/Objects/Weapons/Guns/Rifles/annie.rsi
+    state: base
+  content:
+    - WeaponRifleAnnie
+    - MagazineLightRifle
+    - MagazineLightRifle
+    - MagazineLightRifle
+    - GrenadeStinger
+    - GrenadeStinger
+
+- type: selectableSet
+  id: ERTSecurityLoadout2
+  name: ert-security-loadout-2-name
+  description: ert-security-loadout-2-desc
+  sprite:
+    sprite: Objects/Weapons/Guns/Battery/pulse_carbine.rsi
+    state: base
+  content:
+    - WeaponPulseCarbine
+    - SmokeGrenade
+    - SmokeGrenade
+    - EmpGrenade
+    - EmpGrenade
+    - GrenadeStinger
+    - GrenadeStinger
+
+- type: selectableSet
+  id: ERTSecurityLoadout3
+  name: ert-security-loadout-3-name
+  description: ert-security-loadout-3-desc
+  sprite:
+    sprite: Objects/Weapons/Guns/Shotguns/enforcer.rsi
+    state: icon
+  content:
+    - WeaponShotgunEnforcer
+    - MagazineShotgun
+    - MagazineShotgun
+    - MagazineShotgunSlug
+    - GrenadeStinger
+    - GrenadeStinger
+
+# ERT Engineer
+- type: selectableSet
+  id: ERTEngineerLoadout1
+  name: ert-engineer-loadout-1-name
+  description: ert-engineer-loadout-1-desc
+  sprite:
+    sprite: Objects/Weapons/Guns/Shotguns/enforcer.rsi
+    state: icon
+  content:
+    - WeaponShotgunEnforcer
+    - MagazineShotgun
+    - MagazineShotgun
+    - MagazineShotgunSlug
+    - GrenadeStinger
+    - GrenadeStinger
+
+- type: selectableSet
+  id: ERTEngineerLoadout2
+  name: ert-engineer-loadout-2-name
+  description: ert-engineer-loadout-2-desc
+  sprite:
+    sprite: Objects/Weapons/Guns/Battery/pulse_carbine.rsi
+    state: base
+  content:
+    - WeaponPulseCarbine
+    - BreachingCharge
+    - BreachingCharge
+    - TearGasGrenade
+    - TearGasGrenade
+    - GrenadeStinger
+    - GrenadeStinger
+
+- type: selectableSet
+  id: ERTEngineerLoadout3
+  name: ert-engineer-loadout-3-name
+  description: ert-engineer-loadout-3-desc
+  sprite:
+    sprite: Objects/Weapons/Guns/Rifles/lecter.rsi
+    state: icon
+  content:
+    - WeaponRifleLecter
+    - MagazineRifle
+    - MagazineRifle
+    - MagazineRifle
+    - GrenadeStinger
+    - GrenadeStinger
+
+- type: selectableSet
+  id: ERTEngineerLoadout4
+  name: ert-engineer-loadout-4-name
+  description: ert-engineer-loadout-4-desc
+  sprite:
+    sprite: Objects/Weapons/Guns/Battery/disabler_smg.rsi
+    state: base
+  content:
+    - WeaponDisablerSMG
+    - TearGasGrenade
+    - TearGasGrenade
+    - GrenadeStinger
+    - GrenadeStinger
+    - BreachingCharge
+    - BreachingCharge
+
+# ERT Medic
+- type: selectableSet
+  id: ERTMedicalLoadout1
+  name: ert-medic-loadout-1-name
+  description: ert-medic-loadout-1-desc
+  sprite:
+    sprite: Objects/Weapons/Guns/SMGs/wt550.rsi
+    state: icon
+  content:
+    - WeaponSubMachineGunWt550
+    - MedkitCombatFilled
+    - MagazinePistolSubMachineGunTopMounted
+    - MagazinePistolSubMachineGunTopMounted
+    - MagazinePistolSubMachineGunTopMounted
+
+- type: selectableSet
+  id: ERTMedicalLoadout2
+  name: ert-medic-loadout-2-name
+  description: ert-medic-loadout-2-desc
+  sprite:
+    sprite: Objects/Weapons/Guns/Battery/disabler_smg.rsi
+    state: base
+  content:
+    - WeaponDisablerSMG
+    - MedkitCombatFilled
+    - TearGasGrenade
+    - TearGasGrenade
+    - GrenadeStinger
+    - GrenadeStinger
+
+- type: selectableSet
+  id: ERTMedicalLoadout3
+  name: ert-medic-loadout-3-name
+  description: ert-medic-loadout-3-desc
+  sprite:
+    sprite: Objects/Weapons/Guns/Rifles/lecter.rsi
+    state: icon
+  content:
+    - WeaponRifleLecter
+    - MagazineRifle
+    - MagazineRifle
+    - MagazineRifle
+    - GrenadeStinger
+    - GrenadeStinger

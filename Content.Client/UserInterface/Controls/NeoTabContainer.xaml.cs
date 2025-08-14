@@ -44,6 +44,8 @@ public sealed partial class NeoTabContainer : BoxContainer
         _ => null,
     };
 
+    public event Action<Control?, Control>? OnTabChanged;
+
 
     /// <inheritdoc cref="NeoTabContainer"/>
     public NeoTabContainer()
@@ -172,6 +174,14 @@ public sealed partial class NeoTabContainer : BoxContainer
         return true;
     }
 
+    public Control? GetTabContents(int index)
+    {
+        if (index < 0 || index >= _controls.Count)
+            return null;
+
+        return _controls[index];
+    }
+
 
     /// Sets the title of the tab associated with the given index
     public void SetTabTitle(int index, string title)
@@ -222,6 +232,8 @@ public sealed partial class NeoTabContainer : BoxContainer
         var button = _tabs[control];
         button.Pressed = true;
         control.Visible = true;
+
+        OnTabChanged?.Invoke(CurrentControl, control);
         CurrentControl = control;
     }
 
