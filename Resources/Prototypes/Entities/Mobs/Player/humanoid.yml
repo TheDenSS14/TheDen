@@ -90,7 +90,6 @@
 
 
 ## ERT Leader
-
 - type: randomHumanoidSettings
   id: ERTLeader
   randomizeName: false
@@ -124,7 +123,7 @@
 - type: entity
   id: RandomHumanoidSpawnerERTLeader
   name: ERT leader
-  suffix: ERTRole, Basic
+  suffix: ERTRole
   components:
     - type: Sprite
       sprite: Markers/jobs.rsi
@@ -137,25 +136,23 @@
     - type: RandomHumanoidSpawner
       settings: ERTLeader
 
-## ERT Chaplain
-
 - type: entity
-  id: RandomHumanoidSpawnerERTChaplain
-  parent: RandomHumanoidSpawnerERTLeader
-  name: ERT chaplain
-  suffix: ERTRole, Basic
+  name: ERT leader spawner
+  id: ERTLeaderSpawner
+  parent: MarkerBase
   components:
-    - type: Sprite
-      sprite: Markers/jobs.rsi
-      state: chaplain #needs an ERT variant once a good suit it made.
-    - type: RandomMetadata
-      nameSegments:
-      - NamesMilitaryFirst
-      - NamesMilitaryLast
-      nameFormat: name-format-ert
-    - type: RandomHumanoidSpawner
-      settings: ERTChaplain
+  - type: Sprite
+    layers:
+      - sprite: Markers/jobs.rsi
+        state: green
+      - sprite: Markers/jobs.rsi
+        state: ertleader
+  - type: RandomSpawner
+    prototypes:
+    - RandomHumanoidSpawnerERTLeader
+    chance: 1
 
+## ERT Chaplain
 - type: randomHumanoidSettings
   id: ERTChaplain
   parent: ERTLeader
@@ -175,25 +172,40 @@
     - type: Loadout
       prototypes: [ ERTChaplainGear ]
 
-## ERT Janitor
-
 - type: entity
-  id: RandomHumanoidSpawnerERTJanitor
+  id: RandomHumanoidSpawnerERTChaplain
   parent: RandomHumanoidSpawnerERTLeader
-  name: ERT janitor
-  suffix: ERTRole, Basic
+  name: ERT chaplain
+  suffix: ERTRole
   components:
     - type: Sprite
       sprite: Markers/jobs.rsi
-      state: ertjanitor
+      state: chaplain #needs an ERT variant once a good suit it made.
     - type: RandomMetadata
       nameSegments:
       - NamesMilitaryFirst
       - NamesMilitaryLast
       nameFormat: name-format-ert
     - type: RandomHumanoidSpawner
-      settings: ERTJanitor
+      settings: ERTChaplain
 
+- type: entity
+  name: ERT chaplain spawner
+  id: ERTChaplainSpawner
+  parent: MarkerBase
+  components:
+  - type: Sprite
+    layers:
+      - sprite: Markers/jobs.rsi
+        state: green
+      - sprite: Markers/jobs.rsi
+        state: chaplain
+  - type: RandomSpawner
+    prototypes:
+    - RandomHumanoidSpawnerERTChaplain
+    chance: 1
+
+## ERT Janitor
 - type: randomHumanoidSettings
   id: ERTJanitor
   parent: ERTLeader
@@ -213,25 +225,39 @@
     - type: Loadout
       prototypes: [ ERTJanitorGear ]
 
-## ERT Engineer
-
 - type: entity
-  id: RandomHumanoidSpawnerERTEngineer
+  id: RandomHumanoidSpawnerERTJanitor
   parent: RandomHumanoidSpawnerERTLeader
-  name: ERT engineer
-  suffix: ERTRole, Basic
+  name: ERT janitor
+  suffix: ERTRole
   components:
     - type: Sprite
       sprite: Markers/jobs.rsi
-      state: ertengineer
+      state: ertjanitor
     - type: RandomMetadata
       nameSegments:
       - NamesMilitaryFirst
       - NamesMilitaryLast
       nameFormat: name-format-ert
     - type: RandomHumanoidSpawner
-      settings: ERTEngineer
+      settings: ERTJanitor
 
+- type: entity
+  name: ERT janitor spawner
+  id: ERTJanitorSpawner
+  parent: MarkerBase
+  components:
+  - type: Sprite
+    layers:
+      - sprite: Markers/jobs.rsi
+        state: green
+      - sprite: Markers/jobs.rsi
+        state: ertjanitor
+  - type: RandomSpawner
+    prototypes:
+    - RandomHumanoidSpawnerERTJanitor
+
+## ERT Engineer
 - type: randomHumanoidSettings
   id: ERTEngineer
   parent: ERTLeader
@@ -251,25 +277,39 @@
     - type: Loadout
       prototypes: [ ERTEngineerGear ]
 
-## ERT Security
-
 - type: entity
-  id: RandomHumanoidSpawnerERTSecurity
+  id: RandomHumanoidSpawnerERTEngineer
   parent: RandomHumanoidSpawnerERTLeader
-  name: ERT security
-  suffix: ERTRole, Basic
+  name: ERT engineer
+  suffix: ERTRole
   components:
     - type: Sprite
       sprite: Markers/jobs.rsi
-      state: ertsecurity
+      state: ertengineer
     - type: RandomMetadata
       nameSegments:
       - NamesMilitaryFirst
       - NamesMilitaryLast
       nameFormat: name-format-ert
     - type: RandomHumanoidSpawner
-      settings: ERTSecurity
+      settings: ERTEngineer
 
+- type: entity
+  name: ERT engineer spawner
+  id: ERTEngineerSpawner
+  parent: MarkerBase
+  components:
+  - type: Sprite
+    layers:
+      - sprite: Markers/jobs.rsi
+        state: green
+      - sprite: Markers/jobs.rsi
+        state: ertengineer
+  - type: RandomSpawner
+    prototypes:
+    - RandomHumanoidSpawnerERTEngineer
+
+## ERT Security
 - type: randomHumanoidSettings
   id: ERTSecurity
   parent: ERTLeader
@@ -289,25 +329,39 @@
     - type: Loadout
       prototypes: [ ERTSecurityGear ]
 
-## ERT Medic
-
 - type: entity
-  id: RandomHumanoidSpawnerERTMedical
+  id: RandomHumanoidSpawnerERTSecurity
   parent: RandomHumanoidSpawnerERTLeader
-  name: ERT medic
-  suffix: ERTRole, Basic
+  name: ERT security
+  suffix: ERTRole
   components:
     - type: Sprite
       sprite: Markers/jobs.rsi
-      state: ertmedical
+      state: ertsecurity
     - type: RandomMetadata
       nameSegments:
       - NamesMilitaryFirst
       - NamesMilitaryLast
       nameFormat: name-format-ert
     - type: RandomHumanoidSpawner
-      settings: ERTMedical
+      settings: ERTSecurity
 
+- type: entity
+  name: ERT security spawner
+  id: ERTSecuritySpawner
+  parent: MarkerBase
+  components:
+  - type: Sprite
+    layers:
+      - sprite: Markers/jobs.rsi
+        state: green
+      - sprite: Markers/jobs.rsi
+        state: ertsecurity
+  - type: RandomSpawner
+    prototypes:
+    - RandomHumanoidSpawnerERTSecurity
+
+## ERT Medic
 - type: randomHumanoidSettings
   id: ERTMedical
   parent: ERTLeader
@@ -326,6 +380,38 @@
       nameFormat: name-format-ert
     - type: Loadout
       prototypes: [ ERTMedicalGear ]
+
+- type: entity
+  id: RandomHumanoidSpawnerERTMedical
+  parent: RandomHumanoidSpawnerERTLeader
+  name: ERT medic
+  suffix: ERTRole
+  components:
+    - type: Sprite
+      sprite: Markers/jobs.rsi
+      state: ertmedical
+    - type: RandomMetadata
+      nameSegments:
+      - NamesMilitaryFirst
+      - NamesMilitaryLast
+      nameFormat: name-format-ert
+    - type: RandomHumanoidSpawner
+      settings: ERTMedical
+
+- type: entity
+  name: ERT medic spawner
+  id: ERTMedicalSpawner
+  parent: MarkerBase
+  components:
+  - type: Sprite
+    layers:
+      - sprite: Markers/jobs.rsi
+        state: green
+      - sprite: Markers/jobs.rsi
+        state: ertmedical
+  - type: RandomSpawner
+    prototypes:
+    - RandomHumanoidSpawnerERTMedical
 
 ## CBURN
 
