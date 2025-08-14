@@ -718,10 +718,15 @@ public sealed partial class ChatSystem : SharedChatSystem
         var name = FormattedMessage.EscapeText(nameOverride ?? Name(ent));
         action = FormattedMessage.RemoveMarkupPermissive(action);
 
-        Log.Info(action);
+        // DEN: use the format of 'detailed' when starting with '!'
+        if (!separateNameAndMessage && action.StartsWith('!'))
+        {
+            action = action.Substring(1);
+            separateNameAndMessage = true;
+        }
 
-        var useSpace = !(action.StartsWith("'") || action.StartsWith(","));
-        var space = useSpace || separateNameAndMessage ? " " : "";
+        var useSpace = !(action.StartsWith("'") || action.StartsWith(",")); // DEN: remove space when starting an action with ' or ,
+        var space = useSpace || separateNameAndMessage ? " " : ""; // DEN: remove space when starting an action with ' or ,
         var locString = "chat-manager-entity-me-wrap-message";
 
         if (separateNameAndMessage)
@@ -766,8 +771,16 @@ public sealed partial class ChatSystem : SharedChatSystem
         var ent = Identity.Entity(source, EntityManager);
         var name = FormattedMessage.EscapeText(nameOverride ?? Name(ent));
         action = FormattedMessage.RemoveMarkupPermissive(action).Trim();
-        var useSpace = !(action.StartsWith("'") || action.StartsWith(","));
-        var space = useSpace || separateNameAndMessage ? " " : "";
+
+        // DEN: use the format of 'detailed' when starting with '!'
+        if (!separateNameAndMessage && action.StartsWith('!'))
+        {
+            action = action.Substring(1);
+            separateNameAndMessage = true;
+        }
+
+        var useSpace = !(action.StartsWith("'") || action.StartsWith(",")); // DEN: remove space when starting an action with ' or ,
+        var space = useSpace || separateNameAndMessage ? " " : ""; // DEN: remove space when starting an action with ' or ,
         var locString = "chat-manager-entity-subtle-wrap-message";
 
         if (separateNameAndMessage)
@@ -778,7 +791,7 @@ public sealed partial class ChatSystem : SharedChatSystem
             ("entityName", name),
             ("entity", ent),
             ("color", color ?? DefaultSpeakColor.ToHex()),
-            ("space", space),
+            ("space", space), // DEN: remove space when starting an action with ' or ,
             ("message", action));
 
         foreach (var (session, data) in GetRecipients(source, WhisperClearRange))
