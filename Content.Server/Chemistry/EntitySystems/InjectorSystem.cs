@@ -369,6 +369,9 @@ public sealed class InjectorSystem : SharedInjectorSystem
     private void TryDraw(Entity<InjectorComponent> injector, Entity<BloodstreamComponent?> target,
         Entity<SolutionComponent> targetSolution, EntityUid user)
     {
+
+        var applicableTargetSolution = targetSolution.Comp.Solution;
+        var temporarilyRemovedSolution = new Solution();
         if (!SolutionContainers.TryGetSolution(injector.Owner, injector.Comp.SolutionName, out var soln,
                 out var solution) || solution.AvailableVolume == 0)
         {
@@ -377,7 +380,7 @@ public sealed class InjectorSystem : SharedInjectorSystem
         // Begin DeltaV Additions - skimmer functionality
         else if (injector.Comp.TargetSmallest)
         {
-            if (applicableTargetSolution.Count() > 0 && applicableTargetSolution.MinBy(soln => soln.Quantity) is {} smallest)
+            if (applicableTargetSolution.Count() > 0 && applicableTargetSolution.MinBy(soln => soln.Quantity) is { } smallest)
             {
                 temporarilyRemovedSolution = applicableTargetSolution.SplitSolutionWithout(applicableTargetSolution.Volume, new string[] { smallest.Reagent.Prototype });
             }
