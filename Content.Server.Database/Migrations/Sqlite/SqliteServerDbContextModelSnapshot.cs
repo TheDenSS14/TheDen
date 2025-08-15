@@ -923,6 +923,11 @@ namespace Content.Server.Database.Migrations.Sqlite
                         .HasColumnType("TEXT")
                         .HasColumnName("backpack");
 
+                    b.Property<string>("CharacterConsent")
+                        .IsRequired()
+                        .HasColumnType("TEXT")
+                        .HasColumnName("character_consent");
+
                     b.Property<string>("CharacterName")
                         .IsRequired()
                         .HasColumnType("TEXT")
