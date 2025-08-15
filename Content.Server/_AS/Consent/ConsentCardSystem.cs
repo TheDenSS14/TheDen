@@ -1,4 +1,5 @@
 using Content.Server.Administration.Managers;
+using Content.Server.Chat.Managers;
 using Content.Shared._AS.Consent;
 using Content.Shared._AS.Consent.Components;
 using Content.Shared.Administration.Logs;
@@ -18,7 +19,7 @@ public sealed class ConsentCardSystem : SharedConsentCardSystem
     [Dependency] private readonly ISharedAdminLogManager _adminLog = default!;
     [Dependency] private readonly SharedPopupSystem _popup = default!;
     [Dependency] private readonly SharedAudioSystem _audio = default!;
-    [Dependency] private readonly ISharedChatManager _chat = default!;
+    [Dependency] private readonly IChatManager _chat = default!;
     [Dependency] private readonly IAdminManager _admin = default!;
     [Dependency] private readonly IPlayerManager _player = default!;
 
@@ -58,8 +59,19 @@ public sealed class ConsentCardSystem : SharedConsentCardSystem
             cardName = cardMeta.EntityName;
 
         _adminLog.Add(LogType.Consent, LogImpact.Extreme, $"{ev.PlayerId} raised {cardName} card.");
-        if (cardComp.AdminMessage is {} adminMessage)
+
+        if (cardComp.AdminMessage is { } adminMessage)
             _chat.SendAdminAlert(Loc.GetString(cardComp.AdminMessage, ("player", session.Name), ("type", cardName)));
+
+        var message = Loc.GetString("consent-card-raised", ("card", cardName));
+        var wrappedMessage = Loc.GetString("chat-manager-server-wrap-message", ("message", message));
+        _chat.ChatMessageToOne(ChatChannel.Server,
+            message,
+            wrappedMessage,
+            source: EntityUid.Invalid,
+            hideChat: false,
+            client: session.Channel);
+
         _audio.PlayGlobal(new SoundPathSpecifier("/Audio/Admin/ahelp_send.ogg"), Filter.Empty().AddPlayers(_admin.ActiveAdmins), false);
         _popup.PopupPredicted(string.Empty, Loc.GetString(cardComp.PopupMessage), playerEnt, playerEnt, PopupType.MediumCaution);
     }
