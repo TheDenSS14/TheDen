@@ -2,35 +2,39 @@
 # SPDX-FileCopyrightText: 2025 KekaniCreates
 # SPDX-FileCopyrightText: 2025 Rosycup
 # SPDX-FileCopyrightText: 2025 Tabitha
+# SPDX-FileCopyrightText: 2025 portfiend
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
+# Base
+
 - type: marking
-  id: pubesUpper
+  abstract: true
+  parent: BaseMarkingSpeciesStandardBodyOrganic
+  id: BaseMarkingPubicHair
   bodyPart: Chest
   markingCategory: Genitals
-  speciesRestriction: [Felinid, Oni, Arachne, SlimePerson, Rodentia, Human, Vulpkanin, Shadowkin, Arachnid, MothPerson, Vox, Unathi, Tajaran, Feroxi, Canid, Kitsune]
   coloring:
     default:
       type:
-        !type:SimpleColoring
-        color: "#FFFFFF"
+        !type:CategoryColoring
+          category: Hair
+      fallbackTypes:
+        - !type:SkinColoring
+
+# Markings
+
+- type: marking
+  parent: BaseMarkingPubicHair
+  id: pubesUpper
   sprites:
   - sprite: _DEN/Mobs/Customization/Body/pubes.rsi
     state: upper
 
 - type: marking
+  parent: BaseMarkingPubicHair
   id: pubesLower
-  bodyPart: Chest
-  markingCategory: Genitals
-  speciesRestriction: [Felinid, Oni, Arachne, SlimePerson, Rodentia, Human, Vulpkanin, Shadowkin, Arachnid, MothPerson, Vox, Unathi, Tajaran, Feroxi, Canid, Kitsune]
-  coloring:
-    default:
-      type:
-        !type:SimpleColoring
-        color: "#FFFFFF"
   sprites:
   - sprite: _DEN/Mobs/Customization/Body/pubes.rsi
     state: lower
-
