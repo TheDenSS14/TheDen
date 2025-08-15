@@ -31,16 +31,23 @@ figurines-musician-2 = Never gonna let you down!
 
 figurines-captain-1 = Crew, the Nuke Disk is safely up my ass.
 figurines-captain-2 = Glory to NT!
+figurines-captain-3 = How did I get hired? Yes.
+figurines-captain-4 = The nuclear disk is secure. Where? Somewhere.
 
 figurines-hos-1 = Space law? What?
-figurines-hos-2 = Shot the clown.
+figurines-hos-2 = Shoot the clown.
+figurines-hos-3 = Yes, I shot the clown. No, I don't regret it.
 
 figurines-warden-1 = Execute him for breaking in!
+figurines-warden-2 = Perma the fucker for insulting me!
+figurines-warden-3 = We totally treat everyone fairly and do NOT mistreat our prisoners.
 
 figurines-detective-1 = The butler did it.
+figurines-detective-2 = I need some whiskey after this.
 
 figurines-security-1 = I am the law!
 figurines-security-2 = You have violated article 1984.
+figurines-security-3 = Whenever I get bored I use the clown as target practice.
 
 figurines-lawyer-1 = Better Call Saul!
 figurines-lawyer-2 = Objection!
@@ -98,21 +105,29 @@ figurines-doctor-3 = Saw makes BRRR.
 
 figurines-librarian-1 = One day while...
 figurines-librarian-2 = Silence!
+figurines-librarian-3 = Shut the fuck up!
 
 figurines-chaplain-1 = Would you like to join my cul- I mean religion.
 figurines-chaplain-2 = Gods make me a killing machine please!
 figurines-chaplain-3 = God exists!
 
 figurines-chef-1 = I swear it's not human meat.
+figurines-chef-2 = What? It's brain cake! It's good!
+figurines-chef-3 = Let them eat bread!
 
 figurines-bartender-1 = Where's my monkey?
 figurines-bartender-2 = Sec won't drink.
+figurines-bartender-3 = Don't make me get my shotgun...
+figurines-bartender-4 = No hopping the bar!
 
 figurines-botanist-1 = I don't have any weed, officer!
 figurines-botanist-2 = Dude, I see colors...
+figurines-botanist-3 = Did that dirt just talk?
+figurines-botanist-4 = If one more clown asks for a banana...
 
 figurines-janitor-1 = Clown stole my soap. Again.
 figurines-janitor-2 = Look at the signs, you idiot.
+figurines-janitor-3 = Stop littering!
 
 figurines-nukie-1 = I got the disk!
 figurines-nukie-2 = Whiskey, Echo, Whiskey.
@@ -132,6 +147,7 @@ figurines-wizard-1 = Ei Nath!
 figurines-wizard-2 = Wehgardium Leviosa!
 figurines-wizard-3 = Skidaddle skadoodle!
 figurines-wizard-4 = FIREBALL!
+figurines-wizard-5 = The real magic is the friends we made along the way.
 
 figurines-space-dragon-1 = Fish will consume the station.
 
