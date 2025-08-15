@@ -762,7 +762,7 @@
 
 - type: entity
   id: EngineeringTechFab
-  parent: Autolathe
+  parent: [BaseLatheLube, BaseMaterialSiloUtilizer]
   name: engineering techfab
   description: An improved version of the autolathe, capable of printing various tools used by engineers.
   components:
@@ -800,7 +800,7 @@
 
 - type: entity
   id: CargoTechFab
-  parent: Autolathe
+  parent: [BaseLatheLube, BaseMaterialSiloUtilizer]
   name: logistics techfab
   description: An improved version of the autolathe, capable of printing various tools used by salvage and cargo technicians.
   components:
@@ -830,11 +830,7 @@
     dynamicPacks:
     - CargoTechFabDynamicAwfulDen
   - type: MaterialStorage
-    whitelist:
-      tags:
-      - Sheet
-      - RawMaterial
-      - Ingot
+    alwaysAcceptMaterials: true
 
 - type: entity
   id: ServiceTechFab
