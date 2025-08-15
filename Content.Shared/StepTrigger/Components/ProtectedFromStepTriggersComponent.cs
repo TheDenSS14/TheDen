@@ -4,6 +4,7 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 using Content.Shared.Inventory;
+using Content.Shared.StepTrigger.Prototypes;
 using Content.Shared.StepTrigger.Systems;
 using Robust.Shared.GameStates;
 
@@ -18,4 +19,7 @@ public sealed partial class ProtectedFromStepTriggersComponent : Component, IClo
 {
     [DataField]
     public SlotFlags Slots { get; set; } = SlotFlags.FEET;
+
+    [DataField]
+    public StepTriggerGroup? Whitelist;
 }
