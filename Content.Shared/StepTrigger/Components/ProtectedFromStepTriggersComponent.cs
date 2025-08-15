@@ -20,6 +20,9 @@ public sealed partial class ProtectedFromStepTriggersComponent : Component, IClo
     [DataField]
     public SlotFlags Slots { get; set; } = SlotFlags.FEET;
 
+    /// <summary>
+    ///     WhiteList of immunity step triggers.
+    /// </summary>
     [DataField]
     public StepTriggerGroup? Whitelist;
 }
