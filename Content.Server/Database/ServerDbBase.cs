@@ -286,6 +286,7 @@ namespace Content.Server.Database
                 profile.CharacterName,
                 profile.FlavorText,
                 profile.NsfwFlavorText,
+                profile.CharacterConsent,
                 profile.Species,
                 profile.CustomSpecieName,
                 profile.Nationality,
@@ -339,6 +340,7 @@ namespace Content.Server.Database
             profile.CharacterName = humanoid.Name;
             profile.FlavorText = humanoid.FlavorText;
             profile.NsfwFlavorText = humanoid.NsfwFlavorText;
+            profile.CharacterConsent = humanoid.CharacterConsent;
             profile.Species = humanoid.Species;
             profile.CustomSpecieName = humanoid.Customspeciename;
             profile.Nationality = humanoid.Nationality;
