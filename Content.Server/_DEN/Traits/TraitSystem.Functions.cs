@@ -19,7 +19,7 @@ using Content.Shared.Database;
 using Content.Shared.Traits;
 using Content.Shared.Whitelist;
 using JetBrains.Annotations;
-using JetBrains.FormatRipper.Elf;
+//using JetBrains.FormatRipper.Elf;
 using Robust.Server.Audio;
 using Robust.Shared.Audio;
 using Robust.Shared.Prototypes;
@@ -83,19 +83,19 @@ public sealed partial class TraitAddMetabolizer : TraitFunction
 }
 
 /// <summary>
-/// A trait function that will add metabolizers to the entity's organs.
+/// A trait function that adds components to limbs. Currently used for 'hidden' cybernetics.
 /// </summary>
 [UsedImplicitly]
 public sealed partial class TraitAddComponentToBodyPart : TraitFunction
 {
     /// <summary>
-    /// What components to add to the limb
+    /// What components to add to the limb.
     /// </summary>
     [DataField(required: true)]
     public ComponentRegistry Components = new();
 
     /// <summary>
-    /// Whether this trait should replace all metabolizers instead of simply adding them.
+    /// Which limbs the components should be added to.
     /// </summary>
     [DataField]
     public HashSet<BodyPartType> Parts = new();
@@ -112,17 +112,11 @@ public sealed partial class TraitAddComponentToBodyPart : TraitFunction
             if (!Parts.Contains(bodyPart.Component.PartType))
                 continue;
 
-            // I'd like a way to be able to initialize the OnAdd stuff without having to entirely replace the limb.
             bodyPart.Component.OnAdd = Components;
             bodyPart.Component.OnRemove = Components;
-            if (bodyPart.Component.Body != null && bodyPart.Component.OnAdd != null && entityManager.TryGetComponent<BodyPartEffectComponent>(bodyPart.Id, out var comp))
-            {
-                //entityManager.System<AudioSystem>().PlayPvs(new SoundPathSpecifier("/Audio/Items/bikehorn.ogg"), uid);
-                entityManager.System<BodyPartEffectSystem>().AddComponents(bodyPart.Component.Body.Value, bodyPart.Id, bodyPart.Component.OnAdd, comp);
-                var bodySystem = entityManager.System<BodySystem>();
-                entityManager.System<SharedBodySystem>().DisablePart(bodyPart);
-                entityManager.System<SharedBodySystem>().EnablePart(bodyPart);
-            }
+            entityManager.EnsureComponent<BodyPartEffectComponent>(bodyPart.Id);
+            if (bodyPart.Component.Body != null)
+                entityManager.System<BodyPartEffectSystem>().AddComponents(bodyPart.Component.Body.Value, bodyPart.Id, bodyPart.Component.OnAdd);
         }
     }
 }
