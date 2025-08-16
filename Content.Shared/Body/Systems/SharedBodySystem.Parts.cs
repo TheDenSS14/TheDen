@@ -35,7 +35,6 @@ using Content.Shared._Shitmed.BodyEffects;
 using Content.Shared.Humanoid;
 using Content.Shared.Inventory;
 using Content.Shared.Random;
-using Robust.Shared.Audio;
 
 namespace Content.Shared.Body.Systems;
 
@@ -43,7 +42,6 @@ public partial class SharedBodySystem
 {
     [Dependency] private readonly RandomHelperSystem _randomHelper = default!; // Shitmed Change
     [Dependency] private readonly InventorySystem _inventorySystem = default!; // Shitmed Change
-    [Dependency] private readonly BodyPartEffectSystem _effectSystem = default!;
 
     private void InitializeParts()
     {
@@ -109,7 +107,7 @@ public partial class SharedBodySystem
         Dirty(partEnt, partEnt.Comp);
     }
 
-    public void EnablePart(Entity<BodyPartComponent> partEnt)
+    private void EnablePart(Entity<BodyPartComponent> partEnt)
     {
         if (!TryComp(partEnt.Comp.Body, out BodyComponent? body))
             return;
@@ -139,7 +137,7 @@ public partial class SharedBodySystem
     ///     Shitmed Change: This function handles dropping the items in an entity's slots if they lose all of a given part.
     ///     Such as their hands, feet, head, etc.
     /// </summary>
-    public void DropSlotContents(Entity<BodyPartComponent> partEnt)
+    private void DropSlotContents(Entity<BodyPartComponent> partEnt)
     {
         if (partEnt.Comp.Body is not null
             && TryComp<InventoryComponent>(partEnt.Comp.Body, out var inventory) // Prevent error for non-humanoids
