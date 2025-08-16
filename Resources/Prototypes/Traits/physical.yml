@@ -1189,7 +1189,7 @@
       - type: MovementBodyPart
         walkSpeed: 3.125
         sprintSpeed: 5.625
-      - type: StepTriggerImmune
+      - type: ProtectedFromStepTriggers
         whitelist:
           types:
           - Shard
