@@ -21,4 +21,71 @@
   - type: IdentityBlocker
     coverage: EYES
 
+- type: entity
+  parent: ClothingEyesBase
+  id: ClothingEyesGlassesColorfulBase
+  name: novelty glasses
+  abstract: true
+  description: Novelty glasses for your face.
+  components:
+    - type: Sprite
+      sprite: _Impstation/Clothing/Eyes/Glasses/colorfulglasses/pink.rsi
+    - type: Clothing
+      sprite: _Impstation/Clothing/Eyes/Glasses/colorfulglasses/pink.rsi
+      slots:
+      - HEAD
+      - EYES
+    - type: Tag
+      tags:
+      - WhitelistChameleon
+      - DroneUsable
 
+- type: entity
+  parent: ClothingEyesGlassesColorfulBase
+  id: ClothingEyesGlassesColorfulPink
+  name: novelty heart glasses
+  description: You look lovely!
+
+- type: entity
+  parent: ClothingEyesGlassesColorfulBase
+  id: ClothingEyesGlassesColorfulRed
+  name: novelty round glasses
+  description: How artful.
+  components:
+  - type: Sprite
+    sprite: _Impstation/Clothing/Eyes/Glasses/colorfulglasses/red.rsi
+  - type: Clothing
+    sprite: _Impstation/Clothing/Eyes/Glasses/colorfulglasses/red.rsi
+
+- type: entity
+  parent: ClothingEyesGlassesColorfulBase
+  id: ClothingEyesGlassesColorfulGreen
+  name: novelty angled glasses
+  description: Rad.
+  components:
+  - type: Sprite
+    sprite: _Impstation/Clothing/Eyes/Glasses/colorfulglasses/green.rsi
+  - type: Clothing
+    sprite: _Impstation/Clothing/Eyes/Glasses/colorfulglasses/green.rsi
+
+- type: entity
+  parent: ClothingEyesGlassesColorfulBase
+  id: ClothingEyesGlassesColorfulPurple
+  name: novelty bar glasses
+  description: Futuristic!
+  components:
+  - type: Sprite
+    sprite: _Impstation/Clothing/Eyes/Glasses/colorfulglasses/purple.rsi
+  - type: Clothing
+    sprite: _Impstation/Clothing/Eyes/Glasses/colorfulglasses/purple.rsi
+
+- type: entity
+  parent: ClothingEyesGlassesColorfulBase
+  id: ClothingEyesGlassesColorfulYellow
+  name: novelty swept glasses
+  description: A sleek look, just for you.
+  components:
+  - type: Sprite
+    sprite: _Impstation/Clothing/Eyes/Glasses/colorfulglasses/yellow.rsi
+  - type: Clothing
+    sprite: _Impstation/Clothing/Eyes/Glasses/colorfulglasses/yellow.rsi

@@ -1535,7 +1535,7 @@
   placementMode: SnapgridCenter
   canBuildInImpassable: false
   icon:
-    sprite: Structures/conveyor.rsi
+    sprite: _DEN/Structures/conveyor.rsi # Den - Updated textures
     state: conveyor_stopped_cw
   conditions:
     - !type:TileNotBlocked

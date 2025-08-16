@@ -4,6 +4,7 @@
 // SPDX-License-Identifier: MIT
 
 using Content.Server.Station.Components;
+using Robust.Server.Player;
 using Robust.Shared.Console;
 
 namespace Content.Server.Commands;
@@ -22,6 +23,24 @@ public static class ContentCompletionHelper
         while (query.MoveNext(out var uid, out _, out var metaData))
         {
             yield return new CompletionOption(uid.ToString(), metaData.EntityName);
+        }
+    }
+
+    public static IEnumerable<CompletionOption> PlayerAttachedEntities(
+        IEntityManager entityManager,
+        IPlayerManager playerManager)
+    {
+        foreach (var player in playerManager.Sessions)
+        {
+            if (player.AttachedEntity == null)
+                continue;
+
+            if (!entityManager.EntityExists(player.AttachedEntity))
+                continue;
+
+            yield return new(
+                player.AttachedEntity.Value.ToString(),
+                player.Data.UserName);
         }
     }
 }

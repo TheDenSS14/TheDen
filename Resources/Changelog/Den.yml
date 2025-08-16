@@ -9156,3 +9156,1018 @@ Entries:
   id: 885
   time: '2025-08-02T19:39:28.0000000+00:00'
   url: https://github.com/TheDenSS14/TheDen/pull/1289
+- author: portfiend
+  changes:
+    - type: Fix
+      message: >-
+        Bodybuilder and Weakling traits now appropriately modify your speed and
+        pushing strength.
+  id: 886
+  time: '2025-08-03T11:58:29.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1296
+- author: ShepardToTheStars
+  changes:
+    - type: Tweak
+      message: Actions with charges will now grey out when they're disabled.
+  id: 887
+  time: '2025-08-03T13:04:06.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1247
+- author: SirWarock
+  changes:
+    - type: Tweak
+      message: >-
+        Tweaked the void jetpack to be as fast as any other jetpack, but
+        accelerates really quickly! Be nimble!
+  id: 888
+  time: '2025-08-03T13:06:02.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1294
+- author: ShepardToTheStars
+  changes:
+    - type: Tweak
+      message: >-
+        Made ninja stunlocking shorter and require more suit energy. The stun
+        now lasts 3 seconds, can be reapplied every 2.8 seconds, and consumes
+        1/6 of a small-capacity powercell.
+    - type: Fix
+      message: Ninja throwing star ability now works! Throwing stars real.
+    - type: Fix
+      message: Fixed ninja shoes not working as magboots.
+    - type: Add
+      message: >-
+        The Space Ninja Suit will now give an error popup if you are trying to
+        install a cell that is not better compared to the current cell.
+    - type: Tweak
+      message: Ninja gear can now be removed again.
+    - type: Tweak
+      message: >-
+        Some LRP ninja names have been replaced. No more 'Awesome McNinja'
+        sadly.
+    - type: Tweak
+      message: >-
+        When comparing which power cell is better when trying to swap them, the
+        Space Ninja's Suit will now also consider if the power cells have
+        self-recharge capability.
+    - type: Fix
+      message: Fixed new ninja intro song. It should correctly play now.
+    - type: Fix
+      message: >-
+        You can no longer fit weapons-grade power cages into the space ninja
+        suit.
+  id: 889
+  time: '2025-08-03T13:07:18.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1293
+- author: Jakumba
+  changes:
+    - type: Tweak
+      message: Reduced modsuit battery drain, until it's fixed properly.
+  id: 890
+  time: '2025-08-03T13:08:17.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1291
+- author: ZigTag
+  changes:
+    - type: Add
+      message: goliath hardsuit from wizden with vox and vulp sprites
+  id: 891
+  time: '2025-08-03T13:19:58.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1274
+- author: portfiend
+  changes:
+    - type: Add
+      message: >-
+        A new "blood smell" trait has been added, allowing you to view what
+        reagent a mob's blood stream is made of.
+    - type: Tweak
+      message: >-
+        Bloodfeeders of all kinds (whether it's traits, species, or some other
+        thing) are now also capable of examining a target's blood.
+  id: 892
+  time: '2025-08-03T14:05:30.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1295
+- author: sleepyyapril
+  changes:
+    - type: Fix
+      message: Fixed dragon not being able to chomp anyone.
+  id: 893
+  time: '2025-08-04T03:11:59.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1306
+- author: sleepyyapril
+  changes:
+    - type: Add
+      message: >-
+        Added last words webhook that only applies to local chat which you can
+        opt out of via the consent menu.
+  id: 894
+  time: '2025-08-04T08:18:26.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1307
+- author: Jakumba
+  changes:
+    - type: Tweak
+      message: Increased chance of Hellshift rolling on high danger
+    - type: Tweak
+      message: Increased chance of SAN Deserter mid round antag event spawning
+    - type: Remove
+      message: Removed NukeOps game mode from high danger, pending rework
+  id: 895
+  time: '2025-08-04T09:54:49.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1312
+- author: SirWarock
+  changes:
+    - type: Tweak
+      message: >-
+        Reduced on how much cold slows you down! You're not a walking popsicle
+        anymore!
+  id: 896
+  time: '2025-08-04T09:58:28.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1311
+- author: little-meow-meow
+  changes:
+    - type: Add
+      message: >-
+        AAC tablets sync to your radio headset and can send messages directly
+        over it!
+  id: 897
+  time: '2025-08-04T10:02:18.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1305
+- author: Jakumba
+  changes:
+    - type: Tweak
+      message: >-
+        Changed the color of admin chat to a pale green for easier
+        differentation.
+  id: 898
+  time: '2025-08-04T18:10:03.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1317
+- author: sleepyyapril
+  changes:
+    - type: Add
+      message: >-
+        The new Advertise radio channel is here! Tell everyone what you want
+        from them: advertise a store, tell people you're looking for friends in
+        bar, and whatever else counts as advertising an IC thing!
+  id: 899
+  time: '2025-08-05T15:04:50.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1325
+- author: Jakumba
+  changes:
+    - type: Fix
+      message: >-
+        Turrets and NPCs can now hit players who are laying down on the floor.
+        They (by default) have a 50% chance to miss players who are laying down,
+        meaning it still offers some protection, but not perfect protection from
+        turrets.
+  id: 900
+  time: '2025-08-05T16:38:11.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1314
+- author: sleepyyapril
+  changes:
+    - type: Tweak
+      message: Admins no longer count at All to the player count.
+  id: 901
+  time: '2025-08-05T17:04:38.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1327
+- author: portfiend
+  changes:
+    - type: Tweak
+      message: Clowns, Mimes, and Martial Artists now have Service access.
+    - type: Remove
+      message: Security no longer has Service access.
+  id: 902
+  time: '2025-08-05T17:28:22.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1320
+- author: sleepyyapril
+  changes:
+    - type: Add
+      message: >-
+        FunkyChem exotics now exist! See the exotic tab under chemicals for
+        details!
+  id: 903
+  time: '2025-08-05T17:48:01.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1328
+- author: portfiend
+  changes:
+    - type: Fix
+      message: >-
+        Security, HOS, Detective, and Psionic Mantic thigh-high socks can now
+        store knives again.
+  id: 904
+  time: '2025-08-06T04:47:28.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1339
+- author: portfiend
+  changes:
+    - type: Add
+      message: >-
+        You can now edit your OOC consent preferences anywhere, including the
+        lobby, with the `consentprefs` command.
+  id: 905
+  time: '2025-08-06T20:55:19.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1338
+- author: ZigTag
+  changes:
+    - type: Fix
+      message: voice should now be imported correctly
+  id: 906
+  time: '2025-08-06T20:57:42.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1297
+- author: Jakumba
+  changes:
+    - type: Add
+      message: Ported idle speech bubbles
+  id: 907
+  time: '2025-08-06T20:59:12.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1286
+- author: CrystalClover
+  changes:
+    - type: Fix
+      message: You can now select the Non-binary pin in your loadout.
+  id: 908
+  time: '2025-08-07T04:49:17.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1343
+- author: FutureExalt
+  changes:
+    - type: Tweak
+      message: >-
+        changed up the german accent to no be a little more accurate to native
+        germans.
+    - type: Remove
+      message: removed some weird racism present in the italian accent.
+  id: 909
+  time: '2025-08-07T15:08:00.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1266
+- author: juniwoofs
+  changes:
+    - type: Fix
+      message: Fixed Ovinia's idle typing sprite to not be a massive error
+  id: 910
+  time: '2025-08-07T19:57:09.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1348
+- author: Sha-Seng
+  changes:
+    - type: Fix
+      message: Dragons can emote again!
+    - type: Add
+      message: Carps can now also emote.
+  id: 911
+  time: '2025-08-07T20:02:21.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1326
+- author: CrystalClover
+  changes:
+    - type: Add
+      message: Clown wigs can now be tucked into their masks!
+    - type: Add
+      message: >-
+        Ancient clown wig and mask have been added to loadouts and the autodrobe
+        for those who are nostalgic.
+    - type: Tweak
+      message: Clown masks have recieved a slight redesign!
+  id: 912
+  time: '2025-08-07T23:44:27.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1329
+- author: BlitzTheSquishy
+  changes:
+    - type: Tweak
+      message: Conveyer belts are now much easier read the direction of!
+    - type: Tweak
+      message: Two-way lever changed to match also
+  id: 913
+  time: '2025-08-08T00:55:45.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1346
+- author: portfiend
+  changes:
+    - type: Fix
+      message: >-
+        Chaplains will now show up under the correct department in the crew
+        monitor.
+  id: 914
+  time: '2025-08-08T01:56:25.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1319
+- author: RosySaturniidae
+  changes:
+    - type: Add
+      message: >-
+        moths are no longer the sole arbiters of the chitter (dont look at
+        spiders)
+  id: 915
+  time: '2025-08-08T02:20:00.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1330
+- author: portfiend
+  changes:
+    - type: Fix
+      message: The character editor's "save" button should work properly again.
+  id: 916
+  time: '2025-08-08T04:52:24.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1349
+- author: TheLuggage05
+  changes:
+    - type: Add
+      message: >-
+        Added caramexinin--a new sweetener that lets you safely consume
+        theobromine if you couldn't before! Ask botany and chemistry for some
+        today.
+  id: 917
+  time: '2025-08-08T07:14:00.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1335
+- author: SirWarock
+  changes:
+    - type: Add
+      message: Added Mechanical Surgery Gloves, speeding up your surgical actions!
+    - type: Add
+      message: >-
+        Added Advanced Operating Tables, able to either stop rotting or speed up
+        surgical procedures on an entity!
+    - type: Add
+      message: Added CMO gloves that provide surgery speed boni!
+    - type: Tweak
+      message: >-
+        Removed Surgery Speed Modifiers from Roles and moved them to sterile
+        gloves. 
+  id: 918
+  time: '2025-08-08T09:30:17.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1303
+- author: ZigTag
+  changes:
+    - type: Fix
+      message: breath mask not on goliath hardsuit
+  id: 919
+  time: '2025-08-08T10:30:49.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1354
+- author: ZigTag
+  changes:
+    - type: Add
+      message: Added emergency JoLs.
+    - type: Tweak
+      message: >-
+        Added JoLs, a GPS locator, body bags, a roller bed, crew monitor and a
+        portafib into paramedic lockers. (Moved from backpack fills and job
+        gear)
+  id: 920
+  time: '2025-08-08T10:47:15.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1345
+- author: IAmNotGray
+  changes:
+    - type: Tweak
+      message: >-
+        (ANVIL) A couple of tweaks and a reworking of the Artifact Lab's chamber
+        input and output system. Please let me know if this *still* doesn't
+        work.
+    - type: Tweak
+      message: >-
+        (TORTUGA) Changed up the bar a little. You can now see past the wall
+        that previously obstructed view. Also, minor fixes!
+  id: 921
+  time: '2025-08-08T18:05:06.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1333
+- author: Gawdayumeet
+  changes:
+    - type: Tweak
+      message: >-
+        (HAVOC) The station of chaos and explosions is both nicer and more
+        awful. You're welcome~
+  id: 922
+  time: '2025-08-08T18:05:23.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1334
+- author: portfiend
+  changes:
+    - type: Tweak
+      message: Lewd traits have been given clearer descriptions as to what they do.
+    - type: Tweak
+      message: >-
+        Verbs associated with lewd traits now have an icon to indicate being
+        lewd verbs.
+  id: 923
+  time: '2025-08-09T10:25:25.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1353
+- author: Jakumba
+  changes:
+    - type: Fix
+      message: Fixed Diona "thinking" speech bubble
+  id: 924
+  time: '2025-08-09T15:47:52.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1360
+- author: Jakumba
+  changes:
+    - type: Fix
+      message: Fixed xenos thermal/night vision
+  id: 925
+  time: '2025-08-09T15:48:22.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1361
+- author: sleepyyapril
+  changes:
+    - type: Tweak
+      message: >-
+        Psionic Hypnosis now has an action use delay of 10, not 45, due to it
+        using consent anyway.
+    - type: Tweak
+      message: >-
+        Psionic Hypnosis now supports multiple subjects and multiple masters
+        with no limit. Abusing this for personal gain is against the rules.
+    - type: Tweak
+      message: Psionic Hypnosis no longer effects glimmer.
+    - type: Fix
+      message: >-
+        The big red text at the end of Psionic Hypnosis for the "master" was
+        fixed to not use your own name.
+  id: 926
+  time: '2025-08-09T17:13:41.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1362
+- author: MajorMoth
+  changes:
+    - type: Remove
+      message: Removed the bottle'o'cum and sex toy crate
+  id: 927
+  time: '2025-08-09T17:14:28.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1351
+- author: sev7ves
+  changes:
+    - type: Add
+      message: Added an option to disable the singulo screenwarp
+  id: 928
+  time: '2025-08-09T17:15:46.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1332
+- author: SirWarock
+  changes:
+    - type: Tweak
+      message: Allowed all outerclothing to have suit storage!!
+  id: 929
+  time: '2025-08-09T22:51:52.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1331
+- author: Jakumba
+  changes:
+    - type: Fix
+      message: Added missing space survival pen to command survival boxes
+  id: 930
+  time: '2025-08-09T22:52:44.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1363
+- author: Zephyrpak
+  changes:
+    - type: Tweak
+      message: Raised accent limit from 1 to 2
+  id: 931
+  time: '2025-08-09T22:57:20.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1366
+- author: ShepardToTheStars
+  changes:
+    - type: Add
+      message: CentDrobe now has implanters to make your CC characters antag immune.
+    - type: Add
+      message: >-
+        Added new CentComm clothes! Find them in the CentDrobe or emagged
+        uniform printer.
+    - type: Add
+      message: >-
+        CentComm officials now wear a centcomm carapace for body armour, which
+        have identical stats to the command carapace.
+    - type: Tweak
+      message: Updated CentComm item names to be more consistent.
+  id: 932
+  time: '2025-08-10T09:54:29.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1372
+- author: SirWarock
+  changes:
+    - type: Fix
+      message: >-
+        Fixed one more of the countless Kitsune bugs/oversights - (Hopefully)
+        All medhuds can now see Kitsune healthbars.
+  id: 933
+  time: '2025-08-10T09:57:31.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1374
+- author: ShepardToTheStars
+  changes:
+    - type: Fix
+      message: >-
+        Fixed Ninja Stars doing embedded damage forever if they despawned
+        without being removed.
+  id: 934
+  time: '2025-08-10T10:08:45.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1369
+- author: CrystalClover
+  changes:
+    - type: Tweak
+      message: The Head Mirror has been added to the loadout options for medical jobs.
+  id: 935
+  time: '2025-08-10T11:35:57.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1371
+- author: SirWarock
+  changes:
+    - type: Add
+      message: Ported the holographic rollerbed from Delta-V!
+    - type: Tweak
+      message: All Rollerbeds weigh less to make patient transport quicker!
+    - type: Tweak
+      message: >-
+        All rollerbeds stabilize patients in critical state - Some better than
+        others!
+  id: 936
+  time: '2025-08-10T11:38:18.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1367
+- author: sev7ves
+  changes:
+    - type: Fix
+      message: Passport no longer spawns for AI and borg
+  id: 937
+  time: '2025-08-10T11:38:57.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1365
+- author: ZigTag
+  changes:
+    - type: Add
+      message: >-
+        undecided (selector) items from goob (no content only mechanical
+        implementation)
+  id: 938
+  time: '2025-08-10T11:40:15.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1356
+- author: SirWarock
+  changes:
+    - type: Fix
+      message: >-
+        Fixed the Temperature Protection Trait from simply not working! Glacier
+        Greenshift enjoyers rejoice!
+    - type: Tweak
+      message: >-
+        Cryopods will ignore this trait. Otherwise, you are barred from
+        Cryogenics. 
+  id: 939
+  time: '2025-08-10T12:00:19.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1370
+- author: sev7ves
+  changes:
+    - type: Add
+      message: Option to disable drug warping effect.
+    - type: Add
+      message: Option to disable the drunk effect.
+  id: 940
+  time: '2025-08-10T12:50:40.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1364
+- author: ShepardToTheStars
+  changes:
+    - type: Tweak
+      message: >-
+        Admins: The `spawncharacter` command now allows you to select a job to
+        spawn as, and applies traits and loadouts.
+  id: 941
+  time: '2025-08-11T00:25:16.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1384
+- author: sleepyyapril
+  changes:
+    - type: Add
+      message: >-
+        Added the option to set a custom hearing range in the Denu! No more
+        hearing 2000 people surrounding you!
+  id: 942
+  time: '2025-08-11T00:27:07.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1385
+- author: ShepardToTheStars
+  changes:
+    - type: Fix
+      message: Fixed emotes not working.
+  id: 943
+  time: '2025-08-11T03:40:28.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1392
+- author: sleepyyapril
+  changes:
+    - type: Fix
+      message: The Denu is now openable after round end.
+  id: 944
+  time: '2025-08-11T07:43:09.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1393
+- author: Sha-Seng
+  changes:
+    - type: Add
+      message: >-
+        Tailor's Knife in the General loadout category, a very weak knife made
+        to cut plushies and clothes
+  id: 945
+  time: '2025-08-11T07:46:21.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1391
+- author: juniwoofs
+  changes:
+    - type: Tweak
+      message: '(MANTA) Made cargo''s conveyer belts less of a nightmare '
+    - type: Tweak
+      message: (MANTA) Removed unpryable tiles in atmos
+    - type: Tweak
+      message: (MANTA) Made chemistry secure
+    - type: Fix
+      message: (MANTA) Fixed Viro airlock locking
+  id: 946
+  time: '2025-08-12T06:52:41.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1381
+- author: SirWarock
+  changes:
+    - type: Tweak
+      message: >-
+        Increased the light radius of the salvage cyborg! You'll finally see
+        chasms before it's too late!
+  id: 947
+  time: '2025-08-12T08:12:06.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1398
+- author: SirWarock
+  changes:
+    - type: Fix
+      message: Fixed Blastdoors not closing on plastic flaps!
+  id: 948
+  time: '2025-08-12T10:33:18.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1406
+- author: SirWarock
+  changes:
+    - type: Tweak
+      message: >-
+        Recent Budget cuts caused a quality drop in the portafibs.. They still
+        work, though!
+  id: 949
+  time: '2025-08-12T12:35:14.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1403
+- author: Shaman
+  changes:
+    - type: Add
+      message: Ported Novelty Glasses from Imp, now recolorable!
+  id: 950
+  time: '2025-08-12T12:36:40.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1401
+- author: SirWarock
+  changes:
+    - type: Tweak
+      message: >-
+        Seccies beware! The raffle timers for Xenos have been decreased, so next
+        time, don't think they'll give you an easy fight!
+  id: 951
+  time: '2025-08-12T14:02:52.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1411
+- author: Shaman
+  changes:
+    - type: Add
+      message: >-
+        Napsack in the General loadout category, a bag only useful for carrying
+        small people
+  id: 952
+  time: '2025-08-12T15:52:12.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1389
+- author: Jakumba
+  changes:
+    - type: Add
+      message: >-
+        Added a warning text when inspecting a Holofan and Holobarrier with
+        duration before they expire
+    - type: Tweak
+      message: Holobarrier Projectors now work on a charge base system
+    - type: Tweak
+      message: Holofans and Holobarriers now last for five minutes when placed
+  id: 953
+  time: '2025-08-12T15:54:04.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1394
+- author: portfiend
+  changes:
+    - type: Tweak
+      message: >-
+        The "Appearance" tab of the character editor has been visually
+        overhauled, hopefully to make it more digestible.
+    - type: Tweak
+      message: >-
+        NO, I did not fucking touch Loadouts, Traits, Markings, Records, or the
+        character preview sprite. DOn't ask me
+  id: 954
+  time: '2025-08-12T18:04:45.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1397
+- author: SirWarock
+  changes:
+    - type: Tweak
+      message: >-
+        Added the low capacity magazines to the ammofab for the salvies. Now
+        stop bothering Security!
+  id: 955
+  time: '2025-08-12T18:42:54.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1375
+- author: sleepyyapril
+  changes:
+    - type: Add
+      message: >-
+        Added the NSFW content detail descriptions. Please make sure if you want
+        to see NSFW descriptions, you set the consent to on. Also, you are to
+        move ANY NSFW content to the Not Safe for Work tab under description. 
+  id: 956
+  time: '2025-08-12T22:38:12.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1413
+- author: SirWarock
+  changes:
+    - type: Add
+      message: >-
+        Added Jack Gloves - They're not meant for jacking off. They're meant to
+        keep your hands a bit protected from shocks!
+  id: 957
+  time: '2025-08-12T23:05:31.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1382
+- author: sleepyyapril
+  changes:
+    - type: Tweak
+      message: Consent menu is now peak.
+    - type: Tweak
+      message: Consents have been grouped into categories.
+    - type: Tweak
+      message: Consent freetext and toggles have been separated into their own tabs.
+    - type: Tweak
+      message: Consent freetext now has a constant character limit displayed.
+  id: 958
+  time: '2025-08-13T04:34:29.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1420
+- author: Shaman
+  changes:
+    - type: Add
+      message: Booty Shorts (colorable) as a uniform option in loadout
+    - type: Add
+      message: Sentimental Ring (colorable) as a general item in loadout (not hands!)
+  id: 959
+  time: '2025-08-13T07:59:21.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1415
+- author: portfiend
+  changes:
+    - type: Add
+      message: >-
+        Ovinia have a handful of new markings, some made by me, others
+        pre-existing. Look for ears, horns, tails, and chest markings, as well
+        as the new hooved hands.
+  id: 960
+  time: '2025-08-13T10:10:38.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1414
+- author: Eightballll
+  changes:
+    - type: Add
+      message: >-
+        Added Jaegermister, a completely original and not inspired by anything
+        at all alcohol!
+    - type: Add
+      message: Added some new cocktails to mix using Jaeger!
+    - type: Remove
+      message: Deleted my sanity from the codebase, apparently it wasn't necessary.
+  id: 961
+  time: '2025-08-13T10:12:36.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1301
+- author: Eightballll
+  changes: []
+  id: 962
+  time: '2025-08-13T13:38:08.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1417
+- author: BudaLope
+  changes:
+    - type: Add
+      message: Consent card to consent menu
+  id: 963
+  time: '2025-08-13T13:49:15.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1416
+- author: KekaniCreates
+  changes:
+    - type: Add
+      message: Added a Mustard Bottle to the ChefVend.
+  id: 964
+  time: '2025-08-13T15:17:42.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1422
+- author: SirWarock
+  changes:
+    - type: Tweak
+      message: >-
+        NT decided to upgrade your Defibrillator Cabinets! Now they slowly
+        recharge stored defibrillators!
+  id: 965
+  time: '2025-08-13T21:11:29.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1402
+- author: SirWarock
+  changes:
+    - type: Tweak
+      message: Cyborgs can now fly in space! Very slowly..
+  id: 966
+  time: '2025-08-13T23:16:26.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1340
+- author: Shaman
+  changes:
+    - type: Add
+      message: Turtleneck Half Blouse to outerwear loadout
+  id: 967
+  time: '2025-08-13T23:25:36.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1390
+- author: Jakumba
+  changes:
+    - type: Add
+      message: 'ERT has a new ride and a bunch of shiny new toys. '
+  id: 968
+  time: '2025-08-13T23:37:00.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1426
+- author: Jakumba
+  changes:
+    - type: Tweak
+      message: Changed some Vox sounds to be less harsh
+  id: 969
+  time: '2025-08-14T00:31:00.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1409
+- author: sleepyyapril
+  changes:
+    - type: Add
+      message: >-
+        Added the heat pump, a heat transferring device, can now be found in the
+        crafting menu or crafted with the RPD.
+  id: 970
+  time: '2025-08-14T00:31:24.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1358
+- author: Eightballll
+  changes:
+    - type: Add
+      message: Added a recipe for the ashtray! Finally, you can keep your bar clean.
+    - type: Tweak
+      message: Tweaked the dispenser inventory, no more jugs laying around.
+    - type: Tweak
+      message: >-
+        Increased the priority of the glass in dispensers, should fix pulling
+        jugs out by accident.
+    - type: Add
+      message: Added an in-hand sprite for the shaker!
+    - type: Tweak
+      message: >-
+        Adjusted the boozeomat to dispense XL cartons, no more pouring them into
+        the empty XL.
+  id: 971
+  time: '2025-08-14T00:38:48.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1424
+- author: KekaniCreates
+  changes:
+    - type: Add
+      message: Added the Tajaran tail markings to the Felinid.
+  id: 972
+  time: '2025-08-14T08:10:17.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1430
+- author: sleepyyapril
+  changes:
+    - type: Add
+      message: >-
+        Added the ability to use a subtledetailed or medetailed format by
+        putting a ! at the front of your action in emote or subtle.
+    - type: Fix
+      message: >-
+        The space between name and message for subtle and emotes is now properly
+        removed when you put a ' or a , at the front.
+  id: 973
+  time: '2025-08-14T18:57:09.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1435
+- author: ShepardToTheStars
+  changes:
+    - type: Add
+      message: >-
+        ADMIN: Added the `spawnplayer` function to spawn other players with
+        their job loadouts, traits, etc.
+  id: 974
+  time: '2025-08-14T19:00:24.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1434
+- author: SubspaceEmber
+  changes:
+    - type: Add
+      message: Ported craftable pride flags from Delta-V
+  id: 975
+  time: '2025-08-14T19:00:38.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1432
+- author: Shaman
+  changes:
+    - type: Tweak
+      message: Golden Ring and Sentimental Ring are now Tiny items (one slot)
+  id: 976
+  time: '2025-08-14T19:02:17.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1428
+- author: Shaman
+  changes:
+    - type: Add
+      message: >-
+        Ported 18 bomber jackets to departmental loadouts from Imp, including a
+        colorable one for anyone
+    - type: Tweak
+      message: >-
+        The colorable one is now unbutcherable since that deletes its color (the
+        rest can be "tailored" to change the fit)
+  id: 977
+  time: '2025-08-14T19:02:49.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1421
+- author: portfiend
+  changes:
+    - type: Add
+      message: Waiter and waitress uniforms can now be found in the ChefDrobe.
+    - type: Add
+      message: >-
+        Mustard bottles, damp rags, and towels can now be stored on the chef
+        belt.
+    - type: Add
+      message: Pig in a blanket has a new recipe, and is more nutritious now to boot!
+    - type: Tweak
+      message: Boiled spaghetti now requires olive oil instead of butter to make.
+    - type: Tweak
+      message: The recipe for the chicken nugget box is less stressful.
+    - type: Tweak
+      message: >-
+        The ChefDrobe now holds 2 of the original chef uniform instead of just
+        1.
+    - type: Tweak
+      message: >-
+        Sausage bread now requires actual sausage to make, instead of regular
+        meat.
+    - type: Fix
+      message: >-
+        The condiment station can now be moved onto tables and anchored on top
+        of them.
+    - type: Fix
+      message: Advanced Microwaves now properly take 1/2 the time to cook things.
+  id: 978
+  time: '2025-08-15T20:03:01.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1443
+- author: ShepardToTheStars
+  changes:
+    - type: Add
+      message: '"chatwindow" command has been added to open an additional chat window'
+    - type: Add
+      message: >-
+        "achatwindow" command has been added to open an additional chat window,
+        preconfigured for monitoring admin channels
+  id: 979
+  time: '2025-08-15T20:04:27.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1449
+- author: portfiend
+  changes:
+    - type: Tweak
+      message: >-
+        The X Card in the Consent menu has been given a clearer description, and
+        you will now be sent a message when the card is raised.
+  id: 980
+  time: '2025-08-15T20:05:00.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1450
+- author: SirWarock
+  changes:
+    - type: Fix
+      message: Fixed Justice Roles not spawning in with a justice headset.!
+  id: 981
+  time: '2025-08-15T20:10:56.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1451
+- author: ShepardToTheStars
+  changes:
+    - type: Add
+      message: >-
+        Mass scanners and shuttle consoles now display coordinates beneath IFF
+        labels
+    - type: Fix
+      message: >-
+        IFF labels that are beyond the viewport extents maintain their heading
+        and don't hug corners
+    - type: Fix
+      message: Handheld radars no longer spin with the player while moving.
+    - type: Tweak
+      message: >-
+        Increased the view range on the handheld mass scanner and decreased the
+        power draw.
+  id: 982
+  time: '2025-08-15T20:13:34.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1447
+- author: Aikakakah
+  changes:
+    - type: Add
+      message: Added personal envelopes for letters.
+  id: 983
+  time: '2025-08-15T23:15:09.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1452
+- author: sleepyyapril
+  changes:
+    - type: Add
+      message: 'Per-Character consent, via the renamed Description tab, is here. '
+    - type: Tweak
+      message: >-
+        The Description tab was renamed to the About tab to better reflect its
+        purpose.
+  id: 984
+  time: '2025-08-16T01:03:26.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1460
+- author: Aikakakah
+  changes:
+    - type: Add
+      message: Added voices to figurines.
+  id: 985
+  time: '2025-08-16T01:47:31.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1457
+- author: Oberonics
+  changes:
+    - type: Add
+      message: Ported Estradiol, Testosterone, and Genderfluid from Impstation.
+  id: 986
+  time: '2025-08-16T01:47:43.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1456
+- author: SirWarock
+  changes:
+    - type: Tweak
+      message: >-
+        Buffed the Logistics Techfab to accept all materials - No need to ask
+        Epi for a Flatpacker no more!
+  id: 987
+  time: '2025-08-16T01:50:33.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1446
+- author: Sha-Seng
+  changes:
+    - type: Tweak
+      message: >-
+        Beholder, Malstrem, and Iron Jaw markings are lighter so you can color
+        them easier (YOU WILL NEED TO RECOLOR YOURS)
+    - type: Add
+      message: >-
+        Beholder Lights and Malstrem Lights colorable head markings that glow in
+        the dark to layer over them
+  id: 988
+  time: '2025-08-16T02:02:26.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1458

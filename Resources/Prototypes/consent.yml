@@ -8,7 +8,8 @@
   id: Hypno
 
 - type: consentToggle
-  id: NoClone
+  id: ParadoxClone
+  defaultValue: true
 
 - type: consentToggle
   id: MindSwap
@@ -20,7 +21,11 @@
   id: ChangelingTarget
 
 - type: consentToggle
-  id: NoDragonDevour
+  id: DragonDevour
+  defaultValue: true
 
 - type: consentToggle
   id: NSFWDescriptions
+
+- type: consentToggle
+  id: LastMessage

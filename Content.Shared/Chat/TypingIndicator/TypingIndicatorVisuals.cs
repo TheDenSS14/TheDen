@@ -1,5 +1,7 @@
-// SPDX-FileCopyrightText: 2022 Alex Evgrashin <aevgrashin@yandex.ru>
-// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 Alex Evgrashin
+// SPDX-FileCopyrightText: 2025 88tv
+// SPDX-FileCopyrightText: 2025 lzk
+// SPDX-FileCopyrightText: 2025 sleepyyapril
 //
 // SPDX-License-Identifier: MIT
 
@@ -10,7 +12,7 @@ namespace Content.Shared.Chat.TypingIndicator;
 [Serializable, NetSerializable]
 public enum TypingIndicatorVisuals : byte
 {
-    IsTyping
+    State
 }
 
 [Serializable]

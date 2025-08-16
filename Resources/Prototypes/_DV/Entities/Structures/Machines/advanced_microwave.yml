@@ -11,7 +11,7 @@
   description: Don't stand too close to this thing, definitely dont put anything metal in.
   components:
   - type: Microwave
-    cookTimeMultiplier: 0.5
+    baseCookTimeMultiplier: 0.5
     capacity: 30
     canMicrowaveIdsSafely: false # No AA farm
   - type: Sprite

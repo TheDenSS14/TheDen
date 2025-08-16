@@ -200,3 +200,73 @@
         - Brigmedic # Mostly for corpsman recognizibility
   items:
     - ClothingBackpackMessengerSecurity
+
+- type: loadout
+  id: LoadoutSecurityOuterCoatBomberSecurity # Can also butcher the other version to get this
+  category: JobsSecurityAUncategorized
+  cost: 0
+  items:
+    -  ClothingOuterCoatBomberSecurity
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSecurityOuter
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Security
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - HeadOfSecurity # Sorry, these are for the little guys
+        - Brigmedic # They get their own!
+        - SecurityCadet # Gotta earn it
+
+- type: loadout
+  id: LoadoutSecurityOuterCoatBomberSecurityLoose # Can also butcher the other version to get this
+  category: JobsSecurityAUncategorized
+  cost: 0
+  items:
+    -  ClothingOuterCoatBomberSecurityLoose
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSecurityOuter
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Security
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - HeadOfSecurity # Sorry, these are for the little guys
+        - Brigmedic # They get their own!
+        - SecurityCadet # Gotta earn it
+
+- type: loadout
+  id: LoadoutSecurityOuterCoatBomberBrigmed # Can also butcher the other version to get this
+  category: JobsSecurityAUncategorized
+  cost: 0
+  items:
+    -  ClothingOuterCoatBomberBrigmed
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSecurityOuter
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Security
+    - !type:CharacterJobRequirement
+      jobs:
+        - Brigmedic
+
+- type: loadout
+  id: LoadoutSecurityOuterCoatBomberBrigmedLoose # Can also butcher the other version to get this
+  category: JobsSecurityAUncategorized
+  cost: 0
+  items:
+    -  ClothingOuterCoatBomberBrigmedLoose
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSecurityOuter
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Security
+    - !type:CharacterJobRequirement
+      jobs:
+        - Brigmedic
