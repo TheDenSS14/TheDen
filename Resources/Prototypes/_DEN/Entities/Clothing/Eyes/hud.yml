@@ -1,0 +1,36 @@
+- type: entity
+  parent: [ClothingEyesNightVisionGoggles, ShowSecurityIcons]
+  id: ClothingEyesHudERT
+  name: ERT combat visor
+  description: A visor issued to NanoTrasens elite operators. It offers top notch eye protection, and a status read out for IFF. Any resemblance to CyberSun technology is coincidental.
+  components:
+  - type: Sprite
+    sprite: Clothing/Eyes/Hud/synd.rsi
+  - type: Clothing
+    sprite: Clothing/Eyes/Hud/synd.rsi
+  - type: NightVision
+    isEquipment: true
+  - type: FlashImmunity
+  - type: EyeProtection
+
+- type: entity
+  parent: [ClothingEyesHudERT, ShowMedicalIcons]
+  id: ClothingEyesHudERTMedic
+  name: ERT combat medical visor
+  description: A visor issued to NanoTrasens elite operators. It offers top notch eye protection, and a status read out for IFF. Any resemblance to CyberSun technology is coincidental.
+  components:
+  - type: ShowHealthBars
+    damageContainers:
+    - Biological
+    - BiologicalMetaphysical
+
+
+- type: entity
+  parent: [ClothingEyesHudERT, ShowMedicalIcons]
+  id: ClothingEyesHudERTEngineer
+  name: ERT engineering medical visor
+  description: A visor issued to NanoTrasens elite operators. It offers top notch eye protection, and a status read out for IFF. Any resemblance to CyberSun technology is coincidental.
+  components:
+  - type: ShowHealthBars
+    damageContainers:
+    - Inorganic

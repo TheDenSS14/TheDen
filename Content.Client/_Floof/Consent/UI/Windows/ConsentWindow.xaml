@@ -11,13 +11,19 @@ SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
     xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:gfx="clr-namespace:Robust.Client.Graphics;assembly=Robust.Client"
+    xmlns:ui="clr-namespace:Content.Client._AS.UserInterface.Controls;assembly=Content.Client"
+    xmlns:xe="clr-namespace:Content.Client.UserInterface.XamlExtensions"
+    xmlns:style="clr-namespace:Content.Client.Stylesheets"
+    xmlns:xamlExtensions="clr-namespace:Content.Client.UserInterface.XamlExtensions"
+    xmlns:controls1="clr-namespace:Content.Client._AS.UserInterface.Controls"
     MinSize="620 670"
     Title="{Loc consent-window-title}"
     Resizable="False">
     <BoxContainer Orientation="Vertical" HorizontalExpand="True" Margin="5">
         <Label Text="{Loc consent-window-text}" />
+        <Label Name="UnsavedChangesWarning" Text="{Loc consent-window-saved-changes}" />
         <BoxContainer Orientation="Horizontal" Margin="5">
-            <Label Name="SaveLabel" FontColorOverride="Red" Access="Public" />
+            <Label Name="CharacterLimit" Access="Public" />
             <Control HorizontalExpand="True" />
             <Button
                 Name="SaveConsentSettings"
@@ -25,24 +31,50 @@ SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
                 Text="Save"
                 Disabled="True" />
         </BoxContainer>
-        <Label Text="{Loc consent-window-freetext-label}" />
-        <PanelContainer HorizontalExpand="True" VerticalExpand="True" MinWidth="200">
-            <PanelContainer.PanelOverride>
-                <gfx:StyleBoxFlat BackgroundColor="#1B1B1E" />
-            </PanelContainer.PanelOverride>
-            <TextEdit
-                Name="ConsentFreetext"
-                Access="Public"
-                MinHeight="100"
-                VerticalExpand="True" />
-        </PanelContainer>
-        <Control MinSize="0 10" />
-        <Label Text="{Loc consent-window-toggles-label}" />
-
-        <ScrollContainer HorizontalExpand="True" VerticalExpand="True" HScrollEnabled="False" VScrollEnabled="True" MinHeight="50">
-            <BoxContainer Name="ConsentList" Access="Public" HorizontalExpand="True" SeparationOverride="2" Orientation="Vertical">
-                <!-- The rest here is generated programmatically -->
+        <Control HorizontalExpand="True" />
+        <controls:NeoTabContainer Name="ConsentTabs" VerticalExpand="True" Orientation="Vertical" HScrollEnabled="False" VScrollEnabled="False">
+            <BoxContainer Name="FreetextTab" Orientation="Vertical" HorizontalExpand="True" Margin="5">
+                <PanelContainer HorizontalExpand="True" VerticalExpand="True" MinWidth="200">
+                    <PanelContainer.PanelOverride>
+                        <gfx:StyleBoxFlat BackgroundColor="#1B1B1E" />
+                    </PanelContainer.PanelOverride>
+                    <TextEdit
+                        Name="ConsentFreetext"
+                        Access="Public"
+                        MinHeight="200"
+                        VerticalExpand="True" />
+                </PanelContainer>
             </BoxContainer>
-        </ScrollContainer>
+            <BoxContainer Name="TogglesTab" Orientation="Vertical" HorizontalExpand="True" Margin="5">
+                <ScrollContainer HorizontalExpand="True" VerticalExpand="True" HScrollEnabled="False" VScrollEnabled="True" MinHeight="50">
+                    <controls:NeoTabContainer Name="CategoriesContainer" VerticalExpand="True" HScrollEnabled="False" VScrollEnabled="False">
+                        <!-- The rest here is generated programmatically -->
+                    </controls:NeoTabContainer>
+                </ScrollContainer>
+            </BoxContainer>
+            <BoxContainer Name="ConsentCardsTab" Orientation="Vertical" HorizontalExpand="True" VerticalExpand="True" Margin="15">
+                <BoxContainer Name="XCardSection" Orientation="Vertical" HorizontalExpand="True" VerticalExpand="True"
+                    SeparationOverride="10">
+                    <ui:CardButton
+                        Name="XCard"
+                        Access="Internal"
+                        Icon="{xe:Tex '/Textures/_AS/Interface/x.svg.96dpi.png'}"
+                        Description="{Loc 'consent-window-cards-x-card-text'}"
+                        BackgroundColor="#FF2D2D38"
+                        HoverColor="#FF3D3D48"
+                        PressedColor="#FF4D4D58"
+                        MinSize="0 200"
+                        MaxWidth="450"
+                        HorizontalExpand="True"
+                    />
+                    <RichTextLabel
+                        Text="{Loc 'consent-window-cards-x-card-description'}"
+                        HorizontalExpand="True"
+                        HorizontalAlignment="Center"
+                        MaxWidth="650"/>
+                </BoxContainer>
+
+            </BoxContainer>
+        </controls:NeoTabContainer>
     </BoxContainer>
 </controls:FancyWindow>

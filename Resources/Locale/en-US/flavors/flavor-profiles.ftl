@@ -272,6 +272,7 @@ flavor-complex-tea = like tea
 flavor-complex-ice = like ice
 flavor-complex-mopwata = like stagnant, dirty water
 # flavor-complex-nikkonectar = like creamy blueberries.
+flavor-complex-jaegermister = like black licorice
 
 ## Cocktails
 flavor-complex-arnold-palmer = like a hole-in-one
@@ -312,6 +313,26 @@ flavor-complex-cogchamp = like brass
 flavor-complex-white-gilgamesh = like lightly carbonated cream
 flavor-complex-antifreeze = warm
 flavor-complex-blood-moon = like a memory, long forgotten.
+flavor-complex-jaegerbomb = like fruit-flavored anxiety
+flavor-complex-jaegerita = like the color orange
+flavor-complex-surfer = like an ocean breeze on your face
+flavor-complex-surfer-on-acid = like the forest for the trees
+flavor-complex-fizzball = like fresh black licorice
+flavor-complex-tuxedo-sunset = like red licorice
+flavor-complex-inside-scoop = like a juicy story to tell
+flavor-complex-fizzball-float = bitter AND sweet
+flavor-complex-chartruse = like a mint-flavored lemonade
+flavor-complex-death-flip = like jumping off an office chair
+flavor-complex-bloody-jaeger = like a tomato-based fruit salad
+flavor-complex-pop-quiz = like barely passing an exam
+flavor-complex-naughty-bartender = like a fancy coffee
+flavor-complex-atlantic-ocean = like a tropical resort
+flavor-complex-cafe-cocktail = like a cold morning breeze
+flavor-complex-cinnamon-cookie = like grandma's baking
+# flavor-complex-thoughts-and-prayers = like you can see through the veil
+# flavor-complex-mutually-assured-destruction = like the end of the world
+# flavor-complex-zenith = like everything you could ever dream of
+flavor-complex-blood-red-licorice = like carnage in a candy store
 
 ### This is exactly what pilk tastes like. I'm not even joking. I might've been a little drunk though
 flavor-complex-pilk = like sweet milk

@@ -146,7 +146,10 @@ namespace Content.Client.Lobby.UI
         private FlavorText.FlavorText? _flavorText;
         private BoxContainer _ccustomspecienamecontainerEdit => CCustomSpecieName;
         private LineEdit _customspecienameEdit => CCustomSpecieNameEdit;
-        private TextEdit? _flavorTextEdit;
+
+        private TextEdit? _flavorSfwTextEdit;
+        private TextEdit? _flavorNsfwTextEdit;
+        private TextEdit? _characterConsent;
 
         /// If we're attempting to save
         public event Action? Save;
@@ -257,7 +260,6 @@ namespace Content.Client.Lobby.UI
 
             #region Appearance
 
-            Appearance.Orphan();
             CTabContainer.AddTab(Appearance, Loc.GetString("humanoid-profile-editor-appearance-tab"));
 
             #region Sex
@@ -359,9 +361,8 @@ namespace Content.Client.Lobby.UI
 
             #endregion Species
 
-            #region Contractors
+            #region Background
 
-            Background.Orphan();
             CTabContainer.AddTab(Background, Loc.GetString("humanoid-profile-editor-background-tab"));
 
             RefreshNationalities();
@@ -570,7 +571,6 @@ namespace Content.Client.Lobby.UI
 
             #region Jobs
 
-            Jobs.Orphan();
             CTabContainer.AddTab(Jobs, Loc.GetString("humanoid-profile-editor-jobs-tab"));
 
             PreferenceUnavailableButton.AddItem(
@@ -597,7 +597,6 @@ namespace Content.Client.Lobby.UI
 
             #region Antags
 
-            Antags.Orphan();
             CTabContainer.AddTab(Antags, Loc.GetString("humanoid-profile-editor-antags-tab"));
 
             #endregion Antags
@@ -605,7 +604,6 @@ namespace Content.Client.Lobby.UI
             #region Traits
 
             // Set up the traits tab
-            TraitsTab.Orphan();
             CTabContainer.AddTab(TraitsTab, Loc.GetString("humanoid-profile-editor-traits-tab"));
             _traitPreferences = new List<TraitPreferenceSelector>();
 
@@ -625,7 +623,6 @@ namespace Content.Client.Lobby.UI
             #region Loadouts
 
             // Set up the loadouts tab
-            LoadoutsTab.Orphan();
             CTabContainer.AddTab(LoadoutsTab, Loc.GetString("humanoid-profile-editor-loadouts-tab"));
 
             // Show/Hide the loadouts tab if they ever get enabled/disabled
@@ -642,7 +639,6 @@ namespace Content.Client.Lobby.UI
 
             #region Markings
 
-            MarkingsTab.Orphan();
             CTabContainer.AddTab(MarkingsTab, Loc.GetString("humanoid-profile-editor-markings-tab"));
 
             Markings.OnMarkingAdded += OnMarkingChange;
@@ -655,7 +651,6 @@ namespace Content.Client.Lobby.UI
             // Begin CD - Character Records
             #region CosmaticRecords
 
-            RecordsTab.Orphan();
             Records.SetRecordUpdateFunction(UpdateProfileRecords);
             CTabContainer.AddTab(RecordsTab, Loc.GetString("humanoid-profile-editor-cd-records-tab"));
 
@@ -700,8 +695,15 @@ namespace Content.Client.Lobby.UI
                     return;
 
                 _flavorText = new();
-                _flavorText.OnFlavorTextChanged += OnFlavorTextChange;
-                _flavorTextEdit = _flavorText.CFlavorTextInput;
+
+                _flavorText.OnSfwFlavorTextChanged += OnSfwFlavorTextChange;
+                _flavorText.OnNsfwFlavorTextChanged += OnNsfwFlavorTextChange;
+                _flavorText.OnCharacterConsentChanged += OnCharacterConsentChange;
+
+                _flavorSfwTextEdit = _flavorText.CFlavorTextSFWInput;
+                _flavorNsfwTextEdit = _flavorText.CFlavorTextNSFWInput;
+                _characterConsent = _flavorText.CFlavorTextConsentInput;
+
                 CTabContainer.AddTab(_flavorText, Loc.GetString("humanoid-profile-editor-flavortext-tab"));
             }
             else
@@ -710,11 +712,21 @@ namespace Content.Client.Lobby.UI
                     return;
 
                 CTabContainer.RemoveChild(_flavorText);
-                _flavorText.OnFlavorTextChanged -= OnFlavorTextChange;
+
+                _flavorText.OnSfwFlavorTextChanged -= OnSfwFlavorTextChange;
+                _flavorText.OnNsfwFlavorTextChanged -= OnNsfwFlavorTextChange;
+                _flavorText.OnCharacterConsentChanged -= OnCharacterConsentChange;
+
                 _flavorText.Dispose();
+
+                _flavorSfwTextEdit?.Dispose();
+                _flavorNsfwTextEdit?.Dispose();
+                _characterConsent?.Dispose();
+
                 _flavorText = null;
-                _flavorTextEdit?.Dispose();
-                _flavorTextEdit = null;
+                _flavorSfwTextEdit = null;
+                _flavorNsfwTextEdit = null;
+                _characterConsent = null;
             }
         }
 
@@ -1407,12 +1419,30 @@ namespace Content.Client.Lobby.UI
         }
         // End CD - Character Records
 
-        private void OnFlavorTextChange(string content)
+        private void OnSfwFlavorTextChange(string content)
         {
             if (Profile is null)
                 return;
 
             Profile = Profile.WithFlavorText(content);
+            SetDirty();
+        }
+
+        private void OnNsfwFlavorTextChange(string content)
+        {
+            if (Profile is null)
+                return;
+
+            Profile = Profile.WithNsfwFlavorText(content);
+            SetDirty();
+        }
+
+        private void OnCharacterConsentChange(string content)
+        {
+            if (Profile is null)
+                return;
+
+            Profile = Profile.WithCharacterConsent(content);
             SetDirty();
         }
 
@@ -1753,8 +1783,14 @@ namespace Content.Client.Lobby.UI
 
         private void UpdateFlavorTextEdit()
         {
-            if (_flavorTextEdit != null)
-                _flavorTextEdit.TextRope = new Rope.Leaf(Profile?.FlavorText ?? "");
+            if (_flavorSfwTextEdit != null)
+                _flavorSfwTextEdit.TextRope = new Rope.Leaf(Profile?.FlavorText ?? "");
+
+            if (_flavorNsfwTextEdit != null)
+                _flavorNsfwTextEdit.TextRope = new Rope.Leaf(Profile?.NsfwFlavorText ?? "");
+
+            if (_characterConsent != null)
+                _characterConsent.TextRope = new Rope.Leaf(Profile?.CharacterConsent ?? "");
         }
 
         private void UpdateAgeEdit()
@@ -2072,6 +2108,12 @@ namespace Content.Client.Lobby.UI
             WidthLabel.Text = Loc.GetString("humanoid-profile-editor-width-label",
                 ("width", (int) width),
                 ("inches", (int) widthIn));
+
+            // DEN - Show sprite scale multiplier
+            var sizeFormat = "0.00";
+            DimensionLabel.Text = Loc.GetString("humanoid-profile-editor-dimension-label",
+                ("width", WidthSlider.Value.ToString(sizeFormat)),
+                ("height", HeightSlider.Value.ToString(sizeFormat)));
         }
 
         private void UpdateWeight()

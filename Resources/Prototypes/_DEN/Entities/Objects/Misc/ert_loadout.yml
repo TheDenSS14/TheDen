@@ -1,0 +1,83 @@
+# ERT Loadouts
+
+# ERT Leader
+- type: entity
+  id: ERTLeaderLoadoutSelector
+  name: ERT Leader loadout selector
+  description: selectable-item-engineer-example-desc
+  parent: [ BaseItem, BaseSetSelector ]
+  components:
+  - type: Sprite
+    sprite: _Goobstation/Objects/Devices/unique_teleporters.rsi
+    state: standard
+  - type: SetSelector
+    spawnedStoragePrototype: ClothingBackpackDuffel
+    spawnedStorageContainer: storagebase
+    approveSound:
+      path: /Audio/Effects/kaching.ogg
+    possibleSets:
+    - ERTLeaderLoadout1
+    - ERTSecurityLoadout1
+    - ERTSecurityLoadout2
+    - ERTSecurityLoadout3
+
+# ERT Security
+- type: entity
+  id: ERTSecurityLoadoutSelector
+  name: ERT Security loadout selector
+  description: selectable-item-engineer-example-desc
+  parent: [ BaseItem, BaseSetSelector ]
+  components:
+  - type: Sprite
+    sprite: _Goobstation/Objects/Devices/unique_teleporters.rsi
+    state: standard
+  - type: SetSelector
+    spawnedStoragePrototype: ClothingBackpackDuffel
+    spawnedStorageContainer: storagebase
+    approveSound:
+      path: /Audio/Effects/kaching.ogg
+    possibleSets:
+    - ERTSecurityLoadout1
+    - ERTSecurityLoadout2
+    - ERTSecurityLoadout3
+
+# ERT Engineer
+- type: entity
+  id: ERTEngineerLoadoutSelector
+  name: ERT Engineer loadout selector
+  description: selectable-item-engineer-example-desc
+  parent: [ BaseItem, BaseSetSelector ]
+  components:
+  - type: Sprite
+    sprite: _Goobstation/Objects/Devices/unique_teleporters.rsi
+    state: standard
+  - type: SetSelector
+    spawnedStoragePrototype: ClothingBackpackDuffel
+    spawnedStorageContainer: storagebase
+    approveSound:
+      path: /Audio/Effects/kaching.ogg
+    possibleSets:
+    - ERTEngineerLoadout1
+    - ERTEngineerLoadout2
+    - ERTEngineerLoadout3
+    - ERTEngineerLoadout4
+
+# ERT Medic
+- type: entity
+  id: ERTMedicLoadoutSelector
+  name: ERT Medic loadout selector
+  description: selectable-item-engineer-example-desc
+  parent: [ BaseItem, BaseSetSelector ]
+  components:
+  - type: Sprite
+    sprite: _Goobstation/Objects/Devices/unique_teleporters.rsi
+    state: standard
+  - type: SetSelector
+    spawnedStoragePrototype: ClothingBackpackDuffel
+    spawnedStorageContainer: storagebase
+    approveSound:
+      path: /Audio/Effects/kaching.ogg
+    possibleSets:
+    - ERTMedicalLoadout1
+    - ERTMedicalLoadout2
+    - ERTMedicalLoadout3

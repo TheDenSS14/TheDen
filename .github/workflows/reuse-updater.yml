@@ -25,7 +25,7 @@ jobs:
         with:
           ref: ${{ vars.CHANGELOG_BRANCH }}
           fetch-depth: 0
-          token: ${{ secrets.BOT_TOKEN }}
+          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Setup Python
         uses: actions/setup-python@v5
@@ -36,7 +36,7 @@ jobs:
         id: changed_files
         env:
            PR_BODY: ${{ github.event.pull_request.body }}
-           GH_TOKEN: ${{ secrets.BOT_TOKEN }}
+           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
            GH_REPO: ${{ github.repository }}
            PR_NUMBER: ${{ github.event.pull_request.number }}
         run: |
@@ -105,7 +105,7 @@ jobs:
         working-directory: ${{ github.workspace }}
 
       - name: Commit changes
-        uses: stefanzweifel/git-auto-commit-action@v5
+        uses: stefanzweifel/git-auto-commit-action@v6
         with:
           commit_message: "chore: automatically update REUSE headers"
           commit_user_name: ${{ vars.CHANGELOG_USER }}

@@ -32,3 +32,37 @@
       jobs:
         - SalvageSpecialist # For salvage recognizibility
         - Quartermaster # LO has a LO specific variant
+
+- type: loadout
+  id: LoadoutLogisticsOuterCoatBomberCargo # Can also butcher the other version to get this
+  category: JobsLogisticsAUncategorized
+  cost: 0
+  items:
+    -  ClothingOuterCoatBomberCargo
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutLogisticsOuter
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Logistics
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Quartermaster # Sorry, these are for the little guys
+
+- type: loadout
+  id: LoadoutLogisticsOuterCoatBomberCargoLoose # Can also butcher the other version to get this
+  category: JobsLogisticsAUncategorized
+  cost: 0
+  items:
+    -  ClothingOuterCoatBomberCargoLoose
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutLogisticsOuter
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Logistics
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Quartermaster # Sorry, these are for the little guys

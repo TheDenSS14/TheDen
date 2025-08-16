@@ -77,6 +77,12 @@ public sealed partial class MaterialStorageComponent : Component
     /// </summary>
     [DataField]
     public bool CanEjectStoredMaterials = true;
+
+    /// <summary>
+    /// Whether the storage should ignore the material whitelist and always accept material input.
+    /// </summary>
+    [DataField]
+    public bool AlwaysAcceptMaterials;
 }
 
 [Serializable, NetSerializable]

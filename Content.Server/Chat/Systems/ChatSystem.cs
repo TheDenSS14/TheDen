@@ -106,6 +106,8 @@ using Content.Shared.Examine;
 using Content.Shared.Popups;
 using Content.Server._Wizden.Chat.Systems;
 using Content.Server._Floof.Consent;
+using Content.Shared._DEN.Earmuffs;
+
 
 namespace Content.Server.Chat.Systems;
 
@@ -633,7 +635,6 @@ public sealed partial class ChatSystem : SharedChatSystem
             if (MessageRangeCheck(session, data, range) != MessageRangeCheckResult.Full)
                 continue; // Won't get logged to chat, and ghosts are too far away to see the pop-up, so we just won't send it to them.
 
-
             var canUnderstandLanguage = _language.CanUnderstand(
                 listener,
                 language.ID,
@@ -652,7 +653,7 @@ public sealed partial class ChatSystem : SharedChatSystem
                 result = perceivedMessage;
                 wrappedMessage = WrapWhisperMessage(source, "chat-manager-entity-whisper-wrap-message", name, result, language);
             }
-            else if (_interactionSystem.InRangeUnobstructed(source, listener, WhisperMuffledRange))
+            else if (_interactionSystem.InRangeUnobstructed(source, listener, WhisperMuffledRange, _subtleWhisperMask))
             {
                 // Scenario 2: if the listener is too far, they only hear fragments of the message
                 result = ObfuscateMessageReadability(perceivedMessage);
@@ -716,8 +717,16 @@ public sealed partial class ChatSystem : SharedChatSystem
         var ent = Identity.Entity(source, EntityManager);
         var name = FormattedMessage.EscapeText(nameOverride ?? Name(ent));
         action = FormattedMessage.RemoveMarkupPermissive(action);
-        var useSpace = !action.StartsWith("\'s") || !action.StartsWith(",");
-        var space = useSpace || separateNameAndMessage ? " " : "";
+        
+        // DEN: use the format of 'detailed' when starting with '!'
+        if (!separateNameAndMessage && action.StartsWith('!'))
+        {
+            action = action.Substring(1);
+            separateNameAndMessage = true;
+        }
+
+        var useSpace = !(action.StartsWith("'") || action.StartsWith(",")); // DEN: remove space when starting an action with ' or ,
+        var space = useSpace || separateNameAndMessage ? " " : ""; // DEN: remove space when starting an action with ' or ,
         var locString = "chat-manager-entity-me-wrap-message";
 
         if (separateNameAndMessage)
@@ -761,9 +770,17 @@ public sealed partial class ChatSystem : SharedChatSystem
         // get the entity's apparent name (if no override provided).
         var ent = Identity.Entity(source, EntityManager);
         var name = FormattedMessage.EscapeText(nameOverride ?? Name(ent));
-        action = FormattedMessage.RemoveMarkupPermissive(action);
-        var useSpace = !action.StartsWith("\'s") || !action.StartsWith(",");
-        var space = useSpace || separateNameAndMessage ? " " : "";
+        action = FormattedMessage.RemoveMarkupPermissive(action).Trim();
+        
+        // DEN: use the format of 'detailed' when starting with '!'
+        if (!separateNameAndMessage && action.StartsWith('!'))
+        {
+            action = action.Substring(1);
+            separateNameAndMessage = true;
+        }
+
+        var useSpace = !(action.StartsWith("'") || action.StartsWith(",")); // DEN: remove space when starting an action with ' or ,
+        var space = useSpace || separateNameAndMessage ? " " : ""; // DEN: remove space when starting an action with ' or ,
         var locString = "chat-manager-entity-subtle-wrap-message";
 
         if (separateNameAndMessage)
@@ -774,7 +791,7 @@ public sealed partial class ChatSystem : SharedChatSystem
             ("entityName", name),
             ("entity", ent),
             ("color", color ?? DefaultSpeakColor.ToHex()),
-            ("space", space),
+            ("space", space), // DEN: remove space when starting an action with ' or ,
             ("message", action));
 
         foreach (var (session, data) in GetRecipients(source, WhisperClearRange))
@@ -921,6 +938,12 @@ public sealed partial class ChatSystem : SharedChatSystem
         foreach (var (session, data) in GetRecipients(source, VoiceRange))
         {
             if (session.AttachedEntity is not { Valid: true } playerEntity)
+                continue;
+
+            // DEN edit: VRChat earmuffs, but on Den!
+            if (TryComp<EarmuffsComponent>(playerEntity, out var earmuffs)
+                && earmuffs.Running && earmuffs.HearRange < data.Range
+                && (channel == ChatChannel.Local || channel == ChatChannel.Emotes))
                 continue;
 
             if (Transform(playerEntity).GridUid != Transform(source).GridUid

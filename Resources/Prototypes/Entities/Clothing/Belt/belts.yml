@@ -539,6 +539,9 @@
         - Skewer
         - MonkeyCube
         - Mayo
+        - Towel
+        - Mustard
+        - Rag
       components:
         - Mousetrap
         - Smokable
@@ -832,6 +835,47 @@
     sprite: Clothing/Belt/salvagewebbing.rsi
   - type: Clothing
     sprite: Clothing/Belt/salvagewebbing.rsi
+
+- type: entity
+  parent: ClothingBeltMilitaryWebbing
+  id: ClothingBeltERTWebbing
+  name: ERT chest rig
+  description: A set of tactical webbing issued to ERT operatives.
+  components:
+  - type: Sprite
+    sprite: _DV/Clothing/Belt/securitywebbing.rsi # DeltaV - resprite
+  - type: Clothing
+    sprite: _DV/Clothing/Belt/securitywebbing.rsi # DeltaV - resprite
+
+- type: entity
+  parent: ClothingBeltERTWebbing
+  id: ClothingBeltERTWebbingFilled
+  components:
+  - type: StorageFill
+    contents:
+      - id: CrowbarRed
+      - id: MedicatedSuture
+      - id: MagazineUniversalMagnum
+      - id: MagazineUniversalMagnum
+  - type: ContainerFill
+    containers:
+      holster:
+      - WeaponPistolUniversal
+
+- type: entity
+  parent: ClothingBeltERTWebbing
+  id: ClothingBeltERTLeaderWebbingFilled
+  description: A set of tactical webbing issued to ERT operatives.
+  suffix: Filled
+  components:
+  - type: StorageFill
+    contents:
+      - id: CrowbarRed
+      - id: MedicatedSuture
+  - type: ContainerFill
+    containers:
+      holster:
+      - WeaponPulsePistol
 
 - type: entity
   parent: [ClothingBeltStorageBase, ContentsExplosionResistanceBase]
