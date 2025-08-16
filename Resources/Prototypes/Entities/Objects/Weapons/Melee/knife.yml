@@ -188,6 +188,9 @@
     angle: 225
   - type: Item
     sprite: Objects/Weapons/Melee/combat_knife.rsi
+    storedSprite:
+      state: storage
+      sprite: Objects/Weapons/Melee/combat_knife.rsi
   - type: DisarmMalus
     malus: 0.225
 
@@ -210,6 +213,9 @@
     angle: 225
   - type: Item
     sprite: Objects/Weapons/Melee/survival_knife.rsi
+    storedSprite:
+      state: storage
+      sprite: Objects/Weapons/Melee/survival_knife.rsi
   - type: AttachmentBayonet # Lavaland Change
 
 - type: entity
@@ -231,6 +237,7 @@
     angle: 225
   - type: Item
     sprite: Objects/Weapons/Melee/kukri_knife.rsi
+    storedSprite: null
 
 - type: entity
   parent: ClothingHeadHatGreyFlatcap
