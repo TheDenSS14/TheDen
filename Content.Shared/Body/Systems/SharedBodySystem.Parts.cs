@@ -150,7 +150,7 @@ public partial class SharedBodySystem
 
     }
 
-    public void DisablePart(Entity<BodyPartComponent> partEnt)
+    private void DisablePart(Entity<BodyPartComponent> partEnt)
     {
         if (!TryComp(partEnt.Comp.Body, out BodyComponent? body))
             return;
