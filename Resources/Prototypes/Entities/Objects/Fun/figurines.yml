@@ -35,6 +35,8 @@
   - type: UseDelay
     delay: 5
   - type: DeviceLinkSink
+    ports:
+      - OrderReciever
   - type: TriggerOnActivate
   - type: TriggerOnSignal
   - type: Speech
