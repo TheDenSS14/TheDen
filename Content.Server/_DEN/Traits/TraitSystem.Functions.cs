@@ -7,6 +7,10 @@ using System.Linq;
 using Content.Server.Administration.Logs;
 using Content.Server.Body.Components;
 using Content.Server.Body.Systems;
+using Content.Server.Construction.Completions;
+using Content.Shared._Shitmed.Body.Events;
+using Content.Shared._Shitmed.BodyEffects;
+using Content.Shared.Atmos.Components;
 using Content.Shared.Body.Components;
 using Content.Shared.Body.Part;
 using Content.Shared.Body.Prototypes;
@@ -15,6 +19,9 @@ using Content.Shared.Database;
 using Content.Shared.Traits;
 using Content.Shared.Whitelist;
 using JetBrains.Annotations;
+using JetBrains.FormatRipper.Elf;
+using Robust.Server.Audio;
+using Robust.Shared.Audio;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization.Manager;
 
@@ -105,7 +112,17 @@ public sealed partial class TraitAddComponentToBodyPart : TraitFunction
             if (!Parts.Contains(bodyPart.Component.PartType))
                 continue;
 
-            entityManager.AddComponents(bodyPart.Id, Components);
+            // I'd like a way to be able to initialize the OnAdd stuff without having to entirely replace the limb.
+            bodyPart.Component.OnAdd = Components;
+            bodyPart.Component.OnRemove = Components;
+            if (bodyPart.Component.Body != null && bodyPart.Component.OnAdd != null && entityManager.TryGetComponent<BodyPartEffectComponent>(bodyPart.Id, out var comp))
+            {
+                //entityManager.System<AudioSystem>().PlayPvs(new SoundPathSpecifier("/Audio/Items/bikehorn.ogg"), uid);
+                entityManager.System<BodyPartEffectSystem>().AddComponents(bodyPart.Component.Body.Value, bodyPart.Id, bodyPart.Component.OnAdd, comp);
+                var bodySystem = entityManager.System<BodySystem>();
+                entityManager.System<SharedBodySystem>().DisablePart(bodyPart);
+                entityManager.System<SharedBodySystem>().EnablePart(bodyPart);
+            }
         }
     }
 }

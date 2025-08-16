@@ -7,6 +7,9 @@
 
 using Content.Shared._Shitmed.Body.Events;
 using Content.Shared.Body.Part;
+using Content.Shared.Item;
+using Robust.Shared.Audio;
+using Robust.Shared.Audio.Systems;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization.Manager;
 using Robust.Shared.Timing;
@@ -18,9 +21,12 @@ public partial class BodyPartEffectSystem : EntitySystem
     [Dependency] private readonly IComponentFactory _compFactory = default!;
     [Dependency] private readonly ISerializationManager _serManager = default!;
     [Dependency] private readonly IGameTiming _gameTiming = default!;
+    [Dependency] private readonly SharedAudioSystem _audio = default!;
     public override void Initialize()
     {
         base.Initialize();
+
+        //SubscribeLocalEvent<BodyPartEffectComponent, ComponentInit>(OnComponentInit);
 
         SubscribeLocalEvent<BodyPartComponent, BodyPartComponentsModifyEvent>(OnPartComponentsModify);
     }
@@ -42,6 +48,18 @@ public partial class BodyPartEffectSystem : EntitySystem
             AddComponents(body, uid, comp.Active);
         }
     }
+
+    //private void OnComponentInit(Entity<BodyPartEffectComponent> uid, ref ComponentInit args)
+    //{
+    //    if (!TryComp<BodyPartComponent>(uid, out var bodyPart))
+    //        return;
+
+    //    _audio.PlayPvs(new SoundPathSpecifier("/Audio/Items/bikehorn.ogg"), uid);
+    //    if (bodyPart.OnAdd != null && bodyPart.Body != null)
+    //    {
+    //        AddComponents(bodyPart.Body.Value, uid, bodyPart.OnAdd);
+    //    }
+    //}
 
     private void OnPartComponentsModify(Entity<BodyPartComponent> partEnt,
         ref BodyPartComponentsModifyEvent ev)
@@ -65,7 +83,7 @@ public partial class BodyPartEffectSystem : EntitySystem
         Dirty(partEnt, partEnt.Comp);
     }
 
-    private void AddComponents(EntityUid body,
+    public void AddComponents(EntityUid body,
         EntityUid part,
         ComponentRegistry reg,
         BodyPartEffectComponent? effectComp = null)

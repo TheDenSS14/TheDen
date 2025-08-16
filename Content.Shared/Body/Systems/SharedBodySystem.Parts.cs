@@ -35,6 +35,7 @@ using Content.Shared._Shitmed.BodyEffects;
 using Content.Shared.Humanoid;
 using Content.Shared.Inventory;
 using Content.Shared.Random;
+using Robust.Shared.Audio;
 
 namespace Content.Shared.Body.Systems;
 
@@ -42,6 +43,7 @@ public partial class SharedBodySystem
 {
     [Dependency] private readonly RandomHelperSystem _randomHelper = default!; // Shitmed Change
     [Dependency] private readonly InventorySystem _inventorySystem = default!; // Shitmed Change
+    [Dependency] private readonly BodyPartEffectSystem _effectSystem = default!;
 
     private void InitializeParts()
     {
@@ -107,7 +109,7 @@ public partial class SharedBodySystem
         Dirty(partEnt, partEnt.Comp);
     }
 
-    private void EnablePart(Entity<BodyPartComponent> partEnt)
+    public void EnablePart(Entity<BodyPartComponent> partEnt)
     {
         if (!TryComp(partEnt.Comp.Body, out BodyComponent? body))
             return;
@@ -150,7 +152,7 @@ public partial class SharedBodySystem
 
     }
 
-    private void DisablePart(Entity<BodyPartComponent> partEnt)
+    public void DisablePart(Entity<BodyPartComponent> partEnt)
     {
         if (!TryComp(partEnt.Comp.Body, out BodyComponent? body))
             return;
