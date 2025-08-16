@@ -20,7 +20,7 @@ public sealed partial class HyposprayComponent : Component
     public float MaxPressure = float.MaxValue;
 
     [DataField]
-    public float InjectTime = 2f;
+    public float InjectTime = 0f;
 
     [DataField]
     public string SolutionName = "hypospray";
@@ -53,4 +53,11 @@ public sealed partial class HyposprayComponent : Component
     [DataField]
     [ViewVariables(VVAccess.ReadWrite)]
     public bool NeedHands = true;
+
+    /// <summary>
+    /// Whether or not the hypospray injects it's entire capacity on use.
+    /// Used by Hyposyringes.
+    /// </summary>
+    [DataField]
+    public bool InjectMaxCapacity = false;
 }

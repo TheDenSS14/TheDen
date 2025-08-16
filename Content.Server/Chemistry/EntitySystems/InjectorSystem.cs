@@ -195,12 +195,12 @@ public sealed class InjectorSystem : SharedInjectorSystem
             if (injector.Comp.ToggleState == InjectorToggleMode.Draw)
             {
                 Popup.PopupEntity(Loc.GetString("injector-component-drawing-target",
-    ("user", userName)), user, target);
+                    ("user", userName)), user, target);
             }
             else
             {
                 Popup.PopupEntity(Loc.GetString("injector-component-injecting-target",
-    ("user", userName)), user, target);
+                    ("user", userName)), user, target);
             }
 
 
