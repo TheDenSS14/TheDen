@@ -110,8 +110,11 @@ public sealed partial class NeoTabContainer : BoxContainer
     /// <param name="title">The title of the tab</param>
     /// <param name="updateTabMerging">Whether the tabs should fix their styling automatically. Useful if you're doing tons of updates at once</param>
     /// <returns>The index of the new tab</returns>
-    public int AddTab(Control control, string? title, bool updateTabMerging = true)
+    public int AddTab(Control control, string? title, bool updateTabMerging = true, bool orphanControl = true)
     {
+        if (control.Parent != null && orphanControl)
+            control.Orphan();
+
         var button = new Button
         {
             Group = _tabGroup,
@@ -137,7 +140,7 @@ public sealed partial class NeoTabContainer : BoxContainer
 
         if (updateTabMerging)
             UpdateTabMerging();
-        return ChildCount - 1;
+        return _tabs.Count - 1;
     }
 
     /// <summary>

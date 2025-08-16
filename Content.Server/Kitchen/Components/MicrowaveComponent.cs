@@ -70,7 +70,11 @@ namespace Content.Server.Kitchen.Components
     public sealed partial class MicrowaveComponent : Component
     {
         [DataField]
+        public float BaseCookTimeMultiplier = 1.0f;
+
+        [DataField]
         public float CookTimeMultiplier = 1;
+
         [DataField(customTypeSerializer: typeof(PrototypeIdSerializer<MachinePartPrototype>))]
         public string MachinePartCookTimeMultiplier = "Capacitor";
         [DataField]

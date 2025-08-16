@@ -18,6 +18,7 @@ namespace Content.Client.FlavorText
     {
         public Action<string>? OnSfwFlavorTextChanged;
         public Action<string>? OnNsfwFlavorTextChanged;
+        public Action<string>? OnCharacterConsentChanged;
 
         public FlavorText()
         {
@@ -31,11 +32,16 @@ namespace Content.Client.FlavorText
             CFlavorTextNSFWInput.Placeholder = new Rope.Leaf(loc.GetString("flavor-text-nsfw-placeholder"));
             CFlavorTextNSFWInput.OnTextChanged  += _ => NsfwFlavorTextChanged();
 
+            CFlavorTextConsentInput.Placeholder = new Rope.Leaf(loc.GetString("character-consent-placeholder"));
+            CFlavorTextConsentInput.OnTextChanged  += _ => CharacterConsentTextChanged();
+
             TabSFW.Orphan();
             TabNSFW.Orphan();
-            
+            TabCharacterConsent.Orphan();
+
             FlavorTextTabs.AddTab(TabSFW, loc.GetString("flavor-text-title"));
             FlavorTextTabs.AddTab(TabNSFW, loc.GetString("flavor-text-nsfw-title"));
+            FlavorTextTabs.AddTab(TabCharacterConsent, loc.GetString("character-consent-title"));
         }
 
         private void SfwFlavorTextChanged() =>
@@ -43,5 +49,8 @@ namespace Content.Client.FlavorText
 
         private void NsfwFlavorTextChanged() =>
             OnNsfwFlavorTextChanged?.Invoke(Rope.Collapse(CFlavorTextNSFWInput.TextRope).Trim());
+
+        private void CharacterConsentTextChanged() =>
+            OnCharacterConsentChanged?.Invoke(Rope.Collapse(CFlavorTextConsentInput.TextRope).Trim());
     }
 }

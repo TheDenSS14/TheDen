@@ -152,7 +152,7 @@ public abstract class SharedMaterialStorageSystem : EntitySystem
     {
         if (!Resolve(uid, ref component)
             || !CanTakeVolume(uid, volume, component, utilizer)
-            || (!component.MaterialWhiteList?.Contains(materialId) ?? false))
+            || (!component.MaterialWhiteList?.Contains(materialId) ?? false) && !component.AlwaysAcceptMaterials)
             return false;
 
         var amount = GetMaterialAmount(uid, materialId, component, utilizer);

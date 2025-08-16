@@ -181,10 +181,12 @@ public sealed partial class PlayerProvidedCharacterRecords
 
     private static string ClampString(string str, int maxLen)
     {
+        if (string.IsNullOrWhiteSpace(str))
+            return string.Empty;
+
         if (str.Length > maxLen)
-        {
             return str[..maxLen];
-        }
+
         return str;
     }
 

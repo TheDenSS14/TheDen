@@ -18,5 +18,8 @@ SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
         <BoxContainer Name="TabNSFW" Orientation="Vertical" HorizontalExpand="True">
             <TextEdit Name="CFlavorTextNSFWInput" Access="Public" MinSize="220 100" Margin="10" HorizontalExpand="True" VerticalExpand="True" />
         </BoxContainer>
+        <BoxContainer Name="TabCharacterConsent" Orientation="Vertical" HorizontalExpand="True">
+            <TextEdit Name="CFlavorTextConsentInput" Access="Public" MinSize="220 100" Margin="10" HorizontalExpand="True" VerticalExpand="True" />
+        </BoxContainer>
     </ui:NeoTabContainer>
 </Control>
