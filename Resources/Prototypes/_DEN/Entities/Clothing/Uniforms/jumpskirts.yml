@@ -1,0 +1,10 @@
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformWhiteTurtleskirt
+  name: white turtleskirt
+  description: For some reason, wearing this makes you feel like working in tech support at a product store.
+  components:
+  - type: Sprite
+    sprite: _DEN/Clothing/Uniforms/Jumpskirt/whiteturtleskirt.rsi
+  - type: Clothing
+    sprite: _DEN/Clothing/Uniforms/Jumpskirt/whiteturtleskirt.rsi
