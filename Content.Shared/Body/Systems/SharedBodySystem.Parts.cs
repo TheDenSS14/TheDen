@@ -137,7 +137,7 @@ public partial class SharedBodySystem
     ///     Shitmed Change: This function handles dropping the items in an entity's slots if they lose all of a given part.
     ///     Such as their hands, feet, head, etc.
     /// </summary>
-    private void DropSlotContents(Entity<BodyPartComponent> partEnt)
+    public void DropSlotContents(Entity<BodyPartComponent> partEnt)
     {
         if (partEnt.Comp.Body is not null
             && TryComp<InventoryComponent>(partEnt.Comp.Body, out var inventory) // Prevent error for non-humanoids
