@@ -125,7 +125,7 @@ public sealed partial class ConsentWindow : FancyWindow
             // DEN: I now have to save offs as well.
             // Side note, who saved this to database as a string?
             var value = entry.Button.Pressed ? "on" : "off";
-            toggles[entry.Consent.ID] = value;
+            toggles[entry.Consent] = value;
         }
 
         return new(text, toggles);

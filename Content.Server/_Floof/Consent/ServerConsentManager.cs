@@ -29,9 +29,21 @@ public sealed class ServerConsentManager : IServerConsentManager
     [Dependency] private readonly ISharedAdminLogManager _adminLogger = default!;
     [Dependency] private readonly IEntityManager _entityManager = default!;
 
+    private HashSet<ConsentTogglePrototype> _consentTogglePrototypes = new();
+
     public void Initialize()
     {
         _netManager.RegisterNetMessage<MsgUpdateConsent>(HandleUpdateConsentMessage);
+
+        _prototypeManager.PrototypesReloaded += _ => GenerateConsentTogglePrototypes();
+    }
+
+    private void GenerateConsentTogglePrototypes()
+    {
+        _consentTogglePrototypes.Clear();
+
+        foreach (var proto in _prototypeManager.EnumeratePrototypes<ConsentTogglePrototype>())
+            _consentTogglePrototypes.Add(proto);
     }
 
     private async void HandleUpdateConsentMessage(MsgUpdateConsent message)
@@ -42,7 +54,7 @@ public sealed class ServerConsentManager : IServerConsentManager
         if (!consentSystem.TryGetConsent(userId, out _))
             return;
 
-        message.Consent.EnsureValid(_configManager, _prototypeManager);
+        message.Consent.EnsureValid(_configManager, _prototypeManager, _consentTogglePrototypes);
         consentSystem.SetConsent(userId, message.Consent);
 
         var session = _playerManager.GetSessionByChannel(message.MsgChannel);
@@ -65,7 +77,7 @@ public sealed class ServerConsentManager : IServerConsentManager
         if (ShouldStoreInDb(session.AuthType))
             consent = await _db.GetPlayerConsentSettingsAsync(session.UserId);
 
-        consent.EnsureValid(_configManager, _prototypeManager);
+        consent.EnsureValid(_configManager, _prototypeManager, _consentTogglePrototypes);
         consentSystem.SetConsent(session.UserId, consent);
 
         var message = new MsgUpdateConsent() { Consent = consent };

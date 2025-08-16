@@ -21,7 +21,7 @@ public sealed class PlayerConsentSettings
     public PlayerConsentSettings()
     {
         Freetext = string.Empty;
-        Toggles = new Dictionary<ProtoId<ConsentTogglePrototype>, string>();
+        Toggles = new();
     }
 
     public PlayerConsentSettings(
@@ -32,16 +32,42 @@ public sealed class PlayerConsentSettings
         Toggles = toggles;
     }
 
-    public void EnsureValid(IConfigurationManager configManager, IPrototypeManager prototypeManager)
+    public void EnsureValid(IConfigurationManager configManager,
+        IPrototypeManager prototypeManager,
+        HashSet<ConsentTogglePrototype> togglesPrototypes)
     {
         var maxLength = configManager.GetCVar(CCVars.ConsentFreetextMaxLength);
         Freetext = Freetext.Trim();
         if (Freetext.Length > maxLength)
             Freetext = Freetext.Substring(0, maxLength);
 
-        Toggles = Toggles.Where(t =>
-            prototypeManager.HasIndex<ConsentTogglePrototype>(t.Key)
-            && t.Value == "on"
-        ).ToDictionary();
+        Toggles = GetValidToggles(Toggles, prototypeManager, togglesPrototypes);
+    }
+
+    private Dictionary<ProtoId<ConsentTogglePrototype>, string> GetValidToggles(
+    Dictionary<ProtoId<ConsentTogglePrototype>, string> toggles,
+        IPrototypeManager prototypeManager,
+        HashSet<ConsentTogglePrototype> togglesPrototypes
+    )
+    {
+        var result = new Dictionary<ProtoId<ConsentTogglePrototype>, string>();
+
+        foreach (var toggle in toggles)
+        {
+            var proto = togglesPrototypes
+                .FirstOrDefault(proto => proto.ID == toggle.Key);
+
+            if (proto == null)
+                continue;
+
+            var defaultValue = proto.DefaultValue ? "on" : "off";
+
+            if (defaultValue == toggle.Value)
+                continue;
+
+            result.Add(proto, defaultValue);
+        }
+
+        return result;
     }
 }
