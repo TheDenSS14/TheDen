@@ -65,7 +65,7 @@ public sealed class PlayerConsentSettings
             if (defaultValue == toggle.Value)
                 continue;
 
-            result.Add(proto, defaultValue);
+            result.Add(proto, toggle.Value);
         }
 
         return result;

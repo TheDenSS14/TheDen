@@ -192,14 +192,12 @@ public sealed partial class ConsentWindow : FancyWindow
         buttonOn.OnPressed += _ => ButtonOnPress(buttonOn, buttonOff);
 
         var consent = _consentManager.GetConsent();
+        consent.Toggles.TryGetValue(toggle.ID, out var toggleValue);
 
-        foreach (var toggleValue in consent.Toggles)
+        if (toggleValue != null)
         {
-            if (toggleValue.Key != toggle.ID || toggleValue.Value != "on")
-                continue;
-
-            buttonOn.Pressed = true;
-            buttonOff.Pressed = false;
+            buttonOn.Pressed = toggleValue == "on";
+            buttonOff.Pressed = !buttonOn.Pressed;
         }
 
         header.AddChild(name);

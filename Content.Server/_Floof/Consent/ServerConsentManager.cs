@@ -28,11 +28,14 @@ public sealed class ServerConsentManager : IServerConsentManager
     [Dependency] private readonly IServerDbManager _db = default!;
     [Dependency] private readonly ISharedAdminLogManager _adminLogger = default!;
     [Dependency] private readonly IEntityManager _entityManager = default!;
+    [Dependency] private readonly ILogManager _logManager = default!;
 
-    private HashSet<ConsentTogglePrototype> _consentTogglePrototypes = new();
+    private readonly HashSet<ConsentTogglePrototype> _consentTogglePrototypes = new();
+    private ISawmill? _sawmill = null;
 
     public void Initialize()
     {
+        _sawmill = _logManager.GetSawmill("serverconsent");
         _netManager.RegisterNetMessage<MsgUpdateConsent>(HandleUpdateConsentMessage);
 
         _prototypeManager.PrototypesReloaded += _ => GenerateConsentTogglePrototypes();
@@ -73,6 +76,9 @@ public sealed class ServerConsentManager : IServerConsentManager
     {
         var consent = new PlayerConsentSettings();
         var consentSystem = _entityManager.System<ConsentSystem>();
+
+        if (_consentTogglePrototypes.Count == 0)
+            GenerateConsentTogglePrototypes();
 
         if (ShouldStoreInDb(session.AuthType))
             consent = await _db.GetPlayerConsentSettingsAsync(session.UserId);
