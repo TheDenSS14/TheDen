@@ -34,11 +34,7 @@
     stealGroup: Figurines
   - type: UseDelay
     delay: 5
-  - type: DeviceLinkSink
-    ports:
-      - OrderReciever
   - type: TriggerOnActivate
-  - type: TriggerOnSignal
   - type: Speech
     speechSounds: Pai # it just sounds better
 
