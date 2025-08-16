@@ -537,6 +537,7 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
             && Appearance.MemberwiseEquals(other.Appearance)
             && FlavorText == other.FlavorText
             && NsfwFlavorText == other.NsfwFlavorText
+            && CharacterConsent == other.CharacterConsent
             && (CDCharacterRecords == null || other.CDCharacterRecords == null
                 || CDCharacterRecords.MemberwiseEquals(other.CDCharacterRecords))
             // DEN additions below

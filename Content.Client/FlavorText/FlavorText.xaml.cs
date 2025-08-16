@@ -41,7 +41,7 @@ namespace Content.Client.FlavorText
 
             FlavorTextTabs.AddTab(TabSFW, loc.GetString("flavor-text-title"));
             FlavorTextTabs.AddTab(TabNSFW, loc.GetString("flavor-text-nsfw-title"));
-            FlavorTextTabs.AddTab(TabCharacterConsent, loc.GetString("flavor-text-consent-title"));
+            FlavorTextTabs.AddTab(TabCharacterConsent, loc.GetString("character-consent-title"));
         }
 
         private void SfwFlavorTextChanged() =>
