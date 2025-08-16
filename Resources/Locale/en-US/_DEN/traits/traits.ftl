@@ -65,6 +65,7 @@ trait-description-SharpTeeth =
     or even custom made implants designed to turn teeth into tiny knives.
     Your unarmed melee attacks deal Piercing damage instead of the standard damage type for your species.
     This has no effect on damage dealt with any form of armed melee.
+
 trait-name-HandsFreePulling = Hands Free Pulling
 trait-description-HandsFreePulling =
     You were born with or have had your tail modified to be stronger than normal or have aquired
@@ -78,3 +79,22 @@ trait-description-BloodExaminer =
     You can [color=yellow]identify the blood chemical of mobs[/color] when you stand close enough to them.
     Note that this trait [color=orange]does not detect other chemicals in their blood stream[/color], only what
     the mob's blood stream is actually made of - such as [color=lightblue]synth blood[/color] or [color=lightblue]insect blood[/color].
+
+trait-name-Aural = Aural
+trait-description-Aural =
+    The songlike language of ancient thaven society, known for its fluid rhythm, melodic tones, and dense vocalizations. It's often described by outsiders as speaking in tongues.
+    Naturally resonant underwater, exposure to Aural has been reported to trigger strange sensory effects in non-thaven listeners - most commonly a soft tingling behind the ears.
+    Though hauntingly beautiful, it is notoriously difficult to learn; thaven polyglots often switch languages mid-conversation to spare others from butchering the sound.
+
+trait-name-ThavenMoods = Thaven Moods
+trait-description-ThavenMoods =
+    Your brain has a [color=yellow]unique structure[/color] that is susceptible to cosmic interference.
+    You are subject to a variety of [color=orange]moods[/color], not unlike [color=lightblue]cyborg laws[/color] - they should be
+    followed strictly, and failure to adhere to your moods should be [color=red]corrected[/color].
+
+    Note that this trait renders you vulnerable to [color=orange]external circumstances[/color] that may
+    drastically alter your character's personality - including [color=yellow]ion storms[/color] and (if
+    consented) [color=red]Emagging[/color] when incapacitated. [color=orange][italic]
+
+    (This is the "intended playstyle" of Thaven; this trait is opt-in due to its ability to modify
+    your character out of your control. Some moods may have moderate-to-high impact.)[/italic][/color]
