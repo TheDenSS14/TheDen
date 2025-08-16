@@ -1,0 +1,77 @@
+- type: entity
+  parent: Jug
+  id: JugDiethylamine
+  components:
+    - type: Label
+      currentLabel: reagent-name-diethylamine
+    - type: SolutionContainerManager
+      solutions:
+        beaker:
+          reagents:
+            - ReagentId: Diethylamine
+              Quantity: 200
+
+- type: entity
+  parent: Jug
+  id: JugCryoxadone
+  components:
+    - type: Label
+      currentLabel: reagent-name-cryoxadone
+    - type: SolutionContainerManager
+      solutions:
+        beaker:
+          reagents:
+            - ReagentId: Cryoxadone
+              Quantity: 200
+
+- type: entity
+  parent: Jug
+  id: JugLeft4Zed
+  components:
+    - type: Label
+      currentLabel: reagent-name-left4-zed
+    - type: SolutionContainerManager
+      solutions:
+        beaker:
+          reagents:
+            - ReagentId: Left4Zed
+              Quantity: 200
+
+- type: entity
+  parent: Jug
+  id: JugUnstableMutagen
+  components:
+    - type: Label
+      currentLabel: reagent-name-unstable-mutagen
+    - type: SolutionContainerManager
+      solutions:
+        beaker:
+          reagents:
+            - ReagentId: UnstableMutagen
+              Quantity: 200
+
+- type: entity
+  parent: Jug
+  id: JugDylovene
+  components:
+    - type: Label
+      currentLabel: reagent-name-dylovene
+    - type: SolutionContainerManager
+      solutions:
+        beaker:
+          reagents:
+            - ReagentId: Dylovene
+              Quantity: 200
+
+- type: entity
+  parent: Jug
+  id: JugRobustHarvest
+  components:
+    - type: Label
+      currentLabel: reagent-name-robust-harvest
+    - type: SolutionContainerManager
+      solutions:
+        beaker:
+          reagents:
+            - ReagentId: RobustHarvest
+              Quantity: 200
