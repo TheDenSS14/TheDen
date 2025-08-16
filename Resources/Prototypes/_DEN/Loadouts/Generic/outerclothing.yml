@@ -18,6 +18,28 @@
       group: LoadoutOuter
 
 - type: loadout
+  id: LoadoutClothingOuterCoatBomberWhite
+  category: Outer
+  cost: 0
+  customColorTint: true
+  items:
+    -  ClothingOuterCoatBomberWhite
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutOuter
+
+- type: loadout
+  id: LoadoutClothingOuterCoatBomberWhiteLoose
+  category: Outer
+  cost: 0
+  customColorTint: true
+  items:
+    -  ClothingOuterCoatBomberWhiteLoose
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutOuter
+
+- type: loadout
   id: LoadoutClothingOuterCoatTurtleneckHalfBlouse
   category: Outer
   cost: 0

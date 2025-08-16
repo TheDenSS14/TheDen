@@ -72,11 +72,7 @@ public sealed partial class ConsentWindow : FancyWindow
         ConsentFreetext.OnTextChanged += _ => UnsavedChanges();
 
         // Aurora - Add consent cards
-        XCard.OnPressed += _ =>
-        {
-            if (_player.LocalSession is {} player)
-                _card.RaiseConsentCard(player.UserId, "XCard");
-        };
+        XCard.OnPressed += _ => { RaiseConsentCard("XCard"); };
     }
 
     private void InitializeCategories()
@@ -243,6 +239,12 @@ public sealed partial class ConsentWindow : FancyWindow
 
             AddConsentEntry(category, toggle);
         }
+    }
+
+    private void RaiseConsentCard(string cardName)
+    {
+        if (_player.LocalSession is { } player)
+            _card.RaiseConsentCard(player.UserId, cardName);
     }
 
     private void ButtonOnPress(Button currentButton, Button otherbutton)

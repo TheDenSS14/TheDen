@@ -9,6 +9,8 @@
   name: golden ring
   description: A well made ring made of real gold, usually given to the people you cherish the most.
   components:
+  - type: Item
+    size: Tiny
   - type: Sprite
     sprite: _DEN/Clothing/Hands/goldenring.rsi
   - type: Clothing
@@ -37,6 +39,8 @@
   name: sentimental ring
   description: A simple ring. You can wear it on a chain around your neck, if you want.
   components:
+  - type: Item
+    size: Tiny
   - type: Sprite
     sprite: _DEN/Clothing/Hands/sentimentalring.rsi
   - type: Clothing

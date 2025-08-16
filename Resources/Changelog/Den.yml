@@ -9991,3 +9991,136 @@ Entries:
   id: 972
   time: '2025-08-14T08:10:17.0000000+00:00'
   url: https://github.com/TheDenSS14/TheDen/pull/1430
+- author: sleepyyapril
+  changes:
+    - type: Add
+      message: >-
+        Added the ability to use a subtledetailed or medetailed format by
+        putting a ! at the front of your action in emote or subtle.
+    - type: Fix
+      message: >-
+        The space between name and message for subtle and emotes is now properly
+        removed when you put a ' or a , at the front.
+  id: 973
+  time: '2025-08-14T18:57:09.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1435
+- author: ShepardToTheStars
+  changes:
+    - type: Add
+      message: >-
+        ADMIN: Added the `spawnplayer` function to spawn other players with
+        their job loadouts, traits, etc.
+  id: 974
+  time: '2025-08-14T19:00:24.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1434
+- author: SubspaceEmber
+  changes:
+    - type: Add
+      message: Ported craftable pride flags from Delta-V
+  id: 975
+  time: '2025-08-14T19:00:38.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1432
+- author: Shaman
+  changes:
+    - type: Tweak
+      message: Golden Ring and Sentimental Ring are now Tiny items (one slot)
+  id: 976
+  time: '2025-08-14T19:02:17.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1428
+- author: Shaman
+  changes:
+    - type: Add
+      message: >-
+        Ported 18 bomber jackets to departmental loadouts from Imp, including a
+        colorable one for anyone
+    - type: Tweak
+      message: >-
+        The colorable one is now unbutcherable since that deletes its color (the
+        rest can be "tailored" to change the fit)
+  id: 977
+  time: '2025-08-14T19:02:49.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1421
+- author: portfiend
+  changes:
+    - type: Add
+      message: Waiter and waitress uniforms can now be found in the ChefDrobe.
+    - type: Add
+      message: >-
+        Mustard bottles, damp rags, and towels can now be stored on the chef
+        belt.
+    - type: Add
+      message: Pig in a blanket has a new recipe, and is more nutritious now to boot!
+    - type: Tweak
+      message: Boiled spaghetti now requires olive oil instead of butter to make.
+    - type: Tweak
+      message: The recipe for the chicken nugget box is less stressful.
+    - type: Tweak
+      message: >-
+        The ChefDrobe now holds 2 of the original chef uniform instead of just
+        1.
+    - type: Tweak
+      message: >-
+        Sausage bread now requires actual sausage to make, instead of regular
+        meat.
+    - type: Fix
+      message: >-
+        The condiment station can now be moved onto tables and anchored on top
+        of them.
+    - type: Fix
+      message: Advanced Microwaves now properly take 1/2 the time to cook things.
+  id: 978
+  time: '2025-08-15T20:03:01.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1443
+- author: ShepardToTheStars
+  changes:
+    - type: Add
+      message: '"chatwindow" command has been added to open an additional chat window'
+    - type: Add
+      message: >-
+        "achatwindow" command has been added to open an additional chat window,
+        preconfigured for monitoring admin channels
+  id: 979
+  time: '2025-08-15T20:04:27.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1449
+- author: portfiend
+  changes:
+    - type: Tweak
+      message: >-
+        The X Card in the Consent menu has been given a clearer description, and
+        you will now be sent a message when the card is raised.
+  id: 980
+  time: '2025-08-15T20:05:00.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1450
+- author: SirWarock
+  changes:
+    - type: Fix
+      message: Fixed Justice Roles not spawning in with a justice headset.!
+  id: 981
+  time: '2025-08-15T20:10:56.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1451
+- author: ShepardToTheStars
+  changes:
+    - type: Add
+      message: >-
+        Mass scanners and shuttle consoles now display coordinates beneath IFF
+        labels
+    - type: Fix
+      message: >-
+        IFF labels that are beyond the viewport extents maintain their heading
+        and don't hug corners
+    - type: Fix
+      message: Handheld radars no longer spin with the player while moving.
+    - type: Tweak
+      message: >-
+        Increased the view range on the handheld mass scanner and decreased the
+        power draw.
+  id: 982
+  time: '2025-08-15T20:13:34.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1447
+- author: Aikakakah
+  changes:
+    - type: Add
+      message: Added personal envelopes for letters.
+  id: 983
+  time: '2025-08-15T23:15:09.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1452
