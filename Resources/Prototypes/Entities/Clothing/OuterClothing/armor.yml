@@ -624,7 +624,7 @@
     sprintModifier: 0.8
   - type: HeldSpeedModifier
   - type: GroupExamine
-  - type: ClothingRequiredStepTriggerImmune
+  - type: ProtectedFromStepTriggers
     slots: WITHOUT_POCKET
   - type: ExplosionResistance
     damageCoefficient: 0.90
