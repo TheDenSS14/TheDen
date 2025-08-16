@@ -225,9 +225,9 @@
           !type:PhysShapeAabb
           bounds: "-0.3,-0.16,0.3,0.40"
         mask:
-        - MachineMask
+        - TabletopMachineMask
         layer:
-        - MachineLayer
+        - TabletopMachineLayer
         density: 190
   - type: Advertise
     pack: CondimentVendAds

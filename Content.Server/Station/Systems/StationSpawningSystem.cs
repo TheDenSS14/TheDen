@@ -186,18 +186,31 @@ public sealed class StationSpawningSystem : SharedStationSpawningSystem
 
         var gearEquippedEv = new StartingGearEquippedEvent(entity.Value);
         RaiseLocalEvent(entity.Value, ref gearEquippedEv);
+        UpdateFlavorText(entity.Value, profile);
 
         if (profile != null)
         {
             _humanoidSystem.LoadProfile(entity.Value, profile);
             _metaSystem.SetEntityName(entity.Value, profile.Name);
-            if (profile.FlavorText != "" && _configurationManager.GetCVar(CCVars.FlavorText))
-                EnsureComp<DetailExaminableComponent>(entity.Value).Content = profile.FlavorText;
         }
 
         DoJobSpecials(job, entity.Value);
         _identity.QueueIdentityUpdate(entity.Value);
         return entity.Value;
+    }
+
+    private void UpdateFlavorText(EntityUid uid, HumanoidCharacterProfile? profile)
+    {
+        if (profile == null)
+            return;
+
+        var detail = EnsureComp<DetailExaminableComponent>(uid);
+
+        if (!string.IsNullOrWhiteSpace(profile.FlavorText))
+            detail.Content = profile.FlavorText;
+
+        if (!string.IsNullOrWhiteSpace(profile.NsfwFlavorText))
+            detail.NsfwContent = profile.NsfwFlavorText;
     }
 
     private void DoJobSpecials(ProtoId<JobPrototype>? job, EntityUid entity)

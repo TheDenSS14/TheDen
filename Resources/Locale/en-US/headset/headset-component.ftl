@@ -43,6 +43,7 @@ chat-radio-service = Service
 chat-radio-supply = Logistics
 chat-radio-syndicate = Syndicate
 chat-radio-freelance = Freelance
+chat-radio-advertise = Advertise
 
 # not headset but whatever
 chat-radio-handheld = Handheld
