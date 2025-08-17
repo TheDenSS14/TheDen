@@ -113,7 +113,12 @@ public sealed partial class DragonSystem : EntitySystem
             // Goobstation start
             // Heal the dragon a bit if it's near the carp rift.
             if (_lookup.GetEntitiesInRange<DragonRiftComponent>(xform.Coordinates, comp.CarpRiftHealingRange).Count > 0)
+            {
                 _damage.TryChangeDamage(uid, comp.CarpRiftHealing * frameTime, true, false);
+                comp.RiftAccumulator = 0f; // DEN
+            }
+
+
             // Goobstation end
 
             if (comp.WeakenedAccumulator > 0f)
