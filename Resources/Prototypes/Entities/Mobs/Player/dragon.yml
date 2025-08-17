@@ -354,9 +354,9 @@
     spawnRiftAction: ActionSpawnRift
     carpRiftHealing:
       groups:
-        Brute: -2
-        Burn: -2
-        Airloss: -3 #Dragons may not bleed, but carp do
+        Brute: -5
+        Burn: -5
+        Airloss: -5 #Dragons may not bleed, but carp do
   - type: GhostRole
     mindRoles:
     - MindRoleDragon
@@ -374,7 +374,7 @@
   description: For dragon's breathing.
   components:
   - type: RechargeBasicEntityAmmo
-    rechargeCooldown: 5
+    rechargeCooldown: 15
     rechargeSound:
       path: /Audio/Animals/space_dragon_roar.ogg
   - type: BasicEntityAmmoProvider

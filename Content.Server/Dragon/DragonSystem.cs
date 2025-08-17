@@ -115,7 +115,7 @@ public sealed partial class DragonSystem : EntitySystem
             if (_lookup.GetEntitiesInRange<DragonRiftComponent>(xform.Coordinates, comp.CarpRiftHealingRange).Count > 0)
             {
                 _damage.TryChangeDamage(uid, comp.CarpRiftHealing * frameTime, true, false);
-                comp.RiftAccumulator = 0f; // DEN
+                // comp.RiftAccumulator = 0f; // DEN
             }
 
 
@@ -153,11 +153,11 @@ public sealed partial class DragonSystem : EntitySystem
                 comp.RiftAccumulator += frameTime;
 
             // Gib it, naughty dragon!
-            if (comp.RiftAccumulator >= comp.RiftMaxAccumulator)
-            {
-                Roar(uid, comp);
-                _body.GibBody(uid);
-            }
+            // if (comp.RiftAccumulator >= comp.RiftMaxAccumulator)
+            // {
+            //     Roar(uid, comp);
+            //     _body.GibBody(uid);
+            // }
         }
     }
 
