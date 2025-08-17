@@ -146,6 +146,7 @@
       enum.SurgeryUIKey.Key:
         type: SurgeryBui
   - type: Bloodstream
+    maxBleedAmount: 450
     bloodMaxVolume: 650
   - type: GhostRole
     allowMovement: true
