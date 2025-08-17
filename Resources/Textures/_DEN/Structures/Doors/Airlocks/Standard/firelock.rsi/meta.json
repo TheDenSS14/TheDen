@@ -1,7 +1,7 @@
 {
   "version": 1,
   "license": "CC-BY-SA-3.0",
-  "copyright": "Taken from https://github.com/tgstation/tgstation at 04e43d8c1d5097fdb697addd4395fb849dd341bd",
+  "copyright": "Made by https://github.com/SubspaceEmber.",
   "size": {
     "x": 32,
     "y": 32
@@ -17,18 +17,26 @@
       "name": "closed"
     },
     {
-      "name": "closed_unlit"
+      "name": "closed_unlit",
+      "delays": [
+        [
+          0.09,
+          0.15,
+          0.09,
+          0.4
+        ]
+      ]
     },
     {
       "name": "closing",
       "delays": [
         [
-          0.2,
-          0.2,
-          0.2,
-          0.2,
-          0.2,
-          0.2
+          0.08,
+          0.06,
+          0.06,
+          0.06,
+          0.08,
+          0.1
         ]
       ]
     },
@@ -36,12 +44,12 @@
       "name": "closing_unlit",
       "delays": [
         [
-          0.2,
-          0.2,
-          0.2,
-          0.2,
-          0.2,
-          0.2
+          0.08,
+          0.06,
+          0.06,
+          0.06,
+          0.08,
+          0.1
         ]
       ]
     },
@@ -66,19 +74,15 @@
       ]
     },
     {
-      "name": "frame1"
-    },
-    {
-      "name": "frame2"
-    },
-    {
-      "name": "frame3"
-    },
-    {
-      "name": "frame4"
-    },
-    {
-      "name": "locked"
+      "name": "locked",
+      "delays": [
+        [
+          0.02,
+          0.06,
+          0.02,
+          0.06
+        ]
+      ]
     },
     {
       "name": "open"
@@ -87,12 +91,12 @@
       "name": "opening",
       "delays": [
         [
-          0.2,
-          0.2,
-          0.2,
-          0.2,
-          0.2,
-          0.2
+          0.08,
+          0.06,
+          0.06,
+          0.06,
+          0.08,
+          0.1
         ]
       ]
     },
@@ -100,12 +104,12 @@
       "name": "opening_unlit",
       "delays": [
         [
-          0.2,
-          0.2,
-          0.2,
-          0.2,
-          0.2,
-          0.2
+          0.08,
+          0.06,
+          0.06,
+          0.06,
+          0.08,
+          0.1
         ]
       ]
     },
@@ -113,13 +117,12 @@
       "name": "panel_closing",
       "delays": [
         [
-          0.1,
-          0.1,
-          0.07,
-          0.07,
-          0.07,
-          0.07,
-          0.27
+          0.08,
+          0.06,
+          0.06,
+          0.06,
+          0.08,
+          0.1
         ]
       ]
     },
@@ -130,13 +133,12 @@
       "name": "panel_opening",
       "delays": [
         [
-          0.2,
-          0.07,
-          0.07,
-          0.07,
-          0.07,
-          0.07,
-          0.2
+          0.08,
+          0.06,
+          0.06,
+          0.06,
+          0.08,
+          0.1
         ]
       ]
     },
