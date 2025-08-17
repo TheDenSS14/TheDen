@@ -114,14 +114,13 @@ namespace Content.Client.Options.UI.Tabs
             DisableDrunkWarpingCheckBox.OnToggled += OnCheckBoxToggled;
             ChatWindowOpacitySlider.OnValueChanged += OnChatWindowOpacitySliderChanged;
             ScreenShakeIntensitySlider.OnValueChanged += OnScreenShakeIntensitySliderChanged;
-            AutoFillHighlightsCheckBox.OnPressed += _ => UpdateApplyButton();
-            ChatHighlightingColorpicker.OnColorChanged += _ => OnChatHighlightingColorpickerChanged();
-
             // ToggleWalk.OnToggled += OnCheckBoxToggled;
             StaticStorageUI.OnToggled += OnCheckBoxToggled;
             ModernProgressBar.OnToggled += OnCheckBoxToggled;
             ChatExtraInfo.OnToggled += OnCheckBoxToggled;
             DisableFiltersCheckBox.OnToggled += OnCheckBoxToggled;
+            AutoFillHighlightsCheckBox.OnPressed += _ => UpdateApplyButton();
+            ChatHighlightingColorpicker.OnColorChanged += _ => OnChatHighlightingColorpickerChanged();
 
             HudThemeOption.SelectId(_hudThemeIdToIndex.GetValueOrDefault(_cfg.GetCVar(CVars.InterfaceTheme), 0));
             DiscordRich.Pressed = _cfg.GetCVar(CVars.DiscordEnabled);
