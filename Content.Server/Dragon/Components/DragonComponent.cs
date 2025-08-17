@@ -96,7 +96,7 @@ namespace Content.Server.Dragon
         public EntProtoId CarpProtoId = "MobCarpDragon";
 
         [DataField]
-        public int CarpAmount = 3;
+        public int CarpAmount = 2;
 
         [DataField]
         public EntityUid? RoarActionEntity;
