@@ -229,6 +229,8 @@
   - type: HeldSpeedModifier
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitSpatio
+  - type: StaminaDamageResistance #Den
+    coefficient: 0.7 #Den
   - type: GuideHelp
     guides: [ HephaestusIndustries ]
   - type: Tag
@@ -267,6 +269,8 @@
   - type: HeldSpeedModifier
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitSalvage
+    - type: StaminaDamageResistance #Den
+    coefficient: 0.6 #Den
   - type: GuideHelp
     guides: [ HephaestusIndustries ]
 
@@ -336,6 +340,8 @@
   - type: HeldSpeedModifier
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitGoliath
+    - type: StaminaDamageResistance #Den
+    coefficient: 0.6 #Den
   - type: Construction
     graph: HardsuitGoliath
     node: hardsuitGoliath
@@ -374,6 +380,8 @@
     reduction: 1
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitMaxim
+  - type: StaminaDamageResistance #Den
+    coefficient: 0.5 #Den
   - type: GuideHelp
     guides: [ HephaestusIndustries ]
 
@@ -408,7 +416,7 @@
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitSecurity
   - type: StaminaDamageResistance
-    coefficient: 0.75 # 25%
+    coefficient: 0.65 #Den
 
 #Brigmedic Hardsuit
 - type: entity
@@ -471,7 +479,7 @@
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitWarden
   - type: StaminaDamageResistance
-    coefficient: 0.65 # 35%
+    coefficient: 0.55 #Den
 
 #Captain's Hardsuit
 - type: entity
@@ -505,7 +513,7 @@
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitCap
   - type: StaminaDamageResistance
-    coefficient: 0.5 # 50%
+    coefficient: 0.7 #Den
   - type: GuideHelp
     guides: [ NanoTrasen ]
 
@@ -700,6 +708,8 @@
   - type: HeldSpeedModifier
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitLuxury
+  - type: StaminaDamageResistance #Den
+    coefficient: 0.7 #Den
   - type: GuideHelp
     guides: [ HephaestusIndustries ]
 
@@ -844,7 +854,7 @@
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitSyndieElite
   - type: StaminaDamageResistance
-    coefficient: 0.5 # 50%
+    coefficient: 0.35 #Den
 
 #Syndicate Commander Hardsuit
 - type: entity
@@ -878,7 +888,7 @@
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitSyndieCommander
   - type: StaminaDamageResistance
-    coefficient: 0.5 # 50%
+    coefficient: 0.45 #Den
   - type: Item
     size: Huge
 
@@ -914,7 +924,7 @@
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitCybersun
   - type: StaminaDamageResistance
-    coefficient: 0.5 # 50%
+    coefficient: 0.75 #Den
 
 #Wizard Hardsuit
 - type: entity
@@ -1008,6 +1018,8 @@
     sprintModifier: 0.6
   - type: HeldSpeedModifier
   - type: ToggleableClothing
+  - type: StaminaDamageResistance #Den
+    coefficient: 0.7 #Den
     clothingPrototype: ClothingHeadHelmetHardsuitPirateEVA
   - type: StaticPrice
     price: 0
@@ -1045,7 +1057,7 @@
   - type: StaticPrice
     price: 0
   - type: StaminaDamageResistance
-    coefficient: 0.75 # 25%
+    coefficient: 0.5 #Den
 
 #CENTCOMM / ERT HARDSUITS
 #ERT Leader Hardsuit
@@ -1226,6 +1238,8 @@
   - type: HeldSpeedModifier
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetCBURN
+  - type: StaminaDamageResistance #Den
+    coefficient: 0.6 #Den
 
 #MISC. HARDSUITS
 #Clown Hardsuit
