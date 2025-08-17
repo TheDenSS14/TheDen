@@ -119,7 +119,7 @@
     sprite: _Floof/Clothing/OuterClothing/WinterCoats/longcoatCap.rsi
 
 - type: entity
-  parent: ClothingOuterWinterCoat
+  parent: ClothingOuterWinterSecurity
   id: ClothingLongcoatSec
   name: security officer's armored longcoat
   description: A Double-Breasted longcoat, specifically. This one is black with silver buttons and red armbands. Security longcoats sport protective plate carriers underneath, but are fairly heavy.
@@ -128,20 +128,6 @@
     sprite: _Floof/Clothing/OuterClothing/WinterCoats/longcoatSec.rsi
   - type: Clothing
     sprite: _Floof/Clothing/OuterClothing/WinterCoats/longcoatSec.rsi
-  - type: Armor #A stylish but solid middle-ground between the Durathread Vest and Plate Carrier, but not as good as the Armored Trenchcoat or Armored Longcoat.
-    modifiers:
-      coefficients:
-        Blunt: 0.75
-        Slash: 0.70
-        Piercing: 0.75
-        Heat: 0.9
-        Caustic: 0.95
-  - type: ExplosionResistance
-    damageCoefficient: 0.9
-  - type: ClothingSpeedModifier
-    walkModifier: 0.9
-    sprintModifier: 0.9
-  - type: AllowSuitStorage
 
 - type: entity
   parent: ClothingLongcoatSec
