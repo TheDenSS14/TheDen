@@ -57,7 +57,8 @@ namespace Content.Server.Chat.Commands
             if (string.IsNullOrEmpty(message))
                 return;
 
-            IoCManager.Resolve<IEntitySystemManager>().GetEntitySystem<ChatSystem>()
+            var entitySystemManager = IoCManager.Resolve<IEntitySystemManager>();
+                var chatSystem = entitySystemManager.GetEntitySystem<ChatSystem>();
                 .TrySendInGameICMessage(playerEntity, message, InGameICChatType.SubtleOOC, ChatTransmitRange.NoGhosts, false, shell, player, color: SubtleOOCColor);
         }
     }
