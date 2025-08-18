@@ -21,7 +21,53 @@
       sprite: _DEN/Structures/Doors/Airlocks/Glass/salvage.rsi
     - type: Wires
       layoutId: AirlockCargo
-    
+
+# Courier
+- type: entity
+  parent: Airlock
+  id: AirlockCourier
+  suffix: Courier
+  components:
+    - type: Sprite
+      sprite: _DEN/Structures/Doors/Airlocks/Standard/courier.rsi
+    - type: Wires
+      layoutId: AirlockCargo
+
+- type: entity
+  parent: AirlockGlass
+  id: AirlockCourierGlass
+  suffix: Courier
+  components:
+    - type: Sprite
+      sprite: _DEN/Structures/Doors/Airlocks/Glass/courier.rsi
+    - type: Wires
+      layoutId: AirlockCargo
+
+# Epi/sci
+- type: entity
+  parent: Airlock
+  id: AirlockMedicalScience
+  suffix: Epistemics
+  components:
+    - type: Sprite
+      sprite: _DEN/Structures/Doors/Airlocks/Standard/medical.rsi
+    - type: PaintableAirlock
+      department: Epistemics
+    - type: Wires
+      layoutId: AirlockScience
+
+- type: entity
+  parent: AirlockGlass
+  id: AirlockMedicalScienceGlass
+  suffix: Epistemics
+  components:
+    - type: Sprite
+      sprite: _DEN/Structures/Doors/Airlocks/Glass/medical.rsi
+    - type: PaintableAirlock
+      department: Epistemics
+    - type: Wires
+      layoutId: AirlockScience
+
 # Service
 - type: entity
   parent: Airlock
@@ -45,7 +91,7 @@
 
 # Hydroponics
 - type: entity
-  parent: AirlockServiceLocked
+  parent: Airlock
   id: AirlockHydroponics
   suffix: Hydroponics
   components:
@@ -55,7 +101,7 @@
       layoutId: AirlockService
 
 - type: entity
-  parent: AirlockServiceGlassLocked
+  parent: AirlockGlass
   id: AirlockHydroponicsGlass
   suffix: Hydroponics
   components:
@@ -63,6 +109,86 @@
       sprite: _DEN/Structures/Doors/Airlocks/Glass/hydroponics.rsi
     - type: Wires
       layoutId: AirlockService
+
+# Kitchen
+- type: entity
+  parent: Airlock
+  id: AirlockKitchen
+  suffix: Kitchen
+  components:
+    - type: Sprite
+      sprite: _DEN/Structures/Doors/Airlocks/Standard/kitchen.rsi
+    - type: Wires
+      layoutId: AirlockService
+
+- type: entity
+  parent: AirlockGlass
+  id: AirlockKitchenGlass
+  suffix: Kitchen
+  components:
+    - type: Sprite
+      sprite: _DEN/Structures/Doors/Airlocks/Glass/kitchen.rsi
+    - type: Wires
+      layoutId: AirlockService
+
+# Bartender
+- type: entity
+  parent: Airlock
+  id: AirlockBartender
+  suffix: Bartender
+  components:
+    - type: Sprite
+      sprite: _DEN/Structures/Doors/Airlocks/Standard/bartender.rsi
+    - type: Wires
+      layoutId: AirlockService
+
+- type: entity
+  parent: AirlockGlass
+  id: AirlockBartenderGlass
+  suffix: Bartender
+  components:
+    - type: Sprite
+      sprite: _DEN/Structures/Doors/Airlocks/Glass/bartender.rsi
+    - type: Wires
+      layoutId: AirlockService
+
+# Janitor
+- type: entity
+  parent: Airlock
+  id: AirlockJanitor
+  suffix: Janitor
+  components:
+    - type: Sprite
+      sprite: _DEN/Structures/Doors/Airlocks/Standard/janitor.rsi
+    - type: Wires
+      layoutId: AirlockService
+
+- type: entity
+  parent: AirlockGlass
+  id: AirlockJanitorGlass
+  suffix: Janitor
+  components:
+    - type: Sprite
+      sprite: _DEN/Structures/Doors/Airlocks/Glass/janitor.rsi
+    - type: Wires
+      layoutId: AirlockService
+
+# Armory
+- type: entity
+  parent: AirlockSecurity
+  id: AirlockArmory
+  suffix: Corpsman
+  components:
+    - type: Sprite
+      sprite: _DEN/Structures/Doors/Airlocks/Standard/armory.rsi
+
+- type: entity
+  parent: AirlockSecurity
+  id: AirlockArmoryGlass
+  suffix: Corpsman
+  components:
+    - type: Sprite
+      sprite: _DEN/Structures/Doors/Airlocks/Glass/armory.rsi
       
 # Corpsman
 - type: entity
@@ -154,6 +280,14 @@
   components:
     - type: Sprite
       sprite: _DEN/Structures/Doors/Airlocks/Standard/maint_syndicate.rsi
+      
+- type: entity
+  parent: AirlockMaintScience # The Den - airlock resprite
+  id: AirlockMaintRnDMed
+  name: mysta/medical maintenance access
+  components:
+    - type: Sprite
+      sprite: _DEN/Structures/Doors/Airlocks/Standard/maint_medical.rsi
 
 # Department Heads
 

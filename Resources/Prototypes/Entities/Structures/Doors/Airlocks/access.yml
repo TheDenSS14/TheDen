@@ -77,7 +77,7 @@
       board: [ DoorElectronicsChapel ]
 
 - type: entity
-  parent: AirlockServiceLocked
+  parent: AirlockJanitor # The Den - airlock resprite
   id: AirlockJanitorLocked
   suffix: Janitor, Locked
   components:
@@ -86,7 +86,7 @@
       board: [ DoorElectronicsJanitor ]
 
 - type: entity
-  parent: AirlockServiceLocked
+  parent: AirlockKitchen # The Den - airlock resprite
   id: AirlockKitchenLocked
   suffix: Kitchen, Locked
   components:
@@ -95,7 +95,7 @@
       board: [ DoorElectronicsKitchen ]
 
 - type: entity
-  parent: AirlockServiceLocked
+  parent: AirlockBartender # The Den - airlock resprite
   id: AirlockBarLocked
   suffix: Bar, Locked
   components:
@@ -230,7 +230,7 @@
       board: [ DoorElectronicsCargo ]
 
 - type: entity
-  parent: AirlockCargo
+  parent: AirlockSalvage # The Den - airlock resprite
   id: AirlockSalvageLocked
   suffix: Salvage, Locked
   components:
@@ -302,7 +302,7 @@
       board: [ DoorElectronicsResearch ]
 
 - type: entity
-  parent: AirlockScience
+  parent: AirlockMedicalScience # The Den - airlock resprite
   id: AirlockMedicalScienceLocked
   suffix: Medical/Epistemics, Locked # DeltaV - Epistemics Department replacing Science
   components:
@@ -432,7 +432,7 @@
   - type: AirlockVirusTarget
 
 - type: entity
-  parent: AirlockSecurity
+  parent: AirlockArmory # The Den airlock resprite
   id: AirlockArmoryLocked
   suffix: Armory, Locked
   components:
@@ -491,7 +491,7 @@
       board: [ DoorElectronicsTheatre ]
 
 - type: entity
-  parent: AirlockGlass
+  parent: AirlockBartenderGlass # The Den - airlock resprite
   id: AirlockBarGlassLocked
   suffix: Bar, Locked
   components:
@@ -554,7 +554,7 @@
       board: [ DoorElectronicsAtmospherics ]
 
 - type: entity
-  parent: AirlockServiceGlassLocked
+  parent: AirlockKitchenGlass # The Den - airlock resprite
   id: AirlockKitchenGlassLocked
   suffix: Kitchen, Locked
   components:
@@ -563,7 +563,7 @@
       board: [ DoorElectronicsKitchen ]
 
 - type: entity
-  parent: AirlockServiceGlassLocked
+  parent: AirlockJanitorGlass # The Den - airlock resprite
   id: AirlockJanitorGlassLocked
   suffix: Janitor, Locked
   components:
@@ -617,7 +617,7 @@
       board: [ DoorElectronicsCargo ]
 
 - type: entity
-  parent: AirlockCargoGlass
+  parent: AirlockSalvageGlass # The Den - airlock resprite
   id: AirlockSalvageGlassLocked
   suffix: Salvage, Locked
   components:
@@ -679,7 +679,7 @@
       board: [ DoorElectronicsResearch ]
 
 - type: entity
-  parent: AirlockScienceGlass
+  parent: AirlockMedicalScienceGlass # The Den - airlock resprite
   id: AirlockMedicalScienceGlassLocked
   suffix: Medical/Epistemics, Locked # DeltaV - Epistemics Department replacing Science
   components:
@@ -808,7 +808,7 @@
   - type: AirlockVirusTarget
 
 - type: entity
-  parent: AirlockSecurityGlass
+  parent: AirlockArmoryGlass # The Den airlock resprite
   id: AirlockArmoryGlassLocked
   suffix: Armory, Locked
   components:
@@ -1040,7 +1040,7 @@
     layoutId: AirlockScience
 
 - type: entity
-  parent: AirlockMaintRnDLocked
+  parent: AirlockMaintRnDMed # The Den - airlock resprite
   id: AirlockMaintRnDMedLocked
   suffix: Medical/Epistemics, Locked # DeltaV - Epistemics Department replacing Science
   components:
@@ -1049,7 +1049,7 @@
       board: [ DoorElectronicsMedicalResearch ]
 
 - type: entity
-  parent: AirlockMaintSecurity
+  parent: AirlockMaintSecurity # The Den - airlock resprite
   id: AirlockMaintSecLocked
   suffix: Security, Locked
   components:
@@ -1133,7 +1133,7 @@
       board: [ DoorElectronicsQuartermaster ]
 
 - type: entity
-  parent: AirlockMaint
+  parent: AirlockMaintSecurity
   id: AirlockMaintArmoryLocked
   suffix: Armory, Locked
   components:
