@@ -1,4 +1,20 @@
-﻿# improvised weapons, ieds, etc
+﻿# debug items
+- type: entity
+  id: BaseDebugContraband
+  abstract: true
+  components:
+  - type: Contraband
+    severity: contrabandSeverityDebug
+
+# lewd items
+- type: entity
+  id: BaseNSFWContraband
+  abstract: true
+  components:
+  - type: Contraband
+    severity: contrabandSeverityNSFW
+
+# improvised weapons, ieds, etc
 - type: entity
   id: BaseImprovisedContraband
   abstract: true

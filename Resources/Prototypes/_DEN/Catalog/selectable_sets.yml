@@ -145,6 +145,28 @@
     - BreachingCharge
     - BreachingCharge
 
+- type: selectableSet
+  id: ERTEngineerLoadout5
+  name: ert-engineer-loadout-5-name
+  description: ert-engineer-loadout-5-name
+  sprite:
+    sprite: Objects/Tools/rcd.rsi
+    state: icon
+    content:
+    - RCD
+    - RPD
+    - CableHVStack
+    - CableMVStack
+    - CableApcStack
+    - SheetSteel
+    - SheetSteel
+    - SheetPlasteel
+    - SheetGlass
+    - RCDAmmo
+    - RCDAmmo
+    - RCDAmmo
+    - RCDAmmo
+
 # ERT Medic
 - type: selectableSet
   id: ERTMedicalLoadout1

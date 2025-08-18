@@ -50,7 +50,7 @@ using Content.Shared.Devour.Components; // Goobstation
 using Content.Shared.NPC.Components; // Goobstation
 using Robust.Shared.Serialization.Manager; // Goobstation
 using Content.Server.Body.Systems;
-using Content.Shared.Damage; // Goobstation
+using Content.Shared.Damage;
 
 namespace Content.Server.Dragon;
 
@@ -70,6 +70,7 @@ public sealed partial class DragonSystem : EntitySystem
     [Dependency] private readonly StunSystem _stun = default!; // Goobstation
     [Dependency] private readonly ISerializationManager _serManager = default!; // Goobstation
     [Dependency] private readonly DamageableSystem _damage = default!; // Goobstation
+    [Dependency] private readonly BodySystem _body = default!; // Den
 
 
     private EntityQuery<CarpRiftsConditionComponent> _objQuery;
@@ -112,7 +113,12 @@ public sealed partial class DragonSystem : EntitySystem
             // Goobstation start
             // Heal the dragon a bit if it's near the carp rift.
             if (_lookup.GetEntitiesInRange<DragonRiftComponent>(xform.Coordinates, comp.CarpRiftHealingRange).Count > 0)
+            {
                 _damage.TryChangeDamage(uid, comp.CarpRiftHealing * frameTime, true, false);
+                // comp.RiftAccumulator = 0f; // DEN
+            }
+
+
             // Goobstation end
 
             if (comp.WeakenedAccumulator > 0f)
@@ -146,11 +152,11 @@ public sealed partial class DragonSystem : EntitySystem
             if (!_mobState.IsDead(uid))
                 comp.RiftAccumulator += frameTime;
 
-            // // Delete it, naughty dragon!
+            // Gib it, naughty dragon!
             // if (comp.RiftAccumulator >= comp.RiftMaxAccumulator)
             // {
             //     Roar(uid, comp);
-            //     QueueDel(uid);
+            //     _body.GibBody(uid);
             // }
         }
     }

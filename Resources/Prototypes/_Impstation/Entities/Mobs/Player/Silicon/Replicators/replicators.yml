@@ -69,7 +69,7 @@
     channels:
     - Binary
   - type: Actions
-  - type: StepTriggerImmune # TODO: port ProtectedFromStepTrigger
+  - type: ProtectedFromStepTriggers
     whitelist:
       types:
         - Shard

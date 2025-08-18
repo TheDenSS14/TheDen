@@ -539,6 +539,9 @@
         - Skewer
         - MonkeyCube
         - Mayo
+        - Towel
+        - Mustard
+        - Rag
       components:
         - Mousetrap
         - Smokable
@@ -847,6 +850,7 @@
 - type: entity
   parent: ClothingBeltERTWebbing
   id: ClothingBeltERTWebbingFilled
+  suffix: Filled
   components:
   - type: StorageFill
     contents:

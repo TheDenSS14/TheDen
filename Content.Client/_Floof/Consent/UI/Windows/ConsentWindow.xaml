@@ -52,18 +52,28 @@ SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
                     </controls:NeoTabContainer>
                 </ScrollContainer>
             </BoxContainer>
-            <BoxContainer Name="ConsentCardsTab" Orientation="Vertical" HorizontalExpand="True" VerticalExpand="True" Margin="5">
-                <ui:CardButton
-                    Name="XCard"
-                    Access="Internal"
-                    Icon="{xe:Tex '/Textures/_AS/Interface/x.svg.96dpi.png'}"
-                    Description="I am uncomfortable\nwith this scene."
-                    BackgroundColor="#FF2D2D38"
-                    HoverColor="#FF3D3D48"
-                    PressedColor="#FF4D4D58"
-                    MinSize="0 200"
-                    HorizontalExpand="True"
-                />
+            <BoxContainer Name="ConsentCardsTab" Orientation="Vertical" HorizontalExpand="True" VerticalExpand="True" Margin="15">
+                <BoxContainer Name="XCardSection" Orientation="Vertical" HorizontalExpand="True" VerticalExpand="True"
+                    SeparationOverride="10">
+                    <ui:CardButton
+                        Name="XCard"
+                        Access="Internal"
+                        Icon="{xe:Tex '/Textures/_AS/Interface/x.svg.96dpi.png'}"
+                        Description="{Loc 'consent-window-cards-x-card-text'}"
+                        BackgroundColor="#FF2D2D38"
+                        HoverColor="#FF3D3D48"
+                        PressedColor="#FF4D4D58"
+                        MinSize="0 200"
+                        MaxWidth="450"
+                        HorizontalExpand="True"
+                    />
+                    <RichTextLabel
+                        Text="{Loc 'consent-window-cards-x-card-description'}"
+                        HorizontalExpand="True"
+                        HorizontalAlignment="Center"
+                        MaxWidth="650"/>
+                </BoxContainer>
+
             </BoxContainer>
         </controls:NeoTabContainer>
     </BoxContainer>

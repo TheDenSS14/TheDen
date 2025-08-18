@@ -335,7 +335,7 @@ public sealed partial class CloningSystem
             if (_config.GetCVar(CCVars.CloningPreserveFlavorText))
             {
                 pref = pref.WithFlavorText(flavorText);
-                pref = pref.WithNSFWFlavorText(nsfwFlavorText);
+                pref = pref.WithNsfwFlavorText(nsfwFlavorText);
             }
 
             _humanoidSystem.LoadProfile(mob, pref);

@@ -117,3 +117,14 @@
   id: ClothingUniformJumpsuitChiefEngineerCybersun
   name: cybersun chief engineer jumpsuit
   description: An evil-looking jumpsuit with a reflective vest & red undershirt.
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformWhiteTurtleneck
+  name: white turtleneck
+  description: For some reason, wearing this makes you feel like working in tech support at a product store.
+  components:
+  - type: Sprite
+    sprite: _DEN/Clothing/Uniforms/Jumpsuit/whiteturtleneck.rsi
+  - type: Clothing
+    sprite: _DEN/Clothing/Uniforms/Jumpsuit/whiteturtleneck.rsi
