@@ -58,8 +58,17 @@ namespace Content.Server.Chat.Commands
                 return;
 
             var entitySystemManager = IoCManager.Resolve<IEntitySystemManager>();
-                var chatSystem = entitySystemManager.GetEntitySystem<ChatSystem>();
-                .TrySendInGameICMessage(playerEntity, message, InGameICChatType.SubtleOOC, ChatTransmitRange.NoGhosts, false, shell, player, color: SubtleOOCColor);
+            var chatSystem = entitySystemManager.GetEntitySystem<ChatSystem>();
+
+            chatSystem.TrySendInGameICMessage(playerEntity,
+                message,
+                InGameICChatType.SubtleOOC,
+                ChatTransmitRange.NoGhosts,
+                false,
+                shell,
+                player,
+                color: SubtleOOCColor,
+                checkRadioPrefix: false);
         }
     }
 }
