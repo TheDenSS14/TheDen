@@ -20,6 +20,7 @@ using Content.Shared.Verbs;
 using Content.Shared.FloofStation.Traits.Events;
 using Robust.Shared.Timing;
 using JetBrains.Annotations;
+using Robust.Shared.Utility;
 
 namespace Content.Server.FloofStation.Traits;
 
@@ -32,6 +33,10 @@ public sealed class LewdTraitSystem : EntitySystem
     [Dependency] private readonly SharedDoAfterSystem _doAfterSystem = default!;
     [Dependency] private readonly PopupSystem _popupSystem = default!;
     [Dependency] private readonly SolutionContainerSystem _solutionContainer = default!;
+
+    // DEN - Icon
+    private SpriteSpecifier _lewdVerbIcon =
+        new SpriteSpecifier.Texture(new("/Textures/_DEN/Interface/VerbIcons/lewd.svg.192dpi.png"));
 
     public override void Initialize()
     {
@@ -107,6 +112,7 @@ public sealed class LewdTraitSystem : EntitySystem
         {
             Act = () => AttemptCum(entity, user, used),
             Text = Loc.GetString($"cum-verb-get-text"),
+            Icon = _lewdVerbIcon, // DEN - Icon
             Priority = 1
         };
         args.Verbs.Add(verbCum);
@@ -129,6 +135,7 @@ public sealed class LewdTraitSystem : EntitySystem
         {
             Act = () => AttemptMilk(entity, user, used),
             Text = Loc.GetString($"milk-verb-get-text"),
+            Icon = _lewdVerbIcon, // DEN - Icon
             Priority = 1
         };
         args.Verbs.Add(verbMilk);
@@ -150,6 +157,7 @@ public sealed class LewdTraitSystem : EntitySystem
         {
             Act = () => AttemptSquirt(entity, user, used),
             Text = Loc.GetString($"squirt-verb-get-text"),
+            Icon = _lewdVerbIcon, // DEN - Icon
             Priority = 1
         };
         args.Verbs.Add(verbSquirt);

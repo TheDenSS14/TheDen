@@ -28,6 +28,9 @@ public sealed partial class PlayerProvidedCharacterRecords
     [DataField]
     public string EmergencyContactName { get; private set; }
 
+    [DataField] // TheDen
+    public string Residency { get; private set; }
+
     // Employment
     [DataField]
     public bool HasWorkAuthorization { get; private set; }
@@ -94,6 +97,7 @@ public sealed partial class PlayerProvidedCharacterRecords
     public PlayerProvidedCharacterRecords(
         bool hasWorkAuthorization,
         string emergencyContactName,
+        string residency, // TheDen
         string identifyingFeatures,
         string allergies, string drugAllergies,
         string postmortemInstructions,
@@ -101,6 +105,7 @@ public sealed partial class PlayerProvidedCharacterRecords
     {
         HasWorkAuthorization = hasWorkAuthorization;
         EmergencyContactName = emergencyContactName;
+        Residency = residency; // TheDen
         IdentifyingFeatures = identifyingFeatures;
         Allergies = allergies;
         DrugAllergies = drugAllergies;
@@ -113,6 +118,7 @@ public sealed partial class PlayerProvidedCharacterRecords
     public PlayerProvidedCharacterRecords(PlayerProvidedCharacterRecords other)
     {
         EmergencyContactName = other.EmergencyContactName;
+        Residency = other.Residency; // TheDen
         HasWorkAuthorization = other.HasWorkAuthorization;
         IdentifyingFeatures = other.IdentifyingFeatures;
         Allergies = other.Allergies;
@@ -128,6 +134,7 @@ public sealed partial class PlayerProvidedCharacterRecords
         return new PlayerProvidedCharacterRecords(
             hasWorkAuthorization: true,
             emergencyContactName: "",
+            residency: "", // TheDen
             identifyingFeatures: "",
             allergies: "None",
             drugAllergies: "None",
@@ -142,6 +149,7 @@ public sealed partial class PlayerProvidedCharacterRecords
     {
         // This is ugly but is only used for integration tests.
         var test = EmergencyContactName == other.EmergencyContactName
+                   && Residency == other.Residency // TheDen
                    && HasWorkAuthorization == other.HasWorkAuthorization
                    && IdentifyingFeatures == other.IdentifyingFeatures
                    && Allergies == other.Allergies
@@ -173,10 +181,12 @@ public sealed partial class PlayerProvidedCharacterRecords
 
     private static string ClampString(string str, int maxLen)
     {
+        if (string.IsNullOrWhiteSpace(str))
+            return string.Empty;
+
         if (str.Length > maxLen)
-        {
             return str[..maxLen];
-        }
+
         return str;
     }
 
@@ -195,6 +205,7 @@ public sealed partial class PlayerProvidedCharacterRecords
     {
         EmergencyContactName =
             ClampString(EmergencyContactName, TextMedLen);
+        Residency = ClampString(Residency, TextMedLen); // TheDen
         IdentifyingFeatures = ClampString(IdentifyingFeatures, TextMedLen);
         Allergies = ClampString(Allergies, TextMedLen);
         DrugAllergies = ClampString(DrugAllergies, TextMedLen);
@@ -211,6 +222,10 @@ public sealed partial class PlayerProvidedCharacterRecords
     public PlayerProvidedCharacterRecords WithContactName(string name)
     {
         return new(this) { EmergencyContactName = name};
+    }
+    public PlayerProvidedCharacterRecords WithResidency(string name) // TheDen
+    {
+        return new(this) { Residency = name};
     }
     public PlayerProvidedCharacterRecords WithIdentifyingFeatures(string feat)
     {

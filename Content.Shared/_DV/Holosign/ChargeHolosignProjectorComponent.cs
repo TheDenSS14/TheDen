@@ -30,13 +30,4 @@ public sealed partial class ChargeHolosignProjectorComponent : Component
     public string SignComponentName;
 
     public Type SignComponent = default!;
-
-    /// <summary>
-    /// Container to store sign entities in before they are "spawned" on use.
-    /// </summary>
-    [DataField]
-    public string ContainerId = "signs";
-
-    [ViewVariables]
-    public Container Container = default!;
 }

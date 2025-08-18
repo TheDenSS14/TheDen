@@ -63,6 +63,9 @@ public sealed class LoadoutSystem : EntitySystem
             || !_configurationManager.GetCVar(CCVars.GameLoadoutsEnabled))
             return;
 
+        if(!job.SpawnLoadout) //DEN EDIT
+            return;
+
         ApplyCharacterLoadout(
             ev.Mob,
             ev.JobId,

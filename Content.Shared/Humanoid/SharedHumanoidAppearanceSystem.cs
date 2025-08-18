@@ -481,7 +481,7 @@ public abstract class SharedHumanoidAppearanceSystem : EntitySystem
 
         SetSpecies(uid, profile.Species, false, humanoid);
         SetSex(uid, profile.Sex, false, humanoid);
-        SetVoice(uid, profile.PreferredVoice, false, humanoid); // TheDen - Add Voice
+        SetVoice(uid, profile.PreferredVoice ?? profile.Sex, false, humanoid); // TheDen - Add Voice
         humanoid.EyeColor = profile.Appearance.EyeColor;
         var ev = new EyeColorInitEvent();
         RaiseLocalEvent(uid, ref ev);

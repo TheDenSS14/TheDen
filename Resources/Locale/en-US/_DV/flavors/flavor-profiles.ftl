@@ -6,3 +6,5 @@
 flavor-complex-unholy-water = like something cold and wrong
 
 flavor-complex-lemon-lime-bitters = like an Aussie dessert
+
+flavor-complex-kalimotxo = like fancy spiked cola

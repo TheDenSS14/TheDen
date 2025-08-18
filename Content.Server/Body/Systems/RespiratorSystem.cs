@@ -23,6 +23,7 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
+using Content.Server._DEN.Bed.Components;
 using Content.Server.Administration.Logs;
 using Content.Server.Atmos.EntitySystems;
 using Content.Server.Body.Components;
@@ -38,6 +39,7 @@ using Content.Shared.Atmos;
 using Content.Shared.Body.Components;
 using Content.Shared._Shitmed.Body.Organ;
 using Content.Shared.Body.Prototypes;
+using Content.Shared.Buckle.Components;
 using Content.Shared.Chemistry.Components;
 using Content.Shared.Chemistry.Reagent; // Shitmed Change
 using Content.Shared.Damage;
@@ -117,10 +119,9 @@ public sealed class RespiratorSystem : EntitySystem
 
             respirator.NextUpdate += respirator.UpdateInterval;
 
-            if (_mobState.IsDead(uid) || HasComp<BreathingImmunityComponent>(uid)) // Shitmed: BreathingImmunity
-                continue;
-
-            if (HasComp<RespiratorImmuneComponent>(uid))
+            if (_mobState.IsDead(uid)
+                || HasComp<BreathingImmunityComponent>(uid) // Shitmed: BreathingImmunity
+                || HasComp<RespiratorImmuneComponent>(uid))
                 continue;
 
             UpdateSaturation(uid, -(float) respirator.UpdateInterval.TotalSeconds, respirator);
@@ -147,6 +148,11 @@ public sealed class RespiratorSystem : EntitySystem
                     respirator.LastGaspPopupTime = _gameTiming.CurTime;
                     _popupSystem.PopupEntity(Loc.GetString("lung-behavior-gasp"), uid);
                 }
+
+                if (TryComp<StabilizeOnBuckleComponent>(uid, out var stabilizedComp) // Den - Stabilizing Rollerbeds
+                    && _mobState.IsCritical(uid)
+                    && stabilizedComp.Efficiency == 1f)
+                    continue;
 
                 TakeSuffocationDamage((uid, respirator));
                 respirator.SuffocationCycles += 1;
@@ -343,8 +349,11 @@ public sealed class RespiratorSystem : EntitySystem
             }
             RaiseLocalEvent(ent, new MoodEffectEvent("Suffocating"));
         }
-
-        _damageableSys.TryChangeDamage(ent, HasComp<DebrainedComponent>(ent) ? ent.Comp.Damage * 4.5f : ent.Comp.Damage, interruptsDoAfters: false);
+        var damage = ent.Comp.Damage;
+        if (TryComp<StabilizeOnBuckleComponent>(ent.Owner, out var stabilizerComponent)
+            && _mobState.IsCritical(ent.Owner))
+            damage *= (1 - stabilizerComponent.Efficiency);
+        _damageableSys.TryChangeDamage(ent, HasComp<DebrainedComponent>(ent) ? ent.Comp.Damage * 4.5f : damage, interruptsDoAfters: false);
     }
 
     private void StopSuffocation(Entity<RespiratorComponent> ent)

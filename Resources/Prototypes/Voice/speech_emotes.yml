@@ -18,6 +18,7 @@
 # SPDX-FileCopyrightText: 2024 XavierSomething
 # SPDX-FileCopyrightText: 2024 neuPanda
 # SPDX-FileCopyrightText: 2024 router
+# SPDX-FileCopyrightText: 2025 DESKTOP-0V0K4HQ\Rosy
 # SPDX-FileCopyrightText: 2025 Sapphire
 # SPDX-FileCopyrightText: 2025 Tabitha
 # SPDX-FileCopyrightText: 2025 VMSolidus
@@ -132,6 +133,7 @@
     tags:
     - HarpyEmotes
     - ArachneEmotes
+    - MothEmotes
   blacklist:
     components:
     - BorgChassis
@@ -149,6 +151,7 @@
     - HarpyEmotes
     - RodentiaEmotes
     - KitsuneEmotes
+    - MothEmotes
   blacklist:
     components:
     - BorgChassis
@@ -187,6 +190,26 @@
   chatMessages: ["chat-emote-msg-clap"]
   chatTriggers:
     - claps
+
+- type: emote
+  id: ClapSingle
+  name: chat-emote-name-clap-single
+  category: Hands
+  icon: Interface/Emotes/clap.png #TODO: Needs a sprite that distinguishes it better from clap
+  whitelist:
+    components:
+    - Hands
+  blacklist:
+    components:
+    - BorgChassis
+  chatMessages: [ "chat-emote-msg-clap-single" ]
+  chatTriggers:
+    - clap
+    - claps once
+    - claps their hands together
+    - claps her hands together
+    - claps his hands together
+    - claps its hands together
 
 - type: emote
   id: Snap

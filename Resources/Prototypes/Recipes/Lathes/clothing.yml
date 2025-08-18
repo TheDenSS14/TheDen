@@ -124,6 +124,14 @@
     Cloth: 300
     Durathread: 100
 
+- type: latheRecipe # DeltaV - CentComm Drip
+  id: ClothingUniformJumpskirtCentcomAgent
+  result: ClothingUniformJumpskirtCentcomAgent
+  completetime: 4
+  materials:
+    Cloth: 300
+    Durathread: 100
+
 - type: latheRecipe
   id: ClothingUniformJumpsuitCentcomFormal
   result: ClothingUniformJumpsuitCentcomFormal
@@ -148,9 +156,25 @@
     Cloth: 300
     Durathread: 100
 
+- type: latheRecipe # DeltaV - CentComm Drip
+  id: ClothingUniformJumpskirtCentcomOfficer
+  result: ClothingUniformJumpskirtCentcomOfficer
+  completetime: 4
+  materials:
+    Cloth: 300
+    Durathread: 100
+
 - type: latheRecipe
   id: ClothingUniformJumpsuitCentcomOfficial
   result: ClothingUniformJumpsuitCentcomOfficial
+  completetime: 4
+  materials:
+    Cloth: 300
+    Durathread: 100
+
+- type: latheRecipe
+  id: ClothingUniformJumpskirtCentcomOfficial
+  result: ClothingUniformJumpskirtCentcomOfficial
   completetime: 4
   materials:
     Cloth: 300
@@ -1154,6 +1178,14 @@
 - type: latheRecipe
   id: ClothingHeadHatCentcomcap
   result: ClothingHeadHatCentcomcap
+  completetime: 2
+  materials:
+    Cloth: 100
+    Durathread: 50
+
+- type: latheRecipe
+  id: ClothingHeadHatBeretCentcomm
+  result: ClothingHeadHatBeretCentcomm
   completetime: 2
   materials:
     Cloth: 100
