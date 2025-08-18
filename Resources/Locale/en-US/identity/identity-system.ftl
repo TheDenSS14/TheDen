@@ -5,7 +5,9 @@
 
 identity-unknown-name = ???
 
-identity-age-young = young
+# TheDen - Changed "young" to "young adult", added "adult" age range
+identity-age-young = young adult
+identity-age-adult = adult
 identity-age-middle-aged = middle-aged
 identity-age-old = old
 

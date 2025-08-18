@@ -648,6 +648,9 @@ public abstract class SharedHumanoidAppearanceSystem : EntitySystem
         if (age < speciesPrototype.YoungAge)
             return Loc.GetString("identity-age-young");
 
+        if (age < speciesPrototype.MiddleAge)
+            return Loc.GetString("identity-age-adult");
+
         if (age < speciesPrototype.OldAge)
             return Loc.GetString("identity-age-middle-aged");
 
