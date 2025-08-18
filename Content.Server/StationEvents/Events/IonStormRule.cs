@@ -33,6 +33,7 @@ using Content.Shared.Chat;
 using Robust.Shared.Player;
 using Content.Shared._Impstation.Thaven.Components;
 using Content.Server._Impstation.Thaven;
+using Content.Shared.StationEvents.Events;
 
 namespace Content.Server.StationEvents.Events;
 
@@ -104,6 +105,9 @@ public sealed class IonStormRule : StationEventSystem<IonStormRuleComponent>
             _thavenMoods.OnIonStorm((ent, moods));
         }
         // End TheDen
+
+        var ev = new IonStormedEvent(GetNetEntity(chosenStation.Value), GetNetEntity(uid));
+        RaiseNetworkEvent(ev);
 
         var query = EntityQueryEnumerator<SiliconLawBoundComponent, TransformComponent, IonStormTargetComponent>();
         while (query.MoveNext(out var ent, out var lawBound, out var xform, out var target))
@@ -204,8 +208,8 @@ public sealed class IonStormRule : StationEventSystem<IonStormRuleComponent>
 
             // laws unique to this silicon, dont use station laws anymore
             EnsureComp<SiliconLawProviderComponent>(ent);
-            var ev = new IonStormLawsEvent(laws);
-            RaiseLocalEvent(ent, ref ev);
+            var evT = new IonStormLawsEvent(laws);
+            RaiseLocalEvent(ent, ref evT);
         }
     }
 

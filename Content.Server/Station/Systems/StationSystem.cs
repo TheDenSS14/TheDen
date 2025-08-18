@@ -381,6 +381,8 @@ public sealed class StationSystem : EntitySystem
 
         var stationMember = EnsureComp<StationMemberComponent>(mapGrid);
         stationMember.Station = station;
+        Dirty(mapGrid, stationMember);
+
         stationData.Grids.Add(mapGrid);
 
         RaiseLocalEvent(station, new StationGridAddedEvent(mapGrid, false), true);
