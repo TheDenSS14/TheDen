@@ -25,14 +25,6 @@ using Content.Shared.Random.Helpers;
 using Content.Shared.Silicons.Laws;
 using Content.Shared.Silicons.Laws.Components;
 using Content.Shared.Station.Components;
-using Robust.Shared.Prototypes;
-using Robust.Shared.Random;
-using Content.Server.Chat.Managers;
-using Content.Server._DEN.Announcements; // TheDen - Moved ion storm notification to its own component
-using Content.Shared.Chat;
-using Robust.Shared.Player;
-using Content.Shared._Impstation.Thaven.Components;
-using Content.Server._Impstation.Thaven;
 
 namespace Content.Server.StationEvents.Events;
 
@@ -88,22 +80,6 @@ public sealed class IonStormRule : StationEventSystem<IonStormRuleComponent>
 
         if (!TryGetRandomStation(out var chosenStation))
             return;
-
-        // Start TheDen - Moved ion storm notification to its own component
-        var ipcQuery = EntityQueryEnumerator<IonStormNotifierComponent>();
-        while (ipcQuery.MoveNext(out var ent, out var notifierComponent))
-        {
-            DispatchIonStormNotification(ent, notifierComponent.Chance, notifierComponent.Loc);
-        }
-
-        // TODO: This shit is so code
-        // We cant keep doin this shit for all ion storm related events man
-        var thavenMoodsQuery = EntityQueryEnumerator<ThavenMoodsComponent>();
-        while (thavenMoodsQuery.MoveNext(out var ent, out var moods))
-        {
-            _thavenMoods.OnIonStorm((ent, moods));
-        }
-        // End TheDen
 
         var query = EntityQueryEnumerator<SiliconLawBoundComponent, TransformComponent, IonStormTargetComponent>();
         while (query.MoveNext(out var ent, out var lawBound, out var xform, out var target))
@@ -204,8 +180,8 @@ public sealed class IonStormRule : StationEventSystem<IonStormRuleComponent>
 
             // laws unique to this silicon, dont use station laws anymore
             EnsureComp<SiliconLawProviderComponent>(ent);
-            var ev = new IonStormLawsEvent(laws);
-            RaiseLocalEvent(ent, ref ev);
+            var evT = new IonStormLawsEvent(laws);
+            RaiseLocalEvent(ent, ref evT);
         }
     }
 
