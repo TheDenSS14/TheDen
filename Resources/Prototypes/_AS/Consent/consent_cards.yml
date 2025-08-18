@@ -1,0 +1,22 @@
+- type: entity
+  id: XCard
+  name: X Card
+  description: This user unconformable with this scene and wishes to exit.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: ConsentCard
+    adminMessage: x-consent-card-admin-message
+    popupMessage: x-consent-card-popup-message
+  - type: Sprite
+    sprite: _AS/Consent/Cards/x_card.rsi
+    state: x-card
+    drawdepth: Effects
+    offset: 0, 0.5
+    noRot: true
+  - type: Transform
+    noRot: true
+  - type: TimedDespawn
+    lifetime: 60
+  - type: Tag
+    tags:
+    - HideContextMenu

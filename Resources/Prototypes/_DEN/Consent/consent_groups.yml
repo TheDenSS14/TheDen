@@ -1,0 +1,22 @@
+- type: consentCategory
+  id: general
+  priority: 0
+  members:
+  - NSFWDescriptions
+  - LastMessage
+
+- type: consentCategory
+  id: mechanics
+  priority: 1
+  members:
+  - Hypno
+  - ParadoxClone
+  - MindSwap
+  - MassMindSwap
+
+- type: consentCategory
+  id: antagonists
+  priority: 2
+  members:
+  - ChangelingTarget
+  - DragonDevour

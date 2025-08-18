@@ -307,6 +307,7 @@ public sealed partial class CloningSystem
         if (switchingSpecies && !forceOldProfile)
         {
             var flavorText = _serialization.CreateCopy(pref.FlavorText, null, false, true);
+            var nsfwFlavorText = _serialization.CreateCopy(pref.NsfwFlavorText, null, false, true);
             var oldName = _serialization.CreateCopy(pref.Name, null, false, true);
 
             pref = HumanoidCharacterProfile.RandomWithSpecies(newHumanoid.Species);
@@ -332,7 +333,10 @@ public sealed partial class CloningSystem
                 pref = pref.WithName(oldName);
 
             if (_config.GetCVar(CCVars.CloningPreserveFlavorText))
+            {
                 pref = pref.WithFlavorText(flavorText);
+                pref = pref.WithNsfwFlavorText(nsfwFlavorText);
+            }
 
             _humanoidSystem.LoadProfile(mob, pref);
             return;

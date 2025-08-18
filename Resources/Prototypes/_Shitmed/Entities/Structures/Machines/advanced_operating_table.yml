@@ -1,0 +1,52 @@
+# SPDX-FileCopyrightText: 2025 Perry Fraser
+# SPDX-FileCopyrightText: 2025 pathetic meowmeow
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  id: OperatingTableAdvanced
+  parent: OperatingTable
+  name: advanced operating table
+  description: An operating table specially built to keep the patient precisely still, allowing the surgeon to work faster with confidence.
+  components:
+  - type: Machine
+    board: OperatingTableAdvancedCircuitboard
+  - type: SurgerySpeedModifier
+    speedModifier: 1.5
+  - type: Sprite
+    sprite: _DEN/Structures/Furniture/Tables/advanced_surgery_table.rsi
+    noRot: true
+    layers:
+    - state: base
+    - state: state_surgery
+      shader: unshaded
+  # Begin DeltaV Additions - toggle between stasis and surgery speed
+  - type: ItemToggle
+    verbToggleOn: advanced-operating-table-verb-activate-stasis
+    verbToggleOff: advanced-operating-table-verb-activate-surgery
+    soundActivate: /Audio/Machines/machine_switch.ogg
+    soundDeactivate: /Audio/Machines/machine_switch.ogg
+  - type: ItemToggleExamine
+    on: advanced-operating-table-stasis-mode
+    off: advanced-operating-table-surgery-mode
+  - type: ComponentToggler
+    components:
+    - type: AntiRotOnBuckle
+    - type: Sprite
+      sprite: _DEN/Structures/Furniture/Tables/advanced_surgery_table.rsi
+      noRot: true
+      layers:
+      - state: base
+      - state: state_stasis
+        shader: unshaded
+    deactivatedComponents:
+    - type: SurgerySpeedModifier
+      speedModifier: 1.5
+    - type: Sprite
+      sprite: _DEN/Structures/Furniture/Tables/advanced_surgery_table.rsi
+      noRot: true
+      layers:
+      - state: base
+      - state: state_surgery
+        shader: unshaded
+  # End DeltaV Additions

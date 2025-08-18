@@ -17,19 +17,20 @@
 # SPDX-License-Identifier: MIT
 
 - type: entity
+  parent: BaseMachinePowered
   id: DefibrillatorCabinet
   name: defibrillator cabinet
-  description: A small wall mounted cabinet designed to hold a defibrillator.
+  description: A small wall mounted cabinet designed to hold a defibrillator. It slowly recharges the battery within.
   components:
     - type: WallMount
       arc: 175
     - type: Transform
       anchored: true
+      noRot: false
     - type: Clickable
     - type: InteractionOutline
     - type: Sprite
       sprite: Structures/Wallmounts/defib_cabinet.rsi
-      noRot: false
       layers:
       - state: frame
       - state: fill
@@ -55,6 +56,8 @@
     - type: Damageable
       damageContainer: Inorganic
       damageModifierSet: Metallic
+    - type: Charger
+      slotId: ItemCabinet
     - type: Destructible
       thresholds:
         - trigger:

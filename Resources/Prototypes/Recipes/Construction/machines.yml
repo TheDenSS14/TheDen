@@ -59,7 +59,7 @@
   objectType: Structure
   canBuildInImpassable: false
   icon:
-    sprite: Structures/conveyor.rsi
+    sprite: _DEN/Structures/conveyor.rsi # Den - Updated textures
     state: switch-off
   conditions:
     - !type:TileNotBlocked

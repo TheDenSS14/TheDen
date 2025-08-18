@@ -11,5 +11,5 @@ namespace Content.Shared.Floofstation.Hypno;
 public sealed partial class HypnotizedComponent : Component
 {
     [DataField, AutoNetworkedField]
-    public EntityUid? Master;
+    public HashSet<EntityUid> Masters = new();
 }

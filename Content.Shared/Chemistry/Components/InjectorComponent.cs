@@ -6,9 +6,11 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 using Content.Shared.Chemistry.EntitySystems;
+using Content.Shared.Chemistry.Reagent;
 using Content.Shared.DoAfter;
 using Content.Shared.FixedPoint;
 using Robust.Shared.GameStates;
+using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization;
 
 namespace Content.Shared.Chemistry.Components;
@@ -88,6 +90,37 @@ public sealed partial class InjectorComponent : Component
     [AutoNetworkedField]
     [DataField]
     public InjectorToggleMode ToggleState = InjectorToggleMode.Draw;
+
+    /// <summary>
+    /// Reagents that are allowed to be within this injector.
+    /// If a solution has both allowed and non-allowed reagents, only allowed reagents will be drawn into this injector.
+    /// A null ReagentWhitelist indicates all reagents are allowed.
+    /// </summary>
+    [DataField]
+    public List<ProtoId<ReagentPrototype>>? ReagentWhitelist = null;
+
+    /// <summary>
+    /// DeltaV - If set to true, this injector will only target the smallest reagent in the solution.
+    /// Incompatible with ReagentWhitelist.
+    /// </summary>
+    [DataField]
+    public bool TargetSmallest;
+
+    #region Arguments for injection doafter
+
+    /// <inheritdoc cref=DoAfterArgs.NeedHand>
+    [DataField]
+    public bool NeedHand = true;
+
+    /// <inheritdoc cref=DoAfterArgs.BreakOnHandChange>
+    [DataField]
+    public bool BreakOnHandChange = true;
+
+    /// <inheritdoc cref=DoAfterArgs.MovementThreshold>
+    [DataField]
+    public float MovementThreshold = 0.1f;
+
+    #endregion
 }
 
 /// <summary>

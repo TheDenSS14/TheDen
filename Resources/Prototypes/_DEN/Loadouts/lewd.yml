@@ -4,17 +4,7 @@
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
-- type: loadout
-  id: LoadoutItemDoubleDildo
-  category: ItemsLewd
-  cost: 0
-  exclusive: true
-  items:
-  - DoubleDildo
-  requirements:
-  - !type:CharacterItemGroupRequirement
-    group: LoadoutLewd
-
+#Masks
 - type: loadout
   id: LoadoutItemDroneMask
   category: ItemsLewd
@@ -24,7 +14,7 @@
   - ClothingMaskGasDrone
   requirements:
   - !type:CharacterItemGroupRequirement
-    group: LoadoutLewd
+    group: LoadoutLewdMask
 
 - type: loadout
   id: LoadoutItemDroneMaskHoodless
@@ -35,8 +25,9 @@
   - ClothingMaskGasDroneHoodless
   requirements:
   - !type:CharacterItemGroupRequirement
-    group: LoadoutLewd
+    group: LoadoutLewdMask
 
+#Pills
 - type: loadout
   id: LoadoutItemPillCanisterPomelustine
   category: ItemsLewd
@@ -46,7 +37,7 @@
   - PillCanisterPomelustine
   requirements:
   - !type:CharacterItemGroupRequirement
-    group: LoadoutLewd
+    group: LoadoutLewdPills
 
 - type: loadout
   id: LoadoutItemPillCanisterPhilterex
@@ -57,7 +48,7 @@
   - PillCanisterPhilterex
   requirements:
   - !type:CharacterItemGroupRequirement
-    group: LoadoutLewd
+    group: LoadoutLewdPills
 
 - type: loadout
   id: LoadoutItemPillCanisterLibidozenithizine
@@ -68,4 +59,4 @@
   - PillCanisterLibidozenithizine
   requirements:
   - !type:CharacterItemGroupRequirement
-    group: LoadoutLewd
+    group: LoadoutLewdPills
