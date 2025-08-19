@@ -1,0 +1,38 @@
+[1mdiff --git a/Content.Server/_DEN/GameTicking/GameTicker.FakePreset.cs b/Content.Server/_DEN/GameTicking/GameTicker.FakePreset.cs[m
+[1mindex bfd757f8f5..f960b5246a 100644[m
+[1m--- a/Content.Server/_DEN/GameTicking/GameTicker.FakePreset.cs[m
+[1m+++ b/Content.Server/_DEN/GameTicking/GameTicker.FakePreset.cs[m
+[36m@@ -76,7 +76,6 @@[m [mpublic bool TryPickPreset(ProtoId<PresetPickerPrototype> presetPickerId, [NotNul[m
+ [m
+                 if (!targetExists || !CanPick(targetPreset))[m
+                     continue;[m
+[31m-[m
+                 presets.Add(targetPreset);[m
+             }[m
+ [m
+[1mdiff --git a/Resources/Prototypes/GameRules/roundstart.yml b/Resources/Prototypes/GameRules/roundstart.yml[m
+[1mindex faa952575e..495e48a044 100644[m
+[1m--- a/Resources/Prototypes/GameRules/roundstart.yml[m
+[1m+++ b/Resources/Prototypes/GameRules/roundstart.yml[m
+[36m@@ -189,7 +189,7 @@[m
+   id: Traitor[m
+   components:[m
+   - type: GameRule[m
+[31m-    minPlayers: 5[m
+[32m+[m[32m    minPlayers: 1[m
+     delay:[m
+       min: 240[m
+       max: 420[m
+[1mdiff --git a/Resources/Prototypes/_DEN/random_presets.yml b/Resources/Prototypes/_DEN/random_presets.yml[m
+[1mindex 75df93978b..b2d3c67306 100644[m
+[1m--- a/Resources/Prototypes/_DEN/random_presets.yml[m
+[1m+++ b/Resources/Prototypes/_DEN/random_presets.yml[m
+[36m@@ -7,7 +7,7 @@[m
+   id: HighDanger[m
+   possibleWeightedPresets:[m
+     Survival: 0.25[m
+[31m-    Hellshift: 0.75[m
+[32m+[m[32m    SurvivalHellshift: 0.75[m
+     # Nukeops: 0.25[m
+ [m
+ - type: presetPicker[m

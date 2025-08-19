@@ -76,7 +76,6 @@ public sealed partial class GameTicker
 
                 if (!targetExists || !CanPick(targetPreset))
                     continue;
-
                 presets.Add(targetPreset);
             }
 
