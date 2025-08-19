@@ -51,7 +51,7 @@
   components:
   - type: ItemToggle
   - type: PowerCellDraw
-    drawRate: 1.2
+    drawRate: 0 # The Den: make it not 0 when the issues with them are fixed
   - type: ToggleCellDraw
   - type: ItemSlots
     slots:
