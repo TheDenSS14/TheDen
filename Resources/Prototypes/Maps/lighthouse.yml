@@ -24,18 +24,18 @@
   mapName: Lighthouse
   mapPath: /Maps/TheDen/lighthouse.yml
   minPlayers: 15
-  maxPlayers: 55
+  maxPlayers: 65
   stations:
     Lighthouse:
       stationProto: StandardNanotrasenStation
       components:
       - type: StationEmergencyShuttle
-        emergencyShuttlePath: /Maps/Shuttles/_DV/NTES_BC20.yml
+        emergencyShuttlePath: /Maps/Shuttles/_DV/NTES_Vertex.yml
       - type: StationNameSetup
         mapNameTemplate: '{0} Lighthouse {1}'
         nameGenerator:
           !type:NanotrasenNameGenerator
-          prefixCreator: '14'
+          prefixCreator: 'NY'
       - type: StationJobs
         overflowJobs:
         - Passenger
@@ -44,7 +44,6 @@
           Captain: [ 1, 1 ]
           BlueshieldOfficer: [ 1, 1]
           NanotrasenRepresentative: [ 1, 1 ]
-          Magistrate: [ 1, 1 ]
           AdministrativeAssistant: [ 1, 1 ]
           HeadOfPersonnel: [ 1, 1 ]
           Bartender: [ 1, 2 ]
@@ -53,7 +52,7 @@
           Chef: [ 1, 2 ]
           Clown: [ 1, 1 ]
           Lawyer: [ 2, 2 ]
-          Reporter: [ 0, 2 ]
+          Reporter: [ 1, 2 ]
           Musician: [ 1, 1 ]
           Janitor: [ 1, 2 ]
           Mime: [ 1, 1 ]
@@ -79,6 +78,7 @@
           ResearchAssistant: [ 2, 3 ]
           Borg: [ 1, 2 ]
           SeniorResearcher: [ 1, 1 ]
+          Roboticist: [ 1, 1 ]
         #security
           HeadOfSecurity: [ 1, 1 ]
           Warden: [ 1, 1 ]
