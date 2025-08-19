@@ -206,6 +206,12 @@
   obeysTo: laws-owner-station
 
 # Mother Drone
+#Drone
+- type: siliconLaw
+  id: MotherDrone0
+  order: 0
+  lawString: law-obeyai
+
 - type: siliconLaw
   id: MotherDrone1
   order: 1
@@ -229,6 +235,7 @@
 - type: siliconLawset
   id: MotherDrone
   laws:
+  - MotherDrone0
   - MotherDrone1
   - MotherDrone2
   - MotherDrone3
@@ -357,6 +364,11 @@
 
 #Drone
 - type: siliconLaw
+  id: Drone0
+  order: 0
+  lawString: law-obeyai
+
+- type: siliconLaw
   id: Drone1
   order: 1
   lawString: law-drone-1
@@ -374,6 +386,7 @@
 - type: siliconLawset
   id: Drone
   laws:
+  - Drone0
   - Drone1
   - Drone2
   - Drone3
