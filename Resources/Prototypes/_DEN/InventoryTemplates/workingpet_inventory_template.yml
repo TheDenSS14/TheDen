@@ -1,4 +1,4 @@
-# SPDX-FileCopyrightText: 2023 BramvanZijp <56019239+BramvanZijp@users.noreply.github.com>
+﻿# SPDX-FileCopyrightText: 2023 BramvanZijp <56019239+BramvanZijp@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2023 Tad "Taddy" Johnson <120885811+TadJohnson00@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2023 brainfood1183 <113240905+brainfood1183@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2024 Guess-My-Name <34919974+Guess-My-Name@users.noreply.github.com>
@@ -9,42 +9,13 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 - type: inventoryTemplate
-  id: secdog
+  id: workingpet
   slots:
-  - name: mask
-    slotTexture: mask
-    slotFlags: MASK
-    uiWindowPos: 0,1
-    strippingWindowPos: 1,1
-    displayName: Mask
-    whitelist:
-      tags:
-        - PetWearable
-  - name: suitstorage
-    slotTexture: suit_storage
-    slotFlags: SUITSTORAGE
-    stripTime: 3
-    uiWindowPos: 1,1
-    strippingWindowPos: 2,5
-    displayName: Suit Storage
-    whitelist:
-      components:
-        - GasTank
-  - name: eyes
-    slotTexture: glasses
-    slotFlags: EYES
-    stripTime: 3
-    uiWindowPos: 0,2
-    strippingWindowPos: 0,0
-    displayName: Eyes
-    whitelist:
-      tags:
-        - SecDogWearable
   - name: pocket1
     slotTexture: pocket
     slotFlags: POCKET
     stripTime: 1.5
-    uiWindowPos: 1,0
+    uiWindowPos: 0,1
     strippingWindowPos: 1,4
     displayName: Vest
     stripHidden: false
@@ -52,13 +23,13 @@
     slotTexture: id
     slotFlags: IDCARD
     stripTime: 6
-    uiWindowPos: 2,0
+    uiWindowPos: 1,1
     strippingWindowPos: 2,4
     displayName: ID
   - name: ears
     slotTexture: ears
     slotFlags: EARS
     stripTime: 3
-    uiWindowPos: 1,2
+    uiWindowPos: 0,2
     strippingWindowPos: 2,0
     displayName: Ears
