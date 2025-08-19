@@ -16,10 +16,10 @@
   dollPrototype: MobPlasmamanDummy
   skinColoration: Hues
   minAge: 18
-  youngAge: 1 # TheDen - Originally 60, no plasmaman should be labeled "young adult"
-  middleAge: 100 # TheDen - Originally 90, all plasmamen should go from "adult" to "older"
-  olderAge: 100 # TheDen - Originally 120, labels all plasmamen over 150 "older"
-  oldAge: 201 # TheDen - No plasmaman should be labeled "elderly"
+  youngAge: 40 # TheDen - Originally 60
+  middleAge: 80 # TheDen - Originally 90
+  olderAge: 120 # TheDen - Originally 120
+  oldAge: 160 # TheDen - Because we have "young adult" and "adult" now, all the numbers have been adjusted to match those descriptions based on maxAge
   maxAge: 200
   maleFirstNames: NamesPlasmaman
   femaleFirstNames: NamesPlasmaman
