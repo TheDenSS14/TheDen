@@ -12,6 +12,8 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
+using Content.Shared.FixedPoint;
+using Content.Shared.Store;
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype;
@@ -38,17 +40,11 @@ public sealed partial class PAIComponent : Component
     [DataField, ViewVariables(VVAccess.ReadWrite)]
     public EntityUid? LastUser;
 
-    [DataField(serverOnly: true)]
-    public EntProtoId? MidiActionId = "ActionPAIPlayMidi";
-
-    [DataField(serverOnly: true)] // server only, as it uses a server-BUI event !type
-    public EntityUid? MidiAction;
-
     [DataField]
-    public EntProtoId MapActionId = "ActionPAIOpenMap";
+    public EntProtoId ShopActionId = "ActionPAIOpenShop";
 
     [DataField, AutoNetworkedField]
-    public EntityUid? MapAction;
+    public EntityUid? ShopAction;
 
     /// <summary>
     /// When microwaved there is this chance to brick the pai, kicking out its player and preventing it from being used again.

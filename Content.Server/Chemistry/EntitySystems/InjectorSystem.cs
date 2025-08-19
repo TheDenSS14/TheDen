@@ -140,7 +140,8 @@ public sealed class InjectorSystem : SharedInjectorSystem
     {
         if (TryComp<BlockInjectionComponent>(target, out var blockComponent)) // DeltaV
         {
-            var msg = Loc.GetString($"injector-component-deny-{blockComponent.BlockReason}");
+            var msg = Loc.GetString($"injector-component-deny-{blockComponent.BlockReason}",
+                ("target", Identity.Entity(target, EntityManager)));
             Popup.PopupEntity(msg, target, user);
 
             if (!_playerManager.TryGetSessionByEntity(target, out var session))
@@ -195,12 +196,12 @@ public sealed class InjectorSystem : SharedInjectorSystem
             if (injector.Comp.ToggleState == InjectorToggleMode.Draw)
             {
                 Popup.PopupEntity(Loc.GetString("injector-component-drawing-target",
-    ("user", userName)), user, target);
+                    ("user", userName)), user, target);
             }
             else
             {
                 Popup.PopupEntity(Loc.GetString("injector-component-injecting-target",
-    ("user", userName)), user, target);
+                    ("user", userName)), user, target);
             }
 
 

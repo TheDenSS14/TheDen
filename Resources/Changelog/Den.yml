@@ -10424,3 +10424,117 @@ Entries:
   id: 1014
   time: '2025-08-18T20:48:36.0000000+00:00'
   url: https://github.com/TheDenSS14/TheDen/pull/1485
+- author: Shaman
+  changes:
+    - type: Tweak
+      message: Characters aged 18-24 are now "young adult"
+    - type: Tweak
+      message: Characters aged 25-39 are now "adult"
+    - type: Tweak
+      message: Characters aged 40-54 are now "middle-aged"
+    - type: Tweak
+      message: Characters aged 55-69 are now "older" and "elderly" beyond that
+    - type: Tweak
+      message: Characters aged 250+ years are "ancient" (currently only IPCs)
+    - type: Tweak
+      message: >-
+        Arachne, plasmamen, shadowkin, and IPCs have their species-specific age
+        ranges on their guidebook pages
+  id: 1015
+  time: '2025-08-19T10:03:13.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1487
+- author: MajorMoth
+  changes:
+    - type: Tweak
+      message: >-
+        Temporarily made translators not drain any power until the issues with
+        them are fixed. They still need a battery with even a minimal charge to
+        turn on, though. Happy yapping!
+  id: 1016
+  time: '2025-08-19T10:04:28.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1494
+- author: RosySaturniidae
+  changes:
+    - type: Fix
+      message: philterex shouldn't kill you now
+  id: 1017
+  time: '2025-08-19T10:05:30.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1489
+- author: Shaman
+  changes:
+    - type: Tweak
+      message: >-
+        Widened the language menu a little so TCB-SL stops running off the side
+        (you can still shrink it if you want though)
+  id: 1018
+  time: '2025-08-19T10:06:20.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1491
+- author: SirWarock
+  changes:
+    - type: Fix
+      message: >-
+        Fixed Shadowkins not getting proper psionic powers and being stuck with
+        basic ones.
+    - type: Tweak
+      message: Shadowkins now get a free psionic roundstart like everyone else.
+    - type: Tweak
+      message: >-
+        Increased Shadowkin's potentia modifier to the level of a kitsune. They
+        cannot take the high potentia trait anymore.
+  id: 1019
+  time: '2025-08-19T10:08:09.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1495
+- author: SirWarock
+  changes:
+    - type: Add
+      message: >-
+        Added Jetinjector - Trust me, you'll want these and never look back at
+        the normal Syringes.
+  id: 1020
+  time: '2025-08-19T12:55:53.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1445
+- author: Jakumba
+  changes:
+    - type: Tweak
+      message: Maintenance Drones have a new law 0, to obey the station AI.
+  id: 1021
+  time: '2025-08-19T17:10:23.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1499
+- author: WizDen
+  changes:
+    - type: Add
+      message: The AI eye now has a postscript with the name of AI itself.
+  id: 1022
+  time: '2025-08-19T17:10:37.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1498
+- author: Hederadaii
+  changes:
+    - type: Add
+      message: Added 51 new wall pride flags!
+    - type: Tweak
+      message: >-
+        Altered the original trans flag to rotate like the new ones, so it
+        doesn't go or wacky when the perspective is changed.
+  id: 1023
+  time: '2025-08-19T17:12:10.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1490
+- author: Eightballll
+  changes:
+    - type: Tweak
+      message: >-
+        Changed the Tuxedo Sunset's taste to something more fitting it's
+        inspiration.
+  id: 1024
+  time: '2025-08-19T17:12:59.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1486
+- author: ZigTag
+  changes:
+    - type: Tweak
+      message: >-
+        moved chat highlighting to general settings under the accessibility
+        section
+    - type: Remove
+      message: '''extra'' tab in options'
+  id: 1025
+  time: '2025-08-19T17:13:41.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1473
