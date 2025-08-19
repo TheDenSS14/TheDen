@@ -25,9 +25,10 @@
   skinColoration: Hues
   minAge: 1
   youngAge: 1 # TheDen - Originally 50, no IPC should be labeled "young adult"
-  middleAge: 150 # TheDen - Doesn't really exist, all IPCs should go from "adult" to "older" based on when they were built
+  middleAge: 150 # TheDen - Doesn't really exist, all IPCs should go from "adult" to "older"
   olderAge: 150 # TheDen - Also originally 50, labels all IPCs over 150 "older"
-  oldAge: 301 # TheDen - No IPC should be labeled "elderly"
+  oldAge:  250 # TheDen - Doesn't really exist, all IPCs should go from "older" to "ancient"
+  ancientAge: 250 # TheDen - The default value, included here for context
   maxAge: 300
   maleFirstNames: IpcFirst
   femaleFirstNames: IpcFirst

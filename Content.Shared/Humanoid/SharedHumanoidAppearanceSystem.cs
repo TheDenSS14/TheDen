@@ -657,7 +657,10 @@ public abstract class SharedHumanoidAppearanceSystem : EntitySystem
         if (age < speciesPrototype.OldAge) // TheDen - Formerly referenced middle-aged
             return Loc.GetString("identity-age-older");
 
-        return Loc.GetString("identity-age-old");
+        if (age < speciesPrototype.OldAge) // TheDen - Was formerly the maximum age below, instead of ancient
+            return Loc.GetString("identity-age-old");
+
+        return Loc.GetString("identity-age-ancient"); // TheDen - Living well beyond two human lifespans, 250+ years old
     }
 
     // Floofstation section

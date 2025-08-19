@@ -141,28 +141,34 @@ public sealed partial class SpeciesPrototype : IPrototype
     public int MinAge = 18;
 
     /// <summary>
-    ///     TheDen - Decreased from 30 - Characters younger than this appear "young adult".
+    ///     TheDen - Decreased from 30 - Characters younger than this appear "young adult"
     /// </summary>
     [DataField]
     public int YoungAge = 25;
 
     /// <summary>
-    ///     TheDen - Added category - Characters younger than this appear "adult".
+    ///     TheDen - Added category - Characters younger than this appear "adult"
     /// </summary>
     [DataField]
     public int MiddleAge = 40;
 
     /// <summary>
-    ///     TheDen - Added category - Characters younger than this appear "middle-aged".
+    ///     TheDen - Added category - Characters younger than this appear "middle-aged"
     /// </summary>
     [DataField]
     public int OlderAge = 55;
 
     /// <summary>
-    ///     TheDen - Increased from 60 - Characters younger than this appear "older", and older than this is "elderly".
+    ///     TheDen - Increased from 60 - Characters younger than this appear "older"
     /// </summary>
     [DataField]
     public int OldAge = 70;
+
+    /// <summary>
+    ///     TheDen - Characters younger than this appear "elderly", and older than this is "ancient" (living well beyond two human lifespans)
+    /// </summary>
+    [DataField]
+    public int AncientAge = 250;
 
     /// <summary>
     ///     Characters cannot be older than this. Only used for restrictions...
