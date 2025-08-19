@@ -126,7 +126,7 @@
     followEntity: false
   - type: CommunicationsConsole
     canShuttle: false
-    title: comms-console-announcement-title-station-ai
+    title: comms-console-announcement-title-station-aiws
     color: "#5ed7aa"
   - type: ShowJobIcons
   # Begin DeltaV - AI Shop System
@@ -137,7 +137,7 @@
     currencyWhitelist:
     - AiMemory
     balance:
-      AiMemory: 3
+      AiMemory: 8
     grantActionsToMind: false
   # End DeltaV - AI Shop System
 
