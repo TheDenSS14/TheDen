@@ -5,11 +5,15 @@
 
 identity-unknown-name = ???
 
-# TheDen - Changed "young" to "young adult", added "adult" age range
+# TheDen - Changed "young" to "young adult"
 identity-age-young = young adult
+# TheDen - Added "adult"
 identity-age-adult = adult
 identity-age-middle-aged = middle-aged
-identity-age-old = old
+# TheDen - Added "older"
+identity-age-older = older
+identity-age-old = elderly
+# TheDen - Changed "old" to "elderly"
 
 identity-gender-feminine = woman
 identity-gender-masculine = man

@@ -153,10 +153,16 @@ public sealed partial class SpeciesPrototype : IPrototype
     public int MiddleAge = 40;
 
     /// <summary>
-    ///     TheDen - Increased from 60 - Characters younger than this appear "middle-aged", and older than this is "old".
+    ///     TheDen - Added category - Characters younger than this appear "middle-aged".
     /// </summary>
     [DataField]
-    public int OldAge = 65;
+    public int OlderAge = 55;
+
+    /// <summary>
+    ///     TheDen - Increased from 60 - Characters younger than this appear "older", and older than this is "elderly".
+    /// </summary>
+    [DataField]
+    public int OldAge = 70;
 
     /// <summary>
     ///     Characters cannot be older than this. Only used for restrictions...

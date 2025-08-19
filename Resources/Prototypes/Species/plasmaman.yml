@@ -15,10 +15,12 @@
   markingLimits: MobPlasmamanMarkingLimits
   dollPrototype: MobPlasmamanDummy
   skinColoration: Hues
-  youngAge: 60
-  middleAge: 90 # TheDen
-  oldAge: 120
-  maxAge: 180
+  minAge: 18
+  youngAge: 40 # TheDen - Originally 60
+  middleAge: 80 # TheDen - Originally 90
+  olderAge: 120 # TheDen - Originally 120
+  oldAge: 160 # TheDen - Because we have "young adult" and "adult" now, all the numbers have been adjusted to match
+  maxAge: 200
   maleFirstNames: NamesPlasmaman
   femaleFirstNames: NamesPlasmaman
   naming: FirstRoman

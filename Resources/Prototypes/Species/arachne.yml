@@ -25,9 +25,10 @@
   dollPrototype: MobArachneDummy
   skinColoration: HumanAnimal
   minAge: 18
-  youngAge: 30 # TheDen - Was originally 20, which seemed like an error given their age range
-  middleAge: 50 # TheDen
-  oldAge: 70
+  youngAge: 40 # TheDen - Originally 30
+  middleAge: 80 # TheDen - Originally 50
+  olderAge: 120 # TheDen - Originally 70
+  oldAge: 160 # TheDen - Because we have "young adult" and "adult" now, all the numbers have been adjusted to match
   maxAge: 200
   customName: true
 
