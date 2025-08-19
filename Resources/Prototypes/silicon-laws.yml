@@ -208,11 +208,6 @@
 # Mother Drone
 #Drone
 - type: siliconLaw
-  id: MotherDrone0
-  order: 0
-  lawString: law-obeyai
-
-- type: siliconLaw
   id: MotherDrone1
   order: 1
   lawString: law-motherdrone-1
@@ -235,7 +230,6 @@
 - type: siliconLawset
   id: MotherDrone
   laws:
-  - MotherDrone0
   - MotherDrone1
   - MotherDrone2
   - MotherDrone3
