@@ -47,7 +47,7 @@
 - type: entity
   parent: Airlock
   id: AirlockMedicalScience
-  suffix: Epistemics
+  suffix: Medical/Epistemics
   components:
     - type: Sprite
       sprite: _DEN/Structures/Doors/Airlocks/Standard/medical.rsi
@@ -59,7 +59,7 @@
 - type: entity
   parent: AirlockGlass
   id: AirlockMedicalScienceGlass
-  suffix: Epistemics
+  suffix: Medical/Epistemics
   components:
     - type: Sprite
       sprite: _DEN/Structures/Doors/Airlocks/Glass/medical.rsi
@@ -67,6 +67,23 @@
       department: Epistemics
     - type: Wires
       layoutId: AirlockScience
+
+# Paramedic
+- type: entity
+  parent: AirlockMedical
+  id: AirlockParamedic
+  suffix: Paramedic
+  components:
+    - type: Sprite
+      sprite: _DEN/Structures/Doors/Airlocks/Standard/paramedic.rsi
+      
+- type: entity
+  parent: AirlockMedicalGlass
+  id: AirlockParamedicGlass
+  suffix: Paramedic
+  components:
+    - type: Sprite
+      sprite: _DEN/Structures/Doors/Airlocks/Glass/paramedic.rsi
 
 # Service
 - type: entity

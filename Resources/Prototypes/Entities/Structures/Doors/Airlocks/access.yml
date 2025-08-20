@@ -257,7 +257,7 @@
       board: [ DoorElectronicsMedical ]
 
 - type: entity
-  parent: AirlockMedical
+  parent: AirlockParamedic # The Den - airlock resprite
   id: AirlockParamedicLocked
   suffix: Paramedic, Locked
   components:
@@ -653,7 +653,7 @@
       board: [ DoorElectronicsMedical ]
 
 - type: entity
-  parent: AirlockMedicalGlass
+  parent: AirlockParamedicGlass # The Den - airlock resprite
   id: AirlockParamedicGlassLocked
   suffix: Paramedic, Locked
   components:
