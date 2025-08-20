@@ -308,10 +308,6 @@
         - id: BoxSurvivalEngineering
         - id: Zipties
         - id: Zipties
-        - id: RCD
-        - id: RPD
-        - id: RCDAmmo
-          amount: 2
         - id: PowerDrill
         - id: JawsOfLife
         - id: WelderExperimental
@@ -319,6 +315,9 @@
         - id: HolofanProjector
         - id: GasAnalyzer
         - id: trayScanner
+        - id: InflatableWallStack
+          amount: 2
+        - id: InflatableDoorStack
 
 - type: entity
   categories: [ HideSpawnMenu ]

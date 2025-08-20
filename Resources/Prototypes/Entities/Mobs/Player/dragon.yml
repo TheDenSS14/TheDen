@@ -146,7 +146,7 @@
       enum.SurgeryUIKey.Key:
         type: SurgeryBui
   - type: Bloodstream
-    maxBleedAmount: 0
+    maxBleedAmount: 450
     bloodMaxVolume: 650
   - type: GhostRole
     allowMovement: true
@@ -286,7 +286,7 @@
         Brute: -35
     shouldStoreDevoured: true
     chemical: Ichor
-    healRate: 15.0
+    healRate: 12.0
     foodPreference: Humanoid
     whitelist:
       components:
@@ -315,9 +315,9 @@
     - Alive
     damage:
       types:
-        Heat: -0.34
+        Heat: -0.3
       groups:
-        Brute: -0.34
+        Brute: -0.3
   - type: RandomMetadata
     nameSegments:
     - NamesDragon
@@ -333,7 +333,6 @@
     speedModifier: 3.5 # fast because dragon strong
     useSound:
       path: /Audio/Items/crowbar.ogg
-  - type: Hands
   - type: ComplexInteraction
   - type: LanguageKnowledge
     speaks:
@@ -355,9 +354,9 @@
     spawnRiftAction: ActionSpawnRift
     carpRiftHealing:
       groups:
-        Brute: -4
-        Burn: -4
-        Airloss: -3 #Dragons may not bleed, but carp do
+        Brute: -5
+        Burn: -5
+        Airloss: -5 #Dragons may not bleed, but carp do
   - type: GhostRole
     mindRoles:
     - MindRoleDragon
@@ -375,7 +374,7 @@
   description: For dragon's breathing.
   components:
   - type: RechargeBasicEntityAmmo
-    rechargeCooldown: 5
+    rechargeCooldown: 15
     rechargeSound:
       path: /Audio/Animals/space_dragon_roar.ogg
   - type: BasicEntityAmmoProvider

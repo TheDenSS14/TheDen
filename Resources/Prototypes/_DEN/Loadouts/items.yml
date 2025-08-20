@@ -260,7 +260,7 @@
   canBeHeirloom: true
   items:
     - Clicker
-  
+
 - type: loadout
   id: LoadoutTailorsKnife
   category: GeneralItems
@@ -284,6 +284,15 @@
   customColorTint: true
   items:
     - ClothingHandsSentimentalRing
+
+- type: loadout
+  id: LoadoutClothingNeckSentimentalCollar
+  category: GeneralItems
+  cost: 0
+  canBeHeirloom: true
+  customColorTint: true
+  items:
+    - ClothingNeckSentimentalCollar
 
 # Towels
 - type: loadout

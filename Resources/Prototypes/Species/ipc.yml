@@ -24,9 +24,12 @@
   dollPrototype: MobIPCDummy
   skinColoration: Hues
   minAge: 1
-  maxAge: 240
-  oldAge: 50
-  youngAge: 50
+  youngAge: 1 # TheDen - Originally 50, no IPC should be labeled "young adult"
+  middleAge: 150 # TheDen - Doesn't really exist, all IPCs should go from "adult" to "older"
+  olderAge: 150 # TheDen - Also originally 50, labels all IPCs over 150 "older"
+  oldAge:  250 # TheDen - Doesn't really exist, all IPCs should go from "older" to "ancient"
+  ancientAge: 250 # TheDen - The default value, included here for context
+  maxAge: 300
   maleFirstNames: IpcFirst
   femaleFirstNames: IpcFirst
   lastNames: IpcLast

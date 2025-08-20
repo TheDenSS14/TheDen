@@ -48,7 +48,7 @@
     understands:
     - TauCetiBasic
     - Alaseta
-  - type: StepTriggerImmune
+  - type: ProtectedFromStepTriggers
     whitelist:
       types:
         - Shard

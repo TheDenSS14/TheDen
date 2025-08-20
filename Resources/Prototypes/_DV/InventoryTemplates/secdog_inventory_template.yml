@@ -20,7 +20,6 @@
     whitelist:
       tags:
         - PetWearable
-
   - name: suitstorage
     slotTexture: suit_storage
     slotFlags: SUITSTORAGE
@@ -31,7 +30,6 @@
     whitelist:
       components:
         - GasTank
-
   - name: eyes
     slotTexture: glasses
     slotFlags: EYES
@@ -42,7 +40,6 @@
     whitelist:
       tags:
         - SecDogWearable
-
   - name: pocket1
     slotTexture: pocket
     slotFlags: POCKET
@@ -51,3 +48,17 @@
     strippingWindowPos: 1,4
     displayName: Vest
     stripHidden: false
+  - name: id
+    slotTexture: id
+    slotFlags: IDCARD
+    stripTime: 6
+    uiWindowPos: 2,0
+    strippingWindowPos: 2,4
+    displayName: ID
+  - name: ears
+    slotTexture: ears
+    slotFlags: EARS
+    stripTime: 3
+    uiWindowPos: 1,2
+    strippingWindowPos: 2,0
+    displayName: Ears

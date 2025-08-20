@@ -69,7 +69,7 @@
     channels:
     - Binary
   - type: Actions
-  - type: StepTriggerImmune # TODO: port ProtectedFromStepTrigger
+  - type: ProtectedFromStepTriggers
     whitelist:
       types:
         - Shard
@@ -150,6 +150,8 @@
         Structural: -0.5
   - type: ThermalVision
     lightRadius: 7
+    color: "#d70aa0"
+  - type: NightVision # Den
     color: "#d70aa0"
   - type: FlashImmunity
   - type: Prying
