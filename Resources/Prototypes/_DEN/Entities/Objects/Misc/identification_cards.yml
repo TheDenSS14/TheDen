@@ -1,0 +1,21 @@
+- type: entity
+  parent: IDCardStandard
+  id: MagistrateIDCard
+  name: magistrate ID card
+  components:
+  - type: Sprite
+    layers:
+    - state: centcom
+    - state: departmenthead
+      color: "#1B67A5"
+    - state: subdepartment
+      color: "#030e17"
+    - state: lawyer
+  - type: Item
+    heldPrefix:
+  - type: PresetIdCard
+    job: Magistrate
+  - type: Access
+    tags:
+    - CentralCommand
+    - Magistrate
