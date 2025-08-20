@@ -124,7 +124,7 @@
           layer:
           - MobLayer
     - type: MeleeWeapon
-      attackRate: 1.75 #faster attack rate to compensate for healing in self defense situations
+      attackRate: 0.75 #faster attack rate to compensate for healing in self defense situations
       hidden: true
       soundHit:
         path: /Audio/Effects/bite.ogg
@@ -145,11 +145,11 @@
       transferAmount: 6 #heals 24 burn/brute/air/toxin in 12seconds/minus 6 brute per bite
     - type: SolutionRegeneration
       solution: melee
-      duration: 30 #regen 1u every 30 seconds. 15 mins to full
+      duration: 10 #regen 0.5u every 10 seconds. 10 mins to full
       generated:
         reagents:
         - ReagentId: Omnizine
-          Quantity: 1
+          Quantity: 0.5
     - type: ReplacementAccent
       accent: xeno #Add cool snake accent later. wyci
     - type: PointLight
