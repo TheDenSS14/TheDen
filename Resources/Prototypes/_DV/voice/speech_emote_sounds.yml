@@ -279,6 +279,10 @@
       collection: KitsuneGrowl
     Squeak:
       path: /Audio/Animals/mouse_squeak.ogg
+    ThumpGeneral:
+      path: /Audio/Voice/Reptilian/reptilian_tailthump.ogg # TODO: find non-tail thump
+      params:
+        variation: 0.125
 
 - type: emoteSounds
   id: FemaleRodentia
@@ -313,6 +317,10 @@
       path: /Audio/Animals/mouse_squeak.ogg
     Hiss:
       path: /Audio/Animals/snake_hiss.ogg
+    ThumpGeneral:
+      path: /Audio/Voice/Reptilian/reptilian_tailthump.ogg # TODO: find non-tail thump
+      params:
+        variation: 0.125
 
 - type: emoteSounds
   id: UnisexChitinid

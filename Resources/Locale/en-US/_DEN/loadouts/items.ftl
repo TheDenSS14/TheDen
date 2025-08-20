@@ -8,6 +8,7 @@ loadout-name-LoadoutNeckScarfColorable = scarf (colorable)
 loadout-name-LoadoutNeckScarfStripedColorable = striped scarf (colorable)
 loadout-name-LoadoutNeckMantleColorable = mantle (colorable)
 loadout-name-LoadoutNeckCloakColorable = cloak (colorable)
+loadout-name-LoadoutClothingNeckSentimentalCollar = sentimental collar (colorable)
 
 # waist
 loadout-name-LoadoutClothingWaistApron = waist apron (colorable)
@@ -40,5 +41,5 @@ loadout-name-LoadoutItemCaneWalkingAnatomical = anatomical grip cane (colorable)
 loadout-name-LoadoutItemCaneWalkingFoldable = folding cane (colorable)
 loadout-name-LoadoutItemCaneWalkingQuad = quad cane (colorable)
 
-loadout-name-LoadoutServiceItemGoldenPlunger = golden plunger 
+loadout-name-LoadoutServiceItemGoldenPlunger = golden plunger
 

@@ -158,6 +158,10 @@
       collection: MaleSigh
     Trill:
       collection: MaleTrill
+    ThumpGeneral:
+      path: /Audio/Voice/Reptilian/reptilian_tailthump.ogg # TODO: find non-tail thump
+      params:
+        variation: 0.125
 
 - type: emoteSounds
   id: FemaleReptilian
@@ -202,6 +206,10 @@
       collection: FemaleSigh
     Trill:
       collection: FemaleTrill
+    ThumpGeneral:
+      path: /Audio/Voice/Reptilian/reptilian_tailthump.ogg # TODO: find non-tail thump
+      params:
+        variation: 0.125
 
 - type: emoteSounds
   id: MaleSlime

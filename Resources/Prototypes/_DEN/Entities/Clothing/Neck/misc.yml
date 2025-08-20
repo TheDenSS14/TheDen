@@ -17,7 +17,7 @@
   - type: EmitsSoundOnMove
     soundCollection:
       collection: CowbellRings
-      
+
 - type: entity
   parent: ClothingNeckBase
   id: ClothingNeckVetCone
@@ -48,4 +48,14 @@
           Quantity: 2.5
         - ReagentId: Phosphorus
           Quantity: 2.5
-          
+
+- type: entity
+  parent: ClothingNeckCollarBase
+  id: ClothingNeckSentimentalCollar
+  name: sentimental collar
+  description: A simple collar. It means something to someone.
+  components:
+  - type: Sprite
+    sprite: _DEN/Clothing/Neck/Misc/sentimentalcollar.rsi
+  - type: Clothing
+    sprite: _DEN/Clothing/Neck/Misc/sentimentalcollar.rsi
