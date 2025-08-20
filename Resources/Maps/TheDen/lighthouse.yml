@@ -4,8 +4,8 @@ meta:
   engineVersion: 260.2.0
   forkId: ""
   forkVersion: ""
-  time: 08/20/2025 06:17:21
-  entityCount: 21124
+  time: 08/20/2025 19:15:00
+  entityCount: 21138
 maps:
 - 1313
 grids:
@@ -92129,6 +92129,12 @@ entities:
       rot: 1.5707963267948966 rad
       pos: -20.5,56.5
       parent: 100
+  - uid: 21137
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 35.5,20.5
+      parent: 100
 - proto: PaperBin5
   entities:
   - uid: 5675
@@ -95514,6 +95520,11 @@ entities:
       rot: 3.141592653589793 rad
       pos: 0.5,49.5
       parent: 100
+  - uid: 21130
+    components:
+    - type: Transform
+      pos: -27.5,43.5
+      parent: 100
 - proto: PoweredLightBlueInterior
   entities:
   - uid: 13399
@@ -96966,13 +96977,6 @@ entities:
       parent: 100
     - type: ApcPowerReceiver
       powerLoad: 0
-  - uid: 15064
-    components:
-    - type: Transform
-      pos: -25.5,43.5
-      parent: 100
-    - type: ApcPowerReceiver
-      powerLoad: 0
   - uid: 15190
     components:
     - type: Transform
@@ -97540,6 +97544,12 @@ entities:
     components:
     - type: Transform
       pos: 24.5,12.5
+      parent: 100
+  - uid: 21138
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 28.5,5.5
       parent: 100
 - proto: PoweredSmallLightEmpty
   entities:
@@ -107701,14 +107711,6 @@ entities:
     - type: Transform
       pos: 15.5,41.5
       parent: 100
-  - uid: 12148
-    components:
-    - type: MetaData
-      desc: A sign indicating that there's fuckin laser tag!!!
-      name: laser tag sign
-    - type: Transform
-      pos: -29.5,55.5
-      parent: 100
   - uid: 18590
     components:
     - type: MetaData
@@ -108280,6 +108282,11 @@ entities:
       parent: 100
 - proto: SignPsychology
   entities:
+  - uid: 15064
+    components:
+    - type: Transform
+      pos: -29.5,55.5
+      parent: 100
   - uid: 20671
     components:
     - type: Transform
@@ -110046,6 +110053,21 @@ entities:
     - type: Transform
       pos: 1.5,46.5
       parent: 100
+  - uid: 12148
+    components:
+    - type: Transform
+      pos: 1.5,45.5
+      parent: 100
+  - uid: 21131
+    components:
+    - type: Transform
+      pos: 1.5,44.5
+      parent: 100
+  - uid: 21132
+    components:
+    - type: Transform
+      pos: 1.5,43.5
+      parent: 100
 - proto: SpawnPointCaptain
   entities:
   - uid: 12741
@@ -110128,6 +110150,33 @@ entities:
     components:
     - type: Transform
       pos: -29.5,25.5
+      parent: 100
+- proto: SpawnPointChemist
+  entities:
+  - uid: 21125
+    components:
+    - type: Transform
+      pos: -19.5,34.5
+      parent: 100
+  - uid: 21126
+    components:
+    - type: Transform
+      pos: -18.5,34.5
+      parent: 100
+  - uid: 21127
+    components:
+    - type: Transform
+      pos: -17.5,34.5
+      parent: 100
+  - uid: 21128
+    components:
+    - type: Transform
+      pos: -16.5,34.5
+      parent: 100
+  - uid: 21129
+    components:
+    - type: Transform
+      pos: -16.5,36.5
       parent: 100
 - proto: SpawnPointChiefEngineer
   entities:
@@ -110637,6 +110686,26 @@ entities:
     components:
     - type: Transform
       pos: -53.5,64.5
+      parent: 100
+  - uid: 21133
+    components:
+    - type: Transform
+      pos: -48.5,64.5
+      parent: 100
+  - uid: 21134
+    components:
+    - type: Transform
+      pos: -48.5,63.5
+      parent: 100
+  - uid: 21135
+    components:
+    - type: Transform
+      pos: -50.5,63.5
+      parent: 100
+  - uid: 21136
+    components:
+    - type: Transform
+      pos: -49.5,63.5
       parent: 100
 - proto: SpawnPointQuartermaster
   entities:
