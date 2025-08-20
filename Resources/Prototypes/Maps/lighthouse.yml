@@ -24,7 +24,7 @@
   mapName: Lighthouse
   mapPath: /Maps/TheDen/lighthouse.yml
   minPlayers: 15
-  maxPlayers: 65
+  maxPlayers: 80
   stations:
     Lighthouse:
       stationProto: StandardNanotrasenStation
@@ -51,7 +51,7 @@
           Boxer: [ 2, 2 ]
           Chef: [ 1, 2 ]
           Clown: [ 1, 1 ]
-          Lawyer: [ 2, 2 ]
+          Lawyer: [ 1, 1 ]
           Reporter: [ 1, 2 ]
           Musician: [ 1, 1 ]
           Janitor: [ 1, 2 ]
@@ -99,3 +99,4 @@
         # Justice
           Clerk: [ 1, 1 ]
           Prosecutor: [ 1, 1 ]
+          Magistrate: [ 1, 1 ]
