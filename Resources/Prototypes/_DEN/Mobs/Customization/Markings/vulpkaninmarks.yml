@@ -56,3 +56,48 @@
     state: sergtail-1
   - sprite: _DEN/Mobs/Customization/Vulpkanin/cheesegal.rsi
     state: sergtail-2
+
+- type: marking
+  id: NeckChestsmallfluff
+  bodyPart: Chest
+  markingCategory: Chest
+  speciesRestriction: [Vulpkanin]
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Vulpkanin/neckfluff.rsi
+    state: smallfluff
+
+- type: marking
+  id: NeckChestbigfluff
+  bodyPart: Chest
+  markingCategory: Chest
+  speciesRestriction: [Vulpkanin]
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Vulpkanin/neckfluff.rsi
+    state: bigfluff
+
+- type: marking
+  id: NeckChestbandanafluff
+  bodyPart: Chest
+  markingCategory: Chest
+  speciesRestriction: [Vulpkanin]
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Vulpkanin/neckfluff.rsi
+    state: bandanafluff
+
+- type: marking
+  id: NeckChestbackgerm
+  bodyPart: Chest
+  markingCategory: Chest
+  speciesRestriction: [Vulpkanin]
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Vulpkanin/backmarks.rsi
+    state: backgerm
+
+- type: marking
+  id: NeckChestbackupper
+  bodyPart: Chest
+  markingCategory: Chest
+  speciesRestriction: [Vulpkanin]
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Vulpkanin/backmarks.rsi
+    state: backupper
