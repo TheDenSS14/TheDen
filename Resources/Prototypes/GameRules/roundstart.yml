@@ -313,9 +313,10 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: RampingStationEventScheduler
-    chaosModifier: 2 # By default, one event each 30-10 seconds after two hours. Changing CVars will cause this to deviate.
+    chaosModifier: 5 # By default, one event each 30-10 seconds after two hours. Changing CVars will cause this to deviate.
     startingChaosRatio: 0.1
     shiftLengthModifier: 2.5
+    eventDelayModifier: 1.5
 
 - type: entity
   id: IrregularStationEventScheduler
