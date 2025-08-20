@@ -27,6 +27,13 @@ marking-NeckChestfluff =  Vulpkanin chest fluff
 marking-NeckChestfluff-chestfloof =  Primary
 
 # these ones are for the chestfluffs and back fluffs
+marking-NeckChestsmallfluff = Small fluff
+marking-NeckChestbigfluff = Big fluff
+marking-NeckChestbandanafluff = Bandana fluff
+marking-NeckChestbackgerm = Back full
+marking-NeckChestbackupper = Back upper
+marking-NeckChestbackwhole = Back whole
+
 marking-NeckChestsmallfluff-smallfluff = Small fluff
 marking-NeckChestbigfluff-bigfluff = Big fluff
 marking-NeckChestbandanafluff-bandanafluff = Bandana fluff
