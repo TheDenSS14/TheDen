@@ -32,3 +32,4 @@ marking-NeckChestbigfluff = Big fluff
 marking-NeckChestbandanafluff = Bandana fluff
 marking-NeckChestbackgerm = Back full
 marking-NeckChestbackupper = Back upper
+marking-NeckChestbackwhole = Back whole
