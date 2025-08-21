@@ -357,7 +357,8 @@ internal sealed partial class ChatManager : IChatManager
 
     public void SendAdminChat(string player, string message, bool allAdmins = false)
     {
-        var clients = _adminManager.ActiveAdmins.Select(p => p.Channel);
+        var applicableAdmins = allAdmins ? _adminManager.AllAdmins : _adminManager.ActiveAdmins;
+        var clients = applicableAdmins.Select(p => p.Channel);
         var wrappedMessage = Loc.GetString("chat-manager-send-admin-chat-wrap-message",
             ("adminChannelName", Loc.GetString("chat-manager-admin-channel-name")),
             ("playerName", player),
