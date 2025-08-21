@@ -1,0 +1,8 @@
+- type: entity
+  parent: BaseBarSign
+  id: BarSignTheBahr
+  name: The Bahr
+  description: What happens in the paddock stays in the paddock.
+  components:
+  - type: BarSign
+    current: TheBahr
