@@ -146,11 +146,12 @@
     attackRate: 1
     damage:
       types:
-        Slash: 15 # BIG SCARY DOG
-    clickPartDamageMultiplier: 1.5
+        Slash: 10
+        Piercing: 5 # BIG SCARY DOG
+    clickPartDamageMultiplier: 2
     heavyDamageBaseModifier: 0.3
     heavyStaminaCost: 0.5
-    heavyRateModifier: 0.75
+    heavyRateModifier: 1
   - type: SlowOnDamage
     speedModifierThresholds:
       40: 0.80
