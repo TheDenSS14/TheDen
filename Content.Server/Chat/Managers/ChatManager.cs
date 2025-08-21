@@ -250,8 +250,7 @@ internal sealed partial class ChatManager : IChatManager
         var allAdmins = message.StartsWith('!');
         message = allAdmins ? message.Substring(1) : message;
 
-        var wrappedMessage = Loc.GetString("chat-manager-send-hook-admin-wrap-message", ("senderName", sender), ("message", FormattedMessage.EscapeText(message)));
-        SendAdminChat(sender, wrappedMessage, allAdmins);
+        SendAdminChat(sender, message, allAdmins);
         _adminLogger.Add(LogType.Chat, LogImpact.Low, $"Hook admin from {sender}: {message}");
     }
 
