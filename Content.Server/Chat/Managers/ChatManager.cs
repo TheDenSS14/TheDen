@@ -248,7 +248,7 @@ internal sealed partial class ChatManager : IChatManager
     public void SendHookAdmin(string sender, string message)
     {
         var wrappedMessage = Loc.GetString("chat-manager-send-hook-admin-wrap-message", ("senderName", sender), ("message", FormattedMessage.EscapeText(message)));
-        ChatMessageToAll(ChatChannel.AdminChat, message, wrappedMessage, source: EntityUid.Invalid, hideChat: false, recordReplay: false);
+        SendAdminChat(sender, message);
         _adminLogger.Add(LogType.Chat, LogImpact.Low, $"Hook admin from {sender}: {message}");
     }
 
@@ -350,6 +350,17 @@ internal sealed partial class ChatManager : IChatManager
 
         _discordLink.SendMessage(message, player.Name, ChatChannel.AdminChat);
         _adminLogger.Add(LogType.Chat, $"Admin chat from {player:Player}: {message}");
+    }
+
+    public void SendAdminChat(string player, string message)
+    {
+        var clients = _adminManager.ActiveAdmins.Select(p => p.Channel);
+        var wrappedMessage = Loc.GetString("chat-manager-send-admin-chat-wrap-message",
+            ("adminChannelName", Loc.GetString("chat-manager-admin-channel-name")),
+            ("playerName", player),
+            ("message", FormattedMessage.EscapeText(message)));
+
+        ChatMessageToMany(ChatChannel.Admin, message, wrappedMessage, EntityUid.Invalid, false, true, clients);
     }
 
     #endregion
