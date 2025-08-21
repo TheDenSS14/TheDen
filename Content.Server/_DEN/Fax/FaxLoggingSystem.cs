@@ -1,5 +1,6 @@
 using System.Threading.Tasks;
 using Content.Server.Discord.DiscordLink;
+using Content.Server.GameTicking;
 using Content.Server.Paper;
 using Content.Shared._DEN.Fax;
 using Content.Shared.CCVar;
@@ -18,7 +19,7 @@ public sealed class FaxLoggingSystem : EntitySystem
     [Dependency] private readonly DiscordLink _discordLink = default!;
     [Dependency] private readonly IConfigurationManager _cfg = default!;
     [Dependency] private readonly ILogManager _log = default!;
-    [Dependency] private readonly PaperSystem _paperSystem = default!;
+    [Dependency] private readonly GameTicker _gameTicker = default!;
 
     private ISawmill _sawmill = default!;
     private string? _discordFaxChannelId;
@@ -84,6 +85,7 @@ public sealed class FaxLoggingSystem : EntitySystem
         {
             var stamps = string.Join(", ", msg.StampedBy);
             title += $"\n-# Stamps ({msg.StampedBy.Count}): {stamps}";
+            title += $"\n-# Round ID: #{_gameTicker.RoundId}";
         }
 
         await SendToDiscordWebhook(title);
