@@ -208,3 +208,6 @@
     - Dog
     - TauCetiBasic
   - type: LeashAnchor # Floofstation
+  - type: TemperatureProtection # Dog has fur
+    heatingCoefficient: 1.1
+    coolingCoefficient: 0.1
