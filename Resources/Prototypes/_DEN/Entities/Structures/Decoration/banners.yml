@@ -1,0 +1,9 @@
+- type: entity
+  id: BannerService
+  parent: BannerBase
+  name: service banner
+  description: A banner displaying the colors of the service department. There's orange fur on it.
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Decoration/banner.rsi
+    state: banner_service

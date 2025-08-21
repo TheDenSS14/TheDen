@@ -676,7 +676,7 @@
 - type: trait
   id: BionicArm
   category: TraitsPhysicalAugmentations
-  points: -6
+  points: -3
   requirements:
     - !type:CharacterTraitRequirement
       inverted: true
@@ -694,12 +694,12 @@
     - !type:TraitCyberneticLimbReplacement
       removeBodyPart: Arm
       partSymmetry: Left
-      protoId: JawsOfLifeLeftArm
+      protoId: PryingLeftArm #Den
       slotId: "left arm"
     - !type:TraitCyberneticLimbReplacement
       removeBodyPart: Arm
       partSymmetry: Right
-      protoId: JawsOfLifeRightArm
+      protoId: PryingRightArm #Den
       slotId: "right arm"
     - !type:TraitPushDescription
       descriptionExtensions:
@@ -710,7 +710,7 @@
 - type: trait
   id: BionicArmNoVisuals
   category: TraitsPhysicalAugmentations
-  points: -6
+  points: -3
   requirements:
     - !type:CharacterTraitRequirement
       inverted: true
@@ -736,7 +736,6 @@
       components:
       - type: Prying
         speedModifier: 1.5
-        pryPowered: true
       - type: UseDelay # For insta prying
         delay: 1
 
@@ -1125,15 +1124,11 @@
 - type: trait
   id: BionicLeg
   category: TraitsPhysicalAugmentations
-  points: -8
+  points: -6 #Den
   requirements:
     - !type:CharacterJobRequirement
-      inverted: true
       jobs:
-        - StationAi
-        - Borg
-        - MedicalBorg
-        - Prisoner # Bionics should be "Confiscated" from long term prisoners.
+        - Paramedic #Den
     - !type:CharacterTraitRequirement
       inverted: true
       traits:
@@ -1163,15 +1158,11 @@
 - type: trait
   id: BionicLegNoVisuals
   category: TraitsPhysicalAugmentations
-  points: -8
+  points: -6
   requirements:
     - !type:CharacterJobRequirement
-      inverted: true
       jobs:
-        - StationAi
-        - Borg
-        - MedicalBorg
-        - Prisoner # Bionics should be "Confiscated" from long term prisoners.
+        - Paramedic
     - !type:CharacterTraitRequirement
       inverted: true
       traits:
