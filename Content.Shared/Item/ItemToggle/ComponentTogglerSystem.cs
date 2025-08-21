@@ -34,15 +34,16 @@ public sealed class ComponentTogglerSystem : EntitySystem
 
         var target = component.Parent ? Transform(uid).ParentUid : uid;
 
-            EntityManager.AddComponents(target, component.Components);
-
-            // Begin DeltaV - allow swapping components
-            if (component.DeactivatedComponents is { } deactivatedComps)
-                EntityManager.RemoveComponents(target, deactivatedComps);
-            // End DeltaV
+        EntityManager.AddComponents(target, component.Components);
 
         if (activate)
-            EntityManager.AddComponents(target, component.Components);
+        {
+        // Begin DeltaV - allow swapping components
+        if (component.DeactivatedComponents is { } deactivatedComps)
+            EntityManager.RemoveComponents(target, deactivatedComps);
+        // End DeltaV
+        EntityManager.AddComponents(target, component.Components);
+        }
         else
         {
             EntityManager.RemoveComponents(target, component.RemoveComponents ?? component.Components);
