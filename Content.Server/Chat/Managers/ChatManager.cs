@@ -358,10 +358,7 @@ internal sealed partial class ChatManager : IChatManager
     {
         var applicableAdmins = allAdmins ? _adminManager.AllAdmins : _adminManager.ActiveAdmins;
         var clients = applicableAdmins.Select(p => p.Channel);
-        var wrappedMessage = Loc.GetString("chat-manager-send-admin-chat-wrap-message",
-            ("adminChannelName", Loc.GetString("chat-manager-admin-channel-name")),
-            ("playerName", player),
-            ("message", FormattedMessage.EscapeText(message)));
+        var wrappedMessage = Loc.GetString("chat-manager-send-hook-admin-wrap-message", ("senderName", player), ("message", FormattedMessage.EscapeText(message)));
 
         ChatMessageToMany(ChatChannel.Admin, message, wrappedMessage, EntityUid.Invalid, false, true, clients);
     }
