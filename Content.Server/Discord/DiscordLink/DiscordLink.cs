@@ -25,6 +25,7 @@ public sealed class CommandReceivedEventArgs
     /// The arguments to the command. This is everything after the command
     /// </summary>
     public string Arguments { get; init; } = string.Empty;
+
     /// <summary>
     /// Information about the message that the command was received from. This includes the message content, author, etc.
     /// Use this to reply to the message, delete it, etc.
@@ -162,6 +163,8 @@ public sealed class DiscordLink : IPostInjectInit
         _sawmill = _logManager.GetSawmill("discord.link");
         _sawmillLog = _logManager.GetSawmill("discord.link.log");
     }
+
+    public GatewayClient? Client => _client;
 
     private void OnGuildIdChanged(string guildId)
     {
