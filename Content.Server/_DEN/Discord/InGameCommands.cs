@@ -3,11 +3,12 @@ using Content.Server.Administration.Managers;
 using Content.Server.Administration.Systems;
 using Content.Server.Discord.DiscordLink;
 using Content.Server.Mind;
+using NetCord;
 using Robust.Server.Player;
 using Robust.Shared.Player;
 
 
-namespace Content.Server._DEN.Discord.Discord;
+namespace Content.Server._DEN.Discord;
 
 
 /// <summary>
@@ -30,15 +31,27 @@ public sealed class InGameCommands : EntitySystem
 
     private void OnAdminListCommandRun(CommandReceivedEventArgs args)
     {
+        if (args.Message.Author is not GuildUser guildUser
+            || args.Message.Guild == null
+            || args.Message.Channel == null
+            || (guildUser.GetPermissions(args.Message.Guild) & Permissions.ManageMessages) == 0)
+            return;
+
         var admins = _adminManager.AllAdmins
             .Select(GetAdminListText)
             .Order();
 
-        if (args.Message.Channel == null)
-            return;
-
         var title = "**Admin List**";
-        var adminsListText = string.Join("\n- ", admins);
+        var adminCount = 0;
+        var adminsListText = string.Empty;
+
+        foreach (var admin in admins)
+        {
+            adminsListText += $"- {admin}\n";
+            adminCount++;
+        }
+
+        title += $"\nTotal Admins: {adminCount}\n";
         args.Message.Channel.SendMessageAsync(title + adminsListText);
     }
 
@@ -47,11 +60,23 @@ public sealed class InGameCommands : EntitySystem
         var sessions = _playerManager.Sessions;
         var characters = sessions.Select(GetCharacterListText);
 
-        if (args.Message.Channel == null)
+        if (args.Message.Author is not GuildUser guildUser
+            || args.Message.Guild == null
+            || args.Message.Channel == null
+            || (guildUser.GetPermissions(args.Message.Guild) & Permissions.ManageMessages) == 0)
             return;
 
-        var title = "**Character List**\n";
-        var charactersListText = string.Join("\n- ", characters);
+        var title = "**Character List**";
+        var characterCount = 0;
+        var charactersListText = string.Empty;
+
+        foreach (var character in characters)
+        {
+            charactersListText += $"- {character}\n";
+            characterCount++;
+        }
+
+        title += $"\nTotal Characters: {characterCount}\n";
         args.Message.Channel.SendMessageAsync(title + charactersListText);
     }
 
@@ -70,13 +95,15 @@ public sealed class InGameCommands : EntitySystem
 
         _mindSystem.TryGetMind(session, out _, out var mind);
 
-        var isAdmin = _adminManager.IsAdmin(session, true);
-        var isCurrentlyAdminned = _adminManager.IsAdmin(session) ? " (Adminned)" : " (Deadminned)";
-        var adminText = isAdmin ? isCurrentlyAdminned : string.Empty;
         var cachedPlayerInfo = mind != null && mind.UserId != null ? _adminSystem.GetCachedPlayerInfo(mind.UserId.Value) : null;
         var antag = mind?.UserId != null && (cachedPlayerInfo?.Antag ?? false);
+
+        var isAdmin = _adminManager.IsAdmin(session, true);
+        var isCurrentlyAdminned = _adminManager.IsAdmin(session) ? " (Adminned)" : " (Deadminned)";
+
         var antagText = antag ? "(ANTAG) " : string.Empty;
         var name = MetaData(attachedEntity).EntityName + ", " + session.Data.UserName + " ";
+        var adminText = isAdmin ? isCurrentlyAdminned : string.Empty;
 
         return antagText + name + adminText;
     }
