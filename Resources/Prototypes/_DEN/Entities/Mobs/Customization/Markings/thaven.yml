@@ -134,6 +134,45 @@
   - sprite: Mobs/Customization/misc.rsi
     state: m_gradient_r_arm
 
+- type: marking
+  id: ThavenArmDollJointsTattooRight
+  bodyPart: RArm
+  markingCategory: RightArm
+  speciesRestriction: [ Thaven ]
+  coloring:
+    default:
+      type:
+        !type:TattooColoring
+      fallbackColor: "#666666"
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Thaven/rarm.rsi
+    state: r_arm_doll
+
+- type: marking
+  id: ThavenArmProstheticRight
+  bodyPart: LArm
+  markingCategory: RightArm
+  speciesRestriction: [ Thaven ]
+  followSkinColor: false
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#E4E4E4"
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Thaven/rarm.rsi
+    state: arm_r_prosthetic
+
+- type: marking
+  id: ThavenArmTwistingRight
+  bodyPart: LArm
+  markingCategory: RightArm
+  speciesRestriction: [ Thaven ]
+  followSkinColor: false
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Thaven/rarm.rsi
+    state: arm_r_twisting
+
 # RHand
 
 - type: marking
@@ -155,6 +194,45 @@
   sprites:
   - sprite: Mobs/Customization/misc.rsi
     state: m_gradient_l_arm
+
+- type: marking
+  id: ThavenArmDollJointsTattooLeft
+  bodyPart: LArm
+  markingCategory: LeftArm
+  speciesRestriction: [ Thaven ]
+  coloring:
+    default:
+      type:
+        !type:TattooColoring
+      fallbackColor: "#666666"
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Thaven/larm.rsi
+    state: l_arm_doll
+
+- type: marking
+  id: ThavenArmProstheticLeft
+  bodyPart: LArm
+  markingCategory: LeftArm
+  speciesRestriction: [ Thaven ]
+  followSkinColor: false
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#E4E4E4"
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Thaven/larm.rsi
+    state: arm_l_prosthetic
+
+- type: marking
+  id: ThavenArmTwistingLeft
+  bodyPart: LArm
+  markingCategory: LeftArm
+  speciesRestriction: [ Thaven ]
+  followSkinColor: false
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Thaven/larm.rsi
+    state: arm_l_twisting
 
 # LHand
 
