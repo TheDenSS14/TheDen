@@ -1,20 +1,26 @@
+using System.Linq;
 using System.Threading.Tasks;
+using Content.Server.Database;
 using Content.Server.Discord.DiscordLink;
 using NetCord.Gateway;
+using Robust.Server.Player;
 using Robust.Shared.Network;
+using Robust.Shared.Utility;
 
 
 namespace Content.Server._DEN.Discord;
 
 
 /// <summary>
-/// This handles linking SS14 and discord account
+/// This handles linking SS14 and discord accounts.
 /// </summary>
 public sealed partial class DiscordUserLink : EntitySystem
 {
     [Dependency] private readonly DiscordLink _discordLink = default!;
+    [Dependency] private readonly IPlayerManager _playerManager = default!;
+    [Dependency] private readonly ServerDbManager _db = default!;
 
-    private Dictionary<NetUserId, ulong> _links = new();
+    private HashSet<ActiveDiscordLink> _links = new();
     private HashSet<PendingLink> _pendingLinks = new();
     private HashSet<ulong> _readDisclaimer = new();
 
@@ -26,6 +32,9 @@ public sealed partial class DiscordUserLink : EntitySystem
     /// <inheritdoc/>
     public override void Initialize()
     {
+        base.Initialize();
+
+        _playerManager.PlayerStatusChanged += OnPlayerStatusChanged;
         _discordLink.RegisterCommandCallback(OnVerifyCommandRun, "verify");
         _discordLink.RegisterCommandCallback(OnUnverifyCommandRun, "unverify");
 
@@ -33,36 +42,24 @@ public sealed partial class DiscordUserLink : EntitySystem
         InitializeGame();
     }
 
-    public bool TryGameVerify(string code)
+    public override void Shutdown()
     {
-        // TODO
+        base.Shutdown();
+
+        _playerManager.PlayerStatusChanged -= OnPlayerStatusChanged;
+    }
+
+    public bool TryGameVerify(NetUserId userId, string code)
+    {
+        if (_pendingLinks.All(link => link.Code != code))
+            return false;
+
+        var pendingCode = _pendingLinks.First(link => link.Code == code);
+        _pendingLinks.Remove(pendingCode);
+
+        _links.Add(new(userId, pendingCode.DiscordUserId));
+        UpdatePlayerLink(userId, pendingCode.DiscordUserId);
         return true;
-    }
-
-    private string StartVerify(ulong userId)
-    {
-        var code = GetRandomCode(CodeLength);
-        var pendingLink = new PendingLink(userId, code);
-
-        _pendingLinks.RemoveWhere(link => link.DiscordUserId == userId);
-        _pendingLinks.Add(pendingLink);
-
-        return code;
-    }
-
-    private string GetRandomCode(int length)
-    {
-        var code = string.Empty;
-        var random = new Random();
-
-        for (var i = 0; i < length; i++)
-        {
-            var index = random.Next(0, _combinedApplicableCodeSymbols.Length - 1);
-            var codeSymbol = _combinedApplicableCodeSymbols[index];
-            code += codeSymbol;
-        }
-
-        return code;
     }
 
     private void OnVerifyCommandRun(CommandReceivedEventArgs args)
@@ -84,37 +81,23 @@ public sealed partial class DiscordUserLink : EntitySystem
         var code = StartVerify(args.Message.Author.Id);
 
         Task.Run(async () =>
-            {
-                await args.Message.ReplyAsync("You should have received a code in your direct messages with me. " +
-                    "If you did not, re-run the command after lowering your messaging restrictions.");
-                await SendDirectMessage(args.Message.Author.Id,
-                    $"On the game server, type ``verify {code}`` to verify your discord account.");
-            });
-    }
-
-    private async Task SendDirectMessage(ulong userId, string message)
-    {
-        if (_discordLink.Client == null)
-            return;
-
-        var dm = await _discordLink.Client.Rest.GetDMChannelAsync(userId);
-        await dm.SendMessageAsync(message);
+        {
+            await args.Message.ReplyAsync("You should have received a code in your direct messages with me. " +
+                "If you did not, re-run the command after lowering your messaging restrictions.");
+            await SendDirectMessage(args.Message.Author.Id,
+                $"On the game server, type ``verify {code}`` to verify your discord account.");
+        });
     }
 
     private void OnUnverifyCommandRun(CommandReceivedEventArgs args)
     {
-        // TODO
-    }
-}
+        var authorId = args.Message.Author.Id;
+        args.Message.ReplyAsync("Done!");
 
-public record struct PendingLink
-{
-    public ulong DiscordUserId { get; init; }
-    public string Code { get; init; }
+        if (_links.Any(link => link.DiscordUserId != authorId))
+            return;
 
-    public PendingLink(ulong discordUserId, string code)
-    {
-        DiscordUserId = discordUserId;
-        Code = code;
+        _links.RemoveWhere(link => link.DiscordUserId == authorId);
+        UpdatePlayerLink(authorId, null);
     }
 }

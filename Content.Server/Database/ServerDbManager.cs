@@ -646,6 +646,24 @@ namespace Content.Server.Database
             return RunDbCommand(() => _db.UpdatePlayerRecord(userId, userName, address, hwId));
         }
 
+        public Task UpdateDiscordLink(NetUserId userId, ulong? discordId)
+        {
+            DbWriteOpsMetric.Inc();
+            return RunDbCommand(() => _db.UpdateDiscordLink(userId, discordId));
+        }
+
+        public Task UpdateDiscordLink(ulong associatedDiscordId, ulong? newDiscordId)
+        {
+            DbWriteOpsMetric.Inc();
+            return RunDbCommand(() => _db.UpdateDiscordLink(associatedDiscordId, newDiscordId));
+        }
+
+        public Task<ulong?> GetDiscordLink(NetUserId userId)
+        {
+            DbReadOpsMetric.Inc();
+            return RunDbCommand(() => _db.GetDiscordLink(userId));
+        }
+
         public Task<PlayerRecord?> GetPlayerRecordByUserName(string userName, CancellationToken cancel = default)
         {
             DbReadOpsMetric.Inc();

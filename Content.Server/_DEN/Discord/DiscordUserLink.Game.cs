@@ -1,6 +1,10 @@
+using System.Threading.Tasks;
 using Content.Server.Administration;
 using Content.Shared.Administration;
 using Robust.Shared.Console;
+using Robust.Shared.Enums;
+using Robust.Shared.Network;
+using Robust.Shared.Player;
 
 
 namespace Content.Server._DEN.Discord;
@@ -8,9 +12,24 @@ namespace Content.Server._DEN.Discord;
 
 public sealed partial class DiscordUserLink
 {
-    public void InitializeGame()
-    {
+    public void InitializeGame() {}
 
+    private void OnPlayerStatusChanged(object? sender, SessionStatusEventArgs ev)
+    {
+        if (ev.NewStatus != SessionStatus.Connected)
+            return;
+
+        Task.Run(async () => await SetupPlayerAsync(ev.Session.UserId));
+    }
+
+    private async Task SetupPlayerAsync(NetUserId userId)
+    {
+        var link = await _db.GetDiscordLink(userId);
+
+        if (link is not { } discordId)
+            return;
+
+        _links[userId] = discordId;
     }
 }
 
@@ -26,9 +45,9 @@ public sealed class VerifyCommand : IConsoleCommand
         var entityManager = IoCManager.Resolve<IEntityManager>();
         var discordUserLink = entityManager.System<DiscordUserLink>();
 
-        if (args.Length < 1)
+        if (args.Length < 1 || shell.Player == null)
             return;
 
-        discordUserLink.TryGameVerify(args[0]);
+        discordUserLink.TryGameVerify(shell.Player.UserId, args[0]);
     }
 }
