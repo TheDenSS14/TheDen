@@ -255,7 +255,7 @@
 
 - type: trait
   id: LyreBird
-  category: Auditory
+  category: AASpecies
   points: -10
   requirements:
     - !type:CharacterJobRequirement
@@ -425,7 +425,7 @@
 
 - type: trait
   id: AnomalousPositronics
-  category: Mental
+  category: AASpecies
   points: -4
   functions:
     - !type:TraitRemoveComponent
