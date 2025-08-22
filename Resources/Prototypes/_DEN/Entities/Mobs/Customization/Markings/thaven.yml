@@ -555,6 +555,33 @@
   - sprite: _DEN/Mobs/Customization/Thaven/hair.rsi
     state: oxton_flipped
 
+- type: marking
+  id: Thavengloomy_long
+  bodyPart: Hair
+  markingCategory: Hair
+  speciesRestriction: [ Thaven ]
+  sprites:
+    - sprite: _DEN/Mobs/Customization/Thaven/hair.rsi
+      state: hair_gloomy_long
+
+- type: marking
+  id: Thavengloomy_longer
+  bodyPart: Hair
+  markingCategory: Hair
+  speciesRestriction: [ Thaven ]
+  sprites:
+    - sprite: _DEN/Mobs/Customization/Thaven/hair.rsi
+      state: hair_gloomy_longer
+
+- type: marking
+  id: Thavengloomy_medium
+  bodyPart: Hair
+  markingCategory: Hair
+  speciesRestriction: [ Thaven ]
+  sprites:
+    - sprite: _DEN/Mobs/Customization/Thaven/hair.rsi
+      state: hair_gloomy_medium
+
 # HeadSide
 
 - type: marking

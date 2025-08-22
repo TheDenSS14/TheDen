@@ -155,6 +155,13 @@ marking-ThavenHairVlongfringeF = Very Long with Fringe
 
 marking-ThavenHairOxtonFlipped = Oxton (Flipped)
 
+marking-Thavengloomy_long = Gloomy Long
+
+marking-Thavengloomy_longer = Gloomy Longer
+
+marking-Thavengloomy_medium = Gloomy Medium
+
+
 # HeadSide
 
 marking-ThavenEarsWideEars = Outie Ears
