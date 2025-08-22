@@ -12,7 +12,7 @@
 
 - type: trait
   id: Swashbuckler
-  category: TraitsPhysicalFeats
+  category: AASpecies
   points: -1
   functions:
     - !type:TraitReplaceComponent
@@ -43,7 +43,7 @@
 
 - type: trait
   id: Spearmaster
-  category: TraitsPhysicalFeats
+  category: AASpecies
   points: -1
   functions:
     - !type:TraitReplaceComponent
@@ -73,7 +73,7 @@
 
 - type: trait
   id: WeaponsGeneralist
-  category: TraitsPhysicalFeats
+  category: AASpecies
   points: -1
   functions:
     - !type:TraitReplaceComponent
@@ -103,7 +103,7 @@
 
 - type: trait
   id: Mystic
-  category: Mental
+  category: AASpecies
   points: -1
   functions:
     - !type:TraitReplaceComponent
@@ -146,7 +146,7 @@
 
 - type: trait
   id: ShadowkinBlackeye
-  category: Mental
+  category: AASpecies
   points: 4
   functions:
     - !type:TraitReplaceComponent
@@ -169,7 +169,7 @@
 
 - type: trait
   id: MothFlight
-  category: TraitsPhysicalBiological
+  category: AASpecies
   points: -5
   functions:
     - !type:TraitAddComponent

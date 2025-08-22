@@ -399,7 +399,7 @@
 
 - type: trait # TheDen - Thaven-specific version of Small
   id: SmallThaven
-  category: TraitsPhysicalBiological
+  category: AASpecies
   points: -2
   requirements:
     - !type:CharacterJobRequirement
@@ -569,7 +569,7 @@
 
 - type: trait
   id: NaturalWeaponRemoval
-  category: TraitsPhysicalBiological
+  category: AASpecies
   points: 0
   requirements:
     - !type:CharacterJobRequirement
@@ -1221,7 +1221,7 @@
 
 - type: trait
   id: FlareShieldingModule
-  category: TraitsPhysicalAugmentations
+  category: AASpecies
   points: -4
   requirements:
     - !type:CharacterJobRequirement
@@ -1253,7 +1253,7 @@
 
 - type: trait
   id: SecurityEyesModule
-  category: TraitsPhysicalAugmentations
+  category: AASpecies
   points: -1
   requirements:
     - !type:CharacterJobRequirement
@@ -1284,7 +1284,7 @@
 
 - type: trait
   id: MedicalEyesModule
-  category: TraitsPhysicalAugmentations
+  category: AASpecies
   points: -2
   requirements:
     - !type:CharacterJobRequirement
@@ -1315,7 +1315,7 @@
 
 - type: trait
   id: DiagnosticEyesModule
-  category: TraitsPhysicalAugmentations
+  category: AASpecies
   points: -2
   requirements:
     - !type:CharacterJobRequirement
@@ -1344,7 +1344,7 @@
 
 - type: trait
   id: OmniEyesModule
-  category: TraitsPhysicalAugmentations
+  category: AASpecies
   points: -3
   requirements:
     - !type:CharacterJobRequirement
@@ -1391,7 +1391,7 @@
 
 - type: trait
   id: LightAmplificationModule
-  category: TraitsPhysicalAugmentations
+  category: AASpecies
   points: -4
   requirements:
     - !type:CharacterJobRequirement
@@ -1411,7 +1411,7 @@
 
 - type: trait
   id: ThermographicVisionModule
-  category: TraitsPhysicalAugmentations
+  category: AASpecies
   points: -4
   requirements:
     - !type:CharacterJobRequirement

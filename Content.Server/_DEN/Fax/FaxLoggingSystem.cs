@@ -51,6 +51,7 @@ public sealed class FaxLoggingSystem : EntitySystem
         }
 
         var content = FormattedMessage.RemoveMarkupPermissive(msg.Content);
+        msg.Content = content;
         SendToWebhook(msg);
     }
 
