@@ -3,11 +3,12 @@ using Content.Server.Administration.Managers;
 using Content.Server.Administration.Systems;
 using Content.Server.Discord.DiscordLink;
 using Content.Server.Mind;
+using NetCord;
 using Robust.Server.Player;
 using Robust.Shared.Player;
 
 
-namespace Content.Server._DEN.Discord.Discord;
+namespace Content.Server._DEN.Discord;
 
 
 /// <summary>
@@ -30,15 +31,27 @@ public sealed class InGameCommands : EntitySystem
 
     private void OnAdminListCommandRun(CommandReceivedEventArgs args)
     {
+        if (args.Message.Author is not GuildUser guildUser
+            || args.Message.Guild == null
+            || args.Message.Channel == null
+            || (guildUser.GetPermissions(args.Message.Guild) & Permissions.ManageMessages) == 0)
+            return;
+
         var admins = _adminManager.AllAdmins
             .Select(GetAdminListText)
             .Order();
 
-        if (args.Message.Channel == null)
-            return;
-
         var title = "**Admin List**";
-        var adminsListText = string.Join("\n- ", admins);
+        var adminCount = 0;
+        var adminsListText = string.Empty;
+
+        foreach (var admin in admins)
+        {
+            adminsListText += $"- {admin}\n";
+            adminCount++;
+        }
+
+        title += $"\nTotal Admins: {adminCount}\n";
         args.Message.Channel.SendMessageAsync(title + adminsListText);
     }
 
@@ -47,7 +60,10 @@ public sealed class InGameCommands : EntitySystem
         var sessions = _playerManager.Sessions;
         var characters = sessions.Select(GetCharacterListText);
 
-        if (args.Message.Channel == null)
+        if (args.Message.Author is not GuildUser guildUser
+            || args.Message.Guild == null
+            || args.Message.Channel == null
+            || (guildUser.GetPermissions(args.Message.Guild) & Permissions.ManageMessages) == 0)
             return;
 
         var title = "**Character List**\n";
