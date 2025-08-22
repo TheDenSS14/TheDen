@@ -73,14 +73,9 @@ public sealed class DiscordChatLink
         var contents = message.Content.ReplaceLineEndings(" ");
 
         if (message.ChannelId == _oocChannelId)
-        {
-            _sawmill.Info("sending");
             _taskManager.RunOnMainThread(() => _chatManager.SendHookOOC(message.Author.Username, contents));
-        }
         else if (message.ChannelId == _adminChannelId)
-        {
             _taskManager.RunOnMainThread(() => _chatManager.SendHookAdmin(message.Author.Username, contents));
-        }
     }
 
     public async Task SendMessage(string message, string author, ChatChannel channel)
