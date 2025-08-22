@@ -18,13 +18,17 @@ public sealed class DiscordChatLink
     [Dependency] private readonly DiscordLink _discordLink = default!;
     [Dependency] private readonly IConfigurationManager _configurationManager = default!;
     [Dependency] private readonly IChatManager _chatManager = default!;
+    [Dependency] private readonly ILogManager _logManager = default!;
     [Dependency] private readonly ITaskManager _taskManager = default!;
+
+    private ISawmill _sawmill = default!;
 
     private ulong? _oocChannelId;
     private ulong? _adminChannelId;
 
     public void Initialize()
     {
+        _sawmill = _logManager.GetSawmill("discordchatlink");
         _discordLink.OnMessageReceived += OnMessageReceived;
 
         _configurationManager.OnValueChanged(CCVars.OocDiscordChannelId, OnOocChannelIdChanged, true);
@@ -70,6 +74,7 @@ public sealed class DiscordChatLink
 
         if (message.ChannelId == _oocChannelId)
         {
+            _sawmill.Info("sending");
             _taskManager.RunOnMainThread(() => _chatManager.SendHookOOC(message.Author.Username, contents));
         }
         else if (message.ChannelId == _adminChannelId)
