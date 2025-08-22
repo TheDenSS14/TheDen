@@ -66,8 +66,17 @@ public sealed class InGameCommands : EntitySystem
             || (guildUser.GetPermissions(args.Message.Guild) & Permissions.ManageMessages) == 0)
             return;
 
-        var title = "**Character List**\n";
-        var charactersListText = string.Join("\n- ", characters);
+        var title = "**Character List**";
+        var characterCount = 0;
+        var charactersListText = string.Empty;
+
+        foreach (var character in characters)
+        {
+            charactersListText += $"- {character}\n";
+            characterCount++;
+        }
+
+        title += $"\nTotal Characters: {characterCount}\n";
         args.Message.Channel.SendMessageAsync(title + charactersListText);
     }
 
@@ -86,13 +95,15 @@ public sealed class InGameCommands : EntitySystem
 
         _mindSystem.TryGetMind(session, out _, out var mind);
 
-        var isAdmin = _adminManager.IsAdmin(session, true);
-        var isCurrentlyAdminned = _adminManager.IsAdmin(session) ? " (Adminned)" : " (Deadminned)";
-        var adminText = isAdmin ? isCurrentlyAdminned : string.Empty;
         var cachedPlayerInfo = mind != null && mind.UserId != null ? _adminSystem.GetCachedPlayerInfo(mind.UserId.Value) : null;
         var antag = mind?.UserId != null && (cachedPlayerInfo?.Antag ?? false);
+
+        var isAdmin = _adminManager.IsAdmin(session, true);
+        var isCurrentlyAdminned = _adminManager.IsAdmin(session) ? " (Adminned)" : " (Deadminned)";
+
         var antagText = antag ? "(ANTAG) " : string.Empty;
         var name = MetaData(attachedEntity).EntityName + ", " + session.Data.UserName + " ";
+        var adminText = isAdmin ? isCurrentlyAdminned : string.Empty;
 
         return antagText + name + adminText;
     }
