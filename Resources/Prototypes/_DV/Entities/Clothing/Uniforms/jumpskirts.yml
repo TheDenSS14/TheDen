@@ -45,6 +45,46 @@
   - type: Clothing
     sprite: _DV/Clothing/Uniforms/Jumpskirt/security_blue.rsi
 
+# Corpsman alt uniforms
+
+- type: entity
+  parent: ClothingUniformRollableBase
+  id: ClothingUniformJumpskirtBrigmedicTurtle
+  name: corpsman's turtleneck
+  description: A comfortable and tight-fitting turtleneck for those with the dedication to reach the position of Corpsman.
+  components:
+  - type: Sprite
+    sprite: _DV/Clothing/Uniforms/Jumpskirt/brigmedic_alt.rsi
+  - type: Clothing
+    sprite: _DV/Clothing/Uniforms/Jumpskirt/brigmedic_alt.rsi
+
+# Detective uniform
+
+- type: entity
+  parent: ClothingUniformRollableBase
+  id: ClothingUniformJumpskirtForensicSpec
+  name: detective's jumpskirt
+  description: A white shirt and slate skirt, for forensic specialists.
+  components:
+  - type: Sprite
+    sprite: _DV/Clothing/Uniforms/Jumpskirt/detective.rsi
+  - type: Clothing
+    sprite: _DV/Clothing/Uniforms/Jumpskirt/detective.rsi
+
+# Senior Officer uniform
+
+- type: entity
+  parent: ClothingUniformRollableBase
+  id: ClothingUniformJumpskirtSecSenior
+  name: senior officer's jumpskirt
+  description: A tight-fitting tactical jumpsuit, made of light and breathable yet durable material. Can be worn all year round.
+  components:
+  - type: Sprite
+    sprite: _DV/Clothing/Uniforms/Jumpskirt/seniorofficer.rsi
+  - type: Clothing
+    sprite: _DV/Clothing/Uniforms/Jumpskirt/seniorofficer.rsi
+
+
 # Warden alt uniforms
 
 - type: entity
@@ -69,6 +109,29 @@
   - type: Clothing
     sprite: _DV/Clothing/Uniforms/Jumpskirt/warden_grey.rsi
 
+- type: entity
+  parent: ClothingUniformRollableBase
+  id: ClothingUniformJumpskirtWardenTurtle
+  name: warden's turtleneck
+  description: A comfortable and tight-fitting turtleneck for those with the patience to reach the position of Warden.
+  components:
+  - type: Sprite
+    sprite: _DV/Clothing/Uniforms/Jumpskirt/armourer_alt.rsi
+  - type: Clothing
+    sprite: _DV/Clothing/Uniforms/Jumpskirt/armourer_alt.rsi
+
+# Prison Guard Jumpskirt
+
+- type: entity
+  parent: ClothingUniformJumpsuitPrisonGuard
+  id: ClothingUniformJumpskirtPrisonGuard
+  name: prison guard's jumpskirt
+  components:
+  - type: Sprite
+    sprite: _DV/Clothing/Uniforms/Jumpskirt/prisonguard.rsi
+  - type: Clothing
+    sprite: _DV/Clothing/Uniforms/Jumpskirt/prisonguard.rsi
+
 # HoS alt uniforms
 
 - type: entity
@@ -92,6 +155,17 @@
     sprite: _DV/Clothing/Uniforms/Jumpskirt/hos_grey.rsi
   - type: Clothing
     sprite: _DV/Clothing/Uniforms/Jumpskirt/hos_grey.rsi
+
+- type: entity
+  parent: ClothingUniformRollableBase
+  id: ClothingUniformJumpskirtHoSTurtle
+  name: head of security's turtleneck
+  description: A comfortable and tight-fitting turtleneck for those with the tenacity to reach the position of Head of Security.
+  components:
+  - type: Sprite
+    sprite: _DV/Clothing/Uniforms/Jumpskirt/hos_alt.rsi
+  - type: Clothing
+    sprite: _DV/Clothing/Uniforms/Jumpskirt/hos_alt.rsi
 
 # Central Command Uniform - ported from Velta
 
