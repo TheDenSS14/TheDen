@@ -73,20 +73,14 @@ public sealed partial class DiscordUserLink
         return user;
     }
 
-    private void UpdatePlayerLink(ulong associatedDiscordId, ulong? newDiscordId)
+    private async void UpdatePlayerLink(ulong associatedDiscordId, ulong? newDiscordId)
     {
-        Task.Run(async () =>
-        {
-            await _db.UpdateDiscordLink(associatedDiscordId, newDiscordId);
-        });
+        await _db.UpdateDiscordLink(associatedDiscordId, newDiscordId);
     }
 
-    private void UpdatePlayerLink(NetUserId userId, ulong? newDiscordId)
+    private async void UpdatePlayerLink(NetUserId userId, ulong? newDiscordId)
     {
-        Task.Run(async () =>
-        {
-            await _db.UpdateDiscordLink(userId, newDiscordId);
-        });
+        await _db.UpdateDiscordLink(userId, newDiscordId);
     }
 
     private string StartVerify(ulong userId)
