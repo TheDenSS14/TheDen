@@ -58,7 +58,7 @@ public sealed class VerifyCommand : IConsoleCommand
             return;
 
         var success = discordUserLink.TryGameVerify(shell.Player.UserId, args[0]);
-        var not = success ? string.Empty : " not";
-        shell.WriteLine($"Your discord account has{not} been verified.");
+        var successText = success ? string.Empty : " not";
+        shell.WriteLine($"Your discord account has{successText} been verified.");
     }
 }
