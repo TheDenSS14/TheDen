@@ -9,3 +9,14 @@
   - type: WearerGetsExamineText
     examineText: obvious-desc-colors
     thing: obvious-thing-scarf
+
+- type: entity
+  parent: ClothingNeckScarfBase
+  id: ClothingNeckScarfWrapped
+  name: wrapped scarf
+  description: An extra long scarf that bundles around your neck to keep you warm.
+  components:
+  - type: Sprite
+    sprite: _Impstation/Clothing/Neck/Scarfs/wrappedscarfwhite.rsi
+  - type: Clothing
+    sprite: _Impstation/Clothing/Neck/Scarfs/wrappedscarfwhite.rsi

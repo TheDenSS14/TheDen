@@ -52,6 +52,7 @@
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Runtime.InteropServices;
+using Content.Server._DEN.Discord;
 using Content.Server.Administration.Logs;
 using Content.Server.Administration.Managers;
 using Content.Server.Administration.Systems;
@@ -97,6 +98,8 @@ internal sealed partial class ChatManager : IChatManager
     [Dependency] private readonly ISharedPlayerManager _player = default!;
     [Dependency] private readonly DiscordChatLink _discordLink = default!;
 
+    private DiscordUserLink? _discordUserLink; // DEN: listen. i know.
+
     /// <summary>
     /// The maximum length a player-sent message can be sent
     /// </summary>
@@ -114,6 +117,8 @@ internal sealed partial class ChatManager : IChatManager
 
         _configurationManager.OnValueChanged(CCVars.OocEnabled, OnOocEnabledChanged, true);
         _configurationManager.OnValueChanged(CCVars.AdminOocEnabled, OnAdminOocEnabledChanged, true);
+
+        _discordUserLink = _entityManager.System<DiscordUserLink>();
 
         RegisterRateLimits();
     }
@@ -312,9 +317,18 @@ internal sealed partial class ChatManager : IChatManager
             var prefs = _preferencesManager.GetPreferences(player.UserId);
             colorOverride = prefs.AdminOOCColor;
         }
-        if (  _netConfigManager.GetClientCVar(player.Channel, CCVars.ShowOocPatronColor) && player.Channel.UserData.PatronTier is { } patron && PatronOocColors.TryGetValue(patron, out var patronColor))
+
+        if (_netConfigManager.GetClientCVar(player.Channel, CCVars.ShowOocPatronColor)
+            && player.Channel.UserData.PatronTier is { } patron && PatronOocColors.TryGetValue(patron, out var patronColor))
         {
             wrappedMessage = Loc.GetString("chat-manager-send-ooc-patron-wrap-message", ("patronColor", patronColor),("playerName", player.Name), ("message", FormattedMessage.EscapeText(message)));
+        }
+
+        if (_netConfigManager.GetClientCVar(player.Channel, CCVars.ShowOocPatronColor)
+            && _discordUserLink!.IsPatron(player.UserId))
+        {
+            var colorPair = PatronOocColors.First();
+            wrappedMessage = Loc.GetString("chat-manager-send-ooc-patron-wrap-message", ("patronColor", colorPair.Value),("playerName", player.Name), ("message", FormattedMessage.EscapeText(message)));
         }
 
         //TODO: player.Name color, this will need to change the structure of the MsgChatMessage
