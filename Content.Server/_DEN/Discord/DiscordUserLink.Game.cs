@@ -1,3 +1,4 @@
+using System.Linq;
 using System.Threading.Tasks;
 using Content.Server.Administration;
 using Content.Shared.Administration;
@@ -26,10 +27,18 @@ public sealed partial class DiscordUserLink
     {
         var link = await _db.GetDiscordLink(userId);
 
-        if (link is not { } discordId)
+        if (link is not { } discordId
+            || _links.Any(targetLink => targetLink.DiscordUserId == discordId))
             return;
 
-        _links[userId] = discordId;
+        if (_discordLink.Client != null &&
+            _discordLink.Client.Cache.Guilds.TryGetValue(_discordLink.GuildId, out var guild))
+        {
+            var guildUser = await _discordLink.Client.Rest.GetGuildUserAsync(_discordLink.GuildId, discordId);
+            _discordLink.Client.Cache.CacheGuildUser(guildUser);
+        }
+
+        _links.Add(new(userId, discordId));
     }
 }
 
@@ -48,6 +57,8 @@ public sealed class VerifyCommand : IConsoleCommand
         if (args.Length < 1 || shell.Player == null)
             return;
 
-        discordUserLink.TryGameVerify(shell.Player.UserId, args[0]);
+        var success = discordUserLink.TryGameVerify(shell.Player.UserId, args[0]);
+        var not = success ? string.Empty : " not";
+        shell.WriteLine($"Your discord account has{not} been verified.");
     }
 }

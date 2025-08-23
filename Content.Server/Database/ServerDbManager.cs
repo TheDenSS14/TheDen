@@ -219,6 +219,12 @@ namespace Content.Server.Database
         Task<PlayerRecord?> GetPlayerRecordByUserId(NetUserId userId, CancellationToken cancel = default);
         #endregion
 
+        #region Discord Linking
+        Task UpdateDiscordLink(NetUserId userId, ulong? discordId);
+        Task UpdateDiscordLink(ulong associatedDiscordId, ulong? discordId);
+        Task<ulong?> GetDiscordLink(NetUserId userId);
+        #endregion
+
         #region Connection Logs
         /// <returns>ID of newly inserted connection log row.</returns>
         Task<int> AddConnectionLogAsync(

@@ -18,21 +18,25 @@ public sealed partial class DiscordUserLink : EntitySystem
 {
     [Dependency] private readonly DiscordLink _discordLink = default!;
     [Dependency] private readonly IPlayerManager _playerManager = default!;
-    [Dependency] private readonly ServerDbManager _db = default!;
+    [Dependency] private readonly IServerDbManager _db = default!;
+    [Dependency] private readonly ILogManager _log = default!;
 
     private HashSet<ActiveDiscordLink> _links = new();
     private HashSet<PendingLink> _pendingLinks = new();
     private HashSet<ulong> _readDisclaimer = new();
+    private ISawmill _sawmill = default!;
 
     private const string Letters = "abcdefghijklmnopqrstuvwxyz";
     private const string Numbers = "0123456789";
     private const int CodeLength = 6;
+
     private string _combinedApplicableCodeSymbols = Letters + Numbers;
 
     /// <inheritdoc/>
     public override void Initialize()
     {
         base.Initialize();
+        _sawmill = _log.GetSawmill("userlink");
 
         _playerManager.PlayerStatusChanged += OnPlayerStatusChanged;
         _discordLink.RegisterCommandCallback(OnVerifyCommandRun, "verify");
@@ -66,6 +70,7 @@ public sealed partial class DiscordUserLink : EntitySystem
     {
         if (args.Arguments.StartsWith("confirm") && _readDisclaimer.Contains(args.Message.Author.Id))
         {
+            _readDisclaimer.Remove(args.Message.Author.Id);
             OnConfirmationReceived(args);
             return;
         }

@@ -105,12 +105,8 @@ public sealed class DiscordLink : IPostInjectInit
 
         _client = new GatewayClient(new BotToken(token), new GatewayClientConfiguration()
         {
-            Intents = GatewayIntents.Guilds
-                             | GatewayIntents.GuildUsers
-                             | GatewayIntents.GuildMessages
-                             | GatewayIntents.MessageContent
-                             | GatewayIntents.DirectMessages,
-            Logger = new DiscordSawmillLogger(_sawmillLog),
+            Intents = GatewayIntents.All,
+            Logger = new DiscordSawmillLogger(_sawmillLog)
         });
         _client.MessageCreate += OnCommandReceivedInternal;
         _client.MessageCreate += OnMessageReceivedInternal;
@@ -165,6 +161,7 @@ public sealed class DiscordLink : IPostInjectInit
     }
 
     public GatewayClient? Client => _client;
+    public ulong GuildId => _guildId;
 
     private void OnGuildIdChanged(string guildId)
     {
