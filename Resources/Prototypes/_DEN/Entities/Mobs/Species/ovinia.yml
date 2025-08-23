@@ -53,7 +53,7 @@
     understands:
     - TauCetiBasic
     - Caprine
-  - type: StepTriggerImmune
+  - type: ProtectedFromStepTriggers
     whitelist:
       types:
         - Shard

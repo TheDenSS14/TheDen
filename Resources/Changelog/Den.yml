@@ -10230,3 +10230,629 @@ Entries:
   id: 994
   time: '2025-08-16T07:11:07.0000000+00:00'
   url: https://github.com/TheDenSS14/TheDen/pull/1444
+- author: ZigTag
+  changes:
+    - type: Add
+      message: metal hydrogen armor, helmet, axe and atmosian armor
+  id: 995
+  time: '2025-08-16T16:12:20.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1439
+- author: Swiss_Fox
+  changes:
+    - type: Add
+      message: >-
+        Added more rooms to Gravel! Play some games at the arcade, then find the
+        hidden syndie hideout
+  id: 996
+  time: '2025-08-16T20:34:25.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1271
+- author: SirWarock
+  changes:
+    - type: Add
+      message: >-
+        Added Security Ponchos! And normal ones! Perfect for a Glacier
+        Greenshift!
+  id: 997
+  time: '2025-08-17T11:25:48.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1308
+- author: SirWarock
+  changes:
+    - type: Tweak
+      message: Rotating items is now predicted - The UI won't bounce anymore!
+  id: 998
+  time: '2025-08-18T02:38:34.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1479
+- author: sleepyyapril
+  changes:
+    - type: Fix
+      message: >-
+        Subtle OOC will no longer make you act professional as if it was a
+        normal IC channel.
+  id: 999
+  time: '2025-08-18T02:46:40.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1481
+- author: SirWarock
+  changes:
+    - type: Fix
+      message: >-
+        Tending wounds via surgery will now heal according to the damage of the
+        limb instead of the general damage - No longer will your surgery speed
+        decrease after having healed the general damage!
+    - type: Tweak
+      message: >-
+        Nerfed Surgery Effectiveness on dead patients from 0.2 to 0.1. Get your
+        patient back to life as quickly as possible if you want to be efficient!
+    - type: Tweak
+      message: You can no longer treat wounds on limbs that have no injuries.
+  id: 1000
+  time: '2025-08-18T03:38:23.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1477
+- author: Jakumba
+  changes:
+    - type: Add
+      message: Repair focused loadout for the ERT engineer.
+  id: 1001
+  time: '2025-08-18T03:44:08.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1478
+- author: ZigTag
+  changes:
+    - type: Fix
+      message: suit sensors should be able to turn on again
+  id: 1002
+  time: '2025-08-18T03:44:25.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1472
+- author: Jakumba
+  changes:
+    - type: Remove
+      message: Dragon bleeding immunity
+    - type: Tweak
+      message: Reduced the amount of healing dragons get from devour
+    - type: Tweak
+      message: Rifts now take longer to stabilise 5 => 7 minutes
+    - type: Tweak
+      message: Dragon heat resistance 75 => 50%
+    - type: Tweak
+      message: Dragon heat flat damage reduction 5 => 2
+    - type: Tweak
+      message: Dragon brute flat damage reduction 0 => 2
+    - type: Tweak
+      message: Dragon ichor injected upon Devor 15u => 10u
+    - type: Tweak
+      message: Dragon passive healing per tick 0.34 => 0.3
+    - type: Tweak
+      message: Carp spawned on Rise Carp! 3 => 2
+    - type: Tweak
+      message: Increased Rift healing per tick 3 => 4
+    - type: Tweak
+      message: Increased Fireball cooldown 5 => 15 seconds
+  id: 1003
+  time: '2025-08-18T03:44:52.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1476
+- author: SirWarock
+  changes:
+    - type: Fix
+      message: >-
+        Fixed Chemicals with the EvenHealing attribute to not work on patient's
+        limbs without General Damage. Aloxadone will now finally heal the burned
+        Salvager's limbs.
+  id: 1004
+  time: '2025-08-18T03:47:47.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1469
+- author: Tirochora
+  changes:
+    - type: Fix
+      message: Hidden bionic limbs do more than just tell people that you have them.
+  id: 1005
+  time: '2025-08-18T03:48:10.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1464
+- author: Shaman
+  changes:
+    - type: Tweak
+      message: >-
+        Many generic prosthetic/tattoo/gradient markings are now mirrored on
+        east/west sprites as temporary triage for SS14's lack of east/west
+        layering orders (no more meat feet)
+  id: 1006
+  time: '2025-08-18T03:49:13.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1455
+- author: SirWarock
+  changes:
+    - type: Tweak
+      message: Changed the storage bounds and sprites for many melee weapons!
+    - type: Tweak
+      message: Changed how the double katana sheaths store their katanas!
+  id: 1007
+  time: '2025-08-18T03:49:52.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1373
+- author: ZigTag
+  changes:
+    - type: Tweak
+      message: 'borgs no longer destroy glass shards '
+  id: 1008
+  time: '2025-08-18T03:51:26.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1440
+- author: Aikakakah
+  changes:
+    - type: Add
+      message: Added dildoes to lewd loadout
+    - type: Tweak
+      message: Changed lewd loadout to allow for multiple items.
+  id: 1009
+  time: '2025-08-18T04:16:15.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1459
+- author: Tomce795
+  changes:
+    - type: Add
+      message: >-
+        Almost every instrument has been updated to a new soundfont
+        (GeneralUser-GS), unifying all operating systems and massively improving
+        the sound of certain instruments.
+  id: 1010
+  time: '2025-08-18T04:22:47.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1471
+- author: sleepyyapril
+  changes:
+    - type: Fix
+      message: You can colon three in subtle OOC now.
+  id: 1011
+  time: '2025-08-18T20:21:00.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1482
+- author: sleepyyapril
+  changes:
+    - type: Add
+      message: >-
+        Added a new single clap emote! Claps once, claps (possessive pronoun)
+        hands together, or clap are all valid ways to trigger this emote!
+  id: 1012
+  time: '2025-08-18T20:22:04.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1484
+- author: BarryNorfolk
+  changes:
+    - type: Add
+      message: >-
+        Added a history tab to the bounty computer, showing all past completed
+        and skipped orders (and who skipped them).
+  id: 1013
+  time: '2025-08-18T20:27:01.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1483
+- author: Eightballll
+  changes:
+    - type: Add
+      message: Added Kobold hologram!
+    - type: Add
+      message: Added Monkey hologram!
+  id: 1014
+  time: '2025-08-18T20:48:36.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1485
+- author: Shaman
+  changes:
+    - type: Tweak
+      message: Characters aged 18-24 are now "young adult"
+    - type: Tweak
+      message: Characters aged 25-39 are now "adult"
+    - type: Tweak
+      message: Characters aged 40-54 are now "middle-aged"
+    - type: Tweak
+      message: Characters aged 55-69 are now "older" and "elderly" beyond that
+    - type: Tweak
+      message: Characters aged 250+ years are "ancient" (currently only IPCs)
+    - type: Tweak
+      message: >-
+        Arachne, plasmamen, shadowkin, and IPCs have their species-specific age
+        ranges on their guidebook pages
+  id: 1015
+  time: '2025-08-19T10:03:13.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1487
+- author: MajorMoth
+  changes:
+    - type: Tweak
+      message: >-
+        Temporarily made translators not drain any power until the issues with
+        them are fixed. They still need a battery with even a minimal charge to
+        turn on, though. Happy yapping!
+  id: 1016
+  time: '2025-08-19T10:04:28.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1494
+- author: RosySaturniidae
+  changes:
+    - type: Fix
+      message: philterex shouldn't kill you now
+  id: 1017
+  time: '2025-08-19T10:05:30.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1489
+- author: Shaman
+  changes:
+    - type: Tweak
+      message: >-
+        Widened the language menu a little so TCB-SL stops running off the side
+        (you can still shrink it if you want though)
+  id: 1018
+  time: '2025-08-19T10:06:20.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1491
+- author: SirWarock
+  changes:
+    - type: Fix
+      message: >-
+        Fixed Shadowkins not getting proper psionic powers and being stuck with
+        basic ones.
+    - type: Tweak
+      message: Shadowkins now get a free psionic roundstart like everyone else.
+    - type: Tweak
+      message: >-
+        Increased Shadowkin's potentia modifier to the level of a kitsune. They
+        cannot take the high potentia trait anymore.
+  id: 1019
+  time: '2025-08-19T10:08:09.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1495
+- author: SirWarock
+  changes:
+    - type: Add
+      message: >-
+        Added Jetinjector - Trust me, you'll want these and never look back at
+        the normal Syringes.
+  id: 1020
+  time: '2025-08-19T12:55:53.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1445
+- author: Jakumba
+  changes:
+    - type: Tweak
+      message: Maintenance Drones have a new law 0, to obey the station AI.
+  id: 1021
+  time: '2025-08-19T17:10:23.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1499
+- author: WizDen
+  changes:
+    - type: Add
+      message: The AI eye now has a postscript with the name of AI itself.
+  id: 1022
+  time: '2025-08-19T17:10:37.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1498
+- author: Hederadaii
+  changes:
+    - type: Add
+      message: Added 51 new wall pride flags!
+    - type: Tweak
+      message: >-
+        Altered the original trans flag to rotate like the new ones, so it
+        doesn't go or wacky when the perspective is changed.
+  id: 1023
+  time: '2025-08-19T17:12:10.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1490
+- author: Eightballll
+  changes:
+    - type: Tweak
+      message: >-
+        Changed the Tuxedo Sunset's taste to something more fitting it's
+        inspiration.
+  id: 1024
+  time: '2025-08-19T17:12:59.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1486
+- author: ZigTag
+  changes:
+    - type: Tweak
+      message: >-
+        moved chat highlighting to general settings under the accessibility
+        section
+    - type: Remove
+      message: '''extra'' tab in options'
+  id: 1025
+  time: '2025-08-19T17:13:41.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1473
+- author: Eightballll
+  changes:
+    - type: Add
+      message: pAIs can now emote like borgs! Beep, boop, chime and more!
+    - type: Add
+      message: >-
+        pAIs now get access to a software catalogue, to pick any programs they
+        may wish to use.
+    - type: Add
+      message: >-
+        Golden PAI was added! It's worth more than you could make in a lifetime.
+        It's found in maint lockers and fishing!
+  id: 1026
+  time: '2025-08-19T17:16:45.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1488
+- author: ShepardToTheStars
+  changes:
+    - type: Fix
+      message: Fixed Hellshifts not happening on High Danger. Lets. Get. Dangerous.
+    - type: Tweak
+      message: 'Whiskey. Echo. Whiskey. Roundstart traitors now happen on High Danger. '
+    - type: Tweak
+      message: >-
+        Increased max number of sleepers up to a maximum of 5, depending on
+        number of people playing.
+  id: 1027
+  time: '2025-08-19T21:53:08.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1500
+- author: sleepyyapril
+  changes:
+    - type: Add
+      message: Rodentia now have a thump emote. *thumps.
+  id: 1028
+  time: '2025-08-19T22:29:10.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1504
+- author: Jakumba
+  changes:
+    - type: Add
+      message: Nightvision to Replicators, no more spamming thermals!
+    - type: Tweak
+      message: Xenos NV and thermals are now a purple color.
+  id: 1029
+  time: '2025-08-19T23:30:52.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1502
+- author: Eillyrea
+  changes:
+    - type: Tweak
+      message: Updated Hallway between Logi/Med + Updated NTR room
+    - type: Fix
+      message: Minor Bugs & Errors
+  id: 1030
+  time: '2025-08-20T02:27:52.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1475
+- author: juniwoofs
+  changes:
+    - type: Add
+      message: Added 3 new options for vulpkanin chest fluff and 2 for back fluff
+  id: 1031
+  time: '2025-08-20T04:50:12.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1507
+- author: Sha-Seng
+  changes:
+    - type: Add
+      message: Sentimental Collar (colorable) as a general item in loadout (not neck!)
+  id: 1032
+  time: '2025-08-20T04:50:28.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1506
+- author: SirWarock
+  changes:
+    - type: Add
+      message: Added a radio and ID slot to Laika!
+    - type: Add
+      message: Added a radio, ID and pocket slot to Shiva and Silvia!
+  id: 1033
+  time: '2025-08-20T04:53:01.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1503
+- author: juniwoofs
+  changes:
+    - type: Tweak
+      message: Changed bionic arms to function only as crowbars, no more budget AA
+    - type: Tweak
+      message: >-
+        Changed speed legs to be restricted to paramed and dropped the cost to 6
+        points
+  id: 1034
+  time: '2025-08-20T07:01:26.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1508
+- author: sleepyyapril
+  changes:
+    - type: Tweak
+      message: >-
+        Denified Hellshift, it is now about 1 event every 6 minutes with a
+        higher percentage of things like Carp Vents rather than replicators or
+        dragons
+  id: 1035
+  time: '2025-08-20T07:02:53.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1509
+- author: juniwoofs
+  changes:
+    - type: Add
+      message: Added one more vulp back marking
+  id: 1036
+  time: '2025-08-20T07:37:11.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1510
+- author: DeltaV
+  changes:
+    - type: Add
+      message: >-
+        Station AI can now choose from a selection of programs roundstart to
+        expand its abilities
+  id: 1037
+  time: '2025-08-20T21:26:36.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1497
+- author: Zephyrpak
+  changes:
+    - type: Tweak
+      message: Made the lowest moodlet sprite less disturbing.
+  id: 1038
+  time: '2025-08-21T02:20:55.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1519
+- author: juniwoofs
+  changes:
+    - type: Add
+      message: Added the service banner for mappers to use on their maps!
+  id: 1039
+  time: '2025-08-21T05:42:46.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1521
+- author: SirWarock
+  changes:
+    - type: Tweak
+      message: >-
+        Laika's wideswing attack now deals 70% less damage, so she doesn't
+        accidentally kill the person who she's trying to help in an arrest!
+    - type: Tweak
+      message: >-
+        Laika's attacks now deal 25 stamina per hit. and her click attack now
+        deals an extra 5 piercing! BIG DOG!
+    - type: Tweak
+      message: Laika's fur now protects her from cold weather!
+    - type: Tweak
+      message: 'Laika is a bit quicker now c:'
+    - type: Tweak
+      message: >-
+        Silvia now recovers Omnizine a ~33% quicker than normal. (Yes, her bite
+        doesn't always inject Omnizine, it recharges)
+  id: 1040
+  time: '2025-08-21T07:39:30.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1518
+- author: KekaniCreates
+  changes:
+    - type: Add
+      message: >-
+        The Bottle'o'Cum to the Lewd list, although only accessible to
+        Bartenders.
+  id: 1041
+  time: '2025-08-21T08:36:12.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1522
+- author: TheLuggage05
+  changes:
+    - type: Fix
+      message: Borg medHUD should work now.
+  id: 1042
+  time: '2025-08-21T08:36:21.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1520
+- author: Jakumba
+  changes:
+    - type: Add
+      message: Rodentia can growl now, grrrrr
+  id: 1043
+  time: '2025-08-21T08:36:53.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1515
+- author: Jadrek
+  changes:
+    - type: Tweak
+      message: Bionic arms are 3 points cheaper!
+  id: 1044
+  time: '2025-08-21T08:37:50.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1516
+- author: sleepyyapril
+  changes:
+    - type: Remove
+      message: >-
+        Removed the salvage ID from the conscription kit. Talk to your local LO
+        today about making your friend a salvager.
+  id: 1045
+  time: '2025-08-21T09:02:25.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1523
+- author: sleepyyapril
+  changes:
+    - type: Add
+      message: Admins can now see your Central Command faxes from discord.
+  id: 1046
+  time: '2025-08-21T12:53:22.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1527
+- author: Sha-Seng
+  changes:
+    - type: Add
+      message: >-
+        New thaven species, ported from Impstation alongside various tweaks from
+        Delta-V. Please check the guidebook entry (and this PR, and their lore
+        thread) for more details!
+    - type: Add
+      message: >-
+        Den-specific thaven additions: thaven have been given sexual dimorphism
+        (alongside a Slim Chest marking), a few other new markings, and new
+        organs. Check out their glowing tails!
+    - type: Tweak
+      message: >-
+        Thaven have a variety of tweaks specific to The Den. A non-comprehensive
+        list: mood emagging requires consent, their psychedelic blood is clearly
+        labeled as such, they deal shock damage instead of stamina damage, moods
+        are moved to an opt-in 0-cost trait, many hairstyles have been given
+        thaven-specific variants.
+    - type: Add
+      message: >-
+        New "Aural" language. Thaven, carps, and dragons can understand it by
+        default, and any species can take its associated trait.
+    - type: Add
+      message: >-
+        Admins have new trick verbs to give cyborgs and non-thaven characters
+        moods, similar to the "Thaven Moods" trait.
+    - type: Add
+      message: >-
+        Two new drinks - Bad (from thaven culture), and Fever Dream (from thaven
+        blood).
+    - type: Add
+      message: >-
+        Two new plushies - thaven plushie (loadouts, prize counter) and normal
+        thaven plushie (prize counter).
+    - type: Tweak
+      message: >-
+        Tails will now layer above hair for all species, for especially long
+        hairstyles or especially vertical tails.
+    - type: Tweak
+      message: >-
+        Carps, sharkminnows, and dragons have been given a new psychedelic blood
+        type to match thaven blood, as well as new organs.
+    - type: Tweak
+      message: The above creatures have a fishier typing indicator, like thaven.
+  id: 1047
+  time: '2025-08-21T13:07:53.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1284
+- author: sleepyyapril
+  changes:
+    - type: Tweak
+      message: Magistrate now has CJ accesses.
+  id: 1048
+  time: '2025-08-21T15:25:48.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1529
+- author: portfiend
+  changes:
+    - type: Tweak
+      message: >-
+        Many traits with narrow species restrictions have been put into a new
+        "Species" category.
+  id: 1049
+  time: '2025-08-21T21:41:45.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1530
+- author: SirWarock
+  changes:
+    - type: Fix
+      message: >-
+        Fixed Advanced Operating Tables not properly showing their modes to
+        other clients!
+  id: 1050
+  time: '2025-08-21T22:29:55.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1526
+- author: SirWarock
+  changes:
+    - type: Fix
+      message: Fixed mechanical surgery glove fibers not showing up properly!
+  id: 1051
+  time: '2025-08-22T10:43:32.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1501
+- author: RosySaturniidae
+  changes:
+    - type: Add
+      message: new job icons for dignitary and centcomm roles
+    - type: Add
+      message: magistrates now actually have IDs
+  id: 1052
+  time: '2025-08-22T10:45:34.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1496
+- author: Shaman
+  changes:
+    - type: Tweak
+      message: Added a pixel to thaven shoulders to make them more shaped like people
+    - type: Add
+      message: >-
+        Thaven doll joint, prosthetic, and twisting scar markings (re-add
+        yours!)
+    - type: Tweak
+      message: >-
+        ALL thaven markings (including scars) are now grayscale for easy
+        coloring
+  id: 1053
+  time: '2025-08-22T17:27:43.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1536
+- author: Shaman
+  changes:
+    - type: Add
+      message: Gloomy hairstyles for thaven
+    - type: Add
+      message: >-
+        A thaven-specific Lightweight Bomber sprite so you can color it on them
+        without it breaking
+  id: 1054
+  time: '2025-08-22T17:47:45.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1534
+- author: Eightballll
+  changes:
+    - type: Remove
+      message: >-
+        Removed Romerol from the Oracle and other random reagent spawns. No
+        zombies in greenshift :3
+  id: 1055
+  time: '2025-08-22T20:52:37.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1533

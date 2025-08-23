@@ -30,6 +30,9 @@
   access:
   - CentralCommand
   - Magistrate
+  - ChiefJustice
+  - Prosecutor
+  - Clerk
   special:
   - !type:AddImplantSpecial
     implants: [ MindShieldImplant ]
@@ -40,7 +43,7 @@
   - !type:ModifyEnvirosuitSpecial
     charges: 8
   - !type:ModifyEnvirohelmSpecial
-    powerCell: PowerCellHigh
+    powerCell: PowerCellMedium
 
 - type: startingGear
   id: MagistrateGear
@@ -50,7 +53,7 @@
     jumpsuit: ClothingUniformJumpsuitMagistrate
     shoes: ClothingShoesLeather
     gloves: ClothingHandsGlovesColorWhite
-    id: CentcomPDA
+    id: MagistratePDA #den
     ears: ClothingHeadsetMagistrate
     pocket1: UniqueMagistrateLockerTeleporter
 

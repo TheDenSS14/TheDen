@@ -75,3 +75,16 @@
           reagents:
             - ReagentId: RobustHarvest
               Quantity: 200
+
+- type: entity
+  parent: Jug
+  id: JugPhalanximine
+  components:
+    - type: Label
+      currentLabel: reagent-name-phalaximime
+    - type: SolutionContainerManager
+      solutions:
+        beaker:
+          reagents:
+            - ReagentId: Phalanximine
+              Quantity: 200

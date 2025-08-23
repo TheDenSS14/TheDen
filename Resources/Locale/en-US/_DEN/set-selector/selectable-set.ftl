@@ -25,6 +25,9 @@ ert-engineer-loadout-3-desc = A Lecter assault rifle, magazines and stinger gren
 ert-engineer-loadout-4-name = Sapper
 ert-engineer-loadout-4-desc = A Disabler SMG, tear gas & stinger grenades, with breaching charges
 
+ert-engineer-loadout-5-name = Last Stand
+ert-engineer-loadout-5-desc = A full set of materials, cables, RPD, RCD and enough compressed matter to rebuild half the station
+
 ert-medic-loadout-1-name = Close Quarters Medical
 ert-medic-loadout-1-desc = A WT550 SMG, magazines and extra medical supplies
 

@@ -38,6 +38,7 @@ using Content.Shared.Damage.Systems; // DeltaV
 using Content.Shared.Destructible;
 using Content.Shared.Hands.EntitySystems;
 using Content.Shared.IdentityManagement;
+using Content.Shared.Inventory;
 using Content.Shared.Mind;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Mobs.Systems;
@@ -285,7 +286,10 @@ public sealed partial class PolymorphSystem : EntitySystem
 
         if (configuration.Inventory == PolymorphInventoryChange.Transfer)
         {
-            _inventory.TransferEntityInventories(uid, child);
+            
+            if (HasComp<InventoryComponent>(child))
+                _inventory.TransferEntityInventories(uid, child);
+
             foreach (var hand in _hands.EnumerateHeld(uid))
             {
                 _hands.TryDrop(uid, hand, checkActionBlocker: false);

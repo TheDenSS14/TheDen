@@ -42,7 +42,7 @@
   - !type:ModifyEnvirosuitSpecial
     charges: 10
   - !type:ModifyEnvirohelmSpecial
-    powerCell: PowerCellHigh
+    powerCell: PowerCellMedium
 
 - type: startingGear
   id: CentcomGear
@@ -52,6 +52,7 @@
     jumpsuit: ClothingUniformJumpsuitCentcomOfficial
     shoes: ClothingShoesBootsCombatFilled
     head: ClothingHeadHatCentcom
+    back: ClothingModsuitCorporate
     eyes: ClothingEyesGlassesSunglasses
     gloves: ClothingHandsGlovesColorBlack
     outerClothing: ClothingOuterArmorCentcommCarapace
@@ -59,7 +60,7 @@
     ears: ClothingHeadsetAltCentCom
     belt: WeaponPistolN1984
     pocket1: BoxFolderBlack
-    pocket2: PenCentcom
+    pocket2: BluespaceLifelineImplanter
 
 - type: startingGear
   id: CentcomPlasmamanGear

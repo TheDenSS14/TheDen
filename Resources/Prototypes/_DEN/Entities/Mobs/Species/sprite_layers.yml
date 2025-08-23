@@ -70,12 +70,12 @@
         - map: ["neck"]
 
         # Markings that go above equipment
-        - map: ["enum.HumanoidVisualLayers.Tail"]
         - map: ["enum.HumanoidVisualLayers.NeckFluff"]
         - map: ["enum.HumanoidVisualLayers.FacialHair"]
         - map: ["enum.HumanoidVisualLayers.Hair"]
         - map: ["enum.HumanoidVisualLayers.HeadSide"]
         - map: ["enum.HumanoidVisualLayers.HeadTop"]
+        - map: ["enum.HumanoidVisualLayers.Tail"]
         - map: ["enum.HumanoidVisualLayers.Wings"]
 
         # Equipment that goes above all markings
@@ -156,15 +156,15 @@
         - map: ["neck"]
 
         # Markings that go above equipment
-        - map: ["enum.HumanoidVisualLayers.Tail"]
-          sprite: Mobs/Customization/masking_helpers.rsi
-          state: none
-          visible: false
         - map: ["enum.HumanoidVisualLayers.NeckFluff"]
         - map: ["enum.HumanoidVisualLayers.FacialHair"]
         - map: ["enum.HumanoidVisualLayers.Hair"]
         - map: ["enum.HumanoidVisualLayers.HeadSide"]
         - map: ["enum.HumanoidVisualLayers.HeadTop"]
+        - map: ["enum.HumanoidVisualLayers.Tail"]
+          sprite: Mobs/Customization/masking_helpers.rsi
+          state: none
+          visible: false
         - map: ["enum.HumanoidVisualLayers.Wings"]
 
         # Equipment that goes above all markings
@@ -236,12 +236,12 @@
         - map: ["neck"]
 
         # Markings that go above equipment
-        - map: ["enum.HumanoidVisualLayers.Tail"]
         - map: ["enum.HumanoidVisualLayers.NeckFluff"]
         - map: ["enum.HumanoidVisualLayers.FacialHair"]
         - map: ["enum.HumanoidVisualLayers.Hair"]
         - map: ["enum.HumanoidVisualLayers.HeadSide"]
         - map: ["enum.HumanoidVisualLayers.HeadTop"]
+        - map: ["enum.HumanoidVisualLayers.Tail"]
         - map: ["enum.HumanoidVisualLayers.Wings"]
 
         # Harpy's wings have to layer over everything!

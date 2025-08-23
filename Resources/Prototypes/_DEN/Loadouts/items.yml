@@ -186,6 +186,14 @@
     - PlushieOvinia
 
 - type: loadout
+  id: LoadoutPlushieThaven
+  category: GeneralToys
+  cost: 1
+  canBeHeirloom: true
+  items:
+    - PlushieThaven
+
+- type: loadout
   id: PlushieTeddyBear
   category: GeneralToys
   cost: 1
@@ -260,7 +268,7 @@
   canBeHeirloom: true
   items:
     - Clicker
-  
+
 - type: loadout
   id: LoadoutTailorsKnife
   category: GeneralItems
@@ -284,6 +292,15 @@
   customColorTint: true
   items:
     - ClothingHandsSentimentalRing
+
+- type: loadout
+  id: LoadoutClothingNeckSentimentalCollar
+  category: GeneralItems
+  cost: 0
+  canBeHeirloom: true
+  customColorTint: true
+  items:
+    - ClothingNeckSentimentalCollar
 
 # Towels
 - type: loadout
