@@ -105,11 +105,7 @@ public sealed class DiscordLink : IPostInjectInit
 
         _client = new GatewayClient(new BotToken(token), new GatewayClientConfiguration()
         {
-            Intents = GatewayIntents.Guilds
-                | GatewayIntents.GuildUsers
-                | GatewayIntents.GuildMessages
-                | GatewayIntents.MessageContent
-                | GatewayIntents.DirectMessages,
+            Intents = GatewayIntents.All,
             Logger = new DiscordSawmillLogger(_sawmillLog)
         });
         _client.MessageCreate += OnCommandReceivedInternal;
@@ -131,6 +127,10 @@ public sealed class DiscordLink : IPostInjectInit
             {
                 await _client.StartAsync();
                 _sawmill.Info("Connected to Discord.");
+
+                var guild = await _client.Rest.GetGuildAsync(_guildId);
+
+                _client.Cache.CacheGuild((Guild) guild);
             }
             catch (Exception e)
             {

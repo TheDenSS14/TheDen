@@ -34,6 +34,7 @@ public sealed partial class DiscordUserLink
         if (_discordLink.Client != null &&
             _discordLink.Client.Cache.Guilds.TryGetValue(_discordLink.GuildId, out var guild))
         {
+            _sawmill.Warning("Guild not found.");
             var guildUser = await _discordLink.Client.Rest.GetGuildUserAsync(_discordLink.GuildId, discordId);
             _discordLink.Client.Cache.CacheGuildUser(guildUser);
         }
@@ -42,7 +43,7 @@ public sealed partial class DiscordUserLink
     }
 }
 
-[AdminCommand(AdminFlags.None)]
+[AnyCommand]
 public sealed class VerifyCommand : IConsoleCommand
 {
     public string Command => "verify";
