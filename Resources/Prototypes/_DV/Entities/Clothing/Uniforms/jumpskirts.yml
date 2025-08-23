@@ -45,8 +45,18 @@
   - type: Clothing
     sprite: _DV/Clothing/Uniforms/Jumpskirt/security_blue.rsi
 
+- type: entity
+  parent: ClothingUniformSkirtBase
+  id: ClothingUniformJumpskirtSecTurtle
+  name: security officer's turtleskirt # Den - renamed to security officer's, edited description
+  description: A comfortable and tight-fitting turtleneck for those with the resolve to reach the position of Security Officer.
+  components:
+  - type: Sprite
+    sprite: _DV/Clothing/Uniforms/Jumpskirt/security_alt.rsi
+  - type: Clothing
+    sprite: _DV/Clothing/Uniforms/Jumpskirt/security_alt.rsi
+
 # Corpsman alt uniforms
-# changed turtleneck to turtleskirt
 
 - type: entity
   parent: ClothingUniformSkirtBase
