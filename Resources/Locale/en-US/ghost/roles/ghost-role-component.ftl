@@ -304,6 +304,43 @@ ghost-role-information-lost-cargo-technical-name = Lost Cargo Technician
 ghost-role-information-lost-cargo-technical-description = Something went wrong and your cargo shuttle with the goods was beamed into the sector to another station.
 ghost-role-information-lost-cargo-technical-rules = You're a regular cargo technician from another station. Do what regular cargo do.
 
+ghost-role-information-syndicate-cyborg-assault-name = Syndicate Assault Cyborg
+ghost-role-information-syndicate-cyborg-saboteur-name = Syndicate Saboteur Cyborg
+ghost-role-information-syndicate-cyborg-description = The Syndicate needs reinforcements. You, a cold silicon killing machine, will help them.
+
+ghost-role-information-derelict-engineering-cyborg-name = Derelict Engineer Cyborg
+ghost-role-information-derelict-engineering-cyborg-description = You are an engineer cyborg that got lost in space. After years of exposure to ion storms you find yourself near a space station.
+
+ghost-role-information-derelict-cyborg-name = Derelict Generic Cyborg
+ghost-role-information-derelict-cyborg-description = You are a regular cyborg that got lost in space. After years of exposure to ion storms you find yourself near a space station.
+
+ghost-role-information-derelict-janitor-cyborg-name = Derelict Janitor Cyborg
+ghost-role-information-derelict-janitor-cyborg-description = You are a janitor cyborg that got lost in space. After years of exposure to ion storms you find yourself near a space station.
+
+ghost-role-information-derelict-medical-cyborg-name = Derelict Medical Cyborg
+ghost-role-information-derelict-medical-cyborg-description = You are a medical cyborg that got lost in space. After years of exposure to ion storms you find yourself near a space station.
+
+ghost-role-information-derelict-mining-cyborg-name = Derelict Salvage Cyborg
+ghost-role-information-derelict-mining-cyborg-description = You are a salvage cyborg that got lost in space. After years of exposure to ion storms you find yourself near a space station.
+
+ghost-role-information-derelict-syndicate-assault-cyborg-name = Derelict Syndicate Assault Cyborg
+ghost-role-information-derelict-syndicate-assault-cyborg-description = You are an early model syndicate assault cyborg that got lost in space. After years of exposure to ion storms you find yourself near a space station.
+
+ghost-role-information-security-name = Security
+ghost-role-information-security-description = You are part of a security task force, but seem to have found yourself in a strange situation...
+
+ghost-role-information-medical-name = Medical
+ghost-role-information-medical-virologist-name = Virologist
+ghost-role-information-medical-geneticist-name = Geneticist
+ghost-role-information-medical-dentist-name = Dentist
+ghost-role-information-medical-description = You are a medical professional, but seem to have found yourself in a strange situation...
+
+ghost-role-information-cargo-name = Cargo
+ghost-role-information-cargo-description = You are part of a logistics mission, but seem to have found yourself in a strange situation...
+
+ghost-role-information-engineering-name = Engineering
+ghost-role-information-engineering-description = You are on an engineering job, but seem to have found yourself in a strange situation...
+
 ghost-role-information-clown-troupe-name = Space Clown
 ghost-role-information-clown-troupe-description = You and your troupe have come to cheer up this station with your best jokes. Honk!
 ghost-role-information-clown-troupe-rules = Normal station crew rules apply.

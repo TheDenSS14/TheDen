@@ -669,7 +669,7 @@
   id: BorgModuleEsword
   parent: [ BaseBorgModuleSyndicate, BaseProviderBorgModule ]
   name: energy sword cyborg module
-  description: A module that comes with a double energy sword.
+  description: A weapons module that comes with an energy sword.
   components:
     - type: Sprite
       layers:
@@ -686,7 +686,7 @@
   id: BorgModuleL6C
   parent: [ BaseBorgModuleSyndicateAssault, BaseProviderBorgModule ]
   name: L6C ROW cyborg module
-  description: A module that comes with a L6C.
+  description: A weapons module that comes with a L6C.
   components:
     - type: Sprite
       layers:
