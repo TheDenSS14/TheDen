@@ -9,6 +9,7 @@ loadout-name-LoadoutNeckScarfStripedColorable = striped scarf (colorable)
 loadout-name-LoadoutNeckMantleColorable = mantle (colorable)
 loadout-name-LoadoutNeckCloakColorable = cloak (colorable)
 loadout-name-LoadoutClothingNeckSentimentalCollar = sentimental collar (colorable)
+loadout-name-LoadoutNeckNeckScarfWrapped = wrapped scarf (colorable)
 
 # waist
 loadout-name-LoadoutClothingWaistApron = waist apron (colorable)
