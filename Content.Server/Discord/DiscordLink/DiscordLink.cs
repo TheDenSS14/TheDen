@@ -106,7 +106,7 @@ public sealed class DiscordLink : IPostInjectInit
         _client = new GatewayClient(new BotToken(token), new GatewayClientConfiguration()
         {
             Intents = GatewayIntents.All,
-            Logger = new DiscordSawmillLogger(_sawmillLog)
+            //Logger = new DiscordSawmillLogger(_sawmillLog)
         });
         _client.MessageCreate += OnCommandReceivedInternal;
         _client.MessageCreate += OnMessageReceivedInternal;
@@ -161,7 +161,7 @@ public sealed class DiscordLink : IPostInjectInit
     void IPostInjectInit.PostInject()
     {
         _sawmill = _logManager.GetSawmill("discord.link");
-        //_sawmillLog = _logManager.GetSawmill("discord.link.log");
+        _sawmillLog = _logManager.GetSawmill("discord.link.log");
     }
 
     public GatewayClient? Client => _client;
