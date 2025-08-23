@@ -15,12 +15,12 @@ public sealed partial class DiscordUserLink
 {
     public void InitializeGame() {}
 
-    private void OnPlayerStatusChanged(object? sender, SessionStatusEventArgs ev)
+    private async void OnPlayerStatusChanged(object? sender, SessionStatusEventArgs ev)
     {
         if (ev.NewStatus != SessionStatus.Connected)
             return;
 
-        Task.Run(async () => await SetupPlayerAsync(ev.Session.UserId));
+        await SetupPlayerAsync(ev.Session.UserId);
     }
 
     private async Task SetupPlayerAsync(NetUserId userId)
