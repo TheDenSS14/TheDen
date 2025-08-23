@@ -105,7 +105,11 @@ public sealed class DiscordLink : IPostInjectInit
 
         _client = new GatewayClient(new BotToken(token), new GatewayClientConfiguration()
         {
-            Intents = GatewayIntents.All,
+            Intents = GatewayIntents.Guilds
+                | GatewayIntents.GuildUsers
+                | GatewayIntents.GuildMessages
+                | GatewayIntents.MessageContent
+                | GatewayIntents.DirectMessages,
             Logger = new DiscordSawmillLogger(_sawmillLog)
         });
         _client.MessageCreate += OnCommandReceivedInternal;

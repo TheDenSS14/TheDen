@@ -29,21 +29,14 @@ public sealed partial class DiscordUserLink
         var link = GetLink(userId);
 
         if (link is not { } discordLink)
-        {
-            _sawmill.Info("invalid link");
             return false;
-        }
 
         var guildUser = GetDiscordIdAsUser(discordLink.DiscordUserId);
 
         if (guildUser == null)
-        {
-            _sawmill.Info("invalid user");
             return false;
-        }
 
         var value = guildUser.RoleIds.Any(roleId => _patronRoleIds.Contains(roleId));
-        _sawmill.Info($"Has role: {value}");
         return value;
     }
 
