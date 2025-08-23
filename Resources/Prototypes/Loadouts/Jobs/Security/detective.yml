@@ -18,6 +18,19 @@
 # Gloves
 
 # Head
+- type: loadout
+  id: LoadoutClothingHatDetective
+  category: JobsSecurityDetective
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutDetectiveHead
+    - !type:CharacterJobRequirement
+      jobs:
+        - Detective
+  items:
+    - ClothingHeadHatBeretDet
 
 # Id
 
@@ -84,3 +97,32 @@
         - Detective
   items:
     - ClothingUniformJumpsuitNanotrasenDetective
+
+- type: loadout
+  id: LoadoutClothingUniformDetectiveTurtleskirt
+  category: JobsSecurityDetective
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutDetectiveUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - Detective
+  items:
+    - ClothingUniformJumpskirtDetTurtle
+
+- type: loadout
+  id: LoadoutClothingUniformDetectiveTurtlesuit
+  category: JobsSecurityDetective
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutDetectiveUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - Detective
+  items:
+    - ClothingUniformJumpsuitDetTurtle
+

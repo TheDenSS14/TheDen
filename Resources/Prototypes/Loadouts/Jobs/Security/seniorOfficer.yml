@@ -56,3 +56,31 @@
         - SeniorOfficer
   items:
     - ClothingUniformJumpsuitSeniorOfficer
+
+- type: loadout
+  id: LoadoutSecurityUniformJumpsuitSeniorAlt
+  category: JobsSecuritySeniorOfficer
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSeniorOfficerUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - SeniorOfficer
+  items:
+    - ClothingUniformJumpsuitSecSenior
+
+- type: loadout
+  id: LoadoutSecurityUniformJumpskirtSeniorAlt
+  category: JobsSecuritySeniorOfficer
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSeniorOfficerUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - SeniorOfficer
+  items:
+    - ClothingUniformJumpskirtSecSenior

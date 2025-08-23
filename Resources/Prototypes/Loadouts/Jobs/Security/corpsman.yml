@@ -321,3 +321,31 @@
         - Brigmedic
   items:
     - ClothingUniformJumpsuitCorpsmanSummer
+
+- type: loadout
+  id: LoadoutUniformJumpsuitBrigmedicTurtle
+  category: JobsSecurityCorpsman
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutCorpsmanUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - Brigmedic
+  items:
+    - ClothingUniformJumpsuitBrigmedicTurtle
+
+- type: loadout
+  id: LoadoutUniformJumpskirtBrigmedicTurtle
+  category: JobsSecurityCorpsman
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutCorpsmanUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - Brigmedic
+  items:
+    - ClothingUniformJumpskirtBrigmedicTurtle
