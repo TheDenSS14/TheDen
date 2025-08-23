@@ -489,34 +489,6 @@
   items:
     - ClothingUniformJumpskirtHosFormal
 
-- type: loadout
-  id: LoadoutCommandHOSTurtlesuit
-  category: JobsSecurityHeadOfSecurity
-  cost: 0
-  exclusive: true
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutHeadOfSecurityUniforms
-    - !type:CharacterJobRequirement
-      jobs:
-        - HeadOfSecurity
-  items:
-    - ClothingUniformJumpsuitHoSTurtle
-
-- type: loadout
-  id: LoadoutCommandHOSTurtleskirt
-  category: JobsSecurityHeadOfSecurity
-  cost: 0
-  exclusive: true
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutHeadOfSecurityUniforms
-    - !type:CharacterJobRequirement
-      jobs:
-        - HeadOfSecurity
-  items:
-    - ClothingUniformJumpskirtHoSTurtle
-
 # Trinkets
 - type: loadout
   id: LoadoutHoSCigarCase

@@ -156,20 +156,6 @@
     - ClothingUniformJumpsuitWardenGrey
 
 - type: loadout
-  id: LoadoutUniformJumpsuitWardenTurtle
-  category: JobsSecurityWarden
-  cost: 0
-  exclusive: true
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutWardenUniforms
-    - !type:CharacterJobRequirement
-      jobs:
-        - Warden
-  items:
-    - ClothingUniformJumpsuitWardenTurtle
-
-- type: loadout
   id: LoadoutUniformJumpskirtWardenBlue
   category: JobsSecurityWarden
   cost: 0
@@ -196,17 +182,3 @@
         - Warden
   items:
     - ClothingUniformJumpskirtWardenGrey
-
-- type: loadout
-  id: LoadoutUniformJumpskirtWardenTurtle
-  category: JobsSecurityWarden
-  cost: 0
-  exclusive: true
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutWardenUniforms
-    - !type:CharacterJobRequirement
-      jobs:
-        - Warden
-  items:
-    - ClothingUniformJumpskirtWardenTurtle

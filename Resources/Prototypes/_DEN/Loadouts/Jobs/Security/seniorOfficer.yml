@@ -3,34 +3,8 @@
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
-# Senior Officer
-# Backpacks
-
-# Belt
-
-# Ears
-
-# Equipment
-
-# Eyes
-
-# Gloves
-
-# Head
-
-# Id
-
-# Neck
-
-# Mask
-
-# Outer
-
-# Shoes
-
-# Uniforms
 - type: loadout
-  id: LoadoutSecurityUniformJumpskirtSenior
+  id: LoadoutSecurityUniformJumpsuitSeniorAlt
   category: JobsSecuritySeniorOfficer
   cost: 0
   exclusive: true
@@ -41,10 +15,10 @@
       jobs:
         - SeniorOfficer
   items:
-    - ClothingUniformJumpskirtSeniorOfficer
+    - ClothingUniformJumpsuitSecSenior
 
 - type: loadout
-  id: LoadoutSecurityUniformJumpsuitSenior
+  id: LoadoutSecurityUniformJumpskirtSeniorAlt
   category: JobsSecuritySeniorOfficer
   cost: 0
   exclusive: true
@@ -55,4 +29,4 @@
       jobs:
         - SeniorOfficer
   items:
-    - ClothingUniformJumpsuitSeniorOfficer
+    - ClothingUniformJumpskirtSecSenior
