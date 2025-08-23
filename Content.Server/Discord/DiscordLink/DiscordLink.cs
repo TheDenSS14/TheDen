@@ -161,7 +161,7 @@ public sealed class DiscordLink : IPostInjectInit
     void IPostInjectInit.PostInject()
     {
         _sawmill = _logManager.GetSawmill("discord.link");
-        _sawmillLog = _logManager.GetSawmill("discord.link.log");
+        //_sawmillLog = _logManager.GetSawmill("discord.link.log");
     }
 
     public GatewayClient? Client => _client;
