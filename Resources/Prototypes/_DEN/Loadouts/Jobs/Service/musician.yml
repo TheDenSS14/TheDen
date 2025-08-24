@@ -5,6 +5,19 @@
 # Ears
 
 # Equipment
+- type: loadout
+  id: LoadoutItemHandheldHarpInstrumentMusician
+  category: JobsServiceMusician
+  cost: 0
+  canBeHeirloom: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMusicianEquipment
+    - !type:CharacterJobRequirement
+      jobs:
+        - Musician
+  items:
+    - HandheldHarpInstrument
 
 # Eyes
 

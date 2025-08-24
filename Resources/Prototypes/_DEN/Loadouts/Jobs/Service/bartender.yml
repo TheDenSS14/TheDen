@@ -61,34 +61,6 @@
         - Bartender
 
 - type: loadout
-  id: LoadoutServiceUniformNightclubSuit
-  category: JobsServiceBartender
-  cost: 0
-  exclusive: true
-  items:
-    - ClothingUniformNightclubSuit
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutBartenderUniforms
-    - !type:CharacterJobRequirement
-      jobs:
-        - Bartender
-
-- type: loadout
-  id: LoadoutServiceUniformNightclubSuitSkirt
-  category: JobsServiceBartender
-  cost: 0
-  exclusive: true
-  items:
-    - ClothingUniformNightclubSuitSkirt
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutBartenderUniforms
-    - !type:CharacterJobRequirement
-      jobs:
-        - Bartender
-
-- type: loadout
   id: LoadoutServiceUniformSeniorBartender
   category: JobsServiceBartender
   cost: 0
