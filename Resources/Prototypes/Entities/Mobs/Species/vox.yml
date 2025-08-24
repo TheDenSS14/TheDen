@@ -193,7 +193,6 @@
 - type: entity
   parent: [BaseVoxAppearance, BaseSpeciesDummy]
   id: MobVoxDummy
-  noSpawn: true
   components:
   - type: HumanoidAppearance
     species: Vox
