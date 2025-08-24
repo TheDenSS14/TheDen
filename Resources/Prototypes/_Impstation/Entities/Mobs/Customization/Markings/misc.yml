@@ -74,6 +74,21 @@
   shader: unshaded
 
 - type: marking
+  id: Shadow
+  bodyPart: Head
+  markingCategory: Head
+  speciesRestriction: [ Human, Dwarf, Oni, Felinid, Canid, Kitsune, SlimePerson ]
+  forcedColoring: true
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+        color: "#000000"
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/Humanoid/head.rsi
+    state: shadow
+
+- type: marking
   id: DionaLivingNymph
   bodyPart: Chest
   markingCategory: Chest
