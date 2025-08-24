@@ -228,3 +228,37 @@
       - ToyFigurineThief
       chance: 0.90
       offset: 0.2
+
+- type: entity
+  name: Space Blade Spawner
+  suffix: Not the most legal of toys, map rarely
+  id: SpacemenFigureSpawner
+  parent: MarkerBase
+  components:
+    - type: Sprite
+      layers:
+        - sprite: _NF/Objects/Fun/spaceblade.rsi
+          state: sb_box
+    - type: RandomSpawner
+      rarePrototypes:
+      - SpaceBladeMc
+      - SpaceBladeFrontier
+      rareChance: 0.05
+      prototypes:
+      - SpaceBladeRedOrange
+      - SpaceBladeBlue
+      - SpaceBladeGoldBlue
+      - SpaceBladeMail
+      - SpaceBladeEyeball
+      - SpaceBladeBlade
+      - SpaceBladeCheck
+      - SpaceBladeRune
+      - SpaceBladeSec
+      - SpaceBladeMoff
+      - SpaceBladeWeh
+      - SpaceBladeTesla
+      - SpaceBladePizza
+      - SpaceBladeSingularity
+      - SpaceBladeClown
+      change: 0.90
+      offset: 0.2

@@ -510,6 +510,20 @@
         prob: 0.05
 
 - type: entity
+  id: CrateFunMysterySpaceBlades
+  parent: CratePlastic
+  name: mystery space blade crate
+  description: A collection of 10 Mystery Space Blade boxes. Duplicates non refundable.
+  components:
+  - type: StorageFill
+    contents:
+      - id: MysterySpaceBladeBox
+        amount: 10
+      - id: MysterySpaceBladeBox
+        amount: 15
+        prob: 0.05
+
+- type: entity
   id: CrateFunSprayPaints
   name: spray paint crate
   description: a crate filled with spray paint.
