@@ -1,0 +1,105 @@
+# Backpacks
+
+# Belt
+
+# Ears
+
+# Equipment
+
+# Eyes
+
+# Gloves
+- type: loadout
+  id: LoadoutServiceMusicianHandsSingerGloves
+  category: JobsServiceMusician
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingHandsMusicianSingerGloves
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - Musician
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMusicianGloves
+
+# Head
+
+# Id
+
+# Neck
+- type: loadout
+  id: LoadoutServiceMusicianNeckFeatherBoa
+  category: JobsServiceMusician
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingNeckFeatherBoa
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - Musician
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMusicianNeck
+
+# Mask
+
+# Outer
+- type: loadout
+  id: LoadoutServiceMusicianOuterFurCoat
+  category: JobsServiceMusician
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingOuterCoatMusicianFurCoat
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - Musician
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMusicianOuter
+
+# Shoes
+
+# Uniforms
+- type: loadout
+  id: LoadoutServiceMusicianJumpsuitMrSpaceWide
+  category: JobsServiceMusician
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingUniformMrSpaceWide
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - Musician
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMusicianUniforms
+
+- type: loadout
+  id: LoadoutServiceMusicianJumpskirtMrSpaceWide
+  category: JobsServiceMusician
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingUniformMrSpaceWideSkirt
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - Musician
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMusicianUniforms
+
+- type: loadout
+  id: LoadoutServiceMusicianSingerDress
+  category: JobsServiceMusician
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingUniformMusicianSingerDress
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - Musician
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMusicianUniforms
