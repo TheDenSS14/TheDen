@@ -164,7 +164,7 @@ public sealed class ParadoxAnomalySystem : EntitySystem
             if (_role.MindIsAntagonist(mindId))
                 continue;
 
-            if (_consent.HasConsent(uid, _paradoxAnomalyConsent))
+            if (!_consent.HasConsent(uid, _paradoxAnomalyConsent))
                 continue;
 
             // TODO: when metempsychosis real skip whoever has Karma
@@ -289,7 +289,7 @@ public sealed class ParadoxAnomalySystem : EntitySystem
             || _mind.GetMind(target, mindContainer) is not {} mindId
             || !_jobSystem.MindTryGetJob(mindId, out var job)
             || _role.MindIsAntagonist(mindId)
-            || _consent.HasConsent(target, _paradoxAnomalyConsent))
+            || !_consent.HasConsent(target, _paradoxAnomalyConsent))
             return false;
 
         spawned = SpawnParadoxAnomaly((target, mindId, species, profile), _paradoxAnomalyRule);

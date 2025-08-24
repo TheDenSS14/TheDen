@@ -189,3 +189,29 @@
         - Shard
         - Mousetrap
         - SlipEntity
+
+- type: entity
+  parent: LeftArmCybernetic #Den
+  id: PryingLeftArm
+  name: Prying left arm
+  description: A cybernetic left arm with the ability to pry doors open.
+  components:
+  - type: BodyPart
+    onAdd:
+    - type: Prying
+      speedModifier: 1.5
+    - type: UseDelay # For insta prying
+      delay: 1
+
+- type: entity
+  parent: RightArmCybernetic #Den
+  id: PryingRightArm
+  name: Prying right arm
+  description: A cybernetic right arm with the ability to pry doors open.
+  components:
+  - type: BodyPart
+    onAdd:
+    - type: Prying
+      speedModifier: 1.5
+    - type: UseDelay # For insta prying
+      delay: 1

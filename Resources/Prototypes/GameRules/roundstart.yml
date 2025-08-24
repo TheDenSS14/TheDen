@@ -189,7 +189,6 @@
   id: Traitor
   components:
   - type: GameRule
-    minPlayers: 5
     delay:
       min: 240
       max: 420
@@ -317,6 +316,7 @@
     chaosModifier: 5 # By default, one event each 30-10 seconds after two hours. Changing CVars will cause this to deviate.
     startingChaosRatio: 0.1
     shiftLengthModifier: 2.5
+    eventDelayModifier: 1.5
 
 - type: entity
   id: IrregularStationEventScheduler
@@ -324,11 +324,11 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: OscillatingStationEventScheduler
-    minChaos: 0.8
-    maxChaos: 14
+    minChaos: 0.45
+    maxChaos: 1.5
     startingSlope: 0.2
-    downwardsLimit: -0.35
-    upwardsLimit: 0.4
+    downwardsLimit: -0.05
+    upwardsLimit: 0.35
 
 # More likely to go down than up, so calmness prevails
 - type: entity
@@ -338,7 +338,7 @@
   components:
   - type: OscillatingStationEventScheduler
     minChaos: 0.8
-    maxChaos: 8
+    maxChaos: 3
     startingSlope: -1
     downwardsLimit: -0.4
     upwardsLimit: 0.3

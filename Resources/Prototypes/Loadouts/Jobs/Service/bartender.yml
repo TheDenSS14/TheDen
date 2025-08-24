@@ -303,3 +303,17 @@
         - Bartender
   items:
     - ClothingUniformJumpsuitBartenderOrion
+
+# lewd
+
+- type: loadout
+  id: LoadoutServiceBartenderCumBottle
+  category: ItemsLewd
+  cost: 0
+  exclusive: false
+  requirements:
+  - !type:CharacterJobRequirement
+    jobs:
+    - Bartender
+  items:
+  - DrinkCumBottleFull

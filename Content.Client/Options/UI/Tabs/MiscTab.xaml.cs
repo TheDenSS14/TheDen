@@ -119,6 +119,8 @@ namespace Content.Client.Options.UI.Tabs
             ModernProgressBar.OnToggled += OnCheckBoxToggled;
             ChatExtraInfo.OnToggled += OnCheckBoxToggled;
             DisableFiltersCheckBox.OnToggled += OnCheckBoxToggled;
+            AutoFillHighlightsCheckBox.OnPressed += _ => UpdateApplyButton();
+            ChatHighlightingColorpicker.OnColorChanged += _ => OnChatHighlightingColorpickerChanged();
 
             HudThemeOption.SelectId(_hudThemeIdToIndex.GetValueOrDefault(_cfg.GetCVar(CVars.InterfaceTheme), 0));
             DiscordRich.Pressed = _cfg.GetCVar(CVars.DiscordEnabled);
@@ -143,6 +145,9 @@ namespace Content.Client.Options.UI.Tabs
             ModernProgressBar.Pressed = _cfg.GetCVar(CCVars.ModernProgressBar);
             ChatExtraInfo.Pressed = _cfg.GetCVar(CCVars.ChatExtraInfo);
             DisableFiltersCheckBox.Pressed = _cfg.GetCVar(CCVars.NoVisionFilters);
+            AutoFillHighlightsCheckBox.Pressed = _cfg.GetCVar(DCCVars.ChatAutoFillHighlights);
+            ChatHighlightingColorpicker.SelectorType = ColorSelectorSliders.ColorSelectorType.Hsv;
+            ChatHighlightingColorpicker.Color = Color.FromHex(_cfg.GetCVar(DCCVars.ChatHighlightsColor));
 
             ApplyButton.OnPressed += OnApplyButtonPressed;
             UpdateApplyButton();
@@ -169,6 +174,12 @@ namespace Content.Client.Options.UI.Tabs
         private void OnScreenShakeIntensitySliderChanged(Range obj)
         {
             ScreenShakeIntensityLabel.Text = Loc.GetString("ui-options-screen-shake-percent", ("intensity", ScreenShakeIntensitySlider.Value / 100f));
+            UpdateApplyButton();
+        }
+
+        private void OnChatHighlightingColorpickerChanged()
+        {
+            ExampleLabel.FontColorOverride = ChatHighlightingColorpicker.Color;
             UpdateApplyButton();
         }
 
@@ -205,6 +216,8 @@ namespace Content.Client.Options.UI.Tabs
             _cfg.SetCVar(CCVars.NoVisionFilters, DisableFiltersCheckBox.Pressed);
             _cfg.SetCVar(CCVars.ChatStackLastLines, ChatStackOption.SelectedId);
             _cfg.SetCVar(CCVars.ChatExtraInfo, ChatExtraInfo.Pressed);
+            _cfg.SetCVar(DCCVars.ChatAutoFillHighlights, AutoFillHighlightsCheckBox.Pressed);
+            _cfg.SetCVar(DCCVars.ChatHighlightsColor, ChatHighlightingColorpicker.Color.ToHex());
 
             if (HudLayoutOption.SelectedMetadata is string opt)
             {
@@ -242,6 +255,8 @@ namespace Content.Client.Options.UI.Tabs
             var isChatExtraInfoSame = ChatExtraInfo.Pressed == _cfg.GetCVar(CCVars.ChatExtraInfo);
             var isNoVisionFiltersSame = DisableFiltersCheckBox.Pressed == _cfg.GetCVar(CCVars.NoVisionFilters);
             var isChatStackTheSame = ChatStackOption.SelectedId == _cfg.GetCVar(CCVars.ChatStackLastLines);
+            var isAutoFillHighlightSame = AutoFillHighlightsCheckBox.Pressed == _cfg.GetCVar(DCCVars.ChatAutoFillHighlights);
+            var isChatHighlighingColorpickerSame = ChatHighlightingColorpicker.Color == Color.FromHex(_cfg.GetCVar(DCCVars.ChatHighlightsColor));
 
             ApplyButton.Disabled = isHudThemeSame &&
                                    isLayoutSame &&
@@ -267,7 +282,9 @@ namespace Content.Client.Options.UI.Tabs
                                    isModernProgressBarSame &&
                                    isChatExtraInfoSame &&
                                    isNoVisionFiltersSame &&
-                                   isChatStackTheSame;
+                                   isChatStackTheSame &&
+                                   isAutoFillHighlightSame &&
+                                   isChatHighlighingColorpickerSame;
         }
 
     }

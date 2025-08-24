@@ -1,0 +1,75 @@
+# SPDX-FileCopyrightText: 2024 VMSolidus <evilexecutive@gmail.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <flyingkarii@gmail.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
+# Spoken by thaven
+
+# Too tired to make translators for it right now, but I don't think it would necessarily be against lore for them to exist
+# For now, let's say there aren't any available because thaven are new to the sector
+
+# Confirmed all characters have upper case versions:
+# Lower: ɣ ȣ ƃ ƌ ƣ ƞ ɀ ȿ ƹ
+# Upper: Ɣ Ȣ Ƃ Ƌ Ƣ Ƞ Ɀ Ȿ Ƹ
+# Though some might look the same here, the font used differentiates them
+- type: language
+  id: Aural
+  isVisibleLanguage: true
+  speech:
+    color: "#1aa1aa"
+    fontId: EBGaramond
+  obfuscation:
+    !type:SyllableObfuscation
+    minSyllables: 1
+    maxSyllables: 3
+    replacement:
+    - ɣƣ
+    - ȣƹ
+    - ƃƞ
+    - ƌɀ
+    - ƣȣ
+    - ƞƹ
+    - ɀȿ
+    - ȿɣ
+    - ƹƣ
+    - ɣƹɀ
+    - ȣɣƌ
+    - ƃɀƹ
+    - ƌƣȣ
+    - ƣȿɣ
+    - ƞȣƃ
+    - ɀȿƹ
+    - ȿɣƞ
+    - ƹƃƞ
+    - ɣɀɣ
+    - ȣƣȣ
+    - ƃƹƃ
+    - ƌȣƌ
+    - ƣɣƣ
+    - ƞȿƞ
+    - ɀȿɀ
+    - ȿƹȿ
+    - ƹƣƹ
+    - ɣȿɀƣ
+    - ȣɣƃƹ
+    - ƃƞɀȿ
+    - ƌƣƞȣ
+    - ƣȿƹƃ
+    - ƞƌƣƞ
+    - ɀȣƃƹ
+    - ȿƹƞɀ
+    - ƹɣȣƞ
+    - ɣɀȿɣ
+    - ȣƃɣȣ
+    - ƃɀƞƃ
+    - ƌƞƣƌ
+    - ƣƹȿƣ
+    - ƞƣƌƞ
+    - ɀƃȣɀ
+    - ȿƞƹȿ
+    - ƹȣɣƹ
+    - ɣ-ƞ
+    - ȣ-ƃ
+    - ƃ-ƌ
+    - ɀ-ȿ

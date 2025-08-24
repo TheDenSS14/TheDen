@@ -871,8 +871,8 @@
     - prefRoles: [ TraitorSleeper ]
       fallbackRoles: [ Traitor ]
       min: 1
-      max: 2
-      playerRatio: 10
+      max: 5
+      playerRatio: 5
       blacklist:
         components:
         - AntagImmune
