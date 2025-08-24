@@ -71,6 +71,11 @@
   text: species-name-ipc
 
 - type: quickPhrase
+  id: SpeciesKitsunePhrase
+  parent: BaseCrewSpeciesPhrase
+  text: species-name-kitsune
+
+- type: quickPhrase
   id: SpeciesMothPersonPhrase
   parent: BaseCrewSpeciesPhrase
   text: species-name-moth
@@ -111,9 +116,9 @@
   text: species-name-slime
 
 - type: quickPhrase
-  id: SpeciesKitsunePhrase
+  id: SpeciesThavenPhrase
   parent: BaseCrewSpeciesPhrase
-  text: species-name-kitsune
+  text: species-name-thaven
 
 - type: quickPhrase
   id: SpeciesTajaranPhrase

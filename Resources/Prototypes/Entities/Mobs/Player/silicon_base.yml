@@ -198,12 +198,18 @@
         enum.InstrumentUiKey.Key:
           type: InstrumentBoundUserInterface
           requireInputValidation: false
+        # Goobstation - changelings
+        enum.StoreUiKey.Key:
+          type: StoreBoundUserInterface
         enum.RadialSelectorUiKey.Key:
           type: RadialSelectorMenuBUI
         enum.ListViewSelectorUiKey.Key:
           type: ListViewSelectorBUI
         enum.SurgeryUIKey.Key:
           type: SurgeryBui
+        enum.ThavenMoodsUiKey.Key: # Impstation - Thaven moods
+          type: ThavenMoodsBoundUserInterface
+          requireInputValidation: false
     - type: Emoting
     - type: Grammar
       attributes:

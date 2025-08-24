@@ -10,8 +10,10 @@ marking-HumanHairLowpigtails = Low Pigtails
 marking-HumanHairMessyPonytail = Messy Ponytail
 
 marking-HumanHairEyeBangLong = Eye Bang (Long)
+marking-HumanHairEyeBangShort = Eye Bang (Short)
 marking-HumanHairEyeBangSideTail = Eye Bang (Side Tail)
 marking-HumanHairOverEyes = Over Eyes
+marking-HumanHairOverEyesLong = Over Eyes (Long)
 marking-HumanHairOverEyesTail = Over Eyes (Messy Floor-length)
 marking-HumanHairFringeTail = Fringe (Ponytail)
 marking-HumanHairFringeRat = Fringe (Low Ponytail)

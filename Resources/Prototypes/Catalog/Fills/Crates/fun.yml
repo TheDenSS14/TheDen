@@ -153,6 +153,11 @@
       # End DeltaV
       - !type:EntSelector
         id: PlushieOvinia
+      - !type:EntSelector # TheDen
+        id: PlushieThaven
+      - !type:EntSelector # TheDen
+        id: PlushieThavenWeird
+        weight: 0.3
     - !type:GroupSelector
       children:
       - !type:EntSelector

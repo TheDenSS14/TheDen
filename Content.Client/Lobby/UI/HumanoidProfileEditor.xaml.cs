@@ -417,6 +417,7 @@ namespace Content.Client.Lobby.UI
 
             Skin.OnValueChanged += _ => { OnSkinColorOnValueChanged(); };
             RgbSkinColorContainer.AddChild(_rgbSkinColorSelector = new());
+            _rgbSkinColorSelector.SelectorType = ColorSelectorSliders.ColorSelectorType.Hsv; // defaults color selector to HSV
             _rgbSkinColorSelector.OnColorChanged += _ => { OnSkinColorOnValueChanged(); };
             SkinFurToggle.OnToggled += _ => { SetProfile(Profile, CharacterSlot); };
 
@@ -2492,7 +2493,7 @@ namespace Content.Client.Lobby.UI
             // Create a Dictionary/tree of categories and subcategories
             var cats = CreateTree(_prototypeManager.EnumeratePrototypes<TraitCategoryPrototype>()
                 .Where(c => c.Root)
-                .OrderBy(c => Loc.GetString($"trait-category-{c.ID}"))
+                .OrderBy(c => c.ID)
                 .ToList());
             var categories = new Dictionary<string, object>();
             foreach (var (key, value) in cats)

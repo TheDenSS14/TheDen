@@ -21,11 +21,13 @@ fibers-leather = leather
 fibers-durathread = durathread
 fibers-latex = latex
 fibers-nitrile = nitrile
-fibers-nanomachines = insulative nanomachine
+fibers-insulative-nanomachines = insulative nanomachine
 fibers-chameleon = holographic chameleon
 fibers-rubber = rubber
 fibers-kinetic = kinetic
+fibers-nanomachines = nanomachine
 
+fibers-teal = teal
 fibers-purple = purple
 fibers-red = red
 fibers-black = black

@@ -382,6 +382,7 @@
         - Resomi # Floof - have this by default after porting Goob changes
         - Kitsune # Floof - M3739 - #937 - Kitsune have this by default.
         - Tajaran
+        - Thaven # TheDen - They have their own version below
     - !type:CharacterHeightRequirement
       max: 150
     - !type:CharacterWidthRequirement
@@ -395,6 +396,32 @@
             - 0,0,1,4
             - 0,2,3,4
             - 4,0,5,4
+
+- type: trait # TheDen - Thaven-specific version of Small
+  id: SmallThaven
+  category: AASpecies
+  points: -2
+  requirements:
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - StationAi
+        - Borg
+        - MedicalBorg
+    - !type:CharacterSpeciesRequirement # Thaven are naturally flexible
+      species:
+        - Thaven
+    - !type:CharacterHeightRequirement
+      max: 160 # Looser requirement because thaven minHeight is 5'3" (160cm) but it's a fun trait
+    - !type:CharacterWidthRequirement
+      max: 36 # Looser requirement so thaven don't have to be crackhead skinny to take it, they're already narrow
+  functions:
+    - !type:TraitAddComponent
+      components:
+        - type: PseudoItem
+          storedOffset: 0,17
+          shape:
+            - 0,0,5,4 # A big square because they're folded into a ball (same outer radius as the other baggable characters)
 
 - type: trait
   id: TemperatureTolerance
@@ -542,7 +569,7 @@
 
 - type: trait
   id: NaturalWeaponRemoval
-  category: TraitsPhysicalBiological
+  category: AASpecies
   points: 0
   requirements:
     - !type:CharacterJobRequirement
@@ -676,7 +703,7 @@
 - type: trait
   id: BionicArm
   category: TraitsPhysicalAugmentations
-  points: -6
+  points: -3
   requirements:
     - !type:CharacterTraitRequirement
       inverted: true
@@ -710,7 +737,7 @@
 - type: trait
   id: BionicArmNoVisuals
   category: TraitsPhysicalAugmentations
-  points: -6
+  points: -3
   requirements:
     - !type:CharacterTraitRequirement
       inverted: true
@@ -1194,7 +1221,7 @@
 
 - type: trait
   id: FlareShieldingModule
-  category: TraitsPhysicalAugmentations
+  category: AASpecies
   points: -4
   requirements:
     - !type:CharacterJobRequirement
@@ -1226,7 +1253,7 @@
 
 - type: trait
   id: SecurityEyesModule
-  category: TraitsPhysicalAugmentations
+  category: AASpecies
   points: -1
   requirements:
     - !type:CharacterJobRequirement
@@ -1257,7 +1284,7 @@
 
 - type: trait
   id: MedicalEyesModule
-  category: TraitsPhysicalAugmentations
+  category: AASpecies
   points: -2
   requirements:
     - !type:CharacterJobRequirement
@@ -1288,7 +1315,7 @@
 
 - type: trait
   id: DiagnosticEyesModule
-  category: TraitsPhysicalAugmentations
+  category: AASpecies
   points: -2
   requirements:
     - !type:CharacterJobRequirement
@@ -1317,7 +1344,7 @@
 
 - type: trait
   id: OmniEyesModule
-  category: TraitsPhysicalAugmentations
+  category: AASpecies
   points: -3
   requirements:
     - !type:CharacterJobRequirement
@@ -1364,7 +1391,7 @@
 
 - type: trait
   id: LightAmplificationModule
-  category: TraitsPhysicalAugmentations
+  category: AASpecies
   points: -4
   requirements:
     - !type:CharacterJobRequirement
@@ -1384,7 +1411,7 @@
 
 - type: trait
   id: ThermographicVisionModule
-  category: TraitsPhysicalAugmentations
+  category: AASpecies
   points: -4
   requirements:
     - !type:CharacterJobRequirement

@@ -74,6 +74,10 @@
       points: 1
       required: true
       defaultMarkings: [EarsShadowkin]
+    Head: # den edit start, giving shadowkin their glowing eyes back
+      points: 1
+      required: true
+      defaultMarkings: [EyesShadowkinUnshaded] # den edit end
     Chest:
       points: 6
       required: false

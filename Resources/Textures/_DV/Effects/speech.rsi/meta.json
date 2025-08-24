@@ -1,22 +1,15 @@
 {
     "version": 1,
+    "license": "CC-BY-SA-3.0",
+    "copyright": "Felinid sprites made by Adrian16199 (Github), Rodentia sprites made by portfiend, Feroxi sprites made by BlitzTheSquishy, Thaven sprites made by kushbreth",
     "size": {
         "x": 32,
         "y": 32
     },
-    "license": "CC-BY-SA-3.0",
-    "copyright": "Felinid sprites made by Adrian16199 (Github), Rodentia sprites made by portfiend, Feroxi sprites made by BlitzTheSquishy",
     "states": [
         {
             "name": "felinid0",
-            "delays": [
-                [
-                    0.2,
-                    0.3,
-                    0.3,
-                    0.5
-                ]
-            ]
+            "delays": [[0.2, 0.3, 0.3, 0.5]]
         },
         {
             "name": "felinid1"
@@ -29,14 +22,7 @@
         },
         {
             "name": "chitinid0",
-            "delays": [
-                [
-                    0.2,
-                    0.3,
-                    0.3,
-                    0.5
-                ]
-            ]
+            "delays": [[0.2, 0.3, 0.3, 0.5]]
         },
         {
             "name": "rodentia1"
@@ -52,14 +38,7 @@
         },
         {
             "name": "feroxi0",
-            "delays": [
-                [
-                    0.2,
-                    0.3,
-                    0.3,
-                    0.5
-                ]
-            ]
+            "delays": [[0.2, 0.3, 0.3, 0.5]]
         },
         {
             "name": "feroxi1"
@@ -69,14 +48,7 @@
         },
         {
             "name": "kitsune0",
-            "delays": [
-                [
-                    0.2,
-                    0.3,
-                    0.3,
-                    0.5
-                ]
-            ]
+            "delays": [[0.2, 0.3, 0.3, 0.5]]
         },
         {
             "name": "kitsune1"
@@ -85,16 +57,22 @@
             "name": "kitsune2"
         },
         {
+            "name": "thaven1"
+        },
+        {
+            "name": "thaven2"
+        },
+        {
+            "name": "thaven0",
+            "delays": [[0.2, 0.3, 0.3, 0.3]]
+        },
+        {
+            "name": "thaven3",
+            "delays": [[0.3, 0.3, 0.3, 0.3, 0.3]]
+        },
+        {
             "name": "default3",
-            "delays": [
-                [
-                    0.2,
-                    0.3,
-                    0.3,
-                    0.5,
-                    0.5
-                ]
-            ]
+            "delays": [[0.2, 0.3, 0.3, 0.5, 0.5]]
         }
     ]
 }

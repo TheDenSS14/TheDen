@@ -1,0 +1,124 @@
+- type: entity
+  parent: OrganSpaceAnimalLungs # BreathingImmunity, the only mechanical difference to Shitmed dragon lungs
+  id: OrganSpaceDragonLungs
+  name: space dragon lungs
+  description: "The source of a dragon's fire, these lungs evolved beyond the need for air. Surprisingly, they're not toxic."
+  components:
+  - type: Organ
+    onAdd:
+    - type: ActionGun
+      action: ActionDragonsBreath
+      gunProto: DragonsBreathGun
+  - type: Sprite
+    sprite: _Impstation/Mobs/Species/Thaven/organs.rsi # A resprite, but DOES NOT contain carpotoxin like the other organs
+  - type: Metabolizer
+    metabolizerTypes: [Animal, Thaven]
+  - type: FlavorProfile
+    flavors:
+      - carpflesh
+
+- type: entity
+  id: OrganCarpLungs
+  parent: OrganSpaceAnimalLungs # BreathingImmunity
+  name: carp lungs
+  description: "An anomaly, evolved to produce energy without needing to breathe at all. Surprisingly, they're not toxic."
+  components:
+  - type: Sprite
+    sprite: _Impstation/Mobs/Species/Thaven/organs.rsi # A resprite, but DOES NOT contain carpotoxin like the other organs
+  - type: Metabolizer
+    metabolizerTypes: [Animal, Thaven]
+  - type: FlavorProfile
+    flavors:
+      - carpflesh
+
+- type: entity
+  id: OrganCarpHeart
+  parent: OrganSpaceAnimalHeart # PressureImmunity
+  name: carp heart
+  description: "This strange heart keeps beating even in the void of space. Surprisingly, it's not toxic."
+  components:
+  - type: Sprite
+    sprite: _Impstation/Mobs/Species/Thaven/organs.rsi # A resprite, but DOES NOT contain carpotoxin like the other organs
+  - type: Metabolizer
+    metabolizerTypes: [Animal, Thaven] # Carp should be immune to carpotoxin anyway
+  - type: FlavorProfile
+    flavors:
+      - carpflesh
+
+- type: entity
+  id: OrganCarpStomach
+  parent: OrganAnimalStomach
+  name: carp stomach
+  description: "Unfortunately capable of digesting metal, limited only by its owner's jaw strength."
+  components:
+  - type: Sprite
+    sprite: _Impstation/Mobs/Species/Thaven/organs.rsi
+  - type: Metabolizer
+    metabolizerTypes: [Animal, Thaven]
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 2
+        reagents:
+        - ReagentId: CarpoToxin
+          Quantity: 2
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: CarpoToxin
+        Quantity: 2
+  - type: FlavorProfile
+    flavors:
+      - carpflesh
+
+- type: entity
+  id: OrganCarpLiver
+  parent: OrganAnimalLiver
+  name: carp liver
+  description: "Dense, glossy, and toxic. A source of ichor, but only in vivo. Too late for that now."
+  components:
+  - type: Sprite
+    sprite: _Impstation/Mobs/Species/Thaven/organs.rsi
+  - type: Metabolizer
+    metabolizerTypes: [Animal, Thaven]
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 2
+        reagents:
+        - ReagentId: CarpoToxin
+          Quantity: 2
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: CarpoToxin
+        Quantity: 2
+  - type: FlavorProfile
+    flavors:
+      - carpflesh
+
+- type: entity
+  id: OrganCarpKidneys
+  parent: OrganAnimalKidneys
+  name: carp kidneys
+  description: "Like your kidneys, except mostly used to process blood from devoured prey."
+  components:
+  - type: Sprite
+    sprite: _Impstation/Mobs/Species/Thaven/organs.rsi
+  - type: Metabolizer
+    metabolizerTypes: [Animal, Thaven]
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 2
+        reagents:
+        - ReagentId: CarpoToxin
+          Quantity: 2
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: CarpoToxin
+        Quantity: 2
+  - type: FlavorProfile
+    flavors:
+      - carpflesh

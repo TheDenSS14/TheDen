@@ -15,7 +15,7 @@ namespace Content.Shared.Overlays.Switchable;
 
 public abstract partial class SwitchableOverlayComponent : BaseOverlayComponent
 {
-    [DataField, AutoNetworkedField]
+    [DataField]
     public virtual bool IsActive { get; set; }
 
     [DataField]

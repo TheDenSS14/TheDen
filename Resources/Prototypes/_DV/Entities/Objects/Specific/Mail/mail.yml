@@ -823,6 +823,12 @@
       orGroup: Plushie
     - id: PlushieAlienGermMini
       orGroup: Plushie
+    - id: PlushieThaven # TheDen
+      prob: 0.5
+      orGroup: Plushie
+    - id: PlushieThavenWeird # TheDen
+      prob: 0.25
+      orGroup: Plushie
 
 # Random snacks, replaces MailChocolate (lousy animal organs)
 - type: entity
