@@ -39,7 +39,7 @@
 
 # Airlocks
 - type: entity
-  parent: Airlock
+  parent: AirlockService # The Den - airlock resprite
   id: AirlockServiceLocked
   suffix: Service, Locked
   components:
@@ -462,7 +462,7 @@
 
 # Glass Airlocks
 - type: entity
-  parent: AirlockGlass
+  parent: AirlockServiceGlass # The Den - airlock resprite
   id: AirlockServiceGlassLocked
   suffix: Service, Locked
   components:
