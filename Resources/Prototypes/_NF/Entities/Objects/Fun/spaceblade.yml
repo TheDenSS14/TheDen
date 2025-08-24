@@ -164,12 +164,12 @@
     state: moff
   - type: EmitSoundOnUse
     sound:
-      path: /Audio/Voice/Moth/scream_moth.ogg
+      path: /Audio/Voice/Moth/moth_scream.ogg
   - type: UseDelay
     delay: 2.0
   - type: EmitSoundOnCollide
     sound:
-      path: /Audio/Voice/Moth/scream_moth.ogg
+      path: /Audio/Voice/Moth/moth_scream.ogg
       params:
         variation: 0.65
         volume: -5
