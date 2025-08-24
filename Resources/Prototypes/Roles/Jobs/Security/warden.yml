@@ -57,13 +57,12 @@
   requirements:
     - !type:CharacterPlaytimeRequirement
       tracker: JobDetective
-      min: 54000 # The Den - 15 hours of detective
-    - !type:CharacterPlaytimeRequirement
-      tracker: JobBrigmedic
-      min: 25200 # The Den - 7 hours of corpsman
+      min: 10800 # The Den - 3 hours
     - !type:CharacterDepartmentTimeRequirement
       department: Security
-      min: 108000 # The Den - 30 hours general security playtime
+      min: 72000 # The Den - 20 hours
+    - !type:CharacterOverallTimeRequirement
+      min: 180000 # The Den - 50 hours
   startingGear: WardenGear
   icon: "JobIconWarden"
   supervisors: job-supervisors-hos

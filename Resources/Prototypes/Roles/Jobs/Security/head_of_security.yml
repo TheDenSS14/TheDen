@@ -55,15 +55,13 @@
   description: job-description-hos
   playTimeTracker: JobHeadOfSecurity
   requirements:
-    - !type:CharacterPlaytimeRequirement
+    - !type:CharacterPlaytimeRequirement # DeltaV - Command dept time requirement
       tracker: JobWarden
-      min: 54000 # The Den - 30 hours of warden
-    - !type:CharacterDepartmentTimeRequirement
-      department: Security
-      min: 270000 # The Den - 75 hours general security playtime
+      min: 14400 # Floofstation - 4 hour
   weight: 10
   startingGear: HoSGear
   icon: "JobIconHeadOfSecurity"
+  whitelisted: true
   requireAdminNotify: true
   supervisors: job-supervisors-captain
   canBeAntag: false

@@ -53,7 +53,9 @@
   requirements:
     - !type:CharacterPlaytimeRequirement
       tracker: JobSecurityCadet
-      min: 21600 # 6 hours
+      min: 21600 # The Den - 6 hours
+    - !type:CharacterOverallTimeRequirement
+      min: 54000 # The Den - 15 hours
   startingGear: SecurityOfficerGear
   icon: "JobIconSecurityOfficer"
   supervisors: job-supervisors-hos

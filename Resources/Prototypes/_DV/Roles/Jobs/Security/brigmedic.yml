@@ -25,12 +25,14 @@
   description: job-description-brigmedic
   playTimeTracker: JobBrigmedic
   requirements:
-    - !type:CharacterPlaytimeRequirement
-      tracker: JobParamedic
-      min: 25200 # The Den - 7 hours of paramedic
-    - !type:CharacterPlaytimeRequirement
-      tracker: JobSecurityOfficer
-      min: 54000 # The Den - 15 hours of security officer
+    - !type:CharacterDepartmentTimeRequirement
+      department: Medical
+      min: 25200 # The Den - 7 hours
+    - !type:CharacterDepartmentTimeRequirement
+      department: Security
+      min: 54000 # The Den - 15 hours
+    - !type:CharacterOverallTimeRequirement
+      min: 72000 # The Den - 20 hours
   startingGear: CorpsmanGear
   icon: "JobIconBrigmedic"
   supervisors: job-supervisors-hos

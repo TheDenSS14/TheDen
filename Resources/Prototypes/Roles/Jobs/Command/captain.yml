@@ -58,29 +58,30 @@
   requirements:
     - !type:CharacterPlaytimeRequirement
       tracker: JobQuartermaster # DeltaV - Logistics Department replacing Cargo
-      min: 32400 # The Den - 9 hours
+      min: 7200 # The Den - 2 hour
     - !type:CharacterPlaytimeRequirement
       tracker: JobChiefEngineer
-      min: 32400 # The Den - 9 hours
+      min: 7200 # The Den - 2 hour
     - !type:CharacterPlaytimeRequirement
       tracker: JobChiefMedicalOfficer
-      min: 32400 # The Den - 9 hours
+      min: 7200 # The Den - 2 hour
     - !type:CharacterPlaytimeRequirement
       tracker: JobHeadOfSecurity
-      min: 72000 # The Den - 20 hours
-    - !type:CharacterPlaytimeRequirement
-      tracker: JobResearchDirector
-      min: 32400 # The Den - 9 hours
-    - !type:CharacterPlaytimeRequirement
-      tracker: JobHeadOfPersonnel
-      min: 32400 # The Den - 9 hours
+      min: 7200 # The Den - 2 hour
+    - !type:CharacterPlaytimeRequirement # DeltaV - Epistemics dept time requirement
+      tracker: JobResearchDirector # DeltaV - Epistemics Department replacing Science
+      min: 7200 # The Den - 2 hour
+    - !type:CharacterPlaytimeRequirement # DeltaV - Epistemics dept time requirement
+      tracker: JobHeadOfPersonnel # DeltaV - Epistemics Department replacing Science
+      min: 7200 # The Den - 2 hour
     - !type:CharacterOverallTimeRequirement
-      min: 360000 # The Den - 100 hours
+      min: 144000 # The Den - 40 hour
   weight: 20
   startingGear: CaptainGear
   icon: "JobIconCaptain"
   requireAdminNotify: true
   joinNotifyCrew: true
+  whitelisted: true
   supervisors: job-supervisors-centcom
   canBeAntag: false
   accessGroups:
