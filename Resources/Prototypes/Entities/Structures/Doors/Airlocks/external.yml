@@ -31,7 +31,7 @@
     denySound:
       path: /Audio/Machines/airlock_deny.ogg
   - type: Sprite
-    sprite: Structures/Doors/Airlocks/Standard/external.rsi
+    sprite: _DEN/Structures/Doors/Airlocks/Standard/external.rsi # The Den - airlock resprite
   - type: PaintableAirlock
     group: External
     department: null
@@ -46,6 +46,6 @@
   - type: Occluder
     enabled: false
   - type: Sprite
-    sprite: Structures/Doors/Airlocks/Glass/external.rsi
+    sprite: _DEN/Structures/Doors/Airlocks/Glass/external.rsi # The Den - airlock resprite
   - type: PaintableAirlock
     group: ExternalGlass

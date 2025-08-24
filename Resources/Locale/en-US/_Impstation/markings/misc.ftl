@@ -87,6 +87,7 @@ marking-VitiligoArmL = Vitiligo (Left Arm)
 marking-VitiligoLegL = Vitiligo (Left)
 marking-VitiligoChestF = Vitiligo Spread
 marking-VitiligoChestSpots = Vitiligo Spots
+marking-Shadow = Gloomy
 
 # moths
 marking-MothTrueButterfly = Wings (Rainbow)
