@@ -1,10 +1,14 @@
 using System.Linq;
 using System.Threading.Tasks;
+using Content.Server.Administration.Managers;
 using Content.Server.Database;
 using Content.Server.Discord.DiscordLink;
+using Content.Server.GameTicking;
 using NetCord.Gateway;
 using Robust.Server.Player;
+using Robust.Shared.Enums;
 using Robust.Shared.Network;
+using Robust.Shared.Player;
 using Robust.Shared.Utility;
 
 
@@ -17,6 +21,7 @@ namespace Content.Server._DEN.Discord;
 public sealed partial class DiscordUserLink : EntitySystem
 {
     [Dependency] private readonly DiscordLink _discordLink = default!;
+    [Dependency] private readonly IAdminManager _adminManager = default!;
     [Dependency] private readonly IPlayerManager _playerManager = default!;
     [Dependency] private readonly IServerDbManager _db = default!;
     [Dependency] private readonly ILogManager _log = default!;
@@ -43,7 +48,6 @@ public sealed partial class DiscordUserLink : EntitySystem
         _discordLink.RegisterCommandCallback(OnUnverifyCommandRun, "unverify");
 
         _combinedApplicableCodeSymbols += Letters.ToUpper();
-        InitializeGame();
     }
 
     public override void Shutdown()
@@ -51,6 +55,15 @@ public sealed partial class DiscordUserLink : EntitySystem
         base.Shutdown();
 
         _playerManager.PlayerStatusChanged -= OnPlayerStatusChanged;
+    }
+
+    private async void OnPlayerStatusChanged(object? sender, SessionStatusEventArgs ev)
+    {
+        if (ev.NewStatus != SessionStatus.Connected)
+            return;
+
+        await UpdatePermissionsFromDiscord(ev.Session);
+        await SetupPlayerAsync(ev.Session.UserId);
     }
 
     public bool TryGameVerify(NetUserId userId, string code)

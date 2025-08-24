@@ -1,12 +1,7 @@
 using System.Linq;
 using System.Threading.Tasks;
-using Content.Server.Administration;
-using Content.Shared.Administration;
 using NetCord;
-using Robust.Shared.Console;
-using Robust.Shared.Enums;
 using Robust.Shared.Network;
-using Robust.Shared.Player;
 using Robust.Shared.Utility;
 
 
@@ -24,6 +19,16 @@ public sealed partial class DiscordUserLink
         (ulong) 1379878777152213174 // Operations Director
     };
 
+    private readonly ulong[] _staffRoleIds =
+    [
+        1392313569390886942, // Owner
+        1302235013986910219, // Manager
+        1302235039651598386, // Head Admin
+        1302235089677320245, // Senior Admin
+        1302235145889124383, // Admin
+        1302235169591394305, // Trial Admin
+    ];
+
     public bool IsPatron(NetUserId userId)
     {
         var link = GetLink(userId);
@@ -38,6 +43,43 @@ public sealed partial class DiscordUserLink
 
         var value = guildUser.RoleIds.Any(roleId => _patronRoleIds.Contains(roleId));
         return value;
+    }
+
+    public bool IsStaff(NetUserId userId)
+    {
+        var link = GetLink(userId);
+
+        if (link is not { } discordLink)
+            return false;
+
+        var guildUser = GetDiscordIdAsUser(discordLink.DiscordUserId);
+
+        if (guildUser == null)
+            return false;
+
+        var value = guildUser.RoleIds.Any(roleId => _patronRoleIds.Contains(roleId));
+        return value;
+    }
+
+    public int? GetAdminRankOfRole(NetUserId userId)
+    {
+        var link = GetLink(userId);
+
+        if (link is not { } discordLink)
+            return null;
+
+        var guildUser = GetDiscordIdAsUser(discordLink.DiscordUserId);
+
+        if (guildUser == null)
+            return null;
+
+        for (var i = 0; i < _staffRoleIds.Length; i++)
+        {
+            if (guildUser.RoleIds.Contains(_staffRoleIds[i]))
+                return i + 1;
+        }
+
+        return null;
     }
 
     public ActiveDiscordLink? GetLink(NetUserId userId) => _links.FirstOrNull(link => link.UserId == userId);
