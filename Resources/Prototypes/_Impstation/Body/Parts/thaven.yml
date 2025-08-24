@@ -58,7 +58,7 @@
   parent: [PartThaven, BaseLeftArm]
   components:
   - type: Sprite
-    sprite: _Impstation/Mobs/Species/Thaven/parts.rsi
+    sprite: _DEN/Mobs/Species/Thaven/parts.rsi # TheDen - Thaven shoulders widened by one pixel
     state: "l_arm"
   categories: [ HideSpawnMenu ]
 
@@ -68,7 +68,7 @@
   parent: [PartThaven, BaseRightArm]
   components:
   - type: Sprite
-    sprite: _Impstation/Mobs/Species/Thaven/parts.rsi
+    sprite: _DEN/Mobs/Species/Thaven/parts.rsi # TheDen - Thaven shoulders widened by one pixel
     state: "r_arm"
   categories: [ HideSpawnMenu ]
 

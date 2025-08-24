@@ -45,6 +45,15 @@ marking-ThavenHipScales-hipscales = Scales
 marking-GradientRArmT = Gradient (Right)
 marking-GradientRArmT-m_gradient_r_arm = Color
 
+marking-ThavenArmDollJointsTattooRight-r_arm_doll = Doll Joints Arm Tattoo (Right)
+marking-ThavenArmDollJointsTattooRight = Doll Joints Arm Tattoo (Right)
+
+marking-ThavenArmProstheticRight = Prosthetic (Right Arm)
+marking-ThavenArmProstheticRight-arm_r_prosthetic = Prosthetic (Right Arm)
+
+marking-ThavenArmTwistingRight = Twisted Scar (Right Arm)
+marking-ThavenArmTwistingRight-arm_r_twisting = Twisted Scar (Right Arm)
+
 # RHand
 
 marking-GradientRHandT = Gradient (Right)
@@ -54,6 +63,15 @@ marking-GradientRHandT-m_gradient_r_hand = Color
 
 marking-GradientLArmT = Gradient (Left)
 marking-GradientLArmT-m_gradient_l_arm = Gradient
+
+marking-ThavenArmDollJointsTattooLeft-l_arm_doll = Doll Joints Arm Tattoo (Left)
+marking-ThavenArmDollJointsTattooLeft = Doll Joints Arm Tattoo (Left)
+
+marking-ThavenArmProstheticLeft = Prosthetic (Left Arm)
+marking-ThavenArmProstheticLeft-arm_l_prosthetic = Prosthetic (Left Arm)
+
+marking-ThavenArmTwistingLeft = Twisted Scar (Left Arm)
+marking-ThavenArmTwistingLeft-arm_l_twisting = Twisted Scar (Left Arm)
 
 # LHand
 
@@ -154,6 +172,13 @@ marking-ThavenHairVlongF = Very Long Hair
 marking-ThavenHairVlongfringeF = Very Long with Fringe
 
 marking-ThavenHairOxtonFlipped = Oxton (Flipped)
+
+marking-Thavengloomy_long = Gloomy Long
+
+marking-Thavengloomy_longer = Gloomy Longer
+
+marking-Thavengloomy_medium = Gloomy Medium
+
 
 # HeadSide
 

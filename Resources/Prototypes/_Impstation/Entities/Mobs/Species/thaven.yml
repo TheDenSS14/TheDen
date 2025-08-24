@@ -8,7 +8,7 @@
   - type: Hunger
   - type: Thirst
   - type: Icon
-    sprite: _Impstation/Mobs/Species/Thaven/parts.rsi # Unlike dwarves elves are NOT made of slime
+    sprite: _DEN/Mobs/Species/Thaven/parts.rsi # TheDen - Thaven shoulders widened by one pixel
     state: full
   - type: Carriable # TheDen - Carrying system from Nyanotrasen
   - type: Sprite
@@ -91,7 +91,7 @@
             parameterUV: displacementUV
       head:
         layer:
-          sprite: _Impstation/Mobs/Species/Thaven/displacement.rsi
+          sprite: _DEN/Mobs/Species/Thaven/displacement.rsi # TheDen
           state: head
           copyToShaderParameters:
             # Value required, provide a dummy. Gets overridden when applied.
@@ -100,7 +100,7 @@
             parameterUV: displacementUV
       outerClothing:
         layer:
-          sprite: _Impstation/Mobs/Species/Thaven/displacement.rsi
+          sprite: _DEN/Mobs/Species/Thaven/displacement.rsi # TheDen
           state: outerclothing_hardsuit
           copyToShaderParameters:
             # Value required, provide a dummy. Gets overridden when applied.
@@ -109,7 +109,7 @@
             parameterUV: displacementUV
       gloves:
         layer:
-          sprite: _Impstation/Mobs/Species/Thaven/displacement.rsi
+          sprite: _DEN/Mobs/Species/Thaven/displacement.rsi # TheDen
           state: hands
           copyToShaderParameters:
             # Value required, provide a dummy. Gets overridden when applied.
@@ -146,7 +146,7 @@
             parameterUV: displacementUV
       head:
         layer:
-          sprite: _Impstation/Mobs/Species/Thaven/displacement.rsi # TheDen
+          sprite: _DEN/Mobs/Species/Thaven/displacement.rsi # TheDen
           state: head
           copyToShaderParameters:
             # Value required, provide a dummy. Gets overridden when applied.
@@ -155,7 +155,7 @@
             parameterUV: displacementUV
       outerClothing:
         layer:
-          sprite: _Impstation/Mobs/Species/Thaven/displacement.rsi # TheDen
+          sprite: _DEN/Mobs/Species/Thaven/displacement.rsi # TheDen
           state: outerclothing_hardsuit
           copyToShaderParameters:
             # Value required, provide a dummy. Gets overridden when applied.
@@ -164,7 +164,7 @@
             parameterUV: displacementUV
       gloves:
         layer:
-          sprite: _Impstation/Mobs/Species/Thaven/displacement.rsi # TheDen
+          sprite: _DEN/Mobs/Species/Thaven/displacement.rsi # TheDen
           state: hands
           copyToShaderParameters:
             # Value required, provide a dummy. Gets overridden when applied.

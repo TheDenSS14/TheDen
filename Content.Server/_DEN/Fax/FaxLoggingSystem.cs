@@ -51,6 +51,7 @@ public sealed class FaxLoggingSystem : EntitySystem
         }
 
         var content = FormattedMessage.RemoveMarkupPermissive(msg.Content);
+        msg.Content = content;
         SendToWebhook(msg);
     }
 
@@ -68,7 +69,8 @@ public sealed class FaxLoggingSystem : EntitySystem
         {
             var remaining = contentLeft.Length - 1;
             var slicesToTake = Math.Min(DiscordMaxMessageLength - 1, remaining);
-            var slice = content.Substring(lastSliceIndex + 1, slicesToTake);
+            var startPos = lastSliceIndex == 0 ? 0 : lastSliceIndex + 1;
+            var slice = content.Substring(startPos, slicesToTake);
             slices.Add(slice);
 
             if (contentLeft.Length - slicesToTake + 1 > 0)
