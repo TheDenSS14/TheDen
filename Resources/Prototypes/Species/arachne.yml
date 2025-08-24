@@ -35,6 +35,10 @@
 - type: markingPoints
   id: MobArachneMarkingLimits
   points:
+    Eyes: # TheDen - Lets them choose eyes
+      points: 1
+      required: true
+      defaultMarkings: [ ArachneEyesDefault ]
     Hair:
       points: 1
       required: false
@@ -86,7 +90,7 @@
     Snout: MobHumanoidAnyMarking
     Chest: MobHumanTorso
     Undershirt: MobHumanoidAnyMarking
-    Eyes: MobArachneEyes
+    Eyes: MobHumanoidAnyMarking # TheDen - Lets them choose eyes
     LArm: MobHumanLArm
     RArm: MobHumanRArm
     LHand: MobHumanLHand
