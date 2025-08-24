@@ -111,23 +111,25 @@
     hideLayersOnEquip:
     - Hair
     - Snout
-  - type: ModifyUndies # FLOOF CHANGE
-  - type: LanguageKnowledge
-    speaks:
-    - TauCetiBasic
-    - SolCommon
-    understands:
-    - TauCetiBasic
-    - SolCommon
-  - type: FootPrints
-  - type: Tag
-    tags:
-    - HumanEmotes
-    - CanPilot
-    - FootstepSound
-    - DoorBumpOpener
+  - type: Inventory
+    femaleDisplacements:
+      jumpsuit:
+        sizeMaps:
+          32:
+            sprite: Mobs/Species/Human/displacement.rsi
+            state: jumpsuit-female
+
 
 - type: entity
   parent: BaseSpeciesDummy
   id: MobHumanDummy
-  categories: [ HideSpawnMenu ]
+  noSpawn: true
+  components:
+  - type: Inventory
+    femaleDisplacements:
+      jumpsuit:
+        sizeMaps:
+          32:
+            sprite: Mobs/Species/Human/displacement.rsi
+            state: jumpsuit-female
+

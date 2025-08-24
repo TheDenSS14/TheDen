@@ -155,21 +155,25 @@
       types:
         Asphyxiation: -1.0
     maxSaturation: 15
-  - type: LanguageKnowledge
-    speaks:
-    - TauCetiBasic
-    - Bubblish
-    understands:
-    - TauCetiBasic
-    - Bubblish
-  - type: FootPrints
-    leftBarePrint: "footprint-left-bare-slime"
-    rightBarePrint: "footprint-right-bare-slime"
+  - type: Inventory
+    femaleDisplacements:
+      jumpsuit:
+        sizeMaps:
+          32:
+            sprite: Mobs/Species/Human/displacement.rsi
+            state: jumpsuit-female
 
 - type: entity
   parent: MobHumanDummy
   id: MobSlimePersonDummy
   categories: [ HideSpawnMenu ]
   components:
-    - type: HumanoidAppearance
-      species: SlimePerson
+  - type: HumanoidAppearance
+    species: SlimePerson
+  - type: Inventory
+    femaleDisplacements:
+      jumpsuit:
+        sizeMaps:
+          32:
+            sprite: Mobs/Species/Human/displacement.rsi
+            state: jumpsuit-female
