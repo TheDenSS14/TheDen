@@ -33,9 +33,9 @@
   description: job-description-detective
   playTimeTracker: JobDetective
   requirements:
-  - !type:CharacterDepartmentTimeRequirement
-    department: Security
-    min: 14400 # Floofstation - 4 hour
+  - !type:CharacterPlaytimeRequirement
+    tracker: JobSecurityOfficer
+    min: 54000 # The Den - 15 hours of security officer
   startingGear: DetectiveGear
   icon: "JobIconDetective"
   supervisors: job-supervisors-hos

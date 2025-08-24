@@ -51,9 +51,9 @@
   description: job-description-security
   playTimeTracker: JobSecurityOfficer
   requirements:
-    - !type:CharacterDepartmentTimeRequirement
-      department: Security
-      min: 10800 # 3 hours because christ 10 hours is insane
+    - !type:CharacterPlaytimeRequirement
+      tracker: JobSecurityCadet
+      min: 21600 # 6 hours
   startingGear: SecurityOfficerGear
   icon: "JobIconSecurityOfficer"
   supervisors: job-supervisors-hos

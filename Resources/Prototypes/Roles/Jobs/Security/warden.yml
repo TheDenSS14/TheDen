@@ -61,9 +61,6 @@
     - !type:CharacterPlaytimeRequirement
       tracker: JobCorpsman
       min: 25200 # The Den - 7 hours of corpsman
-    - !type:CharacterPlaytimeRequirement
-      tracker: JobPrisoner
-      min: 10800 # The Den - 3 hours of prisoner
     - !type:CharacterDepartmentTimeRequirement
       department: Security
       min: 108000 # The Den - 30 hours general security playtime

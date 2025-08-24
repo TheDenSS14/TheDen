@@ -57,10 +57,7 @@
   requirements:
     - !type:CharacterPlaytimeRequirement
       tracker: JobWarden
-      min: 108000 # The Den - 30 hours of warden
-    - !type:CharacterPlaytimeRequirement
-      tracker: JobPrisoner
-      min: 21600 # The Den - 6 hours of prisoner
+      min: 54000 # The Den - 30 hours of warden
     - !type:CharacterDepartmentTimeRequirement
       department: Security
       min: 270000 # The Den - 75 hours general security playtime
