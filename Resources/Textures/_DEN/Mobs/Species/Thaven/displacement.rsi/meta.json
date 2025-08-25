@@ -1,7 +1,7 @@
 ﻿{
     "version": 1,
     "license": "CC-BY-SA-3.0",
-    "copyright": "by widgetbeck, male altered and female added by Sha-Seng (github)",
+    "copyright": "by widgetbeck, hands and male altered and female added by Sha-Seng (github)",
     "size": {
         "x": 32,
         "y": 32
@@ -10,6 +10,18 @@
         "srgb": false
     },
     "states": [
+        {
+            "name": "hands",
+            "directions": 4
+        },
+        {
+            "name": "head",
+            "directions": 4
+        },
+        {
+            "name": "outerclothing_hardsuit",
+            "directions": 4
+        },
         {
             "name": "jumpsuit",
             "directions": 4

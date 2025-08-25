@@ -104,6 +104,9 @@ namespace Content.Server.Administration.Managers
             return null;
         }
 
+        public int? GetAdminRankId(ICommonSession session) =>
+            _admins.TryGetValue(session, out var reg) ? reg.RankId : null;
+
         public void DeAdmin(ICommonSession session)
         {
             if (!_admins.TryGetValue(session, out var reg))

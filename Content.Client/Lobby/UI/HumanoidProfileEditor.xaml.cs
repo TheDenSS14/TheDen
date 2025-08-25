@@ -417,6 +417,7 @@ namespace Content.Client.Lobby.UI
 
             Skin.OnValueChanged += _ => { OnSkinColorOnValueChanged(); };
             RgbSkinColorContainer.AddChild(_rgbSkinColorSelector = new());
+            _rgbSkinColorSelector.SelectorType = ColorSelectorSliders.ColorSelectorType.Hsv; // defaults color selector to HSV
             _rgbSkinColorSelector.OnColorChanged += _ => { OnSkinColorOnValueChanged(); };
             SkinFurToggle.OnToggled += _ => { SetProfile(Profile, CharacterSlot); };
 

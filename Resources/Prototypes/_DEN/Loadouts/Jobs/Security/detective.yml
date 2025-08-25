@@ -75,8 +75,8 @@
   items:
     - ClothingUniformJumpskirtDetectiveGrey
 
-- type: loadout
-  id: LoadoutClothingUniformDetectiveTurtleskirt
+
+  id: LoadoutUniformJumpsuitDetectiveMiamiVice
   category: JobsSecurityDetective
   cost: 0
   exclusive: true
@@ -86,12 +86,27 @@
     - !type:CharacterJobRequirement
       jobs:
         - Detective
+
   items:
-    - ClothingUniformJumpskirtDetTurtle
+    - ClothingUniformMiamiVice
+    
+- type: loadout
+  id: LoadoutClothingUniformDetectiveTurtleskirt
+    category: JobsSecurityDetective
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutDetectiveUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - Detective
+  items:
+      - ClothingUniformJumpskirtDetTurtle
 
 - type: loadout
   id: LoadoutClothingUniformDetectiveTurtlesuit
-  category: JobsSecurityDetective
+    category: JobsSecurityDetective
   cost: 0
   exclusive: true
   requirements:
@@ -102,3 +117,47 @@
         - Detective
   items:
     - ClothingUniformJumpsuitDetTurtle
+    
+- type: loadout
+  id: LoadoutUniformJumpskirtDetectiveMiamiVice
+  category: JobsSecurityDetective
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutDetectiveUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - Detective
+  items:
+    - ClothingUniformMiamiViceSkirt
+
+
+- type: loadout
+  id: LoadoutUniformJumpsuitDetectiveSuit
+  category: JobsSecurityDetective
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutDetectiveUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - Detective
+  items:
+    - ClothingUniformDetectiveSuit
+
+
+- type: loadout
+  id: LoadoutUniformJumpskirtDetectiveSuit
+  category: JobsSecurityDetective
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutDetectiveUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - Detective
+  items:
+    - ClothingUniformDetectiveSuitSkirt

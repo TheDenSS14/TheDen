@@ -838,6 +838,10 @@ namespace Content.Server.Database.Migrations.Sqlite
                         .HasColumnType("INTEGER")
                         .HasColumnName("accepted_prompt");
 
+                    b.Property<ulong?>("DiscordUserId")
+                        .HasColumnType("INTEGER")
+                        .HasColumnName("discord_user_id");
+
                     b.Property<DateTime>("FirstSeenTime")
                         .HasColumnType("TEXT")
                         .HasColumnName("first_seen_time");

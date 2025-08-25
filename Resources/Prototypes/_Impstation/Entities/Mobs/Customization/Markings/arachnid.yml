@@ -1,0 +1,91 @@
+# Eyes
+- type: marking
+  id: ArachnidEyesDefault
+  bodyPart: Eyes
+  markingCategory: Eyes
+  speciesRestriction: [ Arachnid ]
+  coloring:
+    default:
+      type:
+        !type:EyeColoring
+  sprites:
+  - sprite: Mobs/Species/Arachnid/parts.rsi
+    state: eyes
+
+- type: marking
+  id: ArachnidEyesJumper
+  bodyPart: Eyes
+  markingCategory: Eyes
+  speciesRestriction: [ Arachnid, Arachne ]
+  coloring:
+    default:
+      type:
+        !type:EyeColoring
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/Arachnid/eyes.rsi
+    state: jumper1
+  - sprite: _Impstation/Mobs/Customization/Arachnid/eyes.rsi
+    state: jumper2
+  - sprite: _Impstation/Mobs/Customization/Arachnid/eyes.rsi
+    state: jumper3
+  - sprite: _Impstation/Mobs/Customization/Arachnid/eyes.rsi
+    state: jumper4
+
+- type: marking
+  id: ArachnidEyesJumperGlowing
+  bodyPart: Eyes
+  markingCategory: Eyes
+  speciesRestriction: [ Arachnid, Arachne ]
+  coloring:
+    default:
+      type:
+        !type:EyeColoring
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/Arachnid/eyes.rsi
+    state: jumper1
+  - sprite: _Impstation/Mobs/Customization/Arachnid/eyes.rsi
+    state: jumper2
+  - sprite: _Impstation/Mobs/Customization/Arachnid/eyes.rsi
+    state: jumper3
+  - sprite: _Impstation/Mobs/Customization/Arachnid/eyes.rsi
+    state: jumper4
+  shader: unshaded
+
+- type: marking
+  id: ArachnidEyesRound
+  bodyPart: Eyes
+  markingCategory: Eyes
+  speciesRestriction: [ Arachnid, Arachne ]
+  coloring:
+    default:
+      type:
+        !type:EyeColoring
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/Arachnid/eyes.rsi
+    state: round1
+  - sprite: _Impstation/Mobs/Customization/Arachnid/eyes.rsi
+    state: round2
+  - sprite: _Impstation/Mobs/Customization/Arachnid/eyes.rsi
+    state: round3
+  - sprite: _Impstation/Mobs/Customization/Arachnid/eyes.rsi
+    state: round4
+
+- type: marking
+  id: ArachnidEyesRoundGlowing
+  bodyPart: Eyes
+  markingCategory: Eyes
+  speciesRestriction: [ Arachnid, Arachne ]
+  coloring:
+    default:
+      type:
+        !type:EyeColoring
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/Arachnid/eyes.rsi
+    state: round1
+  - sprite: _Impstation/Mobs/Customization/Arachnid/eyes.rsi
+    state: round2
+  - sprite: _Impstation/Mobs/Customization/Arachnid/eyes.rsi
+    state: round3
+  - sprite: _Impstation/Mobs/Customization/Arachnid/eyes.rsi
+    state: round4
+  shader: unshaded
