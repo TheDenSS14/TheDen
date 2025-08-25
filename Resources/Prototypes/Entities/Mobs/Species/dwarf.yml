@@ -91,23 +91,24 @@
     hideLayersOnEquip:
     - Hair
     - Snout
-  - type: LanguageKnowledge
-    speaks:
-    - TauCetiBasic
-    - SolCommon
-    understands:
-    - TauCetiBasic
-    - SolCommon
-  - type: LightweightDrunk
-    boozeStrengthMultiplier: 0.5
-  - type: Stamina
-    critThreshold: 115
-    decay: 3.3 # 3 base decay multiplied by 1.15 = 3.3
-  - type: FootPrints
-    leftBarePrint: "footprint-left-bare-dwarf"
-    rightBarePrint: "footprint-right-bare-dwarf"
+  - type: Inventory
+    femaleDisplacements:
+      jumpsuit:
+        sizeMaps:
+          32:
+            sprite: Mobs/Species/Human/displacement.rsi
+            state: jumpsuit-female
 
 - type: entity
   parent: BaseSpeciesDummy
   id: MobDwarfDummy
-  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    scale: 1, 0.8
+  - type: Inventory
+    femaleDisplacements:
+      jumpsuit:
+        sizeMaps:
+          32:
+            sprite: Mobs/Species/Human/displacement.rsi
+            state: jumpsuit-female

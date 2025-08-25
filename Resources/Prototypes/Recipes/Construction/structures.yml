@@ -801,7 +801,7 @@
   category: construction-category-structures
   description: This is a firelock - it locks an area when a fire alarm in the area is triggered. Don't get squished!
   icon:
-    sprite: Structures/Doors/Airlocks/Standard/firelock.rsi
+    sprite: _DEN/Structures/Doors/Airlocks/Standard/firelock.rsi # The Den - airlock resprite
     state: closed
   objectType: Structure
   placementMode: SnapgridCenter
@@ -818,7 +818,7 @@
   category: construction-category-structures
   description: This is a firelock - it locks an area when a fire alarm in the area is triggered. Don't get squished!
   icon:
-    sprite: Structures/Doors/Airlocks/Glass/firelock.rsi
+    sprite: _DEN/Structures/Doors/Airlocks/Glass/firelock.rsi # The Den - airlock resprite
     state: closed
   objectType: Structure
   placementMode: SnapgridCenter
@@ -1300,7 +1300,7 @@
   category: construction-category-structures
   description: It opens, it closes, and maybe crushes you.
   icon:
-    sprite: Structures/Doors/Airlocks/Standard/basic.rsi
+    sprite: _DEN/Structures/Doors/Airlocks/Standard/basic.rsi # The Den - airlock resprite
     state: assembly
   objectType: Structure
   placementMode: SnapgridCenter
@@ -1317,7 +1317,7 @@
   category: construction-category-structures
   description: It opens, it closes, and maybe crushes you.
   icon:
-    sprite: Structures/Doors/Airlocks/Glass/glass.rsi
+    sprite: _DEN/Structures/Doors/Airlocks/Glass/glass.rsi # The Den - airlock resprite
     state: assembly
   objectType: Structure
   placementMode: SnapgridCenter

@@ -1,6 +1,7 @@
 using System.Linq;
 using System.Threading.Tasks;
 using Content.Server.Administration;
+using Content.Server.Discord.DiscordLink;
 using Content.Shared.Administration;
 using Robust.Shared.Console;
 using Robust.Shared.Enums;
@@ -13,16 +14,6 @@ namespace Content.Server._DEN.Discord;
 
 public sealed partial class DiscordUserLink
 {
-    public void InitializeGame() {}
-
-    private async void OnPlayerStatusChanged(object? sender, SessionStatusEventArgs ev)
-    {
-        if (ev.NewStatus != SessionStatus.Connected)
-            return;
-
-        await SetupPlayerAsync(ev.Session.UserId);
-    }
-
     private async Task SetupPlayerAsync(NetUserId userId)
     {
         var link = await _db.GetDiscordLink(userId);
@@ -61,5 +52,19 @@ public sealed class VerifyCommand : IConsoleCommand
         var success = discordUserLink.TryGameVerify(shell.Player.UserId, args[0]);
         var successText = success ? string.Empty : " not";
         shell.WriteLine($"Your discord account has{successText} been verified.");
+    }
+}
+
+[AdminCommand(AdminFlags.Host)]
+public sealed class ReloadBot : IConsoleCommand
+{
+    public string Command => "reloadbot";
+    public string Description => "Reloads the discord integration bot.";
+    public string Help => "Usage: reloadbot";
+
+    public void Execute(IConsoleShell shell, string argStr, string[] args)
+    {
+        var discordLink = IoCManager.Resolve<DiscordLink>();
+        discordLink.ReloadBot();
     }
 }
