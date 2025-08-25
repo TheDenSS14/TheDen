@@ -173,6 +173,48 @@
     - ClothingUniformJumpskirtSec
 
 - type: loadout
+  id: LoadoutSecurityUniformJumpsuitTurtle
+  category: JobsSecurityAUncategorized
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSecurityUniforms
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Security
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Warden # Warden has ClothingUniformJumpsuitWardenTurtle
+        - HeadOfSecurity # HoS has ClothingUniformJumpsuitHoSTurtle
+        - Brigmedic # Corpsman has ClothingUniformJumpsuitBrigmedicTurtle
+        - Detective # Detective has ClothingUniformJumpsuitDetTurtle
+  items:
+    - ClothingUniformJumpsuitSecTurtle
+
+- type: loadout
+  id: LoadoutSecurityUniformJumpskirtTurtle
+  category: JobsSecurityAUncategorized
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSecurityUniforms
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Security
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Warden # Warden has ClothingUniformJumpskirtWardenTurtle
+        - HeadOfSecurity # HoS has ClothingUniformJumpskirtHoSTurtle
+        - Brigmedic # Corpsman has ClothingUniformJumpskirtBrigmedicTurtle
+        - Detective # Detective has ClothingUniformJumpskirtDetTurtle
+  items:
+    - ClothingUniformJumpskirtSecTurtle
+
+- type: loadout
   id: LoadoutTowelRed
   category: JobsSecurityAUncategorized
   cost: 1

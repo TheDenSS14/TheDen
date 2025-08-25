@@ -210,6 +210,56 @@
   - type: Clothing
     sprite: _DV/Clothing/Uniforms/Jumpsuit/courier.rsi
 
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitSecTurtle
+  name: security officer's turtleneck # Den - renamed to security officer's, edited description
+  description: A comfortable and tight-fitting turtleneck for those with the resolve to reach the position of Security Officer.
+  components:
+  - type: Sprite
+    sprite: _DV/Clothing/Uniforms/Jumpsuit/security_alt.rsi
+  - type: Clothing
+    sprite: _DV/Clothing/Uniforms/Jumpsuit/security_alt.rsi
+
+# Corpsman alt uniforms
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitBrigmedicTurtle
+  name: corpsman's turtleneck
+  description: A comfortable and tight-fitting turtleneck for those with the dedication to reach the position of Corpsman.
+  components:
+  - type: Sprite
+    sprite: _DV/Clothing/Uniforms/Jumpsuit/brigmedic_alt.rsi
+  - type: Clothing
+    sprite: _DV/Clothing/Uniforms/Jumpsuit/brigmedic_alt.rsi
+
+# Detective uniform
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitDetTurtle
+  name: detective's turtleneck
+  description: A comfortable and tight-fitting turtleneck for those with the resolve to reach the position of Detective.
+  components:
+  - type: Sprite
+    sprite: _DV/Clothing/Uniforms/Jumpsuit/detective_alt.rsi
+  - type: Clothing
+    sprite: _DV/Clothing/Uniforms/Jumpsuit/detective_alt.rsi
+
+# Senior Officer uniform
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitSecSenior
+  name: senior officer's jumpsuit
+  description: A tight-fitting tactical jumpsuit, made of light and breathable yet durable material. Can be worn all year round.
+  components:
+  - type: Sprite
+    sprite: _DV/Clothing/Uniforms/Jumpsuit/seniorofficer.rsi
+  - type: Clothing
+    sprite: _DV/Clothing/Uniforms/Jumpsuit/seniorofficer.rsi
+
 # Warden alt uniforms
 
 - type: entity
@@ -233,6 +283,30 @@
     sprite: _DV/Clothing/Uniforms/Jumpsuit/warden_grey.rsi
   - type: Clothing
     sprite: _DV/Clothing/Uniforms/Jumpsuit/warden_grey.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitWardenTurtle
+  name: warden's turtleneck
+  description: A comfortable and tight-fitting turtleneck for those with the patience to reach the position of Warden.
+  components:
+  - type: Sprite
+    sprite: _DV/Clothing/Uniforms/Jumpsuit/armourer_alt.rsi
+  - type: Clothing
+    sprite: _DV/Clothing/Uniforms/Jumpsuit/armourer_alt.rsi
+
+# HoS alt uniforms
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitHoSTurtle
+  name: head of security's turtleneck
+  description: A comfortable and tight-fitting turtleneck for those with the tenacity to reach the position of Head of Security.
+  components:
+  - type: Sprite
+    sprite: _DV/Clothing/Uniforms/Jumpsuit/hos_alt.rsi
+  - type: Clothing
+    sprite: _DV/Clothing/Uniforms/Jumpsuit/hos_alt.rsi
 
 # Central Command Uniform - ported from Velta
 

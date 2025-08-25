@@ -1,0 +1,15 @@
+# Prison Guard
+
+- type: loadout
+  id: LoadoutUniformJumpskirtPrisonGuard
+  category: JobsSecurityPrisonGuard
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutPrisonGuardUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - PrisonGuard
+  items:
+    - ClothingUniformJumpskirtPrisonGuard
