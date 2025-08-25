@@ -688,7 +688,7 @@ marking-ThavenPiercings3R-piercings3R = Stud Earring
 # Tail
 
 marking-ThavenBasicTail = Basic Tail
-marking-ThavenBasicTail-basic = Basic Tail
+marking-ThavenBasicTail-basic = Tail
 
 marking-ThavenBigTail = Big Tail
 marking-ThavenBigTail-big1 = Tail
@@ -703,7 +703,7 @@ marking-ThavenTailEel-eel1 = Tail
 marking-ThavenTailEel-eel2 = Fin
 
 marking-ThavenTailEelOverlay = Eel Tail (Overlay)
-marking-ThavenTailEelOverlay-eel3 = Eel Tail (Overlay)
+marking-ThavenTailEelOverlay-eel3 = Spots
 
 marking-ThavenTailNurse = Swept Tail
 marking-ThavenTailNurse-nurse1 = Tail

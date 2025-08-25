@@ -192,16 +192,12 @@ marking-ThavenEarsTallEars-tallears = Uppie Ears
 
 # Tail
 
-marking-ThavenTailEelF = Eel Tail (Underlay)
-marking-ThavenTailEelF-eel1_f = Tail
-marking-ThavenTailEelF-eel2_f = Fin
-
 marking-ThavenTailAngler = Angler Tail (Underlay)
 marking-ThavenTailAngler-angler1 = Tail
 marking-ThavenTailAngler-angler2 = Stripe
 
 marking-ThavenTailAnglerOverlay = Angler Tail (Overlay)
-marking-ThavenTailAnglerOverlay-angler3 = Angler Tail (Overlay)
+marking-ThavenTailAnglerOverlay-angler3 = Lure
 
 # Nipples
 
