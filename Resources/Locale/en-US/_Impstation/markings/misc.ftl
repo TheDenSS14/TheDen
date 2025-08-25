@@ -11,6 +11,7 @@ marking-SpiderMirror = Mirror
 marking-SpiderMirror-spidermirror = Mirror
 marking-SpiderGlowEyes = Eyes (Glowing)
 marking-SpiderGlowEyes-spidergloweyes = Eyes
+marking-SpiderGlowEyes-eyes = Eyes
 marking-SpiderEyesMulti = Multicolor Eyes
 marking-SpiderEyesMulti-spidereyesmulti1 = Top
 marking-SpiderEyesMulti-spidereyesmulti2 = Top Middle
