@@ -121,6 +121,12 @@
   - type: Inventory
     templateId: diona
     speciesId: diona #imp
+    femaleDisplacements:
+      jumpsuit:
+        sizeMaps:
+          32:
+            sprite: Mobs/Species/Human/displacement.rsi
+            state: jumpsuit-female
   - type: Speech
     speechVerb: Plant
     allowedEmotes: ['Chirp']
@@ -169,5 +175,11 @@
   - type: Inventory
     templateId: diona
     speciesId: diona #imp
+    femaleDisplacements:
+      jumpsuit:
+        sizeMaps:
+          32:
+            sprite: Mobs/Species/Human/displacement.rsi
+            state: jumpsuit-female
   - type: HumanoidAppearance
     species: Diona
