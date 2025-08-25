@@ -101,7 +101,7 @@
         orGroup: CigCarton2
       - id: CigCartonPurple # DeltaV
         prob: 0.33
-        orGroup: CigCarton3 
+        orGroup: CigCarton3
       - id: CigCartonCandy # DeltaV
         orGroup: CigCarton3
       - id: CigarGoldCase
@@ -136,6 +136,14 @@
     - id: BikeHorn
     - id: ClownRecorder
     - id: ClothingBeltSuspenders
+    # DEN - Impstation costume items
+    - id: ClothingHeadSailorCap
+    - id: ClothingNeckSailorAscot
+    - id: ClothingUniformSailorSuit
+    - id: ClothingMaskBurglar
+    - id: ClothingUniformBurglarJumpsuit
+    - id: ClothingUniformCavemanHides
+    # End DEN
 
 - type: entity
   id: CrateServiceCustomSmokable
