@@ -172,8 +172,6 @@
   items:
     - ClothingUniformJumpskirtSec
 
-  items:
-    - ClothingUniformJumpsuitSecTurtle
 - type: loadout
   id: LoadoutSecurityUniformJumpsuitTurtle
   category: JobsSecurityAUncategorized
@@ -190,8 +188,8 @@
       jobs:
         - Warden # Warden has ClothingUniformJumpsuitWardenTurtle
         - HeadOfSecurity # HoS has ClothingUniformJumpsuitHoSTurtle
-	- Brigmedic # Corpsman has ClothingUniformJumpsuitBrigmedicTurtle
-	- Detective # Detective has ClothingUniformJumpsuitDetTurtle
+        - Brigmedic # Corpsman has ClothingUniformJumpsuitBrigmedicTurtle
+        - Detective # Detective has ClothingUniformJumpsuitDetTurtle
   items:
     - ClothingUniformJumpsuitSecTurtle
 
@@ -211,8 +209,10 @@
       jobs:
         - Warden # Warden has ClothingUniformJumpskirtWardenTurtle
         - HeadOfSecurity # HoS has ClothingUniformJumpskirtHoSTurtle
-	- Brigmedic # Corpsman has ClothingUniformJumpskirtBrigmedicTurtle
-	- Detective # Detective has ClothingUniformJumpskirtDetTurtle
+        - Brigmedic # Corpsman has ClothingUniformJumpskirtBrigmedicTurtle
+        - Detective # Detective has ClothingUniformJumpskirtDetTurtle
+  items:
+    - ClothingUniformJumpskirtSecTurtle
 
 - type: loadout
   id: LoadoutTowelRed
