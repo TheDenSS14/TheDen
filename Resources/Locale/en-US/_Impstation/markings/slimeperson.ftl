@@ -17,6 +17,7 @@ marking-SlimeEyesDefault-eyes = Eyes
 marking-SlimeEyesDefault = Eyes (Default)
 
 marking-SlimeEyeglow-eyes = Eyes
+marking-SlimeEyeglow-eyeglow = Eyes (Glowing)
 marking-SlimeEyeglow = Eyes (Glowing)
 
 marking-SlimeEyesDroopy-droopy = Droopy Eyes
