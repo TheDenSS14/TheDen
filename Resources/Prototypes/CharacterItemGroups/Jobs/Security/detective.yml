@@ -39,11 +39,13 @@
     - type: loadout
       id: LoadoutDetectiveGloves
 
-#- type: characterItemGroup
-#  id: LoadoutDetectiveHead
-#  maxItems: 1
-#  items:
-#
+- type: characterItemGroup
+  id: LoadoutDetectiveHead
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutClothingHatDetective
+
 #- type: characterItemGroup
 #  id: LoadoutDetectiveId
 #  maxItems: 1
@@ -93,3 +95,7 @@
       id: LoadoutUniformJumpsuitNanotrasenDetective
     - type: loadout
       id: LoadoutClothingUniformDetectiveThong
+    - type: loadout
+      id: LoadoutUniformDetectiveTurtlesuit
+    - type: loadout
+      id: LoadoutUniformDetectiveTurtleskirt
