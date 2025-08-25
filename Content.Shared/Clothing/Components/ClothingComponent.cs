@@ -66,17 +66,9 @@ public sealed partial class ClothingComponent : Component
     [DataField]
     public string? EquippedState;
 
-    [DataField]
-    public string? Sprite;
-
-    [DataField]
-    public ClothingMask MaleMask = ClothingMask.UniformFull;
-
-    [DataField]
-    public ClothingMask FemaleMask = ClothingMask.UniformFull;
-
-    [DataField]
-    public ClothingMask UnisexMask = ClothingMask.UniformFull;
+    [ViewVariables(VVAccess.ReadWrite)]
+    [DataField("sprite")]
+    public string? RsiPath;
 
     /// <summary>
     ///     Name of the inventory slot the clothing is in.
