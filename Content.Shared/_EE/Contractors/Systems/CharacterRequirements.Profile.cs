@@ -5,18 +5,12 @@
 
 using System.Linq;
 using Content.Shared._EE.Contractors.Prototypes;
-using Content.Shared.Clothing.Loadouts.Prototypes;
-using Content.Shared.Humanoid;
-using Content.Shared.Humanoid.Prototypes;
+using Content.Shared.Customization.Systems._DEN;
 using Content.Shared.Mind;
 using Content.Shared.Preferences;
-using Content.Shared.Prototypes;
 using Content.Shared.Roles;
-using Content.Shared.Traits;
 using JetBrains.Annotations;
 using Robust.Shared.Configuration;
-using Robust.Shared.Enums;
-using Robust.Shared.Physics;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization;
 
@@ -31,28 +25,33 @@ public sealed partial class CharacterNationalityRequirement : CharacterRequireme
     [DataField(required: true)]
     public HashSet<ProtoId<NationalityPrototype>> Nationalities;
 
-    public override bool IsValid(
-        JobPrototype job,
-        HumanoidCharacterProfile profile,
-        Dictionary<string, TimeSpan> playTimes,
-        bool whitelisted,
-        IPrototype prototype,
+    const string RequirementColor = "green";
+
+    public override bool PreCheckMandatory(CharacterRequirementContext context)
+        => context.Profile is not null;
+
+    public override string? GetReason(CharacterRequirementContext context,
         IEntityManager entityManager,
         IPrototypeManager prototypeManager,
-        IConfigurationManager configManager,
-        out string? reason,
-        int depth = 0,
-        MindComponent? mind = null
-    )
+        IConfigurationManager configManager)
     {
         var localeString = "character-nationality-requirement";
-        const string color = "green";
-        reason = Loc.GetString(
-            localeString,
+        var names = Nationalities.Select(s => Loc.GetString(prototypeManager.Index(s).NameKey));
+        var joinedNamed = string.Join($"[/color], [color={RequirementColor}]", names);
+        var nationalityList = $"[color={RequirementColor}]{joinedNamed}[/color]";
+
+        return Loc.GetString(localeString,
             ("inverted", Inverted),
-            ("nationality", $"[color={color}]{string.Join($"[/color], [color={color}]",
-                Nationalities.Select(s => Loc.GetString(prototypeManager.Index(s).NameKey)))}[/color]"));
-        return Nationalities.Any(o => o == profile.Nationality);
+            ("nationality", nationalityList));
+    }
+
+    public override bool IsValid(CharacterRequirementContext context,
+        IEntityManager entityManager,
+        IPrototypeManager prototypeManager,
+        IConfigurationManager configManager)
+    {
+        return context.Profile != null
+            && Nationalities.Any(o => o == context.Profile.Nationality);
     }
 }
 
@@ -65,28 +64,33 @@ public sealed partial class CharacterEmployerRequirement : CharacterRequirement
     [DataField(required: true)]
     public HashSet<ProtoId<EmployerPrototype>> Employers;
 
-    public override bool IsValid(
-        JobPrototype job,
-        HumanoidCharacterProfile profile,
-        Dictionary<string, TimeSpan> playTimes,
-        bool whitelisted,
-        IPrototype prototype,
+    const string RequirementColor = "green";
+
+    public override bool PreCheckMandatory(CharacterRequirementContext context)
+        => context.Profile is not null;
+
+    public override string? GetReason(CharacterRequirementContext context,
         IEntityManager entityManager,
         IPrototypeManager prototypeManager,
-        IConfigurationManager configManager,
-        out string? reason,
-        int depth = 0,
-        MindComponent? mind = null
-    )
+        IConfigurationManager configManager)
     {
         var localeString = "character-employer-requirement";
-        const string color = "green";
-        reason = Loc.GetString(
-            localeString,
+        var names = Employers.Select(s => Loc.GetString(prototypeManager.Index(s).NameKey));
+        var joinedNamed = string.Join($"[/color], [color={RequirementColor}]", names);
+        var employerList = $"[color={RequirementColor}]{joinedNamed}[/color]";
+
+        return Loc.GetString(localeString,
             ("inverted", Inverted),
-            ("employers", $"[color={color}]{string.Join($"[/color], [color={color}]",
-                Employers.Select(s => Loc.GetString(prototypeManager.Index(s).NameKey)))}[/color]"));
-        return Employers.Any(o => o == profile.Employer);
+            ("employers", employerList));
+    }
+
+    public override bool IsValid(CharacterRequirementContext context,
+        IEntityManager entityManager,
+        IPrototypeManager prototypeManager,
+        IConfigurationManager configManager)
+    {
+        return context.Profile != null
+            && Employers.Any(o => o == context.Profile.Employer);
     }
 }
 
@@ -99,27 +103,32 @@ public sealed partial class CharacterLifepathRequirement : CharacterRequirement
     [DataField(required: true)]
     public HashSet<ProtoId<LifepathPrototype>> Lifepaths;
 
-    public override bool IsValid(
-        JobPrototype job,
-        HumanoidCharacterProfile profile,
-        Dictionary<string, TimeSpan> playTimes,
-        bool whitelisted,
-        IPrototype prototype,
+    const string RequirementColor = "green";
+
+    public override bool PreCheckMandatory(CharacterRequirementContext context)
+        => context.Profile is not null;
+
+    public override string? GetReason(CharacterRequirementContext context,
         IEntityManager entityManager,
         IPrototypeManager prototypeManager,
-        IConfigurationManager configManager,
-        out string? reason,
-        int depth = 0,
-        MindComponent? mind = null
-    )
+        IConfigurationManager configManager)
     {
         var localeString = "character-lifepath-requirement";
-        const string color = "green";
-        reason = Loc.GetString(
-            localeString,
+        var names = Lifepaths.Select(s => Loc.GetString(prototypeManager.Index(s).NameKey));
+        var joinedNamed = string.Join($"[/color], [color={RequirementColor}]", names);
+        var lifepathList = $"[color={RequirementColor}]{joinedNamed}[/color]";
+
+        return Loc.GetString(localeString,
             ("inverted", Inverted),
-            ("lifepaths", $"[color={color}]{string.Join($"[/color], [color={color}]",
-                Lifepaths.Select(s => Loc.GetString(prototypeManager.Index(s).NameKey)))}[/color]"));
-        return Lifepaths.Any(o => o == profile.Lifepath);
+            ("lifepaths", lifepathList));
+    }
+
+    public override bool IsValid(CharacterRequirementContext context,
+        IEntityManager entityManager,
+        IPrototypeManager prototypeManager,
+        IConfigurationManager configManager)
+    {
+        return context.Profile != null
+            && Lifepaths.Any(o => o == context.Profile.Lifepath);
     }
 }
