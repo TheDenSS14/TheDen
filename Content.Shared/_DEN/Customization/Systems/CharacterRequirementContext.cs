@@ -84,5 +84,20 @@ public sealed partial class CharacterRequirementContext
 
     public CharacterRequirementContext ShallowClone() => new(this);
 
+    public CharacterRequirementContext WithSelectedJob(JobPrototype? selectedJob)
+        => new(this) { SelectedJob = selectedJob };
+
+    public CharacterRequirementContext WithProfile(HumanoidCharacterProfile? profile)
+        => new(this) { Profile = profile };
+
+    public CharacterRequirementContext WithPlaytimes(Dictionary<string, TimeSpan>? playtimes)
+        => new(this) { Playtimes = playtimes };
+
+    public CharacterRequirementContext WithWhitelisted(bool? whitelisted) => new(this) { Whitelisted = whitelisted };
+
+    public CharacterRequirementContext WithPrototype(IPrototype? prototype) => new(this) { Prototype = prototype };
+
+    public CharacterRequirementContext WithEntity(EntityUid? entity) => new(this) { Entity = entity };
+
     public CharacterRequirementContext WithDepth(int? depth) => new(this) { Depth = depth };
 }
