@@ -127,14 +127,10 @@ public sealed class DiscordLink : IPostInjectInit
             {
                 await _client.StartAsync();
                 _sawmill.Info("Connected to Discord.");
-
-                var guild = await _client.Rest.GetGuildAsync(_guildId);
-
-                _client.Cache.CacheGuild((Guild) guild);
             }
             catch (Exception e)
             {
-                _sawmill.Error("Failed to connect to Discord!", e);
+                _sawmill.Error("Failed to connect to Discord!\n" + e);
             }
         });
     }
