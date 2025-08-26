@@ -225,12 +225,12 @@ public sealed partial class CharacterDepartmentTimeRequirement : CharacterTimeRe
         IConfigurationManager configManager)
     {
         var department = prototypeManager.Index(Department);
-        return !Inverted
-            ? Loc.GetString("character-timer-department-too-high",
-                ("time", playtime.TotalMinutes - Max.TotalMinutes),
+        return Inverted
+            ? null
+            : Loc.GetString("character-timer-department-insufficient",
+                ("time", Min.TotalMinutes - playtime.TotalMinutes),
                 ("department", Loc.GetString($"department-{department.ID}")),
-                ("departmentColor", department.Color))
-            : null;
+                ("departmentColor", department.Color));
     }
 
     protected override string? GetMaximumText(TimeSpan playtime,
@@ -240,12 +240,12 @@ public sealed partial class CharacterDepartmentTimeRequirement : CharacterTimeRe
         IConfigurationManager configManager)
     {
         var department = prototypeManager.Index(Department);
-        return !Inverted
-            ? Loc.GetString("character-timer-department-insufficient",
-                ("time", Min.TotalMinutes - playtime.TotalMinutes),
+        return Inverted
+            ? null
+            : Loc.GetString("character-timer-department-too-high",
+                ("time", playtime.TotalMinutes - Max.TotalMinutes),
                 ("department", Loc.GetString($"department-{department.ID}")),
-                ("departmentColor", department.Color))
-            : null;
+                ("departmentColor", department.Color));
     }
 }
 
@@ -263,9 +263,9 @@ public sealed partial class CharacterOverallTimeRequirement : CharacterTimeRequi
         IConfigurationManager configManager)
     {
         return Inverted
-            ? Loc.GetString("character-timer-overall-insufficient",
-                ("time", Min.TotalMinutes - playtime.TotalMinutes))
-            : null;
+            ? null
+            : Loc.GetString("character-timer-overall-insufficient",
+                ("time", Min.TotalMinutes - playtime.TotalMinutes));
     }
 
     protected override string? GetMaximumText(TimeSpan playtime,
@@ -275,9 +275,9 @@ public sealed partial class CharacterOverallTimeRequirement : CharacterTimeRequi
         IConfigurationManager configManager)
     {
         return Inverted
-            ? Loc.GetString("character-timer-overall-too-high",
-                ("time", playtime.TotalMinutes - Max.TotalMinutes))
-            : null;
+            ? null
+            : Loc.GetString("character-timer-overall-too-high",
+                ("time", playtime.TotalMinutes - Max.TotalMinutes));
     }
 
     protected override TimeSpan GetTotalPlaytime(CharacterRequirementContext context,
@@ -318,11 +318,11 @@ public sealed partial class CharacterPlaytimeRequirement : CharacterTimeRequirem
         var department = GetDepartment(jobSystem);
 
         return Inverted
-            ? Loc.GetString("character-timer-role-insufficient",
+            ? null
+            : Loc.GetString("character-timer-role-insufficient",
                 ("time", Min.TotalMinutes - playtime.TotalMinutes),
                 ("job", jobStr),
-                ("departmentColor", department?.Color ?? Color.White))
-            : null;
+                ("departmentColor", department?.Color ?? Color.White));
     }
 
     protected override string? GetMaximumText(TimeSpan playtime,
@@ -336,11 +336,11 @@ public sealed partial class CharacterPlaytimeRequirement : CharacterTimeRequirem
         var department = GetDepartment(jobSystem);
 
         return Inverted
-            ? Loc.GetString("character-timer-role-too-high",
+            ? null
+            : Loc.GetString("character-timer-role-too-high",
                 ("time", playtime.TotalMinutes - Max.TotalMinutes),
                 ("job", jobStr),
-                ("departmentColor", department?.Color ?? Color.White))
-            : null;
+                ("departmentColor", department?.Color ?? Color.White));
     }
 
     private string GetTrackerName(SharedJobSystem jobSystem,
