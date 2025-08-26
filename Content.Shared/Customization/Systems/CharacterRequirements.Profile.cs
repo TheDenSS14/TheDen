@@ -8,12 +8,10 @@
 
 using System.Linq;
 using Content.Shared.Clothing.Loadouts.Prototypes;
+using Content.Shared.Customization.Systems._DEN;
 using Content.Shared.Humanoid;
 using Content.Shared.Humanoid.Prototypes;
-using Content.Shared.Mind;
-using Content.Shared.Preferences;
 using Content.Shared.Prototypes;
-using Content.Shared.Roles;
 using Content.Shared.Traits;
 using JetBrains.Annotations;
 using Robust.Shared.Configuration;
@@ -37,33 +35,35 @@ public sealed partial class CharacterAgeRequirement : CharacterRequirement
     [DataField]
     public int Max = Int32.MaxValue;
 
-    public override bool IsValid(
-        JobPrototype job,
-        HumanoidCharacterProfile profile,
-        Dictionary<string, TimeSpan> playTimes,
-        bool whitelisted,
-        IPrototype prototype,
+    public override bool PreCheckMandatory(CharacterRequirementContext context)
+        => context.Profile is not null;
+
+    public override string? GetReason(CharacterRequirementContext context,
         IEntityManager entityManager,
         IPrototypeManager prototypeManager,
-        IConfigurationManager configManager,
-        out string? reason,
-        int depth = 0,
-        MindComponent? mind = null
-    )
+        IConfigurationManager configManager)
     {
-        var localeString = "";
-
+        var localeString = "character-age-requirement-range";
         if (Max == Int32.MaxValue || Min <= 0)
-            localeString = Max == Int32.MaxValue ? "character-age-requirement-minimum-only" : "character-age-requirement-maximum-only";
-        else
-            localeString = "character-age-requirement-range";
+            localeString = Max == Int32.MaxValue
+                ? "character-age-requirement-minimum-only"
+                : "character-age-requirement-maximum-only";
 
-        reason = Loc.GetString(
+        return Loc.GetString(
             localeString,
             ("inverted", Inverted),
             ("min", Min),
             ("max", Max));
-        return profile.Age >= Min && profile.Age <= Max;
+    }
+
+    public override bool IsValid(CharacterRequirementContext context,
+        IEntityManager entityManager,
+        IPrototypeManager prototypeManager,
+        IConfigurationManager configManager)
+    {
+        return context.Profile is not null
+            && context.Profile.Age >= Min
+            && context.Profile.Age <= Max;
     }
 }
 
@@ -76,25 +76,27 @@ public sealed partial class CharacterGenderRequirement : CharacterRequirement
     [DataField(required: true)]
     public Gender Gender;
 
-    public override bool IsValid(
-        JobPrototype job,
-        HumanoidCharacterProfile profile,
-        Dictionary<string, TimeSpan> playTimes,
-        bool whitelisted,
-        IPrototype prototype,
+    public override bool PreCheckMandatory(CharacterRequirementContext context)
+        => context.Profile is not null;
+
+    public override string? GetReason(CharacterRequirementContext context,
         IEntityManager entityManager,
         IPrototypeManager prototypeManager,
-        IConfigurationManager configManager,
-        out string? reason,
-        int depth = 0,
-        MindComponent? mind = null
-    )
+        IConfigurationManager configManager)
     {
-        reason = Loc.GetString(
+        var genderKey = Gender.ToString().ToLower();
+        return Loc.GetString(
             "character-gender-requirement",
             ("inverted", Inverted),
-            ("gender", Loc.GetString($"humanoid-profile-editor-pronouns-{Gender.ToString().ToLower()}-text")));
-        return profile.Gender == Gender;
+            ("gender", Loc.GetString($"humanoid-profile-editor-pronouns-{genderKey}-text")));
+    }
+
+    public override bool IsValid(CharacterRequirementContext context,
+        IEntityManager entityManager,
+        IPrototypeManager prototypeManager,
+        IConfigurationManager configManager)
+    {
+        return context.Profile is not null && context.Profile.Gender == Gender;
     }
 }
 
@@ -107,25 +109,27 @@ public sealed partial class CharacterSexRequirement : CharacterRequirement
     [DataField(required: true)]
     public Sex Sex;
 
-    public override bool IsValid(
-        JobPrototype job,
-        HumanoidCharacterProfile profile,
-        Dictionary<string, TimeSpan> playTimes,
-        bool whitelisted,
-        IPrototype prototype,
+    public override bool PreCheckMandatory(CharacterRequirementContext context)
+        => context.Profile is not null;
+
+    public override string? GetReason(CharacterRequirementContext context,
         IEntityManager entityManager,
         IPrototypeManager prototypeManager,
-        IConfigurationManager configManager,
-        out string? reason,
-        int depth = 0,
-        MindComponent? mind = null
-    )
+        IConfigurationManager configManager)
     {
-        reason = Loc.GetString(
+        var sexKey = Sex.ToString().ToLower();
+        return Loc.GetString(
             "character-sex-requirement",
             ("inverted", Inverted),
-            ("sex", Loc.GetString($"humanoid-profile-editor-sex-{Sex.ToString().ToLower()}-text")));
-        return profile.Sex == Sex;
+            ("sex", Loc.GetString($"humanoid-profile-editor-sex-{sexKey}-text")));
+    }
+
+    public override bool IsValid(CharacterRequirementContext context,
+        IEntityManager entityManager,
+        IPrototypeManager prototypeManager,
+        IConfigurationManager configManager)
+    {
+        return context.Profile is not null && context.Profile.Sex == Sex;
     }
 }
 
@@ -138,28 +142,32 @@ public sealed partial class CharacterSpeciesRequirement : CharacterRequirement
     [DataField(required: true)]
     public List<ProtoId<SpeciesPrototype>> Species;
 
-    public override bool IsValid(
-        JobPrototype job,
-        HumanoidCharacterProfile profile,
-        Dictionary<string, TimeSpan> playTimes,
-        bool whitelisted,
-        IPrototype prototype,
+    private const string RequirementColor = "green";
+
+    public override bool PreCheckMandatory(CharacterRequirementContext context)
+        => context.Profile is not null;
+
+    public override string? GetReason(CharacterRequirementContext context,
         IEntityManager entityManager,
         IPrototypeManager prototypeManager,
-        IConfigurationManager configManager,
-        out string? reason,
-        int depth = 0,
-        MindComponent? mind = null
-    )
+        IConfigurationManager configManager)
     {
-        const string color = "green";
-        reason = Loc.GetString(
+        var speciesNames = Species.Select(s => Loc.GetString(prototypeManager.Index(s).Name));
+        var colorTags = $"[/color], [color={RequirementColor}]";
+
+        return Loc.GetString(
             "character-species-requirement",
             ("inverted", Inverted),
-            ("species", $"[color={color}]{string.Join($"[/color], [color={color}]",
-                Species.Select(s => Loc.GetString(prototypeManager.Index(s).Name)))}[/color]"));
+            ("species", $"[color={RequirementColor}]{string.Join(colorTags, speciesNames)}[/color]"));
+    }
 
-        return Species.Contains(profile.Species);
+    public override bool IsValid(CharacterRequirementContext context,
+        IEntityManager entityManager,
+        IPrototypeManager prototypeManager,
+        IConfigurationManager configManager)
+    {
+        return context.Profile is not null
+            && Species.Contains(context.Profile.Species);
     }
 }
 
@@ -181,31 +189,34 @@ public sealed partial class CharacterHeightRequirement : CharacterRequirement
     [DataField]
     public float Max = int.MaxValue;
 
-    public override bool IsValid(
-        JobPrototype job,
-        HumanoidCharacterProfile profile,
-        Dictionary<string, TimeSpan> playTimes,
-        bool whitelisted,
-        IPrototype prototype,
+    private const string RequirementColor = "yellow";
+
+    public override bool PreCheckMandatory(CharacterRequirementContext context)
+        => context.Profile is not null;
+
+    public override string? GetReason(CharacterRequirementContext context,
         IEntityManager entityManager,
         IPrototypeManager prototypeManager,
-        IConfigurationManager configManager,
-        out string? reason,
-        int depth = 0,
-        MindComponent? mind = null
-    )
+        IConfigurationManager configManager)
     {
-        const string color = "yellow";
-        var species = prototypeManager.Index<SpeciesPrototype>(profile.Species);
-
-        reason = Loc.GetString(
+        return Loc.GetString(
             "character-height-requirement",
             ("inverted", Inverted),
-            ("color", color),
+            ("color", RequirementColor),
             ("min", Min),
             ("max", Max));
+    }
 
-        var height = profile.Height * species.AverageHeight;
+    public override bool IsValid(CharacterRequirementContext context,
+        IEntityManager entityManager,
+        IPrototypeManager prototypeManager,
+        IConfigurationManager configManager)
+    {
+        if (context.Profile is null)
+            return false;
+
+        var species = prototypeManager.Index<SpeciesPrototype>(context.Profile.Species);
+        var height = context.Profile.Height * species.AverageHeight;
         return height >= Min && height <= Max;
     }
 }
@@ -228,31 +239,34 @@ public sealed partial class CharacterWidthRequirement : CharacterRequirement
     [DataField]
     public float Max = int.MaxValue;
 
-    public override bool IsValid(
-        JobPrototype job,
-        HumanoidCharacterProfile profile,
-        Dictionary<string, TimeSpan> playTimes,
-        bool whitelisted,
-        IPrototype prototype,
+    private const string RequirementColor = "yellow";
+
+    public override bool PreCheckMandatory(CharacterRequirementContext context)
+        => context.Profile is not null;
+
+    public override string? GetReason(CharacterRequirementContext context,
         IEntityManager entityManager,
         IPrototypeManager prototypeManager,
-        IConfigurationManager configManager,
-        out string? reason,
-        int depth = 0,
-        MindComponent? mind = null
-    )
+        IConfigurationManager configManager)
     {
-        const string color = "yellow";
-        var species = prototypeManager.Index<SpeciesPrototype>(profile.Species);
-
-        reason = Loc.GetString(
+        return Loc.GetString(
             "character-width-requirement",
             ("inverted", Inverted),
-            ("color", color),
+            ("color", RequirementColor),
             ("min", Min),
             ("max", Max));
+    }
 
-        var width = profile.Width * species.AverageWidth;
+    public override bool IsValid(CharacterRequirementContext context,
+        IEntityManager entityManager,
+        IPrototypeManager prototypeManager,
+        IConfigurationManager configManager)
+    {
+        if (context.Profile is null)
+            return false;
+
+        var species = prototypeManager.Index<SpeciesPrototype>(context.Profile.Species);
+        var width = context.Profile.Width * species.AverageWidth;
         return width >= Min && width <= Max;
     }
 }
@@ -275,43 +289,50 @@ public sealed partial class CharacterWeightRequirement : CharacterRequirement
     [DataField]
     public float Max = int.MaxValue;
 
-    public override bool IsValid(
-        JobPrototype job,
-        HumanoidCharacterProfile profile,
-        Dictionary<string, TimeSpan> playTimes,
-        bool whitelisted,
-        IPrototype prototype,
+    private const string RequirementColor = "green";
+
+    public override bool PreCheckMandatory(CharacterRequirementContext context)
+        => context.Profile is not null;
+
+    public override string? GetReason(CharacterRequirementContext context,
         IEntityManager entityManager,
         IPrototypeManager prototypeManager,
-        IConfigurationManager configManager,
-        out string? reason,
-        int depth = 0,
-        MindComponent? mind = null
-    )
+        IConfigurationManager configManager)
     {
-        const string color = "green";
-        var species = prototypeManager.Index<SpeciesPrototype>(profile.Species);
-        prototypeManager.Index(species.Prototype).TryGetComponent<FixturesComponent>(out var fixture);
-
-        if (fixture == null)
-        {
-            reason = null;
-            return false;
-        }
-
-        var weight = MathF.Round(
-            MathF.PI * MathF.Pow(
-                fixture.Fixtures["fix1"].Shape.Radius
-                * ((profile.Width + profile.Height) / 2),
-                2)
-            * fixture.Fixtures["fix1"].Density);
-
-        reason = Loc.GetString(
+        return Loc.GetString(
             "character-weight-requirement",
             ("inverted", Inverted),
-            ("color", color),
+            ("color", RequirementColor),
             ("min", Min),
             ("max", Max));
+    }
+
+    public override bool IsValid(CharacterRequirementContext context,
+        IEntityManager entityManager,
+        IPrototypeManager prototypeManager,
+        IConfigurationManager configManager)
+    {
+        if (context.Profile is null)
+            return false;
+
+        var species = prototypeManager.Index<SpeciesPrototype>(context.Profile.Species);
+        var dummyProto = prototypeManager.Index(species.Prototype);
+        var compFactory = IoCManager.Resolve<IComponentFactory>();
+
+        if (!dummyProto.TryGetComponent<FixturesComponent>(out var fixture, compFactory))
+            return false;
+
+        // TODO: Apparently this doesn't affect anything? wtf
+
+        // Area of the circular fixture
+        // (pi * radius^2, where radius is multiplied by the average scale of the profile)
+        var baseRadius = fixture.Fixtures["fix1"].Shape.Radius;
+        var averageSize = (context.Profile.Width + context.Profile.Height) / 2;
+        var area = MathF.PI * MathF.Pow(baseRadius * averageSize, 2);
+
+        // Mass = area * density
+        var density = fixture.Fixtures["fix1"].Density;
+        var weight = MathF.Round(area * density);
 
         return weight >= Min && weight <= Max;
     }
@@ -326,28 +347,32 @@ public sealed partial class CharacterTraitRequirement : CharacterRequirement
     [DataField(required: true)]
     public List<ProtoId<TraitPrototype>> Traits;
 
-    public override bool IsValid(
-        JobPrototype job,
-        HumanoidCharacterProfile profile,
-        Dictionary<string, TimeSpan> playTimes,
-        bool whitelisted,
-        IPrototype prototype,
+    private const string RequirementColor = "lightblue";
+
+    public override bool PreCheckMandatory(CharacterRequirementContext context)
+        => context.Profile is not null;
+
+    public override string? GetReason(CharacterRequirementContext context,
         IEntityManager entityManager,
         IPrototypeManager prototypeManager,
-        IConfigurationManager configManager,
-        out string? reason,
-        int depth = 0,
-        MindComponent? mind = null
-    )
+        IConfigurationManager configManager)
     {
-        const string color = "lightblue";
-        reason = Loc.GetString(
+        var traitNames = Traits.Select(t => Loc.GetString($"trait-name-{t}"));
+        var traitList = string.Join($"[/color], [color={RequirementColor}]", traitNames);
+
+        return Loc.GetString(
             "character-trait-requirement",
             ("inverted", Inverted),
-            ("traits", $"[color={color}]{string.Join($"[/color], [color={color}]",
-                Traits.Select(t => Loc.GetString($"trait-name-{t}")))}[/color]"));
+            ("traits", $"[color={RequirementColor}]{traitList}[/color]"));
+    }
 
-        return Traits.Any(t => profile.TraitPreferences.Contains(t.ToString()));
+    public override bool IsValid(CharacterRequirementContext context,
+        IEntityManager entityManager,
+        IPrototypeManager prototypeManager,
+        IConfigurationManager configManager)
+    {
+        return context.Profile != null
+            && Traits.Any(t => context.Profile.TraitPreferences.Contains(t.ToString()));
     }
 }
 
@@ -360,28 +385,33 @@ public sealed partial class CharacterLoadoutRequirement : CharacterRequirement
     [DataField(required: true)]
     public List<ProtoId<LoadoutPrototype>> Loadouts;
 
-    public override bool IsValid(
-        JobPrototype job,
-        HumanoidCharacterProfile profile,
-        Dictionary<string, TimeSpan> playTimes,
-        bool whitelisted,
-        IPrototype prototype,
+    private const string RequirementColor = "lightblue";
+
+    public override bool PreCheckMandatory(CharacterRequirementContext context)
+        => context.Profile is not null;
+
+    public override string? GetReason(CharacterRequirementContext context,
         IEntityManager entityManager,
         IPrototypeManager prototypeManager,
-        IConfigurationManager configManager,
-        out string? reason,
-        int depth = 0,
-        MindComponent? mind = null
-    )
+        IConfigurationManager configManager)
     {
-        const string color = "lightblue";
-        reason = Loc.GetString(
+        var loadoutNames = Loadouts.Select(l => Loc.GetString($"loadout-name-{l}"));
+        var loadoutList = string.Join($"[/color], [color={RequirementColor}]", loadoutNames);
+
+        return Loc.GetString(
             "character-loadout-requirement",
             ("inverted", Inverted),
-            ("loadouts", $"[color={color}]{string.Join($"[/color], [color={color}]",
-                Loadouts.Select(l => Loc.GetString($"loadout-name-{l}")))}[/color]"));
+            ("loadouts", $"[color={RequirementColor}]{loadoutList}[/color]"));
+    }
 
-        return Loadouts.Any(l => profile.LoadoutPreferences.Select(l => l.LoadoutName).Contains(l.ToString()));
+    public override bool IsValid(CharacterRequirementContext context,
+        IEntityManager entityManager,
+        IPrototypeManager prototypeManager,
+        IConfigurationManager configManager)
+    {
+        return context.Profile != null
+            && Loadouts.Any(l => context.Profile.LoadoutPreferences
+                .Select(l => l.LoadoutName).Contains(l.ToString()));
     }
 }
 
@@ -394,44 +424,51 @@ public sealed partial class CharacterItemGroupRequirement : CharacterRequirement
     [DataField(required: true)]
     public ProtoId<CharacterItemGroupPrototype> Group;
 
-    public override bool IsValid(
-        JobPrototype job,
-        HumanoidCharacterProfile profile,
-        Dictionary<string, TimeSpan> playTimes,
-        bool whitelisted,
-        IPrototype prototype,
+    public override bool PreCheckMandatory(CharacterRequirementContext context)
+        => context.Profile is not null
+            && context.Prototype is not null;
+
+    public override string? GetReason(CharacterRequirementContext context,
         IEntityManager entityManager,
         IPrototypeManager prototypeManager,
-        IConfigurationManager configManager,
-        out string? reason,
-        int depth = 0,
-        MindComponent? mind = null
-    )
+        IConfigurationManager configManager)
     {
         var group = prototypeManager.Index(Group);
-
-        // Get the count of items in the group that are in the profile
-        var items = group.Items.Select(item => item.TryGetValue(profile, prototypeManager, out _) ? item.ID : null)
-            .Where(id => id != null)
-            .ToList();
-        var count = items.Count;
-
-        // If prototype is selected, decrease the count. Or increase it via negative number. Not my monkey, not my circus.
-        if (items.ToList().Contains(prototype.ID))
-        {
-            // This disgusting ELIF nest requires an engine PR to make less terrible.
-            if (prototypeManager.TryIndex<LoadoutPrototype>(prototype.ID, out var loadoutPrototype))
-                count -= loadoutPrototype.Slots;
-            else if (prototypeManager.TryIndex<TraitPrototype>(prototype.ID, out var traitPrototype))
-                count -= traitPrototype.ItemGroupSlots;
-            else count--;
-        }
-
-        reason = Loc.GetString(
+        return Loc.GetString(
             "character-item-group-requirement",
             ("inverted", Inverted),
             ("group", Loc.GetString($"character-item-group-{Group}")),
             ("max", group.MaxItems));
+    }
+
+    public override bool IsValid(CharacterRequirementContext context,
+        IEntityManager entityManager,
+        IPrototypeManager prototypeManager,
+        IConfigurationManager configManager)
+    {
+        if (context.Profile == null || context.Prototype == null)
+            return false;
+
+        var group = prototypeManager.Index(Group);
+        var items = group.Items
+            .Where(item => item.TryGetValue(context.Profile, prototypeManager, out _))
+            .Select(item => item.ID)
+            .ToList();
+        var count = items.Count;
+
+        // this is a little silly...
+        var isLoadout = prototypeManager.TryIndex<LoadoutPrototype>(context.Prototype.ID, out var loadoutPrototype);
+        var isTrait = prototypeManager.TryIndex<TraitPrototype>(context.Prototype.ID, out var traitPrototype);
+
+        if (items.Contains(context.Prototype.ID))
+        {
+            if (isLoadout)
+                count -= loadoutPrototype!.Slots;
+            else if (isTrait)
+                count -= traitPrototype!.ItemGroupSlots;
+            else
+                count--;
+        }
 
         return count < group.MaxItems;
     }

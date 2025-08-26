@@ -7,15 +7,11 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 using Content.Shared.CCVar;
-using Content.Shared.Mind;
-using Content.Shared.Preferences;
-using Content.Shared.Roles;
 using JetBrains.Annotations;
 using Robust.Shared.Configuration;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization;
-using Robust.Shared.Utility;
-using Robust.Shared.Network;
+using Content.Shared.Customization.Systems._DEN;
 
 namespace Content.Shared.Customization.Systems;
 
@@ -27,23 +23,28 @@ namespace Content.Shared.Customization.Systems;
 [Serializable, NetSerializable]
 public sealed partial class CharacterWhitelistRequirement : CharacterRequirement
 {
-    public override bool IsValid(JobPrototype job,
-        HumanoidCharacterProfile profile,
-        Dictionary<string, TimeSpan> playTimes,
-        bool whitelisted,
-        IPrototype prototype,
+    // Always true, because this requirement may auto-pass if whitelists are disabled.
+    public override bool PreCheckMandatory(CharacterRequirementContext context) => true;
+
+    public override string? GetReason(CharacterRequirementContext context,
         IEntityManager entityManager,
         IPrototypeManager prototypeManager,
-        IConfigurationManager configManager,
-        out string? reason,
-        int depth = 0,
-        MindComponent? mind = null)
+        IConfigurationManager configManager)
     {
-        reason = null;
-        if (!configManager.IsCVarRegistered("whitelist.enabled"))
-            return whitelisted;
+        if (!configManager.IsCVarRegistered("whitelist.enabled")
+            || !configManager.GetCVar(CCVars.WhitelistEnabled))
+            return null;
 
-        reason = Loc.GetString("character-whitelist-requirement", ("inverted", Inverted));
-        return !configManager.GetCVar(CCVars.WhitelistEnabled) || whitelisted;
+        return Loc.GetString("character-whitelist-requirement", ("inverted", Inverted));
+    }
+
+    public override bool IsValid(CharacterRequirementContext context,
+        IEntityManager entityManager,
+        IPrototypeManager prototypeManager,
+        IConfigurationManager configManager)
+    {
+        return !configManager.IsCVarRegistered("whitelist.enabled")
+            || !configManager.GetCVar(CCVars.WhitelistEnabled)
+            || context.Whitelisted == true;
     }
 }

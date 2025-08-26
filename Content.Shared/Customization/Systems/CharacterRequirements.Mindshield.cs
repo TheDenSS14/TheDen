@@ -6,12 +6,9 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
-using System.Linq;
-using Content.Shared.Implants.Components;
+using Content.Shared.Customization.Systems._DEN;
 using Content.Shared.Mind;
 using Content.Shared.Mindshield.Components;
-using Content.Shared.Preferences;
-using Content.Shared.Roles;
 using JetBrains.Annotations;
 using Robust.Shared.Configuration;
 using Robust.Shared.Prototypes;
@@ -26,23 +23,25 @@ namespace Content.Shared.Customization.Systems;
 [Serializable, NetSerializable]
 public sealed partial class CharacterMindshieldRequirement : CharacterRequirement
 {
-    public override bool IsValid(JobPrototype job,
-        HumanoidCharacterProfile profile,
-        Dictionary<string, TimeSpan> playTimes,
-        bool whitelisted,
-        IPrototype prototype,
+    public override bool PreCheckMandatory(CharacterRequirementContext context)
+        => context.Entity is not null;
+
+    public override string? GetReason(CharacterRequirementContext context,
         IEntityManager entityManager,
         IPrototypeManager prototypeManager,
-        IConfigurationManager configManager,
-        out string? reason,
-        int depth = 0,
-        MindComponent? mind = null)
+        IConfigurationManager configManager)
     {
-        reason = Loc.GetString("character-mindshield-requirement", ("inverted", Inverted));
+        return Loc.GetString("character-mindshield-requirement", ("inverted", Inverted));
+    }
 
-        if (mind == null)
-            return false;
-
-        return entityManager.HasComponent<MindShieldComponent>(mind.CurrentEntity) != Inverted;
+    public override bool IsValid(CharacterRequirementContext context,
+        IEntityManager entityManager,
+        IPrototypeManager prototypeManager,
+        IConfigurationManager configManager)
+    {
+        var mindSystem = entityManager.System<SharedMindSystem>();
+        return context.Entity is not null
+            && mindSystem.TryGetMind(context.Entity.Value, out var _, out var mindComponent)
+            && entityManager.HasComponent<MindShieldComponent>(mindComponent.CurrentEntity);
     }
 }
