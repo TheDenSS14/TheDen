@@ -74,15 +74,13 @@ public sealed class CharacterRequirementsSystem : EntitySystem
             || !_playtimeManager.TryGetTrackerTimes(mind.Session, out var trackerTimes))
             return false;
 
-        var context = new CharacterRequirementContext()
-        {
-            SelectedJob = jobPrototype,
-            Profile = stationSpawningProfile,
-            Playtimes = trackerTimes,
-            Whitelisted = whitelisted,
-            Prototype = prototype,
-            Depth = depth
-        };
+        var context = new CharacterRequirementContext(selectedJob: jobPrototype,
+            profile: stationSpawningProfile,
+            playtimes: trackerTimes,
+            whitelisted: whitelisted,
+            prototype: prototype,
+            entity: characterUid,
+            depth: depth);
 
         return CheckRequirementsValid(requirements,
             context,
