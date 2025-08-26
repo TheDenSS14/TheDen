@@ -1,5 +1,6 @@
-// SPDX-FileCopyrightText: 2025 Timfa <timfalken@hotmail.com>
-// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Timfa
+// SPDX-FileCopyrightText: 2025 portfiend
+// SPDX-FileCopyrightText: 2025 sleepyyapril
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -7,6 +8,7 @@ using System.Linq;
 using Content.Server.Players.PlayTimeTracking;
 using Content.Shared._EE.Contractors.Prototypes;
 using Content.Shared.Customization.Systems;
+using Content.Shared.Customization.Systems._DEN;
 using Content.Shared.GameTicking;
 using Content.Shared.Humanoid;
 using Content.Shared.Players;
@@ -59,12 +61,18 @@ public sealed class EmployerSystem : EntitySystem
             return;
         }
 
-        if (!_characterRequirements.CheckRequirementsValid(
-            employerPrototype.Requirements,
-            jobPrototypeToUse,
-            profile, playTimes, whitelisted, employerPrototype,
-            EntityManager, _prototype, _configuration,
-            out _))
+        var context = new CharacterRequirementContext(
+            selectedJob: jobPrototypeToUse,
+            profile: profile,
+            playtimes: playTimes,
+            whitelisted: whitelisted,
+            prototype: employerPrototype);
+
+        if (!_characterRequirements.CheckRequirementsValid(employerPrototype.Requirements,
+            context,
+            EntityManager,
+            _prototype,
+            _configuration))
             return;
 
         AddEmployer(uid, employerPrototype);

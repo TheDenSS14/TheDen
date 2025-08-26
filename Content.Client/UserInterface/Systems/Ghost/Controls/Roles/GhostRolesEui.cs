@@ -1,15 +1,15 @@
-// SPDX-FileCopyrightText: 2021 20kdc <asdd2808@gmail.com>
-// SPDX-FileCopyrightText: 2021 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2021 Vera Aguilera Puerto <6766154+Zumorica@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2022 Alex Evgrashin <aevgrashin@yandex.ru>
-// SPDX-FileCopyrightText: 2022 mirrorcult <lunarautomaton6@gmail.com>
-// SPDX-FileCopyrightText: 2022 wrexbe <81056464+wrexbe@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2023 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2023 Ray <vigersray@gmail.com>
-// SPDX-FileCopyrightText: 2023 deltanedas <39013340+deltanedas@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT <77995199+DEATHB4DEFEAT@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 Mnemotechnican <69920617+Mnemotechnician@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2021 20kdc
+// SPDX-FileCopyrightText: 2021 DrSmugleaf
+// SPDX-FileCopyrightText: 2021 Vera Aguilera Puerto
+// SPDX-FileCopyrightText: 2022 Alex Evgrashin
+// SPDX-FileCopyrightText: 2022 mirrorcult
+// SPDX-FileCopyrightText: 2022 wrexbe
+// SPDX-FileCopyrightText: 2023 Leon Friedrich
+// SPDX-FileCopyrightText: 2023 Ray
+// SPDX-FileCopyrightText: 2023 deltanedas
+// SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT
+// SPDX-FileCopyrightText: 2024 Mnemotechnican
+// SPDX-FileCopyrightText: 2025 sleepyyapril
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -19,6 +19,7 @@ using Content.Client.Lobby;
 using Content.Client.Players.PlayTimeTracking;
 using Content.Shared.Clothing.Loadouts.Prototypes;
 using Content.Shared.Customization.Systems;
+using Content.Shared.Customization.Systems._DEN;
 using Content.Shared.Eui;
 using Content.Shared.Ghost.Roles;
 using Content.Shared.Preferences;
@@ -128,19 +129,25 @@ namespace Content.Client.UserInterface.Systems.Ghost.Controls.Roles
                 // ReSharper disable once ReplaceWithSingleAssignment.True
                 var hasAccess = true;
 
-                if (!characterReqs.CheckRequirementsValid(
-                    group.Key.Requirements ?? new(),
-                    new(),
-                    (HumanoidCharacterProfile) (prefs.Preferences?.SelectedCharacter ?? HumanoidCharacterProfile.DefaultWithSpecies()),
-                    requirementsManager.GetRawPlayTimeTrackers(),
-                    requirementsManager.IsWhitelisted(),
-                    new LoadoutPrototype(), // idk
+                var requirements = group.Key.Requirements ?? new();
+                var context = new CharacterRequirementContext(
+                    profile: (HumanoidCharacterProfile) (prefs.Preferences?.SelectedCharacter
+                        ?? HumanoidCharacterProfile.DefaultWithSpecies()),
+                    playtimes: requirementsManager.GetRawPlayTimeTrackers(),
+                    whitelisted: requirementsManager.IsWhitelisted());
+
+                if (!characterReqs.CheckRequirementsValid(requirements,
+                    context,
                     entityManager,
                     protoMan,
-                    configManager,
-                    out var reasons))
+                    configManager))
                     hasAccess = false;
 
+                var reasons = characterReqs.GetReasons(requirements,
+                    context,
+                    entityManager,
+                    protoMan,
+                    configManager);
                 _window.AddEntry(name, description, hasAccess, characterReqs.GetRequirementsText(reasons), group, spriteSystem);
             }
 

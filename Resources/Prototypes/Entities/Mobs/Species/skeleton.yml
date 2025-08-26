@@ -79,6 +79,8 @@
     speechVerb: Skeleton
   - type: ZombieImmune
   - type: Vocal
+    wilhelm: /Audio/_DEN/badtothebone.ogg
+    wilhelmProbability: 0.01
     sounds:
       Male: Skeleton
       Female: Skeleton
@@ -132,6 +134,17 @@
           probability: 0.5
   - type: FireVisuals
     alternateState: Standing
+  - type: TypingIndicator
+    proto: skeleton
+  - type: LanguageKnowledge
+    speaks:
+    - TauCetiBasic
+    - Calcic
+    understands:
+    - TauCetiBasic
+    - Calcic
+  - type: FootPrints
+  - type: LayingDown
   - type: FlashImmunity
   - type: Inventory
     femaleDisplacements:

@@ -155,6 +155,16 @@
       types:
         Asphyxiation: -1.0
     maxSaturation: 15
+  - type: LanguageKnowledge
+    speaks:
+    - TauCetiBasic
+    - Bubblish
+    understands:
+    - TauCetiBasic
+    - Bubblish
+  - type: FootPrints
+    leftBarePrint: "footprint-left-bare-slime"
+    rightBarePrint: "footprint-right-bare-slime"
   - type: Inventory
     femaleDisplacements:
       jumpsuit:

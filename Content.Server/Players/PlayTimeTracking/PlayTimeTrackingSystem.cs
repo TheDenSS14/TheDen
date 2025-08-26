@@ -1,20 +1,21 @@
-// SPDX-FileCopyrightText: 2022 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
-// SPDX-FileCopyrightText: 2022 Veritius <veritiusgaming@gmail.com>
-// SPDX-FileCopyrightText: 2023 Debug <49997488+DebugOk@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2023 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2023 ElectroJr <leonsfriedrich@gmail.com>
-// SPDX-FileCopyrightText: 2023 Jezithyr <jezithyr@gmail.com>
-// SPDX-FileCopyrightText: 2023 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2023 Moony <moony@hellomouse.net>
-// SPDX-FileCopyrightText: 2023 ShadowCommander <10494922+ShadowCommander@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2023 Skye <22365940+Skyedra@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT <77995199+DEATHB4DEFEAT@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 Errant <35878406+Errant-4@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 FoxxoTrystan <45297731+FoxxoTrystan@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 RedFoxIV <38788538+RedFoxIV@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 VMSolidus <evilexecutive@gmail.com>
-// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 Pieter-Jan Briers
+// SPDX-FileCopyrightText: 2022 Veritius
+// SPDX-FileCopyrightText: 2023 Debug
+// SPDX-FileCopyrightText: 2023 DrSmugleaf
+// SPDX-FileCopyrightText: 2023 ElectroJr
+// SPDX-FileCopyrightText: 2023 Jezithyr
+// SPDX-FileCopyrightText: 2023 Leon Friedrich
+// SPDX-FileCopyrightText: 2023 Moony
+// SPDX-FileCopyrightText: 2023 ShadowCommander
+// SPDX-FileCopyrightText: 2023 Skye
+// SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT
+// SPDX-FileCopyrightText: 2024 Errant
+// SPDX-FileCopyrightText: 2024 FoxxoTrystan
+// SPDX-FileCopyrightText: 2024 metalgearsloth
+// SPDX-FileCopyrightText: 2025 RedFoxIV
+// SPDX-FileCopyrightText: 2025 VMSolidus
+// SPDX-FileCopyrightText: 2025 portfiend
+// SPDX-FileCopyrightText: 2025 sleepyyapril
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -43,6 +44,7 @@ using Robust.Shared.Network;
 using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
+using Content.Shared.Customization.Systems._DEN;
 
 namespace Content.Server.Players.PlayTimeTracking;
 
@@ -226,18 +228,18 @@ public sealed class PlayTimeTrackingSystem : EntitySystem
         }
 
         var isWhitelisted = player.ContentData()?.Whitelisted ?? false; // DeltaV - Whitelist requirement
+        var context = new CharacterRequirementContext(
+            selectedJob: job,
+            profile: (HumanoidCharacterProfile?) _prefs.GetPreferences(player.UserId).SelectedCharacter,
+            playtimes: playTimes,
+            whitelisted: isWhitelisted,
+            prototype: job);
 
-        return _characterRequirements.CheckRequirementsValid(
-            job.Requirements,
-            job,
-            (HumanoidCharacterProfile) _prefs.GetPreferences(player.UserId).SelectedCharacter,
-            playTimes,
-            isWhitelisted,
-            job,
+        return _characterRequirements.CheckRequirementsValid(job.Requirements,
+            context,
             EntityManager,
             _prototypes,
-            _cfg,
-            out _);
+            _cfg);
     }
 
     public HashSet<ProtoId<JobPrototype>> GetDisallowedJobs(ICommonSession player)
@@ -258,24 +260,24 @@ public sealed class PlayTimeTrackingSystem : EntitySystem
         {
             if (job.Requirements != null)
             {
-                if (_characterRequirements.CheckRequirementsValid(
-                        job.Requirements,
-                        job,
-                        (HumanoidCharacterProfile) _prefs.GetPreferences(player.UserId).SelectedCharacter,
-                        playTimes,
-                        isWhitelisted,
-                        job,
+                var context = new CharacterRequirementContext(
+                    selectedJob: job,
+                    profile: (HumanoidCharacterProfile?) _prefs.GetPreferences(player.UserId).SelectedCharacter,
+                    playtimes: playTimes,
+                    whitelisted: isWhitelisted,
+                    prototype: job);
+                if (_characterRequirements.CheckRequirementsValid(job.Requirements,
+                        context,
                         EntityManager,
                         _prototypes,
-                        _cfg,
-                        out _))
+                        _cfg))
                     continue;
 
                 goto NoRole;
             }
 
             roles.Add(job.ID);
-            NoRole:;
+        NoRole:;
         }
 
         return roles;
@@ -305,17 +307,18 @@ public sealed class PlayTimeTrackingSystem : EntitySystem
                 jobber.Requirements.Count == 0)
                 continue;
 
-            if (!_characterRequirements.CheckRequirementsValid(
-                jobber.Requirements,
-                jobber,
-                (HumanoidCharacterProfile) _prefs.GetPreferences(userId).SelectedCharacter,
-                _tracking.GetPlayTimes(_playerManager.GetSessionById(userId)),
-                _playerManager.GetSessionById(userId).ContentData()?.Whitelisted ?? false,
-                jobber,
+            var context = new CharacterRequirementContext(
+                selectedJob: jobber,
+                profile: (HumanoidCharacterProfile) _prefs.GetPreferences(userId).SelectedCharacter,
+                playtimes: _tracking.GetPlayTimes(_playerManager.GetSessionById(userId)),
+                whitelisted: _playerManager.GetSessionById(userId).ContentData()?.Whitelisted ?? false,
+                prototype: jobber);
+
+            if (!_characterRequirements.CheckRequirementsValid(jobber.Requirements,
+                context,
                 EntityManager,
                 _prototypes,
-                _cfg,
-                out _))
+                _cfg))
             {
                 jobs.RemoveSwap(i);
                 i--;

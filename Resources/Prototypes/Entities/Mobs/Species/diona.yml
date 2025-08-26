@@ -138,6 +138,25 @@
     actionPrototype: DionaGibAction
     allowedStates:
     - Dead
+  - type: LanguageKnowledge
+    speaks:
+    - TauCetiBasic
+    - RootSpeak
+    understands:
+    - TauCetiBasic
+    - RootSpeak
+  - type: TraitSpeedModifier
+    sprintModifier: 0.75
+    walkModifier: 0.75
+  - type: SpeedModifierImmunity
+  - type: NoSlip
+  - type: ProtectedFromStepTriggers
+    whitelist:
+      types:
+      - Shard
+  - type: FootPrints
+    leftBarePrint: "footprint-left-bare-diona"
+    rightBarePrint: "footprint-right-bare-diona"
   - type: Inventory
     templateId: diona
     femaleDisplacements:

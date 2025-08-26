@@ -1,4 +1,5 @@
 // SPDX-FileCopyrightText: 2025 Simon
+// SPDX-FileCopyrightText: 2025 sleepyyapril
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -127,14 +128,10 @@ public sealed class DiscordLink : IPostInjectInit
             {
                 await _client.StartAsync();
                 _sawmill.Info("Connected to Discord.");
-
-                var guild = await _client.Rest.GetGuildAsync(_guildId);
-
-                _client.Cache.CacheGuild((Guild) guild);
             }
             catch (Exception e)
             {
-                _sawmill.Error("Failed to connect to Discord!", e);
+                _sawmill.Error("Failed to connect to Discord!\n" + e);
             }
         });
     }
