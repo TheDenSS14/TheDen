@@ -31,7 +31,10 @@ public sealed class ExtendDescriptionSystem : EntitySystem
                 || !TryComp(args.Examiner, out MetaDataComponent? comp) || comp.EntityPrototype == null)
                 continue;
 
-            var meetsRequirements = desc.Requirements == null || _characterRequirements.CheckRequirementsValid(desc.Requirements, args.Examiner, comp.EntityPrototype, out _);
+            var meetsRequirements = desc.Requirements == null
+                || _characterRequirements.CheckRequirementsValid(desc.Requirements,
+                    args.Examiner,
+                    comp.EntityPrototype);
             var description = meetsRequirements ? desc.Description : desc.RequirementsNotMetDescription;
 
             if (description != string.Empty)

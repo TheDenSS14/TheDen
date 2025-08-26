@@ -53,6 +53,7 @@ using Robust.Shared.Configuration;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
 using static Robust.Client.UserInterface.Controls.BoxContainer;
+using Content.Shared.Customization.Systems._DEN;
 
 namespace Content.Client.LateJoin
 {
@@ -295,6 +296,15 @@ namespace Content.Client.LateJoin
 
                         jobButton.OnPressed += _ => SelectedId.Invoke((id, jobButton.JobId));
 
+                        var requirementContext = new CharacterRequirementContext(selectedJob: prototype,
+                            profile: (HumanoidCharacterProfile) (_prefs.Preferences?.SelectedCharacter
+                                ?? HumanoidCharacterProfile.DefaultWithSpecies()),
+                            playtimes: _jobRequirements.GetRawPlayTimeTrackers(),
+                            whitelisted: _jobRequirements.IsWhitelisted(),
+                            prototype: prototype);
+
+                        var requirements = prototype.Requirements ?? new();
+
                         if (!_jobRequirements.CheckJobWhitelist(prototype, out var reason))
                         {
                             jobButton.Disabled = true;
@@ -307,25 +317,24 @@ namespace Content.Client.LateJoin
                             {
                                 TextureScale = new Vector2(0.4f, 0.4f),
                                 Stretch = TextureRect.StretchMode.KeepCentered,
-                                Texture = _sprites.Frame0(new SpriteSpecifier.Texture(new ("/Textures/Interface/Nano/lock.svg.192dpi.png"))),
+                                Texture = _sprites.Frame0(new SpriteSpecifier.Texture(new("/Textures/Interface/Nano/lock.svg.192dpi.png"))),
                                 HorizontalExpand = true,
                                 HorizontalAlignment = HAlignment.Right,
                             });
                         }
-                        else if (!_characterRequirements.CheckRequirementsValid(
-                                prototype.Requirements ?? new(),
-                                prototype,
-                                (HumanoidCharacterProfile) (_prefs.Preferences?.SelectedCharacter
-                                                            ?? HumanoidCharacterProfile.DefaultWithSpecies()),
-                                _jobRequirements.GetRawPlayTimeTrackers(),
-                                _jobRequirements.IsWhitelisted(),
-                                prototype,
+                        else if (!_characterRequirements.CheckRequirementsValid(requirements,
+                                requirementContext,
                                 _entityManager,
                                 _prototypeManager,
-                                _configManager,
-                                out var reasons))
+                                _configManager))
                         {
                             jobButton.Disabled = true;
+
+                            var reasons = _characterRequirements.GetReasons(requirements,
+                                requirementContext,
+                                _entityManager,
+                                _prototypeManager,
+                                _configManager);
 
                             if (reasons.Count > 0)
                             {
@@ -338,7 +347,7 @@ namespace Content.Client.LateJoin
                             {
                                 TextureScale = new Vector2(0.4f, 0.4f),
                                 Stretch = TextureRect.StretchMode.KeepCentered,
-                                Texture = _sprites.Frame0(new SpriteSpecifier.Texture(new ("/Textures/Interface/Nano/lock.svg.192dpi.png"))),
+                                Texture = _sprites.Frame0(new SpriteSpecifier.Texture(new("/Textures/Interface/Nano/lock.svg.192dpi.png"))),
                                 HorizontalExpand = true,
                                 HorizontalAlignment = HAlignment.Right,
                             });

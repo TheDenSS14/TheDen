@@ -16,6 +16,7 @@ using Robust.Server.GameObjects;
 using Robust.Server.Audio;
 using Robust.Shared.Configuration;
 using Robust.Shared.Prototypes;
+using Content.Shared.Customization.Systems._DEN;
 
 namespace Content.Server.Thief.Systems;
 
@@ -84,13 +85,15 @@ public sealed class ThiefUndeterminedBackpackSystem : EntitySystem
         for (int i = 0; i < component.PossibleSets.Count; i++)
         {
             var set = _proto.Index(component.PossibleSets[i]);
-
             if (set.Requirements.Count != 0 &&
                 TryComp<HumanoidAppearanceComponent>(user, out var appearance) &&
                 appearance.LastProfileLoaded != null &&
-                !_characterRequirements.CheckRequirementsValid(
-                    set.Requirements, new JobPrototype() /* not gonna bother with jobs */,
-                    appearance.LastProfileLoaded, new(), false, set, EntityManager, _proto, _config, out _))
+                !_characterRequirements.CheckRequirementsValid(set.Requirements,
+                    new CharacterRequirementContext(profile: appearance.LastProfileLoaded,
+                        prototype: set),
+                    EntityManager,
+                    _proto,
+                    _config))
                 continue;
 
             var selected = component.SelectedSets.Contains(i);

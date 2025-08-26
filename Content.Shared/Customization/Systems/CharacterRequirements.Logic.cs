@@ -21,6 +21,7 @@ namespace Content.Shared.Customization.Systems;
 ///     pass pre-checks (as they are a wrapper around other requirements with more particular bounds,) and the reason
 ///     for a logic requirement is always shown as a list of its sub-requirements;
 /// </summary>
+[Serializable, NetSerializable]
 public abstract partial class CharacterLogicRequirement : CharacterRequirement
 {
     [DataField]

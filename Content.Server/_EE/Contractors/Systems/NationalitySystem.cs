@@ -7,6 +7,7 @@ using System.Linq;
 using Content.Server.Players.PlayTimeTracking;
 using Content.Shared._EE.Contractors.Prototypes;
 using Content.Shared.Customization.Systems;
+using Content.Shared.Customization.Systems._DEN;
 using Content.Shared.GameTicking;
 using Content.Shared.Humanoid;
 using Content.Shared.Players;
@@ -59,12 +60,18 @@ public sealed class NationalitySystem : EntitySystem
             return;
         }
 
-        if (!_characterRequirements.CheckRequirementsValid(
-            nationalityPrototype.Requirements,
-            jobPrototypeToUse,
-            profile, playTimes, whitelisted, nationalityPrototype,
-            EntityManager, _prototype, _configuration,
-            out _))
+        var context = new CharacterRequirementContext(
+            selectedJob: jobPrototypeToUse,
+            profile: profile,
+            playtimes: playTimes,
+            whitelisted: whitelisted,
+            prototype: nationalityPrototype);
+
+        if (!_characterRequirements.CheckRequirementsValid(nationalityPrototype.Requirements,
+            context,
+            EntityManager,
+            _prototype,
+            _configuration))
             return;
 
         AddNationality(uid, nationalityPrototype);

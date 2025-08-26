@@ -120,6 +120,7 @@ public sealed partial class CharacterDepartmentRequirement : CharacterRequiremen
 ///     bounds. By default, this requirement will pretend that a context with null playtimes has zero playtime,
 ///     and playtime checking will be disabled if the game role timer CVAR is disabled.
 /// </summary>
+[Serializable, NetSerializable]
 public abstract partial class CharacterTimeRequirement : CharacterRequirement
 {
     [DataField]

@@ -9,6 +9,7 @@ using System.Text;
 using Content.Client.Players.PlayTimeTracking;
 using Content.Client.Stylesheets;
 using Content.Shared.Customization.Systems;
+using Content.Shared.Customization.Systems._DEN;
 using Content.Shared.Preferences;
 using Content.Shared.Roles;
 using Content.Shared.Traits;
@@ -89,13 +90,18 @@ public sealed partial class TraitPreferenceSelector : Control
         if (!string.IsNullOrEmpty(desc) && desc != $"trait-description-{trait.ID}")
             tooltip.Append(desc);
 
-
         // Get requirement reasons
-        characterRequirementsSystem.CheckRequirementsValid(
-            trait.Requirements, highJob, profile, new Dictionary<string, TimeSpan>(),
-            jobRequirementsManager.IsWhitelisted(), trait,
-            entityManager, prototypeManager, configManager,
-            out var reasons);
+        var context = new CharacterRequirementContext(selectedJob: highJob,
+            profile: profile,
+            playtimes: new(),
+            whitelisted: jobRequirementsManager.IsWhitelisted(),
+            prototype: trait);
+
+        var reasons = characterRequirementsSystem.GetReasons(trait.Requirements,
+            context,
+            entityManager,
+            prototypeManager,
+            configManager);
 
         // Add requirement reasons to the tooltip
         foreach (var reason in reasons)

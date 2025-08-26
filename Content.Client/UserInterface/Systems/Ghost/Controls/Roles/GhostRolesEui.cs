@@ -19,6 +19,7 @@ using Content.Client.Lobby;
 using Content.Client.Players.PlayTimeTracking;
 using Content.Shared.Clothing.Loadouts.Prototypes;
 using Content.Shared.Customization.Systems;
+using Content.Shared.Customization.Systems._DEN;
 using Content.Shared.Eui;
 using Content.Shared.Ghost.Roles;
 using Content.Shared.Preferences;
@@ -128,19 +129,25 @@ namespace Content.Client.UserInterface.Systems.Ghost.Controls.Roles
                 // ReSharper disable once ReplaceWithSingleAssignment.True
                 var hasAccess = true;
 
-                if (!characterReqs.CheckRequirementsValid(
-                    group.Key.Requirements ?? new(),
-                    new(),
-                    (HumanoidCharacterProfile) (prefs.Preferences?.SelectedCharacter ?? HumanoidCharacterProfile.DefaultWithSpecies()),
-                    requirementsManager.GetRawPlayTimeTrackers(),
-                    requirementsManager.IsWhitelisted(),
-                    new LoadoutPrototype(), // idk
+                var requirements = group.Key.Requirements ?? new();
+                var context = new CharacterRequirementContext(
+                    profile: (HumanoidCharacterProfile) (prefs.Preferences?.SelectedCharacter
+                        ?? HumanoidCharacterProfile.DefaultWithSpecies()),
+                    playtimes: requirementsManager.GetRawPlayTimeTrackers(),
+                    whitelisted: requirementsManager.IsWhitelisted());
+
+                if (!characterReqs.CheckRequirementsValid(requirements,
+                    context,
                     entityManager,
                     protoMan,
-                    configManager,
-                    out var reasons))
+                    configManager))
                     hasAccess = false;
 
+                var reasons = characterReqs.GetReasons(requirements,
+                    context,
+                    entityManager,
+                    protoMan,
+                    configManager);
                 _window.AddEntry(name, description, hasAccess, characterReqs.GetRequirementsText(reasons), group, spriteSystem);
             }
 

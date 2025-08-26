@@ -30,6 +30,7 @@ using Robust.Shared.Configuration;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Utility;
+using Content.Shared.Customization.Systems._DEN;
 
 namespace Content.Shared.Station;
 
@@ -204,11 +205,16 @@ public abstract class SharedStationSpawningSystem : EntitySystem
 
         foreach (var subGear in startingGear.SubGears)
         {
+            var context = new CharacterRequirementContext(selectedJob: job,
+                profile: profile,
+                prototype: job);
+
             if (!PrototypeManager.TryIndex<StartingGearPrototype>(subGear.Id, out var subGearProto) ||
-                !_characterRequirements.CheckRequirementsValid(
-                    subGearProto.Requirements, job, profile, new Dictionary<string, TimeSpan>(), false, job,
-                    EntityManager, PrototypeManager, _configurationManager,
-                    out _))
+                !_characterRequirements.CheckRequirementsValid(subGearProto.Requirements,
+                    context,
+                    EntityManager,
+                    PrototypeManager,
+                    _configurationManager))
                 continue;
 
             // Apply the sub-gear's sub-gears if there are any
