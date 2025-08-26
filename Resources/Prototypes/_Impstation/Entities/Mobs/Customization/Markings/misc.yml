@@ -74,6 +74,21 @@
   shader: unshaded
 
 - type: marking
+  id: Shadow
+  bodyPart: Head
+  markingCategory: Head
+  speciesRestriction: [ Human, Dwarf, Oni, Felinid, Canid, Kitsune, SlimePerson ]
+  forcedColoring: true
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+        color: "#000000"
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/Humanoid/head.rsi
+    state: shadow
+
+- type: marking
   id: DionaLivingNymph
   bodyPart: Chest
   markingCategory: Chest
@@ -456,22 +471,26 @@
 - type: marking
   id: SpiderGlowEyes
   bodyPart: Eyes
-  markingCategory: Head
+  markingCategory: Eyes
   speciesRestriction: [ Arachnid ]
-  forcedColoring: false
-  followSkinColor: false
+  coloring:
+    default:
+      type:
+        !type:EyeColoring
   sprites:
-  - sprite: _Impstation/Mobs/Customization/markingsbundle1.rsi
-    state: spidergloweyes
+  - sprite: Mobs/Species/Arachnid/parts.rsi
+    state: eyes
   shader: unshaded
 
 - type: marking
   id: SpiderEyesMulti
   bodyPart: Eyes
-  markingCategory: Head
+  markingCategory: Eyes
   speciesRestriction: [ Arachnid ]
-  forcedColoring: false
-  followSkinColor: false
+  coloring:
+    default:
+      type:
+        !type:EyeColoring
   sprites:
   - sprite: _Impstation/Mobs/Customization/markingsbundle1.rsi
     state: spidereyesmulti1

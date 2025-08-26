@@ -684,20 +684,7 @@
 
 # HeadTop
 
-# Tail
-
-- type: marking
-  id: ThavenTailEelF
-  bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [ Thaven ]
-  sexRestriction: [ Female ]
-  followSkinColor: true
-  sprites:
-  - sprite: _DEN/Mobs/Customization/Thaven/tail.rsi
-    state: eel1_f
-  - sprite: _DEN/Mobs/Customization/Thaven/tail.rsi
-    state: eel2_f
+# Tail (Single-layer tails commented out for porting to servers without the Floof tail layering system)
 
 - type: marking
   id: ThavenTailAngler
@@ -705,11 +692,23 @@
   markingCategory: Tail
   speciesRestriction: [ Thaven ]
   followSkinColor: true
+  layering:
+    angler1_front: Tail # Should show over backpacks from behind
+    angler1_behind: TailBehind
+    angler2_front: Tail # Should show over backpacks from behind
+    angler2_behind: TailBehind
+  colorLinks:
+    angler1_behind: angler1_front
+    angler2_behind: angler2_front
   sprites:
-  - sprite: _DEN/Mobs/Customization/Thaven/tail.rsi
-    state: angler1
-  - sprite: _DEN/Mobs/Customization/Thaven/tail.rsi
-    state: angler2
+  - sprite: _DEN/Mobs/Customization/Thaven/taillayers.rsi
+    state: angler1_behind
+  - sprite: _DEN/Mobs/Customization/Thaven/taillayers.rsi
+    state: angler1_front
+  - sprite: _DEN/Mobs/Customization/Thaven/taillayers.rsi
+    state: angler2_behind
+  - sprite: _DEN/Mobs/Customization/Thaven/taillayers.rsi
+    state: angler2_front
 
 - type: marking
   id: ThavenTailAnglerOverlay
@@ -720,11 +719,45 @@
     default:
       type:
         !type:EyeColoring
-          negative: false
+        negative: false
+  layering:
+    angler3_front: Tail # Should show over backpacks from behind
+    angler3_behind: TailBehind
+  colorLinks:
+    angler3_behind: angler3_front
   sprites:
-  - sprite: _DEN/Mobs/Customization/Thaven/tail.rsi
-    state: angler3
+  - sprite: _DEN/Mobs/Customization/Thaven/taillayers.rsi
+    state: angler3_behind
+  - sprite: _DEN/Mobs/Customization/Thaven/taillayers.rsi
+    state: angler3_front
   shader: unshaded
+
+#- type: marking
+# id: ThavenTailAngler
+# bodyPart: Tail
+# markingCategory: Tail
+# speciesRestriction: [ Thaven ]
+# followSkinColor: true
+# sprites:
+# - sprite: _DEN/Mobs/Customization/Thaven/tail.rsi
+#   state: angler1
+# - sprite: _DEN/Mobs/Customization/Thaven/tail.rsi
+#   state: angler2
+
+#- type: marking
+# id: ThavenTailAnglerOverlay
+# bodyPart: Tail
+# markingCategory: Tail
+# speciesRestriction: [ Thaven ]
+# coloring:
+#   default:
+#     type:
+#       !type:EyeColoring
+#         negative: false
+# sprites:
+# - sprite: _DEN/Mobs/Customization/Thaven/tail.rsi
+#   state: angler3
+# shader: unshaded
 
 # Nipples
 

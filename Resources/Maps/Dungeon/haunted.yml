@@ -27,7 +27,6 @@ entities:
     - type: MetaData
     - type: Transform
     - type: Map
-    - type: PhysicsMap
     - type: Broadphase
     - type: OccluderTree
     - chunks:
@@ -357,7 +356,6 @@ entities:
     - type: LoadedMap
     - type: SpreaderGrid
     - type: GridTree
-    - type: MovedGrids
     - type: GridPathfinding
 - proto: AirCanister
   entities:

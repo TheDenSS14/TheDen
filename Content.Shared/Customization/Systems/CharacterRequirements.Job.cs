@@ -1,24 +1,22 @@
-// SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT <77995199+DEATHB4DEFEAT@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 Timfa <timfalken@hotmail.com>
-// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT
+// SPDX-FileCopyrightText: 2025 Timfa
+// SPDX-FileCopyrightText: 2025 portfiend
+// SPDX-FileCopyrightText: 2025 sleepyyapril
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 using System.Linq;
 using Content.Shared.CCVar;
-using Content.Shared.Mind;
+using Content.Shared.Customization.Systems._DEN;
 using Content.Shared.Players.PlayTimeTracking;
-using Content.Shared.Preferences;
 using Content.Shared.Roles;
 using Content.Shared.Roles.Jobs;
 using JetBrains.Annotations;
 using Robust.Shared.Configuration;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization;
-using Robust.Shared.Utility;
 
 namespace Content.Shared.Customization.Systems;
-
 
 /// <summary>
 ///     Requires the selected job to be one of the specified jobs
@@ -30,45 +28,49 @@ public sealed partial class CharacterJobRequirement : CharacterRequirement
     [DataField(required: true)]
     public List<ProtoId<JobPrototype>> Jobs;
 
-    public override bool IsValid(JobPrototype job,
-        HumanoidCharacterProfile profile,
-        Dictionary<string, TimeSpan> playTimes,
-        bool whitelisted,
-        IPrototype prototype,
+    public override bool PreCheckMandatory(CharacterRequirementContext context)
+        => context.SelectedJob is not null;
+
+    public override string? GetReason(CharacterRequirementContext context,
         IEntityManager entityManager,
         IPrototypeManager prototypeManager,
-        IConfigurationManager configManager,
-        out string? reason,
-        int depth = 0,
-        MindComponent? mind = null)
+        IConfigurationManager configManager)
     {
         var jobs = new List<string>();
-        var depts = prototypeManager.EnumeratePrototypes<DepartmentPrototype>();
+        var depts = prototypeManager.EnumeratePrototypes<DepartmentPrototype>()
+            .ToList()
+            .OrderBy(d => Loc.GetString($"department-{d.ID}"));
 
-        // Get the job names and department colors
         foreach (var j in Jobs)
         {
             var jobProto = prototypeManager.Index(j);
             var color = Color.LightBlue;
-
-            foreach (var dept in depts.ToList().OrderBy(d => Loc.GetString($"department-{d.ID}")))
+            foreach (var dept in depts)
             {
-                if (!dept.Roles.Contains(j))
-                    continue;
-
-                color = dept.Color;
-                break;
+                if (dept.Roles.Contains(j))
+                {
+                    color = dept.Color;
+                    break;
+                }
             }
 
-            jobs.Add($"[color={color.ToHex()}]{Loc.GetString(jobProto.Name)}[/color]");
+            var hexColor = color.ToHex();
+            var jobName = Loc.GetString(jobProto.Name);
+            jobs.Add($"[color={hexColor}]{jobName}[/color]");
         }
 
-        // Join the job names
-        var jobsString = Loc.GetString("character-job-requirement",
-            ("inverted", Inverted), ("jobs", string.Join(", ", jobs)));
+        return Loc.GetString("character-job-requirement",
+            ("inverted", Inverted),
+            ("jobs", string.Join(", ", jobs)));
+    }
 
-        reason = jobsString;
-        return Jobs.Contains(job.ID);
+    public override bool IsValid(CharacterRequirementContext context,
+        IEntityManager entityManager,
+        IPrototypeManager prototypeManager,
+        IConfigurationManager configManager)
+    {
+        return context.SelectedJob is not null
+            && Jobs.Contains(context.SelectedJob.ID);
     }
 }
 
@@ -82,21 +84,15 @@ public sealed partial class CharacterDepartmentRequirement : CharacterRequiremen
     [DataField(required: true)]
     public List<ProtoId<DepartmentPrototype>> Departments;
 
-    public override bool IsValid(JobPrototype job,
-        HumanoidCharacterProfile profile,
-        Dictionary<string, TimeSpan> playTimes,
-        bool whitelisted,
-        IPrototype prototype,
+    public override bool PreCheckMandatory(CharacterRequirementContext context)
+        => context.SelectedJob is not null;
+
+    public override string? GetReason(CharacterRequirementContext context,
         IEntityManager entityManager,
         IPrototypeManager prototypeManager,
-        IConfigurationManager configManager,
-        out string? reason,
-        int depth = 0,
-        MindComponent? mind = null)
+        IConfigurationManager configManager)
     {
         var departments = new List<string>();
-
-        // Get the department names and colors
         foreach (var d in Departments)
         {
             var deptProto = prototypeManager.Index(d);
@@ -105,21 +101,28 @@ public sealed partial class CharacterDepartmentRequirement : CharacterRequiremen
             departments.Add($"[color={color.ToHex()}]{Loc.GetString($"department-{deptProto.ID}")}[/color]");
         }
 
-        // Join the department names
-        var departmentsString = Loc.GetString("character-department-requirement",
-            ("inverted", Inverted), ("departments", string.Join(", ", departments)));
+        return Loc.GetString("character-department-requirement",
+            ("inverted", Inverted),
+            ("departments", string.Join(", ", departments)));
+    }
 
-        reason = departmentsString;
-        return Departments.Any(d => prototypeManager.Index(d).Roles.Contains(job.ID));
+    public override bool IsValid(CharacterRequirementContext context,
+        IEntityManager entityManager,
+        IPrototypeManager prototypeManager,
+        IConfigurationManager configManager)
+    {
+        return context.SelectedJob is not null
+            && Departments.Any(d => prototypeManager.Index(d).Roles.Contains(context.SelectedJob.ID));
     }
 }
 
 /// <summary>
-///     Requires the playtime for a department to be within a certain range
+///     A helper class with some common functions for checking if a contexts's playtime is within a specific set of
+///     bounds. By default, this requirement will pretend that a context with null playtimes has zero playtime,
+///     and playtime checking will be disabled if the game role timer CVAR is disabled.
 /// </summary>
-[UsedImplicitly]
 [Serializable, NetSerializable]
-public sealed partial class CharacterDepartmentTimeRequirement : CharacterRequirement
+public abstract partial class CharacterTimeRequirement : CharacterRequirement
 {
     [DataField]
     public TimeSpan Min = TimeSpan.MinValue;
@@ -127,66 +130,123 @@ public sealed partial class CharacterDepartmentTimeRequirement : CharacterRequir
     [DataField]
     public TimeSpan Max = TimeSpan.MaxValue;
 
+    // Always allow checking, as having no provided playtimes is treated as equivalent of having 0.
+    public override bool PreCheckMandatory(CharacterRequirementContext context) => true;
+
+    public override string? GetReason(CharacterRequirementContext context,
+        IEntityManager entityManager,
+        IPrototypeManager prototypeManager,
+        IConfigurationManager configManager)
+    {
+        if (!configManager.GetCVar(CCVars.GameRoleTimers))
+            return null;
+
+        var playtime = GetTotalPlaytime(context, prototypeManager);
+
+        if (playtime <= Min)
+            return GetMinimumText(playtime,
+                context,
+                entityManager,
+                prototypeManager,
+                configManager);
+
+        if (playtime > Max)
+            return GetMaximumText(playtime,
+                context,
+                entityManager,
+                prototypeManager,
+                configManager);
+
+        return null;
+    }
+
+    public override bool IsValid(CharacterRequirementContext context,
+        IEntityManager entityManager,
+        IPrototypeManager prototypeManager,
+        IConfigurationManager configManager)
+    {
+        return !configManager.GetCVar(CCVars.GameRoleTimers)
+            || InBounds(GetTotalPlaytime(context, prototypeManager));
+    }
+
+    protected bool InBounds(TimeSpan playtime)
+    {
+        return playtime >= Min && playtime < Max;
+    }
+
+    protected abstract TimeSpan GetTotalPlaytime(CharacterRequirementContext context,
+        IPrototypeManager prototypeManager);
+
+    protected abstract string? GetMinimumText(TimeSpan playtime,
+        CharacterRequirementContext context,
+        IEntityManager entityManager,
+        IPrototypeManager prototypeManager,
+        IConfigurationManager configManager);
+
+    protected abstract string? GetMaximumText(TimeSpan playtime,
+        CharacterRequirementContext context,
+        IEntityManager entityManager,
+        IPrototypeManager prototypeManager,
+        IConfigurationManager configManager);
+}
+
+/// <summary>
+///     Requires the playtime for a department to be within a certain range
+/// </summary>
+[UsedImplicitly]
+[Serializable, NetSerializable]
+public sealed partial class CharacterDepartmentTimeRequirement : CharacterTimeRequirement
+{
     [DataField(required: true)]
     public ProtoId<DepartmentPrototype> Department;
 
-    public override bool IsValid(JobPrototype job,
-        HumanoidCharacterProfile profile,
-        Dictionary<string, TimeSpan> playTimes,
-        bool whitelisted,
-        IPrototype prototype,
-        IEntityManager entityManager,
-        IPrototypeManager prototypeManager,
-        IConfigurationManager configManager,
-        out string? reason,
-        int depth = 0,
-        MindComponent? mind = null)
+    protected override TimeSpan GetTotalPlaytime(CharacterRequirementContext context,
+        IPrototypeManager prototypeManager)
     {
-        // Disable the requirement if the role timers are disabled
-        if (!configManager.GetCVar(CCVars.GameRoleTimers))
-        {
-            reason = null;
-            return !Inverted;
-        }
+        if (context.Playtimes is null)
+            return TimeSpan.Zero;
 
         var department = prototypeManager.Index(Department);
-
-        // Combine all of this department's job playtimes
         var playtime = TimeSpan.Zero;
+
         foreach (var other in department.Roles)
         {
-            var proto = prototypeManager.Index<JobPrototype>(other).PlayTimeTracker;
-
-            playTimes.TryGetValue(proto, out var otherTime);
+            var proto = prototypeManager.Index(other).PlayTimeTracker;
+            context.Playtimes.TryGetValue(proto, out var otherTime);
             playtime += otherTime;
         }
 
-        if (playtime > Max)
-        {
-            // Show the reason if invalid
-            reason = Inverted
-                ? null
-                : Loc.GetString("character-timer-department-too-high",
-                    ("time", playtime.TotalMinutes - Max.TotalMinutes),
-                    ("department", Loc.GetString($"department-{department.ID}")),
-                    ("departmentColor", department.Color));
-            return false;
-        }
+        return playtime;
+    }
 
-        if (playtime < Min)
-        {
-            // Show the reason if invalid
-            reason = Inverted
-                ? null
-                : Loc.GetString("character-timer-department-insufficient",
-                    ("time", Min.TotalMinutes - playtime.TotalMinutes),
-                    ("department", Loc.GetString($"department-{department.ID}")),
-                    ("departmentColor", department.Color));
-            return false;
-        }
+    protected override string? GetMinimumText(TimeSpan playtime,
+        CharacterRequirementContext context,
+        IEntityManager entityManager,
+        IPrototypeManager prototypeManager,
+        IConfigurationManager configManager)
+    {
+        var department = prototypeManager.Index(Department);
+        return Inverted
+            ? null
+            : Loc.GetString("character-timer-department-insufficient",
+                ("time", Min.TotalMinutes - playtime.TotalMinutes),
+                ("department", Loc.GetString($"department-{department.ID}")),
+                ("departmentColor", department.Color));
+    }
 
-        reason = null;
-        return true;
+    protected override string? GetMaximumText(TimeSpan playtime,
+        CharacterRequirementContext context,
+        IEntityManager entityManager,
+        IPrototypeManager prototypeManager,
+        IConfigurationManager configManager)
+    {
+        var department = prototypeManager.Index(Department);
+        return Inverted
+            ? null
+            : Loc.GetString("character-timer-department-too-high",
+                ("time", playtime.TotalMinutes - Max.TotalMinutes),
+                ("department", Loc.GetString($"department-{department.ID}")),
+                ("departmentColor", department.Color));
     }
 }
 
@@ -195,58 +255,38 @@ public sealed partial class CharacterDepartmentTimeRequirement : CharacterRequir
 /// </summary>
 [UsedImplicitly]
 [Serializable, NetSerializable]
-public sealed partial class CharacterOverallTimeRequirement : CharacterRequirement
+public sealed partial class CharacterOverallTimeRequirement : CharacterTimeRequirement
 {
-    [DataField]
-    public TimeSpan Min = TimeSpan.MinValue;
-
-    [DataField]
-    public TimeSpan Max = TimeSpan.MaxValue;
-
-    public override bool IsValid(JobPrototype job,
-        HumanoidCharacterProfile profile,
-        Dictionary<string, TimeSpan> playTimes,
-        bool whitelisted,
-        IPrototype prototype,
+    protected override string? GetMinimumText(TimeSpan playtime,
+        CharacterRequirementContext context,
         IEntityManager entityManager,
         IPrototypeManager prototypeManager,
-        IConfigurationManager configManager,
-        out string? reason,
-        int depth = 0,
-        MindComponent? mind = null)
+        IConfigurationManager configManager)
     {
-        // Disable the requirement if the role timers are disabled
-        if (!configManager.GetCVar(CCVars.GameRoleTimers))
-        {
-            reason = null;
-            return !Inverted;
-        }
+        return Inverted
+            ? null
+            : Loc.GetString("character-timer-overall-insufficient",
+                ("time", Min.TotalMinutes - playtime.TotalMinutes));
+    }
 
-        // Get the overall time
-        var overallTime = playTimes.GetValueOrDefault(PlayTimeTrackingShared.TrackerOverall);
+    protected override string? GetMaximumText(TimeSpan playtime,
+        CharacterRequirementContext context,
+        IEntityManager entityManager,
+        IPrototypeManager prototypeManager,
+        IConfigurationManager configManager)
+    {
+        return Inverted
+            ? null
+            : Loc.GetString("character-timer-overall-too-high",
+                ("time", playtime.TotalMinutes - Max.TotalMinutes));
+    }
 
-        if (overallTime > Max)
-        {
-            // Show the reason if invalid
-            reason = Inverted
-                ? null
-                : Loc.GetString("character-timer-overall-too-high",
-                    ("time", overallTime.TotalMinutes - Max.TotalMinutes));
-            return false;
-        }
-
-        if (overallTime < Min)
-        {
-            // Show the reason if invalid
-            reason = Inverted
-                ? null
-                : Loc.GetString("character-timer-overall-insufficient",
-                    ("time", Min.TotalMinutes - overallTime.TotalMinutes));
-            return false;
-        }
-
-        reason = null;
-        return true;
+    protected override TimeSpan GetTotalPlaytime(CharacterRequirementContext context,
+        IPrototypeManager prototypeManager)
+    {
+        return context.Playtimes != null
+            ? context.Playtimes.GetValueOrDefault(PlayTimeTrackingShared.TrackerOverall)
+            : TimeSpan.Zero;
     }
 }
 
@@ -255,85 +295,70 @@ public sealed partial class CharacterOverallTimeRequirement : CharacterRequireme
 /// </summary>
 [UsedImplicitly]
 [Serializable, NetSerializable]
-public sealed partial class CharacterPlaytimeRequirement : CharacterRequirement
+public sealed partial class CharacterPlaytimeRequirement : CharacterTimeRequirement
 {
-    [DataField]
-    public TimeSpan Min = TimeSpan.MinValue;
-
-    [DataField]
-    public TimeSpan Max = TimeSpan.MaxValue;
-
     [DataField(required: true)]
     public ProtoId<PlayTimeTrackerPrototype> Tracker;
 
-    public override bool IsValid(JobPrototype job,
-        HumanoidCharacterProfile profile,
-        Dictionary<string, TimeSpan> playTimes,
-        bool whitelisted,
-        IPrototype prototype,
+    protected override TimeSpan GetTotalPlaytime(CharacterRequirementContext context,
+        IPrototypeManager prototypeManager)
+    {
+        return context.Playtimes != null
+            ? context.Playtimes.GetValueOrDefault(Tracker)
+            : TimeSpan.Zero;
+    }
+
+    protected override string? GetMinimumText(TimeSpan playtime,
+        CharacterRequirementContext context,
         IEntityManager entityManager,
         IPrototypeManager prototypeManager,
-        IConfigurationManager configManager,
-        out string? reason,
-        int depth = 0,
-        MindComponent? mind = null)
+        IConfigurationManager configManager)
     {
-        // Disable the requirement if the role timers are disabled
-        if (!configManager.GetCVar(CCVars.GameRoleTimers))
-        {
-            reason = null;
-            return !Inverted;
-        }
+        var jobSystem = entityManager.System<SharedJobSystem>();
+        var jobStr = GetTrackerName(jobSystem, prototypeManager);
+        var department = GetDepartment(jobSystem);
 
-        // Get SharedJobSystem
-        if (!entityManager.EntitySysManager.TryGetEntitySystem(out SharedJobSystem? jobSystem))
-        {
-            DebugTools.Assert("CharacterRequirements: SharedJobSystem not found");
-            reason = null;
-            return false;
-        }
+        return Inverted
+            ? null
+            : Loc.GetString("character-timer-role-insufficient",
+                ("time", Min.TotalMinutes - playtime.TotalMinutes),
+                ("job", jobStr),
+                ("departmentColor", department?.Color ?? Color.White));
+    }
 
-        // Get the JobPrototype of the Tracker
+    protected override string? GetMaximumText(TimeSpan playtime,
+        CharacterRequirementContext context,
+        IEntityManager entityManager,
+        IPrototypeManager prototypeManager,
+        IConfigurationManager configManager)
+    {
+        var jobSystem = entityManager.System<SharedJobSystem>();
+        var jobStr = GetTrackerName(jobSystem, prototypeManager);
+        var department = GetDepartment(jobSystem);
+
+        return Inverted
+            ? null
+            : Loc.GetString("character-timer-role-too-high",
+                ("time", playtime.TotalMinutes - Max.TotalMinutes),
+                ("job", jobStr),
+                ("departmentColor", department?.Color ?? Color.White));
+    }
+
+    private string GetTrackerName(SharedJobSystem jobSystem,
+        IPrototypeManager prototypeManager)
+    {
         var trackerJob = jobSystem.GetJobPrototype(Tracker);
-        var jobStr = prototypeManager.Index<JobPrototype>(trackerJob).LocalizedName;
+        var job = prototypeManager.Index<JobPrototype>(trackerJob);
+        return job.LocalizedName;
+    }
 
-        // Get the primary department of the Tracker
+    private DepartmentPrototype? GetDepartment(SharedJobSystem jobSystem)
+    {
+        var trackerJob = jobSystem.GetJobPrototype(Tracker);
         if (!jobSystem.TryGetPrimaryDepartment(trackerJob, out var department) &&
             !jobSystem.TryGetDepartment(trackerJob, out department))
-        {
-            DebugTools.Assert($"CharacterRequirements: Department not found for job {trackerJob}");
-            reason = null;
-            return false;
-        }
+            return null;
 
-        // Get the time for the tracker
-        var time = playTimes.GetValueOrDefault(Tracker);
-        reason = null;
-
-        if (time > Max)
-        {
-            // Show the reason if invalid
-            reason = Inverted
-                ? null
-                : Loc.GetString("character-timer-role-too-high",
-                    ("time", time.TotalMinutes - Max.TotalMinutes),
-                    ("job", jobStr),
-                    ("departmentColor", department.Color));
-            return false;
-        }
-
-        if (time < Min)
-        {
-            // Show the reason if invalid
-            reason = Inverted
-                ? null
-                : Loc.GetString("character-timer-role-insufficient",
-                    ("time", Min.TotalMinutes - time.TotalMinutes),
-                    ("job", jobStr),
-                    ("departmentColor", department.Color));
-            return false;
-        }
-
-        return true;
+        return department;
     }
 }

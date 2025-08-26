@@ -9,6 +9,7 @@
 // SPDX-FileCopyrightText: 2024 SimpleStation14
 // SPDX-FileCopyrightText: 2025 Skubman
 // SPDX-FileCopyrightText: 2025 VMSolidus
+// SPDX-FileCopyrightText: 2025 portfiend
 // SPDX-FileCopyrightText: 2025 sleepyyapril
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
@@ -36,6 +37,7 @@ using Robust.Shared.Random;
 using Robust.Shared.Serialization.Manager;
 using Robust.Shared.Utility;
 using Timer = Robust.Shared.Timing.Timer;
+using Content.Shared.Customization.Systems._DEN;
 
 namespace Content.Server.Traits;
 
@@ -97,12 +99,17 @@ public sealed class TraitSystem : EntitySystem
 
         foreach (var traitPrototype in sortedTraits)
         {
-            if (!_characterRequirements.CheckRequirementsValid(
-                traitPrototype.Requirements,
-                jobPrototypeToUse,
-                profile, playTimes, whitelisted, traitPrototype,
-                EntityManager, _prototype, _configuration,
-                out _))
+            var context = new CharacterRequirementContext(selectedJob: jobPrototypeToUse,
+                profile: profile,
+                playtimes: playTimes,
+                whitelisted: whitelisted,
+                prototype: traitPrototype);
+
+            if (!_characterRequirements.CheckRequirementsValid(traitPrototype.Requirements,
+                context,
+                EntityManager,
+                _prototype,
+                _configuration))
                 continue;
 
             // To check for cheaters. :FaridaBirb.png:

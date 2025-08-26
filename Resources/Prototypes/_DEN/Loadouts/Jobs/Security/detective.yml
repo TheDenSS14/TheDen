@@ -76,6 +76,21 @@
     - ClothingUniformJumpskirtDetectiveGrey
 
 - type: loadout
+  id: LoadoutUniformJumpsuitDetectiveMiamiVice
+  category: JobsSecurityDetective
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutDetectiveUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - Detective
+
+  items:
+    - ClothingUniformMiamiVice
+    
+- type: loadout
   id: LoadoutClothingUniformDetectiveTurtleskirt
   category: JobsSecurityDetective
   cost: 0
@@ -87,7 +102,7 @@
       jobs:
         - Detective
   items:
-    - ClothingUniformJumpskirtDetTurtle
+      - ClothingUniformJumpskirtDetTurtle
 
 - type: loadout
   id: LoadoutClothingUniformDetectiveTurtlesuit
@@ -102,3 +117,47 @@
         - Detective
   items:
     - ClothingUniformJumpsuitDetTurtle
+    
+- type: loadout
+  id: LoadoutUniformJumpskirtDetectiveMiamiVice
+  category: JobsSecurityDetective
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutDetectiveUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - Detective
+  items:
+    - ClothingUniformMiamiViceSkirt
+
+
+- type: loadout
+  id: LoadoutUniformJumpsuitDetectiveSuit
+  category: JobsSecurityDetective
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutDetectiveUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - Detective
+  items:
+    - ClothingUniformDetectiveSuit
+
+
+- type: loadout
+  id: LoadoutUniformJumpskirtDetectiveSuit
+  category: JobsSecurityDetective
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutDetectiveUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - Detective
+  items:
+    - ClothingUniformDetectiveSuitSkirt

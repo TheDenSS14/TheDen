@@ -1,4 +1,5 @@
 // SPDX-FileCopyrightText: 2025 Simon
+// SPDX-FileCopyrightText: 2025 sleepyyapril
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -25,6 +26,7 @@ public sealed class CommandReceivedEventArgs
     /// The arguments to the command. This is everything after the command
     /// </summary>
     public string Arguments { get; init; } = string.Empty;
+
     /// <summary>
     /// Information about the message that the command was received from. This includes the message content, author, etc.
     /// Use this to reply to the message, delete it, etc.
@@ -104,12 +106,8 @@ public sealed class DiscordLink : IPostInjectInit
 
         _client = new GatewayClient(new BotToken(token), new GatewayClientConfiguration()
         {
-            Intents = GatewayIntents.Guilds
-                             | GatewayIntents.GuildUsers
-                             | GatewayIntents.GuildMessages
-                             | GatewayIntents.MessageContent
-                             | GatewayIntents.DirectMessages,
-            Logger = new DiscordSawmillLogger(_sawmillLog),
+            Intents = GatewayIntents.All,
+            Logger = new DiscordSawmillLogger(_sawmillLog)
         });
         _client.MessageCreate += OnCommandReceivedInternal;
         _client.MessageCreate += OnMessageReceivedInternal;
@@ -133,7 +131,7 @@ public sealed class DiscordLink : IPostInjectInit
             }
             catch (Exception e)
             {
-                _sawmill.Error("Failed to connect to Discord!", e);
+                _sawmill.Error("Failed to connect to Discord!\n" + e);
             }
         });
     }
@@ -157,11 +155,20 @@ public sealed class DiscordLink : IPostInjectInit
         _configuration.UnsubValueChanged(CCVars.DiscordPrefix, OnPrefixChanged);
     }
 
+    public async void ReloadBot()
+    {
+        await Shutdown();
+        Initialize();
+    }
+
     void IPostInjectInit.PostInject()
     {
         _sawmill = _logManager.GetSawmill("discord.link");
         _sawmillLog = _logManager.GetSawmill("discord.link.log");
     }
+
+    public GatewayClient? Client => _client;
+    public ulong GuildId => _guildId;
 
     private void OnGuildIdChanged(string guildId)
     {

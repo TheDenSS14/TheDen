@@ -100,3 +100,4 @@ marking-halfshave_long = Halfshave Long
 marking-halfshave_messy = Halfshave Messy
 marking-halfshave_messylong = Halfshave Messy Long
 marking-inari = Inari
+marking-mera = Mera

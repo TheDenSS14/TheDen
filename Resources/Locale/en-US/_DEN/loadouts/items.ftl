@@ -9,6 +9,7 @@ loadout-name-LoadoutNeckScarfStripedColorable = striped scarf (colorable)
 loadout-name-LoadoutNeckMantleColorable = mantle (colorable)
 loadout-name-LoadoutNeckCloakColorable = cloak (colorable)
 loadout-name-LoadoutClothingNeckSentimentalCollar = sentimental collar (colorable)
+loadout-name-LoadoutNeckNeckScarfWrapped = wrapped scarf (colorable)
 
 # waist
 loadout-name-LoadoutClothingWaistApron = waist apron (colorable)
@@ -33,6 +34,9 @@ loadout-name-PlushieTeddyBearRecolorablePlaid = teddy bear (colorable, plaid)
 loadout-name-PlushieTeddyBearRecolorableRandom = teddy bear (random)
 loadout-name-SqueakySmileyGuy = smiley guy (colorable)
 loadout-name-SqueakySmileyBall = smiley ball (colorable)
+
+# toys
+loadout-name-LoadoutMysterySpaceBladeBox = mystery spaceblade box
 
 # mobility aids
 character-item-group-LoadoutWalkingCanes = Walking Canes

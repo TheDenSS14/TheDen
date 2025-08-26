@@ -113,9 +113,10 @@ namespace Content.Shared.Movement.Systems
         /// </summary>
         public Dictionary<EntityUid, bool> UsedMobMovement = new();
 
-        public override void Initialize()
-        {
-            base.Initialize();
+    public override void Initialize()
+    {
+        UpdatesBefore.Add(typeof(TileFrictionController));
+        base.Initialize();
 
             MoverQuery = GetEntityQuery<InputMoverComponent>();
             MobMoverQuery = GetEntityQuery<MobMoverComponent>();
@@ -133,7 +134,6 @@ namespace Content.Shared.Movement.Systems
             InitializeCVars();
             Subs.CVar(_configManager, CCVars.RelativeMovement, value => _relativeMovement = value, true);
             Subs.CVar(_configManager, CCVars.StopSpeed, value => _stopSpeed = value, true);
-            UpdatesBefore.Add(typeof(TileFrictionController));
         }
 
         public override void Shutdown()
