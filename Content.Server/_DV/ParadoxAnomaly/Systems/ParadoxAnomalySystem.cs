@@ -263,7 +263,7 @@ public sealed class ParadoxAnomalySystem : EntitySystem
                 profile.Name,
                 job,
                 station);
-            _loadout.ApplyCharacterLoadout(spawned, job, profile, [], false); // TODO: find a way to get playtimes and whitelisted
+            _loadout.ApplyCharacterLoadout(spawned, job, profile, [], false); // TODO: find a way to get playtimes, player, and whitelisted
         }
 
         foreach (var special in job.Special)

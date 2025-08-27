@@ -23,6 +23,7 @@ using Content.Shared.Storage;
 using Content.Shared.Storage.EntitySystems;
 using Content.Shared.Traits.Assorted.Components;
 using Robust.Shared.Configuration;
+using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Serialization.Manager;
@@ -86,11 +87,18 @@ public sealed class LoadoutSystem : EntitySystem
         Dictionary<string, TimeSpan> playTimes,
         bool whitelisted,
         bool deleteFailed = false,
-        JobPrototype? jobProto = null)
+        JobPrototype? jobProto = null,
+        ICommonSession? player = null)
     {
         // Spawn the loadout, get a list of items that failed to equip
         var (failedLoadouts, allLoadouts) =
-            _loadout.ApplyCharacterLoadout(uid, job, profile, playTimes, whitelisted, out var heirlooms);
+            _loadout.ApplyCharacterLoadout(uid,
+                job,
+                profile,
+                playTimes,
+                whitelisted,
+                out var heirlooms,
+                player);
 
         // Try to find back-mounted storage apparatus
         if (_inventory.TryGetSlotEntity(uid, "back", out var item) &&

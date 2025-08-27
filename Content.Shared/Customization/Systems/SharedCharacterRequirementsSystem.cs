@@ -81,7 +81,8 @@ public abstract partial class SharedCharacterRequirementsSystem : EntitySystem
             whitelisted: whitelisted,
             prototype: prototype,
             entity: characterUid,
-            depth: depth);
+            depth: depth,
+            player: mind.Session);
 
         return CheckRequirementsValid(requirements,
             context,

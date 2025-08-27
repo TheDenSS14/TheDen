@@ -88,7 +88,8 @@ public sealed class SpawnPlayer : LocalizedEntityCommands
             character,
             playTimes,
             true, // again, assume true
-            jobProto: jobProto // this applies 'special' things with the job's loadout, like mindshields
+            jobProto: jobProto, // this applies 'special' things with the job's loadout, like mindshields
+            player: player
         );
 
         // Parse out if we should transfer the mind, and do it if true. Will force even if player has an active 'non-ghost' character.

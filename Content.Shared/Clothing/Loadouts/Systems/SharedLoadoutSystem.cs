@@ -68,10 +68,11 @@ public sealed class SharedLoadoutSystem : EntitySystem
         HumanoidCharacterProfile profile,
         Dictionary<string, TimeSpan> playTimes,
         bool whitelisted,
-        out List<(EntityUid, LoadoutPreference)> heirlooms)
+        out List<(EntityUid, LoadoutPreference)> heirlooms,
+        ICommonSession? player = null)
     {
         var jobPrototype = _prototype.Index(job);
-        return ApplyCharacterLoadout(uid, jobPrototype, profile, playTimes, whitelisted, out heirlooms);
+        return ApplyCharacterLoadout(uid, jobPrototype, profile, playTimes, whitelisted, out heirlooms, player);
     }
 
     /// <summary>
@@ -90,7 +91,8 @@ public sealed class SharedLoadoutSystem : EntitySystem
         HumanoidCharacterProfile profile,
         Dictionary<string, TimeSpan> playTimes,
         bool whitelisted,
-        out List<(EntityUid, LoadoutPreference)> heirlooms)
+        out List<(EntityUid, LoadoutPreference)> heirlooms,
+        ICommonSession? player = null)
     {
         var failedLoadouts = new List<EntityUid>();
         var allLoadouts = new List<(EntityUid, LoadoutPreference, int)>();
@@ -110,7 +112,8 @@ public sealed class SharedLoadoutSystem : EntitySystem
                 profile: profile,
                 playtimes: playTimes,
                 whitelisted: whitelisted,
-                prototype: loadoutProto);
+                prototype: loadoutProto,
+                player: player);
 
             if (!_characterRequirements.CheckRequirementsValid(loadoutProto.Requirements,
                 context,

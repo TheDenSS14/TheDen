@@ -120,7 +120,8 @@ public sealed class SpawnCharacter : LocalizedEntityCommands
             character,
             playTimes,
             true, // again, assume true
-            jobProto: jobProto // this applies 'special' things with the job's loadout, like mindshields
+            jobProto: jobProto, // this applies 'special' things with the job's loadout, like mindshields
+            player: player
         );
 
         mindSystem.TransferTo(mindId, mobUid);

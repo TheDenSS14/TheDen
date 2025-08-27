@@ -342,7 +342,13 @@ public sealed class LobbyUIController : UIController, IOnStateEntered<LobbyState
     /// Applies loadouts to the dummy.
     public void GiveDummyLoadout(EntityUid dummy, JobPrototype job, HumanoidCharacterProfile profile)
     {
-        _loadouts.ApplyCharacterLoadout(dummy, job, profile, _jobRequirements.GetRawPlayTimeTrackers(), _jobRequirements.IsWhitelisted(), out _);
+        _loadouts.ApplyCharacterLoadout(dummy,
+            job,
+            profile,
+            _jobRequirements.GetRawPlayTimeTrackers(),
+            _jobRequirements.IsWhitelisted(),
+            out _,
+            player: _playerManager.LocalSession);
     }
 
     /// Loads the profile onto a dummy entity
