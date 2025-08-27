@@ -5,6 +5,7 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 using System.Linq;
+using Content.Server._DEN.Customization.Systems;
 using Content.Server.Players.PlayTimeTracking;
 using Content.Shared._EE.Contractors.Prototypes;
 using Content.Shared.Customization.Systems;
@@ -15,6 +16,7 @@ using Content.Shared.Players;
 using Content.Shared.Preferences;
 using Content.Shared.Roles;
 using Robust.Shared.Configuration;
+using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization.Manager;
 using Robust.Shared.Utility;
@@ -25,7 +27,7 @@ public sealed class LifepathSystem : EntitySystem
 {
     [Dependency] private readonly IPrototypeManager _prototype = default!;
     [Dependency] private readonly ISerializationManager _serialization = default!;
-    [Dependency] private readonly SharedCharacterRequirementsSystem _characterRequirements = default!;
+    [Dependency] private readonly CharacterRequirementsSystem _characterRequirements = default!;
     [Dependency] private readonly PlayTimeTrackingManager _playTimeTracking = default!;
     [Dependency] private readonly IConfigurationManager _configuration = default!;
     [Dependency] private readonly IComponentFactory _componentFactory = default!;
@@ -39,34 +41,32 @@ public sealed class LifepathSystem : EntitySystem
 
     // When the player is spawned in, add the Lifepath components selected during character creation
     private void OnPlayerSpawnComplete(PlayerSpawnCompleteEvent args) =>
-        ApplyLifepath(args.Mob, args.JobId, args.Profile,
-            _playTimeTracking.GetTrackerTimes(args.Player), args.Player.ContentData()?.Whitelisted ?? false);
+        ApplyLifepath(args.Mob, args.JobId, args.Profile, args.Player);
 
     /// <summary>
     ///     Adds the Lifepath selected by a player to an entity.
     /// </summary>
-    public void ApplyLifepath(EntityUid uid, ProtoId<JobPrototype>? jobId, HumanoidCharacterProfile profile,
-        Dictionary<string, TimeSpan> playTimes, bool whitelisted)
+    public void ApplyLifepath(EntityUid uid,
+        ProtoId<JobPrototype>? jobId,
+        HumanoidCharacterProfile profile,
+        ICommonSession player)
     {
-        if (jobId == null || !_prototype.TryIndex(jobId, out _))
+        if (jobId == null || !_prototype.TryIndex(jobId, out var jobPrototypeToUse))
             return;
 
-        var jobPrototypeToUse = _prototype.Index(jobId.Value);
+        var lifepath = profile.Lifepath != string.Empty
+            ? profile.Lifepath
+            : SharedHumanoidAppearanceSystem.DefaultLifepath;
 
-        ProtoId<LifepathPrototype> lifepath = profile.Lifepath != string.Empty? profile.Lifepath : SharedHumanoidAppearanceSystem.DefaultLifepath;
-
-        if(!_prototype.TryIndex<LifepathPrototype>(lifepath, out var lifepathPrototype))
+        if (!_prototype.TryIndex<LifepathPrototype>(lifepath, out var lifepathPrototype))
         {
             DebugTools.Assert($"Lifepath '{lifepath}' not found!");
             return;
         }
 
-        var context = new CharacterRequirementContext(
-            selectedJob: jobPrototypeToUse,
-            profile: profile,
-            playtimes: playTimes,
-            whitelisted: whitelisted,
-            prototype: lifepathPrototype);
+        var context = _characterRequirements.GetProfileContext(player, profile)
+            .WithSelectedJob(jobPrototypeToUse)
+            .WithPrototype(lifepathPrototype);
 
         if (!_characterRequirements.CheckRequirementsValid(lifepathPrototype.Requirements,
             context,

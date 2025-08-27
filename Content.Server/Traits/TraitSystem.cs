@@ -38,6 +38,7 @@ using Robust.Shared.Serialization.Manager;
 using Robust.Shared.Utility;
 using Timer = Robust.Shared.Timing.Timer;
 using Content.Shared.Customization.Systems._DEN;
+using Content.Server._DEN.Customization.Systems;
 
 namespace Content.Server.Traits;
 
@@ -45,7 +46,7 @@ public sealed class TraitSystem : EntitySystem
 {
     [Dependency] private readonly IPrototypeManager _prototype = default!;
     [Dependency] private readonly ISerializationManager _serialization = default!;
-    [Dependency] private readonly SharedCharacterRequirementsSystem _characterRequirements = default!;
+    [Dependency] private readonly CharacterRequirementsSystem _characterRequirements = default!;
     [Dependency] private readonly PlayTimeTrackingManager _playTimeTracking = default!;
     [Dependency] private readonly IConfigurationManager _configuration = default!;
     [Dependency] private readonly IComponentFactory _componentFactory = default!;
@@ -64,14 +65,19 @@ public sealed class TraitSystem : EntitySystem
 
     // When the player is spawned in, add all trait components selected during character creation
     private void OnPlayerSpawnComplete(PlayerSpawnCompleteEvent args) =>
-        ApplyTraits(args.Mob, args.JobId, args.Profile,
-            _playTimeTracking.GetTrackerTimes(args.Player), args.Player.ContentData()?.Whitelisted ?? false);
+        ApplyTraits(args.Mob, args.JobId, args.Profile, args.Player);
 
     /// <summary>
     ///     Adds the traits selected by a player to an entity.
     /// </summary>
-    public void ApplyTraits(EntityUid uid, ProtoId<JobPrototype>? jobId, HumanoidCharacterProfile profile,
-        Dictionary<string, TimeSpan> playTimes, bool whitelisted, bool punishCheater = true)
+    /// <param name="whitelisted">If non-null, Whitelisted will be forced to be this value.</param>
+    /// <param name="punishCheater">If a player has invalid trait points, they may be deleteed at random.</param>
+    public void ApplyTraits(EntityUid uid,
+        ProtoId<JobPrototype>? jobId,
+        HumanoidCharacterProfile profile,
+        ICommonSession player,
+        bool? whitelisted = null,
+        bool punishCheater = true)
     {
         var pointsTotal = _configuration.GetCVar(CCVars.GameTraitsDefaultPoints);
         var traitSelections = _configuration.GetCVar(CCVars.GameTraitsMax);
@@ -99,11 +105,12 @@ public sealed class TraitSystem : EntitySystem
 
         foreach (var traitPrototype in sortedTraits)
         {
-            var context = new CharacterRequirementContext(selectedJob: jobPrototypeToUse,
-                profile: profile,
-                playtimes: playTimes,
-                whitelisted: whitelisted,
-                prototype: traitPrototype);
+            var context = _characterRequirements.GetProfileContext(player, profile)
+                .WithSelectedJob(jobPrototypeToUse)
+                .WithPrototype(traitPrototype);
+
+            if (whitelisted != null)
+                context = context.WithWhitelisted(whitelisted);
 
             if (!_characterRequirements.CheckRequirementsValid(traitPrototype.Requirements,
                 context,
