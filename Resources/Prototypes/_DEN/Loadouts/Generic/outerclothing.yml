@@ -60,3 +60,14 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutOuter
+
+- type: loadout
+  id: LoadoutClothingOuterWhitePoncho
+  category: Outer
+  cost: 0
+  customColorTint: true
+  items:
+    - ClothingOuterWhitePoncho
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutOuter

@@ -74,15 +74,3 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutNeck
-
-- type: loadout
-  id: LoadoutClothingOuterWhitePoncho
-  category: Neck
-  cost: 0
-  exclusive: true
-  customColorTint: true
-  items:
-    - ClothingOuterWhitePoncho
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutNeck
