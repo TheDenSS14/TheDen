@@ -1,9 +1,9 @@
 flavor-complex-tirggel = crunchy
 
-##Basic drinks
+## Basic drinks
 flavor-complex-jaegermister = like black licorice
 
-##Cocktails
+## Cocktails
 flavor-complex-blood-moon = like a memory, long forgotten.
 flavor-complex-jaegerbomb = like fruit-flavored anxiety
 flavor-complex-jaegerita = like the color orange
