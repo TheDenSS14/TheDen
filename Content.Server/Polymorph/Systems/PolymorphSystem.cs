@@ -287,7 +287,7 @@ public sealed partial class PolymorphSystem : EntitySystem
         if (configuration.Inventory == PolymorphInventoryChange.Transfer)
         {
             
-            if (HasComp<InventoryComponent>(child))
+            if (HasComp<InventoryComponent>(uid) && HasComp<InventoryComponent>(child))
                 _inventory.TransferEntityInventories(uid, child);
 
             foreach (var hand in _hands.EnumerateHeld(uid))
