@@ -1,12 +1,16 @@
+# SPDX-FileCopyrightText: 2025 Shaman
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 - type: damageModifierSet
   id: Thaven
   coefficients:
-    Blunt: 1.1
-    Slash: 1.1
-    Piercing: 1.1
-    Heat: .9
-    Cold: .9
-    Shock: .9
-    Poison: .9
-    Cellular: 1.1
-    Radiation: 1.2
+    Blunt: 1.1 # Lots of sensory nerves and body awareness
+    Slash: 1.1 # Lots of sensory nerves and body awareness
+    Piercing: 1.1 # Lots of sensory nerves and body awareness
+    Heat: .9 # Environmentally adaptable
+    Cold: .9 # Environmentally adaptable
+    Shock: .9 # TheDen - They have electroplaques in their arms, their bodies are prepared to handle at least that much electricity
+    Poison: .9 # Alien metabolism is a bit more flexible
+    Cellular: 1.1 # Complex biology is difficult enough to maintain without mutations and cancer
+    Radiation: 1.2 # Ambient space radiation just disrupts moods, but actual radioactive hazards cook them

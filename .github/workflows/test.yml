@@ -1,0 +1,14 @@
+name: Test Colored Output
+
+on:
+  workflow_dispatch:
+
+jobs:
+  test-colors:
+    runs-on: ubuntu-latest
+    steps: # I AM LOSING MY MIND
+    - name: Test colors
+      run: |
+        echo -e "\033[31mThis is red\033[0m"
+        echo -e "\033[32mThis is green\033[0m"
+        echo -e "\033[33mThis is yellow\033[0m"

@@ -42,11 +42,6 @@ jobs:
           python -m pip install --upgrade pip
           pip install tqdm
 
-      - name: Sync with master branch
-        run: |
-          git fetch origin ${{ vars.CHANGELOG_BRANCH }}
-          git reset --hard origin/${{ vars.CHANGELOG_BRANCH }}
-
       - name: Run REUSE Header Update Script
         run: | # this should handle both normal merges and squash merges
           MERGE_SHA="${{ github.event.pull_request.merge_commit_sha }}"
@@ -56,13 +51,11 @@ jobs:
           python Tools/reuse_utilities/reuse_update_headers_from_merge.py $MERGE_SHA
         working-directory: ${{ github.workspace }}
 
-      - name: Commit changes
-        uses: stefanzweifel/git-auto-commit-action@v6
-        with:
-          commit_message: ${{ env.REUSE_MESSAGE }}
-          commit_user_name: ${{ env.CHANGELOG_USER }}
-          commit_user_email: ${{ env.CHANGELOG_EMAIL }}
-          commit_author: ${{ env.CHANGELOG_USER }} <${{ env.CHANGELOG_EMAIL }}>
-          branch: ${{ vars.CHANGELOG_BRANCH }}
-          skip_dirty_check: false
-
+      - name: Commit and push changes
+        run: |
+          git config user.name "${{ env.CHANGELOG_USER }}"
+          git config user.email "${{ env.CHANGELOG_EMAIL }}"
+          git add -A
+          git commit -m "${{ env.REUSE_MESSAGE }}" || echo "No changes to commit"
+          git pull --rebase origin ${{ vars.CHANGELOG_BRANCH }}
+          git push origin ${{ vars.CHANGELOG_BRANCH }}
