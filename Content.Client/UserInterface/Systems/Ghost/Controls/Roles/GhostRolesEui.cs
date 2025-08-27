@@ -111,7 +111,7 @@ namespace Content.Client.UserInterface.Systems.Ghost.Controls.Roles
             var sysManager = entityManager.EntitySysManager;
             var spriteSystem = sysManager.GetEntitySystem<SpriteSystem>();
             var requirementsManager = IoCManager.Resolve<JobRequirementsManager>();
-            var characterReqs = entityManager.System<CharacterRequirementsSystem>();
+            var characterReqs = entityManager.System<SharedCharacterRequirementsSystem>();
             var prefs = IoCManager.Resolve<IClientPreferencesManager>();
             var protoMan = IoCManager.Resolve<IPrototypeManager>();
             var configManager = IoCManager.Resolve<IConfigurationManager>();

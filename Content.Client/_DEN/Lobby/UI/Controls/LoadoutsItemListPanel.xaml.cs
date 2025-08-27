@@ -45,7 +45,7 @@ public sealed partial class LoadoutsItemListPanel : BoxContainer
     [Dependency] private readonly JobRequirementsManager _jobRequirements = default!;
     [Dependency] private readonly IPrototypeManager _prototype = default!;
     [Dependency] private readonly IResourceCache _resourceCache = default!;
-    private readonly CharacterRequirementsSystem _characterRequirements;
+    private readonly SharedCharacterRequirementsSystem _characterRequirements;
     private readonly LobbyUIController _controller;
 
     /// <summary>
@@ -103,7 +103,7 @@ public sealed partial class LoadoutsItemListPanel : BoxContainer
     {
         IoCManager.InjectDependencies(this);
         RobustXamlLoader.Load(this);
-        _characterRequirements = _entity.System<CharacterRequirementsSystem>();
+        _characterRequirements = _entity.System<SharedCharacterRequirementsSystem>();
         _controller = UserInterfaceManager.GetUIController<LobbyUIController>();
 
         CategoryTitle.FontOverride = CategoryNameFont;

@@ -140,7 +140,7 @@ namespace Content.Client.Lobby.UI
         private readonly IResourceManager _resManager;
         private readonly MarkingManager _markingManager;
         private readonly JobRequirementsManager _requirements;
-        private readonly CharacterRequirementsSystem _characterRequirementsSystem;
+        private readonly SharedCharacterRequirementsSystem _characterRequirementsSystem;
         private readonly LobbyUIController _controller;
         private readonly IRobustRandom _random;
 
@@ -225,7 +225,7 @@ namespace Content.Client.Lobby.UI
             _requirements = requirements;
             _random = random;
 
-            _characterRequirementsSystem = _entManager.System<CharacterRequirementsSystem>();
+            _characterRequirementsSystem = _entManager.System<SharedCharacterRequirementsSystem>();
             _controller = UserInterfaceManager.GetUIController<LobbyUIController>();
 
             ImportButton.OnPressed += args => { ImportProfile(); };

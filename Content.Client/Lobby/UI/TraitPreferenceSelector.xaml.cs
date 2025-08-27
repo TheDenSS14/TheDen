@@ -55,7 +55,7 @@ public sealed partial class TraitPreferenceSelector : Control
 
     public TraitPreferenceSelector(TraitPrototype trait, JobPrototype highJob, HumanoidCharacterProfile profile,
         IEntityManager entityManager, IPrototypeManager prototypeManager, IConfigurationManager configManager,
-        CharacterRequirementsSystem characterRequirementsSystem, JobRequirementsManager jobRequirementsManager)
+        SharedCharacterRequirementsSystem characterRequirementsSystem, JobRequirementsManager jobRequirementsManager)
     {
         RobustXamlLoader.Load(this);
 
