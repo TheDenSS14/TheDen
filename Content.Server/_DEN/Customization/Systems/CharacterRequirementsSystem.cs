@@ -1,7 +1,9 @@
+using System.Diagnostics.CodeAnalysis;
 using Content.Server.Players.PlayTimeTracking;
 using Content.Server.Preferences.Managers;
 using Content.Shared.Customization.Systems;
 using Content.Shared.Customization.Systems._DEN;
+using Content.Shared.Humanoid;
 using Content.Shared.Players;
 using Content.Shared.Preferences;
 using JetBrains.Annotations;
@@ -21,15 +23,27 @@ public sealed partial class CharacterRequirementsSystem : SharedCharacterRequire
     ///     Gets the context of the current player, with selected profile, whitelist status, and playtimes
     ///     already pre-filled. Profile may be null.
     /// </summary>
+    /// <param name="profile">An optional parameter for a profile to use instead of the player's.</param>
+    /// <param name="useCharacter">If profile is null, we use the profile of the current character instead.</param>
     /// <returns>A context associated with the current profile.</returns>
     [PublicAPI]
     public CharacterRequirementContext GetProfileContext(ICommonSession player,
-        HumanoidCharacterProfile? profile = null)
+        HumanoidCharacterProfile? profile = null,
+        bool useCharacter = false)
     {
+        var entity = player.AttachedEntity;
         if (profile == null)
         {
-            var selectedCharacter = _prefs.GetPreferences(player.UserId).SelectedCharacter;
-            profile = (HumanoidCharacterProfile?) selectedCharacter;
+            if (useCharacter)
+            {
+                if (entity is not null)
+                    TryGetProfile(entity.Value, out profile);
+            }
+            else
+            {
+                var selectedCharacter = _prefs.GetPreferences(player.UserId).SelectedCharacter;
+                profile = (HumanoidCharacterProfile?) selectedCharacter;
+            }
         }
 
         var whitelisted = player.ContentData()?.Whitelisted ?? false;
@@ -39,15 +53,23 @@ public sealed partial class CharacterRequirementsSystem : SharedCharacterRequire
 
         return new CharacterRequirementContext(profile: profile,
             playtimes: playtimes,
-            whitelisted: whitelisted);
+            whitelisted: whitelisted,
+            entity: entity);
     }
 
     /// <summary>
     ///     Gets the context of the current player, with selected profile, whitelist status, and playtimes
     ///     already pre-filled. Profile may be null.
     /// </summary>
+    /// <param name="profile">An optional parameter for a profile to use instead of the player's.</param>
+    /// <param name="useCharacter">If profile is null, we use the profile of the current character instead.</param>
     /// <returns>A context associated with the current profile.</returns>
     [PublicAPI]
-    public CharacterRequirementContext GetProfileContext(NetUserId userId, HumanoidCharacterProfile? profile = null)
-        => GetProfileContext(_playerManager.GetSessionById(userId), profile);
+    public CharacterRequirementContext GetProfileContext(NetUserId userId,
+        HumanoidCharacterProfile? profile = null,
+        bool useCharacter = false)
+    {
+        var player = _playerManager.GetSessionById(userId);
+        return GetProfileContext(player, profile, useCharacter);
+    }
 }
