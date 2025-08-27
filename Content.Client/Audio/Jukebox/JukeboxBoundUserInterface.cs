@@ -78,7 +78,7 @@ public sealed class JukeboxBoundUserInterface : BoundUserInterface
 
     public void PopulateMusic()
     {
-        _menu?.Populate(_protoManager.EnumeratePrototypes<JukeboxPrototype>());
+        _menu?.Populate(_protoManager.EnumeratePrototypes<JukeboxPrototype>().OrderBy(x => x.Name).ToList()); // Imp - Order the list alphabetically
     }
 
     public void SelectSong(ProtoId<JukeboxPrototype> songid)
