@@ -2291,16 +2291,16 @@
     damage: 0.8
   - type: EmitSoundOnActivate
     sound:
-      collection: Grimble
+      collection: ToySqueak
   - type: EmitSoundOnUse
     sound:
-      path: /Audio/Items/Toys/grimbleactive.ogg
+      collection: ToySqueak
   - type: EmitSoundOnCollide
     sound:
-      collection: Grimble
+      collection: ToySqueak
   - type: EmitSoundOnLand
     sound:
-      collection: Grimble
+      collection: ToySqueak
   - type: UseDelay
     delay: 1.5
   - type: MeleeWeapon
@@ -2310,11 +2310,11 @@
       types:
         Blunt: 0
     soundHit:
-      collection: Grimble
+      collection: ToySqueak
     soundSwing:
-      collection: Grimble
+      collection: ToySqueak
     soundNoDamage:
-      collection: Grimble
+      collection: ToySqueak
 
 - type: entity
   parent: BasePlushie
