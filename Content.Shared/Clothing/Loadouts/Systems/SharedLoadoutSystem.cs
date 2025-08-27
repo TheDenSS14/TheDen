@@ -13,6 +13,7 @@ using Content.Shared.Body.Systems;
 using Content.Shared.Clothing.Components;
 using Content.Shared.Clothing.Loadouts.Prototypes;
 using Content.Shared.Customization.Systems;
+using Content.Shared.Customization.Systems._DEN;
 using Content.Shared.Inventory;
 using Content.Shared.Paint;
 using Content.Shared.Preferences;
@@ -105,10 +106,17 @@ public sealed class SharedLoadoutSystem : EntitySystem
             if (!_prototype.TryIndex<LoadoutPrototype>(loadout.LoadoutName, out var loadoutProto))
                 continue;
 
-            if (!_characterRequirements.CheckRequirementsValid(
-                loadoutProto.Requirements, job, profile, playTimes, whitelisted, loadoutProto,
-                EntityManager, _prototype, _configuration,
-                out _))
+            var context = new CharacterRequirementContext(selectedJob: job,
+                profile: profile,
+                playtimes: playTimes,
+                whitelisted: whitelisted,
+                prototype: loadoutProto);
+
+            if (!_characterRequirements.CheckRequirementsValid(loadoutProto.Requirements,
+                context,
+                EntityManager,
+                _prototype,
+                _configuration))
                 continue;
 
             // Spawn the loadout items

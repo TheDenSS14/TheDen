@@ -1,3 +1,9 @@
+# SPDX-FileCopyrightText: 2025 Shaman
+# SPDX-FileCopyrightText: 2025 portfiend
+# SPDX-FileCopyrightText: 2025 sheepie
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 - type: entity
   save: false
   name: Urist McEars
@@ -34,7 +40,7 @@
   - type: MeleeWeapon
     # attackRate: 0.55 # TheDen - Was part of the stun punch stats, doesn't work on EE
     soundHit:
-      collection: Punch
+      collection: ShockPunch
     angle: 30
     animation: WeaponArcPunch
     damage:
@@ -81,41 +87,32 @@
     templateId: thaven
     displacements:
       jumpsuit:
-        layer:
-          sprite: _DEN/Mobs/Species/Thaven/displacement.rsi # TheDen
-          state: jumpsuit
-          copyToShaderParameters:
-            # Value required, provide a dummy. Gets overridden when applied.
-            layerKey: dummy
-            parameterTexture: displacementMap
-            parameterUV: displacementUV
+        sizeMaps:
+          32:
+            sprite: _DEN/Mobs/Species/Thaven/displacement.rsi
+            state: jumpsuit
       head:
-        layer:
-          sprite: _DEN/Mobs/Species/Thaven/displacement.rsi # TheDen
-          state: head
-          copyToShaderParameters:
-            # Value required, provide a dummy. Gets overridden when applied.
-            layerKey: dummy
-            parameterTexture: displacementMap
-            parameterUV: displacementUV
+        sizeMaps:
+          32:
+            sprite: _DEN/Mobs/Species/Thaven/displacement.rsi
+            state: head
       outerClothing:
-        layer:
-          sprite: _DEN/Mobs/Species/Thaven/displacement.rsi # TheDen
-          state: outerclothing_hardsuit
-          copyToShaderParameters:
-            # Value required, provide a dummy. Gets overridden when applied.
-            layerKey: dummy
-            parameterTexture: displacementMap
-            parameterUV: displacementUV
+        sizeMaps:
+          32:
+            sprite: _DEN/Mobs/Species/Thaven/displacement.rsi
+            state: outerclothing_hardsuit
       gloves:
-        layer:
-          sprite: _DEN/Mobs/Species/Thaven/displacement.rsi # TheDen
-          state: hands
-          copyToShaderParameters:
-            # Value required, provide a dummy. Gets overridden when applied.
-            layerKey: dummy
-            parameterTexture: displacementMap
-            parameterUV: displacementUV
+        sizeMaps:
+          32:
+            sprite: _DEN/Mobs/Species/Thaven/displacement.rsi
+            state: hands
+    femaleDisplacements:
+      jumpsuit:
+        sizeMaps:
+          32:
+            sprite: _DEN/Mobs/Species/Thaven/displacement.rsi
+            state: jumpsuit-female
+
   - type: Tag
     tags:
     - CanPilot
@@ -136,38 +133,28 @@
     templateId: thaven
     displacements:
       jumpsuit:
-        layer:
-          sprite: _DEN/Mobs/Species/Thaven/displacement.rsi # TheDen
-          state: jumpsuit
-          copyToShaderParameters:
-            # Value required, provide a dummy. Gets overridden when applied.
-            layerKey: dummy
-            parameterTexture: displacementMap
-            parameterUV: displacementUV
+        sizeMaps:
+          32:
+            sprite: _DEN/Mobs/Species/Thaven/displacement.rsi
+            state: jumpsuit
       head:
-        layer:
-          sprite: _DEN/Mobs/Species/Thaven/displacement.rsi # TheDen
-          state: head
-          copyToShaderParameters:
-            # Value required, provide a dummy. Gets overridden when applied.
-            layerKey: dummy
-            parameterTexture: displacementMap
-            parameterUV: displacementUV
+        sizeMaps:
+          32:
+            sprite: _DEN/Mobs/Species/Thaven/displacement.rsi
+            state: head
       outerClothing:
-        layer:
-          sprite: _DEN/Mobs/Species/Thaven/displacement.rsi # TheDen
-          state: outerclothing_hardsuit
-          copyToShaderParameters:
-            # Value required, provide a dummy. Gets overridden when applied.
-            layerKey: dummy
-            parameterTexture: displacementMap
-            parameterUV: displacementUV
+        sizeMaps:
+          32:
+            sprite: _DEN/Mobs/Species/Thaven/displacement.rsi
+            state: outerclothing_hardsuit
       gloves:
-        layer:
-          sprite: _DEN/Mobs/Species/Thaven/displacement.rsi # TheDen
-          state: hands
-          copyToShaderParameters:
-            # Value required, provide a dummy. Gets overridden when applied.
-            layerKey: dummy
-            parameterTexture: displacementMap
-            parameterUV: displacementUV
+        sizeMaps:
+          32:
+            sprite: _DEN/Mobs/Species/Thaven/displacement.rsi
+            state: hands
+    femaleDisplacements:
+      jumpsuit:
+        sizeMaps:
+          32:
+            sprite: _DEN/Mobs/Species/Thaven/displacement.rsi
+            state: jumpsuit-female

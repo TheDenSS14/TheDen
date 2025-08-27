@@ -72,23 +72,21 @@
     templateId: human
     displacements:
       jumpsuit:
-        layer:
-          sprite: _DEN/Mobs/Species/Ovinia/displacement.rsi
-          state: jumpsuit
-          copyToShaderParameters:
-            # Value required, provide a dummy. Gets overridden when applied.
-            layerKey: dummy
-            parameterTexture: displacementMap
-            parameterUV: displacementUV
+          sizeMaps:
+            32:
+              sprite: _DEN/Mobs/Species/Ovinia/displacement.rsi
+              state: jumpsuit
       shoes:
-        layer:
-          sprite: _DEN/Mobs/Species/Ovinia/displacement.rsi
-          state: shoes
-          copyToShaderParameters:
-            # Value required, provide a dummy. Gets overridden when applied.
-            layerKey: dummy
-            parameterTexture: displacementMap
-            parameterUV: displacementUV
+        sizeMaps:
+          32:
+            sprite: _DEN/Mobs/Species/Ovinia/displacement.rsi
+            state: shoes
+    femaleDisplacements:
+      jumpsuit:
+        sizeMaps:
+          32:
+            sprite: Mobs/Species/Human/displacement.rsi
+            state: jumpsuit-female
   - type: Flammable
     fireStackIncreaseMultiplier: .75 #wool isnt flammable
   - type: Hunger
@@ -114,20 +112,18 @@
     templateId: human
     displacements:
       jumpsuit:
-        layer:
-          sprite: _DEN/Mobs/Species/Ovinia/displacement.rsi
-          state: jumpsuit
-          copyToShaderParameters:
-            # Value required, provide a dummy. Gets overridden when applied.
-            layerKey: dummy
-            parameterTexture: displacementMap
-            parameterUV: displacementUV
+        sizeMaps:
+          32:
+            sprite: _DEN/Mobs/Species/Ovinia/displacement.rsi
+            state: jumpsuit
       shoes:
-        layer:
-          sprite: _DEN/Mobs/Species/Ovinia/displacement.rsi
-          state: shoes
-          copyToShaderParameters:
-            # Value required, provide a dummy. Gets overridden when applied.
-            layerKey: dummy
-            parameterTexture: displacementMap
-            parameterUV: displacementUV
+        sizeMaps:
+          32:
+            sprite: _DEN/Mobs/Species/Ovinia/displacement.rsi
+            state: shoes
+    femaleDisplacements:
+      jumpsuit:
+        sizeMaps:
+          32:
+            sprite: Mobs/Species/Human/displacement.rsi
+            state: jumpsuit-female

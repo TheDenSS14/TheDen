@@ -1,18 +1,18 @@
-// SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT <77995199+DEATHB4DEFEAT@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 Remuchi <72476615+Remuchi@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 Skubman <ba.fallaria@gmail.com>
-// SPDX-FileCopyrightText: 2025 Timfa <timfalken@hotmail.com>
-// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT
+// SPDX-FileCopyrightText: 2025 Remuchi
+// SPDX-FileCopyrightText: 2025 Skubman
+// SPDX-FileCopyrightText: 2025 Timfa
+// SPDX-FileCopyrightText: 2025 portfiend
+// SPDX-FileCopyrightText: 2025 sleepyyapril
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 using System.Linq;
 using System.Text;
+using Content.Shared.Customization.Systems._DEN;
 using Content.Shared.Inventory;
 using Content.Shared.Mind;
 using Content.Shared.Players.PlayTimeTracking;
-using Content.Shared.Preferences;
-using Content.Shared.Roles;
 using Content.Shared.Roles.Jobs;
 using Content.Shared.Station;
 using Robust.Shared.Configuration;
@@ -34,35 +34,40 @@ public sealed class CharacterRequirementsSystem : EntitySystem
     [Dependency] private readonly IConfigurationManager _configurationManager = default!;
     [Dependency] private readonly ISharedPlaytimeManager _playtimeManager = default!;
 
-    public bool CheckRequirementValid(CharacterRequirement requirement, JobPrototype job,
-        HumanoidCharacterProfile profile, Dictionary<string, TimeSpan> playTimes, bool whitelisted, IPrototype prototype,
-        IEntityManager entityManager, IPrototypeManager prototypeManager, IConfigurationManager configManager,
-        out string? reason, int depth = 0)
+    public bool CheckRequirementValid(CharacterRequirement requirement,
+        CharacterRequirementContext context,
+        IEntityManager entityManager,
+        IPrototypeManager prototypeManager,
+        IConfigurationManager configManager)
     {
-        // Return false if the requirement is invalid and not inverted
-        // If it's inverted return false when it's valid
-        return
-            !requirement.IsValid(job, profile, playTimes, whitelisted, prototype,
-                entityManager, prototypeManager, configManager,
-                out reason, depth)
-                ? requirement.Inverted
-                : !requirement.Inverted;
+        // Check if the context has the required fields for the operation.
+        // If not, it auto-passes unless the requirement is mandatory, in which case it auto-fails..
+        if (!requirement.PreCheckMandatory(context))
+            return !requirement.Mandatory;
+
+        var valid = requirement.IsValid(context,
+            entityManager,
+            prototypeManager,
+            configManager);
+
+        return valid != requirement.Inverted;
     }
 
     /// <summary>
     ///     Checks if a character entity meets the specified requirements.
     /// </summary>
-    /// <param name="requirements">The list of requirements to validate.</param>
-    /// <param name="characterUid">The entity ID of the character to check.</param>
+    /// <param name="requirements">A list of requirements to check.</param>
+    /// <param name="characterUid">The entity ID of the charater.</param>
     /// <param name="prototype">The prototype associated with the requirements.</param>
-    /// <param name="reasons">Output list of reasons why requirements weren't met.</param>
-    /// <param name="depth">Current recursion depth for nested requirements.</param>
-    /// <param name="whitelisted">Whether the character is whitelisted.</param>
+    /// <param name="depth">The depth of this requirement, used in logical operators.</param>
+    /// <param name="whitelisted">Whether or not the player associated with the character is whitelisted.</param>
     /// <returns>True if all requirements are met, false otherwise.</returns>
-    public bool CheckRequirementsValid(List<CharacterRequirement> requirements, EntityUid characterUid, IPrototype prototype, out List<string> reasons, int depth = 0, bool whitelisted = false)
+    public bool CheckRequirementsValid(List<CharacterRequirement> requirements,
+        EntityUid characterUid,
+        IPrototype prototype,
+        int depth = 0,
+        bool whitelisted = false)
     {
-        reasons = new List<string>();
-
         if (!_mindSystem.TryGetMind(characterUid, out var mindId, out var mind)
             || mind.Session == null
             || !_jobSystem.MindTryGetJob(mindId, out var jobPrototype)
@@ -70,48 +75,82 @@ public sealed class CharacterRequirementsSystem : EntitySystem
             || !_playtimeManager.TryGetTrackerTimes(mind.Session, out var trackerTimes))
             return false;
 
-        return CheckRequirementsValid(requirements, jobPrototype, stationSpawningProfile, trackerTimes, whitelisted, prototype, _entManager, _protomanager, _configurationManager, out reasons, depth, mind);
+        var context = new CharacterRequirementContext(selectedJob: jobPrototype,
+            profile: stationSpawningProfile,
+            playtimes: trackerTimes,
+            whitelisted: whitelisted,
+            prototype: prototype,
+            entity: characterUid,
+            depth: depth);
+
+        return CheckRequirementsValid(requirements,
+            context,
+            _entManager,
+            _protomanager,
+            _configurationManager);
     }
 
-    public bool CheckRequirementsValid(List<CharacterRequirement> requirements, JobPrototype job,
-        HumanoidCharacterProfile profile, Dictionary<string, TimeSpan> playTimes, bool whitelisted, IPrototype prototype,
-        IEntityManager entityManager, IPrototypeManager prototypeManager, IConfigurationManager configManager,
-        out List<string> reasons, int depth = 0, MindComponent? mind = null)
+    /// <summary>
+    ///     Checks a requirements context against a list of requirements. The requirements context represents all
+    ///     relevant information needed to determine if something passes the requirements or not; null fields in
+    ///     the context represent irrelevant data that we do not need to check.
+    /// </summary>
+    /// <param name="requirements">The requirements to check against.</param>
+    /// <param name="context">A class of contextual data associated with the thing being checked.</param>
+    /// <returns>Whether or not the given context passes ALL requirements.</returns>
+    public bool CheckRequirementsValid(List<CharacterRequirement> requirements,
+        CharacterRequirementContext context,
+        IEntityManager entityManager,
+        IPrototypeManager prototypeManager,
+        IConfigurationManager configManager)
     {
-        reasons = new List<string>();
-        var valid = true;
-
         foreach (var requirement in requirements)
         {
-            // Set valid to false if the requirement is invalid and not inverted
-            // If it's inverted set valid to false when it's valid
-            if (!requirement.IsValid(job, profile, playTimes, whitelisted, prototype,
-                entityManager, prototypeManager, configManager,
-                out var reason, depth, mind))
-            {
-                if (valid)
-                    valid = requirement.Inverted;
-            }
-            else
-            {
-                if (valid)
-                    valid = !requirement.Inverted;
-            }
+            if (!CheckRequirementValid(requirement,
+                context,
+                entityManager,
+                prototypeManager,
+                configManager))
+                return false;
+        }
+
+        return true;
+    }
+
+    /// <summary>
+    ///     Gets a list of "reasons" for a list of requirements - in other words, flavor text describing the conditions
+    ///     needed in order to pass the requirement.
+    /// </summary>
+    /// <param name="requirements">The requirements to check against.</param>
+    /// <param name="context">A class of contextual data associated with the thing being checked.</param>
+    /// <returns>A list of markup strings describing requirements.</returns>
+    public List<string> GetReasons(List<CharacterRequirement> requirements,
+        CharacterRequirementContext context,
+        IEntityManager entityManager,
+        IPrototypeManager prototypeManager,
+        IConfigurationManager configManager)
+    {
+        var reasons = new List<string>();
+        foreach (var requirement in requirements)
+        {
+            var reason = requirement.GetReason(context,
+                entityManager,
+                prototypeManager,
+                configManager);
 
             if (reason != null)
                 reasons.Add(reason);
         }
 
-        return valid;
+        return reasons;
     }
-
 
     /// <summary>
     ///     Gets the reason text from <see cref="CheckRequirementsValid"/> as a <see cref="FormattedMessage"/>.
     /// </summary>
     public FormattedMessage GetRequirementsText(List<string> reasons)
     {
-        return FormattedMessage.FromMarkup(GetRequirementsMarkup(reasons));
+        return FormattedMessage.FromMarkupOrThrow(GetRequirementsMarkup(reasons));
     }
 
     /// <summary>
@@ -125,7 +164,6 @@ public sealed class CharacterRequirementsSystem : EntitySystem
 
         return text.ToString().Trim();
     }
-
 
     /// <summary>
     ///     Returns true if the given dummy can equip the given item.
