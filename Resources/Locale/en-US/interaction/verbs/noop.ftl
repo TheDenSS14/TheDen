@@ -48,9 +48,9 @@ interaction-WaveAt-success-self-popup = You wave {$hasUsed ->
 }
 interaction-WaveAt-success-target-popup = {THE($user)} waves {$hasUsed ->
     [false] at you.
-    *[true] {POSS-PRONOUN($user)} {$used} at you.
+    *[true] {POSS-ADJ($user)} {$used} at you.
 }
 interaction-WaveAt-success-others-popup = {THE($user)} waves {$hasUsed ->
     [false] at {THE($target)}.
-    *[true] {POSS-PRONOUN($user)} {$used} at {THE($target)}.
+    *[true] {POSS-ADJ($user)} {$used} at {THE($target)}. 
 }
