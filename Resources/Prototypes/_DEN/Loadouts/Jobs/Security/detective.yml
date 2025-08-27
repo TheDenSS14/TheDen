@@ -2,6 +2,22 @@
 # SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# Head
+- type: loadout
+  id: LoadoutClothingHatDetective
+  category: JobsSecurityDetective
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutDetectiveHead
+    - !type:CharacterJobRequirement
+      jobs:
+        - Detective
+  items:
+    - ClothingHeadHatBeretDet
+
+# Uniform
 
 - type: loadout
   id: LoadoutUniformJumpsuitDetective
@@ -70,10 +86,38 @@
     - !type:CharacterJobRequirement
       jobs:
         - Detective
+
   items:
     - ClothingUniformMiamiVice
+    
+- type: loadout
+  id: LoadoutClothingUniformDetectiveTurtleskirt
+  category: JobsSecurityDetective
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutDetectiveUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - Detective
+  items:
+      - ClothingUniformJumpskirtDetTurtle
 
-
+- type: loadout
+  id: LoadoutClothingUniformDetectiveTurtlesuit
+  category: JobsSecurityDetective
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutDetectiveUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - Detective
+  items:
+    - ClothingUniformJumpsuitDetTurtle
+    
 - type: loadout
   id: LoadoutUniformJumpskirtDetectiveMiamiVice
   category: JobsSecurityDetective

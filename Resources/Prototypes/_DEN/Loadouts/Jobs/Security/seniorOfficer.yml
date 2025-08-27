@@ -1,0 +1,32 @@
+# SPDX-FileCopyrightText: 2024 VMSolidus <evilexecutive@gmail.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
+- type: loadout
+  id: LoadoutSecurityUniformJumpsuitSeniorAlt
+  category: JobsSecuritySeniorOfficer
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSeniorOfficerUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - SeniorOfficer
+  items:
+    - ClothingUniformJumpsuitSecSenior
+
+- type: loadout
+  id: LoadoutSecurityUniformJumpskirtSeniorAlt
+  category: JobsSecuritySeniorOfficer
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSeniorOfficerUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - SeniorOfficer
+  items:
+    - ClothingUniformJumpskirtSecSenior
