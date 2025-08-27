@@ -117,6 +117,7 @@ using System.Globalization;
 using Content.Client._CD.Records.UI;
 using Content.Shared._CD.Records;
 using Content.Shared.Customization.Systems._DEN;
+using Content.Client._DEN.Customization.Systems;
 // End CD - Character Records
 
 // DEN TODO: THIS NEEDS SEVERE OVERHAUL
@@ -777,8 +778,8 @@ namespace Content.Client.Lobby.UI
             NationalityButton.Clear();
             _nationalies.Clear();
 
-            var job = _controller.GetPreferredJob(Profile ?? HumanoidCharacterProfile.DefaultWithSpecies());
-            var context = GetContext().WithSelectedJob(job);
+            var context = _characterRequirementsSystem.GetProfileContext(Profile);
+
             _nationalies.AddRange(_prototypeManager.EnumeratePrototypes<NationalityPrototype>()
                 .Where(o => _characterRequirementsSystem.CheckRequirementsValid(o.Requirements,
                     context.WithPrototype(o),
@@ -809,8 +810,7 @@ namespace Content.Client.Lobby.UI
             EmployerButton.Clear();
             _employers.Clear();
 
-            var job = _controller.GetPreferredJob(Profile ?? HumanoidCharacterProfile.DefaultWithSpecies());
-            var context = GetContext().WithSelectedJob(job);
+            var context = _characterRequirementsSystem.GetProfileContext(Profile);
             _employers.AddRange(_prototypeManager.EnumeratePrototypes<EmployerPrototype>()
                 .Where(o => _characterRequirementsSystem.CheckRequirementsValid(o.Requirements,
                     context.WithPrototype(o),
@@ -841,8 +841,8 @@ namespace Content.Client.Lobby.UI
             LifepathButton.Clear();
             _lifepaths.Clear();
 
-            var job = _controller.GetPreferredJob(Profile ?? HumanoidCharacterProfile.DefaultWithSpecies());
-            var context = GetContext().WithSelectedJob(job);
+            var context = _characterRequirementsSystem.GetProfileContext(Profile);
+
             _lifepaths.AddRange(_prototypeManager.EnumeratePrototypes<LifepathPrototype>()
                 .Where(o => _characterRequirementsSystem.CheckRequirementsValid(o.Requirements,
                     context.WithPrototype(o),
@@ -918,7 +918,10 @@ namespace Content.Client.Lobby.UI
 
                 var requirements = antag.Requirements ?? new();
                 var job = _controller.GetPreferredJob(Profile ?? HumanoidCharacterProfile.DefaultWithSpecies());
-                var context = GetContext().WithSelectedJob(job).WithPrototype(antag);
+                var context = _characterRequirementsSystem.GetProfileContext(Profile)
+                    .WithSelectedJob(job)
+                    .WithPrototype(antag);
+
                 if (!_characterRequirementsSystem.CheckRequirementsValid(requirements,
                     context,
                     _entManager,
@@ -1197,7 +1200,9 @@ namespace Content.Client.Lobby.UI
                     selector.Setup(items, job.LocalizedName, 200, job.LocalizedDescription, icon, job.Guides);
 
                     var requirements = job.Requirements ?? new();
-                    var context = GetContext().WithSelectedJob(job).WithPrototype(job);
+                    var context = _characterRequirementsSystem.GetProfileContext(Profile)
+                        .WithSelectedJob(job)
+                        .WithPrototype(job);
 
                     if (!_requirements.CheckJobWhitelist(job, out var reason))
                         selector.LockRequirements(reason);
@@ -1335,7 +1340,10 @@ namespace Content.Client.Lobby.UI
                     selector.Setup(items, job.LocalizedName, 200, job.LocalizedDescription, icon);
 
                     var requirements = job.Requirements ?? new();
-                    var context = GetContext().WithSelectedJob(job).WithPrototype(job);
+                    var context = _characterRequirementsSystem.GetProfileContext(Profile)
+                        .WithSelectedJob(job)
+                        .WithPrototype(job);
+
                     if (!_requirements.CheckJobWhitelist(job, out var reason))
                         selector.LockRequirements(reason);
                     else if (!_characterRequirementsSystem.CheckRequirementsValid(requirements,
@@ -1390,7 +1398,7 @@ namespace Content.Client.Lobby.UI
         /// DeltaV - Make sure that no invalid job priorities get through
         private void EnsureJobRequirementsValid()
         {
-            var context = GetContext();
+            var context = _characterRequirementsSystem.GetProfileContext(Profile);
 
             foreach (var (jobId, selector) in _jobPriorities)
             {
@@ -2424,8 +2432,7 @@ namespace Content.Client.Lobby.UI
 
 
             // Get the highest priority job to use for trait filtering
-            var highJob = _controller.GetPreferredJob(Profile ?? HumanoidCharacterProfile.DefaultWithSpecies());
-            var context = GetContext().WithSelectedJob(highJob);
+            var context = _characterRequirementsSystem.GetProfileContext(Profile);
 
             _traits.Clear();
             foreach (var trait in _prototypeManager.EnumeratePrototypes<TraitPrototype>())
@@ -2513,8 +2520,12 @@ namespace Content.Client.Lobby.UI
                 }
 
                 var selector = new TraitPreferenceSelector(
-                    trait, highJob, Profile ?? HumanoidCharacterProfile.DefaultWithSpecies(),
-                    _entManager, _prototypeManager, _cfgManager, _characterRequirementsSystem, _requirements);
+                    trait,
+                    Profile ?? HumanoidCharacterProfile.DefaultWithSpecies(),
+                    _entManager,
+                    _prototypeManager,
+                    _cfgManager,
+                    _characterRequirementsSystem);
                 selector.Valid = usable;
                 selector.ShowUnusable = showUnusable.Value;
                 AddSelector(selector);
@@ -2766,13 +2777,6 @@ namespace Content.Client.Lobby.UI
         private static float KilogramsToPounds(float kilograms)
         {
             return kilograms * 2.20462f;
-        }
-
-        private CharacterRequirementContext GetContext()
-        {
-            return new(profile: Profile ?? HumanoidCharacterProfile.DefaultWithSpecies(),
-                playtimes: _requirements.GetRawPlayTimeTrackers(),
-                whitelisted: _requirements.IsWhitelisted());
         }
     }
 }
