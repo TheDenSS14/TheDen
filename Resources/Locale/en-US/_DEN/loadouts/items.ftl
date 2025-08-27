@@ -35,6 +35,9 @@ loadout-name-PlushieTeddyBearRecolorableRandom = teddy bear (random)
 loadout-name-SqueakySmileyGuy = smiley guy (colorable)
 loadout-name-SqueakySmileyBall = smiley ball (colorable)
 
+# toys
+loadout-name-LoadoutMysterySpaceBladeBox = mystery spaceblade box
+
 # mobility aids
 character-item-group-LoadoutWalkingCanes = Walking Canes
 loadout-name-LoadoutItemCaneWalkingColorable = cane (colorable)

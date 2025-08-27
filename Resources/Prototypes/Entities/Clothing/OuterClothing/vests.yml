@@ -13,11 +13,13 @@
 # SPDX-FileCopyrightText: 2024 Tmanzxd
 # SPDX-FileCopyrightText: 2025 Alice
 # SPDX-FileCopyrightText: 2025 Blitz
+# SPDX-FileCopyrightText: 2025 MajorMoth
 # SPDX-FileCopyrightText: 2025 Rosycup
 # SPDX-FileCopyrightText: 2025 Skubman
+# SPDX-FileCopyrightText: 2025 Vanessa
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 #NOTE: vests with armor belong to armor.yml
 
@@ -117,7 +119,7 @@
   parent: [ClothingOuterStorageBase, AllowSuitStorageClothing]
   id: ClothingOuterVestHoSVestWeb
   name: head of security's web vest
-  description: An advanced web vest for the head of security. Offers superior bullet and heat protection to their greatcoat at the cost of no casutic protection and lesser protection against cuts and bludgeoning.
+  description: An advanced web vest for the head of security. Offers superior bullet and heat protection to their greatcoat at the cost of no caustic protection and lesser protection against cuts and bludgeoning.
   components:
   - type: Sprite
     sprite: Clothing/OuterClothing/Armor/web_vest_hos.rsi

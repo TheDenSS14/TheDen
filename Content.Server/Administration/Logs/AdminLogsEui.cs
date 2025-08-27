@@ -185,6 +185,7 @@ public sealed class AdminLogsEui : BaseEui
             _filter.LastLogId = logs[largestId].Id;
         }
 
+        logs.Reverse(); // TheDen - Make entity logs order ascending
         var message = new NewLogs(logs, replace, logs.Count >= _filter.Limit);
 
         SendMessage(message);
