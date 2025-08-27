@@ -77,8 +77,8 @@ public sealed class SpawnPlayer : LocalizedEntityCommands
             mobUid,
             jobName,
             character,
-            playTimes, //why?!
-            true, // assume true because the person is being manually spawned in and this is a dumb variable to be needed here
+            player,
+            whitelisted: true, // assume true because we're spawning em in anyway
             punishCheater: false
         );
 

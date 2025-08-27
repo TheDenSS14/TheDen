@@ -22,7 +22,7 @@ using Robust.Shared.Utility;
 namespace Content.Shared.Customization.Systems;
 
 
-public sealed class CharacterRequirementsSystem : EntitySystem
+public abstract partial class SharedCharacterRequirementsSystem : EntitySystem
 {
     [Dependency] private readonly InventorySystem _inventory = default!;
     [Dependency] private readonly SharedJobSystem _jobSystem = default!;

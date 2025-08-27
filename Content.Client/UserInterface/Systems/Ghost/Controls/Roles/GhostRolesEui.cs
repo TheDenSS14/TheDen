@@ -14,15 +14,12 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 using System.Linq;
+using Content.Client._DEN.Customization.Systems;
 using Content.Client.Eui;
 using Content.Client.Lobby;
 using Content.Client.Players.PlayTimeTracking;
-using Content.Shared.Clothing.Loadouts.Prototypes;
-using Content.Shared.Customization.Systems;
-using Content.Shared.Customization.Systems._DEN;
 using Content.Shared.Eui;
 using Content.Shared.Ghost.Roles;
-using Content.Shared.Preferences;
 using JetBrains.Annotations;
 using Robust.Client.GameObjects;
 using Robust.Shared.Configuration;
@@ -128,13 +125,8 @@ namespace Content.Client.UserInterface.Systems.Ghost.Controls.Roles
                 var description = group.Key.Description;
                 // ReSharper disable once ReplaceWithSingleAssignment.True
                 var hasAccess = true;
-
                 var requirements = group.Key.Requirements ?? new();
-                var context = new CharacterRequirementContext(
-                    profile: (HumanoidCharacterProfile) (prefs.Preferences?.SelectedCharacter
-                        ?? HumanoidCharacterProfile.DefaultWithSpecies()),
-                    playtimes: requirementsManager.GetRawPlayTimeTrackers(),
-                    whitelisted: requirementsManager.IsWhitelisted());
+                var context = characterReqs.GetProfileContext().WithSelectedJob(null); // Your a freaken ghost buddy
 
                 if (!characterReqs.CheckRequirementsValid(requirements,
                     context,
@@ -148,7 +140,13 @@ namespace Content.Client.UserInterface.Systems.Ghost.Controls.Roles
                     entityManager,
                     protoMan,
                     configManager);
-                _window.AddEntry(name, description, hasAccess, characterReqs.GetRequirementsText(reasons), group, spriteSystem);
+
+                _window.AddEntry(name,
+                    description,
+                    hasAccess,
+                    characterReqs.GetRequirementsText(reasons),
+                    group,
+                    spriteSystem);
             }
 
             // Restore the Collapsible box state if it is saved

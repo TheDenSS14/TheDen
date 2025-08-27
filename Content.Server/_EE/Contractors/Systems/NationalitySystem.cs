@@ -5,16 +5,15 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 using System.Linq;
+using Content.Server._DEN.Customization.Systems;
 using Content.Server.Players.PlayTimeTracking;
 using Content.Shared._EE.Contractors.Prototypes;
-using Content.Shared.Customization.Systems;
-using Content.Shared.Customization.Systems._DEN;
 using Content.Shared.GameTicking;
 using Content.Shared.Humanoid;
-using Content.Shared.Players;
 using Content.Shared.Preferences;
 using Content.Shared.Roles;
 using Robust.Shared.Configuration;
+using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization.Manager;
 using Robust.Shared.Utility;
@@ -39,34 +38,32 @@ public sealed class NationalitySystem : EntitySystem
 
     // When the player is spawned in, add the nationality components selected during character creation
     private void OnPlayerSpawnComplete(PlayerSpawnCompleteEvent args) =>
-        ApplyNationality(args.Mob, args.JobId, args.Profile,
-            _playTimeTracking.GetTrackerTimes(args.Player), args.Player.ContentData()?.Whitelisted ?? false);
+        ApplyNationality(args.Mob, args.JobId, args.Profile, args.Player);
 
     /// <summary>
     ///     Adds the nationality selected by a player to an entity.
     /// </summary>
-    public void ApplyNationality(EntityUid uid, ProtoId<JobPrototype>? jobId, HumanoidCharacterProfile profile,
-        Dictionary<string, TimeSpan> playTimes, bool whitelisted)
+    public void ApplyNationality(EntityUid uid,
+        ProtoId<JobPrototype>? jobId,
+        HumanoidCharacterProfile profile,
+        ICommonSession player)
     {
-        if (jobId == null || !_prototype.TryIndex(jobId, out _))
+        if (jobId == null || !_prototype.TryIndex(jobId, out var jobPrototypeToUse))
             return;
 
-        var jobPrototypeToUse = _prototype.Index(jobId.Value);
+        var nationality = profile.Nationality != string.Empty
+            ? profile.Nationality
+            : SharedHumanoidAppearanceSystem.DefaultNationality;
 
-        ProtoId<NationalityPrototype> nationality = profile.Nationality != string.Empty? profile.Nationality : SharedHumanoidAppearanceSystem.DefaultNationality;
-
-        if(!_prototype.TryIndex<NationalityPrototype>(nationality, out var nationalityPrototype))
+        if (!_prototype.TryIndex<NationalityPrototype>(nationality, out var nationalityPrototype))
         {
             DebugTools.Assert($"Nationality '{nationality}' not found!");
             return;
         }
 
-        var context = new CharacterRequirementContext(
-            selectedJob: jobPrototypeToUse,
-            profile: profile,
-            playtimes: playTimes,
-            whitelisted: whitelisted,
-            prototype: nationalityPrototype);
+        var context = _characterRequirements.GetProfileContext(player, profile)
+            .WithSelectedJob(jobPrototypeToUse)
+            .WithPrototype(nationalityPrototype);
 
         if (!_characterRequirements.CheckRequirementsValid(nationalityPrototype.Requirements,
             context,

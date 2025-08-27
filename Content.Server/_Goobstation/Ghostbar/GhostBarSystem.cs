@@ -115,21 +115,8 @@ public sealed class GhostBarSystem : EntitySystem
         var playTimes = _playTimeTracking.GetTrackerTimes(player);
         var whitelisted = player.ContentData()?.Whitelisted ?? false;
 
-        _loadout.ApplyCharacterLoadout(
-            mobUid,
-            randomJob,
-            profile,
-            playTimes,
-            whitelisted
-        );
-        _trait.ApplyTraits(
-            mobUid,
-            randomJob,
-            profile,
-            playTimes,
-            whitelisted,
-            punishCheater: false
-        );
+        _loadout.ApplyCharacterLoadout(mobUid, randomJob, profile, playTimes, whitelisted);
+        _trait.ApplyTraits(mobUid, randomJob, profile, player, punishCheater: false);
         // Einstein Engines end - apply loadouts and traits
 
         _entityManager.EnsureComponent<GhostBarPlayerComponent>(mobUid);
