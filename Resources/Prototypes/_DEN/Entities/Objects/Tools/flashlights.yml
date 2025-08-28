@@ -1,0 +1,55 @@
+﻿- type: entity
+  name: voidlite
+  parent: FlashlightLantern
+  id: FlashlightVoidlite
+  description: A robust flashlight used by paramedics.
+  components:
+  - type: ItemSlots
+    slots:
+      cell_slot:
+        name: power-cell-slot-component-slot-name-default
+        startingItem: PowerCellMedium
+  - type: HandheldLight
+    addPrefix: false
+    wattage: 0.5
+  - type: ToggleableLightVisuals
+    inhandVisuals:
+      left:
+      - state: inhand-left-light
+        shader: unshaded
+      right:
+      - state: inhand-right-light
+        shader: unshaded
+  - type: Sprite
+    sprite: _DEN/Objects/Tools/voidlite.rsi
+    layers:
+    - state: voidlite
+    - state: voidlite-overlay
+      shader: unshaded
+      visible: false
+      map: [ "light" ]
+  - type: MeleeWeapon
+    wideAnimationRotation: 90
+    attackRate: 1.25
+    damage:
+      types:
+        Blunt: 3
+    bluntStaminaDamageFactor: 2.5
+    heavyRateModifier: 2
+    heavyRangeModifier: 1.75
+    heavyDamageBaseModifier: 1.25
+    maxTargets: 1
+    angle: 20
+    soundHit:
+      collection: MetalThud
+  - type: Item
+    sprite: _DEN/Objects/Tools/voidlite.rsi
+  - type: PointLight
+    color: "#47f8ff"
+    enabled: false
+    radius: 7
+  - type: Clothing
+    sprite: Objects/Tools/seclite.rsi
+    quickEquip: false
+    slots:
+    - Belt
