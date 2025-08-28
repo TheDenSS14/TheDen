@@ -13,4 +13,6 @@ namespace Content.Shared.Players.PlayTimeTracking;
 public interface ISharedPlaytimeManager
 {
     bool TryGetTrackerTimes(ICommonSession id, [NotNullWhen(true)] out Dictionary<string, TimeSpan>? time);
+
+    bool TryGetRoleBans(ICommonSession id, [NotNullWhen(true)] out HashSet<string>? bans);
 }
