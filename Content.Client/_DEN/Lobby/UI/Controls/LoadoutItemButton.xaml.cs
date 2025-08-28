@@ -5,6 +5,7 @@
 
 using System.Linq;
 using System.Text;
+using Content.Client._DEN.Customization.Systems;
 using Content.Client.Stylesheets;
 using Content.Client.UserInterface.Controls;
 using Content.Shared.Clothing.Loadouts.Prototypes;
@@ -16,6 +17,7 @@ using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.Controls;
 using Robust.Client.UserInterface.CustomControls;
 using Robust.Client.UserInterface.XAML;
+using Robust.Shared.Configuration;
 using Robust.Shared.Map;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
@@ -31,9 +33,11 @@ namespace Content.Client._DEN.Lobby.UI.Controls;
 [GenerateTypedNameReferences]
 public sealed partial class LoadoutItemButton : StyledButtonGroup
 {
-    [Dependency] private readonly IEntityManager _entity = default!;
-
+    private readonly IConfigurationManager _configuration;
+    private readonly IEntityManager _entity;
+    private readonly IPrototypeManager _prototype;
     private readonly SharedAppearanceSystem _appearance;
+    private readonly CharacterRequirementsSystem _characterRequirements;
 
     /// <summary>
     ///     Fired when this button's loadout preference changes (on/off, appearance, etc).
@@ -117,10 +121,17 @@ public sealed partial class LoadoutItemButton : StyledButtonGroup
     /// </summary>
     public EntityUid? PreviewEntity { get; private set; }
 
-    public LoadoutItemButton(LoadoutPrototype loadout)
+    public LoadoutItemButton(LoadoutPrototype loadout,
+        CharacterRequirementsSystem characterRequirements,
+        IConfigurationManager configuration,
+        IEntityManager entity,
+        IPrototypeManager prototype)
     {
-        IoCManager.InjectDependencies(this);
         RobustXamlLoader.Load(this);
+        _configuration = configuration;
+        _entity = entity;
+        _prototype = prototype;
+        _characterRequirements = characterRequirements;
         _appearance = _entity.System<SharedAppearanceSystem>();
 
         CustomizeButton.AddStyleClass(CustomizeButtonStyleClass);
@@ -144,6 +155,8 @@ public sealed partial class LoadoutItemButton : StyledButtonGroup
         ItemToggleButton.OnToggled += _ => UpdatePressedVisuals();
         CustomizeButton.OnPressed += _ => OnCustomizeToggled?.Invoke(Loadout.ID);
         GuidebookButton.OnPressed += _ => OpenGuidebook();
+
+        UpdateReasons();
     }
 
     protected override void Deparented()
@@ -159,11 +172,20 @@ public sealed partial class LoadoutItemButton : StyledButtonGroup
     ///     requiremments - playtime, currently-equipped job, species, etc.
     /// </summary>
     /// <param name="unusable">Whether or not this loadout is unusable.</param>
-    /// <param name="reasons">A list of requirements to use this loadout.</param>
-    public void SetUnusable(bool unusable, List<string> reasons)
+    public void SetUnusable(bool unusable)
     {
         SetStyleClass(UnusableStyleClass, unusable);
-        _reasons = reasons;
+        UpdateReasons();
+    }
+
+    private void UpdateReasons()
+    {
+        var context = _characterRequirements.GetProfileContext().WithPrototype(Loadout);
+        _reasons = _characterRequirements.GetReasons(requirements: Loadout.Requirements,
+            context: context,
+            entityManager: _entity,
+            prototypeManager: _prototype,
+            configManager: _configuration);
     }
 
     /// <summary>
