@@ -90,6 +90,15 @@
     - NetworkConfigurator
 
 - type: loadout
+  id: LoadoutCentcommPin
+  category: GeneralItems
+  cost: 0
+  requirements:
+  - !type:CharacterAdminRequirement
+  items:
+  - ClothingNeckCentCommPin
+
+- type: loadout
   id: LoadoutPlushieGrim
   category: GeneralToys
   cost: 0

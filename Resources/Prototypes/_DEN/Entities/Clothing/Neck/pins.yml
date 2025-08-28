@@ -1,0 +1,16 @@
+- type: entity
+  parent: ClothingNeckPinBase
+  id: ClothingNeckCentCommPin
+  name: CentComm pin
+  description: Given to all Central Command Officials as an indicator of status on and off the clock. If you can go a full shift without this thing getting stolen, you probably deserve to get it emblazoned in gold.
+  components:
+  - type: Sprite
+    sprite: _DEN/Clothing/Neck/Misc/pins.rsi
+    state: cc
+  - type: Clothing
+    sprite: _DEN/Clothing/Neck/Misc/pins.rsi
+    equippedPrefix: cc
+  - type: WearerGetsExamineText
+    thingType: obvious-type-pin-centcomm
+  - type: StaticPrice
+    price: 300 # LOL
