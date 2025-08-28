@@ -338,7 +338,43 @@ public sealed partial class BanManager : IBanManager, IPostInjectInit
             .Select(ban => new ProtoId<JobPrototype>(ban.Role[JobPrefix.Length..]))
             .ToHashSet();
     }
+
+    public bool IsJobBanned(NetUserId playerUserId, string roleName)
+        => IsRoleBanned(playerUserId, roleName, JobPrefix);
+
+    public bool IsJobBanned(NetUserId playerUserId, HashSet<string> roleNames)
+        => IsRoleBanned(playerUserId, roleNames, JobPrefix);
     #endregion
+
+    public bool IsAntagBanned(NetUserId playerUserId, string roleName)
+        => IsRoleBanned(playerUserId, roleName, AntagPrefix);
+
+    public bool IsAntagBanned(NetUserId playerUserId, HashSet<string> roleNames)
+        => IsRoleBanned(playerUserId, roleNames, AntagPrefix);
+
+    private bool IsRoleBanned(NetUserId playerUserId, string roleName, string rolePrefix)
+    {
+        if (!_playerManager.TryGetSessionById(playerUserId, out var session))
+            return false;
+
+        if (!_cachedRoleBans.TryGetValue(session, out var roleBans))
+            return false;
+
+        var targetRole = rolePrefix + roleName;
+        return roleBans.Any(ban => ban.Role == targetRole);
+    }
+
+    private bool IsRoleBanned(NetUserId playerUserId, HashSet<string> roleNames, string rolePrefix)
+    {
+        if (!_playerManager.TryGetSessionById(playerUserId, out var session))
+            return false;
+
+        if (!_cachedRoleBans.TryGetValue(session, out var roleBans))
+            return false;
+
+        var prefixedRoles = roleNames.Select(role => rolePrefix + role).ToHashSet();
+        return roleBans.Any(ban => prefixedRoles.Contains(ban.Role));
+    }
 
     public void SendRoleBans(ICommonSession pSession)
     {
