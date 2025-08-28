@@ -11,7 +11,7 @@
 // SPDX-FileCopyrightText: 2025 portfiend
 // SPDX-FileCopyrightText: 2025 sleepyyapril
 //
-// SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
+// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 using System.Collections.Immutable;
 using System.Linq;
@@ -340,21 +340,24 @@ public sealed partial class BanManager : IBanManager, IPostInjectInit
             .ToHashSet();
     }
 
-    public bool IsJobBanned(NetUserId playerUserId, string roleName)
-        => IsRoleBanned(playerUserId, roleName, JobPrefix);
+    public bool IsJobBanned(NetUserId playerUserId, string? roleName) =>
+        IsRoleBanned(playerUserId, roleName, JobPrefix);
 
-    public bool IsJobBanned(NetUserId playerUserId, HashSet<string> roleNames)
-        => IsRoleBanned(playerUserId, roleNames, JobPrefix);
+    public bool IsJobBanned(NetUserId playerUserId, HashSet<string>? roleNames) =>
+        IsRoleBanned(playerUserId, roleNames, JobPrefix);
     #endregion
 
-    public bool IsAntagBanned(NetUserId playerUserId, string roleName)
-        => IsRoleBanned(playerUserId, roleName, AntagPrefix);
+    public bool IsAntagBanned(NetUserId playerUserId, string? roleName) =>
+        IsRoleBanned(playerUserId, roleName, AntagPrefix);
 
-    public bool IsAntagBanned(NetUserId playerUserId, HashSet<string> roleNames)
-        => IsRoleBanned(playerUserId, roleNames, AntagPrefix);
+    public bool IsAntagBanned(NetUserId playerUserId, HashSet<string>? roleNames) =>
+        IsRoleBanned(playerUserId, roleNames, AntagPrefix);
 
-    private bool IsRoleBanned(NetUserId playerUserId, string roleName, string rolePrefix)
+    private bool IsRoleBanned(NetUserId playerUserId, string? roleName, string rolePrefix)
     {
+        if (string.IsNullOrWhiteSpace(roleName) || string.IsNullOrWhiteSpace(rolePrefix))
+            return false;
+
         if (!_playerManager.TryGetSessionById(playerUserId, out var session))
             return false;
 
@@ -365,8 +368,11 @@ public sealed partial class BanManager : IBanManager, IPostInjectInit
         return roleBans.Any(ban => ban.Role == targetRole);
     }
 
-    private bool IsRoleBanned(NetUserId playerUserId, HashSet<string> roleNames, string rolePrefix)
+    private bool IsRoleBanned(NetUserId playerUserId, HashSet<string>? roleNames, string rolePrefix)
     {
+        if (roleNames == null || roleNames.Count == 0)
+            return false;
+
         if (!_playerManager.TryGetSessionById(playerUserId, out var session))
             return false;
 
