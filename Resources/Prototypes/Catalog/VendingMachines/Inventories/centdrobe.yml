@@ -6,9 +6,10 @@
 # SPDX-FileCopyrightText: 2024 Pierson Arnold
 # SPDX-FileCopyrightText: 2024 Tunguso4ka
 # SPDX-FileCopyrightText: 2025 Ted Lukin
+# SPDX-FileCopyrightText: 2025 portfiend
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: vendingMachineInventory
   id: CentDrobeInventory
@@ -40,6 +41,7 @@
     ClothingOuterWinterCentcom: 5
     ClothingShoesBootsWinterCentCom: 5 #DeltaV - Add departmental winter boots
     ClothingNeckScarfStripedCentcom: 5
+    ClothingNeckCentCommPin: 5 # DEN
     ClothingMaskGasCentcom: 5
     ClothingOuterCoatExpensive: 1
   contrabandInventory:

@@ -1,4 +1,4 @@
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -22,3 +22,18 @@
   highDanger: true
   rules:
     - HighDangerRule
+
+- type: gamePreset
+  id: RoundstartAntagsNoScheduler
+  alias:
+    - roundstart-antags
+  name: roundstart-antags-title
+  showInVote: true
+  highDanger: true
+  description: survival-description
+  rules:
+    - BasicRoundstartVariation
+    - MoreTraitor
+    - Thief
+    - SubGamemodesRule
+    - LavalandStormScheduler # Lavaland Change

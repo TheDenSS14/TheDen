@@ -1,16 +1,17 @@
-// SPDX-FileCopyrightText: 2023 Chief-Engineer <119664036+Chief-Engineer@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2023 Debug <49997488+DebugOk@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2023 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2023 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2023 Riggle <27156122+RigglePrime@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2023 Vasilis <vasilis@pikachu.systems>
-// SPDX-FileCopyrightText: 2024 FoxxoTrystan <45297731+FoxxoTrystan@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 Julian Giebel <juliangiebel@live.de>
-// SPDX-FileCopyrightText: 2024 LordCarve <27449516+LordCarve@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
-// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Chief-Engineer
+// SPDX-FileCopyrightText: 2023 Debug
+// SPDX-FileCopyrightText: 2023 DrSmugleaf
+// SPDX-FileCopyrightText: 2023 Leon Friedrich
+// SPDX-FileCopyrightText: 2023 Riggle
+// SPDX-FileCopyrightText: 2023 Vasilis
+// SPDX-FileCopyrightText: 2024 FoxxoTrystan
+// SPDX-FileCopyrightText: 2024 Julian Giebel
+// SPDX-FileCopyrightText: 2024 LordCarve
+// SPDX-FileCopyrightText: 2024 Pieter-Jan Briers
+// SPDX-FileCopyrightText: 2025 portfiend
+// SPDX-FileCopyrightText: 2025 sleepyyapril
 //
-// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+// SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 using System.Collections.Immutable;
 using System.Linq;
@@ -338,7 +339,43 @@ public sealed partial class BanManager : IBanManager, IPostInjectInit
             .Select(ban => new ProtoId<JobPrototype>(ban.Role[JobPrefix.Length..]))
             .ToHashSet();
     }
+
+    public bool IsJobBanned(NetUserId playerUserId, string roleName)
+        => IsRoleBanned(playerUserId, roleName, JobPrefix);
+
+    public bool IsJobBanned(NetUserId playerUserId, HashSet<string> roleNames)
+        => IsRoleBanned(playerUserId, roleNames, JobPrefix);
     #endregion
+
+    public bool IsAntagBanned(NetUserId playerUserId, string roleName)
+        => IsRoleBanned(playerUserId, roleName, AntagPrefix);
+
+    public bool IsAntagBanned(NetUserId playerUserId, HashSet<string> roleNames)
+        => IsRoleBanned(playerUserId, roleNames, AntagPrefix);
+
+    private bool IsRoleBanned(NetUserId playerUserId, string roleName, string rolePrefix)
+    {
+        if (!_playerManager.TryGetSessionById(playerUserId, out var session))
+            return false;
+
+        if (!_cachedRoleBans.TryGetValue(session, out var roleBans))
+            return false;
+
+        var targetRole = rolePrefix + roleName;
+        return roleBans.Any(ban => ban.Role == targetRole);
+    }
+
+    private bool IsRoleBanned(NetUserId playerUserId, HashSet<string> roleNames, string rolePrefix)
+    {
+        if (!_playerManager.TryGetSessionById(playerUserId, out var session))
+            return false;
+
+        if (!_cachedRoleBans.TryGetValue(session, out var roleBans))
+            return false;
+
+        var prefixedRoles = roleNames.Select(role => rolePrefix + role).ToHashSet();
+        return roleBans.Any(ban => prefixedRoles.Contains(ban.Role));
+    }
 
     public void SendRoleBans(ICommonSession pSession)
     {
