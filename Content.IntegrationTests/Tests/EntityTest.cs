@@ -1,3 +1,31 @@
+// SPDX-FileCopyrightText: 2020 DrSmugleaf
+// SPDX-FileCopyrightText: 2020 JiimBob
+// SPDX-FileCopyrightText: 2020 Paul Ritter
+// SPDX-FileCopyrightText: 2020 Pieter-Jan Briers
+// SPDX-FileCopyrightText: 2020 Tyler Young
+// SPDX-FileCopyrightText: 2020 Vince
+// SPDX-FileCopyrightText: 2021 Acruid
+// SPDX-FileCopyrightText: 2021 Javier Guardia Fernández
+// SPDX-FileCopyrightText: 2021 ShadowCommander
+// SPDX-FileCopyrightText: 2021 Vera Aguilera Puerto
+// SPDX-FileCopyrightText: 2021 metalgearsloth
+// SPDX-FileCopyrightText: 2022 Leon Friedrich
+// SPDX-FileCopyrightText: 2022 mirrorcult
+// SPDX-FileCopyrightText: 2022 wrexbe
+// SPDX-FileCopyrightText: 2023 20kdc
+// SPDX-FileCopyrightText: 2023 Julian Giebel
+// SPDX-FileCopyrightText: 2023 Moony
+// SPDX-FileCopyrightText: 2023 Nemanja
+// SPDX-FileCopyrightText: 2023 TemporalOroboros
+// SPDX-FileCopyrightText: 2023 Visne
+// SPDX-FileCopyrightText: 2024 SolStar
+// SPDX-FileCopyrightText: 2024 Tayrtahn
+// SPDX-FileCopyrightText: 2024 VMSolidus
+// SPDX-FileCopyrightText: 2024 sleepyyapril
+// SPDX-FileCopyrightText: 2025 Eris
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using System.Collections.Generic;
 using System.Linq;
 using System.Numerics;
