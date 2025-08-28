@@ -39,6 +39,12 @@ public interface IBanManager
     public HashSet<string>? GetRoleBans(NetUserId playerUserId);
     public HashSet<ProtoId<JobPrototype>>? GetJobBans(NetUserId playerUserId);
 
+    public bool IsJobBanned(NetUserId playerUserId, string? roleName);
+    public bool IsJobBanned(NetUserId playerUserId, HashSet<string>? roleNames);
+
+    public bool IsAntagBanned(NetUserId playerUserId, string? roleName);
+    public bool IsAntagBanned(NetUserId playerUserId, HashSet<string>? roleNames);
+
     /// <summary>
     /// Creates a job ban for the specified target, username or GUID
     /// </summary>

@@ -22,6 +22,7 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 using System.Linq;
+using Content.Server.Administration.Managers;
 using Content.Server.Antag.Components;
 using Content.Server.Chat.Managers;
 using Content.Server.GameTicking;
@@ -49,7 +50,9 @@ using Robust.Server.GameObjects;
 using Robust.Server.Player;
 using Robust.Shared.Enums;
 using Robust.Shared.Map;
+using Robust.Shared.Network;
 using Robust.Shared.Player;
+using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Utility;
 
@@ -58,6 +61,7 @@ namespace Content.Server.Antag;
 public sealed partial class AntagSelectionSystem : GameRuleSystem<AntagSelectionComponent>
 {
     [Dependency] private readonly AudioSystem _audio = default!;
+    [Dependency] private readonly IBanManager _ban = default!;
     [Dependency] private readonly IChatManager _chat = default!;
     [Dependency] private readonly GhostRoleSystem _ghostRole = default!;
     [Dependency] private readonly JobSystem _jobs = default!;
@@ -68,6 +72,8 @@ public sealed partial class AntagSelectionSystem : GameRuleSystem<AntagSelection
     [Dependency] private readonly StationSpawningSystem _stationSpawning = default!;
     [Dependency] private readonly TransformSystem _transform = default!;
     [Dependency] private readonly EntityWhitelistSystem _whitelist = default!;
+    [Dependency] private readonly IPrototypeManager _prototype = default!;
+    [Dependency] private readonly IComponentFactory _componentFactory = default!;
 
     // arbitrary random number to give late joining some mild interest.
     public const float LateJoinRandomChance = 0.5f;
@@ -289,6 +295,10 @@ public sealed partial class AntagSelectionSystem : GameRuleSystem<AntagSelection
         if (!IsSessionValid(ent, session, def) || !IsEntityValid(session?.AttachedEntity, def))
             return false;
 
+        if (session != null && def.MindRoles != null
+            && IsBannedFromMindRoles(session.UserId, def.MindRoles))
+            return false;
+
         MakeAntag(ent, session, def, ignoreSpawner);
         return true;
     }
@@ -314,6 +324,10 @@ public sealed partial class AntagSelectionSystem : GameRuleSystem<AntagSelection
             antagEnt = Spawn(def.SpawnerPrototype);
             isSpawner = true;
         }
+
+        if (session != null && def.MindRoles != null
+            && IsBannedFromMindRoles(session.UserId, def.MindRoles))
+            return;
 
         if (!antagEnt.HasValue)
         {
@@ -391,6 +405,9 @@ public sealed partial class AntagSelectionSystem : GameRuleSystem<AntagSelection
             if (!IsSessionValid(ent, session, def) || !IsEntityValid(session.AttachedEntity, def))
                 continue;
 
+            if (def.MindRoles != null && IsBannedFromMindRoles(session.UserId, def.MindRoles))
+                continue;
+
             if (HasPrimaryAntagPreference(session, def))
             {
                 preferredList.Add(session);
@@ -402,6 +419,22 @@ public sealed partial class AntagSelectionSystem : GameRuleSystem<AntagSelection
         }
 
         return new AntagSelectionPlayerPool(new() { preferredList, fallbackList });
+    }
+
+    public bool IsBannedFromMindRoles(NetUserId userId, IEnumerable<EntProtoId> mindRoles)
+    {
+        foreach (var mindRoleId in mindRoles)
+        {
+            if (!_prototype.TryIndex(mindRoleId, out var indexed)
+                || !indexed.Components.TryGetComponent<MindRoleComponent>(_componentFactory, out var mindRole))
+                continue;
+
+            if (_ban.IsAntagBanned(userId, mindRole.AntagPrototype)
+                || _ban.IsJobBanned(userId, mindRole.JobPrototype))
+                return true;
+        }
+
+        return false;
     }
 
     /// <summary>
