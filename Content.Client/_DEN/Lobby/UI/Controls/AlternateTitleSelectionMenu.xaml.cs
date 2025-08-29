@@ -17,11 +17,7 @@ namespace Content.Client._DEN.Lobby.UI.Controls;
 [GenerateTypedNameReferences]
 public sealed partial class AlternateTitleSelectionMenu : FancyWindow
 {
-    public JobPrototype Job;
-    public AlternateJobTitlePrototype AlternateJobTitle;
-    public string? SelectedAlternateTitle;
-
-    public event Action<string?>? SelectedAlternateTitleChanged;
+    public event Action<string?>? OnSelectedAlternateTitleChanged;
 
     public AlternateTitleSelectionMenu(JobPrototype job,
         AlternateJobTitlePrototype titlesPrototype,
@@ -29,34 +25,31 @@ public sealed partial class AlternateTitleSelectionMenu : FancyWindow
     {
         RobustXamlLoader.Load(this);
 
-        Job = job;
-        AlternateJobTitle = titlesPrototype;
+        var buttons = new List<LocId> { job.ID, };
+        buttons.AddRange(titlesPrototype.Titles);
 
-        var items = new List<ItemList.Item>();
-
-        foreach (var title in titlesPrototype.Titles
-            .Select(titleId => Loc.GetString(titleId)))
+        foreach (var titleId in buttons)
         {
-            var titleItem = Titles.AddItem(title);
+            var title = GetButtonText(job, titleId);
 
-            if (title == selectedAlternateTitle)
-                titleItem.Selected = true;
+            if (selectedAlternateTitle != null && titleId == selectedAlternateTitle)
+                continue;
 
-            items.Add(titleItem);
+            var button = new Button
+            {
+                Text = title
+            };
+
+            button.OnPressed += _ => OnSelectedAlternateTitleChanged?.Invoke(titleId);
+            Titles.AddChild(button);
         }
-
-        Titles.SetItems(items);
-        Titles.OnItemSelected += OnItemSelected;
-        Titles.OnItemDeselected += OnItemDeselected;
     }
 
-    private void OnItemSelected(ItemList.ItemListSelectedEventArgs args)
+    private string GetButtonText(JobPrototype job, string titleId)
     {
-        var item = args.ItemList[args.ItemIndex];
-        SelectedAlternateTitleChanged?.Invoke(item.Text);
+        if (titleId == job.ID)
+            return job.LocalizedName;
+
+        return Loc.GetString(titleId);
     }
-
-    private void OnItemDeselected(ItemList.ItemListDeselectedEventArgs args) =>
-        SelectedAlternateTitleChanged?.Invoke(null);
-
 }

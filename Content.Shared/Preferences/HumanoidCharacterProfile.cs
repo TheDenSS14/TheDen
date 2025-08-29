@@ -560,6 +560,7 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
             && PreferenceUnavailable == other.PreferenceUnavailable
             && SpawnPriority == other.SpawnPriority
             && _jobPriorities.SequenceEqual(other._jobPriorities)
+            && _jobTitles.SequenceEqual(other._jobTitles)
             && _antagPreferences.SequenceEqual(other._antagPreferences)
             && _traitPreferences.SequenceEqual(other._traitPreferences)
             && _loadoutPreferences.SequenceEqual(other._loadoutPreferences)

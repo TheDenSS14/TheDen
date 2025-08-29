@@ -20,7 +20,7 @@ namespace Content.Server._DEN.Job;
 /// <summary>
 /// This handles spawning with an alternate job title.
 /// </summary>
-public sealed partial class AlternateJobTitleSystem : SharedAlternateTitleSystem
+public sealed partial class AlternateJobTitleSystem : EntitySystem
 {
     [Dependency] private readonly IdCardSystem _idCard = default!;
     [Dependency] private readonly ILogManager _log = default!;
@@ -42,7 +42,8 @@ public sealed partial class AlternateJobTitleSystem : SharedAlternateTitleSystem
 
     private void OnGetJobName(ref GetJobNameEvent args)
     {
-        if (!args.Profile.JobTitles.TryGetValue(args.Job.ID, out var selectedTitle))
+        if (!args.Profile.JobTitles.TryGetValue(args.Job.ID, out var selectedTitle)
+            || string.IsNullOrWhiteSpace(selectedTitle))
             return;
 
         var nameExists = Loc.TryGetString(selectedTitle, out var name);
