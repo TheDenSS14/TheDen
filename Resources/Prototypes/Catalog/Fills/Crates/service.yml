@@ -94,6 +94,9 @@
         orGroup: CigCarton1
       - id: CigCartonRed
         orGroup: CigCarton1
+      - id: CigCartonSpirits # Imp
+        prob: 0.33
+        orGroup: CigCarton2
       - id: CigCartonBlue
         prob: 0.33 # DeltaV
         orGroup: CigCarton2

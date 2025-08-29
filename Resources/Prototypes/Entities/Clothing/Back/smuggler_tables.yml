@@ -156,9 +156,11 @@
       weight: 8
     - id: CigPackSyndicate
       weight: 0.5
-    - id: CigCartonGreen
-    - id: CigCartonRed
-    - id: CigCartonBlack
+#    - id: CigCartonGreen # TheDen - Interesting cigarettes only
+#    - id: CigCartonRed
+#    - id: CigCartonBlack
+    - id: CigCartonSpirits # TheDen
+    - id: CigCartonPurple # TheDen
     - id: CigarCase
       amount: !type:RangeNumberSelector
         range: 1, 2

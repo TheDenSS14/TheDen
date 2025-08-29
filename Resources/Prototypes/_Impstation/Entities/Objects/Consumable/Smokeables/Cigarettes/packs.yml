@@ -2,9 +2,13 @@
   id: CigPackSpirits
   parent: CigPackBase
   name: Spirits
-  description: "An artisan line of cigarettes crafted from genetically-engineered tobacco, releasing a rich aroma of smoldering wood smoke when lit. Each pack bears a serene spirit watching over a campfire’s glow."
+  description: "An artisan line of cigarettes made from genetically-engineered tobacco that smells like wood smoke when lit."
   components:
   - type: Sprite
     sprite: _Impstation/Objects/Consumable/Smokeables/Cigarettes/Packs/spirits.rsi
   - type: Item
     sprite: _Impstation/Objects/Consumable/Smokeables/Cigarettes/Packs/spirits.rsi
+  - type: StorageFill
+    contents:
+    - id: CigaretteSpirits
+      amount: 10
