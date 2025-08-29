@@ -19,3 +19,25 @@
     tags:
     - CentralCommand
     - Magistrate
+
+- type: entity
+  parent: IDCardStandard
+  id: NanorepIDCard
+  name: nanotrasen representative ID card
+  components:
+  - type: Sprite
+    layers:
+    - state: centcom
+    - state: departmenthead
+      color: "#1B67A5"
+    - state: subdepartment
+      color: "#030e17"
+    - state: cc
+  - type: Item
+    heldPrefix:
+  - type: PresetIdCard
+    job: Nanotrasen Representative
+  - type: Access
+    tags:
+    - CentralCommand
+    - NanotrasenRepresentative
