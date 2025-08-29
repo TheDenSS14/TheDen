@@ -75,6 +75,7 @@ humanoid-profile-editor-preference-satchel = Satchel
 humanoid-profile-editor-preference-duffelbag = Duffelbag
 humanoid-profile-editor-guidebook-button-tooltip = Click for more info
 humanoid-profile-editor-skin-toggle = Humanoid Skin Tones
+humanoid-profile-editor-alternate-job-titles = Alternate Titles
 
 # Spawn priority
 humanoid-profile-editor-preference-spawn-priority-none = None

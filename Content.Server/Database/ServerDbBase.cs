@@ -94,10 +94,13 @@ namespace Content.Server.Database
                 .Include(p => p.Profiles).ThenInclude(h => h.Traits)
                 // Begin CD - Character Records
                 .Include(p => p.Profiles)
-                .ThenInclude(h => h.CDProfile)
-                .ThenInclude(cd => cd != null ? cd.CharacterRecordEntries : null)
+                    .ThenInclude(h => h.CDProfile)
+                    .ThenInclude(cd => cd != null ? cd.CharacterRecordEntries : null)
                 // End CD - Character Records
-                .Include(p => p.Profiles).ThenInclude(h => h.Loadouts)
+                .Include(p => p.Profiles)
+                    .ThenInclude(h => h.Loadouts)
+                .Include(p => p.Profiles)
+                    .ThenInclude(h => h.AlternateJobTitles)
                 .AsSingleQuery()
                 .SingleOrDefaultAsync(p => p.UserId == userId.UserId, cancel);
 
@@ -147,6 +150,7 @@ namespace Content.Server.Database
                 .Include(p => p.Antags)
                 .Include(p => p.Traits)
                 .Include(p => p.Loadouts)
+                .Include(p => p.AlternateJobTitles)
                 .Include(p => p.CDProfile) // CD - Character Records
                 .ThenInclude(cd => cd != null ? cd.CharacterRecordEntries : null)
                 .AsSplitQuery()
@@ -236,6 +240,8 @@ namespace Content.Server.Database
             var antags = profile.Antags.Select(a => a.AntagName);
             var traits = profile.Traits.Select(t => t.TraitName);
             var loadouts = profile.Loadouts.Select(Shared.Clothing.Loadouts.Systems.Loadout (l) => l);
+            var alternateJobTitles = profile.AlternateJobTitles
+                .ToDictionary(title => title.JobId, title => title.AlternateJobTitle);
 
             var sex = Sex.Male;
             if (Enum.TryParse<Sex>(profile.Sex, true, out var sexVal))
@@ -314,6 +320,7 @@ namespace Content.Server.Database
                 ),
                 spawnPriority,
                 jobs,
+                alternateJobTitles,
                 clothing,
                 backpack,
                 (PreferenceUnavailableMode) profile.PreferenceUnavailable,
@@ -377,6 +384,15 @@ namespace Content.Server.Database
                     .Where(j => j.Value != JobPriority.Never)
                     .Select(j => new Job { JobName = j.Key, Priority = (DbJobPriority) j.Value })
             );
+
+            profile.AlternateJobTitles.Clear();
+            profile.AlternateJobTitles.AddRange(
+                humanoid.JobTitles
+                    .Select(pair => new AlternateJobTitles()
+                    {
+                        JobId = pair.Key,
+                        AlternateJobTitle = pair.Value
+                    }));
 
             profile.Antags.Clear();
             profile.Antags.AddRange(

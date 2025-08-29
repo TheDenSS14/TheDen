@@ -118,6 +118,10 @@ using Content.Client._CD.Records.UI;
 using Content.Shared._CD.Records;
 using Content.Shared.Customization.Systems._DEN;
 using Content.Client._DEN.Customization.Systems;
+using Content.Client._DEN.Lobby.UI.Controls;
+using Content.Shared._DEN.Job;
+
+
 // End CD - Character Records
 
 // DEN TODO: THIS NEEDS SEVERE OVERHAUL
@@ -148,6 +152,13 @@ namespace Content.Client.Lobby.UI
         private FlavorText.FlavorText? _flavorText;
         private BoxContainer _ccustomspecienamecontainerEdit => CCustomSpecieName;
         private LineEdit _customspecienameEdit => CCustomSpecieNameEdit;
+
+        private TextEdit? _flavorSfwTextEdit;
+        private TextEdit? _flavorNsfwTextEdit;
+        private TextEdit? _characterConsent;
+
+        // One at a time.
+        private AlternateTitleSelectionMenu? _titleSelectionMenu;
 
         /// If we're attempting to save
         public event Action? Save;
@@ -1179,9 +1190,20 @@ namespace Content.Client.Lobby.UI
                         TextureScale = new(2, 2),
                         VerticalAlignment = VAlignment.Center
                     };
+
                     var jobIcon = _prototypeManager.Index<JobIconPrototype>(job.Icon);
                     icon.Texture = jobIcon.Icon.Frame0();
                     selector.Setup(items, job.LocalizedName, 200, job.LocalizedDescription, icon, job.Guides);
+
+                    var hasTitles = _prototypeManager.TryIndex<AlternateJobTitlePrototype>(job.ID, out var alternateJobTitles);
+                    var alternateTitlesButton = new Button()
+                    {
+                        Text = Loc.GetString("humanoid-profile-editor-alternate-job-titles"),
+                        HorizontalExpand = true,
+                        Disabled = !hasTitles || alternateJobTitles == null
+                    };
+
+                    alternateTitlesButton.OnPressed += _ => CreateTitlesWindow(job, alternateJobTitles);
 
                     var requirements = job.Requirements ?? new();
                     var context = _characterRequirementsSystem.GetProfileContext(Profile)
@@ -1233,6 +1255,7 @@ namespace Content.Client.Lobby.UI
 
                     _jobPriorities.Add((job.ID, selector));
                     jobContainer.AddChild(selector);
+                    jobContainer.AddChild(alternateTitlesButton);
                     category.AddChild(jobContainer);
                 }
             }
@@ -1377,6 +1400,23 @@ namespace Content.Client.Lobby.UI
 
             if (Profile is not null)
                 UpdateJobPriorities();
+        }
+
+        private void CreateTitlesWindow(JobPrototype job, AlternateJobTitlePrototype? titles)
+        {
+            if (titles is not { } titlePrototype)
+                return;
+
+            if (_titleSelectionMenu != null)
+            {
+                _titleSelectionMenu.Orphan();
+                _titleSelectionMenu = null;
+            }
+
+            _titleSelectionMenu = new(job, titlePrototype)
+            {
+                Title = job.LocalizedName
+            };
         }
 
         /// DeltaV - Make sure that no invalid job priorities get through

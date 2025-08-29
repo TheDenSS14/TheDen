@@ -35,6 +35,7 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
+using Content.Shared._DEN.Job;
 using Content.Shared.Access;
 using Content.Shared.Guidebook;
 using Content.Shared.Customization.Systems;

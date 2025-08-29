@@ -1,0 +1,12 @@
+<ui:FancyWindow xmlns="https://spacestation14.io"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:ui="clr-namespace:Content.Client.UserInterface.Controls"
+    Title="{Loc 'research-client-server-selection-menu-title'}"
+    MinSize="300 300"
+    SetSize="300 300">
+
+    <ItemList Name="Titles">
+        <!-- Job titles are added via code. -->
+    </ItemList>
+</ui:FancyWindow>
+
