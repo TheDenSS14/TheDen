@@ -20,6 +20,7 @@
   id: BaseArachneAppearance
   components:
   - type: Inventory
+    speciesId: anytaur
     templateId: anytaur
   - type: HumanoidAppearance
     species: Arachne
@@ -31,6 +32,8 @@
   id: MobArachneBase
   abstract: true
   components:
+  - type: Inventory
+    speciesId: anytaur
   - type: Sericulture
     action: ActionSericulture
     productionLength: 2
