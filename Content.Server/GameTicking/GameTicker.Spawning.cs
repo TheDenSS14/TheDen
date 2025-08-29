@@ -318,7 +318,7 @@ namespace Content.Server.GameTicking
 
             _roles.MindAddJobRole(newMind, silent: silent, jobPrototype: jobId);
             var jobName = _jobs.MindTryGetJobName(newMind);
-            var jobNameEvent = new GetJobNameEvent(jobPrototype)
+            var jobNameEvent = new GetJobNameEvent(jobPrototype, character)
             {
                 JobName = jobName
             };
