@@ -156,7 +156,9 @@ public partial class MobStateSystem
         switch (state)
         {
             case MobState.Alive:
-                _standing.Stand(target);
+                if (!TryComp(target, out BuckleComponent? buckle)
+                    || !buckle.Buckled)
+                    _standing.Stand(target);
                 _appearance.SetData(target, MobStateVisuals.State, MobState.Alive);
                 break;
             case MobState.Critical:
