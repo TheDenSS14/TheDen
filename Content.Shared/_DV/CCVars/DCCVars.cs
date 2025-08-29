@@ -112,6 +112,12 @@ public sealed class DCCVars
         CVarDef.Create("shuttle.shipyard", true, CVar.SERVERONLY);
 
     /// <summary>
+    /// What year it is in the game. Actual value shown in game is server date + this value.
+    /// </summary>
+    public static readonly CVarDef<int> YearOffset =
+        CVarDef.Create("game.current_year_offset", 550, CVar.SERVERONLY);
+
+    /// <summary>
     ///    Maximum number of characters in objective summaries.
     /// </summary>
     public static readonly CVarDef<int> MaxObjectiveSummaryLength =
