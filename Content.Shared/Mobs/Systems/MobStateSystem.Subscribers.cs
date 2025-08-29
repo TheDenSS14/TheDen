@@ -15,6 +15,7 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 using Content.Shared.Bed.Sleep;
+using Content.Shared.Buckle;
 using Content.Shared.Buckle.Components;
 using Content.Shared.CCVar;
 using Content.Shared.CombatMode.Pacification;
@@ -126,19 +127,11 @@ public partial class MobStateSystem
                 //unused
                 break;
             case MobState.Critical:
-                if (component.CurrentState is not MobState.Alive)
-                    break;
-                _standing.Stand(target);
                 break;
             case MobState.SoftCritical:
-                if (component.CurrentState is not MobState.Alive)
-                    break;
-                _standing.Stand(target);
                 break;
             case MobState.Dead:
                 RemComp<CollisionWakeComponent>(target);
-                if (component.CurrentState is MobState.Alive)
-                    _standing.Stand(target);
 
                 if (!_standing.IsDown(target) && TryComp<PhysicsComponent>(target, out var physics))
                     _physics.SetCanCollide(target, true, body: physics);
