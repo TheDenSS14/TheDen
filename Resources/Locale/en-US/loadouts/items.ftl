@@ -14,6 +14,7 @@ loadout-description-LoadoutItemCigsGreen = A pack a day keeps the doctor well-pa
 loadout-description-LoadoutItemCigsRed = A pack a day keeps the doctor well-paid!
 loadout-description-LoadoutItemCigsBlue = A pack a day keeps the doctor well-paid!
 loadout-description-LoadoutItemCigsBlack = A pack a day keeps the doctor well-paid!
+loadout-description-LoadoutItemCigsSpirits = An artisan line of cigarettes crafted from genetically-engineered tobacco, releasing a rich aroma of smoldering wood smoke when lit. Each pack bears a serene spirit watching over a campfire’s glow
 loadout-description-LoadoutItemPAI = A little flakey on booting up, but a more loyal friend you won't find.
 loadout-description-LoadoutItemLighter = A basic lighter.
 loadout-description-LoadoutItemLighterCheap = A very basic lighter.

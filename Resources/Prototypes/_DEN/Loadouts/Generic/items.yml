@@ -4,3 +4,13 @@
   cost: 1
   items:
     - MysterySpaceBladeBox
+
+- type: loadout
+  id: LoadoutItemCigsSpirits
+  category: GeneralItems
+  cost: 0
+  items:
+    - CigPackSpirits
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSmokes
