@@ -91,6 +91,14 @@
     state: eyebanglong
 
 - type: marking
+  id: HumanHairEyeBangShort
+  bodyPart: Hair
+  markingCategory: Hair
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/human_hair.rsi
+    state: eyebangshort
+
+- type: marking
   id: HumanHairEyeBangSideTail
   bodyPart: Hair
   markingCategory: Hair
@@ -113,6 +121,14 @@
   sprites:
   - sprite: _Impstation/Mobs/Customization/human_hair.rsi
     state: overeyestail
+
+- type: marking
+  id: HumanHairOverEyesLong
+  bodyPart: Hair
+  markingCategory: Hair
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/human_hair.rsi
+    state: overeyeslong
 
 - type: marking
   id: HumanHairFringeTail

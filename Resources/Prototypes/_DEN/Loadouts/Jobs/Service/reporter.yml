@@ -1,0 +1,29 @@
+# Uniforms
+
+- type: loadout
+  id: LoadoutServiceReporterUniformBrosBlazer
+  category: JobsServiceReporter
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutReporterUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - Reporter
+  items:
+    - ClothingUniformBrosBlazer
+
+- type: loadout
+  id: LoadoutServiceReporterUniformBrosBlazerSkirt
+  category: JobsServiceReporter
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutReporterUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - Reporter
+  items:
+    - ClothingUniformBrosBlazerSkirt

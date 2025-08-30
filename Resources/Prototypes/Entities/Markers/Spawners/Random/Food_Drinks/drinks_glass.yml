@@ -15,7 +15,7 @@
 # SPDX-FileCopyrightText: 2025 eightballll
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: entity
   id: RandomDrinkGlass
@@ -138,6 +138,15 @@
       - DrinkCinnamonCookieGlass
       - DrinkInsideScoopGlass
       - LemonLimeBittersGlass # DeltaV
+      - DrinkFeatherPillowGlass
+      - DrinkThDrinkGlass
+      - DrinkAtlanticOceanGlass
+      - DrinkTuxedoSunsetGlass
+      - DrinkBloodyJaegerGlass
+      - DrinkJaegeritaGlass
+      - DrinkChartruseGlass
+      - DrinkFizzballGlass
+      - DrinkFizzballFloatGlass
     chance: 0.8
     offset: 0.0
     #rare
@@ -155,4 +164,5 @@
       - DrinkShakeRobo
       - DrinkHoochGlass
       - DrinkBeepskySmashGlass
+      - DrinkDeathFlipGlass #TheDen
     rareChance: 0.05

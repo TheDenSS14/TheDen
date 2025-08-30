@@ -42,6 +42,8 @@ namespace Content.Server.Administration.Managers
         /// </summary>
         IEnumerable<ICommonSession> AllAdmins { get; }
 
+        int? GetAdminRankId(ICommonSession session);
+
         /// <summary>
         ///     De-admins an admin temporarily so they are effectively a normal player.
         /// </summary>

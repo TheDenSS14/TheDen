@@ -34,7 +34,7 @@
 # SPDX-FileCopyrightText: 2025 eightballll
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 # These can still be used as containers
 - type: entity
@@ -416,11 +416,3 @@
   components:
   - type: Sprite
     sprite: Objects/Consumable/Drinks/oatmilk.rsi
-
-- type: entity
-  name: jaegermister bottle
-  parent: DrinkBottleBaseEmpty
-  id: DrinkBottleJaegermister
-  components:
-  - type: Sprite
-    sprite: Objects/Consumable/TrashDrinks/jaegermisterbottle_empty.rsi

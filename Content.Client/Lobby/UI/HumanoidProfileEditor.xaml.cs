@@ -116,6 +116,8 @@ using Direction = Robust.Shared.Maths.Direction;
 using System.Globalization;
 using Content.Client._CD.Records.UI;
 using Content.Shared._CD.Records;
+using Content.Shared.Customization.Systems._DEN;
+using Content.Client._DEN.Customization.Systems;
 // End CD - Character Records
 
 // DEN TODO: THIS NEEDS SEVERE OVERHAUL
@@ -417,6 +419,7 @@ namespace Content.Client.Lobby.UI
 
             Skin.OnValueChanged += _ => { OnSkinColorOnValueChanged(); };
             RgbSkinColorContainer.AddChild(_rgbSkinColorSelector = new());
+            _rgbSkinColorSelector.SelectorType = ColorSelectorSliders.ColorSelectorType.Hsv; // defaults color selector to HSV
             _rgbSkinColorSelector.OnColorChanged += _ => { OnSkinColorOnValueChanged(); };
             SkinFurToggle.OnToggled += _ => { SetProfile(Profile, CharacterSlot); };
 
@@ -775,16 +778,14 @@ namespace Content.Client.Lobby.UI
             NationalityButton.Clear();
             _nationalies.Clear();
 
+            var context = _characterRequirementsSystem.GetProfileContext(Profile);
+
             _nationalies.AddRange(_prototypeManager.EnumeratePrototypes<NationalityPrototype>()
                 .Where(o => _characterRequirementsSystem.CheckRequirementsValid(o.Requirements,
-                    _controller.GetPreferredJob(Profile ?? HumanoidCharacterProfile.DefaultWithSpecies()),
-                    Profile ?? HumanoidCharacterProfile.DefaultWithSpecies(),
-                    _requirements.GetRawPlayTimeTrackers(),
-                    _requirements.IsWhitelisted(),
-                    o,
+                    context.WithPrototype(o),
                     _entManager,
                     _prototypeManager,
-                    _cfgManager, out _)));
+                    _cfgManager)));
 
             var nationalityIds = _nationalies.Select(o => o.ID).ToList();
 
@@ -809,16 +810,13 @@ namespace Content.Client.Lobby.UI
             EmployerButton.Clear();
             _employers.Clear();
 
+            var context = _characterRequirementsSystem.GetProfileContext(Profile);
             _employers.AddRange(_prototypeManager.EnumeratePrototypes<EmployerPrototype>()
                 .Where(o => _characterRequirementsSystem.CheckRequirementsValid(o.Requirements,
-                _controller.GetPreferredJob(Profile ?? HumanoidCharacterProfile.DefaultWithSpecies()),
-                Profile ?? HumanoidCharacterProfile.DefaultWithSpecies(),
-                _requirements.GetRawPlayTimeTrackers(),
-                _requirements.IsWhitelisted(),
-                o,
-                _entManager,
-                _prototypeManager,
-                _cfgManager, out _)));
+                    context.WithPrototype(o),
+                    _entManager,
+                    _prototypeManager,
+                    _cfgManager)));
 
             var employerIds = _employers.Select(o => o.ID).ToList();
 
@@ -843,16 +841,14 @@ namespace Content.Client.Lobby.UI
             LifepathButton.Clear();
             _lifepaths.Clear();
 
+            var context = _characterRequirementsSystem.GetProfileContext(Profile);
+
             _lifepaths.AddRange(_prototypeManager.EnumeratePrototypes<LifepathPrototype>()
                 .Where(o => _characterRequirementsSystem.CheckRequirementsValid(o.Requirements,
-                _controller.GetPreferredJob(Profile ?? HumanoidCharacterProfile.DefaultWithSpecies()),
-                Profile ?? HumanoidCharacterProfile.DefaultWithSpecies(),
-                _requirements.GetRawPlayTimeTrackers(),
-                _requirements.IsWhitelisted(),
-                o,
-                _entManager,
-                _prototypeManager,
-                _cfgManager, out _)));
+                    context.WithPrototype(o),
+                    _entManager,
+                    _prototypeManager,
+                    _cfgManager)));
 
             var lifepathIds = _lifepaths.Select(o => o.ID).ToList();
 
@@ -920,18 +916,23 @@ namespace Content.Client.Lobby.UI
                 selector.Setup(items, title, 250, description, guides: antag.Guides);
                 selector.Select(Profile?.AntagPreferences.Contains(antag.ID) == true ? 0 : 1);
 
-                if (!_characterRequirementsSystem.CheckRequirementsValid(
-                    antag.Requirements ?? new(),
-                    _controller.GetPreferredJob(Profile ?? HumanoidCharacterProfile.DefaultWithSpecies()),
-                    Profile ?? HumanoidCharacterProfile.DefaultWithSpecies(),
-                    _requirements.GetRawPlayTimeTrackers(),
-                    _requirements.IsWhitelisted(),
-                    antag,
+                var requirements = antag.Requirements ?? new();
+                var job = _controller.GetPreferredJob(Profile ?? HumanoidCharacterProfile.DefaultWithSpecies());
+                var context = _characterRequirementsSystem.GetProfileContext(Profile)
+                    .WithSelectedJob(job)
+                    .WithPrototype(antag);
+
+                if (!_characterRequirementsSystem.CheckRequirementsValid(requirements,
+                    context,
                     _entManager,
                     _prototypeManager,
-                    _cfgManager,
-                    out var reasons))
+                    _cfgManager))
                 {
+                    var reasons = _characterRequirementsSystem.GetReasons(requirements,
+                        context,
+                        _entManager,
+                        _prototypeManager,
+                        _cfgManager);
                     var reason = _characterRequirementsSystem.GetRequirementsText(reasons);
                     selector.LockRequirements(reason);
                     Profile = Profile?.WithAntagPreference(antag.ID, false);
@@ -1198,20 +1199,26 @@ namespace Content.Client.Lobby.UI
                     icon.Texture = jobIcon.Icon.Frame0();
                     selector.Setup(items, job.LocalizedName, 200, job.LocalizedDescription, icon, job.Guides);
 
+                    var requirements = job.Requirements ?? new();
+                    var context = _characterRequirementsSystem.GetProfileContext(Profile)
+                        .WithSelectedJob(job)
+                        .WithPrototype(job);
+
                     if (!_requirements.CheckJobWhitelist(job, out var reason))
                         selector.LockRequirements(reason);
-                    else if (!_characterRequirementsSystem.CheckRequirementsValid(
-                         job.Requirements ?? new(),
-                         job,
-                         Profile ?? HumanoidCharacterProfile.DefaultWithSpecies(),
-                         _requirements.GetRawPlayTimeTrackers(),
-                         _requirements.IsWhitelisted(),
-                         job,
-                         _entManager,
-                         _prototypeManager,
-                         _cfgManager,
-                         out var reasons))
+                    else if (!_characterRequirementsSystem.CheckRequirementsValid(requirements,
+                        context,
+                        _entManager,
+                        _prototypeManager,
+                        _cfgManager))
+                    {
+                        var reasons = _characterRequirementsSystem.GetReasons(requirements,
+                            context,
+                            _entManager,
+                            _prototypeManager,
+                            _cfgManager);
                         selector.LockRequirements(_characterRequirementsSystem.GetRequirementsText(reasons));
+                    }
                     else
                         selector.UnlockRequirements();
 
@@ -1332,20 +1339,26 @@ namespace Content.Client.Lobby.UI
                     icon.Texture = jobIcon.Icon.Frame0();
                     selector.Setup(items, job.LocalizedName, 200, job.LocalizedDescription, icon);
 
+                    var requirements = job.Requirements ?? new();
+                    var context = _characterRequirementsSystem.GetProfileContext(Profile)
+                        .WithSelectedJob(job)
+                        .WithPrototype(job);
+
                     if (!_requirements.CheckJobWhitelist(job, out var reason))
                         selector.LockRequirements(reason);
-                    else if (!_characterRequirementsSystem.CheckRequirementsValid(
-                        job.Requirements ?? new(),
-                        job,
-                        Profile ?? HumanoidCharacterProfile.DefaultWithSpecies(),
-                        _requirements.GetRawPlayTimeTrackers(),
-                        _requirements.IsWhitelisted(),
-                        job,
+                    else if (!_characterRequirementsSystem.CheckRequirementsValid(requirements,
+                        context,
                         _entManager,
                         _prototypeManager,
-                        _cfgManager,
-                        out var reasons))
+                        _cfgManager))
+                    {
+                        var reasons = _characterRequirementsSystem.GetReasons(requirements,
+                            context,
+                            _entManager,
+                            _prototypeManager,
+                            _cfgManager);
                         selector.LockRequirements(_characterRequirementsSystem.GetRequirementsText(reasons));
+                    }
                     else
                         selector.UnlockRequirements();
 
@@ -1385,22 +1398,20 @@ namespace Content.Client.Lobby.UI
         /// DeltaV - Make sure that no invalid job priorities get through
         private void EnsureJobRequirementsValid()
         {
+            var context = _characterRequirementsSystem.GetProfileContext(Profile);
+
             foreach (var (jobId, selector) in _jobPriorities)
             {
                 var proto = _prototypeManager.Index<JobPrototype>(jobId);
+                var requirements = proto.Requirements ?? new();
+
                 if ((JobPriority) selector.Selected == JobPriority.Never
                     || _requirements.CheckJobWhitelist(proto, out _)
-                    || _characterRequirementsSystem.CheckRequirementsValid(
-                        proto.Requirements ?? new(),
-                        proto,
-                        Profile ?? HumanoidCharacterProfile.DefaultWithSpecies(),
-                        _requirements.GetRawPlayTimeTrackers(),
-                        _requirements.IsWhitelisted(),
-                        proto,
+                    || _characterRequirementsSystem.CheckRequirementsValid(requirements,
+                        context.WithSelectedJob(proto).WithPrototype(proto),
                         _entManager,
                         _prototypeManager,
-                        _cfgManager,
-                        out _))
+                        _cfgManager))
                     continue;
 
                 selector.Select((int) JobPriority.Never);
@@ -2421,23 +2432,16 @@ namespace Content.Client.Lobby.UI
 
 
             // Get the highest priority job to use for trait filtering
-            var highJob = _controller.GetPreferredJob(Profile ?? HumanoidCharacterProfile.DefaultWithSpecies());
+            var context = _characterRequirementsSystem.GetProfileContext(Profile);
 
             _traits.Clear();
             foreach (var trait in _prototypeManager.EnumeratePrototypes<TraitPrototype>())
             {
-                var usable = _characterRequirementsSystem.CheckRequirementsValid(
-                    trait.Requirements,
-                    highJob,
-                    Profile ?? HumanoidCharacterProfile.DefaultWithSpecies(),
-                    _requirements.GetRawPlayTimeTrackers(),
-                    _requirements.IsWhitelisted(),
-                    trait,
+                var usable = _characterRequirementsSystem.CheckRequirementsValid(trait.Requirements,
+                    context.WithPrototype(trait),
                     _entManager,
                     _prototypeManager,
-                    _cfgManager,
-                    out _
-                );
+                    _cfgManager);
                 _traits.Add(trait, usable);
 
                 if (_traitPreferences.FindIndex(lps => lps.Trait.ID == trait.ID) is not (not -1 and var i))
@@ -2516,8 +2520,12 @@ namespace Content.Client.Lobby.UI
                 }
 
                 var selector = new TraitPreferenceSelector(
-                    trait, highJob, Profile ?? HumanoidCharacterProfile.DefaultWithSpecies(),
-                    _entManager, _prototypeManager, _cfgManager, _characterRequirementsSystem, _requirements);
+                    trait,
+                    Profile ?? HumanoidCharacterProfile.DefaultWithSpecies(),
+                    _entManager,
+                    _prototypeManager,
+                    _cfgManager,
+                    _characterRequirementsSystem);
                 selector.Valid = usable;
                 selector.ShowUnusable = showUnusable.Value;
                 AddSelector(selector);

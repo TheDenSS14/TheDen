@@ -7,7 +7,6 @@
 // SPDX-FileCopyrightText: 2023 TemporalOroboros
 // SPDX-FileCopyrightText: 2023 Visne
 // SPDX-FileCopyrightText: 2023 deltanedas
-// SPDX-FileCopyrightText: 2023 deltanedas <@deltanedas:kde.org>
 // SPDX-FileCopyrightText: 2024 AJCM-git
 // SPDX-FileCopyrightText: 2024 Bakke
 // SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT
@@ -287,7 +286,7 @@ public sealed partial class PolymorphSystem : EntitySystem
         if (configuration.Inventory == PolymorphInventoryChange.Transfer)
         {
             
-            if (HasComp<InventoryComponent>(child))
+            if (HasComp<InventoryComponent>(uid) && HasComp<InventoryComponent>(child))
                 _inventory.TransferEntityInventories(uid, child);
 
             foreach (var hand in _hands.EnumerateHeld(uid))
