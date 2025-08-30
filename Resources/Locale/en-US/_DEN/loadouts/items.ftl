@@ -24,6 +24,7 @@ loadout-name-LoadoutClothingOuterCoatBomberWhiteLoose = lightweight bomber jacke
 
 # innerclothing
 loadout-name-LoadoutClothingUniformBootyShorts = booty shorts (colorable)
+loadout-name-LoadoutClothingUniformSimplePants = simple pants (colorable)
 
 # hands
 loadout-name-LoadoutClothingHandsSentimentalRing = sentimental ring (colorable)
