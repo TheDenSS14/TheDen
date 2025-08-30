@@ -348,7 +348,7 @@
 - type: entity
   id: CigaretteSpaceDrugs
   parent: SoakedCigarette
-  name: 80's Power Hour
+  name: "'80s Power Hour" # TheDen - Apostrophe goes before the year, not after
   components:
   - type: SolutionContainerManager
     solutions:
