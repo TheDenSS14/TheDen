@@ -112,3 +112,89 @@
     flavorKind: station-event-random-sentience-flavor-inanimate
     weight: 0.0002 # 5,000 times less likely than 1 regular animal
   - type: BlockMovement
+
+# Paramedic Siren Hat Start
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatParamedicSiren
+  name: caduceus cap
+  description: "A futuristic cap for first responders with an integrated siren system. Requires batteries."
+  components:
+  - type: Sprite
+    sprite: _Impstation/Clothing/Head/Hats/paramedicsirencap.rsi
+    layers:
+      - state: icon
+      - state: icon-light
+        visible: false
+        shader: unshaded
+        map: [ "light" ]
+  - type: Appearance
+  - type: Clothing
+    sprite: _Impstation/Clothing/Head/Hats/paramedicsirencap.rsi
+    equippedPrefix: off
+  - type: ItemToggle
+    predictable: false
+    onUse: false
+    soundActivate:
+      path: /Audio/Items/flashlight_on.ogg
+    soundDeactivate:
+      path: /Audio/Items/flashlight_off.ogg
+    soundFailToActivate:
+      path: /Audio/Machines/button.ogg
+  - type: ItemToggleActiveSound
+    activeSound:
+      path: /Audio/_Impstation/Effects/Vehicle/ambulancesiren.ogg
+      params:
+        volume: -3
+  - type: UseDelay
+    delay: 1.0
+  - type: ToggleClothing
+    action: ActionToggleCaduceusCap
+  - type: ItemTogglePointLight
+  - type: ToggleableLightVisuals
+    spriteLayer: light
+    clothingVisuals:
+      head:
+      - state: on-equipped-HELMET
+  - type: PointLight
+    enabled: false
+    radius: 1.4
+    energy: 1.8
+    color: deepskyblue
+    netsync: false
+    mask: /Textures/Effects/LightMasks/double_cone.png
+  - type: RotatingLight
+    speed: 360
+  - type: PowerCellSlot
+    cellSlotId: cell_slot
+  - type: ContainerContainer
+    containers:
+      cell_slot: !type:ContainerSlot
+  - type: ItemSlots
+    slots:
+      cell_slot:
+        name: power-cell-slot-component-slot-name-default
+        startingItem: PowerCellSmall
+  - type: PowerCellDraw
+    drawRate: 1
+  - type: ToggleCellDraw
+
+- type: entity
+  parent: ClothingHeadHatParamedicSiren
+  id: ClothingHeadHatParamedicSirenEmpty
+  suffix: Empty
+  components:
+  - type: ItemSlots
+    slots:
+      cell_slot:
+        name: power-cell-slot-component-slot-name-default
+
+- type: entity
+  id: ActionToggleCaduceusCap
+  name: Toggle Caduceus Cap
+  description: Turn the siren on or off.
+  components:
+  - type: InstantAction
+    itemIconStyle: BigItem
+    event: !type:ToggleActionEvent
+# Paramedic Siren Hat End

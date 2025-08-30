@@ -270,3 +270,35 @@
     - !type:CharacterJobRequirement
       jobs:
         - Brigmedic
+
+- type: loadout
+  id: LoadoutSecurityHeadHelmetSecuritySiren
+  category: JobsSecurityAUncategorized
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSecurityHead
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Security
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - HeadOfSecurity # No boss needs this silly thing
+  items:
+    - ClothingHeadHelmetSecuritySiren
+
+- type: loadout
+  id: LoadoutSecurityOuterArmorBasicCompact
+  category: JobsSecurityAUncategorized
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSecurityOuter
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Security
+  items:
+    - ClothingOuterArmorBasicCompact
