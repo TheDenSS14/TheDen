@@ -8,7 +8,7 @@
 # SPDX-FileCopyrightText: 2025 sheepie
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: entity
   save: false
@@ -74,26 +74,36 @@
     templateId: human
     displacements:
       jumpsuit:
-          sizeMaps:
-            32:
-              sprite: _DEN/Mobs/Species/Ovinia/displacement.rsi
-              state: jumpsuit
+        sizeMaps:
+          32:
+            sprite: _DEN/Mobs/Species/Ovinia/displacement.rsi
+            state: jumpsuit
       shoes:
         sizeMaps:
           32:
             sprite: _DEN/Mobs/Species/Ovinia/displacement.rsi
             state: shoes
+      outerClothing:
+        sizeMaps:
+          32:
+            sprite: _DEN/Mobs/Species/Ovinia/displacement.rsi
+            state: outerclothing_hardsuit
     femaleDisplacements:
       jumpsuit:
         sizeMaps:
           32:
-            sprite: Mobs/Species/Human/displacement.rsi
+            sprite: _DEN/Mobs/Species/Ovinia/displacement.rsi
             state: jumpsuit-female
       shoes:
         sizeMaps:
           32:
             sprite: _DEN/Mobs/Species/Ovinia/displacement.rsi
             state: shoes
+      outerClothing:
+        sizeMaps:
+          32:
+            sprite: _DEN/Mobs/Species/Ovinia/displacement.rsi
+            state: outerclothing_hardsuit
   - type: Flammable
     fireStackIncreaseMultiplier: .75 #wool isnt flammable
   - type: Hunger
@@ -128,14 +138,24 @@
           32:
             sprite: _DEN/Mobs/Species/Ovinia/displacement.rsi
             state: shoes
+      outerClothing:
+        sizeMaps:
+          32:
+            sprite: _DEN/Mobs/Species/Ovinia/displacement.rsi
+            state: outerclothing_hardsuit
     femaleDisplacements:
       jumpsuit:
         sizeMaps:
           32:
-            sprite: Mobs/Species/Human/displacement.rsi
+            sprite: _DEN/Mobs/Species/Ovinia/displacement.rsi
             state: jumpsuit-female
       shoes:
         sizeMaps:
           32:
             sprite: _DEN/Mobs/Species/Ovinia/displacement.rsi
             state: shoes
+      outerClothing:
+        sizeMaps:
+          32:
+            sprite: _DEN/Mobs/Species/Ovinia/displacement.rsi
+            state: outerclothing_hardsuit
