@@ -87,6 +87,9 @@
       path: /Audio/Misc/zip.ogg
     openSound:
       path: /Audio/Misc/zip.ogg
+    whitelist:
+      components:
+      - Body
   - type: EntityStorageLayingDownOverride
   - type: PaperLabel
     labelSlot:
