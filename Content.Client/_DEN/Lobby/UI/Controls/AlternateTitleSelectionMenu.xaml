@@ -5,8 +5,18 @@
     MinSize="300 300"
     SetSize="300 300">
 
-    <ScrollContainer Name="Titles">
-        <!-- Job titles are added via code. -->
-    </ScrollContainer>
+    <PanelContainer VerticalExpand="True" HorizontalExpand="True">
+        <ScrollContainer Name="Titles"
+                         HorizontalExpand="True"
+                         HorizontalAlignment="Stretch"
+                         VerticalExpand="True"
+                         VerticalAlignment="Stretch"
+                         VScrollEnabled="True" >
+            <!-- Job titles are added via code. -->
+            <PanelContainer Name="TitlesContainer"
+                            VerticalExpand="True"
+                            HorizontalExpand="True" />
+        </ScrollContainer>
+    </PanelContainer>
 </ui:FancyWindow>
 

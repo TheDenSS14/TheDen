@@ -148,6 +148,8 @@ namespace Content.Client.Lobby.UI
         private readonly CharacterRequirementsSystem _characterRequirementsSystem;
         private readonly LobbyUIController _controller;
         private readonly IRobustRandom _random;
+        private readonly ILogManager _logManager;
+        private readonly ISawmill _sawmill;
 
         private FlavorText.FlavorText? _flavorText;
         private BoxContainer _ccustomspecienamecontainerEdit => CCustomSpecieName;
@@ -218,7 +220,8 @@ namespace Content.Client.Lobby.UI
             IResourceManager resManager,
             JobRequirementsManager requirements,
             MarkingManager markings,
-            IRobustRandom random
+            IRobustRandom random,
+            ILogManager logManager
             )
         {
             RobustXamlLoader.Load(this);
@@ -232,6 +235,8 @@ namespace Content.Client.Lobby.UI
             _resManager = resManager;
             _requirements = requirements;
             _random = random;
+            _logManager = logManager;
+            _sawmill = _logManager.GetSawmill("humanoid-profile-editor");
 
             _characterRequirementsSystem = _entManager.System<CharacterRequirementsSystem>();
             _controller = UserInterfaceManager.GetUIController<LobbyUIController>();
@@ -1409,7 +1414,10 @@ namespace Content.Client.Lobby.UI
 
         private void CreateTitlesWindow(JobPrototype job, AlternateJobTitlePrototype? titles)
         {
-            if (titles is not { } titlePrototype)
+            if (Profile == null)
+                return;
+
+            if (titles is null)
                 return;
 
             if (_titleSelectionMenu != null)
@@ -1418,7 +1426,9 @@ namespace Content.Client.Lobby.UI
                 _titleSelectionMenu = null;
             }
 
-            _titleSelectionMenu = new(job, titlePrototype)
+            Profile.JobTitles.TryGetValue(job.ID, out var selectedTitle);
+
+            _titleSelectionMenu = new(job, titles, _sawmill, selectedTitle)
             {
                 Title = job.LocalizedName
             };
@@ -1456,7 +1466,8 @@ namespace Content.Client.Lobby.UI
             if (Profile is null)
                 return;
 
-            Profile?.WithJobTitle(job.ID, newTitle ?? string.Empty );
+            _sawmill.Info("OnAlternateTitleChanged: " + newTitle ?? "No title");
+            Profile?.WithJobTitle(job.ID, newTitle ?? string.Empty);
             SetDirty();
         }
 

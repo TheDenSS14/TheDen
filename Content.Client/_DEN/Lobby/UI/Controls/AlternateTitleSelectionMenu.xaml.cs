@@ -21,6 +21,7 @@ public sealed partial class AlternateTitleSelectionMenu : FancyWindow
 
     public AlternateTitleSelectionMenu(JobPrototype job,
         AlternateJobTitlePrototype titlesPrototype,
+        ISawmill sawmill,
         string? selectedAlternateTitle = null)
     {
         RobustXamlLoader.Load(this);
@@ -30,26 +31,27 @@ public sealed partial class AlternateTitleSelectionMenu : FancyWindow
 
         foreach (var titleId in buttons)
         {
+            sawmill.Info(titleId);
             var title = GetButtonText(job, titleId);
 
             if (selectedAlternateTitle != null && titleId == selectedAlternateTitle)
+            {
+                sawmill.Info($"Selected alternate title is: {selectedAlternateTitle}");
                 continue;
+            }
 
             var button = new Button
             {
-                Text = title
+                Text = title,
+                MaxHeight = 30
             };
 
             button.OnPressed += _ => OnSelectedAlternateTitleChanged?.Invoke(titleId);
-            Titles.AddChild(button);
+            TitlesContainer.AddChild(button);
+            Titles.InvalidateMeasure();
         }
     }
 
-    private string GetButtonText(JobPrototype job, string titleId)
-    {
-        if (titleId == job.ID)
-            return job.LocalizedName;
-
-        return Loc.GetString(titleId);
-    }
+    private string GetButtonText(JobPrototype job, string titleId) =>
+        titleId == job.ID ? job.LocalizedName : Loc.GetString(titleId);
 }
