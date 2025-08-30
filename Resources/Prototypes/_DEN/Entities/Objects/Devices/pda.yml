@@ -20,3 +20,26 @@
     state: pda-centcom
   - type: PdaBorderColor
     borderColor: "#00842e"
+
+- type: entity
+  parent: CentcomPDA 
+  id: NanorepPDA
+  name: nanotrasen representative PDA
+  description: This PDA contains the fanciest pen on the station, which will write words no one will ever read.
+  components:
+  - type: Pda
+    id: NanorepIDCard
+    state: pda-centcom
+    penSlot:
+      startingItem: PenCentcom
+      whitelist:
+        tags:
+        - Write
+  - type: Icon
+    sprite: Objects/Devices/pda.rsi
+    state: pda-centcom
+  - type: Sprite
+    sprite: Objects/Devices/pda.rsi
+    state: pda-centcom
+  - type: PdaBorderColor
+    borderColor: "#00842e"
