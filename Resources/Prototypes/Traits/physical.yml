@@ -386,7 +386,7 @@
     - !type:CharacterHeightRequirement
       max: 150
     - !type:CharacterWidthRequirement
-      max: 32
+      max: 36
   functions:
     - !type:TraitAddComponent
       components:
@@ -414,7 +414,7 @@
     - !type:CharacterHeightRequirement
       max: 160 # Looser requirement because thaven minHeight is 5'3" (160cm) but it's a fun trait
     - !type:CharacterWidthRequirement
-      max: 36 # Looser requirement so thaven don't have to be crackhead skinny to take it, they're already narrow
+      max: 36
   functions:
     - !type:TraitAddComponent
       components:
