@@ -24,7 +24,7 @@ def main(filepaths, license, max_threads):
                     tqdm.write("=" * 5 + f" End of output for {filepath} " + "=" * 5)
                     buffer.close()
                 except Exception as e:
-                    tqdm.write(f"Error processing {filepath}: {e}")
+                    tqdm.write(f"Error processing file {filepath}: {e}")
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Updating headers on files added, modified, or renamed by this commit")
@@ -36,12 +36,13 @@ if __name__ == "__main__":
     args = parser.parse_args()
     commit = args.commit_hash
 
-    buffer, commit_license = get_license_from_commit(commit, thread_safe=True)
-    files_from_commit_buffer, filepaths = get_files_from_commit(commit, thread_safe=True)
-    files_from_commit_buffer.seek(0)
-    buffer.write(files_from_commit_buffer.read())
-    buffer.seek(0)
-    print(buffer.read(), end="")
-    main(filepaths, commit_license, max_threads=MAX_WORKERS)
-    print(colout("^"*76, "finished")) # could be done with shutil but eh who cares
-    print(colout(f"Finished updating headers based on: {commit}", "finished"))
+    try:
+        commit_license = get_license_from_commit(commit)
+        filepaths = get_files_from_commit(commit)
+        print(colout(processing := f"Processing files from: {commit}", "main"))
+        print(colout("-" * len(processing), "main"))
+        main(filepaths, commit_license, max_threads=MAX_WORKERS)
+        print(colout(finished := f"Finished updating headers based on: {commit}", "main"))
+        print(colout("-" * len(finished), "main"))
+    except Exception as e:
+        print(colout(f"Error processing commit {commit}: {e}", "error"))
