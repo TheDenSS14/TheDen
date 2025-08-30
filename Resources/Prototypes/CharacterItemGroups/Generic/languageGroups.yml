@@ -73,8 +73,6 @@
     - type: trait
       id: PirateAccent
     - type: trait
-      id: Accentless
-    - type: trait
       id: NoContractionsAccent
     - type: trait
       id: Southern
@@ -98,6 +96,17 @@
       id: StiltedSpeech
     - type: trait
       id: Monotonous
+    - type: trait
+      id: GoblinAccent
+    - type: trait
+      id: ItalianAccent
+#    - type: trait
+#      id: Accentless
+#    - type: trait
+#      id: ProperCapitalizationAccent
+#    - type: trait
+#      id: ProperPunctuationAccent
+# These three don't complexify your speech and shouldn't count toward the two-only limit
 
 - type: characterItemGroup
   id: TraitsLanguagesTajaran

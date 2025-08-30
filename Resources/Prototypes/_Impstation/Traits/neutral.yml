@@ -1,6 +1,7 @@
 - type: trait
   id: StiltedSpeech
   category: TraitsSpeechAccents
+  slots: 0
   points: 0
   requirements:
     - !type:CharacterItemGroupRequirement
@@ -13,6 +14,7 @@
 - type: trait
   id: NoContractionsAccent
   category: TraitsSpeechAccents
+  slots: 0
   points: 0
   requirements:
     - !type:CharacterItemGroupRequirement
@@ -21,3 +23,29 @@
     - !type:TraitAddComponent
       components:
         - type: NoContractionsAccent
+
+- type: trait
+  id: ProperCapitalizationAccent
+  category: TraitsSpeechAccents
+  slots: 0
+  points: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: TraitsAccents
+  functions:
+    - !type:TraitAddComponent
+      components:
+        - type: ProperCapitalizationAccent
+
+- type: trait
+  id: ProperPunctuationAccent
+  category: TraitsSpeechAccents
+  slots: 0
+  points: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: TraitsAccents
+  functions:
+    - !type:TraitAddComponent
+      components:
+        - type: ProperPunctuationAccent
