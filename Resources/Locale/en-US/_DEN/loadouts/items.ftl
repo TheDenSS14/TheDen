@@ -4,7 +4,7 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 # mask
-loadout-name-LoadoutClothingMaskBreathSleek = sleek breath mask (colorable)
+loadout-name-LoadoutClothingMaskBreathFashion = fashion breath mask (colorable)
 
 # neck
 loadout-name-LoadoutNeckScarfColorable = scarf (colorable)
