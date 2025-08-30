@@ -73,3 +73,26 @@
     sprite: _DEN/Clothing/Mask/clown_ancient.rsi
   - type: Clothing
     sprite: _DEN/Clothing/Mask/clown_ancient.rsi
+
+- type: entity
+  parent: ClothingMaskPullableBase
+  id: ClothingMaskBreathSleek
+  name: sleek breath mask
+  description: A stylish and comfortable breath mask.
+  components:
+  - type: Item
+    size: Tiny
+  - type: Sprite
+    sprite: _DEN/Clothing/Mask/breathsleek.rsi
+  - type: Clothing
+    sprite: _DEN/Clothing/Mask/breathsleek.rsi
+  - type: BreathMask
+  - type: IngestionBlocker
+  - type: Tag
+    tags:
+    - PetWearable
+    - WhitelistChameleon
+  - type: HideLayerClothing
+    slots:
+    - Snout
+    hideOnToggle: true
