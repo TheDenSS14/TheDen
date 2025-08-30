@@ -35,17 +35,4 @@
   functions:
     - !type:TraitAddComponent
       components:
-        - type: ProperCapitalizationAccent
-
-- type: trait
-  id: ProperPunctuationAccent
-  category: TraitsSpeechAccents
-  slots: 0
-  points: 0
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: TraitsAccents
-  functions:
-    - !type:TraitAddComponent
-      components:
-        - type: ProperPunctuationAccent
+        - type: ProperCapitalization
