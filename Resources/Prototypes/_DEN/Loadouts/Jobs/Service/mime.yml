@@ -120,3 +120,17 @@
     - !type:CharacterJobRequirement
       jobs:
         - Mime
+
+- type: loadout
+  id: LoadoutServiceMimeOuterPuffer
+  category: JobsServiceMime
+  cost: 0
+  customColorTint: true
+  items:
+    -  ClothingOuterCoatPufferMime
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMimeBackpacks
+    - !type:CharacterJobRequirement
+      jobs:
+        - Mime
