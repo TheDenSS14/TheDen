@@ -237,10 +237,12 @@
   - ClothingOuterHardsuitCombatStandard
   - ClothingOuterHardsuitCombatMedical
   - ClothingOuterHardsuitCombatRiot
-  - ClothingOuterHardsuitCombatAdvanced
-  - ClothingOuterHardsuitShanlinUnpainted
-  - ClothingOuterHardsuitShiweiUnpainted
-  - ClothingOuterHardsuitJuggernautReverseEngineered
+  # DEN - Disable Cybersun tacsuits to lock behind reverse engineering
+  # - ClothingOuterHardsuitCombatAdvanced
+  # - ClothingOuterHardsuitShanlinUnpainted
+  # - ClothingOuterHardsuitShiweiUnpainted
+  # - ClothingOuterHardsuitJuggernautReverseEngineered
+  # DEN
   - WeaponMechCombatImmolationGun
   - WeaponMechCombatSolarisLaser
   - WeaponMechCombatFiredartLaser

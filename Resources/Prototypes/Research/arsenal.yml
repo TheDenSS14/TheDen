@@ -217,23 +217,25 @@
 
 # Tier 3
 
-- type: technology
-  id: PrototypeTacsuits
-  name: research-technology-prototype-tacsuits
-  icon:
-    sprite: Nyanotrasen/Clothing/OuterClothing/ReverseEngineering/syndicate.rsi
-    state: icon
-  discipline: Arsenal
-  tier: 3
-  cost: 25000
-  recipeUnlocks:
-  - ClothingOuterHardsuitCombatAdvanced
-  - ClothingOuterHardsuitShanlinUnpainted
-  - ClothingOuterHardsuitShiweiUnpainted
-  - ClothingOuterHardsuitJuggernautReverseEngineered
-  technologyPrerequisites:
-  - AdvancedTacsuits
-  softCapContribution: 1.5
+# DEN - Disable Cybersun tacsuits to lock behind reverse engineering
+# - type: technology
+#   id: PrototypeTacsuits
+#   name: research-technology-prototype-tacsuits
+#   icon:
+#     sprite: Nyanotrasen/Clothing/OuterClothing/ReverseEngineering/syndicate.rsi
+#     state: icon
+#   discipline: Arsenal
+#   tier: 3
+#   cost: 25000
+#   recipeUnlocks:
+#   - ClothingOuterHardsuitCombatAdvanced
+#   - ClothingOuterHardsuitShanlinUnpainted
+#   - ClothingOuterHardsuitShiweiUnpainted
+#   - ClothingOuterHardsuitJuggernautReverseEngineered
+#   technologyPrerequisites:
+#   - AdvancedTacsuits
+#   softCapContribution: 1.5
+# DEN
 
 - type: technology
   id: LaserTurrets
