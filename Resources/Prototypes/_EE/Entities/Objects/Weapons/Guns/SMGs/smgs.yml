@@ -97,10 +97,11 @@
             - CartridgeCaselessRifle
 
 - type: entity
-  name: BRDI R-25
+  name: BRDI R-20
   parent: [BaseWeaponSubMachineGun, BaseGunWieldable]
   id: WeaponSubMachineGunBRDIR25
-  description: An iconic weapon used by members of the Biesel Republic Foreign Legion. As a pride and joy of the colonies, it represents freedom from the tyranny of the Sol Alliance. It is chambered in .25 Caseless Rifle.
+  # DEN - Recase to .20
+  description: An iconic weapon used by members of the Biesel Republic Foreign Legion. As a pride and joy of the colonies, it represents freedom from the tyranny of the Sol Alliance. It is chambered in .20 Rifle.
   components:
   - type: Sprite
     sprite: _EE/Objects/Weapons/Guns/SMGs/BRDI_R25.rsi
@@ -147,29 +148,31 @@
     slots:
       gun_magazine:
         name: Magazine
-        startingItem: MagazineCaselessRifle
+        startingItem: MagazineRifle
         insertSound: /Audio/Weapons/Guns/MagIn/smg_magin.ogg
         ejectSound: /Audio/Weapons/Guns/MagOut/smg_magout.ogg
         priority: 2
         whitelist:
           tags:
-            - MagazineCaselessRifle
+            - MagazineRifle
       gun_chamber:
         name: Chamber
-        startingItem: CartridgeCaselessRifle
+        startingItem: CartridgeRifle
         priority: 1
         whitelist:
           tags:
-            - CartridgeCaselessRifle
-  - type: ExtendDescription
-    descriptionList:
-      - description: "gun-suppressed"
-        fontSize: 10
-        color: "#ff4f00"
-        requireDetailRange: false
+            - CartridgeRifle
+  # DEN - Remove surpressor
+  # - type: ExtendDescription
+  #   descriptionList:
+  #     - description: "gun-suppressed"
+  #       fontSize: 10
+  #       color: "#ff4f00"
+  #       requireDetailRange: false
+  # DEN
 
 - type: entity
-  name: antique BRDI R-25
+  name: antique BRDI R-20
   parent: WeaponSubMachineGunBRDIR25
   id: WeaponSubMachineGunBRDIR25HoS
   description: Once wielded by an unknown member of the Biesel Foreign Legion, this beloved rifle has seen battle with Sol on every world in the colonies.
