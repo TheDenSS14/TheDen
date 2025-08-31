@@ -3,6 +3,58 @@
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
+# Uncatogorized
+# Backpacks
+- type: loadout
+  id: LoadoutClothingBackpackMessengerCentcomm
+  category: JobsCommandNanorep
+  cost: 0
+  exclusive: true
+  canBeHeirloom: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutNanorepBackpacks
+    - !type:CharacterJobRequirement
+      jobs:
+      - NanotrasenRepresentative
+  items:
+    - ClothingBackpackMessengerCentcomm
+
+# Belt
+
+# Ears
+
+- type: loadout
+  id: LoadoutClothingHeadsetCentCom
+  category: JobsCommandNanorep
+  cost: 0
+  exclusive: true
+  canBeHeirloom: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutNanorepHeadset
+    - !type:CharacterJobRequirement
+      jobs:
+      - NanotrasenRepresentative
+  items:
+    - ClothingHeadsetCentCom
+
+- type: loadout
+  id: LoadoutClothingHeadsetAltCentCom
+  category: JobsCommandNanorep
+  cost: 0
+  exclusive: true
+  canBeHeirloom: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutNanorepHeadset
+    - !type:CharacterJobRequirement
+      jobs:
+      - NanotrasenRepresentative
+  items:
+    - ClothingHeadsetAltCentCom
+
+# Equipment
 - type: loadout
   id: LoadoutTowelCentcom
   category: JobsCommandNanorep
@@ -16,7 +68,129 @@
     - TowelColorCentcom
 
 - type: loadout
-  id: LoadoutClothingBackpackMessengerCentcomm
+  id: LoadoutBoxFolderCentComClipboard
+  category: JobsCommandNanorep
+  cost: 2
+  canBeHeirloom: true
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+      - NanotrasenRepresentative
+  items:
+    - BoxFolderCentComClipboard
+
+# Eyes
+
+# Gloves
+
+# Head
+- type: loadout
+  id: LoadoutClothingHeadHatBeretCentcomm
+  category: JobsCommandNanorep
+  cost: 0
+  canBeHeirloom: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutNanorepHead
+    - !type:CharacterJobRequirement
+      jobs:
+      - NanotrasenRepresentative
+  items:
+    - ClothingHeadHatBeretCentcomm
+
+- type: loadout
+  id: LoadoutClothingHeadHatCentcom
+  category: JobsCommandNanorep
+  cost: 0
+  canBeHeirloom: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutNanorepHead
+    - !type:CharacterJobRequirement
+      jobs:
+      - NanotrasenRepresentative
+  items:
+    - ClothingHeadHatCentcom
+
+- type: loadout
+  id: LoadoutClothingHeadHatCentcomcap
+  category: JobsCommandNanorep
+  cost: 0
+  canBeHeirloom: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutNanorepHead
+    - !type:CharacterJobRequirement
+      jobs:
+      - NanotrasenRepresentative
+  items:
+    - ClothingHeadHatCentcomcap
+
+# Neck
+
+- type: loadout
+  id: LoadoutClothingNeckCollarCC
+  category: JobsCommandNanorep
+  cost: 0
+  canBeHeirloom: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutNanorepNeck
+    - !type:CharacterJobRequirement
+      jobs:
+      - NanotrasenRepresentative
+  items:
+    - ClothingNeckCollarCC
+
+- type: loadout
+  id: LoadoutClothingNeckScarfStripedCentcom
+  category: JobsCommandNanorep
+  cost: 0
+  canBeHeirloom: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutNanorepNeck
+    - !type:CharacterJobRequirement
+      jobs:
+      - NanotrasenRepresentative
+  items:
+    - ClothingNeckScarfStripedCentcom
+
+# Mask
+
+- type: loadout
+  id: LoadoutClothingMaskGasCentcom
+  category: JobsCommandNanorep
+  cost: 0
+  canBeHeirloom: true
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+      - NanotrasenRepresentative
+  items:
+    - ClothingMaskGasCentcom
+
+# Outer
+
+- type: loadout
+  id: LoadoutClothingOuterWinterCentcom
+  category: JobsCommandNanorep
+  cost: 0
+  exclusive: true
+  canBeHeirloom: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutNanorepOuter
+    - !type:CharacterJobRequirement
+      jobs:
+      - NanotrasenRepresentative
+  items:
+    - ClothingOuterWinterCentcom
+
+# Shoes
+
+- type: loadout
+  id: LoadoutClothingShoesBootsWinterCentCom
   category: JobsCommandNanorep
   cost: 0
   exclusive: true
@@ -26,4 +200,36 @@
       jobs:
       - NanotrasenRepresentative
   items:
-    - ClothingBackpackMessengerCentcomm
+    - ClothingShoesBootsWinterCentCom
+
+# Uniforms
+
+- type: loadout
+  id: LoadoutClothingUniformJumpskirtCentcomFormalDress
+  category: JobsCommandNanorep
+  cost: 0
+  exclusive: true
+  canBeHeirloom: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutNanorepUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+      - NanotrasenRepresentative
+  items:
+    - ClothingUniformJumpskirtCentcomFormalDress
+
+- type: loadout
+  id: LoadoutClothingUniformJumpsuitCentcomFormal
+  category: JobsCommandNanorep
+  cost: 0
+  exclusive: true
+  canBeHeirloom: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutNanorepUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+      - NanotrasenRepresentative
+  items:
+    - ClothingUniformJumpsuitCentcomFormal
