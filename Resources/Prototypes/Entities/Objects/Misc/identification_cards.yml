@@ -59,10 +59,12 @@
 # SPDX-FileCopyrightText: 2024 chavonadelal
 # SPDX-FileCopyrightText: 2024 degradka
 # SPDX-FileCopyrightText: 2024 deltanedas
+# SPDX-FileCopyrightText: 2025 Blitz
 # SPDX-FileCopyrightText: 2025 BlitzTheSquishy
 # SPDX-FileCopyrightText: 2025 Rosycup
 # SPDX-FileCopyrightText: 2025 Tobias Berger
 # SPDX-FileCopyrightText: 2025 Will-Oliver-Br
+# SPDX-FileCopyrightText: 2025 portfiend
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
@@ -441,8 +443,8 @@
     - state: subdepartment
       color: "#58C800"
     - state: chaplain
-    - type: PresetIdCard
-      job: Chaplain
+  - type: PresetIdCard
+    job: Chaplain
 
 - type: entity
   parent: IDCardStandard
@@ -1097,7 +1099,7 @@
       color: "#CB0000"
     - state: subdepartment
       color: "#CB0000"
-    - state: cc
+    - state: cburn
   - type: Item
     heldPrefix: blue
   - type: PresetIdCard

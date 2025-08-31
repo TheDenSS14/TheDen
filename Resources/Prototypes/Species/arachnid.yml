@@ -42,7 +42,7 @@
     HeadTop: MobHumanoidAnyMarking
     HeadSide: MobHumanoidAnyMarking
     Tail: MobHumanoidAnyMarking
-    Eyes: MobArachnidEyes
+    Eyes: MobHumanoidAnyMarking # Imp - Lets them choose eyes
     LArm: MobArachnidLArm
     RArm: MobArachnidRArm
     LHand: MobArachnidLHand
@@ -62,6 +62,10 @@
   id: MobArachnidMarkingLimits
   onlyWhitelisted: true
   points:
+    Eyes: # Imp - Lets them choose eyes
+      points: 1
+      required: true
+      defaultMarkings: [ ArachnidEyesDefault ]
     Hair:
       points: 0
       required: false

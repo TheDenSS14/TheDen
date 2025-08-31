@@ -1,18 +1,19 @@
-// SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT <77995199+DEATHB4DEFEAT@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 sleepyyapril <flyingkarii@gmail.com>
-// SPDX-FileCopyrightText: 2025 Remuchi <72476615+Remuchi@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 Skubman <ba.fallaria@gmail.com>
-// SPDX-FileCopyrightText: 2025 Timfa <timfalken@hotmail.com>
-// SPDX-FileCopyrightText: 2025 VMSolidus <evilexecutive@gmail.com>
-// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT
+// SPDX-FileCopyrightText: 2025 Remuchi
+// SPDX-FileCopyrightText: 2025 Skubman
+// SPDX-FileCopyrightText: 2025 Timfa
+// SPDX-FileCopyrightText: 2025 VMSolidus
+// SPDX-FileCopyrightText: 2025 portfiend
+// SPDX-FileCopyrightText: 2025 sleepyyapril
 //
-// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+// SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 using System.Linq;
 using Content.Shared.Body.Systems;
 using Content.Shared.Clothing.Components;
 using Content.Shared.Clothing.Loadouts.Prototypes;
 using Content.Shared.Customization.Systems;
+using Content.Shared.Customization.Systems._DEN;
 using Content.Shared.Inventory;
 using Content.Shared.Paint;
 using Content.Shared.Preferences;
@@ -34,7 +35,7 @@ public sealed class SharedLoadoutSystem : EntitySystem
     [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly InventorySystem _inventory = default!;
     [Dependency] private readonly IConfigurationManager _configuration = default!;
-    [Dependency] private readonly CharacterRequirementsSystem _characterRequirements = default!;
+    [Dependency] private readonly SharedCharacterRequirementsSystem _characterRequirements = default!;
     [Dependency] private readonly SharedAppearanceSystem _appearance = default!;
     [Dependency] private readonly SharedTransformSystem _sharedTransformSystem = default!;
     [Dependency] private readonly ILogManager _log = default!;
@@ -67,10 +68,11 @@ public sealed class SharedLoadoutSystem : EntitySystem
         HumanoidCharacterProfile profile,
         Dictionary<string, TimeSpan> playTimes,
         bool whitelisted,
-        out List<(EntityUid, LoadoutPreference)> heirlooms)
+        out List<(EntityUid, LoadoutPreference)> heirlooms,
+        ICommonSession? player = null)
     {
         var jobPrototype = _prototype.Index(job);
-        return ApplyCharacterLoadout(uid, jobPrototype, profile, playTimes, whitelisted, out heirlooms);
+        return ApplyCharacterLoadout(uid, jobPrototype, profile, playTimes, whitelisted, out heirlooms, player);
     }
 
     /// <summary>
@@ -89,7 +91,8 @@ public sealed class SharedLoadoutSystem : EntitySystem
         HumanoidCharacterProfile profile,
         Dictionary<string, TimeSpan> playTimes,
         bool whitelisted,
-        out List<(EntityUid, LoadoutPreference)> heirlooms)
+        out List<(EntityUid, LoadoutPreference)> heirlooms,
+        ICommonSession? player = null)
     {
         var failedLoadouts = new List<EntityUid>();
         var allLoadouts = new List<(EntityUid, LoadoutPreference, int)>();
@@ -105,10 +108,18 @@ public sealed class SharedLoadoutSystem : EntitySystem
             if (!_prototype.TryIndex<LoadoutPrototype>(loadout.LoadoutName, out var loadoutProto))
                 continue;
 
-            if (!_characterRequirements.CheckRequirementsValid(
-                loadoutProto.Requirements, job, profile, playTimes, whitelisted, loadoutProto,
-                EntityManager, _prototype, _configuration,
-                out _))
+            var context = new CharacterRequirementContext(selectedJob: job,
+                profile: profile,
+                playtimes: playTimes,
+                whitelisted: whitelisted,
+                prototype: loadoutProto,
+                player: player);
+
+            if (!_characterRequirements.CheckRequirementsValid(loadoutProto.Requirements,
+                context,
+                EntityManager,
+                _prototype,
+                _configuration))
                 continue;
 
             // Spawn the loadout items
@@ -126,7 +137,7 @@ public sealed class SharedLoadoutSystem : EntitySystem
                 }
 
                 allLoadouts.Add((item, loadout, i));
-                if (i == 0 && loadout.CustomHeirloom == true) // Only the first item can be an heirloom
+                if (loadout.CustomHeirloom == true) // DEN - Any number of heirlooms
                     heirlooms.Add((item, loadout));
 
                 // Equip it
@@ -175,6 +186,11 @@ public sealed class SharedLoadoutSystem : EntitySystem
             }
         }
 
+        // DEN - This sux but this fix is needed before we blow up loadouts
+        heirlooms = heirlooms
+            .Where(h => !TerminatingOrDeleted(h.Item1))
+            .ToList();
+
         // Return a list of items that couldn't be equipped so the server can handle it if it wants
         // The server has more information about the inventory system than the client does and the client doesn't need to put loadouts in backpacks
         return (failedLoadouts, allLoadouts);
@@ -218,6 +234,23 @@ public sealed partial class LoadoutPreference : Loadout
         string? customColorTint = null,
         bool? customHeirloom = null
     ) : base(loadoutName, customName, customDescription, customColorTint, customHeirloom) { }
+
+    public override bool Equals(object? obj)
+    {
+        if (obj is not LoadoutPreference other)
+            return false;
+
+        return LoadoutName == other.LoadoutName
+            && CustomName == other.CustomName
+            && CustomDescription == other.CustomDescription
+            && CustomHeirloom == other.CustomHeirloom
+            && CustomColorTint == other.CustomColorTint;
+    }
+
+    public override int GetHashCode()
+    {
+        return HashCode.Combine(LoadoutName, CustomName, CustomDescription, CustomHeirloom, CustomColorTint);
+    }
 }
 
 /// <summary>

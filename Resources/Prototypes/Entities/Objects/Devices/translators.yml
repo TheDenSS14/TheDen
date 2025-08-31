@@ -51,7 +51,7 @@
   components:
   - type: ItemToggle
   - type: PowerCellDraw
-    drawRate: 1.2
+    drawRate: 0 # The Den: make it not 0 when the issues with them are fixed
   - type: ToggleCellDraw
   - type: ItemSlots
     slots:
@@ -65,11 +65,11 @@
   parent: [ PowerCellSlotMediumItem, TranslatorPoweredBase ]
   suffix: Powered
 
-# Normal translator with a high power cell and special appearance
+# Normal translator with a special appearance
 - type: entity
   categories: [ HideSpawnMenu ]
   id: TranslatorForeigner
-  parent: [ PowerCellSlotHighItem, TranslatorPoweredBase ]
+  parent: [ PowerCellSlotMediumItem, TranslatorPoweredBase ]
   name: foreigner's translator
   description: A special-issue translator that helps foreigner's speak and understand this station's primary language.
 

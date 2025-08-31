@@ -27,14 +27,11 @@
     templateId: digitigrade
     displacements:
       jumpsuit:
-        layer:
-          sprite: Mobs/Species/Harpy/displacement.rsi
-          state: jumpsuit
-          copyToShaderParameters:
-            # Value required, provide a dummy. Gets overridden when applied.
-            layerKey: dummy
-            parameterTexture: displacementMap
-            parameterUV: displacementUV
+        sizeMaps:
+          32:
+            sprite: Mobs/Species/Harpy/displacement.rsi
+            state: jumpsuit
+
 
 - type: entity
   save: false
@@ -106,7 +103,7 @@
     understands:
     - TauCetiBasic
     - ValyrianStandard
-  - type: StepTriggerImmune
+  - type: ProtectedFromStepTriggers
     whitelist:
       types:
       - Shard

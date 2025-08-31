@@ -107,3 +107,21 @@
   chatTriggers:
   - hornk
   - hornks
+
+- type: emote
+  id: ThumpGeneral
+  name: chat-emote-name-thump-general
+  icon: Interface/Emotes/tailslap.png # TODO: find better-fitting icon
+  whitelist:
+    tags:
+    - RodentiaEmotes
+    - UnathiEmotes
+  blacklist:
+    components:
+    - BorgChassis
+  chatMessages: ["chat-emote-msg-thump-general"]
+  chatTriggers:
+    - thump
+    - thumps
+    - thumping
+    - thumped

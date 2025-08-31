@@ -26,9 +26,6 @@
         - MedicalBorg
     - !type:CharacterLogicOrRequirement
       requirements:
-        - !type:CharacterSpeciesRequirement
-          species:
-            - Shadowkin # Innate Psionics
         - !type:CharacterTraitRequirement
           traits:
             - LatentPsychic
@@ -52,6 +49,7 @@
       species:
         - Oni
         - Kitsune # Floof - M3739 - #937 - They already have an equivalent.
+        - Shadowkin
     - !type:CharacterTraitRequirement
       inverted: true
       traits:

@@ -251,6 +251,8 @@
         id: BalloonCorgi
       - !type:EntSelector
         id: MysteryFigureBox
+      - !type:EntSelector
+        id: MysterySpaceBladeBox
       # Cult
       - !type:AllSelector
         children:
@@ -347,6 +349,8 @@
         id: ClothingUniformJumpsuitFamilyGuy
       - !type:EntSelector
         id: WristwatchGold
+      - !type:EntSelector
+        id: GoldenPersonalAI
 
 - type: entity
   name: Maint Loot Spawner

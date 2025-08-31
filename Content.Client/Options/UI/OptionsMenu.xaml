@@ -16,7 +16,6 @@ SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 <DefaultWindow xmlns="https://spacestation14.io"
             xmlns:tabs="clr-namespace:Content.Client.Options.UI.Tabs"
-            xmlns:etabs="clr-namespace:Content.Client._DEN.Options.UI.Tabs"
             Title="{Loc 'ui-options-title'}"
             MinSize="800 450">
     <TabContainer Name="Tabs" Access="Public">
@@ -25,6 +24,5 @@ SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
         <tabs:KeyRebindTab Name="KeyRebindTab" />
         <tabs:AudioTab Name="AudioTab" />
         <tabs:NetworkTab Name="NetworkTab" />
-        <etabs:ExtraTab Name="ExtraTab" /> <!-- Den -->
     </TabContainer>
 </DefaultWindow>

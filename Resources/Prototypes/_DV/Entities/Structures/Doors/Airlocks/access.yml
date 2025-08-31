@@ -40,7 +40,7 @@
       board: [ DoorElectronicsMantis ]
 
 - type: entity
-  parent: AirlockCommand
+  parent: AirlockChiefJustice # The Den - airlocks resprite
   id: AirlockChiefJusticeLocked
   suffix: Chief Justice, Locked
   components:
@@ -49,7 +49,7 @@
       board: [ DoorElectronicsChiefJustice ]
 
 - type: entity
-  parent: AirlockCommandGlass
+  parent: AirlockChiefJusticeGlass # The Den - airlocks resprite
   id: AirlockChiefJusticeGlassLocked
   suffix: ChiefJustice, Locked
   components:
@@ -113,7 +113,7 @@
 
 # Maintenance
 - type: entity
-  parent: AirlockMaint
+  parent: AirlockMaintJustice # The Den - airlock resprite
   id: AirlockMaintChiefJusticeLocked
   suffix: ChiefJustice, Locked
   components:
@@ -122,7 +122,7 @@
       board: [ DoorElectronicsChiefJustice ]
 
 - type: entity
-  parent: AirlockMaint
+  parent: AirlockMaintJustice # The Den - airlock resprite
   id: AirlockMaintJusticeLocked
   suffix: Justice, Locked
   components:
@@ -131,7 +131,7 @@
       board: [ DoorElectronicsJustice ]
 
 - type: entity
-  parent: AirlockMaint
+  parent: AirlockMaintJustice # The Den - airlock resprite
   id: AirlockMaintProsecutorLocked
   suffix: Prosecutor, Locked
   components:
@@ -140,7 +140,7 @@
       board: [ DoorElectronicsProsecutor ]
 
 - type: entity
-  parent: AirlockMaint
+  parent: AirlockMaintJustice # The Den - airlock resprite
   id: AirlockMaintClerkLocked
   suffix: Clerk, Locked
   components:
@@ -149,7 +149,7 @@
       board: [ DoorElectronicsClerk ]
 
 - type: entity
-  parent: AirlockSecurity
+  parent: AirlockCorpsman # The Den - airlock resprite
   id: AirlockCorpsmanLocked
   suffix: Corpsman, Locked
   components:
@@ -158,7 +158,7 @@
       board: [ DoorElectronicsCorpsman ]
 
 - type: entity
-  parent: AirlockSecurityGlass
+  parent: AirlockCorpsmanGlass # The Den - airlock resprite
   id: AirlockCorpsmanGlassLocked
   suffix: Corpsman, Locked
   components:
@@ -185,7 +185,7 @@
 
 #Add airlocks from upstream roles
 - type: entity
-  parent: Airlock
+  parent: AirlockService # The Den - airlock resprite
   id: AirlockBoxerLocked
   suffix: Boxer, Locked
   components:
@@ -194,7 +194,7 @@
       board: [ DoorElectronicsBoxer ]
 
 - type: entity
-  parent: Airlock
+  parent: AirlockService # The Den - airlock resprite
   id: AirlockClownLocked
   suffix: Clown, Locked
   components:
@@ -203,7 +203,7 @@
       board: [ DoorElectronicsClown ]
 
 - type: entity
-  parent: Airlock
+  parent: AirlockService # The Den - airlock resprite
   id: AirlockMimeLocked
   suffix: Mime, Locked
   components:
@@ -212,7 +212,7 @@
       board: [ DoorElectronicsMime ]
 
 - type: entity
-  parent: Airlock
+  parent: AirlockService # The Den - airlock resprite
   id: AirlockMusicianLocked
   suffix: Musician, Locked
   components:
@@ -221,7 +221,7 @@
       board: [ DoorElectronicsMusician ]
 
 - type: entity
-  parent: Airlock
+  parent: AirlockService # The Den - airlock resprite
   id: AirlockReporterLocked
   suffix: Reporter, Locked
   components:
@@ -230,7 +230,7 @@
       board: [ DoorElectronicsReporter ]
 
 - type: entity
-  parent: Airlock
+  parent: AirlockScience # The Den - cataloger is part of epistemics
   id: AirlockLibraryLocked
   suffix: Library, Locked
   components:
@@ -239,7 +239,7 @@
       board: [ DoorElectronicsLibrary ]
 
 - type: entity
-  parent: Airlock
+  parent: AirlockService # The Den - airlock resprite
   id: AirlockZookeeperLocked
   suffix: Zookeeper, Locked
   components:
@@ -267,7 +267,7 @@
 
 # Glass Airlocks
 - type: entity
-  parent: AirlockGlass
+  parent: AirlockServiceGlass # The Den - airlock resprite
   id: AirlockBoxerGlassLocked
   suffix: Boxer, Locked
   components:
@@ -276,7 +276,7 @@
       board: [ DoorElectronicsBoxer ]
 
 - type: entity
-  parent: AirlockGlass
+  parent: AirlockServiceGlass # The Den - airlock resprite
   id: AirlockClownGlassLocked
   suffix: Clown, Locked
   components:
@@ -285,7 +285,7 @@
       board: [ DoorElectronicsClown ]
 
 - type: entity
-  parent: AirlockGlass
+  parent: AirlockServiceGlass # The Den - airlock resprite
   id: AirlockMimeGlassLocked
   suffix: Mime, Locked
   components:
@@ -294,7 +294,7 @@
       board: [ DoorElectronicsMime ]
 
 - type: entity
-  parent: AirlockGlass
+  parent: AirlockServiceGlass # The Den - airlock resprite
   id: AirlockMusicianGlassLocked
   suffix: Musician, Locked
   components:
@@ -303,7 +303,7 @@
       board: [ DoorElectronicsMusician ]
 
 - type: entity
-  parent: AirlockGlass
+  parent: AirlockServiceGlass # The Den - airlock resprite
   id: AirlockReporterGlassLocked
   suffix: Reporter, Locked
   components:
@@ -312,7 +312,7 @@
       board: [ DoorElectronicsReporter ]
 
 - type: entity
-  parent: AirlockGlass
+  parent: AirlockScienceGlass # The Den - cataloger is part of epistemics
   id: AirlockLibraryGlassLocked
   suffix: Library, Locked
   components:
@@ -321,7 +321,7 @@
       board: [ DoorElectronicsLibrary ]
 
 - type: entity
-  parent: AirlockGlass
+  parent: AirlockServiceGlass # The Den - airlock resprite
   id: AirlockZookeeperGlassLocked
   suffix: Zookeeper, Locked
   components:
@@ -358,7 +358,7 @@
 
 # Maintenance Hatches
 - type: entity
-  parent: AirlockMaint
+  parent: AirlockMaintService # The Den - airlock resprite
   id: AirlockMaintBoxerLocked
   suffix: Boxer, Locked
   components:
@@ -367,7 +367,7 @@
       board: [ DoorElectronicsBoxer ]
 
 - type: entity
-  parent: AirlockMaint
+  parent: AirlockMaintService # The Den - airlock resprite
   id: AirlockMaintClownLocked
   suffix: Clown, Locked
   components:
@@ -376,7 +376,7 @@
       board: [ DoorElectronicsClown ]
 
 - type: entity
-  parent: AirlockMaint
+  parent: AirlockMaintService # The Den - airlock resprite
   id: AirlockMaintMimeLocked
   suffix: Mime, Locked
   components:
@@ -385,7 +385,7 @@
       board: [ DoorElectronicsMime ]
 
 - type: entity
-  parent: AirlockMaint
+  parent: AirlockMaintService # The Den - airlock resprite
   id: AirlockMaintMusicianLocked
   suffix: Musician, Locked
   components:
@@ -394,7 +394,7 @@
       board: [ DoorElectronicsMusician ]
 
 - type: entity
-  parent: AirlockMaint
+  parent: AirlockMaintService # The Den - airlock resprite
   id: AirlockMaintReporterLocked
   suffix: Reporter, Locked
   components:
@@ -403,7 +403,7 @@
       board: [ DoorElectronicsReporter ]
 
 - type: entity
-  parent: AirlockMaint
+  parent: AirlockMaintScience # The Den - airlock resprite
   id: AirlockMaintLibraryLocked
   suffix: Library, Locked
   components:
@@ -412,7 +412,7 @@
       board: [ DoorElectronicsLibrary ]
 
 - type: entity
-  parent: AirlockMaint
+  parent: AirlockMaintService # The Den - airlock resprite
   id: AirlockMaintZookeeperLocked
   suffix: Zookeeper, Locked
   components:
@@ -421,7 +421,7 @@
       board: [ DoorElectronicsZookeeper ]
 
 - type: entity
-  parent: AirlockMaint
+  parent: AirlockMaintMedical # The Den - airlock resprite
   id: AirlockMaintPsychologistLocked
   suffix: Psychologist, Locked
   components:
@@ -430,7 +430,7 @@
       board: [ DoorElectronicsPsychologist ]
 
 - type: entity
-  parent: AirlockMaint
+  parent: AirlockMaintJustice # The Den - airlock resprite
   id: AirlockMaintSecurityLawyerLocked
   suffix: Security/Lawyer, Locked
   components:

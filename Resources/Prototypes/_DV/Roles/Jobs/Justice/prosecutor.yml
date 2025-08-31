@@ -23,6 +23,9 @@
   - Justice
   - Security
   - Maintenance
+  special:
+  - !type:AddImplantSpecial
+    implants: [ MindShieldImplant ]
 
 - type: startingGear
   id: ProsecutorGear
@@ -34,7 +37,7 @@
     back: ClothingBackpackLawyerFilled
     shoes: ClothingShoesBootsLaceup
     id: ProsecutorPDA
-    ears: ClothingHeadsetSecurity
+    ears: ClothingHeadsetJustice
     # TODO add copy of space law
   inhand:
     - BriefcaseBrownFilled

@@ -29,6 +29,7 @@ species-name-vox = Vox
 species-name-ipc = IPC
 species-name-shadowkin = Shadowkin
 species-name-plasmaman = Plasmaman
+species-name-thaven = Thaven
 
 ## Misc species things
 

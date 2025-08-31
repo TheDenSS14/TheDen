@@ -399,7 +399,7 @@
   parent: BasePlushie
   id: PlushieLizard #Weh!
   name: lizard plushie
-  description: An adorable stuffed toy that resembles a lizardperson. Made by CentCom as a token initiative to combat speciesism in work environments. "Welcome your new colleagues as you do this plush, with open arms!"
+  description: An adorable stuffed toy that resembles a lizardperson. Made by CentComm as a token initiative to combat speciesism in work environments. "Welcome your new colleagues as you do this plush, with open arms!"
   components:
   - type: Sprite
     sprite: Objects/Fun/toys.rsi
@@ -519,7 +519,7 @@
   parent: BasePlushie
   id: PlushieSpaceLizard #ᵂᵉʰ!
   name: space lizard plushie
-  description: An adorable stuffed toy that resembles a lizardperson in an EVA suit. Made by CentCom as a token initiative to combat speciesism in space environments. "Welcome your new colleges as you do this plush, with open arms!"
+  description: An adorable stuffed toy that resembles a lizardperson in an EVA suit. Made by CentComm as a token initiative to combat speciesism in space environments. "Welcome your new colleges as you do this plush, with open arms!"
   components:
   - type: Item
     heldPrefix: spacelizard
@@ -1972,7 +1972,11 @@
         Blunt: 0
   - type: Item
     size: Normal
-    sprite: Objects/Weapons/Melee/cutlass.rsi
+    storedSprite:
+      state: foam_storage
+      sprite: Objects/Weapons/Melee/cutlass.rsi
+    shape:
+    - 0,0,0,2
 
 - type: entity
   parent: BaseItem
@@ -2287,16 +2291,16 @@
     damage: 0.8
   - type: EmitSoundOnActivate
     sound:
-      collection: Grimble
+      collection: ToySqueak
   - type: EmitSoundOnUse
     sound:
-      path: /Audio/Items/Toys/grimbleactive.ogg
+      collection: ToySqueak
   - type: EmitSoundOnCollide
     sound:
-      collection: Grimble
+      collection: ToySqueak
   - type: EmitSoundOnLand
     sound:
-      collection: Grimble
+      collection: ToySqueak
   - type: UseDelay
     delay: 1.5
   - type: MeleeWeapon
@@ -2306,11 +2310,11 @@
       types:
         Blunt: 0
     soundHit:
-      collection: Grimble
+      collection: ToySqueak
     soundSwing:
-      collection: Grimble
+      collection: ToySqueak
     soundNoDamage:
-      collection: Grimble
+      collection: ToySqueak
 
 - type: entity
   parent: BasePlushie

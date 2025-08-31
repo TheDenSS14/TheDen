@@ -13,7 +13,6 @@ using Robust.Shared.Utility;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Numerics;
-using Vector4 = Robust.Shared.Maths.Vector4;
 
 namespace Content.Client.Power;
 
@@ -507,7 +506,7 @@ public sealed class PowerMonitoringButton : Button
         };
 
         MainContainer.AddChild(NameLocalized);
-        
+
         BatteryLevel = new ProgressBar()
         {
             SetWidth = 47f,

@@ -47,7 +47,7 @@
     HeadSide: MobSlimeMarkingFollowSkin
     Tail: MobSlimeMarkingFollowSkin
     Wings: MobSlimeMarkingFollowSkin
-    Eyes: MobHumanoidEyes
+    Eyes: MobHumanoidAnyMarking # Imp - Lets them choose eyes
     LArm: MobSlimeLArm
     RArm: MobSlimeRArm
     LHand: MobSlimeLHand
@@ -60,6 +60,10 @@
 - type: markingPoints
   id: MobSlimeMarkingLimits
   points:
+    Eyes: # Imp - Lets them choose eyes
+      points: 1
+      required: true
+      defaultMarkings: [ SlimeEyesDefault ]
     Hair:
       points: 1
       required: false

@@ -61,3 +61,66 @@
     damage:
       types:
         Piercing: 8
+
+- type: entity
+  id: BoxFolderFireproof
+  parent: BoxFolderBase
+  name: fireproof folder
+  description: A folder made to resist the dangers of fire.
+  components:
+  - type: ContentProtection
+  - type: ExplosionResistance
+    damageCoefficient: 0
+  - type: Sprite
+    sprite: Objects/Misc/bureaucracy.rsi
+    layers:
+    - state: folder-fireproof
+    - state: folder-base
+
+- type: entity
+  id: BoxFolderAA
+  parent: BoxFolderFireproof
+  name: administrative assistant's compact folder
+  description: The pinnacle of bureaucratic innovation, implementing bluespace tech to assist the station's strongest pen warrior in their paperwork endeavors. Holster for a pen included!
+  components:
+  - type: ContentProtection
+  - type: ExplosionResistance
+    damageCoefficient: 0
+  - type: Item
+    sprite: Objects/Misc/bureaucracy.rsi
+    size: Tiny
+    shape: null
+  - type: Storage
+    maxItemSize: Small
+    grid:
+    - 0,0,14,4
+    whitelist:
+      tags:
+      - Document
+  - type: Sprite
+    sprite: Objects/Misc/bureaucracy.rsi
+    layers:
+    - state: folder-aa
+    - state: folder-base
+  - type: ContainerContainer
+    containers:
+      storagebase: !type:Container
+        ents: [ ]
+      pen_slot: !type:ContainerSlot { }
+  - type: ItemSlots
+    slots:
+      pen_slot:
+        name: folder-slot-component-slot-name-pen
+        whitelist:
+          tags:
+          - Write
+  - type: ItemMapper
+    mapLayers:
+      folder-overlay-paper:
+        whitelist:
+          tags:
+          - Document
+      folder-aa-overlay-pen:
+        whitelist:
+          tags:
+          - Write

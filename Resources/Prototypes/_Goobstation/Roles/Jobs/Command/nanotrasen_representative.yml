@@ -10,7 +10,7 @@
 - type: job
   id: NanotrasenRepresentative
   name: Nanotrasen Representative
-  description: "Represent NT, send reports back to them on the station's situation, inform the heads of anything CentCom orders them to do."
+  description: "Represent NT, send reports back to them on the station's situation, inform the heads of anything CentComm orders them to do."
   playTimeTracker: JobNanotrasenRepresentative
   requirements:
     - !type:CharacterDepartmentTimeRequirement
@@ -21,6 +21,7 @@
   icon: "JobIconNanotrasenRepresentative"
   requireAdminNotify: true
   joinNotifyCrew: true
+  whitelisted: true
   supervisors: job-supervisors-centcom
   canBeAntag: false
   accessGroups:
@@ -38,7 +39,7 @@
   - !type:ModifyEnvirosuitSpecial
     charges: 8
   - !type:ModifyEnvirohelmSpecial
-    powerCell: PowerCellHigh
+    powerCell: PowerCellMedium
 
 - type: startingGear
   id: NanotrasenRepresentativeGear

@@ -5,7 +5,7 @@
 # SPDX-FileCopyrightText: 2025 portfiend
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 # Mime masks
 - type: loadout
@@ -88,6 +88,15 @@
   cost: 0
   items:
     - NetworkConfigurator
+
+- type: loadout
+  id: LoadoutCentcommPin
+  category: GeneralItems
+  cost: 0
+  requirements:
+  - !type:CharacterAdminRequirement
+  items:
+  - ClothingNeckCentCommPin
 
 - type: loadout
   id: LoadoutPlushieGrim
@@ -186,6 +195,14 @@
     - PlushieOvinia
 
 - type: loadout
+  id: LoadoutPlushieThaven
+  category: GeneralToys
+  cost: 1
+  canBeHeirloom: true
+  items:
+    - PlushieThaven
+
+- type: loadout
   id: PlushieTeddyBear
   category: GeneralToys
   cost: 1
@@ -260,6 +277,39 @@
   canBeHeirloom: true
   items:
     - Clicker
+
+- type: loadout
+  id: LoadoutTailorsKnife
+  category: GeneralItems
+  cost: 2
+  canBeHeirloom: true
+  items:
+    - TailorsKnife
+
+- type: loadout
+  id: LoadoutNapsack
+  category: GeneralItems
+  cost: 3
+  items:
+  - ClothingBackpackNapsack
+
+- type: loadout
+  id: LoadoutClothingHandsSentimentalRing
+  category: GeneralItems
+  cost: 0
+  canBeHeirloom: true
+  customColorTint: true
+  items:
+    - ClothingHandsSentimentalRing
+
+- type: loadout
+  id: LoadoutClothingNeckSentimentalCollar
+  category: GeneralItems
+  cost: 0
+  canBeHeirloom: true
+  customColorTint: true
+  items:
+    - ClothingNeckSentimentalCollar
 
 # Towels
 - type: loadout
@@ -367,3 +417,19 @@
   cost: 1
   items:
     - TapeRecorderFilled
+
+# Instruments
+
+- type: loadout
+  id: LoadoutItemHandheldHarpInstrument
+  category: GeneralInstruments
+  cost: 2
+  items:
+    - HandheldHarpInstrument
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutInstrumentsAny
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Musician

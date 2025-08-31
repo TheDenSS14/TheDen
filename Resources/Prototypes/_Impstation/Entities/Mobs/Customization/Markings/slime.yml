@@ -35,10 +35,81 @@
   - sprite: _Impstation/Mobs/Customization/slime_parts.rsi
     state: brain
 
-- type: marking # TODO: If we ever figure out how to make markings use shaders, make this unshaded! For now, this at least gives the right impression.
+- type: marking
+  id: SlimeEyesDefault
+  bodyPart: Eyes
+  markingCategory: Eyes
+  speciesRestriction: [ SlimePerson ]
+  coloring:
+    default:
+      type:
+        !type:EyeColoring
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/slime_parts.rsi
+    state: eyes
+
+- type: marking
+  id: SlimeEyesDroopy
+  bodyPart: Eyes
+  markingCategory: Eyes
+  speciesRestriction: [ SlimePerson ]
+  coloring:
+    default:
+      type:
+        !type:EyeColoring
+        negative: false
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/slime_parts.rsi
+    state: droopy
+
+- type: marking
+  id: SlimeEyesDroopyGlowing
+  bodyPart: Eyes
+  markingCategory: Eyes
+  speciesRestriction: [ SlimePerson ]
+  coloring:
+    default:
+      type:
+        !type:EyeColoring
+        negative: false
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/slime_parts.rsi
+    state: droopyglow
+  shader: unshaded
+
+- type: marking
+  id: SlimeEyesCyclops
+  bodyPart: Eyes
+  markingCategory: Eyes
+  speciesRestriction: [ SlimePerson ]
+  coloring:
+    default:
+      type:
+        !type:EyeColoring
+        negative: false
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/slime_parts.rsi
+    state: cyclops
+
+- type: marking
+  id: SlimeEyesCyclopsGlowing
+  bodyPart: Eyes
+  markingCategory: Eyes
+  speciesRestriction: [ SlimePerson ]
+  coloring:
+    default:
+      type:
+        !type:EyeColoring
+        negative: false
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/slime_parts.rsi
+    state: cyclopsglow
+  shader: unshaded
+
+- type: marking
   id: SlimeEyeglow
   bodyPart: Eyes
-  markingCategory: Head
+  markingCategory: Eyes
   speciesRestriction: [SlimePerson]
   coloring:
     default:
@@ -65,10 +136,29 @@
   bodyPart: Chest
   markingCategory: Chest
   speciesRestriction: [SlimePerson]
-  followSkinColor: true
+  followSkinColor: false
+  coloring:
+    default:
+      type:
+        !type:EyeColoring
   sprites:
   - sprite: _Impstation/Mobs/Customization/slime_parts.rsi
     state: core
+
+- type: marking
+  id: SlimeCoreGlowing
+  bodyPart: Chest
+  markingCategory: Chest
+  speciesRestriction: [ SlimePerson ]
+  followSkinColor: false
+  coloring:
+    default:
+      type:
+        !type:EyeColoring
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/slime_parts.rsi
+    state: core
+  shader: unshaded
 
 - type: marking
   id: SlimeBonehead

@@ -28,13 +28,15 @@
 # SPDX-FileCopyrightText: 2024 lapatison
 # SPDX-FileCopyrightText: 2024 potato1234_x
 # SPDX-FileCopyrightText: 2024 slarticodefast
+# SPDX-FileCopyrightText: 2025 Eightballll
 # SPDX-FileCopyrightText: 2025 Hedera
 # SPDX-FileCopyrightText: 2025 Skubman
 # SPDX-FileCopyrightText: 2025 Tabitha
 # SPDX-FileCopyrightText: 2025 Tanix
+# SPDX-FileCopyrightText: 2025 eightballll
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 
 - type: flavor
@@ -683,11 +685,6 @@
   description: flavor-complex-ale
 
 - type: flavor
-  id: bloodmoon
-  flavorType: Complex
-  description: flavor-complex-blood-moon
-
-- type: flavor
   id: cola
   flavorType: Complex
   description: flavor-complex-cola
@@ -1201,7 +1198,7 @@
   id: love
   flavorType: Complex
   description: flavor-complex-love
-
+  
 - type: flavor
   id: trashy
   flavorType: Base

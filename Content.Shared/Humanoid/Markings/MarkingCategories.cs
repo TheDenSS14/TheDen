@@ -18,6 +18,7 @@ namespace Content.Shared.Humanoid.Markings
         Face,
         Hair,
         FacialHair,
+        Eyes, // Imp - Adds selectable eyes
         Head,
         HeadTop,
         HeadSide,
@@ -50,6 +51,7 @@ namespace Content.Shared.Humanoid.Markings
                 HumanoidVisualLayers.Face => MarkingCategories.Face,
                 HumanoidVisualLayers.Hair => MarkingCategories.Hair,
                 HumanoidVisualLayers.FacialHair => MarkingCategories.FacialHair,
+				HumanoidVisualLayers.Eyes => MarkingCategories.Eyes, // Imp - Adds selectable eyes
                 HumanoidVisualLayers.Head => MarkingCategories.Head,
                 HumanoidVisualLayers.HeadTop => MarkingCategories.HeadTop,
                 HumanoidVisualLayers.HeadSide => MarkingCategories.HeadSide,

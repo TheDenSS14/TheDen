@@ -20,4 +20,10 @@ public sealed partial class CCVars
     /// </summary>
     public static readonly CVarDef<string> DiscordNewRoundWebhook =
         CVarDef.Create("discord.new_round_webhook", string.Empty, CVar.SERVERONLY | CVar.CONFIDENTIAL);
+
+    /// <summary>
+    /// URL of the Discord webhook which will relay all ahelp messages.
+    /// </summary>
+    public static readonly CVarDef<string> DiscordFaxChannelId =
+        CVarDef.Create("discord.fax_channel_id", string.Empty, CVar.SERVERONLY | CVar.CONFIDENTIAL);
 }

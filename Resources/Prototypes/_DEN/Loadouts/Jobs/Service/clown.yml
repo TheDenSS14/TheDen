@@ -29,3 +29,19 @@
         - Clown
   items:
     - ClothingBackpackMessengerClown
+
+- type: loadout
+  id: LoadoutServiceClownMaskAncient
+  category: JobsServiceClown
+  cost: 0
+  exclusive: true
+  customColorTint: true
+  canBeHeirloom: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutClownMask
+    - !type:CharacterJobRequirement
+      jobs:
+        - Clown
+  items:
+    - ClothingMaskClownAncient

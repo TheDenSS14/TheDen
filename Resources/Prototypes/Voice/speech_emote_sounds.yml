@@ -158,6 +158,10 @@
       collection: MaleSigh
     Trill:
       collection: MaleTrill
+    ThumpGeneral:
+      path: /Audio/Voice/Reptilian/reptilian_tailthump.ogg # TODO: find non-tail thump
+      params:
+        variation: 0.125
 
 - type: emoteSounds
   id: FemaleReptilian
@@ -202,6 +206,10 @@
       collection: FemaleSigh
     Trill:
       collection: FemaleTrill
+    ThumpGeneral:
+      path: /Audio/Voice/Reptilian/reptilian_tailthump.ogg # TODO: find non-tail thump
+      params:
+        variation: 0.125
 
 - type: emoteSounds
   id: MaleSlime
@@ -293,9 +301,12 @@
     variation: 0.125
   sounds:
     Scream:
-      collection: SlimeMaleScreams
+      collection: ShadowkinMaleScreams
     Laugh:
-      collection: MaleLaugh
+      collection: ShadowkinMaleLaughs
+      params:
+        pitch: 1.02
+        variation: 0.08
     Sneeze:
       collection: MaleSneezes
     Cough:
@@ -335,9 +346,12 @@
     variation: 0.125
   sounds:
     Scream:
-      collection: SlimeFemaleScreams
+      collection: ShadowkinFemaleScreams
     Laugh:
-      collection: MaleLaugh
+      collection: ShadowkinFemaleLaughs
+      params:
+        pitch: 1.04
+        variation: 0.08
     Sneeze:
       collection: FemaleSneezes
     Cough:
@@ -560,6 +574,90 @@
       collection: Whistles
     Weh:
       collection: Weh
+
+- type: emoteSounds
+  id: MaleMoth
+  params:
+    variation: 0.125
+  sounds:
+    Buzz:
+      path: /Audio/Voice/Moth/moth_scream.ogg
+    Scream:
+      path: /Audio/Voice/Moth/moth_scream.ogg
+    Laugh:
+      path: /Audio/Voice/Moth/moth_laugh.ogg
+    Chitter:
+      path: /Audio/Voice/Moth/moth_chitter.ogg
+    Squeak:
+      path: /Audio/Voice/Moth/moth_squeak.ogg
+    Weh:
+      collection: Weh
+    Sneeze:
+      collection: MaleSneezes
+    Cough:
+      collection: MaleCoughs
+    CatMeow:
+      collection: CatMeows
+    CatHisses:
+      collection: CatHisses
+    MonkeyScreeches:
+      collection: MonkeyScreeches
+    RobotBeep:
+      collection: RobotBeeps
+    Yawn:
+      collection: MaleYawn
+    Snore:
+      collection: Snores
+    Honk:
+      collection: BikeHorn
+    Sigh:
+      collection: MaleSigh
+    Crying:
+      collection: MaleCry
+    Whistle:
+      collection: Whistles
+
+- type: emoteSounds
+  id: FemaleMoth
+  params:
+    variation: 0.125
+  sounds:
+    Buzz:
+      path: /Audio/Voice/Moth/moth_scream.ogg
+    Scream:
+      path: /Audio/Voice/Moth/moth_scream.ogg
+    Laugh:
+      path: /Audio/Voice/Moth/moth_laugh.ogg
+    Chitter:
+      path: /Audio/Voice/Moth/moth_chitter.ogg
+    Squeak:
+      path: /Audio/Voice/Moth/moth_squeak.ogg
+    Weh:
+      collection: Weh
+    Sneeze:
+      collection: FemaleSneezes
+    Cough:
+      collection: FemaleCoughs
+    CatMeow:
+      collection: CatMeows
+    CatHisses:
+      collection: CatHisses
+    MonkeyScreeches:
+      collection: MonkeyScreeches
+    RobotBeep:
+      collection: RobotBeeps
+    Yawn:
+      collection: FemaleYawn
+    Snore:
+      collection: Snores
+    Honk:
+      collection: BikeHorn
+    Sigh:
+      collection: FemaleSigh
+    Crying:
+      collection: FemaleCry
+    Whistle:
+      collection: Whistles
 
 - type: emoteSounds
   id: UnisexMoth
@@ -837,6 +935,8 @@
   sounds:
     Clap:
       collection: Claps
+    ClapSingle:
+      collection: ClapSingle
     Snap:
       collection: Snaps
       params:
@@ -852,6 +952,9 @@
   sounds:
     Clap:
       path: /Audio/Voice/Diona/diona_clap.ogg
+    # TODO: Replace this with a similar wood themed single clap
+    ClapSingle:
+      collection: ClapSingle
     Snap:
       path: /Audio/Voice/Diona/diona_snap.ogg
       params:
@@ -874,6 +977,8 @@
         variation: 0.125
     Clap:
       collection: Claps
+    ClapSingle:
+      collection: ClapSingle
     Snap:
       collection: Snaps
       params:

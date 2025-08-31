@@ -29,8 +29,10 @@
 # SPDX-FileCopyrightText: 2024 SimpleStation14
 # SPDX-FileCopyrightText: 2024 Whatstone
 # SPDX-FileCopyrightText: 2024 lzk
+# SPDX-FileCopyrightText: 2025 Eightballll
 # SPDX-FileCopyrightText: 2025 MajorMoth
 # SPDX-FileCopyrightText: 2025 Tabitha
+# SPDX-FileCopyrightText: 2025 eightballll
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
@@ -99,7 +101,7 @@
         orGroup: CigCarton2
       - id: CigCartonPurple # DeltaV
         prob: 0.33
-        orGroup: CigCarton3 
+        orGroup: CigCarton3
       - id: CigCartonCandy # DeltaV
         orGroup: CigCarton3
       - id: CigarGoldCase
@@ -134,6 +136,14 @@
     - id: BikeHorn
     - id: ClownRecorder
     - id: ClothingBeltSuspenders
+    # DEN - Impstation costume items
+    - id: ClothingHeadSailorCap
+    - id: ClothingNeckSailorAscot
+    - id: ClothingUniformSailorSuit
+    - id: ClothingMaskBurglar
+    - id: ClothingUniformBurglarJumpsuit
+    - id: ClothingUniformCavemanHides
+    # End DEN
 
 - type: entity
   id: CrateServiceCustomSmokable
@@ -170,6 +180,7 @@
     - id: BoxFolderRed
     - id: BoxFolderYellow
     - id: NewtonCradle
+    - id: BoxEnvelope
 
 - type: entity
   id: CrateServicePersonnel
@@ -262,6 +273,7 @@
       - id: DrinkVodkaBottleFull
       - id: DrinkWhiskeyBottleFull
       - id: DrinkWineBottleFull
+      - id: DrinkJaegermisterBottleFull
 
 - type: entity
   id: CrateServiceBox

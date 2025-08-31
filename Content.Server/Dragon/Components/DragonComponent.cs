@@ -53,7 +53,7 @@ namespace Content.Server.Dragon
         /// <summary>
         /// Maximum time the dragon can go without spawning a rift before they die.
         /// </summary>
-        [ViewVariables(VVAccess.ReadWrite), DataField("maxAccumulator")] public float RiftMaxAccumulator = 300f;
+        [ViewVariables(VVAccess.ReadWrite), DataField("maxAccumulator")] public float RiftMaxAccumulator = 420f;
 
         [DataField("spawnRiftAction", customTypeSerializer: typeof(PrototypeIdSerializer<EntityPrototype>))]
         public string SpawnRiftAction = "ActionSpawnRift";
@@ -96,7 +96,7 @@ namespace Content.Server.Dragon
         public EntProtoId CarpProtoId = "MobCarpDragon";
 
         [DataField]
-        public int CarpAmount = 3;
+        public int CarpAmount = 2;
 
         [DataField]
         public EntityUid? RoarActionEntity;

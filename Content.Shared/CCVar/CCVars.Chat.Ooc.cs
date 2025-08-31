@@ -1,5 +1,6 @@
-// SPDX-FileCopyrightText: 2025 VMSolidus <evilexecutive@gmail.com>
-// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Simon
+// SPDX-FileCopyrightText: 2025 VMSolidus
+// SPDX-FileCopyrightText: 2025 sleepyyapril
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -19,7 +20,7 @@ public sealed partial class CCVars
     ///     If true, whenever OOC is disabled the Discord OOC relay will also be disabled.
     /// </summary>
     public static readonly CVarDef<bool> DisablingOOCDisablesRelay =
-        CVarDef.Create("ooc.disabling_ooc_disables_relay", true, CVar.SERVERONLY);
+        CVarDef.Create("ooc.disabling_ooc_disables_relay", false, CVar.SERVERONLY);
 
     /// <summary>
     ///     Whether or not OOC chat should be enabled during a round.
@@ -29,4 +30,10 @@ public sealed partial class CCVars
 
     public static readonly CVarDef<bool> ShowOocPatronColor =
         CVarDef.Create("ooc.show_ooc_patron_color", true, CVar.ARCHIVE | CVar.REPLICATED | CVar.CLIENT);
+
+    /// <summary>
+    ///     The discord channel ID to send OOC messages to (also recieve them). This requires the Discord Integration to be enabled and configured.
+    /// </summary>
+    public static readonly CVarDef<string> OocDiscordChannelId =
+        CVarDef.Create("ooc.discord_channel_id", string.Empty, CVar.SERVERONLY);
 }

@@ -59,10 +59,12 @@
       id: Nehina
     - type: trait
       id: Kagebun
+    - type: trait
+      id: Aural
 
 - type: characterItemGroup
   id: TraitsAccents
-  maxItems: 1
+  maxItems: 2 # Den - Was 1
   items:
     - type: trait
       id: FrontalLisp
@@ -72,6 +74,8 @@
       id: PirateAccent
     - type: trait
       id: Accentless
+    - type: trait
+      id: NoContractionsAccent
     - type: trait
       id: Southern
     - type: trait
@@ -90,6 +94,8 @@
       id: SkeletonAccent
     - type: trait
       id: SharpInflection
+    - type: trait
+      id: StiltedSpeech
     - type: trait
       id: Monotonous
 
