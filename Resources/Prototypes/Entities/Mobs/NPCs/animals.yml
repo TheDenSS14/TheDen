@@ -1443,8 +1443,6 @@
   - type: Inventory
     templateId: monkey
     speciesId: monkey
-  - type: Deathgasp
-    prototype: MonkeyDeathgasp
   - type: Cuffable
   - type: RotationVisuals
     defaultRotation: 90
@@ -1512,9 +1510,6 @@
         clownedon:
           True: {visible: true}
           False: {visible: false}
-  - type: Body # Shitmed Change
-    prototype: Monkey
-    requiredLegs: 2
   - type: CreamPied
   - type: FireVisuals
     sprite: Mobs/Effects/onfire.rsi
@@ -1567,7 +1562,7 @@
       enum.StrippingUiKey.Key:
         type: StrippableBoundUserInterface
       enum.SurgeryUIKey.Key:
-        type: SurgeryBui
+        type: SurgeryBui #Shitmed
   - type: InventorySlots
 
 - type: entity
@@ -1592,6 +1587,11 @@
   - type: SentienceTarget
     flavorKind: station-event-random-sentience-flavor-primate
   - type: AlwaysRevolutionaryConvertible
+  - type: Deathgasp
+    prototype: MonkeyDeathgasp
+  - type: Body # Shitmed Change
+    prototype: Monkey
+    requiredLegs: 2
   - type: GhostRole
     prob: 0.05
     makeSentient: true
@@ -1614,7 +1614,7 @@
 - type: entity
   name: monkey
   id: MobBaseSyndicateMonkey
-  parent: MobBaseAncestor
+  parent: MobMonkey
   description: New church of neo-darwinists actually believe that EVERY animal evolved from a monkey. Tastes like pork, and killing them is both fun and relaxing.
   suffix: syndicate base
   components:
