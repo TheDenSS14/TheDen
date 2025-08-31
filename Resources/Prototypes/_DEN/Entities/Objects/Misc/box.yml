@@ -1,0 +1,11 @@
+﻿# a container that prevents its contents to ignite
+- type: entity
+  abstract: true
+  id: ContentsIgnitionPreventionBase
+  components:
+  - type: FireProtection
+    protectContents: true
+  # to show fire prevention examine
+  - type: GroupExamine
+  - type: Armor
+    modifiers: {}
