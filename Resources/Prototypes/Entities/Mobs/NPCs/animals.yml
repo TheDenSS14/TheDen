@@ -1462,11 +1462,6 @@
         - MobMask
         layer:
         - MobLayer
-  - type: Stripping
-  - type: UserInterface
-    interfaces:
-      enum.SurgeryUIKey.Key:
-        type: SurgeryBui
   - type: Sprite
     drawdepth: Mobs
     layers:
@@ -1567,6 +1562,15 @@
     - VimPilot
     - DoorBumpOpener
   - type: LeashAnchor # Floofstation
+  - type: Stripping # DEN
+  - type: Strippable # DEN
+  - type: UserInterface
+    interfaces:
+      enum.StrippingUiKey.Key:
+        type: StrippableBoundUserInterface
+      enum.SurgeryUIKey.Key:
+        type: SurgeryBui
+  - type: InventorySlots
 
 - type: entity
   name: monkey
