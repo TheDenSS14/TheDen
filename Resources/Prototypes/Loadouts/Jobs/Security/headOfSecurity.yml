@@ -110,19 +110,21 @@
   items:
     - WeaponShotgunBulldogHoS
 
-- type: loadout
-  id: LoadoutCommandHoSEnergySword
-  category: JobsSecurityHeadOfSecurity
-  cost: 0
-  canBeHeirloom: true
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutHeadOfSecurityWeapon
-    - !type:CharacterJobRequirement
-      jobs:
-        - HeadOfSecurity
-  items:
-    - EnergySwordHoS
+# DEN - Remove hardlight from security
+# - type: loadout
+#   id: LoadoutCommandHoSEnergySword
+#   category: JobsSecurityHeadOfSecurity
+#   cost: 0
+#   canBeHeirloom: true
+#   requirements:
+#     - !type:CharacterItemGroupRequirement
+#       group: LoadoutHeadOfSecurityWeapon
+#     - !type:CharacterJobRequirement
+#       jobs:
+#         - HeadOfSecurity
+#   items:
+#     - EnergySwordHoS
+# DEN
 
 - type: loadout
   id: LoadoutCommandHoSEnergyGun

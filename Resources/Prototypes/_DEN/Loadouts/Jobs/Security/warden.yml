@@ -21,19 +21,21 @@
   items:
     - Greatsword
 
-- type: loadout
-  id: LoadoutWardenEnergySword
-  category: JobsSecurityWarden
-  cost: 0
-  canBeHeirloom: true
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutWardenWeapons
-    - !type:CharacterJobRequirement
-      jobs:
-        - Warden
-  items:
-    - EnergySwordWarden
+# DEN - Remove hardlight from security
+# - type: loadout
+#   id: LoadoutWardenEnergySword
+#   category: JobsSecurityWarden
+#   cost: 0
+#   canBeHeirloom: true
+#   requirements:
+#     - !type:CharacterItemGroupRequirement
+#       group: LoadoutWardenWeapons
+#     - !type:CharacterJobRequirement
+#       jobs:
+#         - Warden
+#   items:
+#     - EnergySwordWarden
+# DEN
 
 - type: loadout
   id: LoadoutWardenKatana
