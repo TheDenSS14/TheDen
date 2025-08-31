@@ -239,6 +239,34 @@
     state: glowright
   shader: unshaded
 
+- type: marking # Optional heterochromia
+  id: ThavenLEye
+  bodyPart: Eyes
+  markingCategory: Head
+  speciesRestriction: [ Thaven ]
+  coloring:
+    default:
+      type:
+        !type:EyeColoring
+          negative: false
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/Thaven/eyes.rsi
+    state: glowleft
+
+- type: marking # Optional heterochromia
+  id: ThavenREye
+  bodyPart: Eyes
+  markingCategory: Head
+  speciesRestriction: [ Thaven ]
+  coloring:
+    default:
+      type:
+        !type:EyeColoring
+          negative: false
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/Thaven/eyes.rsi
+    state: glowright
+
 # RArm
 
 - type: marking
