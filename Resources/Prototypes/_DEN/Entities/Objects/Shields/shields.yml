@@ -10,6 +10,20 @@
   id: EnergyShieldWarden
   description: Even though it is a relic of a past conflict, this energy shield is in pristine condition.
   components:
+  - type: Sprite
+    sprite: Objects/Weapons/Melee/e_shield.rsi
+    layers:
+      - state: eshield-icon
+      - state: eshield-on
+        color: "#ff0000"
+        visible: false
+        shader: unshaded
+        map: [ "shield" ]
+  - type: Reflect
+    reflectProb: 0
+    innate: true
+    reflects:
+      - Energy
   - type: Appearance
   - type: Damageable
     damageContainer: Shield
