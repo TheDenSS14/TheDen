@@ -1,22 +1,24 @@
-﻿using Content.Server._DEN.Bed.Components;
-using Content.Server.Actions;
+﻿using Content.Shared.Actions;
 using Content.Shared.Bed.Sleep;
 using Content.Shared.Buckle.Components;
+using Content.Shared.Examine;
 using Robust.Shared.Utility;
+using StabilizeOnBuckleComponent = Content.Shared._DEN.Bed.Components.StabilizeOnBuckleComponent;
 
 
-namespace Content.Server._DEN.Bed.Systems
+namespace Content.Shared._DEN.Bed.Systems
 {
-    public sealed class StabilizeOnBuckleSystem : EntitySystem
+    public sealed class SharedStabilizeOnBuckleSystem : EntitySystem
     {
-        [Dependency] private readonly ActionsSystem _actionsSystem = default!;
-        [Dependency] private readonly SleepingSystem _sleepingSystem = default!;
+        [Dependency] private readonly SleepingSystem _sleepingSystem = null!;
+        [Dependency] private readonly SharedActionsSystem _actionsSystem = null!;
 
         public override void Initialize()
         {
             base.Initialize();
             SubscribeLocalEvent<StabilizeOnBuckleComponent, StrappedEvent>(OnStrapped);
             SubscribeLocalEvent<StabilizeOnBuckleComponent, UnstrappedEvent>(OnUnstrapped);
+            SubscribeLocalEvent<StabilizeOnBuckleComponent, ExaminedEvent>(OnExamine);
         }
         private void OnStrapped(Entity<StabilizeOnBuckleComponent> bed, ref StrappedEvent args)
         {

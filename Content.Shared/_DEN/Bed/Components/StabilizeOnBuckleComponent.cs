@@ -1,4 +1,4 @@
-﻿namespace Content.Server._DEN.Bed.Components
+﻿namespace Content.Shared._DEN.Bed.Components
 {
     /// <summary>
     ///     Entities in the critical state strapped to this bed will receive stabilizing effects.
