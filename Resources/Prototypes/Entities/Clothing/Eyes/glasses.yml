@@ -321,10 +321,10 @@
     - CheapSunglasses
 
 - type: entity
-  parent: ClothingEyesGlassesSunglasses
+  parent: ClothingEyesGlassesCheapSunglasses
   id: ClothingEyesGlassesSunglassesAviator
   name: shielded aviators
-  description: A pair of designer sunglasses. These ones are specially made to protect the eye from blinding flashes of light.
+  description: A pair of designer sunglasses.
   components:
   - type: Sprite
     sprite: Clothing/Eyes/Glasses/aviators.rsi
@@ -365,10 +365,10 @@
     - CheapSunglasses
 
 - type: entity
-  parent: ClothingEyesGlassesSunglasses
+  parent: ClothingEyesGlassesCheapSunglasses
   id: ClothingEyesGlassesSunglassesBig
   name: big shielded sunglasses
-  description: A pair of black sunglasses with big lenses. These ones are specially made to protect the eye from blinding flashes of light.
+  description: A pair of black sunglasses with big lenses.
   components:
   - type: Sprite
     sprite: Clothing/Eyes/Glasses/sunglasses_big.rsi
@@ -409,10 +409,10 @@
     - CheapSunglasses
 
 - type: entity
-  parent: ClothingEyesGlassesSunglasses
+  parent: ClothingEyesGlassesCheapSunglasses
   id: ClothingEyesGlassesSunglassesVisor
   name: shielded visor sunglasses
-  description: A pair of visor sunglasses. These ones are specially made to protect the eye from blinding flashes of light.
+  description: A pair of visor sunglasses.
   components:
   - type: Sprite
     sprite: Clothing/Eyes/Glasses/sunglasses_visor.rsi
