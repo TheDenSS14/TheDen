@@ -34,5 +34,17 @@ namespace Content.Shared._DEN.Bed.Systems
             _sleepingSystem.TryWaking(args.Buckle.Owner);
             RemComp<StabilizeOnBuckleComponent>(args.Buckle.Owner);
         }
+
+        private void OnExamine(Entity<StabilizeOnBuckleComponent> ent, ref ExaminedEvent args)
+        {
+            using (args.PushGroup(nameof(StabilizeOnBuckleComponent)))
+            {
+                var comp = ent.Comp;
+                var value = MathF.Round((comp.Efficiency) * 100, 1);
+                args.PushMarkup(Loc.GetString("stabilizing-efficiency-value", ("value", value)));
+                if (comp.ReducesBleeding > 0)
+                    args.PushMarkup(Loc.GetString("stabilizing-bleeding"));
+            }
+        }
     }
 }
