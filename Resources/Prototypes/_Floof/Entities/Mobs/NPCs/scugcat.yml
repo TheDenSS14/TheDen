@@ -12,7 +12,7 @@
 - type: entity
   name: ScugCat
   id: MobScugCat
-  parent: SimpleMobBase
+  parent: MobBaseAncestor # DEN
   description: He's just a little guy, a jumpy, poor little scug.
   components:
   - type: Sprite

@@ -1439,8 +1439,6 @@
   # Shitmed Change Start
   - type: SurgeryTarget
   - type: Targeting
-  - type: HumanoidAppearance
-    species: Monkey
   # Shitmed Change End
   - type: Inventory
     templateId: monkey
@@ -1589,6 +1587,8 @@
     understands:
     - Monkey
     - Kobold
+  - type: HumanoidAppearance
+    species: Monkey
   - type: SentienceTarget
     flavorKind: station-event-random-sentience-flavor-primate
   - type: AlwaysRevolutionaryConvertible
