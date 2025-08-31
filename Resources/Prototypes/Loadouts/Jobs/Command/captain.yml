@@ -240,25 +240,27 @@
   items:
     - WeaponPulsePistolCaptain
 
-- type: loadout
-  id: LoadoutCaptainTerminus
-  category: JobsCommandCaptain
-  cost: 0
-  canBeHeirloom: true
-  guideEntry: SecurityWeapons
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutCaptainWeapon
-    - !type:CharacterJobRequirement
-      jobs:
-        - Captain
-#    - !type:CharacterAgeRequirement - TheDen
-#      min: 21
-    - !type:CharacterSpeciesRequirement
-      species:
-      - Oni
-  items:
-    - Terminus
+# DEN - Remove long arms from captains loadout
+# - type: loadout
+#   id: LoadoutCaptainTerminus
+#   category: JobsCommandCaptain
+#   cost: 0
+#   canBeHeirloom: true
+#   guideEntry: SecurityWeapons
+#   requirements:
+#     - !type:CharacterItemGroupRequirement
+#       group: LoadoutCaptainWeapon
+#     - !type:CharacterJobRequirement
+#       jobs:
+#         - Captain
+# #    - !type:CharacterAgeRequirement - TheDen
+# #      min: 21
+#     - !type:CharacterSpeciesRequirement
+#       species:
+#       - Oni
+#   items:
+#     - Terminus
+# DEN
 
 # Eyes
 - type: loadout
