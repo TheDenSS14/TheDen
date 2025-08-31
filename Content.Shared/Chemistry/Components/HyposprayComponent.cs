@@ -13,6 +13,9 @@ using Robust.Shared.Audio;
 
 namespace Content.Shared.Chemistry.Components;
 
+/// <summary>
+///     Component that allows an entity instantly transfer liquids by interacting with objects that have solutions.
+/// </summary>
 [RegisterComponent, NetworkedComponent, AutoGenerateComponentState]
 public sealed partial class HyposprayComponent : Component
 {
@@ -20,15 +23,24 @@ public sealed partial class HyposprayComponent : Component
     public float MaxPressure = float.MaxValue;
 
     [DataField]
-    public float InjectTime = 0f;
+    public float InjectTime;
 
+    /// <summary>
+    ///     Solution that will be used by hypospray for injections.
+    /// </summary>
     [DataField]
     public string SolutionName = "hypospray";
 
+    /// <summary>
+    ///     Amount of the units that will be transfered.
+    /// </summary>
     [DataField]
     [ViewVariables(VVAccess.ReadWrite)]
     public FixedPoint2 TransferAmount = FixedPoint2.New(5);
 
+    /// <summary>
+    ///     Sound that will be played when injecting.
+    /// </summary>
     [DataField]
     public SoundSpecifier InjectSound = new SoundPathSpecifier("/Audio/Items/hypospray.ogg");
 
@@ -38,14 +50,14 @@ public sealed partial class HyposprayComponent : Component
     /// </summary>
     [AutoNetworkedField]
     [DataField(required: true)]
-    public bool OnlyAffectsMobs = false;
+    public bool OnlyAffectsMobs;
 
     /// <summary>
     /// Whether or not the hypospray is able to draw from containers or if it's a single use
     /// device that can only inject.
     /// </summary>
     [DataField]
-    public bool InjectOnly = false;
+    public bool InjectOnly;
 
     /// <summary>
     /// Whether the injecting entity needs hands for the operation.
@@ -59,7 +71,7 @@ public sealed partial class HyposprayComponent : Component
     /// Used by Jet Injectors.
     /// </summary>
     [DataField]
-    public bool InjectMaxCapacity = false;
+    public bool InjectMaxCapacity;
 
     /// <summary>
     /// Whether or not the hypospray can inject chitinids.

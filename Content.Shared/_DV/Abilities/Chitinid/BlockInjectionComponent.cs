@@ -2,7 +2,7 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
-namespace Content.Server.Abilities.Chitinid;
+namespace Content.Shared._DV.Abilities.Chitinid;
 
 
 [RegisterComponent]
