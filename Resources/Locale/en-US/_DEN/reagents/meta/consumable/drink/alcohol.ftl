@@ -69,3 +69,21 @@ reagent-desc-thdrink = It looks more like a child's attempt at a magic potion th
 
 reagent-name-featherpillow = feather pillow
 reagent-desc-featherpillow = Looks like a restful sleep.
+
+reagent-name-nectar = nectar
+reagent-desc-nectar = It shimmers with an ethereal, golden glow.
+
+reagent-name-tohokublaze = tohoku blaze
+reagent-desc-tohokublaze = The glass is filled with an abominable mixture of liquids that were never meant to be mixed. It's an...acquired taste.
+
+reagent-name-songbird = songbird
+reagent-desc-songbird = For the star that burns brighter than any other.
+
+reagent-name-touchofgrass = touch of grass
+reagent-desc-touchofgrass = A touch of the outside world brought in. When's the last time you've seen this?
+
+reagent-name-miamivice = miami vice
+reagent-desc-miamivice = The Yin and Yang of beach parties!
+
+reagent-name-thesilverhand = the silverhand
+reagent-desc-thesilverhand = A tequila old fashioned with a splash of beer, and a chili garnish. For the rockerboy who never gave up.

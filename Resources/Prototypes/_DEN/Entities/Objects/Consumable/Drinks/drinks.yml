@@ -365,3 +365,99 @@
   - type: Icon
     sprite: _DEN/Objects/Consumable/Drinks/featherpillow.rsi
     state: icon
+
+- type: entity
+  parent: DrinkGlass
+  id: DrinkNectarGlass
+  suffix: nectar
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 30
+        reagents:
+        - ReagentId: Nectar
+          Quantity: 30
+  - type: Icon
+    sprite: _DEN/Objects/Consumable/Drinks/nectar.rsi
+    state: icon
+
+- type: entity
+  parent: DrinkGlass
+  id: DrinkSongbirdGlass
+  suffix: songbird
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 30
+        reagents:
+        - ReagentId: Songbird
+          Quantity: 30
+  - type: Icon
+    sprite: _DEN/Objects/Consumable/Drinks/songbird.rsi
+    state: icon
+
+- type: entity
+  parent: DrinkGlass
+  id: DrinkTohokuBlazeGlass
+  suffix: tohoku blaze
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 30
+        reagents:
+        - ReagentId: TohokuBlaze
+          Quantity: 30
+  - type: Icon
+    sprite: _DEN/Objects/Consumable/Drinks/tohokublaze.rsi
+    state: icon
+
+- type: entity
+  parent: DrinkGlass
+  id: DrinkTouchofGrassGlass
+  suffix: touch of grass
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 30
+        reagents:
+        - ReagentId: TouchofGrass
+          Quantity: 30
+  - type: Icon
+    sprite: _DEN/Objects/Consumable/Drinks/touchofgrass.rsi
+    state: icon
+
+- type: entity
+  parent: DrinkGlass
+  id: DrinkMiamiViceGlass
+  suffix: miami vice
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 30
+        reagents:
+        - ReagentId: MiamiVice
+          Quantity: 30
+  - type: Icon
+    sprite: _DEN/Objects/Consumable/Drinks/miamivice.rsi
+    state: icon
+
+- type: entity
+  parent: DrinkGlass
+  id: DrinkTheSilverhandGlass
+  suffix: the silverhand
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 30
+        reagents:
+        - ReagentId: TheSilverhand
+          Quantity: 30
+  - type: Icon
+    sprite: _DEN/Objects/Consumable/Drinks/thesilverhand.rsi
+    state: icon

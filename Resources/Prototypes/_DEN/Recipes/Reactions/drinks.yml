@@ -305,3 +305,79 @@
       amount: 1
   products:
     FeatherPillow: 3
+
+- type: reaction
+  id: Nectar
+  reactants:
+    JuicePineapple:
+      amount: 1
+    JuiceBanana:
+      amount: 1
+    JuiceApple: 
+      amount: 1
+    Rum: 
+      amount: 1
+    LotophagoiOil:
+      amount: 1
+  products:
+    Nectar: 6
+
+- type: reaction
+  id: TohokuBlaze
+  reactants:
+    Soju:
+      amount: 3
+    WeldingFuel:
+      amount: 2
+    CoffeeLiqueur:
+      amount: 1
+  products: 
+    TohokuBlaze: 6
+
+- type: reaction
+  id: TouchofGrass
+  reactants:
+    SolDry: 
+      amount: 1
+    LemonLime:
+      amount: 2
+    GreenTea:
+      amount: 4
+  products:
+    TouchofGrass: 7
+
+- type: reaction
+  id: Songbird
+  reactants:
+    Pomonade:
+      amount: 1
+    TuxedoSunset:
+      amount: 1
+    Frostoil:
+      amount: 1
+  products: 
+    Songbird: 3
+
+- type: reaction
+  id: MiamiVice
+  reactants:
+    PinaColada:
+      amount: 1
+    Daiquiri:
+      amount: 1
+  products:
+    MiamiVice: 2
+
+- type: reaction
+  id: TheSilverhand
+  reactants: 
+    Tequila:
+      amount: 3
+    Beer: 
+      amount: 1
+    CapsaicinOil:
+      amount: 1
+    Ice:
+      amount: 1
+  products:
+    TheSilverhand: 6

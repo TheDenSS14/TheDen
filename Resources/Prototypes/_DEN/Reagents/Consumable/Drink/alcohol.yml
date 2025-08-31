@@ -555,6 +555,7 @@
       - !type:AdjustReagent
         reagent: Ethanol
         amount: 0.065
+  fizziness: 0.25
 
 - type: reagent
   id: ThDrink
@@ -578,6 +579,7 @@
       - !type:AdjustReagent
         reagent: Ethanol
         amount: 0.125
+  fizziness: 0.25
 
 - type: reagent
   id: FeatherPillow
@@ -605,3 +607,177 @@
         key: Drowsiness
         time: 2.0
         type: Add
+  fizziness: 0.25
+
+- type: reagent
+  id: Nectar
+  name: reagent-name-nectar
+  parent: BaseAlcohol
+  desc: reagent-desc-nectar
+  physicalDesc: reagent-physical-desc-ethereal
+  flavor: nectar
+  color: "#fff990"
+  metamorphicSprite:
+    sprite: _DEN/Objects/Consumable/Drinks/nectar.rsi
+    state: icon_empty
+  metamorphicMaxFillLevels: 4
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: false
+  metabolisms:
+    Drink:
+      effects:
+      - !type:SatiateThirst
+        factor: 2
+      - !type:AdjustReagent
+        reagent: Ethanol
+        amount: 0.175
+      - !type:AdjustReagent
+        reagent: LotophagoiOil
+        amount: 0.12
+  fizziness: 0.25
+
+- type: reagent
+  id: Songbird
+  name: reagent-name-songbird
+  parent: BaseAlcohol
+  desc: reagent-desc-songbird
+  physicalDesc: reagent-physical-desc-starry
+  flavor: songbird
+  color: "#385b9b"
+  metamorphicSprite:
+    sprite: _DEN/Objects/Consumable/Drinks/songbird.rsi
+    state: icon_empty
+  metamorphicMaxFillLevels: 6
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: false
+  metabolisms:
+    Drink:
+      effects:
+      - !type:SatiateThirst
+        factor: 2
+      - !type:AdjustReagent
+        reagent: Ethanol
+        amount: 0.075
+      - !type:ChemAddMoodlet
+        conditions:
+        - !type:ReagentThreshold
+          reagent: Songbird
+          min: 2
+      - !type:AdjustReagent
+        reagent: Pomelustine
+        amount: 0.25
+  fizziness: 0.25
+
+- type: reagent
+  id: TohokuBlaze
+  name: reagent-name-tohokublaze
+  parent: BaseAlcohol
+  desc: reagent-desc-tohokublaze
+  physicalDesc: reagent-physical-desc-burning
+  flavor: tohokublaze
+  color: "#4A4A4A"
+  metamorphicSprite:
+    sprite: _DEN/Objects/Consumable/Drinks/tohokublaze.rsi
+    state: icon_empty
+  metamorphicMaxFillLevels: 4
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: false
+  metabolisms:
+    Drink:
+      effects:
+      - !type:SatiateThirst
+        factor: 2
+      - !type:AdjustReagent
+        reagent: Ethanol
+        amount: 0.2
+      - !type:GenericStatusEffect
+        key: Drowsiness
+        time: 1.0
+        type: Remove
+      - !type:GenericStatusEffect
+        key: StaminaModifier
+        component: StaminaModifier
+        time: 0.5
+        type: Remove
+  fizziness: 0.25
+
+- type: reagent
+  id: TouchofGrass
+  name: reagent-name-touchofgrass
+  parent: BaseAlcohol
+  desc: reagent-desc-touchofgrass
+  physicalDesc: reagent-physical-desc-fibrous
+  flavor: touchofgrass
+  color: "#81c06f"
+  metamorphicSprite:
+    sprite: _DEN/Objects/Consumable/Drinks/touchofgrass.rsi
+    state: icon_empty
+  metamorphicMaxFillLevels: 4
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: false
+  metabolisms:
+    Drink:
+      effects:
+      - !type:SatiateThirst
+        factor: 2
+      - !type:AdjustReagent
+        reagent: Ethanol
+        amount: 0.125
+      - !type:SatiateHunger
+        conditions:
+        - !type:OrganType
+          type: Moth
+          shouldHave: true
+        factor: 2
+  fizziness: 0.25
+
+- type: reagent
+  id: MiamiVice
+  name: reagent-name-miamivice
+  parent: BaseAlcohol
+  desc: reagent-desc-miamivice
+  physicalDesc: reagent-physical-desc-tropical
+  flavor: miamivice
+  color: "#cefab4"
+  metamorphicSprite:
+    sprite: _DEN/Objects/Consumable/Drinks/miamivice.rsi
+    state: icon_empty
+  metamorphicMaxFillLevels: 6
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: false
+  metabolisms:
+    Drink:
+      effects:
+      - !type:SatiateThirst
+        factor: 2
+      - !type:AdjustReagent
+        reagent: Ethanol
+        amount: 0.125
+  fizziness: 0.25
+
+- type: reagent
+  id: TheSilverhand
+  name: reagent-name-thesilverhand
+  parent: BaseAlcohol
+  desc: reagent-desc-thesilverhand
+  physicalDesc: reagent-physical-desc-spicy
+  flavor: thesilverhand
+  color: "#76522E"
+  metamorphicSprite:
+    sprite: _DEN/Objects/Consumable/Drinks/thesilverhand.rsi
+    state: icon_empty
+  metamorphicMaxFillLevels: 3
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: false
+  metabolisms:
+    Drink:
+      effects:
+      - !type:SatiateThirst
+        factor: 2
+      - !type:AdjustReagent
+        reagent: Ethanol
+        amount: 0.18
+      - !type:AdjustReagent
+        reagent: CapsaicinOil
+        amount: 0.1
+  fizziness: 0.25

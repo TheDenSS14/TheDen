@@ -158,6 +158,9 @@
   metamorphicSprite:
     sprite: Objects/Consumable/Drinks/bluehawaiian.rsi
     state: icon_empty
+  metamorphicMaxFillLevels: 4
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: true
   metabolisms:
     Drink:
       effects:
