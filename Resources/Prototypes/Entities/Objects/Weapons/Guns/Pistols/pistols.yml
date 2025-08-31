@@ -209,12 +209,30 @@
   components:
   - type: GuideHelp
     guides: [ SecurityWeapons ]
+  # DEN - Match Mk58
+  - type: Gun
+    fireRate: 5
+    selectedMode: SemiAuto
+    availableModes:
+      - SemiAuto
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/pistol.ogg
+    # DEN
 
 - type: entity
   id: WeaponPistolViperNonLethal
   parent: WeaponPistolViper
   suffix: Non-lethal
   components:
+  # DEN - Match Mk58
+  - type: Gun
+    fireRate: 5
+    selectedMode: SemiAuto
+    availableModes:
+      - SemiAuto
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/pistol.ogg
+    # DEN
   - type: Sprite
     sprite: Objects/Weapons/Guns/Pistols/viper.rsi
   - type: ItemSlots
