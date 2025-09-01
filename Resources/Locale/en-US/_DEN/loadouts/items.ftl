@@ -7,6 +7,9 @@
 #
 # SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
+# head
+loadout-name-LoadoutHeadHatPatrolCap = patrol cap (colorable)
+
 # mask
 loadout-name-LoadoutClothingMaskBreathFashion = fashion breath mask (colorable)
 

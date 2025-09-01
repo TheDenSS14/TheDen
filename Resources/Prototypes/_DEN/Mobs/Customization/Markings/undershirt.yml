@@ -1,0 +1,14 @@
+- type: marking
+  id: UndershirtCropped
+  bodyPart: Undershirt
+  markingCategory: Undershirt
+  invertSpeciesRestriction: True
+  speciesRestriction: [Plasmamen, Thaven] # TheDen - Thaven
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+  - sprite: _DEN/Mobs/Customization/undershirt.rsi
+    state: croppedundershirt

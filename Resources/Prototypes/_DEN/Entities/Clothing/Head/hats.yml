@@ -28,3 +28,19 @@
     sprite: _DEN/Clothing/Head/Hats/seniortrooperhat.rsi
   - type: Clothing
     sprite: _DEN/Clothing/Head/Hats/seniortrooperhat.rsi
+
+- type: entity
+  parent: ClothingHeadHeadHatBaseFlippable
+  id: ClothingHeadHatPatrolCap
+  name: patrol cap
+  description: A slightly squared ballcap with a short brim.
+  components:
+  - type: Sprite
+    sprite: _DEN/Clothing/Head/Hats/patrolcap.rsi
+  - type: Clothing
+    sprite: _DEN/Clothing/Head/Hats/patrolcap.rsi
+
+- type: entity
+  parent: [ClothingHeadHeadHatBaseFlipped, ClothingHeadHatOrangesoft]
+  id: ClothingHeadHatPatrolCapFlipped
+  name: patrol cap
