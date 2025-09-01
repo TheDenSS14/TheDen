@@ -64,11 +64,10 @@
 
 - type: entity
   id: BoxFolderFireproof
-  parent: BoxFolderBase
+  parent: [ BoxFolderBase, ContentsExplosionResistanceBase, ContentsIgnitionPreventionBase ]
   name: fireproof folder
-  description: A folder made to resist the dangers of fire.
+  description: A folder made to resist the dangers of fire and explosions.
   components:
-  - type: ContentProtection
   - type: ExplosionResistance
     damageCoefficient: 0
   - type: Sprite
@@ -83,9 +82,6 @@
   name: administrative assistant's compact folder
   description: The pinnacle of bureaucratic innovation, implementing bluespace tech to assist the station's strongest pen warrior in their paperwork endeavors. Holster for a pen included!
   components:
-  - type: ContentProtection
-  - type: ExplosionResistance
-    damageCoefficient: 0
   - type: Item
     sprite: Objects/Misc/bureaucracy.rsi
     size: Tiny
