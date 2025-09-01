@@ -361,16 +361,6 @@
     CrushDepth: 2
 
 - type: reaction
-  id: CrushDepth
-  reactants:
-    RootBeerFloat:
-      amount: 1
-    Rum:
-      amount: 1
-  products:
-    CrushDepth: 2
-
-- type: reaction
   id: CubaLibre
   reactants:
     Cola:
@@ -1515,22 +1505,6 @@
       amount: 5
   products:
     TheSunAlsoRises: 6
-
-- type: reaction
-  id: WhiskeySour
-  requiredMixerCategories:
-  - Shake
-  reactants:
-    Whiskey:
-      amount: 2
-    Sugar:
-      amount: 1
-    JuiceLemon:
-      amount: 2
-    Egg:
-      amount: 1
-  products:
-    WhiskeySour: 6
 
 - type: reaction
   id: ZombieCocktail
