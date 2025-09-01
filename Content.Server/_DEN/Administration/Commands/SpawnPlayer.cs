@@ -1,3 +1,9 @@
+// SPDX-FileCopyrightText: 2025 Vanessa
+// SPDX-FileCopyrightText: 2025 portfiend
+// SPDX-FileCopyrightText: 2025 sleepyyapril
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using System.Linq;
 using Content.Server.Administration;
 using Content.Server.Clothing.Systems; // Einstein Engines
@@ -88,7 +94,8 @@ public sealed class SpawnPlayer : LocalizedEntityCommands
             character,
             playTimes,
             true, // again, assume true
-            jobProto: jobProto // this applies 'special' things with the job's loadout, like mindshields
+            jobProto: jobProto, // this applies 'special' things with the job's loadout, like mindshields
+            player: player
         );
 
         // Parse out if we should transfer the mind, and do it if true. Will force even if player has an active 'non-ghost' character.

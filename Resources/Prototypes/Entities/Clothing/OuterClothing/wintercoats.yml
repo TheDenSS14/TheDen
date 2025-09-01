@@ -29,9 +29,12 @@
 # SPDX-FileCopyrightText: 2025 Eris
 # SPDX-FileCopyrightText: 2025 KekaniCreates
 # SPDX-FileCopyrightText: 2025 Rosycup
+# SPDX-FileCopyrightText: 2025 Sir Warock
+# SPDX-FileCopyrightText: 2025 Vanessa
+# SPDX-FileCopyrightText: 2025 sheepie
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: entity
   parent: ClothingOuterStorageBase
@@ -146,6 +149,8 @@
         Slash: 0.75
         Piercing: 0.75
         Heat: 0.75
+  - type: StaminaDamageResistance #Den
+    coefficient: 0.75 #Den
 
 - type: entity
   parent: ClothingOuterWinterCoatToggleable
@@ -329,6 +334,8 @@
         Piercing: 0.75
         Heat: 0.75
         Caustic: 0.75 #not the full 90% from ss13 because of the head
+  - type: StaminaDamageResistance #Den
+    coefficient: 0.75 #Den
 
 - type: entity
   parent: ClothingOuterWinterCoatToggleable
@@ -504,6 +511,8 @@
       toggleable-clothing: !type:Container { }
       storagebase: !type:Container
         ents: [ ]
+  - type: StaminaDamageResistance #Den
+    coefficient: 0.75 #Den
 
 - type: entity
   parent: ClothingOuterWinterCoatToggleable

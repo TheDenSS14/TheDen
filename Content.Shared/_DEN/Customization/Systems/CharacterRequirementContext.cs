@@ -1,10 +1,12 @@
 // SPDX-FileCopyrightText: 2025 portfiend
+// SPDX-FileCopyrightText: 2025 sleepyyapril
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 #pragma warning disable IDE1006
 using Content.Shared.Preferences;
 using Content.Shared.Roles;
+using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 
 namespace Content.Shared.Customization.Systems._DEN;
@@ -56,6 +58,11 @@ public sealed partial class CharacterRequirementContext
     /// </summary>
     public int? Depth = null;
 
+    /// <summary>
+    /// The player represented by this context.
+    /// </summary>
+    public ICommonSession? Player = null;
+
     public CharacterRequirementContext(
         JobPrototype? selectedJob = null,
         HumanoidCharacterProfile? profile = null,
@@ -63,7 +70,8 @@ public sealed partial class CharacterRequirementContext
         bool? whitelisted = null,
         IPrototype? prototype = null,
         EntityUid? entity = null,
-        int? depth = null)
+        int? depth = null,
+        ICommonSession? player = null)
     {
         SelectedJob = selectedJob;
         Profile = profile;
@@ -72,6 +80,7 @@ public sealed partial class CharacterRequirementContext
         Prototype = prototype;
         Entity = entity;
         Depth = depth;
+        Player = player;
     }
 
     public CharacterRequirementContext(CharacterRequirementContext other)
@@ -83,6 +92,7 @@ public sealed partial class CharacterRequirementContext
         Prototype = other.Prototype;
         Entity = other.Entity;
         Depth = other.Depth;
+        Player = other.Player;
     }
 
     public CharacterRequirementContext ShallowClone() => new(this);
@@ -103,4 +113,6 @@ public sealed partial class CharacterRequirementContext
     public CharacterRequirementContext WithEntity(EntityUid? entity) => new(this) { Entity = entity };
 
     public CharacterRequirementContext WithDepth(int? depth) => new(this) { Depth = depth };
+
+    public CharacterRequirementContext WithPlayer(ICommonSession? player) => new(this) { Player = player };
 }

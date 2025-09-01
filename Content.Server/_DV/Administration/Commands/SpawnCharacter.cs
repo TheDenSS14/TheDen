@@ -1,8 +1,9 @@
-// SPDX-FileCopyrightText: 2023 Debug <49997488+DebugOk@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 BlitzTheSquishy <73762869+BlitzTheSquishy@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Debug
+// SPDX-FileCopyrightText: 2025 BlitzTheSquishy
+// SPDX-FileCopyrightText: 2025 portfiend
+// SPDX-FileCopyrightText: 2025 sleepyyapril
 //
-// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+// SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 using System.Linq;
 using Content.Server.Administration;
@@ -120,7 +121,8 @@ public sealed class SpawnCharacter : LocalizedEntityCommands
             character,
             playTimes,
             true, // again, assume true
-            jobProto: jobProto // this applies 'special' things with the job's loadout, like mindshields
+            jobProto: jobProto, // this applies 'special' things with the job's loadout, like mindshields
+            player: player
         );
 
         mindSystem.TransferTo(mindId, mobUid);

@@ -6,7 +6,7 @@
 # SPDX-FileCopyrightText: 2025 Rosycup
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: entity
   parent: ClothingOuterWinterCoat
@@ -128,6 +128,22 @@
     sprite: _Floof/Clothing/OuterClothing/WinterCoats/longcoatSec.rsi
   - type: Clothing
     sprite: _Floof/Clothing/OuterClothing/WinterCoats/longcoatSec.rsi
+  - type: Armor #A stylish but solid middle-ground between the Durathread Vest and Plate Carrier, but not as good as the Armored Trenchcoat or Armored Longcoat.
+    modifiers:
+      coefficients:
+        Blunt: 0.75
+        Slash: 0.70
+        Piercing: 0.75
+        Heat: 0.9
+        Caustic: 0.95
+  - type: StaminaDamageResistance #Den
+    coefficient: 0.7 #Den
+  - type: ExplosionResistance
+    damageCoefficient: 0.9
+  - type: ClothingSpeedModifier
+    walkModifier: 0.9
+    sprintModifier: 0.9
+  - type: AllowSuitStorage
 
 - type: entity
   parent: ClothingLongcoatSec
@@ -147,6 +163,8 @@
         Piercing: 0.70
         Heat: 0.70
         Caustic: 0.90
+  - type: StaminaDamageResistance #Den
+    coefficient: 0.6 #Den
   - type: ExplosionResistance
     damageCoefficient: 0.85
   - type: ClothingSpeedModifier
@@ -171,6 +189,8 @@
         Piercing: 0.85
         Heat: 0.65
         Caustic: 0.25
+  - type: StaminaDamageResistance #Den
+    coefficient: 0.75 #Den
   - type: ExplosionResistance
     damageCoefficient: 0.75
   - type: ClothingSpeedModifier
@@ -195,6 +215,8 @@
         Piercing: 0.7
         Heat: 0.7
         Caustic: 0.75
+  - type: StaminaDamageResistance #Den
+    coefficient: 0.55 #Den
   - type: ExplosionResistance
     damageCoefficient: 0.75
   - type: ClothingSpeedModifier

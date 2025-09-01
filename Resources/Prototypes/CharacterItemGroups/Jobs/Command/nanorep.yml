@@ -1,8 +1,10 @@
+# SPDX-FileCopyrightText: 2025 Blitz
 # SPDX-FileCopyrightText: 2025 BlitzTheSquishy
+# SPDX-FileCopyrightText: 2025 TheLuggage05
 # SPDX-FileCopyrightText: 2025 Timfa
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: characterItemGroup
   id: LoadoutNanorepBackpacks
@@ -10,6 +12,28 @@
   items:
     - type: loadout
       id: LoadoutClothingBackpackSatchelNanorep
+    - type: loadout
+      id: LoadoutClothingBackpackMessengerCentcomm
+
+- type: characterItemGroup
+  id: LoadoutNanorepHeadset
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutClothingHeadsetAltCentcom
+    - type: loadout
+      id: LoadoutClothingHeadsetCentcom
+
+- type: characterItemGroup
+  id: LoadoutNanorepHead
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutClothingHeadHatBeretCentcomm
+    - type: loadout
+      id: LoadoutClothingHeadHatCentcom
+    - type: loadout
+      id: LoadoutClothingHeadHatCentcomcap
 
 - type: characterItemGroup
   id: LoadoutNanorepOuter
@@ -17,6 +41,17 @@
   items:
     - type: loadout
       id: LoadoutNanotrasenRepresentativeOuterLongCoat
+    - type: loadout
+      id: LoadoutClothingOuterWinterCentcom
+
+- type: characterItemGroup
+  id: LoadoutNanorepNeck
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutClothingNeckCollarCC
+    - type: loadout
+      id: LoadoutClothingNeckScarfStripedCentcom
 
 - type: characterItemGroup
   id: LoadoutNanorepUniforms
@@ -26,6 +61,10 @@
       id: LoadoutClothingUniformJumpskirtNanotrasenRepresentative
     - type: loadout
       id: LoadoutClothingUniformJumpsuitNanotrasenRepresentative
+    - type: loadout
+      id: LoadoutClothingUniformJumpskirtCentcomFormalDress
+    - type: loadout
+      id: LoadoutClothingUniformJumpsuitCentcomFormal
 
 - type: characterItemGroup
   id: LoadoutNanorepWeapon

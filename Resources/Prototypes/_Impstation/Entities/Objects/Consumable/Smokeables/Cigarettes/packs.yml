@@ -1,0 +1,18 @@
+# SPDX-FileCopyrightText: 2025 Shaman
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  id: CigPackSpirits
+  parent: CigPackBase
+  name: Spirits
+  description: "An artisan line of cigarettes made from genetically-engineered tobacco that smells like wood smoke when burnt."
+  components:
+  - type: Sprite
+    sprite: _Impstation/Objects/Consumable/Smokeables/Cigarettes/Packs/spirits.rsi
+  - type: Item
+    sprite: _Impstation/Objects/Consumable/Smokeables/Cigarettes/Packs/spirits.rsi
+  - type: StorageFill
+    contents:
+    - id: CigaretteSpirits
+      amount: 10

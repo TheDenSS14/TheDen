@@ -1,3 +1,4 @@
+# SPDX-FileCopyrightText: 2025 Angelo Fallaria
 # SPDX-FileCopyrightText: 2025 Blitz
 # SPDX-FileCopyrightText: 2025 MajorMoth
 # SPDX-FileCopyrightText: 2025 Rosycup
@@ -73,3 +74,26 @@
     sprite: _DEN/Clothing/Mask/clown_ancient.rsi
   - type: Clothing
     sprite: _DEN/Clothing/Mask/clown_ancient.rsi
+
+- type: entity
+  parent: ClothingMaskPullableBase
+  id: ClothingMaskBreathFashion
+  name: fashion breath mask
+  description: A stylish and comfortable breath mask.
+  components:
+  - type: Item
+    size: Tiny
+  - type: Sprite
+    sprite: _DEN/Clothing/Mask/breathfashion.rsi
+  - type: Clothing
+    sprite: _DEN/Clothing/Mask/breathfashion.rsi
+  - type: BreathMask
+  - type: IngestionBlocker
+  - type: Tag
+    tags:
+    - PetWearable
+    - WhitelistChameleon
+  - type: HideLayerClothing
+    slots:
+    - Snout
+    hideOnToggle: true

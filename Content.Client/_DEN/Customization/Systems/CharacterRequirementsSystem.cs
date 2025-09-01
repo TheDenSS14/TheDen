@@ -1,3 +1,7 @@
+// SPDX-FileCopyrightText: 2025 portfiend
+// SPDX-FileCopyrightText: 2025 sleepyyapril
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
 
 using Content.Client.Lobby;
 using Content.Client.Players.PlayTimeTracking;
@@ -30,7 +34,8 @@ public sealed partial class CharacterRequirementsSystem : SharedCharacterRequire
     public CharacterRequirementContext GetProfileContext(HumanoidCharacterProfile? profile = null,
         bool useCharacter = false)
     {
-        var entity = _player.LocalSession?.AttachedEntity;
+        var player = _player.LocalSession;
+        var entity = player?.AttachedEntity;
         if (profile is null)
         {
             if (useCharacter)
@@ -57,6 +62,7 @@ public sealed partial class CharacterRequirementsSystem : SharedCharacterRequire
             profile: profile,
             playtimes: playtimes,
             whitelisted: whitelisted,
-            entity: entity);
+            entity: entity,
+            player: player);
     }
 }
