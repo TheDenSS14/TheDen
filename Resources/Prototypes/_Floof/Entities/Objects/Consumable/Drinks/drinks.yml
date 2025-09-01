@@ -583,3 +583,19 @@
     sprite: _Floof/Objects/Consumable/Drinks/yeolhandy.rsi
     state: icon
 
+#Added by TheDen, because someone forgot this.
+- type: entity
+  parent: DrinkGlass
+  id: DrinkPomonadeGlass
+  suffix: pomonade
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 30
+        reagents:
+        - ReagentId: Pomonade
+          Quantity: 30
+  - type: Icon
+    sprite: _Floof/Objects/Consumable/Drinks/pomonade.rsi
+    state: icon

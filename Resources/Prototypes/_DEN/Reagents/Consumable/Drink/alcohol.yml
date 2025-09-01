@@ -659,6 +659,7 @@
         reagent: Ethanol
         amount: 0.075
       - !type:ChemAddMoodlet
+        moodPrototype: TraitSanguine
         conditions:
         - !type:ReagentThreshold
           reagent: Songbird
@@ -738,11 +739,11 @@
   desc: reagent-desc-miamivice
   physicalDesc: reagent-physical-desc-tropical
   flavor: miamivice
-  color: "#cefab4"
+  color: "#ec757f"
   metamorphicSprite:
     sprite: _DEN/Objects/Consumable/Drinks/miamivice.rsi
     state: icon_empty
-  metamorphicMaxFillLevels: 6
+  metamorphicMaxFillLevels: 5
   metamorphicFillBaseName: fill-
   metamorphicChangeColor: false
   metabolisms:
@@ -780,4 +781,124 @@
       - !type:AdjustReagent
         reagent: CapsaicinOil
         amount: 0.1
+  fizziness: 0.25
+
+- type: reagent
+  id: ArkveilTemple
+  name: reagent-name-arkveiltemple
+  parent: BaseAlcohol
+  desc: reagent-desc-arkveiltemple
+  physicalDesc: reagent-physical-desc-tropical
+  flavor: arkveiltemple
+  color: "#65c691"
+  metamorphicSprite:
+    sprite: _DEN/Objects/Consumable/Drinks/arkveiltemple.rsi
+    state: icon_empty
+  metamorphicMaxFillLevels: 5
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: false
+  metabolisms:
+    Drink:
+      effects:
+      - !type:SatiateThirst
+        factor: 2
+      - !type:AdjustReagent
+        reagent: Ethanol
+        amount: 0.04
+  fizziness: 0.25
+
+- type: reagent
+  id: CoconutDoubleCreamPie
+  name: reagent-name-coconutdoublecreampie
+  parent: BaseAlcohol
+  desc: reagent-desc-coconutdoublecreampie
+  physicalDesc: reagent-physical-desc-creamy
+  flavor: coconutdoublecreampie
+  color: "#ffffff"
+  metamorphicSprite:
+    sprite: _DEN/Objects/Consumable/Drinks/coconutdoublecreampie.rsi
+    state: icon_empty
+  metamorphicMaxFillLevels: 3
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: false
+  metabolisms:
+    Drink:
+      effects:
+      - !type:SatiateThirst
+        factor: 2
+      - !type:AdjustReagent
+        reagent: Pomelustine
+        amount: 0.05
+  fizziness: 0.25
+
+- type: reagent
+  id: EmeraldJourney
+  name: reagent-name-emeraldjourney
+  parent: BaseAlcohol
+  desc: reagent-desc-emeraldjourney
+  physicalDesc: reagent-physical-desc-fizzy
+  flavor: emeraldjourney
+  color: "#4de0a5"
+  metamorphicSprite:
+    sprite: _DEN/Objects/Consumable/Drinks/emeraldjourney.rsi
+    state: icon_empty
+  metamorphicMaxFillLevels: 5
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: false
+  metabolisms:
+    Drink:
+      effects:
+      - !type:SatiateThirst
+        factor: 0.667
+      - !type:AdjustReagent
+        reagent: Ethanol
+        amount: 0.28
+  fizziness: 0.25
+
+- type: reagent
+  id: VampiresDelight
+  name: reagent-name-vampiresdelight
+  parent: BaseAlcohol
+  desc: reagent-desc-vampiresdelight
+  physicalDesc: reagent-physical-desc-ferrous
+  flavor: vampiresdelight
+  color: "#701b25"
+  metamorphicSprite:
+    sprite: _DEN/Objects/Consumable/Drinks/vampiresdelight.rsi
+    state: icon_empty
+  metamorphicMaxFillLevels: 5
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: false
+  metabolisms:
+    Drink:
+      effects:
+      - !type:SatiateThirst
+        factor: 0.667
+      - !type:AdjustReagent
+        reagent: Ethanol
+        amount: 0.03
+  fizziness: 0.25
+
+- type: reagent
+  id: WitchingHour
+  name: reagent-name-witchinghour
+  parent: BaseAlcohol
+  desc: reagent-desc-witchinghour
+  physicalDesc: reagent-physical-desc-bubbly
+  flavor: witchinghour
+  color: "#853f7d"
+  metamorphicSprite:
+    sprite: _DEN/Objects/Consumable/Drinks/witchinghour.rsi
+    state: icon_empty
+  metamorphicMaxFillLevels: 5
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: false
+  metabolisms:
+    Drink:
+      effects:
+      - !type:SatiateThirst
+        factor: 0.667
+      - !type:AdjustReagent
+        reagent: Ethanol
+        amount: 0.08
   fizziness: 0.25

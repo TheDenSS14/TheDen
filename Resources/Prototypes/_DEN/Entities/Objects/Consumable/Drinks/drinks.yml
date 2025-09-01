@@ -461,3 +461,83 @@
   - type: Icon
     sprite: _DEN/Objects/Consumable/Drinks/thesilverhand.rsi
     state: icon
+
+- type: entity
+  parent: DrinkGlass
+  id: DrinkArkveilTempleGlass
+  suffix: arkveil temple
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 30
+        reagents:
+        - ReagentId: ArkveilTemple
+          Quantity: 30
+  - type: Icon
+    sprite: _DEN/Objects/Consumable/Drinks/arkveiltemple.rsi
+    state: icon
+
+- type: entity
+  parent: DrinkGlass
+  id: DrinkCoconutDoubleCreamPieGlass
+  suffix: coconut double cream pie
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 30
+        reagents:
+        - ReagentId: CoconutDoubleCreamPie
+          Quantity: 30
+  - type: Icon
+    sprite: _DEN/Objects/Consumable/Drinks/coconutdoublecreampie.rsi
+    state: icon
+
+- type: entity
+  parent: DrinkGlass
+  id: DrinkEmeraldJourneyGlass
+  suffix: emerald journey
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 30
+        reagents:
+        - ReagentId: EmeraldJourney
+          Quantity: 30
+  - type: Icon
+    sprite: _DEN/Objects/Consumable/Drinks/emeraldjourney.rsi
+    state: icon
+
+- type: entity
+  parent: DrinkGlass
+  id: DrinkVampiresDelightGlass
+  suffix: vampires delight
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 30
+        reagents:
+        - ReagentId: VampiresDelight
+          Quantity: 30
+  - type: Icon
+    sprite: _DEN/Objects/Consumable/Drinks/vampiresdelight.rsi
+    state: icon
+
+- type: entity
+  parent: DrinkGlass
+  id: DrinkWitchingHourGlass
+  suffix: witching hour
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 30
+        reagents:
+        - ReagentId: WitchingHour
+          Quantity: 30
+  - type: Icon
+    sprite: _DEN/Objects/Consumable/Drinks/witchinghour.rsi
+    state: icon

@@ -381,3 +381,69 @@
       amount: 1
   products:
     TheSilverhand: 6
+
+- type: reaction
+  id: ArkveilTemple
+  reactants: 
+    GreenGrass:
+      amount: 3
+    ShirleyTemple: 
+      amount: 3
+    JuiceWatermelon:
+      amount: 2
+    MelonLiquor:
+      amount: 1
+  products:
+    ArkveilTemple: 9
+
+- type: reaction
+  id: CoconutDoubleCreamPie
+  reactants:
+    CreamOfCoconut:
+      amount: 1
+    Milk:
+      amount: 1
+    Cum: 
+      amount: 1
+  products:
+    CoconutDoubleCreamPie: 3
+
+- type: reaction
+  id: EmeraldJourney
+  reactants: 
+    SodaWater: 
+      amount: 3
+    LemonLime: 
+      amount: 1
+    Absinthe:
+      amount: 1
+    MelonLiquor:
+      amount: 1
+  products: 
+    EmeraldJourney: 6
+
+- type: reaction
+  id: VampiresDelight
+  reactants:
+    Blood:
+      amount: 2
+    Wine:
+      amount: 1
+    Grenadine:
+      amount: 1
+  products: 
+    VampiresDelight: 4
+
+- type: reaction
+  id: WitchingHour
+  reactants: 
+    Wine: 
+      amount: 2
+    DrGibb: 
+      amount: 2
+    BlueCuracao:
+      amount: 1
+    Grenadine:
+      amount: 1
+  products: 
+    WitchingHour: 6
