@@ -59,9 +59,10 @@
 # SPDX-FileCopyrightText: 2025 VividPups
 # SPDX-FileCopyrightText: 2025 corresp0nd
 # SPDX-FileCopyrightText: 2025 mart
+# SPDX-FileCopyrightText: 2025 sheepie
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 #When adding new hardsuits, please try to keep the organization consistent with hardsuit-helmets.yml (if possible.)
 
@@ -229,6 +230,8 @@
   - type: HeldSpeedModifier
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitSpatio
+  - type: StaminaDamageResistance #Den
+    coefficient: 0.7 #Den
   - type: GuideHelp
     guides: [ HephaestusIndustries ]
   - type: Tag
@@ -269,6 +272,8 @@
   - type: HeldSpeedModifier
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitSalvage
+  - type: StaminaDamageResistance #Den
+    coefficient: 0.6 #Den
   - type: GuideHelp
     guides: [ HephaestusIndustries ]
   - type: FireProtection
@@ -341,6 +346,8 @@
   - type: HeldSpeedModifier
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitGoliath
+  - type: StaminaDamageResistance #Den
+    coefficient: 0.6 #Den
   - type: Construction
     graph: HardsuitGoliath
     node: hardsuitGoliath
@@ -381,6 +388,8 @@
     reduction: 0.7 # Perfect Protection with Helmet.
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitMaxim
+  - type: StaminaDamageResistance #Den
+    coefficient: 0.5 #Den
   - type: GuideHelp
     guides: [ HephaestusIndustries ]
 
@@ -415,7 +424,7 @@
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitSecurity
   - type: StaminaDamageResistance
-    coefficient: 0.75 # 25%
+    coefficient: 0.65 #Den
   - type: FireProtection
     reduction: 0.35 # 50% with Helmet.
 
@@ -482,7 +491,7 @@
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitWarden
   - type: StaminaDamageResistance
-    coefficient: 0.65 # 35%
+    coefficient: 0.55 #Den
   - type: FireProtection
     reduction: 0.5 # 70% with Helmet.
 
@@ -518,7 +527,7 @@
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitCap
   - type: StaminaDamageResistance
-    coefficient: 0.5 # 50%
+    coefficient: 0.7 #Den
   - type: GuideHelp
     guides: [ NanoTrasen ]
   - type: FireProtection
@@ -720,6 +729,8 @@
   - type: HeldSpeedModifier
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitLuxury
+  - type: StaminaDamageResistance #Den
+    coefficient: 0.7 #Den
   - type: GuideHelp
     guides: [ HephaestusIndustries ]
 
@@ -866,7 +877,7 @@
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitSyndieElite
   - type: StaminaDamageResistance
-    coefficient: 0.5 # 50%
+    coefficient: 0.35 #Den
 
 #Syndicate Commander Hardsuit
 - type: entity
@@ -900,7 +911,7 @@
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitSyndieCommander
   - type: StaminaDamageResistance
-    coefficient: 0.5 # 50%
+    coefficient: 0.45 #Den
   - type: Item
     size: Huge
   - type: FireProtection
@@ -938,7 +949,7 @@
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitCybersun
   - type: StaminaDamageResistance
-    coefficient: 0.5 # 50%
+    coefficient: 0.75 #Den
   - type: FireProtection
     reduction: 0.6 # 80% with Helmet.
 
@@ -1035,6 +1046,8 @@
   - type: HeldSpeedModifier
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitPirateEVA
+  - type: StaminaDamageResistance #Den
+    coefficient: 0.7 #Den
   - type: StaticPrice
     price: 0
 
@@ -1071,7 +1084,7 @@
   - type: StaticPrice
     price: 0
   - type: StaminaDamageResistance
-    coefficient: 0.75 # 25%
+    coefficient: 0.5 #Den
 
 #CENTCOMM / ERT HARDSUITS
 #ERT Leader Hardsuit
@@ -1254,7 +1267,8 @@
     clothingPrototype: ClothingHeadHelmetCBURN
   - type: FireProtection
     reduction: 0.7 # Perfect Protection with Helmet.
-
+  - type: StaminaDamageResistance #Den
+    coefficient: 0.6 #Den
 
 #MISC. HARDSUITS
 #Clown Hardsuit

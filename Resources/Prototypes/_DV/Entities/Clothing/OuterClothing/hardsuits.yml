@@ -1,11 +1,11 @@
-# SPDX-FileCopyrightText: 2023 Tad "Taddy" Johnson <120885811+TadJohnson00@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 Tryded <139474617+Tryded@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 Rosycup <178287475+Rosycup@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 VMSolidus <evilexecutive@gmail.com>
-# SPDX-FileCopyrightText: 2025 mart <martgitomen@gmail.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Tad "Taddy" Johnson
+# SPDX-FileCopyrightText: 2024 Tryded
+# SPDX-FileCopyrightText: 2025 Rosycup
+# SPDX-FileCopyrightText: 2025 VMSolidus
+# SPDX-FileCopyrightText: 2025 mart
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 # Standard Combat Hardsuits
 - type: entity
@@ -32,6 +32,8 @@
         Radiation: 0.75
         Caustic: 0.75
         Heat: 0.75
+  - type: StaminaDamageResistance #Den
+    coefficient: 0.65 #Den
   - type: ClothingSpeedModifier
     walkModifier: 0.8
     sprintModifier: 0.8
@@ -79,6 +81,8 @@
         Radiation: 0.80
         Caustic: 0.80
         Heat: 0.80
+  - type: StaminaDamageResistance #Den
+    coefficient: 0.75 #Den
   - type: ClothingSpeedModifier
     walkModifier: 0.85
     sprintModifier: 0.85
@@ -126,6 +130,8 @@
         Radiation: 0.70
         Caustic: 0.70
         Heat: 0.40
+  - type: StaminaDamageResistance #Den
+    coefficient: 0.55 #Den
   - type: ClothingSpeedModifier
     walkModifier: 0.7
     sprintModifier: 0.7
@@ -173,6 +179,8 @@
         Radiation: 0.75
         Caustic: 0.75
         Heat: 0.75
+  - type: StaminaDamageResistance #Den
+    coefficient: 0.5 #Den
   - type: ClothingSpeedModifier
     walkModifier: 0.80
     sprintModifier: 0.80
