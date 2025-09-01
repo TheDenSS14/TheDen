@@ -2585,22 +2585,6 @@
 
 - type: entity
   parent: DrinkGlass
-  id: DrinkDaiquiriGlass
-  suffix: daiquiri
-  components:
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        maxVol: 30
-        reagents:
-        - ReagentId: Daiquiri
-          Quantity: 30
-  - type: Icon
-    sprite: Objects/Consumable/Drinks/daiquiri.rsi
-    state: icon
-
-- type: entity
-  parent: DrinkGlass
   id: DrinkDeathInTheAfternoonGlass
   suffix: death in the afternoon
   components:
