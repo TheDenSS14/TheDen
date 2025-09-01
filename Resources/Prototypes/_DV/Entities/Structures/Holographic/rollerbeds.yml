@@ -9,7 +9,8 @@
   - type: StabilizeOnBuckle
     efficiency: 1
     reducesBleeding: 3 # Stops full bleeding in 10 seconds, one per second.
-  - type: Physics
+  - type: Strap
+    buckleOffset: "0,0.10"
   - type: Fixtures
     fixtures:
       fix1:
@@ -30,6 +31,7 @@
       visible: false
     - state: holographic_rollerbed_buckled
       map: ["buckledLayer"]
+      visible: false
   - type: StaticPrice
     price: 200
 
