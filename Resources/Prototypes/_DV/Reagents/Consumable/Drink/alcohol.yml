@@ -43,3 +43,20 @@
         reagent: Ethanol
         amount: 0.2
   fizziness: 0.25
+
+- type: reagent
+  id: DeadRum
+  name: reagent-name-dead-rum
+  parent: BaseAlcohol
+  desc: reagent-desc-dead-rum
+  physicalDesc: reagent-physical-desc-strong-smelling
+  flavor: deadrum #Delta-V Flavor additions
+  color: "#664300"
+  metabolisms:
+    Drink:
+      effects:
+      - !type:SatiateThirst
+        factor: 2
+      - !type:AdjustReagent
+        reagent: Ethanol
+        amount: 0.2
