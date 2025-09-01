@@ -992,6 +992,8 @@
 
 - type: reaction
   id: Radler
+  requiredMixerCategories:
+  - Stir
   reactants:
     Lemonade:
       amount: 1
@@ -1410,6 +1412,8 @@
 
 - type: reaction
   id: DeathInTheAfternoon
+  requiredMixerCategories:
+  - Shake
   reactants:
     Absinthe:
       amount: 2
@@ -1458,6 +1462,8 @@
 
 - type: reaction
   id: Mimeosa
+  requiredMixerCategories:
+  - Stir
   reactants:
     Mimosa:
       amount: 2
