@@ -61,7 +61,7 @@ namespace Content.Shared.Strip.Components
         public TimeSpan Additive = TimeSpan.Zero;
         public ThievingStealth Stealth = stealth;
 
-        public TimeSpan Time => TimeSpan.FromSeconds(MathF.Max(InitialTime.Seconds * Multiplier + Additive.Seconds, 0f));
+        public TimeSpan Time => TimeSpan.FromSeconds(Math.Round(Math.Max(InitialTime.TotalSeconds * Multiplier + Additive.TotalSeconds, 0.5f), 3, MidpointRounding.ToZero));
 
         public SlotFlags TargetSlots { get; } = SlotFlags.GLOVES;
     }

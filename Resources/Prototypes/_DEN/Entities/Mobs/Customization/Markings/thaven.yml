@@ -1,4 +1,7 @@
-# Chest
+# SPDX-FileCopyrightText: 2025 Shaman
+# SPDX-FileCopyrightText: 2025 portfiend
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
 
 - type: marking
   id: ThavenSlimChest
@@ -117,7 +120,39 @@
   - sprite: _DEN/Mobs/Customization/Thaven/chest.rsi
     state: hipscales
 
+- type: marking
+  id: ThavenChestHeavyTattoos
+  bodyPart: Chest
+  markingCategory: Chest
+  speciesRestriction: [ Thaven ]
+  coloring:
+    default:
+      type:
+        !type:TattooColoring
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Thaven/chest.rsi
+    state: chest_heavy1
+  - sprite: _DEN/Mobs/Customization/Thaven/chest.rsi
+    state: chest_heavy2
+  - sprite: _DEN/Mobs/Customization/Thaven/chest.rsi
+    state: chest_heavy3
+
 # Head
+
+- type: marking
+  id: ThavenHeadHeavyTattoos
+  bodyPart: Head
+  markingCategory: Head
+  speciesRestriction: [ Thaven ]
+  coloring:
+    default:
+      type:
+        !type:TattooColoring
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Thaven/head.rsi
+    state: head_heavy1
+  - sprite: _DEN/Mobs/Customization/Thaven/head.rsi
+    state: head_heavy2
 
 # Snout
 
@@ -143,14 +178,13 @@
     default:
       type:
         !type:TattooColoring
-      fallbackColor: "#666666"
   sprites:
   - sprite: _DEN/Mobs/Customization/Thaven/rarm.rsi
     state: r_arm_doll
 
 - type: marking
   id: ThavenArmProstheticRight
-  bodyPart: LArm
+  bodyPart: RArm
   markingCategory: RightArm
   speciesRestriction: [ Thaven ]
   followSkinColor: false
@@ -165,13 +199,28 @@
 
 - type: marking
   id: ThavenArmTwistingRight
-  bodyPart: LArm
+  bodyPart: RArm
   markingCategory: RightArm
   speciesRestriction: [ Thaven ]
   followSkinColor: false
   sprites:
   - sprite: _DEN/Mobs/Customization/Thaven/rarm.rsi
     state: arm_r_twisting
+
+- type: marking
+  id: ThavenArmHeavyTattoosRight
+  bodyPart: RArm
+  markingCategory: RightArm
+  speciesRestriction: [ Thaven ]
+  coloring:
+    default:
+      type:
+        !type:TattooColoring
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Thaven/rarm.rsi
+    state: r_arm_heavy1
+  - sprite: _DEN/Mobs/Customization/Thaven/rarm.rsi
+    state: r_arm_heavy2
 
 # RHand
 
@@ -181,8 +230,61 @@
   markingCategory: RightHand
   speciesRestriction: [ Thaven ]
   sprites:
-  - sprite: Mobs/Customization/misc.rsi
+  - sprite: _DEN/Mobs/Customization/Thaven/rhand.rsi
     state: m_gradient_r_hand
+
+- type: marking
+  id: ThavenHandHeavyTattoosRight
+  bodyPart: RHand
+  markingCategory: RightHand
+  speciesRestriction: [ Thaven ]
+  coloring:
+    default:
+      type:
+        !type:TattooColoring
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Thaven/rhand.rsi
+    state: r_hand_heavy1
+  - sprite: _DEN/Mobs/Customization/Thaven/rhand.rsi
+    state: r_hand_heavy2
+
+- type: marking
+  id: ThavenHandDollJointsTattooRight
+  bodyPart: RHand
+  markingCategory: RightHand
+  speciesRestriction: [ Thaven ]
+  coloring:
+    default:
+      type:
+        !type:TattooColoring
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Thaven/rhand.rsi
+    state: r_hand_doll
+
+- type: marking
+  id: ThavenHandProstheticRight
+  bodyPart: RHand
+  markingCategory: RightHand
+  speciesRestriction: [ Thaven ]
+  followSkinColor: false
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#E4E4E4"
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Thaven/rhand.rsi
+    state: hand_r_prosthetic
+
+- type: marking
+  id: ThavenHandTwistingRight
+  bodyPart: RHand
+  markingCategory: RightHand
+  speciesRestriction: [ Thaven ]
+  followSkinColor: false
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Thaven/rhand.rsi
+    state: hand_r_twisting
 
 # LArm
 
@@ -204,7 +306,6 @@
     default:
       type:
         !type:TattooColoring
-      fallbackColor: "#666666"
   sprites:
   - sprite: _DEN/Mobs/Customization/Thaven/larm.rsi
     state: l_arm_doll
@@ -234,6 +335,21 @@
   - sprite: _DEN/Mobs/Customization/Thaven/larm.rsi
     state: arm_l_twisting
 
+- type: marking
+  id: ThavenArmHeavyTattoosLeft
+  bodyPart: LArm
+  markingCategory: LeftArm
+  speciesRestriction: [ Thaven ]
+  coloring:
+    default:
+      type:
+        !type:TattooColoring
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Thaven/larm.rsi
+    state: l_arm_heavy1
+  - sprite: _DEN/Mobs/Customization/Thaven/larm.rsi
+    state: l_arm_heavy2
+
 # LHand
 
 - type: marking
@@ -242,8 +358,61 @@
   markingCategory: LeftHand
   speciesRestriction: [ Thaven ]
   sprites:
-  - sprite: Mobs/Customization/misc.rsi
+  - sprite: _DEN/Mobs/Customization/Thaven/lhand.rsi
     state: m_gradient_l_hand
+
+- type: marking
+  id: ThavenHandHeavyTattoosLeft
+  bodyPart: LHand
+  markingCategory: LeftHand
+  speciesRestriction: [ Thaven ]
+  coloring:
+    default:
+      type:
+        !type:TattooColoring
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Thaven/lhand.rsi
+    state: l_hand_heavy1
+  - sprite: _DEN/Mobs/Customization/Thaven/lhand.rsi
+    state: l_hand_heavy2
+
+- type: marking
+  id: ThavenHandDollJointsTattooLeft
+  bodyPart: LHand
+  markingCategory: LeftHand
+  speciesRestriction: [ Thaven ]
+  coloring:
+    default:
+      type:
+        !type:TattooColoring
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Thaven/lhand.rsi
+    state: l_hand_doll
+
+- type: marking
+  id: ThavenHandProstheticLeft
+  bodyPart: LHand
+  markingCategory: LeftHand
+  speciesRestriction: [ Thaven ]
+  followSkinColor: false
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#E4E4E4"
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Thaven/lhand.rsi
+    state: hand_l_prosthetic
+
+- type: marking
+  id: ThavenHandTwistingLeft
+  bodyPart: LHand
+  markingCategory: LeftHand
+  speciesRestriction: [ Thaven ]
+  followSkinColor: false
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Thaven/lhand.rsi
+    state: hand_l_twisting
 
 # RLeg
 
@@ -471,14 +640,6 @@
   sprites:
   - sprite: _DEN/Mobs/Customization/Thaven/undershirt.rsi
     state: rolledundershirt_f
-
-# LFoot
-
-# RFoot
-
-# LHand
-
-# RHand
 
 # FacialHair
 

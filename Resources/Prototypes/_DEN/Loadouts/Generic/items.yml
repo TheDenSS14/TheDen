@@ -1,3 +1,9 @@
+# SPDX-FileCopyrightText: 2025 Eightballll
+# SPDX-FileCopyrightText: 2025 MajorMoth
+# SPDX-FileCopyrightText: 2025 Shaman
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 - type: loadout #TheDen
   id: LoadoutMysterySpaceBladeBox
   category: GeneralToys
@@ -34,3 +40,11 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutSmokes
+
+- type: loadout
+  id: LoadoutClothingMaskBreathFashion
+  category: GeneralItems
+  cost: 0
+  customColorTint: true
+  items:
+    - ClothingMaskBreathFashion

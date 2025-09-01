@@ -23,7 +23,6 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
-using Content.Server._DEN.Bed.Components;
 using Content.Server.Administration.Logs;
 using Content.Server.Atmos.EntitySystems;
 using Content.Server.Body.Components;
@@ -33,13 +32,13 @@ using Content.Server.EntityEffects.EffectConditions;
 using Content.Server.EntityEffects.Effects;
 using Content.Shared._Goobstation.MartialArts.Components; // Goobstation - Martial Arts
 using Content.Server.Popups;
+using Content.Shared._DEN.Bed.Components;
 using Content.Shared._Shitmed.Body.Components;
 using Content.Shared.Alert;
 using Content.Shared.Atmos;
 using Content.Shared.Body.Components;
 using Content.Shared._Shitmed.Body.Organ;
 using Content.Shared.Body.Prototypes;
-using Content.Shared.Buckle.Components;
 using Content.Shared.Chemistry.Components;
 using Content.Shared.Chemistry.Reagent; // Shitmed Change
 using Content.Shared.Damage;
@@ -51,7 +50,7 @@ using JetBrains.Annotations;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
 using Content.Shared.Movement.Pulling.Components; // Goobstation
-using Content.Shared.Movement.Pulling.Systems; // Goobstation
+using Content.Shared.Movement.Pulling.Systems;
 
 namespace Content.Server.Body.Systems;
 
