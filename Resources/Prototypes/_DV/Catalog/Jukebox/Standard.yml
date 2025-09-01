@@ -1,119 +1,109 @@
-# SPDX-FileCopyrightText: 2024 Lyndomen <49795619+Lyndomen@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 Milon <milonpl.git@proton.me>
-# SPDX-FileCopyrightText: 2024 Milon <plmilonpl@gmail.com>
-# SPDX-FileCopyrightText: 2024 Mnemotechnican <69920617+Mnemotechnician@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 Rosycup <178287475+Rosycup@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Lyndomen
+# SPDX-FileCopyrightText: 2024 Milon
+# SPDX-FileCopyrightText: 2024 Mnemotechnican
+# SPDX-FileCopyrightText: 2025 Rosycup
+# SPDX-FileCopyrightText: 2025 Shaman
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 # sorted alphabetically based on filenames in the folder Resources/Audio/_DV/Jukebox
 # keep it ordered or I'll stab you
 
+# TheDen - Dashes between song and artist replaced with slashes, put song name first for easier searching
+
 - type: jukebox
   id: ADiffReal
-  name: Andreas Viklund - A.D.R (Lagoona rmx)
+  name: "A.D.R (Lagoona rmx) // Andreas Viklund"
   path:
     path: /Audio/_DV/Jukebox/a_different_reality_lagoona_remix.xm-MONO.ogg
 
 - type: jukebox
   id: AggAss
-  name: melcom - Aggravated Assault
+  name: "Aggravated Assault // melcom"
   path:
     path: /Audio/_DV/Jukebox/aggravated.it-MONO.ogg
 
 - type: jukebox
   id: AutEqu
-  name: lemonade - Autumnal Equinox
+  name: "Autumnal Equinox // lemonade"
   path:
     path: /Audio/_DV/Jukebox/autumnal_equinox.xm-MONO.ogg
 
 - type: jukebox
-  id: DeckTheHalls
-  name: Deck The Halls - Kevin Macleod
-  path:
-    path: /Audio/_DV/Jukebox/deck_the_halls_b-MONO.ogg
-
-- type: jukebox
   id: DrozAlone
-  name: Drozerix - Alone
+  name: "Alone // Drozerix"
   path:
     path: /Audio/_DV/Jukebox/drozerix_-_alone.xm-MONO.ogg
 
 - type: jukebox
   id: DrozLeisure
-  name: Drozerix - Leisurely Voice
+  name: "Leisurely Voice // Drozerix"
   path:
     path: /Audio/_DV/Jukebox/drozerix_-_leisurely_voice.xm-MONO.ogg
 
 - type: jukebox
   id: SunbeamEvery
-  name: Sunbeamstress - Every Light Is Blinking At Once
+  name: "Every Light Is Blinking At Once // Sunbeamstress"
   path:
     path: /Audio/_DV/Jukebox/every_light_is_blinking_at_onceMONO.ogg
 
 - type: jukebox
   id: KCHaxors
-  name: Karl Casey @ White Bat Audio - Hackers
+  name: "Hackers // Karl Casey"
   path:
     path: /Audio/_DV/Jukebox/hackers-MONO.ogg
 
 - type: jukebox
   id: SunbeamLaser
-  name: Sunbeamstress - Lasers Rip Apart The Bulkhead
+  name: "Lasers Rip Apart The Bulkhead // Sunbeamstress"
   path:
     path: /Audio/_DV/Jukebox/lasers_rip_apart_the_bulkheadMONO.ogg
 
 - type: jukebox
   id: IanMarhaba
-  name: Ian Alex Mac. - Marhaba
+  name: "Marhaba // Ian Alex Mac"
   path:
     path: /Audio/_DV/Jukebox/marhaba-MONO.ogg
 
 - type: jukebox
   id: PTMinute
-  name: Patricia Taxxon - Minute
+  name: "Minute // Patricia Taxxon"
   path:
     path: /Audio/_DV/Jukebox/Patricia_Taxxon_-_Minute_-_MONO.ogg
 
 - type: jukebox
   id: SunbeamPhoron
-  name: Sunbeamstress - Phoron Will Make Us Rich
+  name: "Phoron Will Make Us Rich // Sunbeamstress"
   path:
     path: /Audio/_DV/Jukebox/Phoron_Will_Make_Us_RichMONO2.ogg
 
 - type: jukebox
   id: NymphsForest
-  name: Psirius - Nymphs of the Forest
+  name: "Nymphs of the Forest // Psirius"
   path:
     path: /Audio/_DV/Jukebox/psirius_-_nymphs_of_the_forest.mptm-MONO.ogg
 
 - type: jukebox
   id: GhirScratch
-  name: ghirardelli7 - Scratch Post
+  name: "Scratch Post // ghirardelli7"
   path:
     path: /Audio/_DV/Jukebox/Scratch_Post_-_OST_MONO.ogg
 
 - type: jukebox
   id: JukeShiba
-  name: Dot Nigou - Shibamata
+  name: "Shibamata // Dot Nigou"
   path:
     path: /Audio/_DV/Jukebox/shibamata-MONO.ogg
 
 - type: jukebox
-  id: SpaceAsshowl
-  name: Chris Remo - Space Asshole
-  path:
-    path: /Audio/_DV/Jukebox/space_asshole-MONO.ogg
-
-- type: jukebox
   id: AmieSuperpos
-  name: Amie Waters - Superposition
+  name: "Superposition // Amie Waters"
   path:
     path: /Audio/_DV/Jukebox/superposition-MONO.ogg
 
 - type: jukebox
   id: LoneDigger
-  name: Caravan Palace - Lone Digger
+  name: "Lone Digger // Caravan Palace"
   path:
     path: /Audio/_DV/Jukebox/Caravan_Palace_Lone_Digger-MONO.ogg

@@ -1,4 +1,6 @@
-# Chest
+# SPDX-FileCopyrightText: 2025 Shaman
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
 
 marking-Gills = Gills
 marking-Gills-gills = Gills
@@ -66,6 +68,12 @@ marking-ThavenLEyeGlow-glowleft = Glowing Eye (Left)
 
 marking-ThavenREyeGlow = Glowing Eye (Right)
 marking-ThavenREyeGlow-glowright = Glowing Eye (Right)
+
+marking-ThavenLEye = Colored Eye (Left)
+marking-ThavenLEye-glowleft = Colored Eye (Left)
+
+marking-ThavenREye = Colored Eye (Right)
+marking-ThavenREye-glowright = Colored Eye (Right)
 
 # RArm
 

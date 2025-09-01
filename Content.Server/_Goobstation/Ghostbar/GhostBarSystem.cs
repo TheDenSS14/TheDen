@@ -4,7 +4,7 @@
 // SPDX-FileCopyrightText: 2025 portfiend
 // SPDX-FileCopyrightText: 2025 sleepyyapril
 //
-// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+// SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 using Robust.Server.GameObjects;
 using Content.Server.Clothing.Systems; // Einstein Engines
@@ -115,7 +115,7 @@ public sealed class GhostBarSystem : EntitySystem
         var playTimes = _playTimeTracking.GetTrackerTimes(player);
         var whitelisted = player.ContentData()?.Whitelisted ?? false;
 
-        _loadout.ApplyCharacterLoadout(mobUid, randomJob, profile, playTimes, whitelisted);
+        _loadout.ApplyCharacterLoadout(mobUid, randomJob, profile, playTimes, whitelisted, player: player);
         _trait.ApplyTraits(mobUid, randomJob, profile, player, punishCheater: false);
         // Einstein Engines end - apply loadouts and traits
 

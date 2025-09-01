@@ -5,7 +5,7 @@
 // SPDX-FileCopyrightText: 2025 portfiend
 // SPDX-FileCopyrightText: 2025 sleepyyapril
 //
-// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+// SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 using System.Linq;
 using System.Text;
@@ -81,7 +81,8 @@ public abstract partial class SharedCharacterRequirementsSystem : EntitySystem
             whitelisted: whitelisted,
             prototype: prototype,
             entity: characterUid,
-            depth: depth);
+            depth: depth,
+            player: mind.Session);
 
         return CheckRequirementsValid(requirements,
             context,
