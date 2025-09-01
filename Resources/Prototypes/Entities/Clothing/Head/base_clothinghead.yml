@@ -164,6 +164,7 @@
   components:
   - type: Item
     size: Normal
+  - type: BreathMask # TheDen
   - type: PressureProtection
     highPressureMultiplier: 0.6
     lowPressureMultiplier: 1000
@@ -197,6 +198,7 @@
   components:
   - type: Item
     size: Normal
+  - type: BreathMask # TheDen
   - type: PressureProtection
     highPressureMultiplier: 0.6
     lowPressureMultiplier: 1000
@@ -238,6 +240,7 @@
     unequipSound: /Audio/Mecha/mechmove03.ogg
     quickEquip: false
     slots: [ HEAD ]
+  - type: BreathMask # TheDen
   - type: PressureProtection
     highPressureMultiplier: 0.3
     lowPressureMultiplier: 1000
