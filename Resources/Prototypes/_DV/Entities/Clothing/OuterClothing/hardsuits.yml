@@ -38,6 +38,8 @@
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitCombatStandard
   - type: AllowSuitStorage
+  - type: FireProtection
+    reduction: 0.35 # 50% with Helmet.
 
 - type: entity
   parent: ClothingOuterHardsuitCombatStandard
@@ -83,6 +85,8 @@
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitCombatMedical
   - type: AllowSuitStorage
+  - type: FireProtection
+    reduction: 0.3 # 40% with Helmet.
 
 - type: entity
   parent: ClothingOuterHardsuitCombatMedical
@@ -128,6 +132,8 @@
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitCombatRiot
   - type: AllowSuitStorage
+  - type: FireProtection
+    reduction: 0.5 # 70% with Helmet.
 
 - type: entity
   parent: ClothingOuterHardsuitCombatRiot
@@ -173,6 +179,8 @@
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitCombatAdvanced
   - type: AllowSuitStorage
+  - type: FireProtection
+    reduction: 0.45 # 60% with Helmet.
 
 - type: entity
   parent: ClothingOuterHardsuitCombatAdvanced

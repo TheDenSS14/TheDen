@@ -41,7 +41,6 @@
   - type: StaminaDamageResistance
     coefficient: 0.5 # 50%
 
-
 # cybersun stealth
 
 - type: entity
@@ -127,7 +126,7 @@
   - type: ExplosionResistance
     damageCoefficient: 0.3 # chinalake meta would go hard
   - type: FireProtection
-    reduction: 0.9 # atmos fire suit is 0.8, so i guess this is fine? Reduction goes the opossite way right?
+    reduction: 0.7 # Perfect Protection with Helmet.
   - type: Armor
     modifiers:
       coefficients:

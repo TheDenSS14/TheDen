@@ -244,8 +244,6 @@
   - type: TemperatureProtection
     heatingCoefficient: 0.1
     coolingCoefficient: 0.1
-  - type: FireProtection
-    reduction: 0.2
   - type: IgniteFromGasImmunity
     parts:
     - Head

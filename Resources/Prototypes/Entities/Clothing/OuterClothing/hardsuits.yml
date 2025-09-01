@@ -116,7 +116,7 @@
     heatingCoefficient: 0.001
     coolingCoefficient: 0.001
   - type: FireProtection
-    reduction: 1
+    reduction: 0.65    # 90% with Helmet, Hardsuit isn't fully fireproof.
   - type: ExplosionResistance
     damageCoefficient: 0.5
   - type: Armor
@@ -199,7 +199,7 @@
     heatingCoefficient: 0.001
     coolingCoefficient: 0.001
   - type: FireProtection
-    reduction: 1
+    reduction: 0.35 # 50% with Helmet.
 
 #Spationaut Hardsuit
 - type: entity
@@ -236,6 +236,8 @@
     - Hardsuit
     - WhitelistChameleon
     - HardsuitSpatio
+  - type: FireProtection
+    reduction: 0.35 # 50% with Helmet.
 
 #Salvage Hardsuit
 - type: entity
@@ -269,6 +271,9 @@
     clothingPrototype: ClothingHeadHelmetHardsuitSalvage
   - type: GuideHelp
     guides: [ HephaestusIndustries ]
+  - type: FireProtection
+    reduction: 0.5 # 65% with Helmet.
+
 
 #Paramedic Voidsuit
 - type: entity
@@ -339,6 +344,8 @@
   - type: Construction
     graph: HardsuitGoliath
     node: hardsuitGoliath
+  - type: FireProtection
+    reduction: 0.6 # Goliath Scales, 80% with Helmet.
 
 #Maxim Hardsuit
 - type: entity
@@ -371,7 +378,7 @@
     heatingCoefficient: 0.001
     coolingCoefficient: 0.001
   - type: FireProtection
-    reduction: 1
+    reduction: 0.7 # Perfect Protection with Helmet.
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitMaxim
   - type: GuideHelp
@@ -409,6 +416,8 @@
     clothingPrototype: ClothingHeadHelmetHardsuitSecurity
   - type: StaminaDamageResistance
     coefficient: 0.75 # 25%
+  - type: FireProtection
+    reduction: 0.35 # 50% with Helmet.
 
 #Brigmedic Hardsuit
 - type: entity
@@ -439,6 +448,8 @@
     clothingPrototype: ClothingHeadHelmetHardsuitBrigmedic
   - type: StaminaDamageResistance
     coefficient: 0.75 # 25%
+  - type: FireProtection
+    reduction: 0.3 # 40% with Helmet.
 
 #Warden's Hardsuit
 - type: entity
@@ -472,6 +483,8 @@
     clothingPrototype: ClothingHeadHelmetHardsuitWarden
   - type: StaminaDamageResistance
     coefficient: 0.65 # 35%
+  - type: FireProtection
+    reduction: 0.5 # 70% with Helmet.
 
 #Captain's Hardsuit
 - type: entity
@@ -508,6 +521,8 @@
     coefficient: 0.5 # 50%
   - type: GuideHelp
     guides: [ NanoTrasen ]
+  - type: FireProtection
+    reduction: 0.35 # 50% with Helmet.
 
 #Chief Engineer's Hardsuit
 - type: entity
@@ -559,7 +574,8 @@
     heatingCoefficient: 0.001
     coolingCoefficient: 0.001
   - type: FireProtection
-    reduction: 1
+    reduction: 0.7 # Perfect Protection with Helmet.
+
 
 #Chief Medical Officer's Hardsuit
 - type: entity
@@ -635,6 +651,8 @@
     coefficient: 0.75 # 25% as in "shock resistance" :trollface:
   - type: GuideHelp
     guides: [ NanoTrasen ]
+  - type: FireProtection
+    reduction: 0.6 # 80% with Helmet.
 
 #Head of Security's Hardsuit
 - type: entity
@@ -669,6 +687,8 @@
     clothingPrototype: ClothingHeadHelmetHardsuitSecurityRed
   - type: StaminaDamageResistance
     coefficient: 0.5 # 50%
+  - type: FireProtection
+    reduction: 0.45 # 60% with Helmet.
 
 #Luxury Mining Hardsuit
 - type: entity
@@ -764,6 +784,8 @@
     # HidesHarpyWings #Floof change, caused vulp tails to be hidden in hardsuits(with singer trait only)
   - type: StaminaDamageResistance
     coefficient: 0.5 # 50%
+  - type: FireProtection
+    reduction: 0.35 # 50% with Helmet.
 
 # Syndicate Medic Hardsuit
 - type: entity
@@ -825,7 +847,7 @@
   - type: ExplosionResistance
     damageCoefficient: 0.2
   - type: FireProtection
-    reduction: 1 # perfect protection like atmos firesuit for pyro tf2 ops
+    reduction: 0.7 # perfect protection with helmet like atmos firesuit for pyro tf2 ops
   - type: Armor
     modifiers:
       coefficients:
@@ -881,6 +903,8 @@
     coefficient: 0.5 # 50%
   - type: Item
     size: Huge
+  - type: FireProtection
+    reduction: 0.5 # 70% with Helmet.
 
 #Cybersun Juggernaut Hardsuit
 - type: entity
@@ -915,6 +939,8 @@
     clothingPrototype: ClothingHeadHelmetHardsuitCybersun
   - type: StaminaDamageResistance
     coefficient: 0.5 # 50%
+  - type: FireProtection
+    reduction: 0.6 # 80% with Helmet.
 
 #Wizard Hardsuit
 - type: entity
@@ -1098,8 +1124,6 @@
   - type: TemperatureProtection
     heatingCoefficient: 0.001
     coolingCoefficient: 0.001
-  - type: FireProtection
-    reduction: 1
 
 #ERT Medic Hardsuit
 - type: entity
@@ -1189,6 +1213,8 @@
     clothingPrototype: ClothingHeadHelmetHardsuitDeathsquad
   - type: StaminaDamageResistance
     coefficient: 0.1 # 90%
+  - type: FireProtection
+    reduction: 0.7 # Perfect Protection with Helmet.
 
 #CBURN Hardsuit
 - type: entity
@@ -1226,6 +1252,9 @@
   - type: HeldSpeedModifier
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetCBURN
+  - type: FireProtection
+    reduction: 0.7 # Perfect Protection with Helmet.
+
 
 #MISC. HARDSUITS
 #Clown Hardsuit
