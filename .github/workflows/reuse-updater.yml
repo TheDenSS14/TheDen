@@ -58,7 +58,7 @@ jobs:
             git pull --rebase origin ${{ vars.CHANGELOG_BRANCH }} || exit 1
             if git push origin ${{ vars.CHANGELOG_BRANCH }}; then
               echo "Push succeeded"
-              break
+              exit 0
             fi
             echo "Push failed, retrying in 5s..."
             sleep 5
