@@ -5,6 +5,7 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
+using Content.Shared.ActionBlocker;
 using Content.Shared.Chemistry.Components;
 using Content.Shared.Chemistry.Components.SolutionManager;
 using Content.Shared.Database;
@@ -19,12 +20,13 @@ namespace Content.Shared.Tools.Systems;
 
 public abstract partial class SharedToolSystem
 {
+    [Dependency] private readonly ActionBlockerSystem _actionBlocker = default!;
     public void InitializeWelder()
     {
         SubscribeLocalEvent<WelderComponent, MapInitEvent>(OnWelderInit);
         SubscribeLocalEvent<WelderComponent, ExaminedEvent>(OnWelderExamine);
         SubscribeLocalEvent<WelderComponent, AfterInteractEvent>(OnWelderAfterInteract);
-        
+
         SubscribeLocalEvent<WelderComponent, ToolUseAttemptEvent>((uid, comp, ev) =>
         {
             CanCancelWelderUse((uid, comp), ev.User, ev.Fuel, ev);
