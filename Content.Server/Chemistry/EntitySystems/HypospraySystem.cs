@@ -33,11 +33,17 @@ using Content.Server.Body.Components;
 using Robust.Shared.GameStates;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
+using Content.Server.Abilities.Chitinid;
 using Content.Shared.Chemistry.Reagent;
 using Robust.Server.Audio;
 using Content.Server.Atmos.EntitySystems;
+using Content.Server.Chat.Managers;
 using Content.Shared.DoAfter;
 using Content.Server.Chemistry.Components;
+using Content.Shared.Chat;
+using Content.Shared.Popups;
+using Robust.Server.Player;
+
 
 namespace Content.Server.Chemistry.EntitySystems;
 
@@ -47,6 +53,12 @@ public sealed class HypospraySystem : SharedHypospraySystem
     [Dependency] private readonly AtmosphereSystem _atmosphere = default!;
     [Dependency] private readonly AudioSystem _audio = default!;
     [Dependency] private readonly InteractionSystem _interaction = default!;
+    [Dependency] protected readonly SharedPopupSystem Popup = default!;
+    [Dependency] private readonly IChatManager _chat = default!;
+    [Dependency] private readonly IPlayerManager _playerManager = default!;
+
+    private const ChatChannel BlockInjectionDenyChannel = ChatChannel.Emotes;
+
 
     public override void Initialize()
     {
@@ -103,27 +115,112 @@ public sealed class HypospraySystem : SharedHypospraySystem
     {
         var (_, component) = entity;
 
-        var doAfterDelay = 0f;
-        if (component.MaxPressure != float.MaxValue)
+        var doAfterDelay = TimeSpan.FromSeconds(0);
+
+        if (!entity.Comp.BypassBlockInjection && TryComp<BlockInjectionComponent>(target, out var blockComponent)) // DeltaV
         {
-            var mixture = _atmosphere.GetTileMixture(target);
-            if (mixture != null && mixture.Pressure > component.MaxPressure)
-            {
-                doAfterDelay = component.InjectTime;
-            }
+            var msg = Loc.GetString($"injector-component-deny-{blockComponent.BlockReason}",
+                ("target", Identity.Entity(target, EntityManager)));
+            Popup.PopupEntity(msg, target, user);
+
+            if (!_playerManager.TryGetSessionByEntity(target, out var session))
+                return false;
+
+            _chat.ChatMessageToOne(
+                BlockInjectionDenyChannel,
+                msg,
+                msg,
+                EntityUid.Invalid,
+                false,
+                session.Channel);
+            return false;
         }
 
+        // Is the target a mob and hypo isn't instant? If yes, use a do-after to give them time to respond.
+        if ((HasComp<MobStateComponent>(target) || HasComp<BloodstreamComponent>(target))
+            && component.InjectTime != 0f)
+        {
+            doAfterDelay = GetInjectionTime(entity, user, target);
+        }
+        // What even is this for? It doesn't even stop injection.
+//        if (component.MaxPressure != float.MaxValue)
+//        {
+//            var mixture = _atmosphere.GetTileMixture(target);
+//            if (mixture != null && mixture.Pressure > component.MaxPressure)
+//            {
+//                doAfterDelay = component.InjectTime;
+//            }
+//        }
         var doAfterEventArgs = new DoAfterArgs(EntityManager, user, doAfterDelay, new HyposprayDoAfterEvent(), entity.Owner, target, user)
         {
-            BreakOnMove = target != user,
+            BreakOnMove = true,
             BreakOnWeightlessMove = false,
-            NeedHand = component.NeedHands,
-            Broadcast = true,
-            DuplicateCondition = DuplicateConditions.SameEvent
+            BreakOnDamage = true,
+            NeedHand = true,
+            BreakOnHandChange = true,
+            MovementThreshold = 0.1f,
         };
 
         _doAfter.TryStartDoAfter(doAfterEventArgs);
         return true;
+    }
+
+    private TimeSpan GetInjectionTime(Entity<HyposprayComponent> entity, EntityUid user, EntityUid target)
+    {
+        HyposprayComponent comp = entity;
+        if (!_solutionContainers.TryGetSolution(entity.Owner, entity.Comp.SolutionName, out _, out var solution))
+            return TimeSpan.FromSeconds(3);
+
+        if (solution.Volume == 0)
+        {
+            return TimeSpan.FromSeconds(0);
+        }
+
+        var actualDelay = MathHelper.Max(TimeSpan.FromSeconds(comp.InjectTime), TimeSpan.FromSeconds(1));
+        // additional delay is based on actual volume left to inject in syringe when smaller than transfer amount
+        var amountToInject = Math.Max(comp.TransferAmount.Float(), solution.Volume.Float());
+
+        // Injections take 0.25 seconds longer per 5u of possible space/content
+        actualDelay += TimeSpan.FromSeconds(amountToInject / 20);
+
+        // Create a pop-up for the user
+        Popup.PopupEntity(Loc.GetString("injector-component-injecting-user"), target, user);
+
+        var isTarget = user != target;
+
+        if (isTarget)
+        {
+            // Create a pop-up for the target
+            var userName = Identity.Entity(user, EntityManager);
+            Popup.PopupEntity(Loc.GetString("injector-component-injecting-target",
+                ("user", userName)), user, target);
+
+            // Check if the target is incapacitated or in combat mode and modify time accordingly.
+            if (MobState.IsIncapacitated(target))
+            {
+                actualDelay /= 2.5f;
+            }
+            else if (Combat.IsInCombatMode(target))
+            {
+                // Slightly increase the delay when the target is in combat mode. Helps prevents cheese injections in
+                // combat with fast syringes & lag.
+                actualDelay += TimeSpan.FromSeconds(1);
+            }
+
+            // Add an admin log, using the "force feed" log type. It's not quite feeding, but the effect is the same.
+            AdminLogger.Add(LogType.ForceFeed,
+                $"{EntityManager.ToPrettyString(user):user} is attempting to inject {EntityManager.ToPrettyString(target):target} with a solution {SharedSolutionContainerSystem.ToPrettyString(solution):solution}");
+
+        }
+        else
+        {
+            // Self-injections take half as long.
+            actualDelay /= 2;
+            AdminLogger.Add(LogType.Ingestion,
+                $"{EntityManager.ToPrettyString(user):user} is attempting to inject themselves with a solution {SharedSolutionContainerSystem.ToPrettyString(solution):solution}.");
+
+        }
+        return actualDelay;
     }
 
     private void OnDoAfter(Entity<HyposprayComponent> entity, ref HyposprayDoAfterEvent args)
@@ -213,8 +310,13 @@ public sealed class HypospraySystem : SharedHypospraySystem
         if (delayComp != null)
             _useDelay.TryResetDelay((uid, delayComp));
 
-        // Get transfer amount. May be smaller than component.TransferAmount if not enough room
         var realTransferAmount = FixedPoint2.Min(component.TransferAmount, targetSolution.AvailableVolume);
+        // Get transfer amount. May be smaller than component.TransferAmount if not enough room
+        if (component.InjectMaxCapacity
+        && _solutionContainers.TryGetSolution(entity.Owner, component.SolutionName, out var soln, out var solution))
+        {
+            realTransferAmount = FixedPoint2.Min(solution.MaxVolume, targetSolution.AvailableVolume);
+        }
 
         if (realTransferAmount <= 0)
         {

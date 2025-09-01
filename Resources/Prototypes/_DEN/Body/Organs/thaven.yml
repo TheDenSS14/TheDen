@@ -1,0 +1,86 @@
+- type: entity
+  id: OrganThavenTongue
+  parent: OrganHumanTongue
+  name: thaven tongue
+  description: "A snakelike muscle, oddly durable. Possibly to protect it from those sharp teeth."
+  categories: [ HideSpawnMenu ] # Removes from spawn menu
+  components:
+  - type: Sprite
+    sprite: _DEN/Mobs/Species/Thaven/organs.rsi
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 5
+        reagents:
+        - ReagentId: GreyMatter
+          Quantity: 1
+        - ReagentId: UncookedAnimalProteins
+          Quantity: 1
+        - ReagentId: CarpoToxin
+          Quantity: 3
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: CarpoToxin
+        Quantity: 3
+  - type: FlavorProfile
+    flavors:
+      - thavenflesh
+
+- type: entity
+  id: OrganThavenAppendix
+  parent: OrganHumanAppendix
+  name: thaven appendix
+  description: "Helps maintain a healthy gut biome, as all appendices do,except this one's toxic."
+  categories: [ HideSpawnMenu ] # Removes from spawn menu
+  components:
+  - type: Sprite
+    sprite: _DEN/Mobs/Species/Thaven/organs.rsi
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 5
+        reagents:
+        - ReagentId: GreyMatter
+          Quantity: 1
+        - ReagentId: UncookedAnimalProteins
+          Quantity: 1
+        - ReagentId: CarpoToxin
+          Quantity: 3
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: CarpoToxin
+        Quantity: 3
+  - type: FlavorProfile
+    flavors:
+      - thavenflesh
+
+- type: entity
+  id: OrganThavenEars
+  parent: OrganHumanEars
+  name: thaven ears
+  description: "Contains a complex inner ear that hears just as well underwater."
+  categories: [ HideSpawnMenu ] # Removes from spawn menu
+  components:
+  - type: Sprite
+    sprite: _DEN/Mobs/Species/Thaven/organs.rsi
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 5
+        reagents:
+        - ReagentId: GreyMatter
+          Quantity: 1
+        - ReagentId: UncookedAnimalProteins
+          Quantity: 1
+        - ReagentId: CarpoToxin
+          Quantity: 3
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: CarpoToxin
+        Quantity: 3
+  - type: FlavorProfile
+    flavors:
+      - thavenflesh

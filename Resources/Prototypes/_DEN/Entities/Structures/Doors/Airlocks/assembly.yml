@@ -1,0 +1,210 @@
+# The Den - new airlocks
+
+# Salvage
+- type: entity
+  parent: AirlockAssembly
+  id: AirlockAssemblySalvage
+  suffix: Salvage
+  components:
+    - type: Sprite
+      sprite: _DEN/Structures/Doors/Airlocks/Standard/salvage.rsi
+      state: "assembly"
+
+- type: entity
+  parent: AirlockAssembly
+  id: AirlockAssemblySalvageGlass
+  suffix: Salvage, Glass
+  components:
+    - type: Sprite
+      sprite: _DEN/Structures/Doors/Airlocks/Glass/salvage.rsi
+      state: "assembly"
+
+# Courier
+- type: entity
+  parent: AirlockAssembly
+  id: AirlockAssemblyCourier
+  suffix: Courier
+  components:
+    - type: Sprite
+      sprite: _DEN/Structures/Doors/Airlocks/Standard/courier.rsi
+      state: "assembly"
+
+- type: entity
+  parent: AirlockAssembly
+  id: AirlockAssemblyCourierGlass
+  suffix: Courier, Glass
+  components:
+    - type: Sprite
+      sprite: _DEN/Structures/Doors/Airlocks/Glass/courier.rsi 
+      state: "assembly"
+
+# Epi/sci
+- type: entity
+  parent: AirlockAssembly
+  id: AirlockAssemblyMedicalScience
+  suffix: Medical/Epistemics
+  components:
+    - type: Sprite
+      sprite: _DEN/Structures/Doors/Airlocks/Standard/medical.rsi
+      state: "assembly"
+
+- type: entity
+  parent: AirlockAssembly
+  id: AirlockAssemblyMedicalScienceGlass
+  suffix: Courier, Glass
+  components:
+    - type: Sprite
+      sprite: _DEN/Structures/Doors/Airlocks/Glass/medical.rsi
+      state: "assembly"
+
+# Paramedic
+- type: entity
+  parent: AirlockAssembly
+  id: AirlockAssemblyParamedic
+  suffix: Paramedic
+  components:
+    - type: Sprite
+      sprite: _DEN/Structures/Doors/Airlocks/Standard/paramedic.rsi
+      state: "assembly"
+
+- type: entity
+  parent: AirlockAssembly
+  id: AirlockAssemblyParamedicGlass
+  suffix: Paramedic, Glass
+  components:
+    - type: Sprite
+      sprite: _DEN/Structures/Doors/Airlocks/Glass/paramedic.rsi
+      state: "assembly"
+
+# Service
+- type: entity
+  parent: AirlockAssembly
+  id: AirlockAssemblyService
+  suffix: Service
+  components:
+    - type: Sprite
+      sprite: _DEN/Structures/Doors/Airlocks/Standard/service.rsi
+      state: "assembly"
+
+- type: entity
+  parent: AirlockAssembly
+  id: AirlockAssemblyServiceGlass
+  suffix: Service, Glass
+  components:
+    - type: Sprite
+      sprite: _DEN/Structures/Doors/Airlocks/Glass/service.rsi
+      state: "assembly"
+
+# Hydroponics
+- type: entity
+  parent: AirlockAssembly
+  id: AirlockAssemblyHydroponics
+  suffix: Hydroponics
+  components:
+    - type: Sprite
+      sprite: _DEN/Structures/Doors/Airlocks/Standard/hydroponics.rsi
+      state: "assembly"
+
+- type: entity
+  parent: AirlockAssembly
+  id: AirlockAssemblyHydroponicsGlass
+  suffix: Hydroponics, Glass
+  components:
+    - type: Sprite
+      sprite: _DEN/Structures/Doors/Airlocks/Glass/hydroponics.rsi
+      state: "assembly"
+
+# Hydroponics
+- type: entity
+  parent: AirlockAssembly
+  id: AirlockAssemblyKitchen
+  suffix: Kitchen
+  components:
+    - type: Sprite
+      sprite: _DEN/Structures/Doors/Airlocks/Standard/kitchen.rsi
+      state: "assembly"
+
+- type: entity
+  parent: AirlockAssembly
+  id: AirlockAssemblyKitchenGlass
+  suffix: Kitchen, Glass
+  components:
+    - type: Sprite
+      sprite: _DEN/Structures/Doors/Airlocks/Glass/kitchen.rsi
+      state: "assembly"
+
+# Bartender
+- type: entity
+  parent: AirlockAssembly
+  id: AirlockAssemblyBartender
+  suffix: Kitchen
+  components:
+    - type: Sprite
+      sprite: _DEN/Structures/Doors/Airlocks/Standard/bartender.rsi
+      state: "assembly"
+
+- type: entity
+  parent: AirlockAssembly
+  id: AirlockAssemblyBartenderGlass
+  suffix: Kitchen, Glass
+  components:
+    - type: Sprite
+      sprite: _DEN/Structures/Doors/Airlocks/Glass/bartender.rsi
+      state: "assembly"
+
+# Janitor
+- type: entity
+  parent: AirlockAssembly
+  id: AirlockAssemblyJanitor
+  suffix: Janitor
+  components:
+    - type: Sprite
+      sprite: _DEN/Structures/Doors/Airlocks/Standard/janitor.rsi
+      state: "assembly"
+
+- type: entity
+  parent: AirlockAssembly
+  id: AirlockAssemblyJanitorGlass
+  suffix: Janitor, Glass
+  components:
+    - type: Sprite
+      sprite: _DEN/Structures/Doors/Airlocks/Glass/janitor.rsi
+      state: "assembly"
+
+# Armory
+- type: entity
+  parent: AirlockAssembly
+  id: AirlockAssemblyArmory
+  suffix: Armory
+  components:
+    - type: Sprite
+      sprite: _DEN/Structures/Doors/Airlocks/Standard/armory.rsi
+      state: "assembly"
+
+- type: entity
+  parent: AirlockAssembly
+  id: AirlockAssemblyArmoryGlass
+  suffix: Armory, Glass
+  components:
+    - type: Sprite
+      sprite: _DEN/Structures/Doors/Airlocks/Glass/armory.rsi
+      state: "assembly"
+
+# Corpsman
+- type: entity
+  parent: AirlockAssembly
+  id: AirlockAssemblyCorpsman
+  suffix: Corpsman
+  components:
+    - type: Sprite
+      sprite: _DEN/Structures/Doors/Airlocks/Standard/corpsman.rsi
+      state: "assembly"
+
+- type: entity
+  parent: AirlockAssembly
+  id: AirlockAssemblyCorpsmanGlass
+  suffix: Corpsman, Glass
+  components:
+    - type: Sprite
+      sprite: _DEN/Structures/Doors/Airlocks/Glass/corpsman.rsi
+      state: "assembly"

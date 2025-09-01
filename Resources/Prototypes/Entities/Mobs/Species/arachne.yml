@@ -3,16 +3,18 @@
 # SPDX-FileCopyrightText: 2024 Mnemotechnican
 # SPDX-FileCopyrightText: 2025 EctoplasmIsGood
 # SPDX-FileCopyrightText: 2025 Eris
+# SPDX-FileCopyrightText: 2025 Falcon
 # SPDX-FileCopyrightText: 2025 Raikyr0
 # SPDX-FileCopyrightText: 2025 Rosycup
 # SPDX-FileCopyrightText: 2025 Sapphire
+# SPDX-FileCopyrightText: 2025 Shaman
 # SPDX-FileCopyrightText: 2025 Skubman
 # SPDX-FileCopyrightText: 2025 Tabitha
 # SPDX-FileCopyrightText: 2025 VMSolidus
 # SPDX-FileCopyrightText: 2025 portfiend
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: entity
   abstract: true
@@ -20,6 +22,7 @@
   id: BaseArachneAppearance
   components:
   - type: Inventory
+    speciesId: anytaur
     templateId: anytaur
   - type: HumanoidAppearance
     species: Arachne
@@ -31,6 +34,8 @@
   id: MobArachneBase
   abstract: true
   components:
+  - type: Inventory
+    speciesId: anytaur
   - type: Sericulture
     action: ActionSericulture
     productionLength: 2
@@ -72,7 +77,7 @@
     - DoorBumpOpener
     - SpiderCraft
     - ArachneEmotes
-  - type: StepTriggerImmune
+  - type: ProtectedFromStepTriggers
   - type: Bloodstream
     bloodReagent: DemonsBlood
     bloodRegenerationThirst: 4 # 1 unit of demon's blood satiates 4 thirst

@@ -17,11 +17,11 @@
       connections:
       - legs
       organs:
-        lungs: OrganDragonLungs
-        stomach: OrganAnimalStomach
-        liver: OrganAnimalLiver
-        heart: OrganAnimalHeart
-        kidneys: OrganAnimalKidneys
+        lungs: OrganSpaceDragonLungs # TheDen - Resprite that adds immunity to asphyxiation
+        stomach: OrganCarpStomach # TheDen
+        liver: OrganCarpLiver # TheDen
+        heart: OrganCarpHeart # TheDen - Resprite that adds immunity to barotrauma
+        kidneys: OrganCarpKidneys # TheDen
     legs:
       part: LegsAnimal
       connections:

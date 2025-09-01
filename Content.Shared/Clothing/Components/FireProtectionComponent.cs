@@ -17,6 +17,12 @@ public sealed partial class FireProtectionComponent : Component
     /// Percentage to reduce fire damage by, subtracted not multiplicative.
     /// 0.25 means 25% less fire damage.
     /// </summary>
-    [DataField(required: true)]
-    public float Reduction;
+    [DataField]
+    public float Reduction = 0;
+
+    /// <summary>
+    /// When true, this container will prevent contained items from catching fire.
+    /// </summary>
+    [DataField, ViewVariables(VVAccess.ReadWrite)]
+    public bool ProtectContents;
 }

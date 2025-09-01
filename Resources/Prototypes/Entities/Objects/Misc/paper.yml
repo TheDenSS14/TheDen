@@ -423,7 +423,7 @@
   - type: Storage
     maxItemSize: Small
     grid:
-    - 0,0,4,3
+    - 0,0,9,4
     whitelist:
       tags:
         - Document
@@ -536,7 +536,7 @@
 - type: entity
   id: BoxFolderCentCom
   name: CentComm folder
-  parent: BoxFolderBase
+  parent: BoxFolderFireproof
   suffix: DO NOT MAP
   description: CentCom's miserable little pile of secrets!
   components:
@@ -575,7 +575,6 @@
         whitelist:
           tags:
             - Write
-        insertOnInteract: false
   - type: Item
     sprite: Objects/Misc/clipboard.rsi
     size: Small
@@ -583,12 +582,6 @@
     slots: [belt]
     quickEquip: false
     sprite: Objects/Misc/clipboard.rsi
-  - type: Storage
-    grid:
-    - 0,0,5,3
-    whitelist:
-      tags:
-        - Document
   - type: ItemMapper
     mapLayers:
       clipboard_paper:
@@ -669,7 +662,7 @@
     sprite: Objects/Misc/qm_clipboard.rsi
   - type: Storage
     grid:
-    - 0,0,4,3
+    - 0,0,9,4
     quickInsert: true
     whitelist:
       tags:

@@ -194,9 +194,7 @@ entities:
     - type: Transform
     - type: Map
       mapPaused: True
-    - type: PhysicsMap
     - type: GridTree
-    - type: MovedGrids
     - type: Broadphase
     - type: OccluderTree
   - uid: 2
@@ -103606,9 +103604,9 @@ entities:
       parent: 19793
     - type: Paper
       content: >-
-        Congratulations, brave adventurer. 
+        Congratulations, brave adventurer.
 
-        You did it. 
+        You did it.
 
         You beat my challenge.
 

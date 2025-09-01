@@ -68,6 +68,18 @@
 
 # Equipment
 
+- type: loadout
+  id: LoadoutBoxFolderFireproof
+  category: JobsEpistemicsAAUncategorized
+  cost: 3
+  exclusive: true
+  items:
+  - BoxFolderFireproof
+  requirements:
+  - !type:CharacterDepartmentRequirement
+    departments:
+    - Epistemics
+
 # Eyes
 - type: loadout
   id: LoadoutScienceEyesHudDiagnostic

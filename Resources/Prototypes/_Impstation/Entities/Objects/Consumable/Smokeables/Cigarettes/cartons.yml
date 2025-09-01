@@ -1,0 +1,22 @@
+# SPDX-FileCopyrightText: 2025 Shaman
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  id: CigCartonSpirits
+  parent: CigCartonGreen
+  name: Spirits carton
+  description: "A carton containing six packs of Spirits."
+  components:
+  - type: Sprite
+    sprite: _Impstation/Objects/Consumable/Smokeables/Cigarettes/Cartons/spirits.rsi
+    layers:
+      - state: closed
+      - state: open
+        map: ["openLayer"]
+  - type: Item
+    sprite: _Impstation/Objects/Consumable/Smokeables/Cigarettes/Cartons/spirits.rsi
+  - type: StorageFill
+    contents:
+      - id: CigPackSpirits
+        amount: 6

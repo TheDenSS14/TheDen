@@ -151,7 +151,7 @@ public sealed class SurgerySystem : SharedSurgerySystem
     {
         var damageChange = ent.Comp.Damage;
         if (HasComp<ForcedSleepingComponent>(args.Body))
-            damageChange = damageChange * ent.Comp.SleepModifier;
+            damageChange *= ent.Comp.SleepModifier;
 
         SetDamage(args.Body, damageChange, 0.5f, args.User, args.Part);
     }

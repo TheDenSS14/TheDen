@@ -8,6 +8,7 @@
 # SPDX-FileCopyrightText: 2025 MajorMoth
 # SPDX-FileCopyrightText: 2025 Tanix
 # SPDX-FileCopyrightText: 2025 sleepyyapril
+# SPDX-FileCopyrightText: 2025 therealDLondon
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -152,9 +153,9 @@
     - !type:CharacterJobRequirement
       jobs:
         - Brigmedic
-    - !type:CharacterTraitRequirement
-      traits:
-        - Nearsighted
+#    - !type:CharacterTraitRequirement
+#      traits:
+#        - Nearsighted
   items:
     - ClothingEyesPrescriptionMedHud
 

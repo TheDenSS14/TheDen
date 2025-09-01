@@ -1,39 +1,43 @@
-# SPDX-FileCopyrightText: 2024 KittenColony <149278380+KittenColony@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 Rosycup <178287475+Rosycup@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 KittenColony
+# SPDX-FileCopyrightText: 2025 Rosycup
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: entity
   id: CigCartonPurple
   parent: CigCartonGreen
   name: De Jure carton
-  description: A carton containing 6 packets of De Jure.
+  description: "A carton containing six packs of De Jure."
   components:
   - type: Sprite
     sprite: _DV/Objects/Consumable/Smokeables/Cigarettes/Cartons/purple.rsi
     layers:
       - state: closed
+      - state: open # TheDen
+        map: ["openLayer"]
   - type: Item
     sprite: _DV/Objects/Consumable/Smokeables/Cigarettes/Cartons/purple.rsi
   - type: StorageFill
     contents:
       - id: CigPackPurple
-        amount: 5
+        amount: 6
 
 - type: entity
   id: CigCartonCandy
   parent: CigCartonGreen
   name: Sugar Rush carton
-  description: A carton containing 6 packets of Sugar Rush.
+  description: "A carton containing six packs of Sugar Rush."
   components:
   - type: Sprite
     sprite: _DV/Objects/Consumable/Smokeables/Cigarettes/Cartons/pink.rsi
     layers:
       - state: closed
+      - state: open # TheDen
+        map: ["openLayer"]
   - type: Item
     sprite: _DV/Objects/Consumable/Smokeables/Cigarettes/Cartons/pink.rsi
   - type: StorageFill
     contents:
       - id: CigPackCandy
-        amount: 5
+        amount: 6

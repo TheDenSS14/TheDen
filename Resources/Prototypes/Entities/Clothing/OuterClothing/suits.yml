@@ -77,7 +77,7 @@
     - WhitelistChameleon
     - FullBodyOuter
     # HidesHarpyWings #Floof change, caused vulp tails to be hidden in hardsuits(with singer trait only)
-  - type: ClothingRequiredStepTriggerImmune
+  - type: ProtectedFromStepTriggers
     slots: WITHOUT_POCKET
 
 - type: entity
@@ -135,7 +135,7 @@
     sprintModifier: 0.7
   - type: HeldSpeedModifier
   - type: GroupExamine
-  - type: ClothingRequiredStepTriggerImmune
+  - type: ProtectedFromStepTriggers
     slots: WITHOUT_POCKET
   - type: Tag
     tags:
@@ -173,7 +173,7 @@
       sprintModifier: 0.8
     - type: HeldSpeedModifier
     - type: GroupExamine
-    - type: ClothingRequiredStepTriggerImmune
+    - type: ProtectedFromStepTriggers
       slots: WITHOUT_POCKET
     - type: Tag
       tags:
@@ -203,7 +203,7 @@
   - type: ContainerContainer
     containers:
       toggleable-clothing: !type:Container {}
-  - type: ClothingRequiredStepTriggerImmune
+  - type: ProtectedFromStepTriggers
     slots: WITHOUT_POCKET
   - type: Tag
     tags:
@@ -287,7 +287,7 @@
     sprite: Clothing/OuterClothing/Suits/chicken.rsi
   - type: Clothing
     sprite: Clothing/OuterClothing/Suits/chicken.rsi
-  - type: ClothingRequiredStepTriggerImmune
+  - type: ProtectedFromStepTriggers
     slots: WITHOUT_POCKET
   - type: Tag
     tags:
@@ -317,7 +317,7 @@
   - type: ContainerContainer
     containers:
       toggleable-clothing: !type:Container {}
-  - type: ClothingRequiredStepTriggerImmune
+  - type: ProtectedFromStepTriggers
     slots: WITHOUT_POCKET
   - type: Tag
     tags:
@@ -343,7 +343,7 @@
   - type: Construction
     graph: ClothingOuterSuitIan
     node: suit
-  - type: ClothingRequiredStepTriggerImmune
+  - type: ProtectedFromStepTriggers
     slots: WITHOUT_POCKET
 
 - type: entity

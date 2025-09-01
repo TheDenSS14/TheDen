@@ -1,8 +1,9 @@
-# SPDX-FileCopyrightText: 2025 Blitz <73762869+BlitzTheSquishy@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 BloodfiendishOperator <141253729+Diggy0@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 Jakumba <jkmcbennett@hotmail.com>
-# SPDX-FileCopyrightText: 2025 Tabitha <64847293+KyuPolaris@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Blitz
+# SPDX-FileCopyrightText: 2025 BloodfiendishOperator
+# SPDX-FileCopyrightText: 2025 Jakumba
+# SPDX-FileCopyrightText: 2025 Shaman
+# SPDX-FileCopyrightText: 2025 Tabitha
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -10,7 +11,7 @@
   id: ArmProstheticLeft
   bodyPart: LArm
   markingCategory: LeftArm
-  speciesRestriction: [Human, Dwarf, Reptilian, SlimePerson, Arachnid, Oni, Felinid, Canid, Kitsune] # Frontier: add Oni, Felinid - The Den - Add Canid
+  speciesRestriction: [Human, Dwarf, Reptilian, SlimePerson, Arachnid, Oni, Felinid, Canid, Kitsune, Vulpkanin, Ovinia, Tajaran, Feroxi, Arachne, Rodentia]
   followSkinColor: false
   coloring:
     default:
@@ -25,7 +26,7 @@
   id: ArmTwistingLeft
   bodyPart: LArm
   markingCategory: LeftArm
-  speciesRestriction: [Human, Dwarf, Reptilian, SlimePerson, Arachnid, Oni, Felinid, Canid, Kitsune] # Frontier: add Oni, Felinid - The Den - Add Canid
+  speciesRestriction: [Human, Dwarf, Reptilian, SlimePerson, Arachnid, Oni, Felinid, Canid, Kitsune, Vulpkanin, Ovinia, Tajaran, Feroxi, Arachne, Rodentia]
   followSkinColor: false
   sprites:
   - sprite: _Impstation/Mobs/Customization/scars.rsi
@@ -33,9 +34,9 @@
 
 - type: marking
   id: ArmProstheticRight
-  bodyPart: LArm
+  bodyPart: RArm
   markingCategory: RightArm
-  speciesRestriction: [Human, Dwarf, Reptilian, SlimePerson, Arachnid, Oni, Felinid, Canid, Kitsune] # Frontier: add Oni, Felinid - The Den - Add Canid
+  speciesRestriction: [Human, Dwarf, Reptilian, SlimePerson, Arachnid, Oni, Felinid, Canid, Kitsune, Vulpkanin, Ovinia, Tajaran, Feroxi, Arachne, Rodentia]
   followSkinColor: false
   coloring:
     default:
@@ -48,9 +49,9 @@
 
 - type: marking
   id: ArmTwistingRight
-  bodyPart: LArm
+  bodyPart: RArm
   markingCategory: RightArm
-  speciesRestriction: [Human, Dwarf, Reptilian, SlimePerson, Arachnid, Oni, Felinid, Canid, Kitsune] # Frontier: add Oni, Felinid - The Den - Add Canid
+  speciesRestriction: [Human, Dwarf, Reptilian, SlimePerson, Arachnid, Oni, Felinid, Canid, Kitsune, Vulpkanin, Ovinia, Tajaran, Feroxi, Arachne, Rodentia]
   followSkinColor: false
   sprites:
   - sprite: _Impstation/Mobs/Customization/scars.rsi
@@ -60,7 +61,7 @@
   id: ChestBackstabbed
   bodyPart: Chest
   markingCategory: Chest
-  speciesRestriction: [Human, Dwarf, Reptilian, SlimePerson, Oni, Felinid, Canid, Kitsune] # Frontier: add Oni, Felinid - The Den - Add Canid
+  speciesRestriction: [Human, Dwarf, Reptilian, SlimePerson, Thaven, Oni, Felinid, Canid, Kitsune, Vulpkanin, Ovinia, Tajaran, Feroxi, Arachne, Rodentia]
   followSkinColor: false
   sprites:
   - sprite: _Impstation/Mobs/Customization/scars.rsi
@@ -70,7 +71,7 @@
   id: ChestTwistingLeft
   bodyPart: Chest
   markingCategory: Chest
-  speciesRestriction: [Human, Dwarf, Reptilian, SlimePerson, Oni, Felinid, Canid, Kitsune] # Frontier: add Oni, Felinid - The Den - Add Canid
+  speciesRestriction: [Human, Dwarf, Reptilian, SlimePerson, Oni, Felinid, Canid, Kitsune, Vulpkanin, Ovinia, Tajaran, Feroxi, Arachne, Rodentia]
   followSkinColor: false
   sprites:
   - sprite: _Impstation/Mobs/Customization/scars.rsi
@@ -80,7 +81,7 @@
   id: ChestTwistingRight
   bodyPart: Chest
   markingCategory: Chest
-  speciesRestriction: [Human, Dwarf, Reptilian, SlimePerson, Oni, Felinid, Canid, Kitsune] # Frontier: add Oni, Felinid - The Den - Add Canid
+  speciesRestriction: [Human, Dwarf, Reptilian, SlimePerson, Oni, Felinid, Canid, Kitsune, Vulpkanin, Ovinia, Tajaran, Feroxi, Arachne, Rodentia]
   followSkinColor: false
   sprites:
   - sprite: _Impstation/Mobs/Customization/scars.rsi
@@ -90,7 +91,7 @@
   id: ChestStar
   bodyPart: Chest
   markingCategory: Chest
-  speciesRestriction: [Human, Dwarf, Reptilian, SlimePerson, Arachnid, Oni, Felinid, Canid, Kitsune] # Frontier: add Oni, Felinid - The Den - Add Canid
+  speciesRestriction: [Human, Dwarf, Reptilian, SlimePerson, Arachnid, Oni, Felinid, Canid, Kitsune, Vulpkanin, Ovinia, Tajaran, Feroxi, Arachne, Rodentia]
   followSkinColor: false
   sprites:
   - sprite: _Impstation/Mobs/Customization/scars.rsi
@@ -100,7 +101,7 @@
   id: FootProstheticLeft
   bodyPart: LFoot
   markingCategory: LeftFoot
-  speciesRestriction: [Human, Dwarf, SlimePerson, Arachnid, Oni, Felinid, Canid, Kitsune] # Frontier: add Oni, Felinid - The Den - Add Canid
+  speciesRestriction: [Human, Dwarf, SlimePerson, Arachnid, Thaven, Oni, Felinid, Canid, Kitsune, Vulpkanin, Feroxi, Rodentia]
   followSkinColor: false
   coloring:
     default:
@@ -115,7 +116,7 @@
   id: FootProstheticRight
   bodyPart: RFoot
   markingCategory: RightFoot
-  speciesRestriction: [Human, Dwarf, SlimePerson, Arachnid, Oni, Felinid, Canid, Kitsune] # Frontier: add Oni, Felinid - The Den - Add Canid
+  speciesRestriction: [Human, Dwarf, SlimePerson, Arachnid, Thaven, Oni, Felinid, Canid, Kitsune, Vulpkanin, Feroxi, Rodentia]
   followSkinColor: false
   coloring:
     default:
@@ -130,7 +131,7 @@
   id: HandProstheticLeft
   bodyPart: LHand
   markingCategory: LeftHand
-  speciesRestriction: [Human, Dwarf, Reptilian, SlimePerson, Arachnid, Oni, Felinid, Canid, Kitsune] # Frontier: add Oni, Felinid - The Den - Add Canid
+  speciesRestriction: [Human, Dwarf, Reptilian, SlimePerson, Arachnid, Oni, Felinid, Canid, Kitsune, Vulpkanin, Ovinia, Tajaran, Feroxi, Arachne, Rodentia]
   followSkinColor: false
   coloring:
     default:
@@ -145,7 +146,7 @@
   id: HandTwistingLeft
   bodyPart: LHand
   markingCategory: LeftHand
-  speciesRestriction: [Human, Dwarf, Reptilian, SlimePerson, Arachnid, Oni, Felinid, Canid, Kitsune] # Frontier: add Oni, Felinid - The Den - Add Canid
+  speciesRestriction: [Human, Dwarf, Reptilian, SlimePerson, Arachnid, Oni, Felinid, Canid, Kitsune, Vulpkanin, Ovinia, Tajaran, Feroxi, Arachne, Rodentia]
   followSkinColor: false
   sprites:
   - sprite: _Impstation/Mobs/Customization/scars.rsi
@@ -155,7 +156,7 @@
   id: HandProstheticRight
   bodyPart: RHand
   markingCategory: RightHand
-  speciesRestriction: [Human, Dwarf, Reptilian, SlimePerson, Arachnid, Oni, Felinid, Canid, Kitsune] # Frontier: add Oni, Felinid - The Den - Add Canid
+  speciesRestriction: [Human, Dwarf, Reptilian, SlimePerson, Arachnid, Oni, Felinid, Canid, Kitsune, Vulpkanin, Ovinia, Tajaran, Feroxi, Arachne, Rodentia]
   followSkinColor: false
   coloring:
     default:
@@ -170,7 +171,7 @@
   id: HandTwistingRight
   bodyPart: RHand
   markingCategory: RightHand
-  speciesRestriction: [Human, Dwarf, Reptilian, SlimePerson, Arachnid, Oni, Felinid, Canid, Kitsune] # Frontier: add Oni, Felinid - The Den - Add Canid
+  speciesRestriction: [Human, Dwarf, Reptilian, SlimePerson, Arachnid, Oni, Felinid, Canid, Kitsune, Vulpkanin, Ovinia, Tajaran, Feroxi, Arachne, Rodentia]
   followSkinColor: false
   sprites:
   - sprite: _Impstation/Mobs/Customization/scars.rsi
@@ -180,7 +181,7 @@
   id: SmileScars
   bodyPart: Head
   markingCategory: Head
-  speciesRestriction: [Human, Dwarf, SlimePerson, Oni, Felinid, Canid, Kitsune] # Frontier: add Oni, Felinid - The Den - Add Canid
+  speciesRestriction: [Human, Dwarf, SlimePerson, Oni, Felinid, Canid, Kitsune]
   followSkinColor: false
   sprites:
   - sprite: _Impstation/Mobs/Customization/scars.rsi
@@ -190,7 +191,7 @@
   id: HeadTwisting
   bodyPart: Head
   markingCategory: Head
-  speciesRestriction: [Human, Dwarf, SlimePerson, Oni, Felinid, Canid, Kitsune] # Frontier: add Oni, Felinid - The Den - Add Canid
+  speciesRestriction: [Human, Dwarf, SlimePerson, Oni, Felinid, Canid, Kitsune]
   followSkinColor: false
   sprites:
   - sprite: _Impstation/Mobs/Customization/scars.rsi
@@ -200,7 +201,7 @@
   id: LegProstheticLeft
   bodyPart: LLeg
   markingCategory: LeftLeg
-  speciesRestriction: [Human, Dwarf, SlimePerson, Arachnid, Oni, Felinid, Canid, Kitsune] # Frontier: add Oni, Felinid - The Den - Add Canid
+  speciesRestriction: [Human, Dwarf, SlimePerson, Arachnid, Thaven, Oni, Felinid, Canid, Kitsune, Vulpkanin, Feroxi, Rodentia]
   followSkinColor: false
   coloring:
     default:
@@ -215,7 +216,7 @@
   id: LegTwistingLeft
   bodyPart: LLeg
   markingCategory: LeftLeg
-  speciesRestriction: [Human, Dwarf, Reptilian, SlimePerson, Arachnid, Oni, Felinid, Canid, Kitsune] # Frontier: add Oni, Felinid - The Den - Add Canid
+  speciesRestriction: [Human, Dwarf, Reptilian, SlimePerson, Arachnid, Thaven, Oni, Felinid, Canid, Kitsune, Vulpkanin, Feroxi, Rodentia]
   followSkinColor: false
   sprites:
   - sprite: _Impstation/Mobs/Customization/scars.rsi
@@ -225,7 +226,7 @@
   id: LegProstheticRight
   bodyPart: RLeg
   markingCategory: RightLeg
-  speciesRestriction: [Human, Dwarf, SlimePerson, Arachnid, Oni, Felinid, Canid, Kitsune] # Frontier: add Oni, Felinid - The Den - Add Canid
+  speciesRestriction: [Human, Dwarf, SlimePerson, Arachnid, Thaven, Oni, Felinid, Canid, Kitsune, Vulpkanin, Feroxi, Rodentia]
   followSkinColor: false
   coloring:
     default:
@@ -240,7 +241,7 @@
   id: LegTwistingRight
   bodyPart: RLeg
   markingCategory: RightLeg
-  speciesRestriction: [Human, Dwarf, Reptilian, SlimePerson, Arachnid, Oni, Felinid, Canid, Kitsune] # Frontier: add Oni, Felinid - The Den - Add Canid
+  speciesRestriction: [Human, Dwarf, Reptilian, SlimePerson, Arachnid, Thaven, Oni, Felinid, Canid, Kitsune, Vulpkanin, Feroxi, Rodentia]
   followSkinColor: false
   sprites:
   - sprite: _Impstation/Mobs/Customization/scars.rsi
@@ -250,7 +251,7 @@
   id: TorsoIncision
   bodyPart: Chest
   markingCategory: Chest
-  speciesRestriction: [Human, Dwarf, Reptilian, SlimePerson, Arachnid, Oni, Felinid, Canid, Kitsune] # Frontier: add Oni, Felinid - The Den - Add Canid
+  speciesRestriction: [Human, Dwarf, Reptilian, SlimePerson, Arachnid, Oni, Felinid, Canid, Kitsune, Vulpkanin, Ovinia, Tajaran, Feroxi, Arachne, Rodentia]
   followSkinColor: false
   sprites:
   - sprite: _Impstation/Mobs/Customization/scars.rsi

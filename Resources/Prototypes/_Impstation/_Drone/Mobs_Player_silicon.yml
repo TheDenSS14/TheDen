@@ -88,7 +88,7 @@
   - type: Puller
   - type: StandingState
   - type: Alerts
-  - type: StepTriggerImmune
+  - type: ProtectedFromStepTriggers
   - type: Targeting # Shitmed Change
 
 - type: entity
@@ -110,9 +110,9 @@
       components:
       - Gun
       - EnergySword
-  - type: PAI # imp; this is added specifically for the internal station map feature but the other aspects are not especially against the identity of drones. and i dont want to put the work into ECS-ifying PAIComponent
-    mapActionId: ActionDroneOpenMap # redefining these to reflavor their descriptions.
-    midiActionId: ActionDronePlayMidi
+#  - type: PAI # imp; this is added specifically for the internal station map feature but the other aspects are not especially against the identity of drones. and i dont want to put the work into ECS-ifying PAIComponent
+#    ActionPAIOpenMap: ActionDroneOpenMap # redefining these to reflavor their descriptions.
+#    ActionPAIPlayMidi: ActionDronePlayMidi
   - type: Instrument # imp
     allowPercussion: false
     handheld: false
@@ -220,6 +220,8 @@
   - type: ActionGrant
     actions:
     - ActionViewLaws
+    - ActionDroneOpenMap
+    - ActionDronePlayMidi
   - type: Actions
   - type: UnpoweredFlashlight
   - type: PointLight
@@ -228,7 +230,7 @@
     softness: 1
     mask: /Textures/Effects/LightMasks/cone.png
     autoRot: true
-  - type: StepTriggerImmune
+  - type: ProtectedFromStepTriggers
     whitelist:
       types:
         - Shard

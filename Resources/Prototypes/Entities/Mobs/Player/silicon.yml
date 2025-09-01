@@ -104,6 +104,8 @@
         type: SiliconLawBoundUserInterface
       enum.CommunicationsConsoleUiKey.Key:
         type: CommunicationsConsoleBoundUserInterface
+      enum.StoreUiKey.Key: # DeltaV - AI shop system
+        type: StoreBoundUserInterface
   - type: IntrinsicUI
     uis:
       enum.RadarConsoleUiKey.Key:
@@ -127,6 +129,17 @@
     title: comms-console-announcement-title-station-ai
     color: "#5ed7aa"
   - type: ShowJobIcons
+  # Begin DeltaV - AI Shop System
+  - type: StationAiShop
+  - type: Store
+    categories:
+    - AiAbilities
+    currencyWhitelist:
+    - SiliconMemory
+    balance:
+      SiliconMemory: 30
+    grantActionsToMind: false
+  # End DeltaV - AI Shop System
 
 - type: entity
   id: AiHeldIntellicard

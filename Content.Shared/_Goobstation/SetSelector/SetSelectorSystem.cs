@@ -66,7 +66,7 @@ public sealed class SetSelectorSystem : EntitySystem
         var openSpawnedStorage = selector.Comp.OpenSpawnedStorage;
         var coordinates = _transform.GetMapCoordinates(selector.Owner);
 
-        _container.TryGetContainingContainer(selector, out var target);
+        _container.TryGetContainingContainer(selector.Owner, out var target);
         List<string> ignoredContainers = new() { "implant", "pocket1", "pocket2", "pocket3", "pocket4" } ;
 
         // Spawn the contents of the chosen sets and add them to spawnedEntities
