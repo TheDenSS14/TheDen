@@ -622,6 +622,8 @@
 
 - type: reaction
   id: IcedBeer
+  requiredMixerCategories:
+  - Stir
   reactants:
     Beer:
       amount: 5
@@ -632,6 +634,8 @@
 
 - type: reaction
   id: IcedBeerAlt
+  requiredMixerCategories:
+  - Stir
   reactants:
     Beer:
       amount: 10
