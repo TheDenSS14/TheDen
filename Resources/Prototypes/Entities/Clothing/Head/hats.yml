@@ -533,6 +533,7 @@
   name: red wizard hat
   description: Strange-looking red hat-wear that most certainly belongs to a real magic user.
   components:
+  - type: BreathMask # TheDen - All pressure-resistant headwear should have built-in internals. A wizard did it
   - type: Sprite
     sprite: Clothing/Head/Hats/redwizard.rsi
   - type: Clothing
