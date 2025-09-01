@@ -370,29 +370,6 @@
         amount: 0.2
 
 - type: reagent
-  id: Daiquiri
-  name: reagent-name-daiquiri
-  parent: BaseAlcohol
-  desc: reagent-desc-daiquiri
-  physicalDesc: reagent-physical-desc-strong-smelling
-  flavor: daiquiri
-  color: "#DAC865"
-  metamorphicSprite:
-    sprite: Objects/Consumable/Drinks/daiquiri.rsi
-    state: icon_empty
-  metamorphicMaxFillLevels: 3
-  metamorphicFillBaseName: fill-
-  metamorphicChangeColor: false
-  metabolisms:
-    Drink:
-      effects:
-      - !type:SatiateThirst
-        factor: 2
-      - !type:AdjustReagent
-        reagent: Ethanol
-        amount: 0.1
-
-- type: reagent
   id: TheSunAlsoRises
   name: reagent-name-the-sun-also-rises
   parent: BaseAlcohol
