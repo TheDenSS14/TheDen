@@ -1,0 +1,11 @@
+- type: entity
+  id: RightHandAnimal
+  name: "right animal hand"
+  parent: [PartAnimal, BaseRightHand]
+  categories: [ HideSpawnMenu ]
+
+- type: entity
+  id: LeftHandAnimal
+  name: "left animal hand"
+  parent: [PartAnimal, BaseLeftHand]
+  categories: [ HideSpawnMenu ]
