@@ -820,7 +820,7 @@
     - map: [ "enum.DamageStateVisualLayers.Base" ]
       state: rainbow_baby_slime
     - map: [ "enum.DamageStateVisualLayers.BaseUnshaded" ]
-      state: aslime-_3
+      state: aslime_3
       shader: unshaded
   - type: MobThresholds
     thresholds:
@@ -841,7 +841,7 @@
     states:
       Alive:
         Base: rainbow_baby_slime
-        BaseUnshaded: aslime-_3
+        BaseUnshaded: aslime_3
       Dead:
         Base: rainbow_baby_slime_dead
   - type: StaminaDamageResistance

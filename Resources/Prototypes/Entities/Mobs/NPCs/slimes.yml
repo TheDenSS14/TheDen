@@ -195,11 +195,11 @@
   # they portable...
   - type: MovementSpeedModifier
     baseWalkSpeed: 3
-    baseSprintSpeed: 5 # +.5 from normal movement speed
+    baseSprintSpeed: 6 # +1 from normal movement speed
   - type: MobThresholds
     thresholds:
       0: Alive
-      80: Dead # weak af tho
+      100: Dead # weak af tho
   - type: NpcFactionMember
     factions:
     - NanoTrasen
@@ -207,24 +207,26 @@
   - type: Item
     size: Huge
   - type: Sprite
-    color: "#FFFFFF55"
     layers:
-    - map: [ "enum.DamageStateVisualLayers.Base" ]
-      state: blue_adult_slime
-    - map: [ "enum.DamageStateVisualLayers.BaseUnshaded" ]
-      state: aslime-mischievous
+    - map: [ "colorMap" ]
+      state: slime_geras
+    - map: [ "faceMap" ]
+      state: aslime_mischievous
+      shader: unshaded
+    - map: [ "eyesMap" ]
+      state: slime_geras_eyes
+      shader: unshaded
+  - type: RandomSprite
+    selected:
+      colorMap:
+        slime_geras: "#0000FF"
+      eyesMap:
+        slime_geras_eyes: "#0000FF"
   - type: MeleeWeapon
     attackRate: 2
     damage:
       types:
         Blunt: 4
-  - type: DamageStateVisuals
-    states:
-      Alive:
-        Base: blue_adult_slime
-        BaseUnshaded: aslime-mischievous
-      Dead:
-        Base: blue_adult_slime_dead
 
 - type: entity
   name: blue slime
@@ -236,12 +238,12 @@
     - map: [ "enum.DamageStateVisualLayers.Base" ]
       state: blue_adult_slime
     - map: [ "enum.DamageStateVisualLayers.BaseUnshaded" ]
-      state: aslime-mischievous
+      state: aslime_mischievous
   - type: DamageStateVisuals
     states:
       Alive:
         Base: blue_adult_slime
-        BaseUnshaded: aslime-mischievous
+        BaseUnshaded: aslime_mischievous
       Dead:
         Base: blue_adult_slime_dead
 
@@ -256,7 +258,7 @@
       - map: [ "enum.DamageStateVisualLayers.Base" ]
         state: blue_adult_slime
       - map: [ "enum.DamageStateVisualLayers.BaseUnshaded" ]
-        state: aslime-angry
+        state: aslime_angry
     - type: NpcFactionMember
       factions:
         - SimpleHostile
@@ -271,7 +273,7 @@
       states:
         Alive:
           Base: blue_adult_slime
-          BaseUnshaded: aslime-angry
+          BaseUnshaded: aslime_angry
         Dead:
           Base: blue_adult_slime_dead
 
@@ -285,12 +287,12 @@
       - map: [ "enum.DamageStateVisualLayers.Base" ]
         state: green_adult_slime
       - map: [ "enum.DamageStateVisualLayers.BaseUnshaded" ]
-        state: aslime-mischievous
+        state: aslime_mischievous
     - type: DamageStateVisuals
       states:
         Alive:
           Base: green_adult_slime
-          BaseUnshaded: aslime-mischievous
+          BaseUnshaded: aslime_mischievous
         Dead:
           Base: green_adult_slime_dead
     - type: MeleeWeapon
@@ -312,7 +314,7 @@
       - map: [ "enum.DamageStateVisualLayers.Base" ]
         state: green_adult_slime
       - map: [ "enum.DamageStateVisualLayers.BaseUnshaded" ]
-        state: aslime-angry
+        state: aslime_angry
     - type: NpcFactionMember
       factions:
         - SimpleHostile
@@ -327,7 +329,7 @@
       states:
         Alive:
           Base: green_adult_slime
-          BaseUnshaded: aslime-angry
+          BaseUnshaded: aslime_angry
         Dead:
           Base: green_adult_slime_dead
 
@@ -341,12 +343,12 @@
       - map: [ "enum.DamageStateVisualLayers.Base" ]
         state: yellow_adult_slime
       - map: [ "enum.DamageStateVisualLayers.BaseUnshaded" ]
-        state: aslime-mischievous
+        state: aslime_mischievous
     - type: DamageStateVisuals
       states:
         Alive:
           Base: yellow_adult_slime
-          BaseUnshaded: aslime-mischievous
+          BaseUnshaded: aslime_mischievous
         Dead:
           Base: yellow_adult_slime_dead
     - type: MeleeWeapon
@@ -368,7 +370,7 @@
       - map: [ "enum.DamageStateVisualLayers.Base" ]
         state: yellow_adult_slime
       - map: [ "enum.DamageStateVisualLayers.BaseUnshaded" ]
-        state: aslime-angry
+        state: aslime_angry
     - type: NpcFactionMember
       factions:
         - SimpleHostile
@@ -383,6 +385,6 @@
       states:
         Alive:
           Base: yellow_adult_slime
-          BaseUnshaded: aslime-angry
+          BaseUnshaded: aslime_angry
         Dead:
           Base: yellow_adult_slime_dead
