@@ -2711,6 +2711,22 @@
     sprite: Objects/Consumable/Drinks/thesunalsorises.rsi
     state: icon
 
+- type: entity
+  parent: DrinkGlass
+  id: DrinkZombieCocktailGlass
+  suffix: zombie cocktail
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 30
+        reagents:
+        - ReagentId: ZombieCocktail
+          Quantity: 30
+  - type: Icon
+    sprite: _DV/Objects/Consumable/Drinks/zombiecocktail.rsi
+    state: icon
+
 # TODO: MOVE
 
 - type: entity
