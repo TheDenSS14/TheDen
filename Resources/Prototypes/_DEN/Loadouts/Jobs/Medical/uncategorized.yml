@@ -101,7 +101,7 @@
     - !type:CharacterDepartmentRequirement
       departments:
         - Medical
-        
+
 - type: loadout
   id: LoadoutMedicalHeadMirror
   category: JobsMedicalAUncategorized
@@ -120,6 +120,7 @@
   id: LoadoutMedicalOuterCoatBomberMedical # Can also butcher the other version to get this
   category: JobsMedicalAUncategorized
   cost: 0
+  exclusive: true
   items:
     -  ClothingOuterCoatBomberMedical
   requirements:
@@ -139,6 +140,7 @@
   id: LoadoutMedicalOuterCoatBomberMedicalLoose # Can also butcher the other version to get this
   category: JobsMedicalAUncategorized
   cost: 0
+  exclusive: true
   items:
     -  ClothingOuterCoatBomberMedicalLoose
   requirements:
