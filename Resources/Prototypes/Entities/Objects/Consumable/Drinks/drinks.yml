@@ -948,22 +948,6 @@
 
 - type: entity
   parent: DrinkGlass
-  id: DrinkEggnog
-  suffix: eggnog
-  components:
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        maxVol: 30
-        reagents:
-        - ReagentId: Eggnog
-          Quantity: 30
-  - type: Icon
-    sprite: Objects/Consumable/Drinks/eggnogglass.rsi
-    state: icon
-
-- type: entity
-  parent: DrinkGlass
   id: DrinkElectricSharkGlass
   suffix: electric shark
   components:
@@ -1412,22 +1396,6 @@
           Quantity: 30
   - type: Icon
     sprite: Objects/Consumable/Drinks/junglebird.rsi
-    state: icon
-
-- type: entity
-  parent: DrinkGlass
-  id: DrinkKalimotxoGlass
-  suffix: kalimotxo
-  components:
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        maxVol: 30
-        reagents:
-        - ReagentId: Kalimotxo
-          Quantity: 30
-  - type: Icon
-    sprite: Objects/Consumable/Drinks/kalimotxo.rsi
     state: icon
 
 - type: entity
@@ -2757,22 +2725,6 @@
           Quantity: 30
   - type: Icon
     sprite: Objects/Consumable/Drinks/thesunalsorises.rsi
-    state: icon
-
-- type: entity
-  parent: DrinkGlass
-  id: DrinkWhiskeySourGlass
-  suffix: whiskey sour
-  components:
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        maxVol: 30
-        reagents:
-        - ReagentId: WhiskeySour
-          Quantity: 30
-  - type: Icon
-    sprite: Objects/Consumable/Drinks/whiskeysour.rsi
     state: icon
 
 # TODO: MOVE
