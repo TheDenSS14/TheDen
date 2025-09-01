@@ -12,7 +12,7 @@
 - type: entity
   name: ScugCat
   id: MobScugCat
-  parent: SimpleMobBase
+  parent: MobBaseAncestor # DEN
   description: He's just a little guy, a jumpy, poor little scug.
   components:
   - type: Sprite
@@ -117,6 +117,10 @@
     - Cat
   - type: LeashAnchor # Floofstation
     offset: 0, 0.2
+  - type: Hands # DEN
+  - type: ComplexInteraction # DEN
+  - type: Body # Shitmed Change
+    prototype: Scugcat # DEN
 
 - type: palette
   id: ScugCatColors

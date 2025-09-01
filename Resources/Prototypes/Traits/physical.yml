@@ -9,6 +9,7 @@
 # SPDX-FileCopyrightText: 2025 BramvanZijp
 # SPDX-FileCopyrightText: 2025 EctoplasmIsGood
 # SPDX-FileCopyrightText: 2025 Falcon
+# SPDX-FileCopyrightText: 2025 Jadrek
 # SPDX-FileCopyrightText: 2025 Jakumba
 # SPDX-FileCopyrightText: 2025 M3739
 # SPDX-FileCopyrightText: 2025 MajorMoth
@@ -16,6 +17,7 @@
 # SPDX-FileCopyrightText: 2025 Rosycup
 # SPDX-FileCopyrightText: 2025 SX-7
 # SPDX-FileCopyrightText: 2025 Sapphire
+# SPDX-FileCopyrightText: 2025 Shaman
 # SPDX-FileCopyrightText: 2025 Sir Warock
 # SPDX-FileCopyrightText: 2025 Skubman
 # SPDX-FileCopyrightText: 2025 Tabitha
@@ -386,7 +388,7 @@
     - !type:CharacterHeightRequirement
       max: 150
     - !type:CharacterWidthRequirement
-      max: 32
+      max: 36
   functions:
     - !type:TraitAddComponent
       components:
@@ -414,7 +416,7 @@
     - !type:CharacterHeightRequirement
       max: 160 # Looser requirement because thaven minHeight is 5'3" (160cm) but it's a fun trait
     - !type:CharacterWidthRequirement
-      max: 36 # Looser requirement so thaven don't have to be crackhead skinny to take it, they're already narrow
+      max: 36
   functions:
     - !type:TraitAddComponent
       components:

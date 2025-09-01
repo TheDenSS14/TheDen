@@ -17,6 +17,7 @@
 # SPDX-FileCopyrightText: 2025 Rosycup
 # SPDX-FileCopyrightText: 2025 Skubman
 # SPDX-FileCopyrightText: 2025 Vanessa
+# SPDX-FileCopyrightText: 2025 sheepie
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
@@ -132,5 +133,7 @@
         Slash: 0.80
         Piercing: 0.40
         Heat: 0.50
+  - type: StaminaDamageResistance #Den
+    coefficient: 0.6 #Den
   - type: ExplosionResistance
     damageCoefficient: 0.60
