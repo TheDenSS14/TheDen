@@ -300,7 +300,6 @@
   name: atmos fire helmet
   description: An atmos fire helmet, able to keep the user cool in any situation.
   components:
-  - type: BreathMask # TheDen - All pressure-resistant helmets should have built-in internals
   - type: Sprite
     sprite: _DEN/Clothing/Head/Helmets/atmos_firehelmet.rsi #Den
   - type: Clothing
@@ -311,6 +310,7 @@
   - type: PressureProtection
     highPressureMultiplier: 0.25
     lowPressureMultiplier: 1000
+  - type: BreathMask # TheDen - All pressure-resistant headwear should have built-in internals
 
 #Chitinous Helmet
 - type: entity

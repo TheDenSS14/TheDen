@@ -533,7 +533,6 @@
   name: red wizard hat
   description: Strange-looking red hat-wear that most certainly belongs to a real magic user.
   components:
-  - type: BreathMask # TheDen - All pressure-resistant headwear should have built-in internals. A wizard did it
   - type: Sprite
     sprite: Clothing/Head/Hats/redwizard.rsi
   - type: Clothing
@@ -541,6 +540,7 @@
   - type: PressureProtection # DeltaV - Make real wizard clothes space proof
     highPressureMultiplier: 0.6
     lowPressureMultiplier: 1000
+  - type: BreathMask # TheDen - All pressure-resistant headwear should have built-in internals
   - type: TemperatureProtection
     heatingCoefficient: 0.2
     coolingCoefficient: 0.2
@@ -665,6 +665,7 @@
   - type: PressureProtection # DeltaV - Make real wizard clothes space proof
     highPressureMultiplier: 0.6
     lowPressureMultiplier: 1000
+  - type: BreathMask # TheDen - All pressure-resistant headwear should have built-in internals
   - type: TemperatureProtection
     heatingCoefficient: 0.2
     coolingCoefficient: 0.2
@@ -737,6 +738,7 @@
   - type: PressureProtection # DeltaV - Make real wizard clothes space proof
     highPressureMultiplier: 0.6
     lowPressureMultiplier: 1000
+  - type: BreathMask # TheDen - All pressure-resistant headwear should have built-in internals
   - type: TemperatureProtection
     heatingCoefficient: 0.2
     coolingCoefficient: 0.2
