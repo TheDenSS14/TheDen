@@ -37,7 +37,7 @@
   id: BaseMobChitinid
   abstract: true
   components:
-  - type: Inventory
+  - type: Inventory # TheDen - So they can have -chitinid clothing sprites
     speciesId: chitinid
   - type: HumanoidAppearance
     species: Chitinid
@@ -150,7 +150,7 @@
   id: MobChitinidDummy
   categories: [ HideSpawnMenu ]
   components:
-  - type: Inventory
+  - type: Inventory # TheDen - So they can have -chitinid clothing sprites
     speciesId: chitinid
   - type: HumanoidAppearance
     species: Chitinid
