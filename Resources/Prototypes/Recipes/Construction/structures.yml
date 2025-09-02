@@ -1671,14 +1671,19 @@
     state: closed
 
 - type: construction
+  name: plastic flaps
   id: PlasticFlapsClear
   graph: PlasticFlapsGraph
   startNode: start
   targetNode: plasticFlaps
   category: construction-category-structures
-  objectType: Structure
   placementMode: SnapgridCenter
+  description: A plastic flap to let items through and keep people out.
+  objectType: Structure
   canBuildInImpassable: false
+  icon:
+    sprite: Structures/plastic_flaps.rsi
+    state: plasticflaps
   conditions:
     - !type:TileNotBlocked
 
