@@ -332,34 +332,6 @@
     - !type:TileNotBlocked
 
 - type: construction
-  name: meat wall
-  id: MeatWall
-  graph: Girder
-  startNode: start
-  targetNode: meatWall
-  category: construction-category-structures
-  description: Sticky.
-  icon:
-    sprite: Structures/Walls/meat.rsi
-    state: full
-  objectType: Structure
-  placementMode: SnapgridCenter
-  canRotate: false
-
-- type: construction
-  id: Cardwall
-  graph: Cardwall
-  startNode: start
-  targetNode: cardwall
-  category: construction-category-structures
-  conditions:
-  - !type:TileNotBlocked
-    failIfSpace: false
-  objectType: Structure
-  placementMode: SnapgridCenter
-  canRotate: false
-
-- type: construction
   name: grille
   id: Grille
   graph: Grille
@@ -1700,22 +1672,6 @@
   objectType: Structure
   placementMode: SnapgridCenter
   canBuildInImpassable: false
-  conditions:
-    - !type:TileNotBlocked
-
-- type: construction
-  id: PlasticFlapsOpaque
-  graph: PlasticFlapsGraph
-  startNode: start
-  targetNode: plasticFlaps
-  category: construction-category-structures
-  placementMode: SnapgridCenter
-  description: A plastic flap to let items through and keep people out.
-  objectType: Structure
-  canBuildInImpassable: false
-  icon:
-    sprite: Structures/plastic_flaps.rsi
-    state: plasticflaps
   conditions:
     - !type:TileNotBlocked
 

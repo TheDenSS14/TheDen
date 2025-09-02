@@ -567,7 +567,7 @@
     slots: WITHOUT_POCKET
 
 - type: entity
-  parent: ClothingOuterArmorBase
+  parent: ClothingOuterArmorBasic
   id: CardArmour
   name: cardboard armour
   description: A medieval chestpiece built from cardboard.
@@ -580,11 +580,11 @@
     modifiers:
       coefficients:
         Blunt: 0.9
-  - type: StaminaResistance
-    damageCoefficient: 0.90
   - type: Construction
     graph: cardArmour
-    node: cardarmour# Assmos - Metal Hydrogen
+    node: cardarmour
+
+# Assmos - Metal Hydrogen
 - type: entity
   parent: ClothingOuterArmorBasic
   id: ClothingOuterArmorMetalHydrogen

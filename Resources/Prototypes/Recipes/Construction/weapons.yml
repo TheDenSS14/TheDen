@@ -163,15 +163,7 @@
   targetNode: cardShield
   category: construction-category-weapons
   description: A nicely carved wooden shield!
-  icon: { sprite: Objects/Weapons/Melee/shields.rsi, state: buckler-icon }
-  objectType: Item
-
-- type: construction
-  id: CardShield
-  graph: CardShield
-  startNode: start
-  targetNode: cardShield
-  category: construction-category-weapons
+  icon: { sprite: Objects/Weapons/Melee/shields.rsi, state: cardshield-icon }
   objectType: Item
 
 - type: construction
@@ -256,16 +248,6 @@
   graph: MetalHydrogenAxeConstruct
   startNode: start
   targetNode: icon
-  category: construction-category-weapons
-  description: A lightweight crowbar with an extreme sharp fire axe head attached. It trades its heft as a weapon by making it easier to carry around when holstered to suits without having to sacrifice your backpack.
-  icon: { sprite: Objects/Weapons/Melee/metal_hydrogen_axe.rsi, state: icon }
-  objectType: Item
-
-- type: construction
-  id: CardSword
-  graph: CardSword
-  startNode: start
-  targetNode: cardSword
   category: construction-category-weapons
   description: A lightweight crowbar with an extreme sharp fire axe head attached. It trades its heft as a weapon by making it easier to carry around when holstered to suits without having to sacrifice your backpack.
   icon: { sprite: Objects/Weapons/Melee/metal_hydrogen_axe.rsi, state: icon }
