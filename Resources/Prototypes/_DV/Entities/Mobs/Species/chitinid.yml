@@ -37,6 +37,8 @@
   id: BaseMobChitinid
   abstract: true
   components:
+  - type: Inventory
+    speciesId: chitinid
   - type: HumanoidAppearance
     species: Chitinid
     hideLayersOnEquip:
@@ -148,5 +150,7 @@
   id: MobChitinidDummy
   categories: [ HideSpawnMenu ]
   components:
+  - type: Inventory
+    speciesId: chitinid
   - type: HumanoidAppearance
     species: Chitinid

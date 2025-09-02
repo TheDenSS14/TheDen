@@ -20,6 +20,8 @@
   name: Urist McShadow
   abstract: true
   components:
+    - type: Inventory
+      speciesId: shadowkin
     - type: Destructible
       thresholds:
         - trigger:
@@ -218,5 +220,7 @@
   categories: [ HideSpawnMenu ]
   description: A dummy shadowkin meant to be used in character setup.
   components:
+    - type: Inventory
+      speciesId: shadowkin
     - type: HumanoidAppearance
       species: Shadowkin
