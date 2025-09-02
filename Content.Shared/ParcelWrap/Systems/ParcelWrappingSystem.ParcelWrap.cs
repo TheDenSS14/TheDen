@@ -125,7 +125,7 @@ public sealed partial class ParcelWrappingSystem
         }
 
         // Consume a `use` on the wrapper, and delete the wrapper if it's empty.
-        _charges.TryUseCharges(wrapper.Owner, 1);
+        _charges.TryUseCharge(wrapper.Owner);
         if (_net.IsServer && _charges.IsEmpty(wrapper.Owner))
             QueueDel(wrapper);
 
