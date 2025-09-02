@@ -6,9 +6,6 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
 name: Update REUSE Headers
-concurrency:
-  group: reuse_action
-  cancel-in-progress: false
 on:
   pull_request_target:
     types: [closed]
@@ -56,6 +53,15 @@ jobs:
           git config user.name "${{ env.CHANGELOG_USER }}"
           git config user.email "${{ env.CHANGELOG_EMAIL }}"
           git add -A
-          git commit -m "${{ env.REUSE_MESSAGE }}" || echo "No changes to commit"
-          git pull --rebase origin ${{ vars.CHANGELOG_BRANCH }}
-          git push origin ${{ vars.CHANGELOG_BRANCH }}
+          git commit -m "${{ env.REUSE_MESSAGE }}" || echo "No changes to commit or committing failed."
+          for i in {1..5}; do
+            git pull --rebase origin ${{ vars.CHANGELOG_BRANCH }} || exit 1
+            if git push origin ${{ vars.CHANGELOG_BRANCH }}; then
+              echo "Push succeeded"
+              exit 0
+            fi
+            echo "Push failed, retrying in 5s..."
+            sleep 5
+          done
+          echo "Push failed after 5 attempts."
+          exit 1

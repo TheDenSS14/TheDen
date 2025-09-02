@@ -1,3 +1,8 @@
+# SPDX-FileCopyrightText: 2025 Eightballll
+# SPDX-FileCopyrightText: 2025 Tabitha
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 flavor-complex-tirggel = crunchy
 
 ## Basic drinks

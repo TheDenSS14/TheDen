@@ -6,9 +6,10 @@
 // SPDX-FileCopyrightText: 2025 Cami
 // SPDX-FileCopyrightText: 2025 Fansana
 // SPDX-FileCopyrightText: 2025 Skubman
+// SPDX-FileCopyrightText: 2025 portfiend
 // SPDX-FileCopyrightText: 2025 sleepyyapril
 //
-// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+// SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 using Content.Server.Clothing.Systems;
 using Content.Server._DV.ParadoxAnomaly.Components;
@@ -263,7 +264,7 @@ public sealed class ParadoxAnomalySystem : EntitySystem
                 profile.Name,
                 job,
                 station);
-            _loadout.ApplyCharacterLoadout(spawned, job, profile, [], false); // TODO: find a way to get playtimes and whitelisted
+            _loadout.ApplyCharacterLoadout(spawned, job, profile, [], false); // TODO: find a way to get playtimes, player, and whitelisted
         }
 
         foreach (var special in job.Special)
