@@ -902,3 +902,30 @@
         reagent: Ethanol
         amount: 0.08
   fizziness: 0.25
+
+- type: reagent
+  id: PlasmaFlood
+  name: reagent-name-plasmaflood
+  parent: BaseAlcohol
+  desc: reagent-desc-plasmaflood
+  physicalDesc: reagent-physical-desc-gaseous
+  flavor: plasmaflood
+  color: "#ff6bf6"
+  metamorphicSprite:
+    sprite: _DEN/Objects/Consumable/Drinks/plasmaflood.rsi
+    state: icon_empty
+  metamorphicMaxFillLevels: 4
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: false
+  metabolisms:
+    Drink:
+      effects:
+      - !type:SatiateThirst
+        factor: 0.667
+# commented out until gasp is an emote.
+#      - !type:Emote
+#        emote: Gasp
+#        showInChat: true
+#        force: true
+#        probability: 0.35
+  fizziness: 0.5

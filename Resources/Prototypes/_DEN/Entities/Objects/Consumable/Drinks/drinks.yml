@@ -541,3 +541,19 @@
   - type: Icon
     sprite: _DEN/Objects/Consumable/Drinks/witchinghour.rsi
     state: icon
+
+- type: entity
+  parent: DrinkGlass
+  id: DrinkPlasmaFloodGlass
+  suffix: plasma flood
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 30
+        reagents:
+        - ReagentId: PlasmaFlood
+          Quantity: 30
+  - type: Icon
+    sprite: _DEN/Objects/Consumable/Drinks/plasmaflood.rsi
+    state: icon

@@ -102,3 +102,6 @@ reagent-desc-vampiresdelight = What is a man? A miserable little pile of secrets
 
 reagent-name-witchinghour = witching hour
 reagent-desc-witchinghour = A sweet and simple witch's concoction, straight from the cauldron and bursting with a variety of flavors!
+
+reagent-name-plasmaflood = plasma flood
+reagent-desc-plasmaflood = An Atmosian non-alcoholic, perfect for drinking on the job!

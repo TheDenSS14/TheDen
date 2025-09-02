@@ -447,3 +447,15 @@
       amount: 1
   products: 
     WitchingHour: 6
+
+- type: reaction
+  id: PlasmaFlood 
+  reactants:
+    SolDry:
+      amount: 3
+    GrapeSoda:
+      amount: 1
+    Plasma:
+      amount: 2
+  products: 
+    PlasmaFlood: 6
