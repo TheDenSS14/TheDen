@@ -189,35 +189,12 @@
   objectType: Item
 
 - type: construction
-  id: ImprovisedArrowCarp
-  graph: ImprovisedArrowCarp
-  startNode: start
-  targetNode: ImprovisedArrowCarp
-  category: construction-category-weapons
-  objectType: Item
-
-- type: construction
-  id: ImprovisedArrowPlasma
-  graph: ImprovisedArrowPlasma
-  startNode: start
-  targetNode: ImprovisedArrowPlasma
-  category: construction-category-weapons
-  objectType: Item
-
-- type: construction
-  id: ImprovisedArrowUranium
-  graph: ImprovisedArrowUranium
-  startNode: start
-  targetNode: ImprovisedArrowUranium
-  category: construction-category-weapons
-  objectType: Item
-
-- type: construction
   id: CardArrow
   graph: CardArrow
   startNode: start
   targetNode: CardArrow
   category: construction-category-weapons
+  icon: { sprite: Objects/Weapons/Guns/Bow/bow.rsi, state: wielded-arrow }
   objectType: Item
 
 - type: construction
@@ -259,4 +236,6 @@
   startNode: start
   targetNode: cardSword
   category: construction-category-weapons
+  description: The perfect sword for a knight such as thee!
+  icon: { sprite: Objects/Fun/card_sword.rsi, state: icon }
   objectType: Item

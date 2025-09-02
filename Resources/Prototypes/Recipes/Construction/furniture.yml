@@ -356,6 +356,9 @@
   startNode: start
   targetNode: TableCard
   category: construction-category-furniture
+  icon:
+    sprite: Structures/Furniture/Tables/card.rsi
+    state: full
   objectType: Structure
   placementMode: SnapgridCenter
   canBuildInImpassable: false
@@ -368,6 +371,9 @@
   startNode: start
   targetNode: stoolCard
   category: construction-category-furniture
+  icon:
+    sprite: Structures/Furniture/chairs.rsi
+    state: card-stool
   objectType: Structure
   placementMode: SnapgridCenter
   canBuildInImpassable: false

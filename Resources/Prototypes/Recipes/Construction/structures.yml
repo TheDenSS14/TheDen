@@ -324,6 +324,10 @@
   startNode: start
   targetNode: cardwall
   category: construction-category-structures
+  description: A flimsy cardboard wall.
+  icon:
+    sprite: Structures/Walls/card.rsi
+    state: full
   objectType: Structure
   placementMode: SnapgridCenter
   canRotate: false
@@ -1662,12 +1666,15 @@
   objectType: Structure
   placementMode: SnapgridCenter
   canBuildInImpassable: false
+  icon:
+    sprite: Structures/Doors/MineralDoors/card_door.rsi
+    state: closed
 
 - type: construction
   id: PlasticFlapsClear
   graph: PlasticFlapsGraph
   startNode: start
-  targetNode: cardDoor
+  targetNode: plasticFlaps
   category: construction-category-structures
   objectType: Structure
   placementMode: SnapgridCenter
