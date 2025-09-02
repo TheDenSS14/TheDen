@@ -76,6 +76,15 @@
   solids:
     FoodDoughSlice: 1 # one third of a standard bread dough recipe
 
+- type: microwaveMealRecipe
+  id: RecipeCottonBun
+  name: cotton bun recipe
+  result: FoodCottonBun
+  time: 5
+  # group: Breads
+  solids:
+    FoodDoughCottonSlice: 1
+
 #Bagels
 - type: microwaveMealRecipe
   id: RecipeBagel
@@ -93,6 +102,14 @@
   solids:
     FoodDoughRope: 1
     PoppySeeds: 1
+
+- type: microwaveMealRecipe
+  id: RecipeBagelCotton
+  name: cotton bagel recipe
+  result: FoodBagelCotton
+  time: 5
+  solids:
+    FoodDoughCottonRope: 1
 
 #Burgers
 
@@ -470,6 +487,14 @@
     FoodDough: 1
 
 - type: microwaveMealRecipe
+  id: RecipeBreadCotton
+  name: cotton bread recipe
+  result: FoodBreadCotton
+  time: 10
+  solids:
+    FoodDoughCotton: 1
+
+- type: microwaveMealRecipe
   id: RecipeSausageBread
   name: sausage bread recipe
   result: FoodBreadSausage
@@ -519,6 +544,17 @@
     Blackpepper: 5
   solids:
     FoodDough: 1
+
+- type: microwaveMealRecipe
+  id: RecipeBaguetteCotton
+  name: baguette recipe
+  result: FoodBreadBaguetteCotton
+  time: 15
+  reagents:
+    TableSalt: 5
+    Blackpepper: 5
+  solids:
+    FoodDoughCotton: 1
 
 - type: microwaveMealRecipe
   id: RecipeBaguetteSword
@@ -684,6 +720,15 @@
     FoodChiliPepper: 2
     FoodTomato: 2
     SheetUranium1: 2
+
+- type: microwaveMealRecipe
+  id: RecipeCottonPizza
+  name: cotton pizza recipe
+  result: FoodMothPizzaCotton # DEN - Use nyano cotton pizza instead
+  time: 30
+  solids:
+    FoodDoughCottonFlat: 1
+    CottonBol: 4
 
 #Italian
 - type: microwaveMealRecipe
@@ -1675,6 +1720,13 @@
   solids:
     FoodDonkpocketCarp: 1
 
+- type: microwaveMealRecipe
+  id: RecipeDonkpocketMoth
+  name: warm moth-pocket recipe
+  result: FoodDonkpocketMothWarm
+  time: 5
+  solids:
+    FoodDonkpocketMoth: 1
 
 - type: microwaveMealRecipe
   id: RecipeHotChili
@@ -1864,6 +1916,67 @@
     FoodOrange: 1
     FoodAmbrosiaVulgaris: 1
 
+# Muffins
+
+- type: microwaveMealRecipe
+  id: RecipeMuffin
+  name: muffin recipe
+  result: FoodBakedMuffin
+  time: 15
+  solids:
+    FoodPlateMuffinTin: 1
+    FoodDoughSlice: 1
+  reagents:
+    Sugar: 10
+
+- type: microwaveMealRecipe
+  id: RecipeMuffinChocolate
+  name: chocolate muffin recipe
+  result: FoodBakedMuffinChocolate
+  time: 15
+  solids:
+    FoodPlateMuffinTin: 1
+    FoodDoughSlice: 1
+    FoodSnackChocolateBar: 1
+  reagents:
+    Sugar: 10
+
+- type: microwaveMealRecipe
+  id: RecipeMuffinBerry
+  name: berry muffin recipe
+  result: FoodBakedMuffinBerry
+  time: 15
+  solids:
+    FoodPlateMuffinTin: 1
+    FoodDoughSlice: 1
+    FoodBerries: 1
+  reagents:
+    Sugar: 10
+
+- type: microwaveMealRecipe
+  id: RecipeMuffinBanana
+  name: banana muffin recipe
+  result: FoodBakedMuffinBanana
+  time: 15
+  solids:
+    FoodPlateMuffinTin: 1
+    FoodDoughSlice: 1
+    FoodBanana: 1
+  reagents:
+    Sugar: 10
+
+- type: microwaveMealRecipe
+  id: RecipeMuffinCherry
+  name: cherry muffin recipe
+  result: FoodBakedMuffinCherry
+  time: 15
+  solids:
+    FoodPlateMuffinTin: 1
+    FoodDoughSlice: 1
+    FoodCherry: 3
+  reagents:
+    Sugar: 10
+
 # NOT ACTUAL FOOD
 
 - type: microwaveMealRecipe
@@ -1927,6 +2040,15 @@
   time: 5
   solids:
     FoodSpaceshroom: 1
+
+- type: microwaveMealRecipe
+  id: RecipeFoodBakedChevreChaudCotton
+  name: cotton chevre chaud recipe
+  result: FoodBakedChevreChaudCotton
+  time: 5
+  solids:
+    FoodChevreSlice: 1
+    FoodBreadBaguetteCottonSlice: 1
 
 - type: microwaveMealRecipe
   id: RecipeCannabisButter
@@ -2057,6 +2179,15 @@
     FoodButterSlice: 1
 
 - type: microwaveMealRecipe
+  id: RecipeCroissantCotton
+  name: cotton croissant recipe
+  result: FoodBakedCroissantCotton
+  time: 5
+  solids:
+    FoodCroissantRawCotton: 1
+    FoodButterSlice: 1
+
+- type: microwaveMealRecipe
   id: RecipeThrowingCroissant
   name: throwing croissant recipe
   result: WeaponCroissant
@@ -2078,3 +2209,14 @@
   solids:
     # FoodGarlic: 1 # DEN - No longer needs garlic
     FoodSausageCasing: 1 # DEN - Use sausage casings
+
+- type: microwaveMealRecipe
+  id: RecipeCottonCake
+  name: cotton cake recipe
+  result: FoodCakeCotton
+  time: 5
+  # group: Cake
+  reagents:
+    Fiber: 10
+  solids:
+    FoodCakePlain: 1

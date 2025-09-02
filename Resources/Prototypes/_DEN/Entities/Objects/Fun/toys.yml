@@ -1,4 +1,4 @@
-# SPDX-FileCopyrightText: 2025 portfiend <109661617+portfiend@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 portfiend
 #
 # SPDX-License-Identifier: MPL-2.0
 
@@ -63,6 +63,9 @@
     - type: Sprite
       sprite: _DEN/Objects/Fun/ufoplushie.rsi
       state: icon
+    - type: FoodSequenceElement
+      entries:
+        CottonBurger: AlienGermPlushie
 
 # accidentally made the sprite too small at first but i didnt want to throw it out so you get a little one.
 - type: entity
@@ -77,6 +80,9 @@
       size: Tiny
     - type: SecretStash
       maxItemSize: Tiny
+    - type: FoodSequenceElement
+      entries:
+        CottonBurger: AlienGermMiniPlushie
 
 # SPECIES PLUSHIES
 
@@ -107,3 +113,6 @@
     - type: Food
       useSound:
         collection: OviniaPlushieSounds
+    - type: FoodSequenceElement
+      entries:
+        CottonBurger: OviniaPlushie

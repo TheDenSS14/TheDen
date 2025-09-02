@@ -41,7 +41,7 @@
 # SPDX-FileCopyrightText: 2025 eightballll
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 flavor-profile = Tastes {$flavor}.
 flavor-profile-multiple = Tastes {$flavors} and {$lastFlavor}.
@@ -261,7 +261,6 @@ flavor-complex-vodka = like fermented grain
 flavor-complex-tequila = like fermented death
 flavor-complex-sake = like sweet, alcoholic rice
 flavor-complex-rum = like fermented sugar
-flavor-complex-coconut-rum = like nutty fermented sugar
 flavor-complex-coffee-liquor = like strong, bitter coffee
 flavor-complex-whiskey = like molasses
 flavor-complex-shitty-wine = like grape rinds
@@ -284,8 +283,11 @@ flavor-complex-long-island = suspiciously like iced tea
 flavor-complex-three-mile-island = like tea brewed in nuclear runoff
 flavor-complex-whiskey-cola = like carbonated molasses
 flavor-complex-root-beer-float = like ice cream in root beer
+flavor-complex-crush-depth = like the Hadal Zone
 flavor-complex-black-russian = like alcoholic coffee
 flavor-complex-white-russian = like alcoholic sweetened coffee
+flavor-complex-electric-shark = like Shark Week in the tropics
+flavor-complex-tortuga = like sweet tea
 flavor-complex-moonshine = like pure alcohol
 flavor-complex-singulo = like a bottomless hole
 flavor-complex-syndie-bomb = like bitter whiskey
@@ -301,6 +303,12 @@ flavor-complex-atomic-cola = like hoarding bottle caps
 flavor-complex-cuba-libre = like spiked cola
 flavor-complex-gin-tonic = like spiked lemon-lime soda
 flavor-complex-screwdriver = like spiked orange juice
+flavor-complex-jack-rose = like a testimony
+flavor-complex-jungle-bird = like you’re in a tropical aviary
+flavor-complex-kalimotxo = like fancy spiked cola
+flavor-complex-vampiro = fruity, savoury, and spicy
+flavor-complex-bronx = like mildly sweet, alcoholic fruit
+flavor-complex-monkey-business = like going ape
 flavor-complex-vodka-red-bool = like a heart attack
 flavor-complex-irish-bool = caffine and Ireland
 flavor-complex-xeno-basher = like killing bugs
@@ -308,10 +316,26 @@ flavor-complex-budget-insuls-drink = like door hacking
 flavor-complex-watermelon-wakeup = like a sweet wakeup call
 flavor-complex-rubberneck = like synthetics
 flavor-complex-irish-car-bomb = like a spiked cola float
+flavor-complex-irish-slammer = like a spiked cola float
+flavor-complex-alien-brain-hemorrhage = like an extraterrestrial injury
 flavor-complex-themartinez = like violets and lemon vodka
 flavor-complex-cogchamp = like brass
 flavor-complex-white-gilgamesh = like lightly carbonated cream
 flavor-complex-antifreeze = warm
+flavor-complex-caipirinha = like Brazil
+flavor-complex-deathintheafternoon = like anise and champagne
+flavor-complex-empress75 = like tyrian purple
+flavor-complex-espressomartini = like vodka and coffee
+flavor-complex-mayojito = like stomach turmoil
+flavor-complex-mimeosa = like silence and oranges
+flavor-complex-mimosa = like an early brunch
+flavor-complex-moscowmule = like vodka and ginger ale
+flavor-complex-thesunalsorises = like an absinthe daiquiri
+flavor-complex-zombiecocktail = like eating brains
+flavor-complex-aloe = like morning dew
+flavor-complex-dark-and-stormy = like ginger ale spiked with rum
+flavor-complex-radler = like spiked lemonade
+flavor-complex-snowwhite = like sour and bitter hops
 
 ### This is exactly what pilk tastes like. I'm not even joking. I might've been a little drunk though
 flavor-complex-pilk = like sweet milk

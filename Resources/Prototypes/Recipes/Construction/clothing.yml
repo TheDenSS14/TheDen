@@ -1,16 +1,18 @@
-# SPDX-FileCopyrightText: 2023 Fluffiest Floofers <thebluewulf@gmail.com>
-# SPDX-FileCopyrightText: 2023 Tunguso4ka <71643624+Tunguso4ka@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2023 brainfood1183 <113240905+brainfood1183@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT <77995199+DEATHB4DEFEAT@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 Debug <49997488+DebugOk@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 ERROR404 <100093430+ERORR404V1@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 FoxxoTrystan <45297731+FoxxoTrystan@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 SimpleStation14 <130339894+SimpleStation14@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 Skubman <ba.fallaria@gmail.com>
-# SPDX-FileCopyrightText: 2024 icekot8 <93311212+icekot8@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Fluffiest Floofers
+# SPDX-FileCopyrightText: 2023 Tunguso4ka
+# SPDX-FileCopyrightText: 2023 brainfood1183
+# SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT
+# SPDX-FileCopyrightText: 2024 Debug
+# SPDX-FileCopyrightText: 2024 ERROR404
+# SPDX-FileCopyrightText: 2024 FoxxoTrystan
+# SPDX-FileCopyrightText: 2024 SimpleStation14
+# SPDX-FileCopyrightText: 2024 Skubman
+# SPDX-FileCopyrightText: 2024 icekot8
+# SPDX-FileCopyrightText: 2025 Eightballll
+# SPDX-FileCopyrightText: 2025 marc-pelletier
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: construction
   name: clown vacsuit
@@ -54,6 +56,28 @@
   category: construction-category-clothing
   description: Helmet made of bones.
   icon: { sprite: Clothing/Head/Helmets/bone_helmet.rsi, state: icon }
+  objectType: Item
+
+- type: construction
+  name: cardboard helmet
+  id: cardHelmet
+  graph: cardHelmet
+  startNode: start
+  targetNode: cardhelmet
+  category: construction-category-clothing
+  description: A valiant cardboard knight's headpiece.
+  icon: { sprite: Clothing/Head/Helmets/card_helmet.rsi, state: icon }
+  objectType: Item
+
+- type: construction
+  name: cardboard armor
+  id: cardArmour
+  graph: cardArmour
+  startNode: start
+  targetNode: cardarmour
+  category: construction-category-clothing
+  description: A valiant cardboard knight's armor.
+  icon: { sprite: Clothing/OuterClothing/Armor/card_armour.rsi, state: icon }
   objectType: Item
 
 - type: construction
