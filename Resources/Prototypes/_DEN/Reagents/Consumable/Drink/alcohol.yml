@@ -926,6 +926,9 @@
       effects:
       - !type:SatiateThirst
         factor: 0.667
+      - !type:AdjustReagent
+        reagent: Ethanol
+        amount: 0.1
 # commented out until gasp is an emote.
 #      - !type:Emote
 #        emote: Gasp

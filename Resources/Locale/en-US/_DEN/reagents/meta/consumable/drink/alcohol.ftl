@@ -108,4 +108,4 @@ reagent-name-witchinghour = witching hour
 reagent-desc-witchinghour = A sweet and simple witch's concoction, straight from the cauldron and bursting with a variety of flavors!
 
 reagent-name-plasmaflood = plasma flood
-reagent-desc-plasmaflood = An Atmosian non-alcoholic, perfect for drinking on the job!
+reagent-desc-plasmaflood = An Atmosian light cocktail, perfect for drinking on the job!
