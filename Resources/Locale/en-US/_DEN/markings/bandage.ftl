@@ -6,8 +6,8 @@ marking-FaceWrapLeftVulp = Bandage Facewrap (Left)
 marking-FaceWrapVulp = Bandage Facewrap
 
 marking-FaceWrap-facewrap = Bandage Facewrap
-marking-FaceWrapVulp-facewrapvulp Bandage Facewrap
+marking-FaceWrapVulp-facewrapvulp = Bandage Facewrap
 marking-FaceWrapLeft-facewrapleft = Bandage Facewrap (Left)
 marking-FaceWrapLeftVulp-facewrapleftvulp = Bandage Facewrap (Left)
-marking-FaceWrapRight-facewrapright Bandage Facewrap (Right)
+marking-FaceWrapRight-facewrapright = Bandage Facewrap (Right)
 marking-FaceWrapRightVulp-facewraprightvulp = Bandage Facewrap (Right)
