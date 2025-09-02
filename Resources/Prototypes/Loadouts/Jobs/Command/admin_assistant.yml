@@ -11,6 +11,17 @@
 # Ears
 
 # Equipment
+- type: loadout
+  id: LoadoutAdministrativeAssistantFolder
+  category: JobsCommandAdminAssistant
+  cost: 0
+  exclusive: true
+  items:
+  - BoxFolderAA
+  requirements:
+  - !type:CharacterJobRequirement
+    jobs:
+    - AdministrativeAssistant
 
 # Eyes
 

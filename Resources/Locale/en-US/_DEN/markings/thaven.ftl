@@ -1,4 +1,6 @@
-# Chest
+# SPDX-FileCopyrightText: 2025 Shaman
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
 
 marking-ThavenSlimChest = Slim Chest
 marking-ThavenSlimChest-slimchest = Slim Chest
@@ -34,7 +36,16 @@ marking-ThavenTigerF-tiger2_f = Tiger Stripes
 marking-ThavenHipScales = Hip Scales
 marking-ThavenHipScales-hipscales = Scales
 
+marking-ThavenChestHeavyTattoos = Heavy Chest Tattoos
+marking-ThavenChestHeavyTattoos-chest_heavy1 = Heavy Chest Tattoos (Upper)
+marking-ThavenChestHeavyTattoos-chest_heavy2 = Heavy Chest Tattoos (Middle)
+marking-ThavenChestHeavyTattoos-chest_heavy3 = Heavy Chest Tattoos (Lower)
+
 # Head
+
+marking-ThavenHeadHeavyTattoos = Heavy Neck Tattoos
+marking-ThavenHeadHeavyTattoos-head_heavy1 = Heavy Neck Tattoos (Lower)
+marking-ThavenHeadHeavyTattoos-head_heavy2 = Heavy Neck Tattoos (Upper)
 
 # Snout
 
@@ -54,10 +65,27 @@ marking-ThavenArmProstheticRight-arm_r_prosthetic = Prosthetic (Right Arm)
 marking-ThavenArmTwistingRight = Twisted Scar (Right Arm)
 marking-ThavenArmTwistingRight-arm_r_twisting = Twisted Scar (Right Arm)
 
+marking-ThavenArmHeavyTattoosRight = Heavy Arm Tattoos (Right)
+marking-ThavenArmHeavyTattoosRight-r_arm_heavy1 = Heavy Arm Tattoos (Upper)
+marking-ThavenArmHeavyTattoosRight-r_arm_heavy2 = Heavy Arm Tattoos (Lower)
+
 # RHand
 
 marking-GradientRHandT = Gradient (Right)
 marking-GradientRHandT-m_gradient_r_hand = Color
+
+marking-ThavenHandHeavyTattoosRight = Heavy Hand Tattoos (Right)
+marking-ThavenHandHeavyTattoosRight-r_hand_heavy1 = Heavy Hand Tattoos (Outer)
+marking-ThavenHandHeavyTattoosRight-r_hand_heavy2 = Heavy Hand Tattoos (Inner)
+
+marking-ThavenHandDollJointsTattooRight-r_hand_doll = Doll Joints Hand Tattoo (Right)
+marking-ThavenHandDollJointsTattooRight = Doll Joints Hand Tattoo (Right)
+
+marking-ThavenHandProstheticRight = Prosthetic (Right Hand)
+marking-ThavenHandProstheticRight-hand_r_prosthetic = Prosthetic (Right Hand)
+
+marking-ThavenHandTwistingRight = Twisted Scar (Right Hand)
+marking-ThavenHandTwistingRight-hand_r_twisting = Twisted Scar (Right Hand)
 
 # LArm
 
@@ -73,10 +101,27 @@ marking-ThavenArmProstheticLeft-arm_l_prosthetic = Prosthetic (Left Arm)
 marking-ThavenArmTwistingLeft = Twisted Scar (Left Arm)
 marking-ThavenArmTwistingLeft-arm_l_twisting = Twisted Scar (Left Arm)
 
+marking-ThavenArmHeavyTattoosLeft = Heavy Arm Tattoos (Left)
+marking-ThavenArmHeavyTattoosLeft-l_arm_heavy1 = Heavy Arm Tattoos (Upper)
+marking-ThavenArmHeavyTattoosLeft-l_arm_heavy2 = Heavy Arm Tattoos (Lower)
+
 # LHand
 
 marking-GradientLHandT = Gradient (Left)
 marking-GradientLHandT-m_gradient_l_hand = Gradient
+
+marking-ThavenHandHeavyTattoosLeft = Heavy Hand Tattoos (Left)
+marking-ThavenHandHeavyTattoosLeft-l_hand_heavy1 = Heavy Hand Tattoos (Outer)
+marking-ThavenHandHeavyTattoosLeft-l_hand_heavy2 = Heavy Hand Tattoos (Inner)
+
+marking-ThavenHandDollJointsTattooLeft-l_hand_doll = Doll Joints Hand Tattoo (Left)
+marking-ThavenHandDollJointsTattooLeft = Doll Joints Hand Tattoo (Left)
+
+marking-ThavenHandProstheticLeft = Prosthetic (Left Hand)
+marking-ThavenHandProstheticLeft-hand_l_prosthetic = Prosthetic (Left Hand)
+
+marking-ThavenHandTwistingLeft = Twisted Scar (Left Hand)
+marking-ThavenHandTwistingLeft-hand_l_twisting = Twisted Scar (Left Hand)
 
 # RLeg
 

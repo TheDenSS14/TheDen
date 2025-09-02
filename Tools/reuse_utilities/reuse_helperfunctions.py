@@ -133,7 +133,7 @@ ANSI_COLORS = {
     "success": "\033[32",
     "warning": "\033[33",
     "error":     "\033[31",
-    "finished":   "\033[35",
+    "main":   "\033[35",
 }
 
 THREAD_SAFETY_DEFAULT = False
@@ -322,15 +322,14 @@ def get_authors_from_file(filepath, follow=True, thread_safe=THREAD_SAFETY_DEFAU
     else:
         return buffer, git_output
 
-def parse_existing_header(content, comment_style:(str,), filepath, thread_safe=THREAD_SAFETY_DEFAULT):
+def parse_existing_header(filepath, comment_style:(str,), thread_safe=THREAD_SAFETY_DEFAULT):
     """
     parses an existing header on a file and returns a 3 element tuple composed of:
     1. the list of authors (structured like get_authors_from_file)
     2. the license id's found in a set
     3. a string that is the header found on the file
-    :param content: the file content, as a string
-    :param comment_style: comment style from COMMENT_STYLES based on COMMENT_STYLES.get(ext)
     :param filepath: path to the file (relative), should be normalised, string
+    :param comment_style: comment style from COMMENT_STYLES based on COMMENT_STYLES.get(ext)
     :param thread_safe: determines the console output behaviour, bool
     :return: see function description + optionally a buffer as a StringIO object
     """
@@ -342,23 +341,30 @@ def parse_existing_header(content, comment_style:(str,), filepath, thread_safe=T
         def thread_safe_print(s:str, color:str = "white"):
             print(colout(s,color))
 
-    file_lines = content.splitlines()
+    with open(os.path.join(REPO_PATH, filepath), "r", encoding="utf-8") as file:
+        content = file.read()
+        # we need to ensure that the first line actually contains stuff, and also, there shouldn't be any empty lines before the header
+        file_lines = content.lstrip().splitlines()
+
     prefix, suffix = comment_style
     thread_safe_print(f"Checking if a header exists in {filepath}:", "doing") # new files won't have headers, or sometimes modified files might have theirs stripped
+    no_header:bool = False
     if suffix:
-        if file_lines[0].strip() != prefix:
-            thread_safe_print(f"Did not find a header in {filepath}", "warning")
-            if not thread_safe:
-                return [], {}, ""
-            else:
-                return buffer, [], {}, ""
+        if file_lines[0].strip().startswith(prefix):
+            if not file_lines[1].strip().startswith("SPDX-FileCopyrightText:"):
+                no_header = True
+        else:
+            no_header = True
     else:
-        if file_lines[0].strip().split(" ")[0] != prefix:
-            thread_safe_print(f"Did not find a header in {filepath}", "warning")
-            if not thread_safe:
-                return [], {}, ""
-            else:
-                return buffer, [], {}, ""
+        no_header = not file_lines[0].strip().startswith(f"{prefix} SPDX-FileCopyrightText:")
+
+    if no_header:
+        thread_safe_print(f"Did not find a header in {filepath}", "warning")
+        if not thread_safe:
+            return [], {}, ""
+        else:
+            return buffer, [], {}, ""
+
     thread_safe_print(f"Found a header in {filepath}", "success")
     header_lines = []
     # we capture the existing header to then make it easier to update it
@@ -367,16 +373,13 @@ def parse_existing_header(content, comment_style:(str,), filepath, thread_safe=T
     if suffix:
         for line in file_lines:
             header_lines.append(line)
-            if line == suffix:
+            if suffix in line:
                 break
     else:
         for line in file_lines:
-            if not line or line == "\n":
-                break
-            if line.split(" ")[0] != prefix:
-                header_lines.append(line)
-                break
             header_lines.append(line)
+            if line.startswith(f"{prefix} SPDX-License-Identifier:"):
+                break
 
     thread_safe_print(f"Looking for licenses in {filepath}:", "doing")
     match = re.search(r"SPDX-License-Identifier: (.+)", "\n".join(header_lines)) # find licenses
@@ -503,7 +506,7 @@ def prepend_header(filepath, new_header, existing_header, thread_safe=THREAD_SAF
 
     if existing_header:
         thread_safe_print(f"Replacing existing header in {filepath}:", "doing")
-        new_content = content.replace(existing_header, new_header)
+        new_content = content.replace(existing_header, new_header).lstrip()
     else:
         thread_safe_print(f"Prepending a header to {filepath}:", "doing")
 
@@ -592,14 +595,12 @@ def process_file(filepath, given_license:str = "", thread_safe=THREAD_SAFETY_DEF
             return buffer
     prefix, suffix = comment_style
 
-    with open(os.path.join(REPO_PATH, filepath), "r", encoding="utf-8") as file:
-        content = file.read()
     if not thread_safe:
-        existing_authors, licenses, existing_header = parse_existing_header(content, comment_style, filepath)
+        existing_authors, licenses, existing_header = parse_existing_header(filepath, comment_style)
         historical_authors = get_authors_from_file(filepath)
         combined_authors = process_author_list(existing_authors + historical_authors)
     else:
-        parse_existing_header_buffer, existing_authors, licenses, existing_header = parse_existing_header(content, comment_style, filepath, thread_safe=True)
+        parse_existing_header_buffer, existing_authors, licenses, existing_header = parse_existing_header(filepath, comment_style, thread_safe=True)
         parse_existing_header_buffer.seek(0)
         buffer.write(parse_existing_header_buffer.read())
         authors_from_file_buffer, historical_authors = get_authors_from_file(filepath, thread_safe=True)

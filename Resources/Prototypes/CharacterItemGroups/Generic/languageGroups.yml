@@ -1,13 +1,13 @@
-# SPDX-FileCopyrightText: 2024 KyuPolaris <tabi@kyuudev.me>
-# SPDX-FileCopyrightText: 2024 VMSolidus <evilexecutive@gmail.com>
-# SPDX-FileCopyrightText: 2025 Blitz <73762869+BlitzTheSquishy@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 SX-7 <92227810+SX-7@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 Skubman <ba.fallaria@gmail.com>
-# SPDX-FileCopyrightText: 2025 Tabitha <64847293+KyuPolaris@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 Timfa <timfalken@hotmail.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 KyuPolaris
+# SPDX-FileCopyrightText: 2024 VMSolidus
+# SPDX-FileCopyrightText: 2025 Blitz
+# SPDX-FileCopyrightText: 2025 SX-7
+# SPDX-FileCopyrightText: 2025 Skubman
+# SPDX-FileCopyrightText: 2025 Tabitha
+# SPDX-FileCopyrightText: 2025 Timfa
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: characterItemGroup
   id: TraitsLanguagesBasic
@@ -73,8 +73,6 @@
     - type: trait
       id: PirateAccent
     - type: trait
-      id: Accentless
-    - type: trait
       id: NoContractionsAccent
     - type: trait
       id: Southern
@@ -98,6 +96,15 @@
       id: StiltedSpeech
     - type: trait
       id: Monotonous
+    - type: trait
+      id: GoblinAccent
+    - type: trait
+      id: ItalianAccent
+#    - type: trait
+#      id: Accentless
+#    - type: trait
+#      id: ProperCapitalizationAccent
+# These don't complexify your speech and shouldn't count toward the two-only limit
 
 - type: characterItemGroup
   id: TraitsLanguagesTajaran

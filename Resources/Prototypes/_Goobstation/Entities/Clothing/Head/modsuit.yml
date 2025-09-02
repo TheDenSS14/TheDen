@@ -1,5 +1,7 @@
-# SPDX-FileCopyrightText: 2025 Eris <eris@erisws.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Eris
+# SPDX-FileCopyrightText: 2025 Shaman
+# SPDX-FileCopyrightText: 2025 Sir Warock
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -10,6 +12,7 @@
   name: base modsuit helmet
   categories: [ HideSpawnMenu ]
   components:
+  - type: BreathMask # TheDen
   - type: Sprite
     state: icon
   - type: Clickable

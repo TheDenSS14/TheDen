@@ -1,7 +1,14 @@
-# SPDX-FileCopyrightText: 2025 portfiend <109661617+portfiend@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Eightballll
+# SPDX-FileCopyrightText: 2025 MajorMoth
+# SPDX-FileCopyrightText: 2025 Shaman
+# SPDX-FileCopyrightText: 2025 portfiend
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+# SPDX-FileCopyrightText: 2025 wheelwrightt
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
+
+# mask
+loadout-name-LoadoutClothingMaskBreathFashion = fashion breath mask (colorable)
 
 # neck
 loadout-name-LoadoutNeckScarfColorable = scarf (colorable)
@@ -10,6 +17,7 @@ loadout-name-LoadoutNeckMantleColorable = mantle (colorable)
 loadout-name-LoadoutNeckCloakColorable = cloak (colorable)
 loadout-name-LoadoutClothingNeckSentimentalCollar = sentimental collar (colorable)
 loadout-name-LoadoutNeckNeckScarfWrapped = wrapped scarf (colorable)
+loadout-name-LoadoutClothingNeckHeavyShackles = heavy shackles (colorable)
 
 # waist
 loadout-name-LoadoutClothingWaistApron = waist apron (colorable)
@@ -24,6 +32,7 @@ loadout-name-LoadoutClothingOuterCoatBomberWhiteLoose = lightweight bomber jacke
 
 # innerclothing
 loadout-name-LoadoutClothingUniformBootyShorts = booty shorts (colorable)
+loadout-name-LoadoutClothingUniformSimplePants = simple pants (colorable)
 
 # hands
 loadout-name-LoadoutClothingHandsSentimentalRing = sentimental ring (colorable)

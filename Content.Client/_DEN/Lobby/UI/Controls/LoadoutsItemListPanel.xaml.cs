@@ -1,4 +1,5 @@
 // SPDX-FileCopyrightText: 2025 portfiend
+// SPDX-FileCopyrightText: 2025 sleepyyapril
 //
 // SPDX-License-Identifier: MPL-2.0
 
@@ -40,11 +41,9 @@ public sealed partial class LoadoutsItemListPanel : BoxContainer
 {
     [Dependency] private readonly IConfigurationManager _configuration = default!;
     [Dependency] private readonly IEntityManager _entity = default!;
-    [Dependency] private readonly JobRequirementsManager _jobRequirements = default!;
     [Dependency] private readonly IPrototypeManager _prototype = default!;
     [Dependency] private readonly IResourceCache _resourceCache = default!;
     private readonly CharacterRequirementsSystem _characterRequirements;
-    private readonly LobbyUIController _controller;
 
     /// <summary>
     ///     Fired when points remaining are recalculated.
@@ -102,7 +101,6 @@ public sealed partial class LoadoutsItemListPanel : BoxContainer
         IoCManager.InjectDependencies(this);
         RobustXamlLoader.Load(this);
         _characterRequirements = _entity.System<CharacterRequirementsSystem>();
-        _controller = UserInterfaceManager.GetUIController<LobbyUIController>();
 
         CategoryTitle.FontOverride = CategoryNameFont;
 
@@ -229,7 +227,12 @@ public sealed partial class LoadoutsItemListPanel : BoxContainer
                 if (_loadoutButtons.TryGetValue(loadout, out var _))
                     continue;
 
-                var button = new LoadoutItemButton(loadout);
+                var button = new LoadoutItemButton(loadout,
+                    _characterRequirements,
+                    _configuration,
+                    _entity,
+                    _prototype);
+
                 button.OnPreferenceChanged += p => OnButtonPreferenceChanged(button, p);
                 button.OnCustomizeToggled += _ => OnCustomizeToggled?.Invoke(button.Preference);
                 button.OnOpenGuidebook += args => OnOpenGuidebook?.Invoke(args);
@@ -333,12 +336,7 @@ public sealed partial class LoadoutsItemListPanel : BoxContainer
         if (button.Unusable == !isValid)
             return;
 
-        var reasons = _characterRequirements.GetReasons(requirements: loadout.Requirements,
-            context: context,
-            entityManager: _entity,
-            prototypeManager: _prototype,
-            configManager: _configuration);
-        button.SetUnusable(!isValid, reasons);
+        button.SetUnusable(!isValid);
     }
 
     private void UpdateButtonWearable(LoadoutItemButton button)

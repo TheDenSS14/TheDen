@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2025 Eightballll
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 reagent-name-blood-moon = blood moon
 reagent-desc-blood-moon = Devilish beneath the gaze of the stars.
 
