@@ -157,12 +157,13 @@
   objectType: Item
 
 - type: construction
+  name: cardboard shield
   id: CardShield
   graph: CardShield
   startNode: start
   targetNode: cardShield
   category: construction-category-weapons
-  description: A nicely carved wooden shield!
+  description: The most it'll block is a harsly worded lecture.
   icon: { sprite: Objects/Weapons/Melee/shields.rsi, state: cardshield-icon }
   objectType: Item
 
@@ -189,15 +190,18 @@
   objectType: Item
 
 - type: construction
+  name: cardboard arrow
   id: CardArrow
   graph: CardArrow
   startNode: start
   targetNode: CardArrow
   category: construction-category-weapons
+  description: Cant kill no matter how hard you try.
   icon: { sprite: Objects/Weapons/Guns/Bow/bow.rsi, state: wielded-arrow }
   objectType: Item
 
 - type: construction
+  name: improvised bow
   id: ImprovisedBow
   graph: ImprovisedBow
   startNode: start
@@ -231,6 +235,7 @@
   objectType: Item
 
 - type: construction
+  name: cardboard sword
   id: CardSword
   graph: CardSword
   startNode: start

@@ -319,6 +319,7 @@
   - !type:TileNotBlocked
 
 - type: construction
+  name: cardboard wall
   id: Cardwall
   graph: Cardwall
   startNode: start
@@ -1658,11 +1659,13 @@
     state: closed
 
 - type: construction
+  name: cardboard door
   id: CardDoor
   graph: DoorGraph
   startNode: start
   targetNode: cardDoor
   category: construction-category-structures
+  description: A flimsy cardboard door, it's a miracle this hasn't fallen apart yet.
   objectType: Structure
   placementMode: SnapgridCenter
   canBuildInImpassable: false

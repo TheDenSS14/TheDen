@@ -249,6 +249,7 @@
     - !type:TileNotBlocked
 
 - type: construction
+  name: wooden bench
   id: ChairWoodBench
   graph: Seat
   startNode: start
@@ -351,11 +352,13 @@
     - !type:TileNotBlocked
 
 - type: construction
+  name: cardboard table
   id: TableCard
   graph: Table
   startNode: start
   targetNode: TableCard
   category: construction-category-furniture
+  description: a flimsy table made out of cardboard.
   icon:
     sprite: Structures/Furniture/Tables/card.rsi
     state: full
@@ -366,11 +369,13 @@
   - !type:TileNotBlocked
 
 - type: construction
+  name: cardboard stool
   id: StoolCard
   graph: Seat
   startNode: start
   targetNode: stoolCard
   category: construction-category-furniture
+  description: a stool made out of cardboard, held together with hopes and dreams.
   icon:
     sprite: Structures/Furniture/chairs.rsi
     state: card-stool
@@ -382,6 +387,7 @@
 
 
 - type: construction
+  name: reinforced glass table
   id: TableReinforcedGlass
   graph: Table
   startNode: start
