@@ -7,7 +7,7 @@
 # SPDX-FileCopyrightText: 2025 Sir Warock
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: entity
   parent: ClothingOuterStorageBase
@@ -45,6 +45,8 @@
         Slash: 0.8
         Piercing: 0.8
         Heat: 0.8
+  - type: StaminaDamageResistance #Den
+    coefficient: 0.8 #Den
   - type: AllowSuitStorage
 
 - type: entity

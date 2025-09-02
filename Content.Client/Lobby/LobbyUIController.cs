@@ -10,7 +10,7 @@
 // SPDX-FileCopyrightText: 2025 portfiend
 // SPDX-FileCopyrightText: 2025 sleepyyapril
 //
-// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+// SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 using System.Linq;
 using Content.Client.Guidebook;
@@ -342,7 +342,13 @@ public sealed class LobbyUIController : UIController, IOnStateEntered<LobbyState
     /// Applies loadouts to the dummy.
     public void GiveDummyLoadout(EntityUid dummy, JobPrototype job, HumanoidCharacterProfile profile)
     {
-        _loadouts.ApplyCharacterLoadout(dummy, job, profile, _jobRequirements.GetRawPlayTimeTrackers(), _jobRequirements.IsWhitelisted(), out _);
+        _loadouts.ApplyCharacterLoadout(dummy,
+            job,
+            profile,
+            _jobRequirements.GetRawPlayTimeTrackers(),
+            _jobRequirements.IsWhitelisted(),
+            out _,
+            player: _playerManager.LocalSession);
     }
 
     /// Loads the profile onto a dummy entity
