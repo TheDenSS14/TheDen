@@ -9,6 +9,7 @@
 - type: entity
   id: ReplicatorSpawn
   parent: BaseGameRule
+  categories: [ HideSpawnMenu ]
   components:
   - type: StationEvent
     earliestStart: 120

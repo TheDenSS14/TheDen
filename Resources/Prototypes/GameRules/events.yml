@@ -704,6 +704,7 @@
 - type: entity
   id: SnakeSpawn
   parent: BaseVentCritterSpawn
+  categories: [ HideSpawnMenu ]
   components:
   - type: StationEvent
     startAnnouncement: true

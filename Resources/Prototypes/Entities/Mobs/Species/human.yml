@@ -138,6 +138,7 @@
 - type: entity
   parent: BaseSpeciesDummy
   id: MobHumanDummy
+  categories: [ HideSpawnMenu ]
   components:
   - type: Inventory
     femaleDisplacements:

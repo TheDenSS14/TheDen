@@ -112,6 +112,7 @@
 - type: entity
   parent: BaseNukeopsRule
   id: Nukeops
+  categories: [ HideSpawnMenu ]
   components:
   - type: GameRule
     minPlayers: 15
