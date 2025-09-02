@@ -21,7 +21,7 @@
   parent: TaurSpeciesLayers
   id: BaseArachneAppearance
   components:
-  - type: Inventory # TheDen - So they can have -chitinid clothing sprites
+  - type: Inventory # TheDen - So they can have -arachne clothing sprites
     speciesId: anytaur
     templateId: anytaur
   - type: HumanoidAppearance
@@ -34,7 +34,7 @@
   id: MobArachneBase
   abstract: true
   components:
-  - type: Inventory # TheDen - So they can have -chitinid clothing sprites
+  - type: Inventory # TheDen - So they can have -arachne clothing sprites
     speciesId: anytaur
   - type: Sericulture
     action: ActionSericulture
