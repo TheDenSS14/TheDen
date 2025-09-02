@@ -37,7 +37,7 @@ public sealed partial class ExplosionResistanceComponent : Component
 
     /// <summary>
     /// When true, resistances will be applied to the entity wearing this item.
-    /// When false, only this entity will get th resistance.
+    /// When false, only this entity will get the resistance.
     /// </summary>
     [DataField, ViewVariables(VVAccess.ReadWrite)]
     public bool Worn = true;

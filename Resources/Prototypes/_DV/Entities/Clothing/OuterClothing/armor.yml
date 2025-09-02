@@ -1,10 +1,10 @@
-# SPDX-FileCopyrightText: 2023 Tad "Taddy" Johnson <120885811+TadJohnson00@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 Tryded <139474617+Tryded@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 Blu <79374236+BlueHNT@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 Rosycup <178287475+Rosycup@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Tad "Taddy" Johnson
+# SPDX-FileCopyrightText: 2024 Tryded
+# SPDX-FileCopyrightText: 2025 Blu
+# SPDX-FileCopyrightText: 2025 Rosycup
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 #Basic armor vest replacement
 - type: entity
@@ -49,6 +49,8 @@
         Slash: 0.60
         Piercing: 0.90
         Heat: 0.90
+  - type: StaminaDamageResistance #Den
+    coefficient: 0.6 #Den
   - type: ExplosionResistance # Better than nothing against a blast or shockwave.
     damageCoefficient: 0.90
   - type: AllowSuitStorage
@@ -70,6 +72,8 @@
         Slash: 0.40
         Piercing: 0.70
         Heat: 0.70
+  - type: StaminaDamageResistance #Den
+    coefficient: 0.5 #Den
   - type: ClothingSpeedModifier
     walkModifier: 0.75
     sprintModifier: 0.75

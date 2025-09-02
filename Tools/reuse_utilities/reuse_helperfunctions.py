@@ -133,7 +133,7 @@ ANSI_COLORS = {
     "success": "\033[32",
     "warning": "\033[33",
     "error":     "\033[31",
-    "finished":   "\033[35",
+    "main":   "\033[35",
 }
 
 THREAD_SAFETY_DEFAULT = False

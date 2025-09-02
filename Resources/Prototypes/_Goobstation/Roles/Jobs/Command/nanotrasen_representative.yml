@@ -1,11 +1,14 @@
-# SPDX-FileCopyrightText: 2025 Eagle-0 <114363363+Eagle-0@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 SixplyDev <einlichen@gmail.com>
-# SPDX-FileCopyrightText: 2025 Skubman <ba.fallaria@gmail.com>
-# SPDX-FileCopyrightText: 2025 Timfa <timfalken@hotmail.com>
-# SPDX-FileCopyrightText: 2025 astriloqua <129308840+astriloqua@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Eagle-0
+# SPDX-FileCopyrightText: 2025 MajorMoth
+# SPDX-FileCopyrightText: 2025 RosySaturniidae
+# SPDX-FileCopyrightText: 2025 SixplyDev
+# SPDX-FileCopyrightText: 2025 Skubman
+# SPDX-FileCopyrightText: 2025 Timfa
+# SPDX-FileCopyrightText: 2025 Vanessa
+# SPDX-FileCopyrightText: 2025 astriloqua
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: job
   id: NanotrasenRepresentative
@@ -21,6 +24,7 @@
   icon: "JobIconNanotrasenRepresentative"
   requireAdminNotify: true
   joinNotifyCrew: true
+  whitelisted: true
   supervisors: job-supervisors-centcom
   canBeAntag: false
   accessGroups:
@@ -46,7 +50,7 @@
   - NanotrasenRepresentativePlasmamanGear
   equipment:
     shoes: ClothingShoesColorBlack
-    id: CentcomPDA
+    id: NanorepPDA
     jumpsuit: ClothingUniformJumpsuitNanotrasenRepresentative
     ears: ClothingHeadsetAltCentCom
     pocket1: UniqueNanorepLockerTeleporter

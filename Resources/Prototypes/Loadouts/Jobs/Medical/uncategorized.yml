@@ -4,6 +4,7 @@
 # SPDX-FileCopyrightText: 2025 BlitzTheSquishy
 # SPDX-FileCopyrightText: 2025 Lonofera
 # SPDX-FileCopyrightText: 2025 sleepyyapril
+# SPDX-FileCopyrightText: 2025 therealDLondon
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -208,9 +209,9 @@
     - !type:CharacterDepartmentRequirement
       departments:
         - Medical
-    - !type:CharacterTraitRequirement
-      traits:
-        - Nearsighted
+#    - !type:CharacterTraitRequirement
+#      traits:
+#        - Nearsighted
   items:
     - ClothingEyesPrescriptionMedHud
 

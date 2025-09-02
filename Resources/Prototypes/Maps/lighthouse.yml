@@ -1,21 +1,19 @@
-# SPDX-FileCopyrightText: 2021 Timrod <timrod@gmail.com>
-# SPDX-FileCopyrightText: 2022 Emisse <99158783+Emisse@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2022 Kara <lunarautomaton6@gmail.com>
-# SPDX-FileCopyrightText: 2022 Moony <moonheart08@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2022 OldDanceJacket <98985560+OldDanceJacket@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2022 Peptide90 <78795277+Peptide90@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2022 Rane <60792108+Elijahrane@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2022 TimrodDX <timrod@gmail.com>
-# SPDX-FileCopyrightText: 2022 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2022 metalgearsloth <comedian_vs_clown@hotmail.com>
-# SPDX-FileCopyrightText: 2024 Eagle0600 <eagle0600@yahoo.com.au>
-# SPDX-FileCopyrightText: 2024 FoxxoTrystan <trystan.garnierhein@gmail.com>
-# SPDX-FileCopyrightText: 2024 SimpleStation14 <130339894+SimpleStation14@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 John Willis <143434770+CerberusWolfie@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 Rosycup <178287475+Rosycup@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 VMSolidus <evilexecutive@gmail.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <flyingkarii@gmail.com>
+# SPDX-FileCopyrightText: 2021 Timrod
+# SPDX-FileCopyrightText: 2022 Emisse
+# SPDX-FileCopyrightText: 2022 Kara
+# SPDX-FileCopyrightText: 2022 Moony
+# SPDX-FileCopyrightText: 2022 OldDanceJacket
+# SPDX-FileCopyrightText: 2022 Peptide90
+# SPDX-FileCopyrightText: 2022 Rane
+# SPDX-FileCopyrightText: 2022 TimrodDX
+# SPDX-FileCopyrightText: 2022 metalgearsloth
+# SPDX-FileCopyrightText: 2024 Eagle0600
+# SPDX-FileCopyrightText: 2024 FoxxoTrystan
+# SPDX-FileCopyrightText: 2024 SimpleStation14
+# SPDX-FileCopyrightText: 2025 John Willis
+# SPDX-FileCopyrightText: 2025 Rosycup
+# SPDX-FileCopyrightText: 2025 VMSolidus
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -24,43 +22,42 @@
   mapName: Lighthouse
   mapPath: /Maps/TheDen/lighthouse.yml
   minPlayers: 15
-  maxPlayers: 55
+  maxPlayers: 70
   stations:
     Lighthouse:
       stationProto: StandardNanotrasenStation
       components:
       - type: StationEmergencyShuttle
-        emergencyShuttlePath: /Maps/Shuttles/_DV/NTES_BC20.yml
+        emergencyShuttlePath: /Maps/Shuttles/_DV/NTES_Vertex.yml
       - type: StationNameSetup
         mapNameTemplate: '{0} Lighthouse {1}'
         nameGenerator:
           !type:NanotrasenNameGenerator
-          prefixCreator: '14'
+          prefixCreator: 'NY'
       - type: StationJobs
         overflowJobs:
         - Passenger
         availableJobs:
         #service
           Captain: [ 1, 1 ]
-          BlueshieldOfficer: [ 1, 1]
+          BlueshieldOfficer: [ 1, 1 ]
           NanotrasenRepresentative: [ 1, 1 ]
-          Magistrate: [ 1, 1 ]
           AdministrativeAssistant: [ 1, 1 ]
           HeadOfPersonnel: [ 1, 1 ]
-          Bartender: [ 1, 2 ]
+          Bartender: [ 2, 3 ]
           Botanist: [ 2, 2 ]
           Boxer: [ 2, 2 ]
-          Chef: [ 1, 2 ]
+          Chef: [ 1, 1 ]
           Clown: [ 1, 1 ]
-          Lawyer: [ 2, 2 ]
-          Reporter: [ 0, 2 ]
+          Lawyer: [ 1, 1 ]
+          Reporter: [ 1, 2 ]
           Musician: [ 1, 1 ]
           Janitor: [ 1, 2 ]
           Mime: [ 1, 1 ]
         #engineering
           ChiefEngineer: [ 1, 1 ]
-          AtmosphericTechnician: [ 1, 2 ]
-          StationEngineer: [ 3, 4 ]
+          AtmosphericTechnician: [ 2, 2 ]
+          StationEngineer: [ 3, 5 ]
           TechnicalAssistant: [ 2, 3 ]
           SeniorEngineer: [ 1, 2 ]
         #medical
@@ -68,8 +65,8 @@
           Chemist: [ 1, 2 ]
           Paramedic: [ 1, 2 ]
           Psychologist: [ 1, 1 ]
-          MedicalDoctor: [ 3, 4 ]
-          MedicalIntern: [ 2, 3 ]
+          MedicalDoctor: [ 3, 3 ]
+          MedicalIntern: [ 2, 2 ]
           SeniorPhysician: [ 1, 1 ]
         #science
           ResearchDirector: [ 1, 1 ]
@@ -79,20 +76,26 @@
           ResearchAssistant: [ 2, 3 ]
           Borg: [ 1, 2 ]
           SeniorResearcher: [ 1, 1 ]
+          Roboticist: [ 1, 1 ]
         #security
           HeadOfSecurity: [ 1, 1 ]
           Warden: [ 1, 1 ]
           Detective: [ 1, 1 ]
-          SecurityOfficer: [ 2, 4 ]
-          SecurityCadet: [ 1, 4 ]
+          SecurityOfficer: [ 3, 5 ]
+          SecurityCadet: [ 2, 3 ]
           Prisoner: [ 2, 3 ]
           SeniorOfficer: [ 1, 2 ]
+          Brigmedic: [ 1, 1 ]
         #supply
           Quartermaster: [ 1, 1 ]
           MailCarrier: [ 2, 2 ]
           SalvageSpecialist: [ 2, 3 ]
-          CargoTechnician: [ 2, 4 ]
+          CargoTechnician: [ 2, 5 ]
         #civilian
           Passenger: [ -1, -1 ]
         # Silicon
           StationAi: [ 1, 1 ]
+        # Justice
+          Clerk: [ 1, 1 ]
+          Prosecutor: [ 1, 1 ]
+          Magistrate: [ 1, 1 ]

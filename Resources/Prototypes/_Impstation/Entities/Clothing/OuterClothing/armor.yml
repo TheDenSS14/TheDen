@@ -1,4 +1,6 @@
 # SPDX-FileCopyrightText: 2024 V
+# SPDX-FileCopyrightText: 2025 Shaman
+# SPDX-FileCopyrightText: 2025 sheepie
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -20,6 +22,8 @@
         Piercing: 0.6
         Heat: 0.5
         Caustic: 0.9
+  - type: StaminaDamageResistance #Den
+    coefficient: 0.6 #Den
   - type: ClothingSpeedModifier
     walkModifier: 1.0
     sprintModifier: 1.0
@@ -27,3 +31,15 @@
   - type: ExplosionResistance
     damageCoefficient: 0.65
   - type: GroupExamine
+
+
+- type: entity
+  parent: ClothingOuterArmorBasic
+  id: ClothingOuterArmorBasicCompact
+  name: compact armor vest
+  description: A compact Type I armored vest that provides decent protection against most types of damage.
+  components:
+  - type: Sprite
+    sprite: _Impstation/Clothing/OuterClothing/Armor/security_compact.rsi
+  - type: Clothing
+    sprite: _Impstation/Clothing/OuterClothing/Armor/security_compact.rsi

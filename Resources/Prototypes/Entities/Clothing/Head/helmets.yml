@@ -41,9 +41,13 @@
 # SPDX-FileCopyrightText: 2024 lzk
 # SPDX-FileCopyrightText: 2025 EctoplasmIsGood
 # SPDX-FileCopyrightText: 2025 Eris
+# SPDX-FileCopyrightText: 2025 Possumongus
 # SPDX-FileCopyrightText: 2025 Rosycup
+# SPDX-FileCopyrightText: 2025 Shaman
+# SPDX-FileCopyrightText: 2025 Sir Warock
 # SPDX-FileCopyrightText: 2025 Timfa
 # SPDX-FileCopyrightText: 2025 Vanessa Louwagie
+# SPDX-FileCopyrightText: 2025 marc-pelletier
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
@@ -268,7 +272,7 @@
   parent: ClothingHeadLightBase
   id: ClothingHeadHelmetFire
   name: fire helmet
-  description: An atmos tech's best friend. Provides some heat resistance and looks cool.
+  description: A firefighter's best friend. Provides some fire resistance and looks cool.
   components:
   - type: Sprite
     sprite: Clothing/Head/Helmets/firehelmet.rsi
@@ -289,10 +293,13 @@
     slots:
     - Hair
     - Snout
+  - type: GroupExamine
+  - type: Armor
+    modifiers: { }
 
 #Atmos Fire Helmet
 - type: entity
-  parent: ClothingHeadLightBase
+  parent: [ ClothingHeadLightBase, ClothingHeadHelmetFire ]
   id: ClothingHeadHelmetAtmosFire
   name: atmos fire helmet
   description: An atmos fire helmet, able to keep the user cool in any situation.
@@ -302,23 +309,12 @@
   - type: Clothing
     sprite: _DEN/Clothing/Head/Helmets/atmos_firehelmet.rsi #Den
     quickEquip: true
-  - type: IngestionBlocker
-  - type: TemperatureProtection
-    heatingCoefficient: 0.01
-    coolingCoefficient: 0.2
   - type: FireProtection
     reduction: 0.2
   - type: PressureProtection
     highPressureMultiplier: 0.25
     lowPressureMultiplier: 1000
-  - type: IdentityBlocker
-  - type: Tag
-    tags:
-    - WhitelistChameleon
-  - type: HideLayerClothing
-    slots:
-    - Hair
-    - Snout
+  - type: BreathMask # TheDen - All pressure-resistant headwear should have built-in internals
 
 #Chitinous Helmet
 - type: entity

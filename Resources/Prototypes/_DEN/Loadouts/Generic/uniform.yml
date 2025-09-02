@@ -81,6 +81,18 @@
       group: LoadoutUniformsCivilian
 
 - type: loadout
+  id: LoadoutClothingUniformSimplePants
+  category: Uniform
+  cost: 0
+  exclusive: true
+  customColorTint: true
+  items:
+    - ClothingUniformSimplePants
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutUniformsCivilian
+
+- type: loadout
   id: LoadoutUniformWhiteTurtleneck
   category: Uniform
   cost: 0
