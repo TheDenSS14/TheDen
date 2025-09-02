@@ -363,6 +363,19 @@
   - !type:TileNotBlocked
 
 - type: construction
+  id: StoolCard
+  graph: Seat
+  startNode: start
+  targetNode: stoolCard
+  category: construction-category-furniture
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+  - !type:TileNotBlocked
+
+
+- type: construction
   id: TableReinforcedGlass
   graph: Table
   startNode: start
