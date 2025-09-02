@@ -227,6 +227,8 @@
           Heat: 2.5
         flatReductions:
           Blunt: 0.5
+    - type: StaminaDamageResistance
+      coefficient: 0.9
     - type: Construction
       graph: CardShield
       node: cardShield
