@@ -14,3 +14,7 @@ trait-description-ProperCapitalizationAccent =
     You speak with proper capitalization, somehow.
     Whenever you end a sentence with punctuation, the following word always begins with a capital letter.
     This trait does not count towards the Accents limit.
+
+trait-name-FrenchAccentBasic = French accent (Basic)
+trait-description-FrenchAccentBasic =
+    You speak with a French accent, but with a lot less word replacements.

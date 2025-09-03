@@ -41,3 +41,16 @@
     - !type:TraitAddComponent
       components:
         - type: ProperCapitalization
+
+- type: trait
+  id: FrenchAccentBasic
+  category: TraitsSpeechAccents
+  slots: 0
+  points: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: TraitsAccents
+  functions:
+    - !type:TraitAddComponent
+      components:
+        - type: BasicFrenchAccent

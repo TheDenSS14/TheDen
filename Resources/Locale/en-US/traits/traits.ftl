@@ -136,8 +136,9 @@ trait-description-GermanAccent = You speak with a German accent.
 trait-name-RussianAccent = Russian accent
 trait-description-RussianAccent = You speak with a Russian accent.
 
+# imp, changed description to note added word replacements
 trait-name-FrenchAccent = French accent
-trait-description-FrenchAccent = You speak with a French accent.
+trait-description-FrenchAccent = You speak with a French accent, including French word replacements.
 
 trait-name-ItalianAccent = Italian accent
 trait-description-ItalianAccent = You speak with a Italian accent.
