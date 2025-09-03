@@ -50,7 +50,7 @@
       "name": "yellow_adult_slime_dead"
     },
 	{
-      "name": "aslime-_3",
+      "name": "aslime_3",
       "directions": 4
     },
 	{
@@ -129,12 +129,27 @@
       ]
     },
 	{
-      "name": "aslime-angry",
+      "name": "aslime_angry",
       "directions": 4
     },
 	{
-      "name": "aslime-mischievous",
+      "name": "aslime_mischievous",
       "directions": 4
+    },
+    {
+        "name": "slime_geras",
+        "delays": [
+            [
+                0.15,
+                0.15,
+                0.15,
+                0.15
+            ]
+        ]
+    },
+    {
+        "name": "slime_geras_eyes",
+        "directions": 4
     }
   ]
 }

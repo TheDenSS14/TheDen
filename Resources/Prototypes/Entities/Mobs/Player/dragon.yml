@@ -146,7 +146,7 @@
       enum.SurgeryUIKey.Key:
         type: SurgeryBui
   - type: Bloodstream
-    maxBleedAmount: 450
+    maxBleedAmount: 150
     bloodMaxVolume: 650
     bloodReagent: ShimmeringBlood # Imp - Gives dragon drug blood.
   - type: GhostRole
@@ -377,7 +377,7 @@
   description: For dragon's breathing.
   components:
   - type: RechargeBasicEntityAmmo
-    rechargeCooldown: 15
+    rechargeCooldown: 7
     rechargeSound:
       path: /Audio/Animals/space_dragon_roar.ogg
   - type: BasicEntityAmmoProvider
@@ -470,7 +470,7 @@
       sprite: _Goobstation/Actions/dragon.rsi
       state: carp_horde
     event: !type:DragonSpawnCarpHordeActionEvent
-    useDelay: 90
+    useDelay: 60
     priority: 4
 
 - type: entity

@@ -1,0 +1,17 @@
+# SPDX-FileCopyrightText: 2024 lzk
+#
+# SPDX-License-Identifier: MIT
+
+- type: constructionGraph
+  id: CottonPizza
+  start: start
+  graph:
+  - node: start
+    entity: FoodDoughCotton
+    edges:
+    - to: flat
+      steps:
+      - tool: Rolling
+        doAfter: 1
+  - node: flat
+    entity: FoodDoughCottonFlat

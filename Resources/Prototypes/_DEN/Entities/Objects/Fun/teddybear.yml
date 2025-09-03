@@ -1,10 +1,11 @@
-# SPDX-FileCopyrightText: 2025 portfiend <109661617+portfiend@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 portfiend
 #
 # SPDX-License-Identifier: MPL-2.0
 
 - type: entity
+  abstract: true
   parent: BasePlushie
-  id: PlushieTeddyBear
+  id: PlushieTeddyBearBase
   name: teddy bear
   description: Because everybody needs a friend. # reference to no joke the worst movie i have seen in my life
   components:
@@ -48,8 +49,17 @@
           - TeddyRibbon
   - type: Appearance
 
+# only the original one gets it because recolorable sprites would make it complete ass
 - type: entity
-  parent: PlushieTeddyBear
+  parent: PlushieTeddyBearBase
+  id: PlushieTeddyBear
+  components:
+  - type: FoodSequenceElement
+    entries:
+      CottonBurger: TeddyBearPlushie
+
+- type: entity
+  parent: PlushieTeddyBearBase
   id: PlushieTeddyBearRecolorable
   suffix: recolorable
   components:
@@ -171,6 +181,21 @@
   - type: Sprite
     sprite: _DEN/Objects/Fun/teddybear.rsi
     state: plush_heart
+  - type: FoodSequenceElement
+    entries:
+      CottonBurger: HeartInsertPlushie
+  - type: Food # we ball
+    requiresSpecialDigestion: true
+    useSound:
+      collection: ToySqueak
+    delay: 2
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 4
+        reagents:
+        - ReagentId: Fiber
+          Quantity: 4
 
 - type: entityTable
   id: RandomPlushieHeart

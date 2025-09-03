@@ -1,10 +1,8 @@
-# SPDX-FileCopyrightText: 2024 SleepyScarecrow <136123749+SleepyScarecrow@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 SleepyScarecrow <sharedjunkemail69@gmail.com>
-# SPDX-FileCopyrightText: 2025 Blitz <73762869+BlitzTheSquishy@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <flyingkarii@gmail.com>
+# SPDX-FileCopyrightText: 2024 SleepyScarecrow
+# SPDX-FileCopyrightText: 2025 Blitz
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 # Hats
 - type: loadout
@@ -14,6 +12,30 @@
   exclusive: true
   items:
     - ClothingHeadHatFeatheredCap
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutHead
+
+- type: loadout
+  id: LoadoutHeadHatPatrolCap
+  category: Head
+  cost: 0
+  exclusive: true
+  customColorTint: true
+  items:
+    - ClothingHeadHatPatrolCap
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutHead
+
+- type: loadout
+  id: LoadoutHeadHatPatrolCapFlipped
+  category: Head
+  cost: 0
+  exclusive: true
+  customColorTint: true
+  items:
+    - ClothingHeadHatPatrolCapFlipped
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutHead

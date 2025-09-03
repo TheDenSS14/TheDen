@@ -5,7 +5,7 @@
 # SPDX-FileCopyrightText: 2025 Skubman
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: loadout
   id: LoadoutSecurityHeadHatSeniorTrooper
@@ -206,6 +206,7 @@
   id: LoadoutSecurityOuterCoatBomberSecurity # Can also butcher the other version to get this
   category: JobsSecurityAUncategorized
   cost: 0
+  exclusive: true
   items:
     -  ClothingOuterCoatBomberSecurity
   requirements:
@@ -225,6 +226,7 @@
   id: LoadoutSecurityOuterCoatBomberSecurityLoose # Can also butcher the other version to get this
   category: JobsSecurityAUncategorized
   cost: 0
+  exclusive: true
   items:
     -  ClothingOuterCoatBomberSecurityLoose
   requirements:
@@ -244,6 +246,7 @@
   id: LoadoutSecurityOuterCoatBomberBrigmed # Can also butcher the other version to get this
   category: JobsSecurityAUncategorized
   cost: 0
+  exclusive: true
   items:
     -  ClothingOuterCoatBomberBrigmed
   requirements:
@@ -260,6 +263,7 @@
   id: LoadoutSecurityOuterCoatBomberBrigmedLoose # Can also butcher the other version to get this
   category: JobsSecurityAUncategorized
   cost: 0
+  exclusive: true
   items:
     -  ClothingOuterCoatBomberBrigmedLoose
   requirements:
