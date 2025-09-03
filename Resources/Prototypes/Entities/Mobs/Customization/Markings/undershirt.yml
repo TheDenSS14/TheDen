@@ -421,58 +421,58 @@
 
 # Vox
 
-# - type: marking
-#   id: UndershirtBraVox
-#   bodyPart: Undershirt
-#   markingCategory: Undershirt
-#   speciesRestriction: [Vox]
-#   coloring:
-#     default:
-#       type:
-#         !type:SimpleColoring
-#           color: "#FFFFFF"
-#   sprites:
-#   - sprite: _Wizden/Mobs/Customization/Humanoid/undershirt.rsi
-#     state: classic_vox
+- type: marking
+  id: UndershirtBraVox
+  bodyPart: Undershirt
+  markingCategory: Undershirt
+  speciesRestriction: [Vox]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+  - sprite: _Wizden/Mobs/Customization/Humanoid/undershirt.rsi
+    state: classic_vox
 
-# - type: marking
-#   id: UndershirtSportsBraVox
-#   bodyPart: Undershirt
-#   markingCategory: Undershirt
-#   speciesRestriction: [Vox]
-#   coloring:
-#     default:
-#       type:
-#         !type:SimpleColoring
-#           color: "#FFFFFF"
-#   sprites:
-#   - sprite: _Wizden/Mobs/Customization/Humanoid/undershirt.rsi
-#     state: sports_vox
+- type: marking
+  id: UndershirtBraSportsVox
+  bodyPart: Undershirt
+  markingCategory: Undershirt
+  speciesRestriction: [Vox]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+  - sprite: _Wizden/Mobs/Customization/Humanoid/undershirt.rsi
+    state: sports_vox
 
-# - type: marking
-#   id: UndershirtBinderVox
-#   bodyPart: Undershirt
-#   markingCategory: Undershirt
-#   speciesRestriction: [Vox]
-#   coloring:
-#     default:
-#       type:
-#         !type:SimpleColoring
-#           color: "#FFFFFF"
-#   sprites:
-#   - sprite: _Wizden/Mobs/Customization/Humanoid/undershirt.rsi
-#     state: binder_vox
+- type: marking
+  id: UndershirtBinderVox
+  bodyPart: Undershirt
+  markingCategory: Undershirt
+  speciesRestriction: [Vox]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+  - sprite: _Wizden/Mobs/Customization/Humanoid/undershirt.rsi
+    state: binder_vox
 
-# - type: marking
-#   id: UndershirtTanktopVox
-#   bodyPart: Undershirt
-#   markingCategory: Undershirt
-#   speciesRestriction: [Vox]
-#   coloring:
-#     default:
-#       type:
-#         !type:SimpleColoring
-#           color: "#FFFFFF"
-#   sprites:
-#   - sprite: _Wizden/Mobs/Customization/Humanoid/undershirt.rsi
-#     state: tanktop_vox
+- type: marking
+  id: UndershirtSleevelessVox
+  bodyPart: Undershirt
+  markingCategory: Undershirt
+  speciesRestriction: [Vox]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+  - sprite: _Wizden/Mobs/Customization/Humanoid/undershirt.rsi
+    state: tanktop_vox

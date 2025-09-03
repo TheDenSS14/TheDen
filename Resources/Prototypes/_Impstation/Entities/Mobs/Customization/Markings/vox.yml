@@ -282,3 +282,95 @@
     state: tailbloom2
   - sprite: _Impstation/Mobs/Customization/voxbundle1.rsi
     state: tailbloom3
+
+# Underwear
+
+- type: marking
+  id: UnderwearBriefsVoxAlt
+  bodyPart: Underwear
+  markingCategory: Underwear
+  speciesRestriction: [ Vox ]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/Vox/underwear.rsi
+    state: briefs
+
+- type: marking
+  id: UnderwearHighWaisted
+  bodyPart: Underwear
+  markingCategory: Underwear
+  speciesRestriction: [ Vox ]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/Vox/underwear.rsi
+    state: highwaisted
+
+- type: marking
+  id: UnderwearIxixSpecial
+  bodyPart: Underwear
+  markingCategory: Underwear
+  speciesRestriction: [ Vox ]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/Vox/underwear.rsi
+    state: ixixspecial1
+  - sprite: _Impstation/Mobs/Customization/Vox/underwear.rsi
+    state: ixixspecial2
+
+- type: marking
+  id: UnderwearLowridersV
+  bodyPart: Underwear
+  markingCategory: Underwear
+  speciesRestriction: [ Vox ]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+        color: "#FFFFFF"
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/Vox/underwear.rsi
+    state: lowriders
+
+- type: marking
+  id: UnderwearStrappy
+  bodyPart: Underwear
+  markingCategory: Underwear
+  speciesRestriction: [ Vox ]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+        color: '#703c14'
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/Vox/underwear.rsi
+    state: strappy1
+  - sprite: _Impstation/Mobs/Customization/Vox/underwear.rsi
+    state: strappy2
+  - sprite: _Impstation/Mobs/Customization/Vox/underwear.rsi
+    state: strappy3
+
+- type: marking
+  id: UnderwearTangaV
+  bodyPart: Underwear
+  markingCategory: Underwear
+  speciesRestriction: [ Vox ]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+        color: "#FFFFFF"
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/Vox/underwear.rsi
+    state: tanga

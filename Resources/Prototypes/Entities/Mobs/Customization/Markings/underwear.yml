@@ -17,7 +17,7 @@
         !type:SimpleColoring
           color: "#FFFFFF"
   sprites:
-  - sprite: _Wizden/Mobs/Customization/underwear.rsi
+  - sprite: _Wizden/Mobs/Customization/Humanoid/underwear.rsi
     state: boxers
 
 - type: marking
@@ -32,7 +32,7 @@
         !type:SimpleColoring
           color: "#FFFFFF"
   sprites:
-  - sprite: _Wizden/Mobs/Customization/underwear.rsi
+  - sprite: _Wizden/Mobs/Customization/Humanoid/underwear.rsi
     state: briefs
 
 - type: marking
@@ -47,7 +47,7 @@
         !type:SimpleColoring
           color: "#FFFFFF"
   sprites:
-  - sprite: _Wizden/Mobs/Customization/underwear.rsi
+  - sprite: _Wizden/Mobs/Customization/Humanoid/underwear.rsi
     state: lowriders
 
 - type: marking
@@ -62,7 +62,7 @@
         !type:SimpleColoring
           color: "#FFFFFF"
   sprites:
-  - sprite: _Wizden/Mobs/Customization/underwear.rsi
+  - sprite: _Wizden/Mobs/Customization/Humanoid/underwear.rsi
     state: satin
 
 - type: marking
@@ -77,7 +77,7 @@
         !type:SimpleColoring
           color: "#FFFFFF"
   sprites:
-  - sprite: _Wizden/Mobs/Customization/underwear.rsi
+  - sprite: _Wizden/Mobs/Customization/Humanoid/underwear.rsi
     state: tanga
 
 # Reptilian Markings
@@ -93,7 +93,7 @@
         !type:SimpleColoring
           color: "#FFFFFF"
   sprites:
-  - sprite: _Wizden/Mobs/Customization/underwear.rsi
+  - sprite: _Wizden/Mobs/Customization/Humanoid/underwear.rsi
     state: boxers_reptilian
 
 - type: marking
@@ -107,7 +107,7 @@
         !type:SimpleColoring
           color: "#FFFFFF"
   sprites:
-  - sprite: _Wizden/Mobs/Customization/underwear.rsi
+  - sprite: _Wizden/Mobs/Customization/Humanoid/underwear.rsi
     state: briefs_reptilian
 
 - type: marking
@@ -121,50 +121,50 @@
         !type:SimpleColoring
           color: "#FFFFFF"
   sprites:
-  - sprite: _Wizden/Mobs/Customization/underwear.rsi
+  - sprite: _Wizden/Mobs/Customization/Humanoid/underwear.rsi
     state: satin_reptilian
 
 
 # Vox Markings
 
-# - type: marking
-#   id: UnderwearDefaultVox # Voxers.
-#   bodyPart: Underwear
-#   markingCategory: Underwear
-#   speciesRestriction: [Vox]
-#   coloring:
-#     default:
-#       type:
-#         !type:SimpleColoring
-#           color: "#FFFFFF"
-#   sprites:
-#   - sprite: _Wizden/Mobs/Customization/underwear.rsi
-#     state: boxers_vox
+- type: marking
+  id: UnderwearDefaultVox # Voxers.
+  bodyPart: Underwear
+  markingCategory: Underwear
+  speciesRestriction: [Vox]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+  - sprite: _Wizden/Mobs/Customization/Humanoid/underwear.rsi
+    state: boxers_vox
 
-# - type: marking
-#   id: UnderwearBriefsVox
-#   bodyPart: Underwear
-#   markingCategory: Underwear
-#   speciesRestriction: [Vox]
-#   coloring:
-#     default:
-#       type:
-#         !type:SimpleColoring
-#           color: "#FFFFFF"
-#   sprites:
-#   - sprite: _Wizden/Mobs/Customization/underwear.rsi
-#     state: briefs_vox
+- type: marking
+  id: UnderwearBriefsVox
+  bodyPart: Underwear
+  markingCategory: Underwear
+  speciesRestriction: [Vox]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+  - sprite: _Wizden/Mobs/Customization/Humanoid/underwear.rsi
+    state: briefs_vox
 
-# - type: marking
-#   id: UnderwearSatinVox
-#   bodyPart: Underwear
-#   markingCategory: Underwear
-#   speciesRestriction: [Vox]
-#   coloring:
-#     default:
-#       type:
-#         !type:SimpleColoring
-#           color: "#FFFFFF"
-#   sprites:
-#   - sprite: _Wizden/Mobs/Customization/underwear.rsi
-#     state: satin_vox
+- type: marking
+  id: UnderwearSatinVox
+  bodyPart: Underwear
+  markingCategory: Underwear
+  speciesRestriction: [Vox]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+  - sprite: _Wizden/Mobs/Customization/Humanoid/underwear.rsi
+    state: satin_vox
