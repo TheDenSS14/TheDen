@@ -161,6 +161,7 @@
   - type: MovementBodyPart
     walkSpeed: 3.125
     sprintSpeed: 5.3
+  - type: BodyPart
     onAdd:
     - type: ProtectedFromStepTriggers
       whitelist:
