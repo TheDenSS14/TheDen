@@ -82,33 +82,35 @@
   items:
     - ClothingBeltKatanaSheathFilledHoS
 
-- type: loadout
-  id: LoadoutCommandHoSC20r
-  category: JobsSecurityHeadOfSecurity
-  cost: 0
-  canBeHeirloom: true
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutHeadOfSecurityWeapon
-    - !type:CharacterJobRequirement
-      jobs:
-        - HeadOfSecurity
-  items:
-    - WeaponSubMachineGunC20rHoS
+# DEN - Removing Syndicate weapons from security
+#- type: loadout
+#  id: LoadoutCommandHoSC20r
+#  category: JobsSecurityHeadOfSecurity
+#  cost: 0
+#  canBeHeirloom: true
+#  requirements:
+#    - !type:CharacterItemGroupRequirement
+#      group: LoadoutHeadOfSecurityWeapon
+#    - !type:CharacterJobRequirement
+#      jobs:
+#        - HeadOfSecurity
+#  items:
+#    - WeaponSubMachineGunC20rHoS
 
-- type: loadout
-  id: LoadoutCommandHoSBulldog
-  category: JobsSecurityHeadOfSecurity
-  cost: 0
-  canBeHeirloom: true
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutHeadOfSecurityWeapon
-    - !type:CharacterJobRequirement
-      jobs:
-        - HeadOfSecurity
-  items:
-    - WeaponShotgunBulldogHoS
+# DEN - Removing Syndicate weapons from security
+#- type: loadout
+#  id: LoadoutCommandHoSBulldog
+#  category: JobsSecurityHeadOfSecurity
+#  cost: 0
+#  canBeHeirloom: true
+#  requirements:
+#    - !type:CharacterItemGroupRequirement
+#      group: LoadoutHeadOfSecurityWeapon
+#    - !type:CharacterJobRequirement
+#      jobs:
+#        - HeadOfSecurity
+#  items:
+#    - WeaponShotgunBulldogHoS
 
 # DEN - Remove hardlight from security
 # - type: loadout
@@ -167,6 +169,34 @@
     - HeadOfSecurity
   items:
   - AntiqueTerminus
+
+- type: loadout
+  id: LoadoutCommandHoSAntelope
+  category: JobsSecurityHeadOfSecurity
+  cost: 0
+  canBeHeirloom: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutHeadOfSecurityWeapon
+    - !type:CharacterJobRequirement
+      jobs:
+        - HeadOfSecurity
+  items:
+    - WeaponShotgunAntelopeHoS
+
+- type: loadout
+  id: LoadoutCommandHoSTommy
+  category: JobsSecurityHeadOfSecurity
+  cost: 0
+  canBeHeirloom: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutHeadOfSecurityWeapon
+    - !type:CharacterJobRequirement
+      jobs:
+        - HeadOfSecurity
+  items:
+    - WeaponSubMachineGunTypewriterHoS
 
 # Eyes
 

@@ -15,3 +15,12 @@
     sprite: _DEN/Objects/Weapons/Guns/SMGs/BRDI_R25_blue.rsi # The Den sprites
   - type: Clothing
     sprite: _DEN/Objects/Weapons/Guns/SMGs/BRDI_R25_blue.rsi # The Den sprites
+
+- type: entity
+  name: antique typewriter
+  parent: WeaponSubMachineGunTypewriter
+  id: WeaponSubMachineGunTypewriterHoS
+  description: A modern take on the classic design used by mobsters throughout space and time. This specific one was confiscated during the great Tony Spaghetti bust back on April 29th, 2623.
+  components:
+    - type: StealTarget
+      stealGroup: HoSAntiqueWeapon

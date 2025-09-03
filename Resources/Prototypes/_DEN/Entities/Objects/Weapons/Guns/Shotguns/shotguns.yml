@@ -51,3 +51,12 @@
   - type: Battery
     maxCharge: 1200
     startingCharge: 1200
+
+- type: entity
+  name: antique antelope
+  parent: WeaponShotgunAntelope
+  id: WeaponShotgunAntelopeHoS
+  description: A mag-fed shotgun designed for neutralizing threats and keeping criminals at bay with overwhelming force. This one has 14 tallymarks on the stock.
+  components:
+    - type: StealTarget
+      stealGroup: HoSAntiqueWeapon
