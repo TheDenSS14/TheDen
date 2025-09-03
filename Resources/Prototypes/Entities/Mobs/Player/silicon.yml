@@ -903,7 +903,7 @@
       - PositronicBrain
       borg_module:
       - BorgModuleTool
-      - BorgModuleFireExtinguisher
+      - BorgModuleGPS
       - BorgModuleConstruction
       - BorgModuleRCD
       - BorgModuleCable
@@ -939,7 +939,7 @@
         - PositronicBrain
       borg_module:
         - BorgModuleTool
-        - BorgModuleFireExtinguisher
+        - BorgModuleGPS
   - type: ItemSlots
     slots:
       cell_slot:
@@ -972,9 +972,8 @@
       - PositronicBrain
       borg_module:
       - BorgModuleTool
-      - BorgModuleFireExtinguisher
+      - BorgModuleGPS
       - BorgModuleCleaning
-      - BorgModuleCustodial
   - type: ItemSlots
     slots:
       cell_slot:
@@ -1007,10 +1006,9 @@
       - PositronicBrain
       borg_module:
       - BorgModuleTool
-      - BorgModuleFireExtinguisher
-      - BorgModuleChemical
-      - BorgModuleTopicals
-      - BorgModuleRescue
+      - BorgModuleGPS
+      - BorgModuleDefibrillator
+      - BorgModuleTreatment
   - type: ItemSlots
     slots:
       cell_slot:
@@ -1042,9 +1040,10 @@
       borg_brain:
       - PositronicBrain
       borg_module:
+      - BorgModuleGPS
       - BorgModuleTool #No fire extinguisher, traversal is better
       - BorgModuleMining
-      - BorgModuleTraversal
+      - BorgModuleJetpack
       - BorgModuleAppraisal
   - type: ItemSlots
     slots:
