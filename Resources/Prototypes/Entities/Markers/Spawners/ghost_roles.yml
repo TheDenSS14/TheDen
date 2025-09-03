@@ -235,12 +235,6 @@
     - MindRoleGhostRoleSoloAntagonist
     raffle:
       settings: default
-  - type: Sprite
-    layers:
-    - sprite: Markers/jobs.rsi
-      state: green
-    - sprite: Mobs/Aliens/paradox_clone.rsi
-      state: preview
 
 - type: entity
   categories: [ HideSpawnMenu, Spawner ]
