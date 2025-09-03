@@ -36,3 +36,14 @@
   - type: BatterySelfRecharger
     autoRechargeRate: 10
     autoRecharge: true
+  - type: ToggleableLightVisuals
+    spriteLayer: shield
+    inhandVisuals:
+      left:
+        - state: inhand-left-shield
+          shader: unshaded
+          color: "#ff0000"
+      right:
+        - state: inhand-right-shield
+          shader: unshaded
+          color: "#ff0000"
