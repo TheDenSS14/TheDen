@@ -6,6 +6,8 @@
   components:
   - type: Sprite
     sprite: Mobs/Species/Shadowkin/parts.rsi
+    layers:
+    - state: r_hand
 
 - type: entity
   id: LeftHandAnimal
@@ -15,3 +17,5 @@
   components:
   - type: Sprite
     sprite: Mobs/Species/Shadowkin/parts.rsi
+    layers:
+    - state: l_hand
