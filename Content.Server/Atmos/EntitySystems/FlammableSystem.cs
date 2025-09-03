@@ -48,6 +48,7 @@ using Content.Shared.ActionBlocker;
 using Content.Shared.Alert;
 using Content.Shared.Atmos;
 using Content.Shared.Atmos.Components;
+using Content.Shared.Clothing.Components;
 using Content.Shared.Damage;
 using Content.Shared.Database;
 using Content.Shared.Interaction;
@@ -358,7 +359,8 @@ namespace Content.Server.Atmos.EntitySystems
             if (!Resolve(uid, ref flammable, false)) // Lavaland Change: SHUT THE FUCK UP FLAMMABLE
                 return;
             if (_containerSystem.TryGetContainingContainer(uid, out var container)
-                && HasComp<ContentProtectionComponent>(container.Owner))
+                && TryComp<FireProtectionComponent>(container.Owner, out var comp)
+                && comp.ProtectContents)
             {
                 UpdateAppearance(uid, flammable);
                 return;

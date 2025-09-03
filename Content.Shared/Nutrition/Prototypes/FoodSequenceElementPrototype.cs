@@ -1,10 +1,11 @@
-// SPDX-FileCopyrightText: 2024 Ed <96445749+TheShuEd@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 sleepyyapril <flyingkarii@gmail.com>
-// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Ed
+// SPDX-FileCopyrightText: 2024 slarticodefast
+// SPDX-FileCopyrightText: 2024 sleepyyapril
+// SPDX-FileCopyrightText: 2025 portfiend
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
+using System.Numerics;
 using Content.Shared.Tag;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
@@ -24,6 +25,12 @@ public sealed partial class FoodSequenceElementPrototype : IPrototype
     /// </summary>
     [DataField]
     public List<SpriteSpecifier> Sprites { get; private set; } = new();
+
+    /// <summary>
+    /// Relative size of the sprite displayed in the food sequence.
+    /// </summary>
+    [DataField]
+    public Vector2 Scale { get; private set; } = Vector2.One;
 
     /// <summary>
     /// A localized name piece to build into the item name generator.

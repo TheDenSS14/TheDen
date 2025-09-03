@@ -1,0 +1,90 @@
+# SPDX-FileCopyrightText: 2025 Shaman
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  parent: ClothingHeadHelmetBasic
+  id: ClothingHeadHelmetSecuritySiren
+  name: valor helm
+  description: "Its radiant beacon cuts through shadow and vice alike, a crown for those sworn to keep the station safe."
+  components:
+  - type: Sprite
+    sprite: _Impstation/Clothing/Head/Helmets/securitysirenhelmet.rsi
+    layers:
+      - state: icon
+      - state: icon-light
+        visible: false
+        shader: unshaded
+        map: [ "light" ]
+  - type: Appearance
+  - type: Clothing
+    sprite: _Impstation/Clothing/Head/Helmets/securitysirenhelmet.rsi
+    equippedPrefix: off
+  - type: ItemToggle
+    predictable: false
+    onUse: false
+    soundActivate:
+      path: /Audio/Items/flashlight_on.ogg
+    soundDeactivate:
+      path: /Audio/Items/flashlight_off.ogg
+    soundFailToActivate:
+      path: /Audio/Machines/button.ogg
+  - type: ItemToggleActiveSound
+    activeSound:
+      path: /Audio/Effects/Vehicle/policesiren.ogg
+      params:
+        volume: -4
+  - type: UseDelay
+    delay: 1.0
+  - type: ToggleClothing
+    action: ActionToggleValorHelm
+  - type: ItemTogglePointLight
+  - type: ToggleableLightVisuals
+    spriteLayer: light
+    clothingVisuals:
+      head:
+      - state: on-equipped-HELMET
+        shader: unshaded
+  - type: PointLight
+    enabled: false
+    radius: 1.4
+    energy: 1.8
+    color: red
+    netsync: false
+    mask: /Textures/Effects/LightMasks/double_cone.png
+  - type: RotatingLight
+    speed: 360
+  - type: PowerCellSlot
+    cellSlotId: cell_slot
+  - type: ContainerContainer
+    containers:
+      cell_slot: !type:ContainerSlot
+  - type: ItemSlots
+    slots:
+      cell_slot:
+        name: power-cell-slot-component-slot-name-default
+        startingItem: PowerCellSmall
+  - type: PowerCellDraw
+    drawRate: 1
+  - type: ToggleCellDraw
+
+- type: entity
+  parent: ClothingHeadHelmetSecuritySiren
+  id: ClothingHeadHelmetSecuritySirenEmpty
+  suffix: Empty
+  components:
+  - type: ItemSlots
+    slots:
+      cell_slot:
+        name: power-cell-slot-component-slot-name-default
+
+- type: entity
+  id: ActionToggleValorHelm
+  name: Toggle Valor Helm
+  description: Turn the siren on or off.
+  components:
+  - type: InstantAction
+    itemIconStyle: BigItem
+    event: !type:ToggleActionEvent
+# Security Siren Helmet End

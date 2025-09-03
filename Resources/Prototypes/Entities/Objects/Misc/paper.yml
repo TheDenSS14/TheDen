@@ -536,13 +536,10 @@
 - type: entity
   id: BoxFolderCentCom
   name: CentComm folder
-  parent: BoxFolderBase
+  parent: BoxFolderFireproof
   suffix: DO NOT MAP
   description: CentCom's miserable little pile of secrets!
   components:
-  - type: ContentProtection
-  - type: ExplosionResistance
-    damageCoefficient: 0
   - type: Sprite
     sprite: Objects/Misc/bureaucracy.rsi
     layers:

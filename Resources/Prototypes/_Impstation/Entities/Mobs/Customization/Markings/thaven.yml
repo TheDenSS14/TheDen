@@ -1,4 +1,7 @@
-# Chest
+# SPDX-FileCopyrightText: 2025 Shaman
+# SPDX-FileCopyrightText: 2025 portfiend
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
 
 - type: marking
   id: Gills
@@ -238,6 +241,34 @@
   - sprite: _Impstation/Mobs/Customization/Thaven/eyes.rsi
     state: glowright
   shader: unshaded
+
+- type: marking # Optional heterochromia
+  id: ThavenLEye
+  bodyPart: Eyes
+  markingCategory: Head
+  speciesRestriction: [ Thaven ]
+  coloring:
+    default:
+      type:
+        !type:EyeColoring
+          negative: false
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/Thaven/eyes.rsi
+    state: glowleft
+
+- type: marking # Optional heterochromia
+  id: ThavenREye
+  bodyPart: Eyes
+  markingCategory: Head
+  speciesRestriction: [ Thaven ]
+  coloring:
+    default:
+      type:
+        !type:EyeColoring
+          negative: false
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/Thaven/eyes.rsi
+    state: glowright
 
 # RArm
 
@@ -562,14 +593,6 @@
   sprites:
   - sprite: _Impstation/Mobs/Customization/Thaven/undergarmenttop.rsi
     state: rolledundershirt
-
-# LFoot
-
-# RFoot
-
-# LHand
-
-# RHand
 
 # FacialHair
 

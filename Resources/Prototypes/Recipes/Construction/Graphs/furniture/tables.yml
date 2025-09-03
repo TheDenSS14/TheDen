@@ -1,21 +1,21 @@
-# SPDX-FileCopyrightText: 2020 Git-Nivrak <59925169+Git-Nivrak@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2021 20kdc <asdd2808@gmail.com>
-# SPDX-FileCopyrightText: 2021 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2021 ShadowCommander <10494922+ShadowCommander@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2021 Swept <sweptwastaken@protonmail.com>
-# SPDX-FileCopyrightText: 2021 Vera Aguilera Puerto <zddm@outlook.es>
-# SPDX-FileCopyrightText: 2021 metalgearsloth <comedian_vs_clown@hotmail.com>
-# SPDX-FileCopyrightText: 2022 Jacob Tong <10494922+ShadowCommander@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2022 Peptide90 <78795277+Peptide90@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2023 Colin-Tel <113523727+Colin-Tel@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 Ed <96445749+TheShuEd@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 MACMAN2003 <macman2003c@gmail.com>
-# SPDX-FileCopyrightText: 2024 Pierson Arnold <greyalphawolf7@gmail.com>
-# SPDX-FileCopyrightText: 2024 cynical <superpilotboy@gmail.com>
-# SPDX-FileCopyrightText: 2025 Tirochora <leotabletdb@gmail.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2020 Git-Nivrak
+# SPDX-FileCopyrightText: 2021 20kdc
+# SPDX-FileCopyrightText: 2021 DrSmugleaf
+# SPDX-FileCopyrightText: 2021 ShadowCommander
+# SPDX-FileCopyrightText: 2021 Swept
+# SPDX-FileCopyrightText: 2021 Vera Aguilera Puerto
+# SPDX-FileCopyrightText: 2021 metalgearsloth
+# SPDX-FileCopyrightText: 2022 Jacob Tong
+# SPDX-FileCopyrightText: 2022 Peptide90
+# SPDX-FileCopyrightText: 2023 Colin-Tel
+# SPDX-FileCopyrightText: 2024 Ed
+# SPDX-FileCopyrightText: 2024 MACMAN2003
+# SPDX-FileCopyrightText: 2024 Pierson Arnold
+# SPDX-FileCopyrightText: 2024 cynical
+# SPDX-FileCopyrightText: 2025 Tirochora
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: constructionGraph
   id: Table
@@ -79,6 +79,12 @@
           steps:
             - material: Glass
               amount: 1
+              doAfter: 1
+
+        - to: TableCard
+          steps:
+            - material: Cardboard
+              amount: 3
               doAfter: 1
 
         - to: TableReinforcedGlass
@@ -176,6 +182,18 @@
           steps:
             - tool: Anchoring
               doAfter: 1
+
+    - node: TableCard
+      entity: TableCard
+      edges:
+        - to: TableFrame
+          completed:
+            - !type:SpawnPrototype
+              prototype: MaterialCardboard1
+              amount: 3
+          steps:
+            - tool: Slicing
+              doAfter: 2
 
     - node: TableReinforcedGlass
       entity: TableReinforcedGlass

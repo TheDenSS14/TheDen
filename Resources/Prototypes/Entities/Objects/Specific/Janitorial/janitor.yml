@@ -53,6 +53,7 @@
 # SPDX-FileCopyrightText: 2024 slarticodefast
 # SPDX-FileCopyrightText: 2024 zzylex
 # SPDX-FileCopyrightText: 2025 Blitz
+# SPDX-FileCopyrightText: 2025 Eightballll
 # SPDX-FileCopyrightText: 2025 KekaniCreates
 # SPDX-FileCopyrightText: 2025 Rosycup
 # SPDX-FileCopyrightText: 2025 Savante-Sam
@@ -65,7 +66,7 @@
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 # SPDX-FileCopyrightText: 2025 wheelwrightt
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: entity
   parent: BaseItem
@@ -75,7 +76,17 @@
   components:
   - type: Sprite
     sprite: Objects/Specific/Janitorial/mop.rsi
-    state: mop
+    layers:
+      - state: mop
+      - map: ["enum.SolutionContainerLayers.Fill"]
+        state: fill-3
+        visible: false
+  - type: Appearance
+  - type: SolutionContainerVisuals
+    maxFillLevels: 3
+    fillBaseName: fill-
+    inHandsFillBaseName: -fill-
+    inHandsMaxFillLevels: 2
   - type: MeleeWeapon
     range: 1.85
     damage:
@@ -136,7 +147,17 @@
   components:
     - type: Sprite
       sprite: Objects/Specific/Janitorial/advmop.rsi
-      state: advmop
+      layers:
+      - state: advmop
+      - map: ["enum.SolutionContainerLayers.Fill"]
+        state: fill-2
+        visible: false
+    - type: Appearance
+    - type: SolutionContainerVisuals
+      maxFillLevels: 2
+      fillBaseName: fill-
+      inHandsFillBaseName: -fill-
+      inHandsMaxFillLevels: 2
     - type: MeleeWeapon
       range: 1.85
       damage:
@@ -383,7 +404,15 @@
   components:
     - type: Sprite
       sprite: Objects/Specific/Janitorial/rag.rsi
-      state: rag
+      layers:
+      - state: rag
+      - map: ["enum.SolutionContainerLayers.Fill"]
+        state: fill-3
+        visible: false
+    - type: Appearance
+    - type: SolutionContainerVisuals
+      maxFillLevels: 3
+      fillBaseName: fill-
     - type: Spillable
       solution: absorbed
       spillWhenThrown: false
