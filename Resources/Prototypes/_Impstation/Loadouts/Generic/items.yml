@@ -1,0 +1,42 @@
+# SPDX-FileCopyrightText: 2024 V
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+# Survival boxes
+- type: loadout
+  id: LoadoutItemBoxSurvivalCommand
+  category: GeneralItems
+  cost: 0
+  items:
+    - BoxSurvivalCommand
+  requirements:
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Command
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - ChiefEngineer
+        - HeadOfSecurity
+
+- type: loadout
+  id: LoadoutItemBoxSurvivalEngineeringCommand
+  category: GeneralItems
+  cost: 0
+  items:
+    - BoxSurvivalEngineeringCommand
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - ChiefEngineer
+
+- type: loadout
+  id: LoadoutItemBoxSurvivalSecurityCommand
+  category: GeneralItems
+  cost: 0
+  items:
+    - BoxSurvivalSecurityCommand
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - HeadOfSecurity

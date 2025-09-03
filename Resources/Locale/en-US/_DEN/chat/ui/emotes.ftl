@@ -9,3 +9,6 @@ chat-emote-name-avali-honk = Hornk
 
 # Ovinia
 chat-emote-name-baa = Baa
+
+# Unathi
+chat-emote-name-trill = Trill

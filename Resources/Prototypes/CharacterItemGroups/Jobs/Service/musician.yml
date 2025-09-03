@@ -78,6 +78,8 @@
       id: LoadoutItemViolaInstrumentMusician
     - type: loadout
       id: LoadoutItemCelloInstrumentMusician
+    - type: loadout
+      id: LoadoutItemHandheldHarpInstrumentMusician # DEN
   # Structure
     - type: loadout
       id: LoadoutItemPianoInstrumentMusician
@@ -134,6 +136,8 @@
   items:
     - type: loadout
       id: LoadoutClothingHandsMusicianWarmers
+    - type: loadout
+      id: LoadoutServiceMusicianHandsSingerGloves
 
 #- type: characterItemGroup
 #  id: LoadoutMusicianHead
@@ -145,10 +149,12 @@
 #  maxItems: 1
 #  items:
 #
-#- type: characterItemGroup
-#  id: LoadoutMusicianNeck
-#  maxItems: 1
-#  items:
+- type: characterItemGroup
+  id: LoadoutMusicianNeck
+  maxItems: 1
+  items:
+  - type: loadout
+    id: LoadoutServiceMusicianNeckFeatherBoa
 #
 #- type: characterItemGroup
 #  id: LoadoutMusicianMask
@@ -181,3 +187,9 @@
       id: LoadoutClothingUniformMusicKing
     - type: loadout
       id: LoadoutServiceMusicianUniformMusician
+    - type: loadout # DEN
+      id: LoadoutServiceMusicianJumpsuitMrSpaceWide
+    - type: loadout # DEN
+      id: LoadoutServiceMusicianJumpskirtMrSpaceWide
+    - type: loadout # DEN
+      id: LoadoutServiceMusicianSingerDress

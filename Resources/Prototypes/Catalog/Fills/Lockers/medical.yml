@@ -26,6 +26,8 @@
 # SPDX-FileCopyrightText: 2025 Minemoder5000
 # SPDX-FileCopyrightText: 2025 Rosycup
 # SPDX-FileCopyrightText: 2025 Skubman
+# SPDX-FileCopyrightText: 2025 Vanessa
+# SPDX-FileCopyrightText: 2025 juniwoofs
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
@@ -142,7 +144,7 @@
       - id: NitrousOxideTankFilled
         prob: 0.3
       - id: ClothingMaskSterile
-      - id: LunchboxMedicalFilledRandom # Delta-V Lunchboxes!
+      - id: LunchboxMedicalFilledRandom # DeltaV - Lunchboxes!
         prob: 0.3
 
 - type: entity
@@ -178,7 +180,7 @@
         prob: 0.05
         orGroup: Surgshrubs
       - id: ClothingMaskSterile
-      - id: LunchboxMedicalFilledRandom # Delta-V Lunchboxes!
+      - id: LunchboxMedicalFilledRandom # DeltaV - Lunchboxes!
         prob: 0.3
 
 - type: entity
@@ -200,11 +202,12 @@
       - id: ClothingHandsGlovesLatex
       - id: ClothingHeadsetMedical
       - id: ClothingMaskSterile
+      - id: Skimmer
       - id: HandLabeler
         prob: 0.5
 
 - type: entity
-  id: LockerParamedicFilled #Delta V - Paramedic locker without suit
+  id: LockerParamedicFilled # DeltaV - Paramedic locker without suit
   suffix: Filled
   parent: LockerParamedic
   components:
@@ -212,26 +215,37 @@
     contents:
       - id: ClothingOuterCoatParamedicWB
       - id: ClothingHeadHatParamedicsoft
+      - id: ClothingHeadHatParamedicSiren # Imp
       - id: ClothingUniformJumpsuitParamedic
       - id: ClothingUniformJumpskirtParamedic
       - id: ClothingEyesHudMedical
       - id: ClothingHandsGlovesLatex
       - id: ClothingHeadsetMedical
       - id: ClothingMaskSterile
-      - id: ClothingShoesBootsWinterParamedic #Delta V: Add departmental winter boots
+      - id: ClothingShoesBootsWinterParamedic # DeltaV - Add departmental winter boots
+      - id: BoxBodyBag # DeltaV - Give paramedics a body bag
+      # Start TheDen - Delta forgot for some reason
+      - id: EmergencyRollerBedSpawnFolded
+      - id: EmergencyJawsOfLife
+      - id: HandheldCrewMonitor
+      - id: HandheldGPSBasic
+      - id: Portafib
+      # End TheDen
       - id: MedkitFilled
         prob: 0.3
-      - id: LunchboxMedicalFilledRandom # Delta-V Lunchboxes!
+      - id: LunchboxMedicalFilledRandom # DeltaV - Lunchboxes!
         prob: 0.3
 
 - type: entity
-  id: LockerParamedicFilledHardsuit #Delta V - Paramedic locker with suit
+  id: LockerParamedicFilledHardsuit # DeltaV - Paramedic locker with suit
   suffix: Filled, Hardsuit
   parent: LockerParamedic
   components:
   - type: StorageFill
     contents:
       - id: ClothingOuterHardsuitVoidParamed
+      - id: OxygenTankFilled #Den
+      - id: NitrogenTankFilled #Den
       - id: ClothingShoesBootsMagParamed # The Den
       - id: ClothingOuterCoatParamedicWB
       - id: ClothingHeadHatParamedicsoft
@@ -242,9 +256,14 @@
       - id: ClothingHandsGlovesLatex
       - id: ClothingHeadsetMedical
       - id: ClothingMaskSterile
-      - id: ClothingShoesBootsWinterParamedic #Delta V: Add departmental winter boots
+      - id: ClothingShoesBootsWinterParamedic # DeltaV - Add departmental winter boots
+      - id: BoxBodyBag # DeltaV - Give paramedics a body bag
+      - id: EmergencyRollerBedSpawnFolded # DeltaV - move paramedic loadout to locker
+      - id: EmergencyJawsOfLife # DeltaV - Add Emergency Jaws of Life
+      - id: HandheldCrewMonitor # DeltaV - Give Paramedics useful tools on spawn
+      - id: Portafib # TheDen - Move portafib to lockers
       - id: HandheldGPSBasic
       - id: MedkitFilled
         prob: 0.3
-      - id: LunchboxMedicalFilledRandom # Delta-V Lunchboxes!
+      - id: LunchboxMedicalFilledRandom # DeltaV - Lunchboxes!
         prob: 0.3

@@ -12,6 +12,7 @@
 # SPDX-FileCopyrightText: 2024 FoxxoTrystan
 # SPDX-FileCopyrightText: 2024 GreyMario
 # SPDX-FileCopyrightText: 2024 SleepyScarecrow
+# SPDX-FileCopyrightText: 2025 MajorMoth
 # SPDX-FileCopyrightText: 2025 Rosycup
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
@@ -130,3 +131,10 @@
   completetime: 0.8
   materials:
     Glass: 200
+
+- type: latheRecipe
+  id: Ashtray
+  result: Ashtray
+  completetime: 0.4
+  materials:
+    Plastic: 100

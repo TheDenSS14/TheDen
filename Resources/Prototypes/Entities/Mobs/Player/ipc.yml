@@ -127,7 +127,7 @@
   - type: Carriable
   - type: StatusIcon
     bounds: -0.5,-0.5,0.5,0.5
-  - type: StepTriggerImmune
+  - type: ProtectedFromStepTriggers
     whitelist:
       types:
       - Shard
@@ -152,7 +152,7 @@
     - SiliconMob
   - type: SnoutHelmet # DeltaV - IPC Snouts
     replacementRace: vulpkanin
-  - type: Wagging
+  - type: IonStormNotifier
 
 - type: entity
   save: false

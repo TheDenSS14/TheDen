@@ -1,0 +1,13 @@
+# SPDX-FileCopyrightText: 2025 Vanessa Louwagie
+# SPDX-FileCopyrightText: 2025 Velcroboy
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entityTable
+  id: FillLockerAtmosphericsGoobstation
+  table: !type:AllSelector
+    children:
+    - id: RPD
+    - id: RCDAmmo # Extra Compressed matter for the RPD
+    - id: ClothingHandsGlovesAtmosInsulated # Goobstation - insulated atmos gloves
+    - id: ClothingBackpackFirefighterTank # Assmos - Firefighter nozzle

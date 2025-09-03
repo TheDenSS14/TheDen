@@ -1,0 +1,20 @@
+# SPDX-FileCopyrightText: 2025 Possum
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
+- type: entity
+  parent: DrinkBottlePlasticBaseFull
+  id: DrinkWaterPlasticJug
+  name: water jug
+  description: An extra robust water jug, for the dehydrated.
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 150
+        reagents:
+        - ReagentId: Water
+          Quantity: 150
+  - type: Drink
+  - type: Label
+    currentLabel: water

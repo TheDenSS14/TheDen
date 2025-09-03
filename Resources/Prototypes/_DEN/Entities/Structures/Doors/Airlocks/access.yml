@@ -3,7 +3,7 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
 - type: entity
-  parent: AirlockMaint
+  parent: AirlockMaintScience
   id: AirlockMaintMantisLocked
   suffix: Mantis, Locked
   components:
@@ -12,7 +12,7 @@
       board: [ DoorElectronicsMantis ]
 
 - type: entity
-  parent: AirlockMaint
+  parent: AirlockMaintSecurity
   id: AirlockMaintCorpsmanLocked
   suffix: Corpsman, Locked
   components:
@@ -21,7 +21,7 @@
       board: [ DoorElectronicsCorpsman ]
 
 - type: entity
-  parent: AirlockMaint
+  parent: AirlockMaintCommand
   id: AirlockMaintBSOLocked
   suffix: BSO, Locked
   components:
@@ -30,7 +30,7 @@
       board: [ DoorElectronicsBSO ]
 
 - type: entity
-  parent: AirlockMaint
+  parent: AirlockMaintCommand
   id: AirlockMaintNTRLocked
   suffix: NTR, Locked
   components:
@@ -39,7 +39,7 @@
       board: [ DoorElectronicsNTR ]
 
 - type: entity
-  parent: AirlockMaint
+  parent: AirlockMaintCommand
   id: AirlockMaintMAGLocked
   suffix: Magistrate, Locked
   components:

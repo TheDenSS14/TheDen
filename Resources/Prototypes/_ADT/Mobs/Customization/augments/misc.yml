@@ -13,6 +13,22 @@
   sprites:
   - sprite: _ADT/Mobs/Customization/augments/headaugs.rsi
     state: malstrem
+  - sprite: _ADT/Mobs/Customization/augments/headaugs.rsi # TheDen - Recolorable eyes
+    state: malstremglow
+
+- type: marking
+  parent: # DEN - Add inheritance
+  - BaseMarkingSpeciesStandardHeadOrganic
+  id: MalstremGlow # TheDen - Unshaded (glowing) eyes on this one
+  bodyPart: Eyes
+  markingCategory: Head
+  forcedColoring: false
+  followSkinColor: false
+  sprites:
+  - sprite: _ADT/Mobs/Customization/augments/headaugs.rsi
+    state: malstrem
+  - sprite: _ADT/Mobs/Customization/augments/headaugs.rsi # TheDen - Recolorable eyes
+    state: malstremglow
 
 - type: marking
   parent: # DEN - Add inheritance
@@ -23,3 +39,19 @@
   sprites:
   - sprite: _ADT/Mobs/Customization/augments/headaugs.rsi
     state: beholder
+  - sprite: _ADT/Mobs/Customization/augments/headaugs.rsi # TheDen - Recolorable eyes
+    state: beholderglow
+
+- type: marking
+  parent: # DEN - Add inheritance
+  - BaseMarkingSpeciesStandardHeadOrganic
+  id: BeholderGlow # TheDen - Unshaded (glowing) eyes on this one
+  bodyPart: Eyes
+  markingCategory: Head
+  forcedColoring: false
+  followSkinColor: false
+  sprites:
+  - sprite: _ADT/Mobs/Customization/augments/headaugs.rsi
+    state: beholder
+  - sprite: _ADT/Mobs/Customization/augments/headaugs.rsi # TheDen - Recolorable eyes
+    state: beholderglow

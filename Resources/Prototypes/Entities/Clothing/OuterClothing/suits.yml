@@ -24,25 +24,31 @@
 # SPDX-FileCopyrightText: 2023 HerCoyote23
 # SPDX-FileCopyrightText: 2023 Kevin Zheng
 # SPDX-FileCopyrightText: 2023 Nairod
-# SPDX-FileCopyrightText: 2023 Nemanja
 # SPDX-FileCopyrightText: 2023 Slava0135
 # SPDX-FileCopyrightText: 2023 Ubaser
 # SPDX-FileCopyrightText: 2023 crazybrain23
 # SPDX-FileCopyrightText: 2023 deltanedas
 # SPDX-FileCopyrightText: 2023 keronshb
+# SPDX-FileCopyrightText: 2024 BramvanZijp
 # SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT
 # SPDX-FileCopyrightText: 2024 Debug
 # SPDX-FileCopyrightText: 2024 Emisse
+# SPDX-FileCopyrightText: 2024 Nemanja
 # SPDX-FileCopyrightText: 2024 VMSolidus
 # SPDX-FileCopyrightText: 2024 lzk
 # SPDX-FileCopyrightText: 2025 EctoplasmIsGood
 # SPDX-FileCopyrightText: 2025 Eris
+# SPDX-FileCopyrightText: 2025 Falcon
+# SPDX-FileCopyrightText: 2025 Sir Warock
 # SPDX-FileCopyrightText: 2025 Tabitha
+# SPDX-FileCopyrightText: 2025 Vanessa Louwagie
 # SPDX-FileCopyrightText: 2025 VividPups
+# SPDX-FileCopyrightText: 2025 marc-pelletier
+# SPDX-FileCopyrightText: 2025 sheepie
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 # SPDX-FileCopyrightText: 2025 wheelwrightt
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: entity
   parent: ClothingOuterBaseLarge
@@ -64,6 +70,8 @@
         Slash: 0.9
         Piercing: 0.9
         Heat: 0.75
+  - type: StaminaDamageResistance #Den
+    coefficient: 0.25 #Den
   - type: ExplosionResistance
     damageCoefficient: 0.15
   - type: GroupExamine
@@ -73,7 +81,7 @@
     - WhitelistChameleon
     - FullBodyOuter
     # HidesHarpyWings #Floof change, caused vulp tails to be hidden in hardsuits(with singer trait only)
-  - type: ClothingRequiredStepTriggerImmune
+  - type: ProtectedFromStepTriggers
     slots: WITHOUT_POCKET
 
 - type: entity
@@ -92,6 +100,8 @@
     sprintModifier: 0.8
   - type: ExplosionResistance
     damageCoefficient: 0.15
+  - type: StaminaDamageResistance #Den
+    coefficient: 0.5 #Den
   - type: GroupExamine
   - type: Tag
     tags:
@@ -112,7 +122,8 @@
   - type: PressureProtection
     highPressureMultiplier: 0.04
   - type: TemperatureProtection
-    coefficient: 0.005
+    heatingCoefficient: 0.005
+    coolingCoefficient: 0.05
   - type: FireProtection
     reduction: 0.65 # doesnt have a full seal so not as good
   - type: Armor
@@ -121,12 +132,14 @@
         Slash: 0.9
         Heat: 0.8
         Cold: 0.8
+  - type: StaminaDamageResistance #Den
+    coefficient: 0.8 #Den
   - type: ClothingSpeedModifier
     walkModifier: 0.8
     sprintModifier: 0.7
   - type: HeldSpeedModifier
   - type: GroupExamine
-  - type: ClothingRequiredStepTriggerImmune
+  - type: ProtectedFromStepTriggers
     slots: WITHOUT_POCKET
   - type: Tag
     tags:
@@ -147,7 +160,8 @@
       highPressureMultiplier: 0.02
       lowPressureMultiplier: 1000
     - type: TemperatureProtection
-      coefficient: 0.001
+      heatingCoefficient: 0.001
+      coolingCoefficient: 0.05
     - type: FireProtection
       reduction: 0.8 # atmos firesuit offers best protection, hardsuits are a little vulnerable
     - type: Armor
@@ -156,16 +170,19 @@
           Slash: 0.9
           Heat: 0.8
           Cold: 0.8
+    - type: StaminaDamageResistance #Den
+      coefficient: 0.75 #Den
     - type: ClothingSpeedModifier
       walkModifier: 0.8
       sprintModifier: 0.8
     - type: HeldSpeedModifier
     - type: GroupExamine
-    - type: ClothingRequiredStepTriggerImmune
+    - type: ProtectedFromStepTriggers
       slots: WITHOUT_POCKET
     - type: Tag
       tags:
         - WhitelistChameleon
+        - AtmosFireSuit
         # HidesHarpyWings #Floof change, caused vulp tails to be hidden in hardsuits(with singer trait only)
 
 - type: entity
@@ -190,7 +207,7 @@
   - type: ContainerContainer
     containers:
       toggleable-clothing: !type:Container {}
-  - type: ClothingRequiredStepTriggerImmune
+  - type: ProtectedFromStepTriggers
     slots: WITHOUT_POCKET
   - type: Tag
     tags:
@@ -212,7 +229,8 @@
     highPressureMultiplier: 0.6
     lowPressureMultiplier: 1000
   - type: TemperatureProtection
-    coefficient: 0.01
+    heatingCoefficient: 0.01
+    coolingCoefficient: 0.01
   - type: Armor
     modifiers:
       coefficients:
@@ -220,6 +238,8 @@
         Slash: 0.8
         Piercing: 0.8
         Heat: 0.8
+  - type: StaminaDamageResistance #Den
+    coefficient: 0.85 #Den
   # phase cloak
   - type: ToggleClothing
     action: ActionTogglePhaseCloak
@@ -233,11 +253,11 @@
     drawRate: 1.8 # 200 seconds on the default cell
   - type: ToggleCellDraw
   # throwing star ability (Broken)
-  # - type: ItemCreator
-  #  action: ActionCreateThrowingStar
-  #  charge: 14.4
-  #  spawnedPrototype: ThrowingStarNinja
-  #  noPowerPopup: ninja-no-power
+  - type: ItemCreator
+    action: ActionCreateThrowingStar
+    charge: 14.4
+    spawnedPrototype: ThrowingStarNinja
+    noPowerPopup: ninja-no-power
   # core ninja suit stuff
   - type: NinjaSuit
   - type: UseDelay
@@ -249,13 +269,17 @@
   - type: ContainerContainer
     containers:
       cell_slot: !type:ContainerSlot
+  - type: Item # The Den - Make it smaller so it can fit in a bag for more ninja strats
+    size: Normal
   - type: ItemSlots
     slots:
       cell_slot:
         name: power-cell-slot-component-slot-name-default
         startingItem: PowerCellSmall
         disableEject: true
-  - type: Unremoveable
+        whitelist:
+          tags:
+            - PowerCell
 
 - type: entity
   parent: ClothingOuterBase
@@ -267,7 +291,7 @@
     sprite: Clothing/OuterClothing/Suits/chicken.rsi
   - type: Clothing
     sprite: Clothing/OuterClothing/Suits/chicken.rsi
-  - type: ClothingRequiredStepTriggerImmune
+  - type: ProtectedFromStepTriggers
     slots: WITHOUT_POCKET
   - type: Tag
     tags:
@@ -297,7 +321,7 @@
   - type: ContainerContainer
     containers:
       toggleable-clothing: !type:Container {}
-  - type: ClothingRequiredStepTriggerImmune
+  - type: ProtectedFromStepTriggers
     slots: WITHOUT_POCKET
   - type: Tag
     tags:
@@ -323,7 +347,7 @@
   - type: Construction
     graph: ClothingOuterSuitIan
     node: suit
-  - type: ClothingRequiredStepTriggerImmune
+  - type: ProtectedFromStepTriggers
     slots: WITHOUT_POCKET
 
 - type: entity
@@ -353,7 +377,8 @@
     highPressureMultiplier: 0.6
     lowPressureMultiplier: 1000
   - type: TemperatureProtection
-    coefficient: 0.01
+    heatingCoefficient: 0.01
+    coolingCoefficient: 0.01
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitCarp
 

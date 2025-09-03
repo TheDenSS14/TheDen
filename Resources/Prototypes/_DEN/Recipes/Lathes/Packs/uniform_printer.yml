@@ -1,7 +1,14 @@
+# SPDX-FileCopyrightText: 2025 Sir Warock
+# SPDX-FileCopyrightText: 2025 Tanix
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 # TODO: I know it's horrid, but if you separate every single one into their proper forks, I'll pay you.
 # There are existing packs for some of these recipes, and some which have items that don't exist. I'm sorry.
 
 - type: latheRecipePack
+  parent: [ ClothingServiceImp ]
   id: UniformPrinterStaticAwfulDen
   recipes:
   - ClothingUniformJumpsuitColorGrey
@@ -167,6 +174,9 @@
   - ClothingNeckScarfStripedOrange
   - ClothingNeckScarfStripedBlack
   - ClothingNeckScarfStripedPurple
+  # DeltaV Ponchos
+  - ClothingNeckCWPSec
+  - ClothingNeckCWPArctic
   # Carpets
   - Carpet
   - CarpetBlack
@@ -273,6 +283,8 @@
   - ClothingWaistApronCheckered
   - ClothingWaistApronStripesHorizontal
   - ClothingWaistApronStripesVertical
+  # TheDen - Tank Harness
+  - ClothingOuterVestTank
 
 - type: latheRecipePack
   id: UniformPrinterEmagStaticAwfulDen
@@ -299,6 +311,13 @@
   - ClothingOuterWinterCentcom
   - ClothingOuterWinterSyndie
   - ClothingOuterWinterSyndieCap
+
+  # DV - CentComm Drip
+  - ClothingHeadHatBeretCentcomm
+  - ClothingUniformJumpskirtCentcomAgent
+  - ClothingUniformJumpskirtCentcomOfficer
+  - ClothingUniformJumpskirtCentcomOfficial
+
   # TheDen - Towels
   - TowelColorCentcom
   - TowelColorSyndicate

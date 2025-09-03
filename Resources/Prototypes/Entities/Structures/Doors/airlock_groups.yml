@@ -16,36 +16,93 @@
   id: Standard
   iconPriority: 100
   stylePaths:
-    atmospherics: Structures/Doors/Airlocks/Standard/atmospherics.rsi
-    basic:       Structures/Doors/Airlocks/Standard/basic.rsi
-    cargo:       Structures/Doors/Airlocks/Standard/cargo.rsi
-    command:     Structures/Doors/Airlocks/Standard/command.rsi
-    engineering: Structures/Doors/Airlocks/Standard/engineering.rsi
-    freezer:     Structures/Doors/Airlocks/Standard/freezer.rsi
-    maintenance: Structures/Doors/Airlocks/Standard/maint.rsi
-    medical:     Structures/Doors/Airlocks/Standard/medical.rsi
-    science:     Structures/Doors/Airlocks/Standard/science.rsi
-    security:    Structures/Doors/Airlocks/Standard/security.rsi
-    virology:    Structures/Doors/Airlocks/Standard/virology.rsi
-    justice:     _DV/Structures/Doors/Airlocks/Standard/justice.rsi # Delta V - Add Justice Dept
-    roboticist:  _DV/Structures/Doors/Airlocks/Standard/roboticist.rsi # Added Roboticist Role
-
+    # Begin The Den changes - airlock resprite
+    armory:                   _DEN/Structures/Doors/Airlocks/Standard/armory.rsi
+    atmospherics:             _DEN/Structures/Doors/Airlocks/Standard/atmospherics.rsi
+    bartender:                _DEN/Structures/Doors/Airlocks/Standard/bartender.rsi
+    basic:                    _DEN/Structures/Doors/Airlocks/Standard/basic.rsi
+    cargo maintenance:        _DEN/Structures/Doors/Airlocks/Standard/maint_cargo.rsi
+    centcomm:                 _DEN/Structures/Doors/Airlocks/Standard/centcomm.rsi
+    chief engineer:           _DEN/Structures/Doors/Airlocks/Standard/command_ce.rsi
+    chief justice:            _DEN/Structures/Doors/Airlocks/Standard/command_cj.rsi
+    chemistry:                _DEN/Structures/Doors/Airlocks/Standard/chemistry.rsi
+    corpsman:                 _DEN/Structures/Doors/Airlocks/Standard/corpsman.rsi
+    courier:                  _DEN/Structures/Doors/Airlocks/Standard/courier.rsi
+    command:                  _DEN/Structures/Doors/Airlocks/Standard/command.rsi
+    command maintenance:      _DEN/Structures/Doors/Airlocks/Standard/maint_command.rsi
+    epistemics:               _DEN/Structures/Doors/Airlocks/Standard/science.rsi
+    epistemics maintenance:   _DEN/Structures/Doors/Airlocks/Standard/maint_science.rsi
+    engineering:              _DEN/Structures/Doors/Airlocks/Standard/engineering.rsi
+    engineering maintenance:  _DEN/Structures/Doors/Airlocks/Standard/maint_engineering.rsi
+    freezer:                  _DEN/Structures/Doors/Airlocks/Standard/freezer.rsi
+    head of personnel:        _DEN/Structures/Doors/Airlocks/Standard/command_hop.rsi
+    head of security:         _DEN/Structures/Doors/Airlocks/Standard/command_hos.rsi
+    hydroponics:              _DEN/Structures/Doors/Airlocks/Standard/hydroponics.rsi
+    janitorial:               _DEN/Structures/Doors/Airlocks/Standard/janitor.rsi
+    justice:                  _DEN/Structures/Doors/Airlocks/Standard/justice.rsi
+    kitchen:                  _DEN/Structures/Doors/Airlocks/Standard/kitchen.rsi
+    logistics:                _DEN/Structures/Doors/Airlocks/Standard/cargo.rsi
+    logistics maintenance:    _DEN/Structures/Doors/Airlocks/Standard/maint_cargo.rsi
+    logistics officer:        _DEN/Structures/Doors/Airlocks/Standard/command_qm.rsi
+    maintenance:              _DEN/Structures/Doors/Airlocks/Standard/maint.rsi
+    medical:                  _DEN/Structures/Doors/Airlocks/Standard/medical.rsi
+    medical maintenance:      _DEN/Structures/Doors/Airlocks/Standard/maint_medical.rsi
+    mystagogue:               _DEN/Structures/Doors/Airlocks/Standard/command_rd.rsi
+    paramedic:                _DEN/Structures/Doors/Airlocks/Standard/paramedic.rsi
+    roboticist:               _DEN//Structures/Doors/Airlocks/Standard/roboticist.rsi
+    salvage:                  _DEN/Structures/Doors/Airlocks/Standard/salvage.rsi
+    security:                 _DEN/Structures/Doors/Airlocks/Standard/security.rsi
+    security maintenance:     _DEN/Structures/Doors/Airlocks/Standard/maint_security.rsi
+    service:                  _DEN/Structures/Doors/Airlocks/Standard/service.rsi
+    service maintenance:      _DEN/Structures/Doors/Airlocks/Standard/maint_service.rsi
+    virology:                 _DEN/Structures/Doors/Airlocks/Standard/virology.rsi
+    # End changes
+  
 - type: AirlockGroup
   id: Glass
   iconPriority: 90
   stylePaths:
-    atmospherics: Structures/Doors/Airlocks/Glass/atmospherics.rsi
-    basic:       Structures/Doors/Airlocks/Glass/basic.rsi
-    command:     Structures/Doors/Airlocks/Glass/command.rsi
-    science:     Structures/Doors/Airlocks/Glass/science.rsi
-    cargo:       Structures/Doors/Airlocks/Glass/cargo.rsi
-    engineering: Structures/Doors/Airlocks/Glass/engineering.rsi
-    maintenance: Structures/Doors/Airlocks/Glass/maint.rsi
-    medical:     Structures/Doors/Airlocks/Glass/medical.rsi
-    security:    Structures/Doors/Airlocks/Glass/security.rsi
-    virology:    Structures/Doors/Airlocks/Glass/virology.rsi
-    justice:     _DV/Structures/Doors/Airlocks/Glass/justice.rsi # Delta V - Add Justice Dept
-    roboticist:  _DV/Structures/Doors/Airlocks/Glass/roboticist.rsi #Added Roboticist Role
+    # Begin The Den changes - airlock resprite
+    armory:                   _DEN/Structures/Doors/Airlocks/Glass/armory.rsi
+    atmospherics:             _DEN/Structures/Doors/Airlocks/Glass/atmospherics.rsi
+    bartender:                _DEN/Structures/Doors/Airlocks/Glass/bartender.rsi
+    basic:                    _DEN/Structures/Doors/Airlocks/Glass/basic.rsi
+    cargo maintenance:        _DEN/Structures/Doors/Airlocks/Glass/maint_cargo.rsi
+    centcomm:                 _DEN/Structures/Doors/Airlocks/Glass/centcomm.rsi
+    chief engineer:           _DEN/Structures/Doors/Airlocks/Glass/command_ce.rsi
+    chief justice:            _DEN/Structures/Doors/Airlocks/Glass/command_cj.rsi
+    chemistry:                _DEN/Structures/Doors/Airlocks/Glass/chemistry.rsi
+    corpsman:                 _DEN/Structures/Doors/Airlocks/Glass/corpsman.rsi
+    courier:                  _DEN/Structures/Doors/Airlocks/Glass/courier.rsi
+    command:                  _DEN/Structures/Doors/Airlocks/Glass/command.rsi
+    command maintenance:      _DEN/Structures/Doors/Airlocks/Glass/maint_command.rsi
+    glass:                    _DEN/Structures/Doors/Airlocks/Glass/glass.rsi
+    epistemics:               _DEN/Structures/Doors/Airlocks/Glass/science.rsi
+    epistemics maintenance:   _DEN/Structures/Doors/Airlocks/Glass/maint_science.rsi
+    engineering:              _DEN/Structures/Doors/Airlocks/Glass/engineering.rsi
+    engineering maintenance:  _DEN/Structures/Doors/Airlocks/Glass/maint_engineering.rsi
+    head of personnel:        _DEN/Structures/Doors/Airlocks/Glass/command_hop.rsi
+    head of security:         _DEN/Structures/Doors/Airlocks/Glass/command_hos.rsi
+    hydroponics:              _DEN/Structures/Doors/Airlocks/Glass/hydroponics.rsi
+    janitorial:               _DEN/Structures/Doors/Airlocks/Glass/janitor.rsi
+    justice:                  _DEN/Structures/Doors/Airlocks/Glass/justice.rsi
+    kitchen:                  _DEN/Structures/Doors/Airlocks/Glass/kitchen.rsi
+    logistics:                _DEN/Structures/Doors/Airlocks/Glass/cargo.rsi
+    logistics maintenance:    _DEN/Structures/Doors/Airlocks/Glass/maint_cargo.rsi
+    logistics officer:        _DEN/Structures/Doors/Airlocks/Glass/command_qm.rsi
+    maintenance:              _DEN/Structures/Doors/Airlocks/Glass/maint.rsi
+    medical:                  _DEN/Structures/Doors/Airlocks/Glass/medical.rsi
+    medical maintenance:      _DEN/Structures/Doors/Airlocks/Glass/maint_medical.rsi
+    mystagogue:               _DEN/Structures/Doors/Airlocks/Glass/command_rd.rsi
+    paramedic:                _DEN/Structures/Doors/Airlocks/Glass/paramedic.rsi
+    roboticist:               _DEN//Structures/Doors/Airlocks/Glass/roboticist.rsi
+    salvage:                  _DEN/Structures/Doors/Airlocks/Glass/salvage.rsi
+    security:                 _DEN/Structures/Doors/Airlocks/Glass/security.rsi
+    security maintenance:     _DEN/Structures/Doors/Airlocks/Glass/maint_security.rsi
+    service:                  _DEN/Structures/Doors/Airlocks/Glass/service.rsi
+    service maintenance:      _DEN/Structures/Doors/Airlocks/Glass/maint_service.rsi
+    virology:                 _DEN/Structures/Doors/Airlocks/Glass/virology.rsi
+    # End changes
 
 - type: AirlockGroup
   id: Windoor
@@ -57,13 +114,13 @@
   id: External
   iconPriority: 70
   stylePaths:
-    external:    Structures/Doors/Airlocks/Standard/external.rsi
+    external:    _DEN/Structures/Doors/Airlocks/Standard/external.rsi # The Den - airlock resprite
 
 - type: AirlockGroup
   id: ExternalGlass
   iconPriority: 60
   stylePaths:
-    external:    Structures/Doors/Airlocks/Glass/external.rsi
+    external:    _DEN/Structures/Doors/Airlocks/Glass/external.rsi # The Den - airlock resprite
 
 - type: AirlockGroup
   id: Shuttle

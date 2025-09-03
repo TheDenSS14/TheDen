@@ -10,7 +10,7 @@
   description: A tool that can send ton of paper on Centcomm fax.
   components:
   - type: Item
-    size: Huge
+    size: Normal
   - type: Sprite
     sprite: Structures/Machines/fax_machine.rsi
     drawdepth: SmallObjects
@@ -59,7 +59,6 @@
   - type: ContainerContainer
     containers:
       Paper: !type:ContainerSlot
-  - type: MultiHandedItem
 
 - type: entity
   name: nanotrasen representative handheld fax

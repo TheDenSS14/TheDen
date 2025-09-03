@@ -1,4 +1,6 @@
+# SPDX-FileCopyrightText: 2025 Deuteronomy
 # SPDX-FileCopyrightText: 2025 DeuteronomyLamb
+# SPDX-FileCopyrightText: 2025 neuPanda
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -28,6 +30,17 @@
     sprite: _DEN/Clothing/Shoes/Heels/blackheels_blackstockings.rsi
   - type: Clothing
     sprite: _DEN/Clothing/Shoes/Heels/blackheels_blackstockings.rsi
+
+- type: entity
+  parent: [ClothingShoesBaseHeelStocking, ClothingShoesMilitaryBase]
+  id: ClothingShoesHeelsStockingsBlackSec
+  name: Sec Heelstockings
+  description: Heels with stockings. Meant to be worn together, they shape the legs just right—sharp, impossible to ignore once they're on.
+  components:
+  - type: Sprite
+    sprite: _DEN/Clothing/Shoes/Heels/blackheels_secstockings.rsi
+  - type: Clothing
+    sprite: _DEN/Clothing/Shoes/Heels/blackheels_secstockings.rsi
 
 - type: entity
   parent: ClothingShoesBaseHeelStocking
@@ -127,4 +140,3 @@
     sprite: _DEN/Clothing/Shoes/Heels/whiteheels_plainblackstockings.rsi
   - type: Clothing
     sprite: _DEN/Clothing/Shoes/Heels/whiteheels_plainblackstockings.rsi
- 

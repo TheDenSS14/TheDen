@@ -81,7 +81,7 @@
         - !type:DoActsBehavior
           acts: ["Destruction"]
     - type: Sprite
-      sprite: Structures/Doors/Airlocks/Standard/firelock.rsi
+      sprite: _DEN/Structures/Doors/Airlocks/Standard/firelock.rsi # The Den - airlock resprite
       snapCardinals: true
       layers:
         - state: closed
@@ -184,7 +184,7 @@
   components:
     - type: StationAiWhitelist
     - type: Sprite
-      sprite: Structures/Doors/Airlocks/Glass/firelock.rsi
+      sprite: _DEN/Structures/Doors/Airlocks/Glass/firelock.rsi # The Den - airlock resprite
     - type: Occluder
       enabled: false
     - type: Fixtures

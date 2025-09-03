@@ -1,0 +1,18 @@
+# SPDX-FileCopyrightText: 2025 Sir Warock
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+# Eyes
+- type: loadout
+  id: LoadoutCommandCMOMedicalGlasses
+  category: JobsMedicalChiefMedicalOfficer
+  cost: 2
+  exclusive: true
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutMedicalEyes
+  - !type:CharacterJobRequirement
+    jobs:
+    - ChiefMedicalOfficer
+  items:
+  - ClothingEyesGlassesMedical

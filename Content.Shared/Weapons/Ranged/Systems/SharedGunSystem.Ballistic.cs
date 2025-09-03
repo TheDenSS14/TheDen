@@ -8,7 +8,6 @@
 // SPDX-FileCopyrightText: 2023 Vordenburg
 // SPDX-FileCopyrightText: 2023 and_a
 // SPDX-FileCopyrightText: 2023 deltanedas
-// SPDX-FileCopyrightText: 2023 deltanedas <@deltanedas:kde.org>
 // SPDX-FileCopyrightText: 2023 metalgearsloth
 // SPDX-FileCopyrightText: 2024 DrSmugleaf
 // SPDX-FileCopyrightText: 2024 Errant
@@ -17,6 +16,7 @@
 // SPDX-FileCopyrightText: 2024 SimpleStation14
 // SPDX-FileCopyrightText: 2024 VMSolidus
 // SPDX-FileCopyrightText: 2024 nikthechampiongr
+// SPDX-FileCopyrightText: 2025 KOTOB
 // SPDX-FileCopyrightText: 2025 sleepyyapril
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
@@ -102,7 +102,7 @@ public abstract partial class SharedGunSystem
         // Continuous loading
         _doAfter.TryStartDoAfter(new DoAfterArgs(EntityManager, args.User, component.FillDelay, new AmmoFillDoAfterEvent(), used: uid, target: args.Target, eventTarget: uid)
         {
-            BreakOnMove = true,
+            BreakOnMove = false, // DeltaV - reload while moving
             BreakOnDamage = false,
             NeedHand = true
         });

@@ -20,7 +20,6 @@
 # SPDX-FileCopyrightText: 2023 MagnusCrowe
 # SPDX-FileCopyrightText: 2023 Maxtone
 # SPDX-FileCopyrightText: 2023 Nairod
-# SPDX-FileCopyrightText: 2023 Nemanja
 # SPDX-FileCopyrightText: 2023 Psychpsyo
 # SPDX-FileCopyrightText: 2023 Puro
 # SPDX-FileCopyrightText: 2023 Skarletto
@@ -33,6 +32,7 @@
 # SPDX-FileCopyrightText: 2023 potato1234_x
 # SPDX-FileCopyrightText: 2023 potato1234x
 # SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT
+# SPDX-FileCopyrightText: 2024 Nemanja
 # SPDX-FileCopyrightText: 2024 SonicHDC
 # SPDX-FileCopyrightText: 2024 Tunguso4ka
 # SPDX-FileCopyrightText: 2024 Ubaser
@@ -43,10 +43,12 @@
 # SPDX-FileCopyrightText: 2025 GNUtopia
 # SPDX-FileCopyrightText: 2025 KekaniCreates
 # SPDX-FileCopyrightText: 2025 Rosycup
+# SPDX-FileCopyrightText: 2025 Sir Warock
 # SPDX-FileCopyrightText: 2025 Skubman
+# SPDX-FileCopyrightText: 2025 sheepie
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: entity
   parent: ClothingOuterStorageBase
@@ -59,7 +61,8 @@
   - type: Clothing
     sprite: Clothing/OuterClothing/Coats/bomber.rsi
   - type: TemperatureProtection
-    coefficient: 0.1
+    heatingCoefficient: 1.1
+    coolingCoefficient: 0.1
 
 - type: entity
   parent: [ClothingOuterStorageBase, AllowSuitStorageClothing]
@@ -76,7 +79,8 @@
     - id: SmokingPipeFilledTobacco
     - id: FlippoEngravedLighter
   - type: TemperatureProtection
-    coefficient: 0.1
+    heatingCoefficient: 1.1
+    coolingCoefficient: 0.1
   - type: Armor #same as regular sec armor
     modifiers:
       coefficients:
@@ -110,7 +114,8 @@
     - id: SmokingPipeFilledTobacco
     - id: FlippoEngravedLighter
   - type: TemperatureProtection
-    coefficient: 0.1
+    heatingCoefficient: 1.1
+    coolingCoefficient: 0.1
   - type: Armor #same as regular sec armor
     modifiers:
       coefficients:
@@ -127,7 +132,7 @@
   - type: StorageFill
     contents:
     - id: SmokingPipeFilledTobacco
-    - id: FlippoLighter #Not the steal objective, only difference from normal detective trenchcoat    
+    - id: FlippoLighter #Not the steal objective, only difference from normal detective trenchcoat
 
 - type: entity
   parent: ClothingOuterStorageBase
@@ -151,7 +156,8 @@
   - type: Clothing
     sprite: Clothing/OuterClothing/Coats/cap_trenchcoat.rsi
   - type: TemperatureProtection
-    coefficient: 0.1
+    heatingCoefficient: 1.1
+    coolingCoefficient: 0.1
 
 - type: entity
   abstract: true
@@ -166,6 +172,8 @@
         Piercing: 0.7
         Heat: 0.7
         Caustic: 0.75 # not the full 90% from ss13 because of the head
+  - type: StaminaDamageResistance #Den
+    coefficient: 0.6 #Den
   - type: ExplosionResistance
     damageCoefficient: 0.9
 
@@ -181,6 +189,8 @@
         Slash: 0.7
         Piercing: 0.7
         Heat: 0.7
+  - type: StaminaDamageResistance #Den
+    coefficient: 0.6 #Den
   - type: ExplosionResistance
     damageCoefficient: 0.9
 
@@ -195,7 +205,8 @@
   - type: Clothing
     sprite: _DV/Clothing/OuterClothing/Coats/hos_trenchcoat.rsi # DeltaV - resprite
   - type: TemperatureProtection
-    coefficient: 0.1
+    heatingCoefficient: 1.1
+    coolingCoefficient: 0.1
 
 - type: entity
   parent: ClothingOuterStorageBase
@@ -208,7 +219,8 @@
   - type: Clothing
     sprite: Clothing/OuterClothing/Coats/insp_coat.rsi
   - type: TemperatureProtection
-    coefficient: 0.1
+    heatingCoefficient: 1.1
+    coolingCoefficient: 0.1
 
 - type: entity
   parent: ClothingOuterStorageToggleableBase
@@ -234,7 +246,8 @@
   - type: Clothing
     sprite: Clothing/OuterClothing/Coats/trenchcoat.rsi
   - type: TemperatureProtection
-    coefficient: 0.1
+    heatingCoefficient: 1.1
+    coolingCoefficient: 0.1
   - type: Armor
     modifiers:
       coefficients:
@@ -434,7 +447,8 @@
   - type: Clothing
     sprite: Clothing/OuterClothing/Coats/warden.rsi
   - type: TemperatureProtection
-    coefficient: 0.1
+    heatingCoefficient: 1.1
+    coolingCoefficient: 0.1
 
 - type: entity
   parent: ClothingOuterStorageBase
@@ -474,6 +488,8 @@
         Blunt: 0.8
         Slash: 0.65
         Piercing: 0.85
+  - type: StaminaDamageResistance #Den
+    coefficient: 0.8 #Den
 
 - type: entity
   parent: ClothingOuterStorageBase
@@ -497,7 +513,8 @@
   - type: Clothing
     sprite: Clothing/OuterClothing/Coats/syndicate/coatsyndiecap.rsi
   - type: TemperatureProtection
-    coefficient: 0.1
+    heatingCoefficient: 1.1
+    coolingCoefficient: 0.1
 
 - type: entity
   parent: ClothingOuterCoatHoSTrench
@@ -528,6 +545,8 @@
         Piercing: 0.85
         Heat: 0.75
         Caustic: 0.75
+  - type: StaminaDamageResistance #Den
+    coefficient: 0.8 #Den
 
 - type: entity
   parent: ClothingOuterStorageBase
@@ -570,7 +589,8 @@
   - type: Clothing
     sprite: Clothing/OuterClothing/Coats/space_asshole.rsi
   - type: TemperatureProtection
-    coefficient: 0.1
+    heatingCoefficient: 0.1
+    coolingCoefficient: 0.1
 
 - type: entity
   parent: ClothingOuterStorageBase
@@ -583,7 +603,8 @@
   - type: Clothing
     sprite: Clothing/OuterClothing/Coats/expensive_coat.rsi
   - type: TemperatureProtection
-    coefficient: 0.1
+    heatingCoefficient: 1.1
+    coolingCoefficient: 0.1
 
 - type: entity
   parent: ClothingOuterBase
@@ -640,7 +661,8 @@
   - type: Clothing
     sprite: Clothing/OuterClothing/Coats/peacoat.rsi
   - type: TemperatureProtection
-    coefficient: 0.1
+    heatingCoefficient: 1.1
+    coolingCoefficient: 0.1
 
 - type: entity
   parent: [ClothingOuterFoldableBaseOpened, ClothingOuterCoatPeacoat]
@@ -674,7 +696,8 @@
   - type: Clothing
     sprite: Clothing/OuterClothing/Coats/submariner.rsi
   - type: TemperatureProtection
-    coefficient: 0.1
+    heatingCoefficient: 0.8
+    coolingCoefficient: 0.3
 
 - type: entity
   parent: [ClothingOuterFoldableBaseOpened, ClothingOuterCoatSubmariner]

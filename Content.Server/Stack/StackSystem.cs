@@ -1,21 +1,19 @@
-// SPDX-FileCopyrightText: 2021 Paul <ritter.paul1+git@googlemail.com>
-// SPDX-FileCopyrightText: 2021 Paul Ritter <ritter.paul1@googlemail.com>
-// SPDX-FileCopyrightText: 2021 Vera Aguilera Puerto <6766154+Zumorica@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2021 Vera Aguilera Puerto <gradientvera@outlook.com>
-// SPDX-FileCopyrightText: 2021 ike709 <ike709@github.com>
-// SPDX-FileCopyrightText: 2021 ike709 <ike709@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2021 metalgearsloth <comedian_vs_clown@hotmail.com>
-// SPDX-FileCopyrightText: 2022 Jessica M <jessica@jessicamaybe.com>
-// SPDX-FileCopyrightText: 2022 Kara <lunarautomaton6@gmail.com>
-// SPDX-FileCopyrightText: 2022 mirrorcult <lunarautomaton6@gmail.com>
-// SPDX-FileCopyrightText: 2023 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2023 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2023 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2023 Rane <60792108+Elijahrane@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2023 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 Debug <49997488+DebugOk@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 AirFryerBuyOneGetOneFree <airfryerbuyonegetonefree@gmail.com>
-// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2021 Paul
+// SPDX-FileCopyrightText: 2021 Paul Ritter
+// SPDX-FileCopyrightText: 2021 Vera Aguilera Puerto
+// SPDX-FileCopyrightText: 2021 ike709
+// SPDX-FileCopyrightText: 2022 Jessica M
+// SPDX-FileCopyrightText: 2022 Kara
+// SPDX-FileCopyrightText: 2022 mirrorcult
+// SPDX-FileCopyrightText: 2023 DrSmugleaf
+// SPDX-FileCopyrightText: 2023 Leon Friedrich
+// SPDX-FileCopyrightText: 2023 Nemanja
+// SPDX-FileCopyrightText: 2023 Rane
+// SPDX-FileCopyrightText: 2023 metalgearsloth
+// SPDX-FileCopyrightText: 2024 Debug
+// SPDX-FileCopyrightText: 2024 Whatstone
+// SPDX-FileCopyrightText: 2025 AirFryerBuyOneGetOneFree
+// SPDX-FileCopyrightText: 2025 sleepyyapril
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -36,6 +34,7 @@ namespace Content.Server.Stack
     public sealed class StackSystem : SharedStackSystem
     {
         [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
+        [Dependency] private readonly SharedUserInterfaceSystem _ui = default!; // Cherry-picked from space-station-14#32938 courtesy of Ilya246
 
         public static readonly int[] DefaultSplitAmounts = { 1, 5, 10, 20, 30, 50 };
 
@@ -132,16 +131,33 @@ namespace Content.Server.Stack
             if (!args.CanAccess || !args.CanInteract || args.Hands == null || stack.Count == 1)
                 return;
 
+            // Frontier: cherry-picked from ss14#32938, moved up top
+            var priority = 1;
+            if (_ui.HasUi(uid, StackCustomSplitUiKey.Key)) // Frontier: check for interface
+            {
+                AlternativeVerb custom = new()
+                {
+                    Text = Loc.GetString("comp-stack-split-custom"),
+                    Category = VerbCategory.Split,
+                    Act = () =>
+                    {
+                        _ui.OpenUi(uid, StackCustomSplitUiKey.Key, args.User);
+                    },
+                    Priority = priority--
+                };
+                args.Verbs.Add(custom);
+            }
+            // End Frontier: cherry-picked from ss14#32938, moved up top
+
             AlternativeVerb halve = new()
             {
                 Text = Loc.GetString("comp-stack-split-halve"),
                 Category = VerbCategory.Split,
                 Act = () => UserSplit(uid, args.User, stack.Count / 2, stack),
-                Priority = 1
+                Priority = priority-- // Frontier: 1<priority--
             };
             args.Verbs.Add(halve);
 
-            var priority = 0;
             foreach (var amount in DefaultSplitAmounts)
             {
                 if (amount >= stack.Count)
@@ -161,6 +177,20 @@ namespace Content.Server.Stack
                 args.Verbs.Add(verb);
             }
         }
+
+        // Cherry-picked from ss14#32938 courtesy of Ilya246
+        protected override void OnCustomSplitMessage(Entity<StackComponent> ent, ref StackCustomSplitAmountMessage message)
+        {
+            var (uid, comp) = ent;
+
+            // digital ghosts shouldn't be allowed to split stacks
+            if (!(message.Actor is { Valid: true } user))
+                return;
+
+            var amount = message.Amount;
+            UserSplit(uid, user, amount, comp);
+        }
+        // End cherry-pick from ss14#32938 courtesy of Ilya246
 
         private void UserSplit(EntityUid uid, EntityUid userUid, int amount,
             StackComponent? stack = null,

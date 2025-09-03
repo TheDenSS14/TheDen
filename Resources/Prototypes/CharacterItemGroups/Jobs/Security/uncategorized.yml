@@ -11,10 +11,13 @@
 # SPDX-FileCopyrightText: 2025 Skubman
 # SPDX-FileCopyrightText: 2025 Tabitha
 # SPDX-FileCopyrightText: 2025 Tad "Taddy" Johnson
+# SPDX-FileCopyrightText: 2025 Tanix
 # SPDX-FileCopyrightText: 2025 VMSolidus
+# SPDX-FileCopyrightText: 2025 juniwoofs
+# SPDX-FileCopyrightText: 2025 neuPanda
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 # All Security
 - type: characterItemGroup
@@ -79,13 +82,13 @@
     - type: loadout
       id: LoadoutSpeedLoaderSpecialRubberSpare
     - type: loadout
-      id: LoadoutMagazineMagnum
+      id: LoadoutMagazineSpecial
     - type: loadout
-      id: LoadoutMagazineMagnumRubber
+      id: LoadoutMagazineSpecialRubber
     - type: loadout
-      id: LoadoutMagazineMagnumSpare
+      id: LoadoutMagazineSpecialSpare
     - type: loadout
-      id: LoadoutMagazineMagnumRubberSpare
+      id: LoadoutMagazineSpecialRubberSpare
     - type: loadout
       id: LoadoutSpeedLoaderRifleHeavy
     - type: loadout
@@ -171,6 +174,8 @@
       id: LoadoutClothingHandsSecurityWarmers
     - type: loadout
       id: LoadoutClothingHandsGlovesSecurityBlack
+    - type: loadout
+      id: LoadoutClothingHandsGlovesSecurityJack
 
 - type: characterItemGroup
   id: LoadoutSecurityHead
@@ -186,6 +191,8 @@
       id: LoadoutSecurityHeadHelmetInsulated
     - type: loadout
       id: LoadoutSecurityHeadHelmetCombat
+    - type: loadout # Imp
+      id: LoadoutSecurityHeadHelmetSecuritySiren
 
 #- type: characterItemGroup
 #  id: LoadoutSecurityId
@@ -205,6 +212,8 @@
   id: LoadoutSecurityMask
   maxItems: 1
   items:
+    - type: loadout
+      id: LoadoutClothingMaskGasSecurity
     - type: loadout
       id: LoadoutSecurityMaskGasSwat
     - type: loadout
@@ -228,6 +237,16 @@
       id: LoadoutClothingOuterArmorSlim
     - type: loadout
       id: LoadoutClothingLongcoatSec
+    - type: loadout # Imp
+      id: LoadoutSecurityOuterCoatBomberSecurity
+    - type: loadout # Imp
+      id: LoadoutSecurityOuterCoatBomberSecurityLoose
+    - type: loadout # Imp
+      id: LoadoutSecurityOuterCoatBomberBrigmed
+    - type: loadout # Imp
+      id: LoadoutSecurityOuterCoatBomberBrigmedLoose
+    - type: loadout # Imp
+      id: LoadoutSecurityOuterArmorBasicCompact
 
 - type: characterItemGroup
   id: LoadoutSecurityShoes
@@ -239,6 +258,8 @@
       id: LoadoutClothingShoesBootsCombat
     - type: loadout
       id: LoadoutClothingUnderSocksSecurity
+    - type: loadout
+      id: LoadoutShoesSecheelsBlackstockings
 
 - type: characterItemGroup
   id: LoadoutSecurityUniforms

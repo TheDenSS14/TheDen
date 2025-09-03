@@ -1,3 +1,8 @@
+# SPDX-FileCopyrightText: 2025 Mono
+# SPDX-FileCopyrightText: 2025 lunarcomets
+#
+# SPDX-License-Identifier: MIT
+
 # Groups
 - type: stationAiCustomizationGroup
   id: StationAiCoreIconography
@@ -11,6 +16,19 @@
   - StationAiIconDorf
   - StationAiIconHeartline
   - StationAiIconSmiley
+  - StationAiIconAnima # DEN
+  - StationAiIconBorb # DEN
+  - StationAiIconDarkMatter # DEN
+  - StationAiIconFirewall # DEN
+  - StationAiIconFuzzy # DEN
+  - StationAiIconGlitchman # DEN
+  - StationAiIconLamp # DEN
+  - StationAiIconLizard # DEN
+  - StationAiIconMatrix # DEN
+  - StationAiIconNanotrasen # DEN
+  - StationAiIconRedDot # DEN
+  - StationAiIconTriumvirate # DEN
+  - StationAiIconVox # DEN
 
 - type: stationAiCustomizationGroup
   id: StationAiHolograms
@@ -22,6 +40,12 @@
   - StationAiHologramFace
   - StationAiHologramCat
   - StationAiHologramDog
+  - StationAiHologramKobold
+  - StationAiHologramMonkey
+  - StationAiHologramAngel # DEN
+  - StationAiHologramBorb # DEN
+  - StationAiHologramCloudkat # DEN
+  - StationAiHologramPhoenix # DEN
 
 # Iconography
 - type: stationAiCustomization
@@ -161,3 +185,21 @@
     Hologram:
       sprite: Mobs/Silicon/holograms.rsi
       state: ai_dog
+
+- type: stationAiCustomization
+  id: StationAiHologramKobold
+  name: station-ai-hologram-kobold
+  previewKey: Hologram
+  layerData:
+    Hologram:
+      sprite: Mobs/Silicon/holograms.rsi
+      state: ai_kobold
+
+- type: stationAiCustomization
+  id: StationAiHologramMonkey
+  name: station-ai-hologram-monkey
+  previewKey: Hologram
+  layerData:
+    Hologram:
+      sprite: Mobs/Silicon/holograms.rsi
+      state: ai_monkey

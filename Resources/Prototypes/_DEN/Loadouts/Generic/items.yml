@@ -1,0 +1,50 @@
+# SPDX-FileCopyrightText: 2025 Eightballll
+# SPDX-FileCopyrightText: 2025 MajorMoth
+# SPDX-FileCopyrightText: 2025 Shaman
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: loadout #TheDen
+  id: LoadoutMysterySpaceBladeBox
+  category: GeneralToys
+  cost: 1
+  items:
+    - MysterySpaceBladeBox
+
+- type: loadout
+  id: LoadoutItemCigsSpirits
+  category: GeneralItems
+  cost: 0
+  items:
+    - CigPackSpirits
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSmokes
+
+- type: loadout
+  id: LoadoutItemCigsPurple
+  category: GeneralItems
+  cost: 0
+  items:
+    - CigPackPurple
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSmokes
+
+- type: loadout
+  id: LoadoutItemCigsCandy
+  category: GeneralItems
+  cost: 0
+  items:
+    - CigPackCandy
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSmokes
+
+- type: loadout
+  id: LoadoutClothingMaskBreathFashion
+  category: GeneralItems
+  cost: 0
+  customColorTint: true
+  items:
+    - ClothingMaskBreathFashion

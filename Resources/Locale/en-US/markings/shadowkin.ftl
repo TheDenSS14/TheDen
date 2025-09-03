@@ -5,7 +5,7 @@
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
-marking-EyesShadowkin = Shadowkin
+# marking-EyesShadowkin = Shadowkin # den, moved to _DEN/marking/shadowkin.ftl
 
 marking-TailShadowkin = Shadowkin
 marking-TailShadowkinBig = Shadowkin (Big)

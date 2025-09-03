@@ -10,9 +10,12 @@
   playTimeTracker: JobDeathSquad
   setPreference: false
   startingGear: DeathSquadGear
-  icon: "JobIconNanotrasen"
+  icon: "JobIconDeathsquad"
   supervisors: job-supervisors-centcom
   canBeAntag: false
+  special:
+  - !type:AddImplantSpecial
+    implants: [ CentCommImplant ]
   accessGroups:
   - AllAccess
   access:

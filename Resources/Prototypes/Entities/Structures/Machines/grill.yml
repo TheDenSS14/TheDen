@@ -1,5 +1,6 @@
-# SPDX-FileCopyrightText: 2023 deltanedas <39013340+deltanedas@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 deltanedas
+# SPDX-FileCopyrightText: 2025 portfiend
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: MIT
 
@@ -27,6 +28,17 @@
     whitelist:
       components:
       - Temperature
+  - type: Fixtures # DEN - Allow anchoring on tables
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.15,-0.045,0.15,0.2"
+        mask:
+        - TabletopMachineMask
+        layer:
+        - TabletopMachineLayer
+        hard: false
   - type: PlaceableSurface
   - type: Machine
     board: ElectricGrillMachineCircuitboard

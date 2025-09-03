@@ -23,6 +23,7 @@
 # SPDX-FileCopyrightText: 2025 Forzii
 # SPDX-FileCopyrightText: 2025 Rosycup
 # SPDX-FileCopyrightText: 2025 Sapphire
+# SPDX-FileCopyrightText: 2025 Sir Warock
 # SPDX-FileCopyrightText: 2025 Skubman
 # SPDX-FileCopyrightText: 2025 portfiend
 # SPDX-FileCopyrightText: 2025 sleepyyapril
@@ -124,16 +125,16 @@
         Heat : 1.0 #per second, scales with temperature & other constants
   - type: TemperatureSpeed
     thresholds:
-      289: 0.6
-      275: 0.4
-      250: 0.3
+      289: 0.7
+      275: 0.6
+      250: 0.5
   - type: CreamPied
     layer:
       sprite: Effects/creampie.rsi
       state: creampie_moth
   - type: Chitinid
   - type: BlockInjection
-    blockReason: chitinid
+    blockReason: user
   - type: LanguageKnowledge
     speaks:
     - TauCetiBasic

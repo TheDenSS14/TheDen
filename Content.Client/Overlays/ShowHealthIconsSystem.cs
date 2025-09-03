@@ -1,9 +1,10 @@
-// SPDX-FileCopyrightText: 2024 AJCM-git <60196617+AJCM-git@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
-// SPDX-FileCopyrightText: 2024 PrPleGoo <prplegoo@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 SimpleStation14 <130339894+SimpleStation14@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 AJCM-git
+// SPDX-FileCopyrightText: 2024 Pieter-Jan Briers
+// SPDX-FileCopyrightText: 2024 PrPleGoo
+// SPDX-FileCopyrightText: 2024 SimpleStation14
+// SPDX-FileCopyrightText: 2024 slarticodefast
+// SPDX-FileCopyrightText: 2025 Sir Warock
+// SPDX-FileCopyrightText: 2025 sleepyyapril
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -16,6 +17,8 @@ using Content.Shared.StatusIcon;
 using Content.Shared.StatusIcon.Components;
 using Robust.Shared.Prototypes;
 using System.Linq;
+using Content.Shared.Mobs;
+
 
 namespace Content.Client.Overlays;
 
@@ -86,6 +89,8 @@ public sealed class ShowHealthIconsSystem : EquipmentHudSystem<ShowHealthIconsCo
         {
             if (TryComp<MobStateComponent>(entity, out var state))
             {
+                if (state.CurrentState != MobState.Alive) // Den: Nuke Alive Icon so they don't hide speech bubbles
+                    return result;
                 // Since there is no MobState for a rotting mob, we have to deal with this case first.
                 if (HasComp<RottingComponent>(entity) && _prototypeMan.TryIndex(damageableComponent.RottingIcon, out var rottingIcon))
                     result.Add(rottingIcon);

@@ -1,7 +1,7 @@
-# SPDX-FileCopyrightText: 2024 neuPanda <chriseparton@gmail.com>
-# SPDX-FileCopyrightText: 2024 sleepyyapril <flyingkarii@gmail.com>
-# SPDX-FileCopyrightText: 2025 Rosycup <178287475+Rosycup@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 neuPanda
+# SPDX-FileCopyrightText: 2025 Rosycup
+# SPDX-FileCopyrightText: 2025 Sir Warock
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -17,16 +17,13 @@
   metabolisms:
     Medicine:
       effects:
-      - !type:HealthChange
+      - !type:EvenHealthChange # The Den
         conditions:
         - !type:Temperature
           max: 213.0
         damage:
-          types:
-            Blunt: -2
-            Piercing: -2
-            Slash: -2
-            
+          Brute: -7 # The Den, same as Aloxadone for Burns
+
 - type: reagent
   id : Stelloxadone
   name: reagent-name-stelloxadone
@@ -39,14 +36,11 @@
   metabolisms:
     Medicine:
       effects:
-      - !type:HealthChange
+      - !type:EvenHealthChange # The Den
         conditions:
         - !type:Temperature
           max: 213.0
         damage:
-          types:
-            Poison: -6
-            Radiation: -3
-            Cellular: 1
-          groups:
-            Brute: 3
+          Toxin: -7   # The Den, same as the other Cryochems
+          Genetic: 1  # The Den
+          Brute: 3    # The Den

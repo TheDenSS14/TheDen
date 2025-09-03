@@ -31,18 +31,26 @@
 
 # If you are ever going to add more: open regex101; in list mode, find "id: (.+)", replace with "- type: loadout\n  id: $1\n", paste the result here
 - type: characterItemGroup
-  id: LoadoutLewd
+  id: LoadoutLewdMask
   items:
   - type: loadout
     id: LoadoutItemDroneMask #TheDen
   - type: loadout
     id: LoadoutItemDroneMaskHoodless #TheDen
+
+- type: characterItemGroup
+  id: LoadoutLewdPills
+  items:
   - type: loadout
     id: LoadoutItemPillCanisterPomelustine
   - type: loadout
     id: LoadoutItemPillCanisterPhilterex
   - type: loadout
     id: LoadoutItemPillCanisterLibidozenithizine
+
+- type: characterItemGroup
+  id: LoadoutLewdVibe
+  items:
   - type: loadout
     id: LoadoutItemLewdWand
   - type: loadout
@@ -55,6 +63,30 @@
     id: LoadoutItemLewdVibeRed
   - type: loadout
     id: LoadoutItemLewdVibeYellow
+
+- type: characterItemGroup
+  id: LoadoutLewdDildo
+  items:
+  - type: loadout
+    id: LoadoutItemAvianDildo
+  - type: loadout
+    id: LoadoutItemLewdCanineDildo
+  - type: loadout
+    id: LoadoutItemLewdCanineDildoRed
+  - type: loadout
+    id: LoadoutItemLewdHorseDildo
+  - type: loadout
+    id: LoadoutItemLewdDragonDildo
+  - type: loadout
+    id: LoadoutItemLewdNormalDildo
+  - type: loadout
+    id: LoadoutItemLewdTentacleDildo
+  - type: loadout
+    id: LoadoutItemLewdDoubleDildo
+
+- type: characterItemGroup
+  id: LoadoutLewdFleshlight
+  items:
   - type: loadout
     id: LoadoutItemLewdFleshlightGreen
   - type: loadout
@@ -65,6 +97,10 @@
     id: LoadoutItemLewdFleshlightRed
   - type: loadout
     id: LoadoutItemLewdFleshlightYellow
+
+- type: characterItemGroup
+  id: LoadoutLewdWhip
+  items:
   - type: loadout
     id: LoadoutItemWhipPink
   - type: loadout

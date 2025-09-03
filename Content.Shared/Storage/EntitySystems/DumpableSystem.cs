@@ -1,18 +1,20 @@
-// SPDX-FileCopyrightText: 2023 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2023 LordCarve <27449516+LordCarve@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2023 Pieter-Jan Briers <pieterjan.briers@gmail.com>
-// SPDX-FileCopyrightText: 2023 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 Krunklehorn <42424291+Krunklehorn@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 Memeji <greyalphawolf7@gmail.com>
-// SPDX-FileCopyrightText: 2024 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
-// SPDX-FileCopyrightText: 2024 Plykiya <58439124+Plykiya@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 VMSolidus <evilexecutive@gmail.com>
-// SPDX-FileCopyrightText: 2024 nikthechampiongr <32041239+nikthechampiongr@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 DrSmugleaf
+// SPDX-FileCopyrightText: 2023 LordCarve
+// SPDX-FileCopyrightText: 2023 metalgearsloth
+// SPDX-FileCopyrightText: 2024 Krunklehorn
+// SPDX-FileCopyrightText: 2024 Memeji
+// SPDX-FileCopyrightText: 2024 Pieter-Jan Briers
+// SPDX-FileCopyrightText: 2024 Plykiya
+// SPDX-FileCopyrightText: 2024 VMSolidus
+// SPDX-FileCopyrightText: 2024 nikthechampiongr
+// SPDX-FileCopyrightText: 2025 Perry Fraser
+// SPDX-FileCopyrightText: 2025 pathetic meowmeow
+// SPDX-FileCopyrightText: 2025 sleepyyapril
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 using System.Linq;
+using Content.Shared._DV.SmartFridge; // DeltaV - ough why do you not use events for this
 using Content.Shared.Disposal;
 using Content.Shared.DoAfter;
 using Content.Shared.Interaction;
@@ -37,6 +39,7 @@ public sealed class DumpableSystem : EntitySystem
     [Dependency] private readonly SharedDisposalUnitSystem _disposalUnitSystem = default!;
     [Dependency] private readonly SharedDoAfterSystem _doAfterSystem = default!;
     [Dependency] private readonly SharedTransformSystem _transformSystem = default!;
+    [Dependency] private readonly SmartFridgeSystem _fridge = default!; // DeltaV - ough why do you not use events for this
 
     private EntityQuery<ItemComponent> _itemQuery;
 
@@ -96,7 +99,7 @@ public sealed class DumpableSystem : EntitySystem
         if (!TryComp<StorageComponent>(uid, out var storage) || !storage.Container.ContainedEntities.Any())
             return;
 
-        if (_disposalUnitSystem.HasDisposals(args.Target))
+        if (_disposalUnitSystem.HasDisposals(args.Target) || HasComp<SmartFridgeComponent>(args.Target)) // DeltaV - ough why do you not use events for this
         {
             UtilityVerb verb = new()
             {
@@ -194,6 +197,13 @@ public sealed class DumpableSystem : EntitySystem
                 _transformSystem.SetWorldPositionRotation(entity, targetPos + _random.NextVector2Box() / 4, targetRot);
             }
         }
+        // Begin DeltaV - ough why do you not use events for this
+        else if (TryComp<SmartFridgeComponent>(target, out var fridge))
+        {
+            dumped = true;
+            _fridge.TryAddItem((target.Value, fridge), dumpQueue, user);
+        }
+        // End DeltaV - ough why do you not use events for this
         else
         {
             var targetPos = _transformSystem.GetWorldPosition(uid);

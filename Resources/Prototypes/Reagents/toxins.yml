@@ -35,6 +35,7 @@
 # SPDX-FileCopyrightText: 2024 Verm
 # SPDX-FileCopyrightText: 2024 slarticodefast
 # SPDX-FileCopyrightText: 2025 Tanix
+# SPDX-FileCopyrightText: 2025 TheLuggage05
 # SPDX-FileCopyrightText: 2025 portfiend
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
@@ -78,10 +79,18 @@
     Poison:
       effects:
       - !type:HealthChange
+        conditions: # Imp - Thaven are immune to carpotoxin because their organs are full of it (what would it damage?)
+        - !type:OrganType
+          type: Thaven
+          shouldHave: false
         damage:
           types:
             Poison: 4
       - !type:PopupMessage
+        conditions: # Imp - Thaven are immune to carpotoxin because their organs are full of it (what would it damage?)
+        - !type:OrganType
+          type: Thaven
+          shouldHave: false
         type: Local
         visualType: MediumCaution
         messages: [ "generic-reagent-effect-burning-insides" ]
@@ -479,7 +488,7 @@
   boilingPoint: 554 # I'm not a chemist, but it boils at 295, lower than melting point, idk how it works so I gave it higher value
   metabolisms:
     Poison:
-      metabolismRate: 0.05
+      metabolismRate: 0.045 # imp, allowing it to build up over time
       effects:
       - !type:HealthChange
         conditions:
@@ -539,6 +548,7 @@
   flavor: bitter
   color: "#7e916e"
   worksOnTheDead: true
+  noRandom: true #TheDen
   metabolisms:
     Medicine:
       effects:

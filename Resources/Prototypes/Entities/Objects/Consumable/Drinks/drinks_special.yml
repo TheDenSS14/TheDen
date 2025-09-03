@@ -45,6 +45,8 @@
   - type: Sprite
     sprite: Objects/Consumable/Drinks/shaker.rsi
     state: icon
+  - type: Item
+    sprite: Objects/Consumable/Drinks/shaker.rsi
   - type: UserInterface
     interfaces:
       enum.TransferAmountUiKey.Key:
@@ -157,7 +159,7 @@
   parent: [BaseItem, BartenderMixer]
   id: DrinkJigger
   name: jigger
-  description: Like a shaker, but smaller. Used to control the amount of ingredients.
+  description: Like a dropper, but for bartending. Used to precisely control the amount of ingredients.
   components:
   - type: SolutionContainerManager
     solutions:

@@ -35,6 +35,13 @@
 - type: marking
   parent: BaseMarkingPubicHair
   id: pubesLower
+  bodyPart: Chest
+  markingCategory: Genitals
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+        color: "#FFFFFF"
   sprites:
   - sprite: _DEN/Mobs/Customization/Body/pubes.rsi
     state: lower

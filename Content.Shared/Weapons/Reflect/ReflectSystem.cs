@@ -1,18 +1,18 @@
-// SPDX-FileCopyrightText: 2023 Chief-Engineer <119664036+Chief-Engineer@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2023 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2023 Kara <lunarautomaton6@gmail.com>
-// SPDX-FileCopyrightText: 2023 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2023 Pieter-Jan Briers <pieterjan.briers@gmail.com>
-// SPDX-FileCopyrightText: 2023 Slava0135 <40753025+Slava0135@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2023 avery <51971268+graevy@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2023 kalane15 <118661099+kalane15@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT <77995199+DEATHB4DEFEAT@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 Remuchi <72476615+Remuchi@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 deltanedas <39013340+deltanedas@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 sleepyyapril <flyingkarii@gmail.com>
-// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Chief-Engineer
+// SPDX-FileCopyrightText: 2023 DrSmugleaf
+// SPDX-FileCopyrightText: 2023 Kara
+// SPDX-FileCopyrightText: 2023 Leon Friedrich
+// SPDX-FileCopyrightText: 2023 Pieter-Jan Briers
+// SPDX-FileCopyrightText: 2023 Slava0135
+// SPDX-FileCopyrightText: 2023 avery
+// SPDX-FileCopyrightText: 2023 kalane15
+// SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT
+// SPDX-FileCopyrightText: 2024 Nemanja
+// SPDX-FileCopyrightText: 2024 Remuchi
+// SPDX-FileCopyrightText: 2024 deltanedas
+// SPDX-FileCopyrightText: 2024 metalgearsloth
+// SPDX-FileCopyrightText: 2025 kosticia
+// SPDX-FileCopyrightText: 2025 sleepyyapril
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -38,6 +38,8 @@ using Robust.Shared.Physics.Components;
 using Robust.Shared.Physics.Systems;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
+using Content.Shared.Examine;
+using Content.Shared.Localizations;
 
 namespace Content.Shared.Weapons.Reflect;
 
@@ -67,8 +69,8 @@ public sealed class ReflectSystem : EntitySystem
         SubscribeLocalEvent<ReflectComponent, GotUnequippedEvent>(OnReflectUnequipped);
         SubscribeLocalEvent<ReflectComponent, GotEquippedHandEvent>(OnReflectHandEquipped);
         SubscribeLocalEvent<ReflectComponent, GotUnequippedHandEvent>(OnReflectHandUnequipped);
+        SubscribeLocalEvent<ReflectComponent, ExaminedEvent>(OnExamine);
         SubscribeLocalEvent<ReflectComponent, ItemToggledEvent>(OnToggleReflect);
-
         SubscribeLocalEvent<ReflectUserComponent, ProjectileReflectAttemptEvent>(OnReflectUserCollide);
         SubscribeLocalEvent<ReflectUserComponent, HitScanReflectAttemptEvent>(OnReflectUserHitscan);
     }
@@ -254,4 +256,30 @@ public sealed class ReflectSystem : EntitySystem
 
         RemCompDeferred<ReflectUserComponent>(user);
     }
+
+    #region Examine
+    private void OnExamine(Entity<ReflectComponent> ent, ref ExaminedEvent args)
+    {
+        // This isn't examine verb or something just because it looks too much bad.
+        // Trust me, universal verb for the potential weapons, armor and walls looks awful.
+        var value = MathF.Round(ent.Comp.ReflectProb * 100, 1);
+
+        if (!_toggle.IsActivated(ent.Owner) || value == 0 || ent.Comp.Reflects == ReflectType.None)
+            return;
+
+        var compTypes = ent.Comp.Reflects.ToString().Split(", ");
+
+        List<string> typeList = new(compTypes.Length);
+
+        for (var i = 0; i < compTypes.Length; i++)
+        {
+            var type = Loc.GetString(("reflect-component-" + compTypes[i]).ToLower());
+            typeList.Add(type);
+        }
+
+        var msg = ContentLocalizationManager.FormatList(typeList);
+
+        args.PushMarkup(Loc.GetString("reflect-component-examine", ("value", value), ("type", msg)));
+    }
+    #endregion
 }

@@ -1,0 +1,103 @@
+# SPDX-FileCopyrightText: 2025 portfiend
+#
+# SPDX-License-Identifier: MIT
+
+- type: entity
+  parent: FoodMeatBase
+  id: FoodMeatFishCooked
+  name: cooked carp fillet
+  description: The same fish, now barely passing for something you could serve to another person.
+  components:
+  - type: Tag
+    tags:
+    - Cooked
+    - Meat
+    - Fish
+  - type: FlavorProfile
+    flavors:
+      - fishy
+  - type: Sprite
+    sprite: _DEN/Objects/Consumable/Food/meat.rsi
+    state: cooked_fish
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 15
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 6.66
+        - ReagentId: Protein
+          Quantity: 3.33
+  - type: Construction
+    graph: FishSteak
+    node: cooked carp
+  - type: SliceableFood
+    count: 3
+    slice: FoodMeatFishCutletCooked
+  - type: FoodSequenceElement
+    entries:
+      Burger: MeatFish
+      Taco: MeatFish
+
+- type: entity
+  parent: FoodMeatBase
+  id: FoodMeatFishCutlet
+  name: raw carp cutlet
+  description: The snack that bites back.
+  components:
+  - type: Tag
+    tags:
+    - Raw
+    - Cutlet
+    - Meat
+    - Fish
+  - type: FlavorProfile
+    flavors:
+      - fishy
+  - type: Sprite
+    sprite: _DEN/Objects/Consumable/Food/meat.rsi
+    state: cutlet_fish_raw
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        reagents:
+        - ReagentId: CarpoToxin
+          Quantity: 1.66 # 1/3 of raw carp
+  - type: Construction
+    graph: FishCutlet
+    node: start
+    defaultTarget: carp cutlet
+
+- type: entity
+  parent: FoodMeatBase
+  id: FoodMeatFishCutletCooked
+  name: carp cutlet
+  description: Not to be confused with a carp fry, which is a different thing.
+  components:
+  - type: Tag
+    tags:
+    - Cooked
+    - Cutlet
+    - Meat
+    - Fish
+  - type: FlavorProfile
+    flavors:
+      - fishy
+  - type: Sprite
+    sprite: _DEN/Objects/Consumable/Food/meat.rsi
+    state: cutlet_fish
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 2
+        - ReagentId: Protein
+          Quantity: 2
+  - type: Construction
+    graph: FishCutlet
+    node: carp cutlet
+  - type: FoodSequenceElement
+    entries:
+      Burger: FishCutletBurger
+      Taco: FishCutlet

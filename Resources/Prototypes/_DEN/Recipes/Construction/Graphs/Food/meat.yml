@@ -1,0 +1,33 @@
+# SPDX-FileCopyrightText: 2025 portfiend
+#
+# SPDX-License-Identifier: MIT
+
+- type: constructionGraph
+  id: FishSteak
+  start: start
+  graph:
+  - node: start
+    edges:
+    - to: cooked carp
+      completed:
+      - !type:PlaySound
+        sound: /Audio/Effects/sizzle.ogg
+      steps:
+      - minTemperature: 335
+  - node: cooked carp
+    entity: FoodMeatFishCooked
+
+- type: constructionGraph
+  id: FishCutlet
+  start: start
+  graph:
+  - node: start
+    edges:
+    - to: carp cutlet
+      completed:
+      - !type:PlaySound
+        sound: /Audio/Effects/sizzle.ogg
+      steps:
+      - minTemperature: 335
+  - node: carp cutlet
+    entity: FoodMeatFishCutletCooked

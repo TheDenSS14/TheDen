@@ -15,6 +15,7 @@
 # SPDX-FileCopyrightText: 2025 Memeji Dankiri
 # SPDX-FileCopyrightText: 2025 Timfa
 # SPDX-FileCopyrightText: 2025 sleepyyapril
+# SPDX-FileCopyrightText: 2025 wheelwrightt
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -352,6 +353,7 @@
     difficulty: 3.5
   - type: StealCondition
     stealGroup: SupermatterSliver
+    verifyMapExistence: true
     objectiveNoOwnerText: objective-condition-steal-smsliver-title
     descriptionText: objective-condition-steal-smsliver-description
 

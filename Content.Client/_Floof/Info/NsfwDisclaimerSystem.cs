@@ -1,4 +1,5 @@
 // SPDX-FileCopyrightText: 2025 Mnemotechnican
+// SPDX-FileCopyrightText: 2025 sleepyyapril
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -27,6 +28,10 @@ public sealed class NsfwDisclaimerSystem : EntitySystem
 
         _window = new();
         _window.OpenCentered();
-        _window.OnClose += () => _window = null;
+        _window.OnClose += () =>
+        {
+            _window.OnWindowClosed();
+            _window = null;
+        };
     }
 }

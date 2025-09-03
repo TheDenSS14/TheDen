@@ -1,13 +1,13 @@
-// SPDX-FileCopyrightText: 2024 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 Kara <lunarautomaton6@gmail.com>
-// SPDX-FileCopyrightText: 2024 VMSolidus <evilexecutive@gmail.com>
-// SPDX-FileCopyrightText: 2024 XavierSomething <tylernguyen203@gmail.com>
-// SPDX-FileCopyrightText: 2025 portfiend <109661617+portfiend@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 DrSmugleaf
+// SPDX-FileCopyrightText: 2024 Kara
+// SPDX-FileCopyrightText: 2024 VMSolidus
+// SPDX-FileCopyrightText: 2024 XavierSomething
+// SPDX-FileCopyrightText: 2025 portfiend
+// SPDX-FileCopyrightText: 2025 sleepyyapril
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
-using Content.Shared._DEN.Devourable;
+using Content.Shared._DEN.Unrotting;
 using Content.Shared.Examine;
 using Content.Shared.IdentityManagement;
 using Content.Shared.Mobs;
@@ -147,7 +147,7 @@ public abstract class SharedRottingSystem : EntitySystem
         if (TryComp<MobStateComponent>(uid, out var mobState) && !_mobState.IsDead(uid, mobState))
             return false;
 
-        if (TryComp<DevourableComponent>(uid, out var devourable) && devourable.AttemptedDevouring)
+        if (HasComp<DragonUnrottingComponent>(uid))
             return false;
 
         if (_container.TryGetOuterContainer(uid, Transform(uid), out var container) &&

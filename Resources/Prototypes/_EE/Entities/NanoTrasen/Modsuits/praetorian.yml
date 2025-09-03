@@ -1,4 +1,5 @@
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 juniwoofs
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -139,6 +140,9 @@
       lowPressureMultiplier: 1000
     - type: ExplosionResistance
       damageCoefficient: 0.6
+    - type: TemperatureProtection
+      heatingCoefficient: 0.001
+      coolingCoefficient: 0.001
 
 - type: entity
   parent: ClothingModsuitBootsStandard
@@ -175,5 +179,6 @@
     - type: StorageFill
       contents:
         - id: OxygenTankFilled
+        - id: NitrogenTankFilled #Den
         - id: ClothingModsuitPraetorian
         - id: ClothingMaskBreath

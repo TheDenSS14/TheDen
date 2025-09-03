@@ -17,9 +17,12 @@ using Content.Server.Pinpointer;
 using Content.Shared.EntityTable;
 using Content.Shared.GameTicking.Components;
 using Content.Server.Station.Components;
+using Content.Server.Announcements.Systems;
 using Robust.Shared.Map;
 using Robust.Shared.Player;
 using Robust.Shared.Random;
+using Robust.Shared.Audio;
+using Content.Server.Chat.Systems;
 
 namespace Content.Server.StationEvents.Events;
 
@@ -42,6 +45,9 @@ public sealed class VentCrittersRule : StationEventSystem<VentCrittersRuleCompon
     [Dependency] private readonly ISharedPlayerManager _player = default!;
     [Dependency] private readonly NavMapSystem _navMap = default!;
     [Dependency] private readonly SharedTransformSystem _transform = default!;
+    [Dependency] private readonly AnnouncerSystem _announcer = default!;
+    [Dependency] private readonly IRobustRandom _random = default!;
+    [Dependency] private readonly ChatSystem _chatSystem = default!;
 
     private List<Tuple<EntityUid, VentCritterSpawnLocationComponent, EntityCoordinates>> _locations = new();
     private Tuple<EntityUid, VentCritterSpawnLocationComponent, EntityCoordinates>? _location;
@@ -65,8 +71,11 @@ public sealed class VentCrittersRule : StationEventSystem<VentCrittersRuleCompon
         if (!_navMap.TryGetNearestBeacon(mapCoords, out var beacon, out _))
             return;
 
-        base.Audio.PlayPvs(comp.Sound, _location.Item1);
+        Audio.PlayPvs(comp.Sound, _location.Item1, AudioParams.Default.AddVolume(250));
         base.Added(uid, comp, gameRule, args);
+
+        _chatSystem.TrySendInGameICMessage(_location.Item1, "emits an ominous rumbling sound...", Shared.Chat.InGameICChatType.Emote, Shared.Chat.ChatTransmitRange.Normal, false, null, null, "nearby vent", false, true);
+
     }
 
     protected override void Ended(EntityUid uid, VentCrittersRuleComponent comp, GameRuleComponent gameRule, GameRuleEndedEvent args)
@@ -78,6 +87,8 @@ public sealed class VentCrittersRule : StationEventSystem<VentCrittersRuleCompon
 
         if (comp.Location is not { } coords)
             return;
+
+        _chatSystem.TrySendInGameICMessage(_location.Item1, "screeches as something bursts free in a cloud of dust!", Shared.Chat.InGameICChatType.Emote, Shared.Chat.ChatTransmitRange.Normal, false, null, null, "nearby vent", false, true);
 
         Spawn("AdminInstantEffectSmoke10", _location.Item3);
 

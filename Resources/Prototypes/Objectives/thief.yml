@@ -11,6 +11,7 @@
 # SPDX-FileCopyrightText: 2024 reverie collection
 # SPDX-FileCopyrightText: 2025 Rosycup
 # SPDX-FileCopyrightText: 2025 sleepyyapril
+# SPDX-FileCopyrightText: 2025 wheelwrightt
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -61,7 +62,7 @@
   id: BaseThiefStealAnimalObjective
   components:
   - type: StealCondition
-    verifyMapExistence: false
+    verifyMapExistence: true
     checkAlive: true
     objectiveNoOwnerText: objective-condition-steal-title-alive-no-owner
     descriptionText: objective-condition-thief-animal-description

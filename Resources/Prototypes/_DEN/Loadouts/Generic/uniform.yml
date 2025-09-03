@@ -67,3 +67,51 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutUniformsCivilian
+
+- type: loadout
+  id: LoadoutClothingUniformBootyShorts
+  category: Uniform
+  cost: 0
+  exclusive: true
+  customColorTint: true
+  items:
+    - ClothingUniformBootyShorts
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutUniformsCivilian
+
+- type: loadout
+  id: LoadoutClothingUniformSimplePants
+  category: Uniform
+  cost: 0
+  exclusive: true
+  customColorTint: true
+  items:
+    - ClothingUniformSimplePants
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutUniformsCivilian
+
+- type: loadout
+  id: LoadoutUniformWhiteTurtleneck
+  category: Uniform
+  cost: 0
+  exclusive: true
+  customColorTint: true
+  items:
+    - ClothingUniformWhiteTurtleneck
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutUniformsCivilian
+
+- type: loadout
+  id: LoadoutUniformWhiteTurtleskirt
+  category: Uniform
+  cost: 0
+  exclusive: true
+  customColorTint: true
+  items:
+    - ClothingUniformWhiteTurtleskirt
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutUniformsCivilian

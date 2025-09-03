@@ -1,26 +1,23 @@
-// SPDX-FileCopyrightText: 2020 Vera Aguilera Puerto <6766154+Zumorica@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2020 Vera Aguilera Puerto <zddm@outlook.es>
-// SPDX-FileCopyrightText: 2020 chairbender <kwhipke1@gmail.com>
-// SPDX-FileCopyrightText: 2021 Acruid <shatter66@gmail.com>
-// SPDX-FileCopyrightText: 2021 Vera Aguilera Puerto <gradientvera@outlook.com>
-// SPDX-FileCopyrightText: 2022 Flipp Syder <76629141+vulppine@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2022 Jezithyr <Jezithyr.@gmail.com>
-// SPDX-FileCopyrightText: 2022 Paul Ritter <ritter.paul1@googlemail.com>
-// SPDX-FileCopyrightText: 2022 mirrorcult <lunarautomaton6@gmail.com>
-// SPDX-FileCopyrightText: 2023 AJCM-git <60196617+AJCM-git@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2023 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2023 Ygg01 <y.laughing.man.y@gmail.com>
-// SPDX-FileCopyrightText: 2023 keronshb <54602815+keronshb@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT <77995199+DEATHB4DEFEAT@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 Debug <49997488+DebugOk@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 DrSmugleaf <10968691+DrSmugleaf@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
-// SPDX-FileCopyrightText: 2024 ShadowCommander <10494922+ShadowCommander@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 SimpleStation14 <130339894+SimpleStation14@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 VMSolidus <evilexecutive@gmail.com>
-// SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2020 chairbender
+// SPDX-FileCopyrightText: 2021 Acruid
+// SPDX-FileCopyrightText: 2021 Vera Aguilera Puerto
+// SPDX-FileCopyrightText: 2022 Flipp Syder
+// SPDX-FileCopyrightText: 2022 Jezithyr
+// SPDX-FileCopyrightText: 2022 Paul Ritter
+// SPDX-FileCopyrightText: 2022 mirrorcult
+// SPDX-FileCopyrightText: 2023 AJCM-git
+// SPDX-FileCopyrightText: 2023 Ygg01
+// SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT
+// SPDX-FileCopyrightText: 2024 Debug
+// SPDX-FileCopyrightText: 2024 DrSmugleaf
+// SPDX-FileCopyrightText: 2024 Leon Friedrich
+// SPDX-FileCopyrightText: 2024 Pieter-Jan Briers
+// SPDX-FileCopyrightText: 2024 ShadowCommander
+// SPDX-FileCopyrightText: 2024 SimpleStation14
+// SPDX-FileCopyrightText: 2024 VMSolidus
+// SPDX-FileCopyrightText: 2024 keronshb
+// SPDX-FileCopyrightText: 2024 metalgearsloth
+// SPDX-FileCopyrightText: 2025 sleepyyapril
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -78,6 +75,29 @@ namespace Content.Client.Actions
             SubscribeLocalEvent<EntityWorldTargetActionComponent, ComponentHandleState>(OnEntityWorldTargetHandleState);
         }
 
+        public override void FrameUpdate(float frameTime)
+        {
+            base.FrameUpdate(frameTime);
+
+            var worldActionQuery = EntityQueryEnumerator<WorldTargetActionComponent>();
+            while (worldActionQuery.MoveNext(out var uid, out var action))
+            {
+                UpdateAction(uid, action);
+            }
+
+            var instantActionQuery = EntityQueryEnumerator<InstantActionComponent>();
+            while (instantActionQuery.MoveNext(out var uid, out var action))
+            {
+                UpdateAction(uid, action);
+            }
+
+            var entityActionQuery = EntityQueryEnumerator<EntityTargetActionComponent>();
+            while (entityActionQuery.MoveNext(out var uid, out var action))
+            {
+                UpdateAction(uid, action);
+            }
+        }
+
         private void OnInstantHandleState(EntityUid uid, InstantActionComponent component, ref ComponentHandleState args)
         {
             if (args.Current is not InstantActionComponentState state)
@@ -123,6 +143,8 @@ namespace Content.Client.Actions
             component.Icon = state.Icon;
             component.IconOn = state.IconOn;
             component.IconColor = state.IconColor;
+            component.OriginalIconColor = state.OriginalIconColor;
+            component.DisabledIconColor = state.DisabledIconColor;
             component.Keywords.Clear();
             component.Keywords.UnionWith(state.Keywords);
             component.Enabled = state.Enabled;
@@ -152,6 +174,8 @@ namespace Content.Client.Actions
         {
             if (!ResolveActionData(actionId, ref action))
                 return;
+
+            action.IconColor = action.Charges < 1 ? action.DisabledIconColor : action.OriginalIconColor;
 
             base.UpdateAction(actionId, action);
             if (_playerManager.LocalEntity != action.AttachedEntity)

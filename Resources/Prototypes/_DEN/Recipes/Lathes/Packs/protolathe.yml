@@ -1,3 +1,8 @@
+# SPDX-FileCopyrightText: 2025 MajorMoth
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 
 # TODO: I know it's horrid, but if you separate every single one into their proper forks, I'll pay you.
 # There are existing packs for some of these recipes, and some which have items that don't exist. I'm sorry.
@@ -9,6 +14,16 @@
   - Dropper
   - ClothingEyesGlassesChemical
   - N14MaterialCircuitry
+  - Igniter
+  - Implanter
+  - Syringe
+  - Scalpel
+  - Retractor
+  - Cautery
+  - Drill
+  - Saw
+  - Hemostat
+  - Signaller
 
 - type: latheRecipePack
   id: ProtolatheDynamicAwfulDen
@@ -20,30 +35,16 @@
   - AnomalyLocator
   - AnomalyLocatorWide
   - HandheldCrewMonitor
-  - Scalpel
-  - Retractor
-  - Cautery
-  - Drill
   - WeaponParticleDecelerator
   - HoloprojectorField
-  - Saw
-  - Hemostat
   - CryostasisBeaker
   - SyringeCryostasis
-  - Syringe
-  - DisposableSyringe
-  - Implanter
-  - PillCanister
-  - ChemistryEmptyBottle01
   - AdvancedCapacitorStockPart
   - AdvancedMatterBinStockPart
   - NanoManipulatorStockPart
   - SuperCapacitorStockPart
   - SuperMatterBinStockPart
   - PicoManipulatorStockPart
-  - BluespaceCapacitorStockPart
-  - BluespaceManipulatorStockPart
-  - BluespaceMatterBinStockPart
   - AdvMopItem
   - TrashBagBluespace #DEN - Sanitation Station
   - WeaponSprayNozzle
@@ -52,11 +53,9 @@
   - TimerTrigger
   - ChemicalPayload
   - FlashPayload
-  - Signaller
   - SignallerAdvanced
   - SignalTrigger
   - VoiceTrigger
-  - Igniter
   - HandHeldMassScanner
   - HandHeldAtmosMonitor #DEN
   - HandHeldPowerMonitor #DEN
@@ -91,7 +90,6 @@
   - ClothingBackpackMessengerHolding # Den - im dumb
   - WelderExperimental
   - JawsOfLife
-  - CoreSilver # Nyanotrasen - Silver Golem core
   - OreBagOfHolding
   - DeviceQuantumSpinInverter
   - PKAUpgradeDamage # Lavaland Change
@@ -99,6 +97,7 @@
   - PKAUpgradeFireRate # Lavaland Change
   - XenoTranslator
   - AdvancedGalaticCommonTranslatorImplanter
+  - ArachnicTranslatorImplanter # Floofstation
   - BubblishTranslatorImplanter
   - NekomimeticTranslatorImplanter
   - DraconicTranslatorImplanter
@@ -116,26 +115,20 @@
   - ClothingEyesThermalVisionGoggles
   - RCD #EE
   - RPD
-  - RadioHandheld
   # Shitmed Change
   - EnergyScalpel
   - EnergyCautery
   - AdvancedRetractor
-  - ArachnicTranslatorImplanter # Floofstation
-  - ArachnicTranslator # Floofstation
-  - VehicleWheelchairFolded # Goobstation
 
 - type: latheRecipePack
   id: ProtolatheDynamicEmagAwfulDen
   recipes:
-  - BoxBeanbag
   - BoxShotgunIncendiary
   - BoxShotgunUranium
   - ExplosivePayload
   - GrenadeBlast
   - GrenadeEMP
   - GrenadeFlash
-  - HoloprojectorSecurity
   - MagazineBoxLightRifleIncendiary
   - MagazineBoxLightRifleUranium
   - MagazineBoxMagnumIncendiary
@@ -151,17 +144,14 @@
   - MagazinePistolUranium
   - MagazineRifleIncendiary
   - MagazineRifleUranium
-  - MagazineShotgunBeanbag
   - MagazineShotgunIncendiary
   - MagazineShotgunIncendiary
   - PortableRecharger
   - PowerCageHigh
   - PowerCageMedium
   - PowerCageSmall
-  - ShellTranquilizer
   - SpeedLoaderMagnumIncendiary
   - SpeedLoaderMagnumUranium
-  - TelescopicShield
   - Truncheon
   - WeaponAdvancedLaser
   - WeaponLaserCannon
@@ -171,3 +161,12 @@
   - WeaponEnergyGunMini   # DeltaV - Miniature Energy Gun
   - WeaponEnergyGunPistol # DeltaV - PDW-9 Energy Pistol
   - WeaponGunLaserCarbineAutomatic # DeltaV - IK-60 Laser Carbine
+
+- type: latheRecipePack
+  id: ProtolatheStaticEmagAwfulDen
+  recipes:
+  - HoloprojectorSecurity
+  - BoxBeanbag
+  - ShellTranquilizer
+  - TelescopicShield
+  - MagazineShotgunBeanbag

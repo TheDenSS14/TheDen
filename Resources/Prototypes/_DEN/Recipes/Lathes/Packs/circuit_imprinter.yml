@@ -1,3 +1,5 @@
+# SPDX-FileCopyrightText: 2025 MajorMoth
+# SPDX-FileCopyrightText: 2025 Sir Warock
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
@@ -33,8 +35,6 @@
   - DeepFryerMachineCircuitboard #Nyano - Summary: adds deep fryer circuit board
   - SpaceHeaterMachineCircuitBoard
   - StationAnchorCircuitboard
-  - SeedExtractorMachineCircuitboard
-  - ReagentGrinderIndustrialMachineCircuitboard
   - StasisBedMachineCircuitboard
   - CryoPodMachineCircuitboard
   - N14MaterialCircuitry
@@ -44,17 +44,19 @@
   - ElectrolyzerMachineCircuitboard # Assmos - /tg/ gases
   - BluespaceGasSenderMachineBoard # Assmos - Bluespace Gas
   - ThermomachineFreezerMachineCircuitBoard # Assmos - Moved to staticRecipes from dynamicRecipes
+  - SalvageExpeditionsComputerCircuitboard
+  - OperatingTableCircuitboard # Shitmed Change
 
 - type: latheRecipePack
   id: CircuitImprinterDynamicAwfulDen
   recipes:
+  - SeedExtractorMachineCircuitboard
+  - ReagentGrinderIndustrialMachineCircuitboard
   - DroneElectronics
   - HellfireFreezerMachineCircuitBoard
   - PortableScrubberMachineCircuitBoard
   - CloningPodMachineCircuitboard
   - MedicalScannerMachineCircuitboard
-  - VaccinatorMachineCircuitboard
-  - DiagnoserMachineCircuitboard
   - BiomassReclaimerMachineCircuitboard
   - BiofabricatorMachineCircuitboard
   - SurveillanceCameraRouterCircuitboard
@@ -93,9 +95,6 @@
   - PortableGeneratorPacmanMachineCircuitboard
   - PortableGeneratorSuperPacmanMachineCircuitboard
   - PortableGeneratorJrPacmanMachineCircuitboard
-  - WallmountGeneratorElectronics
-  - WallmountGeneratorAPUElectronics
-  - WallmountSubstationElectronics
   - PowerCageRechargerCircuitboard
   - EmitterCircuitboard
   - ThrusterMachineCircuitboard
@@ -120,13 +119,11 @@
   - FirelockElectronics
   - IntercomElectronics
   - MailingUnitElectronics
-  - SalvageMagnetMachineCircuitboard
   - StationMapElectronics
   - MetempsychoticMachineCircuitboard
-  - SalvageExpeditionsComputerCircuitboard
   - JukeboxCircuitBoard
   - AutodocCircuitboard # Shitmed Change
-#    - OperatingTableCircuitboard # Shitmed Change
+  - OperatingTableAdvancedCircuitboard
   - MaterialSiloCircuitboard
   - GygaxCentralElectronics
   - GygaxPeripheralsElectronics

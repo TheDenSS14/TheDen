@@ -9,12 +9,13 @@
 # arachnids
 marking-SpiderMirror = Mirror
 marking-SpiderMirror-spidermirror = Mirror
-marking-SpiderGlowEyes = Glowing Eyes
-marking-SpiderGlowEyes-spidergloweyes = Glowing Eyes
+marking-SpiderGlowEyes = Eyes (Glowing)
+marking-SpiderGlowEyes-spidergloweyes = Eyes
+marking-SpiderGlowEyes-eyes = Eyes
 marking-SpiderEyesMulti = Multicolor Eyes
 marking-SpiderEyesMulti-spidereyesmulti1 = Top
-marking-SpiderEyesMulti-spidereyesmulti2 = Middle Top
-marking-SpiderEyesMulti-spidereyesmulti3 = Middle Bottom
+marking-SpiderEyesMulti-spidereyesmulti2 = Top Middle
+marking-SpiderEyesMulti-spidereyesmulti3 = Bottom Middle
 marking-SpiderEyesMulti-spidereyesmulti4 = Bottom
 
 # diona
@@ -87,6 +88,7 @@ marking-VitiligoArmL = Vitiligo (Left Arm)
 marking-VitiligoLegL = Vitiligo (Left)
 marking-VitiligoChestF = Vitiligo Spread
 marking-VitiligoChestSpots = Vitiligo Spots
+marking-Shadow = Gloomy
 
 # moths
 marking-MothTrueButterfly = Wings (Rainbow)

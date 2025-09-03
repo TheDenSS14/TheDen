@@ -1,7 +1,8 @@
-// SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT <77995199+DEATHB4DEFEAT@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 Debug <49997488+DebugOk@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 FoxxoTrystan <45297731+FoxxoTrystan@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT
+// SPDX-FileCopyrightText: 2024 Debug
+// SPDX-FileCopyrightText: 2025 FoxxoTrystan
+// SPDX-FileCopyrightText: 2025 portfiend
+// SPDX-FileCopyrightText: 2025 sleepyyapril
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -15,6 +16,7 @@ using Content.Shared.Item;
 using Content.Shared.Nyanotrasen.Kitchen.UI;
 using Content.Shared.Storage;
 using Content.Shared.Tools.Components;
+using Robust.Shared.Containers;
 
 namespace Content.Server.Nyanotrasen.Kitchen.EntitySystems;
 
@@ -25,6 +27,8 @@ public sealed partial class DeepFryerSystem
         // Keep this consistent with the checks in TryInsertItem.
         return HasComp<ItemComponent>(item) &&
                !HasComp<StorageComponent>(item) &&
+               // DEN: Can't insert blacklisted items.
+               !_whitelistSystem.IsBlacklistPass(component.Blacklist, item) &&
                component.Storage.ContainedEntities.Count < component.StorageMaxEntities;
     }
 
@@ -43,6 +47,17 @@ public sealed partial class DeepFryerSystem
         {
             _popupSystem.PopupEntity(
                 Loc.GetString("deep-fryer-storage-no-fit",
+                    ("item", item)),
+                uid,
+                user);
+            return false;
+        }
+
+        // DEN: Can't insert blacklisted items.
+        if (_whitelistSystem.IsBlacklistPass(component.Blacklist, item))
+        {
+            _popupSystem.PopupEntity(
+                Loc.GetString("deep-fryer-item-blacklisted",
                     ("item", item)),
                 uid,
                 user);
@@ -87,7 +102,7 @@ public sealed partial class DeepFryerSystem
 
     private void OnInsertItem(EntityUid uid, DeepFryerComponent component, DeepFryerInsertItemMessage args)
     {
-        var user =  args.Actor; // Floof - fix
+        var user = args.Actor; // Floof - fix
 
         if (!TryComp<HandsComponent>(user, out var handsComponent) ||
             handsComponent.ActiveHandEntity == null)
@@ -95,5 +110,13 @@ public sealed partial class DeepFryerSystem
 
         if (handsComponent.ActiveHandEntity != null)
             TryInsertItem(uid, component, user, handsComponent.ActiveHandEntity.Value);
+    }
+
+    // DEN: Can't insert blacklisted items.
+    private void OnAttemptInsert(Entity<DeepFryerComponent> ent, ref ContainerIsInsertingAttemptEvent args)
+    {
+        if (args.Container.ID == ent.Comp.StorageName
+            && _whitelistSystem.IsBlacklistPass(ent.Comp.Blacklist, args.EntityUid))
+            args.Cancel();
     }
 }

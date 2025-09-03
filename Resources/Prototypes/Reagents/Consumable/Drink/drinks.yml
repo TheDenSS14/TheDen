@@ -544,6 +544,15 @@
         ratios: # DeltaV no duplicating O2 >:3
           CarbonDioxide: 0.5
           WaterVapor: -1.0
+      - !type:Oxygenate # Imp - Thaven can breathe anything
+        conditions:
+        - !type:OrganType
+          type: Thaven
+      - !type:SatiateThirst # Imp - Thaven breathing water vapor get thirsty slower
+        conditions:
+        - !type:OrganType
+          type: Thaven
+        factor: 0.1
 
 - type: reagent
   id: Ice

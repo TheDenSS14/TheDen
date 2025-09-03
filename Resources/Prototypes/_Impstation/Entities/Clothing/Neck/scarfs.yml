@@ -1,0 +1,22 @@
+# SPDX-FileCopyrightText: 2025 January Nelson
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  id: BaseObviousScarf
+  abstract: true
+  components:
+  - type: WearerGetsExamineText
+    examineText: obvious-desc-colors
+    thing: obvious-thing-scarf
+
+- type: entity
+  parent: ClothingNeckScarfBase
+  id: ClothingNeckScarfWrapped
+  name: wrapped scarf
+  description: An extra long scarf that bundles around your neck to keep you warm.
+  components:
+  - type: Sprite
+    sprite: _Impstation/Clothing/Neck/Scarfs/wrappedscarfwhite.rsi
+  - type: Clothing
+    sprite: _Impstation/Clothing/Neck/Scarfs/wrappedscarfwhite.rsi

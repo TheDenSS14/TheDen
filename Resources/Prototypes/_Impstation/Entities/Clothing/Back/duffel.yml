@@ -1,0 +1,12 @@
+# SPDX-FileCopyrightText: 2024 V
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  parent: ClothingBackpackDuffel
+  id: ClothingBackpackDuffelCommandveteran
+  name: command veteran duffel bag
+  description: A sleek duffel bag, earned through a long career as command.
+  components:
+  - type: Sprite
+    sprite: Clothing/Back/Duffels/commandveteran.rsi

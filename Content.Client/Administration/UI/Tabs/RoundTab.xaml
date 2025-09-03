@@ -8,14 +8,14 @@ SPDX-License-Identifier: MIT
 
 <Control
     xmlns="https://spacestation14.io"
-    xmlns:cc="clr-namespace:Content.Client.Administration.UI.CustomControls"
+    xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls"
     Margin="4"
     MinSize="50 50">
     <GridContainer
         Columns="3">
-        <cc:CommandButton Command="startround" Text="{Loc Start Round}" />
-        <cc:CommandButton Command="endround" Text="{Loc End Round}" />
-        <cc:CommandButton Command="restartround" Text="{Loc Restart Round}" />
-        <cc:CommandButton Command="restartroundnow" Text="{Loc administration-ui-round-tab-restart-round-now}" />
+        <controls:ConfirmButton Name="StartRound" Text="{Loc Start Round}" />
+        <controls:ConfirmButton Name="EndRound" Text="{Loc End Round}" />
+        <controls:ConfirmButton Name="RestartRound" Text="{Loc Restart Round}" />
+        <controls:ConfirmButton Name="RestartRoundNow" Text="{Loc administration-ui-round-tab-restart-round-now}" />
     </GridContainer>
 </Control>

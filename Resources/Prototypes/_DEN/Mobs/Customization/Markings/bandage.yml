@@ -1,0 +1,83 @@
+- type: marking
+  parent: BaseMarkingSpeciesHumanHead
+  id: FaceWrapRight
+  bodyPart: Eyes
+  markingCategory: Overlay
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Head/bandage.rsi
+    state: facewrapright
+
+- type: marking
+  parent: BaseMarkingSpeciesHumanHead
+  id: FaceWrapLeft
+  bodyPart: Eyes
+  markingCategory: Overlay
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Head/bandage.rsi
+    state: facewrapleft
+
+- type: marking
+  parent: BaseMarkingSpeciesHumanHead
+  id: FaceWrap
+  bodyPart: Eyes
+  markingCategory: Overlay
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Head/bandage.rsi
+    state: facewrap
+
+- type: marking
+  speciesRestriction: [Vulpkanin]
+  id: FaceWrapRightVulp
+  bodyPart: Eyes
+  markingCategory: Overlay
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Head/bandage.rsi
+    state: facewraprightvulp
+
+- type: marking
+  speciesRestriction: [Vulpkanin]
+  id: FaceWrapLeftVulp
+  bodyPart: Eyes
+  markingCategory: Overlay
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Head/bandage.rsi
+    state: facewrapleftvulp
+
+- type: marking
+  speciesRestriction: [Vulpkanin]
+  id: FaceWrapVulp
+  bodyPart: Eyes
+  markingCategory: Overlay
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Head/bandage.rsi
+    state: facewrapvulp

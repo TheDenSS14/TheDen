@@ -16,6 +16,8 @@
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# The mind roles specified here will be overwritten by the actual entities' GhostRoleComponent when they spawn
+# But the mind roles specified here are the ones checked for role bans when taking a ghost role!
 
 - type: entity
   abstract: true
@@ -107,7 +109,7 @@
   - type: GhostRole
     rules: ghost-role-information-rules-default-team-antagonist
     mindRoles:
-    - MindRoleGhostRoleTeamAntagonist
+    - MindRoleNukeops
     raffle:
       settings: default
   - type: GhostRoleMobSpawner
@@ -137,7 +139,7 @@
       department: Security
       min: 36000 # DeltaV - 10 hours
     mindRoles:
-    - MindRoleGhostRoleSoloAntagonist
+    - MindRoleNukeops
   - type: Sprite
     sprite: Markers/jobs.rsi
     layers:
@@ -155,7 +157,7 @@
     description: roles-antag-nuclear-operative-commander-objective
     rules: ghost-role-information-rules-default-team-antagonist
     mindRoles:
-    - MindRoleGhostRoleTeamAntagonist
+    - MindRoleNukeopsCommander
 
 - type: entity
   categories: [ HideSpawnMenu, Spawner ]
@@ -167,7 +169,7 @@
     description: roles-antag-nuclear-operative-agent-objective
     rules: ghost-role-information-rules-default-team-antagonist
     mindRoles:
-    - MindRoleGhostRoleTeamAntagonist
+    - MindRoleNukeopsMedic
 
 - type: entity
   categories: [ HideSpawnMenu, Spawner ]
@@ -179,7 +181,7 @@
     description: roles-antag-nuclear-operative-objective
     rules: ghost-role-information-rules-default-team-antagonist
     mindRoles:
-    - MindRoleGhostRoleTeamAntagonist
+    - MindRoleNukeops
 
 - type: entity
   categories: [ HideSpawnMenu, Spawner ]
@@ -191,7 +193,7 @@
     description: ghost-role-information-space-dragon-description
     rules: ghost-role-information-space-dragon-rules
     mindRoles:
-    - MindRoleGhostRoleTeamAntagonist
+    - MindRoleDragon
   - type: Sprite
     layers:
     - state: green
@@ -210,7 +212,7 @@
     description: ghost-role-information-space-ninja-description
     rules: ghost-role-information-space-ninja-rules
     mindRoles:
-    - MindRoleGhostRoleSoloAntagonist
+    - MindRoleNinja
     raffle:
       settings: default
   - type: Sprite
@@ -219,3 +221,4 @@
     - state: green
     - sprite: Objects/Weapons/Melee/energykatana.rsi
       state: icon
+

@@ -1,7 +1,8 @@
-# SPDX-FileCopyrightText: 2023 Colin-Tel <113523727+Colin-Tel@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2023 Fluffiest Floofers <thebluewulf@gmail.com>
-# SPDX-FileCopyrightText: 2025 Blitz <73762869+BlitzTheSquishy@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Colin-Tel
+# SPDX-FileCopyrightText: 2023 Fluffiest Floofers
+# SPDX-FileCopyrightText: 2025 Blitz
+# SPDX-FileCopyrightText: 2025 Sir Warock
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -17,7 +18,8 @@
   - type: Clothing
     sprite: Nyanotrasen/Clothing/Misc/letterman_jacket_blue.rsi
   - type: TemperatureProtection
-    coefficient: 0.4
+    heatingCoefficient: 0.8
+    coolingCoefficient: 0.3
 
 - type: entity
   parent: ClothingOuterStorageBase
@@ -31,7 +33,8 @@
   - type: Clothing
     sprite: Nyanotrasen/Clothing/Misc/letterman_jacket_red.rsi
   - type: TemperatureProtection
-    coefficient: 0.4
+    heatingCoefficient: 0.8
+    coolingCoefficient: 0.3
 ## mnk
 
 - type: entity
@@ -45,7 +48,9 @@
   - type: Clothing
     sprite: Nyanotrasen/Clothing/Misc/hoodie_white.rsi
   - type: TemperatureProtection
-    coefficient: 0.4
+    heatingCoefficient: 1.1
+    coolingCoefficient: 0.1
+
 - type: entity
   parent: ClothingOuterStorageBase
   id: ClothingOuterCoatMNKBlackTopCoat
@@ -57,7 +62,9 @@
   - type: Clothing
     sprite: Nyanotrasen/Clothing/Misc/black_top_coat.rsi
   - type: TemperatureProtection
-    coefficient: 0.4
+    heatingCoefficient: 0.8
+    coolingCoefficient: 0.3
+
 - type: entity
   parent: ClothingOuterStorageBase
   id: ClothingOuterCoatMNKBlackJacket
@@ -69,7 +76,8 @@
   - type: Clothing
     sprite: Nyanotrasen/Clothing/Misc/black_jacket.rsi
   - type: TemperatureProtection
-    coefficient: 0.2
+    heatingCoefficient: 0.8
+    coolingCoefficient: 0.3
 
 - type: entity
   parent: ClothingOuterBase

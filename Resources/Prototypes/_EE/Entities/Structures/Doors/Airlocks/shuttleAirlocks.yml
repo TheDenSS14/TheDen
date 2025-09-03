@@ -56,10 +56,18 @@
 - type: entity
   parent: AirlockExternalGlassShuttleDart
   id: AirlockExternalGlassShuttleDartFilled
-  suffix: ERT Ship Spawner, MAX ONE PER MAP
+  suffix: ERT Ship (Dart) Spawner, MAX ONE PER MAP
   components:
     - type: GridFill
       path: /Maps/Shuttles/dart.yml
+
+- type: entity
+  parent: AirlockExternalGlassShuttleDart
+  id: AirlockExternalGlassShuttleNyxFilled
+  suffix: ERT Ship (Nyx) Spawner, MAX ONE PER MAP
+  components:
+    - type: GridFill
+      path: /Maps/Shuttles/TheDen/NTRF_Nyx.yml
 
 - type: entity
   parent: AirlockSyndicateGlassShuttleInfiltrator

@@ -2,6 +2,7 @@
 // SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT
 // SPDX-FileCopyrightText: 2024 VMSolidus
 // SPDX-FileCopyrightText: 2025 ash lea
+// SPDX-FileCopyrightText: 2025 portfiend
 // SPDX-FileCopyrightText: 2025 sleepyyapril
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
@@ -26,10 +27,11 @@ using Content.Shared.HealthExaminable;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Utility;
+using Content.Server._DEN.Body.Systems;
 
 namespace Content.Server.Vampiric
 {
-    public sealed class BloodSuckerSystem : EntitySystem
+    public sealed partial class BloodSuckerSystem : EntitySystem
     {
         [Dependency] private readonly BodySystem _bodySystem = default!;
         [Dependency] private readonly SharedSolutionContainerSystem _solutionSystem = default!;
@@ -49,6 +51,9 @@ namespace Content.Server.Vampiric
             SubscribeLocalEvent<BloodSuckerComponent, GetVerbsEvent<InnateVerb>>(AddSuccVerb);
             SubscribeLocalEvent<BloodSuckedComponent, HealthBeingExaminedEvent>(OnHealthExamined);
             SubscribeLocalEvent<BloodSuckedComponent, DamageChangedEvent>(OnDamageChanged);
+
+            SubscribeLocalEvent<BloodSuckerComponent, ComponentStartup>(OnStartup); // DEN
+            SubscribeLocalEvent<BloodSuckerComponent, ComponentShutdown>(OnShutdown); // DEN
             SubscribeLocalEvent<BloodSuckerComponent, BloodSuckDoAfterEvent>(OnDoAfter);
         }
 

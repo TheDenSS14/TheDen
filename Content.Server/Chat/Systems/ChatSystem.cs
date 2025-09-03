@@ -46,6 +46,7 @@
 // SPDX-FileCopyrightText: 2024 fox
 // SPDX-FileCopyrightText: 2024 ike709
 // SPDX-FileCopyrightText: 2024 themias
+// SPDX-FileCopyrightText: 2025 AirFryerBuyOneGetOneFree
 // SPDX-FileCopyrightText: 2025 Falcon
 // SPDX-FileCopyrightText: 2025 RedFoxIV
 // SPDX-FileCopyrightText: 2025 Timfa
@@ -103,6 +104,9 @@ using Content.Server.Effects;
 using Content.Server.Hands.Systems;
 using Content.Shared.Examine;
 using Content.Shared.Popups;
+using Content.Server._Wizden.Chat.Systems;
+using Content.Server._Floof.Consent;
+using Content.Shared._DEN.Earmuffs;
 
 
 namespace Content.Server.Chat.Systems;
@@ -142,6 +146,10 @@ public sealed partial class ChatSystem : SharedChatSystem
     [Dependency] private readonly EmpathyChatSystem _empathy = default!;
     [Dependency] private readonly SharedPopupSystem _popups = default!; // Floof
     [Dependency] private readonly HandsSystem _hands = default!; // Floof
+    [Dependency] private readonly LastMessageBeforeDeathSystem _lastMessageBeforeDeathSystem = default!; // Imp Edit LastMessageBeforeDeath Webhook
+    [Dependency] private readonly ConsentSystem _consent = default!;
+
+    private readonly string LastMessageConsent = "LastMessage";
 
     public const int VoiceRange = 10; // how far voice goes in world units
     public const int WhisperClearRange = 2; // how far whisper goes while still being understandable, in world units
@@ -316,7 +324,7 @@ public sealed partial class ChatSystem : SharedChatSystem
         bool shouldCapitalizeTheWordI = (!CultureInfo.CurrentCulture.IsNeutralCulture && CultureInfo.CurrentCulture.Parent.Name == "en")
             || (CultureInfo.CurrentCulture.IsNeutralCulture && CultureInfo.CurrentCulture.Name == "en");
 
-        message = SanitizeInGameICMessage(source, message, out var emoteStr, shouldCapitalize, shouldPunctuate, shouldCapitalizeTheWordI);
+        message = SanitizeInGameICMessage(source, message, out var emoteStr, shouldCapitalize, shouldPunctuate, shouldCapitalizeTheWordI, desiredType);
 
         // Was there an emote in the message? If so, send it.
         if (player != null
@@ -335,6 +343,9 @@ public sealed partial class ChatSystem : SharedChatSystem
         // This is really terrible. I hate myself for doing this.
         if (language.SpeechOverride.ChatTypeOverride is { } chatTypeOverride)
             desiredType = chatTypeOverride;
+
+        if (player != null && desiredType == InGameICChatType.Speak) // Imp Edit: Last Message Before Death System
+            HandleLastMessageBeforeDeath(source, player, language, message);
 
         // This message may have a radio prefix, and should then be whispered to the resolved radio channel
         if (checkRadioPrefix)
@@ -529,7 +540,11 @@ public sealed partial class ChatSystem : SharedChatSystem
         // The chat message wrapped in a "x says y" string
         var wrappedMessage = WrapPublicMessage(source, name, message, language: language);
         // The chat message obfuscated via language obfuscation
-        var obfuscated = SanitizeInGameICMessage(source, _language.ObfuscateSpeech(message, language), out var emoteStr, true, _configurationManager.GetCVar(CCVars.ChatPunctuation), (!CultureInfo.CurrentCulture.IsNeutralCulture && CultureInfo.CurrentCulture.Parent.Name == "en") || (CultureInfo.CurrentCulture.IsNeutralCulture && CultureInfo.CurrentCulture.Name == "en"));
+        // APRIL: Dude what the fuck.
+        var obfuscated = SanitizeInGameICMessage(source, _language.ObfuscateSpeech(message, language), out var emoteStr, true,
+            _configurationManager.GetCVar(CCVars.ChatPunctuation),
+            (!CultureInfo.CurrentCulture.IsNeutralCulture && CultureInfo.CurrentCulture.Parent.Name == "en")
+            || (CultureInfo.CurrentCulture.IsNeutralCulture && CultureInfo.CurrentCulture.Name == "en"));
         // The language-obfuscated message wrapped in a "x says y" string
         var wrappedObfuscated = WrapPublicMessage(source, name, obfuscated, language: language);
 
@@ -617,13 +632,8 @@ public sealed partial class ChatSystem : SharedChatSystem
                 || !_interactionSystem.InRangeUnobstructed(source, listener, WhisperClearRange, _subtleWhisperMask))
                 continue;
 
-            if (Transform(session.AttachedEntity.Value).GridUid != Transform(source).GridUid
-                && !CheckAttachedGrids(source, session.AttachedEntity.Value))
-                continue;
-
             if (MessageRangeCheck(session, data, range) != MessageRangeCheckResult.Full)
                 continue; // Won't get logged to chat, and ghosts are too far away to see the pop-up, so we just won't send it to them.
-
 
             var canUnderstandLanguage = _language.CanUnderstand(
                 listener,
@@ -643,7 +653,7 @@ public sealed partial class ChatSystem : SharedChatSystem
                 result = perceivedMessage;
                 wrappedMessage = WrapWhisperMessage(source, "chat-manager-entity-whisper-wrap-message", name, result, language);
             }
-            else if (_interactionSystem.InRangeUnobstructed(source, listener, WhisperMuffledRange))
+            else if (_interactionSystem.InRangeUnobstructed(source, listener, WhisperMuffledRange, _subtleWhisperMask))
             {
                 // Scenario 2: if the listener is too far, they only hear fragments of the message
                 result = ObfuscateMessageReadability(perceivedMessage);
@@ -707,8 +717,16 @@ public sealed partial class ChatSystem : SharedChatSystem
         var ent = Identity.Entity(source, EntityManager);
         var name = FormattedMessage.EscapeText(nameOverride ?? Name(ent));
         action = FormattedMessage.RemoveMarkupPermissive(action);
-        var useSpace = !action.StartsWith("\'s") || !action.StartsWith(",");
-        var space = useSpace || separateNameAndMessage ? " " : "";
+
+        // DEN: use the format of 'detailed' when starting with '!'
+        if (!separateNameAndMessage && action.StartsWith('!'))
+        {
+            action = action.Substring(1);
+            separateNameAndMessage = true;
+        }
+
+        var useSpace = !(action.StartsWith("'") || action.StartsWith(",")); // DEN: remove space when starting an action with ' or ,
+        var space = useSpace || separateNameAndMessage ? " " : ""; // DEN: remove space when starting an action with ' or ,
         var locString = "chat-manager-entity-me-wrap-message";
 
         if (separateNameAndMessage)
@@ -752,9 +770,17 @@ public sealed partial class ChatSystem : SharedChatSystem
         // get the entity's apparent name (if no override provided).
         var ent = Identity.Entity(source, EntityManager);
         var name = FormattedMessage.EscapeText(nameOverride ?? Name(ent));
-        action = FormattedMessage.RemoveMarkupPermissive(action);
-        var useSpace = !action.StartsWith("\'s") || !action.StartsWith(",");
-        var space = useSpace || separateNameAndMessage ? " " : "";
+        action = FormattedMessage.RemoveMarkupPermissive(action).Trim();
+
+        // DEN: use the format of 'detailed' when starting with '!'
+        if (!separateNameAndMessage && action.StartsWith('!'))
+        {
+            action = action.Substring(1);
+            separateNameAndMessage = true;
+        }
+
+        var useSpace = !(action.StartsWith("'") || action.StartsWith(",")); // DEN: remove space when starting an action with ' or ,
+        var space = useSpace || separateNameAndMessage ? " " : ""; // DEN: remove space when starting an action with ' or ,
         var locString = "chat-manager-entity-subtle-wrap-message";
 
         if (separateNameAndMessage)
@@ -765,7 +791,7 @@ public sealed partial class ChatSystem : SharedChatSystem
             ("entityName", name),
             ("entity", ent),
             ("color", color ?? DefaultSpeakColor.ToHex()),
-            ("space", space),
+            ("space", space), // DEN: remove space when starting an action with ' or ,
             ("message", action));
 
         foreach (var (session, data) in GetRecipients(source, WhisperClearRange))
@@ -914,6 +940,12 @@ public sealed partial class ChatSystem : SharedChatSystem
             if (session.AttachedEntity is not { Valid: true } playerEntity)
                 continue;
 
+            // DEN edit: VRChat earmuffs, but on Den!
+            if (TryComp<EarmuffsComponent>(playerEntity, out var earmuffs)
+                && earmuffs.Running && earmuffs.HearRange < data.Range
+                && (channel == ChatChannel.Local || channel == ChatChannel.Emotes))
+                continue;
+
             if (Transform(playerEntity).GridUid != Transform(source).GridUid
                 && !CheckAttachedGrids(source, session.AttachedEntity.Value))
                 continue;
@@ -961,9 +993,27 @@ public sealed partial class ChatSystem : SharedChatSystem
         return !_chatManager.MessageCharacterLimit(player, message);
     }
 
-    // ReSharper disable once InconsistentNaming
-    private string SanitizeInGameICMessage(EntityUid source, string message, out string? emoteStr, bool capitalize = true, bool punctuate = false, bool capitalizeTheWordI = true)
+    /// <summary>
+    ///     Imp Edit: First modify message to respect entity accent, then send it to LastMessage system to record last message info for player
+    /// </summary>
+    public void HandleLastMessageBeforeDeath(EntityUid source, ICommonSession player, LanguagePrototype language, string message)
     {
+        if (_consent.HasConsent(source, LastMessageConsent))
+            return;
+
+        var newMessage = TransformSpeech(source, message, language);
+        _lastMessageBeforeDeathSystem.AddMessage(source, player, newMessage);
+    }
+
+    // ReSharper disable once InconsistentNaming
+    private string SanitizeInGameICMessage(EntityUid source, string message, out string? emoteStr, bool capitalize = true, bool punctuate = false, bool capitalizeTheWordI = true, InGameICChatType channel = InGameICChatType.Speak)
+    {
+        if (channel == InGameICChatType.SubtleOOC)
+        {
+            emoteStr = null;
+            return message;
+        }
+
         var newMessage = SanitizeMessageReplaceWords(message.Trim());
 
         GetRadioKeycodePrefix(source, newMessage, out newMessage, out var prefix);

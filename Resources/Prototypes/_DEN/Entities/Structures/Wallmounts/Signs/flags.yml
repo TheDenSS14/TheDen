@@ -11,8 +11,8 @@
   suffix: right
   components:
   - type: Sprite
-    sprite: _DEN/Structures/Wallmounts/trans_flag.rsi
-    state: trans_flag_right
+    sprite: _DEN/Structures/Wallmounts/Flags/trans_flag.rsi
+    state: flag_right
   - type: Transform
     anchored: true
 
@@ -24,7 +24,1333 @@
   suffix: left
   components:
   - type: Sprite
-    sprite: _DEN/Structures/Wallmounts/trans_flag.rsi
-    state: trans_flag_left
+    sprite: _DEN/Structures/Wallmounts/Flags/trans_flag.rsi
+    state: flag_left
   - type: Transform
     anchored: true
+
+- type: entity
+  parent: BaseFlag
+  id: IntersexFlagRight
+  name: intersex flag
+  description: "A flag representing those who are intersex. The circle symbolises wholeness and completeness."
+  suffix: right
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Wallmounts/Flags/intersex_flag.rsi
+    state: flag_right
+  - type: Transform
+    anchored: true
+
+- type: entity
+  parent: BaseFlag
+  id: IntersexFlagLeft
+  name: intersex flag
+  description: "A flag representing those who are intersex. The circle symbolises wholeness and completeness."
+  suffix: left
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Wallmounts/Flags/intersex_flag.rsi
+    state: flag_left
+  - type: Transform
+    anchored: true
+
+- type: entity
+  parent: BaseFlag
+  id: RainbowFlagRight
+  name: rainbow flag
+  description: "This flag is SO GAY."
+  suffix: right
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Wallmounts/Flags/rainbow_flag.rsi
+    state: flag_right
+  - type: Transform
+    anchored: true
+
+- type: entity
+  parent: BaseFlag
+  id: RainbowFlagLeft
+  name: rainbow flag
+  description: "This flag is SO gay."
+  suffix: left
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Wallmounts/Flags/rainbow_flag.rsi
+    state: flag_left
+  - type: Transform
+    anchored: true
+  
+- type: entity
+  parent: BaseFlag
+  id: ProgressFlagRight
+  name: progress flag
+  description: "A flag encompassing pride and equal rights."
+  suffix: right
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Wallmounts/Flags/progress_flag.rsi
+    state: flag_right
+  - type: Transform
+    anchored: true
+
+- type: entity
+  parent: BaseFlag
+  id: ProgressFlagLeft
+  name: progress flag
+  description: "A flag encompassing pride and equal rights."
+  suffix: left
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Wallmounts/Flags/progress_flag.rsi
+    state: flag_left
+  - type: Transform
+    anchored: true
+
+- type: entity
+  parent: BaseFlag
+  id: AchilleanFlagRight
+  name: achillean flag
+  description: "A flag for men loving men."
+  suffix: right
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Wallmounts/Flags/achillean_flag.rsi
+    state: flag_right
+  - type: Transform
+    anchored: true
+
+- type: entity
+  parent: BaseFlag
+  id: AchilleanFlagLeft
+  name: achillean flag
+  description: "A flag for men-loving men."
+  suffix: left
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Wallmounts/Flags/achillean_flag.rsi
+    state: flag_left
+  - type: Transform
+    anchored: true
+    
+- type: entity
+  parent: BaseFlag
+  id: SapphicFlagRight
+  name: sapphic flag
+  description: "A flag for women-loving women."
+  suffix: right
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Wallmounts/Flags/sapphic_flag.rsi
+    state: flag_right
+  - type: Transform
+    anchored: true
+
+- type: entity
+  parent: BaseFlag
+  id: SapphicFlagLeft
+  name: sapphic flag
+  description: "A flag for women-loving women."
+  suffix: left
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Wallmounts/Flags/sapphic_flag.rsi
+    state: flag_left
+  - type: Transform
+    anchored: true
+
+- type: entity
+  parent: BaseFlag
+  id: PolysexualFlagRight
+  name: polysexual flag
+  description: "A flag for those who are attracted to multiple genders, but not all."
+  suffix: right
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Wallmounts/Flags/polysexual_flag.rsi
+    state: flag_right
+  - type: Transform
+    anchored: true
+
+- type: entity
+  parent: BaseFlag
+  id: PolysexualFlagLeft
+  name: polysexual flag
+  description: "A flag for those who are attracted to multiple genders, but not all."
+  suffix: left
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Wallmounts/Flags/polysexual_flag.rsi
+    state: flag_left
+  - type: Transform
+    anchored: true
+
+- type: entity
+  parent: BaseFlag
+  id: PolyamoryFlagRight
+  name: polyamory flag
+  description: "Plenty of pi to go around."
+  suffix: right
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Wallmounts/Flags/polyamory_flag.rsi
+    state: flag_right
+  - type: Transform
+    anchored: true
+
+- type: entity
+  parent: BaseFlag
+  id: PolyamoryFlagLeft
+  name: polyamory flag
+  description: "Plenty of pi to go around."
+  suffix: left
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Wallmounts/Flags/polyamory_flag.rsi
+    state: flag_left
+  - type: Transform
+    anchored: true
+    
+- type: entity
+  parent: BaseFlag
+  id: PanFlagRight
+  name: pan flag
+  description: "A flag for when everyone is hot."
+  suffix: right
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Wallmounts/Flags/pan_flag.rsi
+    state: flag_right
+  - type: Transform
+    anchored: true
+
+- type: entity
+  parent: BaseFlag
+  id: PanFlagLeft
+  name: pan flag
+  description: "A flag for when everyone is hot."
+  suffix: left
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Wallmounts/Flags/pan_flag.rsi
+    state: flag_left
+  - type: Transform
+    anchored: true
+    
+- type: entity
+  parent: BaseFlag
+  id: GenderqueerFlagRight
+  name: genderqueer flag
+  description: "A flag for those who defy gender norms."
+  suffix: right
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Wallmounts/Flags/genderqueer_flag.rsi
+    state: flag_right
+  - type: Transform
+    anchored: true
+
+- type: entity
+  parent: BaseFlag
+  id: GenderqueerFlagLeft
+  name: genderqueer flag
+  description: "A flag for those who defy gender norms."
+  suffix: left
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Wallmounts/Flags/genderqueer_flag.rsi
+    state: flag_left
+  - type: Transform
+    anchored: true
+    
+- type: entity
+  parent: BaseFlag
+  id: NonBinaryFlagRight
+  name: non-binary flag
+  description: "A flag for those whose identity does not fit the mainstream gender binary."
+  suffix: right
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Wallmounts/Flags/non_binary_flag.rsi
+    state: flag_right
+  - type: Transform
+    anchored: true
+
+- type: entity
+  parent: BaseFlag
+  id: NonBinaryFlagLeft
+  name: non-binary flag
+  description: "A flag for those whose identity does not fit the mainstream gender binary."
+  suffix: left
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Wallmounts/Flags/non_binary_flag.rsi
+    state: flag_left
+  - type: Transform
+    anchored: true
+    
+- type: entity
+  parent: BaseFlag
+  id: AsexualFlagRight
+  name: asexual flag
+  description: "A flag for those who generally don't sexually desire others."
+  suffix: right
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Wallmounts/Flags/asexual_flag.rsi
+    state: flag_right
+  - type: Transform
+    anchored: true
+
+- type: entity
+  parent: BaseFlag
+  id: AsexualFlagLeft
+  name: asexual flag
+  description: "A flag for those who generally don't sexually desire others."
+  suffix: left
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Wallmounts/Flags/asexual_flag.rsi
+    state: flag_left
+  - type: Transform
+    anchored: true
+
+- type: entity
+  parent: BaseFlag
+  id: OmnisexualFlagRight
+  name: omnisexual flag
+  description: "A flag for those attracted to every gender, but differently."
+  suffix: right
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Wallmounts/Flags/omnisexual_flag.rsi
+    state: flag_right
+  - type: Transform
+    anchored: true
+
+- type: entity
+  parent: BaseFlag
+  id: OmnisexualFlagLeft
+  name: omnisexual flag
+  description: "A flag for those attracted to every gender, but differently."
+  suffix: left
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Wallmounts/Flags/omnisexual_flag.rsi
+    state: flag_left
+  - type: Transform
+    anchored: true
+    
+- type: entity
+  parent: BaseFlag
+  id: SunsetFlagRight
+  name: sunset flag
+  description: "The inclusive sunset lesbian flag."
+  suffix: right
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Wallmounts/Flags/sunset_flag.rsi
+    state: flag_right
+  - type: Transform
+    anchored: true
+
+- type: entity
+  parent: BaseFlag
+  id: SunsetFlagLeft
+  name: sunset flag
+  description: "The inclusive sunset lesbian flag."
+  suffix: left
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Wallmounts/Flags/sunset_flag.rsi
+    state: flag_left
+  - type: Transform
+    anchored: true
+    
+- type: entity
+  parent: BaseFlag
+  id: GenderfluidFlagRight
+  name: genderfluid flag
+  description: "A flag for those whose gender identity shifts."
+  suffix: right
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Wallmounts/Flags/genderfluid_flag.rsi
+    state: flag_right
+  - type: Transform
+    anchored: true
+
+- type: entity
+  parent: BaseFlag
+  id: GenderfluidFlagLeft
+  name: genderfluid flag
+  description: "A flag for those whose gender identity shifts."
+  suffix: left
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Wallmounts/Flags/genderfluid_flag.rsi
+    state: flag_left
+  - type: Transform
+    anchored: true
+    
+- type: entity
+  parent: BaseFlag
+  id: BiFlagRight
+  name: bi flag
+  description: "A flag for those attracted to more than one gender."
+  suffix: right
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Wallmounts/Flags/bi_flag.rsi
+    state: flag_right
+  - type: Transform
+    anchored: true
+
+- type: entity
+  parent: BaseFlag
+  id: BiFlagLeft
+  name: bi flag
+  description: "A flag for those attracted to more than one gender."
+  suffix: left
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Wallmounts/Flags/bi_flag.rsi
+    state: flag_left
+  - type: Transform
+    anchored: true
+    
+- type: entity
+  parent: BaseFlag
+  id: AromanticFlagRight
+  name: aromantic flag
+  description: "A flag for those who experience little to no romantic attraction."
+  suffix: right
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Wallmounts/Flags/aromantic_flag.rsi
+    state: flag_right
+  - type: Transform
+    anchored: true
+
+- type: entity
+  parent: BaseFlag
+  id: AromanticFlagLeft
+  name: aromantic flag
+  description: "A flag for those who experience little to no romantic attraction."
+  suffix: left
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Wallmounts/Flags/aromantic_flag.rsi
+    state: flag_left
+  - type: Transform
+    anchored: true
+    
+- type: entity
+  parent: BaseFlag
+  id: PomoFlagRight
+  name: pomosexuality flag
+  description: "A flag for those who don't align with any other sexual orientation labels."
+  suffix: right
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Wallmounts/Flags/pomo_flag.rsi
+    state: flag_right
+  - type: Transform
+    anchored: true
+
+- type: entity
+  parent: BaseFlag
+  id: PomoFlagLeft
+  name: pomosexuality flag
+  description: "A flag for those who don't align with any other sexual orientation labels."
+  suffix: left
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Wallmounts/Flags/pomo_flag.rsi
+    state: flag_left
+  - type: Transform
+    anchored: true
+    
+- type: entity
+  parent: BaseFlag
+  id: DemiromanticFlagRight
+  name: demiromantic flag
+  description: "A flag for those who only become romantically attracted to those they are emotionally close to."
+  suffix: right
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Wallmounts/Flags/demiromantic_flag.rsi
+    state: flag_right
+  - type: Transform
+    anchored: true
+
+- type: entity
+  parent: BaseFlag
+  id: DemiromanticFlagLeft
+  name: demiromantic flag
+  description: "A flag for those who only become romantically attracted to those they are emotionally close to."
+  suffix: left
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Wallmounts/Flags/demiromantic_flag.rsi
+    state: flag_left
+  - type: Transform
+    anchored: true
+
+- type: entity
+  parent: BaseFlag
+  id: DemisexualFlagRight
+  name: demisexual flag
+  description: "A flag for those whom only feel sexual attraction to those they have an emotional bond with."
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Wallmounts/Flags/demisexual_flag.rsi
+    state: flag_right
+  - type: Transform
+    anchored: true
+
+- type: entity
+  parent: BaseFlag
+  id: DemisexualFlagLeft
+  name: demisexual flag
+  description: "A flag for those whom only feel sexual attraction to those they have an emotional bond with."
+  suffix: left
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Wallmounts/Flags/demisexual_flag.rsi
+    state: flag_left
+  - type: Transform
+    anchored: true
+    
+- type: entity
+  parent: BaseFlag
+  id: ButchFlagRight
+  name: butch lesbian flag
+  description: "A flag for masculine lesbians."
+  suffix: right
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Wallmounts/Flags/butch_flag.rsi
+    state: flag_right
+  - type: Transform
+    anchored: true
+
+- type: entity
+  parent: BaseFlag
+  id: ButchFlagLeft
+  name: butch lesbian flag
+  description: "A flag for masculine lesbians."
+  suffix: left
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Wallmounts/Flags/butch_flag.rsi
+    state: flag_left
+  - type: Transform
+    anchored: true
+    
+- type: entity
+  parent: BaseFlag
+  id: GayFlagRight
+  name: gay flag
+  description: "A flag that primarily represents gay men."
+  suffix: right
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Wallmounts/Flags/gay_flag.rsi
+    state: flag_right
+  - type: Transform
+    anchored: true
+
+- type: entity
+  parent: BaseFlag
+  id: GayFlagLeft
+  name: gay flag
+  description: "A flag that primarily represents gay men."
+  suffix: left
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Wallmounts/Flags/gay_flag.rsi
+    state: flag_left
+  - type: Transform
+    anchored: true
+    
+- type: entity
+  parent: BaseFlag
+  id: AgenderFlagRight
+  name: agender flag
+  description: "A flag of those who identify as genderless, or otherwise don't conform to the mainstream gender binary or norms."
+  suffix: right
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Wallmounts/Flags/agender_flag.rsi
+    state: flag_right
+  - type: Transform
+    anchored: true
+
+- type: entity
+  parent: BaseFlag
+  id: AgenderFlagLeft
+  name: agender flag
+  description: "A flag of those who identify as genderless, or otherwise don't conform to the mainstream gender binary or norms."
+  suffix: left
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Wallmounts/Flags/agender_flag.rsi
+    state: flag_left
+  - type: Transform
+    anchored: true
+
+- type: entity
+  parent: BaseFlag
+  id: AcefluxFlagRight
+  name: aceflux flag
+  description: "A flag for those whose sexual attraction fluctuates."
+  suffix: right
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Wallmounts/Flags/aceflux_flag.rsi
+    state: flag_right
+  - type: Transform
+    anchored: true
+
+- type: entity
+  parent: BaseFlag
+  id: AcefluxFlagLeft
+  name: aceflux flag
+  description: "A flag for those whose sexual attraction fluctuates."
+  suffix: left
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Wallmounts/Flags/aceflux_flag.rsi
+    state: flag_left
+  - type: Transform
+    anchored: true
+
+- type: entity
+  parent: BaseFlag
+  id: AegosexualFlagRight
+  name: aegosexual flag
+  description: "A flag representative of aegosexuals."
+  suffix: right
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Wallmounts/Flags/aegosexual_flag.rsi
+    state: flag_right
+  - type: Transform
+    anchored: true
+
+- type: entity
+  parent: BaseFlag
+  id: AegosexualFlagLeft
+  name: aegosexual flag
+  description: "A flag representative of aegosexuals."
+  suffix: left
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Wallmounts/Flags/aegosexual_flag.rsi
+    state: flag_left
+  - type: Transform
+    anchored: true
+
+- type: entity
+  parent: BaseFlag
+  id: AndrogyneFlagRight
+  name: androgyne flag
+  description: "A flag for those that identify as androgyne."
+  suffix: right
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Wallmounts/Flags/androgyne_flag.rsi
+    state: flag_right
+  - type: Transform
+    anchored: true
+
+- type: entity
+  parent: BaseFlag
+  id: AndrogyneFlagLeft
+  name: androgyne flag
+  description: "A flag for those that identify as androgyne."
+  suffix: left
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Wallmounts/Flags/androgyne_flag.rsi
+    state: flag_left
+  - type: Transform
+    anchored: true
+
+- type: entity
+  parent: BaseFlag
+  id: AndrosexualFlagRight
+  name: androsexual flag
+  description: "A flag for those attracted to masculine features."
+  suffix: right
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Wallmounts/Flags/androsexual_flag.rsi
+    state: flag_right
+  - type: Transform
+    anchored: true
+
+- type: entity
+  parent: BaseFlag
+  id: AndrosexualFlagLeft
+  name: androsexual flag
+  description: "A flag for those attracted to masculine features."
+  suffix: left
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Wallmounts/Flags/androsexual_flag.rsi
+    state: flag_left
+  - type: Transform
+    anchored: true
+
+- type: entity
+  parent: BaseFlag
+  id: AroaceFlagRight
+  name: aroace flag
+  description: "A flag representing those that identify as both asexual and aromantic"
+  suffix: right
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Wallmounts/Flags/aroace_flag.rsi
+    state: flag_right
+  - type: Transform
+    anchored: true
+
+- type: entity
+  parent: BaseFlag
+  id: AroaceFlagLeft
+  name: aroace flag
+  description: "A flag representing those that identify as both asexual and aromantic"
+  suffix: left
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Wallmounts/Flags/aroace_flag.rsi
+    state: flag_left
+  - type: Transform
+    anchored: true
+
+- type: entity
+  parent: BaseFlag
+  id: ArofluxFlagRight
+  name: aroflux flag
+  description: "A flag representing those with fluctuating romantic attraction."
+  suffix: right
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Wallmounts/Flags/aroflux_flag.rsi
+    state: flag_right
+  - type: Transform
+    anchored: true
+
+- type: entity
+  parent: BaseFlag
+  id: ArofluxFlagLeft
+  name: aroflux flag
+  description: "A flag representing those with fluctuating romantic attraction."
+  suffix: left
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Wallmounts/Flags/aroflux_flag.rsi
+    state: flag_left
+  - type: Transform
+    anchored: true
+
+- type: entity
+  parent: BaseFlag
+  id: BigenderFlagRight
+  name: bigender flag
+  description: "A flag for those who experience two distinct gender identities."
+  suffix: right
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Wallmounts/Flags/bigender_flag.rsi
+    state: flag_right
+  - type: Transform
+    anchored: true
+
+- type: entity
+  parent: BaseFlag
+  id: BigenderFlagLeft
+  name: bigender flag
+  description: "A flag for those who experience two distinct gender identities."
+  suffix: left
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Wallmounts/Flags/bigender_flag.rsi
+    state: flag_left
+  - type: Transform
+    anchored: true
+
+- type: entity
+  parent: BaseFlag
+  id: BigenderFemFlagRight
+  name: bigender fem flag
+  description: "A flag for those who identify as bigender with a feminine lean."
+  suffix: right
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Wallmounts/Flags/bigenderfem_flag.rsi
+    state: flag_right
+  - type: Transform
+    anchored: true
+
+- type: entity
+  parent: BaseFlag
+  id: BigenderFemFlagLeft
+  name: bigender fem flag
+  description: "A flag for those who identify as bigender with a feminine lean."
+  suffix: left
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Wallmounts/Flags/bigenderfem_flag.rsi
+    state: flag_left
+  - type: Transform
+    anchored: true
+
+- type: entity
+  parent: BaseFlag
+  id: BigenderMascFlagRight
+  name: bigender masc flag
+  description: "A flag for those who identify as bigender with a masculine lean."
+  suffix: right
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Wallmounts/Flags/bigendermasc_flag.rsi
+    state: flag_right
+  - type: Transform
+    anchored: true
+
+- type: entity
+  parent: BaseFlag
+  id: BigenderMascFlagLeft
+  name: bigender masc flag
+  description: "A flag for those who identify as bigender with a masculine lean."
+  suffix: left
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Wallmounts/Flags/bigendermasc_flag.rsi
+    state: flag_left
+  - type: Transform
+    anchored: true
+
+- type: entity
+  parent: BaseFlag
+  id: DemiboyFlagRight
+  name: demiboy flag
+  description: "A flag for those whose gender leans masculine, but not completely."
+  suffix: right
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Wallmounts/Flags/demiboy_flag.rsi
+    state: flag_right
+  - type: Transform
+    anchored: true
+
+- type: entity
+  parent: BaseFlag
+  id: DemiboyFlagLeft
+  name: demiboy flag
+  description: "A flag for those whose gender leans masculine, but not completely."
+  suffix: left
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Wallmounts/Flags/demiboy_flag.rsi
+    state: flag_left
+  - type: Transform
+    anchored: true
+
+- type: entity
+  parent: BaseFlag
+  id: DemifluidFlagRight
+  name: demifluid flag
+  description: "A flag representing those whose gender identity is partially fluid."
+  suffix: right
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Wallmounts/Flags/demifluid_flag.rsi
+    state: flag_right
+  - type: Transform
+    anchored: true
+
+- type: entity
+  parent: BaseFlag
+  id: DemifluidFlagLeft
+  name: demifluid flag
+  description: "A flag representing those whose gender identity is partially fluid."
+  suffix: left
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Wallmounts/Flags/demifluid_flag.rsi
+    state: flag_left
+  - type: Transform
+    anchored: true
+
+- type: entity
+  parent: BaseFlag
+  id: DemigirlFlagRight
+  name: demigirl flag
+  description: "A flag for those whose gender leans feminine, but not completely."
+  suffix: right
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Wallmounts/Flags/demigirl_flag.rsi
+    state: flag_right
+  - type: Transform
+    anchored: true
+
+- type: entity
+  parent: BaseFlag
+  id: DemigirlFlagLeft
+  name: demigirl flag
+  description: "A flag for those whose gender leans feminine, but not completely."
+  suffix: left
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Wallmounts/Flags/demigirl_flag.rsi
+    state: flag_left
+  - type: Transform
+    anchored: true
+
+- type: entity
+  parent: BaseFlag
+  id: DeminonbinaryFlagRight
+  name: deminonbinary flag
+  description: "A flag representing those who partially identify as non-binary."
+  suffix: right
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Wallmounts/Flags/deminonbinary_flag.rsi
+    state: flag_right
+  - type: Transform
+    anchored: true
+
+- type: entity
+  parent: BaseFlag
+  id: DeminonbinaryFlagLeft
+  name: deminonbinary flag
+  description: "A flag representing those who partially identify as non-binary."
+  suffix: left
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Wallmounts/Flags/deminonbinary_flag.rsi
+    state: flag_left
+  - type: Transform
+    anchored: true
+
+- type: entity
+  parent: BaseFlag
+  id: FraysexualityFlagRight
+  name: fraysexuality flag
+  description: "A flag for when strangers are hot."
+  suffix: right
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Wallmounts/Flags/fray_flag.rsi
+    state: flag_right
+  - type: Transform
+    anchored: true
+
+- type: entity
+  parent: BaseFlag
+  id: FraysexualityFlagLeft
+  name: fraysexuality flag
+  description: "A flag for when strangers are hot."
+  suffix: left
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Wallmounts/Flags/fray_flag.rsi
+    state: flag_left
+  - type: Transform
+    anchored: true
+
+- type: entity
+  parent: BaseFlag
+  id: GenderfluxFlagRight
+  name: genderflux flag
+  description: "A flag representative of those with fluctuating gender identity intensity."
+  suffix: right
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Wallmounts/Flags/genderflux_flag.rsi
+    state: flag_right
+  - type: Transform
+    anchored: true
+
+- type: entity
+  parent: BaseFlag
+  id: GenderfluxFlagLeft
+  name: genderflux flag
+  description: "A flag representative of those with fluctuating gender identity intensity."
+  suffix: left
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Wallmounts/Flags/genderflux_flag.rsi
+    state: flag_left
+  - type: Transform
+    anchored: true
+
+- type: entity
+  parent: BaseFlag
+  id: GreyromanticFlagRight
+  name: greyromantic flag
+  description: "A flag representative of those who partially identify as aromantic."
+  suffix: right
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Wallmounts/Flags/greyromantic_flag.rsi
+    state: flag_right
+  - type: Transform
+    anchored: true
+
+- type: entity
+  parent: BaseFlag
+  id: GreyromanticFlagLeft
+  name: greyromantic flag
+  description: "A flag representative of those who partially identify as aromantic."
+  suffix: left
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Wallmounts/Flags/greyromantic_flag.rsi
+    state: flag_left
+  - type: Transform
+    anchored: true
+
+- type: entity
+  parent: BaseFlag
+  id: GreysexualFlagRight
+  name: greysexual flag
+  description: "A flag representative of those who partially identify as asexual."
+  suffix: right
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Wallmounts/Flags/greysexual_flag.rsi
+    state: flag_right
+  - type: Transform
+    anchored: true
+
+- type: entity
+  parent: BaseFlag
+  id: GreysexualFlagLeft
+  name: greysexual flag
+  description: "A flag representative of those who partially identify as asexual."
+  suffix: left
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Wallmounts/Flags/greysexual_flag.rsi
+    state: flag_left
+  - type: Transform
+    anchored: true
+
+- type: entity
+  parent: BaseFlag
+  id: GynesexualFlagRight
+  name: gynesexual flag
+  description: "A flag for those attracted to feminine features."
+  suffix: right
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Wallmounts/Flags/gynesexual_flag.rsi
+    state: flag_right
+  - type: Transform
+    anchored: true
+
+- type: entity
+  parent: BaseFlag
+  id: GynesexualFlagLeft
+  name: gynesexual flag
+  description: "A flag for those attracted to feminine features."
+  suffix: left
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Wallmounts/Flags/gynesexual_flag.rsi
+    state: flag_left
+  - type: Transform
+    anchored: true
+
+- type: entity
+  parent: BaseFlag
+  id: HeteroflexibleFlagRight
+  name: heteroflexible flag
+  description: "A flag representing those who, whilst experiencing some same-sex attraction, are mostly attracted to the opposite sex."
+  suffix: right
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Wallmounts/Flags/heteroflexible_flag.rsi
+    state: flag_right
+  - type: Transform
+    anchored: true
+
+- type: entity
+  parent: BaseFlag
+  id: HeteroflexibleFlagLeft
+  name: heteroflexible flag
+  description: "A flag representing those who, whilst experiencing some same-sex attraction, are mostly attracted to the opposite sex."
+  suffix: left
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Wallmounts/Flags/heteroflexible_flag.rsi
+    state: flag_left
+  - type: Transform
+    anchored: true
+
+- type: entity
+  parent: BaseFlag
+  id: HomoflexibleFlagRight
+  name: homoflexible flag
+  description: "A flag representing those who, whilst experiencing some opposite-sex attraction, are mostly attracted to the same sex."
+  suffix: right
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Wallmounts/Flags/homoflexible_flag.rsi
+    state: flag_right
+  - type: Transform
+    anchored: true
+
+- type: entity
+  parent: BaseFlag
+  id: HomoflexibleFlagLeft
+  name: homoflexible flag
+  description: "A flag representing those who, whilst experiencing some opposite-sex attraction, are mostly attracted to the same sex."
+  suffix: left
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Wallmounts/Flags/homoflexible_flag.rsi
+    state: flag_left
+  - type: Transform
+    anchored: true
+
+- type: entity
+  parent: BaseFlag
+  id: LithosexualFlagRight
+  name: lithosexual flag
+  description: "A flag for those who experience sexual attraction, but do not want it reciprocated. Crush on."
+  suffix: right
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Wallmounts/Flags/lithosexual_flag.rsi
+    state: flag_right
+  - type: Transform
+    anchored: true
+
+- type: entity
+  parent: BaseFlag
+  id: LithosexualFlagLeft
+  name: lithosexual flag
+  description: "A flag for those who experience sexual attraction, but do not want it reciprocated. Crush on."
+  suffix: left
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Wallmounts/Flags/lithosexual_flag.rsi
+    state: flag_left
+  - type: Transform
+    anchored: true
+
+- type: entity
+  parent: BaseFlag
+  id: NeutroisFlagRight
+  name: neutrois flag
+  description: "A flag for those who identify as having no gender."
+  suffix: right
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Wallmounts/Flags/neutrois_flag.rsi
+    state: flag_right
+  - type: Transform
+    anchored: true
+
+- type: entity
+  parent: BaseFlag
+  id: NeutroisFlagLeft
+  name: neutrois flag
+  description: "A flag for those who identify as having no gender."
+  suffix: left
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Wallmounts/Flags/neutrois_flag.rsi
+    state: flag_left
+  - type: Transform
+    anchored: true
+
+- type: entity
+  parent: BaseFlag
+  id: PangenderFlagRight
+  name: pangender flag
+  description: "A flag representative of those who identify as multiple, if not all, genders."
+  suffix: right
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Wallmounts/Flags/pangender_flag.rsi
+    state: flag_right
+  - type: Transform
+    anchored: true
+
+- type: entity
+  parent: BaseFlag
+  id: PangenderFlagLeft
+  name: pangender flag
+  description: "A flag representative of those who identify as multiple, if not all, genders."
+  suffix: left
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Wallmounts/Flags/pangender_flag.rsi
+    state: flag_left
+  - type: Transform
+    anchored: true
+
+- type: entity
+  parent: BaseFlag
+  id: PolygenderFlagRight
+  name: polygender flag
+  description: "A flag representative of those who identify as multiple genders."
+  suffix: right
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Wallmounts/Flags/polygender_flag.rsi
+    state: flag_right
+  - type: Transform
+    anchored: true
+
+- type: entity
+  parent: BaseFlag
+  id: PolygenderFlagLeft
+  name: polygender flag
+  description: "A flag representative of those who identify as multiple genders."
+  suffix: left
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Wallmounts/Flags/polygender_flag.rsi
+    state: flag_left
+  - type: Transform
+    anchored: true
+
+- type: entity
+  parent: BaseFlag
+  id: RecipromanticFlagRight
+  name: recipromantic flag
+  description: "A flag representative of those who are romantically attracted to those who are first attracted to them."
+  suffix: right
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Wallmounts/Flags/recipromantic_flag.rsi
+    state: flag_right
+  - type: Transform
+    anchored: true
+
+- type: entity
+  parent: BaseFlag
+  id: RecipromanticFlagLeft
+  name: recipromantic flag
+  description: "A flag representative of those who are romantically attracted to those who are first attracted to them."
+  suffix: left
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Wallmounts/Flags/recipromantic_flag.rsi
+    state: flag_left
+  - type: Transform
+    anchored: true
+
+- type: entity
+  parent: BaseFlag
+  id: ReciprosexualFlagRight
+  name: reciprosexual flag
+  description: "A flag representative of those who are sexually attracted to those who are first attracted to them."
+  suffix: right
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Wallmounts/Flags/reciprosexual_flag.rsi
+    state: flag_right
+  - type: Transform
+    anchored: true
+
+- type: entity
+  parent: BaseFlag
+  id: ReciprosexualFlagLeft
+  name: reciprosexual flag
+  description: "A flag representative of those who are sexually attracted to those who are first attracted to them."
+  suffix: left
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Wallmounts/Flags/reciprosexual_flag.rsi
+    state: flag_left
+  - type: Transform
+    anchored: true
+
+- type: entity
+  parent: BaseFlag
+  id: TransfemFlagRight
+  name: transfeminine flag
+  description: "A flag representative of transgender women."
+  suffix: right
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Wallmounts/Flags/transfem_flag.rsi
+    state: flag_right
+  - type: Transform
+    anchored: true
+
+- type: entity
+  parent: BaseFlag
+  id: TransfemFlagLeft
+  name: transfeminine flag
+  description: "A flag representative of transgender women."
+  suffix: left
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Wallmounts/Flags/transfem_flag.rsi
+    state: flag_left
+  - type: Transform
+    anchored: true
+
+- type: entity
+  parent: BaseFlag
+  id: TransmascFlagRight
+  name: transmasculine flag
+  description: "A flag representative of transgender men."
+  suffix: right
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Wallmounts/Flags/transmasc_flag.rsi
+    state: flag_right
+  - type: Transform
+    anchored: true
+
+- type: entity
+  parent: BaseFlag
+  id: TransmascFlagLeft
+  name: transmasculine flag
+  description: "A flag representative of transgender men."
+  suffix: left
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Wallmounts/Flags/transmasc_flag.rsi
+    state: flag_left
+  - type: Transform
+    anchored: true
+
+- type: entity
+  parent: BaseFlag
+  id: TrigenderFlagRight
+  name: trigender flag
+  description: "A flag for those that identify with three distinct gender identities."
+  suffix: right
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Wallmounts/Flags/trigender_flag.rsi
+    state: flag_right
+  - type: Transform
+    anchored: true
+
+- type: entity
+  parent: BaseFlag
+  id: TrigenderFlagLeft
+  name: trigender flag
+  description: "A flag for those that identify with three distinct gender identities."
+  suffix: left
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Wallmounts/Flags/trigender_flag.rsi
+    state: flag_left
+  - type: Transform
+    anchored: true
+

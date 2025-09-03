@@ -309,7 +309,7 @@ public abstract class SharedResearchSystem : EntitySystem
         Dirty(uid, component);
 
         var recipes = new List<ProtoId<LatheRecipePrototype>> { recipe };
-        var ev = new TechnologyDatabaseModifiedEvent(null, recipes);
+        var ev = new TechnologyDatabaseModifiedEvent(uid, null, recipes);
         RaiseLocalEvent(uid, ref ev);
     }
 }

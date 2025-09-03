@@ -1,0 +1,55 @@
+# SPDX-FileCopyrightText: 2025 Sir Warock
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: constructionGraph
+  id: GlassesCheapMedicalHUD
+  start: start
+  graph:
+  - node: start
+    edges:
+    - to: glassesCheapMedical
+      steps:
+      - tag: CheapSunglasses
+        name: any unshielded sunglasses
+        icon:
+          sprite: Clothing/Eyes/Glasses/sunglasses.rsi
+          state: icon
+        doAfter: 5
+      - tag: HudMedical
+        name: Any medical HUD
+        icon:
+          sprite: Clothing/Eyes/Hud/med.rsi
+          state: icon
+        doAfter: 5
+      - material: Cable
+        amount: 5
+        doAfter: 5
+  - node: glassesCheapMedical
+    entity: ClothingEyesGlassesCheapMedical
+
+- type: constructionGraph
+  id: GlassesMedicalHUD
+  start: start
+  graph:
+  - node: start
+    edges:
+    - to: glassesMedical
+      steps:
+      - tag: Sunglasses
+        name: any shielded sunglasses
+        icon:
+          sprite: Clothing/Eyes/Glasses/sunglasses.rsi
+          state: icon
+        doAfter: 5
+      - tag: HudMedical
+        name: Any medical HUD
+        icon:
+          sprite: Clothing/Eyes/Hud/med.rsi
+          state: icon
+        doAfter: 5
+      - material: Cable
+        amount: 5
+        doAfter: 5
+  - node: glassesMedical
+    entity: ClothingEyesGlassesMedical

@@ -1,0 +1,12 @@
+# SPDX-FileCopyrightText: 2024 V
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  parent: ClothingBackpackSatchel
+  id: ClothingBackpackSatchelCommandveteran
+  name: command veteran satchel
+  description: A sleek satchel, earned through a long career as command.
+  components:
+  - type: Sprite
+    sprite: Clothing/Back/Satchels/commandveteran.rsi
