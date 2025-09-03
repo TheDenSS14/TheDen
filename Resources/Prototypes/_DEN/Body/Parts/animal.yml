@@ -3,9 +3,15 @@
   name: "right animal hand"
   parent: [PartAnimal, BaseRightHand]
   categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: Mobs/Species/Shadowkin/parts.rsi
 
 - type: entity
   id: LeftHandAnimal
   name: "left animal hand"
   parent: [PartAnimal, BaseLeftHand]
   categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: Mobs/Species/Shadowkin/parts.rsi
