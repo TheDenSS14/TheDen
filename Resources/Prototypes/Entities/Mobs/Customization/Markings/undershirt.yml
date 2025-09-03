@@ -10,14 +10,47 @@
   bodyPart: Undershirt
   markingCategory: Undershirt
   invertSpeciesRestriction: True
-  speciesRestriction: [Plasmamen, Thaven] # TheDen - Thaven
+  speciesRestriction: [Plasmamen, Thaven, Vox] # TheDen - Thaven
+  sexRestriction: [ Male ] # imp undergarments
   coloring:
     default:
       type:
         !type:SimpleColoring
           color: "#FFFFFF"
   sprites:
-  - sprite: Mobs/Customization/undershirt.rsi
+  - sprite: _Impstation/Mobs/Customization/Humanoid/undergarmenttop.rsi # imp undergarments
+    state: undershirt
+
+- type: marking
+  id: UndershirtDefaultF
+  bodyPart: Undershirt
+  markingCategory: Undershirt
+  invertSpeciesRestriction: True
+  speciesRestriction: [Plasmamen, Thaven, Vox] # TheDen - Thaven
+  sexRestriction: [ Female ] # SexRestrictions don't allow for selecting male and unsexed at the same time so you have to do this. I am so sorry
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+        color: "#FFFFFF"
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/Humanoid/undergarmenttop.rsi
+    state: undershirt_f
+
+- type: marking
+  id: UndershirtDefaultU
+  bodyPart: Undershirt
+  markingCategory: Undershirt
+  invertSpeciesRestriction: True
+  speciesRestriction: [Plasmamen, Thaven, Vox] # TheDen - Thaven
+  sexRestriction: [ Unsexed ]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+        color: "#FFFFFF"
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/Humanoid/undergarmenttop.rsi
     state: undershirt
 
 - type: marking
@@ -25,14 +58,47 @@
   bodyPart: Undershirt
   markingCategory: Undershirt
   invertSpeciesRestriction: True
-  speciesRestriction: [Plasmamen, Thaven] # TheDen - Thaven
+  speciesRestriction: [Plasmamen, Thaven, Vox] # TheDen - Thaven
+  sexRestriction: [ Male ]
   coloring:
     default:
       type:
         !type:SimpleColoring
           color: "#FFFFFF"
   sprites:
-  - sprite: Mobs/Customization/undershirt.rsi
+  - sprite: _Impstation/Mobs/Customization/Humanoid/undergarmenttop.rsi # imp undergarments
+    state: rolled_undershirt
+
+- type: marking
+  id: UndershirtRolledF
+  bodyPart: Undershirt
+  markingCategory: Undershirt
+  invertSpeciesRestriction: True
+  speciesRestriction: [Plasmamen, Thaven, Vox] # TheDen - Thaven
+  sexRestriction: [ Female ]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+        color: "#FFFFFF"
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/Humanoid/undergarmenttop.rsi
+    state: rolled_undershirt_f
+
+- type: marking
+  id: UndershirtRolledU
+  bodyPart: Undershirt
+  markingCategory: Undershirt
+  invertSpeciesRestriction: True
+  speciesRestriction: [Plasmamen, Thaven, Vox] # TheDen - Thaven
+  sexRestriction: [ Unsexed ]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+        color: "#FFFFFF"
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/Humanoid/undergarmenttop.rsi
     state: rolled_undershirt
 
 - type: marking
@@ -40,14 +106,47 @@
   bodyPart: Undershirt
   markingCategory: Undershirt
   invertSpeciesRestriction: True
-  speciesRestriction: [Plasmamen, Thaven] # TheDen - Thaven
+  speciesRestriction: [Plasmamen, Thaven, Vox] # TheDen - Thaven
+  sexRestriction: [ Male ]
   coloring:
     default:
       type:
         !type:SimpleColoring
           color: "#FFFFFF"
   sprites:
-  - sprite: Mobs/Customization/undershirt.rsi
+  - sprite: _Impstation/Mobs/Customization/Humanoid/undergarmenttop.rsi # imp undergarments
+    state: sleeveless
+
+- type: marking
+  id: UndershirtSleevelessF
+  bodyPart: Undershirt
+  markingCategory: Undershirt
+  invertSpeciesRestriction: True
+  speciesRestriction: [Plasmamen, Thaven, Vox] # TheDen - Thaven
+  sexRestriction: [ Female ]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/Humanoid/undergarmenttop.rsi
+    state: sleeveless_f
+
+- type: marking
+  id: UndershirtSleevelessU
+  bodyPart: Undershirt
+  markingCategory: Undershirt
+  invertSpeciesRestriction: True
+  speciesRestriction: [Plasmamen, Thaven, Vox] # TheDen - Thaven
+  sexRestriction: [ Unsexed ]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/Humanoid/undergarmenttop.rsi
     state: sleeveless
 
 - type: marking
@@ -55,7 +154,7 @@
   bodyPart: Undershirt
   markingCategory: Undershirt
   invertSpeciesRestriction: True
-  speciesRestriction: [Plasmamen, Thaven] # TheDen - Thaven
+  speciesRestriction: [Plasmamen, Thaven, Vox] # TheDen - Thaven
   coloring:
     default:
       type:
@@ -70,14 +169,47 @@
   bodyPart: Undershirt
   markingCategory: Undershirt
   invertSpeciesRestriction: True
-  speciesRestriction: [Plasmamen, Thaven] # TheDen - Thaven
+  speciesRestriction: [Plasmamen, Thaven, Vox] # TheDen - Thaven
+  sexRestriction: [ Male ]
   coloring:
     default:
       type:
         !type:SimpleColoring
           color: "#FFFFFF"
   sprites:
-  - sprite: Mobs/Customization/undershirt.rsi
+  - sprite: _Impstation/Mobs/Customization/Humanoid/undergarmenttop.rsi # imp undergarments
+    state: gross_sleeveless
+
+- type: marking
+  id: UndershirtGrossSleevelessF
+  bodyPart: Undershirt
+  markingCategory: Undershirt
+  invertSpeciesRestriction: True
+  speciesRestriction: [Plasmamen, Thaven, Vox] # TheDen - Thaven
+  sexRestriction: [ Female ]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+        color: "#FFFFFF"
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/Humanoid/undergarmenttop.rsi
+    state: gross_sleeveless_f
+
+- type: marking
+  id: UndershirtGrossSleevelessU
+  bodyPart: Undershirt
+  markingCategory: Undershirt
+  invertSpeciesRestriction: True
+  speciesRestriction: [Plasmamen, Thaven, Vox] # TheDen - Thaven
+  sexRestriction: [ Unsexed ]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+        color: "#FFFFFF"
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/Humanoid/undergarmenttop.rsi
     state: gross_sleeveless
 
 - type: marking
@@ -85,14 +217,47 @@
   bodyPart: Undershirt
   markingCategory: Undershirt
   invertSpeciesRestriction: True
-  speciesRestriction: [Plasmamen, Thaven] # TheDen - Thaven
+  speciesRestriction: [Plasmamen, Thaven, Vox] # TheDen - Thaven
+  sexRestriction: [ Male ]
   coloring:
     default:
       type:
         !type:SimpleColoring
           color: "#FFFFFF"
   sprites:
-  - sprite: Mobs/Customization/undershirt.rsi
+  - sprite: _Impstation/Mobs/Customization/Humanoid/undergarmenttop.rsi # imp undergarments
+    state: nanotrasen
+
+- type: marking
+  id: UndershirtNanotrasenF
+  bodyPart: Undershirt
+  markingCategory: Undershirt
+  invertSpeciesRestriction: True
+  speciesRestriction: [Plasmamen, Thaven, Vox] # TheDen - Thaven
+  sexRestriction: [ Female ]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+        color: "#FFFFFF"
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/Humanoid/undergarmenttop.rsi
+    state: nanotrasen_f
+
+- type: marking
+  id: UndershirtNanotrasenU
+  bodyPart: Undershirt
+  markingCategory: Undershirt
+  invertSpeciesRestriction: True
+  speciesRestriction: [Plasmamen, Thaven, Vox] # TheDen - Thaven
+  sexRestriction: [ Unsexed ]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+        color: "#FFFFFF"
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/Humanoid/undergarmenttop.rsi
     state: nanotrasen
 
 - type: marking
@@ -100,29 +265,62 @@
   bodyPart: Undershirt
   markingCategory: Undershirt
   invertSpeciesRestriction: True
-  speciesRestriction: [Plasmamen, Thaven] # TheDen - Thaven
+  speciesRestriction: [Plasmamen, Thaven, Vox] # TheDen - Thaven
+  sexRestriction: [ Male ]
   coloring:
     default:
       type:
         !type:SimpleColoring
           color: "#FFFFFF"
   sprites:
-  - sprite: Mobs/Customization/undershirt.rsi
+  - sprite: _Impstation/Mobs/Customization/Humanoid/undergarmenttop.rsi # imp undergarments
     state: binder
+
+- type: marking
+  id: UndershirtBinderF
+  bodyPart: Undershirt
+  markingCategory: Undershirt
+  invertSpeciesRestriction: True
+  speciesRestriction: [Plasmamen, Thaven, Vox] # TheDen - Thaven
+  sexRestriction: [ Female ]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/Humanoid/undergarmenttop.rsi
+    state: binder_f
+
+- type: marking
+  id: UndershirtBinderU
+  bodyPart: Undershirt
+  markingCategory: Undershirt
+  invertSpeciesRestriction: True
+  speciesRestriction: [Plasmamen, Thaven, Vox] # TheDen - Thaven
+  sexRestriction: [ Unsexed ]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/Humanoid/undergarmenttop.rsi
+    state: binder_f
 
 - type: marking
   id: UndershirtBraClassic
   bodyPart: Undershirt
   markingCategory: Undershirt
   invertSpeciesRestriction: True
-  speciesRestriction: [Plasmamen, Thaven] # TheDen - Thaven
+  speciesRestriction: [Plasmamen, Thaven, Vox] # TheDen - Thaven
   coloring:
     default:
       type:
         !type:SimpleColoring
           color: "#FFFFFF"
   sprites:
-  - sprite: Mobs/Customization/undershirt.rsi
+  - sprite: _Impstation/Mobs/Customization/Humanoid/undergarmenttop.rsi # imp undergarments
     state: classic
 
 - type: marking
@@ -130,14 +328,47 @@
   bodyPart: Undershirt
   markingCategory: Undershirt
   invertSpeciesRestriction: True
-  speciesRestriction: [Plasmamen, Thaven] # TheDen - Thaven
+  speciesRestriction: [Plasmamen, Thaven, Vox] # TheDen - Thaven
+  sexRestriction: [ Male ]
   coloring:
     default:
       type:
         !type:SimpleColoring
           color: "#FFFFFF"
   sprites:
-  - sprite: Mobs/Customization/undershirt.rsi
+  - sprite: _Impstation/Mobs/Customization/Humanoid/undergarmenttop.rsi # imp undergarments
+    state: sports
+
+- type: marking
+  id: UndershirtBraSportsF
+  bodyPart: Undershirt
+  markingCategory: Undershirt
+  invertSpeciesRestriction: True
+  speciesRestriction: [Plasmamen, Thaven, Vox] # TheDen - Thaven
+  sexRestriction: [ Female ]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+        color: "#FFFFFF"
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/Humanoid/undergarmenttop.rsi
+    state: sports_f
+
+- type: marking
+  id: UndershirtBraSportsU
+  bodyPart: Undershirt
+  markingCategory: Undershirt
+  invertSpeciesRestriction: True
+  speciesRestriction: [Plasmamen, Thaven, Vox] # TheDen - Thaven
+  sexRestriction: [ Unsexed ]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+        color: "#FFFFFF"
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/Humanoid/undergarmenttop.rsi
     state: sports
 
 - type: marking
@@ -145,12 +376,103 @@
   bodyPart: Undershirt
   markingCategory: Undershirt
   invertSpeciesRestriction: True
-  speciesRestriction: [Plasmamen, Thaven] # TheDen - Thaven
+  speciesRestriction: [Plasmamen, Thaven, Vox] # TheDen - Thaven
+  sexRestriction: [ Male ]
   coloring:
     default:
       type:
         !type:SimpleColoring
           color: "#FFFFFF"
   sprites:
-  - sprite: Mobs/Customization/undershirt.rsi
+  - sprite: _Impstation/Mobs/Customization/Humanoid/undergarmenttop.rsi # imp undergarments
     state: strapless
+
+- type: marking
+  id: UndershirtBraStraplessF
+  bodyPart: Undershirt
+  markingCategory: Undershirt
+  invertSpeciesRestriction: True
+  speciesRestriction: [Plasmamen, Thaven, Vox] # TheDen - Thaven
+  sexRestriction: [ Female ]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+        color: "#FFFFFF"
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/Humanoid/undergarmenttop.rsi
+    state: strapless_f
+
+- type: marking
+  id: UndershirtBraStraplessU
+  bodyPart: Undershirt
+  markingCategory: Undershirt
+  invertSpeciesRestriction: True
+  speciesRestriction: [Plasmamen, Thaven, Vox] # TheDen - Thaven
+  sexRestriction: [ Unsexed ]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+        color: "#FFFFFF"
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/Humanoid/undergarmenttop.rsi
+    state: strapless
+
+# Vox
+
+# - type: marking
+#   id: UndergarmentTopBraVox
+#   bodyPart: Underwear
+#   markingCategory: Underwear
+#   speciesRestriction: [Vox]
+#   coloring:
+#     default:
+#       type:
+#         !type:SimpleColoring
+#           color: "#FFFFFF"
+#   sprites:
+#   - sprite: Mobs/Customization/undergarments.rsi
+#     state: classic_vox
+
+# - type: marking
+#   id: UndergarmentTopSportsbraVox
+#   bodyPart: UndergarmentTop
+#   markingCategory: UndergarmentTop
+#   speciesRestriction: [Vox]
+#   coloring:
+#     default:
+#       type:
+#         !type:SimpleColoring
+#           color: "#FFFFFF"
+#   sprites:
+#   - sprite: Mobs/Customization/undergarments.rsi
+#     state: sports_vox
+
+# - type: marking
+#   id: UndergarmentTopBinderVox
+#   bodyPart: UndergarmentTop
+#   markingCategory: UndergarmentTop
+#   speciesRestriction: [Vox]
+#   coloring:
+#     default:
+#       type:
+#         !type:SimpleColoring
+#           color: "#FFFFFF"
+#   sprites:
+#   - sprite: Mobs/Customization/undergarments.rsi
+#     state: binder_vox
+
+# - type: marking
+#   id: UndergarmentTopTanktopVox
+#   bodyPart: UndergarmentTop
+#   markingCategory: UndergarmentTop
+#   speciesRestriction: [Vox]
+#   coloring:
+#     default:
+#       type:
+#         !type:SimpleColoring
+#           color: "#FFFFFF"
+#   sprites:
+#   - sprite: Mobs/Customization/undergarments.rsi
+#     state: tanktop_vox

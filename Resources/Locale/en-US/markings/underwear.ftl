@@ -17,3 +17,14 @@ marking-UnderwearSatin = Underwear (Satin)
 
 marking-UnderwearTanga-tanga = Underwear
 marking-UnderwearTanga = Underwear (Tanga)
+
+# Reptilian
+
+marking-UnderwearDefaultReptilian-boxers_reptilian = Underwear
+marking-UnderwearDefaultReptilian = Underwear (Default)
+
+marking-UnderwearBriefsReptilian-briefs_reptilian = Underwear
+marking-UnderwearBriefsReptilian = Underwear (Briefs)
+
+marking-UnderwearSatinReptilian-satin_reptilian = Underwear
+marking-UnderwearSatinReptilian = Underwear (Satin)
