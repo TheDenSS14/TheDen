@@ -25,7 +25,7 @@
     - type: Transform
       noRot: true
     - type: AccessReader
-      access: [["Research"], ["Salvage"]]
+      access: [["Research"], ["Salvage"], ["Cargo"]]
     - type: Lock
     - type: ResistLocker
     - type: Sprite
@@ -109,7 +109,7 @@
           enum.PaperLabelVisuals.Layer:
             True: { offset: "0.0,0.3125" }
             False: { offset: "0.0,0.0" }
-            
+
     - type: LockVisuals
     - type: ItemSlots
     - type: ContainerContainer
