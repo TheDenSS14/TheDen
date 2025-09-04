@@ -24,7 +24,9 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 using Content.Server.Body.Systems;
+using Content.Shared.Chat.Prototypes;
 using Content.Shared.Damage;
+using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom;
 
 namespace Content.Server.Body.Components
@@ -75,10 +77,16 @@ namespace Content.Server.Body.Components
         public DamageSpecifier DamageRecovery = default!;
 
         [DataField]
-        public TimeSpan GaspPopupCooldown = TimeSpan.FromSeconds(8);
+        public TimeSpan GaspEmoteCooldown = TimeSpan.FromSeconds(8);
 
         [ViewVariables]
-        public TimeSpan LastGaspPopupTime;
+        public TimeSpan LastGaspEmoteTime;
+
+        /// <summary>
+        ///     The emote when gasps
+        /// </summary>
+        [DataField]
+        public ProtoId<EmotePrototype> GaspEmote = "Gasp";
 
         /// <summary>
         ///     How many cycles in a row has the mob been under-saturated?
