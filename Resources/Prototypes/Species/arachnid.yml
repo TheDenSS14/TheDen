@@ -36,6 +36,7 @@
     TailOversuit: MobHumanoidAnyMarking
     Head: MobArachnidHead
     Snout: MobHumanoidAnyMarking
+    Hair: MobHumanoidAnyMarking # Imp - They have hair options now
     Underwear: MobHumanoidAnyMarking
     Undershirt: MobHumanoidAnyMarking
     Chest: MobArachnidTorso
@@ -67,7 +68,7 @@
       required: true
       defaultMarkings: [ ArachnidEyesDefault ]
     Hair:
-      points: 0
+      points: 1
       required: false
     FacialHair:
       points: 0

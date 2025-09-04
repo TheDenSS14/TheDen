@@ -457,18 +457,6 @@
   shader: unshaded
 
 - type: marking
-  id: SpiderMirror
-  bodyPart: Chest
-  markingCategory: Chest
-  speciesRestriction: [ Arachnid ]
-  forcedColoring: false
-  followSkinColor: false
-  sprites:
-  - sprite: _Impstation/Mobs/Customization/animatedmarkings.rsi
-    state: spidermirror
-  shader: unshaded
-
-- type: marking
   id: SpiderGlowEyes
   bodyPart: Eyes
   markingCategory: Eyes

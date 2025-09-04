@@ -204,3 +204,64 @@
     itemIconStyle: BigItem
     event: !type:ToggleActionEvent
 # Paramedic Siren Hat End
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatWebBeret
+  name: web beret
+  description: It's light and fashionable, if a bit stringy.
+  components:
+  - type: Sprite
+    sprite: _Impstation/Clothing/Head/Hats/beret_web.rsi
+  - type: Clothing
+    sprite: _Impstation/Clothing/Head/Hats/beret_web.rsi
+  - type: Tag
+    tags:
+    - HamsterWearable
+  - type: Butcherable
+    butcheringType: Knife
+    spawned:
+    - id: MaterialWebSilk1
+      amount: 2
+  - type: FlavorProfile
+    flavors:
+      - cobwebs
+    ignoreReagents:
+      - Fiber
+  - type: Construction
+    graph: WebObjects
+    node: webberet
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatWebHat
+  name: web hat
+  description: A roughly woven wide-brim hat made of spider silk! Some strands drift in the air.
+  components:
+  - type: Sprite
+    sprite: _Impstation/Clothing/Head/Hats/web_hat.rsi
+  - type: Clothing
+    sprite: _Impstation/Clothing/Head/Hats/web_hat.rsi
+  - type: Tag
+    tags:
+    - HamsterWearable
+  - type: Butcherable
+    butcheringType: Knife
+    spawned:
+    - id: MaterialWebSilk1
+      amount: 2
+  - type: FlavorProfile
+    flavors:
+      - cobwebs
+    ignoreReagents:
+      - Fiber
+  - type: SolutionContainerManager
+    solutions: # 9 (3 (fiber count of web) * 3 (to craft)) + 6 (magical crafting bonus)
+      food:
+        maxVol: 15
+        reagents:
+        - ReagentId: Fiber
+          Quantity: 15
+  - type: Construction
+    graph: WebObjects
+    node: widehat
