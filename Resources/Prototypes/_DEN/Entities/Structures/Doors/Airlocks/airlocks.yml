@@ -200,7 +200,7 @@
       sprite: _DEN/Structures/Doors/Airlocks/Standard/armory.rsi
 
 - type: entity
-  parent: AirlockSecurity
+  parent: AirlockSecurityGlass
   id: AirlockArmoryGlass
   suffix: Corpsman
   components:
@@ -217,7 +217,7 @@
       sprite: _DEN/Structures/Doors/Airlocks/Standard/corpsman.rsi
 
 - type: entity
-  parent: AirlockSecurity
+  parent: AirlockSecurityGlass
   id: AirlockCorpsmanGlass
   suffix: Corpsman
   components:
