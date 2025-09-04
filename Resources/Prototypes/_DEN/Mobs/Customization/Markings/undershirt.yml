@@ -1,0 +1,18 @@
+# SPDX-FileCopyrightText: 2025 Shaman
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: marking
+  id: UndershirtCropped
+  bodyPart: Undershirt
+  markingCategory: Undershirt
+  invertSpeciesRestriction: True
+  speciesRestriction: [Plasmamen, Thaven] # TheDen - Thaven
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+  - sprite: _DEN/Mobs/Customization/undershirt.rsi
+    state: croppedundershirt

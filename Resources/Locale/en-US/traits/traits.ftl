@@ -39,13 +39,14 @@
 # SPDX-FileCopyrightText: 2025 SixplyDev
 # SPDX-FileCopyrightText: 2025 Skubman
 # SPDX-FileCopyrightText: 2025 Tabitha
+# SPDX-FileCopyrightText: 2025 TheLuggage05
 # SPDX-FileCopyrightText: 2025 Timfa
 # SPDX-FileCopyrightText: 2025 VMSolidus
 # SPDX-FileCopyrightText: 2025 foxcurl
 # SPDX-FileCopyrightText: 2025 portfiend
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 trait-name-Blindness = Blindness
 trait-description-Blindness = You are legally blind, and can't see clearly past a few meters in front of you.
@@ -136,8 +137,9 @@ trait-description-GermanAccent = You speak with a German accent.
 trait-name-RussianAccent = Russian accent
 trait-description-RussianAccent = You speak with a Russian accent.
 
+# imp, changed description to note added word replacements
 trait-name-FrenchAccent = French accent
-trait-description-FrenchAccent = You speak with a French accent.
+trait-description-FrenchAccent = You speak with a French accent, including French word replacements.
 
 trait-name-ItalianAccent = Italian accent
 trait-description-ItalianAccent = You speak with a Italian accent.
