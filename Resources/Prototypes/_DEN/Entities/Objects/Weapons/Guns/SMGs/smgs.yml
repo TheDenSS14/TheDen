@@ -1,6 +1,7 @@
-# SPDX-FileCopyrightText: 2025 Blitz <73762869+BlitzTheSquishy@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 Rosycup <178287475+Rosycup@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Blitz
+# SPDX-FileCopyrightText: 2025 Jakumba
+# SPDX-FileCopyrightText: 2025 Rosycup
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -15,3 +16,12 @@
     sprite: _DEN/Objects/Weapons/Guns/SMGs/BRDI_R25_blue.rsi # The Den sprites
   - type: Clothing
     sprite: _DEN/Objects/Weapons/Guns/SMGs/BRDI_R25_blue.rsi # The Den sprites
+
+- type: entity
+  name: antique typewriter
+  parent: WeaponSubMachineGunTypewriter
+  id: WeaponSubMachineGunTypewriterHoS
+  description: A modern take on the classic design used by mobsters throughout space and time. This specific one was confiscated during the great Tony Spaghetti bust back on April 29th, 2623.
+  components:
+    - type: StealTarget
+      stealGroup: HoSAntiqueWeapon

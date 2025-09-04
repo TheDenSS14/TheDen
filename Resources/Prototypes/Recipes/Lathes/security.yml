@@ -156,15 +156,17 @@
     Steel: 2000
     Gold: 500
 
-- type: latheRecipe
-  id: WeaponCivilianDisabler
-  result: WeaponCivilianDisabler
-  category: Weapons
-  completetime: 6
-  materials:
-    Aluminum: 200
-    Glass: 200
-    Plastic: 300
+# DEN
+# - type: latheRecipe
+#   id: WeaponCivilianDisabler
+#   result: WeaponCivilianDisabler
+#   category: Weapons
+#   completetime: 6
+#   materials:
+#     Aluminum: 200
+#     Glass: 200
+#     Plastic: 300
+# DEN
 
 - type: latheRecipe
   id: WeaponXrayCannon
@@ -1314,16 +1316,18 @@
     Silver: 100
     Gold: 100
 
-- type: latheRecipe
-  id: EnergyCutlass
-  result: EnergyCutlass
-  completetime: 10
-  materials:
-    Tungsten: 300
-    Gold: 300
-    Bluespace: 300
-    Plasma: 300
-    Diamond: 100
+# DEN - Remove hardlight weapons from security
+# - type: latheRecipe
+#   id: EnergyCutlass
+#   result: EnergyCutlass
+#   completetime: 10
+#   materials:
+#     Tungsten: 300
+#     Gold: 300
+#     Bluespace: 300
+#     Plasma: 300
+#     Diamond: 100
+# DEN
 
 - type: latheRecipe
   id: WeaponSubMachineGunFPA90

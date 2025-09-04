@@ -3,6 +3,7 @@
 # SPDX-FileCopyrightText: 2025 Angelo Fallaria
 # SPDX-FileCopyrightText: 2025 Blitz
 # SPDX-FileCopyrightText: 2025 EctoplasmIsGood
+# SPDX-FileCopyrightText: 2025 Jakumba
 # SPDX-FileCopyrightText: 2025 Rosycup
 # SPDX-FileCopyrightText: 2025 Skubman
 # SPDX-FileCopyrightText: 2025 VMSolidus
@@ -240,25 +241,27 @@
   items:
     - WeaponPulsePistolCaptain
 
-- type: loadout
-  id: LoadoutCaptainTerminus
-  category: JobsCommandCaptain
-  cost: 0
-  canBeHeirloom: true
-  guideEntry: SecurityWeapons
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutCaptainWeapon
-    - !type:CharacterJobRequirement
-      jobs:
-        - Captain
-#    - !type:CharacterAgeRequirement - TheDen
-#      min: 21
-    - !type:CharacterSpeciesRequirement
-      species:
-      - Oni
-  items:
-    - Terminus
+# DEN - Remove long arms from captains loadout
+# - type: loadout
+#   id: LoadoutCaptainTerminus
+#   category: JobsCommandCaptain
+#   cost: 0
+#   canBeHeirloom: true
+#   guideEntry: SecurityWeapons
+#   requirements:
+#     - !type:CharacterItemGroupRequirement
+#       group: LoadoutCaptainWeapon
+#     - !type:CharacterJobRequirement
+#       jobs:
+#         - Captain
+# #    - !type:CharacterAgeRequirement - TheDen
+# #      min: 21
+#     - !type:CharacterSpeciesRequirement
+#       species:
+#       - Oni
+#   items:
+#     - Terminus
+# DEN
 
 # Eyes
 - type: loadout

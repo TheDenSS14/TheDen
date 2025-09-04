@@ -164,18 +164,21 @@
     state: icon
   - type: MeleeWeapon
     wideAnimationRotation: -135
-    attackRate: 1.2
+    attackRate: 1 # DEN
     damage:
       types:
-        Blunt: 12
+        Blunt: 18
+        Structural: 10
     soundHit:
       collection: MetalThud
-    bluntStaminaDamageFactor: 3
+    bluntStaminaDamageFactor: 1.5
     heavyRateModifier: 1.5
     heavyDamageBaseModifier: 1.2
-    heavyStaminaCost: 2.5
+    heavyStaminaCost: 12
+    maxTargets: 7
+    angle: 120
   - type: DamageOtherOnHit
-    staminaCost: 9
+    staminaCost: 12
   - type: Item
     size: Normal
   - type: Tag
