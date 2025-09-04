@@ -4,6 +4,28 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 - type: loadout
+  id: LoadoutItemsLighterCentcomm
+  category: JobsCommandAUncategorized
+  cost: 2
+  requirements:
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Dignitary
+  items:
+    - CentCommFlippo
+
+- type: loadout
+  id: LoadoutItemsLighterCommand
+  category: JobsCommandAUncategorized
+  cost: 2
+  requirements:
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Command
+  items:
+    - NanotrasenFlippo
+
+- type: loadout
   id: LoadoutTowelDarkBlue
   category: JobsCommandAUncategorized
   cost: 1
