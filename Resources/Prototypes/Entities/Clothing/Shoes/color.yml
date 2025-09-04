@@ -78,7 +78,7 @@
     sprite: Clothing/Shoes/color.rsi
     layers:
     - state: icon
-      color: "#0089EF"    
+      color: "#0089EF"
     - state: soles-icon
   - type: Item
     inhandVisuals:
@@ -109,7 +109,7 @@
     sprite: Clothing/Shoes/color.rsi
     layers:
     - state: icon
-      color: "#723A02"    
+      color: "#723A02"
     - state: soles-icon
   - type: Item
     inhandVisuals:
@@ -140,7 +140,7 @@
     sprite: Clothing/Shoes/color.rsi
     layers:
     - state: icon
-      color: "#5ABF2F"    
+      color: "#5ABF2F"
     - state: soles-icon
   - type: Item
     inhandVisuals:
@@ -171,7 +171,7 @@
     sprite: Clothing/Shoes/color.rsi
     layers:
     - state: icon
-      color: "#EF8100"    
+      color: "#EF8100"
     - state: soles-icon
   - type: Item
     inhandVisuals:
@@ -202,7 +202,7 @@
     sprite: Clothing/Shoes/color.rsi
     layers:
     - state: icon
-      color: "#940000"    
+      color: "#940000"
     - state: soles-icon
   - type: Item
     inhandVisuals:
@@ -233,7 +233,7 @@
     sprite: Clothing/Shoes/color.rsi
     layers:
     - state: icon
-      color: "#EBE216"    
+      color: "#EBE216"
     - state: soles-icon
   - type: Item
     inhandVisuals:
@@ -264,7 +264,7 @@
     sprite: Clothing/Shoes/color.rsi
     layers:
     - state: icon
-      color: "#9C0DE1"    
+      color: "#9C0DE1"
     - state: soles-icon
   - type: Item
     inhandVisuals:
@@ -283,3 +283,50 @@
       - state: equipped-FEET
         color: "#9C0DE1"
       - state: soles-equipped-FEET
+
+# Web Shoes
+- type: entity
+  parent: ClothingShoesBaseButcherable
+  id: ClothingShoesColorWeb
+  name: web sneakers # imp edit
+  description: Sleek, silky sneakers. They pick up a lot of dust... # imp edit
+  components:
+  - type: Sprite
+    sprite: Clothing/Shoes/color.rsi
+    layers:
+    - state: WEB-icon
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#ebebeb"
+      right:
+      - state: inhand-right
+        color: "#ebebeb"
+  - type: Clothing
+    sprite: Clothing/Shoes/color.rsi
+    clothingVisuals:
+      shoes:
+      - state: equipped-FEET
+        color: "#ebebeb"
+      - state: contrastedsoles-equipped-FEET
+  - type: Butcherable
+    butcheringType: Knife
+    spawned:
+    - id: MaterialWebSilk1
+      amount: 2
+  - type: FlavorProfile
+    flavors:
+      - cobwebs
+    ignoreReagents:
+      - Fiber
+  - type: SolutionContainerManager
+    solutions: # 6 (3 (fiber count of web) * 2 (to craft)) + 6 (magical crafting bonus)
+      food:
+        maxVol: 12
+        reagents:
+        - ReagentId: Fiber
+          Quantity: 12
+  - type: Construction
+    graph: WebObjects
+    node: shoes
