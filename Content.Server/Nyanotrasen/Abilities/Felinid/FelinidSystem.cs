@@ -158,11 +158,11 @@ public sealed partial class FelinidSystem : EntitySystem
             return;
         }
 
-        // if (component.HairballAction != null)
-        // {
-        //     _actionsSystem.SetCharges(component.HairballAction, 1); // You get the charge back and that's it. Tough.
-        //     _actionsSystem.SetEnabled(component.HairballAction, true);
-        // }
+        if (component.HairballAction != null)
+        {
+            _actionsSystem.SetCharges(component.HairballAction, 1); // You get the charge back and that's it. Tough.
+            _actionsSystem.SetEnabled(component.HairballAction, false);
+        }
 
         Del(component.EatActionTarget.Value);
         component.EatActionTarget = null;
