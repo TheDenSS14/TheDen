@@ -17,11 +17,17 @@
   name: synthesizer
   components:
   - type: Instrument
-    program: 62
+    program: 87 # The Den - changed to the synth lead
   - type: SwappableInstrument
     instrumentList:
-      "Electro": {62: 0} #i needed generic sounding synth presets, sue me
-      "Bubbles": {63: 0}
+      # Begin Den additions - more/adjusted synthesizer instruments
+      "Electric Piano A": {4: 0}
+      "Electric Piano B": {5: 0}
+      "Synth Brass": {63: 0}
+      "Synth Lead": {87: 0}
+      "Warm Pad": {88: 0}
+      "Choir Pad": {91: 0}
+      # End Den additions
   - type: Sprite
     sprite: Objects/Fun/Instruments/h_synthesizer.rsi
   - type: StaticPrice

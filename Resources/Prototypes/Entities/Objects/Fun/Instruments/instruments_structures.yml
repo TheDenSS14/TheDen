@@ -168,6 +168,13 @@
   components:
   - type: Instrument
     program: 81
+  # Begin Den additions - more/adjusted instruments
+  - type: SwappableInstrument
+    instrumentList:
+      "Square Wave": { 80: 0 }
+      "Sawtooth Wave": { 81: 0 }
+      "Synth Brass": { 83: 0 }
+  # End Den additions
   - type: Sprite
     state: minimoog
 
@@ -203,3 +210,11 @@
   - type: Instrument
     allowPercussion: true
     allowProgramChange: true
+  # Begin Den additions
+  - type: PointLight
+    enabled: true
+    castShadows: false
+    radius: 1.5
+    energy: 1.5
+    color: green
+  # End Den additions
