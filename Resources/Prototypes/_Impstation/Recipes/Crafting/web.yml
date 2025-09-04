@@ -143,6 +143,22 @@
   objectType: Item
 
 - type: construction
+  name: web shoes
+  id: ClothingShoesColorWeb
+  graph: WebObjects
+  startNode: start
+  targetNode: shoes
+  category: construction-category-clothing
+  description: "Sleek, silky shoes. They pick up a lot of dust..."
+  entityWhitelist:
+    tags:
+    - SpiderCraft
+  icon:
+    sprite: Clothing/Hands/Gloves/Color/color.rsi
+    state: WEB-icon
+  objectType: Item
+
+- type: construction
   name: striped web scarf
   id: ClothingNeckScarfStripedWeb
   graph: WebObjects
