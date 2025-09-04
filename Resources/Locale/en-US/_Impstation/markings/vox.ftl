@@ -86,5 +86,5 @@ marking-UnderwearStrappy-strappy1 = Belt
 marking-UnderwearStrappy-strappy2 = Belt
 marking-UnderwearStrappy-strappy3 = Underwear
 
-marking-UnderwearTangaV = Tanga (Alt)
+marking-UnderwearTangaV = Tanga
 marking-UnderwearTangaV-tanga = Underwear
