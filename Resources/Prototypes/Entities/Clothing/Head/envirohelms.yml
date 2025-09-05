@@ -1,6 +1,8 @@
-# SPDX-FileCopyrightText: 2025 Skubman <ba.fallaria@gmail.com>
-# SPDX-FileCopyrightText: 2025 Tirochora <leotabletdb@gmail.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Skubman
+# SPDX-FileCopyrightText: 2025 Tirochora
+# SPDX-FileCopyrightText: 2025 Vanessa
+# SPDX-FileCopyrightText: 2025 Winter
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -24,7 +26,7 @@
       head:
       - state: equipped-HELMET
       - state: on-equipped-HELMET
-  - type: ToggleableLightVisuals
+  - type: ToggleableVisuals
     inhandVisuals:
       left:
       - state: on-inhand-left
@@ -204,7 +206,7 @@
     sprite: Clothing/Head/Envirohelms/ancientvoid.rsi
   - type: Clothing
     sprite: Clothing/Head/Envirohelms/ancientvoid.rsi
-  - type: ToggleableLightVisuals
+  - type: ToggleableVisuals
     clothingVisuals:
       head:
       - state: on-equipped-HELMET

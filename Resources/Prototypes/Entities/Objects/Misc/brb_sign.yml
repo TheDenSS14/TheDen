@@ -1,5 +1,6 @@
-# SPDX-FileCopyrightText: 2022 efzapa <102577236+efzapa@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 efzapa
+# SPDX-FileCopyrightText: 2025 Tiniest Shark
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: MIT
 
@@ -12,3 +13,8 @@
   - type: Sprite
     sprite: Objects/Misc/brbsign.rsi
     state: icon
+  - type: Clothing
+    sprite: Objects/Misc/brbsign.rsi
+    quickEquip: false
+    slots:
+    - Neck

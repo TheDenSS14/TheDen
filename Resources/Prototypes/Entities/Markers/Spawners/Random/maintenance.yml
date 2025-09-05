@@ -36,7 +36,10 @@
 # SPDX-FileCopyrightText: 2024 lzk
 # SPDX-FileCopyrightText: 2024 metalgearsloth
 # SPDX-FileCopyrightText: 2024 themias
+# SPDX-FileCopyrightText: 2025 AsnDen
 # SPDX-FileCopyrightText: 2025 Blitz
+# SPDX-FileCopyrightText: 2025 Eightballll
+# SPDX-FileCopyrightText: 2025 Field Command
 # SPDX-FileCopyrightText: 2025 GNUtopia
 # SPDX-FileCopyrightText: 2025 Skubman
 # SPDX-FileCopyrightText: 2025 Timfa
@@ -351,6 +354,8 @@
         id: WristwatchGold
       - !type:EntSelector
         id: GoldenPersonalAI
+      - !type:EntSelector
+        id: WeaponLaserTagGun # DeltaV - Add small chance of it spawning in maints locker.
 
 - type: entity
   name: Maint Loot Spawner

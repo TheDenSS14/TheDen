@@ -1,9 +1,10 @@
-# SPDX-FileCopyrightText: 2023 Colin-Tel <113523727+Colin-Tel@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 KekaniCreates <87507256+KekaniCreates@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 Tirochora <leotabletdb@gmail.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Colin-Tel
+# SPDX-FileCopyrightText: 2025 KekaniCreates
+# SPDX-FileCopyrightText: 2025 Tiniest Shark
+# SPDX-FileCopyrightText: 2025 Tirochora
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: entity
   parent: Holoprojector
@@ -14,7 +15,7 @@
   - type: HolosignProjector
     signProto: HolosignEng
   - type: Sprite
-    sprite: Nyanotrasen/Objects/Devices/Holoprojectors/eng.rsi
+    sprite: Objects/Devices/Holoprojectors/atmos.rsi #TheDen - Ported in-hands over, this is identical to the atmos holo. Might as well use it.
     state: icon
   - type: ItemSlots
     slots:

@@ -1,0 +1,25 @@
+# SPDX-FileCopyrightText: 2025 Jakumba
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  id: RightHandAnimal
+  name: "right animal hand"
+  parent: [PartAnimal, BaseRightHand]
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: Mobs/Species/Shadowkin/parts.rsi
+    layers:
+    - state: r_hand
+
+- type: entity
+  id: LeftHandAnimal
+  name: "left animal hand"
+  parent: [PartAnimal, BaseLeftHand]
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: Mobs/Species/Shadowkin/parts.rsi
+    layers:
+    - state: l_hand
