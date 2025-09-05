@@ -36,7 +36,7 @@
 
 - type: entity
   name: antique energy shotgun
-  parent: [WeaponEnergyShotgun]
+  parent: [WeaponEnergyShotgun, BaseSecurityContraband]
   id: WeaponEnergyShotgunWarden
   description: One of a few surviving prototypes of an energy shotgun, which never made it to mass production. It offers the possibility of both lethal and non-lethal shots, making it a versatile weapon.
   components:
@@ -54,7 +54,7 @@
 
 - type: entity
   name: antique antelope
-  parent: WeaponShotgunAntelope
+  parent: [WeaponShotgunAntelope, BaseSecurityContraband]
   id: WeaponShotgunAntelopeHoS
   description: A mag-fed shotgun designed for neutralizing threats and keeping criminals at bay with overwhelming force. This one has 14 tallymarks on the stock.
   components:

@@ -1,16 +1,17 @@
-# SPDX-FileCopyrightText: 2022 13spacemen <46101244+13spacemen@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2022 Joosep Jääger <joosep.jaager@gmail.com>
-# SPDX-FileCopyrightText: 2023 daerSeebaer <61566539+daerSeebaer@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 Debug <49997488+DebugOk@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 Unkn0wn_Gh0st <shadowstalkermll@gmail.com>
-# SPDX-FileCopyrightText: 2024 VMSolidus <evilexecutive@gmail.com>
-# SPDX-FileCopyrightText: 2024 deltanedas <39013340+deltanedas@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 Paulo Artur Pinheiro Viana Villaça <112904295+AlgumCorrupto@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 Rosycup <178287475+Rosycup@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 Skubman <ba.fallaria@gmail.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 13spacemen
+# SPDX-FileCopyrightText: 2022 Joosep Jääger
+# SPDX-FileCopyrightText: 2023 daerSeebaer
+# SPDX-FileCopyrightText: 2024 Debug
+# SPDX-FileCopyrightText: 2024 Unkn0wn_Gh0st
+# SPDX-FileCopyrightText: 2024 VMSolidus
+# SPDX-FileCopyrightText: 2024 deltanedas
+# SPDX-FileCopyrightText: 2025 Paulo Artur Pinheiro Viana Villaça
+# SPDX-FileCopyrightText: 2025 Rosycup
+# SPDX-FileCopyrightText: 2025 Skubman
+# SPDX-FileCopyrightText: 2025 Winter
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: AirlockGroup
   id: Standard
@@ -49,7 +50,7 @@
     medical maintenance:      _DEN/Structures/Doors/Airlocks/Standard/maint_medical.rsi
     mystagogue:               _DEN/Structures/Doors/Airlocks/Standard/command_rd.rsi
     paramedic:                _DEN/Structures/Doors/Airlocks/Standard/paramedic.rsi
-    roboticist:               _DEN//Structures/Doors/Airlocks/Standard/roboticist.rsi
+    roboticist:               _DEN/Structures/Doors/Airlocks/Standard/roboticist.rsi
     salvage:                  _DEN/Structures/Doors/Airlocks/Standard/salvage.rsi
     security:                 _DEN/Structures/Doors/Airlocks/Standard/security.rsi
     security maintenance:     _DEN/Structures/Doors/Airlocks/Standard/maint_security.rsi
@@ -95,7 +96,7 @@
     medical maintenance:      _DEN/Structures/Doors/Airlocks/Glass/maint_medical.rsi
     mystagogue:               _DEN/Structures/Doors/Airlocks/Glass/command_rd.rsi
     paramedic:                _DEN/Structures/Doors/Airlocks/Glass/paramedic.rsi
-    roboticist:               _DEN//Structures/Doors/Airlocks/Glass/roboticist.rsi
+    roboticist:               _DEN/Structures/Doors/Airlocks/Glass/roboticist.rsi
     salvage:                  _DEN/Structures/Doors/Airlocks/Glass/salvage.rsi
     security:                 _DEN/Structures/Doors/Airlocks/Glass/security.rsi
     security maintenance:     _DEN/Structures/Doors/Airlocks/Glass/maint_security.rsi

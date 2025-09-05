@@ -7,7 +7,7 @@
 
 - type: entity
   name: BRDI R-25
-  parent: WeaponSubMachineGunBRDIR25
+  parent: [WeaponSubMachineGunBRDIR25, BaseCentcommContraband]
   id: WeaponSubMachineGunBRDIR25BSO
   description: An iconic weapon used by members of the Biesel Republic Foreign Legion. Repainted for Blueshield Officers.
   suffix: BSO # TheDen
@@ -19,7 +19,7 @@
 
 - type: entity
   name: antique typewriter
-  parent: WeaponSubMachineGunTypewriter
+  parent: [WeaponSubMachineGunTypewriter, BaseSecurityContraband]
   id: WeaponSubMachineGunTypewriterHoS
   description: A modern take on the classic design used by mobsters throughout space and time. This specific one was confiscated during the great Tony Spaghetti bust back on April 29th, 2623.
   components:
