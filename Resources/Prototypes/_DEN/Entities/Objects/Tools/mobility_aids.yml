@@ -1,3 +1,4 @@
+# SPDX-FileCopyrightText: 2025 Winter
 # SPDX-FileCopyrightText: 2025 portfiend
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
@@ -33,7 +34,7 @@
       sprite: _DEN/Objects/Tools/Mobility/cane_anatomical.rsi
       layers:
         - state: cane
-          map: ["enum.ToggleVisuals.Layer"]
+          map: ["enum.ToggleableVisuals.Layer"]
           visible: true
     - type: Item
       sprite: _DEN/Objects/Tools/Mobility/cane_anatomical.rsi
@@ -50,8 +51,8 @@
     - type: Appearance
     - type: GenericVisualizer
       visuals:
-        enum.ToggleVisuals.Toggled:
-          enum.ToggleVisuals.Layer:
+        enum.ToggleableVisuals.Enabled:
+          enum.ToggleableVisuals.Layer:
             True: { state: cane }
             False: { state: cane_folded }
 
