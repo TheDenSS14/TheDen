@@ -1,9 +1,10 @@
 - type: entity
   parent: BaseUnknownShuttleRule
   id: ERPSmall
+  categories: [HideSpawnMenu] #TheDen - removes from spawn menu
   components:
   - type: StationEvent
-    startAnnouncement: station-event-erp-shuttle-incoming
+    startAnnouncement: true
     weight: 0 #  Admin only.
   - type: LoadMapRule
     preloadedGrid: ShuttleERPSmall
