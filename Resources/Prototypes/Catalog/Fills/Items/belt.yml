@@ -98,11 +98,14 @@
   components:
   - type: StorageFill
     contents:
-      - id: GrenadeFlashBang
-      - id: TearGasGrenade
+#      - id: GrenadeFlashBang # TheDen
+#      - id: TearGasGrenade # TheDen
       - id: Stunbaton
+#      - id: Handcuffs # TheDen
       - id: Handcuffs
-      - id: Handcuffs
+      - id: HoloprojectorSecurity # TheDen
+      - id: RadioHandheldSecurity # TheDen
+      - id: DeviceSirenSecurity # TheDen
 
 - type: entity
   id: ClothingBeltJanitorFilled
