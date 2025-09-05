@@ -18,12 +18,11 @@
   - type: Clothing
     quickEquip: false
     sprite: _DEN/Objects/Devices/sirensecurity.rsi
-    equippedPrefix: off
     slots:
     - suitStorage
     clothingVisuals:
       suitstorage:
-      - state: equipped-SUITSTORAGE
+      - state: off-equipped-SUITSTORAGE
   - type: ItemToggle
     predictable: false
     onUse: false
@@ -46,13 +45,13 @@
   - type: ToggleableVisuals
     spriteLayer: light
     clothingVisuals:
-      head:
+      suitstorage:
       - state: on-equipped-SUITSTORAGE
         shader: unshaded
   - type: PointLight
     enabled: false
     radius: 1.4
-    energy: 1.8
+    energy: 3
     color: red
     netsync: false
     mask: /Textures/Effects/LightMasks/double_cone.png
@@ -107,6 +106,7 @@
   - type: ToggleClothing
     action: ActionToggleSirenBlueshield
   - type: PointLight
+    energy: 6
     color: blue
 
 - type: entity
