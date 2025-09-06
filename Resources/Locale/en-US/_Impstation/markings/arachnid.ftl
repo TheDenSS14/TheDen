@@ -82,6 +82,10 @@ marking-ArachnidLLegSegments-segments2 = Shin
 
 # RHand
 
+# Underwear
+
+# Undershirt
+
 # FacialHair
 
 # Hair
