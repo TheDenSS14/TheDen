@@ -116,3 +116,55 @@
     - type: FoodSequenceElement
       entries:
         CottonBurger: OviniaPlushie
+
+- type: entity
+  parent: BaseItem
+  id: SkimmerDiscus
+  name: skimmer discus
+  description: "A glowing rayskin ring used in the thaven sport of Skimmer, thrown through underwater goals in violent six-on-six matches."
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Fun/skimmerdiscus.rsi
+    layers:
+    - state: icon-underglow
+      shader: unshaded
+    - state: icon
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape: !type:PhysShapeCircle
+          radius: 0.25
+        density: 20
+        mask:
+        - ItemMask
+        restitution: 0.8 # bouncy
+  - type: DisarmMalus
+    malus: -.1
+  - type: Catchable
+    catchChance: 300
+    catchSuccessSound:
+      path: /Audio/Effects/toss.ogg
+  - type: EmitSoundOnCollide
+    sound:
+      path: /Audio/Effects/toss.ogg
+  - type: Item
+    size: Small
+    sprite: _DEN/Objects/Fun/skimmerdiscus.rsi
+    layers:
+    - state: icon-underglow
+      shader: unshaded
+    - state: icon
+    inhandVisuals:
+      left:
+      - state: inhand-left-underglow
+        shader: unshaded
+      - state: inhand-left
+      right:
+      - state: inhand-right-underglow
+        shader: unshaded
+      - state: inhand-right
+  - type: PointLight
+    radius: 1.5
+    color: "#FF5588"
+  - type: TileFrictionModifier
+    modifier: 0.1
