@@ -266,7 +266,28 @@
     - BorgChassis
   chatMessages: ["chat-emote-msg-salute"]
   chatTriggers:
+    - salute
+    - salute.
+    - salute!
     - salutes
+    - salutes.
+    - salutes!
+
+- type: emote
+  id: Gasp
+  name: chat-emote-name-gasp
+  icon: Interface/Emotes/vocal.png
+  whitelist:
+    components:
+    - Respirator
+  chatMessages: ["chat-emote-msg-gasp"]
+  chatTriggers:
+    - gasp
+    - gasp.
+    - gasp!
+    - gasps
+    - gasps.
+    - gasps!
 
 - type: emote
   id: DefaultDeathgasp
