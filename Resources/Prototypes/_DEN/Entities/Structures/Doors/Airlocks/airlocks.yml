@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2025 Winter
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 # New airlocks for The Den
 
 # Salvage
@@ -200,7 +204,7 @@
       sprite: _DEN/Structures/Doors/Airlocks/Standard/armory.rsi
 
 - type: entity
-  parent: AirlockSecurity
+  parent: AirlockSecurityGlass
   id: AirlockArmoryGlass
   suffix: Corpsman
   components:
@@ -217,7 +221,7 @@
       sprite: _DEN/Structures/Doors/Airlocks/Standard/corpsman.rsi
 
 - type: entity
-  parent: AirlockSecurity
+  parent: AirlockSecurityGlass
   id: AirlockCorpsmanGlass
   suffix: Corpsman
   components:

@@ -7,7 +7,7 @@
 
 - type: entity
   name: Typewriter
-  parent: BaseWeaponSubMachineGun
+  parent: [BaseWeaponSubMachineGun, BaseGunWieldable] # Den - added wieldability
   id: WeaponSubMachineGunTypewriter
   description: A modern take on the classic design used by mobsters throughout space and time. Types .35 auto ammo.
   components:
@@ -21,8 +21,8 @@
   - type: Clothing
     sprite: _DV/Objects/Weapons/Guns/SMGs/typewriter.rsi
   - type: Gun
-    minAngle: 1
-    maxAngle: 15
+    minAngle: 10 # DEN - added wieldability
+    maxAngle: 20 # DEN - added wieldability
     angleIncrease: 5
     angleDecay: 20
     fireRate: 8
@@ -53,3 +53,9 @@
     steps: 1
     zeroVisible: true
   - type: Appearance
+  # DEN - added wieldability
+  - type: Wieldable
+  - type: GunWieldBonus
+    minAngle: -5
+    maxAngle: -10
+  # DEN
