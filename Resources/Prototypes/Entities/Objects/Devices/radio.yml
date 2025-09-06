@@ -14,7 +14,7 @@
 
 - type: entity
   name: handheld radio
-  description: A handy handheld radio.
+  description: A handy handheld radio. Has a clip so you can hang it on the neck of your uniform.
   parent: BaseItem
   id: RadioHandheld
   components:
@@ -65,10 +65,15 @@
         enum.RadioDeviceVisualLayers.Speaker:
           True: { visible: true }
           False: { visible: false }
+  - type: Clothing # TheDen - To allow equipping radios on the neck slot
+    slots: [neck]
+    equipDelay: 0.3
+    unequipDelay: 0.3
+    quickEquip: false # Would conflict
 
 - type: entity
   name: security radio
-  description: A handy security radio.
+  description: A handy security radio. Has a clip so you can hang it on the neck of your uniform.
   parent: RadioHandheld
   id: RadioHandheldSecurity
   components:
