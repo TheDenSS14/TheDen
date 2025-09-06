@@ -1,0 +1,133 @@
+# SPDX-FileCopyrightText: 2025 Shaman
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  parent: Clothing
+  id: DeviceSirenSecurity
+  name: security siren
+  description: "Issued as a legal alternative to a verbal halt order for fleeing suspects, this siren fits nicely on the back of your armor. Remember: minimum force necessary!"
+  components:
+  - type: Item
+    size: Small
+  - type: Sprite
+    sprite: _DEN/Objects/Devices/sirensecurity.rsi
+    layers:
+      - state: icon
+      - state: icon-light
+        visible: false
+        shader: unshaded
+        map: [ "light" ]
+  - type: Appearance
+  - type: Clothing
+    quickEquip: false
+    sprite: _DEN/Objects/Devices/sirensecurity.rsi
+    slots:
+    - suitStorage
+    clothingVisuals:
+      suitstorage:
+      - state: off-equipped-SUITSTORAGE
+  - type: ItemToggle
+    predictable: false
+    onUse: false
+    soundActivate:
+      path: /Audio/Items/flashlight_on.ogg
+    soundDeactivate:
+      path: /Audio/Items/flashlight_off.ogg
+    soundFailToActivate:
+      path: /Audio/Machines/button.ogg
+  - type: ItemToggleActiveSound
+    activeSound:
+      path: /Audio/Effects/Vehicle/policesiren.ogg
+      params:
+        volume: -4
+  - type: UseDelay
+    delay: 1.0
+  - type: ToggleClothing
+    action: ActionToggleSirenSecurity
+  - type: ItemTogglePointLight
+  - type: ToggleableVisuals
+    spriteLayer: light
+    clothingVisuals:
+      suitstorage:
+      - state: on-equipped-SUITSTORAGE
+        shader: unshaded
+  - type: PointLight
+    enabled: false
+    radius: 1.4
+    energy: 3
+    color: red
+    netsync: false
+    mask: /Textures/Effects/LightMasks/double_cone.png
+  - type: RotatingLight
+    speed: 360
+  - type: PowerCellSlot
+    cellSlotId: cell_slot
+  - type: ContainerContainer
+    containers:
+      cell_slot: !type:ContainerSlot
+  - type: ItemSlots
+    slots:
+      cell_slot:
+        name: power-cell-slot-component-slot-name-default
+        startingItem: PowerCellSmall
+  - type: PowerCellDraw
+    drawRate: 1
+  - type: ToggleCellDraw
+  - type: Tag
+    tags:
+    - SecBeltEquip
+
+- type: entity
+  parent: DeviceSirenSecurity
+  id: DeviceSirenSecurityEmpty
+  suffix: Empty
+  components:
+  - type: ItemSlots
+    slots:
+      cell_slot:
+        name: power-cell-slot-component-slot-name-default
+
+- type: entity
+  id: ActionToggleSirenSecurity
+  name: Toggle Security Siren
+  description: Turn the siren on or off.
+  components:
+  - type: InstantAction
+    itemIconStyle: BigItem
+    event: !type:ToggleActionEvent
+
+- type: entity
+  parent: DeviceSirenSecurity
+  id: DeviceSirenBlueshield
+  name: blueshield siren
+  description: "Issued as a legal alternative to a verbal halt order for fleeing suspects, this siren fits nicely on the back of your armor. Remember: minimum force necessary!"
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Devices/sirenblueshield.rsi
+  - type: Clothing
+    sprite: _DEN/Objects/Devices/sirenblueshield.rsi
+  - type: ToggleClothing
+    action: ActionToggleSirenBlueshield
+  - type: PointLight
+    energy: 6
+    color: blue
+
+- type: entity
+  parent: DeviceSirenBlueshield
+  id: DeviceSirenBlueshieldEmpty
+  suffix: Empty
+  components:
+  - type: ItemSlots
+    slots:
+      cell_slot:
+        name: power-cell-slot-component-slot-name-default
+
+- type: entity
+  id: ActionToggleSirenBlueshield
+  name: Toggle Blueshield Siren
+  description: Turn the siren on or off.
+  components:
+  - type: InstantAction
+    itemIconStyle: BigItem
+    event: !type:ToggleActionEvent
