@@ -145,6 +145,8 @@ public sealed partial class RoboticArmComponent : Component
 
     #region Power
 
+    // IMP / DEN - the below power draws are not presently in use, robotic arms have a static 300 power draw
+
     /// <summary>
     /// Power used when idle.
     /// </summary>
