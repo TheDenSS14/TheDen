@@ -98,3 +98,4 @@ marking-ArachnidLLegStripes = Arachnid Stripes (Left)
 marking-ArachnidLLegStripes-stripes_left = Stripes
 
 marking-ArachnidOverlayFuzzy = Fuzzy
+marking-ArachnidOverlayFuzzy-fuzzy = Fuzz

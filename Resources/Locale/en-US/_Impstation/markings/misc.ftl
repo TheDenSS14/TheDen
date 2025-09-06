@@ -7,8 +7,6 @@
 # this file is subject to getting its shit moved to other files at a later date#
 
 # arachnids
-marking-SpiderMirror = Mirror
-marking-SpiderMirror-spidermirror = Mirror
 marking-SpiderGlowEyes = Eyes (Glowing)
 marking-SpiderGlowEyes-spidergloweyes = Eyes
 marking-SpiderGlowEyes-eyes = Eyes

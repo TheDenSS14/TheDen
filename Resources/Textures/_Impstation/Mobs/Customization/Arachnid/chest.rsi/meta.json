@@ -1,0 +1,69 @@
+{
+    "version": 1,
+    "license": "CC-BY-SA-3.0",
+    "copyright":  "Segments marking and fluffy by Sha-Seng (Github). Mirror sprited by crocodilecarousel (github)",
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "states": [
+        {
+            "name": "fluffy",
+            "directions": 4
+        },
+        {
+            "name": "segments1",
+            "directions": 4
+        },
+        {
+            "name": "segments2",
+            "directions": 4
+        },
+        {
+            "name": "mirror",
+            "directions": 4,
+            "delays": [
+                [
+                    5.0,
+                    0.1,
+                    0.1,
+                    0.1,
+                    1.0,
+                    0.1,
+                    0.1,
+                    0.1
+                ],
+                [
+                    5.0,
+                    0.1,
+                    0.1,
+                    0.1,
+                    1.0,
+                    0.1,
+                    0.1,
+                    0.1
+                ],
+                [
+                    5.0,
+                    0.1,
+                    0.1,
+                    0.1,
+                    1.0,
+                    0.1,
+                    0.1,
+                    0.1
+                ],
+                [
+                    5.0,
+                    0.1,
+                    0.1,
+                    0.1,
+                    1.0,
+                    0.1,
+                    0.1,
+                    0.1
+                ]
+            ]
+        }
+    ]
+}
