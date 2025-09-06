@@ -75,6 +75,15 @@
         amount: 6
         doAfter: 3
 
+    - to: window
+      completed:
+      - !type:SnapToGrid
+        southRotation: true
+      steps:
+      - material: WebSilk
+        amount: 2
+        doAfter: 3
+
     - to: bookshelf
       completed:
       - !type:SnapToGrid
@@ -192,6 +201,18 @@
       steps:
       - tool: Cutting
         doAfter: 2
+
+  - node: window
+    entity: WebWindow
+    edges:
+    - to: start
+      completed:
+      - !type:SpawnPrototype
+        prototype: MaterialWebSilk1
+        amount: 2
+      steps:
+      - tool: Cutting
+        doAfter: 1
 
   - node: bookshelf
     entity: BookshelfWeb
