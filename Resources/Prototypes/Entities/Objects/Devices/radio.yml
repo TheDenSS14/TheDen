@@ -33,8 +33,15 @@
   - type: Sprite
     sprite: Objects/Devices/communication.rsi
     layers:
-    - state: walkietalkie
-    - state: walkietalkie-on
+    - state: walkietalkie-off # TheDen - The bottom layer has all the lights off
+    - state: walkietalkie-broadcasting # TheDen - The red light on the side turns on when the mic's on
+      map: ["enum.RadioDeviceVisualLayers.Broadcasting"]
+      shader: unshaded
+      visible: false
+    - state: walkietalkie-on # TheDen - The screen turns on when the speaker's on
+      map: ["enum.RadioDeviceVisualLayers.Speaker"]
+      shader: unshaded
+      visible: false
     state: walkietalkie
   - type: Item
     sprite: Objects/Devices/communication.rsi
@@ -48,6 +55,17 @@
     interfaces:
       enum.HandheldRadioUiKey.Key:
         type: HandheldRadioBoundUserInterface
+  - type: Appearance # TheDen
+  - type: GenericVisualizer # TheDen
+    visuals:
+      enum.RadioDeviceVisuals.Broadcasting:
+        enum.RadioDeviceVisualLayers.Broadcasting:
+          True: { visible: true }
+          False: { visible: false }
+      enum.RadioDeviceVisuals.Speaker:
+        enum.RadioDeviceVisualLayers.Speaker:
+          True: { visible: true }
+          False: { visible: false }
 
 - type: entity
   name: security radio
@@ -57,6 +75,7 @@
   components:
   - type: RadioMicrophone
     broadcastChannel: Security
+    frequency: 1359 # TheDen - Frequencies don't matter for security radios at all, but this is at least the frequency that the security channel supposedly exists on
   - type: RadioSpeaker
     channels:
     - Security

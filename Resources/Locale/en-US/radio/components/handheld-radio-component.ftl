@@ -14,6 +14,9 @@ handheld-radio-component-off-state = off
 handheld-radio-component-channel-set = Channel set to {$channel}
 handheld-radio-component-channel-examine = Channel: [color={$color}]{$channel}[/color]
 
+# Frontier
+handheld-radio-component-toggle = Toggle Mic
+
 # Nuclear-14-Start
 handheld-radio-menu-title = Handheld radio
 handheld-radio-current-text-frequency = Broadcast frequency
