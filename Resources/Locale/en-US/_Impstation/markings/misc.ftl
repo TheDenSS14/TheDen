@@ -1,14 +1,15 @@
-# SPDX-FileCopyrightText: 2025 BloodfiendishOperator <141253729+Diggy0@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 Jakumba <jkmcbennett@hotmail.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 BloodfiendishOperator
+# SPDX-FileCopyrightText: 2025 Jakumba
+# SPDX-FileCopyrightText: 2025 Shaman
+# SPDX-FileCopyrightText: 2025 maelines
+# SPDX-FileCopyrightText: 2025 portfiend
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 # this file is subject to getting its shit moved to other files at a later date#
 
 # arachnids
-marking-SpiderMirror = Mirror
-marking-SpiderMirror-spidermirror = Mirror
 marking-SpiderGlowEyes = Eyes (Glowing)
 marking-SpiderGlowEyes-spidergloweyes = Eyes
 marking-SpiderGlowEyes-eyes = Eyes

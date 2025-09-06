@@ -1,14 +1,14 @@
-# SPDX-FileCopyrightText: 2020 Git-Nivrak <59925169+Git-Nivrak@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2021 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2021 Swept <sweptwastaken@protonmail.com>
-# SPDX-FileCopyrightText: 2021 metalgearsloth <comedian_vs_clown@hotmail.com>
-# SPDX-FileCopyrightText: 2022 Peptide90 <78795277+Peptide90@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2023 Kilk <142771861+TheKilk@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2023 PixelTK <85175107+PixelTheKermit@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 FoxxoTrystan <trystan.garnierhein@gmail.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2020 Git-Nivrak
+# SPDX-FileCopyrightText: 2021 DrSmugleaf
+# SPDX-FileCopyrightText: 2021 Swept
+# SPDX-FileCopyrightText: 2021 metalgearsloth
+# SPDX-FileCopyrightText: 2022 Peptide90
+# SPDX-FileCopyrightText: 2023 Kilk
+# SPDX-FileCopyrightText: 2023 PixelTK
+# SPDX-FileCopyrightText: 2024 FoxxoTrystan
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: constructionGraph
   id: WebObjects
@@ -66,6 +66,95 @@
         amount: 8
         doAfter: 6
 
+    - to: shoes
+      steps:
+      - material: WebSilk
+        amount: 2
+        doAfter: 4
+
+    - to: cap
+      steps:
+      - material: WebSilk
+        amount: 2
+        doAfter: 4
+
+    - to: widehat
+      steps:
+      - material: WebSilk
+        amount: 2
+        doAfter: 4
+
+    - to: webberet
+      steps:
+      - material: WebSilk
+        amount: 2
+        doAfter: 4
+
+    - to: gloves
+      steps:
+      - material: WebSilk
+        amount: 2
+        doAfter: 4
+
+    - to: loungewear
+      steps:
+      - material: WebSilk
+        amount: 10
+        doAfter: 8
+
+    - to: turtledress
+      steps:
+      - material: WebSilk
+        amount: 15
+        doAfter: 20
+
+    - to: stripeddress
+      steps:
+      - material: WebSilk
+        amount: 15
+        doAfter: 20
+
+    - to: elegantdress
+      steps:
+      - material: WebSilk
+        amount: 15
+        doAfter: 20
+
+    - to: websweater
+      steps:
+      - material: WebSilk
+        amount: 10
+        doAfter: 20
+
+    - to: mantle
+      steps:
+      - material: WebSilk
+        amount: 6
+        doAfter: 20
+
+    - to: cloaksimple
+      steps:
+      - material: WebSilk
+        amount: 10
+        doAfter: 20
+
+    - to: cloakfancy
+      steps:
+      - material: WebSilk
+        amount: 10
+        doAfter: 20
+
+    - to: scarf
+      steps:
+      - material: WebSilk
+        amount: 5
+        doAfter: 15
+
+    - to: shortscarf
+      steps:
+      - material: WebSilk
+        amount: 3
+        doAfter: 10
 
   # Deconstruction
   - node: tile
@@ -91,3 +180,48 @@
 
   - node: cocoon
     entity: WebCocoon
+
+  - node: stripeddress
+    entity: ClothingUniformJumpskirtWebStripedDress
+
+  - node: turtledress
+    entity: ClothingUniformJumpskirtWebTurtleneckDress
+
+  - node: elegantdress
+    entity: ClothingUniformJumpskirtWebElegantDress
+
+  - node: websweater
+    entity: ClothingOuterCoatWebSweater
+
+  - node: loungewear
+    entity: ClothingUniformJumpsuitLoungewearWeb
+
+  - node: cap
+    entity: ClothingHeadHatWebsoft
+
+  - node: widehat
+    entity: ClothingHeadHatWebHat
+
+  - node: webberet
+    entity: ClothingHeadHatWebBeret
+
+  - node: gloves
+    entity: ClothingHandsGlovesColorWeb
+
+  - node: shoes
+    entity: ClothingShoesColorWeb
+
+  - node: scarf
+    entity: ClothingNeckScarfStripedWeb
+
+  - node: mantle
+    entity: ClothingNeckMantleWeb
+
+  - node: cloaksimple
+    entity: ClothingNeckCloakWebSimple
+
+  - node: cloakfancy
+    entity: ClothingNeckCloakWebFancy
+
+  - node: shortscarf
+    entity: ClothingNeckScarfStripedZebraWeb
