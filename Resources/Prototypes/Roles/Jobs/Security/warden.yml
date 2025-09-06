@@ -55,9 +55,14 @@
   description: job-description-warden
   playTimeTracker: JobWarden
   requirements:
-    - !type:CharacterPlaytimeRequirement # DeltaV - JobSecurityOfficer time requirement. Make them experienced in proper officer work.
+    - !type:CharacterPlaytimeRequirement
       tracker: JobDetective
-      min: 7200 # Floofstation - 2 hour
+      min: 10800 # The Den - 3 hours
+    - !type:CharacterDepartmentTimeRequirement
+      department: Security
+      min: 72000 # The Den - 20 hours
+    - !type:CharacterOverallTimeRequirement
+      min: 180000 # The Den - 50 hours
   startingGear: WardenGear
   icon: "JobIconWarden"
   supervisors: job-supervisors-hos
