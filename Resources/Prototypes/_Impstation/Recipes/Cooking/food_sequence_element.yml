@@ -1,0 +1,60 @@
+# SPDX-FileCopyrightText: 2025 Shaman
+# SPDX-FileCopyrightText: 2025 portfiend
+#
+# SPDX-License-Identifier: MIT
+
+- type: foodSequenceElement
+  id: UrsaMinorPlushie
+  name: food-sequence-cotton-burger-content-plushie-ursaminor
+  sprites:
+  - sprite: _Impstation/Objects/Fun/toys.rsi
+    state: minor
+
+- type: foodSequenceElement
+  id: BugPlushie
+  name: food-sequence-cotton-burger-content-plushie-bug
+  sprites:
+  - sprite: _Impstation/Objects/Fun/toys.rsi
+    state: plushie_bug
+
+- type: foodSequenceElement
+  id: DollPlushie
+  name: food-sequence-cotton-burger-content-plushie-doll
+  sprites:
+  - sprite: _Impstation/Objects/Fun/toys.rsi
+    state: doll_base
+
+- type: foodSequenceElement
+  id: HairDollPlushie
+  name: food-sequence-cotton-burger-content-plushie-hairdoll
+  sprites:
+  - sprite: _Impstation/Objects/Fun/toys.rsi
+    state: doll_hair
+
+- type: foodSequenceElement
+  id: GriffyPlushie
+  name: food-sequence-cotton-burger-content-plushie-griffy
+  sprites:
+  - sprite: _Impstation/Objects/Fun/toys.rsi
+    state: plushie_mascotgriffy
+
+- type: foodSequenceElement
+  id: ThavenPlushie
+  name: food-sequence-cotton-burger-content-plushie-thaven
+  sprites:
+  - sprite: _Impstation/Objects/Fun/toys.rsi
+    state: plushie_thaven
+
+- type: foodSequenceElement
+  id: WeirdThavenPlushie
+  name: food-sequence-cotton-burger-content-plushie-weirdthaven
+  sprites:
+  - sprite: _Impstation/Objects/Fun/toys.rsi
+    state: plushie_thavenweird
+
+- type: foodSequenceElement
+  id: ThavenBurger
+  name: food-sequence-burger-content-thaven
+  sprites:
+  - sprite: Objects/Consumable/Food/meat.rsi
+    state: fish

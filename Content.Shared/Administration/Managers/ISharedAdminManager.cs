@@ -1,6 +1,7 @@
-// SPDX-FileCopyrightText: 2023 Debug <49997488+DebugOk@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2023 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Debug
+// SPDX-FileCopyrightText: 2023 Leon Friedrich
+// SPDX-FileCopyrightText: 2025 portfiend
+// SPDX-FileCopyrightText: 2025 sleepyyapril
 //
 // SPDX-License-Identifier: MIT
 
@@ -24,7 +25,7 @@ public interface ISharedAdminManager
     /// </param>
     /// <returns><see langword="null" /> if the player is not an admin.</returns>
     AdminData? GetAdminData(EntityUid uid, bool includeDeAdmin = false);
-    
+
     /// <summary>
     ///     Gets the admin data for a player, if they are an admin.
     /// </summary>
@@ -44,12 +45,12 @@ public interface ISharedAdminManager
     ///     When used by the client, this only returns accurate results for the player's own entity.
     /// </remarks>
     /// <returns>True if the player is and admin and has the specified flags.</returns>
-    bool HasAdminFlag(EntityUid player, AdminFlags flag)
+    bool HasAdminFlag(EntityUid player, AdminFlags flag, bool includeDeAdmin = false)
     {
-        var data = GetAdminData(player);
+        var data = GetAdminData(player, includeDeAdmin);
         return data != null && data.HasFlag(flag);
     }
-    
+
     /// <summary>
     ///     See if a player has an admin flag.
     /// </summary>
@@ -57,9 +58,9 @@ public interface ISharedAdminManager
     ///     When used by the client, this only returns accurate results for the player's own session.
     /// </remarks>
     /// <returns>True if the player is and admin and has the specified flags.</returns>
-    bool HasAdminFlag(ICommonSession player, AdminFlags flag)
+    bool HasAdminFlag(ICommonSession player, AdminFlags flag, bool includeDeAdmin = false)
     {
-        var data = GetAdminData(player);
+        var data = GetAdminData(player, includeDeAdmin);
         return data != null && data.HasFlag(flag);
     }
 
@@ -77,7 +78,7 @@ public interface ISharedAdminManager
     {
         return GetAdminData(uid, includeDeAdmin) != null;
     }
-    
+
     /// <summary>
     ///     Checks if a player is an admin.
     /// </summary>

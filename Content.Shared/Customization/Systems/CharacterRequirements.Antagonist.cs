@@ -1,11 +1,12 @@
-// SPDX-FileCopyrightText: 2025 Timfa <timfalken@hotmail.com>
-// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Timfa
+// SPDX-FileCopyrightText: 2025 portfiend
+// SPDX-FileCopyrightText: 2025 sleepyyapril
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 using System.Linq;
+using Content.Shared.Customization.Systems._DEN;
 using Content.Shared.Mind;
-using Content.Shared.Preferences;
 using Content.Shared.Roles;
 using JetBrains.Annotations;
 using Robust.Shared.Configuration;
@@ -24,33 +25,37 @@ public sealed partial class CharacterAntagonistRequirement : CharacterRequiremen
     [DataField(required: true)]
     public List<ProtoId<AntagPrototype>> Antagonists;
 
-    public override bool IsValid(JobPrototype job,
-        HumanoidCharacterProfile profile,
-        Dictionary<string, TimeSpan> playTimes,
-        bool whitelisted,
-        IPrototype prototype,
+    public override bool PreCheckMandatory(CharacterRequirementContext context)
+        => context.Entity is not null;
+
+    public override string? GetReason(CharacterRequirementContext context,
         IEntityManager entityManager,
         IPrototypeManager prototypeManager,
-        IConfigurationManager configManager,
-        out string? reason,
-        int depth = 0,
-        MindComponent? mind = null)
+        IConfigurationManager configManager)
     {
-        // Considering this will not be used in the character creation menu, players will likely never see this text.
-        reason = Loc.GetString("character-antagonist-requirement", ("inverted", Inverted));
+        return Loc.GetString("character-antagonist-requirement", ("inverted", Inverted));
+    }
 
-        if (mind == null)
+    public override bool IsValid(CharacterRequirementContext context,
+        IEntityManager entityManager,
+        IPrototypeManager prototypeManager,
+        IConfigurationManager configManager)
+    {
+        var mindSystem = entityManager.System<SharedMindSystem>();
+        if (context.Entity == null
+            || !mindSystem.TryGetMind(context.Entity.Value, out var mind, out var mindComponent))
             return false;
 
-        foreach (var mindRoleComponent in mind.MindRoles.Select(entityManager.GetComponent<MindRoleComponent>))
+        foreach (var mindRoleComponent in mindComponent.MindRoles
+            .Select(entityManager.GetComponent<MindRoleComponent>))
         {
             if (!mindRoleComponent.AntagPrototype.HasValue)
                 continue;
 
             if (Antagonists.Contains(mindRoleComponent.AntagPrototype.Value))
-                return !Inverted;
+                return true;
         }
 
-        return Inverted;
+        return false;
     }
 }

@@ -1,8 +1,12 @@
-# SPDX-FileCopyrightText: 2025 Blitz <73762869+BlitzTheSquishy@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 M3739 <47579354+M3739@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 Rosycup <178287475+Rosycup@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 Tabitha <64847293+KyuPolaris@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 88tv
+# SPDX-FileCopyrightText: 2025 8tv
+# SPDX-FileCopyrightText: 2025 Blitz
+# SPDX-FileCopyrightText: 2025 Jakumba
+# SPDX-FileCopyrightText: 2025 M3739
+# SPDX-FileCopyrightText: 2025 Rosycup
+# SPDX-FileCopyrightText: 2025 Tabitha
+# SPDX-FileCopyrightText: 2025 lzk
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -10,27 +14,39 @@
   id: felinid
   spritePath: /Textures/_DV/Effects/speech.rsi
   typingState: felinid0
+  idleState: default3 #TODO add idle state sprite
   offset: 0, 0.2 # 0625
 
 - type: typingIndicator
   id: rodentia
   spritePath: /Textures/_DV/Effects/speech.rsi
   typingState: rodentia0
+  idleState: default3 #TODO add idle state sprite
   offset: 0, 0.2 # 0625
 
 - type: typingIndicator
   id: Chitinid
   spritePath: /Textures/_DV/Effects/speech.rsi
   typingState: chitinid0
+  idleState: default3
   offset: -0.2, 0.1 # 0625
 
 - type: typingIndicator
   id: feroxi
   spritePath: /Textures/_DV/Effects/speech.rsi
   typingState: feroxi0
+  idleState: default3
 
 - type: typingIndicator
   id: kitsune
   spritePath: /Textures/_DV/Effects/speech.rsi # Floof - M3739 - #937
   typingState: kitsune0
+  idleState: default3
   offset: 0, 0.25
+
+- type: typingIndicator
+  id: thaven
+  spritePath: /Textures/_DV/Effects/speech.rsi
+  typingState: thaven0
+  idleState: thaven3
+  offset: -0.2, 0.1 # 0625

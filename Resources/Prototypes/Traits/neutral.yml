@@ -83,7 +83,7 @@
 
 - type: trait
   id: SkeletonAccent
-  category: TraitsSpeechAccents
+  category: AASpecies
   requirements:
     - !type:CharacterItemGroupRequirement
       group: TraitsAccents
@@ -97,7 +97,7 @@
 
 - type: trait
   id: NormalVision
-  category: Visual
+  category: AASpecies
   requirements:
     - !type:CharacterSpeciesRequirement
       species:

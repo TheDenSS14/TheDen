@@ -1,0 +1,25 @@
+# SPDX-FileCopyrightText: 2025 portfiend
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: trait
+  id: BloodExaminer
+  category: TraitsPhysicalBiological
+  points: -1
+  requirements:
+  - !type:CharacterJobRequirement
+    inverted: true
+    jobs:
+    - StationAi
+    - Borg
+    - MedicalBorg
+  - !type:CharacterTraitRequirement
+    inverted: true
+    traits:
+    - Vampirism
+    - HollowFangs
+    # NOTE: I'm allowing IPCs to have this one. Maybe they have a blood detecting sensor.
+  functions:
+  - !type:TraitAddComponent
+    components:
+      - type: BloodExaminer

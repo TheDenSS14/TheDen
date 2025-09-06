@@ -1,16 +1,16 @@
-// SPDX-FileCopyrightText: 2022 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2022 Paul Ritter <ritter.paul1@googlemail.com>
-// SPDX-FileCopyrightText: 2022 Rane <60792108+Elijahrane@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2022 Visne <39844191+Visne@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2023 forkeyboards <91704530+forkeyboards@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2023 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT <77995199+DEATHB4DEFEAT@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 Plykiya <58439124+Plykiya@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 SimpleStation14 <130339894+SimpleStation14@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 sleepyyapril <flyingkarii@gmail.com>
-// SPDX-FileCopyrightText: 2025 Skubman <ba.fallaria@gmail.com>
-// SPDX-FileCopyrightText: 2025 VMSolidus <evilexecutive@gmail.com>
-// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 DrSmugleaf
+// SPDX-FileCopyrightText: 2022 Paul Ritter
+// SPDX-FileCopyrightText: 2022 Rane
+// SPDX-FileCopyrightText: 2022 Visne
+// SPDX-FileCopyrightText: 2023 forkeyboards
+// SPDX-FileCopyrightText: 2023 metalgearsloth
+// SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT
+// SPDX-FileCopyrightText: 2024 Plykiya
+// SPDX-FileCopyrightText: 2024 SimpleStation14
+// SPDX-FileCopyrightText: 2025 Skubman
+// SPDX-FileCopyrightText: 2025 VMSolidus
+// SPDX-FileCopyrightText: 2025 portfiend
+// SPDX-FileCopyrightText: 2025 sleepyyapril
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -37,6 +37,8 @@ using Robust.Shared.Random;
 using Robust.Shared.Serialization.Manager;
 using Robust.Shared.Utility;
 using Timer = Robust.Shared.Timing.Timer;
+using Content.Shared.Customization.Systems._DEN;
+using Content.Server._DEN.Customization.Systems;
 
 namespace Content.Server.Traits;
 
@@ -63,14 +65,19 @@ public sealed class TraitSystem : EntitySystem
 
     // When the player is spawned in, add all trait components selected during character creation
     private void OnPlayerSpawnComplete(PlayerSpawnCompleteEvent args) =>
-        ApplyTraits(args.Mob, args.JobId, args.Profile,
-            _playTimeTracking.GetTrackerTimes(args.Player), args.Player.ContentData()?.Whitelisted ?? false);
+        ApplyTraits(args.Mob, args.JobId, args.Profile, args.Player);
 
     /// <summary>
     ///     Adds the traits selected by a player to an entity.
     /// </summary>
-    public void ApplyTraits(EntityUid uid, ProtoId<JobPrototype>? jobId, HumanoidCharacterProfile profile,
-        Dictionary<string, TimeSpan> playTimes, bool whitelisted, bool punishCheater = true)
+    /// <param name="whitelisted">If non-null, Whitelisted will be forced to be this value.</param>
+    /// <param name="punishCheater">If a player has invalid trait points, they may be deleteed at random.</param>
+    public void ApplyTraits(EntityUid uid,
+        ProtoId<JobPrototype>? jobId,
+        HumanoidCharacterProfile profile,
+        ICommonSession player,
+        bool? whitelisted = null,
+        bool punishCheater = true)
     {
         var pointsTotal = _configuration.GetCVar(CCVars.GameTraitsDefaultPoints);
         var traitSelections = _configuration.GetCVar(CCVars.GameTraitsMax);
@@ -98,12 +105,18 @@ public sealed class TraitSystem : EntitySystem
 
         foreach (var traitPrototype in sortedTraits)
         {
-            if (!_characterRequirements.CheckRequirementsValid(
-                traitPrototype.Requirements,
-                jobPrototypeToUse,
-                profile, playTimes, whitelisted, traitPrototype,
-                EntityManager, _prototype, _configuration,
-                out _))
+            var context = _characterRequirements.GetProfileContext(player, profile)
+                .WithSelectedJob(jobPrototypeToUse)
+                .WithPrototype(traitPrototype);
+
+            if (whitelisted != null)
+                context = context.WithWhitelisted(whitelisted);
+
+            if (!_characterRequirements.CheckRequirementsValid(traitPrototype.Requirements,
+                context,
+                EntityManager,
+                _prototype,
+                _configuration))
                 continue;
 
             // To check for cheaters. :FaridaBirb.png:
@@ -149,9 +162,9 @@ public sealed class TraitSystem : EntitySystem
     /// <summary>
     ///     https://www.youtube.com/watch?v=X2QMN0a_TrA
     /// </summary>
-    private void VaporizeCheater (Robust.Shared.Player.ICommonSession targetPlayer)
+    private void VaporizeCheater (ICommonSession targetPlayer)
     {
-        _adminSystem.Erase(targetPlayer);
+        _adminSystem.Erase(targetPlayer.UserId);
 
         var feedbackMessage = $"[font size=24][color=#ff0000]{"You have spawned in with an illegal trait point total. If this was a result of cheats, then your nonexistence is a skill issue. Otherwise, feel free to click 'Return To Lobby', and fix your trait selections."}[/color][/font]";
         _chatManager.ChatMessageToOne(

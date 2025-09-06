@@ -21,6 +21,7 @@ Small fixes/refactors are exempt. Media may be used in SS14 progress reports wit
 <!-- Confirm the following by placing an X in the brackets [X]: -->
 - [ ] I have read and am following the [Pull Request and Changelog Guidelines](https://docs.spacestation14.com/en/general-development/codebase-info/pull-request-guidelines.html).
 - [ ] I have added media to this PR or it does not require an ingame showcase.
+- [ ] I have tested any changes or additions.
 - [ ] I can confirm this PR contains no AI-generated content, and did not use any AI-generated content.
 <!-- You should understand that not following the above may get your PR closed at maintainer’s discretion -->
 

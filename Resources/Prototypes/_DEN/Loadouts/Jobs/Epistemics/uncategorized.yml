@@ -1,7 +1,8 @@
-# SPDX-FileCopyrightText: 2025 Blitz <73762869+BlitzTheSquishy@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Blitz
+# SPDX-FileCopyrightText: 2025 Shaman
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: loadout
   id: LoadoutTowelPurple
@@ -31,3 +32,41 @@
       inverted: true
       jobs:
         - ResearchDirector # MG has ClothingBackpackMessengerResearchDirectorFilled
+
+- type: loadout
+  id: LoadoutMedicalOuterCoatBomberScience # Can also butcher the other version to get this
+  category: JobsEpistemicsAAUncategorized
+  cost: 0
+  exclusive: true
+  items:
+    -  ClothingOuterCoatBomberScience
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutEpistemicsOuter
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Epistemics
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - ResearchDirector # Sorry, these are for the little guys
+        - ResearchAssistant # Gotta earn it
+
+- type: loadout
+  id: LoadoutMedicalOuterCoatBomberScienceLoose # Can also butcher the other version to get this
+  category: JobsEpistemicsAAUncategorized
+  cost: 0
+  exclusive: true
+  items:
+    -  ClothingOuterCoatBomberScienceLoose
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutEpistemicsOuter
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Epistemics
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - ResearchDirector # Sorry, these are for the little guys
+        - ResearchAssistant # Gotta earn it

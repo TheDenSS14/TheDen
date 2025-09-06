@@ -127,11 +127,12 @@ public sealed partial class ResearchSystem
     [PublicAPI]
     public void AddTechnology(EntityUid uid, string technology, TechnologyDatabaseComponent? component = null)
     {
-        if (!Resolve(uid, ref component))
+        if (!Resolve(uid, ref component, false))
             return;
 
         if (!PrototypeManager.TryIndex<TechnologyPrototype>(technology, out var prototype))
             return;
+
         AddTechnology(uid, prototype, component);
     }
 

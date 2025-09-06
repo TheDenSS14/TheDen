@@ -275,8 +275,14 @@
       collection: Whistles
     Weh:
       collection: Weh
+    Growl:
+      collection: KitsuneGrowl
     Squeak:
       path: /Audio/Animals/mouse_squeak.ogg
+    ThumpGeneral:
+      path: /Audio/Voice/Reptilian/reptilian_tailthump.ogg # TODO: find non-tail thump
+      params:
+        variation: 0.125
 
 - type: emoteSounds
   id: FemaleRodentia
@@ -305,10 +311,16 @@
       collection: Whistles
     Weh:
       collection: Weh
+    Growl:
+      collection: KitsuneGrowl
     Squeak:
       path: /Audio/Animals/mouse_squeak.ogg
     Hiss:
       path: /Audio/Animals/snake_hiss.ogg
+    ThumpGeneral:
+      path: /Audio/Voice/Reptilian/reptilian_tailthump.ogg # TODO: find non-tail thump
+      params:
+        variation: 0.125
 
 - type: emoteSounds
   id: UnisexChitinid
@@ -443,7 +455,7 @@
       collection: VulpkaninBarks
 #    Gasp: | Floof - M3739 - #937 - We do not have these... yet.
 #      collection: MaleGasp
-#    DefaultDeathgasp: 
+#    DefaultDeathgasp:
 #      collection: MaleDeathGasp
 
 - type: emoteSounds
@@ -493,5 +505,5 @@
       collection: VulpkaninBarks
 #    Gasp: | Floof - M3739 - #937 - We do not have these... yet.
 #      collection: FemaleGasp
-#    DefaultDeathgasp: 
+#    DefaultDeathgasp:
 #      collection: FemaleDeathGasp

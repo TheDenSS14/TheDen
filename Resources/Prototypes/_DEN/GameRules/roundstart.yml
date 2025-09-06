@@ -15,3 +15,12 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: LowDangerRule
+
+- type: entity
+  categories: [ HideSpawnMenu ]
+  parent: BaseGameRule
+  id: HighDangerSubGamemodesRule
+  components:
+  - type: SubGamemodes
+    rules:
+    - id: Thief

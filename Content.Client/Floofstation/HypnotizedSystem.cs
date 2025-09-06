@@ -32,7 +32,7 @@ public sealed class HypnotizedSystem : EquipmentHudSystem<HypnotizedComponent>
 
         if (_playerManager.LocalEntity is not { Valid: true } player
             || !TryComp<HypnotizedComponent>(player, out var hypnoComp)
-            || hypnoComp.Master != uid)
+            || !hypnoComp.Masters.Contains(uid))
             return;
 
         if (_prototype.TryIndex(component.MasterIcon, out var iconPrototype))

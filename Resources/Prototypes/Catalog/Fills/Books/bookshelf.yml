@@ -140,3 +140,6 @@
       - id: BookInspiration
         prob: 0.1
         orGroup: BookAuthor
+      - id: BookTenebraeConspiracy # TheDen
+        prob: 0.3 # I feel like our books should be slightly more common
+        orGroup: BookAuthor

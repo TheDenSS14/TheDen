@@ -24,6 +24,18 @@
     HealthViolation: 20
 
 - type: reaction
+  id: DeadRum
+  reactants:
+    Saline:
+      amount: 1
+    Rum:
+      amount: 1
+    TableSalt:
+      amount: 1
+  products:
+    DeadRum: 3
+
+- type: reaction
   id: Gunmetal
   reactants:
     Cream:
@@ -58,18 +70,6 @@
       amount: 1
   products:
     GreenGrass: 6
-
-- type: reaction
-  id: Daiquiri
-  reactants:
-    DeadRum:
-      amount: 5
-    JuiceLime:
-      amount: 3
-    Sugar:
-      amount: 2
-  products:
-    Daiquiri: 10
 
 - type: reaction
   id: ArsonistsBrew
@@ -137,3 +137,13 @@
       amount: 1
   products:
     LemonLimeBitters: 10
+
+- type: reaction
+  id: Kalimotxo
+  reactants:
+    Cola:
+      amount: 1
+    Wine:
+      amount: 1
+  products:
+    Kalimotxo: 2

@@ -25,6 +25,7 @@
   - ClothingHeadsetChameleon
   - ClothingShoesChameleon
   - ChameleonProjector
+  - AgentIDCard
 
 - type: thiefBackpackSet
   id: ToolsSet
@@ -66,8 +67,10 @@
     sprite: Objects/Specific/Syndicate/telecrystal.rsi
     state: telecrystal
   content:
-  - AgentIDCard
+  - RadioJammer
+  - TraitorCodePaper
   - Emag
+  - Lighter
   - SyndicatePersonalAI
   - ClothingHeadHatSyndieMAA
   - CigPackSyndicate

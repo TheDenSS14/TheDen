@@ -1,3 +1,4 @@
+# SPDX-FileCopyrightText: 2025 Sir Warock
 # SPDX-FileCopyrightText: 2025 Tanix
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
@@ -7,6 +8,7 @@
 # There are existing packs for some of these recipes, and some which have items that don't exist. I'm sorry.
 
 - type: latheRecipePack
+  parent: [ ClothingServiceImp ]
   id: UniformPrinterStaticAwfulDen
   recipes:
   - ClothingUniformJumpsuitColorGrey
@@ -172,6 +174,9 @@
   - ClothingNeckScarfStripedOrange
   - ClothingNeckScarfStripedBlack
   - ClothingNeckScarfStripedPurple
+  # DeltaV Ponchos
+  - ClothingNeckCWPSec
+  - ClothingNeckCWPArctic
   # Carpets
   - Carpet
   - CarpetBlack
@@ -306,6 +311,13 @@
   - ClothingOuterWinterCentcom
   - ClothingOuterWinterSyndie
   - ClothingOuterWinterSyndieCap
+
+  # DV - CentComm Drip
+  - ClothingHeadHatBeretCentcomm
+  - ClothingUniformJumpskirtCentcomAgent
+  - ClothingUniformJumpskirtCentcomOfficer
+  - ClothingUniformJumpskirtCentcomOfficial
+
   # TheDen - Towels
   - TowelColorCentcom
   - TowelColorSyndicate

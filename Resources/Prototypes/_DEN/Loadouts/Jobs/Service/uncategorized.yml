@@ -17,3 +17,39 @@
         - Passenger
   items:
     - TowelColorGreen
+
+- type: loadout
+  id: LoadoutServiceUniformNightclubSuit
+  category: JobsServiceAUncategorized
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingUniformNightclubSuit
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutServiceUniforms
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Civilian
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Passenger
+
+- type: loadout
+  id: LoadoutServiceUniformNightclubSuitSkirt
+  category: JobsServiceAUncategorized
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingUniformNightclubSuitSkirt
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutServiceUniforms
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Civilian
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Passenger

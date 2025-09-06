@@ -25,9 +25,10 @@ thief-backpack-button-deselect = Select [X]
 
 thief-backpack-category-chameleon-name = chameleon's kit
 thief-backpack-category-chameleon-description =
-    Includes a full set of clothing that contains chameleon technology,
-    Contains a chameleon projector to help disguise yourself as objects,
-    You'll be able to disguise yourself as almost anything and anyone.
+    You are everyone and no one; you are a master of disguise.
+    Includes: A full set of chameleon clothing,
+    a chameleon projector, and an Agent ID.
+    Disguise as anyone and anything.
 
 thief-backpack-category-tools-name = bearcatcher's kit
 thief-backpack-category-tools-description =
@@ -47,9 +48,10 @@ thief-backpack-category-chemistry-description =
 
 thief-backpack-category-syndie-name = syndie kit
 thief-backpack-category-syndie-description =
-    A set of items from a syndicate agent you've robbed
-    in the past. Includes an Agent ID card, Emag, a syndicate pAI,
-    and some strange red crystals.
+    Trinkets from a disavowed past, or stolen from a careless agent?
+    You've made some connections. Whiskey, echo...
+    Includes: An Emag, Interdyne cigs, a Syndicate codeword,
+    a Radio Jammer, a lighter and some strange red crystals.
 
 thief-backpack-category-sleeper-name = sleepwalker's kit
 thief-backpack-category-sleeper-description =

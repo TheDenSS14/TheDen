@@ -1,5 +1,6 @@
-// SPDX-FileCopyrightText: 2025 Peptide90 <78795277+Peptide90@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 FutureExalt
+// SPDX-FileCopyrightText: 2025 Peptide90
+// SPDX-FileCopyrightText: 2025 sleepyyapril
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -53,35 +54,11 @@ public sealed class GermanAccentSystem : EntitySystem
             msgBuilder[match.Index] = (char) (msgBuilder[match.Index] + 6);
         }
 
-        // Random Umlaut Time! (The joke outweighs the emotional damage this inflicts on actual Germans)
-        var umlautCooldown = 0;
-        for (var i = 0; i < msgBuilder.Length; i++)
-        {
-            if (umlautCooldown == 0)
-            {
-                if (_random.Prob(0.1f)) // 10% of all eligible vowels become umlauts)
-                {
-                    msgBuilder[i] = msgBuilder[i] switch
-                    {
-                        'A' => 'Ä',
-                        'a' => 'ä',
-                        'O' => 'Ö',
-                        'o' => 'ö',
-                        'U' => 'Ü',
-                        'u' => 'ü',
-                        _ => msgBuilder[i]
-                    };
-                    umlautCooldown = 4;
-                }
-            }
-            else
-            {
-                umlautCooldown--;
-            }
-        }
 
         return msgBuilder.ToString();
     }
+
+    // there used to be a random umlaut system here; it's gone now. it was removed because native german speakers were complaining about being unable to understand the accent, making this an accessibility issue.
 
     private void OnAccent(Entity<GermanAccentComponent> ent, ref AccentGetEvent args)
     {

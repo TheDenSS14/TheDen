@@ -1,14 +1,14 @@
-// SPDX-FileCopyrightText: 2023 Jezithyr <jezithyr@gmail.com>
-// SPDX-FileCopyrightText: 2023 TemporalOroboros <TemporalOroboros@gmail.com>
-// SPDX-FileCopyrightText: 2023 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2023 metalgearsloth <comedian_vs_clown@hotmail.com>
-// SPDX-FileCopyrightText: 2024 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Jezithyr
+// SPDX-FileCopyrightText: 2023 TemporalOroboros
+// SPDX-FileCopyrightText: 2023 metalgearsloth
+// SPDX-FileCopyrightText: 2024 Leon Friedrich
+// SPDX-FileCopyrightText: 2025 sleepyyapril
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 using System.Linq;
 using Content.IntegrationTests.Tests.Interaction;
+using Content.Shared.Radio;
 using Content.Shared.Radio.Components;
 using Content.Shared.Wires;
 
@@ -21,12 +21,14 @@ public sealed class RemoveEncryptionKeys : InteractionTest
     {
         await SpawnTarget("ClothingHeadsetGrey");
         var comp = Comp<EncryptionKeyHolderComponent>();
+        var proto = ProtoMan.Index<RadioChannelPrototype>(comp.Channels.First());
+        var totalChannels = proto.UnlockChannels.Count + 1;
 
         Assert.Multiple(() =>
         {
             Assert.That(comp.KeyContainer.ContainedEntities, Has.Count.EqualTo(1));
             Assert.That(comp.DefaultChannel, Is.EqualTo("Common"));
-            Assert.That(comp.Channels, Has.Count.EqualTo(1));
+            Assert.That(comp.Channels, Has.Count.EqualTo(totalChannels));
             Assert.That(comp.Channels.First(), Is.EqualTo("Common"));
         });
 

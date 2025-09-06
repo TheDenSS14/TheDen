@@ -1,4 +1,5 @@
 # SPDX-FileCopyrightText: 2025 Blitz
+# SPDX-FileCopyrightText: 2025 Eightballll
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -19,3 +20,44 @@
       - !type:AdjustReagent
         reagent: Ethanol
         amount: 0.3
+
+- type: reagent
+  id: Kalimotxo
+  name: reagent-name-kalimotxo
+  parent: BaseAlcohol
+  desc: reagent-desc-kalimotxo
+  physicalDesc: reagent-physical-desc-bubbly
+  flavor: kalimotxo
+  color: "#360606"
+  metamorphicSprite:
+    sprite: _DV/Objects/Consumable/Drinks/kalimotxo.rsi
+    state: icon_empty
+  metamorphicMaxFillLevels: 5
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: false
+  metabolisms:
+    Drink:
+      effects:
+      - !type:SatiateThirst
+        factor: 1
+      - !type:AdjustReagent
+        reagent: Ethanol
+        amount: 0.2
+  fizziness: 0.25
+
+- type: reagent
+  id: DeadRum
+  name: reagent-name-dead-rum
+  parent: BaseAlcohol
+  desc: reagent-desc-dead-rum
+  physicalDesc: reagent-physical-desc-strong-smelling
+  flavor: deadrum #Delta-V Flavor additions
+  color: "#664300"
+  metabolisms:
+    Drink:
+      effects:
+      - !type:SatiateThirst
+        factor: 2
+      - !type:AdjustReagent
+        reagent: Ethanol
+        amount: 0.2

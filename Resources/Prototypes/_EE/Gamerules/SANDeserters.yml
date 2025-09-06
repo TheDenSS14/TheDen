@@ -1,7 +1,9 @@
 # SPDX-FileCopyrightText: 2025 Blitz
+# SPDX-FileCopyrightText: 2025 Jakumba
 # SPDX-FileCopyrightText: 2025 Rosycup
 # SPDX-FileCopyrightText: 2025 VMSolidus
 # SPDX-FileCopyrightText: 2025 juniwoofs
+# SPDX-FileCopyrightText: 2025 sheepie
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
@@ -12,8 +14,8 @@
   categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
     - type: StationEvent
-      earliestStart: 75 # Den god please let cargo actually earn some money before having the ATS occupied for once.
-      weight: 3.5 # Den
+      earliestStart: 60 # Den god please let cargo actually earn some money before having the ATS occupied for once.
+      weight: 5.5 # Den
       minimumPlayers: 20
       duration: 1
       maxOccurrences: 1

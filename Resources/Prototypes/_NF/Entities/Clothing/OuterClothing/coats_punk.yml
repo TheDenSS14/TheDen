@@ -86,7 +86,8 @@
   - type: Clothing
     sprite: _NF/Clothing/OuterClothing/Coats/bomber_punk_red.rsi
   - type: TemperatureProtection
-    coefficient: 0.1
+    heatingCoefficient: 1.1
+    coolingCoefficient: 0.1
 
 - type: entity
   parent: ClothingOuterStorageBase
@@ -99,7 +100,8 @@
   - type: Clothing
     sprite: _NF/Clothing/OuterClothing/Coats/jacket_leather.rsi
   - type: TemperatureProtection
-    coefficient: 0.1
+    heatingCoefficient: 0.8
+    coolingCoefficient: 0.3
 
 - type: entity
   parent: ClothingOuterStorageBase
@@ -112,7 +114,8 @@
   - type: Clothing
     sprite: _NF/Clothing/OuterClothing/Coats/jacket_biker.rsi
   - type: TemperatureProtection
-    coefficient: 0.1
+    heatingCoefficient: 0.8
+    coolingCoefficient: 0.3
 
 - type: entity
   parent: ClothingOuterStorageBase
@@ -125,7 +128,8 @@
   - type: Clothing
     sprite: _NF/Clothing/OuterClothing/Coats/blazer_jamrock.rsi
   - type: TemperatureProtection
-    coefficient: 0.1
+    heatingCoefficient: 1.1
+    coolingCoefficient: 0.1
 
 - type: entity
   parent: ClothingOuterStorageBase
@@ -138,7 +142,8 @@
   - type: Clothing
     sprite: _NF/Clothing/OuterClothing/Coats/bomber_aerostatic.rsi
   - type: TemperatureProtection
-    coefficient: 0.1
+    heatingCoefficient: 1.1
+    coolingCoefficient: 0.1
 
 - type: entity
   parent: ClothingOuterStorageBase
@@ -151,7 +156,8 @@
   - type: Clothing
     sprite: _NF/Clothing/OuterClothing/Coats/jacket_letterman_blue.rsi
   - type: TemperatureProtection
-    coefficient: 0.1
+    heatingCoefficient: 0.8
+    coolingCoefficient: 0.3
 
 - type: entity
   parent: ClothingOuterStorageBase
@@ -164,7 +170,8 @@
   - type: Clothing
     sprite: _NF/Clothing/OuterClothing/Coats/jacket_letterman_brown.rsi
   - type: TemperatureProtection
-    coefficient: 0.1
+    heatingCoefficient: 0.8
+    coolingCoefficient: 0.3
 
 - type: entity
   parent: ClothingOuterStorageBase
@@ -177,7 +184,8 @@
   - type: Clothing
     sprite: _NF/Clothing/OuterClothing/Coats/jacket_letterman_red.rsi
   - type: TemperatureProtection
-    coefficient: 0.1
+    heatingCoefficient: 0.8
+    coolingCoefficient: 0.3
 
 - type: entity
   parent: ClothingOuterStorageBase
@@ -190,7 +198,8 @@
   - type: Clothing
     sprite: _NF/Clothing/OuterClothing/Coats/jacket_letterman_magenta.rsi
   - type: TemperatureProtection
-    coefficient: 0.1
+    heatingCoefficient: 0.8
+    coolingCoefficient: 0.3
 
 - type: entity
   parent: ClothingOuterStorageBase
@@ -204,7 +213,8 @@
   - type: Clothing
     sprite: _NF/Clothing/OuterClothing/Coats/bomber_pinksleeves.rsi
   - type: TemperatureProtection
-    coefficient: 0.1
+    heatingCoefficient: 1.1
+    coolingCoefficient: 0.1
 
 # Procedural punk jackets
 - type: entity
@@ -255,7 +265,8 @@
         overlay_base_OuterClothing_jacket_07: CyberpunkNeon
         mask_null: ""
   - type: TemperatureProtection
-    coefficient: 0.1
+    heatingCoefficient: 0.8
+    coolingCoefficient: 0.3
 
 - type: entity
   parent: ClothingOuterStorageBase
@@ -286,4 +297,5 @@
       jacket_decor:
         decor_base_OuterClothing_letterman: Cyberpunk
   - type: TemperatureProtection
-    coefficient: 0.1
+    heatingCoefficient: 0.8
+    coolingCoefficient: 0.3

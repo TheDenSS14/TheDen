@@ -307,9 +307,9 @@
   - type: Sprite
     sprite: Objects/Tanks/Jetpacks/void.rsi
   - type: MovementSpeedModifier
-    weightlessAcceleration: 1.5
+    weightlessAcceleration: 3
     weightlessFriction: 0.3
-    weightlessModifier: 2
+    weightlessModifier: 1.2
   - type: Clothing
     sprite: Objects/Tanks/Jetpacks/void.rsi
     slots:

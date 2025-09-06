@@ -3,6 +3,9 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
+using System.Numerics;
+
+
 namespace Content.Shared.Overlays;
 
 public abstract partial class BaseOverlayComponent : Component

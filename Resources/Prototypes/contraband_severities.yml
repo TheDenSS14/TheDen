@@ -1,0 +1,64 @@
+# Clandestine, improvised (not made in a lathe) weapons/utilities - these items should not be allowed in most circumstances
+# examples:
+# 1. improvised shotgun, firebomb, stunprod are not okay the vast majority of time
+# 2. uranium spears are generally not okay for any passenger to have, but seeing them in epi near the arti chamber shouldn't raise any red flags
+- type: contrabandSeverity
+  id: contrabandSeverityImprovised
+  examineText: contraband-examine-text-Improvised
+
+# Items not restricted per se, but you shouldn't really have it around without a good reason
+# examples:
+# 1. kitchen knives are a normal thing for a chef to have, but generally not okay in the hands of a passenger
+# 2. if someone has an EVA suit on green and nothing is happening, then they should probably put it back
+- type: contrabandSeverity
+  id: contrabandSeverityMinor
+  examineText: contraband-examine-text-Minor
+
+# Highly dangerous items (for an unathorized person to have) that do not originate from nanotrasen or its rival companies
+# examples:
+# 1. musket / pirate revolver / mosin - it's still very much a possibly lethal firearm, even though it's not somebody's service weapon or a rival company weapon
+# 2. explosives such as modular grenades - dangerous, but could be made by anybody on a lathe. much more lethal than the improvised stuff too.
+- type: contrabandSeverity
+  id: contrabandSeverityMajor
+  examineText: contraband-examine-text-Major
+
+# Having this without proper clearance might be considered theft
+# examples:
+# 1. RCD/RPD - restricted to engineering
+# 2. CHIMP handcannon - restricted to epistemics
+- type: contrabandSeverity
+  id: contrabandSeverityDepartmentRestricted
+  examineText: contraband-examine-text-Restricted
+  showDepartmentsAndJobs: true
+
+# Having this as a regular crew member is considered grand theft
+# examples:
+# 1. nuke disk
+# 2. requisition digi-board
+- type: contrabandSeverity
+  id: contrabandSeverityGrandTheft
+  examineText: contraband-examine-text-GrandTheft
+
+# This is rival company contraband and is illegal to own
+# examples:
+# 1. hyperzine microinjector
+# 2. double-bladed energy sword
+- type: contrabandSeverity
+  id: contrabandSeverityRivalCompany
+  examineText: contraband-examine-text-RivalCompany
+
+# You should not be even seeing these items IC
+# examples:
+# 1. AdminRCD
+# 2. WeaponPistolDebug
+- type: contrabandSeverity
+  id: contrabandSeverityDebug
+  examineText: contraband-examine-text-Debug
+
+# NSFW items should get this so it's obvious they are not meant to be out in public
+# examples:
+# 1. dildos
+# 2. condoms
+- type: contrabandSeverity
+  id: contrabandSeverityNSFW
+  examineText: contraband-examine-text-NSFW
