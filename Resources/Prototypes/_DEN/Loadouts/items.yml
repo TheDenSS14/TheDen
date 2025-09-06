@@ -5,7 +5,7 @@
 # SPDX-FileCopyrightText: 2025 portfiend
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 # Mime masks
 - type: loadout
@@ -88,6 +88,38 @@
   cost: 0
   items:
     - NetworkConfigurator
+
+- type: loadout
+  id: LoadoutToyBasketball
+  category: GeneralToys
+  cost: 0
+  canBeHeirloom: true
+  items:
+    - Basketball
+
+- type: loadout
+  id: LoadoutToyFootball
+  category: GeneralToys
+  cost: 0
+  canBeHeirloom: true
+  items:
+    - Football
+
+- type: loadout
+  id: LoadoutToyBeachBall
+  category: GeneralToys
+  cost: 0
+  canBeHeirloom: true
+  items:
+    - BeachBall
+
+- type: loadout
+  id: LoadoutToySkimmerDiscus
+  category: GeneralToys
+  cost: 0
+  canBeHeirloom: true
+  items:
+    - SkimmerDiscus
 
 - type: loadout
   id: LoadoutCentcommPin

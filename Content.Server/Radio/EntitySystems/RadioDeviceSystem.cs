@@ -1,18 +1,18 @@
-// SPDX-FileCopyrightText: 2022 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2023 20kdc <asdd2808@gmail.com>
-// SPDX-FileCopyrightText: 2023 Slava0135 <40753025+Slava0135@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2023 Visne <39844191+Visne@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT <77995199+DEATHB4DEFEAT@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 Ed <96445749+TheShuEd@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 FoxxoTrystan <45297731+FoxxoTrystan@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 Kara <lunarautomaton6@gmail.com>
-// SPDX-FileCopyrightText: 2024 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 beck-thompson <107373427+beck-thompson@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 sleepyyapril <flyingkarii@gmail.com>
-// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 Leon Friedrich
+// SPDX-FileCopyrightText: 2023 20kdc
+// SPDX-FileCopyrightText: 2023 Slava0135
+// SPDX-FileCopyrightText: 2023 Visne
+// SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT
+// SPDX-FileCopyrightText: 2024 Ed
+// SPDX-FileCopyrightText: 2024 FoxxoTrystan
+// SPDX-FileCopyrightText: 2024 Kara
+// SPDX-FileCopyrightText: 2024 Nemanja
+// SPDX-FileCopyrightText: 2024 beck-thompson
+// SPDX-FileCopyrightText: 2024 metalgearsloth
+// SPDX-FileCopyrightText: 2024 sleepyyapril
+// SPDX-FileCopyrightText: 2025 Shaman
 //
-// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+// SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 using System.Linq;
 using Content.Server.Chat.Systems;
@@ -37,6 +37,8 @@ using Robust.Server.GameObjects;
 using Robust.Shared.Network;
 using Robust.Shared.Player; // Nuclear-14
 using Robust.Shared.Prototypes;
+using Content.Shared.Verbs; // Frontier
+using Robust.Shared.Utility; // Frontier
 
 namespace Content.Server.Radio.EntitySystems;
 
@@ -70,7 +72,7 @@ public sealed class RadioDeviceSystem : EntitySystem
         SubscribeLocalEvent<RadioMicrophoneComponent, ActivateInWorldEvent>(OnActivateMicrophone);
         SubscribeLocalEvent<RadioMicrophoneComponent, ListenEvent>(OnListen);
         SubscribeLocalEvent<RadioMicrophoneComponent, ListenAttemptEvent>(OnAttemptListen);
-        SubscribeLocalEvent<RadioMicrophoneComponent, PowerChangedEvent>(OnPowerChanged);
+        SubscribeLocalEvent<RadioMicrophoneComponent, PowerChangedEvent>(OnPowerChanged);SubscribeLocalEvent<RadioMicrophoneComponent, GetVerbsEvent<AlternativeVerb>>(OnGetAltVerbs); // Frontier
 
         SubscribeLocalEvent<RadioSpeakerComponent, ComponentInit>(OnSpeakerInit);
         SubscribeLocalEvent<RadioSpeakerComponent, ActivateInWorldEvent>(OnActivateSpeaker);
@@ -383,6 +385,42 @@ public sealed class RadioDeviceSystem : EntitySystem
 
     #endregion
     // Nuclear-14-End
+
+    // Frontier Start
+
+    /// <summary>
+    ///     Adds an alt verb allowing for the mic to be toggled easily.
+    /// </summary>
+    private void OnGetAltVerbs(EntityUid uid, RadioMicrophoneComponent microphone, GetVerbsEvent<AlternativeVerb> args)
+    {
+        if (!args.CanInteract || !args.CanAccess)
+            return;
+
+        AlternativeVerb verb = new()
+        {
+            Text = Loc.GetString("handheld-radio-component-toggle"),
+            Icon = new SpriteSpecifier.Texture(new ResPath("/Textures/Interface/VerbIcons/settings.svg.192dpi.png")),
+            Act = () => ToggleRadioOrIntercomMic(uid, microphone, args.User)
+        };
+        args.Verbs.Add(verb);
+    }
+
+    /// <summary>
+    ///     A mic toggle for both radios and intercoms.
+    /// </summary>
+    private void ToggleRadioOrIntercomMic(EntityUid uid, RadioMicrophoneComponent microphone, EntityUid user)
+    {
+        if (microphone.PowerRequired && !this.IsPowered(uid, EntityManager))
+            return;
+
+        ToggleRadioMicrophone(uid, user, false, microphone);
+        if (TryComp<IntercomComponent>(uid, out var intercom))
+        {
+            intercom.MicrophoneEnabled = microphone.Enabled;
+            Dirty<IntercomComponent>((uid, intercom));
+        }
+    }
+    // Frontier End
 
     // Frontier: init intercom with map
     private void OnMapInit(EntityUid uid, IntercomComponent ent, MapInitEvent args)

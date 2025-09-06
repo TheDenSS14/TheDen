@@ -4,6 +4,7 @@
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
+# Security Siren Helmet Start
 - type: entity
   parent: ClothingHeadHelmetBasic
   id: ClothingHeadHelmetSecuritySiren
@@ -50,7 +51,7 @@
   - type: PointLight
     enabled: false
     radius: 1.4
-    energy: 1.8
+    energy: 3
     color: red
     netsync: false
     mask: /Textures/Effects/LightMasks/double_cone.png
