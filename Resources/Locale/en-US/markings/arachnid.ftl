@@ -1,6 +1,7 @@
-# SPDX-FileCopyrightText: 2023 Nairod <110078045+Nairodian@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2023 PixelTK <85175107+PixelTheKermit@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Nairod
+# SPDX-FileCopyrightText: 2023 PixelTK
+# SPDX-FileCopyrightText: 2025 Shaman
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: MIT
 
@@ -98,3 +99,4 @@ marking-ArachnidLLegStripes = Arachnid Stripes (Left)
 marking-ArachnidLLegStripes-stripes_left = Stripes
 
 marking-ArachnidOverlayFuzzy = Fuzzy
+marking-ArachnidOverlayFuzzy-fuzzy = Fuzz
