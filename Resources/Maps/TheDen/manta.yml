@@ -1,16 +1,11 @@
-# SPDX-FileCopyrightText: 2025 metalgearsloth
-# SPDX-FileCopyrightText: 2025 sheepie
-#
-# SPDX-License-Identifier: AGPL-3.0-or-later
-
 meta:
   format: 7
   category: Map
   engineVersion: 267.0.0
   forkId: ""
   forkVersion: ""
-  time: 08/30/2025 16:18:08
-  entityCount: 27255
+  time: 09/06/2025 21:34:04
+  entityCount: 27256
 maps:
 - 1
 grids:
@@ -10870,28 +10865,6 @@ entities:
     - type: Transform
       pos: -25.5,28.5
       parent: 2
-- proto: AirlockAssemblyExternalGlass
-  entities:
-  - uid: 3997
-    components:
-    - type: Transform
-      pos: 23.5,53.5
-      parent: 2
-  - uid: 4006
-    components:
-    - type: Transform
-      pos: 21.5,53.5
-      parent: 2
-  - uid: 11671
-    components:
-    - type: Transform
-      pos: 15.5,53.5
-      parent: 2
-  - uid: 13974
-    components:
-    - type: Transform
-      pos: 13.5,53.5
-      parent: 2
 - proto: AirlockAssemblyShuttleSyndicateGlass
   entities:
   - uid: 11812
@@ -11390,6 +11363,26 @@ entities:
           - DoorBolt
 - proto: AirlockExternalGlass
   entities:
+  - uid: 3997
+    components:
+    - type: Transform
+      pos: 13.5,53.5
+      parent: 2
+  - uid: 4006
+    components:
+    - type: Transform
+      pos: 15.5,53.5
+      parent: 2
+  - uid: 11671
+    components:
+    - type: Transform
+      pos: 21.5,53.5
+      parent: 2
+  - uid: 13974
+    components:
+    - type: Transform
+      pos: 23.5,53.5
+      parent: 2
   - uid: 26305
     components:
     - type: Transform
@@ -11609,7 +11602,7 @@ entities:
       pos: 76.5,-12.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -25161.05
+      secondsUntilStateChange: -25328.021
       state: Opening
     - type: DeviceLinkSink
       invokeCounter: 1
@@ -11969,6 +11962,23 @@ entities:
       rot: 3.141592653589793 rad
       pos: -0.5,51.5
       parent: 2
+- proto: AirlockExternalGlassShuttleLocked
+  entities:
+  - uid: 22818
+    components:
+    - type: Transform
+      pos: 40.5,-70.5
+      parent: 2
+  - uid: 22819
+    components:
+    - type: Transform
+      pos: 41.5,-70.5
+      parent: 2
+  - uid: 22820
+    components:
+    - type: Transform
+      pos: 42.5,-70.5
+      parent: 2
 - proto: AirlockExternalGlassShuttleMiningFilled
   entities:
   - uid: 5561
@@ -11993,23 +12003,6 @@ entities:
     components:
     - type: Transform
       pos: 9.5,-66.5
-      parent: 2
-- proto: AirlockExternalGlassShuttleShipyard
-  entities:
-  - uid: 22818
-    components:
-    - type: Transform
-      pos: 42.5,-70.5
-      parent: 2
-  - uid: 22819
-    components:
-    - type: Transform
-      pos: 41.5,-70.5
-      parent: 2
-  - uid: 22820
-    components:
-    - type: Transform
-      pos: 40.5,-70.5
       parent: 2
 - proto: AirlockExternalSecurityLocked
   entities:
@@ -13025,7 +13018,7 @@ entities:
       pos: 2.5,27.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -30150.18
+      secondsUntilStateChange: -30317.15
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -64004,7 +63997,7 @@ entities:
       pos: 65.5,-16.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -42474.65
+      secondsUntilStateChange: -42641.62
       state: Closing
   - uid: 23609
     components:
@@ -64012,7 +64005,7 @@ entities:
       pos: 65.5,-17.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -42473.715
+      secondsUntilStateChange: -42640.688
       state: Closing
   - uid: 23610
     components:
@@ -64020,7 +64013,7 @@ entities:
       pos: 65.5,-18.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -42473.113
+      secondsUntilStateChange: -42640.086
       state: Closing
 - proto: CurtainsWhiteOpen
   entities:
@@ -141250,6 +141243,12 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 43.5,-60.5
       parent: 2
+  - uid: 27256
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 2.5,-39.5
+      parent: 2
 - proto: Screwdriver
   entities:
   - uid: 2674
@@ -171138,7 +171137,7 @@ entities:
       lastSignals:
         DoorStatus: True
     - type: Door
-      secondsUntilStateChange: -11173.296
+      secondsUntilStateChange: -11340.268
       state: Opening
 - proto: WindoorKitchenLocked
   entities:
