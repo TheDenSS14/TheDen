@@ -62,9 +62,14 @@
   placement:
     mode: SnapgridCenter
   components:
+  - type: Anchorable
+    flags:
+    - Anchorable
+  - type: Rotatable
   - type: StationAiWhitelist
   - type: InteractionOutline
   - type: Sprite
+    snapCardinals: true
     sprite: _DEN/Structures/Doors/Airlocks/highsec/highsec.rsi # The Den - airlock resprite
     layers:
     - state: closed
