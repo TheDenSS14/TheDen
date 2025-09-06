@@ -223,7 +223,7 @@
     - state: icon
     - state: icon-on
       visible: False
-      map: [ "enum.ToggleVisuals.Layer" ]
+      map: [ "enum.ToggleableVisuals.Layer" ]
     # End Frontier
   - type: Item
     storedRotation: -90
@@ -261,8 +261,8 @@
   - type: Appearance
   - type: GenericVisualizer
     visuals:
-      enum.ToggleVisuals.Toggled:
-        enum.ToggleVisuals.Layer:
-          True: { visible: True }
-          False: { visible: False }
+      enum.ToggleableVisuals.Enabled:
+        enum.ToggleableVisuals.Layer:
+          True: { visible: true }
+          False: { visible: false }
   # End DeltaV Additions

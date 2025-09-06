@@ -13,7 +13,7 @@ namespace Content.Server.Storage.Components;
 /// <summary>
 /// Applies an ongoing pickup area around the attached entity.
 /// </summary>
-[RegisterComponent, AutoGenerateComponentPause]
+[RegisterComponent, AutoGenerateComponentPause, AutoGenerateComponentState]
 public sealed partial class MagnetPickupComponent : Component
 {
     [ViewVariables(VVAccess.ReadWrite), DataField("nextScan")]
