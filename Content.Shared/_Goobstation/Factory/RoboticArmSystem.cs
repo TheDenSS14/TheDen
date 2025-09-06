@@ -405,6 +405,7 @@ public sealed class RoboticArmSystem : EntitySystem
             _turf.IsTileBlocked(turf, CollisionGroup.MachineMask);
     }
 
+    // DEN / IMP ported from Darkmajia's Impstation PR #2526 - removal of SetPowerDraw's usage and definition
     private void StartMoving(Entity<RoboticArmComponent> ent)
     {
         ent.Comp.NextMove = _timing.CurTime + ent.Comp.MoveDelay;

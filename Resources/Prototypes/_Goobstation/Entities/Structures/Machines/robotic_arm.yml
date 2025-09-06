@@ -114,7 +114,7 @@
     range: 5
   # Power
   - type: ApcPowerReceiver
-    powerLoad: 300 # Den / IMP, static 300 power draw instead of idle 50 / active 3000
+    powerLoad: 300 # Den / IMP, static 300 power draw instead of idle 50 / active 3000. via Darkmajia's Impstation PR #2526
   - type: PowerSwitch
   # Guide
   - type: GuideHelp
