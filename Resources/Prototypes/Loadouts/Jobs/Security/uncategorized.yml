@@ -619,7 +619,7 @@
 - type: loadout
   id: LoadoutSecurityRevolverNonLethal
   category: JobsSecurityAUncategorized
-  cost: 0
+  cost: 3
   canBeHeirloom: true
   guideEntry: SecurityWeapons
   requirements:
@@ -639,7 +639,7 @@
 - type: loadout
   id: LoadoutSecurityRevolverDeckardNonLethal
   category: JobsSecurityAUncategorized
-  cost: 1
+  cost: 3
   canBeHeirloom: true
   guideEntry: SecurityWeapons
   requirements:
@@ -659,7 +659,7 @@
 - type: loadout
   id: LoadoutSecurityPistolN1984NonLethal
   category: JobsSecurityAUncategorized
-  cost: 5
+  cost: 3
   canBeHeirloom: true
   guideEntry: SecurityWeapons
   requirements:
@@ -676,30 +676,32 @@
   items:
     - WeaponPistolN1984SecurityNonLethal
 
-- type: loadout
-  id: LoadoutSecurityEquipmentEnergySword
-  category: JobsSecurityAUncategorized
-  cost: 3
-  canBeHeirloom: true
-  guideEntry: SecurityWeapons
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutSecurityWeapons
-    - !type:CharacterLogicOrRequirement
-      requirements:
-        - !type:CharacterDepartmentRequirement
-          departments:
-            - Security
-        - !type:CharacterJobRequirement
-          jobs:
-            - BlueshieldOfficer
-  items:
-    - EnergyCutlassSecurity
+# DEN - Remove hardlight weapons from security
+# - type: loadout
+#   id: LoadoutSecurityEquipmentEnergySword
+#   category: JobsSecurityAUncategorized
+#   cost: 3
+#   canBeHeirloom: true
+#   guideEntry: SecurityWeapons
+#   requirements:
+#     - !type:CharacterItemGroupRequirement
+#       group: LoadoutSecurityWeapons
+#     - !type:CharacterLogicOrRequirement
+#       requirements:
+#         - !type:CharacterDepartmentRequirement
+#           departments:
+#             - Security
+#         - !type:CharacterJobRequirement
+#           jobs:
+#             - BlueshieldOfficer
+#   items:
+#     - EnergyCutlassSecurity
+# DEN
 
 - type: loadout
   id: LoadoutSecurityEnergyGunMini
   category: JobsSecurityAUncategorized
-  cost: 2
+  cost: 0
   canBeHeirloom: true
   guideEntry: SecurityWeapons
   requirements:
@@ -719,7 +721,7 @@
 - type: loadout
   id: LoadoutSecurityPistolViperNonLethal
   category: JobsSecurityAUncategorized
-  cost: 2
+  cost: 1
   canBeHeirloom: true
   guideEntry: SecurityWeapons
   requirements:
@@ -739,7 +741,7 @@
 - type: loadout
   id: LoadoutSecurityPistolViperWoodNonlethal
   category: JobsSecurityAUncategorized
-  cost: 2
+  cost: 1
   canBeHeirloom: true
   guideEntry: SecurityWeapons
   requirements:
@@ -822,7 +824,7 @@
 - type: loadout
   id: LoadoutSecurityRevolverK38MasterNonlethal
   category: JobsSecurityAUncategorized
-  cost: 1
+  cost: 3
   canBeHeirloom: true
   guideEntry: SecurityWeapons
   requirements:
@@ -842,7 +844,7 @@
 - type: loadout
   id: LoadoutSecurityRevolverFitzNonlethal
   category: JobsSecurityAUncategorized
-  cost: 2
+  cost: 3
   canBeHeirloom: true
   guideEntry: SecurityWeapons
   requirements:
@@ -862,7 +864,7 @@
 - type: loadout
   id: LoadoutSecurityRevolverPythonNonlethal
   category: JobsSecurityAUncategorized
-  cost: 5
+  cost: 3
   canBeHeirloom: true
   guideEntry: SecurityWeapons
   requirements:

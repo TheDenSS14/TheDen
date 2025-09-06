@@ -1,0 +1,31 @@
+# SPDX-FileCopyrightText: 2025 Jakumba
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: body
+  id: Scugcat
+  name: scugcat
+  root: torso
+  slots:
+    torso:
+      part: TorsoAnimal
+      connections:
+      - right hand
+      - left hand
+      - legs
+      organs:
+        heart: OrganAnimalHeart
+        lungs: OrganAnimalLungs
+        stomach: OrganAnimalStomach
+        liver: OrganAnimalLiver
+        kidneys: OrganAnimalKidneys
+    right hand:
+      part: RightHandAnimal
+    left hand:
+      part: LeftHandAnimal
+    legs:
+      part: LegsAnimal
+      connections:
+      - feet
+    feet:
+      part: FeetAnimal

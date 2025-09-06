@@ -1,5 +1,6 @@
-# SPDX-FileCopyrightText: 2025 Rosycup <178287475+Rosycup@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Jakumba
+# SPDX-FileCopyrightText: 2025 Rosycup
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -61,7 +62,7 @@
 
 - type: entity
   name: greatsword
-  parent: Greatsword
+  parent: [Greatsword, BaseCentcommContraband]
   id: GreatswordBlueshield
   description: A massive blade more akin to a hunk of well forged metal on a stick, enhanced with bluespace technology.
   components:

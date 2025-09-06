@@ -23,10 +23,12 @@
 # SPDX-FileCopyrightText: 2025 Sapphire
 # SPDX-FileCopyrightText: 2025 Skubman
 # SPDX-FileCopyrightText: 2025 Tanix
+# SPDX-FileCopyrightText: 2025 juniwoofs
 # SPDX-FileCopyrightText: 2025 portfiend
+# SPDX-FileCopyrightText: 2025 sheepie
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: entity
   abstract: true
@@ -141,6 +143,11 @@
           32:
             sprite: Mobs/Species/Vox/displacement.rsi
             state: hand
+      head:
+        sizeMaps:
+          32:
+            sprite: Mobs/Species/Vox/displacement.rsi
+            state: head
       back:
         sizeMaps:
           32:
@@ -157,9 +164,11 @@
             sprite: Mobs/Species/Vox/displacement.rsi
             state: shoes
 
+
 - type: entity
   parent: [BaseVoxAppearance, BaseSpeciesDummy]
   id: MobVoxDummy
+  categories: [ HideSpawnMenu ]
   components:
   - type: HumanoidAppearance
     species: Vox
@@ -183,6 +192,11 @@
           32:
             sprite: Mobs/Species/Vox/displacement.rsi
             state: hand
+      head:
+        sizeMaps:
+          32:
+            sprite: Mobs/Species/Vox/displacement.rsi
+            state: head
       back:
         sizeMaps:
           32:

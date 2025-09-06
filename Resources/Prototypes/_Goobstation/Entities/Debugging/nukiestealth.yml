@@ -1,7 +1,8 @@
-# SPDX-FileCopyrightText: 2025 VMSolidus <evilexecutive@gmail.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 VMSolidus
+# SPDX-FileCopyrightText: 2025 portfiend
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: entity
   parent: ClothingOuterHardsuitBase
@@ -53,6 +54,7 @@
   suffix: DEBUG, DO NOT MAP, stealth
   name: syndicate stealth hardsuit helmet
   description: A helmet with plating for stealth operations.
+  categories: [ Debug ]
   components:
   - type: Sprite
     sprite: Clothing/Head/Hardsuits/syndicate.rsi

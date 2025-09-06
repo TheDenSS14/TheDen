@@ -1,23 +1,23 @@
-// SPDX-FileCopyrightText: 2019 L.E.D <10257081+unusualcrow@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2019 PrPleGoo <PrPleGoo@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2020 Acruid <shatter66@gmail.com>
-// SPDX-FileCopyrightText: 2020 ComicIronic <comicironic@gmail.com>
-// SPDX-FileCopyrightText: 2020 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2020 Paul Ritter <ritter.paul1@googlemail.com>
-// SPDX-FileCopyrightText: 2020 ancientpower <ancientpowerer@gmail.com>
-// SPDX-FileCopyrightText: 2020 ancientpower <evafleck@gmail.com>
-// SPDX-FileCopyrightText: 2021 Daniel Castro Razo <eldanielcr@gmail.com>
-// SPDX-FileCopyrightText: 2021 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
-// SPDX-FileCopyrightText: 2021 Swept <sweptwastaken@protonmail.com>
-// SPDX-FileCopyrightText: 2021 Visne <39844191+Visne@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2022 Ian Pike <Ianpike98@gmail.com>
-// SPDX-FileCopyrightText: 2022 Jacob Tong <10494922+ShadowCommander@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2022 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2023 Repo <47093363+Titian3@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT <77995199+DEATHB4DEFEAT@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2019 L.E.D
+// SPDX-FileCopyrightText: 2019 PrPleGoo
+// SPDX-FileCopyrightText: 2020 Acruid
+// SPDX-FileCopyrightText: 2020 ComicIronic
+// SPDX-FileCopyrightText: 2020 DrSmugleaf
+// SPDX-FileCopyrightText: 2020 Paul Ritter
+// SPDX-FileCopyrightText: 2020 ancientpower
+// SPDX-FileCopyrightText: 2021 Daniel Castro Razo
+// SPDX-FileCopyrightText: 2021 Pieter-Jan Briers
+// SPDX-FileCopyrightText: 2021 Swept
+// SPDX-FileCopyrightText: 2021 Visne
+// SPDX-FileCopyrightText: 2022 Ian Pike
+// SPDX-FileCopyrightText: 2022 Jacob Tong
+// SPDX-FileCopyrightText: 2022 metalgearsloth
+// SPDX-FileCopyrightText: 2023 Repo
+// SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT
+// SPDX-FileCopyrightText: 2025 Eightballll
+// SPDX-FileCopyrightText: 2025 sleepyyapril
 //
-// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+// SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 using JetBrains.Annotations;
 using Robust.Shared.Map;
@@ -99,6 +99,10 @@ public enum CollisionGroup
     WallLayer = Opaque | Impassable | HighImpassable | MidImpassable | LowImpassable | BulletImpassable | InteractImpassable,
     GlassLayer = Impassable | HighImpassable | MidImpassable | LowImpassable | BulletImpassable | InteractImpassable,
     HalfWallLayer = MidImpassable | LowImpassable,
+    FlimsyLayer = Opaque | HighImpassable | MidImpassable | LowImpassable | InteractImpassable,
+
+    // Allows people to interact past and target players inside of this
+    SpecialWallLayer = Opaque | HighImpassable | MidImpassable | LowImpassable | BulletImpassable,
 
     // Statue, monument, airlock, window
     FullTileMask = Impassable | HighImpassable | MidImpassable | LowImpassable | InteractImpassable,

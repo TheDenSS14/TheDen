@@ -1,26 +1,23 @@
-# SPDX-FileCopyrightText: 2022 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2022 Jezithyr <Jezithyr@gmail.com>
-# SPDX-FileCopyrightText: 2022 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2022 Rane <60792108+Elijahrane@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2022 Visne <39844191+Visne@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2023 M3739 <47579354+M3739@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2023 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2023 Whisper <121047731+QuietlyWhisper@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2023 brainfood1183 <113240905+brainfood1183@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2023 deltanedas <39013340+deltanedas@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2023 deltanedas <@deltanedas:kde.org>
-# SPDX-FileCopyrightText: 2023 lzk <124214523+lzk228@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2023 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
-# SPDX-FileCopyrightText: 2024 gluesniffler <159397573+gluesniffler@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 gluesniffler <linebarrelerenthusiast@gmail.com>
-# SPDX-FileCopyrightText: 2024 sleepyyapril <flyingkarii@gmail.com>
-# SPDX-FileCopyrightText: 2024 sleepyyapril <***>
-# SPDX-FileCopyrightText: 2025 Blitz <73762869+BlitzTheSquishy@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 dootythefrooty <awhunter8@gmail.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 DrSmugleaf
+# SPDX-FileCopyrightText: 2022 Jezithyr
+# SPDX-FileCopyrightText: 2022 Leon Friedrich
+# SPDX-FileCopyrightText: 2022 Rane
+# SPDX-FileCopyrightText: 2022 Visne
+# SPDX-FileCopyrightText: 2023 M3739
+# SPDX-FileCopyrightText: 2023 Nemanja
+# SPDX-FileCopyrightText: 2023 Whisper
+# SPDX-FileCopyrightText: 2023 brainfood1183
+# SPDX-FileCopyrightText: 2023 deltanedas
+# SPDX-FileCopyrightText: 2023 lzk
+# SPDX-FileCopyrightText: 2023 metalgearsloth
+# SPDX-FileCopyrightText: 2024 Pieter-Jan Briers
+# SPDX-FileCopyrightText: 2024 gluesniffler
+# SPDX-FileCopyrightText: 2024 sleepyyapril
+# SPDX-FileCopyrightText: 2025 Blitz
+# SPDX-FileCopyrightText: 2025 dootythefrooty
+# SPDX-FileCopyrightText: 2025 mubururu_
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: entity
   id: PartSilicon
@@ -81,6 +78,8 @@
     - Trash
     - BorgArm
     - BorgLArm
+  - type: Item
+    heldPrefix: borg-arm
 
 - type: entity
   id: BaseBorgRightArm
@@ -105,6 +104,8 @@
     - Trash
     - BorgArm
     - BorgRArm
+  - type: Item
+    heldPrefix: borg-arm
 
 - type: entity
   id: BaseBorgLegLeft
@@ -130,6 +131,8 @@
     - BorgLeg
     - BorgLLeg
   - type: MovementBodyPart
+  - type: Item
+    heldPrefix: borg-leg
 
 - type: entity
   id: BaseBorgLegRight
@@ -155,6 +158,8 @@
     - BorgLeg
     - BorgRLeg
   - type: MovementBodyPart
+  - type: Item
+    heldPrefix: borg-leg
 
 - type: entity
   id: BaseLightHeadBorg
@@ -173,6 +178,8 @@
     tags:
     - Trash
     - BorgHead
+  - type: Item
+    heldPrefix: borg-head
 
 - type: entity
   id: BaseBorgTorso
@@ -191,3 +198,5 @@
     tags:
     - Trash
     - BorgTorso
+  - type: Item
+    heldPrefix: borg-chest

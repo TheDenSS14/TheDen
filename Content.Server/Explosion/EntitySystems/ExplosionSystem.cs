@@ -234,7 +234,7 @@ public sealed partial class ExplosionSystem : EntitySystem
     }
 
     /// <summary>
-    ///     Find the strength needed to generate an explosion of a given radius. More useful for radii larger then 4, when the explosion becomes less "blocky".
+    ///     Find the strength needed to generate an explosion of a given radius. More useful for radii larger than 4, when the explosion becomes less "blocky".
     /// </summary>
     /// <remarks>
     ///     This assumes the explosion is in a vacuum / unobstructed. Given that explosions are not perfectly

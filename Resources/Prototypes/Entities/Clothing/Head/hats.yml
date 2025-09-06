@@ -63,13 +63,16 @@
 # SPDX-FileCopyrightText: 2025 Blitz
 # SPDX-FileCopyrightText: 2025 GNUtopia
 # SPDX-FileCopyrightText: 2025 Rosycup
+# SPDX-FileCopyrightText: 2025 SeamLesss
+# SPDX-FileCopyrightText: 2025 Shaman
 # SPDX-FileCopyrightText: 2025 Sir Warock
 # SPDX-FileCopyrightText: 2025 Skubman
+# SPDX-FileCopyrightText: 2025 Vanessa
 # SPDX-FileCopyrightText: 2025 Your Name
 # SPDX-FileCopyrightText: 2025 fishbait
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: entity
   parent: ClothingHeadBase
@@ -540,6 +543,7 @@
   - type: PressureProtection # DeltaV - Make real wizard clothes space proof
     highPressureMultiplier: 0.6
     lowPressureMultiplier: 1000
+  - type: BreathMask # TheDen - All pressure-resistant headwear should have built-in internals
   - type: TemperatureProtection
     heatingCoefficient: 0.2
     coolingCoefficient: 0.2
@@ -664,6 +668,7 @@
   - type: PressureProtection # DeltaV - Make real wizard clothes space proof
     highPressureMultiplier: 0.6
     lowPressureMultiplier: 1000
+  - type: BreathMask # TheDen - All pressure-resistant headwear should have built-in internals
   - type: TemperatureProtection
     heatingCoefficient: 0.2
     coolingCoefficient: 0.2
@@ -736,6 +741,7 @@
   - type: PressureProtection # DeltaV - Make real wizard clothes space proof
     highPressureMultiplier: 0.6
     lowPressureMultiplier: 1000
+  - type: BreathMask # TheDen - All pressure-resistant headwear should have built-in internals
   - type: TemperatureProtection
     heatingCoefficient: 0.2
     coolingCoefficient: 0.2
@@ -1035,6 +1041,8 @@
     sprite: Clothing/Head/Hats/capcap.rsi
   - type: Clothing
     sprite: Clothing/Head/Hats/capcap.rsi
+  - type: Item
+    sprite: Clothing/Head/Hats/capcap.rsi
   - type: Tag
     tags:
     - ClothMade
@@ -1054,6 +1062,8 @@
   - type: Sprite
     sprite: Clothing/Head/Hats/comcap.rsi
   - type: Clothing
+    sprite: Clothing/Head/Hats/comcap.rsi
+  - type: Item
     sprite: Clothing/Head/Hats/comcap.rsi
   - type: Tag
     tags:

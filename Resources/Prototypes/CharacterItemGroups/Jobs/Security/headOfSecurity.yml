@@ -3,6 +3,7 @@
 # SPDX-FileCopyrightText: 2025 Blitz
 # SPDX-FileCopyrightText: 2025 BlitzTheSquishy
 # SPDX-FileCopyrightText: 2025 BlueHNT
+# SPDX-FileCopyrightText: 2025 Jakumba
 # SPDX-FileCopyrightText: 2025 Lonofera
 # SPDX-FileCopyrightText: 2025 Rosycup
 # SPDX-FileCopyrightText: 2025 VMSolidus
@@ -49,13 +50,17 @@
     - type: loadout
       id: LoadoutCommandHoSBulldog
     - type: loadout
-      id: LoadoutCommandHoSEnergySword
-    - type: loadout
+    #   id: LoadoutCommandHoSEnergySword # DEN
+    # - type: loadout
       id: LoadoutCommandHoSEnergyGun
     - type: loadout
       id: LoadoutCommandHoSBRDIR25
     - type: loadout
       id: LoadoutCommandAntiqueTerminus
+    - type: loadout
+      id: LoadoutCommandHoSAntelope
+    - type: loadout
+      id: LoadoutCommandHoSTommy
 
 #- type: characterItemGroup
 #  id: LoadoutHeadOfSecurityEyes
@@ -112,9 +117,9 @@
     - type: loadout
       id: LoadoutCommandHOSOuterArmorHosSamurai
     - type: loadout
-      id: LoadoutCommandHeadofSecurityVestWeb
-    - type: loadout
       id: LoadoutCommandHOSOuterLongcoat
+    - type: loadout
+      id: LoadoutCommandHOSOuterVestHoSVestWeb
 
 - type: characterItemGroup
   id: LoadoutHeadOfSecurityShoes

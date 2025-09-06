@@ -1,5 +1,6 @@
 # SPDX-FileCopyrightText: 2024 V
 # SPDX-FileCopyrightText: 2025 January Nelson
+# SPDX-FileCopyrightText: 2025 Shaman
 # SPDX-FileCopyrightText: 2025 sheepie
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
@@ -32,3 +33,47 @@
   components:
   - type: Sprite
     sprite: Clothing/Neck/Cloaks/captaingreatcoat.rsi
+
+- type: entity
+  parent: ClothingNeckBase
+  id: ClothingNeckCloakWebSimple
+  name: simple web cloak
+  description: This tattered cloak looks a little spooky.
+  components:
+  - type: Sprite
+    sprite: _Impstation/Clothing/Neck/Cloaks/webcloaksimple.rsi
+  - type: Butcherable
+    butcheringType: Knife
+    spawned:
+    - id: MaterialWebSilk1
+      amount: 10
+  - type: FlavorProfile
+    flavors:
+      - cobwebs
+    ignoreReagents:
+      - Fiber
+  - type: Construction
+    graph: WebObjects
+    node: cloaksimple
+
+- type: entity
+  parent: ClothingNeckBase
+  id: ClothingNeckCloakWebFancy
+  name: fancy web cloak
+  description: This tattered cloak looks really spooky.
+  components:
+  - type: Sprite
+    sprite: _Impstation/Clothing/Neck/Cloaks/webcloakfancy.rsi
+  - type: Butcherable
+    butcheringType: Knife
+    spawned:
+    - id: MaterialWebSilk1
+      amount: 10
+  - type: FlavorProfile
+    flavors:
+      - cobwebs
+    ignoreReagents:
+      - Fiber
+  - type: Construction
+    graph: WebObjects
+    node: cloakfancy

@@ -6,7 +6,7 @@
 # SPDX-FileCopyrightText: 2025 juniwoofs
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: gameMap
   id: Baikal
@@ -79,8 +79,8 @@
             MailCarrier: [ 2, 2 ]
             #civilian
             Passenger: [ -1, -1 ]
-            Clown: [ 1, 1 ]
-            Mime: [ 1, 1 ]
+            Clown: [ 1, 2 ]
+            Mime: [ 1, 2 ]
             Musician: [ 1, 2 ]
             Reporter: [ 2, 2 ]
             Boxer: [ 2, 2 ]

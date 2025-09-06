@@ -3,9 +3,11 @@
 # SPDX-FileCopyrightText: 2024 Mnemotechnican
 # SPDX-FileCopyrightText: 2025 EctoplasmIsGood
 # SPDX-FileCopyrightText: 2025 Eris
+# SPDX-FileCopyrightText: 2025 Falcon
 # SPDX-FileCopyrightText: 2025 Raikyr0
 # SPDX-FileCopyrightText: 2025 Rosycup
 # SPDX-FileCopyrightText: 2025 Sapphire
+# SPDX-FileCopyrightText: 2025 Shaman
 # SPDX-FileCopyrightText: 2025 Skubman
 # SPDX-FileCopyrightText: 2025 Tabitha
 # SPDX-FileCopyrightText: 2025 VMSolidus
@@ -19,7 +21,8 @@
   parent: TaurSpeciesLayers
   id: BaseArachneAppearance
   components:
-  - type: Inventory
+  - type: Inventory # TheDen - So they can have -arachne clothing sprites
+    speciesId: anytaur
     templateId: anytaur
   - type: HumanoidAppearance
     species: Arachne
@@ -31,6 +34,8 @@
   id: MobArachneBase
   abstract: true
   components:
+  - type: Inventory # TheDen - So they can have -arachne clothing sprites
+    speciesId: anytaur
   - type: Sericulture
     action: ActionSericulture
     productionLength: 2

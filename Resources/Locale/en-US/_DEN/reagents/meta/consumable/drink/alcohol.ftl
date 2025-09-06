@@ -73,3 +73,39 @@ reagent-desc-thdrink = It looks more like a child's attempt at a magic potion th
 
 reagent-name-featherpillow = feather pillow
 reagent-desc-featherpillow = Looks like a restful sleep.
+
+reagent-name-nectar = nectar
+reagent-desc-nectar = It shimmers with an ethereal, golden glow.
+
+reagent-name-tohokublaze = tohoku blaze
+reagent-desc-tohokublaze = The glass is filled with an abominable mixture of liquids that were never meant to be mixed. It's an...acquired taste.
+
+reagent-name-songbird = songbird
+reagent-desc-songbird = For the star that burns brighter than any other.
+
+reagent-name-touchofgrass = touch of grass
+reagent-desc-touchofgrass = A touch of the outside world brought in. When's the last time you've seen this?
+
+reagent-name-miamivice = miami vice
+reagent-desc-miamivice = The Yin and Yang of beach parties!
+
+reagent-name-thesilverhand = the silverhand
+reagent-desc-thesilverhand = A tequila old fashioned with a splash of beer, and a chili garnish. For the rockerboy who never gave up.
+
+reagent-name-arkveiltemple = arkveil temple
+reagent-desc-arkveiltemple = A refreshing combination of a sweet treat mixed with a well-earned holiday! Safer for all the lightweights, too!
+
+reagent-name-coconutdoublecreampie = coconut double cream pie
+reagent-desc-coconutdoublecreampie = Something you probably wouldn't want to be showered with... Unless?
+
+reagent-name-emeraldjourney = emerald journey
+reagent-desc-emeraldjourney = For the adventurous spirits that traverse beyond the stars.
+
+reagent-name-vampiresdelight = vampire's delight
+reagent-desc-vampiresdelight = What is a man? A miserable little pile of secrets!
+
+reagent-name-witchinghour = witching hour
+reagent-desc-witchinghour = A sweet and simple witch's concoction, straight from the cauldron and bursting with a variety of flavors!
+
+reagent-name-plasmaflood = plasma flood
+reagent-desc-plasmaflood = An Atmosian light cocktail, perfect for drinking on the job!
