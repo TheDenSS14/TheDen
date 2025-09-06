@@ -13,6 +13,11 @@ using Content.Shared.Ensnaring.Components;
 using Content.Shared.Movement.Systems;
 using Robust.Shared.GameStates;
 using Robust.Shared.Serialization;
+using Robust.Shared.Audio.Systems;
+using Robust.Shared.Containers;
+using Content.Shared.Hands.EntitySystems;
+using Content.Shared.Popups;
+using Content.Shared.Damage.Systems;
 
 namespace Content.Shared.Ensnaring;
 
@@ -25,6 +30,12 @@ public abstract class SharedEnsnareableSystem : EntitySystem
 {
     [Dependency] private readonly MovementSpeedModifierSystem _speedModifier = default!;
     [Dependency] protected readonly SharedAppearanceSystem Appearance = default!;
+    [Dependency] private   readonly SharedAudioSystem _audio = default!;
+    [Dependency] protected readonly SharedContainerSystem Container = default!;
+    [Dependency] private   readonly SharedDoAfterSystem _doAfter = default!;
+    [Dependency] private   readonly SharedHandsSystem _hands = default!;
+    [Dependency] protected readonly SharedPopupSystem Popup = default!;
+    [Dependency] private   readonly SharedStaminaSystem _stamina = default!;
 
     public override void Initialize()
     {

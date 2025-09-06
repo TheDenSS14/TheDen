@@ -15,7 +15,7 @@ namespace Content.Server.Shadowkin;
 
 public sealed class EtherealStunItemSystem : EntitySystem
 {
-    [Dependency] private readonly StaminaSystem _stamina = default!;
+    [Dependency] private readonly SharedStaminaSystem _stamina = default!;
     [Dependency] private readonly EntityLookupSystem _lookup = default!;
     [Dependency] private readonly SharedStackSystem _sharedStackSystem = default!;
     public override void Initialize()

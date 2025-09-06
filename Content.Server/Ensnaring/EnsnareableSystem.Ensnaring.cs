@@ -39,7 +39,7 @@ public sealed partial class EnsnareableSystem
     [Dependency] private readonly SharedDoAfterSystem _doAfter = default!;
     [Dependency] private readonly AlertsSystem _alerts = default!;
     [Dependency] private readonly BodySystem _body = default!;
-    [Dependency] private readonly StaminaSystem _stamina = default!;
+    [Dependency] private readonly SharedStaminaSystem _stamina = default!;
     [Dependency] private readonly EntityWhitelistSystem _entityWhitelist = default!;
 
     public void InitializeEnsnaring()

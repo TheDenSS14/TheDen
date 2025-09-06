@@ -27,7 +27,7 @@ public sealed partial class EnsnareableSystem : SharedEnsnareableSystem
     [Dependency] private readonly ContainerSystem _container = default!;
     [Dependency] private readonly SharedHandsSystem _hands = default!;
     [Dependency] private readonly PopupSystem _popup = default!;
-    
+
     public override void Initialize()
     {
         base.Initialize();
@@ -65,7 +65,7 @@ public sealed partial class EnsnareableSystem : SharedEnsnareableSystem
             QueueDel(args.Args.Used);
         else
             _hands.PickupOrDrop(args.Args.User, args.Args.Used.Value);
-        
+
         _popup.PopupEntity(Loc.GetString("ensnare-component-try-free-complete", ("ensnare", args.Args.Used)), uid, uid, PopupType.Medium);
 
         UpdateAlert(args.Args.Target.Value, component);

@@ -14,7 +14,7 @@ namespace Content.Server._DV.Abilities.Kitsune;
 public sealed class KitsuneFoxSystem : EntitySystem
 {
     [Dependency] private readonly PolymorphSystem _polymorph = default!;
-    [Dependency] private readonly StaminaSystem _stamina = default!;
+    [Dependency] private readonly SharedStaminaSystem _stamina = default!;
 
     public override void Initialize()
     {

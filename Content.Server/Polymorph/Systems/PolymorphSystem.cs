@@ -64,7 +64,7 @@ public sealed partial class PolymorphSystem : EntitySystem
     [Dependency] private readonly ActionsSystem _actions = default!;
     [Dependency] private readonly AudioSystem _audio = default!;
     [Dependency] private readonly SharedBuckleSystem _buckle = default!;
-    [Dependency] private readonly StaminaSystem _stamina = default!; // DeltaV
+    [Dependency] private readonly SharedStaminaSystem _stamina = default!; // DeltaV
     [Dependency] private readonly ContainerSystem _container = default!;
     [Dependency] private readonly DamageableSystem _damageable = default!;
     [Dependency] private readonly HumanoidAppearanceSystem _humanoid = default!;
@@ -285,7 +285,7 @@ public sealed partial class PolymorphSystem : EntitySystem
 
         if (configuration.Inventory == PolymorphInventoryChange.Transfer)
         {
-            
+
             if (HasComp<InventoryComponent>(uid) && HasComp<InventoryComponent>(child))
                 _inventory.TransferEntityInventories(uid, child);
 
