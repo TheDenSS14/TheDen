@@ -14,11 +14,12 @@
 # SPDX-FileCopyrightText: 2024 lzk
 # SPDX-FileCopyrightText: 2024 themias
 # SPDX-FileCopyrightText: 2025 January Nelson
+# SPDX-FileCopyrightText: 2025 SeamLesss
 # SPDX-FileCopyrightText: 2025 Skubman
 # SPDX-FileCopyrightText: 2025 Winter
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: entity
   parent: ClothingNeckBase
@@ -74,6 +75,8 @@
   - type: Sprite
     sprite: Clothing/Neck/Misc/bling.rsi
   - type: Clothing
+    sprite: Clothing/Neck/Misc/bling.rsi
+  - type: Item
     sprite: Clothing/Neck/Misc/bling.rsi
 
 - type: entity
