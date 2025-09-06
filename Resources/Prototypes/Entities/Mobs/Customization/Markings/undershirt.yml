@@ -1,156 +1,77 @@
-# SPDX-FileCopyrightText: 2025 BloodfiendishOperator <141253729+Diggy0@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 Rosycup <178287475+Rosycup@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 VMSolidus <evilexecutive@gmail.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 BloodfiendishOperator
+# SPDX-FileCopyrightText: 2025 Rosycup
+# SPDX-FileCopyrightText: 2025 VMSolidus
+# SPDX-FileCopyrightText: 2025 portfiend
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 - type: marking
+  parent: BaseMarkingUndershirt # DEN - Marking Inheritance
   id: UndershirtDefault
-  bodyPart: Undershirt
-  markingCategory: Undershirt
-  invertSpeciesRestriction: True
-  speciesRestriction: [Plasmamen, Thaven] # TheDen - Thaven
-  coloring:
-    default:
-      type:
-        !type:SimpleColoring
-          color: "#FFFFFF"
   sprites:
   - sprite: Mobs/Customization/undershirt.rsi
     state: undershirt
 
 - type: marking
+  parent: BaseMarkingUndershirt # DEN - Marking Inheritance
   id: UndershirtRolled
-  bodyPart: Undershirt
-  markingCategory: Undershirt
-  invertSpeciesRestriction: True
-  speciesRestriction: [Plasmamen, Thaven] # TheDen - Thaven
-  coloring:
-    default:
-      type:
-        !type:SimpleColoring
-          color: "#FFFFFF"
   sprites:
   - sprite: Mobs/Customization/undershirt.rsi
     state: rolled_undershirt
 
 - type: marking
+  parent: BaseMarkingUndershirt # DEN - Marking Inheritance
   id: UndershirtSleeveless
-  bodyPart: Undershirt
-  markingCategory: Undershirt
-  invertSpeciesRestriction: True
-  speciesRestriction: [Plasmamen, Thaven] # TheDen - Thaven
-  coloring:
-    default:
-      type:
-        !type:SimpleColoring
-          color: "#FFFFFF"
   sprites:
   - sprite: Mobs/Customization/undershirt.rsi
     state: sleeveless
 
 - type: marking
+  parent: BaseMarkingUndershirt # DEN - Marking Inheritance
   id: UndershirtRolledSleeveless
-  bodyPart: Undershirt
-  markingCategory: Undershirt
-  invertSpeciesRestriction: True
-  speciesRestriction: [Plasmamen, Thaven] # TheDen - Thaven
-  coloring:
-    default:
-      type:
-        !type:SimpleColoring
-          color: "#FFFFFF"
   sprites:
   - sprite: Mobs/Customization/undershirt.rsi
     state: rolled_undershirt_sleeveless
 
 - type: marking
+  parent: BaseMarkingUndershirt # DEN - Marking Inheritance
   id: UndershirtGrossSleeveless
-  bodyPart: Undershirt
-  markingCategory: Undershirt
-  invertSpeciesRestriction: True
-  speciesRestriction: [Plasmamen, Thaven] # TheDen - Thaven
-  coloring:
-    default:
-      type:
-        !type:SimpleColoring
-          color: "#FFFFFF"
   sprites:
   - sprite: Mobs/Customization/undershirt.rsi
     state: gross_sleeveless
 
 - type: marking
+  parent: BaseMarkingUndershirt # DEN - Marking Inheritance
   id: UndershirtNanotrasen
-  bodyPart: Undershirt
-  markingCategory: Undershirt
-  invertSpeciesRestriction: True
-  speciesRestriction: [Plasmamen, Thaven] # TheDen - Thaven
-  coloring:
-    default:
-      type:
-        !type:SimpleColoring
-          color: "#FFFFFF"
   sprites:
   - sprite: Mobs/Customization/undershirt.rsi
     state: nanotrasen
 
 - type: marking
+  parent: BaseMarkingUndershirt # DEN - Marking Inheritance
   id: UndershirtBinder
-  bodyPart: Undershirt
-  markingCategory: Undershirt
-  invertSpeciesRestriction: True
-  speciesRestriction: [Plasmamen, Thaven] # TheDen - Thaven
-  coloring:
-    default:
-      type:
-        !type:SimpleColoring
-          color: "#FFFFFF"
   sprites:
   - sprite: Mobs/Customization/undershirt.rsi
     state: binder
 
 - type: marking
+  parent: BaseMarkingUndershirt # DEN - Marking Inheritance
   id: UndershirtBraClassic
-  bodyPart: Undershirt
-  markingCategory: Undershirt
-  invertSpeciesRestriction: True
-  speciesRestriction: [Plasmamen, Thaven] # TheDen - Thaven
-  coloring:
-    default:
-      type:
-        !type:SimpleColoring
-          color: "#FFFFFF"
   sprites:
   - sprite: Mobs/Customization/undershirt.rsi
     state: classic
 
 - type: marking
+  parent: BaseMarkingUndershirt # DEN - Marking Inheritance
   id: UndershirtBraSports
-  bodyPart: Undershirt
-  markingCategory: Undershirt
-  invertSpeciesRestriction: True
-  speciesRestriction: [Plasmamen, Thaven] # TheDen - Thaven
-  coloring:
-    default:
-      type:
-        !type:SimpleColoring
-          color: "#FFFFFF"
   sprites:
   - sprite: Mobs/Customization/undershirt.rsi
     state: sports
 
 - type: marking
+  parent: BaseMarkingUndershirt # DEN - Marking Inheritance
   id: UndershirtBraStrapless
-  bodyPart: Undershirt
-  markingCategory: Undershirt
-  invertSpeciesRestriction: True
-  speciesRestriction: [Plasmamen, Thaven] # TheDen - Thaven
-  coloring:
-    default:
-      type:
-        !type:SimpleColoring
-          color: "#FFFFFF"
   sprites:
   - sprite: Mobs/Customization/undershirt.rsi
     state: strapless

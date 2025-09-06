@@ -1,81 +1,42 @@
-# SPDX-FileCopyrightText: 2025 BloodfiendishOperator <141253729+Diggy0@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 Rosycup <178287475+Rosycup@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 VMSolidus <evilexecutive@gmail.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 BloodfiendishOperator
+# SPDX-FileCopyrightText: 2025 Rosycup
+# SPDX-FileCopyrightText: 2025 VMSolidus
+# SPDX-FileCopyrightText: 2025 portfiend
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 - type: marking
+  parent: BaseMarkingUnderpants # DEN - Marking Inheritance
   id: UnderwearDefault
-  bodyPart: Underwear
-  markingCategory: Underwear
-  invertSpeciesRestriction: True
-  speciesRestriction: [Arachne, Plasmamen, Thaven] # TheDen - Thaven
-  coloring:
-    default:
-      type:
-        !type:SimpleColoring
-          color: "#FFFFFF"
   sprites:
   - sprite: Mobs/Customization/underwear.rsi
     state: boxers
 
 - type: marking
+  parent: BaseMarkingUnderpants # DEN - Marking Inheritance
   id: UnderwearBriefs
-  bodyPart: Underwear
-  markingCategory: Underwear
-  invertSpeciesRestriction: True
-  speciesRestriction: [Arachne, Plasmamen, Thaven] # TheDen - Thaven
-  coloring:
-    default:
-      type:
-        !type:SimpleColoring
-          color: "#FFFFFF"
   sprites:
   - sprite: Mobs/Customization/underwear.rsi
     state: briefs
 
 - type: marking
+  parent: BaseMarkingUnderpants # DEN - Marking Inheritance
   id: UnderwearLowriders
-  bodyPart: Underwear
-  markingCategory: Underwear
-  invertSpeciesRestriction: True
-  speciesRestriction: [Arachne, Plasmamen, Thaven] # TheDen - Thaven
-  coloring:
-    default:
-      type:
-        !type:SimpleColoring
-          color: "#FFFFFF"
   sprites:
   - sprite: Mobs/Customization/underwear.rsi
     state: lowriders
 
 - type: marking
+  parent: BaseMarkingUnderpants # DEN - Marking Inheritance
   id: UnderwearSatin
-  bodyPart: Underwear
-  markingCategory: Underwear
-  invertSpeciesRestriction: True
-  speciesRestriction: [Arachne, Plasmamen, Thaven] # TheDen - Thaven
-  coloring:
-    default:
-      type:
-        !type:SimpleColoring
-          color: "#FFFFFF"
   sprites:
   - sprite: Mobs/Customization/underwear.rsi
     state: satin
 
 - type: marking
+  parent: BaseMarkingUnderpants # DEN - Marking Inheritance
   id: UnderwearTanga
-  bodyPart: Underwear
-  markingCategory: Underwear
-  invertSpeciesRestriction: True
-  speciesRestriction: [Arachne, Plasmamen, Thaven] # TheDen - Thaven
-  coloring:
-    default:
-      type:
-        !type:SimpleColoring
-          color: "#FFFFFF"
   sprites:
   - sprite: Mobs/Customization/underwear.rsi
     state: tanga

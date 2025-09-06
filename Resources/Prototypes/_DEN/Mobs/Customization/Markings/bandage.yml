@@ -1,5 +1,5 @@
 - type: marking
-  speciesRestriction: [Dwarf, Human, Felinid, Oni, Arachne, Lamia, IPC, Harpy, Kitsune, SlimePerson, Canid]
+  parent: BaseMarkingSpeciesHumanHead
   id: FaceWrapRight
   bodyPart: Eyes
   markingCategory: Overlay
@@ -13,7 +13,7 @@
     state: facewrapright
 
 - type: marking
-  speciesRestriction: [Dwarf, Human, Felinid, Oni, Arachne, Lamia, IPC, Harpy, Kitsune, SlimePerson, Canid]
+  parent: BaseMarkingSpeciesHumanHead
   id: FaceWrapLeft
   bodyPart: Eyes
   markingCategory: Overlay
@@ -27,7 +27,7 @@
     state: facewrapleft
 
 - type: marking
-  speciesRestriction: [Dwarf, Human, Felinid, Oni, Arachne, Lamia, IPC, Harpy, Kitsune, SlimePerson, Canid]
+  parent: BaseMarkingSpeciesHumanHead
   id: FaceWrap
   bodyPart: Eyes
   markingCategory: Overlay
