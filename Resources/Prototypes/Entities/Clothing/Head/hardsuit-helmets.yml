@@ -124,7 +124,7 @@
     heatingCoefficient: 0.005
     coolingCoefficient: 0.005
   - type: FireProtection
-    reduction: 0.2
+    reduction: 0.25 # 90% with Helmet, Hardsuit isn't fully fireproof.
 
 #Engineering Hardsuit
 - type: entity
@@ -175,6 +175,8 @@
   - type: PressureProtection
     highPressureMultiplier: 0.1
     lowPressureMultiplier: 1000
+  - type: FireProtection
+    reduction: 0.15 # 50% with Helmet.
 
 #Spationaut Hardsuit
 - type: entity
@@ -223,6 +225,8 @@
   - type: PressureProtection
     highPressureMultiplier: 0.72
     lowPressureMultiplier: 1000
+  - type: FireProtection
+    reduction: 0.15 # 50% with Helmet.
 
 #Salvage Hardsuit
 - type: entity
@@ -243,6 +247,8 @@
   - type: PointLight
     radius: 7
     energy: 3
+  - type: FireProtection
+    reduction: 0.15 # 65% with Helmet.
 
 # Goliath Hardsuit
 - type: entity
@@ -295,6 +301,9 @@
   - type: PressureProtection
     highPressureMultiplier: 0.72
     lowPressureMultiplier: 1000
+  - type: FireProtection
+    reduction: 0.2 # 80% with Helmet, Goliath Scales.
+
 
 - type: entity
   parent: ClothingHeadHardsuitBase
@@ -318,6 +327,8 @@
         Slash: 0.9
         Piercing: 0.9
         Heat: 0.9
+  - type: FireProtection
+    reduction: 0.3 # Perfect Protection with Helmet.
 
 #Paramedic Void Helmet
 - type: entity
@@ -366,6 +377,9 @@
         Heat: 0.9
   - type: FlashImmunity # Goobstation
   - type: FlashSoundSuppression # Goobstation
+  - type: FireProtection
+    reduction: 0.15 # 50% with Helmet.
+
 
 #Brigmedic Hardsuit
 - type: entity
@@ -396,6 +410,8 @@
     lowPressureMultiplier: 1000
   - type: FlashImmunity # Goobstation
   - type: FlashSoundSuppression # Goobstation
+  - type: FireProtection
+    reduction: 0.1 # 40% with Helmet.
 
 #Warden's Hardsuit
 - type: entity
@@ -424,6 +440,8 @@
         Heat: 0.9
   - type: FlashImmunity # Goobstation
   - type: FlashSoundSuppression # Goobstation
+  - type: FireProtection
+    reduction: 0.2 # 70% with Helmet.
 
 #Captain's Hardsuit
 - type: entity
@@ -443,6 +461,8 @@
     lowPressureMultiplier: 1000
   - type: FlashImmunity # Goobstation
   - type: FlashSoundSuppression # Goobstation
+  - type: FireProtection
+    reduction: 0.15 # 50% with Helmet.
 
 #Chief Engineer's Hardsuit
 - type: entity
@@ -462,6 +482,8 @@
   - type: PressureProtection
     highPressureMultiplier: 0.08
     lowPressureMultiplier: 1000
+  - type: FireProtection
+    reduction: 0.3 # Perfect Protection with Helmet.
 
 #Chief Medical Officer's Hardsuit
 - type: entity
@@ -500,6 +522,8 @@
   - type: PressureProtection
     highPressureMultiplier: 0.60
     lowPressureMultiplier: 1000
+  - type: FireProtection
+    reduction: 0.2 # 80% with Helmet.
 
 #Head of Security's hardsuit
 - type: entity
@@ -528,6 +552,8 @@
         Heat: 0.9
   - type: FlashImmunity # Goobstation
   - type: FlashSoundSuppression # Goobstation
+  - type: FireProtection
+    reduction: 0.15 # 60% with Helmet.
 
 #Luxury Mining Hardsuit
 - type: entity
@@ -607,6 +633,8 @@
         Heat: 0.9
   - type: FlashImmunity # Goobstation
   - type: FlashSoundSuppression # Goobstation
+  - type: FireProtection
+    reduction: 0.15 # 50% with Helmet.
 
 #Blood-red Medic Hardsuit
 - type: entity
@@ -635,6 +663,8 @@
         Heat: 0.9
   - type: FlashImmunity # Goobstation
   - type: FlashSoundSuppression # Goobstation
+  - type: FireProtection
+    reduction: 0.15 # 50% with Helmet.
 
 #Syndicate Elite Hardsuit
 - type: entity
@@ -688,7 +718,7 @@
     heatingCoefficient: 0.005
     coolingCoefficient: 0.005
   - type: FireProtection
-    reduction: 0.2
+    reduction: 0.3 # Perfect Protection with Helmet.
   - type: Armor
     modifiers:
       coefficients:
@@ -726,6 +756,9 @@
         Heat: 0.9
   - type: FlashImmunity # Goobstation
   - type: FlashSoundSuppression # Goobstation
+  - type: FireProtection
+    reduction: 0.2 # 70% with Helmet.
+
 
 #Cybersun Juggernaut Hardsuit
 - type: entity
@@ -754,6 +787,8 @@
         Heat: 0.9
   - type: FlashImmunity # Goobstation
   - type: FlashSoundSuppression # Goobstation
+  - type: FireProtection
+    reduction: 0.2 # 80% with Helmet.
 
 #Wizard Hardsuit
 - type: entity
@@ -900,10 +935,12 @@
         Slash: 0.9
         Piercing: 0.9
         Heat: 0.9
+  - type: FireProtection
+    reduction: 0.3 # Perfect Protection with Helmet.
 
 #ERT Medical Hardsuit
 - type: entity
-  parent: ClothingHeadHelmetHardsuitSyndieElite
+  parent: ClothingHeadHelmetHardsuitSyndie
   id: ClothingHeadHelmetHardsuitERTMedical
   name: ERT medic hardsuit helmet
   description: A special hardsuit helmet worn by members of an emergency response team.
@@ -996,6 +1033,8 @@
         Slash: 0.9
         Piercing: 0.9
         Heat: 0.9
+  - type: FireProtection
+    reduction: 0.3 # Perfect Protection with Helmet.
   - type: FlashImmunity # Goobstation
   - type: FlashSoundSuppression # Goobstation
 
@@ -1024,6 +1063,8 @@
         Heat: 0.80
         Radiation: 0.80
         Caustic: 0.95
+  - type: FireProtection
+    reduction: 0.3 # Perfect Protection with Helmet.
   - type: ThermalVision
     isEquipment: true
     color: "#98EEFB"

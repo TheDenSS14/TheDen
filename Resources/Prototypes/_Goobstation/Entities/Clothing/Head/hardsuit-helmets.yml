@@ -36,6 +36,8 @@
         Caustic: 0.95
   - type: FlashImmunity
   - type: FlashSoundSuppression
+  - type: FireProtection
+    reduction: 0.15 # 50% with Helmet.
 
 # cybersun stealth
 
@@ -95,4 +97,6 @@
         Slash: 0.89
         Piercing: 0.89
         Heat: 0.89
+  - type: FireProtection
+    reduction: 0.3 # Perfect Protection with Helmet.
   - type: FlashImmunity
