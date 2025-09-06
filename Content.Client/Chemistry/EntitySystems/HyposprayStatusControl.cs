@@ -14,7 +14,7 @@ using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.Controls;
 using Robust.Shared.Timing;
 
-namespace Content.Client.Chemistry.UI;
+namespace Content.Client.Chemistry.EntitySystems;
 
 public sealed class HyposprayStatusControl : Control
 {
@@ -22,9 +22,9 @@ public sealed class HyposprayStatusControl : Control
     private readonly RichTextLabel _label;
     private readonly SharedSolutionContainerSystem _solutionContainers;
 
-    private FixedPoint2 PrevVolume;
-    private FixedPoint2 PrevMaxVolume;
-    private bool PrevOnlyAffectsMobs;
+    private FixedPoint2 _prevVolume;
+    private FixedPoint2 _prevMaxVolume;
+    private bool _prevOnlyAffectsMobs;
 
     public HyposprayStatusControl(Entity<HyposprayComponent> parent, SharedSolutionContainerSystem solutionContainers)
     {
@@ -42,14 +42,14 @@ public sealed class HyposprayStatusControl : Control
             return;
 
         // only updates the UI if any of the details are different than they previously were
-        if (PrevVolume == solution.Volume
-            && PrevMaxVolume == solution.MaxVolume
-            && PrevOnlyAffectsMobs == _parent.Comp.OnlyAffectsMobs)
+        if (_prevVolume == solution.Volume
+            && _prevMaxVolume == solution.MaxVolume
+            && _prevOnlyAffectsMobs == _parent.Comp.OnlyAffectsMobs)
             return;
 
-        PrevVolume = solution.Volume;
-        PrevMaxVolume = solution.MaxVolume;
-        PrevOnlyAffectsMobs = _parent.Comp.OnlyAffectsMobs;
+        _prevVolume = solution.Volume;
+        _prevMaxVolume = solution.MaxVolume;
+        _prevOnlyAffectsMobs = _parent.Comp.OnlyAffectsMobs;
 
         var modeStringLocalized = Loc.GetString(GetLocalizedMode(_parent.Comp));
 

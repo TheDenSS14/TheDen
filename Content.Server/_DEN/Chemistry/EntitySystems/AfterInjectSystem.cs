@@ -17,7 +17,7 @@ public sealed class AfterInjectSystem : SharedAfterInjectSystem
     {
         base.Initialize();
         SubscribeLocalEvent<AddComponentAfterInjectionComponent,
-            HyposprayDoAfterEvent>(AddComponentAfterHyposprayInject, after: [typeof(HypospraySystem)]);
+            HyposprayDoAfterEvent>(AddComponentAfterHyposprayInject, after: [typeof(SharedHypospraySystem)]);
     }
 
     public void AddComponentAfterHyposprayInject(Entity<AddComponentAfterInjectionComponent> entity,

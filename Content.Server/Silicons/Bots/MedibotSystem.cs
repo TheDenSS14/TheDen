@@ -37,11 +37,11 @@ public sealed class MedibotSystem : SharedMedibotSystem
     {
         base.Initialize();
         SubscribeLocalEvent<MedibotInjectorComponent, HyposprayDoAfterEvent>(AfterInjected,
-            after: [typeof(HypospraySystem)]);
+            after: [typeof(SharedHypospraySystem)]);
         SubscribeLocalEvent<MedibotInjectorComponent, UseInHandEvent>(CancelUseInHand,
-            before: [typeof(HypospraySystem)]);
+            before: [typeof(SharedHypospraySystem)]);
         SubscribeLocalEvent<MedibotInjectorComponent, AfterInteractEvent>(OnAfterInteract,
-            before: [typeof(HypospraySystem)]);
+            before: [typeof(SharedHypospraySystem)]);
     }
 
     private void AfterInjected(Entity<MedibotInjectorComponent> injector, ref HyposprayDoAfterEvent args)
