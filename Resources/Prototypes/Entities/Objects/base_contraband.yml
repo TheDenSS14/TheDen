@@ -201,15 +201,6 @@
   - type: Contraband
     allowedDepartments: [ Epistemics, Silicon, Command ]
 
-# salvager weapons
-- type: entity
-  id: BaseSecurityLogisticsContraband
-  parent: BaseRestrictedContraband
-  abstract: true
-  components:
-  - type: Contraband
-    allowedDepartments: [ Security, Logistics ]
-
 # surgical tools
 - type: entity
   id: BaseMedicalEpistemicsContraband
@@ -222,6 +213,17 @@
 
 # special contraband types restricted to jobs for very specific items
 # ========
+# salvager weapons
+- type: entity
+  id: BaseSalvageSpecialistContraband
+  parent: BaseRestrictedContraband
+  abstract: true
+  components:
+  - type: Contraband
+    allowedDepartments: [ Security ]
+    allowedJobs: [ SalvageSpecialist ]
+
+# bartender weapons
 - type: entity
   id: BaseSecurityBartenderContraband
   parent: BaseRestrictedContraband
