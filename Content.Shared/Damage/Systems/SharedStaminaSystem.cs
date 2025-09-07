@@ -235,7 +235,7 @@ public abstract partial class SharedStaminaSystem : EntitySystem
             damageImmediate += hitEvent.FlatModifier;
 
             TakeStaminaDamage(ent, damageImmediate / toHit.Count, comp, source: args.User, with: args.Weapon, sound: component.Sound, immediate: true);
-            TakeOvertimeStaminaDamage(ent, component.Overtime);
+            TakeOvertimeStaminaDamage(ent, component.Overtime, comp);
         }
     }
 
@@ -250,6 +250,7 @@ public abstract partial class SharedStaminaSystem : EntitySystem
             return;
 
         TakeStaminaDamage(args.Embedded, component.Damage, stamina, source: uid);
+        TakeOvertimeStaminaDamage(uid, component.Overtime, stamina);
     }
 
     private void OnThrowHit(EntityUid uid, StaminaDamageOnCollideComponent component, ThrowDoHitEvent args)
@@ -268,6 +269,7 @@ public abstract partial class SharedStaminaSystem : EntitySystem
             return;
 
         TakeStaminaDamage(target, component.Damage, source: uid, sound: component.Sound);
+        TakeOvertimeStaminaDamage(uid, component.Overtime, stamComp);
     }
 
     private void UpdateStaminaVisuals(Entity<StaminaComponent> entity)
@@ -310,10 +312,10 @@ public abstract partial class SharedStaminaSystem : EntitySystem
     }
 
     // goob edit - stunmeta
-    public void TakeOvertimeStaminaDamage(EntityUid uid, float value)
+    public void TakeOvertimeStaminaDamage(EntityUid uid, float value, StaminaComponent component)
     {
-         // do this only on server side because otherwise shit happens (Coderabbit do not bitch at me about the profanity I swear to God)
-         if (value == 0)
+        // do this only on server side because otherwise shit happens (Coderabbit do not bitch at me about the profanity I swear to God)
+        if (value == 0)
             return;
 
         var hasComp = TryComp<OvertimeStaminaDamageComponent>(uid, out var overtime);
@@ -323,6 +325,13 @@ public abstract partial class SharedStaminaSystem : EntitySystem
 
         overtime!.Amount = hasComp ? overtime.Amount + value : value;
         overtime!.Damage = hasComp ? overtime.Damage + value : value;
+
+        // Have we already reached the point of max stamina damage?
+        if (value >= component.CritThreshold)
+        {
+            EnterStamCrit(uid, component, true); // enter stamcrit
+            return;
+        }
     }
 
     // goob edit - stunmeta
@@ -362,14 +371,14 @@ public abstract partial class SharedStaminaSystem : EntitySystem
 
         UpdateStaminaVisuals((uid, component));
 
-        // Checking if the stamina damage has decreased to zero after exiting the stamcrit
-        if (component.AfterCritical && oldDamage > component.StaminaDamage && component.StaminaDamage <= 0f)
-        {
-            // goob edit - stunmeta
-            // no slowdown because funny
-            _jitter.DoJitter(uid, TimeSpan.FromSeconds(10f), true);
-            _stutter.DoStutter(uid, TimeSpan.FromSeconds(10f), true);
-        }
+        // // Checking if the stamina damage has decreased to zero after exiting the stamcrit
+        // if (component.AfterCritical && oldDamage > component.StaminaDamage && component.StaminaDamage <= 0f)
+        // {
+        //     // goob edit - stunmeta
+        //     // no slowdown because funny
+        //     _jitter.DoJitter(uid, TimeSpan.FromSeconds(10f), true);
+        //     _stutter.DoStutter(uid, TimeSpan.FromSeconds(10f), true);
+        // }
 
         UpdateStaminaVisuals((uid, component));
 
