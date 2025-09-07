@@ -151,7 +151,7 @@
 - type: entity
   name: syndicate minibomb
   description: A syndicate-manufactured explosive. Ominous.
-  parent: GrenadeBase
+  parent: [ GrenadeBase, BaseRivalCompanyContraband ]
   id: SyndieMiniBomb
   components:
   - type: Sprite
@@ -500,7 +500,7 @@
 - type: entity
   name: syndicate trickybomb
   description: A syndicate-manufactured explosive used to make an excellent distraction.
-  parent: GrenadeDummy
+  parent: [ GrenadeDummy, BaseRivalCompanyContraband ]
   id: SyndieTrickyBomb
   components:
   - type: Sprite

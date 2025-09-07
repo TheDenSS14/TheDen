@@ -112,7 +112,7 @@
   id: SyndiCrewMonitor
   name: syndicate crew monitor
   description: The syndicated version of crew monitor, intercepts information from the server.
-  parent: HandheldCrewMonitor
+  parent: [ HandheldCrewMonitor, BaseRivalCompanyContraband ]
   components:
   - type: Sprite
     sprite: Objects/Specific/Medical/syndihandheldcrewmonitor.rsi

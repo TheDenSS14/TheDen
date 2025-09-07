@@ -763,7 +763,7 @@
       holster: !type:ContainerSlot {}
 
 - type: entity
-  parent: ClothingBeltStorageBase
+  parent: [ ClothingBeltStorageBase, BaseRivalCompanyContraband ]
   id: ClothingBeltSyndieHolster
   name: syndicate shoulder holster
   description: A deep shoulder holster capable of holding many types of ballistics.

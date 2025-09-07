@@ -69,7 +69,7 @@
   name: syndicate pinpointer
   description: Produced specifically for nuclear operative missions, get that disk!
   id: PinpointerSyndicateNuclear
-  parent: PinpointerBase
+  parent: [ PinpointerBase, BaseRivalCompanyContraband ]
   components:
   - type: Sprite
     layers:

@@ -108,7 +108,7 @@
     blockSmokeIngestion: true
 
 - type: entity
-  parent: ClothingMaskGas
+  parent: [ ClothingMaskGas, BaseRivalCompanyContraband ]
   id: ClothingMaskGasSyndicate
   name: syndicate gas mask
   description: A close-fitting tactical mask that can be connected to an air supply.

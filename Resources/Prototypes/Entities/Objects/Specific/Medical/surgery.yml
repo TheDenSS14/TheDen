@@ -658,7 +658,7 @@
     speed: 2
 
 - type: entity
-  parent: OmnimedTool
+  parent: [ OmnimedTool, BaseRivalCompanyContraband ]
   id: OmnimedToolSyndie
   suffix: Syndicate # TheDen
   components:
