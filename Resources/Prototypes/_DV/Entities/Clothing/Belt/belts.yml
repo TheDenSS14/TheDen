@@ -91,6 +91,12 @@
           tags:
           - Sidearm
         insertOnInteract: true
+      radio:
+        name: clothing-belt-radio
+        priority: -2
+        tags:
+          - Radio
+        insertOnInteract: true
   - type: ItemMapper # DeltaV - adjust for DeltaV sprites.
     mapLayers:
       medkit:
@@ -116,4 +122,5 @@
         ents: []
       holster: !type:ContainerSlot {}
       medkit: !type:ContainerSlot {}
+      radio: !type:ContainerSlot {}
   - type: Appearance

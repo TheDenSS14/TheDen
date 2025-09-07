@@ -636,6 +636,12 @@
           tags:
           - Sidearm
         insertOnInteract: true
+      radio:
+        name: clothing-belt-radio
+        priority: -1
+        tags:
+          - Radio
+        insertOnInteract: true
   - type: ItemMapper # DeltaV - adjust for DeltaV sprites.
     mapLayers:
       baton:
@@ -656,6 +662,7 @@
       storagebase: !type:Container
         ents: []
       holster: !type:ContainerSlot {}
+      radio: !type:ContainerSlot {}
   - type: Appearance
 
 - type: entity
@@ -815,7 +822,8 @@
       - id: Handcuffs
       - id: HoloprojectorSecurity # TheDen
       - id: RadioHandheldSecurity # TheDen
-      - id: DeviceSirenSecurity # TheDen
+      # - id: DeviceSirenSecurity # TheDen
+      - id: FlashlightSeclite # Den
 
 - type: entity
   parent: ClothingBeltMilitaryWebbing
@@ -903,11 +911,20 @@
         insertOnInteract: true
       jaunter:
         name: clothing-belt-jaunter
-        priority: -1
+        priority: -2
         whitelist:
           tags:
           - Jaunter
         insertOnInteract: true
+      # DEN
+      radio:
+        name: clothing-belt-radio = Radio
+        priority: -1
+        whitelist:
+          tags:
+            - Radio
+          insertOnInteract: true
+      # DEN
   - type: ItemMapper # DeltaV - adjust for DeltaV sprites.
     mapLayers:
       slp:
@@ -921,6 +938,7 @@
         ents: []
       holster: !type:ContainerSlot {}
       jaunter: !type:ContainerSlot {}
+      radio: !type:ContainerSlot {} # DEN
   - type: Appearance
 
 - type: entity
