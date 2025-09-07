@@ -17,11 +17,12 @@
 // SPDX-FileCopyrightText: 2024 VMSolidus
 // SPDX-FileCopyrightText: 2024 gluesniffler
 // SPDX-FileCopyrightText: 2025 Eagle-0
+// SPDX-FileCopyrightText: 2025 Eightballll
 // SPDX-FileCopyrightText: 2025 RedFoxIV
 // SPDX-FileCopyrightText: 2025 Sir Warock
 // SPDX-FileCopyrightText: 2025 sleepyyapril
 //
-// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+// SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 using Content.Server.Administration.Logs;
 using Content.Server.Atmos.EntitySystems;
@@ -31,7 +32,6 @@ using Content.Server.Chemistry.Containers.EntitySystems;
 using Content.Server.EntityEffects.EffectConditions;
 using Content.Server.EntityEffects.Effects;
 using Content.Shared._Goobstation.MartialArts.Components; // Goobstation - Martial Arts
-using Content.Server.Popups;
 using Content.Shared._DEN.Bed.Components;
 using Content.Shared._Shitmed.Body.Components;
 using Content.Shared.Alert;
@@ -64,7 +64,6 @@ public sealed class RespiratorSystem : EntitySystem
     [Dependency] private readonly BodySystem _bodySystem = default!;
     [Dependency] private readonly DamageableSystem _damageableSys = default!;
     [Dependency] private readonly LungSystem _lungSystem = default!;
-    [Dependency] private readonly PopupSystem _popupSystem = default!;
     [Dependency] private readonly MobStateSystem _mobState = default!;
     [Dependency] private readonly IPrototypeManager _protoMan = default!;
     [Dependency] private readonly SolutionContainerSystem _solutionContainerSystem = default!;
@@ -142,10 +141,10 @@ public sealed class RespiratorSystem : EntitySystem
 
             if (!CanBreathe(uid, respirator)) // Goobstation edit
             {
-                if (_gameTiming.CurTime >= respirator.LastGaspPopupTime + respirator.GaspPopupCooldown)
+                if (_gameTiming.CurTime >= respirator.LastGaspEmoteTime + respirator.GaspEmoteCooldown)
                 {
-                    respirator.LastGaspPopupTime = _gameTiming.CurTime;
-                    _popupSystem.PopupEntity(Loc.GetString("lung-behavior-gasp"), uid);
+                    respirator.LastGaspEmoteTime = _gameTiming.CurTime;
+                    _chat.TryEmoteWithChat(uid, respirator.GaspEmote, ignoreActionBlocker: true);
                 }
 
                 if (TryComp<StabilizeOnBuckleComponent>(uid, out var stabilizedComp) // Den - Stabilizing Rollerbeds
