@@ -1,0 +1,67 @@
+{
+  "version": 1,
+  "license": "CC0-1.0",
+  "copyright": "Made by github.com/SubspaceEmber with parts originally from https://github.com/tgstation/tgstation/commit/1da0b5547e02db0db48d0bc93926c26bd8888347 and https://github.com/tgstation/tgstation/commit/1da0b5547e02db0db48d0bc93926c26bd8888347",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "base"
+    },
+    {
+      "name": "panel"
+    },
+    {
+      "name": "screen"
+    },
+    {
+      "name": "packing",
+      "delays": [
+        [
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1
+        ]
+      ]
+    },
+    {
+      "name": "packing_unlit",
+      "delays": [
+        [
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1
+        ]
+      ]
+    },
+    {
+      "name": "inserting",
+      "delays": [
+        [
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1
+        ]
+      ]
+    }
+  ]
+}

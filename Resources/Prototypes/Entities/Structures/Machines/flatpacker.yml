@@ -16,7 +16,7 @@
   description: An industrial machine used for expediting machine construction across the station.
   components:
   - type: Sprite
-    sprite: Structures/Machines/flatpacker.rsi
+    sprite: _DEN/Structures/Machines/flatpacker.rsi #The Den - flatpacker resprite
     snapCardinals: true
     layers:
     - state: base
@@ -28,6 +28,12 @@
     - state: packing
       map: ["anim"]
       visible: false
+    # The Den - begin additions
+    - state: packing_unlit
+      map: ["anim_unlit"]
+      shader: unshaded
+      visible: false
+    # End additions
     - state: inserting
       visible: false
       map: ["enum.MaterialStorageVisualLayers.Inserting"]
@@ -41,6 +47,11 @@
         anim:
           True: { visible: true }
           False: { visible: false }
+        # The Den - begin additions
+        anim_unlit:
+          True: { visible: true }
+          False: { visible: false }
+        # End additions
   - type: FlatpackCreator
     baseMachineCost:
       Steel: 750
@@ -107,6 +118,17 @@
     - board_slot
   - type: StaticPrice
     price: 2000
+  # The Den - begin additions
+  - type: PointLight
+    enabled: false
+    castShadows: false
+    radius: 2
+    energy: 1
+    color: green
+    mask: /Textures/Effects/LightMasks/cone.png
+    autoRot: true
+  - type: LitOnPowered
+  # End additions
 
 - type: entity
   id: FlatpackerNoBoardEffect
