@@ -20,7 +20,7 @@
 # SPDX-FileCopyrightText: 2025 qwerltaz
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 # TODO move this to tiles once tile smoothing is supported
 - type: entity
@@ -30,6 +30,10 @@
   placement:
     mode: SnapgridCenter
   components:
+  - type: Anchorable
+    flags:
+    - Anchorable
+  - type: Rotatable
   - type: Clickable
   - type: Sprite
     sprite: Structures/catwalk.rsi

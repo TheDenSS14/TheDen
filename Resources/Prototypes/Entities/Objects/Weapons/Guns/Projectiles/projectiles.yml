@@ -60,7 +60,7 @@
 # SPDX-FileCopyrightText: 2025 Vanessa
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: entity
   id: MuzzleFlashEffect
@@ -306,9 +306,13 @@
     soundHit:
       path: "/Audio/Weapons/Guns/Hits/taser_hit.ogg"
     forceSound: true
+  - type: StaminaDamageOnCollide
+    damage: 15
+    overtime: 100
   - type: StunOnCollide
-    stunAmount: 5
-    knockdownAmount: 5
+    slowdownAmount: 2
+    walkSpeedMultiplier: 0.3
+    runSpeedMultiplier: 0.3
 
 - type: entity
   name : disabler bolt

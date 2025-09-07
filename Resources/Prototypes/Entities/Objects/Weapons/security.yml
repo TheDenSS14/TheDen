@@ -52,7 +52,7 @@
 # SPDX-FileCopyrightText: 2025 Timfa
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: entity
   name: stun baton
@@ -98,15 +98,15 @@
     heavyRateModifier: 1.1
     heavyDamageBaseModifier: 1.5
     heavyStaminaCost: 0.5
-    animation: WeaponArcSlash
+    animation: WeaponArcThrust
   - type: DamageOtherOnHit
   - type: StaminaDamageOnHit # Stunmeta
-    damage: 15
+    damage: 20
     overtime: 40
     sound: /Audio/Weapons/egloves.ogg
   - type: StaminaDamageOnCollide
-    damage: 15
-    overtime: 40
+    damage: 20 # DEN
+    overtime: 10 # DEN
     sound: /Audio/Weapons/egloves.ogg
   - type: Battery
     maxCharge: 1000
