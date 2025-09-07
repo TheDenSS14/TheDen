@@ -17,7 +17,7 @@
   - type: EmitsSoundOnMove
     soundCollection:
       collection: CowbellRings
-      
+
 - type: entity
   parent: ClothingNeckBase
   id: ClothingNeckVetCone
@@ -48,4 +48,50 @@
           Quantity: 2.5
         - ReagentId: Phosphorus
           Quantity: 2.5
-          
+
+#tallits
+
+- type: entity
+  parent: ClothingNeckBase
+  id: ClothingTallitWhiteBlue
+  name: white and blue tallit
+  description: A prayer shawl worn by religious Jews. This one is white with blue stripes.
+  components:
+  - type: Sprite
+    sprite: _DEN/Clothing/Neck/Misc/tallitwhiteblue.rsi
+  - type: Clothing
+    sprite: _DEN/Clothing/Neck/Misc/tallitwhiteblue.rsi
+
+- type: entity
+  parent: ClothingNeckBase
+  id: ClothingTallitWhiteBlack
+  name: white and black tallit
+  description: A prayer shawl worn by religious Jews. This one is white with black stripes.
+  components:
+  - type: Sprite
+    sprite: _DEN/Clothing/Neck/Misc/tallitwhiteblack.rsi
+  - type: Clothing
+    sprite: _DEN/Clothing/Neck/Misc/tallitwhiteblack.rsi
+
+- type: entity
+  parent: ClothingNeckBase
+  id: ClothingTallitBlackGold
+  name: black and gold tallit
+  description: A prayer shawl worn by religious Jews. This one is black with gold stripes.
+  components:
+  - type: Sprite
+    sprite: _DEN/Clothing/Neck/Misc/tallitblackgold.rsi
+  - type: Clothing
+    sprite: _DEN/Clothing/Neck/Misc/tallitblackgold.rsi
+
+- type: entity
+  parent: ClothingNeckBase
+  id: ClothingTallitBlackWhite
+  name: black and white tallit
+  description: A prayer shawl worn by religious Jews. This one is black with white stripes.
+  components:
+  - type: Sprite
+    sprite: _DEN/Clothing/Neck/Misc/tallitblackwhite.rsi
+  - type: Clothing
+    sprite: _DEN/Clothing/Neck/Misc/tallitblackwhite.rsi
+
