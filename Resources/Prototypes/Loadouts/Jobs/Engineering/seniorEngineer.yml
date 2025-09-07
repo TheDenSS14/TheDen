@@ -417,6 +417,21 @@
   items:
     - SheetPlastic10
 
+  # DEN
+- type: loadout
+  id: LoadoutSeniorEngineerEquipmentConstructionBag
+  category: JobsEngineeringSeniorEngineer
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSeniorEngineerEquipment
+    - !type:CharacterJobRequirement
+      jobs:
+        - SeniorEngineer
+  items:
+    - ConstructionBag
+# DEN
+
 # Eyes
 
 # Gloves

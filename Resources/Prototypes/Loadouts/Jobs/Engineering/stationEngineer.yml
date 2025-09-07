@@ -181,6 +181,21 @@
   items:
     - SheetPlastic10
 
+  # DEN
+- type: loadout
+  id: LoadoutStationEngineerEquipmentConstructionBag
+  category: JobsEngineeringStationEngineer
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutStationEngineerEquipment
+    - !type:CharacterJobRequirement
+      jobs:
+        - StationEngineer
+  items:
+    - ConstructionBag
+# DEN
+
 # Eyes
 
 # Gloves

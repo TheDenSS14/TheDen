@@ -268,6 +268,20 @@
   items:
     - SheetPlastic10
 
+  # DEN
+- type: loadout
+  id: JobsEngineeringAtmosphericTechnician
+  category: JobsEngineeringSeniorEngineer
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: JobsEngineeringAtmosphericTechnician
+    - !type:CharacterJobRequirement
+      jobs:
+        - AtmosphericTechnician
+  items:
+    - ConstructionBag
+# DEN
 # Eyes
 
 # Gloves
