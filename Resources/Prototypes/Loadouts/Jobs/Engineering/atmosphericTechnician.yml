@@ -270,12 +270,12 @@
 
   # DEN
 - type: loadout
-  id: JobsEngineeringAtmosphericTechnician
-  category: JobsEngineeringSeniorEngineer
+  id: LoadoutAtmosphericTechnicianEquipmentConstructionBag
+  category: JobsEngineeringAtmosphericTechnician
   cost: 0
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: JobsEngineeringAtmosphericTechnician
+      group: LoadoutAtmosphericTechnicianEquipment
     - !type:CharacterJobRequirement
       jobs:
         - AtmosphericTechnician
