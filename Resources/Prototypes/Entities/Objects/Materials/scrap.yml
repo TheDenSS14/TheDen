@@ -30,7 +30,6 @@
   - type: Tag
     tags:
     - Recyclable
-    - Trash #TheDen
 
 - type: entity
   parent: BaseStructure
@@ -126,6 +125,9 @@
     materialComposition:
       Glass: 1500 # 15 sheets
       Steel: 500 # 5 sheets
+  - type: Tag
+    tags: 
+    - Trash
 
 - type: entity
   parent: BaseScrap
@@ -169,6 +171,9 @@
     materialComposition:
       Steel: 200 # 2 sheets
       Glass: 500 # 5 sheets
+  - type: Tag
+    tags: 
+    - Trash
 
 - type: entity
   parent: BaseScrap
@@ -182,6 +187,9 @@
   - type: PhysicalComposition
     materialComposition:
       Plastic: 300 # 3 sheets
+  - type: Tag
+    tags: 
+    - Trash
 
 - type: entity
   parent: BaseScrap
@@ -196,6 +204,9 @@
     materialComposition:
       Steel: 500 # 5 sheets
       Glass: 100 # 1 sheet
+  - type: Tag
+    tags: 
+    - Trash
 
 - type: entity
   parent: BaseScrap
@@ -209,6 +220,9 @@
   - type: PhysicalComposition
     materialComposition:
       Steel: 300 # 3 sheets
+  - type: Tag
+    tags: 
+    - Trash
 
 - type: entity
   parent: BaseScrap
@@ -224,6 +238,9 @@
   - type: PhysicalComposition
     materialComposition:
       Steel: 200 # 2 sheets
+  - type: Tag
+    tags: 
+    - Trash
 
 - type: entity
   parent: BaseScrap
@@ -254,11 +271,16 @@
     layers:
     - state: junk-fax
   - type: Item
-    size: Huge
+    size: Normal #TheDen - allows this item to fit inside a trash bag, and resizes it to be the size of a Large item.
+    shape:
+    - 0,0,3,1 # 4x2
   - type: PhysicalComposition
     materialComposition:
       Plastic: 800 # 8 sheets
       Steel: 200 # 2 sheets
+  - type: Tag
+    tags: 
+    - Trash
 
 - type: entity
   parent: BaseScrap
@@ -272,6 +294,9 @@
   - type: PhysicalComposition
     materialComposition:
       Steel: 600 # 6 sheets
+  - type: Tag
+    tags: 
+    - Trash
 
 - type: entity
   parent: BaseScrap
@@ -320,10 +345,15 @@
     layers:
     - state: junk-firelock-3
   - type: Item
-    size: Large
+    size: Normal #TheDen - allows this item to fit inside a trash bag, and resizes it to be the size of a Large item.
+    shape: 
+    - 0,0,3,1 # 4x2
   - type: PhysicalComposition
     materialComposition:
       Steel: 700 # 7 sheets
+  - type: Tag
+    tags: 
+    - Trash
 
 - type: entity
   parent: BaseScrap
@@ -346,6 +376,9 @@
     materialComposition:
       Steel: 400 # 4 sheets
       Plastic: 300 # 3 sheets
+  - type: Tag
+    tags: 
+    - Trash
 
 - type: entity
   parent: BaseScrap
@@ -357,12 +390,15 @@
     layers:
     - state: junk-jetpack
   - type: Item
-    size: Huge
+    size: Large
     heldPrefix: jetpack
   - type: PhysicalComposition
     materialComposition:
       Steel: 1000 # 10 sheets
       Plastic: 200 # 2 sheets
+  - type: Tag
+    tags: 
+    - Trash
 
 - type: entity
   parent: BaseScrap
@@ -380,10 +416,13 @@
         junk-medkit-1: ""
         junk-medkit-2: ""
   - type: Item
-    size: Large
+    size: Normal
   - type: PhysicalComposition
     materialComposition:
       Plastic: 500 # 5 sheets
+  - type: Tag
+    tags: 
+    - Trash
 
 - type: entity
   parent: BaseScrap
@@ -415,6 +454,9 @@
     materialComposition:
       Steel: 300 # 3 sheets
       Plastic: 200 # 2 sheets
+  - type: Tag
+    tags: 
+    - Trash
 
 - type: entity
   parent: BaseScrap
@@ -431,6 +473,9 @@
     materialComposition:
       Gold: 100 # 1 sheet
       Plastic: 400 # 4 sheets
+  - type: Tag
+    tags: 
+    - Trash
 
 - type: entity
   parent: BaseScrap
@@ -457,6 +502,9 @@
     materialComposition:
       Glass: 500 # 5 sheets
       Plastic: 100 # 1 sheet
+  - type: Tag
+    tags: 
+    - Trash
 
 - type: entity
   parent: BaseScrapLarge
@@ -573,3 +621,6 @@
     materialComposition:
       Steel: 200 # 2 sheets
       Uranium: 500 # 5 sheets
+  - type: Tag
+    tags: 
+    - Trash
