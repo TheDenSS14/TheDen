@@ -103,8 +103,11 @@
 #      - id: Handcuffs # TheDen
       - id: Handcuffs
       - id: HoloprojectorSecurity # TheDen
-      - id: RadioHandheldSecurity # TheDen
       - id: FlashlightSeclite # TheDen
+  - type: ContainerFill
+    containers:
+      radio:
+      - RadioHandheldSecurity
 
 - type: entity
   id: ClothingBeltJanitorFilled

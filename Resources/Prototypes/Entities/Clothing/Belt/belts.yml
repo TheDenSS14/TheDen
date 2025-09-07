@@ -636,12 +636,15 @@
           tags:
           - Sidearm
         insertOnInteract: true
+      # DEN
       radio:
         name: clothing-belt-radio
         priority: -1
-        tags:
-          - Radio
-        insertOnInteract: true
+        whitelist:
+          tags:
+            - Radio
+          insertOnInteract: true
+      # DEN
   - type: ItemMapper # DeltaV - adjust for DeltaV sprites.
     mapLayers:
       baton:
@@ -821,9 +824,11 @@
 #      - id: Handcuffs # TheDen
       - id: Handcuffs
       - id: HoloprojectorSecurity # TheDen
-      - id: RadioHandheldSecurity # TheDen
-      # - id: DeviceSirenSecurity # TheDen
       - id: FlashlightSeclite # Den
+  - type: ContainerFill
+    containers:
+      radio:
+      - RadioHandheldSecurity
 
 - type: entity
   parent: ClothingBeltMilitaryWebbing
@@ -918,7 +923,7 @@
         insertOnInteract: true
       # DEN
       radio:
-        name: clothing-belt-radio = Radio
+        name: clothing-belt-radio
         priority: -1
         whitelist:
           tags:
