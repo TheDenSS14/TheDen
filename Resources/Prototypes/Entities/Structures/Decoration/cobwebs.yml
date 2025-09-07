@@ -1,8 +1,9 @@
-# SPDX-FileCopyrightText: 2023 Flareguy <78941145+Flareguy@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 Blitz <73762869+BlitzTheSquishy@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Flareguy
+# SPDX-FileCopyrightText: 2025 Blitz
+# SPDX-FileCopyrightText: 2025 Shaman
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 #BaseCobweb doesn't really need to exist since, as of writing, these only have 2 sprite states & obviously have no need for variation beyond that.
 
@@ -25,15 +26,19 @@
     anchored: true
   - type: Damageable
     damageContainer: Inorganic
-    damageModifierSet: Wood
+    # damageModifierSet: Wood # Imp
+    damageModifierSet: Web # Imp
   - type: Destructible
     thresholds:
     - trigger:
         !type:DamageTrigger
-        damage: 20 #With the damage modifier you should have a hard time getting through it with something blunt, but an axe or something flammable will do the trick.
+        damage: 5 # Imp
       behaviors:
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
+  - type: Construction # Imp
+    graph: WebStructures
+    node: cobweb1
 
 - type: entity
   id: Cobweb2
@@ -46,3 +51,6 @@
   - type: Icon
     sprite: Structures/Decoration/cobweb.rsi
     state: cobweb2
+  - type: Construction # Imp
+    graph: WebStructures
+    node: cobweb2

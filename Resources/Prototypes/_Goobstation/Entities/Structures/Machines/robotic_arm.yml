@@ -1,9 +1,7 @@
-# SPDX-FileCopyrightText: 2025 AirFryerBuyOneGetOneFree <airfryerbuyonegetonefree@gmail.com>
-# SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
-# SPDX-FileCopyrightText: 2025 deltanedas <39013340+deltanedas@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 deltanedas <@deltanedas:kde.org>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <flyingkarii@gmail.com>
+# SPDX-FileCopyrightText: 2025 AirFryerBuyOneGetOneFree
+# SPDX-FileCopyrightText: 2025 crekulon
+# SPDX-FileCopyrightText: 2025 deltanedas
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -114,7 +112,7 @@
     range: 5
   # Power
   - type: ApcPowerReceiver
-    powerLoad: 50 # Idle power usage, increases when active
+    powerLoad: 300 # Den / IMP, static 300 power draw instead of idle 50 / active 3000. via Darkmajia's Impstation PR #2526
   - type: PowerSwitch
   # Guide
   - type: GuideHelp

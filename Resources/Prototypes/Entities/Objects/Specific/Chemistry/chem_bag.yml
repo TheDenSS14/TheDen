@@ -1,8 +1,9 @@
-# SPDX-FileCopyrightText: 2023 Joel Hedtjärn <joel.hedtjarn@gmail.com>
-# SPDX-FileCopyrightText: 2023 lzk <124214523+lzk228@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2023 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 Debug <49997488+DebugOk@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Joel Hedtjärn
+# SPDX-FileCopyrightText: 2023 lzk
+# SPDX-FileCopyrightText: 2023 metalgearsloth
+# SPDX-FileCopyrightText: 2024 Debug
+# SPDX-FileCopyrightText: 2025 Jakumba
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: MIT
 
@@ -12,9 +13,15 @@
   parent: BaseStorageItem
   description: A bag for storing chemistry products, such as pills, pill canisters, bottles, and syringes.
   components:
+  # Frontier: layered sprite
   - type: Sprite
     sprite: Objects/Specific/Chemistry/chem_bag.rsi
-    state: icon
+    layers:
+    - state: icon
+    - state: icon-on
+      visible: false
+      map: [ "enum.ToggleableVisuals.Layer" ]
+  # End Frontier: layered sprite
   - type: Clothing
     sprite: Objects/Specific/Chemistry/chem_bag.rsi
     quickEquip: false
@@ -38,3 +45,27 @@
         - Bottle
         - Syringe
   - type: Dumpable
+  - type: MagnetPickup # Frontier
+    magnetEnabled: false # Frontier
+    magnetCanBeEnabled: false # Frontier
+  # Frontier: toggle magnet from White Dream
+  - type: ItemToggle
+    soundActivate: &soundActivate
+      collection: sparks
+      params:
+        variation: 0.25
+    soundDeactivate: *soundActivate
+    onUse: false
+    onAltUse: true
+    onActivate: false
+  - type: ItemToggleExamine
+    on: item-toggle-examine-magnet-on
+    off: item-toggle-examine-magnet-off
+  - type: Appearance
+  - type: GenericVisualizer
+    visuals:
+      enum.ToggleableVisuals.Enabled:
+        enum.ToggleableVisuals.Layer:
+          True: { visible: True }
+          False: { visible: False }
+  # End Frontier
