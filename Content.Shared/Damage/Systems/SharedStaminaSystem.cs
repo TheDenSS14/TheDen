@@ -109,7 +109,7 @@ public abstract partial class SharedStaminaSystem : EntitySystem
     protected virtual void OnStamHandleState(Entity<StaminaComponent> entity, ref AfterAutoHandleStateEvent args)
     {
         if (entity.Comp.Critical)
-            EnterStamCrit(entity);
+            EnterStamCrit(entity, null, true);
         else
         {
             if (entity.Comp.StaminaDamage > 0f)
@@ -235,7 +235,7 @@ public abstract partial class SharedStaminaSystem : EntitySystem
             damageImmediate += hitEvent.FlatModifier;
 
             TakeStaminaDamage(ent, damageImmediate / toHit.Count, comp, source: args.User, with: args.Weapon, sound: component.Sound, immediate: true);
-            TakeOvertimeStaminaDamage(ent, component.Overtime);
+            TakeOvertimeStaminaDamage(ent, component.Overtime, comp);
         }
     }
 
@@ -250,6 +250,7 @@ public abstract partial class SharedStaminaSystem : EntitySystem
             return;
 
         TakeStaminaDamage(args.Embedded, component.Damage, stamina, source: uid);
+        TakeOvertimeStaminaDamage(uid, component.Overtime, stamina);
     }
 
     private void OnThrowHit(EntityUid uid, StaminaDamageOnCollideComponent component, ThrowDoHitEvent args)
@@ -268,6 +269,7 @@ public abstract partial class SharedStaminaSystem : EntitySystem
             return;
 
         TakeStaminaDamage(target, component.Damage, source: uid, sound: component.Sound);
+        TakeOvertimeStaminaDamage(uid, component.Overtime, stamComp);
     }
 
     private void UpdateStaminaVisuals(Entity<StaminaComponent> entity)
@@ -310,10 +312,10 @@ public abstract partial class SharedStaminaSystem : EntitySystem
     }
 
     // goob edit - stunmeta
-    public void TakeOvertimeStaminaDamage(EntityUid uid, float value)
+    public void TakeOvertimeStaminaDamage(EntityUid uid, float value, StaminaComponent component)
     {
-         // do this only on server side because otherwise shit happens (Coderabbit do not bitch at me about the profanity I swear to God)
-         if (value == 0)
+        // do this only on server side because otherwise shit happens (Coderabbit do not bitch at me about the profanity I swear to God)
+        if (value == 0)
             return;
 
         var hasComp = TryComp<OvertimeStaminaDamageComponent>(uid, out var overtime);
@@ -518,6 +520,7 @@ public abstract partial class SharedStaminaSystem : EntitySystem
         component.StaminaDamage = 0f;
         component.NextUpdate = _timing.CurTime;
         SetStaminaAlert(uid, component);
+        AdjustSlowdown(uid);
         RemComp<ActiveStaminaComponent>(uid);
         Dirty(uid, component);
         _adminLogger.Add(LogType.Stamina, LogImpact.Low, $"{ToPrettyString(uid):user} recovered from stamina crit");

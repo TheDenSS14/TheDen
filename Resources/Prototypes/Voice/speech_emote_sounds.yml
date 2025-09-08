@@ -38,7 +38,7 @@
 # SPDX-FileCopyrightText: 2025 skyr0cket01
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 # species
 - type: emoteSounds
@@ -1084,12 +1084,19 @@
       variation: 0.125
 
 - type: emoteSounds
-  id: Mouse
-  sound:
-    path: /Audio/Animals/mouse_squeak.ogg
-    params:
-      variation: 0.125
-
+  id: MouseSounds #TheDen changes
+  sounds:
+    Squeak:
+      path: /Audio/Animals/mouse_squeak.ogg
+    Gasp:
+      path: /Audio/Animals/mouse_squeak.ogg
+    Scream: 
+      path: /Audio/Animals/mouse_squeak.ogg
+    DefaultDeathgasp:
+      path: /Audio/Animals/mouse_squeak.ogg
+      params:
+        variation: 0.125
+        
 - type: emoteSounds
   id: Cluwne
   sound:
