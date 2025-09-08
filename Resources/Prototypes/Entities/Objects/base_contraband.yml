@@ -274,6 +274,15 @@
   - type: Contraband
     allowedJobs: [ BlueshieldOfficer ]
 
+# warden only stuff like krav maga gloves, greatsword
+- type: entity
+  id: BaseWardenContraband
+  parent: BaseRestrictedContraband
+  abstract: true
+  components:
+  - type: Contraband
+    allowedJobs: [ Warden ]
+
 # stuff that both the bso and sec should be cleared to have like handcuffs
 - type: entity
   id: BaseSecurityBlueshieldOfficerContraband
