@@ -109,7 +109,7 @@
     - type: StorageFill
       contents:
         - id: PillEstradiol
-          amount: 10
+          amount: 4
 
 - type: entity
   name: pill
@@ -160,3 +160,33 @@
           reagents:
             - ReagentId: Testosterone
               Quantity: 30
+
+- type: entity
+  suffix: estradiol
+  parent: PrefilledSyringe
+  id: SyringeEstradiol
+  components:
+    - type: SolutionContainerManager
+      solutions:
+        injector:
+          maxVol: 15
+          reagents:
+            - ReagentId: Estradiol
+              Quantity: 15
+    - type: Label
+      currentLabel: estradiol
+
+- type: entity
+  suffix: testosterone 
+  parent: PrefilledSyringe
+  id: SyringeTestosterone
+  components:
+    - type: SolutionContainerManager
+      solutions:
+        injector:
+          maxVol: 15
+          reagents:
+            - ReagentId: Testosterone
+              Quantity: 15
+    - type: Label
+      currentLabel: testosterone
