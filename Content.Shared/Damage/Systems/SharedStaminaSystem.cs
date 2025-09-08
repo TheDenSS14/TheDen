@@ -518,6 +518,7 @@ public abstract partial class SharedStaminaSystem : EntitySystem
         component.StaminaDamage = 0f;
         component.NextUpdate = _timing.CurTime;
         SetStaminaAlert(uid, component);
+        AdjustSlowdown(uid);
         RemComp<ActiveStaminaComponent>(uid);
         Dirty(uid, component);
         _adminLogger.Add(LogType.Stamina, LogImpact.Low, $"{ToPrettyString(uid):user} recovered from stamina crit");

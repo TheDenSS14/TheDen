@@ -108,23 +108,24 @@ public sealed partial class StaminaSystem : SharedStaminaSystem
 
     private void PlayAnimation(Entity<StaminaComponent, SpriteComponent> entity)
     {
-        var step = Math.Clamp((entity.Comp1.StaminaDamage - entity.Comp1.AnimationThreshold) /
-                              (entity.Comp1.CritThreshold - entity.Comp1.AnimationThreshold),
-            0f,
-            1f); // The things I do for project 0 warnings
-        var frequency = entity.Comp1.FrequencyMin + step * entity.Comp1.FrequencyMod;
-        var jitter = entity.Comp1.JitterAmplitudeMin + step * entity.Comp1.JitterAmplitudeMod;
-        var breathing = entity.Comp1.BreathingAmplitudeMin + step * entity.Comp1.BreathingAmplitudeMod;
+        // DEN - do not re-enable this until we get stamina to work properly with our traits
+        // var step = Math.Clamp((entity.Comp1.StaminaDamage - entity.Comp1.AnimationThreshold) /
+        //                       (entity.Comp1.CritThreshold - entity.Comp1.AnimationThreshold),
+        //     0f,
+        //     1f); // The things I do for project 0 warnings
+        // var frequency = entity.Comp1.FrequencyMin + step * entity.Comp1.FrequencyMod;
+        // var jitter = entity.Comp1.JitterAmplitudeMin + step * entity.Comp1.JitterAmplitudeMod;
+        // var breathing = entity.Comp1.BreathingAmplitudeMin + step * entity.Comp1.BreathingAmplitudeMod;
 
-        _animation.Play(entity.Owner,
-            _stun.GetFatigueAnimation(entity.Comp2,
-                frequency,
-                entity.Comp1.Jitters,
-                jitter * entity.Comp1.JitterMin,
-                jitter * entity.Comp1.JitterMax,
-                breathing,
-                entity.Comp1.StartOffset,
-                ref entity.Comp1.LastJitter),
-            StaminaAnimationKey);
+        // _animation.Play(entity.Owner,
+        //     _stun.GetFatigueAnimation(entity.Comp2,
+        //         frequency,
+        //         entity.Comp1.Jitters,
+        //         jitter * entity.Comp1.JitterMin,
+        //         jitter * entity.Comp1.JitterMax,
+        //         breathing,
+        //         entity.Comp1.StartOffset,
+        //         ref entity.Comp1.LastJitter),
+        //     StaminaAnimationKey);
     }
 }
