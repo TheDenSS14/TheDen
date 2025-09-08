@@ -1084,17 +1084,19 @@
       variation: 0.125
 
 - type: emoteSounds
-  id: Mouse
-  params:
-    variation: 0.125
-  sound:
+  id: MouseSounds #TheDen changes
+  sounds:
     Squeak:
       path: /Audio/Animals/mouse_squeak.ogg
     Gasp:
       path: /Audio/Animals/mouse_squeak.ogg
     Scream: 
       path: /Audio/Animals/mouse_squeak.ogg
-
+    DefaultDeathgasp:
+      path: /Audio/Animals/mouse_squeak.ogg
+      params:
+        variation: 0.125
+        
 - type: emoteSounds
   id: Cluwne
   sound:
