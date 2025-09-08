@@ -52,6 +52,10 @@
       path: /Audio/_DEN/avali_coo.ogg
     AvaliHonk:
       path: /Audio/_DEN/avali_honk.ogg
+    Gasp:
+      collection: MaleGasp
+    DefaultDeathgasp:
+      collection: MaleDeathGasp
 
 - type: emoteSounds
   id: FemaleAvali
@@ -92,3 +96,7 @@
       path: /Audio/_DEN/avali_coo.ogg
     AvaliHonk:
       path: /Audio/_DEN/avali_honk.ogg
+    Gasp:
+      collection: FemaleGasp
+    DefaultDeathgasp:
+      collection: FemaleDeathGasp

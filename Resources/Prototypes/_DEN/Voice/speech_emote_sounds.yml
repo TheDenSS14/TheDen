@@ -46,6 +46,11 @@
       collection: VulpkaninHowls
     Awoo:
       collection: VulpkaninHowls
+    Gasp:
+      collection: MaleGasp
+    DefaultDeathgasp:
+      collection: MaleDeathGasp
+      
 
 - type: emoteSounds
   id: FemaleCanid
@@ -84,6 +89,10 @@
       collection: VulpkaninHowls
     Awoo:
       collection: VulpkaninHowls
+    Gasp:
+      collection: FemaleGasp
+    DefaultDeathgasp:
+      collection: FemaleDeathGasp
 
 # Ovinia
 - type: emoteSounds
@@ -115,6 +124,10 @@
       collection: Weh
     Baa:
       collection: OviniaBaa
+    Gasp:
+      collection: MaleGasp
+    DefaultDeathgasp:
+      collection: MaleDeathGasp
 
 - type: emoteSounds
   id: FemaleOvinia
@@ -141,9 +154,12 @@
       collection: FemaleCry
     Whistle:
       collection: Whistles
-
     Baa:
       collection: OviniaBaa
+    Gasp:
+      collection: FemaleGasp
+    DefaultDeathgasp:
+      collection: FemaleDeathGasp
 
 #Arachne
 - type: emoteSounds
@@ -175,6 +191,10 @@
       path: /Audio/Voice/Arachnid/arachnid_click.ogg
     Hiss:
       path: /Audio/Animals/snake_hiss.ogg
+    Gasp:
+      collection: MaleGasp
+    DefaultDeathgasp:
+      collection: MaleDeathGasp
 
 - type: emoteSounds
   id: FemaleArachne
@@ -205,6 +225,10 @@
       path: /Audio/Voice/Arachnid/arachnid_click.ogg
     Hiss:
       path: /Audio/Animals/snake_hiss.ogg
+    Gasp:
+      collection: FemaleGasp
+    DefaultDeathgasp:
+      collection: FemaleDeathGasp
 
 # Cats
 - type: emoteSounds
