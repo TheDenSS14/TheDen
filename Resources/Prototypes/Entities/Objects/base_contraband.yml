@@ -52,7 +52,7 @@
   abstract: true
   components:
   - type: Contraband
-    severity: GrandTheft
+    severity: contrabandSeverityGrandTheft
     allowedDepartments: [ Command ]
 
 # contraband that is by default restricted to everyone (nobody can have it)
