@@ -4,7 +4,7 @@
 
 - type: entity
   name: antique energy sword
-  parent: EnergySword
+  parent: [ BaseWardenContraband, EnergySword ]
   id: EnergySwordWarden
   description: An elegant weapon in pristine repair, this otherwise plain titanium hilt is engraved with the words, "For those we have lost. For those we can yet save".
   components:

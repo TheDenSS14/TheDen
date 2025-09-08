@@ -8,7 +8,7 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 - type: entity
-  parent: BaseBallBat
+  parent: [ BaseRivalCompanyContraband, BaseBallBat ]
   id: BaseBallBatHomeRun
   name: home run bat
   description: Heavy metal bat with an extra kick.

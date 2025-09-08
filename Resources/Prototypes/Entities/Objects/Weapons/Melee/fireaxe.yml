@@ -40,7 +40,7 @@
 
 - type: entity
   name: fireaxe
-  parent: BaseItem
+  parent: [ BaseEngineeringContraband, BaseItem ]
   id: FireAxe
   description: A versatile tool, capable of prying open airlocks and tearing through windows.
   components:

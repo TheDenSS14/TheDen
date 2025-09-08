@@ -5,7 +5,7 @@
 - type: entity
   name: cane blade
   suffix: Nanotrasen
-  parent: BaseItem
+  parent: [ BaseCentcommContraband, BaseItem ]
   id: CaneBladeNanotrasen
   description: A sharp blade with a cane shaped hilt, a Nanotrasen logo is engraved on the blade.
   components:
@@ -36,7 +36,7 @@
 
 - type: entity
   id: CaneSheathFilledNanotrasen
-  parent: CaneSheath
+  parent: [ BaseCentcommContraband, CaneSheath ]
   suffix: Filled, Nanotrasen
   components:
   - type: ContainerFill

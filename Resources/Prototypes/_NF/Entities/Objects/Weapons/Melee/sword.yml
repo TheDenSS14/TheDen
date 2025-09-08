@@ -8,7 +8,7 @@
   # original PR by MagnusCrowe at https://github.com/new-frontiers-14/frontier-station-14/pull/887
 
 - type: entity
-  parent: CaptainSabre
+  parent: [ BaseSalvageSpecialistSecurityContraband, CaptainSabre ]
   id: PlasteelArmingSword
   name: plasteel arming sword
   description: An ancient design manufactured with modern materials and machines for a very specific target demographic.
@@ -49,7 +49,7 @@
     - belt
 
 - type: entity
-  parent: PlasteelArmingSword
+  parent: [ BaseSecurityContraband, PlasteelArmingSword ]
   id: PlasteelArmingSwordSecurity
   name: plasteel arming sword
   description: An ancient design manufactured with modern materials and machines for a very specific target demographic. The serial number on the hilt marks this sword as belonging to an NT Security Officer.

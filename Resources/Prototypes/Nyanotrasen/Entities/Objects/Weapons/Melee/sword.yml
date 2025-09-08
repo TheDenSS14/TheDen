@@ -9,7 +9,7 @@
 
 - type: entity
   name: wakizashi
-  parent: BaseItem
+  parent: [ BaseSalvageSpecialistSecurityContraband, BaseItem ]
   id: Wakizashi
   description: A short, multi-purpose sword of plasteel construction.
   components:
