@@ -1085,10 +1085,15 @@
 
 - type: emoteSounds
   id: Mouse
+  params:
+    variation: 0.125
   sound:
-    path: /Audio/Animals/mouse_squeak.ogg
-    params:
-      variation: 0.125
+    Squeak:
+      path: /Audio/Animals/mouse_squeak.ogg
+    Gasp:
+      path: /Audio/Animals/mouse_squeak.ogg
+    Scream: 
+      path: /Audio/Animals/mouse_squeak.ogg
 
 - type: emoteSounds
   id: Cluwne
