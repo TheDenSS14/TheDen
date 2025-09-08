@@ -152,9 +152,9 @@
     variation: 0.125
   sounds:
     Scream:
-      collection: MaleScreams
+      collection: /Audio/Voice/Arachnid/arachnid_scream.ogg
     Laugh:
-      collection: MaleLaugh
+      collection: /Audio/Voice/Arachnid/arachnid_laugh.ogg
     Sneeze:
       collection: MaleSneezes
     Cough:
@@ -170,11 +170,11 @@
     Whistle:
       collection: Whistles
     Chitter:
-      path: ArachneChitter
+      path: /Audio/Voice/Arachnid/arachnid_chitter.ogg
     Click:
-      path: ArachneClick
+      path: /Audio/Voice/Arachnid/arachnid_click.ogg
     Hiss:
-      path: ArachneHiss
+      path: /Audio/Animals/snake_hiss.ogg
 
 - type: emoteSounds
   id: FemaleArachne
@@ -182,9 +182,9 @@
     variation: 0.125
   sounds:
     Scream:
-      collection: FemaleScreams
+      collection: /Audio/Voice/Arachnid/arachnid_scream.ogg
     Laugh:
-      collection: FemaleLaugh
+      collection: /Audio/Voice/Arachnid/arachnid_laugh.ogg
     Sneeze:
       collection: FemaleSneezes
     Cough:
@@ -200,11 +200,11 @@
     Whistle:
       collection: Whistles
     Chitter:
-      path: ArachneChitter
+      path: /Audio/Voice/Arachnid/arachnid_chitter.ogg
     Click:
-      path: ArachneClick
+      path: /Audio/Voice/Arachnid/arachnid_click.ogg
     Hiss:
-      path: ArachneHiss
+      path: /Audio/Animals/snake_hiss.ogg
 
 # Cats
 - type: emoteSounds
