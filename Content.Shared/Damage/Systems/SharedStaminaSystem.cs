@@ -109,7 +109,7 @@ public abstract partial class SharedStaminaSystem : EntitySystem
     protected virtual void OnStamHandleState(Entity<StaminaComponent> entity, ref AfterAutoHandleStateEvent args)
     {
         if (entity.Comp.Critical)
-            EnterStamCrit(entity);
+            EnterStamCrit(entity, null, true);
         else
         {
             if (entity.Comp.StaminaDamage > 0f)
