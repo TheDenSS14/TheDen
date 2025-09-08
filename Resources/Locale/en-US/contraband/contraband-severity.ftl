@@ -5,6 +5,7 @@ contraband-examine-text-Restricted-department = [color=yellow]This item is restr
 contraband-examine-text-Major = [color=red]This item is considered major contraband.[/color]
 contraband-examine-text-GrandTheft = [color=red]This item is a highly valuable target for rival company agents![/color]
 contraband-examine-text-RivalCompany = [color=crimson]This item is highly illegal, [color=#454B1B]military-grade,[/color] rival company contraband![/color]
+contraband-examine-text-Ninja = [color=#84dc2c]This item is highly illegal Spider Clan war gear![/color]
 contraband-examine-text-Debug = [color=#ff00dc]This item should not be here. [color=red]Do not acknowledge it IC[/color] and report it to an admin immediately.[/color]
 contraband-examine-text-NSFW = [color=pink]This item is explicit or sexual in nature. It should not be displayed in public or to anyone without their consent.[/color]
 

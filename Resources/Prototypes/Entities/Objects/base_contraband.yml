@@ -30,6 +30,14 @@
   - type: Contraband
     severity: contrabandSeverityRivalCompany
 
+# ninja items
+- type: entity
+  id: BaseNinjaContraband
+  abstract: true
+  components:
+  - type: Contraband
+    severity: contrabandSeverityNinja
+
 # eva suits, tools, etc
 - type: entity
   id: BaseMinorContraband
