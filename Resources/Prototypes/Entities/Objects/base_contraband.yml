@@ -30,7 +30,7 @@
   - type: Contraband
     severity: contrabandSeverityRivalCompany
 
-# kitchen knives, eva suits, etc
+# eva suits, tools, etc
 - type: entity
   id: BaseMinorContraband
   abstract: true
@@ -153,7 +153,7 @@
   - type: Contraband
     allowedDepartments: [ Dignitary ]
 
-# contraband restricted to multiple departments - some of these are used for singular items. really.
+# special contraband types for very specific items/types of items - some of these are used for singular items. really.
 # ========
 # literally just the master encryption key for this one
 - type: entity
@@ -211,16 +211,22 @@
     allowedDepartments: [ Medical, Epistemics ]
     allowedJobs: [ BlueshieldOfficer, Brigmedic ]
 
-# special contraband types restricted to jobs for very specific items
-# ========
-# salvager weapons
+# salvager weapons/stuff
+- type: entity
+  id: BaseSalvageSpecialistSecurityContraband
+  parent: BaseRestrictedContraband
+  abstract: true
+  components:
+  - type: Contraband
+    allowedDepartments: [ Security ]
+    allowedJobs: [ SalvageSpecialist ]
+
 - type: entity
   id: BaseSalvageSpecialistContraband
   parent: BaseRestrictedContraband
   abstract: true
   components:
   - type: Contraband
-    allowedDepartments: [ Security ]
     allowedJobs: [ SalvageSpecialist ]
 
 # bartender weapons
