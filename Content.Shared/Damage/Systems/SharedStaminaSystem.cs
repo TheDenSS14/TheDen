@@ -325,13 +325,6 @@ public abstract partial class SharedStaminaSystem : EntitySystem
 
         overtime!.Amount = hasComp ? overtime.Amount + value : value;
         overtime!.Damage = hasComp ? overtime.Damage + value : value;
-
-        // Have we already reached the point of max stamina damage?
-        if (value >= component.CritThreshold)
-        {
-            EnterStamCrit(uid, component, true); // enter stamcrit
-            return;
-        }
     }
 
     // goob edit - stunmeta
@@ -371,14 +364,14 @@ public abstract partial class SharedStaminaSystem : EntitySystem
 
         UpdateStaminaVisuals((uid, component));
 
-        // // Checking if the stamina damage has decreased to zero after exiting the stamcrit
-        // if (component.AfterCritical && oldDamage > component.StaminaDamage && component.StaminaDamage <= 0f)
-        // {
-        //     // goob edit - stunmeta
-        //     // no slowdown because funny
-        //     _jitter.DoJitter(uid, TimeSpan.FromSeconds(10f), true);
-        //     _stutter.DoStutter(uid, TimeSpan.FromSeconds(10f), true);
-        // }
+        // Checking if the stamina damage has decreased to zero after exiting the stamcrit
+        if (component.AfterCritical && oldDamage > component.StaminaDamage && component.StaminaDamage <= 0f)
+        {
+            // goob edit - stunmeta
+            // no slowdown because funny
+            _jitter.DoJitter(uid, TimeSpan.FromSeconds(10f), true);
+            _stutter.DoStutter(uid, TimeSpan.FromSeconds(10f), true);
+        }
 
         UpdateStaminaVisuals((uid, component));
 
