@@ -3223,6 +3223,12 @@
   - type: Speech
     speechSounds: Cat
     speechVerb: SmallMob
+    allowedEmotes: ['Scream','Hiss','Meow','Mew','Purr','Growl'] #TheDen
+  - type: Vocal #TheDen
+    sounds: #TheDen
+      Male: AnimalCat # TheDen
+      Female: AnimalCat # TheDen
+      Unsexed: AnimalCat # TheDen
   - type: Butcherable
     spawned:
     - id: FoodMeat
@@ -3256,6 +3262,7 @@
   - type: Tag
     tags:
     - VimPilot
+    - FelinidEmotes #TheDen
   - type: RandomBark
     barkType: cat
   - type: LeashAnchor # Floofstation
@@ -3358,6 +3365,7 @@
   - type: Tag
     tags:
       - DoorBumpOpener
+      - FelinidEmotes
   - type: MovementAlwaysTouching
   - type: PressureImmunity
   - type: ProtectedFromStepTriggers
