@@ -24,13 +24,13 @@
   - type: SolutionContainerManager
     solutions:
       ammo:
-        maxVol: 15
+        maxVol: 5
   - type: RefillableSolution
     solution: ammo
   - type: DrainableSolution
     solution: ammo
   - type: SolutionInjectOnProjectileHit
-    transferAmount: 15
+    transferAmount: 5
     solution: ammo
   - type: InjectableSolution
     solution: ammo
