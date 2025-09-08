@@ -324,6 +324,13 @@
   cost: 3
   items:
   - ClothingBackpackNapsack
+    
+- type: loadout
+  id: LoadoutSyringe
+  category: GeneralItems
+  cost: 1
+  items:
+    - Syringe
 
 - type: loadout
   id: LoadoutClothingHandsSentimentalRing
@@ -351,6 +358,28 @@
   customColorTint: true
   items:
     - ClothingNeckHeavyShackles
+
+#Medications
+- type: loadout
+  id: LoadoutPillCanisterEstradiol
+  category: GeneralItems
+  cost: 0
+  items:
+    - PillCanisterEstradiol
+      
+- type: loadout
+  id: LoadoutBottleEstradiol
+  category: GeneralItems
+  cost: 0
+  items:
+    - EstradiolChemistryBottle
+      
+- type: loadout
+  id: LoadoutBottleTestosterone
+  category: GeneralItems
+  cost: 0
+  items:
+    - TestosteroneChemistryBottle
 
 # Towels
 - type: loadout
