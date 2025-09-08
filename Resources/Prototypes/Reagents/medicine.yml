@@ -86,13 +86,14 @@
   color: "#081a80"
   metabolisms:
     Medicine:
-      metabolismRate: 0.5
+      metabolismRate: 0.1
       effects:
       - !type:GenericStatusEffect
         key: PsionicallyInsulated
         component: PsionicInsulation
         type: Add
-        time: 300
+        time: 10
+        refresh: false
       - !type:GenericStatusEffect
         key: Stutter
         component: StutteringAccent
@@ -100,7 +101,8 @@
         key: PsionicsDisabled
         component: PsionicsDisabled
         type: Add
-        time: 300
+        time: 10
+        refresh: false
 
 - type: reagent
   id: Dylovene
