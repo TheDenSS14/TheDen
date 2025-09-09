@@ -65,7 +65,7 @@
         - Defusal
 
 - type: entity
-  parent: BaseHardBomb
+  parent: [ BaseSecurityContraband, BaseHardBomb ]
   id: TrainingBomb
   name: training bomb
   description: A bomb for dummies, manual not included.
@@ -107,7 +107,7 @@
       disposable: false
 
 - type: entity
-  parent: [ BaseHardBomb, BaseRivalCompanyContraband ]
+  parent: [ BaseRivalCompanyContraband, BaseHardBomb ]
   id: SyndicateBomb
   name: syndicate bomb
   description: A bomb for Syndicate operatives and agents alike. The real deal, no more training, get to it!

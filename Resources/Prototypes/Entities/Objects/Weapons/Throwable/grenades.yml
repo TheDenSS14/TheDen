@@ -46,7 +46,7 @@
 
 - type: entity
   abstract: true
-  parent: BaseItem
+  parent: [ BaseMajorContraband, BaseItem ]
   id: GrenadeBase
   components:
   - type: Sprite
@@ -109,7 +109,7 @@
 - type: entity
   name: flashbang
   description: Eeeeeeeeeeeeeeeeeeeeee
-  parent: GrenadeBase
+  parent: [ BaseSecurityBlueshieldOfficerContraband, GrenadeBase ]
   id: GrenadeFlashBang
   components:
   - type: Sprite
@@ -151,7 +151,7 @@
 - type: entity
   name: syndicate minibomb
   description: A syndicate-manufactured explosive. Ominous.
-  parent: [ GrenadeBase, BaseRivalCompanyContraband ]
+  parent: [ BaseRivalCompanyContraband, GrenadeBase]
   id: SyndieMiniBomb
   components:
   - type: Sprite
@@ -444,7 +444,7 @@
       path: /Audio/Items/smoke_grenade_prime.ogg
 
 - type: entity
-  parent: SmokeGrenade
+  parent: [ BaseJanitorContraband, SmokeGrenade ]
   id: CleanerGrenade
   name: cleanade
   description: Special grenade for janitors, releasing large cloud of space cleaner foam
@@ -461,7 +461,7 @@
         Quantity: 30
 
 - type: entity
-  parent: SmokeGrenade
+  parent: [ BaseSecurityBlueshieldOfficerContraband, SmokeGrenade ]
   id: TearGasGrenade
   name: tear gas grenade
   description: A riot control tear gas grenade. Causes irritation, pain and makes you cry your eyes out.
@@ -481,7 +481,7 @@
 - type: entity
   name: trick grenade
   description: All the grenade without any of the boom.
-  parent: GrenadeBase
+  parent: [ BaseMinorContraband, GrenadeBase ]
   id: GrenadeDummy
   components:
   - type: Sprite
@@ -500,7 +500,7 @@
 - type: entity
   name: syndicate trickybomb
   description: A syndicate-manufactured explosive used to make an excellent distraction.
-  parent: [ GrenadeDummy, BaseRivalCompanyContraband ]
+  parent: [ GrenadeDummy ]
   id: SyndieTrickyBomb
   components:
   - type: Sprite

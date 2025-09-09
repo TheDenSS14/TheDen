@@ -16,7 +16,7 @@
 
 - type: entity
   id: BasePlasticExplosive
-  parent: BaseItem
+  parent: [ BaseMajorContraband, BaseItem ]
   abstract: true
   components:
   - type: Item
@@ -92,7 +92,7 @@
 - type: entity
   name: seismic charge
   description: Concussion based explosive designed to destroy large amounts of rock.
-  parent: BasePlasticExplosive
+  parent: [ BaseSalvageSpecialistContraband, BasePlasticExplosive ]
   id: SeismicCharge
   components:
   - type: Sprite
@@ -126,7 +126,7 @@
 - type: entity
   name: breaching charge
   description: A breaching explosive for security officers to break through walls.
-  parent: SeismicCharge
+  parent: [ BaseSecurityContraband, SeismicCharge ]
   id: BreachingCharge
   components:
   - type: Sprite

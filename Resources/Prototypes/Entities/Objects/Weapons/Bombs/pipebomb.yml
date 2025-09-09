@@ -4,7 +4,7 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 - type: entity
-  parent: GrenadeBase
+  parent: [ BaseImprovisedContraband, GrenadeBase ]
   id: PipeBomb
   name: pipe bomb
   description: An improvised explosive made from pipes and wire.
@@ -37,7 +37,7 @@
     node: pipebomb
 
 - type: entity
-  parent: BaseItem
+  parent: [ BaseImprovisedContraband, BaseItem ]
   id: PipeBombGunpowder
   name: pipe bomb
   description: An improvised explosive made from a pipe. This one has no gunpowder.
@@ -52,7 +52,7 @@
     defaultTarget: pipebomb
 
 - type: entity
-  parent: BaseItem
+  parent: [ BaseImprovisedContraband, BaseItem ]
   id: PipeBombCable
   name: pipe bomb
   description: An improvised explosive made from a pipe. This one has no cable.
