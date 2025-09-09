@@ -172,7 +172,6 @@
   - type: Contraband
     allowedDepartments: [ CentralCommand, Command, Dignitary ]
 
-# handcuffs, batons, disablers, armory door remote, etc.
 - type: entity
   id: BaseSecurityCommandContraband
   parent: BaseRestrictedContraband
@@ -292,4 +291,14 @@
   components:
   - type: Contraband
     allowedDepartments: [ Security ]
+    allowedJobs: [ BlueshieldOfficer ]
+
+# this is for stun batons, disablers and alike
+- type: entity
+  id: BaseSecurityCommandBlueshieldOfficerContraband
+  parent: BaseRestrictedContraband
+  abstract: true
+  components:
+  - type: Contraband
+    allowedDepartments: [ Security, Command ]
     allowedJobs: [ BlueshieldOfficer ]
