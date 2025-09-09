@@ -32,6 +32,19 @@
     - Recyclable
 
 - type: entity
+  parent: BaseScrap
+  id: BaseScrapSmall
+  abstract: true
+  name: scrap
+  description: Worthless junk. You could probably get some materials out of it though.
+  suffix: Scrap
+  components:
+  - type: Tag
+    tags: 
+    - Recyclable
+    - Trash
+
+- type: entity
   parent: BaseStructure
   id: BaseScrapLarge
   abstract: true
@@ -98,7 +111,7 @@
       Steel: 3000 # 30 sheets
 
 - type: entity
-  parent: BaseScrap
+  parent: BaseScrapSmall
   id: ScrapGlass
   name: scrap circuitry
   description: A huge lump of various circuits, strangely fused together. You could likely extract some materials out of this.
@@ -125,9 +138,6 @@
     materialComposition:
       Glass: 1500 # 15 sheets
       Steel: 500 # 5 sheets
-  - type: Tag
-    tags: 
-    - Trash
 
 - type: entity
   parent: BaseScrap
@@ -155,7 +165,7 @@
       Steel: 1500 # 15 sheets
 
 - type: entity
-  parent: BaseScrap
+  parent: BaseScrapSmall
   id: ScrapAirlock2
   name: airlock light
   description: Serves it right for flashing red all those times.
@@ -171,12 +181,9 @@
     materialComposition:
       Steel: 200 # 2 sheets
       Glass: 500 # 5 sheets
-  - type: Tag
-    tags: 
-    - Trash
 
 - type: entity
-  parent: BaseScrap
+  parent: BaseScrapSmall
   id: ScrapBucket
   name: busted bucket
   description: Dear god...
@@ -187,12 +194,9 @@
   - type: PhysicalComposition
     materialComposition:
       Plastic: 300 # 3 sheets
-  - type: Tag
-    tags: 
-    - Trash
 
 - type: entity
-  parent: BaseScrap
+  parent: BaseScrapSmall
   id: ScrapCamera
   name: broken camera
   description: It might still be watching.
@@ -204,12 +208,9 @@
     materialComposition:
       Steel: 500 # 5 sheets
       Glass: 100 # 1 sheet
-  - type: Tag
-    tags: 
-    - Trash
 
 - type: entity
-  parent: BaseScrap
+  parent: BaseScrapSmall
   id: ScrapCanister1
   name: canister handle
   description: Helpful for holding a canister. Now you just need the actual canister part.
@@ -220,12 +221,9 @@
   - type: PhysicalComposition
     materialComposition:
       Steel: 300 # 3 sheets
-  - type: Tag
-    tags: 
-    - Trash
 
 - type: entity
-  parent: BaseScrap
+  parent: BaseScrapSmall
   id: ScrapCanister2
   name: canister valve
   description: A valve from a gas canister.
@@ -238,9 +236,6 @@
   - type: PhysicalComposition
     materialComposition:
       Steel: 200 # 2 sheets
-  - type: Tag
-    tags: 
-    - Trash
 
 - type: entity
   parent: BaseScrap
@@ -262,7 +257,7 @@
       Steel: 1500 # 15 sheets
 
 - type: entity
-  parent: BaseScrap
+  parent: BaseScrapSmall
   id: ScrapFaxMachine
   name: fax machine
   description: The unfortunate result of one too many ASCII arts being sent to Central Command.
@@ -278,12 +273,9 @@
     materialComposition:
       Plastic: 800 # 8 sheets
       Steel: 200 # 2 sheets
-  - type: Tag
-    tags: 
-    - Trash
 
 - type: entity
-  parent: BaseScrap
+  parent: BaseScrapSmall
   id: ScrapFireExtinguisher
   name: split fire extinguisher
   description: The large gash down the center makes you worry for the previous user.
@@ -294,9 +286,6 @@
   - type: PhysicalComposition
     materialComposition:
       Steel: 600 # 6 sheets
-  - type: Tag
-    tags: 
-    - Trash
 
 - type: entity
   parent: BaseScrap
@@ -337,7 +326,7 @@
       Steel: 2000 # 20 sheets
 
 - type: entity
-  parent: BaseScrap
+  parent: BaseScrapSmall
   id: ScrapFirelock3
   name: firelock frame
   components:
@@ -351,12 +340,9 @@
   - type: PhysicalComposition
     materialComposition:
       Steel: 700 # 7 sheets
-  - type: Tag
-    tags: 
-    - Trash
 
 - type: entity
-  parent: BaseScrap
+  parent: BaseScrapSmall
   id: ScrapIntercom
   name: intercom scrap
   description: You wish it at least came with some encryption keys.
@@ -376,12 +362,9 @@
     materialComposition:
       Steel: 400 # 4 sheets
       Plastic: 300 # 3 sheets
-  - type: Tag
-    tags: 
-    - Trash
 
 - type: entity
-  parent: BaseScrap
+  parent: BaseScrapSmall
   id: ScrapJetpack
   name: busted jetpack
   description: Looks like it won't be flying any more.
@@ -396,12 +379,9 @@
     materialComposition:
       Steel: 1000 # 10 sheets
       Plastic: 200 # 2 sheets
-  - type: Tag
-    tags: 
-    - Trash
 
 - type: entity
-  parent: BaseScrap
+  parent: BaseScrapSmall
   id: ScrapMedkit
   name: snapped medkit
   description: Hopefully they got some use out of it.
@@ -420,9 +400,6 @@
   - type: PhysicalComposition
     materialComposition:
       Plastic: 500 # 5 sheets
-  - type: Tag
-    tags: 
-    - Trash
 
 - type: entity
   parent: BaseScrap
@@ -440,7 +417,7 @@
       Plastic: 1500 # 15 sheets
 
 - type: entity
-  parent: BaseScrap
+  parent: BaseScrapSmall
   id: ScrapPAI
   name: personal ai device
   description: A buddy! You still in there? Hello? Buddy???
@@ -454,12 +431,9 @@
     materialComposition:
       Steel: 300 # 3 sheets
       Plastic: 200 # 2 sheets
-  - type: Tag
-    tags: 
-    - Trash
 
 - type: entity
-  parent: BaseScrap
+  parent: BaseScrapSmall
   id: ScrapPAIGold
   name: gilded personal ai device
   description: Wow! What a one-in-a-million find! This would be worth a fortune... if it was in good condition.
@@ -473,12 +447,9 @@
     materialComposition:
       Gold: 100 # 1 sheet
       Plastic: 400 # 4 sheets
-  - type: Tag
-    tags: 
-    - Trash
 
 - type: entity
-  parent: BaseScrap
+  parent: BaseScrapSmall
   id: ScrapTube
   name: shattered sample tube
   description: A glass tube containing some kind of rare sample. Or at least, it used to contain it. Not much left in there now.
@@ -502,9 +473,6 @@
     materialComposition:
       Glass: 500 # 5 sheets
       Plastic: 100 # 1 sheet
-  - type: Tag
-    tags: 
-    - Trash
 
 - type: entity
   parent: BaseScrapLarge
@@ -608,7 +576,7 @@
       Steel: 1500 # 15 sheets
 
 - type: entity
-  parent: BaseScrap
+  parent: BaseScrapSmall
   id: ScrapGeneratorFuelTank
   name: fuel tank
   description: A fuel tank from a S.U.P.E.R.P.A.C.M.A.N. type generator. The gauge indicates its got a little fuel left.
@@ -621,6 +589,3 @@
     materialComposition:
       Steel: 200 # 2 sheets
       Uranium: 500 # 5 sheets
-  - type: Tag
-    tags: 
-    - Trash
