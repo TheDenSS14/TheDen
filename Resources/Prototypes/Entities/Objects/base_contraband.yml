@@ -199,6 +199,7 @@
   components:
   - type: Contraband
     allowedDepartments: [ Security, Epistemics, Command ]
+    allowedJobs: [ BlueshieldOfficer ]
 
 # intellicard
 - type: entity
