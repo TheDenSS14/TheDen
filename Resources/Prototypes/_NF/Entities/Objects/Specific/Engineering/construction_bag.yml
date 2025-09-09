@@ -30,7 +30,7 @@
     slots:
     - belt
   - type: Item
-    size: Ginormous
+    size: Normal # Den
   - type: Storage
     maxItemSize: Normal
     grid:
@@ -83,8 +83,6 @@
     - state: icon-on-bluespace
       visible: false
       map: [ "enum.ToggleableVisuals.Layer" ]
-  - type: Item
-    size: Ginormous
     inhandVisuals:
       left:
       - state: inhand-left
