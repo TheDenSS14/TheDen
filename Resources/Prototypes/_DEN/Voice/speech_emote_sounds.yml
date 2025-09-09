@@ -2,6 +2,7 @@
 # SPDX-FileCopyrightText: 2023 Fluffiest Floofers
 # SPDX-FileCopyrightText: 2024 SimpleStation14
 # SPDX-FileCopyrightText: 2025 Blitz
+# SPDX-FileCopyrightText: 2025 Eightballll
 # SPDX-FileCopyrightText: 2025 Tabitha
 # SPDX-FileCopyrightText: 2025 juniwoofs
 # SPDX-FileCopyrightText: 2025 sleepyyapril
@@ -28,16 +29,12 @@
       collection: MaleYawn
     Snore:
       collection: Snores
-    Honk:
-      collection: BikeHorn
     Sigh:
       collection: MaleSigh
     Crying:
       collection: MaleCry
     Whistle:
       collection: Whistles
-    Weh:
-      collection: Weh
     Growl:
       collection: VulpkaninGrowls
     Snarl:
@@ -50,6 +47,11 @@
       collection: VulpkaninHowls
     Awoo:
       collection: VulpkaninHowls
+    Gasp:
+      collection: MaleGasp
+    DefaultDeathgasp:
+      collection: MaleDeathGasp
+      
 
 - type: emoteSounds
   id: FemaleCanid
@@ -70,16 +72,12 @@
       collection: FemaleYawn
     Snore:
       collection: Snores
-    Honk:
-      collection: CluwneHorn
     Sigh:
       collection: FemaleSigh
     Crying:
       collection: FemaleCry
     Whistle:
       collection: Whistles
-    Weh:
-      collection: Weh
     Growl:
       collection: VulpkaninGrowls
     Snarl:
@@ -92,6 +90,10 @@
       collection: VulpkaninHowls
     Awoo:
       collection: VulpkaninHowls
+    Gasp:
+      collection: FemaleGasp
+    DefaultDeathgasp:
+      collection: FemaleDeathGasp
 
 # Ovinia
 - type: emoteSounds
@@ -123,6 +125,10 @@
       collection: Weh
     Baa:
       collection: OviniaBaa
+    Gasp:
+      collection: MaleGasp
+    DefaultDeathgasp:
+      collection: MaleDeathGasp
 
 - type: emoteSounds
   id: FemaleOvinia
@@ -149,52 +155,47 @@
       collection: FemaleCry
     Whistle:
       collection: Whistles
-    Weh:
-      collection: Weh
     Baa:
       collection: OviniaBaa
+    Gasp:
+      collection: FemaleGasp
+    DefaultDeathgasp:
+      collection: FemaleDeathGasp
 
+#Arachne
 - type: emoteSounds
   id: MaleArachne
   params:
     variation: 0.125
   sounds:
     Scream:
-      collection: MaleScreams
+      path: /Audio/Voice/Arachnid/arachnid_scream.ogg
     Laugh:
-      collection: MaleLaugh
+      path: /Audio/Voice/Arachnid/arachnid_laugh.ogg
     Sneeze:
       collection: MaleSneezes
     Cough:
       collection: MaleCoughs
-    CatMeow:
-      collection: CatMeows
-    CatHisses:
-      collection: CatHisses
-    MonkeyScreeches:
-      collection: MonkeyScreeches
-    RobotBeep:
-      collection: RobotBeeps
     Yawn:
       collection: MaleYawn
     Snore:
       collection: Snores
-    Honk:
-      collection: BikeHorn
     Sigh:
       collection: MaleSigh
     Crying:
       collection: MaleCry
     Whistle:
       collection: Whistles
-    Weh:
-      collection: Weh
     Chitter:
       path: /Audio/Voice/Arachnid/arachnid_chitter.ogg
     Click:
       path: /Audio/Voice/Arachnid/arachnid_click.ogg
     Hiss:
-      path: /Audio/Animals/snake_hiss.ogg #DeltaV
+      path: /Audio/Animals/snake_hiss.ogg
+    Gasp:
+      collection: MaleGasp
+    DefaultDeathgasp:
+      collection: MaleDeathGasp
 
 - type: emoteSounds
   id: FemaleArachne
@@ -202,38 +203,49 @@
     variation: 0.125
   sounds:
     Scream:
-      collection: FemaleScreams
+      path: /Audio/Voice/Arachnid/arachnid_scream.ogg
     Laugh:
-      collection: FemaleLaugh
+      path: /Audio/Voice/Arachnid/arachnid_laugh.ogg
     Sneeze:
       collection: FemaleSneezes
     Cough:
       collection: FemaleCoughs
-    CatMeow:
-      collection: CatMeows
-    CatHisses:
-      collection: CatHisses
-    MonkeyScreeches:
-      collection: MonkeyScreeches
-    RobotBeep:
-      collection: RobotBeeps
     Yawn:
       collection: FemaleYawn
     Snore:
       collection: Snores
-    Honk:
-      collection: CluwneHorn
     Sigh:
       collection: FemaleSigh
     Crying:
       collection: FemaleCry
     Whistle:
       collection: Whistles
-    Weh:
-      collection: Weh
     Chitter:
       path: /Audio/Voice/Arachnid/arachnid_chitter.ogg
     Click:
       path: /Audio/Voice/Arachnid/arachnid_click.ogg
     Hiss:
-      path: /Audio/Animals/snake_hiss.ogg #DeltaV
+      path: /Audio/Animals/snake_hiss.ogg
+    Gasp:
+      collection: FemaleGasp
+    DefaultDeathgasp:
+      collection: FemaleDeathGasp
+
+# Cats
+- type: emoteSounds
+  id: AnimalCat
+  sounds:
+    Meow:
+      collection: FelinidMeows
+    Hiss:
+      collection: FelinidHisses
+    Scream: 
+      collection: FelinidScreams
+    Purr:
+      collection: FelinidPurrs
+    Mew:
+      collection: FelinidMews
+    Growl:
+      collection: FelinidGrowls
+  params:
+    variation: 0.125

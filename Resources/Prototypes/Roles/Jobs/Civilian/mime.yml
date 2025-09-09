@@ -23,13 +23,14 @@
 # SPDX-FileCopyrightText: 2024 ShatteredSwords
 # SPDX-FileCopyrightText: 2024 SimpleStation14
 # SPDX-FileCopyrightText: 2024 brainfood1183
+# SPDX-FileCopyrightText: 2025 Shaman
 # SPDX-FileCopyrightText: 2025 Skubman
 # SPDX-FileCopyrightText: 2025 Timfa
 # SPDX-FileCopyrightText: 2025 VMSolidus
 # SPDX-FileCopyrightText: 2025 portfiend
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: job
   id: Mime
@@ -48,7 +49,7 @@
   - !type:AddComponentSpecial
     components:
     - type: MimePowers
-    - type: FrenchAccent
+#    - type: BasicFrenchAccent # TheDen - If mimes wanna be French they can take the French accent!
 
 - type: startingGear
   id: MimeGear
