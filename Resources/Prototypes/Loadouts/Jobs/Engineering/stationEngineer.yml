@@ -1,5 +1,7 @@
-# SPDX-FileCopyrightText: 2024 VMSolidus <evilexecutive@gmail.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 VMSolidus
+# SPDX-FileCopyrightText: 2025 Blitz
+# SPDX-FileCopyrightText: 2025 Jakumba
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -180,6 +182,21 @@
         - StationEngineer
   items:
     - SheetPlastic10
+
+  # DEN
+- type: loadout
+  id: LoadoutStationEngineerEquipmentConstructionBag
+  category: JobsEngineeringStationEngineer
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutStationEngineerEquipment
+    - !type:CharacterJobRequirement
+      jobs:
+        - StationEngineer
+  items:
+    - ConstructionBag
+# DEN
 
 # Eyes
 

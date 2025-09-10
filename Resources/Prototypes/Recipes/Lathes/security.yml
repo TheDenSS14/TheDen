@@ -99,6 +99,16 @@
     Plastic: 300
 
 - type: latheRecipe
+  id: PlasteelArmingSword
+  result: PlasteelArmingSword
+  category: Weapons
+  completetime: 2
+  materials:
+    Plasma: 150
+    Steel: 300
+    Plastic: 150
+
+- type: latheRecipe
   id: CombatKnife
   result: CombatKnife
   category: Weapons
@@ -156,15 +166,17 @@
     Steel: 2000
     Gold: 500
 
-- type: latheRecipe
-  id: WeaponCivilianDisabler
-  result: WeaponCivilianDisabler
-  category: Weapons
-  completetime: 6
-  materials:
-    Aluminum: 200
-    Glass: 200
-    Plastic: 300
+# DEN
+# - type: latheRecipe
+#   id: WeaponCivilianDisabler
+#   result: WeaponCivilianDisabler
+#   category: Weapons
+#   completetime: 6
+#   materials:
+#     Aluminum: 200
+#     Glass: 200
+#     Plastic: 300
+# DEN
 
 - type: latheRecipe
   id: WeaponXrayCannon
@@ -1314,16 +1326,18 @@
     Silver: 100
     Gold: 100
 
-- type: latheRecipe
-  id: EnergyCutlass
-  result: EnergyCutlass
-  completetime: 10
-  materials:
-    Tungsten: 300
-    Gold: 300
-    Bluespace: 300
-    Plasma: 300
-    Diamond: 100
+# DEN - Remove hardlight weapons from security
+# - type: latheRecipe
+#   id: EnergyCutlass
+#   result: EnergyCutlass
+#   completetime: 10
+#   materials:
+#     Tungsten: 300
+#     Gold: 300
+#     Bluespace: 300
+#     Plasma: 300
+#     Diamond: 100
+# DEN
 
 - type: latheRecipe
   id: WeaponSubMachineGunFPA90
@@ -1358,18 +1372,20 @@
     Steel: 100
     Plastic: 150
 
-- type: latheRecipe
-  id: WeaponPistolN1984
-  result: WeaponPistolN1984Empty
-  category: Weapons
-  completetime: 6
-  materials:
-    Steel: 800 #Yes, Steel and not Aluminum, the original M1911 handguns that this is in reference to are steel frame.
-               #For balancing reasons(Steel is way easier to get), it includes other rarer materials.
-    Plasteel: 100
-    Plastic: 250
-    Gold: 200
-    Silver: 100
+# DEN - Prints the .45 caliber version, too laz to fix properly.
+# - type: latheRecipe
+#   id: WeaponPistolN1984
+#   result: WeaponPistolN1984Empty
+#   category: Weapons
+#   completetime: 6
+#   materials:
+#     Steel: 800 #Yes, Steel and not Aluminum, the original M1911 handguns that this is in reference to are steel frame.
+#                #For balancing reasons(Steel is way easier to get), it includes other rarer materials.
+#     Plasteel: 100
+#     Plastic: 250
+#     Gold: 200
+#     Silver: 100
+# DEN
 
 - type: latheRecipe
   id: WeaponPistolViper

@@ -1,10 +1,9 @@
-# SPDX-FileCopyrightText: 2023 Adrian16199 <144424013+Adrian16199@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2023 Fluffiest Floofers <thebluewulf@gmail.com>
-# SPDX-FileCopyrightText: 2024 SimpleStation14 <130339894+SimpleStation14@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 Rosycup <178287475+Rosycup@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 TheOneTrueWolfio <Wolfgangleader3@gmail.com>
-# SPDX-FileCopyrightText: 2025 TheOneTrueWolfio <wolfgangleader3@gmail.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Adrian16199
+# SPDX-FileCopyrightText: 2023 Fluffiest Floofers
+# SPDX-FileCopyrightText: 2024 SimpleStation14
+# SPDX-FileCopyrightText: 2025 Rosycup
+# SPDX-FileCopyrightText: 2025 TheOneTrueWolfio
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -52,6 +51,10 @@
       path: /Audio/_DEN/avali_coo.ogg
     AvaliHonk:
       path: /Audio/_DEN/avali_honk.ogg
+    Gasp:
+      collection: MaleGasp
+    DefaultDeathgasp:
+      collection: MaleDeathGasp
 
 - type: emoteSounds
   id: FemaleAvali
@@ -92,3 +95,7 @@
       path: /Audio/_DEN/avali_coo.ogg
     AvaliHonk:
       path: /Audio/_DEN/avali_honk.ogg
+    Gasp:
+      collection: FemaleGasp
+    DefaultDeathgasp:
+      collection: FemaleDeathGasp

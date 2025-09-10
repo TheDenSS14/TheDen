@@ -1,23 +1,25 @@
-# SPDX-FileCopyrightText: 2025 BloodfiendishOperator <141253729+Diggy0@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 Rosycup <178287475+Rosycup@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 VMSolidus <evilexecutive@gmail.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 BloodfiendishOperator
+# SPDX-FileCopyrightText: 2025 Rosycup
+# SPDX-FileCopyrightText: 2025 Shaman
+# SPDX-FileCopyrightText: 2025 VMSolidus
+# SPDX-FileCopyrightText: 2025 pocl v
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: marking
   id: UnderwearDefault
   bodyPart: Underwear
   markingCategory: Underwear
   invertSpeciesRestriction: True
-  speciesRestriction: [Arachne, Plasmamen, Thaven] # TheDen - Thaven
+  speciesRestriction: [Arachne, Plasmamen, Thaven, Vox, Reptilian] # TheDen - Thaven
   coloring:
     default:
       type:
         !type:SimpleColoring
           color: "#FFFFFF"
   sprites:
-  - sprite: Mobs/Customization/underwear.rsi
+  - sprite: _Wizden/Mobs/Customization/Humanoid/underwear.rsi
     state: boxers
 
 - type: marking
@@ -25,14 +27,14 @@
   bodyPart: Underwear
   markingCategory: Underwear
   invertSpeciesRestriction: True
-  speciesRestriction: [Arachne, Plasmamen, Thaven] # TheDen - Thaven
+  speciesRestriction: [Arachne, Plasmamen, Thaven, Vox, Reptilian] # TheDen - Thaven
   coloring:
     default:
       type:
         !type:SimpleColoring
           color: "#FFFFFF"
   sprites:
-  - sprite: Mobs/Customization/underwear.rsi
+  - sprite: _Wizden/Mobs/Customization/Humanoid/underwear.rsi
     state: briefs
 
 - type: marking
@@ -40,14 +42,14 @@
   bodyPart: Underwear
   markingCategory: Underwear
   invertSpeciesRestriction: True
-  speciesRestriction: [Arachne, Plasmamen, Thaven] # TheDen - Thaven
+  speciesRestriction: [Arachne, Plasmamen, Thaven, Vox, Reptilian] # TheDen - Thaven
   coloring:
     default:
       type:
         !type:SimpleColoring
           color: "#FFFFFF"
   sprites:
-  - sprite: Mobs/Customization/underwear.rsi
+  - sprite: _Wizden/Mobs/Customization/Humanoid/underwear.rsi
     state: lowriders
 
 - type: marking
@@ -55,14 +57,14 @@
   bodyPart: Underwear
   markingCategory: Underwear
   invertSpeciesRestriction: True
-  speciesRestriction: [Arachne, Plasmamen, Thaven] # TheDen - Thaven
+  speciesRestriction: [Arachne, Plasmamen, Thave, Vox, Reptilian] # TheDen - Thaven
   coloring:
     default:
       type:
         !type:SimpleColoring
           color: "#FFFFFF"
   sprites:
-  - sprite: Mobs/Customization/underwear.rsi
+  - sprite: _Wizden/Mobs/Customization/Humanoid/underwear.rsi
     state: satin
 
 - type: marking
@@ -70,12 +72,101 @@
   bodyPart: Underwear
   markingCategory: Underwear
   invertSpeciesRestriction: True
-  speciesRestriction: [Arachne, Plasmamen, Thaven] # TheDen - Thaven
+  speciesRestriction: [Arachne, Plasmamen, Thaven, Vox, Reptilian] # TheDen - Thaven
   coloring:
     default:
       type:
         !type:SimpleColoring
           color: "#FFFFFF"
   sprites:
-  - sprite: Mobs/Customization/underwear.rsi
+  - sprite: _Wizden/Mobs/Customization/Humanoid/underwear.rsi
     state: tanga
+
+# Reptilian Markings
+
+- type: marking
+  id: UnderwearDefaultReptilian
+  bodyPart: Underwear
+  markingCategory: Underwear
+  speciesRestriction: [Reptilian]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+  - sprite: _Wizden/Mobs/Customization/Humanoid/underwear.rsi
+    state: boxers_reptilian
+
+- type: marking
+  id: UnderwearBriefsReptilian
+  bodyPart: Underwear
+  markingCategory: Underwear
+  speciesRestriction: [Reptilian]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+  - sprite: _Wizden/Mobs/Customization/Humanoid/underwear.rsi
+    state: briefs_reptilian
+
+- type: marking
+  id: UnderwearSatinReptilian
+  bodyPart: Underwear
+  markingCategory: Underwear
+  speciesRestriction: [Reptilian]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+  - sprite: _Wizden/Mobs/Customization/Humanoid/underwear.rsi
+    state: satin_reptilian
+
+
+# Vox Markings
+
+- type: marking
+  id: UnderwearDefaultVox # Voxers.
+  bodyPart: Underwear
+  markingCategory: Underwear
+  speciesRestriction: [Vox]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+  - sprite: _Wizden/Mobs/Customization/Humanoid/underwear.rsi
+    state: boxers_vox
+
+- type: marking
+  id: UnderwearBriefsVox
+  bodyPart: Underwear
+  markingCategory: Underwear
+  speciesRestriction: [Vox]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+  - sprite: _Wizden/Mobs/Customization/Humanoid/underwear.rsi
+    state: briefs_vox
+
+- type: marking
+  id: UnderwearSatinVox
+  bodyPart: Underwear
+  markingCategory: Underwear
+  speciesRestriction: [Vox]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+  - sprite: _Wizden/Mobs/Customization/Humanoid/underwear.rsi
+    state: satin_vox

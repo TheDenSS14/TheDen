@@ -103,6 +103,8 @@
       id: LoadoutMagazineMagnumMagnumLeverRifleSpare
     - type: loadout
       id: LoadoutMagazineShotgunBeanbag
+    - type: loadout
+      id: LoadoutSDeviceSirenSecurity
 
 - type: characterItemGroup
   maxItems: 1
@@ -125,8 +127,8 @@
     - type: loadout
       id: LoadoutSecurityEnergyGunMini
     - type: loadout
-      id: LoadoutSecurityEquipmentEnergySword
-    - type: loadout
+    #   id: LoadoutSecurityEquipmentEnergySword # DEN
+    # - type: loadout
       id: LoadoutSecurityPistolPollockNonlethal
     - type: loadout
       id: LoadoutSecurityRevolverSnubNonlethal
@@ -246,7 +248,7 @@
     - type: loadout # Imp
       id: LoadoutSecurityOuterCoatBomberBrigmedLoose
     - type: loadout # Imp
-      id: LoadoutClothingOuterArmorBasic
+      id: LoadoutSecurityOuterArmorBasicCompact
 
 - type: characterItemGroup
   id: LoadoutSecurityShoes

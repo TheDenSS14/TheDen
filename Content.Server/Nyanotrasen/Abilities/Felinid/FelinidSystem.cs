@@ -1,14 +1,12 @@
-// SPDX-FileCopyrightText: 2023 Debug <sidneymaatman@gmail.com>
-// SPDX-FileCopyrightText: 2023 Fluffiest Floofers <thebluewulf@gmail.com>
-// SPDX-FileCopyrightText: 2023 Pieter-Jan Briers <pieterjan.briers@gmail.com>
-// SPDX-FileCopyrightText: 2023 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 Adrian16199 <144424013+Adrian16199@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 Debug <49997488+DebugOk@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 sleepyyapril <flyingkarii@gmail.com>
-// SPDX-FileCopyrightText: 2025 Rosycup <178287475+Rosycup@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Debug
+// SPDX-FileCopyrightText: 2023 Fluffiest Floofers
+// SPDX-FileCopyrightText: 2023 Pieter-Jan Briers
+// SPDX-FileCopyrightText: 2023 metalgearsloth
+// SPDX-FileCopyrightText: 2024 Adrian16199
+// SPDX-FileCopyrightText: 2024 sleepyyapril
+// SPDX-FileCopyrightText: 2025 Rosycup
 //
-// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+// SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 using Content.Shared.Actions;
 using Content.Shared.Actions.Events;
@@ -91,7 +89,7 @@ public sealed partial class FelinidSystem : EntitySystem
             return;
 
         //component.HairballAction = Spawn("ActionHairball");
-        _actionsSystem.AddAction(uid, ref component.HairballAction, component.HairballActionId);
+        // _actionsSystem.AddAction(uid, ref component.HairballAction, component.HairballActionId);
     }
 
     private void OnEquipped(EntityUid uid, FelinidComponent component, DidEquipHandEvent args)
@@ -161,7 +159,7 @@ public sealed partial class FelinidSystem : EntitySystem
         if (component.HairballAction != null)
         {
             _actionsSystem.SetCharges(component.HairballAction, 1); // You get the charge back and that's it. Tough.
-            _actionsSystem.SetEnabled(component.HairballAction, true);
+            _actionsSystem.SetEnabled(component.HairballAction, false);
         }
 
         Del(component.EatActionTarget.Value);

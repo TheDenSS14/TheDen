@@ -11494,3 +11494,635 @@ Entries:
   id: 1121
   time: '2025-09-01T10:16:04.0000000+00:00'
   url: https://github.com/TheDenSS14/TheDen/pull/1650
+- author: Shaman
+  changes:
+    - type: Fix
+      message: The basic security armor vest is selectable again in loadout.
+    - type: Fix
+      message: Departmental bomber jackets display properly in loadout.
+  id: 1122
+  time: '2025-09-02T08:03:21.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1651
+- author: SirWarock
+  changes:
+    - type: Tweak
+      message: Slime Geras now wear the color of the Slime Person that polymorphed!
+  id: 1123
+  time: '2025-09-02T10:40:55.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1645
+- author: Shaman
+  changes:
+    - type: Tweak
+      message: >-
+        Spaceproof helmets now have built-in internals (hardsuits, EVA helmets,
+        atmos fire gear, etc)
+  id: 1124
+  time: '2025-09-02T10:45:50.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1652
+- author: Sha-Seng
+  changes:
+    - type: Tweak
+      message: Dogtags have a new sprite from Imp
+  id: 1125
+  time: '2025-09-02T12:59:13.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1649
+- author: Eightballll
+  changes:
+    - type: Add
+      message: >-
+        Added Parcelwrap! Wrap up a gift for your loved one, or a bomb for that
+        pesky botanist!
+    - type: Add
+      message: Added Parcelwrap to the maildrobe inventory and a cargo order.
+    - type: Add
+      message: Added craftable cardboard armors
+    - type: Add
+      message: Added craftable cardboard structures
+  id: 1126
+  time: '2025-09-02T21:03:14.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1659
+- author: Eightballll
+  changes:
+    - type: Fix
+      message: Added fill sprites to 16 drinks missing them.
+    - type: Add
+      message: Ported 25 drinks from Wizden and DV, including the Mayojito!
+    - type: Add
+      message: >-
+        Added 12 new Community Requested:tm: drinks, such as the Miami Vice, and
+        Touch of Grass!
+    - type: Add
+      message: Added a recipe for Eggnog!
+    - type: Tweak
+      message: >-
+        Some simple recipes now have a stir or shake requirement, to avoid
+        accidental mixings while making new drinks
+    - type: Remove
+      message: Removed my sheer fucking rage whenever someone ordered a Roy Rogers.
+  id: 1127
+  time: '2025-09-02T22:04:43.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1633
+- author: portfiend
+  changes:
+    - type: Add
+      message: >-
+        Various cotton-based moth-edible foods have been ported from Wizard's
+        Den: Cotton-based bread, dough/flat dough, croissants, bagels, chèvre
+        chaud, crostini, baguettes, cake, and moth-pockets.
+    - type: Add
+      message: >-
+        In addition, you can now make cotton buns and assemble cotton burgers,
+        using cotton bols and plushies as toppings. Many non-Wizden plushies
+        have been added to the cotton burger ingredient list.
+    - type: Add
+      message: >-
+        Chocolate and banana muffins have been added, and you can now bake all
+        muffins using new muffin tins.
+    - type: Add
+      message: Many cakes have in-hand sprites now.
+    - type: Tweak
+      message: >-
+        The recipe for cotton pizza has been adjusted to use flat cotton dough
+        instead of one dough and one cotton bol. In addition, there is an
+        alternative recipe for cotton pizza that uses 4 cotton bols and one flat
+        dough. Sorry, our guidebook only shows one recipe for a given dish
+        because we need to replace it
+    - type: Tweak
+      message: >-
+        Pancakes stack up to 9, and the sprites for blueberry pancakes have been
+        adjusted to be more visually distinct from chocolate chip pancakes.
+  id: 1128
+  time: '2025-09-02T22:09:50.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1634
+- author: Shaman
+  changes:
+    - type: Add
+      message: >-
+        Added a colorable Patrol Cap and a new plain Midriff Undershirt (shows
+        female indents)
+    - type: Tweak
+      message: Obliterated a single pixel on the security belt
+  id: 1129
+  time: '2025-09-02T23:59:16.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1654
+- author: Jakumba
+  changes:
+    - type: Tweak
+      message: 'Carp Rifts: Take 5 minutes to fully form again (7 => 5)'
+    - type: Tweak
+      message: 'Dragon: Bleeding max damage reduced 450 => 150 (500 max hp)'
+    - type: Tweak
+      message: 'Dragon Lungs: Fireball cooldown reduced 15 => 7 seconds'
+    - type: Tweak
+      message: 'Summon Carp Horde: Cooldown reduced 90 => 60 seconds'
+  id: 1130
+  time: '2025-09-03T00:02:11.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1655
+- author: Eightballll
+  changes:
+    - type: Add
+      message: >-
+        Added in-hand sprites to a variety of mugs, flasks, and bartending
+        related items!
+    - type: Fix
+      message: Fixed ashtrays not being visually empty after dumping them out.
+    - type: Add
+      message: >-
+        Added fill-level sprites to rags, mops, and spears. Now they will
+        visually change when covered in reagents.
+  id: 1131
+  time: '2025-09-03T00:03:03.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1657
+- author: Shaman
+  changes:
+    - type: Add
+      message: >-
+        Added species-specific Command and Fashion Breath Mask sprites to
+        chitinids, feroxi, resomi, shadowkin, tajaran, and vulpkanin
+    - type: Tweak
+      message: Chitinids and shadowkin can now have species-specific sprites
+  id: 1132
+  time: '2025-09-03T00:03:29.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1658
+- author: GreggTheFather
+  changes:
+    - type: Tweak
+      message: (ARENA) Tweaked the Arena, making it less prone to Critter Escapes.
+  id: 1133
+  time: '2025-09-03T02:20:44.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1656
+- author: Monotheonist
+  changes:
+    - type: Tweak
+      message: (BAIKAL) Gave AA an office and made other quality of life adjustments
+    - type: Tweak
+      message: Blew up Juni.
+  id: 1134
+  time: '2025-09-03T02:22:46.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1663
+- author: TheLuggage05
+  changes:
+    - type: Add
+      message: Added a number of word replacements to the French accent!
+    - type: Add
+      message: >-
+        Added French (basic), in case you want to sound French without speaking
+        it!
+  id: 1135
+  time: '2025-09-03T10:23:03.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1665
+- author: sleepyyapril
+  changes:
+    - type: Remove
+      message: Removed hairball action
+  id: 1136
+  time: '2025-09-04T01:05:51.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1671
+- author: Jakumba
+  changes:
+    - type: Add
+      message: Ported the Antelope from Goobstation
+    - type: Add
+      message: Added the antique typewriter and the antique Antelope to Hos Loadouts
+    - type: Tweak
+      message: >-
+        Reduced the amount of TC available to traitors (100), Lone Ops (350) and
+        Nuclear Operatives (250)
+    - type: Tweak
+      message: >-
+        Security Viper changed to statistically match the Mk58, loadout cost
+        reduced
+    - type: Tweak
+      message: >-
+        Security Python changed to statistically match the Inspector, loadout
+        cost reduced
+    - type: Tweak
+      message: Rechambered the BRDI-25 to .20 and renamed accordingly
+    - type: Tweak
+      message: Increased the number of shots the Disabler has 10 => 16
+    - type: Tweak
+      message: Increased the projectile speed of Disabler bolts slightly
+    - type: Tweak
+      message: Reduced the Heat damage done by Disabler bolts 5 => 3
+    - type: Tweak
+      message: Removed reflection change from the Wardens Antique Energy Shield
+    - type: Tweak
+      message: Reduced .20 damage from 23  => 19
+    - type: Tweak
+      message: Reduced .25 damage from 19 => 17
+    - type: Tweak
+      message: Reduced .30 damage from 19 => 17
+    - type: Tweak
+      message: Increased Novalite C1 rate of fire 150 => 180
+    - type: Tweak
+      message: Increased the damage of the plasteel arming sword heavy attack 15 => 18
+    - type: Tweak
+      message: Increased the damage of the truncheon 12 =18
+    - type: Tweak
+      message: Added structural damage to the truncheon 0 => 10
+    - type: Tweak
+      message: Decreased the cool down on the truncheon 1.2 => 1
+    - type: Tweak
+      message: Increased the stamina damage of the truncheon
+    - type: Tweak
+      message: Increased the stamina swing cost on truncheon wide swings
+    - type: Remove
+      message: Terminus from the Captains loadout
+    - type: Remove
+      message: Hardlight melee weapons from security
+    - type: Remove
+      message: Shielded sunglasses from civilian loadouts
+    - type: Remove
+      message: Civilian Disabler
+  id: 1137
+  time: '2025-09-04T01:52:29.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1309
+- author: SubspaceEmber
+  changes:
+    - type: Fix
+      message: Ported wizden bugfix for a lot of issues with lighting objects
+    - type: Fix
+      message: Ported wizden bugfix for the headphones visuals
+  id: 1138
+  time: '2025-09-04T04:16:40.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1672
+- author: Jakumba
+  changes:
+    - type: Tweak
+      message: Cargo techs can lock artifact containers
+  id: 1139
+  time: '2025-09-04T04:16:59.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1666
+- author: Jakumba
+  changes:
+    - type: Tweak
+      message: Gave scugcats an extra hand, now you can hold two spears at once!
+  id: 1140
+  time: '2025-09-04T04:17:22.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1653
+- author: SubspaceEmber
+  changes:
+    - type: Add
+      message: >-
+        Ported laser tag guns and the laser pistol disguised as laser tag gun
+        from Delta-V.
+  id: 1141
+  time: '2025-09-04T12:58:06.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1673
+- author: Jakumba
+  changes:
+    - type: Fix
+      message: 'Fixed a few minor issues from the recent balance patch '
+    - type: Tweak
+      message: Added full auto fire mode to the x-01
+  id: 1142
+  time: '2025-09-04T13:06:09.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1680
+- author: Eightballll
+  changes:
+    - type: Tweak
+      message: >-
+        Recolored the following job icons: Mime, Musician, Janitor, Station AI,
+        Cyborg.
+  id: 1143
+  time: '2025-09-04T13:39:00.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1677
+- author: SubspaceEmber
+  changes:
+    - type: Fix
+      message: Fixed corpsman and armory glass airlocks not being see-though.
+    - type: Fix
+      message: Fixed robo door not showing in spraypainter.
+  id: 1144
+  time: '2025-09-04T19:24:06.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1682
+- author: Eightballll
+  changes:
+    - type: Add
+      message: Added in-hand sprites to most liquor bottles and some soda bottles
+  id: 1145
+  time: '2025-09-05T12:51:48.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1675
+- author: SubspaceEmber
+  changes:
+    - type: Tweak
+      message: Added electric piano and a few pads sounds to the synthesizer.
+    - type: Tweak
+      message: Added square wave and a lead to the minimoog.
+    - type: Tweak
+      message: DAWs give off a bit of light and can be RGBd!
+  id: 1146
+  time: '2025-09-05T13:03:08.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1679
+- author: Jakumba
+  changes:
+    - type: Fix
+      message: Medibots failing to inject people
+  id: 1147
+  time: '2025-09-05T13:12:53.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1686
+- author: Eightballll
+  changes:
+    - type: Tweak
+      message: >-
+        Adjusted the Emerald Journey and Arkveil Temple to have less alcohol
+        content
+  id: 1148
+  time: '2025-09-05T13:13:56.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1683
+- author: Eightballll
+  changes:
+    - type: Add
+      message: Added in-hand sprites for various medical items,
+    - type: Add
+      message: Added in-hand sprites for various roboticist items.
+    - type: Add
+      message: >-
+        Added in-hand sprites for various general tools such as the GPS and
+        Station Map.
+    - type: Add
+      message: Added in-hand sprites for most produce items.
+    - type: Add
+      message: Added in-hand sprites for various trinkets
+    - type: Add
+      message: Added in-hand sprites for a variety of grenades and throwables.
+    - type: Add
+      message: You can now put the snake plushie around your neck!
+    - type: Remove
+      message: Removed the staff's free time.
+  id: 1149
+  time: '2025-09-05T13:28:46.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1687
+- author: SubspaceEmber
+  changes:
+    - type: Tweak
+      message: Allowed jugs to be printed in the service techfab.
+    - type: Fix
+      message: Blue pumpkins actually have a name now.
+  id: 1150
+  time: '2025-09-05T16:19:29.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1690
+- author: Eightballll
+  changes:
+    - type: Remove
+      message: >-
+        Removed Songbird from the Random Drink spawner, as it contains
+        Pomelustine.
+  id: 1151
+  time: '2025-09-05T20:47:58.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1693
+- author: Sha-Seng
+  changes:
+    - type: Add
+      message: >-
+        Added Security and Blueshield Sirens that can be worn in suit storage
+        (or just lit from your pocket)
+    - type: Tweak
+      message: >-
+        Security belts no longer have grenades, and now only have one pair of
+        cuffs, a holobarrier projector, a radio, and a siren
+    - type: Tweak
+      message: Touched up the Compact Armor Vest's sprite a little
+  id: 1152
+  time: '2025-09-06T01:17:28.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1698
+- author: Sha-Seng
+  changes:
+    - type: Tweak
+      message: >-
+        Radio screens turn on when the speaker's on, and a red light comes on
+        the side when the mic's on
+    - type: Add
+      message: You can now alt+click radios to turn the mic on quickly
+  id: 1153
+  time: '2025-09-06T01:19:43.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1699
+- author: Shaman
+  changes:
+    - type: Tweak
+      message: Radios can now fit into the neck slot.
+  id: 1154
+  time: '2025-09-06T13:05:42.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1701
+- author: SubspaceEmber
+  changes:
+    - type: Fix
+      message: >-
+        Fixed announcers not announcing when shuttle was called, docked, or
+        recalled.
+  id: 1155
+  time: '2025-09-06T13:14:46.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1689
+- author: Shaman
+  changes:
+    - type: Tweak
+      message: You can now select sports balls from loadout toys
+    - type: Add
+      message: >-
+        Added thaven blitzball, I mean skimmer, and there's a discus for it in
+        loadout
+  id: 1156
+  time: '2025-09-06T14:36:04.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1702
+- author: Pinkbat5
+  changes:
+    - type: Add
+      message: Vox can now wear undershirts and underwear!
+    - type: Tweak
+      message: Some undershirts and underwear have received resprites.
+    - type: Fix
+      message: >-
+        Some undergarments no longer clip over the waists of characters with the
+        female bodytype.
+  id: 1157
+  time: '2025-09-06T14:56:31.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1670
+- author: Shaman
+  changes:
+    - type: Add
+      message: Added all Imp arachnid markings (including hair!)
+    - type: Add
+      message: Added like 20 new craftable web things too
+    - type: Tweak
+      message: >-
+        Made arachnid parts white by default, instead of gray, so you can color
+        them better
+  id: 1158
+  time: '2025-09-06T19:59:05.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1669
+- author: Shaman
+  changes:
+    - type: Tweak
+      message: Departmental bomber jackets have better in-hand sprites
+  id: 1159
+  time: '2025-09-06T21:49:55.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1704
+- author: Eightballll
+  changes:
+    - type: Add
+      message: >-
+        Gasping emote sounds! You can feign shock at your coworker's stupidity
+        now.
+  id: 1160
+  time: '2025-09-06T22:39:51.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1684
+- author: Shaman
+  changes:
+    - type: Tweak
+      message: Mimes are no longer forced to be French
+  id: 1161
+  time: '2025-09-06T22:40:29.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1700
+- author: Shaman
+  changes:
+    - type: Add
+      message: Added MINIMUM FORCE NECESSARY lobby art
+  id: 1162
+  time: '2025-09-06T23:04:33.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1706
+- author: Jakumba
+  changes:
+    - type: Add
+      message: Added a toggleable magnet to most utility bags!
+    - type: Tweak
+      message: Utility bags magnet can be used while in hand, or even on the floor.
+  id: 1163
+  time: '2025-09-06T23:59:40.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1697
+- author: Jakumba
+  changes:
+    - type: Tweak
+      message: >-
+        The stun baton left click is now a thrust, it does more stamina damage
+        over time, but the wide swing does less.
+    - type: Tweak
+      message: >-
+        The taser is no longer a hard stun, it now slows and drains stamina
+        rapidly.
+  id: 1164
+  time: '2025-09-07T00:00:17.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1696
+- author: Jakumba
+  changes:
+    - type: Fix
+      message: >-
+        Numerous structures can be reanchored when their floor tiles are
+        destroyed
+  id: 1165
+  time: '2025-09-07T00:03:25.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1692
+- author: crekulon
+  changes:
+    - type: Tweak
+      message: >-
+        Robotic Arm machines no longer cause the lights to flicker by drawing so
+        much power!
+    - type: Fix
+      message: The craft menu Combined Filter recipe now works!
+  id: 1166
+  time: '2025-09-07T00:04:54.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1703
+- author: Jakumba
+  changes:
+    - type: Add
+      message: Derelict Cyborg midround antagonists
+  id: 1167
+  time: '2025-09-07T00:05:10.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1667
+- author: Jakumba
+  changes:
+    - type: Add
+      message: Stun animations from WizDen!
+    - type: Tweak
+      message: Stamina damage will gradually slow you under 50% again
+  id: 1168
+  time: '2025-09-07T03:41:50.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1694
+- author: Jakumba
+  changes:
+    - type: Add
+      message: Added construction bags to engineering loadouts
+    - type: Add
+      message: Added construction bags to station engineer lockers
+    - type: Add
+      message: Added construciton bags to the Engi-Vend
+    - type: Add
+      message: Added security sirens to security loadouts
+    - type: Add
+      message: >-
+        Added a radio slot on security and salvage belts, works just like your
+        weapon holster!
+    - type: Add
+      message: Added A  SecLite to security starting loadout
+    - type: Remove
+      message: Removed security sirens from security belts
+    - type: Tweak
+      message: >-
+        Changed the size of  all "bag" items to be 2x2 so they will now fit
+        inside backpacks.
+  id: 1169
+  time: '2025-09-08T20:56:13.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1711
+- author: SubspaceEmber
+  changes:
+    - type: Add
+      message: Added estradiol pills to general loadout.
+    - type: Add
+      message: Added estradiol and testosterone disposable syringes to general loadout.
+    - type: Add
+      message: Added syringe to general loadout.
+  id: 1170
+  time: '2025-09-08T20:56:28.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1718
+- author: Eightballll
+  changes:
+    - type: Fix
+      message: 'Cats can now meow! '
+    - type: Fix
+      message: Arachne now uses the Arachnid scream and laugh!
+    - type: Fix
+      message: Fixed some species not being able to gasp properly.
+  id: 1171
+  time: '2025-09-08T20:57:58.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1717
+- author: maelines
+  changes:
+    - type: Tweak
+      message: >-
+        You are in full control of your gasping (no involuntary gasp emoting on
+        crit/asphyx)
+  id: 1172
+  time: '2025-09-08T20:58:26.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1713
+- author: WhiteHusky
+  changes:
+    - type: Tweak
+      message: Returned translator drain
+    - type: Tweak
+      message: Translators use half the wattage they used to
+  id: 1173
+  time: '2025-09-09T22:04:26.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1726
+- author: Kelaris
+  changes:
+    - type: Tweak
+      message: >-
+        Cryptobiolin's duration accumulates properly now, and its duration was
+        adjusted.
+  id: 1174
+  time: '2025-09-09T22:33:17.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1719
+- author: Shaman
+  changes:
+    - type: Tweak
+      message: Touched up the headcage sprite
+  id: 1175
+  time: '2025-09-10T08:06:47.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1715
+- author: WallflowerGhost
+  changes:
+    - type: Tweak
+      message: (GLACIER) Door is fix
+  id: 1176
+  time: '2025-09-10T16:55:35.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1691

@@ -1,5 +1,6 @@
-// SPDX-FileCopyrightText: 2025 Eris <eris@erisws.com>
-// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Eris
+// SPDX-FileCopyrightText: 2025 Winter
+// SPDX-FileCopyrightText: 2025 sleepyyapril
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -87,7 +88,7 @@ public sealed class SelectableAmmoSystem : EntitySystem
         }
 
         if (index.Color != null && TryComp(ent, out AppearanceComponent? appearance))
-            _appearance.SetData(ent, ToggleableLightVisuals.Color, index.Color, appearance);
+            _appearance.SetData(ent, ToggleableVisuals.Color, index.Color, appearance);
 
         Dirty(ent);
         return true;

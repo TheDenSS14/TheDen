@@ -115,7 +115,9 @@
   - type: Item
     heldPrefix: off
     size: Normal
-  - type: ToggleableLightVisuals
+  - type: ToggleableVisuals
+    spriteLayer: light
+  - type: ItemTogglePointLight
   - type: PointLight
     enabled: false
     radius: 3
@@ -164,6 +166,7 @@
   components:
   - type: Item
     size: Normal
+  - type: BreathMask # TheDen
   - type: PressureProtection
     highPressureMultiplier: 0.6
     lowPressureMultiplier: 1000
@@ -197,6 +200,7 @@
   components:
   - type: Item
     size: Normal
+  - type: BreathMask # TheDen
   - type: PressureProtection
     highPressureMultiplier: 0.6
     lowPressureMultiplier: 1000
@@ -238,6 +242,7 @@
     unequipSound: /Audio/Mecha/mechmove03.ogg
     quickEquip: false
     slots: [ HEAD ]
+  - type: BreathMask # TheDen
   - type: PressureProtection
     highPressureMultiplier: 0.3
     lowPressureMultiplier: 1000
@@ -320,7 +325,9 @@
     - Snout
     clothingSlots:
     - mask
-  - type: ToggleableLightVisuals
+  - type: ItemTogglePointLight
+  - type: ToggleableVisuals
+    spriteLayer: light
     clothingVisuals:
       head:
       - state: on-equipped-HELMET
@@ -377,7 +384,7 @@
   id: ClothingHeadEnvirohelmCustomBase
   name: base custom envirosuit helmet
   components:
-  - type: ToggleableLightVisuals
+  - type: ToggleableVisuals
     inhandVisuals:
       left:
       - state: on-inhand-left
@@ -448,7 +455,9 @@
       map: [ "light" ]
   - type: Clothing
     equippedPrefix: off
-  - type: ToggleableLightVisuals
+  - type: ToggleableVisuals
+    spriteLayer: light
+  - type: ItemTogglePointLight
   - type: PointLight
     enabled: false
     radius: 3

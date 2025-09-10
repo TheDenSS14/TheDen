@@ -1,4 +1,6 @@
 # SPDX-FileCopyrightText: 2025 Perry Fraser
+# SPDX-FileCopyrightText: 2025 Sir Warock
+# SPDX-FileCopyrightText: 2025 Winter
 # SPDX-FileCopyrightText: 2025 pathetic meowmeow
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
@@ -21,7 +23,7 @@
     - state: state_surgery
       shader: unshaded
     - state: state_stasis
-      map: [ "enum.ToggleVisuals.Layer" ]
+      map: [ "enum.ToggleableVisuals.Layer" ]
       shader: unshaded
   # Begin DeltaV Additions - toggle between stasis and surgery speed
   - type: ItemToggle
@@ -41,8 +43,8 @@
   - type: Appearance
   - type: GenericVisualizer
     visuals:
-      enum.ToggleVisuals.Toggled:
-        enum.ToggleVisuals.Layer:
+      enum.ToggleableVisuals.Enabled:
+        enum.ToggleableVisuals.Layer:
           True: { visible: True }
           False: { visible: False }
   # End DeltaV Additions

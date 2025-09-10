@@ -1,0 +1,19 @@
+# SPDX-FileCopyrightText: 2025 Shaman
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  id: ClothingBeltSecurityFilledBlueshield
+  parent: ClothingBeltSecurity
+  suffix: Blueshield, Filled
+  components:
+  - type: StorageFill
+    contents:
+#      - id: GrenadeFlashBang
+#      - id: TearGasGrenade
+      - id: Stunbaton
+#      - id: Handcuffs
+      - id: Handcuffs
+      - id: HoloprojectorSecurity
+      - id: RadioHandheldSecurity
+      - id: DeviceSirenBlueshield # They get the blue siren instead

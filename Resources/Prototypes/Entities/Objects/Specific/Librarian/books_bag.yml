@@ -1,27 +1,34 @@
-# SPDX-FileCopyrightText: 2022 dontbetank <59025279+dontbetank@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2023 lapatison <100279397+lapatison@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2023 lzk <124214523+lzk228@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 Debug <49997488+DebugOk@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 dontbetank
+# SPDX-FileCopyrightText: 2023 lapatison
+# SPDX-FileCopyrightText: 2023 lzk
+# SPDX-FileCopyrightText: 2024 Debug
+# SPDX-FileCopyrightText: 2025 Jakumba
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: MIT
 
 - type: entity
-  name: books bag
+  name: book bag # Frontier: books bag<book bag
   id: BooksBag
   parent: BaseStorageItem
   description: A refined bag to carry your own library
   components:
     - type: Sprite
       sprite: Objects/Specific/Library/Equipment/books_bag.rsi
-      state: icon
+      # Frontier: layered sprite
+      layers:
+      - state: icon
+      - state: icon-on
+        visible: False
+        map: [ "enum.ToggleableVisuals.Layer" ]
+      # End Frontier
     - type: Clothing
       sprite: Objects/Specific/Library/Equipment/books_bag.rsi
       quickEquip: false
       slots:
         - belt
     - type: Item
-      size: Ginormous
+      size: Normal # DEN
     - type: Storage
       grid:
       - 0,0,7,3
@@ -32,3 +39,27 @@
           - Book
           - Document
     - type: Dumpable
+    - type: MagnetPickup # Frontier
+      magnetEnabled: false # Frontier
+      magnetCanBeEnabled: false # Frontier
+    # Begin Frontier Additions: toggle magnet from White Dream
+    - type: ItemToggle
+      soundActivate: &soundActivate
+        collection: sparks
+        params:
+          variation: 0.25
+      soundDeactivate: *soundActivate
+      onUse: false
+      onAltUse: true
+      onActivate: false
+    - type: ItemToggleExamine
+      on: item-toggle-examine-magnet-on
+      off: item-toggle-examine-magnet-off
+    - type: Appearance
+    - type: GenericVisualizer
+      visuals:
+        enum.ToggleableVisuals.Enabled:
+          enum.ToggleableVisuals.Layer:
+            True: { visible: True }
+            False: { visible: False }
+    # End Frontier Additions

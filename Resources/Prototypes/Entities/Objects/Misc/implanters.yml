@@ -13,12 +13,12 @@
 # SPDX-FileCopyrightText: 2024 Ilya246
 # SPDX-FileCopyrightText: 2024 SimpleStation14
 # SPDX-FileCopyrightText: 2024 deltanedas
-# SPDX-FileCopyrightText: 2024 deltanedas <@deltanedas:kde.org>
 # SPDX-FileCopyrightText: 2025 HoboLyra
 # SPDX-FileCopyrightText: 2025 MajorMoth
+# SPDX-FileCopyrightText: 2025 SeamLesss
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 # Implanters
 
@@ -62,7 +62,7 @@
           visible: false
     - type: Item
       sprite: Objects/Specific/Medical/implanter.rsi
-      heldPrefix: 0
+      heldPrefix: implanter
       size: Small
     - type: Appearance
     - type: GenericVisualizer
@@ -122,6 +122,7 @@
   components:
     - type: Item
       sprite: Objects/Specific/Medical/syndi_implanter.rsi
+      heldPrefix: implanter
     - type: Sprite
       sprite: Objects/Specific/Medical/syndi_implanter.rsi
       state: implanter1

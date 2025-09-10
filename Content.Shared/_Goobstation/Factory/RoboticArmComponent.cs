@@ -1,7 +1,7 @@
-// SPDX-FileCopyrightText: 2025 AirFryerBuyOneGetOneFree <airfryerbuyonegetonefree@gmail.com>
-// SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
-// SPDX-FileCopyrightText: 2025 deltanedas <@deltanedas:kde.org>
-// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 AirFryerBuyOneGetOneFree
+// SPDX-FileCopyrightText: 2025 crekulon
+// SPDX-FileCopyrightText: 2025 deltanedas
+// SPDX-FileCopyrightText: 2025 sleepyyapril
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -144,6 +144,8 @@ public sealed partial class RoboticArmComponent : Component
     #endregion
 
     #region Power
+
+    // IMP / DEN - the below power draws are not presently in use, robotic arms have a static 300 power draw
 
     /// <summary>
     /// Power used when idle.

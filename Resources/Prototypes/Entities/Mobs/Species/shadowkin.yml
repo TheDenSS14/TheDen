@@ -1,9 +1,12 @@
 # SPDX-FileCopyrightText: 2024 FoxxoTrystan
 # SPDX-FileCopyrightText: 2025 Eagle-0
 # SPDX-FileCopyrightText: 2025 Eris
+# SPDX-FileCopyrightText: 2025 MajorMoth
 # SPDX-FileCopyrightText: 2025 RocketBoss360
 # SPDX-FileCopyrightText: 2025 Rosycup
 # SPDX-FileCopyrightText: 2025 Sapphire
+# SPDX-FileCopyrightText: 2025 Shaman
+# SPDX-FileCopyrightText: 2025 Sir Warock
 # SPDX-FileCopyrightText: 2025 SixplyDev
 # SPDX-FileCopyrightText: 2025 Skubman
 # SPDX-FileCopyrightText: 2025 VMSolidus
@@ -20,6 +23,8 @@
   name: Urist McShadow
   abstract: true
   components:
+    - type: Inventory # TheDen - So they can have -shadowkin clothing sprites
+      speciesId: shadowkin
     - type: Destructible
       thresholds:
         - trigger:
@@ -218,5 +223,7 @@
   categories: [ HideSpawnMenu ]
   description: A dummy shadowkin meant to be used in character setup.
   components:
+    - type: Inventory # TheDen - So they can have -shadowkin clothing sprites
+      speciesId: shadowkin
     - type: HumanoidAppearance
       species: Shadowkin

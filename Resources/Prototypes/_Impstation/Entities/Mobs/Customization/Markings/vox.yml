@@ -1,7 +1,8 @@
-# SPDX-FileCopyrightText: 2025 BloodfiendishOperator <141253729+Diggy0@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 BloodfiendishOperator
+# SPDX-FileCopyrightText: 2025 pocl v
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: marking
   id: FeatheredLegL
@@ -282,3 +283,95 @@
     state: tailbloom2
   - sprite: _Impstation/Mobs/Customization/voxbundle1.rsi
     state: tailbloom3
+
+# Underwear
+
+- type: marking
+  id: UnderwearBriefsVoxAlt
+  bodyPart: Underwear
+  markingCategory: Underwear
+  speciesRestriction: [ Vox ]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/Vox/underwear.rsi
+    state: briefs
+
+- type: marking
+  id: UnderwearHighWaisted
+  bodyPart: Underwear
+  markingCategory: Underwear
+  speciesRestriction: [ Vox ]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/Vox/underwear.rsi
+    state: highwaisted
+
+- type: marking
+  id: UnderwearIxixSpecial
+  bodyPart: Underwear
+  markingCategory: Underwear
+  speciesRestriction: [ Vox ]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/Vox/underwear.rsi
+    state: ixixspecial1
+  - sprite: _Impstation/Mobs/Customization/Vox/underwear.rsi
+    state: ixixspecial2
+
+- type: marking
+  id: UnderwearLowridersV
+  bodyPart: Underwear
+  markingCategory: Underwear
+  speciesRestriction: [ Vox ]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+        color: "#FFFFFF"
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/Vox/underwear.rsi
+    state: lowriders
+
+- type: marking
+  id: UnderwearStrappy
+  bodyPart: Underwear
+  markingCategory: Underwear
+  speciesRestriction: [ Vox ]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+        color: '#703c14'
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/Vox/underwear.rsi
+    state: strappy1
+  - sprite: _Impstation/Mobs/Customization/Vox/underwear.rsi
+    state: strappy2
+  - sprite: _Impstation/Mobs/Customization/Vox/underwear.rsi
+    state: strappy3
+
+- type: marking
+  id: UnderwearTangaV
+  bodyPart: Underwear
+  markingCategory: Underwear
+  speciesRestriction: [ Vox ]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+        color: "#FFFFFF"
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/Vox/underwear.rsi
+    state: tanga

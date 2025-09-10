@@ -1,7 +1,7 @@
-# SPDX-FileCopyrightText: 2024 Velcroboy <107660393+IamVelcroboy@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 dge21 <129136517+dge21@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 Rosycup <178287475+Rosycup@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Velcroboy
+# SPDX-FileCopyrightText: 2024 dge21
+# SPDX-FileCopyrightText: 2025 Rosycup
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -22,5 +22,15 @@
     state: icon
   product: CrateCapGunSet
   cost: 1000
+  category: Fun
+  group: market
+
+- type: cargoProduct
+  id: LaserTagSet
+  icon:
+    sprite: _DV/Objects/Weapons/Guns/Battery/laser_tag_gun.rsi
+    state: icon
+  product: CrateLaserTagSet
+  cost: 750
   category: Fun
   group: market

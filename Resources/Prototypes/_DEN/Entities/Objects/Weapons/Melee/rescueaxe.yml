@@ -1,11 +1,12 @@
-# SPDX-FileCopyrightText: 2025 Rosycup <178287475+Rosycup@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Jakumba
+# SPDX-FileCopyrightText: 2025 Rosycup
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 - type: entity
   name: rescue axe
-  parent: BaseItem
+  parent: [BaseItem, BaseCentcommContraband]
   id: BlueshieldAxe
   description: A one-handed axe issued to Blueshield Officers as both a self-defense weapon and a rescue tool able to pry into doors in case of emergencies.
   components:

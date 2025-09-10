@@ -27,6 +27,8 @@
 # SPDX-FileCopyrightText: 2024 Whisper
 # SPDX-FileCopyrightText: 2024 router
 # SPDX-FileCopyrightText: 2024 themias
+# SPDX-FileCopyrightText: 2025 Eightballll
+# SPDX-FileCopyrightText: 2025 MajorMoth
 # SPDX-FileCopyrightText: 2025 Sapphire
 # SPDX-FileCopyrightText: 2025 Skubman
 # SPDX-FileCopyrightText: 2025 Suyo
@@ -76,6 +78,10 @@
       collection: Weh
     CowMoo:
       collection: CowMoos
+    Gasp:
+      collection: MaleGasp
+    DefaultDeathgasp:
+      collection: MaleDeathGasp
 
 - type: emoteSounds
   id: FemaleHuman
@@ -114,6 +120,10 @@
       collection: Weh
     CowMoo:
       collection: CowMoos
+    Gasp:
+      collection: FemaleGasp
+    DefaultDeathgasp:
+      collection: FemaleDeathGasp
 
 - type: emoteSounds
   id: MaleReptilian
@@ -162,6 +172,10 @@
       path: /Audio/Voice/Reptilian/reptilian_tailthump.ogg # TODO: find non-tail thump
       params:
         variation: 0.125
+    Gasp:
+      collection: MaleGasp
+    DefaultDeathgasp:
+      collection: MaleDeathGasp
 
 - type: emoteSounds
   id: FemaleReptilian
@@ -210,6 +224,10 @@
       path: /Audio/Voice/Reptilian/reptilian_tailthump.ogg # TODO: find non-tail thump
       params:
         variation: 0.125
+    Gasp:
+      collection: FemaleGasp
+    DefaultDeathgasp:
+      collection: FemaleDeathGasp
 
 - type: emoteSounds
   id: MaleSlime
@@ -252,6 +270,10 @@
       collection: Whistles
     Weh:
       collection: Weh
+    Gasp:
+      collection: MaleGasp
+    DefaultDeathgasp:
+      collection: MaleDeathGasp
 
 - type: emoteSounds
   id: FemaleSlime
@@ -294,6 +316,10 @@
       collection: Whistles
     Weh:
       collection: Weh
+    Gasp:
+      collection: FemaleGasp
+    DefaultDeathgasp:
+      collection: FemaleDeathGasp
 
 - type: emoteSounds
   id: MaleShadowkin
@@ -339,6 +365,10 @@
       collection: Mars
     Wurble:
       collection: Wurble
+    Gasp:
+      collection: MaleGasp
+    DefaultDeathgasp:
+      collection: MaleDeathGasp
 
 - type: emoteSounds
   id: FemaleShadowkin
@@ -384,6 +414,10 @@
       collection: Mars
     Wurble:
       collection: Wurble
+    Gasp:
+      collection: FemaleGasp
+    DefaultDeathgasp:
+      collection: FemaleDeathGasp
 
 - type: emoteSounds
   id: UnisexVox
@@ -420,6 +454,10 @@
       collection: Whistles
     Weh:
       collection: Weh
+    Gasp:
+      collection: MaleGasp
+    DefaultDeathgasp:
+      collection: DeathGasp
 
 - type: emoteSounds
   id: UnisexDiona
@@ -458,6 +496,10 @@
       collection: MaleCry
     Whistle:
       collection: Whistles
+    Gasp:
+      collection: MaleGasp
+    DefaultDeathgasp:
+      collection: DeathGasp
 
 - type: emoteSounds
   id: UnisexArachnid
@@ -500,6 +542,10 @@
       collection: MaleCry
     Whistle:
       collection: Whistles
+    Gasp:
+      collection: MaleGasp
+    DefaultDeathgasp:
+      collection: DeathGasp
 
 - type: emoteSounds
   id: UnisexDwarf
@@ -537,6 +583,10 @@
       collection: Whistles
     Weh:
       collection: Weh
+    Gasp:
+      collection: MaleGasp
+    DefaultDeathgasp:
+      collection: DeathGasp
 
 - type: emoteSounds
   id: FemaleDwarf
@@ -574,6 +624,10 @@
       collection: Whistles
     Weh:
       collection: Weh
+    Gasp:
+      collection: FemaleGasp
+    DefaultDeathgasp:
+      collection: FemaleDeathGasp
 
 - type: emoteSounds
   id: MaleMoth
@@ -616,6 +670,10 @@
       collection: MaleCry
     Whistle:
       collection: Whistles
+    Gasp:
+      collection: MaleGasp
+    DefaultDeathgasp:
+      collection: MaleDeathGasp
 
 - type: emoteSounds
   id: FemaleMoth
@@ -658,6 +716,10 @@
       collection: FemaleCry
     Whistle:
       collection: Whistles
+    Gasp:
+      collection: FemaleGasp
+    DefaultDeathgasp:
+      collection: FemaleDeathGasp
 
 - type: emoteSounds
   id: UnisexMoth
@@ -700,6 +762,10 @@
       collection: MaleCry
     Whistle:
       collection: Whistles
+    Gasp:
+      collection: MaleGasp
+    DefaultDeathgasp:
+      collection: DeathGasp
 
 - type: emoteSounds
   id: UnisexIPC
@@ -766,6 +832,10 @@
         variation: 0
     CowMoo:
       collection: CowMoos
+    Gasp:
+      collection: MaleGasp
+    DefaultDeathgasp:
+      collection: DeathGasp
 
 - type: emoteSounds
   id: UnisexSilicon
@@ -890,6 +960,10 @@
       collection: Weh
     CowMoo:
       collection: CowMoos
+    Gasp:
+      collection: MaleGasp
+    DefaultDeathgasp:
+      collection: MaleDeathGasp
 
 - type: emoteSounds
   id: FemaleOni
@@ -928,6 +1002,10 @@
       collection: Weh
     CowMoo:
       collection: CowMoos
+    Gasp:
+      collection: FemaleGasp
+    DefaultDeathgasp:
+      collection: FemaleDeathGasp
 
 # body emotes
 - type: emoteSounds
@@ -1006,12 +1084,19 @@
       variation: 0.125
 
 - type: emoteSounds
-  id: Mouse
-  sound:
-    path: /Audio/Animals/mouse_squeak.ogg
-    params:
-      variation: 0.125
-
+  id: MouseSounds #TheDen changes
+  sounds:
+    Squeak:
+      path: /Audio/Animals/mouse_squeak.ogg
+    Gasp:
+      path: /Audio/Animals/mouse_squeak.ogg
+    Scream: 
+      path: /Audio/Animals/mouse_squeak.ogg
+    DefaultDeathgasp:
+      path: /Audio/Animals/mouse_squeak.ogg
+      params:
+        variation: 0.125
+        
 - type: emoteSounds
   id: Cluwne
   sound:

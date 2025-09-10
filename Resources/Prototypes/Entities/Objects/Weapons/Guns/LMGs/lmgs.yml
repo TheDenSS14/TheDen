@@ -31,7 +31,7 @@
 # SPDX-FileCopyrightText: 2025 MajorMoth
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: entity
   name: BaseWeaponLightMachineGun
@@ -143,9 +143,9 @@
 
 - type: entity
   name: L6C ROW
-  id: WeaponLightMachineGunL6C
+  id: WeaponLightMachineGunL6CROW
   parent: BaseItem
-  description: A L6 SAW for use by cyborgs. Creates .20 rifle ammo on the fly from an internal ammo fabricator, which slowly self-charges.
+  description: A L6 SAW for use by cyborgs. Creates .30 rifle ammo on the fly from an internal ammo fabricator, which slowly self-charges.
   components:
     - type: Gun
       minAngle: 4
@@ -173,7 +173,7 @@
       containers:
         ballistic-ammo: !type:Container
     - type: ProjectileBatteryAmmoProvider
-      proto: CartridgeRifle
+      proto: CartridgeLightRifle
       fireCost: 100
     - type: Battery
       maxCharge: 10000
