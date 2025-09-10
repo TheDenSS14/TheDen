@@ -98,7 +98,6 @@ namespace Content.Server.PDA
 
             SubscribeLocalEvent<StationRenamedEvent>(OnStationRenamed);
             SubscribeLocalEvent<AlertLevelChangedEvent>(OnAlertLevelChanged);
-            SubscribeLocalEvent<PdaComponent, InventoryRelayedEvent<ChameleonControllerOutfitSelectedEvent>>(ChameleonControllerOutfitItemSelected);
 
             // Begin DeltaV additions
             Subs.CVar(_config,
@@ -106,32 +105,6 @@ namespace Content.Server.PDA
                 value => ServerDate = DateTime.Today.AddYears(value),
                 true);
             // End DeltaV additions
-        }
-
-        private void ChameleonControllerOutfitItemSelected(Entity<PdaComponent> ent, ref InventoryRelayedEvent<ChameleonControllerOutfitSelectedEvent> args)
-        {
-            // Relay it to your ID so it can update as well.
-            if (ent.Comp.ContainedId != null)
-                RaiseLocalEvent(ent.Comp.ContainedId.Value, args);
-        }
-
-        private void OnEntityRenamed(ref EntityRenamedEvent ev)
-        {
-            if (HasComp<IdCardComponent>(ev.Uid))
-                return;
-
-            if (_idCard.TryFindIdCard(ev.Uid, out var idCard))
-            {
-                var query = EntityQueryEnumerator<PdaComponent>();
-
-                while (query.MoveNext(out var uid, out var comp))
-                {
-                    if (comp.ContainedId == idCard)
-                    {
-                        SetOwner(uid, comp, ev.Uid, ev.NewName);
-                    }
-                }
-            }
         }
 
         protected override void OnComponentInit(EntityUid uid, PdaComponent pda, ComponentInit args)
