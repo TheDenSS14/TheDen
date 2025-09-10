@@ -76,8 +76,8 @@
 
 - type: entity
   name: energy bola
-  id: [ BaseSecurityContraband, BolaEnergy ]
-  parent: BaseBola
+  id: BolaEnergy
+  parent: [ BaseSecurityContraband, BaseBola ]
   description: An advanced hardlight criminal entangling tool. Otherwise known as an expensive piece of string.
   components:
   - type: Tag
