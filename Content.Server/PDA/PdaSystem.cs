@@ -74,7 +74,6 @@ namespace Content.Server.PDA
         [Dependency] private readonly UserInterfaceSystem _ui = default!;
         [Dependency] private readonly UnpoweredFlashlightSystem _unpoweredFlashlight = default!;
         [Dependency] private readonly ContainerSystem _containerSystem = default!;
-        [Dependency] private readonly IdCardSystem _idCard = default!;
         [Dependency] private readonly IConfigurationManager _config = default!; // DeltaV
 
         private static DateTime ServerDate; // DeltaV - PDA
