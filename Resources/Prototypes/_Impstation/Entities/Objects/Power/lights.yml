@@ -11,3 +11,16 @@
     lightSoftness: 0.9
     BurningTemperature: 320
     PowerUse: 100
+
+- type: entity
+  parent: BaseLightbulb
+  name: cold light bulb
+  id: ColdLightBulb
+  description: A cold light bulb for a more frigid, hostile atmosphere.
+  components:
+  - type: LightBulb
+    bulb: Bulb
+    color: "#b1d4ed" # 6000k color temp
+    lightEnergy: 1
+    lightRadius: 6
+    lightSoftness: 3
