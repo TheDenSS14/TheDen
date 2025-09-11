@@ -67,6 +67,7 @@
 # SPDX-FileCopyrightText: 2024 themias
 # SPDX-FileCopyrightText: 2025 Blitz
 # SPDX-FileCopyrightText: 2025 Eagle-0
+# SPDX-FileCopyrightText: 2025 Kellaris
 # SPDX-FileCopyrightText: 2025 Nemanja
 # SPDX-FileCopyrightText: 2025 Sapphire
 # SPDX-FileCopyrightText: 2025 Sir Warock
@@ -74,7 +75,7 @@
 # SPDX-FileCopyrightText: 2025 Timfa
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: reagent
   id: Cryptobiolin
@@ -86,13 +87,14 @@
   color: "#081a80"
   metabolisms:
     Medicine:
-      metabolismRate: 0.5
+      metabolismRate: 0.1
       effects:
       - !type:GenericStatusEffect
         key: PsionicallyInsulated
         component: PsionicInsulation
         type: Add
-        time: 300
+        time: 10
+        refresh: false
       - !type:GenericStatusEffect
         key: Stutter
         component: StutteringAccent
@@ -100,7 +102,8 @@
         key: PsionicsDisabled
         component: PsionicsDisabled
         type: Add
-        time: 300
+        time: 10
+        refresh: false
 
 - type: reagent
   id: Dylovene
