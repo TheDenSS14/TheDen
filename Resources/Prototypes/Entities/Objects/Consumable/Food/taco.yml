@@ -10,13 +10,13 @@
 # When adding new food also add to random spawner located in Resources\Prototypes\Entities\Markers\Spawners\Random\Food_Drinks\food_single.yml
 
 - type: entity
-  name: taco shell
   parent: FoodMealBase
   id: FoodTacoShell
+  name: taco shell
   description: A taco shell, easy to hold, but falls on its side when put down.
   components:
   - type: Item
-    storedRotation: -90
+    storedOffset: 0,-3
   - type: Food
     transferAmount: 3
   - type: Sprite
@@ -43,13 +43,12 @@
     nameGeneration: food-sequence-taco-gen
     contentSeparator: ", "
   - type: Appearance
-  
-# Old tacos
 
+# Old tacos
 - type: entity
+  abstract: true
   parent: FoodInjectableBase
   id: FoodTacoBase
-  abstract: true
   components:
   - type: FlavorProfile
     flavors:
@@ -70,7 +69,9 @@
           Quantity: 4
   - type: Item
     sprite: Objects/Consumable/Food/taco.rsi
-    storedRotation: -90
+    shape:
+    - 0,0,1,0
+    storedOffset: 0,1
   - type: Tag
     tags:
       - Meat
@@ -81,7 +82,6 @@
   id: FoodTacoBeef
   description: A very basic and run of the mill beef taco, now with cheese!
   components:
-  - type: Food
   - type: Sprite
     state: beeftaco
 
@@ -91,7 +91,6 @@
   id: FoodTacoChicken
   description: A very basic and run of the mill chicken taco, now with cheese!
   components:
-  - type: Food
   - type: Sprite
     state: chickentaco
 
@@ -105,7 +104,6 @@
     flavors:
       - onion
       - fishy
-  - type: Food
   - type: Sprite
     state: fishtaco
   - type: SolutionContainerManager
@@ -124,7 +122,6 @@
   id: FoodTacoRat
   description: Yeah, that looks about right...
   components:
-  - type: Food
   - type: Sprite
     state: rattaco
   - type: SolutionContainerManager
@@ -141,9 +138,8 @@
   name: beef taco supreme
   parent: FoodTacoBase
   id: FoodTacoBeefSupreme
-  description: It's like a regular beef taco, but surpeme!
+  description: It's like a regular beef taco, but supreme!
   components:
-  - type: Food
   - type: Sprite
     state: beeftacosupreme
   - type: SolutionContainerManager
@@ -160,9 +156,8 @@
   name: chicken taco supreme
   parent: FoodTacoBase
   id: FoodTacoChickenSupreme
-  description: It's like a regular chicken taco, but surpeme!
+  description: It's like a regular chicken taco, but supreme!
   components:
-  - type: Food
   - type: Sprite
     state: chickentacosupreme
   - type: SolutionContainerManager
@@ -171,7 +166,7 @@
         maxVol: 26
         reagents:
         - ReagentId: Nutriment
-          Quantity: 14
+          Quantity: 22
         - ReagentId: Vitamin
           Quantity: 6
 
@@ -189,6 +184,15 @@
       - onion
   - type: Sprite
     state: softtaco
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 30
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 10
+        - ReagentId: Vitamin
+          Quantity: 18
   - type: Tag
     tags:
       - Meat

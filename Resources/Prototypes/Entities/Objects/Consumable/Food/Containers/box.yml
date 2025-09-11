@@ -77,7 +77,9 @@
       - Donut
   - type: Item
     sprite: Objects/Consumable/Food/Baked/donut.rsi
-    size: Small
+    size: Normal
+    shape:
+    - 0,0,2,1
     heldPrefix: box
   - type: StorageFill
     contents:
@@ -158,7 +160,10 @@
       - Egg
   - type: Item
     sprite: Objects/Consumable/Food/egg.rsi
-    size: Small
+    size: Normal
+    shape:
+    - 0,0,2,1
+    storedOffset: 0,-6
   - type: StorageFill
     contents:
     - id: FoodEgg
@@ -241,13 +246,14 @@
   # TODO make these entitystorage again + placeablesurface after entity storage ECS gets merged.
   - type: Storage
     grid:
-    - 0,0,1,1
+    - 0,0,3,0 # Den - Pizza boxes don't have knives in them, also made it a 1x3
     maxItemSize: Normal
   - type: Item
     sprite: Objects/Consumable/Food/Baked/pizza.rsi
     heldPrefix: box
     shape:
-    - 0,0,1,1
+    - 0,0,2,1
+    storedOffset: 0,-6
   - type: Appearance
   - type: EntityStorageVisuals
     stateDoorOpen: box-open
@@ -307,6 +313,11 @@
     - id: FoodPizzaCorncob # Nyanotrasen - Corncob Pizza
       prob: 0.01
       orGroup: Pizza
+    # Begin Den additions
+    - id: FoodMothPizzaCotton
+      prob: 0.05
+      orGroup: Pizza
+    # End Den additions
 
 # Nugget
 
@@ -385,7 +396,10 @@
       - DonkPocket
   - type: Item
     sprite: Objects/Consumable/Food/Baked/donkpocket.rsi
-    size: Small
+    size: Normal
+    shape:
+    - 0,0,2,1
+    storedOffset: -1,1
   - type: StorageFill
     contents:
     - id: FoodDonkpocket

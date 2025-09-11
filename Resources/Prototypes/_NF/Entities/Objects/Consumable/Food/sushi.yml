@@ -11,6 +11,12 @@
   id: FoodMealAvocadoSushi
   description: Where did the seaweed come from?
   components:
+  # Begin Den additions
+  - type: Item
+    size: Normal
+    shape:
+      - 0,0,1,1
+  # End Den additions
   - type: FlavorProfile
     flavors:
       - cucumber
@@ -40,6 +46,8 @@
   description: Where did the seaweed come from?
   suffix: Slice # TheDen
   components:
+  - type: Item # Den - food item resize
+    size: Tiny # Den - food item resize
   - type: FlavorProfile
     flavors:
       - cucumber
@@ -65,6 +73,12 @@
   id: FoodMealCarpSushi
   description: Certainly worth the risk.
   components:
+  # Begin Den additions
+  - type: Item
+    size: Normal
+    shape:
+      - 0,0,1,1
+  # End Den additions
   - type: FlavorProfile
     flavors:
       - cucumber
@@ -99,6 +113,8 @@
   description: Certainly worth the smaller risk.
   suffix: Slice # TheDen
   components:
+  - type: Item # Den - food item resize
+    size: Tiny # Den - food item resize
   - type: FlavorProfile
     flavors:
       - cucumber
