@@ -31,6 +31,8 @@ using Content.Shared.NameModifier.EntitySystems;
 using Content.Shared.Tag;
 using JetBrains.Annotations;
 using Robust.Shared.Containers;
+using Robust.Shared.Utility;
+
 
 namespace Content.Server.Labels
 {
@@ -90,6 +92,9 @@ namespace Content.Server.Labels
             if (!Resolve(uid, ref label, false))
                 label = EnsureComp<LabelComponent>(uid);
 
+            if (text != null)
+                text = FormattedMessage.RemoveMarkupPermissive(text);
+            
             label.CurrentLabel = text;
             _nameMod.RefreshNameModifiers(uid);
 
