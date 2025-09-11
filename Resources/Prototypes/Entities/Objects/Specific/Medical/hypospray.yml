@@ -46,7 +46,7 @@
 
 - type: entity
   name: hypospray
-  parent: BaseItem
+  parent: [ BaseGrandTheftContraband, BaseItem ]
   description: A sterile injector for rapid administration of drugs to patients.
   id: Hypospray
   components:
@@ -77,7 +77,7 @@
 
 - type: entity
   name: gorlex hypospray
-  parent: [ BaseItem, BaseRivalCompanyContraband ]
+  parent: [ BaseRivalCompanyContraband, BaseItem ]
   description: Using reverse engineered designs from NT, Cybersun produced these in limited quantities for Gorlex Marauder operatives.
   id: SyndiHypo
   components:

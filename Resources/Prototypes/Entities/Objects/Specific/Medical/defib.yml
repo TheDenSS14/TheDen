@@ -17,7 +17,7 @@
 
 - type: entity
   id: BaseDefibrillator
-  parent: BaseItem
+  parent: [ BaseMedicalContraband, BaseItem ]
   name: defibrillator
   description: CLEAR! Zzzzat!
   abstract: true
@@ -128,7 +128,7 @@
 
 - type: entity
   id: DefibrillatorSyndicate
-  parent: [ DefibrillatorCompact, BaseRivalCompanyContraband ]
+  parent: [ BaseRivalCompanyContraband, DefibrillatorCompact ]
   name: interdyne defibrillator
   description: Doubles as a self-defense weapon against war-crime inclined tiders.
   components:

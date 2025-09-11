@@ -42,7 +42,7 @@
 # Base
 
 - type: entity
-  parent: BaseItem
+  parent: [ BaseMedicalEpistemicsContraband, BaseItem ]
   id: BaseToolSurgery
   abstract: true
   components:
