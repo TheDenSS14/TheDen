@@ -1,4 +1,16 @@
-﻿- type: emoteSounds
+# SPDX-FileCopyrightText: 2025 Eightballll
+# SPDX-FileCopyrightText: 2025 Shaman
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+# SPDX-FileCopyrightText: 2025 Eightballll
+# SPDX-FileCopyrightText: 2025 Shaman
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: emoteSounds
   id: MaleThaven
   params:
     variation: 0.05
@@ -36,6 +48,10 @@
       collection: Weh
     CowMoo:
       collection: CowMoos
+    Gasp:
+      collection: MaleGasp
+    DefaultDeathgasp:
+      collection: DeathGasp
 
 - type: emoteSounds
   id: FemaleThaven
@@ -75,3 +91,7 @@
       collection: Weh
     CowMoo:
       collection: CowMoos
+    Gasp:
+      collection: FemaleGasp
+    DefaultDeathgasp:
+      collection: FemaleDeathGasp

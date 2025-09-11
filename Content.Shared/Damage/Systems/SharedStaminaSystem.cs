@@ -1,38 +1,33 @@
-// SPDX-FileCopyrightText: 2022 CommieFlowers <rasmus.cedergren@hotmail.com>
-// SPDX-FileCopyrightText: 2022 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2022 Rane <60792108+Elijahrane@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2022 metalgearsloth <metalgearsloth@gmail.com>
-// SPDX-FileCopyrightText: 2022 rolfero <45628623+rolfero@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2023 Chief-Engineer <119664036+Chief-Engineer@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2023 Debug <49997488+DebugOk@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2023 Doru991 <75124791+Doru991@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2023 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2023 Errant <35878406+Errant-4@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2023 Errant <35878406+errant@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2023 Kara <lunarautomaton6@gmail.com>
-// SPDX-FileCopyrightText: 2023 Pieter-Jan Briers <pieterjan.briers@gmail.com>
-// SPDX-FileCopyrightText: 2023 PixelTK <85175107+PixelTheKermit@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2023 Slava0135 <40753025+Slava0135@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2023 Vordenburg <114301317+Vordenburg@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2023 deltanedas <39013340+deltanedas@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2023 deltanedas <@deltanedas:kde.org>
-// SPDX-FileCopyrightText: 2023 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 Dakamakat <52600490+dakamakat@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 Mnemotechnican <69920617+Mnemotechnician@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 OldDanceJacket <98985560+OldDanceJacket@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
-// SPDX-FileCopyrightText: 2024 Tayrtahn <tayrtahn@gmail.com>
-// SPDX-FileCopyrightText: 2024 gluesniffler <159397573+gluesniffler@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 sleepyyapril <flyingkarii@gmail.com>
-// SPDX-FileCopyrightText: 2024 sleepyyapril <***>
-// SPDX-FileCopyrightText: 2024 username <113782077+whateverusername0@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 Aviu00 <93730715+Aviu00@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 Eagle-0 <114363363+Eagle-0@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 Eris <eris@erisws.com>
-// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 CommieFlowers
+// SPDX-FileCopyrightText: 2022 Leon Friedrich
+// SPDX-FileCopyrightText: 2022 Rane
+// SPDX-FileCopyrightText: 2022 metalgearsloth
+// SPDX-FileCopyrightText: 2022 rolfero
+// SPDX-FileCopyrightText: 2023 Chief-Engineer
+// SPDX-FileCopyrightText: 2023 Debug
+// SPDX-FileCopyrightText: 2023 Doru991
+// SPDX-FileCopyrightText: 2023 DrSmugleaf
+// SPDX-FileCopyrightText: 2023 Errant
+// SPDX-FileCopyrightText: 2023 Kara
+// SPDX-FileCopyrightText: 2023 Pieter-Jan Briers
+// SPDX-FileCopyrightText: 2023 PixelTK
+// SPDX-FileCopyrightText: 2023 Slava0135
+// SPDX-FileCopyrightText: 2023 Vordenburg
+// SPDX-FileCopyrightText: 2023 deltanedas
+// SPDX-FileCopyrightText: 2024 Dakamakat
+// SPDX-FileCopyrightText: 2024 Mnemotechnican
+// SPDX-FileCopyrightText: 2024 Nemanja
+// SPDX-FileCopyrightText: 2024 OldDanceJacket
+// SPDX-FileCopyrightText: 2024 Tayrtahn
+// SPDX-FileCopyrightText: 2024 gluesniffler
+// SPDX-FileCopyrightText: 2024 sleepyyapril
+// SPDX-FileCopyrightText: 2024 username
+// SPDX-FileCopyrightText: 2025 Aviu00
+// SPDX-FileCopyrightText: 2025 Eagle-0
+// SPDX-FileCopyrightText: 2025 Eris
+// SPDX-FileCopyrightText: 2025 Princess Cheeseballs
 //
-// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+// SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 using System.Linq;
 using Content.Shared._Goobstation.MartialArts;
@@ -60,14 +55,16 @@ using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Network;
 using Robust.Shared.Player;
+using Robust.Shared.Serialization;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
+using Content.Shared.FixedPoint;
 
 namespace Content.Shared.Damage.Systems;
 
-public sealed partial class StaminaSystem : EntitySystem
+public abstract partial class SharedStaminaSystem : EntitySystem
 {
-    [Dependency] private readonly IGameTiming _timing = default!;
+    [Dependency] protected readonly IGameTiming _timing = default!;
     [Dependency] private readonly INetManager _net = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly ISharedAdminLogManager _adminLogger = default!;
@@ -75,7 +72,7 @@ public sealed partial class StaminaSystem : EntitySystem
     [Dependency] private readonly MetaDataSystem _metadata = default!;
     [Dependency] private readonly SharedColorFlashEffectSystem _color = default!;
     [Dependency] private readonly SharedPopupSystem _popup = default!;
-    [Dependency] private readonly SharedStunSystem _stunSystem = default!;
+    [Dependency] protected readonly SharedStunSystem _stunSystem = default!;
     [Dependency] private readonly SharedAudioSystem _audio = default!;
     [Dependency] private readonly StatusEffectsSystem _statusEffect = default!; // goob edit
     [Dependency] private readonly SharedStutteringSystem _stutter = default!; // goob edit
@@ -85,7 +82,9 @@ public sealed partial class StaminaSystem : EntitySystem
     /// <summary>
     /// How much of a buffer is there between the stun duration and when stuns can be re-applied.
     /// </summary>
-    private static readonly TimeSpan StamCritBufferTime = TimeSpan.FromSeconds(3f);
+    protected static readonly TimeSpan StamCritBufferTime = TimeSpan.FromSeconds(3f);
+
+    public float UniversalStaminaDamageModifier { get; private set; } = 1f;
 
     public override void Initialize()
     {
@@ -107,32 +106,32 @@ public sealed partial class StaminaSystem : EntitySystem
         SubscribeLocalEvent<StaminaDamageOnHitComponent, MeleeHitEvent>(OnMeleeHit);
     }
 
-    private void OnStamHandleState(EntityUid uid, StaminaComponent component, ref AfterAutoHandleStateEvent args)
+    protected virtual void OnStamHandleState(Entity<StaminaComponent> entity, ref AfterAutoHandleStateEvent args)
     {
-        if (component.Critical)
-            EnterStamCrit(uid, component);
+        if (entity.Comp.Critical)
+            EnterStamCrit(entity, null, true);
         else
         {
-            if (component.StaminaDamage > 0f)
-                EnsureComp<ActiveStaminaComponent>(uid);
+            if (entity.Comp.StaminaDamage > 0f)
+                EnsureComp<ActiveStaminaComponent>(entity);
 
-            ExitStamCrit(uid, component);
+            ExitStamCrit(entity);
         }
     }
 
-    private void OnShutdown(EntityUid uid, StaminaComponent component, ComponentShutdown args)
+    protected virtual void OnShutdown(Entity<StaminaComponent> entity, ref ComponentShutdown args)
     {
-        if (MetaData(uid).EntityLifeStage < EntityLifeStage.Terminating)
+        if (MetaData(entity).EntityLifeStage < EntityLifeStage.Terminating)
         {
-            RemCompDeferred<ActiveStaminaComponent>(uid);
+            RemCompDeferred<ActiveStaminaComponent>(entity);
         }
 
-        SetStaminaAlert(uid);
+        SetStaminaAlert(entity);
     }
 
-    private void OnStartup(EntityUid uid, StaminaComponent component, ComponentStartup args)
+    private void OnStartup(Entity<StaminaComponent> entity, ref ComponentStartup args)
     {
-        SetStaminaAlert(uid, component);
+        UpdateStaminaVisuals(entity);
     }
 
     [PublicAPI]
@@ -146,17 +145,18 @@ public sealed partial class StaminaSystem : EntitySystem
         return MathF.Max(0f, component.StaminaDamage - MathF.Max(0f, (float) (curTime - (component.NextUpdate + pauseTime)).TotalSeconds * component.Decay));
     }
 
-    private void OnRejuvenate(EntityUid uid, StaminaComponent component, RejuvenateEvent args)
+    private void OnRejuvenate(Entity<StaminaComponent> entity, ref RejuvenateEvent args)
     {
-        if (component.StaminaDamage >= component.CritThreshold)
+        if (entity.Comp.StaminaDamage >= entity.Comp.CritThreshold)
         {
-            ExitStamCrit(uid, component);
+            ExitStamCrit(entity, entity.Comp);
         }
 
-        component.StaminaDamage = 0;
-        RemComp<ActiveStaminaComponent>(uid);
-        SetStaminaAlert(uid, component);
-        Dirty(uid, component);
+        entity.Comp.StaminaDamage = 0;
+        AdjustSlowdown(entity.Owner);
+        RemComp<ActiveStaminaComponent>(entity);
+        UpdateStaminaVisuals(entity);
+        Dirty(entity);
     }
 
     private void OnDisarmed(EntityUid uid, StaminaComponent component, DisarmedEvent args)
@@ -235,7 +235,7 @@ public sealed partial class StaminaSystem : EntitySystem
             damageImmediate += hitEvent.FlatModifier;
 
             TakeStaminaDamage(ent, damageImmediate / toHit.Count, comp, source: args.User, with: args.Weapon, sound: component.Sound, immediate: true);
-            TakeOvertimeStaminaDamage(ent, component.Overtime);
+            TakeOvertimeStaminaDamage(ent, component.Overtime, comp);
         }
     }
 
@@ -250,6 +250,7 @@ public sealed partial class StaminaSystem : EntitySystem
             return;
 
         TakeStaminaDamage(args.Embedded, component.Damage, stamina, source: uid);
+        TakeOvertimeStaminaDamage(uid, component.Overtime, stamina);
     }
 
     private void OnThrowHit(EntityUid uid, StaminaDamageOnCollideComponent component, ThrowDoHitEvent args)
@@ -267,21 +268,18 @@ public sealed partial class StaminaSystem : EntitySystem
         if (ev.Cancelled)
             return;
 
-        var hitEvent = new TakeStaminaDamageEvent(target);
-        RaiseLocalEvent(target, hitEvent);
-
-        if (hitEvent.Handled)
-            return;
-
-        var damage = component.Damage;
-
-        damage *= hitEvent.Multiplier;
-
-        damage += hitEvent.FlatModifier;
-
-        TakeStaminaDamage(target, damage, source: uid, sound: component.Sound);
-        TakeOvertimeStaminaDamage(target, component.Overtime); // Goobstation
+        TakeStaminaDamage(target, component.Damage, source: uid, sound: component.Sound);
+        TakeOvertimeStaminaDamage(uid, component.Overtime, stamComp);
     }
+
+    private void UpdateStaminaVisuals(Entity<StaminaComponent> entity)
+    {
+        SetStaminaAlert(entity, entity.Comp);
+        SetStaminaAnimation(entity);
+    }
+
+    // Here so server can properly tell all clients in PVS range to start the animation
+    protected virtual void SetStaminaAnimation(Entity<StaminaComponent> entity){}
 
     private void SetStaminaAlert(EntityUid uid, StaminaComponent? component = null)
     {
@@ -314,10 +312,10 @@ public sealed partial class StaminaSystem : EntitySystem
     }
 
     // goob edit - stunmeta
-    public void TakeOvertimeStaminaDamage(EntityUid uid, float value)
+    public void TakeOvertimeStaminaDamage(EntityUid uid, float value, StaminaComponent component)
     {
-         // do this only on server side because otherwise shit happens (Coderabbit do not bitch at me about the profanity I swear to God)
-         if (value == 0)
+        // do this only on server side because otherwise shit happens (Coderabbit do not bitch at me about the profanity I swear to God)
+        if (value == 0)
             return;
 
         var hasComp = TryComp<OvertimeStaminaDamageComponent>(uid, out var overtime);
@@ -361,11 +359,13 @@ public sealed partial class StaminaSystem : EntitySystem
                 component.NextUpdate = nextUpdate;
         }
 
-        var slowdownThreshold = component.CritThreshold / 2f;
         if (allowsSlowdown == true)
+            AdjustSlowdown(uid);
 
-        // If we go above n% then apply effects
-        if (component.StaminaDamage > slowdownThreshold)
+        UpdateStaminaVisuals((uid, component));
+
+        // Checking if the stamina damage has decreased to zero after exiting the stamcrit
+        if (component.AfterCritical && oldDamage > component.StaminaDamage && component.StaminaDamage <= 0f)
         {
             // goob edit - stunmeta
             // no slowdown because funny
@@ -373,7 +373,7 @@ public sealed partial class StaminaSystem : EntitySystem
             _stutter.DoStutter(uid, TimeSpan.FromSeconds(10f), true);
         }
 
-        SetStaminaAlert(uid, component);
+        UpdateStaminaVisuals((uid, component));
 
         if (!component.Critical && component.StaminaDamage >= component.CritThreshold && value > 0)
             EnterStamCrit(uid, component, immediate);
@@ -494,6 +494,10 @@ public sealed partial class StaminaSystem : EntitySystem
 
         // you got batonned hard.
         component.Critical = true;
+        component.StaminaDamage = component.CritThreshold;
+
+        if (_stunSystem.TryParalyze(uid, component.StunTime, true))
+            _stunSystem.TrySeeingStars(uid);
         _stunSystem.TryParalyze(uid, component.StunTime, true);
 
         component.NextUpdate = _timing.CurTime + component.StunTime * _modify.GetModifier(uid) + StamCritBufferTime;
@@ -516,9 +520,38 @@ public sealed partial class StaminaSystem : EntitySystem
         component.StaminaDamage = 0f;
         component.NextUpdate = _timing.CurTime;
         SetStaminaAlert(uid, component);
+        AdjustSlowdown(uid);
         RemComp<ActiveStaminaComponent>(uid);
         Dirty(uid, component);
         _adminLogger.Add(LogType.Stamina, LogImpact.Low, $"{ToPrettyString(uid):user} recovered from stamina crit");
+    }
+
+
+    /// <summary>
+    /// Adjusts the movement speed of an entity based on its current <see cref="StaminaComponent.StaminaDamage"/> value.
+    /// If the entity has a <see cref="SlowOnDamageComponent"/>, its custom damage-to-speed thresholds are used,
+    /// otherwise, a default set of thresholds is applied.
+    /// The method determines the closest applicable damage threshold below the crit limit and applies the corresponding
+    /// speed modifier using the stun system. If no threshold is met then the entity's speed is restored to normal.
+    /// </summary>
+    /// <param name="ent">Entity to update</param>
+    private void AdjustSlowdown(Entity<StaminaComponent?> ent)
+    {
+        if (!Resolve(ent, ref ent.Comp))
+            return;
+
+        var closest = FixedPoint2.Zero;
+
+        // Iterate through the dictionary in the similar way as in Damage.SlowOnDamageSystem.OnRefreshMovespeed
+        foreach (var thres in ent.Comp.StunModifierThresholds)
+        {
+            var key = thres.Key.Float();
+
+            if (ent.Comp.StaminaDamage >= key && key > closest && closest < ent.Comp.CritThreshold)
+                closest = thres.Key;
+        }
+
+        _stunSystem.UpdateStunModifiers(ent, ent.Comp.StunModifierThresholds[closest]);
     }
 }
 
@@ -527,3 +560,9 @@ public sealed partial class StaminaSystem : EntitySystem
 /// </summary>
 [ByRefEvent]
 public record struct BeforeStaminaDamageEvent(float Value, bool Cancelled = false);
+
+[Serializable, NetSerializable]
+public sealed class StaminaAnimationEvent(NetEntity entity) : EntityEventArgs
+{
+    public NetEntity Entity = entity;
+}

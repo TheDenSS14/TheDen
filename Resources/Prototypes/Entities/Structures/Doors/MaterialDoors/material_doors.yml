@@ -17,6 +17,7 @@
 # SPDX-FileCopyrightText: 2024 SimpleStation14
 # SPDX-FileCopyrightText: 2024 chromiumboy
 # SPDX-FileCopyrightText: 2025 Eightballll
+# SPDX-FileCopyrightText: 2025 Jakumba
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
@@ -28,6 +29,10 @@
   abstract: true
   description: A door, where will it lead?
   components:
+  - type: Anchorable
+    flags:
+    - Anchorable
+  - type: Rotatable
   - type: InteractionOutline
   - type: Sprite
     sprite: Structures/Doors/MineralDoors/metal_door.rsi
