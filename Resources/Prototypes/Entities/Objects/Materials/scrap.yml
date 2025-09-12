@@ -32,6 +32,19 @@
     - Recyclable
 
 - type: entity
+  parent: BaseScrap
+  id: BaseScrapSmall
+  abstract: true
+  name: scrap
+  description: Worthless junk. You could probably get some materials out of it though.
+  suffix: Scrap
+  components:
+  - type: Tag
+    tags: 
+    - Recyclable
+    - Trash
+
+- type: entity
   parent: BaseStructure
   id: BaseScrapLarge
   abstract: true
@@ -98,7 +111,7 @@
       Steel: 3000 # 30 sheets
 
 - type: entity
-  parent: BaseScrap
+  parent: BaseScrapSmall
   id: ScrapGlass
   name: scrap circuitry
   description: A huge lump of various circuits, strangely fused together. You could likely extract some materials out of this.
@@ -152,7 +165,7 @@
       Steel: 1500 # 15 sheets
 
 - type: entity
-  parent: BaseScrap
+  parent: BaseScrapSmall
   id: ScrapAirlock2
   name: airlock light
   description: Serves it right for flashing red all those times.
@@ -170,7 +183,7 @@
       Glass: 500 # 5 sheets
 
 - type: entity
-  parent: BaseScrap
+  parent: BaseScrapSmall
   id: ScrapBucket
   name: busted bucket
   description: Dear god...
@@ -183,7 +196,7 @@
       Plastic: 300 # 3 sheets
 
 - type: entity
-  parent: BaseScrap
+  parent: BaseScrapSmall
   id: ScrapCamera
   name: broken camera
   description: It might still be watching.
@@ -197,7 +210,7 @@
       Glass: 100 # 1 sheet
 
 - type: entity
-  parent: BaseScrap
+  parent: BaseScrapSmall
   id: ScrapCanister1
   name: canister handle
   description: Helpful for holding a canister. Now you just need the actual canister part.
@@ -210,7 +223,7 @@
       Steel: 300 # 3 sheets
 
 - type: entity
-  parent: BaseScrap
+  parent: BaseScrapSmall
   id: ScrapCanister2
   name: canister valve
   description: A valve from a gas canister.
@@ -244,7 +257,7 @@
       Steel: 1500 # 15 sheets
 
 - type: entity
-  parent: BaseScrap
+  parent: BaseScrapSmall
   id: ScrapFaxMachine
   name: fax machine
   description: The unfortunate result of one too many ASCII arts being sent to Central Command.
@@ -253,14 +266,16 @@
     layers:
     - state: junk-fax
   - type: Item
-    size: Huge
+    size: Normal #TheDen - allows this item to fit inside a trash bag, and resizes it to be the size of a Large item.
+    shape:
+    - 0,0,3,1 # 4x2
   - type: PhysicalComposition
     materialComposition:
       Plastic: 800 # 8 sheets
       Steel: 200 # 2 sheets
 
 - type: entity
-  parent: BaseScrap
+  parent: BaseScrapSmall
   id: ScrapFireExtinguisher
   name: split fire extinguisher
   description: The large gash down the center makes you worry for the previous user.
@@ -311,7 +326,7 @@
       Steel: 2000 # 20 sheets
 
 - type: entity
-  parent: BaseScrap
+  parent: BaseScrapSmall
   id: ScrapFirelock3
   name: firelock frame
   components:
@@ -319,13 +334,15 @@
     layers:
     - state: junk-firelock-3
   - type: Item
-    size: Large
+    size: Normal #TheDen - allows this item to fit inside a trash bag, and resizes it to be the size of a Large item.
+    shape: 
+    - 0,0,3,1 # 4x2
   - type: PhysicalComposition
     materialComposition:
       Steel: 700 # 7 sheets
 
 - type: entity
-  parent: BaseScrap
+  parent: BaseScrapSmall
   id: ScrapIntercom
   name: intercom scrap
   description: You wish it at least came with some encryption keys.
@@ -347,7 +364,7 @@
       Plastic: 300 # 3 sheets
 
 - type: entity
-  parent: BaseScrap
+  parent: BaseScrapSmall
   id: ScrapJetpack
   name: busted jetpack
   description: Looks like it won't be flying any more.
@@ -356,7 +373,7 @@
     layers:
     - state: junk-jetpack
   - type: Item
-    size: Huge
+    size: Large
     heldPrefix: jetpack
   - type: PhysicalComposition
     materialComposition:
@@ -364,7 +381,7 @@
       Plastic: 200 # 2 sheets
 
 - type: entity
-  parent: BaseScrap
+  parent: BaseScrapSmall
   id: ScrapMedkit
   name: snapped medkit
   description: Hopefully they got some use out of it.
@@ -379,7 +396,7 @@
         junk-medkit-1: ""
         junk-medkit-2: ""
   - type: Item
-    size: Large
+    size: Normal
   - type: PhysicalComposition
     materialComposition:
       Plastic: 500 # 5 sheets
@@ -400,7 +417,7 @@
       Plastic: 1500 # 15 sheets
 
 - type: entity
-  parent: BaseScrap
+  parent: BaseScrapSmall
   id: ScrapPAI
   name: personal ai device
   description: A buddy! You still in there? Hello? Buddy???
@@ -416,7 +433,7 @@
       Plastic: 200 # 2 sheets
 
 - type: entity
-  parent: BaseScrap
+  parent: BaseScrapSmall
   id: ScrapPAIGold
   name: gilded personal ai device
   description: Wow! What a one-in-a-million find! This would be worth a fortune... if it was in good condition.
@@ -432,7 +449,7 @@
       Plastic: 400 # 4 sheets
 
 - type: entity
-  parent: BaseScrap
+  parent: BaseScrapSmall
   id: ScrapTube
   name: shattered sample tube
   description: A glass tube containing some kind of rare sample. Or at least, it used to contain it. Not much left in there now.
@@ -559,7 +576,7 @@
       Steel: 1500 # 15 sheets
 
 - type: entity
-  parent: BaseScrap
+  parent: BaseScrapSmall
   id: ScrapGeneratorFuelTank
   name: fuel tank
   description: A fuel tank from a S.U.P.E.R.P.A.C.M.A.N. type generator. The gauge indicates its got a little fuel left.
