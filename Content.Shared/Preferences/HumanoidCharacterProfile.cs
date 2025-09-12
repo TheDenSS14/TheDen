@@ -78,6 +78,9 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
         },
     };
 
+    [DataField]
+    private Dictionary<string, string> _jobTitles = new();
+
     /// Antags we have opted in to
     [DataField]
     private HashSet<string> _antagPreferences = new();
@@ -171,6 +174,8 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
     /// <see cref="_jobPriorities"/>
     public IReadOnlyDictionary<string, JobPriority> JobPriorities => _jobPriorities;
 
+    public IReadOnlyDictionary<string, string> JobTitles => _jobTitles;
+
     /// <see cref="_antagPreferences"/>
     public IReadOnlySet<string> AntagPreferences => _antagPreferences;
 
@@ -211,6 +216,7 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
         HumanoidCharacterAppearance appearance,
         SpawnPriorityPreference spawnPriority,
         Dictionary<string, JobPriority> jobPriorities,
+        Dictionary<string, string> jobTitles, // DEN - Alternate job titles
         ClothingPreference clothing,
         BackpackPreference backpack,
         PreferenceUnavailableMode preferenceUnavailable,
@@ -241,6 +247,7 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
         CyborgName = cyborgName;
         Appearance = appearance;
         SpawnPriority = spawnPriority;
+        _jobTitles = jobTitles;
         _jobPriorities = jobPriorities;
         Clothing = clothing;
         Backpack = backpack;
@@ -277,6 +284,7 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
             other.Appearance.Clone(),
             other.SpawnPriority,
             new Dictionary<string, JobPriority>(other.JobPriorities),
+            new(other.JobTitles),
             other.Clothing,
             other.Backpack,
             other.PreferenceUnavailable,
@@ -441,6 +449,17 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
         return new(this) { _jobPriorities = dictionary };
     }
 
+    public HumanoidCharacterProfile WithJobTitles(Dictionary<string, string> jobTitles) =>
+        new(this) { _jobTitles = jobTitles };
+
+    public HumanoidCharacterProfile WithJobTitle(string jobId, string jobTitle)
+    {
+        var dictionary = new Dictionary<string, string>(_jobTitles);
+        dictionary[jobId] = jobTitle;
+
+        return new(this) { _jobTitles = dictionary };
+    }
+
     public HumanoidCharacterProfile WithPreferenceUnavailable(PreferenceUnavailableMode mode) =>
         new(this) { PreferenceUnavailable = mode };
     public HumanoidCharacterProfile WithAntagPreferences(IEnumerable<string> antagPreferences) =>
@@ -531,6 +550,7 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
             && PreferenceUnavailable == other.PreferenceUnavailable
             && SpawnPriority == other.SpawnPriority
             && _jobPriorities.SequenceEqual(other._jobPriorities)
+            && _jobTitles.SequenceEqual(other._jobTitles)
             && _antagPreferences.SequenceEqual(other._antagPreferences)
             && _traitPreferences.SequenceEqual(other._traitPreferences)
             && _loadoutPreferences.SequenceEqual(other._loadoutPreferences)

@@ -118,6 +118,10 @@ using Content.Client._CD.Records.UI;
 using Content.Shared._CD.Records;
 using Content.Shared.Customization.Systems._DEN;
 using Content.Client._DEN.Customization.Systems;
+using Content.Client._DEN.Lobby.UI.Controls;
+using Content.Shared._DEN.Job;
+
+
 // End CD - Character Records
 
 // DEN TODO: THIS NEEDS SEVERE OVERHAUL
@@ -144,6 +148,8 @@ namespace Content.Client.Lobby.UI
         private readonly CharacterRequirementsSystem _characterRequirementsSystem;
         private readonly LobbyUIController _controller;
         private readonly IRobustRandom _random;
+        private readonly ILogManager _logManager;
+        private readonly ISawmill _sawmill;
 
         private FlavorText.FlavorText? _flavorText;
         private BoxContainer _ccustomspecienamecontainerEdit => CCustomSpecieName;
@@ -152,6 +158,9 @@ namespace Content.Client.Lobby.UI
         private TextEdit? _flavorSfwTextEdit;
         private TextEdit? _flavorNsfwTextEdit;
         private TextEdit? _characterConsent;
+
+        // One at a time.
+        private AlternateTitleSelectionMenu? _titleSelectionMenu;
 
         /// If we're attempting to save
         public event Action? Save;
@@ -211,7 +220,8 @@ namespace Content.Client.Lobby.UI
             IResourceManager resManager,
             JobRequirementsManager requirements,
             MarkingManager markings,
-            IRobustRandom random
+            IRobustRandom random,
+            ILogManager logManager
             )
         {
             RobustXamlLoader.Load(this);
@@ -225,6 +235,8 @@ namespace Content.Client.Lobby.UI
             _resManager = resManager;
             _requirements = requirements;
             _random = random;
+            _logManager = logManager;
+            _sawmill = _logManager.GetSawmill("humanoid-profile-editor");
 
             _characterRequirementsSystem = _entManager.System<CharacterRequirementsSystem>();
             _controller = UserInterfaceManager.GetUIController<LobbyUIController>();
@@ -1195,9 +1207,18 @@ namespace Content.Client.Lobby.UI
                         TextureScale = new(2, 2),
                         VerticalAlignment = VAlignment.Center
                     };
+
                     var jobIcon = _prototypeManager.Index<JobIconPrototype>(job.Icon);
                     icon.Texture = jobIcon.Icon.Frame0();
                     selector.Setup(items, job.LocalizedName, 200, job.LocalizedDescription, icon, job.Guides);
+
+                    var hasTitles = _prototypeManager.TryIndex<AlternateJobTitlePrototype>(job.ID, out var alternateJobTitles);
+
+                    if (hasTitles && alternateJobTitles != null)
+                    {
+                        selector.SetupJobTitleButton(job, alternateJobTitles, false);
+                        selector.OnOpenAlternateJobTitle += (_, _) => CreateTitlesWindow(job, alternateJobTitles);
+                    }
 
                     var requirements = job.Requirements ?? new();
                     var context = _characterRequirementsSystem.GetProfileContext(Profile)
@@ -1339,6 +1360,14 @@ namespace Content.Client.Lobby.UI
                     icon.Texture = jobIcon.Icon.Frame0();
                     selector.Setup(items, job.LocalizedName, 200, job.LocalizedDescription, icon);
 
+                    var hasTitles = _prototypeManager.TryIndex<AlternateJobTitlePrototype>(job.ID, out var alternateJobTitles);
+
+                    if (hasTitles && alternateJobTitles != null)
+                    {
+                        selector.SetupJobTitleButton(job, alternateJobTitles, false);
+                        selector.OnOpenAlternateJobTitle += (_, _) => CreateTitlesWindow(job, alternateJobTitles);
+                    }
+
                     var requirements = job.Requirements ?? new();
                     var context = _characterRequirementsSystem.GetProfileContext(Profile)
                         .WithSelectedJob(job)
@@ -1395,6 +1424,31 @@ namespace Content.Client.Lobby.UI
                 UpdateJobPriorities();
         }
 
+        private void CreateTitlesWindow(JobPrototype job, AlternateJobTitlePrototype? titles)
+        {
+            if (Profile == null)
+                return;
+
+            if (titles is null)
+                return;
+
+            if (_titleSelectionMenu != null)
+            {
+                _titleSelectionMenu.Orphan();
+                _titleSelectionMenu = null;
+            }
+
+            Profile.JobTitles.TryGetValue(job.ID, out var selectedTitle);
+
+            _titleSelectionMenu = new(job, titles, _sawmill, selectedTitle)
+            {
+                Title = job.LocalizedName
+            };
+
+            _titleSelectionMenu.OnSelectedAlternateTitleChanged += jobTitle => OnAlternateTitleChanged(job, jobTitle);
+            _titleSelectionMenu.OpenCenteredLeft();
+        }
+
         /// DeltaV - Make sure that no invalid job priorities get through
         private void EnsureJobRequirementsValid()
         {
@@ -1417,6 +1471,16 @@ namespace Content.Client.Lobby.UI
                 selector.Select((int) JobPriority.Never);
                 Profile = Profile?.WithJobPriority(proto.ID, JobPriority.Never);
             }
+        }
+
+        private void OnAlternateTitleChanged(JobPrototype job, string? newTitle)
+        {
+            if (Profile is null)
+                return;
+
+            _sawmill.Info("OnAlternateTitleChanged: " + newTitle ?? "No title");
+            Profile?.WithJobTitle(job.ID, newTitle ?? string.Empty);
+            SetDirty();
         }
 
         // Start CD - Character Records
