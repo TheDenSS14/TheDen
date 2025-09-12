@@ -13,12 +13,8 @@
   - type: ContainerFill
     containers:
       key_slots:
-      - EncryptionKeyCommand
       - EncryptionKeyCentCom
-      - EncryptionKeyJustice
-      - EncryptionKeyPrison
-      - EncryptionKeySecurity
-      - EncryptionKeyCommon
+      - EncryptionKeyStationMaster
   - type: Sprite
     sprite: _DV/Clothing/Ears/Headsets/justice.rsi
     state: icon_alt

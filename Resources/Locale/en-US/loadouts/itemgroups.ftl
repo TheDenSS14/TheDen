@@ -151,6 +151,7 @@ character-item-group-LoadoutMagistrateMask = Magistrate Masks
 character-item-group-LoadoutMagistrateOuter = Magistrate Outerwear
 character-item-group-LoadoutMagistrateShoes = Magistrate Shoes
 character-item-group-LoadoutMagistrateUniforms = Magistrate Uniforms
+character-item-group-LoadoutMagistrateWeapon = Magistrate Weapon
 
 # Dignitary - Nanotrasen Representative
 character-item-group-LoadoutNanorepBackpacks = Nanotrasen Representative Backpacks
