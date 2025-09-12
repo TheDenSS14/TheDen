@@ -38,6 +38,7 @@ gun-ballistic-cycled-empty = Cycled (empty)
 gun-ballistic-transfer-invalid = {CAPITALIZE(THE($ammoEntity))} won't fit inside {THE($targetEntity)}!
 gun-ballistic-transfer-empty = {CAPITALIZE(THE($entity))} is empty.
 gun-ballistic-transfer-target-full = {CAPITALIZE(THE($entity))} is already fully loaded.
+gun-chamber-ballistic-transfer-target-bolt-closed = {CAPITALIZE(THE($entity))} has a closed bolt.
 
 # CartridgeAmmo
 gun-cartridge-spent = It is [color=red]spent[/color].
