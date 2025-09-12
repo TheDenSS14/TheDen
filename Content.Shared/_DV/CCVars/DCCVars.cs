@@ -1,6 +1,7 @@
-// SPDX-FileCopyrightText: 2025 BlitzTheSquishy <73762869+BlitzTheSquishy@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 Falcon <falcon@zigtag.dev>
-// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 BlitzTheSquishy
+// SPDX-FileCopyrightText: 2025 Falcon
+// SPDX-FileCopyrightText: 2025 sev7ves
+// SPDX-FileCopyrightText: 2025 sleepyyapril
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -110,6 +111,12 @@ public sealed class DCCVars
     /// </summary>
     public static readonly CVarDef<bool> Shipyard =
         CVarDef.Create("shuttle.shipyard", true, CVar.SERVERONLY);
+
+    /// <summary>
+    /// What year it is in the game. Actual value shown in game is server date + this value.
+    /// </summary>
+    public static readonly CVarDef<int> YearOffset =
+        CVarDef.Create("game.current_year_offset", 550, CVar.SERVERONLY);
 
     /// <summary>
     ///    Maximum number of characters in objective summaries.
