@@ -102,6 +102,10 @@
       shader: unshaded
       visible: false
       map: ["enum.ElectrifiedLayers.HUD"]
+    - map: ["enum.PaperLabelVisuals.Layer"]
+      sprite: Structures/Storage/Crates/labels.rsi
+      offset: "-.45,0.35"
+      state: paper
   - type: AnimationPlayer
   - type: Physics
   - type: Fixtures
@@ -136,6 +140,7 @@
   - type: ContainerContainer
     containers:
       board: !type:Container
+      paper_label: !type:ContainerSlot # Den
   - type: Weldable
     fuel: 5
     time: 3
@@ -232,6 +237,28 @@
   - type: TwistedConstructionTarget
     replacementProto: CultDoor
     doAfterDelay: 10
+  - type: GenericVisualizer
+    visuals:
+      enum.PaperLabelVisuals.HasLabel:
+        enum.PaperLabelVisuals.Layer:
+          True: { visible: true }
+          False: { visible: false }
+      enum.PaperLabelVisuals.LabelType:
+        enum.PaperLabelVisuals.Layer:
+          Paper: { state: paper }
+          Bounty: { state: bounty }
+          CaptainsPaper: { state: captains_paper }
+          Invoice: { state: invoice }
+  - type: PaperLabel
+    labelSlot:
+      insertVerbText: Attach Label
+      ejectVerbText: Remove Label
+      whitelist:
+        components:
+        - Paper
+      blacklist:
+        tags:
+        - Book
   placement:
     mode: SnapgridCenter
 
