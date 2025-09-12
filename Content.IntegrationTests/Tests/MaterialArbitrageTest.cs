@@ -44,7 +44,7 @@ public sealed class MaterialArbitrageTest
     [
         "BaseChemistryEmptyVial", "DrinkShotGlass", "SodiumLightTube", "DrinkGlassCoupeShaped",
         "LedLightBulb", "ExteriorLightTube", "LightTube", "DrinkGlass", "DimLightBulb", "LightBulb", "LedLightTube",
-        "SheetRGlass1", "ChemistryEmptyBottle01", "WarmLightBulb",
+        "SheetRGlass1", "ChemistryEmptyBottle01", "WarmLightBulb", "ColdLightBulb", "UvLightTube", // Unfortunately I am adding to the set. Den edit, added UvLightTube & ColdLightBulb
     ];
 
     private readonly HashSet<string> _compositionArbitrageIgnore =
