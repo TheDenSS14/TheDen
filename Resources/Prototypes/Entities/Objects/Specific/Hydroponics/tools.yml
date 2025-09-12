@@ -251,9 +251,9 @@
       params:
         variation: 0.25
     soundDeactivate: *soundActivate
-    onUse: false # Frontier
-    onAltUse: true # Frontier
-    onActivate: false # Frontier
+    #onUse: false # Frontier - #TheDen - commented out to remove duplicate verb
+    #onAltUse: true # Frontier
+    #onActivate: false # Frontier
   - type: ItemToggleExamine
     on: item-toggle-examine-magnet-on
     off: item-toggle-examine-magnet-off

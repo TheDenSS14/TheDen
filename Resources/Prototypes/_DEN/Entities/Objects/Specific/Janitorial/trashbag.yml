@@ -29,6 +29,9 @@
     #onUse: false #TheDen, commented out to remove duplicate activate verb
     #onAltUse: true
     #onActivate: false
+  - type: ItemToggleExamine
+    on: item-toggle-examine-magnet-on
+    off: item-toggle-examine-magnet-off
   - type: Sprite
     sprite: _DEN/Objects/Specific/Janitorial/trashbag.rsi
     layers:
