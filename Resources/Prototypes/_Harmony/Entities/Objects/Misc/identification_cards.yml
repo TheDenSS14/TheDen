@@ -1,0 +1,37 @@
+﻿- type: entity
+  parent: IDCardStandard
+  id: ERPLeaderIDCard
+  name: ERP leader ID card
+  suffix: Harmony
+  components:
+  - type: Sprite
+    layers:
+    - state: centcom
+    - state: department
+      color: "#FF00FF"
+    - state: subdepartment
+      color: "#1B67A5"
+    - state: clown
+  - type: PresetIdCard
+    job: ERPLeader
+  - type: Item
+    heldPrefix: gold
+
+- type: entity
+  parent: IDCardStandard
+  id: ERPClownIDCard
+  name: ERP clown ID card
+  suffix: Harmony
+  components:
+  - type: Sprite
+    layers:
+    - state: centcom
+    - state: department
+      color: "#FF00FF"
+    - state: subdepartment
+      color: "#58C800"
+    - state: clown
+  - type: PresetIdCard
+    job: ERPClown
+  - type: Item
+    heldPrefix: gold
