@@ -1,0 +1,9 @@
+- type: loadout
+  id: LoadoutClothingMaskKitsune
+  category: Mask
+  cost: 0
+  items:
+    - ClothingMaskKitsune
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMasks
