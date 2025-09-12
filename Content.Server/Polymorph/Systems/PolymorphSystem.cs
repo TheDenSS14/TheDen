@@ -14,13 +14,14 @@
 // SPDX-FileCopyrightText: 2024 VMSolidus
 // SPDX-FileCopyrightText: 2024 keronshb
 // SPDX-FileCopyrightText: 2024 slarticodefast
+// SPDX-FileCopyrightText: 2025 Jakumba
 // SPDX-FileCopyrightText: 2025 M3739
 // SPDX-FileCopyrightText: 2025 RedFoxIV
 // SPDX-FileCopyrightText: 2025 ash lea
 // SPDX-FileCopyrightText: 2025 metalgearsloth
 // SPDX-FileCopyrightText: 2025 sleepyyapril
 //
-// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+// SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 using Content.Server.Actions;
 using Content.Server.Carrying;
@@ -64,7 +65,7 @@ public sealed partial class PolymorphSystem : EntitySystem
     [Dependency] private readonly ActionsSystem _actions = default!;
     [Dependency] private readonly AudioSystem _audio = default!;
     [Dependency] private readonly SharedBuckleSystem _buckle = default!;
-    [Dependency] private readonly StaminaSystem _stamina = default!; // DeltaV
+    [Dependency] private readonly SharedStaminaSystem _stamina = default!; // DeltaV
     [Dependency] private readonly ContainerSystem _container = default!;
     [Dependency] private readonly DamageableSystem _damageable = default!;
     [Dependency] private readonly HumanoidAppearanceSystem _humanoid = default!;
@@ -285,7 +286,7 @@ public sealed partial class PolymorphSystem : EntitySystem
 
         if (configuration.Inventory == PolymorphInventoryChange.Transfer)
         {
-            
+
             if (HasComp<InventoryComponent>(uid) && HasComp<InventoryComponent>(child))
                 _inventory.TransferEntityInventories(uid, child);
 

@@ -1,8 +1,8 @@
-// SPDX-FileCopyrightText: 2024 FoxxoTrystan <45297731+FoxxoTrystan@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 FoxxoTrystan <trystan.garnierhein@gmail.com>
-// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 FoxxoTrystan
+// SPDX-FileCopyrightText: 2025 Jakumba
+// SPDX-FileCopyrightText: 2025 sleepyyapril
 //
-// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+// SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 using Content.Shared.Interaction.Events;
 using Content.Shared.Damage.Components;
@@ -15,7 +15,7 @@ namespace Content.Server.Shadowkin;
 
 public sealed class EtherealStunItemSystem : EntitySystem
 {
-    [Dependency] private readonly StaminaSystem _stamina = default!;
+    [Dependency] private readonly SharedStaminaSystem _stamina = default!;
     [Dependency] private readonly EntityLookupSystem _lookup = default!;
     [Dependency] private readonly SharedStackSystem _sharedStackSystem = default!;
     public override void Initialize()

@@ -32,6 +32,7 @@
 # SPDX-FileCopyrightText: 2025 EctoplasmIsGood
 # SPDX-FileCopyrightText: 2025 Falcon
 # SPDX-FileCopyrightText: 2025 Ichaie
+# SPDX-FileCopyrightText: 2025 Jakumba
 # SPDX-FileCopyrightText: 2025 Sapphire
 # SPDX-FileCopyrightText: 2025 SimpleGopnik
 # SPDX-FileCopyrightText: 2025 Simplegopnik
@@ -45,7 +46,7 @@
 # SPDX-FileCopyrightText: 2025 dootythefrooty
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: entity
   parent: [BaseMob, StripableInventoryBase]
@@ -384,6 +385,7 @@
     - Syndicate
   - type: ActiveRadio
     channels:
+    - Binary
     - Syndicate
   - type: ShowSyndicateIcons
   - type: MovementAlwaysTouching
@@ -401,3 +403,36 @@
     damageModifierSet: SiliconProtected
   - type: ExplosionResistance
     damageCoefficient: 0.5
+
+- type: entity
+  id: BaseBorgChassisDerelict
+  parent: BaseBorgChassis
+  abstract: true
+  components:
+  - type: NpcFactionMember
+    factions:
+    - NanoTrasen #The seemingly best fit. It was a regular NT cyborg once, after all.
+  - type: Access
+    enabled: false
+    groups:
+    - AllAccess #Randomized access would be fun. AllAccess is the best i can think of right now that does make it too hard for it to enter the station or navigate it..
+  - type: AccessReader
+    access: [["Command"], ["Research"]]
+  - type: StartIonStormed
+    ionStormAmount: 3
+  - type: IonStormTarget
+    chance: 1
+  - type: ShowJobIcons
+
+- type: entity
+  id: BaseBorgChassisSyndicateDerelict #For assault borg and maybe others in time
+  parent: BaseBorgChassisSyndicate
+  abstract: true
+  components:
+  - type: SiliconLawProvider
+    laws: SyndicateStatic #Non-subverted version so they can still be changed
+  - type: StartIonStormed
+    ionStormAmount: 3
+  - type: IonStormTarget
+    chance: 1
+  - type: ShowJobIcons

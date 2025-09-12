@@ -1,16 +1,17 @@
-// SPDX-FileCopyrightText: 2023 Ben <50087092+benev0@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2023 BenOwnby <ownbyb@appstate.edu>
-// SPDX-FileCopyrightText: 2023 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 Jezithyr <jezithyr@gmail.com>
-// SPDX-FileCopyrightText: 2024 SimpleStation14 <130339894+SimpleStation14@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 Tornado Tech <54727692+Tornado-Technology@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 VMSolidus <evilexecutive@gmail.com>
-// SPDX-FileCopyrightText: 2024 Verm <32827189+Vermidia@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 Eagle-0 <114363363+Eagle-0@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Ben
+// SPDX-FileCopyrightText: 2023 BenOwnby
+// SPDX-FileCopyrightText: 2023 DrSmugleaf
+// SPDX-FileCopyrightText: 2024 Jezithyr
+// SPDX-FileCopyrightText: 2024 SimpleStation14
+// SPDX-FileCopyrightText: 2024 Tornado Tech
+// SPDX-FileCopyrightText: 2024 VMSolidus
+// SPDX-FileCopyrightText: 2024 Verm
+// SPDX-FileCopyrightText: 2024 metalgearsloth
+// SPDX-FileCopyrightText: 2025 Eagle-0
+// SPDX-FileCopyrightText: 2025 Jakumba
+// SPDX-FileCopyrightText: 2025 sleepyyapril
 //
-// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+// SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 using Content.Shared.Administration.Logs;
 using Content.Shared.Examine;
@@ -103,6 +104,13 @@ public sealed partial class AnchorableSystem : EntitySystem
     private void OnAnchoredExamine(EntityUid uid, AnchorableComponent component, ExaminedEvent args)
     {
         var isAnchored = Comp<TransformComponent>(uid).Anchored;
+
+        if (isAnchored && (component.Flags & AnchorableFlags.Unanchorable) == 0x0)
+            return;
+
+        if (!isAnchored && (component.Flags & AnchorableFlags.Anchorable) == 0x0)
+            return;
+
         var messageId = isAnchored ? "examinable-anchored" : "examinable-unanchored";
         args.PushMarkup(Loc.GetString(messageId, ("target", uid)));
     }
