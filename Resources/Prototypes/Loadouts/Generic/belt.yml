@@ -98,3 +98,14 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutBelt
+
+- type: loadout #DeltaV
+  id: LoadoutClothingBeltPaperwork
+  category: Belt
+  cost: 3
+  customColorTint: true
+  items:
+    - ClothingBeltPaperwork
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBelt
