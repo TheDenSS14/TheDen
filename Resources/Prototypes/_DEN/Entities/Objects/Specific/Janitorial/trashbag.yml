@@ -18,6 +18,17 @@
     areaInsertRadius: 4
   - type: MagnetPickup 
     range: 2
+    magnetEnabled: false # Frontier
+    magnetCanBeEnabled: false # Frontier
+  - type: ItemToggle
+    soundActivate: &soundActivate
+      collection: sparks
+      params:
+        variation: 0.25
+    soundDeactivate: *soundActivate
+    #onUse: false #TheDen, commented out to remove duplicate activate verb
+    #onAltUse: true
+    #onActivate: false
   - type: Sprite
     sprite: _DEN/Objects/Specific/Janitorial/trashbag.rsi
     layers:
