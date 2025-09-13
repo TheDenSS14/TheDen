@@ -325,7 +325,7 @@
       - type: CriminalRecordsHacker
 
 - type: entity
-  parent: ClothingHandsGlovesColorBlack
+  parent: [ BaseMinorContraband, ClothingHandsGlovesColorBlack ]
   id: ClothingHandsGlovesCombat
   name: combat gloves
   description: These tactical gloves are fireproof and shock resistant.
