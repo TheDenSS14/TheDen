@@ -726,3 +726,36 @@
     assayFeedback: anoigo-power-metapsionic-feedback
   - !type:RemovePsionicPsychognomicDescriptors
     psychognomicDescriptor: kinetic
+
+- type: psionicPower
+  id: PrecognitionPower
+  name: Precognition
+  powerCategories:
+    - Mentalic
+  initializeFunctions:
+    - !type:AddPsionicActions
+      actions: 
+        - ActionPrecognition
+    - !type:PsionicAddAvailablePowers
+      powerPrototype: PrecognitionPower
+    - !type:PsionicFeedbackPopup
+    - !type:PsionicFeedbackSelfChat
+      feedbackMessage: precognition-power-initialization-feedback
+    - !type:AddPsionicAssayFeedback
+      assayFeedback: precognition-power-metapsionic-feedback
+    - !type:AddPsionicStatSources
+      amplificationModifier: 1
+      dampeningModifier: 0.5
+    - !type:PsionicModifyGlimmer
+       glimmerModifier: 15
+  removalFunctions:
+    - !type:RemovePsionicPowerComponents
+      components:
+        - type: PrecognitionPower
+    - !type:RemovePsionicActions
+    - !type:RemovePsionicStatSources
+    - !type:RemoveAssayFeedback
+      assayFeedback: precognition-power-metapsionic-feedback
+    - !type:PsionicRemoveAvailablePowers
+      powerPrototype: PrecognitionPower
+  powerSlotCost: 2

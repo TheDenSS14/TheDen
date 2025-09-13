@@ -317,6 +317,7 @@
   parent: BaseGameRule
   categories: [ HideSpawnMenu ]
   components:
+  - type: NextEvent # DeltaV: Queue Event for precognition
   - type: BasicStationEventScheduler
 
 - type: entity
@@ -324,6 +325,7 @@
   parent: BaseGameRule
   categories: [ HideSpawnMenu ]
   components:
+  - type: NextEvent # DeltaV: Queue Event for precognition
   - type: RampingStationEventScheduler
     startingChaosRatio: 0.01
     chaosModifier: 1.5
@@ -334,6 +336,7 @@
   parent: BaseGameRule
   categories: [ HideSpawnMenu ]
   components:
+  - type: NextEvent # DeltaV: Queue Event for precognition
   - type: RampingStationEventScheduler
     chaosModifier: 5 # By default, one event each 30-10 seconds after two hours. Changing CVars will cause this to deviate.
     startingChaosRatio: 0.1
@@ -358,6 +361,7 @@
   parent: BaseGameRule
   categories: [ HideSpawnMenu ]
   components:
+  - type: NextEvent # DeltaV: Queue Event for precognition
   - type: OscillatingStationEventScheduler
     minChaos: 0.8
     maxChaos: 3

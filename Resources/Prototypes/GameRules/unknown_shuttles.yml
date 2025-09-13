@@ -24,6 +24,8 @@
   id: UnknownShuttleCargoLost
   categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
+  - type: PrecognitionResult # DeltaV - Precogniton
+    message: psionic-power-precognition-unknown-shuttle-cargo-lost-result-message
   - type: LoadMapRule
     preloadedGrid: ShuttleCargoLost
 
@@ -32,6 +34,8 @@
   id: UnknownShuttleTravelingCuisine
   categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
+  - type: PrecognitionResult # DeltaV - Precogniton
+    message: psionic-power-precognition-unknown-shuttle-traveling-cuisine-result-message
   - type: LoadMapRule
     preloadedGrid: TravelingCuisine
 
@@ -40,6 +44,8 @@
   id: UnknownShuttleDisasterEvacPod
   categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
+  - type: PrecognitionResult # DeltaV - Precogniton
+    message: psionic-power-precognition-unknown-shuttle-disaster-evac-pod-result-message
   - type: LoadMapRule
     preloadedGrid: DisasterEvacPod
 

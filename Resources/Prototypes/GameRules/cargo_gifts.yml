@@ -6,6 +6,43 @@
 # SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# Tables --  Add your new event to this Table if you want it to happen via the basic/ramping schedulers.
+
+#DeltaV addition
+- type: entityTable
+  id: CargoGiftsTable
+  table: !type:GroupSelector # ~~we need to pass a list of rules, since rules have further restrictions to consider via StationEventComp~~ But we arent doing that shit yet, it picks a random one StationEventComp be damned.
+    children:
+    - id: GiftsEngineering
+    - id: GiftsFireProtection
+    - id: GiftsJanitor
+    - id: GiftsMedical
+    - id: GiftsPizzaPartyLarge
+    - id: GiftsPizzaPartySmall
+    - id: GiftsSecurityGuns
+    - id: GiftsSecurityRiot
+    - id: GiftsSpacingSupplies
+    - id: GiftsVendingRestock
+
+# Game Rules
+    
+- type: entity
+  id: CargoGiftsBase
+  parent: BaseGameRule
+  abstract: true
+  components:
+  - type: GameRule
+    delay:
+      min: 10
+      max: 10
+  - type: PrecognitionResult # DeltaV - Precogniton
+    message: psionic-power-precognition-cargo-gifts-base-result-message
+  - type: StationEvent
+    startColor: "#18abf5"
+    startAudio:
+      path: /Audio/Announcements/announce.ogg
+  - type: CargoGiftsRule
+    sender: cargo-gift-default-sender
 
 - type: entity
   id: GiftsPizzaPartySmall

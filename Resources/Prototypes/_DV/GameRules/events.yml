@@ -45,6 +45,8 @@
         weight: 0.02
       - id: MobXenoQueen
         weight: 0.01
+  - type: PrecognitionResult
+    message: psionic-power-precognition-xeno-vents-result-message
 
 # Weaker version of xenos, meant to provide some dangers in low pop.
 - type: entity
@@ -74,7 +76,9 @@
         weight: 0.08
       - id: MobXenoRavager
         weight: 0.02
-
+  - type: PrecognitionResult
+    message: psionic-power-precognition-xeno-vents-result-message
+    
 - type: entity
   id: PirateRadioSpawn
   parent: BaseGameRule
