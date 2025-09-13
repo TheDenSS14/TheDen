@@ -45,6 +45,7 @@
   components:
   - type: Contraband
     severity: contrabandSeverityMinor
+    allowedDepartments: [ CentralCommand, Command, Security, Engineering, Epistemics, Medical, Civilian, Logistics, Justice, Dignitary ]
 
 # major contraband, for things like guns or weaponry that don't belong to any department and aren't syndicate specific
 - type: entity

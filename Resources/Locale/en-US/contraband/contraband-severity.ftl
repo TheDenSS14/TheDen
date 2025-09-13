@@ -1,5 +1,5 @@
 ﻿contraband-examine-text-Improvised = [color=yellow]T2: This item has been manufactured [color=red]clandestinely,[/color] thus it may be considered dangerous and/or contraband.[/color]
-contraband-examine-text-Minor = [color=yellow]T0: This item is considered minor contraband.[/color]
+contraband-examine-text-Minor = [color=yellow]T0: This item is considered minor contraband, and may be taken away when misused.[/color]
 contraband-examine-text-Restricted = [color=yellow]T1: This item is departmentally restricted.[/color]
 contraband-examine-text-Restricted-department = [color=yellow]T1: This item is restricted to {$departments}, and may be considered contraband.[/color]
 contraband-examine-text-Major = [color=red]T2: This item is considered major contraband.[/color]
