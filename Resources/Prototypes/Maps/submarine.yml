@@ -17,7 +17,8 @@
   id: Submarine
   mapName: 'Submarine'
   mapPath: /Maps/TheDen/submarine.yml
-  minPlayers: 30
+  minPlayers: 60
+  maxPlayers: 100 # The Den: we hit 80 and had no maps lmao
   stations:
     Submarine:
       stationProto: StandardNanotrasenStation
@@ -45,6 +46,7 @@
           #engineering
             AtmosphericTechnician: [ 2, 4 ]
             ChiefEngineer: [ 1, 1 ]
+            SeniorEngineer: [ 2, 2 ]
             StationEngineer: [ 4, 6 ]
             TechnicalAssistant: [ 2, 3 ]
           #medical
@@ -54,6 +56,7 @@
             MedicalIntern: [ 2, 3 ]
             Paramedic: [ 2, 3 ]
             Psychologist: [ 1, 2 ]
+            SeniorPhysician: [ 2, 2 ]
           #security
             Brigmedic: [ 1, 1 ]
             Detective: [ 1, 1 ]
@@ -62,6 +65,7 @@
             PrisonGuard: [ 1, 2 ]
             SecurityOfficer: [ 4, 6 ]
             SecurityCadet: [ 3, 4 ]
+            SeniorOfficer: [ 2, 2 ]
             Warden: [ 1, 1 ]
           #service
             Bartender: [ 2, 3 ]
@@ -84,7 +88,9 @@
             ForensicMantis: [ 1, 1 ]
             ResearchAssistant: [ 2, 3 ]
             ResearchDirector: [ 1, 1 ]
-            Scientist: [ 3, 4 ]
+            Roboticist: [ 2, 2 ]
+            Scientist: [ 3, 3 ]
+            SeniorResearcher: [ 2, 2 ]
           #supply
             CargoTechnician: [ 4, 6 ]
             MailCarrier: [ 1, 2 ]
