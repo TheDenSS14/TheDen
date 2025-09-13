@@ -4,6 +4,22 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 - type: characterItemGroup
+  id: LoadoutMagistrateWeapon
+  maxItems: 1
+  items:
+  - type: loadout
+    id: LoadoutMagistrateDisabler
+
+- type: characterItemGroup
+  id: LoadoutMagistrateGloves
+  maxItems: 1
+  items:
+  - type: loadout
+    id: LoadoutMagistrateGlovesHoP
+  - type: loadout
+    id: LoadoutMagistrateGlovesInspection
+
+- type: characterItemGroup
   id: LoadoutMagistrateHead
   maxItems: 1
   items:

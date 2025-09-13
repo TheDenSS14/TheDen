@@ -7,20 +7,17 @@
 - type: entity
   parent: ClothingHeadset
   id: ClothingHeadsetMagistrate
-  name: magistrate's headset
+  name: magistrate's over-ear headset
   description: The headset used by the magistrate.
   components:
   - type: ContainerFill
     containers:
       key_slots:
-      - EncryptionKeyCommand
       - EncryptionKeyCentCom
-      - EncryptionKeyJustice
-      - EncryptionKeyPrison
-      - EncryptionKeySecurity
-      - EncryptionKeyCommon
+      - EncryptionKeyStationMaster
   - type: Sprite
     sprite: _DV/Clothing/Ears/Headsets/justice.rsi
     state: icon_alt
   - type: Clothing
     sprite: _DV/Clothing/Ears/Headsets/justice.rsi
+  - type: FlashSoundSuppression
