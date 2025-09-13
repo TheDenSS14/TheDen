@@ -3,6 +3,7 @@
 // SPDX-FileCopyrightText: 2024 Leon Friedrich
 // SPDX-FileCopyrightText: 2024 deltanedas
 // SPDX-FileCopyrightText: 2024 metalgearsloth
+// SPDX-FileCopyrightText: 2025 Jakumba
 // SPDX-FileCopyrightText: 2025 Sir Warock
 // SPDX-FileCopyrightText: 2025 sleepyyapril
 //
@@ -41,6 +42,20 @@ public sealed partial class ItemToggleComponent : Component
     /// </summary>
     [DataField]
     public bool OnUse = true;
+
+    // Frontier: allow alt-verbs
+    /// <summary>
+    /// If this is set to true, the item can be toggled by pressing alt+Z.
+    /// </summary>
+    [DataField]
+    public bool OnAltUse = false;
+
+    /// <summary>
+    /// The priority of the alternative verb if enabled.
+    /// </summary>
+    [DataField]
+    public int AltPriority;
+    // End Frontier
 
     /// <summary>
     ///     The localized text to display in the verb to activate.
