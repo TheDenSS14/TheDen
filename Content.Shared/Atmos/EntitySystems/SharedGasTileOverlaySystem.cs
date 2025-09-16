@@ -1,22 +1,22 @@
-// SPDX-FileCopyrightText: 2020 Metal Gear Sloth <metalgearsloth@gmail.com>
-// SPDX-FileCopyrightText: 2020 Víctor Aguilera Puerto <6766154+Zumorica@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2021 Vera Aguilera Puerto <6766154+Zumorica@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2021 Vera Aguilera Puerto <zddm@outlook.es>
-// SPDX-FileCopyrightText: 2021 Visne <39844191+Visne@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2022 Acruid <shatter66@gmail.com>
-// SPDX-FileCopyrightText: 2022 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2022 metalgearsloth <comedian_vs_clown@hotmail.com>
-// SPDX-FileCopyrightText: 2022 wrexbe <81056464+wrexbe@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2023 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2023 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 SimpleStation14 <130339894+SimpleStation14@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 VMSolidus <evilexecutive@gmail.com>
-// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2020 Metal Gear Sloth
+// SPDX-FileCopyrightText: 2020 Víctor Aguilera Puerto
+// SPDX-FileCopyrightText: 2021 Vera Aguilera Puerto
+// SPDX-FileCopyrightText: 2021 Visne
+// SPDX-FileCopyrightText: 2022 Acruid
+// SPDX-FileCopyrightText: 2022 DrSmugleaf
+// SPDX-FileCopyrightText: 2022 metalgearsloth
+// SPDX-FileCopyrightText: 2022 wrexbe
+// SPDX-FileCopyrightText: 2023 Leon Friedrich
+// SPDX-FileCopyrightText: 2024 SimpleStation14
+// SPDX-FileCopyrightText: 2024 VMSolidus
+// SPDX-FileCopyrightText: 2025 sleepyyapril
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 using Content.Shared.Atmos.Components;
 using Content.Shared.Atmos.Prototypes;
+using Content.Shared.CCVar;
+using Robust.Shared.Configuration;
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization;
@@ -25,11 +25,26 @@ namespace Content.Shared.Atmos.EntitySystems
 {
     public abstract class SharedGasTileOverlaySystem : EntitySystem
     {
+        /// <summary>
+        /// The temperature at which the heat distortion effect starts to be applied.
+        /// </summary>
+        private float _tempAtMinHeatDistortion;
+        /// <summary>
+        /// The temperature at which the heat distortion effect is at maximum strength.
+        /// </summary>
+        private float _tempAtMaxHeatDistortion;
+        /// <summary>
+        /// Calculated linear slope and intercept to map temperature to a heat distortion strength from 0.0 to 1.0
+        /// </summary>
+        private float _heatDistortionSlope;
+        private float _heatDistortionIntercept;
+
         public const byte ChunkSize = 8;
         protected float AccumulatedFrameTime;
         protected bool PvsEnabled;
 
         [Dependency] protected readonly IPrototypeManager ProtoMan = default!;
+        [Dependency] protected readonly IConfigurationManager ConfMan = default!;
 
         /// <summary>
         ///     array of the ids of all visible gases.
@@ -39,6 +54,11 @@ namespace Content.Shared.Atmos.EntitySystems
         public override void Initialize()
         {
             base.Initialize();
+
+            // Make sure the heat distortion variables are updated if the CVars change
+            Subs.CVar(ConfMan, CCVars.GasOverlayHeatMinimum, UpdateMinHeat, true);
+            Subs.CVar(ConfMan, CCVars.GasOverlayHeatMaximum, UpdateMaxHeat, true);
+
             SubscribeLocalEvent<GasTileOverlayComponent, ComponentGetState>(OnGetState);
 
             List<int> visibleGases = new();
@@ -51,6 +71,29 @@ namespace Content.Shared.Atmos.EntitySystems
             }
 
             VisibleGasId = visibleGases.ToArray();
+        }
+
+        private void UpdateMaxHeat(float val)
+        {
+            _tempAtMaxHeatDistortion = val;
+            UpdateHeatSlopeAndIntercept();
+        }
+
+        private void UpdateMinHeat(float val)
+        {
+            _tempAtMinHeatDistortion = val;
+            UpdateHeatSlopeAndIntercept();
+        }
+
+        private void UpdateHeatSlopeAndIntercept()
+        {
+            // Make sure to avoid invalid settings (min == max or min > max)
+            // I'm not sure if CVars can have constraints or if CVar subscribers can reject changes.
+            var diff = _tempAtMinHeatDistortion < _tempAtMaxHeatDistortion
+                ? _tempAtMaxHeatDistortion - _tempAtMinHeatDistortion
+                : 0.001f;
+            _heatDistortionSlope = 1.0f / diff;
+            _heatDistortionIntercept = -_tempAtMinHeatDistortion * _heatDistortionSlope;
         }
 
         private void OnGetState(EntityUid uid, GasTileOverlayComponent component, ref ComponentGetState args)
@@ -89,14 +132,26 @@ namespace Content.Shared.Atmos.EntitySystems
             [ViewVariables]
             public readonly byte[] Opacity;
 
-            // TODO change fire color based on temps
-            // But also: dont dirty on a 0.01 kelvin change in temperatures.
-            // Either have a temp tolerance, or map temperature -> byte levels
+            /// <summary>
+            /// This temperature is currently only used by the GasTileHeatOverlay.
+            /// This value will only reflect the true temperature of the gas when the temperature is between
+            /// <see cref="SharedGasTileOverlaySystem._tempAtMinHeatDistortion"/> and <see cref="SharedGasTileOverlaySystem._tempAtMaxHeatDistortion"/> as these are the only
+            /// values at which the heat distortion varies.
+            /// Additionally, it will only update when the heat distortion strength changes by
+            /// <see cref="_heatDistortionStrengthChangeTolerance"/>. By default, this is 5%, which corresponds to
+            /// 20 steps from <see cref="SharedGasTileOverlaySystem._tempAtMinHeatDistortion"/> to <see cref="SharedGasTileOverlaySystem._tempAtMaxHeatDistortion"/>.
+            /// For 325K to 1000K with 5% tolerance, then this field will dirty only if it differs by 33.75K, or 20 steps.
+            /// </summary>
+            [ViewVariables]
+            public readonly float Temperature;
 
-            public GasOverlayData(byte fireState, byte[] opacity)
+            // TODO change fire color based on temps
+
+            public GasOverlayData(byte fireState, byte[] opacity, float temperature)
             {
                 FireState = fireState;
                 Opacity = opacity;
+                Temperature = temperature;
             }
 
             public bool Equals(GasOverlayData other)
@@ -116,8 +171,24 @@ namespace Content.Shared.Atmos.EntitySystems
                     }
                 }
 
+                // This is only checking if two datas are equal -- a different routine is used to check if the
+                // temperature differs enough to dirty the chunk using a much wider tolerance.
+                if (!MathHelper.CloseToPercent(Temperature, other.Temperature))
+                    return false;
+
                 return true;
             }
+        }
+
+        /// <summary>
+        /// Calculate the heat distortion from a temperature.
+        /// Returns 0.0f below TempAtMinHeatDistortion and 1.0f above TempAtMaxHeatDistortion.
+        /// </summary>
+        /// <param name="temp"></param>
+        /// <returns></returns>
+        public float GetHeatDistortionStrength(float temp)
+        {
+            return MathHelper.Clamp01(temp * _heatDistortionSlope + _heatDistortionIntercept);
         }
 
         [Serializable, NetSerializable]

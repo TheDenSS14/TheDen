@@ -1,7 +1,8 @@
-# SPDX-FileCopyrightText: 2025 Rosycup <178287475+Rosycup@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Hedera
+# SPDX-FileCopyrightText: 2025 Rosycup
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: entity
   parent: BaseFlag
@@ -1354,3 +1355,54 @@
   - type: Transform
     anchored: true
 
+- type: entity
+  parent: BaseFlag
+  id: PluralityFlagRight
+  name: plurality flag
+  description: "A flag for those that share the same physical body with other individuals."
+  suffix: right
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Wallmounts/Flags/plurality_flag.rsi
+    state: flag_right
+  - type: Transform
+    anchored: true
+
+- type: entity
+  parent: BaseFlag
+  id: PluralityFlagLeft
+  name: plurality flag
+  description: "A flag for those that share the same physical body with other individuals."
+  suffix: left
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Wallmounts/Flags/plurality_flag.rsi
+    state: flag_left
+  - type: Transform
+    anchored: true
+
+- type: entity
+  parent: BaseFlag
+  id: PluralityInterlockFlagRight
+  name: plurality interlocking flag
+  description: "A flag for those that share the same physical body with other individuals, featuring interlocking circles."
+  suffix: right
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Wallmounts/Flags/plurality_interlock_flag.rsi
+    state: flag_right
+  - type: Transform
+    anchored: true
+
+- type: entity
+  parent: BaseFlag
+  id: PluralityInterlockFlagLeft
+  name: plurality interlocking flag
+  description: "A flag for those that share the same physical body with other individuals, featuring interlocking circles."
+  suffix: left
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Wallmounts/Flags/plurality_interlock_flag.rsi
+    state: flag_left
+  - type: Transform
+    anchored: true
