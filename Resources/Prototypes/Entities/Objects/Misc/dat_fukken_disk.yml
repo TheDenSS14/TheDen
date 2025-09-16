@@ -26,6 +26,10 @@
   id: NukeDisk
   description: A nuclear auth disk, capable of arming a nuke if used along with a code. Note from nanotrasen reads "THIS IS YOUR MOST IMPORTANT POSESSION, SECURE DAT FUKKEN DISK!"
   components:
+  # Begin Den additions
+  - type: Item
+    size: Tiny
+  # End Den additions
   - type: NukeDisk
   - type: SpecialRespawn
     prototype: NukeDisk
@@ -58,6 +62,10 @@
   suffix: Fake
   description: A nuclear auth disk, capable of arming a nuke if used along with a code. Note from nanotrasen reads "THIS IS YOUR MOST IMPORTANT POSESSION, SECURE DAT FUKKEN DISK!"
   components:
+  # Begin Den additions
+  - type: Item
+    size: Tiny
+  # End Den additions
   - type: Sprite
     sprite: Objects/Misc/nukedisk.rsi
     state: icon

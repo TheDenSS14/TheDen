@@ -9,6 +9,10 @@
   abstract: true
   name: program disk
   components:
+    # Begin Den additions
+    - type: Item
+      size: Tiny
+    # End Den additions
     - type: Sprite
       sprite: Objects/Misc/cd.rsi
       state: icon
