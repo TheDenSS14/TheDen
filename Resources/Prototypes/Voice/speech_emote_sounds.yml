@@ -30,6 +30,7 @@
 # SPDX-FileCopyrightText: 2025 Eightballll
 # SPDX-FileCopyrightText: 2025 MajorMoth
 # SPDX-FileCopyrightText: 2025 Sapphire
+# SPDX-FileCopyrightText: 2025 Shaman
 # SPDX-FileCopyrightText: 2025 Skubman
 # SPDX-FileCopyrightText: 2025 Suyo
 # SPDX-FileCopyrightText: 2025 Tabitha
@@ -1025,6 +1026,8 @@
       collection: Cracks # Imp
     Blink: # Imp
       collection: Blinks # Imp
+      params:
+        variation: 0.1
 - type: emoteSounds
   id: DionaBodyEmotes
   sounds:
@@ -1045,6 +1048,8 @@
       collection: Cracks # Imp
     Blink: # Imp
       collection: Blinks # Imp
+      params:
+        variation: 0.1
 
 - type: emoteSounds
   id: ReptilianBodyEmotes
@@ -1067,6 +1072,8 @@
       collection: Cracks # Imp
     Blink: # Imp
       collection: Blinks # Imp
+      params:
+        variation: 0.1
 
 # mobs
 - type: emoteSounds
@@ -1090,13 +1097,13 @@
       path: /Audio/Animals/mouse_squeak.ogg
     Gasp:
       path: /Audio/Animals/mouse_squeak.ogg
-    Scream: 
+    Scream:
       path: /Audio/Animals/mouse_squeak.ogg
     DefaultDeathgasp:
       path: /Audio/Animals/mouse_squeak.ogg
       params:
         variation: 0.125
-        
+
 - type: emoteSounds
   id: Cluwne
   sound:

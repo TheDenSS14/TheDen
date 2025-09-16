@@ -1,15 +1,16 @@
-# SPDX-FileCopyrightText: 2023 Bakke <luringens@protonmail.com>
-# SPDX-FileCopyrightText: 2023 Carolyn3114 <136143032+Carolyn3114@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2023 Colin-Tel <113523727+Colin-Tel@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2023 Fluffiest Floofers <thebluewulf@gmail.com>
-# SPDX-FileCopyrightText: 2024 SimpleStation14 <130339894+SimpleStation14@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 UnicornOnLSD <149102472+UnicornOnLSD@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 Velcroboy <107660393+IamVelcroboy@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 John Willis <143434770+CerberusWolfie@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 Rosycup <178287475+Rosycup@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 VMSolidus <evilexecutive@gmail.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <flyingkarii@gmail.com>
+# SPDX-FileCopyrightText: 2023 Bakke
+# SPDX-FileCopyrightText: 2023 Carolyn3114
+# SPDX-FileCopyrightText: 2023 Colin-Tel
+# SPDX-FileCopyrightText: 2023 Fluffiest Floofers
+# SPDX-FileCopyrightText: 2024 FoxxoTrystan
+# SPDX-FileCopyrightText: 2024 SimpleStation14
+# SPDX-FileCopyrightText: 2024 UnicornOnLSD
+# SPDX-FileCopyrightText: 2024 Velcroboy
+# SPDX-FileCopyrightText: 2025 John Willis
+# SPDX-FileCopyrightText: 2025 Rosycup
+# SPDX-FileCopyrightText: 2025 VMSolidus
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+# SPDX-FileCopyrightText: 2025 therealDLondon
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -17,7 +18,8 @@
   id: Submarine
   mapName: 'Submarine'
   mapPath: /Maps/TheDen/submarine.yml
-  minPlayers: 30
+  minPlayers: 60
+  maxPlayers: 100 # The Den: we hit 80 and had no maps lmao
   stations:
     Submarine:
       stationProto: StandardNanotrasenStation
@@ -45,6 +47,7 @@
           #engineering
             AtmosphericTechnician: [ 2, 4 ]
             ChiefEngineer: [ 1, 1 ]
+            SeniorEngineer: [ 2, 2 ]
             StationEngineer: [ 4, 6 ]
             TechnicalAssistant: [ 2, 3 ]
           #medical
@@ -54,6 +57,7 @@
             MedicalIntern: [ 2, 3 ]
             Paramedic: [ 2, 3 ]
             Psychologist: [ 1, 2 ]
+            SeniorPhysician: [ 2, 2 ]
           #security
             Brigmedic: [ 1, 1 ]
             Detective: [ 1, 1 ]
@@ -62,6 +66,7 @@
             PrisonGuard: [ 1, 2 ]
             SecurityOfficer: [ 4, 6 ]
             SecurityCadet: [ 3, 4 ]
+            SeniorOfficer: [ 2, 2 ]
             Warden: [ 1, 1 ]
           #service
             Bartender: [ 2, 3 ]
@@ -79,14 +84,19 @@
             ServiceWorker: [ 2, 3 ]
             Zookeeper: [ 2, 2 ]
           #science
-            MedicalBorg: [ 2, 3 ]
             Chaplain: [ 1, 1 ]
             ForensicMantis: [ 1, 1 ]
             ResearchAssistant: [ 2, 3 ]
             ResearchDirector: [ 1, 1 ]
-            Scientist: [ 3, 4 ]
+            Roboticist: [ 2, 2 ]
+            Scientist: [ 3, 3 ]
+            SeniorResearcher: [ 2, 2 ]
           #supply
             CargoTechnician: [ 4, 6 ]
             MailCarrier: [ 1, 2 ]
             SalvageSpecialist: [ 3, 5 ]
             Quartermaster: [ 1, 1 ]
+          #silicon
+            Borg: [ 2, 2 ]
+            MedicalBorg: [ 2, 3 ]
+            StationAi: [ 1, 1 ]

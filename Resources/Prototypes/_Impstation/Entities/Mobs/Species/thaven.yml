@@ -91,7 +91,7 @@
           32:
             sprite: _DEN/Mobs/Species/Thaven/displacement.rsi
             state: jumpsuit
-      head:
+      head: # Replaced by offsets, left for posterity
         sizeMaps:
           32:
             sprite: _DEN/Mobs/Species/Thaven/displacement.rsi
@@ -106,12 +106,37 @@
           32:
             sprite: _DEN/Mobs/Species/Thaven/displacement.rsi
             state: hands
-    femaleDisplacements:
+      belt: # TheDen
+        sizeMaps:
+          32:
+            sprite: _DEN/Mobs/Species/Thaven/displacement.rsi
+            state: belt
+    femaleDisplacements: # TheDen
       jumpsuit:
         sizeMaps:
           32:
             sprite: _DEN/Mobs/Species/Thaven/displacement.rsi
-            state: jumpsuit-female
+            state: jumpsuit-female # The only actual female-specific displacement
+      head: # Replaced by offsets, left for posterity
+        sizeMaps:
+          32:
+            sprite: _DEN/Mobs/Species/Thaven/displacement.rsi
+            state: head
+      outerClothing:
+        sizeMaps:
+          32:
+            sprite: _DEN/Mobs/Species/Thaven/displacement.rsi
+            state: outerclothing_hardsuit
+      gloves:
+        sizeMaps:
+          32:
+            sprite: _DEN/Mobs/Species/Thaven/displacement.rsi
+            state: hands
+      belt: # TheDen
+        sizeMaps:
+          32:
+            sprite: _DEN/Mobs/Species/Thaven/displacement.rsi
+            state: belt
 
   - type: Tag
     tags:
@@ -137,7 +162,7 @@
           32:
             sprite: _DEN/Mobs/Species/Thaven/displacement.rsi
             state: jumpsuit
-      head:
+      head: # Replaced by offsets, left for posterity
         sizeMaps:
           32:
             sprite: _DEN/Mobs/Species/Thaven/displacement.rsi
@@ -152,9 +177,34 @@
           32:
             sprite: _DEN/Mobs/Species/Thaven/displacement.rsi
             state: hands
-    femaleDisplacements:
+      belt: # TheDen
+        sizeMaps:
+          32:
+            sprite: _DEN/Mobs/Species/Thaven/displacement.rsi
+            state: belt
+    femaleDisplacements: # TheDen
       jumpsuit:
         sizeMaps:
           32:
             sprite: _DEN/Mobs/Species/Thaven/displacement.rsi
-            state: jumpsuit-female
+            state: jumpsuit-female # The only actual female-specific displacement
+      head: # Replaced by offsets, left for posterity
+        sizeMaps:
+          32:
+            sprite: _DEN/Mobs/Species/Thaven/displacement.rsi
+            state: head
+      outerClothing:
+        sizeMaps:
+          32:
+            sprite: _DEN/Mobs/Species/Thaven/displacement.rsi
+            state: outerclothing_hardsuit
+      gloves:
+        sizeMaps:
+          32:
+            sprite: _DEN/Mobs/Species/Thaven/displacement.rsi
+            state: hands
+      belt: # TheDen
+        sizeMaps:
+          32:
+            sprite: _DEN/Mobs/Species/Thaven/displacement.rsi
+            state: belt
