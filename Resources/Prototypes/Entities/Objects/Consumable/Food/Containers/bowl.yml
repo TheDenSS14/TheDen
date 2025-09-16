@@ -47,10 +47,6 @@
       visible: false
   - type: MixableSolution
     solution: food
-  - type: Food
-    edible: Drink
-    solution: food
-    destroyOnEmpty: false
   - type: DamageOnLand
     damage:
       types:
