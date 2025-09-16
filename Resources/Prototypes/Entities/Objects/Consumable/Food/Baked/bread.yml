@@ -35,6 +35,7 @@
 - type: entity
   parent: [ FoodInjectableBase, LaunchableProjectileBase ] # Frontier: added LaunchableProjectileBase, located in \Resources\Prototypes\_NF\Entities\Objects\Weapons\Guns\Projectiles\base_projectiles.yml
   id: FoodBreadBase
+  abstract: true # Den
   components:
   - type: Item
     size: Normal
