@@ -15,10 +15,22 @@
   description: A Rapid Part Exchange Device, perfect for quickly upgrading machines.
   components:
   - type: Sprite
-    sprite: Objects/Specific/Research/rped.rsi
-    state: icon
+    sprite: _NF/Objects/Specific/Research/rped.rsi
+    layers:
+      - state: icon
+      - state: icon-unshaded
+        shader: unshaded
   - type: Item
-    sprite: Objects/Specific/Research/rped.rsi
+    sprite: _NF/Objects/Specific/Research/rped.rsi
+    inhandVisuals:
+      left:
+        - state: inhand-left
+        - state: inhand-left-unshaded
+          shader: unshaded
+      right:
+        - state: inhand-right
+        - state: inhand-right-unshaded
+          shader: unshaded
     size: Normal
   - type: GuideHelp
     guides:
