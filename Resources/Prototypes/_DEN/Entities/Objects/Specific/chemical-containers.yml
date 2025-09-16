@@ -1,6 +1,7 @@
 - type: entity
   parent: Jug
   id: JugDiethylamine
+  suffix: Diethylamine
   components:
     - type: Label
       currentLabel: reagent-name-diethylamine
@@ -14,6 +15,7 @@
 - type: entity
   parent: Jug
   id: JugCryoxadone
+  suffix: Cryoxadone
   components:
     - type: Label
       currentLabel: reagent-name-cryoxadone
@@ -27,6 +29,7 @@
 - type: entity
   parent: Jug
   id: JugLeft4Zed
+  suffix: Left4Zed
   components:
     - type: Label
       currentLabel: reagent-name-left4-zed
@@ -40,6 +43,7 @@
 - type: entity
   parent: Jug
   id: JugUnstableMutagen
+  suffix: UnstableMutagen
   components:
     - type: Label
       currentLabel: reagent-name-unstable-mutagen
@@ -53,6 +57,7 @@
 - type: entity
   parent: Jug
   id: JugDylovene
+  suffix: Dylovene
   components:
     - type: Label
       currentLabel: reagent-name-dylovene
@@ -66,6 +71,7 @@
 - type: entity
   parent: Jug
   id: JugRobustHarvest
+  suffix: RobustHarvest
   components:
     - type: Label
       currentLabel: reagent-name-robust-harvest
@@ -79,6 +85,7 @@
 - type: entity
   parent: Jug
   id: JugPhalanximine
+  suffix: Phalanximine
   components:
     - type: Label
       currentLabel: reagent-name-phalaximime
