@@ -12,7 +12,7 @@
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 # SPDX-FileCopyrightText: 2025 therealDLondon
 #
-# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 - type: gameMap
   id: Submarine
@@ -84,7 +84,6 @@
             ServiceWorker: [ 2, 3 ]
             Zookeeper: [ 2, 2 ]
           #science
-            MedicalBorg: [ 2, 3 ]
             Chaplain: [ 1, 1 ]
             ForensicMantis: [ 1, 1 ]
             ResearchAssistant: [ 2, 3 ]
@@ -97,3 +96,7 @@
             MailCarrier: [ 1, 2 ]
             SalvageSpecialist: [ 3, 5 ]
             Quartermaster: [ 1, 1 ]
+          #silicon
+            Borg: [ 2, 2 ]
+            MedicalBorg: [ 2, 3 ]
+            StationAi: [ 1, 1 ]

@@ -1,7 +1,8 @@
-# SPDX-FileCopyrightText: 2025 Rosycup <178287475+Rosycup@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Kellaris
+# SPDX-FileCopyrightText: 2025 Rosycup
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: entity
   name: weapon case
@@ -107,11 +108,13 @@
 
 - type: entity
   name: document case
-  parent: WeaponCaseShortExplosives
+  parent: [ WeaponCaseShortExplosives, ContentsExplosionResistanceBase, ContentsIgnitionPreventionBase ]
   id: WeaponCaseShortDocuments
   description: A reinforced casing for storing important documents.
   suffix: Short
   components:
+  - type: ExplosionResistance
+    damageCoefficient: 0
   - type: Sprite
     sprite: _NF/Objects/Storage/Cases/documentcaseshort.rsi
   - type: Item
@@ -119,11 +122,12 @@
   - type: Storage
     maxItemSize: Normal
     grid:
-    - 0,0,3,0 # fits a 4x1 blueprint
+    - 0,0,3,2 # fits a 4x3 blueprint
     whitelist:
       tags:
       - Document
       - Paper
+      - Folder
 
 - type: entity
   name: weapon case
