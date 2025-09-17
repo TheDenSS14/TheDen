@@ -324,7 +324,7 @@
   cost: 3
   items:
   - ClothingBackpackNapsack
-    
+
 - type: loadout
   id: LoadoutSyringe
   category: GeneralItems
@@ -366,14 +366,21 @@
   cost: 0
   items:
     - PillCanisterEstradiol
-      
+
 - type: loadout
   id: LoadoutSyringeEstradiol
   category: GeneralItems
   cost: 0
   items:
     - SyringeEstradiol
-      
+
+- type: loadout
+  id: LoadoutPillCanisterTestosterone
+  category: GeneralItems
+  cost: 0
+  items:
+    - PillCanisterTestosterone
+
 - type: loadout
   id: LoadoutSyringeTestosterone
   category: GeneralItems

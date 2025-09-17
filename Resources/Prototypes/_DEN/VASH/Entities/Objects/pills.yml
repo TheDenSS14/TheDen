@@ -36,6 +36,8 @@
         maxVol: 1
         reagents:
         - ReagentId: Sugar #Just a placeholder, as we don't have pregnancy.
+          Quantity: 4 # den edit
+        - ReagentId: Estradiol #den edit. combination birth control contains estrogen
           Quantity: 1
 
 - type: entity #Copied from Entities/Objects/Specific/chemistry-bottles.yml
