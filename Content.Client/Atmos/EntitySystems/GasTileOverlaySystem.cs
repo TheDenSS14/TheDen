@@ -35,7 +35,6 @@ namespace Content.Client.Atmos.EntitySystems
         [Dependency] private readonly SpriteSystem _spriteSys = default!;
 
         private GasTileOverlay _overlay = default!;
-        private GasTileHeatOverlay _heatOverlay = default!;
 
         public override void Initialize()
         {
@@ -45,16 +44,12 @@ namespace Content.Client.Atmos.EntitySystems
 
             _overlay = new GasTileOverlay(this, EntityManager, _resourceCache, ProtoMan, _spriteSys);
             _overlayMan.AddOverlay(_overlay);
-
-            _heatOverlay = new GasTileHeatOverlay();
-            _overlayMan.AddOverlay(_heatOverlay);
         }
 
         public override void Shutdown()
         {
             base.Shutdown();
             _overlayMan.RemoveOverlay<GasTileOverlay>();
-            _overlayMan.RemoveOverlay<GasTileHeatOverlay>();
         }
 
         private void OnHandleState(EntityUid gridUid, GasTileOverlayComponent comp, ref ComponentHandleState args)
