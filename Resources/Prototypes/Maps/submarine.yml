@@ -18,7 +18,7 @@
   id: Submarine
   mapName: 'Submarine'
   mapPath: /Maps/TheDen/submarine.yml
-  minPlayers: 60
+  minPlayers: 70
   maxPlayers: 100 # The Den: we hit 80 and had no maps lmao
   stations:
     Submarine:
@@ -45,7 +45,7 @@
             Magistrate: [ 1, 1 ]
             AdministrativeAssistant: [ 1, 1 ]
           #engineering
-            AtmosphericTechnician: [ 2, 4 ]
+            AtmosphericTechnician: [ 2, 2 ]
             ChiefEngineer: [ 1, 1 ]
             SeniorEngineer: [ 2, 2 ]
             StationEngineer: [ 4, 6 ]
@@ -72,7 +72,7 @@
             Bartender: [ 2, 3 ]
             Botanist: [ 2, 4 ]
             Boxer: [ 2, 2 ]
-            Chef: [ 3, 4 ]
+            Chef: [ 2, 2 ]
             Clown: [ 1, 2 ]
             HeadOfPersonnel: [ 1, 1 ]
             Janitor: [ 2, 3 ]
