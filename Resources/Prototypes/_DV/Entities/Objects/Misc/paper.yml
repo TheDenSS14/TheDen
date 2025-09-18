@@ -257,6 +257,11 @@
   name: Papermoon classic color paper ream
   description: Brighten up your records and more with Papermoon colored paper, in the six classic colors you've come to know and love. Dyed throughout for maximum colorfastness.
   components:
+  - type: Item
+    sprite: Objects/Storage/boxes.rsi
+    size: Small
+    shape:
+    - 0,0,0,1
   - type: Sprite
     sprite: _DV/Objects/Misc/bureaucracy.rsi
     layers:
