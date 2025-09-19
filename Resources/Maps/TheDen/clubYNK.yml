@@ -4,8 +4,8 @@ meta:
   engineVersion: 267.0.0
   forkId: ""
   forkVersion: ""
-  time: 09/19/2025 08:08:53
-  entityCount: 4009
+  time: 09/19/2025 20:12:37
+  entityCount: 4034
 maps:
 - 1
 grids:
@@ -12303,6 +12303,151 @@ entities:
     - type: Transform
       pos: -0.58215976,47.552326
       parent: 2
+- proto: ClosetEmergencyFilledRandom
+  entities:
+  - uid: 4010
+    components:
+    - type: Transform
+      pos: 14.5,7.5
+      parent: 2
+  - uid: 4011
+    components:
+    - type: Transform
+      pos: 19.5,7.5
+      parent: 2
+  - uid: 4012
+    components:
+    - type: Transform
+      pos: 25.5,7.5
+      parent: 2
+  - uid: 4017
+    components:
+    - type: Transform
+      pos: -24.5,7.5
+      parent: 2
+  - uid: 4018
+    components:
+    - type: Transform
+      pos: -19.5,7.5
+      parent: 2
+  - uid: 4019
+    components:
+    - type: Transform
+      pos: -13.5,7.5
+      parent: 2
+- proto: ClosetEmergencyN2
+  entities:
+  - uid: 4021
+    components:
+    - type: Transform
+      pos: -23.5,7.5
+      parent: 2
+  - uid: 4022
+    components:
+    - type: Transform
+      pos: -17.5,7.5
+      parent: 2
+  - uid: 4023
+    components:
+    - type: Transform
+      pos: -12.5,7.5
+      parent: 2
+- proto: ClosetEmergencyN2FilledRandom
+  entities:
+  - uid: 4014
+    components:
+    - type: Transform
+      pos: 15.5,7.5
+      parent: 2
+  - uid: 4015
+    components:
+    - type: Transform
+      pos: 26.5,7.5
+      parent: 2
+  - uid: 4016
+    components:
+    - type: Transform
+      pos: 21.5,7.5
+      parent: 2
+- proto: ClosetFireFilled
+  entities:
+  - uid: 4013
+    components:
+    - type: Transform
+      pos: 20.5,7.5
+      parent: 2
+  - uid: 4020
+    components:
+    - type: Transform
+      pos: -18.5,7.5
+      parent: 2
+- proto: ClosetWallEmergencyFilledRandom
+  entities:
+  - uid: 4024
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: -21.5,23.5
+      parent: 2
+  - uid: 4025
+    components:
+    - type: Transform
+      pos: -12.5,32.5
+      parent: 2
+  - uid: 4026
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: -11.5,27.5
+      parent: 2
+  - uid: 4027
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 13.5,27.5
+      parent: 2
+  - uid: 4028
+    components:
+    - type: Transform
+      pos: 14.5,32.5
+      parent: 2
+  - uid: 4029
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 23.5,23.5
+      parent: 2
+  - uid: 4032
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 6.5,-2.5
+      parent: 2
+  - uid: 4033
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: -4.5,-2.5
+      parent: 2
+- proto: ClosetWallFireFilledRandom
+  entities:
+  - uid: 4030
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 18.5,23.5
+      parent: 2
+  - uid: 4031
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: -16.5,23.5
+      parent: 2
+  - uid: 4034
+    components:
+    - type: Transform
+      pos: 5.5,3.5
+      parent: 2
 - proto: ClothingEyesGlassesMeson
   entities:
   - uid: 3989
@@ -12922,9 +13067,9 @@ entities:
       containers:
       - drink
     - type: PressurizedSolution
-      sprayFizzinessThresholdRoll: 0.14042743
+      sprayFizzinessThresholdRoll: 0.037507713
     - type: MeleeWeapon
-      nextAttack: -1222.7236732
+      nextAttack: -1222.7236731
     - type: EmitSoundOnCollide
       nextSound: -2013.6192751
     - type: Physics
@@ -12952,7 +13097,7 @@ entities:
       containers:
       - drink
     - type: PressurizedSolution
-      sprayFizzinessThresholdRoll: 0.3599691
+      sprayFizzinessThresholdRoll: 0.40785083
     - type: MeleeWeapon
       nextAttack: -1607.8566214
     - type: EmitSoundOnCollide
@@ -12982,7 +13127,7 @@ entities:
       containers:
       - drink
     - type: PressurizedSolution
-      sprayFizzinessThresholdRoll: 0.71959734
+      sprayFizzinessThresholdRoll: 0.62711245
     - type: MeleeWeapon
       nextAttack: -1583.5566457
     - type: EmitSoundOnCollide
@@ -13012,7 +13157,7 @@ entities:
       containers:
       - drink
     - type: PressurizedSolution
-      sprayFizzinessThresholdRoll: 0.68006027
+      sprayFizzinessThresholdRoll: 0.4546325
     - type: MeleeWeapon
       nextAttack: -824.2907383
     - type: EmitSoundOnCollide
@@ -13042,7 +13187,7 @@ entities:
       containers:
       - drink
     - type: PressurizedSolution
-      sprayFizzinessThresholdRoll: 0.52930456
+      sprayFizzinessThresholdRoll: 0.7299296
     - type: MeleeWeapon
       nextAttack: -1460.0567692
     - type: EmitSoundOnCollide
@@ -13072,7 +13217,7 @@ entities:
       containers:
       - drink
     - type: PressurizedSolution
-      sprayFizzinessThresholdRoll: 0.62908983
+      sprayFizzinessThresholdRoll: 0.59057766
     - type: MeleeWeapon
       nextAttack: -1498.0567312
     - type: EmitSoundOnCollide
@@ -13102,7 +13247,7 @@ entities:
       containers:
       - drink
     - type: PressurizedSolution
-      sprayFizzinessThresholdRoll: 0.26896375
+      sprayFizzinessThresholdRoll: 0.021871142
     - type: MeleeWeapon
       nextAttack: -825.6907369
     - type: EmitSoundOnCollide
@@ -13132,7 +13277,7 @@ entities:
       containers:
       - drink
     - type: PressurizedSolution
-      sprayFizzinessThresholdRoll: 0.65330917
+      sprayFizzinessThresholdRoll: 0.7624484
     - type: MeleeWeapon
       nextAttack: -829.7907328
     - type: EmitSoundOnCollide
@@ -13162,7 +13307,7 @@ entities:
       containers:
       - drink
     - type: PressurizedSolution
-      sprayFizzinessThresholdRoll: 0.5107774
+      sprayFizzinessThresholdRoll: 0.8971334
     - type: MeleeWeapon
       nextAttack: -1387.6235083
     - type: EmitSoundOnCollide
@@ -13192,7 +13337,7 @@ entities:
       containers:
       - drink
     - type: PressurizedSolution
-      sprayFizzinessThresholdRoll: 0.9455426
+      sprayFizzinessThresholdRoll: 0.33165678
     - type: MeleeWeapon
       nextAttack: -1362.2902003
     - type: EmitSoundOnCollide
@@ -13222,9 +13367,9 @@ entities:
       containers:
       - drink
     - type: PressurizedSolution
-      sprayFizzinessThresholdRoll: 0.8094453
+      sprayFizzinessThresholdRoll: 0.9752201
     - type: MeleeWeapon
-      nextAttack: -1317.7569115
+      nextAttack: -1317.7569114
     - type: EmitSoundOnCollide
       nextSound: -2013.6192751
     - type: Physics
@@ -13252,7 +13397,7 @@ entities:
       containers:
       - drink
     - type: PressurizedSolution
-      sprayFizzinessThresholdRoll: 0.70294833
+      sprayFizzinessThresholdRoll: 0.53143233
     - type: MeleeWeapon
       nextAttack: -1288.3236076
     - type: EmitSoundOnCollide
@@ -13282,7 +13427,7 @@ entities:
       containers:
       - drink
     - type: PressurizedSolution
-      sprayFizzinessThresholdRoll: 0.38237697
+      sprayFizzinessThresholdRoll: 0.40518296
     - type: MeleeWeapon
       nextAttack: -1267.590295
     - type: EmitSoundOnCollide
@@ -13312,7 +13457,7 @@ entities:
       containers:
       - drink
     - type: PressurizedSolution
-      sprayFizzinessThresholdRoll: 0.62426275
+      sprayFizzinessThresholdRoll: 0.098044194
     - type: MeleeWeapon
       nextAttack: -1201.1570281
     - type: EmitSoundOnCollide
@@ -13342,7 +13487,7 @@ entities:
       containers:
       - drink
     - type: PressurizedSolution
-      sprayFizzinessThresholdRoll: 0.6712478
+      sprayFizzinessThresholdRoll: 0.746583
     - type: MeleeWeapon
       nextAttack: -1177.923718
     - type: EmitSoundOnCollide
@@ -13372,7 +13517,7 @@ entities:
       containers:
       - drink
     - type: PressurizedSolution
-      sprayFizzinessThresholdRoll: 0.92902166
+      sprayFizzinessThresholdRoll: 0.38605678
     - type: MeleeWeapon
       nextAttack: -1098.3904642
     - type: EmitSoundOnCollide
@@ -13402,7 +13547,7 @@ entities:
       containers:
       - drink
     - type: PressurizedSolution
-      sprayFizzinessThresholdRoll: 0.8429087
+      sprayFizzinessThresholdRoll: 0.10531562
     - type: MeleeWeapon
       nextAttack: -1020.2238757
     - type: EmitSoundOnCollide
@@ -13432,7 +13577,7 @@ entities:
       containers:
       - drink
     - type: PressurizedSolution
-      sprayFizzinessThresholdRoll: 0.15501983
+      sprayFizzinessThresholdRoll: 0.286641
     - type: MeleeWeapon
       nextAttack: -1123.3237726
     - type: EmitSoundOnCollide
@@ -13462,7 +13607,7 @@ entities:
       containers:
       - drink
     - type: PressurizedSolution
-      sprayFizzinessThresholdRoll: 0.6685218
+      sprayFizzinessThresholdRoll: 0.03929902
     - type: MeleeWeapon
       nextAttack: -951.1906114
     - type: EmitSoundOnCollide
@@ -13492,7 +13637,7 @@ entities:
       containers:
       - drink
     - type: PressurizedSolution
-      sprayFizzinessThresholdRoll: 0.82628083
+      sprayFizzinessThresholdRoll: 0.5059526
     - type: MeleeWeapon
       nextAttack: -953.7239422
     - type: EmitSoundOnCollide
@@ -13522,7 +13667,7 @@ entities:
       containers:
       - drink
     - type: PressurizedSolution
-      sprayFizzinessThresholdRoll: 0.655758
+      sprayFizzinessThresholdRoll: 0.39818665
     - type: MeleeWeapon
       nextAttack: -905.92399
     - type: EmitSoundOnCollide
