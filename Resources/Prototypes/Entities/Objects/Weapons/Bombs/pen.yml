@@ -26,6 +26,8 @@
   - type: OnUseTimerTrigger
     delay: 4
     examinable: false
+  - type: EmitSoundOnUse
+    handle: false
 
 - type: entity
   parent: BaseItem
