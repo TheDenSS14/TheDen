@@ -1,4 +1,4 @@
 # Glowing
-marking-glowingeyes = Eyes (Glowing)
-marking-glowingeyer = Right Eye (Glowing)
-marking-glowingeyel = Left Eye (Glowing)
+marking-HumanEyesGlow = Eyes (Glowing)
+marking-HumanEyesGlowR = Right Eye (Glowing)
+marking-HumanEyesGlowL = Left Eye (Glowing)
