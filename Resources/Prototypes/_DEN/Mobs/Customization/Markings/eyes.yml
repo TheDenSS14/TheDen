@@ -1,0 +1,44 @@
+- type: marking
+  id: HumanEyesGlow
+  bodyPart: Eyes
+  markingCategory: Face
+  speciesRestriction: [Human , Oni , Harpy , Lamia , Felinid , IPC]
+  coloring:
+    default:
+      type:
+        !type:EyeColoring
+          negative: false
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Body/eyes.rsi
+    state: glowingeyes
+  shader: unshaded
+
+- type: marking
+  id: HumanEyesGlowR
+  bodyPart: Eyes
+  markingCategory: Face
+  speciesRestriction: [Human , Oni , Harpy , Lamia , Felinid , IPC]
+  coloring:
+    default:
+      type:
+        !type:EyeColoring
+          negative: false
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Body/eyes.rsi
+    state: glowingeyer
+  shader: unshaded
+
+- type: marking
+  id: HumanEyesGlowL
+  bodyPart: Eyes
+  markingCategory: Face
+  speciesRestriction: [Human , Oni , Harpy , Lamia , Felinid , IPC]
+  coloring:
+    default:
+      type:
+        !type:EyeColoring
+          negative: false
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Body/eyes.rsi
+    state: glowingeyel
+  shader: unshaded
