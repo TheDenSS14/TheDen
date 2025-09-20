@@ -40,7 +40,7 @@ public sealed partial class LavalandMapPrototype : IPrototype
 
     #region Atmos
 
-    [DataField]
+    [DataField(customTypeSerializer: typeof(GasArraySerializer))]
     public float[] Atmosphere = new float[Atmospherics.AdjustedNumberOfGases];
 
     [DataField]

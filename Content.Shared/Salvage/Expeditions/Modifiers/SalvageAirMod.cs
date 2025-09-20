@@ -44,6 +44,6 @@ public sealed partial class SalvageAirMod : IPrototype, IBiomeSpecificMod
     /// <summary>
     /// Number of moles of each gas in the mixture.
     /// </summary>
-    [DataField("gases")]
+    [DataField("gases", customTypeSerializer: typeof(GasArraySerializer))]
     public float[] Gases = new float[Atmospherics.AdjustedNumberOfGases];
 }
