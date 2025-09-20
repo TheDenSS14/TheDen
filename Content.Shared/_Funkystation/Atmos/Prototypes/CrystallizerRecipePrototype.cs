@@ -1,3 +1,9 @@
+// SPDX-FileCopyrightText: 2025 Blitz
+// SPDX-FileCopyrightText: 2025 marc-pelletier
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
+using Content.Shared.Atmos;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype;
 
@@ -18,7 +24,7 @@ namespace Content.Shared._Funkystation.Atmos.Prototypes
         [DataField("maximumTemperature")]
         public float MaximumTemperature { get; private set; }
 
-        [DataField("minimumRequirements")]
+        [DataField("minimumRequirements", customTypeSerializer: typeof(GasArraySerializer))]
         public float[] MinimumRequirements { get; private set; } = default!;
 
         [DataField("energyRelease")]
