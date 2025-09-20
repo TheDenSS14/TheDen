@@ -8,26 +8,8 @@
     MetalHydrogen1: 1
   dangerous: false
   minimumRequirements:
-  - 0     # oxygen
-  - 0     # nitrogen
-  - 0     # carbon dioxide
-  - 0     # plasma
-  - 0     # tritium
-  - 0     # vapor
-  - 0     # miasma
-  - 0     # n2o
-  - 0     # frezon
-  - 50    # bz
-  - 0     # healium
-  - 0     # nitrium
-  - 0     # pluox
-  - 300   # hydrogen
-  - 0     # hypernob
-  - 0     # protonitrate
-  - 0     # zauker
-  - 0     # halon
-  - 0     # helium
-  - 0     # antinob
+    BZ: 50
+    Hydrogen: 300
 
 - type: crystallizerRecipe
   id: healiumCrystalRecipe
@@ -39,26 +21,9 @@
     HealiumCrystal: 1
   dangerous: false
   minimumRequirements:
-  - 120   # oxygen
-  - 0     # nitrogen
-  - 0     # carbon dioxide
-  - 50    # plasma
-  - 0     # tritium
-  - 0     # vapor
-  - 0     # miasma
-  - 0     # n2o
-  - 0     # frezon
-  - 0     # bz
-  - 100   # healium
-  - 0     # nitrium
-  - 0     # pluox
-  - 0     # hydrogen
-  - 0     # hypernob
-  - 0     # protonitrate
-  - 0     # zauker
-  - 0     # halon
-  - 0     # helium
-  - 0     # antinob
+    Oxygen: 120
+    Plasma: 50
+    Healium: 100
 
 - type: crystallizerRecipe
   id: protoNitrateCrystalRecipe
@@ -70,26 +35,9 @@
     ProtoNitrateCrystal: 1
   dangerous: false
   minimumRequirements:
-  - 80    # oxygen
-  - 80    # nitrogen
-  - 0     # carbon dioxide
-  - 0     # plasma
-  - 0     # tritium
-  - 0     # vapor
-  - 0     # miasma
-  - 0     # n2o
-  - 0     # frezon
-  - 0     # bz
-  - 0     # healium
-  - 0     # nitrium
-  - 0     # pluox
-  - 0     # hydrogen
-  - 0     # hypernob
-  - 100   # protonitrate
-  - 0     # zauker
-  - 0     # halon
-  - 0     # helium
-  - 0     # antinob
+    Oxygen: 80
+    Nitrogen: 80
+    Proto-Nitrate: 100
 
 - type: crystallizerRecipe
   id: ammoniaCrystalRecipe
@@ -101,26 +49,8 @@
     AmmoniaCrystal: 2
   dangerous: false
   minimumRequirements:
-  - 0     # oxygen
-  - 40    # nitrogen
-  - 0     # carbon dioxide
-  - 0     # plasma
-  - 0     # tritium
-  - 0     # vapor
-  - 0     # miasma
-  - 0     # n2o
-  - 0     # frezon
-  - 0     # bz
-  - 0     # healium
-  - 0     # nitrium
-  - 0     # pluox
-  - 50    # hydrogen
-  - 0     # hypernob
-  - 0     # protonitrate
-  - 0     # zauker
-  - 0     # halon
-  - 0     # helium
-  - 0     # antinob
+    Nitrogen: 40
+    Hydrogen: 50
 
 - type: crystallizerRecipe
   id: supermatterSliverRecipe
@@ -132,26 +62,11 @@
     SupermatterSliver: 1
   dangerous: true
   minimumRequirements:
-  - 4500  # oxygen
-  - 0     # nitrogen
-  - 0     # carbon dioxide
-  - 5000  # plasma
-  - 0     # tritium
-  - 0     # vapor
-  - 0     # miasma
-  - 0     # n2o
-  - 0     # frezon
-  - 200   # bz
-  - 0     # healium
-  - 0     # nitrium
-  - 0     # pluox
-  - 0     # hydrogen
-  - 250   # hypernob
-  - 0     # protonitrate
-  - 0     # zauker
-  - 0     # halon
-  - 0     # helium
-  - 250   # antinob
+    Oxygen: 4500
+    Plasma: 5000
+    BZ: 200
+    Hyper-Noblium: 250
+    Anti-Noblium: 250
 
 - type: crystallizerRecipe
   id: nitrousOxideCrystalRecipe
@@ -163,26 +78,8 @@
     NitrousOxideCrystal: 1
   dangerous: false
   minimumRequirements:
-  - 0     # oxygen
-  - 0     # nitrogen
-  - 0     # carbon dioxide
-  - 0     # plasma
-  - 0     # tritium
-  - 0     # vapor
-  - 0     # miasma
-  - 150   # n2o
-  - 0     # frezon
-  - 30    # bz
-  - 0     # healium
-  - 0     # nitrium
-  - 0     # pluox
-  - 0     # hydrogen
-  - 0     # hypernob
-  - 0     # protonitrate
-  - 0     # zauker
-  - 0     # halon
-  - 0     # helium
-  - 0     # antinob
+    NitrousOxide: 150
+    BZ: 30
 
 - type: crystallizerRecipe
   id: diamondRecipe
@@ -194,26 +91,7 @@
     MaterialDiamond1: 1
   dangerous: false
   minimumRequirements:
-  - 0     # oxygen
-  - 0     # nitrogen
-  - 1500  # carbon dioxide
-  - 0     # plasma
-  - 0     # tritium
-  - 0     # vapor
-  - 0     # miasma
-  - 0     # n2o
-  - 0     # frezon
-  - 0     # bz
-  - 0     # healium
-  - 0     # nitrium
-  - 0     # pluox
-  - 0     # hydrogen
-  - 0     # hypernob
-  - 0     # protonitrate
-  - 0     # zauker
-  - 0     # halon
-  - 0     # helium
-  - 0     # antinob
+    CarbonDioxide: 1500
 
 - type: crystallizerRecipe
   id: plasmaSheetRecipe
@@ -225,26 +103,7 @@
     SheetPlasma1: 1
   dangerous: false
   minimumRequirements:
-  - 0     # oxygen
-  - 0     # nitrogen
-  - 0     # carbon dioxide
-  - 450   # plasma
-  - 0     # tritium
-  - 0     # vapor
-  - 0     # miasma
-  - 0     # n2o
-  - 0     # frezon
-  - 0     # bz
-  - 0     # healium
-  - 0     # nitrium
-  - 0     # pluox
-  - 0     # hydrogen
-  - 0     # hypernob
-  - 0     # protonitrate
-  - 0     # zauker
-  - 0     # halon
-  - 0     # helium
-  - 0     # antinob
+    Plasma: 450
 
 - type: crystallizerRecipe
   id: crystalCellRecipe
@@ -256,26 +115,9 @@
     CrystalCell: 1
   dangerous: false
   minimumRequirements:
-  - 0     # oxygen
-  - 0     # nitrogen
-  - 0     # carbon dioxide
-  - 800   # plasma
-  - 0     # tritium
-  - 0     # vapor
-  - 0     # miasma
-  - 0     # n2o
-  - 0     # frezon
-  - 50    # bz
-  - 0     # healium
-  - 0     # nitrium
-  - 0     # pluox
-  - 0     # hydrogen
-  - 0     # hypernob
-  - 0     # protonitrate
-  - 0     # zauker
-  - 0     # halon
-  - 100   # helium
-  - 0     # antinob
+    Plasma: 800
+    BZ: 50
+    Helium: 100
 
 - type: crystallizerRecipe
   id: zaukeriteRecipe
@@ -287,23 +129,6 @@
     Zaukerite1: 1
   dangerous: false
   minimumRequirements:
-  - 0     # oxygen
-  - 0     # nitrogen
-  - 0     # carbon dioxide
-  - 0     # plasma
-  - 0     # tritium
-  - 0     # vapor
-  - 0     # miasma
-  - 0     # n2o
-  - 0     # frezon
-  - 7.5   # bz
-  - 0     # healium
-  - 0     # nitrium
-  - 0     # pluox
-  - 0     # hydrogen
-  - 0     # hypernob
-  - 0     # protonitrate
-  - 20    # zauker
-  - 0     # halon
-  - 0     # helium
-  - 5     # antinob
+    BZ: 7.5
+    Zauker: 20
+    Anti-Noblium: 5
