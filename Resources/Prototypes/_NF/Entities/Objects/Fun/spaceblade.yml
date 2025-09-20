@@ -17,7 +17,7 @@
     air:
       volume: 1
       moles:
-         - 0.4101137219 # oxygen
+        Oxygen: 0.4101137219
       temperature: 293.15
   - type: Physics
     bodyType: Dynamic
@@ -267,12 +267,5 @@
     air:
       volume: 1
       moles:
-         - 0 # oxygen
-         - 0 # nitrogen
-         - 0 # CO2
-         - 0 # plasma
-         - 0 # tritium
-         - 0 # water vapor
-         - 0 # miasma
-         - 0.4101137219 # N2O
+        NitrousOxide: 0.4101137219
       temperature: 293.15
