@@ -179,7 +179,7 @@
           CarbonDioxide: 0
           Plasma: 0
           Tritium: 0
-          Water: 0
+          WaterVapor: 0
           Ammonia: 0
           NitrousOxide: 0
           Frezon: 0
@@ -188,12 +188,12 @@
           Nitrium: 0
           Pluoxium: 0
           Hydrogen: 0
-          Hyper-Noblium: 0
-          Proto-Nitrate: 0
+          HyperNoblium: 0
+          ProtoNitrate:  0
           Zauker: 0
           Halon: 0
           Helium: 0
-          Anti-Noblium: 0
+          AntiNoblium: 0
         temperature: 293.15
     - type: Destructible
       thresholds:
@@ -880,7 +880,7 @@
     gasMixture:
       volume: 1000
       moles:
-        Hyper-Noblium: 1871.71051
+        HyperNoblium: 1871.71051
       temperature: 293.15
   - type: Destructible
     thresholds:
@@ -920,7 +920,7 @@
     gasMixture:
       volume: 1000
       moles:
-        Proto-Nitrate: 1871.71051
+        ProtoNitrate:  1871.71051
       temperature: 293.15
   - type: Destructible
     thresholds:
@@ -1080,7 +1080,7 @@
     gasMixture:
       volume: 1000
       moles:
-        Anti-Noblium: 1871.71051
+        AntiNoblium: 1871.71051
       temperature: 293.15
   - type: Destructible
     thresholds:

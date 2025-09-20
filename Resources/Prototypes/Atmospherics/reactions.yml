@@ -175,7 +175,7 @@
   maximumTemperature: 75000
   minimumRequirements:
     Nitrium: 0.01
-    Hyper-Noblium: 0.01
+    HyperNoblium: 0.01
   effects:
   - !type:ZaukerProductionReaction {}
 
@@ -204,7 +204,7 @@
   priority: 12
   minimumRequirements:
     Hydrogen: 150
-    Proto-Nitrate: 0.01
+    ProtoNitrate:  0.01
   effects:
   - !type:ProtoNitrateHydrogenConversionReaction {}
 
@@ -215,7 +215,7 @@
   maximumTemperature: 340
   minimumRequirements:
     Tritium: 0.01
-    Proto-Nitrate: 0.01
+    ProtoNitrate:  0.01
   effects:
   - !type:ProtoNitrateTritiumConversionReaction {}
 
@@ -226,7 +226,7 @@
   maximumTemperature: 280
   minimumRequirements:
     BZ: 0.01
-    Proto-Nitrate: 0.01
+    ProtoNitrate:  0.01
   effects:
   - !type:ProtoNitrateBZConversionReaction {}
 
