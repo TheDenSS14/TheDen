@@ -213,8 +213,8 @@
     gasMixture:
       volume: 1000
       moles:
-        Oxygen: 393.0592071 # oxygen 21%
-        Nitrogen: 1478.6513029 # nitrogen 79%
+        Oxygen: 393.0592071 # 21%
+        Nitrogen: 1478.6513029 # 79%
       temperature: 293.15
   - type: Destructible
     thresholds:
@@ -253,7 +253,7 @@
     gasMixture:
       volume: 1000
       moles:
-        Oxygen: 1871.71051 # oxygen
+        Oxygen: 1871.71051
       temperature: 293.15
   - type: Destructible
     thresholds:
@@ -289,7 +289,7 @@
     gasMixture:
       volume: 1000
       moles:
-        Oxygen: 18710.71051 # oxygen
+        Oxygen: 18710.71051
       temperature: 72
   - type: AccessReader
     access: [["Atmospherics"]]
@@ -307,7 +307,7 @@
       gasMixture:
         volume: 1000
         moles:
-          Nitrogen: 1871.71051 # nitrogen
+          Nitrogen: 1871.71051
         temperature: 293.15
     - type: Destructible
       thresholds:
@@ -343,7 +343,7 @@
     gasMixture:
       volume: 1000
       moles:
-        Nitrogen: 18710.71051 # nitrogen
+        Nitrogen: 18710.71051
       temperature: 72
   - type: AccessReader
     access: [["Atmospherics"]]
@@ -361,7 +361,7 @@
       gasMixture:
         volume: 1000
         moles:
-          CarbonDioxide: 1871.71051 # CO2
+          CarbonDioxide: 1871.71051
         temperature: 293.15
     - type: Destructible
       thresholds:
@@ -399,7 +399,7 @@
     gasMixture:
       volume: 1000
       moles:
-        CarbonDioxide: 18710.71051 # CO2
+        CarbonDioxide: 18710.71051
       temperature: 72
   - type: AccessReader
     access: [["Atmospherics"]]
@@ -417,7 +417,7 @@
       gasMixture:
         volume: 1000
         moles:
-          Plasma: 1871.71051 # plasma
+          Plasma: 1871.71051
         temperature: 293.15
     - type: Destructible
       thresholds:
@@ -458,7 +458,7 @@
       gasMixture:
         volume: 1000
         moles:
-          Tritium: 1871.71051 # Tritium
+          Tritium: 1871.71051
         temperature: 293.15
     - type: Destructible
       thresholds:
@@ -499,7 +499,7 @@
       gasMixture:
         volume: 1000
         moles:
-          WaterVapor: 1871.71051 # Water vapor
+          WaterVapor: 1871.71051
         temperature: 293.15
     - type: Destructible
       thresholds:
@@ -538,7 +538,7 @@
       gasMixture:
         volume: 1000
         moles:
-          Ammonia: 1871.71051 # Ammonia
+          Ammonia: 1871.71051
         temperature: 293.15
     - type: Destructible
       thresholds:
@@ -579,7 +579,7 @@
       gasMixture:
         volume: 1000
         moles:
-          NitrousOxide: 1871.71051 # N2O
+          NitrousOxide: 1871.71051
         temperature: 293.15
     - type: Destructible
       thresholds:
@@ -618,7 +618,7 @@
     gasMixture:
       volume: 1000
       moles:
-        Frezon: 1871.71051 # Frezon
+        Frezon: 1871.71051
       temperature: 293.15
   - type: Destructible
     thresholds:
