@@ -1,4 +1,5 @@
 using System.Linq;
+using Content.Server.Atmos.Components;
 using Content.Shared.Atmos;
 using Content.Shared.Atmos.Components;
 using Robust.Shared.GameObjects;
