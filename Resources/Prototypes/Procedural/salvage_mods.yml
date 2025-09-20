@@ -140,22 +140,17 @@
   id: Breathable
   cost: 0
   gases:
-    - 21.824779 # oxygen
-    - 82.10312 # nitrogen
+    Oxygen: 21.824779
+    Nitrogen: 82.10312
 
 #- type: salvageAirMod
 #  id: Sleepy
 #  cost: 1
 #  desc: Dangerous atmosphere
 #  gases:
-#    - 21.824779 # oxygen
-#    - 72.10312 # nitrogen
-#    - 0
-#    - 0
-#    - 0
-#    - 0
-#    - 0
-#    - 10 # nitrous oxide
+#    Oxygen: 21.824779
+#    Nitrogen: 72.10312
+#    NitrousOxide: 10
 #  biomes:
 #    - Caves
 #    #- LowDesert
@@ -168,9 +163,9 @@
   cost: 2
   desc: Dangerous atmosphere
   gases:
-    - 21.824779 # oxygen
-    - 77.10312 # nitrogen
-    - 10 # carbon dioxide
+    Oxygen: 21.824779
+    Nitrogen: 77.10312
+    CarbonDioxide: 10
   biomes:
     - Caves
     #- LowDesert
@@ -183,9 +178,8 @@
   cost: 3
   desc: Toxic atmosphere
   gases:
-    - 21.824779 # oxygen
-    - 0
-    - 82.10312 # carbon dioxide
+    Oxygen: 21.824779
+    CarbonDIoxide: 82.10312
   biomes:
     - Caves
     - Snow
@@ -196,10 +190,7 @@
   cost: 4
   desc: Toxic atmosphere
   gases:
-    - 0
-    - 0
-    - 0
-    - 103.927899 # plasma
+    Plasma: 103.927899
   biomes:
     - Caves
     - Lava
@@ -209,10 +200,8 @@
   cost: 5
   desc: Volatile atmosphere
   gases:
-    - 21.824779 # oxygen
-    - 0
-    - 0
-    - 82.10312 # plasma
+    Oxygen: 21.824779
+    Plasma: 82.10312
   biomes:
     - Caves
     - Lava
@@ -253,7 +242,7 @@
   proto: SnowyLabs
   biomes:
     - Snow
-    
+
 - type: salvageDungeonMod
   id: Haunted
   proto: Haunted
