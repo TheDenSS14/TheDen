@@ -1,3 +1,4 @@
+using Content.Shared.Atmos;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype;
 
@@ -18,7 +19,7 @@ namespace Content.Shared._Funkystation.Atmos.Prototypes
         [DataField("maximumTemperature")]
         public float MaximumTemperature { get; private set; }
 
-        [DataField("minimumRequirements")]
+        [DataField("minimumRequirements", customTypeSerializer: typeof(GasArraySerializer))]
         public float[] MinimumRequirements { get; private set; } = default!;
 
         [DataField("energyRelease")]
