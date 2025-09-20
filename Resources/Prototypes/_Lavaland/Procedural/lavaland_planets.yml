@@ -17,9 +17,9 @@
     components:
     - MiningShuttle
   atmosphere:
-  - 10.524779 # oxygen, not enough for breathing
-  - 25.10312 # nitrogen
-  - 8.21301 # carbon dioxide
+    Oxygen: 10.524779 # not enough for breathing
+    Nitrogen: 25.10312
+    CarbonDioxide: 8.21301
   weather:
   - AshfallLight
   - AshfallHeavy
