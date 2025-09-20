@@ -173,6 +173,27 @@
     - type: GasCanister
       gasMixture:
         volume: 1000
+        moles: # List of gases for easy reference
+          Oxygen: 0
+          Nitrogen: 0
+          CarbonDioxide: 0
+          Plasma: 0
+          Tritium: 0
+          Water: 0
+          Ammonia: 0
+          NitrousOxide: 0
+          Frezon: 0
+          BZ: 0
+          Healium: 0
+          Nitrium: 0
+          Pluoxium: 0
+          Hydrogen: 0
+          Hyper-Noblium: 0
+          Proto-Nitrate: 0
+          Zauker: 0
+          Halon: 0
+          Helium: 0
+          Anti-Noblium: 0
         temperature: 293.15
     - type: Destructible
       thresholds:
