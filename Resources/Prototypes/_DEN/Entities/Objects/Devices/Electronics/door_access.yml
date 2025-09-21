@@ -1,0 +1,51 @@
+# Event Accesses
+# Do not map these into a regular station map. These are used for event maps only, to prevent NT crew
+# from breaking into restricted event areas.
+
+- type: entity
+  parent: DoorElectronics
+  id: DoorElectronicsEventWorker
+  suffix: Event Worker, Locked
+  components:
+  - type: AccessReader
+    access: [["EventWorker"]]
+
+- type: entity
+  parent: DoorElectronics
+  id: DoorElectronicsEventCommand
+  suffix: Event Command, Locked
+  components:
+  - type: AccessReader
+    access: [["EventCommand"]]
+
+- type: entity
+  parent: DoorElectronics
+  id: DoorElectronicsEventMedical
+  suffix: Event Medical, Locked
+  components:
+  - type: AccessReader
+    access: [["EventMedical"]]
+
+- type: entity
+  parent: DoorElectronics
+  id: DoorElectronicsEventSecurity
+  suffix: Event Security, Locked
+  components:
+  - type: AccessReader
+    access: [["EventSecurity"]]
+
+- type: entity
+  parent: DoorElectronics
+  id: DoorElectronicsEventService
+  suffix: Event Service, Locked
+  components:
+  - type: AccessReader
+    access: [["EventService"]]
+
+- type: entity
+  parent: DoorElectronics
+  id: DoorElectronicsEventVIP
+  suffix: Event VIP, Locked
+  components:
+  - type: AccessReader
+    access: [["EventVIP"]]
