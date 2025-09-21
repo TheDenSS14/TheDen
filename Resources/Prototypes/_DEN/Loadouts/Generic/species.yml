@@ -48,7 +48,7 @@
       group: LoadoutAirTank
   items:
     - DoubleEmergencyWaterVaporTankFilled
-    
+
 # Feroxi Extra Water
 - type: loadout
   id: LoadoutSpeciesExtraWater
@@ -60,7 +60,7 @@
         - Feroxi
   items:
     - DrinkWaterBottleFull
-    
+
 - type: loadout
   id: LoadoutSpeciesWaterjug
   category: Species
@@ -85,5 +85,15 @@
         - Vox
         - Feroxi
         - SlimePerson
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutOuter
+
+# Vox Full Tank
+- type: loadout
+  id: LoadoutSpeciesNitrogenTank
+  category: Species
+  cost: 0
+  items:
+    - NitrogenTankFilled
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      species:
+        - Vox
