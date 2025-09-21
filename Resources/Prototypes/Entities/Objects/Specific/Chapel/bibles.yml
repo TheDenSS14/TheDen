@@ -87,6 +87,7 @@
     sound: /Audio/SimpleStation14/Items/Handling/book_drop.ogg
   - type: EmitSoundOnLand
     sound: /Audio/SimpleStation14/Items/Handling/book_drop.ogg
+  indestructible: true # DEN - to make this and its dependent entities indestructible for cultural sensitivity reasons
 
 - type: entity
   parent: HolyBookBible
