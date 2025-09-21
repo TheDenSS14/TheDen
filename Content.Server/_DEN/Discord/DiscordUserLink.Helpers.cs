@@ -3,6 +3,7 @@ using System.Threading.Tasks;
 using NetCord;
 using Robust.Shared.Network;
 using Robust.Shared.Utility;
+using Color = NetCord.Color;
 
 
 namespace Content.Server._DEN.Discord;
@@ -43,6 +44,31 @@ public sealed partial class DiscordUserLink
 
         var value = guildUser.RoleIds.Any(roleId => _patronRoleIds.Contains(roleId));
         return value;
+    }
+
+    public bool GetRoleColor(NetUserId userId, out string? hex)
+    {
+        var link = GetLink(userId);
+        hex = null;
+
+        if (link is not { } discordLink)
+            return false;
+
+        if (_discordLink.Client == null
+            || !_discordLink.Client.Cache.Guilds.TryGetValue(_discordLink.GuildId, out var guild))
+            return false;
+
+        var guildUser = GetDiscordIdAsUser(discordLink.DiscordUserId);
+
+        if (guildUser == null)
+            return false;
+
+        var roles = guildUser
+            .GetRoles(guild)
+            .OrderByDescending(r => r.Position);
+
+        hex = (from role in roles where role.Color.RawValue != 0 select role.Color.ToString()).FirstOrDefault();
+        return hex != null;
     }
 
     public bool IsStaff(NetUserId userId)
