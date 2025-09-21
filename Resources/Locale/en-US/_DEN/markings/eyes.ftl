@@ -4,5 +4,5 @@ marking-HumanEyesGlowR = Right Eye (Glowing)
 marking-HumanEyesGlowL = Left Eye (Glowing)
 
 marking-HumanEyesGlow-glowingeyes = Eyes (Glowing)
-marking-HumanEyesGlow-glowingeyer = Right Eye (Glowing)
-marking-HumanEyesGlow-glowingeyel = Left Eye (Glowing)
+marking-HumanEyesGlowR-glowingeyer = Right Eye (Glowing)
+marking-HumanEyesGlowL-glowingeyel = Left Eye (Glowing)
