@@ -375,15 +375,13 @@
         - MedicalBorg
         - ResearchDirector
         - ForensicMantis
+        - Chaplain
+        - Librarian
     - !type:CharacterLogicOrRequirement
       requirements:
         - !type:CharacterTraitRequirement
           traits:
             - LatentPsychic
-        - !type:CharacterJobRequirement
-          jobs:
-            - Chaplain
-            - Librarian
     - !type:CharacterLogicOrRequirement
       requirements:
         - !type:CharacterSpeciesRequirement
