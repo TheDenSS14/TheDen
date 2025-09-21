@@ -46,3 +46,72 @@
   - type: ContainerFill
     containers:
       board: [ DoorElectronicsMAG ]
+
+## Event Doors
+## DO NOT MAP ON STATIONS. This is for events only.
+
+- type: entity
+  parent: Airlock
+  id: AirlockEventWorkerLocked
+  suffix: Event Worker, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsEventWorker ]
+  - type: Wires
+    layoutId: AirlockEvent
+
+- type: entity
+  parent: AirlockCommand
+  id: AirlockEventCommandLocked
+  suffix: Event Command, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsEventCommand ]
+  - type: Wires
+    layoutId: AirlockEvent
+
+- type: entity
+  parent: AirlockCommand
+  id: AirlockEventVIPLocked
+  suffix: Event VIP, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsEventVIP ]
+  - type: Wires
+    layoutId: AirlockEvent
+
+- type: entity
+  parent: AirlockMedical
+  id: AirlockEventMedicalLocked
+  suffix: Event Medical, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsEventMedical ]
+  - type: Wires
+    layoutId: AirlockEvent
+
+- type: entity
+  parent: AirlockSecurity
+  id: AirlockEventSecurityLocked
+  suffix: Event Security, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsEventSecurity ]
+  - type: Wires
+    layoutId: AirlockEvent
+
+- type: entity
+  parent: AirlockService
+  id: AirlockEventServiceLocked
+  suffix: Event Service, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsEventService ]
+  - type: Wires
+    layoutId: AirlockEvent
