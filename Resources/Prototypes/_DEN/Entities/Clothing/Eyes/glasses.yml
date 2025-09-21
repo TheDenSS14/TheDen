@@ -88,3 +88,37 @@
   - type: GuideHelp
     guides:
     - Medical
+
+- type: entity
+  parent: [ClothingEyesGlassesMedSec]
+  id: ClothingEyesGlassesBSOAviator
+  name: blueshield aviators
+  description: Advanced Aviators with a deep blue hue and a built-in HUD capable of displaying Security, Medical, and Diagnostics information.
+  components:
+  - type: Sprite
+    sprite: _DEN/Clothing/Eyes/Glasses/bsoglasses_aviators.rsi
+  - type: Clothing
+    sprite: _DEN/Clothing/Eyes/Glasses/bsoglasses_aviators.rsi
+
+- type: entity
+  parent: [ClothingEyesGlassesMedSec]
+  id: ClothingEyesGlassesBSOBig
+  name: big blueshield glasses
+  description: Advanced Sunglasses with big lenses, a deep blue hue, and a built-in HUD capable of displaying Security, Medical, and Diagnostics information.
+  components:
+  - type: Sprite
+    sprite: _DEN/Clothing/Eyes/Glasses/bsoglasses_big.rsi
+  - type: Clothing
+    sprite: _DEN/Clothing/Eyes/Glasses/bsoglasses_big.rsi
+
+- type: entity
+  parent: [ClothingEyesGlassesMedSec]
+  id: ClothingEyesGlassesBSOVisor
+  name: blueshield visor glasses
+  description: Advanced Visor Sunglasses with a deep blue hue and a built-in HUD capable of displaying Security, Medical, and Diagnostics information.
+  components:
+  - type: Sprite
+    sprite: _DEN/Clothing/Eyes/Glasses/bsoglasses_visor.rsi
+  - type: Clothing
+    sprite: _DEN/Clothing/Eyes/Glasses/bsoglasses_visor.rsi
+
