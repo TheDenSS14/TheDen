@@ -46,6 +46,12 @@ public sealed partial class DiscordUserLink
         return value;
     }
 
+    public bool IsPatron(GuildUser user, NetUserId userId)
+    {
+        var value = user.RoleIds.Any(roleId => _patronRoleIds.Contains(roleId));
+        return value;
+    }
+
     public bool GetRoleColor(NetUserId userId, out string? hex)
     {
         var link = GetLink(userId);
@@ -61,6 +67,9 @@ public sealed partial class DiscordUserLink
         var guildUser = GetDiscordIdAsUser(discordLink.DiscordUserId);
 
         if (guildUser == null)
+            return false;
+
+        if (!IsPatron(guildUser, userId))
             return false;
 
         var roles = guildUser
