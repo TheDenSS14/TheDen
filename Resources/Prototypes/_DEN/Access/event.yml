@@ -1,0 +1,40 @@
+# Event accesses. Do not map these into a regular station map.
+# These are used for event maps only, to prevent NT crew from breaking into restricted event areas.
+
+- type: accessLevel
+  id: EventWorker
+  name: id-card-access-level-event-worker
+
+- type: accessLevel
+  id: EventCommand
+  name: id-card-access-level-event-command
+
+- type: accessLevel
+  id: EventMedical
+  name: id-card-access-level-event-medical
+
+- type: accessLevel
+  id: EventSecurity
+  name: id-card-access-level-event-security
+
+- type: accessLevel
+  id: EventService
+  name: id-card-access-level-event-service
+
+- type: accessLevel
+  id: EventVIP
+  name: id-card-access-level-event-vip
+
+- type: accessGroup
+  id: Event
+  tags:
+  - EventWorker
+  - EventCommand
+  - EventMedical
+  - EventSecurity
+  - EventService
+  - EventVIP
+
+# I am TENTATIVELY not adding these to the AllAccess group because the Captain may not necessarily
+# have full access to the event map, especially if the event map is supposed to be handled by a third party.
+# I may change my mind later.
