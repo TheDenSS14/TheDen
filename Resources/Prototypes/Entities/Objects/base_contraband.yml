@@ -181,16 +181,6 @@
   - type: Contraband
     allowedDepartments: [ Security, Command ]
 
-# combat gloves
-- type: entity
-  id: BaseSecurityEngineeringContraband
-  parent: BaseRestrictedContraband
-  abstract: true
-  components:
-  - type: Contraband
-    allowedDepartments: [ Security, Engineering ]
-    allowedJobs: [ BlueshieldOfficer ]
-
 # flash payload (modular grenade)
 - type: entity
   id: BaseSecurityEpistemicsCommandContraband
@@ -200,6 +190,25 @@
   - type: Contraband
     allowedDepartments: [ Security, Epistemics, Command ]
     allowedJobs: [ BlueshieldOfficer ]
+
+# jaws
+- type: entity
+  id: BaseSecurityEpistemicsEngineeringContraband
+  parent: BaseRestrictedContraband
+  abstract: true
+  components:
+  - type: Contraband
+    allowedDepartments: [ Security, Epistemics, Engineering ]
+    allowedJobs: [ BlueshieldOfficer ]
+
+# emergency jaws and general EMT-only items
+- type: entity
+  id: BaseEMTContraband
+  parent: BaseRestrictedContraband
+  abstract: true
+  components:
+  - type: Contraband
+    allowedJobs: [ BlueshieldOfficer, Brigmedic, Paramedic ]
 
 # intellicard
 - type: entity
