@@ -63,10 +63,18 @@
     - type: loadout
       id: LoadoutBSOTerminus
 
-#- type: characterItemGroup
-#  id: LoadoutJOBEyes
-#  maxItems: 1
-#  items:
+- type: characterItemGroup
+  id: LoadoutBlueshieldOfficerEyes
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutBlueshieldSunglasses
+    - type: loadout
+      id: LoadoutBlueshieldAviators
+    - type: loadout
+      id: LoadoutBlueshieldSunglassesBig
+    - type: loadout
+      id: LoadoutBlueshieldSunglassesVisor
 #
 #- type: characterItemGroup
 #  id: LoadoutJOBGloves
