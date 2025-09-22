@@ -6,5 +6,5 @@
 lathe-category-towel = Towels
 lathe-category-assistance-devices = Assistance Devices
 lathe-category-hygiene-products = Hygiene Products
-
+lathe-category-air-tanks = Air Tanks
 

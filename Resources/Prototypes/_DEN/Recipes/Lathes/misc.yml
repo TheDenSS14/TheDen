@@ -16,6 +16,7 @@
 - type: latheRecipe
   id: OxygenTank
   result: OxygenTank
+  category: AirTanks
   completetime: 4
   materials:
     Steel: 300
@@ -23,6 +24,7 @@
 - type: latheRecipe
   id: NitrogenTank
   result: NitrogenTank
+  category: AirTanks
   completetime: 4
   materials:
     Steel: 300
@@ -30,6 +32,7 @@
 - type: latheRecipe
   id: NitrousOxideTank
   result: NitrousOxideTank
+  category: AirTanks
   completetime: 4
   materials:
     Steel: 300
@@ -37,6 +40,7 @@
 - type: latheRecipe
   id: WaterVaporTank
   result: WaterVaporTank
+  category: AirTanks
   completetime: 4
   materials:
     Steel: 300
@@ -44,6 +48,7 @@
 - type: latheRecipe
   id: PlasmaTank
   result: PlasmaTank
+  category: AirTanks
   completetime: 4
   materials:
     Steel: 300
@@ -52,6 +57,7 @@
 - type: latheRecipe
   id: DoubleEmergencyOxygenTank
   result: DoubleEmergencyOxygenTank
+  category: AirTanks
   completetime: 3
   materials:
     Steel: 160
@@ -59,6 +65,7 @@
 - type: latheRecipe
   id: DoubleEmergencyNitrogenTank
   result: DoubleEmergencyNitrogenTank
+  category: AirTanks
   completetime: 3
   materials:
     Steel: 160
@@ -66,6 +73,7 @@
 - type: latheRecipe
   id: DoubleEmergencyWaterVaporTank
   result: DoubleEmergencyWaterVaporTank
+  category: AirTanks
   completetime: 3
   materials:
     Steel: 160
@@ -73,6 +81,7 @@
 - type: latheRecipe
   id: DoubleEmergencyPlasmaTank
   result: DoubleEmergencyPlasmaTank
+  category: AirTanks
   completetime: 3
   materials:
     Steel: 160
@@ -81,6 +90,7 @@
 - type: latheRecipe
   id: ExtendedEmergencyOxygenTank
   result: ExtendedEmergencyOxygenTank
+  category: AirTanks
   completetime: 2
   materials:
     Steel: 100
@@ -88,6 +98,7 @@
 - type: latheRecipe
   id: ExtendedEmergencyNitrogenTank
   result: ExtendedEmergencyNitrogenTank
+  category: AirTanks
   completetime: 2
   materials:
     Steel: 100
@@ -95,6 +106,7 @@
 - type: latheRecipe
   id: ExtendedEmergencyWaterVaporTank
   result: ExtendedEmergencyWaterVaporTank
+  category: AirTanks
   completetime: 2
   materials:
     Steel: 100
@@ -102,6 +114,7 @@
 - type: latheRecipe
   id: ExtendedEmergencyPlasmaTank
   result: ExtendedEmergencyPlasmaTank
+  category: AirTanks
   completetime: 2
   materials:
     Steel: 100
@@ -110,6 +123,7 @@
 - type: latheRecipe
   id: EmergencyOxygenTank
   result: EmergencyOxygenTank
+  category: AirTanks
   completetime: 1
   materials:
     Steel: 40
@@ -117,6 +131,7 @@
 - type: latheRecipe
   id: EmergencyNitrogenTank
   result: EmergencyNitrogenTank
+  category: AirTanks
   completetime: 1
   materials:
     Steel: 40
@@ -124,6 +139,7 @@
 - type: latheRecipe
   id: EmergencyFunnyOxygenTank
   result: EmergencyFunnyOxygenTank
+  category: AirTanks
   completetime: 1
   materials:
     Steel: 42 # 42 is a (slightly) funny number
@@ -131,6 +147,7 @@
 - type: latheRecipe
   id: EmergencyWaterVaporTank
   result: EmergencyWaterVaporTank
+  category: AirTanks
   completetime: 1
   materials:
     Steel: 40
@@ -138,6 +155,7 @@
 - type: latheRecipe
   id: EmergencyPlasmaTank
   result: EmergencyPlasmaTank
+  category: AirTanks
   completetime: 1
   materials:
     Steel: 40
