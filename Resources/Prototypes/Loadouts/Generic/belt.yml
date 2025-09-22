@@ -1,8 +1,9 @@
-# SPDX-FileCopyrightText: 2025 MajorMoth <61519600+MajorMoth@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 Skubman <ba.fallaria@gmail.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 LilNutters
+# SPDX-FileCopyrightText: 2025 MajorMoth
+# SPDX-FileCopyrightText: 2025 Skubman
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: loadout
   id: LoadoutBeltGeneric
@@ -95,6 +96,17 @@
   customColorTint: true
   items:
     - ClothingBeltMartialBlack
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBelt
+
+- type: loadout #DeltaV
+  id: LoadoutClothingBeltPaperwork
+  category: Belt
+  cost: 3
+  customColorTint: true
+  items:
+    - ClothingBeltPaperwork
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutBelt

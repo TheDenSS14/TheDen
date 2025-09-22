@@ -551,7 +551,7 @@ public sealed partial class EmergencyShuttleSystem : EntitySystem
         if (!_loader.TryLoadGrid(map.MapId,
             shuttlePath,
             out var shuttle,
-            // Should be far enough... right? I'm too lazy to bounds check CentCom rn.
+            // Should be far enough... right? I'm too lazy to bounds check CentComm rn.
             offset: new Vector2(500f + ent.Comp2.ShuttleIndex, 0f)))
         {
             Log.Error($"Unable to spawn emergency shuttle {shuttlePath} for {ToPrettyString(ent)}");

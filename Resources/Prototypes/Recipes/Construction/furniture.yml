@@ -12,6 +12,7 @@
 # SPDX-FileCopyrightText: 2023 AJCM-git
 # SPDX-FileCopyrightText: 2023 Kit0vras
 # SPDX-FileCopyrightText: 2023 Nemanja
+# SPDX-FileCopyrightText: 2024 BombasterDS
 # SPDX-FileCopyrightText: 2024 Ed
 # SPDX-FileCopyrightText: 2024 MACMAN2003
 # SPDX-FileCopyrightText: 2024 Nairod
@@ -21,10 +22,11 @@
 # SPDX-FileCopyrightText: 2024 Token
 # SPDX-FileCopyrightText: 2024 brainfood1183
 # SPDX-FileCopyrightText: 2025 CometVoid
+# SPDX-FileCopyrightText: 2025 Eightballll
 # SPDX-FileCopyrightText: 2025 Sir Warock
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 #chairs
 - type: construction
@@ -350,6 +352,41 @@
   canBuildInImpassable: false
   conditions:
     - !type:TileNotBlocked
+
+- type: construction
+  name: cardboard table
+  id: TableCard
+  graph: Table
+  startNode: start
+  targetNode: TableCard
+  category: construction-category-furniture
+  description: a flimsy table made out of cardboard.
+  icon:
+    sprite: Structures/Furniture/Tables/card.rsi
+    state: full
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+  - !type:TileNotBlocked
+
+- type: construction
+  name: cardboard stool
+  id: StoolCard
+  graph: Seat
+  startNode: start
+  targetNode: stoolCard
+  category: construction-category-furniture
+  description: a stool made out of cardboard, held together with hopes and dreams.
+  icon:
+    sprite: Structures/Furniture/chairs.rsi
+    state: card-stool
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+  - !type:TileNotBlocked
+
 
 - type: construction
   name: reinforced glass table
@@ -943,6 +980,24 @@
   icon:
     sprite: Structures/Wallmounts/noticeboard.rsi
     state: noticeboard
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canRotate: true
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  id: Mannequin
+  name: mannequin
+  description: Wooden mannequin designed for clothing displaying
+  graph: Mannequin
+  startNode: start
+  targetNode: mannequin
+  category: construction-category-furniture
+  icon:
+    sprite: Structures/Decoration/mannequin.rsi
+    state: mannequin
   objectType: Structure
   placementMode: SnapgridCenter
   canRotate: true

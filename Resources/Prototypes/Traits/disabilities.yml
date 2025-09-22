@@ -170,6 +170,7 @@
     - !type:TraitAddComponent
       components:
         - type: Muted
+          mutedScream: false # IMP
     - !type:TraitModifyLanguages
       languagesSpoken:
         - Sign

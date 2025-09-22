@@ -1,8 +1,10 @@
-// SPDX-FileCopyrightText: 2025 Lyndomen <49795619+Lyndomen@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 sleepyyapril <flyingkarii@gmail.com>
+// SPDX-FileCopyrightText: 2025 Azzy
+// SPDX-FileCopyrightText: 2025 Lyndomen
+// SPDX-FileCopyrightText: 2025 Shaman
+// SPDX-FileCopyrightText: 2025 portfiend
+// SPDX-FileCopyrightText: 2025 sleepyyapril
 //
-// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+// SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 using System.Linq;
 using System.Text.Json.Serialization;
@@ -18,7 +20,7 @@ namespace Content.Shared._CD.Records;
 public sealed partial class PlayerProvidedCharacterRecords
 {
     public const int TextMedLen = 64;
-    public const int TextVeryLargeLen = 4096;
+    public const int TextVeryLargeLen = 65536;
 
     /* Basic info */
 
@@ -27,6 +29,9 @@ public sealed partial class PlayerProvidedCharacterRecords
     // All
     [DataField]
     public string EmergencyContactName { get; private set; }
+
+    [DataField] // TheDen
+    public string Residency { get; private set; }
 
     // Employment
     [DataField]
@@ -94,6 +99,7 @@ public sealed partial class PlayerProvidedCharacterRecords
     public PlayerProvidedCharacterRecords(
         bool hasWorkAuthorization,
         string emergencyContactName,
+        string residency, // TheDen
         string identifyingFeatures,
         string allergies, string drugAllergies,
         string postmortemInstructions,
@@ -101,6 +107,7 @@ public sealed partial class PlayerProvidedCharacterRecords
     {
         HasWorkAuthorization = hasWorkAuthorization;
         EmergencyContactName = emergencyContactName;
+        Residency = residency; // TheDen
         IdentifyingFeatures = identifyingFeatures;
         Allergies = allergies;
         DrugAllergies = drugAllergies;
@@ -113,6 +120,7 @@ public sealed partial class PlayerProvidedCharacterRecords
     public PlayerProvidedCharacterRecords(PlayerProvidedCharacterRecords other)
     {
         EmergencyContactName = other.EmergencyContactName;
+        Residency = other.Residency; // TheDen
         HasWorkAuthorization = other.HasWorkAuthorization;
         IdentifyingFeatures = other.IdentifyingFeatures;
         Allergies = other.Allergies;
@@ -128,6 +136,7 @@ public sealed partial class PlayerProvidedCharacterRecords
         return new PlayerProvidedCharacterRecords(
             hasWorkAuthorization: true,
             emergencyContactName: "",
+            residency: "", // TheDen
             identifyingFeatures: "",
             allergies: "None",
             drugAllergies: "None",
@@ -142,6 +151,7 @@ public sealed partial class PlayerProvidedCharacterRecords
     {
         // This is ugly but is only used for integration tests.
         var test = EmergencyContactName == other.EmergencyContactName
+                   && Residency == other.Residency // TheDen
                    && HasWorkAuthorization == other.HasWorkAuthorization
                    && IdentifyingFeatures == other.IdentifyingFeatures
                    && Allergies == other.Allergies
@@ -173,10 +183,12 @@ public sealed partial class PlayerProvidedCharacterRecords
 
     private static string ClampString(string str, int maxLen)
     {
+        if (string.IsNullOrWhiteSpace(str))
+            return string.Empty;
+
         if (str.Length > maxLen)
-        {
             return str[..maxLen];
-        }
+
         return str;
     }
 
@@ -195,6 +207,7 @@ public sealed partial class PlayerProvidedCharacterRecords
     {
         EmergencyContactName =
             ClampString(EmergencyContactName, TextMedLen);
+        Residency = ClampString(Residency, TextMedLen); // TheDen
         IdentifyingFeatures = ClampString(IdentifyingFeatures, TextMedLen);
         Allergies = ClampString(Allergies, TextMedLen);
         DrugAllergies = ClampString(DrugAllergies, TextMedLen);
@@ -211,6 +224,10 @@ public sealed partial class PlayerProvidedCharacterRecords
     public PlayerProvidedCharacterRecords WithContactName(string name)
     {
         return new(this) { EmergencyContactName = name};
+    }
+    public PlayerProvidedCharacterRecords WithResidency(string name) // TheDen
+    {
+        return new(this) { Residency = name};
     }
     public PlayerProvidedCharacterRecords WithIdentifyingFeatures(string feat)
     {

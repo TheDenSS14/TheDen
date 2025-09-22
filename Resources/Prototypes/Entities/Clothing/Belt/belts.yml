@@ -539,6 +539,9 @@
         - Skewer
         - MonkeyCube
         - Mayo
+        - Towel
+        - Mustard
+        - Rag
       components:
         - Mousetrap
         - Smokable
@@ -633,6 +636,15 @@
           tags:
           - Sidearm
         insertOnInteract: true
+      # DEN
+      radio:
+        name: clothing-belt-radio
+        priority: -1
+        whitelist:
+          tags:
+            - Radio
+        insertOnInteract: true
+      # DEN
   - type: ItemMapper # DeltaV - adjust for DeltaV sprites.
     mapLayers:
       baton:
@@ -653,6 +665,7 @@
       storagebase: !type:Container
         ents: []
       holster: !type:ContainerSlot {}
+      radio: !type:ContainerSlot {}
   - type: Appearance
 
 - type: entity
@@ -805,11 +818,17 @@
   components:
   - type: StorageFill
     contents:
-      - id: GrenadeFlashBang
-      - id: TearGasGrenade
+#      - id: GrenadeFlashBang # TheDen
+#      - id: TearGasGrenade # TheDen
       - id: Stunbaton
+#      - id: Handcuffs # TheDen
       - id: Handcuffs
-      - id: Handcuffs
+      - id: HoloprojectorSecurity # TheDen
+      - id: FlashlightSeclite # Den
+  - type: ContainerFill
+    containers:
+      radio:
+      - RadioHandheldSecurity
 
 - type: entity
   parent: ClothingBeltMilitaryWebbing
@@ -834,6 +853,48 @@
     sprite: Clothing/Belt/salvagewebbing.rsi
 
 - type: entity
+  parent: ClothingBeltMilitaryWebbing
+  id: ClothingBeltERTWebbing
+  name: ERT chest rig
+  description: A set of tactical webbing issued to ERT operatives.
+  components:
+  - type: Sprite
+    sprite: _DV/Clothing/Belt/securitywebbing.rsi # DeltaV - resprite
+  - type: Clothing
+    sprite: _DV/Clothing/Belt/securitywebbing.rsi # DeltaV - resprite
+
+- type: entity
+  parent: ClothingBeltERTWebbing
+  id: ClothingBeltERTWebbingFilled
+  suffix: Filled
+  components:
+  - type: StorageFill
+    contents:
+      - id: CrowbarRed
+      - id: MedicatedSuture
+      - id: MagazineUniversalMagnum
+      - id: MagazineUniversalMagnum
+  - type: ContainerFill
+    containers:
+      holster:
+      - WeaponPistolUniversal
+
+- type: entity
+  parent: ClothingBeltERTWebbing
+  id: ClothingBeltERTLeaderWebbingFilled
+  description: A set of tactical webbing issued to ERT operatives.
+  suffix: Filled
+  components:
+  - type: StorageFill
+    contents:
+      - id: CrowbarRed
+      - id: MedicatedSuture
+  - type: ContainerFill
+    containers:
+      holster:
+      - WeaponPulsePistol
+
+- type: entity
   parent: [ClothingBeltStorageBase, ContentsExplosionResistanceBase]
   id: ClothingBeltMilitaryWebbing
   name: chest rig
@@ -855,11 +916,20 @@
         insertOnInteract: true
       jaunter:
         name: clothing-belt-jaunter
-        priority: -1
+        priority: -2
         whitelist:
           tags:
           - Jaunter
         insertOnInteract: true
+      # DEN
+      radio:
+        name: clothing-belt-radio
+        priority: -1
+        whitelist:
+          tags:
+            - Radio
+        insertOnInteract: true
+      # DEN
   - type: ItemMapper # DeltaV - adjust for DeltaV sprites.
     mapLayers:
       slp:
@@ -873,6 +943,7 @@
         ents: []
       holster: !type:ContainerSlot {}
       jaunter: !type:ContainerSlot {}
+      radio: !type:ContainerSlot {} # DEN
   - type: Appearance
 
 - type: entity

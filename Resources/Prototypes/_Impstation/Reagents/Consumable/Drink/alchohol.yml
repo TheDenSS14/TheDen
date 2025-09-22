@@ -1,0 +1,21 @@
+- type: reagent
+  id: ThavenBad
+  name: reagent-name-thavenbad
+  parent: BaseAlcohol
+  desc: reagent-desc-thavenbad
+  physicalDesc: reagent-physical-desc-thavenbad
+  flavor: thavenbad
+  color: "#68430b"
+  recognizable: true
+  metamorphicSprite:
+    sprite: _Impstation/Objects/Consumable/Drinks/thavenbadglass.rsi
+    state: icon_empty
+  metamorphicMaxFillLevels: 6
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: false
+  metabolisms:
+    Drink:
+      effects:
+      - !type:SatiateThirst
+        factor: 2
+  fizziness: .1

@@ -6,10 +6,13 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
+using Content.Shared._DV.CCVars;
+using Content.Shared.CCVar;
 using Content.Shared.Drugs;
 using Content.Shared.StatusEffect;
 using Robust.Client.Graphics;
 using Robust.Client.Player;
+using Robust.Shared.Configuration;
 using Robust.Shared.Enums;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
@@ -22,6 +25,7 @@ public sealed class RainbowOverlay : Overlay
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
     [Dependency] private readonly IPlayerManager _playerManager = default!;
     [Dependency] private readonly IEntitySystemManager _sysMan = default!;
+    [Dependency] private readonly IConfigurationManager _config = default!;
 
     public override OverlaySpace Space => OverlaySpace.WorldSpace;
     public override bool RequestScreenTexture => true;
@@ -29,16 +33,27 @@ public sealed class RainbowOverlay : Overlay
 
     public float Intoxication = 0.0f;
     public float TimeTicker = 0.0f;
+    public float Phase = 0.0f;
 
     private const float VisualThreshold = 10.0f;
     private const float PowerDivisor = 250.0f;
+    private float _timeScale = 0.0f;
+    private float _warpScale = 0.0f;
 
     private float EffectScale => Math.Clamp((Intoxication - VisualThreshold) / PowerDivisor, 0.0f, 1.0f);
 
     public RainbowOverlay()
     {
         IoCManager.InjectDependencies(this);
+
         _rainbowShader = _prototypeManager.Index<ShaderPrototype>("Rainbow").InstanceUnique();
+        _config.OnValueChanged(DCCVars.DisableDrugWarping, OnDisableDrugWarpingChanged, invokeImmediately: true);
+    }
+
+    private void OnDisableDrugWarpingChanged(bool disabled)
+    {
+        _timeScale = disabled ? 0.0f : 1.0f;
+        _warpScale = disabled ? 0.0f : 1.0f;
     }
 
     protected override void FrameUpdate(FrameEventArgs args)
@@ -56,7 +71,7 @@ public sealed class RainbowOverlay : Overlay
         if (!statusSys.TryGetTime(playerEntity.Value, DrugOverlaySystem.RainbowKey, out var time, status))
             return;
 
-        var timeLeft = (float) (time.Value.Item2 - time.Value.Item1).TotalSeconds;
+        var timeLeft = (float)(time.Value.Item2 - time.Value.Item1).TotalSeconds;
 
         TimeTicker += args.DeltaSeconds;
 
@@ -66,7 +81,7 @@ public sealed class RainbowOverlay : Overlay
         }
         else
         {
-            Intoxication -= Intoxication/(timeLeft - TimeTicker) * args.DeltaSeconds;
+            Intoxication -= Intoxication / (timeLeft - TimeTicker) * args.DeltaSeconds;
         }
     }
 
@@ -88,7 +103,10 @@ public sealed class RainbowOverlay : Overlay
 
         var handle = args.WorldHandle;
         _rainbowShader.SetParameter("SCREEN_TEXTURE", ScreenTexture);
-        _rainbowShader.SetParameter("effectScale", EffectScale);
+        _rainbowShader.SetParameter("colorScale", EffectScale);
+        _rainbowShader.SetParameter("timeScale", _timeScale);
+        _rainbowShader.SetParameter("warpScale", _warpScale * EffectScale);
+        _rainbowShader.SetParameter("phase", Phase);
         handle.UseShader(_rainbowShader);
         handle.DrawRect(args.WorldBounds, Color.White);
         handle.UseShader(null);

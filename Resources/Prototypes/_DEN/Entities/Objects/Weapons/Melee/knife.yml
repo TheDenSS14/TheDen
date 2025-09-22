@@ -1,0 +1,23 @@
+- type: entity
+  parent: BaseKnife
+  id: TailorsKnife
+  name: tailor's knife
+  description: A simple, wedge-shaped knife designed to cut fabric. Short, narrow, and lacking a grip entirely.
+  components:
+  - type: Tag
+    tags:
+    - Knife
+  - type: MeleeWeapon # You'd be better off punching them
+    attackRate: 1
+    damage:
+      types:
+        Slash: 1
+  - type: DisarmMalus
+    malus: 0.225
+  - type: ThrowingAngle
+    angle: 180
+  - type: Sprite
+    sprite: _DEN/Objects/Weapons/Melee/tailorsknife.rsi
+    state: icon
+  - type: Item
+    sprite: _DEN/Objects/Weapons/Melee/tailorsknife.rsi

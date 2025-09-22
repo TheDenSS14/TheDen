@@ -219,6 +219,12 @@ namespace Content.Server.Database
         Task<PlayerRecord?> GetPlayerRecordByUserId(NetUserId userId, CancellationToken cancel = default);
         #endregion
 
+        #region Discord Linking
+        Task UpdateDiscordLink(NetUserId userId, ulong? discordId);
+        Task UpdateDiscordLink(ulong associatedDiscordId, ulong? discordId);
+        Task<ulong?> GetDiscordLink(NetUserId userId);
+        #endregion
+
         #region Connection Logs
         /// <returns>ID of newly inserted connection log row.</returns>
         Task<int> AddConnectionLogAsync(
@@ -644,6 +650,24 @@ namespace Content.Server.Database
         {
             DbWriteOpsMetric.Inc();
             return RunDbCommand(() => _db.UpdatePlayerRecord(userId, userName, address, hwId));
+        }
+
+        public Task UpdateDiscordLink(NetUserId userId, ulong? discordId)
+        {
+            DbWriteOpsMetric.Inc();
+            return RunDbCommand(() => _db.UpdateDiscordLink(userId, discordId));
+        }
+
+        public Task UpdateDiscordLink(ulong associatedDiscordId, ulong? newDiscordId)
+        {
+            DbWriteOpsMetric.Inc();
+            return RunDbCommand(() => _db.UpdateDiscordLink(associatedDiscordId, newDiscordId));
+        }
+
+        public Task<ulong?> GetDiscordLink(NetUserId userId)
+        {
+            DbReadOpsMetric.Inc();
+            return RunDbCommand(() => _db.GetDiscordLink(userId));
         }
 
         public Task<PlayerRecord?> GetPlayerRecordByUserName(string userName, CancellationToken cancel = default)

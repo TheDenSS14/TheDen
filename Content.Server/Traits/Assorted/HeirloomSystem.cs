@@ -5,6 +5,7 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 using System.Linq;
+using Content.Shared.Examine;
 using Content.Shared.Mood;
 using Content.Shared.Traits.Assorted.Components;
 using Robust.Shared.Timing;
@@ -12,7 +13,7 @@ using Robust.Shared.Timing;
 
 namespace Content.Server.Traits.Assorted;
 
-public sealed class HeirloomSystem : EntitySystem
+public sealed partial class HeirloomSystem : EntitySystem
 {
     [Dependency] private readonly IGameTiming _gameTiming = default!;
 
@@ -25,6 +26,9 @@ public sealed class HeirloomSystem : EntitySystem
         base.Initialize();
 
         _nextUpdate = _gameTiming.CurTime;
+
+        // DEN: Heirloom examine text
+        SubscribeLocalEvent<HeirloomComponent, ExaminedEvent>(OnExamined);
     }
 
     public override void Update(float frameTime)

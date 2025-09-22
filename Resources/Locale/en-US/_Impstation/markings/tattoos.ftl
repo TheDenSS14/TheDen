@@ -1,6 +1,7 @@
-# SPDX-FileCopyrightText: 2025 BloodfiendishOperator <141253729+Diggy0@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 Jakumba <jkmcbennett@hotmail.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 BloodfiendishOperator
+# SPDX-FileCopyrightText: 2025 Jakumba
+# SPDX-FileCopyrightText: 2025 Shaman
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -30,3 +31,44 @@ marking-FootDollJointsTattooRight = Doll Joints Foot Tattoo (Right)
 
 marking-ChestCutHere-chest_cuthere = 'Cut Here' Tattoo
 marking-ChestCutHere = 'Cut Here' Tattoo
+
+marking-HeadHeavyTattoos = Heavy Neck Tattoos
+marking-HeadHeavyTattoos-head_heavy1 = Heavy Neck Tattoos (Lower)
+marking-HeadHeavyTattoos-head_heavy2 = Heavy Neck Tattoos (Upper)
+
+marking-ChestHeavyTattoos = Heavy Chest Tattoos
+marking-ChestHeavyTattoos-chest_heavy1 = Heavy Chest Tattoos (Upper)
+marking-ChestHeavyTattoos-chest_heavy2 = Heavy Chest Tattoos (Middle)
+marking-ChestHeavyTattoos-chest_heavy3 = Heavy Chest Tattoos (Lower)
+
+marking-ArmHeavyTattoosRight = Heavy Arm Tattoos (Right)
+marking-ArmHeavyTattoosRight-r_arm_heavy1 = Heavy Arm Tattoos (Upper)
+marking-ArmHeavyTattoosRight-r_arm_heavy2 = Heavy Arm Tattoos (Lower)
+
+marking-ArmHeavyTattoosLeft = Heavy Arm Tattoos (Left)
+marking-ArmHeavyTattoosLeft-l_arm_heavy1 = Heavy Arm Tattoos (Upper)
+marking-ArmHeavyTattoosLeft-l_arm_heavy2 = Heavy Arm Tattoos (Lower)
+
+marking-HandHeavyTattoosRight = Heavy Hand Tattoos (Right)
+marking-HandHeavyTattoosRight-r_hand_heavy1 = Heavy Hand Tattoos (Outer)
+marking-HandHeavyTattoosRight-r_hand_heavy2 = Heavy Hand Tattoos (Inner)
+
+marking-HandHeavyTattoosLeft = Heavy Hand Tattoos (Left)
+marking-HandHeavyTattoosLeft-l_hand_heavy1 = Heavy Hand Tattoos (Outer)
+marking-HandHeavyTattoosLeft-l_hand_heavy2 = Heavy Hand Tattoos (Inner)
+
+marking-LegHeavyTattoosRight = Heavy Leg Tattoos (Right)
+marking-LegHeavyTattoosRight-r_leg_heavy1 = Heavy Leg Tattoos (Upper)
+marking-LegHeavyTattoosRight-r_leg_heavy2 = Heavy Leg Tattoos (Lower)
+
+marking-LegHeavyTattoosLeft = Heavy Leg Tattoos (Left)
+marking-LegHeavyTattoosLeft-l_leg_heavy1 = Heavy Leg Tattoos (Upper)
+marking-LegHeavyTattoosLeft-l_leg_heavy2 = Heavy Leg Tattoos (Lower)
+
+marking-FootHeavyTattoosRight = Heavy Foot Tattoos (Right)
+marking-FootHeavyTattoosRight-r_foot_heavy1 = Heavy Foot Tattoos (Inner)
+marking-FootHeavyTattoosRight-r_foot_heavy2 = Heavy Foot Tattoos (Outer)
+
+marking-FootHeavyTattoosLeft = Heavy Foot Tattoos (Left)
+marking-FootHeavyTattoosLeft-l_foot_heavy1 = Heavy Foot Tattoos (Inner)
+marking-FootHeavyTattoosLeft-l_foot_heavy2 = Heavy Foot Tattoos (Outer)

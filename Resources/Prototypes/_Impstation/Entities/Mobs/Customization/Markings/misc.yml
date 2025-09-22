@@ -1,11 +1,13 @@
-# SPDX-FileCopyrightText: 2025 Blitz <73762869+BlitzTheSquishy@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 BloodfiendishOperator <141253729+Diggy0@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 Jakumba <jkmcbennett@hotmail.com>
-# SPDX-FileCopyrightText: 2025 Rosycup <178287475+Rosycup@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 Tabitha <64847293+KyuPolaris@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Blitz
+# SPDX-FileCopyrightText: 2025 BloodfiendishOperator
+# SPDX-FileCopyrightText: 2025 Jakumba
+# SPDX-FileCopyrightText: 2025 Rosycup
+# SPDX-FileCopyrightText: 2025 Shaman
+# SPDX-FileCopyrightText: 2025 Tabitha
+# SPDX-FileCopyrightText: 2025 maelines
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 ##i did markings for a lot of different species so for now theyre are all here##
 ##if no one else does it ill do a cleanup of all marking coding in a few months##
@@ -72,6 +74,21 @@
   - sprite: _Impstation/Mobs/Customization/animatedmarkings.rsi
     state: fadingstars3
   shader: unshaded
+
+- type: marking
+  id: Shadow
+  bodyPart: Head
+  markingCategory: Head
+  speciesRestriction: [ Human, Dwarf, Oni, Felinid, Canid, Kitsune, SlimePerson ]
+  forcedColoring: true
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+        color: "#000000"
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/Humanoid/head.rsi
+    state: shadow
 
 - type: marking
   id: DionaLivingNymph
@@ -442,36 +459,28 @@
   shader: unshaded
 
 - type: marking
-  id: SpiderMirror
-  bodyPart: Chest
-  markingCategory: Chest
-  speciesRestriction: [ Arachnid ]
-  forcedColoring: false
-  followSkinColor: false
-  sprites:
-  - sprite: _Impstation/Mobs/Customization/animatedmarkings.rsi
-    state: spidermirror
-  shader: unshaded
-
-- type: marking
   id: SpiderGlowEyes
   bodyPart: Eyes
-  markingCategory: Head
+  markingCategory: Eyes
   speciesRestriction: [ Arachnid ]
-  forcedColoring: false
-  followSkinColor: false
+  coloring:
+    default:
+      type:
+        !type:EyeColoring
   sprites:
-  - sprite: _Impstation/Mobs/Customization/markingsbundle1.rsi
-    state: spidergloweyes
+  - sprite: Mobs/Species/Arachnid/parts.rsi
+    state: eyes
   shader: unshaded
 
 - type: marking
   id: SpiderEyesMulti
   bodyPart: Eyes
-  markingCategory: Head
+  markingCategory: Eyes
   speciesRestriction: [ Arachnid ]
-  forcedColoring: false
-  followSkinColor: false
+  coloring:
+    default:
+      type:
+        !type:EyeColoring
   sprites:
   - sprite: _Impstation/Mobs/Customization/markingsbundle1.rsi
     state: spidereyesmulti1

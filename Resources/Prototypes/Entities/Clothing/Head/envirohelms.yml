@@ -1,8 +1,11 @@
-# SPDX-FileCopyrightText: 2025 Skubman <ba.fallaria@gmail.com>
-# SPDX-FileCopyrightText: 2025 Tirochora <leotabletdb@gmail.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Shaman
+# SPDX-FileCopyrightText: 2025 Skubman
+# SPDX-FileCopyrightText: 2025 Tirochora
+# SPDX-FileCopyrightText: 2025 Vanessa
+# SPDX-FileCopyrightText: 2025 Winter
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: entity
   parent: ClothingHeadEnvirohelmBase
@@ -24,7 +27,7 @@
       head:
       - state: equipped-HELMET
       - state: on-equipped-HELMET
-  - type: ToggleableLightVisuals
+  - type: ToggleableVisuals
     inhandVisuals:
       left:
       - state: on-inhand-left
@@ -204,7 +207,7 @@
     sprite: Clothing/Head/Envirohelms/ancientvoid.rsi
   - type: Clothing
     sprite: Clothing/Head/Envirohelms/ancientvoid.rsi
-  - type: ToggleableLightVisuals
+  - type: ToggleableVisuals
     clothingVisuals:
       head:
       - state: on-equipped-HELMET
@@ -510,7 +513,7 @@
 - type: entity
   parent: ClothingHeadEnvirohelmBase
   id: ClothingHeadEnvirohelmCentcomAgent
-  name: CentCom agent's envirosuit helmet
+  name: CentComm agent's envirosuit helmet
   description: A special containment helmet designed for CentCom's legal team. You know, so any coffee spills don't kill the poor sod.
   components:
   - type: Sprite
@@ -521,8 +524,8 @@
 - type: entity
   parent: ClothingHeadEnvirohelmBase
   id: ClothingHeadEnvirohelmCentcomOfficial
-  name: CentCom official's envirosuit helmet
-  description: A special containment helmet designed for CentCom Staff. They sure do love their green.
+  name: CentComm official's envirosuit helmet
+  description: A special containment helmet designed for CentComm Staff. They sure do love their green.
   components:
   - type: Sprite
     sprite: Clothing/Head/Envirohelms/centcom_official.rsi
@@ -532,8 +535,8 @@
 - type: entity
   parent: ClothingHeadEnvirohelmBase
   id: ClothingHeadEnvirohelmCentcomOfficer
-  name: CentCom officer's envirosuit helmet
-  description: A special containment helmet designed for CentCom Officers.
+  name: CentComm officer's envirosuit helmet
+  description: A special containment helmet designed for CentComm Officers.
   components:
   - type: Sprite
     sprite: Clothing/Head/Envirohelms/centcom_officer.rsi
@@ -753,7 +756,7 @@
 - type: entity
   parent: ClothingHeadEnvirohelmCustomBase
   id: ClothingHeadEnvirohelmMantis
-  name: mantis' envirosuit helmet
+  name: mantis envirosuit helmet
   description: An envirosuit helmet for the forensic mantis with a fancy gold stripe.
   components:
   - type: Sprite

@@ -1,6 +1,6 @@
-# SPDX-FileCopyrightText: 2023 Bakke <luringens@protonmail.com>
-# SPDX-FileCopyrightText: 2025 Rosycup <178287475+Rosycup@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Bakke
+# SPDX-FileCopyrightText: 2025 Rosycup
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -11,3 +11,12 @@
   components:
     - type: Implanter
       implant: BionicSyrinxImplant
+
+- type: entity # DeltaV - CentComm Implanter (Anti-Antag and Mindshield)
+  parent: BaseImplantOnlyImplanterCentcomm
+  id: CentCommImplanter
+  name: centcomm implanter
+  suffix: mindshield
+  components:
+  - type: Implanter
+    implant: CentCommImplant

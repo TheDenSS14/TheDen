@@ -9,6 +9,9 @@ using Content.Shared.Verbs;
 using Content.Shared.Popups;
 using Robust.Shared.Player;
 using Content.Shared.Administration.Logs;
+using Content.Shared.CombatMode;
+using Content.Shared.Mobs.Systems;
+
 
 namespace Content.Shared.Chemistry.EntitySystems;
 
@@ -19,7 +22,10 @@ public abstract class SharedHypospraySystem : EntitySystem
     [Dependency] protected readonly SharedSolutionContainerSystem _solutionContainers = default!;
     [Dependency] protected readonly ISharedAdminLogManager _adminLogger = default!;
     [Dependency] protected readonly ReactiveSystem _reactiveSystem = default!;
-    
+    [Dependency] protected readonly MobStateSystem MobState = default!;
+    [Dependency] protected readonly SharedCombatModeSystem Combat = default!;
+    [Dependency] protected readonly ISharedAdminLogManager AdminLogger = default!;
+
     public override void Initialize()
     {
         SubscribeLocalEvent<HyposprayComponent, GetVerbsEvent<AlternativeVerb>>(AddToggleModeVerb);

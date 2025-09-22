@@ -1,8 +1,6 @@
-# SPDX-FileCopyrightText: 2024 gluesniffler <159397573+gluesniffler@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 gluesniffler <linebarrelerenthusiast@gmail.com>
-# SPDX-FileCopyrightText: 2024 sleepyyapril <flyingkarii@gmail.com>
-# SPDX-FileCopyrightText: 2024 sleepyyapril <***>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 gluesniffler
+# SPDX-FileCopyrightText: 2025 Jakumba
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -162,15 +160,14 @@
   components:
   - type: MovementBodyPart
     walkSpeed: 3.125
-    sprintSpeed: 5.625
+    sprintSpeed: 5.3
   - type: BodyPart
     onAdd:
-    - type: StepTriggerImmune
+    - type: ProtectedFromStepTriggers
       whitelist:
         types:
         - Shard
         - Mousetrap
-        - SlipEntity
 
 - type: entity
   parent: RightLegCybernetic
@@ -180,12 +177,38 @@
   components:
   - type: MovementBodyPart
     walkSpeed: 3.125
-    sprintSpeed: 5.625
+    sprintSpeed: 5.3
   - type: BodyPart
     onAdd:
-    - type: StepTriggerImmune
+    - type: ProtectedFromStepTriggers
       whitelist:
         types:
         - Shard
         - Mousetrap
         - SlipEntity
+
+- type: entity
+  parent: LeftArmCybernetic #Den
+  id: PryingLeftArm
+  name: Prying left arm
+  description: A cybernetic left arm with the ability to pry doors open.
+  components:
+  - type: BodyPart
+    onAdd:
+    - type: Prying
+      speedModifier: 1.5
+    - type: UseDelay # For insta prying
+      delay: 1
+
+- type: entity
+  parent: RightArmCybernetic #Den
+  id: PryingRightArm
+  name: Prying right arm
+  description: A cybernetic right arm with the ability to pry doors open.
+  components:
+  - type: BodyPart
+    onAdd:
+    - type: Prying
+      speedModifier: 1.5
+    - type: UseDelay # For insta prying
+      delay: 1

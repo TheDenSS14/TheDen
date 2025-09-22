@@ -12,7 +12,7 @@ on:
 
 jobs:
   this_aint_right:
-    if: github.actor != 'sleepyyapril'
+    if: github.actor != 'sleepyyapril' || github.actor != 'ZigTag'
     name: Submodule update in pr found
     runs-on: ubuntu-latest
     steps:

@@ -1,4 +1,6 @@
 # SPDX-FileCopyrightText: 2025 Perry Fraser
+# SPDX-FileCopyrightText: 2025 Sir Warock
+# SPDX-FileCopyrightText: 2025 Winter
 # SPDX-FileCopyrightText: 2025 pathetic meowmeow
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
@@ -20,6 +22,9 @@
     - state: base
     - state: state_surgery
       shader: unshaded
+    - state: state_stasis
+      map: [ "enum.ToggleableVisuals.Layer" ]
+      shader: unshaded
   # Begin DeltaV Additions - toggle between stasis and surgery speed
   - type: ItemToggle
     verbToggleOn: advanced-operating-table-verb-activate-stasis
@@ -32,21 +37,14 @@
   - type: ComponentToggler
     components:
     - type: AntiRotOnBuckle
-    - type: Sprite
-      sprite: _DEN/Structures/Furniture/Tables/advanced_surgery_table.rsi
-      noRot: true
-      layers:
-      - state: base
-      - state: state_stasis
-        shader: unshaded
     deactivatedComponents:
     - type: SurgerySpeedModifier
       speedModifier: 1.5
-    - type: Sprite
-      sprite: _DEN/Structures/Furniture/Tables/advanced_surgery_table.rsi
-      noRot: true
-      layers:
-      - state: base
-      - state: state_surgery
-        shader: unshaded
+  - type: Appearance
+  - type: GenericVisualizer
+    visuals:
+      enum.ToggleableVisuals.Enabled:
+        enum.ToggleableVisuals.Layer:
+          True: { visible: True }
+          False: { visible: False }
   # End DeltaV Additions

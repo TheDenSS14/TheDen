@@ -19,6 +19,9 @@
 # SPDX-FileCopyrightText: 2024 neuPanda
 # SPDX-FileCopyrightText: 2024 router
 # SPDX-FileCopyrightText: 2025 DESKTOP-0V0K4HQ\Rosy
+# SPDX-FileCopyrightText: 2025 Eightballll
+# SPDX-FileCopyrightText: 2025 MajorMoth
+# SPDX-FileCopyrightText: 2025 RosySaturniidae
 # SPDX-FileCopyrightText: 2025 Sapphire
 # SPDX-FileCopyrightText: 2025 Tabitha
 # SPDX-FileCopyrightText: 2025 VMSolidus
@@ -192,6 +195,26 @@
     - claps
 
 - type: emote
+  id: ClapSingle
+  name: chat-emote-name-clap-single
+  category: Hands
+  icon: Interface/Emotes/clap.png #TODO: Needs a sprite that distinguishes it better from clap
+  whitelist:
+    components:
+    - Hands
+  blacklist:
+    components:
+    - BorgChassis
+  chatMessages: [ "chat-emote-msg-clap-single" ]
+  chatTriggers:
+    - clap
+    - claps once
+    - claps their hands together
+    - claps her hands together
+    - claps his hands together
+    - claps its hands together
+
+- type: emote
   id: Snap
   name: chat-emote-name-snap
   category: Hands
@@ -226,10 +249,6 @@
     - BorgChassis
   chatMessages: ["chat-emote-msg-thump"]
   chatTriggers:
-    - thump
-    - thumps
-    - thumping
-    - thumped
     - thump tail
     - thumps tail
     - thumps their tail
@@ -250,7 +269,28 @@
     - BorgChassis
   chatMessages: ["chat-emote-msg-salute"]
   chatTriggers:
+    - salute
+    - salute.
+    - salute!
     - salutes
+    - salutes.
+    - salutes!
+
+- type: emote
+  id: Gasp
+  name: chat-emote-name-gasp
+  icon: Interface/Emotes/vocal.png
+  whitelist:
+    components:
+    - Respirator
+  chatMessages: ["chat-emote-msg-gasp"]
+  chatTriggers:
+    - gasp
+    - gasp.
+    - gasp!
+    - gasps
+    - gasps.
+    - gasps!
 
 - type: emote
   id: DefaultDeathgasp
@@ -415,6 +455,7 @@
     - BorgChassis
   chatMessages: [ mars ]
   chatTriggers:
+    - mar
     - mars
 
 - type: emote
@@ -428,6 +469,7 @@
   blacklist:
     components:
     - BorgChassis
-  chatMessages: [ wurble ]
+  chatMessages: [ wurbles ]
   chatTriggers:
     - wurble
+    - wurbles

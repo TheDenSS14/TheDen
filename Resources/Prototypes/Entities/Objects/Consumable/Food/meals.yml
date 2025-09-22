@@ -347,12 +347,15 @@
   - type: SolutionContainerManager
     solutions:
       food:
-        maxVol: 15
+        maxVol: 17 # DEN: 15 -> 17 (12 + 5)
         reagents:
-        - ReagentId: Nutriment
-          Quantity: 6
-        - ReagentId: Vitamin
-          Quantity: 1
+        - ReagentId: Nutriment # DEN - 6 -> 5
+          Quantity: 5
+        - ReagentId: Vitamin # DEN - 1 -> 3
+          Quantity: 3
+        - ReagentId: Protein # DEN - Add protein
+          Quantity: 4
+  - type: Food
   - type: Tag
     tags:
     - Meat
@@ -365,7 +368,7 @@
   description: BBQ ribs, slathered in a healthy coating of BBQ sauce. The least vegan thing to ever exist.
   components:
   - type: Food
-    trash: 
+    trash:
     - FoodKebabSkewer
   - type: FlavorProfile
     flavors:
@@ -628,7 +631,7 @@
   description: Buttery.
   components:
   - type: Food
-    trash: 
+    trash:
     - FoodPlate
   - type: FlavorProfile
     flavors:

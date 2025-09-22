@@ -3,6 +3,7 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
+using Content.Shared.Armor;
 using Content.Shared.Atmos;
 using Content.Shared.Clothing.Components;
 using Content.Shared.Inventory;
@@ -18,11 +19,26 @@ public sealed class FireProtectionSystem : EntitySystem
     {
         base.Initialize();
 
+        SubscribeLocalEvent<FireProtectionComponent, ArmorExamineEvent>(OnArmorExamine);
         SubscribeLocalEvent<FireProtectionComponent, InventoryRelayedEvent<GetFireProtectionEvent>>(OnGetProtection);
     }
 
     private void OnGetProtection(Entity<FireProtectionComponent> ent, ref InventoryRelayedEvent<GetFireProtectionEvent> args)
     {
         args.Args.Reduce(ent.Comp.Reduction);
+    }
+    private void OnArmorExamine(EntityUid uid, FireProtectionComponent component, ref ArmorExamineEvent args)
+    {
+        var value = MathF.Round(component.Reduction * 100, 1);
+
+        args.Msg.PushNewline();
+        if (component.ProtectContents)
+        {
+            args.Msg.AddMarkupOrThrow(Loc.GetString("fire-resistance-contents-coefficient-value"));
+        }
+        else
+        {
+            args.Msg.AddMarkupOrThrow(Loc.GetString("fire-resistance-coefficient-value", ("value", value)));
+        }
     }
 }

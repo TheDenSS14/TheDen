@@ -1,8 +1,8 @@
-# SPDX-FileCopyrightText: 2023 AR <121322002+toasterpm87@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2023 Colin-Tel <113523727+Colin-Tel@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 Rosycup <178287475+Rosycup@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 portfiend <109661617+portfiend@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 AR
+# SPDX-FileCopyrightText: 2023 Colin-Tel
+# SPDX-FileCopyrightText: 2025 Rosycup
+# SPDX-FileCopyrightText: 2025 portfiend
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -81,6 +81,9 @@
   - type: Food
     useSound:
       collection: FelinidPlushieSounds
+  - type: FoodSequenceElement
+    entries:
+      CottonBurger: FelinidPlushie
 
 - type: entity
   parent: BasePlushie
@@ -91,6 +94,9 @@
   - type: Sprite
     sprite: _DV/Objects/Fun/Toys/plushies.rsi
     state: oni
+  - type: FoodSequenceElement
+    entries:
+      CottonBurger: OniPlushie
 
 - type: entity
   parent: BasePlushie
@@ -119,6 +125,9 @@
   - type: Food
     useSound:
       collection: HarpyPlushieSounds
+  - type: FoodSequenceElement
+    entries:
+      CottonBurger: HarpyPlushie
 
 - type: entity
   parent: BasePlushie
@@ -147,6 +156,9 @@
   - type: Food
     useSound:
       collection: RodentiaPlushieSounds
+  - type: FoodSequenceElement
+    entries:
+      CottonBurger: RodentiaPlushie
 
 - type: entity
   parent: BasePlushie
@@ -175,6 +187,9 @@
   - type: Food
     useSound:
       collection: ToySqueak
+  - type: FoodSequenceElement
+    entries:
+      CottonBurger: FeroxiPlushie
 
 - type: entity
   parent: BasePlushie
@@ -203,3 +218,6 @@
   - type: Food
     useSound:
       collection: ToySqueak
+  - type: FoodSequenceElement
+    entries:
+      CottonBurger: ChitinidPlushie

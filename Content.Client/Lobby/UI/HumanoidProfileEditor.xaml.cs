@@ -116,6 +116,8 @@ using Direction = Robust.Shared.Maths.Direction;
 using System.Globalization;
 using Content.Client._CD.Records.UI;
 using Content.Shared._CD.Records;
+using Content.Shared.Customization.Systems._DEN;
+using Content.Client._DEN.Customization.Systems;
 // End CD - Character Records
 
 // DEN TODO: THIS NEEDS SEVERE OVERHAUL
@@ -146,7 +148,10 @@ namespace Content.Client.Lobby.UI
         private FlavorText.FlavorText? _flavorText;
         private BoxContainer _ccustomspecienamecontainerEdit => CCustomSpecieName;
         private LineEdit _customspecienameEdit => CCustomSpecieNameEdit;
-        private TextEdit? _flavorTextEdit;
+
+        private TextEdit? _flavorSfwTextEdit;
+        private TextEdit? _flavorNsfwTextEdit;
+        private TextEdit? _characterConsent;
 
         /// If we're attempting to save
         public event Action? Save;
@@ -257,7 +262,6 @@ namespace Content.Client.Lobby.UI
 
             #region Appearance
 
-            Appearance.Orphan();
             CTabContainer.AddTab(Appearance, Loc.GetString("humanoid-profile-editor-appearance-tab"));
 
             #region Sex
@@ -359,9 +363,8 @@ namespace Content.Client.Lobby.UI
 
             #endregion Species
 
-            #region Contractors
+            #region Background
 
-            Background.Orphan();
             CTabContainer.AddTab(Background, Loc.GetString("humanoid-profile-editor-background-tab"));
 
             RefreshNationalities();
@@ -416,6 +419,7 @@ namespace Content.Client.Lobby.UI
 
             Skin.OnValueChanged += _ => { OnSkinColorOnValueChanged(); };
             RgbSkinColorContainer.AddChild(_rgbSkinColorSelector = new());
+            _rgbSkinColorSelector.SelectorType = ColorSelectorSliders.ColorSelectorType.Hsv; // defaults color selector to HSV
             _rgbSkinColorSelector.OnColorChanged += _ => { OnSkinColorOnValueChanged(); };
             SkinFurToggle.OnToggled += _ => { SetProfile(Profile, CharacterSlot); };
 
@@ -570,7 +574,6 @@ namespace Content.Client.Lobby.UI
 
             #region Jobs
 
-            Jobs.Orphan();
             CTabContainer.AddTab(Jobs, Loc.GetString("humanoid-profile-editor-jobs-tab"));
 
             PreferenceUnavailableButton.AddItem(
@@ -597,7 +600,6 @@ namespace Content.Client.Lobby.UI
 
             #region Antags
 
-            Antags.Orphan();
             CTabContainer.AddTab(Antags, Loc.GetString("humanoid-profile-editor-antags-tab"));
 
             #endregion Antags
@@ -605,7 +607,6 @@ namespace Content.Client.Lobby.UI
             #region Traits
 
             // Set up the traits tab
-            TraitsTab.Orphan();
             CTabContainer.AddTab(TraitsTab, Loc.GetString("humanoid-profile-editor-traits-tab"));
             _traitPreferences = new List<TraitPreferenceSelector>();
 
@@ -625,7 +626,6 @@ namespace Content.Client.Lobby.UI
             #region Loadouts
 
             // Set up the loadouts tab
-            LoadoutsTab.Orphan();
             CTabContainer.AddTab(LoadoutsTab, Loc.GetString("humanoid-profile-editor-loadouts-tab"));
 
             // Show/Hide the loadouts tab if they ever get enabled/disabled
@@ -642,7 +642,6 @@ namespace Content.Client.Lobby.UI
 
             #region Markings
 
-            MarkingsTab.Orphan();
             CTabContainer.AddTab(MarkingsTab, Loc.GetString("humanoid-profile-editor-markings-tab"));
 
             Markings.OnMarkingAdded += OnMarkingChange;
@@ -655,7 +654,6 @@ namespace Content.Client.Lobby.UI
             // Begin CD - Character Records
             #region CosmaticRecords
 
-            RecordsTab.Orphan();
             Records.SetRecordUpdateFunction(UpdateProfileRecords);
             CTabContainer.AddTab(RecordsTab, Loc.GetString("humanoid-profile-editor-cd-records-tab"));
 
@@ -700,8 +698,15 @@ namespace Content.Client.Lobby.UI
                     return;
 
                 _flavorText = new();
-                _flavorText.OnFlavorTextChanged += OnFlavorTextChange;
-                _flavorTextEdit = _flavorText.CFlavorTextInput;
+
+                _flavorText.OnSfwFlavorTextChanged += OnSfwFlavorTextChange;
+                _flavorText.OnNsfwFlavorTextChanged += OnNsfwFlavorTextChange;
+                _flavorText.OnCharacterConsentChanged += OnCharacterConsentChange;
+
+                _flavorSfwTextEdit = _flavorText.CFlavorTextSFWInput;
+                _flavorNsfwTextEdit = _flavorText.CFlavorTextNSFWInput;
+                _characterConsent = _flavorText.CFlavorTextConsentInput;
+
                 CTabContainer.AddTab(_flavorText, Loc.GetString("humanoid-profile-editor-flavortext-tab"));
             }
             else
@@ -710,11 +715,21 @@ namespace Content.Client.Lobby.UI
                     return;
 
                 CTabContainer.RemoveChild(_flavorText);
-                _flavorText.OnFlavorTextChanged -= OnFlavorTextChange;
+
+                _flavorText.OnSfwFlavorTextChanged -= OnSfwFlavorTextChange;
+                _flavorText.OnNsfwFlavorTextChanged -= OnNsfwFlavorTextChange;
+                _flavorText.OnCharacterConsentChanged -= OnCharacterConsentChange;
+
                 _flavorText.Dispose();
+
+                _flavorSfwTextEdit?.Dispose();
+                _flavorNsfwTextEdit?.Dispose();
+                _characterConsent?.Dispose();
+
                 _flavorText = null;
-                _flavorTextEdit?.Dispose();
-                _flavorTextEdit = null;
+                _flavorSfwTextEdit = null;
+                _flavorNsfwTextEdit = null;
+                _characterConsent = null;
             }
         }
 
@@ -763,16 +778,14 @@ namespace Content.Client.Lobby.UI
             NationalityButton.Clear();
             _nationalies.Clear();
 
+            var context = _characterRequirementsSystem.GetProfileContext(Profile);
+
             _nationalies.AddRange(_prototypeManager.EnumeratePrototypes<NationalityPrototype>()
                 .Where(o => _characterRequirementsSystem.CheckRequirementsValid(o.Requirements,
-                    _controller.GetPreferredJob(Profile ?? HumanoidCharacterProfile.DefaultWithSpecies()),
-                    Profile ?? HumanoidCharacterProfile.DefaultWithSpecies(),
-                    _requirements.GetRawPlayTimeTrackers(),
-                    _requirements.IsWhitelisted(),
-                    o,
+                    context.WithPrototype(o),
                     _entManager,
                     _prototypeManager,
-                    _cfgManager, out _)));
+                    _cfgManager)));
 
             var nationalityIds = _nationalies.Select(o => o.ID).ToList();
 
@@ -797,16 +810,13 @@ namespace Content.Client.Lobby.UI
             EmployerButton.Clear();
             _employers.Clear();
 
+            var context = _characterRequirementsSystem.GetProfileContext(Profile);
             _employers.AddRange(_prototypeManager.EnumeratePrototypes<EmployerPrototype>()
                 .Where(o => _characterRequirementsSystem.CheckRequirementsValid(o.Requirements,
-                _controller.GetPreferredJob(Profile ?? HumanoidCharacterProfile.DefaultWithSpecies()),
-                Profile ?? HumanoidCharacterProfile.DefaultWithSpecies(),
-                _requirements.GetRawPlayTimeTrackers(),
-                _requirements.IsWhitelisted(),
-                o,
-                _entManager,
-                _prototypeManager,
-                _cfgManager, out _)));
+                    context.WithPrototype(o),
+                    _entManager,
+                    _prototypeManager,
+                    _cfgManager)));
 
             var employerIds = _employers.Select(o => o.ID).ToList();
 
@@ -831,16 +841,14 @@ namespace Content.Client.Lobby.UI
             LifepathButton.Clear();
             _lifepaths.Clear();
 
+            var context = _characterRequirementsSystem.GetProfileContext(Profile);
+
             _lifepaths.AddRange(_prototypeManager.EnumeratePrototypes<LifepathPrototype>()
                 .Where(o => _characterRequirementsSystem.CheckRequirementsValid(o.Requirements,
-                _controller.GetPreferredJob(Profile ?? HumanoidCharacterProfile.DefaultWithSpecies()),
-                Profile ?? HumanoidCharacterProfile.DefaultWithSpecies(),
-                _requirements.GetRawPlayTimeTrackers(),
-                _requirements.IsWhitelisted(),
-                o,
-                _entManager,
-                _prototypeManager,
-                _cfgManager, out _)));
+                    context.WithPrototype(o),
+                    _entManager,
+                    _prototypeManager,
+                    _cfgManager)));
 
             var lifepathIds = _lifepaths.Select(o => o.ID).ToList();
 
@@ -908,18 +916,23 @@ namespace Content.Client.Lobby.UI
                 selector.Setup(items, title, 250, description, guides: antag.Guides);
                 selector.Select(Profile?.AntagPreferences.Contains(antag.ID) == true ? 0 : 1);
 
-                if (!_characterRequirementsSystem.CheckRequirementsValid(
-                    antag.Requirements ?? new(),
-                    _controller.GetPreferredJob(Profile ?? HumanoidCharacterProfile.DefaultWithSpecies()),
-                    Profile ?? HumanoidCharacterProfile.DefaultWithSpecies(),
-                    _requirements.GetRawPlayTimeTrackers(),
-                    _requirements.IsWhitelisted(),
-                    antag,
+                var requirements = antag.Requirements ?? new();
+                var job = _controller.GetPreferredJob(Profile ?? HumanoidCharacterProfile.DefaultWithSpecies());
+                var context = _characterRequirementsSystem.GetProfileContext(Profile)
+                    .WithSelectedJob(job)
+                    .WithPrototype(antag);
+
+                if (!_characterRequirementsSystem.CheckRequirementsValid(requirements,
+                    context,
                     _entManager,
                     _prototypeManager,
-                    _cfgManager,
-                    out var reasons))
+                    _cfgManager))
                 {
+                    var reasons = _characterRequirementsSystem.GetReasons(requirements,
+                        context,
+                        _entManager,
+                        _prototypeManager,
+                        _cfgManager);
                     var reason = _characterRequirementsSystem.GetRequirementsText(reasons);
                     selector.LockRequirements(reason);
                     Profile = Profile?.WithAntagPreference(antag.ID, false);
@@ -1186,20 +1199,26 @@ namespace Content.Client.Lobby.UI
                     icon.Texture = jobIcon.Icon.Frame0();
                     selector.Setup(items, job.LocalizedName, 200, job.LocalizedDescription, icon, job.Guides);
 
+                    var requirements = job.Requirements ?? new();
+                    var context = _characterRequirementsSystem.GetProfileContext(Profile)
+                        .WithSelectedJob(job)
+                        .WithPrototype(job);
+
                     if (!_requirements.CheckJobWhitelist(job, out var reason))
                         selector.LockRequirements(reason);
-                    else if (!_characterRequirementsSystem.CheckRequirementsValid(
-                         job.Requirements ?? new(),
-                         job,
-                         Profile ?? HumanoidCharacterProfile.DefaultWithSpecies(),
-                         _requirements.GetRawPlayTimeTrackers(),
-                         _requirements.IsWhitelisted(),
-                         job,
-                         _entManager,
-                         _prototypeManager,
-                         _cfgManager,
-                         out var reasons))
+                    else if (!_characterRequirementsSystem.CheckRequirementsValid(requirements,
+                        context,
+                        _entManager,
+                        _prototypeManager,
+                        _cfgManager))
+                    {
+                        var reasons = _characterRequirementsSystem.GetReasons(requirements,
+                            context,
+                            _entManager,
+                            _prototypeManager,
+                            _cfgManager);
                         selector.LockRequirements(_characterRequirementsSystem.GetRequirementsText(reasons));
+                    }
                     else
                         selector.UnlockRequirements();
 
@@ -1320,20 +1339,26 @@ namespace Content.Client.Lobby.UI
                     icon.Texture = jobIcon.Icon.Frame0();
                     selector.Setup(items, job.LocalizedName, 200, job.LocalizedDescription, icon);
 
+                    var requirements = job.Requirements ?? new();
+                    var context = _characterRequirementsSystem.GetProfileContext(Profile)
+                        .WithSelectedJob(job)
+                        .WithPrototype(job);
+
                     if (!_requirements.CheckJobWhitelist(job, out var reason))
                         selector.LockRequirements(reason);
-                    else if (!_characterRequirementsSystem.CheckRequirementsValid(
-                        job.Requirements ?? new(),
-                        job,
-                        Profile ?? HumanoidCharacterProfile.DefaultWithSpecies(),
-                        _requirements.GetRawPlayTimeTrackers(),
-                        _requirements.IsWhitelisted(),
-                        job,
+                    else if (!_characterRequirementsSystem.CheckRequirementsValid(requirements,
+                        context,
                         _entManager,
                         _prototypeManager,
-                        _cfgManager,
-                        out var reasons))
+                        _cfgManager))
+                    {
+                        var reasons = _characterRequirementsSystem.GetReasons(requirements,
+                            context,
+                            _entManager,
+                            _prototypeManager,
+                            _cfgManager);
                         selector.LockRequirements(_characterRequirementsSystem.GetRequirementsText(reasons));
+                    }
                     else
                         selector.UnlockRequirements();
 
@@ -1373,22 +1398,20 @@ namespace Content.Client.Lobby.UI
         /// DeltaV - Make sure that no invalid job priorities get through
         private void EnsureJobRequirementsValid()
         {
+            var context = _characterRequirementsSystem.GetProfileContext(Profile);
+
             foreach (var (jobId, selector) in _jobPriorities)
             {
                 var proto = _prototypeManager.Index<JobPrototype>(jobId);
+                var requirements = proto.Requirements ?? new();
+
                 if ((JobPriority) selector.Selected == JobPriority.Never
                     || _requirements.CheckJobWhitelist(proto, out _)
-                    || _characterRequirementsSystem.CheckRequirementsValid(
-                        proto.Requirements ?? new(),
-                        proto,
-                        Profile ?? HumanoidCharacterProfile.DefaultWithSpecies(),
-                        _requirements.GetRawPlayTimeTrackers(),
-                        _requirements.IsWhitelisted(),
-                        proto,
+                    || _characterRequirementsSystem.CheckRequirementsValid(requirements,
+                        context.WithSelectedJob(proto).WithPrototype(proto),
                         _entManager,
                         _prototypeManager,
-                        _cfgManager,
-                        out _))
+                        _cfgManager))
                     continue;
 
                 selector.Select((int) JobPriority.Never);
@@ -1407,12 +1430,30 @@ namespace Content.Client.Lobby.UI
         }
         // End CD - Character Records
 
-        private void OnFlavorTextChange(string content)
+        private void OnSfwFlavorTextChange(string content)
         {
             if (Profile is null)
                 return;
 
             Profile = Profile.WithFlavorText(content);
+            SetDirty();
+        }
+
+        private void OnNsfwFlavorTextChange(string content)
+        {
+            if (Profile is null)
+                return;
+
+            Profile = Profile.WithNsfwFlavorText(content);
+            SetDirty();
+        }
+
+        private void OnCharacterConsentChange(string content)
+        {
+            if (Profile is null)
+                return;
+
+            Profile = Profile.WithCharacterConsent(content);
             SetDirty();
         }
 
@@ -1753,8 +1794,14 @@ namespace Content.Client.Lobby.UI
 
         private void UpdateFlavorTextEdit()
         {
-            if (_flavorTextEdit != null)
-                _flavorTextEdit.TextRope = new Rope.Leaf(Profile?.FlavorText ?? "");
+            if (_flavorSfwTextEdit != null)
+                _flavorSfwTextEdit.TextRope = new Rope.Leaf(Profile?.FlavorText ?? "");
+
+            if (_flavorNsfwTextEdit != null)
+                _flavorNsfwTextEdit.TextRope = new Rope.Leaf(Profile?.NsfwFlavorText ?? "");
+
+            if (_characterConsent != null)
+                _characterConsent.TextRope = new Rope.Leaf(Profile?.CharacterConsent ?? "");
         }
 
         private void UpdateAgeEdit()
@@ -2072,6 +2119,12 @@ namespace Content.Client.Lobby.UI
             WidthLabel.Text = Loc.GetString("humanoid-profile-editor-width-label",
                 ("width", (int) width),
                 ("inches", (int) widthIn));
+
+            // DEN - Show sprite scale multiplier
+            var sizeFormat = "0.00";
+            DimensionLabel.Text = Loc.GetString("humanoid-profile-editor-dimension-label",
+                ("width", WidthSlider.Value.ToString(sizeFormat)),
+                ("height", HeightSlider.Value.ToString(sizeFormat)));
         }
 
         private void UpdateWeight()
@@ -2379,23 +2432,16 @@ namespace Content.Client.Lobby.UI
 
 
             // Get the highest priority job to use for trait filtering
-            var highJob = _controller.GetPreferredJob(Profile ?? HumanoidCharacterProfile.DefaultWithSpecies());
+            var context = _characterRequirementsSystem.GetProfileContext(Profile);
 
             _traits.Clear();
             foreach (var trait in _prototypeManager.EnumeratePrototypes<TraitPrototype>())
             {
-                var usable = _characterRequirementsSystem.CheckRequirementsValid(
-                    trait.Requirements,
-                    highJob,
-                    Profile ?? HumanoidCharacterProfile.DefaultWithSpecies(),
-                    _requirements.GetRawPlayTimeTrackers(),
-                    _requirements.IsWhitelisted(),
-                    trait,
+                var usable = _characterRequirementsSystem.CheckRequirementsValid(trait.Requirements,
+                    context.WithPrototype(trait),
                     _entManager,
                     _prototypeManager,
-                    _cfgManager,
-                    out _
-                );
+                    _cfgManager);
                 _traits.Add(trait, usable);
 
                 if (_traitPreferences.FindIndex(lps => lps.Trait.ID == trait.ID) is not (not -1 and var i))
@@ -2450,7 +2496,7 @@ namespace Content.Client.Lobby.UI
             // Create a Dictionary/tree of categories and subcategories
             var cats = CreateTree(_prototypeManager.EnumeratePrototypes<TraitCategoryPrototype>()
                 .Where(c => c.Root)
-                .OrderBy(c => Loc.GetString($"trait-category-{c.ID}"))
+                .OrderBy(c => c.ID)
                 .ToList());
             var categories = new Dictionary<string, object>();
             foreach (var (key, value) in cats)
@@ -2474,8 +2520,12 @@ namespace Content.Client.Lobby.UI
                 }
 
                 var selector = new TraitPreferenceSelector(
-                    trait, highJob, Profile ?? HumanoidCharacterProfile.DefaultWithSpecies(),
-                    _entManager, _prototypeManager, _cfgManager, _characterRequirementsSystem, _requirements);
+                    trait,
+                    Profile ?? HumanoidCharacterProfile.DefaultWithSpecies(),
+                    _entManager,
+                    _prototypeManager,
+                    _cfgManager,
+                    _characterRequirementsSystem);
                 selector.Valid = usable;
                 selector.ShowUnusable = showUnusable.Value;
                 AddSelector(selector);

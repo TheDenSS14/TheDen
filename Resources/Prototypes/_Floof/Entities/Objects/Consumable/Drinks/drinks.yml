@@ -1,9 +1,9 @@
-# SPDX-FileCopyrightText: 2023 Colin-Tel <113523727+Colin-Tel@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 FoxxoTrystan <trystan.garnierhein@gmail.com>
-# SPDX-FileCopyrightText: 2024 SimpleStation14 <130339894+SimpleStation14@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 SleepyScarecrow <sharedjunkemail69@gmail.com>
-# SPDX-FileCopyrightText: 2025 Rosycup <178287475+Rosycup@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Colin-Tel
+# SPDX-FileCopyrightText: 2024 FoxxoTrystan
+# SPDX-FileCopyrightText: 2024 SimpleStation14
+# SPDX-FileCopyrightText: 2024 SleepyScarecrow
+# SPDX-FileCopyrightText: 2025 Rosycup
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -17,7 +17,7 @@
       drink:
         maxVol: 30
         reagents:
-        - ReagentId: A.B.Lustine
+        - ReagentId: ABLustine
           Quantity: 30
   - type: Icon
     sprite: _Floof/Objects/Consumable/Drinks/ablustine.rsi
@@ -583,3 +583,19 @@
     sprite: _Floof/Objects/Consumable/Drinks/yeolhandy.rsi
     state: icon
 
+#Added by TheDen, because someone forgot this.
+- type: entity
+  parent: DrinkGlass
+  id: DrinkPomonadeGlass
+  suffix: pomonade
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 30
+        reagents:
+        - ReagentId: Pomonade
+          Quantity: 30
+  - type: Icon
+    sprite: _Floof/Objects/Consumable/Drinks/pomonade.rsi
+    state: icon

@@ -17,4 +17,7 @@ public sealed partial class ConsentTogglePrototype : IPrototype
 {
     [IdDataField]
     public string ID { get; private set; } = default!;
+
+    [DataField]
+    public bool DefaultValue { get; private set; }
 }

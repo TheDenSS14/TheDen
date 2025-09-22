@@ -22,7 +22,7 @@ public static class ChatChannelExtensions
             ChatChannel.Dead => Color.MediumPurple,
             ChatChannel.Admin => Color.Red,
             ChatChannel.AdminAlert => Color.Red,
-            ChatChannel.AdminChat => Color.PaleGreen,
+            ChatChannel.AdminChat => Color.HotPink,
             ChatChannel.Whisper => Color.DarkGray,
             _ => Color.LightGray
         };

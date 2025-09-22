@@ -348,16 +348,14 @@ public abstract partial class SharedSurgerySystem
     {
         var group = ent.Comp.MainGroup == "Brute" ? BruteDamageTypes : BurnDamageTypes;
 
-        if (!HasDamageGroup(args.Body, group, out var damageable)
-            && !HasDamageGroup(args.Part, group, out var _)
+        if (!HasDamageGroup(args.Part, group, out var damageable)
+            && !HasDamageGroup(args.Body, group, out var _)
             || damageable == null) // This shouldnt be possible but the compiler doesn't shut up.
             return;
 
-
-        // Right now the bonus is based off the body's total damage, maybe we could make it based off each part in the future.
         var bonus = ent.Comp.HealMultiplier * damageable.DamagePerGroup[ent.Comp.MainGroup];
         if (_mobState.IsDead(args.Body))
-            bonus *= 0.2;
+            bonus *= 0.1;
 
         var adjustedDamage = new DamageSpecifier(ent.Comp.Damage);
 
@@ -372,8 +370,7 @@ public abstract partial class SharedSurgerySystem
     {
         var group = ent.Comp.MainGroup == "Brute" ? BruteDamageTypes : BurnDamageTypes;
 
-        if (HasDamageGroup(args.Body, group, out var _)
-            || HasDamageGroup(args.Part, group, out var _))
+        if (HasDamageGroup(args.Part, group, out var _))
             args.Cancelled = true;
     }
 
@@ -792,14 +789,11 @@ public abstract partial class SharedSurgerySystem
             _inventory.RelayEvent((user, inv), ref ev);
         speed = ev.Multiplier;
 
-        if (!TryComp<BuckleComponent>(target, out var buckle) || buckle.BuckledTo is not { } buckledTo)
-            return stepComp.Duration / speed;
-
-        var buckledEvent = new SurgerySpeedModifyEvent(speed);
-        RaiseLocalEvent(buckledTo, ref buckledEvent);
-        if (TryComp<SurgerySpeedModifierComponent>(buckledTo, out var buckledModifier))
+        if (TryComp<BuckleComponent>(target, out var buckle) && buckle.BuckledTo is {} buckledTo)
         {
-            speed *= buckledModifier.SpeedModifier; //TODO: Please make this prettier. I have no clue what I'm doing ~SirWarock
+            var buckledEvent = new SurgerySpeedModifyEvent(speed);
+            RaiseLocalEvent(buckledTo, ref buckledEvent);
+            speed = buckledEvent.Multiplier;
         }
 
         return stepComp.Duration / speed;

@@ -2,6 +2,16 @@
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
+- type: latheRecipe
+  id: BoxFolderFireproof
+  result: BoxFolderFireproof
+  category: Tools
+  completetime: 2
+  materials:
+    Plastic: 300
+    Durathread: 300
+
+## AIR TANKS
 # Standard Tank
 - type: latheRecipe
   id: OxygenTank

@@ -176,3 +176,19 @@
   - type: Icon
     sprite: _DV/Objects/Consumable/Drinks/lemonlimebitters.rsi
     state: icon
+
+- type: entity
+  parent: DrinkGlass
+  id: DrinkKalimotxoGlass
+  suffix: kalimotxo
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 30
+        reagents:
+        - ReagentId: Kalimotxo
+          Quantity: 30
+  - type: Icon
+    sprite: _DV/Objects/Consumable/Drinks/kalimotxo.rsi
+    state: icon
