@@ -200,6 +200,8 @@ phrase-happen = happen
 phrase-fun = fun
 phrase-time = time
 phrase-damage = damage
+# Den
+phrase-vip = VIP 
 
 # colors
 phrase-color-red = red
