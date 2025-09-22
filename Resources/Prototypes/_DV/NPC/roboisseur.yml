@@ -112,6 +112,7 @@
       - FoodNoodles
       - FoodBreadMeat
       - LeavesCannabisDried
+      - LeavesCannabisRainbowDried # DEN - Add rainbow cannabis leaves to this list
       - FoodBurgerCheese
       - FoodDonkpocketDankWarm
       - FoodSpaceshroomCooked
@@ -152,6 +153,8 @@
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
   - type: Roboisseur
+    rewardPerTier: 2000 # DEN - Adjust reward, 500 -> 2000
+    randomRewardRange: 0, 1500 # DEN - Adjust reward, (1250, 1500) -> (0, 1500)
   - type: Speech
     speechSounds: Pai
   - type: Appearance
