@@ -221,6 +221,11 @@
   parent: BaseSubjectPhrase
   text: phrase-time
 
+- type: quickPhrase
+  parent: BaseSubjectPhrase
+  id: RangePhrase
+  text: phrase-range
+
 # Materials alphabetically
 
 - type: quickPhrase
@@ -472,6 +477,8 @@
   parent: BaseColorPhrase
   text: phrase-color-gray
 
+# Languages
+# Den Start
 - type: quickPhrase
   id: BaseLanguageNamePhrase
   parent: BaseSubjectPhrase
@@ -589,17 +596,73 @@
   text: language-Rodentian-name
 
 - type: quickPhrase
+  parent: BaseLanguageNamePhrase
+  id: LanguageNehinaPhrase
+  text: language-Nehina-name
+
+- type: quickPhrase
+  parent: BaseLanguageNamePhrase
+  id: LanguageKagebunPhrase
+  text: language-Kagebun-name
+
+- type: quickPhrase
+  parent: BaseLanguageNamePhrase
+  id: LanguageCaprinePhrase
+  text: language-Caprine-name
+
+- type: quickPhrase
+  parent: BaseLanguageNamePhrase
+  id: LanguageVoxPidginPhrase
+  text: language-VoxPidgin-name
+
+- type: quickPhrase
+  parent: BaseLanguageNamePhrase
+  id: LanguageAuralPhrase
+  text: language-Aural-name
+
+- type: quickPhrase
+  parent: BaseLanguageNamePhrase
+  id: LanguageSiikMaasPhrase
+  text: language-SiikMaas-name
+
+- type: quickPhrase
+  parent: BaseLanguageNamePhrase
+  id: LanguageNalRasanPhrase
+  text: language-NalRasan-name
+
+- type: quickPhrase
+  parent: BaseLanguageNamePhrase
+  id: LanguageSiikTajrPhrase
+  text: language-SiikTajr-name
+
+- type: quickPhrase
+  parent: BaseLanguageNamePhrase
+  id: LanguageYaSsaPhrase
+  text: language-YaSsa-name
+
+- type: quickPhrase
+  parent: BaseLanguageNamePhrase
+  id: LanguageDelvahiiPhrase
+  text: language-Delvahii-name
+
+- type: quickPhrase
+  parent: BaseLanguageNamePhrase
+  id: LanguageCalcicPhrase
+  text: language-Calcic-name
+
+- type: quickPhrase
+  parent: BaseLanguageNamePhrase
+  id: LanguageArachnicPhrase
+  text: language-Arachnic-name
+# Den End
+
+# emotions alphabetically
+
+- type: quickPhrase
   id: BaseEmotionPhrase
   parent: BaseSubjectPhrase
   group: Emotions
   abstract: true
-
-- type: quickPhrase
-  id: EmotionIFeelPhrase
-  parent: BaseEmotionPhrase
-  text: phrase-emotion-ifeel
-
-# emotions alphabetically
 
 - type: quickPhrase
   id: EmotionAngerPhrase
@@ -650,6 +713,11 @@
   id: EmotionHatePhrase
   parent: BaseEmotionPhrase
   text: phrase-emotion-hate
+
+- type: quickPhrase
+  id: EmotionIFeelPhrase
+  parent: BaseEmotionPhrase
+  text: phrase-emotion-ifeel
 
 - type: quickPhrase
   id: EmotionLovePhrase
