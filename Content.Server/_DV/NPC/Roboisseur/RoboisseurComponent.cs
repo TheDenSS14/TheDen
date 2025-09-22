@@ -109,6 +109,8 @@ namespace Content.Server.Roboisseur.Roboisseur
         [DataField("blacklistedProtos")]
         public IReadOnlyList<String> BlacklistedProtos = new List<string>();
 
+        // DEN: Make butlertron rewards YMLable
+
         /// <summary>
         /// How many spesos the chef earns per tier. So, if you submit a T2 recipe, you get 2x this value.
         /// </summary>
@@ -121,5 +123,7 @@ namespace Content.Server.Roboisseur.Roboisseur
         /// </summary>
         [DataField]
         public Vector2 RandomRewardRange = new(1250, 1500);
+
+        // End DEN
     }
 }

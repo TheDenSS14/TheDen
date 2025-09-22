@@ -80,10 +80,12 @@ namespace Content.Server.Roboisseur.Roboisseur
         private void RewardServicer(EntityUid uid, RoboisseurComponent component, int tier)
         {
             var r = new Random();
+            // DEN: Make these into datafields
             int min = (int)component.RandomRewardRange.X;
             int max = (int)component.RandomRewardRange.Y;
             var perTier = component.RewardPerTier;
             int rewardToDispense = r.Next(min, max + 1) + perTier * tier;
+            // End DEN
 
             _material.SpawnMultipleFromMaterial(rewardToDispense, "Credit", Transform(uid).Coordinates);
             if(tier > 1)
