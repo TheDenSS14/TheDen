@@ -80,7 +80,10 @@ namespace Content.Server.Roboisseur.Roboisseur
         private void RewardServicer(EntityUid uid, RoboisseurComponent component, int tier)
         {
             var r = new Random();
-            int rewardToDispense = r.Next(1250, 1500) + 500 * tier;
+            int min = (int)component.RandomRewardRange.X;
+            int max = (int)component.RandomRewardRange.Y;
+            var perTier = component.RewardPerTier;
+            int rewardToDispense = r.Next(min, max + 1) + perTier * tier;
 
             _material.SpawnMultipleFromMaterial(rewardToDispense, "Credit", Transform(uid).Coordinates);
             if(tier > 1)
