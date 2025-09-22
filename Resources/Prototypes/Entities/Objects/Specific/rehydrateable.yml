@@ -292,4 +292,11 @@
         layer:
         - LowImpassable
 
-
+- type: entity
+  parent: MonkeyCube
+  id: MoproachCube
+  name: moproach cube
+  components:
+  - type: Rehydratable
+    possibleSpawns:
+    - MobMoproach
