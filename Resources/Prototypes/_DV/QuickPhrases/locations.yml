@@ -104,6 +104,28 @@
   id: LocationBottomPhrase
   text: phrase-location-bottom
 
+# Den Start
+- type: quickPhrase
+  parent: BaseLocationPhrase
+  id: LocationUpPhrase
+  text: phrase-location-up
+
+- type: quickPhrase
+  parent: BaseLocationPhrase
+  id: LocationDownPhrase
+  text: phrase-location-down
+
+- type: quickPhrase
+  parent: BaseLocationPhrase
+  id: LocationFrontPhrase
+  text: phrase-location-front
+
+- type: quickPhrase
+  parent: BaseLocationPhrase
+  id: LocationBackPhrase
+  text: phrase-location-back
+# Den End
+
 ## Compass directions
 
 - type: quickPhrase
@@ -182,6 +204,9 @@
   parent: BaseCommandLocationPhrase
   id: LocationAISatPhrase
   text: station-beacon-ai-sat
+
+# Dignitary
+
 
 # Engineering
 
