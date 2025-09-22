@@ -1,0 +1,11 @@
+
+# DEN - This is here for ease of access to other AAC ymls making it easier to change
+- type: quickPhrase
+  parent: [ BaseSubjectPhrase, BaseDignitaryPhrase ]
+  id: BaseDignitarySubjectPhrase
+  abstract: true
+
+- type: quickPhrase
+  parent: BaseDignitarySubjectPhrase
+  id: VIPPhrase
+  text: phrase-vip

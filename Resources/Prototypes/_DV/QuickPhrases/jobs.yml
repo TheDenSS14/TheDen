@@ -17,6 +17,11 @@
   abstract: true
 
 - type: quickPhrase
+  parent: [ BaseDignitaryPhrase, BaseJobPhrase ]
+  id: BaseDignitaryJobPhrase
+  abstract: true
+
+- type: quickPhrase
   parent: [ BaseEngineeringPhrase, BaseJobPhrase ]
   id: BaseEngineeringJobPhrase
   abstract: true
@@ -82,8 +87,25 @@
 
 - type: quickPhrase
   parent: BaseCommandJobPhrase
-  id: StationAIPhrase 
+  id: StationAIPhrase
   text: job-name-station-ai
+
+# Dignitary - Den
+
+- type: quickPhrase
+  parent: BaseDignitaryJobPhrase
+  id: BlueshieldOfficerPhrase
+  text: job-name-bso
+
+- type: quickPhrase
+  parent: BaseDignitaryJobPhrase
+  id: MagistratePhrase
+  text: job-name-magistrate
+
+- type: quickPhrase
+  parent: BaseDignitaryJobPhrase
+  id: NanotrasenRepresentativePhrase
+  text: job-name-ntrep
 
 # Engineering
 
