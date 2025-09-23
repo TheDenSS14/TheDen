@@ -1,24 +1,24 @@
-# SPDX-FileCopyrightText: 2021 Kara D <lunarautomaton6@gmail.com>
-# SPDX-FileCopyrightText: 2021 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
-# SPDX-FileCopyrightText: 2021 Swept <sweptwastaken@protonmail.com>
-# SPDX-FileCopyrightText: 2021 Vera Aguilera Puerto <6766154+Zumorica@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2022 Fooberticus Bazly <34943053+fooberticus@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2022 Myctai <108953437+Myctai@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2022 Peptide90 <78795277+Peptide90@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2022 Rane <60792108+Elijahrane@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2022 fooberticus <fooberticus@protonmail.com>
-# SPDX-FileCopyrightText: 2023 Danger Revolution! <142105406+DangerRevolution@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2023 DangerRevoltion <142105406+DangerRevoltion@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2023 Errant <35878406+dmnct@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2023 Kara <lunarautomaton6@gmail.com>
-# SPDX-FileCopyrightText: 2023 Vordenburg <114301317+Vordenburg@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2023 sneb <96957003+snebl@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 lzk <124214523+lzk228@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 themias <89101928+themias@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 Skubman <ba.fallaria@gmail.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2021 Kara D
+# SPDX-FileCopyrightText: 2021 Pieter-Jan Briers
+# SPDX-FileCopyrightText: 2021 Swept
+# SPDX-FileCopyrightText: 2021 Vera Aguilera Puerto
+# SPDX-FileCopyrightText: 2022 Fooberticus Bazly
+# SPDX-FileCopyrightText: 2022 Myctai
+# SPDX-FileCopyrightText: 2022 Peptide90
+# SPDX-FileCopyrightText: 2022 Rane
+# SPDX-FileCopyrightText: 2022 fooberticus
+# SPDX-FileCopyrightText: 2023 Danger Revolution!
+# SPDX-FileCopyrightText: 2023 DangerRevoltion
+# SPDX-FileCopyrightText: 2023 Errant
+# SPDX-FileCopyrightText: 2023 Kara
+# SPDX-FileCopyrightText: 2023 Vordenburg
+# SPDX-FileCopyrightText: 2023 sneb
+# SPDX-FileCopyrightText: 2024 lzk
+# SPDX-FileCopyrightText: 2024 themias
+# SPDX-FileCopyrightText: 2025 Skubman
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 # Moles calculation
 #
@@ -53,7 +53,7 @@
       # 31 minutes
       volume: 5
       moles:
-        - 2.051379050 # oxygen
+        Oxygen: 2.051379050
       temperature: 293.15
 
 - type: entity
@@ -67,7 +67,7 @@
       # 4 minutes
       volume: 0.66
       moles:
-        - 0.270782035 # oxygen
+        Oxygen: 0.270782035
       temperature: 293.15
 
 - type: entity
@@ -81,8 +81,7 @@
       # 4 minutes
       volume: 0.66
       moles:
-        - 0 # oxygen
-        - 0.270782035 # nitrogen
+        Nitrogen: 0.270782035
       temperature: 293.15
 
 - type: entity
@@ -96,10 +95,7 @@
       # 16 minutes with Plasmaman lungs
       volume: 0.66
       moles:
-        - 0           # oxygen
-        - 0           # nitrogen
-        - 0           # CO2
-        - 0.270782035 # nitrogen
+        Plasma: 0.270782035
       temperature: 293.15
 
 - type: entity
@@ -113,7 +109,7 @@
       # 9 minutes
       volume: 1.5
       moles:
-        - 0.615413715 # oxygen
+        Oxygen: 0.615413715
       temperature: 293.15
 
 - type: entity
@@ -127,8 +123,7 @@
       # 9 minutes
       volume: 1.5
       moles:
-        - 0 # oxygen
-        - 0.615413715 # nitrogen
+        Nitrogen: 0.615413715
       temperature: 293.15
 
 - type: entity
@@ -142,10 +137,7 @@
       # 37 minutes with Plasmaman lungs
       volume: 1.5
       moles:
-        - 0           # oxygen
-        - 0           # nitrogen
-        - 0           # CO2
-        - 0.615413715 # plasma
+        Plasma: 0.615413715
       temperature: 293.15
 
 - type: entity
@@ -159,7 +151,7 @@
       # 15 minutes
       volume: 2.5
       moles:
-        - 1.025689525 # oxygen
+        Oxygen: 1.025689525
       temperature: 293.15
 
 - type: entity
@@ -173,8 +165,7 @@
       # 15 minutes
       volume: 2.5
       moles:
-        - 0 # oxygen
-        - 1.025689525 # nitrogen
+        Nitrogen: 1.025689525
       temperature: 293.15
 
 - type: entity
@@ -188,10 +179,7 @@
       # 62 minutes with Plasmaman lungs
       volume: 1.5
       moles:
-        - 0           # oxygen
-        - 0           # nitrogen
-        - 0           # CO2
-        - 1.025689525 # plasma
+        Plasma: 1.025689525
       temperature: 293.15
 
 - type: entity
@@ -205,14 +193,8 @@
       # 4 minutes
       volume: 0.66
       moles:
-        - 0.270782035 # 95% oxygen
-        - 0 # nitrogen
-        - 0 # CO2
-        - 0 # plasma
-        - 0 # tritium
-        - 0 # water vapor
-        - 0 # ammonia
-        - 0.014251686 # 5% N2O
+        Oxygen: 0.270782035 # 95%
+        NitrousOxide: 0.014251686 # 5%
         # 0.285033721       total
       temperature: 293.15
 
@@ -227,8 +209,8 @@
       # 6 minutes due to output pressure
       volume: 5
       moles:
-        - 0.451303391 # 22% oxygen
-        - 1.600075659 # 78% nitrogen
+        Oxygen: 0.451303391 # 22%
+        Nitrogen: 1.600075659 # 78%
         # 2.051379050       total
       temperature: 293.15
 
@@ -243,8 +225,7 @@
       # 31 minutes
       volume: 5
       moles:
-        - 0           # oxygen not included
-        - 2.051379050 # nitrogen
+        Nitrogen: 2.051379050
       temperature: 293.15
 
 - type: entity
@@ -264,14 +245,8 @@
       # only 22 minutes due to pressure
       volume: 5
       moles:
-        - 1.435965335 # 70% oxygen
-        - 0 # nitrogen
-        - 0 # CO2
-        - 0 # plasma
-        - 0 # tritium
-        - 0 # water vapor
-        - 0 # ammonia
-        - 0.615413715 # 30% N2O
+        Oxygen: 1.435965335 # 70%
+        NitrousOxide: 0.615413715 # 30%
         # 2.051379050       total
       temperature: 293.15
 
@@ -287,8 +262,5 @@
       # 125.2 minutes with Plasmaman lungs
       volume: 5
       moles:
-        - 0           # oxygen
-        - 0           # nitrogen
-        - 0           # CO2
-        - 2.051379050 # plasma
+        Plasma: 2.051379050
       temperature: 293.15

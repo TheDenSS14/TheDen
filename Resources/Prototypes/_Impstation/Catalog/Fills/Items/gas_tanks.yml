@@ -1,4 +1,5 @@
 # SPDX-FileCopyrightText: 2024 V
+# SPDX-FileCopyrightText: 2025 Blitz
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -13,7 +14,7 @@
       # 4 minutes
       volume: 0.66
       moles:
-        - 0.270782035 # oxygen
+        Oxygen: 0.270782035
       temperature: 293.15
 
 - type: entity
@@ -27,8 +28,7 @@
       # 4 minutes
       volume: 0.66
       moles:
-        - 0 # oxygen
-        - 0.270782035 # nitrogen
+        Nitrogen: 0.270782035
       temperature: 293.15
 
 - type: entity
@@ -42,7 +42,7 @@
       # 9 minutes
       volume: 1.5
       moles:
-        - 0.615413715 # oxygen
+        Oxygen: 0.615413715
       temperature: 293.15
 
 - type: entity
@@ -56,6 +56,5 @@
       # 9 minutes
       volume: 1.5
       moles:
-        - 0 # oxygen
-        - 0.615413715 # nitrogen
+        Nitrogen: 0.615413715
       temperature: 293.15

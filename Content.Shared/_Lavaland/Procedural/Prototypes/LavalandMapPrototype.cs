@@ -1,9 +1,9 @@
-// SPDX-FileCopyrightText: 2025 Eris <eris@erisws.com>
-// SPDX-FileCopyrightText: 2025 Falcon <falcon@zigtag.dev>
-// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 sleepyyapril <flyingkarii@gmail.com>
+// SPDX-FileCopyrightText: 2025 Blitz
+// SPDX-FileCopyrightText: 2025 Eris
+// SPDX-FileCopyrightText: 2025 Falcon
+// SPDX-FileCopyrightText: 2025 sleepyyapril
 //
-// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+// SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 using Content.Shared._Lavaland.Weather;
 using Content.Shared.Atmos;
@@ -40,7 +40,7 @@ public sealed partial class LavalandMapPrototype : IPrototype
 
     #region Atmos
 
-    [DataField]
+    [DataField(customTypeSerializer: typeof(GasArraySerializer))]
     public float[] Atmosphere = new float[Atmospherics.AdjustedNumberOfGases];
 
     [DataField]
