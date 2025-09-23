@@ -56,6 +56,8 @@
   id: MobHumanSANDeserter
   name: SAN Deserter
   components:
+    - type: RandomHumanoidAppearance # Den - ghost roles fix
+      randomizeName: false # Den - ghost roles fix
     - type: Loadout
       prototypes: [SANDeserterGearFull]
     - type: NpcFactionMember
