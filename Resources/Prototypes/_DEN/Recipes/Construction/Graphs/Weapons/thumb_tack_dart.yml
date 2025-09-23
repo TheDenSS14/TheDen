@@ -1,0 +1,36 @@
+- type: constructionGraph
+  id: BulletFoamTackConstruct
+  start: start
+  graph:
+    - node: start
+      entity: BulletFoam
+      edges:
+        - to: icon
+          steps:
+            - tag: ThumbTack
+              doAfter: 0.25
+    - node: icon
+      entity: BulletFoamTack
+
+- type: constructionGraph
+  id: BulletFoamTack
+  start: start
+  graph:
+    - node: start
+      edges:
+        - to: icon
+          steps:
+            - tag: BulletFoam
+              name: Foam Dart
+              icon:
+                sprite: Objects/Fun/toys.rsi
+                state: foamdart
+              doAfter: 0.25
+            - tag: ThumbTack
+              name: Thumb Tack
+              icon:
+                sprite: Objects/Fun/dice.rsi
+                state: d4_4
+              doAfter: 0.25
+    - node: icon
+      entity: BulletFoamTack

@@ -1,0 +1,19 @@
+# Boxes
+- type: entity
+  parent: BoxDonkSoftBase
+  id: BoxDonkSoftTackBox
+  name: box of thumb-tacked foam dart
+  suffix: []
+  components:
+    - type: BallisticAmmoProvider
+      whitelist:
+        tags:
+        - BulletFoam
+        - BulletFoamTack
+      capacity: 40
+      proto: BulletFoamTack
+    - type: Sprite
+      sprite: Objects/Storage/boxes.rsi
+      layers:
+        - state: boxwidetoy
+        - state: shelltoy
