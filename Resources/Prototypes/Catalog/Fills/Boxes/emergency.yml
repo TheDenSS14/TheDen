@@ -174,7 +174,7 @@
     - id: EmergencyOxygenTankFilled
     - id: EmergencyMedipen
     - id: Flare
-    - id: FoodBreadBaguette
+    #- id: FoodBreadBaguette # Den - doesn't fit in our boxes, adding to loadout instead
     - id: DrinkWaterBottleFull
 
 - type: entity
@@ -188,7 +188,7 @@
     - id: EmergencyNitrogenTankFilled
     - id: EmergencyMedipen
     - id: Flare
-    - id: FoodBreadBaguette
+    #- id: FoodBreadBaguette # Den - doesn't fit in our boxes, adding to loadout instead
     - id: DrinkWaterBottleFull
   - type: Label
     currentLabel: reagent-name-nitrogen

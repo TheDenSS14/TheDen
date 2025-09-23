@@ -43,7 +43,6 @@
   id: FoodBakedBase
   abstract: true
   components:
-  - type: Food
   - type: Sprite
     sprite: Objects/Consumable/Food/Baked/misc.rsi
   - type: SolutionContainerManager
@@ -627,6 +626,13 @@
           Quantity: 8
         - ReagentId: Protein
           Quantity: 2
+  - type: FlavorProfile
+    flavors:
+      - meaty
+      - bread
+  - type: Tag
+    tags:
+    - Meat
 
 - type: entity
   name: chèvre chaud
@@ -685,11 +691,14 @@
           Quantity: 0.5
 
 - type: entity
-  name: brownies
   parent: FoodBakedBase
   id: FoodBakedBrownieBatch
+  name: brownies
   description: A pan of brownies.
   components:
+  - type: Item
+    size: Normal
+    storedOffset: 0,-3
   - type: FlavorProfile
     flavors:
       - sweet
@@ -738,11 +747,14 @@
     - Slice
 
 - type: entity
-  name: special brownies
   parent: FoodBakedBase
   id: FoodBakedCannabisBrownieBatch
+  name: special brownies
   description: A pan of "special" brownies.
   components:
+  - type: Item
+    size: Normal
+    storedOffset: 0,-3
   - type: FlavorProfile
     flavors:
       - sweet
@@ -767,9 +779,9 @@
     slice: FoodBakedCannabisBrownie
 
 - type: entity
-  name: special brownie
   parent: FoodBakedBase
   id: FoodBakedCannabisBrownie
+  name: special brownie
   description: A "special" brownie.
   components:
   - type: FlavorProfile
@@ -820,11 +832,17 @@
             Quantity: 1
 
 - type: entity
-  name: croissant
   parent: FoodBakedBase
   id: FoodBakedCroissant
+  name: croissant
   description: Buttery, flaky goodness.
   components:
+  - type: Item
+    size: Small
+    shape:
+    - 0,0,1,0
+    - 0,1,0,1
+    storedOffset: -2,-4
   - type: FlavorProfile
     flavors:
       - bread
@@ -848,11 +866,16 @@
         Blunt: 0 # so the damage stats icon doesn't immediately give away the syndie ones
 
 - type: entity
-  name: cotton croissant
   parent: FoodBakedCroissant
   id: FoodBakedCroissantCotton
+  name: cotton croissant
   description: Buttery, flaky, fibery goodness.
   components:
+  - type: Item
+    size: Small
+    shape:
+    - 0,0,1,0
+    - 0,1,0,1
   - type: FlavorProfile
     flavors:
     - bread
@@ -878,3 +901,27 @@
           Quantity: 2
         - ReagentId: Vitamin
           Quantity: 1
+
+# Entity Tables
+
+- type: entityTable
+  id: FoodRandomCakeTable
+  table: !type:GroupSelector
+    children:
+    - id: FoodCakeApple
+    - id: FoodCakeBirthday
+    - id: FoodCakeBlueberry
+    - id: FoodCakePlain
+    - id: FoodCakeCarrot
+    - id: FoodCakeCheese
+    - id: FoodCakeChocolate
+    - id: FoodCakeChristmas
+    - id: FoodCakeClown
+    - id: FoodCakeLemon
+    - id: FoodCakeLime
+    - id: FoodCakeOrange
+    - id: FoodCakePumpkin
+    - id: FoodCakeSlime
+    - id: FoodCakeSpaceman
+    - id: FoodCakeVanilla
+    - id: FoodCakeLemoon

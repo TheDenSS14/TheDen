@@ -11,6 +11,12 @@
   id: FoodMeatGlazedHam
   description: A slow-cooked ham, glazed in caramelized honey and cured with salt.
   components:
+  # Begin Den additions
+  - type: Item
+    size: Normal
+    shape:
+      - 0,0,2,1
+  # End Den additions
   - type: FlavorProfile
     flavors:
       - meat
@@ -43,6 +49,12 @@
   id: FoodMeatGlazedHamSlice
   description: A slice of wonderful ham, glazed in delicious honey.
   components:
+  # Begin Den Additions
+  - type: Item
+    size: Tiny
+    shape:
+      - 0,0,0,0
+  # End Den additions
   - type: FlavorProfile
     flavors:
       - meat
