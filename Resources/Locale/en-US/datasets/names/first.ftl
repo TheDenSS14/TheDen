@@ -1,5 +1,6 @@
-# SPDX-FileCopyrightText: 2025 Blitz <73762869+BlitzTheSquishy@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Blitz
+# SPDX-FileCopyrightText: 2025 Winter
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -1263,7 +1264,7 @@ names-first-dataset-1257 = Sienna
 names-first-dataset-1258 = Sierra
 names-first-dataset-1259 = Silas
 names-first-dataset-1260 = Simon
-names-first-dataset-1261 = Sissy
+names-first-dataset-1261 = Sigrid
 names-first-dataset-1262 = Skylar
 names-first-dataset-1263 = Skyler
 names-first-dataset-1264 = Sloan

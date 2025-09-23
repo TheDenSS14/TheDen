@@ -1,3 +1,4 @@
+# SPDX-FileCopyrightText: 2025 Aikakakah
 # SPDX-FileCopyrightText: 2025 maelines
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
@@ -5,44 +6,35 @@
 - type: marking
   id: HumanEyesGlow
   bodyPart: Eyes
-  markingCategory: Face
+  markingCategory: Head
   speciesRestriction: [Human , Oni , Harpy , Lamia , Felinid, Kitsune , Canid, IPC]
-  coloring:
-    default:
-      type:
-        !type:EyeColoring
-          negative: false
+  forcedColoring: false
+  followSkinColor: false
   sprites:
   - sprite: _DEN/Mobs/Customization/Head/eyes.rsi
     state: glowingeyes
-  shader: unshaded
+    shader: unshaded
 
 - type: marking
   id: HumanEyesGlowR
   bodyPart: Eyes
-  markingCategory: Face
+  markingCategory: Head
   speciesRestriction: [Human , Oni , Harpy , Lamia , Felinid, Kitsune , Canid, IPC]
-  coloring:
-    default:
-      type:
-        !type:EyeColoring
-          negative: false
+  forcedColoring: false
+  followSkinColor: false
   sprites:
   - sprite: _DEN/Mobs/Customization/Head/eyes.rsi
     state: glowingeyer
-  shader: unshaded
+    shader: unshaded
 
 - type: marking
   id: HumanEyesGlowL
   bodyPart: Eyes
-  markingCategory: Face
+  markingCategory: Head
   speciesRestriction: [Human , Oni , Harpy , Lamia , Felinid, Kitsune , Canid, IPC]
-  coloring:
-    default:
-      type:
-        !type:EyeColoring
-          negative: false
+  forcedColoring: false
+  followSkinColor: false
   sprites:
   - sprite: _DEN/Mobs/Customization/Head/eyes.rsi
     state: glowingeyel
-  shader: unshaded
+    shader: unshaded
