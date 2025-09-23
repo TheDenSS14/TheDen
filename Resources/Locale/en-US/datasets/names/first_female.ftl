@@ -1,5 +1,6 @@
-# SPDX-FileCopyrightText: 2025 Blitz <73762869+BlitzTheSquishy@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Blitz
+# SPDX-FileCopyrightText: 2025 Winter
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -708,7 +709,7 @@ names-first-female-dataset-702 = Sherill
 names-first-female-dataset-703 = Sherri
 names-first-female-dataset-704 = Sienna
 names-first-female-dataset-705 = Sierra
-names-first-female-dataset-706 = Sissy
+names-first-female-dataset-706 = Sigrid
 names-first-female-dataset-707 = Skylar
 names-first-female-dataset-708 = Skyler
 names-first-female-dataset-709 = Sofia
