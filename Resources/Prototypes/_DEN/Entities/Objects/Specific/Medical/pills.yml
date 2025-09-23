@@ -1,7 +1,9 @@
-# SPDX-FileCopyrightText: 2025 Rosycup <178287475+Rosycup@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Rosycup
+# SPDX-FileCopyrightText: 2025 Winter
+# SPDX-FileCopyrightText: 2025 pocl v
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: entity
   parent: PillCanister
@@ -98,3 +100,127 @@
         reagents:
         - ReagentId: Libidozenithizine
           Quantity: 10
+
+- type: entity
+  parent: PillCanister
+  id: PillCanisterEstradiol
+  suffix: estradiol 5u
+  components:
+    - type: Label
+      currentLabel: estradiol 5u
+    - type: StorageFill
+      contents:
+        - id: PillEstradiol
+          amount: 4
+
+- type: entity
+  name: pill
+  suffix: estradiol 5u
+  parent: Pill
+  id: PillEstradiol
+  components:
+    - type: Pill
+      pillType: 2
+    - type: Sprite
+      state: pill3
+    - type: Label
+      currentLabel: estradiol 5u
+    - type: SolutionContainerManager
+      solutions:
+        food:
+          maxVol: 20
+          reagents:
+            - ReagentId: Estradiol
+              Quantity: 5
+
+- type: entity
+  parent: PillCanister
+  id: PillCanisterTestosterone
+  suffix: testosterone 5u
+  components:
+    - type: Label
+      currentLabel: testosterone 5u
+    - type: StorageFill
+      contents:
+        - id: PillTestosterone
+          amount: 4
+
+- type: entity
+  name: pill
+  suffix: testosterone 5u
+  parent: Pill
+  id: PillTestosterone
+  components:
+    - type: Pill
+      pillType: 2
+    - type: Sprite
+      state: pill4
+    - type: Label
+      currentLabel: testosterone 5u
+    - type: SolutionContainerManager
+      solutions:
+        food:
+          maxVol: 20
+          reagents:
+            - ReagentId: Testosterone
+              Quantity: 5
+
+- type: entity
+  id: EstradiolChemistryBottle
+  suffix: estradiol
+  parent: BaseChemistryBottleFilled
+  components:
+    - type: Label
+      currentLabel: reagent-name-estradiol
+    - type: SolutionContainerManager
+      solutions:
+        drink:
+          maxVol: 30
+          reagents:
+            - ReagentId: Estradiol
+              Quantity: 30
+
+- type: entity
+  id: TestosteroneChemistryBottle
+  suffix: testosterone
+  parent: BaseChemistryBottleFilled
+  components:
+    - type: Label
+      currentLabel: reagent-name-testosterone
+    - type: SolutionContainerManager
+      solutions:
+        drink:
+          maxVol: 30
+          reagents:
+            - ReagentId: Testosterone
+              Quantity: 30
+
+- type: entity
+  suffix: estradiol
+  parent: PrefilledSyringe
+  id: SyringeEstradiol
+  components:
+    - type: SolutionContainerManager
+      solutions:
+        injector:
+          maxVol: 15
+          reagents:
+            - ReagentId: Estradiol
+              Quantity: 15
+    - type: Label
+      currentLabel: estradiol
+
+- type: entity
+  suffix: testosterone
+  parent: PrefilledSyringe
+  id: SyringeTestosterone
+  components:
+    - type: SolutionContainerManager
+      solutions:
+        injector:
+          maxVol: 15
+          reagents:
+            - ReagentId: Testosterone
+              Quantity: 15
+    - type: Label
+      currentLabel: testosterone

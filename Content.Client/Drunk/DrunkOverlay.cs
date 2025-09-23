@@ -7,10 +7,12 @@
 //
 // SPDX-License-Identifier: MIT
 
+using Content.Shared._DV.CCVars;
 using Content.Shared.Drunk;
 using Content.Shared.StatusEffect;
 using Robust.Client.Graphics;
 using Robust.Client.Player;
+using Robust.Shared.Configuration;
 using Robust.Shared.Enums;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
@@ -24,6 +26,7 @@ public sealed class DrunkOverlay : Overlay
     [Dependency] private readonly IPlayerManager _playerManager = default!;
     [Dependency] private readonly IEntitySystemManager _sysMan = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
+    [Dependency] private readonly IConfigurationManager _cfg = default!;
 
     public override OverlaySpace Space => OverlaySpace.WorldSpace;
     public override bool RequestScreenTexture => true;
@@ -81,7 +84,8 @@ public sealed class DrunkOverlay : Overlay
     {
         if (ScreenTexture == null)
             return;
-
+        if (_cfg.GetCVar(DCCVars.DisableDrunkWarping))
+            return;
         var handle = args.WorldHandle;
         _drunkShader.SetParameter("SCREEN_TEXTURE", ScreenTexture);
         _drunkShader.SetParameter("boozePower", _visualScale);

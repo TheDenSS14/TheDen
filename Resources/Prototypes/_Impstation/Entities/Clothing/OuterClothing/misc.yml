@@ -1,0 +1,14 @@
+- type: entity
+  parent: [ ClothingNeckScarfBase ]
+  id: ClothingOuterPonchoWhite
+  name: lightweight poncho
+  description: Flowy and waterproof!
+  components:
+  - type: Sprite
+    sprite: _Impstation/Clothing/OuterClothing/Misc/poncho.rsi
+  - type: Clothing
+    quickEquip: false
+    slots:
+      - OUTERCLOTHING
+      - NECK
+    sprite: _Impstation/Clothing/OuterClothing/Misc/poncho.rsi

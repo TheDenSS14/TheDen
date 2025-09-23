@@ -23,14 +23,16 @@
 # SPDX-FileCopyrightText: 2024 flyingkarii
 # SPDX-FileCopyrightText: 2024 lzk
 # SPDX-FileCopyrightText: 2024 reverie collection
+# SPDX-FileCopyrightText: 2025 Blitz
 # SPDX-FileCopyrightText: 2025 BlitzTheSquishy
+# SPDX-FileCopyrightText: 2025 Jakumba
 # SPDX-FileCopyrightText: 2025 MajorMoth
 # SPDX-FileCopyrightText: 2025 Rosycup
 # SPDX-FileCopyrightText: 2025 Skubman
 # SPDX-FileCopyrightText: 2025 Timfa
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 # Traitor
 - type: weightedRandom
@@ -49,7 +51,7 @@
     RDHardsuitStealObjective: 1
     NukeDiskStealObjective: 1
     MagbootsStealObjective: 1
-    CorgiMeatStealObjective: 1
+    # CorgiMeatStealObjective: 1 # DEN
     MantisKnifeStealObjective: 1 # Nyanotrasen - ForensicMantis steal objective, see Resources/Prototypes/Nyanotrasen/Objectives/traitor.yml
     ClipboardStealObjective: 1
     #RdClipboardStealObjective: 1 # DeltaV - Mysta steal Objective see Resources/Prototypes/_DV/Objectives/traitor.yml
@@ -61,7 +63,7 @@
     HoPBookIanDossierStealObjective: 1 # DeltaV - HoP steal objective, see Resources/Prototypes/_DV/Objectives/traitor.yml
     HoSGunStealObjective: 0.5
     StealSupermatterSliverObjective: 0.5
-    EnergyShotgunStealObjective: 0.5
+    # EnergyShotgunStealObjective: 0.5 # DEN
 
 - type: weightedRandom
   id: TraitorObjectiveGroupKill
@@ -74,7 +76,7 @@
   id: TraitorObjectiveGroupState
   weights:
     EscapeShuttleObjective: 1
-    DieObjective: 0.05
+    # DieObjective: 0.05 # DEN
     #HijackShuttleObjective: 0.02
 
 - type: weightedRandom

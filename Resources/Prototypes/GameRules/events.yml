@@ -61,7 +61,6 @@
 # SPDX-FileCopyrightText: 2024 NakataRin
 # SPDX-FileCopyrightText: 2024 Nemanja
 # SPDX-FileCopyrightText: 2024 OrangeMoronage9622
-# SPDX-FileCopyrightText: 2024 PJBot
 # SPDX-FileCopyrightText: 2024 Pieter-Jan Briers
 # SPDX-FileCopyrightText: 2024 Plykiya
 # SPDX-FileCopyrightText: 2024 Preston Smith
@@ -95,7 +94,6 @@
 # SPDX-FileCopyrightText: 2024 fenndragon
 # SPDX-FileCopyrightText: 2024 foboscheshir
 # SPDX-FileCopyrightText: 2024 fox
-# SPDX-FileCopyrightText: 2024 github-actions[bot]
 # SPDX-FileCopyrightText: 2024 lzk
 # SPDX-FileCopyrightText: 2024 metalgearsloth
 # SPDX-FileCopyrightText: 2024 neutrino
@@ -123,7 +121,6 @@
 # SPDX-FileCopyrightText: 2025 EctoplasmIsGood
 # SPDX-FileCopyrightText: 2025 Falcon
 # SPDX-FileCopyrightText: 2025 Fishbait
-# SPDX-FileCopyrightText: 2025 GoobBot
 # SPDX-FileCopyrightText: 2025 Ilya246
 # SPDX-FileCopyrightText: 2025 Jakumba
 # SPDX-FileCopyrightText: 2025 Leon Friedrich
@@ -139,6 +136,7 @@
 # SPDX-FileCopyrightText: 2025 Ted Lukin
 # SPDX-FileCopyrightText: 2025 TheBorzoiMustConsume
 # SPDX-FileCopyrightText: 2025 VMSolidus
+# SPDX-FileCopyrightText: 2025 Vanessa
 # SPDX-FileCopyrightText: 2025 Vanessa Louwagie
 # SPDX-FileCopyrightText: 2025 Velcroboy
 # SPDX-FileCopyrightText: 2025 Your Name
@@ -154,7 +152,7 @@
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 # SPDX-FileCopyrightText: 2025 unknown
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: entity
   id: BaseStationEvent
@@ -704,6 +702,7 @@
 - type: entity
   id: SnakeSpawn
   parent: BaseVentCritterSpawn
+  categories: [ HideSpawnMenu ]
   components:
   - type: StationEvent
     startAnnouncement: true
@@ -828,7 +827,7 @@
     earliestStart: 90 # Den
     weight: 4.5 # Den
     minimumPlayers: 20
-    duration: 1
+    duration: null # LoneOpsSpawn needs an infinite duration so that it inherits the NukeOpsRule things of an actually appropriate end screen (not always "Neutral outcome!") and... ending the game if the station is nuked.
   - type: RuleGrids
   - type: LoadMapRule
     gridPath: /Maps/Shuttles/ShuttleEvent/striker.yml
@@ -871,8 +870,8 @@
     - prefRoles: [ TraitorSleeper ]
       fallbackRoles: [ Traitor ]
       min: 1
-      max: 2
-      playerRatio: 10
+      max: 5
+      playerRatio: 5
       blacklist:
         components:
         - AntagImmune
@@ -956,3 +955,135 @@
 #    weight: 10
 #  - type: RandomSpawnRule
 #    prototype: RandomSatchelSpawner
+
+- type: entity
+  parent: BaseGameRule
+  categories: [ HideSpawnMenu ]
+  id: DerelictEngineerCyborgSpawn
+  components:
+  - type: StationEvent
+    weight: 2.5
+    earliestStart: 15
+    reoccurrenceDelay: 20
+    minimumPlayers: 4
+    duration: null
+  - type: SpaceSpawnRule
+    spawnDistance: 0
+  - type: AntagSpawner
+    prototype: PlayerEngineeringBorgDerelictGhostRole
+  - type: AntagSelection
+    definitions:
+    - spawnerPrototype: SpawnPointGhostDerelictEngineeringCyborg
+      min: 1
+      max: 1
+      pickPlayer: false
+
+- type: entity
+  parent: BaseGameRule
+  categories: [ HideSpawnMenu ]
+  id: DerelictGenericCyborgSpawn
+  components:
+  - type: StationEvent
+    weight: 2.5
+    earliestStart: 15
+    reoccurrenceDelay: 20
+    minimumPlayers: 4
+    duration: null
+  - type: SpaceSpawnRule
+    spawnDistance: 0
+  - type: AntagSpawner
+    prototype: PlayerBorgDerelictGhostRole
+  - type: AntagSelection
+    definitions:
+    - spawnerPrototype: SpawnPointGhostDerelictCyborg
+      min: 1
+      max: 1
+      pickPlayer: false
+
+- type: entity
+  parent: BaseGameRule
+  categories: [ HideSpawnMenu ]
+  id: DerelictJanitorCyborgSpawn
+  components:
+  - type: StationEvent
+    weight: 2.5
+    earliestStart: 15
+    reoccurrenceDelay: 20
+    minimumPlayers: 4
+    duration: null
+  - type: SpaceSpawnRule
+    spawnDistance: 0
+  - type: AntagSpawner
+    prototype: PlayerJanitorBorgDerelictGhostRole
+  - type: AntagSelection
+    definitions:
+    - spawnerPrototype: SpawnPointGhostDerelictJanitorCyborg
+      min: 1
+      max: 1
+      pickPlayer: false
+
+- type: entity
+  parent: BaseGameRule
+  categories: [ HideSpawnMenu ]
+  id: DerelictMedicalCyborgSpawn
+  components:
+  - type: StationEvent
+    weight: 2.5
+    earliestStart: 15
+    reoccurrenceDelay: 20
+    minimumPlayers: 4
+    duration: null
+  - type: SpaceSpawnRule
+    spawnDistance: 0
+  - type: AntagSpawner
+    prototype: PlayerMedicalBorgDerelictGhostRole
+  - type: AntagSelection
+    definitions:
+    - spawnerPrototype: SpawnPointGhostDerelictMedicalCyborg
+      min: 1
+      max: 1
+      pickPlayer: false
+
+- type: entity
+  parent: BaseGameRule
+  categories: [ HideSpawnMenu ]
+  id: DerelictMiningCyborgSpawn
+  components:
+  - type: StationEvent
+    weight: 2.5
+    earliestStart: 15
+    reoccurrenceDelay: 20
+    minimumPlayers: 4
+    duration: null
+  - type: SpaceSpawnRule
+    spawnDistance: 0
+  - type: AntagSpawner
+    prototype: PlayerMiningBorgDerelictGhostRole
+  - type: AntagSelection
+    definitions:
+    - spawnerPrototype: SpawnPointGhostDerelictMiningCyborg
+      min: 1
+      max: 1
+      pickPlayer: false
+
+- type: entity
+  parent: BaseGameRule
+  categories: [ HideSpawnMenu ]
+  id: DerelictSyndicateAssaultCyborgSpawn
+  components:
+  - type: StationEvent
+    weight: 2.5
+    earliestStart: 25
+    reoccurrenceDelay: 20
+    minimumPlayers: 15
+    duration: null
+  - type: SpaceSpawnRule
+    spawnDistance: 0
+  - type: AntagSpawner
+    prototype: PlayerBorgSyndicateDerelictGhostRole
+  - type: AntagSelection
+    definitions:
+    - spawnerPrototype: SpawnPointGhostDerelictSyndicateAssaultCyborg
+      min: 1
+      max: 1
+      pickPlayer: false

@@ -1,4 +1,5 @@
 // SPDX-FileCopyrightText: 2025 AirFryerBuyOneGetOneFree
+// SPDX-FileCopyrightText: 2025 Shaman
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -24,12 +25,6 @@ public sealed class ImpCCVars : CVars
     /// </summary>
     public static readonly CVarDef<bool> AutoGetUp =
         CVarDef.Create("white.auto_get_up", true, CVar.CLIENT | CVar.ARCHIVE | CVar.REPLICATED); // WD EDIT
-
-    /// <summary>
-    /// The number of shared moods to give thaven by default.
-    /// </summary>
-    public static readonly CVarDef<uint> ThavenSharedMoodCount =
-        CVarDef.Create<uint>("thaven.shared_mood_count", 1, CVar.SERVERONLY);
 
     /// <summary>
     /// URL of the Discord webhook which will relay last messages before death.
@@ -69,4 +64,10 @@ public sealed class ImpCCVars : CVars
     /// </summary>
     public static readonly CVarDef<int> DiscordLastMessageSystemMaxMessageBatchOverflowDelay =
         CVarDef.Create("discord.last_message_system_max_message_batch_overflow_delay", 60000, CVar.SERVERONLY);
+
+    /// <summary>
+    /// The number of shared moods to give thaven by default.
+    /// </summary>
+    public static readonly CVarDef<uint> ThavenSharedMoodCount =
+        CVarDef.Create<uint>("thaven.shared_mood_count", 1, CVar.SERVERONLY);
 }

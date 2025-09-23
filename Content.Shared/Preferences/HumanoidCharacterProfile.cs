@@ -99,6 +99,13 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
     [DataField]
     public string FlavorText { get; set; } = string.Empty;
 
+    /// Detailed text that can appear for the character if <see cref="CCVars.FlavorText"/> and the viewer consent is enabled
+    [DataField]
+    public string NsfwFlavorText { get; set; } = string.Empty;
+
+    [DataField]
+    public string CharacterConsent { get; set; } = string.Empty;
+
     /// Associated <see cref="SpeciesPrototype"/> for this profile
     [DataField]
     public string Species { get; set; } = SharedHumanoidAppearanceSystem.DefaultSpecies;
@@ -182,7 +189,9 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
 
     public HumanoidCharacterProfile(
         string name,
-        string flavortext,
+        string flavorText,
+        string nsfwFlavorText,
+        string characterConsent, // DEN: per-character consents
         string species,
         string customspeciename,
         // EE -- Contractors Change Start
@@ -211,7 +220,9 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
         PlayerProvidedCharacterRecords? cdCharacterRecords)
     {
         Name = name;
-        FlavorText = flavortext;
+        FlavorText = flavorText;
+        NsfwFlavorText = nsfwFlavorText;
+        CharacterConsent = characterConsent;
         Species = species;
         Customspeciename = customspeciename;
         // EE -- Contractors Change Start
@@ -245,6 +256,8 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
         : this(
             other.Name,
             other.FlavorText,
+            other.NsfwFlavorText,
+            other.CharacterConsent,
             other.Species,
             other.Customspeciename,
             // EE -- Contractors Change Start
@@ -385,6 +398,8 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
 
     public HumanoidCharacterProfile WithName(string name) => new(this) { Name = name };
     public HumanoidCharacterProfile WithFlavorText(string flavorText) => new(this) { FlavorText = flavorText };
+    public HumanoidCharacterProfile WithNsfwFlavorText(string flavorText) => new(this) { NsfwFlavorText = flavorText};
+    public HumanoidCharacterProfile WithCharacterConsent(string content) => new(this) { CharacterConsent = content};
     public HumanoidCharacterProfile WithAge(int age) => new(this) { Age = age };
     // EE - Contractors Change Start
     public HumanoidCharacterProfile WithNationality(string nationality) => new(this) { Nationality = nationality };
@@ -500,7 +515,8 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
 
     public bool MemberwiseEquals(ICharacterProfile maybeOther)
     {
-        return maybeOther is HumanoidCharacterProfile other
+        // DEN: I'm moving this into a var so I can debug this easier.
+        var result = maybeOther is HumanoidCharacterProfile other
             && Name == other.Name
             && Age == other.Age
             && Sex == other.Sex
@@ -517,11 +533,22 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
             && _jobPriorities.SequenceEqual(other._jobPriorities)
             && _antagPreferences.SequenceEqual(other._antagPreferences)
             && _traitPreferences.SequenceEqual(other._traitPreferences)
-            && LoadoutPreferences.SequenceEqual(other.LoadoutPreferences)
+            && _loadoutPreferences.SequenceEqual(other._loadoutPreferences)
             && Appearance.MemberwiseEquals(other.Appearance)
             && FlavorText == other.FlavorText
+            && NsfwFlavorText == other.NsfwFlavorText
+            && CharacterConsent == other.CharacterConsent
             && (CDCharacterRecords == null || other.CDCharacterRecords == null
-                || CDCharacterRecords.MemberwiseEquals(other.CDCharacterRecords));
+                || CDCharacterRecords.MemberwiseEquals(other.CDCharacterRecords))
+            // DEN additions below
+            && Customspeciename == other.Customspeciename
+            && Height == other.Height
+            && Width == other.Width
+            && DisplayPronouns == other.DisplayPronouns
+            && StationAiName == other.StationAiName
+            && CyborgName == other.CyborgName;
+
+        return result;
     }
 
     public void EnsureValid(ICommonSession session, IDependencyCollection collection)
@@ -742,7 +769,15 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
         hashCode.Add(Appearance);
         hashCode.Add((int) SpawnPriority);
         hashCode.Add((int) PreferenceUnavailable);
+        // DEN Additions
         hashCode.Add(Customspeciename);
+        hashCode.Add(CDCharacterRecords);
+        hashCode.Add(Height);
+        hashCode.Add(Width);
+        hashCode.Add(DisplayPronouns);
+        hashCode.Add(StationAiName);
+        hashCode.Add(CyborgName);
+        // DEN Additions End
         return hashCode.ToHashCode();
     }
 

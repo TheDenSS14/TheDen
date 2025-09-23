@@ -285,6 +285,8 @@ namespace Content.Server.Database
             return new HumanoidCharacterProfile(
                 profile.CharacterName,
                 profile.FlavorText,
+                profile.NsfwFlavorText,
+                profile.CharacterConsent,
                 profile.Species,
                 profile.CustomSpecieName,
                 profile.Nationality,
@@ -337,6 +339,8 @@ namespace Content.Server.Database
 
             profile.CharacterName = humanoid.Name;
             profile.FlavorText = humanoid.FlavorText;
+            profile.NsfwFlavorText = humanoid.NsfwFlavorText;
+            profile.CharacterConsent = humanoid.CharacterConsent;
             profile.Species = humanoid.Species;
             profile.CustomSpecieName = humanoid.Customspeciename;
             profile.Nationality = humanoid.Nationality;
@@ -669,6 +673,40 @@ namespace Content.Server.Database
             record.LastSeenHWId = hwId;
 
             await db.DbContext.SaveChangesAsync();
+        }
+
+        public async Task UpdateDiscordLink(NetUserId userId, ulong? discordId)
+        {
+            await using var db = await GetDb();
+
+            var record = await db.DbContext.Player.SingleOrDefaultAsync(p => p.UserId == userId.UserId);
+
+            if (record == null)
+                return;
+
+            record.DiscordUserId = discordId;
+            await db.DbContext.SaveChangesAsync();
+        }
+
+        public async Task UpdateDiscordLink(ulong associatedDiscordId, ulong? newDiscordId)
+        {
+            await using var db = await GetDb();
+
+            var record = await db.DbContext.Player.SingleOrDefaultAsync(p => p.DiscordUserId == associatedDiscordId);
+
+            if (record == null)
+                return;
+
+            record.DiscordUserId = newDiscordId;
+            await db.DbContext.SaveChangesAsync();
+        }
+
+        public async Task<ulong?> GetDiscordLink(NetUserId userId)
+        {
+            await using var db = await GetDb();
+
+            var record = await db.DbContext.Player.SingleOrDefaultAsync(p => p.UserId == userId.UserId);
+            return record?.DiscordUserId;
         }
 
         public async Task<PlayerRecord?> GetPlayerRecordByUserName(string userName, CancellationToken cancel)

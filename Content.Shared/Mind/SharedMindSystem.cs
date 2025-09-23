@@ -386,6 +386,16 @@ public abstract class SharedMindSystem : EntitySystem
         var title = Name(objective);
         _adminLogger.Add(LogType.Mind, LogImpact.Low, $"Objective {objective} ({title}) removed from the mind of {MindOwnerLoggingString(mind)}");
         mind.Objectives.Remove(objective);
+
+        // garbage collection - only delete the objective entity if no mind uses it anymore
+        // This comes up for stuff like paradox clones where the objectives share the same entity
+        var mindQuery = AllEntityQuery<MindComponent>();
+        while (mindQuery.MoveNext(out _, out var queryComp))
+        {
+            if (queryComp.Objectives.Contains(objective))
+                return true;
+        }
+
         Del(objective);
         return true;
     }

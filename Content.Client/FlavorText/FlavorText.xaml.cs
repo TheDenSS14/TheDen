@@ -16,7 +16,9 @@ namespace Content.Client.FlavorText
     [GenerateTypedNameReferences]
     public sealed partial class FlavorText : Control
     {
-        public Action<string>? OnFlavorTextChanged;
+        public Action<string>? OnSfwFlavorTextChanged;
+        public Action<string>? OnNsfwFlavorTextChanged;
+        public Action<string>? OnCharacterConsentChanged;
 
         public FlavorText()
         {
@@ -24,13 +26,31 @@ namespace Content.Client.FlavorText
             IoCManager.InjectDependencies(this);
 
             var loc = IoCManager.Resolve<ILocalizationManager>();
-            CFlavorTextInput.Placeholder = new Rope.Leaf(loc.GetString("flavor-text-placeholder"));
-            CFlavorTextInput.OnTextChanged  += _ => FlavorTextChanged();
+            CFlavorTextSFWInput.Placeholder = new Rope.Leaf(loc.GetString("flavor-text-placeholder"));
+            CFlavorTextSFWInput.OnTextChanged  += _ => SfwFlavorTextChanged();
+
+            CFlavorTextNSFWInput.Placeholder = new Rope.Leaf(loc.GetString("flavor-text-nsfw-placeholder"));
+            CFlavorTextNSFWInput.OnTextChanged  += _ => NsfwFlavorTextChanged();
+
+            CFlavorTextConsentInput.Placeholder = new Rope.Leaf(loc.GetString("character-consent-placeholder"));
+            CFlavorTextConsentInput.OnTextChanged  += _ => CharacterConsentTextChanged();
+
+            TabSFW.Orphan();
+            TabNSFW.Orphan();
+            TabCharacterConsent.Orphan();
+
+            FlavorTextTabs.AddTab(TabSFW, loc.GetString("flavor-text-title"));
+            FlavorTextTabs.AddTab(TabNSFW, loc.GetString("flavor-text-nsfw-title"));
+            FlavorTextTabs.AddTab(TabCharacterConsent, loc.GetString("character-consent-title"));
         }
 
-        public void FlavorTextChanged()
-        {
-            OnFlavorTextChanged?.Invoke(Rope.Collapse(CFlavorTextInput.TextRope).Trim());
-        }
+        private void SfwFlavorTextChanged() =>
+            OnSfwFlavorTextChanged?.Invoke(Rope.Collapse(CFlavorTextSFWInput.TextRope).Trim());
+
+        private void NsfwFlavorTextChanged() =>
+            OnNsfwFlavorTextChanged?.Invoke(Rope.Collapse(CFlavorTextNSFWInput.TextRope).Trim());
+
+        private void CharacterConsentTextChanged() =>
+            OnCharacterConsentChanged?.Invoke(Rope.Collapse(CFlavorTextConsentInput.TextRope).Trim());
     }
 }

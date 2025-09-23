@@ -1,12 +1,13 @@
-# SPDX-FileCopyrightText: 2023 EnDecc <33369477+Endecc@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2023 Fluffiest Floofers <thebluewulf@gmail.com>
-# SPDX-FileCopyrightText: 2023 gus <august.eymann@gmail.com>
-# SPDX-FileCopyrightText: 2023 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 SimpleStation14 <130339894+SimpleStation14@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 Tmanzxd <164098915+Tmanzxd@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 EnDecc
+# SPDX-FileCopyrightText: 2023 Fluffiest Floofers
+# SPDX-FileCopyrightText: 2023 gus
+# SPDX-FileCopyrightText: 2023 metalgearsloth
+# SPDX-FileCopyrightText: 2024 SimpleStation14
+# SPDX-FileCopyrightText: 2024 Tmanzxd
+# SPDX-FileCopyrightText: 2025 Eightballll
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: cargoProduct
   id: CargoOreBox
@@ -25,5 +26,15 @@
     state: icon
   product: CrateCargoLuxuryHardsuit
   cost: 15000
+  category: cargoproduct-category-name-cargo
+  group: market
+
+- type: cargoProduct
+  id: CargoParcelWrap
+  icon:
+    sprite: Objects/Misc/ParcelWrap/parcel_wrap.rsi
+    state: brown
+  product: CrateCargoParcelWrap
+  cost: 750
   category: cargoproduct-category-name-cargo
   group: market

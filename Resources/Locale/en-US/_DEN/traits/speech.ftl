@@ -52,6 +52,10 @@ trait-name-KitsuneSounds = Extra Emotes (Kitsune)
 trait-description-KitsuneSounds = Adds on to your existing emotes, giving your character access to the emotes that Kitsunes have. 
     Such as: gekker, bark, yip, yap, whine, howl, awoo, growl, squeak
 
+trait-name-MothSounds = Extra Emotes (Moth)
+trait-description-MothSounds = Adds on to your existing emotes, giving your character access to the emotes that Moths have. 
+    Such as: squeak, chitter
+
 trait-name-VulpkaninSoundsReplace = Replace Emotes (Vulpkanin)
 trait-description-VulpkaninSoundsReplace = Replace any existing emote sounds, giving your character access to the emotes that Vulpkanins have instead.
     Such as: wag, bark, awoo, snarl, whine, yip, yap, howl, gekker, growl
@@ -100,3 +104,8 @@ trait-name-KitsuneSoundsReplace = Replace Emotes (Kitsune)
 trait-description-KitsuneSoundsReplace =
     Replace any existing emote sounds, giving your character access to the emotes that Kitsunes have instead. 
     Such as: gekker, bark, yip, yap, whine, howl, awoo, growl, squeak
+
+trait-name-MothSoundsReplace = Replace Emotes (Moth)
+trait-description-MothSoundsReplace =
+    Replace any existing emote sounds, giving your character access to the emotes that Moths have instead. 
+    Such as: squeak, chitter

@@ -8,7 +8,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 <DefaultWindow xmlns="https://spacestation14.io"
                xmlns:ui="clr-namespace:Content.Client.UserInterface.Controls"
                Title="{Loc language-menu-window-title}"
-               SetSize="300 300">
+               SetSize="375 300">
     <BoxContainer Orientation="Vertical" SeparationOverride="4" MinWidth="150">
         <PanelContainer Name="CurrentLanguageContainer" Access="Public" StyleClasses="PdaBorderRect">
             <Label Name="CurrentLanguageLabel" Access="Public" Text="Current Language:" HorizontalExpand="True"></Label>

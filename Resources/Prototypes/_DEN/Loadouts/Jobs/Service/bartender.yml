@@ -61,6 +61,40 @@
         - Bartender
 
 - type: loadout
+  id: LoadoutServiceUniformSeniorBartender
+  category: JobsServiceBartender
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingUniformSeniorBartender
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBartenderUniforms
+    - !type:CharacterPlaytimeRequirement
+      tracker: JobBartender
+      min: 216000 # 60 hours; 20 full shifts
+    - !type:CharacterJobRequirement
+      jobs:
+        - Bartender
+
+- type: loadout
+  id: LoadoutServiceUniformSeniorBartenderSkirt
+  category: JobsServiceBartender
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingUniformSeniorBartenderSkirt
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBartenderUniforms
+    - !type:CharacterPlaytimeRequirement
+      tracker: JobBartender
+      min: 216000 # 60 hours; 20 full shifts
+    - !type:CharacterJobRequirement
+      jobs:
+        - Bartender
+
+- type: loadout
   id: LoadoutServiceOuterBartenderApron
   category: JobsServiceBartender
   cost: 0
@@ -81,6 +115,20 @@
   exclusive: true
   items:
     - ClothingOuterVest
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBartenderOuter
+    - !type:CharacterJobRequirement
+      jobs:
+        - Bartender
+
+- type: loadout
+  id: LoadoutServiceOuterApronCuteBar
+  category: JobsServiceBartender
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingOuterApronCuteBar
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutBartenderOuter

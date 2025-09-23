@@ -3,6 +3,7 @@
 # SPDX-FileCopyrightText: 2023 lzk
 # SPDX-FileCopyrightText: 2024 Debug
 # SPDX-FileCopyrightText: 2024 Emisse
+# SPDX-FileCopyrightText: 2025 LilNutters
 # SPDX-FileCopyrightText: 2025 MajorMoth
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
@@ -26,6 +27,8 @@
   - type: OnUseTimerTrigger
     delay: 4
     examinable: false
+  - type: EmitSoundOnUse
+    handle: false
 
 - type: entity
   parent: BaseItem

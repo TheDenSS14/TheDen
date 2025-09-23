@@ -96,8 +96,11 @@
     reflectProb: .2
     spread: 90
   - type: Item
-    size: Normal
-    sprite: Objects/Weapons/Melee/captain_sabre.rsi
+    storedSprite:
+      state: storage
+      sprite: Objects/Weapons/Melee/captain_sabre_storage_64x.rsi #Done in 64x64 because it looks way too puny in 32x32
+    shape:
+    - 0,0,0,3
   - type: Tag
     tags:
     - CaptainSabre
@@ -141,8 +144,16 @@
   - type: ThrowingAngle
     angle: 225
   - type: Item
-    size: Normal
-    sprite: _DV/Objects/Weapons/Melee/katana.rsi #DeltaV
+    storedSprite:
+      state: storage
+      sprite: Objects/Weapons/Melee/katana_storage_64x.rsi #Done in 64x64 because it looks way too puny in 32x32
+    shape:
+    - 0,0,0,3
+  - type: Clothing
+    sprite: Objects/Weapons/Melee/katana.rsi
+    slots:
+    - Back
+    - Belt
   - type: DisarmMalus
 
 - type: entity
@@ -162,8 +173,11 @@
   - type: ThrowingAngle
     angle: 300
   - type: Item
-    size: Normal
-    sprite: Objects/Weapons/Melee/energykatana.rsi
+    storedSprite:
+      state: storage
+      sprite: Objects/Weapons/Melee/energykatana_storage_64x.rsi #Done in 64x64 because it looks way too puny in 32x32
+    shape:
+    - 0,0,0,3
   - type: EnergyKatana
   - type: DashAbility
   - type: LimitedCharges
@@ -213,8 +227,11 @@
   - type: ThrowingAngle
     angle: 225
   - type: Item
-    size: Normal
-    sprite: Objects/Weapons/Melee/machete.rsi
+    storedSprite:
+      state: storage
+      sprite: Objects/Weapons/Melee/machete.rsi
+    shape:
+    - 0,0,0,2
 
 - type: entity
   name: claymore
@@ -249,7 +266,11 @@
   - type: ThrowingAngle
     angle: 225
   - type: Item
-    size: Normal
+    storedSprite:
+      state: storage
+      sprite: Objects/Weapons/Melee/claymore_storage_64x.rsi #Done in 64x64 because it looks way too puny in 32x32
+    shape:
+    - 0,0,1,3
   - type: Clothing
     sprite: Objects/Weapons/Melee/claymore.rsi
     slots:
@@ -290,7 +311,11 @@
   - type: ThrowingAngle
     angle: 225
   - type: Item
-    size: Normal
+    storedSprite:
+      state: storage
+      sprite: Objects/Weapons/Melee/cutlass.rsi
+    shape:
+    - 0,0,0,2
     sprite: Objects/Weapons/Melee/cutlass.rsi
 
 - type: entity

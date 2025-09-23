@@ -20,7 +20,7 @@ public sealed partial class HyposprayComponent : Component
     public float MaxPressure = float.MaxValue;
 
     [DataField]
-    public float InjectTime = 2f;
+    public float InjectTime = 0f;
 
     [DataField]
     public string SolutionName = "hypospray";
@@ -53,4 +53,18 @@ public sealed partial class HyposprayComponent : Component
     [DataField]
     [ViewVariables(VVAccess.ReadWrite)]
     public bool NeedHands = true;
+
+    /// <summary>
+    /// Whether or not the hypospray injects it's entire capacity on use.
+    /// Used by Jet Injectors.
+    /// </summary>
+    [DataField]
+    public bool InjectMaxCapacity = false;
+
+    /// <summary>
+    /// Whether or not the hypospray can inject chitinids.
+    /// Used by Jet Injectors.
+    /// </summary>
+    [DataField]
+    public bool BypassBlockInjection = true;
 }

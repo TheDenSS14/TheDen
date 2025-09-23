@@ -1,0 +1,31 @@
+# Eyes
+
+- type: marking
+  id: EyesShadowkin
+  bodyPart: Eyes
+  markingCategory: Head
+  speciesRestriction: [ Shadowkin ]
+  coloring:
+    default:
+      type:
+        !type:EyeColoring
+  forcedColoring: true
+  sprites:
+  - sprite: Mobs/Species/Shadowkin/parts.rsi
+    state: eyes
+
+- type: marking
+  id: EyesShadowkinUnshaded
+  bodyPart: Eyes
+  markingCategory: Head
+  speciesRestriction: [ Shadowkin ]
+  coloring:
+    default:
+      type:
+        !type:EyeColoring
+          negative: false
+  forcedColoring: true
+  sprites:
+  - sprite: Mobs/Species/Shadowkin/parts.rsi
+    state: eyes
+  shader: unshaded

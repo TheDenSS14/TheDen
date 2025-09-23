@@ -12,12 +12,13 @@
 # SPDX-FileCopyrightText: 2024 deltanedas
 # SPDX-FileCopyrightText: 2024 flyingkarii
 # SPDX-FileCopyrightText: 2024 metalgearsloth
+# SPDX-FileCopyrightText: 2025 Jakumba
 # SPDX-FileCopyrightText: 2025 Memeji Dankiri
 # SPDX-FileCopyrightText: 2025 Timfa
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 # SPDX-FileCopyrightText: 2025 wheelwrightt
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: entity
   abstract: true
@@ -84,6 +85,7 @@
       state: shuttle
   - type: EscapeShuttleCondition
 
+# DEN
 # - type: entity
 #   categories: [HideSpawnMenu]
 #   parent: BaseTraitorObjective
@@ -102,6 +104,7 @@
 #       - EscapeShuttleCondition
 #       - StealCondition
 #   - type: DieCondition
+# DEN
 
 - type: entity
   categories: [HideSpawnMenu]
@@ -151,7 +154,7 @@
     # don't count missing evac as killing as heads are higher profile, so you really need to do the dirty work
     # if ce flies a shittle to centcom you better find a way onto it
     requireDead: true
-    
+
 # social
 
 - type: entity
@@ -274,18 +277,20 @@
 
 ## hop
 
-- type: entity
-  categories: [HideSpawnMenu]
-  parent: BaseTraitorStealObjective
-  id: CorgiMeatStealObjective
-  components:
-  - type: NotJobRequirement
-    job: HeadOfPersonnel
-  - type: ObjectiveLimit
-    limit: 3 # ian only has 2 slices, 3 obj for drama
-  - type: StealCondition
-    stealGroup: FoodMeatCorgi
-    owner: objective-condition-steal-Ian
+# DEN
+# - type: entity
+#   categories: [HideSpawnMenu]
+#   parent: BaseTraitorStealObjective
+#   id: CorgiMeatStealObjective
+#   components:
+#   - type: NotJobRequirement
+#     job: HeadOfPersonnel
+#   - type: ObjectiveLimit
+#     limit: 3 # ian only has 2 slices, 3 obj for drama
+#   - type: StealCondition
+#     stealGroup: FoodMeatCorgi
+#     owner: objective-condition-steal-Ian
+# DEN
 
 ## cap
 

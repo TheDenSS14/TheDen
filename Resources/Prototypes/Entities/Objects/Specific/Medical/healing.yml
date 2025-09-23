@@ -42,11 +42,12 @@
 # SPDX-FileCopyrightText: 2024 veprolet
 # SPDX-FileCopyrightText: 2025 MajorMoth
 # SPDX-FileCopyrightText: 2025 NeLepus
+# SPDX-FileCopyrightText: 2025 SeamLesss
 # SPDX-FileCopyrightText: 2025 Tabitha
 # SPDX-FileCopyrightText: 2025 VMSolidus
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: entity
   parent: BaseItem
@@ -170,6 +171,8 @@
     - Brutepack
   - type: Sprite
     state: brutepack
+  - type: Item
+    heldPrefix: brutepack
   - type: Healing
     damageContainers:
       - Biological
@@ -254,6 +257,8 @@
   id: Bloodpack
   suffix: Full
   components:
+  - type: Item
+    heldPrefix: bloodpack
   - type: Tag
     tags:
     - Bloodpack
@@ -296,6 +301,8 @@
         - SecBeltEquip
     - type: Sprite
       state: tourniquet
+    - type: Item
+      heldPrefix: tourniquet
     - type: Healing
       damageContainers:
         - Biological
@@ -324,6 +331,8 @@
     - Gauze
   - type: Sprite
     state: gauze
+  - type: Item
+    heldPrefix: gauze
   - type: Construction
     graph: Gauze
     node: gauze

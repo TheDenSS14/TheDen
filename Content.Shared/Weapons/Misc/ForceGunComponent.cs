@@ -23,7 +23,7 @@ public sealed partial class ForceGunComponent : BaseForceGunComponent
     /// <summary>
     /// The entity currently tethered.
     /// </summary>
-    [ViewVariables(VVAccess.ReadWrite), DataField("tethered"), AutoNetworkedField]
+    [ViewVariables(VVAccess.ReadWrite), DataField("tethered")]
     public override EntityUid? Tethered { get; set; }
 
     [ViewVariables(VVAccess.ReadWrite), DataField("soundLaunch")]

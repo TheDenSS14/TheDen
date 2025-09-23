@@ -37,6 +37,8 @@
   id: BaseMobChitinid
   abstract: true
   components:
+  - type: Inventory # TheDen - So they can have -chitinid clothing sprites
+    speciesId: chitinid
   - type: HumanoidAppearance
     species: Chitinid
     hideLayersOnEquip:
@@ -134,7 +136,7 @@
       state: creampie_moth
   - type: Chitinid
   - type: BlockInjection
-    blockReason: chitinid
+    blockReason: user
   - type: LanguageKnowledge
     speaks:
     - TauCetiBasic
@@ -148,5 +150,7 @@
   id: MobChitinidDummy
   categories: [ HideSpawnMenu ]
   components:
+  - type: Inventory # TheDen - So they can have -chitinid clothing sprites
+    speciesId: chitinid
   - type: HumanoidAppearance
     species: Chitinid

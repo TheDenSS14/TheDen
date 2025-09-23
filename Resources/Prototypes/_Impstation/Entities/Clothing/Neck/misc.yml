@@ -9,3 +9,54 @@
   - type: WearerGetsExamineText
     examineText: obvious-desc-proves
     thing: obvious-thing-badge
+
+# your angel or your devil
+- type: entity
+  parent: ClothingNeckBase
+  id: ClothingNeckAngelWings
+  name: angelwings
+  description: I can be your angle....
+  components:
+  - type: Sprite
+    sprite: _Impstation/Clothing/Neck/Misc/angelwings.rsi
+  - type: Clothing
+    sprite: _Impstation/Clothing/Neck/Misc/angelwings.rsi
+
+- type: entity
+  parent: ClothingNeckBase
+  id: ClothingNeckDevilWings
+  name: devil wings
+  description: ...or yuor devil.
+  components:
+  - type: Sprite
+    sprite: _Impstation/Clothing/Neck/Misc/devilwings.rsi
+  - type: Clothing
+    sprite: _Impstation/Clothing/Neck/Misc/devilwings.rsi
+  - type: Tag
+    tags:
+    - WhitelistChameleon
+
+- type: entity
+  parent: ClothingNeckBase
+  id: ClothingNeckSailorAscot
+  name: sailor's ascot
+  description: The preferred accessory for mystery solving whtieboys
+  components:
+  - type: Sprite
+    sprite: _Impstation/Clothing/Neck/Misc/sailorascot.rsi
+  - type: Clothing
+    sprite: _Impstation/Clothing/Neck/Misc/sailorascot.rsi
+  - type: Tag
+    tags:
+    - WhitelistChameleon
+
+- type: entity
+  parent: ClothingNeckBase
+  id: ClothingNeckFeatherBoa
+  name: feather boa
+  description: WACH OUT!! It's a snake with a LOOOOT of feathers!! Just kidding. It's really just fashion accessory.
+  components:
+  - type: Sprite
+    sprite: _Impstation/Clothing/Neck/Misc/mus_boa.rsi
+  - type: Clothing
+    sprite: _Impstation/Clothing/Neck/Misc/mus_boa.rsi

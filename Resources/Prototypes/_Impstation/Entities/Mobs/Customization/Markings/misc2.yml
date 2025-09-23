@@ -1,9 +1,10 @@
-# SPDX-FileCopyrightText: 2025 Blitz <73762869+BlitzTheSquishy@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 BloodfiendishOperator <141253729+Diggy0@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 Tabitha <64847293+KyuPolaris@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Blitz
+# SPDX-FileCopyrightText: 2025 BloodfiendishOperator
+# SPDX-FileCopyrightText: 2025 Shaman
+# SPDX-FileCopyrightText: 2025 Tabitha
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: marking
   id: HumanoidEyebags
@@ -50,37 +51,6 @@
   sprites:
   - sprite: _Impstation/Mobs/Customization/markingsbundle2.rsi
     state: eyebrowsunibrow
-
-- type: marking
-  id: AbdomenBasic
-  bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [Arachnid]
-  sprites:
-  - sprite: _Impstation/Mobs/Customization/markingsbundle2.rsi
-    state: abdomenbasic1
-  - sprite: _Impstation/Mobs/Customization/markingsbundle2.rsi
-    state: abdomenbasic2
-
-- type: marking
-  id: CreepyArms
-  bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [Arachnid]
-  sprites:
-  - sprite: _Impstation/Mobs/Customization/markingsbundle2.rsi
-    state: creepy
-
-- type: marking
-  id: AbdomenWidow
-  bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [Arachnid]
-  sprites:
-  - sprite: _Impstation/Mobs/Customization/markingsbundle2.rsi
-    state: widow1
-  - sprite: _Impstation/Mobs/Customization/markingsbundle2.rsi
-    state: widow2
 
 - type: marking
   id: ScarTalons

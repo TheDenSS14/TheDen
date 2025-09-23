@@ -1,8 +1,9 @@
-# SPDX-FileCopyrightText: 2025 Eris <eris@erisws.com>
-# SPDX-FileCopyrightText: 2025 VMSolidus <evilexecutive@gmail.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Blitz
+# SPDX-FileCopyrightText: 2025 Eris
+# SPDX-FileCopyrightText: 2025 VMSolidus
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 # Basic lavaland.
 - type: lavalandMap
@@ -17,9 +18,9 @@
     components:
     - MiningShuttle
   atmosphere:
-  - 10.524779 # oxygen, not enough for breathing
-  - 25.10312 # nitrogen
-  - 8.21301 # carbon dioxide
+    Oxygen: 10.524779 # not enough for breathing
+    Nitrogen: 25.10312
+    CarbonDioxide: 8.21301
   weather:
   - AshfallLight
   - AshfallHeavy

@@ -1,9 +1,11 @@
-// SPDX-FileCopyrightText: 2023 Darkie <darksaiyanis@gmail.com>
-// SPDX-FileCopyrightText: 2024 Aviu00 <93730715+Aviu00@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 deltanedas <39013340+deltanedas@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Darkie
+// SPDX-FileCopyrightText: 2024 Aviu00
+// SPDX-FileCopyrightText: 2024 Leon Friedrich
+// SPDX-FileCopyrightText: 2024 deltanedas
+// SPDX-FileCopyrightText: 2024 metalgearsloth
+// SPDX-FileCopyrightText: 2025 Jakumba
+// SPDX-FileCopyrightText: 2025 Sir Warock
+// SPDX-FileCopyrightText: 2025 sleepyyapril
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -40,6 +42,32 @@ public sealed partial class ItemToggleComponent : Component
     /// </summary>
     [DataField]
     public bool OnUse = true;
+
+    // Frontier: allow alt-verbs
+    /// <summary>
+    /// If this is set to true, the item can be toggled by pressing alt+Z.
+    /// </summary>
+    [DataField]
+    public bool OnAltUse = false;
+
+    /// <summary>
+    /// The priority of the alternative verb if enabled.
+    /// </summary>
+    [DataField]
+    public int AltPriority;
+    // End Frontier
+
+    /// <summary>
+    ///     The localized text to display in the verb to activate.
+    /// </summary>
+    [DataField]
+    public string VerbToggleOn = "item-toggle-activate";
+
+    /// <summary>
+    ///     The localized text to display in the verb to de-activate.
+    /// </summary>
+    [DataField]
+    public string VerbToggleOff = "item-toggle-deactivate";
 
     /// <summary>
     /// Goobstation

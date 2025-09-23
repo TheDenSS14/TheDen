@@ -70,6 +70,7 @@ public static class RecordsSerialization
         var def = PlayerProvidedCharacterRecords.DefaultRecords();
         return new PlayerProvidedCharacterRecords(
             emergencyContactName: DeserializeString(e, nameof(def.EmergencyContactName), def.EmergencyContactName),
+            residency: DeserializeString(e, nameof(def.Residency), def.Residency), // TheDen
             hasWorkAuthorization: DeserializeBool(e, nameof(def.HasWorkAuthorization), def.HasWorkAuthorization),
             identifyingFeatures: DeserializeString(e, nameof(def.IdentifyingFeatures), def.IdentifyingFeatures),
             allergies: DeserializeString(e, nameof(def.Allergies), def.Allergies),

@@ -153,6 +153,11 @@
       # End DeltaV
       - !type:EntSelector
         id: PlushieOvinia
+      - !type:EntSelector # TheDen
+        id: PlushieThaven
+      - !type:EntSelector # TheDen
+        id: PlushieThavenWeird
+        weight: 0.3
     - !type:GroupSelector
       children:
       - !type:EntSelector
@@ -259,6 +264,7 @@
       - id: CelloInstrument
       - id: ViolaInstrument
       - id: HarpInstrument
+      - id: HandheldHarpInstrument #imp
 
 - type: entity
   id: CrateFunInstrumentsWoodwind
@@ -501,6 +507,20 @@
       - id: MysteryFigureBox
         amount: 10
       - id: MysteryFigureBox
+        amount: 15
+        prob: 0.05
+
+- type: entity
+  id: CrateFunMysterySpaceBlades
+  parent: CratePlastic
+  name: mystery space blade crate
+  description: A collection of 10 Mystery Space Blade boxes. Duplicates non refundable.
+  components:
+  - type: StorageFill
+    contents:
+      - id: MysterySpaceBladeBox
+        amount: 10
+      - id: MysterySpaceBladeBox
         amount: 15
         prob: 0.05
 

@@ -33,6 +33,34 @@
     - ClothingUniformJumpskirtLawyerBlack
 
 - type: loadout
+  id: LoadoutServiceLawyerUniformCreamSuit
+  category: JobsServiceLawyer
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutLawyerUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - Lawyer
+  items:
+    - ClothingUniformCreamSuit
+
+- type: loadout
+  id: LoadoutServiceLawyerUniformCreamSuitSkirt
+  category: JobsServiceLawyer
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutLawyerUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - Lawyer
+  items:
+    - ClothingUniformCreamSuitSkirt
+
+- type: loadout
   id: LoadoutTowelMaroon
   category: JobsServiceLawyer
   cost: 1

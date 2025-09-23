@@ -29,6 +29,7 @@ using Robust.Shared.Map.Components;
 using Robust.Shared.Random;
 using Content.Shared.Maps;
 using Content.Shared.Mobs;
+using Content.Shared.Sprite;
 using Robust.Shared.Prototypes;
 
 namespace Content.Server._Goobstation.Bingle;

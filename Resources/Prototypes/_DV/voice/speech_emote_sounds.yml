@@ -2,6 +2,7 @@
 # SPDX-FileCopyrightText: 2023 Fluffiest Floofers
 # SPDX-FileCopyrightText: 2024 SimpleStation14
 # SPDX-FileCopyrightText: 2025 Blitz
+# SPDX-FileCopyrightText: 2025 Eightballll
 # SPDX-FileCopyrightText: 2025 M3739
 # SPDX-FileCopyrightText: 2025 Rosycup
 # SPDX-FileCopyrightText: 2025 Tabitha
@@ -137,6 +138,10 @@
       collection: Wurble
     CowMoo:
       collection: CowMoos
+    Gasp:
+      collection: MaleGasp
+    DefaultDeathgasp:
+      collection: MaleDeathGasp
 
 - type: emoteSounds
   id: MaleVulpkanin
@@ -183,6 +188,10 @@
       collection: Yip
     Yap:
       collection: VulpkaninYap
+    Gasp:
+      collection: MaleGasp
+    DefaultDeathgasp:
+      collection: MaleDeathGasp
 
 - type: emoteSounds
   id: FemaleVulpkanin
@@ -229,6 +238,10 @@
       collection: Yip
     Yap:
       collection: VulpkaninYap
+    Gasp:
+      collection: FemaleGasp
+    DefaultDeathgasp:
+      collection: FemaleDeathGasp
 
 - type: emoteSounds
   id: MobDog
@@ -275,8 +288,18 @@
       collection: Whistles
     Weh:
       collection: Weh
+    Growl:
+      collection: KitsuneGrowl
+    Gasp:
+      collection: MaleGasp
+    DefaultDeathgasp:
+      collection: MaleDeathGasp
     Squeak:
       path: /Audio/Animals/mouse_squeak.ogg
+    ThumpGeneral:
+      path: /Audio/Voice/Reptilian/reptilian_tailthump.ogg # TODO: find non-tail thump
+      params:
+        variation: 0.125
 
 - type: emoteSounds
   id: FemaleRodentia
@@ -305,10 +328,20 @@
       collection: Whistles
     Weh:
       collection: Weh
+    Growl:
+      collection: KitsuneGrowl
     Squeak:
       path: /Audio/Animals/mouse_squeak.ogg
     Hiss:
       path: /Audio/Animals/snake_hiss.ogg
+    ThumpGeneral:
+      path: /Audio/Voice/Reptilian/reptilian_tailthump.ogg # TODO: find non-tail thump
+      params:
+        variation: 0.125
+    Gasp:
+      collection: FemaleGasp
+    DefaultDeathgasp:
+      collection: FemaleDeathGasp
 
 - type: emoteSounds
   id: UnisexChitinid
@@ -335,6 +368,10 @@
       collection: MaleCoughs
     Yawn:
       collection: MaleYawn
+    Gasp:
+      collection: MaleGasp
+    DefaultDeathgasp:
+      collection: DeathGasp
     Hiss:
       path: /Audio/Animals/snake_hiss.ogg
 
@@ -367,6 +404,10 @@
       collection: MaleYawn
     Gnash:
       collection: FeroxiGnashes
+    Gasp:
+      collection: MaleGasp
+    DefaultDeathgasp:
+      collection: MaleDeathGasp
 
 - type: emoteSounds
   id: FemaleFeroxi
@@ -397,6 +438,10 @@
       collection: Weh
     Gnash:
       collection: FeroxiGnashes
+    Gasp:
+      collection: FemaleGasp
+    DefaultDeathgasp:
+      collection: FemaleDeathGasp
 
 - type: emoteSounds
   id: MaleKitsune
@@ -441,10 +486,10 @@
       collection: VulpkaninHowls
     Bark:
       collection: VulpkaninBarks
-#    Gasp: | Floof - M3739 - #937 - We do not have these... yet.
-#      collection: MaleGasp
-#    DefaultDeathgasp: 
-#      collection: MaleDeathGasp
+    Gasp:
+      collection: MaleGasp
+    DefaultDeathgasp:
+      collection: MaleDeathGasp
 
 - type: emoteSounds
   id: FemaleKitsune
@@ -491,7 +536,7 @@
       collection: VulpkaninHowls
     Bark:
       collection: VulpkaninBarks
-#    Gasp: | Floof - M3739 - #937 - We do not have these... yet.
-#      collection: FemaleGasp
-#    DefaultDeathgasp: 
-#      collection: FemaleDeathGasp
+    Gasp:
+      collection: FemaleGasp
+    DefaultDeathgasp:
+      collection: FemaleDeathGasp

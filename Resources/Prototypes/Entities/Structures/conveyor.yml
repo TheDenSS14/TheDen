@@ -36,7 +36,7 @@
   - type: Transform
     anchored: true
   - type: Sprite
-    sprite: Structures/conveyor.rsi
+    sprite: _DEN/Structures/conveyor.rsi # Den - Updated sprites
     state: conveyor_started_cw
     drawdepth: HighFloorObjects
   - type: ApcPowerReceiver
@@ -99,7 +99,7 @@
     tags:
     - ConveyorAssembly
   - type: Sprite
-    sprite: Structures/conveyor.rsi
+    sprite: _DEN/Structures/conveyor.rsi # Den - Updated sprites
     state: conveyor_loose
   - type: Construction
     graph: ConveyorGraph

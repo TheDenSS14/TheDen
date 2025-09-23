@@ -13,3 +13,59 @@
         - Librarian
   items:
     - TowelColorDarkGreen
+
+- type: loadout
+  id: LoadoutScienceJumpsuitLibrarianCurator
+  category: JobsEpistemicsCataloger
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutCatalogerUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - Librarian
+  items:
+    - ClothingUniformJumpsuitCurator
+
+- type: loadout
+  id: LoadoutScienceUniformLibrarianJumpskirtCurator
+  category: JobsEpistemicsCataloger
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutCatalogerUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - Librarian
+  items:
+    - ClothingUniformJumpskirtCurator
+
+- type: loadout
+  id: LoadoutScienceJumpsuitLibrarianBrownSuit
+  category: JobsEpistemicsCataloger
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutCatalogerUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - Librarian
+  items:
+    - ClothingUniformBrownSuit
+
+- type: loadout
+  id: LoadoutScienceJumpskirtLibrarianBrownSuitSkirt
+  category: JobsEpistemicsCataloger
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutCatalogerUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - Librarian
+  items:
+    - ClothingUniformBrownSuitSkirt

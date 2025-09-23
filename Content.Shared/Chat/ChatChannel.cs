@@ -143,6 +143,7 @@ namespace Content.Shared.Chat
             {
                 ChatChannel.OOC => Loc.GetString("chat-channel-humanized-ooc"),
                 ChatChannel.Admin => Loc.GetString("chat-channel-humanized-admin"),
+                ChatChannel.AdminChat => Loc.GetString("chat-channel-humanized-admin"),
                 _ => throw new ArgumentOutOfRangeException(nameof(channel), channel, null)
             };
         }

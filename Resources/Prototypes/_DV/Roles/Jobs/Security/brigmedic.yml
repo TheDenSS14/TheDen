@@ -11,6 +11,7 @@
 # SPDX-FileCopyrightText: 2025 Adrian16199
 # SPDX-FileCopyrightText: 2025 MajorMoth
 # SPDX-FileCopyrightText: 2025 Rosycup
+# SPDX-FileCopyrightText: 2025 Sir Warock
 # SPDX-FileCopyrightText: 2025 SixplyDev
 # SPDX-FileCopyrightText: 2025 Skubman
 # SPDX-FileCopyrightText: 2025 Timfa
@@ -49,13 +50,11 @@
   - !type:AddComponentSpecial
     components:
     - type: CPRTraining
-    - type: SurgerySpeedModifier
-      speedModifier: 2.0
   afterLoadoutSpecial:
   - !type:ModifyEnvirosuitSpecial
     charges: 6
   - !type:ModifyEnvirohelmSpecial
-    powerCell: PowerCellHigh
+    powerCell: PowerCellMedium
 
 - type: startingGear
   id: CorpsmanGear # see Prototypes/Roles/Jobs/Fun/misc_startinggear.yml for "BrigmedicGear"
