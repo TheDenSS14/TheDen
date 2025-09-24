@@ -17,8 +17,7 @@
 
 - type: entity
   save: false
-  parent:
-    - BaseMobSpeciesOrganic
+  parent: [BaseMobSpeciesOrganic, StoreableSpecies] # TheDen
   id: MobShadowkinBase
   name: Urist McShadow
   abstract: true

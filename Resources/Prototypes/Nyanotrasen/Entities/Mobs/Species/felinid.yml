@@ -19,7 +19,7 @@
 - type: entity
   save: false
   name: Urist McFelinid
-  parent: BaseMobHuman
+  parent: [BaseMobHuman, StoreableSpecies] # TheDen
   id: MobFelinidBase
   abstract: true
   components:

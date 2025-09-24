@@ -19,7 +19,7 @@
 - type: entity
   save: false
   name: Urist McRaptor
-  parent: BaseMobHuman
+  parent: [BaseMobHuman, StoreableSpecies] # TheDen
   id: BaseMobResomi
   abstract: true
   components:

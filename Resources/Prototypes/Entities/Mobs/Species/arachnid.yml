@@ -34,7 +34,7 @@
 - type: entity
   save: false
   name: Urist McWebs
-  parent: BaseMobSpeciesOrganic
+  parent: [BaseMobSpeciesOrganic, StoreableSpecies] # TheDen
   id: BaseMobArachnid
   abstract: true
   components:

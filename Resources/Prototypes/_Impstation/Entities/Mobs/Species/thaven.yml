@@ -7,7 +7,7 @@
 - type: entity
   save: false
   name: Urist McEars
-  parent: BaseMobSpeciesOrganic
+  parent: [BaseMobSpeciesOrganic, StoreableSpecies] # TheDen
   id: BaseMobThaven
   abstract: true
   components:

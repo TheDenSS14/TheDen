@@ -6,7 +6,7 @@
 - type: entity
   save: false
   name: Urist McCanid
-  parent: BaseMobHuman
+  parent: [BaseMobHuman, StoreableSpecies] # TheDen
   id: MobCanidBase
   abstract: true
   components:

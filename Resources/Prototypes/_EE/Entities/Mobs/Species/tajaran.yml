@@ -20,7 +20,7 @@
 
 - type: entity
   name: Urist McTajaran
-  parent: BaseMobSpeciesOrganic
+  parent: [BaseMobSpeciesOrganic, StoreableSpecies] # TheDen
   id: MobTajaranBase
   abstract: true
   components:

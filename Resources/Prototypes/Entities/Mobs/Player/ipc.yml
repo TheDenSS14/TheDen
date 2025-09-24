@@ -15,7 +15,7 @@
 
 - type: entity
   id: MobIPC
-  parent: PlayerSiliconHumanoidBase
+  parent: [PlayerSiliconHumanoidBase, StoreableSpecies] # TheDen
   name: Urist McPositronic
   description: A positronic brain in a metal body.
   components:

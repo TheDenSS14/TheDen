@@ -15,7 +15,7 @@
 - type: entity
   save: false
   name: Lamia
-  parent: BaseMobHuman #parenting human so I can remove most of these components
+  parent: [BaseMobHuman, StoreableSpecies] # TheDen
   id: MobLamiaBase
   abstract: true
   description: A miserable pile of scales. #TODO: Add a better description

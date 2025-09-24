@@ -52,7 +52,7 @@
 - type: entity
   save: false
   name: Urist McRat
-  parent: BaseMobSpeciesOrganic
+  parent: [BaseMobSpeciesOrganic, StoreableSpecies] # TheDen
   id: BaseMobRodentia
   abstract: true
   components:

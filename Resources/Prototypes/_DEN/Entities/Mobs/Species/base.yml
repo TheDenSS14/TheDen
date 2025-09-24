@@ -1,0 +1,8 @@
+- type: entity
+  save: false
+  abstract: true
+  id: StoreableSpecies # So any species parented to this can technically be stored in a bag, if it's big enough
+  components:
+  - type: PseudoItem # Any species that's naturally storable, will overwrite these values due to how parenting works, obviously
+    shape:
+      - 0,0,20,10 # Just one too big to fit inside ClothingBackpackDuffelHolding, so you won't even see the insert option on any obtainable bags
