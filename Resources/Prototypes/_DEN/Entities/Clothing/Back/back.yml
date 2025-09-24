@@ -48,23 +48,3 @@
     whitelist:
       tags:
         - CanPilot # ONLY carries player characters, nothing else!
-
-- type: entity
-  parent: ClothingBackpackNapsack
-  id: ClothingBackpackCoffinMantis
-  name: test bag (NOT A NAPSACK, THOSE ARE TOO SMALL)
-  description: I'M JUST USING THE NAPSACK SPRITE FOR THE TEST.
-  components:
-  - type: Sprite
-    sprite: _DEN/Clothing/Back/napsack.rsi
-  - type: Clothing
-    quickEquip: false
-    slots:
-    - suitStorage # Not really a backpack
-  - type: Storage
-    maxItemSize: Huge
-    grid:
-    - 0,0,20,10 # 1 bigger than the bluespace duffel so players won't fit in that
-    whitelist:
-      tags:
-        - CanPilot # ONLY carries player characters, nothing else!
