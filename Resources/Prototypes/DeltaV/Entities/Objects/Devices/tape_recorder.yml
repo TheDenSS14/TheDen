@@ -57,6 +57,9 @@
     interfaces:
       enum.TapeRecorderUIKey.Key:
         type: TapeRecorderBoundUserInterface
+  - type: Tag
+    tags:
+    - TapeRecorder
 
 - type: entity
   parent: TapeRecorder
@@ -103,6 +106,9 @@
     available:
     - enum.DamageStateVisualLayers.Base:
         tape_greyscale: Rainbow
+  - type: Tag
+    tags:
+    - CassetteTape
 
 - type: entity
   suffix: Interview with Garry Smosh
