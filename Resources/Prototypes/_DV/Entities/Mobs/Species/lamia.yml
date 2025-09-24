@@ -15,7 +15,7 @@
 - type: entity
   save: false
   name: Lamia
-  parent: [BaseMobHuman, StoreableSpecies] # TheDen
+  parent: [BaseMobHuman, StorableSpecies] # TheDen
   id: MobLamiaBase
   abstract: true
   description: A miserable pile of scales. #TODO: Add a better description

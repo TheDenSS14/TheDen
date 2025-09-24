@@ -30,7 +30,7 @@
 - type: entity
   save: false
   name: Urist McArachne
-  parent: [BaseArachneAppearance, BaseMobHuman, StoreableSpecies] # TheDen
+  parent: [BaseArachneAppearance, BaseMobHuman, StorableSpecies] # TheDen
   id: MobArachneBase
   abstract: true
   components:

@@ -1,7 +1,7 @@
 - type: entity
   save: false
   abstract: true
-  id: StoreableSpecies # So any species parented to this can technically be stored in a bag, if it's big enough
+  id: StorableSpecies # So any species parented to this can technically be stored in a bag, if it's big enough
   components:
   - type: PseudoItem # Any species that's naturally storable, will overwrite these values due to how parenting works, obviously
     shape:
