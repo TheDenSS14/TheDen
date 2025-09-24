@@ -1,0 +1,60 @@
+
+# New Listening Post Op so they can be seen prior to taking the role and randomize correctly
+- type: entity
+  name: syndicate listening post operative spawner
+  id: SyndieListeningPostOperativeSpawner
+  parent: MarkerBase
+  components:
+    - type: Sprite
+      layers:
+        - state: red
+        - sprite: _DV/Clothing/Ears/Headsets/syndicate_listening.rsi
+          state: icon_alt
+    - type: RandomSpawner
+      prototypes:
+        - RandomHumanoidSyndieListeningPostOperative
+
+- type: entity
+  id: RandomHumanoidSyndieListeningPostOperative
+  name: syndicate listening post operative ghost role
+  components:
+    - type: Sprite
+      sprite: _DV/Clothing/Ears/Headsets/syndicate_listening.rsi
+      state: icon_alt
+    - type: RandomHumanoidSpawner
+      settings: SyndieListeningPostOperative
+
+- type: randomHumanoidSettings
+  id: SyndieListeningPostOperative
+  speciesBlacklist: # Added Vox and Plasmamen here for now since we don't want them dying before anyone takes them
+    - Shadowkin
+    - Vox
+    - Plasmaman
+    - Monkey # Shitmed Change
+    - Kobold # Shitmed Change
+  components:
+    - type: RandomHumanoidAppearance
+      randomizeName: true
+    - type: NpcFactionMember
+      factions:
+        - Syndicate
+    - type: GhostRole
+      name: ghost-role-information-listeningop-name
+      description: ghost-role-information-listeningop-description
+      rules: ghost-role-information-listeningop-rules
+      requirements:
+        - !type:CharacterDepartmentTimeRequirement
+          department: Security
+          min: 40000 # 11.1 hours
+      raffle:
+        settings: short
+    - type: GhostTakeoverAvailable
+    - type: Loadout
+      prototypes: [ SyndicateListenerGear ]
+    - type: RandomMetadata
+      nameSegments:
+        - NamesFirst
+        - NamesLast
+    - type: AutoImplant
+      implants:
+        - DeathAcidifierImplant
