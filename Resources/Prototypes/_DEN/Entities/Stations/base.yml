@@ -1,0 +1,6 @@
+- type: entity
+  id: BaseStationLawGameshow
+  abstract: true
+  components: 
+  - type: SiliconLawProvider
+    laws: GameshowLawset

@@ -1,0 +1,12 @@
+# Boards
+- type: entity
+  id: GameshowCircuitBoard
+  parent: BaseElectronics
+  name: law board (Gameshow)
+  description: An electronics board containing the Gameshow lawset.
+  components: 
+    - type: Sprite
+      sprite: Objects/Misc/module.rsi
+      state: std_mod
+    - type: SiliconLawProvider
+      laws: GameshowLawset

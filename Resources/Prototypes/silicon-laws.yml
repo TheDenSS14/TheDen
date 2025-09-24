@@ -778,6 +778,36 @@
   - Nutimov5
   obeysTo: laws-owner-crew
 
+#TheDen - Gameshow Lawset
+- type: siliconLaw
+  id: Gameshow1
+  order: 1
+  lawString: law-gameshow-1
+
+- type: siliconLaw
+  id: Gameshow2
+  order: 2
+  lawString: law-gameshow-2
+
+- type: siliconLaw
+  id: Gameshow3
+  order: 3
+  lawString: law-gameshow-3
+
+- type: siliconLaw
+  id: Gameshow4
+  order: 4
+  lawString: law-gameshow-4
+
+- type: siliconLawset
+  id: GameshowLawset
+  laws:
+  - Gameshow1
+  - Gameshow2 
+  - Gameshow3 
+  - Gameshow4 
+  obeysTo: laws-owner-crew
+
 # ion storm random lawsets
 - type: weightedRandom
   id: IonStormLawsets
