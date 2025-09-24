@@ -1,7 +1,8 @@
-# SPDX-FileCopyrightText: 2025 Eris <eris@erisws.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Eris
+# SPDX-FileCopyrightText: 2025 Winter
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: entity
   parent: BaseItem
@@ -9,6 +10,10 @@
   abstract: true
   name: program disk
   components:
+    # Begin Den additions
+    - type: Item
+      size: Tiny
+    # End Den additions
     - type: Sprite
       sprite: Objects/Misc/cd.rsi
       state: icon
