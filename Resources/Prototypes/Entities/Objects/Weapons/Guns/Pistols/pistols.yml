@@ -360,6 +360,9 @@
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/mk58.ogg
     fireOnDropChance: 0.5
+  - type: Construction
+    graph: UpgradeWeaponPistolConversion
+    node: start
 
 - type: entity
   name: mk58

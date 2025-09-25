@@ -532,6 +532,8 @@
         id: WeaponFlareGun
       - !type:EntSelector
         id: BarberScissors
+      - !type:EntSelector
+        id: MagazineZipper
       - !type:GroupSelector
         children:
         - !type:EntSelector
@@ -622,6 +624,8 @@
         id: ClothingMaskGasSecurity
       - !type:EntSelector
         id: ShardGlass
+      - !type:EntSelector
+        id: WeaponPistolZipper
         weight: 2
       - !type:EntSelector
         id: Syringe

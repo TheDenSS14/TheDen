@@ -21,18 +21,18 @@
 
 - type: entity
   id: BulletLightRifle
-  name: bullet (.20 rifle)
+  name: bullet (.30 rifle)
   parent: BaseBullet
   categories: [ HideSpawnMenu ]
   components:
   - type: Projectile
     damage:
       types:
-        Piercing: 17
+        Piercing: 25
 
 - type: entity
   id: BulletLightRiflePractice
-  name: bullet (.20 rifle practice)
+  name: bullet (.30 rifle practice)
   parent: BaseBulletPractice
   categories: [ HideSpawnMenu ]
   components:
@@ -55,46 +55,23 @@
 - type: entity
   id: BulletLightRifleIncendiary
   parent: BaseBulletIncendiary
-  name: bullet (.20 rifle incendiary)
+  name: bullet (.30 rifle incendiary)
   categories: [ HideSpawnMenu ]
   components:
   - type: Projectile
     damage:
       types:
-        Blunt: 3
-        Heat: 14
+        Blunt: 6
+        Heat: 19
 
 - type: entity
   id: BulletLightRifleUranium
   parent: BaseBulletUranium
-  name: bullet (.20 rifle uranium)
+  name: bullet (.30 rifle uranium)
   categories: [ HideSpawnMenu ]
   components:
   - type: Projectile
     damage:
       types:
-        Radiation: 8
-        Piercing: 9
-
-- type: entity
-  id: BulletLightRifleShrapnel
-  name: bullet (.20 rifle shrapnel)
-  categories: [ HideSpawnMenu ]
-  parent: BaseBullet
-  components:
-  - type: Projectile
-    damage:
-      types:
-        Piercing: 5.525
-  - type: Sprite
-    scale: 0.5, 0.5
-
-- type: entity
-  id: BulletLightRifleShrapnelSpread
-  categories: [ HideSpawnMenu ]
-  parent: BulletLightRifleShrapnel
-  components:
-  - type: ProjectileSpread
-    proto: BulletLightRifleShrapnel
-    count: 4
-    spread: 15
+        Radiation: 12
+        Piercing: 13

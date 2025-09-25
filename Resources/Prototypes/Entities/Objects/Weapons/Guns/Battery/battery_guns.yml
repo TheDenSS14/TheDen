@@ -335,11 +335,37 @@
     zeroVisible: true
   - type: Appearance
 
+#- type: entity
+#  name: laser rifle
+#  parent: [BaseWeaponBattery, BaseGunWieldable]
+#  id: WeaponLaserCarbine
+#  description: Favoured by Nanotrasen Security for being cheap and easy to use.
+#  components:
+#  - type: Sprite
+#    sprite: Objects/Weapons/Guns/Battery/laser_gun.rsi
+#    layers:
+#    - state: base
+#      map: ["enum.GunVisualLayers.Base"]
+#    - state: mag-unshaded-4
+#      map: ["enum.GunVisualLayers.MagUnshaded"]
+#      shader: unshaded
+#  - type: Clothing
+#    sprite: Objects/Weapons/Guns/Battery/laser_gun.rsi
+#  - type: StaticPrice
+#    price: 420
+#  - type: Gun
+#    selectedMode: SemiAuto
+#    availableModes:
+#    - SemiAuto
+#  - type: HitscanBatteryAmmoProvider
+#    proto: RedLaser
+#    fireCost: 62.5
+
 - type: entity
-  name: laser rifle
+  name: practice laser rifle
   parent: [BaseWeaponBattery, BaseGunWieldable]
-  id: WeaponLaserCarbine
-  description: Favoured by Nanotrasen Security for being cheap and easy to use.
+  id: WeaponLaserCarbinePractice
+  description: This modified laser rifle fires nearly harmless beams in the 40-watt range, for target practice.
   components:
   - type: Sprite
     sprite: Objects/Weapons/Guns/Battery/laser_gun.rsi
@@ -349,33 +375,49 @@
     - state: mag-unshaded-4
       map: ["enum.GunVisualLayers.MagUnshaded"]
       shader: unshaded
+  - type: MagazineVisuals
+    magState: mag
+    steps: 5
+    zeroVisible: false
+  - type: Appearance
   - type: Clothing
     sprite: Objects/Weapons/Guns/Battery/laser_gun.rsi
-  - type: StaticPrice
-    price: 420
   - type: Gun
     selectedMode: SemiAuto
     availableModes:
     - SemiAuto
   - type: HitscanBatteryAmmoProvider
-    proto: RedLaser
-    fireCost: 62.5
-
-- type: entity
-  name: practice laser rifle
-  parent: WeaponLaserCarbine
-  id: WeaponLaserCarbinePractice
-  description: This modified laser rifle fires nearly harmless beams in the 40-watt range, for target practice.
-  components:
-  - type: HitscanBatteryAmmoProvider
     proto: RedLaserPractice
     fireCost: 62.5
   - type: StaticPrice
     price: 300
+#imp edit begin; weapon melee
   - type: MeleeWeapon
+    attackRate: 0.6
+  - type: StaminaDamageOnHit
+    damage: 10 #slight stagger, but still like 10 hits to stun completely
+  - type: MeleeRequiresWield
+  - type: MeleeThrowOnHit
+    distance: 0.8
+    speed: 5
+  - type: DamageOtherOnHit #for throwing
+    staminaCost: 10
     damage:
       types:
-        Blunt: 4
+        Blunt: 8
+#imp edit end
+
+- type: entity
+  name: td-95 laser carbine #imp
+  parent: [WeaponLaserCarbinePractice, BaseGunWieldable, BaseSecurityContraband]
+  id: WeaponLaserCarbine
+  description: A laser-based energy rifle with familiar ergonomics and controls to its kinetic counterparts. Favored by Nanotrasen for security forces, as they are cheap and easy to use. #imp
+  components:
+  - type: StaticPrice
+    price: 420
+  - type: HitscanBatteryAmmoProvider
+    proto: RedLaser
+    fireCost: 62.5
 
 - type: entity
   name: pulse pistol
@@ -483,10 +525,10 @@
     startingCharge: 40000
 
 - type: entity
-  name: laser cannon
-  parent: [BaseWeaponBattery, BaseGunWieldable]
+  name: ol-71 laser rifle #imp
+  parent: [BaseWeaponBattery, BaseGunWieldable, BaseSecurityContraband]
   id: WeaponLaserCannon
-  description: A heavy duty, high powered laser weapon.
+  description: Modern laser technology purpose-built into a military platform-- as deadly as it is precise. #imp
   components:
   - type: Tag
     tags:
@@ -502,12 +544,16 @@
   - type: Clothing
     sprite: Objects/Weapons/Guns/Battery/laser_cannon.rsi
   - type: Gun
-    fireRate: 1.5
+    fireRate: 4.5 #imp
     soundGunshot:
-      path: /Audio/Weapons/Guns/Gunshots/laser_cannon.ogg
+      path: /Audio/_Impstation/Weapons/Guns/Gunshots/lasermil.ogg #imp
   - type: HitscanBatteryAmmoProvider
     proto: RedHeavyLaser
-    fireCost: 100
+    fireCost: 40 #imp
+  - type: Battery #imp
+    maxCharge: 1200 #imp
+    startingCharge: 1200 #imp
+#imp edit begin; weapon melee
   - type: MeleeWeapon
     attackRate: 1.4
     damage:
@@ -892,8 +938,8 @@
     # not putting a BlockMovement component here cause that's funny.
 
 - type: entity
-  name: advanced laser pistol
-  parent: BaseWeaponBatterySmall
+  name: x-66 advanced laser pistol #imp
+  parent: [ BaseWeaponBatterySmall, BaseSecurityContraband]
   id: WeaponAdvancedLaser
   description: An experimental high-energy laser pistol with a self-charging nuclear battery.
   components:
@@ -1027,8 +1073,8 @@
     price: 750
 
 - type: entity
-  name: energy shotgun
-  parent: [BaseWeaponBattery, BaseGunWieldable]
+  name: m-1 energy shotgun #imp
+  parent: [BaseWeaponBattery, BaseGunWieldable, BaseGrandTheftContraband]
   id: WeaponEnergyShotgun
   description: A one-of-a-kind prototype energy weapon that uses various shotgun configurations. It offers the possibility of both lethal and non-lethal shots, making it a versatile weapon.
   components:
@@ -1045,8 +1091,7 @@
   - type: Gun
     fireRate: 2
     soundGunshot:
-      path: /Audio/Weapons/Guns/Gunshots/laser_cannon.ogg
-    uniformSpread: true
+      path: /Audio/_Impstation/Weapons/Guns/Gunshots/eshotgun.ogg #imp
   - type: ProjectileBatteryAmmoProvider
     proto: BulletLaserSpread
     fireCost: 150

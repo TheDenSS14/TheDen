@@ -65,19 +65,90 @@
   - PlasteelArmingSword # DEN
   # These are roundstart but not replenishable for salvage
 
-- type: technology
-  id: DraconicMunitions
-  name: research-technology-draconic-munitions
+#- type: technology
+#  id: DraconicMunitions
+#  name: research-technology-draconic-munitions
+#  icon:
+#    sprite: Objects/Weapons/Guns/Ammunition/Boxes/pistol.rsi
+#    state: incendiarydisplay
+#  discipline: Arsenal
+#  tier: 1
+#  cost: 10000
+#  recipeUnlocks:
+#  - BoxShotgunIncendiary
+#  - MagazineDMRIncendiary
+#  - MagazineRifleIncendiary
+#  - MagazinePistolIncendiary
+#  - MagazinePistolSubMachineGunIncendiary
+#  - MagazineMagnumIncendiary
+#  - MagazineLightRifleIncendiary
+#  # - MagazineCaselessRifleIncendiary # DEN
+#  - SpeedLoaderMagnumIncendiary
+#  - SpeedLoaderRifleHeavyIncendiary
+#  - MagazineShotgunIncendiary
+#  - MagazineBoxShotgunIncendiaryHighCaliber # Goobstation
+#  - MagazineBoxPistolIncendiary
+#  - MagazineBoxMagnumIncendiary
+#  - MagazineBoxLightRifleIncendiary
+#  - MagazineBoxRifleIncendiary
+#  # - MagazineBoxCaselessRifleIncendiary # DEN
+#  - CartridgeSpecialIncendiary
+#  - MagazineBoxSpecialIncendiary
+#  - CrossbowBoltIncendiary
+#  - CartridgeLightRifleIncendiary
+#  - CartridgeMagnumIncendiary
+#  - CartridgePistolIncendiary
+#  - CartridgeRifleIncendiary
+
+#- type: technology
+#  id: UraniumMunitions
+#  name: research-technology-uranium-munitions
+#  icon:
+#    sprite: Objects/Materials/Sheets/other.rsi
+#    state: uranium
+#  discipline: Arsenal
+#  tier: 1
+#  cost: 7500
+#  recipeUnlocks:
+#  - MagazineRifleUranium
+#  - MagazinePistolUranium
+#  - MagazineDMRUranium
+#  - MagazinePistolSubMachineGunUranium
+#  - MagazineMagnumUranium
+#  - MagazineLightRifleUranium
+#  # - MagazineCaselessRifleUranium # DEN
+#  - SpeedLoaderMagnumUranium
+#  - SpeedLoaderRifleHeavyUranium # Frontier
+#  - MagazineBoxPistolUranium
+#  - MagazineBoxMagnumUranium
+#  - MagazineBoxLightRifleUranium
+#  - MagazineBoxRifleUranium
+#  # - MagazineBoxCaselessRifleUranium # DEN
+#  - BoxShotgunUranium
+#  - CartridgeSpecialUranium
+#  - MagazineBoxSpecialUranium
+#  - CrossbowBoltUranium
+#  - CartridgeLightRifleUranium
+#  - CartridgeMagnumUranium
+#  - CartridgePistolUranium
+#  - CartridgeRifleUranium
+#  - MagazineBoxShotgunUraniumHighCaliber # Goobstation
+
+- type: technology #imp
+  id: AdvancedMunitions
+  name: research-technology-advanced-munitions
   icon:
     sprite: Objects/Weapons/Guns/Ammunition/Boxes/pistol.rsi
     state: incendiarydisplay
   discipline: Arsenal
-  tier: 1
-  cost: 10000
+  tier: 2 # DEN
+  cost: 14000 # DEN
   recipeUnlocks:
   - BoxShotgunIncendiary
+  - MagazineDMRIncendiary
   - MagazineRifleIncendiary
   - MagazinePistolIncendiary
+  - MagazineLPistolIncendiary
   - MagazinePistolSubMachineGunIncendiary
   - MagazineMagnumIncendiary
   - MagazineLightRifleIncendiary
@@ -87,6 +158,7 @@
   - MagazineShotgunIncendiary
   - MagazineBoxShotgunIncendiaryHighCaliber # Goobstation
   - MagazineBoxPistolIncendiary
+  - MagazineBoxLPistolIncendiary
   - MagazineBoxMagnumIncendiary
   - MagazineBoxLightRifleIncendiary
   - MagazineBoxRifleIncendiary
@@ -98,19 +170,10 @@
   - CartridgeMagnumIncendiary
   - CartridgePistolIncendiary
   - CartridgeRifleIncendiary
-
-- type: technology
-  id: UraniumMunitions
-  name: research-technology-uranium-munitions
-  icon:
-    sprite: Objects/Materials/Sheets/other.rsi
-    state: uranium
-  discipline: Arsenal
-  tier: 1
-  cost: 7500
-  recipeUnlocks:
   - MagazineRifleUranium
   - MagazinePistolUranium
+  - MagazineLPistolUranium
+  - MagazineDMRUranium
   - MagazinePistolSubMachineGunUranium
   - MagazineMagnumUranium
   - MagazineLightRifleUranium
@@ -118,6 +181,7 @@
   - SpeedLoaderMagnumUranium
   - SpeedLoaderRifleHeavyUranium # Frontier
   - MagazineBoxPistolUranium
+  - MagazineBoxLPistolUranium
   - MagazineBoxMagnumUranium
   - MagazineBoxLightRifleUranium
   - MagazineBoxRifleUranium
@@ -191,11 +255,36 @@
   id: AdvancedWeapons
   name: research-technology-advanced-weapons
   icon:
-    sprite: Objects/Weapons/Guns/Battery/laser_cannon.rsi
+    sprite: _Impstation/Objects/Weapons/Guns/Battery/laser_cannon.rsi #imp
     state: icon
   discipline: Arsenal
   tier: 2
-  cost: 15000
+  cost: 10000
+  recipeUnlocks:
+  - WeaponLaserCannon
+  - WeaponBlasterCannon #imp
+
+- type: technology
+  id: WaveParticleHarnessing
+  name: research-technology-wave-particle-harnessing
+  icon:
+    sprite: _Impstation/Objects/Weapons/Guns/Battery/xray.rsi #imp
+    state: icon
+  discipline: Arsenal
+  tier: 2
+  cost: 10000 # Den
+  recipeUnlocks:
+  - WeaponXrayCannon
+
+- type: technology
+  id: BasicShuttleArmament
+  name: research-technology-basic-shuttle-armament
+  icon:
+    sprite: Structures/Power/cage_recharger.rsi
+    state: full
+  discipline: Arsenal
+  tier: 2
+  cost: 10500
   recipeUnlocks:
   - PowerCageRechargerCircuitboard
   - PowerCageSmall
@@ -260,7 +349,7 @@
   id: PrototypeWeapons
   name: research-technology-prototype-weapons
   icon:
-    sprite: Objects/Weapons/Guns/Battery/advancedlasergun.rsi
+    sprite: _Impstation/Objects/Weapons/Guns/Battery/advancedlasergun.rsi #imp
     state: icon
   discipline: Arsenal
   tier: 3
@@ -268,6 +357,30 @@
   recipeUnlocks:
   - WeaponAdvancedLaser
   - PortableRecharger
+  - WeaponBlasterMagnum #imp
+
+#- type: technology # imp - rolled into Concentrated Laser Weaponry
+#  id: ExperimentalBatteryAmmo
+#  name: research-technology-experimental-battery-ammo
+#  icon:
+#    sprite: Objects/Weapons/Guns/Battery/svalinn.rsi
+#    state: icon
+#  discipline: Arsenal
+#  tier: 3
+#  cost: 15000
+#  recipeUnlocks:
+#  - WeaponLaserSvalinn
+
+- type: technology
+  id: AdvancedShuttleWeapon
+  name: research-technology-advanced-shuttle-weapon
+  icon:
+    sprite: Objects/Weapons/Guns/Ammunition/Magazine/Grenade/grenade_cartridge.rsi
+    state: icon
+  discipline: Arsenal
+  tier: 3
+  cost: 15000
+  recipeUnlocks:
   - GrenadeEMP
   - PowerCageHigh
   - ShuttleGunDusterCircuitboard
