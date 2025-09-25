@@ -22,13 +22,15 @@
 # SPDX-FileCopyrightText: 2024 VMSolidus
 # SPDX-FileCopyrightText: 2025 Sapphire
 # SPDX-FileCopyrightText: 2025 Skubman
+# SPDX-FileCopyrightText: 2025 SubspaceEmber
 # SPDX-FileCopyrightText: 2025 Tanix
+# SPDX-FileCopyrightText: 2025 V
 # SPDX-FileCopyrightText: 2025 juniwoofs
 # SPDX-FileCopyrightText: 2025 portfiend
 # SPDX-FileCopyrightText: 2025 sheepie
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 - type: entity
   abstract: true
@@ -69,6 +71,8 @@
     requiredLegs: 2
   - type:  HumanoidAppearance
     species: Vox
+    hideLayersOnEquip:
+    - HeadSide #imp
     #- type: VoxAccent # Not yet coded
   - type: Speech
     speechVerb: Vox
@@ -163,7 +167,6 @@
           32:
             sprite: Mobs/Species/Vox/displacement.rsi
             state: shoes
-
 
 - type: entity
   parent: [BaseVoxAppearance, BaseSpeciesDummy]

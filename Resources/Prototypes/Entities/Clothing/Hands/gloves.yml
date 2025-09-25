@@ -48,7 +48,7 @@
 # SPDX-FileCopyrightText: 2025 Winter
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: entity
   parent: ClothingHandsBase
@@ -325,7 +325,7 @@
       - type: CriminalRecordsHacker
 
 - type: entity
-  parent: ClothingHandsGlovesColorBlack
+  parent: [ BaseMinorContraband, ClothingHandsGlovesColorBlack ]
   id: ClothingHandsGlovesCombat
   name: combat gloves
   description: These tactical gloves are fireproof and shock resistant.
