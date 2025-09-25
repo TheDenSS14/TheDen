@@ -592,7 +592,7 @@
   - type: Appearance
 
 - type: entity
-  parent: [ BaseSecurityContraband, ClothingBeltStorageBase ]
+  parent: ClothingBeltStorageBase
   id: ClothingBeltSecurity
   name: security belt
   description: Can hold security gear like handcuffs and flashes.
@@ -763,7 +763,7 @@
       holster: !type:ContainerSlot {}
 
 - type: entity
-  parent: [ ClothingBeltStorageBase, BaseRivalCompanyContraband ]
+  parent: ClothingBeltStorageBase
   id: ClothingBeltSyndieHolster
   name: syndicate shoulder holster
   description: A deep shoulder holster capable of holding many types of ballistics.

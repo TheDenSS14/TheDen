@@ -74,7 +74,7 @@
 - type: entity
   name: security radio
   description: A handy security radio. Has a clip so you can hang it on the neck of your uniform.
-  parent: [ BaseSecurityContraband, RadioHandheld ]
+  parent: RadioHandheld
   id: RadioHandheldSecurity
   components:
   - type: RadioMicrophone

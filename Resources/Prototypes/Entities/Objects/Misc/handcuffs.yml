@@ -31,7 +31,7 @@
   name: handcuffs
   description: Used to detain criminals and other assholes.
   id: Handcuffs
-  parent: [ BaseSecurityBlueshieldOfficerContraband, BaseItem ]
+  parent: BaseItem
   components:
   - type: Item
     size: Small
@@ -62,7 +62,7 @@
   name: makeshift handcuffs
   description: Homemade handcuffs crafted from spare cables.
   id: Cablecuffs
-  parent: [ BaseImprovisedContraband, Handcuffs ]
+  parent: Handcuffs
   components:
   - type: Handcuff
     breakoutTime: 3

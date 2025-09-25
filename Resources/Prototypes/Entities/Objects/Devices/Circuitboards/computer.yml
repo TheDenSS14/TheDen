@@ -344,7 +344,7 @@
       modularComputerProgramPrototype: CommunicationsConsoleDiskPrototype
 
 - type: entity
-  parent: [ BaseComputerCircuitboard, BaseRivalCompanyContraband ]
+  parent: BaseComputerCircuitboard
   id: SyndicateCommsComputerCircuitboard
   name: syndicate communications computer board
   description: A computer printed circuit board for a syndicate communications console.
@@ -422,7 +422,7 @@
         - ShuttleConsoleCircuitboard
 
 - type: entity
-  parent: [ BaseComputerCircuitboard, BaseRivalCompanyContraband ]
+  parent: BaseComputerCircuitboard
   id: SyndicateShuttleConsoleCircuitboard
   name: syndicate shuttle console board
   description: A computer printed circuit board for a syndicate shuttle console.
@@ -457,7 +457,7 @@
       prototype: ComputerIFF
 
 - type: entity
-  parent: [ BaseComputerCircuitboard, BaseRivalCompanyContraband ]
+  parent: BaseComputerCircuitboard
   id: ComputerIFFSyndicateCircuitboard
   name: syndicate IFF console board
   description: Allows you to control the IFF and stealth characteristics of this vessel.

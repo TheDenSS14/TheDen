@@ -18,7 +18,7 @@
 
 - type: entity
   name: stun prod
-  parent: [ BaseImprovisedContraband, BaseItem ]
+  parent: BaseItem
   id: Stunprod
   description: A stun prod for illegal incapacitation.
   components:

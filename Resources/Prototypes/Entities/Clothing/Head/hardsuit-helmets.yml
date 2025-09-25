@@ -583,7 +583,7 @@
         shader: unshaded
 
 - type: entity
-  parent: [ ClothingHeadHardsuitWithLightBase, BaseRivalCompanyContraband ]
+  parent: ClothingHeadHardsuitWithLightBase
   id: ClothingHeadHelmetHardsuitSyndie
   name: blood-red hardsuit helmet
   description: A heavily armored helmet designed for work in special operations. Property of Gorlex Marauders.
@@ -611,7 +611,7 @@
 
 #Blood-red Medic Hardsuit
 - type: entity
-  parent: [ ClothingHeadHardsuitWithLightBase, BaseRivalCompanyContraband ]
+  parent: ClothingHeadHardsuitWithLightBase
   id: ClothingHeadHelmetHardsuitSyndieMedic
   name: blood-red medic hardsuit helmet
   description: An advanced red hardsuit helmet specifically designed for field medic operations.
@@ -669,7 +669,7 @@
         shader: unshaded
 
 - type: entity
-  parent: [ ClothingHeadHardsuitWithLightBase, BaseRivalCompanyContraband ]
+  parent: ClothingHeadHardsuitWithLightBase
   id: ClothingHeadHelmetHardsuitSyndieElite
   name: syndicate elite helmet
   description: An elite version of the blood-red hardsuit's helmet, with improved armor and fireproofing. Property of Gorlex Marauders.
@@ -702,7 +702,7 @@
 
 #Syndicate Commander Hardsuit
 - type: entity
-  parent: [ ClothingHeadHardsuitWithLightBase, BaseRivalCompanyContraband ]
+  parent: ClothingHeadHardsuitWithLightBase
   id: ClothingHeadHelmetHardsuitSyndieCommander
   name: syndicate commander helmet
   description: A bulked up version of the blood-red hardsuit's helmet, purpose-built for the commander of a syndicate operative squad. Has significantly improved armor for those deadly front-lines firefights.

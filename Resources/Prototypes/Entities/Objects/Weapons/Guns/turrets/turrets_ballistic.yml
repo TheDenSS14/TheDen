@@ -5,7 +5,7 @@
 # SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: entity
-  parent: [ BaseWeaponBallisticTurret, BaseRivalCompanyContraband ]
+  parent: BaseWeaponBallisticTurret
   id: WeaponTurretSyndicate
   suffix: Syndicate
   components:
@@ -34,7 +34,7 @@
       capacity: 200
 
 - type: entity
-  parent: [ BaseWeaponBallisticTurret, BaseRivalCompanyContraband ]
+  parent: BaseWeaponBallisticTurret
   name: disposable ballistic turret
   id: WeaponTurretSyndicateDisposable
   suffix: Syndicate, Disposable

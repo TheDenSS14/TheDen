@@ -9,7 +9,7 @@
 # SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: entity
-  parent: [ BaseMajorContraband, BaseItem ]
+  parent: BaseItem
   id: ThrowingStar
   name: throwing star
   description: An ancient weapon still used to this day, due to its ease of lodging itself into its victim's body parts.
@@ -54,7 +54,7 @@
     damage: 10
 
 - type: entity
-  parent: [ BaseNinjaContraband, ThrowingStar ]
+  parent: ThrowingStar
   id: ThrowingStarNinja
   name: ninja throwing star
   components:

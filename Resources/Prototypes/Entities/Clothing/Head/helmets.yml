@@ -59,7 +59,7 @@
 
 #Basic Helmet (Security Helmet)
 - type: entity
-  parent: [ BaseSecurityContraband, ClothingHeadBase ]
+  parent: ClothingHeadBase
   id: ClothingHeadHelmetBasic
   name: helmet
   description: Standard security gear. Protects the head from impacts.
@@ -94,7 +94,7 @@
 
 #SWAT Helmet
 - type: entity
-  parent: [ BaseSecurityContraband, ClothingHeadBase, ClothingHeadEVAHelmetBase ]
+  parent: [ClothingHeadBase, ClothingHeadEVAHelmetBase]
   id: ClothingHeadHelmetSwat
   name: SWAT helmet
   description: An extremely robust helmet, commonly used by paramilitary forces. This one has the Nanotrasen logo emblazoned on the top.
@@ -120,7 +120,7 @@
 
 #Syndicate SWAT Helmet
 - type: entity
-  parent: [ BaseRivalCompanyContraband, ClothingHeadHelmetSwat ]
+  parent: ClothingHeadHelmetSwat
   id: ClothingHeadHelmetSwatSyndicate
   name: SWAT helmet
   suffix: Syndicate
@@ -133,7 +133,7 @@
 
 #Light Riot Helmet
 - type: entity
-  parent: [ BaseSecurityContraband, ClothingHeadBase ]
+  parent: ClothingHeadBase
   id: ClothingHeadHelmetRiot
   name: light riot helmet
   description: It's a helmet specifically designed to protect against close range attacks.
@@ -210,7 +210,7 @@
 
 #Space Ninja Helmet
 - type: entity
-  parent: [ BaseNinjaContraband, ClothingHeadEVAHelmetNoIngestionBlocker ]
+  parent: ClothingHeadEVAHelmetNoIngestionBlocker
   id: ClothingHeadHelmetSpaceNinja
   name: space ninja helmet
   description: What may appear to be a simple black garment is in fact a highly sophisticated nano-weave helmet. Standard issue ninja gear.

@@ -9,7 +9,7 @@
 # SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: entity
-  parent: [ BaseSecurityContraband, BaseItem ] # this makes it even funnier lolll
+  parent: BaseItem
   id: WeaponMeleeNeedle
   name: official security anti-inflatable armament
   description: A specialty weapon used in the destruction of unique syndicate morale-boosting equipment.

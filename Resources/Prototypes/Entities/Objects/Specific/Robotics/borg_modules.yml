@@ -256,7 +256,7 @@
 
 - type: entity
   id: BaseBorgModuleSyndicate
-  parent: [ BaseBorgModule, BaseRivalCompanyContraband ]
+  parent: BaseBorgModule
   abstract: true
   components:
   - type: Tag
@@ -280,11 +280,11 @@
       - state: base-part-inhand-right
       - state: base-stripes-inhand-right
         color: "#7B0F12"
-
+      
 
 - type: entity
   id: BaseBorgModuleSyndicateAssault
-  parent: [ BaseBorgModule, BaseRivalCompanyContraband ]
+  parent: BaseBorgModule
   abstract: true
   components:
   - type: Tag
@@ -805,7 +805,7 @@
 #syndicate modules
 - type: entity
   id: BorgModuleSyndicateWeapon
-  parent: [ BaseBorgModule, BaseProviderBorgModule, BaseRivalCompanyContraband ]
+  parent: [ BaseBorgModule, BaseProviderBorgModule ]
   name: weapon cyborg module
   components:
   - type: Sprite
