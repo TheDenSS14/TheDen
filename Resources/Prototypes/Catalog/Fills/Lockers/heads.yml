@@ -79,7 +79,7 @@
 # SPDX-FileCopyrightText: 2025 sheepie
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: entity
   id: LockerQuarterMasterFilled
@@ -112,6 +112,9 @@
         prob: 0.3
       - id: CargoTechFabCircuitboard # Floof - port to EE if possible
       - id: PrinterDocFlatpack  # Corvax-Printer
+      - id: RadioHandheld
+      - id: ShelterCapsule
+      - id: LavalandJaunter
 
 - type: entity
   id: LockerCaptainFilledHardsuit

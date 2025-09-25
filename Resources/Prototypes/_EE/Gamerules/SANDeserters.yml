@@ -2,6 +2,7 @@
 # SPDX-FileCopyrightText: 2025 Jakumba
 # SPDX-FileCopyrightText: 2025 Rosycup
 # SPDX-FileCopyrightText: 2025 VMSolidus
+# SPDX-FileCopyrightText: 2025 Winter
 # SPDX-FileCopyrightText: 2025 juniwoofs
 # SPDX-FileCopyrightText: 2025 sheepie
 # SPDX-FileCopyrightText: 2025 sleepyyapril
@@ -56,6 +57,8 @@
   id: MobHumanSANDeserter
   name: SAN Deserter
   components:
+    - type: RandomHumanoidAppearance # Den - ghost roles fix
+      randomizeName: false # Den - ghost roles fix
     - type: Loadout
       prototypes: [SANDeserterGearFull]
     - type: NpcFactionMember

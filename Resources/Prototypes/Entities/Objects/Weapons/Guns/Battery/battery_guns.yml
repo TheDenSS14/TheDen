@@ -56,7 +56,7 @@
 # SPDX-FileCopyrightText: 2025 VMSolidus
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: entity
   id: BaseWeaponBattery
@@ -653,7 +653,7 @@
 
 - type: entity
   name: disabler
-  parent: BaseWeaponBatterySmall
+  parent: [ BaseSecurityCommandBlueshieldOfficerContraband, BaseWeaponBatterySmall ]
   id: WeaponDisabler
   description: A self-defense weapon that exhausts organic targets, weakening them until they collapse.
   components:
@@ -701,7 +701,7 @@
 
 - type: entity
   name: CentComm disabler
-  parent: WeaponDisabler
+  parent: [ BaseCentcommContraband, WeaponDisabler ]
   id: WeaponCCDisabler
   description: An improved self-defense weapon that exhausts organic targets, weakening them until they collapse. Only for the finest officers that we don't trust with lethals.
   components:
@@ -730,7 +730,7 @@
 
 - type: entity
   name: disabler SMG
-  parent: BaseWeaponBattery
+  parent: [ BaseSecurityCommandBlueshieldOfficerContraband, BaseWeaponBattery ]
   id: WeaponDisablerSMG
   description: Advanced weapon that exhausts organic targets, weakening them until they collapse.
   components:
@@ -804,7 +804,7 @@
 
 - type: entity
   name: taser
-  parent: BaseWeaponBatterySmall
+  parent: [ BaseSecurityCommandBlueshieldOfficerContraband, BaseWeaponBatterySmall ]
   id: WeaponTaser
   description: A low-capacity, energy-based stun gun used by security teams to subdue targets at range.
   components:
@@ -840,7 +840,7 @@
 
 - type: entity
   name: antique laser pistol
-  parent: BaseWeaponBatterySmall
+  parent: [ BaseGrandTheftContraband, BaseWeaponBatterySmall ]
   id: WeaponAntiqueLaser
   description: This is an antique laser pistol. All craftsmanship is of the highest quality. It is decorated with assistant leather and chrome. The object menaces with spikes of energy.
   components:
@@ -893,7 +893,7 @@
 
 - type: entity
   name: advanced laser pistol
-  parent: BaseWeaponBatterySmall
+  parent: [ BaseSalvageSpecialistSecurityContraband, BaseWeaponBatterySmall ]
   id: WeaponAdvancedLaser
   description: An experimental high-energy laser pistol with a self-charging nuclear battery.
   components:

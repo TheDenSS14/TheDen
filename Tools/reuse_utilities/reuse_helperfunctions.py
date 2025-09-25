@@ -501,7 +501,7 @@ def prepend_header(filepath, new_header, existing_header, thread_safe=THREAD_SAF
         def thread_safe_print(s:str, color:str = "white"):
             print(colout(s,color))
 
-    with open(os.path.join(REPO_PATH, filepath), "r", encoding="utf-8") as file:
+    with open(os.path.join(REPO_PATH, filepath), "r", encoding="utf-8-sig") as file:
         content = file.read()
 
     if existing_header:

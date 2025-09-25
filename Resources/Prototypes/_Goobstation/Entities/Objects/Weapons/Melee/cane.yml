@@ -1,11 +1,12 @@
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 MajorMoth
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: entity
   name: cane blade
   suffix: Nanotrasen
-  parent: BaseItem
+  parent: [ BaseCentcommContraband, BaseItem ]
   id: CaneBladeNanotrasen
   description: A sharp blade with a cane shaped hilt, a Nanotrasen logo is engraved on the blade.
   components:
@@ -36,7 +37,7 @@
 
 - type: entity
   id: CaneSheathFilledNanotrasen
-  parent: CaneSheath
+  parent: [ BaseCentcommContraband, CaneSheath ]
   suffix: Filled, Nanotrasen
   components:
   - type: ContainerFill

@@ -87,7 +87,7 @@
 # SPDX-FileCopyrightText: 2025 Tobias Berger
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: entity
   abstract: true
@@ -1289,7 +1289,7 @@
     state: pda-clear
 
 - type: entity
-  parent: BasePDA
+  parent: [ BasePDA, BaseRivalCompanyContraband ]
   id: SyndiPDA
   name: syndicate PDA
   description: Ok, time to be a productive member of- oh cool I'm a bad guy time to kill people!
@@ -1667,7 +1667,7 @@
     state: pda-pirate
 
 - type: entity
-  parent: BaseMedicalPDA
+  parent: [ BaseMedicalPDA, BaseRivalCompanyContraband ]
   id: SyndiAgentPDA
   name: syndicate agent PDA
   description: For those days when healing normal syndicates aren't enough, try healing nuclear operatives instead!
