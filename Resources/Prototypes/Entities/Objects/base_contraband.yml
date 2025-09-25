@@ -1,4 +1,8 @@
-﻿# debug items
+# SPDX-FileCopyrightText: 2025 MajorMoth
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+ # debug items
 - type: entity
   id: BaseDebugContraband
   abstract: true
@@ -30,13 +34,22 @@
   - type: Contraband
     severity: contrabandSeverityRivalCompany
 
-# kitchen knives, eva suits, etc
+# ninja items
+- type: entity
+  id: BaseNinjaContraband
+  abstract: true
+  components:
+  - type: Contraband
+    severity: contrabandSeverityNinja
+
+# eva suits, tools, etc
 - type: entity
   id: BaseMinorContraband
   abstract: true
   components:
   - type: Contraband
     severity: contrabandSeverityMinor
+    allowedDepartments: [ CentralCommand, Command, Security, Engineering, Epistemics, Medical, Civilian, Logistics, Justice, Dignitary ]
 
 # major contraband, for things like guns or weaponry that don't belong to any department and aren't syndicate specific
 - type: entity
@@ -52,7 +65,7 @@
   abstract: true
   components:
   - type: Contraband
-    severity: GrandTheft
+    severity: contrabandSeverityGrandTheft
     allowedDepartments: [ Command ]
 
 # contraband that is by default restricted to everyone (nobody can have it)
@@ -118,7 +131,7 @@
   components:
   - type: Contraband
     allowedDepartments: [ Medical ]
-    allowedJobs: [ BlueshieldOfficer, Brigmedic, Roboticist ]
+    allowedJobs: [ BlueshieldOfficer, Brigmedic ]
 
 - type: entity
   id: BaseCivilianContraband
@@ -153,7 +166,7 @@
   - type: Contraband
     allowedDepartments: [ Dignitary ]
 
-# contraband restricted to multiple departments - some of these are used for singular items. really.
+# special contraband types for very specific items/types of items - some of these are used for singular items. really.
 # ========
 # literally just the master encryption key for this one
 - type: entity
@@ -164,7 +177,6 @@
   - type: Contraband
     allowedDepartments: [ CentralCommand, Command, Dignitary ]
 
-# handcuffs, batons, disablers, armory door remote, etc.
 - type: entity
   id: BaseSecurityCommandContraband
   parent: BaseRestrictedContraband
@@ -172,16 +184,6 @@
   components:
   - type: Contraband
     allowedDepartments: [ Security, Command ]
-
-# combat gloves
-- type: entity
-  id: BaseSecurityEngineeringContraband
-  parent: BaseRestrictedContraband
-  abstract: true
-  components:
-  - type: Contraband
-    allowedDepartments: [ Security, Engineering ]
-    allowedJobs: [ BlueshieldOfficer ]
 
 # flash payload (modular grenade)
 - type: entity
@@ -191,6 +193,26 @@
   components:
   - type: Contraband
     allowedDepartments: [ Security, Epistemics, Command ]
+    allowedJobs: [ BlueshieldOfficer ]
+
+# jaws
+- type: entity
+  id: BaseSecurityEpistemicsEngineeringContraband
+  parent: BaseRestrictedContraband
+  abstract: true
+  components:
+  - type: Contraband
+    allowedDepartments: [ Security, Epistemics, Engineering ]
+    allowedJobs: [ BlueshieldOfficer ]
+
+# emergency jaws and general EMT-only items
+- type: entity
+  id: BaseEMTContraband
+  parent: BaseRestrictedContraband
+  abstract: true
+  components:
+  - type: Contraband
+    allowedJobs: [ BlueshieldOfficer, Brigmedic, Paramedic ]
 
 # intellicard
 - type: entity
@@ -201,15 +223,6 @@
   - type: Contraband
     allowedDepartments: [ Epistemics, Silicon, Command ]
 
-# salvager weapons
-- type: entity
-  id: BaseSecurityLogisticsContraband
-  parent: BaseRestrictedContraband
-  abstract: true
-  components:
-  - type: Contraband
-    allowedDepartments: [ Security, Logistics ]
-
 # surgical tools
 - type: entity
   id: BaseMedicalEpistemicsContraband
@@ -217,11 +230,28 @@
   abstract: true
   components:
   - type: Contraband
-    allowedDepartments: [ Medical, Epistemics ]
-    allowedJobs: [ BlueshieldOfficer, Brigmedic ]
+    allowedDepartments: [ Medical ]
+    allowedJobs: [ BlueshieldOfficer, Brigmedic, Roboticist ]
 
-# special contraband types restricted to jobs for very specific items
-# ========
+# salvager weapons/stuff
+- type: entity
+  id: BaseSalvageSpecialistSecurityContraband
+  parent: BaseRestrictedContraband
+  abstract: true
+  components:
+  - type: Contraband
+    allowedDepartments: [ Security ]
+    allowedJobs: [ SalvageSpecialist ]
+
+- type: entity
+  id: BaseSalvageSpecialistContraband
+  parent: BaseRestrictedContraband
+  abstract: true
+  components:
+  - type: Contraband
+    allowedJobs: [ SalvageSpecialist ]
+
+# bartender weapons
 - type: entity
   id: BaseSecurityBartenderContraband
   parent: BaseRestrictedContraband
@@ -258,6 +288,24 @@
   - type: Contraband
     allowedJobs: [ BlueshieldOfficer ]
 
+# warden only stuff like krav maga gloves, greatsword
+- type: entity
+  id: BaseWardenContraband
+  parent: BaseRestrictedContraband
+  abstract: true
+  components:
+  - type: Contraband
+    allowedJobs: [ Warden ]
+
+# warden only stuff like krav maga gloves, greatsword
+- type: entity
+  id: BaseMantisContraband
+  parent: BaseRestrictedContraband
+  abstract: true
+  components:
+  - type: Contraband
+    allowedJobs: [ ForensicMantis ]
+
 # stuff that both the bso and sec should be cleared to have like handcuffs
 - type: entity
   id: BaseSecurityBlueshieldOfficerContraband
@@ -266,4 +314,14 @@
   components:
   - type: Contraband
     allowedDepartments: [ Security ]
+    allowedJobs: [ BlueshieldOfficer ]
+
+# this is for stun batons, disablers and alike
+- type: entity
+  id: BaseSecurityCommandBlueshieldOfficerContraband
+  parent: BaseRestrictedContraband
+  abstract: true
+  components:
+  - type: Contraband
+    allowedDepartments: [ Security, Command ]
     allowedJobs: [ BlueshieldOfficer ]
