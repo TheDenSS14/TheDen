@@ -40,13 +40,18 @@
 # SPDX-FileCopyrightText: 2024 Nemanja
 # SPDX-FileCopyrightText: 2024 lzk
 # SPDX-FileCopyrightText: 2025 EctoplasmIsGood
+# SPDX-FileCopyrightText: 2025 Eightballll
 # SPDX-FileCopyrightText: 2025 Eris
+# SPDX-FileCopyrightText: 2025 Possumongus
 # SPDX-FileCopyrightText: 2025 Rosycup
+# SPDX-FileCopyrightText: 2025 Shaman
+# SPDX-FileCopyrightText: 2025 Sir Warock
 # SPDX-FileCopyrightText: 2025 Timfa
 # SPDX-FileCopyrightText: 2025 Vanessa Louwagie
+# SPDX-FileCopyrightText: 2025 marc-pelletier
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 #These are intentionally all very mediocre as locational damage does not exist yet. Without it, armor values will stack in a way that makes it really god damn hard to determine how effective something is, along with making players extremely tanky.
 #When it DOES exist, the values here should be totally reworked - probably just port them from SS13.
@@ -268,7 +273,7 @@
   parent: ClothingHeadLightBase
   id: ClothingHeadHelmetFire
   name: fire helmet
-  description: An atmos tech's best friend. Provides some heat resistance and looks cool.
+  description: A firefighter's best friend. Provides some fire resistance and looks cool.
   components:
   - type: Sprite
     sprite: Clothing/Head/Helmets/firehelmet.rsi
@@ -289,36 +294,28 @@
     slots:
     - Hair
     - Snout
+  - type: GroupExamine
+  - type: Armor
+    modifiers: { }
 
 #Atmos Fire Helmet
 - type: entity
-  parent: ClothingHeadLightBase
+  parent: [ ClothingHeadLightBase, ClothingHeadHelmetFire ]
   id: ClothingHeadHelmetAtmosFire
   name: atmos fire helmet
   description: An atmos fire helmet, able to keep the user cool in any situation.
   components:
   - type: Sprite
-    sprite: Clothing/Head/Helmets/atmos_firehelmet.rsi
+    sprite: _DEN/Clothing/Head/Helmets/atmos_firehelmet.rsi #Den
   - type: Clothing
-    sprite: Clothing/Head/Helmets/atmos_firehelmet.rsi
+    sprite: _DEN/Clothing/Head/Helmets/atmos_firehelmet.rsi #Den
     quickEquip: true
-  - type: IngestionBlocker
-  - type: TemperatureProtection
-    heatingCoefficient: 0.01
-    coolingCoefficient: 0.2
   - type: FireProtection
     reduction: 0.2
   - type: PressureProtection
     highPressureMultiplier: 0.25
     lowPressureMultiplier: 1000
-  - type: IdentityBlocker
-  - type: Tag
-    tags:
-    - WhitelistChameleon
-  - type: HideLayerClothing
-    slots:
-    - Hair
-    - Snout
+  - type: BreathMask # TheDen - All pressure-resistant headwear should have built-in internals
 
 #Chitinous Helmet
 - type: entity
@@ -444,3 +441,56 @@
     sprite: Clothing/Head/Helmets/podwars_helmet.rsi
   - type: Clothing
     sprite: Clothing/Head/Helmets/podwars_helmet.rsi
+
+# Assmos - Metal Hydrogen
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHelmetMetalHydrogen
+  name: metal hydrogen helmet
+  description: A superb helmet made with the toughest and rarest materials available to man.
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Helmets/metal_hydrogen_helmet.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Helmets/metal_hydrogen_helmet.rsi
+  - type: IngestionBlocker
+  - type: ExplosionResistance
+    damageCoefficient: 0.9
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.95
+        Slash: 0.96
+        Piercing: 0.96
+        Heat: 0.95
+  - type: HideLayerClothing
+    slots:
+    - Hair
+    - Snout
+    - HeadTop
+    - HeadSide
+  - type: Construction
+    graph: MetalHydrogenHelmet
+    node: helmet
+
+#card helmet
+- type: entity
+  parent: ClothingHeadHelmetBasic
+  id: CardHelmet
+  name: cardboard helmet
+  description: A medieval helmet built from cardboard.
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Helmets/card_helmet.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Helmets/card_helmet.rsi
+  - type: IngestionBlocker
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.95
+  - type: StaminaDamageResistance
+    coefficient: 0.8
+  - type: Construction
+    graph: cardHelmet
+    node: cardhelmet

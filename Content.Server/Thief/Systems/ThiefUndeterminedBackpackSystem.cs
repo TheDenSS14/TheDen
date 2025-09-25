@@ -1,8 +1,8 @@
-// SPDX-FileCopyrightText: 2023 Ed <96445749+TheShuEd@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2023 Ed <96445749+theshued@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT <77995199+DEATHB4DEFEAT@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 Skubman <ba.fallaria@gmail.com>
-// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Ed
+// SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT
+// SPDX-FileCopyrightText: 2025 Skubman
+// SPDX-FileCopyrightText: 2025 portfiend
+// SPDX-FileCopyrightText: 2025 sleepyyapril
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -16,6 +16,7 @@ using Robust.Server.GameObjects;
 using Robust.Server.Audio;
 using Robust.Shared.Configuration;
 using Robust.Shared.Prototypes;
+using Content.Shared.Customization.Systems._DEN;
 
 namespace Content.Server.Thief.Systems;
 
@@ -30,7 +31,7 @@ public sealed class ThiefUndeterminedBackpackSystem : EntitySystem
     [Dependency] private readonly IConfigurationManager _config = default!;
     [Dependency] private readonly SharedTransformSystem _transform = default!;
     [Dependency] private readonly UserInterfaceSystem _ui = default!;
-    [Dependency] private readonly CharacterRequirementsSystem _characterRequirements = default!;
+    [Dependency] private readonly SharedCharacterRequirementsSystem _characterRequirements = default!;
 
     private const int MaxSelectedSets = 2;
     public override void Initialize()
@@ -84,13 +85,15 @@ public sealed class ThiefUndeterminedBackpackSystem : EntitySystem
         for (int i = 0; i < component.PossibleSets.Count; i++)
         {
             var set = _proto.Index(component.PossibleSets[i]);
-
             if (set.Requirements.Count != 0 &&
                 TryComp<HumanoidAppearanceComponent>(user, out var appearance) &&
                 appearance.LastProfileLoaded != null &&
-                !_characterRequirements.CheckRequirementsValid(
-                    set.Requirements, new JobPrototype() /* not gonna bother with jobs */,
-                    appearance.LastProfileLoaded, new(), false, set, EntityManager, _proto, _config, out _))
+                !_characterRequirements.CheckRequirementsValid(set.Requirements,
+                    new CharacterRequirementContext(profile: appearance.LastProfileLoaded,
+                        prototype: set),
+                    EntityManager,
+                    _proto,
+                    _config))
                 continue;
 
             var selected = component.SelectedSets.Contains(i);

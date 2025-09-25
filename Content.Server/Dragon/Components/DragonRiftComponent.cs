@@ -30,7 +30,7 @@ public sealed partial class DragonRiftComponent : SharedDragonRiftComponent
     /// <summary>
     /// The maximum amount we can accumulate before becoming impervious.
     /// </summary>
-    [ViewVariables(VVAccess.ReadWrite), DataField("maxAccumuluator")] public float MaxAccumulator = 300f;
+    [ViewVariables(VVAccess.ReadWrite), DataField("maxAccumuluator")] public float MaxAccumulator = 420f;
 
     /// <summary>
     /// Accumulation of the spawn timer.

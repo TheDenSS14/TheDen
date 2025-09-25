@@ -78,6 +78,7 @@ public abstract class SharedMagicMirrorSystem : EntitySystem
 
         var state = new MagicMirrorUiState(
             humanoid.Species,
+            humanoid.Sex,
             hair,
             humanoid.MarkingSet.PointsLeft(MarkingCategories.Hair) + hair.Count,
             facialHair,
@@ -173,9 +174,15 @@ public sealed class MagicMirrorAddSlotMessage : BoundUserInterfaceMessage
 [Serializable, NetSerializable]
 public sealed class MagicMirrorUiState : BoundUserInterfaceState
 {
-    public MagicMirrorUiState(string species, List<Marking> hair, int hairSlotTotal, List<Marking> facialHair, int facialHairSlotTotal)
+    public MagicMirrorUiState(string species,
+    Sex sex,
+    List<Marking> hair,
+    int hairSlotTotal,
+    List<Marking> facialHair,
+    int facialHairSlotTotal)
     {
         Species = species;
+        Sex = sex;
         Hair = hair;
         HairSlotTotal = hairSlotTotal;
         FacialHair = facialHair;
@@ -185,6 +192,7 @@ public sealed class MagicMirrorUiState : BoundUserInterfaceState
     public NetEntity Target;
 
     public string Species;
+    public Sex Sex;
 
     public List<Marking> Hair;
     public int HairSlotTotal;

@@ -1,8 +1,9 @@
-# SPDX-FileCopyrightText: 2025 Forzii <github@pawsitive.mozmail.com>
-# SPDX-FileCopyrightText: 2025 KekaniCreates <87507256+KekaniCreates@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Forzii
+# SPDX-FileCopyrightText: 2025 KekaniCreates
+# SPDX-FileCopyrightText: 2025 pocl v
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: entity
   name: phil's popup
@@ -36,6 +37,8 @@
         maxVol: 1
         reagents:
         - ReagentId: Sugar #Just a placeholder, as we don't have pregnancy.
+          Quantity: 4 # den edit
+        - ReagentId: Estradiol #den edit. combination birth control contains estrogen
           Quantity: 1
 
 - type: entity #Copied from Entities/Objects/Specific/chemistry-bottles.yml
@@ -68,7 +71,7 @@
   - type: Dumpable
 
 - type: entity #Copied from above.
-  name: bottle of birth control #Functionally useless, but nice for RP.
+  name: pill canister (birth control) #Functionally useless, but nice for RP. # den edit: changed the name
   id: BirthControlCanister #hehehehe get it? -KC
   parent: BaseStorageItem
   description: Contains a full set of birth control pills.

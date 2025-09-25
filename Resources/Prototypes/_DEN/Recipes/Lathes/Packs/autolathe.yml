@@ -1,5 +1,10 @@
+# SPDX-FileCopyrightText: 2024 RumiTiger
+# SPDX-FileCopyrightText: 2025 Eightballll
+# SPDX-FileCopyrightText: 2025 LilNutters
 # SPDX-FileCopyrightText: 2025 MajorMoth
+# SPDX-FileCopyrightText: 2025 Sir Warock
 # SPDX-FileCopyrightText: 2025 Tanix
+# SPDX-FileCopyrightText: 2025 pocl v
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
@@ -44,8 +49,12 @@
   - LedLightTube
   - SodiumLightTube
   - ExteriorLightTube
+  - UvLightTube # imp
   - LightBulb
   - LedLightBulb
+  - DimLightBulb # wizden
+  - WarmLightBulb # wizden
+  - ColdLightBulb # imp
   - Bucket
   - DrinkMug
   - DrinkMugMetal
@@ -59,6 +68,7 @@
   - FoodPlateSmallPlastic
   - FoodBowlBig
   - FoodPlateTin
+  - FoodPlateMuffinTin
   - FoodKebabSkewer
   - IceCreamBowl
   - SprayBottle
@@ -113,9 +123,13 @@
   - MofficTranslator
   - N14MaterialCircuitry
   - VehicleWheelchairFolded # Goobstation
-  - TapeRecorder # Den
-  - CassetteTape # Den
-  - ClothingOuterVestTank # Den
+  - ClothingBeltPaperwork # DeltaV
+  # Den Additions
+  - TapeRecorder
+  - CassetteTape
+  - ClothingOuterVestTank
+  - Ashtray
+  - BoxFolderFireproof
 
 - type: latheRecipePack
   id: AutolatheEmagStaticAwfulDen

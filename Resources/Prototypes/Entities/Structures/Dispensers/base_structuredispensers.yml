@@ -99,6 +99,7 @@
       whitelist:
         components:
         - FitsInDispenser
+        priority: 9 #Fixes edge cases where the beakerSlot is not the highest priority.
   - type: ItemSlots
   - type: ContainerContainer
     containers:

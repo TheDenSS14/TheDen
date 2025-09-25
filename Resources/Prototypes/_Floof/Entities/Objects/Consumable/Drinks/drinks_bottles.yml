@@ -25,25 +25,6 @@
   - type: Sealable
 
 - type: entity
-  parent: [DrinkBottleVisualsOpenable, DrinkBottleGlassBaseFull]
-  id: DrinkCumBottleFull
-  name: bottle'o'cum
-                                                                      # you're welcome azzy
-  description: Straight nard nectar. 100% Ethically Sourced Guaranteed! Boneless.
-  components:
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        reagents:
-        - ReagentId: Cum
-          Quantity: 100
-  - type: Label
-    currentLabel: bottle'o'cum
-  - type: Sprite
-    sprite: _Floof/Objects/Consumable/Drinks/bottleocum.rsi
-  - type: Sealable
-
-- type: entity
   parent: [DrinkBottleVisualsAll, DrinkBottleGlassBaseFull]
   id: DrinkEggnogBottleFull
   name: eggnog bottle
@@ -63,6 +44,26 @@
   - type: SolutionContainerVisuals
     maxFillLevels: 3
     fillBaseName: fill-
+
+- type: entity
+  parent: [DrinkBottleVisualsOpenable, DrinkBottleGlassBaseFull]
+  id: DrinkCumBottleFull
+  name: bottle'o'cum
+  # you're welcome azzy -- if you remove this without commenting it out again I'm jumping out of an airlock - Kekani
+  description: Straight weenie nectar. 100% Ethically Sourced Guaranteed! Boneless.
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        reagents:
+        - ReagentId: Cum
+          Quantity: 100
+  - type: Label
+    currentLabel: bottle'o'cum
+  - type: Sprite
+    sprite: _Floof/Objects/Consumable/Drinks/bottleocum.rsi
+  - type: Sealable
+
 - type: entity
   parent: [DrinkBottleVisualsAll, DrinkBottleGlassBaseFull]
   id: DrinkSyndicateEggnogBottleFull

@@ -1,19 +1,22 @@
-// SPDX-FileCopyrightText: 2023 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2023 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2023 PrPleGoo <PrPleGoo@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 AJCM-git <60196617+AJCM-git@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
-// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Leon Friedrich
+// SPDX-FileCopyrightText: 2023 Nemanja
+// SPDX-FileCopyrightText: 2023 PrPleGoo
+// SPDX-FileCopyrightText: 2024 AJCM-git
+// SPDX-FileCopyrightText: 2024 Pieter-Jan Briers
+// SPDX-FileCopyrightText: 2025 sleepyyapril
 //
-// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+// SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 using Content.Shared.CCVar;
 using Content.Shared.Ghost;
+using Content.Shared.Physics;
 using Content.Shared.StatusIcon;
 using Content.Shared.StatusIcon.Components;
 using Content.Shared.Stealth.Components;
 using Content.Shared.Whitelist;
+using Robust.Client.GameObjects;
 using Robust.Client.Graphics;
+using Robust.Client.Physics;
 using Robust.Client.Player;
 using Robust.Shared.Configuration;
 
@@ -28,6 +31,7 @@ public sealed class StatusIconSystem : SharedStatusIconSystem
     [Dependency] private readonly IOverlayManager _overlay = default!;
     [Dependency] private readonly IPlayerManager _playerManager = default!;
     [Dependency] private readonly EntityWhitelistSystem _entityWhitelist = default!;
+    [Dependency] private readonly PhysicsSystem _physics = default!;
 
     private bool _globalEnabled;
     private bool _localEnabled;
@@ -96,6 +100,16 @@ public sealed class StatusIconSystem : SharedStatusIconSystem
 
         if (data.ShowTo != null && !_entityWhitelist.IsValid(data.ShowTo, viewer))
             return false;
+
+        // Floof
+        if (data.HideUnderTables && TryComp(ent, out SpriteComponent? sprite) && sprite.DrawDepth < (int) Shared.DrawDepth.DrawDepth.Objects)
+        {
+            var aabb = _physics.GetHardAABB(ent);
+            foreach (var body in _physics.GetEntitiesIntersectingBody(ent, (int) CollisionGroup.TableLayer))
+                // Allow a little wiggle room with the margins
+                if (_physics.GetHardAABB(body).Enlarged(1.1f).Encloses(aabb))
+                    return false;
+        }
 
         return true;
     }

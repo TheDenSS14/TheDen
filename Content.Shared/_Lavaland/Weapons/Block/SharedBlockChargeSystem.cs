@@ -1,7 +1,8 @@
-// SPDX-FileCopyrightText: 2025 Eris <eris@erisws.com>
-// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Eris
+// SPDX-FileCopyrightText: 2025 oberonics
+// SPDX-FileCopyrightText: 2025 sleepyyapril
 //
-// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+// SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 using Content.Shared._Lavaland.Mobs;
 using Content.Shared.Damage;
@@ -52,8 +53,8 @@ public abstract partial class SharedBlockChargeSystem : EntitySystem
     {
         if (!TryComp<BlockChargeComponent>(component.BlockingWeapon, out var blockComp)
             || !HasComp<FaunaComponent>(args.Origin)
-            || !blockComp.HasCharge
-            || !args.CanEvade)
+            || !blockComp.HasCharge)
+            // || !args.CanEvade) | Den Change: Fix kinetic Machete
             return;
 
         _popup.PopupPredicted(Loc.GetString("block-attack-notice", ("user", uid), ("blocked", args.Origin)), uid, null);

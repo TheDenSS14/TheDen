@@ -1,0 +1,41 @@
+# SPDX-FileCopyrightText: 2025 pocl v
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  id: PoweredDimSmallLight
+  suffix: Dim
+  parent: PoweredSmallLightEmpty
+  components:
+  - type: Sprite
+    state: base
+  - type: PointLight
+    enabled: true
+    radius: 5
+    energy: 0.5
+    softness: 3
+    color: "#ba473f"
+  - type: PoweredLight
+    hasLampOnSpawn: DimLightBulb
+    damage: # we don't have wizden's generic DamageOnInteract system
+      types:
+        Heat: 1
+
+- type: entity
+  id: PoweredWarmSmallLight
+  suffix: Warm
+  parent: PoweredSmallLightEmpty
+  components:
+  - type: Sprite
+    state: base
+  - type: PointLight
+    enabled: true
+    radius: 6
+    energy: 1
+    softness: 3
+    color: "#FF8A0C"
+  - type: PoweredLight
+    hasLampOnSpawn: WarmLightBulb
+    damage: # we don't have wizden's generic DamageOnInteract system
+      types:
+        Heat: 2

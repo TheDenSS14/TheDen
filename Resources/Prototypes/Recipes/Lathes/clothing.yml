@@ -32,7 +32,81 @@
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
+# Base prototypes
+# TODO: Painstakingly reparent everything to these
+# (or just cherry-pick https://github.com/space-wizards/space-station-14/pull/31520)
 
+- type: latheRecipe
+  abstract: true
+  id: BaseJumpsuitRecipe
+  categories:
+  - Jumpsuits
+  completetime: 4
+  materials:
+    Cloth: 300
+
+- type: latheRecipe
+  abstract: true
+  parent: BaseJumpsuitRecipe
+  id: BaseCommandJumpsuitRecipe
+  categories:
+  - Jumpsuits
+  - Command
+  materials:
+    Cloth: 300
+    Durathread: 100
+
+- type: latheRecipe
+  abstract: true
+  id: BaseCoatRecipe
+  categories:
+  - Coats
+  completetime: 3.2 # don't ask why its faster than a jumpsuit??
+  materials:
+    Cloth: 500
+    Durathread: 200
+
+- type: latheRecipe
+  abstract: true
+  parent: BaseCoatRecipe
+  id: BaseCommandCoatRecipe
+  categories:
+  - Coats
+  - Command
+  materials:
+    Cloth: 500
+    Durathread: 300
+
+- type: latheRecipe
+  abstract: true
+  id: BaseHatRecipe
+  categories:
+  - Hats
+  completetime: 2
+  materials:
+    Cloth: 100
+
+- type: latheRecipe
+  abstract: true
+  parent: BaseHatRecipe
+  id: BaseCommandHatRecipe
+  categories:
+  - Hats
+  - Command
+  materials:
+    Cloth: 100
+    Durathread: 50
+
+- type: latheRecipe
+  abstract: true
+  id: BaseNeckClothingRecipe
+  categories:
+  - Neck
+  completetime: 2
+  materials:
+    Cloth: 200
+
+## Recipes
 # Jumpsuits/skirts
 - type: latheRecipe
   id: ClothingUniformJumpsuitColorGrey # Tide
@@ -124,6 +198,14 @@
     Cloth: 300
     Durathread: 100
 
+- type: latheRecipe # DeltaV - CentComm Drip
+  id: ClothingUniformJumpskirtCentcomAgent
+  result: ClothingUniformJumpskirtCentcomAgent
+  completetime: 4
+  materials:
+    Cloth: 300
+    Durathread: 100
+
 - type: latheRecipe
   id: ClothingUniformJumpsuitCentcomFormal
   result: ClothingUniformJumpsuitCentcomFormal
@@ -148,9 +230,25 @@
     Cloth: 300
     Durathread: 100
 
+- type: latheRecipe # DeltaV - CentComm Drip
+  id: ClothingUniformJumpskirtCentcomOfficer
+  result: ClothingUniformJumpskirtCentcomOfficer
+  completetime: 4
+  materials:
+    Cloth: 300
+    Durathread: 100
+
 - type: latheRecipe
   id: ClothingUniformJumpsuitCentcomOfficial
   result: ClothingUniformJumpsuitCentcomOfficial
+  completetime: 4
+  materials:
+    Cloth: 300
+    Durathread: 100
+
+- type: latheRecipe
+  id: ClothingUniformJumpskirtCentcomOfficial
+  result: ClothingUniformJumpskirtCentcomOfficial
   completetime: 4
   materials:
     Cloth: 300
@@ -1154,6 +1252,14 @@
 - type: latheRecipe
   id: ClothingHeadHatCentcomcap
   result: ClothingHeadHatCentcomcap
+  completetime: 2
+  materials:
+    Cloth: 100
+    Durathread: 50
+
+- type: latheRecipe
+  id: ClothingHeadHatBeretCentcomm
+  result: ClothingHeadHatBeretCentcomm
   completetime: 2
   materials:
     Cloth: 100

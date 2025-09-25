@@ -1,0 +1,102 @@
+# SPDX-FileCopyrightText: 2025 Vanessa
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  parent: Jug
+  id: JugDiethylamine
+  suffix: Diethylamine
+  components:
+    - type: Label
+      currentLabel: reagent-name-diethylamine
+    - type: SolutionContainerManager
+      solutions:
+        beaker:
+          reagents:
+            - ReagentId: Diethylamine
+              Quantity: 200
+
+- type: entity
+  parent: Jug
+  id: JugCryoxadone
+  suffix: Cryoxadone
+  components:
+    - type: Label
+      currentLabel: reagent-name-cryoxadone
+    - type: SolutionContainerManager
+      solutions:
+        beaker:
+          reagents:
+            - ReagentId: Cryoxadone
+              Quantity: 200
+
+- type: entity
+  parent: Jug
+  id: JugLeft4Zed
+  suffix: Left4Zed
+  components:
+    - type: Label
+      currentLabel: reagent-name-left4-zed
+    - type: SolutionContainerManager
+      solutions:
+        beaker:
+          reagents:
+            - ReagentId: Left4Zed
+              Quantity: 200
+
+- type: entity
+  parent: Jug
+  id: JugUnstableMutagen
+  suffix: UnstableMutagen
+  components:
+    - type: Label
+      currentLabel: reagent-name-unstable-mutagen
+    - type: SolutionContainerManager
+      solutions:
+        beaker:
+          reagents:
+            - ReagentId: UnstableMutagen
+              Quantity: 200
+
+- type: entity
+  parent: Jug
+  id: JugDylovene
+  suffix: Dylovene
+  components:
+    - type: Label
+      currentLabel: reagent-name-dylovene
+    - type: SolutionContainerManager
+      solutions:
+        beaker:
+          reagents:
+            - ReagentId: Dylovene
+              Quantity: 200
+
+- type: entity
+  parent: Jug
+  id: JugRobustHarvest
+  suffix: RobustHarvest
+  components:
+    - type: Label
+      currentLabel: reagent-name-robust-harvest
+    - type: SolutionContainerManager
+      solutions:
+        beaker:
+          reagents:
+            - ReagentId: RobustHarvest
+              Quantity: 200
+
+- type: entity
+  parent: Jug
+  id: JugPhalanximine
+  suffix: Phalanximine
+  components:
+    - type: Label
+      currentLabel: reagent-name-phalaximime
+    - type: SolutionContainerManager
+      solutions:
+        beaker:
+          reagents:
+            - ReagentId: Phalanximine
+              Quantity: 200

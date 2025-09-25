@@ -62,3 +62,15 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutNeck
+
+- type: loadout
+  id: LoadoutNeckNeckScarfWrapped
+  category: Neck
+  cost: 0
+  exclusive: true
+  customColorTint: true
+  items:
+    - ClothingNeckScarfWrapped
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutNeck

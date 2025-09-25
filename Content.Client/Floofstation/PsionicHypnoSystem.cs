@@ -32,7 +32,7 @@ public sealed class PsionicHypnoSystem : EquipmentHudSystem<PsionicHypnoComponen
 
         if (_playerManager.LocalEntity is not { Valid: true } player
             || !TryComp<PsionicHypnoComponent>(player, out var hypnoComp)
-            || component.Master != player)
+            || !component.Masters.Contains(player))
             return;
 
         if (_prototype.TryIndex(hypnoComp.SubjectIcon, out var iconPrototype))

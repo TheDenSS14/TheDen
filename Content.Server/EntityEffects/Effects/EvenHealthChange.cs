@@ -3,6 +3,9 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
+using System.Linq;
+using Content.Server.Body.Systems;
+using Content.Shared._Shitmed.Targeting;
 using Content.Shared.Damage;
 using Content.Shared.Damage.Prototypes;
 using Content.Shared.EntityEffects;
@@ -11,6 +14,9 @@ using Content.Shared.Localizations;
 using JetBrains.Annotations;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
+
+// Shitmed Change
+using Content.Shared.Body.Systems;
 
 namespace Content.Server.EntityEffects.Effects;
 
@@ -93,7 +99,50 @@ public sealed partial class EvenHealthChange : EntityEffect
 
         var damagableSystem = args.EntityManager.System<DamageableSystem>();
 
-        var dspec = new DamageSpecifier();
+        var dspec = GetDamageSpec(protoMan, damageable);
+
+        damagableSystem.TryChangeDamage(
+            args.TargetEntity,
+            dspec * scale,
+            IgnoreResistances,
+            interruptsDoAfters: false,
+            // Shitmed Change Start
+            doPartDamage: false);
+            // Shitmed Change End
+
+            var bodySystem = args.EntityManager.System<SharedBodySystem>();
+        var bodyParts = SharedTargetingSystem.GetValidParts();
+        foreach (var bodyPart in bodyParts)
+        {
+            var (targetType, targetSymmetry) =  bodySystem.ConvertTargetBodyPart(bodyPart);
+            if (bodySystem.GetBodyChildrenOfType(args.TargetEntity, targetType, symmetry: targetSymmetry) is { } part)
+            {
+                if (!args.EntityManager.TryGetComponent<DamageableComponent>(part.FirstOrDefault().Id, out var damageablePart))
+                    continue;
+                dspec = GetDamageSpec(protoMan, damageablePart);
+
+                if (dspec.GetTotal() == 0)
+                    continue;
+
+                damagableSystem.TryChangeDamage(
+                    args.TargetEntity,
+                    dspec * scale,
+                    IgnoreResistances,
+                    interruptsDoAfters: false,
+                    // Shitmed Change Start
+                    targetPart: bodyPart,
+                    onlyDamageParts: true,
+                    partMultiplier: 0.5f,
+                    canSever: false);
+                    // Shitmed Change End
+            }
+        }
+
+    }
+
+    private DamageSpecifier GetDamageSpec(IPrototypeManager protoMan, DamageableComponent damageable)
+    {
+        var damageSpecifier = new DamageSpecifier();
 
         foreach (var (group, amount) in Damage)
         {
@@ -109,15 +158,11 @@ public sealed partial class EvenHealthChange : EntityEffect
             var sum = groupDamage.Values.Sum();
             foreach (var (damageId, damageAmount) in groupDamage)
             {
-                var existing = dspec.DamageDict.GetOrNew(damageId);
-                dspec.DamageDict[damageId] = existing + damageAmount / sum * amount;
+                var existing = damageSpecifier.DamageDict.GetOrNew(damageId);
+                damageSpecifier.DamageDict[damageId] = existing + damageAmount / sum * amount;
             }
         }
-        
-        damagableSystem.TryChangeDamage(
-            args.TargetEntity,
-            dspec * scale,
-            IgnoreResistances,
-            interruptsDoAfters: false);
+
+        return damageSpecifier;
     }
 }

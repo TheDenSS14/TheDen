@@ -1,8 +1,10 @@
-# SPDX-FileCopyrightText: 2023 Fluffiest Floofers <thebluewulf@gmail.com>
-# SPDX-FileCopyrightText: 2023 Tad "Taddy" Johnson <120885811+TadJohnson00@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2023 leo <136020119+leonardo-dabepis@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 dge21 <129136517+dge21@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Fluffiest Floofers
+# SPDX-FileCopyrightText: 2023 Tad "Taddy" Johnson
+# SPDX-FileCopyrightText: 2023 leo
+# SPDX-FileCopyrightText: 2024 dge21
+# SPDX-FileCopyrightText: 2025 Blitz
+# SPDX-FileCopyrightText: 2025 Eightballll
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -17,9 +19,6 @@ reagent-desc-lemondrop = A simple, tangy, and tasty drink consisting of lemon, v
 
 reagent-name-greengrass = green grass
 reagent-desc-greengrass = Green grass, or grüne wiese, is a peculiar green cocktail hailing from the now dissolved GDR. Popular amongst the disillusioned and disingenuous alike.
-
-reagent-name-daiquiri = modern daiquiri
-reagent-desc-daiquiri = A sweet mix of deadrum and lime, a favourite of writers and politicians.
 
 reagent-name-arsonistsbrew = arsonist's brew
 reagent-desc-arsonistsbrew = Take a sip and laugh, while you watch your world burn.

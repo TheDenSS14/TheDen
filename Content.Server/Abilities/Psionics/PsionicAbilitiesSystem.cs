@@ -26,10 +26,12 @@ using Robust.Shared.Serialization.Manager;
 using Robust.Shared.Player;
 using Content.Shared.CCVar;
 using Content.Shared.NPC.Systems;
+using Robust.Shared.Console;
+
 
 namespace Content.Server.Abilities.Psionics;
 
-public sealed class PsionicAbilitiesSystem : EntitySystem
+public sealed partial class PsionicAbilitiesSystem : EntitySystem
 {
     [Dependency] private readonly IComponentFactory _componentFactory = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
@@ -45,11 +47,22 @@ public sealed class PsionicAbilitiesSystem : EntitySystem
     [Dependency] private readonly GhostSystem _ghost = default!;
     [Dependency] private readonly MindSystem _mind = default!;
 
+    private List<CompletionOption>? _psionicPowers;
+
     public override void Initialize()
     {
         base.Initialize();
         SubscribeLocalEvent<InnatePsionicPowersComponent, MapInitEvent>(InnatePowerStartup);
         SubscribeLocalEvent<PsionicComponent, ComponentShutdown>(OnPsionicShutdown);
+
+        _prototypeManager.PrototypesReloaded += CreateCompletions;
+    }
+
+    public override void Shutdown()
+    {
+        base.Shutdown();
+
+        _prototypeManager.PrototypesReloaded -= CreateCompletions;
     }
 
     /// <summary>

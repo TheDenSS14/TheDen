@@ -65,7 +65,7 @@ public partial class BodyPartEffectSystem : EntitySystem
         Dirty(partEnt, partEnt.Comp);
     }
 
-    private void AddComponents(EntityUid body,
+    public void AddComponents(EntityUid body,
         EntityUid part,
         ComponentRegistry reg,
         BodyPartEffectComponent? effectComp = null)

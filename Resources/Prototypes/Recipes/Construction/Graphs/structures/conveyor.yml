@@ -22,7 +22,7 @@
           steps:
             - tag: ConveyorAssembly
               icon:
-                sprite: Structures/conveyor.rsi
+                sprite: _DEN/Structures/conveyor.rsi # Den - Updated textures
                 state: conveyor_loose
               name: conveyor belt assembly
               doAfter: 2

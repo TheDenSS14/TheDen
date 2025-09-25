@@ -25,3 +25,9 @@ loadout-name-LoadoutEyesBlindfoldFakeColor = "blind"fold (colorable)
 loadout-description-LoadoutEyesBlindfoldFakeColor = This product may not work as advertised.
 
 loadout-name-LoadoutEyesGlasses = glasses (colorable)
+
+loadout-name-LoadoutClothingEyesGlassesColorfulPink = novelty heart glasses (colorable)
+loadout-name-LoadoutClothingEyesGlassesColorfulRed = novelty round glasses (colorable)
+loadout-name-LoadoutClothingEyesGlassesColorfulGreen = novelty angled glasses (colorable)
+loadout-name-LoadoutClothingEyesGlassesColorfulPurple = novelty bar glasses (colorable)
+loadout-name-LoadoutClothingEyesGlassesColorfulYellow = novelty swept glasses (colorable)

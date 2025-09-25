@@ -76,7 +76,9 @@ namespace Content.Server.Abilities.Mime
 
         private void OnComponentInit(EntityUid uid, MimePowersComponent component, ComponentInit args)
         {
-            EnsureComp<MutedComponent>(uid);
+            var mutedComponent = EnsureComp<MutedComponent>(uid); // IMP
+            mutedComponent.MutedScream = false; // IMP
+
             _alertsSystem.ShowAlert(uid, component.VowAlert);
             _actionsSystem.AddAction(uid, ref component.InvisibleWallActionEntity, component.InvisibleWallAction, uid);
         }

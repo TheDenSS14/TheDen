@@ -38,13 +38,17 @@
 # SPDX-FileCopyrightText: 2024 lzk
 # SPDX-FileCopyrightText: 2025 EctoplasmIsGood
 # SPDX-FileCopyrightText: 2025 Eris
+# SPDX-FileCopyrightText: 2025 Falcon
+# SPDX-FileCopyrightText: 2025 Sir Warock
 # SPDX-FileCopyrightText: 2025 Tabitha
 # SPDX-FileCopyrightText: 2025 Vanessa Louwagie
 # SPDX-FileCopyrightText: 2025 VividPups
+# SPDX-FileCopyrightText: 2025 marc-pelletier
+# SPDX-FileCopyrightText: 2025 sheepie
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 # SPDX-FileCopyrightText: 2025 wheelwrightt
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: entity
   parent: ClothingOuterBaseLarge
@@ -66,6 +70,8 @@
         Slash: 0.9
         Piercing: 0.9
         Heat: 0.75
+  - type: StaminaDamageResistance #Den
+    coefficient: 0.25 #Den
   - type: ExplosionResistance
     damageCoefficient: 0.15
   - type: GroupExamine
@@ -75,7 +81,7 @@
     - WhitelistChameleon
     - FullBodyOuter
     # HidesHarpyWings #Floof change, caused vulp tails to be hidden in hardsuits(with singer trait only)
-  - type: ClothingRequiredStepTriggerImmune
+  - type: ProtectedFromStepTriggers
     slots: WITHOUT_POCKET
 
 - type: entity
@@ -94,6 +100,8 @@
     sprintModifier: 0.8
   - type: ExplosionResistance
     damageCoefficient: 0.15
+  - type: StaminaDamageResistance #Den
+    coefficient: 0.5 #Den
   - type: GroupExamine
   - type: Tag
     tags:
@@ -124,12 +132,14 @@
         Slash: 0.9
         Heat: 0.8
         Cold: 0.8
+  - type: StaminaDamageResistance #Den
+    coefficient: 0.8 #Den
   - type: ClothingSpeedModifier
     walkModifier: 0.8
     sprintModifier: 0.7
   - type: HeldSpeedModifier
   - type: GroupExamine
-  - type: ClothingRequiredStepTriggerImmune
+  - type: ProtectedFromStepTriggers
     slots: WITHOUT_POCKET
   - type: Tag
     tags:
@@ -160,16 +170,19 @@
           Slash: 0.9
           Heat: 0.8
           Cold: 0.8
+    - type: StaminaDamageResistance #Den
+      coefficient: 0.75 #Den
     - type: ClothingSpeedModifier
       walkModifier: 0.8
       sprintModifier: 0.8
     - type: HeldSpeedModifier
     - type: GroupExamine
-    - type: ClothingRequiredStepTriggerImmune
+    - type: ProtectedFromStepTriggers
       slots: WITHOUT_POCKET
     - type: Tag
       tags:
         - WhitelistChameleon
+        - AtmosFireSuit
         # HidesHarpyWings #Floof change, caused vulp tails to be hidden in hardsuits(with singer trait only)
 
 - type: entity
@@ -194,7 +207,7 @@
   - type: ContainerContainer
     containers:
       toggleable-clothing: !type:Container {}
-  - type: ClothingRequiredStepTriggerImmune
+  - type: ProtectedFromStepTriggers
     slots: WITHOUT_POCKET
   - type: Tag
     tags:
@@ -225,6 +238,8 @@
         Slash: 0.8
         Piercing: 0.8
         Heat: 0.8
+  - type: StaminaDamageResistance #Den
+    coefficient: 0.85 #Den
   # phase cloak
   - type: ToggleClothing
     action: ActionTogglePhaseCloak
@@ -276,7 +291,7 @@
     sprite: Clothing/OuterClothing/Suits/chicken.rsi
   - type: Clothing
     sprite: Clothing/OuterClothing/Suits/chicken.rsi
-  - type: ClothingRequiredStepTriggerImmune
+  - type: ProtectedFromStepTriggers
     slots: WITHOUT_POCKET
   - type: Tag
     tags:
@@ -306,7 +321,7 @@
   - type: ContainerContainer
     containers:
       toggleable-clothing: !type:Container {}
-  - type: ClothingRequiredStepTriggerImmune
+  - type: ProtectedFromStepTriggers
     slots: WITHOUT_POCKET
   - type: Tag
     tags:
@@ -332,7 +347,7 @@
   - type: Construction
     graph: ClothingOuterSuitIan
     node: suit
-  - type: ClothingRequiredStepTriggerImmune
+  - type: ProtectedFromStepTriggers
     slots: WITHOUT_POCKET
 
 - type: entity

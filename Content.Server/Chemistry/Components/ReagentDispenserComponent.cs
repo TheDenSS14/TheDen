@@ -76,7 +76,7 @@ namespace Content.Server.Chemistry.Components
         /// this many chemicals (without unloading and reloading).
         /// </summary>
         [DataField("numStorageSlots")]
-        public int NumSlots = 25;
+        public int NumSlots = 36;
 
         /// <summary>
         /// For each created storage slot for the reagent containers being dispensed, apply this

@@ -1,13 +1,12 @@
-# SPDX-FileCopyrightText: 2023 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2023 deltanedas <39013340+deltanedas@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2023 deltanedas <@deltanedas:kde.org>
-# SPDX-FileCopyrightText: 2024 Ed <96445749+TheShuEd@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 SimpleStation14 <130339894+SimpleStation14@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 sleepyyapril <flyingkarii@gmail.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Nemanja
+# SPDX-FileCopyrightText: 2023 deltanedas
+# SPDX-FileCopyrightText: 2024 Ed
+# SPDX-FileCopyrightText: 2024 SimpleStation14
+# SPDX-FileCopyrightText: 2024 metalgearsloth
+# SPDX-FileCopyrightText: 2024 sleepyyapril
+# SPDX-FileCopyrightText: 2025 Blitz
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 # Markers
 - type: entity
@@ -140,22 +139,17 @@
   id: Breathable
   cost: 0
   gases:
-    - 21.824779 # oxygen
-    - 82.10312 # nitrogen
+    Oxygen: 21.824779
+    Nitrogen: 82.10312
 
 #- type: salvageAirMod
 #  id: Sleepy
 #  cost: 1
 #  desc: Dangerous atmosphere
 #  gases:
-#    - 21.824779 # oxygen
-#    - 72.10312 # nitrogen
-#    - 0
-#    - 0
-#    - 0
-#    - 0
-#    - 0
-#    - 10 # nitrous oxide
+#    Oxygen: 21.824779
+#    Nitrogen: 72.10312
+#    NitrousOxide: 10
 #  biomes:
 #    - Caves
 #    #- LowDesert
@@ -168,9 +162,9 @@
   cost: 2
   desc: Dangerous atmosphere
   gases:
-    - 21.824779 # oxygen
-    - 77.10312 # nitrogen
-    - 10 # carbon dioxide
+    Oxygen: 21.824779
+    Nitrogen: 77.10312
+    CarbonDioxide: 10
   biomes:
     - Caves
     #- LowDesert
@@ -183,9 +177,8 @@
   cost: 3
   desc: Toxic atmosphere
   gases:
-    - 21.824779 # oxygen
-    - 0
-    - 82.10312 # carbon dioxide
+    Oxygen: 21.824779
+    CarbonDioxide: 82.10312
   biomes:
     - Caves
     - Snow
@@ -196,10 +189,7 @@
   cost: 4
   desc: Toxic atmosphere
   gases:
-    - 0
-    - 0
-    - 0
-    - 103.927899 # plasma
+    Plasma: 103.927899
   biomes:
     - Caves
     - Lava
@@ -209,10 +199,8 @@
   cost: 5
   desc: Volatile atmosphere
   gases:
-    - 21.824779 # oxygen
-    - 0
-    - 0
-    - 82.10312 # plasma
+    Oxygen: 21.824779
+    Plasma: 82.10312
   biomes:
     - Caves
     - Lava
@@ -253,7 +241,7 @@
   proto: SnowyLabs
   biomes:
     - Snow
-    
+
 - type: salvageDungeonMod
   id: Haunted
   proto: Haunted

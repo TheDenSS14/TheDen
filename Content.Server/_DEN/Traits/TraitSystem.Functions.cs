@@ -7,6 +7,7 @@ using System.Linq;
 using Content.Server.Administration.Logs;
 using Content.Server.Body.Components;
 using Content.Server.Body.Systems;
+using Content.Shared._Shitmed.BodyEffects;
 using Content.Shared.Body.Components;
 using Content.Shared.Body.Part;
 using Content.Shared.Body.Prototypes;
@@ -76,19 +77,19 @@ public sealed partial class TraitAddMetabolizer : TraitFunction
 }
 
 /// <summary>
-/// A trait function that will add metabolizers to the entity's organs.
+/// A trait function that adds components to limbs. Currently used for 'hidden' cybernetics.
 /// </summary>
 [UsedImplicitly]
 public sealed partial class TraitAddComponentToBodyPart : TraitFunction
 {
     /// <summary>
-    /// What components to add to the limb
+    /// What components to add to the limb.
     /// </summary>
     [DataField(required: true)]
     public ComponentRegistry Components = new();
 
     /// <summary>
-    /// Whether this trait should replace all metabolizers instead of simply adding them.
+    /// Which limbs the components should be added to.
     /// </summary>
     [DataField]
     public HashSet<BodyPartType> Parts = new();
@@ -105,7 +106,11 @@ public sealed partial class TraitAddComponentToBodyPart : TraitFunction
             if (!Parts.Contains(bodyPart.Component.PartType))
                 continue;
 
-            entityManager.AddComponents(bodyPart.Id, Components);
+            bodyPart.Component.OnAdd = Components;
+            bodyPart.Component.OnRemove = Components;
+            entityManager.EnsureComponent<BodyPartEffectComponent>(bodyPart.Id);
+            if (bodyPart.Component.Body != null)
+                entityManager.System<BodyPartEffectSystem>().AddComponents(bodyPart.Component.Body.Value, bodyPart.Id, bodyPart.Component.OnAdd);
         }
     }
 }

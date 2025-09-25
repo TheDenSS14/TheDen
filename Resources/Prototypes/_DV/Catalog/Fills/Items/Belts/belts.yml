@@ -5,17 +5,19 @@
 # SPDX-FileCopyrightText: 2025 Vanessa Louwagie
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: entity
   id: ClothingBeltKatanaSheathFilled
   parent: ClothingBeltKatanaSheath
   suffix: Filled
   components:
-  - type: StorageFill
-    contents:
-      - id: Wakizashi
-      - id: Katana
+  - type: ContainerFill
+    containers:
+      katanaslot:
+      - Katana
+      wakizashislot:
+      - Wakizashi
 
 - type: entity
   id: ClothingBeltKatanaSheathFilledHoS
@@ -48,3 +50,15 @@
       - id: EmergencyRollerBedSpawnFolded
       - id: Portafib
       - id: Bloodpack
+
+- type: entity #DeltaV
+  parent: ClothingBeltPaperwork
+  id: ClothingBeltPaperworkFilled
+  suffix: Filled
+  components:
+  - type: StorageFill
+    contents:
+    - id: BoxFolderBase
+    - id: BoxFolderBlack
+    - id: BoxFolderClipboard
+    - id: DrinkVacuumFlask

@@ -108,6 +108,10 @@ public sealed partial class AnomalySystem
 
         var targetCoords = xform.Coordinates;
         var gridBounds = gridComp.LocalAABB.Scale(_configuration.GetCVar(CCVars.AnomalyGenerationGridBoundsScale));
+        var map = _mapSystem.GetMap(xform.MapID);
+
+        if (xform.MapID == MapId.Nullspace || !_mapSystem.IsInitialized(xform.MapID))
+            return;
 
         for (var i = 0; i < 25; i++)
         {
@@ -128,7 +132,7 @@ public sealed partial class AnomalySystem
             var valid = true;
 
             // TODO: This should be using static lookup.
-            foreach (var ent in gridComp.GetAnchoredEntities(tile))
+            foreach (var ent in _mapSystem.GetAnchoredEntities((grid, gridComp), tile))
             {
                 if (!physQuery.TryGetComponent(ent, out var body))
                     continue;
@@ -144,17 +148,17 @@ public sealed partial class AnomalySystem
                 continue;
 
             var pos = _mapSystem.GridTileToLocal(grid, gridComp, tile);
-            var mapPos = pos.ToMap(EntityManager, _transform);
+            var mapPos = _mapSystem.GridTileToWorldPos(grid, gridComp, tile);
             // don't spawn in AntiAnomalyZones
             var antiAnomalyZonesQueue = AllEntityQuery<AntiAnomalyZoneComponent, TransformComponent>();
             while (antiAnomalyZonesQueue.MoveNext(out var uid, out var zone, out var antiXform))
             {
-                if (antiXform.MapID != mapPos.MapId)
+                if (antiXform.MapID != _transform.GetMapId(pos))
                     continue;
 
                 var antiCoordinates = _transform.GetWorldPosition(antiXform);
 
-                var delta = antiCoordinates - mapPos.Position;
+                var delta = antiCoordinates - mapPos;
                 if (delta.LengthSquared() < zone.ZoneRadius * zone.ZoneRadius)
                 {
                     valid = false;
