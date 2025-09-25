@@ -1,0 +1,13 @@
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformAAThong
+  name: administrative assistant thong
+  description: Styled for an administrative assistant, but is this even considered a piece of clothing?
+  components:
+  - type: Sprite
+    sprite: _DEN/Clothing/Departmental/Command/aathong.rsi
+  - type: Clothing
+    sprite: _DEN/Clothing/Departmental/Command/aathong.rsi
+  - type: Tag #DeltaV, needed for species with nonhuman legs/can only wear skirts
+    tags:
+    - Skirt

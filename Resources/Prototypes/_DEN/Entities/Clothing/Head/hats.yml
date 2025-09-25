@@ -42,3 +42,14 @@
   parent: [ClothingHeadHeadHatBaseFlipped, ClothingHeadHatOrangesoft]
   id: ClothingHeadHatPatrolCapFlipped
   name: patrol cap
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatAdminAssistant
+  name: administrative assistant cap
+  description: A command blue cap with an embossed bronze emblem. It makes you feel more important than the average paper pusher.
+  components:
+  - type: Sprite
+    sprite: _DEN/Clothing/Head/Hats/aacap.rsi
+  - type: Clothing
+    sprite: _DEN/Clothing/Head/Hats/aacap.rsi

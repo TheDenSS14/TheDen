@@ -55,15 +55,51 @@
     - ClothingHandsGlovesInspection
 
 # Head
-
+- type: loadout
+  id: LoadoutAdministrativeAssistantHat
+  category: JobsCommandAdminAssistant
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutAdminAssistantHead
+    - !type:CharacterJobRequirement
+      jobs:
+        - AdministrativeAssistant
+  items:
+    - ClothingHeadHatAdminAssistant
 # Id
 
 # Neck
-
+- type: loadout
+  id: LoadoutAdministrativeAssistantCollar
+  category: JobsCommandAdminAssistant
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - AdministrativeAssistant
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutAdminAssistantNeck
+  items:
+    - ClothingNeckAdminAssitantCollar
 # Mask
 
 # Outer
-
+- type: loadout
+  id: LoadoutAdminAssistantOuterWinter
+  category: JobsCommandAdminAssistant
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutAdminAssistantOuter
+    - !type:CharacterJobRequirement
+      jobs:
+        - AdministrativeAssistant
+  items:
+    - ClothingOuterWinterAdminAssistant
 # Shoes
 
 # Uniforms
@@ -94,3 +130,31 @@
         - AdministrativeAssistant
   items:
     - ClothingUniformJumpskirtAdminAssistant
+
+- type: loadout
+  id: LoadoutAdminAssistantUniformTurtleneck
+  category: JobsCommandAdminAssistant
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutAdminAssistantUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - AdministrativeAssistant
+  items:
+    - ClothingUniformAdminAssistantTurtleneck
+
+- type: loadout
+  id: LoadoutClothingUniformAdminAssistantThong
+  category: JobsCommandAdminAssistant
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutAdminAssistantUniforms
+    - !type:CharacterJobRequirement
+      jobs:
+        - AdministrativeAssistant
+  items:
+    - ClothingUniformAAThong

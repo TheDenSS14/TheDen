@@ -139,3 +139,14 @@
     sprite: _DEN/Clothing/Uniforms/Jumpsuit/whiteturtleneck.rsi
   - type: Clothing
     sprite: _DEN/Clothing/Uniforms/Jumpsuit/whiteturtleneck.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformAdminAssistantTurtleneck
+  name: administrative assistant turtleneck
+  description: A turtlenck and slacks worn by the Administrative Assistant. Smells of burnt coffee.
+  components:
+  - type: Sprite
+    sprite: _DEN/Clothing/Uniforms/Jumpsuit/aaturtleneck.rsi
+  - type: Clothing
+    sprite: _DEN/Clothing/Uniforms/Jumpsuit/aaturtleneck.rsi
