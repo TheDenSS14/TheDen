@@ -1,7 +1,8 @@
-# SPDX-FileCopyrightText: 2024 Piras314 <p1r4s@proton.me>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Piras314
+# SPDX-FileCopyrightText: 2025 MajorMoth
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: entity
   parent: BaseItem
@@ -28,9 +29,9 @@
     tags:
     - VehicleKey
     - SecwayKeys
-    
+
 - type: entity
-  parent: BaseKey
+  parent: [ BaseKey, BaseRivalCompanyContraband ]
   id: VehicleKeySyndicateSegway
   name: syndicate segway keys
   description: Patterned after the iconic EMAG design.
@@ -56,7 +57,7 @@
     tags:
     - VehicleKey
     - ATVKeys
-    
+
 - type: entity
   parent: BaseKey
   id: VehicleKeyJanicart
