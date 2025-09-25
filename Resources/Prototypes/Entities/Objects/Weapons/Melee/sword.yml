@@ -35,7 +35,7 @@
 
 - type: entity
   name: Sword
-  parent: BaseItem
+  parent: [ BaseSalvageSpecialistSecurityContraband, BaseItem ]
   id: BaseSword
   description: A sharp sword.
   abstract: true
@@ -60,7 +60,7 @@
 
 - type: entity
   name: captain's sabre
-  parent: BaseSword
+  parent: [ BaseGrandTheftContraband, BaseSword ]
   id: CaptainSabre
   description: A ceremonial weapon belonging to the captain of the station.
   components:
@@ -156,7 +156,7 @@
 
 - type: entity
   name: energy katana
-  parent: Katana
+  parent: [ BaseNinjaContraband, Katana ]
   id: EnergyKatana
   description: A katana infused with strong energy.
   components:

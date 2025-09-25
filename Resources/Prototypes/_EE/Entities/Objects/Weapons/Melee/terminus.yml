@@ -10,7 +10,7 @@
 
 - type: entity
   name: DT-8 "Terminus"
-  parent: BaseItem
+  parent: [ BaseSecurityContraband, BaseItem ]
   id: Terminus
   description: An advanced weapon crafted specifically for an oni. Capable of firing a spread of disabler shots from its tip.
   components:
@@ -76,6 +76,6 @@
 
 - type: entity
   name: DT-8 "Antique Terminus"
-  parent: Terminus
+  parent: [ BaseGrandTheftContraband, Terminus ]
   id: AntiqueTerminus
   description: With a rise of Oni personnel taking up the Head of Security position, it was deemed a necessity to equip them with the only Oni-compatible weapon able to fire disabler bolts.

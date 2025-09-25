@@ -121,7 +121,7 @@
 
 - type: entity
   id: VehicleSyndicateSegway
-  parent: VehicleSecway
+  parent: [ VehicleSecway, BaseRivalCompanyContraband ]
   name: syndicate segway
   description: Be an enemy of the corporation, in style.
   components:

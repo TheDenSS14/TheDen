@@ -5,7 +5,7 @@
 
 #DEN
 - type: entity
-  parent: [WeaponRifleGestio, BaseSecurityLogisticsContraband]
+  parent: [WeaponRifleGestio, BaseSalvageSpecialistSecurityContraband]
   id: WeaponRifleGestioEmpty
   suffix: Empty
   components:
@@ -37,7 +37,7 @@
         requireDetailRange: false
 
 - type: entity
-  parent: [WeaponRifleNovaliteC1, BaseSecurityLogisticsContraband]
+  parent: [WeaponRifleNovaliteC1, BaseSalvageSpecialistSecurityContraband]
   id: WeaponRifleNovaliteC1Empty
   suffix: Empty
   components:
@@ -68,7 +68,7 @@
         requireDetailRange: false
 
 - type: entity
-  parent: [WeaponRifleSVT, BaseSecurityLogisticsContraband]
+  parent: [WeaponRifleSVT, BaseSalvageSpecialistSecurityContraband]
   id: WeaponRifleSVTEmpty
   suffix: Empty
   components:

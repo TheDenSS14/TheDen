@@ -257,7 +257,7 @@
     ftlToPlanets: true
 
 - type: entity
-  parent: BaseComputerShuttle
+  parent: [ BaseComputerShuttle, BaseRivalCompanyContraband ]
   id: ComputerShuttleSyndie
   name: syndicate shuttle console
   description: Used to pilot a syndicate shuttle.
@@ -291,7 +291,7 @@
     ftlToPlanets: true
 
 - type: entity
-  parent: BaseComputerShuttle
+  parent: [ BaseComputerShuttle, BaseRivalCompanyContraband ]
   id: ComputerShuttleSyndieDropPod
   name: syndicate drop pod console
   description: "Used to launch a drop pod. It's a one way trip, make sure you've packed your lunch."
@@ -424,7 +424,7 @@
     board: ComputerIFFCircuitboard
 
 - type: entity
-  parent: ComputerIFF
+  parent: [ ComputerIFF, BaseRivalCompanyContraband ]
   id: ComputerIFFSyndicate
   name: IFF computer
   suffix: Syndicate
@@ -896,7 +896,7 @@
     damageModifierSet: StrongMetallic
 
 - type: entity
-  parent: ComputerComms
+  parent: [ ComputerComms, BaseRivalCompanyContraband ]
   id: SyndicateComputerComms
   name: syndicate communications computer
   description: A computer capable of remotely hacking into the station's communications systems. Using this to make an announcement will alert the station to your presence.

@@ -29,9 +29,9 @@
     tags:
     - VehicleKey
     - SecwayKeys
-    
+
 - type: entity
-  parent: BaseKey
+  parent: [ BaseKey, BaseRivalCompanyContraband ]
   id: VehicleKeySyndicateSegway
   name: syndicate segway keys
   description: Patterned after the iconic EMAG design.
@@ -57,7 +57,7 @@
     tags:
     - VehicleKey
     - ATVKeys
-    
+
 - type: entity
   parent: BaseKey
   id: VehicleKeyJanicart

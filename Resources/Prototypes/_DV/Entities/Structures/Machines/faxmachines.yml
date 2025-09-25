@@ -6,7 +6,7 @@
 # SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: entity
-  parent: FaxMachineBase
+  parent: [ FaxMachineBase, BaseRivalCompanyContraband ]
   id: FaxMachineListeningSyndie
   name: listening post long range fax machine
   suffix: Syndicate

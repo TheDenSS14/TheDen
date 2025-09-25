@@ -575,7 +575,7 @@
     clothingPrototype: ClothingHeadHatHoodWinterSyndie
 
 - type: entity
-  parent: ClothingOuterWinterWarden
+  parent: [ ClothingOuterWinterWarden, BaseRivalCompanyContraband ]
   id: ClothingOuterWinterSyndieCapArmored
   name: syndicate's armored winter coat
   description: "The syndicate's armored winter coat is made of durable fabric, with gilded patterns, and coarse wool."

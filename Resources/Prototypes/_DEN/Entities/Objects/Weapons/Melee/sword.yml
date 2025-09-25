@@ -7,7 +7,7 @@
 
 - type: entity
   name: antique greatsword
-  parent: BaseSword
+  parent: [ BaseWardenContraband, BaseSword ]
   id: Greatsword
   description: A massive blade more akin to a hunk of well forged metal on a stick, enhanced with bluespace tech, there are tally marks etched onto the base of the blade.
   components:
@@ -63,7 +63,7 @@
 
 - type: entity
   name: greatsword
-  parent: [Greatsword, BaseCentcommContraband]
+  parent: [ BaseBlueshieldOfficerContraband, Greatsword]
   id: GreatswordBlueshield
   description: A massive blade more akin to a hunk of well forged metal on a stick, enhanced with bluespace technology.
   components:

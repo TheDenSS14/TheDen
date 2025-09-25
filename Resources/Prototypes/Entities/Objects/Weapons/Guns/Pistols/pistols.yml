@@ -340,7 +340,7 @@
 
 - type: entity
   name: mk 58
-  parent: BaseWeaponPistol
+  parent: [ BaseSecurityContraband, BaseWeaponPistol ]
   id: WeaponPistolMk58
   description: A cheap, ubiquitous sidearm, produced by a NanoTrasen subsidiary. Uses .35 auto ammo.
   components:

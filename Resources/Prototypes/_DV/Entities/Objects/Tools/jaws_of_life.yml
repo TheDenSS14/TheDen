@@ -4,7 +4,7 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
 - type: entity
-  parent: [JawsOfLife, PowerCellSlotMediumItem]
+  parent: [ BaseEMTContraband, JawsOfLife, PowerCellSlotMediumItem ]
   id: EmergencyJawsOfLife
   name: emergency jaws of life
   description: A set of Jaws of Life. EMTs may use them to pry open powered airlocks in an emergency.

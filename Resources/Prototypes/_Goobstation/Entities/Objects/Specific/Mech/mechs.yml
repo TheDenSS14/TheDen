@@ -92,7 +92,7 @@
     - DoorBumpOpener
     - FootstepSound
     - RipleyMkII
-    
+
 - type: entity
   id: MechRipley2Battery
   parent: MechRipley2
@@ -213,7 +213,7 @@
         Blunt: 25
         Structural: 180
   - type: CanMoveInAir
-  - type: MovementAlwaysTouching        
+  - type: MovementAlwaysTouching
   - type: MovementSpeedModifier
     baseWalkSpeed: 2
     baseSprintSpeed: 2.6
@@ -454,7 +454,7 @@
 # Dark Gygax
 - type: entity
   id: MechGygaxSyndie
-  parent: [ BaseMech, CombatMech ]
+  parent: [ BaseMech, CombatMech , BaseRivalCompanyContraband]
   name: Dark Gygax
   description: A modified Gygax used for nefarious purposes. On the back of the armor plate there is an inscription "Cybersun Inc."
   components:
@@ -527,7 +527,7 @@
 # Mauler
 - type: entity
   id: MechMaulerSyndie
-  parent: [ BaseMech, CombatMech ]
+  parent: [ BaseMech, CombatMech, BaseRivalCompanyContraband ]
   name: Mauler
   description: A modified Marauder used by the Syndicate that's not as maneuverable as the Dark Gygax, but it makes up for that in armor and sheer firepower. On the back of the armor plate there is an inscription "Cybersun Inc."
   components:

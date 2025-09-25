@@ -8,7 +8,7 @@
 
 - type: entity
   id: TelescopicBaton
-  parent: BaseItem
+  parent: [ BaseCommandContraband, BaseItem ]
   name: telescopic baton
   description: A compact and harmless personal defense weapon. Sturdy enough to knock the feet out from under attackers.
   components:

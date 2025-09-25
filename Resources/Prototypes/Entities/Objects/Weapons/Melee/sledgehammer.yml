@@ -13,7 +13,7 @@
 
 - type: entity
   name: sledgehammer
-  parent: BaseItem
+  parent: [ BaseEngineeringContraband, BaseItem ]
   id: Sledgehammer
   description: The perfect tool for wanton carnage.
   components:

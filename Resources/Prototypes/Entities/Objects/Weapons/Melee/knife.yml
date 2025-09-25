@@ -98,7 +98,7 @@
 
 - type: entity
   name: kitchen knife
-  parent: BaseKnife
+  parent: [ BaseCivilianContraband, BaseKnife ]
   id: KitchenKnife
   description: A general purpose Chef's Knife made by Asters Merchant Guild. Guaranteed to stay sharp for years to come..
   components:
@@ -119,7 +119,7 @@
 
 - type: entity
   name: butcher's cleaver
-  parent: BaseKnife
+  parent: [ BaseCivilianContraband, BaseKnife ]
   id: ButchCleaver
   description: A huge blade used for chopping and chopping up meat. This includes clowns and clown-by-products.
   components:
@@ -155,7 +155,7 @@
 
 - type: entity
   name: combat knife
-  parent: BaseKnife
+  parent: [ BaseSalvageSpecialistSecurityContraband, BaseKnife ]
   id: CombatKnife
   description: A deadly knife intended for melee confrontations.
   components:
@@ -275,7 +275,7 @@
 
 - type: entity
   name: shiv
-  parent: BaseKnife
+  parent: [ BaseImprovisedContraband, BaseKnife ]
   id: Shiv
   description: A crude weapon fashioned from a piece of cloth and a glass shard.
   suffix: Glass # TheDen
@@ -363,7 +363,7 @@
 
 - type: entity
   name: throwing knife
-  parent: BaseKnife
+  parent: [ BaseRivalCompanyContraband, BaseKnife ]
   id: ThrowingKnife
   description: This bloodred knife is very aerodynamic and easy to throw, but good luck trying to fight someone hand-to-hand.
   components:

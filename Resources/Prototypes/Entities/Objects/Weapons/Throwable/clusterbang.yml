@@ -13,7 +13,7 @@
 # SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: entity
-  parent: BaseItem
+  parent: [ BaseSecurityContraband, BaseItem ]
   id: ClusterBang
   name: clusterbang
   description: Can be used only with flashbangs. Explodes several times.
@@ -32,7 +32,7 @@
       cluster-payload: !type:Container
 
 - type: entity
-  parent: GrenadeBase
+  parent: [ BaseSecurityContraband, GrenadeBase ]
   id: ClusterBangFull
   name: ClusterBang
   description: Launches three flashbangs after the timer runs out.
@@ -93,7 +93,7 @@
       cluster-payload: !type:Container
 
 - type: entity
-  parent: BaseItem
+  parent: [ BaseRivalCompanyContraband, BaseItem ]
   id: ClusterBananaPeel
   name: cluster banana peel
   description: Splits into 6 explosive banana peels after throwing, guaranteed fun!
@@ -130,7 +130,7 @@
       cluster-payload: !type:Container
 
 - type: entity
-  parent: GrenadeBase
+  parent: [ BaseSecurityContraband, GrenadeBase ]
   id: GrenadeStinger
   name: stinger grenade
   description: Nothing to see here, please disperse.
@@ -217,7 +217,7 @@
       cluster-payload: !type:Container
 
 - type: entity
-  parent: SoapSyndie
+  parent: [ BaseRivalCompanyContraband, SoapSyndie ]
   id: SlipocalypseClusterSoap
   name: slipocalypse clustersoap
   description: Spreads small pieces of syndicate soap over an area upon landing on the floor.

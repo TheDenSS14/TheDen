@@ -6,7 +6,7 @@
 #DEN
 - type: entity
   name: mk58
-  parent: [WeaponPistolMk58Empty, BaseSecurityLogisticsContraband]
+  parent: [WeaponPistolMk58Empty, BaseSalvageSpecialistSecurityContraband]
   id: WeaponPistolMk58Salvage
   suffix: Salvage
   components:
@@ -36,7 +36,7 @@
 
 - type: entity
   name: Pollock
-  parent: [WeaponPistolPollock, BaseSecurityLogisticsContraband]
+  parent: [WeaponPistolPollock, BaseSalvageSpecialistSecurityContraband]
   id: WeaponPistolPollockSalvage
   suffix: Salvage
   components:

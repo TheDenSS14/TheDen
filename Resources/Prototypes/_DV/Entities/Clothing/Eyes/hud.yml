@@ -56,7 +56,7 @@
     - HudSecurity
 
 - type: entity
-  parent: [ ClothingEyesBase, ShowSecurityIcons ]
+  parent: [ ClothingEyesBase, ShowSecurityIcons, BaseRivalCompanyContraband ]
   id: ClothingEyesHudSyndicateMed
   name: syndicate medical visor
   description: An upgraded syndicate visor with automatic health readings, designed for better detection of humanoids and their subsequent elimination.

@@ -114,7 +114,7 @@
     notifyAdmins: true
 
 - type: entity
-  parent: FaxMachineBase
+  parent: [ FaxMachineBase, BaseRivalCompanyContraband ]
   id: FaxMachineSyndie
   name: syndicate long range fax machine
   suffix: Syndicate

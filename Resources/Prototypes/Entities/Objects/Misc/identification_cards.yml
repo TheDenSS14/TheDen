@@ -964,7 +964,7 @@
     job: AtmosphericTechnician
 
 - type: entity
-  parent: IDCardStandard
+  parent: [ IDCardStandard, BaseRivalCompanyContraband ]
   id: SyndicateIDCard
   name: syndicate ID card
   components:

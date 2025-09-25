@@ -7,7 +7,7 @@
 
 - type: entity
   id: WoodenStake
-  parent: BaseCrossbowBolt
+  parent: [ BaseImprovisedContraband, BaseCrossbowBolt ]
   name: wooden stake
   description: Essential appliance for pitching tents and killing vampires.
   components:
