@@ -272,3 +272,14 @@
   - PillCanisterSerenitolHighDose
 
 # Miscellaneous
+
+- type: loadout
+  id: LoadoutPillCanisterEthyloxyephedrine # Narcolepsy stimulant
+  category: GeneralMedical
+  description: reagent-desc-ethyloxyephedrine
+  cost: 1
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutPrescriptions
+  items:
+  - PillCanisterEthyloxyephedrine

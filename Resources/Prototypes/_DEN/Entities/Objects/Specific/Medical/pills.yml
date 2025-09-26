@@ -812,3 +812,34 @@
     contents:
     - id: PillSaline
       amount: 5
+
+## Ethyloxyephedrine
+## Stimulant that can stave off narcolepsy and reduce drowsiness.
+## Only 5u is needed to reset the narcolepsy timer (5-10 minutes).
+
+- type: entity
+  suffix: Ethyloxyephedrine 10u
+  parent: Pill
+  id: PillEthyloxyephedrine
+  components:
+  - type: Label
+    currentLabel: ethyloxyephedrine 10u
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 20
+        reagents:
+        - ReagentId: Ethyloxyephedrine
+          Quantity: 10
+
+- type: entity
+  parent: PillCanister
+  id: PillCanisterEthyloxyephedrine
+  suffix: Ethyloxyephedrine, 10u x5
+  components:
+  - type: Label
+    currentLabel: ethyloxyephedrine 10u
+  - type: StorageFill
+    contents:
+    - id: PillEthyloxyephedrine
+      amount: 5
