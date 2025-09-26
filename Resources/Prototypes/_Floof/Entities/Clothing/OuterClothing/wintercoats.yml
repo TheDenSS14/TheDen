@@ -108,10 +108,10 @@
     sprite: _Floof/Clothing/OuterClothing/WinterCoats/longcoatHoP.rsi
 
 - type: entity
-  parent: ClothingOuterWinterCoat
+  parent: ClothingOuterCoatCapTrench #den
   id: ClothingLongcoatCap
-  name: captain's longcoat
-  description: A Double-Breasted longcoat, specifically. This one is a navy blue with gold embelleshments, fit for the Captain. Longcoats are fairly robust, offering some protection from the wear and tear of the universe.
+  name: captain's armored longcoat #den
+  description: A Double-Breasted longcoat, specifically. This one is a navy blue with gold embelleshments, fit for the Captain. It's been reinforced with a special alloy for some added protection. #den
   components:
   - type: Sprite
     sprite: _Floof/Clothing/OuterClothing/WinterCoats/longcoatCap.rsi
