@@ -405,9 +405,24 @@
 ## Non-addictive, overdose > 6.7u
 
 - type: entity
-  suffix: Equilibrazine 5u
+  suffix: Equilibrazine 2.5u
   parent: Pill
   id: PillEquilibrazineLowDose
+  components:
+  - type: Label
+    currentLabel: equilibrazine 2.5u
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 20
+        reagents:
+        - ReagentId: Equilibrazine
+          Quantity: 2.5
+
+- type: entity
+  suffix: Equilibrazine 5u
+  parent: Pill
+  id: PillEquilibrazineHighDose
   components:
   - type: Label
     currentLabel: equilibrazine 5u
@@ -420,27 +435,12 @@
           Quantity: 5
 
 - type: entity
-  suffix: Equilibrazine 10u
-  parent: Pill
-  id: PillEquilibrazineHighDose
-  components:
-  - type: Label
-    currentLabel: equilibrazine 10u
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxVol: 20
-        reagents:
-        - ReagentId: Equilibrazine
-          Quantity: 10
-
-- type: entity
   parent: PillCanister
   id: PillCanisterEquilibrazineLowDose
-  suffix: Equilibrazine, 5u x5
+  suffix: Equilibrazine, 2.5u x5
   components:
   - type: Label
-    currentLabel: equilibrazine 5u
+    currentLabel: equilibrazine 2.5u
   - type: StorageFill
     contents:
     - id: PillEquilibrazineLowDose
@@ -449,7 +449,7 @@
 - type: entity
   parent: PillCanister
   id: PillCanisterEquilibrazineHighDose
-  suffix: Equilibrazine, 10u x5
+  suffix: Equilibrazine, 5u x5
   components:
   - type: Label
     currentLabel: equilibrazine 5u
