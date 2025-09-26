@@ -1,0 +1,255 @@
+# Painkillers
+
+## Agonolexyne
+
+- type: loadout
+  id: LoadoutPillCanisterAgonolexyneLowDose
+  category: GeneralItems
+  cost: 1
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutPrescriptions
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutPrescriptionPainkiller
+  items:
+  - PillCanisterAgonolexyneLowDose
+
+- type: loadout
+  id: LoadoutPillCanisterAgonolexyneHighDose
+  category: GeneralItems
+  cost: 1
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutPrescriptions
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutPrescriptionPainkiller
+  items:
+  - PillCanisterAgonolexyneHighDose
+
+## Soretizone
+
+- type: loadout
+  id: LoadoutPillCanisterSoretizoneLowDose
+  category: GeneralItems
+  cost: 1
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutPrescriptions
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutPrescriptionPainkiller
+  items:
+  - PillCanisterSoretizoneLowDose
+
+- type: loadout
+  id: LoadoutPillCanisterSoretizoneHighDose
+  category: GeneralItems
+  cost: 1
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutPrescriptions
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutPrescriptionPainkiller
+  items:
+  - PillCanisterSoretizoneHighDose
+
+## Stubantazine
+
+- type: loadout
+  id: LoadoutPillCanisterStubantazineLowDose
+  category: GeneralItems
+  cost: 1
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutPrescriptions
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutPrescriptionPainkiller
+  items:
+  - PillCanisterStubantazineLowDose
+
+- type: loadout
+  id: LoadoutPillCanisterStubantazineHighDose
+  category: GeneralItems
+  cost: 1
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutPrescriptions
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutPrescriptionPainkiller
+  items:
+  - PillCanisterStubantazineHighDose
+
+# Anxiolytics
+
+## Equilibrazine
+
+- type: loadout
+  id: LoadoutPillCanisterEquilibrazineLowDose
+  category: GeneralItems
+  cost: 1
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutPrescriptions
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutPrescriptionAnxiolytic
+  items:
+  - PillCanisterEquilibrazineLowDose
+
+- type: loadout
+  id: LoadoutPillCanisterEquilibrazineHighDose
+  category: GeneralItems
+  cost: 1
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutPrescriptions
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutPrescriptionAnxiolytic
+  items:
+  - PillCanisterEquilibrazineHighDose
+
+## Tranquinase
+
+- type: loadout
+  id: LoadoutPillCanisterTranquinaseLowDose
+  category: GeneralItems
+  cost: 1
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutPrescriptions
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutPrescriptionAnxiolytic
+  items:
+  - PillCanisterTranquinaseLowDose
+
+- type: loadout
+  id: LoadoutPillCanisterTranquinaseHighDose
+  category: GeneralItems
+  cost: 1
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutPrescriptions
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutPrescriptionAnxiolytic
+  items:
+  - PillCanisterTranquinaseHighDose
+
+## Calmafluxine
+
+- type: loadout
+  id: LoadoutPillCanisterCalmafluxineLowDose
+  category: GeneralItems
+  cost: 1
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutPrescriptions
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutPrescriptionAnxiolytic
+  items:
+  - PillCanisterCalmafluxineLowDose
+
+- type: loadout
+  id: LoadoutPillCanisterCalmafluxineHighDose
+  category: GeneralItems
+  cost: 1
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutPrescriptions
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutPrescriptionAnxiolytic
+  items:
+  - PillCanisterCalmafluxineHighDose
+
+## Psicodine
+
+- type: loadout
+  id: LoadoutPillCanisterPsicodine
+  category: GeneralItems
+  cost: 1
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutPrescriptions
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutPrescriptionAnxiolytic
+  items:
+  - PillCanisterPsicodine
+
+# Antidepressants
+
+## Blissifylovene
+
+- type: loadout
+  id: LoadoutPillCanisterBlissifyloveneLowDose
+  category: GeneralItems
+  cost: 1
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutPrescriptions
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutPrescriptionAntidepressant
+  items:
+  - PillCanisterBlissifyloveneLowDose
+
+- type: loadout
+  id: LoadoutPillCanisterBlissifyloveneHighDose
+  category: GeneralItems
+  cost: 1
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutPrescriptions
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutPrescriptionAntidepressant
+  items:
+  - PillCanisterBlissifyloveneHighDose
+
+## Neurozenium
+
+- type: loadout
+  id: LoadoutPillCanisterNeurozeniumLowDose
+  category: GeneralItems
+  cost: 1
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutPrescriptions
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutPrescriptionAntidepressant
+  items:
+  - PillCanisterNeurozeniumLowDose
+
+- type: loadout
+  id: LoadoutPillCanisterNeurozeniumHighDose
+  category: GeneralItems
+  cost: 1
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutPrescriptions
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutPrescriptionAntidepressant
+  items:
+  - PillCanisterNeurozeniumHighDose
+
+## Serenitol
+
+- type: loadout
+  id: LoadoutPillCanisterSerenitolLowDose
+  category: GeneralItems
+  cost: 1
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutPrescriptions
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutPrescriptionAntidepressant
+  items:
+  - PillCanisterSerenitolLowDose
+
+- type: loadout
+  id: LoadoutPillCanisterSerenitolHighDose
+  category: GeneralItems
+  cost: 1
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutPrescriptions
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutPrescriptionAntidepressant
+  items:
+  - PillCanisterSerenitolHighDose
+
+# Miscellaneous
