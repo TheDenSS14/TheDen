@@ -285,12 +285,23 @@
   - PillCanisterEthyloxyephedrine
 
 - type: loadout
-  id: LoadoutPillCanisterSaline # Blood level medication
+  id: LoadoutPillCanisterIron # Blood level medication for non-arachnids
   category: GeneralMedical
-  description: reagent-desc-saline
-  cost: 2
+  description: reagent-desc-iron
+  cost: 1
   requirements:
   - !type:CharacterItemGroupRequirement
     group: LoadoutPrescriptions
   items:
-  - PillCanisterSaline
+  - PillCanisterIron
+
+- type: loadout
+  id: LoadoutPillCanisterCopper # Blood level medication for arachnid
+  category: GeneralMedical
+  description: reagent-desc-copper
+  cost: 1
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutPrescriptions
+  items:
+  - PillCanisterCopper
