@@ -7,9 +7,10 @@
 # SPDX-FileCopyrightText: 2024 FluffMe
 # SPDX-FileCopyrightText: 2024 SimpleStation14
 # SPDX-FileCopyrightText: 2025 M3739
+# SPDX-FileCopyrightText: 2025 MajorMoth
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: entity
   parent: BaseHandheldInstrument
@@ -80,7 +81,7 @@
     verbImage: null
 
 - type: entity
-  parent: PhoneInstrumentUpstream # Harmony, due to hijacked 'PhoneInstrument'
+  parent: [ PhoneInstrumentUpstream, BaseRivalCompanyContraband ] # Harmony, due to hijacked 'PhoneInstrument'
   id: PhoneInstrumentSyndicate
   name: blood-red phone
   description: For evil people to call their friends.

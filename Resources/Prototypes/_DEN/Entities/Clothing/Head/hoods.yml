@@ -1,0 +1,14 @@
+# SPDX-FileCopyrightText: 2025 sheepie
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  parent: ClothingHeadHatHoodWinterBase
+  id: ClothingHeadHatHoodWinterAdminAssistant
+  categories: [ HideSpawnMenu ]
+  name: administrative assistant winter coat hood
+  components:
+    - type: Sprite
+      sprite: _DEN/Clothing/Head/Hoods/hoodaa.rsi
+    - type: Clothing
+      sprite: _DEN/Clothing/Head/Hoods/hoodaa.rsi

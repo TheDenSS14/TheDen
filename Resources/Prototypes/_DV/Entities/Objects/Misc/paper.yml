@@ -3,7 +3,7 @@
 # SPDX-FileCopyrightText: 2025 Rosycup
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: entity
   name: station warrant
@@ -290,6 +290,9 @@
       amount: 4
     - id: PaperDyedBrown
       amount: 4
+  - type: Tag
+    tags:
+    - BoxReamClassic
 
 - type: entity
   parent: BoxReamClassic

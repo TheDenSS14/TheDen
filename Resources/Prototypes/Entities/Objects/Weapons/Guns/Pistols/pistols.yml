@@ -42,7 +42,7 @@
 # SPDX-FileCopyrightText: 2025 juniwoofs
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: entity
   name: BasePistol
@@ -340,7 +340,7 @@
 
 - type: entity
   name: mk 58
-  parent: BaseWeaponPistol
+  parent: [ BaseSecurityContraband, BaseWeaponPistol ]
   id: WeaponPistolMk58
   description: A cheap, ubiquitous sidearm, produced by a NanoTrasen subsidiary. Uses .35 auto ammo.
   components:
