@@ -1,0 +1,68 @@
+# Some non-addictive moodlets for certain drug chemicals. These indicate to the player that some kind of
+# medication has been in their blood stream lately, so they're quite low impact. The actual reason these
+# exist is to encourage players to space out their medication doses instead of popping pills back to back.
+
+- type: moodCategory
+  id: NonAddictiveAntidepressant
+
+- type: moodCategory
+  id: NonAddictiveAnxiolytic # Did you know this is what anxiety reducing meds are called
+
+- type: moodCategory
+  id: NonAddictivePainKiller
+
+# Antidepressants
+
+- type: moodEffect
+  id: AntidepressantBenefitNonAddictive
+  category: NonAddictiveAntidepressant
+  moodChange: 1
+  timeout: 420 #7 minutes
+
+- type: moodEffect
+  id: AntidepressantBenefitStrongNonAddictive
+  category: NonAddictiveAntidepressant
+  moodChange: 3
+  timeout: 720 #12 minutes
+
+# Anxiolytics
+
+- type: moodEffect
+  id: AnxiolyticBenefitNonAddictive
+  category: NonAddictiveAnxiolytic
+  moodChange: 1
+  timeout: 420 #7 minutes
+
+- type: moodEffect
+  id: AnxiolyticBenefitTranquilNonAddictive
+  category: NonAddictiveAnxiolytic
+  moodChange: 2
+  timeout: 720 #12 minutes
+
+- type: moodEffect
+  id: AnxiolyticBenefitStrongNonAddictive
+  category: NonAddictiveAnxiolytic
+  moodletOnEnd: AnxiolyticBenefitNonAddictive # For a total of 12 minutes
+  moodChange: 2
+  timeout: 300 #5 minutes
+
+# Painkillers
+
+- type: moodEffect
+  id: PainRelief
+  category: NonAddictivePainKiller
+  moodChange: 1
+  timeout: 420 #7 minutes
+
+- type: moodEffect
+  id: PainReliefStrong
+  category: NonAddictivePainKiller
+  moodChange: 1
+  timeout: 420 #7 minutes
+
+- type: moodEffect
+  id: PainReliefVeryStrong
+  category: NonAddictivePainKiller
+  moodletOnEnd: PainRelief # For a total of 14 minutes
+  moodChange: 1
+  timeout: 420 #7 minutes
