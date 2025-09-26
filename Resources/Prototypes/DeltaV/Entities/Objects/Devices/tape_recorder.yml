@@ -1,5 +1,6 @@
 # SPDX-FileCopyrightText: 2024 deltanedas
 # SPDX-FileCopyrightText: 2025 BombasterDS2
+# SPDX-FileCopyrightText: 2025 LilNutters
 # SPDX-FileCopyrightText: 2025 Winter
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
@@ -57,6 +58,9 @@
     interfaces:
       enum.TapeRecorderUIKey.Key:
         type: TapeRecorderBoundUserInterface
+  - type: Tag
+    tags:
+    - TapeRecorder
 
 - type: entity
   parent: TapeRecorder
@@ -103,6 +107,9 @@
     available:
     - enum.DamageStateVisualLayers.Base:
         tape_greyscale: Rainbow
+  - type: Tag
+    tags:
+    - CassetteTape
 
 - type: entity
   suffix: Interview with Garry Smosh

@@ -14,11 +14,11 @@
 # SPDX-FileCopyrightText: 2025 Winter
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: entity
   name: stun prod
-  parent: BaseItem
+  parent: [ BaseImprovisedContraband, BaseItem ]
   id: Stunprod
   description: A stun prod for illegal incapacitation.
   components:

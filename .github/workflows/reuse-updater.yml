@@ -58,8 +58,6 @@ jobs:
           if git diff --cached --quiet; then
             echo "Nothing to commit"
           else
-            REUSE_MESSAGE="${{ env.REUSE_MESSAGE }}"
-            PR_TITLE="${{ env.PR_TITLE }}"
             git commit -m "$REUSE_MESSAGE from: $PR_TITLE"
           fi
 

@@ -1,10 +1,11 @@
-# SPDX-FileCopyrightText: 2025 Solaris <60526456+SolarisBirb@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 MajorMoth
+# SPDX-FileCopyrightText: 2025 Solaris
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: entity
-  parent: BaseWeaponBallisticTurret
+  parent: [ BaseWeaponBallisticTurret, BaseRivalCompanyContraband ]
   id: WeaponTurretSyndicate
   suffix: Syndicate
   components:
@@ -33,7 +34,7 @@
       capacity: 200
 
 - type: entity
-  parent: BaseWeaponBallisticTurret
+  parent: [ BaseWeaponBallisticTurret, BaseRivalCompanyContraband ]
   name: disposable ballistic turret
   id: WeaponTurretSyndicateDisposable
   suffix: Syndicate, Disposable

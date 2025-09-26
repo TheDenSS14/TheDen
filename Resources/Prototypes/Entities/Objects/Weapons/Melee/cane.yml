@@ -5,7 +5,7 @@
 # SPDX-FileCopyrightText: 2025 portfiend
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 # DEN: Make abstract and move the wieldable component out. This should not break anything.
 - type: entity
@@ -61,7 +61,7 @@
 
 - type: entity
   name: cane blade
-  parent: BaseItem
+  parent: [ BaseRivalCompanyContraband, BaseItem ]
   id: CaneBlade
   description: A sharp blade with a cane shaped hilt.
   components:

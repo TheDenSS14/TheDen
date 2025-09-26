@@ -4,11 +4,11 @@
 # SPDX-FileCopyrightText: 2025 MajorMoth
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: entity
   id: TelescopicBaton
-  parent: BaseItem
+  parent: [ BaseCommandContraband, BaseItem ]
   name: telescopic baton
   description: A compact and harmless personal defense weapon. Sturdy enough to knock the feet out from under attackers.
   components:
