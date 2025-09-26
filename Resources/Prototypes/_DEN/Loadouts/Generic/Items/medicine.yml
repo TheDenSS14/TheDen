@@ -283,3 +283,14 @@
     group: LoadoutPrescriptions
   items:
   - PillCanisterEthyloxyephedrine
+
+- type: loadout
+  id: LoadoutPillCanisterSaline # Blood level medication
+  category: GeneralMedical
+  description: reagent-desc-saline
+  cost: 2
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutPrescriptions
+  items:
+  - PillCanisterSaline
