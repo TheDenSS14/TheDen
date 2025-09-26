@@ -289,9 +289,24 @@
 ## Addictive > 9u, abates withdrawal > 5u, overdose was 14.5u until DV removed that.
 
 - type: entity
-  suffix: Soretizone 5u
+  suffix: Soretizone 2.5u
   parent: Pill
   id: PillSoretizoneLowDose
+  components:
+  - type: Label
+    currentLabel: soretizone 2.5u
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 20
+        reagents:
+        - ReagentId: Soretizone
+          Quantity: 2.5
+
+- type: entity
+  suffix: Soretizone 5u
+  parent: Pill
+  id: PillSoretizoneHighDose
   components:
   - type: Label
     currentLabel: soretizone 5u
@@ -304,27 +319,12 @@
           Quantity: 5
 
 - type: entity
-  suffix: Soretizone 10u
-  parent: Pill
-  id: PillSoretizoneHighDose
-  components:
-  - type: Label
-    currentLabel: soretizone 10u
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxVol: 20
-        reagents:
-        - ReagentId: Soretizone
-          Quantity: 10
-
-- type: entity
   parent: PillCanister
   id: PillCanisterSoretizoneLowDose
-  suffix: Soretizone, 5u x5
+  suffix: Soretizone, 2.5u x5
   components:
   - type: Label
-    currentLabel: soretizone 5u
+    currentLabel: soretizone 2.5u
   - type: StorageFill
     contents:
     - id: PillSoretizoneLowDose
@@ -333,10 +333,10 @@
 - type: entity
   parent: PillCanister
   id: PillCanisterSoretizoneHighDose
-  suffix: Soretizone, 10u x5
+  suffix: Soretizone, 5u x5
   components:
   - type: Label
-    currentLabel: soretizone 10u
+    currentLabel: soretizone 5u
   - type: StorageFill
     contents:
     - id: PillSoretizoneHighDose
