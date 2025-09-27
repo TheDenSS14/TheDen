@@ -26,9 +26,9 @@
         - BulletFoamTack
         - Trash
     - type: Sprite
-      sprite: Objects/Fun/toys.rsi # TBD
+      sprite: _DEN/Objects/Fun/toys.rsi
       layers:
-        - state: foamdart
+        - state: foamdartthumbtack
     - type: EmbeddableProjectile
       removalTime: .1
     - type: DamageOtherOnHit
