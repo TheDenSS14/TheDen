@@ -38,3 +38,11 @@
   description: A pair of sunglasses, modified to have a built-in security and medical HUD.
   icon: { sprite: _DV/Clothing/Eyes/Glasses/corpsglasses.rsi, state: icon }
   objectType: Item
+
+- type: construction
+  id: SkiaHoodie
+  graph: SkiaHoodie
+  startNode: start
+  targetNode: skiaHoodie
+  category: construction-category-clothing
+  objectType: Item

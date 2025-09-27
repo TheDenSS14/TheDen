@@ -73,7 +73,6 @@ using Robust.Shared.Random;
 using Robust.Shared.Timing;
 using InventoryComponent = Content.Shared.Inventory.InventoryComponent;
 using Content.Shared.Traits.Assorted.Components;
-using Robust.Shared.Random;
 using Content.Shared.Eye.Blinding.Systems;
 
 namespace Content.Server.Flash
@@ -159,13 +158,6 @@ namespace Content.Server.Flash
                 _tag.AddTag(uid, "Trash");
                 _popup.PopupEntity(Loc.GetString("flash-component-becomes-empty"), uid);
             }
-
-            uid.SpawnTimer(400, () =>
-            {
-                _appearance.SetData(uid, FlashVisuals.Flashing, false);
-                comp.Flashing = false;
-            });
-
             return true;
         }
 
