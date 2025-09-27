@@ -1,0 +1,22 @@
+<ui:FancyWindow xmlns="https://spacestation14.io"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:ui="clr-namespace:Content.Client.UserInterface.Controls"
+    Title="{Loc 'research-client-server-selection-menu-title'}"
+    MinSize="300 300"
+    SetSize="300 300">
+
+    <PanelContainer VerticalExpand="True" HorizontalExpand="True">
+        <ScrollContainer Name="Titles"
+                         HorizontalExpand="True"
+                         HorizontalAlignment="Stretch"
+                         VerticalExpand="True"
+                         VerticalAlignment="Stretch"
+                         VScrollEnabled="True" >
+            <!-- Job titles are added via code. -->
+            <PanelContainer Name="TitlesContainer"
+                            VerticalExpand="True"
+                            HorizontalExpand="True" />
+        </ScrollContainer>
+    </PanelContainer>
+</ui:FancyWindow>
+
