@@ -105,9 +105,65 @@
   id: SecondPhrase
   parent: BaseNumberPhrase
   text: phrase-second
-  
+
 - type: quickPhrase
   id: DayPhrase
   parent: BaseNumberPhrase
   text: phrase-day
 
+# DEN start
+- type: quickPhrase
+  parent: BaseNumberPhrase
+  id: KelvinPhrase
+  text: phrase-kelvin
+
+- type: quickPhrase
+  parent: BaseNumberPhrase
+  id: CelsiusPhrase
+  text: phrase-celsius
+
+- type: quickPhrase
+  parent: BaseNumberPhrase
+  id: MeterPhrase
+  text: phrase-meter
+
+- type: quickPhrase
+  parent: BaseNumberPhrase
+  id: PascalPhrase
+  text: phrase-pascal
+
+- type: quickPhrase
+  parent: BaseNumberPhrase
+  id: MolePhrase
+  text: phrase-mole
+
+- type: quickPhrase
+  parent: BaseNumberPhrase
+  id: UnitPhrase
+  text: phrase-unit
+
+- type: quickPhrase
+  parent: BaseNumberPhrase
+  id: LitrePhrase
+  text: phrase-litre
+
+- type: quickPhrase
+  parent: BaseNumberPhrase
+  id: WattPhrase
+  text: phrase-watt
+
+- type: quickPhrase
+  parent: BaseNumberPhrase
+  id: JoulePhrase
+  text: phrase-joule
+
+- type: quickPhrase
+  parent: BaseNumberPhrase
+  id: RadPhrase
+  text: phrase-rad
+
+- type: quickPhrase
+  parent: BaseNumberPhrase
+  id: PercentPhrase
+  text: phrase-percent
+# DEN end

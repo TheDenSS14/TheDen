@@ -44,6 +44,12 @@
   group: Civilian
   abstract: true
 
+- type: quickPhrase # Den
+  id: BaseDignitaryPhrase
+  group: Dignitary
+  styleClass: DignitaryButton
+  abstract: true
+
 - type: quickPhrase
   id: BaseCommandPhrase
   group: Command
