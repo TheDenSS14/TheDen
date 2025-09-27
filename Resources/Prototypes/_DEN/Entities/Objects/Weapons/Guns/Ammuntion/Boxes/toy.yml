@@ -1,0 +1,14 @@
+# Boxes
+- type: entity
+  parent: BoxDonkSoftBase
+  id: BoxDonkSoftTackBox
+  name: box of thumb-tacked foam dart
+  components:
+    - type: BallisticAmmoProvider
+      whitelist:
+        tags:
+        - BulletFoam
+        - BulletFoamTack
+      capacity: 40
+      proto: BulletFoamTack
+

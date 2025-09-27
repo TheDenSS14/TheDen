@@ -1,0 +1,41 @@
+- type: entity
+  parent: BaseItem
+  id: ThumbTack
+  name: thumb tack
+  description: Miniature sword.
+  components:
+    - type: Sprite
+      sprite: _DEN/Objects/Fun/thumbtack.rsi
+      state: thumbtack
+    - type: CollisionWake
+      enabled: false
+    - type: Fixtures
+      fixtures:
+        slips:
+          shape: !type:PhysShapeAabb
+            bounds: "-0.2,-0.2,0.2,0.2"
+          hard: false
+          layer:
+            - LowImpassable
+        fix1:
+          shape: !type:PhysShapeAabb
+            bounds: "-0.1,-0.1,0.1,0.1"
+          density: 3
+          mask:
+            - ItemMask
+    - type: Tag
+      tags:
+        - ThumbTack
+        - Trash
+    - type: StepTrigger
+      intersectRatio: 0.2
+      RequiredTriggeredSpeed: 1
+    - type: TriggerOnStepTrigger
+    - type: PreventableStepTrigger
+    - type: Slippery
+      launchForwardsMultiplier: 0
+      ParalyzeTime: 1
+    - type: DamageUserOnTrigger
+      damage:
+        types:
+          Piercing: 1

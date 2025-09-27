@@ -1,0 +1,37 @@
+- type: entity
+  parent: BulletFoam
+  id: BulletFoamTack
+  name: thumb-tacked foam dart
+  description: A weapon of mass destruction.
+  components:
+    - type: Construction
+      graph: BulletFoamTack
+      node: icon
+    - type: Fixtures
+      fixtures:
+        fix1:
+          shape: !type:PolygonShape
+            vertices:
+              - -0.05,-0.15
+              - -0.05,0.25
+              - 0.05,-0.15
+              - 0.05,0.25
+          density: 22
+          mask:
+            - ItemMask
+          restitution: 0.3
+          friction: 0.2
+    - type: Tag
+      tags:
+        - BulletFoamTack
+        - Trash
+    - type: Sprite
+      sprite: _DEN/Objects/Fun/toys.rsi
+      layers:
+        - state: foamdartthumbtack
+    - type: EmbeddableProjectile
+      removalTime: .1
+    - type: DamageOtherOnHit
+      damage:
+        types:
+          Piercing: 1
