@@ -5,7 +5,7 @@
 # SPDX-FileCopyrightText: 2025 Tad "Taddy" Johnson
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 # Jumpsuits - Security
 
@@ -104,3 +104,12 @@
   parent: ClothingNeckCWPArctic
   id: ClothingNeckCWPSec
   result: ClothingNeckCWPSec
+
+# Utilty, DeltaV
+
+- type: latheRecipe
+  id: ClothingBeltPaperwork
+  result: ClothingBeltPaperwork
+  materials:
+    Cloth: 200
+    Durathread: 100

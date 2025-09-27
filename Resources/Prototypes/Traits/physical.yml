@@ -23,13 +23,14 @@
 # SPDX-FileCopyrightText: 2025 Tabitha
 # SPDX-FileCopyrightText: 2025 TheOneTrueWolfio
 # SPDX-FileCopyrightText: 2025 VMSolidus
+# SPDX-FileCopyrightText: 2025 bigsantino1
 # SPDX-FileCopyrightText: 2025 foxcurl
 # SPDX-FileCopyrightText: 2025 juniwoofs
 # SPDX-FileCopyrightText: 2025 portfiend
 # SPDX-FileCopyrightText: 2025 sheepie
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: trait
   id: WillToLive
@@ -253,6 +254,7 @@
       inverted: true
       traits:
         - LowPainTolerance
+        - PainNumbness
   functions:
     - !type:TraitReplaceComponent
       components:
@@ -275,6 +277,7 @@
       inverted: true
       traits:
         - Masochism
+        - PainNumbness
   functions:
     - !type:TraitReplaceComponent
       components:

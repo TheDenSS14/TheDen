@@ -1,7 +1,8 @@
-// SPDX-FileCopyrightText: 2024 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
-// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Pieter-Jan Briers
+// SPDX-FileCopyrightText: 2025 mazzie
+// SPDX-FileCopyrightText: 2025 sleepyyapril
 //
-// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+// SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 [assembly: Parallelizable(ParallelScope.Children)]
 
@@ -10,4 +11,4 @@
 // https://github.com/dotnet/runtime/issues/107197
 // So we can't really parallelize integration tests harder either until the runtime fixes that,
 // *or* we fix serv3 to not spam expression trees.
-[assembly: LevelOfParallelism(3)]
+[assembly: LevelOfParallelism(2)]

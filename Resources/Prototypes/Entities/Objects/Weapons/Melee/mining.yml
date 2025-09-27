@@ -20,11 +20,11 @@
 # SPDX-FileCopyrightText: 2025 Timfa
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: entity
   name: pickaxe
-  parent: BaseItem
+  parent: [ BaseSalvageSpecialistContraband, BaseItem ]
   id: Pickaxe
   description: Notched to perfection, for jamming it into rocks.
   components:
@@ -77,7 +77,7 @@
 
 - type: entity
   name: mining drill
-  parent: BaseItem
+  parent: [ BaseSalvageSpecialistContraband, BaseItem ]
   id: MiningDrill
   description: Powerful tool used to quickly drill through rocks.
   components:
@@ -148,7 +148,7 @@
 
 - type: entity
   abstract: true
-  parent: BaseItem
+  parent: [ BaseSalvageSpecialistContraband, BaseItem ]
   id: BaseWeaponCrusher # Crusher? But I...
   name: crusher
   description: An early design of the proto-kinetic accelerator.

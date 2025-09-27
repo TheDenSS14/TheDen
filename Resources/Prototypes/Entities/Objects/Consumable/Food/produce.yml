@@ -65,10 +65,11 @@
 # SPDX-FileCopyrightText: 2025 Tanix
 # SPDX-FileCopyrightText: 2025 Wolfkey-SomeoneElseTookMyUsername
 # SPDX-FileCopyrightText: 2025 mubururu_
+# SPDX-FileCopyrightText: 2025 pocl v
 # SPDX-FileCopyrightText: 2025 portfiend
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 # When adding new food also add to random spawner located in Resources\Prototypes\Entities\Markers\Spawners\Random\Food_Drinks\food_produce.yml
 # For produce that can't be immediately eaten
@@ -2580,7 +2581,7 @@
   name: pomegranate
   parent: FoodProduceBase
   id: FoodPomegranate
-  description: A delicious, sweet fruit, believed to have special properties.
+  description: "A delicious, sweet fruit. Eaters beware: most extraterrestrial cultivars, such as this one, have mild aphrodisiac effects." # den edit
   components:
   - type: FlavorProfile
     flavors:
@@ -2615,7 +2616,7 @@
   name: pomegranate slice
   parent: ProduceSliceBase
   id: FoodPomegranateSlice
-  description: A delicious, sweet fruit, believed to have special properties.
+  description: "A delicious, sweet fruit. Eaters beware: most extraterrestrial cultivars, such as this one, have mild aphrodisiac effects." # den edit
   components:
   - type: FlavorProfile
     flavors:

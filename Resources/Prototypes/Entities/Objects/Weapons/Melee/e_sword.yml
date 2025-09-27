@@ -47,7 +47,7 @@
 
 - type: entity
   name: energy sword
-  parent: BaseItem
+  parent: [ BaseRivalCompanyContraband, BaseItem ]
   id: EnergySword
   description: A very loud & dangerous sword with a beam made of pure, concentrated plasma. Cuts through unarmored targets like butter.
   components:
@@ -157,7 +157,7 @@
 
 - type: entity
   name: antique energy sword
-  parent: EnergySword
+  parent: [ BaseGrandTheftContraband, EnergySword ]
   id: EnergySwordHoS
   description: An elegant weapon fit for a prince, this otherwise plain silver hilt is engraved with, "My Love".
   components:
@@ -263,7 +263,7 @@
     malus: 0
 
 - type: entity
-  parent: BaseItem
+  parent: [ BaseRivalCompanyContraband, BaseItem ]
   id: EnergyDaggerBox
   name: e-dagger box
   suffix: E-Dagger
@@ -323,7 +323,7 @@
 
 - type: entity
   name: energy cutlass
-  parent: EnergyCutlass
+  parent: [ BaseSecurityContraband, EnergyCutlass ]
   id: EnergyCutlassSecurity
   description: A sleek energy weapon, its blade hums with volatile plasma, expertly contained to cut through nearly any material. The serial number on the hilt marks this sword as belonging to an NT Security Officer. # how do I make the text blue
   suffix: Security Loadouts

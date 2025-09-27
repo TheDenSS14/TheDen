@@ -1,6 +1,7 @@
 // SPDX-FileCopyrightText: 2025 BlitzTheSquishy
 // SPDX-FileCopyrightText: 2025 Falcon
 // SPDX-FileCopyrightText: 2025 sev7ves
+// SPDX-FileCopyrightText: 2025 sheepie
 // SPDX-FileCopyrightText: 2025 sleepyyapril
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
@@ -116,7 +117,7 @@ public sealed class DCCVars
     /// What year it is in the game. Actual value shown in game is server date + this value.
     /// </summary>
     public static readonly CVarDef<int> YearOffset =
-        CVarDef.Create("game.current_year_offset", 550, CVar.SERVERONLY);
+        CVarDef.Create("game.current_year_offset", 630, CVar.SERVERONLY); /// #Den Den's current year is 2655
 
     /// <summary>
     ///    Maximum number of characters in objective summaries.

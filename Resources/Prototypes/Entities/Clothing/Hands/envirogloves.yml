@@ -1,7 +1,8 @@
-# SPDX-FileCopyrightText: 2025 Skubman <ba.fallaria@gmail.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Jakumba
+# SPDX-FileCopyrightText: 2025 Skubman
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: entity
   parent: ClothingHandsGlovesEnviroglovesBase
@@ -338,8 +339,12 @@
       gloves:
       - state: equipped-HAND
         color: "#3164ff"
-  - type: GloveHeatResistance
-    heatResistance: 1400
+  # DEN
+  - type: DamageOnInteractProtection
+    damageProtection:
+      flatReductions:
+        Heat: 10
+  # DEN
   - type: Fiber
     fiberMaterial: fibers-leather
     fiberColor: fibers-blue
