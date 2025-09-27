@@ -346,6 +346,10 @@ public sealed class ReverseEngineeringSystem : EntitySystem
         if (!TryComp<TechnologyDiskComponent>(disk, out var diskComponent))
             return;
 
+        // DEN note - this changes the recipe, which is reflected in the examine text
+        // But it won't update the name with the recipe. Need to somehow raise a NameModifier event
+        // not enough of a C# warrior to figure that out
+        // everything works otherwise though
         diskComponent.Recipes = recipes;
     }
 
