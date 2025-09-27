@@ -482,14 +482,14 @@
 
 - type: loadout
   id: LoadoutEmergencyMedipen
-  category: GeneralItems
+  category: GeneralMedical # DEN - Medical items
   cost: 1
   items:
     - EmergencyMedipen
 
 - type: loadout
   id: LoadoutSpaceMedipen
-  category: GeneralItems
+  category: GeneralMedical # DEN - Medical items
   cost: 1
   items:
     - SpaceMedipen
@@ -681,7 +681,7 @@
 # Medkits
 - type: loadout
   id: LoadoutMedkitFilled
-  category: GeneralItems
+  category: GeneralMedical # DEN - Medical items
   cost: 2
   items:
     - MedkitFilled
@@ -927,7 +927,7 @@
 
 - type: loadout
   id: LoadoutItemAACTablet
-  category: GeneralItems
+  category: GeneralMedical # DEN - Medical items
   cost: 2
   items:
     - AACTablet
@@ -937,7 +937,7 @@
 
 - type: loadout
   id: LoadoutItemAACTablet_SAS
-  category: GeneralItems
+  category: GeneralMedical # DEN - Medical items
   cost: 2
   items:
     - AACTablet_SAS
@@ -947,14 +947,14 @@
 
 - type: loadout
   id: LoadoutItemCaneBlind
-  category: GeneralItems
+  category: GeneralMedical # DEN - Medical items
   cost: 0 # It shouldnt cost points to be able to function.
   items:
     - WhiteCane
 
 - type: loadout
   id: LoadoutItemCaneWalking
-  category: GeneralItems
+  category: GeneralMedical # DEN - Medical items
   cost: 0 # It shouldnt cost points to be able to function.
   requirements:
     - !type:CharacterItemGroupRequirement

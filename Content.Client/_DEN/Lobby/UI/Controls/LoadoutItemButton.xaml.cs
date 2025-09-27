@@ -294,7 +294,7 @@ public sealed partial class LoadoutItemButton : StyledButtonGroup
 
     private string GetName()
     {
-        var locId = $"loadout-name-{Loadout.ID}";
+        var locId = Loadout.Name ?? $"loadout-name-{Loadout.ID}";
         var name = Loc.GetString(locId);
 
         if (name == locId && PreviewEntity != null)
@@ -312,7 +312,7 @@ public sealed partial class LoadoutItemButton : StyledButtonGroup
 
     private string GetDescription()
     {
-        var locId = $"loadout-description-{_preference?.LoadoutName}";
+        var locId = Loadout.Description ?? $"loadout-description-{_preference?.LoadoutName}";
         var description = Loc.GetString(locId);
 
         if (description == locId && PreviewEntity != null)

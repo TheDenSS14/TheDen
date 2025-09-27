@@ -1365,6 +1365,12 @@
         - "psicodine-effect-anxieties-wash-away"
         - "psicodine-effect-at-peace"
         probability: 0.2
+      - !type:ChemAddMoodlet # DEN - Add moodlets for non-addictive roleplay chems
+        moodPrototype: AnxiolyticBenefitNonAddictive
+        guidebookShowEffectName: true
+        conditions:
+          - !type:ReagentThreshold
+            min: 0.5
 
 - type: reagent
   id: PotassiumIodide
