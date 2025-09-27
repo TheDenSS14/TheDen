@@ -110,18 +110,14 @@
 ## Recipes
 # Jumpsuits/skirts
 - type: latheRecipe
+  parent: BaseJumpsuitGenericRecipe # DEN - Add inheritance
   id: ClothingUniformJumpsuitColorGrey # Tide
   result: ClothingUniformJumpsuitColorGrey
-  completetime: 4
-  materials:
-    Cloth: 300
 
 - type: latheRecipe
+  parent: BaseJumpsuitGenericRecipe # DEN - Add inheritance
   id: ClothingUniformJumpskirtColorGrey
   result: ClothingUniformJumpskirtColorGrey
-  completetime: 4
-  materials:
-    Cloth: 300
 
 - type: latheRecipe
   id: ClothingUniformJumpsuitBartender
@@ -547,11 +543,9 @@
     Cloth: 300
 
 - type: latheRecipe
+  parent: BaseJumpsuitGenericRecipe # DEN - Add inheritance
   id: ClothingUniformJumpskirtColorLightBrown #Librarian
   result: ClothingUniformJumpskirtColorLightBrown
-  completetime: 4
-  materials:
-    Cloth: 300
 
 - type: latheRecipe
   id: ClothingUniformJumpsuitMedicalDoctor
