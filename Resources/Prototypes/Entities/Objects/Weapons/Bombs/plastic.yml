@@ -1,22 +1,23 @@
-# SPDX-FileCopyrightText: 2022 Alex Evgrashin <aevgrashin@yandex.ru>
-# SPDX-FileCopyrightText: 2022 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2022 Snowni <101532866+Snowni@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2022 Veritius <veritiusgaming@gmail.com>
-# SPDX-FileCopyrightText: 2023 AJCM-git <60196617+AJCM-git@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2023 Julian Giebel <juliangiebel@live.de>
-# SPDX-FileCopyrightText: 2023 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2023 TemporalOroboros <TemporalOroboros@gmail.com>
-# SPDX-FileCopyrightText: 2024 Angelo Fallaria <ba.fallaria@gmail.com>
-# SPDX-FileCopyrightText: 2024 Debug <49997488+DebugOk@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 Emisse <99158783+emisse@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 emmafornash <89596994+emmafornash@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 Alex Evgrashin
+# SPDX-FileCopyrightText: 2022 Leon Friedrich
+# SPDX-FileCopyrightText: 2022 Snowni
+# SPDX-FileCopyrightText: 2022 Veritius
+# SPDX-FileCopyrightText: 2023 AJCM-git
+# SPDX-FileCopyrightText: 2023 Julian Giebel
+# SPDX-FileCopyrightText: 2023 Nemanja
+# SPDX-FileCopyrightText: 2023 TemporalOroboros
+# SPDX-FileCopyrightText: 2024 Angelo Fallaria
+# SPDX-FileCopyrightText: 2024 Debug
+# SPDX-FileCopyrightText: 2024 Emisse
+# SPDX-FileCopyrightText: 2024 emmafornash
+# SPDX-FileCopyrightText: 2025 MajorMoth
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: entity
   id: BasePlasticExplosive
-  parent: BaseItem
+  parent: [ BaseMajorContraband, BaseItem ]
   abstract: true
   components:
   - type: Item
@@ -92,7 +93,7 @@
 - type: entity
   name: seismic charge
   description: Concussion based explosive designed to destroy large amounts of rock.
-  parent: BasePlasticExplosive
+  parent: [ BaseSalvageSpecialistContraband, BasePlasticExplosive ]
   id: SeismicCharge
   components:
   - type: Sprite
@@ -126,7 +127,7 @@
 - type: entity
   name: breaching charge
   description: A breaching explosive for security officers to break through walls.
-  parent: SeismicCharge
+  parent: [ BaseSecurityContraband, SeismicCharge ]
   id: BreachingCharge
   components:
   - type: Sprite

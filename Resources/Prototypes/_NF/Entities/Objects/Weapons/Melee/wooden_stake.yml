@@ -1,13 +1,13 @@
-# SPDX-FileCopyrightText: 2023 ErhardSteinhauer <65374927+ErhardSteinhauer@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 sleepyyapril <flyingkarii@gmail.com>
-# SPDX-FileCopyrightText: 2025 Rosycup <178287475+Rosycup@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 ErhardSteinhauer
+# SPDX-FileCopyrightText: 2024 sleepyyapril
+# SPDX-FileCopyrightText: 2025 MajorMoth
+# SPDX-FileCopyrightText: 2025 Rosycup
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: entity
   id: WoodenStake
-  parent: BaseCrossbowBolt
+  parent: [ BaseImprovisedContraband, BaseCrossbowBolt ]
   name: wooden stake
   description: Essential appliance for pitching tents and killing vampires.
   components:

@@ -25,6 +25,7 @@
 # SPDX-FileCopyrightText: 2024 beck-thompson
 # SPDX-FileCopyrightText: 2024 deltanedas
 # SPDX-FileCopyrightText: 2025 Blitz
+# SPDX-FileCopyrightText: 2025 MajorMoth
 # SPDX-FileCopyrightText: 2025 Rosycup
 # SPDX-FileCopyrightText: 2025 Sir Warock
 # SPDX-FileCopyrightText: 2025 Winter
@@ -136,7 +137,7 @@
     price: 3000
 
 - type: entity
-  parent: [ClothingShoesBootsMagBase, BaseJetpack]
+  parent: [ ClothingShoesBootsMagBase, BaseJetpack, BaseRivalCompanyContraband ]
   id: ClothingShoesBootsMagSyndie
   name: blood-red magboots
   description: Reverse-engineered magnetic boots that have a heavy magnetic pull and integrated thrusters.

@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2025 MajorMoth
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 # Clandestine, improvised (not made in a lathe) weapons/utilities - these items should not be allowed in most circumstances
 # examples:
 # 1. improvised shotgun, firebomb, stunprod are not okay the vast majority of time
@@ -46,6 +50,14 @@
 - type: contrabandSeverity
   id: contrabandSeverityRivalCompany
   examineText: contraband-examine-text-RivalCompany
+
+# This is ninja gear
+# examples:
+# 1. energy katana
+# 2. ninja gloves
+- type: contrabandSeverity
+  id: contrabandSeverityNinja
+  examineText: contraband-examine-text-Ninja
 
 # You should not be even seeing these items IC
 # examples:

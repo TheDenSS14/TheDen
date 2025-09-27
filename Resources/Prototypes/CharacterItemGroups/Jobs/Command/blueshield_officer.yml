@@ -1,4 +1,6 @@
+# SPDX-FileCopyrightText: 2025 ASaltySeabass
 # SPDX-FileCopyrightText: 2025 Alice
+# SPDX-FileCopyrightText: 2025 Blitz
 # SPDX-FileCopyrightText: 2025 BlitzTheSquishy
 # SPDX-FileCopyrightText: 2025 BramvanZijp
 # SPDX-FileCopyrightText: 2025 EctoplasmIsGood
@@ -8,7 +10,7 @@
 # SPDX-FileCopyrightText: 2025 VMSolidus
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: characterItemGroup
   id: LoadoutBlueshieldOfficerBackpacks
@@ -63,10 +65,18 @@
     - type: loadout
       id: LoadoutBSOTerminus
 
-#- type: characterItemGroup
-#  id: LoadoutJOBEyes
-#  maxItems: 1
-#  items:
+- type: characterItemGroup
+  id: LoadoutBlueshieldOfficerEyes
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutBlueshieldSunglasses
+    - type: loadout
+      id: LoadoutBlueshieldAviators
+    - type: loadout
+      id: LoadoutBlueshieldSunglassesBig
+    - type: loadout
+      id: LoadoutBlueshieldSunglassesVisor
 #
 #- type: characterItemGroup
 #  id: LoadoutJOBGloves

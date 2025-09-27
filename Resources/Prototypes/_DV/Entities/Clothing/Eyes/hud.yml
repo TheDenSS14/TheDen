@@ -1,16 +1,15 @@
-# SPDX-FileCopyrightText: 2024 Adrian16199 <144424013+Adrian16199@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT <77995199+DEATHB4DEFEAT@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 Fansana <116083121+Fansana@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 JoeHammad1844 <130668733+JoeHammad1844@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 KyuPolaris <tabi@kyuudev.me>
-# SPDX-FileCopyrightText: 2024 flyingkarii <123355664+flyingkarii@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 M3739 <47579354+M3739@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 Rosycup <178287475+Rosycup@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 Skubman <ba.fallaria@gmail.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <flyingkarii@gmail.com>
+# SPDX-FileCopyrightText: 2024 Adrian16199
+# SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT
+# SPDX-FileCopyrightText: 2024 Fansana
+# SPDX-FileCopyrightText: 2024 JoeHammad1844
+# SPDX-FileCopyrightText: 2024 KyuPolaris
+# SPDX-FileCopyrightText: 2024 flyingkarii
+# SPDX-FileCopyrightText: 2025 M3739
+# SPDX-FileCopyrightText: 2025 Rosycup
+# SPDX-FileCopyrightText: 2025 Skubman
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: entity
   parent: ClothingEyesBase
@@ -57,7 +56,7 @@
     - HudSecurity
 
 - type: entity
-  parent: [ ClothingEyesBase, ShowSecurityIcons ]
+  parent: [ ClothingEyesBase, ShowSecurityIcons, BaseRivalCompanyContraband ]
   id: ClothingEyesHudSyndicateMed
   name: syndicate medical visor
   description: An upgraded syndicate visor with automatic health readings, designed for better detection of humanoids and their subsequent elimination.

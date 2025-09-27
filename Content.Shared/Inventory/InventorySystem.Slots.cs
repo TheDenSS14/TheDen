@@ -1,19 +1,18 @@
-// SPDX-FileCopyrightText: 2021 Paul Ritter <ritter.paul1@googlemail.com>
-// SPDX-FileCopyrightText: 2022 ShadowCommander <10494922+ShadowCommander@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2022 Vera Aguilera Puerto <6766154+Zumorica@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2022 wrexbe <81056464+wrexbe@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2023 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2023 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT <77995199+DEATHB4DEFEAT@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 DrSmugleaf <10968691+DrSmugleaf@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
-// SPDX-FileCopyrightText: 2024 gluesniffler <159397573+gluesniffler@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 gluesniffler <linebarrelerenthusiast@gmail.com>
-// SPDX-FileCopyrightText: 2024 sleepyyapril <flyingkarii@gmail.com>
-// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2021 Paul Ritter
+// SPDX-FileCopyrightText: 2022 ShadowCommander
+// SPDX-FileCopyrightText: 2022 Vera Aguilera Puerto
+// SPDX-FileCopyrightText: 2022 wrexbe
+// SPDX-FileCopyrightText: 2023 Leon Friedrich
+// SPDX-FileCopyrightText: 2023 metalgearsloth
+// SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT
+// SPDX-FileCopyrightText: 2024 DrSmugleaf
+// SPDX-FileCopyrightText: 2024 Nemanja
+// SPDX-FileCopyrightText: 2024 Pieter-Jan Briers
+// SPDX-FileCopyrightText: 2024 Plykiya
+// SPDX-FileCopyrightText: 2024 gluesniffler
+// SPDX-FileCopyrightText: 2024 sleepyyapril
 //
-// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+// SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
@@ -54,7 +53,7 @@ public partial class InventorySystem : EntitySystem
     /// <summary>
     /// Tries to find an entity in the specified slot with the specified component.
     /// </summary>
-    public bool TryGetInventoryEntity<T>(Entity<InventoryComponent?> entity, out EntityUid targetUid)
+    public bool TryGetInventoryEntity<T>(Entity<InventoryComponent?> entity, out Entity<T?> target)
         where T : IComponent, IClothingSlots
     {
         if (TryGetContainerSlotEnumerator(entity.Owner, out var containerSlotEnumerator))
@@ -67,12 +66,12 @@ public partial class InventorySystem : EntitySystem
                 if ((((IClothingSlots) required).Slots & slot.SlotFlags) == 0x0)
                     continue;
 
-                targetUid = item;
+                target = (item, required);
                 return true;
             }
         }
 
-        targetUid = EntityUid.Invalid;
+        target = EntityUid.Invalid;
         return false;
     }
 

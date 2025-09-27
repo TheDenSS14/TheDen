@@ -10,14 +10,15 @@
 # SPDX-FileCopyrightText: 2024 deltanedas
 # SPDX-FileCopyrightText: 2024 themias
 # SPDX-FileCopyrightText: 2025 Falcon
+# SPDX-FileCopyrightText: 2025 MajorMoth
 # SPDX-FileCopyrightText: 2025 Winter
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: entity
   id: BaseDefibrillator
-  parent: BaseItem
+  parent: [ BaseMedicalContraband, BaseItem ]
   name: defibrillator
   description: CLEAR! Zzzzat!
   abstract: true
@@ -128,7 +129,7 @@
 
 - type: entity
   id: DefibrillatorSyndicate
-  parent: DefibrillatorCompact
+  parent: [ BaseRivalCompanyContraband, DefibrillatorCompact ]
   name: interdyne defibrillator
   description: Doubles as a self-defense weapon against war-crime inclined tiders.
   components:
