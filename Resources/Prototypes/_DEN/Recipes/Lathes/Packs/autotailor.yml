@@ -1,8 +1,18 @@
 - type: latheRecipePack
   parent:
-  - AutotailorStaticBasicJumpsuits
   - AutotailorStaticCarpets
+  - AutotailorStaticUniforms
   id: AutotailorStaticDen
+
+- type: latheRecipePack
+  parent:
+  - AutotailorStaticBasicJumpsuits
+  - AutotailorStaticDresses
+  - AutotailorStaticSchoolUniforms
+  - AutotailorStaticSuits
+  id: AutotailorStaticUniforms
+
+## Carpets
 
 - type: latheRecipePack
   id: AutotailorStaticCarpets
@@ -16,6 +26,8 @@
   - CarpetPurple
   - CarpetCyan
   - CarpetWhite
+
+## Uniforms
 
 - type: latheRecipePack
   id: AutotailorStaticBasicJumpsuits
@@ -53,3 +65,101 @@
   - ClothingUniformJumpsuitColorMaroon
   - ClothingUniformJumpskirtColorMaroon
   - ClothingUniformColorRainbow
+
+- type: latheRecipePack
+  id: AutotailorStaticSchoolUniforms
+  recipes:
+  - ClothingUniformSchoolGakuranBlack
+  - UniformSchoolgirlBlack
+  - UniformSchoolgirlBlue
+  - UniformSchoolgirlCyan
+  - UniformSchoolgirlGreen
+  - UniformSchoolgirlOrange
+  - UniformSchoolgirlPink
+  - UniformSchoolgirlPurple
+  - UniformSchoolgirlRed
+  - UniformSchoolgirlDusk
+  - UniformSchoolgirlBlazerTan
+
+- type: latheRecipePack
+  id: AutotailorStaticSuits
+  recipes:
+  - ClothingUniformJumpsuitSuitBlack
+  - ClothingUniformJumpsuitSuitBlackAlt
+  - ClothingUniformJumpsuitSuitBlackMob
+  - ClothingUniformJumpsuitSuitBrown
+  - ClothingUniformJumpsuitSuitBrownAlt
+  - ClothingUniformJumpsuitSuitBrownMob
+  - ClothingUniformJumpsuitSuitWhite
+  - ClothingUniformJumpsuitSuitWhiteAlt
+  - ClothingUniformJumpsuitSuitWhiteMob
+
+- type: latheRecipePack
+  id: AutotailorStaticDresses
+  recipes:
+  - ClothingUniformJumpskirtBlackElegantDress
+  - ClothingUniformJumpskirtBlueElegantDress
+  - ClothingUniformJumpskirtBlueTurtleneckDress
+  - ClothingUniformJumpskirtCyanStripedDress
+  - ClothingUniformJumpskirtDressAsymmetric
+  - ClothingUniformJumpskirtDressBlackAndGold
+  - ClothingUniformJumpskirtDressBlackTango
+  - ClothingUniformJumpskirtDressBlackTangoAlt
+  - ClothingUniformJumpskirtDressBlueSundress
+  - ClothingUniformJumpskirtDressCheongsamBlue
+  - ClothingUniformJumpskirtDressCheongsamGreen
+  - ClothingUniformJumpskirtDressCheongsamPurple
+  - ClothingUniformJumpskirtDressCheongsamRed
+  - ClothingUniformJumpskirtDressCheongsamWhite
+  - ClothingUniformJumpskirtDressClub
+  - ClothingUniformJumpskirtDressCoveter
+  - ClothingUniformJumpskirtDressEvening
+  - ClothingUniformJumpskirtDressFire
+  - ClothingUniformJumpskirtDressFlamenco
+  - ClothingUniformJumpskirtDressFlowergirl
+  - ClothingUniformJumpskirtDressFluffy
+  - ClothingUniformJumpskirtDressFluffy
+  - ClothingUniformJumpskirtDressFormalRed
+  - ClothingUniformJumpskirtDressGothic
+  - ClothingUniformJumpskirtDressLacyGown
+  - ClothingUniformJumpskirtDressLong
+  - ClothingUniformJumpskirtDressLongFlared
+  - ClothingUniformJumpskirtDressLongSleeve
+  - ClothingUniformJumpskirtDressMidi
+  - ClothingUniformJumpskirtDressOpenShoulder
+  - ClothingUniformJumpskirtDressOrange
+  - ClothingUniformJumpskirtDressRedSwept
+  - ClothingUniformJumpskirtDressSariGreen
+  - ClothingUniformJumpskirtDressSariRed
+  - ClothingUniformJumpskirtDressShort
+  - ClothingUniformJumpskirtDressSleeveless
+  - ClothingUniformJumpskirtDressSpider
+  - ClothingUniformJumpskirtDressStriped
+  - ClothingUniformJumpskirtDressSundress
+  - ClothingUniformJumpskirtDressSundressWhite
+  - ClothingUniformJumpskirtDressTea
+  - ClothingUniformJumpskirtDressVictorianBlack
+  - ClothingUniformJumpskirtDressVictorianRed
+  - ClothingUniformJumpskirtDressYellow
+  - ClothingUniformJumpskirtDressYellowSwoop
+  - ClothingUniformJumpskirtGreenElegantDress
+  - ClothingUniformJumpskirtGreenStripedDress
+  - ClothingUniformJumpskirtGreenTurtleneckDress
+  - ClothingUniformJumpskirtKimonoColor
+  - ClothingUniformJumpskirtOrangeStripedDress
+  - ClothingUniformJumpskirtPencilSkirtGymBra
+  - ClothingUniformJumpskirtPencilSkirtGymBra
+  - ClothingUniformJumpskirtPinkStripedDress
+  - ClothingUniformJumpskirtPurpleElegantDress
+  - ClothingUniformJumpskirtPurpleTurtleneckDress
+  - ClothingUniformJumpskirtQipao
+  - ClothingUniformJumpskirtQipaoSlim
+  - ClothingUniformJumpskirtRedElegantDress
+  - ClothingUniformJumpskirtRedStripedDress
+  - ClothingUniformJumpskirtRedTurtleneckDress
+  - ClothingUniformJumpskirtSailor
+  - ClothingUniformJumpskirtSuitBlueBlazer
+  - ClothingUniformJumpskirtWaitress
+  - ClothingUniformJumpskirtYellowOldDress
+  - ClothingUniformJumpskirtYellowTurtleneckDress
+  - ClothingUniformSwimsuitBlue

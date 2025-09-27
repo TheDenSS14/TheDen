@@ -14,7 +14,19 @@
   id: BaseJumpsuitGenericRecipe
   category: ColoredUniforms
 
-## Jumpsuits
+- type: latheRecipe
+  abstract: true
+  parent: BaseJumpsuitRecipe
+  id: BaseJumpsuitLoadoutRecipe
+  category: LoadoutJumpsuits
+
+- type: latheRecipe
+  abstract: true
+  parent: BaseJumpsuitRecipe
+  id: BaseJumpsuitLoadoutDressRecipe
+  category: LoadoutDresses
+
+## Color Jumpsuits
 
 - type: latheRecipe
   parent: BaseJumpsuitGenericRecipe
@@ -96,7 +108,8 @@
   id: ClothingUniformColorRainbow
   result: ClothingUniformColorRainbow
 
-## Jumpskirts
+## Color Jumpskirts
+
 - type: latheRecipe
   parent: BaseJumpsuitGenericRecipe
   id: ClothingUniformJumpskirtColorWhite
@@ -166,3 +179,441 @@
   parent: BaseJumpsuitGenericRecipe
   id: ClothingUniformJumpskirtColorMaroon
   result: ClothingUniformJumpskirtColorMaroon
+
+## Loadout Uniforms
+
+### Dresses
+
+- type: latheRecipe
+  parent: BaseJumpsuitLoadoutDressRecipe
+  id: ClothingUniformJumpskirtYellowTurtleneckDress
+  result: ClothingUniformJumpskirtYellowTurtleneckDress
+
+- type: latheRecipe
+  parent: BaseJumpsuitLoadoutDressRecipe
+  id: ClothingUniformJumpskirtDressAsymmetric
+  result: ClothingUniformJumpskirtDressAsymmetric
+
+- type: latheRecipe
+  parent: BaseJumpsuitLoadoutDressRecipe
+  id: ClothingUniformJumpskirtBlueTurtleneckDress
+  result: ClothingUniformJumpskirtBlueTurtleneckDress
+
+- type: latheRecipe
+  parent: BaseJumpsuitLoadoutDressRecipe
+  id: ClothingUniformSwimsuitBlue
+  result: ClothingUniformSwimsuitBlue
+
+- type: latheRecipe
+  parent: BaseJumpsuitLoadoutDressRecipe
+  id: ClothingUniformJumpskirtDressEvening
+  result: ClothingUniformJumpskirtDressEvening
+
+- type: latheRecipe
+  parent: BaseJumpsuitLoadoutDressRecipe
+  id: ClothingUniformJumpskirtPurpleTurtleneckDress
+  result: ClothingUniformJumpskirtPurpleTurtleneckDress
+
+- type: latheRecipe
+  parent: BaseJumpsuitLoadoutDressRecipe
+  id: ClothingUniformJumpskirtDressMidi
+  result: ClothingUniformJumpskirtDressMidi
+
+- type: latheRecipe
+  parent: BaseJumpsuitLoadoutDressRecipe
+  id: ClothingUniformJumpskirtGreenTurtleneckDress
+  result: ClothingUniformJumpskirtGreenTurtleneckDress
+
+- type: latheRecipe
+  parent: BaseJumpsuitLoadoutDressRecipe
+  id: ClothingUniformJumpskirtDressOpenShoulder
+  result: ClothingUniformJumpskirtDressOpenShoulder
+
+- type: latheRecipe
+  parent: BaseJumpsuitLoadoutDressRecipe
+  id: ClothingUniformJumpskirtRedTurtleneckDress
+  result: ClothingUniformJumpskirtRedTurtleneckDress
+
+- type: latheRecipe
+  parent: BaseJumpsuitLoadoutDressRecipe
+  id: ClothingUniformJumpskirtDressTea
+  result: ClothingUniformJumpskirtDressTea
+
+- type: latheRecipe
+  parent: BaseJumpsuitLoadoutDressRecipe
+  id: ClothingUniformJumpskirtOrangeStripedDress
+  result: ClothingUniformJumpskirtOrangeStripedDress
+
+- type: latheRecipe
+  parent: BaseJumpsuitLoadoutDressRecipe
+  id: ClothingUniformJumpskirtDressSleeveless
+  result: ClothingUniformJumpskirtDressSleeveless
+
+- type: latheRecipe
+  parent: BaseJumpsuitLoadoutDressRecipe
+  id: ClothingUniformJumpskirtPinkStripedDress
+  result: ClothingUniformJumpskirtPinkStripedDress
+
+- type: latheRecipe
+  parent: BaseJumpsuitLoadoutDressRecipe
+  id: ClothingUniformJumpskirtDressLongSleeve
+  result: ClothingUniformJumpskirtDressLongSleeve
+
+- type: latheRecipe
+  parent: BaseJumpsuitLoadoutDressRecipe
+  id: ClothingUniformJumpskirtGreenStripedDress
+  result: ClothingUniformJumpskirtGreenStripedDress
+
+- type: latheRecipe
+  parent: BaseJumpsuitLoadoutDressRecipe
+  id: ClothingUniformJumpskirtDressBlackAndGold
+  result: ClothingUniformJumpskirtDressBlackAndGold
+
+- type: latheRecipe
+  parent: BaseJumpsuitLoadoutDressRecipe
+  id: ClothingUniformJumpskirtRedStripedDress
+  result: ClothingUniformJumpskirtRedStripedDress
+
+- type: latheRecipe
+  parent: BaseJumpsuitLoadoutDressRecipe
+  id: ClothingUniformJumpskirtDressBlackTango
+  result: ClothingUniformJumpskirtDressBlackTango
+
+- type: latheRecipe
+  parent: BaseJumpsuitLoadoutDressRecipe
+  id: ClothingUniformJumpskirtCyanStripedDress
+  result: ClothingUniformJumpskirtCyanStripedDress
+
+- type: latheRecipe
+  parent: BaseJumpsuitLoadoutDressRecipe
+  id: ClothingUniformJumpskirtDressBlackTangoAlt
+  result: ClothingUniformJumpskirtDressBlackTangoAlt
+
+- type: latheRecipe
+  parent: BaseJumpsuitLoadoutDressRecipe
+  id: ClothingUniformJumpskirtPurpleElegantDress
+  result: ClothingUniformJumpskirtPurpleElegantDress
+
+- type: latheRecipe
+  parent: BaseJumpsuitLoadoutDressRecipe
+  id: ClothingUniformJumpskirtSuitBlueBlazer
+  result: ClothingUniformJumpskirtSuitBlueBlazer
+
+- type: latheRecipe
+  parent: BaseJumpsuitLoadoutDressRecipe
+  id: ClothingUniformJumpskirtDressBlueSundress
+  result: ClothingUniformJumpskirtDressBlueSundress
+
+- type: latheRecipe
+  parent: BaseJumpsuitLoadoutDressRecipe
+  id: ClothingUniformJumpskirtDressCheongsamBlue
+  result: ClothingUniformJumpskirtDressCheongsamBlue
+
+- type: latheRecipe
+  parent: BaseJumpsuitLoadoutDressRecipe
+  id: ClothingUniformJumpskirtDressCheongsamGreen
+  result: ClothingUniformJumpskirtDressCheongsamGreen
+
+- type: latheRecipe
+  parent: BaseJumpsuitLoadoutDressRecipe
+  id: ClothingUniformJumpskirtDressCheongsamPurple
+  result: ClothingUniformJumpskirtDressCheongsamPurple
+
+- type: latheRecipe
+  parent: BaseJumpsuitLoadoutDressRecipe
+  id: ClothingUniformJumpskirtDressCheongsamRed
+  result: ClothingUniformJumpskirtDressCheongsamRed
+
+- type: latheRecipe
+  parent: BaseJumpsuitLoadoutDressRecipe
+  id: ClothingUniformJumpskirtBlueElegantDress
+  result: ClothingUniformJumpskirtBlueElegantDress
+
+- type: latheRecipe
+  parent: BaseJumpsuitLoadoutDressRecipe
+  id: ClothingUniformJumpskirtDressCheongsamWhite
+  result: ClothingUniformJumpskirtDressCheongsamWhite
+
+- type: latheRecipe
+  parent: BaseJumpsuitLoadoutDressRecipe
+  id: ClothingUniformJumpskirtDressClub
+  result: ClothingUniformJumpskirtDressClub
+
+- type: latheRecipe
+  parent: BaseJumpsuitLoadoutDressRecipe
+  id: ClothingUniformJumpskirtGreenElegantDress
+  result: ClothingUniformJumpskirtGreenElegantDress
+
+- type: latheRecipe
+  parent: BaseJumpsuitLoadoutDressRecipe
+  id: ClothingUniformJumpskirtDressCoveter
+  result: ClothingUniformJumpskirtDressCoveter
+
+- type: latheRecipe
+  parent: BaseJumpsuitLoadoutDressRecipe
+  id: ClothingUniformJumpskirtRedElegantDress
+  result: ClothingUniformJumpskirtRedElegantDress
+
+- type: latheRecipe
+  parent: BaseJumpsuitLoadoutDressRecipe
+  id: ClothingUniformJumpskirtDressFlamenco
+  result: ClothingUniformJumpskirtDressFlamenco
+
+- type: latheRecipe
+  parent: BaseJumpsuitLoadoutDressRecipe
+  id: ClothingUniformJumpskirtBlackElegantDress
+  result: ClothingUniformJumpskirtBlackElegantDress
+
+- type: latheRecipe
+  parent: BaseJumpsuitLoadoutDressRecipe
+  id: ClothingUniformJumpskirtDressFire
+  result: ClothingUniformJumpskirtDressFire
+
+- type: latheRecipe
+  parent: BaseJumpsuitLoadoutDressRecipe
+  id: ClothingUniformJumpskirtDressOrange
+  result: ClothingUniformJumpskirtDressOrange
+
+- type: latheRecipe
+  parent: BaseJumpsuitLoadoutDressRecipe
+  id: ClothingUniformJumpskirtDressYellow
+  result: ClothingUniformJumpskirtDressYellow
+
+- type: latheRecipe
+  parent: BaseJumpsuitLoadoutDressRecipe
+  id: ClothingUniformJumpskirtDressFlowergirl
+  result: ClothingUniformJumpskirtDressFlowergirl
+
+- type: latheRecipe
+  parent: BaseJumpsuitLoadoutDressRecipe
+  id: ClothingUniformJumpskirtYellowOldDress
+  result: ClothingUniformJumpskirtYellowOldDress
+
+- type: latheRecipe
+  parent: BaseJumpsuitLoadoutDressRecipe
+  id: ClothingUniformJumpskirtDressFluffy
+  result: ClothingUniformJumpskirtDressFluffy
+
+- type: latheRecipe
+  parent: BaseJumpsuitLoadoutDressRecipe
+  id: ClothingUniformJumpskirtDressFormalRed
+  result: ClothingUniformJumpskirtDressFormalRed
+
+- type: latheRecipe
+  parent: BaseJumpsuitLoadoutDressRecipe
+  id: ClothingUniformJumpskirtDressGothic
+  result: ClothingUniformJumpskirtDressGothic
+
+- type: latheRecipe
+  parent: BaseJumpsuitLoadoutDressRecipe
+  id: ClothingUniformJumpskirtDressFluffy
+  result: ClothingUniformJumpskirtDressFluffy
+
+- type: latheRecipe
+  parent: BaseJumpsuitLoadoutDressRecipe
+  id: ClothingUniformJumpskirtKimonoColor
+  result: ClothingUniformJumpskirtKimonoColor
+
+- type: latheRecipe
+  parent: BaseJumpsuitLoadoutDressRecipe
+  id: ClothingUniformJumpskirtDressLacyGown
+  result: ClothingUniformJumpskirtDressLacyGown
+
+- type: latheRecipe
+  parent: BaseJumpsuitLoadoutDressRecipe
+  id: ClothingUniformJumpskirtDressLong
+  result: ClothingUniformJumpskirtDressLong
+
+- type: latheRecipe
+  parent: BaseJumpsuitLoadoutDressRecipe
+  id: ClothingUniformJumpskirtDressLongFlared
+  result: ClothingUniformJumpskirtDressLongFlared
+
+- type: latheRecipe
+  parent: BaseJumpsuitLoadoutDressRecipe
+  id: ClothingUniformJumpskirtQipao
+  result: ClothingUniformJumpskirtQipao
+
+- type: latheRecipe
+  parent: BaseJumpsuitLoadoutDressRecipe
+  id: ClothingUniformJumpskirtQipaoSlim
+  result: ClothingUniformJumpskirtQipaoSlim
+
+- type: latheRecipe
+  parent: BaseJumpsuitLoadoutDressRecipe
+  id: ClothingUniformJumpskirtDressRedSwept
+  result: ClothingUniformJumpskirtDressRedSwept
+
+- type: latheRecipe
+  parent: BaseJumpsuitLoadoutDressRecipe
+  id: ClothingUniformJumpskirtPencilSkirtGymBra
+  result: ClothingUniformJumpskirtPencilSkirtGymBra
+
+- type: latheRecipe
+  parent: BaseJumpsuitLoadoutDressRecipe
+  id: ClothingUniformJumpskirtPencilSkirtGymBra
+  result: ClothingUniformJumpskirtPencilSkirtGymBra
+
+- type: latheRecipe
+  parent: BaseJumpsuitLoadoutDressRecipe
+  id: ClothingUniformJumpskirtSailor
+  result: ClothingUniformJumpskirtSailor
+
+- type: latheRecipe
+  parent: BaseJumpsuitLoadoutDressRecipe
+  id: ClothingUniformJumpskirtDressSariGreen
+  result: ClothingUniformJumpskirtDressSariGreen
+
+- type: latheRecipe
+  parent: BaseJumpsuitLoadoutDressRecipe
+  id: ClothingUniformJumpskirtDressSariRed
+  result: ClothingUniformJumpskirtDressSariRed
+
+- type: latheRecipe
+  parent: BaseJumpsuitLoadoutDressRecipe
+  id: ClothingUniformJumpskirtDressShort
+  result: ClothingUniformJumpskirtDressShort
+
+- type: latheRecipe
+  parent: BaseJumpsuitLoadoutDressRecipe
+  id: ClothingUniformJumpskirtDressSpider
+  result: ClothingUniformJumpskirtDressSpider
+
+- type: latheRecipe
+  parent: BaseJumpsuitLoadoutDressRecipe
+  id: ClothingUniformJumpskirtDressStriped
+  result: ClothingUniformJumpskirtDressStriped
+
+- type: latheRecipe
+  parent: BaseJumpsuitLoadoutDressRecipe
+  id: ClothingUniformJumpskirtDressSundress
+  result: ClothingUniformJumpskirtDressSundress
+
+- type: latheRecipe
+  parent: BaseJumpsuitLoadoutDressRecipe
+  id: ClothingUniformJumpskirtDressSundressWhite
+  result: ClothingUniformJumpskirtDressSundressWhite
+
+- type: latheRecipe
+  parent: BaseJumpsuitLoadoutDressRecipe
+  id: ClothingUniformJumpskirtDressVictorianBlack
+  result: ClothingUniformJumpskirtDressVictorianBlack
+
+- type: latheRecipe
+  parent: BaseJumpsuitLoadoutDressRecipe
+  id: ClothingUniformJumpskirtDressVictorianRed
+  result: ClothingUniformJumpskirtDressVictorianRed
+
+- type: latheRecipe
+  parent: BaseJumpsuitLoadoutDressRecipe
+  id: ClothingUniformJumpskirtWaitress
+  result: ClothingUniformJumpskirtWaitress
+
+- type: latheRecipe
+  parent: BaseJumpsuitLoadoutDressRecipe
+  id: ClothingUniformJumpskirtDressYellowSwoop
+  result: ClothingUniformJumpskirtDressYellowSwoop
+
+### School
+
+- type: latheRecipe
+  parent: BaseJumpsuitLoadoutRecipe
+  id: ClothingUniformSchoolGakuranBlack
+  result: ClothingUniformSchoolGakuranBlack
+
+- type: latheRecipe
+  parent: BaseJumpsuitLoadoutRecipe
+  id: UniformSchoolgirlBlack
+  result: UniformSchoolgirlBlack
+
+- type: latheRecipe
+  parent: BaseJumpsuitLoadoutRecipe
+  id: UniformSchoolgirlBlue
+  result: UniformSchoolgirlBlue
+
+- type: latheRecipe
+  parent: BaseJumpsuitLoadoutRecipe
+  id: UniformSchoolgirlCyan
+  result: UniformSchoolgirlCyan
+
+- type: latheRecipe
+  parent: BaseJumpsuitLoadoutRecipe
+  id: UniformSchoolgirlGreen
+  result: UniformSchoolgirlGreen
+
+- type: latheRecipe
+  parent: BaseJumpsuitLoadoutRecipe
+  id: UniformSchoolgirlOrange
+  result: UniformSchoolgirlOrange
+
+- type: latheRecipe
+  parent: BaseJumpsuitLoadoutRecipe
+  id: UniformSchoolgirlPink
+  result: UniformSchoolgirlPink
+
+- type: latheRecipe
+  parent: BaseJumpsuitLoadoutRecipe
+  id: UniformSchoolgirlPurple
+  result: UniformSchoolgirlPurple
+
+- type: latheRecipe
+  parent: BaseJumpsuitLoadoutRecipe
+  id: UniformSchoolgirlRed
+  result: UniformSchoolgirlRed
+
+- type: latheRecipe
+  parent: BaseJumpsuitLoadoutRecipe
+  id: UniformSchoolgirlDusk
+  result: UniformSchoolgirlDusk
+
+- type: latheRecipe
+  parent: BaseJumpsuitLoadoutRecipe
+  id: UniformSchoolgirlBlazerTan
+  result: UniformSchoolgirlBlazerTan
+
+### Suits
+
+- type: latheRecipe
+  parent: BaseJumpsuitLoadoutRecipe
+  id: ClothingUniformJumpsuitSuitBlack
+  result: ClothingUniformJumpsuitSuitBlack
+
+- type: latheRecipe
+  parent: BaseJumpsuitLoadoutRecipe
+  id: ClothingUniformJumpsuitSuitBlackAlt
+  result: ClothingUniformJumpsuitSuitBlackAlt
+
+- type: latheRecipe
+  parent: BaseJumpsuitLoadoutRecipe
+  id: ClothingUniformJumpsuitSuitBlackMob
+  result: ClothingUniformJumpsuitSuitBlackMob
+
+- type: latheRecipe
+  parent: BaseJumpsuitLoadoutRecipe
+  id: ClothingUniformJumpsuitSuitBrown
+  result: ClothingUniformJumpsuitSuitBrown
+
+- type: latheRecipe
+  parent: BaseJumpsuitLoadoutRecipe
+  id: ClothingUniformJumpsuitSuitBrownAlt
+  result: ClothingUniformJumpsuitSuitBrownAlt
+
+- type: latheRecipe
+  parent: BaseJumpsuitLoadoutRecipe
+  id: ClothingUniformJumpsuitSuitBrownMob
+  result: ClothingUniformJumpsuitSuitBrownMob
+
+- type: latheRecipe
+  parent: BaseJumpsuitLoadoutRecipe
+  id: ClothingUniformJumpsuitSuitWhite
+  result: ClothingUniformJumpsuitSuitWhite
+
+- type: latheRecipe
+  parent: BaseJumpsuitLoadoutRecipe
+  id: ClothingUniformJumpsuitSuitWhiteAlt
+  result: ClothingUniformJumpsuitSuitWhiteAlt
+
+- type: latheRecipe
+  parent: BaseJumpsuitLoadoutRecipe
+  id: ClothingUniformJumpsuitSuitWhiteMob
+  result: ClothingUniformJumpsuitSuitWhiteMob
