@@ -69,12 +69,13 @@
     components:
     - type: BibleUser
     - type: Psionic
-      powerRollMultiplier: 3
+      # powerRollMultiplier: 3 # TheDen - After the psionic refactor, this only gave them 0.12 Potentia per roll instead of 0.04 (almost nothing, because every Potentia gain also rolls a d100) so we're commenting it out because it doesn't matter and is very misleading
+      powerSlots: 2 # TheDen - This only means that they don't start generating glimmer until they gain a third slot-taking power (they start with Healing Word, which takes a slot, and have one no-glimmer slot like all psychics)
     - type: InnatePsionicPowers
-      powersToAdd:
-        - TelepathyPower
-        - HealingWordPower
-        - SummonRemiliaPower
+      powersToAdd: # TheDen - They have one innate slot-taking power, so they need 200 Potentia to gain a new power
+        - TelepathyPower # Doesn't take a power slot
+        - HealingWordPower # Takes 1 power slot
+        - SummonRemiliaPower # Doesn't take a power slot
 
 - type: startingGear
   id: ChaplainGear

@@ -31,8 +31,9 @@
     - !type:RemovePsionicStatSources
     - !type:RemoveAssayFeedback
       assayFeedback: hypnosis-power-feedback
-  
-  
+  powerSlotCost: 0 # TheDen - This is just a roleplay power and shouldn't take a slot
+
+
   ##actions:
   #  - ActionHypno
   #components:

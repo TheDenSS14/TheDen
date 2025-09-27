@@ -54,14 +54,14 @@
   - !type:AddComponentSpecial
     components:
     - type: Psionic
-      powerSlots: 2
-  - !type:AddComponentSpecial
-    components:
+      powerSlots: 1 # TheDen - This only means that they don't start generating glimmer until they gain a second slot-taking power (they have one no-glimmer slot like all psychics)
     - type: InnatePsionicPowers
-      powersToAdd:
-        - MetapsionicPower
-        - TelepathyPower
-        - AssayPower
+      powersToAdd: # TheDen - They have no innate slot-taking powers, so they need 100 Potentia to gain a new power
+        - MetapsionicPower # Doesn't take a power slot
+        - TelepathyPower # Doesn't take a power slot
+        - PsychognomyPower # TheDen - Doesn't take a power slot (and the psychic monitor should get a little extra information for roleplay)
+        - AssayPower # Doesn't take a power slot
+
 
 - type: startingGear
   id: ForensicMantisGear

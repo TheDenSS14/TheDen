@@ -195,6 +195,7 @@
       assayFeedback: metapsionic-power-metapsionic-feedback
     - !type:PsionicRemoveAvailablePowers
       powerPrototype: AssayPower
+  powerSlotCost: 0 # TheDen - Since we're not hunting down psychics anymore, this is just a roleplay power and shouldn't take a slot
 
 - type: psionicPower
   id: PsionicRegenerationPower
@@ -700,6 +701,7 @@
     - !type:RemovePsionicStatSources
     - !type:RemoveAssayFeedback
       assayFeedback: assay-power-metapsionic-feedback
+  powerSlotCost: 0 # TheDen - Since we're not hunting down psychics anymore, this is just a roleplay power and shouldn't take a slot
 
 - type: psionicPower
   id: AnoigoPower

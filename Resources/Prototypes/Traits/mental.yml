@@ -501,6 +501,7 @@
             - Chaplain
             - ResearchDirector
             - ForensicMantis
+            - Librarian
     - !type:CharacterLogicOrRequirement
       requirements:
         - !type:CharacterSpeciesRequirement
@@ -514,10 +515,6 @@
       inverted: true
       traits:
         - ShadowkinBlackeye
-    - !type:CharacterJobRequirement
-      inverted: true
-      jobs:
-        - Librarian
   functions:
     - !type:TraitAddPsionics
       psionicPowers:
@@ -547,7 +544,6 @@
           jobs:
             - Chaplain
             - ResearchDirector
-            - ForensicMantis
             - Librarian
     - !type:CharacterLogicOrRequirement
       requirements:
@@ -562,6 +558,10 @@
       inverted: true
       traits:
         - ShadowkinBlackeye
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - ForensicMantis
   functions:
     - !type:TraitAddPsionics
       psionicPowers:
