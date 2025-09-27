@@ -21,8 +21,12 @@ using Robust.Server.Player;
 using Robust.Shared.Configuration;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
+using Content.Shared.EntityTable.EntitySelectors;
+using Content.Shared.EntityTable;
 using Content.Server.Psionics.Glimmer;
 using Content.Shared.Psionics.Glimmer;
+using System.Diagnostics.CodeAnalysis; // DeltaV
+
 namespace Content.Server.StationEvents;
 
 public sealed class EventManagerSystem : EntitySystem
@@ -34,6 +38,7 @@ public sealed class EventManagerSystem : EntitySystem
     [Dependency] private readonly IChatManager _chat = default!;
     [Dependency] public readonly GameTicker GameTicker = default!;
     [Dependency] private readonly GlimmerSystem _glimmerSystem = default!; //Nyano - Summary: pulls in the glimmer system.
+     [Dependency] private readonly EntityTableSystem _entityTable = default!;
 
     public bool EventsEnabled { get; private set; }
     private void SetEnabled(bool value) => EventsEnabled = value;
@@ -56,6 +61,112 @@ public sealed class EventManagerSystem : EntitySystem
             return;
 
         GameTicker.AddGameRule(randomEvent);
+    }
+
+    /// <summary>
+    /// Randomly runs an event from provided EntityTableSelector.
+    /// </summary>
+    public void RunRandomEvent(EntityTableSelector limitedEventsTable)
+    {
+        if (TryGenerateRandomEvent(limitedEventsTable, out string? randomLimitedEvent)) // DeltaV - seperated into own method
+            GameTicker.AddGameRule(randomLimitedEvent);
+    }
+
+    // DeltaV - overloaded for backwards compatiblity
+    public bool TryGenerateRandomEvent(EntityTableSelector limitedEventsTable, [NotNullWhen(true)] out string? randomLimitedEvent)
+    {
+        return TryGenerateRandomEvent(limitedEventsTable, out randomLimitedEvent, null);
+    }
+    // DeltaV - end overloaded for backwards compatiblity
+
+    // DeltaV - separate event generation method
+    /// <summary>
+    /// Returns a random event from the list of events given that can be run at a given time.
+    /// </summary>
+    /// <param name="limitedEventsTable">The list of events that can be chosen.</param>
+    /// <param name="randomLimitedEvent">Generated event</param>
+    /// <param name="eventRunTime">The time to use for checking time restrictions. Uses current time if null.</param>
+    /// <returns></returns>
+    public bool TryGenerateRandomEvent(EntityTableSelector limitedEventsTable, [NotNullWhen(true)] out string? randomLimitedEvent, TimeSpan? eventRunTime) 
+    {
+        randomLimitedEvent = null;
+        if (!TryBuildLimitedEvents(limitedEventsTable, out var limitedEvents, eventRunTime))
+        {
+            Log.Warning("Provided event table could not build dict!");
+            return false;
+        }
+
+        randomLimitedEvent = FindEvent(limitedEvents); // this picks the event, It might be better to use the GetSpawns to do it, but that will be a major rebalancing fuck.
+                                                       // DeltaV - randomLimitedEvent declared by enclosing method
+        if (randomLimitedEvent == null)
+        {
+            Log.Warning("The selected random event is null!");
+            return false;
+        }
+
+        if (!_prototype.TryIndex(randomLimitedEvent, out _))
+        {
+            Log.Warning("A requested event is not available!");
+            return false;
+        }
+
+        return true;
+    }
+    // DeltaV - end separate event generation method
+
+    // DeltaV - overloaded for backwards compatiblity
+    public bool TryBuildLimitedEvents(EntityTableSelector limitedEventsTable, out Dictionary<EntityPrototype, StationEventComponent> limitedEvents)
+    {
+        return TryBuildLimitedEvents(limitedEventsTable, out limitedEvents, null);
+    }
+    // DeltaV - end overloaded for backwards compatiblity
+
+    /// <summary>
+    /// Returns true if the provided EntityTableSelector gives at least one prototype with a StationEvent comp.
+    /// </summary>
+    public bool TryBuildLimitedEvents(EntityTableSelector limitedEventsTable, out Dictionary<EntityPrototype, StationEventComponent> limitedEvents, TimeSpan? eventRunTime) // DeltaV - Add a time overide
+    {
+        limitedEvents = new Dictionary<EntityPrototype, StationEventComponent>();
+        // DeltaV - Overide time for stashing events
+        var availableEvents = AvailableEvents(eventRunTime); // handles the player counts and individual event restrictions
+        if (availableEvents.Count == 0)
+        {
+            Log.Warning("No events were available to run!");
+            return false;
+        }
+
+        var selectedEvents = _entityTable.GetSpawns(limitedEventsTable);
+
+        if (selectedEvents.Any() != true) // This is here so if you fuck up the table it wont die.
+            return false;
+
+        foreach (var eventid in selectedEvents)
+        {
+            if (!_prototype.TryIndex(eventid, out var eventproto))
+            {
+                Log.Warning("An event ID has no prototype index!");
+                continue;
+            }
+
+            if (limitedEvents.ContainsKey(eventproto)) // This stops it from dying if you add duplicate entries in a fucked table
+                continue;
+
+            if (eventproto.Abstract)
+                continue;
+
+            if (!eventproto.TryGetComponent<StationEventComponent>(out var stationEvent, EntityManager.ComponentFactory))
+                continue;
+
+            if (!availableEvents.ContainsKey(eventproto))
+                continue;
+
+            limitedEvents.Add(eventproto, stationEvent);
+        }
+
+        if (!limitedEvents.Any())
+            return false;
+
+        return true;
     }
 
     /// <summary>
@@ -103,6 +214,16 @@ public sealed class EventManagerSystem : EntitySystem
         return null;
     }
 
+    // DeltaV - overloaded for backwards compatiblity
+    public Dictionary<EntityPrototype, StationEventComponent> AvailableEvents(
+        bool ignoreEarliestStart = false,
+        int? playerCountOverride = null,
+        TimeSpan? currentTimeOverride = null)
+    {
+        return AvailableEvents(null, ignoreEarliestStart, playerCountOverride, currentTimeOverride);
+    }
+    // DeltaV - end overloaded for backwards compatiblity
+
     /// <summary>
     /// Gets the events that have met their player count, time-until start, etc.
     /// </summary>
@@ -110,6 +231,7 @@ public sealed class EventManagerSystem : EntitySystem
     /// <param name="currentTimeOverride">Override for round time, if using this to simulate events rather than in an actual round.</param>
     /// <returns></returns>
     public Dictionary<EntityPrototype, StationEventComponent> AvailableEvents(
+        TimeSpan? eventRunTime,
         bool ignoreEarliestStart = false,
         int? playerCountOverride = null,
         TimeSpan? currentTimeOverride = null)
@@ -117,9 +239,12 @@ public sealed class EventManagerSystem : EntitySystem
         var playerCount = playerCountOverride ?? _playerManager.PlayerCount;
 
         // playerCount does a lock so we'll just keep the variable here
-        var currentTime = currentTimeOverride ?? (!ignoreEarliestStart
-            ? GameTicker.RoundDuration()
-            : TimeSpan.Zero);
+        var currentTime = currentTimeOverride ?? (
+            (!ignoreEarliestStart
+            ? eventRunTime // DeltaV - Use eventRunTime instead of RoundDuration if provided
+            ?? GameTicker.RoundDuration()
+            : TimeSpan.Zero)
+        );
 
         var result = new Dictionary<EntityPrototype, StationEventComponent>();
 

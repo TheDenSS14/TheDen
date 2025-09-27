@@ -98,3 +98,9 @@ trait-description-ThavenMoods =
 
     (This is the "intended playstyle" of Thaven; this trait is opt-in due to its ability to modify
     your character out of your control. Some moods may have moderate-to-high impact.)[/italic][/color]
+
+trait-name-Precognition = Precognition
+trait-description-Precognition =
+    Your connection to the noosphere has rendered even time itself malleable. Through meditation, you are able to peer into the future, getting a glimpse of what is to come.
+
+    Through these 'visions', you can get a hint at what may happen soon, though it is not a guarantee, and it is always just vague enough to not be sure of what exactly.

@@ -414,3 +414,17 @@
     useDelay: 40
     itemIconStyle: BigAction
     event: !type:AnoigoPowerActionEvent
+
+#DeltaV
+- type: entity
+  id: ActionPrecognition
+  name: Precognition
+  description: See into the future to get a hint about the next random event.
+  categories: [HideSpawnMenu]
+  components:
+    - type: InstantAction
+      icon: { sprite: DeltaV/Interface/Actions/actions_psionics.rsi, state: precognition }
+      useDelay: 240
+      checkCanInteract: false
+      checkConsciousness: false
+      event: !type:PrecognitionPowerActionEvent

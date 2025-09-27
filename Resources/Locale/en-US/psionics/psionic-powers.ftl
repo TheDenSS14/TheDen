@@ -214,6 +214,14 @@ anoigo-power-initialization-feedback=
     Gatekeepers of riches and secrets can be persuaded if you speak their tongue.
 anoigo-power-metapsionic-feedback = {CAPITALIZE($entity)} possesses the Gatekeeper's tongue.
 
+# TheDen
+# Precognition
+precognition-power-description = You can glimpse into the future.
+precognition-power-initialization-feedback = 
+    For a brief moment, I find myself standing at the shore of a lake, a breeze enveloping me. Looking down into the water, I can see what has yet to be. 
+    As I feel myself fall back into reality, the concept of time starts to lose meaning, as I have seen it for what it truly is.
+precognition-power-metapsionic-feedback = {CAPITALIZE($entity)} sees what was never meant to be seen.
+
 # Entity Specific Feedback Messages
 ifrit-feedback = A spirit of Gehenna, bound by the will of a powerful psychic
 prober-feedback = A mirror into the end of time, the screaming of dead stars emanates from this machine
