@@ -7,3 +7,4 @@ lathe-category-towel = Towels
 lathe-category-assistance-devices = Assistance Devices
 lathe-category-carpet = Carpets
 lathe-category-hygiene-products = Hygiene Products
+lathe-category-colored-uniforms = Uniform Colors
