@@ -20,6 +20,7 @@ using Content.Shared.IdentityManagement;
 using Robust.Server.GameObjects; // starcup
 using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
+using Content.Server.Popups; // den
 
 namespace Content.Server._DV.AACTablet;
 
@@ -28,8 +29,8 @@ public sealed partial class AACTabletSystem : EntitySystem // starcup: made part
     [Dependency] private readonly ChatSystem _chat = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly IPrototypeManager _prototype = default!;
-    [Dependency] private readonly MimePowersSystem _mimePowers = default!;
     [Dependency] private readonly UserInterfaceSystem _userInterface = default!; // starcup
+    [Dependency] private readonly PopupSystem _popupSystem = default!; // den
 
     private readonly List<string> _localisedPhrases = [];
 
@@ -69,8 +70,13 @@ public sealed partial class AACTabletSystem : EntitySystem // starcup: made part
         if (_localisedPhrases.Count <= 0)
             return;
 
-        if (HasComp<MimePowersComponent>(message.Actor))
-            _mimePowers.BreakVow(message.Actor);
+        // begin den: mime needs to break their vow before using
+        if (TryComp<MimePowersComponent>(message.Actor, out var mimePowers) && !mimePowers.VowBroken)
+        {
+            _popupSystem.PopupEntity(Loc.GetString("mime-cant-speak"), message.Actor, message.Actor);
+            return;
+        }
+        // end den
 
         EnsureComp<VoiceOverrideComponent>(ent).NameOverride = speakerName;
 

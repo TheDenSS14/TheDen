@@ -75,7 +75,7 @@
 # SPDX-FileCopyrightText: 2025 Timfa
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 - type: reagent
   id: Cryptobiolin
@@ -569,8 +569,18 @@
       - !type:AdjustTemperature
         conditions:
         - !type:Temperature
+          max: 228.15
+        amount: 20000 # thermal energy, not temperature!
+      - !type:AdjustTemperature
+        conditions:
+        - !type:Temperature
+          max: 258.15
+        amount: 60000 # thermal energy, not temperature!
+      - !type:AdjustTemperature
+        conditions:
+        - !type:Temperature
           max: 288.15
-        amount: 100000 # thermal energy, not temperature!
+        amount: 20000 # thermal energy, not temperature!
       - !type:AdjustTemperature
         conditions:
         - !type:Temperature

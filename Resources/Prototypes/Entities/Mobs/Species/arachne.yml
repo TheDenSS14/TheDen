@@ -14,7 +14,7 @@
 # SPDX-FileCopyrightText: 2025 portfiend
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: entity
   abstract: true
@@ -30,7 +30,7 @@
 - type: entity
   save: false
   name: Urist McArachne
-  parent: [ BaseArachneAppearance, BaseMobHuman ]
+  parent: [BaseArachneAppearance, BaseMobHuman, StorableSpecies] # TheDen
   id: MobArachneBase
   abstract: true
   components:

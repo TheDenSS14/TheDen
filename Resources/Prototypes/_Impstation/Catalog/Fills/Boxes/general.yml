@@ -1,0 +1,13 @@
+# SPDX-FileCopyrightText: 2025 pocl v
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  name: lightbulb box cold
+  parent: BoxLightbulb
+  id: BoxColdLightbulb
+  components:
+  - type: StorageFill
+    contents:
+      - id: ColdLightBulb
+        amount: 12

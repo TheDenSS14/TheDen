@@ -4,7 +4,7 @@
 # SPDX-FileCopyrightText: 2025 Rosycup
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: entity
   parent: ClothingMaskGasExplorer
@@ -97,3 +97,18 @@
     slots:
     - Snout
     hideOnToggle: true
+
+- type: entity
+  parent: ClothingMaskBase
+  id: ClothingMaskKitsune
+  name: kitsune mask
+  description: What does the kitsune say?
+  components:
+  - type: Sprite
+    sprite: _DEN/Clothing/Mask/kitsune_mask.rsi
+  - type: Clothing
+    sprite: _DEN/Clothing/Mask/kitsune_mask.rsi
+  - type: IdentityBlocker
+  - type: HideLayerClothing
+    slots:
+    - Snout

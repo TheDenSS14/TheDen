@@ -25,12 +25,13 @@
 # SPDX-FileCopyrightText: 2024 beck-thompson
 # SPDX-FileCopyrightText: 2024 deltanedas
 # SPDX-FileCopyrightText: 2025 Blitz
+# SPDX-FileCopyrightText: 2025 MajorMoth
 # SPDX-FileCopyrightText: 2025 Rosycup
 # SPDX-FileCopyrightText: 2025 Sir Warock
 # SPDX-FileCopyrightText: 2025 Winter
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: entity
   id: BaseIntegratedMagboot
@@ -136,7 +137,7 @@
     price: 3000
 
 - type: entity
-  parent: [ClothingShoesBootsMagBase, BaseJetpack]
+  parent: [ ClothingShoesBootsMagBase, BaseJetpack, BaseRivalCompanyContraband ]
   id: ClothingShoesBootsMagSyndie
   name: blood-red magboots
   description: Reverse-engineered magnetic boots that have a heavy magnetic pull and integrated thrusters.
@@ -156,8 +157,8 @@
       volume: 0.75
       temperature: 293.15
       moles:
-        - 0.153853429 # oxygen
-        - 0.153853429 # nitrogen
+        Oxygen: 0.153853429
+        Nitrogen: 0.153853429
   - type: ActivatableUI
     key: enum.SharedGasTankUiKey.Key
   - type: UserInterface

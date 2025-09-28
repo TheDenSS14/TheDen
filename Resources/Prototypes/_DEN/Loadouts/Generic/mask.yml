@@ -1,0 +1,13 @@
+# SPDX-FileCopyrightText: 2025 MajorMoth
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: loadout
+  id: LoadoutClothingMaskKitsune
+  category: Mask
+  cost: 0
+  items:
+    - ClothingMaskKitsune
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMasks
