@@ -8,6 +8,7 @@
 - type: latheRecipePack
   parent:
   - AutotailorStaticEnvirohelms
+  - AutotailorStaticEnviroslacksHelms
   id: AutotailorStaticHead
 
 - type: latheRecipePack
@@ -15,6 +16,7 @@
   - AutotailorStaticBasicJumpsuits
   - AutotailorStaticDresses
   - AutotailorStaticEnvirosuits
+  - AutotailorStaticEnviroslacks
   - AutotailorStaticGenericUniforms
   - AutotailorStaticKimonos
   - AutotailorStaticNuclearUniforms
@@ -249,6 +251,8 @@
   - ClothingUniformSwimsuitBlue
   - ClothingUniformDressRed
 
+## Envirosuits
+
 - type: latheRecipePack
   id: AutotailorStaticEnvirosuits
   recipes:
@@ -278,6 +282,19 @@
   - ClothingUniformEnvirosuitColorBrown
 
 - type: latheRecipePack
+  id: AutotailorStaticEnviroslacks
+  recipes:
+  - ClothingUniformEnvirosuitEnviroslacks
+  - ClothingUniformEnvirosuitEnviroslacksNegative
+  - ClothingUniformEnvirosuitEnviroslacksColorRed
+  - ClothingUniformEnvirosuitEnviroslacksColorOrange
+  - ClothingUniformEnvirosuitEnviroslacksColorGreen
+  - ClothingUniformEnvirosuitEnviroslacksColorBlue
+  - ClothingUniformEnvirosuitEnviroslacksColorBrown
+  - ClothingUniformEnvirosuitEnviroslacksMNK
+  - ClothingUniformEnvirosuitEnviroslacksMNKAlt
+
+- type: latheRecipePack
   id: AutotailorStaticEnvirohelms
   recipes:
   - ClothingHeadEnvirohelm
@@ -303,3 +320,13 @@
   - ClothingHeadEnvirohelmColorOrange
   - ClothingHeadEnvirohelmColorLightBrown
   - ClothingHeadEnvirohelmColorBrown
+
+- type: latheRecipePack
+  id: AutotailorStaticEnviroslacksHelms
+  recipes:
+  - ClothingHeadEnvirohelmEnviroslacksColorRed
+  - ClothingHeadEnvirohelmEnviroslacksColorOrange
+  - ClothingHeadEnvirohelmEnviroslacksColorGreen
+  - ClothingHeadEnvirohelmEnviroslacksColorBlue
+  - ClothingHeadEnvirohelmEnviroslacksMNK
+  - ClothingHeadEnvirohelmEnviroslacksMNKAlt
