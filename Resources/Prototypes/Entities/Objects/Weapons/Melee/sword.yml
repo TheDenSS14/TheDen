@@ -18,6 +18,7 @@
 # SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT
 # SPDX-FileCopyrightText: 2024 Debug
 # SPDX-FileCopyrightText: 2024 OldDanceJacket
+# SPDX-FileCopyrightText: 2024 Plykiya
 # SPDX-FileCopyrightText: 2024 Psychpsyo
 # SPDX-FileCopyrightText: 2024 Scribbles0
 # SPDX-FileCopyrightText: 2024 SimpleStation14
@@ -317,7 +318,7 @@
     sprite: Objects/Weapons/Melee/cutlass.rsi
 
 - type: entity
-  name: The Throngler
+  name: Throngler
   parent: BaseSword
   id: Throngler
   description: Why would someone make this?
@@ -345,3 +346,7 @@
     - type: Item
       size: Ginormous
       sprite: Objects/Weapons/Melee/Throngler-in-hand.rsi
+    - type: DisarmMalus
+    - type: Grammar
+      attributes:
+        proper: true

@@ -20,6 +20,7 @@
 # SPDX-FileCopyrightText: 2024 Nemanja
 # SPDX-FileCopyrightText: 2024 OCO_Omega
 # SPDX-FileCopyrightText: 2024 Pieter-Jan Briers
+# SPDX-FileCopyrightText: 2024 Plykiya
 # SPDX-FileCopyrightText: 2024 Remuchi
 # SPDX-FileCopyrightText: 2024 Simon
 # SPDX-FileCopyrightText: 2024 Tayrtahn
@@ -309,6 +310,10 @@
   - type: TwistedConstructionTarget
     replacementProto: ConstructShell
   - type: JetpackUser
+  - type: DamageOnInteractProtection
+    damageProtection:
+      flatReductions:
+        Heat: 10 # capable of touching light bulbs and stoves without feeling pain!
 
 - type: entity
   abstract: true

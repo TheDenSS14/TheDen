@@ -32,6 +32,7 @@
 # SPDX-FileCopyrightText: 2024 ShatteredSwords
 # SPDX-FileCopyrightText: 2024 SimpleStation14
 # SPDX-FileCopyrightText: 2024 themias
+# SPDX-FileCopyrightText: 2025 ASaltySeabass
 # SPDX-FileCopyrightText: 2025 EctoplasmIsGood
 # SPDX-FileCopyrightText: 2025 Fansana
 # SPDX-FileCopyrightText: 2025 Jakumba
@@ -45,7 +46,7 @@
 # SPDX-FileCopyrightText: 2025 Vanessa Louwagie
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 - type: entity
   parent: ClothingEyesBase
@@ -323,7 +324,7 @@
     - CheapSunglasses
 
 - type: entity
-  parent: ClothingEyesGlassesCheapSunglasses
+  parent: ClothingEyesGlassesSunglasses
   id: ClothingEyesGlassesSunglassesAviator
   name: shielded aviators
   description: A pair of designer sunglasses.
@@ -367,7 +368,7 @@
     - CheapSunglasses
 
 - type: entity
-  parent: ClothingEyesGlassesCheapSunglasses
+  parent: ClothingEyesGlassesSunglasses
   id: ClothingEyesGlassesSunglassesBig
   name: big shielded sunglasses
   description: A pair of black sunglasses with big lenses.
@@ -411,7 +412,7 @@
     - CheapSunglasses
 
 - type: entity
-  parent: ClothingEyesGlassesCheapSunglasses
+  parent: ClothingEyesGlassesSunglasses
   id: ClothingEyesGlassesSunglassesVisor
   name: shielded visor sunglasses
   description: A pair of visor sunglasses.
