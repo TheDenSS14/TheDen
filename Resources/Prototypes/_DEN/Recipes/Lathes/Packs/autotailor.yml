@@ -1,13 +1,20 @@
 - type: latheRecipePack
   parent:
   - AutotailorStaticCarpets
+  - AutotailorStaticHead
   - AutotailorStaticUniforms
   id: AutotailorStaticDen
 
 - type: latheRecipePack
   parent:
+  - AutotailorStaticEnvirohelms
+  id: AutotailorStaticHead
+
+- type: latheRecipePack
+  parent:
   - AutotailorStaticBasicJumpsuits
   - AutotailorStaticDresses
+  - AutotailorStaticEnvirosuits
   - AutotailorStaticGenericUniforms
   - AutotailorStaticKimonos
   - AutotailorStaticNuclearUniforms
@@ -241,3 +248,58 @@
   - ClothingUniformJumpskirtYellowTurtleneckDress
   - ClothingUniformSwimsuitBlue
   - ClothingUniformDressRed
+
+- type: latheRecipePack
+  id: AutotailorStaticEnvirosuits
+  recipes:
+  - ClothingUniformEnvirosuit
+  - ClothingUniformEnvirosuitBlackPink
+  - ClothingUniformEnvirosuitBlackPinkAlt
+  - ClothingUniformEnvirosuitMartialGi
+  - ClothingUniformEnvirosuitSafari
+  - ClothingUniformEnvirosuitTrans
+  - ClothingUniformEnvirosuitAncientVoid
+  - ClothingHeadEnvirohelmAncientVoid
+  - ClothingUniformEnvirosuitColorWhite
+  - ClothingUniformEnvirosuitColorGrey
+  - ClothingUniformEnvirosuitColorBlack
+  - ClothingUniformEnvirosuitColorRed
+  - ClothingUniformEnvirosuitColorGreen
+  - ClothingUniformEnvirosuitColorDarkGreen
+  - ClothingUniformEnvirosuitColorBlue
+  - ClothingUniformEnvirosuitColorDarkBlue
+  - ClothingUniformEnvirosuitColorTeal
+  - ClothingUniformEnvirosuitColorMaroon
+  - ClothingUniformEnvirosuitColorPink
+  - ClothingUniformEnvirosuitColorYellow
+  - ClothingUniformEnvirosuitColorPurple
+  - ClothingUniformEnvirosuitColorOrange
+  - ClothingUniformEnvirosuitColorLightBrown
+  - ClothingUniformEnvirosuitColorBrown
+
+- type: latheRecipePack
+  id: AutotailorStaticEnvirohelms
+  recipes:
+  - ClothingHeadEnvirohelm
+  - ClothingHeadEnvirohelmBlackPink
+  - ClothingHeadEnvirohelmBlackPinkAlt
+  - ClothingHeadEnvirohelmMartialGi
+  - ClothingHeadEnvirohelmSafari
+  - ClothingHeadEnvirohelmTrans
+  - ClothingHeadEnvirohelmAncientVoid
+  - ClothingHeadEnvirohelmColorWhite
+  - ClothingHeadEnvirohelmColorGrey
+  - ClothingHeadEnvirohelmColorBlack
+  - ClothingHeadEnvirohelmColorRed
+  - ClothingHeadEnvirohelmColorGreen
+  - ClothingHeadEnvirohelmColorDarkGreen
+  - ClothingHeadEnvirohelmColorBlue
+  - ClothingHeadEnvirohelmColorDarkBlue
+  - ClothingHeadEnvirohelmColorTeal
+  - ClothingHeadEnvirohelmColorMaroon
+  - ClothingHeadEnvirohelmColorPink
+  - ClothingHeadEnvirohelmColorYellow
+  - ClothingHeadEnvirohelmColorPurple
+  - ClothingHeadEnvirohelmColorOrange
+  - ClothingHeadEnvirohelmColorLightBrown
+  - ClothingHeadEnvirohelmColorBrown
