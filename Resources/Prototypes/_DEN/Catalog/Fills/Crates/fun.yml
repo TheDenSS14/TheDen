@@ -1,0 +1,37 @@
+- type: entity
+  id: CrateGlowsticksInfinite
+  parent: CrateGenericSteel
+  suffix: Magic Glowsticks
+  components:
+  - type: StorageFill
+    contents:
+      - id: GlowstickBlueInfinite
+        prob: 0.50
+      - id: GlowstickBlueInfinite
+        prob: 0.20
+      - id: GlowstickBlueInfinite
+        prob: 0.05
+      - id: GlowstickBaseInfinite
+        prob: 0.50
+      - id: GlowstickBaseInfinite
+        prob: 0.20
+      - id: GlowstickBaseInfinite
+        prob: 0.05
+      - id: GlowstickPurpleInfinite
+        prob: 0.50
+      - id: GlowstickPurpleInfinite
+        prob: 0.20
+      - id: GlowstickPurpleInfinite
+        prob: 0.05
+      - id: GlowstickRedInfinite
+        prob: 0.50
+      - id: GlowstickRedInfinite
+        prob: 0.20
+      - id: GlowstickRedInfinite
+        prob: 0.05
+      - id: GlowstickYellowInfinite
+        prob: 0.50
+      - id: GlowstickYellowInfinite
+        prob: 0.20
+      - id: GlowstickYellowInfinite
+        prob: 0.05
