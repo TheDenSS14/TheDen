@@ -8,6 +8,8 @@
   parent:
   - AutotailorStaticBasicJumpsuits
   - AutotailorStaticDresses
+  - AutotailorStaticGenericUniforms
+  - AutotailorStaticKimonos
   - AutotailorStaticSchoolUniforms
   - AutotailorStaticSuits
   id: AutotailorStaticUniforms
@@ -65,6 +67,39 @@
   - ClothingUniformJumpsuitColorMaroon
   - ClothingUniformJumpskirtColorMaroon
   - ClothingUniformColorRainbow
+
+- type: latheRecipePack
+  id: AutotailorStaticGenericUniforms
+  recipes:
+  - ClothingUniformJumpsuitFlannel
+  - ClothingUniformJumpsuitCasualBlue
+  - ClothingUniformJumpskirtCasualBlue
+  - ClothingUniformJumpsuitCasualPurple
+  - ClothingUniformJumpskirtCasualPurple
+  - ClothingUniformJumpsuitCasualRed
+  - ClothingUniformJumpskirtCasualRed
+  - ClothingUniformJumpsuitTshirtJeans
+  - ClothingUniformJumpsuitTshirtJeansGray
+  - ClothingUniformJumpsuitTshirtJeansPeach
+  - ClothingUniformJumpsuitJeansGreen
+  - ClothingUniformJumpsuitJeansRed
+  - ClothingUniformJumpsuitJeansBrown
+  - ClothingUniformJumpsuitLostTourist
+  - ClothingUniformJumpsuitHawaiBlack
+  - ClothingUniformJumpsuitHawaiBlue
+  - ClothingUniformJumpsuitHawaiRed
+  - ClothingUniformJumpsuitHawaiYellow
+
+- type: latheRecipePack
+  id: AutotailorStaticKimonos
+  recipes:
+  - ClothingUniformJumpskirtKimonoColor
+  - ClothingUniformJumpsuitKimono
+  - ClothingKimonoBlue
+  - ClothingKimonoPink
+  - ClothingKimonoPurple
+  - ClothingKimonoSky
+  - ClothingKimonoGreen
 
 - type: latheRecipePack
   id: AutotailorStaticSchoolUniforms
@@ -145,7 +180,6 @@
   - ClothingUniformJumpskirtGreenElegantDress
   - ClothingUniformJumpskirtGreenStripedDress
   - ClothingUniformJumpskirtGreenTurtleneckDress
-  - ClothingUniformJumpskirtKimonoColor
   - ClothingUniformJumpskirtOrangeStripedDress
   - ClothingUniformJumpskirtPencilSkirtGymBra
   - ClothingUniformJumpskirtPencilSkirtGymBra
@@ -163,3 +197,4 @@
   - ClothingUniformJumpskirtYellowOldDress
   - ClothingUniformJumpskirtYellowTurtleneckDress
   - ClothingUniformSwimsuitBlue
+  - ClothingUniformDressRed
