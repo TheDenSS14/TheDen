@@ -103,11 +103,15 @@
 #  id: LoadoutJOBNeck
 #  maxItems: 1
 #  items:
-#
-#- type: characterItemGroup
-#  id: LoadoutJOBMask
-#  maxItems: 1
-#  items:
+
+- type: characterItemGroup
+  id: LoadoutBlueshieldOfficerMask
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutBlueshieldCombatGasMask
+    - type: loadout
+      id: LoadoutBlueshieldTacticalGasMask
 
 - type: characterItemGroup
   id: LoadoutBlueshieldOfficerOuter
