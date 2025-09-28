@@ -20,6 +20,7 @@
 # SPDX-FileCopyrightText: 2025 Shaman
 # SPDX-FileCopyrightText: 2025 Sir Warock
 # SPDX-FileCopyrightText: 2025 Skubman
+# SPDX-FileCopyrightText: 2025 Steven Higginbotham
 # SPDX-FileCopyrightText: 2025 Tabitha
 # SPDX-FileCopyrightText: 2025 TheOneTrueWolfio
 # SPDX-FileCopyrightText: 2025 VMSolidus
@@ -393,7 +394,8 @@
     - !type:CharacterWidthRequirement
       max: 36
   functions:
-    - !type:TraitAddComponent
+    #- !type:TraitAddComponent # TheDen - All player characters have the PseudoItem component now, so we need to use TraitReplaceComponent instead
+    - !type:TraitReplaceComponent
       components:
         - type: PseudoItem
           storedOffset: 0,17
@@ -421,7 +423,8 @@
     - !type:CharacterWidthRequirement
       max: 36
   functions:
-    - !type:TraitAddComponent
+    #- !type:TraitAddComponent # TheDen - All player characters have the PseudoItem component now, so we need to use TraitReplaceComponent instead
+    - !type:TraitReplaceComponent
       components:
         - type: PseudoItem
           storedOffset: 0,17
