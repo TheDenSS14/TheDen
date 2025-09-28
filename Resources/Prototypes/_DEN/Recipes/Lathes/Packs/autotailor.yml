@@ -10,6 +10,7 @@
   - AutotailorStaticDresses
   - AutotailorStaticGenericUniforms
   - AutotailorStaticKimonos
+  - AutotailorStaticNuclearUniforms
   - AutotailorStaticSchoolUniforms
   - AutotailorStaticSuits
   id: AutotailorStaticUniforms
@@ -89,6 +90,50 @@
   - ClothingUniformJumpsuitHawaiBlue
   - ClothingUniformJumpsuitHawaiRed
   - ClothingUniformJumpsuitHawaiYellow
+  - ClothingUniformJumpsuitSuitAmish
+  - ClothingUniformJumpsuitSuitAristocratic
+  - ClothingUniformJumpsuitSuitAristocraticTuxedo
+  - ClothingUniformJumpsuitAscetic
+  - ClothingUniformJumpsuitBarber
+  - ClothingUniformJumpsuitSuitBlueBlazer
+  - ClothingUniformJumpsuitDisheveled
+  - ClothingUniformJumpsuitSuitRegal
+  - ClothingUniformJumpsuitSuitRegalTuxedo
+  - ClothingUniformJumpsuitRippedPunk
+  - ClothingUniformJumpsuitSailor
+  - ClothingUniformJumpsuitSuitStriped
+  - ClothingUniformJumpsuitTrackpants
+  - ClothingUniformJumpsuitTurtleneckGrey
+  - ClothingUniformJumpsuitSuitVictorianRedBlack
+  - ClothingUniformJumpsuitSuitVictorianRedVest
+  - ClothingUniformJumpsuitSuitVictorianVest
+  - ClothingUniformJumpsuitWaiter
+  - ClothingUniformJumpskirtWaitress
+  - ClothingUniformJumpsuitYogaGymBra
+  - ClothingUniformJumpsuitBlackTurtleneck
+  - ClothingUniformJumpsuitBlackTurtleneckFlipped
+  # These might be from N14, but it's hard to tell due to bad namespacing.
+  - ClothingUniformJumpsuitCheckered
+  - ClothingUniformJumpsuitCowboyBrown
+  - ClothingUniformJumpsuitCowboyGrey
+  - ClothingUniformJumpsuitOliveSweater
+  - ClothingUniformJumpsuitLightBlueShirt
+  - ClothingUniformJumpsuitFlannelJeans
+  - ClothingUniformJumpsuitFlannelBlackJeans
+  - ClothingUniformJumpsuitFlannelKhakis
+  - ClothingUniformJumpsuitFlannelBlackKhakis
+  # End possibly N14 list items.
+
+- type: latheRecipePack
+  id: AutotailorStaticNuclearUniforms
+  recipes:
+  - ClothingUniformJumpsuitSuitRolledSleeves
+  - ClothingUniformJumpsuitBartenderGrey
+  - ClothingUniformJumpsuitFlannelOveralls
+  - ClothingUniformJumpsuitCamouflageShirt
+  - ClothingUniformJumpsuitDesertUniform
+  - ClothingUniformJumpsuitLumberjack
+  - ClothingUniformJumpsuitGreyShirt
 
 - type: latheRecipePack
   id: AutotailorStaticKimonos
@@ -192,7 +237,6 @@
   - ClothingUniformJumpskirtRedTurtleneckDress
   - ClothingUniformJumpskirtSailor
   - ClothingUniformJumpskirtSuitBlueBlazer
-  - ClothingUniformJumpskirtWaitress
   - ClothingUniformJumpskirtYellowOldDress
   - ClothingUniformJumpskirtYellowTurtleneckDress
   - ClothingUniformSwimsuitBlue
