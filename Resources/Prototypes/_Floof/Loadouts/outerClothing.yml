@@ -31,6 +31,7 @@
 - type: loadout # Science is for everyone, not just science
   id: LoadoutOuterCoatLab
   category: Outer
+  customColorTint: true
   cost: 1
   items:
     - ClothingOuterCoatLab
@@ -66,6 +67,7 @@
   id: LoadoutClothingOuterMarsHoodie
   category: Outer
   cost: 0
+  customColorTint: true
   items:
     - ClothingOuterMarsHoodie
   requirements:
