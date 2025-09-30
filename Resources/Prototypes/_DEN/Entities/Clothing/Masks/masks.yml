@@ -112,3 +112,25 @@
   - type: HideLayerClothing
     slots:
     - Snout
+
+- type: entity
+  parent: ClothingMaskGasSecurityCombat
+  id: ClothingMaskGasBSOCombat
+  name: blueshield combat gas mask
+  description: A slightly outdated, but reliable military-style gas mask, painted in the blueshield's colors.
+  components:
+  - type: Sprite
+    sprite: _DEN/Clothing/Mask/bsocombatgasmask.rsi
+  - type: Clothing
+    sprite: _DEN/Clothing/Mask/bsocombatgasmask.rsi
+
+- type: entity
+  parent: [ BaseBlueshieldOfficerContraband, ClothingMaskGasERT ] #Provides less armor than the combat gas mask, but provides welding protection. Good for when your VIP is an IPC.
+  id: ClothingMaskGasBSOERT
+  name: blueshield tactical gas mask
+  description: A high tech gas mask issued to elite members of the Nanotrasen security forces.
+  components:
+  - type: Sprite
+    sprite: _DEN/Clothing/Mask/bsoert.rsi
+  - type: Clothing
+    sprite: _DEN/Clothing/Mask/bsoert.rsi

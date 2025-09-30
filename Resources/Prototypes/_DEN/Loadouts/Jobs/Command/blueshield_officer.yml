@@ -73,3 +73,32 @@
         - BlueshieldOfficer
   items:
     - ClothingEyesGlassesBSOVisor
+
+#mask
+- type: loadout
+  id: LoadoutBlueshieldCombatGasMask
+  category: JobsCommandBlueshieldOfficer
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBlueshieldOfficerMask
+    - !type:CharacterJobRequirement
+      jobs:
+        - BlueshieldOfficer
+  items:
+    - ClothingMaskGasBSOCombat
+  
+- type: loadout
+  id: LoadoutBlueshieldTacticalGasMask
+  category: JobsCommandBlueshieldOfficer
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBlueshieldOfficerMask
+    - !type:CharacterJobRequirement
+      jobs:
+        - BlueshieldOfficer
+  items:
+    - ClothingMaskGasBSOERT

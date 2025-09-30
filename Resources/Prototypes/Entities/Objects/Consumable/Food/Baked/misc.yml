@@ -33,7 +33,7 @@
 # SPDX-FileCopyrightText: 2025 portfiend
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 # When adding new food also add to the appropriate random spawner located in Resources\Prototypes\Entities\Markers\Spawners\Random\Food_Drinks\
 # Base
@@ -55,9 +55,6 @@
           Quantity: 5
   - type: Item
     size: Tiny
-  - type: Tag
-    tags:
-    - VoxFood
 
 # Muffins
 

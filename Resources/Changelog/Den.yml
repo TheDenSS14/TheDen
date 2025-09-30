@@ -12598,3 +12598,66 @@ Entries:
   id: 1234
   time: '2025-09-28T16:38:09.0000000+00:00'
   url: https://github.com/TheDenSS14/TheDen/pull/1809
+- author: ASaltySeabass
+  changes:
+    - type: Add
+      message: Added two new gas masks for the Blueshield Officer
+  id: 1235
+  time: '2025-09-28T20:02:27.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1814
+- author: Deathninja5551
+  changes:
+    - type: Tweak
+      message: Vox can now eat everything humans can, PLUS trash.
+  id: 1236
+  time: '2025-09-28T22:12:59.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1818
+- author: portfiend
+  changes:
+    - type: Tweak
+      message: >-
+        Butlertron gives increased rewards across the board, with more variance
+        - expect double rewards on average compared to before. Higher-tier
+        recipes reward noticeably more spesos than lower tiers. Check the PR for
+        the exact numbers.
+    - type: Fix
+      message: >-
+        Butlertron will no longer ask for dried rainbow cannabis leaves. Say no
+        to drugs.
+  id: 1237
+  time: '2025-09-30T06:44:37.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1783
+- author: portfiend
+  changes:
+    - type: Add
+      message: >-
+        Various pill canisters can now be selected in Loadouts. These include
+        painkillers (agonolexyne, soretizone, stubantazine), anxiety meds
+        (equilibrazine, tranquinase, calmafluxine, psicodine), antidepressants
+        (blissifylovene, neurozenium, serenitol), ethyloxyephedrine (narcolepsy
+        stimulant), iron, and copper.
+    - type: Add
+      message: >-
+        A lot of the aforementioned (psychological) medications now have
+        moodlets to indicate their effects, rather than telling you when they
+        fade. Remember - you can click the "mood" face icon on your HUD to view
+        all your active moodlets.
+    - type: Tweak
+      message: >-
+        A handful of medical-themed loadout items (accessibility tools,
+        medication, and first aid namely) have been moved to a new Medical
+        loadout category under Items.
+    - type: Tweak
+      message: >-
+        Estradiol and testosterone in Loadouts now use the same description as
+        their respective reagents.
+  id: 1238
+  time: '2025-09-30T07:13:36.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1808
+- author: SubspaceEmber
+  changes:
+    - type: Fix
+      message: 'pAIs now inherit the name of the plushie they''re put inside. '
+  id: 1239
+  time: '2025-09-30T21:39:38.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1823

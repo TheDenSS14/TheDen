@@ -53,7 +53,7 @@
 // SPDX-FileCopyrightText: 2025 ash lea
 // SPDX-FileCopyrightText: 2025 sleepyyapril
 //
-// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+// SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 using System.Globalization;
 using System.Linq;
@@ -731,7 +731,21 @@ public sealed partial class ChatSystem : SharedChatSystem
 
         if (separateNameAndMessage)
             locString = "chat-manager-entity-me-no-separate-wrap-message";
-
+        
+        // DEN: conditional was missing, added so PAis inherit names from the plushies they're put in
+        if (nameOverride != null)
+        {
+            name = nameOverride;
+        }
+        else
+        {
+            var nameEv = new TransformSpeakerNameEvent(source, Name(source));
+            RaiseLocalEvent(source, nameEv);
+            name = nameEv.VoiceName;
+        }
+        name = FormattedMessage.EscapeText(name);
+        // End DEN changes
+        
         // Emotes use Identity.Name, since it doesn't actually involve your voice at all.
         var wrappedMessage = Loc.GetString(locString,
             ("entityName", name),
@@ -786,6 +800,20 @@ public sealed partial class ChatSystem : SharedChatSystem
         if (separateNameAndMessage)
             locString = "chat-manager-entity-subtle-no-separate-wrap-message";
 
+        // DEN: conditional was missing, added so PAis inherit names from the plushies they're put in
+        if (nameOverride != null)
+        {
+            name = nameOverride;
+        }
+        else
+        {
+            var nameEv = new TransformSpeakerNameEvent(source, Name(source));
+            RaiseLocalEvent(source, nameEv);
+            name = nameEv.VoiceName;
+        }
+        name = FormattedMessage.EscapeText(name);
+        // End DEN changes
+        
         // Emotes use Identity.Name, since it doesn't actually involve your voice at all.
         var wrappedMessage = Loc.GetString(locString,
             ("entityName", name),
