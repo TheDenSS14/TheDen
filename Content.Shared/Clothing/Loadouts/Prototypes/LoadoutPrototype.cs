@@ -2,6 +2,7 @@
 // SPDX-FileCopyrightText: 2024 VMSolidus
 // SPDX-FileCopyrightText: 2025 Falcon
 // SPDX-FileCopyrightText: 2025 Raikyr0
+// SPDX-FileCopyrightText: 2025 portfiend
 // SPDX-FileCopyrightText: 2025 sleepyyapril
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
@@ -63,6 +64,14 @@ public sealed partial class LoadoutPrototype : IPrototype
 
     [DataField(serverOnly: true)]
     public LoadoutFunction[] Functions { get; private set; } = Array.Empty<LoadoutFunction>();
+
+    // DEN - Add name and description fields.
+    [DataField]
+    public LocId? Name = null;
+
+    [DataField]
+    public LocId? Description = null;
+    // End DEN
 }
 
 /// This serves as a hook for loadout functions to modify one or more entities upon spawning in.

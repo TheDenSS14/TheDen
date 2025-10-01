@@ -7,6 +7,7 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 using Robust.Shared.Prototypes;
+using System.Numerics;
 
 namespace Content.Server.Roboisseur.Roboisseur
 {
@@ -108,5 +109,22 @@ namespace Content.Server.Roboisseur.Roboisseur
 
         [DataField("blacklistedProtos")]
         public IReadOnlyList<String> BlacklistedProtos = new List<string>();
+
+        // DEN: Make butlertron rewards YMLable
+
+        /// <summary>
+        /// How many spesos the chef earns per tier. So, if you submit a T2 recipe, you get 2x this value.
+        /// </summary>
+        [DataField]
+        public int RewardPerTier = 500;
+
+        /// <summary>
+        /// When the chef submits a recipe, a random value between these two numbers is selected and added
+        /// to the base reward amount.
+        /// </summary>
+        [DataField]
+        public Vector2 RandomRewardRange = new(1250, 1500);
+
+        // End DEN
     }
 }
