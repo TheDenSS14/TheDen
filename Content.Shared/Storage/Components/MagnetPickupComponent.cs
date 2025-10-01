@@ -9,12 +9,13 @@
 using Content.Shared.Inventory;
 using Robust.Shared.GameStates; // Frontier
 
-namespace Content.Server.Storage.Components;
+namespace Content.Shared.Storage.Components;
 
 /// <summary>
 /// Applies an ongoing pickup area around the attached entity.
 /// </summary>
-[RegisterComponent, AutoGenerateComponentPause, AutoGenerateComponentState]
+[RegisterComponent, AutoGenerateComponentPause]
+[NetworkedComponent, AutoGenerateComponentState] // Frontier
 public sealed partial class MagnetPickupComponent : Component
 {
     [ViewVariables(VVAccess.ReadWrite), DataField("nextScan")]

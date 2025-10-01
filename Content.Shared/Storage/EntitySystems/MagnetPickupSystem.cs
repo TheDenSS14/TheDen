@@ -10,7 +10,6 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
-using Content.Server.Storage.Components;
 using Content.Shared.Storage.Components; // Frontier: Server<Shared
 using Content.Shared.Examine;
 using Content.Shared.Hands.Components;
