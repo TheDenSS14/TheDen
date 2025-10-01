@@ -27,7 +27,7 @@
   name: trash bag
   id: TrashBag
   parent: BaseStorageItem
-  description: A plastic garbage bag. Stores another man's treasure. 
+  description: A plastic garbage bag. Stores another man's treasure.
   components:
   - type: Sprite
     sprite: Objects/Specific/Janitorial/trashbag.rsi
@@ -63,15 +63,16 @@
     sprite: Objects/Specific/Janitorial/trashbag.rsi
   - type: Item
     size: Normal
-  - type: MagnetPickup 
+  - type: MagnetPickup
+    magnetEnabled: false # DEN - Disable by default
     range: 1
 
 - type: entity
-  name: trash bag 
+  name: trash bag
   id: TrashBagBlue
   parent: TrashBag
   suffix: Blue # TheDen
-  description: A mundane, blue garbage bag. Stores one or more men's trash. 
+  description: A mundane, blue garbage bag. Stores one or more men's trash.
   components:
   - type: Sprite
     sprite: Objects/Specific/Janitorial/bluetrashbag.rsi
@@ -89,14 +90,14 @@
   name: spell of all-consuming cleanliness
   id: BagOfSummoningGarbage
   parent: TrashBagBlue
-  description: A mystical blue sack that swallows waste whole. Looks smaller on the outside. 
+  description: A mystical blue sack that swallows waste whole. Looks smaller on the outside.
   components:
   - type: Storage
-    maxItemSize: Normal 
+    maxItemSize: Normal
     grid:
     - 0,0,19,9
     quickInsert: true
     areaInsert: true
     areaInsertRadius: 5
-  - type: MagnetPickup 
+  - type: MagnetPickup
     range: 3
