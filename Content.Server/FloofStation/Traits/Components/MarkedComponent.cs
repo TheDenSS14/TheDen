@@ -3,6 +3,7 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using Content.Server.Objectives.Components;
+using Content.Shared.Objectives.Components;
 
 namespace Content.Server._Floof.Traits.Components;
 
@@ -13,6 +14,6 @@ namespace Content.Server._Floof.Traits.Components;
 [RegisterComponent]
 public sealed partial class MarkedComponent : Component
 {
-    [DataField, ViewVariables]
+    [DataField, ViewVariables(VVAccess.ReadWrite)]
     public ObjectiveTypes TargetType;
 }
