@@ -43,6 +43,10 @@
     charges: 10
   - !type:ModifyEnvirohelmSpecial
     powerCell: PowerCellMedium
+  - !type:AddComponentSpecial # DEN - Make CCOs untargetable by traitor objectives.
+    components:
+    - type: Marked
+      targetType: TraitorNonTargetable
 
 - type: startingGear
   id: CentcomGear
