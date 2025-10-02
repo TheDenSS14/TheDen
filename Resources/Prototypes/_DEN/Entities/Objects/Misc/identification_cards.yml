@@ -45,3 +45,122 @@
     tags:
     - CentralCommand
     - NanotrasenRepresentative
+
+## Event ID cards
+
+- type: entity
+  parent: IDCardStandard
+  id: EventWorkerIDCard
+  name: event worker ID card
+  components:
+  - type: Sprite
+    layers:
+    - state: event
+    - state: department
+      color: "#878787"
+    - state: subdepartment
+      color: "#878787"
+    - state: assistant
+  - type: Access
+    tags:
+    - EventWorker
+
+- type: entity
+  parent: IDCardStandard
+  id: EventCommandIDCard
+  name: event command ID card
+  components:
+  - type: Sprite
+    layers:
+    - state: event
+    - state: departmenthead
+      color: "#1B67A5"
+    - state: subdepartment
+      color: "#1B67A5"
+    - state: captain
+  - type: Access
+    groups:
+    - Event
+
+- type: entity
+  parent: IDCardStandard
+  id: EventMedicalIDCard
+  name: event medical ID card
+  components:
+  - type: Sprite
+    layers:
+    - state: event
+    - state: department
+      color: "#5B97BC"
+    - state: subdepartment
+      color: "#5B97BC"
+    - state: medicaldoctor
+  - type: Access
+    tags:
+    - EventWorker
+    - EventMedical
+
+- type: entity
+  parent: IDCardStandard
+  id: EventSecurityIDCard
+  name: event security ID card
+  components:
+  - type: Sprite
+    layers:
+    - state: event
+    - state: department
+      color: "#CB0000"
+    - state: subdepartment
+      color: "#CB0000"
+    - state: securityofficer
+  - type: Access
+    tags:
+    - EventWorker
+    - EventSecurity
+
+- type: entity
+  parent: IDCardStandard
+  id: EventServiceIDCard
+  name: event service ID card
+  components:
+  - type: Sprite
+    layers:
+    - state: event
+    - state: department
+      color: "#58C800"
+    - state: subdepartment
+      color: "#58C800"
+    - state: assistant
+  - type: Access
+    tags:
+    - EventWorker
+    - EventService
+
+- type: entity
+  parent: IDCardStandard
+  id: EventVIPIDCard
+  name: event vip ID card
+  suffix: Non-Worker
+  components:
+  - type: Sprite
+    layers:
+    - state: event
+    - state: department
+      color: "#878787"
+    - state: subdepartment
+      color: "#1B67A5"
+    - state: vip
+  - type: Access
+    tags:
+    - EventVIP
+
+- type: entity
+  parent: EventVIPIDCard
+  id: EventVIPEmployeeIDCard
+  name: event vip ID card
+  suffix: Worker
+  components:
+  - type: Access
+    tags:
+    - EventWorker
+    - EventVIP
