@@ -1,4 +1,5 @@
 # SPDX-FileCopyrightText: 2025 Eightballll
+# SPDX-FileCopyrightText: 2025 LilNutters
 # SPDX-FileCopyrightText: 2025 MajorMoth
 # SPDX-FileCopyrightText: 2025 Shaman
 #
@@ -48,3 +49,17 @@
   customColorTint: true
   items:
     - ClothingMaskBreathFashion
+
+- type: loadout
+  id: BoxReamClassic
+  category: GeneralItems
+  cost: 1
+  items:
+  - BoxReamClassic
+
+- type: loadout
+  id: BoxReamBright
+  category: GeneralItems
+  cost: 1
+  items:
+  - BoxReamBright

@@ -5,6 +5,7 @@
 # SPDX-FileCopyrightText: 2025 EctoplasmIsGood
 # SPDX-FileCopyrightText: 2025 Possum
 # SPDX-FileCopyrightText: 2025 Possumongus
+# SPDX-FileCopyrightText: 2025 Rosycup
 # SPDX-FileCopyrightText: 2025 Tanix
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
@@ -48,7 +49,7 @@
       group: LoadoutAirTank
   items:
     - DoubleEmergencyWaterVaporTankFilled
-    
+
 # Feroxi Extra Water
 - type: loadout
   id: LoadoutSpeciesExtraWater
@@ -60,7 +61,7 @@
         - Feroxi
   items:
     - DrinkWaterBottleFull
-    
+
 - type: loadout
   id: LoadoutSpeciesWaterjug
   category: Species
@@ -85,5 +86,15 @@
         - Vox
         - Feroxi
         - SlimePerson
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutOuter
+
+# Vox Full Tank
+- type: loadout
+  id: LoadoutSpeciesNitrogenTank
+  category: Species
+  cost: 0
+  items:
+    - NitrogenTankFilled
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      species:
+        - Vox

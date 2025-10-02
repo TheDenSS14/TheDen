@@ -24,6 +24,7 @@
 # SPDX-FileCopyrightText: 2024 gluesniffler
 # SPDX-FileCopyrightText: 2024 lzk
 # SPDX-FileCopyrightText: 2025 Jakumba
+# SPDX-FileCopyrightText: 2025 MajorMoth
 # SPDX-FileCopyrightText: 2025 Solaris
 # SPDX-FileCopyrightText: 2025 Timfa
 # SPDX-FileCopyrightText: 2025 dootythefrooty
@@ -255,7 +256,7 @@
 
 - type: entity
   id: BaseBorgModuleSyndicate
-  parent: BaseBorgModule
+  parent: [ BaseBorgModule, BaseRivalCompanyContraband ]
   abstract: true
   components:
   - type: Tag
@@ -279,11 +280,11 @@
       - state: base-part-inhand-right
       - state: base-stripes-inhand-right
         color: "#7B0F12"
-      
+
 
 - type: entity
   id: BaseBorgModuleSyndicateAssault
-  parent: BaseBorgModule
+  parent: [ BaseBorgModule, BaseRivalCompanyContraband ]
   abstract: true
   components:
   - type: Tag
@@ -804,7 +805,7 @@
 #syndicate modules
 - type: entity
   id: BorgModuleSyndicateWeapon
-  parent: [ BaseBorgModule, BaseProviderBorgModule ]
+  parent: [ BaseBorgModule, BaseProviderBorgModule, BaseRivalCompanyContraband ]
   name: weapon cyborg module
   components:
   - type: Sprite

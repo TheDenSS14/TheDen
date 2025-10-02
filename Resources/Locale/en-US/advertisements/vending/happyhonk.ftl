@@ -1,7 +1,8 @@
-# SPDX-FileCopyrightText: 2023 brainfood1183 <113240905+brainfood1183@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 Tayrtahn <tayrtahn@gmail.com>
-# SPDX-FileCopyrightText: 2024 Ubaser <134914314+UbaserB@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 brainfood1183
+# SPDX-FileCopyrightText: 2024 Tayrtahn
+# SPDX-FileCopyrightText: 2024 Ubaser
+# SPDX-FileCopyrightText: 2025 AvianMaiden
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: MIT
 
@@ -10,7 +11,8 @@ advertisement-happyhonk-2 = Clowns deserve a hug, if you see one be sure to show
 advertisement-happyhonk-3 = If you find the Golden Honker then pray to the gods, you are one lucky person.
 advertisement-happyhonk-4 = Happy Honk: it's a meal, it's a deal, it's got a plastic toy that will make you squeal.
 advertisement-happyhonk-5 = What's black and white and red all over? The mime and she died from blunt head trauma.
-advertisement-happyhonk-6 = How many security officers does it take to arrest you? Three, one to beat you to death, one to cuff you and one to dump your body in maintenance.
+# imp edit entry 6
+advertisement-happyhonk-6 = Happy Honk Meals are sure to make you honk!
 advertisement-happyhonk-7 = Happy Honk is not responsible for the quality of the food placed within our Happy Honk meal boxes.
 advertisement-happyhonk-8 = Why not ask for our limited edition Mime Happy Honk Meal?
 advertisement-happyhonk-9 = Happy Honk is a trademark of Honk! co. and is far superior to Robust Nukie Food corp.

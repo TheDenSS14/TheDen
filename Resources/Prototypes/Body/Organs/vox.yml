@@ -8,7 +8,7 @@
 # SPDX-FileCopyrightText: 2025 Tanix
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: entity
   id: OrganVoxLungs
@@ -34,14 +34,7 @@
     specialDigestible:
       tags:
       - Trash
-      - Fruit
-      - ReptilianFood
-      - Meat
-      - Pill
-      - Crayon
-      - Paper
-      - VoxFood
-      - Vegetable
+    isSpecialDigestibleExclusive: false
 
 - type: entity
   parent: OrganHumanLiver

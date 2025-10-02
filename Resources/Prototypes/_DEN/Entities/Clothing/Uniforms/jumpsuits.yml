@@ -1,13 +1,12 @@
-# SPDX-FileCopyrightText: 2024 SleepyScarecrow <sharedjunkemail69@gmail.com>
-# SPDX-FileCopyrightText: 2025 Alice <alicecoupland45@gmail.com>
-# SPDX-FileCopyrightText: 2025 Blitz <73762869+BlitzTheSquishy@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 MajorMoth <61519600+MajorMoth@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 Rosycup <178287475+Rosycup@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 Skubman <ba.fallaria@gmail.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <flyingkarii@gmail.com>
+# SPDX-FileCopyrightText: 2024 SleepyScarecrow
+# SPDX-FileCopyrightText: 2025 Alice
+# SPDX-FileCopyrightText: 2025 Blitz
+# SPDX-FileCopyrightText: 2025 MajorMoth
+# SPDX-FileCopyrightText: 2025 Rosycup
+# SPDX-FileCopyrightText: 2025 Skubman
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: entity
   parent: ClothingUniformBase
@@ -139,3 +138,14 @@
     sprite: _DEN/Clothing/Uniforms/Jumpsuit/whiteturtleneck.rsi
   - type: Clothing
     sprite: _DEN/Clothing/Uniforms/Jumpsuit/whiteturtleneck.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformAdminAssistantTurtleneck
+  name: administrative assistant turtleneck
+  description: A turtlenck and slacks worn by the Administrative Assistant. Smells of burnt coffee.
+  components:
+  - type: Sprite
+    sprite: _DEN/Clothing/Uniforms/Jumpsuit/aaturtleneck.rsi
+  - type: Clothing
+    sprite: _DEN/Clothing/Uniforms/Jumpsuit/aaturtleneck.rsi

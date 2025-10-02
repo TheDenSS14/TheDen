@@ -1,3 +1,4 @@
+# SPDX-FileCopyrightText: 2025 Jakumba
 # SPDX-FileCopyrightText: 2025 pocl v
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
@@ -16,9 +17,13 @@
     energy: 1
     softness: 0.9
     color: "#9E00FF"
-    damage: # we don't have wizden's generic DamageOnInteract system
+  # DEN
+  - type: DamageOnInteract
+    damage:
       types:
-        Heat: 1
+        Heat: 2
+    popupText: powered-light-component-burn-hand
+  # DEN
 
 - type: entity
   id: AlwaysPoweredLightUV
@@ -46,6 +51,10 @@
     color: "#b1d4ed"
   - type: PoweredLight
     hasLampOnSpawn: ColdLightBulb
-    damage: # we don't have wizden's generic DamageOnInteract system
+  # DEN
+  - type: DamageOnInteract
+    damage:
       types:
-        Cold: 2 # its funny
+        Cold: 2
+    popupText: powered-light-component-burn-hand
+  # DEN

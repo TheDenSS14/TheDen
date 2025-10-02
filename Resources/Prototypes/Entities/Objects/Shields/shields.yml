@@ -23,11 +23,12 @@
 # SPDX-FileCopyrightText: 2025 Eightballll
 # SPDX-FileCopyrightText: 2025 Jakumba
 # SPDX-FileCopyrightText: 2025 KekaniCreates
+# SPDX-FileCopyrightText: 2025 MajorMoth
 # SPDX-FileCopyrightText: 2025 Rosycup
 # SPDX-FileCopyrightText: 2025 Winter
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: entity
   name: base shield
@@ -95,7 +96,7 @@
 
 - type: entity
   name: riot shield
-  parent: BaseShield
+  parent: [ BaseSecurityContraband, BaseShield ]
   id: RiotShield
   description: A large tower shield. Good for controlling crowds.
   components:
@@ -104,7 +105,7 @@
 
 - type: entity
   name: riot laser shield
-  parent: BaseShield
+  parent: [ BaseSecurityContraband, BaseShield ]
   id: RiotLaserShield
   description: A riot shield built for withstanding lasers, but not much else.
   components:
@@ -124,7 +125,7 @@
 
 - type: entity
   name: riot bullet shield
-  parent: BaseShield
+  parent: [ BaseSecurityContraband, BaseShield ]
   id: RiotBulletShield
   description: A ballistic riot shield built for withstanding bullets, but not much else.
   components:
@@ -475,7 +476,7 @@
 
 - type: entity
   name: energy shield
-  parent: BaseEnergyShield
+  parent: [ BaseRivalCompanyContraband, BaseEnergyShield ]
   id: EnergyShield
   components:
   - type: Destructible

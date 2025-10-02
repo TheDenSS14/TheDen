@@ -8,12 +8,12 @@
 # SPDX-FileCopyrightText: 2025 Skubman
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: entity
   parent: ClothingBeltStorageBase
   id: ClothingBeltMantis
-  name: mantis' belt
+  name: mantis belt
   description: Perfect for storing all of your equipment.
   components:
   - type: Sprite
@@ -110,7 +110,7 @@
     - BeltSlotNotBelt
 
 - type: entity
-  parent: ClothingBeltStorageBase
+  parent: [ BaseGrandTheftContraband, ClothingBeltStorageBase ]
   id: ClothingBeltMilitaryWebbingCMO
   name: chief medical officer's chest rig
   description: A medical chest rig with deep pockets, for use by paramedics and health professionals.

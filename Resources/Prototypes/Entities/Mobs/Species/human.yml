@@ -73,7 +73,7 @@
 
 # Anything human specific (e.g. UI, input) goes under MobHuman
 - type: entity
-  parent: BaseMobSpeciesOrganic
+  parent: [BaseMobSpeciesOrganic, StorableSpecies] # TheDen
   id: BaseMobHuman
   name: Urist McHands
   abstract: true

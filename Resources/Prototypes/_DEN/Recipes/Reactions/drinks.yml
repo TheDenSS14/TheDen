@@ -1,5 +1,6 @@
 # SPDX-FileCopyrightText: 2025 Eightballll
 # SPDX-FileCopyrightText: 2025 SleepyScarecrow
+# SPDX-FileCopyrightText: 2025 portfiend
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -460,3 +461,16 @@
       amount: 2
   products: 
     PlasmaFlood: 6
+
+# Choccy milk.............................
+- type: reaction
+  id: ChocolateMilk
+  requiredMixerCategories:
+  - Stir
+  reactants:
+    Milk:
+      amount: 2
+    CocoaPowder:
+      amount: 1
+  products:
+    MilkChoco: 3
