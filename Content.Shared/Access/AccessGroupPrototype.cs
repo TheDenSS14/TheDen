@@ -12,6 +12,7 @@
 
 using Content.Shared.Access.Components;
 using Robust.Shared.Prototypes;
+using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype.Array;
 
 namespace Content.Shared.Access;
 
@@ -20,7 +21,7 @@ namespace Content.Shared.Access;
 ///     Used by <see cref="AccessComponent"/> to avoid boilerplate.
 /// </summary>
 [Prototype("accessGroup")]
-public sealed partial class AccessGroupPrototype : IPrototype
+public sealed partial class AccessGroupPrototype : IPrototype, IInheritingPrototype // DEN: I'm making this shit inheriting!!
 {
     [IdDataField]
     public string ID { get; private set; } = default!;
@@ -35,7 +36,17 @@ public sealed partial class AccessGroupPrototype : IPrototype
     /// The access levels associated with this group
     /// </summary>
     [DataField(required: true)]
+    [AlwaysPushInheritance] // DEN - Allow partial inheritance of tags
     public HashSet<ProtoId<AccessLevelPrototype>> Tags = default!;
+
+    // DEN start: I'm making this shit inheriting!!
+    [ParentDataField(typeof(AbstractPrototypeIdArraySerializer<AccessGroupPrototype>))]
+    public string[]? Parents { get; }
+
+    [NeverPushInheritance]
+    [AbstractDataField]
+    public bool Abstract { get; }
+    // End DEN
 
     public string GetAccessGroupName()
     {

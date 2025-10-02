@@ -81,6 +81,12 @@
       - Prosecutor  #Delta V: Add Prosecutor Access
       - Justice  #Delta V: Add Justice Access
       - Clerk  #Delta V: Add Clerk Access
+      - EventWorker
+      - EventCommand
+      - EventMedical
+      - EventSecurity
+      - EventService
+      - EventVIP
       privilegedIdSlot:
         name: id-card-console-privileged-id
         ejectSound: /Audio/Machines/id_swipe.ogg
@@ -193,6 +199,13 @@
     - NanotrasenRepresentative
     # Nyanotrasen
     - Mail
+    # Den
+    - EventWorker
+    - EventCommand
+    - EventMedical
+    - EventSecurity
+    - EventService
+    - EventVIP
     privilegedIdSlot:
       name: id-card-console-privileged-id
       ejectSound: /Audio/Machines/id_swipe.ogg
