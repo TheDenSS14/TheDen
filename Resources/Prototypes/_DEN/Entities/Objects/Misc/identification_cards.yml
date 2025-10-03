@@ -64,6 +64,8 @@
   - type: Access
     tags:
     - EventWorker
+  - type: IdCard
+    jobTitle: job-title-event-worker
 
 - type: entity
   parent: IDCardStandard
@@ -81,6 +83,8 @@
   - type: Access
     groups:
     - Event
+  - type: IdCard
+    jobTitle: job-title-event-command
 
 - type: entity
   parent: IDCardStandard
@@ -99,6 +103,8 @@
     tags:
     - EventWorker
     - EventMedical
+  - type: IdCard
+    jobTitle: job-title-event-medical
 
 - type: entity
   parent: IDCardStandard
@@ -117,6 +123,8 @@
     tags:
     - EventWorker
     - EventSecurity
+  - type: IdCard
+    jobTitle: job-title-event-security
 
 - type: entity
   parent: IDCardStandard
@@ -135,6 +143,8 @@
     tags:
     - EventWorker
     - EventService
+  - type: IdCard
+    jobTitle: job-title-event-service
 
 - type: entity
   parent: IDCardStandard
@@ -153,6 +163,8 @@
   - type: Access
     tags:
     - EventVIP
+  - type: IdCard
+    jobTitle: job-title-event-vip
 
 - type: entity
   parent: EventVIPIDCard
