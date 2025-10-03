@@ -55,3 +55,5 @@ loadout-name-LoadoutUniformJumpsuitLoungewear = loungewear (colorable)
 loadout-name-LoadoutUniformJumpsuitBlackTurtleneckFlipped = black turtleneck, rolled sleeves
 loadout-name-LoadoutUniformEnvirosuitBlackPinkAlt = black pink envirosuit, alternative
 loadout-name-LoadoutUniformEnvirosuitEnviroslacksMNKAlt = MNK enviroslacks, alternative
+loadout-name-LoadoutMilitaryBratJumpsuit = military brat's cargo pants
+loadout-name-LoadoutMilitaryBratJumpsuitAlt = military brat's cargo pants
