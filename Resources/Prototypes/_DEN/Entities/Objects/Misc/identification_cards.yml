@@ -130,7 +130,7 @@
       color: "#58C800"
     - state: subdepartment
       color: "#58C800"
-    - state: assistant
+    - state: cook
   - type: Access
     tags:
     - EventWorker
@@ -157,10 +157,27 @@
 - type: entity
   parent: EventVIPIDCard
   id: EventVIPEmployeeIDCard
-  name: event vip ID card
   suffix: Worker
   components:
   - type: Access
     tags:
     - EventWorker
     - EventVIP
+
+- type: entity
+  parent: EventVIPIDCard
+  id: EventVIPAllAccessIDCard
+  suffix: All Event Access
+  components:
+  - type: Sprite
+    layers:
+    - state: event
+    - state: departmenthead
+      color: "#1B67A5"
+    - state: subdepartment
+      color: "#1B67A5"
+    - state: vip
+  - type: Access
+    tags: []
+    groups:
+    - Event
