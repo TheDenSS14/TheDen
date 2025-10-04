@@ -392,8 +392,8 @@
   - type: Item
     sprite: Objects/Tools/Lighters/syndielighter.rsi
   - type: Welder
-    fuelConsumption: 0.005
-    fuelLitCost: 0.01
+    fuelConsumption: 0.01 # Den - made less OP
+    fuelLitCost: 0.05 # Den - made less OP
     tankSafe: true
   - type: PointLight
     enabled: false
@@ -467,8 +467,8 @@
   - type: Item
     sprite: Objects/Tools/Lighters/cybersun.rsi
   - type: Welder #
-    fuelConsumption: 0.005
-    fuelLitCost: 0.01
+    fuelConsumption: 0.01 # Den - made less OP
+    fuelLitCost: 0.05 # Den - made less OP
     tankSafe: true
   - type: PointLight
     enabled: false
@@ -487,8 +487,8 @@
   - type: Item
     sprite: Objects/Tools/Lighters/interdyne.rsi
   - type: Welder #
-    fuelConsumption: 0.005
-    fuelLitCost: 0.01
+    fuelConsumption: 0.01 # Den - made less OP
+    fuelLitCost: 0.05 # Den - made less OP
     tankSafe: true
   - type: ItemToggleMeleeWeapon
     activatedDamage:
@@ -504,16 +504,16 @@
   parent: [BaseBrandedLighter]
   id: NanotrasenFlippo
   name: Nanotrasen Flippo
-  description: "A navy blue luxury flippo, generally handed out to loyal heads of staff instead of a payraise. Fueled with liquid plasma"
+  description: "A navy blue luxury flippo, generally handed out to loyal heads of staff instead of a payraise." # Den - made use welding fuel not plasma cause where do you get liquid plasma
   components:
   - type: Sprite
     sprite: Objects/Tools/Lighters/nanotrasen.rsi
   - type: Item
     sprite: Objects/Tools/Lighters/nanotrasen.rsi
   - type: Welder #
-    fuelConsumption: 0.005
-    fuelLitCost: 1
-    fuelReagent: Plasma
+    fuelConsumption: 0.01 # Den - made less OP
+    fuelLitCost: 0.05 # Den - made less OP
+    #fuelReagent: Plasma # Den - using welding fuel instead
     tankSafe: true
   - type: PointLight
     enabled: false
@@ -526,9 +526,9 @@
     solutions:
       Welder:
         reagents:
-        - ReagentId: Plasma
-          Quantity: 10
-        maxVol: 10
+        - ReagentId: WeldingFuel # Den - using welding fuel instead
+          Quantity: 14 # Den - made better
+        maxVol: 14 # Den - made better
 
 - type: entity
   parent: [BaseBrandedLighter, BaseCentcommContraband]
@@ -576,21 +576,21 @@
   - type: AccessReader
     access: [["CentralCommand"]]
     
-# Begin Den additions - more normal version for NT rep etc, didn't include access reader and made it more normal
+# Begin Den additions - more normal version for NT rep etc, didn't include access reader and made it more normal, doesn't refill automatically
 - type: entity
   parent: [BaseBrandedLighter, BaseCentcommContraband]
   id: CentCommFlippo
   name: CentComm Flippo
-  description: "An ornate gilded flippo frame containing a bluespace powered jet. Often provided to centcomm commanders and dignitaries."
+  description: "An ornate gilded flippo frame sporting CentComm green and a CC inlay. Often provided to centcomm commanders and dignitaries."
   components:
     - type: Sprite
       sprite: Objects/Tools/Lighters/centcomm.rsi
     - type: Item
       sprite: Objects/Tools/Lighters/centcomm.rsi
     - type: Welder #
-      fuelConsumption: 0.005
-      fuelLitCost: 10
-      fuelReagent: Plasma
+      fuelConsumption: 0.01 # Den - made less OP
+      fuelLitCost: 0.05 # Den - made less OP
+      #fuelReagent: Plasma # Den - using welding fuel instead
       tankSafe: true
     - type: PointLight
       enabled: false
@@ -603,35 +603,35 @@
       solutions:
         Welder:
           reagents:
-            - ReagentId: Plasma
+            - ReagentId: WeldingFuel # Den - using welding fuel instead
               Quantity: 20
           maxVol: 20
     - type: Tool
       useSound:
         collection: Welder
       qualities: Welding
-    - type: SolutionRegeneration
-      solution: Welder
-      generated:
-        reagents:
-          - ReagentId: Plasma
-            Quantity: 0.1
-    - type: Lock
+#    - type: SolutionRegeneration
+#      solution: Welder
+#      generated:
+#        reagents:
+#          - ReagentId: Plasma
+#            Quantity: 0.1
+#    - type: Lock
 # End Den additions
 
 - type: entity
   parent: [BaseBrandedLighter, BaseMajorContraband]
   id: SpiderclanFlippo
   name: Spider-Clan lighter
-  description: "A high tech jet lighter, engineered to function even in deep space. Runs on a tiny microfusion cell."
+  description: "A high tech jet lighter, engineered to function even in deep space." # Den - changed description no longer infinite
   components:
   - type: Sprite
     sprite: Objects/Tools/Lighters/spiderclan.rsi
   - type: Item
     sprite: Objects/Tools/Lighters/spiderclan.rsi
   - type: Welder #
-    fuelConsumption: 0
-    fuelLitCost: 0
+    fuelConsumption: 0.01 # Den - made less OP
+    fuelLitCost: 0.05 # Den - made less OP
     tankSafe: true
   - type: PointLight
     enabled: false
@@ -650,8 +650,8 @@
   - type: Item
     sprite: Objects/Tools/Lighters/waffleco.rsi
   - type: Welder #
-    fuelConsumption: 0.005
-    fuelLitCost: 0.05
+    fuelConsumption: 0.01 # Den - made less OP
+    fuelLitCost: 0.05 # Den - made less OP
     tankSafe: true
   - type: PointLight
     enabled: false
@@ -715,8 +715,8 @@
   - type: Item
     sprite: Objects/Tools/Lighters/donkco.rsi
   - type: Welder #
-    fuelConsumption: 0.02
-    fuelLitCost: 0.1
+    fuelConsumption: 0.01 # Den - made less OP
+    fuelLitCost: 0.05 # Den - made less OP
     tankSafe: true
   - type: Tag
     tags:
