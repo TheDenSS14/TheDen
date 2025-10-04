@@ -512,6 +512,50 @@
     - !type:CharacterItemGroupRequirement
       group: LoadoutNeck
 
+- type: loadout #TheDen
+  id: LoadoutNeckTallitWhiteBlue
+  category: Neck
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingTallitWhiteBlue
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutNeck
+
+- type: loadout #TheDen
+  id: LoadoutNeckTallitWhiteBlack
+  category: Neck
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingTallitWhiteBlack
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutNeck
+
+- type: loadout #TheDen
+  id: LoadoutNeckTallitBlackGold
+  category: Neck
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingTallitBlackGold
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutNeck
+
+- type: loadout #TheDen
+  id: LoadoutNeckTallitBlackWhite
+  category: Neck
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingTallitBlackWhite
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutNeck
+
 # Bedsheets
 - type: loadout
   id: LoadoutNeckBedsheetBlack
