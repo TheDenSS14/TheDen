@@ -144,7 +144,7 @@
           Bloodloss: 1
       bloodlossHealDamage:
         types:
-          Bloodloss: -0.5 #Takes bloodloss in critical, recovers it faster once out of crit.
+          Bloodloss: -0.5 #Takes bloodloss in critical, recovers it faster to compensate.
       bloodReagent: BlackBlood
     - type: Temperature
       heatDamageThreshold: 330
