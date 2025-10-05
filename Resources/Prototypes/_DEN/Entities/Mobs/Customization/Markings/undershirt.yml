@@ -17,3 +17,45 @@
   sprites:
   - sprite: _DEN/Mobs/Customization/Undershirt/cropped.rsi
     state: croppedundershirt
+
+- type: marking
+  id: UndershirtButtonUp
+  # REMOVE WITH MARKING INHERITANCE
+  bodyPart: Undershirt
+  markingCategory: Undershirt
+  invertSpeciesRestriction: True
+  speciesRestriction: [Plasmamen, Thaven, Vox]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  # END REMOVE WITH MARKING INHERITANCE
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Undershirt/buttonup.rsi
+    state: undershirt
+  - sprite: _DEN/Mobs/Customization/Undershirt/buttonup.rsi
+    state: undershirt-buttons
+  - sprite: _DEN/Mobs/Customization/Undershirt/buttonup.rsi
+    state: undershirt-collar
+
+- type: marking
+  id: UndershirtButtonUpOpen
+  # REMOVE WITH MARKING INHERITANCE
+  bodyPart: Undershirt
+  markingCategory: Undershirt
+  invertSpeciesRestriction: True
+  speciesRestriction: [Plasmamen, Thaven, Vox]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  # END REMOVE WITH MARKING INHERITANCE
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Undershirt/buttonup_open.rsi
+    state: undershirt
+  - sprite: _DEN/Mobs/Customization/Undershirt/buttonup_open.rsi
+    state: undershirt-buttons
+  - sprite: _DEN/Mobs/Customization/Undershirt/buttonup_open.rsi
+    state: undershirt-collar
