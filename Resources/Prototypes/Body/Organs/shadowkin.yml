@@ -9,7 +9,7 @@
 - type: entity
   id: OrganShadowkinBrain
   parent: OrganHumanBrain
-  description: "Oops, I should put this back where I found it."
+  description: "The source of incredible, unending intelligence. Mar." #TheDen
   categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
   - type: Sprite
@@ -40,6 +40,7 @@
 - type: entity
   id: OrganShadowkinCore
   parent: OrganSpaceAnimalLungs
+  name: shadowkin core #TheDen
   description: "What is this thing?"
   categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
@@ -47,12 +48,22 @@
     sprite: Mobs/Species/Shadowkin/organs.rsi
     layers:
     - state: core
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 5
+        reagents:
+        - ReagentId: BlackBlood
+          Quantity: 5
+  - type: FlavorProfile
+    flavors:
+      - bitter
 
 
 - type: entity
   id: OrganShadowkinTongue
   parent: OrganHumanTongue
-  description: "What does this do again?"
+  description: "A fleshy muscle mostly used for wurbling." #TheDen
   categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
   - type: Sprite
@@ -63,7 +74,7 @@
 - type: entity
   id: OrganShadowkinAppendix
   parent: OrganHumanAppendix
-  description: "I think it does nothing..."
+  description: "Does this thing do anything?..." #TheDen
   categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
   - type: Sprite
@@ -75,7 +86,7 @@
 - type: entity
   id: OrganShadowkinHeart
   parent: OrganHumanHeart
-  description: "Oops, I think this belongs to someone!"
+  description: "The pitch-black heart of a Shadowkin. How unsettling."
   categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
   - type: Sprite
