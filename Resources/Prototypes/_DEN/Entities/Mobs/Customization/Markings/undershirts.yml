@@ -1,0 +1,14 @@
+- type: marking
+  id: UndershirtRolledTF
+  bodyPart: Undershirt
+  markingCategory: Undershirt
+  speciesRestriction: [ Thaven ]
+  sexRestriction: [ Female ]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Thaven/undershirt.rsi
+    state: rolledundershirt_f
