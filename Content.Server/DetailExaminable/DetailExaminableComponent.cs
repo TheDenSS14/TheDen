@@ -17,6 +17,7 @@ namespace Content.Server.DetailExaminable
         [ViewVariables(VVAccess.ReadWrite)]
         public string NsfwContent = string.Empty;
 
+        // DEN - Self-examination text
         [DataField]
         [ViewVariables(VVAccess.ReadWrite)]
         public string SelfContent = string.Empty;
