@@ -149,3 +149,19 @@
     sprite: _DEN/Clothing/Uniforms/Jumpsuit/aaturtleneck.rsi
   - type: Clothing
     sprite: _DEN/Clothing/Uniforms/Jumpsuit/aaturtleneck.rsi
+
+- type: entity
+  parent: ClothingUniformBaseFlippable
+  id: ClothingUniformJumpsuitMilitaryBrat
+  name: military brat's cargo pants
+  description: For the ones who've done horrible things and looked cute doing them.
+  components:
+  - type: Sprite
+    sprite: _DEN/Clothing/Uniforms/Jumpsuit/militarybrat.rsi
+  - type: Clothing
+    sprite: _DEN/Clothing/Uniforms/Jumpsuit/militarybrat.rsi
+
+- type: entity
+  parent: [ ClothingUniformBaseFlipped, ClothingUniformJumpsuitMilitaryBrat ]
+  id: ClothingUniformJumpsuitMilitaryBratFlipped
+  name: military brat's cargo pants

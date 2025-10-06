@@ -1,7 +1,30 @@
-# SPDX-FileCopyrightText: 2025 Blitz <73762869+BlitzTheSquishy@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Blitz
+# SPDX-FileCopyrightText: 2025 Winter
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
+
+- type: loadout
+  id: LoadoutItemsLighterCentcomm
+  category: JobsCommandAUncategorized
+  cost: 2
+  requirements:
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Dignitary
+  items:
+    - CentCommFlippo
+
+- type: loadout
+  id: LoadoutItemsLighterCommand
+  category: JobsCommandAUncategorized
+  cost: 2
+  requirements:
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Command
+  items:
+    - NanotrasenFlippo
 
 - type: loadout
   id: LoadoutTowelDarkBlue

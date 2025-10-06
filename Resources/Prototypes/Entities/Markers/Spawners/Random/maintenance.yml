@@ -44,10 +44,11 @@
 # SPDX-FileCopyrightText: 2025 Shaman
 # SPDX-FileCopyrightText: 2025 Skubman
 # SPDX-FileCopyrightText: 2025 Timfa
+# SPDX-FileCopyrightText: 2025 Winter
 # SPDX-FileCopyrightText: 2025 portfiend
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: entityTable
   id: MaintFluffTable
@@ -357,6 +358,8 @@
         id: WristwatchGold
       - !type:EntSelector
         id: GoldenPersonalAI
+      - !type:EntSelector
+        id: MysteryLighterBox
       - !type:EntSelector
         id: WeaponLaserTagGun # DeltaV - Add small chance of it spawning in maints locker.
 
