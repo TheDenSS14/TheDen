@@ -25,13 +25,16 @@ namespace Content.Server.DetailExaminable
 
         private ProtoId<ConsentTogglePrototype> _nsfwDescriptionsConsent = "NSFWDescriptions";
 
-        // DEN - Icon
+        // DEN - Icons
         private SpriteSpecifier _detailVerbIcon =
             new SpriteSpecifier.Texture(new("/Textures/Interface/VerbIcons/examine.svg.192dpi.png"));
 
         private SpriteSpecifier _lewdVerbIcon =
             new SpriteSpecifier.Texture(new("/Textures/_DEN/Interface/VerbIcons/lewd.svg.192dpi.png"));
 
+        private SpriteSpecifier _selfVerbIcon =
+            new SpriteSpecifier.Texture(new("/Textures/_DEN/Interface/VerbIcons/mirror.svg.192dpi.png"));
+        // End DEN
 
         public override void Initialize()
         {
@@ -45,39 +48,63 @@ namespace Content.Server.DetailExaminable
             if (Identity.Name(args.Target, EntityManager) != MetaData(args.Target).EntityName)
                 return;
 
-            // var detailsRange = _examineSystem.IsInDetailsRange(args.User, uid);
-
             var contentVerb = GetContentExamine(uid, component, args);
-            var nsfwContentVerb = GetNsfwContentExamine(uid, component, args);
-            args.Verbs.Add(contentVerb);
+            if (contentVerb != null) // DEN: Have to null-check becuase GetContentExamine is now nullable
+                args.Verbs.Add(contentVerb);
 
+            var nsfwContentVerb = GetNsfwContentExamine(uid, component, args);
             if (nsfwContentVerb != null)
                 args.Verbs.Add(nsfwContentVerb);
+
+            // DEN: Add self-examination
+            var selfExamineVerb = GetSelfExamine(uid, component, args);
+            if (selfExamineVerb != null)
+                args.Verbs.Add(selfExamineVerb);
         }
 
-        private ExamineVerb GetContentExamine(
-            EntityUid uid,
-            DetailExaminableComponent component,
-            GetVerbsEvent<ExamineVerb> args
-        )
+        // DEN start: Common function for building examine verbs
+        private ExamineVerb? GetExamineVerb(EntityUid uid,
+            string content,
+            string verbText,
+            SpriteSpecifier? icon,
+            GetVerbsEvent<ExamineVerb> args,
+            ProtoId<ConsentTogglePrototype>? requiredConsent = null,
+            bool hideIfEmpty = false)
         {
-            var detailsRange = true; //removed the range limitation due to player requests, the detail examine button should now be active all the time
+            if (hideIfEmpty && string.IsNullOrWhiteSpace(content)
+                || requiredConsent is not null && _consentSystem.HasConsent(args.User, requiredConsent.Value))
+                return null;
+
             var verb = new ExamineVerb
             {
                 Act = () =>
                 {
                     var markup = new FormattedMessage();
-                    markup.AddMarkupPermissive(component.Content);
-                    _examineSystem.SendExamineTooltip(args.User, uid, markup, false, false);
+                    markup.AddMarkupPermissive(content);
+                    _examineSystem.SendExamineTooltip(args.User, uid, markup, getVerbs: false, centerAtCursor: false);
                 },
-                Text = Loc.GetString("detail-examinable-verb-text"),
+                Text = verbText,
                 Category = VerbCategory.Examine,
-                Disabled = !detailsRange,
-                Message = detailsRange ? null : Loc.GetString("detail-examinable-verb-disabled"),
-                Icon = _detailVerbIcon
+                Icon = icon
             };
 
             return verb;
+        }
+        // End DEN
+
+        private ExamineVerb? GetContentExamine(
+            EntityUid uid,
+            DetailExaminableComponent component,
+            GetVerbsEvent<ExamineVerb> args
+        )
+        {
+            // DEN: Use shared detail examine system for this
+            return GetExamineVerb(uid,
+                content: component.Content,
+                verbText: Loc.GetString("detail-examinable-verb-text"),
+                icon: _detailVerbIcon,
+                args: args,
+                hideIfEmpty: false);
         }
 
         private ExamineVerb? GetNsfwContentExamine(
@@ -86,27 +113,30 @@ namespace Content.Server.DetailExaminable
             GetVerbsEvent<ExamineVerb> args
         )
         {
-            if (!_consentSystem.HasConsent(args.User, _nsfwDescriptionsConsent)
-                || string.IsNullOrWhiteSpace(component.NsfwContent))
+            // DEN: Use shared detail examine system for this
+            return GetExamineVerb(uid,
+                content: component.NsfwContent,
+                verbText: Loc.GetString("detail-nsfw-examinable-verb-text"),
+                icon: _lewdVerbIcon,
+                args: args,
+                requiredConsent: _nsfwDescriptionsConsent,
+                hideIfEmpty: true);
+        }
+
+        private ExamineVerb? GetSelfExamine(
+            EntityUid uid,
+            DetailExaminableComponent component,
+            GetVerbsEvent<ExamineVerb> args)
+        {
+            if (args.User != args.Target)
                 return null;
 
-            var detailsRange = true;
-            var verb = new ExamineVerb
-            {
-                Act = () =>
-                {
-                    var markup = new FormattedMessage();
-                    markup.AddMarkupPermissive(component.NsfwContent);
-                    _examineSystem.SendExamineTooltip(args.User, uid, markup, false, false);
-                },
-                Text = Loc.GetString("detail-nsfw-examinable-verb-text"),
-                Category = VerbCategory.Examine,
-                Disabled = !detailsRange,
-                Message = detailsRange ? null : Loc.GetString("detail-examinable-verb-disabled"),
-                Icon = _lewdVerbIcon
-            };
-
-            return verb;
+            return GetExamineVerb(uid,
+                content: component.SelfContent,
+                verbText: Loc.GetString("detail-self-examine-verb-text"),
+                icon: _selfVerbIcon,
+                args: args,
+                hideIfEmpty: true);
         }
     }
 }
