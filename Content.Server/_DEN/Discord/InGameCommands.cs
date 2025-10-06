@@ -18,6 +18,7 @@ public sealed class InGameCommands : EntitySystem
 {
     [Dependency] private readonly AdminSystem _adminSystem = default!;
     [Dependency] private readonly DiscordLink _discordLink = default!;
+    [Dependency] private readonly DiscordUserLink _userLink = default!;
     [Dependency] private readonly MindSystem _mindSystem = default!;
     [Dependency] private readonly IAdminManager _adminManager = default!;
     [Dependency] private readonly IPlayerManager _playerManager = default!;
@@ -58,12 +59,16 @@ public sealed class InGameCommands : EntitySystem
     private void OnCharactersCommandRun(CommandReceivedEventArgs args)
     {
         var sessions = _playerManager.Sessions;
-        var characters = sessions.Select(GetCharacterListText);
+        var characters = sessions
+            .Where(session => session.AttachedEntity is { Valid: true })
+            .Select(GetCharacterListText);
 
         if (args.Message.Author is not GuildUser guildUser
             || args.Message.Guild == null
-            || args.Message.Channel == null
-            || (guildUser.GetPermissions(args.Message.Guild) & Permissions.ManageMessages) == 0)
+            || args.Message.Channel == null)
+            return;
+
+        if ((guildUser.GetPermissions(args.Message.Guild) & Permissions.ManageMessages) == 0)
             return;
 
         var title = "**Character List**";
