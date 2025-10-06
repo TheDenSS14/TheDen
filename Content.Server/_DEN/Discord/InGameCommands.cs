@@ -18,7 +18,6 @@ public sealed class InGameCommands : EntitySystem
 {
     [Dependency] private readonly AdminSystem _adminSystem = default!;
     [Dependency] private readonly DiscordLink _discordLink = default!;
-    [Dependency] private readonly DiscordUserLink _userLink = default!;
     [Dependency] private readonly MindSystem _mindSystem = default!;
     [Dependency] private readonly IAdminManager _adminManager = default!;
     [Dependency] private readonly IPlayerManager _playerManager = default!;
