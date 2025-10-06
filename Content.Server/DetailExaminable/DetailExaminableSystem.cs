@@ -72,7 +72,7 @@ namespace Content.Server.DetailExaminable
             bool hideIfEmpty = false)
         {
             if (hideIfEmpty && string.IsNullOrWhiteSpace(content)
-                || requiredConsent is not null && _consentSystem.HasConsent(args.User, requiredConsent.Value))
+                || requiredConsent is not null && !_consentSystem.HasConsent(args.User, requiredConsent.Value))
                 return null;
 
             var verb = new ExamineVerb
