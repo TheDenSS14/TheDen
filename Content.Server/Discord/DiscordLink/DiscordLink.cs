@@ -11,6 +11,7 @@ using NetCord;
 using NetCord.Gateway;
 using NetCord.Rest;
 using Robust.Shared.Configuration;
+// ReSharper disable ConditionIsAlwaysTrueOrFalse
 
 namespace Content.Server.Discord.DiscordLink;
 
@@ -243,20 +244,22 @@ public sealed class DiscordLink : IPostInjectInit
             var endsInQuote = element.EndsWith('"') || element.EndsWith('\'');
 
             // The active quote check ended. Reset.
-            if (startedQuote != 0 && endsInQuote)
+            if (startedQuote != int.MaxValue && endsInQuote)
             {
+                var count = (i - 1) - startedQuote;
+
                 element = element.Replace("\"", string.Empty)
                     .Replace("'", string.Empty);
 
-                result.RemoveRange(startedQuote, i - 1); // Remove safety measure elements
+                result.RemoveRange(startedQuote, count); // Remove safety measure elements
                 stringBuilder.Append($" {element}");
                 result.Add(stringBuilder.ToString());
-                startedQuote = 0;
+                startedQuote = int.MaxValue;
                 continue;
             }
 
             // If there is an active quote check, everything after the quote should be a part of it.
-            if (startedQuote != 0)
+            if (startedQuote != int.MaxValue)
             {
                 stringBuilder.Append($" {element}");
                 result.Add(element); // If it never ends, we'll just use this.
@@ -264,8 +267,11 @@ public sealed class DiscordLink : IPostInjectInit
             }
 
             // There's no active quote check; make one.
-            if (startedQuote == 0 && hasQuote)
+            if (startedQuote == int.MaxValue && hasQuote)
             {
+                element = element.Replace("\"", string.Empty)
+                    .Replace("'", string.Empty);
+
                 stringBuilder.Clear();
                 stringBuilder.Append(element);
                 startedQuote = i;
