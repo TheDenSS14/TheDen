@@ -1,11 +1,6 @@
-// SPDX-FileCopyrightText: 2024 deltanedas
-// SPDX-FileCopyrightText: 2025 BombasterDS
-// SPDX-FileCopyrightText: 2025 BombasterDS2
-// SPDX-FileCopyrightText: 2025 GoobBot
-// SPDX-FileCopyrightText: 2025 sleepyyapril
-//
-// SPDX-License-Identifier: AGPL-3.0-or-later
-
+using Content.Shared._DV.TapeRecorder.Systems;
+using Content.Shared._DV.DeviceLinking.Systems;
+using Content.Shared.DeviceLinking;
 using Robust.Shared.Audio;
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
@@ -86,4 +81,20 @@ public sealed partial class TapeRecorderComponent : Component
     {
         Params = AudioParams.Default.WithVolume(-2f).WithMaxDistance(3f)
     };
+
+    /// <summary>
+    /// Ports for signal control
+    /// </summary>
+    [DataField, AutoNetworkedField]
+    public ProtoId<SinkPortPrototype> PausePort = "Pause";
+
+    [DataField, AutoNetworkedField]
+    public ProtoId<SinkPortPrototype> RecordPort = "Record";
+
+    [DataField, AutoNetworkedField]
+    public ProtoId<SinkPortPrototype> PlaybackPort = "Playback";
+
+    [DataField, AutoNetworkedField]
+    public ProtoId<SinkPortPrototype> RewindPort = "Rewind";
+
 }
