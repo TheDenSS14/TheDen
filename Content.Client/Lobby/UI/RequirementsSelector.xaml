@@ -9,7 +9,8 @@ SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 <BoxContainer xmlns="https://spacestation14.io"
               xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-              Orientation="Horizontal">
+              Orientation="Horizontal"
+              HorizontalExpand="True">
     <Label Name="TitleLabel"
            Margin="5 0"
            MouseFilter="Stop"/>
@@ -20,4 +21,11 @@ SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
     </Control>
     <BoxContainer Name="OptionsContainer"
                   SetWidth="400"/>
+    <Button
+        Name="OpenAlternateJobTitlesWindowButton"
+        Text="{Loc 'humanoid-profile-editor-alternate-job-titles'}"
+        HorizontalAlignment="Right"
+        Margin="10 0 0 0"
+        SetWidth="150"
+        Disabled="True" />
 </BoxContainer>
