@@ -193,7 +193,8 @@ namespace Content.Client.Options.UI.Tabs
         // DEn Start: Examine tooltip maximum width setting
         private void OnExamineTooltipWidthSliderChanged(Range obj)
         {
-            ExamineTooltipWidthSlider.Value = (int) ExamineTooltipWidthSlider.Value;
+            var intValue = (int)ExamineTooltipWidthSlider.Value;
+            ExamineTooltipWidthSlider.SetValueWithoutEvent(intValue);
             UpdateExamineTooltipWidthLabel();
             UpdateApplyButton();
         }
