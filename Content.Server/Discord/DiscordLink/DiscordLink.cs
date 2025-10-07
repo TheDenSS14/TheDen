@@ -11,6 +11,9 @@ using NetCord;
 using NetCord.Gateway;
 using NetCord.Rest;
 using Robust.Shared.Configuration;
+using Robust.Shared.Utility;
+
+
 // ReSharper disable ConditionIsAlwaysTrueOrFalse
 
 namespace Content.Server.Discord.DiscordLink;
@@ -229,57 +232,7 @@ public sealed class DiscordLink : IPostInjectInit
     private List<string> GetArgumentsFromString(string input)
     {
         var result = new List<string>();
-        var initialSplit = input.Split(' ');
-
-        if (initialSplit.Length < 1)
-            return result;
-
-        var startedQuote = int.MaxValue;
-        var stringBuilder = new StringBuilder();
-
-        for (var i = 0; i < initialSplit.Length; i++)
-        {
-            var element = initialSplit[i];
-            var hasQuote = element.StartsWith('"') || element.StartsWith('\'');
-            var endsInQuote = element.EndsWith('"') || element.EndsWith('\'');
-
-            // The active quote check ended. Reset.
-            if (startedQuote != int.MaxValue && endsInQuote)
-            {
-                var count = (i - 1) - startedQuote;
-
-                element = element.Replace("\"", string.Empty)
-                    .Replace("'", string.Empty);
-
-                result.RemoveRange(startedQuote, count); // Remove safety measure elements
-                stringBuilder.Append($" {element}");
-                result.Add(stringBuilder.ToString());
-                startedQuote = int.MaxValue;
-                continue;
-            }
-
-            // If there is an active quote check, everything after the quote should be a part of it.
-            if (startedQuote != int.MaxValue)
-            {
-                stringBuilder.Append($" {element}");
-                result.Add(element); // If it never ends, we'll just use this.
-                continue;
-            }
-
-            // There's no active quote check; make one.
-            if (startedQuote == int.MaxValue && hasQuote)
-            {
-                element = element.Replace("\"", string.Empty)
-                    .Replace("'", string.Empty);
-
-                stringBuilder.Clear();
-                stringBuilder.Append(element);
-                startedQuote = i;
-                continue;
-            }
-
-            result.Add(element);
-        }
+        CommandParsing.ParseArguments(input, result);
 
         return result;
     }
