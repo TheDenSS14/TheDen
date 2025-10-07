@@ -53,6 +53,8 @@ using static Robust.Client.UserInterface.Controls.BoxContainer;
 using Content.Shared.Interaction.Events;
 using Content.Shared.Item;
 using Direction = Robust.Shared.Maths.Direction;
+using Content.Shared._DEN.CCVars;
+using Robust.Shared.Configuration;
 
 namespace Content.Client.Examine
 {
@@ -61,6 +63,7 @@ namespace Content.Client.Examine
     {
         [Dependency] private readonly IUserInterfaceManager _userInterfaceManager = default!;
         [Dependency] private readonly IPlayerManager _playerManager = default!;
+        [Dependency] private readonly IConfigurationManager _cfg = default!; // DEN - For examine tooltip width
         [Dependency] private readonly IEyeManager _eyeManager = default!;
         [Dependency] private readonly VerbSystem _verbSystem = default!;
 
@@ -232,7 +235,9 @@ namespace Content.Client.Examine
             }
 
             // Actually open the tooltip.
-            _examineTooltipOpen = new Popup { MaxWidth = 400 };
+            var maxTooltipWidth = _cfg.GetCVar(DenCCVars.ExamineTooltipWidth); // DEN - Make this a CCVar
+            _examineTooltipOpen = new Popup { MaxWidth = maxTooltipWidth };
+
             _userInterfaceManager.ModalRoot.AddChild(_examineTooltipOpen);
             var panel = new PanelContainer() { Name = "ExaminePopupPanel" };
             panel.AddStyleClass(StyleClassEntityTooltip);
