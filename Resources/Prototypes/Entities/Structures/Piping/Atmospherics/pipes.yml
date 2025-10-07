@@ -97,7 +97,7 @@
   - type: PipeAppearance
   - type: PipeColorVisuals
   - type: NodeContainer
-  # - type: PipeRestrictOverlap - Allow pipe stacking
+  - type: PipeRestrictOverlap
   - type: AtmosUnsafeUnanchor
   - type: AtmosPipeColor
   - type: AtmosMonitoringConsoleDevice
@@ -109,15 +109,6 @@
     bodyType: static
   - type: StaticPrice
     price: 11
-
-# Goobstation - Allow device-on-pipe stacking
-
-- type: entity
-  abstract: true
-  parent: GasPipeBase
-  id: GasPipeNoOverlap
-  components:
-  - type: PipeRestrictOverlap
 
 - type: entity
   abstract: true
@@ -134,7 +125,7 @@
 #Note: The PipeDirection of the PipeNode should be the south-facing version, because the entity starts at an angle of 0 (south)
 
 - type: entity
-  parent: GasPipeNoOverlap
+  parent: GasPipeBase
   id: GasPipeHalf
   suffix: Half
   placement:
@@ -204,7 +195,7 @@
       collection: MetalThud # this NEEDS to changed to the metal pipe falling sound effect on april first every year
 
 - type: entity
-  parent: GasPipeNoOverlap
+  parent: GasPipeBase
   id: GasPipeBend
   suffix: Bend
   placement:
@@ -250,7 +241,7 @@
         Blunt: 3 #This should be 6 but throwing damage is doubled at the moment for some reason so for now it's 3
 
 - type: entity
-  parent: GasPipeNoOverlap
+  parent: GasPipeBase
   id: GasPipeTJunction
   placement:
     mode: AlignAtmosPipeLayers
@@ -289,7 +280,7 @@
       collection: MetalThud
 
 - type: entity
-  parent: GasPipeNoOverlap
+  parent: GasPipeBase
   id: GasPipeFourway
   suffix: Fourway
   placement:
@@ -331,7 +322,7 @@
 
 - type: entity
   id: GasPipeBroken
-  parent: GasPipeNoOverlap
+  parent: GasPipeBase
   name: broken pipe
   description: It used to hold gas.
   components:
