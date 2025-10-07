@@ -60,7 +60,7 @@ namespace Content.Client.FlavorText
         public void SetProfile(HumanoidCharacterProfile? profile)
         {
             FlavorTextSFWDetail.SetInputText(profile?.FlavorText ?? "");
-            FlavorTextSelfDetail.SetInputText("");
+            FlavorTextSelfDetail.SetInputText(profile?.SelfExamineFlavorText ?? "");
             FlavorTextNSFWDetail.SetInputText(profile?.NsfwFlavorText ?? "");
             FlavorTextConsent.SetInputText(profile?.CharacterConsent ?? "");
         }

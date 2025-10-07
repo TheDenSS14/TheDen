@@ -698,6 +698,7 @@ namespace Content.Client.Lobby.UI
                 _flavorText.OnSfwFlavorTextChanged += OnSfwFlavorTextChange;
                 _flavorText.OnNsfwFlavorTextChanged += OnNsfwFlavorTextChange;
                 _flavorText.OnCharacterConsentChanged += OnCharacterConsentChange;
+                _flavorText.OnSelfFlavorTextChanged += OnSelfFlavorTextChange; // DEN
 
                 CTabContainer.AddTab(_flavorText, Loc.GetString("humanoid-profile-editor-flavortext-tab"));
             }
@@ -711,6 +712,7 @@ namespace Content.Client.Lobby.UI
                 _flavorText.OnSfwFlavorTextChanged -= OnSfwFlavorTextChange;
                 _flavorText.OnNsfwFlavorTextChanged -= OnNsfwFlavorTextChange;
                 _flavorText.OnCharacterConsentChanged -= OnCharacterConsentChange;
+                _flavorText.OnSelfFlavorTextChanged -= OnSelfFlavorTextChange; // DEN
                 _flavorText = null;
             }
         }
@@ -1436,6 +1438,16 @@ namespace Content.Client.Lobby.UI
                 return;
 
             Profile = Profile.WithCharacterConsent(content);
+            SetDirty();
+        }
+
+        // DEN - Self-examine flavor text
+        private void OnSelfFlavorTextChange(string content)
+        {
+            if (Profile is null)
+                return;
+
+            Profile = Profile.WithSelfExamineFlavorText(content);
             SetDirty();
         }
 
