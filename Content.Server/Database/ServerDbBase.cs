@@ -287,6 +287,7 @@ namespace Content.Server.Database
                 profile.FlavorText,
                 profile.NsfwFlavorText,
                 profile.CharacterConsent,
+                profile.SelfExamineFlavorText, // TheDen: Self-examine detail
                 profile.Species,
                 profile.CustomSpecieName,
                 profile.Nationality,
@@ -341,6 +342,7 @@ namespace Content.Server.Database
             profile.FlavorText = humanoid.FlavorText;
             profile.NsfwFlavorText = humanoid.NsfwFlavorText;
             profile.CharacterConsent = humanoid.CharacterConsent;
+            profile.SelfExamineFlavorText = humanoid.SelfExamineFlavorText; // TheDen: Self-examine detail
             profile.Species = humanoid.Species;
             profile.CustomSpecieName = humanoid.Customspeciename;
             profile.Nationality = humanoid.Nationality;
