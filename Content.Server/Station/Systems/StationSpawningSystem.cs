@@ -211,6 +211,9 @@ public sealed class StationSpawningSystem : SharedStationSpawningSystem
 
         if (!string.IsNullOrWhiteSpace(profile.NsfwFlavorText))
             detail.NsfwContent = profile.NsfwFlavorText;
+
+        if (!string.IsNullOrWhiteSpace(profile.SelfExamineFlavorText)) // DEN: Self-examine detail
+            detail.SelfContent = profile.SelfExamineFlavorText;
     }
 
     private void DoJobSpecials(ProtoId<JobPrototype>? job, EntityUid entity)
