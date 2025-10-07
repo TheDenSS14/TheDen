@@ -10,16 +10,18 @@ SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 <Control Name="CFlavorText" HorizontalExpand="True"
          xmlns="https://spacestation14.io"
+         xmlns:flavorText="clr-namespace:Content.Client._DEN.Lobby.UI.FlavorText"
          xmlns:ui="clr-namespace:Content.Client.UserInterface.Controls">
     <ui:NeoTabContainer Name="FlavorTextTabs" VerticalExpand="True" HScrollEnabled="False" VScrollEnabled="False">
         <BoxContainer Name="TabSFW" Orientation="Vertical" HorizontalExpand="True">
-            <TextEdit Name="CFlavorTextSFWInput" Access="Public" MinSize="220 100" Margin="10" HorizontalExpand="True" VerticalExpand="True" />
+            <flavorText:FlavorTextEntry Name="FlavorTextSFWDetail" />
+            <flavorText:FlavorTextEntry Name="FlavorTextSelfDetail" />
         </BoxContainer>
         <BoxContainer Name="TabNSFW" Orientation="Vertical" HorizontalExpand="True">
-            <TextEdit Name="CFlavorTextNSFWInput" Access="Public" MinSize="220 100" Margin="10" HorizontalExpand="True" VerticalExpand="True" />
+            <flavorText:FlavorTextEntry Name="FlavorTextNSFWDetail" />
         </BoxContainer>
         <BoxContainer Name="TabCharacterConsent" Orientation="Vertical" HorizontalExpand="True">
-            <TextEdit Name="CFlavorTextConsentInput" Access="Public" MinSize="220 100" Margin="10" HorizontalExpand="True" VerticalExpand="True" />
+            <flavorText:FlavorTextEntry Name="FlavorTextConsent" />
         </BoxContainer>
     </ui:NeoTabContainer>
 </Control>
