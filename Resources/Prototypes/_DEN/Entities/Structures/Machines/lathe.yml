@@ -1,0 +1,32 @@
+- type: entity
+  parent: [BaseLathe, BaseMaterialSiloUtilizer]
+  id: Autotailor
+  name: autotailor
+  description: Produces new, non-job specific clothing and accessories with the press of a button.
+  components:
+  - type: Transform
+    noRot: false
+  - type: Sprite
+    sprite: Structures/Machines/uniform_printer.rsi
+    snapCardinals: false
+    layers:
+    - state: icon
+      map: ["enum.LatheVisualLayers.IsRunning"]
+  - type: Machine
+    board: AutotailorMachineCircuitboard
+  - type: Lathe
+    producingSound: /Audio/Machines/uniformprinter.ogg
+    idleState: icon
+    runningState: building
+    staticPacks:
+    - AutotailorStaticDen
+  - type: MaterialStorage
+    whitelist:
+      tags:
+      - Sheet
+      - RawMaterial
+      - Ingot
+      - Wooden
+      - ClothMade
+      - Gauze
+      - Metal
