@@ -42,11 +42,12 @@
 # SPDX-FileCopyrightText: 2025 TheLuggage05
 # SPDX-FileCopyrightText: 2025 Timfa
 # SPDX-FileCopyrightText: 2025 VMSolidus
+# SPDX-FileCopyrightText: 2025 bigsantino1
 # SPDX-FileCopyrightText: 2025 foxcurl
 # SPDX-FileCopyrightText: 2025 portfiend
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 trait-name-Blindness = Blindness
 trait-description-Blindness = You are legally blind, and can't see clearly past a few meters in front of you.
@@ -775,3 +776,8 @@ trait-name-HealingFactor = Healing Factor
 trait-description-HealingFactor =
     Whether due to mutation or natural hardiness, you're harder to kill than most. You slowly regenerate from some common forms of damage.
     Your natural healing is no longer capped, and you will slowly recover from brute, burn and bloodloss damage while you are still alive.
+
+trait-name-PainNumbness = Pain Numbness
+trait-description-PainNumbness =
+    Whether due to a rare mutation, freak medical accident, or some other reason, you're not able to feel pain
+    making it much eaiser to miss possibly life threatening injuries.

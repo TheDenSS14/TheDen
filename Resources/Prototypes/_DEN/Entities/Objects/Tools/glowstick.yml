@@ -1,0 +1,56 @@
+# SPDX-FileCopyrightText: 2025 RosySaturniidae
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  name: magic green glowstick
+  parent: GlowstickBase
+  id: GlowstickBaseInfinite
+  description: Useful for raves and emergencies.
+  components:
+    - type: ExpendableLight
+      glowDuration: 43200 # 12 hours bc yml doesnt like infinity
+
+- type: entity
+  name: magic red glowstick
+  parent: GlowstickBaseInfinite
+  id: GlowstickRedInfinite
+  components:
+    - type: ExpendableLight
+      spentName: expendable-light-spent-red-glowstick-name
+      glowColorLit: "#FF0000"
+    - type: PointLight
+      color: "#FF0000"
+
+- type: entity
+  name: magic purple glowstick
+  parent: GlowstickBaseInfinite
+  id: GlowstickPurpleInfinite
+  components:
+    - type: ExpendableLight
+      spentName: expendable-light-spent-purple-glowstick-name
+      glowColorLit: "#FF00FF"
+    - type: PointLight
+      color: "#FF00FF"
+
+- type: entity
+  name: magic yellow glowstick
+  parent: GlowstickBaseInfinite
+  id: GlowstickYellowInfinite
+  components:
+    - type: ExpendableLight
+      spentName: expendable-light-spent-yellow-glowstick-name
+      glowColorLit: "#FFFF00"
+    - type: PointLight
+      color: "#FFFF00"
+
+- type: entity
+  name: magic blue glowstick
+  parent: GlowstickBaseInfinite
+  id: GlowstickBlueInfinite
+  components:
+    - type: ExpendableLight
+      spentName: expendable-light-spent-blue-glowstick-name
+      glowColorLit: "#0000FF"
+    - type: PointLight
+      color: "#0000FF"

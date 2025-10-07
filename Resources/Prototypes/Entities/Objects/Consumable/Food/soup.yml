@@ -32,7 +32,7 @@
 # SPDX-FileCopyrightText: 2025 portfiend
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 # When adding new food also add to random spawner located in Resources\Prototypes\Entities\Markers\Spawners\Random\Food_Drinks\food_meal.yml
 
@@ -78,7 +78,6 @@
   - type: Tag
     tags:
     - Soup
-    - VoxFood
   - type: Destructible
     thresholds:
     - trigger:
@@ -130,7 +129,6 @@
     tags:
     - Soup
     - ClothMade
-    - VoxFood
 
 # Salad
 
@@ -254,7 +252,6 @@
     tags:
     - Soup
     - ClothMade
-    - VoxFood
 
 - type: entity
   name: caesar salad
@@ -285,7 +282,6 @@
     tags:
     - Soup
     - ClothMade
-    - VoxFood
 
 - type: entity
   name: kimchi salad
@@ -317,7 +313,6 @@
     tags:
     - Soup
     - ClothMade
-    - VoxFood
 
 - type: entity
   name: fruit salad
@@ -535,7 +530,6 @@
     tags:
     - Soup
     - ClothMade
-    - VoxFood
 
 - type: entity
   name: black-eyed gumbo
@@ -600,7 +594,6 @@
     tags:
     - Soup
     - ClothMade
-    - VoxFood
 
 - type: entity
   name: space liberty duff
@@ -1216,7 +1209,6 @@
   - type: Tag # DEN - Moth edible
     tags:
     - Soup
-    - VoxFood
     - ClothMade
 
 - type: entity
@@ -1360,7 +1352,6 @@
   - type: Tag # DEN - Moth edible
     tags:
     - Soup
-    - VoxFood
     - ClothMade
 
 - type: entity

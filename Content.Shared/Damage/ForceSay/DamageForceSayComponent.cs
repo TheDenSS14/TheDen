@@ -1,10 +1,12 @@
-// SPDX-FileCopyrightText: 2023 Debug <49997488+DebugOk@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2023 Kara <lunarautomaton6@gmail.com>
-// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Debug
+// SPDX-FileCopyrightText: 2023 Kara
+// SPDX-FileCopyrightText: 2025 bigsantino1
+// SPDX-FileCopyrightText: 2025 sleepyyapril
 //
 // SPDX-License-Identifier: MIT
 
 using Content.Shared.Damage.Prototypes;
+using Content.Shared.Dataset;
 using Content.Shared.FixedPoint;
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
@@ -36,14 +38,7 @@ public sealed partial class DamageForceSayComponent : Component
     ///     The fluent string prefix to use when picking a random suffix
     /// </summary>
     [DataField]
-    public string ForceSayStringPrefix = "damage-force-say-";
-
-    /// <summary>
-    ///     The number of suffixes that exist for use with <see cref="ForceSayStringPrefix"/>.
-    ///     i.e. (prefix)-1 through (prefix)-(count)
-    /// </summary>
-    [DataField]
-    public int ForceSayStringCount = 7;
+    public ProtoId<LocalizedDatasetPrototype> ForceSayStringDataset = "ForceSayStringDataset";
 
     /// <summary>
     ///     The amount of total damage between <see cref="ValidDamageGroups"/> that needs to be taken before

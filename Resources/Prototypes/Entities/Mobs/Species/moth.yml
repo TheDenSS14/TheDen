@@ -18,11 +18,14 @@
 # SPDX-FileCopyrightText: 2024 fox
 # SPDX-FileCopyrightText: 2025 Eris
 # SPDX-FileCopyrightText: 2025 GNUtopia
+# SPDX-FileCopyrightText: 2025 MajorMoth
 # SPDX-FileCopyrightText: 2025 Sapphire
 # SPDX-FileCopyrightText: 2025 Sir Warock
 # SPDX-FileCopyrightText: 2025 Skubman
 # SPDX-FileCopyrightText: 2025 VMSolidus
+# SPDX-FileCopyrightText: 2025 juniwoofs
 # SPDX-FileCopyrightText: 2025 portfiend
+# SPDX-FileCopyrightText: 2025 sheepie
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
@@ -120,7 +123,12 @@
           32:
             sprite: Mobs/Species/Human/displacement.rsi
             state: jumpsuit-female
-
+  - type: Tag # DEN - Give moth people the MothEmotes tag so they can use emotes.
+    tags:
+    - CanPilot
+    - FootstepSound
+    - DoorBumpOpener
+    - MothEmotes
 
 - type: entity
   parent: BaseSpeciesDummy

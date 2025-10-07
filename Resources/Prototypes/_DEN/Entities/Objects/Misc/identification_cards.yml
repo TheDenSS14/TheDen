@@ -1,4 +1,5 @@
 # SPDX-FileCopyrightText: 2025 RosySaturniidae
+# SPDX-FileCopyrightText: 2025 portfiend
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -45,3 +46,151 @@
     tags:
     - CentralCommand
     - NanotrasenRepresentative
+
+## Event ID cards
+
+- type: entity
+  parent: IDCardStandard
+  id: EventWorkerIDCard
+  name: event worker ID card
+  components:
+  - type: Sprite
+    layers:
+    - state: event
+    - state: department
+      color: "#878787"
+    - state: subdepartment
+      color: "#878787"
+    - state: assistant
+  - type: Access
+    tags:
+    - EventWorker
+  - type: IdCard
+    jobTitle: job-title-event-worker
+
+- type: entity
+  parent: IDCardStandard
+  id: EventCommandIDCard
+  name: event command ID card
+  components:
+  - type: Sprite
+    layers:
+    - state: event
+    - state: departmenthead
+      color: "#1B67A5"
+    - state: subdepartment
+      color: "#1B67A5"
+    - state: captain
+  - type: Access
+    groups:
+    - Event
+  - type: IdCard
+    jobTitle: job-title-event-command
+
+- type: entity
+  parent: IDCardStandard
+  id: EventMedicalIDCard
+  name: event medical ID card
+  components:
+  - type: Sprite
+    layers:
+    - state: event
+    - state: department
+      color: "#5B97BC"
+    - state: subdepartment
+      color: "#5B97BC"
+    - state: medicaldoctor
+  - type: Access
+    tags:
+    - EventWorker
+    - EventMedical
+  - type: IdCard
+    jobTitle: job-title-event-medical
+
+- type: entity
+  parent: IDCardStandard
+  id: EventSecurityIDCard
+  name: event security ID card
+  components:
+  - type: Sprite
+    layers:
+    - state: event
+    - state: department
+      color: "#CB0000"
+    - state: subdepartment
+      color: "#CB0000"
+    - state: securityofficer
+  - type: Access
+    tags:
+    - EventWorker
+    - EventSecurity
+  - type: IdCard
+    jobTitle: job-title-event-security
+
+- type: entity
+  parent: IDCardStandard
+  id: EventServiceIDCard
+  name: event service ID card
+  components:
+  - type: Sprite
+    layers:
+    - state: event
+    - state: department
+      color: "#58C800"
+    - state: subdepartment
+      color: "#58C800"
+    - state: cook
+  - type: Access
+    tags:
+    - EventWorker
+    - EventService
+  - type: IdCard
+    jobTitle: job-title-event-service
+
+- type: entity
+  parent: IDCardStandard
+  id: EventVIPIDCard
+  name: event vip ID card
+  suffix: Non-Worker
+  components:
+  - type: Sprite
+    layers:
+    - state: event
+    - state: department
+      color: "#878787"
+    - state: subdepartment
+      color: "#1B67A5"
+    - state: vip
+  - type: Access
+    tags:
+    - EventVIP
+  - type: IdCard
+    jobTitle: job-title-event-vip
+
+- type: entity
+  parent: EventVIPIDCard
+  id: EventVIPEmployeeIDCard
+  suffix: Worker
+  components:
+  - type: Access
+    tags:
+    - EventWorker
+    - EventVIP
+
+- type: entity
+  parent: EventVIPIDCard
+  id: EventVIPAllAccessIDCard
+  suffix: All Event Access
+  components:
+  - type: Sprite
+    layers:
+    - state: event
+    - state: departmenthead
+      color: "#1B67A5"
+    - state: subdepartment
+      color: "#1B67A5"
+    - state: vip
+  - type: Access
+    tags: []
+    groups:
+    - Event

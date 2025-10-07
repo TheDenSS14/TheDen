@@ -3,12 +3,15 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
+using System.Text;
 using System.Threading.Tasks;
+using Content.Server._DEN.Discord;
 using Content.Shared.CCVar;
 using NetCord;
 using NetCord.Gateway;
 using NetCord.Rest;
 using Robust.Shared.Configuration;
+// ReSharper disable ConditionIsAlwaysTrueOrFalse
 
 namespace Content.Server.Discord.DiscordLink;
 
@@ -23,9 +26,9 @@ public sealed class CommandReceivedEventArgs
     public string Command { get; init; } = string.Empty;
 
     /// <summary>
-    /// The arguments to the command. This is everything after the command
+    /// The arguments to the command.
     /// </summary>
-    public string Arguments { get; init; } = string.Empty;
+    public required DiscordArguments Arguments { get; init; }
 
     /// <summary>
     /// Information about the message that the command was received from. This includes the message content, author, etc.
@@ -191,25 +194,28 @@ public sealed class DiscordLink : IPostInjectInit
         var trimmedInput = content[BotPrefix.Length..].Trim();
         var firstSpaceIndex = trimmedInput.IndexOf(' ');
 
-        string command, arguments;
+        string command, rawArguments;
 
         if (firstSpaceIndex == -1)
         {
             command = trimmedInput;
-            arguments = string.Empty;
+            rawArguments = string.Empty;
         }
         else
         {
             command = trimmedInput[..firstSpaceIndex];
-            arguments = trimmedInput[(firstSpaceIndex + 1)..].Trim();
+            rawArguments = trimmedInput[(firstSpaceIndex + 1)..].Trim();
         }
+
+        var arguments = GetArgumentsFromString(rawArguments);
+        var discordArguments = new DiscordArguments(rawArguments, arguments);
 
         // Raise the event!
         OnCommandReceived?.Invoke(new CommandReceivedEventArgs
         {
             Command = command,
-            Arguments = arguments,
-            Message = message,
+            Arguments = discordArguments,
+            Message = message
         });
         return ValueTask.CompletedTask;
     }
@@ -218,6 +224,64 @@ public sealed class DiscordLink : IPostInjectInit
     {
         OnMessageReceived?.Invoke(message);
         return ValueTask.CompletedTask;
+    }
+
+    private List<string> GetArgumentsFromString(string input)
+    {
+        var result = new List<string>();
+        var initialSplit = input.Split(' ');
+
+        if (initialSplit.Length < 1)
+            return result;
+
+        var startedQuote = int.MaxValue;
+        var stringBuilder = new StringBuilder();
+
+        for (var i = 0; i < initialSplit.Length; i++)
+        {
+            var element = initialSplit[i];
+            var hasQuote = element.StartsWith('"') || element.StartsWith('\'');
+            var endsInQuote = element.EndsWith('"') || element.EndsWith('\'');
+
+            // The active quote check ended. Reset.
+            if (startedQuote != int.MaxValue && endsInQuote)
+            {
+                var count = (i - 1) - startedQuote;
+
+                element = element.Replace("\"", string.Empty)
+                    .Replace("'", string.Empty);
+
+                result.RemoveRange(startedQuote, count); // Remove safety measure elements
+                stringBuilder.Append($" {element}");
+                result.Add(stringBuilder.ToString());
+                startedQuote = int.MaxValue;
+                continue;
+            }
+
+            // If there is an active quote check, everything after the quote should be a part of it.
+            if (startedQuote != int.MaxValue)
+            {
+                stringBuilder.Append($" {element}");
+                result.Add(element); // If it never ends, we'll just use this.
+                continue;
+            }
+
+            // There's no active quote check; make one.
+            if (startedQuote == int.MaxValue && hasQuote)
+            {
+                element = element.Replace("\"", string.Empty)
+                    .Replace("'", string.Empty);
+
+                stringBuilder.Clear();
+                stringBuilder.Append(element);
+                startedQuote = i;
+                continue;
+            }
+
+            result.Add(element);
+        }
+
+        return result;
     }
 
     #region Proxy methods

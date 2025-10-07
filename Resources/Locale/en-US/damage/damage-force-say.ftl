@@ -1,6 +1,7 @@
-# SPDX-FileCopyrightText: 2023 Debug <49997488+DebugOk@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2023 Kara <lunarautomaton6@gmail.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Debug
+# SPDX-FileCopyrightText: 2023 Kara
+# SPDX-FileCopyrightText: 2025 bigsantino1
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: MIT
 
@@ -15,4 +16,10 @@ damage-force-say-5 = OW!
 damage-force-say-6 = URGH!
 damage-force-say-7 = HRNK!
 
-damage-force-say-sleep = zzz...
+damage-force-say-sleep-1 = zzz...
+
+damage-force-say-numb-1 = oh-
+damage-force-say-numb-2 = ow-
+damage-force-say-numb-3 = oof-
+damage-force-say-numb-4 = ah-
+damage-force-say-numb-5 = ugh-

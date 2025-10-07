@@ -11,14 +11,18 @@
   description: Even though it is a relic of a past conflict, this energy shield is in pristine condition.
   components:
   - type: Sprite
-    sprite: Objects/Weapons/Melee/e_shield.rsi
+    sprite: _DEN/Objects/Weapons/Melee/wardenshield.rsi
     layers:
       - state: eshield-icon
       - state: eshield-on
-        color: "#ff0000"
+        color: "#ffffff"
         visible: false
         shader: unshaded
         map: [ "shield" ]
+  - type: Item
+    size: Small
+    sprite: _DEN/Objects/Weapons/Melee/wardenshield.rsi
+    heldPrefix: eshield
   - type: Reflect
     reflectProb: 0
     innate: true
@@ -36,6 +40,15 @@
   - type: BatterySelfRecharger
     autoRechargeRate: 10
     autoRecharge: true
+  - type: ToggleableVisuals
+    spriteLayer: shield
+    inhandVisuals:
+      left:
+        - state: inhand-left-shield
+          shader: unshaded
+      right:
+        - state: inhand-right-shield
+          shader: unshaded
   - type: ToggleableLightVisuals
     spriteLayer: shield
     inhandVisuals:

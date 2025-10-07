@@ -67,7 +67,7 @@
 # SPDX-FileCopyrightText: 2025 portfiend
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: entity
   parent: Clothing
@@ -964,7 +964,7 @@
     job: AtmosphericTechnician
 
 - type: entity
-  parent: IDCardStandard
+  parent: [ IDCardStandard, BaseRivalCompanyContraband ]
   id: SyndicateIDCard
   name: syndicate ID card
   components:
@@ -1233,4 +1233,4 @@
     jobIcon: JobIconAdmin
   - type: Access
     groups:
-    - AllAccess
+    - AdminAllAccess # DEN - Give admins true AA.

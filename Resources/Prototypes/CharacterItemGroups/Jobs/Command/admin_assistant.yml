@@ -1,7 +1,7 @@
-# SPDX-FileCopyrightText: 2024 Radezolid <snappednexus@gmail.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Radezolid
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: characterItemGroup
   id: LoadoutAdminAssistantUniforms
@@ -11,6 +11,10 @@
       id: LoadoutAdminAssistantUniformJumpsuit
     - type: loadout
       id: LoadoutAdminAssistantUniformJumpskirt
+    - type: loadout
+      id: LoadoutAdminAssistantUniformTurtleneck
+    - type: loadout
+      id: LoadoutClothingUniformAdminAssistantThong
 
 - type: characterItemGroup
   id: LoadoutAdminAssistantGloves
@@ -20,3 +24,24 @@
       id: LoadoutHeadOfPersonnelGlovesHoP
     - type: loadout
       id: LoadoutHeadOfPersonnelGlovesInspection
+
+- type: characterItemGroup
+  id: LoadoutAdminAssistantOuter
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutAdminAssistantOuterWinter
+
+- type: characterItemGroup
+  id: LoadoutAdminAssistantNeck
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutAdministrativeAssistantCollar
+
+- type: characterItemGroup
+  id: LoadoutAdminAssistantHead
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutAdministrativeAssistantHat

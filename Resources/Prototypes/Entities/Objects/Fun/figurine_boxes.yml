@@ -1,6 +1,7 @@
-# SPDX-FileCopyrightText: 2023 DerbyX <50932435+DerbyX@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2023 Flareguy <78941145+Flareguy@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 DerbyX
+# SPDX-FileCopyrightText: 2023 Flareguy
+# SPDX-FileCopyrightText: 2025 Winter
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: MIT
 
@@ -139,3 +140,62 @@
       - id: ToyFigurineHamlet
         prob: 0.20
         orGroup: SpacemenFig
+
+- type: entity
+  parent: BaseItem
+  id: MysteryLighterBox
+  name: Novelty lighter mystery box
+  suffix: Filled
+  description: A box of promotional lighters.
+  components:
+  - type: Sprite
+    sprite: Objects/Fun/figurines.rsi
+    layers:
+    - state: fig_box
+  - type: SpawnItemsOnUse
+    items:
+      - id: MysteryFigureBoxTrash
+      - id: CybersunFlippo
+        orGroup: Lighterbox
+        weight: 0.15
+      - id: InterdyneFlippo
+        orGroup: Lighterbox
+        weight: 0.15
+      - id: NanotrasenFlippo
+        orGroup: Lighterbox
+        weight: 0.25
+      - id: WaffleCoFlippo
+        orGroup: Lighterbox
+        weight: 0.35
+      - id: HonkCoFlippo
+        orGroup: Lighterbox
+      - id: GorlexMatchbox
+        orGroup: Lighterbox
+        weight: 0.15
+      - id: DonkcoLighter
+        orGroup: Lighterbox
+        weight: 0.25
+      - id: SyndicateFlippo
+        orGroup: Lighterbox
+        weight: 0.15
+
+- type: entity
+  parent: MysteryLighterBox
+  id: UplinkLighterBox
+  suffix: Uplink
+  components:
+  - type: SpawnItemsOnUse
+    items:
+      - id: MysteryFigureBoxTrash
+      - id: CybersunFlippo
+        orGroup: Lighterbox
+      - id: InterdyneFlippo
+        orGroup: Lighterbox
+      - id: WaffleCoFlippo
+        orGroup: Lighterbox
+      - id: GorlexMatchbox
+        orGroup: Lighterbox
+      - id: DonkcoLighter
+        orGroup: Lighterbox
+      - id: SyndicateFlippo
+        orGroup: Lighterbox

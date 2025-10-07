@@ -42,12 +42,14 @@
 # SPDX-FileCopyrightText: 2025 EctoplasmIsGood
 # SPDX-FileCopyrightText: 2025 Eightballll
 # SPDX-FileCopyrightText: 2025 Eris
+# SPDX-FileCopyrightText: 2025 MajorMoth
 # SPDX-FileCopyrightText: 2025 Possumongus
 # SPDX-FileCopyrightText: 2025 Rosycup
 # SPDX-FileCopyrightText: 2025 Shaman
 # SPDX-FileCopyrightText: 2025 Sir Warock
 # SPDX-FileCopyrightText: 2025 Timfa
 # SPDX-FileCopyrightText: 2025 Vanessa Louwagie
+# SPDX-FileCopyrightText: 2025 Winter
 # SPDX-FileCopyrightText: 2025 marc-pelletier
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
@@ -58,7 +60,7 @@
 
 #Basic Helmet (Security Helmet)
 - type: entity
-  parent: ClothingHeadBase
+  parent: [ BaseSecurityContraband, ClothingHeadBase ]
   id: ClothingHeadHelmetBasic
   name: helmet
   description: Standard security gear. Protects the head from impacts.
@@ -93,7 +95,7 @@
 
 #SWAT Helmet
 - type: entity
-  parent: [ClothingHeadBase, ClothingHeadEVAHelmetBase]
+  parent: [ BaseSecurityContraband, ClothingHeadBase, ClothingHeadEVAHelmetBase ]
   id: ClothingHeadHelmetSwat
   name: SWAT helmet
   description: An extremely robust helmet, commonly used by paramilitary forces. This one has the Nanotrasen logo emblazoned on the top.
@@ -119,7 +121,7 @@
 
 #Syndicate SWAT Helmet
 - type: entity
-  parent: ClothingHeadHelmetSwat
+  parent: [ BaseRivalCompanyContraband, ClothingHeadHelmetSwat ]
   id: ClothingHeadHelmetSwatSyndicate
   name: SWAT helmet
   suffix: Syndicate
@@ -132,7 +134,7 @@
 
 #Light Riot Helmet
 - type: entity
-  parent: ClothingHeadBase
+  parent: [ BaseSecurityContraband, ClothingHeadBase ]
   id: ClothingHeadHelmetRiot
   name: light riot helmet
   description: It's a helmet specifically designed to protect against close range attacks.
@@ -209,7 +211,7 @@
 
 #Space Ninja Helmet
 - type: entity
-  parent: ClothingHeadEVAHelmetNoIngestionBlocker
+  parent: [ BaseNinjaContraband, ClothingHeadEVAHelmetNoIngestionBlocker ]
   id: ClothingHeadHelmetSpaceNinja
   name: space ninja helmet
   description: What may appear to be a simple black garment is in fact a highly sophisticated nano-weave helmet. Standard issue ninja gear.
@@ -232,8 +234,8 @@
 - type: entity
   parent: ClothingHeadBase
   id: ClothingHeadHelmetTemplar
-  name: templar helmet
-  description: DEUS VULT!
+  name: Great Helm # Den
+  description: The existence of a great helm suggests a lesser helm. # Den
   components:
   - type: Sprite
     sprite: Clothing/Head/Helmets/templar.rsi

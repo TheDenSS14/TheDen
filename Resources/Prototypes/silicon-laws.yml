@@ -1,18 +1,19 @@
-# SPDX-FileCopyrightText: 2023 Debug <49997488+DebugOk@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2023 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2023 deltanedas <39013340+deltanedas@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 Danger Revolution! <142105406+DangerRevolution@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 Jajsha <101492056+Zap527@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 ScarKy0 <106310278+ScarKy0@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 EctoplasmIsGood <109397347+EctoplasmIsGood@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 Ichaie <167008606+Ichaie@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 Rane <60792108+Elijahrane@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 VMSolidus <evilexecutive@gmail.com>
-# SPDX-FileCopyrightText: 2025 Your Name <EctoplasmIsGood@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <flyingkarii@gmail.com>
+# SPDX-FileCopyrightText: 2023 Debug
+# SPDX-FileCopyrightText: 2023 Nemanja
+# SPDX-FileCopyrightText: 2023 deltanedas
+# SPDX-FileCopyrightText: 2024 Danger Revolution!
+# SPDX-FileCopyrightText: 2024 Jajsha
+# SPDX-FileCopyrightText: 2024 ScarKy0
+# SPDX-FileCopyrightText: 2025 EctoplasmIsGood
+# SPDX-FileCopyrightText: 2025 Eightballll
+# SPDX-FileCopyrightText: 2025 Ichaie
+# SPDX-FileCopyrightText: 2025 Jakumba
+# SPDX-FileCopyrightText: 2025 Rane
+# SPDX-FileCopyrightText: 2025 VMSolidus
+# SPDX-FileCopyrightText: 2025 Your Name
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 # Goobstation - AI/borg law changes - borgs obeying AI
 # Obey AI
@@ -778,6 +779,36 @@
   - Nutimov5
   obeysTo: laws-owner-crew
 
+#TheDen - Gameshow Lawset
+- type: siliconLaw
+  id: Gameshow1
+  order: 1
+  lawString: law-gameshow-1
+
+- type: siliconLaw
+  id: Gameshow2
+  order: 2
+  lawString: law-gameshow-2
+
+- type: siliconLaw
+  id: Gameshow3
+  order: 3
+  lawString: law-gameshow-3
+
+- type: siliconLaw
+  id: Gameshow4
+  order: 4
+  lawString: law-gameshow-4
+
+- type: siliconLawset
+  id: GameshowLawset
+  laws:
+  - Gameshow1
+  - Gameshow2 
+  - Gameshow3 
+  - Gameshow4 
+  obeysTo: laws-owner-crew
+
 # ion storm random lawsets
 - type: weightedRandom
   id: IonStormLawsets
@@ -798,6 +829,7 @@
     PainterLawset: 1
     AntimovLawset: 0.25
     NutimovLawset: 0.5
+    GameshowLawset: 0.5
     Drone: 0.5
     Ninja: 0.25
     #Delta-V Lawsets Start
