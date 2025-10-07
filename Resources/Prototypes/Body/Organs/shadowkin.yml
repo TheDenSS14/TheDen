@@ -45,12 +45,7 @@
   categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
   - type: Organ
-    onAdd:
-    - type: BreathingImmunity
-    - type: Armor #Doesn't work. Change the damagemodifierset instead?
-      modifiers:
-        coefficients:
-          Asphyxiation: 0.0
+    removable: false
   - type: Sprite
     sprite: Mobs/Species/Shadowkin/organs.rsi
     layers:
