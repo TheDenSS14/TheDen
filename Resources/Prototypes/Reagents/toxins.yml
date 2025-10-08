@@ -390,6 +390,10 @@
     Poison:
       effects:
       - !type:HealthChange
+        conditions:
+        - !type:OrganType
+          type: Shadowkin
+          shouldHave: false
         damage:
           types:
             Asphyxiation: 5
@@ -408,9 +412,21 @@
     Poison:
       effects:
       - !type:HealthChange
+        conditions:
+          - !type:OrganType
+            type: Shadowkin
+            shouldHave: false
         damage:
           groups:
             Airloss: 10
+      - !type:HealthChange
+        conditions:
+        - !type:OrganType
+          type: Shadowkin
+          shouldHave: true
+        damage:
+          types:
+            Bloodloss: 5
 
 - type: reagent
   id: MindbreakerToxin
@@ -576,6 +592,9 @@
           - !type:OrganType # It'd be silly if you could stomach Rotting Food but not raw meat on its own.
             type: Detritivore
             shouldHave: false
+          - !type:OrganType
+            type: Shadowkin
+            shouldHave: false
         type: Local
         visualType: MediumCaution
         messages: [ "generic-reagent-effect-sick" ]
@@ -589,6 +608,9 @@
           - !type:OrganType
             type: Detritivore
             shouldHave: false
+          - !type:OrganType
+            type: Shadowkin
+            shouldHave: false
       - !type:HealthChange
         conditions:
         - !type:OrganType
@@ -596,6 +618,9 @@
           shouldHave: false
         - !type:OrganType
           type: Detritivore
+          shouldHave: false
+        - !type:OrganType
+          type: Shadowkin
           shouldHave: false
         damage:
           types:
@@ -739,9 +764,21 @@
         walkSpeedModifier: 0.8
         sprintSpeedModifier: 0.8
       - !type:HealthChange
+        conditions:
+        - !type:OrganType
+          type: Shadowkin
+          shouldHave: false
         damage:
           groups:
             Airloss: 2
+      - !type:HealthChange
+        conditions:
+        - !type:OrganType
+          type: Shadowkin
+          shouldHave: true
+        damage:
+          types:
+            Bloodloss: 1
 
 - type: reagent
   id: Tazinide
