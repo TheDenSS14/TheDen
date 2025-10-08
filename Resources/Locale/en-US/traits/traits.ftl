@@ -39,8 +39,10 @@
 # SPDX-FileCopyrightText: 2025 SixplyDev
 # SPDX-FileCopyrightText: 2025 Skubman
 # SPDX-FileCopyrightText: 2025 Tabitha
+# SPDX-FileCopyrightText: 2025 TheLuggage05
 # SPDX-FileCopyrightText: 2025 Timfa
 # SPDX-FileCopyrightText: 2025 VMSolidus
+# SPDX-FileCopyrightText: 2025 bigsantino1
 # SPDX-FileCopyrightText: 2025 foxcurl
 # SPDX-FileCopyrightText: 2025 portfiend
 # SPDX-FileCopyrightText: 2025 sleepyyapril
@@ -136,8 +138,9 @@ trait-description-GermanAccent = You speak with a German accent.
 trait-name-RussianAccent = Russian accent
 trait-description-RussianAccent = You speak with a Russian accent.
 
+# imp, changed description to note added word replacements
 trait-name-FrenchAccent = French accent
-trait-description-FrenchAccent = You speak with a French accent.
+trait-description-FrenchAccent = You speak with a French accent, including French word replacements.
 
 trait-name-ItalianAccent = Italian accent
 trait-description-ItalianAccent = You speak with a Italian accent.
@@ -367,7 +370,7 @@ trait-description-Singer = You are naturally capable of singing simple melodies 
 
 trait-name-LatentPsychic = Latent Psychic
 trait-description-LatentPsychic =
-    Your mind and soul are open to the noosphere, allowing for use of Telepathy.
+    Your mind and soul are open to the noosphere, allowing you to hear telepathy.
     Thus, you are eligible for potentially receiving psychic powers.
     It is possible that you may be hunted by otherworldly forces, so consider keeping your powers a secret.
 
@@ -379,10 +382,8 @@ trait-description-PsionicInsulation =
 
 trait-name-NaturalTelepath = Natural Telepath
 trait-description-NaturalTelepath =
-    As a naturally occuring Telepath, you are capable of fluent telepathic communication, regardless of
-    whether or not you possess any notable psychic powers. This offers all of the same benefits and
-    drawbacks of Latent Psychic, except that you are guaranteed to start with full Telepathy. You may
-    still gain powers as normal for a Latent Psychic.
+    As a telepath, you are capable of fluent telepathic communication. While all psychics can hear telepathy, you will be able to speak with it.
+    This power does not reduce your ability to gain new powers.
 
 trait-name-TrapAvoider = Trap Avoider
 trait-description-TrapAvoider =
@@ -524,11 +525,11 @@ trait-description-Rodentian =  A language mostly consisting of squeaks spoken by
 
 trait-name-LowPotential = Low Psi-Potential
 trait-description-LowPotential =
-    You possess an unusually weak connection to the noösphere, which makes it more difficult to obtain new psionic powers.
+    You possess an unusually weak connection to the noosphere, which makes it more difficult to obtain new psionic powers.
 
 trait-name-HighPotential = High Psi-Potential
 trait-description-HighPotential =
-    Your connection to the noösphere is greater than average, making it easier to obtain new psionic powers.
+    Your connection to the noosphere is greater than average, making it easier to obtain new psionic powers.
 
 trait-name-LowAmplification = kα Deficiency
 trait-description-LowAmplification =
@@ -540,15 +541,16 @@ trait-description-HighAmplification =
 
 trait-name-PowerOverwhelming = Power Overwhelming
 trait-description-PowerOverwhelming =
-    WITNESS MY HATE MORTALS, COWER BEFORE MY PSIONIC MIGHT! REALITY IS AS I DEEM IT.
+    "WITNESS MY HATE, MORTALS - COWER BEFORE MY PSIONIC MIGHT! REALITY IS AS I DEEM IT."
+    Your psionic abilities are twice as strong as those of other psions, and you cannot be psionically insulated.  You will not be stopped.
 
 trait-name-LowDampening = kδ Defect
 trait-description-LowDampening =
-    Your skill in manipulating the noösphere is weaker than others. You may experience unintended effects from using your abilities.
+    Your skill in manipulating the noosphere is weaker than others. You may experience unintended effects from using your abilities.
 
 trait-name-HighDampening = kδ Proficient
 trait-description-HighDampening =
-    You are skilled in the art of subtly manipulating the noösphere. Your powers are less likely to show unintended effects.
+    You are skilled in the art of subtly manipulating the noosphere. Your powers are less likely to show unintended effects.
 
 trait-name-Azaziba = Sinta'Azaziba
 trait-description-Azaziba =
@@ -608,38 +610,41 @@ trait-description-CyberEyesOmni =
 
 trait-name-DispelPower = Normality Projection
 trait-description-DispelPower =
-    Your Mentalic abilities include the power to enforce normality upon Noospheric phenomena.
+    Your mentalic abilities include the power to enforce normality upon noospheric phenomena.
     This power, commonly known as "Dispel", allows the user to destroy otherworldly entities with their mind,
     or to immediately end psychic effects.
 
 trait-name-MetapsionicPower = Metapsion
 trait-description-MetapsionicPower =
-    You are able to intuitively sense the activation of psionic abilities, as well as send out a 'scanning' pulse
+    You are able to intuitively sense the activation of psionic abilities, as well as send out a "scanning" pulse
     to detect whether or not psions are nearby. This ability has a wide area of effect, and cannot precisely
     scan individual entities. Still, it is better than being blind.
+    This power does not reduce your ability to gain new powers.
 
 trait-name-HealingWordPower = Healing Word
 trait-description-HealingWordPower =
-    Your Mentalic abilities includes the power to heal the wounded.
+    Your mentalic abilities includes the power to heal the wounded.
     This power, commonly known as "Healing Word", allows the user to heal themselves or others with their mind.
 
 trait-name-XenoglossyPower = Xenoglossy
 trait-description-XenoglossyPower =
-    An advanced form of Telepathy, Xenoglossy is the ability to speak using emotional and metaphysical concepts,
-    rather than words, to impart meaning directly into the minds of a listener. When speaking using Xenoglossy, a psion can be
+    An advanced form of telepathy, xenoglossy is the ability to speak using emotional and metaphysical concepts,
+    rather than words, to impart meaning directly into the minds of a listener. When speaking using xenoglossy, a psion can be
     universally understood by any entity, who will hear the words as if spoken in one's own native tongue. Additionally,
     Xenoglossy grants the ability to divine the underlying emotional meaning from the minds of other speakers,
     allowing its user to understand any spoken language as if it was the user's own native tongue.
+    This power does not reduce your ability to gain new powers.
 
 trait-name-MindSwapPower = Mind Swap
 trait-description-MindSwapPower =
-    Grants you the power to swap bodies with another as they take your own. Swapping bodies with a being already occupying a body that is not their own can result in unintended consequences.
+    Grants you the power to swap bodies with another as they take your own, though its effects can be ended by either party. Swapping bodies with a being already occupying a body that is not their own can result in unintended consequences.
 
 trait-name-PsychognomyPower = Psychognomist
 trait-description-PsychognomyPower =
-    A special talent derived from Telepathy, Psychognomy is the ability to read the underlying imprint of telepathic messages.
-    A Psychognomist can glean additional information from their telepathy, seeing vague outlines of what the source of a message
+    A special talent derived from telepathy, psychognomy is the ability to read the underlying imprint of telepathic messages.
+    A psychognomist can glean additional information from their telepathy, seeing vague outlines of what the source of a message
     might be. This information is not precise, and is largely only useful for narrowing down who the source of a message might be.
+    This power does not reduce your ability to gain new powers.
 
 trait-name-Redshirt = Redshirt
 trait-description-Redshirt =
@@ -771,3 +776,8 @@ trait-name-HealingFactor = Healing Factor
 trait-description-HealingFactor =
     Whether due to mutation or natural hardiness, you're harder to kill than most. You slowly regenerate from some common forms of damage.
     Your natural healing is no longer capped, and you will slowly recover from brute, burn and bloodloss damage while you are still alive.
+
+trait-name-PainNumbness = Pain Numbness
+trait-description-PainNumbness =
+    Whether due to a rare mutation, freak medical accident, or some other reason, you're not able to feel pain
+    making it much eaiser to miss possibly life threatening injuries.

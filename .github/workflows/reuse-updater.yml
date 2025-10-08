@@ -14,6 +14,7 @@ on:
 
 env:
   REUSE_MESSAGE: ${{ vars.REUSE_MESSAGE }}
+  PR_TITLE: ${{ github.event.pull_request.title }}
   CHANGELOG_USER: ${{ vars.CHANGELOG_USER }}
   CHANGELOG_EMAIL: ${{ vars.CHANGELOG_EMAIL }}
 
@@ -48,20 +49,43 @@ jobs:
           python Tools/reuse_utilities/reuse_update_headers_from_merge.py $MERGE_SHA
         working-directory: ${{ github.workspace }}
 
-      - name: Commit and push changes
+      - name: Commit changes
         run: |
           git config user.name "${{ env.CHANGELOG_USER }}"
           git config user.email "${{ env.CHANGELOG_EMAIL }}"
           git add -A
-          git commit -m "${{ env.REUSE_MESSAGE }}" || echo "No changes to commit or committing failed."
+
+          if git diff --cached --quiet; then
+            echo "Nothing to commit"
+          else
+            git commit -m "$REUSE_MESSAGE from: $PR_TITLE"
+          fi
+
+      - name: Rebase and push
+        run: |
           for i in {1..5}; do
-            git pull --rebase origin ${{ vars.CHANGELOG_BRANCH }} || exit 1
-            if git push origin ${{ vars.CHANGELOG_BRANCH }}; then
-              echo "Push succeeded"
-              exit 0
+            echo "Attempt $i..."
+
+            GIT_PULL_REBASE_OUTPUT=$(git pull --rebase origin "${{ vars.CHANGELOG_BRANCH }}" 2>&1)
+            GIT_PULL_REBASE_EXIT_CODE=$?
+            if [ "$GIT_PULL_REBASE_EXIT_CODE" -ne 0 ]; then
+              echo "Pull with rebase failed, retrying in 5s..."
+              echo "$GIT_PULL_REBASE_OUTPUT"
+              sleep 5
+              continue
             fi
-            echo "Push failed, retrying in 5s..."
-            sleep 5
+            echo "Pull with rebase succeeded."
+
+            GIT_PUSH_OUTPUT=$(git push origin "${{ vars.CHANGELOG_BRANCH }}" 2>&1)
+            GIT_PUSH_EXIT_CODE=$?
+            if [ "$GIT_PUSH_EXIT_CODE" -ne 0 ]; then
+              echo "Push failed, retrying in 5s..."
+              echo "$GIT_PUSH_OUTPUT"
+              sleep 5
+              continue
+            fi
+            echo "Push succeeded."
+            exit 0
           done
-          echo "Push failed after 5 attempts."
+          echo "Step failed after 5 attempts."
           exit 1

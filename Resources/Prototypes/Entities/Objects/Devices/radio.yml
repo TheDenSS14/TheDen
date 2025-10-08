@@ -1,21 +1,20 @@
-# SPDX-FileCopyrightText: 2020 Bright0 <55061890+Bright0@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2020 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2020 Paul Ritter <ritter.paul1@googlemail.com>
-# SPDX-FileCopyrightText: 2021 Swept <sweptwastaken@protonmail.com>
-# SPDX-FileCopyrightText: 2022 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2022 themias <89101928+themias@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2023 Kara <lunarautomaton6@gmail.com>
-# SPDX-FileCopyrightText: 2023 deltanedas <39013340+deltanedas@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2023 deltanedas <@deltanedas:kde.org>
-# SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT <77995199+DEATHB4DEFEAT@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2020 Bright0
+# SPDX-FileCopyrightText: 2020 DrSmugleaf
+# SPDX-FileCopyrightText: 2020 Paul Ritter
+# SPDX-FileCopyrightText: 2021 Swept
+# SPDX-FileCopyrightText: 2022 Leon Friedrich
+# SPDX-FileCopyrightText: 2022 themias
+# SPDX-FileCopyrightText: 2023 Kara
+# SPDX-FileCopyrightText: 2023 deltanedas
+# SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT
+# SPDX-FileCopyrightText: 2024 Nemanja
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: entity
   name: handheld radio
-  description: A handy handheld radio.
+  description: A handy handheld radio. Has a clip so you can hang it on the neck of your uniform.
   parent: BaseItem
   id: RadioHandheld
   components:
@@ -33,8 +32,15 @@
   - type: Sprite
     sprite: Objects/Devices/communication.rsi
     layers:
-    - state: walkietalkie
-    - state: walkietalkie-on
+    - state: walkietalkie-off # TheDen - The bottom layer has all the lights off
+    - state: walkietalkie-broadcasting # TheDen - The red light on the side turns on when the mic's on
+      map: ["enum.RadioDeviceVisualLayers.Broadcasting"]
+      shader: unshaded
+      visible: false
+    - state: walkietalkie-on # TheDen - The screen turns on when the speaker's on
+      map: ["enum.RadioDeviceVisualLayers.Speaker"]
+      shader: unshaded
+      visible: false
     state: walkietalkie
   - type: Item
     sprite: Objects/Devices/communication.rsi
@@ -48,15 +54,32 @@
     interfaces:
       enum.HandheldRadioUiKey.Key:
         type: HandheldRadioBoundUserInterface
+  - type: Appearance # TheDen
+  - type: GenericVisualizer # TheDen
+    visuals:
+      enum.RadioDeviceVisuals.Broadcasting:
+        enum.RadioDeviceVisualLayers.Broadcasting:
+          True: { visible: true }
+          False: { visible: false }
+      enum.RadioDeviceVisuals.Speaker:
+        enum.RadioDeviceVisualLayers.Speaker:
+          True: { visible: true }
+          False: { visible: false }
+  - type: Clothing # TheDen - To allow equipping radios on the neck slot
+    slots: [neck]
+    equipDelay: 0.3
+    unequipDelay: 0.3
+    quickEquip: false # Would conflict
 
 - type: entity
   name: security radio
-  description: A handy security radio.
-  parent: RadioHandheld
+  description: A handy security radio. Has a clip so you can hang it on the neck of your uniform.
+  parent: [ BaseSecurityContraband, RadioHandheld ]
   id: RadioHandheldSecurity
   components:
   - type: RadioMicrophone
     broadcastChannel: Security
+    frequency: 1359 # TheDen - Frequencies don't matter for security radios at all, but this is at least the frequency that the security channel supposedly exists on
   - type: RadioSpeaker
     channels:
     - Security

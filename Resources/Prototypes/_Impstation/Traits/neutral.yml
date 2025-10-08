@@ -1,4 +1,5 @@
 # SPDX-FileCopyrightText: 2025 Shaman
+# SPDX-FileCopyrightText: 2025 TheLuggage05
 # SPDX-FileCopyrightText: 2025 pocl v
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
@@ -41,3 +42,16 @@
     - !type:TraitAddComponent
       components:
         - type: ProperCapitalization
+
+- type: trait
+  id: FrenchAccentBasic
+  category: TraitsSpeechAccents
+  slots: 0
+  points: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: TraitsAccents
+  functions:
+    - !type:TraitAddComponent
+      components:
+        - type: BasicFrenchAccent

@@ -21,7 +21,7 @@
   parent: TaurSpeciesLayers
   id: BaseArachneAppearance
   components:
-  - type: Inventory
+  - type: Inventory # TheDen - So they can have -arachne clothing sprites
     speciesId: anytaur
     templateId: anytaur
   - type: HumanoidAppearance
@@ -30,11 +30,11 @@
 - type: entity
   save: false
   name: Urist McArachne
-  parent: [ BaseArachneAppearance, BaseMobHuman ]
+  parent: [BaseArachneAppearance, BaseMobHuman, StorableSpecies] # TheDen
   id: MobArachneBase
   abstract: true
   components:
-  - type: Inventory
+  - type: Inventory # TheDen - So they can have -arachne clothing sprites
     speciesId: anytaur
   - type: Sericulture
     action: ActionSericulture

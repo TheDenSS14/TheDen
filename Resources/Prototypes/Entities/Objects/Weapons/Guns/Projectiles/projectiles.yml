@@ -60,7 +60,7 @@
 # SPDX-FileCopyrightText: 2025 Vanessa
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: entity
   id: MuzzleFlashEffect
@@ -306,9 +306,19 @@
     soundHit:
       path: "/Audio/Weapons/Guns/Hits/taser_hit.ogg"
     forceSound: true
+    # DEN
+  - type: StaminaDamageOnCollide
+    damage: 70
+    overtime: 90
   - type: StunOnCollide
-    stunAmount: 5
-    knockdownAmount: 5
+    stunAmount: 0
+    knockdownAmount: 0
+    slowdownAmount: 2
+    walkSpeedMultiplier: 0.3
+    runSpeedMultiplier: 0.3
+  - type: TimedDespawn
+    lifetime: 0.18
+    # DEN
 
 - type: entity
   name : disabler bolt
@@ -347,7 +357,7 @@
     impactEffect: BulletImpactEffectDisabler
     damage:
       types:
-        Heat: 5
+        Heat: 3 # DEN 5 => 3
         #Ion: 10 #Goobstation
     soundHit:
       collection: WeakHit

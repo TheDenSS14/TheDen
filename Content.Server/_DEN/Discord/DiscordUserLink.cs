@@ -1,3 +1,7 @@
+// SPDX-FileCopyrightText: 2025 sleepyyapril
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using System.Linq;
 using System.Threading.Tasks;
 using Content.Server.Administration.Managers;
@@ -81,7 +85,7 @@ public sealed partial class DiscordUserLink : EntitySystem
 
     private void OnVerifyCommandRun(CommandReceivedEventArgs args)
     {
-        if (args.Arguments.StartsWith("confirm") && _readDisclaimer.Contains(args.Message.Author.Id))
+        if (args.Arguments.IsArgument(0, "confirm") && _readDisclaimer.Contains(args.Message.Author.Id))
         {
             _readDisclaimer.Remove(args.Message.Author.Id);
             OnConfirmationReceived(args);

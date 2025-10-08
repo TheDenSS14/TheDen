@@ -1,11 +1,12 @@
 # SPDX-FileCopyrightText: 2025 Jakumba
+# SPDX-FileCopyrightText: 2025 MajorMoth
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
 #DEN
 - type: entity
   name: mk58
-  parent: WeaponPistolMk58Empty
+  parent: [WeaponPistolMk58Empty, BaseSalvageSpecialistSecurityContraband]
   id: WeaponPistolMk58Salvage
   suffix: Salvage
   components:
@@ -35,7 +36,7 @@
 
 - type: entity
   name: Pollock
-  parent: WeaponPistolPollock
+  parent: [WeaponPistolPollock, BaseSalvageSpecialistSecurityContraband]
   id: WeaponPistolPollockSalvage
   suffix: Salvage
   components:

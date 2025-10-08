@@ -1,25 +1,26 @@
-# SPDX-FileCopyrightText: 2022 Cheackraze <71046427+Cheackraze@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2022 Flipp Syder <76629141+vulppine@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2023 Debug <49997488+DebugOk@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2023 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2023 PHCodes <47927305+PHCodes@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2023 Whisper <121047731+QuietlyWhisper@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2023 brainfood1183 <113240905+brainfood1183@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2023 lzk <124214523+lzk228@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2023 lzk228 <124214523+lzk228@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2023 sephtasm <41873764+sephtasm@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT <77995199+DEATHB4DEFEAT@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 FoxxoTrystan <45297731+FoxxoTrystan@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 FoxxoTrystan <trystan.garnierhein@gmail.com>
-# SPDX-FileCopyrightText: 2024 IProduceWidgets <107586145+IProduceWidgets@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 Mr. 27 <45323883+Dutch-VanDerLinde@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 Simon <63975668+Simyon264@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 degradka <69397649+degradka@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 gluesniffler <159397573+gluesniffler@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 sleepyyapril <flyingkarii@gmail.com>
-# SPDX-FileCopyrightText: 2025 Blitz <73762869+BlitzTheSquishy@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 VMSolidus <evilexecutive@gmail.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 Cheackraze
+# SPDX-FileCopyrightText: 2022 Flipp Syder
+# SPDX-FileCopyrightText: 2023 Debug
+# SPDX-FileCopyrightText: 2023 DrSmugleaf
+# SPDX-FileCopyrightText: 2023 PHCodes
+# SPDX-FileCopyrightText: 2023 Whisper
+# SPDX-FileCopyrightText: 2023 brainfood1183
+# SPDX-FileCopyrightText: 2023 lzk
+# SPDX-FileCopyrightText: 2023 lzk228
+# SPDX-FileCopyrightText: 2023 sephtasm
+# SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT
+# SPDX-FileCopyrightText: 2024 FoxxoTrystan
+# SPDX-FileCopyrightText: 2024 IProduceWidgets
+# SPDX-FileCopyrightText: 2024 Mr. 27
+# SPDX-FileCopyrightText: 2024 Simon
+# SPDX-FileCopyrightText: 2024 degradka
+# SPDX-FileCopyrightText: 2024 gluesniffler
+# SPDX-FileCopyrightText: 2024 sleepyyapril
+# SPDX-FileCopyrightText: 2025 Blitz
+# SPDX-FileCopyrightText: 2025 Jakumba
+# SPDX-FileCopyrightText: 2025 VMSolidus
+# SPDX-FileCopyrightText: 2025 Vanessa
+# SPDX-FileCopyrightText: 2025 Winter
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -60,7 +61,6 @@
 - type: randomHumanoidSettings
   parent: EventHumanoidMindShielded
   id: DeathSquad
-  randomizeName: false
   speciesBlacklist:
     - Shadowkin
     - Monkey # Shitmed Change
@@ -73,6 +73,18 @@
     - Diona # Den
     - Harpy # Den
   components:
+    # Den begin additions
+    - type: RandomHumanoidAppearance
+      randomizeName: false
+    - type: NpcFactionMember
+      factions:
+        - NanoTrasen
+    # Den end additions
+    - type: MindShield # Den
+    - type: AntagImmune # Den
+    - type: AutoImplant # Den
+      implants:
+      - BluespaceLifelineImplant
     - type: GhostRole
       name: ghost-role-information-Death-Squad-name
       description: ghost-role-information-Death-Squad-description
@@ -92,7 +104,6 @@
 ## ERT Leader
 - type: randomHumanoidSettings
   id: ERTLeader
-  randomizeName: false
   speciesBlacklist:
     - Shadowkin
     - Monkey # Shitmed Change
@@ -106,7 +117,18 @@
     - Harpy # Den
     - Resomi # Den
   components:
+    # Den begin additions
+    - type: RandomHumanoidAppearance
+      randomizeName: false
+    - type: NpcFactionMember
+      factions:
+        - NanoTrasen
+    # Den end additions
     - type: MindShield
+    - type: AntagImmune # Den
+    - type: AutoImplant # Den
+      implants:
+      - BluespaceLifelineImplant
     - type: GhostRole
       name: ghost-role-information-ert-leader-name
       description: ghost-role-information-ert-leader-description
@@ -158,7 +180,18 @@
   id: ERTChaplain
   parent: ERTLeader
   components:
+    # Den begin additions
+    - type: RandomHumanoidAppearance
+      randomizeName: false
+    - type: NpcFactionMember
+      factions:
+        - NanoTrasen
+    # Den end additions
     - type: MindShield
+    - type: AntagImmune # Den
+    - type: AutoImplant # Den
+      implants:
+      - BluespaceLifelineImplant
     - type: GhostRole
       name: ghost-role-information-ert-chaplain-name
       description: ghost-role-information-ert-chaplain-description
@@ -211,7 +244,18 @@
   id: ERTJanitor
   parent: ERTLeader
   components:
+    # Den begin additions
+    - type: RandomHumanoidAppearance
+      randomizeName: false
+    - type: NpcFactionMember
+      factions:
+        - NanoTrasen
+    # Den end additions
     - type: MindShield
+    - type: AntagImmune # Den
+    - type: AutoImplant # Den
+      implants:
+      - BluespaceLifelineImplant
     - type: GhostRole
       name: ghost-role-information-ert-janitor-name
       description: ghost-role-information-ert-janitor-description
@@ -263,7 +307,18 @@
   id: ERTEngineer
   parent: ERTLeader
   components:
+    # Den begin additions
+    - type: RandomHumanoidAppearance
+      randomizeName: false
+    - type: NpcFactionMember
+      factions:
+        - NanoTrasen
+    # Den end additions
     - type: MindShield
+    - type: AntagImmune # Den
+    - type: AutoImplant # Den
+      implants:
+      - BluespaceLifelineImplant
     - type: GhostRole
       name: ghost-role-information-ert-engineer-name
       description: ghost-role-information-ert-engineer-description
@@ -315,7 +370,18 @@
   id: ERTSecurity
   parent: ERTLeader
   components:
+    # Den begin additions
+    - type: RandomHumanoidAppearance
+      randomizeName: false
+    - type: NpcFactionMember
+      factions:
+        - NanoTrasen
+    # Den end additions
     - type: MindShield
+    - type: AntagImmune # Den
+    - type: AutoImplant # Den
+      implants:
+      - BluespaceLifelineImplant
     - type: GhostRole
       name: ghost-role-information-ert-security-name
       description: ghost-role-information-ert-security-description
@@ -367,7 +433,18 @@
   id: ERTMedical
   parent: ERTLeader
   components:
+    # Den begin additions
+    - type: RandomHumanoidAppearance
+      randomizeName: false
+    - type: NpcFactionMember
+      factions:
+        - NanoTrasen
+    # Den end additions
     - type: MindShield
+    - type: AntagImmune # Den
+    - type: AutoImplant # Den
+      implants:
+      - BluespaceLifelineImplant
     - type: GhostRole
       name: ghost-role-information-ert-medical-name
       description: ghost-role-information-ert-medical-description
@@ -434,7 +511,18 @@
     - Monkey # Shitmed Change
     - Kobold # Shitmed Change
   components:
+    # Den begin additions
+    - type: RandomHumanoidAppearance
+      randomizeName: false
+    - type: NpcFactionMember
+      factions:
+        - NanoTrasen
+    # Den end additions
     - type: MindShield
+    - type: AntagImmune # Den
+    - type: AutoImplant # Den
+      implants:
+      - BluespaceLifelineImplant
     - type: Loadout
       prototypes: [CBURNGear]
     - type: GhostRole
@@ -468,7 +556,18 @@
     - Monkey # Shitmed Change
     - Kobold # Shitmed Change
   components:
+    # Den begin additions
+    - type: RandomHumanoidAppearance
+      randomizeName: false
+    - type: NpcFactionMember
+      factions:
+        - NanoTrasen
+    # Den end additions
     - type: MindShield
+    - type: AntagImmune # Den
+    - type: AutoImplant # Den
+      implants:
+      - BluespaceLifelineImplant
     - type: GhostRole
       name: ghost-role-information-centcom-official-name
       description: ghost-role-information-centcom-official-description
@@ -499,6 +598,13 @@
     - Monkey # Shitmed Change
     - Kobold # Shitmed Change
   components:
+    # Den begin additions
+    - type: RandomHumanoidAppearance
+      randomizeName: false
+    - type: NpcFactionMember
+      factions:
+        - NanoTrasen
+    # Den end additions
     - type: Loadout
       prototypes: [SyndicateOperativeGearExtremelyBasic]
 
@@ -547,6 +653,13 @@
     - Kobold # Shitmed Change
   randomizeName: false
   components:
+    # Den begin additions
+    - type: RandomHumanoidAppearance
+      randomizeName: false
+    - type: NpcFactionMember
+      factions:
+        - NanoTrasen
+    # Den end additions
     - type: GhostRole
       name: ghost-role-information-cluwne-name
       description: ghost-role-information-cluwne-description
@@ -584,8 +697,14 @@
 
 - type: randomHumanoidSettings
   id: LostCargoTechnician
-  randomizeName: false
   components:
+    # Den begin additions
+    - type: RandomHumanoidAppearance
+      randomizeName: true
+    - type: NpcFactionMember
+      factions:
+        - NanoTrasen
+    # Den end additions
     - type: GhostRole
       name: ghost-role-information-lost-cargo-technical-name
       description: ghost-role-information-lost-cargo-technical-description
@@ -607,6 +726,13 @@
   id: ClownTroupeSpawner
   parent: MarkerBase
   components:
+    # Den begin additions
+    - type: RandomHumanoidAppearance
+      randomizeName: false
+    - type: NpcFactionMember
+      factions:
+        - NanoTrasen
+    # Den end additions
     - type: Sprite
       layers:
         - state: red
@@ -639,8 +765,14 @@
 
 - type: randomHumanoidSettings
   id: ClownTroupe
-  randomizeName: false
   components:
+    # Den begin additions
+    - type: RandomHumanoidAppearance
+      randomizeName: false
+    - type: NpcFactionMember
+      factions:
+        - NanoTrasen
+    # Den end additions
     - type: GhostRole
       name: ghost-role-information-clown-troupe-name
       description: ghost-role-information-clown-troupe-description
@@ -656,8 +788,14 @@
 
 - type: randomHumanoidSettings
   id: ClownTroupeBanana
-  randomizeName: false
   components:
+    # Den begin additions
+    - type: RandomHumanoidAppearance
+      randomizeName: false
+    - type: NpcFactionMember
+      factions:
+        - NanoTrasen
+    # Den end additions
     - type: GhostRole
       name: ghost-role-information-clown-troupe-name
       description: ghost-role-information-clown-troupe-description
@@ -697,8 +835,14 @@
 
 - type: randomHumanoidSettings
   id: TravelingChef
-  randomizeName: false
   components:
+    # Den begin additions
+    - type: RandomHumanoidAppearance
+      randomizeName: true
+    - type: NpcFactionMember
+      factions:
+        - NanoTrasen
+    # Den end additions
     - type: GhostRole
       name: ghost-role-information-traveling-chef-name
       description: ghost-role-information-traveling-chef-description
@@ -760,8 +904,14 @@
 
 - type: randomHumanoidSettings
   id: DisasterVictimResearchDirector
-  randomizeName: false
   components:
+    # Den begin additions
+    - type: RandomHumanoidAppearance
+      randomizeName: false
+    - type: NpcFactionMember
+      factions:
+        - NanoTrasen
+    # Den end additions
     - type: GhostRole
       name: ghost-role-information-disaster-victim-name
       description: ghost-role-information-disaster-victim-description
@@ -778,8 +928,14 @@
 
 - type: randomHumanoidSettings
   id: DisasterVictimCMO
-  randomizeName: false
   components:
+    # Den begin additions
+    - type: RandomHumanoidAppearance
+      randomizeName: true
+    - type: NpcFactionMember
+      factions:
+        - NanoTrasen
+    # Den end additions
     - type: GhostRole
       name: ghost-role-information-disaster-victim-name
       description: ghost-role-information-disaster-victim-description
@@ -796,8 +952,14 @@
 
 - type: randomHumanoidSettings
   id: DisasterVictimCaptain
-  randomizeName: false
   components:
+    # Den begin additions
+    - type: RandomHumanoidAppearance
+      randomizeName: true
+    - type: NpcFactionMember
+      factions:
+        - NanoTrasen
+    # Den end additions
     - type: GhostRole
       name: ghost-role-information-disaster-victim-name
       description: ghost-role-information-disaster-victim-description
@@ -840,8 +1002,11 @@
 
 - type: randomHumanoidSettings
   id: SyndieDisasterVictim
-  randomizeName: false
   components:
+    # Den begin additions
+    - type: RandomHumanoidAppearance
+      randomizeName: true
+    # Den end additions
     - type: NpcFactionMember
       factions:
       - Syndicate

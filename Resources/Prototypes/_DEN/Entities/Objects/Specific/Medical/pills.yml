@@ -1,5 +1,8 @@
-# SPDX-FileCopyrightText: 2025 Rosycup <178287475+Rosycup@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Rosycup
+# SPDX-FileCopyrightText: 2025 Winter
+# SPDX-FileCopyrightText: 2025 pocl v
+# SPDX-FileCopyrightText: 2025 portfiend
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -98,3 +101,746 @@
         reagents:
         - ReagentId: Libidozenithizine
           Quantity: 10
+
+- type: entity
+  parent: PillCanister
+  id: PillCanisterEstradiol
+  suffix: estradiol 5u
+  components:
+    - type: Label
+      currentLabel: estradiol 5u
+    - type: StorageFill
+      contents:
+        - id: PillEstradiol
+          amount: 4
+
+- type: entity
+  name: pill
+  suffix: estradiol 5u
+  parent: Pill
+  id: PillEstradiol
+  components:
+    - type: Pill
+      pillType: 2
+    - type: Sprite
+      state: pill3
+    - type: Label
+      currentLabel: estradiol 5u
+    - type: SolutionContainerManager
+      solutions:
+        food:
+          maxVol: 20
+          reagents:
+            - ReagentId: Estradiol
+              Quantity: 5
+
+- type: entity
+  parent: PillCanister
+  id: PillCanisterTestosterone
+  suffix: testosterone 5u
+  components:
+    - type: Label
+      currentLabel: testosterone 5u
+    - type: StorageFill
+      contents:
+        - id: PillTestosterone
+          amount: 4
+
+- type: entity
+  name: pill
+  suffix: testosterone 5u
+  parent: Pill
+  id: PillTestosterone
+  components:
+    - type: Pill
+      pillType: 2
+    - type: Sprite
+      state: pill4
+    - type: Label
+      currentLabel: testosterone 5u
+    - type: SolutionContainerManager
+      solutions:
+        food:
+          maxVol: 20
+          reagents:
+            - ReagentId: Testosterone
+              Quantity: 5
+
+- type: entity
+  id: EstradiolChemistryBottle
+  suffix: estradiol
+  parent: BaseChemistryBottleFilled
+  components:
+    - type: Label
+      currentLabel: reagent-name-estradiol
+    - type: SolutionContainerManager
+      solutions:
+        drink:
+          maxVol: 30
+          reagents:
+            - ReagentId: Estradiol
+              Quantity: 30
+
+- type: entity
+  id: TestosteroneChemistryBottle
+  suffix: testosterone
+  parent: BaseChemistryBottleFilled
+  components:
+    - type: Label
+      currentLabel: reagent-name-testosterone
+    - type: SolutionContainerManager
+      solutions:
+        drink:
+          maxVol: 30
+          reagents:
+            - ReagentId: Testosterone
+              Quantity: 30
+
+- type: entity
+  suffix: estradiol
+  parent: PrefilledSyringe
+  id: SyringeEstradiol
+  components:
+    - type: SolutionContainerManager
+      solutions:
+        injector:
+          maxVol: 15
+          reagents:
+            - ReagentId: Estradiol
+              Quantity: 15
+    - type: Label
+      currentLabel: estradiol
+
+- type: entity
+  suffix: testosterone
+  parent: PrefilledSyringe
+  id: SyringeTestosterone
+  components:
+    - type: SolutionContainerManager
+      solutions:
+        injector:
+          maxVol: 15
+          reagents:
+            - ReagentId: Testosterone
+              Quantity: 15
+    - type: Label
+      currentLabel: testosterone
+
+## Agonolexyne
+## Very strong opioid painkiller.
+## These have a lower dose because they have an incredibly low addiction and overdose threshold.
+## Addictive > 0.25u, overdose > 5u
+
+- type: entity
+  suffix: Agonolexyne 1u
+  parent: Pill
+  id: PillAgonolexyneLowDose
+  components:
+  - type: Label
+    currentLabel: agonolexyne 1u
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 20
+        reagents:
+        - ReagentId: Agonolexyne
+          Quantity: 1
+
+- type: entity
+  suffix: Agonolexyne 2u
+  parent: Pill
+  id: PillAgonolexyneHighDose
+  components:
+  - type: Label
+    currentLabel: agonolexyne 2u
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 20
+        reagents:
+        - ReagentId: Agonolexyne
+          Quantity: 2
+
+- type: entity
+  parent: PillCanister
+  id: PillCanisterAgonolexyneLowDose
+  suffix: Agonolexyne, 1u x5
+  components:
+  - type: Label
+    currentLabel: agonolexyne 1u
+  - type: StorageFill
+    contents:
+    - id: PillAgonolexyneLowDose
+      amount: 5
+
+- type: entity
+  parent: PillCanister
+  id: PillCanisterAgonolexyneHighDose
+  suffix: Agonolexyne, 2u x5
+  components:
+  - type: Label
+    currentLabel: agonolexyne 2u
+  - type: StorageFill
+    contents:
+    - id: PillAgonolexyneHighDose
+      amount: 5
+
+## Soretizone
+## Chronic pain medication for things that Stubantazine won't solve.
+## Addictive > 9u, abates withdrawal > 5u, overdose was 14.5u until DV removed that.
+
+- type: entity
+  suffix: Soretizone 2.5u
+  parent: Pill
+  id: PillSoretizoneLowDose
+  components:
+  - type: Label
+    currentLabel: soretizone 2.5u
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 20
+        reagents:
+        - ReagentId: Soretizone
+          Quantity: 2.5
+
+- type: entity
+  suffix: Soretizone 5u
+  parent: Pill
+  id: PillSoretizoneHighDose
+  components:
+  - type: Label
+    currentLabel: soretizone 5u
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 20
+        reagents:
+        - ReagentId: Soretizone
+          Quantity: 5
+
+- type: entity
+  parent: PillCanister
+  id: PillCanisterSoretizoneLowDose
+  suffix: Soretizone, 2.5u x5
+  components:
+  - type: Label
+    currentLabel: soretizone 2.5u
+  - type: StorageFill
+    contents:
+    - id: PillSoretizoneLowDose
+      amount: 5
+
+- type: entity
+  parent: PillCanister
+  id: PillCanisterSoretizoneHighDose
+  suffix: Soretizone, 5u x5
+  components:
+  - type: Label
+    currentLabel: soretizone 5u
+  - type: StorageFill
+    contents:
+    - id: PillSoretizoneHighDose
+      amount: 5
+
+## Stubantazine
+## Mild painkiller for temporary stents of pain.
+## Non-addictive, overdose > 14u
+
+- type: entity
+  suffix: Stubantazine 5u
+  parent: Pill
+  id: PillStubantazineLowDose
+  components:
+  - type: Label
+    currentLabel: stubantazine 5u
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 20
+        reagents:
+        - ReagentId: Stubantazine
+          Quantity: 5
+
+- type: entity
+  suffix: Stubantazine 10u
+  parent: Pill
+  id: PillStubantazineHighDose
+  components:
+  - type: Label
+    currentLabel: stubantazine 10u
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 20
+        reagents:
+        - ReagentId: Stubantazine
+          Quantity: 10
+
+- type: entity
+  parent: PillCanister
+  id: PillCanisterStubantazineLowDose
+  suffix: Stubantazine, 5u x5
+  components:
+  - type: Label
+    currentLabel: stubantazine 5u
+  - type: StorageFill
+    contents:
+    - id: PillStubantazineLowDose
+      amount: 5
+
+- type: entity
+  parent: PillCanister
+  id: PillCanisterStubantazineHighDose
+  suffix: Stubantazine, 10u x5
+  components:
+  - type: Label
+    currentLabel: stubantazine 10u
+  - type: StorageFill
+    contents:
+    - id: PillStubantazineHighDose
+      amount: 5
+
+## Equilibrazine
+## Anxiety and panic attack medication that is incompatible with most antidepressants.
+## Non-addictive, overdose > 6.7u
+
+- type: entity
+  suffix: Equilibrazine 2.5u
+  parent: Pill
+  id: PillEquilibrazineLowDose
+  components:
+  - type: Label
+    currentLabel: equilibrazine 2.5u
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 20
+        reagents:
+        - ReagentId: Equilibrazine
+          Quantity: 2.5
+
+- type: entity
+  suffix: Equilibrazine 5u
+  parent: Pill
+  id: PillEquilibrazineHighDose
+  components:
+  - type: Label
+    currentLabel: equilibrazine 5u
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 20
+        reagents:
+        - ReagentId: Equilibrazine
+          Quantity: 5
+
+- type: entity
+  parent: PillCanister
+  id: PillCanisterEquilibrazineLowDose
+  suffix: Equilibrazine, 2.5u x5
+  components:
+  - type: Label
+    currentLabel: equilibrazine 2.5u
+  - type: StorageFill
+    contents:
+    - id: PillEquilibrazineLowDose
+      amount: 5
+
+- type: entity
+  parent: PillCanister
+  id: PillCanisterEquilibrazineHighDose
+  suffix: Equilibrazine, 5u x5
+  components:
+  - type: Label
+    currentLabel: equilibrazine 5u
+  - type: StorageFill
+    contents:
+    - id: PillEquilibrazineLowDose
+      amount: 5
+
+## Tranquinase
+## Standard anxiety medication with a tranquilizing effect.
+## Non-addictive. Slows you dont above 16.5u, overdose at 30u.
+
+- type: entity
+  suffix: Tranquinase 5u
+  parent: Pill
+  id: PillTranquinaseLowDose
+  components:
+  - type: Label
+    currentLabel: tranquinase 5u
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 20
+        reagents:
+        - ReagentId: Tranquinase
+          Quantity: 5
+
+- type: entity
+  suffix: Tranquinase 10u
+  parent: Pill
+  id: PillTranquinaseHighDose
+  components:
+  - type: Label
+    currentLabel: tranquinase 10u
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 20
+        reagents:
+        - ReagentId: Tranquinase
+          Quantity: 10
+
+- type: entity
+  parent: PillCanister
+  id: PillCanisterTranquinaseLowDose
+  suffix: Tranquinase, 5u x5
+  components:
+  - type: Label
+    currentLabel: tranquinase 5u
+  - type: StorageFill
+    contents:
+    - id: PillTranquinaseLowDose
+      amount: 5
+
+- type: entity
+  parent: PillCanister
+  id: PillCanisterTranquinaseHighDose
+  suffix: Tranquinase, 10u x5
+  components:
+  - type: Label
+    currentLabel: tranquinase 10u
+  - type: StorageFill
+    contents:
+    - id: PillTranquinaseHighDose
+      amount: 5
+
+## Calmafluxine
+## Mild over-the-counter anxiety med.
+## Non-addictive, impossible to overdose on - >30u will simply drain from your system.
+## Increasing the number you get for these because it's mild and runs out fast
+
+- type: entity
+  suffix: Calmafluxine 5u
+  parent: Pill
+  id: PillCalmafluxineLowDose
+  components:
+  - type: Label
+    currentLabel: calmafluxine 5u
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 20
+        reagents:
+        - ReagentId: Calmafluxine
+          Quantity: 5
+
+- type: entity
+  suffix: Calmafluxine 10u
+  parent: Pill
+  id: PillCalmafluxineHighDose
+  components:
+  - type: Label
+    currentLabel: calmafluxine 10u
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 20
+        reagents:
+        - ReagentId: Calmafluxine
+          Quantity: 10
+
+- type: entity
+  parent: PillCanister
+  id: PillCanisterCalmafluxineLowDose
+  suffix: Calmafluxine, 5u x10
+  components:
+  - type: Label
+    currentLabel: calmafluxine 5u
+  - type: StorageFill
+    contents:
+    - id: PillCalmafluxineLowDose
+      amount: 10
+
+- type: entity
+  parent: PillCanister
+  id: PillCanisterCalmafluxineHighDose
+  suffix: Calmafluxine, 10u x10
+  components:
+  - type: Label
+    currentLabel: calmafluxine 10u
+  - type: StorageFill
+    contents:
+    - id: PillCalmafluxineHighDose
+      amount: 10
+
+## Blissifylovene
+## Strong antidepressant.
+## These have a lower dose because they have an incredibly low addiction and overdose threshold.
+## (1.5u addiction, 5u OD)
+
+- type: entity
+  suffix: Blissifylovene 1u
+  parent: Pill
+  id: PillBlissifyloveneLowDose
+  components:
+  - type: Label
+    currentLabel: blissifylovene 1u
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 20
+        reagents:
+        - ReagentId: Blissifylovene
+          Quantity: 1
+
+- type: entity
+  suffix: Blissifylovene 2u
+  parent: Pill
+  id: PillBlissifyloveneHighDose
+  components:
+  - type: Label
+    currentLabel: blissifylovene 2u
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 20
+        reagents:
+        - ReagentId: Blissifylovene
+          Quantity: 2
+
+- type: entity
+  parent: PillCanister
+  id: PillCanisterBlissifyloveneLowDose
+  suffix: Blissifylovene, 1u x5
+  components:
+  - type: Label
+    currentLabel: blissifylovene 1u
+  - type: StorageFill
+    contents:
+    - id: PillBlissifyloveneLowDose
+      amount: 5
+
+- type: entity
+  parent: PillCanister
+  id: PillCanisterBlissifyloveneHighDose
+  suffix: Blissifylovene, 2u x5
+  components:
+  - type: Label
+    currentLabel: blissifylovene 2u
+  - type: StorageFill
+    contents:
+    - id: PillBlissifyloveneHighDose
+      amount: 5
+
+## Neurozenium
+## Strong antidepressant
+## Non-addictive, overdose > 15.1u
+
+- type: entity
+  suffix: Neurozenium 5u
+  parent: Pill
+  id: PillNeurozeniumLowDose
+  components:
+  - type: Label
+    currentLabel: neurozenium 5u
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 20
+        reagents:
+        - ReagentId: Neurozenium
+          Quantity: 5
+
+- type: entity
+  suffix: Neurozenium 10u
+  parent: Pill
+  id: PillNeurozeniumHighDose
+  components:
+  - type: Label
+    currentLabel: neurozenium 10u
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 20
+        reagents:
+        - ReagentId: Neurozenium
+          Quantity: 10
+
+- type: entity
+  parent: PillCanister
+  id: PillCanisterNeurozeniumLowDose
+  suffix: Neurozenium, 5u x5
+  components:
+  - type: Label
+    currentLabel: neurozenium 5u
+  - type: StorageFill
+    contents:
+    - id: PillNeurozeniumLowDose
+      amount: 5
+
+- type: entity
+  parent: PillCanister
+  id: PillCanisterNeurozeniumHighDose
+  suffix: Neurozenium, 10u x5
+  components:
+  - type: Label
+    currentLabel: neurozenium 10u
+  - type: StorageFill
+    contents:
+    - id: PillNeurozeniumHighDose
+      amount: 5
+
+## Serenitol
+## Mild antidepressant - fairly safe and used in grief treatment
+## Non-addictive, overdose > 22.5u
+
+- type: entity
+  suffix: Serenitol 5u
+  parent: Pill
+  id: PillSerenitolLowDose
+  components:
+  - type: Label
+    currentLabel: serenitol 5u
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 20
+        reagents:
+        - ReagentId: Serenitol
+          Quantity: 5
+
+- type: entity
+  suffix: Serenitol 10u
+  parent: Pill
+  id: PillSerenitolHighDose
+  components:
+  - type: Label
+    currentLabel: serenitol 10u
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 20
+        reagents:
+        - ReagentId: Serenitol
+          Quantity: 10
+
+- type: entity
+  parent: PillCanister
+  id: PillCanisterSerenitolLowDose
+  suffix: Serenitol, 5u x5
+  components:
+  - type: Label
+    currentLabel: serenitol 5u
+  - type: StorageFill
+    contents:
+    - id: PillSerenitolLowDose
+      amount: 5
+
+- type: entity
+  parent: PillCanister
+  id: PillCanisterSerenitolHighDose
+  suffix: Serenitol, 10u x5
+  components:
+  - type: Label
+    currentLabel: serenitol 10u
+  - type: StorageFill
+    contents:
+    - id: PillSerenitolHighDose
+      amount: 5
+
+## Psicodine
+## Anxiety suppressant, reduces jittering and drunkenness.
+## Overdose > 30u
+
+- type: entity
+  suffix: Psicodine 5u
+  parent: Pill
+  id: PillPsicodine
+  components:
+  - type: Label
+    currentLabel: psicodine 5u
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 20
+        reagents:
+        - ReagentId: Psicodine
+          Quantity: 5
+
+- type: entity
+  parent: PillCanister
+  id: PillCanisterPsicodine
+  suffix: Psicodine, 5u x5
+  components:
+  - type: Label
+    currentLabel: psicodine 5u
+  - type: StorageFill
+    contents:
+    - id: PillPsicodine
+      amount: 5
+
+## Saline
+## Raises blood levels - useful for the blood deficiency trait.
+## 0.5u saline raises blood level by 6, so 5u is 60.
+## Keep in mind a baseline Urist has 300u of blood, so this is about 20% if my math is right.
+
+- type: entity
+  suffix: Saline 5u
+  parent: Pill
+  id: PillSaline
+  components:
+  - type: Label
+    currentLabel: saline 5u
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 20
+        reagents:
+        - ReagentId: Saline
+          Quantity: 5
+
+- type: entity
+  parent: PillCanister
+  id: PillCanisterSaline
+  suffix: Saline, 5u x5
+  components:
+  - type: Label
+    currentLabel: saline 5u
+  - type: StorageFill
+    contents:
+    - id: PillSaline
+      amount: 5
+
+## Ethyloxyephedrine
+## Stimulant that can stave off narcolepsy and reduce drowsiness.
+## Only 5u is needed to reset the narcolepsy timer (5-10 minutes).
+
+- type: entity
+  suffix: Ethyloxyephedrine 10u
+  parent: Pill
+  id: PillEthyloxyephedrine
+  components:
+  - type: Label
+    currentLabel: ethyloxyephedrine 10u
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 20
+        reagents:
+        - ReagentId: Ethyloxyephedrine
+          Quantity: 10
+
+- type: entity
+  parent: PillCanister
+  id: PillCanisterEthyloxyephedrine
+  suffix: Ethyloxyephedrine, 10u x5
+  components:
+  - type: Label
+    currentLabel: ethyloxyephedrine 10u
+  - type: StorageFill
+    contents:
+    - id: PillEthyloxyephedrine
+      amount: 5

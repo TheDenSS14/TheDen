@@ -126,7 +126,10 @@
 # SPDX-FileCopyrightText: 2024 zelezniciar1
 # SPDX-FileCopyrightText: 2025 Aviu00
 # SPDX-FileCopyrightText: 2025 Blitz
+# SPDX-FileCopyrightText: 2025 Eightballll
 # SPDX-FileCopyrightText: 2025 Eris
+# SPDX-FileCopyrightText: 2025 Falcon
+# SPDX-FileCopyrightText: 2025 Jakumba
 # SPDX-FileCopyrightText: 2025 M3739
 # SPDX-FileCopyrightText: 2025 Rosycup
 # SPDX-FileCopyrightText: 2025 Skubman
@@ -1967,9 +1970,9 @@
         Blunt: 0.1
   - type: Vocal
     sounds:
-      Male: Mouse
-      Female: Mouse
-      Unsexed: Mouse
+      Male: MouseSounds
+      Female: MouseSounds
+      Unsexed: MouseSounds
     wilhelmProbability: 0.001
   # TODO: Remove CombatMode when Prototype Composition is added
   - type: CombatMode
@@ -3223,6 +3226,12 @@
   - type: Speech
     speechSounds: Cat
     speechVerb: SmallMob
+    allowedEmotes: ['Scream','Hiss','Meow','Mew','Purr','Growl'] #TheDen
+  - type: Vocal #TheDen
+    sounds: #TheDen
+      Male: AnimalCat # TheDen
+      Female: AnimalCat # TheDen
+      Unsexed: AnimalCat # TheDen
   - type: Butcherable
     spawned:
     - id: FoodMeat
@@ -3256,6 +3265,7 @@
   - type: Tag
     tags:
     - VimPilot
+    - FelinidEmotes #TheDen
   - type: RandomBark
     barkType: cat
   - type: LeashAnchor # Floofstation
@@ -3358,6 +3368,7 @@
   - type: Tag
     tags:
       - DoorBumpOpener
+      - FelinidEmotes
   - type: MovementAlwaysTouching
   - type: PressureImmunity
   - type: ProtectedFromStepTriggers

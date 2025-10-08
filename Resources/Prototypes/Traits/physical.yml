@@ -20,16 +20,18 @@
 # SPDX-FileCopyrightText: 2025 Shaman
 # SPDX-FileCopyrightText: 2025 Sir Warock
 # SPDX-FileCopyrightText: 2025 Skubman
+# SPDX-FileCopyrightText: 2025 Steven Higginbotham
 # SPDX-FileCopyrightText: 2025 Tabitha
 # SPDX-FileCopyrightText: 2025 TheOneTrueWolfio
 # SPDX-FileCopyrightText: 2025 VMSolidus
+# SPDX-FileCopyrightText: 2025 bigsantino1
 # SPDX-FileCopyrightText: 2025 foxcurl
 # SPDX-FileCopyrightText: 2025 juniwoofs
 # SPDX-FileCopyrightText: 2025 portfiend
 # SPDX-FileCopyrightText: 2025 sheepie
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: trait
   id: WillToLive
@@ -253,6 +255,7 @@
       inverted: true
       traits:
         - LowPainTolerance
+        - PainNumbness
   functions:
     - !type:TraitReplaceComponent
       components:
@@ -275,6 +278,7 @@
       inverted: true
       traits:
         - Masochism
+        - PainNumbness
   functions:
     - !type:TraitReplaceComponent
       components:
@@ -390,7 +394,8 @@
     - !type:CharacterWidthRequirement
       max: 36
   functions:
-    - !type:TraitAddComponent
+    #- !type:TraitAddComponent # TheDen - All player characters have the PseudoItem component now, so we need to use TraitReplaceComponent instead
+    - !type:TraitReplaceComponent
       components:
         - type: PseudoItem
           storedOffset: 0,17
@@ -418,7 +423,8 @@
     - !type:CharacterWidthRequirement
       max: 36
   functions:
-    - !type:TraitAddComponent
+    #- !type:TraitAddComponent # TheDen - All player characters have the PseudoItem component now, so we need to use TraitReplaceComponent instead
+    - !type:TraitReplaceComponent
       components:
         - type: PseudoItem
           storedOffset: 0,17

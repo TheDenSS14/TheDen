@@ -17,7 +17,7 @@
 # SPDX-FileCopyrightText: 2025 neuPanda
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 # All Security
 - type: characterItemGroup
@@ -103,6 +103,8 @@
       id: LoadoutMagazineMagnumMagnumLeverRifleSpare
     - type: loadout
       id: LoadoutMagazineShotgunBeanbag
+    - type: loadout
+      id: LoadoutSDeviceSirenSecurity
 
 - type: characterItemGroup
   maxItems: 1
@@ -125,8 +127,8 @@
     - type: loadout
       id: LoadoutSecurityEnergyGunMini
     - type: loadout
-      id: LoadoutSecurityEquipmentEnergySword
-    - type: loadout
+    #   id: LoadoutSecurityEquipmentEnergySword # DEN
+    # - type: loadout
       id: LoadoutSecurityPistolPollockNonlethal
     - type: loadout
       id: LoadoutSecurityRevolverSnubNonlethal

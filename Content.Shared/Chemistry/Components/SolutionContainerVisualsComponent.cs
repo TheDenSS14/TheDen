@@ -1,10 +1,10 @@
-// SPDX-FileCopyrightText: 2022 Kara <lunarautomaton6@gmail.com>
-// SPDX-FileCopyrightText: 2023 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2023 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2023 Moony <moony@hellomouse.net>
-// SPDX-FileCopyrightText: 2023 Topy <topy72.mine@gmail.com>
-// SPDX-FileCopyrightText: 2024 themias <89101928+themias@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 Kara
+// SPDX-FileCopyrightText: 2023 DrSmugleaf
+// SPDX-FileCopyrightText: 2023 Leon Friedrich
+// SPDX-FileCopyrightText: 2023 Moony
+// SPDX-FileCopyrightText: 2023 Topy
+// SPDX-FileCopyrightText: 2024 themias
+// SPDX-FileCopyrightText: 2025 sleepyyapril
 //
 // SPDX-License-Identifier: MIT
 
@@ -63,5 +63,17 @@ namespace Content.Shared.Chemistry.Components
         /// </summary>
         [DataField]
         public int InHandsMaxFillLevels = 0;
+
+        /// <summary>
+        /// Optional equipped visuals to show someone is wearing a something with a filled container.
+        /// </summary>
+        [DataField]
+        public string? EquippedFillBaseName = null;
+
+        /// <summary>
+        /// A separate max fill levels for equipped items (to reduce number of sprites needed)
+        /// </summary>
+        [DataField]
+        public int EquippedMaxFillLevels = 0;
     }
 }

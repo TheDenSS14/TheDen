@@ -1,3 +1,4 @@
+# SPDX-FileCopyrightText: 2025 Shaman
 # SPDX-FileCopyrightText: 2025 portfiend
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
@@ -14,3 +15,12 @@
         type: RenamableBoundUserInterface
       enum.StrippingUiKey.Key:
         type: StrippableBoundUserInterface
+
+- type: entity
+  save: false
+  abstract: true
+  id: StorableSpecies # So any species parented to this can technically be stored in a bag, if it's big enough
+  components:
+  - type: PseudoItem # Any species that's naturally storable will overwrite these values due to how parenting works, obviously
+    shape:
+      - 0,0,20,5 # 1 too wide to fit inside ClothingBackpackDuffelHolding, so only bags designed to carry people can actually fit them inside

@@ -1,0 +1,15 @@
+# SPDX-FileCopyrightText: 2025 Your Name
+# SPDX-FileCopyrightText: 2025 fishbait
+# SPDX-FileCopyrightText: 2025 pocl v
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+#
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
+
+
+ghost-role-information-drone-name = Maintenance Drone
+ghost-role-information-drone-description = Maintain the station. Ignore other beings except drones.
+ghost-role-information-drone-rules = You are bound by these laws both in-game and out-of-character:
+
+     1. You may not interfere with the affairs of any being except another drone, regardless of intent or circumstance.
+     2. Your goal is to maintain or improve the station to the best of your ability.
+     3. You may not take any action which causes damage or harm to the station or its inhabitants.

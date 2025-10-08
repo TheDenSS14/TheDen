@@ -1,26 +1,24 @@
-# SPDX-FileCopyrightText: 2025 John Willis <143434770+CerberusWolfie@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 Rosycup <178287475+Rosycup@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 John Willis
+# SPDX-FileCopyrightText: 2025 Kellaris
+# SPDX-FileCopyrightText: 2025 Rosycup
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: entity
   parent: ClothingHeadset
   id: ClothingHeadsetMagistrate
-  name: magistrate's headset
+  name: magistrate's over-ear headset
   description: The headset used by the magistrate.
   components:
   - type: ContainerFill
     containers:
       key_slots:
-      - EncryptionKeyCommand
       - EncryptionKeyCentCom
-      - EncryptionKeyJustice
-      - EncryptionKeyPrison
-      - EncryptionKeySecurity
-      - EncryptionKeyCommon
+      - EncryptionKeyStationMaster
   - type: Sprite
     sprite: _DV/Clothing/Ears/Headsets/justice.rsi
     state: icon_alt
   - type: Clothing
     sprite: _DV/Clothing/Ears/Headsets/justice.rsi
+  - type: FlashSoundSuppression

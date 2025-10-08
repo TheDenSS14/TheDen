@@ -5,7 +5,7 @@
 # SPDX-FileCopyrightText: 2025 Rosycup
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: entity
   parent: ClothingBeltStorageBase
@@ -91,6 +91,13 @@
           tags:
           - Sidearm
         insertOnInteract: true
+      radio:
+        name: clothing-belt-radio
+        priority: -2
+        whitelist:
+          tags:
+            - Radio
+        insertOnInteract: true
   - type: ItemMapper # DeltaV - adjust for DeltaV sprites.
     mapLayers:
       medkit:
@@ -116,4 +123,32 @@
         ents: []
       holster: !type:ContainerSlot {}
       medkit: !type:ContainerSlot {}
+      radio: !type:ContainerSlot {}
   - type: Appearance
+
+- type: entity
+  parent: ClothingBeltStorageBase
+  id: ClothingBeltPaperwork
+  name: paperwork belt
+  description: For all your tactical paperwork needs on the field.
+  components:
+  - type: Sprite
+    sprite: _DV/Clothing/Belt/paperwork.rsi
+  - type: Clothing
+    sprite: _DV/Clothing/Belt/paperwork.rsi
+  - type: Storage
+    whitelist:
+      tags:
+      - Folder
+      - Document
+      - Flashlight
+      - Radio
+      - HandLabeler
+      - Write
+      - TapeRecorder
+      - CassetteTape
+      - BoxReamClassic
+      components:
+      - FitsInDispenser
+      - Stamp
+      - Drink

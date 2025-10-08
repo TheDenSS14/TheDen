@@ -1,13 +1,23 @@
-# SPDX-FileCopyrightText: 2022 Flipp Syder <76629141+vulppine@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT <77995199+DEATHB4DEFEAT@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 Errant <35878406+errant-4@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 VMSolidus <evilexecutive@gmail.com>
-# SPDX-FileCopyrightText: 2025 Blitz <73762869+BlitzTheSquishy@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 Jakumba <jkmcbennett@hotmail.com>
-# SPDX-FileCopyrightText: 2025 Rosycup <178287475+Rosycup@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 Flipp Syder
+# SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT
+# SPDX-FileCopyrightText: 2024 Errant
+# SPDX-FileCopyrightText: 2024 VMSolidus
+# SPDX-FileCopyrightText: 2025 Blitz
+# SPDX-FileCopyrightText: 2025 Jakumba
+# SPDX-FileCopyrightText: 2025 Rosycup
+# SPDX-FileCopyrightText: 2025 SubspaceEmber
+# SPDX-FileCopyrightText: 2025 V
+# SPDX-FileCopyrightText: 2025 mousesweater
+# SPDX-FileCopyrightText: 2025 pocl v
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
+## hey this is carousel
+## in service of vox being somewhat in line with impstation species design standards
+## i have rearranged the furniture in here quite severely
+## mouse here!! im also doing edits, textureswise mostly, to make voxtails actually tails
+## Who let the tails be part of the fucking TORSO
 
 - type: species
   id: Vox
@@ -35,7 +45,10 @@
     Snout: MobHumanoidAnyMarking
     Hair: MobHumanoidAnyMarking
     FacialHair: MobHumanoidAnyMarking
+    Underwear: MobHumanoidAnyMarking
+    Undershirt: MobHumanoidAnyMarking
     Chest: MobVoxTorso
+    HeadSide: MobHumanoidAnyMarking
     Eyes: MobVoxEyes
     LArm: MobVoxLArm
     RArm: MobVoxRArm
@@ -58,14 +71,17 @@
       points: 1
       required: false
     Head:
-      points: 1
-      required: true
+      points: 2
+      required: false #imp
+    HeadSide: #imp
+      points: 2
+      required: false
     Snout:
       points: 1
       required: true
-      defaultMarkings: [ VoxBeak ]
+      defaultMarkings: [ VoxBeakColor ] # Den
     RightArm:
-      points: 1
+      points: 2 # Den
       required: true
       defaultMarkings: [ VoxRArmScales ]
     RightHand:
@@ -73,7 +89,7 @@
       required: true
       defaultMarkings: [ VoxRHandScales ]
     LeftArm:
-      points: 1
+      points: 2 # Den
       required: true
       defaultMarkings: [ VoxLArmScales ]
     LeftHand:
@@ -81,11 +97,11 @@
       required: true
       defaultMarkings: [ VoxLHandScales ]
     RightLeg:
-      points: 1
+      points: 2 # Den
       required: true
       defaultMarkings: [ VoxRLegScales ]
     LeftLeg:
-      points: 1
+      points: 2 # Den
       required: true
       defaultMarkings: [ VoxLLegScales ]
     RightFoot:
@@ -96,6 +112,12 @@
       points: 1
       required: true
       defaultMarkings: [ VoxLFootScales ]
+    Undershirt:
+      points: 1 # den
+      required: false
+    Underwear:
+      points: 1 # den
+      required: false
     Chest:
       points: 1
       required: false
@@ -104,8 +126,8 @@
       required: false
     Tail:
       points: 1
-      required: true
-      defaultMarkings: [ VoxTail ]
+      required: false #imp
+      #defaultMarkings: [ VoxTail ]
 
 - type: humanoidBaseSprite
   id: MobVoxEyes
@@ -134,7 +156,7 @@
 - type: humanoidBaseSprite
   id: MobVoxTorso
   baseSprite:
-    sprite: Mobs/Species/Vox/parts.rsi
+    sprite: _Impstation/Mobs/Species/Vox/parts.rsi #imp
     state: torso
 
 - type: humanoidBaseSprite

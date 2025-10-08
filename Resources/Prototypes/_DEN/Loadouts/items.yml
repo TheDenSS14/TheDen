@@ -5,7 +5,7 @@
 # SPDX-FileCopyrightText: 2025 portfiend
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 # Mime masks
 - type: loadout
@@ -88,6 +88,38 @@
   cost: 0
   items:
     - NetworkConfigurator
+
+- type: loadout
+  id: LoadoutToyBasketball
+  category: GeneralToys
+  cost: 0
+  canBeHeirloom: true
+  items:
+    - Basketball
+
+- type: loadout
+  id: LoadoutToyFootball
+  category: GeneralToys
+  cost: 0
+  canBeHeirloom: true
+  items:
+    - Football
+
+- type: loadout
+  id: LoadoutToyBeachBall
+  category: GeneralToys
+  cost: 0
+  canBeHeirloom: true
+  items:
+    - BeachBall
+
+- type: loadout
+  id: LoadoutToySkimmerDiscus
+  category: GeneralToys
+  cost: 0
+  canBeHeirloom: true
+  items:
+    - SkimmerDiscus
 
 - type: loadout
   id: LoadoutCentcommPin
@@ -294,6 +326,13 @@
   - ClothingBackpackNapsack
 
 - type: loadout
+  id: LoadoutSyringe
+  category: GeneralMedical
+  cost: 1
+  items:
+    - Syringe
+
+- type: loadout
   id: LoadoutClothingHandsSentimentalRing
   category: GeneralItems
   cost: 0
@@ -319,6 +358,46 @@
   customColorTint: true
   items:
     - ClothingNeckHeavyShackles
+
+#Medications
+- type: loadout
+  id: LoadoutPillCanisterEstradiol
+  category: GeneralMedical
+  description: reagent-desc-estradiol
+  cost: 0
+  items:
+    - PillCanisterEstradiol
+
+- type: loadout
+  id: LoadoutSyringeEstradiol
+  category: GeneralMedical
+  description: reagent-desc-estradiol
+  cost: 0
+  items:
+    - SyringeEstradiol
+
+- type: loadout
+  id: LoadoutPillCanisterTestosterone
+  category: GeneralMedical
+  description: reagent-desc-testosterone
+  cost: 0
+  items:
+    - PillCanisterTestosterone
+
+- type: loadout
+  id: LoadoutSyringeTestosterone
+  category: GeneralMedical
+  description: reagent-desc-testosterone
+  cost: 0
+  items:
+    - SyringeTestosterone
+
+- type: loadout
+  id: LoadoutBirthControlCanister
+  category: GeneralMedical
+  cost: 0
+  items:
+    - BirthControlCanister
 
 # Towels
 - type: loadout
