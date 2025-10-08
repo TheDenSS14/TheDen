@@ -58,10 +58,23 @@
         conditions:
         - !type:ReagentThreshold
           min: 30
+        - !type:OrganType #TheDen - Shadowkin are anaerobic and immune to asphyxiation.
+          type: Shadowkin
+          shouldHave: false
         damage:
           types:
             Poison: 2 # this is added to the base damage of the meth.
             Asphyxiation: 2
+      - !type:HealthChange
+        conditions:
+        - !type:ReagentThreshold
+          min: 30
+        - !type:OrganType #TheDen - Shadowkin are anaerobic and immune to asphyxiation.
+          type: Shadowkin
+          shouldHave: true
+        damage:
+          types:
+            Poison: 2
     Narcotic:
       effects:
       - !type:MovespeedModifier
@@ -129,10 +142,23 @@
         conditions:
         - !type:ReagentThreshold
           min: 20
+        - !type:OrganType #TheDen - Shadowkin are anaerobic and immune to asphyxiation.
+          type: Shadowkin
+          shouldHave: false
         damage:
           types:
             Poison: 2 # this is added to the base damage of the meth.
             Asphyxiation: 2
+      - !type:HealthChange
+        conditions:
+        - !type:ReagentThreshold
+          min: 20
+        - !type:OrganType #TheDen - Shadowkin are anaerobic and immune to asphyxiation.
+          type: Shadowkin
+          shouldHave: true
+        damage:
+          types:
+            Poison: 2
       - !type:Jitter
       - !type:GenericStatusEffect
         key: Stun

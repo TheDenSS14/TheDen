@@ -391,7 +391,7 @@
       effects:
       - !type:HealthChange
         conditions:
-        - !type:OrganType
+        - !type:OrganType #TheDen - Shadowkin are anaerobic and immune to asphyxiation.
           type: Shadowkin
           shouldHave: false
         damage:
@@ -413,7 +413,7 @@
       effects:
       - !type:HealthChange
         conditions:
-          - !type:OrganType
+          - !type:OrganType #TheDen - Shadowkin are anaerobic and immune to asphyxiation.
             type: Shadowkin
             shouldHave: false
         damage:
@@ -421,7 +421,7 @@
             Airloss: 10
       - !type:HealthChange
         conditions:
-        - !type:OrganType
+        - !type:OrganType #TheDen - Shadowkin are anaerobic and immune to asphyxiation.
           type: Shadowkin
           shouldHave: true
         damage:
@@ -475,11 +475,27 @@
         conditions:
         - !type:ReagentThreshold
           min: 45
+        - !type:OrganType #TheDen - Shadowkin are anaerobic and immune to asphyxiation.
+          type: Shadowkin
+          shouldHave: false
         damage:
           groups:
             Brute: 2
             Toxin: 2
             Airloss: 2
+      - !type:HealthChange
+        conditions:
+        - !type:ReagentThreshold
+          min: 45
+        - !type:OrganType #TheDen - Shadowkin are anaerobic and immune to asphyxiation.
+          type: Shadowkin
+          shouldHave: true
+        damage:
+          groups:
+            Brute: 2
+            Toxin: 2
+          types:
+            Bloodloss: 1
       - !type:PopupMessage
         type: Local
         messages: [ "histamine-effect-light-itchiness" ]
@@ -608,7 +624,7 @@
           - !type:OrganType
             type: Detritivore
             shouldHave: false
-          - !type:OrganType
+          - !type:OrganType #TheDen
             type: Shadowkin
             shouldHave: false
       - !type:HealthChange
@@ -619,7 +635,7 @@
         - !type:OrganType
           type: Detritivore
           shouldHave: false
-        - !type:OrganType
+        - !type:OrganType #TheDen
           type: Shadowkin
           shouldHave: false
         damage:
@@ -765,7 +781,7 @@
         sprintSpeedModifier: 0.8
       - !type:HealthChange
         conditions:
-        - !type:OrganType
+        - !type:OrganType #TheDen - Shadowkin are anaerobic and immune to asphyxiation.
           type: Shadowkin
           shouldHave: false
         damage:
@@ -773,7 +789,7 @@
             Airloss: 2
       - !type:HealthChange
         conditions:
-        - !type:OrganType
+        - !type:OrganType #TheDen - Shadowkin are anaerobic and immune to asphyxiation.
           type: Shadowkin
           shouldHave: true
         damage:

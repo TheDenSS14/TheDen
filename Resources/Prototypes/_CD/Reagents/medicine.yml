@@ -797,6 +797,9 @@
         conditions:
         - !type:ReagentThreshold
           min: 5.5
+        - !type:OrganType #TheDen - Shadowkin are anaerobic and immune to asphyxiation.
+          type: Shadowkin
+          shouldHave: false
         damage:
           types:
             Asphyxiation: 1 # your lungs relax so much you can't breathe, suffocating you on OD
