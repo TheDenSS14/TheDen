@@ -19,7 +19,7 @@
 - type: entity
   id: OrganShadowkinEyes
   parent: OrganHumanEyes
-  description: "I see beyond anything you ever will!"
+  description: "Check out these peepers!" #TheDen
   categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
   - type: Sprite
@@ -76,7 +76,7 @@
 - type: entity
   id: OrganShadowkinAppendix
   parent: OrganHumanAppendix
-  description: "Does this thing do anything?..." #TheDen
+  description: "Does this even do anything?..." #TheDen
   categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
   - type: Sprite
@@ -88,7 +88,7 @@
 - type: entity
   id: OrganShadowkinHeart
   parent: OrganHumanHeart
-  description: "The pitch-black heart of a Shadowkin. How unsettling."
+  description: "The pitch-black heart of a Shadowkin. How unsettling." #TheDen
   categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
   - type: Sprite
@@ -105,7 +105,7 @@
 - type: entity
   id: OrganShadowkinStomach
   parent: OrganHumanStomach
-  description: '"Yummy!", says the stomach, although you are unable to hear it.'
+  description: "Gross. This is hard to stomach."
   categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
   - type: Sprite
@@ -130,7 +130,7 @@
 - type: entity
   id: OrganShadowkinLiver
   parent: OrganHumanLiver
-  description: "Live 'er? I hardly know 'er!"
+  description: "Just like any other liver, except more gothic." #TheDen
   categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
   - type: Sprite
@@ -146,7 +146,7 @@
 - type: entity
   id: OrganShadowkinKidneys
   parent: OrganHumanKidneys
-  description: "Give the kid their knees back, please, this is the third time this week."
+  description: "Filters toxins from the bloodstream." #TheDen
   categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
   - type: Sprite

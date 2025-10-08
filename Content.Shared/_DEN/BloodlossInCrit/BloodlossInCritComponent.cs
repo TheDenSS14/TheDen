@@ -3,6 +3,8 @@
 //
 // SPDX-License-Identifier: MIT
 
+// This is just the PassiveDamage component with a different name so that the two don't interact. Yes there's probably a better way to do this.
+
 using Content.Shared.Mobs;
 using Content.Shared.FixedPoint;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom;
