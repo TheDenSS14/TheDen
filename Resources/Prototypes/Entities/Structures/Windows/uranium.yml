@@ -113,6 +113,8 @@
         acts: [ "Destruction" ]
   - type: StaticPrice
     price: 40
+  - type: RadiationBlocker
+    resistance: 5
 
 - type: entity
   parent: UraniumWindow

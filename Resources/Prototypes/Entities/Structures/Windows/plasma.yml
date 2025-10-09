@@ -125,6 +125,8 @@
         acts: [ "Destruction" ]
   - type: StaticPrice
     price: 30
+  - type: RadiationBlocker
+    resistance: 4
 
 - type: entity
   parent: PlasmaWindow

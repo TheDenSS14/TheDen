@@ -120,6 +120,8 @@
     price: 70
   - type: PressureDestructible
     maxPressureDifferential: 7500.0
+  - type: RadiationBlocker
+    resistance: 10
 
 - type: entity
   parent: ReinforcedUraniumWindow
