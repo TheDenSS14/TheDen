@@ -38,3 +38,43 @@
     proto: BulletDisablerSmg
     count: 5 # 2 shot stamina crit if you can land all the shots
     spread: 13
+
+- type: entity
+  name: pulse bolt
+  id: BulletEnergyGunPulse
+  parent: BaseBullet
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Reflective
+    reflective:
+    - Energy
+  - type: FlyBySound
+    sound:
+      collection: EnergyMiss
+      params:
+        volume: 5
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Projectiles/projectiles_tg.rsi
+    layers:
+    - state: heavylaser
+      shader: unshaded
+  - type: Ammo
+    muzzleFlash: MuzzleFlashEffectEnergyPulse
+  - type: Physics
+  - type: Fixtures
+    fixtures:
+      projectile:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.2,-0.2,0.2,0.2"
+        hard: false
+        mask:
+        - Opaque
+  - type: Projectile
+    impactEffect: BulletImpactEffectDisabler
+    damage:
+      types:
+        Blunt: 3
+        Heat: 20
+    soundHit:
+      collection: MeatLaserImpact
