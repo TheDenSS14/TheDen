@@ -106,6 +106,12 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
     [DataField]
     public string CharacterConsent { get; set; } = string.Empty;
 
+    /// <summary>
+    /// DEN: Self-examination flavor text.
+    /// </summary>
+    [DataField]
+    public string SelfExamineFlavorText { get; set; } = string.Empty;
+
     /// Associated <see cref="SpeciesPrototype"/> for this profile
     [DataField]
     public string Species { get; set; } = SharedHumanoidAppearanceSystem.DefaultSpecies;
@@ -192,6 +198,7 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
         string flavorText,
         string nsfwFlavorText,
         string characterConsent, // DEN: per-character consents
+        string selfExamineFlavorText, // DEN: self-examine text
         string species,
         string customspeciename,
         // EE -- Contractors Change Start
@@ -223,6 +230,7 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
         FlavorText = flavorText;
         NsfwFlavorText = nsfwFlavorText;
         CharacterConsent = characterConsent;
+        SelfExamineFlavorText = selfExamineFlavorText; // DEN
         Species = species;
         Customspeciename = customspeciename;
         // EE -- Contractors Change Start
@@ -258,6 +266,7 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
             other.FlavorText,
             other.NsfwFlavorText,
             other.CharacterConsent,
+            other.SelfExamineFlavorText, // DEN
             other.Species,
             other.Customspeciename,
             // EE -- Contractors Change Start
@@ -400,6 +409,7 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
     public HumanoidCharacterProfile WithFlavorText(string flavorText) => new(this) { FlavorText = flavorText };
     public HumanoidCharacterProfile WithNsfwFlavorText(string flavorText) => new(this) { NsfwFlavorText = flavorText};
     public HumanoidCharacterProfile WithCharacterConsent(string content) => new(this) { CharacterConsent = content};
+    public HumanoidCharacterProfile WithSelfExamineFlavorText(string flavorText) => new(this) { SelfExamineFlavorText = flavorText }; // DEN
     public HumanoidCharacterProfile WithAge(int age) => new(this) { Age = age };
     // EE - Contractors Change Start
     public HumanoidCharacterProfile WithNationality(string nationality) => new(this) { Nationality = nationality };
@@ -538,6 +548,7 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
             && FlavorText == other.FlavorText
             && NsfwFlavorText == other.NsfwFlavorText
             && CharacterConsent == other.CharacterConsent
+            && SelfExamineFlavorText == other.SelfExamineFlavorText // DEN
             && (CDCharacterRecords == null || other.CDCharacterRecords == null
                 || CDCharacterRecords.MemberwiseEquals(other.CDCharacterRecords))
             // DEN additions below

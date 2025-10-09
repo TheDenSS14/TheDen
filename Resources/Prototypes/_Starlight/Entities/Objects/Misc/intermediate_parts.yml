@@ -1,0 +1,19 @@
+# SPDX-FileCopyrightText: 2025 TheOneTrueWolfio
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+### For items thare are used as intermediate steps on a crafting recipe but have no use outside of it.
+- type: entity
+  parent: BaseItem
+  id: MoproachShoes
+  name: moproach shoes
+  description: Three pairs of tiny mopshoes, perfectly fit for a moproach.
+  components:
+  - type: Sprite
+    sprite: _Starlight/Objects/Misc/moproach_shoes.rsi
+    state: mopshoes
+  - type: Construction
+    graph: MoproachShoes
+    node: shoes
+  - type: Item
+    size: Tiny

@@ -3,12 +3,18 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
+using System.Text;
 using System.Threading.Tasks;
+using Content.Server._DEN.Discord;
 using Content.Shared.CCVar;
 using NetCord;
 using NetCord.Gateway;
 using NetCord.Rest;
 using Robust.Shared.Configuration;
+using Robust.Shared.Utility;
+
+
+// ReSharper disable ConditionIsAlwaysTrueOrFalse
 
 namespace Content.Server.Discord.DiscordLink;
 
@@ -23,9 +29,9 @@ public sealed class CommandReceivedEventArgs
     public string Command { get; init; } = string.Empty;
 
     /// <summary>
-    /// The arguments to the command. This is everything after the command
+    /// The arguments to the command.
     /// </summary>
-    public string Arguments { get; init; } = string.Empty;
+    public required DiscordArguments Arguments { get; init; }
 
     /// <summary>
     /// Information about the message that the command was received from. This includes the message content, author, etc.
@@ -191,25 +197,28 @@ public sealed class DiscordLink : IPostInjectInit
         var trimmedInput = content[BotPrefix.Length..].Trim();
         var firstSpaceIndex = trimmedInput.IndexOf(' ');
 
-        string command, arguments;
+        string command, rawArguments;
 
         if (firstSpaceIndex == -1)
         {
             command = trimmedInput;
-            arguments = string.Empty;
+            rawArguments = string.Empty;
         }
         else
         {
             command = trimmedInput[..firstSpaceIndex];
-            arguments = trimmedInput[(firstSpaceIndex + 1)..].Trim();
+            rawArguments = trimmedInput[(firstSpaceIndex + 1)..].Trim();
         }
+
+        var arguments = GetArgumentsFromString(rawArguments);
+        var discordArguments = new DiscordArguments(rawArguments, arguments);
 
         // Raise the event!
         OnCommandReceived?.Invoke(new CommandReceivedEventArgs
         {
             Command = command,
-            Arguments = arguments,
-            Message = message,
+            Arguments = discordArguments,
+            Message = message
         });
         return ValueTask.CompletedTask;
     }
@@ -218,6 +227,14 @@ public sealed class DiscordLink : IPostInjectInit
     {
         OnMessageReceived?.Invoke(message);
         return ValueTask.CompletedTask;
+    }
+
+    private List<string> GetArgumentsFromString(string input)
+    {
+        var result = new List<string>();
+        CommandParsing.ParseArguments(input, result);
+
+        return result;
     }
 
     #region Proxy methods

@@ -1,14 +1,14 @@
-// SPDX-FileCopyrightText: 2023 Debug <49997488+DebugOk@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2023 PHCodes <47927305+PHCodes@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2023 Pieter-Jan Briers <pieterjan.briers@gmail.com>
-// SPDX-FileCopyrightText: 2023 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 FoxxoTrystan <45297731+FoxxoTrystan@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 ShatteredSwords <135023515+ShatteredSwords@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 username <113782077+whateverusername0@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 RedFoxIV <38788538+RedFoxIV@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 VMSolidus <evilexecutive@gmail.com>
-// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 sleepyyapril <flyingkarii@gmail.com>
+// SPDX-FileCopyrightText: 2023 Debug
+// SPDX-FileCopyrightText: 2023 PHCodes
+// SPDX-FileCopyrightText: 2023 Pieter-Jan Briers
+// SPDX-FileCopyrightText: 2023 metalgearsloth
+// SPDX-FileCopyrightText: 2024 FoxxoTrystan
+// SPDX-FileCopyrightText: 2024 ShatteredSwords
+// SPDX-FileCopyrightText: 2024 username
+// SPDX-FileCopyrightText: 2025 RedFoxIV
+// SPDX-FileCopyrightText: 2025 Shaman
+// SPDX-FileCopyrightText: 2025 VMSolidus
+// SPDX-FileCopyrightText: 2025 sleepyyapril
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -139,6 +139,7 @@ public sealed class PsionicsSystem : EntitySystem
         foreach (var powerId in innate.PowersToAdd)
             if (_protoMan.TryIndex(powerId, out var power))
                 powerCount += power.PowerSlotCost;
+        // TheDen - powerCount was badly named, it's NOT your number of powers, it's your number of powers that TAKE SLOTS, as defined by this equation
 
         component.NextPowerCost = 100 * MathF.Pow(2, powerCount);
     }
@@ -222,8 +223,9 @@ public sealed class PsionicsSystem : EntitySystem
 
     /// <summary>
     ///     Now we handle Potentia calculations, the more powers you have, the harder it is to obtain psionics, but the content of your roll carries over to the next roll.
-    ///     Your first power costs 100(2^0 is always 1), your second power costs 200, your 3rd power costs 400, and so on. This also considers people with roundstart powers.
-    ///     Such that a Mystagogue(who has 3 powers at roundstart) needs 800 Potentia to gain his 4th power.
+    ///     Your first power costs 100(2^0 is always 1), your second power costs 200, your third power costs 400, and so on. This also considers people with roundstart powers.
+    ///     Such that a Mystagogue (who has one power at roundstart) needs 200 Potentia to gain their next power.
+    ///     TheDen - The above summary suggests that ANY psionic power counts for this math, but actually only powers that TAKE POWER SLOTS do (e.g. telepathy doesn't count)
     /// </summary>
     /// <remarks>
     ///     This exponential cost is mainly done to prevent stations from becoming "Space Hogwarts",

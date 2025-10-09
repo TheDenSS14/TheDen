@@ -1,6 +1,9 @@
 // SPDX-FileCopyrightText: 2025 ArtisticRoomba
+// SPDX-FileCopyrightText: 2025 Carlen White
 // SPDX-FileCopyrightText: 2025 Solaris
 // SPDX-FileCopyrightText: 2025 chromiumboy
+// SPDX-FileCopyrightText: 2025 pocl v
+// SPDX-FileCopyrightText: 2025 portfiend
 // SPDX-FileCopyrightText: 2025 sleepyyapril
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later AND MIT

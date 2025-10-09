@@ -12718,3 +12718,142 @@ Entries:
   id: 1245
   time: '2025-10-04T22:33:02.0000000+00:00'
   url: https://github.com/TheDenSS14/TheDen/pull/1832
+- author: ASaltySeabass
+  changes:
+    - type: Fix
+      message: >-
+        Shadowkin eyes are now symmetrical in their left and right facing
+        sprites.
+  id: 1246
+  time: '2025-10-05T17:34:45.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1829
+- author: ASaltySeabass
+  changes:
+    - type: Tweak
+      message: Made Shadowkin markings recolorable.
+  id: 1247
+  time: '2025-10-05T17:35:11.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1836
+- author: portfiend
+  changes:
+    - type: Fix
+      message: >-
+        The progress pride and colorable cloaks now have correct sprites for
+        moths and vox.
+  id: 1248
+  time: '2025-10-05T22:17:58.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1838
+- author: portfiend
+  changes:
+    - type: Add
+      message: >-
+        Doors and ID cards can now have "event staff" accesses, and new preset
+        doors/ID cards have been added to the debug spawn menu. These are
+        intended to be used by mappers and event runners to restrict access to
+        event-relevant personnel; you will not find them on station.
+    - type: Tweak
+      message: >-
+        Admins now have true all-access, including some accesses that the
+        station Captain does not get.
+  id: 1249
+  time: '2025-10-06T19:17:59.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1828
+- author: TheOneTrueWolfio
+  changes:
+    - type: Add
+      message: 'Moproaches '
+    - type: Add
+      message: 'Moproach Cubes '
+    - type: Add
+      message: Moproach Kits
+    - type: Tweak
+      message: 'Added Moproach kits to filled custodial closet '
+    - type: Tweak
+      message: Added Moproach kit crates to cargo request console
+  id: 1250
+  time: '2025-10-06T19:19:18.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1779
+- author: sleepyyapril
+  changes:
+    - type: Add
+      message: >-
+        Admins now have the ability to send bwoinks from discord that are not
+        replies.
+  id: 1251
+  time: '2025-10-06T20:17:44.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1840
+- author: portfiend
+  changes:
+    - type: Add
+      message: >-
+        Players can now add a self-examination description to their characters
+        via the character editor, in the same place you'd find character
+        descriptions and character consent. This information is only visible to
+        the player who controls your character - which can include mindswapping
+        and paradox anomalies.
+    - type: Tweak
+      message: >-
+        The "Description" tab in the character editor has been visually touched
+        up a little. You can now resize the input fields for character
+        descriptions in the UI!
+  id: 1252
+  time: '2025-10-07T03:38:54.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1841
+- author: BlitzTheSquishy
+  changes:
+    - type: Add
+      message: >-
+        Added more air tanks into the lathes to print, from full size to double
+        extended and more.
+  id: 1253
+  time: '2025-10-07T03:52:28.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1359
+- author: SubspaceEmber
+  changes:
+    - type: Fix
+      message: Fixed revolvers not working correctly.
+  id: 1254
+  time: '2025-10-07T03:55:22.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1830
+- author: portfiend
+  changes:
+    - type: Add
+      message: >-
+        You can now configure the maximum width of the examine tooltip in the
+        options menu.
+  id: 1255
+  time: '2025-10-07T04:22:56.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1845
+- author: Shaman
+  changes:
+    - type: Tweak
+      message: Adjusted a few psionic trait descriptions to be more clear
+    - type: Fix
+      message: >-
+        Corrected the job whitelists/blacklists for psionic traits (if the job
+        already has that power)
+    - type: Tweak
+      message: >-
+        Metapsionic Pulse and Assay no longer make it harder to learn new powers
+        since we don't hunt psychics here (they're just RP powers)
+    - type: Tweak
+      message: >-
+        Hypnosis no longer makes it harder to learn new powers since it's also
+        just an RP power
+    - type: Tweak
+      message: >-
+        Mantes now have innate Psychognomy to fit their theme of monitoring
+        psychics
+    - type: Tweak
+      message: >-
+        Mystagogue and Mantis will now be able to gain new psionic powers
+        (though Dispel does make it harder for mysta)
+    - type: Tweak
+      message: >-
+        All jobs with innate psionic powers can now gain ONE glimmerless psionic
+        ability to balance out the effects of the above tweak (all psychics have
+        one glimmerless slot, and after that all psychics will generate glimmer,
+        so it's consistent)
+  id: 1256
+  time: '2025-10-08T01:03:15.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1774

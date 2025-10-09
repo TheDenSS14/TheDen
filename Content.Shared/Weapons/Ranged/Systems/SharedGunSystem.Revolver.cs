@@ -1,13 +1,16 @@
-// SPDX-FileCopyrightText: 2022 KIBORG04 <bossmira4@gmail.com>
-// SPDX-FileCopyrightText: 2022 Kara <lunarautomaton6@gmail.com>
-// SPDX-FileCopyrightText: 2022 PixelTK <85175107+PixelTheKermit@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2023 Scribbles0 <91828755+Scribbles0@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2023 TemporalOroboros <TemporalOroboros@gmail.com>
-// SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 VMSolidus <evilexecutive@gmail.com>
-// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 KIBORG04
+// SPDX-FileCopyrightText: 2022 Kara
+// SPDX-FileCopyrightText: 2022 PixelTK
+// SPDX-FileCopyrightText: 2023 Scribbles0
+// SPDX-FileCopyrightText: 2023 TemporalOroboros
+// SPDX-FileCopyrightText: 2024 Kaga-404
+// SPDX-FileCopyrightText: 2024 metalgearsloth
+// SPDX-FileCopyrightText: 2025 Skye
+// SPDX-FileCopyrightText: 2025 VMSolidus
+// SPDX-FileCopyrightText: 2025 Winter
+// SPDX-FileCopyrightText: 2025 sleepyyapril
 //
-// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+// SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 using Content.Shared.Interaction;
 using Content.Shared.Verbs;
@@ -20,6 +23,8 @@ using Robust.Shared.Utility;
 using System;
 using System.Linq;
 using Content.Shared.Interaction.Events;
+using Content.Shared.Wieldable;
+using Content.Shared.Wieldable.Components;
 using JetBrains.Annotations;
 
 namespace Content.Shared.Weapons.Ranged.Systems;
@@ -32,7 +37,7 @@ public partial class SharedGunSystem
     {
         SubscribeLocalEvent<RevolverAmmoProviderComponent, ComponentGetState>(OnRevolverGetState);
         SubscribeLocalEvent<RevolverAmmoProviderComponent, ComponentHandleState>(OnRevolverHandleState);
-        SubscribeLocalEvent<RevolverAmmoProviderComponent, MapInitEvent>(OnRevolverInit);
+        SubscribeLocalEvent<RevolverAmmoProviderComponent, ComponentInit>(OnRevolverInit);
         SubscribeLocalEvent<RevolverAmmoProviderComponent, TakeAmmoEvent>(OnRevolverTakeAmmo);
         SubscribeLocalEvent<RevolverAmmoProviderComponent, GetVerbsEvent<AlternativeVerb>>(OnRevolverVerbs);
         SubscribeLocalEvent<RevolverAmmoProviderComponent, InteractUsingEvent>(OnRevolverInteractUsing);
@@ -42,8 +47,13 @@ public partial class SharedGunSystem
 
     private void OnRevolverUse(EntityUid uid, RevolverAmmoProviderComponent component, UseInHandEvent args)
     {
+        if (args.Handled)
+            return;
+
         if (!_useDelay.TryResetDelay(uid))
             return;
+
+        args.Handled = true;
 
         Cycle(component);
         UpdateAmmoCount(uid, prediction: false);
@@ -134,7 +144,7 @@ public partial class SharedGunSystem
                 return false;
             }
 
-            for (var i = Math.Min(ev.Ammo.Count - 1, component.Capacity - 1); i >= 0; i--)
+            for (var i = 0; i < component.Capacity; i++)
             {
                 var index = (component.CurrentIndex + i) % component.Capacity;
 
@@ -404,10 +414,14 @@ public partial class SharedGunSystem
                 args.Ammo.Add((spawned, EnsureComp<AmmoComponent>(spawned)));
 
                 if (cartridge.DeleteOnSpawn)
+                {
+                    component.AmmoSlots[index] = null;
                     component.Chambers[index] = null;
+                }
             }
             else
             {
+                component.AmmoSlots[index] = null;
                 component.Chambers[index] = null;
                 args.Ammo.Add((ent.Value, EnsureComp<AmmoComponent>(ent.Value)));
             }
@@ -429,7 +443,7 @@ public partial class SharedGunSystem
         component.CurrentIndex = (component.CurrentIndex + count) % component.Capacity;
     }
 
-    private void OnRevolverInit(EntityUid uid, RevolverAmmoProviderComponent component, MapInitEvent args)
+    private void OnRevolverInit(EntityUid uid, RevolverAmmoProviderComponent component, ComponentInit args)
     {
         component.AmmoContainer = Containers.EnsureContainer<Container>(uid, RevolverContainer);
         component.AmmoSlots.EnsureCapacity(component.Capacity);
