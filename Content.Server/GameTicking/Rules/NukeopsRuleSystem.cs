@@ -66,6 +66,7 @@ using Content.Server.RoundEnd;
 using Content.Server.Shuttles.Events;
 using Content.Server.Shuttles.Systems;
 using Content.Server.Station.Components;
+using Content.Shared.Station.Components;
 using Content.Server.Store.Systems;
 using Content.Shared.Mobs;
 using Content.Shared.Mobs.Components;
