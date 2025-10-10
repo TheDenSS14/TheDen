@@ -35,6 +35,13 @@
 
 # base actions
 
+# base prototype for all action entities
+- type: entity
+  abstract: true
+  id: BaseAction
+  components:
+  - type: Actions
+  
 - type: entity
   id: BaseSuicideAction
   abstract: true
