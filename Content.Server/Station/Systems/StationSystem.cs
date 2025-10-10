@@ -385,7 +385,6 @@ public sealed class StationSystem : EntitySystem
         Dirty(mapGrid, stationMember);
 
         stationData.Grids.Add(mapGrid);
-        Dirty(station, stationData);
         Dirty(mapGrid, stationMember);
 
         RaiseLocalEvent(station, new StationGridAddedEvent(mapGrid, false), true);
