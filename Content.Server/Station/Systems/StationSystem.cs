@@ -33,6 +33,7 @@ using Content.Server.Station.Components;
 using Content.Server.Station.Events;
 using Content.Shared.Fax;
 using Content.Shared.Station;
+using Content.Shared.Station.Components;
 using JetBrains.Annotations;
 using Robust.Server.GameObjects;
 using Robust.Server.Player;
