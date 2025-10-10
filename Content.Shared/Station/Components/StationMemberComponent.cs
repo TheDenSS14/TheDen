@@ -7,7 +7,6 @@
 //
 // SPDX-License-Identifier: MIT
 
-using Content.Server.Station.Systems;
 using Robust.Shared.GameStates;
 
 namespace Content.Shared.Station.Components;
