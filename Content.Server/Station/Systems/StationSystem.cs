@@ -380,9 +380,13 @@ public sealed class StationSystem : EntitySystem
         if (!string.IsNullOrEmpty(name))
             _metaData.SetEntityName(mapGrid, name);
 
-        var stationMember = EnsureComp<StationMemberSharedComponent>(mapGrid);
+        var stationMember = EnsureComp<StationMemberComponent>(mapGrid);
         stationMember.Station = station;
         Dirty(mapGrid, stationMember);
+
+        var stationMemberShared = EnsureComp<StationMemberSharedComponent>(mapGrid);
+        stationMemberShared.Station = station;
+        Dirty(mapGrid, stationMemberShared);
 
         stationData.Grids.Add(mapGrid);
 
