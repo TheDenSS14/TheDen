@@ -1589,15 +1589,15 @@
 
 - type: entity
   parent: BasePlushieCat
-  id: PlushieCatSiames
-  name: siames cat plushie
+  id: PlushieCatSiamese
+  name: siamese cat plushie
   components:
   - type: Sprite
     sprite: Objects/Fun/catplushie.rsi
     state: siames
   - type: FoodSequenceElement
     entries:
-      CottonBurger: SiamesCatPlushie
+      CottonBurger: SiameseCatPlushie
 
 - type: entity
   parent: BasePlushieCat
