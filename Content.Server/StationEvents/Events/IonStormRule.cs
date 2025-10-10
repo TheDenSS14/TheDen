@@ -14,6 +14,7 @@
 
 using System.Linq;
 using Content.Server.Silicons.Laws;
+using Content.Shared.Station.Components;
 using Content.Server.StationEvents.Components;
 using Content.Shared.Administration.Logs;
 using Content.Shared.Database;
@@ -24,7 +25,14 @@ using Content.Shared.Random;
 using Content.Shared.Random.Helpers;
 using Content.Shared.Silicons.Laws;
 using Content.Shared.Silicons.Laws.Components;
-using Content.Shared.Station.Components;
+using Robust.Shared.Prototypes;
+using Robust.Shared.Random;
+using Content.Server.Chat.Managers;
+using Content.Server._DEN.Announcements; // TheDen - Moved ion storm notification to its own component
+using Content.Shared.Chat;
+using Robust.Shared.Player;
+using Content.Shared._Impstation.Thaven.Components;
+using Content.Server._Impstation.Thaven;
 
 namespace Content.Server.StationEvents.Events;
 
@@ -80,6 +88,22 @@ public sealed class IonStormRule : StationEventSystem<IonStormRuleComponent>
 
         if (!TryGetRandomStation(out var chosenStation))
             return;
+
+        // Start TheDen - Moved ion storm notification to its own component
+        var ipcQuery = EntityQueryEnumerator<IonStormNotifierComponent>();
+        while (ipcQuery.MoveNext(out var ent, out var notifierComponent))
+        {
+            DispatchIonStormNotification(ent, notifierComponent.Chance, notifierComponent.Loc);
+        }
+
+        // TODO: This shit is so code
+        // We cant keep doin this shit for all ion storm related events man
+        var thavenMoodsQuery = EntityQueryEnumerator<ThavenMoodsComponent>();
+        while (thavenMoodsQuery.MoveNext(out var ent, out var moods))
+        {
+            _thavenMoods.OnIonStorm((ent, moods));
+        }
+        // End TheDen
 
         var query = EntityQueryEnumerator<SiliconLawBoundComponent, TransformComponent, IonStormTargetComponent>();
         while (query.MoveNext(out var ent, out var lawBound, out var xform, out var target))
@@ -265,16 +289,16 @@ public sealed class IonStormRule : StationEventSystem<IonStormRuleComponent>
         // message logic!!!
         return RobustRandom.Next(0, 36) switch
         {
-            0  => Loc.GetString("ion-storm-law-on-station", ("joined", joined), ("subjects", triple)),
-            1  => Loc.GetString("ion-storm-law-no-shuttle", ("joined", joined), ("subjects", triple)),
-            2  => Loc.GetString("ion-storm-law-crew-are", ("who", crewAll), ("joined", joined), ("subjects", objectsThreats)),
-            3  => Loc.GetString("ion-storm-law-subjects-harmful", ("adjective", adjective), ("subjects", triple)),
-            4  => Loc.GetString("ion-storm-law-must-harmful", ("must", must)),
-            5  => Loc.GetString("ion-storm-law-thing-harmful", ("thing", RobustRandom.Prob(0.5f) ? concept : action)),
-            6  => Loc.GetString("ion-storm-law-job-harmful", ("adjective", adjective), ("job", crew1)),
-            7  => Loc.GetString("ion-storm-law-having-harmful", ("adjective", adjective), ("thing", objectsConcept)),
-            8  => Loc.GetString("ion-storm-law-not-having-harmful", ("adjective", adjective), ("thing", objectsConcept)),
-            9  => Loc.GetString("ion-storm-law-requires", ("who", who), ("plural", plural), ("thing", RobustRandom.Prob(0.5f) ? concept : require)),
+            0 => Loc.GetString("ion-storm-law-on-station", ("joined", joined), ("subjects", triple)),
+            1 => Loc.GetString("ion-storm-law-no-shuttle", ("joined", joined), ("subjects", triple)),
+            2 => Loc.GetString("ion-storm-law-crew-are", ("who", crewAll), ("joined", joined), ("subjects", objectsThreats)),
+            3 => Loc.GetString("ion-storm-law-subjects-harmful", ("adjective", adjective), ("subjects", triple)),
+            4 => Loc.GetString("ion-storm-law-must-harmful", ("must", must)),
+            5 => Loc.GetString("ion-storm-law-thing-harmful", ("thing", RobustRandom.Prob(0.5f) ? concept : action)),
+            6 => Loc.GetString("ion-storm-law-job-harmful", ("adjective", adjective), ("job", crew1)),
+            7 => Loc.GetString("ion-storm-law-having-harmful", ("adjective", adjective), ("thing", objectsConcept)),
+            8 => Loc.GetString("ion-storm-law-not-having-harmful", ("adjective", adjective), ("thing", objectsConcept)),
+            9 => Loc.GetString("ion-storm-law-requires", ("who", who), ("plural", plural), ("thing", RobustRandom.Prob(0.5f) ? concept : require)),
             10 => Loc.GetString("ion-storm-law-requires-subjects", ("who", who), ("plural", plural), ("joined", joined), ("subjects", triple)),
             11 => Loc.GetString("ion-storm-law-allergic", ("who", who), ("plural", plural), ("severity", allergySeverity), ("allergy", RobustRandom.Prob(0.5f) ? concept : allergy)),
             12 => Loc.GetString("ion-storm-law-allergic-subjects", ("who", who), ("plural", plural), ("severity", allergySeverity), ("adjective", adjective), ("subjects", RobustRandom.Prob(0.5f) ? objects : crew1)),
