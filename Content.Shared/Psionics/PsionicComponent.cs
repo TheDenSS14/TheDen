@@ -242,5 +242,7 @@ namespace Content.Shared.Abilities.Psionics
 
         [DataField]
         public Dictionary<string, float> AvailablePowers = new();
+
+        public EntityUid? PsionicAbility = null;
     }
 }

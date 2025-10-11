@@ -608,3 +608,36 @@
 #     - !type:TraitAddPsionics
 #       psionicPowers:
 #         - HealingWordPower
+
+#TheDen
+- type: trait
+  id: PrecognitionPower
+  category: Mental
+  points: -10
+  requirements: 
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+      - StationAi
+      - Borg
+      - MedicalBorg
+    - !type:CharacterLogicOrRequirement
+      requirements: 
+        - !type:CharacterSpeciesRequirement
+          inverted: true
+          species: 
+            - IPC
+        - !type:CharacterTraitRequirement
+          traits:
+            - AnomalousPositronics
+    - !type:CharacterTraitRequirement
+      traits: 
+        - LatentPsychic
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits: 
+        - ShadowkinBlackeye
+  functions:
+    - !type:TraitAddPsionics
+      psionicPowers:
+        - PrecognitionPower
