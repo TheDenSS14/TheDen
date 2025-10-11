@@ -145,3 +145,15 @@
   id: GasAnalyzerPhrase
   parent: BaseEngineeringSubjectPhrase
   text: phrase-gas-analyzer
+
+# Den start
+- type: quickPhrase
+  parent: BaseEngineeringSubjectPhrase
+  id: ParticleAcceleratorPhrase
+  text: phrase-particle-accelerator
+
+- type: quickPhrase
+  parent: BaseEngineeringSubjectPhrase
+  id: SolarPanelPhrase
+  text: phrase-solar-panel
+# Den end

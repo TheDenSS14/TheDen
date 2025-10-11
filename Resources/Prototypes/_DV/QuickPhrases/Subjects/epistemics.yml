@@ -115,3 +115,15 @@
   id: ChassisPhrase
   parent: BaseEpistemicsSubjectPhrase
   text: phrase-chassis
+
+# Den Start
+- type: quickPhrase
+  parent: BaseEpistemicsSubjectPhrase
+  id: ProberPhrase
+  text: phrase-prober
+
+- type: quickPhrase
+  parent: BaseEpistemicsSubjectPhrase
+  id: AnomalyGeneratorPhrase
+  text: phrase-anomaly-generator
+# Den End

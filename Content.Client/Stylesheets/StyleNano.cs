@@ -225,6 +225,7 @@ namespace Content.Client.Stylesheets
 
         // DeltaV - AAC button variables
         public static readonly string CommandButtonClass = "CommandButton";
+        public static readonly string DignitaryButtonClass = "DignitaryButton"; // Den Additions
         public static readonly string EngineeringButtonClass = "EngineeringButton";
         public static readonly string EpistemicsButtonClass = "EpistemicsButton";
         public static readonly string JusticeButtonClass = "JusticeButton";
@@ -236,6 +237,8 @@ namespace Content.Client.Stylesheets
         // DeltaV - AAC button colors
         public static readonly Color CommandButtonColorDefault = Color.FromHex("#404A58");
         public static readonly Color CommandColorHovered = Color.FromHex("#4F587B");
+        public static readonly Color DignitaryButtonColorDefault = Color.FromHex("#40584A"); // Den Additions
+        public static readonly Color DignitaryColorHovered = Color.FromHex("#4F7B58"); // Den Additions
         public static readonly Color EngineeringButtonColorDefault = Color.FromHex("#77684B");
         public static readonly Color EngineeringColorHovered = Color.FromHex("#776D71");
         public static readonly Color EpistemicsButtonColorDefault = Color.FromHex("#6F5973");
@@ -1808,6 +1811,16 @@ namespace Content.Client.Stylesheets
                     .Class(CommandButtonClass)
                     .Pseudo(ContainerButton.StylePseudoClassHover)
                     .Prop(Control.StylePropertyModulateSelf, CommandColorHovered),
+
+                Element<ContainerButton>() // Den Additions
+                    .Class(DignitaryButtonClass)
+                    .Pseudo(ContainerButton.StylePseudoClassNormal)
+                    .Prop(Control.StylePropertyModulateSelf, DignitaryButtonColorDefault),
+
+                Element<ContainerButton>() // Den Additions
+                    .Class(DignitaryButtonClass)
+                    .Pseudo(ContainerButton.StylePseudoClassHover)
+                    .Prop(Control.StylePropertyModulateSelf, DignitaryColorHovered),
 
                 Element<ContainerButton>()
                     .Class(EngineeringButtonClass)
