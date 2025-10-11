@@ -132,7 +132,8 @@ namespace Content.IntegrationTests.Tests
             "Bagel",
             "Northway",
             "Barrier",
-            "Manta"
+            "Manta",
+            "Dingo"
         };
 
         /// <summary>
