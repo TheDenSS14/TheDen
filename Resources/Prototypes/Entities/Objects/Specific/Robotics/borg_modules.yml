@@ -23,16 +23,18 @@
 # SPDX-FileCopyrightText: 2024 deltanedas
 # SPDX-FileCopyrightText: 2024 gluesniffler
 # SPDX-FileCopyrightText: 2024 lzk
+# SPDX-FileCopyrightText: 2025 Avalon
 # SPDX-FileCopyrightText: 2025 Jakumba
 # SPDX-FileCopyrightText: 2025 MajorMoth
 # SPDX-FileCopyrightText: 2025 Solaris
 # SPDX-FileCopyrightText: 2025 Timfa
+# SPDX-FileCopyrightText: 2025 Winter
 # SPDX-FileCopyrightText: 2025 dootythefrooty
 # SPDX-FileCopyrightText: 2025 mart
 # SPDX-FileCopyrightText: 2025 mubururu_
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 - type: entity
   id: BaseBorgModule
@@ -583,6 +585,8 @@
     - MopItem
     - Bucket
     - TrashBag
+    - SprayBottleSpaceCleaner #Den
+    - Dropper # Den - to fill spray bottle
     - Plunger
   - type: BorgModuleIcon
     icon: { sprite: Interface/Actions/actions_borg.rsi, state: cleaning-module }
@@ -599,10 +603,11 @@
   - type: ItemBorgModule
     items:
     - AdvMopItem
+    - TrashBagBluespace # Den
     - HoloprojectorBorg
-    - SprayBottleSpaceCleaner
+    - WeaponLauncherHydraBorg # DeltaV - Let borgs have cleannades!
+    - MegaSprayBottleSpaceCleaner # Den
     - Dropper
-    - TrashBag
   - type: BorgModuleIcon
     icon: { sprite: Interface/Actions/actions_borg.rsi, state: adv-cleaning-module }
 

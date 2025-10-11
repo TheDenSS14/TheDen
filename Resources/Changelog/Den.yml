@@ -12857,3 +12857,42 @@ Entries:
   id: 1256
   time: '2025-10-08T01:03:15.0000000+00:00'
   url: https://github.com/TheDenSS14/TheDen/pull/1774
+- author: Pinkbat5
+  changes:
+    - type: Fix
+      message: >-
+        Voxbox air alarms no longer re-render the game when you interact with
+        them.
+  id: 1257
+  time: '2025-10-11T11:48:14.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1854
+- author: LilNutters
+  changes:
+    - type: Tweak
+      message: >-
+        Blast doors now receive power in order to allow door remotes to
+        open/close them!
+  id: 1258
+  time: '2025-10-11T11:51:15.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1848
+- author: LilNutters
+  changes:
+    - type: Tweak
+      message: >-
+        Plasma and uranium directional windows as well as their reinforced
+        versions now block radiation. Be careful with placement as unconnected
+        corners will still leak radiation.
+  id: 1259
+  time: '2025-10-11T11:52:15.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1847
+- author: SubspaceEmber
+  changes:
+    - type: Add
+      message: Ported the hydra cleanade launcher from DeltaV for janitors and cyborgs!
+    - type: Tweak
+      message: >-
+        The advanced cleaning cyborg module now has a bluespace trash bag,
+        filled space cleaner mega spray bottle, and the Hydra cleanade launcher.
+  id: 1260
+  time: '2025-10-11T12:20:50.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1831
