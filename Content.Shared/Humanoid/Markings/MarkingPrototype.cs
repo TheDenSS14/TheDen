@@ -11,16 +11,28 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
+using Content.Shared.Humanoid.Prototypes;
 using Robust.Shared.Prototypes;
+using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype.Array; // AuroraSong
 using Robust.Shared.Utility;
 
 namespace Content.Shared.Humanoid.Markings
 {
+    // AuroraSong: Make markings inheriting (IInheritingPrototype)
     [Prototype("marking")]
-    public sealed partial class MarkingPrototype : IPrototype
+    public sealed partial class MarkingPrototype : IPrototype, IInheritingPrototype
     {
         [IdDataField]
         public string ID { get; private set; } = "uwu";
+
+        // AuroraSong: Make markings inheriting
+        [ParentDataField(typeof(AbstractPrototypeIdArraySerializer<MarkingPrototype>))]
+        public string[]? Parents { get; }
+
+        [NeverPushInheritance]
+        [AbstractDataField]
+        public bool Abstract { get; }
+        // End AuroraSong
 
         public string Name { get; private set; } = default!;
 
@@ -87,6 +99,26 @@ namespace Content.Shared.Humanoid.Markings
         /// </summary>
         [DataField("colorLinks")]
         public Dictionary<string, string>? ColorLinks { get; private set; }
+
+
+        // Aurora Song: Sort markings to the top for preferred species.
+
+        /// <summary>
+        /// A list of species IDs that will prefer to use this marking above others.
+        /// Species in this list will have this marking sorted to the top, making them more accessible.
+        /// In the future, if marking randomization is added, those will probably use this list too for cohesion.
+        /// </summary>
+        /// <remarks>
+        /// For example: Imagine humans have various ear markings, ranging from regular humanoid ears, to
+        /// pointy elf/imp-like ears, to kemonomimi traits that may overlap with other species such as
+        /// vulpkanin or tajaran. The humanoid and elf ears may be preferred by humans, but their kemonomimi
+        /// ears will be preferred by vulpkanin or tajaran respectively. This floats the elf/humanoid ears to the
+        /// top of humans' ear marking lists.
+        /// </remarks>
+        [DataField]
+        public HashSet<ProtoId<SpeciesPrototype>>? PreferredSpecies = null;
+
+        // End Aurora Song
 
         public Marking AsMarking()
         {
