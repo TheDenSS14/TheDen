@@ -16,7 +16,7 @@ using Content.Server.Antag;
 using Content.Server.Pinpointer;
 using Content.Shared.EntityTable;
 using Content.Shared.GameTicking.Components;
-using Content.Server.Station.Components;
+using Content.Shared.Station.Components;
 using Content.Server.Announcements.Systems;
 using Robust.Shared.Map;
 using Robust.Shared.Player;

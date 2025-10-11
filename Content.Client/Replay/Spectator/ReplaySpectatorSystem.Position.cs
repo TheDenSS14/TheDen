@@ -9,6 +9,7 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 using Content.Shared.Movement.Components;
+using Content.Shared.Station.Components;
 using Robust.Shared.GameStates;
 using Robust.Shared.Map;
 using Robust.Shared.Map.Components;
@@ -174,14 +175,25 @@ public sealed partial class ReplaySpectatorSystem
         float? maxSize = null;
         var gridQuery = EntityQueryEnumerator<MapGridComponent>();
 
+        var stationFound = false;
         while (gridQuery.MoveNext(out var uid, out var grid))
         {
             var size = grid.LocalAABB.Size.LengthSquared();
-            if (maxSize == null || size > maxSize)
-            {
-                maxUid = (uid, grid);
-                maxSize = size;
-            }
+
+            if (maxSize is not null && size < maxSize)
+                continue;
+
+            var station = HasComp<StationMemberComponent>(uid);
+
+            if (!station && stationFound)
+               continue;
+
+            maxUid = (uid, grid);
+            maxSize = size;
+
+            if (station)
+                stationFound = true;
+
         }
 
         coords = new EntityCoordinates(maxUid ?? default, default);

@@ -7,19 +7,19 @@
 //
 // SPDX-License-Identifier: MIT
 
-using Content.Server.Station.Systems;
+using Robust.Shared.GameStates;
 
-namespace Content.Server.Station.Components;
+namespace Content.Shared.Station.Components;
 
 /// <summary>
 /// Indicates that a grid is a member of the given station.
 /// </summary>
-[RegisterComponent, Access(typeof(StationSystem))]
+[RegisterComponent, NetworkedComponent, AutoGenerateComponentState]
 public sealed partial class StationMemberComponent : Component
 {
     /// <summary>
     /// Station that this grid is a part of.
     /// </summary>
-    [DataField]
+    [DataField, AutoNetworkedField]
     public EntityUid Station = EntityUid.Invalid;
 }
