@@ -1,0 +1,35 @@
+- type: entity
+  id: BulletImpactEffectEnergyPulse
+  categories: [ HideSpawnMenu ]
+  components:
+    - type: TimedDespawn
+      lifetime: 0.2
+    - type: Sprite
+      drawdepth: Effects
+      layers:
+        - shader: unshaded
+          map: ["enum.EffectLayers.Unshaded"]
+          sprite: _DEN/Objects/Weapons/Guns/Projectiles/impacts.rsi
+          state: impact_pulse
+    - type: EffectVisuals
+    - type: Tag
+      tags:
+        - HideContextMenu
+
+- type: entity
+  id: BulletImpactEffectEnergyDisabler
+  categories: [ HideSpawnMenu ]
+  components:
+    - type: TimedDespawn
+      lifetime: 0.2
+    - type: Sprite
+      drawdepth: Effects
+      layers:
+        - shader: unshaded
+          map: ["enum.EffectLayers.Unshaded"]
+          sprite: _DEN/Objects/Weapons/Guns/Projectiles/impacts.rsi
+          state: impact_stun
+    - type: EffectVisuals
+    - type: Tag
+      tags:
+        - HideContextMenu
