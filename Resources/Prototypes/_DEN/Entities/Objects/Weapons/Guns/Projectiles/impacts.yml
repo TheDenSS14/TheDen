@@ -3,7 +3,7 @@
   categories: [ HideSpawnMenu ]
   components:
     - type: TimedDespawn
-      lifetime: 0.2
+      lifetime: 0.5
     - type: Sprite
       drawdepth: Effects
       layers:
@@ -21,7 +21,7 @@
   categories: [ HideSpawnMenu ]
   components:
     - type: TimedDespawn
-      lifetime: 0.2
+      lifetime: 0.5
     - type: Sprite
       drawdepth: Effects
       layers:
