@@ -135,12 +135,12 @@ public sealed class LeashSystem : EntitySystem
 
     private void OnAnchorUnequipping(Entity<LeashAnchorComponent> ent, ref BeingUnequippedAttemptEvent args)
     {
-        // Prevent unequipping the anchor clothing until the leash is removed
-        if (TryGetLeashTarget(args.Equipment, out var leashTarget)
-            && TryComp<LeashedComponent>(leashTarget, out var leashed)
-            && leashed.Puller is not null
-           )
-            args.Cancel();
+        // // Prevent unequipping the anchor clothing until the leash is removed
+        // if (TryGetLeashTarget(args.Equipment, out var leashTarget)
+        //     && TryComp<LeashedComponent>(leashTarget, out var leashed)
+        //     && leashed.Puller is not null
+        //    )
+        //     args.Cancel();
     }
 
     private void OnGetEquipmentVerbs(Entity<LeashAnchorComponent> ent, ref GetVerbsEvent<EquipmentVerb> args)
@@ -326,14 +326,20 @@ public sealed class LeashSystem : EntitySystem
 
         if (TryComp<ClothingComponent>(ent, out var clothing))
         {
-            if (clothing.InSlot == null || !_container.TryGetContainingContainer(ent.Owner, out var container))
+            if (!_container.TryGetContainingContainer(ent.Owner, out var container))
                 return false;
+
+            if (clothing.InSlot == null)
+            {
+                leashTarget = ent;
+                return true;
+            }
 
             leashTarget = container.Owner;
             return true;
         }
 
-        leashTarget = ent.Owner;
+        leashTarget = ent;
         return true;
     }
 
@@ -359,16 +365,16 @@ public sealed class LeashSystem : EntitySystem
         var joint = _joints.CreateDistanceJoint(leash, leashTarget, id: jointId);
         // If the soon-to-be-leashed entity is too far away, we don't force it any closer.
         // The system will automatically reduce the length of the leash once it gets closer.
-        var length = Transform(leashTarget).Coordinates.TryDistance(EntityManager, Transform(leash).Coordinates, out var dist)
-            ? MathF.Max(dist, leash.Comp.Length)
-            : leash.Comp.Length;
+        // var length = Transform(leashTarget)
+        //     .Coordinates.TryDistance(EntityManager, Transform(leash).Coordinates, out var dist);
+        //     ? MathF.Max(dist, leash.Comp.Length)
+        //     : leash.Comp.Length;
 
-        joint.CollideConnected = false;
+        //joint.CollideConnected = false;
         joint.MinLength = 0f;
-        joint.MaxLength = length;
+        joint.MaxLength = leash.Comp.Length;
         joint.Stiffness = 1f;
-        joint.CollideConnected = true; // This is just for performance reasons and doesn't actually make mobs collide.
-        joint.Damping = 1f;
+        //joint.Damping = 1f;
 
         return joint;
     }
