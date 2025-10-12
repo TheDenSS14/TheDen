@@ -110,3 +110,14 @@
   sprites:
   - sprite: _DEN/Mobs/Customization/Vulpkanin/backmarks.rsi
     state: backwhole
+
+- type: marking
+  id: VulpTailFluffyTip
+  bodyPart: Tail
+  markingCategory: Tail
+  speciesRestriction: [Vulpkanin]
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Vulpkanin/fluffytip.rsi
+    state: fluffyalt
+  - sprite: _DEN/Mobs/Customization/Vulpkanin/fluffytip.rsi
+    state: fluffyalttip

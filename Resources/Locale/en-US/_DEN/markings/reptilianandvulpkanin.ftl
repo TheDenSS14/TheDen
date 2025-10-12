@@ -40,3 +40,9 @@ marking-NeckChestbandanafluff-bandanafluff = Bandana fluff
 marking-NeckChestbackgerm-backgerm = Back full
 marking-NeckChestbackupper-backupper = Back upper
 marking-NeckChestbackwhole-backwhole = Back whole
+
+# alt version of the fluffy vulpkanin tail, with a colorable tip
+marking-VulpTailFluffyTip = Vulpkanin Fluffy (tip)
+marking-VulpTailFluffyTip-fluffyalt = Base Color
+marking-VulpTailFluffyTip-fluffyalttip = Tip Color
+
