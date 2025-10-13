@@ -132,3 +132,14 @@
   sprites:
   - sprite: _DEN/Mobs/Customization/Vulpkanin/fluffytip.rsi
     state: fluffywag
+
+- type: marking
+  id: VulpTailFluffyTipAnimated
+  bodyPart: Tail
+  markingCategory: Tail
+  speciesRestriction: []
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Vulpkanin/fluffytip.rsi
+    state: fluffyaltwag
+  - sprite: _DEN/Mobs/Customization/Vulpkanin/fluffytip.rsi
+    state: fluffyaltwagtip
