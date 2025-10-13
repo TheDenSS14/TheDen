@@ -219,6 +219,13 @@ public abstract class SharedMaterialReclaimerSystem : EntitySystem
     /// </summary>
     public bool CanGib(EntityUid uid, EntityUid victim, MaterialReclaimerComponent component)
     {
+        // return _config.GetCVar(CCVars.ReclaimerAllowGibbing)
+        //   && component.Powered
+        //   && component.Enabled
+        //   && HasComp<BodyComponent>(victim)
+        //   && HasComp<EmaggedComponent>(uid);
+
+        // Den - Disabled gibbing to prevent cvar being reset
         return false;
     }
 
