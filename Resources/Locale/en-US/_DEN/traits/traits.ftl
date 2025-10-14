@@ -98,3 +98,8 @@ trait-description-ThavenMoods =
 
     (This is the "intended playstyle" of Thaven; this trait is opt-in due to its ability to modify
     your character out of your control. Some moods may have moderate-to-high impact.)[/italic][/color]
+
+trait-name-Chittin = Chittin
+trait-description-Chittin =
+    A language consisting of clicks, buzzes, and some variety of harsh insect sounds.
+    Most of what makes up their speech comes from their antennae, making it a near-impossible language for those without to learn.

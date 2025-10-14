@@ -248,3 +248,19 @@
         - Aural
       languagesUnderstood:
         - Aural
+
+- type: trait
+  id: Chittin
+  category: TraitsSpeechLanguages
+  points: -2
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+      - Chitinid
+  functions:
+    - !type:TraitModifyLanguages
+      languagesSpoken:
+        - Chittin
+      languagesUnderstood:
+        - Chittin
