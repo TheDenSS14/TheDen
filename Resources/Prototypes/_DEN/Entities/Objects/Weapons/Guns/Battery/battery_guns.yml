@@ -23,15 +23,15 @@
     - Back
     sprite: _DEN/Objects/Weapons/Guns/Battery/pulse_magnum.rsi
   - type: Gun
-    fireRate: 2.5
+    fireRate: 2
     projectileSpeed: 37.50
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/laser_cannon.ogg
     soundEmpty:
       path: /Audio/_DV/Weapons/Guns/Empty/dry_fire.ogg
   - type: Battery
-    maxCharge: 1005
-    startingCharge: 1005
+    maxCharge: 800
+    startingCharge: 800
   - type: ProjectileBatteryAmmoProvider
     proto: BulletPulseMagnumDisabler
     fireCost: 50
@@ -59,8 +59,8 @@
   - type: Tag
     tags:
     - Sidearm
-  - type: BatterySelfRecharger # 20 seconds to fully recharge, but it does not do so if it has been fired in the last 2 seconds.
+  - type: BatterySelfRecharger # 20 seconds to fully recharge, but it does not do so if it has been fired in the last 3 seconds.
     autoRecharge: true
     autoRechargeRate: 50
     autoRechargePause: true
-    autoRechargePauseTime: 2
+    autoRechargePauseTime: 3
