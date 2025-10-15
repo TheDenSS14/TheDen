@@ -90,7 +90,11 @@
         whitelist:
           tags:
           - Sidearm
+        ejectSound: #Den edit
+          path: /Audio/_DEN/Weapons/pistol_unholster.ogg
         insertOnInteract: true
+        insertSound: #Den edit
+          path: /Audio/_DEN/Weapons/pistol_holster.ogg
       radio:
         name: clothing-belt-radio
         priority: -2
