@@ -48,3 +48,9 @@ marking-VulpTailFluffyTip = Vulpkanin Fluffy (tip)
 marking-VulpTailFluffyTip-fluffyalt = Base Color
 marking-VulpTailFluffyTip-fluffyalttip = Tip Color
 
+marking-VulpTailFluffyAnimated = Vulpkanin Fluffy (animated)
+marking-VulpTailFluffyAnimated-fluffywag = Fluffy tail
+
+marking-VulpTailFluffyTipAnimated = Vulpkanin Fluffy (tip) (animated)
+marking-VulpTailFluffyTipAnimated-fluffyaltwag = Base Color
+marking-VulpTailFluffyTipAnimated-fluffyaltwagtip = Tip Color
