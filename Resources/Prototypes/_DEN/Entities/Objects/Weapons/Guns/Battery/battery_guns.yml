@@ -33,15 +33,15 @@
     maxCharge: 1005
     startingCharge: 1005
   - type: ProjectileBatteryAmmoProvider
-    proto: BulletDisabler
+    proto: BulletPulseMagnumDisabler
     fireCost: 50
   - type: EnergyGun
     fireModes:
-    - proto: BulletDisabler
+    - proto: BulletPulseMagnumDisabler
       fireCost: 50
       name: disabling
       state: disabler
-    - proto: BulletEnergyGunPulse
+    - proto: BulletPulseMagnumLethal
       fireCost: 100
       name: lethal
       state: lethal
@@ -59,8 +59,8 @@
   - type: Tag
     tags:
     - Sidearm
-  - type: BatterySelfRecharger # 20 seconds to fully recharge, but it does not do so if it has been fired in the last 5 seconds.
+  - type: BatterySelfRecharger # 20 seconds to fully recharge, but it does not do so if it has been fired in the last 2 seconds.
     autoRecharge: true
     autoRechargeRate: 50
     autoRechargePause: true
-    autoRechargePauseTime: 5
+    autoRechargePauseTime: 2
