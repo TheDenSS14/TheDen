@@ -1,11 +1,11 @@
 - type: entity
-  name: Pulse Hybrid
+  name: Pulse Magnum
   parent: BaseWeaponBatterySmall
   id: WeaponEnergyPulse
-  description: A highly advanced energy revolver capable of firing both lethal and disabling bullets.
+  description: A hybridization of pulse and energy gun technologies, reserved for NT operatives.
   components:
   - type: Sprite
-    sprite: _Goobstation/Objects/Weapons/Guns/Battery/erevolver.rsi
+    sprite: _DEN/Objects/Weapons/Guns/Battery/pulse_magnum.rsi
     layers:
     - state: base
       map: ["enum.GunVisualLayers.Base"]
@@ -21,7 +21,7 @@
     - Belt
     - suitStorage
     - Back
-    sprite: _Goobstation/Objects/Weapons/Guns/Battery/erevolver.rsi
+    sprite: _DEN/Objects/Weapons/Guns/Battery/pulse_magnum.rsi
   - type: Gun
     fireRate: 2.5
     projectileSpeed: 37.50
