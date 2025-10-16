@@ -59,7 +59,7 @@
   - type: Tag
     tags:
     - Sidearm
-  - type: BatterySelfRecharger # 20 seconds to fully recharge, but it does not do so if it has been fired in the last 3 seconds.
+  - type: BatterySelfRecharger # 16 seconds to fully recharge, but it does not do so if it has been fired in the last 3 seconds. 19 seconds total when empty.
     autoRecharge: true
     autoRechargeRate: 50
     autoRechargePause: true
