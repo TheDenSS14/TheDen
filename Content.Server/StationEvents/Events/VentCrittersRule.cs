@@ -37,20 +37,6 @@ namespace Content.Server.StationEvents.Events;
 /// This entire file is rewritten, ignore upstream changes.
 /// </remarks>
 ///
-public sealed class VentCritterLocationData
-{
-    public EntityUid LocationUid;
-    public VentCritterSpawnLocationComponent SpawnLocationComponent;
-    public EntityCoordinates Coordinates;
-
-    public VentCritterLocationData(EntityUid uid, VentCritterSpawnLocationComponent spawnComp, EntityCoordinates coords)
-    {
-        LocationUid = uid;
-        SpawnLocationComponent = spawnComp;
-        Coordinates = coords;
-    }
-}
-
 public sealed class VentCrittersRule : StationEventSystem<VentCrittersRuleComponent>
 {
     /*
@@ -69,7 +55,6 @@ public sealed class VentCrittersRule : StationEventSystem<VentCrittersRuleCompon
     [Dependency] private readonly EntityLookupSystem _lookup = default!; // DEN
 
     private List<VentCritterLocationData> _locations = new();
-    // private VentCritterLocationData? _location;
 
     protected override void Added(EntityUid uid, VentCrittersRuleComponent comp, GameRuleComponent gameRule, GameRuleAddedEvent args)
     {
@@ -163,5 +148,22 @@ public sealed class VentCrittersRule : StationEventSystem<VentCrittersRuleCompon
         {
             _locations.Add(new VentCritterLocationData(vent.Owner, vent.Comp, Transform(vent.Owner).Coordinates));
         }
+    }
+}
+
+/// <summary>
+/// Contains location data for the vents that have been selected to spawn critters
+/// </summary>
+public sealed class VentCritterLocationData
+{
+    public EntityUid LocationUid;
+    public VentCritterSpawnLocationComponent SpawnLocationComponent;
+    public EntityCoordinates Coordinates;
+
+    public VentCritterLocationData(EntityUid uid, VentCritterSpawnLocationComponent spawnComp, EntityCoordinates coords)
+    {
+        LocationUid = uid;
+        SpawnLocationComponent = spawnComp;
+        Coordinates = coords;
     }
 }
