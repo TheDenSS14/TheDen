@@ -10,7 +10,7 @@
         - shader: unshaded
           map: ["enum.EffectLayers.Unshaded"]
           sprite: _DEN/Objects/Weapons/Guns/Projectiles/impacts.rsi
-          state: impact_pulse
+          state: impact_pulsemagnum_lethal
     - type: EffectVisuals
     - type: Tag
       tags:
@@ -28,7 +28,7 @@
         - shader: unshaded
           map: ["enum.EffectLayers.Unshaded"]
           sprite: _DEN/Objects/Weapons/Guns/Projectiles/impacts.rsi
-          state: impact_stun
+          state: impact_pulsemagnum_disabler
     - type: EffectVisuals
     - type: Tag
       tags:

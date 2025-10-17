@@ -89,7 +89,7 @@
   - type: StaminaDamageOnCollide
     damage: 30
   - type: Projectile
-    impactEffect: BulletImpactEffectDisabler
+    impactEffect: BulletImpactEffectEnergyDisabler
     damage:
       types:
         Heat: 3 # DEN 5 => 3
