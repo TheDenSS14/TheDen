@@ -86,11 +86,11 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: Ammo
-    muzzleFlash: MuzzleFlashEffectPulseMagnumDisabler
+    muzzleFlash: MuzzleFlashEffectPulseMagnumLethal #Ideally this would use MuzzleFlashEffectPulseMagnumDisabler, but for some reason energy guns use the muzzle flash of whatever the default projectile is (usually disabler). The "BatteryWeaponFireModes" component would work but then the sprite changes wouldn't work.
   - type: StaminaDamageOnCollide
     damage: 30
   - type: Projectile
-    impactEffect: BulletImpactEffectDisabler
+    impactEffect: BulletImpactEffectDisabler #Made a custom disabler impact for the Pulse Magnum, but it was too extra, so I decided to use the default one.
     damage:
       types:
         Heat: 3 # DEN 5 => 3
