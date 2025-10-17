@@ -128,14 +128,14 @@ public sealed class VentCrittersRule : StationEventSystem<VentCrittersRuleCompon
 
         // Get all beacons on station
         var beacons = EntityQueryEnumerator<NavMapBeaconComponent, TransformComponent>();
-        var beaconList = new List<KeyValuePair<EntityUid, TransformComponent>>();
+        var beaconList = new List<Entity<TransformComponent>>();
 
         while (beacons.MoveNext(out var beaconUid, out var navMapBeacon, out var beaconPosition))
         {
             // Check that the beacon is actually on the station, if so add to the list
             if (CompOrNull<StationMemberComponent>(beaconPosition.GridUid)?.Station == station)
             {
-                beaconList.Add(new KeyValuePair<EntityUid, TransformComponent>(beaconUid, beaconPosition));
+                beaconList.Add((beaconUid, beaconPosition));
             }
         }
         // Grab a random beacon from our list
@@ -145,7 +145,7 @@ public sealed class VentCrittersRule : StationEventSystem<VentCrittersRuleCompon
         var selectedBeacon = RobustRandom.Pick(beaconList);
 
         // 10 tile range is purely arbitrary, it would be better to pick vents up to a maximum value instead but
-        var ventsInRange = _lookup.GetEntitiesInRange<VentCritterSpawnLocationComponent>(selectedBeacon.Value.Coordinates, 10).Where(x => x.Comp.CanSpawn);
+        var ventsInRange = _lookup.GetEntitiesInRange<VentCritterSpawnLocationComponent>(selectedBeacon.Comp.Coordinates, 10).Where(x => x.Comp.CanSpawn);
 
         foreach (var vent in ventsInRange)
         {
