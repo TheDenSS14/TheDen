@@ -16,3 +16,15 @@
       enum.MagicPaintUiKey.Key:
         type: MagicPaintBoundUserInterface
   - type: MagicPaint
+  - type: Paint
+    color: "#6600dd"
+  - type: Sprite
+    layers:
+    - state: rainbow2_cap
+      map: ["enum.OpenableVisuals.Layer"]
+  - type: GenericVisualizer
+    visuals:
+      enum.OpenableVisuals.Opened:
+        enum.OpenableVisuals.Layer:
+          True: {state: "rainbow2"}
+          False: {state: "rainbow2_cap"}
