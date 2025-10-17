@@ -22,7 +22,6 @@ using Content.Shared.Chemistry.EntitySystems;
 using Content.Shared.Nutrition.EntitySystems;
 using Content.Shared.Whitelist;
 using Content.Shared.Examine;
-using Robust.Shared.ColorNaming;
 
 namespace Content.Server.Paint;
 
@@ -49,18 +48,6 @@ public sealed partial class PaintSystem : SharedPaintSystem // DEN - Made partia
         SubscribeLocalEvent<PaintComponent, GetVerbsEvent<UtilityVerb>>(OnPaintVerb);
 
         SubscribeLocalEvent<PaintComponent, ExaminedEvent>(OnExamined); // DEN - Examine text for paint cans
-    }
-
-    // DEN - Examine text for paint cans
-    private void OnExamined(Entity<PaintComponent> ent, ref ExaminedEvent args)
-    {
-        var colorName = ColorNaming.Describe(ent.Comp.Color, Loc);
-        var colorText = Loc.GetString("paint-component-color-text",
-            ("hex", ent.Comp.Color.ToHex()),
-            ("name", colorName));
-
-        var examineText = Loc.GetString("paint-component-examine-text", ("color", colorText));
-        args.PushMarkup(examineText);
     }
 
     private void OnInteract(EntityUid uid, PaintComponent component, AfterInteractEvent args)
