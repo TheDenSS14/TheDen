@@ -139,6 +139,9 @@ public sealed class VentCrittersRule : StationEventSystem<VentCrittersRuleCompon
             }
         }
         // Grab a random beacon from our list
+        if (!beaconList.Any())
+            return;
+
         var selectedBeacon = RobustRandom.Pick(beaconList);
 
         // 10 tile range is purely arbitrary, it would be better to pick vents up to a maximum value instead but
