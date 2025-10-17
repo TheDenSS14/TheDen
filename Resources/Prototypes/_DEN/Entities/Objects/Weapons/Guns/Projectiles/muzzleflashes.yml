@@ -1,13 +1,13 @@
 - type: entity
   parent: MuzzleFlashEffect
-  id: MuzzleFlashEffectPulseMagnum
+  id: MuzzleFlashEffectPulseMagnumLethal
   categories: [ HideSpawnMenu ]
   components:
   - type: PointLight
     enabled: true
     color: "#2248a7"
     radius: 1.4
-    energy: 3.0
+    energy: 4.0
   - type: Sprite
     drawdepth: BelowMobs
     offset: 0.15, 0
@@ -15,7 +15,7 @@
     - shader: unshaded
       map: ["enum.EffectLayers.Unshaded"]
       sprite: _DEN/Objects/Weapons/Guns/Projectiles/muzzleflashes.rsi
-      state: energy_pulsemagnum
+      state: energy_pulsemagnum_lethal
 
 - type: entity
   parent: MuzzleFlashEffect
