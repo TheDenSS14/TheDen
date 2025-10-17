@@ -1,0 +1,18 @@
+- type: entity
+  parent: PaintBase
+  id: SprayPaintMagic
+  name: magic spray paint
+  description: A can of color-changing paint that can spray in any color!
+  components:
+  - type: ActivatableUI
+    blockSpectators: true
+    inHandsOnly: true
+    singleUser: true
+    requiresComplex: true
+    verbText: verb-magic-paint-openui
+    key: enum.MagicPaintUiKey.Key
+  - type: UserInterface
+    interfaces:
+      enum.MagicPaintUiKey.Key:
+        type: MagicPaintBoundUserInterface
+  - type: MagicPaint

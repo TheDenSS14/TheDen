@@ -29,7 +29,7 @@ namespace Content.Server.Paint;
 /// <summary>
 /// Colors target and consumes reagent on each color success.
 /// </summary>
-public sealed class PaintSystem : SharedPaintSystem
+public sealed partial class PaintSystem : SharedPaintSystem // DEN - Made partial
 {
     [Dependency] private readonly SharedAudioSystem _audio = default!;
     [Dependency] private readonly SharedPopupSystem _popup = default!;
