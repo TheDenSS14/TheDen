@@ -59,7 +59,7 @@
     - state: pulse_bolt
       shader: unshaded
   - type: Ammo
-    muzzleFlash: MuzzleFlashEffectEnergyPulse
+    muzzleFlash: MuzzleFlashEffectPulseMagnum
   - type: Physics
   - type: Fixtures
     fixtures:
@@ -86,6 +86,7 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: Ammo
+    muzzleFlash: MuzzleFlashEffectPulseMagnumDisabler
   - type: StaminaDamageOnCollide
     damage: 30
   - type: Projectile

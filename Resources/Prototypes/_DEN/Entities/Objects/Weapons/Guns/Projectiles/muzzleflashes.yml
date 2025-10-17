@@ -1,6 +1,6 @@
 - type: entity
   parent: MuzzleFlashEffect
-  id: MuzzleFlashEffectEnergyPulse
+  id: MuzzleFlashEffectPulseMagnum
   categories: [ HideSpawnMenu ]
   components:
   - type: PointLight
@@ -15,11 +15,11 @@
     - shader: unshaded
       map: ["enum.EffectLayers.Unshaded"]
       sprite: _DEN/Objects/Weapons/Guns/Projectiles/muzzleflashes.rsi
-      state: energypulse
+      state: energy_pulsemagnum
 
 - type: entity
   parent: MuzzleFlashEffect
-  id: MuzzleFlashEffectEnergyStun
+  id: MuzzleFlashEffectPulseMagnumDisabler
   categories: [ HideSpawnMenu ]
   components:
   - type: PointLight
@@ -34,4 +34,4 @@
     - shader: unshaded
       map: ["enum.EffectLayers.Unshaded"]
       sprite: _DEN/Objects/Weapons/Guns/Projectiles/muzzleflashes.rsi
-      state: energystun 
+      state: energy_pulsemagnum_disabler
