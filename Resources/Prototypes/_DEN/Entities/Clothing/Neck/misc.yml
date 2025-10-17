@@ -1,6 +1,8 @@
-# SPDX-FileCopyrightText: 2025 Blitz <73762869+BlitzTheSquishy@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 juniwoofs <180479595+juniwoofs@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Blitz
+# SPDX-FileCopyrightText: 2025 Shaman
+# SPDX-FileCopyrightText: 2025 juniwoofs
+# SPDX-FileCopyrightText: 2025 sheepie
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -49,6 +51,39 @@
         - ReagentId: Phosphorus
           Quantity: 2.5
 
+- type: entity
+  parent: ClothingNeckCollarBase
+  id: ClothingNeckSentimentalCollar
+  name: sentimental collar
+  description: A simple collar. It means something to someone.
+  components:
+  - type: Sprite
+    sprite: _DEN/Clothing/Neck/Misc/sentimentalcollar.rsi
+  - type: Clothing
+    sprite: _DEN/Clothing/Neck/Misc/sentimentalcollar.rsi
+
+- type: entity
+  parent: ClothingNeckCollarBase
+  id: ClothingNeckHeavyShackles
+  name: heavy shackles
+  description: It's unclear if these are a reminder, fashion jewelry, or perhaps a very concerning gift.
+  components:
+  - type: Sprite
+    sprite: _DEN/Clothing/Neck/Misc/heavyshackles.rsi
+  - type: Clothing
+    sprite: _DEN/Clothing/Neck/Misc/heavyshackles.rsi
+
+- type: entity
+  parent: ClothingNeckCollarBase
+  id: ClothingNeckAdminAssitantCollar
+  name: administrative assistant collar
+  description: An ornate white leather collar with a command blue tag. Etched into the leather inside of the collar is, "Command Pet".
+  components:
+  - type: Sprite
+    sprite: _DEN/Clothing/Neck/Misc/aacollar.rsi
+  - type: Clothing
+    sprite: _DEN/Clothing/Neck/Misc/aacollar.rsi
+
 #tallits
 
 - type: entity
@@ -94,4 +129,3 @@
     sprite: _DEN/Clothing/Neck/Misc/tallitblackwhite.rsi
   - type: Clothing
     sprite: _DEN/Clothing/Neck/Misc/tallitblackwhite.rsi
-

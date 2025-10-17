@@ -1,0 +1,30 @@
+# SPDX-FileCopyrightText: 2025 Shaman
+# SPDX-FileCopyrightText: 2025 sheepie
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  parent: ClothingOuterBase
+  id: ClothingOuterCoatTurtleneckHalfBlouse
+  name: turtleneck half blouse
+  description: A cropped, ribbed half blouse with a high collar.
+  components:
+    - type: Sprite
+      sprite: _DEN/Clothing/OuterClothing/WinterCoats/turtleneckhalfblouse.rsi
+    - type: Clothing
+      sprite: _DEN/Clothing/OuterClothing/WinterCoats/turtleneckhalfblouse.rsi
+    - type: TemperatureProtection
+      heatingCoefficient: 1.1
+      coolingCoefficient: 0.1
+
+- type: entity
+  parent: ClothingOuterWinterCoatToggleable
+  id: ClothingOuterWinterAdminAssistant
+  name: administrative assistant winter coat
+  components:
+    - type: Sprite
+      sprite: _DEN/Clothing/OuterClothing/WinterCoats/coataa.rsi
+    - type: Clothing
+      sprite: _DEN/Clothing/OuterClothing/WinterCoats/coataa.rsi
+    - type: ToggleableClothing
+      clothingPrototype: ClothingHeadHatHoodWinterAdminAssistant

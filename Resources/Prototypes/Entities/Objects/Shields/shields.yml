@@ -20,12 +20,15 @@
 # SPDX-FileCopyrightText: 2024 deltanedas
 # SPDX-FileCopyrightText: 2024 liltenhead
 # SPDX-FileCopyrightText: 2024 slarticodefast
+# SPDX-FileCopyrightText: 2025 Eightballll
 # SPDX-FileCopyrightText: 2025 Jakumba
 # SPDX-FileCopyrightText: 2025 KekaniCreates
+# SPDX-FileCopyrightText: 2025 MajorMoth
 # SPDX-FileCopyrightText: 2025 Rosycup
+# SPDX-FileCopyrightText: 2025 Winter
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: entity
   name: base shield
@@ -93,7 +96,7 @@
 
 - type: entity
   name: riot shield
-  parent: BaseShield
+  parent: [ BaseSecurityContraband, BaseShield ]
   id: RiotShield
   description: A large tower shield. Good for controlling crowds.
   components:
@@ -102,7 +105,7 @@
 
 - type: entity
   name: riot laser shield
-  parent: BaseShield
+  parent: [ BaseSecurityContraband, BaseShield ]
   id: RiotLaserShield
   description: A riot shield built for withstanding lasers, but not much else.
   components:
@@ -122,7 +125,7 @@
 
 - type: entity
   name: riot bullet shield
-  parent: BaseShield
+  parent: [ BaseSecurityContraband, BaseShield ]
   id: RiotBulletShield
   description: A ballistic riot shield built for withstanding bullets, but not much else.
   components:
@@ -201,6 +204,60 @@
                   max: 5
     - type: StaticPrice
       price: 150
+
+- type: entity
+  name: cardboard shield
+  parent: BaseShield
+  id: CardShield
+  description: A shield that wont shield you from much.
+  components:
+    - type: Sprite
+      state: cardshield-icon
+    - type: Item
+      heldPrefix: cardshield
+    - type: Blocking
+      passiveBlockModifier:
+        coefficients:
+          Blunt: 1
+          Slash: 2
+          Piercing: 0.6
+          Heat: 3
+      activeBlockModifier:
+        coefficients:
+          Blunt: 0.9
+          Slash: 1.8
+          Piercing: 0.5
+          Heat: 2.5
+        flatReductions:
+          Blunt: 0.5
+    - type: StaminaDamageResistance
+      coefficient: 0.9
+    - type: Construction
+      graph: CardShield
+      node: cardShield
+    - type: Destructible
+      thresholds:
+      - trigger:
+          !type:DamageTrigger
+          damage: 25
+        behaviors:
+        - !type:DoActsBehavior
+          acts: [ "Destruction" ]
+      - trigger:
+          !type:DamageTrigger
+          damage: 10 #Very very weak shield
+        behaviors:
+        - !type:DoActsBehavior
+          acts: [ "Destruction" ]
+        - !type:PlaySoundBehavior
+          sound: /Audio/Items/Toys/ToyFall2.ogg
+        - !type:SpawnEntitiesBehavior
+          spawn:
+            MaterialCardboard:
+              min: 2
+              max: 4
+    - type: StaticPrice
+      price: 20
 
 - type: entity
   name: makeshift shield
@@ -376,7 +433,7 @@
       heldPrefix: eshield
     - type: UseDelay
       delay: 0.5
-    - type: ToggleableLightVisuals
+    - type: ToggleableVisuals
       spriteLayer: shield
       inhandVisuals:
         left:
@@ -419,7 +476,7 @@
 
 - type: entity
   name: energy shield
-  parent: BaseEnergyShield
+  parent: [ BaseRivalCompanyContraband, BaseEnergyShield ]
   id: EnergyShield
   components:
   - type: Destructible
@@ -495,7 +552,7 @@
       heldPrefix: teleriot
     - type: UseDelay
       delay: 0.5
-    - type: ToggleableLightVisuals
+    - type: ToggleableVisuals
       spriteLayer: shield
       inhandVisuals:
         left:

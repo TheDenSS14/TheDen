@@ -50,7 +50,7 @@
 # SPDX-FileCopyrightText: 2025 portfiend
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: entityTable
   id: AllPlushiesTable
@@ -153,6 +153,11 @@
       # End DeltaV
       - !type:EntSelector
         id: PlushieOvinia
+      - !type:EntSelector # TheDen
+        id: PlushieThaven
+      - !type:EntSelector # TheDen
+        id: PlushieThavenWeird
+        weight: 0.3
     - !type:GroupSelector
       children:
       - !type:EntSelector
@@ -259,6 +264,7 @@
       - id: CelloInstrument
       - id: ViolaInstrument
       - id: HarpInstrument
+      - id: HandheldHarpInstrument #imp
 
 - type: entity
   id: CrateFunInstrumentsWoodwind
@@ -505,6 +511,20 @@
         prob: 0.05
 
 - type: entity
+  id: CrateFunMysterySpaceBlades
+  parent: CratePlastic
+  name: mystery space blade crate
+  description: A collection of 10 Mystery Space Blade boxes. Duplicates non refundable.
+  components:
+  - type: StorageFill
+    contents:
+      - id: MysterySpaceBladeBox
+        amount: 10
+      - id: MysterySpaceBladeBox
+        amount: 15
+        prob: 0.05
+
+- type: entity
   id: CrateFunSprayPaints
   name: spray paint crate
   description: a crate filled with spray paint.
@@ -554,3 +574,14 @@
       - id: BoxDarts
         amount: 1
         prob: 0.05
+
+- type: entity
+  name: moproach kit crate
+  description: A box with three moproach kits that provides you with six moproaches. For the worst of messes.
+  id: CrateFunMoproach
+  parent: CratePlastic
+  components:
+  - type: StorageFill
+    contents:
+    - id: MoproachBox
+      amount: 3

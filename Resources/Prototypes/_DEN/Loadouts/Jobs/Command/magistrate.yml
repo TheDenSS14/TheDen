@@ -1,7 +1,57 @@
-# SPDX-FileCopyrightText: 2025 Blitz <73762869+BlitzTheSquishy@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Blitz
+# SPDX-FileCopyrightText: 2025 Kellaris
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
+
+# Equipment
+
+- type: loadout
+  id: LoadoutMagistrateDisabler
+  category: JobsCommandMagistrate
+  cost: 0
+  canBeHeirloom: true
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutMagistrateWeapon
+  - !type:CharacterJobRequirement
+    jobs:
+    - Magistrate
+  items:
+  - WeaponCCDisabler
+
+# Gloves
+- type: loadout
+  id: LoadoutMagistrateGlovesHoP
+  category: JobsCommandMagistrate
+  cost: 0
+  exclusive: true
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutMagistrateGloves
+  - !type:CharacterJobRequirement
+    jobs:
+    - Magistrate
+    - ChiefJustice
+  items:
+  - ClothingHandsGlovesHop
+
+- type: loadout
+  id: LoadoutMagistrateGlovesInspection
+  category: JobsCommandMagistrate
+  cost: 0
+  exclusive: true
+  customColorTint: true
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutMagistrateGloves
+  - !type:CharacterJobRequirement
+    jobs:
+    - Magistrate
+    - ChiefJustice
+  items:
+  - ClothingHandsGlovesInspection
+
 
 - type: loadout
   id: LoadoutTowelMaroonCJ

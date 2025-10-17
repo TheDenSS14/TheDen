@@ -140,6 +140,9 @@
       lowPressureMultiplier: 1000
     - type: ExplosionResistance
       damageCoefficient: 0.6
+    - type: TemperatureProtection
+      heatingCoefficient: 0.001
+      coolingCoefficient: 0.001
 
 - type: entity
   parent: ClothingModsuitBootsStandard

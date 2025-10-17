@@ -1,14 +1,17 @@
 # SPDX-FileCopyrightText: 2024 FoxxoTrystan
+# SPDX-FileCopyrightText: 2025 ASaltySeabass
 # SPDX-FileCopyrightText: 2025 Aikakakah
 # SPDX-FileCopyrightText: 2025 Blitz
 # SPDX-FileCopyrightText: 2025 BloodfiendishOperator
 # SPDX-FileCopyrightText: 2025 KekaniCreates
 # SPDX-FileCopyrightText: 2025 Rosycup
+# SPDX-FileCopyrightText: 2025 Shaman
 # SPDX-FileCopyrightText: 2025 SixplyDev
+# SPDX-FileCopyrightText: 2025 TheLuggage05
 # SPDX-FileCopyrightText: 2025 VMSolidus
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: species
   id: Shadowkin
@@ -24,9 +27,11 @@
   maleFirstNames: NamesShadowkin
   femaleFirstNames: NamesShadowkin
   minAge: 18
-  maxAge: 250
-  youngAge: 80
-  oldAge: 175
+  youngAge: 50 # TheDen - Originally 80
+  middleAge: 100 # TheDen - Originally 130
+  olderAge: 150 # TheDen - Originally 175
+  oldAge: 200 # TheDen - Because we have "young adult" and "adult" now, all the numbers have been adjusted to match those descriptions based on maxAge
+  maxAge: 240
   sexes:
     - Male
     - Female
@@ -72,6 +77,10 @@
       points: 1
       required: true
       defaultMarkings: [EarsShadowkin]
+    Head: # den edit start, giving shadowkin their glowing eyes back
+      points: 1
+      required: true
+      defaultMarkings: [EyesShadowkinUnshaded] # den edit end
     Chest:
       points: 6
       required: false
@@ -114,7 +123,7 @@
 
 - type: humanoidBaseSprite
   id: MobShadowkinAnyMarkingFollowSkin
-  markingsMatchSkin: true
+  markingsMatchSkin: false
 
 - type: humanoidBaseSprite
   id: MobShadowkinAnyMarking

@@ -59,13 +59,15 @@
 # SPDX-FileCopyrightText: 2024 chavonadelal
 # SPDX-FileCopyrightText: 2024 degradka
 # SPDX-FileCopyrightText: 2024 deltanedas
+# SPDX-FileCopyrightText: 2025 Blitz
 # SPDX-FileCopyrightText: 2025 BlitzTheSquishy
 # SPDX-FileCopyrightText: 2025 Rosycup
 # SPDX-FileCopyrightText: 2025 Tobias Berger
 # SPDX-FileCopyrightText: 2025 Will-Oliver-Br
+# SPDX-FileCopyrightText: 2025 portfiend
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: entity
   parent: Clothing
@@ -422,8 +424,9 @@
     layers:
     - state: default
     - state: department
-      color: "#878787"
+      color: "#2d2d2d"
     - state: subdepartment
+      color: "#2d2d2d"
     - state: mime
   - type: PresetIdCard
     job: Mime
@@ -441,8 +444,8 @@
     - state: subdepartment
       color: "#58C800"
     - state: chaplain
-    - type: PresetIdCard
-      job: Chaplain
+  - type: PresetIdCard
+    job: Chaplain
 
 - type: entity
   parent: IDCardStandard
@@ -862,9 +865,9 @@
     layers:
     - state: default
     - state: department
-      color: "#878787"
+      color: "#6f56b8"
     - state: subdepartment
-      color: "#878787"
+      color: "#6f56b8"
     - state: musician
   - type: PresetIdCard
     job: Musician
@@ -961,7 +964,7 @@
     job: AtmosphericTechnician
 
 - type: entity
-  parent: IDCardStandard
+  parent: [ IDCardStandard, BaseRivalCompanyContraband ]
   id: SyndicateIDCard
   name: syndicate ID card
   components:
@@ -1097,7 +1100,7 @@
       color: "#CB0000"
     - state: subdepartment
       color: "#CB0000"
-    - state: cc
+    - state: cburn
   - type: Item
     heldPrefix: blue
   - type: PresetIdCard
@@ -1230,4 +1233,4 @@
     jobIcon: JobIconAdmin
   - type: Access
     groups:
-    - AllAccess
+    - AdminAllAccess # DEN - Give admins true AA.

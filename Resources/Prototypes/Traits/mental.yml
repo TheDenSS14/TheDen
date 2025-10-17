@@ -6,6 +6,8 @@
 # SPDX-FileCopyrightText: 2025 MajorMoth
 # SPDX-FileCopyrightText: 2025 Raikyr0
 # SPDX-FileCopyrightText: 2025 Rosycup
+# SPDX-FileCopyrightText: 2025 Shaman
+# SPDX-FileCopyrightText: 2025 Sir Warock
 # SPDX-FileCopyrightText: 2025 SixplyDev
 # SPDX-FileCopyrightText: 2025 Skubman
 # SPDX-FileCopyrightText: 2025 VMSolidus
@@ -26,9 +28,6 @@
         - MedicalBorg
     - !type:CharacterLogicOrRequirement
       requirements:
-        - !type:CharacterSpeciesRequirement
-          species:
-            - Shadowkin # Innate Psionics
         - !type:CharacterTraitRequirement
           traits:
             - LatentPsychic
@@ -52,6 +51,7 @@
       species:
         - Oni
         - Kitsune # Floof - M3739 - #937 - They already have an equivalent.
+        - Shadowkin
     - !type:CharacterTraitRequirement
       inverted: true
       traits:
@@ -503,6 +503,7 @@
             - Chaplain
             - ResearchDirector
             - ForensicMantis
+            - Librarian
     - !type:CharacterLogicOrRequirement
       requirements:
         - !type:CharacterSpeciesRequirement
@@ -516,10 +517,6 @@
       inverted: true
       traits:
         - ShadowkinBlackeye
-    - !type:CharacterJobRequirement
-      inverted: true
-      jobs:
-        - Librarian
   functions:
     - !type:TraitAddPsionics
       psionicPowers:
@@ -549,7 +546,6 @@
           jobs:
             - Chaplain
             - ResearchDirector
-            - ForensicMantis
             - Librarian
     - !type:CharacterLogicOrRequirement
       requirements:
@@ -564,6 +560,10 @@
       inverted: true
       traits:
         - ShadowkinBlackeye
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - ForensicMantis
   functions:
     - !type:TraitAddPsionics
       psionicPowers:

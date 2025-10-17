@@ -19,8 +19,11 @@ SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
         <BoxContainer Orientation="Horizontal" HorizontalExpand="True">
             <CheckBox Name="ShouldBuffer" Text="{Loc 'aac-tablet-combine'}"/>
             <LineEdit Name="BufferedString" Editable="False" HorizontalExpand="True"/>
-            <Button Name="ClearButton" Text="{Loc 'aac-tablet-backspace'}" TextAlign="Center"/>
-            <Button Name="SendButton" Text="{Loc 'aac-tablet-send'}" TextAlign="Center"/>
+            <!-- begin starcup -->
+            <Button Name="ClearButton" Text="{Loc 'aac-tablet-backspace'}" TextAlign="Center" StyleClasses="OpenBoth" />
+            <OptionButton Name="RadioChannels" StyleClasses="OpenBoth"/>
+            <Button Name="SendButton" Text="{Loc 'aac-tablet-send'}" TextAlign="Center" StyleClasses="OpenLeft"/>
+            <!-- end starcup -->
         </BoxContainer>
         <TabContainer Name="WindowBody" TabTitle="Search" VerticalExpand="True" MouseFilter="Pass">
             <BoxContainer Orientation="Vertical" Name="Search" MinSize="540 200">

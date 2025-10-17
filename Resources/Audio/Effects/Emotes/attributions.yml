@@ -1,12 +1,13 @@
-# SPDX-FileCopyrightText: 2023 Alex Evgrashin <aevgrashin@yandex.ru>
-# SPDX-FileCopyrightText: 2023 Visne <39844191+Visne@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2023 brainfood1183 <113240905+brainfood1183@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2023 justproggramer <68664576+Klaypexx@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 Skubman <ba.fallaria@gmail.com>
-# SPDX-FileCopyrightText: 2025 Tabitha <64847293+KyuPolaris@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Alex Evgrashin
+# SPDX-FileCopyrightText: 2023 Visne
+# SPDX-FileCopyrightText: 2023 brainfood1183
+# SPDX-FileCopyrightText: 2023 justproggramer
+# SPDX-FileCopyrightText: 2025 Skubman
+# SPDX-FileCopyrightText: 2025 Tabitha
+# SPDX-FileCopyrightText: 2025 pocl.v
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - files:
     - clap1.ogg
@@ -16,6 +17,11 @@
   license: "CC-BY-SA-3.0"
   copyright: "Taken from tgstation at https://github.com/tgstation/tgstation/commit/e1142f20f5e4661cb6845cfcf2dd69f864d67432"
   source: "https://github.com/tgstation/tgstation"
+- files:
+  - clap-single.ogg
+  license: "CC-BY-SA-3.0"
+  copyright: "Taken from Citadel Station at https://github.com/Citadel-Station-13/Citadel-Station-13/commit/e145bdafe83e2cf38d148c39f073da5e7b0cb456"
+  source: "https://github.com/Citadel-Station-13/Citadel-Station-13"
 - files:
     - snap1.ogg
     - snap2.ogg
@@ -39,5 +45,5 @@
     - harpyHoot3.ogg
     - harpyHoot4.ogg
   license: "CC-BY-NC-4.0"
-  copyright: "Taken from https://pixabay.com/sound-effects/owl-hooting-223549/ & https://pixabay.com/sound-effects/owl-humanatone-102805/. Volume lowered for audio balancing purposes and converted to mono."
+  copyright: "Taken from https://pixabay.com/sound-effects/owl-hooting-223549/ & https://pixabay.com/sound-effects/owl-humanatone-102805/. Volume lowered for audio balancing purposes and converted to mono. Mixed to mono by AvianMaiden."
   source: "https://pixabay.com/sound-effects/"

@@ -11,14 +11,29 @@ trait-name-HollowFangs = Hollow Fangs
 trait-description-HollowFangs =
     Whether through implantation, genetic modification, or evolution, you have a pair of hollow, sharp fangs used to drink iron-based blood from the beings that contain it.
 
-trait-name-CumProducer = Cock
-trait-description-CumProducer = You're ready to bust at a moment's notice.
+trait-name-CumProducer = Cum Producer (Cock)
+trait-description-CumProducer = This trait allows you to fill containers (such as beakers) with cum, to
+    suit your roleplay needs. [italic][color=orange]
+    Always keep server rules in mind[/color] and absolutely [color=red]do not expose people
+    to lewd reagents without their explicit consent[/color]. This includes, for example,
+    leaving it in public where other people can find it, or tricking people into
+    consuming it. [color=red]You will be banned.[/color][/italic]
 
-trait-name-MilkProducer = Boobs
-trait-description-MilkProducer = You use hunger to produce milk. Lovely!
+trait-name-MilkProducer = Milk Producer (Boobs)
+trait-description-MilkProducer = This trait allows you to fill containers (such as beakers) with milk, to
+    suit your roleplay needs. [italic][color=orange]
+    Always keep server rules in mind[/color] and absolutely [color=red]do not expose people
+    to lewd reagents without their explicit consent[/color]. This includes, for example,
+    leaving it in public where other people can find it, or tricking people into
+    consuming it. [color=red]You will be banned.[/color][/italic]
 
-trait-name-SquirtProducer = Pussy
-trait-description-SquirtProducer = Woah, they're a squirter!
+trait-name-SquirtProducer = Lubricant Producer (Pussy)
+trait-description-SquirtProducer = This trait allows you to fill containers (such as beakers) with natural
+    lubricant, to suit your roleplay needs. [italic][color=orange]
+    Always keep server rules in mind[/color] and absolutely [color=red]do not expose people
+    to lewd reagents without their explicit consent[/color]. This includes, for example,
+    leaving it in public where other people can find it, or tricking people into
+    consuming it. [color=red]You will be banned.[/color][/italic]
 
 trait-name-Weakness = Weakness
 trait-description-Weakness = You are naturally more vulnerable to fatigue. Your stamina pool is halved, making you greately vulnerable to shoving and stunning attacks.

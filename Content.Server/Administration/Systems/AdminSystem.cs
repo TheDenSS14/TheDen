@@ -1,32 +1,28 @@
-// SPDX-FileCopyrightText: 2021 Acruid <shatter66@gmail.com>
-// SPDX-FileCopyrightText: 2021 Javier Guardia Fernández <DrSmugleaf@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2021 Paul <ritter.paul1+git@googlemail.com>
-// SPDX-FileCopyrightText: 2021 Paul <ritter.paul1@googlemail.com>
-// SPDX-FileCopyrightText: 2021 Paul Ritter <ritter.paul1@googlemail.com>
-// SPDX-FileCopyrightText: 2021 Vera Aguilera Puerto <gradientvera@outlook.com>
-// SPDX-FileCopyrightText: 2021 metalgearsloth <comedian_vs_clown@hotmail.com>
-// SPDX-FileCopyrightText: 2021 metalgearsloth <metalgearsloth@gmail.com>
-// SPDX-FileCopyrightText: 2022 Kara <lunarautomaton6@gmail.com>
-// SPDX-FileCopyrightText: 2022 Moony <moonheart08@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2022 mirrorcult <lunarautomaton6@gmail.com>
-// SPDX-FileCopyrightText: 2022 wrexbe <81056464+wrexbe@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2023 Debug <49997488+DebugOk@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2023 Fluffiest Floofers <thebluewulf@gmail.com>
-// SPDX-FileCopyrightText: 2023 Pieter-Jan Briers <pieterjan.briers@gmail.com>
-// SPDX-FileCopyrightText: 2023 ShadowCommander <10494922+ShadowCommander@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2023 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 Chief-Engineer <119664036+Chief-Engineer@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 LordCarve <27449516+LordCarve@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
-// SPDX-FileCopyrightText: 2024 Simon <63975668+Simyon264@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 SimpleStation14 <130339894+SimpleStation14@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 deltanedas <39013340+deltanedas@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 sleepyyapril <flyingkarii@gmail.com>
-// SPDX-FileCopyrightText: 2025 Rosycup <178287475+Rosycup@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 VMSolidus <evilexecutive@gmail.com>
-// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2021 Acruid
+// SPDX-FileCopyrightText: 2021 Javier Guardia Fernández
+// SPDX-FileCopyrightText: 2021 Paul
+// SPDX-FileCopyrightText: 2021 Paul Ritter
+// SPDX-FileCopyrightText: 2021 Vera Aguilera Puerto
+// SPDX-FileCopyrightText: 2022 Kara
+// SPDX-FileCopyrightText: 2022 Moony
+// SPDX-FileCopyrightText: 2022 mirrorcult
+// SPDX-FileCopyrightText: 2022 wrexbe
+// SPDX-FileCopyrightText: 2023 Debug
+// SPDX-FileCopyrightText: 2023 Fluffiest Floofers
+// SPDX-FileCopyrightText: 2023 ShadowCommander
+// SPDX-FileCopyrightText: 2023 metalgearsloth
+// SPDX-FileCopyrightText: 2024 Chief-Engineer
+// SPDX-FileCopyrightText: 2024 DrSmugleaf
+// SPDX-FileCopyrightText: 2024 Leon Friedrich
+// SPDX-FileCopyrightText: 2024 LordCarve
+// SPDX-FileCopyrightText: 2024 Pieter-Jan Briers
+// SPDX-FileCopyrightText: 2024 Simon
+// SPDX-FileCopyrightText: 2024 SimpleStation14
+// SPDX-FileCopyrightText: 2024 deltanedas
+// SPDX-FileCopyrightText: 2025 AirFryerBuyOneGetOneFree
+// SPDX-FileCopyrightText: 2025 Rosycup
+// SPDX-FileCopyrightText: 2025 VMSolidus
+// SPDX-FileCopyrightText: 2025 sleepyyapril
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -424,69 +420,86 @@ namespace Content.Server.Administration.Systems
         ///     chat messages and showing a popup to other players.
         ///     Their items are dropped on the ground.
         /// </summary>
-        public void Erase(ICommonSession player)
+        public void Erase(NetUserId uid)
         {
-            var entity = player.AttachedEntity;
-            _chat.DeleteMessagesBy(player);
+            _chat.DeleteMessagesBy(uid);
 
-            if (entity != null && !TerminatingOrDeleted(entity.Value))
+            var eraseEvent = new EraseEvent(uid); // Imp Edit: Early upmerge erase event from Parrot PR #1
+
+            if (!_minds.TryGetMind(uid, out var mindId, out var mind) || mind.OwnedEntity == null || TerminatingOrDeleted(mind.OwnedEntity.Value))
+            { // Imp Edit: Early upmerge erase event from Parrot PR #1
+                RaiseLocalEvent(ref eraseEvent); // Imp Edit: Early upmerge erase event from Parrot PR #1
+                return;
+            } // Imp Edit: Early upmerge erase event from Parrot PR #1
+
+            var entity = mind.OwnedEntity.Value;
+
+            if (TryComp(entity, out TransformComponent? transform))
             {
-                if (TryComp(entity.Value, out TransformComponent? transform))
-                {
-                    var coordinates = _transform.GetMoverCoordinates(entity.Value, transform);
-                    var name = Identity.Entity(entity.Value, EntityManager);
-                    _popup.PopupCoordinates(Loc.GetString("admin-erase-popup", ("user", name)), coordinates, PopupType.LargeCaution);
-                    var filter = Filter.Pvs(coordinates, 1, EntityManager, _playerManager);
-                    var audioParams = new AudioParams().WithVolume(3);
-                    _audio.PlayStatic("/Audio/_DV/Misc/reducedtoatmos.ogg", filter, coordinates, true, audioParams);
-                }
+                var coordinates = _transform.GetMoverCoordinates(entity, transform);
+                var name = Identity.Entity(entity, EntityManager);
+                _popup.PopupCoordinates(Loc.GetString("admin-erase-popup", ("user", name)), coordinates, PopupType.LargeCaution);
+                var filter = Filter.Pvs(coordinates, 1, EntityManager, _playerManager);
+                var audioParams = new AudioParams().WithVolume(3);
+                _audio.PlayStatic("/Audio/_DV/Misc/reducedtoatmos.ogg", filter, coordinates, true, audioParams);
+            }
 
-                foreach (var item in _inventory.GetHandOrInventoryEntities(entity.Value))
+            foreach (var item in _inventory.GetHandOrInventoryEntities(entity))
+            {
+                if (TryComp(item, out PdaComponent? pda) &&
+                    TryComp(pda.ContainedId, out StationRecordKeyStorageComponent? keyStorage) &&
+                    keyStorage.Key is { } key &&
+                    _stationRecords.TryGetRecord(key, out GeneralStationRecord? record))
                 {
-                    if (TryComp(item, out PdaComponent? pda) &&
-                        TryComp(pda.ContainedId, out StationRecordKeyStorageComponent? keyStorage) &&
-                        keyStorage.Key is { } key &&
-                        _stationRecords.TryGetRecord(key, out GeneralStationRecord? record))
+                    if (TryComp(entity, out DnaComponent? dna) &&
+                        dna.DNA != record.DNA)
                     {
-                        if (TryComp(entity, out DnaComponent? dna) &&
-                            dna.DNA != record.DNA)
-                        {
-                            continue;
-                        }
-
-                        if (TryComp(entity, out FingerprintComponent? fingerPrint) &&
-                            fingerPrint.Fingerprint != record.Fingerprint)
-                        {
-                            continue;
-                        }
-
-                        _stationRecords.RemoveRecord(key);
-                        Del(item);
+                        continue;
                     }
-                }
 
-                if (_inventory.TryGetContainerSlotEnumerator(entity.Value, out var enumerator))
-                {
-                    while (enumerator.NextItem(out var item, out var slot))
+                    if (TryComp(entity, out FingerprintComponent? fingerPrint) &&
+                        fingerPrint.Fingerprint != record.Fingerprint)
                     {
-                        if (_inventory.TryUnequip(entity.Value, entity.Value, slot.Name, true, true))
-                            _physics.ApplyAngularImpulse(item, ThrowingSystem.ThrowAngularImpulse);
+                        continue;
                     }
-                }
 
-                if (TryComp(entity.Value, out HandsComponent? hands))
-                {
-                    foreach (var hand in _hands.EnumerateHands(entity.Value, hands))
-                    {
-                        _hands.TryDrop(entity.Value, hand, checkActionBlocker: false, doDropInteraction: false, handsComp: hands);
-                    }
+                    _stationRecords.RemoveRecord(key);
+                    Del(item);
                 }
             }
 
-            _minds.WipeMind(player);
+            if (_inventory.TryGetContainerSlotEnumerator(entity, out var enumerator))
+            {
+                while (enumerator.NextItem(out var item, out var slot))
+                {
+                    if (_inventory.TryUnequip(entity, entity, slot.Name, true, true))
+                        _physics.ApplyAngularImpulse(item, ThrowingSystem.ThrowAngularImpulse);
+                }
+            }
+
+            if (TryComp(entity, out HandsComponent? hands))
+            {
+                foreach (var hand in _hands.EnumerateHands(entity, hands))
+                {
+                    _hands.TryDrop(entity, hand, checkActionBlocker: false, doDropInteraction: false, handsComp: hands);
+                }
+            }
+
+            _minds.WipeMind(mindId, mind);
             QueueDel(entity);
 
-            _gameTicker.SpawnObserver(player);
+            if (_playerManager.TryGetSessionById(uid, out var session))
+                _gameTicker.SpawnObserver(session);
+
+            RaiseLocalEvent(ref eraseEvent); // Imp Edit: Early upmerge erase event from Parrot PR #1
         }
     }
 }
+
+/// <summary>
+/// Imp Edit: Early upmerge erase event from Parrot PR #1
+/// Event fired after a player is erased by an admin
+/// </summary>
+/// <param name="PlayerNetUserId">NetUserId of the player that was the target of the Erase</param>
+[ByRefEvent]
+public record struct EraseEvent(NetUserId PlayerNetUserId);

@@ -39,7 +39,7 @@ namespace Content.Server.Speech.Muting
 
         private void OnEmote(EntityUid uid, MutedComponent component, ref EmoteEvent args)
         {
-            if (args.Handled)
+            if (args.Handled || !component.MutedEmotes) // IMP Change:MutedEmotes
                 return;
 
             //still leaves the text so it looks like they are pantomiming a laugh
@@ -49,7 +49,7 @@ namespace Content.Server.Speech.Muting
 
         private void OnScreamAction(EntityUid uid, MutedComponent component, ScreamActionEvent args)
         {
-            if (args.Handled || !_config.GetCVar(CCVars.AllowScreamAction))
+            if (args.Handled || !_config.GetCVar(CCVars.AllowScreamAction) || !component.MutedScream) // IMP Change:MutedScream
                 return;
 
             if (HasComp<MimePowersComponent>(uid))
@@ -66,6 +66,9 @@ namespace Content.Server.Speech.Muting
             var language = _languages.GetLanguage(uid);
             if (!language.SpeechOverride.RequireSpeech)
                 return; // Cannot mute if there's no speech involved
+
+            if (!component.MutedSpeech) // IMP
+                return;
 
             if (HasComp<MimePowersComponent>(uid))
                 _popupSystem.PopupEntity(Loc.GetString("mime-cant-speak"), uid, uid);

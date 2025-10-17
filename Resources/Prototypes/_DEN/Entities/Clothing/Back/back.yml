@@ -1,3 +1,4 @@
+# SPDX-FileCopyrightText: 2025 Shaman
 # SPDX-FileCopyrightText: 2025 Tabitha
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
@@ -28,3 +29,23 @@
   components:
   - type: Sprite
     sprite: _DEN/Clothing/Back/para-backpack.rsi
+
+- type: entity
+  parent: ClothingBackpack
+  id: ClothingBackpackNapsack
+  name: napsack
+  description: A large, padded sack with breathable mesh sides. Sold as a sleeping bag for felinids, so why does it have a carrying handle?
+  components:
+  - type: Sprite
+    sprite: _DEN/Clothing/Back/napsack.rsi
+  - type: Clothing
+    quickEquip: false
+    slots:
+    - back
+    - suitStorage
+  - type: Storage
+    grid:
+    - 0,0,5,4
+    whitelist:
+      tags:
+        - CanPilot # ONLY carries player characters, nothing else!

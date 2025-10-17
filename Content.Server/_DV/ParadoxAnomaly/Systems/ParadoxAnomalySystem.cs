@@ -6,9 +6,10 @@
 // SPDX-FileCopyrightText: 2025 Cami
 // SPDX-FileCopyrightText: 2025 Fansana
 // SPDX-FileCopyrightText: 2025 Skubman
+// SPDX-FileCopyrightText: 2025 portfiend
 // SPDX-FileCopyrightText: 2025 sleepyyapril
 //
-// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+// SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 using Content.Server.Clothing.Systems;
 using Content.Server._DV.ParadoxAnomaly.Components;
@@ -30,10 +31,10 @@ using Content.Shared.Roles.Jobs;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using System.Diagnostics.CodeAnalysis;
-using Content.Server.Consent;
+using Content.Server._Floof.Consent;
 using Content.Server.Roles.Jobs;
 using Content.Server.StationEvents.Events;
-using Content.Shared.Consent;
+using Content.Shared._Floof.Consent;
 using Content.Shared.Traits.Assorted.Components;
 
 
@@ -63,7 +64,7 @@ public sealed class ParadoxAnomalySystem : EntitySystem
     private const string ParadoxAnomalyExamine = "examine-paradox-anomaly-message";
 
     private ISawmill _sawmill = default!;
-    private readonly ProtoId<ConsentTogglePrototype> _paradoxAnomalyConsent = "NoClone";
+    private readonly ProtoId<ConsentTogglePrototype> _paradoxAnomalyConsent = "ParadoxClone";
     private readonly EntProtoId _paradoxAnomalySpawnerId = "SpawnPointGhostParadoxAnomaly";
     private readonly EntProtoId _paradoxAnomalyRule = "ParadoAnomaly";
 
@@ -129,7 +130,7 @@ public sealed class ParadoxAnomalySystem : EntitySystem
             if (_role.MindIsAntagonist(mindId))
                 continue;
 
-            if (_consent.HasConsent(uid, _paradoxAnomalyConsent))
+            if (!_consent.HasConsent(uid, _paradoxAnomalyConsent))
                 continue;
 
             // TODO: when metempsychosis real skip whoever has Karma
@@ -164,7 +165,7 @@ public sealed class ParadoxAnomalySystem : EntitySystem
             if (_role.MindIsAntagonist(mindId))
                 continue;
 
-            if (_consent.HasConsent(uid, _paradoxAnomalyConsent))
+            if (!_consent.HasConsent(uid, _paradoxAnomalyConsent))
                 continue;
 
             // TODO: when metempsychosis real skip whoever has Karma
@@ -263,7 +264,7 @@ public sealed class ParadoxAnomalySystem : EntitySystem
                 profile.Name,
                 job,
                 station);
-            _loadout.ApplyCharacterLoadout(spawned, job, profile, [], false); // TODO: find a way to get playtimes and whitelisted
+            _loadout.ApplyCharacterLoadout(spawned, job, profile, [], false); // TODO: find a way to get playtimes, player, and whitelisted
         }
 
         foreach (var special in job.Special)
@@ -289,7 +290,7 @@ public sealed class ParadoxAnomalySystem : EntitySystem
             || _mind.GetMind(target, mindContainer) is not {} mindId
             || !_jobSystem.MindTryGetJob(mindId, out var job)
             || _role.MindIsAntagonist(mindId)
-            || _consent.HasConsent(target, _paradoxAnomalyConsent))
+            || !_consent.HasConsent(target, _paradoxAnomalyConsent))
             return false;
 
         spawned = SpawnParadoxAnomaly((target, mindId, species, profile), _paradoxAnomalyRule);

@@ -1,42 +1,44 @@
-# SPDX-FileCopyrightText: 2021 20kdc <asdd2808@gmail.com>
-# SPDX-FileCopyrightText: 2022 Interrobang01 <113810873+Interrobang01@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2022 Rinkashikachi <15rinkashikachi15@gmail.com>
-# SPDX-FileCopyrightText: 2023 Alzore <140123969+Blackern5000@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2023 CodedCrow <114866135+CodedCrow@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2023 Colin-Tel <113523727+Colin-Tel@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2023 Filler <130583174+FillerVK@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2023 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2023 Nim <128169402+Nimfar11@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2023 Thom <119594676+ItsMeThom@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2023 Ubaser <134914314+UbaserB@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2023 Whisper <121047731+QuietlyWhisper@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2023 deltanedas <39013340+deltanedas@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2023 deltanedas <@deltanedas:kde.org>
-# SPDX-FileCopyrightText: 2023 lzk <124214523+lzk228@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2023 lzk228 <124214523+lzk228@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2023 metalgearsloth <comedian_vs_clown@hotmail.com>
-# SPDX-FileCopyrightText: 2023 potato1234_x <79580518+potato1234x@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2023 reverie collection <revsys413@gmail.com>
-# SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT <77995199+DEATHB4DEFEAT@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 Debug <49997488+DebugOk@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 Ed <96445749+TheShuEd@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 IProduceWidgets <107586145+IProduceWidgets@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 Memeji <greyalphawolf7@gmail.com>
-# SPDX-FileCopyrightText: 2024 Mnemotechnican <69920617+Mnemotechnician@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 ShatteredSwords <135023515+ShatteredSwords@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 Skarletto <122584947+Skarletto@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 botanySupremist <160211017+botanySupremist@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 botanySupremist <definitelyrealBotSupremist@gmail.com>
-# SPDX-FileCopyrightText: 2024 brainfood1183 <113240905+brainfood1183@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 fenndragon <fenndragon@gmail.com>
-# SPDX-FileCopyrightText: 2024 lapatison <100279397+lapatison@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 Blahaj-the-Shonk <ambbc2@gmail.com>
-# SPDX-FileCopyrightText: 2025 Rosycup <178287475+Rosycup@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 Sapphire <98045970+sapphirescript@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 Timfa <timfalken@hotmail.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2021 20kdc
+# SPDX-FileCopyrightText: 2022 Interrobang01
+# SPDX-FileCopyrightText: 2022 Rinkashikachi
+# SPDX-FileCopyrightText: 2023 Alzore
+# SPDX-FileCopyrightText: 2023 CodedCrow
+# SPDX-FileCopyrightText: 2023 Colin-Tel
+# SPDX-FileCopyrightText: 2023 Filler
+# SPDX-FileCopyrightText: 2023 Nemanja
+# SPDX-FileCopyrightText: 2023 Nim
+# SPDX-FileCopyrightText: 2023 Thom
+# SPDX-FileCopyrightText: 2023 Ubaser
+# SPDX-FileCopyrightText: 2023 Whisper
+# SPDX-FileCopyrightText: 2023 deltanedas
+# SPDX-FileCopyrightText: 2023 lzk
+# SPDX-FileCopyrightText: 2023 lzk228
+# SPDX-FileCopyrightText: 2023 metalgearsloth
+# SPDX-FileCopyrightText: 2023 potato1234_x
+# SPDX-FileCopyrightText: 2023 reverie collection
+# SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT
+# SPDX-FileCopyrightText: 2024 Debug
+# SPDX-FileCopyrightText: 2024 Ed
+# SPDX-FileCopyrightText: 2024 IProduceWidgets
+# SPDX-FileCopyrightText: 2024 Memeji
+# SPDX-FileCopyrightText: 2024 Mnemotechnican
+# SPDX-FileCopyrightText: 2024 ShatteredSwords
+# SPDX-FileCopyrightText: 2024 Skarletto
+# SPDX-FileCopyrightText: 2024 botanySupremist
+# SPDX-FileCopyrightText: 2024 brainfood1183
+# SPDX-FileCopyrightText: 2024 fenndragon
+# SPDX-FileCopyrightText: 2024 lapatison
+# SPDX-FileCopyrightText: 2025 Blahaj-the-Shonk
+# SPDX-FileCopyrightText: 2025 Jakumba
+# SPDX-FileCopyrightText: 2025 Rosycup
+# SPDX-FileCopyrightText: 2025 Sapphire
+# SPDX-FileCopyrightText: 2025 TheOneTrueWolfio
+# SPDX-FileCopyrightText: 2025 Timfa
+# SPDX-FileCopyrightText: 2025 Vanessa
+# SPDX-FileCopyrightText: 2025 Vanessa Louwagie
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 # also used in MakeGhostRuleWindow and MakeGhostRoleCommand
 ghost-role-component-default-rules = All normal rules apply unless an administrator tells you otherwise.
@@ -252,7 +254,7 @@ ghost-role-information-ert-medical-name = ERT Medical
 ghost-role-information-ert-medical-description = Assist with medical efforts to resolve the station's issues.
 
 ghost-role-information-cburn-agent-name = CBURN Agent
-ghost-role-information-cburn-agent-description = A highly trained CentCom agent, capable of dealing with various threats.
+ghost-role-information-cburn-agent-description = A highly trained CentComm agent, capable of dealing with various threats.
 
 ghost-role-information-centcom-official-name = CentComm official
 ghost-role-information-centcom-official-description = Perform CentComm related duties such as inspect the station, jotting down performance reviews for heads of staff, and managing the fax machine.
@@ -304,6 +306,43 @@ ghost-role-information-lost-cargo-technical-name = Lost Cargo Technician
 ghost-role-information-lost-cargo-technical-description = Something went wrong and your cargo shuttle with the goods was beamed into the sector to another station.
 ghost-role-information-lost-cargo-technical-rules = You're a regular cargo technician from another station. Do what regular cargo do.
 
+ghost-role-information-syndicate-cyborg-assault-name = Syndicate Assault Cyborg
+ghost-role-information-syndicate-cyborg-saboteur-name = Syndicate Saboteur Cyborg
+ghost-role-information-syndicate-cyborg-description = The Syndicate needs reinforcements. You, a cold silicon killing machine, will help them.
+
+ghost-role-information-derelict-engineering-cyborg-name = Derelict Engineer Cyborg
+ghost-role-information-derelict-engineering-cyborg-description = You are an engineer cyborg that got lost in space. After years of exposure to ion storms you find yourself near a space station.
+
+ghost-role-information-derelict-cyborg-name = Derelict Generic Cyborg
+ghost-role-information-derelict-cyborg-description = You are a regular cyborg that got lost in space. After years of exposure to ion storms you find yourself near a space station.
+
+ghost-role-information-derelict-janitor-cyborg-name = Derelict Janitor Cyborg
+ghost-role-information-derelict-janitor-cyborg-description = You are a janitor cyborg that got lost in space. After years of exposure to ion storms you find yourself near a space station.
+
+ghost-role-information-derelict-medical-cyborg-name = Derelict Medical Cyborg
+ghost-role-information-derelict-medical-cyborg-description = You are a medical cyborg that got lost in space. After years of exposure to ion storms you find yourself near a space station.
+
+ghost-role-information-derelict-mining-cyborg-name = Derelict Salvage Cyborg
+ghost-role-information-derelict-mining-cyborg-description = You are a salvage cyborg that got lost in space. After years of exposure to ion storms you find yourself near a space station.
+
+ghost-role-information-derelict-syndicate-assault-cyborg-name = Derelict Syndicate Assault Cyborg
+ghost-role-information-derelict-syndicate-assault-cyborg-description = You are an early model syndicate assault cyborg that got lost in space. After years of exposure to ion storms you find yourself near a space station.
+
+ghost-role-information-security-name = Security
+ghost-role-information-security-description = You are part of a security task force, but seem to have found yourself in a strange situation...
+
+ghost-role-information-medical-name = Medical
+ghost-role-information-medical-virologist-name = Virologist
+ghost-role-information-medical-geneticist-name = Geneticist
+ghost-role-information-medical-dentist-name = Dentist
+ghost-role-information-medical-description = You are a medical professional, but seem to have found yourself in a strange situation...
+
+ghost-role-information-cargo-name = Cargo
+ghost-role-information-cargo-description = You are part of a logistics mission, but seem to have found yourself in a strange situation...
+
+ghost-role-information-engineering-name = Engineering
+ghost-role-information-engineering-description = You are on an engineering job, but seem to have found yourself in a strange situation...
+
 ghost-role-information-clown-troupe-name = Space Clown
 ghost-role-information-clown-troupe-description = You and your troupe have come to cheer up this station with your best jokes. Honk!
 ghost-role-information-clown-troupe-rules = Normal station crew rules apply.
@@ -331,3 +370,11 @@ ghost-role-information-artifact-name = Sentient Artifact
 ghost-role-information-artifact-description =
       Enact your eldritch whims.
       Forcibly activate your nodes for good or for evil.
+
+ghost-role-information-silicon-rules = Obey your laws. You are a {role-type-free-agent-name} if you are not currently bound by any laws.
+                                       You don't remember any of your previous life, and you don't remember anything you learned as a ghost.
+                                       You are allowed to remember knowledge about the game in general, such as how to cook, how to use objects, etc.
+                                       You are absolutely [color=red]NOT[/color] allowed to remember, say, the name, appearance, etc. of your previous character.
+
+ghost-role-information-moproach-name = Moproach
+ghost-role-information-moproach-description = A cute mothroach with more cute moplike shoes on its feet.

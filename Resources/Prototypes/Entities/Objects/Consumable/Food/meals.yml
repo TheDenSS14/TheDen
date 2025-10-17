@@ -25,9 +25,10 @@
 # SPDX-FileCopyrightText: 2024 dootythefrooty
 # SPDX-FileCopyrightText: 2024 lzk
 # SPDX-FileCopyrightText: 2025 Tanix
+# SPDX-FileCopyrightText: 2025 portfiend
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 # When adding new food also add to random spawner located in Resources\Prototypes\Entities\Markers\Spawners\Random\Food_Drinks\food_meal.yml
 # A bunch of different meals. This stuff doesn't come off their plates because
@@ -53,9 +54,6 @@
         reagents:
         - ReagentId: Nutriment
           Quantity: 20
-  - type: Tag
-    tags:
-    - VoxFood
 
 # Meals
 
@@ -347,12 +345,15 @@
   - type: SolutionContainerManager
     solutions:
       food:
-        maxVol: 15
+        maxVol: 17 # DEN: 15 -> 17 (12 + 5)
         reagents:
-        - ReagentId: Nutriment
-          Quantity: 6
-        - ReagentId: Vitamin
-          Quantity: 1
+        - ReagentId: Nutriment # DEN - 6 -> 5
+          Quantity: 5
+        - ReagentId: Vitamin # DEN - 1 -> 3
+          Quantity: 3
+        - ReagentId: Protein # DEN - Add protein
+          Quantity: 4
+  - type: Food
   - type: Tag
     tags:
     - Meat
@@ -365,7 +366,7 @@
   description: BBQ ribs, slathered in a healthy coating of BBQ sauce. The least vegan thing to ever exist.
   components:
   - type: Food
-    trash: 
+    trash:
     - FoodKebabSkewer
   - type: FlavorProfile
     flavors:
@@ -628,7 +629,7 @@
   description: Buttery.
   components:
   - type: Food
-    trash: 
+    trash:
     - FoodPlate
   - type: FlavorProfile
     flavors:

@@ -1,6 +1,13 @@
-// SPDX-FileCopyrightText: 2025 chromiumboy <50505512+chromiumboy@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 sleepyyapril <flyingkarii@gmail.com>
+// SPDX-FileCopyrightText: 2024 MilenVolf
+// SPDX-FileCopyrightText: 2025 88tv
+// SPDX-FileCopyrightText: 2025 Jakumba
+// SPDX-FileCopyrightText: 2025 Tadeo
+// SPDX-FileCopyrightText: 2025 Tay
+// SPDX-FileCopyrightText: 2025 chromiumboy
+// SPDX-FileCopyrightText: 2025 lzk
+// SPDX-FileCopyrightText: 2025 slarticodefast
+// SPDX-FileCopyrightText: 2025 sleepyyapril
+// SPDX-FileCopyrightText: 2025 taydeo
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -326,7 +333,7 @@ public sealed class HolopadSystem : SharedHolopadSystem
                 if (receiverHolopad.Comp.Hologram == null)
                     continue;
 
-                _appearanceSystem.SetData(receiverHolopad.Comp.Hologram.Value.Owner, TypingIndicatorVisuals.IsTyping, ev.IsTyping);
+                _appearanceSystem.SetData(receiverHolopad.Comp.Hologram.Value.Owner, TypingIndicatorVisuals.State, ev.State);
             }
         }
     }
@@ -598,15 +605,16 @@ public sealed class HolopadSystem : SharedHolopadSystem
 
         foreach (var linkedHolopad in GetLinkedHolopads(entity))
         {
-            if (linkedHolopad.Comp.Hologram != null)
-            {
-                _appearanceSystem.SetData(linkedHolopad.Comp.Hologram.Value.Owner, TypingIndicatorVisuals.IsTyping, false);
+            if (linkedHolopad.Comp.Hologram == null)
+                continue;
 
-                // Send message with no sprite data to the client
-                // This will set the holgram sprite to a generic icon
-                var ev = new PlayerSpriteStateMessage(GetNetEntity(linkedHolopad.Comp.Hologram.Value));
-                RaiseNetworkEvent(ev);
-            }
+            if (user == null)
+                _appearanceSystem.SetData(linkedHolopad.Comp.Hologram.Value.Owner, TypingIndicatorVisuals.State, false);
+
+            // Send message with no sprite data to the client
+            // This will set the holgram sprite to a generic icon
+            var ev = new PlayerSpriteStateMessage(GetNetEntity(linkedHolopad.Comp.Hologram.Value));
+            RaiseNetworkEvent(ev);
         }
 
         if (!HasComp<HolopadUserComponent>(user))

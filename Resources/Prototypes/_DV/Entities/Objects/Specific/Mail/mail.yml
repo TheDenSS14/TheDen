@@ -825,6 +825,14 @@
       orGroup: Plushie
     - id: PlushieAlienGermMini
       orGroup: Plushie
+    - id: PlushieThaven # TheDen
+      prob: 0.5
+      orGroup: Plushie
+    - id: PlushieThavenWeird # TheDen
+      prob: 0.25
+      orGroup: Plushie
+    - id: SkimmerDiscus # TheDen - Not a plushie but let's pretend
+      orGroup: Plushie
 
 # Random snacks, replaces MailChocolate (lousy animal organs)
 - type: entity
@@ -1851,7 +1859,7 @@
   components:
   - type: Mail
     contents:
-    - id: ClothingEyesGlassesSunglasses
+    - id: ClothingEyesGlassesCheapSunglasses # DEN - reduce flash protection availability
 
 - type: entity
   categories: [ HideSpawnMenu ]

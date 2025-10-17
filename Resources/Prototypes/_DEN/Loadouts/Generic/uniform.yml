@@ -1,10 +1,9 @@
-# SPDX-FileCopyrightText: 2024 SleepyScarecrow <sharedjunkemail69@gmail.com>
-# SPDX-FileCopyrightText: 2025 Blitz <73762869+BlitzTheSquishy@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 Rosycup <178287475+Rosycup@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <flyingkarii@gmail.com>
+# SPDX-FileCopyrightText: 2024 SleepyScarecrow
+# SPDX-FileCopyrightText: 2025 Blitz
+# SPDX-FileCopyrightText: 2025 Rosycup
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: loadout
   id: LoadoutUniformJumpsuitLederhosen
@@ -64,6 +63,76 @@
   customColorTint: true
   items:
     - ClothingUniformShorts
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutUniformsCivilian
+
+- type: loadout
+  id: LoadoutClothingUniformBootyShorts
+  category: Uniform
+  cost: 0
+  exclusive: true
+  customColorTint: true
+  items:
+    - ClothingUniformBootyShorts
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutUniformsCivilian
+
+- type: loadout
+  id: LoadoutClothingUniformSimplePants
+  category: Uniform
+  cost: 0
+  exclusive: true
+  customColorTint: true
+  items:
+    - ClothingUniformSimplePants
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutUniformsCivilian
+
+- type: loadout
+  id: LoadoutUniformWhiteTurtleneck
+  category: Uniform
+  cost: 0
+  exclusive: true
+  customColorTint: true
+  items:
+    - ClothingUniformWhiteTurtleneck
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutUniformsCivilian
+
+- type: loadout
+  id: LoadoutUniformWhiteTurtleskirt
+  category: Uniform
+  cost: 0
+  exclusive: true
+  customColorTint: true
+  items:
+    - ClothingUniformWhiteTurtleskirt
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutUniformsCivilian
+
+- type: loadout
+  id: LoadoutMilitaryBratJumpsuit
+  category: Uniform
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingUniformJumpsuitMilitaryBrat
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutUniformsCivilian
+
+- type: loadout
+  id: LoadoutMilitaryBratJumpsuitAlt
+  category: Uniform
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingUniformJumpsuitMilitaryBratFlipped
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutUniformsCivilian

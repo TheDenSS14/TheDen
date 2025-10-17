@@ -1,13 +1,14 @@
-# SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT <77995199+DEATHB4DEFEAT@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 FoxxoTrystan <45297731+FoxxoTrystan@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 Minemoder5000 <minemoder50000@gmail.com>
-# SPDX-FileCopyrightText: 2025 SX-7 <92227810+SX-7@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 Sapphire <98045970+sapphirescript@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 Skubman <ba.fallaria@gmail.com>
-# SPDX-FileCopyrightText: 2025 Tabitha <64847293+KyuPolaris@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT
+# SPDX-FileCopyrightText: 2024 FoxxoTrystan
+# SPDX-FileCopyrightText: 2024 Minemoder5000
+# SPDX-FileCopyrightText: 2025 Eightballll
+# SPDX-FileCopyrightText: 2025 SX-7
+# SPDX-FileCopyrightText: 2025 Sapphire
+# SPDX-FileCopyrightText: 2025 Skubman
+# SPDX-FileCopyrightText: 2025 Tabitha
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 # Names
 chat-emote-name-scream = Scream
@@ -20,10 +21,13 @@ chat-emote-name-squish = Squish
 chat-emote-name-chitter = Chitter
 chat-emote-name-squeak = Squeak
 chat-emote-name-thump = Thump Tail
+chat-emote-name-thump-general = Thump
 chat-emote-name-click = Click
 chat-emote-name-clap = Clap
+chat-emote-name-clap-single = Single Clap
 chat-emote-name-snap = Snap
 chat-emote-name-salute = Salute
+chat-emote-name-gasp = Gasp
 chat-emote-name-deathgasp = Deathgasp
 chat-emote-name-weh = Weh
 chat-emote-name-sneeze = Sneeze
@@ -76,10 +80,13 @@ chat-emote-msg-squish = squishes.
 chat-emote-msg-chitter = chitters.
 chat-emote-msg-squeak = squeaks.
 chat-emote-msg-thump = thumps {POSS-ADJ($entity)} tail.
+chat-emote-msg-thump-general = thumps!
 chat-emote-msg-click = clicks.
 chat-emote-msg-clap = claps!
+chat-emote-msg-clap-single = claps {POSS-ADJ($entity)} hands together.
 chat-emote-msg-snap = snaps {POSS-ADJ($entity)} fingers.
 chat-emote-msg-salute = salutes.
+chat-emote-msg-gasp = gasps.
 chat-emote-msg-deathgasp = seizes up and falls limp, {POSS-ADJ($entity)} eyes dead and lifeless...
 chat-emote-msg-deathgasp-monkey = lets out a faint chimper as {SUBJECT($entity)} collapses and stops moving...
 chat-emote-msg-buzz = buzz!
@@ -95,3 +102,4 @@ chat-emote-msg-cathisses = hisses!
 chat-emote-msg-monkeyscreeches = screeches!
 chat-emote-msg-yawn = yawns.
 chat-emote-msg-snore = snores.
+chat-emote-msg-wag-tail = wags {POSS-ADJ($entity)} tail.

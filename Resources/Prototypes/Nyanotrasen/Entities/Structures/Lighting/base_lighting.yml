@@ -1,10 +1,10 @@
-# SPDX-FileCopyrightText: 2023 Fluffiest Floofers <thebluewulf@gmail.com>
-# SPDX-FileCopyrightText: 2024 Debug <49997488+DebugOk@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 Velcroboy <107660393+IamVelcroboy@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 sleepyyapril <flyingkarii@gmail.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Fluffiest Floofers
+# SPDX-FileCopyrightText: 2024 Debug
+# SPDX-FileCopyrightText: 2024 Velcroboy
+# SPDX-FileCopyrightText: 2024 sleepyyapril
+# SPDX-FileCopyrightText: 2025 Jakumba
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: entity
   parent: PoweredlightExterior
@@ -14,9 +14,13 @@
   components:
   - type: PoweredLight
     hasLampOnSpawn: BlueLightTube
+  # DEN
+  - type: DamageOnInteract
     damage:
       types:
-        Heat: 0.2
+        Heat: 2
+    popupText: powered-light-component-burn-hand
+  # DEN
 
 - type: entity
   parent: AlwaysPoweredWallLight
@@ -38,9 +42,13 @@
   components:
   - type: PoweredLight
     hasLampOnSpawn: LightBulbMaintenance
+  # DEN
+  - type: DamageOnInteract
     damage:
       types:
-        Heat: 0.2
+        Heat: 2
+    popupText: powered-light-component-burn-hand
+  # DEN
 
 - type: entity
   parent: SmallLight
@@ -64,9 +72,13 @@
   components:
   - type: PoweredLight
     hasLampOnSpawn: ColoredLightTubeRed
+  # DEN
+  - type: DamageOnInteract
     damage:
       types:
-        Heat: 0.2
+        Heat: 2
+    popupText: powered-light-component-burn-hand
+  # DEN
 
 - type: entity
   id: AlwaysPoweredLightColoredRed
@@ -88,9 +100,13 @@
   components:
   - type: PoweredLight
     hasLampOnSpawn: ColoredLightTubeFrostyBlue
+  # DEN
+  - type: DamageOnInteract
     damage:
       types:
-        Heat: 0.2
+        Heat: 2
+    popupText: powered-light-component-burn-hand
+  # DEN
 
 - type: entity
   id: AlwaysPoweredLightColoredFrostyBlue
@@ -112,9 +128,13 @@
   components:
   - type: PoweredLight
     hasLampOnSpawn: ColoredLightTubeBlackLight
+  # DEN
+  - type: DamageOnInteract
     damage:
       types:
-        Heat: 0.2
+        Heat: 2
+    popupText: powered-light-component-burn-hand
+  # DEN
 
 - type: entity
   id: AlwaysPoweredLightColoredBlack
@@ -139,11 +159,15 @@
     state: base
   - type: PoweredLight
     hasLampOnSpawn: ColoredLightTubeRed
+  - type: StaticPrice #DynamicPrice
+    price: 25
+  # DEN
+  - type: DamageOnInteract
     damage:
       types:
         Heat: 2
-  - type: StaticPrice #DynamicPrice
-    price: 25
+    popupText: powered-light-component-burn-hand
+  # DEN
 
 - type: entity
   id: AlwaysPoweredLightPostSmallRed
@@ -169,9 +193,13 @@
   components:
   - type: PoweredLight
     hasLampOnSpawn: LightBulbMaintenanceRed
+  # DEN
+  - type: DamageOnInteract
     damage:
       types:
-        Heat: 0.2
+        Heat: 2
+    popupText: powered-light-component-burn-hand
+  # DEN
 
 - type: entity
   parent: SmallLight

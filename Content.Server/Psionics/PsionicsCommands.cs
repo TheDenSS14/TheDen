@@ -12,18 +12,20 @@ using Content.Shared.Abilities.Psionics;
 using Robust.Shared.Console;
 using Robust.Shared.Player;
 using Content.Server.Abilities.Psionics;
+using Content.Server.Commands;
 using Robust.Shared.Prototypes;
 using Content.Shared.Psionics;
+using Robust.Server.Player;
+
 
 namespace Content.Server.Psionics;
 
 [AdminCommand(AdminFlags.Logs)]
-public sealed class ListPsionicsCommand : IConsoleCommand
+public sealed class ListPsionicsCommand : LocalizedEntityCommands
 {
-    public string Command => "lspsionics";
-    public string Description => Loc.GetString("command-lspsionic-description");
-    public string Help => Loc.GetString("command-lspsionic-help");
-    public async void Execute(IConsoleShell shell, string argStr, string[] args)
+    public override string Command => "lspsionics";
+
+    public override void Execute(IConsoleShell shell, string argStr, string[] args)
     {
         var entMan = IoCManager.Resolve<IEntityManager>();
         foreach (var (actor, psionic, meta) in entMan.EntityQuery<ActorComponent, PsionicComponent, MetaDataComponent>())
@@ -38,17 +40,17 @@ public sealed class ListPsionicsCommand : IConsoleCommand
 }
 
 [AdminCommand(AdminFlags.Fun)]
-public sealed class AddPsionicPowerCommand : IConsoleCommand
+public sealed class AddPsionicPowerCommand : LocalizedEntityCommands
 {
-    public string Command => "addpsionicpower";
-    public string Description => Loc.GetString("command-addpsionicpower-description");
-    public string Help => Loc.GetString("command-addpsionicpower-help");
-    public async void Execute(IConsoleShell shell, string argStr, string[] args)
-    {
-        var entMan = IoCManager.Resolve<IEntityManager>();
-        var psionicPowers = entMan.System<PsionicAbilitiesSystem>();
-        var protoMan = IoCManager.Resolve<IPrototypeManager>();
+    [Dependency] private readonly IEntityManager _entMan = default!;
+    [Dependency] private readonly IPlayerManager _playerMan = default!;
+    [Dependency] private readonly IPrototypeManager _protoMan = default!;
+    [Dependency] private readonly PsionicAbilitiesSystem _psionicAbilities = default!;
 
+    public override string Command => "addpsionicpower";
+
+    public override void Execute(IConsoleShell shell, string argStr, string[] args)
+    {
         if (args.Length != 2)
         {
             shell.WriteError(Loc.GetString("shell-need-exactly-one-argument"));
@@ -61,50 +63,72 @@ public sealed class AddPsionicPowerCommand : IConsoleCommand
             return;
         }
 
-        if (!protoMan.TryIndex<PsionicPowerPrototype>(args[1], out var powerProto))
+        if (!_protoMan.TryIndex<PsionicPowerPrototype>(args[1], out var powerProto))
         {
             shell.WriteError(Loc.GetString("addpsionicpower-args-two-error"));
             return;
         }
 
-        entMan.EnsureComponent<PsionicComponent>(uid, out var psionic);
-        psionicPowers.InitializePsionicPower(uid, powerProto, psionic);
+        _entMan.EnsureComponent<PsionicComponent>(uid, out var psionic);
+        _psionicAbilities.InitializePsionicPower(uid, powerProto, psionic);
+    }
+
+    public override CompletionResult GetCompletion(IConsoleShell shell, string[] args)
+    {
+        if (args.Length == 1)
+            return CompletionResult.FromOptions(ContentCompletionHelper.PlayerAttachedEntities(_entMan, _playerMan));
+
+        if (args.Length == 2)
+        {
+            var prototypes = _psionicAbilities.PsionicPowers();
+            return CompletionResult.FromOptions(prototypes);
+        }
+
+        return CompletionResult.Empty;
     }
 }
 
 [AdminCommand(AdminFlags.Fun)]
-public sealed class AddRandomPsionicPowerCommand : IConsoleCommand
+public sealed class AddRandomPsionicPowerCommand : LocalizedEntityCommands
 {
-    public string Command => "addrandompsionicpower";
-    public string Description => Loc.GetString("command-addrandompsionicpower-description");
-    public string Help => Loc.GetString("command-addrandompsionicpower-help");
-    public async void Execute(IConsoleShell shell, string argStr, string[] args)
-    {
-        var entMan = IoCManager.Resolve<IEntityManager>();
-        var psionicPowers = entMan.System<PsionicAbilitiesSystem>();
+    [Dependency] private readonly IEntityManager _entMan = default!;
+    [Dependency] private readonly IPlayerManager _playerMan = default!;
+    [Dependency] private readonly PsionicAbilitiesSystem _psionicAbilities = default!;
 
+    public override string Command => "addrandompsionicpower";
+
+    public override void Execute(IConsoleShell shell, string argStr, string[] args)
+    {
         if (!EntityUid.TryParse(args[0], out var uid))
         {
             shell.WriteError(Loc.GetString("addrandompsionicpower-args-one-error"));
             return;
         }
 
-        psionicPowers.AddRandomPsionicPower(uid, true);
+        _psionicAbilities.AddRandomPsionicPower(uid, true);
+    }
+
+    public override CompletionResult GetCompletion(IConsoleShell shell, string[] args)
+    {
+        if (args.Length == 1)
+            return CompletionResult.FromOptions(ContentCompletionHelper.PlayerAttachedEntities(_entMan, _playerMan));
+
+        return CompletionResult.Empty;
     }
 }
 
 [AdminCommand(AdminFlags.Fun)]
-public sealed class RemovePsionicPowerCommand : IConsoleCommand
+public sealed class RemovePsionicPowerCommand : LocalizedEntityCommands
 {
-    public string Command => "removepsionicpower";
-    public string Description => Loc.GetString("command-removepsionicpower-description");
-    public string Help => Loc.GetString("command-addpsionicpower-help");
-    public async void Execute(IConsoleShell shell, string argStr, string[] args)
-    {
-        var entMan = IoCManager.Resolve<IEntityManager>();
-        var psionicPowers = entMan.System<PsionicAbilitiesSystem>();
-        var protoMan = IoCManager.Resolve<IPrototypeManager>();
+    [Dependency] private readonly IEntityManager _entMan = default!;
+    [Dependency] private readonly IPlayerManager _playerMan = default!;
+    [Dependency] private readonly IPrototypeManager _protoMan = default!;
+    [Dependency] private readonly PsionicAbilitiesSystem _psionicAbilities = default!;
 
+    public override string Command => "removepsionicpower";
+
+    public override void Execute(IConsoleShell shell, string argStr, string[] args)
+    {
         if (args.Length != 2)
         {
             shell.WriteError(Loc.GetString("shell-need-exactly-one-argument"));
@@ -117,13 +141,13 @@ public sealed class RemovePsionicPowerCommand : IConsoleCommand
             return;
         }
 
-        if (!protoMan.TryIndex<PsionicPowerPrototype>(args[1], out var powerProto))
+        if (!_protoMan.TryIndex<PsionicPowerPrototype>(args[1], out var powerProto))
         {
             shell.WriteError(Loc.GetString("removepsionicpower-args-two-error"));
             return;
         }
 
-        if (!entMan.TryGetComponent<PsionicComponent>(uid, out var psionicComponent))
+        if (!_entMan.TryGetComponent<PsionicComponent>(uid, out var psionicComponent))
         {
             shell.WriteError(Loc.GetString("removepsionicpower-not-psionic-error"));
             return;
@@ -135,17 +159,34 @@ public sealed class RemovePsionicPowerCommand : IConsoleCommand
             return;
         }
 
-        psionicPowers.RemovePsionicPower(uid, psionicComponent, powerProto, true);
+        _psionicAbilities.RemovePsionicPower(uid, psionicComponent, powerProto, true);
+    }
+
+    public override CompletionResult GetCompletion(IConsoleShell shell, string[] args)
+    {
+        if (args.Length == 1)
+            return CompletionResult.FromOptions(ContentCompletionHelper.PlayerAttachedEntities(_entMan, _playerMan));
+
+        if (args.Length == 2)
+        {
+            var prototypes = _psionicAbilities.PsionicPowers();
+            return CompletionResult.FromOptions(prototypes);
+        }
+
+        return CompletionResult.Empty;
     }
 }
 
 [AdminCommand(AdminFlags.Fun)]
-public sealed class RemoveAllPsionicPowersCommand : IConsoleCommand
+public sealed class RemoveAllPsionicPowersCommand : LocalizedEntityCommands
 {
-    public string Command => "removeallpsionicpowers";
-    public string Description => Loc.GetString("command-removeallpsionicpowers-description");
-    public string Help => Loc.GetString("command-removeallpsionicpowers-help");
-    public async void Execute(IConsoleShell shell, string argStr, string[] args)
+    [Dependency] private readonly IEntityManager _entMan = default!;
+    [Dependency] private readonly IPlayerManager _playerMan = default!;
+    [Dependency] private readonly PsionicAbilitiesSystem _psionicAbilities = default!;
+
+    public override string Command => "removeallpsionicpowers";
+
+    public override void Execute(IConsoleShell shell, string argStr, string[] args)
     {
         var entMan = IoCManager.Resolve<IEntityManager>();
         var psionicPowers = entMan.System<PsionicAbilitiesSystem>();
@@ -163,5 +204,13 @@ public sealed class RemoveAllPsionicPowersCommand : IConsoleCommand
         }
 
         psionicPowers.RemoveAllPsionicPowers(uid);
+    }
+
+    public override CompletionResult GetCompletion(IConsoleShell shell, string[] args)
+    {
+        if (args.Length == 1)
+            return CompletionResult.FromOptions(ContentCompletionHelper.PlayerAttachedEntities(_entMan, _playerMan));
+
+        return CompletionResult.Empty;
     }
 }

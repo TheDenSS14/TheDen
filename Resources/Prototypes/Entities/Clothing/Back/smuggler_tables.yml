@@ -1,6 +1,7 @@
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Shaman
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 #Table
 - type: entityTable
@@ -156,9 +157,11 @@
       weight: 8
     - id: CigPackSyndicate
       weight: 0.5
-    - id: CigCartonGreen
-    - id: CigCartonRed
-    - id: CigCartonBlack
+#    - id: CigCartonGreen # TheDen - Interesting cigarettes only
+#    - id: CigCartonRed
+#    - id: CigCartonBlack
+    - id: CigCartonSpirits # TheDen
+    - id: CigCartonPurple # TheDen
     - id: CigarCase
       amount: !type:RangeNumberSelector
         range: 1, 2

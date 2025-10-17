@@ -5,7 +5,7 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 - type: entity
-  parent: AirlockCargo
+  parent: AirlockCourier # The Den - airlock resprite
   id: AirlockMailLocked
   suffix: Mail, Locked
   components:
@@ -14,7 +14,7 @@
       board: [ DoorElectronicsMail ]
 
 - type: entity
-  parent: AirlockCargoGlass
+  parent: AirlockCourierGlass # The Den - airlock resprite
   id: AirlockMailGlassLocked
   suffix: Mail, Locked
   components:

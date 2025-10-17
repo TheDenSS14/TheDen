@@ -4,6 +4,7 @@
 // SPDX-FileCopyrightText: 2023 metalgearsloth
 // SPDX-FileCopyrightText: 2024 VMSolidus
 // SPDX-FileCopyrightText: 2024 deltanedas
+// SPDX-FileCopyrightText: 2025 Eightballll
 // SPDX-FileCopyrightText: 2025 Jakumba
 // SPDX-FileCopyrightText: 2025 empty0set
 // SPDX-FileCopyrightText: 2025 portfiend
@@ -16,7 +17,7 @@ using Content.Server.Antag;
 using Content.Server.Pinpointer;
 using Content.Shared.EntityTable;
 using Content.Shared.GameTicking.Components;
-using Content.Server.Station.Components;
+using Content.Shared.Station.Components;
 using Content.Server.Announcements.Systems;
 using Robust.Shared.Map;
 using Robust.Shared.Player;

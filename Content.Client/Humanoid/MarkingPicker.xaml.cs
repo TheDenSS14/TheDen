@@ -6,7 +6,9 @@
 // SPDX-FileCopyrightText: 2023 Visne
 // SPDX-FileCopyrightText: 2023 csqrb
 // SPDX-FileCopyrightText: 2024 SimpleStation14
+// SPDX-FileCopyrightText: 2025 Mora
 // SPDX-FileCopyrightText: 2025 Rosycup
+// SPDX-FileCopyrightText: 2025 assignedgod
 // SPDX-FileCopyrightText: 2025 portfiend
 // SPDX-FileCopyrightText: 2025 sleepyyapril
 //
@@ -21,6 +23,7 @@ using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.Controls;
 using Robust.Client.UserInterface.XAML;
 using Robust.Client.Utility;
+using Robust.Shared.Network.Messages;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
 using static Robust.Client.UserInterface.Controls.BoxContainer;
@@ -205,10 +208,21 @@ public sealed partial class MarkingPicker : Control
         CMarkingsUnused.Clear();
         _selectedUnusedMarking = null;
 
-        var sortedMarkings = GetMarkings(_selectedMarkingCategory).Values.Where(m =>
-            m.ID.ToLower().Contains(filter.ToLower()) ||
-            GetMarkingName(m).ToLower().Contains(filter.ToLower())
-        ).OrderBy(p => Loc.GetString(GetMarkingName(p)));
+        // Aurora Song: Sort markings based on preferred species.
+        var filteredMarkings = GetMarkings(_selectedMarkingCategory).Values;
+
+        if (!string.IsNullOrEmpty(filter))
+        {
+            filteredMarkings = filteredMarkings.Where(m =>
+                m.ID.Contains(filter, StringComparison.InvariantCultureIgnoreCase)
+                || GetMarkingName(m).Contains(filter, StringComparison.InvariantCultureIgnoreCase));
+        }
+
+        // Preferred species > no species preference > non-preferred species
+        // (then sort by name)
+        var sortedMarkings = filteredMarkings
+            .OrderBy(m => (GetPreferredSpeciesPriority(m), GetMarkingName(m)));
+        // End AuroraSong
 
         foreach (var marking in sortedMarkings)
         {
@@ -223,6 +237,18 @@ public sealed partial class MarkingPicker : Control
 
         CMarkingPoints.Visible = _currentMarkings.PointsLeft(_selectedMarkingCategory) != -1;
     }
+
+    // AuroraSong: Sort markings based on preferred species.
+    // Preferred species > no species preference > non-preferred species
+    private int GetPreferredSpeciesPriority(MarkingPrototype prototype)
+    {
+        var preferred = prototype.PreferredSpecies;
+        if (preferred is null)
+            return 1;
+
+        return preferred.Contains(_currentSpecies) ? 0 : 2;
+    }
+    // End AuroraSong
 
     // Populate the used marking list. Returns a list of markings that weren't
     // valid to add to the marking list.
@@ -430,6 +456,7 @@ public sealed partial class MarkingPicker : Control
                 CMarkingColors.AddChild(colorContainer);
 
             ColorSelectorSliders colorSelector = new ColorSelectorSliders();
+            colorSelector.SelectorType = ColorSelectorSliders.ColorSelectorType.Hsv; // defaults color selector to HSV
             colorSliders.Add(colorSelector);
 
             colorContainer.AddChild(new Label { Text = $"{stateNames[i]} color:" });

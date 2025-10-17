@@ -1,14 +1,16 @@
-// SPDX-FileCopyrightText: 2023 Debug <49997488+DebugOk@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2023 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2023 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2023 Visne <39844191+Visne@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2023 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT <77995199+DEATHB4DEFEAT@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Debug
+// SPDX-FileCopyrightText: 2023 DrSmugleaf
+// SPDX-FileCopyrightText: 2023 Leon Friedrich
+// SPDX-FileCopyrightText: 2023 Visne
+// SPDX-FileCopyrightText: 2023 metalgearsloth
+// SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT
+// SPDX-FileCopyrightText: 2025 Eightballll
+// SPDX-FileCopyrightText: 2025 sleepyyapril
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 using Content.Shared.Movement.Components;
+using Content.Shared.Station.Components;
 using Robust.Shared.GameStates;
 using Robust.Shared.Map;
 using Robust.Shared.Map.Components;
@@ -174,14 +176,25 @@ public sealed partial class ReplaySpectatorSystem
         float? maxSize = null;
         var gridQuery = EntityQueryEnumerator<MapGridComponent>();
 
+        var stationFound = false;
         while (gridQuery.MoveNext(out var uid, out var grid))
         {
             var size = grid.LocalAABB.Size.LengthSquared();
-            if (maxSize == null || size > maxSize)
-            {
-                maxUid = (uid, grid);
-                maxSize = size;
-            }
+
+            if (maxSize is not null && size < maxSize)
+                continue;
+
+            var station = HasComp<StationMemberComponent>(uid);
+
+            if (!station && stationFound)
+               continue;
+
+            maxUid = (uid, grid);
+            maxSize = size;
+
+            if (station)
+                stationFound = true;
+
         }
 
         coords = new EntityCoordinates(maxUid ?? default, default);

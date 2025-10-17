@@ -30,6 +30,7 @@
 // SPDX-FileCopyrightText: 2025 Falcon
 // SPDX-FileCopyrightText: 2025 Lyndomen
 // SPDX-FileCopyrightText: 2025 Timfa
+// SPDX-FileCopyrightText: 2025 portfiend
 // SPDX-FileCopyrightText: 2025 sleepyyapril
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
@@ -449,6 +450,9 @@ namespace Content.Server.Database
         public int Slot { get; set; }
         [Column("char_name")] public string CharacterName { get; set; } = null!;
         public string FlavorText { get; set; } = null!;
+        public string NsfwFlavorText { get; set; } = null!;
+        public string CharacterConsent { get; set; } = null!;
+        public string SelfExamineFlavorText { get; set; } = null!;
         public string CustomSpecieName { get; set; } = null!;
         public string Nationality { get; set; } = null!;
         public string Employer { get; set; } = null!;
@@ -587,6 +591,9 @@ namespace Content.Server.Database
         public DateTime LastSeenTime { get; set; }
         public IPAddress LastSeenAddress { get; set; } = null!;
         public TypedHwid? LastSeenHWId { get; set; }
+
+        // Data that changes based on player-related factors
+        public ulong? DiscordUserId { get; set; }
 
         // Data that changes with each round
         public List<Round> Rounds { get; set; } = null!;

@@ -1,12 +1,10 @@
-// SPDX-FileCopyrightText: 2025 Timfa <timfalken@hotmail.com>
-// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Timfa
+// SPDX-FileCopyrightText: 2025 portfiend
+// SPDX-FileCopyrightText: 2025 sleepyyapril
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
-using Content.Shared.Customization.Systems;
-using Content.Shared.Mind;
-using Content.Shared.Preferences;
-using Content.Shared.Roles;
+using Content.Shared.Customization.Systems._DEN;
 using JetBrains.Annotations;
 using Robust.Shared.Configuration;
 using Robust.Shared.Prototypes;
@@ -26,37 +24,37 @@ public sealed partial class CVarRequirement : CharacterRequirement
     [DataField(required: true)]
     public string RequiredValue;
 
-    public override bool IsValid(
-        JobPrototype job,
-        HumanoidCharacterProfile profile,
-        Dictionary<string, TimeSpan> playTimes,
-        bool whitelisted,
-        IPrototype prototype,
+    private const string RequirementColor = "lightblue";
+
+    // Always true because context is unused.
+    public override bool PreCheckMandatory(CharacterRequirementContext context) => true;
+
+    public override string? GetReason(CharacterRequirementContext context,
         IEntityManager entityManager,
         IPrototypeManager prototypeManager,
-        IConfigurationManager configManager,
-        out string? reason,
-        int depth = 0,
-        MindComponent? mind = null
-    )
+        IConfigurationManager configManager)
     {
         if (!configManager.IsCVarRegistered(CVar))
-        {
-            reason = null;
-            return true;
-        }
+            return null;
 
-        const string color = "lightblue";
-        var cvar = configManager.GetCVar(CVar);
-        var isValid = cvar.ToString()! == RequiredValue;
-
-        reason = Loc.GetString(
+        return Loc.GetString(
             "character-cvar-requirement",
             ("inverted", Inverted),
-            ("color", color),
+            ("color", RequirementColor),
             ("cvar", CVar),
             ("value", RequiredValue));
+    }
 
-        return isValid;
+    public override bool IsValid(CharacterRequirementContext context,
+        IEntityManager entityManager,
+        IPrototypeManager prototypeManager,
+        IConfigurationManager configManager)
+    {
+        if (!configManager.IsCVarRegistered(CVar))
+            return true;
+
+        var cvar = configManager.GetCVar(CVar);
+        var valid = cvar.ToString()! == RequiredValue;
+        return valid;
     }
 }

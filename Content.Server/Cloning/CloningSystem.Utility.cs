@@ -1,8 +1,9 @@
-// SPDX-FileCopyrightText: 2024 Mnemotechnican <69920617+Mnemotechnician@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 RedFoxIV <38788538+RedFoxIV@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 Skubman <ba.fallaria@gmail.com>
-// SPDX-FileCopyrightText: 2025 VMSolidus <evilexecutive@gmail.com>
-// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Mnemotechnican
+// SPDX-FileCopyrightText: 2025 RedFoxIV
+// SPDX-FileCopyrightText: 2025 Skubman
+// SPDX-FileCopyrightText: 2025 VMSolidus
+// SPDX-FileCopyrightText: 2025 portfiend
+// SPDX-FileCopyrightText: 2025 sleepyyapril
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -307,6 +308,8 @@ public sealed partial class CloningSystem
         if (switchingSpecies && !forceOldProfile)
         {
             var flavorText = _serialization.CreateCopy(pref.FlavorText, null, false, true);
+            var nsfwFlavorText = _serialization.CreateCopy(pref.NsfwFlavorText, null, false, true);
+            var selfFlavorText = _serialization.CreateCopy(pref.SelfExamineFlavorText, null, false, true); // DEN: Self-examine detail
             var oldName = _serialization.CreateCopy(pref.Name, null, false, true);
 
             pref = HumanoidCharacterProfile.RandomWithSpecies(newHumanoid.Species);
@@ -332,7 +335,11 @@ public sealed partial class CloningSystem
                 pref = pref.WithName(oldName);
 
             if (_config.GetCVar(CCVars.CloningPreserveFlavorText))
+            {
                 pref = pref.WithFlavorText(flavorText);
+                pref = pref.WithNsfwFlavorText(nsfwFlavorText);
+                pref = pref.WithSelfExamineFlavorText(selfFlavorText); // DEN: Self-examine detail
+            }
 
             _humanoidSystem.LoadProfile(mob, pref);
             return;

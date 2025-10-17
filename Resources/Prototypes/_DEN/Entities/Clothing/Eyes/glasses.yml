@@ -1,8 +1,9 @@
+# SPDX-FileCopyrightText: 2025 ASaltySeabass
 # SPDX-FileCopyrightText: 2025 Rosycup
 # SPDX-FileCopyrightText: 2025 Sir Warock
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: entity
   parent: ClothingEyesHudMedical
@@ -17,9 +18,11 @@
   - type: ShowHealthBars
     damageContainers:
     - Biological
+    - BiologicalMetaphysical
   - type: ShowHealthIcons
     damageContainers:
     - Biological
+    - BiologicalMetaphysical
   - type: Tag
     tags:
     - WhitelistChameleon
@@ -41,9 +44,11 @@
   - type: ShowHealthBars
     damageContainers:
     - Biological
+    - BiologicalMetaphysical
   - type: ShowHealthIcons
     damageContainers:
     - Biological
+    - BiologicalMetaphysical
   - type: Tag
     tags:
     - HamsterWearable
@@ -70,9 +75,11 @@
   - type: ShowHealthBars
     damageContainers:
     - Biological
+    - BiologicalMetaphysical
   - type: ShowHealthIcons
     damageContainers:
     - Biological
+    - BiologicalMetaphysical
   - type: Tag
     tags:
     - HamsterWearable
@@ -82,3 +89,37 @@
   - type: GuideHelp
     guides:
     - Medical
+
+- type: entity
+  parent: [ClothingEyesGlassesMedSec]
+  id: ClothingEyesGlassesBSOAviator
+  name: blueshield aviators
+  description: Advanced Aviators with a deep blue hue and a built-in HUD capable of displaying Security, Medical, and Diagnostics information.
+  components:
+  - type: Sprite
+    sprite: _DEN/Clothing/Eyes/Glasses/bsoglasses_aviators.rsi
+  - type: Clothing
+    sprite: _DEN/Clothing/Eyes/Glasses/bsoglasses_aviators.rsi
+
+- type: entity
+  parent: [ClothingEyesGlassesMedSec]
+  id: ClothingEyesGlassesBSOBig
+  name: big blueshield glasses
+  description: Advanced Sunglasses with big lenses, a deep blue hue, and a built-in HUD capable of displaying Security, Medical, and Diagnostics information.
+  components:
+  - type: Sprite
+    sprite: _DEN/Clothing/Eyes/Glasses/bsoglasses_big.rsi
+  - type: Clothing
+    sprite: _DEN/Clothing/Eyes/Glasses/bsoglasses_big.rsi
+
+- type: entity
+  parent: [ClothingEyesGlassesMedSec]
+  id: ClothingEyesGlassesBSOVisor
+  name: blueshield visor glasses
+  description: Advanced Visor Sunglasses with a deep blue hue and a built-in HUD capable of displaying Security, Medical, and Diagnostics information.
+  components:
+  - type: Sprite
+    sprite: _DEN/Clothing/Eyes/Glasses/bsoglasses_visor.rsi
+  - type: Clothing
+    sprite: _DEN/Clothing/Eyes/Glasses/bsoglasses_visor.rsi
+

@@ -29,7 +29,9 @@
 // SPDX-FileCopyrightText: 2024 Skubman
 // SPDX-FileCopyrightText: 2024 SlamBamActionman
 // SPDX-FileCopyrightText: 2024 VMSolidus
+// SPDX-FileCopyrightText: 2025 Sir Warock
 // SPDX-FileCopyrightText: 2025 ash lea
+// SPDX-FileCopyrightText: 2025 portfiend
 // SPDX-FileCopyrightText: 2025 sleepyyapril
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
@@ -41,6 +43,7 @@ using Content.Server.EntityEffects.Effects;
 using Content.Server.Fluids.EntitySystems;
 using Content.Server.Forensics;
 using Content.Server.Popups;
+using Content.Shared._DEN.Bed.Components;
 using Content.Shared.Alert;
 using Content.Shared.Chemistry.Components;
 using Content.Shared.Chemistry.EntitySystems;
@@ -48,6 +51,7 @@ using Content.Shared.Chemistry.Reaction;
 using Content.Shared.Damage;
 using Content.Shared.Damage.Prototypes;
 using Content.Shared.Drunk;
+using Content.Shared.Examine;
 using Content.Shared.FixedPoint;
 using Content.Shared.HealthExaminable;
 using Content.Shared.Mobs.Systems;
@@ -61,9 +65,10 @@ using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
 
+
 namespace Content.Server.Body.Systems;
 
-public sealed class BloodstreamSystem : EntitySystem
+public sealed partial class BloodstreamSystem : EntitySystem
 {
     [Dependency] private readonly IGameTiming _gameTiming = default!;
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
@@ -95,6 +100,9 @@ public sealed class BloodstreamSystem : EntitySystem
         SubscribeLocalEvent<BloodstreamComponent, ReactionAttemptEvent>(OnReactionAttempt);
         SubscribeLocalEvent<BloodstreamComponent, SolutionRelayEvent<ReactionAttemptEvent>>(OnReactionAttempt);
         SubscribeLocalEvent<BloodstreamComponent, RejuvenateEvent>(OnRejuvenate);
+
+        // DEN - Examine text for bloodstreams. Used for blood examiner component.
+        SubscribeLocalEvent<BloodstreamComponent, ExaminedEvent>(OnExamined);
     }
 
     private void OnMapInit(Entity<BloodstreamComponent> ent, ref MapInitEvent args)
@@ -169,19 +177,31 @@ public sealed class BloodstreamSystem : EntitySystem
             {
                 // Blood is removed from the bloodstream at a 1-1 rate with the bleed amount
                 TryModifyBloodLevel(uid, (-bloodstream.BleedAmount), bloodstream);
-                // Bleed rate is reduced by the bleed reduction amount in the bloodstream component.
+                // The Bleeding rate is reduced by the bleed reduction amount in the bloodstream component.
                 TryModifyBleedAmount(uid, -bloodstream.BleedReductionAmount, bloodstream);
+                // The Bleeding rate is reduced by advanced, stabilizing beds, if critical.
+                if (TryComp<StabilizeOnBuckleComponent>(uid, out var stabilizeBleeding)
+                    && _mobStateSystem.IsCritical(uid)
+                    && stabilizeBleeding.ReducesBleeding != 0f)
+                    TryModifyBleedAmount(uid, -stabilizeBleeding.ReducesBleeding, bloodstream);
             }
 
-            // deal bloodloss damage if their blood level is below a threshold.
+            // deal bloodloss damage if their blood level is below the threshold.
             var bloodPercentage = GetBloodLevelPercentage(uid, bloodstream);
             if (bloodPercentage < bloodstream.BloodlossThreshold && !_mobStateSystem.IsDead(uid))
             {
                 // bloodloss damage is based on the base value, and modified by how low your blood level is.
                 var amt = bloodstream.BloodlossDamage / (0.1f + bloodPercentage);
+                // If strapped on a stabilizing bed, reduce bloodloss damage with applied efficiency, if critical.
+                if (TryComp<StabilizeOnBuckleComponent>(uid, out var stabilizeBloodloss)
+                    && _mobStateSystem.IsCritical(uid))
+                    amt *= (1 - stabilizeBloodloss.Efficiency);
 
-                _damageableSystem.TryChangeDamage(uid, amt,
-                    ignoreResistances: false, interruptsDoAfters: false);
+                _damageableSystem.TryChangeDamage(
+                    uid,
+                    amt,
+                    ignoreResistances: false,
+                    interruptsDoAfters: false);
 
                 // Apply dizziness as a symptom of bloodloss.
                 // The effect is applied in a way that it will never be cleared without being healthy.

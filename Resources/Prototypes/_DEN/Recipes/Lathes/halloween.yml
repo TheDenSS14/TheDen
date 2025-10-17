@@ -1,0 +1,63 @@
+# SPDX-FileCopyrightText: 2025 portfiend
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: latheRecipe
+  abstract: true
+  id: BaseCandyBucket
+  completetime: 2
+  materials:
+    Plastic: 100
+
+- type: latheRecipe
+  parent: BaseCandyBucket
+  id: CandyBucket # this is the wizden one
+  result: CandyBucket
+
+- type: latheRecipe
+  parent: BaseCandyBucket
+  id: CandyBucketPailCat
+  result: CandyBucketPailCat
+
+- type: latheRecipe
+  parent: BaseCandyBucket
+  id: CandyBucketPailClown
+  result: CandyBucketPailClown
+
+- type: latheRecipe
+  parent: BaseCandyBucket
+  id: CandyBucketPailGhost
+  result: CandyBucketPailGhost
+
+- type: latheRecipe
+  parent: BaseCandyBucket
+  id: CandyBucketPailPumpkin
+  result: CandyBucketPailPumpkin
+
+- type: latheRecipe
+  parent: BaseCandyBucket
+  id: CandyBucketPailSkeleton
+  result: CandyBucketPailSkeleton
+
+- type: latheRecipe
+  parent: BaseCandyBucket
+  id: CandyBucketPailPlain
+  result: CandyBucketPailPlain
+
+- type: latheRecipe
+  parent: BaseCandyBucket
+  id: CandyBucketPailPlainRandom
+  name: lathe-recipe-CandyBucketPailPlainRandom-name
+  result: CandyBucketPailPlainRandom
+
+- type: latheRecipe
+  parent: BaseCandyBucket
+  id: CandyBucketPailSmiley
+  result: CandyBucketPailSmiley
+  name: lathe-recipe-CandyBucketPailSmiley-name
+
+- type: latheRecipe
+  parent: BaseCandyBucket
+  id: CandyBucketPailSmileyRandom
+  name: lathe-recipe-CandyBucketPailSmileyRandom-name
+  result: CandyBucketPailSmileyRandom

@@ -34,6 +34,15 @@
   id: Lewd
   root: true
 
+# "species traits" are traits that are designed for variation to a species's mechanics.
+# generally speaking, if a trait REQUIRES you to be one of 1-2 species, it's a species trait
+# can also apply to more "generic" traits that are meant to offset species-specific mechanics, such as
+# natural weapons removal and trichromat modification.
+# do not include languages / accents here
+- type: traitCategory
+  id: AASpecies # should probably implement priority ordering instead of doing this but whatever
+  root: true
+
 - type: traitCategory
   id: Speech
   root: true

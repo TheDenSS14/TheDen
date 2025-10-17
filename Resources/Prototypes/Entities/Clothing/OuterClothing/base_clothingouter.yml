@@ -12,7 +12,6 @@
 # SPDX-FileCopyrightText: 2022 mirrorcult
 # SPDX-FileCopyrightText: 2022 rolfero
 # SPDX-FileCopyrightText: 2023 Fromoriss
-# SPDX-FileCopyrightText: 2023 Nemanja
 # SPDX-FileCopyrightText: 2023 Tony
 # SPDX-FileCopyrightText: 2023 crazybrain23
 # SPDX-FileCopyrightText: 2023 deltanedas
@@ -21,20 +20,22 @@
 # SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT
 # SPDX-FileCopyrightText: 2024 Debug
 # SPDX-FileCopyrightText: 2024 Mnemotechnican
+# SPDX-FileCopyrightText: 2024 Nemanja
 # SPDX-FileCopyrightText: 2024 SonicHDC
 # SPDX-FileCopyrightText: 2024 lzk
 # SPDX-FileCopyrightText: 2024 username
 # SPDX-FileCopyrightText: 2025 Eris
+# SPDX-FileCopyrightText: 2025 Sir Warock
 # SPDX-FileCopyrightText: 2025 Skubman
 # SPDX-FileCopyrightText: 2025 VMSolidus
 # SPDX-FileCopyrightText: 2025 VividPups
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: entity
   abstract: true
-  parent: Clothing
+  parent: [Clothing, AllowSuitStorageClothing]
   id: ClothingOuterBase
   components:
   - type: Clothing
@@ -168,7 +169,8 @@
     highPressureMultiplier: 0.3
     lowPressureMultiplier: 1000
   - type: TemperatureProtection
-    coefficient: 0.01
+    heatingCoefficient: 0.01
+    coolingCoefficient: 0.01
   - type: FireProtection
     reduction: 0.75 # almost perfectly sealed, atmos firesuit is better
   - type: IgniteFromGasImmunity
@@ -219,8 +221,13 @@
     localSoundOnly: true
   - type: StaminaDamageResistance
     coefficient: 0.75 # 25%
-  - type: ClothingRequiredStepTriggerImmune
+  - type: ProtectedFromStepTriggers
     slots: WITHOUT_POCKET
+  - type: DamageOnInteractProtection
+    damageProtection:
+      flatReductions:
+        Heat: 10 # the average lightbulb only does around four damage!
+    slots: OUTERCLOTHING
   - type: DamageOtherOnHit
     damage:
       types:
@@ -330,7 +337,8 @@
     highPressureMultiplier: 0.6
     lowPressureMultiplier: 1000
   - type: TemperatureProtection
-    coefficient: 0.01 # Not complete protection from fire
+    heatingCoefficient: 0.01 # Not complete protection from fire
+    coolingCoefficient: 0.01
   - type: IgniteFromGasImmunity
     parts:
     - Torso
@@ -356,8 +364,13 @@
   - type: Clothing
     equipDelay: 1.25 # Softsuits are easier to put on and off
     unequipDelay: 1
-  - type: ClothingRequiredStepTriggerImmune
+  - type: ProtectedFromStepTriggers
     slots: WITHOUT_POCKET
+  - type: DamageOnInteractProtection
+    damageProtection:
+      flatReductions:
+        Heat: 10 # the average lightbulb only does around four damage!
+    slots: OUTERCLOTHING
   - type: Fixtures
     fixtures:
       fix1:

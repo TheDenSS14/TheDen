@@ -1,9 +1,9 @@
-# SPDX-FileCopyrightText: 2023 Colin-Tel <113523727+Colin-Tel@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 VMSolidus <evilexecutive@gmail.com>
-# SPDX-FileCopyrightText: 2025 Rosycup <178287475+Rosycup@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Colin-Tel
+# SPDX-FileCopyrightText: 2024 VMSolidus
+# SPDX-FileCopyrightText: 2025 Rosycup
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: entity
   parent: ClothingOuterBase
@@ -22,6 +22,8 @@
         Slash: 0.9
         Piercing: 0.75
         Heat: 0.9
+  - type: StaminaDamageResistance #Den
+    coefficient: 0.9 #Den
   - type: ExplosionResistance
     damageCoefficient: 0.9
 
@@ -42,6 +44,8 @@
         Slash: 0.9
         Piercing: 0.75
         Heat: 0.9
+  - type: StaminaDamageResistance #Den
+    coefficient: 0.9 #Den
   - type: ExplosionResistance
     damageCoefficient: 0.9
 

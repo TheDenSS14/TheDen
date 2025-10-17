@@ -1,0 +1,22 @@
+<!--
+SPDX-FileCopyrightText: 2025 portfiend
+
+SPDX-License-Identifier: AGPL-3.0-or-later
+-->
+
+<DefaultWindow xmlns="https://spacestation14.io"
+            Title="{Loc 'magic-paint-window-title'}"
+            MinSize="450 400"
+            SetSize="450 400">
+    <BoxContainer Orientation="Vertical" SeparationOverride="5">
+        <Label Text="{Loc 'magic-paint-header'}" StyleClasses="LabelHeading" />
+        <ColorSelectorSliders Name="ColorSelector" />
+        <Control />
+        <Label Text="{Loc 'magic-paint-preview-label'}" />
+        <PanelContainer
+            Name="PreviewColor"
+            Margin="20 10"
+            HorizontalExpand="True"
+            MinHeight="100" />
+    </BoxContainer>
+</DefaultWindow>

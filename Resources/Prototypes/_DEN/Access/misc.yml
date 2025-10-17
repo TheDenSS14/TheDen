@@ -1,0 +1,23 @@
+# SPDX-FileCopyrightText: 2025 portfiend
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: accessGroup
+  parent: AllAccess
+  id: AdminAllAccess # AKA "True AA"
+  tags:
+  - BasicSilicon
+  - Borg
+  - Brig
+  - CentralCommand
+  - DV-SpareSafe
+  - EventWorker
+  - EventCommand
+  - EventMedical
+  - EventSecurity
+  - EventService
+  - EventVIP
+  - NuclearOperative
+  - SAN
+  - StationAi
+  - SyndicateAgent

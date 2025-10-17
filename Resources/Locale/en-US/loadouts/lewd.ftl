@@ -4,3 +4,5 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 loadout-name-ClothingMaskGasDroneHoodless = rubber gas mask (hoodless)
+loadout-name-ClothingMaskGasDrone = rubber gas mask
+loadout-name-LoadoutServiceBartenderCumBottle = Bottle of Cum

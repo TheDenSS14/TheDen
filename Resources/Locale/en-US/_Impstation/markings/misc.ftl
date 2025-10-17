@@ -1,20 +1,22 @@
-# SPDX-FileCopyrightText: 2025 BloodfiendishOperator <141253729+Diggy0@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 Jakumba <jkmcbennett@hotmail.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 BloodfiendishOperator
+# SPDX-FileCopyrightText: 2025 Jakumba
+# SPDX-FileCopyrightText: 2025 Shaman
+# SPDX-FileCopyrightText: 2025 maelines
+# SPDX-FileCopyrightText: 2025 portfiend
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 # this file is subject to getting its shit moved to other files at a later date#
 
 # arachnids
-marking-SpiderMirror = Mirror
-marking-SpiderMirror-spidermirror = Mirror
-marking-SpiderGlowEyes = Glowing Eyes
-marking-SpiderGlowEyes-spidergloweyes = Glowing Eyes
+marking-SpiderGlowEyes = Eyes (Glowing)
+marking-SpiderGlowEyes-spidergloweyes = Eyes
+marking-SpiderGlowEyes-eyes = Eyes
 marking-SpiderEyesMulti = Multicolor Eyes
 marking-SpiderEyesMulti-spidereyesmulti1 = Top
-marking-SpiderEyesMulti-spidereyesmulti2 = Middle Top
-marking-SpiderEyesMulti-spidereyesmulti3 = Middle Bottom
+marking-SpiderEyesMulti-spidereyesmulti2 = Top Middle
+marking-SpiderEyesMulti-spidereyesmulti3 = Bottom Middle
 marking-SpiderEyesMulti-spidereyesmulti4 = Bottom
 
 # diona
@@ -87,6 +89,7 @@ marking-VitiligoArmL = Vitiligo (Left Arm)
 marking-VitiligoLegL = Vitiligo (Left)
 marking-VitiligoChestF = Vitiligo Spread
 marking-VitiligoChestSpots = Vitiligo Spots
+marking-Shadow = Gloomy
 
 # moths
 marking-MothTrueButterfly = Wings (Rainbow)

@@ -1,8 +1,10 @@
-# SPDX-FileCopyrightText: 2025 LaconiumDragona <riascazadofelra@gmail.com>
-# SPDX-FileCopyrightText: 2025 portfiend <109661617+portfiend@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 LaconiumDragona
+# SPDX-FileCopyrightText: 2025 mart
+# SPDX-FileCopyrightText: 2025 portfiend
+# SPDX-FileCopyrightText: 2025 sheepie
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 marking-ReptilianSharpCobraHood = Sharp Cobra Hood
 marking-ReptilianSharpCobraHood-sharp_cobra_hood = Base
@@ -25,3 +27,30 @@ marking-TailBrushtip-brushtiptail =  Primary
 marking-TailBrushtip-brushtiptail2 =  Tail Tip
 marking-NeckChestfluff =  Vulpkanin chest fluff
 marking-NeckChestfluff-chestfloof =  Primary
+
+# these ones are for the chestfluffs and back fluffs
+marking-NeckChestsmallfluff = Small fluff
+marking-NeckChestbigfluff = Big fluff
+marking-NeckChestbandanafluff = Bandana fluff
+marking-NeckChestbackgerm = Back full
+marking-NeckChestbackupper = Back upper
+marking-NeckChestbackwhole = Back whole
+
+marking-NeckChestsmallfluff-smallfluff = Small fluff
+marking-NeckChestbigfluff-bigfluff = Big fluff
+marking-NeckChestbandanafluff-bandanafluff = Bandana fluff
+marking-NeckChestbackgerm-backgerm = Back full
+marking-NeckChestbackupper-backupper = Back upper
+marking-NeckChestbackwhole-backwhole = Back whole
+
+# alt version of the fluffy vulpkanin tail, with a colorable tip
+marking-VulpTailFluffyTip = Vulpkanin Fluffy (tip)
+marking-VulpTailFluffyTip-fluffyalt = Base Color
+marking-VulpTailFluffyTip-fluffyalttip = Tip Color
+
+marking-VulpTailFluffyAnimated = Vulpkanin Fluffy (animated)
+marking-VulpTailFluffyAnimated-fluffywag = Fluffy tail
+
+marking-VulpTailFluffyTipAnimated = Vulpkanin Fluffy (tip) (animated)
+marking-VulpTailFluffyTipAnimated-fluffyaltwag = Base Color
+marking-VulpTailFluffyTipAnimated-fluffyaltwagtip = Tip Color

@@ -13,7 +13,7 @@
 # SPDX-FileCopyrightText: 2025 portfiend
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: entity
   abstract: true
@@ -27,19 +27,16 @@
     templateId: digitigrade
     displacements:
       jumpsuit:
-        layer:
-          sprite: Mobs/Species/Harpy/displacement.rsi
-          state: jumpsuit
-          copyToShaderParameters:
-            # Value required, provide a dummy. Gets overridden when applied.
-            layerKey: dummy
-            parameterTexture: displacementMap
-            parameterUV: displacementUV
+        sizeMaps:
+          32:
+            sprite: Mobs/Species/Harpy/displacement.rsi
+            state: jumpsuit
+
 
 - type: entity
   save: false
   name: Urist McHarpy
-  parent: [ BaseHarpyAppearance, BaseMobHuman ]
+  parent: [BaseHarpyAppearance, BaseMobHuman, StorableSpecies] # TheDen]
   id: MobHarpyBase
   abstract: true
   components:
@@ -106,7 +103,7 @@
     understands:
     - TauCetiBasic
     - ValyrianStandard
-  - type: StepTriggerImmune
+  - type: ProtectedFromStepTriggers
     whitelist:
       types:
       - Shard

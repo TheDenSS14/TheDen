@@ -25,14 +25,20 @@
   dollPrototype: MobArachneDummy
   skinColoration: HumanAnimal
   minAge: 18
-  youngAge: 20
-  oldAge: 70
+  youngAge: 40 # TheDen - Originally 30
+  middleAge: 80 # TheDen - Originally 50
+  olderAge: 120 # TheDen - Originally 70
+  oldAge: 160 # TheDen - Because we have "young adult" and "adult" now, all the numbers have been adjusted to match those descriptions based on maxAge
   maxAge: 200
   customName: true
 
 - type: markingPoints
   id: MobArachneMarkingLimits
   points:
+    Eyes: # TheDen - Lets them choose eyes
+      points: 1
+      required: true
+      defaultMarkings: [ ArachneEyesDefault ]
     Hair:
       points: 1
       required: false
@@ -84,7 +90,7 @@
     Snout: MobHumanoidAnyMarking
     Chest: MobHumanTorso
     Undershirt: MobHumanoidAnyMarking
-    Eyes: MobArachneEyes
+    Eyes: MobHumanoidAnyMarking # TheDen - Lets them choose eyes
     LArm: MobHumanLArm
     RArm: MobHumanRArm
     LHand: MobHumanLHand

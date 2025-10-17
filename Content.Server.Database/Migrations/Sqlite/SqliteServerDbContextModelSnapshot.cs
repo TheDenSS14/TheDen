@@ -1,19 +1,17 @@
 // SPDX-FileCopyrightText: 2020 20kdc
+// SPDX-FileCopyrightText: 2020 Pieter-Jan Briers
+// SPDX-FileCopyrightText: 2021 DrSmugleaf
 // SPDX-FileCopyrightText: 2021 Javier Guardia Fernández
 // SPDX-FileCopyrightText: 2021 Leo
 // SPDX-FileCopyrightText: 2021 Swept
 // SPDX-FileCopyrightText: 2022 Flipp Syder
 // SPDX-FileCopyrightText: 2022 Julian Giebel
 // SPDX-FileCopyrightText: 2022 Moony
-// SPDX-FileCopyrightText: 2022 Pieter-Jan Briers
 // SPDX-FileCopyrightText: 2022 ShadowCommander
 // SPDX-FileCopyrightText: 2022 Vera Aguilera Puerto
 // SPDX-FileCopyrightText: 2022 Veritius
 // SPDX-FileCopyrightText: 2022 Visne
-// SPDX-FileCopyrightText: 2022 metalgearsloth
 // SPDX-FileCopyrightText: 2022 mirrorcult
-// SPDX-FileCopyrightText: 2023 Chief-Engineer
-// SPDX-FileCopyrightText: 2023 DrSmugleaf
 // SPDX-FileCopyrightText: 2023 Riggle
 // SPDX-FileCopyrightText: 2024 AJCM-git
 // SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT
@@ -28,6 +26,7 @@
 // SPDX-FileCopyrightText: 2025 Falcon
 // SPDX-FileCopyrightText: 2025 Lyndomen
 // SPDX-FileCopyrightText: 2025 Timfa
+// SPDX-FileCopyrightText: 2025 portfiend
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -48,7 +47,7 @@ namespace Content.Server.Database.Migrations.Sqlite
         protected override void BuildModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
-            modelBuilder.HasAnnotation("ProductVersion", "8.0.0");
+            modelBuilder.HasAnnotation("ProductVersion", "9.0.1");
 
             modelBuilder.Entity("Content.Server.Database.Admin", b =>
                 {
@@ -297,8 +296,7 @@ namespace Content.Server.Database.Migrations.Sqlite
                         .HasColumnType("TEXT")
                         .HasColumnName("expiration_time");
 
-                    b.Property<DateTime?>("LastEditedAt")
-                        .IsRequired()
+                    b.Property<DateTime>("LastEditedAt")
                         .HasColumnType("TEXT")
                         .HasColumnName("last_edited_at");
 
@@ -426,8 +424,7 @@ namespace Content.Server.Database.Migrations.Sqlite
                         .HasColumnType("TEXT")
                         .HasColumnName("expiration_time");
 
-                    b.Property<DateTime?>("LastEditedAt")
-                        .IsRequired()
+                    b.Property<DateTime>("LastEditedAt")
                         .HasColumnType("TEXT")
                         .HasColumnName("last_edited_at");
 
@@ -873,6 +870,10 @@ namespace Content.Server.Database.Migrations.Sqlite
                         .HasColumnType("INTEGER")
                         .HasColumnName("accepted_prompt");
 
+                    b.Property<ulong?>("DiscordUserId")
+                        .HasColumnType("INTEGER")
+                        .HasColumnName("discord_user_id");
+
                     b.Property<DateTime>("FirstSeenTime")
                         .HasColumnType("TEXT")
                         .HasColumnName("first_seen_time");
@@ -958,6 +959,11 @@ namespace Content.Server.Database.Migrations.Sqlite
                         .HasColumnType("TEXT")
                         .HasColumnName("backpack");
 
+                    b.Property<string>("CharacterConsent")
+                        .IsRequired()
+                        .HasColumnType("TEXT")
+                        .HasColumnName("character_consent");
+
                     b.Property<string>("CharacterName")
                         .IsRequired()
                         .HasColumnType("TEXT")
@@ -1039,6 +1045,11 @@ namespace Content.Server.Database.Migrations.Sqlite
                         .HasColumnType("TEXT")
                         .HasColumnName("nationality");
 
+                    b.Property<string>("NsfwFlavorText")
+                        .IsRequired()
+                        .HasColumnType("TEXT")
+                        .HasColumnName("nsfw_flavor_text");
+
                     b.Property<int>("PreferenceId")
                         .HasColumnType("INTEGER")
                         .HasColumnName("preference_id");
@@ -1046,6 +1057,11 @@ namespace Content.Server.Database.Migrations.Sqlite
                     b.Property<int>("PreferenceUnavailable")
                         .HasColumnType("INTEGER")
                         .HasColumnName("pref_unavailable");
+
+                    b.Property<string>("SelfExamineFlavorText")
+                        .IsRequired()
+                        .HasColumnType("TEXT")
+                        .HasColumnName("self_examine_flavor_text");
 
                     b.Property<string>("Sex")
                         .IsRequired()

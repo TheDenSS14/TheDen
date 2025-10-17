@@ -102,7 +102,7 @@
   - type: CombatMode
   - type: MovementSpeedModifier
     baseWalkSpeed : 3.5
-    baseSprintSpeed : 5.0
+    baseSprintSpeed : 6.0
   - type: NpcFactionMember
     factions:
       - PetsNT
@@ -136,7 +136,7 @@
       100: Critical
       200: Dead
   - type: StaminaDamageOnHit
-    damage: 22
+    damage: 25
   - type: MeleeWeapon
     hidden: true
     altDisarm: false
@@ -147,9 +147,14 @@
     damage:
       types:
         Slash: 10
+        Piercing: 5 # BIG SCARY DOG
+    clickPartDamageMultiplier: 2
+    heavyDamageBaseModifier: 0.3
+    heavyStaminaCost: 0.5
+    heavyRateModifier: 1
   - type: SlowOnDamage
     speedModifierThresholds:
-      40: 0.70
+      40: 0.80
       80: 0.30
   - type: Appearance
   - type: Inventory
@@ -203,3 +208,6 @@
     - Dog
     - TauCetiBasic
   - type: LeashAnchor # Floofstation
+  - type: TemperatureProtection # Dog has fur
+    heatingCoefficient: 1.1
+    coolingCoefficient: 0.1

@@ -1,10 +1,10 @@
-# SPDX-FileCopyrightText: 2023 Colin-Tel <113523727+Colin-Tel@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 BriBrooo <45323530+Bribrooo@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 sleepyyapril <flyingkarii@gmail.com>
-# SPDX-FileCopyrightText: 2025 Rosycup <178287475+Rosycup@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Colin-Tel
+# SPDX-FileCopyrightText: 2024 BriBrooo
+# SPDX-FileCopyrightText: 2025 Rosycup
+# SPDX-FileCopyrightText: 2025 Sir Warock
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: entity
   parent: ClothingHandsBase
@@ -16,8 +16,12 @@
     sprite: _DV/Clothing/Hands/Gloves/inspection.rsi
   - type: Clothing
     sprite: _DV/Clothing/Hands/Gloves/inspection.rsi
-  - type: GloveHeatResistance
-    heatResistance: 1400
+  # DEN
+  - type: DamageOnInteractProtection
+    damageProtection:
+      flatReductions:
+        Heat: 10
+  # DEN
   - type: Insulated
   - type: Fiber
     fiberMaterial: fibers-leather
@@ -35,8 +39,12 @@
     sprite: _DV/Clothing/Hands/Gloves/ryuzogauntlets.rsi
   - type: Clothing
     sprite: _DV/Clothing/Hands/Gloves/ryuzogauntlets.rsi
-  - type: GloveHeatResistance
-    heatResistance: 1400
+  # DEN
+  - type: DamageOnInteractProtection
+    damageProtection:
+      flatReductions:
+        Heat: 10
+  # DEN
   - type: Insulated
   - type: Fiber
     fiberMaterial: fibers-leather
@@ -67,5 +75,39 @@
     modifiers:
       coefficients:
         Caustic: 0.95
-  - type: TemperatureProtection
-    coefficient: 1
+  - type: SurgerySpeedModifier
+    speedModifier: 1.25
+  - type: FingerprintMask
+  # DEN
+  - type: DamageOnInteractProtection
+    damageProtection:
+      flatReductions:
+        Heat: 10
+        Caustic: 10
+    # DEN
+
+- type: entity
+  parent: ClothingHandsBase
+  id: ClothingHandsGlovesHeavySurgical
+  name: heavy surgical gloves
+  description: A pair of thick self-sterilizing gloves that keep the hands and exposed organs firmly separated.
+  components:
+  - type: Sprite
+    sprite: _DV/Clothing/Hands/Gloves/cmogloves.rsi
+  - type: Clothing
+    sprite: _DV/Clothing/Hands/Gloves/cmogloves.rsi
+  - type: Fiber
+    fiberMaterial: fibers-rubber
+    fiberColor: fibers-teal
+  - type: Armor
+    modifiers: {}
+  - type: SurgerySpeedModifier
+    speedModifier: 1.5
+  - type: FingerprintMask
+    # DEN
+  - type: DamageOnInteractProtection
+    damageProtection:
+      flatReductions:
+        Heat: 10
+        Caustic: 10
+    # DEN

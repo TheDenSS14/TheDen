@@ -1,0 +1,76 @@
+- type: reagent # can't parent it to blood because anybody should be able to drink it, the flesh/organs are the toxic parts (fugu moment)
+  id: ShimmeringBlood
+  name: reagent-name-shimmering-blood
+  group: Biological
+  desc: reagent-desc-shimmering-blood
+  flavor: shimmeringblood
+  color: "#ff624a" # a slightly warmer color than the ichor extracted from dragon flesh
+  recognizable: true
+  physicalDesc: reagent-physical-desc-shimmering-blood
+  metabolisms:
+    Food:
+      effects:
+      - !type:SatiateHunger
+        factor: 1
+        conditions: # TheDen - Vampires get their own numbers
+          - !type:OrganType
+            type: Vampiric
+            shouldHave: false
+      - !type:SatiateThirst
+        factor: 1
+        conditions: # TheDen - Vampires get their own numbers
+          - !type:OrganType
+            type: Vampiric
+            shouldHave: false
+      - !type:SatiateHunger # TheDen - Vampiric additions start
+        factor: 0.625
+        conditions:
+        - !type:OrganType
+          type: Vampiric
+      - !type:AdjustReagent
+        conditions:
+        - !type:OrganType
+          type: Vampiric
+        reagent: Water
+        amount: 0.375
+      - !type:AdjustReagent
+        conditions:
+        - !type:OrganType
+          type: Vampiric
+        reagent: Protein
+        amount: 0.3125
+      - !type:AdjustReagent
+        conditions:
+        - !type:OrganType
+          type: Vampiric
+        reagent: Omnizine
+        amount: 0.375 # TheDen - Vampiric additions end
+    Narcotic:
+      effects:
+      - !type:GenericStatusEffect
+        key: SeeingRainbows
+        component: SeeingRainbows
+        type: Add
+        time: 5
+        refresh: false
+    Medicine:
+      effects:
+      - !type:HealthChange
+        conditions:
+        - !type:OrganType
+          type: Bloodsucker
+        damage:
+          groups:
+            Brute: -4.5
+            Burn: -1.875
+  plantMetabolism:
+    - !type:PlantAdjustToxins
+      amount: 2
+    - !type:PlantAdjustWeeds
+      amount: -2
+    - !type:PlantAdjustPests
+      amount: -2
+  footstepSound:
+    collection: FootstepBlood
+    params:
+      volume: 6

@@ -1,6 +1,7 @@
-# SPDX-FileCopyrightText: 2023 Colin-Tel <113523727+Colin-Tel@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2023 Fluffiest Floofers <thebluewulf@gmail.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Colin-Tel
+# SPDX-FileCopyrightText: 2023 Fluffiest Floofers
+# SPDX-FileCopyrightText: 2025 Sir Warock
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: MIT
 
@@ -15,7 +16,8 @@
   - type: Clothing
     sprite: Nyanotrasen/Clothing/OuterClothing/Robes/brown.rsi
   - type: TemperatureProtection
-    coefficient: 0.2
+    heatingCoefficient: 0.8
+    coolingCoefficient: 0.3
 
 - type: entity
   parent: ClothingOuterBase
@@ -28,4 +30,5 @@
   - type: Clothing
     sprite: Nyanotrasen/Clothing/OuterClothing/Robes/techpriest.rsi
   - type: TemperatureProtection
-    coefficient: 0.2
+    heatingCoefficient: 0.8
+    coolingCoefficient: 0.3

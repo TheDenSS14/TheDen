@@ -1,6 +1,7 @@
-// SPDX-FileCopyrightText: 2024 VMSolidus <evilexecutive@gmail.com>
-// SPDX-FileCopyrightText: 2025 Timfa <timfalken@hotmail.com>
-// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 VMSolidus
+// SPDX-FileCopyrightText: 2025 Timfa
+// SPDX-FileCopyrightText: 2025 portfiend
+// SPDX-FileCopyrightText: 2025 sleepyyapril
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -12,7 +13,7 @@ namespace Content.Shared.Traits.Assorted.Systems;
 
 public sealed class ExtendDescriptionSystem : EntitySystem
 {
-    [Dependency] private readonly CharacterRequirementsSystem _characterRequirements = default!;
+    [Dependency] private readonly SharedCharacterRequirementsSystem _characterRequirements = default!;
 
     public override void Initialize()
     {
@@ -31,7 +32,10 @@ public sealed class ExtendDescriptionSystem : EntitySystem
                 || !TryComp(args.Examiner, out MetaDataComponent? comp) || comp.EntityPrototype == null)
                 continue;
 
-            var meetsRequirements = desc.Requirements == null || _characterRequirements.CheckRequirementsValid(desc.Requirements, args.Examiner, comp.EntityPrototype, out _);
+            var meetsRequirements = desc.Requirements == null
+                || _characterRequirements.CheckRequirementsValid(desc.Requirements,
+                    args.Examiner,
+                    comp.EntityPrototype);
             var description = meetsRequirements ? desc.Description : desc.RequirementsNotMetDescription;
 
             if (description != string.Empty)

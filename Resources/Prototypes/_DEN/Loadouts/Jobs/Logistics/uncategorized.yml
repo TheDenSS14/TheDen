@@ -1,7 +1,8 @@
-# SPDX-FileCopyrightText: 2025 Blitz <73762869+BlitzTheSquishy@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Blitz
+# SPDX-FileCopyrightText: 2025 Shaman
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: loadout
   id: LoadoutTowelLightBrown
@@ -32,3 +33,39 @@
       jobs:
         - SalvageSpecialist # For salvage recognizibility
         - Quartermaster # LO has a LO specific variant
+
+- type: loadout
+  id: LoadoutLogisticsOuterCoatBomberCargo # Can also butcher the other version to get this
+  category: JobsLogisticsAUncategorized
+  cost: 0
+  exclusive: true
+  items:
+    -  ClothingOuterCoatBomberCargo
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutLogisticsOuter
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Logistics
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Quartermaster # Sorry, these are for the little guys
+
+- type: loadout
+  id: LoadoutLogisticsOuterCoatBomberCargoLoose # Can also butcher the other version to get this
+  category: JobsLogisticsAUncategorized
+  cost: 0
+  exclusive: true
+  items:
+    -  ClothingOuterCoatBomberCargoLoose
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutLogisticsOuter
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Logistics
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Quartermaster # Sorry, these are for the little guys

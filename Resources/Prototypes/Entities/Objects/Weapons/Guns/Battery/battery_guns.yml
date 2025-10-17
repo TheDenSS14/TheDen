@@ -56,7 +56,7 @@
 # SPDX-FileCopyrightText: 2025 VMSolidus
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: entity
   id: BaseWeaponBattery
@@ -593,66 +593,67 @@
     zeroVisible: true
   - type: Appearance
 
-- type: entity
-  name: civilian disabler
-  parent: BaseWeaponBatterySmall
-  id: WeaponCivilianDisabler
-  description: The original prototype disablers refitted for civilian self defence use and put in a shiny new shell. It has a much lower power output than the modern disabler in use by Security, and as such requires no license to carry.
-  components:
-    - type: Tag
-      tags:
-        - Taser
-        - Sidearm
-    - type: Item
-      size: Small
-      shape:
-      - 0,0,1,1
-    - type: Sprite
-      sprite: Objects/Weapons/Guns/Battery/civilian-disabler.rsi
-      layers:
-        - state: base
-          map: ["enum.GunVisualLayers.Base"]
-        - state: mag-unshaded-0
-          map: ["enum.GunVisualLayers.MagUnshaded"]
-          shader: unshaded
-    - type: Clothing
-      sprite: Objects/Weapons/Guns/Battery/civilian-disabler.rsi
-      quickEquip: false
-      slots:
-        - suitStorage
-        - Belt
-    - type: Gun
-      fireRate: 2
-      soundGunshot:
-        path: /Audio/Weapons/Guns/Gunshots/taser2.ogg
-    - type: ProjectileBatteryAmmoProvider
-      proto: BulletCivilianDisabler
-      fireCost: 100
-    - type: MagazineVisuals
-      magState: mag
-      steps: 5
-      zeroVisible: true
-    - type: Appearance
-    - type: ExtendDescription
-      descriptionList:
-      - description: "civiliandisabler-extenddescription-security"
-        fontSize: 12
-        color: "#ff0000"
-        requireDetailRange: true
-        requirements:
-        - !type:CharacterDepartmentRequirement
-          departments:
-            - Security
-    - type: MeleeWeapon
-      damage:
-        types:
-          Blunt: 3.0
-      bluntStaminaDamageFactor: 2
-      wideAnimationRotation: 90
+# DEN - Remove civilian disabler
+# - type: entity
+#   name: civilian disabler
+#   parent: BaseWeaponBatterySmall
+#   id: WeaponCivilianDisabler
+#   description: The original prototype disablers refitted for civilian self defence use and put in a shiny new shell. It has a much lower power output than the modern disabler in use by Security, and as such requires no license to carry.
+#   components:
+#     - type: Tag
+#       tags:
+#         - Taser
+#         - Sidearm
+#     - type: Item
+#       size: Small
+#       shape:
+#       - 0,0,1,1
+#     - type: Sprite
+#       sprite: Objects/Weapons/Guns/Battery/civilian-disabler.rsi
+#       layers:
+#         - state: base
+#           map: ["enum.GunVisualLayers.Base"]
+#         - state: mag-unshaded-0
+#           map: ["enum.GunVisualLayers.MagUnshaded"]
+#           shader: unshaded
+#     - type: Clothing
+#       sprite: Objects/Weapons/Guns/Battery/civilian-disabler.rsi
+#       quickEquip: false
+#       slots:
+#         - suitStorage
+#         - Belt
+#     - type: Gun
+#       fireRate: 2
+#       soundGunshot:
+#         path: /Audio/Weapons/Guns/Gunshots/taser2.ogg
+#     - type: ProjectileBatteryAmmoProvider
+#       proto: BulletCivilianDisabler
+#       fireCost: 100
+#     - type: MagazineVisuals
+#       magState: mag
+#       steps: 5
+#       zeroVisible: true
+#     - type: Appearance
+#     - type: ExtendDescription
+#       descriptionList:
+#       - description: "civiliandisabler-extenddescription-security"
+#         fontSize: 12
+#         color: "#ff0000"
+#         requireDetailRange: true
+#         requirements:
+#         - !type:CharacterDepartmentRequirement
+#           departments:
+#             - Security
+#     - type: MeleeWeapon
+#       damage:
+#         types:
+#           Blunt: 3.0
+#       bluntStaminaDamageFactor: 2
+#       wideAnimationRotation: 90
 
 - type: entity
   name: disabler
-  parent: BaseWeaponBatterySmall
+  parent: [ BaseSecurityCommandBlueshieldOfficerContraband, BaseWeaponBatterySmall ]
   id: WeaponDisabler
   description: A self-defense weapon that exhausts organic targets, weakening them until they collapse.
   components:
@@ -676,12 +677,13 @@
         - suitStorage
         - Belt
     - type: Gun
+      projectileSpeed: 35 # DEN - Update disabler in line with upstream, any higher and this causes issues in lag
       fireRate: 2
       soundGunshot:
         path: /Audio/Weapons/Guns/Gunshots/taser2.ogg
     - type: ProjectileBatteryAmmoProvider
       proto: BulletDisabler
-      fireCost: 100
+      fireCost: 62.5 # DEN - Disabler shots 10 => 16
     - type: MagazineVisuals
       magState: mag
       steps: 5
@@ -698,8 +700,8 @@
       wideAnimationRotation: 135
 
 - type: entity
-  name: CentCom disabler
-  parent: WeaponDisabler
+  name: CentComm disabler
+  parent: [ BaseCentcommContraband, WeaponDisabler ]
   id: WeaponCCDisabler
   description: An improved self-defense weapon that exhausts organic targets, weakening them until they collapse. Only for the finest officers that we don't trust with lethals.
   components:
@@ -728,7 +730,7 @@
 
 - type: entity
   name: disabler SMG
-  parent: BaseWeaponBattery
+  parent: [ BaseSecurityCommandBlueshieldOfficerContraband, BaseWeaponBattery ]
   id: WeaponDisablerSMG
   description: Advanced weapon that exhausts organic targets, weakening them until they collapse.
   components:
@@ -737,7 +739,7 @@
   - type: Tag
     tags:
       - Taser
-      - Sidearm
+      # - Sidearm # DEN
   - type: Sprite
     sprite: Objects/Weapons/Guns/Battery/disabler_smg.rsi
     layers:
@@ -802,7 +804,7 @@
 
 - type: entity
   name: taser
-  parent: BaseWeaponBatterySmall
+  parent: [ BaseSecurityCommandBlueshieldOfficerContraband, BaseWeaponBatterySmall ]
   id: WeaponTaser
   description: A low-capacity, energy-based stun gun used by security teams to subdue targets at range.
   components:
@@ -838,7 +840,7 @@
 
 - type: entity
   name: antique laser pistol
-  parent: BaseWeaponBatterySmall
+  parent: [ BaseGrandTheftContraband, BaseWeaponBatterySmall ]
   id: WeaponAntiqueLaser
   description: This is an antique laser pistol. All craftsmanship is of the highest quality. It is decorated with assistant leather and chrome. The object menaces with spikes of energy.
   components:
@@ -891,7 +893,7 @@
 
 - type: entity
   name: advanced laser pistol
-  parent: BaseWeaponBatterySmall
+  parent: [ BaseSalvageSpecialistSecurityContraband, BaseWeaponBatterySmall ]
   id: WeaponAdvancedLaser
   description: An experimental high-energy laser pistol with a self-charging nuclear battery.
   components:

@@ -1,7 +1,10 @@
+# SPDX-FileCopyrightText: 2025 DESKTOP-0V0K4HQ\Rosy
 # SPDX-FileCopyrightText: 2025 Jakumba
+# SPDX-FileCopyrightText: 2025 RosySaturniidae
+# SPDX-FileCopyrightText: 2025 pocl.v
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: trait
   id: VulpkaninSounds
@@ -237,7 +240,45 @@
       emoteSound: Kitsune
       useSex: true
 
-# REPLACE SOUNDS 
+- type: trait
+  id: MothSounds
+  category: TraitsSpeechSounds
+  points: -2
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: TraitsRaceSounds
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Moth
+  functions:
+    - !type:TraitAddTag
+      tags:
+      - MothEmotes
+    - !type:TraitSetAdditionalEmoteSound
+      emoteSound: UnisexMoth
+      useSex: false
+
+- type: trait
+  id: VoxSounds
+  category: TraitsSpeechSounds
+  points: -2
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: TraitsRaceSounds
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Vox
+  functions:
+    - !type:TraitAddTag
+      tags:
+      - VoxEmotes
+    - !type:TraitSetAdditionalEmoteSound
+      emoteSound: UnisexVox
+      useSex: false
+
+# REPLACE SOUNDS
 
 - type: trait
   id: VulpkaninSoundsReplace
@@ -483,4 +524,44 @@
     - !type:TraitSetAdditionalEmoteSound
       emoteSound: Kitsune
       useSex: true
+      replace: true
+
+- type: trait
+  id: MothSoundsReplace
+  category: TraitsSpeechSounds
+  points: -2
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: TraitsRaceSounds
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Moth
+  functions:
+    - !type:TraitAddTag
+      tags:
+      - MothEmotes
+    - !type:TraitSetAdditionalEmoteSound
+      emoteSound: UnisexMoth
+      useSex: false
+      replace: true
+
+- type: trait
+  id: VoxSoundsReplace
+  category: TraitsSpeechSounds
+  points: -2
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: TraitsRaceSounds
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - Vox
+  functions:
+    - !type:TraitAddTag
+      tags:
+      - VoxEmotes
+    - !type:TraitSetAdditionalEmoteSound
+      emoteSound: UnisexVox
+      useSex: false
       replace: true

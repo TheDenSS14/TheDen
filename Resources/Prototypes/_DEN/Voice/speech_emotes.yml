@@ -2,10 +2,11 @@
 # SPDX-FileCopyrightText: 2025 TheOneTrueWolfio
 # SPDX-FileCopyrightText: 2025 juniwoofs
 # SPDX-FileCopyrightText: 2025 mart
+# SPDX-FileCopyrightText: 2025 pocl.v
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 # SPDX-FileCopyrightText: 2025 wheelwrightt
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: emote
   id: CowMoo
@@ -81,15 +82,23 @@
   icon: Interface/Emotes/caw.png
   whitelist:
     tags:
+    - VoxEmotes
     - HarpyEmotes
     - ResomiEmotes
   blacklist:
     components:
     - BorgChassis
-  chatMessages: [ coos ]
+  chatMessages: [ "chat-emote-msg-coo" ] # imp vox emote edit
   chatTriggers:
-    - coos
-    - coo
+   - coo
+   - coo.
+   - coo!
+   - coos
+   - coos.
+   - coos!
+   - cooed
+   - cooed.
+   - cooed!
 
 - type: emote
   id: AvaliHonk
@@ -107,3 +116,21 @@
   chatTriggers:
   - hornk
   - hornks
+
+- type: emote
+  id: ThumpGeneral
+  name: chat-emote-name-thump-general
+  icon: Interface/Emotes/tailslap.png # TODO: find better-fitting icon
+  whitelist:
+    tags:
+    - RodentiaEmotes
+    - UnathiEmotes
+  blacklist:
+    components:
+    - BorgChassis
+  chatMessages: ["chat-emote-msg-thump-general"]
+  chatTriggers:
+    - thump
+    - thumps
+    - thumping
+    - thumped

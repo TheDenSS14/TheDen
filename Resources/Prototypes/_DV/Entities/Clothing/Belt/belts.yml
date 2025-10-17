@@ -90,6 +90,17 @@
         whitelist:
           tags:
           - Sidearm
+        ejectSound: #Den edit
+          path: /Audio/_DEN/Weapons/pistol_unholster.ogg
+        insertOnInteract: true
+        insertSound: #Den edit
+          path: /Audio/_DEN/Weapons/pistol_holster.ogg
+      radio:
+        name: clothing-belt-radio
+        priority: -2
+        whitelist:
+          tags:
+            - Radio
         insertOnInteract: true
   - type: ItemMapper # DeltaV - adjust for DeltaV sprites.
     mapLayers:
@@ -116,4 +127,32 @@
         ents: []
       holster: !type:ContainerSlot {}
       medkit: !type:ContainerSlot {}
+      radio: !type:ContainerSlot {}
   - type: Appearance
+
+- type: entity
+  parent: ClothingBeltStorageBase
+  id: ClothingBeltPaperwork
+  name: paperwork belt
+  description: For all your tactical paperwork needs on the field.
+  components:
+  - type: Sprite
+    sprite: _DV/Clothing/Belt/paperwork.rsi
+  - type: Clothing
+    sprite: _DV/Clothing/Belt/paperwork.rsi
+  - type: Storage
+    whitelist:
+      tags:
+      - Folder
+      - Document
+      - Flashlight
+      - Radio
+      - HandLabeler
+      - Write
+      - TapeRecorder
+      - CassetteTape
+      - BoxReamClassic
+      components:
+      - FitsInDispenser
+      - Stamp
+      - Drink

@@ -1,19 +1,22 @@
-// SPDX-FileCopyrightText: 2023 Debug <49997488+DebugOk@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2023 Kara <lunarautomaton6@gmail.com>
-// SPDX-FileCopyrightText: 2023 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 LordCarve <27449516+LordCarve@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 Tayrtahn <tayrtahn@gmail.com>
-// SPDX-FileCopyrightText: 2025 RedFoxIV <38788538+RedFoxIV@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Debug
+// SPDX-FileCopyrightText: 2023 Kara
+// SPDX-FileCopyrightText: 2023 Leon Friedrich
+// SPDX-FileCopyrightText: 2024 LordCarve
+// SPDX-FileCopyrightText: 2024 Tayrtahn
+// SPDX-FileCopyrightText: 2025 RedFoxIV
+// SPDX-FileCopyrightText: 2025 bigsantino1
+// SPDX-FileCopyrightText: 2025 sleepyyapril
 //
-// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+// SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 using Content.Shared.Bed.Sleep;
 using Content.Shared.Damage;
+using Content.Shared.Damage.Events;
 using Content.Shared.Damage.ForceSay;
 using Content.Shared.FixedPoint;
 using Content.Shared.Mobs;
 using Content.Shared.Mobs.Systems;
+using Content.Shared.Random.Helpers;
 using Content.Shared.Stunnable;
 using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
@@ -67,7 +70,13 @@ public sealed class DamageForceSaySystem : EntitySystem
             _timing.CurTime < component.NextAllowedTime)
             return;
 
-        var suffix = Loc.GetString(suffixOverride ?? component.ForceSayStringPrefix + _random.Next(1, component.ForceSayStringCount));
+        var ev = new BeforeForceSayEvent(component.ForceSayStringDataset);
+        RaiseLocalEvent(uid, ev);
+
+        if (!_prototype.TryIndex(ev.Prefix, out var prefixList))
+            return;
+
+        var suffix = Loc.GetString(_random.Pick(prefixList.Values));
 
         // set cooldown & raise event
         component.NextAllowedTime = _timing.CurTime + component.Cooldown;
@@ -90,7 +99,7 @@ public sealed class DamageForceSaySystem : EntitySystem
         if (!args.FellAsleep)
             return;
 
-        TryForceSay(uid, component, true, "damage-force-say-sleep");
+        TryForceSay(uid, component);
         AllowNextSpeech(uid);
     }
 

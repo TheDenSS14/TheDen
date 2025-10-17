@@ -1,8 +1,8 @@
-// SPDX-FileCopyrightText: 2023 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2023 deltanedas <39013340+deltanedas@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2023 deltanedas <@deltanedas:kde.org>
-// SPDX-FileCopyrightText: 2023 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 DrSmugleaf
+// SPDX-FileCopyrightText: 2023 deltanedas
+// SPDX-FileCopyrightText: 2023 metalgearsloth
+// SPDX-FileCopyrightText: 2025 Blitz
+// SPDX-FileCopyrightText: 2025 sleepyyapril
 //
 // SPDX-License-Identifier: MIT
 
@@ -44,6 +44,6 @@ public sealed partial class SalvageAirMod : IPrototype, IBiomeSpecificMod
     /// <summary>
     /// Number of moles of each gas in the mixture.
     /// </summary>
-    [DataField("gases")]
+    [DataField("gases", customTypeSerializer: typeof(GasArraySerializer))]
     public float[] Gases = new float[Atmospherics.AdjustedNumberOfGases];
 }

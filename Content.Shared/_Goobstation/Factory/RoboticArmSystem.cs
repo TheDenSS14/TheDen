@@ -1,8 +1,7 @@
-// SPDX-FileCopyrightText: 2025 AirFryerBuyOneGetOneFree <airfryerbuyonegetonefree@gmail.com>
-// SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
-// SPDX-FileCopyrightText: 2025 deltanedas <39013340+deltanedas@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 deltanedas <@deltanedas:kde.org>
-// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 AirFryerBuyOneGetOneFree
+// SPDX-FileCopyrightText: 2025 crekulon
+// SPDX-FileCopyrightText: 2025 deltanedas
+// SPDX-FileCopyrightText: 2025 sleepyyapril
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -405,25 +404,17 @@ public sealed class RoboticArmSystem : EntitySystem
             _turf.IsTileBlocked(turf, CollisionGroup.MachineMask);
     }
 
+    // DEN / IMP ported from Darkmajia's Impstation PR #2526 - removal of SetPowerDraw's usage and definition
     private void StartMoving(Entity<RoboticArmComponent> ent)
     {
-        SetPowerDraw(ent, ent.Comp.MovingPowerDraw);
         ent.Comp.NextMove = _timing.CurTime + ent.Comp.MoveDelay;
         DirtyField(ent, ent.Comp, nameof(RoboticArmComponent.NextMove));
     }
 
     private void StopMoving(Entity<RoboticArmComponent> ent)
     {
-        SetPowerDraw(ent, ent.Comp.IdlePowerDraw);
         ent.Comp.NextMove = null;
         DirtyField(ent, ent.Comp, nameof(RoboticArmComponent.NextMove));
-    }
-
-    private void SetPowerDraw(EntityUid uid, float draw)
-    {
-        SharedApcPowerReceiverComponent? receiver = null;
-        if (_power.ResolveApc(uid, ref receiver))
-            _power.SetLoad(receiver, draw);
     }
 
     public EntityCoordinates OutputPosition(EntityUid uid)

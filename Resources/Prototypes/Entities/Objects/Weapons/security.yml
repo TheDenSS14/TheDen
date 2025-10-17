@@ -52,11 +52,11 @@
 # SPDX-FileCopyrightText: 2025 Timfa
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: entity
   name: stun baton
-  parent: BaseItem
+  parent: [ BaseSecurityCommandBlueshieldOfficerContraband, BaseItem ]
   id: Stunbaton
   description: A stun baton for incapacitating people with. Actively harming with this is considered bad tone.
   components:
@@ -64,7 +64,7 @@
     sprite: Objects/Weapons/Melee/stunbaton.rsi
     layers:
     - state: stunbaton_off
-      map: [ "enum.ToggleVisuals.Layer" ]
+      map: [ "enum.ToggleableVisuals.Layer" ]
   - type: Tag
     tags:
     - Stunbaton
@@ -98,15 +98,15 @@
     heavyRateModifier: 1.1
     heavyDamageBaseModifier: 1.5
     heavyStaminaCost: 0.5
-    animation: WeaponArcSlash
+    animation: WeaponArcThrust
   - type: DamageOtherOnHit
   - type: StaminaDamageOnHit # Stunmeta
-    damage: 15
+    damage: 20
     overtime: 40
     sound: /Audio/Weapons/egloves.ogg
   - type: StaminaDamageOnCollide
-    damage: 15
-    overtime: 40
+    damage: 20 # DEN
+    overtime: 10 # DEN
     sound: /Audio/Weapons/egloves.ogg
   - type: Battery
     maxCharge: 1000
@@ -124,8 +124,8 @@
   - type: Appearance
   - type: GenericVisualizer
     visuals:
-     enum.ToggleVisuals.Toggled:
-        enum.ToggleVisuals.Layer:
+     enum.ToggleableVisuals.Enabled:
+        enum.ToggleableVisuals.Layer:
           True: {state: stunbaton_on}
           False: {state: stunbaton_off}
   - type: StaticPrice
@@ -155,7 +155,7 @@
 
 - type: entity
   name: truncheon
-  parent: BaseItem
+  parent: [ BaseSecurityContraband, BaseItem ]
   id: Truncheon
   description: A rigid, steel-studded baton, meant to harm.
   components:
@@ -164,18 +164,21 @@
     state: icon
   - type: MeleeWeapon
     wideAnimationRotation: -135
-    attackRate: 1.2
+    attackRate: 1 # DEN
     damage:
       types:
-        Blunt: 12
+        Blunt: 18
+        Structural: 10
     soundHit:
       collection: MetalThud
-    bluntStaminaDamageFactor: 3
+    bluntStaminaDamageFactor: 1.5
     heavyRateModifier: 1.5
     heavyDamageBaseModifier: 1.2
-    heavyStaminaCost: 2.5
+    heavyStaminaCost: 12
+    maxTargets: 7
+    angle: 120
   - type: DamageOtherOnHit
-    staminaCost: 9
+    staminaCost: 12
   - type: Item
     size: Normal
   - type: Tag
@@ -197,7 +200,7 @@
 
 - type: entity
   name: flash
-  parent: BaseItem
+  parent: [ BaseSecurityEpistemicsCommandContraband, BaseItem ]
   id: Flash
   description: An ultrabright flashbulb with a trigger, which causes the victim to be dazed and lose their eyesight for a moment. Useless when burnt out.
   components:
@@ -256,7 +259,7 @@
 
 - type: entity
   name: portable flasher
-  parent: BaseStructure
+  parent: [ BaseSecurityContraband, BaseStructure ]
   id: PortableFlasher
   description: An ultrabright flashbulb with a proximity trigger, useful for making an area security-only.
   components:

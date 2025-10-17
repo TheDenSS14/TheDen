@@ -26,68 +26,63 @@
 # SPDX-FileCopyrightText: 2024 SimpleStation14
 # SPDX-FileCopyrightText: 2024 lapatison
 # SPDX-FileCopyrightText: 2024 lzk
-# SPDX-FileCopyrightText: 2024 sleepyyapril <***>
-# SPDX-FileCopyrightText: 2024 sleepyyapril <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>
+# SPDX-FileCopyrightText: 2024 sleepyyapril
 # SPDX-FileCopyrightText: 2025 Tabitha
 # SPDX-FileCopyrightText: 2025 Your Name
 # SPDX-FileCopyrightText: 2025 fishbait
-# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
+# Base Prototypes
+
 - type: latheRecipe
+  abstract: true
+  id: BaseLightRecipe
+  categories:
+  - Lights
+  completetime: 2
+  materials:
+    Steel: 50
+    Glass: 50
+
+- type: latheRecipe
+  abstract: true
+  id: BaseFauxTileRecipe
+  completetime: 1
+  materials:
+    Plastic: 100
+
+# Recipes
+
+- type: latheRecipe
+  parent: BaseLightRecipe
   id: LightTube
   result: LightTube
-  category: Lights
-  completetime: 2
-  materials:
-    Steel: 50
-    Glass: 50
 
 - type: latheRecipe
+  parent: BaseLightRecipe
   id: LedLightTube
   result: LedLightTube
-  category: Lights
-  completetime: 2
-  materials:
-    Steel: 50
-    Glass: 50
 
 - type: latheRecipe
+  parent: BaseLightRecipe
   id: SodiumLightTube
   result: SodiumLightTube
-  category: Lights
-  completetime: 2
-  materials:
-    Steel: 50
-    Glass: 50
 
 - type: latheRecipe
+  parent: BaseLightRecipe
   id: ExteriorLightTube
   result: ExteriorLightTube
-  category: Lights
-  completetime: 2
-  materials:
-    Steel: 50
-    Glass: 50
 
 - type: latheRecipe
+  parent: BaseLightRecipe
   id: LightBulb
   result: LightBulb
-  category: Lights
-  completetime: 2
-  materials:
-    Steel: 50
-    Glass: 50
 
 - type: latheRecipe
+  parent: BaseLightRecipe
   id: LedLightBulb
   result: LedLightBulb
-  category: Lights
-  completetime: 2
-  materials:
-    Steel: 50
-    Glass: 50
 
 - type: latheRecipe
   id: GlowstickRed
@@ -196,39 +191,29 @@
     Plastic: 100
 
 - type: latheRecipe
+  parent: BaseFauxTileRecipe
   id: FauxTileAstroGrass
   result: FloorTileItemAstroGrass
-  completetime: 1
-  materials:
-    Plastic: 100
 
 - type: latheRecipe
+  parent: BaseFauxTileRecipe
   id: FauxTileMowedAstroGrass
   result: FloorTileItemMowedAstroGrass
-  completetime: 1
-  materials:
-    Plastic: 100
 
 - type: latheRecipe
+  parent: BaseFauxTileRecipe
   id: FauxTileJungleAstroGrass
   result: FloorTileItemJungleAstroGrass
-  completetime: 1
-  materials:
-    Plastic: 100
 
 - type: latheRecipe
+  parent: BaseFauxTileRecipe
   id: FauxTileAstroIce
   result: FloorTileItemAstroIce
-  completetime: 1
-  materials:
-    Plastic: 100
 
 - type: latheRecipe
+  parent: BaseFauxTileRecipe
   id: FauxTileAstroSnow
   result: FloorTileItemAstroSnow
-  completetime: 1
-  materials:
-    Plastic: 100
 
 - type: latheRecipe
   id: FloorGreenCircuit

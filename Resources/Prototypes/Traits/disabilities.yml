@@ -30,10 +30,12 @@
 # SPDX-FileCopyrightText: 2025 Tirochora
 # SPDX-FileCopyrightText: 2025 VMSolidus
 # SPDX-FileCopyrightText: 2025 Will Oliver
+# SPDX-FileCopyrightText: 2025 bigsantino1
+# SPDX-FileCopyrightText: 2025 oberonics
 # SPDX-FileCopyrightText: 2025 portfiend
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: trait
   id: Blindness
@@ -170,6 +172,7 @@
     - !type:TraitAddComponent
       components:
         - type: Muted
+          mutedScream: false # IMP
     - !type:TraitModifyLanguages
       languagesSpoken:
         - Sign
@@ -436,3 +439,24 @@
               Piercing: 4
             groups:
               Burn: 3
+
+- type: trait
+  id: PainNumbness
+  category: TraitsPhysicalDisabilities
+  points: 4
+  requirements:
+  - !type:CharacterJobRequirement
+    inverted: true
+    jobs:
+    - StationAi
+    - Borg
+    - MedicalBorg
+  - !type:CharacterTraitRequirement
+    inverted: true
+    traits:
+    - LowPainTolerance
+    - Masochism
+  functions:
+  - !type:TraitAddComponent
+    components:
+    - type: PainNumbness

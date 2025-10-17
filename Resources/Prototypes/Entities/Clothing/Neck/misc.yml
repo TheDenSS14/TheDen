@@ -14,10 +14,12 @@
 # SPDX-FileCopyrightText: 2024 lzk
 # SPDX-FileCopyrightText: 2024 themias
 # SPDX-FileCopyrightText: 2025 January Nelson
+# SPDX-FileCopyrightText: 2025 SeamLesss
 # SPDX-FileCopyrightText: 2025 Skubman
+# SPDX-FileCopyrightText: 2025 Winter
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: entity
   parent: ClothingNeckBase
@@ -29,20 +31,20 @@
     sprite: Clothing/Neck/Misc/headphones.rsi
     layers:
     - state: icon
-      map: [ "enum.ToggleVisuals.Layer" ]
+      map: [ "enum.ToggleableVisuals.Layer" ]
   - type: Clothing
     equippedPrefix: off
     sprite: Clothing/Neck/Misc/headphones.rsi
-  - type: ToggleableLightVisuals
-    spriteLayer: enum.ToggleVisuals.Layer
+  - type: ToggleableVisuals
+    spriteLayer: enum.ToggleableVisuals.Layer
     clothingVisuals:
       neck:
       - state: on-equipped-NECK
   - type: Appearance
   - type: GenericVisualizer
     visuals:
-      enum.ToggleVisuals.Toggled:
-        enum.ToggleVisuals.Layer:
+      enum.ToggleableVisuals.Enabled:
+        enum.ToggleableVisuals.Layer:
           True: {state: icon-on}
           False: {state: icon}
   - type: ItemToggle
@@ -73,6 +75,8 @@
   - type: Sprite
     sprite: Clothing/Neck/Misc/bling.rsi
   - type: Clothing
+    sprite: Clothing/Neck/Misc/bling.rsi
+  - type: Item
     sprite: Clothing/Neck/Misc/bling.rsi
 
 - type: entity

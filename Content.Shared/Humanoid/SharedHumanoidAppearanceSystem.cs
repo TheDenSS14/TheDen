@@ -481,7 +481,7 @@ public abstract class SharedHumanoidAppearanceSystem : EntitySystem
 
         SetSpecies(uid, profile.Species, false, humanoid);
         SetSex(uid, profile.Sex, false, humanoid);
-        SetVoice(uid, profile.PreferredVoice, false, humanoid); // TheDen - Add Voice
+        SetVoice(uid, profile.PreferredVoice ?? profile.Sex, false, humanoid); // TheDen - Add Voice
         humanoid.EyeColor = profile.Appearance.EyeColor;
         var ev = new EyeColorInitEvent();
         RaiseLocalEvent(uid, ref ev);
@@ -648,10 +648,19 @@ public abstract class SharedHumanoidAppearanceSystem : EntitySystem
         if (age < speciesPrototype.YoungAge)
             return Loc.GetString("identity-age-young");
 
-        if (age < speciesPrototype.OldAge)
+        if (age < speciesPrototype.MiddleAge) // TheDen - New category
+            return Loc.GetString("identity-age-adult");
+
+        if (age < speciesPrototype.OlderAge) // TheDen - New category
             return Loc.GetString("identity-age-middle-aged");
 
-        return Loc.GetString("identity-age-old");
+        if (age < speciesPrototype.OldAge) // TheDen - Formerly referenced middle-aged
+            return Loc.GetString("identity-age-older");
+
+        if (age < speciesPrototype.OldAge) // TheDen - Was formerly the maximum age below, instead of ancient
+            return Loc.GetString("identity-age-old");
+
+        return Loc.GetString("identity-age-ancient"); // TheDen - Living well beyond two human lifespans, 250+ years old
     }
 
     // Floofstation section

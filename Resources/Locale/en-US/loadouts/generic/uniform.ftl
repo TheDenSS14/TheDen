@@ -1,10 +1,11 @@
-# SPDX-FileCopyrightText: 2024 Aikakakah <145503852+Aikakakah@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 VMSolidus <evilexecutive@gmail.com>
-# SPDX-FileCopyrightText: 2024 sleepyyapril <flyingkarii@gmail.com>
-# SPDX-FileCopyrightText: 2025 Skubman <ba.fallaria@gmail.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Aikakakah
+# SPDX-FileCopyrightText: 2024 VMSolidus
+# SPDX-FileCopyrightText: 2024 sleepyyapril
+# SPDX-FileCopyrightText: 2025 Shaman
+# SPDX-FileCopyrightText: 2025 Skubman
+# SPDX-FileCopyrightText: 2025 victoria
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 loadout-description-LoadoutUniformAncientJumpsuit = The legend of the Greytide.
 
@@ -51,6 +52,9 @@ loadout-name-LoadoutUniformJumpsuitSailor = sailor suit (colorable)
 loadout-name-LoadoutUniformJumpsuitTrackpants = track pants (colorable)
 loadout-name-LoadoutUniformJumpsuitTurtleneckGrey = grey turtleneck (colorable)
 loadout-name-LoadoutUniformJumpsuitYogaGymBra = yoga gym bra (colorable)
+loadout-name-LoadoutUniformJumpsuitLoungewear = loungewear (colorable)
 loadout-name-LoadoutUniformJumpsuitBlackTurtleneckFlipped = black turtleneck, rolled sleeves
 loadout-name-LoadoutUniformEnvirosuitBlackPinkAlt = black pink envirosuit, alternative
 loadout-name-LoadoutUniformEnvirosuitEnviroslacksMNKAlt = MNK enviroslacks, alternative
+loadout-name-LoadoutMilitaryBratJumpsuit = military brat's cargo pants
+loadout-name-LoadoutMilitaryBratJumpsuitAlt = military brat's cargo pants

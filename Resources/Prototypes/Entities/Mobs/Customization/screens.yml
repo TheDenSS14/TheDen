@@ -1,6 +1,8 @@
 # SPDX-FileCopyrightText: 2024 Timemaster99
+# SPDX-FileCopyrightText: 2025 Blitz
 # SPDX-FileCopyrightText: 2025 BlitzTheSquishy
 # SPDX-FileCopyrightText: 2025 Sapphire
+# SPDX-FileCopyrightText: 2025 assignedgod
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
@@ -8,391 +10,322 @@
 ## CANT SET THESE SCREENS TO "shader: unshaded"
 ## RobustToolbox/Robust.Shared/Utility/SpriteSpecifier.cs
 
+# Aurora Song: Add base markings
 - type: marking
-  speciesRestriction: [ IPC ]
-  id: ScreenStatic
+  abstract: true
+  parent: BaseSpeciesIPC
+  id: BaseRobotScreen
   bodyPart: Face
   markingCategory: Face
+# End Aurora Song
+
+- type: marking
+  parent: BaseRobotScreen # Aurora Song: Add inheritance for species restriction / category
+  id: ScreenStatic
   sprites:
     - sprite: Mobs/Customization/ipc_screens.rsi
       state: ipc_screen_static
       shader: unshaded
 
 - type: marking
-  speciesRestriction: [ IPC ]
+  parent: BaseRobotScreen # Aurora Song: Add inheritance for species restriction / category
   id: ScreenBlue
-  bodyPart: Face
-  markingCategory: Face
   sprites:
     - sprite: Mobs/Customization/ipc_screens.rsi
       state: ipc_screen_blue
       shader: unshaded
 
 - type: marking
-  speciesRestriction: [ IPC ]
+  parent: BaseRobotScreen # Aurora Song: Add inheritance for species restriction / category
   id: ScreenBreakout
-  bodyPart: Face
-  markingCategory: Face
   sprites:
     - sprite: Mobs/Customization/ipc_screens.rsi
       state: ipc_screen_breakout
       shader: unshaded
 
 - type: marking
-  speciesRestriction: [ IPC ]
+  parent: BaseRobotScreen # Aurora Song: Add inheritance for species restriction / category
   id: ScreenEight
-  bodyPart: Face
-  markingCategory: Face
   sprites:
     - sprite: Mobs/Customization/ipc_screens.rsi
       state: ipc_screen_eight
       shader: unshaded
 
 - type: marking
-  speciesRestriction: [ IPC ]
+  parent: BaseRobotScreen # Aurora Song: Add inheritance for species restriction / category
   id: ScreenGoggles
-  bodyPart: Face
-  markingCategory: Face
   sprites:
     - sprite: Mobs/Customization/ipc_screens.rsi
       state: ipc_screen_goggles
       shader: unshaded
 
 - type: marking
-  speciesRestriction: [ IPC ]
+  parent: BaseRobotScreen # Aurora Song: Add inheritance for species restriction / category
   id: ScreenExclaim
-  bodyPart: Face
-  markingCategory: Face
   sprites:
     - sprite: Mobs/Customization/ipc_screens.rsi
       state: ipc_screen_exclaim
       shader: unshaded
 
 - type: marking
-  speciesRestriction: [ IPC ]
+  parent: BaseRobotScreen # Aurora Song: Add inheritance for species restriction / category
   id: ScreenHeart
-  bodyPart: Face
-  markingCategory: Face
   sprites:
     - sprite: Mobs/Customization/ipc_screens.rsi
       state: ipc_screen_heart
       shader: unshaded
 
 - type: marking
-  speciesRestriction: [ IPC ]
+  parent: BaseRobotScreen # Aurora Song: Add inheritance for species restriction / category
   id: ScreenMonoeye
-  bodyPart: Face
-  markingCategory: Face
   sprites:
     - sprite: Mobs/Customization/ipc_screens.rsi
       state: ipc_screen_monoeye
       shader: unshaded
 
 - type: marking
-  speciesRestriction: [ IPC ]
+  parent: BaseRobotScreen # Aurora Song: Add inheritance for species restriction / category
   id: ScreenNature
-  bodyPart: Face
-  markingCategory: Face
   sprites:
     - sprite: Mobs/Customization/ipc_screens.rsi
       state: ipc_screen_nature
       shader: unshaded
 
 - type: marking
-  speciesRestriction: [ IPC ]
+  parent: BaseRobotScreen # Aurora Song: Add inheritance for species restriction / category
   id: ScreenOrange
-  bodyPart: Face
-  markingCategory: Face
   sprites:
     - sprite: Mobs/Customization/ipc_screens.rsi
       state: ipc_screen_orange
       shader: unshaded
 
 - type: marking
-  speciesRestriction: [ IPC ]
+  parent: BaseRobotScreen # Aurora Song: Add inheritance for species restriction / category
   id: ScreenPink
-  bodyPart: Face
-  markingCategory: Face
   sprites:
     - sprite: Mobs/Customization/ipc_screens.rsi
       state: ipc_screen_pink
       shader: unshaded
 
 - type: marking
-  speciesRestriction: [ IPC ]
+  parent: BaseRobotScreen # Aurora Song: Add inheritance for species restriction / category
   id: ScreenQuestion
-  bodyPart: Face
-  markingCategory: Face
   sprites:
     - sprite: Mobs/Customization/ipc_screens.rsi
       state: ipc_screen_question
       shader: unshaded
 
 - type: marking
-  speciesRestriction: [ IPC ]
+  parent: BaseRobotScreen # Aurora Song: Add inheritance for species restriction / category
   id: ScreenShower
-  bodyPart: Face
-  markingCategory: Face
   sprites:
     - sprite: Mobs/Customization/ipc_screens.rsi
       state: ipc_screen_shower
       shader: unshaded
 
 - type: marking
-  speciesRestriction: [ IPC ]
+  parent: BaseRobotScreen # Aurora Song: Add inheritance for species restriction / category
   id: ScreenYellow
-  bodyPart: Face
-  markingCategory: Face
   sprites:
     - sprite: Mobs/Customization/ipc_screens.rsi
       state: ipc_screen_yellow
       shader: unshaded
 
 - type: marking
-  speciesRestriction: [ IPC ]
+  parent: BaseRobotScreen # Aurora Song: Add inheritance for species restriction / category
   id: ScreenScroll
-  bodyPart: Face
-  markingCategory: Face
   sprites:
     - sprite: Mobs/Customization/ipc_screens.rsi
       state: ipc_screen_scroll
       shader: unshaded
 
 - type: marking
-  speciesRestriction: [ IPC ]
+  parent: BaseRobotScreen # Aurora Song: Add inheritance for species restriction / category
   id: ScreenConsole
-  bodyPart: Face
-  markingCategory: Face
   sprites:
     - sprite: Mobs/Customization/ipc_screens.rsi
       state: ipc_screen_console
       shader: unshaded
 
 - type: marking
-  speciesRestriction: [ IPC ]
+  parent: BaseRobotScreen # Aurora Song: Add inheritance for species restriction / category
   id: ScreenRgb
-  bodyPart: Face
-  markingCategory: Face
   sprites:
     - sprite: Mobs/Customization/ipc_screens.rsi
       state: ipc_screen_rgb
       shader: unshaded
 
 - type: marking
-  speciesRestriction: [ IPC ]
+  parent: BaseRobotScreen # Aurora Song: Add inheritance for species restriction / category
   id: ScreenGlider
-  bodyPart: Face
-  markingCategory: Face
   sprites:
     - sprite: Mobs/Customization/ipc_screens.rsi
       state: ipc_screen_glider
       shader: unshaded
 
 - type: marking
-  speciesRestriction: [ IPC ]
+  parent: BaseRobotScreen # Aurora Song: Add inheritance for species restriction / category
   id: ScreenRainbowhoriz
-  bodyPart: Face
-  markingCategory: Face
   sprites:
     - sprite: Mobs/Customization/ipc_screens.rsi
       state: ipc_screen_rainbowhoriz
       shader: unshaded
 
 - type: marking
-  speciesRestriction: [ IPC ]
+  parent: BaseRobotScreen # Aurora Song: Add inheritance for species restriction / category
   id: ScreenBsod
-  bodyPart: Face
-  markingCategory: Face
   sprites:
     - sprite: Mobs/Customization/ipc_screens.rsi
       state: ipc_screen_bsod
       shader: unshaded
 
 - type: marking
-  speciesRestriction: [ IPC ]
+  parent: BaseRobotScreen # Aurora Song: Add inheritance for species restriction / category
   id: ScreenRedtext
-  bodyPart: Face
-  markingCategory: Face
   sprites:
     - sprite: Mobs/Customization/ipc_screens.rsi
       state: ipc_screen_redtext
       shader: unshaded
 
 - type: marking
-  speciesRestriction: [ IPC ]
+  parent: BaseRobotScreen # Aurora Song: Add inheritance for species restriction / category
   id: ScreenSinewave
-  bodyPart: Face
-  markingCategory: Face
   sprites:
     - sprite: Mobs/Customization/ipc_screens.rsi
       state: ipc_screen_sinewave
       shader: unshaded
 
 - type: marking
-  speciesRestriction: [ IPC ]
+  parent: BaseRobotScreen # Aurora Song: Add inheritance for species restriction / category
   id: ScreenSquarewave
-  bodyPart: Face
-  markingCategory: Face
   sprites:
     - sprite: Mobs/Customization/ipc_screens.rsi
       state: ipc_screen_squarewave
       shader: unshaded
 
 - type: marking
-  speciesRestriction: [ IPC ]
+  parent: BaseRobotScreen # Aurora Song: Add inheritance for species restriction / category
   id: ScreenEcgwave
-  bodyPart: Face
-  markingCategory: Face
   sprites:
     - sprite: Mobs/Customization/ipc_screens.rsi
       state: ipc_screen_ecgwave
       shader: unshaded
 
 - type: marking
-  speciesRestriction: [ IPC ]
+  parent: BaseRobotScreen # Aurora Song: Add inheritance for species restriction / category
   id: ScreenEyes
-  bodyPart: Face
-  markingCategory: Face
   sprites:
     - sprite: Mobs/Customization/ipc_screens.rsi
       state: ipc_screen_eyes
       shader: unshaded
 
 - type: marking
-  speciesRestriction: [ IPC ]
+  parent: BaseRobotScreen # Aurora Song: Add inheritance for species restriction / category
   id: ScreenEyestall
-  bodyPart: Face
-  markingCategory: Face
   sprites:
     - sprite: Mobs/Customization/ipc_screens.rsi
       state: ipc_screen_eyestall
       shader: unshaded
 
 - type: marking
-  speciesRestriction: [ IPC ]
+  parent: BaseRobotScreen # Aurora Song: Add inheritance for species restriction / category
   id: ScreenEyesangry
-  bodyPart: Face
-  markingCategory: Face
   sprites:
     - sprite: Mobs/Customization/ipc_screens.rsi
       state: ipc_screen_eyesangry
       shader: unshaded
 
 - type: marking
-  speciesRestriction: [ IPC ]
+  parent: BaseRobotScreen # Aurora Song: Add inheritance for species restriction / category
   id: ScreenLoading
-  bodyPart: Face
-  markingCategory: Face
   sprites:
     - sprite: Mobs/Customization/ipc_screens.rsi
       state: ipc_screen_loading
       shader: unshaded
 
 - type: marking
-  speciesRestriction: [ IPC ]
+  parent: BaseRobotScreen # Aurora Song: Add inheritance for species restriction / category
   id: ScreenWindowsxp
-  bodyPart: Face
-  markingCategory: Face
   sprites:
     - sprite: Mobs/Customization/ipc_screens.rsi
       state: ipc_screen_windowsxp
       shader: unshaded
 
 - type: marking
-  speciesRestriction: [ IPC ]
+  parent: BaseRobotScreen # Aurora Song: Add inheritance for species restriction / category
   id: ScreenTetris
-  bodyPart: Face
-  markingCategory: Face
   sprites:
     - sprite: Mobs/Customization/ipc_screens.rsi
       state: ipc_screen_tetris
       shader: unshaded
 
 - type: marking
-  speciesRestriction: [ IPC ]
+  parent: BaseRobotScreen # Aurora Song: Add inheritance for species restriction / category
   id: ScreenTv
-  bodyPart: Face
-  markingCategory: Face
   sprites:
     - sprite: Mobs/Customization/ipc_screens.rsi
       state: ipc_screen_tv
       shader: unshaded
 
 - type: marking
-  speciesRestriction: [ IPC ]
+  parent: BaseRobotScreen # Aurora Song: Add inheritance for species restriction / category
   id: ScreenTextdrop
-  bodyPart: Face
-  markingCategory: Face
   sprites:
     - sprite: Mobs/Customization/ipc_screens.rsi
       state: ipc_screen_textdrop
       shader: unshaded
 
 - type: marking
-  speciesRestriction: [ IPC ]
+  parent: BaseRobotScreen # Aurora Song: Add inheritance for species restriction / category
   id: ScreenStars
-  bodyPart: Face
-  markingCategory: Face
   sprites:
     - sprite: Mobs/Customization/ipc_screens.rsi
       state: ipc_screen_stars
       shader: unshaded
 
 - type: marking
-  speciesRestriction: [ IPC ]
+  parent: BaseRobotScreen # Aurora Song: Add inheritance for species restriction / category
   id: ScreenRainbowdiag
-  bodyPart: Face
-  markingCategory: Face
   sprites:
     - sprite: Mobs/Customization/ipc_screens.rsi
       state: ipc_screen_rainbowdiag
       shader: unshaded
 
 - type: marking
-  speciesRestriction: [ IPC ]
+  parent: BaseRobotScreen # Aurora Song: Add inheritance for species restriction / category
   id: ScreenBlank
-  bodyPart: Face
-  markingCategory: Face
   sprites:
     - sprite: Mobs/Customization/ipc_screens.rsi
       state: ipc_screen_blank
       shader: unshaded
 
 - type: marking
-  speciesRestriction: [ IPC ]
+  parent: BaseRobotScreen # Aurora Song: Add inheritance for species restriction / category
   id: ScreenSmile
-  bodyPart: Face
-  markingCategory: Face
   sprites:
     - sprite: Mobs/Customization/ipc_screens.rsi
       state: ipc_screen_smile
       shader: unshaded
 
 - type: marking
-  speciesRestriction: [ IPC ]
+  parent: BaseRobotScreen # Aurora Song: Add inheritance for species restriction / category
   id: ScreenFrown
-  bodyPart: Face
-  markingCategory: Face
   sprites:
     - sprite: Mobs/Customization/ipc_screens.rsi
       state: ipc_screen_frown
       shader: unshaded
 
 - type: marking
-  speciesRestriction: [ IPC ]
+  parent: BaseRobotScreen # Aurora Song: Add inheritance for species restriction / category
   id: ScreenRing
-  bodyPart: Face
-  markingCategory: Face
   sprites:
     - sprite: Mobs/Customization/ipc_screens.rsi
       state: ipc_screen_ring
       shader: unshaded
 
 - type: marking
-  speciesRestriction: [ IPC ]
+  parent: BaseRobotScreen # Aurora Song: Add inheritance for species restriction / category
   id: ScreenL
-  bodyPart: Face
-  markingCategory: Face
   sprites:
     - sprite: Mobs/Customization/ipc_screens.rsi
       state: ipc_screen_l

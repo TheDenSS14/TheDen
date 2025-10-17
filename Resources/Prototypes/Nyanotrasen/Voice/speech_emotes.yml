@@ -2,13 +2,15 @@
 # SPDX-FileCopyrightText: 2023 Fluffiest Floofers
 # SPDX-FileCopyrightText: 2023 VMSolidus
 # SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT
+# SPDX-FileCopyrightText: 2025 Jakumba
 # SPDX-FileCopyrightText: 2025 M3739
 # SPDX-FileCopyrightText: 2025 Sapphire
 # SPDX-FileCopyrightText: 2025 Tabitha
 # SPDX-FileCopyrightText: 2025 mart
+# SPDX-FileCopyrightText: 2025 pocl.v
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 # vocal emotes
 - type: emote
@@ -22,13 +24,18 @@
     - HarpyEmotes
     - UnathiEmotes
     - ArachneEmotes
+    - VoxEmotes
   blacklist:
     components:
     - BorgChassis
   chatMessages: [ hisses ]
   chatTriggers:
     - hiss
+    - hiss.
+    - hiss!
     - hisses
+    - hisses.
+    - hisses!
     - hissed
     - hissing
 
@@ -66,6 +73,7 @@
   chatMessages: [ mews ]
   chatTriggers:
     - mews
+    - mews.
 
 - type: emote
   id: Growl
@@ -77,12 +85,15 @@
     - FelinidEmotes
     - HarpyEmotes
     - KitsuneEmotes
+    - RodentiaEmotes
   blacklist:
     components:
     - BorgChassis
   chatMessages: [ growls ]
   chatTriggers:
     - growls
+    - growls.
+    - growls!
 
 - type: emote
   id: Purr
@@ -99,3 +110,4 @@
   chatMessages: [ purrs ]
   chatTriggers:
     - purrs
+    - purrs.

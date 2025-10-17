@@ -31,6 +31,7 @@ public sealed class NavInterfaceState
     /// Frontier - the state of the shuttle's inertial dampeners
     /// </summary>
     public InertiaDampeningMode DampeningMode;
+    public bool RotateWithEntity = true;
 
     public NavInterfaceState(
         float maxRange,

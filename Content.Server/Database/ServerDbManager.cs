@@ -32,9 +32,9 @@ using System.Text.Json;
 using System.Threading;
 using System.Threading.Tasks;
 using Content.Server.Administration.Logs;
+using Content.Shared._Floof.Consent;
 using Content.Shared.Administration.Logs;
 using Content.Shared.CCVar;
-using Content.Shared.Consent;
 using Content.Shared.Database;
 using Content.Shared.Preferences;
 using Microsoft.Data.Sqlite;
@@ -217,6 +217,12 @@ namespace Content.Server.Database
             ImmutableTypedHwid? hwId);
         Task<PlayerRecord?> GetPlayerRecordByUserName(string userName, CancellationToken cancel = default);
         Task<PlayerRecord?> GetPlayerRecordByUserId(NetUserId userId, CancellationToken cancel = default);
+        #endregion
+
+        #region Discord Linking
+        Task UpdateDiscordLink(NetUserId userId, ulong? discordId);
+        Task UpdateDiscordLink(ulong associatedDiscordId, ulong? discordId);
+        Task<ulong?> GetDiscordLink(NetUserId userId);
         #endregion
 
         #region Connection Logs
@@ -644,6 +650,24 @@ namespace Content.Server.Database
         {
             DbWriteOpsMetric.Inc();
             return RunDbCommand(() => _db.UpdatePlayerRecord(userId, userName, address, hwId));
+        }
+
+        public Task UpdateDiscordLink(NetUserId userId, ulong? discordId)
+        {
+            DbWriteOpsMetric.Inc();
+            return RunDbCommand(() => _db.UpdateDiscordLink(userId, discordId));
+        }
+
+        public Task UpdateDiscordLink(ulong associatedDiscordId, ulong? newDiscordId)
+        {
+            DbWriteOpsMetric.Inc();
+            return RunDbCommand(() => _db.UpdateDiscordLink(associatedDiscordId, newDiscordId));
+        }
+
+        public Task<ulong?> GetDiscordLink(NetUserId userId)
+        {
+            DbReadOpsMetric.Inc();
+            return RunDbCommand(() => _db.GetDiscordLink(userId));
         }
 
         public Task<PlayerRecord?> GetPlayerRecordByUserName(string userName, CancellationToken cancel = default)

@@ -1,12 +1,12 @@
-# SPDX-FileCopyrightText: 2024 Blu <79374236+BlueHNT@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 FoxxoTrystan <45297731+FoxxoTrystan@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 FoxxoTrystan <trystan.garnierhein@gmail.com>
-# SPDX-FileCopyrightText: 2024 ShatteredSwords <135023515+ShatteredSwords@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 portfiend <109661617+portfiend@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <flyingkarii@gmail.com>
+# SPDX-FileCopyrightText: 2024 Blu
+# SPDX-FileCopyrightText: 2024 FoxxoTrystan
+# SPDX-FileCopyrightText: 2024 ShatteredSwords
+# SPDX-FileCopyrightText: 2025 Shaman
+# SPDX-FileCopyrightText: 2025 leo
+# SPDX-FileCopyrightText: 2025 portfiend
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: entity
   abstract: true
@@ -265,7 +265,7 @@
       - id: PlushieCatOrange
         prob: 0.80
         orGroup: Prize
-      - id: PlushieCatSiames
+      - id: PlushieCatSiamese
         prob: 0.80
         orGroup: Prize
       - id: PlushieCatTabby
@@ -338,6 +338,9 @@
         prob: 0.80
         orGroup: Prize
       - id: PlushieAlienGermMini
+        prob: 0.80
+        orGroup: Prize
+      - id: PlushieThaven #TheDen
         prob: 0.80
         orGroup: Prize
       # Uncommon
@@ -420,6 +423,9 @@
         prob: 0.50
         orGroup: Prize
       - id: MrDips
+        prob: 0.50
+        orGroup: Prize
+      - id: PlushieThavenWeird #TheDen
         prob: 0.50
         orGroup: Prize
       # Rare

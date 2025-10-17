@@ -1,25 +1,29 @@
 # SPDX-FileCopyrightText: 2024 FoxxoTrystan
 # SPDX-FileCopyrightText: 2025 Eagle-0
 # SPDX-FileCopyrightText: 2025 Eris
+# SPDX-FileCopyrightText: 2025 MajorMoth
 # SPDX-FileCopyrightText: 2025 RocketBoss360
 # SPDX-FileCopyrightText: 2025 Rosycup
 # SPDX-FileCopyrightText: 2025 Sapphire
+# SPDX-FileCopyrightText: 2025 Shaman
+# SPDX-FileCopyrightText: 2025 Sir Warock
 # SPDX-FileCopyrightText: 2025 SixplyDev
 # SPDX-FileCopyrightText: 2025 Skubman
 # SPDX-FileCopyrightText: 2025 VMSolidus
 # SPDX-FileCopyrightText: 2025 portfiend
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: entity
   save: false
-  parent:
-    - BaseMobSpeciesOrganic
+  parent: [BaseMobSpeciesOrganic, StorableSpecies] # TheDen
   id: MobShadowkinBase
   name: Urist McShadow
   abstract: true
   components:
+    - type: Inventory # TheDen - So they can have -shadowkin clothing sprites
+      speciesId: shadowkin
     - type: Destructible
       thresholds:
         - trigger:
@@ -181,6 +185,7 @@
       durationMultiplier: 1.5
     - type: Speech
       allowedEmotes: ['Mars', 'Wurble']
+      speechSounds: Shadowkin
     - type: Shadowkin
     - type: Respirator
       damage:
@@ -190,7 +195,6 @@
         types:
           Asphyxiation: -1.0
     - type: Psionic
-      canReroll: false
       mindbreakingFeedback: shadowkin-blackeye
     - type: InnatePsionicPowers
       powersToAdd:
@@ -203,7 +207,7 @@
         - TauCetiBasic
         - Marish
     - type: PotentiaModifier
-      potentiaMultiplier: 1.25
+      potentiaMultiplier: 1.5
     - type: Tag
       tags:
       - CanPilot
@@ -218,5 +222,7 @@
   categories: [ HideSpawnMenu ]
   description: A dummy shadowkin meant to be used in character setup.
   components:
+    - type: Inventory # TheDen - So they can have -shadowkin clothing sprites
+      speciesId: shadowkin
     - type: HumanoidAppearance
       species: Shadowkin

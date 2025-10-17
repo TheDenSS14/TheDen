@@ -54,7 +54,9 @@
 # SPDX-FileCopyrightText: 2023 Artjom
 # SPDX-FileCopyrightText: 2023 Debug
 # SPDX-FileCopyrightText: 2023 DrSmugleaf
+# SPDX-FileCopyrightText: 2023 Emisse
 # SPDX-FileCopyrightText: 2023 Errant
+# SPDX-FileCopyrightText: 2023 Fluffiest Floofers
 # SPDX-FileCopyrightText: 2023 I.K
 # SPDX-FileCopyrightText: 2023 Jezithyr
 # SPDX-FileCopyrightText: 2023 Kara
@@ -76,6 +78,7 @@
 # SPDX-FileCopyrightText: 2023 liltenhead
 # SPDX-FileCopyrightText: 2023 lzk
 # SPDX-FileCopyrightText: 2023 notquitehadouken
+# SPDX-FileCopyrightText: 2023 potato1234_x
 # SPDX-FileCopyrightText: 2023 qwerltaz
 # SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT
 # SPDX-FileCopyrightText: 2024 FoxxoTrystan
@@ -84,6 +87,7 @@
 # SPDX-FileCopyrightText: 2024 OldDanceJacket
 # SPDX-FileCopyrightText: 2024 Rane
 # SPDX-FileCopyrightText: 2024 Remuchi
+# SPDX-FileCopyrightText: 2024 ShatteredSwords
 # SPDX-FileCopyrightText: 2024 Spatison
 # SPDX-FileCopyrightText: 2024 Ubaser
 # SPDX-FileCopyrightText: 2024 beck-thompson
@@ -96,18 +100,23 @@
 # SPDX-FileCopyrightText: 2025 BlitzTheSquishy
 # SPDX-FileCopyrightText: 2025 Eagle-0
 # SPDX-FileCopyrightText: 2025 Eris
+# SPDX-FileCopyrightText: 2025 Jakumba
 # SPDX-FileCopyrightText: 2025 KekaniCreates
 # SPDX-FileCopyrightText: 2025 M3739
 # SPDX-FileCopyrightText: 2025 MajorMoth
 # SPDX-FileCopyrightText: 2025 Rosycup
 # SPDX-FileCopyrightText: 2025 Sapphire
+# SPDX-FileCopyrightText: 2025 Sir Warock
 # SPDX-FileCopyrightText: 2025 Skubman
+# SPDX-FileCopyrightText: 2025 Tabitha
 # SPDX-FileCopyrightText: 2025 VMSolidus
 # SPDX-FileCopyrightText: 2025 cynical
+# SPDX-FileCopyrightText: 2025 juniwoofs
 # SPDX-FileCopyrightText: 2025 portfiend
+# SPDX-FileCopyrightText: 2025 sheepie
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: entity
   save: false
@@ -279,6 +288,9 @@
         type: ListViewSelectorBUI
       enum.SurgeryUIKey.Key:
         type: SurgeryBui
+      enum.ThavenMoodsUiKey.Key: # Impstation - Thaven moods
+        type: ThavenMoodsBoundUserInterface
+        requireInputValidation: false
   - type: Puller
   - type: Speech
     speechSounds: Alto
@@ -327,6 +339,8 @@
   abstract: true
   components:
   - type: Flashable
+  - type: TypingIndicator
+    proto: default
   - type: Absorbable # Goobstation - changelings
   - type: Barotrauma
     damage:
@@ -378,9 +392,9 @@
         Heat: 1.5 #per second, scales with temperature & other constants
   - type: TemperatureSpeed
     thresholds:
-      293: 0.8
-      280: 0.6
-      260: 0.4
+      293: 0.9
+      280: 0.8
+      260: 0.7
   - type: ThermalRegulator
     metabolismHeat: 800
     radiatedHeat: 100
@@ -407,6 +421,7 @@
   - type: LayingDown
   - type: BloodstreamAffectedByMass
     power: 0.6 # A minimum size felinid will have 30% blood, a minimum size vulp will have 60%, a maximum size oni will have ~200%
+  - type: StunVisuals
 
 - type: entity
   save: false

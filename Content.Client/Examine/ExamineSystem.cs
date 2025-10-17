@@ -1,32 +1,30 @@
-// SPDX-FileCopyrightText: 2019 L.E.D <10257081+unusualcrow@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2019 Pieter-Jan Briers <pieterjan.briers@gmail.com>
-// SPDX-FileCopyrightText: 2019 Silver <Silvertorch5@gmail.com>
-// SPDX-FileCopyrightText: 2020 ColdAutumnRain <73938872+ColdAutumnRain@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2020 Exp <theexp111@gmail.com>
-// SPDX-FileCopyrightText: 2020 R. Neuser <rneuser@iastate.edu>
-// SPDX-FileCopyrightText: 2020 chairbender <kwhipke1@gmail.com>
-// SPDX-FileCopyrightText: 2021 Acruid <shatter66@gmail.com>
-// SPDX-FileCopyrightText: 2021 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2021 E F R <602406+Efruit@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2021 Paul <ritter.paul1+git@googlemail.com>
-// SPDX-FileCopyrightText: 2021 Paul Ritter <ritter.paul1@googlemail.com>
-// SPDX-FileCopyrightText: 2021 Vera Aguilera Puerto <gradientvera@outlook.com>
-// SPDX-FileCopyrightText: 2022 Rane <60792108+Elijahrane@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2022 mirrorcult <lunarautomaton6@gmail.com>
-// SPDX-FileCopyrightText: 2023 Jacob Tong <10494922+ShadowCommander@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2023 Julian Giebel <juliangiebel@live.de>
-// SPDX-FileCopyrightText: 2023 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2023 Visne <39844191+Visne@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2023 Ygg01 <y.laughing.man.y@gmail.com>
-// SPDX-FileCopyrightText: 2023 kalane15 <118661099+kalane15@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2023 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2023 metalgearsloth <comedian_vs_clown@hotmail.com>
-// SPDX-FileCopyrightText: 2024 Kara <lunarautomaton6@gmail.com>
-// SPDX-FileCopyrightText: 2024 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
-// SPDX-FileCopyrightText: 2024 eoineoineoin <github@eoinrul.es>
-// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2019 L.E.D
+// SPDX-FileCopyrightText: 2019 Pieter-Jan Briers
+// SPDX-FileCopyrightText: 2019 Silver
+// SPDX-FileCopyrightText: 2020 ColdAutumnRain
+// SPDX-FileCopyrightText: 2020 Exp
+// SPDX-FileCopyrightText: 2020 R. Neuser
+// SPDX-FileCopyrightText: 2020 chairbender
+// SPDX-FileCopyrightText: 2021 Acruid
+// SPDX-FileCopyrightText: 2021 DrSmugleaf
+// SPDX-FileCopyrightText: 2021 E F R
+// SPDX-FileCopyrightText: 2021 Paul
+// SPDX-FileCopyrightText: 2021 Paul Ritter
+// SPDX-FileCopyrightText: 2021 Vera Aguilera Puerto
+// SPDX-FileCopyrightText: 2022 Rane
+// SPDX-FileCopyrightText: 2022 mirrorcult
+// SPDX-FileCopyrightText: 2023 Jacob Tong
+// SPDX-FileCopyrightText: 2023 Julian Giebel
+// SPDX-FileCopyrightText: 2023 Leon Friedrich
+// SPDX-FileCopyrightText: 2023 Visne
+// SPDX-FileCopyrightText: 2023 Ygg01
+// SPDX-FileCopyrightText: 2023 kalane15
+// SPDX-FileCopyrightText: 2023 metalgearsloth
+// SPDX-FileCopyrightText: 2024 Kara
+// SPDX-FileCopyrightText: 2024 eoineoineoin
+// SPDX-FileCopyrightText: 2025 sleepyyapril
 //
-// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+// SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 using Content.Client.Verbs;
 using Content.Shared.Eye.Blinding;
@@ -53,6 +51,8 @@ using static Robust.Client.UserInterface.Controls.BoxContainer;
 using Content.Shared.Interaction.Events;
 using Content.Shared.Item;
 using Direction = Robust.Shared.Maths.Direction;
+using Content.Shared._DEN.CCVars;
+using Robust.Shared.Configuration;
 
 namespace Content.Client.Examine
 {
@@ -61,6 +61,7 @@ namespace Content.Client.Examine
     {
         [Dependency] private readonly IUserInterfaceManager _userInterfaceManager = default!;
         [Dependency] private readonly IPlayerManager _playerManager = default!;
+        [Dependency] private readonly IConfigurationManager _cfg = default!; // DEN - For examine tooltip width
         [Dependency] private readonly IEyeManager _eyeManager = default!;
         [Dependency] private readonly VerbSystem _verbSystem = default!;
 
@@ -232,7 +233,9 @@ namespace Content.Client.Examine
             }
 
             // Actually open the tooltip.
-            _examineTooltipOpen = new Popup { MaxWidth = 400 };
+            var maxTooltipWidth = _cfg.GetCVar(DenCCVars.ExamineTooltipWidth); // DEN - Make this a CCVar
+            _examineTooltipOpen = new Popup { MaxWidth = maxTooltipWidth };
+
             _userInterfaceManager.ModalRoot.AddChild(_examineTooltipOpen);
             var panel = new PanelContainer() { Name = "ExaminePopupPanel" };
             panel.AddStyleClass(StyleClassEntityTooltip);
@@ -331,8 +334,26 @@ namespace Content.Client.Examine
             {
                 Name = "ExamineButtonsHBox",
                 Orientation = LayoutOrientation.Horizontal,
-                HorizontalAlignment = Control.HAlignment.Right,
+                HorizontalAlignment = Control.HAlignment.Stretch,
                 VerticalAlignment = Control.VAlignment.Bottom,
+            };
+
+            var hoverExamineBox = new BoxContainer
+            {
+                Name = "HoverExamineHBox",
+                Orientation = LayoutOrientation.Horizontal,
+                HorizontalAlignment = Control.HAlignment.Left,
+                VerticalAlignment = Control.VAlignment.Center,
+                HorizontalExpand = true
+            };
+
+            var clickExamineBox = new BoxContainer
+            {
+                Name = "ClickExamineHBox",
+                Orientation = LayoutOrientation.Horizontal,
+                HorizontalAlignment = Control.HAlignment.Right,
+                VerticalAlignment = Control.VAlignment.Center,
+                HorizontalExpand = true
             };
 
             // Examine button time
@@ -349,8 +370,15 @@ namespace Content.Client.Examine
 
                 var button = new ExamineButton(examine);
 
-                button.OnPressed += VerbButtonPressed;
-                buttonsHBox.AddChild(button);
+                if (examine.HoverVerb)
+                {
+                    hoverExamineBox.AddChild(button);
+                }
+                else
+                {
+                    button.OnPressed += VerbButtonPressed;
+                    clickExamineBox.AddChild(button);
+                }
             }
 
             var vbox = _examineTooltipOpen?.GetChild(0).GetChild(0);
@@ -367,6 +395,8 @@ namespace Content.Client.Examine
             {
                 vbox.Children.Remove(hbox.First());
             }
+            buttonsHBox.AddChild(hoverExamineBox);
+            buttonsHBox.AddChild(clickExamineBox);
             vbox.AddChild(buttonsHBox);
         }
 

@@ -21,7 +21,7 @@
   description: That is a firelock frame.
   components:
   - type: Sprite
-    sprite: Structures/Doors/Airlocks/Standard/firelock.rsi
+    sprite: _DEN/Structures/Doors/Airlocks/Standard/firelock.rsi # The Den - airlock resprite
     layers:
     - state: frame1
       map: [ "enum.ConstructionVisuals.Layer" ]

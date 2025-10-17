@@ -1,60 +1,41 @@
-# SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT <77995199+DEATHB4DEFEAT@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT
+# SPDX-FileCopyrightText: 2025 BudaLope
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 - type: marking
+  parent: [BaseTattoo, BaseSpeciesVox] # AuroraSong: Marking inheritance
   id: TattooVoxHeartLeftArm
   bodyPart: LArm
   markingCategory: LeftArm
-  speciesRestriction: [Vox]
-  coloring:
-    default:
-      type:
-        !type:TattooColoring
-      fallbackColor: "#666666"
   sprites:
   - sprite: Mobs/Customization/vox_tattoos.rsi
     state: heart_l_arm
 
 - type: marking
+  parent: [BaseTattoo, BaseSpeciesVox] # AuroraSong: Marking inheritance
   id: TattooVoxHeartRightArm
   bodyPart: RArm
   markingCategory: RightArm
-  speciesRestriction: [Vox]
-  coloring:
-    default:
-      type:
-        !type:TattooColoring
-      fallbackColor: "#666666"
   sprites:
   - sprite: Mobs/Customization/vox_tattoos.rsi
     state: heart_r_arm
 
 - type: marking
+  parent: [BaseTattoo, BaseSpeciesVox] # AuroraSong: Marking inheritance
   id: TattooVoxHiveChest
   bodyPart: Chest
   markingCategory: Chest
-  speciesRestriction: [Vox]
-  coloring:
-    default:
-      type:
-        !type:TattooColoring
-      fallbackColor: "#666666"
   sprites:
   - sprite: Mobs/Customization/vox_tattoos.rsi
     state: hive_s
 
 - type: marking
+  parent: [BaseTattoo, BaseSpeciesVox] # AuroraSong: Marking inheritance
   id: TattooVoxNightlingChest
   bodyPart: Chest
   markingCategory: Chest
-  speciesRestriction: [Vox]
-  coloring:
-    default:
-      type:
-        !type:TattooColoring
-      fallbackColor: "#666666"
   sprites:
   - sprite: Mobs/Customization/vox_tattoos.rsi
     state: nightling_s
