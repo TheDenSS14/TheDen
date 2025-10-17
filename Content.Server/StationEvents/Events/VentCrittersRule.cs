@@ -142,9 +142,9 @@ public sealed class VentCrittersRule : StationEventSystem<VentCrittersRuleCompon
         var selectedBeacon = RobustRandom.Pick(beaconList);
 
         // 10 tile range is purely arbitrary, it would be better to pick vents up to a maximum value instead but
-        var ventsInRange = _lookup.GetEntitiesInRange<VentCritterSpawnLocationComponent>(selectedBeacon.Value.Coordinates, 10);
+        var ventsInRange = _lookup.GetEntitiesInRange<VentCritterSpawnLocationComponent>(selectedBeacon.Value.Coordinates, 10).Where(x => x.Comp.CanSpawn);
 
-        foreach (var vent in ventsInRange.Where(x => x.Comp.CanSpawn))
+        foreach (var vent in ventsInRange)
         {
             _locations.Add(new VentCritterLocationData(vent.Owner, vent.Comp, Transform(vent.Owner).Coordinates));
         }
