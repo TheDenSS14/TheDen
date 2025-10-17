@@ -36,23 +36,18 @@ public sealed partial class VentCrittersRuleComponent : Component
     [DataField("specialEntries")]
     public List<EntitySpawnEntry> SpecialEntries = new();
 
-    /// <summary>
-    /// DeltaV: The location of the vent that got picked.
-    /// </summary>
-    [ViewVariables]
-    public EntityCoordinates? Location;
 
     /// <summary>
     /// DeltaV: Base minimum number of critters to spawn.
     /// </summary>
     [DataField]
-    public int Min = 4;
+    public int Min = 3;
 
     /// <summary>
     /// DeltaV: Base maximum number of critters to spawn.
     /// </summary>
     [DataField]
-    public int Max = 5;
+    public int Max = 4;
 
     /// <summary>
     /// DeltaV: Min and max get multiplied by the player count then divided by this.
