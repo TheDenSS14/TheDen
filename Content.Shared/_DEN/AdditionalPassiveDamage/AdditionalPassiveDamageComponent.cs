@@ -16,7 +16,7 @@ namespace Content.Shared.Damage.Components;
 /// Passively damages the entity on a specified interval.
 /// </summary>
 [RegisterComponent, NetworkedComponent]
-public sealed partial class BloodlossInCritComponent : Component
+public sealed partial class AdditionalPassiveDamageComponent : Component
 {
     /// <summary>
     /// The entitys' states that passive damage will apply in

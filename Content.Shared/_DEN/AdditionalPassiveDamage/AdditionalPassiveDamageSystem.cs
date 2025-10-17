@@ -14,7 +14,7 @@ using Robust.Shared.Timing;
 
 namespace Content.Shared.Damage;
 
-public sealed class BloodlossInCrit : EntitySystem
+public sealed class AdditionalPassiveDamage : EntitySystem
 {
     [Dependency] private readonly DamageableSystem _damageable = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
@@ -23,10 +23,10 @@ public sealed class BloodlossInCrit : EntitySystem
     {
         base.Initialize();
 
-        SubscribeLocalEvent<BloodlossInCritComponent, MapInitEvent>(OnPendingMapInit);
+        SubscribeLocalEvent<AdditionalPassiveDamageComponent, MapInitEvent>(OnPendingMapInit);
     }
 
-    private void OnPendingMapInit(EntityUid uid, BloodlossInCritComponent component, MapInitEvent args)
+    private void OnPendingMapInit(EntityUid uid, AdditionalPassiveDamageComponent component, MapInitEvent args)
     {
         component.NextDamage = _timing.CurTime + TimeSpan.FromSeconds(1f);
     }
@@ -38,7 +38,7 @@ public sealed class BloodlossInCrit : EntitySystem
         var curTime = _timing.CurTime;
 
         // Go through every entity with the component
-        var query = EntityQueryEnumerator<BloodlossInCritComponent, DamageableComponent, MobStateComponent>();
+        var query = EntityQueryEnumerator<AdditionalPassiveDamageComponent, DamageableComponent, MobStateComponent>();
         while (query.MoveNext(out var uid, out var comp, out var damage, out var mobState))
         {
             // Make sure they're up for a damage tick

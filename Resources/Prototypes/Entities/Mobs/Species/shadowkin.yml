@@ -64,7 +64,7 @@
           Heat: -0.07
         groups:
           Brute: -0.07
-    - type: BloodlossInCrit #Take bloodloss instead of airloss in critical condition.
+    - type: AdditionalPassiveDamage #Take bloodloss instead of airloss in critical condition.
       allowedStates:
         - Critical
       damageCap: 400
