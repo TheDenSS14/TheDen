@@ -18,6 +18,11 @@
   abstract: true
 
 - type: quickPhrase
+  parent: [ BaseDignitaryPhrase, BaseLocationPhrase ]
+  id: BaseDignitaryLocationPhrase
+  abstract: true
+
+- type: quickPhrase
   parent: [ BaseEngineeringPhrase, BaseLocationPhrase ]
   id: BaseEngineeringLocationPhrase
   abstract: true
@@ -104,6 +109,28 @@
   id: LocationBottomPhrase
   text: phrase-location-bottom
 
+# Den Start
+- type: quickPhrase
+  parent: BaseLocationPhrase
+  id: LocationUpPhrase
+  text: phrase-location-up
+
+- type: quickPhrase
+  parent: BaseLocationPhrase
+  id: LocationDownPhrase
+  text: phrase-location-down
+
+- type: quickPhrase
+  parent: BaseLocationPhrase
+  id: LocationFrontPhrase
+  text: phrase-location-front
+
+- type: quickPhrase
+  parent: BaseLocationPhrase
+  id: LocationBackPhrase
+  text: phrase-location-back
+# Den End
+
 ## Compass directions
 
 - type: quickPhrase
@@ -151,185 +178,220 @@
 - type: quickPhrase
   parent: BaseCommandLocationPhrase
   id: LocationCommandPhrase
-  text: station-beacon-command
+  text: phrase-location-command
 
 - type: quickPhrase
   parent: BaseCommandLocationPhrase
   id: LocationBridgePhrase
-  text: station-beacon-bridge
+  text: phrase-location-bridge
 
 - type: quickPhrase
   parent: BaseCommandLocationPhrase
   id: LocationVaultPhrase
-  text: station-beacon-vault
+  text: phrase-location-vault
 
 - type: quickPhrase
   parent: BaseCommandLocationPhrase
   id: LocationCaptainPhrase
-  text: station-beacon-captain
+  text: phrase-location-captain
 
 - type: quickPhrase
   parent: BaseCommandLocationPhrase
   id: LocationConferenceRoomPhrase
-  text: station-beacon-conference-room
+  text: phrase-location-conference-room
 
 - type: quickPhrase
   parent: BaseCommandLocationPhrase
   id: LocationAICorePhrase
-  text: station-beacon-ai-core
+  text: phrase-location-ai-core
 
 - type: quickPhrase
   parent: BaseCommandLocationPhrase
   id: LocationAISatPhrase
-  text: station-beacon-ai-sat
+  text: phrase-location-ai-sat
+
+# Dignitary
+- type: quickPhrase
+  parent: BaseDignitaryLocationPhrase
+  id: LocationDignitaryPhrase
+  text: phrase-location-dignitary
+
+- type: quickPhrase
+  parent: BaseDignitaryLocationPhrase
+  id: LocationBSOPhrase
+  text: phrase-location-bso
+
+- type: quickPhrase
+  parent: BaseDignitaryLocationPhrase
+  id: LocationNTRepPhrase
+  text: phrase-location-ntrep
+
+- type: quickPhrase
+  parent: BaseDignitaryLocationPhrase
+  id: LocationMagistratePhrase
+  text: phrase-location-magistrate
 
 # Engineering
 
 - type: quickPhrase
   parent: BaseEngineeringLocationPhrase
   id: LocationEngineeringPhrase
-  text: station-beacon-engineering
+  text: phrase-location-engineering
 
 - type: quickPhrase
   parent: BaseEngineeringLocationPhrase
   id: LocationCePhrase
-  text: station-beacon-ce
+  text: phrase-location-ce
 
 - type: quickPhrase
   parent: BaseEngineeringLocationPhrase
   id: LocationAmePhrase
-  text: station-beacon-ame
+  text: phrase-location-ame
 
 - type: quickPhrase
   parent: BaseEngineeringLocationPhrase
   id: LocationSolarsPhrase
-  text: station-beacon-solars
+  text: phrase-location-solars
 
 - type: quickPhrase
   parent: BaseEngineeringLocationPhrase
   id: LocationGravPhrase
-  text: station-beacon-gravgen
+  text: phrase-location-grav-gen
 
 - type: quickPhrase
   parent: BaseEngineeringLocationPhrase
   id: LocationPaPhrase
-  text: station-beacon-pa
+  text: phrase-location-pa
 
 - type: quickPhrase
   parent: BaseEngineeringLocationPhrase
   id: LocationSmesPhrase
-  text: station-beacon-smes
+  text: phrase-location-smes
 
 - type: quickPhrase
   parent: BaseEngineeringLocationPhrase
   id: LocationTelecomsPhrase
-  text: station-beacon-telecoms
+  text: phrase-location-telecomms
 
 - type: quickPhrase
   parent: BaseEngineeringLocationPhrase
   id: LocationAtmosPhrase
-  text: station-beacon-atmos
+  text: phrase-location-atmos
 
 - type: quickPhrase
   parent: BaseEngineeringLocationPhrase
   id: LocationTegPhrase
-  text: station-beacon-teg
+  text: phrase-location-teg
 
 - type: quickPhrase
   parent: BaseEngineeringLocationPhrase
   id: LocationTechVaultPhrase
-  text: station-beacon-tech-vault
+  text: phrase-location-tech-vault
 
 # Epistemics
 
 - type: quickPhrase
   parent: BaseEpistemicsLocationPhrase
   id: LocationEpistemicsPhrase
-  text: station-beacon-epistemics
+  text: phrase-location-epistemics
 
 - type: quickPhrase
   parent: BaseEpistemicsLocationPhrase
   id: LocationMystagoguePhrase
-  text: station-beacon-mystagogue
+  text: phrase-location-mystagogue
 
 - type: quickPhrase
   parent: BaseEpistemicsLocationPhrase
   id: LocationMantisPhrase
-  text: station-beacon-forensic-mantis
+  text: phrase-location-mantis
 
 - type: quickPhrase
   parent: BaseEpistemicsLocationPhrase
   id: LocationChapelPhrase
-  text: station-beacon-chapel
+  text: phrase-location-chapel
 
 - type: quickPhrase
   parent: BaseEpistemicsLocationPhrase
   id: LocationRoboticsPhrase
-  text: station-beacon-robotics
+  text: phrase-location-robotics
 
 - type: quickPhrase
   parent: BaseEpistemicsLocationPhrase
   id: LocationArtifactPhrase
-  text: station-beacon-artifact-lab
+  text: phrase-location-artifact-lab
 
 - type: quickPhrase
   parent: BaseEpistemicsLocationPhrase
   id: LocationAnomalyPhrase
-  text: station-beacon-anomaly-gen
+  text: phrase-location-anomaly-lab
 
 - type: quickPhrase
   parent: BaseEpistemicsLocationPhrase
   id: LocationServerPhrase
-  text: station-beacon-research-server
+  text: phrase-location-research-server
+
+- type: quickPhrase
+  parent: BaseEpistemicsLocationPhrase
+  id: LocationLibraryPhrase
+  text: phrase-location-library
 
 # Justice
+- type: quickPhrase
+  parent: BaseJusticeLocationPhrase
+  id: LocationJusticePhrase
+  text: phrase-location-justice
 
 - type: quickPhrase
   parent: BaseJusticeLocationPhrase
   id: LocationCourtroomPhrase
-  text: station-beacon-courtroom
+  text: phrase-location-courtroom
 
 - type: quickPhrase
   parent: BaseJusticeLocationPhrase
   id: LocationLawOfficePhrase
-  text: station-beacon-law
+  text: phrase-location-law
 
 - type: quickPhrase
   parent: BaseJusticeLocationPhrase
   id: LocationProsecutorPhrase
-  text: station-beacon-prosecutor
+  text: phrase-location-prosecutor
 
 - type: quickPhrase
   parent: BaseJusticeLocationPhrase
   id: LocationChiefJusticePhrase
-  text: station-beacon-chiefjustice
+  text: phrase-location-cj
+
+- type: quickPhrase
+  parent: BaseJusticeLocationPhrase
+  id: LocationClerkPhrase
+  text: phrase-location-clerk
 
 # Logistics
 
 - type: quickPhrase
   parent: BaseLogisticsLocationPhrase
   id: LocationLogisticsPhrase
-  text: station-beacon-logistics
+  text: phrase-location-logistics
 
 - type: quickPhrase
   parent: BaseLogisticsLocationPhrase
   id: LocationLoPhrase
-  text: station-beacon-lo
+  text: phrase-location-lo
 
 - type: quickPhrase
   parent: BaseLogisticsLocationPhrase
   id: LocationCargoBayPhrase
-  text: station-beacon-cargo-bay
+  text: phrase-location-cargo-bay
 
 - type: quickPhrase
   parent: BaseLogisticsLocationPhrase
   id: LocationSalvagePhrase
-  text: station-beacon-salvage
+  text: phrase-location-salvage
 
 - type: quickPhrase
   parent: BaseLogisticsLocationPhrase
   id: LocationMailPhrase
-  text: station-beacon-mailroom
+  text: phrase-location-mailroom
 
 - type: quickPhrase
   parent: BaseLogisticsLocationPhrase
@@ -346,148 +408,142 @@
 - type: quickPhrase
   parent: BaseMedicalLocationPhrase
   id: LocationMedicalPhrase
-  text: station-beacon-medical
+  text: phrase-location-medical
 
 - type: quickPhrase
   parent: BaseMedicalLocationPhrase
   id: LocationMedbayPhrase
-  text: station-beacon-medbay
+  text: phrase-location-medbay
 
 - type: quickPhrase
   parent: BaseMedicalLocationPhrase
   id: LocationChemistryPhrase
-  text: station-beacon-chemistry
+  text: phrase-location-chemistry
 
 - type: quickPhrase
   parent: BaseMedicalLocationPhrase
   id: LocationCryonicsPhrase
-  text: station-beacon-cryonics
+  text: phrase-location-cryonics
 
 - type: quickPhrase
   parent: BaseMedicalLocationPhrase
   id: LocationCmoPhrase
-  text: station-beacon-cmo
+  text: phrase-location-cmo
 
 - type: quickPhrase
   parent: BaseMedicalLocationPhrase
   id: LocationMorguePhrase
-  text: station-beacon-morgue
+  text: phrase-location-morgue
 
 - type: quickPhrase
   parent: BaseMedicalLocationPhrase
   id: LocationSurgeryPhrase
-  text: station-beacon-surgery
+  text: phrase-location-surgery
 
 # Security
 
 - type: quickPhrase
   parent: BaseSecurityLocationPhrase
   id: LocationSecurityPhrase
-  text: station-beacon-security
+  text: phrase-location-security
 
 - type: quickPhrase
   parent: BaseSecurityLocationPhrase
   id: LocationBrigPhrase
-  text: station-beacon-brig
+  text: phrase-location-brig
 
 - type: quickPhrase
   parent: BaseSecurityLocationPhrase
   id: LocationWardenPhrase
-  text: station-beacon-warden
+  text: phrase-location-warden
 
 - type: quickPhrase
   parent: BaseSecurityLocationPhrase
   id: LocationHosPhrase
-  text: station-beacon-hos
+  text: phrase-location-hos
 
 - type: quickPhrase
   parent: BaseSecurityLocationPhrase
   id: LocationArmoryPhrase
-  text: station-beacon-armory
+  text: phrase-location-armory
 
 - type: quickPhrase
   parent: BaseSecurityLocationPhrase
   id: LocationPermaPhrase
-  text: station-beacon-perma-brig
+  text: phrase-location-perma-brig
 
 - type: quickPhrase
   parent: BaseSecurityLocationPhrase
   id: LocationDetectivePhrase
-  text: station-beacon-detective
+  text: phrase-location-detective
 
 - type: quickPhrase
   parent: BaseSecurityLocationPhrase
   id: LocationSecCheckpointPhrase
-  text: station-beacon-security-checkpoint
+  text: phrase-location-security-checkpoint
 
 - type: quickPhrase
   parent: BaseSecurityLocationPhrase
   id: LocationCorpsmanPhrase
-  text: station-beacon-corpsman
+  text: phrase-location-corpsman
 
 # Service
 
 - type: quickPhrase
   parent: BaseServiceLocationPhrase
   id: LocationServicePhrase
-  text: station-beacon-service
+  text: phrase-location-service
 
 - type: quickPhrase
   parent: BaseServiceLocationPhrase
   id: LocationKitchenPhrase
-  text: station-beacon-kitchen
+  text: phrase-location-kitchen
 
 - type: quickPhrase
   parent: BaseServiceLocationPhrase
   id: LocationBarPhrase
-  text: station-beacon-bar
+  text: phrase-location-bar
 
 - type: quickPhrase
   parent: BaseServiceLocationPhrase
   id: LocationBotanyPhrase
-  text: station-beacon-botany
+  text: phrase-location-botany
 
 - type: quickPhrase
   parent: BaseServiceLocationPhrase
   id: LocationJanitorPhrase
-  text: station-beacon-janitor
+  text: phrase-location-janitor
 
 - type: quickPhrase
   parent: BaseServiceLocationPhrase
   id: LocationJaniOfficePhrase
-  text: station-beacon-janitor-office
+  text: phrase-location-janitor
 
 - type: quickPhrase
   parent: BaseServiceLocationPhrase
   id: LocationJaniClosetPhrase
-  text: station-beacon-janitor-closet
+  text: phrase-location-janitor-closet
 
 - type: quickPhrase
   parent: BaseServiceLocationPhrase
   id: LocationReporterPhrase
-  text: station-beacon-reporter
+  text: phrase-location-reporter
 
 - type: quickPhrase
   parent: BaseServiceLocationPhrase
   id: LocationTheaterPhrase
-  text: station-beacon-theater
+  text: phrase-location-theater
 
 - type: quickPhrase
   parent: BaseServiceLocationPhrase
   id: LocationHopPhrase
-  text: station-beacon-hop
+  text: phrase-location-hop
 
 # Civilian
-
-- type: quickPhrase
-  parent: BaseCivilianLocationPhrase
-  id: LocationLibraryPhrase
-  text: station-beacon-library
-
 - type: quickPhrase
   parent: BaseCivilianLocationPhrase
   id: LocationParkPhrase
-  text: station-beacon-park
+  text: phrase-location-park
 
 - type: quickPhrase
   parent: BaseCivilianLocationPhrase
@@ -497,42 +553,42 @@
 - type: quickPhrase
   parent: BaseCivilianLocationPhrase
   id: LocationToolsPhrase
-  text: station-beacon-tools
+  text: phrase-location-tools
 
 - type: quickPhrase
   parent: BaseCivilianLocationPhrase
   id: LocationEscapePodPhrase
-  text: station-beacon-escape-pod
+  text: phrase-location-escape-pod
 
 - type: quickPhrase
   parent: BaseCivilianLocationPhrase
   id: LocationCryosleepPhrase
-  text: station-beacon-cryosleep
+  text: phrase-location-cryosleep
 
 - type: quickPhrase
   parent: BaseCivilianLocationPhrase
   id: LocationDisposalsPhrase
-  text: station-beacon-disposals
+  text: phrase-location-disposals
 
 - type: quickPhrase
   parent: BaseCivilianLocationPhrase
   id: LocationDormsPhrase
-  text: station-beacon-dorms
+  text: phrase-location-dorms
 
 - type: quickPhrase
   parent: BaseCivilianLocationPhrase
   id: LocationEvaPhrase
-  text: station-beacon-eva-storage
+  text: phrase-location-eva
 
 - type: quickPhrase
   parent: BaseCivilianLocationPhrase
   id: LocationEvacPhrase
-  text: station-beacon-evac
+  text: phrase-location-evac
 
 - type: quickPhrase
   parent: BaseCivilianLocationPhrase
   id: LocationArrivalsPhrase
-  text: station-beacon-arrivals
+  text: phrase-location-arrivals
 
 - type: quickPhrase
   parent: BaseCivilianLocationPhrase
@@ -542,7 +598,7 @@
 - type: quickPhrase
   parent: BaseCivilianLocationPhrase
   id: LocationCamerasPhrase
-  text: station-beacon-camera-servers
+  text: phrase-location-camera-servers
 
 - type: quickPhrase
   parent: BaseCivilianLocationPhrase
