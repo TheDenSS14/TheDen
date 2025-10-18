@@ -62,3 +62,74 @@
         fontSize: 12
         color: "#ff4f00"
         requireDetailRange: false
+
+- type: entity
+  name: BRDI P-15
+  parent: BaseWeaponPistol
+  id: WeaponPistolBRDIP-15
+  description: A rugged, robust operator handgun with inbuilt silencer. Uses .25 caseless ammo.
+  components:
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Pistols/cobra.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-0
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: Clothing
+    sprite: Objects/Weapons/Guns/Pistols/cobra.rsi
+  - type: ChamberMagazineAmmoProvider
+    boltClosed: null
+  - type: Gun
+    fireRate: 4
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/mk58.ogg
+    availableModes:
+    - SemiAuto
+    fireOnDropChance: 0.1
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: MagazineBRDIP-15
+        insertSound: /Audio/Weapons/Guns/MagIn/pistol_magin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/pistol_magout.ogg
+        priority: 2
+        whitelist:
+          tags:
+            - MagazineBRDIP-15
+        whitelistFailPopup: gun-magazine-whitelist-fail
+      gun_chamber:
+        name: Chamber
+        startingItem: CartridgeCaselessRifle
+        priority: 1
+        whitelist:
+          tags:
+            - CartridgeCaselessRifle
+  - type: ContainerContainer
+    containers:
+      gun_magazine: !type:ContainerSlot
+      gun_chamber: !type:ContainerSlot
+
+- type: entity
+  name: BRDI P-15
+  parent: WeaponPistolBRDIP-15
+  id: WeaponPistolBRDI-P15Empty
+  suffix: Empty
+  components:
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: null
+        priority: 2
+        whitelist:
+          tags:
+          - MagazinePistolCaselessRifle
+      gun_chamber:
+        name: Chamber
+        startingItem: null
+        priority: 1
+        whitelist:
+          tags:
+          - CartridgeCaselessRifle

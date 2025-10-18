@@ -1,0 +1,110 @@
+- type: entity
+  id: BaseMagazineBRDIP-15
+  name: "BRDI P-15 magazine (.25 caseless)"
+  parent: BaseMagazineCaselessRifle
+  abstract: true
+  components:
+  - type: Tag
+    tags:
+      - MagazineBRDIP-15
+  - type: BallisticAmmoProvider
+    whitelist:
+      tags:
+        - CartridgeCaselessRifle
+    proto: CartridgeCaselessRifle
+    capacity: 15
+  - type: Item
+    size: Small
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Ammunition/Magazine/CaselessRifle/caseless_pistol_mag.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: MagazineVisuals
+    magState: mag
+    steps: 6
+    zeroVisible: false
+  - type: Appearance
+
+- type: entity
+  id: MagazineBRDIP-15
+  name: "BRDI P-15 magazine (.25 caseless)"
+  parent: BaseMagazineBRDIP-15
+  components:
+  - type: BallisticAmmoProvider
+    proto: CartridgeCaselessRifle
+  - type: Sprite
+    slayers:
+    - state: red
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: MagazineVisuals
+    magState: mag
+    steps: 6
+    zeroVisible: false
+  - type: Appearance
+
+- type: entity
+  id: MagazineBRDIP-15Practice
+  name: "BRDI P-15 magazine (.25 caseless practice)"
+  parent: BaseMagazineBRDIP-15
+  components:
+  - type: BallisticAmmoProvider
+    proto: CartridgeCaselessRiflePractice
+  - type: Sprite
+    layers:
+    - state: practice
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: MagazineVisuals
+    magState: mag
+    steps: 6
+    zeroVisible: false
+  - type: Appearance
+
+- type: entity
+  id: MagazineBRDIP-15Rubber
+  name: "BRDI P-15 magazine (.25 caseless rubber)"
+  parent: BaseMagazineBRDIP-15
+  components:
+  - type: BallisticAmmoProvider
+    proto: CartridgeCaselessRifleRubber
+  - type: Sprite
+    layers:
+    - state: rubber
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: MagazineVisuals
+    magState: mag
+    steps: 6
+    zeroVisible: false
+  - type: Appearance
+
+- type: entity
+  id: MagazineBRDIP-15Incendiary
+  name: "BRDI P-15 magazine (.25 caseless incendiary)"
+  parent: BaseMagazineBRDIP-15
+  components:
+  - type: BallisticAmmoProvider
+    proto: CartridgeCaselessRifleIncendiary
+
+- type: entity
+  id: MagazineBRDIP-15Uranium
+  name: "BRDI P-15 magazine (.25 caseless uranium)"
+  parent: BaseMagazineBRDIP-15
+  components:
+  - type: BallisticAmmoProvider
+    proto: CartridgeCaselessRifleUranium
+
+- type: entity
+  id: MagazineBRDIP-15Shrapnel
+  name: "BRDI P-15 magazine (.25 caseless shrapnel)"
+  parent: BaseMagazineBRDIP-15
+  components:
+  - type: BallisticAmmoProvider
+    proto: CartridgeCaselessRifleShrapnel
