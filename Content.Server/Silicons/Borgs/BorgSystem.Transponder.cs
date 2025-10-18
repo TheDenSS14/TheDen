@@ -23,7 +23,8 @@ using Content.Server.DeviceNetwork.Components;
 using Content.Server.DeviceNetwork.Systems;
 using Content.Server.Explosion.Components;
 using Robust.Shared.Utility;
-using Content.Server._Imp.Drone; //Goobstation drone
+using Content.Server._Imp.Drone;
+using Content.Shared.Emag.Systems; //Goobstation drone
 using Robust.Shared.Player; //Goobstation drone
 namespace Content.Server.Silicons.Borgs;
 
@@ -82,32 +83,6 @@ public sealed partial class BorgSystem
 
             comp.NextBroadcast = now + comp.BroadcastDelay;
         }
-        //Goobstation Drone transponder start
-        var query2 = EntityQueryEnumerator<BorgTransponderComponent, DroneComponent, DeviceNetworkComponent, MetaDataComponent>();
-        while (query2.MoveNext(out var uid, out  var comp, out var drone, out var device, out var  meta))
-        {
-            if (now < comp.NextBroadcast)
-                continue;
-            var hasBrain = HasComp<ActorComponent>(uid);
-            var data = new CyborgControlData(
-                comp.Sprite,
-                comp.Name,
-                meta.EntityName,
-                1f,
-                0,
-                hasBrain,
-                false);
-
-            var payload = new NetworkPayload()
-            {
-                [DeviceNetworkConstants.Command] = DeviceNetworkConstants.CmdUpdatedState,
-                [RoboticsConsoleConstants.NET_CYBORG_DATA] = data
-            };
-            _deviceNetwork.QueuePacket(uid, null, payload, device: device);
-
-            comp.NextBroadcast = now + comp.BroadcastDelay;
-        }
-        //Goobstation drone transponder end
     }
 
     private void DoDisable(Entity<BorgTransponderComponent, BorgChassisComponent, MetaDataComponent> ent)
