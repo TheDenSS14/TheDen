@@ -1,0 +1,8 @@
+- type: entity
+  abstract: true
+  parent: ClothingHeadBase
+  id: ClothingHeadWinterHatBase
+  components:
+  - type: TemperatureProtection
+    heatingCoefficient: 1.15 # that shit traps heat like crazy
+    coolingCoefficient: 0.6
