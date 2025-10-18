@@ -196,19 +196,3 @@
     whitelist:
       tags:
         - Spear
-
-- type: entity
-  id: ScugCatSpawn
-  parent: BaseGameRule
-  categories: [ HideSpawnMenu ]
-  components:
-  - type: StationEvent
-    startAnnouncement: true
-    reoccurrenceDelay: 12
-    minimumPlayers: 1
-    weight: 5
-    duration: 60
-  - type: VentCrittersRule
-    table: !type:GroupSelector # DeltaV: EntityTable instead of spawn entries
-      children:
-      - id: MobScugCat
