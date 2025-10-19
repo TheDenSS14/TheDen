@@ -47,4 +47,3 @@ flavor-complex-emeraldjourney = like new beginnings
 flavor-complex-coconutdoublecreampie = nutty
 flavor-complex-arkveiltemple = like a tropical adventure
 flavor-complex-plasmaflood = like fruity plasma burn
-flavor-complex-intoxicating = intoxicating
