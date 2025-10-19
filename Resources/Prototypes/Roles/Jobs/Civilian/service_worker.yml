@@ -44,10 +44,9 @@
   access:
   - Service
   - Maintenance
-  extendedAccess:
-  - Hydroponics
-  - Bar # DeltaV - moved to extended access
-  - Kitchen # DeltaV - moved to extended access
+  - Hydroponics # DEN - Moved to regular access
+  - Bar # DEN - Moved to regular access
+  - Kitchen # DEN - Moved to regular access
 
 - type: startingGear
   id: ServiceWorkerGear
