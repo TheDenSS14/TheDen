@@ -4,7 +4,10 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 using Content.Shared.Humanoid;
+using Content.Shared.Humanoid.Prototypes;
+using Content.Shared.StatusIcon;
 using Robust.Shared.Enums;
+using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization;
 
 namespace Content.Shared._CD.Records;
@@ -57,16 +60,16 @@ public sealed class FullCharacterRecords(
     public string JobTitle = jobTitle;
 
     /// <summary>
-    ///     Job icon tied to this record.
+    ///     Job icon tied to this record. Imp/Den edit - made this a protoID
     /// </summary>
     [ViewVariables]
-    public string JobIcon = jobIcon;
+    public ProtoId<JobIconPrototype> JobIcon = jobIcon;
 
     /// <summary>
-    ///     Species tied to this record.
+    ///     Species tied to this record. Imp/Den edit - made this a protoID
     /// </summary>
     [ViewVariables]
-    public string Species = species;
+    public ProtoId<SpeciesPrototype> Species = species;
 
     /// <summary>
     ///     Gender identity tied to this record.

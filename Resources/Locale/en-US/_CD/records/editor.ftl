@@ -47,3 +47,12 @@ cd-records-entry-edit-popup-title-required = Title is required
 cd-records-entry-edit-popup-involved-required = Author(s) is required
 cd-records-entry-edit-popup-description-required = Description is required
 cd-records-entry-edit-popup-description-too-long = Description is too long! ({$current}/{$max} characters)
+
+# Imp/Den for pronouns
+records-computer-pronouns =
+{$gender ->
+    [male] He / Him
+    [female] She / Her
+    [neuter] It / Its
+    *[other] They / Them
+}
