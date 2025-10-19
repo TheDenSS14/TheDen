@@ -313,7 +313,7 @@
 - type: loadout
   id: LoadoutTailorsKnife
   category: GeneralItems
-  cost: 2
+  cost: 1
   canBeHeirloom: true
   items:
     - TailorsKnife
@@ -358,6 +358,14 @@
   customColorTint: true
   items:
     - ClothingNeckHeavyShackles
+
+- type: loadout
+  id: LoadoutUtilityKnife
+  category: GeneralItems
+  cost: 2
+  canBeHeirloom: true
+  items:
+    - UtilityKnife
 
 #Medications
 - type: loadout
