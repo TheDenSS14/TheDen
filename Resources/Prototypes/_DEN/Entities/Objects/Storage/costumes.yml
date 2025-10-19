@@ -1,0 +1,251 @@
+# Costume bundles
+# Used to consolidate multi-item costumes into a single item for drobes.
+
+- type: entity
+  abstract: true
+  parent: [BaseStorageItem, BaseBagOpenClose]
+  id: BaseCostumeBundle
+  name: costume bundle
+  description: A bag containing assorted costume parts.
+  components:
+  - type: Sprite
+    sprite: _DV/Objects/Storage/lunchbox.rsi
+    layers:
+    - state: generic
+    - state: generic-open
+      map: ["openLayer"]
+  - type: Item
+    size: Normal
+    shape: null
+    sprite: _DV/Objects/Storage/lunchbox.rsi
+    heldPrefix: generic
+  - type: Storage
+    maxItemSize: Normal
+    grid:
+    - 0,0,5,2
+  - type: StaticPrice
+    price: 10
+
+- type: entity
+  parent: BaseCostumeBundle
+  id: CostumeBundleAngel
+  name: angel costume bundle
+  components:
+  - type: StorageFill
+    contents:
+    - id: ClothingHeadHalo
+    - id: ClothingUniformJumpskirtAngelDress
+    - id: ClothingHandsAngelGloves
+    - id: ClothingShoesAngelSandals
+    - id: ClothingNeckAngelWings
+    - id: HandheldHarpInstrument
+
+- type: entity
+  parent: BaseCostumeBundle
+  id: CostumeBundleBunnySuit
+  name: bunny suit costume bundle
+  components:
+  - type: StorageFill
+    contents:
+    - id: ClothingHeadHatBunny
+    - id: ClothingCostumeBunnySuit
+
+- type: entity
+  parent: BaseCostumeBundle
+  id: CostumeBundleCardborg
+  name: cardborg costume bundle
+  components:
+  - type: StorageFill
+    contents:
+    - id: ClothingHeadHatCardborg
+    - id: ClothingOuterCardborg
+
+- type: entity
+  parent: BaseCostumeBundle
+  id: CostumeBundleChicken
+  name: chicken costume bundle
+  components:
+  - type: StorageFill
+    contents:
+    - id: ClothingHeadHatChickenhead
+    - id: ClothingOuterSuitChicken
+
+- type: entity
+  parent: BaseCostumeBundle
+  id: CostumeBundleCircusClown
+  name: circus clown costume bundle
+  components:
+  - type: StorageFill
+    contents:
+    - id: ClothingHeadHatCircusClown
+    - id: ClothingMaskClownNose
+    - id: ClothingNeckRuffle
+    - id: ClothingUniformCircusClown
+    - id: ClothingShoesCircus
+
+- type: entity
+  parent: BaseCostumeBundle
+  id: CostumeBundleDevil
+  name: devil costume bundle
+  components:
+  - type: StorageFill
+    contents:
+    - id: ClothingHeadDevilHorns
+    - id: ClothingHeadJesterEvilHat
+    - id: ClothingNeckDevilWings
+    - id: ClothingUniformJesterEvil
+    - id: ClothingShoesJesterEvilJanglers
+    - id: DevilPitchfork
+
+- type: entity
+  parent: BaseCostumeBundle
+  id: CostumeBundleGladiator
+  name: gladiator costume bundle
+  components:
+  - type: StorageFill
+    contents:
+    - id: ClothingHeadHatGladiator
+    - id: ClothingUniformJumpsuitGladiator
+
+- type: entity
+  parent: BaseCostumeBundle
+  id: CostumeBundleJester
+  name: jester costume bundle
+  components:
+  - type: StorageFill
+    contents:
+    - id: ClothingHeadHatJester
+    - id: ClothingHeadHatJesterAlt
+    - id: ClothingUniformJumpsuitJester
+    - id: ClothingUniformJumpsuitJesterAlt
+    - id: ClothingShoesJester
+    - id: ClothingShoesJester
+
+- type: entity
+  parent: BaseCostumeBundle
+  id: CostumeBundleJudge
+  name: judge costume bundle
+  components:
+  - type: StorageFill
+    contents:
+    - id: ClothingHeadHatPwig
+    - id: ClothingOuterRobesJudge
+
+- type: entity
+  parent: BaseCostumeBundle
+  id: CostumeBundleMusicianMarching
+  name: marching band costume bundle
+  components:
+  - type: StorageFill
+    contents:
+    - id: ClothingHeadHatMusicianShako
+    - id: ClothingUniformJumpsuitMusicianMarchingBand
+
+- type: entity
+  parent: BaseCostumeBundle
+  id: CostumeBundleMusicianLoungeSinger
+  name: lounge singer costume bundle
+  components:
+  - type: StorageFill
+    contents:
+    - id: ClothingUniformMusicianSingerDress
+    - id: ClothingHandsMusicianSingerGloves
+    - id: ClothingNeckFeatherBoa
+
+- type: entity
+  parent: BaseCostumeBundle
+  id: CostumeBundlePirate
+  name: pirate costume bundle
+  components:
+  - type: StorageFill
+    contents:
+    - id: ClothingHeadHatPirate
+    - id: ClothingUniformJumpsuitPirate
+    - id: ClothingOuterCoatPirate
+    - id: ClothingShoesBootsLaceup
+    - id: FoamCutlass
+
+- type: entity
+  parent: BaseCostumeBundle
+  id: CostumeBundlePerformer
+  name: performer costume bundle
+  components:
+  - type: StorageFill
+    contents:
+    - id: ClothingUniformJumpskirtPerformer
+    - id: ClothingShoesBootsPerformer
+    - id: FoodMealMemoryleek
+    - id: FoodMealMemoryleek
+
+- type: entity
+  parent: BaseCostumeBundle
+  id: CostumeBundleRedRaccoon
+  name: red raccoon costume bundle
+  components:
+  - type: StorageFill
+    contents:
+    - id: ClothingHeadHatRedRacoon
+    - id: ClothingOuterRedRacoon
+
+- type: entity
+  parent: BaseCostumeBundle
+  id: CostumeBundleSafari
+  name: safari costume bundle
+  components:
+  - type: StorageFill
+    contents:
+    - id: ClothingHeadSafari
+    - id: ClothingUniformJumpsuitSafari
+
+- type: entity
+  parent: BaseCostumeBundle
+  id: CostumeBundleSanta
+  name: santa costume bundle
+  components:
+  - type: StorageFill
+    contents:
+    - id: ClothingHeadHatSantahat
+    - id: ClothingOuterSanta
+
+- type: entity
+  parent: BaseCostumeBundle
+  id: CostumeBundleShrineMaiden
+  name: shrine maiden costume bundle
+  components:
+  - type: StorageFill
+    contents:
+    - id: ClothingHeadHatShrineMaidenWig
+    - id: ClothingOuterSuitShrineMaiden
+    - id: Gohei
+
+- type: entity
+  parent: BaseCostumeBundle
+  id: CostumeBundleSkub
+  name: skub costume bundle
+  components:
+  - type: StorageFill
+    contents:
+    - id: ClothingHeadHatSkub
+    - id: ClothingOuterSkub
+
+- type: entity
+  parent: BaseCostumeBundle
+  id: CostumeBundleWitch
+  name: witch costume bundle
+  components:
+  - type: StorageFill
+    contents:
+    - id: ClothingHeadHatWitch1
+    - id: ClothingHeadHatWitch
+    - id: ClothingOuterSuitWitchRobes
+
+- type: entity
+  parent: BaseCostumeBundle
+  id: CostumeBundleYakuza
+  name: yakuza costume bundle
+  components:
+  - type: StorageFill
+    contents:
+    - id: ClothingUniformJumpsuitDameDane
+    - id: ClothingOuterDameDane
+    - id: ClothingShoesDameDane
