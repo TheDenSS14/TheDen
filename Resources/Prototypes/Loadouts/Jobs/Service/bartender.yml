@@ -317,3 +317,18 @@
     - Bartender
   items:
   - DrinkCumBottleFull
+
+- type: loadout
+  id: LoadoutServiceBartenderGoldenShaker
+  category: JobsServiceBartender
+  cost: 0
+  exclusive: false
+  items: 
+    - DrinkShakerGold
+  requirements: 
+  - !type:CharacterJobRequirement
+    jobs: 
+    - Bartender
+  - !type:CharacterPlaytimeRequirement
+    tracker: JobBartender
+    min: 360000 #100 hours
