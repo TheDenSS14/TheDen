@@ -22,7 +22,7 @@
   - type: Storage
     maxItemSize: Normal
     grid:
-    - 0,0,5,2
+    - 0,0,5,3
   - type: StaticPrice
     price: 10
 
@@ -160,6 +160,8 @@
   - type: StorageFill
     contents:
     - id: ClothingHeadHatPirate
+    - id: ClothingHeadBandRed
+    - id: ClothingEyesEyepatch
     - id: ClothingUniformJumpsuitPirate
     - id: ClothingOuterCoatPirate
     - id: ClothingShoesBootsLaceup
