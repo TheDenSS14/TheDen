@@ -80,7 +80,7 @@
   - type: ProtectedFromStepTriggers
   - type: Bloodstream
     bloodReagent: IntoxicatingBlood # DEN: Demon's Blood -> Intoxicating Blood
-    bloodRegenerationThirst: 4 # 1 unit of demon's blood satiates 4 thirst
+    # bloodRegenerationThirst: 4 # DEN: No longer restores 4x thirst, so.
   - type: BloodSucker
     webRequired: true
   - type: Cocooner
