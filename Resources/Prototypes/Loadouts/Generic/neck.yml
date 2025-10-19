@@ -946,3 +946,25 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutNeck
+
+- type: loadout
+  id: LoadoutClothingNeckDevilWings
+  category: Neck
+  cost: 2
+  exclusive: true
+  items:
+    - ClothingNeckDevilWings
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutNeck
+
+- type: loadout
+  id: LoadoutClothingNeckAngelWings
+  category: Neck
+  cost: 2
+  exclusive: true
+  items:
+    - ClothingNeckAngelWings
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutNeck

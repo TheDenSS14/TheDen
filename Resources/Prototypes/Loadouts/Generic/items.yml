@@ -401,6 +401,20 @@
       jobs:
         - Musician
 
+- type: loadout
+  id: LoadoutHandheldHarpInstrument
+  category: GeneralInstruments
+  cost: 4
+  items:
+    - HandheldHarpInstrument
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutInstrumentsAny
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Musician
+
 # Survival Kit
 - type: loadout
   id: LoadoutItemsEmergencyOxygenTank
@@ -1460,6 +1474,13 @@
   canBeHeirloom: true
   items:
     - PlushieExperiment
+
+- type: loadout #TheDen
+  id: LoadoutDevilPitchfork
+  category: GeneralToys
+  cost: 1
+  items:
+    - DevilPitchfork
 
 # religious
 

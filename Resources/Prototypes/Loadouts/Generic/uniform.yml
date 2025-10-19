@@ -3251,3 +3251,17 @@
 #      departments:
 #        - Command
 
+- type: loadout
+  id: LoadoutClothingUniformJumpskirtAngelDress
+  category: Uniform
+  cost: 1
+  exclusive: true
+  items: 
+    - ClothingUniformJumpskirtAngelDress
+  requirements: 
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutUniformsCivilian
+    - !type:CharacterDepartmentRequirement
+      inverted: true
+      departments:
+        - Command

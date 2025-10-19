@@ -1031,3 +1031,25 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutHead
+
+- type: loadout
+  id: LoadoutClothingHeadDevilHorns
+  category: Head
+  cost: 1
+  exclusive: true
+  items:
+    - ClothingHeadDevilHorns
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutHead
+
+- type: loadout
+  id: LoadoutClothingHeadHalo
+  category: Head
+  cost: 1
+  exclusive: true
+  items:
+    - ClothingHeadHalo
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutHead

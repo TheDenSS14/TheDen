@@ -636,3 +636,13 @@
   items:
     - ClothingShoesHeelsStockingsWhiteLatex
 
+- type: loadout
+  id: LoadoutShoesAngelSandals
+  category: Shoes
+  cost: 1
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutShoes
+  items:
+    - ClothingShoesAngelSandals

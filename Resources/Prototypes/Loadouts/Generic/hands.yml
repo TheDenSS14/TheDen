@@ -234,3 +234,13 @@
 #      inverted: true
 #      species:
 #        - Plasmaman
+
+- type: loadout
+  id: LoadoutClothingHandsAngelGlove
+  category: Hands
+  cost: 1
+  items:
+    - ClothingHandsAngelGloves
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutGloves # TheDen
