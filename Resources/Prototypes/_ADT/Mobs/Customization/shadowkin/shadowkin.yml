@@ -619,10 +619,19 @@
   id: TailShadekinMedium
   bodyPart: Tail
   markingCategory: Tail
-  speciesRestriction: [Shadowkin, Human] # TheDen - Human
+  speciesRestriction: [Shadowkin, Human]
+  layering: 
+    shadekin_medium_front: Tail
+    shadekin_medium_behind: TailBehind
+  colorLinks:
+    shadekin_medium_behind: shadekin_medium_front
   sprites:
     - sprite: _ADT/Mobs/Customization/Shadekin/shadekin_tails_32x32.rsi
-      state: shadekin_medium
+      state: shadekin_medium_behind
+    - sprite: _ADT/Mobs/Customization/Shadekin/shadekin_tails_32x32.rsi
+      state: shadekin_medium_front
+#come back to this and just. set it back to normal medium i fucking guess?????? what in the hell is wrong
+  #did not do that. unsure what is wrong. ask for assistance?????
 
 - type: marking
   id: TailShadekinMediumTwoColored
