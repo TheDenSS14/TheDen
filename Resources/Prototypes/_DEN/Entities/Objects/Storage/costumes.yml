@@ -21,6 +21,9 @@
       color: "#dd6b17"
   # - type: ContainerHeld
   #   threshold: 1
+  - type: Icon
+    sprite: _DEN/Objects/Storage/costume_bundle.rsi
+    state: icon
   - type: Item
     size: Normal
     heldPrefix: empty
@@ -138,6 +141,8 @@
     - state: wrapper
     - state: label
       color: "#74ff33"
+  - type: Icon
+    state: icon-clown
   - type: StorageFill
     contents:
     - id: ClothingHeadHatCircusClown
@@ -205,6 +210,8 @@
     - state: wrapper
     - state: label
       color: "#74ff33"
+  - type: Icon
+    state: icon-clown
   - type: StorageFill
     contents:
     - id: ClothingHeadHatJester
@@ -249,6 +256,8 @@
     - state: wrapper
     - state: label
       color: "#6f56b8"
+  - type: Icon
+    state: icon-musician
   - type: StorageFill
     contents:
     - id: ClothingHeadHatMusicianShako
@@ -269,6 +278,8 @@
     - state: wrapper
     - state: label
       color: "#6f56b8"
+  - type: Icon
+    state: icon-musician
   - type: StorageFill
     contents:
     - id: ClothingUniformMusicianSingerDress
