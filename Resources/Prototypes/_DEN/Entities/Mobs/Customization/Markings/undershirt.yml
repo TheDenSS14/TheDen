@@ -31,6 +31,17 @@
 
 - type: marking
   parent: BaseUndershirt
+  id: UndershirtButtonUpPartial
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Undershirt/buttonup_partial.rsi
+    state: undershirt
+  - sprite: _DEN/Mobs/Customization/Undershirt/buttonup_partial.rsi
+    state: undershirt-buttons
+  - sprite: _DEN/Mobs/Customization/Undershirt/buttonup_partial.rsi
+    state: undershirt-collar
+
+- type: marking
+  parent: BaseUndershirt
   id: UndershirtButtonUpOpen
   sprites:
   - sprite: _DEN/Mobs/Customization/Undershirt/buttonup_open.rsi
