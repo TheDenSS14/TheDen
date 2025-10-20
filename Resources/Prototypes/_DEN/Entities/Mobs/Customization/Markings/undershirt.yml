@@ -18,6 +18,8 @@
   - sprite: _DEN/Mobs/Customization/Undershirt/cropped.rsi
     state: croppedundershirt
 
+# Note - the masc ones aren't sex-restricted because some people might prefer that look
+
 - type: marking
   parent: BaseUndershirt
   id: UndershirtButtonUp
@@ -27,6 +29,19 @@
   - sprite: _DEN/Mobs/Customization/Undershirt/buttonup.rsi
     state: undershirt-buttons
   - sprite: _DEN/Mobs/Customization/Undershirt/buttonup.rsi
+    state: undershirt-collar
+
+- type: marking
+  parent: BaseUndershirt
+  id: UndershirtButtonUpFem
+  sexRestriction: [Male]
+  invertSexRestriction: true
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Undershirt/buttonup_fem.rsi
+    state: undershirt
+  - sprite: _DEN/Mobs/Customization/Undershirt/buttonup_fem.rsi
+    state: undershirt-buttons
+  - sprite: _DEN/Mobs/Customization/Undershirt/buttonup_fem.rsi
     state: undershirt-collar
 
 - type: marking
@@ -42,6 +57,19 @@
 
 - type: marking
   parent: BaseUndershirt
+  id: UndershirtButtonUpPartialFem
+  sexRestriction: [Male]
+  invertSexRestriction: true
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Undershirt/buttonup_partial_fem.rsi
+    state: undershirt
+  - sprite: _DEN/Mobs/Customization/Undershirt/buttonup_partial_fem.rsi
+    state: undershirt-buttons
+  - sprite: _DEN/Mobs/Customization/Undershirt/buttonup_partial_fem.rsi
+    state: undershirt-collar
+
+- type: marking
+  parent: BaseUndershirt
   id: UndershirtButtonUpOpen
   sprites:
   - sprite: _DEN/Mobs/Customization/Undershirt/buttonup_open.rsi
@@ -49,4 +77,17 @@
   - sprite: _DEN/Mobs/Customization/Undershirt/buttonup_open.rsi
     state: undershirt-buttons
   - sprite: _DEN/Mobs/Customization/Undershirt/buttonup_open.rsi
+    state: undershirt-collar
+
+- type: marking
+  parent: BaseUndershirt
+  id: UndershirtButtonUpOpenFem
+  sexRestriction: [Male]
+  invertSexRestriction: true
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Undershirt/buttonup_open_fem.rsi
+    state: undershirt
+  - sprite: _DEN/Mobs/Customization/Undershirt/buttonup_open_fem.rsi
+    state: undershirt-buttons
+  - sprite: _DEN/Mobs/Customization/Undershirt/buttonup_open_fem.rsi
     state: undershirt-collar
