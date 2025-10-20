@@ -32,6 +32,11 @@
     maxItemSize: Normal
     grid:
     - 0,0,5,3
+    whitelist:
+      tags:
+      - CostumeItem
+      components:
+      - Clothing
   - type: Appearance
   - type: GenericVisualizer
     visuals:
