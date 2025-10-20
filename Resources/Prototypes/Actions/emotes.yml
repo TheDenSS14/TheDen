@@ -1,14 +1,16 @@
 # SPDX-FileCopyrightText: 2025 Sapphire
 # SPDX-FileCopyrightText: 2025 Skubman
+# SPDX-FileCopyrightText: 2025 Spanky
 # SPDX-FileCopyrightText: 2025 Tabitha
 # SPDX-FileCopyrightText: 2025 pocl v
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 - type: emote
   id: Flip
   name: chat-emote-name-flip
+  icon: _Harmony/Interface/Emotes/flip.png
   whitelist:
     components:
     - HumanoidAppearance
@@ -22,6 +24,7 @@
 - type: emote
   id: Spin
   name: chat-emote-name-spin
+  icon: _Harmony/Interface/Emotes/spin.png
   whitelist:
     components:
     - HumanoidAppearance
@@ -39,6 +42,7 @@
 - type: emote
   id: Jump
   name: chat-emote-name-jump
+  icon: _Harmony/Interface/Emotes/jump.png
   whitelist:
     components:
     - HumanoidAppearance

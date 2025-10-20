@@ -14,7 +14,7 @@
 # SPDX-FileCopyrightText: 2024 Verm
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 - type: entity
   parent: BaseItem
@@ -64,6 +64,21 @@
     mixOnInteract: false
     reactionTypes:
     - Shake
+
+- type: entity
+  parent: DrinkShaker
+  id: DrinkShakerGold
+  name: golden shaker
+  description: A gold-plated shaker given as a token of appreciation for years of service. It doesn't make the drinks taste any different.
+  components:
+  - type: Sprite
+    sprite: Objects/Consumable/Drinks/shaker_gold.rsi
+  - type: Item
+    sprite: Objects/Consumable/Drinks/shaker_gold.rsi
+  - type: PhysicalComposition
+    materialComposition:
+      Gold: 10 # Gold plated, not solid gold
+      Steel: 40
 
 - type: entity
   parent: DrinkGlassBase

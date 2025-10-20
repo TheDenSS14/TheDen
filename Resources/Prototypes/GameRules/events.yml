@@ -459,9 +459,9 @@
     table: !type:GroupSelector # DeltaV: EntityTable instead of spawn entries
       children:
       - id: MobMothroach
-        weight: 0.99
+        weight: 0.9
       - id: MobRosyMothroach
-        weight: 0.01
+        weight: 0.1
 
 - type: entity
   id: MouseMigration
@@ -480,13 +480,13 @@
       - id: MobMouse
         weight: 0.25
       - id: MobMouse1
-        prob: 0.25
+        weight: 0.25
       - id: MobMouse2
-        prob: 0.25
+        weight: 0.25
       # - id: MobMouseCancer
       #   prob: 0.001
       - id: MobRoingus
-        prob: 0.25
+        weight: 0.25
 #    specialEntries:
 #    - id: SpawnPointGhostRatKing
 #      prob: 0.001

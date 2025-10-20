@@ -1,6 +1,6 @@
-# SPDX-FileCopyrightText: 2025 KekaniCreates <87507256+KekaniCreates@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 Will-Oliver-Br <164823659+Will-Oliver-Br@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 KekaniCreates
+# SPDX-FileCopyrightText: 2025 Will-Oliver-Br
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -72,7 +72,7 @@ ent-PrintedDocumentOrderRecognizingSentienceCreature = Creature Sentience Certif
     .desc = { ent-PrintedDocument.desc }
 ent-PrintedDocumentOrderMedicalIntervention = Medical Intervention Order
     .desc = { ent-PrintedDocument.desc }
-ent-PrintedDocumentProductManufacturingOrder = Item Request Form
+ent-PrintedDocumentProductManufacturingOrder = Cargo Request Form
     .desc = { ent-PrintedDocument.desc }
 ent-PrintedDocumentCertificateAdvancedTraining = Advanced Training Certificate
     .desc = { ent-PrintedDocument.desc }

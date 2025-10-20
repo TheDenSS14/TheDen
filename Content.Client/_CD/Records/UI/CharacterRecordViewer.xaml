@@ -1,9 +1,11 @@
 <!--
-SPDX-FileCopyrightText: 2025 Lyndomen <49795619+Lyndomen@users.noreply.github.com>
-SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
-SPDX-FileCopyrightText: 2025 sleepyyapril <flyingkarii@gmail.com>
+SPDX-FileCopyrightText: 2025 AvianMaiden
+SPDX-FileCopyrightText: 2025 Lyndomen
+SPDX-FileCopyrightText: 2025 Shaman
+SPDX-FileCopyrightText: 2025 portfiend
+SPDX-FileCopyrightText: 2025 sleepyyapril
 
-SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 -->
 
 <controls:FancyWindow xmlns="https://spacestation14.io"
@@ -45,6 +47,8 @@ SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
                             <BoxContainer Orientation="Horizontal" HorizontalExpand="True">
                                 <Label Text="{Loc 'cd-character-records-viewer-record-job'}"/>
                                 <Control HorizontalExpand="True" />
+                                <!-- imp/den edit - icon display -->
+                                <TextureRect Name="RecordContainerJobIcon" TextureScale="2 2" Margin="6 0" VerticalAlignment="Center"/>
                                 <Label Name="RecordContainerJob" Align="Right" />
                             </BoxContainer>
                             <BoxContainer Orientation="Horizontal" HorizontalExpand="True">
@@ -112,6 +116,26 @@ SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
                         </BoxContainer>
                     </BoxContainer>
                 </BoxContainer>
+            </BoxContainer>
+        </BoxContainer>
+        <!-- Footer from Imp for Den -->
+        <BoxContainer Orientation="Vertical">
+            <PanelContainer StyleClasses="LowDivider" />
+            <BoxContainer Orientation="Horizontal"
+                          Margin="10 2 5 0"
+                          VerticalAlignment="Bottom">
+                <Label Text="{Loc 'cd-imp-records-viewer-flavor-left'}"
+                       StyleClasses="WindowFooterText" />
+                <Label Text="{Loc 'cd-imp-records-viewer-flavor-right'}"
+                       StyleClasses="WindowFooterText"
+                       HorizontalAlignment="Right"
+                       HorizontalExpand="True"
+                       Margin="0 0 5 0" />
+                <TextureRect StyleClasses="NTLogoDark"
+                             Stretch="KeepAspectCentered"
+                             VerticalAlignment="Center"
+                             HorizontalAlignment="Right"
+                             SetSize="19 19" />
             </BoxContainer>
         </BoxContainer>
     </BoxContainer>
