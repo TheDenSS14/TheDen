@@ -1,5 +1,5 @@
-// SPDX-FileCopyrightText: 2024 Debug <49997488+DebugOk@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Debug
+// SPDX-FileCopyrightText: 2025 sleepyyapril
 //
 // SPDX-License-Identifier: MIT
 
@@ -10,7 +10,6 @@ using Content.Server.Ghost.Roles.Components;
 using Content.Server.Kitchen.Components;
 using Content.Server.Nutrition.Components;
 using Content.Server.Nyanotrasen.Kitchen.Components;
-using Content.Server.Paper;
 using Content.Shared.Atmos.Rotting;
 using Content.Shared.Buckle.Components;
 using Content.Shared.Chemistry.Components;
@@ -19,6 +18,7 @@ using Content.Shared.Mobs.Components;
 using Content.Shared.NPC;
 using Content.Shared.Nutrition.Components;
 using Content.Shared.Nyanotrasen.Kitchen.Components;
+using Content.Shared.Paper;
 using Robust.Shared.Random;
 
 namespace Content.Server.Nyanotrasen.Kitchen.EntitySystems;
@@ -127,7 +127,7 @@ public sealed partial class DeepFryerSystem
                     stringBuilder.Append("x");
             }
 
-            paperComponent.Content = stringBuilder.ToString();
+            _paperSystem.SetContent((item, paperComponent), stringBuilder.ToString());
         }
 
         var foodComponent = EnsureComp<FoodComponent>(item);

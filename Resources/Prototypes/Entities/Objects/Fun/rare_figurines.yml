@@ -1,0 +1,223 @@
+# SPDX-FileCopyrightText: 2025 SillyAmy
+# SPDX-FileCopyrightText: 2025 eightballll
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+#HUMANOID FIGURINES
+
+- type: entity
+  id: RareMysteryFigureBoxTrash
+  parent: MysteryFigureBoxTrash
+  description: A small, unfolded gold cardboard toy box.
+  components:
+  - type: Sprite
+    sprite: Objects/Fun/rare_figurines.rsi
+    state: fig_box_unfolded
+
+- type: entity
+  parent: PresentRandom
+  id: RareMysteryFigureBox
+  name: rare mystery spacemen minifigure box
+  description: A box containing a rare mystery minifigure.
+  components:
+  - type: Sprite
+    sprite: Objects/Fun/rare_figurines.rsi
+    layers:
+    - state: fig_box
+  - type: SpawnItemsOnUse
+    items:
+    - id: RareMysteryFigureBoxTrash
+    - id: ToyRareFigurinePassenger
+      orGroup: RareSpacemenFig
+    - id: ToyRareFigurineClown
+      orGroup: RareSpacemenFig
+    - id: ToyRareFigurineMime
+      orGroup: RareSpacemenFig
+    - id: ToyRareFigurineHamlet
+      orGroup: RareSpacemenFig
+    - id: ToyRareFigurineSalvage
+      orGroup: RareSpacemenFig
+    - id: ToyRareFigurineSlime
+      orGroup: RareSpacemenFig
+    - id: ToyRareFigurineJanitor
+      orGroup: RareSpacemenFig
+    - id: ToyRareFigurineChiefEngineer
+      orGroup: RareSpacemenFig
+    - id: ToyRareFigurineEngineer
+      orGroup: RareSpacemenFig
+    - id: ToyRareFigurineChiefMedicalOfficer
+      orGroup: RareSpacemenFig
+    - id: ToyRareFigurineWarden
+      orGroup: RareSpacemenFig
+    - id: ToyRareFigurineHeadOfSecurity
+      orGroup: RareSpacemenFig
+    - id: ToyRareFigurineCaptain
+      orGroup: RareSpacemenFig
+    - id: ToyRareFigurineSecurity
+      orGroup: RareSpacemenFig
+
+- type: entity
+  parent: BaseFigurine
+  abstract: true
+  id: BaseRareFigurine
+  name: rare figurine
+  description: A small miniature. You feel lucky.
+  components:
+  - type: Sprite
+    sprite: Objects/Fun/rare_figurines.rsi
+  - type: StaticPrice
+    price: 150
+
+- type: entity
+  parent: BaseRareFigurine
+  id: ToyRareFigurinePassenger
+  name: rare greytider figure
+  description: A rare figurine depicting a skilled greytider.
+  components:
+  - type: Sprite
+    state: passenger_greytide
+  - type: SpeakOnUse
+    pack: RareFigurinesPassenger
+
+- type: entity
+  parent: BaseRareFigurine
+  id: ToyRareFigurineClown
+  name: rare clown figure
+  description: A rare figurine depicting a... Weird clown.
+  components:
+  - type: Sprite
+    state: clown
+  - type: SpeakOnUse
+    pack: RareFigurinesClown
+
+- type: entity
+  parent: BaseRareFigurine
+  id: ToyRareFigurineMime
+  name: rare mime figure
+  description: A rare figurine depicting a... Weird mime.
+  components:
+  - type: Sprite
+    state: mime
+  - type: SpeakOnUse
+    pack: RareFigurinesMime
+
+- type: entity
+  parent: BaseRareFigurine
+  id: ToyRareFigurineHamlet
+  name: rare hamlet figure
+  description: Aw, he has a little hat and everything!
+  components:
+  - type: Sprite
+    state: hamlet
+  - type: SpeakOnUse
+    pack: FigurinesHamlet
+
+- type: entity
+  parent: BaseRareFigurine
+  id: ToyRareFigurineSalvage
+  name: rare salvage specialist figure
+  description: A rare figurine depicting a salvage specialist in a deluxe mining hardsuit.
+  components:
+  - type: Sprite
+    state: salvage
+  - type: SpeakOnUse
+    pack: RareFigurinesSalvage
+
+- type: entity
+  parent: BaseRareFigurine
+  id: ToyRareFigurineSlime
+  name: rare slime figure
+  description: A rare figurine depicting a slime born from an anomaly.
+  components:
+  - type: Sprite
+    state: slime
+  - type: SpeakOnUse
+    pack: FigurinesSlime
+
+- type: entity
+  parent: BaseRareFigurine
+  id: ToyRareFigurineJanitor
+  name: rare janitor figure
+  description: A rare figurine depicting an experienced janitor, wearing a trusty golden plunger.
+  components:
+    - type: Sprite
+      state: janitor
+    - type: SpeakOnUse
+      pack: RareFigurinesJanitor
+
+- type: entity
+  parent: BaseRareFigurine
+  id: ToyRareFigurineChiefEngineer
+  name: rare chief engineer figure
+  description: A rare figurine depicting a chief engineer wearing their hardsuit.
+  components:
+  - type: Sprite
+    state: ce
+  - type: SpeakOnUse
+    pack: RareFigurinesCE
+
+- type: entity
+  parent: BaseRareFigurine
+  id: ToyRareFigurineEngineer
+  name: rare engineer figure
+  description: A rare figurine depicting an engineer wearing their hardsuit.
+  components:
+  - type: Sprite
+    state: engineer
+  - type: SpeakOnUse
+    pack: RareFigurinesEngineer
+
+- type: entity
+  parent: BaseRareFigurine
+  id: ToyRareFigurineChiefMedicalOfficer
+  name: rare chief medical officer figure
+  description: A rare figurine depicting the chief medical officer wearing their hardsuit.
+  components:
+  - type: Sprite
+    state: cmo
+  - type: SpeakOnUse
+    pack: RareFigurinesCMO
+
+- type: entity
+  parent: BaseRareFigurine
+  id: ToyRareFigurineWarden
+  name: rare warden figure
+  description: A rare figurine depicting a warden wearing their crappy hardsuit.
+  components:
+  - type: Sprite
+    state: warden
+  - type: SpeakOnUse
+    pack: RareFigurinesWarden
+
+- type: entity
+  parent: BaseRareFigurine
+  id: ToyRareFigurineHeadOfSecurity
+  name: rare head of security figure
+  description: A rare figurine depicting a head of security wearing their hardsuit.
+  components:
+  - type: Sprite
+    state: hos
+  - type: SpeakOnUse
+    pack: RareFigurinesHOS
+
+- type: entity
+  parent: BaseRareFigurine
+  id: ToyRareFigurineCaptain
+  name: rare captain figure
+  description: A rare figurine depicting a captain wearing their hardsuit.
+  components:
+  - type: Sprite
+    state: captain
+  - type: SpeakOnUse
+    pack: RareFigurinesCaptain
+
+- type: entity
+  parent: BaseRareFigurine
+  id: ToyRareFigurineSecurity
+  name: rare security officer figure
+  description: A rare figurine depicting an officer wearing their hardsuit.
+  components:
+  - type: Sprite
+    state: security
+  - type: SpeakOnUse
+    pack: RareFigurinesSecurity

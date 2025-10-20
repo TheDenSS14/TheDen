@@ -1,9 +1,11 @@
 # SPDX-FileCopyrightText: 2023 iacore
 # SPDX-FileCopyrightText: 2024 SimpleStation14
+# SPDX-FileCopyrightText: 2025 Jakumba
 # SPDX-FileCopyrightText: 2025 lzk
+# SPDX-FileCopyrightText: 2025 portfiend
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: construction
   id: ClosetSteel
@@ -36,6 +38,17 @@
   category: construction-category-storage
   description: A tall steel box with freezing abilities.
   icon: { sprite: Structures/Storage/closet.rsi, state: freezer_icon }
+  objectType: Structure
+
+- type: construction
+  id: GunSafe
+  name: gun safe
+  graph: GunSafe
+  startNode: start
+  targetNode: done
+  category: construction-category-storage
+  description: A durable gun safe that can be locked.
+  icon: { sprite: Structures/Storage/closet.rsi, state: shotguncase }
   objectType: Structure
 
 - type: construction

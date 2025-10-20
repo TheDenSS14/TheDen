@@ -1,5 +1,6 @@
-// SPDX-FileCopyrightText: 2024 Remuchi <72476615+Remuchi@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Remuchi
+// SPDX-FileCopyrightText: 2025 slarticodefast
+// SPDX-FileCopyrightText: 2025 sleepyyapril
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -66,7 +67,7 @@ public sealed class RuneDrawerBUI : BoundUserInterface
 
         var container = new RadialContainer
         {
-            Radius = 48f + 24f * MathF.Log(runes.Count)
+            InitialRadius = 48f + 24f * MathF.Log(runes.Count)
         };
 
         _menu.AddChild(container);
@@ -78,7 +79,7 @@ public sealed class RuneDrawerBUI : BoundUserInterface
                 continue;
 
             var itemSize = new Vector2(64f, 64f);
-            var button = new RadialMenuTextureButton
+            var button = new RadialMenuButton
             {
                 ToolTip = Loc.GetString(runeProto.Name),
                 StyleClasses = { "RadialMenuButton" },

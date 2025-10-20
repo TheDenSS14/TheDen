@@ -36,10 +36,11 @@
 # SPDX-FileCopyrightText: 2025 Tabitha
 # SPDX-FileCopyrightText: 2025 mart
 # SPDX-FileCopyrightText: 2025 mqole
+# SPDX-FileCopyrightText: 2025 pocl.v
 # SPDX-FileCopyrightText: 2025 skyr0cket01
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 # species
 - type: emoteSounds
@@ -450,15 +451,35 @@
     Sigh:
       collection: MaleSigh
     Crying:
-      collection: MaleCry
+      collection: VoxCry #Imp
+      params:
+        volume: -7
     Whistle:
       collection: Whistles
     Weh:
       collection: Weh
     Gasp:
-      collection: MaleGasp
+      collection: VoxGasp #Imp
+      params:
+        volume: 10
     DefaultDeathgasp:
       collection: DeathGasp
+    Chitter:
+      collection: VoxChitter #Imp
+      params:
+        volume: -5
+    Coo:
+      collection: VoxCoo #Imp
+      params:
+        volume: -7
+    Hiss:
+      collection: VoxHiss #Imp
+      params:
+        volume: -5
+    HarpyCaw:
+      collection: HarpyCaws
+    HarpyHoot:
+      collection: HarpyHoots
 
 - type: emoteSounds
   id: UnisexDiona

@@ -6,8 +6,10 @@
 # SPDX-FileCopyrightText: 2023 metalgearsloth
 # SPDX-FileCopyrightText: 2024 Emisse
 # SPDX-FileCopyrightText: 2024 sleepyyapril
+# SPDX-FileCopyrightText: 2025 Falcon
 # SPDX-FileCopyrightText: 2025 VMSolidus
 # SPDX-FileCopyrightText: 2025 juniwoofs
+# SPDX-FileCopyrightText: 2025 sheepie
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -2361,7 +2363,7 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 18.5,-5.5
       parent: 2
-- proto: Bible
+- proto: HolyBookBible
   entities:
   - uid: 7167
     components:

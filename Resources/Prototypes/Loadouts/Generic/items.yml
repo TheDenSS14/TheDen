@@ -26,7 +26,7 @@
 # SPDX-FileCopyrightText: 2025 portfiend
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 #Smokes
 - type: loadout
@@ -1320,12 +1320,12 @@
     - PlushieCatOrange
 
 - type: loadout #TheDen
-  id: PlushieCatSiames
+  id: PlushieCatSiamese
   category: GeneralToys
   cost: 1
   canBeHeirloom: true
   items:
-    - PlushieCatSiames
+    - PlushieCatSiamese
 
 - type: loadout #TheDen
   id: PlushieCatTabby
@@ -1460,3 +1460,26 @@
   canBeHeirloom: true
   items:
     - PlushieExperiment
+
+# religious
+
+- type: loadout #TheDen
+  id: LoadoutPrayerRugBlue
+  category: GeneralItems
+  cost: 0
+  items:
+    - PrayerRugBlue
+
+- type: loadout #TheDen
+  id: LoadoutPrayerRugGreen
+  category: GeneralItems
+  cost: 0
+  items:
+    - PrayerRugGreen
+
+- type: loadout #TheDen
+  id: LoadoutPrayerRugRed
+  category: GeneralItems
+  cost: 0
+  items:
+    - PrayerRugRed

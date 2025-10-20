@@ -30,6 +30,7 @@
 // SPDX-FileCopyrightText: 2025 Falcon
 // SPDX-FileCopyrightText: 2025 Lyndomen
 // SPDX-FileCopyrightText: 2025 Timfa
+// SPDX-FileCopyrightText: 2025 portfiend
 // SPDX-FileCopyrightText: 2025 sleepyyapril
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
@@ -451,6 +452,7 @@ namespace Content.Server.Database
         public string FlavorText { get; set; } = null!;
         public string NsfwFlavorText { get; set; } = null!;
         public string CharacterConsent { get; set; } = null!;
+        public string SelfExamineFlavorText { get; set; } = null!;
         public string CustomSpecieName { get; set; } = null!;
         public string Nationality { get; set; } = null!;
         public string Employer { get; set; } = null!;

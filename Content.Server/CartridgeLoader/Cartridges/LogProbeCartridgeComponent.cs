@@ -13,6 +13,8 @@ using Robust.Shared.Audio;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom;
 using Content.Server.Paper;
+using Content.Shared.Paper;
+
 
 namespace Content.Server.CartridgeLoader.Cartridges;
 

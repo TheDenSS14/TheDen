@@ -1,0 +1,45 @@
+<!--
+SPDX-FileCopyrightText: 2025 portfiend
+
+SPDX-License-Identifier: AGPL-3.0-or-later
+-->
+
+<BoxContainer
+    xmlns="https://spacestation14.io"
+    xmlns:ui="clr-namespace:Content.Client.UserInterface.Controls"
+    xmlns:graphics="clr-namespace:Robust.Client.Graphics;assembly=Robust.Client"
+    HorizontalExpand="True"
+    Orientation="Vertical"
+    SeparationOverride="5"
+    Margin="10">
+    <BoxContainer
+        HorizontalAlignment="Left"
+        Orientation="Vertical"
+        MaxWidth="900"
+        Margin="0 0 0 10"
+        SeparationOverride="5">
+        <RichTextLabel
+            Name="FlavorTitle"
+            HorizontalExpand="True"
+            Visible="False" />
+        <RichTextLabel
+            Name="FlavorDescription"
+            HorizontalExpand="True"
+            Visible="False" />
+    </BoxContainer>
+    <PanelContainer HorizontalExpand="True">
+        <PanelContainer.PanelOverride>
+            <graphics:StyleBoxFlat BackgroundColor="#222222" />
+        </PanelContainer.PanelOverride>
+        <ui:ResizableControl
+            AllowedResizeDirection="Vertical"
+            HorizontalExpand="True"
+            MinSize="220 150">
+            <TextEdit
+                Name="FlavorInput"
+                HorizontalExpand="True"
+                VerticalExpand="True"
+                Margin="3" />
+        </ui:ResizableControl>
+    </PanelContainer>
+</BoxContainer>

@@ -1,14 +1,14 @@
 <!--
-SPDX-FileCopyrightText: 2022 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
-SPDX-FileCopyrightText: 2022 Flipp Syder <76629141+vulppine@users.noreply.github.com>
-SPDX-FileCopyrightText: 2022 Jezithyr <Jezithyr.@gmail.com>
-SPDX-FileCopyrightText: 2023 Vasilis <vasilis@pikachu.systems>
-SPDX-FileCopyrightText: 2023 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
-SPDX-FileCopyrightText: 2024 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
-SPDX-FileCopyrightText: 2024 Sk1tch <ben.peter.smith@gmail.com>
-SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+SPDX-FileCopyrightText: 2022 DrSmugleaf
+SPDX-FileCopyrightText: 2022 Flipp Syder
+SPDX-FileCopyrightText: 2022 Jezithyr
+SPDX-FileCopyrightText: 2023 Vasilis
+SPDX-FileCopyrightText: 2023 metalgearsloth
+SPDX-FileCopyrightText: 2024 Nemanja
+SPDX-FileCopyrightText: 2024 Sk1tch
+SPDX-FileCopyrightText: 2025 sleepyyapril
 
-SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 -->
 
 <widgets:ChatBox
@@ -25,7 +25,12 @@ SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
                     StyleClasses="StyleNano.StyleClassChatPanel">
         <BoxContainer Orientation="Vertical" SeparationOverride="4" HorizontalExpand="True" VerticalExpand="True">
             <!-- Goobstation Change - Output Panel -->
-            <goobcontrols:CustomOutputPanel Name="Contents" HorizontalExpand="True" VerticalExpand="True" Margin="8 8 8 4" />
+            <goobcontrols:CustomOutputPanel 
+                Name="Contents"
+                HorizontalExpand="True"
+                VerticalExpand="True"
+                Margin="8 8 8 4"
+                ShowScrollDownButton="True" />
             <controls:ChatInputBox HorizontalExpand="True" Name="ChatInput" Access="Public" Margin="2"/>
         </BoxContainer>
     </PanelContainer>

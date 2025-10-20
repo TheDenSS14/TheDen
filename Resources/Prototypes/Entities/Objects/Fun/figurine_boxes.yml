@@ -1,6 +1,8 @@
 # SPDX-FileCopyrightText: 2023 DerbyX
 # SPDX-FileCopyrightText: 2023 Flareguy
+# SPDX-FileCopyrightText: 2025 SillyAmy
 # SPDX-FileCopyrightText: 2025 Winter
+# SPDX-FileCopyrightText: 2025 eightballll
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: MIT
@@ -140,6 +142,49 @@
       - id: ToyFigurineHamlet
         prob: 0.20
         orGroup: SpacemenFig
+      - id: ToyRareFigurinePassenger
+        prob: 0.10
+        orGroup: SpacemenFig
+      - id: ToyRareFigurineClown
+        prob: 0.10
+        orGroup: SpacemenFig
+      - id: ToyRareFigurineMime
+        prob: 0.10
+        orGroup: SpacemenFig
+      - id: ToyRareFigurineHamlet
+        prob: 0.10
+        orGroup: SpacemenFig
+      - id: ToyRareFigurineSalvage
+        prob: 0.10
+        orGroup: SpacemenFig
+      - id: ToyRareFigurineSlime
+        prob: 0.10
+        orGroup: SpacemenFig
+      - id: ToyRareFigurineJanitor
+        prob: 0.10
+        orGroup: SpacemenFig
+      - id: ToyRareFigurineChiefEngineer
+        prob: 0.10
+        orGroup: SpacemenFig
+      - id: ToyRareFigurineEngineer
+        prob: 0.10
+        orGroup: SpacemenFig
+      - id:   ToyRareFigurineChiefMedicalOfficer
+        prob: 0.10
+        orGroup: SpacemenFig
+      - id: ToyRareFigurineWarden
+        prob: 0.10
+        orGroup: SpacemenFig
+      - id: ToyRareFigurineHeadOfSecurity
+        prob: 0.10
+        orGroup: SpacemenFig
+      - id: ToyRareFigurineCaptain
+        prob: 0.10
+        orGroup: SpacemenFig
+      - id: ToyRareFigurineSecurity
+        prob: 0.10
+        orGroup: SpacemenFig
+
 
 - type: entity
   parent: BaseItem
@@ -199,3 +244,4 @@
         orGroup: Lighterbox
       - id: SyndicateFlippo
         orGroup: Lighterbox
+        weight: 0.15
