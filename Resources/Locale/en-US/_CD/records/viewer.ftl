@@ -12,7 +12,8 @@ cd-record-viewer-no-record-selected = Please select record.
 
 cd-character-records-viewer-record-age = Age:
 cd-character-records-viewer-record-job = Job:
-cd-character-records-viewer-record-gender = Gender:
+#Den edit from gender to pronouns
+cd-character-records-viewer-record-gender = Pronouns:
 cd-character-records-viewer-record-species = Species:
 
 cd-character-records-viewer-record-sec-fingerprint = Fingerprint:
