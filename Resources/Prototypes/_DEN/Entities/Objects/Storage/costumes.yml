@@ -19,8 +19,6 @@
     - state: wrapper
     - state: label
       color: "#dd6b17"
-  # - type: ContainerHeld
-  #   threshold: 1
   - type: Icon
     sprite: _DEN/Objects/Storage/costume_bundle.rsi
     state: icon
@@ -37,6 +35,8 @@
       - CostumeItem
       components:
       - Clothing
+  - type: ContainerHeld
+    threshold: 1
   - type: Appearance
   - type: GenericVisualizer
     visuals:
@@ -46,6 +46,24 @@
           False: {visible: false}
   - type: StaticPrice
     price: 10
+
+- type: entity
+  parent: BaseCostumeBundle
+  id: EmptyCostumeBundle
+  description: A bag for storing assorted costume parts.
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Storage/costume_bundle.rsi
+    layers:
+    - state: outfit
+      map: [ "enum.ToggleableVisuals.Layer" ]
+      color: "#ffffff"
+      visible: false # starts with nothing
+    - state: wrapper-fill
+      color: "#ffffff22"
+    - state: wrapper
+    - state: label
+      color: "#dd6b17"
 
 - type: entity
   parent: BaseCostumeBundle
