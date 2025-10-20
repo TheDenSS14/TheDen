@@ -111,6 +111,26 @@
 
 - type: entity
   parent: BaseCostumeBundle
+  id: CostumeBundleBurglar
+  name: burglar costume bundle
+  components:
+  - type: Sprite
+    layers:
+    - state: outfit
+      map: [ "enum.ToggleableVisuals.Layer" ]
+      color: "#3e3735"
+    - state: wrapper-fill
+      color: "#ffffff22"
+    - state: wrapper
+    - state: label
+      color: "#dd6b17"
+  - type: StorageFill
+    contents:
+    - id: ClothingMaskBurglar
+    - id: ClothingUniformBurglarJumpsuit
+
+- type: entity
+  parent: BaseCostumeBundle
   id: CostumeBundleCardborg
   name: cardborg costume bundle
   components:
@@ -266,6 +286,26 @@
 
 - type: entity
   parent: BaseCostumeBundle
+  id: CostumeBundleMonkey
+  name: monkey costume bundle
+  components:
+  - type: Sprite
+    layers:
+    - state: outfit
+      map: [ "enum.ToggleableVisuals.Layer" ]
+      color: "#914800"
+    - state: wrapper-fill
+      color: "#ffffff22"
+    - state: wrapper
+    - state: label
+      color: "#dd6b17"
+  - type: StorageFill
+    contents:
+    - id: ClothingHeadHatAnimalMonkey
+    - id: ClothingOuterSuitMonkey
+
+- type: entity
+  parent: BaseCostumeBundle
   id: CostumeBundleMusicianMarching
   name: marching band costume bundle
   components:
@@ -394,6 +434,28 @@
     contents:
     - id: ClothingHeadSafari
     - id: ClothingUniformJumpsuitSafari
+
+- type: entity
+  parent: BaseCostumeBundle
+  id: CostumeBundleSailor
+  name: sailor costume bundle
+  components:
+  - type: Sprite
+    layers:
+    - state: outfit
+      map: [ "enum.ToggleableVisuals.Layer" ]
+      color: "#dedbec"
+    - state: wrapper-fill
+      color: "#ffffff22"
+    - state: wrapper
+    - state: label
+      color: "#dd6b17"
+  - type: StorageFill
+    contents:
+    - id: ClothingHeadSailorCap
+    - id: ClothingNeckSailorAscot
+    - id: ClothingUniformSailorSuit
+    - id: ClothingShoesBootsLaceup
 
 - type: entity
   parent: BaseCostumeBundle
