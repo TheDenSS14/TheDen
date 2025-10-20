@@ -11,13 +11,13 @@
   - type: Sprite
     sprite: _DEN/Objects/Storage/costume_bundle.rsi
     layers:
-    - state: icon-outfit
+    - state: outfit
       map: [ "enum.ToggleableVisuals.Layer" ]
       color: "#ffffff"
-    - state: icon-wrapper-fill
+    - state: wrapper-fill
       color: "#ffffff22"
-    - state: icon-wrapper
-    - state: icon-label
+    - state: wrapper
+    - state: label
       color: "#dd6b17"
   # - type: ContainerHeld
   #   threshold: 1
@@ -46,13 +46,13 @@
   components:
   - type: Sprite
     layers:
-    - state: icon-outfit
+    - state: outfit
       map: [ "enum.ToggleableVisuals.Layer" ]
       color: "#f5b8c3"
-    - state: icon-wrapper-fill
+    - state: wrapper-fill
       color: "#ffffff22"
-    - state: icon-wrapper
-    - state: icon-label
+    - state: wrapper
+    - state: label
       color: "#efec98"
   - type: StorageFill
     contents:
@@ -70,13 +70,13 @@
   components:
   - type: Sprite
     layers:
-    - state: icon-outfit
+    - state: outfit
       map: [ "enum.ToggleableVisuals.Layer" ]
       color: "#48494e"
-    - state: icon-wrapper-fill
+    - state: wrapper-fill
       color: "#ffffff22"
-    - state: icon-wrapper
-    - state: icon-label
+    - state: wrapper
+    - state: label
       color: "#dd6b17"
   - type: StorageFill
     contents:
@@ -90,13 +90,13 @@
   components:
   - type: Sprite
     layers:
-    - state: icon-outfit
+    - state: outfit
       map: [ "enum.ToggleableVisuals.Layer" ]
       color: "#70736c"
-    - state: icon-wrapper-fill
+    - state: wrapper-fill
       color: "#ffffff22"
-    - state: icon-wrapper
-    - state: icon-label
+    - state: wrapper
+    - state: label
       color: "#dd6b17"
   - type: StorageFill
     contents:
@@ -110,13 +110,13 @@
   components:
   - type: Sprite
     layers:
-    - state: icon-outfit
+    - state: outfit
       map: [ "enum.ToggleableVisuals.Layer" ]
       color: "#ffc800"
-    - state: icon-wrapper-fill
+    - state: wrapper-fill
       color: "#ffffff22"
-    - state: icon-wrapper
-    - state: icon-label
+    - state: wrapper
+    - state: label
       color: "#dd6b17"
   - type: StorageFill
     contents:
@@ -130,13 +130,13 @@
   components:
   - type: Sprite
     layers:
-    - state: icon-outfit
+    - state: outfit
       map: [ "enum.ToggleableVisuals.Layer" ]
       color: "#ffd85d"
-    - state: icon-wrapper-fill
+    - state: wrapper-fill
       color: "#ffffff22"
-    - state: icon-wrapper
-    - state: icon-label
+    - state: wrapper
+    - state: label
       color: "#74ff33"
   - type: StorageFill
     contents:
@@ -153,13 +153,13 @@
   components:
   - type: Sprite
     layers:
-    - state: icon-outfit
+    - state: outfit
       map: [ "enum.ToggleableVisuals.Layer" ]
       color: "#4b3b56"
-    - state: icon-wrapper-fill
+    - state: wrapper-fill
       color: "#ffffff22"
-    - state: icon-wrapper
-    - state: icon-label
+    - state: wrapper
+    - state: label
       color: "#d349c9"
   - type: StorageFill
     contents:
@@ -177,13 +177,13 @@
   components:
   - type: Sprite
     layers:
-    - state: icon-outfit
+    - state: outfit
       map: [ "enum.ToggleableVisuals.Layer" ]
       color: "#e1b73d"
-    - state: icon-wrapper-fill
+    - state: wrapper-fill
       color: "#ffffff22"
-    - state: icon-wrapper
-    - state: icon-label
+    - state: wrapper
+    - state: label
       color: "#dd6b17"
   - type: StorageFill
     contents:
@@ -197,13 +197,13 @@
   components:
   - type: Sprite
     layers:
-    - state: icon-outfit
+    - state: outfit
       map: [ "enum.ToggleableVisuals.Layer" ]
       color: "#dd1818"
-    - state: icon-wrapper-fill
+    - state: wrapper-fill
       color: "#ffffff22"
-    - state: icon-wrapper
-    - state: icon-label
+    - state: wrapper
+    - state: label
       color: "#74ff33"
   - type: StorageFill
     contents:
@@ -221,13 +221,13 @@
   components:
   - type: Sprite
     layers:
-    - state: icon-outfit
+    - state: outfit
       map: [ "enum.ToggleableVisuals.Layer" ]
       color: "#2e2e2e"
-    - state: icon-wrapper-fill
+    - state: wrapper-fill
       color: "#ffffff22"
-    - state: icon-wrapper
-    - state: icon-label
+    - state: wrapper
+    - state: label
       color: "#dd6b17"
   - type: StorageFill
     contents:
@@ -241,13 +241,13 @@
   components:
   - type: Sprite
     layers:
-    - state: icon-outfit
+    - state: outfit
       map: [ "enum.ToggleableVisuals.Layer" ]
       color: "#463c6a"
-    - state: icon-wrapper-fill
+    - state: wrapper-fill
       color: "#ffffff22"
-    - state: icon-wrapper
-    - state: icon-label
+    - state: wrapper
+    - state: label
       color: "#6f56b8"
   - type: StorageFill
     contents:
@@ -261,13 +261,13 @@
   components:
   - type: Sprite
     layers:
-    - state: icon-outfit
+    - state: outfit
       map: [ "enum.ToggleableVisuals.Layer" ]
       color: "#463c6a"
-    - state: icon-wrapper-fill
+    - state: wrapper-fill
       color: "#ffffff22"
-    - state: icon-wrapper
-    - state: icon-label
+    - state: wrapper
+    - state: label
       color: "#6f56b8"
   - type: StorageFill
     contents:
@@ -282,13 +282,13 @@
   components:
   - type: Sprite
     layers:
-    - state: icon-outfit
+    - state: outfit
       map: [ "enum.ToggleableVisuals.Layer" ]
       color: "#dfe1de"
-    - state: icon-wrapper-fill
+    - state: wrapper-fill
       color: "#ffffff22"
-    - state: icon-wrapper
-    - state: icon-label
+    - state: wrapper
+    - state: label
       color: "#dd6b17"
   - type: StorageFill
     contents:
@@ -307,13 +307,13 @@
   components:
   - type: Sprite
     layers:
-    - state: icon-outfit
+    - state: outfit
       map: [ "enum.ToggleableVisuals.Layer" ]
       color: "#474f63"
-    - state: icon-wrapper-fill
+    - state: wrapper-fill
       color: "#ffffff22"
-    - state: icon-wrapper
-    - state: icon-label
+    - state: wrapper
+    - state: label
       color: "#70cac4"
   - type: StorageFill
     contents:
@@ -328,13 +328,13 @@
   components:
   - type: Sprite
     layers:
-    - state: icon-outfit
+    - state: outfit
       map: [ "enum.ToggleableVisuals.Layer" ]
       color: "#e48a1b"
-    - state: icon-wrapper-fill
+    - state: wrapper-fill
       color: "#ffffff22"
-    - state: icon-wrapper
-    - state: icon-label
+    - state: wrapper
+    - state: label
       color: "#dd6b17"
   - type: StorageFill
     contents:
@@ -348,13 +348,13 @@
   components:
   - type: Sprite
     layers:
-    - state: icon-outfit
+    - state: outfit
       map: [ "enum.ToggleableVisuals.Layer" ]
       color: "#d3bf86"
-    - state: icon-wrapper-fill
+    - state: wrapper-fill
       color: "#ffffff22"
-    - state: icon-wrapper
-    - state: icon-label
+    - state: wrapper
+    - state: label
       color: "#dd6b17"
   - type: StorageFill
     contents:
@@ -368,13 +368,13 @@
   components:
   - type: Sprite
     layers:
-    - state: icon-outfit
+    - state: outfit
       map: [ "enum.ToggleableVisuals.Layer" ]
       color: "#d73827"
-    - state: icon-wrapper-fill
+    - state: wrapper-fill
       color: "#ffffff22"
-    - state: icon-wrapper
-    - state: icon-label
+    - state: wrapper
+    - state: label
       color: "#f2c735"
   - type: StorageFill
     contents:
@@ -388,13 +388,13 @@
   components:
   - type: Sprite
     layers:
-    - state: icon-outfit
+    - state: outfit
       map: [ "enum.ToggleableVisuals.Layer" ]
       color: "#ff1f24"
-    - state: icon-wrapper-fill
+    - state: wrapper-fill
       color: "#ffffff22"
-    - state: icon-wrapper
-    - state: icon-label
+    - state: wrapper
+    - state: label
       color: "#dd6b17"
   - type: StorageFill
     contents:
@@ -409,13 +409,13 @@
   components:
   - type: Sprite
     layers:
-    - state: icon-outfit
+    - state: outfit
       map: [ "enum.ToggleableVisuals.Layer" ]
       color: "#fcd4d4"
-    - state: icon-wrapper-fill
+    - state: wrapper-fill
       color: "#ffffff22"
-    - state: icon-wrapper
-    - state: icon-label
+    - state: wrapper
+    - state: label
       color: "#dd6b17"
   - type: StorageFill
     contents:
@@ -429,13 +429,13 @@
   components:
   - type: Sprite
     layers:
-    - state: icon-outfit
+    - state: outfit
       map: [ "enum.ToggleableVisuals.Layer" ]
       color: "#1b1b1b"
-    - state: icon-wrapper-fill
+    - state: wrapper-fill
       color: "#ffffff22"
-    - state: icon-wrapper
-    - state: icon-label
+    - state: wrapper
+    - state: label
       color: "#dd6b17"
   - type: StorageFill
     contents:
@@ -450,13 +450,13 @@
   components:
   - type: Sprite
     layers:
-    - state: icon-outfit
+    - state: outfit
       map: [ "enum.ToggleableVisuals.Layer" ]
       color: "#ae2354"
-    - state: icon-wrapper-fill
+    - state: wrapper-fill
       color: "#ffffff22"
-    - state: icon-wrapper
-    - state: icon-label
+    - state: wrapper
+    - state: label
       color: "#dd6b17"
   - type: StorageFill
     contents:
