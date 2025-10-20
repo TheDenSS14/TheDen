@@ -9,20 +9,33 @@
   description: A bag containing assorted costume parts.
   components:
   - type: Sprite
-    sprite: _DV/Objects/Storage/lunchbox.rsi
+    sprite: _DEN/Objects/Storage/costume_bundle.rsi
     layers:
-    - state: generic
-    - state: generic-open
-      map: ["openLayer"]
+    - state: icon-outfit
+      map: [ "enum.ToggleableVisuals.Layer" ]
+      color: "#ffffff"
+    - state: icon-wrapper-fill
+      color: "#ffffff22"
+    - state: icon-wrapper
+    - state: icon-label
+      color: "#dd6b17"
+  # - type: ContainerHeld
+  #   threshold: 1
   - type: Item
     size: Normal
-    shape: null
-    sprite: _DV/Objects/Storage/lunchbox.rsi
-    heldPrefix: generic
+    heldPrefix: empty
+    # sprite: _DEN/Objects/Storage/costume_bundle.rsi
   - type: Storage
     maxItemSize: Normal
     grid:
     - 0,0,5,3
+  - type: Appearance
+  - type: GenericVisualizer
+    visuals:
+     enum.ToggleableVisuals.Enabled:
+        enum.ToggleableVisuals.Layer:
+          True: {visible: true}
+          False: {visible: false}
   - type: StaticPrice
     price: 10
 
@@ -31,6 +44,16 @@
   id: CostumeBundleAngel
   name: angel costume bundle
   components:
+  - type: Sprite
+    layers:
+    - state: icon-outfit
+      map: [ "enum.ToggleableVisuals.Layer" ]
+      color: "#f5b8c3"
+    - state: icon-wrapper-fill
+      color: "#ffffff22"
+    - state: icon-wrapper
+    - state: icon-label
+      color: "#efec98"
   - type: StorageFill
     contents:
     - id: ClothingHeadHalo
@@ -45,6 +68,16 @@
   id: CostumeBundleBunnySuit
   name: bunny suit costume bundle
   components:
+  - type: Sprite
+    layers:
+    - state: icon-outfit
+      map: [ "enum.ToggleableVisuals.Layer" ]
+      color: "#48494e"
+    - state: icon-wrapper-fill
+      color: "#ffffff22"
+    - state: icon-wrapper
+    - state: icon-label
+      color: "#dd6b17"
   - type: StorageFill
     contents:
     - id: ClothingHeadHatBunny
@@ -55,6 +88,16 @@
   id: CostumeBundleCardborg
   name: cardborg costume bundle
   components:
+  - type: Sprite
+    layers:
+    - state: icon-outfit
+      map: [ "enum.ToggleableVisuals.Layer" ]
+      color: "#70736c"
+    - state: icon-wrapper-fill
+      color: "#ffffff22"
+    - state: icon-wrapper
+    - state: icon-label
+      color: "#dd6b17"
   - type: StorageFill
     contents:
     - id: ClothingHeadHatCardborg
@@ -65,6 +108,16 @@
   id: CostumeBundleChicken
   name: chicken costume bundle
   components:
+  - type: Sprite
+    layers:
+    - state: icon-outfit
+      map: [ "enum.ToggleableVisuals.Layer" ]
+      color: "#ffc800"
+    - state: icon-wrapper-fill
+      color: "#ffffff22"
+    - state: icon-wrapper
+    - state: icon-label
+      color: "#dd6b17"
   - type: StorageFill
     contents:
     - id: ClothingHeadHatChickenhead
@@ -75,6 +128,16 @@
   id: CostumeBundleCircusClown
   name: circus clown costume bundle
   components:
+  - type: Sprite
+    layers:
+    - state: icon-outfit
+      map: [ "enum.ToggleableVisuals.Layer" ]
+      color: "#ffd85d"
+    - state: icon-wrapper-fill
+      color: "#ffffff22"
+    - state: icon-wrapper
+    - state: icon-label
+      color: "#74ff33"
   - type: StorageFill
     contents:
     - id: ClothingHeadHatCircusClown
@@ -88,6 +151,16 @@
   id: CostumeBundleDevil
   name: devil costume bundle
   components:
+  - type: Sprite
+    layers:
+    - state: icon-outfit
+      map: [ "enum.ToggleableVisuals.Layer" ]
+      color: "#4b3b56"
+    - state: icon-wrapper-fill
+      color: "#ffffff22"
+    - state: icon-wrapper
+    - state: icon-label
+      color: "#d349c9"
   - type: StorageFill
     contents:
     - id: ClothingHeadDevilHorns
@@ -102,6 +175,16 @@
   id: CostumeBundleGladiator
   name: gladiator costume bundle
   components:
+  - type: Sprite
+    layers:
+    - state: icon-outfit
+      map: [ "enum.ToggleableVisuals.Layer" ]
+      color: "#e1b73d"
+    - state: icon-wrapper-fill
+      color: "#ffffff22"
+    - state: icon-wrapper
+    - state: icon-label
+      color: "#dd6b17"
   - type: StorageFill
     contents:
     - id: ClothingHeadHatGladiator
@@ -112,6 +195,16 @@
   id: CostumeBundleJester
   name: jester costume bundle
   components:
+  - type: Sprite
+    layers:
+    - state: icon-outfit
+      map: [ "enum.ToggleableVisuals.Layer" ]
+      color: "#dd1818"
+    - state: icon-wrapper-fill
+      color: "#ffffff22"
+    - state: icon-wrapper
+    - state: icon-label
+      color: "#74ff33"
   - type: StorageFill
     contents:
     - id: ClothingHeadHatJester
@@ -126,6 +219,16 @@
   id: CostumeBundleJudge
   name: judge costume bundle
   components:
+  - type: Sprite
+    layers:
+    - state: icon-outfit
+      map: [ "enum.ToggleableVisuals.Layer" ]
+      color: "#2e2e2e"
+    - state: icon-wrapper-fill
+      color: "#ffffff22"
+    - state: icon-wrapper
+    - state: icon-label
+      color: "#dd6b17"
   - type: StorageFill
     contents:
     - id: ClothingHeadHatPwig
@@ -136,6 +239,16 @@
   id: CostumeBundleMusicianMarching
   name: marching band costume bundle
   components:
+  - type: Sprite
+    layers:
+    - state: icon-outfit
+      map: [ "enum.ToggleableVisuals.Layer" ]
+      color: "#463c6a"
+    - state: icon-wrapper-fill
+      color: "#ffffff22"
+    - state: icon-wrapper
+    - state: icon-label
+      color: "#6f56b8"
   - type: StorageFill
     contents:
     - id: ClothingHeadHatMusicianShako
@@ -146,6 +259,16 @@
   id: CostumeBundleMusicianLoungeSinger
   name: lounge singer costume bundle
   components:
+  - type: Sprite
+    layers:
+    - state: icon-outfit
+      map: [ "enum.ToggleableVisuals.Layer" ]
+      color: "#463c6a"
+    - state: icon-wrapper-fill
+      color: "#ffffff22"
+    - state: icon-wrapper
+    - state: icon-label
+      color: "#6f56b8"
   - type: StorageFill
     contents:
     - id: ClothingUniformMusicianSingerDress
@@ -157,6 +280,16 @@
   id: CostumeBundlePirate
   name: pirate costume bundle
   components:
+  - type: Sprite
+    layers:
+    - state: icon-outfit
+      map: [ "enum.ToggleableVisuals.Layer" ]
+      color: "#dfe1de"
+    - state: icon-wrapper-fill
+      color: "#ffffff22"
+    - state: icon-wrapper
+    - state: icon-label
+      color: "#dd6b17"
   - type: StorageFill
     contents:
     - id: ClothingHeadHatPirate
@@ -172,11 +305,20 @@
   id: CostumeBundlePerformer
   name: performer costume bundle
   components:
+  - type: Sprite
+    layers:
+    - state: icon-outfit
+      map: [ "enum.ToggleableVisuals.Layer" ]
+      color: "#474f63"
+    - state: icon-wrapper-fill
+      color: "#ffffff22"
+    - state: icon-wrapper
+    - state: icon-label
+      color: "#70cac4"
   - type: StorageFill
     contents:
     - id: ClothingUniformJumpskirtPerformer
     - id: ClothingShoesBootsPerformer
-    - id: FoodMealMemoryleek
     - id: FoodMealMemoryleek
 
 - type: entity
@@ -184,6 +326,16 @@
   id: CostumeBundleRedRaccoon
   name: red raccoon costume bundle
   components:
+  - type: Sprite
+    layers:
+    - state: icon-outfit
+      map: [ "enum.ToggleableVisuals.Layer" ]
+      color: "#e48a1b"
+    - state: icon-wrapper-fill
+      color: "#ffffff22"
+    - state: icon-wrapper
+    - state: icon-label
+      color: "#dd6b17"
   - type: StorageFill
     contents:
     - id: ClothingHeadHatRedRacoon
@@ -194,6 +346,16 @@
   id: CostumeBundleSafari
   name: safari costume bundle
   components:
+  - type: Sprite
+    layers:
+    - state: icon-outfit
+      map: [ "enum.ToggleableVisuals.Layer" ]
+      color: "#d3bf86"
+    - state: icon-wrapper-fill
+      color: "#ffffff22"
+    - state: icon-wrapper
+    - state: icon-label
+      color: "#dd6b17"
   - type: StorageFill
     contents:
     - id: ClothingHeadSafari
@@ -204,6 +366,16 @@
   id: CostumeBundleSanta
   name: santa costume bundle
   components:
+  - type: Sprite
+    layers:
+    - state: icon-outfit
+      map: [ "enum.ToggleableVisuals.Layer" ]
+      color: "#d73827"
+    - state: icon-wrapper-fill
+      color: "#ffffff22"
+    - state: icon-wrapper
+    - state: icon-label
+      color: "#f2c735"
   - type: StorageFill
     contents:
     - id: ClothingHeadHatSantahat
@@ -214,6 +386,16 @@
   id: CostumeBundleShrineMaiden
   name: shrine maiden costume bundle
   components:
+  - type: Sprite
+    layers:
+    - state: icon-outfit
+      map: [ "enum.ToggleableVisuals.Layer" ]
+      color: "#ff1f24"
+    - state: icon-wrapper-fill
+      color: "#ffffff22"
+    - state: icon-wrapper
+    - state: icon-label
+      color: "#dd6b17"
   - type: StorageFill
     contents:
     - id: ClothingHeadHatShrineMaidenWig
@@ -225,6 +407,16 @@
   id: CostumeBundleSkub
   name: skub costume bundle
   components:
+  - type: Sprite
+    layers:
+    - state: icon-outfit
+      map: [ "enum.ToggleableVisuals.Layer" ]
+      color: "#fcd4d4"
+    - state: icon-wrapper-fill
+      color: "#ffffff22"
+    - state: icon-wrapper
+    - state: icon-label
+      color: "#dd6b17"
   - type: StorageFill
     contents:
     - id: ClothingHeadHatSkub
@@ -235,6 +427,16 @@
   id: CostumeBundleWitch
   name: witch costume bundle
   components:
+  - type: Sprite
+    layers:
+    - state: icon-outfit
+      map: [ "enum.ToggleableVisuals.Layer" ]
+      color: "#1b1b1b"
+    - state: icon-wrapper-fill
+      color: "#ffffff22"
+    - state: icon-wrapper
+    - state: icon-label
+      color: "#dd6b17"
   - type: StorageFill
     contents:
     - id: ClothingHeadHatWitch1
@@ -246,6 +448,16 @@
   id: CostumeBundleYakuza
   name: yakuza costume bundle
   components:
+  - type: Sprite
+    layers:
+    - state: icon-outfit
+      map: [ "enum.ToggleableVisuals.Layer" ]
+      color: "#ae2354"
+    - state: icon-wrapper-fill
+      color: "#ffffff22"
+    - state: icon-wrapper
+    - state: icon-label
+      color: "#dd6b17"
   - type: StorageFill
     contents:
     - id: ClothingUniformJumpsuitDameDane
