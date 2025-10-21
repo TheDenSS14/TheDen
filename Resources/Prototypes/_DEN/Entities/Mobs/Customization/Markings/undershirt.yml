@@ -1,5 +1,6 @@
 # SPDX-FileCopyrightText: 2025 Shaman
 # SPDX-FileCopyrightText: 2025 pocl v
+# SPDX-FileCopyrightText: 2025 portfiend
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -107,24 +108,3 @@
     state: undershirt-buttons
   - sprite: _DEN/Mobs/Customization/Undershirt/buttonup_open_fem.rsi
     state: undershirt-collar
-
-# SPDX-FileCopyrightText: 2025 Shaman
-# SPDX-FileCopyrightText: 2025 pocl v
-# SPDX-FileCopyrightText: 2025 portfiend
-#
-# SPDX-License-Identifier: AGPL-3.0-or-later
-
-- type: marking
-  id: UndershirtCropped
-  bodyPart: Undershirt
-  markingCategory: Undershirt
-  invertSpeciesRestriction: True
-  speciesRestriction: [Plasmamen, Thaven, Vox] # TheDen - Thaven
-  coloring:
-    default:
-      type:
-        !type:SimpleColoring
-          color: "#FFFFFF"
-  sprites:
-  - sprite: _DEN/Mobs/Customization/undershirt.rsi
-    state: croppedundershirt
