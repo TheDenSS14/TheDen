@@ -107,3 +107,11 @@ trait-name-Chittin = Chittin
 trait-description-Chittin =
     A language consisting of clicks, buzzes, and some variety of harsh insect sounds.
     Most of what makes up their speech comes from their antennae, making it a near-impossible language for those without to learn.
+
+trait-name-RemoveSpeciesLanguage = No Species Language
+trait-description-RemoveSpeciesLanguage =
+    You cannot speak or understand your species' cultural language - only Tau-Ceti Basic.
+
+trait-name-RemoveSpeciesLanguageLight = No Species Language (Light)
+trait-description-RemoveSpeciesLanguageLight =
+    You cannot speak your species' cultural language, but you can still understand them.

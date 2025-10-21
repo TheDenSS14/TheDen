@@ -46,6 +46,7 @@ using Content.Shared.Humanoid;
 using Content.Shared.Speech;
 using Robust.Shared.Utility;
 using Robust.Shared.GameStates;
+using Content.Shared.Language;
 
 namespace Content.Server.Traits;
 
@@ -237,12 +238,32 @@ public sealed partial class TraitModifyLanguages : TraitFunction
     [DataField, AlwaysPushInheritance]
     public List<string>? RemoveLanguagesUnderstood { get; private set; } = default!;
 
+    /// <summary>
+    /// DEN: Before anything else is processed, all languages except these are removed from the "Spoken" list.
+    /// </summary>
+    [DataField, AlwaysPushInheritance]
+    public List<ProtoId<LanguagePrototype>>? KeepLanguagesSpoken { get; private set; } = null;
+
+    /// <summary>
+    /// DEN: Before anything else is processed, all languages except these are removed from the "Understood" list.
+    /// </summary>
+    [DataField, AlwaysPushInheritance]
+    public List<ProtoId<LanguagePrototype>>? KeepLanguagesUnderstood { get; private set; } = null;
+
     public override void OnPlayerSpawn(EntityUid uid,
         IComponentFactory factory,
         IEntityManager entityManager,
         ISerializationManager serializationManager)
     {
         var language = entityManager.System<LanguageSystem>();
+
+        // DEN start: remove species languages
+        if (KeepLanguagesSpoken is not null)
+            language.ReplaceLanguagesSpoken(uid, KeepLanguagesSpoken);
+
+        if (KeepLanguagesUnderstood is not null)
+            language.ReplaceLanguagesSpoken(uid, KeepLanguagesUnderstood);
+        // DEN end
 
         if (RemoveLanguagesSpoken is not null)
             foreach (var lang in RemoveLanguagesSpoken)
