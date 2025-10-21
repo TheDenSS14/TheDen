@@ -21,7 +21,23 @@
 # Note - the masc ones aren't sex-restricted because some people might prefer that look
 
 - type: marking
+  abstract: true
   parent: BaseUndershirt
+  id: BaseUndershirtButtonUp
+  coloring:
+    default:
+      type: !type:SimpleColoring
+          color: "#FFFFFF"
+    layers:
+      undershirt-buttons:
+        type: !type:SimpleColoring
+            color: "#AAAAAA"
+      undershirt-collar:
+        type: !type:SimpleColoring
+            color: "#AAAAAA"
+
+- type: marking
+  parent: BaseUndershirtButtonUp
   id: UndershirtButtonUp
   sprites:
   - sprite: _DEN/Mobs/Customization/Undershirt/buttonup.rsi
@@ -32,7 +48,7 @@
     state: undershirt-collar
 
 - type: marking
-  parent: BaseUndershirt
+  parent: BaseUndershirtButtonUp
   id: UndershirtButtonUpFem
   sexRestriction: [Male]
   invertSexRestriction: true
@@ -45,7 +61,7 @@
     state: undershirt-collar
 
 - type: marking
-  parent: BaseUndershirt
+  parent: BaseUndershirtButtonUp
   id: UndershirtButtonUpPartial
   sprites:
   - sprite: _DEN/Mobs/Customization/Undershirt/buttonup_partial.rsi
@@ -56,7 +72,7 @@
     state: undershirt-collar
 
 - type: marking
-  parent: BaseUndershirt
+  parent: BaseUndershirtButtonUp
   id: UndershirtButtonUpPartialFem
   sexRestriction: [Male]
   invertSexRestriction: true
@@ -69,7 +85,7 @@
     state: undershirt-collar
 
 - type: marking
-  parent: BaseUndershirt
+  parent: BaseUndershirtButtonUp
   id: UndershirtButtonUpOpen
   sprites:
   - sprite: _DEN/Mobs/Customization/Undershirt/buttonup_open.rsi
@@ -80,7 +96,7 @@
     state: undershirt-collar
 
 - type: marking
-  parent: BaseUndershirt
+  parent: BaseUndershirtButtonUp
   id: UndershirtButtonUpOpenFem
   sexRestriction: [Male]
   invertSexRestriction: true
