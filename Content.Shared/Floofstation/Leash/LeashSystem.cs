@@ -16,9 +16,7 @@ using Content.Shared.Floofstation.Leash.Components;
 using Content.Shared.Hands.Components;
 using Content.Shared.Input;
 using Content.Shared.Inventory.Events;
-using Content.Shared.Movement.Pulling.Events;
 using Content.Shared.Movement.Pulling.Systems;
-using Content.Shared.Physics;
 using Content.Shared.Popups;
 using Content.Shared.Throwing;
 using Content.Shared.Verbs;
@@ -32,7 +30,6 @@ using Robust.Shared.Physics.Dynamics.Joints;
 using Robust.Shared.Physics.Systems;
 using Robust.Shared.Player;
 using Robust.Shared.Timing;
-using Robust.Shared.Utility;
 
 namespace Content.Shared.Floofstation.Leash;
 
@@ -57,6 +54,8 @@ public sealed class LeashSystem : EntitySystem
         UpdatesBefore.Add(typeof(SharedPhysicsSystem));
 
         SubscribeLocalEvent<LeashAnchorComponent, BeingUnequippedAttemptEvent>(OnAnchorUnequipping);
+        SubscribeLocalEvent<LeashAnchorComponent, GotEquippedEvent>(OnAnchorEquipped);
+        SubscribeLocalEvent<LeashAnchorComponent, GotUnequippedEvent>(OnAnchorUnequipped);
         SubscribeLocalEvent<LeashAnchorComponent, GetVerbsEvent<EquipmentVerb>>(OnGetEquipmentVerbs);
         SubscribeLocalEvent<LeashedComponent, JointRemovedEvent>(OnJointRemoved, after: [typeof(SharedJointSystem)]);
         SubscribeLocalEvent<LeashedComponent, GetVerbsEvent<InteractionVerb>>(OnGetLeashedVerbs);
@@ -64,6 +63,8 @@ public sealed class LeashSystem : EntitySystem
         SubscribeLocalEvent<LeashComponent, ExaminedEvent>(OnLeashExamined);
         SubscribeLocalEvent<LeashComponent, EntGotInsertedIntoContainerMessage>(OnLeashInserted);
         SubscribeLocalEvent<LeashComponent, EntGotRemovedFromContainerMessage>(OnLeashRemoved);
+        SubscribeLocalEvent<LeashAnchorComponent, EntGotInsertedIntoContainerMessage>(OnAnchorInserted);
+        SubscribeLocalEvent<LeashAnchorComponent, EntGotRemovedFromContainerMessage>(OnAnchorRemoved);
         SubscribeLocalEvent<LeashComponent, GetVerbsEvent<AlternativeVerb>>(OnGetLeashVerbs);
 
         SubscribeLocalEvent<LeashAnchorComponent, LeashAttachDoAfterEvent>(OnAttachDoAfter);
@@ -142,6 +143,46 @@ public sealed class LeashSystem : EntitySystem
         //    )
         //     args.Cancel();
     }
+
+    private void OnAnchorEquipped(Entity<LeashAnchorComponent> ent, ref GotEquippedEvent args)
+    {
+        if (!_net.IsClient && TryGetLeashTarget(ent.Owner, out var leashTarget)
+            && TryComp<LeashedComponent>(leashTarget, out var leashed)
+            && TryComp<LeashComponent>(leashed.Puller , out var leashComponent))
+            RefreshJoints((leashed.Puller.Value, leashComponent));
+
+    }
+
+    private void OnAnchorUnequipped(Entity<LeashAnchorComponent> ent, ref GotUnequippedEvent args)
+    {
+        if (!_net.IsClient && TryGetLeashTarget(ent.Owner, out var leashTarget)
+            && TryComp<LeashedComponent>(leashTarget, out var leashed)
+            && TryComp<LeashComponent>(leashed.Puller , out var leashComponent))
+        {
+            RefreshJoints((leashed.Puller.Value, leashComponent));
+        }
+    }
+
+    private void OnAnchorInserted(Entity<LeashAnchorComponent> ent, ref EntGotInsertedIntoContainerMessage args)
+    {
+        if (!_net.IsClient && TryGetLeashTarget(ent.Owner, out var leashTarget)
+            && TryComp<LeashedComponent>(leashTarget, out var leashed)
+            && TryComp<LeashComponent>(leashed.Puller , out var leashComponent))
+        {
+            RefreshJoints((leashed.Puller.Value, leashComponent));
+        }
+    }
+
+    private void OnAnchorRemoved(Entity<LeashAnchorComponent> ent, ref EntGotRemovedFromContainerMessage args)
+    {
+        if (!_net.IsClient && TryGetLeashTarget(ent.Owner, out var leashTarget)
+            && TryComp<LeashedComponent>(leashTarget, out var leashed)
+            && TryComp<LeashComponent>(leashed.Puller , out var leashComponent))
+        {
+            RefreshJoints((leashed.Puller.Value, leashComponent));
+        }
+    }
+
 
     private void OnGetEquipmentVerbs(Entity<LeashAnchorComponent> ent, ref GetVerbsEvent<EquipmentVerb> args)
     {
@@ -251,6 +292,8 @@ public sealed class LeashSystem : EntitySystem
     {
         if (!_net.IsClient)
             RefreshJoints(ent);
+
+
     }
 
     private void OnLeashRemoved(Entity<LeashComponent> ent, ref EntGotRemovedFromContainerMessage args)
@@ -326,12 +369,9 @@ public sealed class LeashSystem : EntitySystem
 
         if (TryComp<ClothingComponent>(ent, out var clothing))
         {
-            if (!_container.TryGetContainingContainer(ent.Owner, out var container))
-                return false;
-
-            if (clothing.InSlot == null)
+            if (clothing.InSlot == null || !_container.TryGetContainingContainer(ent.Owner, out var container))
             {
-                leashTarget = ent;
+                leashTarget = ent.Owner;
                 return true;
             }
 
@@ -339,25 +379,28 @@ public sealed class LeashSystem : EntitySystem
             return true;
         }
 
-        leashTarget = ent;
+        leashTarget = ent.Owner;
         return true;
     }
 
     /// <summary>
     ///     Returns true if a leash joint can be created between the two specified entities.
-    ///     This will return false if one of the entities is a parent of another.
     /// </summary>
     public bool CanCreateJoint(EntityUid a, EntityUid b)
     {
-        BaseContainer? aOuter = null, bOuter = null;
+        // Since a joint can't be made between two entities at the same position we can use this simple check instead
+        if (_xform.GetWorldPosition(a) ==  _xform.GetWorldPosition(b))
+            return false;
 
-        // If neither of the entities are in contianers, it's safe to create a joint
-        if (!_container.TryGetOuterContainer(a, Transform(a), out aOuter)
-            && !_container.TryGetOuterContainer(b, Transform(b), out bOuter))
-            return true;
+        return true;
 
-        // Otherwise, we need to make sure that neither of the entities contain the other, and that they are not in the same container.
-        return a != bOuter?.Owner && b != aOuter?.Owner && aOuter?.Owner != bOuter?.Owner;
+        // BaseContainer? aOuter = null, bOuter = null;
+        //
+        // if (_container.TryGetOuterContainer(a, Transform(a), out aOuter)
+        //     && _container.TryGetOuterContainer(b, Transform(b), out bOuter) && aOuter.Owner == bOuter.Owner)
+        //     return false;
+        //
+        // return a != bOuter?.Owner && b != aOuter?.Owner;
     }
 
     private DistanceJoint CreateLeashJoint(string jointId, Entity<LeashComponent> leash, EntityUid leashTarget)
