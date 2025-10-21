@@ -46,42 +46,77 @@
   bodyPart: Tail
   markingCategory: Tail
   speciesRestriction: [Shadowkin, SlimePerson, Human]
+  layering: 
+    shadowkin_under: TailBehind
+    shadowkin_over: Tail
+  colorLinks:
+    shadowkin_under: shadowkin_over
   sprites:
     - sprite: Mobs/Customization/Shadowkin/tails64x32.rsi
-      state: shadowkin
+      state: shadowkin_over
+    - sprite: Mobs/Customization/Shadowkin/tails64x32.rsi
+      state: shadowkin_under
 
 - type: marking
   id: TailShadowkinBig
   bodyPart: Tail
   markingCategory: Tail
   speciesRestriction: [Shadowkin, SlimePerson, Human]
+  layering: 
+    shadowkin_big_under: TailBehind
+    shadowkin_big_over: Tail
+  colorLinks:
+    shadowkin_big_under: shadowkin_big_over
   sprites:
     - sprite: Mobs/Customization/Shadowkin/tails64x32.rsi
-      state: shadowkin_big
+      state: shadowkin_big_over
+    - sprite: Mobs/Customization/Shadowkin/tails64x32.rsi
+      state: shadowkin_big_under
 
 - type: marking
   id: TailShadowkinBigFluff
   bodyPart: Tail
   markingCategory: Tail
   speciesRestriction: [Shadowkin, Reptilian, SlimePerson, Human]
+  layering: 
+    shadowkin_big_fluff_under: TailBehind
+    shadowkin_big_fluff_over: Tail
+  colorLinks:
+    shadowkin_big_fluff_under: shadowkin_big_fluff_over
   sprites:
     - sprite: Mobs/Customization/Shadowkin/tails64x32.rsi
-      state: shadowkin_big_fluff
+      state: shadowkin_big_fluff_over
+    - sprite: Mobs/Customization/Shadowkin/tails64x32.rsi
+      state: shadowkin_big_fluff_under
 
 - type: marking
   id: TailShadowkinShorter
   bodyPart: Tail
   markingCategory: Tail
   speciesRestriction: [Shadowkin, SlimePerson, Human]
+  layering: 
+    shadowkin_shorter_over: Tail
+    shadowkin_shorter_under: TailBehind
+  colorLinks:
+    shadowkin_shorter_under: shadowkin_shorter_over
   sprites:
     - sprite: Mobs/Customization/Shadowkin/tails32x32.rsi
-      state: shadowkin_shorter
+      state: shadowkin_shorter_under
+    - sprite: Mobs/Customization/Shadowkin/tails32x32.rsi
+      state: shadowkin_shorter_over
 
 - type: marking
   id: TailShadowkinMedium
   bodyPart: Tail
   markingCategory: Tail
-  speciesRestriction: [Shadowkin, SlimePerson, Human]
+  speciesRestriction: [Shadowkin, Human]
+  layering: 
+    shadowkin_medium_over: Tail
+    shadowkin_medium_under: TailBehind
+  colorLinks:
+    shadowkin_medium_under: shadowkin_medium_over
   sprites:
     - sprite: Mobs/Customization/Shadowkin/tails32x32.rsi
-      state: shadowkin_medium
+      state: shadowkin_medium_under
+    - sprite: Mobs/Customization/Shadowkin/tails32x32.rsi
+      state: shadowkin_medium_over
