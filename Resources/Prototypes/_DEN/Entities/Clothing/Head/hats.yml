@@ -53,3 +53,12 @@
     sprite: _DEN/Clothing/Head/Hats/aacap.rsi
   - type: Clothing
     sprite: _DEN/Clothing/Head/Hats/aacap.rsi
+
+- type: entity
+  parent: ClothingHeadHatBeret
+  id: ClothingHeadHatBeretWhite
+  components:
+  - type: Sprite
+    sprite: _DEN/Clothing/Head/Hats/beret_colorable.rsi
+  - type: Clothing
+    sprite: _DEN/Clothing/Head/Hats/beret_colorable.rsi
