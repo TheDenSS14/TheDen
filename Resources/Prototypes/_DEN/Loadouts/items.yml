@@ -49,13 +49,6 @@
   - ClothingBackpackNapsack
 
 - type: loadout
-  id: LoadoutSyringe
-  category: GeneralMedical
-  cost: 1
-  items:
-    - Syringe
-
-- type: loadout
   id: LoadoutClothingHandsSentimentalRing
   category: GeneralItems
   cost: 0
@@ -89,46 +82,6 @@
   canBeHeirloom: true
   items:
     - UtilityKnife
-
-#Medications
-- type: loadout
-  id: LoadoutPillCanisterEstradiol
-  category: GeneralMedical
-  description: reagent-desc-estradiol
-  cost: 0
-  items:
-    - PillCanisterEstradiol
-
-- type: loadout
-  id: LoadoutSyringeEstradiol
-  category: GeneralMedical
-  description: reagent-desc-estradiol
-  cost: 0
-  items:
-    - SyringeEstradiol
-
-- type: loadout
-  id: LoadoutPillCanisterTestosterone
-  category: GeneralMedical
-  description: reagent-desc-testosterone
-  cost: 0
-  items:
-    - PillCanisterTestosterone
-
-- type: loadout
-  id: LoadoutSyringeTestosterone
-  category: GeneralMedical
-  description: reagent-desc-testosterone
-  cost: 0
-  items:
-    - SyringeTestosterone
-
-- type: loadout
-  id: LoadoutBirthControlCanister
-  category: GeneralMedical
-  cost: 0
-  items:
-    - BirthControlCanister
 
 - type: loadout
   id: LoadoutItemCigsStinky # Den - Introduction to Stinky Steve's Weed Emporium
