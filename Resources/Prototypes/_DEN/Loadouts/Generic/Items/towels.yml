@@ -1,0 +1,81 @@
+- type: loadout
+  id: LoadoutTowelWhite
+  category: GeneralTowels
+  cost: 1
+  canBeHeirloom: true
+  items:
+    - TowelColorWhite
+
+- type: loadout
+  id: LoadoutTowelBlue
+  category: GeneralTowels
+  cost: 1
+  canBeHeirloom: true
+  items:
+    - TowelColorBlue
+
+- type: loadout
+  id: LoadoutTowelTeal
+  category: GeneralTowels
+  cost: 1
+  canBeHeirloom: true
+  items:
+    - TowelColorTeal
+
+- type: loadout
+  id: LoadoutTowelBrown
+  category: GeneralTowels
+  cost: 1
+  canBeHeirloom: true
+  items:
+    - TowelColorBrown
+
+- type: loadout
+  id: LoadoutTowelPink
+  category: GeneralTowels
+  cost: 1
+  canBeHeirloom: true
+  items:
+    - TowelColorPink
+
+- type: loadout
+  id: LoadoutTowelNT
+  category: GeneralTowels
+  cost: 2
+  canBeHeirloom: true
+  items:
+    - TowelColorNT
+
+- type: loadout
+  id: LoadoutTowelSilver
+  category: GeneralTowels
+  cost: 1
+  canBeHeirloom: true
+  requirements:
+    - !type:CharacterOverallTimeRequirement
+      min: 18000 # 5 hours
+  items:
+    - TowelColorSilver
+
+- type: loadout
+  id: LoadoutTowelGold
+  category: GeneralTowels
+  cost: 1
+  canBeHeirloom: true
+  requirements:
+    - !type:CharacterOverallTimeRequirement
+      min: 36000 # 10 hours
+  items:
+    - TowelColorGold
+
+- type: loadout
+  id: LoadoutTowelGray
+  category: GeneralTowels
+  cost: 1
+  canBeHeirloom: true
+  requirements:
+    - !type:CharacterJobRequirement
+      jobs:
+        - Passenger
+  items:
+    - TowelColorGray
