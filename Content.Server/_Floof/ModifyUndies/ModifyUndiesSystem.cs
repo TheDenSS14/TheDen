@@ -62,7 +62,8 @@ public sealed class ModifyUndiesSystem : EntitySystem
             if (!_markingManager.TryGetMarking(marking, out var mProt))
                 continue;
             // check if the Bodypart is in the component's BodyPartTargets
-            if (!component.BodyPartTargets.Contains(mProt.BodyPart))
+            if (!component.BodyPartTargets.Contains(mProt.BodyPart)
+                && !component.CategoryTargets.Contains(mProt.MarkingCategory)) // DEN: Include the categories too
                 continue;
             var localizedName = Loc.GetString($"marking-{mProt.ID}");
             var partSlot = mProt.BodyPart;

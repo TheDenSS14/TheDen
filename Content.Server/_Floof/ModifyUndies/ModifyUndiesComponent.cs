@@ -4,6 +4,7 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 using Content.Shared.Humanoid;
+using Content.Shared.Humanoid.Markings;
 
 
 namespace Content.Server.FloofStation.ModifyUndies;
@@ -23,6 +24,13 @@ public sealed partial class ModifyUndiesComponent : Component
         HumanoidVisualLayers.Underwear,
         HumanoidVisualLayers.Undershirt
     ];
+
+    /// <summary>
+    /// DEN: Allow removing based on the category too.
+    /// </summary>
+    public HashSet<MarkingCategories> CategoryTargets =
+    [
+        MarkingCategories.Undershirt,
+        MarkingCategories.Underwear,
+    ];
 }
-
-
