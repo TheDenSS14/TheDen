@@ -1,9 +1,11 @@
-# SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT <77995199+DEATHB4DEFEAT@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 sleepyyapril <flyingkarii@gmail.com>
-# SPDX-FileCopyrightText: 2025 GNUtopia <93669372+GNUtopia@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 Lonofera <108367450+LonoferaRS@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 VMSolidus <evilexecutive@gmail.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT
+# SPDX-FileCopyrightText: 2024 sleepyyapril
+# SPDX-FileCopyrightText: 2025 Blitz
+# SPDX-FileCopyrightText: 2025 Eightballll
+# SPDX-FileCopyrightText: 2025 GNUtopia
+# SPDX-FileCopyrightText: 2025 KekaniCreates
+# SPDX-FileCopyrightText: 2025 Lonofera
+# SPDX-FileCopyrightText: 2025 VMSolidus
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -317,3 +319,18 @@
     - Bartender
   items:
   - DrinkCumBottleFull
+
+- type: loadout
+  id: LoadoutServiceBartenderGoldenShaker
+  category: JobsServiceBartender
+  cost: 0
+  exclusive: false
+  items: 
+    - DrinkShakerGold
+  requirements: 
+  - !type:CharacterJobRequirement
+    jobs: 
+    - Bartender
+  - !type:CharacterPlaytimeRequirement
+    tracker: JobBartender
+    min: 360000 #100 hours

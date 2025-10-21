@@ -1,0 +1,265 @@
+## Job-specific
+
+- type: loadout
+  id: LoadoutCostumeBundleCircusClown
+  category: Costumes
+  cost: 2
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutCostumeBundles
+  - !type:CharacterLogicOrRequirement
+    requirements:
+    - !type:CharacterPlaytimeRequirement
+      tracker: JobClown
+      min: 108000 # 30 hours; ~10 full shifts
+    - !type:CharacterJobRequirement
+      jobs:
+      - Clown
+  items:
+  - CostumeBundleCircusClown
+
+- type: loadout
+  id: LoadoutCostumeBundleJester
+  category: Costumes
+  cost: 2
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutCostumeBundles
+  - !type:CharacterLogicOrRequirement
+    requirements:
+    - !type:CharacterPlaytimeRequirement
+      tracker: JobClown
+      min: 108000 # 30 hours; ~10 full shifts
+    - !type:CharacterJobRequirement
+      jobs:
+      - Clown
+  items:
+  - CostumeBundleJester
+
+- type: loadout
+  id: LoadoutCostumeBundleMusicianMarching
+  category: Costumes
+  cost: 2
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutCostumeBundles
+  - !type:CharacterLogicOrRequirement
+    requirements:
+    - !type:CharacterPlaytimeRequirement
+      tracker: JobMusician
+      min: 108000 # 30 hours; ~10 full shifts
+    - !type:CharacterJobRequirement
+      jobs:
+      - Musician
+  items:
+  - CostumeBundleMusicianMarching
+
+- type: loadout
+  id: LoadoutCostumeBundleMusicianLoungeSinger
+  category: Costumes
+  cost: 2
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutCostumeBundles
+  - !type:CharacterLogicOrRequirement
+    requirements:
+    - !type:CharacterPlaytimeRequirement
+      tracker: JobMusician
+      min: 108000 # 30 hours; ~10 full shifts
+    - !type:CharacterJobRequirement
+      jobs:
+      - Musician
+  items:
+  - CostumeBundleMusicianLoungeSinger
+
+## Other
+
+- type: loadout
+  id: LoadoutCostumeBundleAngel
+  category: Costumes
+  cost: 2
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutCostumeBundles
+  items:
+  - CostumeBundleAngel
+
+- type: loadout
+  id: LoadoutCostumeBundleBunnySuit
+  category: Costumes
+  cost: 2
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutCostumeBundles
+  items:
+  - CostumeBundleBunnySuit
+
+- type: loadout
+  id: LoadoutCostumeBundleBurglar
+  category: Costumes
+  cost: 2
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutCostumeBundles
+  items:
+  - CostumeBundleBurglar
+
+- type: loadout
+  id: LoadoutCostumeBundleCardborg
+  category: Costumes
+  cost: 2
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutCostumeBundles
+  items:
+  - CostumeBundleCardborg
+
+- type: loadout
+  id: LoadoutCostumeBundleChicken
+  category: Costumes
+  cost: 2
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutCostumeBundles
+  items:
+  - CostumeBundleChicken
+
+- type: loadout
+  id: LoadoutCostumeBundleDevil
+  category: Costumes
+  cost: 2
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutCostumeBundles
+  items:
+  - CostumeBundleDevil
+
+- type: loadout
+  id: LoadoutCostumeBundleGladiator
+  category: Costumes
+  cost: 2
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutCostumeBundles
+  items:
+  - CostumeBundleGladiator
+
+- type: loadout
+  id: LoadoutCostumeBundleJudge
+  category: Costumes
+  cost: 2
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutCostumeBundles
+  items:
+  - CostumeBundleJudge
+
+- type: loadout
+  id: LoadoutCostumeBundleMonkey
+  category: Costumes
+  cost: 2
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutCostumeBundles
+  items:
+  - CostumeBundleMonkey
+
+- type: loadout
+  id: LoadoutCostumeBundlePirate
+  category: Costumes
+  cost: 2
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutCostumeBundles
+  items:
+  - CostumeBundlePirate
+
+- type: loadout
+  id: LoadoutCostumeBundlePerformer
+  category: Costumes
+  cost: 2
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutCostumeBundles
+  items:
+  - CostumeBundlePerformer
+
+- type: loadout
+  id: LoadoutCostumeBundleRedRaccoon
+  category: Costumes
+  cost: 2
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutCostumeBundles
+  items:
+  - CostumeBundleRedRaccoon
+
+- type: loadout
+  id: LoadoutCostumeBundleSafari
+  category: Costumes
+  cost: 2
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutCostumeBundles
+  items:
+  - CostumeBundleSafari
+
+- type: loadout
+  id: LoadoutCostumeBundleSailor
+  category: Costumes
+  cost: 2
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutCostumeBundles
+  items:
+  - CostumeBundleSailor
+
+- type: loadout
+  id: LoadoutCostumeBundleSanta
+  category: Costumes
+  cost: 2
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutCostumeBundles
+  items:
+  - CostumeBundleSanta
+
+- type: loadout
+  id: LoadoutCostumeBundleShrineMaiden
+  category: Costumes
+  cost: 2
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutCostumeBundles
+  items:
+  - CostumeBundleShrineMaiden
+
+- type: loadout
+  id: LoadoutCostumeBundleSkub
+  category: Costumes
+  cost: 2
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutCostumeBundles
+  items:
+  - CostumeBundleSkub
+
+- type: loadout
+  id: LoadoutCostumeBundleWitch
+  category: Costumes
+  cost: 2
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutCostumeBundles
+  items:
+  - CostumeBundleWitch
+
+- type: loadout
+  id: LoadoutCostumeBundleYakuza
+  category: Costumes
+  cost: 2
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutCostumeBundles
+  items:
+  - CostumeBundleYakuza

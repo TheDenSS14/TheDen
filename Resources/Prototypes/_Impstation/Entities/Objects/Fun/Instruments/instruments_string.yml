@@ -17,3 +17,6 @@
         - state: inhand-left
       right:
         - state: inhand-right
+  - type: Tag # DEN: Allow item to be inserted in costume bundles
+    tags:
+    - CostumeItem
