@@ -599,21 +599,40 @@
   id: TailShadekinShorter
   bodyPart: Tail
   markingCategory: Tail
-  speciesRestriction: [Shadowkin, Human] # TheDen - Human
+  speciesRestriction: [Shadowkin, Human]
+  layering: 
+    shadekin_shorter_over: Tail
+    shadekin_shorter_under: TailBehind
+  colorLinks:
+    shadekin_shorter_under: shadekin_shorter_over
   sprites:
     - sprite: _ADT/Mobs/Customization/Shadekin/shadekin_tails_32x32.rsi
-      state: shadekin_shorter
+      state: shadekin_shorter_over
+    - sprite: _ADT/Mobs/Customization/Shadekin/shadekin_tails_32x32.rsi
+      state: shadekin_shorter_under
 
 - type: marking
   id: TailShadekinShorterBrush
   bodyPart: Tail
   markingCategory: Tail
   speciesRestriction: [Shadowkin, Human] # TheDen - Human
+  layering:
+    shadekin_shorter_over: Tail
+    shadekin_shorter_under: TailBehind
+    shorter_brush_over: Tail
+    shorter_brush_under: TailBehind
+  colorLinks:
+    shadekin_shorter_under: shadekin_shorter_over
+    shorter_brush_under: shorter_brush_over
   sprites:
-    - sprite: _ADT/Mobs/Customization/Shadekin/shadekin_tails_32x32.rsi
-      state: shadekin_shorter
-    - sprite: _ADT/Mobs/Customization/Shadekin/shadekin_tails_32x32.rsi
-      state: shorter_brush
+  - sprite: _ADT/Mobs/Customization/Shadekin/shadekin_tails_32x32.rsi
+    state: shadekin_shorter_under
+  - sprite: _ADT/Mobs/Customization/Shadekin/shadekin_tails_32x32.rsi
+    state: shadekin_shorter_over
+  - sprite: _ADT/Mobs/Customization/Shadekin/shadekin_tails_32x32.rsi
+    state: shorter_brush_under
+  - sprite: _ADT/Mobs/Customization/Shadekin/shadekin_tails_32x32.rsi
+    state: shorter_brush_over
 
 - type: marking
   id: TailShadekinMedium
@@ -630,17 +649,27 @@
       state: shadekin_medium_behind
     - sprite: _ADT/Mobs/Customization/Shadekin/shadekin_tails_32x32.rsi
       state: shadekin_medium_front
-#come back to this and just. set it back to normal medium i fucking guess?????? what in the hell is wrong
-  #did not do that. unsure what is wrong. ask for assistance?????
 
 - type: marking
   id: TailShadekinMediumTwoColored
   bodyPart: Tail
   markingCategory: Tail
   speciesRestriction: [Shadowkin, Human] # TheDen - Human
+  layering:
+    shadekin_medium_front: Tail
+    shadekin_medium_behind: TailBehind
+    medium_twocolored_over: Tail
+    medium_twocolored_under: TailBehind
+  colorLinks:
+    shadekin_medium_behind: shadekin_medium_front
+    medium_twocolored_under: medium_twocolored_over
   sprites:
-    - sprite: _ADT/Mobs/Customization/Shadekin/shadekin_tails_32x32.rsi
-      state: shadekin_medium
-    - sprite: _ADT/Mobs/Customization/Shadekin/shadekin_tails_32x32.rsi
-      state: medium_twocolored
+  - sprite: _ADT/Mobs/Customization/Shadekin/shadekin_tails_32x32.rsi
+    state: shadekin_medium_behind
+  - sprite: _ADT/Mobs/Customization/Shadekin/shadekin_tails_32x32.rsi
+    state: shadekin_medium_front
+  - sprite: _ADT/Mobs/Customization/Shadekin/shadekin_tails_32x32.rsi
+    state: medium_twocolored_under
+  - sprite: _ADT/Mobs/Customization/Shadekin/shadekin_tails_32x32.rsi
+    state: medium_twocolored_over
 
