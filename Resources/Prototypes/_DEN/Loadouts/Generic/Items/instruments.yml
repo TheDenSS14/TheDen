@@ -1,0 +1,13 @@
+- type: loadout
+  id: LoadoutItemHandheldHarpInstrument
+  category: GeneralInstruments
+  cost: 2
+  items:
+    - HandheldHarpInstrument
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutInstrumentsAny
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Musician
