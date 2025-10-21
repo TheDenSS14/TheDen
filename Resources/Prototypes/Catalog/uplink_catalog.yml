@@ -112,7 +112,7 @@
 # SPDX-FileCopyrightText: 2025 mart
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 # TODO: make more categories
 # Guns
@@ -2106,7 +2106,7 @@
   id: uplinkNecronomicon
   name: uplink-necronomicon-name
   description: uplink-necronomicon-desc
-  productEntity: BibleNecronomicon
+  productEntity: HolyBookNecronomicon
   discountCategory: usualDiscounts
   discountDownTo:
     Telecrystal: 10
@@ -2331,6 +2331,17 @@
     whitelist:
     - Chef
     - Mime
+
+- type: listing
+  id: UplinkContrabandLighter
+  name: uplink-contraband-lighter-name
+  description: uplink-contraband-lighter-desc
+  icon: { sprite:  Objects/Tools/Lighters/syndielighter.rsi, state: icon}
+  productEntity: UplinkLighterBox
+  cost:
+    Telecrystal: 5 # The Den - TC cost 1 -> 5
+  categories:
+  - UplinkPointless
 
 - type: listing
   id: UplinkSmugglerSatchel

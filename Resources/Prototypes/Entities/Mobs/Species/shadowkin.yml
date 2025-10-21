@@ -1,4 +1,5 @@
 # SPDX-FileCopyrightText: 2024 FoxxoTrystan
+# SPDX-FileCopyrightText: 2025 ASaltySeabass
 # SPDX-FileCopyrightText: 2025 Eagle-0
 # SPDX-FileCopyrightText: 2025 Eris
 # SPDX-FileCopyrightText: 2025 MajorMoth
@@ -13,7 +14,7 @@
 # SPDX-FileCopyrightText: 2025 portfiend
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 - type: entity
   save: false
@@ -64,6 +65,13 @@
           Heat: -0.07
         groups:
           Brute: -0.07
+    - type: AdditionalPassiveDamage #Take bloodloss instead of airloss in critical condition.
+      allowedStates:
+        - Critical
+      damageCap: 400
+      damage: 
+        types:
+          Bloodloss: 0.5
     - type: StatusEffects
       allowed:
         - Stun
@@ -137,7 +145,7 @@
           Bloodloss: 1
       bloodlossHealDamage:
         types:
-          Bloodloss: -0.25
+          Bloodloss: -0.5 #Takes bloodloss in critical, recovers it faster to compensate.
       bloodReagent: BlackBlood
     - type: Temperature
       heatDamageThreshold: 330

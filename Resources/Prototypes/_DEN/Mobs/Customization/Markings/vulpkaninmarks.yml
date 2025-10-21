@@ -1,7 +1,9 @@
-# SPDX-FileCopyrightText: 2025 LaconiumDragona <riascazadofelra@gmail.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 LaconiumDragona
+# SPDX-FileCopyrightText: 2025 mart
+# SPDX-FileCopyrightText: 2025 sheepie
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: marking
   id: NeckChestfluff
@@ -110,3 +112,34 @@
   sprites:
   - sprite: _DEN/Mobs/Customization/Vulpkanin/backmarks.rsi
     state: backwhole
+
+- type: marking
+  id: VulpTailFluffyTip
+  bodyPart: Tail
+  markingCategory: Tail
+  speciesRestriction: [Vulpkanin]
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Vulpkanin/fluffytip.rsi
+    state: fluffyalt
+  - sprite: _DEN/Mobs/Customization/Vulpkanin/fluffytip.rsi
+    state: fluffyalttip
+
+- type: marking
+  id: VulpTailFluffyAnimated
+  bodyPart: Tail
+  markingCategory: Tail
+  speciesRestriction: []
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Vulpkanin/fluffytip.rsi
+    state: fluffywag
+
+- type: marking
+  id: VulpTailFluffyTipAnimated
+  bodyPart: Tail
+  markingCategory: Tail
+  speciesRestriction: []
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Vulpkanin/fluffytip.rsi
+    state: fluffyaltwag
+  - sprite: _DEN/Mobs/Customization/Vulpkanin/fluffytip.rsi
+    state: fluffyaltwagtip

@@ -11,14 +11,17 @@
 // SPDX-FileCopyrightText: 2024 deathride58
 // SPDX-FileCopyrightText: 2024 metalgearsloth
 // SPDX-FileCopyrightText: 2025 DocNITE
+// SPDX-FileCopyrightText: 2025 Falcon
 // SPDX-FileCopyrightText: 2025 RedFoxIV
+// SPDX-FileCopyrightText: 2025 portfiend
 // SPDX-FileCopyrightText: 2025 sev7ves
 // SPDX-FileCopyrightText: 2025 sleepyyapril
 //
-// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+// SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 using System.Linq;
 using Content.Client.UserInterface.Screens;
+using Content.Shared._DEN.CCVars;
 using Content.Shared._DV.CCVars;
 using Content.Shared._Impstation.CCVar;
 using Content.Shared.CCVar;
@@ -45,6 +48,9 @@ namespace Content.Client.Options.UI.Tabs
         [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
 
         private readonly Dictionary<string, int> _hudThemeIdToIndex = new();
+
+        // DEN: Examine tooltip width slider
+        const float ExamineWidthIncrement = 10.0f;
 
         public MiscTab()
         {
@@ -114,6 +120,8 @@ namespace Content.Client.Options.UI.Tabs
             DisableDrunkWarpingCheckBox.OnToggled += OnCheckBoxToggled;
             ChatWindowOpacitySlider.OnValueChanged += OnChatWindowOpacitySliderChanged;
             ScreenShakeIntensitySlider.OnValueChanged += OnScreenShakeIntensitySliderChanged;
+            ExamineTooltipWidthSlider.OnValueChanged += OnExamineTooltipWidthSliderChanged; // DEN: Examine tooltip width
+
             // ToggleWalk.OnToggled += OnCheckBoxToggled;
             StaticStorageUI.OnToggled += OnCheckBoxToggled;
             ModernProgressBar.OnToggled += OnCheckBoxToggled;
@@ -140,6 +148,13 @@ namespace Content.Client.Options.UI.Tabs
             DisableDrunkWarpingCheckBox.Pressed = _cfg.GetCVar(DCCVars.DisableDrunkWarping);//den edit
             ChatWindowOpacitySlider.Value = _cfg.GetCVar(CCVars.ChatWindowOpacity);
             ScreenShakeIntensitySlider.Value = _cfg.GetCVar(CCVars.ScreenShakeIntensity) * 100f;
+
+            // DEN: Examine tooltip width slider
+            var tooltipWidth = _cfg.GetCVar(DenCCVars.ExamineTooltipWidth);
+            var tooltipSliderValue = ToSliderIncrementValue(tooltipWidth, ExamineWidthIncrement);
+            ExamineTooltipWidthSlider.SetValueWithoutEvent(tooltipSliderValue);
+            UpdateExamineTooltipWidthLabel();
+
             // ToggleWalk.Pressed = _cfg.GetCVar(CCVars.ToggleWalk);
             StaticStorageUI.Pressed = _cfg.GetCVar(CCVars.StaticStorageUI);
             ModernProgressBar.Pressed = _cfg.GetCVar(CCVars.ModernProgressBar);
@@ -177,11 +192,33 @@ namespace Content.Client.Options.UI.Tabs
             UpdateApplyButton();
         }
 
+        // DEn Start: Examine tooltip maximum width setting
+        private void OnExamineTooltipWidthSliderChanged(Range obj)
+        {
+            var intValue = (int) ExamineTooltipWidthSlider.Value;
+            ExamineTooltipWidthSlider.SetValueWithoutEvent(intValue);
+            UpdateExamineTooltipWidthLabel();
+            UpdateApplyButton();
+        }
+
+        private void UpdateExamineTooltipWidthLabel()
+        {
+            var pixelWidth = FromSliderIncrementValue(ExamineTooltipWidthSlider.Value, ExamineWidthIncrement);
+            var labelText = Loc.GetString("ui-options-examine-tooltip-width-label",
+                ("width", (int) pixelWidth));
+            ExamineTooltipWidthLabel.Text = labelText;
+        }
+        // End DEN
+
         private void OnChatHighlightingColorpickerChanged()
         {
             ExampleLabel.FontColorOverride = ChatHighlightingColorpicker.Color;
             UpdateApplyButton();
         }
+
+        // DEN: Helper functions for examine tooltip width slider
+        private static float ToSliderIncrementValue(float value, float increment) => value / increment;
+        private static float FromSliderIncrementValue(float value, float increment) => value * increment;
 
         private void OnApplyButtonPressed(BaseButton.ButtonEventArgs args)
         {
@@ -205,11 +242,16 @@ namespace Content.Client.Options.UI.Tabs
             _cfg.SetCVar(CCVars.ChatEnableColorName, EnableColorNameCheckBox.Pressed);
             _cfg.SetCVar(CCVars.AccessibilityColorblindFriendly, ColorblindFriendlyCheckBox.Pressed);
             _cfg.SetCVar(CCVars.ReducedMotion, ReducedMotionCheckBox.Pressed);
-            _cfg.SetCVar(ImpCCVars.DisableSinguloWarping,DisableSinguloWarpingCheckBox.Pressed);
-            _cfg.SetCVar(DCCVars.DisableDrugWarping,DisableDrugWarpingCheckBox.Pressed);//den edit
-            _cfg.SetCVar(DCCVars.DisableDrunkWarping,DisableDrunkWarpingCheckBox.Pressed);//den edit
+            _cfg.SetCVar(ImpCCVars.DisableSinguloWarping, DisableSinguloWarpingCheckBox.Pressed);
+            _cfg.SetCVar(DCCVars.DisableDrugWarping, DisableDrugWarpingCheckBox.Pressed);//den edit
+            _cfg.SetCVar(DCCVars.DisableDrunkWarping, DisableDrunkWarpingCheckBox.Pressed);//den edit
             _cfg.SetCVar(CCVars.ChatWindowOpacity, ChatWindowOpacitySlider.Value);
             _cfg.SetCVar(CCVars.ScreenShakeIntensity, ScreenShakeIntensitySlider.Value / 100f);
+
+            // DEN: Examine tooltip maximum width
+            var examineWidth = FromSliderIncrementValue(ExamineTooltipWidthSlider.Value, ExamineWidthIncrement);
+            _cfg.SetCVar(DenCCVars.ExamineTooltipWidth, examineWidth);
+
             // _cfg.SetCVar(CCVars.ToggleWalk, ToggleWalk.Pressed);
             _cfg.SetCVar(CCVars.StaticStorageUI, StaticStorageUI.Pressed);
             _cfg.SetCVar(CCVars.ModernProgressBar, ModernProgressBar.Pressed);
@@ -249,6 +291,11 @@ namespace Content.Client.Options.UI.Tabs
             var isDisableDrunkWarpingSame = DisableDrunkWarpingCheckBox.Pressed == _cfg.GetCVar(DCCVars.DisableDrunkWarping);//den edit
             var isChatWindowOpacitySame = Math.Abs(ChatWindowOpacitySlider.Value - _cfg.GetCVar(CCVars.ChatWindowOpacity)) < 0.01f;
             var isScreenShakeIntensitySame = Math.Abs(ScreenShakeIntensitySlider.Value / 100f - _cfg.GetCVar(CCVars.ScreenShakeIntensity)) < 0.01f;
+
+            // DEN: Examine tooltip maximum width
+            var examineSliderWidth = FromSliderIncrementValue(ExamineTooltipWidthSlider.Value, ExamineWidthIncrement);
+            var isExamineTooltipWidthSame = examineSliderWidth == _cfg.GetCVar(DenCCVars.ExamineTooltipWidth);
+
             // var isToggleWalkSame = ToggleWalk.Pressed == _cfg.GetCVar(CCVars.ToggleWalk);
             var isStaticStorageUISame = StaticStorageUI.Pressed == _cfg.GetCVar(CCVars.StaticStorageUI);
             var isModernProgressBarSame = ModernProgressBar.Pressed == _cfg.GetCVar(CCVars.ModernProgressBar);
@@ -277,6 +324,7 @@ namespace Content.Client.Options.UI.Tabs
                                    isDisableDrunkWarpingSame && //den edit
                                    isChatWindowOpacitySame &&
                                    isScreenShakeIntensitySame &&
+                                   isExamineTooltipWidthSame && // DEN: Examine tooltip maximum width
                                    // isToggleWalkSame &&
                                    isStaticStorageUISame &&
                                    isModernProgressBarSame &&

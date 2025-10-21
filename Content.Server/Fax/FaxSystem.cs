@@ -11,6 +11,7 @@
 // SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT
 // SPDX-FileCopyrightText: 2024 Ed
 // SPDX-FileCopyrightText: 2024 Guilherme Ornel
+// SPDX-FileCopyrightText: 2024 Plykiya
 // SPDX-FileCopyrightText: 2024 SimpleStation14
 // SPDX-FileCopyrightText: 2024 Tayrtahn
 // SPDX-FileCopyrightText: 2024 metalgearsloth
@@ -26,7 +27,6 @@
 // SPDX-FileCopyrightText: 2024 voidnull000
 // SPDX-FileCopyrightText: 2025 Aiden
 // SPDX-FileCopyrightText: 2025 Aviu00
-// SPDX-FileCopyrightText: 2025 GoobBot
 // SPDX-FileCopyrightText: 2025 ScarKy0
 // SPDX-FileCopyrightText: 2025 Solstice
 // SPDX-FileCopyrightText: 2025 SolsticeOfTheWinter
@@ -44,7 +44,6 @@ using Content.Server.DeviceNetwork;
 using Content.Server.DeviceNetwork.Components;
 using Content.Server.DeviceNetwork.Systems;
 using Content.Server.Labels;
-using Content.Server.Paper;
 using Content.Server.Popups;
 using Content.Server.Power.Components;
 using Content.Server.Tools;
@@ -637,14 +636,14 @@ public sealed class FaxSystem : EntitySystem
 
         if (TryComp<PaperComponent>(printed, out var paper))
         {
-            _paperSystem.SetContent(printed, printout.Content);
+            _paperSystem.SetContent((printed, paper), printout.Content);
 
             // Apply stamps
             if (printout.StampState != null)
             {
                 foreach (var stamp in printout.StampedBy)
                 {
-                    _paperSystem.TryStamp(printed, stamp, printout.StampState);
+                    _paperSystem.TryStamp((printed, paper), stamp, printout.StampState);
                 }
             }
         }

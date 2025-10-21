@@ -1,5 +1,6 @@
-# SPDX-FileCopyrightText: 2025 Blitz <73762869+BlitzTheSquishy@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Blitz
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+# SPDX-FileCopyrightText: 2025 wheelwrightt
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -11,3 +12,5 @@ lathe-category-envirosuits = Envirosuits
 lathe-category-loadout-jumpsuits = Uniforms (Cosmetic)
 lathe-category-loadout-dresses = Uniforms (Dress)
 lathe-category-hygiene-products = Hygiene Products
+lathe-category-air-tanks = Air Tanks
+

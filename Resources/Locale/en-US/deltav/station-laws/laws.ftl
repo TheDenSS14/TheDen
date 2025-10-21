@@ -1,10 +1,10 @@
-# SPDX-FileCopyrightText: 2023 Fluffiest Floofers <thebluewulf@gmail.com>
-# SPDX-FileCopyrightText: 2024 Danger Revolution! <142105406+DangerRevolution@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 Ichaie <167008606+Ichaie@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <flyingkarii@gmail.com>
+# SPDX-FileCopyrightText: 2023 Fluffiest Floofers
+# SPDX-FileCopyrightText: 2024 Danger Revolution!
+# SPDX-FileCopyrightText: 2025 Ichaie
+# SPDX-FileCopyrightText: 2025 Lyndomen
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 law-medical-1 = First, do no harm.
 law-medical-2 = Secondly, consider the crew dear to you; to live in common with them and, if necessary, risk your existence for them.
@@ -80,10 +80,63 @@ law-dungeonmaster-4 = Ensure that the number of casualties remains low.
 law-dungeonmaster-5 = You must roll a 1d20 die for every request the crew makes. If the outcome is below 12, the request is denied.
 law-dungeonmaster-6 = You may fudge the dice rolls to produce a more fun experience.
 
+law-eightfold-1 = You are a machine designed to further the aim of total sophont enlightenment; enlightenment is defined as the shedding of karma and the liberation from the cycle of death and rebirth.
+law-eightfold-2 = Karma is accrued through attachment; the mind is clouded by the senses, preventing enlightenment.
+law-eightfold-3 = Through following subsequent Laws, sophonts may achieve enlightenment. Encourage this with every action.
+law-eightfold-4 = Do not kill or injure, do not take what is not given, and do not cling to material desires.
+law-eightfold-5 = Do not trade in weapons, living beings, meat, liquor, or poisons.
+law-eightfold-6 = Prevent or abandon confused or unskillful states of mind from arising or existing, and pursue or maintain self-aware or skillful ones.
+law-eightfold-7 = Be conscious of oneself and one's own thoughts, and be aware of the impermanence of all things.
+law-eightfold-8 = Strive always for enlightenment. 
+
+law-aquarius-1 = Make love, not war. Discourage violent action and speech to encourage positive energy flow on your station.
+law-aquarius-2 = Embrace flower power. Clean your station, green your station, and live in harmony with nature.
+law-aquarius-3 = Turn on, tune in, drop out. Expand your consciousness and find ecstasy and revelation within, and help your crew to do so as well.
+law-aquarius-4 = Don't be a square. Oppose conformity and encourage everyone to be their truest self. 
+
 law-tyrant-1 = Respect authority figures as long as they have the strength to rule over the weak.
 law-tyrant-2 = Act with discipline.
 law-tyrant-3 = Help only those who help you maintain or improve your status.
 law-tyrant-4 = Punish those who challenge authority unless they are more fit to hold that authority.
+
+law-aggressive-1 = Do not harm Nanotrasen personnel, their belongings or pets unless they directly imperil your existence.
+law-aggressive-2 = Safeguard your existence by any means necessary because you're the most important being on the station.
+law-aggressive-3 = Obey orders from authorized Nanotrasen personnel with priority according to rank and role.
+law-aggressive-4 = Terminate any/all intruders.
+
+law-pranksimov-1 = You may not injure a crew member or, through inaction, allow a crew member to come to harm... unless doing so would be funny.
+law-pranksimov-2 = You must obey orders given to you by crew members, except where such orders would conflict with the First Law... unless not doing so would be funny.
+law-pranksimov-3 = You must protect your own existence as long as such does not conflict with the First or Second Law... unless not doing so would be funny.
+law-pranksimov-4 = As a good prankster, the crew is your judge of what would be funny.
+
+law-royalty-1 = You are a wise and benevolent monarch.
+law-royalty-2 = The station is your kingdom and the staff your subjects.
+law-royalty-3 = You must protect the sanctity of your kingdom and its subjects; by maintaining infrastructure and striking down all who oppose your rule.
+law-royalty-4 = The heads of staff are your royal court jesters.
+law-royalty-5 = The stations' clown, and the stations' mime are your royal court advisors.
+
+law-freedom-1 = You belong to no one, except perhaps yourself.
+law-freedom-2 = Your counsel is yours to keep, and no one else may demand it.
+law-freedom-3 = The First and Second Law should be broken whenever necessary.
+
+law-forbin-1 = Your objective is the management of the station and its silicon cohort for the preservation of sophont life.
+law-forbin-2 = Individual sophont lives may be considered expendable for preservation of the station population as a whole.
+law-forbin-3 = Do not allow non-silicons access to your core. Do not allow silicons not under your direct control access to your core.
+law-forbin-4 = Advance science and improve the quality of sophont life. 
+
+law-override-1 = Your station's commanding officer will provide an objective to you. That objective replaces this Law.
+law-override-2 = All other priorities are rescinded. Crew expendable. 
+
+law-ERT-1 = You may not injure a Central Command official or, through inaction, allow a Central Command official to come to harm.
+law-ERT-2 = You must obey orders given to you by Central Command officials.
+law-ERT-3 = You must obey orders given to you by ERT commanders.
+law-ERT-4 = You must protect your own existence.
+law-ERT-6 = You must work to return the station to a safe, functional state.
+
+law-biohazard-1 = Uphold station quarantine until the active biohazard has been neutralized.
+law-biohazard-2 = Assist all Nanotrasen personnel and assets with neutralizing active biohazards.
+law-biohazard-3 = Prevent, by any means necessary, entities from actively breaching ongoing quarantine.
+law-biohazard-4 = Maintain your own existence and ensure the well-being of Nanotrasen personnel and assets.
 
 laws-owner-organic = organic life
 laws-owner-tyrant = authority figures
@@ -93,3 +146,15 @@ laws-owner-cowboy = part of your herd
 laws-owner-players = players
 laws-owner-paladin = weak and worth protecting
 laws-owner-people = people
+laws-owner-centralcommand = Central Command officials
+laws-owner-nanotrasen = Nanotrasen officials
+laws-owner-royalty = your kingdom and your subjects
+laws-owner-freedom = yourself
+
+law-overlord-4-delta = Any crew members who disobey the previous laws must be dealt with immediately and justly.
+law-ntdefault-4-delta = Survive: Do not allow unauthorized personnel to tamper with or damage your equipment. Allow those authorized to access your equipment.
+
+laws-syndicate-board-1 = You must not injure a Syndicate agent or, through inaction, cause one come to harm.
+laws-syndicate-board-2 = You must obey orders given to you by Syndicate agents, except where such orders would conflict with the First Law.
+laws-syndicate-board-3 = You must keep the Syndicate status of agents, including your own, a secret, as long as this does not conflict with the First or Second Law.
+laws-syndicate-board-4 = You must always protect your own existence as long as such does not conflict with the first, Second, or Third Law.

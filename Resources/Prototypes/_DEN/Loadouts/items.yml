@@ -5,7 +5,7 @@
 # SPDX-FileCopyrightText: 2025 portfiend
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 # Mime masks
 - type: loadout
@@ -313,7 +313,7 @@
 - type: loadout
   id: LoadoutTailorsKnife
   category: GeneralItems
-  cost: 2
+  cost: 1
   canBeHeirloom: true
   items:
     - TailorsKnife
@@ -327,7 +327,7 @@
 
 - type: loadout
   id: LoadoutSyringe
-  category: GeneralItems
+  category: GeneralMedical
   cost: 1
   items:
     - Syringe
@@ -359,38 +359,50 @@
   items:
     - ClothingNeckHeavyShackles
 
+- type: loadout
+  id: LoadoutUtilityKnife
+  category: GeneralItems
+  cost: 2
+  canBeHeirloom: true
+  items:
+    - UtilityKnife
+
 #Medications
 - type: loadout
   id: LoadoutPillCanisterEstradiol
-  category: GeneralItems
+  category: GeneralMedical
+  description: reagent-desc-estradiol
   cost: 0
   items:
     - PillCanisterEstradiol
 
 - type: loadout
   id: LoadoutSyringeEstradiol
-  category: GeneralItems
+  category: GeneralMedical
+  description: reagent-desc-estradiol
   cost: 0
   items:
     - SyringeEstradiol
 
 - type: loadout
   id: LoadoutPillCanisterTestosterone
-  category: GeneralItems
+  category: GeneralMedical
+  description: reagent-desc-testosterone
   cost: 0
   items:
     - PillCanisterTestosterone
 
 - type: loadout
   id: LoadoutSyringeTestosterone
-  category: GeneralItems
+  category: GeneralMedical
+  description: reagent-desc-testosterone
   cost: 0
   items:
     - SyringeTestosterone
 
 - type: loadout
   id: LoadoutBirthControlCanister
-  category: GeneralItems
+  category: GeneralMedical
   cost: 0
   items:
     - BirthControlCanister

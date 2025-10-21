@@ -32,9 +32,10 @@
 # SPDX-FileCopyrightText: 2025 Blitz
 # SPDX-FileCopyrightText: 2025 Tabitha
 # SPDX-FileCopyrightText: 2025 Tanix
+# SPDX-FileCopyrightText: 2025 portfiend
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 # When adding new food also add to random spawner located in Resources\Prototypes\Entities\Markers\Spawners\Random\Food_Drinks\food_snack.yml
 # Base
@@ -79,7 +80,7 @@
     state: boritos
   - type: Item
   - type: Food
-    trash: 
+    trash:
     - FoodPacketBoritosTrash
 
 - type: entity
@@ -95,7 +96,7 @@
     state: cnds
   - type: Item
   - type: Food
-    trash: 
+    trash:
     - FoodPacketCnDsTrash
 
 - type: entity
@@ -112,7 +113,7 @@
     state: cheesiehonkers
   - type: Item
   - type: Food
-    trash: 
+    trash:
     - FoodPacketCheesieTrash
 
 - type: entity
@@ -130,7 +131,7 @@
     state: chips
   - type: Item
   - type: Food
-    trash: 
+    trash:
     - FoodPacketChipsTrash
 
 - type: entity
@@ -227,11 +228,12 @@
     state: pistachio
   - type: Item
   - type: Food
-    trash: 
+    trash:
     - FoodPacketPistachioTrash
   - type: Tag
     tags:
     - Fruit # Seed of a fruit, you can yell at me
+    - FoodSnack # DEN - Add snack tag
 
 - type: entity
   name: popcorn
@@ -249,7 +251,7 @@
   - type: Item
     heldPrefix: popcorn
   - type: Food
-    trash: 
+    trash:
     - FoodPacketPopcornTrash
 
 - type: entity
@@ -272,11 +274,12 @@
     state: raisins
   - type: Item
   - type: Food
-    trash: 
+    trash:
     - FoodPacketRaisinsTrash
   - type: Tag
     tags:
     - Fruit
+    - FoodSnack # DEN - Add snack tag
 
 - type: entity
   name: bob's semki sunflower seeds
@@ -291,7 +294,7 @@
     state: semki
   - type: Item
   - type: Food
-    trash: 
+    trash:
     - FoodPacketSemkiTrash
 
 - type: entity
@@ -307,11 +310,12 @@
     state: susjerky
   - type: Item
   - type: Food
-    trash: 
+    trash:
     - FoodPacketSusTrash
   - type: Tag
     tags:
     - Meat
+    - FoodSnack # DEN - Add snack tag
 
 - type: entity
   name: syndi-cakes
@@ -326,7 +330,7 @@
     state: syndicakes
   - type: Item
   - type: Food
-    trash: 
+    trash:
     - FoodPacketSyndiTrash
 
 - type: entity
@@ -351,7 +355,7 @@
   - type: Sprite
     state: ramen
   - type: Food
-    trash: 
+    trash:
     - FoodPacketCupRamenTrash
 
 - type: entity
@@ -395,7 +399,7 @@
         - ReagentId: Soysauce
           Quantity: 2
   - type: Food
-    trash: 
+    trash:
     - FoodPacketChowMeinTrash
 
 - type: entity
@@ -424,7 +428,7 @@
         - ReagentId: Soysauce
           Quantity: 2
   - type: Food
-    trash: 
+    trash:
     - FoodPacketDanDanTrash
 
 - type: entity
@@ -450,7 +454,7 @@
     heldPrefix: packet
     size: Tiny
   - type: Food
-    trash: 
+    trash:
     - FoodCookieFortune
 
 - type: entity
@@ -989,7 +993,7 @@
     state: venus
   - type: Item
   - type: Food
-    trash: 
+    trash:
     - FoodPacketVenusTrash
 
 - type: entity
@@ -1007,7 +1011,7 @@
     state: oort
   - type: Item
   - type: Food
-    trash: 
+    trash:
     - FoodPacketOortrocksTrash
 
 # Weeb Vend
@@ -1025,7 +1029,7 @@
     state: weebonuts
   - type: Item
   - type: Food
-    trash: 
+    trash:
     - FoodPacketRedalertnutsTrash
 
 - type: entity

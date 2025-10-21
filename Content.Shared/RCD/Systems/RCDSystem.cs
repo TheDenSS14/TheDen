@@ -364,7 +364,7 @@ public sealed class RCDSystem : EntitySystem
         if (_charges.IsEmpty(uid, charges))
         {
             if (popMsgs)
-                _popup.PopupClient(Loc.GetString("rcd-component-no-ammo-message"), uid, user);
+                _popup.PopupClient(Loc.GetString("rcd-component-no-ammo-message", ("tool", uid)), uid, user);
 
             return false;
         }
@@ -372,7 +372,7 @@ public sealed class RCDSystem : EntitySystem
         if (_charges.HasInsufficientCharges(uid, prototype.Cost, charges))
         {
             if (popMsgs)
-                _popup.PopupClient(Loc.GetString("rcd-component-insufficient-ammo-message"), uid, user);
+                _popup.PopupClient(Loc.GetString("rcd-component-insufficient-ammo-message", ("tool", uid)), uid, user);
 
             return false;
         }

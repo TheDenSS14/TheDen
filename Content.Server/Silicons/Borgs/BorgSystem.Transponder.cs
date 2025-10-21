@@ -1,13 +1,19 @@
-// SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT <77995199+DEATHB4DEFEAT@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
-// SPDX-FileCopyrightText: 2024 deltanedas <39013340+deltanedas@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 fishbait <gnesse@gmail.com>
-// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT
+// SPDX-FileCopyrightText: 2024 Pieter-Jan Briers
+// SPDX-FileCopyrightText: 2024 deltanedas
+// SPDX-FileCopyrightText: 2025 fishbait
+// SPDX-FileCopyrightText: 2025 sleepyyapril
 //
-// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+// SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 using Content.Shared.DeviceNetwork;
 using Content.Shared.Emag.Components;
+using Content.Shared.Containers.ItemSlots;
+using Content.Shared.DeviceNetwork;
+using Content.Shared.Damage;
+using Content.Shared.FixedPoint;
+using Content.Shared.Mobs;
+using Content.Shared.Mobs.Systems;
 using Content.Shared.Movement.Components;
 using Content.Shared.Popups;
 using Content.Shared.Robotics;
@@ -17,13 +23,19 @@ using Content.Server.DeviceNetwork.Components;
 using Content.Server.DeviceNetwork.Systems;
 using Content.Server.Explosion.Components;
 using Robust.Shared.Utility;
-using Content.Server._Imp.Drone; //Goobstation drone
+using Content.Server._Imp.Drone;
+using Content.Shared.Emag.Systems; //Goobstation drone
 using Robust.Shared.Player; //Goobstation drone
 namespace Content.Server.Silicons.Borgs;
 
 /// <inheritdoc/>
 public sealed partial class BorgSystem
 {
+    [Dependency] private readonly EmagSystem _emag = default!;
+    [Dependency] private readonly IEntityManager _entityManager = default!;
+    [Dependency] private readonly MobThresholdSystem _mobThresholdSystem = default!;
+    [Dependency] private readonly ItemSlotsSystem _itemSlotsSystem = default!;
+
     private void InitializeTransponder()
     {
         SubscribeLocalEvent<BorgTransponderComponent, DeviceNetworkPacketEvent>(OnPacketReceived);
@@ -37,7 +49,7 @@ public sealed partial class BorgSystem
         var query = EntityQueryEnumerator<BorgTransponderComponent, BorgChassisComponent, DeviceNetworkComponent, MetaDataComponent>();
         while (query.MoveNext(out var uid, out var comp, out var chassis, out var device, out var meta))
         {
-            if (comp.NextDisable is {} nextDisable && now >= nextDisable)
+            if (comp.NextDisable is { } nextDisable && now >= nextDisable)
                 DoDisable((uid, comp, chassis, meta));
 
             if (now < comp.NextBroadcast)
@@ -47,13 +59,17 @@ public sealed partial class BorgSystem
             if (_powerCell.TryGetBatteryFromSlot(uid, out var battery))
                 charge = battery.CurrentCharge / battery.MaxCharge;
 
-            var hasBrain = chassis.BrainEntity != null && !comp.FakeDisabled;
+            var hpPercent = CalcHP(uid);
+
+            // checks if it has a brain and if the brain is not a empty MMI (gives false anyway if the fake disable is true)
+            var hasBrain = CheckBrain(chassis.BrainEntity) && !comp.FakeDisabled;
             var canDisable = comp.NextDisable == null && !comp.FakeDisabling;
             var data = new CyborgControlData(
                 comp.Sprite,
                 comp.Name,
                 meta.EntityName,
                 charge,
+                hpPercent,
                 chassis.ModuleCount,
                 hasBrain,
                 canDisable);
@@ -67,32 +83,6 @@ public sealed partial class BorgSystem
 
             comp.NextBroadcast = now + comp.BroadcastDelay;
         }
-        //Goobstation Drone transponder start
-        var query2 = EntityQueryEnumerator<BorgTransponderComponent, DroneComponent, DeviceNetworkComponent, MetaDataComponent>();
-        while (query2.MoveNext(out var uid, out  var comp, out var drone, out var device, out var  meta))
-        {
-            if (now < comp.NextBroadcast)
-                continue;
-            var hasBrain = HasComp<ActorComponent>(uid);
-            var data = new CyborgControlData(
-                comp.Sprite,
-                comp.Name,
-                meta.EntityName,
-                1f,
-                0,
-                hasBrain,
-                false);
-
-            var payload = new NetworkPayload()
-            {
-                [DeviceNetworkConstants.Command] = DeviceNetworkConstants.CmdUpdatedState,
-                [RoboticsConsoleConstants.NET_CYBORG_DATA] = data
-            };
-            _deviceNetwork.QueuePacket(uid, null, payload, device: device);
-
-            comp.NextBroadcast = now + comp.BroadcastDelay;
-        }
-        //Goobstation drone transponder end
     }
 
     private void DoDisable(Entity<BorgTransponderComponent, BorgChassisComponent, MetaDataComponent> ent)
@@ -105,7 +95,7 @@ public sealed partial class BorgSystem
             return;
         }
 
-        if (ent.Comp2.BrainEntity is not {} brain)
+        if (ent.Comp2.BrainEntity is not { } brain)
             return;
 
         var message = Loc.GetString(ent.Comp1.DisabledPopup, ("name", Name(ent, ent.Comp3)));
@@ -185,5 +175,41 @@ public sealed partial class BorgSystem
     public void SetTransponderName(Entity<BorgTransponderComponent> ent, string name)
     {
         ent.Comp.Name = name;
+    }
+
+    /// <summary>
+    /// Returns a ratio between 0 and 1, 1 when they have no damage and 0 whenever they are crit (or more damaged)
+    /// </summary>
+    private float CalcHP(EntityUid uid)
+    {
+        if (!TryComp<DamageableComponent>(uid, out var damageable))
+            return 1;
+
+        if (!_mobState.IsAlive(uid))
+            return 0;
+
+        if (!_mobThresholdSystem.TryGetThresholdForState(uid, MobState.Critical, out var threshold))
+        {
+            Log.Error($"Borg({ToPrettyString(uid)}), doesn't have critical threshold.");
+            return 1;
+        }
+
+        return 1 - ((FixedPoint2)(damageable.TotalDamage / threshold)).Float();
+    }
+
+    /// <summary>
+    /// Returns true if the borg has a brain
+    /// </summary>
+    private bool CheckBrain(EntityUid? brainEntity)
+    {
+        if (brainEntity == null)
+            return false;
+
+        // if the brainEntity.Value has the component MMIComponent then it is a MMI,
+        // in that case it trys to get the "brain" of the MMI, if it is null the MMI is empty and so it returns false
+        if (TryComp<MMIComponent>(brainEntity.Value, out var mmi) && _itemSlotsSystem.GetItemOrNull(brainEntity.Value, mmi.BrainSlotId) == null)
+            return false;
+
+        return true;
     }
 }

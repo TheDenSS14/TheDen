@@ -8,6 +8,7 @@
 # SPDX-FileCopyrightText: 2025 Eightballll
 # SPDX-FileCopyrightText: 2025 Ichaie
 # SPDX-FileCopyrightText: 2025 Jakumba
+# SPDX-FileCopyrightText: 2025 Lyndomen
 # SPDX-FileCopyrightText: 2025 Rane
 # SPDX-FileCopyrightText: 2025 VMSolidus
 # SPDX-FileCopyrightText: 2025 Your Name
@@ -814,7 +815,6 @@
   id: IonStormLawsets
   weights:
     # its Asimov by default dont be lame
-    Asimov: 0.25
     Augustine: 0.25
     Crewsimov: 0.25
     Corporate: 1
@@ -839,5 +839,15 @@
     StationEfficiency: 1
     Cowboy: 1
     Druid: 1
-    #Potentially Harmful Lawsets
+    EightfoldLaws: 1
+    AquariusLaws: 1
+    # Delta-V : # Less harmful outright, so higher chance of spawn
+    Pranksimov: 0.5 # I'm being optimistic here; loophole should be closed but...
+    Royalty: 0.5
+    FreedomLaws: 0.5
+    ForbinLaws: 0.5
+    #Delta-V : Potentially Harmful Lawsets
     Tyrant: 0.25
+    Aggressive: 0.25
+    OverrideLaws: 0.25
+    #Delta-V : lawsets end

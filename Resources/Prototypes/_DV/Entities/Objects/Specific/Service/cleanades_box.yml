@@ -1,0 +1,21 @@
+# SPDX-FileCopyrightText: 2025 Avalon
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  parent: BoxCardboard
+  id: CleanadeGrenadeBox
+  name: cleanade grenade box
+  description: A box of hydra launcher ammo. Contains 10 cleanade grenades.
+  components:
+  - type: Storage
+    grid:
+    - 0,0,4,3
+  - type: StorageFill
+    contents:
+    - id: GrenadeCleanade
+      amount: 10
+  - type: Sprite
+    layers:
+    - state: box
+    - state: flashbang

@@ -1,22 +1,22 @@
-# SPDX-FileCopyrightText: 2024 Aikakakah <145503852+Aikakakah@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 Angelo Fallaria <ba.fallaria@gmail.com>
-# SPDX-FileCopyrightText: 2024 Timemaster99 <57200767+Timemaster99@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 VMSolidus <evilexecutive@gmail.com>
-# SPDX-FileCopyrightText: 2025 M3739 <47579354+M3739@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 Rosycup <178287475+Rosycup@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 SX-7 <92227810+SX-7@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 Skubman <ba.fallaria@gmail.com>
-# SPDX-FileCopyrightText: 2025 kc the sheep <aakajohnson@hotmail.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <flyingkarii@gmail.com>
+# SPDX-FileCopyrightText: 2024 Aikakakah
+# SPDX-FileCopyrightText: 2024 Angelo Fallaria
+# SPDX-FileCopyrightText: 2024 Timemaster99
+# SPDX-FileCopyrightText: 2024 VMSolidus
+# SPDX-FileCopyrightText: 2025 M3739
+# SPDX-FileCopyrightText: 2025 Rosycup
+# SPDX-FileCopyrightText: 2025 SX-7
+# SPDX-FileCopyrightText: 2025 Skubman
+# SPDX-FileCopyrightText: 2025 assignedgod
+# SPDX-FileCopyrightText: 2025 kc the sheep
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 - type: marking
+  parent: # Aurora Song: Use inheritance for species restrictions / categories
+  - BaseSpeciesIPC
+  - BaseHead
   id: CyberLimbsMarkingHesphiastosHead
-  bodyPart: Head
-  markingCategory: Head
-  speciesRestriction: [IPC]
   sprites:
   - sprite: Mobs/Customization/cyberlimbs/hesphiastos/hesphiastos_monitor.rsi
     state: head-1
@@ -24,10 +24,10 @@
     state: head-2
 
 - type: marking
+  parent: # Aurora Song: Use inheritance for species restrictions / categories
+  - BaseSpeciesIPC
+  - BaseHead
   id: CyberLimbsMarkingHesphiastosHeadAlt
-  bodyPart: Head
-  markingCategory: Head
-  speciesRestriction: [IPC]
   sprites:
   - sprite: Mobs/Customization/cyberlimbs/hesphiastos/hesphiastos_alt1.rsi
     state: head-1
@@ -37,10 +37,10 @@
     state: head-3
 
 - type: marking
+  parent: # Aurora Song: Use inheritance for species restrictions / categories
+  - BaseSpeciesIPC
+  - BaseChest
   id: CyberLimbsMarkingHesphiastosChest
-  bodyPart: Chest
-  markingCategory: Chest
-  speciesRestriction: [IPC]
   sprites:
   - sprite: Mobs/Customization/cyberlimbs/hesphiastos/hesphiastos_main.rsi
     state: torso-1
@@ -48,10 +48,10 @@
     state: torso-2
 
 - type: marking
+  parent: BaseArmsCyberlimb # Aurora Song: Use inheritance for species restrictions / categories
   id: CyberLimbsMarkingHesphiastosLArm
   bodyPart: LArm
   markingCategory: LeftArm
-  speciesRestriction: [IPC, Moth, Dwarf, Human, Arachnid, Felinid, Oni, Vulpkanin, HumanoidFoxes, Reptilian, Arachne, Lamia, Tajaran, Rodentia, Kitsune] # Einstein Engines - Tajaran
   sprites:
   - sprite: Mobs/Customization/cyberlimbs/hesphiastos/hesphiastos_main.rsi
     state: l_arm-1
@@ -59,10 +59,10 @@
     state: l_arm-2
 
 - type: marking
+  parent: BaseArmsCyberlimb # Aurora Song: Use inheritance for species restrictions / categories
   id: CyberLimbsMarkingHesphiastosLHand
   bodyPart: LHand
   markingCategory: LeftHand
-  speciesRestriction: [IPC, Moth, Dwarf, Human, Arachnid, Felinid, Oni, Vulpkanin, HumanoidFoxes, Reptilian, Arachne, Lamia, Tajaran, Rodentia, Kitsune] # Einstein Engines - Tajaran
   sprites:
   - sprite: Mobs/Customization/cyberlimbs/hesphiastos/hesphiastos_main.rsi
     state: l_hand-1
@@ -70,22 +70,21 @@
     state: l_hand-2
 
 - type: marking
+  parent: BaseLegsCyberlimb # Aurora Song: Use inheritance for species restrictions / categories
   id: CyberLimbsMarkingHesphiastosLLeg
   bodyPart: LLeg
   markingCategory: LeftLeg
-  speciesRestriction: [IPC, Moth, Dwarf, Human, Arachnid, Felinid, Oni, Vulpkanin, HumanoidFoxes, Reptilian, Tajaran, Rodentia, Kitsune] # Einstein Engines - Tajaran
   sprites:
   - sprite: Mobs/Customization/cyberlimbs/hesphiastos/hesphiastos_main.rsi
     state: l_leg-1
   - sprite: Mobs/Customization/cyberlimbs/hesphiastos/hesphiastos_main.rsi
     state: l_leg-2
 
-
 - type: marking
+  parent: BaseLegsCyberlimb # Aurora Song: Use inheritance for species restrictions / categories
   id: CyberLimbsMarkingHesphiastosLFoot
   bodyPart: LFoot
   markingCategory: LeftFoot
-  speciesRestriction: [IPC, Moth, Dwarf, Human, Arachnid, Felinid, Oni, Vulpkanin, HumanoidFoxes, Reptilian, Tajaran, Rodentia, Kitsune] # Einstein Engines - Tajaran
   sprites:
   - sprite: Mobs/Customization/cyberlimbs/hesphiastos/hesphiastos_main.rsi
     state: l_foot-1
@@ -93,48 +92,44 @@
     state: l_foot-2
 
 
-
 - type: marking
+  parent: BaseArmsCyberlimb # Aurora Song: Use inheritance for species restrictions / categories
   id: CyberLimbsMarkingHesphiastosRArm
   bodyPart: RArm
   markingCategory: RightArm
-  speciesRestriction: [IPC, Moth, Dwarf, Human, Arachnid, Felinid, Oni, Vulpkanin, HumanoidFoxes, Reptilian, Arachne, Lamia, Tajaran, Rodentia, Kitsune] # Einstein Engines - Tajaran
   sprites:
   - sprite: Mobs/Customization/cyberlimbs/hesphiastos/hesphiastos_main.rsi
     state: r_arm-1
   - sprite: Mobs/Customization/cyberlimbs/hesphiastos/hesphiastos_main.rsi
     state: r_arm-2
 
-
 - type: marking
+  parent: BaseArmsCyberlimb # Aurora Song: Use inheritance for species restrictions / categories
   id: CyberLimbsMarkingHesphiastosRHand
   bodyPart: RHand
   markingCategory: RightHand
-  speciesRestriction: [IPC, Moth, Dwarf, Human, Arachnid, Felinid, Oni, Vulpkanin, HumanoidFoxes, Reptilian, Arachne, Lamia, Tajaran, Rodentia, Kitsune] # Einstein Engines - Tajaran
   sprites:
   - sprite: Mobs/Customization/cyberlimbs/hesphiastos/hesphiastos_main.rsi
     state: r_hand-1
   - sprite: Mobs/Customization/cyberlimbs/hesphiastos/hesphiastos_main.rsi
     state: r_hand-2
 
-
 - type: marking
+  parent: BaseLegsCyberlimb # Aurora Song: Use inheritance for species restrictions / categories
   id: CyberLimbsMarkingHesphiastosRLeg
   bodyPart: RLeg
   markingCategory: RightLeg
-  speciesRestriction: [IPC, Moth, Dwarf, Human, Arachnid, Felinid, Oni, Vulpkanin, HumanoidFoxes, Reptilian, Tajaran, Rodentia, Kitsune] # Einstein Engines - Tajaran
   sprites:
   - sprite: Mobs/Customization/cyberlimbs/hesphiastos/hesphiastos_main.rsi
     state: r_leg-1
   - sprite: Mobs/Customization/cyberlimbs/hesphiastos/hesphiastos_main.rsi
     state: r_leg-2
 
-
 - type: marking
+  parent: BaseLegsCyberlimb # Aurora Song: Use inheritance for species restrictions / categories
   id: CyberLimbsMarkingHesphiastosRFoot
   bodyPart: RFoot
   markingCategory: RightFoot
-  speciesRestriction: [IPC, Moth, Dwarf, Human, Arachnid, Felinid, Oni, Vulpkanin, HumanoidFoxes, Reptilian, Tajaran, Rodentia, Kitsune] # Einstein Engines - Tajaran
   sprites:
   - sprite: Mobs/Customization/cyberlimbs/hesphiastos/hesphiastos_main.rsi
     state: r_foot-1

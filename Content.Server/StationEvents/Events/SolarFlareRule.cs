@@ -1,13 +1,12 @@
-// SPDX-FileCopyrightText: 2023 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2023 deltanedas <@deltanedas:kde.org>
-// SPDX-FileCopyrightText: 2023 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 VMSolidus <evilexecutive@gmail.com>
-// SPDX-FileCopyrightText: 2024 deltanedas <39013340+deltanedas@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Nemanja
+// SPDX-FileCopyrightText: 2023 deltanedas
+// SPDX-FileCopyrightText: 2023 metalgearsloth
+// SPDX-FileCopyrightText: 2024 VMSolidus
+// SPDX-FileCopyrightText: 2025 Eightballll
+// SPDX-FileCopyrightText: 2025 sleepyyapril
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
-using Content.Server.GameTicking.Rules.Components;
 using Content.Server.Radio;
 using Robust.Shared.Random;
 using Content.Server.Light.EntitySystems;
@@ -17,6 +16,7 @@ using Content.Shared.Radio.Components;
 using Content.Shared.Doors.Components;
 using Content.Shared.Doors.Systems;
 using Content.Shared.GameTicking.Components;
+using Content.Shared.StationEvents.Events;
 
 namespace Content.Server.StationEvents.Events;
 
@@ -42,6 +42,17 @@ public sealed class SolarFlareRule : StationEventSystem<SolarFlareRuleComponent>
             var channel = RobustRandom.Pick(comp.ExtraChannels);
             comp.AffectedChannels.Add(channel);
         }
+
+        var ev = new SolarFlareStartedEvent(GetNetEntity(uid));
+        RaiseNetworkEvent(ev);
+    }
+
+    protected override void Ended(EntityUid uid, SolarFlareRuleComponent comp, GameRuleComponent gameRule, GameRuleEndedEvent args)
+    {
+        base.Ended(uid, comp, gameRule, args);
+
+        var ev = new SolarFlareEndedEvent(GetNetEntity(uid));
+        RaiseNetworkEvent(ev);
     }
 
     protected override void ActiveTick(EntityUid uid, SolarFlareRuleComponent component, GameRuleComponent gameRule, float frameTime)

@@ -15,9 +15,11 @@
 # SPDX-FileCopyrightText: 2024 Whatstone
 # SPDX-FileCopyrightText: 2024 deltanedas
 # SPDX-FileCopyrightText: 2024 fenndragon
+# SPDX-FileCopyrightText: 2025 Tabitha
+# SPDX-FileCopyrightText: 2025 TheOneTrueWolfio
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: entity
   parent: BaseItem
@@ -292,4 +294,11 @@
         layer:
         - LowImpassable
 
-
+- type: entity
+  parent: MonkeyCube
+  id: MoproachCube
+  name: moproach cube
+  components:
+  - type: Rehydratable
+    possibleSpawns:
+    - MobMoproach

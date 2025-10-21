@@ -1,6 +1,7 @@
 <!--
-SPDX-FileCopyrightText: 2025 Eris <eris@erisws.com>
-SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+SPDX-FileCopyrightText: 2025 Eris
+SPDX-FileCopyrightText: 2025 slarticodefast
+SPDX-FileCopyrightText: 2025 sleepyyapril
 
 SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 -->
@@ -9,5 +10,5 @@ SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
     xmlns:ui="clr-namespace:Content.Client.UserInterface.Controls"
     BackButtonStyleClass="RadialMenuBackButton" CloseButtonStyleClass="RadialMenuCloseButton"
     VerticalExpand="True" HorizontalExpand="True" MinSize="450 450">
-    <ui:RadialContainer Name="Main" VerticalExpand="True" HorizontalExpand="True" Radius="64" ReserveSpaceForHiddenChildren="False" />
+    <ui:RadialContainer Name="Main" VerticalExpand="True" HorizontalExpand="True" InitialRadius="64" ReserveSpaceForHiddenChildren="False" />
 </ui:RadialMenu>

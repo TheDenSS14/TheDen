@@ -1,15 +1,15 @@
-# SPDX-FileCopyrightText: 2024 FoxxoTrystan <45297731+FoxxoTrystan@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 FoxxoTrystan <trystan.garnierhein@gmail.com>
-# SPDX-FileCopyrightText: 2025 Blitz <73762869+BlitzTheSquishy@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 SixplyDev <einlichen@gmail.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 FoxxoTrystan
+# SPDX-FileCopyrightText: 2025 ASaltySeabass
+# SPDX-FileCopyrightText: 2025 Blitz
+# SPDX-FileCopyrightText: 2025 SixplyDev
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 - type: entity
   id: OrganShadowkinBrain
   parent: OrganHumanBrain
-  description: "Oops, I should put this back where I found it."
+  description: "The source of incredible, unending intelligence. Mar." #TheDen
   categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
   - type: Sprite
@@ -19,7 +19,7 @@
 - type: entity
   id: OrganShadowkinEyes
   parent: OrganHumanEyes
-  description: "I see beyond anything you ever will!"
+  description: "Check out these peepers!" #TheDen
   categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
   - type: Sprite
@@ -39,20 +39,40 @@
 
 - type: entity
   id: OrganShadowkinCore
-  parent: OrganHumanLungs
+  parent: OrganSpaceAnimalLungs
+  name: shadowkin core #TheDen
   description: "What is this thing?"
   categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
+  - type: Organ
+    removable: false
   - type: Sprite
     sprite: Mobs/Species/Shadowkin/organs.rsi
     layers:
     - state: core
+  - type: SolutionContainerManager
+    solutions:
+      organ:
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 10
+      Lung:
+        maxVol: 100.0
+        canReact: false
+      food:
+        maxVol: 5
+        reagents:
+        - ReagentId: BlackBlood
+          Quantity: 5
+  - type: FlavorProfile
+    flavors:
+      - bitter
 
 
 - type: entity
   id: OrganShadowkinTongue
   parent: OrganHumanTongue
-  description: "What does this do again?"
+  description: "A fleshy muscle mostly used for wurbling." #TheDen
   categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
   - type: Sprite
@@ -63,7 +83,7 @@
 - type: entity
   id: OrganShadowkinAppendix
   parent: OrganHumanAppendix
-  description: "I think it does nothing..."
+  description: "Does this even do anything?" #TheDen
   categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
   - type: Sprite
@@ -75,7 +95,7 @@
 - type: entity
   id: OrganShadowkinHeart
   parent: OrganHumanHeart
-  description: "Oops, I think this belongs to someone!"
+  description: "The pitch-black heart of a Shadowkin. How unsettling." #TheDen
   categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
   - type: Sprite
@@ -92,7 +112,7 @@
 - type: entity
   id: OrganShadowkinStomach
   parent: OrganHumanStomach
-  description: '"Yummy!", says the stomach, although you are unable to hear it.'
+  description: "Gross. This is hard to stomach."
   categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
   - type: Sprite
@@ -117,7 +137,7 @@
 - type: entity
   id: OrganShadowkinLiver
   parent: OrganHumanLiver
-  description: "Live 'er? I hardly know 'er!"
+  description: "Just like any other liver, except more gothic." #TheDen
   categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
   - type: Sprite
@@ -133,7 +153,7 @@
 - type: entity
   id: OrganShadowkinKidneys
   parent: OrganHumanKidneys
-  description: "Give the kid their knees back, please, this is the third time this week."
+  description: "Filters toxins from the bloodstream." #TheDen
   categories: [ HideSpawnMenu ] # TheDen - Removes from spawn menu
   components:
   - type: Sprite

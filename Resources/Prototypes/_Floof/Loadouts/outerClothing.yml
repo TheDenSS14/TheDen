@@ -1,10 +1,9 @@
-# SPDX-FileCopyrightText: 2024 Dakota Haven <TotallyDemonicDragon@Gmail.com>
-# SPDX-FileCopyrightText: 2024 ShatteredSwords <135023515+ShatteredSwords@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 Blitz <73762869+BlitzTheSquishy@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 Fansana <116083121+Fansana@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 Rosycup <178287475+Rosycup@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <flyingkarii@gmail.com>
+# SPDX-FileCopyrightText: 2024 Dakota Haven
+# SPDX-FileCopyrightText: 2024 ShatteredSwords
+# SPDX-FileCopyrightText: 2025 Blitz
+# SPDX-FileCopyrightText: 2025 Fansana
+# SPDX-FileCopyrightText: 2025 Rosycup
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -31,6 +30,7 @@
 - type: loadout # Science is for everyone, not just science
   id: LoadoutOuterCoatLab
   category: Outer
+  customColorTint: true
   cost: 1
   items:
     - ClothingOuterCoatLab
@@ -66,6 +66,7 @@
   id: LoadoutClothingOuterMarsHoodie
   category: Outer
   cost: 0
+  customColorTint: true
   items:
     - ClothingOuterMarsHoodie
   requirements:

@@ -1589,15 +1589,15 @@
 
 - type: entity
   parent: BasePlushieCat
-  id: PlushieCatSiames
-  name: siames cat plushie
+  id: PlushieCatSiamese
+  name: siamese cat plushie
   components:
   - type: Sprite
     sprite: Objects/Fun/catplushie.rsi
     state: siames
   - type: FoodSequenceElement
     entries:
-      CottonBurger: SiamesCatPlushie
+      CottonBurger: SiameseCatPlushie
 
 - type: entity
   parent: BasePlushieCat
@@ -2195,6 +2195,9 @@
       sprite: Objects/Weapons/Melee/cutlass.rsi
     shape:
     - 0,0,0,2
+  - type: Tag # DEN: Allow item to be inserted in costume bundles
+    tags:
+    - CostumeItem
 
 - type: entity
   parent: BaseItem

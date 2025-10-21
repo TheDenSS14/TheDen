@@ -25,6 +25,7 @@
 # SPDX-FileCopyrightText: 2025 Sapphire
 # SPDX-FileCopyrightText: 2025 Tabitha
 # SPDX-FileCopyrightText: 2025 VMSolidus
+# SPDX-FileCopyrightText: 2025 pocl.v
 # SPDX-FileCopyrightText: 2025 portfiend
 # SPDX-FileCopyrightText: 2025 skyr0cket01
 # SPDX-FileCopyrightText: 2025 sleepyyapril
@@ -137,6 +138,7 @@
     - HarpyEmotes
     - ArachneEmotes
     - MothEmotes
+    - VoxEmotes
   blacklist:
     components:
     - BorgChassis
@@ -351,7 +353,8 @@
   name: chat-emote-name-chirp
   category: Vocal
   icon: Interface/Emotes/chirp.png
-  whitelist:
+  available: false
+  whitelist: #todo: make DionaEmotes tag & selectable trait
     requireAll: false
     components:
     - Nymph
@@ -359,8 +362,8 @@
     tags:
     - HarpyEmotes
   blacklist:
-    components:
-    - BorgChassis
+    tags:
+    - SiliconEmotes
   chatMessages: ["chat-emote-msg-chirp"]
   chatTriggers:
     - chirps

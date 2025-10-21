@@ -1,10 +1,9 @@
-// SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT <77995199+DEATHB4DEFEAT@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 deltanedas <39013340+deltanedas@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 sleepyyapril <flyingkarii@gmail.com>
-// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT
+// SPDX-FileCopyrightText: 2024 deltanedas
+// SPDX-FileCopyrightText: 2024 metalgearsloth
+// SPDX-FileCopyrightText: 2024 sleepyyapril
 //
-// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+// SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 using Content.Client.Stylesheets;
 using Content.Client.UserInterface.Controls;
@@ -35,6 +34,8 @@ public sealed partial class RoboticsConsoleWindow : FancyWindow
     private Dictionary<string, CyborgControlData> _cyborgs = new();
 
     public EntityUid Entity;
+
+    private bool _allowBorgControl = true;
 
     public RoboticsConsoleWindow()
     {
@@ -80,6 +81,7 @@ public sealed partial class RoboticsConsoleWindow : FancyWindow
     public void UpdateState(RoboticsConsoleState state)
     {
         _cyborgs = state.Cyborgs;
+        _allowBorgControl = state.AllowBorgControl;
 
         // clear invalid selection
         if (_selected is {} selected && !_cyborgs.ContainsKey(selected))
@@ -93,8 +95,8 @@ public sealed partial class RoboticsConsoleWindow : FancyWindow
         PopulateData();
 
         var locked = _lock.IsLocked(Entity);
-        DangerZone.Visible = !locked;
-        LockedMessage.Visible = locked;
+        DangerZone.Visible = !locked && _allowBorgControl;
+        LockedMessage.Visible = locked && _allowBorgControl; // Only show if locked AND control is allowed
     }
 
     private void PopulateCyborgs()
@@ -128,24 +130,34 @@ public sealed partial class RoboticsConsoleWindow : FancyWindow
         BorgSprite.Texture = _sprite.Frame0(data.ChassisSprite!);
 
         var batteryColor = data.Charge switch {
-            < 0.2f => "red",
-            < 0.4f => "orange",
-            < 0.6f => "yellow",
-            < 0.8f => "green",
-            _ => "blue"
+            < 0.2f => "#FF6C7F", // red
+            < 0.4f => "#EF973C", // orange
+            < 0.6f => "#E8CB2D", // yellow
+            < 0.8f => "#30CC19", // green
+            _ => "#00D3B8" // cyan
+        };
+
+        var hpPercentColor = data.HpPercent switch {
+            < 0.2f => "#FF6C7F", // red
+            < 0.4f => "#EF973C", // orange
+            < 0.6f => "#E8CB2D", // yellow
+            < 0.8f => "#30CC19", // green
+            _ => "#00D3B8" // cyan
         };
 
         var text = new FormattedMessage();
         text.PushMarkup(Loc.GetString("robotics-console-model", ("name", model)));
         text.AddMarkup(Loc.GetString("robotics-console-designation"));
         text.AddText($" {data.Name}\n"); // prevent players trolling by naming borg [color=red]satan[/color]
-        text.PushMarkup(Loc.GetString("robotics-console-battery", ("charge", (int) (data.Charge * 100f)), ("color", batteryColor)));
-        text.PushMarkup(Loc.GetString("robotics-console-brain", ("brain", data.HasBrain)));
-        text.AddMarkup(Loc.GetString("robotics-console-modules", ("count", data.ModuleCount)));
+        text.AddMarkupOrThrow($"{Loc.GetString("robotics-console-battery", ("charge", (int)(data.Charge * 100f)), ("color", batteryColor))}\n");
+        text.AddMarkupOrThrow($"{Loc.GetString("robotics-console-hp", ("hp", (int)(data.HpPercent * 100f)), ("color", hpPercentColor))}\n");
+        text.AddMarkupOrThrow($"{Loc.GetString("robotics-console-brain", ("brain", data.HasBrain))}\n");
+        text.AddMarkupOrThrow(Loc.GetString("robotics-console-modules", ("count", data.ModuleCount)));
         BorgInfo.SetMessage(text);
 
         // how the turntables
-        DisableButton.Disabled = !(data.HasBrain && data.CanDisable);
+        DisableButton.Disabled = !_allowBorgControl || !(data.HasBrain && data.CanDisable);
+        DestroyButton.Disabled = !_allowBorgControl;
     }
 
     protected override void FrameUpdate(FrameEventArgs args)

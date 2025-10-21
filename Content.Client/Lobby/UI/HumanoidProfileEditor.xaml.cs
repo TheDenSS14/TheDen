@@ -149,10 +149,6 @@ namespace Content.Client.Lobby.UI
         private BoxContainer _ccustomspecienamecontainerEdit => CCustomSpecieName;
         private LineEdit _customspecienameEdit => CCustomSpecieNameEdit;
 
-        private TextEdit? _flavorSfwTextEdit;
-        private TextEdit? _flavorNsfwTextEdit;
-        private TextEdit? _characterConsent;
-
         /// If we're attempting to save
         public event Action? Save;
         private bool _exporting;
@@ -702,10 +698,7 @@ namespace Content.Client.Lobby.UI
                 _flavorText.OnSfwFlavorTextChanged += OnSfwFlavorTextChange;
                 _flavorText.OnNsfwFlavorTextChanged += OnNsfwFlavorTextChange;
                 _flavorText.OnCharacterConsentChanged += OnCharacterConsentChange;
-
-                _flavorSfwTextEdit = _flavorText.CFlavorTextSFWInput;
-                _flavorNsfwTextEdit = _flavorText.CFlavorTextNSFWInput;
-                _characterConsent = _flavorText.CFlavorTextConsentInput;
+                _flavorText.OnSelfFlavorTextChanged += OnSelfFlavorTextChange; // DEN
 
                 CTabContainer.AddTab(_flavorText, Loc.GetString("humanoid-profile-editor-flavortext-tab"));
             }
@@ -719,17 +712,8 @@ namespace Content.Client.Lobby.UI
                 _flavorText.OnSfwFlavorTextChanged -= OnSfwFlavorTextChange;
                 _flavorText.OnNsfwFlavorTextChanged -= OnNsfwFlavorTextChange;
                 _flavorText.OnCharacterConsentChanged -= OnCharacterConsentChange;
-
-                _flavorText.Dispose();
-
-                _flavorSfwTextEdit?.Dispose();
-                _flavorNsfwTextEdit?.Dispose();
-                _characterConsent?.Dispose();
-
+                _flavorText.OnSelfFlavorTextChanged -= OnSelfFlavorTextChange; // DEN
                 _flavorText = null;
-                _flavorSfwTextEdit = null;
-                _flavorNsfwTextEdit = null;
-                _characterConsent = null;
             }
         }
 
@@ -1025,7 +1009,7 @@ namespace Content.Client.Lobby.UI
             UpdateCyborgControls();
             UpdateSkinColor();
             UpdateSpawnPriorityControls();
-            UpdateFlavorTextEdit();
+            _flavorText?.SetProfile(Profile);
             UpdateCustomSpecieNameEdit();
             UpdateAgeEdit();
             UpdateEyePickers();
@@ -1457,6 +1441,16 @@ namespace Content.Client.Lobby.UI
             SetDirty();
         }
 
+        // DEN - Self-examine flavor text
+        private void OnSelfFlavorTextChange(string content)
+        {
+            if (Profile is null)
+                return;
+
+            Profile = Profile.WithSelfExamineFlavorText(content);
+            SetDirty();
+        }
+
         private void OnMarkingChange(MarkingSet markings)
         {
             if (Profile is null)
@@ -1790,18 +1784,6 @@ namespace Content.Client.Lobby.UI
             var species = _species.Find(x => x.ID == Profile?.Species) ?? _species.First();
             _customspecienameEdit.Text = string.IsNullOrEmpty(Profile?.Customspeciename) ? Loc.GetString(species.Name) : Profile.Customspeciename;
             _ccustomspecienamecontainerEdit.Visible = species.CustomName;
-        }
-
-        private void UpdateFlavorTextEdit()
-        {
-            if (_flavorSfwTextEdit != null)
-                _flavorSfwTextEdit.TextRope = new Rope.Leaf(Profile?.FlavorText ?? "");
-
-            if (_flavorNsfwTextEdit != null)
-                _flavorNsfwTextEdit.TextRope = new Rope.Leaf(Profile?.NsfwFlavorText ?? "");
-
-            if (_characterConsent != null)
-                _characterConsent.TextRope = new Rope.Leaf(Profile?.CharacterConsent ?? "");
         }
 
         private void UpdateAgeEdit()

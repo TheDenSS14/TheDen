@@ -1,11 +1,11 @@
-// SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT <77995199+DEATHB4DEFEAT@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 SimpleStation14 <130339894+SimpleStation14@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 sleepyyapril <flyingkarii@gmail.com>
-// SPDX-FileCopyrightText: 2025 VMSolidus <evilexecutive@gmail.com>
-// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT
+// SPDX-FileCopyrightText: 2024 SimpleStation14
+// SPDX-FileCopyrightText: 2024 metalgearsloth
+// SPDX-FileCopyrightText: 2024 sleepyyapril
+// SPDX-FileCopyrightText: 2025 VMSolidus
+// SPDX-FileCopyrightText: 2025 portfiend
 //
-// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+// SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 using Content.Shared.Popups;
 using Content.Shared.Paint;
@@ -21,13 +21,14 @@ using Content.Shared.Inventory;
 using Content.Shared.Chemistry.EntitySystems;
 using Content.Shared.Nutrition.EntitySystems;
 using Content.Shared.Whitelist;
+using Content.Shared.Examine;
 
 namespace Content.Server.Paint;
 
 /// <summary>
 /// Colors target and consumes reagent on each color success.
 /// </summary>
-public sealed class PaintSystem : SharedPaintSystem
+public sealed partial class PaintSystem : SharedPaintSystem // DEN - Made partial
 {
     [Dependency] private readonly SharedAudioSystem _audio = default!;
     [Dependency] private readonly SharedPopupSystem _popup = default!;
@@ -38,7 +39,6 @@ public sealed class PaintSystem : SharedPaintSystem
     [Dependency] private readonly OpenableSystem _openable = default!;
     [Dependency] private readonly EntityWhitelistSystem _whitelist = default!;
 
-
     public override void Initialize()
     {
         base.Initialize();
@@ -46,8 +46,9 @@ public sealed class PaintSystem : SharedPaintSystem
         SubscribeLocalEvent<PaintComponent, AfterInteractEvent>(OnInteract);
         SubscribeLocalEvent<PaintComponent, PaintDoAfterEvent>(OnPaint);
         SubscribeLocalEvent<PaintComponent, GetVerbsEvent<UtilityVerb>>(OnPaintVerb);
-    }
 
+        SubscribeLocalEvent<PaintComponent, ExaminedEvent>(OnExamined); // DEN - Examine text for paint cans
+    }
 
     private void OnInteract(EntityUid uid, PaintComponent component, AfterInteractEvent args)
     {

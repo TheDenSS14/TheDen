@@ -50,7 +50,7 @@
 # SPDX-FileCopyrightText: 2025 portfiend
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: entityTable
   id: AllPlushiesTable
@@ -574,3 +574,14 @@
       - id: BoxDarts
         amount: 1
         prob: 0.05
+
+- type: entity
+  name: moproach kit crate
+  description: A box with three moproach kits that provides you with six moproaches. For the worst of messes.
+  id: CrateFunMoproach
+  parent: CratePlastic
+  components:
+  - type: StorageFill
+    contents:
+    - id: MoproachBox
+      amount: 3
