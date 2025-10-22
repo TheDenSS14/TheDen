@@ -45,9 +45,9 @@
 # SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: entity
-  name: hypospray
+  name: NT-31 hypospray
   parent: [ BaseGrandTheftContraband, BaseItem ]
-  description: A sterile injector for rapid administration of drugs to patients.
+  description: A hypospray designated to CMO for its advanced storage capacity, application time, and ease of use. Has a gold plated NT logo near the neck.
   id: Hypospray
   components:
   - type: Sprite
@@ -76,7 +76,7 @@
     stealGroup: Hypospray
 
 - type: entity
-  name: gorlex hypospray
+  name: CS-29 hypospray
   parent: [ BaseRivalCompanyContraband, BaseItem ]
   description: Using reverse engineered designs from NT, Cybersun produced these in limited quantities for Gorlex Marauder operatives.
   id: SyndiHypo
@@ -124,10 +124,10 @@
     delay: 0.5
 
 - type: entity
-  name: experimental hypospray
+  name: CS-1337 hypospray
   categories: [ AdminTools ]
   parent: SyndiHypo
-  description: The ultimate application of bluespace technology and rapid chemical administration.
+  description: The ultimate application of ultimate bluespace technology and ultimate rapid chemical administration.
   id: AdminHypo
   components:
     - type: SolutionContainerManager
