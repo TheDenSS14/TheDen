@@ -62,12 +62,12 @@
   - type: MobThresholds
     thresholds:
       0: Alive
-      120: Dead
+      200: Dead
   - type: Destructible
     thresholds:
     - trigger:
         !type:DamageTrigger
-        damage: 120
+        damage: 200
       behaviors:
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
@@ -82,15 +82,15 @@
   - type: Damageable
     damageContainer: ManifestedSpirit # Floof - M3739 - #937 - CorporealSpirit container superseded by ManifestedSpirit
     damageModifierSet: CorporealSpirit
-  - type: PassiveDamage # Slight passive regen. Assuming one damage type, comes out to about 4 damage a minute.
+  - type: PassiveDamage # Slight passive regen. Assuming one damage type, comes out to about 4 damage a minute. # DEN - significantly better regen rates
     allowedStates:
     - Alive
     damageCap: 120
     damage:
       types:
-        Cold: -0.07
+        Cold: -0.5
       groups:
-        Brute: -0.07
+        Brute: -0.5
   - type: Speech
     speechSounds: Bass
   - type: Puller
@@ -120,7 +120,9 @@
   - type: InnatePsionicPowers
     powersToAdd:
       - PyrokinesisPower
+      - PyrokineticFlare
       - TelepathyPower
+      - XenoglossyPower
   - type: Grammar
     attributes:
       proper: true
@@ -136,6 +138,7 @@
     - TauCetiBasic
     understands:
     - TauCetiBasic
+    - Sign
   - type: GhostTakeoverAvailable
   - type: GhostRole
     name: ghost-role-information-ifrit-name
@@ -144,6 +147,7 @@
     makeSentient: true
     allowMovement: true
     allowSpeech: true
+    reregister: true
     requirements:
     - !type:CharacterDepartmentTimeRequirement
       department: Epistemics
