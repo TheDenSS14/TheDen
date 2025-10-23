@@ -118,10 +118,8 @@
   - type: HeldSpeedModifier
     walkModifier: 0.5
     sprintModifier: 0.5
-  - type: DamageOtherOnHit # if you get hit by this you deserve it
-    damage:
-      types:
-        Blunt: 15
+  - type: StaminaDamageOnHit # if you get hit by this you deserve it # DEN - change to stamina damage
+    damage: 25
     soundHit: /Audio/Animals/bear.ogg
     staminaCost: 50
   - type: MultiHandedItem
