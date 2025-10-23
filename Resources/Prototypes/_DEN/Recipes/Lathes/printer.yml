@@ -575,6 +575,9 @@
 - type: latheRecipe
   id: PrintedDocumentNoticeOfLiquidationRecipe
   result: PrintedDocumentNoticeOfLiquidation
+  icon:
+    sprite: Mobs/Species/Terminator/parts.rsi
+    state: skull_icon
   category: ErrorDocument
   completetime: 2
   applyMaterialDiscount: false
@@ -584,6 +587,9 @@
 - type: latheRecipe
   id: PrintedDocumentBusinessDealRecipe
   result: PrintedDocumentBusinessDeal
+  icon:
+    sprite: Objects/Storage/Briefcases/briefcase_brown.rsi
+    state: icon
   category: ErrorDocument
   completetime: 2
   applyMaterialDiscount: false
@@ -594,6 +600,9 @@
   id: PrintedDocumentNoteBeginningMilitaryActionsRecipe
   result: PrintedDocumentNoteBeginningMilitaryActions
   category: ErrorDocument
+  icon:
+    sprite: Objects/Weapons/Guns/LMGs/l6.rsi
+    state: icon
   completetime: 2
   applyMaterialDiscount: false
   materials:
@@ -602,6 +611,9 @@
 - type: latheRecipe
   id: PrintedDocumentReportAccomplishmentGoalsRecipe
   result: PrintedDocumentReportAccomplishmentGoals
+  icon:
+    sprite: Objects/Misc/stamps.rsi
+    state: stamp-deny
   category: ErrorDocument
   completetime: 2
   applyMaterialDiscount: false

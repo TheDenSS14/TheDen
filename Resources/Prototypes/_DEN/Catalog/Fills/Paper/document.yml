@@ -4,6 +4,149 @@
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
+# Special Papers
+
+- type: entity
+  parent: Paper
+  id: PaperDyedMed
+  suffix: med
+  components:
+  - type: Sprite
+    sprite: Objects/Misc/bureaucracy.rsi
+    layers:
+    - state: paper
+      color: "#EBF9FF"
+    - state: paper_words
+      map: ["enum.PaperVisualLayers.Writing"]
+      color: "#EBF9FF"
+      visible: false
+    - state: paper_stamp-generic
+      map: ["enum.PaperVisualLayers.Stamp"]
+      visible: false
+  - type: PaperVisuals
+    backgroundModulate: "#EBF9FF"
+
+- type: entity
+  parent: Paper
+  id: PaperDyedEpi
+  suffix: epi
+  components:
+  - type: Sprite
+    sprite: Objects/Misc/bureaucracy.rsi
+    layers:
+    - state: paper
+      color: "#F1DCFC"
+    - state: paper_words
+      map: ["enum.PaperVisualLayers.Writing"]
+      color: "#F1DCFC"
+      visible: false
+    - state: paper_stamp-generic
+      map: ["enum.PaperVisualLayers.Stamp"]
+      visible: false
+  - type: PaperVisuals
+    backgroundModulate: "#F1DCFC"
+
+- type: entity
+  parent: Paper
+  id: PaperDyedSec
+  suffix: sec
+  components:
+  - type: Sprite
+    sprite: Objects/Misc/bureaucracy.rsi
+    layers:
+    - state: paper
+      color: "#FFD6D6"
+    - state: paper_words
+      map: ["enum.PaperVisualLayers.Writing"]
+      color: "#FFD6D6"
+      visible: false
+    - state: paper_stamp-generic
+      map: ["enum.PaperVisualLayers.Stamp"]
+      visible: false
+  - type: PaperVisuals
+    backgroundModulate: "#FFD6D6"
+
+- type: entity
+  parent: Paper
+  id: PaperDyedEngi
+  suffix: engi
+  components:
+  - type: Sprite
+    sprite: Objects/Misc/bureaucracy.rsi
+    layers:
+    - state: paper
+      color: "#FFF2E5"
+    - state: paper_words
+      map: ["enum.PaperVisualLayers.Writing"]
+      color: "#FFF2E5"
+      visible: false
+    - state: paper_stamp-generic
+      map: ["enum.PaperVisualLayers.Stamp"]
+      visible: false
+  - type: PaperVisuals
+    backgroundModulate: "#FFF2E5"
+
+- type: entity
+  parent: Paper
+  id: PaperDyedLaw
+  suffix: law
+  components:
+  - type: Sprite
+    sprite: Objects/Misc/bureaucracy.rsi
+    layers:
+    - state: paper
+      color: "#E0E0E0"
+    - state: paper_words
+      map: ["enum.PaperVisualLayers.Writing"]
+      color: "#E0E0E0"
+      visible: false
+    - state: paper_stamp-generic
+      map: ["enum.PaperVisualLayers.Stamp"]
+      visible: false
+  - type: PaperVisuals
+    backgroundModulate: "#E0E0E0"
+
+- type: entity
+  parent: Paper
+  id: PaperDyedHoP
+  suffix: HoP
+  components:
+  - type: Sprite
+    sprite: Objects/Misc/bureaucracy.rsi
+    layers:
+    - state: paper
+      color: "#E3F0FF"
+    - state: paper_words
+      map: ["enum.PaperVisualLayers.Writing"]
+      color: "#E3F0FF"
+      visible: false
+    - state: paper_stamp-generic
+      map: ["enum.PaperVisualLayers.Stamp"]
+      visible: false
+  - type: PaperVisuals
+    backgroundModulate: "#E3F0FF"
+
+- type: entity
+  parent: Paper
+  id: PaperDyedElevated
+  suffix: Elevated
+  components:
+  - type: Sprite
+    sprite: Objects/Misc/bureaucracy.rsi
+    layers:
+    - state: paper
+      color: "#F6FFE5"
+    - state: paper_words
+      map: ["enum.PaperVisualLayers.Writing"]
+      color: "#F6FFE5"
+      visible: false
+    - state: paper_stamp-generic
+      map: ["enum.PaperVisualLayers.Stamp"]
+      visible: false
+  - type: PaperVisuals
+    backgroundModulate: "#F6FFE5"
+
+# Actual Printed Documents
 - type: entity
   parent: Paper
   id: PrintedDocument
@@ -13,7 +156,7 @@
     - type: Paper
 
 - type: entity
-  parent: PrintedDocument
+  parent: PaperDyedSec
   id: PrintedDocumentReportStation
   name: Report on the situation at the station
   components:
@@ -21,7 +164,7 @@
       content: doc-text-printer-report-station
 
 - type: entity
-  parent: PrintedDocument
+  parent: PaperDyedHoP
   id: PrintedDocumentReportDepartment
   name: Report on the work of the department
   components:
@@ -29,7 +172,7 @@
       content: doc-text-printer-report-department
 
 - type: entity
-  parent: PrintedDocument
+  parent: PaperDyedHoP
   id: PrintedDocumentReportEmployeePerformance
   name: Report on employee performance
   components:
@@ -37,7 +180,7 @@
       content: doc-text-printer-report-employee-performance
 
 - type: entity
-  parent: PrintedDocument
+  parent: PaperDyedElevated
   id: PrintedDocumentReportOnTheChaptersMeeting
   name: Report on chapter meeting
   components:
@@ -45,7 +188,7 @@
       content: doc-text-printer-report-on-the-chapters-meeting
 
 - type: entity
-  parent: PrintedDocument
+  parent: PaperDyedEngi
   id: PrintedDocumentConditionReport
   name: Report on technical condition
   components:
@@ -53,7 +196,7 @@
       content: doc-text-printer-condition-report
 
 - type: entity
-  parent: PrintedDocument
+  parent: PaperDyedEpi
   id: PrintedDocumentReportStudyObject
   name: Report on object Investigation
   components:
@@ -61,7 +204,7 @@
       content: doc-text-printer-report-study-object
 
 - type: entity
-  parent: PrintedDocument
+  parent: PaperDyedMed
   id: PrintedDocumentDisposalReport
   name: Disposal report
   components:
@@ -69,7 +212,7 @@
       content: doc-text-printer-disposal-report
 
 - type: entity
-  parent: PrintedDocument
+  parent: PaperDyedHoP
   id: PrintedDocumentApplicationAppointmentInterim
   name: Statement of Appointment to the Temporary Acting Authority
   components:
@@ -77,7 +220,7 @@
       content: doc-text-printer-application-appointment-interim
 
 - type: entity
-  parent: PrintedDocument
+  parent: PaperDyedHoP
   id: PrintedDocumentApplicationEmployment
   name: Statement of Employment
   components:
@@ -85,7 +228,7 @@
       content: doc-text-printer-application-employment
 
 - type: entity
-  parent: PrintedDocument
+  parent: PaperDyedHoP
   id: PrintedDocumentLetterResignation
   name: Statement of Dismissal
   components:
@@ -93,7 +236,7 @@
       content: doc-text-printer-letter-resignation
 
 - type: entity
-  parent: PrintedDocument
+  parent: PaperDyedHoP
   id: PrintedDocumentApplicationAccess
   name: Statement of access
   components:
@@ -109,15 +252,7 @@
       content: doc-text-printer-application-equipment
 
 - type: entity
-  parent: PrintedDocument
-  id: PrintedDocumentAppeal
-  name: Appeal
-  components:
-    - type: Paper
-      content: doc-text-printer-appeal
-
-- type: entity
-  parent: PrintedDocument
+  parent: PaperDyedElevated
   id: PrintedDocumentEvacuationShuttleRequest
   name: Evacuation Shuttle Request
   components:
@@ -125,7 +260,7 @@
       content: doc-text-printer-evacuation-shuttle-request
 
 - type: entity
-  parent: PrintedDocument
+  parent: PaperDyedEngi
   id: PrintedDocumentShuttleRegistrationRequest
   name: Shuttle registration request
   components:
@@ -133,7 +268,7 @@
       content: doc-text-printer-shuttle-registration-request
 
 - type: entity
-  parent: PrintedDocument
+  parent: PaperDyedHoP
   id: PrintedDocumentRequestForNonlistedEmployment
   name: Request for non-listed employment
   components:
@@ -141,7 +276,7 @@
       content: doc-text-printer-request-for-non-listed-employment
 
 - type: entity
-  parent: PrintedDocument
+  parent: PaperDyedHoP
   id: PrintedDocumentRequestForPromotion
   name: Request for promotion
   components:
@@ -149,7 +284,7 @@
       content: doc-text-printer-request-for-promotion
 
 - type: entity
-  parent: PrintedDocument
+  parent: PaperDyedLaw
   id: PrintedDocumentRequestDocuments
   name: Request for the provision of documents
   components:
@@ -157,7 +292,7 @@
       content: doc-text-printer-request-documents
 
 - type: entity
-  parent: PrintedDocument
+  parent: PaperDyedSec
   id: PrintedDocumentRequestEuthanasia
   name: Request for euthanasia
   components:
@@ -165,7 +300,7 @@
       content: doc-text-printer-request-euthanasia
 
 - type: entity
-  parent: PrintedDocument
+  parent: PaperDyedEngi
   id: PrintedDocumentRequestConstructionWork
   name: Request for construction works
   components:
@@ -173,7 +308,7 @@
       content: doc-text-printer-request-construction-work
 
 - type: entity
-  parent: PrintedDocument
+  parent: PaperDyedEpi
   id: PrintedDocumentRequestModernization
   name: Request for modernization
   components:
@@ -181,7 +316,7 @@
       content: doc-text-printer-request-modernization
 
 - type: entity
-  parent: PrintedDocument
+  parent: PaperDyedSec
   id: PrintedDocumentComplaintOffense
   name: Complaint about an offense
   components:
@@ -189,7 +324,7 @@
       content: doc-text-printer-complaint-offense
 
 - type: entity
-  parent: PrintedDocument
+  parent: PaperDyedSec
   id: PrintedDocumentPermissionEquipment
   name: Authorization to use equipment
   components:
@@ -197,7 +332,7 @@
       content: doc-text-printer-permission-equipment
 
 - type: entity
-  parent: PrintedDocument
+  parent: PaperDyedSec
   id: PrintedDocumentSearchPermission
   name: Authorization to search
   components:
@@ -205,7 +340,7 @@
       content: doc-text-printer-search-permission
 
 - type: entity
-  parent: PrintedDocument
+  parent: PaperDyedSec
   id: PrintedDocumentPermissionToCarryWeapons
   name: Permission to carry weapons
   components:
@@ -213,7 +348,7 @@
       content: doc-text-printer-permission-to-carry-weapons
 
 - type: entity
-  parent: PrintedDocument
+  parent: PaperDyedMed
   id: PrintedDocumentPrescriptionDrugAuthorization
   name: Prescription Drug Authorization
   components:
@@ -221,7 +356,7 @@
       content: doc-text-printer-prescription-drug-authorization
 
 - type: entity
-  parent: PrintedDocument
+  parent: PaperDyedSec
   id: PrintedDocumentPermissionDisposeBody
   name: Authorization to dispose of the body
   components:
@@ -229,7 +364,7 @@
       content: doc-text-printer-permission-dispose-body
 
 - type: entity
-  parent: PrintedDocument
+  parent: PaperDyedEngi
   id: PrintedDocumentConstructionPermit
   name: Building permit
   components:
@@ -237,7 +372,7 @@
       content: doc-text-printer-construction-permit
 
 - type: entity
-  parent: PrintedDocument
+  parent: PaperDyedHoP
   id: PrintedDocumentOrderDismissal
   name: Dismissal order
   components:
@@ -245,7 +380,7 @@
       content: doc-text-printer-order-dismissal
 
 - type: entity
-  parent: PrintedDocument
+  parent: PaperDyedHoP
   id: PrintedDocumentOrderDeprivationAccess
   name: Denial of access order
   components:
@@ -253,7 +388,7 @@
       content: doc-text-printer-order-deprivation-access
 
 - type: entity
-  parent: PrintedDocument
+  parent: PaperDyedElevated
   id: PrintedDocumentOrderEncouragement
   name: Incentive order
   components:
@@ -261,7 +396,7 @@
       content: doc-text-printer-order-encouragement
 
 - type: entity
-  parent: PrintedDocument
+  parent: PaperDyedSec
   id: PrintedDocumentOrderParolePrisoner
   name: Prisoner parole order
   components:
@@ -269,7 +404,7 @@
       content: doc-text-printer-order-parole-prisoner
 
 - type: entity
-  parent: PrintedDocument
+  parent: PaperDyedEpi
   id: PrintedDocumentOrderRecognizingSentienceCreature
   name: An order recognizing the reasonableness of the substance
   components:
@@ -277,7 +412,7 @@
       content: doc-text-printer-order-recognizing-sentience-creature
 
 - type: entity
-  parent: PrintedDocument
+  parent: PaperDyedMed
   id: PrintedDocumentOrderMedicalIntervention
   name: Order for medical intervention
   components:
@@ -293,15 +428,7 @@
       content: doc-text-printer-product-manufacturing-order
 
 - type: entity
-  parent: PrintedDocument
-  id: PrintedDocumentOrderingSpecialEquipment
-  name: Ordering special equipment
-  components:
-    - type: Paper
-      content: doc-text-printer-ordering-special-equipment
-
-- type: entity
-  parent: PrintedDocument
+  parent: PaperDyedEpi
   id: PrintedDocumentCertificate
   name: Certificate
   components:
@@ -309,7 +436,7 @@
       content: doc-text-printer-certificate
 
 - type: entity
-  parent: PrintedDocument
+  parent: PaperDyedElevated
   id: PrintedDocumentCertificateAdvancedTraining
   name: Certificate of advanced training
   components:
@@ -317,7 +444,7 @@
       content: doc-text-printer-certificate-advanced-training
 
 - type: entity
-  parent: PrintedDocument
+  parent: PaperDyedSec
   id: PrintedDocumentCertificateOffense
   name: Certificate of Offense
   components:
@@ -325,7 +452,7 @@
       content: doc-text-printer-certificate-offense
 
 - type: entity
-  parent: PrintedDocument
+  parent: PaperDyedMed
   id: PrintedDocumentDeathCertificate
   name: Death certificate
   components:
@@ -333,7 +460,7 @@
       content: doc-text-printer-death-certificate
 
 - type: entity
-  parent: PrintedDocument
+  parent: PaperDyedLaw
   id: PrintedDocumentMarriageCertificate
   name: Marriage certificate
   components:
@@ -341,7 +468,7 @@
       content: doc-text-printer-marriage-certificate
 
 - type: entity
-  parent: PrintedDocument
+  parent: PaperDyedLaw
   id: PrintedDocumentDivorceCertificate
   name: Certificate of divorce
   components:
@@ -349,7 +476,7 @@
       content: doc-text-printer-divorce-certificate
 
 - type: entity
-  parent: PrintedDocument
+  parent: PaperDyedSec
   id: PrintedDocumentClosingIndictment
   name: Indictment
   components:
@@ -357,7 +484,7 @@
       content: doc-text-printer-closing-indictment
 
 - type: entity
-  parent: PrintedDocument
+  parent: PaperDyedLaw
   id: PrintedDocumentSentence
   name: Sentence
   components:
@@ -365,15 +492,7 @@
       content: doc-text-printer-sentence
 
 - type: entity
-  parent: PrintedDocument
-  id: PrintedDocumentJudgment
-  name: Judgment
-  components:
-    - type: Paper
-      content: doc-text-printer-judgment
-
-- type: entity
-  parent: PrintedDocument
+  parent: PaperDyedMed
   id: PrintedDocumentStatementHealth
   name: Health report
   components:
@@ -381,7 +500,7 @@
       content: doc-text-printer-statement-health
 
 - type: entity
-  parent: PrintedDocument
+  parent: PaperDyedLaw
   id: PrintedDocumentDecisionToStartTrial
   name: Decision to start a trial
   components:
@@ -389,7 +508,7 @@
       content: doc-text-printer-decision-to-start-trial
 
 - type: entity
-  parent: PrintedDocument
+  parent: PaperDyedSec
   id: PrintedDocumentErrorLoadingFormHeader
   name: ERROR loading form header
   components:
@@ -397,7 +516,7 @@
       content: doc-text-printer-error-loading-form-header
 
 - type: entity
-  parent: PrintedDocument
+  parent: PaperDyedSec
   id: PrintedDocumentNoticeOfLiquidation
   name: NOTICE OF LIQUIDATION
   components:
@@ -405,7 +524,7 @@
       content: doc-text-printer-notice-of-liquidation
 
 - type: entity
-  parent: PrintedDocument
+  parent: PaperDyedSec
   id: PrintedDocumentBusinessDeal
   name: BUSINESS DEAL
   components:
@@ -413,7 +532,7 @@
       content: doc-text-printer-business-deal
 
 - type: entity
-  parent: PrintedDocument
+  parent: PaperDyedSec
   id: PrintedDocumentNoteBeginningMilitaryActions
   name: NOTE BEGINNING MILITARY ACTIONS
   components:
@@ -421,7 +540,7 @@
       content: doc-text-printer-note-beginning-military-actions
 
 - type: entity
-  parent: PrintedDocument
+  parent: PaperDyedSec
   id: PrintedDocumentReportAccomplishmentGoals
   name: REPORT ACCOMPLISHMENT GOALS
   components:
@@ -429,7 +548,7 @@
       content: doc-text-printer-report-accomplishment-goals
 
 - type: entity
-  parent: PrintedDocument
+  parent: PaperDyedHoP
   id: PrintedDocumentPassengerApplication
   name: Temporary Passenger Application
   components:
@@ -437,7 +556,7 @@
     content: doc-text-printer-passenger-application
 
 - type: entity
-  parent: PrintedDocument
+  parent: PaperDyedMed
   id: PrintedDocumentSurgeryForm
   name: Surgery Form
   components:
@@ -446,6 +565,7 @@
 
 - type: entity
   parent: PrintedDocument
+  # Leave as is: Letters are white!
   id: PrintedDocumentLetter
   name: Letter Template
   components:
