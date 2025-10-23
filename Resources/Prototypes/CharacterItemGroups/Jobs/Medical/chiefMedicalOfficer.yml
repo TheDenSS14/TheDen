@@ -36,10 +36,12 @@
 #  maxItems: 1
 #  items:
 #
-#- type: characterItemGroup
-#  id: LoadoutChiefMedicalOfficerEquipment
-#  maxItems: 1
-#  items:
+- type: characterItemGroup
+  id: LoadoutChiefMedicalOfficerEquipment
+  maxItems: 1
+  items:
+  - type: loadout
+    id: DefibrillatorCompact
 #
 #- type: characterItemGroup
 #  id: LoadoutChiefMedicalOfficerEyes
