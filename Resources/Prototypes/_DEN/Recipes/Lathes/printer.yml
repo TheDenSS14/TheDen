@@ -77,15 +77,6 @@
     SheetPrinter: 100
 
 - type: latheRecipe
-  id: PrintedDocumentExperimentReportRecipe
-  result: PrintedDocumentExperimentReport
-  category: Reports
-  completetime: 2
-  applyMaterialDiscount: false
-  materials:
-    SheetPrinter: 100
-
-- type: latheRecipe
   id: PrintedDocumentDisposalReportRecipe
   result: PrintedDocumentDisposalReport
   category: Reports
@@ -149,15 +140,6 @@
   icon:
     sprite: Objects/Tools/multitool.rsi
     state: icon
-  completetime: 2
-  applyMaterialDiscount: false
-  materials:
-    SheetPrinter: 100
-
-- type: latheRecipe
-  id: PrintedDocumentAppealRecipe
-  result: PrintedDocumentAppeal
-  category: InquiriesAndAppeals
   completetime: 2
   applyMaterialDiscount: false
   materials:
@@ -429,15 +411,6 @@
     SheetPrinter: 100
 
 - type: latheRecipe
-  id: PrintedDocumentOrderingSpecialEquipmentRecipe
-  result: PrintedDocumentOrderingSpecialEquipment
-  category: Orders
-  completetime: 2
-  applyMaterialDiscount: false
-  materials:
-    SheetPrinter: 100
-
-- type: latheRecipe
   id: PrintedDocumentCertificateRecipe
   result: PrintedDocumentCertificate
   category: Evidence
@@ -524,15 +497,6 @@
   icon:
     sprite: _DV/Objects/Specific/Justice/gavelblock.rsi
     state: icon
-  category: Evidence
-  completetime: 2
-  applyMaterialDiscount: false
-  materials:
-    SheetPrinter: 100
-
-- type: latheRecipe
-  id: PrintedDocumentJudgmentRecipe
-  result: PrintedDocumentJudgment
   category: Evidence
   completetime: 2
   applyMaterialDiscount: false
