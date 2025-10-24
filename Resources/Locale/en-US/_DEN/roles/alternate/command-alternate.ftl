@@ -8,4 +8,4 @@ job-name-alternate-queen = Queen
 job-name-alternate-commander = Commander
 
 # Admin Assistant
-job-name-alternate-command-pet = Command Pet
+job-name-alternate-unpaid-intern = Unpaid Intern
