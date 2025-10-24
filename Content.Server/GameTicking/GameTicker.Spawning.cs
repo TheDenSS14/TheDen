@@ -42,7 +42,7 @@
 using System.Globalization;
 using System.Linq;
 using System.Numerics;
-using Content.Server._DEN.Job;
+using Content.Server._DEN.Job.Systems;
 using Content.Server.Administration.Managers;
 using Content.Server.Administration.Systems;
 using Content.Server.GameTicking.Events;

@@ -1,5 +1,6 @@
 
 using System.Linq;
+using Content.Client.Lobby.UI;
 using Content.Client.UserInterface.Controls;
 using Content.Shared._DEN.Job;
 using Content.Shared.Roles;
@@ -28,30 +29,28 @@ public sealed partial class AlternateTitleSelectionMenu : FancyWindow
 
         var buttons = new List<LocId> { job.ID, };
         buttons.AddRange(titlesPrototype.Titles);
+        sawmill.Info("Found " + buttons.Count + " titles.");
+
+        var selector = new RadioOptions<string>(RadioOptionsLayout.Vertical);
 
         foreach (var titleId in buttons)
         {
             sawmill.Info(titleId);
             var title = GetButtonText(job, titleId);
 
+            selector.AddItem(title, titleId, _ => OnSelectedAlternateTitleChanged?.Invoke(titleId));
             if (selectedAlternateTitle != null && titleId == selectedAlternateTitle)
             {
                 sawmill.Info($"Selected alternate title is: {selectedAlternateTitle}");
-                continue;
+                selector.SelectByValue(titleId);
             }
-
-            var button = new Button
-            {
-                Text = title,
-                MaxHeight = 30
-            };
-
-            button.OnPressed += _ => OnSelectedAlternateTitleChanged?.Invoke(titleId);
-            TitlesContainer.AddChild(button);
-            Titles.InvalidateMeasure();
         }
+
+        TitlesContainer.AddChild(selector);
+        Titles.InvalidateMeasure();
     }
 
     private string GetButtonText(JobPrototype job, string titleId) =>
         titleId == job.ID ? job.LocalizedName : Loc.GetString(titleId);
+
 }

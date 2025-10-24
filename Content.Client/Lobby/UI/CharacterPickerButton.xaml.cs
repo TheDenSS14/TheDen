@@ -58,7 +58,14 @@ public sealed partial class CharacterPickerButton : ContainerButton
             var highPriorityJob = humanoid.JobPriorities.SingleOrDefault(p => p.Value == JobPriority.High).Key;
             if (highPriorityJob != null)
             {
-                var jobName = prototypeManager.Index<JobPrototype>(highPriorityJob).LocalizedName;
+                string jobName = prototypeManager.Index<JobPrototype>(highPriorityJob).LocalizedName;
+                if (humanoid.JobTitles.TryGetValue(highPriorityJob, out var title)
+                    && !string.IsNullOrWhiteSpace(title)
+                    && title != jobName
+                    && Loc.TryGetString(title, out var altTitle))
+                {
+                    jobName = $"{altTitle} ({jobName})";
+                }
                 description = $"{description}\n{jobName}";
             }
         }

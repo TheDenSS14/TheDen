@@ -13,9 +13,12 @@
                          VerticalAlignment="Stretch"
                          VScrollEnabled="True" >
             <!-- Job titles are added via code. -->
-            <PanelContainer Name="TitlesContainer"
-                            VerticalExpand="True"
-                            HorizontalExpand="True" />
+            <BoxContainer Name="TitlesContainer"
+                          VerticalExpand="True"
+                          HorizontalExpand="True"
+                          Orientation="Vertical">
+                <Label Name="CurrentTitleLabel"/>
+            </BoxContainer>
         </ScrollContainer>
     </PanelContainer>
 </ui:FancyWindow>

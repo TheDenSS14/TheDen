@@ -3,18 +3,15 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using System.Linq;
+using Content.Server._DEN.Job.Components;
 using Content.Server.Access.Systems;
-using Content.Server.Database;
 using Content.Server.Mind;
 using Content.Server.Roles.Jobs;
 using Content.Shared._DEN.Job;
-using Content.Shared.Access.Systems;
 using Content.Shared.Clothing.Loadouts.Systems;
-using Content.Shared.Roles;
-using Robust.Shared.Prototypes;
 
 
-namespace Content.Server._DEN.Job;
+namespace Content.Server._DEN.Job.Systems;
 
 
 /// <summary>
@@ -80,6 +77,9 @@ public sealed partial class AlternateJobTitleSystem : EntitySystem
         var jobNameEvent = new GetJobNameEvent(job, ev.Profile);
         RaiseLocalEvent(ref jobNameEvent);
 
+        // PresetIdCardSystem runs after us, mark the card so it doesn't change it.
+        if (jobNameEvent.Handled)
+            EnsureComp<AlternateJobTitleComponent>(idCard, out var _);
         // idk why station record isn't updated when job title is, even with a bool. insane.
         _idCard.TryChangeJobTitle(idCard, jobNameEvent.JobName, idCard.Comp);
         _idCard.UpdateStationRecord(idCard, newJobTitle: jobNameEvent.JobName);

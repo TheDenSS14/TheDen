@@ -1467,7 +1467,7 @@ namespace Content.Client.Lobby.UI
                 return;
 
             _sawmill.Info("OnAlternateTitleChanged: " + newTitle ?? "No title");
-            Profile?.WithJobTitle(job.ID, newTitle ?? string.Empty);
+            Profile = Profile?.WithJobTitle(job.ID, newTitle ?? string.Empty);
             SetDirty();
         }
 
