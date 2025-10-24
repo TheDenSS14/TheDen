@@ -5,7 +5,6 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
 # Captain
-job-name-alternate-queen = Queen
 job-name-alternate-commander = Commander
 job-name-alternate-admiral = Admiral
 job-name-alternate-shogun = Shōgun
