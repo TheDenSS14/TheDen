@@ -2,7 +2,7 @@
   name: pulse magnum
   parent: BaseWeaponBatterySmall
   id: WeaponEnergyPulse
-  description: A hybridization of pulse and energy gun technologies, reserved for NT operatives.
+  description: A hybridization of pulse and energy gun technologies, issued only to NT operatives.
   components:
   - type: Sprite
     sprite: _DEN/Objects/Weapons/Guns/Battery/pulse_magnum.rsi
@@ -58,6 +58,7 @@
           Lethal: { state: mode-lethal }
   - type: Tag
     tags:
+    - Pulsemagnum
     - Sidearm
   - type: BatterySelfRecharger # 16 seconds to fully recharge, but it does not do so if it has been fired in the last 3 seconds. 19 seconds total when empty.
     autoRecharge: true

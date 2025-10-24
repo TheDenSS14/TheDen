@@ -67,26 +67,33 @@
   name: BRDI P-15
   parent: BaseWeaponPistol
   id: WeaponPistolBRDIP-15
-  description: A rugged, robust operator handgun with inbuilt silencer. Uses .25 caseless ammo.
+  description: A rugged and reliable handgun, outfitted with a heavy muzzle counterweight. Used by the special forces of the Biesel Republic Foreign Legion, they are sometimes purchased by Nanotrasen for their operatives. Uses .25 caseless ammo.
   components:
   - type: Sprite
-    sprite: Objects/Weapons/Guns/Pistols/cobra.rsi
+    sprite: _DEN/Objects/Weapons/Guns/Pistols/BRDIP_15.rsi
     layers:
     - state: base
       map: ["enum.GunVisualLayers.Base"]
     - state: mag-0
       map: ["enum.GunVisualLayers.Mag"]
   - type: Clothing
-    sprite: Objects/Weapons/Guns/Pistols/cobra.rsi
-  - type: ChamberMagazineAmmoProvider
-    boltClosed: null
+    sprite: _DEN/Objects/Weapons/Guns/Pistols/BRDIP_15.rsi
   - type: Gun
-    fireRate: 4
-    soundGunshot:
-      path: /Audio/Weapons/Guns/Gunshots/mk58.ogg
+    fireRate: 5
+    burstFireRate: 15
+    shotsPerBurst: 3
+    burstCooldown: 1
+    selectedMode: SemiAuto
     availableModes:
     - SemiAuto
+    - Burst
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/mk58.ogg
     fireOnDropChance: 0.1
+  - type: Tag
+    tags:
+    - BRDIP_15
+    - Sidearm
   - type: ItemSlots
     slots:
       gun_magazine:
@@ -125,7 +132,7 @@
         priority: 2
         whitelist:
           tags:
-          - MagazinePistolCaselessRifle
+          - MagazineBRDIP-15
       gun_chamber:
         name: Chamber
         startingItem: null
