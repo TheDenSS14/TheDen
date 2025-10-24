@@ -92,12 +92,14 @@ namespace Content.Server.Database
                 .Include(p => p.Profiles).ThenInclude(h => h.Jobs)
                 .Include(p => p.Profiles).ThenInclude(h => h.Antags)
                 .Include(p => p.Profiles).ThenInclude(h => h.Traits)
+                .Include(p => p.Profiles).ThenInclude(h => h.JobTraits).ThenInclude(h => h.Traits)
                 // Begin CD - Character Records
                 .Include(p => p.Profiles)
                 .ThenInclude(h => h.CDProfile)
                 .ThenInclude(cd => cd != null ? cd.CharacterRecordEntries : null)
                 // End CD - Character Records
                 .Include(p => p.Profiles).ThenInclude(h => h.Loadouts)
+                .Include(p => p.Profiles).ThenInclude(h => h.JobLoadouts).ThenInclude(h => h.Loadouts)
                 .AsSingleQuery()
                 .SingleOrDefaultAsync(p => p.UserId == userId.UserId, cancel);
 
@@ -147,6 +149,8 @@ namespace Content.Server.Database
                 .Include(p => p.Antags)
                 .Include(p => p.Traits)
                 .Include(p => p.Loadouts)
+                .Include(p => p.JobLoadouts)
+                .Include(p => p.JobTraits)
                 .Include(p => p.CDProfile) // CD - Character Records
                 .ThenInclude(cd => cd != null ? cd.CharacterRecordEntries : null)
                 .AsSplitQuery()
@@ -233,6 +237,9 @@ namespace Content.Server.Database
         private static HumanoidCharacterProfile ConvertProfiles(Profile profile)
         {
             var jobs = profile.Jobs.ToDictionary(j => j.JobName, j => (JobPriority) j.Priority);
+            var jobLoadouts = profile.JobLoadouts.Where(l => l.Loadouts != null).ToDictionary(l => l.Job, l => l.Loadouts.Select(Shared.Clothing.Loadouts.Systems.Loadout (l) => l));
+            var jobTraits = profile.JobTraits.Where(l => l.Traits != null).ToDictionary(l => l.Job, l => l.Traits);
+            var lastJobLoadout = profile.lastJobLoadout;
             var antags = profile.Antags.Select(a => a.AntagName);
             var traits = profile.Traits.Select(t => t.TraitName);
             var loadouts = profile.Loadouts.Select(Shared.Clothing.Loadouts.Systems.Loadout (l) => l);
@@ -314,6 +321,13 @@ namespace Content.Server.Database
                 ),
                 spawnPriority,
                 jobs,
+                jobLoadouts.ToDictionary(l => l.Key, l => l.Value.Select(l => new LoadoutPreference(l.LoadoutName)
+                {
+                    CustomName = l.CustomName, CustomDescription = l.CustomDescription,
+                    CustomColorTint = l.CustomColorTint, CustomHeirloom = l.CustomHeirloom, Selected = true,
+                }).ToHashSet()),
+                jobTraits.ToDictionary(t => t.Key, t => t.Value.Select(t => t.TraitName).ToHashSet()),
+                lastJobLoadout,
                 clothing,
                 backpack,
                 (PreferenceUnavailableMode) profile.PreferenceUnavailable,
@@ -393,6 +407,26 @@ namespace Content.Server.Database
             profile.Loadouts.Clear();
             profile.Loadouts.AddRange(humanoid.LoadoutPreferences
                 .Select(l => new Loadout(l.LoadoutName, l.CustomName, l.CustomDescription, l.CustomColorTint, l.CustomHeirloom)));
+
+            profile.JobLoadouts.Clear();
+            profile.JobLoadouts.AddRange(
+                humanoid.JobLoadouts.Select(kvp => new JobLoadouts
+                {
+                    Job = kvp.Key,
+                    Loadouts = kvp.Value
+                    .Select(l => new JobLoadout(l.LoadoutName, l.CustomName, l.CustomDescription, l.CustomColorTint, l.CustomHeirloom)).ToList()
+                }));
+
+            profile.lastJobLoadout = humanoid.LastJobLoadout;
+
+            profile.JobTraits.Clear();
+            profile.JobTraits.AddRange(
+                humanoid.JobTraits.Select(kvp => new JobTraits
+                {
+                    Job = kvp.Key,
+                    Traits = kvp.Value
+                    .Select(l => new JobTrait { TraitName = l }).ToList()
+                }));
 
             // Begin CD - Character Records
             profile.CDProfile ??= new();

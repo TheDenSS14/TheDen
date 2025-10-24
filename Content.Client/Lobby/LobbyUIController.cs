@@ -161,6 +161,8 @@ public sealed class LobbyUIController : UIController, IOnStateEntered<LobbyState
 
         var profile = (HumanoidCharacterProfile?) _preferencesManager.Preferences?.SelectedCharacter;
 
+
+
         // TODO DEN: Kill this with fire
         // I had to add this because, genuinely, someone configured the server database end of
         // this to be a Loadout instead of a LoadoutPreference. The problem is that Loadouts do not
@@ -300,8 +302,9 @@ public sealed class LobbyUIController : UIController, IOnStateEntered<LobbyState
     /// Gets the highest priority job for the profile.
     public JobPrototype GetPreferredJob(HumanoidCharacterProfile profile)
     {
-        var highPriorityJob = profile.JobPriorities.FirstOrDefault(p => p.Value == JobPriority.High).Key;
-        return _prototypeManager.Index<JobPrototype>(highPriorityJob ?? SharedGameTicker.FallbackOverflowJob);
+        return _prototypeManager.Index<JobPrototype>(profile.JobPriorities.Any()
+            ? profile.JobPriorities.MaxBy(kvp => kvp.Value).Key
+            : SharedGameTicker.FallbackOverflowJob);
     }
 
     public void RemoveDummyClothes(EntityUid dummy)

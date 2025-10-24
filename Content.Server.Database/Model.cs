@@ -45,6 +45,7 @@ using System.Linq;
 using System.Net;
 using System.Text.Json;
 using Content.Shared._EE.Contractors.Prototypes;
+using Content.Shared.Clothing.Loadouts.Systems;
 using Content.Shared.Database;
 using Microsoft.EntityFrameworkCore;
 using NpgsqlTypes;
@@ -478,6 +479,9 @@ namespace Content.Server.Database
         public string Backpack { get; set; } = null!;
         public int SpawnPriority { get; set; } = 0;
         public List<Job> Jobs { get; } = new();
+        public List<JobLoadouts> JobLoadouts { get; } = new();
+        public List<JobTraits> JobTraits { get; } = new();
+        public string lastJobLoadout { get; set; } = null!;
         public List<Antag> Antags { get; } = new();
         public List<Trait> Traits { get; } = new();
         public List<Loadout> Loadouts { get; } = new();
@@ -519,6 +523,44 @@ namespace Content.Server.Database
         public DbJobPriority Priority { get; set; }
     }
 
+    public class JobLoadouts
+    {
+        public int Id { get; set; }
+
+        public List<JobLoadout> Loadouts { get; set; } = null!;
+
+        public string Job { get; set; } = null!;
+
+        public Profile Profile { get; set; }
+    }
+
+    [Serializable]
+    public partial class JobLoadout : Shared.Clothing.Loadouts.Systems.Loadout
+    {
+        public int Id { get; set; }
+        public JobLoadouts JobLoadouts { get; set; } = null!;
+
+        public JobLoadout(
+            string loadoutName,
+            string? customName = null,
+            string? customDescription = null,
+            string? customColorTint = null,
+            bool? customHeirloom = null
+        ) : base(loadoutName, customName, customDescription, customColorTint, customHeirloom) { }
+    }
+    public class JobTraits
+    {
+        public int Id { get; set; }
+        public List<JobTrait> Traits { get; set; } = null!;
+        public string Job { get; set; } = null!;
+        public Profile Profile { get; set; }
+    }
+    public class JobTrait
+    {
+        public int Id { get; set; }
+        public JobTraits JobTraits { get; set; } = null!;
+        public string TraitName { get; set; } = null!;
+    }
     public enum DbJobPriority
     {
         // These enum values HAVE to match the ones in JobPriority in Content.Shared

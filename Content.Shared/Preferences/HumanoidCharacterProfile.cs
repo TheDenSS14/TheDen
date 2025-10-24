@@ -37,8 +37,7 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
-using System.Linq;
-using System.Text.RegularExpressions;
+using Content.Shared._CD.Records; // CD - Character Records
 using Content.Shared.CCVar;
 using Content.Shared.Clothing.Loadouts.Prototypes;
 using Content.Shared.Clothing.Loadouts.Systems;
@@ -54,7 +53,8 @@ using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Serialization;
 using Robust.Shared.Utility;
-using Content.Shared._CD.Records; // CD - Character Records
+using System.Linq;
+using System.Text.RegularExpressions;
 
 namespace Content.Shared.Preferences;
 
@@ -86,11 +86,21 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
     [DataField]
     private HashSet<string> _traitPreferences = new();
 
+
     /// <see cref="_loadoutPreferences"/>
     public HashSet<LoadoutPreference> LoadoutPreferences => _loadoutPreferences;
 
     [DataField]
     private HashSet<LoadoutPreference> _loadoutPreferences = new();
+
+    [DataField]
+    public Dictionary<string, HashSet<LoadoutPreference>> JobLoadouts = new();
+
+    [DataField]
+    public Dictionary<string, HashSet<string>> JobTraits = new();
+
+    [DataField]
+    public string LastJobLoadout = "";
 
     [DataField]
     public string Name { get; set; } = "John Doe";
@@ -218,6 +228,9 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
         HumanoidCharacterAppearance appearance,
         SpawnPriorityPreference spawnPriority,
         Dictionary<string, JobPriority> jobPriorities,
+        Dictionary<string, HashSet<LoadoutPreference>> jobLoadouts,
+        Dictionary<string, HashSet<string>> jobTraits,
+        string lastJobLoadout,
         ClothingPreference clothing,
         BackpackPreference backpack,
         PreferenceUnavailableMode preferenceUnavailable,
@@ -250,6 +263,9 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
         Appearance = appearance;
         SpawnPriority = spawnPriority;
         _jobPriorities = jobPriorities;
+        JobLoadouts = jobLoadouts;
+        JobTraits = jobTraits;
+        LastJobLoadout = lastJobLoadout;
         Clothing = clothing;
         Backpack = backpack;
         PreferenceUnavailable = preferenceUnavailable;
@@ -286,6 +302,9 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
             other.Appearance.Clone(),
             other.SpawnPriority,
             new Dictionary<string, JobPriority>(other.JobPriorities),
+            new Dictionary<string, HashSet<LoadoutPreference>>(other.JobLoadouts),
+            other.JobTraits,
+            other.LastJobLoadout,
             other.Clothing,
             other.Backpack,
             other.PreferenceUnavailable,
@@ -754,7 +773,12 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
         var namingSystem = IoCManager.Resolve<IEntitySystemManager>().GetEntitySystem<NamingSystem>();
         return namingSystem.GetName(species, gender);
     }
-
+    public string GetHighestPriorityJob()
+    {
+        return JobPriorities.Any()
+            ? JobPriorities.MaxBy(kvp => kvp.Value).Key
+            : SharedGameTicker.FallbackOverflowJob;
+    }
     public override bool Equals(object? obj)
     {
         return ReferenceEquals(this, obj) || obj is HumanoidCharacterProfile other && MemberwiseEquals(other);
@@ -767,6 +791,8 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
         hashCode.Add(_antagPreferences);
         hashCode.Add(_traitPreferences);
         hashCode.Add(_loadoutPreferences);
+        hashCode.Add(JobLoadouts);
+        hashCode.Add(JobTraits);
         hashCode.Add(Name);
         hashCode.Add(FlavorText);
         hashCode.Add(Species);

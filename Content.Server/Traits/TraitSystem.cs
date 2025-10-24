@@ -88,7 +88,14 @@ public sealed class TraitSystem : EntitySystem
         var jobPrototypeToUse = _prototype.Index(jobId ?? _prototype.EnumeratePrototypes<JobPrototype>().First().ID);
         var sortedTraits = new List<TraitPrototype>();
 
-        foreach (var traitId in profile.TraitPreferences)
+        // load traits from correct jobloadout
+        var jobTraits = new HashSet<string>(profile.TraitPreferences);
+        if (profile.JobTraits.TryGetValue(jobId ?? _prototype.EnumeratePrototypes<JobPrototype>().First().ID, out var l))
+        {
+            jobTraits = l;
+        }
+
+        foreach (var traitId in jobTraits)
         {
             if (_prototype.TryIndex<TraitPrototype>(traitId, out var traitPrototype))
             {
