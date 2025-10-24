@@ -3,6 +3,5 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
 # Captain
-job-name-alternate-capitan = Capitan
 job-name-alternate-queen = Queen
 job-name-alternate-commander = Commander
