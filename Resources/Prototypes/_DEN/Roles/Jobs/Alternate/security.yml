@@ -8,3 +8,42 @@
   - job-name-alternate-watchman
   - job-name-alternate-watchperson
   - job-name-alternate-watchwoman
+  - job-name-alternate-station-trooper
+
+- type: alternateJobTitle
+  id: DefaultSeniorOfficer
+  jobId: SeniorOfficer
+  titles:
+  - job-name-alternate-senior-patrolman
+  - job-name-alternate-senior-patrolperson
+  - job-name-alternate-senior-patrolwoman
+  - job-name-alternate-senior-watchman
+  - job-name-alternate-senior-watchperson
+  - job-name-alternate-senior-watchwoman
+  - job-name-alternate-senior-trooper
+
+- type: alternateJobTitle
+  id: DefaultCorpsman
+  jobId: Brigmedic
+  titles:
+  - job-name-alternate-senior-brigmedic
+  - job-name-alternate-senior-field-medic
+
+- type: alternateJobTitle
+  id: DefaultDetective
+  jobId: Detective
+  titles:
+  - job-name-alternate-inspector
+  - job-name-alternate-investigator
+
+- type: alternateJobTitle
+  id: DefaultWarden
+  jobId: Warden
+  titles:
+  - job-name-alternate-armorer
+  - job-name-alternate-armourer
+  - job-name-alternate-deputy-head
+  - job-name-alternate-deputy-chief
+  - job-name-alternate-assistant-security-director
+  - job-name-alternate-deputy-security-director
+  - job-name-alternate-bailiff

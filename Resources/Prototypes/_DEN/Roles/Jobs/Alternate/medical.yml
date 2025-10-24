@@ -2,6 +2,20 @@
   id: DefaultMedicalIntern
   jobId: MedicalIntern
   titles:
-  - job-name-alternate-practical-nurse
   - job-name-alternate-resident
   - job-name-alternate-clinician
+
+- type: alternateJobTitle
+  id: DefaultMedicalDoctor
+  jobId: MedicalDoctor
+  titles:
+  - job-name-alternate-surgeon
+  - job-name-alternate-nurse
+  - job-name-alternate-cryogenics-specialist
+
+- type: alternateJobTitle
+  id: DefaultParamedic
+  jobId: Paramedic
+  titles:
+  - job-name-alternate-emergency-responder
+  - job-name-alternate-first-responder

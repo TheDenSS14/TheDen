@@ -5,3 +5,6 @@
 # Captain
 job-name-alternate-queen = Queen
 job-name-alternate-commander = Commander
+
+# Admin Assistant
+job-name-alternate-command-pet = Command Pet

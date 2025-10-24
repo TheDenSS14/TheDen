@@ -11,3 +11,21 @@
   titles:
   - job-name-alternate-prospector
   - job-name-alternate-excavator
+  - job-name-alternate-miner
+  - job-name-alternate-explorer
+
+- type: alternateJobTitle
+  id: DefaultLogisticsOfficer
+  jobId: Quartermaster
+  titles:
+  - job-name-alternate-quartermaster
+  - job-name-alternate-requisitions-officer
+  - job-name-alternate-treasurer
+  - job-name-alternate-head-of-logistics
+  - job-name-alternate-loadmaster
+
+- type: alternateJobTitle
+  id: DefaultCourier
+  jobId: MailCarrier
+  titles:
+  - job-name-alternate-postmaster
