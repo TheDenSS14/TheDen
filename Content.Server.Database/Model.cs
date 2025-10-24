@@ -533,7 +533,7 @@ namespace Content.Server.Database
 
         public string Job { get; set; } = null!;
 
-        public Profile Profile { get; set; }
+        public Profile Profile { get; set; } = null!;
     }
 
     [Serializable]
@@ -555,7 +555,7 @@ namespace Content.Server.Database
         public int Id { get; set; }
         public List<JobTrait> Traits { get; set; } = null!;
         public string Job { get; set; } = null!;
-        public Profile Profile { get; set; }
+        public Profile Profile { get; set; } = null!;
     }
     public class JobTrait
     {
