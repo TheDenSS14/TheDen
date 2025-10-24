@@ -22,7 +22,7 @@ job-name-alternate-emergency-medical-technician = Emergency Medical Technician
 # Chemist
 job-name-alternate-pharmacist = Pharmacist
 job-name-alternate-apothecary = Apothecary
-job-name-alternate-medicine-technician = Drug Technician
+job-name-alternate-synthesizer = Synthesizer
 
 # Chief Medical Officer
 job-name-alternate-surgeon-general = Surgeon General
