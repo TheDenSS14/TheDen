@@ -30,6 +30,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
     xmlns:ui="clr-namespace:Content.Client.UserInterface.Controls"
     xmlns:cd="clr-namespace:Content.Client._CD.Records.UI"
     xmlns:denLoadouts="clr-namespace:Content.Client._DEN.Lobby.UI.Loadouts"
+    xmlns:graphics="clr-namespace:Robust.Client.Graphics;assembly=Robust.Client"
     HorizontalExpand="True">
     <!-- Left side -->
     <BoxContainer Orientation="Vertical" Margin="10 10 10 10" HorizontalExpand="True">
@@ -358,9 +359,20 @@ SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
             </BoxContainer>
             <BoxContainer Name="TraitsTab" HorizontalExpand="True" Orientation="Vertical" Margin="10">
                 <!-- Traits -->
-                <Label Name="TraitPointsLabel" HorizontalAlignment="Stretch" Align="Center" />
-                <ProgressBar Name="TraitPointsBar" MaxValue="1" Value="1" MaxHeight="8" Margin="0 5" />
-
+                <BoxContainer
+                    Name="JobTraitsInfoBox"
+                    Orientation="Vertical"
+                    HorizontalExpand="True"
+                    SeparationOverride="5"
+                    Margin="5">
+                    <Label Name="JobLabel"
+                           HorizontalAlignment="Stretch"
+                           Align="Center" StyleClasses="LabelBig"/>
+                </BoxContainer>
+                <BoxContainer Orientation="Vertical" HorizontalExpand="True" SeparationOverride="5" Margin="5">
+                    <Label Name="TraitPointsLabel" HorizontalAlignment="Stretch" Align="Center" />
+                    <ProgressBar Name="TraitPointsBar" MaxValue="1" Value="1" MaxHeight="8" Margin="0 5" />
+                </BoxContainer>
                 <BoxContainer HorizontalExpand="True" Margin="0 0 0 5">
                     <Button
                         Name="TraitsShowUnusableButton"
