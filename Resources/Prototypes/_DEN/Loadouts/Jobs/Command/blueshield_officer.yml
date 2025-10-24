@@ -74,7 +74,7 @@
   items:
     - ClothingEyesGlassesBSOVisor
 
-#mask
+# Mask
 - type: loadout
   id: LoadoutBlueshieldCombatGasMask
   category: JobsCommandBlueshieldOfficer
@@ -102,3 +102,18 @@
         - BlueshieldOfficer
   items:
     - ClothingMaskGasBSOERT
+
+# Belt
+- type: loadout
+  id: LoadoutClothingWebbingBlueshield
+  category: JobsCommandBlueshieldOfficer
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBlueshieldOfficerBelt
+    - !type:CharacterJobRequirement
+      jobs:
+        - BlueshieldOfficer
+  items:
+    - ClothingBeltBSOWebbingFilled

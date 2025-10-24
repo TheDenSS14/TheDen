@@ -112,7 +112,7 @@
 
 - type: entity
   name: AK-104
-  parent: WeaponRifleAk
+  parent: [ BaseBlueshieldOfficerContraband, WeaponRifleAk ]
   id: WeaponRiflBSOAk
   description: A modernized weapon of war, painted in the BSO's colours. Uses .30 rifle ammo.
   components:

@@ -9,7 +9,7 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 - type: entity
-  parent: [ClothingOuterHardsuitSecurity, BaseIntegratedMagboot]
+  parent: [BaseBlueshieldOfficerContraband, ClothingOuterHardsuitSecurity, BaseIntegratedMagboot]
   id: ClothingOuterHardsuitBlueshield
   name: blueshield's hardsuit
   description: A special security hardsuit made for the Blueshield Officer, has extra armor yet somehow feels lighter.

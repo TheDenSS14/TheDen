@@ -5,7 +5,7 @@
 
 # The Modsuit Itself, This is just a ERT modsuit
 - type: entity
-  parent: ClothingModsuitStandard
+  parent: [ BaseBlueshieldOfficerContraband, ClothingModsuitStandard ]
   id: ClothingModsuitPraetorian
   name: Praetorian modsuit control
   description: The main controller for a Praetorian modsuit.

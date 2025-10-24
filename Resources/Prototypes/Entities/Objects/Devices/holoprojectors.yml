@@ -165,7 +165,7 @@
         name: power-cell-slot-component-slot-name-default
 
 - type: entity
-  parent: [ BaseSecurityContraband, BaseItem ] # Den - Remove powercell requirement
+  parent: [ BaseSecurityBlueshieldOfficerContraband, BaseItem ] # Den - Remove powercell requirement
   id: HoloprojectorSecurity
   name: holobarrier projector
   description: Creates a solid but fragile holographic barrier.

@@ -177,6 +177,25 @@
   - type: Contraband
     allowedDepartments: [ CentralCommand, Command, Dignitary ]
 
+#Stuff that only CC + Dignitaries should have
+- type: entity
+  id: BaseCentcommDignitaryContraband
+  parent: BaseRestrictedContraband
+  abstract: true
+  components:
+  - type: Contraband
+    allowedDepartments: [ CentralCommand, Dignitary ]
+
+#Stuff that primarily CC officials, ERT teams, and Blueshield officers get issued
+- type: entity
+  id: BaseCentcommBlueshieldContraband
+  parent: BaseRestrictedContraband
+  abstract: true
+  components:
+  - type: Contraband
+    allowedDepartments: [ CentralCommand ]
+    allowedJobs: [ BlueshieldOfficer ]
+
 - type: entity
   id: BaseSecurityCommandContraband
   parent: BaseRestrictedContraband

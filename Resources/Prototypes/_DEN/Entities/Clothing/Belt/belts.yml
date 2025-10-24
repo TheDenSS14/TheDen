@@ -39,10 +39,10 @@
       - BeltSlotNotBelt
 
 - type: entity
-  parent: ClothingBeltSecurityWebbing
+  parent: [ BaseBlueshieldOfficerContraband, ClothingBeltStorageBase ]
   id: ClothingBeltBSOWebbing
   name: blueshield webbing
-  description: A robust set of webbing made to fit the needs of a blueshield officer.
+  description: A robust chest rig made to fit the needs of a blueshield officer.
   components:
   - type: Sprite
     sprite: _DEN/Clothing/Belt/blueshieldwebbing.rsi
@@ -65,6 +65,11 @@
         whitelist:
           tags:
           - Sidearm
+        ejectSound: #Den edit
+          path: /Audio/_DEN/Weapons/pistol_unholster.ogg
+        insertOnInteract: true
+        insertSound: #Den edit
+          path: /Audio/_DEN/Weapons/pistol_holster.ogg
       radio:
         name: clothing-belt-radio
         priority: -2
@@ -72,7 +77,7 @@
           tags:
             - Radio
         insertOnInteract: true
-  - type: ItemMapper # DeltaV - adjust for DeltaV sprites.
+  - type: ItemMapper # For item overlays
     mapLayers:
       medkit:
         whitelist:
@@ -107,3 +112,23 @@
       medkit: !type:ContainerSlot {}
       radio: !type:ContainerSlot {}
   - type: Appearance
+
+- type: entity
+  parent: ClothingBeltBSOWebbing
+  id: ClothingBeltBSOWebbingFilled
+  name: blueshield webbing
+  description: A robust chest rig made to fit the needs of a blueshield officer.
+  suffix: Filled # TheDen
+  components:
+  - type: StorageFill
+    contents:
+      - id: Stunbaton
+      - id: Flash
+      - id: Handcuffs
+      - id: HoloprojectorSecurity
+      - id: FlashlightSeclite
+      - id: HandheldCrewMonitorBSO
+  - type: ContainerFill
+    containers: 
+      radio:
+      - RadioHandheldSecurity

@@ -65,7 +65,7 @@
 
 - type: entity
   name: BRDI P-15
-  parent: BaseWeaponPistol
+  parent: [ BaseCentcommBlueshieldContraband, BaseWeaponPistol ]
   id: WeaponPistolBRDIP-15
   description: A rugged and reliable handgun, outfitted with a heavy muzzle counterweight. Used by the special forces of the Biesel Republic Foreign Legion, they are sometimes purchased by Nanotrasen for their operatives. Uses .25 caseless ammo.
   components:

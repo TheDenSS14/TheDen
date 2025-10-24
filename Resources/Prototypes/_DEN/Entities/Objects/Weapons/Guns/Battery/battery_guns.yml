@@ -1,6 +1,6 @@
 - type: entity
   name: pulse magnum
-  parent: BaseWeaponBatterySmall
+  parent: [ BaseCentcommBlueshieldContraband, BaseWeaponBatterySmall ]
   id: WeaponEnergyPulse
   description: A hybridization of pulse and energy gun technologies, issued only to NT operatives.
   components:

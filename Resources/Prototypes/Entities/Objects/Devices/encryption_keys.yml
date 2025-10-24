@@ -65,7 +65,7 @@
     - state: cargo_label
 
 - type: entity
-  parent: EncryptionKey
+  parent: [ BaseCentcommDignitaryContraband, EncryptionKey ]
   id: EncryptionKeyCentCom
   name: central command encryption key
   description: An encryption key used by captain's bosses.
@@ -80,7 +80,7 @@
     - state: nano_label
 
 - type: entity
-  parent: EncryptionKey
+  parent: [ BaseCentcommCommandDignitaryContraband, EncryptionKey ] #TheDen contraband parent
   id: EncryptionKeyStationMaster
   name: station master encryption key
   description: An encryption key used by station's bosses.

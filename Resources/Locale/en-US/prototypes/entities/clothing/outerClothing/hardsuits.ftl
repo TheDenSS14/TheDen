@@ -205,7 +205,7 @@ ent-ClothingOuterHardsuitCBURN = "Jophiel" tacsuit
     The armor appears to be lined with a rather plain, but sturdy alloy, it doesn't seem to have any weight either.
     Technical identifier: NT-444c
 ent-ClothingOuterHardsuitBlueshield = "Aegis" tacsuit
-    .desc = An advanced combat tacsuit employed by station Blue Shield officers, it appears to be branded with the Nanotrasen logo.
+    .desc = An advanced combat tacsuit employed by station Blueshield officers. It appears to be branded with the Nanotrasen logo.
     You can make out the letters "NTIA-DAP" written on it. The armour appears to be lined with a rather plain, but study alloy, effective for taking multiple gunshots.
     Technical identifier: NT-661b
 ent-ClothingOuterHardsuitClown = clown vacsuit

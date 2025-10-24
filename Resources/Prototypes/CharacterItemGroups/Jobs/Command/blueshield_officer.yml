@@ -27,10 +27,12 @@
     - type: loadout
       id: LoadoutClothingBackpackMessengerBlueshield
 
-#- type: characterItemGroup
-#  id: LoadoutJOBBelt
-#  maxItems: 1
-#  items:
+- type: characterItemGroup #TheDen
+  id: LoadoutBlueshieldOfficerBelt
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutClothingWebbingBlueshield
 #
 #- type: characterItemGroup
 #  id: LoadoutJOBEars
@@ -66,7 +68,7 @@
       id: LoadoutBSOTerminus
 
 - type: characterItemGroup
-  id: LoadoutBlueshieldOfficerEyes
+  id: LoadoutBlueshieldOfficerEyes #TheDen
   maxItems: 1
   items:
     - type: loadout
@@ -105,7 +107,7 @@
 #  items:
 
 - type: characterItemGroup
-  id: LoadoutBlueshieldOfficerMask
+  id: LoadoutBlueshieldOfficerMask #TheDen
   maxItems: 1
   items:
     - type: loadout
