@@ -3,10 +3,11 @@
 // SPDX-FileCopyrightText: 2023 ubis1
 // SPDX-FileCopyrightText: 2024 Nemanja
 // SPDX-FileCopyrightText: 2025 Leon Friedrich
+// SPDX-FileCopyrightText: 2025 Whatstone
 // SPDX-FileCopyrightText: 2025 deltanedas
 // SPDX-FileCopyrightText: 2025 sleepyyapril
 //
-// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+// SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
@@ -31,6 +32,7 @@ public abstract class SharedLatheSystem : EntitySystem
     [Dependency] private readonly SharedMaterialStorageSystem _materialStorage = default!;
 
     public readonly Dictionary<string, List<LatheRecipePrototype>> InverseRecipes = new();
+    public const int MaxItemsPerRequest = 10_000;
 
     public override void Initialize()
     {
@@ -94,6 +96,8 @@ public abstract class SharedLatheSystem : EntitySystem
         if (!Resolve(uid, ref component))
             return false;
         if (!HasRecipe(uid, recipe, component))
+            return false;
+        if (amount <= 0)
             return false;
 
         foreach (var (material, needed) in recipe.Materials)

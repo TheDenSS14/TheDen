@@ -63,3 +63,4 @@ character-item-group-LoadoutPrescriptions = Prescription Medications
 character-item-group-LoadoutPrescriptionPainkiller = Painkillers
 character-item-group-LoadoutPrescriptionAnxiolytic = Anxiolytics
 character-item-group-LoadoutPrescriptionAntidepressant = Antidepressants
+character-item-group-LoadoutCostumeBundles = Costume Bundles

@@ -1,9 +1,11 @@
 # SPDX-FileCopyrightText: 2024 IProduceWidgets
 # SPDX-FileCopyrightText: 2024 Tap
 # SPDX-FileCopyrightText: 2025 hoshizora
+# SPDX-FileCopyrightText: 2025 portfiend
 # SPDX-FileCopyrightText: 2025 sleepyyapril
+# SPDX-FileCopyrightText: 2025 wheelwrightt
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: entity
   id: BaseTowel
@@ -20,6 +22,7 @@
     - BELT
     - INNERCLOTHING
     - HEAD
+    - NECK # DEN - Add neck sprite
     femaleMask: UniformTop
     equipSound:
     unequipSound:
@@ -50,6 +53,7 @@
     - ClothMade
     - WhitelistChameleon
     - Towel
+  - type: PaintRemover # DEN - Allow towels to remove paint
 
 - type: entity
   id: TowelColorWhite
@@ -78,6 +82,9 @@
         color: "#EAE8E8"
       belt:
       - state: equipped-BELT
+        color: "#EAE8E8"
+      neck: # DEN - Add neck sprite
+      - state: equipped-NECK
         color: "#EAE8E8"
   - type: Fiber
     fiberColor: fibers-white
@@ -110,6 +117,9 @@
       belt:
       - state: equipped-BELT
         color: "#9C0DE1"
+      neck: # DEN - Add neck sprite
+      - state: equipped-NECK
+        color: "#9C0DE1"
   - type: Fiber
     fiberColor: fibers-purple
 
@@ -140,6 +150,9 @@
         color: "#940000"
       belt:
       - state: equipped-BELT
+        color: "#940000"
+      neck: # DEN - Add neck sprite
+      - state: equipped-NECK
         color: "#940000"
   - type: Fiber
     fiberColor: fibers-red
@@ -172,6 +185,9 @@
       belt:
       - state: equipped-BELT
         color: "#0089EF"
+      neck: # DEN - Add neck sprite
+      - state: equipped-NECK
+        color: "#0089EF"
   - type: Fiber
     fiberColor: fibers-blue
 
@@ -202,6 +218,9 @@
         color: "#3285ba"
       belt:
       - state: equipped-BELT
+        color: "#3285ba"
+      neck: # DEN - Add neck sprite
+      - state: equipped-NECK
         color: "#3285ba"
   - type: Fiber
     fiberColor: fibers-blue
@@ -234,6 +253,9 @@
       belt:
       - state: equipped-BELT
         color: "#58abcc"
+      neck: # DEN - Add neck sprite
+      - state: equipped-NECK
+        color: "#58abcc"
   - type: Fiber
     fiberColor: fibers-blue
 
@@ -264,6 +286,9 @@
         color: "#3CB57C"
       belt:
       - state: equipped-BELT
+        color: "#3CB57C"
+      neck: # DEN - Add neck sprite
+      - state: equipped-NECK
         color: "#3CB57C"
   - type: Fiber
     fiberColor: fibers-teal
@@ -296,6 +321,9 @@
       belt:
       - state: equipped-BELT
         color: "#723A02"
+      neck: # DEN - Add neck sprite
+      - state: equipped-NECK
+        color: "#723A02"
   - type: Fiber
     fiberColor: fibers-brown
 
@@ -326,6 +354,9 @@
         color: "#c59431"
       belt:
       - state: equipped-BELT
+        color: "#c59431"
+      neck: # DEN - Add neck sprite
+      - state: equipped-NECK
         color: "#c59431"
   - type: Fiber
     fiberColor: fibers-brown
@@ -358,6 +389,9 @@
       belt:
       - state: equipped-BELT
         color: "#999999"
+      neck: # DEN - Add neck sprite
+      - state: equipped-NECK
+        color: "#999999"
   - type: Fiber
     fiberColor: fibers-grey
 
@@ -389,6 +423,9 @@
       belt:
       - state: equipped-BELT
         color: "#5ABF2F"
+      neck: # DEN - Add neck sprite
+      - state: equipped-NECK
+        color: "#5ABF2F"
   - type: Fiber
     fiberColor: fibers-green
 
@@ -419,6 +456,9 @@
         color: "#79CC26"
       belt:
       - state: equipped-BELT
+        color: "#79CC26"
+      neck: # DEN - Add neck sprite
+      - state: equipped-NECK
         color: "#79CC26"
   - type: Fiber
     fiberColor: fibers-green
@@ -453,6 +493,9 @@
       belt:
       - state: equipped-BELT
         color: "#F7C430"
+      neck: # DEN - Add neck sprite
+      - state: equipped-NECK
+        color: "#F7C430"
   - type: Fiber
     fiberColor: fibers-gold
 
@@ -483,6 +526,9 @@
         color: "#EF8100"
       belt:
       - state: equipped-BELT
+        color: "#EF8100"
+      neck: # DEN - Add neck sprite
+      - state: equipped-NECK
         color: "#EF8100"
   - type: Fiber
     fiberColor: fibers-orange
@@ -515,6 +561,9 @@
       belt:
       - state: equipped-BELT
         color: "#535353"
+      neck: # DEN - Add neck sprite
+      - state: equipped-NECK
+        color: "#535353"
   - type: Fiber
     fiberColor: fibers-black
 
@@ -545,6 +594,9 @@
         color: "#ffa69b"
       belt:
       - state: equipped-BELT
+        color: "#ffa69b"
+      neck: # DEN - Add neck sprite
+      - state: equipped-NECK
         color: "#ffa69b"
   - type: Fiber
     fiberColor: fibers-pink
@@ -577,6 +629,9 @@
       belt:
       - state: equipped-BELT
         color: "#ffe14d"
+      neck: # DEN - Add neck sprite
+      - state: equipped-NECK
+        color: "#ffe14d"
   - type: Fiber
     fiberColor: fibers-yellow
 
@@ -607,6 +662,9 @@
         color: "#cc295f"
       belt:
       - state: equipped-BELT
+        color: "#cc295f"
+      neck: # DEN - Add neck sprite
+      - state: equipped-NECK
         color: "#cc295f"
   - type: Fiber
     fiberColor: fibers-maroon
@@ -641,6 +699,9 @@
       belt:
       - state: equipped-BELT
         color: "#d0d0d0"
+      neck: # DEN - Add neck sprite
+      - state: equipped-NECK
+        color: "#d0d0d0"
   - type: Fiber
     fiberColor: fibers-silver
 
@@ -673,6 +734,9 @@
         color: "#EAE8E8"
       belt:
       - state: equipped-BELT
+        color: "#EAE8E8"
+      neck: # DEN - Add neck sprite
+      - state: equipped-NECK
         color: "#EAE8E8"
   - type: Fiber
     fiberColor: fibers-white
@@ -709,6 +773,9 @@
       belt:
       - state: equipped-BELT
         color: "#004787"
+      neck: # DEN - Add neck sprite
+      - state: equipped-NECK
+        color: "#004787"
   - type: Fiber
     fiberColor: fibers-regal-blue
 
@@ -742,6 +809,9 @@
       belt:
       - state: equipped-BELT
         color: "#29722e"
+      neck: # DEN - Add neck sprite
+      - state: equipped-NECK
+        color: "#29722e"
   - type: Fiber
     fiberColor: fibers-green
 
@@ -774,6 +844,9 @@
         color: "#535353"
       belt:
       - state: equipped-BELT
+        color: "#535353"
+      neck: # DEN - Add neck sprite
+      - state: equipped-NECK
         color: "#535353"
   - type: Fiber
     fiberColor: fibers-black

@@ -1,5 +1,5 @@
-// SPDX-FileCopyrightText: 2024 Remuchi <72476615+Remuchi@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Remuchi
+// SPDX-FileCopyrightText: 2025 sleepyyapril
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -21,6 +21,7 @@ using Robust.Shared.Prototypes;
 
 namespace Content.Client.RadialSelector;
 
+// TODO: This entire class is now unnecessary
 [UsedImplicitly]
 public sealed class RadialSelectorMenuBUI : BoundUserInterface
 {
@@ -86,7 +87,7 @@ public sealed class RadialSelectorMenuBUI : BoundUserInterface
         var container = new RadialContainer
         {
             Name = !string.IsNullOrEmpty(parentCategory) ? parentCategory : "Main",
-            Radius = 48f + 24f * MathF.Log(entries.Count),
+            InitialRadius = 48f + 24f * MathF.Log(entries.Count),
         };
 
         _menu.AddChild(container);
@@ -97,7 +98,7 @@ public sealed class RadialSelectorMenuBUI : BoundUserInterface
             if (entry.Category != null)
             {
                 var button = CreateButton(entry.Category.Name, _spriteSystem.Frame0(entry.Category.Icon));
-                button.TargetLayer = entry.Category.Name;
+                button.TargetLayerControlName = entry.Category.Name;
                 CreateMenu(entry.Category.Entries, entry.Category.Name);
                 container.AddChild(button);
             }
@@ -153,9 +154,9 @@ public sealed class RadialSelectorMenuBUI : BoundUserInterface
         return result;
     }
 
-    private RadialMenuTextureButton CreateButton(string name, Texture icon)
+    private RadialMenuButton CreateButton(string name, Texture icon)
     {
-        var button = new RadialMenuTextureButton
+        var button = new RadialMenuButton
         {
             ToolTip = Loc.GetString(name),
             StyleClasses = { "RadialMenuButton" },
@@ -175,9 +176,9 @@ public sealed class RadialSelectorMenuBUI : BoundUserInterface
         return button;
     }
 
-    private RadialMenuTextureButton CreateButton(string name, List<Texture> icons)
+    private RadialMenuButton CreateButton(string name, List<Texture> icons)
     {
-        var button = new RadialMenuTextureButton
+        var button = new RadialMenuButton
         {
             ToolTip = Loc.GetString(name),
             StyleClasses = { "RadialMenuButton" },

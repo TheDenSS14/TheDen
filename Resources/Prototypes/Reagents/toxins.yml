@@ -34,6 +34,9 @@
 # SPDX-FileCopyrightText: 2024 Vasilis
 # SPDX-FileCopyrightText: 2024 Verm
 # SPDX-FileCopyrightText: 2024 slarticodefast
+# SPDX-FileCopyrightText: 2025 ASaltySeabass
+# SPDX-FileCopyrightText: 2025 Eightballll
+# SPDX-FileCopyrightText: 2025 Shaman
 # SPDX-FileCopyrightText: 2025 Tanix
 # SPDX-FileCopyrightText: 2025 TheLuggage05
 # SPDX-FileCopyrightText: 2025 portfiend
@@ -390,6 +393,10 @@
     Poison:
       effects:
       - !type:HealthChange
+        conditions:
+        - !type:OrganType #TheDen - Shadowkin are anaerobic and immune to asphyxiation.
+          type: Shadowkin
+          shouldHave: false
         damage:
           types:
             Asphyxiation: 5
@@ -408,9 +415,21 @@
     Poison:
       effects:
       - !type:HealthChange
+        conditions:
+          - !type:OrganType #TheDen - Shadowkin are anaerobic and immune to asphyxiation.
+            type: Shadowkin
+            shouldHave: false
         damage:
           groups:
             Airloss: 10
+      - !type:HealthChange
+        conditions:
+        - !type:OrganType #TheDen - Shadowkin are anaerobic and immune to asphyxiation.
+          type: Shadowkin
+          shouldHave: true
+        damage:
+          types:
+            Bloodloss: 5
 
 - type: reagent
   id: MindbreakerToxin
@@ -459,11 +478,27 @@
         conditions:
         - !type:ReagentThreshold
           min: 45
+        - !type:OrganType #TheDen - Shadowkin are anaerobic and immune to asphyxiation.
+          type: Shadowkin
+          shouldHave: false
         damage:
           groups:
             Brute: 2
             Toxin: 2
             Airloss: 2
+      - !type:HealthChange
+        conditions:
+        - !type:ReagentThreshold
+          min: 45
+        - !type:OrganType #TheDen - Shadowkin are anaerobic and immune to asphyxiation.
+          type: Shadowkin
+          shouldHave: true
+        damage:
+          groups:
+            Brute: 2
+            Toxin: 2
+          types:
+            Bloodloss: 1
       - !type:PopupMessage
         type: Local
         messages: [ "histamine-effect-light-itchiness" ]
@@ -576,6 +611,9 @@
           - !type:OrganType # It'd be silly if you could stomach Rotting Food but not raw meat on its own.
             type: Detritivore
             shouldHave: false
+          - !type:OrganType
+            type: Shadowkin
+            shouldHave: false
         type: Local
         visualType: MediumCaution
         messages: [ "generic-reagent-effect-sick" ]
@@ -589,6 +627,9 @@
           - !type:OrganType
             type: Detritivore
             shouldHave: false
+          - !type:OrganType #TheDen
+            type: Shadowkin
+            shouldHave: false
       - !type:HealthChange
         conditions:
         - !type:OrganType
@@ -596,6 +637,9 @@
           shouldHave: false
         - !type:OrganType
           type: Detritivore
+          shouldHave: false
+        - !type:OrganType #TheDen
+          type: Shadowkin
           shouldHave: false
         damage:
           types:
@@ -739,9 +783,21 @@
         walkSpeedModifier: 0.8
         sprintSpeedModifier: 0.8
       - !type:HealthChange
+        conditions:
+        - !type:OrganType #TheDen - Shadowkin are anaerobic and immune to asphyxiation.
+          type: Shadowkin
+          shouldHave: false
         damage:
           groups:
             Airloss: 2
+      - !type:HealthChange
+        conditions:
+        - !type:OrganType #TheDen - Shadowkin are anaerobic and immune to asphyxiation.
+          type: Shadowkin
+          shouldHave: true
+        damage:
+          types:
+            Bloodloss: 1
 
 - type: reagent
   id: Tazinide

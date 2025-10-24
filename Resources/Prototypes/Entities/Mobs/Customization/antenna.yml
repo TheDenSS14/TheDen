@@ -1,94 +1,84 @@
-# SPDX-FileCopyrightText: 2024 Timemaster99 <57200767+Timemaster99@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Timemaster99
+# SPDX-FileCopyrightText: 2025 assignedgod
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
+# Aurora Song: Add base markings
 - type: marking
-  speciesRestriction: [IPC]
+  abstract: true
+  parent:
+  - BaseSpeciesIPC
+  - BaseHeadTop
+  id: BaseRobotAntenna
+# End Aurora Song
+
+- type: marking
+  parent: BaseRobotAntenna # Aurora Song: Use inheritance for species restriction / categories
   id: RobotAntennaTv
-  bodyPart: HeadTop
-  markingCategory: HeadTop
   sprites:
     - sprite: Mobs/Customization/ipc_antenna.rsi
       state: ipc_antenna_tv
 
 - type: marking
-  speciesRestriction: [IPC]
+  parent: BaseRobotAntenna # Aurora Song: Use inheritance for species restriction / categories
   id: RobotAntennaTesla
-  bodyPart: HeadTop
-  markingCategory: HeadTop
   sprites:
     - sprite: Mobs/Customization/ipc_antenna.rsi
       state: ipc_antenna_tesla
 
 # - type: marking
-#   speciesRestriction: [IPC]
+#   parent: BaseRobotAntenna # Aurora Song: Use inheritance for species restriction / categories
 #   id: RobotAntennaLightb
-#   bodyPart: HeadTop
-#   markingCategory: HeadTop
 #   sprites:
 #     - sprite: Mobs/Customization/ipc_antenna.rsi
 #       state: ipc_antenna_lightb
 
 # - type: marking
-#   speciesRestriction: [IPC]
+#   parent: BaseRobotAntenna # Aurora Song: Use inheritance for species restriction / categories
 #   id: RobotAntennaLight
-#   bodyPart: HeadTop
-#   markingCategory: HeadTop
 #   sprites:
 #     - sprite: Mobs/Customization/ipc_antenna.rsi
 #       state: ipc_antenna_light
 
 - type: marking
-  speciesRestriction: [IPC]
+  parent: BaseRobotAntenna # Aurora Song: Use inheritance for species restriction / categories
   id: RobotAntennaCyberhead
-  bodyPart: HeadTop
-  markingCategory: HeadTop
   sprites:
     - sprite: Mobs/Customization/ipc_antenna.rsi
       state: ipc_antenna_cyberhead
 
 # - type: marking
-#   speciesRestriction: [IPC]
+#   parent: BaseRobotAntenna # Aurora Song: Use inheritance for species restriction / categories
 #   id: RobotAntennaSidelights
-#   bodyPart: HeadTop
-#   markingCategory: HeadTop
 #   sprites:
 #     - sprite: Mobs/Customization/ipc_antenna.rsi
 #       state: ipc_antenna_sidelights
 
 - type: marking
-  speciesRestriction: [IPC]
+  parent: BaseRobotAntenna # Aurora Song: Use inheritance for species restriction / categories
   id: RobotAntennaAntlers
-  bodyPart: HeadTop
-  markingCategory: HeadTop
   sprites:
     - sprite: Mobs/Customization/ipc_antenna.rsi
       state: ipc_antenna_antlers
 
 - type: marking
-  speciesRestriction: [IPC]
+  parent: BaseRobotAntenna # Aurora Song: Use inheritance for species restriction / categories
   id: RobotAntennaDroneeyes
-  bodyPart: HeadTop
-  markingCategory: HeadTop
   sprites:
     - sprite: Mobs/Customization/ipc_antenna.rsi
       state: ipc_antenna_droneeyes
 
 - type: marking
-  speciesRestriction: [IPC]
+  parent: BaseRobotAntenna # Aurora Song: Use inheritance for species restriction / categories
   id: RobotAntennaCrowned
-  bodyPart: HeadTop
-  markingCategory: HeadTop
   sprites:
     - sprite: Mobs/Customization/ipc_antenna.rsi
       state: ipc_antenna_crowned
 
 - type: marking
-  speciesRestriction: [IPC]
+  parent: BaseRobotAntenna # Aurora Song: Use inheritance for species restriction / categories
   id: RobotAntennaTowers
-  bodyPart: HeadTop
-  markingCategory: HeadTop
   sprites:
     - sprite: Mobs/Customization/ipc_antenna.rsi
       state: ipc_antenna_towers

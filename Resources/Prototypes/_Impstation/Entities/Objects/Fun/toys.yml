@@ -1,3 +1,4 @@
+# SPDX-FileCopyrightText: 2025 Jakumba
 # SPDX-FileCopyrightText: 2025 Shaman
 # SPDX-FileCopyrightText: 2025 hivehum
 # SPDX-FileCopyrightText: 2025 portfiend
@@ -121,9 +122,11 @@
   - type: DamageOtherOnHit # if you get hit by this you deserve it
     damage:
       types:
-        Blunt: 15
+        Blunt: 0 # DEN
     soundHit: /Audio/Animals/bear.ogg
     staminaCost: 50
+  - type: StaminaDamageOnHit # DEN
+    damage: 25
   - type: MultiHandedItem
 
 - type: entity

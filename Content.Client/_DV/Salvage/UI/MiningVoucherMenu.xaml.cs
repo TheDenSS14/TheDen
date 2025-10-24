@@ -1,5 +1,5 @@
-// SPDX-FileCopyrightText: 2025 Eris <eris@erisws.com>
-// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Eris
+// SPDX-FileCopyrightText: 2025 sleepyyapril
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -42,9 +42,9 @@ public sealed partial class MiningVoucherMenu : RadialMenu
         {
             var index = i; // copy so the closure doesn't borrow it
             var kit = _proto.Index(comp.Kits[i]);
-            var button = new RadialMenuTextureButton()
+            var button = new RadialMenuButton()
             {
-                StyleClasses = { "RadialMenuTextureButton" },
+                StyleClasses = { "RadialMenuButton" },
                 SetSize = new Vector2(64f, 64f),
                 ToolTip = Loc.GetString(kit.Description)
             };

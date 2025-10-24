@@ -1,0 +1,119 @@
+# SPDX-FileCopyrightText: 2025 portfiend
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+# Candy buckets! These can hold any snack food item, and they inherit
+# from a WizDen prototype (which apparently already existed?)
+
+# Original bucket's sprites,for reference:
+# - type: Sprite
+#   sprite: Objects/Fun/candy_bucket.rsi
+#   layers:
+#   - state: empty_icon
+#     map: ["enum.ToggleableVisuals.Layer"]
+# - type: GenericVisualizer
+#   visuals:
+#     enum.ToggleableVisuals.Enabled:
+#       enum.ToggleableVisuals.Layer:
+#         True: {state: full_icon}
+#         False: {state: empty_icon}
+
+- type: entity
+  parent: CandyBucket
+  id: CandyBucketPailCat
+  suffix: cat pail
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Fun/CandyBucket/cat.rsi
+
+- type: entity
+  parent: CandyBucket
+  id: CandyBucketPailClown
+  suffix: clown pail
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Fun/CandyBucket/clown.rsi
+
+- type: entity
+  parent: CandyBucket
+  id: CandyBucketPailGhost
+  suffix: ghost pail, glow-in-the-dark
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Fun/CandyBucket/ghost.rsi
+    layers:
+    - state: empty_icon
+      map: ["enum.ToggleableVisuals.Layer"]
+    - state: overlay # Little bit of glow
+      shader: unshaded
+
+- type: entity
+  parent: CandyBucket
+  id: CandyBucketPailPumpkin
+  suffix: pumpkin pail
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Fun/CandyBucket/pumpkin.rsi
+
+- type: entity
+  parent: CandyBucket
+  id: CandyBucketPailSkeleton
+  suffix: skeleton pail
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Fun/CandyBucket/skeleton.rsi
+
+## recolorable
+
+- type: entity
+  parent: CandyBucket
+  id: CandyBucketPailPlain
+  suffix: pail
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Fun/CandyBucket/plain.rsi
+    layers:
+    - state: empty_icon
+      color: "#25659f"
+      map: ["enum.DamageStateVisualLayers.Base"]
+    - state: candy
+      map: ["enum.ToggleableVisuals.Layer"]
+      visible: false
+    - state: handle
+  - type: GenericVisualizer
+    visuals:
+      enum.ToggleableVisuals.Enabled:
+        enum.ToggleableVisuals.Layer:
+          True: {visible: true}
+          False: {visible: false}
+
+- type: entity
+  parent: CandyBucketPailPlain
+  id: CandyBucketPailPlainRandom
+  suffix: pail, random color
+  components:
+  - type: RandomSprite
+    available:
+    - enum.DamageStateVisualLayers.Base: # This is defined in the parent prototype
+        empty_icon: PlasticToy
+
+- type: entity
+  parent: CandyBucketPailPlain
+  id: CandyBucketPailSmiley
+  suffix: smiley pail
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Fun/CandyBucket/smiley.rsi
+    layers:
+    - state: empty_icon
+      color: "#EDE74E"
+      map: ["enum.DamageStateVisualLayers.Base"]
+    - state: candy
+      map: ["enum.ToggleableVisuals.Layer"]
+      visible: false
+    - state: handle
+
+- type: entity
+  parent: [CandyBucketPailSmiley, CandyBucketPailPlainRandom]
+  id: CandyBucketPailSmileyRandom
+  suffix: smiley pail, random color

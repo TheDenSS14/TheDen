@@ -7,7 +7,7 @@
 # SPDX-FileCopyrightText: 2025 VMSolidus
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: shopInventory
   id: SalvageVendorInventory
@@ -125,6 +125,8 @@
  #   cost: 1700
   - id: SpaceCash1000
     cost: 1000
+  - id: SpaceCash10000
+    cost: 10000
   - id: ShelterCapsule
     cost: 2000
   # TODO: super resonator for 2500

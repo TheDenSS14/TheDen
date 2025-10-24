@@ -39,14 +39,16 @@
 # SPDX-FileCopyrightText: 2024 flyingkarii
 # SPDX-FileCopyrightText: 2025 Eagle-0
 # SPDX-FileCopyrightText: 2025 John Willis
+# SPDX-FileCopyrightText: 2025 Leonardo
 # SPDX-FileCopyrightText: 2025 Rosycup
 # SPDX-FileCopyrightText: 2025 SixplyDev
 # SPDX-FileCopyrightText: 2025 Skubman
 # SPDX-FileCopyrightText: 2025 Timfa
 # SPDX-FileCopyrightText: 2025 VMSolidus
+# SPDX-FileCopyrightText: 2025 portfiend
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: job
   id: ResearchDirector
@@ -123,7 +125,7 @@
     id: RnDPDA
     ears: ClothingHeadsetAltScience # Goobstation
     pocket1: BookPsionicsGuidebook
-    pocket2: BibleMystagogue
+    pocket2: HolyBookMystagogue #den- changed item ID
   innerClothingSkirt: ClothingUniformJumpskirtResearchDirector
   satchel: ClothingBackpackSatchelResearchDirectorFilled
   duffelbag: ClothingBackpackDuffelResearchDirectorFilled

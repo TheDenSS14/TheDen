@@ -1,12 +1,14 @@
-// SPDX-FileCopyrightText: 2025 Timfa <timfalken@hotmail.com>
-// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 sleepyyapril <flyingkarii@gmail.com>
+// SPDX-FileCopyrightText: 2025 Timfa
+// SPDX-FileCopyrightText: 2025 portfiend
+// SPDX-FileCopyrightText: 2025 sleepyyapril
 //
-// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+// SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
+using System.Globalization;
 using Content.Shared._EE.Contractors.Components;
 using Content.Shared._EE.Contractors.Prototypes;
 using Content.Shared.Administration.Logs;
+using Content.Shared.Chat;
 using Content.Shared.Clothing.Loadouts.Systems;
 using Content.Shared.Database;
 using Content.Shared.Examine;
@@ -34,6 +36,7 @@ public class SharedPassportSystem : EntitySystem
     [Dependency] private readonly InventorySystem _inventory = default!;
     [Dependency] private readonly SharedStorageSystem _storage = default!;
     [Dependency] private readonly SharedTransformSystem _sharedTransformSystem = default!;
+    [Dependency] private readonly SharedChatSystem _chat = default!; // DEN
 
     public override void Initialize()
     {
@@ -52,9 +55,14 @@ public class SharedPassportSystem : EntitySystem
             return;
 
         var species = _prototypeManager.Index<SpeciesPrototype>(component.OwnerProfile.Species);
+        // DEN - Use custom species name instead
+        var speciesName = !string.IsNullOrWhiteSpace(component.OwnerProfile.Customspeciename)
+            ? _chat.SanitizeMessageCapital(component.OwnerProfile.Customspeciename)
+            : Loc.GetString(species.Name);
+        // End DEN
 
         args.PushMarkup($"Registered to: {component.OwnerProfile.Name}", 50);
-        args.PushMarkup($"Species: {Loc.GetString(species.Name)}", 49);
+        args.PushMarkup($"Species: {speciesName}", 49); // DEN - Use custom species name
         args.PushMarkup($"Sex: {component.OwnerProfile.Gender}", 48);
         args.PushMarkup($"Height: {MathF.Round(component.OwnerProfile.Height * species.AverageHeight)} cm", 47);
         args.PushMarkup($"Year of Birth: {CurrentYear - component.OwnerProfile.Age}", 46);

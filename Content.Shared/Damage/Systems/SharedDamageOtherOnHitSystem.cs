@@ -1,6 +1,6 @@
-// SPDX-FileCopyrightText: 2025 Skubman <ba.fallaria@gmail.com>
-// SPDX-FileCopyrightText: 2025 VMSolidus <evilexecutive@gmail.com>
-// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Skubman
+// SPDX-FileCopyrightText: 2025 VMSolidus
+// SPDX-FileCopyrightText: 2025 sleepyyapril
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -63,15 +63,9 @@ namespace Content.Shared.Damage.Systems
             {
                 if (component.Damage.Empty)
                     component.Damage = melee.Damage * component.MeleeDamageMultiplier;
-                if (component.SoundHit == null)
-                    component.SoundHit = melee.SoundHit;
-                if (component.SoundNoDamage == null)
-                {
-                    if (melee.SoundNoDamage != null)
-                        component.SoundNoDamage = melee.SoundNoDamage;
-                    else
-                        component.SoundNoDamage = new SoundCollectionSpecifier("WeakHit");
-                }
+
+                component.SoundHit ??= melee.SoundHit;
+                component.SoundNoDamage = melee.SoundNoDamage;
             }
 
             RaiseLocalEvent(uid, new DamageOtherOnHitStartupEvent((uid, component)));
@@ -209,12 +203,12 @@ namespace Content.Shared.Damage.Systems
         public DamageSpecifier GetDamage(EntityUid uid, DamageOtherOnHitComponent? component = null, EntityUid? target = null, EntityUid? user = null)
         {
             if (!Resolve(uid, ref component, false))
-                return new DamageSpecifier();
+                return new();
 
-            var ev = new GetThrowingDamageEvent(uid, component.Damage, new(), target, user);
+            var ev = new GetThrowingDamageEvent(uid, component.Damage * _damageable.UniversalThrownDamageModifier, new(), target, user);
             RaiseLocalEvent(uid, ref ev);
 
-            if (component.ContestArgs is not null && user is EntityUid userUid)
+            if (user is { } userUid)
                 ev.Damage *= _contests.ContestConstructor(userUid, component.ContestArgs);
 
             return DamageSpecifier.ApplyModifierSets(ev.Damage, ev.Modifiers);

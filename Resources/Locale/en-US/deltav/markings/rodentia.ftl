@@ -1,8 +1,8 @@
-# SPDX-FileCopyrightText: 2024 Memeji <greyalphawolf7@gmail.com>
-# SPDX-FileCopyrightText: 2025 Erol509 <81807356+Erol509@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 Falcon <falcon@zigtag.dev>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <flyingkarii@gmail.com>
+# SPDX-FileCopyrightText: 2024 Memeji
+# SPDX-FileCopyrightText: 2025 Erol509
+# SPDX-FileCopyrightText: 2025 Falcon
+# SPDX-FileCopyrightText: 2025 assignedgod
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -164,56 +164,58 @@ marking-RodentiaTailSquirrelBicolor = Rodentia Tail - Squirrel, Two-tone
 marking-RodentiaTailSquirrelBicolor-squirrel = Tail
 marking-RodentiaTailSquirrelBicolor-squirrel_overlay = Secondary
 
+# Aurora Song start: Add "Rodentia" to the names of these markings
 ## patterns
 
-marking-RodentiaChestCountershade = Chest - Countershade
+marking-RodentiaChestCountershade = Rodentia Chest - Countershade
 marking-RodentiaChestCountershade-countershade = Countershade
 
-marking-RodentiaChestCountershadeF = Chest - Countershade
+marking-RodentiaChestCountershadeF = Rodentia Chest - Countershade
 marking-RodentiaChestCountershadeF-countershade_f = Countershade
 
-marking-RodentiaLegLeftCountershade = Left Leg - Countershade
+marking-RodentiaLegLeftCountershade = Rodentia Left Leg - Countershade
 marking-RodentiaLegLeftCountershade-l_leg = Leg
 marking-RodentiaLegLeftCountershade-countershade_lleg = Countershade
 
-marking-RodentiaLegRightCountershade = Right Leg - Countershade
+marking-RodentiaLegRightCountershade = Rodentia Right Leg - Countershade
 marking-RodentiaLegRightCountershade-r_leg = Leg
 marking-RodentiaLegRightCountershade-countershade_rleg = Countershade
 
-marking-RodentiaChestFawn = Chest - Fawn
+marking-RodentiaChestFawn = Rodentia Chest - Fawn
 marking-RodentiaChestFawn-fawn = Pattern
 
-marking-RodentiaChestHooded = Chest - Hooded
+marking-RodentiaChestHooded = Rodentia Chest - Hooded
 marking-RodentiaChestHooded-hooded = Pattern
 
-marking-RodentiaChestHoodedF = Chest - Hooded
+marking-RodentiaChestHoodedF = Rodentia Chest - Hooded
 marking-RodentiaChestHoodedF-hooded_f = Pattern
 
 # base parts
 
-marking-RodentiaHeadBasic = Head - Basic
+marking-RodentiaHeadBasic = Rodentia Head - Basic
 marking-RodentiaHeadBasic-head_m = Head
 
-marking-RodentiaArmLeftBasic = Left Arm - Basic
+marking-RodentiaArmLeftBasic = Rodentia Left Arm - Basic
 marking-RodentiaArmLeftBasic-l_arm = Arm
 
-marking-RodentiaArmRightBasic = Right Arm - Basic
+marking-RodentiaArmRightBasic = Rodentia Right Arm - Basic
 marking-RodentiaArmRightBasic-r_arm = Arm
 
-marking-RodentiaLegLeftBasic = Left Leg - Basic
+marking-RodentiaLegLeftBasic = Rodentia Left Leg - Basic
 marking-RodentiaLegLeftBasic-l_leg = Leg
 
-marking-RodentiaLegRightBasic = Right Leg - Basic
+marking-RodentiaLegRightBasic = Rodentia Right Leg - Basic
 marking-RodentiaLegRightBasic-r_leg = Leg
 
-marking-RodentiaHandLeftBasic = Left Hand - Basic
+marking-RodentiaHandLeftBasic = Rodentia Left Hand - Basic
 marking-RodentiaHandLeftBasic-l_hand = Hand
 
-marking-RodentiaHandRightBasic = Right Hand - Basic
+marking-RodentiaHandRightBasic = Rodentia Right Hand - Basic
 marking-RodentiaHandRightBasic-r_hand = Hand
 
-marking-RodentiaFootLeftBasic = Left Foot - Basic
+marking-RodentiaFootLeftBasic = Rodentia Left Foot - Basic
 marking-RodentiaFootLeftBasic-l_foot = Foot
 
-marking-RodentiaFootRightBasic = Right Foot - Basic
+marking-RodentiaFootRightBasic = Rodentia Right Foot - Basic
 marking-RodentiaFootRightBasic-r_foot = Foot
+# Aurora Song end

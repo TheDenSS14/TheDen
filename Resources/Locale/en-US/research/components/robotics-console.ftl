@@ -1,8 +1,8 @@
-# SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT <77995199+DEATHB4DEFEAT@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 deltanedas <39013340+deltanedas@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT
+# SPDX-FileCopyrightText: 2024 deltanedas
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 robotics-console-window-title = Robotics Console
 robotics-console-no-cyborgs = No Cyborgs!
@@ -11,7 +11,8 @@ robotics-console-select-cyborg = Select a cyborg above.
 robotics-console-model = [color=gray]Model:[/color] {$name}
 # name is not formatted to prevent players trolling
 robotics-console-designation = [color=gray]Designation:[/color]
-robotics-console-battery = [color=gray]Battery charge:[/color] [color={$color}]{$charge}[/color]%
+robotics-console-battery = [color=gray]Battery charge:[/color] [color={$color}]{$charge}%[/color]
+robotics-console-hp = [color=gray]Integrity:[/color] [color={$color}]{$hp}%[/color]
 robotics-console-modules = [color=gray]Modules installed:[/color] {$count}
 robotics-console-brain = [color=gray]Brain installed:[/color] [color={$brain ->
     [true] green]Yes

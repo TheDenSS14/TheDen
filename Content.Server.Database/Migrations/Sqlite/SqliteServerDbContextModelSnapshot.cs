@@ -23,6 +23,7 @@
 // SPDX-FileCopyrightText: 2024 SimpleStation14
 // SPDX-FileCopyrightText: 2024 VMSolidus
 // SPDX-FileCopyrightText: 2024 sleepyyapril
+// SPDX-FileCopyrightText: 2025 Dirius77
 // SPDX-FileCopyrightText: 2025 Falcon
 // SPDX-FileCopyrightText: 2025 Lyndomen
 // SPDX-FileCopyrightText: 2025 Timfa
@@ -466,6 +467,35 @@ namespace Content.Server.Database.Migrations.Sqlite
                         .HasDatabaseName("IX_admin_watchlists_round_id");
 
                     b.ToTable("admin_watchlists", (string)null);
+                });
+
+            modelBuilder.Entity("Content.Server.Database.AlternateJobTitles", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER")
+                        .HasColumnName("alternate_job_titles_id");
+
+                    b.Property<string>("AlternateJobTitle")
+                        .IsRequired()
+                        .HasColumnType("TEXT")
+                        .HasColumnName("alternate_job_title");
+
+                    b.Property<string>("JobId")
+                        .IsRequired()
+                        .HasColumnType("TEXT")
+                        .HasColumnName("job_id");
+
+                    b.Property<int>("ProfileId")
+                        .HasColumnType("INTEGER")
+                        .HasColumnName("profile_id");
+
+                    b.HasKey("Id")
+                        .HasName("PK_alternate_job_titles");
+
+                    b.HasIndex("ProfileId");
+
+                    b.ToTable("alternate_job_titles", (string)null);
                 });
 
             modelBuilder.Entity("Content.Server.Database.Antag", b =>
@@ -1736,6 +1766,18 @@ namespace Content.Server.Database.Migrations.Sqlite
                     b.Navigation("Round");
                 });
 
+            modelBuilder.Entity("Content.Server.Database.AlternateJobTitles", b =>
+                {
+                    b.HasOne("Content.Server.Database.Profile", "Profile")
+                        .WithMany("AlternateJobTitles")
+                        .HasForeignKey("ProfileId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired()
+                        .HasConstraintName("FK_alternate_job_titles_profile_profile_id");
+
+                    b.Navigation("Profile");
+                });
+
             modelBuilder.Entity("Content.Server.Database.Antag", b =>
                 {
                     b.HasOne("Content.Server.Database.Profile", "Profile")
@@ -2180,6 +2222,8 @@ namespace Content.Server.Database.Migrations.Sqlite
 
             modelBuilder.Entity("Content.Server.Database.Profile", b =>
                 {
+                    b.Navigation("AlternateJobTitles");
+
                     b.Navigation("Antags");
 
                     b.Navigation("CDProfile");

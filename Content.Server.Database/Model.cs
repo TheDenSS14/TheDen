@@ -27,6 +27,7 @@
 // SPDX-FileCopyrightText: 2024 Simon
 // SPDX-FileCopyrightText: 2024 SimpleStation14
 // SPDX-FileCopyrightText: 2024 VMSolidus
+// SPDX-FileCopyrightText: 2025 Dirius77
 // SPDX-FileCopyrightText: 2025 Falcon
 // SPDX-FileCopyrightText: 2025 Lyndomen
 // SPDX-FileCopyrightText: 2025 Timfa
@@ -481,6 +482,7 @@ namespace Content.Server.Database
         public List<Antag> Antags { get; } = new();
         public List<Trait> Traits { get; } = new();
         public List<Loadout> Loadouts { get; } = new();
+        public List<AlternateJobTitles> AlternateJobTitles { get; } = new();
 
         [Column("pref_unavailable")] public DbPreferenceUnavailableMode PreferenceUnavailable { get; set; }
 
@@ -560,6 +562,16 @@ namespace Content.Server.Database
             string? customColorTint = null,
             bool? customHeirloom = null
         ) : base(loadoutName, customName, customDescription, customColorTint, customHeirloom) { }
+    }
+
+    public partial class AlternateJobTitles
+    {
+        public int Id { get; set; }
+        public Profile Profile { get; set; } = null!;
+        public int ProfileId { get; set; }
+
+        public required string JobId { get; set; }
+        public required string AlternateJobTitle { get; set; }
     }
 
     public enum DbPreferenceUnavailableMode

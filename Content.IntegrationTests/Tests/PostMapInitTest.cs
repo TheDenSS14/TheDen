@@ -26,6 +26,7 @@
 // SPDX-FileCopyrightText: 2024 Tayrtahn
 // SPDX-FileCopyrightText: 2024 UnicornOnLSD
 // SPDX-FileCopyrightText: 2024 Velcroboy
+// SPDX-FileCopyrightText: 2025 Eightballll
 // SPDX-FileCopyrightText: 2025 Eris
 // SPDX-FileCopyrightText: 2025 Falcon
 // SPDX-FileCopyrightText: 2025 Ichaie
@@ -39,7 +40,9 @@
 // SPDX-FileCopyrightText: 2025 VMSolidus
 // SPDX-FileCopyrightText: 2025 astriloqua
 // SPDX-FileCopyrightText: 2025 marc-pelletier
+// SPDX-FileCopyrightText: 2025 sheepie
 // SPDX-FileCopyrightText: 2025 sleepyyapril
+// SPDX-FileCopyrightText: 2025 therealDLondon
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -64,6 +67,7 @@ using Robust.Shared.Prototypes;
 using Robust.Shared.EntitySerialization;
 using Robust.Shared.EntitySerialization.Systems;
 using Robust.Shared.IoC;
+using Content.Shared.Station.Components;
 using Robust.Shared.Utility;
 using YamlDotNet.RepresentationModel;
 
@@ -132,7 +136,8 @@ namespace Content.IntegrationTests.Tests
             "Bagel",
             "Northway",
             "Barrier",
-            "Manta"
+            "Manta",
+            "Dingo"
         };
 
         /// <summary>

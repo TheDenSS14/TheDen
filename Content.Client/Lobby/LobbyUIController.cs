@@ -5,6 +5,7 @@
 // SPDX-FileCopyrightText: 2024 VMSolidus
 // SPDX-FileCopyrightText: 2024 deltanedas
 // SPDX-FileCopyrightText: 2024 metalgearsloth
+// SPDX-FileCopyrightText: 2025 Dirius77
 // SPDX-FileCopyrightText: 2025 Skubman
 // SPDX-FileCopyrightText: 2025 dootythefrooty
 // SPDX-FileCopyrightText: 2025 portfiend
@@ -57,6 +58,7 @@ public sealed class LobbyUIController : UIController, IOnStateEntered<LobbyState
     [Dependency] private readonly MarkingManager _markings = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly JobRequirementsManager _jobRequirements = default!;
+    [Dependency] private readonly ILogManager _logManager = default!;
     [UISystemDependency] private readonly HumanoidAppearanceSystem _humanoid = default!;
     [UISystemDependency] private readonly ClientInventorySystem _inventory = default!;
     [UISystemDependency] private readonly GuidebookSystem _guide = default!;
@@ -252,7 +254,8 @@ public sealed class LobbyUIController : UIController, IOnStateEntered<LobbyState
             _resourceCache,
             _requirements,
             _markings,
-            _random);
+            _random,
+            _logManager);
 
         _profileEditor.OnOpenGuidebook += _guide.OpenHelp;
 

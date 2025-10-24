@@ -1,14 +1,14 @@
 <!--
-SPDX-FileCopyrightText: 2022 Paul Ritter <ritter.paul1@googlemail.com>
-SPDX-FileCopyrightText: 2022 wrexbe <81056464+wrexbe@users.noreply.github.com>
-SPDX-FileCopyrightText: 2023 Echo <SammyPawsM@gmail.com>
-SPDX-FileCopyrightText: 2023 Eoin Mcloughlin <helloworld@eoinrul.es>
-SPDX-FileCopyrightText: 2023 Morb <14136326+Morb0@users.noreply.github.com>
-SPDX-FileCopyrightText: 2023 Visne <39844191+Visne@users.noreply.github.com>
-SPDX-FileCopyrightText: 2023 eoineoineoin <eoin.mcloughlin+gh@gmail.com>
-SPDX-FileCopyrightText: 2023 eoineoineoin <github@eoinrul.es>
-SPDX-FileCopyrightText: 2024 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
-SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+SPDX-FileCopyrightText: 2022 Paul Ritter
+SPDX-FileCopyrightText: 2022 wrexbe
+SPDX-FileCopyrightText: 2023 Echo
+SPDX-FileCopyrightText: 2023 Eoin Mcloughlin
+SPDX-FileCopyrightText: 2023 Morb
+SPDX-FileCopyrightText: 2023 Visne
+SPDX-FileCopyrightText: 2023 eoineoineoin
+SPDX-FileCopyrightText: 2024 Pieter-Jan Briers
+SPDX-FileCopyrightText: 2025 FoxxoTrystan
+SPDX-FileCopyrightText: 2025 sleepyyapril
 
 SPDX-License-Identifier: MIT
 -->
@@ -29,11 +29,18 @@ SPDX-License-Identifier: MIT
                         <TextureButton Name="HeaderImage" HorizontalAlignment="Center" VerticalAlignment="Top" MouseFilter="Ignore"/>
                         <Control Name="TextAlignmentPadding" VerticalAlignment="Top"/>
                         <RichTextLabel Name="BlankPaperIndicator" StyleClasses="LabelSecondaryColor" VerticalAlignment="Top" HorizontalAlignment="Center"/>
-                        <RichTextLabel StyleClasses="PaperWrittenText" Name="WrittenTextLabel" VerticalAlignment="Top"/>
-                        <PanelContainer Name="InputContainer" StyleClasses="TransparentBorderedWindowPanel" MinHeight="100"
-                                        VerticalAlignment="Stretch" VerticalExpand="True" HorizontalExpand="True">
-                            <TextEdit Name="Input" StyleClasses="PaperLineEdit" Access="Public" />
-                        </PanelContainer>
+                        <!-- Starlight-start -->
+                        <RichTextLabel Name="WrittenTextLabel" VerticalAlignment="Top"/>
+                        <BoxContainer Name="WrittenTextContainer" Orientation="Horizontal" VerticalAlignment="Top" StyleClasses="PaperWrittenText">
+                        </BoxContainer>
+                        <!-- Starlight-end -->
+                        <BoxContainer Name="InputContainer" Orientation="Vertical" VerticalExpand="True" VerticalAlignment="Stretch">
+                            <PanelContainer StyleClasses="TransparentBorderedWindowPanel" MinHeight="100"
+                                VerticalAlignment="Stretch" VerticalExpand="True" HorizontalExpand="True">
+                                <TextEdit Name="Input" StyleClasses="PaperLineEdit" Access="Public" />
+                            </PanelContainer>
+                            <Label Name="FillStatus" StyleClasses="LabelSecondaryColor"/>
+                        </BoxContainer>
                     </BoxContainer>
                     <paper:StampCollection Name="StampDisplay" VerticalAlignment="Bottom" Margin="6"/>
 

@@ -7,194 +7,124 @@
 # SPDX-FileCopyrightText: 2024 FoxxoTrystan
 # SPDX-FileCopyrightText: 2024 Memeji
 # SPDX-FileCopyrightText: 2025 Blitz
+# SPDX-FileCopyrightText: 2025 BudaLope
+# SPDX-FileCopyrightText: 2025 Citrus
 # SPDX-FileCopyrightText: 2025 M3739
 # SPDX-FileCopyrightText: 2025 Rosycup
 # SPDX-FileCopyrightText: 2025 Skubman
 # SPDX-FileCopyrightText: 2025 Tonk-GCR
 # SPDX-FileCopyrightText: 2025 VMSolidus
 # SPDX-FileCopyrightText: 2025 Zephyr
+# SPDX-FileCopyrightText: 2025 portfiend
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 - type: marking
+  parent: [BaseTattoo, BaseSpeciesChestStandardOrganic] # AuroraSong: Marking inheritance
   id: TattooHiveChest
   bodyPart: Chest
   markingCategory: Chest
-  speciesRestriction: [Human, Dwarf, Felinid, Oni, Shadowkin, Arachne, Lamia, Tajaran, Canid, Kitsune] # Delta V - Felinid, Oni; The Den - Canid
-  coloring:
-    default:
-      type:
-        !type:TattooColoring
-      fallbackColor: "#666666"
   sprites:
   - sprite: Mobs/Customization/tattoos.rsi
     state: tattoo_hive_chest
 
 - type: marking
+  parent: [BaseTattoo, BaseSpeciesChestStandardOrganic] # AuroraSong: Marking inheritance
   id: TattooNightlingChest
   bodyPart: Chest
   markingCategory: Chest
-  speciesRestriction: [Human, Dwarf, Felinid, Oni, Shadowkin, Arachne, Lamia, Tajaran, Canid, Kitsune] # Delta V - Felinid, Oni; The Den - Canid
-  coloring:
-    default:
-      type:
-        !type:TattooColoring
-      fallbackColor: "#666666"
   sprites:
   - sprite: Mobs/Customization/tattoos.rsi
     state: tattoo_nightling
 
 - type: marking
+  parent: [BaseTattoo, BaseSpeciesChestStandardOrganic] # DEN: Marking inheritance
   id: TattooNanotrasenChest
   bodyPart: Chest
   markingCategory: Chest
-  speciesRestriction: [Human, Dwarf, SlimePerson]
-  coloring:
-    default:
-      type:
-        !type:TattooColoring
-      fallbackColor: "#666666"
   sprites:
   - sprite: Mobs/Customization/tattoos.rsi
     state: tattoo_nanotrasen_chest
 
 - type: marking
+  parent: [BaseTattoo, BaseSpeciesLegsStandardOrganic] # AuroraSong: Marking inheritance
   id: TattooSilverburghLeftLeg
   bodyPart: LLeg
   markingCategory: LeftLeg
-  speciesRestriction: [Human, Dwarf, Felinid, Oni, Shadowkin, Tajaran, Canid, Kitsune] # Delta V - Felinid, Oni; The Den - Canid
-  coloring:
-    default:
-      type:
-        !type:TattooColoring
-      fallbackColor: "#666666"
   sprites:
   - sprite: Mobs/Customization/tattoos.rsi
     state: tattoo_silverburgh_l_leg
 
 - type: marking
+  parent: [BaseTattoo, BaseSpeciesLegsStandardOrganic] # AuroraSong: Marking inheritance
   id: TattooSilverburghRightLeg
   bodyPart: RLeg
   markingCategory: RightLeg
-  speciesRestriction: [Human, Dwarf, Felinid, Oni, Shadowkin, Tajaran, Canid, Kitsune] # Delta V - Felinid, Oni; The Den - Canid
-  coloring:
-    default:
-      type:
-        !type:TattooColoring
-      fallbackColor: "#666666"
   sprites:
   - sprite: Mobs/Customization/tattoos.rsi
     state: tattoo_silverburgh_r_leg
 
 - type: marking
+  parent: [BaseTattoo, BaseSpeciesArmsStandardOrganic] # AuroraSong: Marking inheritance
   id: TattooCampbellLeftArm
   bodyPart: LArm
   markingCategory: LeftArm
-  speciesRestriction: [Human, Dwarf, Felinid, Oni, Shadowkin, Arachne, Lamia, Tajaran, Canid, Kitsune] # Delta V - Felinid, Oni; The Den - Canid
-  coloring:
-    default:
-      type:
-        !type:TattooColoring
-      fallbackColor: "#666666"
   sprites:
   - sprite: Mobs/Customization/tattoos.rsi
     state: tattoo_campbell_l_arm
 
 - type: marking
+  parent: [BaseTattoo, BaseSpeciesArmsStandardOrganic] # AuroraSong: Marking inheritance
   id: TattooCampbellRightArm
   bodyPart: RArm
   markingCategory: RightArm
-  speciesRestriction: [Human, Dwarf, Felinid, Oni, Shadowkin, Arachne, Lamia, Tajaran, Canid, Kitsune] # Delta V - Felinid, Oni; The Den - Canid
-  coloring:
-    default:
-      type:
-        !type:TattooColoring
-      fallbackColor: "#666666"
   sprites:
   - sprite: Mobs/Customization/tattoos.rsi
     state: tattoo_campbell_r_arm
 
 - type: marking
+  parent: [BaseTattoo, BaseSpeciesLegsStandardOrganic] # AuroraSong: Marking inheritance
   id: TattooCampbellLeftLeg
   bodyPart: LLeg
   markingCategory: LeftLeg
-  speciesRestriction: [Human, Dwarf, Felinid, Oni, Shadowkin, Tajaran, Canid, Kitsune] # Delta V - Felinid, Oni; The Den - Canid
-  coloring:
-    default:
-      type:
-        !type:TattooColoring
-      fallbackColor: "#666666"
   sprites:
   - sprite: Mobs/Customization/tattoos.rsi
     state: tattoo_campbell_l_leg
 
 - type: marking
+  parent: [BaseTattoo, BaseSpeciesLegsStandardOrganic] # AuroraSong: Marking inheritance
   id: TattooCampbellRightLeg
   bodyPart: RLeg
   markingCategory: RightLeg
-  speciesRestriction: [Human, Dwarf, Felinid, Oni, Shadowkin, Tajaran, Canid, Kitsune] # Delta V - Felinid, Oni; The Den - Canid
-  coloring:
-    default:
-      type:
-        !type:TattooColoring
-      fallbackColor: "#666666"
   sprites:
   - sprite: Mobs/Customization/tattoos.rsi
     state: tattoo_campbell_r_leg
 
 - type: marking
+  parent: [BaseEyes, BaseSpeciesEyesStandard] # AuroraSong: Marking inheritance
   id: TattooEyeRight
-  bodyPart: Eyes
-  markingCategory: Head
-  speciesRestriction: [Human, SlimePerson, Reptilian, Dwarf, Felinid, Oni, Harpy, Rodentia, Feroxi, Lamia, Plasmaman, Canid, Kitsune, Vulpkanin] # Delta V - Felinid, Oni, Harpy, Rodentia, Feroxi; The Den - Canid; Funky - Vulpkanin
-  coloring:
-    default:
-      type:
-        !type:EyeColoring
-          negative: true
   sprites:
   - sprite: Mobs/Customization/tattoos.rsi
     state: tattoo_eye_r
 
 - type: marking
+  parent: [BaseEyes, BaseSpeciesEyesStandard] # AuroraSong: Marking inheritance
   id: TattooEyeLeft
-  bodyPart: Eyes
-  markingCategory: Head
-  speciesRestriction: [Human, SlimePerson, Reptilian, Dwarf, Felinid, Oni, Harpy, Rodentia, Feroxi, Lamia, Plasmaman, Canid, Kitsune, Vulpkanin] # Delta V - Felinid, Oni, Harpy, Rodentia, Feroxi; The Den - Canid; Funky - Vulpkanin
-  coloring:
-    default:
-      type:
-        !type:EyeColoring
-          negative: true
   sprites:
   - sprite: Mobs/Customization/tattoos.rsi
     state: tattoo_eye_l
 
 - type: marking
+  parent: [BaseEyes, BaseSpeciesArachne] # AuroraSong: Marking inheritance
   id: TattooEyeArachneRight
-  bodyPart: Eyes
-  markingCategory: Head
-  speciesRestriction: [Arachne]
-  coloring:
-    default:
-      type:
-        !type:EyeColoring
-          negative: true
   sprites:
   - sprite: Mobs/Customization/tattoos.rsi
     state: tattoo_eye_arachne_r
 
 - type: marking
+  parent: [BaseEyes, BaseSpeciesArachne] # AuroraSong: Marking inheritance
   id: TattooEyeArachneLeft
-  bodyPart: Eyes
-  markingCategory: Head
-  speciesRestriction: [Arachne]
-  coloring:
-    default:
-      type:
-        !type:EyeColoring
-          negative: true
   sprites:
   - sprite: Mobs/Customization/tattoos.rsi
     state: tattoo_eye_arachne_l

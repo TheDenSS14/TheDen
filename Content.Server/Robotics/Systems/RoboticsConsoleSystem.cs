@@ -1,7 +1,7 @@
-// SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT <77995199+DEATHB4DEFEAT@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT
+// SPDX-FileCopyrightText: 2025 sleepyyapril
 //
-// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+// SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 using Content.Server.Administration.Logs;
 using Content.Server.DeviceNetwork;
@@ -101,6 +101,9 @@ public sealed class RoboticsConsoleSystem : SharedRoboticsConsoleSystem
 
     private void OnDisable(Entity<RoboticsConsoleComponent> ent, ref RoboticsConsoleDisableMessage args)
     {
+        if (!ent.Comp.AllowBorgControl)
+            return;
+
         if (_lock.IsLocked(ent.Owner))
             return;
 
@@ -118,6 +121,9 @@ public sealed class RoboticsConsoleSystem : SharedRoboticsConsoleSystem
 
     private void OnDestroy(Entity<RoboticsConsoleComponent> ent, ref RoboticsConsoleDestroyMessage args)
     {
+        if (!ent.Comp.AllowBorgControl)
+            return;
+
         if (_lock.IsLocked(ent.Owner))
             return;
 
@@ -145,7 +151,7 @@ public sealed class RoboticsConsoleSystem : SharedRoboticsConsoleSystem
 
     private void UpdateUserInterface(Entity<RoboticsConsoleComponent> ent)
     {
-        var state = new RoboticsConsoleState(ent.Comp.Cyborgs);
+        var state = new RoboticsConsoleState(ent.Comp.Cyborgs, ent.Comp.AllowBorgControl);
         _ui.SetUiState(ent.Owner, RoboticsConsoleUiKey.Key, state);
     }
 }

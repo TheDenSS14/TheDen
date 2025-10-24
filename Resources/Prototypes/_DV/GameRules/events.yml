@@ -26,7 +26,7 @@
   - type: VentCrittersRule
     sound: /Audio/_DEN/VentCritters/vent_xeno.ogg #Den
     specialEntries:
-      - id: MobXenoPraetorian
+      - id: MobXenoDrone
     table: !type:GroupSelector # DeltaV: EntityTable instead of spawn entries
       children:
       - id: MobXeno
@@ -59,7 +59,7 @@
     duration: 30
   - type: VentCrittersRule
     specialEntries:
-      - id: MobXenoDrone
+      - id: MobXeno
     table: !type:GroupSelector # DeltaV: EntityTable instead of spawn entries
       children:
       - id: MobXeno

@@ -1,17 +1,17 @@
-# SPDX-FileCopyrightText: 2022 Eoin Mcloughlin <helloworld@eoinrul.es>
-# SPDX-FileCopyrightText: 2022 Rinkashikachi <15rinkashikachi15@gmail.com>
-# SPDX-FileCopyrightText: 2022 eoineoineoin <eoin.mcloughlin+gh@gmail.com>
-# SPDX-FileCopyrightText: 2023 Justin <justinly@usc.edu>
-# SPDX-FileCopyrightText: 2023 Thom <119594676+ItsMeThom@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2023 chromiumboy <50505512+chromiumboy@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2023 deltanedas <39013340+deltanedas@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 Crotalus <Crotalus@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 Nemanja <98561806+emogarbage404@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 Spatison <137375981+Spatison@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 Eoin Mcloughlin
+# SPDX-FileCopyrightText: 2022 Rinkashikachi
+# SPDX-FileCopyrightText: 2022 eoineoineoin
+# SPDX-FileCopyrightText: 2023 Justin
+# SPDX-FileCopyrightText: 2023 Thom
+# SPDX-FileCopyrightText: 2023 chromiumboy
+# SPDX-FileCopyrightText: 2023 deltanedas
+# SPDX-FileCopyrightText: 2024 Crotalus
+# SPDX-FileCopyrightText: 2024 Nemanja
+# SPDX-FileCopyrightText: 2025 Spatison
+# SPDX-FileCopyrightText: 2025 Whatstone
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 lathe-menu-title = Lathe Menu
 lathe-menu-queue = Queue
@@ -40,3 +40,9 @@ lathe-menu-connected-to-silo-message = Connected to material silo.
 lathe-menu-fabricating-message = Fabricating...
 lathe-menu-materials-title = Materials
 lathe-menu-queue-title = Build Queue
+lathe-menu-delete-fabricating-tooltip = Cancel printing the current item.
+lathe-menu-delete-item-tooltip = Cancel printing this batch.
+lathe-menu-move-up-tooltip = Move this batch ahead in the queue.
+lathe-menu-move-down-tooltip = Move this batch back in the queue.
+lathe-menu-item-single = {$index}. {$name}
+lathe-menu-item-batch = {$index}. {$name} ({$printed}/{$total})

@@ -1,5 +1,5 @@
-// SPDX-FileCopyrightText: 2025 Timfa <timfalken@hotmail.com>
-// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Timfa
+// SPDX-FileCopyrightText: 2025 sleepyyapril
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -13,6 +13,7 @@ using Content.Shared.Botany.PlantAnalyzer;
 using Content.Shared.Hands.EntitySystems;
 using Content.Shared.Interaction;
 using Content.Shared.Labels.EntitySystems;
+using Content.Shared.Paper;
 using Robust.Server.GameObjects;
 using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
@@ -171,7 +172,7 @@ public sealed class PlantAnalyzerSystem : AbstractAnalyzerSystem<PlantAnalyzerCo
             ("nl", "\n")
         ];
 
-        _paperSystem.SetContent(printed, Loc.GetString($"plant-analyzer-printout", [.. parameters]));
+        _paperSystem.SetContent((printed, paperComp), Loc.GetString($"plant-analyzer-printout", [.. parameters]));
         _labelSystem.Label(printed, seedName);
         _audioSystem.PlayPvs(component.SoundPrint, uid,
             AudioParams.Default

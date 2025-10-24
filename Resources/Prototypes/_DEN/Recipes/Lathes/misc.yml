@@ -1,4 +1,5 @@
 # SPDX-FileCopyrightText: 2025 Blitz
+# SPDX-FileCopyrightText: 2025 Jadrek
 # SPDX-FileCopyrightText: 2025 Sir Warock
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
@@ -161,3 +162,14 @@
   completetime: 1
   materials:
     Steel: 40
+
+# try breathing from one of these, i dare you
+- type: latheRecipe
+  id: Lantern
+  result: EmptyLantern
+  category: Lights
+  completetime: 2
+  materials:
+    Steel: 100
+    Glass: 100
+    Plastic: 100

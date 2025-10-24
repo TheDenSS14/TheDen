@@ -65,6 +65,7 @@
 # SPDX-FileCopyrightText: 2024 potato1234_x
 # SPDX-FileCopyrightText: 2024 slarticodefast
 # SPDX-FileCopyrightText: 2024 themias
+# SPDX-FileCopyrightText: 2025 ASaltySeabass
 # SPDX-FileCopyrightText: 2025 Blitz
 # SPDX-FileCopyrightText: 2025 Eagle-0
 # SPDX-FileCopyrightText: 2025 Kellaris
@@ -232,11 +233,24 @@
           Brute: -1.6 # Now evenly heals, so reducing the number a bit.
       - !type:HealthChange
         conditions:
+        - !type:OrganType #TheDen - Shadowkin are anaerobic and immune to asphyxiation.
+          type: Shadowkin
+          shouldHave: false
         - !type:ReagentThreshold
           min: 15
         damage:
           types:
             Asphyxiation: 0.5
+            Poison: 1.5
+      - !type:HealthChange
+        conditions:
+        - !type:OrganType #TheDen - Shadowkin are anaerobic and immune to asphyxiation.
+          type: Shadowkin
+          shouldHave: true
+        - !type:ReagentThreshold
+          min: 15
+        damage:
+          types:
             Poison: 1.5
       - !type:ChemVomit
         conditions:
@@ -319,9 +333,24 @@
         conditions:
         - !type:ReagentThreshold
           min: 10
+        - !type:OrganType #TheDen - Shadowkin are anaerobic and immune to asphyxiation.
+          type: Shadowkin
+          shouldHave: false
         damage:
           types:
             Asphyxiation: 1
+            Cold: 2
+          groups:
+            Brute: 0.5
+      - !type:HealthChange
+        conditions:
+        - !type:ReagentThreshold
+          min: 10
+        - !type:OrganType #TheDen - Shadowkin are anaerobic and immune to asphyxiation.
+          type: Shadowkin
+          shouldHave: true
+        damage:
+          types:
             Cold: 2
           groups:
             Brute: 0.5
@@ -350,9 +379,22 @@
         conditions:
           - !type:ReagentThreshold
             min: 20
+          - !type:OrganType #TheDen - Shadowkin are anaerobic and immune to asphyxiation.
+            type: Shadowkin
+            shouldHave: false
         damage:
           types:
             Asphyxiation: 3
+            Cold: 1
+      - !type:HealthChange
+        conditions:
+          - !type:ReagentThreshold
+            min: 20
+          - !type:OrganType #TheDen - Shadowkin are anaerobic and immune to asphyxiation.
+            type: Shadowkin
+            shouldHave: true
+        damage:
+          types:
             Cold: 1
 
 - type: reagent
@@ -381,9 +423,22 @@
         conditions:
           - !type:ReagentThreshold
             min: 25
+          - !type:OrganType #TheDen - Shadowkin are anaerobic and immune to asphyxiation.
+            type: Shadowkin
+            shouldHave: false
         damage:
           types:
             Asphyxiation: 5
+            Cold: 3
+      - !type:HealthChange
+        conditions:
+          - !type:ReagentThreshold
+            min: 25
+          - !type:OrganType #TheDen - Shadowkin are anaerobic and immune to asphyxiation.
+            type: Shadowkin
+            shouldHave: true
+        damage:
+          types:
             Cold: 3
 
 # this ones a doozy
@@ -417,9 +472,22 @@
         conditions:
         - !type:ReagentThreshold
           min: 20
+        - !type:OrganType #TheDen - Shadowkin are anaerobic and immune to asphyxiation.
+          type: Shadowkin
+          shouldHave: false
         damage:
           types:
             Asphyxiation: 1
+            Poison: 1
+      - !type:HealthChange
+        conditions:
+        - !type:ReagentThreshold
+          min: 20
+        - !type:OrganType #TheDen - Shadowkin are anaerobic and immune to asphyxiation.
+          type: Shadowkin
+          shouldHave: true
+        damage:
+          types:
             Poison: 1
       - !type:AdjustReagent
         reagent: HeartbreakerToxin
@@ -687,6 +755,9 @@
         conditions:
         - !type:ReagentThreshold
           min: 30
+        - !type:OrganType #TheDen - Shadowkin are anaerobic and immune to asphyxiation.
+          type: Shadowkin
+          shouldHave: false
         damage:
           types:
             Asphyxiation: 3.5

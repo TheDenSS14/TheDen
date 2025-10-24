@@ -1,0 +1,34 @@
+# SPDX-FileCopyrightText: 2025 portfiend
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  parent: PaintBase
+  id: SprayPaintMagic
+  name: magic spray paint
+  description: A can of color-changing spray paint.
+  components:
+  - type: ActivatableUI
+    blockSpectators: true
+    inHandsOnly: true
+    singleUser: true
+    requiresComplex: true
+    verbText: verb-magic-paint-openui
+    key: enum.MagicPaintUiKey.Key
+  - type: UserInterface
+    interfaces:
+      enum.MagicPaintUiKey.Key:
+        type: MagicPaintBoundUserInterface
+  - type: MagicPaint
+  - type: Paint
+    color: "#6600dd"
+  - type: Sprite
+    layers:
+    - state: rainbow2_cap
+      map: ["enum.OpenableVisuals.Layer"]
+  - type: GenericVisualizer
+    visuals:
+      enum.OpenableVisuals.Opened:
+        enum.OpenableVisuals.Layer:
+          True: {state: "rainbow2"}
+          False: {state: "rainbow2_cap"}

@@ -1,5 +1,5 @@
-# SPDX-FileCopyrightText: 2025 Blitz <73762869+BlitzTheSquishy@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Blitz
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -42,7 +42,6 @@ names-borg-dataset-36 = Makeshifter
 names-borg-dataset-37 = Twin
 names-borg-dataset-38 = S.A.U.L
 names-borg-dataset-39 = Honker
-names-borg-dataset-40 = Clanker 
-names-borg-dataset-41 = Is-The-Robot
-names-borg-dataset-42 = 9 of 7
-names-borg-dataset-43 = Dank bot
+names-borg-dataset-40 = Is-The-Robot
+names-borg-dataset-41 = 9 of 7
+names-borg-dataset-42 = Dank bot
