@@ -3,27 +3,29 @@
 # SPDX-License-Identifier: MIT
 
 - type: alternateJobTitle
+  id: DefaultHeadOfSecurity
+  jobId: HeadOfSecurity
+  titles:
+  - job-name-alternate-sheriff
+  - job-name-alternate-security-director
+  - job-name-alternate-security-chief
+  - job-name-alternate-daimyo
+
+- type: alternateJobTitle
   id: DefaultSecurityOfficer
   jobId: SecurityOfficer
   titles:
-  - job-name-alternate-patrolman
-  - job-name-alternate-patrolperson
-  - job-name-alternate-patrolwoman
-  - job-name-alternate-watchman
-  - job-name-alternate-watchperson
-  - job-name-alternate-watchwoman
-  - job-name-alternate-station-trooper
+  - job-name-alternate-deputy
+  - job name-alternate-peacekeeper
+  - job-name-alternate-security-guard
+  - job-name-alternate-nt-trooper
 
 - type: alternateJobTitle
   id: DefaultSeniorOfficer
   jobId: SeniorOfficer
   titles:
-  - job-name-alternate-senior-patrolman
-  - job-name-alternate-senior-patrolperson
-  - job-name-alternate-senior-patrolwoman
-  - job-name-alternate-senior-watchman
-  - job-name-alternate-senior-watchperson
-  - job-name-alternate-senior-watchwoman
+  - job-name-alternate-ranger
+  - job-name-alternate-senior-guard
   - job-name-alternate-senior-trooper
 
 - type: alternateJobTitle
@@ -51,3 +53,4 @@
   - job-name-alternate-assistant-security-director
   - job-name-alternate-deputy-security-director
   - job-name-alternate-bailiff
+  - job-name-alternative-marshal

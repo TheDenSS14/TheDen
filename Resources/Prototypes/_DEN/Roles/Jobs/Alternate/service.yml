@@ -9,11 +9,9 @@
   - job-name-alternate-assistant
   - job-name-alternate-tourist
   - job-name-alternate-off-duty
-  - job-name-alternate-visitor
-  - job-name-alternate-fisherman
-  - job-name-alternate-fisherperson
-  - job-name-alternate-fisherwoman
+  - job-name-alternate-fisher
   - job-name-alternate-fish-enthusiast
+  - job-name-alternate-angler
 
 - type: alternateJobTitle
   id: DefaultBartender
@@ -40,6 +38,7 @@
   - job-name-alternate-baker
   - job-name-alternate-butcher
   - job-name-alternate-cuisinic-technician
+  - job-name-alternate-culinarian
 
 - type: alternateJobTitle
   id: DefaultClown
@@ -87,3 +86,11 @@
   - job-name-alternate-recruiter
   - job-name-alternate-head-of-service
   - job-name-alternate-service-director
+
+- type: alternateJobTitle
+  id: DefaultReporter
+  jobId: Reporter
+  titles:
+    - job-name-alternate-journalist
+    - job-name-alternate-correspondent
+    - job-name-alternate-radio-host

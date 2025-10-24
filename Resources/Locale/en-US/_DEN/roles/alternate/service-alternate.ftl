@@ -6,11 +6,9 @@
 job-name-alternate-assistant = Assistant
 job-name-alternate-tourist = Tourist
 job-name-alternate-off-duty = Off-Duty Crew
-job-name-alternate-visitor = Visitor
-job-name-alternate-fisherman = Fisherman
-job-name-alternate-fisherperson = Fisherperson
-job-name-alternate-fisherwoman = Fisherwoman
+job-name-alternate-fisher = Fisher
 job-name-alternate-fish-enthusiast = Fish Enthusiast
+job-name-alternate-angler = Angler
 
 # Bartender
 job-name-alternate-mixologist = Mixologist
@@ -28,6 +26,7 @@ job-name-alternate-hydroponics-technician = Hydroponics Technician
 job-name-alternate-baker = Baker
 job-name-alternate-butcher = Butcher
 job-name-alternate-cuisinic-technician = Cuisinic Technician
+job-name-alternate-culinarian = Culinarian
 
 # Clown
 job-name-alternate-jester = Jester
@@ -55,7 +54,8 @@ job-name-alternate-custodian = Custodian
 
 # Reporter
 job-name-alternate-journalist = Journalist
-job-name-alternate-private-investigator = Private Investigator
+job-name-alternate-correspondent = Correspondent
+job-name-alternate-radio-host = Radio Host
 
 # Gladiator
 job-name-alternate-combatant = Combatant

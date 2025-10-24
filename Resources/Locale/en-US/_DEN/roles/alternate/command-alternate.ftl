@@ -7,6 +7,9 @@
 # Captain
 job-name-alternate-queen = Queen
 job-name-alternate-commander = Commander
+job-name-alternate-admiral = Admiral
+job-name-alternate-shogun = Shōgun
 
 # Admin Assistant
 job-name-alternate-unpaid-intern = Unpaid Intern
+job-name-alternate-secretary = Secretary

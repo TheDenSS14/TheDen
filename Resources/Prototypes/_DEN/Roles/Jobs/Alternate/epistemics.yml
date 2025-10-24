@@ -9,6 +9,7 @@
   - job-name-alternate-lab-tech
   - job-name-alternate-xenoarch
   - job-name-alternate-researcher
+  - job-name-alternate-acolyte
 
 - type: alternateJobTitle
   id: DefaultRoboticist
@@ -17,3 +18,18 @@
   - job-name-alternate-positronic-technician
   - job-name-alternate-mech-technician
   - job-name-alternate-cyborg-specialist
+
+- type: alternateJobTitle
+  id: DefaultResearchDirector
+  jobId: ResearchDirector
+  titles:
+    - job-name-alternate-chief-scientist
+    - job-name-alternate-head-researcher
+    - job-name-alternate-research-coordinator
+    - job-name-alternate-research-director
+
+- type: alternateJobTitle
+  id: DefaultForensicMantis
+  jobId: ForensicMantis
+  titles:
+    - job-name-alternate-inquisitor

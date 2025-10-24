@@ -12,7 +12,8 @@ job-name-alternate-repairman = Repairman
 
 # Atmospheric Technician
 job-name-alternate-life-support-tech = Life Support Technician
-job-name-alternate-plasma-scientist = Plasma Scientist
+job-name-alternate-plasma-specialist = Plasma Specialist
+job-name-alternate-environmental-engineer  = Environmental Engineer
 job-name-alternate-aerospace-technician = Aerospace Technician
 job-name-alternate-hull-specialist = Hull Specialist
 job-name-alternate-gas-refinement-specialist = Gas Refinement Specialist
