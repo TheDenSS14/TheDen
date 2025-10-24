@@ -35,4 +35,4 @@ job-name-alternate-marshal = Marshal
 job-name-alternate-sheriff = Sheriff
 job-name-alternate-security-director = Security Director
 job-name-alternate-security-chief = Security Chief
-job-name-alternative-daimyo = Daimyo
+job-name-alternate-daimyo = Daimyo
