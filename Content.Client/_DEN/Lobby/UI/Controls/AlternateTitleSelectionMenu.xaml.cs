@@ -29,7 +29,6 @@ public sealed partial class AlternateTitleSelectionMenu : FancyWindow
 
         var buttons = new List<LocId> { job.ID, };
         buttons.AddRange(titlesPrototype.Titles);
-        sawmill.Info("Found " + buttons.Count + " titles.");
 
         var selector = new RadioOptions<string>(RadioOptionsLayout.Vertical);
 
@@ -40,10 +39,7 @@ public sealed partial class AlternateTitleSelectionMenu : FancyWindow
 
             selector.AddItem(title, titleId, _ => OnSelectedAlternateTitleChanged?.Invoke(titleId));
             if (selectedAlternateTitle != null && titleId == selectedAlternateTitle)
-            {
-                sawmill.Info($"Selected alternate title is: {selectedAlternateTitle}");
                 selector.SelectByValue(titleId);
-            }
         }
 
         TitlesContainer.AddChild(selector);
