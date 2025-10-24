@@ -1,11 +1,13 @@
 - type: alternateJobTitle
-  id: CargoTechnician
+  id: DefaultCargoTechnician
+  jobId: CargoTechnician
   titles:
   - job-name-alternate-deck-worker
   - job-name-alternate-inventory-associate
 
 - type: alternateJobTitle
-  id: SalvageSpecialist
+  id: DefaultSalvageSpecialist
+  jobId: SalvageSpecialist
   titles:
   - job-name-alternate-prospector
   - job-name-alternate-excavator

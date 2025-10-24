@@ -1,11 +1,13 @@
 - type: alternateJobTitle
-  id: StationEngineer
+  id: DefaultStationEngineer
+  jobId: StationEngineer
   titles:
   - job-name-alternate-electrician
   - job-name-alternate-mechanic
 
 - type: alternateJobTitle
-  id: AtmosphericTechnician
+  id: DefaultAtmosphericTechnician
+  jobId: AtmosphericTechnician
   titles:
   - job-name-alternate-life-support-tech
   - job-name-alternate-plasma-scientist

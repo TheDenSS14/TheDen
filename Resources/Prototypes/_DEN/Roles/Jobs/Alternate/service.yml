@@ -1,22 +1,26 @@
 - type: alternateJobTitle
-  id: Passenger
+  id: DefaultPassenger
+  jobId: Passenger
   titles:
   - job-name-alternate-tourist
   - job-name-alternate-off-duty
 
 - type: alternateJobTitle
-  id: Bartender
+  id: DefaultBartender
+  jobId: Bartender
   titles:
   - job-name-alternate-mixologist
 
 - type: alternateJobTitle
-  id: Chef
+  id: DefaultChef
+  jobId: Chef
   titles:
   - job-name-alternate-baker
   - job-name-alternate-butcher
 
 - type: alternateJobTitle
-  id: Clown
+  id: DefaultClown
+  jobId: Clown
   titles:
   - job-name-alternate-jester
   - job-name-alternate-fool
