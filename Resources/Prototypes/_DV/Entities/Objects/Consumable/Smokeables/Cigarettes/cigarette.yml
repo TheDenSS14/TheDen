@@ -49,3 +49,5 @@
         reagents:
           - ReagentId: Sugar
             Quantity: 10
+  - type: Smokable # DEN - Make candy cigarettes actually burn through contents
+    solution: food
