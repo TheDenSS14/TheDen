@@ -6,7 +6,6 @@
 
 # Captain
 job-name-alternate-commander = Commander
-job-name-alternate-admiral = Admiral
 job-name-alternate-shogun = Shōgun
 
 # Admin Assistant
