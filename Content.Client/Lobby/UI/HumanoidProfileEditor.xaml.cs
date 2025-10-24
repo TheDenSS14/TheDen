@@ -185,6 +185,7 @@ namespace Content.Client.Lobby.UI
         // EE - Contractor System Changes End
         private List<(string, RequirementsSelector)> _jobPriorities = new();
         private readonly Dictionary<string, BoxContainer> _jobCategories;
+        private Dictionary<ProtoId<JobPrototype>, List<string>> _cachedTitles = new();
 
         private Dictionary<Button, ConfirmationData> _confirmationData = new();
         private List<TraitPreferenceSelector> _traitPreferences = new();
@@ -1113,6 +1114,46 @@ namespace Content.Client.Lobby.UI
             }
         }
 
+        private List<string> GetAlternateJobTitles(JobPrototype job)
+        {
+            if (_cachedTitles.TryGetValue(job.ID, out var titles))
+                return titles;
+
+            var result = new List<string>();
+            var context = _characterRequirementsSystem.GetProfileContext(Profile)
+                .WithSelectedJob(job)
+                .WithPrototype(job);
+
+            foreach (var prototype in _prototypeManager.EnumeratePrototypes<AlternateJobTitlePrototype>())
+            {
+                //  don't check on a job we don't care about
+                if (prototype.JobId != job)
+                    continue;
+
+                // TODO: show in the menu this one is not available. for now, hide it.
+                if (!(prototype.Requirements.Count != 0
+                    && _characterRequirementsSystem.CheckRequirementsValid(
+                        prototype.Requirements,
+                        context,
+                        _entManager,
+                        _prototypeManager,
+                        _cfgManager)))
+                    continue;
+
+                _sawmill.Info("Pass: " + prototype.ID);
+
+                // every title should be a LocId.
+                var toAdd = prototype.Titles
+                    .Select(titleId => Loc.GetString(titleId))
+                    .ToList();
+
+                result.AddRange(toAdd);
+            }
+
+            _cachedTitles.Add(job, result);
+            return result;
+        }
+
         /// Refreshes all job selectors
         public void RefreshJobs()
         {
@@ -1200,9 +1241,9 @@ namespace Content.Client.Lobby.UI
                     icon.Texture = jobIcon.Icon.Frame0();
                     selector.Setup(items, job.LocalizedName, 200, job.LocalizedDescription, icon, job.Guides);
 
-                    var hasTitles = _prototypeManager.TryIndex<AlternateJobTitlePrototype>(job.ID, out var alternateJobTitles);
+                    var alternateJobTitles = GetAlternateJobTitles(job);
 
-                    if (hasTitles && alternateJobTitles != null)
+                    if (alternateJobTitles != null)
                     {
                         selector.SetupJobTitleButton(job, alternateJobTitles, false);
                         selector.OnOpenAlternateJobTitle += (_, _) => CreateTitlesWindow(job, alternateJobTitles);
@@ -1348,9 +1389,9 @@ namespace Content.Client.Lobby.UI
                     icon.Texture = jobIcon.Icon.Frame0();
                     selector.Setup(items, job.LocalizedName, 200, job.LocalizedDescription, icon);
 
-                    var hasTitles = _prototypeManager.TryIndex<AlternateJobTitlePrototype>(job.ID, out var alternateJobTitles);
+                    var alternateJobTitles = GetAlternateJobTitles(job);
 
-                    if (hasTitles && alternateJobTitles != null)
+                    if (alternateJobTitles.Any())
                     {
                         selector.SetupJobTitleButton(job, alternateJobTitles, false);
                         selector.OnOpenAlternateJobTitle += (_, _) => CreateTitlesWindow(job, alternateJobTitles);
@@ -1412,12 +1453,12 @@ namespace Content.Client.Lobby.UI
                 UpdateJobPriorities();
         }
 
-        private void CreateTitlesWindow(JobPrototype job, AlternateJobTitlePrototype? titles)
+        private void CreateTitlesWindow(JobPrototype job, List<string> titles)
         {
             if (Profile == null)
                 return;
 
-            if (titles is null)
+            if (!titles.Any())
                 return;
 
             if (_titleSelectionMenu != null)
@@ -1428,7 +1469,7 @@ namespace Content.Client.Lobby.UI
 
             Profile.JobTitles.TryGetValue(job.ID, out var selectedTitle);
 
-            _titleSelectionMenu = new(job, titles, _sawmill, selectedTitle)
+            _titleSelectionMenu = new(job, titles, selectedTitle)
             {
                 Title = job.LocalizedName
             };

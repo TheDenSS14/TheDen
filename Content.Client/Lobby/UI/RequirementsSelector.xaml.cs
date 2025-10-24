@@ -30,7 +30,7 @@ public sealed partial class RequirementsSelector : BoxContainer
 
     public event Action<int>? OnSelected;
     public event Action<List<ProtoId<GuideEntryPrototype>>>? OnOpenGuidebook;
-    public event Action<JobPrototype, AlternateJobTitlePrototype>? OnOpenAlternateJobTitle;
+    public event Action<JobPrototype, List<string>>? OnOpenAlternateJobTitle;
 
     public int Selected => _options.SelectedId;
 
@@ -113,7 +113,7 @@ public sealed partial class RequirementsSelector : BoxContainer
         OptionsContainer.AddChild(_lockStripe);
     }
 
-    public void SetupJobTitleButton(JobPrototype job, AlternateJobTitlePrototype titles, bool disabled = true)
+    public void SetupJobTitleButton(JobPrototype job, List<string> titles, bool disabled = true)
     {
         if (disabled)
             return;

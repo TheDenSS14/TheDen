@@ -24,20 +24,18 @@ public sealed partial class AlternateTitleSelectionMenu : FancyWindow
     public event Action<string?>? OnSelectedAlternateTitleChanged;
 
     public AlternateTitleSelectionMenu(JobPrototype job,
-        AlternateJobTitlePrototype titlesPrototype,
-        ISawmill sawmill,
+        List<string> titles,
         string? selectedAlternateTitle = null)
     {
         RobustXamlLoader.Load(this);
 
-        var buttons = new List<LocId> { job.ID, };
-        buttons.AddRange(titlesPrototype.Titles);
+        var buttons = new List<string> { job.ID, };
+        buttons.AddRange(titles);
 
         var selector = new RadioOptions<string>(RadioOptionsLayout.Vertical);
 
         foreach (var titleId in buttons)
         {
-            sawmill.Info(titleId);
             var title = GetButtonText(job, titleId);
 
             selector.AddItem(title, titleId, _ => OnSelectedAlternateTitleChanged?.Invoke(titleId));
@@ -49,7 +47,7 @@ public sealed partial class AlternateTitleSelectionMenu : FancyWindow
         Titles.InvalidateMeasure();
     }
 
-    private string GetButtonText(JobPrototype job, string titleId) =>
-        titleId == job.ID ? job.LocalizedName : Loc.GetString(titleId);
+    private string GetButtonText(JobPrototype job, string title) =>
+        title == job.ID ? job.LocalizedName : title;
 
 }
