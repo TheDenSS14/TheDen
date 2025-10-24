@@ -6,6 +6,7 @@
 job-name-alternate-lab-tech = Lab Technician
 job-name-alternate-xenoarch = Xenoarchaeologist
 job-name-alternate-researcher = Researcher
+job-name-alternate-acolyte = Acolyte
 
 # Roboticist
 job-name-alternate-positronic-technician = Positronic Technician
