@@ -185,7 +185,7 @@ namespace Content.Client.Lobby.UI
         // EE - Contractor System Changes End
         private List<(string, RequirementsSelector)> _jobPriorities = new();
         private readonly Dictionary<string, BoxContainer> _jobCategories;
-        private Dictionary<ProtoId<JobPrototype>, List<string>> _cachedTitles = new();
+        private Dictionary<ProtoId<JobPrototype>, List<ProtoId<AlternateJobTitlePrototype>>> _cachedTitles = new();
 
         private Dictionary<Button, ConfirmationData> _confirmationData = new();
         private List<TraitPreferenceSelector> _traitPreferences = new();
@@ -1114,15 +1114,12 @@ namespace Content.Client.Lobby.UI
             }
         }
 
-        private List<string> GetAlternateJobTitles(JobPrototype job)
+        private List<ProtoId<AlternateJobTitlePrototype>> BuildAlternateJobPrototypes(JobPrototype job)
         {
-            if (_cachedTitles.TryGetValue(job.ID, out var titles))
-                return titles;
+            if (_cachedTitles.TryGetValue(job, out var ids))
+                return ids;
 
-            var result = new List<string>();
-            var context = _characterRequirementsSystem.GetProfileContext(Profile)
-                .WithSelectedJob(job)
-                .WithPrototype(job);
+            var result = new List<ProtoId<AlternateJobTitlePrototype>>();
 
             foreach (var prototype in _prototypeManager.EnumeratePrototypes<AlternateJobTitlePrototype>())
             {
@@ -1130,27 +1127,53 @@ namespace Content.Client.Lobby.UI
                 if (prototype.JobId != job)
                     continue;
 
-                // TODO: show in the menu this one is not available. for now, hide it.
-                if (!(prototype.Requirements.Count != 0
-                    && _characterRequirementsSystem.CheckRequirementsValid(
-                        prototype.Requirements,
-                        context,
-                        _entManager,
-                        _prototypeManager,
-                        _cfgManager)))
+                result.Add(prototype);
+            }
+
+            _cachedTitles.Add(job, result);
+            return result;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        /// <param name="job"></param>
+        /// <returns></returns>
+        private List<(LocId, string)> GetAlternateJobTitles(JobPrototype job)
+        {
+            var result = new List<(LocId, string)>();
+            var context = _characterRequirementsSystem.GetProfileContext(Profile)
+                .WithSelectedJob(job)
+                .WithPrototype(job);
+
+            var prototypes = BuildAlternateJobPrototypes(job);
+
+            foreach (var titlesId in prototypes)
+            {
+                if (!_prototypeManager.TryIndex(titlesId, out var prototype))
                     continue;
 
-                _sawmill.Info("Pass: " + prototype.ID);
+                //  don't check on a job we don't care about
+                if (prototype.JobId != job)
+                    continue;
+
+                // TODO: show in the menu this one is not available. for now, hide it.
+                if (!_characterRequirementsSystem.CheckRequirementsValid(
+                    prototype.Requirements,
+                    context,
+                    _entManager,
+                    _prototypeManager,
+                    _cfgManager))
+                    continue;
 
                 // every title should be a LocId.
                 var toAdd = prototype.Titles
-                    .Select(titleId => Loc.GetString(titleId))
+                    .Select(titleId => (titleId, Loc.GetString(titleId)))
                     .ToList();
 
                 result.AddRange(toAdd);
             }
 
-            _cachedTitles.Add(job, result);
             return result;
         }
 
@@ -1453,7 +1476,7 @@ namespace Content.Client.Lobby.UI
                 UpdateJobPriorities();
         }
 
-        private void CreateTitlesWindow(JobPrototype job, List<string> titles)
+        private void CreateTitlesWindow(JobPrototype job, List<(LocId, string)> titles)
         {
             if (Profile == null)
                 return;
@@ -1502,13 +1525,12 @@ namespace Content.Client.Lobby.UI
             }
         }
 
-        private void OnAlternateTitleChanged(JobPrototype job, string? newTitle)
+        private void OnAlternateTitleChanged(JobPrototype job, (LocId, string)? newTitle)
         {
             if (Profile is null)
                 return;
 
-            _sawmill.Info("OnAlternateTitleChanged: " + newTitle ?? "No title");
-            Profile = Profile?.WithJobTitle(job.ID, newTitle ?? string.Empty);
+            Profile = Profile?.WithJobTitle(job.ID, newTitle?.Item1 ?? string.Empty);
             SetDirty();
         }
 

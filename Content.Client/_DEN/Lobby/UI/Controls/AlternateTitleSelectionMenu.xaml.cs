@@ -21,33 +21,32 @@ namespace Content.Client._DEN.Lobby.UI.Controls;
 [GenerateTypedNameReferences]
 public sealed partial class AlternateTitleSelectionMenu : FancyWindow
 {
-    public event Action<string?>? OnSelectedAlternateTitleChanged;
+    public event Action<(LocId, string)?>? OnSelectedAlternateTitleChanged;
 
     public AlternateTitleSelectionMenu(JobPrototype job,
-        List<string> titles,
+        List<(LocId, string)> titles,
         string? selectedAlternateTitle = null)
     {
         RobustXamlLoader.Load(this);
 
-        var buttons = new List<string> { job.ID, };
+        var selector = new RadioOptions<string>(RadioOptionsLayout.Vertical);
+        var buttons = new List<(LocId, string)> { (job.ID, job.LocalizedName) };
         buttons.AddRange(titles);
 
-        var selector = new RadioOptions<string>(RadioOptionsLayout.Vertical);
-
-        foreach (var titleId in buttons)
+        foreach (var titleData in buttons)
         {
-            var title = GetButtonText(job, titleId);
+            var title = GetButtonText(job, titleData.Item1, titleData.Item2);
+            selector.AddItem(title, titleData.Item1, _ => OnSelectedAlternateTitleChanged?.Invoke(titleData));
 
-            selector.AddItem(title, titleId, _ => OnSelectedAlternateTitleChanged?.Invoke(titleId));
-            if (selectedAlternateTitle != null && titleId == selectedAlternateTitle)
-                selector.SelectByValue(titleId);
+            if (selectedAlternateTitle != null && titleData.Item1 == selectedAlternateTitle)
+                selector.SelectByValue(titleData.Item1);
         }
 
         TitlesContainer.AddChild(selector);
         Titles.InvalidateMeasure();
     }
 
-    private string GetButtonText(JobPrototype job, string title) =>
-        title == job.ID ? job.LocalizedName : title;
+    private string GetButtonText(JobPrototype job, LocId id, string text) =>
+        id == job.ID ? job.LocalizedName : text;
 
 }
