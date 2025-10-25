@@ -467,9 +467,12 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
     {
         var dictionary = new Dictionary<string, string>(_jobTitles);
 
-        if ((string.IsNullOrWhiteSpace(jobTitle) || jobTitle == jobId)
-            && _jobTitles.ContainsKey(jobId))
+        // ReSharper disable once CanSimplifyDictionaryRemovingWithSingleCall
+        if (dictionary.ContainsKey(jobId))
             dictionary.Remove(jobId);
+
+        if (!string.IsNullOrWhiteSpace(jobTitle) && jobTitle != jobId)
+            dictionary[jobId] = jobTitle;
 
         return new(this) { _jobTitles = dictionary };
     }
