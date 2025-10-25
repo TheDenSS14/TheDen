@@ -250,6 +250,10 @@
         - Harpy
     - !type:CharacterItemGroupRequirement
       group: TraitsMuted
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - MusicMachine
   functions:
     - !type:TraitAddComponent
       components:

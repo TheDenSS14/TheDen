@@ -115,3 +115,7 @@ trait-description-RemoveSpeciesLanguage =
 trait-name-RemoveSpeciesLanguageLight = No Species Language (Light)
 trait-description-RemoveSpeciesLanguageLight =
     You cannot speak your species' cultural language, but you can still understand them.
+
+trait-name-MusicMachine = Music Machine
+trait-description-MusicMachine =
+    You possess an inbuilt synthesizer module, allowing you to sing in five different electronic tones. It even comes with a drum machine.
