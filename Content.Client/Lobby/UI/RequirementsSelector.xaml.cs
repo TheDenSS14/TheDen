@@ -30,7 +30,6 @@ public sealed partial class RequirementsSelector : BoxContainer
 
     public event Action<int>? OnSelected;
     public event Action<List<ProtoId<GuideEntryPrototype>>>? OnOpenGuidebook;
-    public event Action<JobPrototype, AlternateJobTitlePrototype>? OnOpenAlternateJobTitle;
     public event Action? OnClickJobActions;
     public event Action<JobPrototype, List<(LocId, string)>>? OnOpenAlternateJobTitle;
 
