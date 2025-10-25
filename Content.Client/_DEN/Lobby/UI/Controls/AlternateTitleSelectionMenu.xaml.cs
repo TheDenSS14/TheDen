@@ -1,4 +1,5 @@
 // SPDX-FileCopyrightText: 2025 Dirius77
+// SPDX-FileCopyrightText: 2025 sleepyyapril
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -21,35 +22,32 @@ namespace Content.Client._DEN.Lobby.UI.Controls;
 [GenerateTypedNameReferences]
 public sealed partial class AlternateTitleSelectionMenu : FancyWindow
 {
-    public event Action<string?>? OnSelectedAlternateTitleChanged;
+    public event Action<(LocId, string)?>? OnSelectedAlternateTitleChanged;
 
     public AlternateTitleSelectionMenu(JobPrototype job,
-        AlternateJobTitlePrototype titlesPrototype,
-        ISawmill sawmill,
+        List<(LocId, string)> titles,
         string? selectedAlternateTitle = null)
     {
         RobustXamlLoader.Load(this);
 
-        var buttons = new List<LocId> { job.ID, };
-        buttons.AddRange(titlesPrototype.Titles);
-
         var selector = new RadioOptions<string>(RadioOptionsLayout.Vertical);
+        var buttons = new List<(LocId, string)> { (job.ID, job.LocalizedName) };
+        buttons.AddRange(titles);
 
-        foreach (var titleId in buttons)
+        foreach (var titleData in buttons)
         {
-            sawmill.Info(titleId);
-            var title = GetButtonText(job, titleId);
+            var title = GetButtonText(job, titleData.Item1, titleData.Item2);
+            selector.AddItem(title, titleData.Item1, _ => OnSelectedAlternateTitleChanged?.Invoke(titleData));
 
-            selector.AddItem(title, titleId, _ => OnSelectedAlternateTitleChanged?.Invoke(titleId));
-            if (selectedAlternateTitle != null && titleId == selectedAlternateTitle)
-                selector.SelectByValue(titleId);
+            if (selectedAlternateTitle != null && titleData.Item1 == selectedAlternateTitle)
+                selector.SelectByValue(titleData.Item1);
         }
 
         TitlesContainer.AddChild(selector);
         Titles.InvalidateMeasure();
     }
 
-    private string GetButtonText(JobPrototype job, string titleId) =>
-        titleId == job.ID ? job.LocalizedName : Loc.GetString(titleId);
+    private string GetButtonText(JobPrototype job, LocId id, string text) =>
+        id == job.ID ? job.LocalizedName : text;
 
 }

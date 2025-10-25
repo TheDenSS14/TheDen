@@ -14,3 +14,51 @@
     state: sharp_cobra_hood_overlay
   - sprite: _DEN/Mobs/Customization/Reptilian/sharpcobrahood.rsi
     state: sharp_cobra_hood
+
+- type: marking
+  id: ReptilianHornsShort
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  coloring:
+    default:
+      type:
+        !type:TattooColoring
+      fallbackColor: "#666666"
+  speciesRestriction: [Reptilian]
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Reptilian/horns.rsi
+    state: short_horns
+
+- type: marking
+  id: ReptilianEarsFloppy
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  speciesRestriction: [Reptilian]
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Reptilian/ears.rsi
+    state: floppy_ears
+
+- type: marking
+  id: ReptilianHeadCheekTuft
+  bodyPart: HeadSide
+  markingCategory: HeadSide
+  speciesRestriction: [Reptilian]
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Reptilian/cheek.rsi
+    state: cheek_tuft
+
+- type: marking
+  id: ReptilianTailFurred
+  bodyPart: Tail
+  markingCategory: Tail
+  speciesRestriction: [Reptilian]
+  layering:
+    furred_tail_under: TailBehind
+    furred_tail_over: TailOversuit
+  colorLinks:
+    furred_tail_over: furred_tail_under
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Reptilian/tail.rsi
+    state: furred_tail_under
+  - sprite: _DEN/Mobs/Customization/Reptilian/tail.rsi
+    state: furred_tail_over

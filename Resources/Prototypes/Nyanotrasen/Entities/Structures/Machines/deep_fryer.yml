@@ -1,10 +1,11 @@
 # SPDX-FileCopyrightText: 2023 JJ
+# SPDX-FileCopyrightText: 2024 Alice "Arimah" Heurlin
 # SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT
 # SPDX-FileCopyrightText: 2024 Debug
 # SPDX-FileCopyrightText: 2025 portfiend
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: entity
   id: KitchenDeepFryer
@@ -176,3 +177,18 @@
   - type: ThrowInsertContainer # TODO: Sounds
     containerId: vat_entities
   - type: PowerSwitch
+
+# Frontier: Halloween special
+- type: entity
+  id: KitchenDeepFryerCauldron
+  parent: KitchenDeepFryer
+  name: cauldron
+  description: A mysterious and mystical cauldron, sputtering with magical energy. Or is that oil?
+  suffix: Holiday Special
+  components:
+  - type: Sprite
+    sprite: _NF/Structures/Machines/cauldron.rsi
+    snapCardinals: true
+  - type: SolutionContainerVisuals
+    maxFillLevels: 8
+# End Frontier

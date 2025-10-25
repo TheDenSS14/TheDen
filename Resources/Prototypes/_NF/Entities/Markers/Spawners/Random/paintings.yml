@@ -1,0 +1,38 @@
+# SPDX-FileCopyrightText: 2024 dustylens
+# SPDX-FileCopyrightText: 2025 portfiend
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  parent: RandomPainting
+  id: RandomPaintingHalloween
+  suffix: Halloween
+  components:
+  - type: RandomSpawner
+    offset: 0
+    prototypes:
+      - PaintingPersistenceOfMemory
+      - PaintingTheSonOfMan
+      - PaintingTheKiss
+      - PaintingTheScream
+      - PaintingTheGreatWave
+      - PaintingCafeTerraceAtNight
+      - PaintingNightHawks
+      - PaintingSkeletonCigarette
+      - PaintingPrayerHands
+      - PaintingOldGuitarist
+      - PaintingOlympia
+      - PaintingSaturn
+      - PaintingSleepingGypsy
+      - PaintingRedBlueYellow
+      - PaintingHelloWorld
+      # Special halloween posters
+      - PaintingSpookyIan
+      - PaintingSpookyLady
+    chance: 1
+    rarePrototypes:
+      - PaintingSkeletonBoof
+      - PaintingEmpty
+      - PaintingMoony
+      - PaintingAmogusTriptych
+    rareChance: 0.01

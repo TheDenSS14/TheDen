@@ -1,11 +1,15 @@
-# SPDX-FileCopyrightText: 2021 Swept <sweptwastaken@protonmail.com>
-# SPDX-FileCopyrightText: 2021 Vera Aguilera Puerto <6766154+Zumorica@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2022 Alex Evgrashin <aevgrashin@yandex.ru>
-# SPDX-FileCopyrightText: 2022 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
-# SPDX-FileCopyrightText: 2022 mirrorcult <lunarautomaton6@gmail.com>
-# SPDX-FileCopyrightText: 2023 crazybrain23 <44417085+crazybrain23@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 YuNii <benjamin@bhenrich.de>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2021 Swept
+# SPDX-FileCopyrightText: 2021 Vera Aguilera Puerto
+# SPDX-FileCopyrightText: 2022 Alex Evgrashin
+# SPDX-FileCopyrightText: 2022 Pieter-Jan Briers
+# SPDX-FileCopyrightText: 2022 mirrorcult
+# SPDX-FileCopyrightText: 2023 crazybrain23
+# SPDX-FileCopyrightText: 2024 Alice "Arimah" Heurlin
+# SPDX-FileCopyrightText: 2024 Ansome
+# SPDX-FileCopyrightText: 2024 YuNii
+# SPDX-FileCopyrightText: 2024 dustylens
+# SPDX-FileCopyrightText: 2025 portfiend
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: MIT
 
@@ -331,13 +335,17 @@
     weekday: Thursday
 
 - type: holiday
-  id: holiday-name-halloween
-  name: Halloween
-  beginDay: 31
+  id: Halloween
+  name: holiday-name-halloween
+  beginDay: 27 # Frontier: 31<27
   beginMonth: October
+  endDay: 2 # Frontier
+  endMonth: November # Frontier
   greet:
     !type:Custom
     text: holiday-custom-halloween
+  entityReplacements: # Frontier
+    RandomPainting: RandomPaintingHalloween # Frontier
 
 - type: holiday
   id: VeganDay
@@ -430,7 +438,7 @@
 - type: holiday
   id: FestiveSeason
   name: holiday-name-festive-season
-  beginDay: 1
+  beginDay: 3 # Frontier: 1<3
   endDay: 31
   beginMonth: December
   greet:
