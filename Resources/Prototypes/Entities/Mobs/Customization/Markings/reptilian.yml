@@ -234,7 +234,7 @@
   id: LizardChestTiger
   bodyPart: Chest
   markingCategory: Chest
-  speciesRestriction: [Reptilian, Shadowkin, Lamia]
+  speciesRestriction: [Reptilian, Shadowkin, Lamia, IPC]
   sprites:
   - sprite: Mobs/Customization/reptilian_parts.rsi
     state: body_tiger
@@ -243,7 +243,7 @@
   id: LizardHeadTiger
   bodyPart: Head
   markingCategory: Head
-  speciesRestriction: [Reptilian, SlimePerson]
+  speciesRestriction: [Reptilian, SlimePerson, IPC]
   sprites:
   - sprite: Mobs/Customization/reptilian_parts.rsi
     state: head_tiger
@@ -252,7 +252,7 @@
   id: LizardLArmTiger
   bodyPart: LArm
   markingCategory: LeftArm
-  speciesRestriction: [Reptilian, SlimePerson, Lamia]
+  speciesRestriction: [Reptilian, SlimePerson, Lamia, IPC]
   sprites:
   - sprite: Mobs/Customization/reptilian_parts.rsi
     state: l_arm_tiger
@@ -261,7 +261,7 @@
   id: LizardLLegTiger
   bodyPart: LLeg
   markingCategory: LeftLeg
-  speciesRestriction: [Reptilian, SlimePerson]
+  speciesRestriction: [Reptilian, SlimePerson, IPC]
   sprites:
   - sprite: Mobs/Customization/reptilian_parts.rsi
     state: l_leg_tiger
@@ -270,7 +270,7 @@
   id: LizardRArmTiger
   bodyPart: RArm
   markingCategory: RightArm
-  speciesRestriction: [Reptilian, SlimePerson, Lamia]
+  speciesRestriction: [Reptilian, SlimePerson, Lamia, IPC]
   sprites:
   - sprite: Mobs/Customization/reptilian_parts.rsi
     state: r_arm_tiger
@@ -279,7 +279,7 @@
   id: LizardRLegTiger
   bodyPart: RLeg
   markingCategory: RightLeg
-  speciesRestriction: [Reptilian, SlimePerson]
+  speciesRestriction: [Reptilian, SlimePerson, IPC]
   sprites:
   - sprite: Mobs/Customization/reptilian_parts.rsi
     state: r_leg_tiger
@@ -342,7 +342,7 @@
   id: LizardChestUnderbelly
   bodyPart: Chest
   markingCategory: Chest
-  speciesRestriction: [Reptilian, SlimePerson]
+  speciesRestriction: [Reptilian, SlimePerson, IPC]
   sprites:
   - sprite: Mobs/Customization/reptilian_parts.rsi
     state: body_underbelly
@@ -351,7 +351,7 @@
   id: LizardChestBackspikes
   bodyPart: Chest
   markingCategory: Chest
-  speciesRestriction: [Reptilian, SlimePerson, Lamia]
+  speciesRestriction: [Reptilian, SlimePerson, Lamia, IPC]
   sprites:
   - sprite: Mobs/Customization/reptilian_parts.rsi
     state: body_backspikes
