@@ -32,9 +32,14 @@
       sprite: _Goobstation/Objects/Shields/blueshieldshield.rsi
       quickEquip: false
       slots:
-      - Belt
+#      - Belt #Den
       - Back #Den
       - suitStorage #Den
+      clothingVisuals: #TheDen, Suitstorage and Backpack sprites.
+        suitstorage:
+        - state: equipped-SUITSTORAGE
+        back:
+        - state: equipped-BACKPACK
     - type: ComponentToggler
       components:
       - type: DisarmMalus
@@ -61,11 +66,18 @@
         right:
           - state: inhand-right-on
             shader: unshaded
+      clothingVisuals: #TheDen, Suitstorage and Backpack sprites.
+        suitstorage:
+        - state: equipped-SUITSTORAGE-on
+          shader: unshaded
+        back:
+        - state: equipped-BACKPACK-on
+          shader: unshaded
     - type: PointLight
       netsync: false
       enabled: false
-      radius: 1.5
-      energy: 0.7
+      radius: 2 #TheDen
+      energy: 2 #TheDen
       color: "#678AD9"
     - type: ItemTogglePointLight
     - type: Blocking

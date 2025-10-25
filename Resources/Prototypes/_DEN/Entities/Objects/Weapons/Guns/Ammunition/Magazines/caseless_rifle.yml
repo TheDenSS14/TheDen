@@ -16,7 +16,7 @@
   - type: Item
     size: Small
   - type: Sprite
-    sprite: Objects/Weapons/Guns/Ammunition/Magazine/CaselessRifle/caseless_pistol_mag.rsi
+    sprite: _DEN/Objects/Weapons/Guns/Ammunition/Magazine/CaselessRifle/BRDIP_15_mag.rsi
     layers:
     - state: base
       map: ["enum.GunVisualLayers.Base"]
@@ -24,7 +24,7 @@
       map: ["enum.GunVisualLayers.Mag"]
   - type: MagazineVisuals
     magState: mag
-    steps: 6
+    steps: 12
     zeroVisible: false
   - type: Appearance
 
@@ -36,14 +36,14 @@
   - type: BallisticAmmoProvider
     proto: CartridgeCaselessRifle
   - type: Sprite
-    slayers:
-    - state: red
+    layers:
+    - state: base
       map: ["enum.GunVisualLayers.Base"]
     - state: mag-1
       map: ["enum.GunVisualLayers.Mag"]
   - type: MagazineVisuals
     magState: mag
-    steps: 6
+    steps: 12
     zeroVisible: false
   - type: Appearance
 
@@ -62,7 +62,7 @@
       map: ["enum.GunVisualLayers.Mag"]
   - type: MagazineVisuals
     magState: mag
-    steps: 6
+    steps: 12
     zeroVisible: false
   - type: Appearance
 
@@ -81,7 +81,7 @@
       map: ["enum.GunVisualLayers.Mag"]
   - type: MagazineVisuals
     magState: mag
-    steps: 6
+    steps: 12
     zeroVisible: false
   - type: Appearance
 
@@ -92,6 +92,17 @@
   components:
   - type: BallisticAmmoProvider
     proto: CartridgeCaselessRifleIncendiary
+  - type: Sprite
+    layers:
+    - state: red
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: MagazineVisuals
+    magState: mag
+    steps: 12
+    zeroVisible: false
+  - type: Appearance
 
 - type: entity
   id: MagazineBRDIP-15Uranium
@@ -100,6 +111,17 @@
   components:
   - type: BallisticAmmoProvider
     proto: CartridgeCaselessRifleUranium
+  - type: Sprite
+    layers:
+    - state: uranium
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: MagazineVisuals
+    magState: mag
+    steps: 12
+    zeroVisible: false
+  - type: Appearance
 
 - type: entity
   id: MagazineBRDIP-15Shrapnel

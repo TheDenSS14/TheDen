@@ -111,8 +111,8 @@
   - type: BallisticAmmoProvider
     proto: CartridgeCaselessRifle
   - type: Sprite
-    slayers:
-    - state: red
+    layers:
+    - state: base
       map: ["enum.GunVisualLayers.Base"]
     - state: mag-1
       map: ["enum.GunVisualLayers.Mag"]
