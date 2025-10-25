@@ -250,7 +250,7 @@
         - Harpy
     - !type:CharacterItemGroupRequirement
       group: TraitsMuted
-    - !type:CharacterTraitRequirement
+    - !type:CharacterTraitRequirement # Den - prevent IPCs from taking both singer and music machine
       inverted: true
       traits:
         - MusicMachine
