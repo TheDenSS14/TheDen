@@ -3,7 +3,7 @@
 // SPDX-FileCopyrightText: 2025 Dirius77
 // SPDX-FileCopyrightText: 2025 sleepyyapril
 //
-// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+// SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 using System.Numerics;
 using Content.Client.Stylesheets;
@@ -32,6 +32,7 @@ public sealed partial class RequirementsSelector : BoxContainer
     public event Action<List<ProtoId<GuideEntryPrototype>>>? OnOpenGuidebook;
     public event Action<JobPrototype, AlternateJobTitlePrototype>? OnOpenAlternateJobTitle;
     public event Action? OnClickJobActions;
+    public event Action<JobPrototype, List<(LocId, string)>>? OnOpenAlternateJobTitle;
 
     public int Selected => _options.SelectedId;
 
@@ -116,7 +117,7 @@ public sealed partial class RequirementsSelector : BoxContainer
         OptionsContainer.AddChild(_lockStripe);
     }
 
-    public void SetupJobTitleButton(JobPrototype job, AlternateJobTitlePrototype titles, bool disabled = true)
+    public void SetupJobTitleButton(JobPrototype job, List<(LocId, string)> titles, bool disabled = true)
     {
         if (disabled)
             return;

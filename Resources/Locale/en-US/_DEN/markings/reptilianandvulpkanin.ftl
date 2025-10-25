@@ -10,6 +10,19 @@ marking-ReptilianSharpCobraHood = Sharp Cobra Hood
 marking-ReptilianSharpCobraHood-sharp_cobra_hood = Base
 marking-ReptilianSharpCobraHood-sharp_cobra_hood_overlay = Inner
 
+marking-ReptilianHornsShort = Short Horns
+marking-ReptilianHornsShort-short_horns = Horn
+
+marking-ReptilianHeadCheekTuft = Cheek Tufts
+marking-ReptilianHeadCheekTuft-cheek_tuft = Tuft
+
+marking-ReptilianEarsFloppy = Floppy Ears
+marking-ReptilianEarsFloppy-floppy_ears = Ear
+
+marking-ReptilianTailFurred = Furred Tail
+marking-ReptilianTailFurred-furred_tail_under = Tail
+marking-ReptilianTailFurred-furred_tail_over = Tail
+
 # New Sergal
 marking-EarsCheesegal=  Sergal Ears
 marking-EarsCheesegal-sergears-1=  External

@@ -485,7 +485,13 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
     public HumanoidCharacterProfile WithJobTitle(string jobId, string jobTitle)
     {
         var dictionary = new Dictionary<string, string>(_jobTitles);
-        dictionary[jobId] = jobTitle;
+
+        // ReSharper disable once CanSimplifyDictionaryRemovingWithSingleCall
+        if (dictionary.ContainsKey(jobId))
+            dictionary.Remove(jobId);
+
+        if (!string.IsNullOrWhiteSpace(jobTitle) && jobTitle != jobId)
+            dictionary[jobId] = jobTitle;
 
         return new(this) { _jobTitles = dictionary };
     }
@@ -744,6 +750,11 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
                 _ => false
             }));
 
+        var titles = new Dictionary<string, string>(
+            JobTitles
+                .Where(t => prototypeManager.TryIndex<JobPrototype>(t.Key, out var job) && job.SetPreference &&
+                    t.Value != job.ID));
+
         var antags = AntagPreferences
             .Where(id => prototypeManager.TryIndex<AntagPrototype>(id, out var antag) && antag.SetPreference)
             .Distinct()
@@ -774,6 +785,13 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
         foreach (var (job, priority) in priorities)
         {
             _jobPriorities.Add(job, priority);
+        }
+
+        _jobTitles.Clear();
+
+        foreach (var (job, title) in titles)
+        {
+            _jobTitles.Add(job, title);
         }
 
         PreferenceUnavailable = prefsUnavailableMode;

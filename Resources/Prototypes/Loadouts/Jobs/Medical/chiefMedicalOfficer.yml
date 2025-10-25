@@ -1,12 +1,13 @@
-# SPDX-FileCopyrightText: 2024 VMSolidus <evilexecutive@gmail.com>
-# SPDX-FileCopyrightText: 2025 Angelo Fallaria <ba.fallaria@gmail.com>
-# SPDX-FileCopyrightText: 2025 Blitz <73762869+BlitzTheSquishy@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 BlitzTheSquishy <73762869+BlitzTheSquishy@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 KyuPolaris <tabi@kyuudev.me>
-# SPDX-FileCopyrightText: 2025 Skubman <ba.fallaria@gmail.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 VMSolidus
+# SPDX-FileCopyrightText: 2025 Angelo Fallaria
+# SPDX-FileCopyrightText: 2025 Blitz
+# SPDX-FileCopyrightText: 2025 BlitzTheSquishy
+# SPDX-FileCopyrightText: 2025 KyuPolaris
+# SPDX-FileCopyrightText: 2025 Skubman
+# SPDX-FileCopyrightText: 2025 phantasai
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 # Chief Medical Officer
 # Backpacks
@@ -98,7 +99,18 @@
 # Ears
 
 # Equipment
-
+- type: loadout
+  id: LoadoutChiefMedicalOfficerDefibrillatorCompact
+  category: JobsMedicalChiefMedicalOfficer
+  cost: 5
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutChiefMedicalOfficerEquipment
+  - !type:CharacterJobRequirement
+    jobs:
+    - ChiefMedicalOfficer
+  items:
+  - DefibrillatorCompact
 # Eyes
 
 # Gloves
