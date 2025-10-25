@@ -4,6 +4,7 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
+using Content.Shared._DEN.Bed.Cryostorage.Components;
 using Content.Shared.Administration.Logs;
 using Content.Shared.CCVar;
 using Content.Shared.DragDrop;
@@ -79,6 +80,8 @@ public abstract class SharedCryostorageSystem : EntitySystem
         var (_, comp) = ent;
         if (args.Container.ID != comp.ContainerId)
             return;
+
+        RemCompDeferred<CryoingSilentlyComponent>(args.Entity); // DEN - Don't persist silent cryo after leaving.
 
         _appearance.SetData(ent, CryostorageVisuals.Full, args.Container.ContainedEntities.Count > 0);
     }

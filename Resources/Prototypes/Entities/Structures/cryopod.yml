@@ -32,6 +32,8 @@
     access: [["Cryogenics"]]
   - type: InteractionOutline
   - type: Cryostorage
+  - type: CryostorageSilently # DEN - Allow silently entering Cryostorage
+    containerId: storage
   - type: Physics
     canCollide: false
   - type: DragInsertContainer

@@ -42,6 +42,8 @@ using Robust.Shared.Enums;
 using Robust.Shared.Network;
 using Robust.Shared.Player;
 using System.Globalization;
+using Content.Shared._DEN.Bed.Cryostorage.Components;
+
 
 namespace Content.Server.Bed.Cryostorage;
 
@@ -250,14 +252,20 @@ public sealed class CryostorageSystem : SharedCryostorageSystem
             _stationRecords.RemoveRecord(key, stationRecords);
         }
 
-        _chatSystem.DispatchStationAnnouncement(station.Value,
-            Loc.GetString(
-                "earlyleave-cryo-announcement",
-                ("character", name),
-                ("job", CultureInfo.CurrentCulture.TextInfo.ToTitleCase(jobName))
-            ), Loc.GetString("earlyleave-cryo-sender"),
-            playDefaultSound: false
-        );
+        // DEN - Don't broadcast if the person chose to enter cryo silently.
+        if (!TryComp<CryoingSilentlyComponent>(ent, out var silentCryo))
+            _chatSystem.DispatchStationAnnouncement(
+                station.Value,
+                Loc.GetString(
+                    "earlyleave-cryo-announcement",
+                    ("character", name),
+                    ("job", CultureInfo.CurrentCulture.TextInfo.ToTitleCase(jobName))
+                ),
+                Loc.GetString("earlyleave-cryo-sender"),
+                playDefaultSound: false
+            );
+        else
+            RemCompDeferred(ent, silentCryo);
     }
 
     private void HandleCryostorageReconnection(Entity<CryostorageContainedComponent> entity)
