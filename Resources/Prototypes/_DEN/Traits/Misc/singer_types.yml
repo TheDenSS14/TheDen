@@ -15,3 +15,11 @@
   midiUi: Key
   midiActionId: ActionHarpyPlayMidi
   allowPercussion: true
+
+- type: SingerInstrument
+  id: IPCSingerBasic
+  instrumentList:
+    "Synth Lead": {87: 0}
+  defaultInstrument: "Synth Lead"
+  midiUi: Key
+  midiActionId: ActionHarpyPlayMidi

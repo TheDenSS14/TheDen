@@ -19,6 +19,33 @@
       - type: ThavenMoods
 
 - type: trait
+  id: IPCSinger
+  category: AASpecies
+  points: -1 # cheap since Singer is free, but this is a special version with a more broadly usable sound
+  requirements:
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - StationAi
+        - Borg
+        - MedicalBorg
+    - !type:CharacterSpeciesRequirement
+      species:
+        - IPC
+    - !type:CharacterItemGroupRequirement
+      group: TraitsMuted
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - Singer
+        - MusicMachine
+  functions:
+    - !type:TraitReplaceComponent
+      components:
+        - type: Singer
+          proto: IPCSingerBasic
+
+- type: trait
   id: MusicMachine
   category: AASpecies
   points: -6 # expensive, but not as much as lyre bird, since it's not a DAW
@@ -38,6 +65,7 @@
       inverted: true
       traits:
         - Singer
+        - IPCSinger
   functions:
     - !type:TraitReplaceComponent
       components:
