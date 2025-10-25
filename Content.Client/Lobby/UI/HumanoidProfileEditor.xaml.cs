@@ -109,9 +109,9 @@ using Robust.Shared.Random;
 using System.IO;
 using System.Linq;
 using System.Numerics;
+using Content.Shared._DEN.Job;
 using Robust.Client.ResourceManagement;
 using Direction = Robust.Shared.Maths.Direction;
-
 
 // End CD - Character Records
 
@@ -189,6 +189,8 @@ namespace Content.Client.Lobby.UI
         private bool _customizeStationAiName;
         private bool _customizeBorgName;
 
+        private LoadoutJobActionsWindow? _currentActionsWindow;
+
         public event Action<HumanoidCharacterProfile, int>? OnProfileChanged;
 
         [ValidatePrototypeId<GuideEntryPrototype>]
@@ -214,7 +216,7 @@ namespace Content.Client.Lobby.UI
             MarkingManager markings,
             IRobustRandom random,
             ILogManager logManager
-            )
+        )
         {
             RobustXamlLoader.Load(this);
             _cfgManager = cfgManager;
@@ -256,7 +258,8 @@ namespace Content.Client.Lobby.UI
             NameRandomize.OnPressed += _ => RandomizeName();
             RandomizeEverything.OnPressed += _ => { RandomizeProfile(); };
             RandomizeBodyButton.OnPressed += _ => { RandomizeBody(); };
-            WarningLabel.SetMarkup($"[color=red]{Loc.GetString("humanoid-profile-editor-naming-rules-warning")}[/color]");
+            WarningLabel.SetMarkup(
+                $"[color=red]{Loc.GetString("humanoid-profile-editor-naming-rules-warning")}[/color]");
 
             #endregion Name
 
@@ -281,6 +284,7 @@ namespace Content.Client.Lobby.UI
             #endregion Sex
 
             // Begin TheDen - Add Voice
+
             #region Voice
 
             VoiceButton.OnItemSelected += args =>
@@ -290,6 +294,7 @@ namespace Content.Client.Lobby.UI
             };
 
             #endregion
+
             // End TheDen
 
             #region Age
@@ -308,7 +313,9 @@ namespace Content.Client.Lobby.UI
 
             PronounsButton.AddItem(Loc.GetString("humanoid-profile-editor-pronouns-male-text"), (int) Gender.Male);
             PronounsButton.AddItem(Loc.GetString("humanoid-profile-editor-pronouns-female-text"), (int) Gender.Female);
-            PronounsButton.AddItem(Loc.GetString("humanoid-profile-editor-pronouns-epicene-text"), (int) Gender.Epicene);
+            PronounsButton.AddItem(
+                Loc.GetString("humanoid-profile-editor-pronouns-epicene-text"),
+                (int) Gender.Epicene);
             PronounsButton.AddItem(Loc.GetString("humanoid-profile-editor-pronouns-neuter-text"), (int) Gender.Neuter);
 
             PronounsButton.OnItemSelected += args =>
@@ -425,7 +432,8 @@ namespace Content.Client.Lobby.UI
 
             Skin.OnValueChanged += _ => { OnSkinColorOnValueChanged(); };
             RgbSkinColorContainer.AddChild(_rgbSkinColorSelector = new());
-            _rgbSkinColorSelector.SelectorType = ColorSelectorSliders.ColorSelectorType.Hsv; // defaults color selector to HSV
+            _rgbSkinColorSelector.SelectorType =
+                ColorSelectorSliders.ColorSelectorType.Hsv; // defaults color selector to HSV
             _rgbSkinColorSelector.OnColorChanged += _ => { OnSkinColorOnValueChanged(); };
             SkinFurToggle.OnToggled += _ => { SetProfile(Profile, CharacterSlot); };
 
@@ -500,14 +508,15 @@ namespace Content.Client.Lobby.UI
                 ReloadProfilePreview();
             };
 
-            HairStylePicker.OnSlotAdd += delegate ()
+            HairStylePicker.OnSlotAdd += delegate()
             {
                 if (Profile is null)
                     return;
 
                 // DEN - filter by sex
                 var hair = _markingManager
-                    .MarkingsByCategoryAndSpeciesAndSex(MarkingCategories.Hair, Profile.Species, Profile.Sex).Keys
+                    .MarkingsByCategoryAndSpeciesAndSex(MarkingCategories.Hair, Profile.Species, Profile.Sex)
+                    .Keys
                     .FirstOrDefault();
 
                 if (string.IsNullOrEmpty(hair))
@@ -523,14 +532,15 @@ namespace Content.Client.Lobby.UI
                 ReloadProfilePreview();
             };
 
-            FacialHairPicker.OnSlotAdd += delegate ()
+            FacialHairPicker.OnSlotAdd += delegate()
             {
                 if (Profile is null)
                     return;
 
                 // DEN - filter by sex
                 var hair = _markingManager
-                    .MarkingsByCategoryAndSpeciesAndSex(MarkingCategories.FacialHair, Profile.Species, Profile.Sex).Keys
+                    .MarkingsByCategoryAndSpeciesAndSex(MarkingCategories.FacialHair, Profile.Species, Profile.Sex)
+                    .Keys
                     .FirstOrDefault();
 
                 if (string.IsNullOrEmpty(hair))
@@ -551,7 +561,9 @@ namespace Content.Client.Lobby.UI
             #region SpawnPriority
 
             foreach (var value in Enum.GetValues<SpawnPriorityPreference>())
-                SpawnPriorityButton.AddItem(Loc.GetString($"humanoid-profile-editor-preference-spawn-priority-{value.ToString().ToLower()}"), (int) value);
+                SpawnPriorityButton.AddItem(
+                    Loc.GetString($"humanoid-profile-editor-preference-spawn-priority-{value.ToString().ToLower()}"),
+                    (int) value);
 
             SpawnPriorityButton.OnItemSelected += args =>
             {
@@ -585,12 +597,12 @@ namespace Content.Client.Lobby.UI
             PreferenceUnavailableButton.AddItem(
                 Loc.GetString(
                     "humanoid-profile-editor-preference-unavailable-stay-in-lobby-button"),
-                    (int) PreferenceUnavailableMode.StayInLobby);
+                (int) PreferenceUnavailableMode.StayInLobby);
             PreferenceUnavailableButton.AddItem(
                 Loc.GetString(
                     "humanoid-profile-editor-preference-unavailable-spawn-as-overflow-button",
                     ("overflowJob", Loc.GetString(SharedGameTicker.FallbackOverflowJobName))),
-                    (int) PreferenceUnavailableMode.SpawnAsOverflow);
+                (int) PreferenceUnavailableMode.SpawnAsOverflow);
 
             PreferenceUnavailableButton.OnItemSelected += args =>
             {
@@ -1107,6 +1119,18 @@ namespace Content.Client.Lobby.UI
             }
         }
 
+        private void OnJobActionsButtonPressed(JobPrototype job)
+        {
+            if (_currentActionsWindow != null)
+            {
+                _currentActionsWindow.Orphan();
+                _currentActionsWindow = null;
+            }
+
+            _currentActionsWindow = new(job, profileEditor: this, _prototypeManager);{};
+            _currentActionsWindow.OpenCenteredLeft();
+        }
+
         /// Refreshes all job selectors
         public void RefreshJobs()
         {
@@ -1183,6 +1207,7 @@ namespace Content.Client.Lobby.UI
                     var jobContainer = new BoxContainer { Orientation = LayoutOrientation.Horizontal, };
                     var selector = new RequirementsSelector { Margin = new(3f, 3f, 3f, 0f) };
                     selector.OnOpenGuidebook += OnOpenGuidebook;
+                    selector.OnClickJobActions += () => OnJobActionsButtonPressed(job);
 
                     var icon = new TextureRect
                     {
@@ -1331,7 +1356,10 @@ namespace Content.Client.Lobby.UI
                         Orientation = LayoutOrientation.Horizontal,
                     };
 
+                    var backgroundPanel = new PanelContainer();
+
                     var selector = new RequirementsSelector { Margin = new Thickness(3f, 3f, 3f, 0f), };
+                    selector.OnClickJobActions += () => OnJobActionsButtonPressed(job);
 
                     var icon = new TextureRect
                     {
@@ -1411,7 +1439,7 @@ namespace Content.Client.Lobby.UI
                             if (traits.Count != 0)
                                 validLoadout = true;
 
-                        if (validLoadout == true && (Profile.JobTraits.ContainsKey(job.ID) || Profile.JobTraits.ContainsKey(job.ID)))
+                        if (validLoadout == true && (Profile.JobTraits.ContainsKey(job.ID) || Profile.JobLoadouts.ContainsKey(job.ID)))
                         {
                             jobContainer.AddChild(new BoxContainer
                             {
@@ -1431,22 +1459,32 @@ namespace Content.Client.Lobby.UI
                                         HorizontalAlignment = HAlignment.Center,
                                         Margin =  new Thickness(5f, 0, 5f, 0),
                                         Texture = _resCache.GetResource<TextureResource>("/Textures/Interface/character.svg.192dpi.png"),
-
                                     },
                                 }
                             });
                         }
                         var jobT = Profile.GetHighestPriorityJob() ?? String.Empty;
-
                         // temp, idk if i want it here and i need to do .loc()
                         if (_prototypeManager.TryIndex<JobPrototype>(jobT, out var jobPrototype))
                             JobLabel.Text = Loc.GetString("humanoid-profile-editor-traits-currently-editing-display") + " " + Loc.GetString(jobPrototype.LocalizedName);
                         else
                             JobLabel.Text = "Invalid job: this is a bug :(";
-                    }
 
+                        if (jobT == job.ID)
+                        {
+                            var background = new StyleBoxFlat
+                            {
+                                BackgroundColor = Color.FromHex("#2A492F"),
+                                ContentMarginBottomOverride = 4,
+                                ContentMarginTopOverride = 2,
+                            };
+
+                            backgroundPanel.PanelOverride = background;
+                        }
+                    }
                     _jobPriorities.Add((job.ID, selector));
-                    category.AddChild(jobContainer);
+                    backgroundPanel.AddChild(jobContainer);
+                    category.AddChild(backgroundPanel);
                 }
             }
 
@@ -1915,21 +1953,17 @@ namespace Content.Client.Lobby.UI
         {
             bool hadLastJob = false;
 
-            Logger.Debug("========== Update Job Priorities ==========");
             /// super epic migration code :3
             if (Profile?.LastJobLoadout != "" && Profile is not null)
             {
-                Logger.Info("Initial Loadout: " + string.Join(", ", (new HashSet<LoadoutPreference>(Profile.LoadoutPreferences)).Select(v => v.LoadoutName)));
                 Profile.JobTraits.Remove(Profile.LastJobLoadout);
-                if (Profile.JobLoadouts.Remove(Profile.LastJobLoadout))
-                    Logger.Error("removed job: " + Profile.LastJobLoadout);
+                Profile.JobLoadouts.Remove(Profile.LastJobLoadout);
 
                 Profile.JobTraits.Add(Profile.LastJobLoadout, new HashSet<string>(Profile.TraitPreferences));
                 Profile.JobLoadouts.Add(Profile.LastJobLoadout, new HashSet<LoadoutPreference>(Profile.LoadoutPreferences));
 
                 hadLastJob = true;
 
-                Logger.Debug("added job: " + Profile.LastJobLoadout + " now storing: " + Profile.JobLoadouts.Count + " loadouts");
                 Logger.Debug("Job Loadouts Dict:\n" +
                     string.Join("\n", Profile.JobLoadouts.Select(kvp =>
                         $"{kvp.Key}:\n  - " + string.Join("\n  - ", kvp.Value.Select(v => v.LoadoutName)))));
@@ -1941,23 +1975,16 @@ namespace Content.Client.Lobby.UI
                 /// Apply loadout preferences from dictionary
                 if (Profile.JobLoadouts.TryGetValue(Profile.LastJobLoadout, out var loadout))
                 {
-                    Logger.Info("Before union: " + string.Join(", ", (new HashSet<LoadoutPreference>(Profile.LoadoutPreferences)).Select(v => v.LoadoutName)));
-
                     Profile.LoadoutPreferences.Clear();
                     Profile.LoadoutPreferences.UnionWith(loadout);
 
                     UpdateLoadouts();
-
-                    Logger.Info("After union: " + string.Join(", ", (new HashSet<LoadoutPreference>(Profile.LoadoutPreferences)).Select(v => v.LoadoutName)));
                 }
                 else if (hadLastJob)
                 {
                     Profile.LoadoutPreferences.Clear();
                     UpdateLoadouts();
-
-                    Logger.Debug("hadLastJob");
                 }
-                Logger.Info("Final Loadout: " + string.Join(", ", (new HashSet<LoadoutPreference>(Profile.LoadoutPreferences)).Select(v => v.LoadoutName)));
 
                 /// Apply trait preferences from dictionary
                 if (Profile.JobTraits.TryGetValue(Profile.LastJobLoadout, out var traits))
@@ -1977,6 +2004,60 @@ namespace Content.Client.Lobby.UI
                     UpdateTraits();
                 }
             }
+            _currentActionsWindow?.Update();
+            SetDirty();
+        }
+
+        public void CopyTraitsFrom(JobPrototype jobPrototype)
+        {
+            if (Profile is not null)
+            {
+                Profile.JobTraits.Remove(jobPrototype.ID);
+                Profile.JobTraits.Add(jobPrototype.ID, new HashSet<string>(Profile.TraitPreferences));
+            }
+            UpdateRoleRequirements();
+            SetDirty();
+        }
+        public void CopyLoadoutFrom(JobPrototype jobPrototype)
+        {
+            if (Profile is not null)
+            {
+                Profile.JobLoadouts.Remove(jobPrototype.ID);
+                Profile.JobLoadouts.Add(jobPrototype.ID, new HashSet<LoadoutPreference>(Profile.LoadoutPreferences));
+            }
+            UpdateRoleRequirements();
+            SetDirty();
+        }
+        public void CopyTraitsAllFrom()
+        {
+            if (Profile is not null)
+            {
+                Profile.JobTraits.Clear();
+                foreach (var job in _prototypeManager.EnumeratePrototypes<JobPrototype>())
+                    Profile.JobTraits.Add(job.ID, new HashSet<string>(Profile.TraitPreferences));
+            }
+            UpdateRoleRequirements();
+            SetDirty();
+        }
+        public void CopyLoadoutsAllFrom()
+        {
+            if (Profile is not null)
+            {
+                Profile.JobLoadouts.Clear();
+                foreach (var job in _prototypeManager.EnumeratePrototypes<JobPrototype>())
+                    Profile.JobLoadouts.Add(job.ID, new HashSet<LoadoutPreference>(Profile.LoadoutPreferences));
+            }
+            UpdateRoleRequirements();
+            SetDirty();
+        }
+        public void RemoveLoadoutFrom(JobPrototype jobPrototype)
+        {
+            if (Profile is not null)
+            {
+                Profile.JobLoadouts.Remove(jobPrototype.ID);
+                Profile.JobTraits.Remove(jobPrototype.ID);
+            }
+            UpdateRoleRequirements();
             SetDirty();
         }
         private void UpdateSexControls()

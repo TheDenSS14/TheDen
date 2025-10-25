@@ -311,7 +311,7 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
             other.SpawnPriority,
             new Dictionary<string, JobPriority>(other.JobPriorities),
             new Dictionary<string, HashSet<LoadoutPreference>>(other.JobLoadouts),
-            other.JobTraits,
+            new Dictionary<string, HashSet<string>>(other.JobTraits),
             other.LastJobLoadout,
             new(other.JobTitles),
             other.Clothing,
@@ -584,6 +584,14 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
             && _antagPreferences.SequenceEqual(other._antagPreferences)
             && _traitPreferences.SequenceEqual(other._traitPreferences)
             && _loadoutPreferences.SequenceEqual(other._loadoutPreferences)
+            && (JobLoadouts.Count == other.JobLoadouts.Count &&
+                JobLoadouts.All(kvp =>
+                    other.JobLoadouts.TryGetValue(kvp.Key, out var set) &&
+                    kvp.Value.SetEquals(set)))
+            && (JobTraits.Count == other.JobTraits.Count &&
+                JobTraits.All(kvp =>
+                    other.JobTraits.TryGetValue(kvp.Key, out var otherSet) &&
+                    kvp.Value.SetEquals(otherSet)))
             && Appearance.MemberwiseEquals(other.Appearance)
             && FlavorText == other.FlavorText
             && NsfwFlavorText == other.NsfwFlavorText

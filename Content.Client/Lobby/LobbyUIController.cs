@@ -14,6 +14,7 @@
 // SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 using System.Linq;
+using Content.Client._DEN.Lobby.UI.Controls;
 using Content.Client.Guidebook;
 using Content.Client.Humanoid;
 using Content.Client.Inventory;
@@ -67,7 +68,6 @@ public sealed class LobbyUIController : UIController, IOnStateEntered<LobbyState
 
     private CharacterSetupGui? _characterSetup;
     private HumanoidProfileEditor? _profileEditor;
-
     /// This is the character preview panel in the chat. This should only update if their character updates
     private LobbyCharacterPreviewPanel? PreviewPanel => GetLobbyPreview();
 
@@ -257,7 +257,8 @@ public sealed class LobbyUIController : UIController, IOnStateEntered<LobbyState
             _requirements,
             _markings,
             _random,
-            _logManager);
+            _logManager
+            );
 
         _profileEditor.OnOpenGuidebook += _guide.OpenHelp;
 
