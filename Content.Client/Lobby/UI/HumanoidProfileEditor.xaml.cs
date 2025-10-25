@@ -65,7 +65,7 @@
 // SPDX-FileCopyrightText: 2025 portfiend
 // SPDX-FileCopyrightText: 2025 sleepyyapril
 //
-// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+// SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 using System.IO;
 using System.Linq;
@@ -117,6 +117,11 @@ using System.Globalization;
 using Content.Client._CD.Records.UI;
 using Content.Shared._CD.Records;
 using Content.Shared.Customization.Systems._DEN;
+using Content.Client._DEN.Customization.Systems;
+using Content.Client._DEN.Lobby.UI.Controls;
+using Content.Shared._DEN.Job;
+
+
 // End CD - Character Records
 
 // DEN TODO: THIS NEEDS SEVERE OVERHAUL
@@ -143,6 +148,8 @@ namespace Content.Client.Lobby.UI
         private readonly CharacterRequirementsSystem _characterRequirementsSystem;
         private readonly LobbyUIController _controller;
         private readonly IRobustRandom _random;
+        private readonly ILogManager _logManager;
+        private readonly ISawmill _sawmill;
 
         private FlavorText.FlavorText? _flavorText;
         private BoxContainer _ccustomspecienamecontainerEdit => CCustomSpecieName;
@@ -151,6 +158,9 @@ namespace Content.Client.Lobby.UI
         private TextEdit? _flavorSfwTextEdit;
         private TextEdit? _flavorNsfwTextEdit;
         private TextEdit? _characterConsent;
+
+        // One at a time.
+        private AlternateTitleSelectionMenu? _titleSelectionMenu;
 
         /// If we're attempting to save
         public event Action? Save;
@@ -175,6 +185,7 @@ namespace Content.Client.Lobby.UI
         // EE - Contractor System Changes End
         private List<(string, RequirementsSelector)> _jobPriorities = new();
         private readonly Dictionary<string, BoxContainer> _jobCategories;
+        private Dictionary<ProtoId<JobPrototype>, List<ProtoId<AlternateJobTitlePrototype>>> _cachedTitles = new();
 
         private Dictionary<Button, ConfirmationData> _confirmationData = new();
         private List<TraitPreferenceSelector> _traitPreferences = new();
@@ -210,7 +221,8 @@ namespace Content.Client.Lobby.UI
             IResourceManager resManager,
             JobRequirementsManager requirements,
             MarkingManager markings,
-            IRobustRandom random
+            IRobustRandom random,
+            ILogManager logManager
             )
         {
             RobustXamlLoader.Load(this);
@@ -224,6 +236,8 @@ namespace Content.Client.Lobby.UI
             _resManager = resManager;
             _requirements = requirements;
             _random = random;
+            _logManager = logManager;
+            _sawmill = _logManager.GetSawmill("humanoid-profile-editor");
 
             _characterRequirementsSystem = _entManager.System<CharacterRequirementsSystem>();
             _controller = UserInterfaceManager.GetUIController<LobbyUIController>();
@@ -701,10 +715,7 @@ namespace Content.Client.Lobby.UI
                 _flavorText.OnSfwFlavorTextChanged += OnSfwFlavorTextChange;
                 _flavorText.OnNsfwFlavorTextChanged += OnNsfwFlavorTextChange;
                 _flavorText.OnCharacterConsentChanged += OnCharacterConsentChange;
-
-                _flavorSfwTextEdit = _flavorText.CFlavorTextSFWInput;
-                _flavorNsfwTextEdit = _flavorText.CFlavorTextNSFWInput;
-                _characterConsent = _flavorText.CFlavorTextConsentInput;
+                _flavorText.OnSelfFlavorTextChanged += OnSelfFlavorTextChange; // DEN
 
                 CTabContainer.AddTab(_flavorText, Loc.GetString("humanoid-profile-editor-flavortext-tab"));
             }
@@ -718,17 +729,8 @@ namespace Content.Client.Lobby.UI
                 _flavorText.OnSfwFlavorTextChanged -= OnSfwFlavorTextChange;
                 _flavorText.OnNsfwFlavorTextChanged -= OnNsfwFlavorTextChange;
                 _flavorText.OnCharacterConsentChanged -= OnCharacterConsentChange;
-
-                _flavorText.Dispose();
-
-                _flavorSfwTextEdit?.Dispose();
-                _flavorNsfwTextEdit?.Dispose();
-                _characterConsent?.Dispose();
-
+                _flavorText.OnSelfFlavorTextChanged -= OnSelfFlavorTextChange; // DEN
                 _flavorText = null;
-                _flavorSfwTextEdit = null;
-                _flavorNsfwTextEdit = null;
-                _characterConsent = null;
             }
         }
 
@@ -777,8 +779,8 @@ namespace Content.Client.Lobby.UI
             NationalityButton.Clear();
             _nationalies.Clear();
 
-            var job = _controller.GetPreferredJob(Profile ?? HumanoidCharacterProfile.DefaultWithSpecies());
-            var context = GetContext().WithSelectedJob(job);
+            var context = _characterRequirementsSystem.GetProfileContext(Profile);
+
             _nationalies.AddRange(_prototypeManager.EnumeratePrototypes<NationalityPrototype>()
                 .Where(o => _characterRequirementsSystem.CheckRequirementsValid(o.Requirements,
                     context.WithPrototype(o),
@@ -809,8 +811,7 @@ namespace Content.Client.Lobby.UI
             EmployerButton.Clear();
             _employers.Clear();
 
-            var job = _controller.GetPreferredJob(Profile ?? HumanoidCharacterProfile.DefaultWithSpecies());
-            var context = GetContext().WithSelectedJob(job);
+            var context = _characterRequirementsSystem.GetProfileContext(Profile);
             _employers.AddRange(_prototypeManager.EnumeratePrototypes<EmployerPrototype>()
                 .Where(o => _characterRequirementsSystem.CheckRequirementsValid(o.Requirements,
                     context.WithPrototype(o),
@@ -841,8 +842,8 @@ namespace Content.Client.Lobby.UI
             LifepathButton.Clear();
             _lifepaths.Clear();
 
-            var job = _controller.GetPreferredJob(Profile ?? HumanoidCharacterProfile.DefaultWithSpecies());
-            var context = GetContext().WithSelectedJob(job);
+            var context = _characterRequirementsSystem.GetProfileContext(Profile);
+
             _lifepaths.AddRange(_prototypeManager.EnumeratePrototypes<LifepathPrototype>()
                 .Where(o => _characterRequirementsSystem.CheckRequirementsValid(o.Requirements,
                     context.WithPrototype(o),
@@ -918,7 +919,10 @@ namespace Content.Client.Lobby.UI
 
                 var requirements = antag.Requirements ?? new();
                 var job = _controller.GetPreferredJob(Profile ?? HumanoidCharacterProfile.DefaultWithSpecies());
-                var context = GetContext().WithSelectedJob(job).WithPrototype(antag);
+                var context = _characterRequirementsSystem.GetProfileContext(Profile)
+                    .WithSelectedJob(job)
+                    .WithPrototype(antag);
+
                 if (!_characterRequirementsSystem.CheckRequirementsValid(requirements,
                     context,
                     _entManager,
@@ -1022,7 +1026,7 @@ namespace Content.Client.Lobby.UI
             UpdateCyborgControls();
             UpdateSkinColor();
             UpdateSpawnPriorityControls();
-            UpdateFlavorTextEdit();
+            _flavorText?.SetProfile(Profile);
             UpdateCustomSpecieNameEdit();
             UpdateAgeEdit();
             UpdateEyePickers();
@@ -1110,6 +1114,69 @@ namespace Content.Client.Lobby.UI
             }
         }
 
+        private List<ProtoId<AlternateJobTitlePrototype>> BuildAlternateJobPrototypes(JobPrototype job)
+        {
+            if (_cachedTitles.TryGetValue(job, out var ids))
+                return ids;
+
+            var result = new List<ProtoId<AlternateJobTitlePrototype>>();
+
+            foreach (var prototype in _prototypeManager.EnumeratePrototypes<AlternateJobTitlePrototype>())
+            {
+                //  don't check on a job we don't care about
+                if (prototype.JobId != job)
+                    continue;
+
+                result.Add(prototype);
+            }
+
+            _cachedTitles.Add(job, result);
+            return result;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        /// <param name="job"></param>
+        /// <returns></returns>
+        private List<(LocId, string)> GetAlternateJobTitles(JobPrototype job)
+        {
+            var result = new List<(LocId, string)>();
+            var context = _characterRequirementsSystem.GetProfileContext(Profile)
+                .WithSelectedJob(job)
+                .WithPrototype(job);
+
+            var prototypes = BuildAlternateJobPrototypes(job);
+
+            foreach (var titlesId in prototypes)
+            {
+                if (!_prototypeManager.TryIndex(titlesId, out var prototype))
+                    continue;
+
+                //  don't check on a job we don't care about
+                if (prototype.JobId != job)
+                    continue;
+
+                // TODO: show in the menu this one is not available. for now, hide it.
+                if (!_characterRequirementsSystem.CheckRequirementsValid(
+                    prototype.Requirements,
+                    context,
+                    _entManager,
+                    _prototypeManager,
+                    _cfgManager))
+                    continue;
+
+                // every title should be a LocId.
+                var toAdd = prototype.Titles
+                    .Select(titleId => (titleId, Loc.GetString(titleId)))
+                    .ToList();
+
+                result.AddRange(toAdd);
+            }
+
+            return result;
+        }
+
         /// Refreshes all job selectors
         public void RefreshJobs()
         {
@@ -1192,12 +1259,23 @@ namespace Content.Client.Lobby.UI
                         TextureScale = new(2, 2),
                         VerticalAlignment = VAlignment.Center
                     };
+
                     var jobIcon = _prototypeManager.Index<JobIconPrototype>(job.Icon);
                     icon.Texture = jobIcon.Icon.Frame0();
                     selector.Setup(items, job.LocalizedName, 200, job.LocalizedDescription, icon, job.Guides);
 
+                    var alternateJobTitles = GetAlternateJobTitles(job);
+
+                    if (alternateJobTitles != null)
+                    {
+                        selector.SetupJobTitleButton(job, alternateJobTitles, false);
+                        selector.OnOpenAlternateJobTitle += (_, _) => CreateTitlesWindow(job, alternateJobTitles);
+                    }
+
                     var requirements = job.Requirements ?? new();
-                    var context = GetContext().WithSelectedJob(job).WithPrototype(job);
+                    var context = _characterRequirementsSystem.GetProfileContext(Profile)
+                        .WithSelectedJob(job)
+                        .WithPrototype(job);
 
                     if (!_requirements.CheckJobWhitelist(job, out var reason))
                         selector.LockRequirements(reason);
@@ -1334,8 +1412,19 @@ namespace Content.Client.Lobby.UI
                     icon.Texture = jobIcon.Icon.Frame0();
                     selector.Setup(items, job.LocalizedName, 200, job.LocalizedDescription, icon);
 
+                    var alternateJobTitles = GetAlternateJobTitles(job);
+
+                    if (alternateJobTitles.Any())
+                    {
+                        selector.SetupJobTitleButton(job, alternateJobTitles, false);
+                        selector.OnOpenAlternateJobTitle += (_, _) => CreateTitlesWindow(job, alternateJobTitles);
+                    }
+
                     var requirements = job.Requirements ?? new();
-                    var context = GetContext().WithSelectedJob(job).WithPrototype(job);
+                    var context = _characterRequirementsSystem.GetProfileContext(Profile)
+                        .WithSelectedJob(job)
+                        .WithPrototype(job);
+
                     if (!_requirements.CheckJobWhitelist(job, out var reason))
                         selector.LockRequirements(reason);
                     else if (!_characterRequirementsSystem.CheckRequirementsValid(requirements,
@@ -1387,10 +1476,35 @@ namespace Content.Client.Lobby.UI
                 UpdateJobPriorities();
         }
 
+        private void CreateTitlesWindow(JobPrototype job, List<(LocId, string)> titles)
+        {
+            if (Profile == null)
+                return;
+
+            if (!titles.Any())
+                return;
+
+            if (_titleSelectionMenu != null)
+            {
+                _titleSelectionMenu.Orphan();
+                _titleSelectionMenu = null;
+            }
+
+            Profile.JobTitles.TryGetValue(job.ID, out var selectedTitle);
+
+            _titleSelectionMenu = new(job, titles, selectedTitle)
+            {
+                Title = job.LocalizedName
+            };
+
+            _titleSelectionMenu.OnSelectedAlternateTitleChanged += jobTitle => OnAlternateTitleChanged(job, jobTitle);
+            _titleSelectionMenu.OpenCenteredLeft();
+        }
+
         /// DeltaV - Make sure that no invalid job priorities get through
         private void EnsureJobRequirementsValid()
         {
-            var context = GetContext();
+            var context = _characterRequirementsSystem.GetProfileContext(Profile);
 
             foreach (var (jobId, selector) in _jobPriorities)
             {
@@ -1409,6 +1523,15 @@ namespace Content.Client.Lobby.UI
                 selector.Select((int) JobPriority.Never);
                 Profile = Profile?.WithJobPriority(proto.ID, JobPriority.Never);
             }
+        }
+
+        private void OnAlternateTitleChanged(JobPrototype job, (LocId, string)? newTitle)
+        {
+            if (Profile is null)
+                return;
+
+            Profile = Profile?.WithJobTitle(job.ID, newTitle?.Item1 ?? string.Empty);
+            SetDirty();
         }
 
         // Start CD - Character Records
@@ -1446,6 +1569,16 @@ namespace Content.Client.Lobby.UI
                 return;
 
             Profile = Profile.WithCharacterConsent(content);
+            SetDirty();
+        }
+
+        // DEN - Self-examine flavor text
+        private void OnSelfFlavorTextChange(string content)
+        {
+            if (Profile is null)
+                return;
+
+            Profile = Profile.WithSelfExamineFlavorText(content);
             SetDirty();
         }
 
@@ -1782,18 +1915,6 @@ namespace Content.Client.Lobby.UI
             var species = _species.Find(x => x.ID == Profile?.Species) ?? _species.First();
             _customspecienameEdit.Text = string.IsNullOrEmpty(Profile?.Customspeciename) ? Loc.GetString(species.Name) : Profile.Customspeciename;
             _ccustomspecienamecontainerEdit.Visible = species.CustomName;
-        }
-
-        private void UpdateFlavorTextEdit()
-        {
-            if (_flavorSfwTextEdit != null)
-                _flavorSfwTextEdit.TextRope = new Rope.Leaf(Profile?.FlavorText ?? "");
-
-            if (_flavorNsfwTextEdit != null)
-                _flavorNsfwTextEdit.TextRope = new Rope.Leaf(Profile?.NsfwFlavorText ?? "");
-
-            if (_characterConsent != null)
-                _characterConsent.TextRope = new Rope.Leaf(Profile?.CharacterConsent ?? "");
         }
 
         private void UpdateAgeEdit()
@@ -2424,8 +2545,7 @@ namespace Content.Client.Lobby.UI
 
 
             // Get the highest priority job to use for trait filtering
-            var highJob = _controller.GetPreferredJob(Profile ?? HumanoidCharacterProfile.DefaultWithSpecies());
-            var context = GetContext().WithSelectedJob(highJob);
+            var context = _characterRequirementsSystem.GetProfileContext(Profile);
 
             _traits.Clear();
             foreach (var trait in _prototypeManager.EnumeratePrototypes<TraitPrototype>())
@@ -2513,8 +2633,12 @@ namespace Content.Client.Lobby.UI
                 }
 
                 var selector = new TraitPreferenceSelector(
-                    trait, highJob, Profile ?? HumanoidCharacterProfile.DefaultWithSpecies(),
-                    _entManager, _prototypeManager, _cfgManager, _characterRequirementsSystem, _requirements);
+                    trait,
+                    Profile ?? HumanoidCharacterProfile.DefaultWithSpecies(),
+                    _entManager,
+                    _prototypeManager,
+                    _cfgManager,
+                    _characterRequirementsSystem);
                 selector.Valid = usable;
                 selector.ShowUnusable = showUnusable.Value;
                 AddSelector(selector);
@@ -2766,13 +2890,6 @@ namespace Content.Client.Lobby.UI
         private static float KilogramsToPounds(float kilograms)
         {
             return kilograms * 2.20462f;
-        }
-
-        private CharacterRequirementContext GetContext()
-        {
-            return new(profile: Profile ?? HumanoidCharacterProfile.DefaultWithSpecies(),
-                playtimes: _requirements.GetRawPlayTimeTrackers(),
-                whitelisted: _requirements.IsWhitelisted());
         }
     }
 }

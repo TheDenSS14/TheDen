@@ -1,5 +1,6 @@
-// SPDX-FileCopyrightText: 2025 Eris <eris@erisws.com>
-// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Eris
+// SPDX-FileCopyrightText: 2025 Winter
+// SPDX-FileCopyrightText: 2025 sleepyyapril
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -60,7 +61,7 @@ public sealed class SelectableAmmoSystem : EntitySystem
 
         var name = GetProviderProtoName(ent);
         if (name != null)
-            _popup.PopupClient(Loc.GetString("mode-selected", ("mode", name)), ent, args.Actor);
+            _popup.PopupClient(Loc.GetString("ammo-selector-mode-selected", ("mode", name)), ent, args.Actor);
         _audio.PlayPredicted(ent.Comp.SoundSelect, ent, args.Actor);
     }
 
@@ -87,7 +88,7 @@ public sealed class SelectableAmmoSystem : EntitySystem
         }
 
         if (index.Color != null && TryComp(ent, out AppearanceComponent? appearance))
-            _appearance.SetData(ent, ToggleableLightVisuals.Color, index.Color, appearance);
+            _appearance.SetData(ent, ToggleableVisuals.Color, index.Color, appearance);
 
         Dirty(ent);
         return true;

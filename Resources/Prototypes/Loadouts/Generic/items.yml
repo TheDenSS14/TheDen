@@ -26,7 +26,7 @@
 # SPDX-FileCopyrightText: 2025 portfiend
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 #Smokes
 - type: loadout
@@ -482,14 +482,14 @@
 
 - type: loadout
   id: LoadoutEmergencyMedipen
-  category: GeneralItems
+  category: GeneralMedical # DEN - Medical items
   cost: 1
   items:
     - EmergencyMedipen
 
 - type: loadout
   id: LoadoutSpaceMedipen
-  category: GeneralItems
+  category: GeneralMedical # DEN - Medical items
   cost: 1
   items:
     - SpaceMedipen
@@ -681,7 +681,7 @@
 # Medkits
 - type: loadout
   id: LoadoutMedkitFilled
-  category: GeneralItems
+  category: GeneralMedical # DEN - Medical items
   cost: 2
   items:
     - MedkitFilled
@@ -812,18 +812,20 @@
       group: LoadoutBoxKits
 
 #Misc GeneralItems
-- type: loadout
-  id: LoadoutCivilianDisabler
-  category: GeneralItems
-  cost: 5
-  canBeHeirloom: true
-  requirements:
-    - !type:CharacterJobRequirement
-      inverted: true
-      jobs:
-        - Prisoner
-  items:
-    - WeaponCivilianDisabler
+# DEN
+# - type: loadout
+#   id: LoadoutCivilianDisabler
+#   category: GeneralItems
+#   cost: 5
+#   canBeHeirloom: true
+#   requirements:
+#     - !type:CharacterJobRequirement
+#       inverted: true
+#       jobs:
+#         - Prisoner
+#   items:
+#     - WeaponCivilianDisabler
+#DEN
 
 #- type: loadout - Already a flash in the sec loadouts (plus one default in bag, and if oyu want more than TWO flashes, sectech is right there)
 #  id: LoadoutItemFlash
@@ -925,7 +927,7 @@
 
 - type: loadout
   id: LoadoutItemAACTablet
-  category: GeneralItems
+  category: GeneralMedical # DEN - Medical items
   cost: 2
   items:
     - AACTablet
@@ -935,7 +937,7 @@
 
 - type: loadout
   id: LoadoutItemAACTablet_SAS
-  category: GeneralItems
+  category: GeneralMedical # DEN - Medical items
   cost: 2
   items:
     - AACTablet_SAS
@@ -945,14 +947,14 @@
 
 - type: loadout
   id: LoadoutItemCaneBlind
-  category: GeneralItems
+  category: GeneralMedical # DEN - Medical items
   cost: 0 # It shouldnt cost points to be able to function.
   items:
     - WhiteCane
 
 - type: loadout
   id: LoadoutItemCaneWalking
-  category: GeneralItems
+  category: GeneralMedical # DEN - Medical items
   cost: 0 # It shouldnt cost points to be able to function.
   requirements:
     - !type:CharacterItemGroupRequirement
@@ -1318,12 +1320,12 @@
     - PlushieCatOrange
 
 - type: loadout #TheDen
-  id: PlushieCatSiames
+  id: PlushieCatSiamese
   category: GeneralToys
   cost: 1
   canBeHeirloom: true
   items:
-    - PlushieCatSiames
+    - PlushieCatSiamese
 
 - type: loadout #TheDen
   id: PlushieCatTabby
@@ -1458,3 +1460,26 @@
   canBeHeirloom: true
   items:
     - PlushieExperiment
+
+# religious
+
+- type: loadout #TheDen
+  id: LoadoutPrayerRugBlue
+  category: GeneralItems
+  cost: 0
+  items:
+    - PrayerRugBlue
+
+- type: loadout #TheDen
+  id: LoadoutPrayerRugGreen
+  category: GeneralItems
+  cost: 0
+  items:
+    - PrayerRugGreen
+
+- type: loadout #TheDen
+  id: LoadoutPrayerRugRed
+  category: GeneralItems
+  cost: 0
+  items:
+    - PrayerRugRed

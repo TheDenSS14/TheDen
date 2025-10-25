@@ -55,13 +55,10 @@
 # When adding new drinks also add to random spawner located in Resources\Prototypes\Entities\Markers\Spawners\Random\Food_Drinks\drinks_bottles.yml
 - type: entity
   parent: DrinkBase
-  id: DrinkBottlePlasticBaseFull
+  id: DrinkBottlePlasticBaseFull #TheDen - Removed DrinkBottle tag, added to DrinkBottlePlasticBaseInventory
   abstract: true
   suffix: Full
   components:
-  - type: Tag
-    tags:
-    - DrinkBottle
   - type: Openable
     sound:
       collection: bottleOpenSounds
@@ -99,6 +96,15 @@
   - type: PressurizedSolution
     solution: drink
   - type: Shakeable
+
+- type: entity
+  parent: DrinkBottlePlasticBaseFull
+  id: DrinkBottlePlasticBaseInventory #TheDen - for bottles intended to go in a dispenser's inventory, rather than the BeakerSlot
+  abstract: true
+  components:
+  - type: Tag
+    tags:
+    - DrinkBottle
 
 - type: entity
   parent: DrinkBottlePlasticBaseFull
@@ -143,6 +149,9 @@
             max: 1
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
+  - type: Tag #TheDen - added DrinkBottle since the parent no longer has it
+    tags:
+    - DrinkBottle
   - type: Tool
     qualities:
     - Rolling
@@ -189,6 +198,10 @@
   - type: SolutionContainerVisuals
     maxFillLevels: 5
     fillBaseName: fill-
+    inHandsMaxFillLevels: 3
+    inHandsFillBaseName: -fill-
+
+# Large Glass Bottles
 
 - type: entity
   parent: [DrinkBottleVisualsAll, DrinkBottleGlassBaseFull]
@@ -202,6 +215,8 @@
         reagents:
         - ReagentId: Absinthe
           Quantity: 100
+  - type: Label
+    currentLabel: absinthe
   - type: Sprite
     sprite: Objects/Consumable/Drinks/absinthebottle.rsi
   - type: Sealable
@@ -282,7 +297,7 @@
   - type: Sealable
 
 - type: entity
-  parent: [DrinkBottleVisualsAll, DrinkBottlePlasticBaseFull]
+  parent: [DrinkBottleVisualsAll, DrinkBottlePlasticBaseInventory]
   id: DrinkColaBottleFull
   name: space cola bottle
   description: Cola. In space.
@@ -449,7 +464,7 @@
   - type: Sealable
 
 - type: entity
-  parent: [DrinkBottleVisualsAll, DrinkBottlePlasticBaseFull]
+  parent: [DrinkBottleVisualsAll, DrinkBottlePlasticBaseInventory]
   id: DrinkSpaceMountainWindBottleFull
   name: space mountain wind bottle
   description: Blows right through you like a space wind.
@@ -468,7 +483,7 @@
   - type: Sealable
 
 - type: entity
-  parent: [DrinkBottleVisualsAll, DrinkBottlePlasticBaseFull]
+  parent: [DrinkBottleVisualsAll, DrinkBottlePlasticBaseInventory]
   id: DrinkSpaceUpBottleFull
   name: space-up bottle
   description: Tastes like a hull breach in your mouth.
@@ -631,7 +646,7 @@
     - DrinkBottle
 
 - type: entity
-  parent: [DrinkBottleVisualsAll, DrinkBottlePlasticBaseFull]
+  parent: [DrinkBottleVisualsAll, DrinkBottlePlasticBaseInventory]
   id: DrinkAleBottleFull
   name: Magm-Ale
   description: A true dorf's drink of choice.
@@ -651,7 +666,7 @@
     closeable: false
 
 - type: entity
-  parent: [DrinkBottleVisualsAll, DrinkBottlePlasticBaseFull]
+  parent: [DrinkBottleVisualsAll, DrinkBottlePlasticBaseInventory]
   id: DrinkAleBottleFullGrowler
   name: Magm-Ale Growler
   description: A true dorf's drink of choice. XL growler bottle.
@@ -701,9 +716,11 @@
     inHandsMaxFillLevels: 2
     inHandsFillBaseName: -fill-
   - type: Sealable
+  - type: FitsInDispenser
+    solution: drink
 
 - type: entity #Imp
-  parent: [DrinkBottleVisualsOpenable, DrinkBottlePlasticBaseFull]
+  parent: [FlaskBase, DrinkFlaskVisualsOpenable]
   id: DrinkCommandFlaskFull
   name: Command Flask
   description: A brass flask with a white leather wrap, because you get paid enough to deserve it.
@@ -727,11 +744,29 @@
   - type: Sealable
 
 - type: entity
-  parent: DrinkWaterBottleFull
+  parent: [DrinkBottleVisualsOpenable, DrinkBottlePlasticBaseInventory]
   id: DrinkSodaWaterBottleFull
   name: soda water bottle
   description: Like water, but angry!
   components:
+  - type: Item
+    size: Small
+  - type: Drink
+  - type: Sprite
+    sprite: Objects/Consumable/Drinks/waterbottle.rsi
+    layers:
+      - state: icon
+        map: ["enum.OpenableVisuals.Layer"]
+      - state: icon-1
+        map: ["enum.SolutionContainerLayers.Fill"]
+        visible: false
+  - type: Appearance
+  - type: SolutionContainerVisuals
+    maxFillLevels: 5
+    fillBaseName: icon-
+    inHandsMaxFillLevels: 2
+    inHandsFillBaseName: -fill-
+  - type: Sealable
   - type: SolutionContainerManager
     solutions:
       drink:
@@ -743,7 +778,7 @@
     currentLabel: soda water
 
 - type: entity
-  parent: DrinkWaterBottleFull
+  parent: DrinkSodaWaterBottleFull
   id: DrinkTonicWaterBottleFull
   name: tonic water bottle
   description: Like soda water, but angrier maybe? Often sweeter.
@@ -761,7 +796,7 @@
 # Cartons, TODO: this needs to be moved elsewhere eventually, since cartons shouldnt smash into glass shards
 
 - type: entity
-  parent: [DrinkBottleVisualsOpenable, DrinkBottlePlasticBaseFull]
+  parent: [DrinkBottleVisualsOpenable, DrinkBottlePlasticBaseInventory]
   id: DrinkJuiceLimeCartonXL
   name: lime juice XL
   description: Sweet-sour goodness.
@@ -780,7 +815,7 @@
     sprite: Objects/Consumable/Drinks/limejuice.rsi
 
 - type: entity
-  parent: [DrinkBottleVisualsOpenable, DrinkBottlePlasticBaseFull]
+  parent: [DrinkBottleVisualsOpenable, DrinkBottlePlasticBaseInventory]
   id: DrinkJuiceOrangeCartonXL
   name: orange juice XL
   description: Full of vitamins and deliciousness!
@@ -799,7 +834,7 @@
     sprite: Objects/Consumable/Drinks/orangejuice.rsi
 
 - type: entity
-  parent: [DrinkBottleVisualsOpenable, DrinkBottlePlasticBaseFull]
+  parent: [DrinkBottleVisualsOpenable, DrinkBottlePlasticBaseInventory]
   id: DrinkCreamCartonXL
   name: Milk Cream XL
   description: It's cream. Made from milk. What else did you think you'd find in there?
@@ -820,7 +855,7 @@
 #boring jugs some more sprites are made
 
 - type: entity
-  parent: DrinkBottlePlasticBaseFull
+  parent: DrinkBottlePlasticBaseInventory
   id: DrinkSugarJug
   name: sugar jug
   suffix: For Drinks, Full
@@ -836,7 +871,7 @@
   - type: Drink
 
 - type: entity
-  parent: DrinkBottlePlasticBaseFull
+  parent: DrinkBottlePlasticBaseInventory
   id: DrinkLemonLimeJug
   name: lemon lime jug
   description: a dual citrus sensation.
@@ -853,7 +888,7 @@
     currentLabel: lemon-lime
 
 - type: entity
-  parent: DrinkBottlePlasticBaseFull
+  parent: DrinkBottlePlasticBaseInventory
   id: DrinkMeadJug
   name: mead jug
   description: storing mead in a plastic jug should be a crime.
@@ -870,7 +905,7 @@
     currentLabel: mead
 
 - type: entity
-  parent: DrinkBottlePlasticBaseFull
+  parent: DrinkBottlePlasticBaseInventory
   id: DrinkIceJug
   name: ice jug
   description: stubborn water. pretty cool.
@@ -887,7 +922,7 @@
     currentLabel: ice
 
 - type: entity
-  parent: DrinkBottlePlasticBaseFull
+  parent: DrinkBottlePlasticBaseInventory
   id: DrinkCoconutWaterJug
   name: coconut water jug
   description: It's on the inside of the coconut that counts.
@@ -904,7 +939,7 @@
     currentLabel: coconut water
 
 - type: entity
-  parent: DrinkBottlePlasticBaseFull
+  parent: DrinkBottlePlasticBaseInventory
   id: DrinkCoffeeJug
   name: coffee jug
   description: wake up juice, of the heated kind.
@@ -921,7 +956,7 @@
     currentLabel: coffee
 
 - type: entity
-  parent: DrinkBottlePlasticBaseFull
+  parent: DrinkBottlePlasticBaseInventory
   id: DrinkTeaJug
   name: tea jug
   description: the drink of choice for the Bri'ish and hipsters.
@@ -938,7 +973,7 @@
     currentLabel: tea
 
 - type: entity
-  parent: DrinkBottlePlasticBaseFull
+  parent: DrinkBottlePlasticBaseInventory
   id: DrinkGreenTeaJug
   name: green tea jug
   description: its like tea... but green! great for settling the stomach.
@@ -955,7 +990,7 @@
     currentLabel: green tea
 
 - type: entity
-  parent: DrinkBottlePlasticBaseFull
+  parent: DrinkBottlePlasticBaseInventory
   id: DrinkIcedTeaJug
   name: iced tea jug
   description: for when the regular tea is too hot for you boohoo
@@ -970,7 +1005,7 @@
   - type: Drink
 
 - type: entity
-  parent: DrinkBottlePlasticBaseFull
+  parent: DrinkBottlePlasticBaseInventory
   id: DrinkDrGibbJug
   name: dr gibb. jug
   description: yeah I don't know either...
@@ -987,7 +1022,7 @@
     currentLabel: dr gibb
 
 - type: entity
-  parent: DrinkBottlePlasticBaseFull
+  parent: DrinkBottlePlasticBaseInventory
   id: DrinkRootBeerJug
   name: root beer jug
   description: this drink makes Australians giggle
@@ -1004,7 +1039,7 @@
     currentLabel: root beer
 
 - type: entity
-  parent: DrinkBottlePlasticBaseFull
+  parent: DrinkBottlePlasticBaseInventory
   id: DrinkWaterMelonJuiceJug
   name: watermelon juice jug
   description: May include leftover seeds
@@ -1021,7 +1056,7 @@
     currentLabel: watermelon juice
 
 - type: entity
-  parent: DrinkBottlePlasticBaseFull
+  parent: DrinkBottlePlasticBaseInventory
   id: DrinkEnergyDrinkJug
   name: red bool jug
   description: A jug of Red Bool, with enough caffine to kill a whole station.
@@ -1038,7 +1073,7 @@
     currentLabel: red bool
 
 - type: entity
-  parent: DrinkBottlePlasticBaseFull
+  parent: DrinkBottlePlasticBaseInventory
   id: CustomDrinkJug
   name: beverage jug
   description: A jug for storing custom made drinks.

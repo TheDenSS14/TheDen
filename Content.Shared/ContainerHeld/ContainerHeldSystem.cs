@@ -1,7 +1,8 @@
-// SPDX-FileCopyrightText: 2023 Bixkitts <72874643+Bixkitts@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 Debug <49997488+DebugOk@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Bixkitts
+// SPDX-FileCopyrightText: 2024 Debug
+// SPDX-FileCopyrightText: 2024 metalgearsloth
+// SPDX-FileCopyrightText: 2025 Winter
+// SPDX-FileCopyrightText: 2025 sleepyyapril
 //
 // SPDX-License-Identifier: MIT
 
@@ -30,7 +31,8 @@ public sealed class ContainerHeldSystem : EntitySystem
 
     private void OnContainerModified(EntityUid uid, ContainerHeldComponent comp, ContainerModifiedMessage args)
     {
-        if (!(HasComp<StorageComponent>(uid)
+        if (!(TryComp<StorageComponent>(uid, out var storage)
+              && storage.Container is not null // DEN - Bugfix lol
               && TryComp<AppearanceComponent>(uid, out var appearance)
               && TryComp<ItemComponent>(uid, out var item)))
         {
@@ -39,12 +41,12 @@ public sealed class ContainerHeldSystem : EntitySystem
         if (_storage.GetCumulativeItemAreas(uid) >= comp.Threshold)
         {
             _item.SetHeldPrefix(uid, "full", component: item);
-            _appearance.SetData(uid, ToggleVisuals.Toggled, true, appearance);
+            _appearance.SetData(uid, ToggleableVisuals.Enabled, true, appearance);
         }
         else
         {
             _item.SetHeldPrefix(uid, "empty", component: item);
-            _appearance.SetData(uid, ToggleVisuals.Toggled, false, appearance);
+            _appearance.SetData(uid, ToggleableVisuals.Enabled, false, appearance);
         }
     }
 }

@@ -1,8 +1,13 @@
+// SPDX-FileCopyrightText: 2025 sleepyyapril
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using System.Linq;
 using System.Threading.Tasks;
 using NetCord;
 using Robust.Shared.Network;
 using Robust.Shared.Utility;
+using Color = NetCord.Color;
 
 
 namespace Content.Server._DEN.Discord;
@@ -45,6 +50,87 @@ public sealed partial class DiscordUserLink
         return value;
     }
 
+    public bool IsPatron(GuildUser user, NetUserId userId)
+    {
+        var value = user.RoleIds.Any(roleId => _patronRoleIds.Contains(roleId));
+        return value;
+    }
+
+    public bool GetRoleColor(GuildUser guildUser, out string? hex)
+    {
+        hex = null;
+
+        if (_discordLink.Client == null
+            || !_discordLink.Client.Cache.Guilds.TryGetValue(_discordLink.GuildId, out var guild))
+            return false;
+
+        var roles = guildUser
+            .GetRoles(guild)
+            .OrderByDescending(r => r.Position);
+
+        hex = (from role in roles where role.Color.RawValue != 0 select role.Color.ToString()).FirstOrDefault();
+        return hex != null;
+    }
+
+    public bool GetRoleColor(NetUserId userId, out string? hex)
+    {
+        var link = GetLink(userId);
+        hex = null;
+
+        if (link is not { } discordLink)
+            return false;
+
+        if (_discordLink.Client == null
+            || !_discordLink.Client.Cache.Guilds.TryGetValue(_discordLink.GuildId, out var guild))
+            return false;
+
+        var guildUser = GetDiscordIdAsUser(discordLink.DiscordUserId);
+
+        if (guildUser == null)
+            return false;
+
+        if (!IsPatron(guildUser, userId))
+            return false;
+
+        return GetRoleColor(guildUser, out hex);
+    }
+
+    public bool GetRole(GuildUser guildUser, out Role? role)
+    {
+        role = null;
+
+        if (_discordLink.Client == null
+            || !_discordLink.Client.Cache.Guilds.TryGetValue(_discordLink.GuildId, out var guild))
+            return false;
+
+        var roles = guildUser
+            .GetRoles(guild)
+            .OrderByDescending(r => r.Position);
+
+        role = roles.FirstOrDefault();
+        return role != null;
+    }
+
+    public bool GetRole(NetUserId userId, out Role? role)
+    {
+        var link = GetLink(userId);
+        role = null;
+
+        if (link is not { } discordLink)
+            return false;
+
+        if (_discordLink.Client == null
+            || !_discordLink.Client.Cache.Guilds.TryGetValue(_discordLink.GuildId, out _))
+            return false;
+
+        var guildUser = GetDiscordIdAsUser(discordLink.DiscordUserId);
+
+        if (guildUser == null)
+            return false;
+
+        return GetRole(guildUser, out role);
+    }
+
     public bool IsStaff(NetUserId userId)
     {
         var link = GetLink(userId);
@@ -57,7 +143,23 @@ public sealed partial class DiscordUserLink
         if (guildUser == null)
             return false;
 
-        var value = guildUser.RoleIds.Any(roleId => _patronRoleIds.Contains(roleId));
+        var value = guildUser.RoleIds.Any(roleId => _staffRoleIds.Contains(roleId));
+        return value;
+    }
+
+    public bool IsInGameAdmin(ulong userId)
+    {
+        var link = GetLink(userId);
+
+        if (link is not { } discordLink)
+            return false;
+
+        var guildUser = GetDiscordIdAsUser(discordLink.DiscordUserId);
+
+        if (guildUser == null)
+            return false;
+
+        var value = guildUser.RoleIds.Any(roleId => _staffRoleIds.Contains(roleId));
         return value;
     }
 
@@ -92,20 +194,6 @@ public sealed partial class DiscordUserLink
             return null;
 
         return guild.Users.TryGetValue(discordId, out var user) ? user : null;
-    }
-
-    private async Task<GuildUser?> GetDiscordIdAsUserAsync(ulong discordId)
-    {
-        if (_discordLink.Client == null)
-        {
-            _sawmill.Info("invalid client");
-            return null;
-        }
-
-        var user = await _discordLink.Client.Rest.GetGuildUserAsync(_discordLink.GuildId, discordId);
-        _sawmill.Info($"{user.RoleIds.Count} roles found");
-
-        return user;
     }
 
     private async void UpdatePlayerLink(ulong associatedDiscordId, ulong? newDiscordId)

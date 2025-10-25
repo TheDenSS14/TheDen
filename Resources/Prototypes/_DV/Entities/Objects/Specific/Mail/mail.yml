@@ -4,12 +4,14 @@
 # SPDX-FileCopyrightText: 2024 Mnemotechnican
 # SPDX-FileCopyrightText: 2024 VMSolidus
 # SPDX-FileCopyrightText: 2024 Whatstone
+# SPDX-FileCopyrightText: 2025 Leonardo
 # SPDX-FileCopyrightText: 2025 Rosycup
 # SPDX-FileCopyrightText: 2025 SixplyDev
+# SPDX-FileCopyrightText: 2025 Tabitha
 # SPDX-FileCopyrightText: 2025 portfiend
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 # DeltaV Mail
 - type: entity
@@ -320,7 +322,7 @@
   components:
   - type: Mail
     contents:
-    - id: Bible
+    - id: HolyBookBible #Den- changed item ID, still the same item
     - id: ClothingHeadHatWitch1 #DeltaV - Compensates for items that don't exist here
     - id: ClothingOuterCoatMNKBlackTopCoat #DeltaV - Compensates for items that don't exist here
 
@@ -828,6 +830,8 @@
       orGroup: Plushie
     - id: PlushieThavenWeird # TheDen
       prob: 0.25
+      orGroup: Plushie
+    - id: SkimmerDiscus # TheDen - Not a plushie but let's pretend
       orGroup: Plushie
 
 # Random snacks, replaces MailChocolate (lousy animal organs)
@@ -1855,7 +1859,7 @@
   components:
   - type: Mail
     contents:
-    - id: ClothingEyesGlassesSunglasses
+    - id: ClothingEyesGlassesCheapSunglasses # DEN - reduce flash protection availability
 
 - type: entity
   categories: [ HideSpawnMenu ]

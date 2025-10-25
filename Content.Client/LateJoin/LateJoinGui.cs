@@ -38,10 +38,7 @@ using Content.Client.Lobby;
 using Content.Client.UserInterface.Controls;
 using Content.Client.Players.PlayTimeTracking;
 using Content.Shared.CCVar;
-using Content.Shared.Customization.Systems;
-using Content.Shared.Preferences;
 using Content.Shared.Roles;
-using Content.Shared.StatusIcon;
 using Robust.Client.Console;
 using Robust.Client.GameObjects;
 using Robust.Client.UserInterface;
@@ -51,7 +48,7 @@ using Robust.Shared.Configuration;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
 using static Robust.Client.UserInterface.Controls.BoxContainer;
-using Content.Shared.Customization.Systems._DEN;
+using Content.Client._DEN.Customization.Systems;
 
 namespace Content.Client.LateJoin
 {
@@ -294,14 +291,10 @@ namespace Content.Client.LateJoin
 
                         jobButton.OnPressed += _ => SelectedId.Invoke((id, jobButton.JobId));
 
-                        var requirementContext = new CharacterRequirementContext(selectedJob: prototype,
-                            profile: (HumanoidCharacterProfile) (_prefs.Preferences?.SelectedCharacter
-                                ?? HumanoidCharacterProfile.DefaultWithSpecies()),
-                            playtimes: _jobRequirements.GetRawPlayTimeTrackers(),
-                            whitelisted: _jobRequirements.IsWhitelisted(),
-                            prototype: prototype);
-
                         var requirements = prototype.Requirements ?? new();
+                        var requirementContext = _characterRequirements.GetProfileContext()
+                            .WithSelectedJob(prototype)
+                            .WithPrototype(prototype);
 
                         if (!_jobRequirements.CheckJobWhitelist(prototype, out var reason))
                         {

@@ -27,6 +27,7 @@
 // SPDX-FileCopyrightText: 2024 Mr. 27
 // SPDX-FileCopyrightText: 2024 Pieter-Jan Briers
 // SPDX-FileCopyrightText: 2024 metalgearsloth
+// SPDX-FileCopyrightText: 2025 Dirius77
 // SPDX-FileCopyrightText: 2025 Falcon
 // SPDX-FileCopyrightText: 2025 Lyndomen
 // SPDX-FileCopyrightText: 2025 Spatison
@@ -78,6 +79,9 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
         },
     };
 
+    [DataField]
+    private Dictionary<string, string> _jobTitles = new();
+
     /// Antags we have opted in to
     [DataField]
     private HashSet<string> _antagPreferences = new();
@@ -105,6 +109,12 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
 
     [DataField]
     public string CharacterConsent { get; set; } = string.Empty;
+
+    /// <summary>
+    /// DEN: Self-examination flavor text.
+    /// </summary>
+    [DataField]
+    public string SelfExamineFlavorText { get; set; } = string.Empty;
 
     /// Associated <see cref="SpeciesPrototype"/> for this profile
     [DataField]
@@ -171,6 +181,8 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
     /// <see cref="_jobPriorities"/>
     public IReadOnlyDictionary<string, JobPriority> JobPriorities => _jobPriorities;
 
+    public IReadOnlyDictionary<string, string> JobTitles => _jobTitles;
+
     /// <see cref="_antagPreferences"/>
     public IReadOnlySet<string> AntagPreferences => _antagPreferences;
 
@@ -192,6 +204,7 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
         string flavorText,
         string nsfwFlavorText,
         string characterConsent, // DEN: per-character consents
+        string selfExamineFlavorText, // DEN: self-examine text
         string species,
         string customspeciename,
         // EE -- Contractors Change Start
@@ -211,6 +224,7 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
         HumanoidCharacterAppearance appearance,
         SpawnPriorityPreference spawnPriority,
         Dictionary<string, JobPriority> jobPriorities,
+        Dictionary<string, string> jobTitles, // DEN - Alternate job titles
         ClothingPreference clothing,
         BackpackPreference backpack,
         PreferenceUnavailableMode preferenceUnavailable,
@@ -223,6 +237,7 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
         FlavorText = flavorText;
         NsfwFlavorText = nsfwFlavorText;
         CharacterConsent = characterConsent;
+        SelfExamineFlavorText = selfExamineFlavorText; // DEN
         Species = species;
         Customspeciename = customspeciename;
         // EE -- Contractors Change Start
@@ -241,6 +256,7 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
         CyborgName = cyborgName;
         Appearance = appearance;
         SpawnPriority = spawnPriority;
+        _jobTitles = jobTitles;
         _jobPriorities = jobPriorities;
         Clothing = clothing;
         Backpack = backpack;
@@ -258,6 +274,7 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
             other.FlavorText,
             other.NsfwFlavorText,
             other.CharacterConsent,
+            other.SelfExamineFlavorText, // DEN
             other.Species,
             other.Customspeciename,
             // EE -- Contractors Change Start
@@ -277,6 +294,7 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
             other.Appearance.Clone(),
             other.SpawnPriority,
             new Dictionary<string, JobPriority>(other.JobPriorities),
+            new(other.JobTitles),
             other.Clothing,
             other.Backpack,
             other.PreferenceUnavailable,
@@ -400,6 +418,7 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
     public HumanoidCharacterProfile WithFlavorText(string flavorText) => new(this) { FlavorText = flavorText };
     public HumanoidCharacterProfile WithNsfwFlavorText(string flavorText) => new(this) { NsfwFlavorText = flavorText};
     public HumanoidCharacterProfile WithCharacterConsent(string content) => new(this) { CharacterConsent = content};
+    public HumanoidCharacterProfile WithSelfExamineFlavorText(string flavorText) => new(this) { SelfExamineFlavorText = flavorText }; // DEN
     public HumanoidCharacterProfile WithAge(int age) => new(this) { Age = age };
     // EE - Contractors Change Start
     public HumanoidCharacterProfile WithNationality(string nationality) => new(this) { Nationality = nationality };
@@ -439,6 +458,17 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
             dictionary[jobId] = priority;
 
         return new(this) { _jobPriorities = dictionary };
+    }
+
+    public HumanoidCharacterProfile WithJobTitles(Dictionary<string, string> jobTitles) =>
+        new(this) { _jobTitles = jobTitles };
+
+    public HumanoidCharacterProfile WithJobTitle(string jobId, string jobTitle)
+    {
+        var dictionary = new Dictionary<string, string>(_jobTitles);
+        dictionary[jobId] = jobTitle;
+
+        return new(this) { _jobTitles = dictionary };
     }
 
     public HumanoidCharacterProfile WithPreferenceUnavailable(PreferenceUnavailableMode mode) =>
@@ -531,6 +561,7 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
             && PreferenceUnavailable == other.PreferenceUnavailable
             && SpawnPriority == other.SpawnPriority
             && _jobPriorities.SequenceEqual(other._jobPriorities)
+            && _jobTitles.SequenceEqual(other._jobTitles)
             && _antagPreferences.SequenceEqual(other._antagPreferences)
             && _traitPreferences.SequenceEqual(other._traitPreferences)
             && _loadoutPreferences.SequenceEqual(other._loadoutPreferences)
@@ -538,6 +569,7 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
             && FlavorText == other.FlavorText
             && NsfwFlavorText == other.NsfwFlavorText
             && CharacterConsent == other.CharacterConsent
+            && SelfExamineFlavorText == other.SelfExamineFlavorText // DEN
             && (CDCharacterRecords == null || other.CDCharacterRecords == null
                 || CDCharacterRecords.MemberwiseEquals(other.CDCharacterRecords))
             // DEN additions below

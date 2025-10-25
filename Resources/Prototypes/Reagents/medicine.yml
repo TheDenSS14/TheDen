@@ -65,13 +65,16 @@
 # SPDX-FileCopyrightText: 2024 potato1234_x
 # SPDX-FileCopyrightText: 2024 slarticodefast
 # SPDX-FileCopyrightText: 2024 themias
+# SPDX-FileCopyrightText: 2025 ASaltySeabass
 # SPDX-FileCopyrightText: 2025 Blitz
 # SPDX-FileCopyrightText: 2025 Eagle-0
+# SPDX-FileCopyrightText: 2025 Kellaris
 # SPDX-FileCopyrightText: 2025 Nemanja
 # SPDX-FileCopyrightText: 2025 Sapphire
 # SPDX-FileCopyrightText: 2025 Sir Warock
 # SPDX-FileCopyrightText: 2025 SleepyScarecrow
 # SPDX-FileCopyrightText: 2025 Timfa
+# SPDX-FileCopyrightText: 2025 portfiend
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
@@ -86,13 +89,14 @@
   color: "#081a80"
   metabolisms:
     Medicine:
-      metabolismRate: 0.5
+      metabolismRate: 0.1
       effects:
       - !type:GenericStatusEffect
         key: PsionicallyInsulated
         component: PsionicInsulation
         type: Add
-        time: 300
+        time: 10
+        refresh: false
       - !type:GenericStatusEffect
         key: Stutter
         component: StutteringAccent
@@ -100,7 +104,8 @@
         key: PsionicsDisabled
         component: PsionicsDisabled
         type: Add
-        time: 300
+        time: 10
+        refresh: false
 
 - type: reagent
   id: Dylovene
@@ -228,11 +233,24 @@
           Brute: -1.6 # Now evenly heals, so reducing the number a bit.
       - !type:HealthChange
         conditions:
+        - !type:OrganType #TheDen - Shadowkin are anaerobic and immune to asphyxiation.
+          type: Shadowkin
+          shouldHave: false
         - !type:ReagentThreshold
           min: 15
         damage:
           types:
             Asphyxiation: 0.5
+            Poison: 1.5
+      - !type:HealthChange
+        conditions:
+        - !type:OrganType #TheDen - Shadowkin are anaerobic and immune to asphyxiation.
+          type: Shadowkin
+          shouldHave: true
+        - !type:ReagentThreshold
+          min: 15
+        damage:
+          types:
             Poison: 1.5
       - !type:ChemVomit
         conditions:
@@ -315,9 +333,24 @@
         conditions:
         - !type:ReagentThreshold
           min: 10
+        - !type:OrganType #TheDen - Shadowkin are anaerobic and immune to asphyxiation.
+          type: Shadowkin
+          shouldHave: false
         damage:
           types:
             Asphyxiation: 1
+            Cold: 2
+          groups:
+            Brute: 0.5
+      - !type:HealthChange
+        conditions:
+        - !type:ReagentThreshold
+          min: 10
+        - !type:OrganType #TheDen - Shadowkin are anaerobic and immune to asphyxiation.
+          type: Shadowkin
+          shouldHave: true
+        damage:
+          types:
             Cold: 2
           groups:
             Brute: 0.5
@@ -346,9 +379,22 @@
         conditions:
           - !type:ReagentThreshold
             min: 20
+          - !type:OrganType #TheDen - Shadowkin are anaerobic and immune to asphyxiation.
+            type: Shadowkin
+            shouldHave: false
         damage:
           types:
             Asphyxiation: 3
+            Cold: 1
+      - !type:HealthChange
+        conditions:
+          - !type:ReagentThreshold
+            min: 20
+          - !type:OrganType #TheDen - Shadowkin are anaerobic and immune to asphyxiation.
+            type: Shadowkin
+            shouldHave: true
+        damage:
+          types:
             Cold: 1
 
 - type: reagent
@@ -377,9 +423,22 @@
         conditions:
           - !type:ReagentThreshold
             min: 25
+          - !type:OrganType #TheDen - Shadowkin are anaerobic and immune to asphyxiation.
+            type: Shadowkin
+            shouldHave: false
         damage:
           types:
             Asphyxiation: 5
+            Cold: 3
+      - !type:HealthChange
+        conditions:
+          - !type:ReagentThreshold
+            min: 25
+          - !type:OrganType #TheDen - Shadowkin are anaerobic and immune to asphyxiation.
+            type: Shadowkin
+            shouldHave: true
+        damage:
+          types:
             Cold: 3
 
 # this ones a doozy
@@ -413,9 +472,22 @@
         conditions:
         - !type:ReagentThreshold
           min: 20
+        - !type:OrganType #TheDen - Shadowkin are anaerobic and immune to asphyxiation.
+          type: Shadowkin
+          shouldHave: false
         damage:
           types:
             Asphyxiation: 1
+            Poison: 1
+      - !type:HealthChange
+        conditions:
+        - !type:ReagentThreshold
+          min: 20
+        - !type:OrganType #TheDen - Shadowkin are anaerobic and immune to asphyxiation.
+          type: Shadowkin
+          shouldHave: true
+        damage:
+          types:
             Poison: 1
       - !type:AdjustReagent
         reagent: HeartbreakerToxin
@@ -566,8 +638,18 @@
       - !type:AdjustTemperature
         conditions:
         - !type:Temperature
+          max: 228.15
+        amount: 20000 # thermal energy, not temperature!
+      - !type:AdjustTemperature
+        conditions:
+        - !type:Temperature
+          max: 258.15
+        amount: 60000 # thermal energy, not temperature!
+      - !type:AdjustTemperature
+        conditions:
+        - !type:Temperature
           max: 288.15
-        amount: 100000 # thermal energy, not temperature!
+        amount: 20000 # thermal energy, not temperature!
       - !type:AdjustTemperature
         conditions:
         - !type:Temperature
@@ -673,6 +755,9 @@
         conditions:
         - !type:ReagentThreshold
           min: 30
+        - !type:OrganType #TheDen - Shadowkin are anaerobic and immune to asphyxiation.
+          type: Shadowkin
+          shouldHave: false
         damage:
           types:
             Asphyxiation: 3.5
@@ -1352,6 +1437,12 @@
         - "psicodine-effect-anxieties-wash-away"
         - "psicodine-effect-at-peace"
         probability: 0.2
+      - !type:ChemAddMoodlet # DEN - Add moodlets for non-addictive roleplay chems
+        moodPrototype: AnxiolyticBenefitNonAddictive
+        guidebookShowEffectName: true
+        conditions:
+          - !type:ReagentThreshold
+            min: 0.5
 
 - type: reagent
   id: PotassiumIodide

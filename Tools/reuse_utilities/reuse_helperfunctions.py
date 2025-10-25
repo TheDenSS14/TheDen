@@ -127,17 +127,13 @@ ENV = os.environ.copy()
 ENV["PATH"] = "/usr/bin:/bin:/usr/local/bin"  # Linux-only paths
 
 ANSI_COLORS = {
-    "black":   "\033[30",
-    "red":     "\033[31",
-    "green":   "\033[32",
-    "yellow":  "\033[33",
-    "blue":    "\033[34",
-    "magenta": "\033[35",
-    "cyan":    "\033[36",
     "white":   "\033[37",
-    "reset":   "\033[0",
     "doing":    "\033[36",
     "command": "\033[34",
+    "success": "\033[32",
+    "warning": "\033[33",
+    "error":     "\033[31",
+    "main":   "\033[35",
 }
 
 THREAD_SAFETY_DEFAULT = False
@@ -151,7 +147,7 @@ def colout(text:str, color:str = "white"):
     :param color: string, should match one option in ANSI_COLORS or it's going to fail
     :return: modified string with ANSI escape sequences that should show up colored in the terminal
     """
-    return f"\033[{ANSI_COLORS[color.lower()]}m{text}\033[0m"
+    return f"{ANSI_COLORS[color.lower()]}m{text}\033[0m"
 
 def run_git_command(command, cwd=REPO_PATH, check=True, thread_safe=THREAD_SAFETY_DEFAULT):
     """
@@ -187,13 +183,13 @@ def run_git_command(command, cwd=REPO_PATH, check=True, thread_safe=THREAD_SAFET
             return buffer, result.stdout.strip()
     except subprocess.CalledProcessError as e:
         if check:
-            thread_safe_print(f"Error running git command {' '.join(command)}: {e.stderr}", "red")
+            thread_safe_print(f"Error running git command {' '.join(command)}: {e.stderr}", "error")
         if not thread_safe:
             return None
         else:
             return buffer, None
     except FileNotFoundError:
-        thread_safe_print("FATAL: 'git' command not found. Make sure git is installed and in your PATH.", "red")
+        thread_safe_print("FATAL: 'git' command not found. Make sure git is installed and in your PATH.", "error")
         if not thread_safe:
             return None
         else:
@@ -228,19 +224,19 @@ def get_license_from_commit(commit_sha, thread_safe=THREAD_SAFETY_DEFAULT):
     if match:
         found_license = match.group(1).lower() # we need to make it lower otherwise it won't match anything in LICENSE_CONFIG
         if found_license not in LICENSE_CONFIG:
-            thread_safe_print(f"License {found_license} is not in LICENSE_CONFIG, falling back to {DEFAULT_LICENSE_LABEL}","red")
+            thread_safe_print(f"License {found_license} is not in LICENSE_CONFIG, falling back to {DEFAULT_LICENSE_LABEL}","error")
             if not thread_safe:
                 return DEFAULT_LICENSE_LABEL
             else:
                 return buffer, DEFAULT_LICENSE_LABEL
-        thread_safe_print(f"Found license in commit {commit_sha}:", "green")
+        thread_safe_print(f"Found license in commit {commit_sha}:", "success")
         thread_safe_print(found_license)
         if not thread_safe:
             return found_license
         else:
             return buffer, found_license
     else:
-        thread_safe_print(f"Did not find a license in the commit, falling back to: {DEFAULT_LICENSE_LABEL}", "yellow")
+        thread_safe_print(f"Did not find a license in the commit, falling back to: {DEFAULT_LICENSE_LABEL}", "warning")
         if not thread_safe:
             return DEFAULT_LICENSE_LABEL
         else:
@@ -279,7 +275,7 @@ def get_files_from_commit(commit_sha, thread_safe=THREAD_SAFETY_DEFAULT):
         for parts in (x.split("\t") for x in git_output.splitlines() if x[0] != "D")
     ]
 
-    thread_safe_print(f"The following files have been added, modified or renamed by commit {commit_sha}:", "green")
+    thread_safe_print(f"The following files have been added, modified or renamed by commit {commit_sha}:", "success")
     thread_safe_print(f"{"\n".join(git_output)}")
     normalized_paths = [os.path.normpath(line) for line in git_output if line.strip()]
     if not thread_safe:
@@ -317,7 +313,7 @@ def get_authors_from_file(filepath, follow=True, thread_safe=THREAD_SAFETY_DEFAU
         git_command_buffer.seek(0)
         buffer.write(git_command_buffer.read())
     git_output = list(line.split("|") for line in git_output.splitlines())
-    thread_safe_print(f"Found the following historical authors in {filepath}:", "green")
+    thread_safe_print(f"Found the following historical authors in {filepath}:", "success")
     thread_safe_print(f"{", ".join(git_output[i][1] for i in range(len(git_output)))}")
     for i in range(len(git_output)): # trim the date to just the year (this is due to copyright, and being in line with existing headers), hopefully this won't be problematic in the year 10000
         git_output[i][0] = git_output[i][0][0:4]
@@ -326,15 +322,14 @@ def get_authors_from_file(filepath, follow=True, thread_safe=THREAD_SAFETY_DEFAU
     else:
         return buffer, git_output
 
-def parse_existing_header(content, comment_style:(str,), filepath, thread_safe=THREAD_SAFETY_DEFAULT):
+def parse_existing_header(filepath, comment_style:(str,), thread_safe=THREAD_SAFETY_DEFAULT):
     """
     parses an existing header on a file and returns a 3 element tuple composed of:
     1. the list of authors (structured like get_authors_from_file)
     2. the license id's found in a set
     3. a string that is the header found on the file
-    :param content: the file content, as a string
-    :param comment_style: comment style from COMMENT_STYLES based on COMMENT_STYLES.get(ext)
     :param filepath: path to the file (relative), should be normalised, string
+    :param comment_style: comment style from COMMENT_STYLES based on COMMENT_STYLES.get(ext)
     :param thread_safe: determines the console output behaviour, bool
     :return: see function description + optionally a buffer as a StringIO object
     """
@@ -346,24 +341,31 @@ def parse_existing_header(content, comment_style:(str,), filepath, thread_safe=T
         def thread_safe_print(s:str, color:str = "white"):
             print(colout(s,color))
 
-    file_lines = content.splitlines()
+    with open(os.path.join(REPO_PATH, filepath), "r", encoding="utf-8") as file:
+        content = file.read()
+        # we need to ensure that the first line actually contains stuff, and also, there shouldn't be any empty lines before the header
+        file_lines = content.lstrip().splitlines()
+
     prefix, suffix = comment_style
     thread_safe_print(f"Checking if a header exists in {filepath}:", "doing") # new files won't have headers, or sometimes modified files might have theirs stripped
+    no_header:bool = False
     if suffix:
-        if file_lines[0].strip() != prefix:
-            thread_safe_print(f"Did not find a header in {filepath}", "yellow")
-            if not thread_safe:
-                return [], {}, ""
-            else:
-                return buffer, [], {}, ""
+        if file_lines[0].strip().startswith(prefix):
+            if not file_lines[1].strip().startswith("SPDX-FileCopyrightText:"):
+                no_header = True
+        else:
+            no_header = True
     else:
-        if file_lines[0].strip().split(" ")[0] != prefix:
-            thread_safe_print(f"Did not find a header in {filepath}", "yellow")
-            if not thread_safe:
-                return [], {}, ""
-            else:
-                return buffer, [], {}, ""
-    thread_safe_print(f"Found a header in {filepath}", "green")
+        no_header = not file_lines[0].strip().startswith(f"{prefix} SPDX-FileCopyrightText:")
+
+    if no_header:
+        thread_safe_print(f"Did not find a header in {filepath}", "warning")
+        if not thread_safe:
+            return [], {}, ""
+        else:
+            return buffer, [], {}, ""
+
+    thread_safe_print(f"Found a header in {filepath}", "success")
     header_lines = []
     # we capture the existing header to then make it easier to update it
     # otherwise we'd need to once again iterate over the file and find the header when we get to actually writing to the file
@@ -371,25 +373,22 @@ def parse_existing_header(content, comment_style:(str,), filepath, thread_safe=T
     if suffix:
         for line in file_lines:
             header_lines.append(line)
-            if line == suffix:
+            if suffix in line:
                 break
     else:
         for line in file_lines:
-            if not line or line == "\n":
-                break
-            if line.split(" ")[0] != prefix:
-                header_lines.append(line)
-                break
             header_lines.append(line)
+            if line.startswith(f"{prefix} SPDX-License-Identifier:"):
+                break
 
     thread_safe_print(f"Looking for licenses in {filepath}:", "doing")
     match = re.search(r"SPDX-License-Identifier: (.+)", "\n".join(header_lines)) # find licenses
     if match:
         found_licenses = set(match.group(1).split(" AND "))
-        thread_safe_print(f"Found the following licenses in {filepath}:", "green")
+        thread_safe_print(f"Found the following licenses in {filepath}:", "success")
         thread_safe_print(", ".join(found_licenses))
     else:
-        thread_safe_print(f"Did not find any licenses in {filepath}.", "yellow")
+        thread_safe_print(f"Did not find any licenses in {filepath}.", "warning")
         found_licenses = {}
 
     thread_safe_print(f"Looking for existing authors in {filepath}:", "doing")
@@ -400,19 +399,19 @@ def parse_existing_header(content, comment_style:(str,), filepath, thread_safe=T
             match = re.search(copyright_regex, line)
             if match:
                 authors.append([match.group(1), match.group(2)])
-                thread_safe_print(f"{line}{colout(f" -> {" ".join(authors[-1])}", "green")}")
+                thread_safe_print(f"{line}{colout(f" -> {" ".join(authors[-1])}", "success")}")
     else:
         copyright_regex = re.compile(rf"^{re.escape(prefix)} SPDX-FileCopyrightText: (\d{{4}}) (.+?)(?: <([^>]+)>)?$")
         for line in header_lines:
             match = re.search(copyright_regex, line)
             if match:
                 authors.append([match.group(1), match.group(2)])
-                thread_safe_print(f"{line}{colout(f" -> {" ".join(authors[-1])}", "green")}")
+                thread_safe_print(f"{line}{colout(f" -> {" ".join(authors[-1])}", "success")}")
     if authors:
-        thread_safe_print(f"Found the following existing authors in {filepath}: ", "green")
+        thread_safe_print(f"Found the following existing authors in {filepath}: ", "success")
         thread_safe_print(f"{", ".join(authors[i][1] for i in range(len(authors)))}")
     else:
-        thread_safe_print(f"Did not find any existing authors in {filepath}", "red")
+        thread_safe_print(f"Did not find any existing authors in {filepath}", "error")
     if not thread_safe:
         return authors, found_licenses, "\n".join(header_lines)
     else:
@@ -469,7 +468,7 @@ def create_header(authors, license_id: str, comment_style:(str,), filepath, thre
         for line in authors:
             header.append(f"SPDX-FileCopyrightText: {line}")
         header.append(f"\nSPDX-License-Identifier: {license_id}\n{suffix}")
-        thread_safe_print(f"Multiline-style header for {filepath} created successfully.", "green")
+        thread_safe_print(f"Multiline-style header for {filepath} created successfully.", "success")
         if not thread_safe:
             return "\n".join(header)
         else:
@@ -479,7 +478,7 @@ def create_header(authors, license_id: str, comment_style:(str,), filepath, thre
         for line in authors:
             header.append(f"{prefix} SPDX-FileCopyrightText: {line}")
         header.append(f"{prefix}\n{prefix} SPDX-License-Identifier: {license_id}")
-        thread_safe_print(f"Singleline-style header for {filepath} created successfully.", "green")
+        thread_safe_print(f"Singleline-style header for {filepath} created successfully.", "success")
         if not thread_safe:
             return "\n".join(header)
         else:
@@ -502,12 +501,12 @@ def prepend_header(filepath, new_header, existing_header, thread_safe=THREAD_SAF
         def thread_safe_print(s:str, color:str = "white"):
             print(colout(s,color))
 
-    with open(os.path.join(REPO_PATH, filepath), "r", encoding="utf-8") as file:
+    with open(os.path.join(REPO_PATH, filepath), "r", encoding="utf-8-sig") as file:
         content = file.read()
 
     if existing_header:
         thread_safe_print(f"Replacing existing header in {filepath}:", "doing")
-        new_content = content.replace(existing_header, new_header)
+        new_content = content.replace(existing_header, new_header).lstrip()
     else:
         thread_safe_print(f"Prepending a header to {filepath}:", "doing")
 
@@ -517,29 +516,29 @@ def prepend_header(filepath, new_header, existing_header, thread_safe=THREAD_SAF
 
         if ext in [".sh", ".bash", ".zsh", ".fish", ".ps1"]:
             # keep shebang first if present
-            thread_safe_print(f"Possible shebang, handling...", "yellow")
+            thread_safe_print(f"Possible shebang, handling...", "warning")
             if lines and lines[0].startswith("#!"):
-                thread_safe_print(f"...shebang detected.", "yellow")
+                thread_safe_print(f"...shebang detected.", "warning")
                 insert_after = 1
 
         elif ext in [".bat", ".cmd"]:
             # keep @echo off first if present
-            thread_safe_print(f"Possible @echo off, handling...", "yellow")
+            thread_safe_print(f"Possible @echo off, handling...", "warning")
             if lines and lines[0].strip().lower().startswith("@echo off"):
                 insert_after = 1
 
         elif ext in [".xml", ".xaml", ".svg", ".html", ".htm"]:
             # keep XML declaration or DOCTYPE first
-            thread_safe_print(f"Possible document declaration, handling...", "yellow")
+            thread_safe_print(f"Possible document declaration, handling...", "warning")
             if lines and (lines[0].startswith("<?xml") or lines[0].lower().startswith("<!doctype")):
-                thread_safe_print(f"...document declaration detected.", "yellow")
+                thread_safe_print(f"...document declaration detected.", "warning")
                 insert_after = 1
 
         elif ext in [".md", ".markdown"]:
             # handle YAML/TOML front matter
-            thread_safe_print(f"Possible front matter, handling...", "yellow")
+            thread_safe_print(f"Possible front matter, handling...", "warning")
             if lines and (lines[0].startswith("---") or lines[0].startswith("+++")):
-                thread_safe_print(f"...front matter detected.", "yellow")
+                thread_safe_print(f"...front matter detected.", "warning")
                 # find closing marker
                 for i in range(1, len(lines)):
                     if lines[i].startswith(lines[0].strip()):
@@ -555,7 +554,7 @@ def prepend_header(filepath, new_header, existing_header, thread_safe=THREAD_SAF
         new_content = "".join(lines[:insert_after]) + header_str + "\n\n" + rest
 
     if new_content == content:
-        thread_safe_print(f"Header in {filepath} did not have to be modified.", "green")
+        thread_safe_print(f"Header in {filepath} did not have to be modified.", "success")
         if not thread_safe:
             return
         else:
@@ -563,7 +562,7 @@ def prepend_header(filepath, new_header, existing_header, thread_safe=THREAD_SAF
 
     with open(os.path.join(REPO_PATH, filepath), "w", encoding="utf-8") as file:
         file.write(new_content)
-    thread_safe_print(f"Successfully updated header in {filepath}", "green")
+    thread_safe_print(f"Successfully updated header in {filepath}", "success")
 
     if not thread_safe:
         return
@@ -589,21 +588,19 @@ def process_file(filepath, given_license:str = "", thread_safe=THREAD_SAFETY_DEF
     _, ext = os.path.splitext(filepath)
     comment_style = COMMENT_STYLES.get(ext)
     if not comment_style:
-        thread_safe_print(f"Unsupported file type: {ext}", "red")
+        thread_safe_print(f"Unsupported file type: {ext}", "error")
         if not thread_safe:
             return
         else:
             return buffer
     prefix, suffix = comment_style
 
-    with open(os.path.join(REPO_PATH, filepath), "r", encoding="utf-8") as file:
-        content = file.read()
     if not thread_safe:
-        existing_authors, licenses, existing_header = parse_existing_header(content, comment_style, filepath)
+        existing_authors, licenses, existing_header = parse_existing_header(filepath, comment_style)
         historical_authors = get_authors_from_file(filepath)
         combined_authors = process_author_list(existing_authors + historical_authors)
     else:
-        parse_existing_header_buffer, existing_authors, licenses, existing_header = parse_existing_header(content, comment_style, filepath, thread_safe=True)
+        parse_existing_header_buffer, existing_authors, licenses, existing_header = parse_existing_header(filepath, comment_style, thread_safe=True)
         parse_existing_header_buffer.seek(0)
         buffer.write(parse_existing_header_buffer.read())
         authors_from_file_buffer, historical_authors = get_authors_from_file(filepath, thread_safe=True)
@@ -642,7 +639,7 @@ def process_file(filepath, given_license:str = "", thread_safe=THREAD_SAFETY_DEF
     if new_header:
         thread_safe_print(new_header)
     else:
-        thread_safe_print(f"Failed to create a new header for {filepath}", "red")
+        thread_safe_print(f"Failed to create a new header for {filepath}", "error")
         if not thread_safe:
             return
         else:

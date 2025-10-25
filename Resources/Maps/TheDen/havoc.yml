@@ -42,9 +42,13 @@
 # SPDX-FileCopyrightText: 2024 Velcroboy
 # SPDX-FileCopyrightText: 2024 flyingkarii
 # SPDX-FileCopyrightText: 2024 juniwoofs
+# SPDX-FileCopyrightText: 2025 Falcon
 # SPDX-FileCopyrightText: 2025 Gawdayumeet
+# SPDX-FileCopyrightText: 2025 Gregg
 # SPDX-FileCopyrightText: 2025 Ian Hanley
+# SPDX-FileCopyrightText: 2025 Kiara
 # SPDX-FileCopyrightText: 2025 MajorMoth
+# SPDX-FileCopyrightText: 2025 Shaman
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 # SPDX-FileCopyrightText: 2025 therealDLondon
 #
@@ -14331,7 +14335,7 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 15.5,-14.5
       parent: 2
-- proto: Bible
+- proto: HolyBookBible
   entities:
   - uid: 17464
     components:
@@ -104909,7 +104913,7 @@ entities:
       linearDamping: 0
       canCollide: False
     - type: InsideEntityStorage
-- proto: PlushieCatSiames
+- proto: PlushieCatSiamese
   entities:
   - uid: 13265
     components:
@@ -145024,13 +145028,6 @@ entities:
     components:
     - type: Transform
       pos: -2.5,-6.5
-      parent: 2
-- proto: WeaponCivilianDisabler
-  entities:
-  - uid: 19137
-    components:
-    - type: Transform
-      pos: -2.6787977,-7.0696
       parent: 2
 - proto: WeaponCrusherDagger
   entities:

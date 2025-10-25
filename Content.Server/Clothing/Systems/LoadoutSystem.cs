@@ -1,11 +1,13 @@
-// SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT <77995199+DEATHB4DEFEAT@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 Skubman <ba.fallaria@gmail.com>
-// SPDX-FileCopyrightText: 2025 Timfa <timfalken@hotmail.com>
-// SPDX-FileCopyrightText: 2025 VMSolidus <evilexecutive@gmail.com>
-// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 sleepyyapril <flyingkarii@gmail.com>
+// SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT
+// SPDX-FileCopyrightText: 2025 Dirius77
+// SPDX-FileCopyrightText: 2025 Skubman
+// SPDX-FileCopyrightText: 2025 Timfa
+// SPDX-FileCopyrightText: 2025 VMSolidus
+// SPDX-FileCopyrightText: 2025 portfiend
+// SPDX-FileCopyrightText: 2025 sev7ves
+// SPDX-FileCopyrightText: 2025 sleepyyapril
 //
-// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+// SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 using System.Linq;
 using Content.Server.Paint;
@@ -23,6 +25,7 @@ using Content.Shared.Storage;
 using Content.Shared.Storage.EntitySystems;
 using Content.Shared.Traits.Assorted.Components;
 using Robust.Shared.Configuration;
+using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Serialization.Manager;
@@ -51,7 +54,7 @@ public sealed class LoadoutSystem : EntitySystem
     {
         _sawmill = _log.GetSawmill("loadouts");
 
-        SubscribeLocalEvent<PlayerSpawnCompleteEvent>(OnPlayerSpawnComplete);
+        SubscribeLocalEvent<PlayerSpawnCompleteEvent>(OnPlayerSpawnComplete, before: [typeof(SharedLoadoutSystem)]);
     }
 
 
@@ -86,11 +89,18 @@ public sealed class LoadoutSystem : EntitySystem
         Dictionary<string, TimeSpan> playTimes,
         bool whitelisted,
         bool deleteFailed = false,
-        JobPrototype? jobProto = null)
+        JobPrototype? jobProto = null,
+        ICommonSession? player = null)
     {
         // Spawn the loadout, get a list of items that failed to equip
         var (failedLoadouts, allLoadouts) =
-            _loadout.ApplyCharacterLoadout(uid, job, profile, playTimes, whitelisted, out var heirlooms);
+            _loadout.ApplyCharacterLoadout(uid,
+                job,
+                profile,
+                playTimes,
+                whitelisted,
+                out var heirlooms,
+                player);
 
         // Try to find back-mounted storage apparatus
         if (_inventory.TryGetSlotEntity(uid, "back", out var item) &&

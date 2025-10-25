@@ -1,4 +1,13 @@
+# SPDX-FileCopyrightText: 2025 Eightballll
+# SPDX-FileCopyrightText: 2025 Tabitha
+# SPDX-FileCopyrightText: 2025 portfiend
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 flavor-complex-tirggel = crunchy
+
+## Biological
+flavor-complex-intoxicating = intoxicating
 
 ## Basic drinks
 flavor-complex-jaegermister = like black licorice
@@ -27,3 +36,15 @@ flavor-complex-cinnamon-cookie = like grandma's baking
 flavor-complex-blood-red-licorice = like carnage in a candy store
 flavor-complex-thdrink = like hell
 flavor-complex-featherpillow = like a fading dream
+flavor-complex-nectar = divine
+flavor-complex-songbird = like brief a moment of eternal bliss
+flavor-complex-tohokublaze = hellish
+flavor-complex-touchofgrass = like eating grass
+flavor-complex-miamivice = like a paid vacation
+flavor-complex-thesilverhand = like a burning city
+flavor-complex-witchinghour = enchanting
+flavor-complex-vampiresdelight = like the essence of life
+flavor-complex-emeraldjourney = like new beginnings
+flavor-complex-coconutdoublecreampie = nutty
+flavor-complex-arkveiltemple = like a tropical adventure
+flavor-complex-plasmaflood = like fruity plasma burn

@@ -6,12 +6,15 @@
 # SPDX-FileCopyrightText: 2025 MajorMoth
 # SPDX-FileCopyrightText: 2025 Raikyr0
 # SPDX-FileCopyrightText: 2025 Rosycup
+# SPDX-FileCopyrightText: 2025 Shaman
+# SPDX-FileCopyrightText: 2025 Sir Warock
 # SPDX-FileCopyrightText: 2025 SixplyDev
 # SPDX-FileCopyrightText: 2025 Skubman
 # SPDX-FileCopyrightText: 2025 VMSolidus
+# SPDX-FileCopyrightText: 2025 portfiend
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: trait
   id: HighPotential
@@ -441,6 +444,8 @@
       traits:
         - Foreigner
         - ForeignerLight
+        - RemoveSpeciesLanguage # DEN - Remove species language traits
+        - RemoveSpeciesLanguageLight # DEN - Remove species language traits
     - !type:CharacterLogicOrRequirement
       requirements:
         - !type:CharacterSpeciesRequirement
@@ -501,6 +506,7 @@
             - Chaplain
             - ResearchDirector
             - ForensicMantis
+            - Librarian
     - !type:CharacterLogicOrRequirement
       requirements:
         - !type:CharacterSpeciesRequirement
@@ -514,10 +520,6 @@
       inverted: true
       traits:
         - ShadowkinBlackeye
-    - !type:CharacterJobRequirement
-      inverted: true
-      jobs:
-        - Librarian
   functions:
     - !type:TraitAddPsionics
       psionicPowers:
@@ -547,7 +549,6 @@
           jobs:
             - Chaplain
             - ResearchDirector
-            - ForensicMantis
             - Librarian
     - !type:CharacterLogicOrRequirement
       requirements:
@@ -562,6 +563,10 @@
       inverted: true
       traits:
         - ShadowkinBlackeye
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - ForensicMantis
   functions:
     - !type:TraitAddPsionics
       psionicPowers:

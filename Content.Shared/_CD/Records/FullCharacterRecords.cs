@@ -1,10 +1,14 @@
-// SPDX-FileCopyrightText: 2025 Lyndomen <49795619+Lyndomen@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 AvianMaiden
+// SPDX-FileCopyrightText: 2025 Lyndomen
+// SPDX-FileCopyrightText: 2025 sleepyyapril
 //
-// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+// SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 using Content.Shared.Humanoid;
+using Content.Shared.Humanoid.Prototypes;
+using Content.Shared.StatusIcon;
 using Robust.Shared.Enums;
+using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization;
 
 namespace Content.Shared._CD.Records;
@@ -57,16 +61,16 @@ public sealed class FullCharacterRecords(
     public string JobTitle = jobTitle;
 
     /// <summary>
-    ///     Job icon tied to this record.
+    ///     Job icon tied to this record. Imp/Den edit - made this a protoID
     /// </summary>
     [ViewVariables]
-    public string JobIcon = jobIcon;
+    public ProtoId<JobIconPrototype> JobIcon = jobIcon;
 
     /// <summary>
-    ///     Species tied to this record.
+    ///     Species tied to this record. Imp/Den edit - made this a protoID
     /// </summary>
     [ViewVariables]
-    public string Species = species;
+    public ProtoId<SpeciesPrototype> Species = species;
 
     /// <summary>
     ///     Gender identity tied to this record.

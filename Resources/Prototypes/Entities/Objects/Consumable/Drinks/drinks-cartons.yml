@@ -6,10 +6,11 @@
 # SPDX-FileCopyrightText: 2024 VMSolidus
 # SPDX-FileCopyrightText: 2024 Velcroboy
 # SPDX-FileCopyrightText: 2024 degradka
+# SPDX-FileCopyrightText: 2025 Eightballll
 # SPDX-FileCopyrightText: 2025 MajorMoth
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: entity
   parent: DrinkBase
@@ -133,7 +134,7 @@
     sprite: Objects/Consumable/Drinks/tomatojuice.rsi
 
 - type: entity
-  parent: [DrinkBottleVisualsOpenable, DrinkBottlePlasticBaseFull]
+  parent: [DrinkBottleVisualsOpenable, DrinkBottlePlasticBaseInventory]
   id: DrinkCoconutWaterCarton
   name: coconut water
   description: It's the inside of the coconut that counts.

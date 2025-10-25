@@ -1,10 +1,11 @@
 # SPDX-FileCopyrightText: 2025 Blitz
 # SPDX-FileCopyrightText: 2025 BlitzTheSquishy
 # SPDX-FileCopyrightText: 2025 Rosycup
+# SPDX-FileCopyrightText: 2025 Shaman
 # SPDX-FileCopyrightText: 2025 Skubman
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: loadout
   id: LoadoutSecurityHeadHatSeniorTrooper
@@ -205,6 +206,7 @@
   id: LoadoutSecurityOuterCoatBomberSecurity # Can also butcher the other version to get this
   category: JobsSecurityAUncategorized
   cost: 0
+  exclusive: true
   items:
     -  ClothingOuterCoatBomberSecurity
   requirements:
@@ -224,6 +226,7 @@
   id: LoadoutSecurityOuterCoatBomberSecurityLoose # Can also butcher the other version to get this
   category: JobsSecurityAUncategorized
   cost: 0
+  exclusive: true
   items:
     -  ClothingOuterCoatBomberSecurityLoose
   requirements:
@@ -243,6 +246,7 @@
   id: LoadoutSecurityOuterCoatBomberBrigmed # Can also butcher the other version to get this
   category: JobsSecurityAUncategorized
   cost: 0
+  exclusive: true
   items:
     -  ClothingOuterCoatBomberBrigmed
   requirements:
@@ -259,6 +263,7 @@
   id: LoadoutSecurityOuterCoatBomberBrigmedLoose # Can also butcher the other version to get this
   category: JobsSecurityAUncategorized
   cost: 0
+  exclusive: true
   items:
     -  ClothingOuterCoatBomberBrigmedLoose
   requirements:
@@ -270,3 +275,35 @@
     - !type:CharacterJobRequirement
       jobs:
         - Brigmedic
+
+- type: loadout
+  id: LoadoutSecurityHeadHelmetSecuritySiren
+  category: JobsSecurityAUncategorized
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSecurityHead
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Security
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - HeadOfSecurity # No boss needs this silly thing
+  items:
+    - ClothingHeadHelmetSecuritySiren
+
+- type: loadout
+  id: LoadoutSecurityOuterArmorBasicCompact
+  category: JobsSecurityAUncategorized
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSecurityOuter
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Security
+  items:
+    - ClothingOuterArmorBasicCompact

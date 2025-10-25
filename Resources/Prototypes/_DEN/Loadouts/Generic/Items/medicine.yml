@@ -1,0 +1,361 @@
+# SPDX-FileCopyrightText: 2025 Winter
+# SPDX-FileCopyrightText: 2025 pocl v
+# SPDX-FileCopyrightText: 2025 portfiend
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: loadout
+  id: LoadoutSyringe
+  category: GeneralMedical
+  cost: 1
+  items:
+    - Syringe
+
+## HRT
+
+- type: loadout
+  id: LoadoutPillCanisterEstradiol
+  category: GeneralMedical
+  description: reagent-desc-estradiol
+  cost: 0
+  items:
+    - PillCanisterEstradiol
+
+- type: loadout
+  id: LoadoutSyringeEstradiol
+  category: GeneralMedical
+  description: reagent-desc-estradiol
+  cost: 0
+  items:
+    - SyringeEstradiol
+
+- type: loadout
+  id: LoadoutPillCanisterTestosterone
+  category: GeneralMedical
+  description: reagent-desc-testosterone
+  cost: 0
+  items:
+    - PillCanisterTestosterone
+
+- type: loadout
+  id: LoadoutSyringeTestosterone
+  category: GeneralMedical
+  description: reagent-desc-testosterone
+  cost: 0
+  items:
+    - SyringeTestosterone
+
+- type: loadout
+  id: LoadoutBirthControlCanister
+  category: GeneralMedical
+  cost: 0
+  items:
+    - BirthControlCanister
+
+# Painkillers
+
+## Agonolexyne
+
+- type: loadout
+  id: LoadoutPillCanisterAgonolexyneLowDose
+  category: GeneralMedical
+  description: reagent-desc-agonolexyne
+  cost: 2
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutPrescriptions
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutPrescriptionPainkiller
+  items:
+  - PillCanisterAgonolexyneLowDose
+
+- type: loadout
+  id: LoadoutPillCanisterAgonolexyneHighDose
+  category: GeneralMedical
+  description: reagent-desc-agonolexyne
+  cost: 3
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutPrescriptions
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutPrescriptionPainkiller
+  items:
+  - PillCanisterAgonolexyneHighDose
+
+## Soretizone
+
+- type: loadout
+  id: LoadoutPillCanisterSoretizoneLowDose
+  category: GeneralMedical
+  description: reagent-desc-soretizone
+  cost: 1
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutPrescriptions
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutPrescriptionPainkiller
+  items:
+  - PillCanisterSoretizoneLowDose
+
+- type: loadout
+  id: LoadoutPillCanisterSoretizoneHighDose
+  category: GeneralMedical
+  description: reagent-desc-soretizone
+  cost: 2
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutPrescriptions
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutPrescriptionPainkiller
+  items:
+  - PillCanisterSoretizoneHighDose
+
+## Stubantazine
+
+- type: loadout
+  id: LoadoutPillCanisterStubantazineLowDose
+  category: GeneralMedical
+  description: reagent-desc-stubantazine
+  cost: 1
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutPrescriptions
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutPrescriptionPainkiller
+  items:
+  - PillCanisterStubantazineLowDose
+
+- type: loadout
+  id: LoadoutPillCanisterStubantazineHighDose
+  category: GeneralMedical
+  description: reagent-desc-stubantazine
+  cost: 2
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutPrescriptions
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutPrescriptionPainkiller
+  items:
+  - PillCanisterStubantazineHighDose
+
+# Anxiolytics
+
+## Equilibrazine
+
+- type: loadout
+  id: LoadoutPillCanisterEquilibrazineLowDose
+  category: GeneralMedical
+  description: reagent-desc-equilibrazine
+  cost: 2
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutPrescriptions
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutPrescriptionAnxiolytic
+  items:
+  - PillCanisterEquilibrazineLowDose
+
+- type: loadout
+  id: LoadoutPillCanisterEquilibrazineHighDose
+  category: GeneralMedical
+  description: reagent-desc-equilibrazine
+  cost: 3
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutPrescriptions
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutPrescriptionAnxiolytic
+  items:
+  - PillCanisterEquilibrazineHighDose
+
+## Tranquinase
+
+- type: loadout
+  id: LoadoutPillCanisterTranquinaseLowDose
+  category: GeneralMedical
+  description: reagent-desc-tranquinase
+  cost: 1
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutPrescriptions
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutPrescriptionAnxiolytic
+  items:
+  - PillCanisterTranquinaseLowDose
+
+- type: loadout
+  id: LoadoutPillCanisterTranquinaseHighDose
+  category: GeneralMedical
+  description: reagent-desc-tranquinase
+  cost: 2
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutPrescriptions
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutPrescriptionAnxiolytic
+  items:
+  - PillCanisterTranquinaseHighDose
+
+## Calmafluxine
+
+- type: loadout
+  id: LoadoutPillCanisterCalmafluxineLowDose
+  category: GeneralMedical
+  description: reagent-desc-calmafluxine
+  cost: 1
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutPrescriptions
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutPrescriptionAnxiolytic
+  items:
+  - PillCanisterCalmafluxineLowDose
+
+- type: loadout
+  id: LoadoutPillCanisterCalmafluxineHighDose
+  category: GeneralMedical
+  description: reagent-desc-calmafluxine
+  cost: 1
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutPrescriptions
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutPrescriptionAnxiolytic
+  items:
+  - PillCanisterCalmafluxineHighDose
+
+## Psicodine
+
+- type: loadout
+  id: LoadoutPillCanisterPsicodine
+  category: GeneralMedical
+  description: reagent-desc-psicodine
+  cost: 1
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutPrescriptions
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutPrescriptionAnxiolytic
+  items:
+  - PillCanisterPsicodine
+
+# Antidepressants
+
+## Blissifylovene
+
+- type: loadout
+  id: LoadoutPillCanisterBlissifyloveneLowDose
+  category: GeneralMedical
+  description: reagent-desc-blissifylovene
+  cost: 2
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutPrescriptions
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutPrescriptionAntidepressant
+  items:
+  - PillCanisterBlissifyloveneLowDose
+
+- type: loadout
+  id: LoadoutPillCanisterBlissifyloveneHighDose
+  category: GeneralMedical
+  description: reagent-desc-blissifylovene
+  cost: 3
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutPrescriptions
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutPrescriptionAntidepressant
+  items:
+  - PillCanisterBlissifyloveneHighDose
+
+## Neurozenium
+
+- type: loadout
+  id: LoadoutPillCanisterNeurozeniumLowDose
+  category: GeneralMedical
+  description: reagent-desc-neurozenium
+  cost: 1
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutPrescriptions
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutPrescriptionAntidepressant
+  items:
+  - PillCanisterNeurozeniumLowDose
+
+- type: loadout
+  id: LoadoutPillCanisterNeurozeniumHighDose
+  category: GeneralMedical
+  description: reagent-desc-neurozenium
+  cost: 2
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutPrescriptions
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutPrescriptionAntidepressant
+  items:
+  - PillCanisterNeurozeniumHighDose
+
+## Serenitol
+
+- type: loadout
+  id: LoadoutPillCanisterSerenitolLowDose
+  category: GeneralMedical
+  description: reagent-desc-serenitol
+  cost: 1
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutPrescriptions
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutPrescriptionAntidepressant
+  items:
+  - PillCanisterSerenitolLowDose
+
+- type: loadout
+  id: LoadoutPillCanisterSerenitolHighDose
+  category: GeneralMedical
+  description: reagent-desc-serenitol
+  cost: 1
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutPrescriptions
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutPrescriptionAntidepressant
+  items:
+  - PillCanisterSerenitolHighDose
+
+# Miscellaneous
+
+- type: loadout
+  id: LoadoutPillCanisterEthyloxyephedrine # Narcolepsy stimulant
+  category: GeneralMedical
+  description: reagent-desc-ethyloxyephedrine
+  cost: 1
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutPrescriptions
+  items:
+  - PillCanisterEthyloxyephedrine
+
+- type: loadout
+  id: LoadoutPillCanisterIron # Blood level medication for non-arachnids
+  category: GeneralMedical
+  description: reagent-desc-iron
+  cost: 1
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutPrescriptions
+  items:
+  - PillCanisterIron
+
+- type: loadout
+  id: LoadoutPillCanisterCopper # Blood level medication for arachnid
+  category: GeneralMedical
+  description: reagent-desc-copper
+  cost: 1
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutPrescriptions
+  items:
+  - PillCanisterCopper

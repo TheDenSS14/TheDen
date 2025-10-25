@@ -19,12 +19,14 @@
 # SPDX-FileCopyrightText: 2024 lleftTheDragon
 # SPDX-FileCopyrightText: 2024 lzk
 # SPDX-FileCopyrightText: 2025 Eris
+# SPDX-FileCopyrightText: 2025 Jakumba
 # SPDX-FileCopyrightText: 2025 Rosycup
 # SPDX-FileCopyrightText: 2025 VMSolidus
 # SPDX-FileCopyrightText: 2025 juniwoofs
+# SPDX-FileCopyrightText: 2025 sheepie
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: entity
   id: LockerSalvageSpecialistFilledHardsuit
@@ -42,11 +44,8 @@
       - id: SurvivalKnife
       - id: HandheldGPSBasic
       - id: RadioHandheld
-      - id: FlashlightSeclite
-      - id: Pickaxe
       - id: ClothingShoesBootsWinterMiner #Delta V: Add departmental winter boots
       - id: JetpackMiniFilled # DeltaV - Salv lost their shuttle
-      - id: OreBag
       - id: Flare
         prob: 0.3
       - id: Flare
@@ -57,15 +56,15 @@
         prob: 0.2
       - id: LunchboxLogisticsFilledRandom # DeltaV - Lunchboxes!
         prob: 0.3
+      - id: WeaponGrapplingGun # DEN
       # Lavaland Change Start
       - id: WeaponProtoKineticAccelerator
       - id: OreBag
       - id: Pickaxe
       - id: LavalandEquipmentExplorerSuit
       - id: ShelterCapsule
-      - id: ClothingMaskGasExplorer
       - id: FlashlightSeclite
-      - id: ClothingEyesGlassesGarMeson
+      - id: ClothingEyesGlassesMeson # DEN
       # Lavaland Change End
 
 - type: entity
@@ -75,16 +74,13 @@
   components:
   - type: StorageFill
     contents:
-      - id: ClothingEyesGlassesGarMeson
+      - id: ClothingMaskGasExplorer
       - id: ClothingBeltUtilityFilled
       - id: SurvivalKnife
       - id: HandheldGPSBasic
       - id: RadioHandheld
-      - id: FlashlightSeclite
-      - id: Pickaxe
       - id: ClothingShoesBootsWinterMiner #Delta V: Add departmental winter boots
       - id: JetpackMiniFilled # DeltaV - Salv lost their shuttle
-      - id: OreBag
       - id: Flare
         prob: 0.3
       - id: Flare
@@ -95,3 +91,13 @@
         prob: 0.2
       - id: LunchboxLogisticsFilledRandom # DeltaV - Lunchboxes!
         prob: 0.3
+      - id: WeaponGrapplingGun # DEN
+      # Lavaland Change Start
+      - id: WeaponProtoKineticAccelerator
+      - id: OreBag
+      - id: Pickaxe
+      - id: LavalandEquipmentExplorerSuit
+      - id: ShelterCapsule
+      - id: FlashlightSeclite
+      - id: ClothingEyesGlassesMeson # DEN
+      # Lavaland Change End

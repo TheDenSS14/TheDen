@@ -1,23 +1,42 @@
-# SPDX-FileCopyrightText: 2025 AeraAulin <133451603+AeraAuling@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 Rosycup <178287475+Rosycup@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 AeraAulin
+# SPDX-FileCopyrightText: 2025 Jakumba
+# SPDX-FileCopyrightText: 2025 MajorMoth
+# SPDX-FileCopyrightText: 2025 Rosycup
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
   # original PR by MagnusCrowe at https://github.com/new-frontiers-14/frontier-station-14/pull/887
 
 - type: entity
-  parent: CaptainSabre
+  parent: [ BaseSalvageSpecialistSecurityContraband, CaptainSabre ]
   id: PlasteelArmingSword
   name: plasteel arming sword
   description: An ancient design manufactured with modern materials and machines for a very specific target demographic.
   components:
   - type: Sprite
     sprite: _NF/Objects/Weapons/Melee/armingsword.rsi
+    # Den
   - type: MeleeWeapon
+    wideAnimationRotation: -135
+    attackRate: .8
+    range: 1.8
+    soundHit:
+      path: /Audio/SimpleStation14/Weapons/Melee/rapierhit.ogg
     damage:
       types:
         Slash: 15
+    clickPartDamageMultiplier: 3
+    heavyPartDamageMultiplier: 2.5
+    heavyRateModifier: 1.25
+    heavyRangeModifier: 1.8
+    heavyDamageBaseModifier: 1.2
+    heavyStaminaCost: 8
+    maxTargets: 7
+    angle: 80
+  - type: DamageOtherOnHit
+    staminaCost: 8
+    # Den
   - type: Reflect
     reflectProb: 0
     spread: 90
@@ -31,7 +50,7 @@
     - belt
 
 - type: entity
-  parent: PlasteelArmingSword
+  parent: [ BaseSecurityContraband, PlasteelArmingSword ]
   id: PlasteelArmingSwordSecurity
   name: plasteel arming sword
   description: An ancient design manufactured with modern materials and machines for a very specific target demographic. The serial number on the hilt marks this sword as belonging to an NT Security Officer.

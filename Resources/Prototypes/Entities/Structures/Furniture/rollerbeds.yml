@@ -12,9 +12,11 @@
 # SPDX-FileCopyrightText: 2024 metalgearsloth
 # SPDX-FileCopyrightText: 2025 Blitz
 # SPDX-FileCopyrightText: 2025 Jakumba
+# SPDX-FileCopyrightText: 2025 SeamLesss
+# SPDX-FileCopyrightText: 2025 Sir Warock
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: entity
   parent: [BaseItem, BaseFoldable]
@@ -80,15 +82,17 @@
     visuals:
       enum.StrapVisuals.State:
         buckledLayer:
-          True: {visible: true}
-          False: {visible: false}
+          True: { visible: true }
+          False: { visible: false }
+        unfoldedLayer:
+          True: { visible: false }
+          False: { visible: true }
       enum.FoldedVisuals.State: # Copypasta from BaseFoldable b/c collections don't merge when overriding component prototypes.
         foldedLayer:
-          True: {visible: true}
-          False: {visible: false}
+          True: { visible: true }
+          False: { visible: false }
         unfoldedLayer:
-          True: {visible: false}
-          False: {visible: true}
+          True: { visible: false }
   - type: StaticPrice
     price: 120
   - type: Tag
@@ -100,6 +104,8 @@
   id: RollerBedSpawnFolded
   suffix: folded
   components:
+  - type: Item
+    heldPrefix: emergency_rollerbed
   - type: Foldable
     folded: true
   - type: Strap
@@ -112,6 +118,8 @@
   description: A run-down rollerbed. Used to carry patients around.
   suffix: Cheap # TheDen
   components:
+  - type: Item
+    heldPrefix: cheap_rollerbed
   - type: Sprite
     layers:
     - state: cheap_rollerbed
@@ -141,6 +149,8 @@
   description: A robust looking rollerbed used for emergencies.
   suffix: Emergancy # TheDen
   components:
+  - type: Item
+    heldPrefix: emergency_rollerbed
   - type: Sprite
     layers:
     - state: emergency_rollerbed

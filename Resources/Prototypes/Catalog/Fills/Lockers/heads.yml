@@ -112,6 +112,10 @@
         prob: 0.3
       - id: CargoTechFabCircuitboard # Floof - port to EE if possible
       - id: PrinterDocFlatpack  # Corvax-Printer
+      - id: RadioHandheld
+      - id: ShelterCapsule
+      - id: LavalandJaunter
+      - id: Multitool # DEN
 
 - type: entity
   id: LockerCaptainFilledHardsuit
@@ -138,6 +142,7 @@
       - id: LunchboxCommandFilledRandom # Delta-V Lunchboxes!
         prob: 0.3
       - id: PrinterDocFlatpack  # Corvax-Printer
+      - id: Multitool # DEN
 
 - type: entity
   id: LockerCaptainFilled
@@ -161,6 +166,7 @@
       - id: LunchboxCommandFilledRandom
         prob: 0.3
       - id: PrinterDocFlatpack  # Corvax-Printer
+      - id: Multitool # DEN
 
 - type: entity
   id: LockerCaptainFilledNoLaser
@@ -184,6 +190,7 @@
       - id: LunchboxCommandFilledRandom
         prob: 0.3
       - id: PrinterDocFlatpack  # Corvax-Printer
+      - id: Multitool # DEN
 
 - type: entity
   id: LockerHeadOfPersonnelFilled
@@ -209,6 +216,7 @@
         prob: 0.3
       - id: ServiceTechFabCircuitboard # Floof - port to ee if possible
       - id: PrinterDocFlatpack  # Corvax-Printer
+      - id: Multitool # DEN
 
 - type: entity
   id: LockerChiefEngineerFilledHardsuit
@@ -221,6 +229,7 @@
       - id: OxygenTankFilled #Den
       - id: NitrogenTankFilled #Den
       - id: ClothingLongcoatCE # Floofstation
+      - id: ClothingBeltChiefEngineerFilled # DEN
       - id: ClothingMaskBreath
       - id: ClothingEyesGlassesMeson
       - id: ClothingShoesBootsMagAdv
@@ -243,6 +252,8 @@
         prob: 0.3
       - id: EngineeringTechFabCircuitboard # Floofstation - port to ee if possible
       - id: PrinterDocFlatpack  # Corvax-Printer
+      - id: ConstructionBag # DEN
+      - id: Multitool # DEN
 
 - type: entity
   id: LockerChiefEngineerFilled
@@ -272,6 +283,8 @@
         prob: 0.3
       - id: EngineeringTechFabCircuitboard # Floofstation - port to ee if possible
       - id: PrinterDocFlatpack  # Corvax-Printer
+      - id: ConstructionBag # DEN
+      - id: Multitool # DEN
 
 - type: entity
   id: LockerChiefMedicalOfficerFilledHardsuit
@@ -305,6 +318,7 @@
         prob: 0.3
       - id: MedicalBiofabMachineBoard # Shitmed Change
       - id: PrinterDocFlatpack  # Corvax-Printer
+      - id: Multitool # DEN
 
 - type: entity
   id: LockerChiefMedicalOfficerFilled
@@ -333,6 +347,7 @@
         prob: 0.3
       - id: MedicalBiofabMachineBoard # Shitmed Change
       - id: PrinterDocFlatpack  # Corvax-Printer
+      - id: Multitool # DEN
 
 - type: entity
   id: LockerResearchDirectorFilledHardsuit
@@ -362,11 +377,12 @@
         prob: 0.3
       - id: PsiWatchCartridge
       - id: StationAiUploadCircuitboard
-      - id: AsimovCircuitBoard
+#      - id: AsimovCircuitBoard
       - id: AugustineCircuitBoard
       - id: CrewsimovCircuitBoard
       - id: AntimovCircuitBoard
       - id: PrinterDocFlatpack  # Corvax-Printer
+      - id: Multitool # DEN
 
 - type: entity
   id: LockerResearchDirectorFilled
@@ -393,11 +409,12 @@
         prob: 0.3
       - id: PsiWatchCartridge
       - id: StationAiUploadCircuitboard
-      - id: AsimovCircuitBoard
+#      - id: AsimovCircuitBoard
       - id: AugustineCircuitBoard
       - id: CrewsimovCircuitBoard
       - id: AntimovCircuitBoard
       - id: PrinterDocFlatpack  # Corvax-Printer
+      - id: Multitool # DEN
 
 - type: entity
   id: LockerHeadOfSecurityFilledHardsuit
@@ -431,6 +448,7 @@
       - id: LunchboxCommandFilledRandom # Delta-V Lunchboxes!
         prob: 0.3
       - id: PrinterDocFlatpack  # Corvax-Printer
+      - id: Multitool # DEN
 
 - type: entity
   id: LockerHeadOfSecurityFilled
@@ -460,6 +478,7 @@
       - id: LunchboxCommandFilledRandom # Delta-V Lunchboxes!
         prob: 0.3
       - id: PrinterDocFlatpack  # Corvax-Printer
+      - id: Multitool # DEN
 
 - type: entity
   id: LockerFreezerVaultFilled
@@ -478,3 +497,4 @@
     - id: SpaceCash1000
     - id: BeachBall
     - id: BikeHorn
+    - id: Multitool # DEN

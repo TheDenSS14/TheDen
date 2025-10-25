@@ -35,6 +35,7 @@
     prototypes:
       - DrinkAbsintheGlass
       - DrinkAleGlass
+      - DrinkAlienBrainHemorrhage
       - DrinkAloe
       - DrinkAndalusia
       - DrinkAntifreeze
@@ -52,17 +53,21 @@
       - DrinkBloodyMaryGlass
       - DrinkBooger
       - DrinkBraveBullGlass
+      - DrinkBronxGlass
       - BudgetInsulsDrinkGlass
       - DrinkCarrotJuice
       - DrinkCoconutRum
       - DrinkChocolateGlass
       - DrinkCognacGlass
       - DrinkCosmopolitan
+      - DrinkCrushDepthGlass
       - DrinkCubaLibreGlass
+      - DrinkDarkandStormyGlass
       - DrinkDeadRumGlass
       - DrinkDevilsKiss
       - DrinkDriestMartiniGlass
       - DrinkDrGibbGlass
+      - DrinkElectricSharkGlass
       - DrinkErikaSurprise
       - DrinkFourteenLokoGlass
       - DrinkGargleBlasterGlass
@@ -82,6 +87,9 @@
       - DrinkIrishCarBomb
       - DrinkIrishCoffeeGlass
       - DrinkLemonadeGlass
+      - DrinkJackRoseGlass
+      - DrinkJungleBirdGlass
+      - DrinkKalimotxoGlass
       - DrinkKiraSpecial
       - DrinkLongIslandIcedTeaGlass
       - DrinkManhattanGlass
@@ -91,6 +99,7 @@
       - DrinkMeadGlass
       - DrinkMilkshake
       - DrinkMojito
+      - DrinkMonkeyBusinessGlass
       - DrinkNTCahors
 #      - DrinkOrgasmOnTheBeachGlass # Floofstation
 #      - DrinkPomPassionGlass # Floofstation
@@ -98,6 +107,7 @@
       - DrinkPatronGlass
       - DrinkPinaColadaGlass
       - DrinkPoscaGlass
+      - DrinkRadlerGlass
       - DrinkRedMeadGlass
 #      - DrinkRedRocketGlass # Floofstation
       - DrinkRewriter
@@ -115,7 +125,9 @@
       - DrinkSyndicatebomb
       - DrinkTequilaSunriseGlass
       - DrinkThreeMileIslandGlass
+      - DrinkTortugaGlass
       - DrinkToxinsSpecialGlass
+      - DrinkVampiroGlass
       - DrinkVodkaMartiniGlass
       - DrinkVodkaRedBool
       - DrinkVodkaTonicGlass
@@ -127,26 +139,44 @@
       - DrinkWhiteRussianGlass
       - DrinkWineGlass
 #      - DrinkYeOlHandyGlass # Floofstation
-      - XenoBasherGlass
+      - DrinkXenoBasherGlass
       - DrinkShakeBlue
       - DrinkShakeWhite
       - DrinkTheMartinez
       - DrinkMoonshineGlass
-      - DrinkSurferGlass
-      - DrinkPopQuizGlass
-      - DrinkCafeCocktailGlass
-      - DrinkCinnamonCookieGlass
-      - DrinkInsideScoopGlass
+      - DrinkSurferGlass #TheDen
+      - DrinkPopQuizGlass #TheDen
+      - DrinkCafeCocktailGlass #TheDen
+      - DrinkCinnamonCookieGlass #TheDen
+      - DrinkInsideScoopGlass #TheDen
       - LemonLimeBittersGlass # DeltaV
-      - DrinkFeatherPillowGlass
-      - DrinkThDrinkGlass
-      - DrinkAtlanticOceanGlass
-      - DrinkTuxedoSunsetGlass
-      - DrinkBloodyJaegerGlass
-      - DrinkJaegeritaGlass
-      - DrinkChartruseGlass
-      - DrinkFizzballGlass
-      - DrinkFizzballFloatGlass
+      - DrinkFeatherPillowGlass #TheDen
+      - DrinkThDrinkGlass #TheDen
+      - DrinkTuxedoSunsetGlass #TheDen
+      - DrinkBloodyJaegerGlass #TheDen
+      - DrinkJaegeritaGlass #TheDen
+      - DrinkChartruseGlass #TheDen
+      - DrinkFizzballGlass #TheDen
+      - DrinkFizzballFloatGlass #TheDen
+      - DrinkNectarGlass #TheDen
+      - DrinkTohokuBlazeGlass #TheDen
+      - DrinkMiamiViceGlass #TheDen
+      - DrinkTouchofGrassGlass #TheDen
+      - DrinkTheSilverhandGlass #TheDen
+      - DrinkArkveilTempleGlass #TheDen
+      - DrinkEmeraldJourneyGlass #TheDen
+      - DrinkWitchingHourGlass #TheDen
+      - DrinkPlasmaFloodGlass #TheDen
+      - DrinkMayojitoGlass
+      - DrinkCaipirinhaGlass
+      - DrinkDaiquiriGlass
+      - DrinkMiamiViceGlass #TheDen
+      - DrinkDeathInTheAfternoonGlass
+      - DrinkEmpress75Glass
+      - DrinkEspressoMartiniGlass
+      - DrinkMimosaGlass
+      - DrinkMoscowMuleGlass
+      - DrinkTheSunAlsoRisesGlass
     chance: 0.8
     offset: 0.0
     #rare
@@ -165,4 +195,5 @@
       - DrinkHoochGlass
       - DrinkBeepskySmashGlass
       - DrinkDeathFlipGlass #TheDen
+      - DrinkMimeosaGlass
     rareChance: 0.05

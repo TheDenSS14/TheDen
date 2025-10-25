@@ -30,13 +30,11 @@ using Content.Server.Mind;
 using Content.Server.Station.Events;
 using Content.Server.Preferences.Managers;
 using Content.Shared.CCVar;
-using Content.Shared.Customization.Systems;
 using Content.Shared.GameTicking;
 using Content.Shared.Mobs;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Players;
 using Content.Shared.Players.PlayTimeTracking;
-using Content.Shared.Preferences;
 using Content.Shared.Roles;
 using Robust.Server.Player;
 using Robust.Shared.Configuration;
@@ -44,7 +42,7 @@ using Robust.Shared.Network;
 using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
-using Content.Shared.Customization.Systems._DEN;
+using Content.Server._DEN.Customization.Systems;
 
 namespace Content.Server.Players.PlayTimeTracking;
 
@@ -221,19 +219,9 @@ public sealed class PlayTimeTrackingSystem : EntitySystem
             !_cfg.GetCVar(CCVars.GameRoleTimers))
             return true;
 
-        if (!_tracking.TryGetTrackerTimes(player, out var playTimes))
-        {
-            Log.Error($"Unable to check playtimes {Environment.StackTrace}");
-            playTimes = new Dictionary<string, TimeSpan>();
-        }
-
-        var isWhitelisted = player.ContentData()?.Whitelisted ?? false; // DeltaV - Whitelist requirement
-        var context = new CharacterRequirementContext(
-            selectedJob: job,
-            profile: (HumanoidCharacterProfile?) _prefs.GetPreferences(player.UserId).SelectedCharacter,
-            playtimes: playTimes,
-            whitelisted: isWhitelisted,
-            prototype: job);
+        var context = _characterRequirements.GetProfileContext(player)
+            .WithSelectedJob(job)
+            .WithPrototype(job);
 
         return _characterRequirements.CheckRequirementsValid(job.Requirements,
             context,
@@ -248,29 +236,19 @@ public sealed class PlayTimeTrackingSystem : EntitySystem
         if (!_cfg.GetCVar(CCVars.GameRoleTimers))
             return roles;
 
-        if (!_tracking.TryGetTrackerTimes(player, out var playTimes))
-        {
-            Log.Error($"Unable to check playtimes {Environment.StackTrace}");
-            playTimes = new Dictionary<string, TimeSpan>();
-        }
-
-        var isWhitelisted = player.ContentData()?.Whitelisted ?? false; // DeltaV - Whitelist requirement
-
         foreach (var job in _prototypes.EnumeratePrototypes<JobPrototype>())
         {
             if (job.Requirements != null)
             {
-                var context = new CharacterRequirementContext(
-                    selectedJob: job,
-                    profile: (HumanoidCharacterProfile?) _prefs.GetPreferences(player.UserId).SelectedCharacter,
-                    playtimes: playTimes,
-                    whitelisted: isWhitelisted,
-                    prototype: job);
+                var context = _characterRequirements.GetProfileContext(player)
+                    .WithSelectedJob(job)
+                    .WithPrototype(job);
+
                 if (_characterRequirements.CheckRequirementsValid(job.Requirements,
-                        context,
-                        EntityManager,
-                        _prototypes,
-                        _cfg))
+                    context,
+                    EntityManager,
+                    _prototypes,
+                    _cfg))
                     continue;
 
                 goto NoRole;
@@ -288,16 +266,6 @@ public sealed class PlayTimeTrackingSystem : EntitySystem
         if (!_cfg.GetCVar(CCVars.GameRoleTimers))
             return;
 
-        var player = _playerManager.GetSessionById(userId);
-        if (!_tracking.TryGetTrackerTimes(player, out var playTimes))
-        {
-            // Sorry mate but your playtimes haven't loaded.
-            Log.Error($"Playtimes weren't ready yet for {player} on roundstart!");
-            playTimes ??= new Dictionary<string, TimeSpan>();
-        }
-
-        var isWhitelisted = player.ContentData()?.Whitelisted ?? false; // DeltaV - Whitelist requirement
-
         for (var i = 0; i < jobs.Count; i++)
         {
             var job = jobs[i];
@@ -307,12 +275,9 @@ public sealed class PlayTimeTrackingSystem : EntitySystem
                 jobber.Requirements.Count == 0)
                 continue;
 
-            var context = new CharacterRequirementContext(
-                selectedJob: jobber,
-                profile: (HumanoidCharacterProfile) _prefs.GetPreferences(userId).SelectedCharacter,
-                playtimes: _tracking.GetPlayTimes(_playerManager.GetSessionById(userId)),
-                whitelisted: _playerManager.GetSessionById(userId).ContentData()?.Whitelisted ?? false,
-                prototype: jobber);
+            var context = _characterRequirements.GetProfileContext(userId)
+                .WithSelectedJob(jobber)
+                .WithPrototype(jobber);
 
             if (!_characterRequirements.CheckRequirementsValid(jobber.Requirements,
                 context,

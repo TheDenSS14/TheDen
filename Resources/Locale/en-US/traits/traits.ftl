@@ -1,52 +1,53 @@
-# SPDX-FileCopyrightText: 2022 Moony <moony@hellomouse.net>
-# SPDX-FileCopyrightText: 2023 Morb <14136326+Morb0@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2023 OctoRocket <88291550+OctoRocket@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2023 Raitononai <136900466+Raitononai@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2023 Vasilis <vasilis@pikachu.systems>
-# SPDX-FileCopyrightText: 2023 dahnte <70238020+dahnte@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 Debug <49997488+DebugOk@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 FoxxoTrystan <45297731+FoxxoTrystan@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 FoxxoTrystan <trystan.garnierhein@gmail.com>
-# SPDX-FileCopyrightText: 2024 KyuPolaris <tabi@kyuudev.me>
-# SPDX-FileCopyrightText: 2024 Memeji <greyalphawolf7@gmail.com>
-# SPDX-FileCopyrightText: 2024 Miller <151492849+CilliePaint@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 Mnemotechnican <69920617+Mnemotechnician@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 Pierson Arnold <greyalphawolf7@gmail.com>
-# SPDX-FileCopyrightText: 2024 Scribbles0 <91828755+Scribbles0@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 ShatteredSwords <135023515+ShatteredSwords@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 SimpleStation14 <130339894+SimpleStation14@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 UBlueberry <161545003+UBlueberry@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 Ubaser <134914314+UbaserB@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 WarMechanic <69510347+WarMechanic@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 cynical <superpilotboy@gmail.com>
-# SPDX-FileCopyrightText: 2024 deathride58 <deathride58@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 lzk <124214523+lzk228@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 Angelo Fallaria <ba.fallaria@gmail.com>
-# SPDX-FileCopyrightText: 2025 Blitz <73762869+BlitzTheSquishy@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 BloodfiendishOperator <141253729+Diggy0@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 BramvanZijp <56019239+BramvanZijp@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 DEATHB4DEFEAT <77995199+DEATHB4DEFEAT@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 EctoplasmIsGood <109397347+EctoplasmIsGood@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 GNUtopia <93669372+GNUtopia@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 GNUtopia <erainach14@gmail.com>
-# SPDX-FileCopyrightText: 2025 MajorMoth <61519600+MajorMoth@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 Peptide90 <78795277+Peptide90@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 Raikyr0 <Kurohana@hotmail.com.au>
-# SPDX-FileCopyrightText: 2025 Rosycup <178287475+Rosycup@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 SX-7 <92227810+SX-7@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 Sapphire <98045970+sapphirescript@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 SixplyDev <einlichen@gmail.com>
-# SPDX-FileCopyrightText: 2025 Skubman <ba.fallaria@gmail.com>
-# SPDX-FileCopyrightText: 2025 Tabitha <64847293+KyuPolaris@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 Timfa <timfalken@hotmail.com>
-# SPDX-FileCopyrightText: 2025 VMSolidus <evilexecutive@gmail.com>
-# SPDX-FileCopyrightText: 2025 foxcurl <kitshoffeitt@gmail.com>
-# SPDX-FileCopyrightText: 2025 portfiend <109661617+portfiend@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <flyingkarii@gmail.com>
+# SPDX-FileCopyrightText: 2022 Moony
+# SPDX-FileCopyrightText: 2023 Morb
+# SPDX-FileCopyrightText: 2023 OctoRocket
+# SPDX-FileCopyrightText: 2023 Raitononai
+# SPDX-FileCopyrightText: 2023 Vasilis
+# SPDX-FileCopyrightText: 2023 dahnte
+# SPDX-FileCopyrightText: 2024 Debug
+# SPDX-FileCopyrightText: 2024 FoxxoTrystan
+# SPDX-FileCopyrightText: 2024 KyuPolaris
+# SPDX-FileCopyrightText: 2024 Memeji
+# SPDX-FileCopyrightText: 2024 Miller
+# SPDX-FileCopyrightText: 2024 Mnemotechnican
+# SPDX-FileCopyrightText: 2024 Pierson Arnold
+# SPDX-FileCopyrightText: 2024 Scribbles0
+# SPDX-FileCopyrightText: 2024 ShatteredSwords
+# SPDX-FileCopyrightText: 2024 SimpleStation14
+# SPDX-FileCopyrightText: 2024 UBlueberry
+# SPDX-FileCopyrightText: 2024 Ubaser
+# SPDX-FileCopyrightText: 2024 WarMechanic
+# SPDX-FileCopyrightText: 2024 cynical
+# SPDX-FileCopyrightText: 2024 deathride58
+# SPDX-FileCopyrightText: 2024 lzk
+# SPDX-FileCopyrightText: 2024 metalgearsloth
+# SPDX-FileCopyrightText: 2025 Angelo Fallaria
+# SPDX-FileCopyrightText: 2025 Blitz
+# SPDX-FileCopyrightText: 2025 BloodfiendishOperator
+# SPDX-FileCopyrightText: 2025 BramvanZijp
+# SPDX-FileCopyrightText: 2025 DEATHB4DEFEAT
+# SPDX-FileCopyrightText: 2025 EctoplasmIsGood
+# SPDX-FileCopyrightText: 2025 GNUtopia
+# SPDX-FileCopyrightText: 2025 Jakumba
+# SPDX-FileCopyrightText: 2025 MajorMoth
+# SPDX-FileCopyrightText: 2025 Peptide90
+# SPDX-FileCopyrightText: 2025 Raikyr0
+# SPDX-FileCopyrightText: 2025 Rosycup
+# SPDX-FileCopyrightText: 2025 SX-7
+# SPDX-FileCopyrightText: 2025 Sapphire
+# SPDX-FileCopyrightText: 2025 Shaman
+# SPDX-FileCopyrightText: 2025 SixplyDev
+# SPDX-FileCopyrightText: 2025 Skubman
+# SPDX-FileCopyrightText: 2025 Tabitha
+# SPDX-FileCopyrightText: 2025 TheLuggage05
+# SPDX-FileCopyrightText: 2025 Timfa
+# SPDX-FileCopyrightText: 2025 VMSolidus
+# SPDX-FileCopyrightText: 2025 bigsantino1
+# SPDX-FileCopyrightText: 2025 foxcurl
+# SPDX-FileCopyrightText: 2025 portfiend
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 trait-name-Blindness = Blindness
 trait-description-Blindness = You are legally blind, and can't see clearly past a few meters in front of you.
@@ -117,6 +118,7 @@ trait-name-Accentless = Accentless
 trait-description-Accentless =
     You may have developed in isolation or separation from other repsentatives of your species,
     which resulted in you not having the typical accent that your species peers may possess.
+    This trait does not count towards the Accents limit.
 
 trait-name-FrontalLisp = Frontal Lisp
 trait-description-FrontalLisp =
@@ -136,8 +138,9 @@ trait-description-GermanAccent = You speak with a German accent.
 trait-name-RussianAccent = Russian accent
 trait-description-RussianAccent = You speak with a Russian accent.
 
+# imp, changed description to note added word replacements
 trait-name-FrenchAccent = French accent
-trait-description-FrenchAccent = You speak with a French accent.
+trait-description-FrenchAccent = You speak with a French accent, including French word replacements.
 
 trait-name-ItalianAccent = Italian accent
 trait-description-ItalianAccent = You speak with a Italian accent.
@@ -367,7 +370,7 @@ trait-description-Singer = You are naturally capable of singing simple melodies 
 
 trait-name-LatentPsychic = Latent Psychic
 trait-description-LatentPsychic =
-    Your mind and soul are open to the noosphere, allowing for use of Telepathy.
+    Your mind and soul are open to the noosphere, allowing you to hear telepathy.
     Thus, you are eligible for potentially receiving psychic powers.
     It is possible that you may be hunted by otherworldly forces, so consider keeping your powers a secret.
 
@@ -379,10 +382,8 @@ trait-description-PsionicInsulation =
 
 trait-name-NaturalTelepath = Natural Telepath
 trait-description-NaturalTelepath =
-    As a naturally occuring Telepath, you are capable of fluent telepathic communication, regardless of
-    whether or not you possess any notable psychic powers. This offers all of the same benefits and
-    drawbacks of Latent Psychic, except that you are guaranteed to start with full Telepathy. You may
-    still gain powers as normal for a Latent Psychic.
+    As a telepath, you are capable of fluent telepathic communication. While all psychics can hear telepathy, you will be able to speak with it.
+    This power does not reduce your ability to gain new powers.
 
 trait-name-TrapAvoider = Trap Avoider
 trait-description-TrapAvoider =
@@ -524,11 +525,11 @@ trait-description-Rodentian =  A language mostly consisting of squeaks spoken by
 
 trait-name-LowPotential = Low Psi-Potential
 trait-description-LowPotential =
-    You possess an unusually weak connection to the noösphere, which makes it more difficult to obtain new psionic powers.
+    You possess an unusually weak connection to the noosphere, which makes it more difficult to obtain new psionic powers.
 
 trait-name-HighPotential = High Psi-Potential
 trait-description-HighPotential =
-    Your connection to the noösphere is greater than average, making it easier to obtain new psionic powers.
+    Your connection to the noosphere is greater than average, making it easier to obtain new psionic powers.
 
 trait-name-LowAmplification = kα Deficiency
 trait-description-LowAmplification =
@@ -540,15 +541,16 @@ trait-description-HighAmplification =
 
 trait-name-PowerOverwhelming = Power Overwhelming
 trait-description-PowerOverwhelming =
-    WITNESS MY HATE MORTALS, COWER BEFORE MY PSIONIC MIGHT! REALITY IS AS I DEEM IT.
+    "WITNESS MY HATE, MORTALS - COWER BEFORE MY PSIONIC MIGHT! REALITY IS AS I DEEM IT."
+    Your psionic abilities are twice as strong as those of other psions, and you cannot be psionically insulated.  You will not be stopped.
 
 trait-name-LowDampening = kδ Defect
 trait-description-LowDampening =
-    Your skill in manipulating the noösphere is weaker than others. You may experience unintended effects from using your abilities.
+    Your skill in manipulating the noosphere is weaker than others. You may experience unintended effects from using your abilities.
 
 trait-name-HighDampening = kδ Proficient
 trait-description-HighDampening =
-    You are skilled in the art of subtly manipulating the noösphere. Your powers are less likely to show unintended effects.
+    You are skilled in the art of subtly manipulating the noosphere. Your powers are less likely to show unintended effects.
 
 trait-name-Azaziba = Sinta'Azaziba
 trait-description-Azaziba =
@@ -608,38 +610,41 @@ trait-description-CyberEyesOmni =
 
 trait-name-DispelPower = Normality Projection
 trait-description-DispelPower =
-    Your Mentalic abilities include the power to enforce normality upon Noospheric phenomena.
+    Your mentalic abilities include the power to enforce normality upon noospheric phenomena.
     This power, commonly known as "Dispel", allows the user to destroy otherworldly entities with their mind,
     or to immediately end psychic effects.
 
 trait-name-MetapsionicPower = Metapsion
 trait-description-MetapsionicPower =
-    You are able to intuitively sense the activation of psionic abilities, as well as send out a 'scanning' pulse
+    You are able to intuitively sense the activation of psionic abilities, as well as send out a "scanning" pulse
     to detect whether or not psions are nearby. This ability has a wide area of effect, and cannot precisely
     scan individual entities. Still, it is better than being blind.
+    This power does not reduce your ability to gain new powers.
 
 trait-name-HealingWordPower = Healing Word
 trait-description-HealingWordPower =
-    Your Mentalic abilities includes the power to heal the wounded.
+    Your mentalic abilities includes the power to heal the wounded.
     This power, commonly known as "Healing Word", allows the user to heal themselves or others with their mind.
 
 trait-name-XenoglossyPower = Xenoglossy
 trait-description-XenoglossyPower =
-    An advanced form of Telepathy, Xenoglossy is the ability to speak using emotional and metaphysical concepts,
-    rather than words, to impart meaning directly into the minds of a listener. When speaking using Xenoglossy, a psion can be
+    An advanced form of telepathy, xenoglossy is the ability to speak using emotional and metaphysical concepts,
+    rather than words, to impart meaning directly into the minds of a listener. When speaking using xenoglossy, a psion can be
     universally understood by any entity, who will hear the words as if spoken in one's own native tongue. Additionally,
     Xenoglossy grants the ability to divine the underlying emotional meaning from the minds of other speakers,
     allowing its user to understand any spoken language as if it was the user's own native tongue.
+    This power does not reduce your ability to gain new powers.
 
 trait-name-MindSwapPower = Mind Swap
 trait-description-MindSwapPower =
-    Grants you the power to swap bodies with another as they take your own. Swapping bodies with a being already occupying a body that is not their own can result in unintended consequences.
+    Grants you the power to swap bodies with another as they take your own, though its effects can be ended by either party. Swapping bodies with a being already occupying a body that is not their own can result in unintended consequences.
 
 trait-name-PsychognomyPower = Psychognomist
 trait-description-PsychognomyPower =
-    A special talent derived from Telepathy, Psychognomy is the ability to read the underlying imprint of telepathic messages.
-    A Psychognomist can glean additional information from their telepathy, seeing vague outlines of what the source of a message
+    A special talent derived from telepathy, psychognomy is the ability to read the underlying imprint of telepathic messages.
+    A psychognomist can glean additional information from their telepathy, seeing vague outlines of what the source of a message
     might be. This information is not precise, and is largely only useful for narrowing down who the source of a message might be.
+    This power does not reduce your ability to gain new powers.
 
 trait-name-Redshirt = Redshirt
 trait-description-Redshirt =
@@ -771,3 +776,8 @@ trait-name-HealingFactor = Healing Factor
 trait-description-HealingFactor =
     Whether due to mutation or natural hardiness, you're harder to kill than most. You slowly regenerate from some common forms of damage.
     Your natural healing is no longer capped, and you will slowly recover from brute, burn and bloodloss damage while you are still alive.
+
+trait-name-PainNumbness = Pain Numbness
+trait-description-PainNumbness =
+    Whether due to a rare mutation, freak medical accident, or some other reason, you're not able to feel pain
+    making it much eaiser to miss possibly life threatening injuries.

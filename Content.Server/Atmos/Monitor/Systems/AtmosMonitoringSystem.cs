@@ -1,19 +1,20 @@
-// SPDX-FileCopyrightText: 2022 Flipp Syder <76629141+vulppine@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2022 Paul Ritter <ritter.paul1@googlemail.com>
-// SPDX-FileCopyrightText: 2022 Vera Aguilera Puerto <6766154+Zumorica@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2022 keronshb <54602815+keronshb@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2022 mirrorcult <lunarautomaton6@gmail.com>
-// SPDX-FileCopyrightText: 2022 vulppine <vulppine@gmail.com>
-// SPDX-FileCopyrightText: 2022 wrexbe <81056464+wrexbe@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2023 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2023 Kara <lunarautomaton6@gmail.com>
-// SPDX-FileCopyrightText: 2023 Menshin <Menshin@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 chromiumboy <50505512+chromiumboy@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 Flipp Syder
+// SPDX-FileCopyrightText: 2022 Paul Ritter
+// SPDX-FileCopyrightText: 2022 Vera Aguilera Puerto
+// SPDX-FileCopyrightText: 2022 keronshb
+// SPDX-FileCopyrightText: 2022 mirrorcult
+// SPDX-FileCopyrightText: 2022 vulppine
+// SPDX-FileCopyrightText: 2022 wrexbe
+// SPDX-FileCopyrightText: 2023 DrSmugleaf
+// SPDX-FileCopyrightText: 2023 Kara
+// SPDX-FileCopyrightText: 2023 Menshin
+// SPDX-FileCopyrightText: 2024 Leon Friedrich
+// SPDX-FileCopyrightText: 2024 chromiumboy
+// SPDX-FileCopyrightText: 2024 metalgearsloth
+// SPDX-FileCopyrightText: 2025 AvianMaiden
+// SPDX-FileCopyrightText: 2025 sleepyyapril
 //
-// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+// SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 using Content.Server.Atmos.EntitySystems;
 using Content.Server.Atmos.Monitor.Components;
@@ -50,8 +51,12 @@ public sealed class AtmosMonitorSystem : EntitySystem
     // Commands
     public const string AtmosMonitorSetThresholdCmd = "atmos_monitor_set_threshold";
 
+    public const string AtmosMonitorSetAllThresholdsCmd = "atmos_monitor_set_all_thresholds";
+
     // Packet data
     public const string AtmosMonitorThresholdData = "atmos_monitor_threshold_data";
+
+    public const string AtmosMonitorAllThresholdData = "atmos_monitor_all_threshold_data";
 
     public const string AtmosMonitorThresholdDataType = "atmos_monitor_threshold_type";
 
@@ -153,6 +158,12 @@ public sealed class AtmosMonitorSystem : EntitySystem
                 {
                     args.Data.TryGetValue(AtmosMonitorThresholdGasType, out Gas? gas);
                     SetThreshold(uid, thresholdType.Value, thresholdData, gas);
+                }
+                break;
+            case AtmosMonitorSetAllThresholdsCmd:
+                if (args.Data.TryGetValue(AtmosMonitorAllThresholdData, out AtmosSensorData? allThresholdData))
+                {
+                    SetAllThresholds(uid, allThresholdData);
                 }
 
                 break;
@@ -417,5 +428,21 @@ public sealed class AtmosMonitorSystem : EntitySystem
                 break;
         }
 
+    }
+
+    /// <summary>
+    ///     Sets all of a monitor's thresholds at once according to the incoming
+    ///     AtmosSensorData object's thresholds.
+    /// </summary>
+    /// <param name="uid">The entity's uid</param>
+    /// <param name="allThresholdData">An AtmosSensorData object from which the thresholds will be loaded.</param>
+    public void SetAllThresholds(EntityUid uid, AtmosSensorData allThresholdData)
+    {
+        SetThreshold(uid, AtmosMonitorThresholdType.Temperature, allThresholdData.TemperatureThreshold);
+        SetThreshold(uid, AtmosMonitorThresholdType.Pressure, allThresholdData.PressureThreshold);
+        foreach (var gas in Enum.GetValues<Gas>())
+        {
+            SetThreshold(uid, AtmosMonitorThresholdType.Gas, allThresholdData.GasThresholds[gas], gas);
+        }
     }
 }

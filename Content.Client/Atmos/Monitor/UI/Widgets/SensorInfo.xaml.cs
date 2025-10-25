@@ -1,9 +1,10 @@
-// SPDX-FileCopyrightText: 2022 Eoin Mcloughlin <helloworld@eoinrul.es>
-// SPDX-FileCopyrightText: 2022 corentt <36075110+corentt@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2022 eoineoineoin <eoin.mcloughlin+gh@gmail.com>
-// SPDX-FileCopyrightText: 2022 vulppine <vulppine@gmail.com>
-// SPDX-FileCopyrightText: 2023 Kara <lunarautomaton6@gmail.com>
-// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 Eoin Mcloughlin
+// SPDX-FileCopyrightText: 2022 corentt
+// SPDX-FileCopyrightText: 2022 eoineoineoin
+// SPDX-FileCopyrightText: 2022 vulppine
+// SPDX-FileCopyrightText: 2023 Kara
+// SPDX-FileCopyrightText: 2025 AvianMaiden
+// SPDX-FileCopyrightText: 2025 sleepyyapril
 //
 // SPDX-License-Identifier: MIT
 
@@ -21,12 +22,14 @@ namespace Content.Client.Atmos.Monitor.UI.Widgets;
 public sealed partial class SensorInfo : BoxContainer
 {
     public Action<string, AtmosMonitorThresholdType, AtmosAlarmThreshold, Gas?>? OnThresholdUpdate;
+    public event Action<AtmosSensorData>? SensorDataCopied;
     private string _address;
 
     private ThresholdControl _pressureThreshold;
     private ThresholdControl _temperatureThreshold;
     private Dictionary<Gas, ThresholdControl> _gasThresholds = new();
     private Dictionary<Gas, RichTextLabel> _gasLabels = new();
+    private Button _copySettings => CCopySettings;
 
     public SensorInfo(AtmosSensorData data, string address)
     {
@@ -64,7 +67,7 @@ public sealed partial class SensorInfo : BoxContainer
             gasThresholdControl.Margin = new Thickness(20, 2, 2, 2);
             gasThresholdControl.ThresholdDataChanged += (type, threshold, arg3) =>
             {
-                OnThresholdUpdate!(_address, type, threshold, arg3);
+                OnThresholdUpdate?.Invoke(_address, type, threshold, arg3);
             };
 
             _gasThresholds.Add(gas, gasThresholdControl);
@@ -79,12 +82,17 @@ public sealed partial class SensorInfo : BoxContainer
 
         _pressureThreshold.ThresholdDataChanged += (type, threshold, arg3) =>
         {
-            OnThresholdUpdate!(_address, type, threshold, arg3);
+            OnThresholdUpdate?.Invoke(_address, type, threshold, arg3);
         };
 
         _temperatureThreshold.ThresholdDataChanged += (type, threshold, arg3) =>
         {
-            OnThresholdUpdate!(_address, type, threshold, arg3);
+            OnThresholdUpdate?.Invoke(_address, type, threshold, arg3);
+        };
+
+        _copySettings.OnPressed += _ =>
+        {
+            SensorDataCopied?.Invoke(data);
         };
     }
 

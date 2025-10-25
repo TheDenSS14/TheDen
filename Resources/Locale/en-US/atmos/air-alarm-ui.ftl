@@ -1,11 +1,12 @@
-# SPDX-FileCopyrightText: 2022 Eoin Mcloughlin <helloworld@eoinrul.es>
-# SPDX-FileCopyrightText: 2022 Flipp Syder <76629141+vulppine@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2022 Vera Aguilera Puerto <6766154+Zumorica@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2022 eoineoineoin <eoin.mcloughlin+gh@gmail.com>
-# SPDX-FileCopyrightText: 2022 vulppine <vulppine@gmail.com>
-# SPDX-FileCopyrightText: 2023 Ilya246 <57039557+Ilya246@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2023 c4llv07e <38111072+c4llv07e@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 Eoin Mcloughlin
+# SPDX-FileCopyrightText: 2022 Flipp Syder
+# SPDX-FileCopyrightText: 2022 Vera Aguilera Puerto
+# SPDX-FileCopyrightText: 2022 eoineoineoin
+# SPDX-FileCopyrightText: 2022 vulppine
+# SPDX-FileCopyrightText: 2023 Ilya246
+# SPDX-FileCopyrightText: 2023 c4llv07e
+# SPDX-FileCopyrightText: 2025 AvianMaiden
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: MIT
 
@@ -80,3 +81,5 @@ air-alarm-ui-thresholds-upper-bound = Danger above
 air-alarm-ui-thresholds-lower-bound = Danger below
 air-alarm-ui-thresholds-upper-warning-bound = Warning above
 air-alarm-ui-thresholds-lower-warning-bound = Warning below
+air-alarm-ui-thresholds-copy = Copy thresholds to all devices
+air-alarm-ui-thresholds-copy-tooltip = Copies the sensor thresholds of this device to all devices in this air alarm tab.

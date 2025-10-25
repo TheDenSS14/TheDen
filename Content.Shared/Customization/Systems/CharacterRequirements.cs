@@ -20,7 +20,7 @@ public abstract partial class CharacterRequirement
 {
     /// <summary>
     ///     If true valid requirements will be treated as invalid and vice versa
-    ///     This inversion is done by other systems like <see cref="CharacterRequirementsSystem"/>, not this one
+    ///     This inversion is done by other systems like <see cref="SharedCharacterRequirementsSystem"/>, not this one
     /// </summary>
     [DataField]
     public bool Inverted = false;
@@ -47,7 +47,7 @@ public abstract partial class CharacterRequirement
     /// <summary>
     ///     Checks if this character requirement is valid for the given parameters
     ///     <br />
-    ///     You should probably not be calling this directly, use <see cref="CharacterRequirementsSystem"/>
+    ///     You should probably not be calling this directly, use <see cref="SharedCharacterRequirementsSystem"/>
     /// </summary>
     /// <param name="reason">Description for the requirement, shown when not null</param>
     public abstract bool IsValid(CharacterRequirementContext context,

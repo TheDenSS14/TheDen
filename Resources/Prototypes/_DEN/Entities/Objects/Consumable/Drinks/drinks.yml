@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2025 Eightballll
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 - type: entity
   parent: DrinkGlass
   id: DrinkJaegermisterGlass
@@ -364,4 +368,196 @@
           Quantity: 30
   - type: Icon
     sprite: _DEN/Objects/Consumable/Drinks/featherpillow.rsi
+    state: icon
+
+- type: entity
+  parent: DrinkGlass
+  id: DrinkNectarGlass
+  suffix: nectar
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 30
+        reagents:
+        - ReagentId: Nectar
+          Quantity: 30
+  - type: Icon
+    sprite: _DEN/Objects/Consumable/Drinks/nectar.rsi
+    state: icon
+
+- type: entity
+  parent: DrinkGlass
+  id: DrinkSongbirdGlass
+  suffix: songbird
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 30
+        reagents:
+        - ReagentId: Songbird
+          Quantity: 30
+  - type: Icon
+    sprite: _DEN/Objects/Consumable/Drinks/songbird.rsi
+    state: icon
+
+- type: entity
+  parent: DrinkGlass
+  id: DrinkTohokuBlazeGlass
+  suffix: tohoku blaze
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 30
+        reagents:
+        - ReagentId: TohokuBlaze
+          Quantity: 30
+  - type: Icon
+    sprite: _DEN/Objects/Consumable/Drinks/tohokublaze.rsi
+    state: icon
+
+- type: entity
+  parent: DrinkGlass
+  id: DrinkTouchofGrassGlass
+  suffix: touch of grass
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 30
+        reagents:
+        - ReagentId: TouchofGrass
+          Quantity: 30
+  - type: Icon
+    sprite: _DEN/Objects/Consumable/Drinks/touchofgrass.rsi
+    state: icon
+
+- type: entity
+  parent: DrinkGlass
+  id: DrinkMiamiViceGlass
+  suffix: miami vice
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 30
+        reagents:
+        - ReagentId: MiamiVice
+          Quantity: 30
+  - type: Icon
+    sprite: _DEN/Objects/Consumable/Drinks/miamivice.rsi
+    state: icon
+
+- type: entity
+  parent: DrinkGlass
+  id: DrinkTheSilverhandGlass
+  suffix: the silverhand
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 30
+        reagents:
+        - ReagentId: TheSilverhand
+          Quantity: 30
+  - type: Icon
+    sprite: _DEN/Objects/Consumable/Drinks/thesilverhand.rsi
+    state: icon
+
+- type: entity
+  parent: DrinkGlass
+  id: DrinkArkveilTempleGlass
+  suffix: arkveil temple
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 30
+        reagents:
+        - ReagentId: ArkveilTemple
+          Quantity: 30
+  - type: Icon
+    sprite: _DEN/Objects/Consumable/Drinks/arkveiltemple.rsi
+    state: icon
+
+- type: entity
+  parent: DrinkGlass
+  id: DrinkCoconutDoubleCreamPieGlass
+  suffix: coconut double cream pie
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 30
+        reagents:
+        - ReagentId: CoconutDoubleCreamPie
+          Quantity: 30
+  - type: Icon
+    sprite: _DEN/Objects/Consumable/Drinks/coconutdoublecreampie.rsi
+    state: icon
+
+- type: entity
+  parent: DrinkGlass
+  id: DrinkEmeraldJourneyGlass
+  suffix: emerald journey
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 30
+        reagents:
+        - ReagentId: EmeraldJourney
+          Quantity: 30
+  - type: Icon
+    sprite: _DEN/Objects/Consumable/Drinks/emeraldjourney.rsi
+    state: icon
+
+- type: entity
+  parent: DrinkGlass
+  id: DrinkVampiresDelightGlass
+  suffix: vampires delight
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 30
+        reagents:
+        - ReagentId: VampiresDelight
+          Quantity: 30
+  - type: Icon
+    sprite: _DEN/Objects/Consumable/Drinks/vampiresdelight.rsi
+    state: icon
+
+- type: entity
+  parent: DrinkGlass
+  id: DrinkWitchingHourGlass
+  suffix: witching hour
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 30
+        reagents:
+        - ReagentId: WitchingHour
+          Quantity: 30
+  - type: Icon
+    sprite: _DEN/Objects/Consumable/Drinks/witchinghour.rsi
+    state: icon
+
+- type: entity
+  parent: DrinkGlass
+  id: DrinkPlasmaFloodGlass
+  suffix: plasma flood
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 30
+        reagents:
+        - ReagentId: PlasmaFlood
+          Quantity: 30
+  - type: Icon
+    sprite: _DEN/Objects/Consumable/Drinks/plasmaflood.rsi
     state: icon

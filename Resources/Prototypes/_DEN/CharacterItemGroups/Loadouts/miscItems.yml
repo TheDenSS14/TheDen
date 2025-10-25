@@ -17,3 +17,167 @@
       id: LoadoutItemCaneWalkingQuad
     - type: loadout
       id: LoadoutItemWalkingCaneImp
+
+# Prescription medicines - primarily RP chems.
+# I am excluding the HRT medications from this list on purpose.
+
+- type: characterItemGroup
+  id: LoadoutPrescriptions
+  maxItems: 2
+  items:
+  # Painkillers
+  - type: loadout
+    id: LoadoutPillCanisterAgonolexyneLowDose
+  - type: loadout
+    id: LoadoutPillCanisterAgonolexyneHighDose
+  - type: loadout
+    id: LoadoutPillCanisterSoretizoneLowDose
+  - type: loadout
+    id: LoadoutPillCanisterSoretizoneHighDose
+  - type: loadout
+    id: LoadoutPillCanisterStubantazineLowDose
+  - type: loadout
+    id: LoadoutPillCanisterStubantazineHighDose
+  # Anxiolytics
+  - type: loadout
+    id: LoadoutPillCanisterEquilibrazineHighDose
+  - type: loadout
+    id: LoadoutPillCanisterEquilibrazineLowDose
+  - type: loadout
+    id: LoadoutPillCanisterTranquinaseHighDose
+  - type: loadout
+    id: LoadoutPillCanisterTranquinaseLowDose
+  - type: loadout
+    id: LoadoutPillCanisterCalmafluxineHighDose
+  - type: loadout
+    id: LoadoutPillCanisterCalmafluxineLowDose
+  - type: loadout
+    id: LoadoutPillCanisterPsicodineHighDose
+  # Antidepressants
+  - type: loadout
+    id: LoadoutPillCanisterBlissifyloveneHighDose
+  - type: loadout
+    id: LoadoutPillCanisterBlissifyloveneLowDose
+  - type: loadout
+    id: LoadoutPillCanisterNeurozeniumHighDose
+  - type: loadout
+    id: LoadoutPillCanisterNeurozeniumLowDose
+  - type: loadout
+    id: LoadoutPillCanisterSerenitolHighDose
+  - type: loadout
+    id: LoadoutPillCanisterSerenitolLowDose
+  # Miscellaneous
+  - type: loadout
+    id: LoadoutPillCanisterEthyloxyephedrine
+  - type: loadout
+    id: LoadoutPillCanisterIron
+  - type: loadout
+    id: LoadoutPillCanisterCopper
+
+- type: characterItemGroup
+  id: LoadoutPrescriptionPainkiller
+  maxItems: 1
+  items:
+  - type: loadout
+    id: LoadoutPillCanisterAgonolexyneLowDose
+  - type: loadout
+    id: LoadoutPillCanisterAgonolexyneHighDose
+  - type: loadout
+    id: LoadoutPillCanisterSoretizoneLowDose
+  - type: loadout
+    id: LoadoutPillCanisterSoretizoneHighDose
+  - type: loadout
+    id: LoadoutPillCanisterStubantazineLowDose
+  - type: loadout
+    id: LoadoutPillCanisterStubantazineHighDose
+
+- type: characterItemGroup
+  id: LoadoutPrescriptionAnxiolytic
+  maxItems: 1
+  items:
+  - type: loadout
+    id: LoadoutPillCanisterEquilibrazineHighDose
+  - type: loadout
+    id: LoadoutPillCanisterEquilibrazineLowDose
+  - type: loadout
+    id: LoadoutPillCanisterTranquinaseHighDose
+  - type: loadout
+    id: LoadoutPillCanisterTranquinaseLowDose
+  - type: loadout
+    id: LoadoutPillCanisterCalmafluxineHighDose
+  - type: loadout
+    id: LoadoutPillCanisterCalmafluxineLowDose
+  - type: loadout
+    id: LoadoutPillCanisterPsicodine
+
+- type: characterItemGroup
+  id: LoadoutPrescriptionAntidepressant
+  maxItems: 1
+  items:
+  - type: loadout
+    id: LoadoutPillCanisterBlissifyloveneHighDose
+  - type: loadout
+    id: LoadoutPillCanisterBlissifyloveneLowDose
+  - type: loadout
+    id: LoadoutPillCanisterNeurozeniumHighDose
+  - type: loadout
+    id: LoadoutPillCanisterNeurozeniumLowDose
+  - type: loadout
+    id: LoadoutPillCanisterSerenitolHighDose
+  - type: loadout
+    id: LoadoutPillCanisterSerenitolLowDose
+
+# Costumes
+
+- type: characterItemGroup
+  id: LoadoutCostumeBundles
+  maxItems: 1
+  items:
+  ## Job-specific
+  - type: loadout
+    id: LoadoutCostumeBundleCircusClown
+  - type: loadout
+    id: LoadoutCostumeBundleJester
+  - type: loadout
+    id: LoadoutCostumeBundleMusicianMarching
+  - type: loadout
+    id: LoadoutCostumeBundleMusicianLoungeSinger
+  ## Generic
+  - type: loadout
+    id: LoadoutCostumeBundleAngel
+  - type: loadout
+    id: LoadoutCostumeBundleBunnySuit
+  - type: loadout
+    id: LoadoutCostumeBundleBurglar
+  - type: loadout
+    id: LoadoutCostumeBundleCardborg
+  - type: loadout
+    id: LoadoutCostumeBundleChicken
+  - type: loadout
+    id: LoadoutCostumeBundleDevil
+  - type: loadout
+    id: LoadoutCostumeBundleGladiator
+  - type: loadout
+    id: LoadoutCostumeBundleJudge
+  - type: loadout
+    id: LoadoutCostumeBundleMonkey
+  - type: loadout
+    id: LoadoutCostumeBundlePirate
+  - type: loadout
+    id: LoadoutCostumeBundlePerformer
+  - type: loadout
+    id: LoadoutCostumeBundleRedRaccoon
+  - type: loadout
+    id: LoadoutCostumeBundleSafari
+  - type: loadout
+    id: LoadoutCostumeBundleSailor
+  - type: loadout
+    id: LoadoutCostumeBundleSanta
+  - type: loadout
+    id: LoadoutCostumeBundleShrineMaiden
+  - type: loadout
+    id: LoadoutCostumeBundleSkub
+  - type: loadout
+    id: LoadoutCostumeBundleWitch
+  - type: loadout
+    id: LoadoutCostumeBundleYakuza

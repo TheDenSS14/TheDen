@@ -1,0 +1,32 @@
+# SPDX-FileCopyrightText: 2025 Leonardo
+# SPDX-FileCopyrightText: 2025 leo
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  parent: HolyBookBible
+  id: HolyBookQuran
+  name: quran
+  description: The holy book of Islam as revealed to the Prophet Muhammad.
+  components:
+  - type: Sprite
+    sprite: Objects/Specific/Chapel/quran.rsi
+    state: icon
+  - type: Item
+    size: Small
+    sprite: Objects/Specific/Chapel/quran.rsi
+  - type: Clothing
+
+- type: entity
+  parent: HolyBookBible
+  id: HolyBookTanakh
+  name: tanakh
+  description: The foundational texts of Judaism, consisting of the Torah, the Nevi'im, and the Ketuvim.
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Specific/Chapel/tanakh.rsi
+    state: icon
+  - type: Item
+    size: Small
+    sprite: _DEN/Objects/Specific/Chapel/tanakh.rsi
+  - type: Clothing

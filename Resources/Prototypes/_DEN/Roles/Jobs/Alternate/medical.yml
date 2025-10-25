@@ -1,0 +1,55 @@
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+#
+# SPDX-License-Identifier: MIT
+
+- type: alternateJobTitle
+  id: DefaultMedicalIntern
+  jobId: MedicalIntern
+  titles:
+  - job-name-alternate-resident
+  - job-name-alternate-clinician
+  - job-name-alternate-pharmacy-technician
+
+- type: alternateJobTitle
+  id: DefaultMedicalDoctor
+  jobId: MedicalDoctor
+  titles:
+  - job-name-alternate-surgeon
+  - job-name-alternate-nurse
+  - job-name-alternate-cryogenics-specialist
+
+- type: alternateJobTitle
+  id: DefaultParamedic
+  jobId: Paramedic
+  titles:
+  - job-name-alternate-emergency-responder
+  - job-name-alternate-first-responder
+  - job-name-alternate-emergency-medical-technician
+
+- type: alternateJobTitle
+  id: DefaultPsychologist
+  jobId: Psychologist
+  titles:
+  - job-name-alternate-therapist
+  - job-name-alternate-psychiatrist
+  - job-name-alternate-social-worker
+  - job-name-alternate-counselor
+
+- type: alternateJobTitle
+  id: DefaultChemist
+  jobId: Chemist
+  titles:
+  - job-name-alternate-pharmacist
+  - job-name-alternate-apothecary
+  - job-name-alternate-synthesizer
+
+- type: alternateJobTitle
+  id: DefaultChiefMedicalOfficer
+  jobId: ChiefMedicalOfficer
+  titles:
+  - job-name-alternate-surgeon-general
+  - job-name-alternate-head-physician
+  - job-name-alternate-chief-of-medicine
+  - job-name-alternate-medical-director
+  - job-name-alternate-head-of-medicine
+  - job-name-alternate-dean-of-medicine

@@ -3,7 +3,7 @@
 # SPDX-FileCopyrightText: 2025 Rosycup
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: entity
   id: ArgocyteVents
@@ -20,7 +20,7 @@
   - type: VentCrittersRule
     sound: /Audio/_DEN/VentCritters/vent_xeno.ogg #Den
     specialEntries:
-      - id: MobArgocyteFounder
+      - id: MobArgocyteCrawler
     table: !type:GroupSelector # DeltaV: EntityTable instead of spawn entries
       children:
       - id: MobArgocyteBarrier
@@ -109,7 +109,7 @@
   - type: VentCrittersRule
     sound: /Audio/_DEN/VentCritters/vent_carp.ogg #Den
     specialEntries:
-      - id: MobShark
+      - id: MobCarp
     table: !type:GroupSelector # DeltaV: EntityTable instead of spawn entries
       children:
       - id: MobCarp
@@ -172,3 +172,19 @@
         weight: 0.25
       - id: MobCobraSpace
         weight: 0.15
+
+- type: entity
+  id: ScugCatSpawn
+  parent: BaseGameRule
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: StationEvent
+    startAnnouncement: true
+    reoccurrenceDelay: 12
+    minimumPlayers: 1
+    weight: 5
+    duration: 60
+  - type: VentCrittersRule
+    table: !type:GroupSelector # DeltaV: EntityTable instead of spawn entries
+      children:
+      - id: MobScugCat

@@ -27,7 +27,7 @@
 # SPDX-FileCopyrightText: 2025 sheepie
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: entity
   id: BaseGameRule
@@ -112,6 +112,7 @@
 - type: entity
   parent: BaseNukeopsRule
   id: Nukeops
+  categories: [ HideSpawnMenu ]
   components:
   - type: GameRule
     minPlayers: 15
@@ -196,6 +197,27 @@
     definitions:
     - prefRoles: [ Traitor ]
       max: 6 # Floof - Balance around Security Pop
+      playerRatio: 10
+      blacklist:
+        components:
+        - AntagImmune
+      lateJoinAdditional: true
+      mindRoles:
+      - MindRoleTraitor
+
+- type: entity
+  categories: [ HideSpawnMenu ]
+  parent: BaseTraitorRule
+  id: MoreTraitor
+  components:
+  - type: GameRule
+    delay:
+      min: 240
+      max: 420
+  - type: AntagSelection
+    definitions:
+    - prefRoles: [ Traitor ]
+      max: 10 # Floof - Balance around Security Pop
       playerRatio: 10
       blacklist:
         components:

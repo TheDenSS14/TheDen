@@ -1,12 +1,13 @@
-# SPDX-FileCopyrightText: 2024 Ed <96445749+TheShuEd@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 IProduceWidgets <107586145+IProduceWidgets@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 RumiTiger <154005209+RumiTiger@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 Ubaser <134914314+UbaserB@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 sleepyyapril <flyingkarii@gmail.com>
-# SPDX-FileCopyrightText: 2025 Hedera <185189451+Hederadaii@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 Rosycup <178287475+Rosycup@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Ed
+# SPDX-FileCopyrightText: 2024 IProduceWidgets
+# SPDX-FileCopyrightText: 2024 RumiTiger
+# SPDX-FileCopyrightText: 2024 Ubaser
+# SPDX-FileCopyrightText: 2024 slarticodefast
+# SPDX-FileCopyrightText: 2024 sleepyyapril
+# SPDX-FileCopyrightText: 2025 Hedera
+# SPDX-FileCopyrightText: 2025 Rosycup
+# SPDX-FileCopyrightText: 2025 Wolfkey-SomeoneElseTookMyUsername
+# SPDX-FileCopyrightText: 2025 portfiend
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -176,6 +177,44 @@ food-sequence-burger-content-tofuburg = tofuburg
 food-sequence-burger-content-xenoburg = xeno
 food-sequence-burger-content-mothburg = moth
 food-sequence-burger-content-dragon = dragon
+
+# COTTON BURGERS
+
+food-sequence-cotton-burger-gen = {$content}burger
+
+food-sequence-cotton-burger-content-cotton-bol = cotton
+food-sequence-cotton-burger-content-pyrotton-bol = pyro
+food-sequence-cotton-burger-content-plushie-throngler = throngle
+food-sequence-cotton-burger-content-plushie-ghost = spooky
+food-sequence-cotton-burger-content-plushie-revenant = spookier
+food-sequence-cotton-burger-content-plushie-bee = buzzzy
+food-sequence-cotton-burger-content-plushie-hamptr = hampt
+food-sequence-cotton-burger-content-plushie-nukie = nukie
+food-sequence-cotton-burger-content-plushie-rouny = rouny
+food-sequence-cotton-burger-content-plushie-lamp = lamp
+food-sequence-cotton-burger-content-plushie-arachnid = spider
+food-sequence-cotton-burger-content-plushie-lizard = weh
+food-sequence-cotton-burger-content-plushie-experiment = experimental
+food-sequence-cotton-burger-content-plushie-spacelizard = space
+food-sequence-cotton-burger-content-plushie-lizard-inversed = hew
+food-sequence-cotton-burger-content-plushie-diona = dion
+food-sequence-cotton-burger-content-plushie-shark = shonk
+food-sequence-cotton-burger-content-plushie-ratvar = ratvarian
+food-sequence-cotton-burger-content-plushie-narsie = nar'
+food-sequence-cotton-burger-content-plushie-carp = carp
+food-sequence-cotton-burger-content-plushie-magicarp = magi
+food-sequence-cotton-burger-content-plushie-holocarp = holo
+food-sequence-cotton-burger-content-plushie-slime = slime
+food-sequence-cotton-burger-content-plushie-snake = snek
+food-sequence-cotton-burger-content-plushie-mouse = mouse
+food-sequence-cotton-burger-content-plushie-vox = skree
+food-sequence-cotton-burger-content-plushie-atmosian = atmos
+food-sequence-cotton-burger-content-plushie-xeno = xeno
+food-sequence-cotton-burger-content-plushie-penguin = peng
+food-sequence-cotton-burger-content-plushie-human = uristmc
+food-sequence-cotton-burger-content-plushie-moth = fluff
+food-sequence-cotton-burger-content-plushie-ian = corgi
+food-sequence-cotton-burger-content-among-pequeno = sus
 
 # TACO
 

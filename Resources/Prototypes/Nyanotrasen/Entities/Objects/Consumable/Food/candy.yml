@@ -1,9 +1,10 @@
-# SPDX-FileCopyrightText: 2023 Colin-Tel <113523727+Colin-Tel@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2023 Fluffiest Floofers <thebluewulf@gmail.com>
-# SPDX-FileCopyrightText: 2025 Rosycup <178287475+Rosycup@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Colin-Tel
+# SPDX-FileCopyrightText: 2023 Fluffiest Floofers
+# SPDX-FileCopyrightText: 2025 Rosycup
+# SPDX-FileCopyrightText: 2025 portfiend
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: entity
   parent: FoodBase
@@ -39,6 +40,9 @@
     quickEquip: false   # would block eating otherwise
   - type: Appearance
   - type: RandomizedCandy
+  - type: Tag # DEN - Add snack tag
+    tags:
+    - FoodSnack
 
 - type: entity
   parent: FoodBase
@@ -67,3 +71,6 @@
     - state: gumball-shine
   - type: Appearance
   - type: RandomizedCandy
+  - type: Tag # DEN - Add snack tag
+    tags:
+    - FoodSnack

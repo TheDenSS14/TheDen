@@ -1,7 +1,8 @@
-# SPDX-FileCopyrightText: 2025 BloodfiendishOperator <141253729+Diggy0@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 BloodfiendishOperator
+# SPDX-FileCopyrightText: 2025 pocl v
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 marking-FeatheredLegL = Feathered Leg L
 marking-FeatheredLegL-featheredlegl = Feathered Leg L
@@ -65,3 +66,26 @@ marking-TailBloom = Bloom
 marking-TailBloom-tailbloom1 = Flower
 marking-TailBloom-tailbloom2 = Flower
 marking-TailBloom-tailbloom3 = Bush
+
+# Underwear
+
+marking-UnderwearBriefsVoxAlt = Briefs (Soft)
+marking-UnderwearBriefsVoxAlt-briefs = Briefs
+
+marking-UnderwearHighWaisted = High Waisted
+marking-UnderwearHighWaisted-highwaisted = High Waisted
+
+marking-UnderwearIxixSpecial = Modest
+marking-UnderwearIxixSpecial-ixixspecial1 = Band
+marking-UnderwearIxixSpecial-ixixspecial2 = Cup
+
+marking-UnderwearLowridersV = Lowriders
+marking-UnderwearLowridersV-lowriders = Underwear
+
+marking-UnderwearStrappy = Belted
+marking-UnderwearStrappy-strappy1 = Belt
+marking-UnderwearStrappy-strappy2 = Belt
+marking-UnderwearStrappy-strappy3 = Underwear
+
+marking-UnderwearTangaV = Tanga
+marking-UnderwearTangaV-tanga = Underwear

@@ -94,6 +94,9 @@
         orGroup: CigCarton1
       - id: CigCartonRed
         orGroup: CigCarton1
+      - id: CigCartonSpirits # Imp
+        prob: 0.33
+        orGroup: CigCarton2
       - id: CigCartonBlue
         prob: 0.33 # DeltaV
         orGroup: CigCarton2
@@ -120,10 +123,8 @@
   components:
   - type: StorageFill
     contents:
-    - id: ClothingUniformJumpskirtPerformer
-    - id: ClothingShoesBootsPerformer
-    - id: ClothingOuterSuitMonkey
-    - id: ClothingHeadHatAnimalMonkey
+    - id: CostumeBundlePerformer
+    - id: CostumeBundleMonkey
     - id: ClothingNeckCloakMoth
     - id: ClothingMaskClown
     - id: ClothingMaskMime
@@ -137,11 +138,8 @@
     - id: ClownRecorder
     - id: ClothingBeltSuspenders
     # DEN - Impstation costume items
-    - id: ClothingHeadSailorCap
-    - id: ClothingNeckSailorAscot
-    - id: ClothingUniformSailorSuit
-    - id: ClothingMaskBurglar
-    - id: ClothingUniformBurglarJumpsuit
+    - id: CostumeBundleSailor
+    - id: CostumeBundleBurglar
     - id: ClothingUniformCavemanHides
     # End DEN
 
@@ -177,10 +175,21 @@
       amount: 2
     - id: HandLabeler
     - id: BoxFolderBlue
+      amount: 1
     - id: BoxFolderRed
+      amount: 1
     - id: BoxFolderYellow
+      amount: 1
     - id: NewtonCradle
     - id: BoxEnvelope
+    - id: BoxFolderBlack
+      amount: 1
+    - id: BoxFolderGrey
+      amount: 1
+    - id: BoxFolderGreen
+      amount: 1
+    - id: BoxReamClassic #DeltaV
+    - id: BoxReamBright #DeltaV
 
 - type: entity
   id: CrateServicePersonnel

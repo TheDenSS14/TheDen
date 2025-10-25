@@ -1,6 +1,8 @@
 # SPDX-FileCopyrightText: 2024 deltanedas
 # SPDX-FileCopyrightText: 2025 BombasterDS2
-# SPDX-FileCopyrightText: 2025 GoobBot
+# SPDX-FileCopyrightText: 2025 LilNutters
+# SPDX-FileCopyrightText: 2025 Winter
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -56,6 +58,20 @@
     interfaces:
       enum.TapeRecorderUIKey.Key:
         type: TapeRecorderBoundUserInterface
+  - type: Tag
+    tags:
+    - TapeRecorder
+  - type: DeviceNetwork
+    deviceNetId: Wireless
+    receiveFrequencyId: BasicDevice
+  - type: WirelessNetworkConnection
+    range: 200
+  - type: DeviceLinkSink
+    ports:
+    - Pause
+    - Record
+    - Playback
+    - Rewind
 
 - type: entity
   parent: TapeRecorder
@@ -79,7 +95,7 @@
     - state: tape_greyscale
       map: [ "enum.DamageStateVisualLayers.Base" ]
     - state: tape_ribbonoverlay
-      map: [ "enum.ToggleVisuals.Layer" ]
+      map: [ "enum.ToggleableVisuals.Layer" ]
       visible: false
   - type: Item
     size: Tiny
@@ -94,14 +110,17 @@
   - type: Appearance
   - type: GenericVisualizer
     visuals:
-      enum.ToggleVisuals.Toggled:
-        enum.ToggleVisuals.Layer:
+      enum.ToggleableVisuals.Enabled:
+        enum.ToggleableVisuals.Layer:
           True: { visible: true }
           False: { visible: false }
   - type: RandomSprite
     available:
     - enum.DamageStateVisualLayers.Base:
         tape_greyscale: Rainbow
+  - type: Tag
+    tags:
+    - CassetteTape
 
 - type: entity
   suffix: Interview with Garry Smosh

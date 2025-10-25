@@ -1,43 +1,37 @@
+# SPDX-FileCopyrightText: 2025 KekaniCreates
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 - type: latheRecipePack
   id: DocumentPrinterStaticAwfulDen
-  recipes:  
+  recipes:
   - PrintedDocumentReportStationRecipe
-  # - PrintedDocumentReportOnEliminationOfViolationsRecipe
   - PrintedDocumentReportDepartmentRecipe
   - PrintedDocumentReportEmployeePerformanceRecipe
   - PrintedDocumentReportOnTheChaptersMeetingRecipe
-  # - PrintedDocumentInternalAffairsAgentsReportRecipe
   - PrintedDocumentConditionReportRecipe
   - PrintedDocumentReportStudyObjectRecipe
-  #- PrintedDocumentExperimentReportRecipe
-  #- PrintedDocumentDisposalReportRecipe
   - PrintedDocumentApplicationAppointmentInterimRecipe
   - PrintedDocumentApplicationEmploymentRecipe
   - PrintedDocumentLetterResignationRecipe
   - PrintedDocumentApplicationAccessRecipe
   - PrintedDocumentApplicationEquipmentRecipe
-  #- PrintedDocumentAppealRecipe
   - PrintedDocumentEvacuationShuttleRequestRecipe
   - PrintedDocumentShuttleRegistrationRequestRecipe
-  #- PrintedDocumentRequestCallMembersCentralCommitteeDSORecipe
-  #- PrintedDocumentRequestRequestToEstablishThreatLevelRecipe
-  #- PrintedDocumentRequestChangeSalaryRecipe
   - PrintedDocumentRequestForNonlistedEmploymentRecipe
   - PrintedDocumentRequestForPromotionRecipe
   - PrintedDocumentRequestDocumentsRecipe
   - PrintedDocumentRequestEuthanasiaRecipe
   - PrintedDocumentRequestConstructionWorkRecipe
   - PrintedDocumentRequestModernizationRecipe
-  #- PrintedDocumentComplaintViolationLaborRulesRecipe
   - PrintedDocumentComplaintOffenseRecipe
   - PrintedDocumentPermissionEquipmentRecipe
-  #- PrintedDocumentPermissionToTravelInCaseOfThreatRecipe
   - PrintedDocumentSearchPermissionRecipe
   - PrintedDocumentPermissionToCarryWeaponsRecipe
   - PrintedDocumentPrescriptionDrugAuthorizationRecipe
   - PrintedDocumentPermissionDisposeBodyRecipe
   - PrintedDocumentConstructionPermitRecipe
-  #- PrintedDocumentPermissionToExtendMarriageRecipe
   - PrintedDocumentOrderDismissalRecipe
   - PrintedDocumentOrderDeprivationAccessRecipe
   - PrintedDocumentOrderEncouragementRecipe
@@ -45,10 +39,6 @@
   - PrintedDocumentOrderRecognizingSentienceCreatureRecipe
   - PrintedDocumentOrderMedicalInterventionRecipe
   - PrintedDocumentProductManufacturingOrderRecipe
-  #- PrintedDocumentOrderPurchaseResourcesEquipmentRecipe
-  #- PrintedDocumentOrderingSpecialEquipmentRecipe
-  #- PrintedDocumentOrderPurchaseWeaponsRecipe
-  #- PrintedDocumentCertificateRecipe
   - PrintedDocumentCertificateAdvancedTrainingRecipe
   - PrintedDocumentCertificateOffenseRecipe
   - PrintedDocumentDeathCertificateRecipe
@@ -56,9 +46,11 @@
   - PrintedDocumentDivorceCertificateRecipe
   - PrintedDocumentClosingIndictmentRecipe
   - PrintedDocumentSentenceRecipe
-  - PrintedDocumentJudgmentRecipe
   - PrintedDocumentStatementHealtheRecipe
   - PrintedDocumentDecisionToStartTrialRecipe
+  - PrintedDocumentPassengerApplicationRecipe
+  - PrintedDocumentSurgeryFormRecipe
+  - PrintedDocumentLetterRecipe
 
 - type: latheRecipePack
   id: DocumentPrinterStaticEmagAwfulDen

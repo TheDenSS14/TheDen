@@ -40,7 +40,7 @@ public abstract partial class CharacterLogicRequirement : CharacterRequirement
         IConfigurationManager configManager)
     {
         var depth = context.Depth ?? 0;
-        var characterRequirements = entityManager.EntitySysManager.GetEntitySystem<CharacterRequirementsSystem>();
+        var characterRequirements = entityManager.EntitySysManager.GetEntitySystem<SharedCharacterRequirementsSystem>();
         var deeperContext = context.WithDepth(depth + 1);
         var reasons = characterRequirements.GetReasons(Requirements,
             deeperContext,
@@ -82,7 +82,7 @@ public sealed partial class CharacterLogicAndRequirement : CharacterLogicRequire
     {
         var depth = context.Depth ?? 0;
         var deeperContext = context.WithDepth(depth + 1);
-        var characterRequirements = entityManager.EntitySysManager.GetEntitySystem<CharacterRequirementsSystem>();
+        var characterRequirements = entityManager.EntitySysManager.GetEntitySystem<SharedCharacterRequirementsSystem>();
 
         return characterRequirements.CheckRequirementsValid(Requirements,
             deeperContext,
@@ -108,7 +108,7 @@ public sealed partial class CharacterLogicOrRequirement : CharacterLogicRequirem
         IConfigurationManager configManager)
     {
         var depth = context.Depth ?? 0;
-        var characterRequirements = entityManager.EntitySysManager.GetEntitySystem<CharacterRequirementsSystem>();
+        var characterRequirements = entityManager.EntitySysManager.GetEntitySystem<SharedCharacterRequirementsSystem>();
         var deeperContext = context.WithDepth(depth + 1);
 
         foreach (var requirement in Requirements)
@@ -142,7 +142,7 @@ public sealed partial class CharacterLogicXorRequirement : CharacterLogicRequire
     {
         var depth = context.Depth ?? 0;
         var succeeded = false;
-        var characterRequirements = entityManager.EntitySysManager.GetEntitySystem<CharacterRequirementsSystem>();
+        var characterRequirements = entityManager.EntitySysManager.GetEntitySystem<SharedCharacterRequirementsSystem>();
         var deeperContext = context.WithDepth(depth + 1);
 
         foreach (var requirement in Requirements)

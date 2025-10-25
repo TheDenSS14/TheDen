@@ -19,9 +19,13 @@
 # SPDX-FileCopyrightText: 2024 neuPanda
 # SPDX-FileCopyrightText: 2024 router
 # SPDX-FileCopyrightText: 2025 DESKTOP-0V0K4HQ\Rosy
+# SPDX-FileCopyrightText: 2025 Eightballll
+# SPDX-FileCopyrightText: 2025 MajorMoth
+# SPDX-FileCopyrightText: 2025 RosySaturniidae
 # SPDX-FileCopyrightText: 2025 Sapphire
 # SPDX-FileCopyrightText: 2025 Tabitha
 # SPDX-FileCopyrightText: 2025 VMSolidus
+# SPDX-FileCopyrightText: 2025 pocl.v
 # SPDX-FileCopyrightText: 2025 portfiend
 # SPDX-FileCopyrightText: 2025 skyr0cket01
 # SPDX-FileCopyrightText: 2025 sleepyyapril
@@ -134,6 +138,7 @@
     - HarpyEmotes
     - ArachneEmotes
     - MothEmotes
+    - VoxEmotes
   blacklist:
     components:
     - BorgChassis
@@ -266,7 +271,28 @@
     - BorgChassis
   chatMessages: ["chat-emote-msg-salute"]
   chatTriggers:
+    - salute
+    - salute.
+    - salute!
     - salutes
+    - salutes.
+    - salutes!
+
+- type: emote
+  id: Gasp
+  name: chat-emote-name-gasp
+  icon: Interface/Emotes/vocal.png
+  whitelist:
+    components:
+    - Respirator
+  chatMessages: ["chat-emote-msg-gasp"]
+  chatTriggers:
+    - gasp
+    - gasp.
+    - gasp!
+    - gasps
+    - gasps.
+    - gasps!
 
 - type: emote
   id: DefaultDeathgasp
@@ -327,7 +353,8 @@
   name: chat-emote-name-chirp
   category: Vocal
   icon: Interface/Emotes/chirp.png
-  whitelist:
+  available: false
+  whitelist: #todo: make DionaEmotes tag & selectable trait
     requireAll: false
     components:
     - Nymph
@@ -335,8 +362,8 @@
     tags:
     - HarpyEmotes
   blacklist:
-    components:
-    - BorgChassis
+    tags:
+    - SiliconEmotes
   chatMessages: ["chat-emote-msg-chirp"]
   chatTriggers:
     - chirps

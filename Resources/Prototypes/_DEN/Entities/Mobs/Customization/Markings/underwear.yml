@@ -1,0 +1,201 @@
+# SPDX-FileCopyrightText: 2025 portfiend
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: marking
+  abstract: true
+  parent: [BaseSpeciesLegsStandard, BaseUnderpants]
+  id: BaseUnderwearSocks
+
+- type: marking
+  parent: BaseUnderwearSocks
+  id: UnderwearSocksAnkle
+  # what fucking ever man
+  layering:
+    ankle-left: LFoot
+    ankle-right: RFoot
+  colorLinks:
+    ankle-left: ankle-right
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Underwear/socks.rsi
+    state: ankle-left
+  - sprite: _DEN/Mobs/Customization/Underwear/socks.rsi
+    state: ankle-right
+
+- type: marking
+  parent: BaseUnderwearSocks
+  id: UnderwearSocksAnkleTips
+  coloring:
+    default:
+      type: !type:SimpleColoring
+          color: "#FFFFFF"
+    layers:
+      tips-right:
+        type: !type:SimpleColoring
+            color: "#999999"
+  layering:
+    ankle-left: LFoot
+    ankle-right: RFoot
+    tips-left: LFoot
+    tips-right: RFoot
+  colorLinks:
+    ankle-left: ankle-right
+    tips-left: tips-right
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Underwear/socks.rsi
+    state: ankle-left
+  - sprite: _DEN/Mobs/Customization/Underwear/socks.rsi
+    state: tips-left
+  - sprite: _DEN/Mobs/Customization/Underwear/socks.rsi
+    state: ankle-right
+  - sprite: _DEN/Mobs/Customization/Underwear/socks.rsi
+    state: tips-right
+
+- type: marking
+  parent: BaseUnderwearSocks
+  id: UnderwearSocksQuarter
+  layering:
+    quarter-left: LFoot
+    quarter-right: RFoot
+  colorLinks:
+    quarter-left: quarter-right
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Underwear/socks.rsi
+    state: quarter-left
+  - sprite: _DEN/Mobs/Customization/Underwear/socks.rsi
+    state: quarter-right
+
+- type: marking
+  parent: BaseUnderwearSocks
+  id: UnderwearSocksQuarterTips
+  coloring:
+    default:
+      type: !type:SimpleColoring
+          color: "#FFFFFF"
+    layers:
+      tips-right:
+        type: !type:SimpleColoring
+            color: "#999999"
+  layering:
+    quarter-left: LFoot
+    quarter-right: RFoot
+    tips-left: LFoot
+    tips-right: RFoot
+  colorLinks:
+    quarter-left: quarter-right
+    tips-left: tips-right
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Underwear/socks.rsi
+    state: quarter-left
+  - sprite: _DEN/Mobs/Customization/Underwear/socks.rsi
+    state: tips-left
+  - sprite: _DEN/Mobs/Customization/Underwear/socks.rsi
+    state: quarter-right
+  - sprite: _DEN/Mobs/Customization/Underwear/socks.rsi
+    state: tips-right
+
+- type: marking
+  parent: BaseUnderwearSocks
+  id: UnderwearSocksKnee
+  layering:
+    knee-left: LFoot
+    knee-right: RFoot
+  colorLinks:
+    knee-left: knee-right
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Underwear/socks.rsi
+    state: knee-left
+  - sprite: _DEN/Mobs/Customization/Underwear/socks.rsi
+    state: knee-right
+
+- type: marking
+  parent: BaseUnderwearSocks
+  id: UnderwearSocksKneeStripes
+  coloring:
+    default:
+      type: !type:SimpleColoring
+          color: "#FFFFFF"
+    layers:
+      stripes-knee-right:
+        type: !type:SimpleColoring
+            color: "#999999"
+      tips-right:
+        type: !type:SimpleColoring
+            color: "#999999"
+  layering:
+    knee-left: LFoot
+    knee-right: RFoot
+    stripes-knee-left: LFoot
+    stripes-knee-right: RFoot
+    tips-left: LFoot
+    tips-right: RFoot
+  colorLinks:
+    knee-left: knee-right
+    stripes-knee-left: stripes-knee-right
+    tips-left: tips-right
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Underwear/socks.rsi
+    state: knee-left
+  - sprite: _DEN/Mobs/Customization/Underwear/socks.rsi
+    state: stripes-knee-left
+  - sprite: _DEN/Mobs/Customization/Underwear/socks.rsi
+    state: tips-left
+  - sprite: _DEN/Mobs/Customization/Underwear/socks.rsi
+    state: knee-right
+  - sprite: _DEN/Mobs/Customization/Underwear/socks.rsi
+    state: stripes-knee-right
+  - sprite: _DEN/Mobs/Customization/Underwear/socks.rsi
+    state: tips-right
+
+- type: marking
+  parent: BaseUnderwearSocks
+  id: UnderwearSocksThigh
+  layering:
+    thigh-left: LFoot
+    thigh-right: RFoot
+  colorLinks:
+    thigh-left: thigh-right
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Underwear/socks.rsi
+    state: thigh-left
+  - sprite: _DEN/Mobs/Customization/Underwear/socks.rsi
+    state: thigh-right
+
+- type: marking
+  parent: BaseUnderwearSocks
+  id: UnderwearSocksThighStripes
+  coloring:
+    default:
+      type: !type:SimpleColoring
+          color: "#FFFFFF"
+    layers:
+      stripes-thigh-right:
+        type: !type:SimpleColoring
+            color: "#999999"
+      tips-right:
+        type: !type:SimpleColoring
+            color: "#999999"
+  layering:
+    thigh-left: LFoot
+    thigh-right: RFoot
+    stripes-thigh-left: LFoot
+    stripes-thigh-right: RFoot
+    tips-left: LFoot
+    tips-right: RFoot
+  colorLinks:
+    thigh-left: thigh-right
+    stripes-thigh-left: stripes-thigh-right
+    tips-left: tips-right
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Underwear/socks.rsi
+    state: thigh-left
+  - sprite: _DEN/Mobs/Customization/Underwear/socks.rsi
+    state: stripes-thigh-left
+  - sprite: _DEN/Mobs/Customization/Underwear/socks.rsi
+    state: tips-left
+  - sprite: _DEN/Mobs/Customization/Underwear/socks.rsi
+    state: thigh-right
+  - sprite: _DEN/Mobs/Customization/Underwear/socks.rsi
+    state: stripes-thigh-right
+  - sprite: _DEN/Mobs/Customization/Underwear/socks.rsi
+    state: tips-right

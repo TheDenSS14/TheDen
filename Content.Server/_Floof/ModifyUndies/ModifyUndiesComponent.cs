@@ -1,9 +1,11 @@
-// SPDX-FileCopyrightText: 2025 Aikakakah <145503852+Aikakakah@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aikakakah
+// SPDX-FileCopyrightText: 2025 portfiend
+// SPDX-FileCopyrightText: 2025 sleepyyapril
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 using Content.Shared.Humanoid;
+using Content.Shared.Humanoid.Markings;
 
 
 namespace Content.Server.FloofStation.ModifyUndies;
@@ -23,6 +25,13 @@ public sealed partial class ModifyUndiesComponent : Component
         HumanoidVisualLayers.Underwear,
         HumanoidVisualLayers.Undershirt
     ];
+
+    /// <summary>
+    /// DEN: Allow removing based on the category too.
+    /// </summary>
+    public HashSet<MarkingCategories> CategoryTargets =
+    [
+        MarkingCategories.Undershirt,
+        MarkingCategories.Underwear,
+    ];
 }
-
-

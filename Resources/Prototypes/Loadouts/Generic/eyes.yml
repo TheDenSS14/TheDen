@@ -1,12 +1,12 @@
-# SPDX-FileCopyrightText: 2024 Angelo Fallaria <ba.fallaria@gmail.com>
-# SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT <77995199+DEATHB4DEFEAT@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 Danger Revolution! <142105406+DangerRevolution@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 ShatteredSwords <135023515+ShatteredSwords@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 VMSolidus <evilexecutive@gmail.com>
-# SPDX-FileCopyrightText: 2025 Blitz <73762869+BlitzTheSquishy@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 Skubman <ba.fallaria@gmail.com>
-# SPDX-FileCopyrightText: 2025 Tirochora <leotabletdb@gmail.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Angelo Fallaria
+# SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT
+# SPDX-FileCopyrightText: 2024 Danger Revolution!
+# SPDX-FileCopyrightText: 2024 ShatteredSwords
+# SPDX-FileCopyrightText: 2024 VMSolidus
+# SPDX-FileCopyrightText: 2025 Blitz
+# SPDX-FileCopyrightText: 2025 Skubman
+# SPDX-FileCopyrightText: 2025 Tirochora
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -195,47 +195,67 @@
 - type: loadout
   id: LoadoutItemSunglasses
   category: Eyes
-  cost: 7
+  cost: 3
   exclusive: true
   items:
     - ClothingEyesGlassesSunglasses
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutEyes # TheDen
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Security
+        - Command
+        - Dignitary
 
 - type: loadout
   id: LoadoutEyesGlassesSunglassesAviator
   category: Eyes
-  cost: 7
+  cost: 3
   exclusive: true
   customColorTint: true
   items:
     - ClothingEyesGlassesSunglassesAviator
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutEyes
+      group: LoadoutEyes # TheDen
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Security
+        - Command
+        - Dignitary
 
 - type: loadout
   id: LoadoutEyesGlassesSunglassesBig
   category: Eyes
-  cost: 7
+  cost: 3
   exclusive: true
   items:
     - ClothingEyesGlassesSunglassesBig
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutEyes
+      group: LoadoutEyes # TheDen
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Security
+        - Command
+        - Dignitary
 
 - type: loadout
   id: LoadoutEyesGlassesSunglassesVisor
   category: Eyes
-  cost: 7
+  cost: 3
   exclusive: true
   items:
     - ClothingEyesGlassesSunglassesVisor
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutEyes
+      group: LoadoutEyes # TheDen
+    - !type:CharacterDepartmentRequirement
+      departments:
+        - Security
+        - Command
+        - Dignitary
 
 - type: loadout
   id: LoadoutItemBlindfoldFake

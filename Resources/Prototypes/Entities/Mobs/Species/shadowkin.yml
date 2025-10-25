@@ -1,9 +1,13 @@
 # SPDX-FileCopyrightText: 2024 FoxxoTrystan
+# SPDX-FileCopyrightText: 2025 ASaltySeabass
 # SPDX-FileCopyrightText: 2025 Eagle-0
 # SPDX-FileCopyrightText: 2025 Eris
+# SPDX-FileCopyrightText: 2025 MajorMoth
 # SPDX-FileCopyrightText: 2025 RocketBoss360
 # SPDX-FileCopyrightText: 2025 Rosycup
 # SPDX-FileCopyrightText: 2025 Sapphire
+# SPDX-FileCopyrightText: 2025 Shaman
+# SPDX-FileCopyrightText: 2025 Sir Warock
 # SPDX-FileCopyrightText: 2025 SixplyDev
 # SPDX-FileCopyrightText: 2025 Skubman
 # SPDX-FileCopyrightText: 2025 VMSolidus
@@ -14,12 +18,13 @@
 
 - type: entity
   save: false
-  parent:
-    - BaseMobSpeciesOrganic
+  parent: [BaseMobSpeciesOrganic, StorableSpecies] # TheDen
   id: MobShadowkinBase
   name: Urist McShadow
   abstract: true
   components:
+    - type: Inventory # TheDen - So they can have -shadowkin clothing sprites
+      speciesId: shadowkin
     - type: Destructible
       thresholds:
         - trigger:
@@ -60,6 +65,13 @@
           Heat: -0.07
         groups:
           Brute: -0.07
+    - type: AdditionalPassiveDamage #Take bloodloss instead of airloss in critical condition.
+      allowedStates:
+        - Critical
+      damageCap: 400
+      damage: 
+        types:
+          Bloodloss: 0.5
     - type: StatusEffects
       allowed:
         - Stun
@@ -133,7 +145,7 @@
           Bloodloss: 1
       bloodlossHealDamage:
         types:
-          Bloodloss: -0.25
+          Bloodloss: -0.5 #Takes bloodloss in critical, recovers it faster to compensate.
       bloodReagent: BlackBlood
     - type: Temperature
       heatDamageThreshold: 330
@@ -218,5 +230,7 @@
   categories: [ HideSpawnMenu ]
   description: A dummy shadowkin meant to be used in character setup.
   components:
+    - type: Inventory # TheDen - So they can have -shadowkin clothing sprites
+      speciesId: shadowkin
     - type: HumanoidAppearance
       species: Shadowkin

@@ -11,7 +11,7 @@
 # SPDX-FileCopyrightText: 2025 Tabitha
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: loadout
   id: LoadoutNeckHeadphones
@@ -508,6 +508,50 @@
   customColorTint: true
   items:
     - ClothingNeckTallit
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutNeck
+
+- type: loadout #TheDen
+  id: LoadoutNeckTallitWhiteBlue
+  category: Neck
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingTallitWhiteBlue
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutNeck
+
+- type: loadout #TheDen
+  id: LoadoutNeckTallitWhiteBlack
+  category: Neck
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingTallitWhiteBlack
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutNeck
+
+- type: loadout #TheDen
+  id: LoadoutNeckTallitBlackGold
+  category: Neck
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingTallitBlackGold
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutNeck
+
+- type: loadout #TheDen
+  id: LoadoutNeckTallitBlackWhite
+  category: Neck
+  cost: 0
+  exclusive: true
+  items:
+    - ClothingTallitBlackWhite
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutNeck

@@ -1,5 +1,13 @@
+# SPDX-FileCopyrightText: 2024 RumiTiger
+# SPDX-FileCopyrightText: 2025 Blitz
+# SPDX-FileCopyrightText: 2025 Eightballll
+# SPDX-FileCopyrightText: 2025 Jadrek
+# SPDX-FileCopyrightText: 2025 LilNutters
 # SPDX-FileCopyrightText: 2025 MajorMoth
+# SPDX-FileCopyrightText: 2025 Sir Warock
 # SPDX-FileCopyrightText: 2025 Tanix
+# SPDX-FileCopyrightText: 2025 pocl v
+# SPDX-FileCopyrightText: 2025 portfiend
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
@@ -8,6 +16,7 @@
 # There are existing packs for some of these recipes, and some which have items that don't exist. I'm sorry.
 
 - type: latheRecipePack
+  parent: [AutolatheStaticCandyBucketDen]
   id: AutolatheStaticAwfulDen
   recipes:
   - Wirecutter
@@ -22,12 +31,31 @@
   - AccessConfigurator
   - SprayPainter
   - FlashlightLantern
+  - Lantern # Den
   - CableStack
   - CableMVStack
   - CableHVStack
   - HandheldGPSBasic
   - TRayScanner
   - AirTank
+  - OxygenTank # Den
+  - NitrogenTank # Den
+  - NitrousOxideTank # Den
+  - WaterVaporTank # Den
+  - PlasmaTank # Den
+  - DoubleEmergencyOxygenTank # Den
+  - DoubleEmergencyNitrogenTank # Den
+  - DoubleEmergencyWaterVaporTank # Den
+  - DoubleEmergencyPlasmaTank # Den
+  - ExtendedEmergencyOxygenTank # Den
+  - ExtendedEmergencyNitrogenTank # Den
+  - ExtendedEmergencyWaterVaporTank # Den
+  - ExtendedEmergencyPlasmaTank # Den
+  - EmergencyOxygenTank # Den
+  - EmergencyNitrogenTank # Den
+  - EmergencyFunnyOxygenTank # Den
+  - EmergencyWaterVaporTank # Den
+  - EmergencyPlasmaTank # Den
   - GasAnalyzer
   - UtilityBelt
   - Fulton
@@ -44,8 +72,12 @@
   - LedLightTube
   - SodiumLightTube
   - ExteriorLightTube
+  - UvLightTube # imp
   - LightBulb
   - LedLightBulb
+  - DimLightBulb # wizden
+  - WarmLightBulb # wizden
+  - ColdLightBulb # imp
   - Bucket
   - DrinkMug
   - DrinkMugMetal
@@ -59,6 +91,7 @@
   - FoodPlateSmallPlastic
   - FoodBowlBig
   - FoodPlateTin
+  - FoodPlateMuffinTin
   - FoodKebabSkewer
   - IceCreamBowl
   - SprayBottle
@@ -113,10 +146,13 @@
   - MofficTranslator
   - N14MaterialCircuitry
   - VehicleWheelchairFolded # Goobstation
-  - TapeRecorder # Den
-  - CassetteTape # Den
-  - ClothingOuterVestTank # Den
-  - Ashtray # Den
+  - ClothingBeltPaperwork # DeltaV
+  # Den Additions
+  - TapeRecorder
+  - CassetteTape
+  - ClothingOuterVestTank
+  - Ashtray
+  - BoxFolderFireproof
 
 - type: latheRecipePack
   id: AutolatheEmagStaticAwfulDen
@@ -174,3 +210,17 @@
   - MagazineBoxShotgunUraniumHighCaliber # Goobstation
   - MagazineBoxShotgunBeanbagHighCaliber # Goobstation
   - MagazineBoxShotgunPracticeHighCaliber # Goobstation
+
+- type: latheRecipePack
+  id: AutolatheStaticCandyBucketDen
+  recipes:
+  - CandyBucket
+  - CandyBucketPailCat
+  - CandyBucketPailClown
+  - CandyBucketPailGhost
+  - CandyBucketPailPumpkin
+  - CandyBucketPailSkeleton
+  - CandyBucketPailPlain
+  - CandyBucketPailPlainRandom
+  - CandyBucketPailSmiley
+  - CandyBucketPailSmileyRandom

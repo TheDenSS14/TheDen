@@ -126,7 +126,10 @@
 # SPDX-FileCopyrightText: 2024 zelezniciar1
 # SPDX-FileCopyrightText: 2025 Aviu00
 # SPDX-FileCopyrightText: 2025 Blitz
+# SPDX-FileCopyrightText: 2025 Eightballll
 # SPDX-FileCopyrightText: 2025 Eris
+# SPDX-FileCopyrightText: 2025 Falcon
+# SPDX-FileCopyrightText: 2025 Jakumba
 # SPDX-FileCopyrightText: 2025 M3739
 # SPDX-FileCopyrightText: 2025 Rosycup
 # SPDX-FileCopyrightText: 2025 Skubman
@@ -1439,14 +1442,10 @@
   # Shitmed Change Start
   - type: SurgeryTarget
   - type: Targeting
-  - type: HumanoidAppearance
-    species: Monkey
   # Shitmed Change End
   - type: Inventory
     templateId: monkey
     speciesId: monkey
-  - type: Deathgasp
-    prototype: MonkeyDeathgasp
   - type: Cuffable
   - type: RotationVisuals
     defaultRotation: 90
@@ -1462,11 +1461,6 @@
         - MobMask
         layer:
         - MobLayer
-  - type: Stripping
-  - type: UserInterface
-    interfaces:
-      enum.SurgeryUIKey.Key:
-        type: SurgeryBui
   - type: Sprite
     drawdepth: Mobs
     layers:
@@ -1519,9 +1513,6 @@
         clownedon:
           True: {visible: true}
           False: {visible: false}
-  - type: Body # Shitmed Change
-    prototype: Monkey
-    requiredLegs: 2
   - type: CreamPied
   - type: FireVisuals
     sprite: Mobs/Effects/onfire.rsi
@@ -1567,6 +1558,15 @@
     - VimPilot
     - DoorBumpOpener
   - type: LeashAnchor # Floofstation
+  - type: Stripping # DEN
+  - type: Strippable # DEN
+  - type: UserInterface
+    interfaces:
+      enum.StrippingUiKey.Key:
+        type: StrippableBoundUserInterface
+      enum.SurgeryUIKey.Key:
+        type: SurgeryBui #Shitmed
+  - type: InventorySlots
 
 - type: entity
   name: monkey
@@ -1585,9 +1585,16 @@
     understands:
     - Monkey
     - Kobold
+  - type: HumanoidAppearance
+    species: Monkey
   - type: SentienceTarget
     flavorKind: station-event-random-sentience-flavor-primate
   - type: AlwaysRevolutionaryConvertible
+  - type: Deathgasp
+    prototype: MonkeyDeathgasp
+  - type: Body # Shitmed Change
+    prototype: Monkey
+    requiredLegs: 2
   - type: GhostRole
     prob: 0.05
     makeSentient: true
@@ -1610,7 +1617,7 @@
 - type: entity
   name: monkey
   id: MobBaseSyndicateMonkey
-  parent: MobBaseAncestor
+  parent: MobMonkey
   description: New church of neo-darwinists actually believe that EVERY animal evolved from a monkey. Tastes like pork, and killing them is both fun and relaxing.
   suffix: syndicate base
   components:
@@ -1963,9 +1970,9 @@
         Blunt: 0.1
   - type: Vocal
     sounds:
-      Male: Mouse
-      Female: Mouse
-      Unsexed: Mouse
+      Male: MouseSounds
+      Female: MouseSounds
+      Unsexed: MouseSounds
     wilhelmProbability: 0.001
   # TODO: Remove CombatMode when Prototype Composition is added
   - type: CombatMode
@@ -3219,6 +3226,12 @@
   - type: Speech
     speechSounds: Cat
     speechVerb: SmallMob
+    allowedEmotes: ['Scream','Hiss','Meow','Mew','Purr','Growl'] #TheDen
+  - type: Vocal #TheDen
+    sounds: #TheDen
+      Male: AnimalCat # TheDen
+      Female: AnimalCat # TheDen
+      Unsexed: AnimalCat # TheDen
   - type: Butcherable
     spawned:
     - id: FoodMeat
@@ -3252,6 +3265,7 @@
   - type: Tag
     tags:
     - VimPilot
+    - FelinidEmotes #TheDen
   - type: RandomBark
     barkType: cat
   - type: LeashAnchor # Floofstation
@@ -3354,6 +3368,7 @@
   - type: Tag
     tags:
       - DoorBumpOpener
+      - FelinidEmotes
   - type: MovementAlwaysTouching
   - type: PressureImmunity
   - type: ProtectedFromStepTriggers

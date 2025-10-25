@@ -5,12 +5,13 @@
 // SPDX-FileCopyrightText: 2024 VMSolidus
 // SPDX-FileCopyrightText: 2024 deltanedas
 // SPDX-FileCopyrightText: 2024 metalgearsloth
+// SPDX-FileCopyrightText: 2025 Dirius77
 // SPDX-FileCopyrightText: 2025 Skubman
 // SPDX-FileCopyrightText: 2025 dootythefrooty
 // SPDX-FileCopyrightText: 2025 portfiend
 // SPDX-FileCopyrightText: 2025 sleepyyapril
 //
-// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+// SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 using System.Linq;
 using Content.Client.Guidebook;
@@ -57,6 +58,7 @@ public sealed class LobbyUIController : UIController, IOnStateEntered<LobbyState
     [Dependency] private readonly MarkingManager _markings = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly JobRequirementsManager _jobRequirements = default!;
+    [Dependency] private readonly ILogManager _logManager = default!;
     [UISystemDependency] private readonly HumanoidAppearanceSystem _humanoid = default!;
     [UISystemDependency] private readonly ClientInventorySystem _inventory = default!;
     [UISystemDependency] private readonly GuidebookSystem _guide = default!;
@@ -252,7 +254,8 @@ public sealed class LobbyUIController : UIController, IOnStateEntered<LobbyState
             _resourceCache,
             _requirements,
             _markings,
-            _random);
+            _random,
+            _logManager);
 
         _profileEditor.OnOpenGuidebook += _guide.OpenHelp;
 
@@ -342,7 +345,13 @@ public sealed class LobbyUIController : UIController, IOnStateEntered<LobbyState
     /// Applies loadouts to the dummy.
     public void GiveDummyLoadout(EntityUid dummy, JobPrototype job, HumanoidCharacterProfile profile)
     {
-        _loadouts.ApplyCharacterLoadout(dummy, job, profile, _jobRequirements.GetRawPlayTimeTrackers(), _jobRequirements.IsWhitelisted(), out _);
+        _loadouts.ApplyCharacterLoadout(dummy,
+            job,
+            profile,
+            _jobRequirements.GetRawPlayTimeTrackers(),
+            _jobRequirements.IsWhitelisted(),
+            out _,
+            player: _playerManager.LocalSession);
     }
 
     /// Loads the profile onto a dummy entity

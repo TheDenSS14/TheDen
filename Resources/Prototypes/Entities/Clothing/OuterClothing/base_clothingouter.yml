@@ -31,7 +31,7 @@
 # SPDX-FileCopyrightText: 2025 VividPups
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: entity
   abstract: true
@@ -223,6 +223,11 @@
     coefficient: 0.75 # 25%
   - type: ProtectedFromStepTriggers
     slots: WITHOUT_POCKET
+  - type: DamageOnInteractProtection
+    damageProtection:
+      flatReductions:
+        Heat: 10 # the average lightbulb only does around four damage!
+    slots: OUTERCLOTHING
   - type: DamageOtherOnHit
     damage:
       types:
@@ -361,6 +366,11 @@
     unequipDelay: 1
   - type: ProtectedFromStepTriggers
     slots: WITHOUT_POCKET
+  - type: DamageOnInteractProtection
+    damageProtection:
+      flatReductions:
+        Heat: 10 # the average lightbulb only does around four damage!
+    slots: OUTERCLOTHING
   - type: Fixtures
     fixtures:
       fix1:

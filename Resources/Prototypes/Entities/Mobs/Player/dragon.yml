@@ -55,7 +55,6 @@
 # SPDX-FileCopyrightText: 2024 NakataRin
 # SPDX-FileCopyrightText: 2024 Nemanja
 # SPDX-FileCopyrightText: 2024 OrangeMoronage9622
-# SPDX-FileCopyrightText: 2024 PJBot
 # SPDX-FileCopyrightText: 2024 Partmedia
 # SPDX-FileCopyrightText: 2024 Pieter-Jan Briers
 # SPDX-FileCopyrightText: 2024 Piras314
@@ -89,7 +88,6 @@
 # SPDX-FileCopyrightText: 2024 eoineoineoin
 # SPDX-FileCopyrightText: 2024 fishbait
 # SPDX-FileCopyrightText: 2024 foboscheshir
-# SPDX-FileCopyrightText: 2024 github-actions[bot]
 # SPDX-FileCopyrightText: 2024 gluesniffler
 # SPDX-FileCopyrightText: 2024 godisdeadLOL
 # SPDX-FileCopyrightText: 2024 lzk
@@ -114,7 +112,6 @@
 # SPDX-FileCopyrightText: 2025 Aviu00
 # SPDX-FileCopyrightText: 2025 Errant
 # SPDX-FileCopyrightText: 2025 ExponentialWizard
-# SPDX-FileCopyrightText: 2025 GoobBot
 # SPDX-FileCopyrightText: 2025 Ilya246
 # SPDX-FileCopyrightText: 2025 Jakumba
 # SPDX-FileCopyrightText: 2025 Rinary
@@ -146,7 +143,7 @@
       enum.SurgeryUIKey.Key:
         type: SurgeryBui
   - type: Bloodstream
-    maxBleedAmount: 450
+    maxBleedAmount: 150
     bloodMaxVolume: 650
     bloodReagent: ShimmeringBlood # Imp - Gives dragon drug blood.
   - type: GhostRole
@@ -377,7 +374,7 @@
   description: For dragon's breathing.
   components:
   - type: RechargeBasicEntityAmmo
-    rechargeCooldown: 15
+    rechargeCooldown: 7
     rechargeSound:
       path: /Audio/Animals/space_dragon_roar.ogg
   - type: BasicEntityAmmoProvider
@@ -470,7 +467,7 @@
       sprite: _Goobstation/Actions/dragon.rsi
       state: carp_horde
     event: !type:DragonSpawnCarpHordeActionEvent
-    useDelay: 90
+    useDelay: 60
     priority: 4
 
 - type: entity

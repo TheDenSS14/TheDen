@@ -1,0 +1,21 @@
+# SPDX-FileCopyrightText: 2025 bigsantino1
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: localizedDataset
+  id: ForceSayStringDataset
+  values:
+    prefix: damage-force-say-
+    count: 7
+
+- type: localizedDataset
+  id: ForceSaySleepDataset
+  values:
+    prefix: damage-force-say-sleep-
+    count: 1
+
+- type: localizedDataset
+  id: ForceSayNumbDataset
+  values:
+    prefix: damage-force-say-numb-
+    count: 5

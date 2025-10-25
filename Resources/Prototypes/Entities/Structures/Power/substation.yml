@@ -1,40 +1,106 @@
 # SPDX-FileCopyrightText: 2021 Swept
-# SPDX-FileCopyrightText: 2022 CommieFlowers
 # SPDX-FileCopyrightText: 2022 Errant
 # SPDX-FileCopyrightText: 2022 Jack Fox
 # SPDX-FileCopyrightText: 2022 Jacob Tong
+# SPDX-FileCopyrightText: 2022 Leon Friedrich
 # SPDX-FileCopyrightText: 2022 Moony
 # SPDX-FileCopyrightText: 2022 Paul Ritter
 # SPDX-FileCopyrightText: 2022 Peptide90
 # SPDX-FileCopyrightText: 2022 corentt
+# SPDX-FileCopyrightText: 2022 metalgearsloth
 # SPDX-FileCopyrightText: 2022 rolfero
 # SPDX-FileCopyrightText: 2023 Cody ~ Aexxie
 # SPDX-FileCopyrightText: 2023 DrSmugleaf
+# SPDX-FileCopyrightText: 2023 Kara
 # SPDX-FileCopyrightText: 2023 Kevin Zheng
 # SPDX-FileCopyrightText: 2023 Kit0vras
-# SPDX-FileCopyrightText: 2023 Leon Friedrich
 # SPDX-FileCopyrightText: 2023 Morb
+# SPDX-FileCopyrightText: 2023 Nemanja
 # SPDX-FileCopyrightText: 2023 Tom Leys
 # SPDX-FileCopyrightText: 2023 Vordenburg
 # SPDX-FileCopyrightText: 2023 chromiumboy
 # SPDX-FileCopyrightText: 2023 lzk
-# SPDX-FileCopyrightText: 2023 metalgearsloth
 # SPDX-FileCopyrightText: 2023 qwerltaz
-# SPDX-FileCopyrightText: 2024 Kara
-# SPDX-FileCopyrightText: 2024 Nemanja
 # SPDX-FileCopyrightText: 2024 Tayrtahn
 # SPDX-FileCopyrightText: 2024 VMSolidus
 # SPDX-FileCopyrightText: 2024 WarMechanic
-# SPDX-FileCopyrightText: 2025 Pieter-Jan Briers
-# SPDX-FileCopyrightText: 2025 sleepyyapril
+# SPDX-FileCopyrightText: 2024 sleepyyapril
+# SPDX-FileCopyrightText: 2025 Blitz
+# SPDX-FileCopyrightText: 2025 MajorMoth
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+# Core logic shared between regular and wall-mount substation
+- type: entity
+  abstract: true
+  id: CoreSubstation
+  components:
+  # Core power behavior
+  - type: Battery
+  - type: ExaminableBattery
+  - type: NodeContainer
+    examinable: true
+    nodes:
+      input:
+        !type:CableDeviceNode
+        nodeGroupID: HVPower
+      output:
+        !type:CableDeviceNode
+        nodeGroupID: MVPower
+  - type: BatteryCharger
+    voltage: High
+  - type: BatteryDischarger
+    voltage: Medium
+  - type: PowerNetworkBattery
+    maxSupply: 150000
+    maxChargeRate: 5000
+    supplyRampTolerance: 5000
+    supplyRampRate: 1000
+  - type: StationInfiniteBatteryTarget
+
+  # Interface
+  - type: BatteryInterface
+    minChargeRate: 5000
+    maxChargeRate: 150000
+    minSupply: 5000
+    maxSupply: 150000
+  - type: UserInterface
+    interfaces:
+      enum.BatteryUiKey.Key:
+        type: BatteryBoundUserInterface
+  - type: ActivatableUI
+    key: enum.BatteryUiKey.Key
+
+  - type: PowerMonitoringDevice
+    group: Substation
+    sourceNode: input
+    loadNode: output
+    collectionName: substation
+
+  # Damage
+  - type: Damageable
+    damageContainer: StructuralInorganic
+    damageModifierSet: StructuralMetallicStrong
+  - type: PacifismDangerousAttack
+
+  # Guidebook
+  - type: GuideHelp
+    guides:
+#     - VoltageNetworks - DEN TODO: Port voltagenetworks guide
+    - Power
+
+  # Ambient sound
+  - type: AmbientOnPowered
+  - type: AmbientSound
+    volume: -5
+    sound:
+      path: /Audio/Ambience/Objects/buzzing.ogg
 
 # Base substation
 - type: entity
   abstract: true
   id: BaseSubstation
-  parent: [ BaseMachine, ConstructibleMachine ]
+  parent: [ CoreSubstation, BaseMachine, ConstructibleMachine ]
   name: substation
   description: Reduces the voltage of electricity put into it.
   placement:
@@ -57,49 +123,22 @@
     supplyRampingMultiplier: 1
   - type: Battery
     startingCharge: 0
-  - type: ExaminableBattery
   - type: PointLight
     radius: 1.5
     energy: 1.6
     color: "#3db83b"
     castShadows: false
-  - type: NodeContainer
-    examinable: true
-    nodes:
-      input:
-        !type:CableDeviceNode
-        nodeGroupID: HVPower
-      output:
-        !type:CableDeviceNode
-        nodeGroupID: MVPower
   - type: PowerMonitoringDevice
-    group: Substation
-    sourceNode: input
-    loadNode: output
-    collectionName: substation
     sprite: Structures/Power/substation.rsi
     state: substation_static
-  - type: BatteryCharger
-    voltage: High
-  - type: BatteryDischarger
-    voltage: Medium
-  - type: PowerNetworkBattery
-    maxSupply: 150000
-    maxChargeRate: 5000
-    supplyRampTolerance: 5000
-    supplyRampRate: 1000
-  - type: Damageable
-    damageContainer: Inorganic
-    damageModifierSet: StrongMetallic
-  - type: PacifismDangerousAttack
   - type: Destructible
     thresholds:
     - trigger:
         !type:DamageTrigger
         damage: 200
       behaviors:
-        - !type:DoActsBehavior
-          acts: [ "Destruction" ]
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
     - trigger:
         !type:DamageTrigger
         damage: 100
@@ -119,9 +158,7 @@
         gasMixture:
           volume: 1000
           moles:
-            - 0 # oxygen
-            - 0 # nitrogen
-            - 340.5701689 # carbon dioxide
+            CarbonDioxide: 340.5701689
           temperature: 373.15
   - type: Explosive
     explosionType: Default
@@ -131,13 +168,8 @@
   - type: WiresPanel
   - type: Machine
     board: SubstationMachineCircuitboard
-  - type: StationInfiniteBatteryTarget
-  - type: AmbientOnPowered
   - type: AmbientSound
-    volume: -5
     range: 3
-    sound:
-      path: /Audio/Ambience/Objects/buzzing.ogg
   - type: Electrified
     onHandInteract: false
     onInteractUsing: false
@@ -146,34 +178,18 @@
     highVoltageNode: input
     mediumVoltageNode: output
 
-  # Interface
-  - type: BatteryInterface
-    minChargeRate: 5000
-    maxChargeRate: 150000
-    minSupply: 5000
-    maxSupply: 150000
-  - type: UserInterface
-    interfaces:
-      enum.BatteryUiKey.Key:
-        type: BatteryBoundUserInterface
-  - type: ActivatableUI
-    key: enum.BatteryUiKey.Key
-
 # Compact Wall Substation Base
 - type: entity
   id: BaseSubstationWall
+  parent: CoreSubstation
   categories: [ HideSpawnMenu ]
   name: wallmount substation
   description: A substation designed for compact shuttles and spaces.
   placement:
     mode: SnapgridCenter
   components:
-  - type: AmbientOnPowered
   - type: AmbientSound
-    volume: -5
     range: 2
-    sound:
-      path: /Audio/Ambience/Objects/buzzing.ogg
   - type: PointLight
     radius: 1.5
     energy: 1.6
@@ -181,8 +197,6 @@
     netsync: false
     castShadows: false
   - type: Clickable
-  - type: AccessReader
-    access: [["Engineering"]]
   - type: ContainerFill
     containers:
       board: [ WallmountSubstationElectronics ]
@@ -206,43 +220,17 @@
   - type: Battery
     maxCharge: 2000000
     startingCharge: 0
-  - type: ExaminableBattery
-  - type: NodeContainer
-    examinable: true
-    nodes:
-      input:
-        !type:CableDeviceNode
-        nodeGroupID: HVPower
-      output:
-        !type:CableDeviceNode
-        nodeGroupID: MVPower
   - type: PowerMonitoringDevice
-    group: Substation
-    sourceNode: input
-    loadNode: output
     sprite: Structures/Power/substation.rsi
     state: substation_wall_static
-  - type: BatteryCharger
-    voltage: High
-  - type: BatteryDischarger
-    voltage: Medium
-  - type: PowerNetworkBattery
-    maxSupply: 150000
-    maxChargeRate: 5000
-    supplyRampTolerance: 5000
-    supplyRampRate: 1000
-  - type: Damageable
-    damageContainer: Inorganic
-    damageModifierSet: Metallic
-  - type: PacifismDangerousAttack
   - type: Destructible
     thresholds:
     - trigger:
         !type:DamageTrigger
         damage: 200
       behaviors:
-        - !type:DoActsBehavior
-          acts: [ "Destruction" ]
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
     - trigger:
         !type:DamageTrigger
         damage: 100
@@ -261,7 +249,6 @@
     maxIntensity: 50
     intensitySlope: 2
     totalIntensity: 100
-  - type: StationInfiniteBatteryTarget
   - type: WallMount
 
 # Substations in use
@@ -302,7 +289,7 @@
       capacitor: !type:Container
       powercell: !type:Container
 
-# Construction Frame
+      # Construction Frame
 - type: entity
   id: BaseSubstationWallFrame
   categories: [ HideSpawnMenu ]

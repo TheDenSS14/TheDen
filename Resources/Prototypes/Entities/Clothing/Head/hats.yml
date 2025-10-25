@@ -63,10 +63,14 @@
 # SPDX-FileCopyrightText: 2025 Blitz
 # SPDX-FileCopyrightText: 2025 GNUtopia
 # SPDX-FileCopyrightText: 2025 Rosycup
+# SPDX-FileCopyrightText: 2025 SeamLesss
+# SPDX-FileCopyrightText: 2025 Shaman
 # SPDX-FileCopyrightText: 2025 Sir Warock
 # SPDX-FileCopyrightText: 2025 Skubman
+# SPDX-FileCopyrightText: 2025 Vanessa
 # SPDX-FileCopyrightText: 2025 Your Name
 # SPDX-FileCopyrightText: 2025 fishbait
+# SPDX-FileCopyrightText: 2025 portfiend
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
@@ -540,6 +544,7 @@
   - type: PressureProtection # DeltaV - Make real wizard clothes space proof
     highPressureMultiplier: 0.6
     lowPressureMultiplier: 1000
+  - type: BreathMask # TheDen - All pressure-resistant headwear should have built-in internals
   - type: TemperatureProtection
     heatingCoefficient: 0.2
     coolingCoefficient: 0.2
@@ -626,7 +631,7 @@
     - WhitelistChameleon
 
 - type: entity
-  parent: [ClothingHeadBase, BaseFoldable]
+  parent: [ClothingHeadWinterHatBase, BaseFoldable] # DEN: Winter hat
   id: ClothingHeadHatUshanka
   name: ushanka
   description: "Perfect for winter in Siberia, da?"
@@ -664,6 +669,7 @@
   - type: PressureProtection # DeltaV - Make real wizard clothes space proof
     highPressureMultiplier: 0.6
     lowPressureMultiplier: 1000
+  - type: BreathMask # TheDen - All pressure-resistant headwear should have built-in internals
   - type: TemperatureProtection
     heatingCoefficient: 0.2
     coolingCoefficient: 0.2
@@ -736,6 +742,7 @@
   - type: PressureProtection # DeltaV - Make real wizard clothes space proof
     highPressureMultiplier: 0.6
     lowPressureMultiplier: 1000
+  - type: BreathMask # TheDen - All pressure-resistant headwear should have built-in internals
   - type: TemperatureProtection
     heatingCoefficient: 0.2
     coolingCoefficient: 0.2
@@ -1035,6 +1042,8 @@
     sprite: Clothing/Head/Hats/capcap.rsi
   - type: Clothing
     sprite: Clothing/Head/Hats/capcap.rsi
+  - type: Item
+    sprite: Clothing/Head/Hats/capcap.rsi
   - type: Tag
     tags:
     - ClothMade
@@ -1054,6 +1063,8 @@
   - type: Sprite
     sprite: Clothing/Head/Hats/comcap.rsi
   - type: Clothing
+    sprite: Clothing/Head/Hats/comcap.rsi
+  - type: Item
     sprite: Clothing/Head/Hats/comcap.rsi
   - type: Tag
     tags:
@@ -1306,7 +1317,7 @@
     sprite: Clothing/Head/Hats/flatcap_orion.rsi
 
 - type: entity
-  parent: ClothingHeadBase
+  parent: ClothingHeadWinterHatBase # DEN: Winter hat
   id: ClothingHeadHatBeanie
   name: beanie
   description: A head-hugging brimless winter cap. This one is tight.
@@ -1315,12 +1326,12 @@
     sprite: Clothing/Head/Hats/beanie.rsi
   - type: Clothing
     sprite: Clothing/Head/Hats/beanie.rsi
-  - type: TemperatureProtection
-    heatingCoefficient: 0.6
-    coolingCoefficient: 0.5
+  # - type: TemperatureProtection # DEN - Replace with winter hat protection
+  #   heatingCoefficient: 0.6
+  #   coolingCoefficient: 0.5
 
 - type: entity
-  parent: ClothingHeadBase
+  parent: ClothingHeadWinterHatBase # DEN: Winter hat
   id: ClothingHeadHatBeanieWinter
   name: winter beanie
   description: A head-hugging brimless winter cap. This one has flaps that cover the ears.
@@ -1329,11 +1340,11 @@
     sprite: Clothing/Head/Hats/beanie_winter.rsi
   - type: Clothing
     sprite: Clothing/Head/Hats/beanie_winter.rsi
-  - type: TemperatureProtection
-    coolingCoefficient: 0.5
+  # - type: TemperatureProtection # DEN - Replace with winter hat protection
+  #   coolingCoefficient: 0.5
 
 - type: entity
-  parent: ClothingHeadBase
+  parent: ClothingHeadWinterHatBase # DEN: Winter hat
   id: ClothingHeadHatBeanieSubmariner
   name: submariner beanie
   description: A design of tightly fitting beanie popular among Submarine station workers.
@@ -1342,11 +1353,11 @@
     sprite: Clothing/Head/Hats/beanie_submariner.rsi
   - type: Clothing
     sprite: Clothing/Head/Hats/beanie_submariner.rsi
-  - type: TemperatureProtection
-    coolingCoefficient: 0.5
+  # - type: TemperatureProtection # DEN - Replace with winter hat protection
+  #   coolingCoefficient: 0.5
 
 - type: entity
-  parent: ClothingHeadBase
+  parent: ClothingHeadWinterHatBase # DEN: Winter hat
   id: ClothingHeadHatBeanieTight
   name: tight beanie
   description: A rather tight beanie that hides your hair.
@@ -1355,8 +1366,8 @@
     sprite: Clothing/Head/Hats/beanie_tight.rsi
   - type: Clothing
     sprite: Clothing/Head/Hats/beanie_tight.rsi
-  - type: TemperatureProtection
-    coolingCoefficient: 0.5
+  # - type: TemperatureProtection # DEN - Replace with winter hat protection
+  #   coolingCoefficient: 0.5
   - type: HideLayerClothing
     slots:
     - Hair
@@ -1385,7 +1396,7 @@
 
 # Nuclear 14 hats
 - type: entity
-  parent: ClothingHeadBase
+  parent: ClothingHeadWinterHatBase # DEN: Winter hat
   id: ClothingHeadHatBeanieGreen
   name: green beanie
   description: A dark green beanie.

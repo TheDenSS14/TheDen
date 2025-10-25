@@ -1,0 +1,53 @@
+# SPDX-FileCopyrightText: 2025 Shaman
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  parent: ClothingOuterWinterCoat
+  id: ClothingOuterCoatPufferMime
+  name: mime puffer coat
+  description: An oversized puffer coat made of high-quality nothing.
+  components:
+  - type: Sprite
+    sprite: _Impstation/Clothing/OuterClothing/Coats/big_puffercoat_mime.rsi
+  - type: Clothing
+    slots:
+      - OUTERCLOTHING
+    sprite: _Impstation/Clothing/OuterClothing/Coats/big_puffercoat_mime.rsi
+
+- type: entity
+  parent: ClothingOuterWinterCoat
+  id: ClothingOuterCoatPufferSilver
+  name: huge puffer coat
+  description: An oversized puffer coat made of a high-quality nylon.
+  components:
+  - type: Sprite
+    sprite: _Impstation/Clothing/OuterClothing/Coats/big_puffercoat_silver.rsi
+  - type: Clothing
+    slots:
+      - OUTERCLOTHING
+    sprite: _Impstation/Clothing/OuterClothing/Coats/big_puffercoat_silver.rsi
+
+- type: entity
+  parent: ClothingOuterStorageBase
+  id: ClothingOuterCoatWebSweater
+  name: web sweater
+  description: A soft, comfy sweater made of spider silk. Surprisingly light and breezy. Whoever made this must have put a lot of heart into it.
+  components:
+  - type: Sprite
+    sprite: _Impstation/Clothing/OuterClothing/Coats/websweater.rsi
+  - type: Clothing
+    sprite: _Impstation/Clothing/OuterClothing/Coats/websweater.rsi
+  - type: Butcherable
+    butcheringType: Knife
+    spawned:
+    - id: MaterialWebSilk1
+      amount: 10
+  - type: FlavorProfile
+    flavors:
+      - cobwebs
+    ignoreReagents:
+      - Fiber
+  - type: Construction
+    graph: WebObjects
+    node: websweater

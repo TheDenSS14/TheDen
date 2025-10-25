@@ -1,10 +1,12 @@
 # SPDX-FileCopyrightText: 2025 Blitz
 # SPDX-FileCopyrightText: 2025 BlitzTheSquishy
+# SPDX-FileCopyrightText: 2025 CrystalClover
 # SPDX-FileCopyrightText: 2025 Rosycup
+# SPDX-FileCopyrightText: 2025 Shaman
 # SPDX-FileCopyrightText: 2025 Sir Warock
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: loadout
   id: LoadoutMedicalEyesGlassesMedicalVisor
@@ -101,7 +103,7 @@
     - !type:CharacterDepartmentRequirement
       departments:
         - Medical
-        
+
 - type: loadout
   id: LoadoutMedicalHeadMirror
   category: JobsMedicalAUncategorized
@@ -120,6 +122,7 @@
   id: LoadoutMedicalOuterCoatBomberMedical # Can also butcher the other version to get this
   category: JobsMedicalAUncategorized
   cost: 0
+  exclusive: true
   items:
     -  ClothingOuterCoatBomberMedical
   requirements:
@@ -139,6 +142,7 @@
   id: LoadoutMedicalOuterCoatBomberMedicalLoose # Can also butcher the other version to get this
   category: JobsMedicalAUncategorized
   cost: 0
+  exclusive: true
   items:
     -  ClothingOuterCoatBomberMedicalLoose
   requirements:

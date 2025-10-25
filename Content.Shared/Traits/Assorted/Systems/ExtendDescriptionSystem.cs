@@ -13,7 +13,7 @@ namespace Content.Shared.Traits.Assorted.Systems;
 
 public sealed class ExtendDescriptionSystem : EntitySystem
 {
-    [Dependency] private readonly CharacterRequirementsSystem _characterRequirements = default!;
+    [Dependency] private readonly SharedCharacterRequirementsSystem _characterRequirements = default!;
 
     public override void Initialize()
     {
