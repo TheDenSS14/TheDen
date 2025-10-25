@@ -1964,9 +1964,6 @@ namespace Content.Client.Lobby.UI
 
                 hadLastJob = true;
 
-                Logger.Debug("Job Loadouts Dict:\n" +
-                    string.Join("\n", Profile.JobLoadouts.Select(kvp =>
-                        $"{kvp.Key}:\n  - " + string.Join("\n  - ", kvp.Value.Select(v => v.LoadoutName)))));
             }
             if (Profile is not null)
             {
