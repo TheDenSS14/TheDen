@@ -92,11 +92,11 @@ marking-ArachnidLLegSegments-segments2 = Shin
 
 # FacialHair
 
-# Hair
+# Hair (Den - labelled as Arachnid hair for searchability)
 
-marking-SpiderHair1 = Fluffy
-marking-SpiderHair2 = Long Horned
-marking-SpiderHair3 = Wisps
+marking-SpiderHair1 = Fluffy (Arachnid)
+marking-SpiderHair2 = Long Horned (Arachnid)
+marking-SpiderHair3 = Wisps (Arachnid)
 
 # HeadSide
 
