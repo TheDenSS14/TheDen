@@ -59,48 +59,49 @@ public sealed partial class LoadoutJobActionsWindow : FancyWindow
 
     public void Update()
     {
-        if (_profileEditor is not null)
+        if (_profileEditor == null)
+            return;
+
+        var jobediting = _profileEditor.Profile?.GetHighestPriorityJob() ?? String.Empty;
+        if (_prototypeManager.TryIndex<JobPrototype>(jobediting, out var jobPrototype))
+            LoadoutLabel.Text = Loc.GetString(jobPrototype.LocalizedName);
+        else
+            LoadoutLabel.Text = "Invalid job: this is a bug :(";
+
+        DeleteSavedLoadoutAction.Disabled = true;
+        if ((_profileEditor.Profile?.JobTraits.TryGetValue(_jobPrototype.ID, out _) ?? false)
+            || (_profileEditor.Profile?.JobLoadouts.TryGetValue(_jobPrototype.ID, out _) ?? false))
+            DeleteSavedLoadoutAction.Disabled = false;
+
+        /// idk how to do this better, please tell me :(
+        var tooltip = Loc.GetString("loadout-job-action-tooltip-generic", ("currentJob", LoadoutLabel.Text), ("targetJob", _jobPrototype.LocalizedName));;
+
+        CopyTraitsAction.ToolTip = tooltip;
+        CopyLoadoutAction.ToolTip = tooltip;
+        CopyBothAction.ToolTip = tooltip;
+        DeleteSavedLoadoutAction.ToolTip = Loc.GetString("loadout-job-action-tooltip-delete", ("targetJob", _jobPrototype.LocalizedName));
+
+        CopyTraitsAllAction.Disabled = true;
+        CopyLoadoutsAllAction.Disabled = true;
+        CopyBothAllAction.Disabled = true;
+        CopyTraitsAllAction.ToolTip = "";
+        CopyLoadoutsAllAction.ToolTip = "";
+        CopyBothAllAction.ToolTip = "";
+
+        if (_profileEditor.Profile?.GetHighestPriorityJob() == _jobPrototype.ID)
         {
-            var jobediting = _profileEditor.Profile?.GetHighestPriorityJob() ?? String.Empty;
-            if (_prototypeManager.TryIndex<JobPrototype>(jobediting, out var jobPrototype))
-                LoadoutLabel.Text = Loc.GetString(jobPrototype.LocalizedName);
-            else
-                LoadoutLabel.Text = "Invalid job: this is a bug :(";
-
-            DeleteSavedLoadoutAction.Disabled = true;
-            if ((_profileEditor.Profile?.JobTraits.TryGetValue(_jobPrototype.ID, out _) ?? false)
-                || (_profileEditor.Profile?.JobLoadouts.TryGetValue(_jobPrototype.ID, out _) ?? false))
-                DeleteSavedLoadoutAction.Disabled = false;
-
-            /// idk how to do this better, please tell me :(
-            var tooltip = Loc.GetString("loadout-job-action-tooltip-generic", ("currentJob", LoadoutLabel.Text), ("targetJob", _jobPrototype.LocalizedName));;
-
-            CopyTraitsAction.ToolTip = tooltip;
-            CopyLoadoutAction.ToolTip = tooltip;
-            CopyBothAction.ToolTip = tooltip;
-            DeleteSavedLoadoutAction.ToolTip = Loc.GetString("loadout-job-action-tooltip-delete", ("targetJob", _jobPrototype.LocalizedName));
-
-            CopyTraitsAllAction.Disabled = true;
-            CopyLoadoutsAllAction.Disabled = true;
-            CopyBothAllAction.Disabled = true;
-            CopyTraitsAllAction.ToolTip = "";
-            CopyLoadoutsAllAction.ToolTip = "";
-            CopyBothAllAction.ToolTip = "";
-
-            if (_profileEditor.Profile?.GetHighestPriorityJob() == _jobPrototype.ID)
-            {
-                CopyTraitsAllAction.Disabled = false;
-                CopyLoadoutsAllAction.Disabled = false;
-                CopyBothAllAction.Disabled = false;
-            }
-            else
-            {
-                CopyTraitsAllAction.ToolTip = Loc.GetString("loadout-job-action-tooltip-to-all-error");
-                CopyLoadoutsAllAction.ToolTip = Loc.GetString("loadout-job-action-tooltip-to-all-error");
-                CopyBothAllAction.ToolTip = Loc.GetString("loadout-job-action-tooltip-to-all-error");
-            }
-
+            CopyTraitsAllAction.Disabled = false;
+            CopyLoadoutsAllAction.Disabled = false;
+            CopyBothAllAction.Disabled = false;
         }
+        else
+        {
+            CopyTraitsAllAction.ToolTip = Loc.GetString("loadout-job-action-tooltip-to-all-error");
+            CopyLoadoutsAllAction.ToolTip = Loc.GetString("loadout-job-action-tooltip-to-all-error");
+            CopyBothAllAction.ToolTip = Loc.GetString("loadout-job-action-tooltip-to-all-error");
+            }
+
+
 
     }
     private void OnCopyTraits()
