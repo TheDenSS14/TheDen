@@ -125,7 +125,7 @@ namespace Content.Client.Options.UI.Tabs
             // ToggleWalk.OnToggled += OnCheckBoxToggled;
             StaticStorageUI.OnToggled += OnCheckBoxToggled;
             ModernProgressBar.OnToggled += OnCheckBoxToggled;
-            IgnoreCryoMessages.OnToggled += OnCheckBoxToggled;
+            IgnoreCryoMessages.OnToggled += OnCheckBoxToggled; // DEN
             ChatExtraInfo.OnToggled += OnCheckBoxToggled;
             DisableFiltersCheckBox.OnToggled += OnCheckBoxToggled;
             AutoFillHighlightsCheckBox.OnPressed += _ => UpdateApplyButton();
@@ -164,7 +164,7 @@ namespace Content.Client.Options.UI.Tabs
             AutoFillHighlightsCheckBox.Pressed = _cfg.GetCVar(DCCVars.ChatAutoFillHighlights);
             ChatHighlightingColorpicker.SelectorType = ColorSelectorSliders.ColorSelectorType.Hsv;
             ChatHighlightingColorpicker.Color = Color.FromHex(_cfg.GetCVar(DCCVars.ChatHighlightsColor));
-            IgnoreCryoMessages.Pressed = _cfg.GetCVar(CCVars.IgnoreCryoMessage);
+            IgnoreCryoMessages.Pressed = _cfg.GetCVar(CCVars.IgnoreCryoMessage); // DEN
 
             ApplyButton.OnPressed += OnApplyButtonPressed;
             UpdateApplyButton();
@@ -262,7 +262,7 @@ namespace Content.Client.Options.UI.Tabs
             _cfg.SetCVar(CCVars.ChatExtraInfo, ChatExtraInfo.Pressed);
             _cfg.SetCVar(DCCVars.ChatAutoFillHighlights, AutoFillHighlightsCheckBox.Pressed);
             _cfg.SetCVar(DCCVars.ChatHighlightsColor, ChatHighlightingColorpicker.Color.ToHex());
-            _cfg.SetCVar(CCVars.IgnoreCryoMessage, IgnoreCryoMessages.Pressed);
+            _cfg.SetCVar(CCVars.IgnoreCryoMessage, IgnoreCryoMessages.Pressed); // DEN
 
             if (HudLayoutOption.SelectedMetadata is string opt)
             {
@@ -307,7 +307,7 @@ namespace Content.Client.Options.UI.Tabs
             var isChatStackTheSame = ChatStackOption.SelectedId == _cfg.GetCVar(CCVars.ChatStackLastLines);
             var isAutoFillHighlightSame = AutoFillHighlightsCheckBox.Pressed == _cfg.GetCVar(DCCVars.ChatAutoFillHighlights);
             var isChatHighlighingColorpickerSame = ChatHighlightingColorpicker.Color == Color.FromHex(_cfg.GetCVar(DCCVars.ChatHighlightsColor));
-            var isIgnoreCryoMessageSame = IgnoreCryoMessages.Pressed == _cfg.GetCVar(CCVars.IgnoreCryoMessage);//den
+            var isIgnoreCryoMessageSame = IgnoreCryoMessages.Pressed == _cfg.GetCVar(CCVars.IgnoreCryoMessage);// DEN
 
             ApplyButton.Disabled = isHudThemeSame &&
                                    isLayoutSame &&

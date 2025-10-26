@@ -67,6 +67,7 @@ public sealed partial class CryostorageSystem : SharedCryostorageSystem
     [Dependency] private readonly TransformSystem _transform = default!;
     [Dependency] private readonly UserInterfaceSystem _ui = default!;
 
+    // DEN - Client option to receive Cryosleep Messages.
     partial void InitializeIgnoreMessage();
     partial void DispatchStationAnnouncement(EntityUid source, string message);
 
@@ -81,7 +82,7 @@ public sealed partial class CryostorageSystem : SharedCryostorageSystem
         SubscribeLocalEvent<CryostorageContainedComponent, PlayerSpawnCompleteEvent>(OnPlayerSpawned);
         SubscribeLocalEvent<CryostorageContainedComponent, MindRemovedMessage>(OnMindRemoved);
 
-        InitializeIgnoreMessage();
+        InitializeIgnoreMessage(); // DEN
 
         _playerManager.PlayerStatusChanged += PlayerStatusChanged;
     }
@@ -258,6 +259,7 @@ public sealed partial class CryostorageSystem : SharedCryostorageSystem
         }
 
         // DEN - Don't broadcast if the person chose to enter cryo silently.
+        // Also use a custom function so that the receivers can be filtered.
         if (!TryComp<CryoingSilentlyComponent>(ent, out var silentCryo))
         {
             DispatchStationAnnouncement(station.Value, Loc.GetString(

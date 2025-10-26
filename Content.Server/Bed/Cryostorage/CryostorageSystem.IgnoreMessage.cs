@@ -11,7 +11,7 @@ using Robust.Shared.Utility;
 
 namespace Content.Server.Bed.Cryostorage;
 
-
+// Extend the CryostorageSystem to handle client-sided options related to receiving Cryosleep Announcements
 public sealed partial class CryostorageSystem : SharedCryostorageSystem
 {
     [Dependency] private readonly StationSystem _stationSystem = default!;

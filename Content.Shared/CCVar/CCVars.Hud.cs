@@ -38,7 +38,7 @@ public sealed partial class CCVars
         CVarDef.Create("hud.chat_extra_info", true, CVar.CLIENTONLY | CVar.ARCHIVE);
 
     /// <summary>
-    ///     Stops the server from sending the station broadcast about people cryoing to this client.
+    ///     DEN: Stops the server from sending the station broadcast about people cryoing to this client.
     /// </summary>
     public static readonly CVarDef<bool> IgnoreCryoMessage =
         CVarDef.Create("hud.ignore_cryo_message", false, CVar.CLIENTONLY | CVar.ARCHIVE);
