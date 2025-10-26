@@ -35,3 +35,4 @@ job-name-alternate-chief-of-medicine = Chief of Medicine
 job-name-alternate-medical-director = Medical Director
 job-name-alternate-head-of-medicine = Head of Medicine
 job-name-alternate-dean-of-medicine = Dean of Medicine
+job-name-alternate-director-of-care = Director of Care
