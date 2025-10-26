@@ -21,6 +21,7 @@ job-name-alternate-field-medic = Field Medic
 # Detective
 job-name-alternate-inspector = Inspector
 job-name-alternate-investigator = Investigator
+job-name-alternate-gumshoe = Gumshoe
 
 # Warden
 job-name-alternate-armorer = Armorer
