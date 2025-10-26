@@ -102,7 +102,7 @@ namespace Content.Server.Database
                     .ThenInclude(h => h.Loadouts)
                 .Include(p => p.Profiles)
                     .ThenInclude(h => h.AlternateJobTitles)
-                .AsSingleQuery()
+                .AsSplitQuery()
                 .SingleOrDefaultAsync(p => p.UserId == userId.UserId, cancel);
 
             if (prefs is null)

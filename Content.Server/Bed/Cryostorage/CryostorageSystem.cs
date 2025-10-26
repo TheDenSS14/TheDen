@@ -1,16 +1,16 @@
-// SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT <77995199+DEATHB4DEFEAT@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 Ed <96445749+TheShuEd@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 Tayrtahn <tayrtahn@gmail.com>
-// SPDX-FileCopyrightText: 2024 Winkarst <74284083+Winkarst-cpu@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 c4llv07e <38111072+c4llv07e@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 lunarcomets <140772713+lunarcomets@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 Falcon <falcon@zigtag.dev>
-// SPDX-FileCopyrightText: 2025 VMSolidus <evilexecutive@gmail.com>
-// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 sleepyyapril <flyingkarii@gmail.com>
+// SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT
+// SPDX-FileCopyrightText: 2024 Ed
+// SPDX-FileCopyrightText: 2024 Nemanja
+// SPDX-FileCopyrightText: 2024 Tayrtahn
+// SPDX-FileCopyrightText: 2024 Winkarst
+// SPDX-FileCopyrightText: 2024 c4llv07e
+// SPDX-FileCopyrightText: 2024 lunarcomets
+// SPDX-FileCopyrightText: 2025 Dirius77
+// SPDX-FileCopyrightText: 2025 Falcon
+// SPDX-FileCopyrightText: 2025 VMSolidus
+// SPDX-FileCopyrightText: 2025 sleepyyapril
 //
-// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+// SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 using Content.Server.Chat.Managers;
 using Content.Server.Chat.Systems;
@@ -42,6 +42,8 @@ using Robust.Shared.Enums;
 using Robust.Shared.Network;
 using Robust.Shared.Player;
 using System.Globalization;
+using Content.Shared._DEN.Bed.Cryostorage.Components;
+
 
 namespace Content.Server.Bed.Cryostorage;
 
@@ -250,14 +252,20 @@ public sealed class CryostorageSystem : SharedCryostorageSystem
             _stationRecords.RemoveRecord(key, stationRecords);
         }
 
-        _chatSystem.DispatchStationAnnouncement(station.Value,
-            Loc.GetString(
-                "earlyleave-cryo-announcement",
-                ("character", name),
-                ("job", CultureInfo.CurrentCulture.TextInfo.ToTitleCase(jobName))
-            ), Loc.GetString("earlyleave-cryo-sender"),
-            playDefaultSound: false
-        );
+        // DEN - Don't broadcast if the person chose to enter cryo silently.
+        if (!TryComp<CryoingSilentlyComponent>(ent, out var silentCryo))
+            _chatSystem.DispatchStationAnnouncement(
+                station.Value,
+                Loc.GetString(
+                    "earlyleave-cryo-announcement",
+                    ("character", name),
+                    ("job", CultureInfo.CurrentCulture.TextInfo.ToTitleCase(jobName))
+                ),
+                Loc.GetString("earlyleave-cryo-sender"),
+                playDefaultSound: false
+            );
+        else
+            RemCompDeferred(ent, silentCryo);
     }
 
     private void HandleCryostorageReconnection(Entity<CryostorageContainedComponent> entity)

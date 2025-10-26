@@ -4,47 +4,16 @@
 #
 # SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
-# Special Papers
-
+# Base Paper
 - type: entity
   parent: Paper
-  id: PaperDyedMed
-  suffix: med
+  id: PrintedDocument
+  abstract: true
+  description: Bureaucratic unit. A document printed on a printer.
   components:
-  - type: Sprite
-    sprite: Objects/Misc/bureaucracy.rsi
-    layers:
-    - state: paper
-      color: "#EBF9FF"
-    - state: paper_words
-      map: ["enum.PaperVisualLayers.Writing"]
-      color: "#EBF9FF"
-      visible: false
-    - state: paper_stamp-generic
-      map: ["enum.PaperVisualLayers.Stamp"]
-      visible: false
-  - type: PaperVisuals
-    backgroundModulate: "#EBF9FF"
+    - type: Paper
 
-- type: entity
-  parent: Paper
-  id: PaperDyedEpi
-  suffix: epi
-  components:
-  - type: Sprite
-    sprite: Objects/Misc/bureaucracy.rsi
-    layers:
-    - state: paper
-      color: "#F1DCFC"
-    - state: paper_words
-      map: ["enum.PaperVisualLayers.Writing"]
-      color: "#F1DCFC"
-      visible: false
-    - state: paper_stamp-generic
-      map: ["enum.PaperVisualLayers.Stamp"]
-      visible: false
-  - type: PaperVisuals
-    backgroundModulate: "#F1DCFC"
+# Security Papers
 
 - type: entity
   parent: Paper
@@ -63,48 +32,94 @@
     - state: paper_stamp-generic
       map: ["enum.PaperVisualLayers.Stamp"]
       visible: false
+  - type: PaperLabelType
+    paperType: Security
   - type: PaperVisuals
     backgroundModulate: "#FFD6D6"
+    headerImagePath: "/Textures/_DEN/Interface/Paper/security.png"
+    headerMargin: 0.0, 0.0, 0.0, 0.0
 
 - type: entity
-  parent: Paper
-  id: PaperDyedEngi
-  suffix: engi
+  parent: PaperDyedSec
+  id: PrintedDocumentReportStation
+  name: Report on the situation at the station
   components:
-  - type: Sprite
-    sprite: Objects/Misc/bureaucracy.rsi
-    layers:
-    - state: paper
-      color: "#FFF2E5"
-    - state: paper_words
-      map: ["enum.PaperVisualLayers.Writing"]
-      color: "#FFF2E5"
-      visible: false
-    - state: paper_stamp-generic
-      map: ["enum.PaperVisualLayers.Stamp"]
-      visible: false
-  - type: PaperVisuals
-    backgroundModulate: "#FFF2E5"
+    - type: Paper
+      content: doc-text-printer-report-station
 
 - type: entity
-  parent: Paper
-  id: PaperDyedLaw
-  suffix: law
+  parent: PaperDyedSec
+  id: PrintedDocumentRequestEuthanasia
+  name: Request for euthanasia
   components:
-  - type: Sprite
-    sprite: Objects/Misc/bureaucracy.rsi
-    layers:
-    - state: paper
-      color: "#E0E0E0"
-    - state: paper_words
-      map: ["enum.PaperVisualLayers.Writing"]
-      color: "#E0E0E0"
-      visible: false
-    - state: paper_stamp-generic
-      map: ["enum.PaperVisualLayers.Stamp"]
-      visible: false
-  - type: PaperVisuals
-    backgroundModulate: "#E0E0E0"
+  - type: Paper
+    content: doc-text-printer-request-euthanasia
+
+- type: entity
+  parent: PaperDyedSec
+  id: PrintedDocumentComplaintOffense
+  name: Complaint about an offense
+  components:
+  - type: Paper
+    content: doc-text-printer-complaint-offense
+
+- type: entity
+  parent: PaperDyedSec
+  id: PrintedDocumentPermissionEquipment
+  name: Authorization to use equipment
+  components:
+  - type: Paper
+    content: doc-text-printer-permission-equipment
+
+- type: entity
+  parent: PaperDyedSec
+  id: PrintedDocumentSearchPermission
+  name: Authorization to search
+  components:
+  - type: Paper
+    content: doc-text-printer-search-permission
+
+- type: entity
+  parent: PaperDyedSec
+  id: PrintedDocumentPermissionToCarryWeapons
+  name: Permission to carry weapons
+  components:
+  - type: Paper
+    content: doc-text-printer-permission-to-carry-weapons
+
+- type: entity
+  parent: PaperDyedSec
+  id: PrintedDocumentPermissionDisposeBody
+  name: Authorization to dispose of the body
+  components:
+  - type: Paper
+    content: doc-text-printer-permission-dispose-body
+
+- type: entity
+  parent: PaperDyedSec
+  id: PrintedDocumentOrderParolePrisoner
+  name: Prisoner parole order
+  components:
+  - type: Paper
+    content: doc-text-printer-order-parole-prisoner
+
+- type: entity
+  parent: PaperDyedSec
+  id: PrintedDocumentCertificateOffense
+  name: Certificate of Offense
+  components:
+  - type: Paper
+    content: doc-text-printer-certificate-offense
+
+- type: entity
+  parent: PaperDyedSec
+  id: PrintedDocumentClosingIndictment
+  name: Indictment
+  components:
+  - type: Paper
+    content: doc-text-printer-closing-indictment
+
+# Human Resources/HoP papers
 
 - type: entity
   parent: Paper
@@ -125,43 +140,7 @@
       visible: false
   - type: PaperVisuals
     backgroundModulate: "#E3F0FF"
-
-- type: entity
-  parent: Paper
-  id: PaperDyedElevated
-  suffix: Elevated
-  components:
-  - type: Sprite
-    sprite: Objects/Misc/bureaucracy.rsi
-    layers:
-    - state: paper
-      color: "#F6FFE5"
-    - state: paper_words
-      map: ["enum.PaperVisualLayers.Writing"]
-      color: "#F6FFE5"
-      visible: false
-    - state: paper_stamp-generic
-      map: ["enum.PaperVisualLayers.Stamp"]
-      visible: false
-  - type: PaperVisuals
-    backgroundModulate: "#F6FFE5"
-
-# Actual Printed Documents
-- type: entity
-  parent: Paper
-  id: PrintedDocument
-  abstract: true
-  description: Bureaucratic unit. A document printed on a printer.
-  components:
-    - type: Paper
-
-- type: entity
-  parent: PaperDyedSec
-  id: PrintedDocumentReportStation
-  name: Report on the situation at the station
-  components:
-    - type: Paper
-      content: doc-text-printer-report-station
+    headerImagePath: "/Textures/_DEN/Interface/Paper/HoP.png"
 
 - type: entity
   parent: PaperDyedHoP
@@ -180,372 +159,68 @@
       content: doc-text-printer-report-employee-performance
 
 - type: entity
-  parent: PaperDyedElevated
-  id: PrintedDocumentReportOnTheChaptersMeeting
-  name: Report on chapter meeting
-  components:
-    - type: Paper
-      content: doc-text-printer-report-on-the-chapters-meeting
-
-- type: entity
-  parent: PaperDyedEngi
-  id: PrintedDocumentConditionReport
-  name: Report on technical condition
-  components:
-    - type: Paper
-      content: doc-text-printer-condition-report
-
-- type: entity
-  parent: PaperDyedEpi
-  id: PrintedDocumentReportStudyObject
-  name: Report on object Investigation
-  components:
-    - type: Paper
-      content: doc-text-printer-report-study-object
-
-- type: entity
-  parent: PaperDyedMed
-  id: PrintedDocumentDisposalReport
-  name: Disposal report
-  components:
-    - type: Paper
-      content: doc-text-printer-disposal-report
-
-- type: entity
   parent: PaperDyedHoP
   id: PrintedDocumentApplicationAppointmentInterim
   name: Statement of Appointment to the Temporary Acting Authority
   components:
-    - type: Paper
-      content: doc-text-printer-application-appointment-interim
+  - type: Paper
+    content: doc-text-printer-application-appointment-interim
 
 - type: entity
   parent: PaperDyedHoP
   id: PrintedDocumentApplicationEmployment
   name: Statement of Employment
   components:
-    - type: Paper
-      content: doc-text-printer-application-employment
+  - type: Paper
+    content: doc-text-printer-application-employment
 
 - type: entity
   parent: PaperDyedHoP
   id: PrintedDocumentLetterResignation
   name: Statement of Dismissal
   components:
-    - type: Paper
-      content: doc-text-printer-letter-resignation
+  - type: Paper
+    content: doc-text-printer-letter-resignation
 
 - type: entity
   parent: PaperDyedHoP
   id: PrintedDocumentApplicationAccess
   name: Statement of access
   components:
-    - type: Paper
-      content: doc-text-printer-application-access
-
-- type: entity
-  parent: PaperCargoBountyManifest
-  id: PrintedDocumentApplicationEquipment
-  name: Statement for equipment
-  components:
-    - type: Paper
-      content: doc-text-printer-application-equipment
-
-- type: entity
-  parent: PaperDyedElevated
-  id: PrintedDocumentEvacuationShuttleRequest
-  name: Evacuation Shuttle Request
-  components:
-    - type: Paper
-      content: doc-text-printer-evacuation-shuttle-request
-
-- type: entity
-  parent: PaperDyedEngi
-  id: PrintedDocumentShuttleRegistrationRequest
-  name: Shuttle registration request
-  components:
-    - type: Paper
-      content: doc-text-printer-shuttle-registration-request
+  - type: Paper
+    content: doc-text-printer-application-access
 
 - type: entity
   parent: PaperDyedHoP
   id: PrintedDocumentRequestForNonlistedEmployment
   name: Request for non-listed employment
   components:
-    - type: Paper
-      content: doc-text-printer-request-for-non-listed-employment
+  - type: Paper
+    content: doc-text-printer-request-for-non-listed-employment
 
 - type: entity
   parent: PaperDyedHoP
   id: PrintedDocumentRequestForPromotion
   name: Request for promotion
   components:
-    - type: Paper
-      content: doc-text-printer-request-for-promotion
-
-- type: entity
-  parent: PaperDyedLaw
-  id: PrintedDocumentRequestDocuments
-  name: Request for the provision of documents
-  components:
-    - type: Paper
-      content: doc-text-printer-request-documents
-
-- type: entity
-  parent: PaperDyedSec
-  id: PrintedDocumentRequestEuthanasia
-  name: Request for euthanasia
-  components:
-    - type: Paper
-      content: doc-text-printer-request-euthanasia
-
-- type: entity
-  parent: PaperDyedEngi
-  id: PrintedDocumentRequestConstructionWork
-  name: Request for construction works
-  components:
-    - type: Paper
-      content: doc-text-printer-request-construction-work
-
-- type: entity
-  parent: PaperDyedEpi
-  id: PrintedDocumentRequestModernization
-  name: Request for modernization
-  components:
-    - type: Paper
-      content: doc-text-printer-request-modernization
-
-- type: entity
-  parent: PaperDyedSec
-  id: PrintedDocumentComplaintOffense
-  name: Complaint about an offense
-  components:
-    - type: Paper
-      content: doc-text-printer-complaint-offense
-
-- type: entity
-  parent: PaperDyedSec
-  id: PrintedDocumentPermissionEquipment
-  name: Authorization to use equipment
-  components:
-    - type: Paper
-      content: doc-text-printer-permission-equipment
-
-- type: entity
-  parent: PaperDyedSec
-  id: PrintedDocumentSearchPermission
-  name: Authorization to search
-  components:
-    - type: Paper
-      content: doc-text-printer-search-permission
-
-- type: entity
-  parent: PaperDyedSec
-  id: PrintedDocumentPermissionToCarryWeapons
-  name: Permission to carry weapons
-  components:
-    - type: Paper
-      content: doc-text-printer-permission-to-carry-weapons
-
-- type: entity
-  parent: PaperDyedMed
-  id: PrintedDocumentPrescriptionDrugAuthorization
-  name: Prescription Drug Authorization
-  components:
-    - type: Paper
-      content: doc-text-printer-prescription-drug-authorization
-
-- type: entity
-  parent: PaperDyedSec
-  id: PrintedDocumentPermissionDisposeBody
-  name: Authorization to dispose of the body
-  components:
-    - type: Paper
-      content: doc-text-printer-permission-dispose-body
-
-- type: entity
-  parent: PaperDyedEngi
-  id: PrintedDocumentConstructionPermit
-  name: Building permit
-  components:
-    - type: Paper
-      content: doc-text-printer-construction-permit
+  - type: Paper
+    content: doc-text-printer-request-for-promotion
 
 - type: entity
   parent: PaperDyedHoP
   id: PrintedDocumentOrderDismissal
   name: Dismissal order
   components:
-    - type: Paper
-      content: doc-text-printer-order-dismissal
+  - type: Paper
+    content: doc-text-printer-order-dismissal
 
 - type: entity
   parent: PaperDyedHoP
   id: PrintedDocumentOrderDeprivationAccess
   name: Denial of access order
   components:
-    - type: Paper
-      content: doc-text-printer-order-deprivation-access
-
-- type: entity
-  parent: PaperDyedElevated
-  id: PrintedDocumentOrderEncouragement
-  name: Incentive order
-  components:
-    - type: Paper
-      content: doc-text-printer-order-encouragement
-
-- type: entity
-  parent: PaperDyedSec
-  id: PrintedDocumentOrderParolePrisoner
-  name: Prisoner parole order
-  components:
-    - type: Paper
-      content: doc-text-printer-order-parole-prisoner
-
-- type: entity
-  parent: PaperDyedEpi
-  id: PrintedDocumentOrderRecognizingSentienceCreature
-  name: An order recognizing the reasonableness of the substance
-  components:
-    - type: Paper
-      content: doc-text-printer-order-recognizing-sentience-creature
-
-- type: entity
-  parent: PaperDyedMed
-  id: PrintedDocumentOrderMedicalIntervention
-  name: Order for medical intervention
-  components:
-    - type: Paper
-      content: doc-text-printer-order-medical-intervention
-
-- type: entity
-  parent: PaperCargoBountyManifest
-  id: PrintedDocumentProductManufacturingOrder
-  name: Order for the production of a product
-  components:
-    - type: Paper
-      content: doc-text-printer-product-manufacturing-order
-
-- type: entity
-  parent: PaperDyedEpi
-  id: PrintedDocumentCertificate
-  name: Certificate
-  components:
-    - type: Paper
-      content: doc-text-printer-certificate
-
-- type: entity
-  parent: PaperDyedElevated
-  id: PrintedDocumentCertificateAdvancedTraining
-  name: Certificate of advanced training
-  components:
-    - type: Paper
-      content: doc-text-printer-certificate-advanced-training
-
-- type: entity
-  parent: PaperDyedSec
-  id: PrintedDocumentCertificateOffense
-  name: Certificate of Offense
-  components:
-    - type: Paper
-      content: doc-text-printer-certificate-offense
-
-- type: entity
-  parent: PaperDyedMed
-  id: PrintedDocumentDeathCertificate
-  name: Death certificate
-  components:
-    - type: Paper
-      content: doc-text-printer-death-certificate
-
-- type: entity
-  parent: PaperDyedLaw
-  id: PrintedDocumentMarriageCertificate
-  name: Marriage certificate
-  components:
-    - type: Paper
-      content: doc-text-printer-marriage-certificate
-
-- type: entity
-  parent: PaperDyedLaw
-  id: PrintedDocumentDivorceCertificate
-  name: Certificate of divorce
-  components:
-    - type: Paper
-      content: doc-text-printer-divorce-certificate
-
-- type: entity
-  parent: PaperDyedSec
-  id: PrintedDocumentClosingIndictment
-  name: Indictment
-  components:
-    - type: Paper
-      content: doc-text-printer-closing-indictment
-
-- type: entity
-  parent: PaperDyedLaw
-  id: PrintedDocumentSentence
-  name: Sentence
-  components:
-    - type: Paper
-      content: doc-text-printer-sentence
-
-- type: entity
-  parent: PaperDyedMed
-  id: PrintedDocumentStatementHealth
-  name: Health report
-  components:
-    - type: Paper
-      content: doc-text-printer-statement-health
-
-- type: entity
-  parent: PaperDyedLaw
-  id: PrintedDocumentDecisionToStartTrial
-  name: Decision to start a trial
-  components:
-    - type: Paper
-      content: doc-text-printer-decision-to-start-trial
-
-- type: entity
-  parent: PaperDyedSec
-  id: PrintedDocumentErrorLoadingFormHeader
-  name: ERROR loading form header
-  components:
-    - type: Paper
-      content: doc-text-printer-error-loading-form-header
-
-- type: entity
-  parent: PaperDyedSec
-  id: PrintedDocumentNoticeOfLiquidation
-  name: NOTICE OF LIQUIDATION
-  components:
-    - type: Paper
-      content: doc-text-printer-notice-of-liquidation
-
-- type: entity
-  parent: PaperDyedSec
-  id: PrintedDocumentBusinessDeal
-  name: BUSINESS DEAL
-  components:
-    - type: Paper
-      content: doc-text-printer-business-deal
-
-- type: entity
-  parent: PaperDyedSec
-  id: PrintedDocumentNoteBeginningMilitaryActions
-  name: NOTE BEGINNING MILITARY ACTIONS
-  components:
-    - type: Paper
-      content: doc-text-printer-note-beginning-military-actions
-
-- type: entity
-  parent: PaperDyedSec
-  id: PrintedDocumentReportAccomplishmentGoals
-  name: REPORT ACCOMPLISHMENT GOALS
-  components:
-    - type: Paper
-      content: doc-text-printer-report-accomplishment-goals
+  - type: Paper
+    content: doc-text-printer-order-deprivation-access
 
 - type: entity
   parent: PaperDyedHoP
@@ -554,6 +229,170 @@
   components:
   - type: Paper
     content: doc-text-printer-passenger-application
+
+# Epistemics Papers
+- type: entity
+  parent: Paper
+  id: PaperDyedEpi
+  suffix: epi
+  components:
+  - type: Sprite
+    sprite: Objects/Misc/bureaucracy.rsi
+    layers:
+    - state: paper
+      color: "#F1DCFC"
+    - state: paper_words
+      map: ["enum.PaperVisualLayers.Writing"]
+      color: "#F1DCFC"
+      visible: false
+    - state: paper_stamp-generic
+      map: ["enum.PaperVisualLayers.Stamp"]
+      visible: false
+  - type: PaperVisuals
+    backgroundModulate: "#F1DCFC"
+    headerImagePath: "/Textures/_DEN/Interface/Paper/epistemics.png"
+
+- type: entity
+  parent: PaperDyedEpi
+  id: PrintedDocumentReportStudyObject
+  name: Report on object Investigation
+  components:
+  - type: Paper
+    content: doc-text-printer-report-study-object
+
+- type: entity
+  parent: PaperDyedEpi
+  id: PrintedDocumentRequestModernization
+  name: Request for modernization
+  components:
+  - type: Paper
+    content: doc-text-printer-request-modernization
+
+- type: entity
+  parent: PaperDyedEpi
+  id: PrintedDocumentOrderRecognizingSentienceCreature
+  name: An order recognizing the reasonableness of the substance
+  components:
+  - type: Paper
+    content: doc-text-printer-order-recognizing-sentience-creature
+
+- type: entity
+  parent: PaperDyedEpi
+  id: PrintedDocumentCertificate
+  name: Certificate
+  components:
+  - type: Paper
+    content: doc-text-printer-certificate
+
+# Engineering Papers
+- type: entity
+  parent: Paper
+  id: PaperDyedEngi
+  suffix: engi
+  components:
+  - type: Sprite
+    sprite: Objects/Misc/bureaucracy.rsi
+    layers:
+    - state: paper
+      color: "#FFF2E5"
+    - state: paper_words
+      map: ["enum.PaperVisualLayers.Writing"]
+      color: "#FFF2E5"
+      visible: false
+    - state: paper_stamp-generic
+      map: ["enum.PaperVisualLayers.Stamp"]
+      visible: false
+  - type: PaperVisuals
+    backgroundModulate: "#FFF2E5"
+    headerImagePath: "/Textures/_DEN/Interface/Paper/Engineering.png"
+
+- type: entity
+  parent: PaperDyedEngi
+  id: PrintedDocumentConditionReport
+  name: Report on technical condition
+  components:
+  - type: Paper
+    content: doc-text-printer-condition-report
+
+- type: entity
+  parent: PaperDyedEngi
+  id: PrintedDocumentShuttleRegistrationRequest
+  name: Shuttle registration request
+  components:
+  - type: Paper
+    content: doc-text-printer-shuttle-registration-request
+
+- type: entity
+  parent: PaperDyedEngi
+  id: PrintedDocumentRequestConstructionWork
+  name: Request for construction works
+  components:
+  - type: Paper
+    content: doc-text-printer-request-construction-work
+
+- type: entity
+  parent: PaperDyedEngi
+  id: PrintedDocumentConstructionPermit
+  name: Building permit
+  components:
+  - type: Paper
+    content: doc-text-printer-construction-permit
+
+
+
+# Medical Papers
+- type: entity
+  parent: Paper
+  id: PaperDyedMed
+  suffix: med
+  components:
+  - type: Sprite
+    sprite: Objects/Misc/bureaucracy.rsi
+    layers:
+    - state: paper
+      color: "#EBF9FF"
+    - state: paper_words
+      map: ["enum.PaperVisualLayers.Writing"]
+      color: "#EBF9FF"
+      visible: false
+    - state: paper_stamp-generic
+      map: ["enum.PaperVisualLayers.Stamp"]
+      visible: false
+  - type: PaperVisuals
+    backgroundModulate: "#EBF9FF"
+    headerImagePath: "/Textures/_DEN/Interface/Paper/medical.png"
+
+- type: entity
+  parent: PaperDyedMed
+  id: PrintedDocumentPrescriptionDrugAuthorization
+  name: Prescription Drug Authorization
+  components:
+  - type: Paper
+    content: doc-text-printer-prescription-drug-authorization
+
+- type: entity
+  parent: PaperDyedMed
+  id: PrintedDocumentOrderMedicalIntervention
+  name: Order for medical intervention
+  components:
+  - type: Paper
+    content: doc-text-printer-order-medical-intervention
+
+- type: entity
+  parent: PaperDyedMed
+  id: PrintedDocumentDeathCertificate
+  name: Death certificate
+  components:
+  - type: Paper
+    content: doc-text-printer-death-certificate
+
+- type: entity
+  parent: PaperDyedMed
+  id: PrintedDocumentStatementHealth
+  name: Health report
+  components:
+  - type: Paper
+    content: doc-text-printer-statement-health
 
 - type: entity
   parent: PaperDyedMed
@@ -564,8 +403,229 @@
     content: doc-text-printer-surgery-form
 
 - type: entity
-  parent: PrintedDocument
-  # Leave as is: Letters are white!
+  parent: PaperDyedMed
+  id: PrintedDocumentDNR
+  name: DNR Certification
+  components:
+  - type: Paper
+    content: doc-text-DNR
+
+- type: entity
+  parent: PaperDyedMed
+  id: PrintedDocumentMedicalReceipt
+  name: Receipt of Medical Treatment
+  components:
+  - type: Paper
+    content: doc-text-medical-receipt
+
+# Cargo Papers
+- type: entity
+  parent: PaperCargoBountyManifest
+  id: PrintedDocumentApplicationEquipment
+  name: Statement for equipment
+  components:
+    - type: Paper
+      content: doc-text-printer-application-equipment
+
+- type: entity
+  parent: PaperCargoBountyManifest
+  id: PrintedDocumentProductManufacturingOrder
+  name: Order for the production of a product
+  components:
+  - type: Paper
+    content: doc-text-printer-product-manufacturing-order
+
+- type: entity
+  parent: PaperCargoBountyManifest
+  id: PrintedDocumentReceiptofDelivery
+  name: Receipt of Delivery
+  components:
+  - type: Paper
+    content: doc-text-receipt-of-delivery
+
+# Law Papers
+- type: entity
+  parent: Paper
+  id: PaperDyedLaw
+  suffix: law
+  components:
+  - type: Sprite
+    sprite: Objects/Misc/bureaucracy.rsi
+    layers:
+    - state: paper
+      color: "#E0E0E0"
+    - state: paper_words
+      map: ["enum.PaperVisualLayers.Writing"]
+      color: "#E0E0E0"
+      visible: false
+    - state: paper_stamp-generic
+      map: ["enum.PaperVisualLayers.Stamp"]
+      visible: false
+  - type: PaperVisuals
+    backgroundModulate: "#E0E0E0"
+    headerImagePath: "/Textures/_DEN/Interface/Paper/law.png"
+
+- type: entity
+  parent: PaperDyedLaw
+  id: PrintedDocumentRequestDocuments
+  name: Request for the provision of documents
+  components:
+  - type: Paper
+    content: doc-text-printer-request-documents
+
+- type: entity
+  parent: PaperDyedLaw
+  id: PrintedDocumentDivorceCertificate
+  name: Certificate of divorce
+  components:
+  - type: Paper
+    content: doc-text-printer-divorce-certificate
+
+- type: entity
+  parent: PaperDyedLaw
+  id: PrintedDocumentSentence
+  name: Sentence
+  components:
+  - type: Paper
+    content: doc-text-printer-sentence
+
+- type: entity
+  parent: PaperDyedLaw
+  id: PrintedDocumentDecisionToStartTrial
+  name: Decision to start a trial
+  components:
+  - type: Paper
+    content: doc-text-printer-decision-to-start-trial
+
+- type: entity
+  parent: PaperDyedLaw
+  id: PrintedDocumentMarriageCertificate
+  name: Marriage certificate
+  components:
+  - type: Paper
+    content: doc-text-printer-marriage-certificate
+
+# Command Papers
+- type: entity
+  parent: Paper
+  id: PaperDyedCommand
+  suffix: Elevated
+  components:
+  - type: Sprite
+    sprite: Objects/Misc/bureaucracy.rsi
+    layers:
+    - state: paper
+      color: "#F6FFE5"
+    - state: paper_words
+      map: ["enum.PaperVisualLayers.Writing"]
+      color: "#F6FFE5"
+      visible: false
+    - state: paper_stamp-generic
+      map: ["enum.PaperVisualLayers.Stamp"]
+      visible: false
+  - type: PaperVisuals
+    backgroundModulate: "#F6FFE5"
+    headerImagePath: "/Textures/_DEN/Interface/Paper/command.png"
+
+- type: entity
+  parent: PaperDyedCommand
+  id: PrintedDocumentEvacuationShuttleRequest
+  name: Evacuation Shuttle Request
+  components:
+  - type: Paper
+    content: doc-text-printer-evacuation-shuttle-request
+
+- type: entity
+  parent: PaperDyedCommand
+  id: PrintedDocumentOrderEncouragement
+  name: Incentive order
+  components:
+  - type: Paper
+    content: doc-text-printer-order-encouragement
+
+- type: entity
+  parent: PaperDyedCommand
+  id: PrintedDocumentCertificateAdvancedTraining
+  name: Certificate of advanced training
+  components:
+  - type: Paper
+    content: doc-text-printer-certificate-advanced-training
+
+- type: entity
+  parent: PaperDyedCommand
+  id: PrintedDocumentReportOnTheChaptersMeeting
+  name: Report on chapter meeting
+  components:
+  - type: Paper
+    content: doc-text-printer-report-on-the-chapters-meeting
+
+# Syndicate Papers
+- type: entity
+  parent: Paper
+  id: PaperDyedSyndicate
+  suffix: syndie
+  components:
+  - type: PaperLabelType
+    paperType: Syndie
+  - type: PaperVisuals
+    backgroundModulate: "#FFD6D6"
+    headerImagePath: "/Textures/_DEN/Interface/Paper/syndicate.png"
+    headerMargin: 0.0, 12.0, 0.0, 0.0
+  - type: Sprite
+    sprite: Objects/Misc/bureaucracy.rsi
+    layers:
+    - state: paper
+      color: "#FFD6D6"
+    - state: paper_words
+      map: ["enum.PaperVisualLayers.Writing"]
+      color: "#FFD6D6"
+      visible: false
+    - state: paper_stamp-generic
+      map: ["enum.PaperVisualLayers.Stamp"]
+      visible: false
+
+- type: entity
+  parent: PaperDyedSyndicate
+  id: PrintedDocumentErrorLoadingFormHeader
+  name: ERROR loading form header
+  components:
+    - type: Paper
+      content: doc-text-printer-error-loading-form-header
+
+- type: entity
+  parent: PaperDyedSyndicate
+  id: PrintedDocumentNoticeOfLiquidation
+  name: NOTICE OF LIQUIDATION
+  components:
+    - type: Paper
+      content: doc-text-printer-notice-of-liquidation
+
+- type: entity
+  parent: PaperDyedSyndicate
+  id: PrintedDocumentBusinessDeal
+  name: BUSINESS DEAL
+  components:
+    - type: Paper
+      content: doc-text-printer-business-deal
+
+- type: entity
+  parent: PaperDyedSyndicate
+  id: PrintedDocumentNoteBeginningMilitaryActions
+  name: NOTE BEGINNING MILITARY ACTIONS
+  components:
+    - type: Paper
+      content: doc-text-printer-note-beginning-military-actions
+
+- type: entity
+  parent: PaperDyedSyndicate
+  id: PrintedDocumentReportAccomplishmentGoals
+  name: REPORT ACCOMPLISHMENT GOALS
+  components:
+    - type: Paper
+      content: doc-text-printer-report-accomplishment-goals
+
+- type: entity
+  parent: PrintedDocument # Leave as is: Letters are white!
   id: PrintedDocumentLetter
   name: Letter Template
   components:
