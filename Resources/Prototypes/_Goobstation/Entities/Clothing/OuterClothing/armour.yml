@@ -7,7 +7,7 @@
 
 # Blueshield Armour Vest
 - type: entity
-  parent: [ClothingOuterBaseMedium, AllowSuitStorageClothing, BaseBlueshieldOfficerContraband]
+  parent: [ClothingOuterBaseMedium, AllowSuitStorageClothing, BaseBlueshieldOfficerContraband] #TheDen Contraband Parents
   id: ClothingBlueshieldArmourVest
   name: blueshield's security armour
   description: An armoured vest with the badge of the blueshield
@@ -80,7 +80,7 @@
     coolingCoefficient: 0.1
 
 - type: entity
-  parent: [ClothingOuterStorageFoldableBaseOpened, ClothingBlueshieldArmoredCoat]
+  parent: [ClothingOuterStorageFoldableBaseOpened, ClothingBlueshieldArmoredCoat] #TheDen Contraband Parents
   id: ClothingBlueshieldArmoredCoatOpen
   name: blueshield's armored coat
   suffix: Opened
