@@ -39,6 +39,7 @@
       traits:
         - Singer
         - MusicMachine
+        - LyreBird
   functions:
     - !type:TraitReplaceComponent
       components:
@@ -66,6 +67,7 @@
       traits:
         - Singer
         - IPCSinger
+        - LyreBird
   functions:
     - !type:TraitReplaceComponent
       components:

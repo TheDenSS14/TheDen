@@ -118,7 +118,7 @@ trait-description-RemoveSpeciesLanguageLight =
 
 trait-name-MusicMachine = Music Machine
 trait-description-MusicMachine =
-    You possess an inbuilt synthesizer module, allowing you to sing in six different electronic tones. It even comes with a drum machine.
+    You possess an inbuilt synthesizer module, allowing you to sing in a handful of distinct electronic tones. It even comes with a drum machine.
 
 trait-name-IPCSinger = Singer (Synth)
 trait-description-IPCSinger =
