@@ -1036,7 +1036,7 @@ namespace Content.Client.Lobby.UI
         }
 
         /// Sets the editor to the specified profile with the specified slot
-        public void SetProfile(HumanoidCharacterProfile? profile, int? slot)
+        public void SetProfile(HumanoidCharacterProfile? profile, int? slot, bool updateLoadouts = true)
         {
             Profile = profile?.Clone();
             CharacterSlot = slot;
@@ -1068,7 +1068,7 @@ namespace Content.Client.Lobby.UI
             // End CD - Character Records
 
             RefreshAntags();
-            RefreshJobs();
+            RefreshJobs(updateLoadouts);
             RefreshSpecies();
             RefreshNationalities();
             RefreshEmployers();
@@ -1079,7 +1079,7 @@ namespace Content.Client.Lobby.UI
             // DEN: I'm moving this down here because Loadouts rely on the species (and character dummy) to be
             // up-to-date before it reloads its loadout requirements, and moving loadout updates out of
             // UpdateCharacterRequired is undesirable.
-            UpdateCharacterRequired();
+            UpdateCharacterRequired(updateLoadouts);
 
             if (Profile != null)
                 PreferenceUnavailableButton.SelectId((int) Profile.PreferenceUnavailable);
@@ -1218,7 +1218,7 @@ namespace Content.Client.Lobby.UI
         }
 
         /// Refreshes all job selectors
-        public void RefreshJobs()
+        public void RefreshJobs(bool updateLoadouts = true)
         {
             JobList.DisposeAllChildren();
             _jobCategories.Clear();
@@ -1371,9 +1371,9 @@ namespace Content.Client.Lobby.UI
                     category.AddChild(jobContainer);
                 }
             }
-
             UpdateJobPriorities();
-            UpdateJobLoadouts();
+            if(updateLoadouts)
+                UpdateJobLoadouts();
         }
 
         private void UpdateRoleRequirements()
@@ -1521,10 +1521,13 @@ namespace Content.Client.Lobby.UI
 
                         Profile = Profile?.WithJobPriority(job.ID, (JobPriority) priority);
 
+
+                        /// dont touch
                         UpdateJobLoadouts();
 
                         ReloadPreview();
-                        SetProfile(Profile, CharacterSlot);
+
+                        SetProfile(Profile, CharacterSlot, false);
                     };
 
                     JobRowLoadoutAddFormating(job, jobContainer);
@@ -3088,14 +3091,15 @@ namespace Content.Client.Lobby.UI
 
         #endregion
 
-        private void UpdateCharacterRequired()
+        private void UpdateCharacterRequired(bool updateLoadouts = true)
         {
             RefreshNationalities();
             RefreshEmployers();
             RefreshLifepaths();
             UpdateRoleRequirements();
             UpdateTraits(TraitsShowUnusableButton.Pressed);
-            UpdateLoadouts();
+            if(updateLoadouts)
+                UpdateLoadouts();
         }
 
         private static (int feet, int inches) CentimetersToFeetAndInches(float centimeters)
