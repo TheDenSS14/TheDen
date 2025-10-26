@@ -75,16 +75,7 @@
   applyMaterialDiscount: false
   materials:
     SheetPrinter: 100
-
-- type: latheRecipe
-  id: PrintedDocumentDisposalReportRecipe
-  result: PrintedDocumentDisposalReport
-  category: Reports
-  completetime: 2
-  applyMaterialDiscount: false
-  materials:
-    SheetPrinter: 100
-
+    
 - type: latheRecipe
   id: PrintedDocumentApplicationAppointmentInterimRecipe
   result: PrintedDocumentApplicationAppointmentInterim
