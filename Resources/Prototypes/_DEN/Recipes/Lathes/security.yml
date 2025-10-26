@@ -1,0 +1,50 @@
+- type: latheRecipe
+  parent: BaseAmmoRecipe
+  id: MagazineBRDIP15Empty
+  result: MagazineBRDIP15Empty
+  materials:
+    Steel: 25
+
+- type: latheRecipe
+  parent: BaseAmmoRecipe
+  id: MagazineBRDIP15
+  result: MagazineBRDIP15
+  materials:
+    Steel: 175
+
+- type: latheRecipe
+  parent: BaseAmmoRecipe
+  id: MagazineBRDIP15Incendiary
+  result: MagazineBRDIP15Incendiary
+  materials:
+    Steel: 25
+    Plastic: 150
+
+- type: latheRecipe
+  parent: BaseAmmoRecipe
+  id: MagazineBRDIP15Rubber
+  result: MagazineBRDIP15Rubber
+  materials:
+    Steel: 115
+    Plastic: 75
+
+- type: latheRecipe
+  parent: BaseAmmoRecipe
+  id: MagazineBRDIP15Uranium
+  result: MagazineBRDIP15Uranium
+  materials:
+    Steel: 25
+    Plastic: 75
+    Uranium: 150
+
+- type: latheRecipe
+  id: WeaponPistolBRDIP15Standard
+  result: WeaponPistolBRDIP15StandardEmpty
+  category: Weapons
+  completetime: 6
+  materials:
+    Aluminum: 800
+    Plastic: 200
+    Plasteel: 400
+    Steel: 500
+    Tungsten: 200

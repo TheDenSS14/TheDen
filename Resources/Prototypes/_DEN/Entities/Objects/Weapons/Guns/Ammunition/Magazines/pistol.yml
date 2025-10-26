@@ -1,17 +1,17 @@
 - type: entity
-  id: BaseMagazineBRDIP-15
-  name: "BRDI P-15 magazine (.25 caseless)"
-  parent: BaseMagazineCaselessRifle
+  id: BaseMagazineBRDIP15
+  name: "BRDI P-15 magazine (.35 auto)"
+  parent: BaseMagazinePistol
   abstract: true
   components:
   - type: Tag
     tags:
-      - MagazineBRDIP-15
+      - MagazineBRDIP15
   - type: BallisticAmmoProvider
     whitelist:
       tags:
-        - CartridgeCaselessRifle
-    proto: CartridgeCaselessRifle
+        - CartridgePistol
+    proto: CartridgePistol
     capacity: 15
   - type: Item
     size: Small
@@ -29,12 +29,12 @@
   - type: Appearance
 
 - type: entity
-  id: MagazineBRDIP-15
-  name: "BRDI P-15 magazine (.25 caseless)"
-  parent: BaseMagazineBRDIP-15
+  id: MagazineBRDIP15
+  name: "BRDI P-15 magazine (.35 auto)"
+  parent: BaseMagazineBRDIP15
   components:
   - type: BallisticAmmoProvider
-    proto: CartridgeCaselessRifle
+    proto: CartridgePistol
   - type: Sprite
     layers:
     - state: base
@@ -48,12 +48,12 @@
   - type: Appearance
 
 - type: entity
-  id: MagazineBRDIP-15Practice
-  name: "BRDI P-15 magazine (.25 caseless practice)"
-  parent: BaseMagazineBRDIP-15
+  id: MagazineBRDIP15Practice
+  name: "BRDI P-15 magazine (.35 auto practice)"
+  parent: BaseMagazineBRDIP15
   components:
   - type: BallisticAmmoProvider
-    proto: CartridgeCaselessRiflePractice
+    proto: CartridgePistolPractice
   - type: Sprite
     layers:
     - state: practice
@@ -67,12 +67,12 @@
   - type: Appearance
 
 - type: entity
-  id: MagazineBRDIP-15Rubber
-  name: "BRDI P-15 magazine (.25 caseless rubber)"
-  parent: BaseMagazineBRDIP-15
+  id: MagazineBRDIP15Rubber
+  name: "BRDI P-15 magazine (.35 auto rubber)"
+  parent: BaseMagazineBRDIP15
   components:
   - type: BallisticAmmoProvider
-    proto: CartridgeCaselessRifleRubber
+    proto: CartridgePistolRubber
   - type: Sprite
     layers:
     - state: rubber
@@ -86,12 +86,12 @@
   - type: Appearance
 
 - type: entity
-  id: MagazineBRDIP-15Incendiary
-  name: "BRDI P-15 magazine (.25 caseless incendiary)"
-  parent: BaseMagazineBRDIP-15
+  id: MagazineBRDIP15Incendiary
+  name: "BRDI P-15 magazine (.35 auto incendiary)"
+  parent: BaseMagazineBRDIP15
   components:
   - type: BallisticAmmoProvider
-    proto: CartridgeCaselessRifleIncendiary
+    proto: CartridgePistolIncendiary
   - type: Sprite
     layers:
     - state: red
@@ -105,12 +105,12 @@
   - type: Appearance
 
 - type: entity
-  id: MagazineBRDIP-15Uranium
-  name: "BRDI P-15 magazine (.25 caseless uranium)"
-  parent: BaseMagazineBRDIP-15
+  id: MagazineBRDIP15Uranium
+  name: "BRDI P-15 magazine (.35 auto uranium)"
+  parent: BaseMagazineBRDIP15
   components:
   - type: BallisticAmmoProvider
-    proto: CartridgeCaselessRifleUranium
+    proto: CartridgePistolUranium
   - type: Sprite
     layers:
     - state: uranium
@@ -124,9 +124,22 @@
   - type: Appearance
 
 - type: entity
-  id: MagazineBRDIP-15Shrapnel
-  name: "BRDI P-15 magazine (.25 caseless shrapnel)"
-  parent: BaseMagazineBRDIP-15
+  id: MagazineBRDIP15Shrapnel
+  name: "BRDI P-15 magazine (.35 auto shrapnel)"
+  parent: BaseMagazineBRDIP15
   components:
   - type: BallisticAmmoProvider
-    proto: CartridgeCaselessRifleShrapnel
+    proto: CartridgePistolShrapnel
+
+- type: entity
+  id: MagazineBRDIP15Empty
+  name: "BRDI P-15 magazine (.35 auto)"
+  suffix: empty
+  parent: BaseMagazineBRDIP15
+  components:
+  - type: BallisticAmmoProvider
+    proto: null
+  - type: Sprite
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
