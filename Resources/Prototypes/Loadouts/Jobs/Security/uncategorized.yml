@@ -915,6 +915,26 @@
   items:
     - WeaponRevolverArgentiNonLethalSecurity
 
+- type: loadout
+  id: LoadoutSecurityPistolEnergyRevolver
+  category: JobsSecurityAUncategorized
+  cost: 10
+  canBeHeirloom: true
+  guideEntry: SecurityWeapons
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSecurityWeapons
+    - !type:CharacterLogicOrRequirement
+      requirements:
+        - !type:CharacterJobRequirement
+          jobs:
+          - SeniorOfficer
+          - Warden
+          - HeadOfSecurity
+          - BlueshieldOfficer
+  items:
+    - WeaponEnergyRevolverSecurity
+
 # Eyes
 - type: loadout
   id: LoadoutSecurityEyesHudSecurity
