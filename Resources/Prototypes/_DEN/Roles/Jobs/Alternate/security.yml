@@ -35,6 +35,7 @@
   titles:
   - job-name-alternate-brigmedic
   - job-name-alternate-field-medic
+  - job-name-alternate-combat-medic
 
 - type: alternateJobTitle
   id: DefaultDetective
@@ -43,6 +44,7 @@
   - job-name-alternate-inspector
   - job-name-alternate-investigator
   - job-name-alternate-gumshoe
+  - job-name-alternate-forensic-scientist
 
 - type: alternateJobTitle
   id: DefaultWarden
@@ -56,3 +58,10 @@
   - job-name-alternate-deputy-security-director
   - job-name-alternate-bailiff
   - job-name-alternate-marshal
+
+- type: alternateJobTitle
+  id: DefaultSecurityCadet
+  jobId: SecurityCadet
+  titles:
+  - job-name-alternate-junior-officer
+  - job-name-alternate-security-trainee
