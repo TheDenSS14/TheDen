@@ -1131,7 +1131,7 @@ namespace Content.Client.Lobby.UI
             _currentActionsWindow = new(job, profileEditor: this, _prototypeManager);{};
             _currentActionsWindow.OpenCenteredLeft();
         }
-        
+
         private List<ProtoId<AlternateJobTitlePrototype>> BuildAlternateJobPrototypes(JobPrototype job)
         {
             if (_cachedTitles.TryGetValue(job, out var ids))
@@ -1530,7 +1530,7 @@ namespace Content.Client.Lobby.UI
                         var jobT = Profile.GetHighestPriorityJob() ?? String.Empty;
                         // temp, idk if i want it here and i need to do .loc()
                         if (_prototypeManager.TryIndex<JobPrototype>(jobT, out var jobPrototype))
-                            JobLabel.Text = Loc.GetString("humanoid-profile-editor-traits-currently-editing-display") + " " + Loc.GetString(jobPrototype.LocalizedName);
+                            JobLabel.Text = Loc.GetString("humanoid-profile-editor-traits-currently-editing-display", ("targetJob", jobPrototype.LocalizedName));
                         else
                             JobLabel.Text = "Invalid job: this is a bug :(";
 

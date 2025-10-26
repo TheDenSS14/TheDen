@@ -99,10 +99,10 @@ public sealed class SharedLoadoutSystem : EntitySystem
         heirlooms = new();
 
         // load loadouts from correct jobloadout
-        if (profile.JobLoadouts.TryGetValue(job.ID, out var l))
+        if (profile.JobLoadouts.TryGetValue(job.ID, out var targetLoadout))
         {
             profile.LoadoutPreferences.Clear();
-            profile.LoadoutPreferences.UnionWith(l);
+            profile.LoadoutPreferences.UnionWith(targetLoadout);
         }
 
         if (!job.SpawnLoadout)

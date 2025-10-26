@@ -87,7 +87,7 @@ public sealed partial class LoadoutsTab : BoxContainer
 
         // temp, idk if i want it here and i need to do .loc()
         if (_prototype.TryIndex<JobPrototype>(job, out var jobPrototype))
-            JobLabel.Text = Loc.GetString("loadout-tab-currently-editing-display") + " " + Loc.GetString(jobPrototype.LocalizedName);
+            JobLabel.Text = Loc.GetString("loadout-tab-currently-editing-display", ("targetJob", jobPrototype.LocalizedName));
         else
             JobLabel.Text = "Invalid job: this is a bug :(";
 

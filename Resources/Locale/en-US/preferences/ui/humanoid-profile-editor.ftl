@@ -41,7 +41,7 @@ humanoid-profile-editor-sex-female-text = Female
 humanoid-profile-editor-sex-unsexed-text = None
 # TheDen - Start
 # TheDen - Add Voice
-humanoid-profile-editor-traits-currently-editing-display = Editing traits for
+humanoid-profile-editor-traits-currently-editing-display = Editing traits for {$targetJob}
 humanoid-profile-editor-job-list-saved-loadout-tooltip = A loadout is saved for this job.
 # TheDen - End
 humanoid-profile-editor-voice-label = Preferred Voice:

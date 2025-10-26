@@ -286,8 +286,6 @@ public sealed partial class LoadoutsItemListPanel : BoxContainer
         {
             if (!_profilePreferenceLookup.TryGetValue(button.Loadout.ID, out var _))
                 button.SetSelected(false);
-
-
         }
 
         foreach (var pref in profilePrefs)

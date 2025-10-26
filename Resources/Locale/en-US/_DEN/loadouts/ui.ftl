@@ -9,4 +9,4 @@ loadout-customization-panel-reset-button = Reset
 loadout-customization-panel-custom-color-button = Custom Color
 loadout-customization-panel-custom-color-tooltip = Toggling this on will recolor the entire loadout to match the selected color.
 
-loadout-tab-currently-editing-display = Editing loadout for
+loadout-tab-currently-editing-display = Editing loadout for {$targetJob}

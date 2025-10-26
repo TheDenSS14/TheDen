@@ -73,14 +73,12 @@ public sealed partial class LoadoutJobActionsWindow : FancyWindow
                 DeleteSavedLoadoutAction.Disabled = false;
 
             /// idk how to do this better, please tell me :(
-            var tooltip = Loc.GetString("loadout-job-action-tooltip-generic-1") + " "
-                + LoadoutLabel.Text + " "
-                + Loc.GetString("loadout-job-action-tooltip-generic-2") + " ";
+            var tooltip = Loc.GetString("loadout-job-action-tooltip-generic", ("currentJob", LoadoutLabel.Text), ("targetJob", _jobPrototype.LocalizedName));;
 
-            CopyTraitsAction.ToolTip = tooltip + _jobPrototype.LocalizedName;
-            CopyLoadoutAction.ToolTip = tooltip + _jobPrototype.LocalizedName;
-            CopyBothAction.ToolTip = tooltip + _jobPrototype.LocalizedName;
-            DeleteSavedLoadoutAction.ToolTip = Loc.GetString("loadout-job-action-tooltip-delete") + " " + _jobPrototype.LocalizedName;
+            CopyTraitsAction.ToolTip = tooltip;
+            CopyLoadoutAction.ToolTip = tooltip;
+            CopyBothAction.ToolTip = tooltip;
+            DeleteSavedLoadoutAction.ToolTip = Loc.GetString("loadout-job-action-tooltip-delete", ("targetJob", _jobPrototype.LocalizedName));
 
             CopyTraitsAllAction.Disabled = true;
             CopyLoadoutsAllAction.Disabled = true;

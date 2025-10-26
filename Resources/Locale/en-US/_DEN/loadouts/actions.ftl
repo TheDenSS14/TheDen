@@ -12,7 +12,6 @@ loadout-job-action-copy-traits-all = Copy Traits to all Jobs
 loadout-job-action-copy-loadout-all = Copy Loadout to all Jobs
 loadout-job-action-copy-both-all = Copy Both to all Jobs
 
-loadout-job-action-tooltip-generic-1 = Copies from
-loadout-job-action-tooltip-generic-2 = to
-loadout-job-action-tooltip-delete = Deletes Traits and Loadout from
+loadout-job-action-tooltip-generic = Copies from {$currentJob} to {$targetJob}
+loadout-job-action-tooltip-delete = Deletes Traits and Loadout from {$targetJob}
 loadout-job-action-tooltip-to-all-error = Can only copy to all from the job you're currently editing (job row is highlighted in green)
