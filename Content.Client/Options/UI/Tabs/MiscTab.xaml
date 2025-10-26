@@ -127,6 +127,7 @@ SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
                        StyleClasses="LabelKeyText"/>
                 <CheckBox Name="ModernProgressBar" Text="{Loc 'ui-options-modern-progress-bar'}" />
                 <CheckBox Name="ChatExtraInfo" Text="{Loc 'ui-options-no-chat-status'}" />
+                <CheckBox Name="IgnoreCryoMessages" Text="{Loc 'ui-options-ignore-cryo-message'}" />
                 <!-- <CheckBox Name="ToggleWalk" Text="{Loc 'ui-options-hotkey-toggle-walk'}" /> -->
             </BoxContainer>
         </ScrollContainer>

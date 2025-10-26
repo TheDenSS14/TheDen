@@ -89,6 +89,7 @@ ui-options-chatstack-off = Off
 ui-options-chatstack-single = Only last message
 ui-options-chatstack-double = Last two messages
 ui-options-chatstack-triple = Last three messages
+ui-options-ignore-cryo-message = Don't display system announcements when others enter cryo
 
 ## Audio menu
 
