@@ -28,6 +28,8 @@ job-name-alternate-baker = Baker
 job-name-alternate-butcher = Butcher
 job-name-alternate-cuisinic-technician = Cuisinic Technician
 job-name-alternate-culinarian = Culinarian
+job-name-alternate-chef-de-cuisine = Chef de Cuisine
+job-name-alternate-pâtissier = Pâtissier
 
 # Clown
 job-name-alternate-jester = Jester
