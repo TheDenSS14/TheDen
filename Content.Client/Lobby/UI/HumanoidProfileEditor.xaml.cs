@@ -156,24 +156,31 @@ namespace Content.Client.Lobby.UI
 
         /// If we're attempting to save
         public event Action? Save;
+
         private bool _exporting;
         private bool _imaging;
         private bool _isDirty;
 
         /// The character slot for the current profile
         public int? CharacterSlot;
+
         /// The work in progress profile being edited
         public HumanoidCharacterProfile? Profile;
+
         /// Entity Used for the profile editor preview
         public EntityUid PreviewDummy;
+
         /// Temporary override of their selected job, used to preview roles
         public JobPrototype? JobOverride;
 
         private List<SpeciesPrototype> _species = new();
+
         // EE - Contractor System Changes Start
         private List<NationalityPrototype> _nationalies = new();
         private List<EmployerPrototype> _employers = new();
+
         private List<LifepathPrototype> _lifepaths = new();
+
         // EE - Contractor System Changes End
         private List<(string, RequirementsSelector)> _jobPriorities = new();
         private readonly Dictionary<string, BoxContainer> _jobCategories;
@@ -632,7 +639,8 @@ namespace Content.Client.Lobby.UI
             // Show/Hide the traits tab if they ever get enabled/disabled
             var traitsEnabled = cfgManager.GetCVar(CCVars.GameTraitsEnabled);
             CTabContainer.SetTabVisible(3, traitsEnabled);
-            cfgManager.OnValueChanged(CCVars.GameTraitsEnabled,
+            cfgManager.OnValueChanged(
+                CCVars.GameTraitsEnabled,
                 enabled => CTabContainer.SetTabVisible(3, enabled));
 
             TraitsShowUnusableButton.OnToggled += args => UpdateTraits(args.Pressed);
@@ -671,12 +679,14 @@ namespace Content.Client.Lobby.UI
             #endregion Markings
 
             // Begin CD - Character Records
+
             #region CosmaticRecords
 
             Records.SetRecordUpdateFunction(UpdateProfileRecords);
             CTabContainer.AddTab(RecordsTab, Loc.GetString("humanoid-profile-editor-cd-records-tab"));
 
             #endregion CosmaticRecords
+
             // End CD - Character Records
 
             RefreshFlavorText();
@@ -787,12 +797,14 @@ namespace Content.Client.Lobby.UI
 
             var context = _characterRequirementsSystem.GetProfileContext(Profile);
 
-            _nationalies.AddRange(_prototypeManager.EnumeratePrototypes<NationalityPrototype>()
-                .Where(o => _characterRequirementsSystem.CheckRequirementsValid(o.Requirements,
-                    context.WithPrototype(o),
-                    _entManager,
-                    _prototypeManager,
-                    _cfgManager)));
+            _nationalies.AddRange(
+                _prototypeManager.EnumeratePrototypes<NationalityPrototype>()
+                    .Where(o => _characterRequirementsSystem.CheckRequirementsValid(
+                        o.Requirements,
+                        context.WithPrototype(o),
+                        _entManager,
+                        _prototypeManager,
+                        _cfgManager)));
 
             var nationalityIds = _nationalies.Select(o => o.ID).ToList();
 
@@ -818,12 +830,14 @@ namespace Content.Client.Lobby.UI
             _employers.Clear();
 
             var context = _characterRequirementsSystem.GetProfileContext(Profile);
-            _employers.AddRange(_prototypeManager.EnumeratePrototypes<EmployerPrototype>()
-                .Where(o => _characterRequirementsSystem.CheckRequirementsValid(o.Requirements,
-                    context.WithPrototype(o),
-                    _entManager,
-                    _prototypeManager,
-                    _cfgManager)));
+            _employers.AddRange(
+                _prototypeManager.EnumeratePrototypes<EmployerPrototype>()
+                    .Where(o => _characterRequirementsSystem.CheckRequirementsValid(
+                        o.Requirements,
+                        context.WithPrototype(o),
+                        _entManager,
+                        _prototypeManager,
+                        _cfgManager)));
 
             var employerIds = _employers.Select(o => o.ID).ToList();
 
@@ -850,12 +864,14 @@ namespace Content.Client.Lobby.UI
 
             var context = _characterRequirementsSystem.GetProfileContext(Profile);
 
-            _lifepaths.AddRange(_prototypeManager.EnumeratePrototypes<LifepathPrototype>()
-                .Where(o => _characterRequirementsSystem.CheckRequirementsValid(o.Requirements,
-                    context.WithPrototype(o),
-                    _entManager,
-                    _prototypeManager,
-                    _cfgManager)));
+            _lifepaths.AddRange(
+                _prototypeManager.EnumeratePrototypes<LifepathPrototype>()
+                    .Where(o => _characterRequirementsSystem.CheckRequirementsValid(
+                        o.Requirements,
+                        context.WithPrototype(o),
+                        _entManager,
+                        _prototypeManager,
+                        _cfgManager)));
 
             var lifepathIds = _lifepaths.Select(o => o.ID).ToList();
 
@@ -902,7 +918,8 @@ namespace Content.Client.Lobby.UI
                 ("humanoid-profile-editor-antag-preference-no-button", 1)
             };
 
-            foreach (var antag in _prototypeManager.EnumeratePrototypes<AntagPrototype>().OrderBy(a => Loc.GetString(a.Name)))
+            foreach (var antag in _prototypeManager.EnumeratePrototypes<AntagPrototype>()
+                .OrderBy(a => Loc.GetString(a.Name)))
             {
                 if (!antag.SetPreference)
                     continue;
@@ -929,13 +946,15 @@ namespace Content.Client.Lobby.UI
                     .WithSelectedJob(job)
                     .WithPrototype(antag);
 
-                if (!_characterRequirementsSystem.CheckRequirementsValid(requirements,
+                if (!_characterRequirementsSystem.CheckRequirementsValid(
+                    requirements,
                     context,
                     _entManager,
                     _prototypeManager,
                     _cfgManager))
                 {
-                    var reasons = _characterRequirementsSystem.GetReasons(requirements,
+                    var reasons = _characterRequirementsSystem.GetReasons(
+                        requirements,
                         context,
                         _entManager,
                         _prototypeManager,
@@ -1083,7 +1102,8 @@ namespace Content.Client.Lobby.UI
                 appearanceSystem.SetLayersVisibility(PreviewDummy, hiddenLayers, false, humanoid: humanoid);
             }
 
-            if (_prototypeManager.Index<SpeciesPrototype>(Profile.Species).SkinColoration != HumanoidSkinColor.HumanAnimal)
+            if (_prototypeManager.Index<SpeciesPrototype>(Profile.Species).SkinColoration !=
+                HumanoidSkinColor.HumanAnimal)
             {
                 SkinFurToggle.Visible = false;
             }
@@ -1128,7 +1148,9 @@ namespace Content.Client.Lobby.UI
                 _currentActionsWindow = null;
             }
 
-            _currentActionsWindow = new(job, profileEditor: this, _prototypeManager);{};
+            _currentActionsWindow = new(job, profileEditor: this, _prototypeManager);
+            { }
+            ;
             _currentActionsWindow.OpenCenteredLeft();
         }
 
@@ -1233,7 +1255,8 @@ namespace Content.Client.Lobby.UI
                     {
                         Orientation = LayoutOrientation.Vertical,
                         Name = department.ID,
-                        ToolTip = Loc.GetString("humanoid-profile-editor-jobs-amount-in-department-tooltip",
+                        ToolTip = Loc.GetString(
+                            "humanoid-profile-editor-jobs-amount-in-department-tooltip",
                             ("departmentName", departmentName))
                     };
 
@@ -1242,19 +1265,21 @@ namespace Content.Client.Lobby.UI
                     else
                         category.AddChild(new Control { MinSize = new Vector2(0, 23) });
 
-                    category.AddChild(new PanelContainer
-                    {
-                        PanelOverride = new StyleBoxFlat { BackgroundColor = Color.FromHex("#464966") },
-                        Children =
+                    category.AddChild(
+                        new PanelContainer
                         {
-                            new Label
+                            PanelOverride = new StyleBoxFlat { BackgroundColor = Color.FromHex("#464966") },
+                            Children =
                             {
-                                Text = Loc.GetString("humanoid-profile-editor-department-jobs-label",
-                                    ("departmentName", departmentName)),
-                                Margin = new Thickness(5f, 0, 0, 0),
+                                new Label
+                                {
+                                    Text = Loc.GetString(
+                                        "humanoid-profile-editor-department-jobs-label",
+                                        ("departmentName", departmentName)),
+                                    Margin = new Thickness(5f, 0, 0, 0),
+                                },
                             },
-                        },
-                    });
+                        });
 
                     _jobCategories[department.ID] = category;
                     JobList.AddChild(category);
@@ -1298,13 +1323,15 @@ namespace Content.Client.Lobby.UI
 
                     if (!_requirements.CheckJobWhitelist(job, out var reason))
                         selector.LockRequirements(reason);
-                    else if (!_characterRequirementsSystem.CheckRequirementsValid(requirements,
+                    else if (!_characterRequirementsSystem.CheckRequirementsValid(
+                        requirements,
                         context,
                         _entManager,
                         _prototypeManager,
                         _cfgManager))
                     {
-                        var reasons = _characterRequirementsSystem.GetReasons(requirements,
+                        var reasons = _characterRequirementsSystem.GetReasons(
+                            requirements,
                             context,
                             _entManager,
                             _prototypeManager,
@@ -1325,7 +1352,7 @@ namespace Content.Client.Lobby.UI
                             if (jobId == job.ID)
                                 other.Select(selectedPrio);
                             else if (selectedJobPrio == JobPriority.High &&
-                                     (JobPriority) other.Selected == JobPriority.High)
+                                (JobPriority) other.Selected == JobPriority.High)
                             {
                                 // Lower any other high priorities to medium.
                                 other.Select((int) JobPriority.Medium);
@@ -1344,6 +1371,7 @@ namespace Content.Client.Lobby.UI
                     category.AddChild(jobContainer);
                 }
             }
+
             UpdateJobPriorities();
             UpdateJobLoadouts();
         }
@@ -1376,7 +1404,8 @@ namespace Content.Client.Lobby.UI
                     {
                         Orientation = LayoutOrientation.Vertical,
                         Name = department.ID,
-                        ToolTip = Loc.GetString("humanoid-profile-editor-jobs-amount-in-department-tooltip",
+                        ToolTip = Loc.GetString(
+                            "humanoid-profile-editor-jobs-amount-in-department-tooltip",
                             ("departmentName", departmentName))
                     };
 
@@ -1384,25 +1413,28 @@ namespace Content.Client.Lobby.UI
                         firstCategory = false;
                     else
                     {
-                        category.AddChild(new Control
-                        {
-                            MinSize = new Vector2(0, 23),
-                        });
+                        category.AddChild(
+                            new Control
+                            {
+                                MinSize = new Vector2(0, 23),
+                            });
                     }
 
-                    category.AddChild(new PanelContainer
-                    {
-                        PanelOverride = new StyleBoxFlat { BackgroundColor = Color.FromHex("#464966") },
-                        Children =
+                    category.AddChild(
+                        new PanelContainer
                         {
-                            new Label
+                            PanelOverride = new StyleBoxFlat { BackgroundColor = Color.FromHex("#464966") },
+                            Children =
                             {
-                                Text = Loc.GetString("humanoid-profile-editor-department-jobs-label",
-                                    ("departmentName", departmentName)),
-                                Margin = new Thickness(5f, 0, 0, 0)
+                                new Label
+                                {
+                                    Text = Loc.GetString(
+                                        "humanoid-profile-editor-department-jobs-label",
+                                        ("departmentName", departmentName)),
+                                    Margin = new Thickness(5f, 0, 0, 0)
+                                }
                             }
-                        }
-                    });
+                        });
 
                     _jobCategories[department.ID] = category;
                     JobList.AddChild(category);
@@ -1449,13 +1481,15 @@ namespace Content.Client.Lobby.UI
 
                     if (!_requirements.CheckJobWhitelist(job, out var reason))
                         selector.LockRequirements(reason);
-                    else if (!_characterRequirementsSystem.CheckRequirementsValid(requirements,
+                    else if (!_characterRequirementsSystem.CheckRequirementsValid(
+                        requirements,
                         context,
                         _entManager,
                         _prototypeManager,
                         _cfgManager))
                     {
-                        var reasons = _characterRequirementsSystem.GetReasons(requirements,
+                        var reasons = _characterRequirementsSystem.GetReasons(
+                            requirements,
                             context,
                             _entManager,
                             _prototypeManager,
@@ -1476,7 +1510,8 @@ namespace Content.Client.Lobby.UI
                             // Sync other selectors with the same job in case of multiple department jobs
                             if (jobId == job.ID)
                                 other.Select(other.Selected);
-                            else if ((JobPriority) other.Selected == JobPriority.High && (JobPriority) other.Selected == JobPriority.High)
+                            else if ((JobPriority) other.Selected == JobPriority.High &&
+                                (JobPriority) other.Selected == JobPriority.High)
                             {
                                 // Lower any other high priorities to medium.
                                 other.Select((int) JobPriority.Medium);
@@ -1492,60 +1527,8 @@ namespace Content.Client.Lobby.UI
                         SetProfile(Profile, CharacterSlot);
                     };
 
-                    /// loadout ui stuff (really fucking stupid i need to redo it)
-                    if (Profile is not null)
-                    {
-                        var validLoadout = false;
-                        if (Profile.JobLoadouts.TryGetValue(job.ID, out var loadouts))
-                            if(loadouts.Count != 0)
-                                validLoadout = true;
-                        if (Profile.JobTraits.TryGetValue(job.ID, out var traits))
-                            if (traits.Count != 0)
-                                validLoadout = true;
-
-                        if (validLoadout == true && (Profile.JobTraits.ContainsKey(job.ID) || Profile.JobLoadouts.ContainsKey(job.ID)))
-                        {
-                            jobContainer.AddChild(new BoxContainer
-                            {
-                                Name = job.ID,
-                                Orientation = LayoutOrientation.Horizontal,
-                                HorizontalExpand = true,
-                                HorizontalAlignment = HAlignment.Left,
-                                ToolTip = Loc.GetString("humanoid-profile-editor-job-list-saved-loadout-tooltip"),
-                                TooltipDelay = 0,
-                                MouseFilter = MouseFilterMode.Stop,
-                                Children =
-                                {
-                                    new TextureRect
-                                    {
-                                        TextureScale = new Vector2(0.4f, 0.4f),
-                                        VerticalAlignment = VAlignment.Center,
-                                        HorizontalAlignment = HAlignment.Center,
-                                        Margin =  new Thickness(5f, 0, 5f, 0),
-                                        Texture = _resCache.GetResource<TextureResource>("/Textures/Interface/character.svg.192dpi.png"),
-                                    },
-                                }
-                            });
-                        }
-                        var jobT = Profile.GetHighestPriorityJob() ?? String.Empty;
-                        // temp, idk if i want it here and i need to do .loc()
-                        if (_prototypeManager.TryIndex<JobPrototype>(jobT, out var jobPrototype))
-                            JobLabel.Text = Loc.GetString("humanoid-profile-editor-traits-currently-editing-display", ("targetJob", jobPrototype.LocalizedName));
-                        else
-                            JobLabel.Text = "Invalid job: this is a bug :(";
-
-                        if (jobT == job.ID)
-                        {
-                            var background = new StyleBoxFlat
-                            {
-                                BackgroundColor = Color.FromHex("#2A492F"),
-                                ContentMarginBottomOverride = 4,
-                                ContentMarginTopOverride = 2,
-                            };
-
-                            backgroundPanel.PanelOverride = background;
-                        }
-                    }
+                    JobRowLoadoutAddFormating(job, jobContainer);
+                    JobRowHighlightEditing(job, backgroundPanel);
                     _jobPriorities.Add((job.ID, selector));
                     backgroundPanel.AddChild(jobContainer);
                     category.AddChild(backgroundPanel);
@@ -1555,6 +1538,66 @@ namespace Content.Client.Lobby.UI
             if (Profile is not null)
                 UpdateJobPriorities();
 
+        }
+
+        private void JobRowLoadoutAddFormating(JobPrototype job, BoxContainer jobContainer)
+        {
+            if (Profile == null)
+                return;
+
+            if ((!Profile.JobLoadouts.TryGetValue(job.ID, out var loadouts) || loadouts.Count == 0)
+                && (!Profile.JobTraits.TryGetValue(job.ID, out var traits) || traits.Count == 0))
+                return;
+
+            jobContainer.AddChild(
+                new BoxContainer
+                {
+                    Name = job.ID,
+                    Orientation = LayoutOrientation.Horizontal,
+                    HorizontalExpand = true,
+                    HorizontalAlignment = HAlignment.Left,
+                    ToolTip = Loc.GetString("humanoid-profile-editor-job-list-saved-loadout-tooltip"),
+                    TooltipDelay = 0,
+                    MouseFilter = MouseFilterMode.Stop,
+                    Children =
+                    {
+                        new TextureRect
+                        {
+                            TextureScale = new Vector2(0.4f, 0.4f),
+                            VerticalAlignment = VAlignment.Center,
+                            HorizontalAlignment = HAlignment.Center,
+                            Margin = new Thickness(5f, 0, 5f, 0),
+                            Texture = _resCache.GetResource<TextureResource>(
+                                "/Textures/Interface/character.svg.192dpi.png"),
+                        },
+                    }
+                });
+        }
+
+        private void JobRowHighlightEditing(JobPrototype job, PanelContainer backgroundPanel)
+        {
+            if (Profile == null)
+                return;
+
+            var jobT = Profile.GetHighestPriorityJob() ?? String.Empty;
+            if (_prototypeManager.TryIndex<JobPrototype>(jobT, out var jobPrototype))
+                JobLabel.Text = Loc.GetString(
+                    "humanoid-profile-editor-traits-currently-editing-display",
+                    ("targetJob", jobPrototype.LocalizedName));
+            else
+                JobLabel.Text = "Invalid job: this is a bug :(";
+
+            if (jobT != job.ID)
+                return;
+
+            var background = new StyleBoxFlat
+            {
+                BackgroundColor = Color.FromHex("#2A492F"),
+                ContentMarginBottomOverride = 4,
+                ContentMarginTopOverride = 2,
+            };
+
+            backgroundPanel.PanelOverride = background;
         }
 
         private void CreateTitlesWindow(JobPrototype job, List<(LocId, string)> titles)
@@ -2014,10 +2057,13 @@ namespace Content.Client.Lobby.UI
         }
         public void UpdateJobLoadouts()
         {
+            if (Profile == null)
+                return;
+
             bool hadLastJob = false;
 
             /// super epic migration code :3
-            if (Profile?.LastJobLoadout != "" && Profile is not null)
+            if (Profile.LastJobLoadout != "")
             {
                 Profile.JobTraits.Remove(Profile.LastJobLoadout);
                 Profile.JobLoadouts.Remove(Profile.LastJobLoadout);
@@ -2028,42 +2074,40 @@ namespace Content.Client.Lobby.UI
                 hadLastJob = true;
 
             }
-            if (Profile is not null)
+            Profile.LastJobLoadout = Profile.GetHighestPriorityJob();
+
+            /// Apply loadout preferences from dictionary
+            if (Profile.JobLoadouts.TryGetValue(Profile.LastJobLoadout, out var loadout))
             {
-                Profile.LastJobLoadout = Profile.GetHighestPriorityJob();
+                Profile.LoadoutPreferences.Clear();
+                Profile.LoadoutPreferences.UnionWith(loadout);
 
-                /// Apply loadout preferences from dictionary
-                if (Profile.JobLoadouts.TryGetValue(Profile.LastJobLoadout, out var loadout))
-                {
-                    Profile.LoadoutPreferences.Clear();
-                    Profile.LoadoutPreferences.UnionWith(loadout);
-
-                    UpdateLoadouts();
-                }
-                else if (hadLastJob)
-                {
-                    Profile.LoadoutPreferences.Clear();
-                    UpdateLoadouts();
-                }
-
-                /// Apply trait preferences from dictionary
-                if (Profile.JobTraits.TryGetValue(Profile.LastJobLoadout, out var traits))
-                {
-                    foreach (var trait in Profile.TraitPreferences.ToList())
-                        Profile = Profile?.WithTraitPreference(trait, false);
-
-                    foreach (var trait in traits.ToList())
-                        Profile = Profile?.WithTraitPreference(trait, true);
-
-                    UpdateTraits();
-                }
-                else if (hadLastJob)
-                {
-                    foreach (var trait in Profile.TraitPreferences.ToList())
-                        Profile = Profile?.WithTraitPreference(trait, false);
-                    UpdateTraits();
-                }
+                UpdateLoadouts();
             }
+            else if (hadLastJob)
+            {
+                Profile.LoadoutPreferences.Clear();
+                UpdateLoadouts();
+            }
+
+            /// Apply trait preferences from dictionary
+            if (Profile.JobTraits.TryGetValue(Profile.LastJobLoadout, out var traits))
+            {
+                foreach (var trait in Profile.TraitPreferences.ToList())
+                    Profile = Profile?.WithTraitPreference(trait, false);
+
+                foreach (var trait in traits.ToList())
+                    Profile = Profile?.WithTraitPreference(trait, true);
+
+                UpdateTraits();
+            }
+            else if (hadLastJob)
+            {
+                foreach (var trait in Profile.TraitPreferences.ToList())
+                    Profile = Profile?.WithTraitPreference(trait, false);
+                UpdateTraits();
+            }
+
             _currentActionsWindow?.Update();
             SetDirty();
         }

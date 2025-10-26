@@ -99,11 +99,9 @@ public sealed partial class LoadoutJobActionsWindow : FancyWindow
             CopyTraitsAllAction.ToolTip = Loc.GetString("loadout-job-action-tooltip-to-all-error");
             CopyLoadoutsAllAction.ToolTip = Loc.GetString("loadout-job-action-tooltip-to-all-error");
             CopyBothAllAction.ToolTip = Loc.GetString("loadout-job-action-tooltip-to-all-error");
-            }
-
-
-
+        }
     }
+
     private void OnCopyTraits()
     {
         _profileEditor?.CopyTraitsFrom(_jobPrototype);
