@@ -618,3 +618,39 @@
   applyMaterialDiscount: false
   materials:
     SheetPrinter: 100
+
+- type: latheRecipe
+  id: PrintedDocumentReceiptofDeliveryRecipe
+  result: PrintedDocumentReceiptofDelivery
+  category: Reports
+  icon:
+    sprite: Objects/Specific/Mail/mail_large.rsi
+    state: icon
+  completetime: 2
+  applyMaterialDiscount: false
+  materials:
+    SheetPrinter: 100
+
+- type: latheRecipe
+  id: PrintedDocumentDNRRecipe
+  result: PrintedDocumentDNR
+  category: Statements
+  icon:
+    sprite: Objects/Specific/Medical/Morgue/bodybags.rsi
+    state: bag
+  completetime: 2
+  applyMaterialDiscount: false
+  materials:
+    SheetPrinter: 100
+
+- type: latheRecipe
+  id: PrintedDocumentMedicalReceiptRecipe
+  result: PrintedDocumentMedicalReceipt
+  category: Reports
+  icon:
+    sprite: Objects/Specific/Medical/medical.rsi
+    state: brutepack
+  completetime: 2
+  applyMaterialDiscount: false
+  materials:
+    SheetPrinter: 100
