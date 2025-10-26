@@ -842,18 +842,18 @@ doc-text-printer-letter =
     {"["}italic]Place for seals[/italic]
 doc-text-receipt-of-delivery =
     {"["}color=#7D6E1A][bold][head=1]RECEIPT OF DELIVERY[/head][/bold][/color]
-    =====================================
+    ─────────────────────────────────────
     {"["}color=#7D6E1A][bold][head=4]CONTENTS OF DELIVERY[/head][/bold][/color]
     {"["}monospace]- [italic][form][/italic]
     - [italic][form][/italic]
     - [italic][form][/italic][/mono]
-    =====================================
+    ─────────────────────────────────────
     {"["}color=#7D6E1A][bold][head=4]For the Courier:[/head][/bold][/color]
     {"["}italic]I, the deliverer/courier, confirm that the provided details are correct, and that the requested items have been delivered: [check][/italic]
     {"["}italic]Was the package damaged: [check][/italic]
     {"["}bold]Deliverer's Name and Position:[/bold] [italic][signature][/italic]
     {"["}bold]Additional Remarks:[/bold] [italic][form][/italic]
-    =====================================
+    ─────────────────────────────────────
     {"["}color=#7D6E1A][bold][head=4]For the Recipient:[/head][/bold][/color]
     {"["}italic]I, the recipient, confirm that I have received the listed items, and that the courier has completed their task successfully: [check][/italic]
     {"["}bold]Recipient's Name and Position:[/bold] [italic][signature][/italic]
