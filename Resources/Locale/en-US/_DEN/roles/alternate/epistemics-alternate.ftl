@@ -5,6 +5,7 @@
 
 # Research Assistant
 job-name-alternate-initiate = Initiate
+job-name-alternate-novitiate = Novitiate
 
 # Scientist
 job-name-alternate-lab-tech = Lab Technician
@@ -17,6 +18,7 @@ job-name-alternate-positronic-technician = Positronic Technician
 job-name-alternate-mech-technician = Mech Technician
 job-name-alternate-cyborg-specialist = Cyborg Specialist
 job-name-alternate-bionic-engineer = Bionic Engineer
+job-name-alternate-biomechanical-engineer = Biomechanical Engineer
 
 # Research Director
 job-name-alternate-chief-scientist = Chief Scientist
