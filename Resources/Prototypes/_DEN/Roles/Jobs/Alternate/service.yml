@@ -1,3 +1,4 @@
+# SPDX-FileCopyrightText: 2025 ASaltySeabass
 # SPDX-FileCopyrightText: 2025 Jakumba
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
@@ -40,6 +41,10 @@
   - job-name-alternate-butcher
   - job-name-alternate-cuisinic-technician
   - job-name-alternate-culinarian
+  - job-name-alternate-chef-de-cuisine
+  - job-name-alternate-patissier
+  - job-name-alternate-cook
+  - job-name-alternate-mess-officer
 
 - type: alternateJobTitle
   id: DefaultClown
@@ -95,3 +100,32 @@
     - job-name-alternate-journalist
     - job-name-alternate-correspondent
     - job-name-alternate-radio-host
+
+- type: alternateJobTitle
+  id: DefaultJanitor
+  jobId: Janitor
+  titles:
+    - job-name-alternate-hygiene-technician
+    - job-name-alternate-custodian
+    - job-name-alternate-maid
+    - job-name-alternate-butler
+
+- type: alternateJobTitle
+  id: DefaultServiceWorker
+  jobId: ServiceWorker
+  titles:
+    - job-name-alternate-assistant-chef
+    - job-name-alternate-assistant-bartender
+    - job-name-alternate-assistant-botanist
+
+- type: alternateJobTitle
+  id: DefaultBoxer
+  jobId: Boxer
+  titles:
+    - job-name-alternate-physical-trainer
+
+- type: alternateJobTitle
+  id: DefaultMartialArtist
+  jobId: MartialArtist
+  titles:
+    - job-name-alternate-black-belt

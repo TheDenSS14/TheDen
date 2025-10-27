@@ -1,3 +1,4 @@
+# SPDX-FileCopyrightText: 2025 ASaltySeabass
 # SPDX-FileCopyrightText: 2025 Jakumba
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
@@ -19,6 +20,8 @@
   - job-name-alternate-positronic-technician
   - job-name-alternate-mech-technician
   - job-name-alternate-cyborg-specialist
+  - job-name-alternate-bionic-engineer
+  - job-name-alternate-biomechanical-engineer
 
 - type: alternateJobTitle
   id: DefaultResearchDirector
@@ -34,3 +37,35 @@
   jobId: ForensicMantis
   titles:
     - job-name-alternate-inquisitor
+
+- type: alternateJobTitle
+  id: DefaultChaplain
+  jobId: Chaplain
+  titles:
+    - job-name-alternate-cleric
+    - job-name-alternate-priest
+    - job-name-alternate-priestess
+    - job-name-alternate-curate
+    - job-name-alternate-officiant
+
+- type: alternateJobTitle
+  id: DefaultSeniorResearcher
+  jobId: SeniorResearcher
+  titles:
+    - job-name-alternate-mystic
+
+- type: alternateJobTitle
+  id: DefaultLibrarian
+  jobId: Librarian
+  titles:
+    - job-name-alternate-librarian
+    - job-name-alternate-scholar
+    - job-name-alternate-archivist
+
+- type: alternateJobTitle
+  id: DefaultResearchAssistant
+  jobId: ResearchAssistant
+  titles:
+  - job-name-alternate-lab-assistant
+  - job-name-alternate-initiate
+  - job-name-alternate-novitiate

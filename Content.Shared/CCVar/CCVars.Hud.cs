@@ -1,6 +1,7 @@
-// SPDX-FileCopyrightText: 2025 DocNITE <docnite0530@gmail.com>
-// SPDX-FileCopyrightText: 2025 VMSolidus <evilexecutive@gmail.com>
-// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Dirius77
+// SPDX-FileCopyrightText: 2025 DocNITE
+// SPDX-FileCopyrightText: 2025 VMSolidus
+// SPDX-FileCopyrightText: 2025 sleepyyapril
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -36,4 +37,10 @@ public sealed partial class CCVars
 
     public static readonly CVarDef<bool> ChatExtraInfo =
         CVarDef.Create("hud.chat_extra_info", true, CVar.CLIENTONLY | CVar.ARCHIVE);
+
+    /// <summary>
+    ///     DEN: Stops the server from sending the station broadcast about people cryoing to this client.
+    /// </summary>
+    public static readonly CVarDef<bool> IgnoreCryoMessage =
+        CVarDef.Create("hud.ignore_cryo_message", false, CVar.CLIENTONLY | CVar.ARCHIVE);
 }
