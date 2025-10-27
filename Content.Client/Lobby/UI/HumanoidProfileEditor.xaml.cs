@@ -111,6 +111,7 @@ using System.Linq;
 using System.Numerics;
 using Content.Shared._DEN.Job;
 using Robust.Client.ResourceManagement;
+using Robust.Shared.Utility;
 using Direction = Robust.Shared.Maths.Direction;
 
 // End CD - Character Records
@@ -1306,7 +1307,7 @@ namespace Content.Client.Lobby.UI
 
                     var jobIcon = _prototypeManager.Index<JobIconPrototype>(job.Icon);
                     icon.Texture = jobIcon.Icon.Frame0();
-                    selector.Setup(items, job.LocalizedName, 200, job.LocalizedDescription, icon, job.Guides);
+                    selector.Setup(items, job.LocalizedName, 210, job.LocalizedDescription, icon, job.Guides);
 
                     var alternateJobTitles = GetAlternateJobTitles(job);
 
@@ -1464,7 +1465,7 @@ namespace Content.Client.Lobby.UI
                     };
                     var jobIcon = _prototypeManager.Index(job.Icon);
                     icon.Texture = jobIcon.Icon.Frame0();
-                    selector.Setup(items, job.LocalizedName, 200, job.LocalizedDescription, icon);
+                    selector.Setup(items, job.LocalizedName, 210, job.LocalizedDescription, icon);
 
                     var alternateJobTitles = GetAlternateJobTitles(job);
 
@@ -1505,13 +1506,15 @@ namespace Content.Client.Lobby.UI
 
                     selector.OnSelected += priority =>
                     {
+
+                        var selectedJobPrio = (JobPriority) priority;
+                        Profile = Profile?.WithJobPriority(job.ID, selectedJobPrio);
                         foreach (var (jobId, other) in _jobPriorities)
                         {
                             // Sync other selectors with the same job in case of multiple department jobs
                             if (jobId == job.ID)
                                 other.Select(other.Selected);
-                            else if ((JobPriority) other.Selected == JobPriority.High &&
-                                (JobPriority) other.Selected == JobPriority.High)
+                            else if (selectedJobPrio == JobPriority.High && (JobPriority) other.Selected == JobPriority.High)
                             {
                                 // Lower any other high priorities to medium.
                                 other.Select((int) JobPriority.Medium);
