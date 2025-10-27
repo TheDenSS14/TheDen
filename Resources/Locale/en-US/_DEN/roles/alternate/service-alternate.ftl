@@ -62,6 +62,7 @@ job-name-alternate-drummer = Drummer
 job-name-alternate-hygiene-technician = Hygiene Technician
 job-name-alternate-custodian = Custodian
 job-name-alternate-maid = Maid
+job-name-alternate-butler = Butler
 
 # Reporter
 job-name-alternate-journalist = Journalist

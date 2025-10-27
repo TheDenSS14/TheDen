@@ -8,6 +8,7 @@ job-name-alternate-bodyguard = Bodyguard
 job-name-alternate-close-protection-operative = Close Protection Operative
 
 # Magistrate
+job-name-alternate-chief-justice = Chief Justice
 job-name-alternate-jurist = Jurist
 job-name-alternate-adjudicator = Adjudicator
 

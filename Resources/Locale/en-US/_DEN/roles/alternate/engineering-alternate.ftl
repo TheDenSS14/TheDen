@@ -6,7 +6,7 @@
 # Technical Assistant
 job-name-alternate-junior-engineer = Junior Engineer
 job-name-alternate-junior-technician = Junior Technician
-job-name-alternate-apprentice = Apprentice
+job-name-alternate-engineering-apprentice = Engineering Apprentice
 
 # Station Engineer
 job-name-alternate-electrician = Electrician
@@ -14,7 +14,7 @@ job-name-alternate-mechanic = Mechanic
 job-name-alternate-architect = Architect
 job-name-alternate-technician = Technician
 job-name-alternate-repairman = Repairman
-job-name-alternate-journeyman = Journeyman
+job-name-alternate-journeyman-engineer = Journeyman Engineer
 
 
 # Atmospheric Technician
