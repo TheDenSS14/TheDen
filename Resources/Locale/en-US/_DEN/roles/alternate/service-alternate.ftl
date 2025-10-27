@@ -37,7 +37,6 @@ job-name-alternate-chef-de-cuisine = Chef de Cuisine
 job-name-alternate-patissier = Pâtissier
 job-name-alternate-cook = Cook
 job-name-alternate-mess-officer = Mess Officer
-job-name-alternate-galley-master = Galley Master
 
 # Clown
 job-name-alternate-jester = Jester
