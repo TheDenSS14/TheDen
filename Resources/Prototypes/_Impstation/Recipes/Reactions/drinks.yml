@@ -37,3 +37,15 @@
       amount: 1
   products:
     FeverDream: 5
+
+- type: reaction
+  id: CottonBool
+  requiredMixerCategories:
+    - Stir
+  reactants:
+    Fiber:
+      amount: 1
+    EnergyDrink:
+      amount: 1
+  products:
+    CottonBool: 2
