@@ -4,6 +4,7 @@
 # SPDX-License-Identifier: MIT
 
 # Research Assistant
+job-name-alternate-lab-assistant = Lab Assistant
 job-name-alternate-initiate = Initiate
 job-name-alternate-novitiate = Novitiate
 
