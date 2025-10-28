@@ -1,3 +1,8 @@
+# SPDX-FileCopyrightText: 2025 Jadrek
+# SPDX-FileCopyrightText: 2025 Shaman
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 - type: entity
   parent: DrinkGlass
   id: DrinkThavenBadGlass
@@ -29,3 +34,19 @@
   - type: Icon
     sprite: _Impstation/Objects/Consumable/Drinks/feverdream.rsi
     state: icon
+
+- type: entity
+  parent: DrinkGlass
+  id: DrinkCottonBoolGlass
+  suffix: cotton bool
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 30
+        reagents:
+        - ReagentId: CottonBool
+          Quantity: 30
+  - type: Icon
+    sprite: Objects/Consumable/Drinks/thin_glass.rsi
+    state: icon_empty #i think literally every other glass rsi has an 'icon' state except this one which is fucked

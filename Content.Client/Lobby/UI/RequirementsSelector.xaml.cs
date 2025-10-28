@@ -1,9 +1,10 @@
 // SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT
 // SPDX-FileCopyrightText: 2024 Leon Friedrich
 // SPDX-FileCopyrightText: 2025 Dirius77
+// SPDX-FileCopyrightText: 2025 DoctorJado
 // SPDX-FileCopyrightText: 2025 sleepyyapril
 //
-// SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
+// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 using System.Numerics;
 using Content.Client.Stylesheets;
@@ -30,6 +31,7 @@ public sealed partial class RequirementsSelector : BoxContainer
 
     public event Action<int>? OnSelected;
     public event Action<List<ProtoId<GuideEntryPrototype>>>? OnOpenGuidebook;
+    public event Action? OnClickJobActions;
     public event Action<JobPrototype, List<(LocId, string)>>? OnOpenAlternateJobTitle;
 
     public int Selected => _options.SelectedId;
@@ -98,6 +100,8 @@ public sealed partial class RequirementsSelector : BoxContainer
 
         Help.Visible = guides != null;
         _guides = guides;
+
+        JobActionsButton.OnPressed += _ => OnClickJobActions?.Invoke();
 
         TitleLabel.Text = title;
         TitleLabel.MinSize = new Vector2(titleSize, 0f);

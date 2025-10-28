@@ -6,7 +6,7 @@
 // SPDX-FileCopyrightText: 2025 portfiend
 // SPDX-FileCopyrightText: 2025 sleepyyapril
 //
-// SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
+// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 using System.Linq;
 using Content.Shared.Body.Systems;
@@ -97,6 +97,14 @@ public sealed class SharedLoadoutSystem : EntitySystem
         var failedLoadouts = new List<EntityUid>();
         var allLoadouts = new List<(EntityUid, LoadoutPreference, int)>();
         heirlooms = new();
+
+        // load loadouts from correct jobloadout
+        if (profile.JobLoadouts.TryGetValue(job.ID, out var targetLoadout))
+        {
+            profile.LoadoutPreferences.Clear();
+            profile.LoadoutPreferences.UnionWith(targetLoadout);
+        }
+
         if (!job.SpawnLoadout)
             return (failedLoadouts, allLoadouts);
 
