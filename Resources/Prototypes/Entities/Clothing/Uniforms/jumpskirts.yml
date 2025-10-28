@@ -154,7 +154,7 @@
     sprite: Clothing/Uniforms/Jumpskirt/chemistry.rsi
 
 - type: entity
-  parent: ClothingUniformSkirtBase
+  parent: [ ClothingUniformSkirtBase, ClothingUniformFoldableBase ]
   id: ClothingUniformJumpskirtVirology
   name: virology jumpskirt
   description: It's made of a special fiber that gives special protection against biohazards. It has a virologist rank stripe on it.
