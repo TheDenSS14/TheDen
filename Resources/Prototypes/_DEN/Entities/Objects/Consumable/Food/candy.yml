@@ -20,6 +20,8 @@
       food:
         maxVol: 5
         reagents:
+        - ReagentId: Nutriment
+          Quantity: 2
         - ReagentId: Sugar
           Quantity: 3
   - type: RandomSprite
@@ -176,6 +178,8 @@
       food:
         maxVol: 5
         reagents:
+        - ReagentId: Nutriment
+          Quantity: 2
         - ReagentId: Sugar
           Quantity: 3
 
