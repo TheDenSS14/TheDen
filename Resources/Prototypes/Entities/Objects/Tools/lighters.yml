@@ -459,7 +459,7 @@
 - type: entity
   parent: BaseBrandedLighter
   id: CybersunFlippo
-  name: CyberSun Flippo
+  name: CyberSun flippo #TheDen - Nitpick, lowercased the F in flippo.
   description: "A Sleek black and magenta flippo lighter, bearing the logo and iconography of CyberSun Industries."
   components:
   - type: Sprite
@@ -479,7 +479,7 @@
 - type: entity
   parent: BaseBrandedLighter
   id: InterdyneFlippo
-  name: Interdyne Flippo
+  name: Interdyne flippo #TheDen - Nitpick, lowercased the F in flippo.
   description: "A deep blue flippo lighter, decorated with the logo of Interdyne Pharmaceuticals' 'Gene Clean' clinics. Become the master of your own cigarette."
   components:
   - type: Sprite
@@ -503,7 +503,7 @@
 - type: entity
   parent: [BaseBrandedLighter, BaseCommandContraband] #TheDen - Since it's a command loadout item, it makes sense for it to be command contra. Maybe?
   id: NanotrasenFlippo
-  name: Nanotrasen Flippo
+  name: Nanotrasen flippo #TheDen - Nitpick, lowercased the F in flippo.
   description: "A navy blue luxury flippo, generally handed out to loyal heads of staff instead of a payraise. Fueled with liquid plasma"
   components:
   - type: Sprite
@@ -539,7 +539,7 @@
 - type: entity
   parent: [BaseBrandedLighter, BaseCentcommContraband]
   id: AdminCentCommFlippo #The Den - moved this to an admin only item for a real CC one for loadouts
-  name: Gilded CentComm Flippo
+  name: Gilded CentComm flippo #TheDen - Nitpick, lowercased the F in flippo.
   description: "An Ornate, jade embossed and gilded flippo frame containing a bluespace powered jet. The latch is secured by a miniature access reader that only responds to CentComm officials. The nicest lighter known to man."
   suffix: DO NOT MAP
   components:
@@ -586,7 +586,7 @@
 - type: entity
   parent: [BaseBrandedLighter, BaseCentcommContraband]
   id: CentCommFlippo
-  name: CentComm Flippo
+  name: CentComm flippo #TheDen - Nitpick, lowercased the F in flippo.
   description: "An ornate gilded flippo frame containing a bluespace powered jet. Often provided to centcomm commanders and dignitaries."
   components:
     - type: Sprite
@@ -625,9 +625,9 @@
 # End Den additions
 
 - type: entity
-  parent: [BaseBrandedLighter, BaseMajorContraband]
+  parent: [BaseBrandedLighter, BaseNinjaContraband] #TheDen - Ninja Contra for a Ninja lighter.
   id: SpiderclanFlippo
-  name: Spider-Clan lighter
+  name: Spider Clan lighter #TheDen - Nitpick, removed the hyphen.
   description: "A high tech jet lighter, engineered to function even in deep space. Runs on a tiny microfusion cell."
   components:
   - type: Sprite
