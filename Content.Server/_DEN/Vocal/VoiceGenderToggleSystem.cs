@@ -55,6 +55,8 @@ public sealed partial class VoiceGenderToggleSystem : SharedVoiceGenderToggleSys
 
         var voiceEvent = new VoiceChangedEvent(ent.Comp.CurrentVoiceGender, gender);
         RaiseLocalEvent(ent, voiceEvent);
+
+        args.Handled = true;
     }
 
     private void OnVoiceChanged(Entity<VoiceGenderToggleComponent> ent, ref VoiceChangedEvent args)
