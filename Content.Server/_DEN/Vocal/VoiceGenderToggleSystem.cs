@@ -23,7 +23,6 @@ public sealed partial class VoiceGenderToggleSystem : SharedVoiceGenderToggleSys
 
     private void OnMapInit(Entity<VoiceGenderToggleComponent> ent, ref MapInitEvent args)
     {
-        // _actionContainer.EnsureAction(ent, ref ent.Comp.ToggleActionEntity, ent.Comp.ToggleAction);
         _actions.AddAction(ent, ref ent.Comp.ToggleActionEntity, ent.Comp.ToggleAction);
 
         var sex = Sex.Unsexed; // i guess
