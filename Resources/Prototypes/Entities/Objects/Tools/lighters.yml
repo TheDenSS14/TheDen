@@ -336,8 +336,8 @@
       Welder:
         reagents:
         - ReagentId: WeldingFuel
-          Quantity: 12
-        maxVol: 12
+          Quantity: 15 #TheDen - Slightly higher total capacity when compared to a regular flippo.
+        maxVol: 15 #TheDen
   - type: Sprite
     layers:
     - state: icon
@@ -392,8 +392,8 @@
   - type: Item
     sprite: Objects/Tools/Lighters/syndielighter.rsi
   - type: Welder
-    fuelConsumption: 0.005
-    fuelLitCost: 0.01
+    fuelConsumption: 0.01 #TheDen - A Fuel consumption of 0.005 caused it to not consume any fuel at all.
+    fuelLitCost: 0.05 #TheDen
     tankSafe: true
   - type: PointLight
     enabled: false
@@ -467,8 +467,8 @@
   - type: Item
     sprite: Objects/Tools/Lighters/cybersun.rsi
   - type: Welder #
-    fuelConsumption: 0.005
-    fuelLitCost: 0.01
+    fuelConsumption: 0.01 #TheDen - A Fuel consumption of 0.005 caused it to not consume any fuel at all.
+    fuelLitCost: 0.05 #TheDen
     tankSafe: true
   - type: PointLight
     enabled: false
@@ -487,8 +487,8 @@
   - type: Item
     sprite: Objects/Tools/Lighters/interdyne.rsi
   - type: Welder #
-    fuelConsumption: 0.005
-    fuelLitCost: 0.01
+    fuelConsumption: 0.01 #TheDen - A Fuel consumption of 0.005 caused it to not consume any fuel at all.
+    fuelLitCost: 0.05 #TheDen
     tankSafe: true
   - type: ItemToggleMeleeWeapon
     activatedDamage:
@@ -501,7 +501,7 @@
     color: cyan
 
 - type: entity
-  parent: [BaseBrandedLighter]
+  parent: [BaseBrandedLighter, BaseCommandContraband] #TheDen - Since it's a command loadout item, it makes sense for it to be command contra. Maybe?
   id: NanotrasenFlippo
   name: Nanotrasen Flippo
   description: "A navy blue luxury flippo, generally handed out to loyal heads of staff instead of a payraise. Fueled with liquid plasma"
@@ -511,8 +511,8 @@
   - type: Item
     sprite: Objects/Tools/Lighters/nanotrasen.rsi
   - type: Welder #
-    fuelConsumption: 0.005
-    fuelLitCost: 1
+    fuelConsumption: 0.02 #TheDen - A Fuel consumption of 0.005 caused it to not consume any fuel at all.
+    fuelLitCost: 0.5 #TheDen
     fuelReagent: Plasma
     tankSafe: true
   - type: PointLight
@@ -529,6 +529,12 @@
         - ReagentId: Plasma
           Quantity: 10
         maxVol: 10
+  - type: SolutionRegeneration #TheDen - Regenerates fuel like an experimental welder.
+    solution: Welder
+    generated:
+      reagents:
+      - ReagentId: Plasma
+        Quantity: 0.01
 
 - type: entity
   parent: [BaseBrandedLighter, BaseCentcommContraband]
@@ -588,8 +594,8 @@
     - type: Item
       sprite: Objects/Tools/Lighters/centcomm.rsi
     - type: Welder #
-      fuelConsumption: 0.005
-      fuelLitCost: 10
+      fuelConsumption: 0.1 #TheDen
+      fuelLitCost: 1 #TheDen
       fuelReagent: Plasma
       tankSafe: true
     - type: PointLight
@@ -616,7 +622,6 @@
         reagents:
           - ReagentId: Plasma
             Quantity: 0.1
-    - type: Lock
 # End Den additions
 
 - type: entity
@@ -632,12 +637,20 @@
   - type: Welder #
     fuelConsumption: 0
     fuelLitCost: 0
+    fuelReagent: Plasma #TheDen
     tankSafe: true
   - type: PointLight
     enabled: false
     netsync: false
     radius: 2
     color: green
+  - type: SolutionContainerManager #TheDen - Doesn't use fuel anyways.
+    solutions:
+      Welder:
+        reagents:
+          - ReagentId: Plasma
+            Quantity: 1
+        maxVol: 1
 
 - type: entity
   parent: BaseBrandedLighter
@@ -650,7 +663,7 @@
   - type: Item
     sprite: Objects/Tools/Lighters/waffleco.rsi
   - type: Welder #
-    fuelConsumption: 0.005
+    fuelConsumption: 0.01 #TheDen - A Fuel consumption of 0.005 caused it to not consume any fuel at all.
     fuelLitCost: 0.05
     tankSafe: true
   - type: PointLight
@@ -695,8 +708,8 @@
           mask:
           - ItemMask
   - type: Welder #
-    fuelConsumption: 0.1
-    fuelLitCost: 1
+    fuelConsumption: 0.01 #TheDen
+    fuelLitCost: 0.5 #TheDen
     tankSafe: true
   - type: PointLight
     enabled: false
@@ -715,7 +728,7 @@
   - type: Item
     sprite: Objects/Tools/Lighters/donkco.rsi
   - type: Welder #
-    fuelConsumption: 0.02
+    fuelConsumption: 0.01 #TheDen
     fuelLitCost: 0.1
     tankSafe: true
   - type: Tag
