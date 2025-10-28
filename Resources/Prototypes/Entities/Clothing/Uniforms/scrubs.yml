@@ -4,7 +4,7 @@
 # SPDX-License-Identifier: MIT
 
 - type: entity
-  parent: ClothingUniformBase
+  parent: [ClothingUniformBase, ClothingUniformFoldableBase]
   id: UniformScrubsColorPurple
   name: purple scrubs
   description: A combination of comfort and utility intended to make removing every last organ someone has and selling them to a space robot much more official looking.
@@ -15,7 +15,7 @@
     sprite: Clothing/Uniforms/Scrubs/purple.rsi
 
 - type: entity
-  parent: ClothingUniformBase
+  parent: [ClothingUniformBase, ClothingUniformFoldableBase]
   id: UniformScrubsColorGreen
   name: green scrubs
   description: A combination of comfort and utility intended to make removing every last organ someone has and selling them to a space robot much more official looking.
@@ -26,7 +26,7 @@
     sprite: Clothing/Uniforms/Scrubs/green.rsi
 
 - type: entity
-  parent: ClothingUniformBase
+  parent: [ClothingUniformBase, ClothingUniformFoldableBase]
   id: UniformScrubsColorBlue
   name: blue scrubs
   description: A combination of comfort and utility intended to make removing every last organ someone has and selling them to a space robot much more official looking.
