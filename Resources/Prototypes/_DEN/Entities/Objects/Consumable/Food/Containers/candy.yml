@@ -9,6 +9,9 @@
     size: Small
   - type: Storage
     maxItemSize: Tiny
+    whitelist:
+      tags:
+      - Candy
     grid:
     - 0,0,5,2
   - type: StaticPrice

@@ -11,6 +11,10 @@
       map: [ "enum.DamageStateVisualLayers.Base" ]
   - type: Item
     size: Tiny
+  - type: Tag
+    tags:
+    - FoodSnack
+    - Candy
   - type: SolutionContainerManager
     solutions:
       food:
@@ -163,6 +167,10 @@
     sprite: _DEN/Objects/Consumable/Food/Candy/hard_candy.rsi
   - type: Item
     size: Tiny
+  - type: Tag
+    tags:
+    - FoodSnack
+    - Candy
   - type: SolutionContainerManager
     solutions:
       food:
@@ -185,6 +193,7 @@
   - type: Tag
     tags:
     - FoodSnack
+    - Candy
   - type: SpawnItemsOnUse
     sound:
       path: /Audio/Effects/unwrap.ogg
