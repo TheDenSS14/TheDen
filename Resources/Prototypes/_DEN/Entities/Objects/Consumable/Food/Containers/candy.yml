@@ -1,0 +1,28 @@
+- type: entity
+  abstract: true
+  parent: BoxCardboard
+  id: CandyBagBase
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Storage/candy_bag.rsi
+  - type: Item
+    size: Small
+  - type: Storage
+    maxItemSize: Tiny
+    grid:
+    - 0,0,5,2
+  - type: StaticPrice
+    price: 10
+
+- type: entity
+  parent: CandyBagBase
+  id: CandyBagGummyBear
+  name: bulk bag of gummy bears
+  description: A bag of assorted gummy bears.
+  components:
+  - type: Sprite
+    state: gummy_bear
+  - type: StorageFill
+    contents:
+    - id: FoodSnackGummyBear
+      amount: 18
