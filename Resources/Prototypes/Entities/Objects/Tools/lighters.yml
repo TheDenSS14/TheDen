@@ -331,7 +331,7 @@
   - type: ItemToggleMeleeWeapon
     activatedDamage:
         types:
-            Heat: 1
+            Heat: 2 #TheDen - Just a smidge hotter
   - type: ItemToggleSize
     activatedSize: Small
   - type: ItemToggleHot
@@ -383,6 +383,12 @@
       right:
       - state: inhand-right-lit
         shader: unshaded
+  - type: MeleeWeapon #TheDen - Melee weapon fix
+    wideAnimationRotation: 180
+    damage:
+      types:
+        Blunt: 1
+  - type: DamageOtherOnHit
   - type: Cautery #TheDen - Shitmed Cautery
     speed: 0.45
   - type: SurgeryTool
@@ -507,7 +513,7 @@
   - type: ItemToggleMeleeWeapon
     activatedDamage:
         types:
-          Radiation: 1
+          Radiation: 2 #Spicy
   - type: PointLight
     enabled: false
     netsync: false
@@ -520,6 +526,10 @@
   name: Nanotrasen flippo #TheDen - Nitpick, lowercased the F in flippo.
   description: "A navy blue luxury flippo, generally handed out to loyal heads of staff instead of a payraise. Fueled with liquid plasma"
   components:
+  - type: ItemToggleMeleeWeapon
+    activatedDamage:
+        types:
+            Heat: 5 #TheDen - Plasma flames are hot!
   - type: Sprite
     sprite: Objects/Tools/Lighters/nanotrasen.rsi
   - type: Item
@@ -557,6 +567,10 @@
   description: "An Ornate, jade embossed and gilded flippo frame containing a bluespace powered jet. The latch is secured by a miniature access reader that only responds to CentComm officials. The nicest lighter known to man."
   suffix: DO NOT MAP
   components:
+  - type: ItemToggleMeleeWeapon
+    activatedDamage:
+        types:
+            Heat: 5 #TheDen Bluespace flames are also hot! (Probably)
   - type: Sprite
     sprite: Objects/Tools/Lighters/centcomm.rsi
   - type: Item
@@ -603,6 +617,10 @@
   name: CentComm flippo #TheDen - Nitpick, lowercased the F in flippo.
   description: "An ornate gilded flippo frame containing a bluespace powered jet. Often provided to centcomm commanders and dignitaries."
   components:
+    - type: ItemToggleMeleeWeapon
+      activatedDamage:
+          types:
+              Heat: 5 #TheDen Bluespace flames are also hot! (Probably)
     - type: Sprite
       sprite: Objects/Tools/Lighters/centcomm.rsi
     - type: Item
@@ -644,6 +662,10 @@
   name: Spider Clan lighter #TheDen - Nitpick, removed the hyphen.
   description: "A high tech jet lighter, engineered to function even in deep space. Runs on a tiny microfusion cell."
   components:
+  - type: ItemToggleMeleeWeapon
+    activatedDamage:
+        types:
+            Shock: 5 #TheDen - Zappy arc lighter
   - type: Sprite
     sprite: Objects/Tools/Lighters/spiderclan.rsi
   - type: Item
