@@ -332,6 +332,16 @@
     activatedDamage:
         types:
             Heat: 2 #TheDen - Just a smidge hotter
+    activatedSoundOnHit:
+      path: /Audio/Weapons/Guns/Hits/energy_meat1.ogg
+      params:
+        variation: 0.250
+        volume: -15
+    activatedSoundOnHitNoDamage:
+      path: /Audio/Weapons/Guns/Hits/energy_meat1.ogg
+      params:
+        variation: 0.250
+        volume: -17
   - type: ItemToggleSize
     activatedSize: Small
   - type: ItemToggleHot
