@@ -19,6 +19,23 @@
 
 - type: entity
   parent: CandyBagBase
+  id: CandyBagGumball
+  name: bulk gumball bag
+  description: A bag of gumballs in various flavors.
+  components:
+  - type: Sprite
+    state: gumball
+  - type: Storage
+    maxItemSize: Small
+    grid:
+    - 0,0,5,3
+  - type: StorageFill
+    contents:
+    - id: FoodGumball
+      amount: 12
+
+- type: entity
+  parent: CandyBagBase
   id: CandyBagGummyBear
   name: bulk gummy bear bag
   description: A bag of assorted gummy bears.
@@ -29,6 +46,23 @@
     contents:
     - id: FoodSnackGummyBear
       amount: 18
+
+- type: entity
+  parent: CandyBagBase
+  id: CandyBagLollipop
+  name: bulk lollipop bag
+  description: A bag of lollipops in various flavors.
+  components:
+  - type: Sprite
+    state: lollipop
+  - type: Storage
+    maxItemSize: Small
+    grid:
+    - 0,0,5,3
+  - type: StorageFill
+    contents:
+    - id: FoodLollipop
+      amount: 12
 
 - type: entity
   parent: CandyBagBase
