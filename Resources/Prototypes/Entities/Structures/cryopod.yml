@@ -1,5 +1,6 @@
 # SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT
 # SPDX-FileCopyrightText: 2024 Nemanja
+# SPDX-FileCopyrightText: 2025 Dirius77
 # SPDX-FileCopyrightText: 2025 Jakumba
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
@@ -32,6 +33,8 @@
     access: [["Cryogenics"]]
   - type: InteractionOutline
   - type: Cryostorage
+  - type: CryostorageSilently # DEN - Allow silently entering Cryostorage
+    containerId: storage
   - type: Physics
     canCollide: false
   - type: DragInsertContainer

@@ -2,7 +2,7 @@
 # SPDX-FileCopyrightText: 2025 Rosycup
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 - type: entity
   id: CigaretteOlive
@@ -49,5 +49,3 @@
         reagents:
           - ReagentId: Sugar
             Quantity: 10
-  - type: Smokable # DEN - Make candy cigarettes actually burn through contents
-    solution: food

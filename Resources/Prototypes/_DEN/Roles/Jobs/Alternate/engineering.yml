@@ -1,3 +1,5 @@
+# SPDX-FileCopyrightText: 2025 ASaltySeabass
+# SPDX-FileCopyrightText: 2025 Jakumba
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: MIT
@@ -11,13 +13,38 @@
   - job-name-alternate-architect
   - job-name-alternate-technician
   - job-name-alternate-repairman
+  - job-name-alternate-journeyman-engineer
 
 - type: alternateJobTitle
   id: DefaultAtmosphericTechnician
   jobId: AtmosphericTechnician
   titles:
-  - job-name-alternate-life-support-tech
-  - job-name-alternate-plasma-scientist
+  - job-name-alternate-life-support-technician
+  - job-name-alternate-plasma-specialist
+  - job-name-alternate-environmental-engineer
   - job-name-alternate-aerospace-technician
   - job-name-alternate-hull-specialist
   - job-name-alternate-gas-refinement-specialist
+
+- type: alternateJobTitle
+  id: DefaultSeniorEngineer
+  jobId: SeniorEngineer
+  titles:
+  - job-name-alternate-senior-electrician
+  - job-name-alternate-senior-mechanic
+  - job-name-alternate-senior-architect
+  - job-name-alternate-senior-technician
+  - job-name-alternate-senior-repairman
+  - job-name-alternate-senior-aerospace-technician
+  - job-name-alternate-senior-life-support-technician
+  - job-name-alternate-senior-hull-specialist
+  - job-name-alternate-senior-gas-refinement-specialist
+  - job-name-alternate-senior-plasma-specialist
+
+- type: alternateJobTitle
+  id: DefaultTechnicalAssistant
+  jobId: TechnicalAssistant
+  titles:
+  - job-name-alternate-junior-engineer
+  - job-name-alternate-junior-technician
+  - job-name-alternate-engineering-apprentice

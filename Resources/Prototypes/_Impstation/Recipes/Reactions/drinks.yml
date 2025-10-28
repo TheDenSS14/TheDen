@@ -1,3 +1,9 @@
+# SPDX-FileCopyrightText: 2025 Jadrek
+# SPDX-FileCopyrightText: 2025 Shaman
+# SPDX-FileCopyrightText: 2025 oberonics
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 - type: reaction
   id: Genderfluid
   requiredMixerCategories:
@@ -37,3 +43,15 @@
       amount: 1
   products:
     FeverDream: 5
+
+- type: reaction
+  id: CottonBool
+  requiredMixerCategories:
+    - Stir
+  reactants:
+    Fiber:
+      amount: 1
+    EnergyDrink:
+      amount: 1
+  products:
+    CottonBool: 2

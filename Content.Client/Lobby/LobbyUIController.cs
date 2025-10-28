@@ -6,14 +6,16 @@
 // SPDX-FileCopyrightText: 2024 deltanedas
 // SPDX-FileCopyrightText: 2024 metalgearsloth
 // SPDX-FileCopyrightText: 2025 Dirius77
+// SPDX-FileCopyrightText: 2025 DoctorJado
 // SPDX-FileCopyrightText: 2025 Skubman
 // SPDX-FileCopyrightText: 2025 dootythefrooty
 // SPDX-FileCopyrightText: 2025 portfiend
 // SPDX-FileCopyrightText: 2025 sleepyyapril
 //
-// SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
+// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 using System.Linq;
+using Content.Client._DEN.Lobby.UI.Controls;
 using Content.Client.Guidebook;
 using Content.Client.Humanoid;
 using Content.Client.Inventory;
@@ -67,7 +69,6 @@ public sealed class LobbyUIController : UIController, IOnStateEntered<LobbyState
 
     private CharacterSetupGui? _characterSetup;
     private HumanoidProfileEditor? _profileEditor;
-
     /// This is the character preview panel in the chat. This should only update if their character updates
     private LobbyCharacterPreviewPanel? PreviewPanel => GetLobbyPreview();
 
@@ -163,6 +164,8 @@ public sealed class LobbyUIController : UIController, IOnStateEntered<LobbyState
 
         var profile = (HumanoidCharacterProfile?) _preferencesManager.Preferences?.SelectedCharacter;
 
+
+
         // TODO DEN: Kill this with fire
         // I had to add this because, genuinely, someone configured the server database end of
         // this to be a Loadout instead of a LoadoutPreference. The problem is that Loadouts do not
@@ -255,7 +258,8 @@ public sealed class LobbyUIController : UIController, IOnStateEntered<LobbyState
             _requirements,
             _markings,
             _random,
-            _logManager);
+            _logManager
+            );
 
         _profileEditor.OnOpenGuidebook += _guide.OpenHelp;
 
@@ -303,8 +307,9 @@ public sealed class LobbyUIController : UIController, IOnStateEntered<LobbyState
     /// Gets the highest priority job for the profile.
     public JobPrototype GetPreferredJob(HumanoidCharacterProfile profile)
     {
-        var highPriorityJob = profile.JobPriorities.FirstOrDefault(p => p.Value == JobPriority.High).Key;
-        return _prototypeManager.Index<JobPrototype>(highPriorityJob ?? SharedGameTicker.FallbackOverflowJob);
+        return _prototypeManager.Index<JobPrototype>(profile.JobPriorities.Any()
+            ? profile.JobPriorities.MaxBy(kvp => kvp.Value).Key
+            : SharedGameTicker.FallbackOverflowJob);
     }
 
     public void RemoveDummyClothes(EntityUid dummy)

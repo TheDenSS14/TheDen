@@ -24,6 +24,7 @@
 // SPDX-FileCopyrightText: 2024 VMSolidus
 // SPDX-FileCopyrightText: 2024 sleepyyapril
 // SPDX-FileCopyrightText: 2025 Dirius77
+// SPDX-FileCopyrightText: 2025 DoctorJado
 // SPDX-FileCopyrightText: 2025 Falcon
 // SPDX-FileCopyrightText: 2025 Lyndomen
 // SPDX-FileCopyrightText: 2025 Timfa
@@ -819,6 +820,122 @@ namespace Content.Server.Database.Migrations.Sqlite
                     b.ToTable("job", (string)null);
                 });
 
+            modelBuilder.Entity("Content.Server.Database.JobLoadout", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER")
+                        .HasColumnName("job_loadout_id");
+
+                    b.Property<string>("CustomColorTint")
+                        .HasColumnType("TEXT")
+                        .HasColumnName("custom_color_tint");
+
+                    b.Property<string>("CustomDescription")
+                        .HasColumnType("TEXT")
+                        .HasColumnName("custom_description");
+
+                    b.Property<bool?>("CustomHeirloom")
+                        .HasColumnType("INTEGER")
+                        .HasColumnName("custom_heirloom");
+
+                    b.Property<string>("CustomName")
+                        .HasColumnType("TEXT")
+                        .HasColumnName("custom_name");
+
+                    b.Property<int>("JobLoadoutsId")
+                        .HasColumnType("INTEGER")
+                        .HasColumnName("job_loadouts_id");
+
+                    b.Property<string>("LoadoutName")
+                        .IsRequired()
+                        .HasColumnType("TEXT")
+                        .HasColumnName("loadout_name");
+
+                    b.HasKey("Id")
+                        .HasName("PK_job_loadout");
+
+                    b.HasIndex("JobLoadoutsId")
+                        .HasDatabaseName("IX_job_loadout_job_loadouts_id");
+
+                    b.ToTable("job_loadout", (string)null);
+                });
+
+            modelBuilder.Entity("Content.Server.Database.JobLoadouts", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER")
+                        .HasColumnName("job_loadouts_id");
+
+                    b.Property<string>("Job")
+                        .IsRequired()
+                        .HasColumnType("TEXT")
+                        .HasColumnName("job");
+
+                    b.Property<int>("ProfileId")
+                        .HasColumnType("INTEGER")
+                        .HasColumnName("profile_id");
+
+                    b.HasKey("Id")
+                        .HasName("PK_job_loadouts");
+
+                    b.HasIndex("ProfileId")
+                        .HasDatabaseName("IX_job_loadouts_profile_id");
+
+                    b.ToTable("job_loadouts", (string)null);
+                });
+
+            modelBuilder.Entity("Content.Server.Database.JobTrait", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER")
+                        .HasColumnName("job_trait_id");
+
+                    b.Property<int>("JobTraitsId")
+                        .HasColumnType("INTEGER")
+                        .HasColumnName("job_traits_id");
+
+                    b.Property<string>("TraitName")
+                        .IsRequired()
+                        .HasColumnType("TEXT")
+                        .HasColumnName("trait_name");
+
+                    b.HasKey("Id")
+                        .HasName("PK_job_trait");
+
+                    b.HasIndex("JobTraitsId")
+                        .HasDatabaseName("IX_job_trait_job_traits_id");
+
+                    b.ToTable("job_trait", (string)null);
+                });
+
+            modelBuilder.Entity("Content.Server.Database.JobTraits", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER")
+                        .HasColumnName("job_traits_id");
+
+                    b.Property<string>("Job")
+                        .IsRequired()
+                        .HasColumnType("TEXT")
+                        .HasColumnName("job");
+
+                    b.Property<int>("ProfileId")
+                        .HasColumnType("INTEGER")
+                        .HasColumnName("profile_id");
+
+                    b.HasKey("Id")
+                        .HasName("PK_job_traits");
+
+                    b.HasIndex("ProfileId")
+                        .HasDatabaseName("IX_job_traits_profile_id");
+
+                    b.ToTable("job_traits", (string)null);
+                });
+
             modelBuilder.Entity("Content.Server.Database.Loadout", b =>
                 {
                     b.Property<int>("Id")
@@ -1128,6 +1245,11 @@ namespace Content.Server.Database.Migrations.Sqlite
                     b.Property<float>("Width")
                         .HasColumnType("REAL")
                         .HasColumnName("width");
+
+                    b.Property<string>("lastJobLoadout")
+                        .IsRequired()
+                        .HasColumnType("TEXT")
+                        .HasColumnName("last_job_loadout");
 
                     b.HasKey("Id")
                         .HasName("PK_profile");
@@ -1878,6 +2000,54 @@ namespace Content.Server.Database.Migrations.Sqlite
                     b.Navigation("Profile");
                 });
 
+            modelBuilder.Entity("Content.Server.Database.JobLoadout", b =>
+                {
+                    b.HasOne("Content.Server.Database.JobLoadouts", "JobLoadouts")
+                        .WithMany("Loadouts")
+                        .HasForeignKey("JobLoadoutsId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired()
+                        .HasConstraintName("FK_job_loadout_job_loadouts_job_loadouts_id");
+
+                    b.Navigation("JobLoadouts");
+                });
+
+            modelBuilder.Entity("Content.Server.Database.JobLoadouts", b =>
+                {
+                    b.HasOne("Content.Server.Database.Profile", "Profile")
+                        .WithMany("JobLoadouts")
+                        .HasForeignKey("ProfileId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired()
+                        .HasConstraintName("FK_job_loadouts_profile_profile_id");
+
+                    b.Navigation("Profile");
+                });
+
+            modelBuilder.Entity("Content.Server.Database.JobTrait", b =>
+                {
+                    b.HasOne("Content.Server.Database.JobTraits", "JobTraits")
+                        .WithMany("Traits")
+                        .HasForeignKey("JobTraitsId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired()
+                        .HasConstraintName("FK_job_trait_job_traits_job_traits_id");
+
+                    b.Navigation("JobTraits");
+                });
+
+            modelBuilder.Entity("Content.Server.Database.JobTraits", b =>
+                {
+                    b.HasOne("Content.Server.Database.Profile", "Profile")
+                        .WithMany("JobTraits")
+                        .HasForeignKey("ProfileId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired()
+                        .HasConstraintName("FK_job_traits_profile_profile_id");
+
+                    b.Navigation("Profile");
+                });
+
             modelBuilder.Entity("Content.Server.Database.Loadout", b =>
                 {
                     b.HasOne("Content.Server.Database.Profile", "Profile")
@@ -2176,6 +2346,16 @@ namespace Content.Server.Database.Migrations.Sqlite
                     b.Navigation("ConsentToggles");
                 });
 
+            modelBuilder.Entity("Content.Server.Database.JobLoadouts", b =>
+                {
+                    b.Navigation("Loadouts");
+                });
+
+            modelBuilder.Entity("Content.Server.Database.JobTraits", b =>
+                {
+                    b.Navigation("Traits");
+                });
+
             modelBuilder.Entity("Content.Server.Database.Player", b =>
                 {
                     b.Navigation("AdminLogs");
@@ -2227,6 +2407,10 @@ namespace Content.Server.Database.Migrations.Sqlite
                     b.Navigation("Antags");
 
                     b.Navigation("CDProfile");
+
+                    b.Navigation("JobLoadouts");
+
+                    b.Navigation("JobTraits");
 
                     b.Navigation("Jobs");
 
