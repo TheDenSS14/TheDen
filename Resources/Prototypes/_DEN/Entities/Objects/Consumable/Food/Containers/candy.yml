@@ -17,7 +17,7 @@
 - type: entity
   parent: CandyBagBase
   id: CandyBagGummyBear
-  name: bulk bag of gummy bears
+  name: bulk gummy bear bag
   description: A bag of assorted gummy bears.
   components:
   - type: Sprite
@@ -26,3 +26,28 @@
     contents:
     - id: FoodSnackGummyBear
       amount: 18
+
+- type: entity
+  parent: CandyBagBase
+  id: CandyBagHardCandy
+  name: bulk hard candy bag
+  description: A bag of assorted wrapped hard candies.
+  components:
+  - type: Sprite
+    state: hard_candy
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:NestedSelector
+        tableId: RandomHardCandy
+        rolls: !type:ConstantNumberSelector
+          value: 18
+
+- type: entityTable
+  id: RandomHardCandy
+  table: !type:GroupSelector
+    children:
+    - id: FoodSnackWrappedCandyBlue
+    - id: FoodSnackWrappedCandyGreen
+    - id: FoodSnackWrappedCandyPink
+    - id: FoodSnackWrappedCandyPurple
+    - id: FoodSnackWrappedCandyYellow
