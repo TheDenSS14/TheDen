@@ -1,0 +1,14 @@
+- type: entity
+  id: ActionToggleVoiceGender
+  name: Toggle Voice Gender
+  description: Switch the gender tone of your voice on command.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: InstantAction
+    itemIconStyle: BigAction
+    useDelay: 4
+    priority: -20
+    icon:
+      sprite: Clothing/Eyes/Goggles/thermal.rsi
+      state: icon
+    event: !type:ToggleVoiceGenderEvent
