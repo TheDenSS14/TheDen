@@ -30,7 +30,6 @@
         yellow: ""
 
 - type: entity
-  abstract: true
   parent: FoodSnackBase
   id: FoodSnackGummyWormLarge
   name: giant gummy worm
@@ -54,7 +53,6 @@
 ## Larj bar
 
 - type: entity
-  abstract: true
   parent: BaseItem
   id: FoodSnackChocolateBarLarjWrapped
   name: Larj bar
@@ -72,7 +70,6 @@
       path: /Audio/Effects/unwrap.ogg
 
 - type: entity
-  abstract: true
   parent: FoodSnackBase
   id: FoodSnackChocolateBarLarjUnwrapped
   name: Larj bar
@@ -98,9 +95,9 @@
           Quantity: 3
   - type: SliceableFood
     slice: FoodSnackChocolateBarLarjChunk
+    count: 3
 
 - type: entity
-  abstract: true
   parent: FoodSnackBase
   id: FoodSnackChocolateBarLarjChunk
   name: Larj bar chunk
@@ -129,7 +126,6 @@
     count: 4
 
 - type: entity
-  abstract: true
   parent: FoodSnackBase
   id: FoodSnackChocolateBarLarjPiece
   name: Larj bar piece
@@ -183,7 +179,7 @@
   description: A classic, fruit-flavored hard candy. Take off the wrapper first!
   components:
   - type: Sprite
-    sprite: _DEN/Objects/Consumable/Food/Candy/hard_candy.rsi
+    sprite: _DEN/Objects/Consumable/Food/Candy/wrapped_candy.rsi
   - type: Item
     size: Tiny
   - type: Tag
