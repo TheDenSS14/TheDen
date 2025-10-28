@@ -277,6 +277,13 @@
     netsync: false
     radius: 1.2 #slightly stronger than the other lighters
     color: orange
+  - type: Cautery #TheDen - Shitmed Cautery
+    speed: 0.45
+  - type: SurgeryTool
+    startSound:
+      collection: lighterOnSounds
+    endSound:
+      collection: lighterOffSounds
   - type: ItemTogglePointLight
   - type: UseDelay
   - type: IgnitionSource
@@ -376,6 +383,13 @@
       right:
       - state: inhand-right-lit
         shader: unshaded
+  - type: Cautery #TheDen - Shitmed Cautery
+    speed: 0.45
+  - type: SurgeryTool
+    startSound:
+      collection: lighterOnSounds
+    endSound:
+      collection: lighterOffSounds
   - type: ItemTogglePointLight
   - type: UseDelay
   - type: IgnitionSource
