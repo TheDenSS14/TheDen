@@ -120,3 +120,8 @@ trait-name-VoxSoundsReplace = Replace Emotes (Vox)
 trait-description-VoxSoundsReplace =
     Replace any existing emote sounds, giving your character access to the emotes that Vox have instead.
     Such as: coo, chitter, hiss, caw, hoot
+
+trait-name-ToggleVoiceGender = Voice Training
+trait-description-ToggleVoiceGender =
+    You can toggle the gender of your voice at will.
+    This affects your emote sounds, such as screaming, laughing, et cetera.
