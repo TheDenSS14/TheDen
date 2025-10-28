@@ -39,3 +39,42 @@
         prob: 0.20
       - id: GlowstickYellowInfinite
         prob: 0.05
+
+- type: entity
+  parent: CrateGenericSteel
+  id: CrateFunCandy
+  name: bulk candy crate
+  description: A crate full of bulk candy to distribute to your peers, as a little treat. Plus, some bowls to put them in!
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      entity_storage: !type:AllSelector
+        children:
+        - id: CandyBagHardCandy
+        - id: CandyBagLollipop
+        - id: CandyBagGummyBear
+        - id: CandyBagGumball
+        - id: CandyBowl
+          amount: !type:ConstantNumberSelector
+            value: 3
+        - id: FoodSnackGummyWormLarge
+          prob: 0.25
+          amount: !type:RangeNumberSelector
+            range: 1, 2
+        - id: FoodSnackChocolateBarLarjWrapped
+          prob: 0.25
+          amount: !type:RangeNumberSelector
+            range: 1, 2
+        - !type:NestedSelector
+          tableId: RandomBulkCandyTable
+          rolls: !type:RangeNumberSelector
+            range: 3, 5
+
+- type: entityTable
+  id: RandomBulkCandyTable
+  table: !type:GroupSelector
+    children:
+    - id: CandyBagHardCandy
+    - id: CandyBagLollipop
+    - id: CandyBagGummyBear
+    - id: CandyBagGumball
