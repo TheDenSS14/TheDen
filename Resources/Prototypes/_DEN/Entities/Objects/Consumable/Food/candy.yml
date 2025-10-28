@@ -1,0 +1,307 @@
+# SPDX-FileCopyrightText: 2025 portfiend
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  parent: FoodSnackBase
+  id: FoodSnackGummyBear
+  name: gummy bear
+  description: Good luck getting three bites out of this.
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Consumable/Food/Candy/gummy_bear.rsi
+    layers:
+    - state: green
+      map: [ "enum.DamageStateVisualLayers.Base" ]
+  - type: Item
+    size: Tiny
+  - type: Tag
+    tags:
+    - FoodSnack
+    - Candy
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 5
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 2
+        - ReagentId: Sugar
+          Quantity: 3
+  - type: RandomSprite
+    available:
+    - enum.DamageStateVisualLayers.Base:
+        blue: ""
+        green: ""
+        orange: ""
+        pink: ""
+        purple: ""
+        red: ""
+        yellow: ""
+
+- type: entity
+  parent: FoodSnackBase
+  id: FoodSnackGummyWormLarge
+  name: giant gummy worm
+  description: You're not gonna eat the WHOLE thing, are you?
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Consumable/Food/Candy/large_gummy_worm.rsi
+    state: worm
+  - type: Item
+    size: Normal
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 20
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 10
+        - ReagentId: Sugar
+          Quantity: 10
+
+## Larj bar
+
+- type: entity
+  parent: BaseItem
+  id: FoodSnackChocolateBarLarjWrapped
+  name: Larj bar
+  description: A massive chocolate bar, Larj enough to split with your friends.
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Consumable/Food/Candy/larj_bar.rsi
+    state: wrapped
+  - type: Item
+    size: Normal
+  - type: SpawnItemsOnUse
+    items:
+    - id: FoodSnackChocolateBarLarjUnwrapped
+    sound:
+      path: /Audio/Effects/unwrap.ogg
+
+- type: entity
+  parent: FoodSnackBase
+  id: FoodSnackChocolateBarLarjUnwrapped
+  name: Larj bar
+  description: A massive chocolate bar, Larj enough to split with your friends.
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Consumable/Food/Candy/larj_bar.rsi
+    state: unwrapped
+  - type: Item
+    size: Normal
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 30
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 9
+        - ReagentId: Sugar
+          Quantity: 6
+        - ReagentId: Theobromine
+          Quantity: 6
+        - ReagentId: CocoaPowder
+          Quantity: 3
+  - type: SliceableFood
+    slice: FoodSnackChocolateBarLarjChunk
+    count: 3
+
+- type: entity
+  parent: FoodSnackBase
+  id: FoodSnackChocolateBarLarjChunk
+  name: Larj bar chunk
+  description: One third of a Larj bar, bringing it to a more reasonable size.
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Consumable/Food/Candy/larj_bar.rsi
+    state: chunk
+  - type: Item
+    size: Small
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 10
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 3
+        - ReagentId: Sugar
+          Quantity: 2
+        - ReagentId: Theobromine
+          Quantity: 2
+        - ReagentId: CocoaPowder
+          Quantity: 1
+  - type: SliceableFood
+    slice: FoodSnackChocolateBarLarjPiece
+    count: 4
+
+- type: entity
+  parent: FoodSnackBase
+  id: FoodSnackChocolateBarLarjPiece
+  name: Larj bar piece
+  description: A tiny piece off of a colossal Larj bar.
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Consumable/Food/Candy/larj_bar.rsi
+    state: chunk_small
+  - type: Item
+    size: Tiny
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 3
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 0.75
+        - ReagentId: Sugar
+          Quantity: 0.5
+        - ReagentId: Theobromine
+          Quantity: 0.5
+        - ReagentId: CocoaPowder
+          Quantity: 0.25
+
+## Hard candies + wrapper
+
+- type: entity
+  abstract: true
+  parent: FoodSnackBase
+  id: FoodSnackHardCandyBase
+  name: hard candy
+  description: A classic, fruit-flavored hard candy.
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Consumable/Food/Candy/hard_candy.rsi
+  - type: Item
+    size: Tiny
+  - type: Tag
+    tags:
+    - FoodSnack
+    - Candy
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 5
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 2
+        - ReagentId: Sugar
+          Quantity: 3
+
+- type: entity
+  abstract: true
+  parent: BaseItem
+  id: FoodSnackWrappedCandyBase
+  name: hard candy
+  description: A classic, fruit-flavored hard candy. Take off the wrapper first!
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Consumable/Food/Candy/wrapped_candy.rsi
+  - type: Item
+    size: Tiny
+  - type: Tag
+    tags:
+    - FoodSnack
+    - Candy
+  - type: SpawnItemsOnUse
+    sound:
+      path: /Audio/Effects/unwrap.ogg
+
+- type: entity
+  parent: FoodSnackHardCandyBase
+  id: FoodSnackHardCandyBlue
+  components:
+  - type: Sprite
+    state: blue
+  - type: FlavorProfile
+    flavors:
+    - blueraspberry
+
+- type: entity
+  parent: FoodSnackWrappedCandyBase
+  id: FoodSnackWrappedCandyBlue
+  components:
+  - type: Sprite
+    state: blue
+  - type: SpawnItemsOnUse
+    items:
+    - id: FoodSnackHardCandyBlue
+
+- type: entity
+  parent: FoodSnackHardCandyBase
+  id: FoodSnackHardCandyGreen
+  components:
+  - type: Sprite
+    state: green
+  - type: FlavorProfile
+    flavors:
+    - artificiallime
+
+- type: entity
+  parent: FoodSnackWrappedCandyBase
+  id: FoodSnackWrappedCandyGreen
+  components:
+  - type: Sprite
+    state: green
+  - type: SpawnItemsOnUse
+    items:
+    - id: FoodSnackHardCandyGreen
+
+- type: entity
+  parent: FoodSnackHardCandyBase
+  id: FoodSnackHardCandyPink
+  components:
+  - type: Sprite
+    state: pink
+  - type: FlavorProfile
+    flavors:
+    - artificialwatermelon
+
+- type: entity
+  parent: FoodSnackWrappedCandyBase
+  id: FoodSnackWrappedCandyPink
+  components:
+  - type: Sprite
+    state: pink
+  - type: SpawnItemsOnUse
+    items:
+    - id: FoodSnackHardCandyPink
+
+- type: entity
+  parent: FoodSnackHardCandyBase
+  id: FoodSnackHardCandyPurple
+  components:
+  - type: Sprite
+    state: purple
+  - type: FlavorProfile
+    flavors:
+    - artificialgrape
+
+- type: entity
+  parent: FoodSnackWrappedCandyBase
+  id: FoodSnackWrappedCandyPurple
+  components:
+  - type: Sprite
+    state: purple
+  - type: SpawnItemsOnUse
+    items:
+    - id: FoodSnackHardCandyPurple
+
+- type: entity
+  parent: FoodSnackHardCandyBase
+  id: FoodSnackHardCandyYellow
+  components:
+  - type: Sprite
+    state: yellow
+  - type: FlavorProfile
+    flavors:
+    - artificialbungo
+
+- type: entity
+  parent: FoodSnackWrappedCandyBase
+  id: FoodSnackWrappedCandyYellow
+  components:
+  - type: Sprite
+    state: yellow
+  - type: SpawnItemsOnUse
+    items:
+    - id: FoodSnackHardCandyYellow

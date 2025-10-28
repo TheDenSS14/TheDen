@@ -1,11 +1,29 @@
+<!--
+SPDX-FileCopyrightText: 2025 DoctorJado
+SPDX-FileCopyrightText: 2025 portfiend
+
+SPDX-License-Identifier: AGPL-3.0-or-later
+-->
+
 <BoxContainer xmlns="https://spacestation14.io"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:ui="clr-namespace:Content.Client.UserInterface.Controls"
     xmlns:denUi="clr-namespace:Content.Client._DEN.Lobby.UI.Controls"
     HorizontalExpand="True"
     VerticalExpand="True"
-    Orientation="Vertical">
+    Orientation="Vertical"
+    Margin="10">
 
+    <BoxContainer
+        Name="JobLoadoutInfoBox"
+        Orientation="Vertical"
+        HorizontalExpand="True"
+        SeparationOverride="5"
+        Margin="5">
+        <Label Name="JobLabel"
+               HorizontalAlignment="Stretch"
+               Align="Center" StyleClasses="LabelBig"/>
+    </BoxContainer>
     <BoxContainer
         Name="PointsBox"
         Orientation="Vertical"
@@ -23,7 +41,6 @@
             Value="1"
             MaxHeight="8" />
     </BoxContainer>
-
     <BoxContainer
         Name="LoadoutConfigPanels"
         HorizontalExpand="True"

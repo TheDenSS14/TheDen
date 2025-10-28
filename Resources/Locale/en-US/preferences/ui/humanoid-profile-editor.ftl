@@ -17,6 +17,7 @@
 # SPDX-FileCopyrightText: 2024 Krunklehorn
 # SPDX-FileCopyrightText: 2024 VMSolidus
 # SPDX-FileCopyrightText: 2025 Dirius77
+# SPDX-FileCopyrightText: 2025 DoctorJado
 # SPDX-FileCopyrightText: 2025 Falcon
 # SPDX-FileCopyrightText: 2025 Rosycup
 # SPDX-FileCopyrightText: 2025 Timfa
@@ -39,7 +40,11 @@ humanoid-profile-editor-sex-label = Sex:
 humanoid-profile-editor-sex-male-text = Male
 humanoid-profile-editor-sex-female-text = Female
 humanoid-profile-editor-sex-unsexed-text = None
+# TheDen - Start
 # TheDen - Add Voice
+humanoid-profile-editor-traits-currently-editing-display = Editing traits for {$targetJob}
+humanoid-profile-editor-job-list-saved-loadout-tooltip = A loadout is saved for this job.
+# TheDen - End
 humanoid-profile-editor-voice-label = Preferred Voice:
 humanoid-profile-editor-age-label = Age:
 humanoid-profile-editor-skin-color-label = Skin color:

@@ -1,3 +1,8 @@
+# SPDX-FileCopyrightText: 2025 Jadrek
+# SPDX-FileCopyrightText: 2025 Shaman
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 - type: reagent
   id: ThavenBad
   name: reagent-name-thavenbad
@@ -18,4 +23,45 @@
       effects:
       - !type:SatiateThirst
         factor: 2
+  fizziness: .1
+
+- type: reagent
+  id: CottonBool
+  name: reagent-name-cottonbool
+  parent: BaseAlcohol
+  desc: reagent-desc-cottonbool
+  physicalDesc: reagent-physical-desc-fibrous
+  flavor: cottonbool
+  color: "#fff0e3"
+  recognizable: true
+  metamorphicSprite:
+    sprite: Objects/Consumable/Drinks/thin_glass.rsi
+    state: icon_empty
+  metamorphicMaxFillLevels: 5
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: true
+  metabolisms:
+    Drink:
+      effects:
+      - !type:SatiateThirst
+        factor: 4
+      - !type:SatiateHunger
+        conditions:
+        - !type:OrganType
+          type: Moth
+          shouldHave: true
+        factor: 4
+      - !type:Emote
+        conditions:
+        - !type:OrganType
+          type: Moth
+          shouldHave: true
+        emote: Squeak
+        showInChat: true
+        force: true
+        probability: 0.35
+    Medicine:
+      effects:
+      - !type:ModifyBleedAmount
+        amount: -0.75
   fizziness: .1
