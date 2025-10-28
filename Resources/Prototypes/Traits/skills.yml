@@ -275,15 +275,8 @@
     - !type:CharacterSpeciesRequirement
       species:
         - Harpy
-        - IPC # EE - they made IPCs able to take this
     - !type:CharacterItemGroupRequirement
       group: TraitsMuted
-    - !type:CharacterTraitRequirement # Den - since IPCs can take Singer and other singing related traits.
-      inverted: true
-      traits:
-        - Singer
-        - IPCSinger
-        - MusicMachine
   functions:
     - !type:TraitReplaceComponent
       components:

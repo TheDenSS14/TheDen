@@ -39,7 +39,6 @@
       traits:
         - Singer
         - MusicMachine
-        - LyreBird
   functions:
     - !type:TraitReplaceComponent
       components:
@@ -49,7 +48,7 @@
 - type: trait
   id: MusicMachine
   category: AASpecies
-  points: -6 # expensive, but not as much as lyre bird, since it's not a DAW
+  points: -8 # very expensive since it's a character-defining trait, as useful as thievery at least
   requirements:
     - !type:CharacterJobRequirement
       inverted: true
@@ -67,7 +66,6 @@
       traits:
         - Singer
         - IPCSinger
-        - LyreBird
   functions:
     - !type:TraitReplaceComponent
       components:
