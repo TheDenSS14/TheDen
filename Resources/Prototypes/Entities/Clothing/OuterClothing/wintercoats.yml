@@ -212,7 +212,7 @@
     sprite: Clothing/OuterClothing/WinterCoats/coatchef.rsi
 
 - type: entity
-  parent: ClothingOuterWinterCoatToggleable
+  parent: [ClothingOuterWinterCoatToggleable, ClothingUniformFoldableBase]
   id: ClothingOuterWinterChem
   name: chemistry winter coat
   components:
