@@ -676,6 +676,7 @@ trait-description-ShadowkinBlackeye =
 trait-name-LyreBird = Lyre Bird
 trait-description-LyreBird =
     Your natural talent for mimicry vastly exceeds that of other Harpies. You have the ability to perfectly imitate songs in their entirety.
+    Be your own full symphony orchestra, jazz group, or metal band.
 
 trait-name-NaniteAutoRepairBots = Nanite Auto-Repair Bots
 trait-description-NaniteAutoRepairBots =
