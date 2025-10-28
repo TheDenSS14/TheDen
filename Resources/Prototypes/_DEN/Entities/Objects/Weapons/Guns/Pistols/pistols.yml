@@ -62,3 +62,33 @@
         fontSize: 12
         color: "#ff4f00"
         requireDetailRange: false
+
+- type: entity #There wasn't a security wood-gripped viper loaded with lethals
+  name: viper
+  parent: [WeaponPistolViperWood, BaseSecurityContraband] # DEN
+  id: WeaponPistolViperWoodSecurity
+  description: A small, low-power pistol with pleasant lacquered wooden grips. Uses .35 auto ammo.
+               The serial number on the handguard marks this gun as belonging to an NT Security Officer.
+  suffix: Wood, Security
+  components:
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: MagazinePistol
+        insertSound: /Audio/Weapons/Guns/MagIn/pistol_magin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/pistol_magout.ogg
+        priority: 2
+        whitelist:
+          tags:
+            - MagazinePistol
+            - MagazinePistolHighCapacity
+      gun_chamber:
+        name: Chamber
+        startingItem: CartridgePistol
+        priority: 1
+        whitelist:
+          tags:
+            - CartridgePistol
+  - type: GuideHelp
+    guides: [ SecurityWeapons ]

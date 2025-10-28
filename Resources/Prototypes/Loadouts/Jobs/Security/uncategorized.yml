@@ -611,7 +611,7 @@
 # This category is universal to the entire security department by special request, so that players can choose their preferred Duty Pistol even if they aren't playing a security role.
 # All lethal options come with a 1 hour security department playtime, as a basic shitter protection.
 - type: loadout
-  id: LoadoutSecurityMk58NonLethal
+  id: LoadoutSecurityMk58 #TheDen
   category: JobsSecurityAUncategorized
   cost: 0
   canBeHeirloom: true
@@ -628,10 +628,10 @@
           jobs:
             - BlueshieldOfficer
   items:
-    - WeaponPistolMk58SecurityNonlethal
+    - WeaponPistolMk58Security #TheDen
 
 - type: loadout
-  id: LoadoutSecurityRevolverNonLethal
+  id: LoadoutSecurityRevolver #TheDen
   category: JobsSecurityAUncategorized
   cost: 3
   canBeHeirloom: true
@@ -648,10 +648,10 @@
           jobs:
             - BlueshieldOfficer
   items:
-    - WeaponRevolverInspectorNonLethalSecurity
+    - WeaponRevolverInspectorSecurity #TheDen
 
 - type: loadout
-  id: LoadoutSecurityRevolverDeckardNonLethal
+  id: LoadoutSecurityRevolverDeckard #TheDen
   category: JobsSecurityAUncategorized
   cost: 3
   canBeHeirloom: true
@@ -668,10 +668,10 @@
           jobs:
             - BlueshieldOfficer
   items:
-    - WeaponRevolverDeckardNonLethalSecurity
+    - WeaponRevolverDeckardSecurity #TheDen
 
 - type: loadout
-  id: LoadoutSecurityPistolN1984NonLethal
+  id: LoadoutSecurityPistolN1984 #TheDen
   category: JobsSecurityAUncategorized
   cost: 3
   canBeHeirloom: true
@@ -688,7 +688,7 @@
           jobs:
             - BlueshieldOfficer
   items:
-    - WeaponPistolN1984SecurityNonLethal
+    - WeaponPistolN1984Security #TheDen
 
 # DEN - Remove hardlight weapons from security
 # - type: loadout
@@ -733,7 +733,7 @@
     - WeaponEnergyGunMiniSecurity
 
 - type: loadout
-  id: LoadoutSecurityPistolViperNonLethal
+  id: LoadoutSecurityPistolViper #TheDen
   category: JobsSecurityAUncategorized
   cost: 1
   canBeHeirloom: true
@@ -750,10 +750,10 @@
           jobs:
             - BlueshieldOfficer
   items:
-    - WeaponPistolViperSecurityNonLethal
+    - WeaponPistolViperSecurity #TheDen
 
 - type: loadout
-  id: LoadoutSecurityPistolViperWoodNonlethal
+  id: LoadoutSecurityPistolViperWood #TheDen
   category: JobsSecurityAUncategorized
   cost: 1
   canBeHeirloom: true
@@ -770,7 +770,7 @@
           jobs:
             - BlueshieldOfficer
   items:
-    - WeaponPistolViperWoodSecurityNonlethal
+    - WeaponPistolViperWoodSecurity #TheDen
 
 - type: loadout
   id: LoadoutSecurityEquipmentTruncheon
@@ -796,7 +796,7 @@
     - Truncheon
 
 - type: loadout
-  id: LoadoutSecurityPistolPollockNonlethal
+  id: LoadoutSecurityPistolPollock #TheDen
   category: JobsSecurityAUncategorized
   cost: 1
   canBeHeirloom: true
@@ -813,10 +813,10 @@
           jobs:
             - BlueshieldOfficer
   items:
-    - WeaponPistolPollockNonlethalSecurity
+    - WeaponPistolPollockSecurity #TheDen
 
 - type: loadout
-  id: LoadoutSecurityRevolverSnubNonlethal
+  id: LoadoutSecurityRevolverSnub #TheDen
   category: JobsSecurityAUncategorized
   cost: 3
   canBeHeirloom: true
@@ -833,10 +833,10 @@
           jobs:
             - BlueshieldOfficer
   items:
-    - WeaponRevolverSnubNonlethalSecurity
+    - WeaponRevolverSnubSecurity #TheDen
 
 - type: loadout
-  id: LoadoutSecurityRevolverK38MasterNonlethal
+  id: LoadoutSecurityRevolverK38Master #TheDen
   category: JobsSecurityAUncategorized
   cost: 3
   canBeHeirloom: true
@@ -853,10 +853,10 @@
           jobs:
             - BlueshieldOfficer
   items:
-    - WeaponRevolverK38MasterNonlethalSecurity
+    - WeaponRevolverK38MasterSecurity #TheDen
 
 - type: loadout
-  id: LoadoutSecurityRevolverFitzNonlethal
+  id: LoadoutSecurityRevolverFitz #TheDen
   category: JobsSecurityAUncategorized
   cost: 3
   canBeHeirloom: true
@@ -873,10 +873,10 @@
           jobs:
             - BlueshieldOfficer
   items:
-    - WeaponRevolverFitzNonlethalSecurity
+    - WeaponRevolverFitzSecurity #TheDen
 
 - type: loadout
-  id: LoadoutSecurityRevolverPythonNonlethal
+  id: LoadoutSecurityRevolverPython #TheDen
   category: JobsSecurityAUncategorized
   cost: 3
   canBeHeirloom: true
@@ -893,10 +893,10 @@
           jobs:
             - BlueshieldOfficer
   items:
-    - WeaponRevolverPythonNonlethalSecurity
+    - WeaponRevolverPythonSecurity #TheDen
 
 - type: loadout
-  id: LoadoutSecurityArgentiNonLethal
+  id: LoadoutSecurityArgenti #TheDen
   category: JobsSecurityAUncategorized
   cost: 0
   canBeHeirloom: true
@@ -913,7 +913,7 @@
           jobs:
             - BlueshieldOfficer
   items:
-    - WeaponRevolverArgentiNonLethalSecurity
+    - WeaponRevolverArgentiSecurity #TheDen
 
 # Eyes
 - type: loadout
@@ -1253,7 +1253,7 @@
       departments:
         - Security
   items:
-    - ClothingShoesBootsJack
+    - ClothingShoesBootsJackFilled #TheDen
 
 - type: loadout
   id: LoadoutShoesSecheelsBlackstockings
