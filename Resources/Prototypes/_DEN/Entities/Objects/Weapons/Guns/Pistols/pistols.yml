@@ -81,6 +81,10 @@
     sprite: _DEN/Objects/Weapons/Guns/Pistols/BRDIP_15.rsi
   - type: Gun
     fireRate: 5
+    minAngle: 1
+    maxAngle: 9
+    angleIncrease: 3
+    angleDecay: 20
     burstFireRate: 15
     shotsPerBurst: 3
     burstCooldown: 1
