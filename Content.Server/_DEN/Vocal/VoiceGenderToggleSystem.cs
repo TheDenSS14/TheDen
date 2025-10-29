@@ -27,7 +27,7 @@ public sealed partial class VoiceGenderToggleSystem : SharedVoiceGenderToggleSys
 
         var sex = Sex.Unsexed; // i guess
         if (TryComp<HumanoidAppearanceComponent>(ent.Owner, out var humanoid))
-            sex = humanoid.Sex;
+            sex = humanoid.PreferredVoice;
 
         ent.Comp.CurrentVoiceGender = sex;
 
