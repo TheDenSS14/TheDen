@@ -249,8 +249,8 @@
   id: BaseBannerEngraveable
   parent: BaseBanner
   abstract: true
-  components:
-  - type: Engraveable
+  # components:
+  # - type: Engraveable # DEN - We don't have this.
 
 - type: entity
   id: WallpaperBannerBlackRed
