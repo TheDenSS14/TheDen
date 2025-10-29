@@ -670,12 +670,8 @@
         - !type:ReagentThreshold
           reagent: Songbird
           min: 2
-      - !type:AdjustReagent
-        reagent: Pomelustine
-        amount: 0.25
   fizziness: 0.25
-  noRandom: true
-
+  
 - type: reagent
   id: TohokuBlaze
   name: reagent-name-tohokublaze
