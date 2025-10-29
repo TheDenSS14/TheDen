@@ -137,11 +137,10 @@
   items:
     - WeaponSubMachineGunWt550BSO
 
-# Secondary
 - type: loadout
-  id: LoadoutBSOPulsemagnum
+  id: LoadoutBSOPulsePDW
   category: JobsCommandBlueshieldOfficer
-  cost: 0
+  cost: 6
   canBeHeirloom: true
   guideEntry: SecurityWeapons
   requirements:
@@ -154,8 +153,9 @@
       jobs:
         - BlueshieldOfficer
   items:
-    - WeaponEnergyPulse
+    - WeaponPulsePDW
 
+# Secondary
 - type: loadout
   id: LoadoutBSOBRDIP15
   category: JobsCommandBlueshieldOfficer
