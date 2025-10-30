@@ -1,0 +1,29 @@
+# SPDX-FileCopyrightText: 2025 ASaltySeabass
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+#
+# SPDX-License-Identifier: MIT
+
+# Blueshield Officer
+- type: alternateJobTitle
+  id: DefaultBlueshieldOfficer
+  jobId: BlueshieldOfficer
+  titles:
+  - job-name-alternate-honor-guard
+  - job-name-alternate-bodyguard
+  - job-name-alternate-close-protection-operative
+
+# Magistrate
+- type: alternateJobTitle
+  id: DefaultMagistrate
+  jobId: Magistrate
+  titles:
+  - job-name-alternate-chief-justice
+  - job-name-alternate-jurist
+  - job-name-alternate-adjudicator
+
+# Nanotrasen Representative
+- type: alternateJobTitle
+  id: DefaultNanotrasenRepresentative
+  jobId: NanotrasenRepresentative
+  titles:
+  - job-name-alternate-corporate-liaison

@@ -19,6 +19,7 @@
 # SPDX-FileCopyrightText: 2024 Tmanzxd
 # SPDX-FileCopyrightText: 2024 VMSolidus
 # SPDX-FileCopyrightText: 2025 Eagle-0
+# SPDX-FileCopyrightText: 2025 MajorMoth
 # SPDX-FileCopyrightText: 2025 SixplyDev
 # SPDX-FileCopyrightText: 2025 Skubman
 # SPDX-FileCopyrightText: 2025 Timfa
@@ -35,7 +36,9 @@
   requirements:
   - !type:CharacterDepartmentTimeRequirement
     department: Security
-    min: 14400 # Floofstation - 4 hour
+    min: 25200 # The Den - 7 hours
+  - !type:CharacterOverallTimeRequirement
+    min: 72000 # The Den - 20 hours
   startingGear: DetectiveGear
   icon: "JobIconDetective"
   supervisors: job-supervisors-hos

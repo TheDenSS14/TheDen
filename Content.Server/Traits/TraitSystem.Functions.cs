@@ -262,7 +262,7 @@ public sealed partial class TraitModifyLanguages : TraitFunction
             language.ReplaceLanguagesSpoken(uid, KeepLanguagesSpoken);
 
         if (KeepLanguagesUnderstood is not null)
-            language.ReplaceLanguagesSpoken(uid, KeepLanguagesUnderstood);
+            language.ReplaceLanguagesUnderstood(uid, KeepLanguagesUnderstood);
         // DEN end
 
         if (RemoveLanguagesSpoken is not null)

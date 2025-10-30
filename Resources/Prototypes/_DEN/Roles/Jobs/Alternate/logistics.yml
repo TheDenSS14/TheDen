@@ -1,0 +1,43 @@
+# SPDX-FileCopyrightText: 2025 ASaltySeabass
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+#
+# SPDX-License-Identifier: MIT
+
+- type: alternateJobTitle
+  id: DefaultCargoTechnician
+  jobId: CargoTechnician
+  titles:
+  - job-name-alternate-deck-worker
+  - job-name-alternate-inventory-associate
+
+- type: alternateJobTitle
+  id: DefaultSalvageSpecialist
+  jobId: SalvageSpecialist
+  titles:
+  - job-name-alternate-prospector
+  - job-name-alternate-excavator
+  - job-name-alternate-miner
+  - job-name-alternate-explorer
+
+- type: alternateJobTitle
+  id: DefaultLogisticsOfficer
+  jobId: Quartermaster
+  titles:
+  - job-name-alternate-quartermaster
+  - job-name-alternate-requisitions-officer
+  - job-name-alternate-treasurer
+  - job-name-alternate-head-of-logistics
+  - job-name-alternate-loadmaster
+  - job-name-alternate-foreman
+  - job-name-alternate-forewoman
+  - job-name-alternate-foreperson
+
+- type: alternateJobTitle
+  id: DefaultCourier
+  jobId: MailCarrier
+  titles:
+  - job-name-alternate-postmaster
+  - job-name-alternate-mail-carrier
+  - job-name-alternate-mailman
+  - job-name-alternate-mailwoman
+  - job-name-alternate-mailperson

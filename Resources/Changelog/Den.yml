@@ -13547,3 +13547,320 @@ Entries:
   id: 1326
   time: '2025-10-24T01:48:47.0000000+00:00'
   url: https://github.com/TheDenSS14/TheDen/pull/1932
+- author: Dirius77
+  changes:
+    - type: Add
+      message: >-
+        Added the ability for jobs to have alternative titles which may be
+        selected in the jobs tab!
+  id: 1327
+  time: '2025-10-24T05:56:07.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1935
+- author: sleepyyapril
+  changes:
+    - type: Add
+      message: Plenty of new job titles to choose from were added!
+  id: 1328
+  time: '2025-10-24T11:16:22.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1936
+- author: phantasai
+  changes:
+    - type: Add
+      message: Added Compact Defibrillator to the loadout of the CMO.
+    - type: Add
+      message: >-
+        Portafib & Compact Defibrillator can now be researched and printed at
+        the medical techfab
+    - type: Tweak
+      message: Slightly altered the description of the Compact Defibrillator
+  id: 1329
+  time: '2025-10-24T11:23:20.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1930
+- author: Jakumba
+  changes:
+    - type: Add
+      message: Added Xenoglossy to Ifrit
+    - type: Add
+      message: Added Flare to Ifrit
+    - type: Tweak
+      message: Ifrit now has passive HP regen
+    - type: Tweak
+      message: Increased Ifrits HP from 120 => 200
+    - type: Tweak
+      message: Ifrit will re-register as a ghost role if the player abandons it.
+  id: 1330
+  time: '2025-10-24T11:24:20.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1929
+- author: portfiend
+  changes:
+    - type: Add
+      message: >-
+        Administrative Assistants get an alternative job title of "Unpaid
+        Intern".
+  id: 1331
+  time: '2025-10-24T19:30:02.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1940
+- author: portfiend
+  changes:
+    - type: Fix
+      message: >-
+        Candy cigarettes actually burn through their contents now - like other
+        cigarettes, they will eventually run out.
+  id: 1332
+  time: '2025-10-24T19:32:09.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1937
+- author: Jakumba
+  changes:
+    - type: Add
+      message: Added more job titles!
+    - type: Remove
+      message: Removed some job titles!
+  id: 1333
+  time: '2025-10-25T00:39:10.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1942
+- author: sleepyyapril
+  changes:
+    - type: Tweak
+      message: Captain and Head of Security are now whitelisted.
+    - type: Tweak
+      message: >-
+        Warden is 20 hours of Security, any role and like 3 hours of detective
+        to make sure you have it played at least once + 50 hours of overall
+        playtime (you can become HoS as Warden, it's really only fair)
+    - type: Tweak
+      message: >-
+        Corpsman now requires 7 hours of general medical time, 15 hours of
+        general security time, 20 hours of overall time.
+    - type: Tweak
+      message: >-
+        Detective now requires 7 hours of security general time, 20 hours of
+        overall time.
+    - type: Tweak
+      message: >-
+        Security officer now requires15 hours of overall playtime, 6 hours as
+        cadet.
+    - type: Tweak
+      message: Cadet requires 15 hours of overall playtime.
+  id: 1334
+  time: '2025-10-25T03:12:45.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1549
+- author: portfiend
+  changes:
+    - type: Add
+      message: >-
+        Unathi now have four new markings: floppy ears, cheek tufts, furred
+        tail, and short (recolorable) horns. 
+  id: 1335
+  time: '2025-10-25T04:23:30.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1939
+- author: portfiend
+  changes:
+    - type: Fix
+      message: Candy Cigarette Last Forever Again
+  id: 1336
+  time: '2025-10-25T06:57:20.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1945
+- author: KekaniCreates
+  changes:
+    - type: Add
+      message: >-
+        Made the papers in the Document Printer all different colors depending
+        on their department. Know the difference between medical papers and
+        logistics at a glance!
+    - type: Add
+      message: >-
+        Added headers to all of the papers in the Document Printer sans the
+        Letter Template. My favorite's the Syndicate header!
+    - type: Add
+      message: >-
+        Added a Medical Treatment Receipt, a Receipt of Delivery, and by popular
+        demand, a DNR form.
+  id: 1337
+  time: '2025-10-26T04:36:39.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1955
+- author: mart33no
+  changes:
+    - type: Add
+      message: Long snake tail for IPCs
+    - type: Add
+      message: Lizard Tiger markings for IPCs
+  id: 1338
+  time: '2025-10-26T04:45:43.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1946
+- author: portfiend
+  changes:
+    - type: Fix
+      message: >-
+        The "Remove Species Language" trait should work closer to how it's
+        intended.
+  id: 1339
+  time: '2025-10-26T06:00:57.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1949
+- author: crekulon
+  changes:
+    - type: Fix
+      message: Fixed MIDI drums sounding really bad for some people!
+  id: 1340
+  time: '2025-10-26T06:01:35.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1952
+- author: crekulon
+  changes:
+    - type: Tweak
+      message: Arachnids can now select from all hairstyles!
+  id: 1341
+  time: '2025-10-26T06:06:11.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1948
+- author: Dirius77
+  changes:
+    - type: Add
+      message: >-
+        Added the ability to cryo without broadcasting an announcement to the
+        entire station.
+  id: 1342
+  time: '2025-10-26T06:11:17.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1953
+- author: phantasai
+  changes:
+    - type: Tweak
+      message: Changed the strap on EVERY single duffle bag sprite in the game.
+    - type: Tweak
+      message: Resprited the Medical Belt.
+    - type: Tweak
+      message: Slightly altered the Jet Injector sprite.
+  id: 1343
+  time: '2025-10-27T12:47:59.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1947
+- author: Dirius77
+  changes:
+    - type: Add
+      message: Added the ability to turn off Cryosleep announcements (locally only).
+  id: 1344
+  time: '2025-10-27T13:01:07.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1958
+- author: ASaltySeabass
+  changes:
+    - type: Add
+      message: Added a lot of new job titles. (Thank you Job Title Ideas thread!)
+  id: 1345
+  time: '2025-10-27T13:02:04.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1957
+- author: ASaltySeabass
+  changes:
+    - type: Fix
+      message: Pentetic acid no longer makes you scream for no reason.
+  id: 1346
+  time: '2025-10-27T22:09:24.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1962
+- author: portfiend
+  changes:
+    - type: Add
+      message: >-
+        Bulk candy crates can be purchased from Logistics, containing bulk candy
+        bags, a possibility for a very large gummy worm or chocolate bar (which
+        can be cut into pieces), and some candy bowls. In addition to lollipops
+        and gumballs, this bulk candy crate also contains brand new gummy bears
+        and wrapped hard candies!
+  id: 1347
+  time: '2025-10-28T06:15:30.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1964
+- author: DoctorJado
+  changes:
+    - type: Add
+      message: added the ability to have individual traits and loadouts for each job
+    - type: Tweak
+      message: optimised profile load speed
+    - type: Fix
+      message: fixed jobs tab formatting (notably the NT rep row)
+    - type: Fix
+      message: >-
+        fixed the job priority bug where if you edited any priority for any job,
+        the job set to 'high' would be set to 'medium' regardless. 
+  id: 1348
+  time: '2025-10-28T14:22:59.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1934
+- author: Cutinup99
+  changes:
+    - type: Add
+      message: >-
+        Added Cotton Bool! Make sure to grab cloth as a bartender for your
+        moffic clients!
+  id: 1349
+  time: '2025-10-28T14:24:30.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1961
+- author: mart33no
+  changes:
+    - type: Tweak
+      message: Increased the tail marking limit for slimes to (1 > 6)
+  id: 1350
+  time: '2025-10-28T14:26:11.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1960
+- author: ASaltySeabass
+  changes:
+    - type: Fix
+      message: Fixed the Rhodes Piano and Kweh MIDI instruments.
+  id: 1351
+  time: '2025-10-28T14:26:36.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1959
+- author: Monotheonist
+  changes:
+    - type: Tweak
+      message: >-
+        Exorcised a ghost from Baikal's map file, fixed a few doors, and some
+        power issues. You're welcome.
+  id: 1352
+  time: '2025-10-28T19:08:40.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1941
+- author: KekaniCreates
+  changes:
+    - type: Add
+      message: Added fun!
+    - type: Remove
+      message: Removed fun!
+    - type: Tweak
+      message: Changed fun!
+    - type: Fix
+      message: Fixed fun!
+  id: 1353
+  time: '2025-10-29T05:49:08.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1965
+- author: phantasai
+  changes:
+    - type: Tweak
+      message: Resprited the CMO's jumpskirts
+    - type: Tweak
+      message: Resprited the CMO's mantle & cloak
+    - type: Tweak
+      message: Resprited the CMO's hardsuit
+    - type: Tweak
+      message: Resprited the CMO's webbing
+    - type: Tweak
+      message: Resprited the CMO's longcoat
+  id: 1354
+  time: '2025-10-29T05:50:37.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1968
+- author: crekulon
+  changes:
+    - type: Add
+      message: >-
+        IPCs can now take two new singing traits, Singing (Synth) and Music
+        Machine!
+  id: 1355
+  time: '2025-10-29T05:51:35.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1951
+- author: portfiend
+  changes:
+    - type: Add
+      message: >-
+        You can now select the "Voice Training" trait under the Speech -> Voice
+        trait category to switch the gender of your voice at will chat can we
+        get 100 transgender flag reactions
+  id: 1356
+  time: '2025-10-29T14:10:24.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1967
+- author: mart33no
+  changes:
+    - type: Fix
+      message: Lizard, large snake tail sprite fix
+  id: 1357
+  time: '2025-10-29T14:27:55.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/1971

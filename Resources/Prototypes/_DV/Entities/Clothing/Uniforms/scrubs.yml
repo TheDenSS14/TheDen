@@ -1,11 +1,11 @@
-# SPDX-FileCopyrightText: 2023 VMSolidus <evilexecutive@gmail.com>
-# SPDX-FileCopyrightText: 2025 Rosycup <178287475+Rosycup@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 VMSolidus
+# SPDX-FileCopyrightText: 2025 Rosycup
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: entity
-  parent: ClothingUniformBase
+  parent: [ClothingUniformBase, ClothingUniformFoldableBase]
   id: UniformScrubsColorBlack
   name: black scrubs
   description: A combination of comfort and utility intended to make removing every last organ someone has and selling them to a space robot much more official looking.
@@ -16,7 +16,7 @@
     sprite: _DV/Clothing/Uniforms/Scrubs/black.rsi
 
 - type: entity
-  parent: ClothingUniformBase
+  parent: [ClothingUniformBase, ClothingUniformFoldableBase]
   id: UniformScrubsColorCyan
   name: cyan scrubs
   description: A combination of comfort and utility intended to make removing every last organ someone has and selling them to a space robot much more official looking.
@@ -27,7 +27,7 @@
     sprite: _DV/Clothing/Uniforms/Scrubs/cyan.rsi
 
 - type: entity
-  parent: ClothingUniformBase
+  parent: [ClothingUniformBase, ClothingUniformFoldableBase]
   id: UniformScrubsColorPink
   name: pink scrubs
   description: A combination of comfort and utility intended to make removing every last organ someone has and selling them to a space robot much more official looking.
@@ -38,7 +38,7 @@
     sprite: _DV/Clothing/Uniforms/Scrubs/pink.rsi
 
 - type: entity
-  parent: ClothingUniformBase
+  parent: [ClothingUniformBase, ClothingUniformFoldableBase]
   id: UniformScrubsColorRainbow
   name: rainbow scrubs
   description: A combination of comfort and utility intended to make removing every last organ someone has and selling them to a space robot much more official looking.
@@ -49,7 +49,7 @@
     sprite: _DV/Clothing/Uniforms/Scrubs/rainbow.rsi
 
 - type: entity
-  parent: ClothingUniformBase
+  parent: [ClothingUniformBase, ClothingUniformFoldableBase]
   id: UniformScrubsColorWhite
   name: white scrubs
   description: A combination of comfort and utility intended to make removing every last organ someone has and selling them to a space robot much more official looking.
@@ -60,7 +60,7 @@
     sprite: _DV/Clothing/Uniforms/Scrubs/white.rsi
 
 - type: entity
-  parent: ClothingUniformBase
+  parent: [ClothingUniformBase, ClothingUniformFoldableBase]
   id: UniformScrubsColorCybersun
   name: cybersun scrubs
   description: The official uniform of Cybersun's biotechnology division

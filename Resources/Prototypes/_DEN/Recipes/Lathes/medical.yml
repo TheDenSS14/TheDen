@@ -1,9 +1,12 @@
 # SPDX-FileCopyrightText: 2025 Blitz
+# SPDX-FileCopyrightText: 2025 Falcon
+# SPDX-FileCopyrightText: 2025 Sir Warock
+# SPDX-FileCopyrightText: 2025 phantasai
 # SPDX-FileCopyrightText: 2025 portfiend
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 # SPDX-FileCopyrightText: 2025 wheelwrightt
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: latheRecipe
   id: ClothingNeckVetCone
@@ -46,6 +49,29 @@
   completetime: 10
   materials:
     PlasmaGlass: 200
+    Plasteel: 200
+    Silver: 200
+    Gold: 200
+
+- type: latheRecipe
+  id: Portafib
+  result: Portafib
+  category: Tools
+  completetime: 10
+  materials:
+    Glass: 200
+    Steel: 500
+    Plastic: 500
+
+- type: latheRecipe
+  id: DefibrillatorCompact
+  result: DefibrillatorCompact
+  category: Tools
+  completetime: 10
+  materials:
+    Glass: 100
+    Steel: 300
+    Plastic: 500
     Plasteel: 200
     Silver: 200
     Gold: 200

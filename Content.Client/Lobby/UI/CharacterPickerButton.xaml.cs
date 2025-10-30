@@ -1,7 +1,7 @@
-// SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT <77995199+DEATHB4DEFEAT@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 sleepyyapril <flyingkarii@gmail.com>
-// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT
+// SPDX-FileCopyrightText: 2024 Leon Friedrich
+// SPDX-FileCopyrightText: 2024 sleepyyapril
+// SPDX-FileCopyrightText: 2025 Dirius77
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -58,7 +58,14 @@ public sealed partial class CharacterPickerButton : ContainerButton
             var highPriorityJob = humanoid.JobPriorities.SingleOrDefault(p => p.Value == JobPriority.High).Key;
             if (highPriorityJob != null)
             {
-                var jobName = prototypeManager.Index<JobPrototype>(highPriorityJob).LocalizedName;
+                string jobName = prototypeManager.Index<JobPrototype>(highPriorityJob).LocalizedName;
+                if (humanoid.JobTitles.TryGetValue(highPriorityJob, out var title)
+                    && !string.IsNullOrWhiteSpace(title)
+                    && title != jobName
+                    && Loc.TryGetString(title, out var altTitle))
+                {
+                    jobName = $"{altTitle} ({jobName})";
+                }
                 description = $"{description}\n{jobName}";
             }
         }

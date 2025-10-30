@@ -1,3 +1,8 @@
+# SPDX-FileCopyrightText: 2025 DoctorJado
+# SPDX-FileCopyrightText: 2025 portfiend
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 loadouts-category-panel-root-category = Categories
 loadouts-category-panel-return-button = ... {$parent}
 
@@ -8,3 +13,5 @@ loadout-item-button-guidebook-tooltip = This button will direct you to the guide
 loadout-customization-panel-reset-button = Reset
 loadout-customization-panel-custom-color-button = Custom Color
 loadout-customization-panel-custom-color-tooltip = Toggling this on will recolor the entire loadout to match the selected color.
+
+loadout-tab-currently-editing-display = Editing loadout for {$targetJob}
