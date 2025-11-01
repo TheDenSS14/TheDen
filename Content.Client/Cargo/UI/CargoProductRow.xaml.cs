@@ -22,5 +22,11 @@ namespace Content.Client.Cargo.UI
         {
             RobustXamlLoader.Load(this);
         }
+
+        // DEN: Allow disabling excluded cargo prototypes
+        public void SetEnabled(bool enabled)
+        {
+            MainButton.Disabled = !enabled;
+        }
     }
 }

@@ -33,6 +33,7 @@ using Robust.Client.Player;
 using Robust.Shared.Utility;
 using Robust.Shared.Prototypes;
 using static Robust.Client.UserInterface.Controls.BaseButton;
+using Content.Shared._DEN.ServerContent;
 
 namespace Content.Client.Cargo.BUI
 {
@@ -75,7 +76,14 @@ namespace Content.Client.Cargo.BUI
 
             var spriteSystem = EntMan.System<SpriteSystem>();
             var dependencies = IoCManager.Instance!;
-            _menu = new CargoConsoleMenu(Owner, EntMan, dependencies.Resolve<IPrototypeManager>(), spriteSystem);
+            // DEN Start: Use server-selective content filtering
+            var serverSelective = dependencies.Resolve<ServerSelectiveContentManager>();
+            _menu = new CargoConsoleMenu(Owner,
+                EntMan,
+                dependencies.Resolve<IPrototypeManager>(),
+                spriteSystem,
+                serverSelective);
+            // End DEN
             var localPlayer = dependencies.Resolve<IPlayerManager>().LocalEntity;
             var description = new FormattedMessage();
 

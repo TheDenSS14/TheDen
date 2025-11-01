@@ -44,7 +44,7 @@ SPDX-License-Identifier: MIT
         </BoxContainer>
         <ScrollContainer HorizontalExpand="True"
                          VerticalExpand="True"
-                         SizeFlagsStretchRatio="6">
+                         SizeFlagsStretchRatio="9">
             <BoxContainer Name="Products"
                           Orientation="Vertical"
                           HorizontalExpand="True"
@@ -53,7 +53,7 @@ SPDX-License-Identifier: MIT
             </BoxContainer>
         </ScrollContainer>
         <PanelContainer VerticalExpand="True"
-                        SizeFlagsStretchRatio="6">
+                        SizeFlagsStretchRatio="1">
             <PanelContainer.PanelOverride>
                 <gfx:StyleBoxFlat BackgroundColor="#000000" />
             </PanelContainer.PanelOverride>
