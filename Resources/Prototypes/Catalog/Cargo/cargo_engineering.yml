@@ -131,6 +131,7 @@
   cost: 5000
   category: cargoproduct-category-name-engineering
   group: market
+  excludedServers: [eternity] # DEN - Exclude dangerous prototypes from Eternity
 
 - type: cargoProduct
   id: EngineeringRCDAmmo
@@ -141,6 +142,7 @@
   cost: 2500
   category: cargoproduct-category-name-engineering
   group: market
+  excludedServers: [eternity] # DEN - Exclude dangerous prototypes from Eternity
 
 - type: cargoProduct
   id: EngineeringRCD
@@ -151,6 +153,7 @@
   cost: 800
   category: cargoproduct-category-name-engineering
   group: market
+  excludedServers: [eternity] # DEN - Exclude dangerous prototypes from Eternity
 
 - type: cargoProduct
   id: EngineeringParticleDecelerators
@@ -161,6 +164,7 @@
   cost: 15000
   category: cargoproduct-category-name-engineering
   group: market
+  excludedServers: [eternity] # DEN - Exclude dangerous prototypes from Eternity
 
 - type: cargoProduct
   id: EngineeringSpaceHeater
@@ -182,9 +186,10 @@
   cost: 800
   category: cargoproduct-category-name-engineering
   group: market
+  excludedServers: [eternity] # DEN - Exclude dangerous prototypes from Eternity
 
 # Assmos - Extinguisher Nozzle
-- type: cargoProduct 
+- type: cargoProduct
   id: EngineeringFirefighterBackpackTank
   icon:
     sprite: Clothing/Back/Backpacks/atmosbackpacktank.rsi
@@ -199,6 +204,6 @@
     state: icon
   product: CrateEngiSurplus
   cost: 7500
-
+  excludedServers: [eternity] # DEN - Exclude dangerous prototypes from Eternity
   category: cargoproduct-category-name-engineering
   group: market

@@ -161,6 +161,7 @@
   cost: 3820
   category: cargoproduct-category-name-medical
   group: market
+  excludedServers: [eternity] # DEN - Exclude dangerous prototypes from Eternity
 
 - type: cargoProduct
   id: CrateVendingMachineRestockNutriMax
@@ -211,6 +212,7 @@
   cost: 2200
   category: cargoproduct-category-name-security
   group: market
+  excludedServers: [eternity] # DEN - Exclude dangerous prototypes from Eternity
 
 - type: cargoProduct
   id: CrateVendingMachineRestockSeeds

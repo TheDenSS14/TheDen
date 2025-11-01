@@ -22,6 +22,7 @@
   cost: 500
   category: cargoproduct-category-name-science
   group: market
+  excludedServers: [eternity] # DEN - Exclude dangerous prototypes from Eternity
 
 - type: cargoProduct
   id: RandomArtifact
@@ -32,6 +33,7 @@
   cost: 2000
   category: cargoproduct-category-name-science
   group: market
+  excludedServers: [eternity] # DEN - Exclude dangerous prototypes from Eternity
 
 - type: cargoProduct
   id: ScienceBiosuit
@@ -42,3 +44,4 @@
   cost: 800
   category: cargoproduct-category-name-science
   group: market
+  excludedServers: [eternity] # DEN - Exclude dangerous prototypes from Eternity

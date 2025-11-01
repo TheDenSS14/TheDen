@@ -31,6 +31,7 @@
   cost: 9000
   category: cargoproduct-category-name-armory
   group: market
+  excludedServers: [eternity] # DEN - Exclude dangerous prototypes from Eternity
 
 - type: cargoProduct
   id: ArmoryShotgun
@@ -41,6 +42,7 @@
   cost: 7000
   category: cargoproduct-category-name-armory
   group: market
+  excludedServers: [eternity] # DEN - Exclude dangerous prototypes from Eternity
 
 - type: cargoProduct
   id: TrackingImplant
@@ -51,6 +53,7 @@
   cost: 1000
   category: cargoproduct-category-name-armory
   group: market
+  excludedServers: [eternity] # DEN - Exclude dangerous prototypes from Eternity
 
 - type: cargoProduct
   id: TrainingBombs
@@ -61,6 +64,7 @@
   cost: 3000
   category: cargoproduct-category-name-armory
   group: market
+  excludedServers: [eternity] # DEN - Exclude dangerous prototypes from Eternity
 
 - type: cargoProduct
   id: ArmoryLaser
@@ -71,6 +75,7 @@
   cost: 4800
   category: cargoproduct-category-name-armory
   group: market
+  excludedServers: [eternity] # DEN - Exclude dangerous prototypes from Eternity
 
 - type: cargoProduct
   id: ArmoryPistol
@@ -81,6 +86,7 @@
   cost: 5200
   category: cargoproduct-category-name-armory
   group: market
+  excludedServers: [eternity] # DEN - Exclude dangerous prototypes from Eternity
 
 # - type: cargoProduct
 #   id: ArmoryBRDIR25

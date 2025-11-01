@@ -17,6 +17,7 @@
   cost: 1500
   category: cargoproduct-category-name-shuttle
   group: market
+  excludedServers: [eternity] # DEN - Exclude dangerous prototypes from Eternity
 
 - type: cargoProduct
   id: ShuttleGyroscope
@@ -27,6 +28,7 @@
   cost: 4000
   category: cargoproduct-category-name-shuttle
   group: market
+  excludedServers: [eternity] # DEN - Exclude dangerous prototypes from Eternity
 
 # - type: cargoProduct
   # id: ShuttlePowerKit
