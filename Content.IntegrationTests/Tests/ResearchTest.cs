@@ -103,11 +103,15 @@ public sealed class ResearchTest
                     }
                 }
 
+                /* Den - disable this test to allow for reverse-engineered dynamic technology
+
                 // now check that every dynamic recipe a lathe lists can be unlocked
                 foreach (var recipe in latheTechs)
                 {
                     Assert.That(unlockedTechs, Does.Contain(recipe), $"Recipe '{recipe}' is dynamic on a lathe but cannot be unlocked by research.");
                 }
+
+                */
             });
         });
 
