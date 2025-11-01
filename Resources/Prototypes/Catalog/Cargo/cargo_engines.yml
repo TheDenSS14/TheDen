@@ -27,6 +27,7 @@
   cost: 2000
   category: cargoproduct-category-name-engineering
   group: market
+  excludedServers: [eternity] # DEN - Exclude dangerous prototypes from Eternity
 
 - type: cargoProduct
   id: EngineSingularityGenerator
@@ -37,6 +38,7 @@
   cost: 4000
   category: cargoproduct-category-name-engineering
   group: market
+  excludedServers: [eternity] # DEN - Exclude dangerous prototypes from Eternity
 
 - type: cargoProduct
   id: EngineSingularityContainment
@@ -47,6 +49,7 @@
   cost: 1000
   category: cargoproduct-category-name-engineering
   group: market
+  excludedServers: [eternity] # DEN - Exclude dangerous prototypes from Eternity
 
 - type: cargoProduct
   name: "emitter crate"
@@ -59,6 +62,7 @@
   cost: 3000
   category: cargoproduct-category-name-engineering
   group: market
+  excludedServers: [eternity] # DEN - Exclude dangerous prototypes from Eternity
 
 - type: cargoProduct
   id: EngineSingularityCollector
@@ -69,6 +73,7 @@
   cost: 1000
   category: cargoproduct-category-name-engineering
   group: market
+  excludedServers: [eternity] # DEN - Exclude dangerous prototypes from Eternity
 
 - type: cargoProduct
   id: EngineParticleAccelerator
@@ -79,6 +84,7 @@
   cost: 2000
   category: cargoproduct-category-name-engineering
   group: market
+  excludedServers: [eternity] # DEN - Exclude dangerous prototypes from Eternity
 
 - type: cargoProduct
   id: EngineSolar
@@ -89,6 +95,7 @@
   cost: 1250
   category: cargoproduct-category-name-engineering
   group: market
+  excludedServers: [eternity] # DEN - Exclude dangerous prototypes from Eternity
 
 - type: cargoProduct
   id: EngineTeslaGenerator
@@ -99,6 +106,7 @@
   cost: 4000
   category: cargoproduct-category-name-engineering
   group: market
+  excludedServers: [eternity] # DEN - Exclude dangerous prototypes from Eternity
 
 - type: cargoProduct
   id: EngineTeslaCoil
@@ -109,6 +117,7 @@
   cost: 1200
   category: cargoproduct-category-name-engineering
   group: market
+  excludedServers: [eternity] # DEN - Exclude dangerous prototypes from Eternity
 
 - type: cargoProduct
   id: EngineTeslaGroundingRod
@@ -119,6 +128,7 @@
   cost: 400
   category: cargoproduct-category-name-engineering
   group: market
+  excludedServers: [eternity] # DEN - Exclude dangerous prototypes from Eternity
 
 - type: cargoProduct
   id: EngineTEGKit
@@ -129,3 +139,4 @@
   cost: 8000
   category: cargoproduct-category-name-engineering
   group: market
+  excludedServers: [eternity] # DEN - Exclude dangerous prototypes from Eternity

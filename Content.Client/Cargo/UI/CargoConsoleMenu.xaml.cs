@@ -20,6 +20,7 @@
 
 using System.Linq;
 using Content.Client.UserInterface.Controls;
+using Content.Shared._DEN.ServerContent;
 using Content.Shared.Cargo;
 using Content.Shared.Cargo.Components;
 using Content.Shared.Cargo.Prototypes;
@@ -39,6 +40,7 @@ namespace Content.Client.Cargo.UI
         private IPrototypeManager _protoManager;
         private SpriteSystem _spriteSystem;
         private EntityUid _owner;
+        private ServerSelectiveContentManager _serverSelective; // DEN
 
         public event Action<ButtonEventArgs>? OnItemSelected;
         public event Action<ButtonEventArgs>? OnOrderApproved;
@@ -47,12 +49,17 @@ namespace Content.Client.Cargo.UI
         private readonly List<string> _categoryStrings = new();
         private string? _category;
 
-        public CargoConsoleMenu(EntityUid owner, IEntityManager entMan, IPrototypeManager protoManager, SpriteSystem spriteSystem)
+        public CargoConsoleMenu(EntityUid owner,
+            IEntityManager entMan,
+            IPrototypeManager protoManager,
+            SpriteSystem spriteSystem,
+            ServerSelectiveContentManager serverSelective) // DEN
         {
             RobustXamlLoader.Load(this);
             _entityManager = entMan;
             _protoManager = protoManager;
             _spriteSystem = spriteSystem;
+            _serverSelective = serverSelective; // DEN
             _owner = owner;
 
             Title = Loc.GetString("cargo-console-menu-title");
@@ -123,6 +130,10 @@ namespace Content.Client.Cargo.UI
                         PointCost = { Text = Loc.GetString("cargo-console-menu-points-amount", ("amount", prototype.Cost.ToString())) },
                         Icon = { Texture = _spriteSystem.Frame0(prototype.Icon) },
                     };
+
+                    // DEN: Disable excluded cargo prototypes
+                    button.SetEnabled(_serverSelective.IsServerContentAllowed(prototype));
+
                     button.MainButton.OnPressed += args =>
                     {
                         OnItemSelected?.Invoke(args);

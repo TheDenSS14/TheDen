@@ -152,6 +152,7 @@
   cost: 1100
   category: cargoproduct-category-name-livestock
   group: market
+  excludedServers: [eternity] # DEN - Exclude dangerous prototypes from Eternity
 
 - type: cargoProduct
   id: LivestockMonkeyCube
@@ -252,6 +253,7 @@
   cost: 2800
   category: cargoproduct-category-name-livestock
   group: market
+  excludedServers: [eternity] # DEN - Exclude dangerous prototypes from Eternity
 
 - type: cargoProduct
   id: LivestockMothroach

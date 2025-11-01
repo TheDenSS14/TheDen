@@ -323,6 +323,10 @@ namespace Content.Server.Cargo.Systems
                 return;
             }
 
+            // DEN: Do not process orders from excluded servers
+            if (!_serverSelective.IsServerContentAllowed(product))
+                return;
+
             if (!component.AllowedGroups.Contains(product.Group))
                 return;
 

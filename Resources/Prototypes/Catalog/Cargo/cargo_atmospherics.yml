@@ -73,6 +73,7 @@
   cost: 2200 # Until someone fixes it co2 can be used to oneshot people so it's more expensive
   category: cargoproduct-category-name-atmospherics
   group: market
+  excludedServers: [eternity] # DEN - Exclude dangerous prototypes from Eternity
 
 - type: cargoProduct
   id: AtmosphericsLiquidCarbonDioxide
@@ -83,6 +84,7 @@
   cost: 4000
   category: cargoproduct-category-name-atmospherics
   group: market
+  excludedServers: [eternity] # DEN - Exclude dangerous prototypes from Eternity
 
 - type: cargoProduct
   id: AtmosphericsStorage
@@ -113,6 +115,7 @@
   cost: 4000
   category: cargoproduct-category-name-atmospherics
   group: market
+  excludedServers: [eternity] # DEN - Exclude dangerous prototypes from Eternity
 
 #- type: cargoProduct
 #  name: "tritium canister"
@@ -136,3 +139,4 @@
   cost: 5000
   category: cargoproduct-category-name-atmospherics
   group: market
+  excludedServers: [eternity] # DEN - Exclude dangerous prototypes from Eternity

@@ -25,6 +25,7 @@
   cost: 1000
   category: cargoproduct-category-name-emergency
   group: market
+  excludedServers: [eternity] # DEN - Exclude dangerous prototypes from Eternity
 
 - type: cargoProduct
   id: EmergencyFire
@@ -65,6 +66,7 @@
   cost: 1000
   category: cargoproduct-category-name-emergency
   group: market
+  excludedServers: [eternity] # DEN - Exclude dangerous prototypes from Eternity
 
 - type: cargoProduct
   id: EmergencyInflatablewall
@@ -115,3 +117,4 @@
   cost: 800
   category: cargoproduct-category-name-emergency
   group: market
+  excludedServers: [eternity] # DEN - Exclude dangerous prototypes from Eternity

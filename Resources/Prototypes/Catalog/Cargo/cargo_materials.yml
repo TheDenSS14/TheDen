@@ -118,6 +118,7 @@
   cost: 1500
   category: cargoproduct-category-name-materials
   group: market
+  excludedServers: [eternity] # DEN - Exclude dangerous prototypes from Eternity
 
 - type: cargoProduct
   id: MaterialWaterTank

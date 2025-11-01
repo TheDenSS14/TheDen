@@ -18,6 +18,7 @@
   cost: 500
   category: cargoproduct-category-name-cargo
   group: market
+  excludedServers: [eternity] # DEN - Exclude dangerous prototypes from Eternity
 
 - type: cargoProduct
   id: CargoLuxuryHardsuit
@@ -28,6 +29,7 @@
   cost: 15000
   category: cargoproduct-category-name-cargo
   group: market
+  excludedServers: [eternity] # DEN - Exclude dangerous prototypes from Eternity
 
 - type: cargoProduct
   id: CargoParcelWrap
