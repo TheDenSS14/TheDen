@@ -104,6 +104,16 @@
   id: LocationBottomPhrase
   text: phrase-location-bottom
 
+- type: quickPhrase
+  parent: BaseLocationPhrase
+  id: LocationUpPhrase
+  text: phrase-location-up
+
+- type: quickPhrase
+  parent: BaseLocationPhrase
+  id: LocationDownPhrase
+  text: phrase-location-down
+
 ## Compass directions
 
 - type: quickPhrase

@@ -78,3 +78,13 @@
   id: LogProbePhrase
   parent: BaseSecuritySubjectPhrase
   text: phrase-log-probe
+
+- type: quickPhrase
+  id: AmmunitionPhrase
+  parent: BaseSecuritySubjectPhrase
+  text: phrase-ammunition
+
+- type: quickPhrase
+  id: ThiefPhrase
+  parent: BaseSecuritySubjectPhrase
+  text: phrase-thief

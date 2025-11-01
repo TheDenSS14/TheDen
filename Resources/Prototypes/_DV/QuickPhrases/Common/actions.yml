@@ -100,3 +100,28 @@
   id: MixPhrase
   parent: BaseActionPhrase
   text: phrase-mix
+
+- type: quickPhrase
+  id: SleepPhrase
+  parent: BaseActionPhrase
+  text: phrase-sleep
+
+- type: quickPhrase
+  id: OpenPhrase
+  parent: BaseActionPhrase
+  text: phrase-open
+
+- type: quickPhrase
+  id: ClosePhrase
+  parent: BaseActionPhrase
+  text: phrase-close
+
+- type: quickPhrase
+  id: StealPhrase
+  parent: BaseActionPhrase
+  text: phrase-steal
+
+- type: quickPhrase
+  id: MovePhrase
+  parent: BaseActionPhrase
+  text: phrase-move

@@ -142,6 +142,7 @@ phrase-dough = dough
 phrase-bread = bread
 phrase-milk = milk
 phrase-egg = egg
+phrase-cake = cake
 phrase-wheat = wheat
 phrase-vegetable = vegetable
 phrase-fruit = fruit
@@ -200,6 +201,10 @@ phrase-happen = happen
 phrase-fun = fun
 phrase-time = time
 phrase-damage = damage
+phrase-ammunition = ammunition
+phrase-liquid = liquid
+phrase-thief = thief
+phrase-label = label
 
 # colors
 phrase-color-red = red
@@ -220,20 +225,27 @@ phrase-color-gray = gray
 
 # emotions alphabetically
 phrase-emotion-ifeel = I feel
+phrase-emotion-feel = feel
 
 phrase-emotion-anger = anger
 phrase-emotion-anxiety = anxiety
+phrase-emotion-boredom = boredom
+phrase-emotion-confusion = confusion
+phrase-emotion-contempt = contempt
 phrase-emotion-desire = desire
 phrase-emotion-determination = determination
 phrase-emotion-disgust = disgust
 phrase-emotion-fatigue = fatigue
 phrase-emotion-fear = fear
+phrase-emotion-greed = greed
 phrase-emotion-guilt = guilt
 phrase-emotion-happiness = happiness
 phrase-emotion-hate = hate
 phrase-emotion-love = love
 phrase-emotion-patience = patience
+phrase-emotion-pride = pride
 phrase-emotion-sadness = sadness
+phrase-emotion-silly = silly
 phrase-emotion-surprise = surprise
 
 # flavors

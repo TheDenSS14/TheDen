@@ -221,6 +221,21 @@
   parent: BaseSubjectPhrase
   text: phrase-time
 
+- type: quickPhrase
+  id: LiquidPhrase
+  parent: BaseSubjectPhrase
+  text: phrase-liquid
+
+- type: quickPhrase
+  id: LabelPhrase
+  parent: BaseSubjectPhrase
+  text: phrase-label
+
+- type: quickPhrase
+  id: LiePhrase
+  parent: BaseSubjectPhrase
+  text: phrase-lie
+
 # Materials alphabetically
 
 - type: quickPhrase
@@ -599,6 +614,11 @@
   parent: BaseEmotionPhrase
   text: phrase-emotion-ifeel
 
+- type: quickPhrase
+  id: EmotionFeelPhrase
+  parent: BaseEmotionPhrase
+  text: phrase-emotion-feel
+
 # emotions alphabetically
 
 - type: quickPhrase
@@ -610,6 +630,21 @@
   id: EmotionAnxietyPhrase
   parent: BaseEmotionPhrase
   text: phrase-emotion-anxiety
+
+- type: quickPhrase
+  id: EmotionBoredomPhrase
+  parent: BaseEmotionPhrase
+  text: phrase-emotion-boredom
+
+- type: quickPhrase
+  id: EmotionConfusionPhrase
+  parent: BaseEmotionPhrase
+  text: phrase-emotion-confusion
+
+- type: quickPhrase
+  id: EmotionContemptPhrase
+  parent: BaseEmotionPhrase
+  text: phrase-emotion-contempt
 
 - type: quickPhrase
   id: EmotionDesirePhrase
@@ -637,6 +672,11 @@
   text: phrase-emotion-fear
 
 - type: quickPhrase
+  id: EmotionGreedPhrase
+  parent: BaseEmotionPhrase
+  text: phrase-emotion-greed
+
+- type: quickPhrase
   id: EmotionGuiltPhrase
   parent: BaseEmotionPhrase
   text: phrase-emotion-guilt
@@ -662,9 +702,19 @@
   text: phrase-emotion-patience
 
 - type: quickPhrase
+  id: EmotionPridePhrase
+  parent: BaseEmotionPhrase
+  text: phrase-emotion-pride
+
+- type: quickPhrase
   id: EmotionSadnessPhrase
   parent: BaseEmotionPhrase
   text: phrase-emotion-sadness
+
+- type: quickPhrase
+  id: EmotionSillyPhrase
+  parent: BaseEmotionPhrase
+  text: phrase-emotion-silly
 
 - type: quickPhrase
   id: EmotionSurprisePhrase

@@ -93,3 +93,18 @@
   id: StopPhrase
   parent: BaseImperativePhrase
   text: phrase-stop
+
+- type: quickPhrase
+  id: MakePhrase
+  parent: BaseImperativePhrase
+  text: phrase-make
+
+- type: quickPhrase
+  id: LookPhrase
+  parent: BaseImperativePhrase
+  text: phrase-look
+
+- type: quickPhrase
+  id: ToPhrase
+  parent: BaseActionPhrase
+  text: phrase-to
