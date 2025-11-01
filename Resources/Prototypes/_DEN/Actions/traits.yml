@@ -1,0 +1,21 @@
+# SPDX-FileCopyrightText: 2025 portfiend
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  id: ActionToggleVoiceGender
+  name: Toggle Voice Gender
+  description: Switch the gender tone of your voice on command.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: InstantAction
+    itemIconStyle: BigAction
+    useDelay: 4
+    priority: -20
+    icon:
+      sprite: _DEN/Actions/voice_gender.rsi
+      state: male
+    iconOn:
+      sprite: _DEN/Actions/voice_gender.rsi
+      state: female
+    event: !type:ToggleVoiceGenderEvent

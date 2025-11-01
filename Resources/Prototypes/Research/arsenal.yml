@@ -18,6 +18,7 @@
 # SPDX-FileCopyrightText: 2024 John Space
 # SPDX-FileCopyrightText: 2024 gluesniffler
 # SPDX-FileCopyrightText: 2024 takemysoult
+# SPDX-FileCopyrightText: 2025 ASaltySeabass
 # SPDX-FileCopyrightText: 2025 Blu
 # SPDX-FileCopyrightText: 2025 Jakumba
 # SPDX-FileCopyrightText: 2025 MajorMoth
@@ -98,6 +99,7 @@
   - CartridgeMagnumIncendiary
   - CartridgePistolIncendiary
   - CartridgeRifleIncendiary
+  - MagazineBRDIP15Incendiary #TheDen
 
 - type: technology
   id: UraniumMunitions
@@ -131,6 +133,7 @@
   - CartridgePistolUranium
   - CartridgeRifleUranium
   - MagazineBoxShotgunUraniumHighCaliber # Goobstation
+  - MagazineBRDIP15Uranium #TheDen
 
 - type: technology
   id: AdvancedTacsuits
@@ -275,4 +278,6 @@
   # - EnergyCutlass # DEN
   - WeaponSubMachineGunFPA90
   - WeaponSubMachineGunBRDIR25
+  - WeaponPistolBRDIP15Standard #TheDen
+  - WeaponPistolEnergyRevolver #TheDen
   softCapContribution: 1.5

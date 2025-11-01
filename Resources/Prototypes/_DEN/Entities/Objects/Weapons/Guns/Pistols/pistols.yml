@@ -1,5 +1,7 @@
+# SPDX-FileCopyrightText: 2025 ASaltySeabass
 # SPDX-FileCopyrightText: 2025 Jakumba
 # SPDX-FileCopyrightText: 2025 MajorMoth
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -92,3 +94,125 @@
             - CartridgePistol
   - type: GuideHelp
     guides: [ SecurityWeapons ]
+
+- type: entity
+  name: BRDI P-15
+  parent: [ BaseCentcommBlueshieldContraband, BaseWeaponPistol ]
+  id: WeaponPistolBRDIP15
+  description: A rugged and reliable handgun, outfitted with a heavy muzzle counterweight. Used by the special forces of the Biesel Republic Foreign Legion, they are sometimes purchased by Nanotrasen for their operatives. Uses .35 auto ammo.
+  suffix: BSO
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Weapons/Guns/Pistols/BRDIP_15.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-0
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: Clothing
+    sprite: _DEN/Objects/Weapons/Guns/Pistols/BRDIP_15.rsi
+  - type: Gun
+    fireRate: 5
+    minAngle: 1
+    maxAngle: 9
+    angleIncrease: 3
+    angleDecay: 20
+    burstFireRate: 15
+    shotsPerBurst: 3
+    burstCooldown: 1
+    selectedMode: SemiAuto
+    availableModes:
+    - SemiAuto
+    - Burst
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/mk58.ogg
+    fireOnDropChance: 0.1
+  - type: Tag
+    tags:
+    - BRDIP_15
+    - Sidearm
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: MagazineBRDIP15
+        insertSound: /Audio/Weapons/Guns/MagIn/pistol_magin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/pistol_magout.ogg
+        priority: 2
+        whitelist:
+          tags:
+            - MagazineBRDIP15
+        whitelistFailPopup: gun-magazine-whitelist-fail
+      gun_chamber:
+        name: Chamber
+        startingItem: CartridgePistol
+        priority: 1
+        whitelist:
+          tags:
+            - CartridgePistol
+  - type: ContainerContainer
+    containers:
+      gun_magazine: !type:ContainerSlot
+      gun_chamber: !type:ContainerSlot
+
+- type: entity
+  name: BRDI P-15
+  parent: WeaponPistolBRDIP15
+  id: WeaponPistolBRDIP15Empty
+  suffix: "BSO, Empty"
+  components:
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: null
+        priority: 2
+        whitelist:
+          tags:
+          - MagazineBRDIP15
+      gun_chamber:
+        name: Chamber
+        startingItem: null
+        priority: 1
+        whitelist:
+          tags:
+          - CartridgePistol
+
+- type: entity
+  name: BRDI P-15
+  parent: [ BaseSecurityBlueshieldOfficerContraband, WeaponPistolBRDIP15 ]
+  id: WeaponPistolBRDIP15Standard
+  suffix: Standard
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Weapons/Guns/Pistols/BRDIP_15_standard.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-0
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: Clothing
+    sprite: _DEN/Objects/Weapons/Guns/Pistols/BRDIP_15_standard.rsi
+
+- type: entity
+  name: BRDI P-15
+  parent: WeaponPistolBRDIP15Standard
+  id: WeaponPistolBRDIP15StandardEmpty
+  suffix: "Standard, Empty"
+  components:
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: null
+        priority: 2
+        whitelist:
+          tags:
+          - MagazineBRDIP15
+      gun_chamber:
+        name: Chamber
+        startingItem: null
+        priority: 1
+        whitelist:
+          tags:
+          - CartridgePistol
