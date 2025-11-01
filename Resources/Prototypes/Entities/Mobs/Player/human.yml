@@ -76,6 +76,13 @@
   suffix: Human, Traitor
   components:
   # make the player a traitor once its taken
+  # Den begin additions - randomize appearance no more bald guys only
+  - type: RandomHumanoidAppearance
+    randomizeName: true
+  - type: NpcFactionMember
+    factions:
+      - Syndicate
+  # Den end additions
   - type: AutoTraitor
     profile: TraitorReinforcement
 

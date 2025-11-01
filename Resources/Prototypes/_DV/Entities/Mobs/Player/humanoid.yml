@@ -9,25 +9,26 @@
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
-- type: entity # Delta-V part of PirateRadioSpawn
-  id: RandomHumanoidSpawnerListener
-  name: Syndicate Listener
-  components:
-    - type: Sprite
-      sprite: Mobs/Species/Human/parts.rsi
-      state: full
-    - type: RandomHumanoidSpawner
-      settings: SyndicateListener
+# Den - Replaced with prototypes at _DEN/Mobs/Player/humanoid.yml
+#- type: entity # Delta-V part of PirateRadioSpawn 
+#  id: RandomHumanoidSpawnerListener
+#  name: Syndicate Listener
+#  components:
+#    - type: Sprite
+#      sprite: Mobs/Species/Human/parts.rsi
+#      state: full
+#    - type: RandomHumanoidSpawner
+#      settings: SyndicateListener
 
-- type: randomHumanoidSettings
-  id: SyndicateListener
-  speciesBlacklist:
-    - Shadowkin
-    - Monkey # Shitmed Change
-    - Kobold # Shitmed Change
-  components:
-    - type: Loadout
-      prototypes: [SyndicateListenerGear]
+#- type: randomHumanoidSettings
+#  id: SyndicateListener
+#  speciesBlacklist:
+#    - Shadowkin
+#    - Monkey # Shitmed Change
+#    - Kobold # Shitmed Change
+#  components:
+#    - type: Loadout
+#      prototypes: [SyndicateListenerGear]
 
 # Mobsters
 
@@ -54,6 +55,13 @@
     - Monkey # Shitmed Change
     - Kobold # Shitmed Change
   components:
+    # Den begin additions
+    - type: RandomHumanoidAppearance
+      randomizeName: true
+    - type: NpcFactionMember
+      factions:
+        - NanoTrasen
+    # Den end additions
     - type: GhostRole
       name: Mobster
       description: Break kneecaps, spray lead, keep your mouth shut.
@@ -89,6 +97,13 @@
     - Monkey # Shitmed Change
     - Kobold # Shitmed Change
   components:
+    # Den begin additions
+    - type: RandomHumanoidAppearance
+      randomizeName: true
+    - type: NpcFactionMember
+      factions:
+        - NanoTrasen
+    # Den end additions
     - type: GhostRole
       name: Mobster
       description: Break kneecaps, spray lead, keep your mouth shut.
