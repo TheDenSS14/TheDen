@@ -101,6 +101,7 @@
   cost: 1000
   category: cargoproduct-category-name-engineering
   group: market
+  excludedServers: [eternity] # DEN - Exclude dangerous prototypes from Eternity
 
 - type: cargoProduct
   id: EngineeringMiniJetpack
@@ -111,6 +112,7 @@
   cost: 750
   category: cargoproduct-category-name-engineering
   group: market
+  excludedServers: [eternity] # DEN - Exclude dangerous prototypes from Eternity
 
 - type: cargoProduct
   id: AirlockKit
