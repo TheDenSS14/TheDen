@@ -10,6 +10,7 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 using Content.Shared._AS.Consent;
+using Content.Shared._DEN.ServerContent;
 using Content.Shared.Humanoid.Markings;
 using Content.Shared.Localizations;
 using Content.Shared.Tag;
@@ -26,5 +27,6 @@ public static class SharedContentIoC
         IoCManager.Register<TagSystem>();
         IoCManager.Register<EntityWhitelistSystem>();
         IoCManager.Register<SharedConsentCardSystem>();
+        IoCManager.Register<ServerSelectiveContentManager>(); // DEN
     }
 }
