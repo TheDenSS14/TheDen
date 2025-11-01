@@ -1,0 +1,149 @@
+# SPDX-FileCopyrightText: 2025 ASaltySeabass
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  id: BaseMagazineBRDIP15
+  name: "BRDI P-15 magazine (.35 auto)"
+  parent: BaseMagazinePistol
+  abstract: true
+  components:
+  - type: Tag
+    tags:
+      - MagazineBRDIP15
+  - type: BallisticAmmoProvider
+    whitelist:
+      tags:
+        - CartridgePistol
+    proto: CartridgePistol
+    capacity: 15
+  - type: Item
+    size: Small
+  - type: Sprite
+    sprite: _DEN/Objects/Weapons/Guns/Ammunition/Magazine/CaselessRifle/BRDIP_15_mag.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: MagazineVisuals
+    magState: mag
+    steps: 12
+    zeroVisible: false
+  - type: Appearance
+
+- type: entity
+  id: MagazineBRDIP15
+  name: "BRDI P-15 magazine (.35 auto)"
+  parent: BaseMagazineBRDIP15
+  components:
+  - type: BallisticAmmoProvider
+    proto: CartridgePistol
+  - type: Sprite
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: MagazineVisuals
+    magState: mag
+    steps: 12
+    zeroVisible: false
+  - type: Appearance
+
+- type: entity
+  id: MagazineBRDIP15Practice
+  name: "BRDI P-15 magazine (.35 auto practice)"
+  parent: BaseMagazineBRDIP15
+  components:
+  - type: BallisticAmmoProvider
+    proto: CartridgePistolPractice
+  - type: Sprite
+    layers:
+    - state: practice
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: MagazineVisuals
+    magState: mag
+    steps: 12
+    zeroVisible: false
+  - type: Appearance
+
+- type: entity
+  id: MagazineBRDIP15Rubber
+  name: "BRDI P-15 magazine (.35 auto rubber)"
+  parent: BaseMagazineBRDIP15
+  components:
+  - type: BallisticAmmoProvider
+    proto: CartridgePistolRubber
+  - type: Sprite
+    layers:
+    - state: rubber
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: MagazineVisuals
+    magState: mag
+    steps: 12
+    zeroVisible: false
+  - type: Appearance
+
+- type: entity
+  id: MagazineBRDIP15Incendiary
+  name: "BRDI P-15 magazine (.35 auto incendiary)"
+  parent: BaseMagazineBRDIP15
+  components:
+  - type: BallisticAmmoProvider
+    proto: CartridgePistolIncendiary
+  - type: Sprite
+    layers:
+    - state: red
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: MagazineVisuals
+    magState: mag
+    steps: 12
+    zeroVisible: false
+  - type: Appearance
+
+- type: entity
+  id: MagazineBRDIP15Uranium
+  name: "BRDI P-15 magazine (.35 auto uranium)"
+  parent: BaseMagazineBRDIP15
+  components:
+  - type: BallisticAmmoProvider
+    proto: CartridgePistolUranium
+  - type: Sprite
+    layers:
+    - state: uranium
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: MagazineVisuals
+    magState: mag
+    steps: 12
+    zeroVisible: false
+  - type: Appearance
+
+- type: entity
+  id: MagazineBRDIP15Shrapnel
+  name: "BRDI P-15 magazine (.35 auto shrapnel)"
+  parent: BaseMagazineBRDIP15
+  components:
+  - type: BallisticAmmoProvider
+    proto: CartridgePistolShrapnel
+
+- type: entity
+  id: MagazineBRDIP15Empty
+  name: "BRDI P-15 magazine (.35 auto)"
+  suffix: empty
+  parent: BaseMagazineBRDIP15
+  components:
+  - type: BallisticAmmoProvider
+    proto: null
+  - type: Sprite
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]

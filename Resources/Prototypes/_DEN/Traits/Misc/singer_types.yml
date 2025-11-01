@@ -1,0 +1,28 @@
+# SPDX-FileCopyrightText: 2025 crekulon
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
+- type: SingerInstrument
+  id: IPCSinger
+  instrumentList:
+    "Electric Piano A": {4: 0}
+    "Electric Piano B": {5: 0}
+    "Synth Brass A": {63: 0}
+    "Synth Brass B": { 83: 0 }
+    "Square Wave": { 80: 0 }
+    "Sawtooth Wave": { 81: 0 }
+    "Synth Lead": {87: 0}
+    "Warm Pad": {88: 0}
+    "Choir Pad": {91: 0}
+  defaultInstrument: "Synth Lead"
+  midiUi: Key
+  midiActionId: ActionHarpyPlayMidi
+  allowPercussion: true
+
+- type: SingerInstrument
+  id: IPCSingerBasic
+  instrumentList:
+    "Synth Lead": {87: 0}
+  defaultInstrument: "Synth Lead"
+  midiUi: Key
+  midiActionId: ActionHarpyPlayMidi

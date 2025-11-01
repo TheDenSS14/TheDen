@@ -21,9 +21,10 @@
 # SPDX-FileCopyrightText: 2024 slarticodefast
 # SPDX-FileCopyrightText: 2024 sleepyyapril
 # SPDX-FileCopyrightText: 2024 themias
+# SPDX-FileCopyrightText: 2025 ASaltySeabass
 # SPDX-FileCopyrightText: 2025 Winter
 #
-# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 - type: entity
   name: basic lighter
@@ -578,7 +579,7 @@
     
 # Begin Den additions - more normal version for NT rep etc, didn't include access reader and made it more normal
 - type: entity
-  parent: [BaseBrandedLighter, BaseCentcommContraband]
+  parent: [BaseBrandedLighter, BaseCentcommDignitaryContraband]
   id: CentCommFlippo
   name: CentComm Flippo
   description: "An ornate gilded flippo frame containing a bluespace powered jet. Often provided to centcomm commanders and dignitaries."

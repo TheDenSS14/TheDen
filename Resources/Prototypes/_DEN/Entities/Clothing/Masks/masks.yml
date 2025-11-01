@@ -4,7 +4,7 @@
 # SPDX-FileCopyrightText: 2025 Rosycup
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 - type: entity
   parent: ClothingMaskGasExplorer
@@ -114,7 +114,7 @@
     - Snout
 
 - type: entity
-  parent: ClothingMaskGasSecurityCombat
+  parent: [ BaseBlueshieldOfficerContraband, ClothingMaskGasSecurityCombat ]
   id: ClothingMaskGasBSOCombat
   name: blueshield combat gas mask
   description: A slightly outdated, but reliable military-style gas mask, painted in the blueshield's colors.

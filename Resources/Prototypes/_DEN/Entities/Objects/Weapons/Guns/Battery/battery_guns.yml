@@ -1,0 +1,64 @@
+# SPDX-FileCopyrightText: 2025 ASaltySeabass
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  name: pulse PDW
+  parent: [BaseWeaponBattery, BaseGunWieldable, BaseCentcommBlueshieldContraband]
+  id: WeaponPulsePDW
+  description: A compact pulse weapon issued to Blueshield Officers for the rapid neutralization of close-range threats.
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Weapons/Guns/Battery/pulse_pdw.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-unshaded-4
+      map: ["enum.GunVisualLayers.MagUnshaded"]
+      shader: unshaded
+  - type: Item
+    size: Small
+    shape:
+    - 0,1,1,0
+    - 0,1,0,1
+  - type: MagazineVisuals
+    magState: mag
+    steps: 5
+    zeroVisible: true
+  - type: Clothing
+    quickEquip: false
+    slots:
+    - Belt
+    - suitStorage
+    - Back
+    sprite: _DEN/Objects/Weapons/Guns/Battery/pulse_pdw.rsi
+  - type: GunWieldBonus
+    minAngle: -19
+    maxAngle: -16
+  - type: Gun
+    minAngle: 21
+    maxAngle: 32
+    angleIncrease: 10 #Starts off very accurate, but quickly loses that accuracy after only a couple of shots.
+    angleDecay: 10
+    selectedMode: SemiAuto
+    fireRate: 2
+    availableModes:
+      - SemiAuto
+      - FullAuto
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/laser_cannon.ogg
+  - type: HitscanBatteryAmmoProvider
+    proto: Pulse
+    fireCost: 200
+  - type: Battery
+    maxCharge: 3005
+    startingCharge: 3005
+  - type: Tag
+    tags:
+    - PulsePDW
+    - Sidearm
+  - type: BatterySelfRecharger # 30 seconds to fully recharge, but it does not do so if it has been fired in the last 5 seconds. 35 seconds total when empty.
+    autoRecharge: true
+    autoRechargeRate: 100
+    autoRechargePause: true
+    autoRechargePauseTime: 5

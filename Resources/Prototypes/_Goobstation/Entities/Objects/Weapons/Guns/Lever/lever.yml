@@ -1,3 +1,5 @@
+# SPDX-FileCopyrightText: 2025 ASaltySeabass
+# SPDX-FileCopyrightText: 2025 Blitz
 # SPDX-FileCopyrightText: 2025 BlitzTheSquishy
 # SPDX-FileCopyrightText: 2025 EctoplasmIsGood
 # SPDX-FileCopyrightText: 2025 Solstice
@@ -7,7 +9,7 @@
 
 - type: entity
   name: Chester
-  parent: [ BaseWeaponRifle, BaseGunWieldable ]
+  parent: [ BaseBlueshieldOfficerContraband, BaseWeaponRifle, BaseGunWieldable ] #TheDen Contraband Parents
   id: WeaponLeverChester
   description: An improved lever-action rifle designed to fire specialized 8 gauge ammunition for rapid threat removal.
   components:

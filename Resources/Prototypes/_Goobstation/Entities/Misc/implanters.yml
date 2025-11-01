@@ -1,3 +1,4 @@
+# SPDX-FileCopyrightText: 2025 ASaltySeabass
 # SPDX-FileCopyrightText: 2025 Baptr0b0t
 # SPDX-FileCopyrightText: 2025 Rouge2t7
 # SPDX-FileCopyrightText: 2025 sleepyyapril
@@ -6,7 +7,7 @@
 
 - type: entity
   id: BaseImplantOnlyImplanterCentcomm
-  parent: BaseImplantOnlyImplanter
+  parent: [ BaseCentcommDignitaryContraband, BaseImplantOnlyImplanter ] #TheDen Contraband Parents
   name: centcomm implanter
   description: A compact disposable syringe exclusively designed for the injection of subdermal implants. The insertion needle is coated with an anesthetic.
   abstract: true

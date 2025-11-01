@@ -1,13 +1,14 @@
+# SPDX-FileCopyrightText: 2025 ASaltySeabass
 # SPDX-FileCopyrightText: 2025 Sir Warock
 # SPDX-FileCopyrightText: 2025 SixplyDev
 # SPDX-FileCopyrightText: 2025 sheepie
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 # Blueshield Armour Vest
 - type: entity
-  parent: [ClothingOuterBaseMedium, AllowSuitStorageClothing]
+  parent: [ClothingOuterBaseMedium, AllowSuitStorageClothing, BaseBlueshieldOfficerContraband] #TheDen Contraband Parents
   id: ClothingBlueshieldArmourVest
   name: blueshield's security armour
   description: An armoured vest with the badge of the blueshield
@@ -55,7 +56,7 @@
     size: Normal
 
 - type: entity
-  parent: [ClothingOuterBaseMedium, AllowSuitStorageClothing, ClothingOuterStorageFoldableBase]
+  parent: [ClothingOuterBaseMedium, AllowSuitStorageClothing, ClothingOuterStorageFoldableBase, BaseBlueshieldOfficerContraband]
   id: ClothingBlueshieldArmoredCoat
   name: blueshield's armored coat
   description: A coat for cold winter seasons with sewn in plates.
@@ -80,7 +81,7 @@
     coolingCoefficient: 0.1
 
 - type: entity
-  parent: [ClothingOuterStorageFoldableBaseOpened, ClothingBlueshieldArmoredCoat]
+  parent: [ClothingOuterStorageFoldableBaseOpened, ClothingBlueshieldArmoredCoat] #TheDen Contraband Parents
   id: ClothingBlueshieldArmoredCoatOpen
   name: blueshield's armored coat
   suffix: Opened
