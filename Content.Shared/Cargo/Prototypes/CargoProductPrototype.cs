@@ -15,6 +15,7 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
+using Content.Shared._DEN.ServerContent;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype.Array;
@@ -23,7 +24,8 @@ using Robust.Shared.Utility;
 namespace Content.Shared.Cargo.Prototypes
 {
     [Prototype]
-    public sealed partial class CargoProductPrototype : IPrototype, IInheritingPrototype
+    // DEN: Allow selectively omitting cargo products from servers based on content ID
+    public sealed partial class CargoProductPrototype : IPrototype, IInheritingPrototype, IServerSelectivePrototype
     {
         /// <inheritdoc />
         [ParentDataField(typeof(AbstractPrototypeIdArraySerializer<CargoProductPrototype>))]
@@ -111,5 +113,17 @@ namespace Content.Shared.Cargo.Prototypes
         /// </summary>
         [DataField]
         public string Group { get; private set; } = "market";
+
+        // DEN start: Allow selectively omitting cargo products from servers based on content ID
+
+        /// <summary>
+        /// Server content IDs that will want to exclude this prototype.
+        /// They will visually show up as disabled in the cargo UI, and the server will not process them.
+        /// This deos not affect "forced orders", such as the cargo gifts gamerule.
+        /// </summary>
+        [DataField]
+        public HashSet<string>? ExcludedServers { get; } = null;
+
+        // End DEN
     }
 }

@@ -41,6 +41,7 @@ using Robust.Shared.Map;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
 using Robust.Shared.Random;
+using Content.Shared._DEN.ServerContent;
 
 namespace Content.Server.Cargo.Systems;
 
@@ -73,6 +74,7 @@ public sealed partial class CargoSystem : SharedCargoSystem
     [Dependency] private readonly IComponentFactory _factory = default!;
     [Dependency] private readonly MapLoaderSystem _mapLoader = default!;
     [Dependency] private readonly SharedIdCardSystem _idCardSystem = default!;
+    [Dependency] private readonly ServerSelectiveContentManager _serverSelective = default!; // DEN
 
     private EntityQuery<TransformComponent> _xformQuery;
     private EntityQuery<CargoSellBlacklistComponent> _blacklistQuery;
