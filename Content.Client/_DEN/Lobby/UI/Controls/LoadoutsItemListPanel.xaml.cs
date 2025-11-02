@@ -399,7 +399,7 @@ public sealed partial class LoadoutsItemListPanel : BoxContainer
         if (_profile?.LoadoutPreferences != null)
         {
             _points -= _profile.LoadoutPreferences
-                .Where(p => p.Selected)
+                .Where(p => _prototype.HasIndex<LoadoutPrototype>(p.LoadoutName) && p.Selected)
                 .Select(p => _prototype.Index<LoadoutPrototype>(p.LoadoutName))
                 .Sum(l => l.Cost);
         }
