@@ -5,6 +5,7 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 using System.Diagnostics.CodeAnalysis;
+using System.Linq;
 using Content.Shared.Clothing.Loadouts.Prototypes;
 using Content.Shared.Clothing.Loadouts.Systems;
 using Content.Shared.Preferences;
@@ -48,14 +49,18 @@ public sealed partial class CharacterItemGroupItem
         switch (Type)
         {
             case "trait":
-                return profile.TraitPreferences.TryFirstOrDefault(
-                    p => protoMan.Index<TraitPrototype>((string) p).ID == ID, out value);
+                value = profile.TraitPreferences.FirstOrDefault(
+                    p => protoMan.HasIndex<TraitPrototype>(p));
+                break;
             case "loadout":
-                return profile.LoadoutPreferences.TryFirstOrDefault(
-                    p => protoMan.Index<LoadoutPrototype>(((Loadout) p).LoadoutName).ID == ID, out value);
+                value = profile.LoadoutPreferences.FirstOrDefault(
+                    p => protoMan.HasIndex<LoadoutPrototype>(p.LoadoutName));
+                break;
             default:
                 DebugTools.Assert($"Invalid CharacterItemGroupItem Type: {Type}");
-                return false;
+                break;
         }
+
+        return value != null;
     }
 }
