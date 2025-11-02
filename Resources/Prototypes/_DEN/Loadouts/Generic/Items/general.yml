@@ -111,20 +111,33 @@
 - type: loadout
   id: LoadoutItemBarberScissorsAltMirrorGold # the ID is like this for sorting order purposes
   category: GeneralItems
+  canBeHeirloom: true
   cost: 4
   items:
   - HandheldMirrorGold
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutMagicMirrors
 
 - type: loadout
   id: LoadoutItemBarberScissorsAltMirrorGray
   category: GeneralItems
+  canBeHeirloom: true
   cost: 4
   items:
   - HandheldMirrorGray
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutMagicMirrors
 
 - type: loadout
   id: LoadoutItemBarberScissorsAltComb
   category: GeneralItems
+  canBeHeirloom: true
+  customColorTint: true
   cost: 4
   items:
   - HairComb
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutMagicMirrors

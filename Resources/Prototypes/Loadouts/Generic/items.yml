@@ -871,6 +871,9 @@
   cost: 4
   items:
     - BarberScissors
+  requirements: # DEN - Add other hair styling items
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutMagicMirrors
 
 - type: loadout
   id: LoadoutSolCommonTranslator
