@@ -17,7 +17,7 @@
 # There are existing packs for some of these recipes, and some which have items that don't exist. I'm sorry.
 
 - type: latheRecipePack
-  parent: [AutolatheStaticCandyBucketDen, AutolatheStaticMagicMirrorDen]
+  parent: [AutolatheStaticCandyBucketDen]
   id: AutolatheStaticAwfulDen
   recipes:
   - Wirecutter
@@ -213,14 +213,6 @@
   - MagazineBoxShotgunPracticeHighCaliber # Goobstation
   - MagazineBRDIP15Empty #TheDen
   - MagazineBRDIP15 #TheDen
-
-- type: latheRecipePack
-  id: AutolatheStaticMagicMirrorDen
-  recipes:
-  - HandheldMirrorGold
-  - HandheldMirrorGray
-  - HairComb
-  - BarberScissors
 
 - type: latheRecipePack
   id: AutolatheStaticCandyBucketDen
