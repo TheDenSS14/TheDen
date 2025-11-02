@@ -10,25 +10,11 @@
 - type: entity
   id: BarberScissors
   name: barber scissors
-  description: is able to reshape the hairstyle of any crew cut to your liking.
-  parent: BaseItem
+  parent: BaseHandheldMagicMirror # DEN: Move magic mirror components into separate prototype
   components:
   - type: Sprite
     sprite: Objects/Tools/scissors.rsi
     state: icon
-  - type: MagicMirror
-    addSlotTime: 20
-    removeSlotTime: 20
-    selectSlotTime: 20
-    changeSlotTime: 20
-  - type: ActivatableUI
-    key: enum.MagicMirrorUiKey.Key
-    inHandsOnly: true
-    requireActiveHand: true
-  - type: UserInterface
-    interfaces:
-      enum.MagicMirrorUiKey.Key:
-        type: MagicMirrorBoundUserInterface
   - type: MeleeWeapon
     wideAnimationRotation: -135
     attackRate: 1
