@@ -45,3 +45,6 @@
     interfaces:
       enum.MagicMirrorUiKey.Key:
         type: MagicMirrorBoundUserInterface
+  - type: Construction # DEN: Make wall mirrors constructible
+    graph: WallMirror
+    node: Mirror
