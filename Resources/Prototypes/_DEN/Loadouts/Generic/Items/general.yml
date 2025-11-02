@@ -107,3 +107,24 @@
   cost: 1
   items:
     - TapeRecorderFilled
+
+- type: loadout
+  id: LoadoutItemBarberScissorsAltMirrorGold # the ID is like this for sorting order purposes
+  category: GeneralItems
+  cost: 4
+  items:
+  - HandheldMirrorGold
+
+- type: loadout
+  id: LoadoutItemBarberScissorsAltMirrorGray
+  category: GeneralItems
+  cost: 4
+  items:
+  - HandheldMirrorGray
+
+- type: loadout
+  id: LoadoutItemBarberScissorsAltComb
+  category: GeneralItems
+  cost: 4
+  items:
+  - HairComb

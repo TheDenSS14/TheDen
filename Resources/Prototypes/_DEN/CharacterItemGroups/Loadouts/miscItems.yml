@@ -18,6 +18,19 @@
     - type: loadout
       id: LoadoutItemWalkingCaneImp
 
+- type: characterItemGroup
+  id: LoadoutMagicMirrors
+  maxItems: 1
+  items:
+  - type: loadout
+    id: LoadoutItemBarberScissors
+  - type: loadout
+    id: LoadoutItemBarberScissorsAltMirrorGold
+  - type: loadout
+    id: LoadoutItemBarberScissorsAltMirrorGray
+  - type: loadout
+    id: LoadoutItemBarberScissorsAltComb
+
 # Prescription medicines - primarily RP chems.
 # I am excluding the HRT medications from this list on purpose.
 

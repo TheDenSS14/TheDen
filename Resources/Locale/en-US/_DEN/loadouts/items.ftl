@@ -64,3 +64,6 @@ character-item-group-LoadoutPrescriptionPainkiller = Painkillers
 character-item-group-LoadoutPrescriptionAnxiolytic = Anxiolytics
 character-item-group-LoadoutPrescriptionAntidepressant = Antidepressants
 character-item-group-LoadoutCostumeBundles = Costume Bundles
+
+# ??? good enough i guess
+character-item-group-LoadoutMagicMirrors = Hair Styling Tools
