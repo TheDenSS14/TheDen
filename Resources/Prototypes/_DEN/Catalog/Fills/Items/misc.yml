@@ -1,0 +1,13 @@
+# SPDX-FileCopyrightText: 2025 ASaltySeabass
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  id: ClothingShoesBootsJackFilled
+  parent: ClothingShoesBootsJack
+  suffix: Filled
+  components:
+  - type: ContainerFill
+    containers:
+      item:
+      - CombatKnife

@@ -1,0 +1,94 @@
+# SPDX-FileCopyrightText: 2025 portfiend
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  abstract: true
+  parent: BoxCardboard
+  id: CandyBagBase
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Storage/candy_bag.rsi
+  - type: Item
+    size: Small
+  - type: Storage
+    maxItemSize: Tiny
+    whitelist:
+      tags:
+      - Candy
+    grid:
+    - 0,0,5,2
+  - type: StaticPrice
+    price: 10
+
+- type: entity
+  parent: CandyBagBase
+  id: CandyBagGumball
+  name: bulk gumball bag
+  description: A bag of gumballs in various flavors.
+  components:
+  - type: Sprite
+    state: gumball
+  - type: Storage
+    maxItemSize: Small
+    grid:
+    - 0,0,5,3
+  - type: StorageFill
+    contents:
+    - id: FoodGumball
+      amount: 12
+
+- type: entity
+  parent: CandyBagBase
+  id: CandyBagGummyBear
+  name: bulk gummy bear bag
+  description: A bag of assorted gummy bears.
+  components:
+  - type: Sprite
+    state: gummy_bear
+  - type: StorageFill
+    contents:
+    - id: FoodSnackGummyBear
+      amount: 18
+
+- type: entity
+  parent: CandyBagBase
+  id: CandyBagLollipop
+  name: bulk lollipop bag
+  description: A bag of lollipops in various flavors.
+  components:
+  - type: Sprite
+    state: lollipop
+  - type: Storage
+    maxItemSize: Small
+    grid:
+    - 0,0,5,3
+  - type: StorageFill
+    contents:
+    - id: FoodLollipop
+      amount: 12
+
+- type: entity
+  parent: CandyBagBase
+  id: CandyBagHardCandy
+  name: bulk hard candy bag
+  description: A bag of assorted wrapped hard candies.
+  components:
+  - type: Sprite
+    state: hard_candy
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:NestedSelector
+        tableId: RandomHardCandy
+        rolls: !type:ConstantNumberSelector
+          value: 18
+
+- type: entityTable
+  id: RandomHardCandy
+  table: !type:GroupSelector
+    children:
+    - id: FoodSnackWrappedCandyBlue
+    - id: FoodSnackWrappedCandyGreen
+    - id: FoodSnackWrappedCandyPink
+    - id: FoodSnackWrappedCandyPurple
+    - id: FoodSnackWrappedCandyYellow

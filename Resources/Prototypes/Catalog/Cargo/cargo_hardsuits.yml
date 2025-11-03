@@ -1,11 +1,12 @@
-# SPDX-FileCopyrightText: 2024 Blu <79374236+BlueHNT@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 FoxxoTrystan <trystan.garnierhein@gmail.com>
-# SPDX-FileCopyrightText: 2025 Rosycup <178287475+Rosycup@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 VMSolidus <evilexecutive@gmail.com>
-# SPDX-FileCopyrightText: 2025 juniwoofs <180479595+juniwoofs@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Blu
+# SPDX-FileCopyrightText: 2024 FoxxoTrystan
+# SPDX-FileCopyrightText: 2025 Rosycup
+# SPDX-FileCopyrightText: 2025 VMSolidus
+# SPDX-FileCopyrightText: 2025 juniwoofs
+# SPDX-FileCopyrightText: 2025 portfiend
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 # Engineering
 - type: cargoProduct
@@ -17,6 +18,7 @@
   cost: 2250
   category: cargoproduct-category-name-hardsuits
   group: market
+  excludedServers: [eternity] # DEN - Exclude dangerous prototypes from Eternity
 
 - type: cargoProduct
   id: EngineeringLampsiHardsuit
@@ -27,6 +29,7 @@
   cost: 2250
   category: cargoproduct-category-name-hardsuits
   group: market
+  excludedServers: [eternity] # DEN - Exclude dangerous prototypes from Eternity
 
 # Logistics
 - type: cargoProduct
@@ -38,6 +41,7 @@
   cost: 1250
   category: cargoproduct-category-name-hardsuits
   group: market
+  excludedServers: [eternity] # DEN - Exclude dangerous prototypes from Eternity
 
 - type: cargoProduct
   id: LogisticsLavrionHardsuit
@@ -48,6 +52,7 @@
   cost: 3500
   category: cargoproduct-category-name-hardsuits
   group: market
+  excludedServers: [eternity] # DEN - Exclude dangerous prototypes from Eternity
 
 - type: cargoProduct
   id: SecurityBaghaturTacsuit
@@ -58,6 +63,7 @@
   cost: 5000
   category: cargoproduct-category-name-hardsuits
   group: market
+  excludedServers: [eternity] # DEN - Exclude dangerous prototypes from Eternity
 
 - type: cargoProduct
   id: SecuritySuldeTacsuit
@@ -68,6 +74,7 @@
   cost: 7500
   category: cargoproduct-category-name-hardsuits
   group: market
+  excludedServers: [eternity] # DEN - Exclude dangerous prototypes from Eternity
 
 - type: cargoProduct
   id: SecurityTsagaanTacsuit
@@ -78,3 +85,4 @@
   cost: 5500
   category: cargoproduct-category-name-hardsuits
   group: market
+  excludedServers: [eternity] # DEN - Exclude dangerous prototypes from Eternity

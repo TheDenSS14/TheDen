@@ -1,8 +1,9 @@
 # SPDX-FileCopyrightText: 2025 Falcon
 # SPDX-FileCopyrightText: 2025 Shaman
+# SPDX-FileCopyrightText: 2025 portfiend
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 - type: trait
   id: GoblinAccent
@@ -39,3 +40,27 @@
     - !type:TraitAddComponent
       components:
         - type: Monotonous
+
+- type: trait
+  id: ToggleVoiceGender
+  category: TraitsSpeechSounds
+  points: 0
+  slots: 0
+  requirements:
+  - !type:CharacterJobRequirement
+    inverted: true
+    jobs:
+    - StationAi
+    - Borg
+    - MedicalBorg
+  - !type:CharacterSpeciesRequirement
+    inverted: true
+    species: # These are all unisex species
+    - Arachnid
+    - IPC
+    - Plasmaman
+    - Vox
+  functions:
+  - !type:TraitAddComponent
+    components:
+    - type: VoiceGenderToggle

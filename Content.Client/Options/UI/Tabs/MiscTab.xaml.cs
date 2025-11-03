@@ -10,6 +10,7 @@
 // SPDX-FileCopyrightText: 2024 Spatison
 // SPDX-FileCopyrightText: 2024 deathride58
 // SPDX-FileCopyrightText: 2024 metalgearsloth
+// SPDX-FileCopyrightText: 2025 Dirius77
 // SPDX-FileCopyrightText: 2025 DocNITE
 // SPDX-FileCopyrightText: 2025 Falcon
 // SPDX-FileCopyrightText: 2025 RedFoxIV
@@ -17,7 +18,7 @@
 // SPDX-FileCopyrightText: 2025 sev7ves
 // SPDX-FileCopyrightText: 2025 sleepyyapril
 //
-// SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
+// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 using System.Linq;
 using Content.Client.UserInterface.Screens;
@@ -125,6 +126,7 @@ namespace Content.Client.Options.UI.Tabs
             // ToggleWalk.OnToggled += OnCheckBoxToggled;
             StaticStorageUI.OnToggled += OnCheckBoxToggled;
             ModernProgressBar.OnToggled += OnCheckBoxToggled;
+            IgnoreCryoMessages.OnToggled += OnCheckBoxToggled; // DEN
             ChatExtraInfo.OnToggled += OnCheckBoxToggled;
             DisableFiltersCheckBox.OnToggled += OnCheckBoxToggled;
             AutoFillHighlightsCheckBox.OnPressed += _ => UpdateApplyButton();
@@ -163,6 +165,7 @@ namespace Content.Client.Options.UI.Tabs
             AutoFillHighlightsCheckBox.Pressed = _cfg.GetCVar(DCCVars.ChatAutoFillHighlights);
             ChatHighlightingColorpicker.SelectorType = ColorSelectorSliders.ColorSelectorType.Hsv;
             ChatHighlightingColorpicker.Color = Color.FromHex(_cfg.GetCVar(DCCVars.ChatHighlightsColor));
+            IgnoreCryoMessages.Pressed = _cfg.GetCVar(CCVars.IgnoreCryoMessage); // DEN
 
             ApplyButton.OnPressed += OnApplyButtonPressed;
             UpdateApplyButton();
@@ -260,6 +263,7 @@ namespace Content.Client.Options.UI.Tabs
             _cfg.SetCVar(CCVars.ChatExtraInfo, ChatExtraInfo.Pressed);
             _cfg.SetCVar(DCCVars.ChatAutoFillHighlights, AutoFillHighlightsCheckBox.Pressed);
             _cfg.SetCVar(DCCVars.ChatHighlightsColor, ChatHighlightingColorpicker.Color.ToHex());
+            _cfg.SetCVar(CCVars.IgnoreCryoMessage, IgnoreCryoMessages.Pressed); // DEN
 
             if (HudLayoutOption.SelectedMetadata is string opt)
             {
@@ -304,6 +308,7 @@ namespace Content.Client.Options.UI.Tabs
             var isChatStackTheSame = ChatStackOption.SelectedId == _cfg.GetCVar(CCVars.ChatStackLastLines);
             var isAutoFillHighlightSame = AutoFillHighlightsCheckBox.Pressed == _cfg.GetCVar(DCCVars.ChatAutoFillHighlights);
             var isChatHighlighingColorpickerSame = ChatHighlightingColorpicker.Color == Color.FromHex(_cfg.GetCVar(DCCVars.ChatHighlightsColor));
+            var isIgnoreCryoMessageSame = IgnoreCryoMessages.Pressed == _cfg.GetCVar(CCVars.IgnoreCryoMessage);// DEN
 
             ApplyButton.Disabled = isHudThemeSame &&
                                    isLayoutSame &&
@@ -332,7 +337,8 @@ namespace Content.Client.Options.UI.Tabs
                                    isNoVisionFiltersSame &&
                                    isChatStackTheSame &&
                                    isAutoFillHighlightSame &&
-                                   isChatHighlighingColorpickerSame;
+                                   isChatHighlighingColorpickerSame &&
+                                   isIgnoreCryoMessageSame; // DEN: Ignore cryo messages
         }
 
     }

@@ -21,9 +21,10 @@
 // SPDX-FileCopyrightText: 2024 VMSolidus
 // SPDX-FileCopyrightText: 2024 metalgearsloth
 // SPDX-FileCopyrightText: 2024 themias
+// SPDX-FileCopyrightText: 2025 portfiend
 // SPDX-FileCopyrightText: 2025 sleepyyapril
 //
-// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+// SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 using System.Diagnostics.CodeAnalysis;
 using Content.Server.Cargo.Components;
@@ -322,6 +323,10 @@ namespace Content.Server.Cargo.Systems
                 Log.Error($"Tried to add invalid cargo product {args.CargoProductId} as order!");
                 return;
             }
+
+            // DEN: Do not process orders from excluded servers
+            if (!_serverSelective.IsServerContentAllowed(product))
+                return;
 
             if (!component.AllowedGroups.Contains(product.Group))
                 return;

@@ -1,0 +1,68 @@
+# SPDX-FileCopyrightText: 2025 ASaltySeabass
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: latheRecipe
+  parent: BaseAmmoRecipe
+  id: MagazineBRDIP15Empty
+  result: MagazineBRDIP15Empty
+  materials:
+    Steel: 25
+
+- type: latheRecipe
+  parent: BaseAmmoRecipe
+  id: MagazineBRDIP15
+  result: MagazineBRDIP15
+  materials:
+    Steel: 175
+
+- type: latheRecipe
+  parent: BaseAmmoRecipe
+  id: MagazineBRDIP15Incendiary
+  result: MagazineBRDIP15Incendiary
+  materials:
+    Steel: 25
+    Plastic: 150
+
+- type: latheRecipe
+  parent: BaseAmmoRecipe
+  id: MagazineBRDIP15Rubber
+  result: MagazineBRDIP15Rubber
+  materials:
+    Steel: 115
+    Plastic: 75
+
+- type: latheRecipe
+  parent: BaseAmmoRecipe
+  id: MagazineBRDIP15Uranium
+  result: MagazineBRDIP15Uranium
+  materials:
+    Steel: 25
+    Plastic: 75
+    Uranium: 150
+
+- type: latheRecipe
+  id: WeaponPistolBRDIP15Standard
+  result: WeaponPistolBRDIP15StandardEmpty
+  category: Weapons
+  completetime: 8
+  materials:
+    Aluminum: 800
+    Plastic: 200
+    Plasteel: 400
+    Steel: 500
+    Tungsten: 200
+
+- type: latheRecipe
+  id: WeaponPistolEnergyRevolver
+  result: WeaponEnergyRevolver
+  category: Weapons
+  completetime: 10
+  materials:
+    Steel: 1500
+    Glass: 600
+    Plastic: 400
+    Gold: 150
+    Silver: 100
+    Uranium: 200
+    Plasma: 100

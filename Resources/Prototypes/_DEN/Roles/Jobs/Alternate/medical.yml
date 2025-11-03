@@ -1,3 +1,4 @@
+# SPDX-FileCopyrightText: 2025 ASaltySeabass
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: MIT
@@ -53,3 +54,14 @@
   - job-name-alternate-medical-director
   - job-name-alternate-head-of-medicine
   - job-name-alternate-dean-of-medicine
+  - job-name-alternate-director-of-care
+
+- type: alternateJobTitle
+  id: DefaultSeniorPhysician
+  jobId: SeniorPhysician
+  titles:
+  - job-name-alternate-senior-surgeon
+  - job-name-alternate-senior-nurse
+  - job-name-alternate-senior-cryogenics-specialist
+  - job-name-alternate-senior-chemist
+  - job-name-alternate-senior-pharmacist

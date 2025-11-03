@@ -9,13 +9,14 @@
 # SPDX-FileCopyrightText: 2024 Skubman
 # SPDX-FileCopyrightText: 2024 deltanedas
 # SPDX-FileCopyrightText: 2024 themias
+# SPDX-FileCopyrightText: 2025 ASaltySeabass
 # SPDX-FileCopyrightText: 2025 Falcon
 # SPDX-FileCopyrightText: 2025 MajorMoth
 # SPDX-FileCopyrightText: 2025 Winter
 # SPDX-FileCopyrightText: 2025 phantasai
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 - type: entity
   id: BaseDefibrillator
@@ -127,6 +128,9 @@
     doAfterDuration: 6
   - type: DoAfter
   - type: UseDelay
+  - type: Tag #Den change for BSO/Corpsman/CMO rig compatability
+    tags:
+    - Compactdefib
 
 - type: entity
   id: DefibrillatorSyndicate

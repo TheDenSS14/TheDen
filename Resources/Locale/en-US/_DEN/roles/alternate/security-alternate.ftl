@@ -1,7 +1,12 @@
+# SPDX-FileCopyrightText: 2025 ASaltySeabass
 # SPDX-FileCopyrightText: 2025 Jakumba
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: MIT
+
+# Security Cadet
+job-name-alternate-junior-officer = Junior Officer
+job-name-alternate-security-trainee = Security Trainee
 
 # Security Officer
 job-name-alternate-deputy = Deputy
@@ -17,10 +22,13 @@ job-name-alternate-senior-trooper = Senior Trooper
 # Corpsman
 job-name-alternate-brigmedic = Brigmedic
 job-name-alternate-field-medic = Field Medic
+job-name-alternate-combat-medic = Combat Medic
 
 # Detective
 job-name-alternate-inspector = Inspector
 job-name-alternate-investigator = Investigator
+job-name-alternate-gumshoe = Gumshoe
+job-name-alternate-forensic-scientist = Forensic Scientist
 
 # Warden
 job-name-alternate-armorer = Armorer

@@ -40,7 +40,7 @@
 # SPDX-FileCopyrightText: 2025 portfiend
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 # If you've arrived here after a failed NoCargoOrderArbitrage test, it's likely
 # because the product in question contains a restock box which links to a
@@ -161,6 +161,7 @@
   cost: 3820
   category: cargoproduct-category-name-medical
   group: market
+  excludedServers: [eternity] # DEN - Exclude dangerous prototypes from Eternity
 
 - type: cargoProduct
   id: CrateVendingMachineRestockNutriMax
@@ -211,6 +212,7 @@
   cost: 2200
   category: cargoproduct-category-name-security
   group: market
+  excludedServers: [eternity] # DEN - Exclude dangerous prototypes from Eternity
 
 - type: cargoProduct
   id: CrateVendingMachineRestockSeeds

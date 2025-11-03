@@ -6,11 +6,11 @@
 meta:
   format: 7
   category: Map
-  engineVersion: 267.2.0
+  engineVersion: 267.3.0
   forkId: ""
   forkVersion: ""
-  time: 10/20/2025 01:51:03
-  entityCount: 18872
+  time: 10/29/2025 14:21:07
+  entityCount: 18891
 maps:
 - 1
 grids:
@@ -46629,12 +46629,6 @@ entities:
       rot: 3.141592653589793 rad
       pos: -25.239359,-17.133512
       parent: 2
-  - uid: 18817
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: -25.647516,-18.130356
-      parent: 2
 - proto: CircuitImprinter
   entities:
   - uid: 909
@@ -47322,13 +47316,6 @@ entities:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: 10.5,22.5
-      parent: 2
-- proto: CockroachTimedSpawner
-  entities:
-  - uid: 16947
-    components:
-    - type: Transform
-      pos: -52.5,-27.5
       parent: 2
 - proto: ComfyChair
   entities:
@@ -86126,6 +86113,30 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 10.5,-7.5
       parent: 2
+  - uid: 18882
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: -1.5,-4.5
+      parent: 2
+  - uid: 18883
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: -1.5,-5.5
+      parent: 2
+  - uid: 18884
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: -1.5,-6.5
+      parent: 2
+  - uid: 18885
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: -1.5,-7.5
+      parent: 2
 - proto: hydroponicsMakeshiftTray
   entities:
   - uid: 2269
@@ -87711,6 +87722,13 @@ entities:
     - type: Transform
       pos: -41.5,-5.5
       parent: 2
+- proto: MaterialWoodPlank10
+  entities:
+  - uid: 17198
+    components:
+    - type: Transform
+      pos: -11.445675,12.573988
+      parent: 2
 - proto: MedicalBed
   entities:
   - uid: 254
@@ -88925,6 +88943,21 @@ entities:
       rot: 3.141592653589793 rad
       pos: -24.358084,21.63104
       parent: 2
+  - uid: 18874
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: -11.379742,11.707439
+      parent: 2
+    - type: Paper
+      content: >-
+        Hey man. I tried to install a shelf here but it was like some kinda... weird force was stopping me. Must be some of that "New-Sphere" or whatever it is you keep yapping on about.
+
+
+        Heres the wood I was gonna use, make your own shelf.
+
+
+        - Mick
 - proto: PaperBin20
   entities:
   - uid: 347
@@ -89717,6 +89750,11 @@ entities:
     components:
     - type: Transform
       pos: -54.5,-7.5
+      parent: 2
+  - uid: 18879
+    components:
+    - type: Transform
+      pos: -37.5,0.5
       parent: 2
 - proto: PottedPlantRD
   entities:
@@ -92748,7 +92786,7 @@ entities:
     - type: Transform
       pos: -34.5,-49.5
       parent: 2
-- proto: RandomPainting
+- proto: RandomPaintingHalloween
   entities:
   - uid: 355
     components:
@@ -96521,6 +96559,41 @@ entities:
     - type: Transform
       pos: 4.5,-27.5
       parent: 2
+  - uid: 16947
+    components:
+    - type: Transform
+      pos: -52.5,-27.5
+      parent: 2
+  - uid: 18886
+    components:
+    - type: Transform
+      pos: -52.5,-28.5
+      parent: 2
+  - uid: 18887
+    components:
+    - type: Transform
+      pos: -51.5,-26.5
+      parent: 2
+  - uid: 18888
+    components:
+    - type: Transform
+      pos: -51.5,-29.5
+      parent: 2
+  - uid: 18889
+    components:
+    - type: Transform
+      pos: -51.5,-28.5
+      parent: 2
+  - uid: 18890
+    components:
+    - type: Transform
+      pos: -50.5,-27.5
+      parent: 2
+  - uid: 18891
+    components:
+    - type: Transform
+      pos: -52.5,-30.5
+      parent: 2
 - proto: RandomSpawner100
   entities:
   - uid: 2326
@@ -98518,12 +98591,6 @@ entities:
       parent: 2
 - proto: ShelfBar
   entities:
-  - uid: 1055
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: -10.5,12.5
-      parent: 2
   - uid: 2289
     components:
     - type: Transform
@@ -98654,30 +98721,6 @@ entities:
         17195:
         - - Pressed
           - Toggle
-  - uid: 17198
-    components:
-    - type: Transform
-      pos: 0.5,-2.5
-      parent: 2
-    - type: DeviceLinkSource
-      linkedPorts:
-        16559:
-        - - Pressed
-          - Toggle
-        16560:
-        - - Pressed
-          - Toggle
-  - uid: 17219
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: 51.5,-36.5
-      parent: 2
-    - type: DeviceLinkSource
-      linkedPorts:
-        17221:
-        - - Pressed
-          - DoorBolt
 - proto: SignalButtonDirectional
   entities:
   - uid: 17213
@@ -98745,6 +98788,19 @@ entities:
         16486:
         - - Pressed
           - DoorBolt
+  - uid: 17219
+    components:
+    - type: Transform
+      pos: 0.5,-2.5
+      parent: 2
+    - type: DeviceLinkSource
+      linkedPorts:
+        16559:
+        - - Pressed
+          - Toggle
+        16560:
+        - - Pressed
+          - Toggle
   - uid: 17223
     components:
     - type: Transform
@@ -98805,6 +98861,17 @@ entities:
         8884:
         - - Pressed
           - Toggle
+  - uid: 18817
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 51.5,-36.5
+      parent: 2
+    - type: DeviceLinkSource
+      linkedPorts:
+        17221:
+        - - Pressed
+          - DoorBolt
 - proto: SignAnomaly
   entities:
   - uid: 4009
@@ -105866,6 +105933,13 @@ entities:
     components:
     - type: Transform
       pos: -18.5,-13.5
+      parent: 2
+- proto: VendingMachineDetDrobe
+  entities:
+  - uid: 1055
+    components:
+    - type: Transform
+      pos: -25.5,-18.5
       parent: 2
 - proto: VendingMachineDinnerware
   entities:
@@ -118297,6 +118371,40 @@ entities:
     - type: Transform
       pos: -18.5,-17.5
       parent: 2
+  - uid: 18875
+    components:
+    - type: Transform
+      pos: 12.5,4.5
+      parent: 2
+  - uid: 18876
+    components:
+    - type: Transform
+      pos: 13.5,4.5
+      parent: 2
+  - uid: 18877
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: -2.5,-4.5
+      parent: 2
+  - uid: 18878
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: -2.5,-5.5
+      parent: 2
+  - uid: 18880
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: -2.5,-6.5
+      parent: 2
+  - uid: 18881
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: -2.5,-7.5
+      parent: 2
 - proto: WindowReinforcedDirectional
   entities:
   - uid: 2485
@@ -118628,5 +118736,10 @@ entities:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: 29.5531,-13.726557
+      parent: 2
+  - uid: 18873
+    components:
+    - type: Transform
+      pos: -11.850692,12.395026
       parent: 2
 ...

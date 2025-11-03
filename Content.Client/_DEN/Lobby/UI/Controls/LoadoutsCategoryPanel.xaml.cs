@@ -237,6 +237,7 @@ public sealed partial class LoadoutsCategoryPanel : ScrollContainer
     public void UpdateLoadoutCounts(HumanoidCharacterProfile? profile)
     {
         var counts = profile?.LoadoutPreferences
+            .Where(p => _prototype.HasIndex<LoadoutPrototype>(p.LoadoutName))
             .GroupBy(p => _prototype.Index<LoadoutPrototype>(p.LoadoutName).Category)
             .ToDictionary(
                 group => group.Key,
