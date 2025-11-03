@@ -9,6 +9,13 @@
   objectType: Structure
   placementMode: SnapgridCenter
   canBuildInImpassable: true
+  # DEN start: Add name, description, icon
+  name: fish wallpaper
+  description: It's fish.
+  icon:
+    sprite: _Impstation/Structures/Wallmounts/wallpaper.rsi
+    state: fish
+  # DEN end
 
 - type: construction
   id: WallpaperFishCorner
@@ -19,6 +26,13 @@
   objectType: Structure
   placementMode: SnapgridCenter
   canBuildInImpassable: true
+  # DEN start: Add name, description, icon
+  name: fish wallpaper corner
+  description: It's fish.
+  icon:
+    sprite: _Impstation/Structures/Wallmounts/wallpaper.rsi
+    state: fishedge
+  # DEN end
 
 - type: construction
   id: WallpaperBeach
@@ -29,6 +43,13 @@
   objectType: Structure
   placementMode: SnapgridCenter
   canBuildInImpassable: true
+  # DEN start: Add name, description, icon
+  name: beach wallpaper
+  description: Let's go to the beach beach!
+  icon:
+    sprite: _Impstation/Structures/Wallmounts/wallpaper.rsi
+    state: beach
+  # DEN end
 
 - type: construction
   id: WallpaperBeachCorner
@@ -39,6 +60,13 @@
   objectType: Structure
   placementMode: SnapgridCenter
   canBuildInImpassable: true
+  # DEN start: Add name, description, icon
+  name: beach wallpaper corner
+  description: Let's go to the beach beach!
+  icon:
+    sprite: _Impstation/Structures/Wallmounts/wallpaper.rsi
+    state: beachedge
+  # DEN end
 
 - type: construction
   id: WallpaperBlack
@@ -49,6 +77,13 @@
   objectType: Structure
   placementMode: SnapgridCenter
   canBuildInImpassable: true
+  # DEN start: Add name, description, icon
+  name: black wallpaper
+  description: Tastefully goth.
+  icon:
+    sprite: _Impstation/Structures/Wallmounts/wallpaper.rsi
+    state: black
+  # DEN end
 
 - type: construction
   id: WallpaperBlackCorner
@@ -59,6 +94,13 @@
   objectType: Structure
   placementMode: SnapgridCenter
   canBuildInImpassable: true
+  # DEN start: Add name, description, icon
+  name: black wallpaper corner
+  description: Tastefully goth.
+  icon:
+    sprite: _Impstation/Structures/Wallmounts/wallpaper.rsi
+    state: blackedge
+  # DEN end
 
 - type: construction
   id: WallpaperGreen
@@ -69,6 +111,13 @@
   objectType: Structure
   placementMode: SnapgridCenter
   canBuildInImpassable: true
+  # DEN start: Add name, description, icon
+  name: green wallpaper
+  description: Very classy, very in.
+  icon:
+    sprite: _Impstation/Structures/Wallmounts/wallpaper.rsi
+    state: green
+  # DEN end
 
 - type: construction
   id: WallpaperGreenCorner
@@ -79,6 +128,13 @@
   objectType: Structure
   placementMode: SnapgridCenter
   canBuildInImpassable: true
+  # DEN start: Add name, description, icon
+  name: green wallpaper corner
+  description: Very classy, very in.
+  icon:
+    sprite: _Impstation/Structures/Wallmounts/wallpaper.rsi
+    state: greenedge
+  # DEN end
 
 - type: construction
   id: WallpaperPurple
@@ -89,6 +145,13 @@
   objectType: Structure
   placementMode: SnapgridCenter
   canBuildInImpassable: true
+  # DEN start: Add name, description, icon
+  name: purple wallpaper
+  description: Mystical.
+  icon:
+    sprite: _Impstation/Structures/Wallmounts/wallpaper.rsi
+    state: purple
+  # DEN end
 
 - type: construction
   id: WallpaperPurpleCorner
@@ -99,6 +162,13 @@
   objectType: Structure
   placementMode: SnapgridCenter
   canBuildInImpassable: true
+  # DEN start: Add name, description, icon
+  name: purple wallpaper corner
+  description: Mystical.
+  icon:
+    sprite: _Impstation/Structures/Wallmounts/wallpaper.rsi
+    state: purpleedge
+  # DEN end
 
 - type: construction
   id: WallpaperRainbow
@@ -109,6 +179,13 @@
   objectType: Structure
   placementMode: SnapgridCenter
   canBuildInImpassable: true
+  # DEN start: Add name, description, icon
+  name: rainbow wallpaper
+  description: Are you gay? Are you a clown? Are you a gay clown?
+  icon:
+    sprite: _Impstation/Structures/Wallmounts/wallpaper.rsi
+    state: rainbow
+  # DEN end
 
 - type: construction
   id: WallpaperRainbowCorner
@@ -119,6 +196,13 @@
   objectType: Structure
   placementMode: SnapgridCenter
   canBuildInImpassable: true
+  # DEN start: Add name, description, icon
+  name: rainbow wallpaper corner
+  description: Are you gay? Are you a clown? Are you a gay clown?
+  icon:
+    sprite: _Impstation/Structures/Wallmounts/wallpaper.rsi
+    state: rainbowedge
+  # DEN end
 
 - type: construction
   id: WallpaperRed
@@ -129,6 +213,13 @@
   objectType: Structure
   placementMode: SnapgridCenter
   canBuildInImpassable: true
+  # DEN start: Add name, description, icon
+  name: red wallpaper
+  description: The residents... no, they couldn't be...
+  icon:
+    sprite: _Impstation/Structures/Wallmounts/wallpaper.rsi
+    state: red
+  # DEN end
 
 - type: construction
   id: WallpaperRedCorner
@@ -139,6 +230,13 @@
   objectType: Structure
   placementMode: SnapgridCenter
   canBuildInImpassable: true
+  # DEN start: Add name, description, icon
+  name: red wallpaper corner
+  description: The residents... no, they couldn't be...
+  icon:
+    sprite: _Impstation/Structures/Wallmounts/wallpaper.rsi
+    state: rededge
+  # DEN end
 
 - type: construction
   id: WallpaperSka
@@ -149,6 +247,13 @@
   objectType: Structure
   placementMode: SnapgridCenter
   canBuildInImpassable: true
+  # DEN start: Add name, description, icon
+  name: black and white wallpaper
+  description: SKA WORLD LET'S GO BABEY!!
+  icon:
+    sprite: _Impstation/Structures/Wallmounts/wallpaper.rsi
+    state: ska
+  # DEN end
 
 - type: construction
   id: WallpaperSkaCorner
@@ -159,6 +264,13 @@
   objectType: Structure
   placementMode: SnapgridCenter
   canBuildInImpassable: true
+  # DEN start: Add name, description, icon
+  name: black and white wallpaper corner
+  description: SKA WORLD LET'S GO BABEY!!
+  icon:
+    sprite: _Impstation/Structures/Wallmounts/wallpaper.rsi
+    state: skaedge
+  # DEN end
 
 # wall deco
 
@@ -171,6 +283,13 @@
   objectType: Structure
   placementMode: SnapgridCenter
   canBuildInImpassable: true
+  # DEN start: Add name, description, icon
+  name: black and red banner
+  description: This shade of red doesn't scare you at all.
+  icon:
+    sprite: _Impstation/Structures/Wallmounts/wallpaper.rsi
+    state: bannerblackred
+  # DEN end
 
 - type: construction
   id: WallpaperBannerBlueWhite
@@ -181,6 +300,13 @@
   objectType: Structure
   placementMode: SnapgridCenter
   canBuildInImpassable: true
+  # DEN start: Add name, description, icon
+  name: blue and white banner
+  description: All-purpose triangles of paper for any occasion.
+  icon:
+    sprite: _Impstation/Structures/Wallmounts/wallpaper.rsi
+    state: bannerbluewhite
+  # DEN end
 
 - type: construction
   id: WallpaperBannerColorful
@@ -191,6 +317,13 @@
   objectType: Structure
   placementMode: SnapgridCenter
   canBuildInImpassable: true
+  # DEN start: Add name, description, icon
+  name: colorful banner
+  description: Don't be fooled, the paper on these tastes like shit.
+  icon:
+    sprite: _Impstation/Structures/Wallmounts/wallpaper.rsi
+    state: bannercolorful
+  # DEN end
 
 - type: construction
   id: WallpaperBannerRainbow
@@ -201,6 +334,13 @@
   objectType: Structure
   placementMode: SnapgridCenter
   canBuildInImpassable: true
+  # DEN start: Add name, description, icon
+  name: rainbow banner
+  description: All your favorite colors are here.
+  icon:
+    sprite: _Impstation/Structures/Wallmounts/wallpaper.rsi
+    state: bannerrainbow
+  # DEN end
 
 - type: construction
   id: WallpaperBannerSka
@@ -211,6 +351,13 @@
   objectType: Structure
   placementMode: SnapgridCenter
   canBuildInImpassable: true
+  # DEN start: Add name, description, icon
+  name: black and white banner
+  description: None of your favorite colors are here.
+  icon:
+    sprite: _Impstation/Structures/Wallmounts/wallpaper.rsi
+    state: bannerska
+  # DEN end
 
 - type: construction
   id: WallpaperStarsBig
@@ -221,6 +368,13 @@
   objectType: Structure
   placementMode: SnapgridCenter
   canBuildInImpassable: true
+  # DEN start: Add name, description, icon
+  name: glow in the dark big stars
+  description: You know these guys. From outside the window.
+  icon:
+    sprite: _Impstation/Structures/Wallmounts/wallpaper.rsi
+    state: starsbig
+  # DEN end
 
 - type: construction
   id: WallpaperBannerStarsSmall
@@ -231,6 +385,13 @@
   objectType: Structure
   placementMode: SnapgridCenter
   canBuildInImpassable: true
+  # DEN start: Add name, description, icon
+  name: glow in the dark small stars
+  description: You're a super star!
+  icon:
+    sprite: _Impstation/Structures/Wallmounts/wallpaper.rsi
+    state: starssmall
+  # DEN end
 
 - type: construction
   id: WallpaperStarsMoon
@@ -241,3 +402,10 @@
   objectType: Structure
   placementMode: SnapgridCenter
   canBuildInImpassable: true
+  # DEN start: Add name, description, icon
+  name: glow in the dark stars and moon
+  description: Let's talk about spaceships, or anything.
+  icon:
+    sprite: _Impstation/Structures/Wallmounts/wallpaper.rsi
+    state: starsmoon
+  # DEN end
