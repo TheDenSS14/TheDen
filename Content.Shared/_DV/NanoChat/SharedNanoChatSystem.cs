@@ -4,6 +4,13 @@
 // SPDX-FileCopyrightText: 2025 Tobias Berger <toby@tobot.dev>
 // SPDX-FileCopyrightText: 2025 Will-Oliver-Br <164823659+Will-Oliver-Br@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Skubman <ba.fallaria@gmail.com>
+// SPDX-FileCopyrightText: 2024 Tadeo <td12233a@gmail.com>
+// SPDX-FileCopyrightText: 2025 Evaisa <evagiacosa1@gmail.com>
+// SPDX-FileCopyrightText: 2025 EvaisaDev <mail@evaisa.dev>
+// SPDX-FileCopyrightText: 2025 Icepick <122653407+Icepicked@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 corresp0nd <46357632+corresp0nd@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -40,6 +47,19 @@ public abstract class SharedNanoChatSystem : EntitySystem
         }
 
         args.PushMarkup(Loc.GetString("nanochat-card-examine-number", ("number", $"{ent.Comp.Number:D4}")));
+    }
+
+    /// <summary>
+    ///     Helper Method for truncating a string to maximum length
+    /// </summary>
+    public static string Truncate(string? text, int maxLength, string overflowText = "...") // Funky station - made text nullable because weird shit was happening that I could not bother to debug.
+    {
+        if (string.IsNullOrEmpty(text))
+            return string.Empty;
+
+        return text.Length > maxLength
+            ? text[..(maxLength - overflowText.Length)] + overflowText
+            : text;
     }
 
     #region Public API Methods
