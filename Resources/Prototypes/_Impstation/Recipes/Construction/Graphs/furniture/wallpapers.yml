@@ -201,11 +201,15 @@
       - material: Plastic
         amount: 2
         doAfter: 3
-      - tag: Glowstick # would cause an infinite plastic loop if this recipe was just glowstick. sad
-        icon:
-          sprite: Objects/Misc/glowstick.rsi
-          state: glowstick_base
-        name: construction-graph-tag-glowstick
+      - material: Cable # DEN: Add cable requirement in place of glowstick
+        amount: 1
+        doAfter: 1
+      # DEN: Remove glowstick requirement
+      # - tag: Glowstick # would cause an infinite plastic loop if this recipe was just glowstick. sad
+      #   icon:
+      #     sprite: Objects/Misc/glowstick.rsi
+      #     state: glowstick_base
+      #   name: construction-graph-tag-glowstick
     - to: WallpaperStarsSmall
       completed:
       - !type:SnapToGrid { }
@@ -213,11 +217,15 @@
       - material: Plastic
         amount: 2
         doAfter: 3
-      - tag: Glowstick
-        icon:
-          sprite: Objects/Misc/glowstick.rsi
-          state: glowstick_base
-        name: construction-graph-tag-glowstick
+      - material: Cable # DEN: Add cable requirement in place of glowstick
+        amount: 1
+        doAfter: 1
+      # DEN: Remove glowstick requirement
+      # - tag: Glowstick
+      #   icon:
+      #     sprite: Objects/Misc/glowstick.rsi
+      #     state: glowstick_base
+      #   name: construction-graph-tag-glowstick
     - to: WallpaperStarsMoon
       completed:
       - !type:SnapToGrid { }
@@ -225,11 +233,15 @@
       - material: Plastic
         amount: 2
         doAfter: 3
-      - tag: Glowstick
-        icon:
-          sprite: Objects/Misc/glowstick.rsi
-          state: glowstick_base
-        name: construction-graph-tag-glowstick
+      - material: Cable # DEN: Add cable requirement in place of glowstick
+        amount: 1
+        doAfter: 1
+      # DEN: Remove glowstick requirement
+      # - tag: Glowstick
+      #   icon:
+      #     sprite: Objects/Misc/glowstick.rsi
+      #     state: glowstick_base
+      #   name: construction-graph-tag-glowstick
   - node: WallpaperBannerBlackRed
     entity: WallpaperBannerBlackRed
   - node: WallpaperBannerBlueWhite
