@@ -100,3 +100,30 @@
   id: MixPhrase
   parent: BaseActionPhrase
   text: phrase-mix
+
+# Den Start
+- type: quickPhrase
+  parent: BaseActionPhrase
+  id: SleepPhrase
+  text: phrase-sleep
+
+- type: quickPhrase
+  parent: BaseActionPhrase
+  id: WakePhrase
+  text: phrase-wake
+
+- type: quickPhrase
+  parent: BaseActionPhrase
+  id: OpenPhrase
+  text: phrase-open
+
+- type: quickPhrase
+  parent: BaseActionPhrase
+  id: ClosePhrase
+  text: phrase-close
+
+- type: quickPhrase
+  parent: BaseActionPhrase
+  id: PickPhrase
+  text: phrase-pick
+# Den End

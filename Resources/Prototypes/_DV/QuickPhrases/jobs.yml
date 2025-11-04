@@ -17,6 +17,11 @@
   abstract: true
 
 - type: quickPhrase
+  parent: [ BaseDignitaryPhrase, BaseJobPhrase ]
+  id: BaseDignitaryJobPhrase
+  abstract: true
+
+- type: quickPhrase
   parent: [ BaseEngineeringPhrase, BaseJobPhrase ]
   id: BaseEngineeringJobPhrase
   abstract: true
@@ -82,8 +87,25 @@
 
 - type: quickPhrase
   parent: BaseCommandJobPhrase
-  id: StationAIPhrase 
+  id: StationAIPhrase
   text: job-name-station-ai
+
+# Dignitary - Den
+
+- type: quickPhrase
+  parent: BaseDignitaryJobPhrase
+  id: BlueshieldOfficerPhrase
+  text: job-name-bso
+
+- type: quickPhrase
+  parent: BaseDignitaryJobPhrase
+  id: MagistratePhrase
+  text: job-name-magistrate
+
+- type: quickPhrase
+  parent: BaseDignitaryJobPhrase
+  id: NanotrasenRepresentativePhrase
+  text: job-name-ntrep
 
 # Engineering
 
@@ -106,6 +128,11 @@
   parent: BaseEngineeringJobPhrase
   id: TechAssistantPhrase
   text: job-name-technical-assistant
+
+- type: quickPhrase
+  parent: BaseEngineeringJobPhrase
+  id: SeniorEngineerPhrase
+  text: job-name-senior-engineer
 
 # Epistemics
 
@@ -138,6 +165,21 @@
   parent: BaseEpistemicsJobPhrase
   id: BorgPhrase
   text: job-name-borg
+
+- type: quickPhrase
+  parent: BaseEpistemicsJobPhrase
+  id: ChaplainPhrase
+  text: job-name-chaplain
+
+- type: quickPhrase
+  parent: BaseEpistemicsJobPhrase
+  id: LibrarianPhrase
+  text: job-name-librarian
+
+- type: quickPhrase
+  parent: BaseEpistemicsJobPhrase
+  id: SeniorResearcherPhrase
+  text: job-name-senior-researcher
 
 # Logistics
 
@@ -210,6 +252,11 @@
   id: MedicalInternPhrase
   text: job-name-intern
 
+- type: quickPhrase
+  parent: BaseMedicalJobPhrase
+  id: SeniorPhysicianPhrase
+  text: job-name-senior-physician
+
 # Security
 
 - type: quickPhrase
@@ -242,6 +289,11 @@
   id: DetectivePhrase
   text: job-name-detective
 
+- type: quickPhrase
+  parent: BaseSecurityJobPhrase
+  id: SeniorOfficerPhrase
+  text: job-name-senior-officer
+
 # Service
 
 - type: quickPhrase
@@ -264,10 +316,11 @@
   id: JanitorPhrase
   text: job-name-janitor
 
-- type: quickPhrase
-  parent: BaseServiceJobPhrase
-  id: LibrarianPhrase
-  text: job-name-librarian
+# Den - Epi role not service
+#- type: quickPhrase
+#  parent: BaseEpistemicsJobPhrase
+#  id: LibrarianPhrase
+#  text: job-name-librarian
 
 - type: quickPhrase
   parent: BaseServiceJobPhrase
@@ -297,7 +350,7 @@
 # Wildcard
 
 - type: quickPhrase
-  parent: BaseCivilianJobPhrase
+  parent: BaseServiceJobPhrase # Den - Service Role
   id: BoxerPhrase
   text: job-name-boxer
 
@@ -317,7 +370,7 @@
   text: job-name-zookeeper
 
 - type: quickPhrase
-  parent: BaseCivilianJobPhrase
+  parent: BaseServiceJobPhrase # Den - Service Role
   id: MartialArtistPhease
   text: job-name-martialartist
 

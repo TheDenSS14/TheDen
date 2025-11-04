@@ -21,39 +21,99 @@
   abstract: true
 
 - type: quickPhrase
-  id: DamageBrutePhrase
-  parent: BaseDamageTypePhrase
-  text: damage-group-brute
-
-- type: quickPhrase
-  id: DamageBurnPhrase
-  parent: BaseDamageTypePhrase
-  text: damage-group-burn
-
-- type: quickPhrase
   id: DamageAirlossPhrase
   parent: BaseDamageTypePhrase
-  text: damage-group-airloss
+  text: phrase-damage-airloss
 
 - type: quickPhrase
-  id: DamageToxinPhrase
   parent: BaseDamageTypePhrase
-  text: damage-group-toxin
-
-- type: quickPhrase
-  id: DamageGeneticPhrase
-  parent: BaseDamageTypePhrase
-  text: damage-group-genetic
+  id: DamageAsphyxiationPhrase
+  text: phrase-damage-asphyxiation
 
 - type: quickPhrase
   id: DamageBloodlossPhrase
   parent: BaseDamageTypePhrase
-  text: damage-type-bloodloss
+  text: phrase-damage-bloodloss
+
+- type: quickPhrase
+  id: DamageBrutePhrase
+  parent: BaseDamageTypePhrase
+  text: phrase-damage-brute
+
+- type: quickPhrase
+  parent: BaseDamageTypePhrase
+  id: DamageAsphyxiationPhrase
+  text: phrase-damage-blunt
+
+- type: quickPhrase
+  parent: BaseDamageTypePhrase
+  id: DamagePiercingPhrase
+  text: phrase-damage-piercing
+
+- type: quickPhrase
+  parent: BaseDamageTypePhrase
+  id: DamageSlashPhrase
+  text: phrase-damage-slash
+
+- type: quickPhrase
+  id: DamageBurnPhrase
+  parent: BaseDamageTypePhrase
+  text: phrase-damage-burn
+
+- type: quickPhrase
+  parent: BaseDamageTypePhrase
+  id: DamageCausticPhrase
+  text: phrase-damage-caustic
+
+- type: quickPhrase
+  parent: BaseDamageTypePhrase
+  id: DamageColdPhrase
+  text: phrase-damage-cold
+
+- type: quickPhrase
+  parent: BaseDamageTypePhrase
+  id: DamageHeatPhrase
+  text: phrase-damage-heat
+
+- type: quickPhrase
+  parent: BaseDamageTypePhrase
+  id: DamageShockPhrase
+  text: phrase-damage-shock
+
+- type: quickPhrase
+  id: DamageGeneticPhrase
+  parent: BaseDamageTypePhrase
+  text: phrase-damage-genetic
+
+- type: quickPhrase
+  parent: BaseDamageTypePhrase
+  id: DamageCellularPhrase
+  text: phrase-damage-cellular
+
+- type: quickPhrase
+  parent: BaseDamageTypePhrase
+  id: DamageMetaphysicalPhrase
+  text: phrase-damage-metaphysical
+
+- type: quickPhrase
+  parent: BaseDamageTypePhrase
+  id: DamageHolyPhrase
+  text: phrase-damage-holy
+
+- type: quickPhrase
+  id: DamageToxinPhrase
+  parent: BaseDamageTypePhrase
+  text: phrase-damage-toxin
+
+- type: quickPhrase
+  parent: BaseDamageTypePhrase
+  id: DamagePoisonPhrase
+  text: phrase-damage-poison
 
 - type: quickPhrase
   id: DamageRadiationPhrase
   parent: BaseDamageTypePhrase
-  text: damage-type-radiation
+  text: phrase-damage-radiation
 
 - type: quickPhrase
   id: TopicalPhrase
