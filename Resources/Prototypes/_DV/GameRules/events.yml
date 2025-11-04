@@ -58,8 +58,6 @@
     minimumPlayers: 1
     duration: 30
   - type: VentCrittersRule
-    specialEntries:
-      - id: MobXeno
     table: !type:GroupSelector # DeltaV: EntityTable instead of spawn entries
       children:
       - id: MobXeno
