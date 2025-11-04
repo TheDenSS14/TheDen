@@ -61,6 +61,7 @@
     - ERTEngineerLoadout2
     - ERTEngineerLoadout3
     - ERTEngineerLoadout4
+    - ERTEngineerLoadout5
 
 # ERT Medic
 - type: entity
@@ -81,3 +82,21 @@
     - ERTMedicalLoadout1
     - ERTMedicalLoadout2
     - ERTMedicalLoadout3
+
+# ERT Janitor
+- type: entity
+  id: ERTJanitorLoadoutSelector
+  name: ERT Janitor loadout selector
+  description: selectable-item-engineer-example-desc
+  parent: [ BaseItem, BaseSetSelector ]
+  components:
+  - type: Sprite
+    sprite: _Goobstation/Objects/Devices/unique_teleporters.rsi
+    state: standard
+  - type: SetSelector
+    spawnedStoragePrototype: ClothingBackpackDuffel
+    spawnedStorageContainer: storagebase
+    approveSound:
+      path: /Audio/Effects/kaching.ogg
+    possibleSets:
+    - ERTJanitorLoadout1
