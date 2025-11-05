@@ -29,3 +29,51 @@
   components:
   - type: VendingMachine
     pack: NanoMedInventoryEternity
+
+- type: entity
+  parent: VendingMachineBoxingDrobe
+  id: VendingMachineBoxingDrobeUnlocked
+  suffix: Unlocked
+  components:
+  - type: AccessReader
+    access: []
+
+- type: entity
+  parent: VendingMachineChefvend
+  id: VendingMachineChefvendUnlocked
+  suffix: Unlocked
+  components:
+  - type: AccessReader
+    access: []
+
+- type: entity
+  parent: VendingMachineDinnerware
+  id: VendingMachineDinnerwareUnlocked
+  suffix: Unlocked
+  components:
+  - type: AccessReader
+    access: []
+
+- type: entity
+  parent: VendingMachineHappyHonk
+  id: VendingMachineHappyHonkUnlocked
+  suffix: Unlocked
+  components:
+  - type: AccessReader
+    access: []
+
+- type: entity
+  parent: VendingMachineNutri
+  id: VendingMachineNutriUnlocked
+  suffix: Unlocked
+  components:
+  - type: AccessReader
+    access: []
+
+- type: entity
+  parent: VendingMachineYouTool
+  id: VendingMachineYouToolUnlocked
+  suffix: Unlocked
+  components:
+  - type: AccessReader
+    access: []

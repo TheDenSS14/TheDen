@@ -6,3 +6,11 @@
   components:
   - type: BarSign
     current: TheBahr
+
+- type: entity
+  parent: BarSign
+  id: BarSignUnlocked
+  suffix: Random, Unlocked
+  components:
+  - type: AccessReader
+    access: []
