@@ -1,0 +1,68 @@
+# SPDX-FileCopyrightText: 2021 Timrod
+# SPDX-FileCopyrightText: 2022 Emisse
+# SPDX-FileCopyrightText: 2022 Kara
+# SPDX-FileCopyrightText: 2022 Moony
+# SPDX-FileCopyrightText: 2022 OldDanceJacket
+# SPDX-FileCopyrightText: 2022 Peptide90
+# SPDX-FileCopyrightText: 2022 Rane
+# SPDX-FileCopyrightText: 2022 TimrodDX
+# SPDX-FileCopyrightText: 2022 metalgearsloth
+# SPDX-FileCopyrightText: 2024 Eagle0600
+# SPDX-FileCopyrightText: 2024 FoxxoTrystan
+# SPDX-FileCopyrightText: 2024 SimpleStation14
+# SPDX-FileCopyrightText: 2025 John Willis
+# SPDX-FileCopyrightText: 2025 Rosycup
+# SPDX-FileCopyrightText: 2025 VMSolidus
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
+- type: gameMap
+  id: Infinity
+  mapName: Infinity
+  mapPath: /Maps/TheDen/infinity.yml
+  minPlayers: 15
+  maxPlayers: 70
+  stations:
+    Infinity:
+      stationProto: StandardNanotrasenStation
+      components:
+      - type: StationEmergencyShuttle
+        emergencyShuttlePath: /Maps/Shuttles/_DV/NTES_Vertex.yml
+      - type: StationNameSetup
+        mapNameTemplate: '{0} Infinity {1}'
+        nameGenerator:
+          !type:NanotrasenNameGenerator
+          prefixCreator: 'NY'
+      - type: StationJobs
+        overflowJobs:
+        - Passenger
+        availableJobs:
+        #service
+          Captain: [ 1, 1 ]
+          Bartender: [ 2, 3 ]
+          Botanist: [ 2, 2 ]
+          Chef: [ 1, 4 ]
+          Clown: [ 1, 2 ]
+          Reporter: [ 1, 2 ]
+          Musician: [ 1, 2 ]
+          Janitor: [ 1, 2 ]
+          Mime: [ 1, 2 ]
+        #engineering
+          AtmosphericTechnician: [ 1, 1 ]
+          StationEngineer: [ 1, 1 ]
+          SeniorEngineer: [ 1, 1 ]
+        #medical
+          Chemist: [ 1, 1 ]
+          Psychologist: [ 1, 1 ]
+          MedicalDoctor: [ 1, 2 ]
+          SeniorPhysician: [ 1, 1 ]
+        #science
+          Chaplain: [ 1, 1 ]
+        #security
+          SecurityOfficer: [ 1, 2 ]
+          SeniorOfficer: [ 1, 1 ]
+        #supply
+          CargoTechnician: [ 1, 2 ]
+        #civilian
+          Passenger: [ -1, -1 ]
