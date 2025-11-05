@@ -22,6 +22,8 @@
   - job-name-alternate-cyborg-specialist
   - job-name-alternate-bionic-engineer
   - job-name-alternate-biomechanical-engineer
+  - job-name-alternate-ripperdoc
+  - job-name-alternate-cybernetics-specialist
 
 - type: alternateJobTitle
   id: DefaultResearchDirector
@@ -37,6 +39,11 @@
   jobId: ForensicMantis
   titles:
     - job-name-alternate-inquisitor
+    - job-name-alternate-witchhunter
+    - job-name-alternate-paranormal-investigator
+    - job-name-alternate-scrutinizer
+    - job-name-alternate-castigator
+    - job-name-alternate-psionic-auditor
 
 - type: alternateJobTitle
   id: DefaultChaplain
@@ -47,12 +54,18 @@
     - job-name-alternate-priestess
     - job-name-alternate-curate
     - job-name-alternate-officiant
+    - job-name-alternate-reverend
+    - job-name-alternate-shaman
+    - job-name-alternate-occultist
 
 - type: alternateJobTitle
   id: DefaultSeniorResearcher
   jobId: SeniorResearcher
   titles:
     - job-name-alternate-mystic
+    - job-name-alternate-sage
+    - job-name-alternate-seer
+    - job-name-alternate-research-associate
 
 - type: alternateJobTitle
   id: DefaultLibrarian
@@ -61,6 +74,8 @@
     - job-name-alternate-librarian
     - job-name-alternate-scholar
     - job-name-alternate-archivist
+    - job-name-alternate-professor
+    - job-name-alternate-loremaster
 
 - type: alternateJobTitle
   id: DefaultResearchAssistant

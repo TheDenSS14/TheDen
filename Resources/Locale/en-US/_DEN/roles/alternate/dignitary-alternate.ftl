@@ -5,6 +5,7 @@
 
 # Blueshield Officer
 job-name-alternate-honor-guard = Honor Guard
+job-name-alternate-royal-guard = Royal Guard
 job-name-alternate-bodyguard = Bodyguard
 job-name-alternate-close-protection-operative = Close Protection Operative
 
