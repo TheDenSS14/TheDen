@@ -58,6 +58,7 @@ loadout-name-LoadoutItemCaneWalkingFoldable = folding cane (colorable)
 loadout-name-LoadoutItemCaneWalkingQuad = quad cane (colorable)
 
 loadout-name-LoadoutServiceItemGoldenPlunger = golden plunger
+loadout-name-LoadoutSpaceCash1000 = spesos [1000]
 
 character-item-group-LoadoutPrescriptions = Prescription Medications
 character-item-group-LoadoutPrescriptionPainkiller = Painkillers

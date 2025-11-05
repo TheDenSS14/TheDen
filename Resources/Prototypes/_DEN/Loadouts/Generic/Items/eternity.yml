@@ -1,0 +1,9 @@
+- type: loadout
+  id: LoadoutSpaceCash1000
+  category: GeneralItems
+  cost: 2
+  requirements:
+  - !type:CharacterServerSelectiveRequirement
+    serverId: eternity
+  items:
+  - SpaceCash1000
