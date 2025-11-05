@@ -509,6 +509,16 @@
       group: LoadoutWritables
 
 - type: loadout
+  id: LoadoutItemPaperPackage
+  category: GeneralItems
+  cost: 1
+  items:
+  - PaperPackage
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutWritables
+
+- type: loadout
   id: LoadoutItemBoxFolderGrey
   category: GeneralItems
   cost: 0
@@ -524,6 +534,9 @@
   cost: 0
   items:
     - BoxFolderClipboard
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutWritables
 
 - type: loadout
   id: LoadoutBookRandom
