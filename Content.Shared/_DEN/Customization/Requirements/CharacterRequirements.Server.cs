@@ -31,6 +31,7 @@ public sealed partial class CharacterServerSelectiveRequirement : CharacterRequi
         var serverName = ServerSelectiveContentManager.GetServerName(ServerId);
 
         return Loc.GetString("character-requirement-server-selective",
+            ("inverted", Inverted),
             ("color", _requirementColor),
             ("serverName", serverName));
     }
