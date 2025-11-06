@@ -124,7 +124,6 @@ public sealed class GameMapManager : IGameMapManager
         {
             foreach (var map in pool.Maps)
             {
-                _log.Info($"Map name: {map}");
                 if (!_prototypeManager.TryIndex<GameMapPrototype>(map, out var mapProto))
                 {
                     _log.Error($"Couldn't index map {map} in pool {poolPrototype}");
