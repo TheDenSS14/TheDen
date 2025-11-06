@@ -68,10 +68,10 @@ public sealed partial class HubPanel : PanelContainer
 
     private void SetupEntries(List<HubServer> serversUnsorted)
     {
-        var name = CreateColumnCategory("hub-panel-column-category-server-name");
-        var status = CreateColumnCategory("hub-panel-column-category-status");
-        var playerCount = CreateColumnCategory("hub-panel-column-category-player-count");
-        var connect = CreateColumnCategory("hub-panel-column-category-connect");
+        var name = HubPanelUtils.CreateColumnCategory("hub-panel-column-category-server-name");
+        var status = HubPanelUtils.CreateColumnCategory("hub-panel-column-category-status");
+        var playerCount = HubPanelUtils.CreateColumnCategory("hub-panel-column-category-player-count");
+        var connect = HubPanelUtils.CreateColumnCategory("hub-panel-column-category-connect");
 
         ServersGrid.RemoveAllChildren();
 
@@ -127,20 +127,5 @@ public sealed partial class HubPanel : PanelContainer
         {
             _sawmill.Error($"{ex}");
         }
-    }
-
-    private StripeBack CreateColumnCategory(LocId titleId)
-    {
-        var stripeBack = new StripeBack();
-        var text = Loc.GetString(titleId);
-
-        var titleLabel = new RichTextLabel
-        {
-            Text = text,
-            HorizontalAlignment = HAlignment.Center
-        };
-
-        stripeBack.AddChild(titleLabel);
-        return stripeBack;
     }
 }

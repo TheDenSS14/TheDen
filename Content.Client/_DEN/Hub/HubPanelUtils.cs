@@ -87,4 +87,19 @@ public sealed class HubPanelUtils
 
         return connectButton;
     }
+
+    public static StripeBack CreateColumnCategory(LocId titleId)
+    {
+        var stripeBack = new StripeBack();
+        var text = Loc.GetString(titleId);
+
+        var titleLabel = new RichTextLabel
+        {
+            Text = text,
+            HorizontalAlignment = HAlignment.Center
+        };
+
+        stripeBack.AddChild(titleLabel);
+        return stripeBack;
+    }
 }
