@@ -59,3 +59,4 @@ job-name-alternate-scholar = Scholar
 job-name-alternate-archivist = Archivist
 job-name-alternate-professor = Professor
 job-name-alternate-loremaster = Loremaster
+job-name-alternate-dungeon-master = Dungeon Master
