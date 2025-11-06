@@ -60,6 +60,12 @@ public sealed partial class HubPanel : PanelContainer
         _systemManager.SystemLoaded -= OnSystemLoaded;
     }
 
+    private void OnRefresh(HubServersUpdatedEvent ev)
+    {
+        var servers = ev.Servers.Values.ToList();
+        SetupEntries(servers);
+    }
+
     private void SetupEntries(List<HubServer> serversUnsorted)
     {
         var name = CreateColumnCategory("hub-panel-column-category-server-name");
@@ -81,71 +87,12 @@ public sealed partial class HubPanel : PanelContainer
 
         foreach (var server in servers)
         {
-            var titleLabel = new RichTextLabel
-            {
-                Margin = new(3, 3),
-                HorizontalExpand = true,
-                VerticalExpand = true,
-                HorizontalAlignment = HAlignment.Center
-            };
-
-            var displayed = server.DisplayName ?? server.ServerId;
-            var titleLabelText = Loc.GetString(
-                "hub-panel-server-name",
-                ("displayName", displayed));
-
-            titleLabel.SetMarkupPermissive(titleLabelText);
-
-            var statusText = server.IsOnline ? "hub-panel-status-text-online" : "hub-panel-status-text-offline";
-            var statusLabel = new RichTextLabel
-            {
-                HorizontalAlignment = HAlignment.Center,
-                HorizontalExpand = true,
-                VerticalExpand = true,
-                Text = Loc.GetString(statusText)
-            };
-
-            var playersLabel = new RichTextLabel
-            {
-                HorizontalAlignment = HAlignment.Center,
-                HorizontalExpand = true,
-                VerticalExpand = true,
-            };
-
-            var players = server.Players ?? 0;
-            var maxPlayers = server.MaxPlayers ?? 0;
-
-            var playersText = Loc.GetString(
-                "hub-panel-status-players",
-                ("players", players),
-                ("maxPlayers", maxPlayers));
-            playersLabel.SetMarkupPermissive(playersText);
-
-            var sameServer = _serverId == server.ServerId;
-            _sawmill.Info($"{_serverId} vs {server.ServerId}");
             var connectFriendly = GetConnectFriendlyAddress(server.ConnectAddress);
 
-            var tooltipId = sameServer
-                ? "hub-panel-connect-button-same-server-tooltip"
-                : "hub-panel-connect-button-tooltip";
-            var tooltipText = Loc.GetString(
-                tooltipId,
-                ("address", connectFriendly));
-
-            var buttonTextId = sameServer
-                ? "hub-panel-connect-button-same-server-text"
-                : "hub-panel-connect-button-text";
-
-            var connectButton = new ConfirmButton
-            {
-                Text = Loc.GetString(buttonTextId),
-                ToolTip = tooltipText,
-                TooltipDelay = 1f,
-                MaxHeight = 35,
-                TextAlign = Label.AlignMode.Center,
-                Disabled = server.ServerId == _serverId
-            };
-
+            var titleLabel = HubPanelUtils.SetupTitleLabel(server);
+            var statusLabel = HubPanelUtils.SetupStatusLabel(server);
+            var playersLabel = HubPanelUtils.SetupPlayersLabel(server);
+            var connectButton = HubPanelUtils.SetupConnectButton(server, _serverId, connectFriendly);
             connectButton.OnPressed += _ => TryConnect(connectFriendly);
 
             ServersGrid.AddChild(titleLabel);
@@ -195,11 +142,5 @@ public sealed partial class HubPanel : PanelContainer
 
         stripeBack.AddChild(titleLabel);
         return stripeBack;
-    }
-
-    private void OnRefresh(HubServersUpdatedEvent ev)
-    {
-        var servers = ev.Servers.Values.ToList();
-        SetupEntries(servers);
     }
 }
