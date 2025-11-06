@@ -39,7 +39,5 @@ job-name-alternate-senior-gas-refinement-specialist = Senior Gas Refinement Spec
 job-name-alternate-senior-plasma-specialist = Senior Plasma Specialist
 
 # Chief Engineer
-job-name-alternate-project-lead = Project Lead
-job-name-alternate-team-lead = Team Lead
 job-name-alternate-chief-architect = Chief Architect
 job-name-alternate-senior-director-of-engineering = Senior Director of Engineering
