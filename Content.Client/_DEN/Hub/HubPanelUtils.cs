@@ -58,6 +58,7 @@ public sealed class HubPanelUtils
             "hub-panel-status-players",
             ("players", players),
             ("maxPlayers", maxPlayers));
+
         playersLabel.SetMarkupPermissive(playersText);
         return playersLabel;
     }
@@ -83,7 +84,6 @@ public sealed class HubPanelUtils
         {
             Text = Loc.GetString(buttonTextId),
             ToolTip = tooltipText,
-            TooltipDelay = 1f,
             MaxHeight = 35,
             TextAlign = Label.AlignMode.Center,
             Disabled = server.ServerId == serverId || !server.CanConnect
