@@ -48,7 +48,6 @@ job-name-alternate-officer-support-grade = Officer Support Grade
 job-name-alternate-detention-officer = Detention Officer
 job-name-alternate-corrections-officer = Corrections Officer
 job-name-alternate-enforcement-officer = Enforcement Officer
-job-name-alternate-guard = Guard
 
 # Head of Security
 job-name-alternate-sheriff = Sheriff
