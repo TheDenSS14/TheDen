@@ -27,4 +27,9 @@ public sealed partial class CCVars
     /// Requires auto voting to be enabled.
     public static readonly CVarDef<bool> PresetAutoVoteEnabled =
         CVarDef.Create("vote.preset_autovote_enabled", true, CVar.SERVERONLY);
+
+    /// Automatically starts a gamemode vote when returning to the lobby.
+    /// Requires auto voting to be enabled.
+    public static readonly CVarDef<int> PresetAutoVoteFirstDelaySeconds =
+        CVarDef.Create("vote.preset_autovote_first_delay", 60, CVar.SERVERONLY);
 }
