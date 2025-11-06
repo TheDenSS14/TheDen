@@ -25,6 +25,8 @@ public sealed partial class HubPanel : PanelContainer
     [Dependency] private readonly IGameController _gameController = null!;
     [Dependency] private readonly ILogManager _logManager = null!;
 
+    private const string HttpsString = "https://";
+
     private readonly ISawmill _sawmill;
     private HubSystem _hubSystem = null!;
     private string _serverId;
@@ -108,10 +110,10 @@ public sealed partial class HubPanel : PanelContainer
 
         // it's either https:// or http://. this is enforced.
         // ReSharper disable once ConvertIfStatementToConditionalTernaryExpression ugly
-        if (formerAddress.StartsWith("https://"))
-            startPos = 8;
+        if (formerAddress.StartsWith(HttpsString))
+            startPos = HttpsString.Length + 1;
         else
-            startPos = 7;
+            startPos = HttpsString.Length;
 
         var newAddress = formerAddress.Substring(startPos);
         return newAddress;
