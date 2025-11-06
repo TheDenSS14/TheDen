@@ -96,7 +96,7 @@ job-name-alternate-heel = Heel
 job-name-alternate-pugilist = Pugilist
 job-name-alternate-prize-fighter = Prize Fighter
 
-#Martial Artist
+# Martial Artist
 job-name-alternate-black-belt = Black Belt
 job-name-alternate-mma-fighter = MMA Fighter
 job-name-alternate-sensei = Sensei
