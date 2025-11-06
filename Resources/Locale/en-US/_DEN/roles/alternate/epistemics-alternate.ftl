@@ -32,12 +32,6 @@ job-name-alternate-research-coordinator = Research Coordinator
 job-name-alternate-research-director = Research Director
 
 # Forensic Mantis
-job-name-alternate-inquisitor = Inquisitor
-job-name-alternate-witchhunter = Witchhunter
-job-name-alternate-paranormal-investigator = Paranormal Investigator
-job-name-alternate-scrutinizer = Scrutinizer
-job-name-alternate-castigator = Castigator
-job-name-alternate-psionic-auditor = Psionic Auditor
 
 # Chaplain
 job-name-alternate-cleric = Cleric
