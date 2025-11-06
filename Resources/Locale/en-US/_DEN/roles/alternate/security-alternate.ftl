@@ -18,7 +18,7 @@ job-name-alternate-constable = Constable
 # Senior Officer
 job-name-alternate-ranger = Ranger
 job-name-alternate-senior-guard = Senior Guard
-job-name-alternate-sargeant = Sargeant
+job-name-alternate-sergeant = Sergeant
 job-name-alternate-senior-trooper = Senior Trooper
 
 # Corpsman
