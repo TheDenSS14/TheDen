@@ -47,7 +47,7 @@ job-name-alternate-officiant = Officiant
 job-name-alternate-reverend = Reverend
 job-name-alternate-shaman = Shaman
 
-#Senior Researcher
+# Senior Researcher
 job-name-alternate-mystic = Mystic
 job-name-alternate-sage = Sage
 job-name-alternate-seer = Seer
