@@ -38,7 +38,8 @@ SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
     xmlns:style="clr-namespace:Content.Client.Stylesheets"
     xmlns:lobbyUi="clr-namespace:Content.Client.Lobby.UI"
     xmlns:info="clr-namespace:Content.Client.Info"
-    xmlns:widgets="clr-namespace:Content.Client.UserInterface.Systems.Chat.Widgets">
+    xmlns:widgets="clr-namespace:Content.Client.UserInterface.Systems.Chat.Widgets"
+    xmlns:hub="clr-namespace:Content.Client._DEN.Hub">
     <!-- Background -->
     <TextureRect Access="Public" VerticalExpand="True" HorizontalExpand="True" Name="Background"
                  Stretch="KeepAspectCovered" />
@@ -83,14 +84,17 @@ SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
                     <!-- Vertical Padding-->
                     <Control VerticalExpand="True" />
                     <!-- Left Bot Panel -->
-                    <BoxContainer Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Bottom" SeparationOverride="4">
-                        <info:DevInfoBanner Name="DevInfoBanner" VerticalExpand="false" Margin="3 3 3 3" />
-                        <PanelContainer StyleClasses="AngleRect">
-                            <RichTextLabel Name="LobbySong" Access="Public" HorizontalAlignment="Center" />
-                        </PanelContainer>
-                        <PanelContainer StyleClasses="AngleRect">
-                            <RichTextLabel Name="LobbyBackground" Access="Public" HorizontalAlignment="Center" />
-                        </PanelContainer>
+                    <BoxContainer Orientation="Vertical" HorizontalAlignment="Left" VerticalAlignment="Bottom">
+                        <hub:HubPanel />
+                        <BoxContainer Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Bottom" SeparationOverride="4">
+                            <info:DevInfoBanner Name="DevInfoBanner" VerticalExpand="false" Margin="3 3 3 3" />
+                            <PanelContainer StyleClasses="AngleRect">
+                                <RichTextLabel Name="LobbySong" Access="Public" HorizontalAlignment="Center" />
+                            </PanelContainer>
+                            <PanelContainer StyleClasses="AngleRect">
+                                <RichTextLabel Name="LobbyBackground" Access="Public" HorizontalAlignment="Center" />
+                            </PanelContainer>
+                        </BoxContainer>
                     </BoxContainer>
                 </Control>
                 <!-- Character setup state -->

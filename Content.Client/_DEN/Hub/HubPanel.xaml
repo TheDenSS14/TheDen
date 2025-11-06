@@ -1,0 +1,26 @@
+<PanelContainer xmlns="https://spacestation14.io"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    HorizontalAlignment="Left"
+    VerticalAlignment="Bottom"
+    HorizontalExpand="True"
+    VerticalExpand="True"
+    Margin="1 1 1 10"
+    MinWidth="450">
+
+    <BoxContainer Orientation="Vertical">
+        <BoxContainer Margin="0 5 0 0" MinHeight="25" HorizontalExpand="True">
+            <RichTextLabel Name="TitleLabel"
+                           HorizontalExpand="True"
+                           VerticalExpand="True"
+                           HorizontalAlignment="Center"
+                           VerticalAlignment="Top" />
+        </BoxContainer>
+        <GridContainer Name="ServersGrid"
+                       Columns="4"
+                       HorizontalExpand="True"
+                       VerticalExpand="True"
+                       VSeparationOverride="3"
+                       HSeparationOverride="0"/>
+    </BoxContainer>
+</PanelContainer>
+

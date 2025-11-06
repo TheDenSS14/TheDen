@@ -35,6 +35,7 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
+using Content.Server._DEN.Hub;
 using Content.Server._Floof.Consent;
 using Content.Server.Administration;
 using Content.Server.Administration.Logs;
@@ -120,6 +121,7 @@ namespace Content.Server.IoC
 
             IoCManager.Register<DiscordLink>();
             IoCManager.Register<DiscordChatLink>();
+            IoCManager.Register<HubManager>(); // DEN
         }
     }
 }
