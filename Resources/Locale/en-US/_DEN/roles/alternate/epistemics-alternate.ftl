@@ -52,6 +52,7 @@ job-name-alternate-shaman = Shaman
 job-name-alternate-mystic = Mystic
 job-name-alternate-sage = Sage
 job-name-alternate-seer = Seer
+job-name-alternate-senior-research-fellow = Senior Research Fellow
 
 # Cataloguer
 job-name-alternate-librarian = Librarian
