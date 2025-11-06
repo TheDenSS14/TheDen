@@ -88,7 +88,7 @@ job-name-alternate-minimum-security-prisoner = Minimum Securty Prisoner
 job-name-alternate-medium-security-prisoner = Medium Security Prisoner
 job-name-alternate-maximum-security-prisoner = Maximum Security Prisoner
 
-#Boxer
+# Boxer
 job-name-alternate-physical-trainer = Physical Trainer
 job-name-alternate-wrestler = Wrestler
 job-name-alternate-luchador = Luchador
