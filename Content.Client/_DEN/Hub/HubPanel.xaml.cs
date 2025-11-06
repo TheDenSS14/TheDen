@@ -44,7 +44,6 @@ public sealed partial class HubPanel : PanelContainer
         _cfg.OnValueChanged(CCVars.ServerId, OnServerIdChanged, true);
 
         _systemManager.SystemLoaded += OnSystemLoaded;
-        StyleClasses.Add("AngleRect");
     }
 
     private void OnServerIdChanged(string serverId)
