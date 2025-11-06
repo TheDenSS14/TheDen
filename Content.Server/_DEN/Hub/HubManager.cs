@@ -129,7 +129,8 @@ public sealed class HubManager
                 displayName,
                 0,
                 0,
-                false);
+                false,
+                server.CanConnect);
 
             _servers[entry.ServerId] = entry;
         }

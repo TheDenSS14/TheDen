@@ -15,6 +15,7 @@ hub-panel-connect-button-text = Connect
 hub-panel-connect-button-same-server-text = Connected
 hub-panel-connect-button-tooltip = Connect to {$address}?
 hub-panel-connect-button-same-server-tooltip = You are already connected to this server.
+hub-panel-connect-button-not-allowed-tooltip = This server isn't accepting connections right now.
 
 hub-server-salvation-name = Salvation
 hub-server-eternity-name = Eternity

@@ -10,7 +10,8 @@ public sealed record HubServer(
     string? DisplayName,
     int? Players,
     int? MaxPlayers,
-    bool IsOnline);
+    bool IsOnline,
+    bool CanConnect);
 
 [Serializable, NetSerializable]
 public sealed class HubServersUpdatedEvent(Dictionary<string, HubServer> servers) : EntityEventArgs

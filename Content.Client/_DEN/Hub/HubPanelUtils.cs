@@ -70,7 +70,11 @@ public sealed class HubPanelUtils
             ? "hub-panel-connect-button-same-server-tooltip"
             : "hub-panel-connect-button-tooltip";
 
+        if (!server.CanConnect)
+            tooltipId = "hub-panel-connect-button-not-allowed-tooltip";
+
         var tooltipText = Loc.GetString(tooltipId, ("address", connectFriendly));
+
         var buttonTextId = sameServer
             ? "hub-panel-connect-button-same-server-text"
             : "hub-panel-connect-button-text";
@@ -82,7 +86,7 @@ public sealed class HubPanelUtils
             TooltipDelay = 1f,
             MaxHeight = 35,
             TextAlign = Label.AlignMode.Center,
-            Disabled = server.ServerId == serverId
+            Disabled = server.ServerId == serverId || !server.CanConnect
         };
 
         return connectButton;

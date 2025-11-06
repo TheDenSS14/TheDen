@@ -19,4 +19,7 @@ public sealed partial class HubServerPrototype : IPrototype
 
     [DataField(required: true)]
     public LocId DisplayName { get; }
+
+    [DataField]
+    public bool CanConnect { get; } = true;
 }
