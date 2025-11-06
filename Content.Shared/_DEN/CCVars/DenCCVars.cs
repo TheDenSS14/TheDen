@@ -28,5 +28,5 @@ public sealed class DenCCVars
     /// Note that this is equivalent to the number of servers listed in the prototypes as HTTP requests.
     /// </summary>
     public static readonly CVarDef<int> LobbyRefreshServersInterval =
-        CVarDef.Create("lobby.refresh_servers_interval", 2, CVar.REPLICATED | CVar.SERVER);
+        CVarDef.Create("lobby.refresh_servers_interval", 30, CVar.REPLICATED | CVar.SERVER);
 }
