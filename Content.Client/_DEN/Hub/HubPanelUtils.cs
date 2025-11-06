@@ -86,7 +86,7 @@ public sealed class HubPanelUtils
             ToolTip = tooltipText,
             MaxHeight = 35,
             TextAlign = Label.AlignMode.Center,
-            Disabled = server.ServerId == serverId || !server.CanConnect
+            Disabled = server.ServerId == serverId || !server.CanConnect || !server.IsOnline
         };
 
         return connectButton;

@@ -58,6 +58,21 @@ public sealed class HubManager
         {
             var response = await _holder.Client.GetAsync($"{connectionString}{StatusRoute}");
             var statusJson = await response.Content.ReadAsStringAsync();
+
+            if (statusJson.Length == 0)
+            {
+                var newServer = server with
+                {
+                    Players = null,
+                    MaxPlayers = null,
+                    IsOnline = false
+                };
+
+                _servers[server.ServerId] = newServer;
+                OnServersRefreshed?.Invoke();
+                return;
+            }
+
             var status = JsonNode.Parse(statusJson);
             var updatedServer = TryParseJson(server, status);
 
