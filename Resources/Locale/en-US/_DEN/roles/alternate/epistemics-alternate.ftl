@@ -8,6 +8,7 @@
 job-name-alternate-lab-assistant = Lab Assistant
 job-name-alternate-initiate = Initiate
 job-name-alternate-novitiate = Novitiate
+job-name-alternate-research-associate = Research Associate
 
 # Scientist
 job-name-alternate-lab-tech = Lab Technician
@@ -51,7 +52,6 @@ job-name-alternate-shaman = Shaman
 job-name-alternate-mystic = Mystic
 job-name-alternate-sage = Sage
 job-name-alternate-seer = Seer
-job-name-alternate-research-associate = Research Associate
 
 # Cataloguer
 job-name-alternate-librarian = Librarian
