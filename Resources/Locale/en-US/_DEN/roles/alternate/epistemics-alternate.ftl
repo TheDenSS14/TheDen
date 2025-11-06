@@ -46,7 +46,6 @@ job-name-alternate-curate = Curate
 job-name-alternate-officiant = Officiant
 job-name-alternate-reverend = Reverend
 job-name-alternate-shaman = Shaman
-job-name-alternate-occultist = Occultist
 
 #Senior Researcher
 job-name-alternate-mystic = Mystic
