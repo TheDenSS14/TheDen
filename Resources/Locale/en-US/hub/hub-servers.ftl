@@ -9,7 +9,7 @@ hub-panel-server-name = [color=white]{$displayName}[/color]
 
 hub-panel-status-text-online = [color=#79edab]Online[/color]
 hub-panel-status-text-offline = [color=#ed8379]Offline[/color]
-hub-panel-status-players = [color=white]{$players}/{$maxPlayers}[/color]
+hub-panel-status-players = [color=white]{$players}[/color]/[color=white]{$maxPlayers}[/color]
 
 hub-panel-connect-button-text = Connect
 hub-panel-connect-button-same-server-text = Connected
