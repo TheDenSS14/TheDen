@@ -28,12 +28,12 @@ doc-text-printer-closing-indictment =
     {"["}bold][color=#BD4040]Subject's Alleged Crime:[/color][/bold] [italic][form][/italic]
 
     {"["}bold][color=#BD4040]Current Alert Level:[/color][/bold]
-    {"["}check] [bold][color=#00AF14]Green[/color][/bold]
-    {"["}check] [bold][color=#0017AD]Blue[/color][/bold]
-    {"["}check] [bold][color=#AA0200]Red[/color][/bold]
-    {"["}check] [bold][color=#EAEA00]Yellow[/color][/bold]
-    {"["}check] [bold][bold][color=#FFFFFF]White[/color][/bold]
-    {"["}check] [bold][color=#D400FF]Violet[/color][/bold]
+    {"["}check] [bold][color=#BD4040]Green[/color][/bold]
+    {"["}check] [bold][color=#BD4040]Blue[/color][/bold]
+    {"["}check] [bold][color=#BD4040]Red[/color][/bold]
+    {"["}check] [bold][color=#BD4040]Yellow[/color][/bold]
+    {"["}check] [bold][bold][color=#BD4040]White[/color][/bold]
+    {"["}check] [bold][color=#BD4040]Violet[/color][/bold]
 
     {"["}check] [bold][color=#BD4040]Is the suspect the reason for the alert level?[/color][/bold]
     {"["}check] [bold][color=#BD4040]Is the suspect working alone?[/color][/bold]
@@ -74,12 +74,12 @@ doc-text-printer-report-station =
 
     {"["}bold][color=#BD4040]Objective completion status:[/color][/bold] [check]
     {"["}bold][color=#BD4040]Threat level code:[/color][/bold]
-    {"["}check] [bold][color=#00AF14]Green[/color][/bold]
-    {"["}check] [bold][color=#0017AD]Blue[/color][/bold]
-    {"["}check] [bold][color=#AA0200]Red[/color][/bold]
-    {"["}check] [bold][color=#EAEA00]Yellow[/color][/bold]
-    {"["}check] [bold][color=#FFFFFF]White[/color][/bold]
-    {"["}check] [bold][color=#D400FF]Violet[/color][/bold]
+    {"["}check] [bold][color=#BD4040]Green[/color][/bold]
+    {"["}check] [bold][color=#BD4040]Blue[/color][/bold]
+    {"["}check] [bold][color=#BD4040]Red[/color][/bold]
+    {"["}check] [bold][color=#BD4040]Yellow[/color][/bold]
+    {"["}check] [bold][color=#BD4040]White[/color][/bold]
+    {"["}check] [bold][color=#BD4040]Violet[/color][/bold]
 
     {"["}bold][color=#BD4040]Active threats:[/color][/bold] [italic][form][/italic]
 
