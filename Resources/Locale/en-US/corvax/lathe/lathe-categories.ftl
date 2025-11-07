@@ -15,3 +15,13 @@ lathe-category-evidence = Evidence
 lathe-category-conclusions-and-decisions = Conclusions and decisions
 lathe-category-error = Syndicate
 lathe-category-requests = Requests
+
+lathe-category-command = Command
+lathe-category-security = Security
+lathe-category-medical = Medical
+lathe-category-engineering = Engineering
+lathe-category-human-resources = HoP
+lathe-category-cargo = Cargo
+lathe-category-epistemics = Epistemics
+lathe-category-law = Law
+lathe-category-service = Service

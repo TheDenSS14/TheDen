@@ -10,7 +10,7 @@
   icon:
     sprite: Structures/Wallmounts/signs.rsi
     state: secure
-  category: Reports
+  category: Security
   completetime: 2
   applyMaterialDiscount: false
   materials:
@@ -22,7 +22,7 @@
   icon:
     sprite: Clothing/Shoes/Boots/speedboots.rsi
     state: icon
-  category: Reports
+  category: HumanResources
   completetime: 2
   applyMaterialDiscount: false
   materials:
@@ -34,7 +34,7 @@
   icon:
     sprite: Objects/Storage/Briefcases/briefcase_brown.rsi
     state: icon
-  category: Reports
+  category: HumanResources
   completetime: 2
   applyMaterialDiscount: false
   materials:
@@ -46,7 +46,7 @@
   icon:
     sprite: Clothing/Neck/Ties/redtie.rsi
     state: icon
-  category: Reports
+  category: Command
   completetime: 2
   applyMaterialDiscount: false
   materials:
@@ -58,7 +58,31 @@
   icon:
     sprite: Structures/Machines/computers.rsi
     state: broken
-  category: Reports
+  category: Engineering
+  completetime: 2
+  applyMaterialDiscount: false
+  materials:
+    SheetPrinter: 100
+
+- type: latheRecipe
+  id: PrintedDocumentRepairBillRecipe
+  result: PrintedDocumentRepairBill
+  icon:
+    sprite: Objects/Misc/books.rsi
+    state: icon_wrench
+  category: Engineering
+  completetime: 2
+  applyMaterialDiscount: false
+  materials:
+    SheetPrinter: 100
+
+- type: latheRecipe
+  id: PrintedDocumentMechReportRecipe
+  result: PrintedDocumentMechReport
+  icon:
+    sprite: Objects/Specific/Mech/hamtr_construction.rsi
+    state: hamtr_chassis
+  category: Epistemics
   completetime: 2
   applyMaterialDiscount: false
   materials:
@@ -67,7 +91,7 @@
 - type: latheRecipe
   id: PrintedDocumentReportStudyObjectRecipe
   result: PrintedDocumentReportStudyObject
-  category: Reports
+  category: Epistemics
   icon:
     sprite: Objects/Specific/Xenoarchaeology/xeno_artifacts.rsi
     state: ano31
@@ -75,14 +99,14 @@
   applyMaterialDiscount: false
   materials:
     SheetPrinter: 100
-    
+
 - type: latheRecipe
   id: PrintedDocumentApplicationAppointmentInterimRecipe
   result: PrintedDocumentApplicationAppointmentInterim
   icon:
     sprite: _DV/Structures/Wallmounts/idcard_cabinet.rsi
     state: cabinet-filled-closed
-  category: Requests
+  category: HumanResources
   completetime: 2
   applyMaterialDiscount: false
   materials:
@@ -94,7 +118,7 @@
   icon:
     sprite: _NF/Objects/Economy/cash.rsi
     state: cash_1000
-  category: Requests
+  category: HumanResources
   completetime: 2
   applyMaterialDiscount: false
   materials:
@@ -106,7 +130,7 @@
   icon:
     sprite: Clothing/Eyes/Glasses/sunglasses_big.rsi
     state: icon
-  category: Reports
+  category: HumanResources
   completetime: 2
   applyMaterialDiscount: false
   materials:
@@ -118,7 +142,7 @@
   icon:
     sprite: Objects/Vehicles/atv.rsi
     state: keys
-  category: Requests
+  category: HumanResources
   completetime: 2
   applyMaterialDiscount: false
   materials:
@@ -127,7 +151,7 @@
 - type: latheRecipe
   id: PrintedDocumentApplicationEquipmentRecipe
   result: PrintedDocumentApplicationEquipment
-  category: Requests
+  category: Cargo
   icon:
     sprite: Objects/Tools/multitool.rsi
     state: icon
@@ -142,7 +166,7 @@
   icon:
     sprite: Structures/Wallmounts/signs.rsi
     state: dock
-  category: Requests
+  category: Command
   completetime: 2
   applyMaterialDiscount: false
   materials:
@@ -151,7 +175,7 @@
 - type: latheRecipe
   id: PrintedDocumentShuttleRegistrationRequestRecipe
   result: PrintedDocumentShuttleRegistrationRequest
-  category: Requests
+  category: Engineering
   icon:
     sprite: Structures/Shuttles/thruster.rsi
     state: base
@@ -166,7 +190,7 @@
   icon:
     sprite: Mobs/Aliens/Guardians/guardians.rsi
     state: holoclown_base
-  category: Requests
+  category: HumanResources
   completetime: 2
   applyMaterialDiscount: false
   materials:
@@ -178,7 +202,7 @@
   icon:
     sprite: Objects/Fun/Tabletop/checker_pieces.rsi
     state: b_checker_crown
-  category: Requests
+  category: HumanResources
   completetime: 2
   applyMaterialDiscount: false
   materials:
@@ -190,7 +214,7 @@
   icon:
     sprite: Objects/Misc/clipboard.rsi
     state: clipboard
-  category: Requests
+  category: Law
   completetime: 2
   applyMaterialDiscount: false
   materials:
@@ -202,7 +226,7 @@
   icon:
     sprite: _DEN/Objects/Weapons/Melee/blueshieldaxe.rsi
     state: icon
-  category: Orders
+  category: Security
   completetime: 2
   applyMaterialDiscount: false
   materials:
@@ -214,7 +238,7 @@
   icon:
     sprite: Objects/Tools/rcd.rsi
     state: icon
-  category: Requests
+  category: Engineering
   completetime: 2
   applyMaterialDiscount: false
   materials:
@@ -226,7 +250,7 @@
   icon:
     sprite: Structures/Machines/autolathe_hypercon.rsi
     state: icon
-  category: Requests
+  category: Epistemics
   completetime: 2
   applyMaterialDiscount: false
   materials:
@@ -238,7 +262,7 @@
   icon:
     sprite: Objects/Misc/Lights/lamp.rsi
     state: lamp
-  category: Reports
+  category: Security
   completetime: 2
   applyMaterialDiscount: false
   materials:
@@ -250,7 +274,7 @@
   icon:
     sprite: Clothing/Hands/Gloves/Color/yellow.rsi
     state: icon
-  category: Permissions
+  category: Security
   completetime: 2
   applyMaterialDiscount: false
   materials:
@@ -262,7 +286,7 @@
   icon:
     sprite: _DV/Objects/Storage/lunchbox.rsi
     state: generic-open
-  category: Orders
+  category: Security
   completetime: 2
   applyMaterialDiscount: false
   materials:
@@ -274,7 +298,7 @@
   icon:
     sprite: _DV/Structures/Wallmounts/shotgun_cabinet.rsi
     state: shotgun
-  category: Permissions
+  category: Security
   completetime: 2
   applyMaterialDiscount: false
   materials:
@@ -286,7 +310,7 @@
   icon:
     sprite: Objects/Specific/Chemistry/pills_canister.rsi
     state: pill_canister
-  category: Permissions
+  category: Medical
   completetime: 2
   applyMaterialDiscount: false
   materials:
@@ -298,7 +322,7 @@
   icon:
     sprite: Structures/Machines/Medical/biomass_reclaimer.rsi
     state: icon
-  category: Orders
+  category: Security
   completetime: 2
   applyMaterialDiscount: false
   materials:
@@ -307,7 +331,7 @@
 - type: latheRecipe
   id: PrintedDocumentConstructionPermitRecipe
   result: PrintedDocumentConstructionPermit
-  category: Permissions
+  category: Engineering
   icon:
     sprite: Objects/Weapons/Melee/sledgehammer.rsi
     state: icon
@@ -322,7 +346,7 @@
   icon:
     sprite: Clothing/Mask/sadmime.rsi
     state: icon
-  category: Orders
+  category: HumanResources
   completetime: 2
   applyMaterialDiscount: false
   materials:
@@ -335,7 +359,7 @@
     # Strangely, directly linking to the original Blocked icon doesn't seem to work, so just copied it and put it in a proper .rsi
     sprite: _DEN/Interface/Misc/printer_icons.rsi
     state: blocked
-  category: Orders
+  category: HumanResources
   completetime: 2
   applyMaterialDiscount: false
   materials:
@@ -347,7 +371,7 @@
   icon:
     sprite: Objects/Consumable/Drinks/golden_cup.rsi
     state: icon
-  category: Statements
+  category: Command
   completetime: 2
   applyMaterialDiscount: false
   materials:
@@ -359,7 +383,7 @@
   icon:
     sprite: Actions/Implants/implants.rsi
     state: freedom
-  category: Orders
+  category: Security
   completetime: 2
   applyMaterialDiscount: false
   materials:
@@ -371,7 +395,7 @@
   icon:
     sprite: Mobs/Animals/mothroach.rsi
     state: icon
-  category: Orders
+  category: Epistemics
   completetime: 2
   applyMaterialDiscount: false
   materials:
@@ -383,7 +407,7 @@
   icon:
     sprite: Objects/Specific/Chemistry/syringe.rsi
     state: syringe_base0
-  category: Orders
+  category: Medical
   completetime: 2
   applyMaterialDiscount: false
   materials:
@@ -392,19 +416,10 @@
 - type: latheRecipe
   id: PrintedDocumentProductManufacturingOrderRecipe
   result: PrintedDocumentProductManufacturingOrder
-  category: Requests
+  category: Cargo
   icon:
     sprite: Structures/Storage/Crates/generic.rsi
     state: icon
-  completetime: 2
-  applyMaterialDiscount: false
-  materials:
-    SheetPrinter: 100
-
-- type: latheRecipe
-  id: PrintedDocumentCertificateRecipe
-  result: PrintedDocumentCertificate
-  category: Evidence
   completetime: 2
   applyMaterialDiscount: false
   materials:
@@ -416,7 +431,7 @@
   icon:
     sprite: Clothing/Neck/Medals/gold.rsi
     state: icon
-  category: Statements
+  category: Command
   completetime: 2
   applyMaterialDiscount: false
   materials:
@@ -428,7 +443,7 @@
   icon:
     sprite: Objects/Fun/Instruments/microphone.rsi
     state: icon
-  category: Evidence
+  category: Security
   completetime: 2
   applyMaterialDiscount: false
   materials:
@@ -440,7 +455,7 @@
   icon:
     sprite: Mobs/Species/Skeleton/parts.rsi
     state: skull_icon
-  category: Evidence
+  category: Medical
   completetime: 2
   applyMaterialDiscount: false
   materials:
@@ -452,7 +467,7 @@
   icon:
     sprite: _DEN/Clothing/Hands/goldenring.rsi
     state: icon
-  category: Statements
+  category: Law
   completetime: 2
   applyMaterialDiscount: false
   materials:
@@ -464,7 +479,7 @@
   icon:
     sprite: Objects/Materials/materials.rsi
     state: ash
-  category: Evidence
+  category: Law
   completetime: 2
   applyMaterialDiscount: false
   materials:
@@ -476,7 +491,7 @@
   icon:
     sprite: Objects/Misc/handcuffs.rsi
     state: handcuff
-  category: Evidence
+  category: Security
   completetime: 2
   applyMaterialDiscount: false
   materials:
@@ -488,7 +503,7 @@
   icon:
     sprite: _DV/Objects/Specific/Justice/gavelblock.rsi
     state: icon
-  category: Evidence
+  category: Law
   completetime: 2
   applyMaterialDiscount: false
   materials:
@@ -500,7 +515,7 @@
   icon:
     sprite: Structures/Wallmounts/signs.rsi
     state: medbay
-  category: Evidence
+  category: Medical
   completetime: 2
   applyMaterialDiscount: false
   materials:
@@ -512,7 +527,7 @@
   icon:
     sprite: _DV/Objects/Specific/Justice/gavel.rsi
     state: icon
-  category: Evidence
+  category: Law
   completetime: 2
   applyMaterialDiscount: false
   materials:
@@ -581,7 +596,7 @@
   icon:
     sprite: Objects/Fun/figurines.rsi
     state: passenger
-  category: Requests
+  category: HumanResources
   completetime: 2
   applyMaterialDiscount: false
   materials:
@@ -593,7 +608,7 @@
   icon:
     sprite: _Shitmed/Objects/Specific/Medical/Surgery/scalpel.rsi
     state: scalpel
-  category: Requests
+  category: Medical
   completetime: 2
   applyMaterialDiscount: false
   materials:
@@ -613,7 +628,7 @@
 - type: latheRecipe
   id: PrintedDocumentReceiptofDeliveryRecipe
   result: PrintedDocumentReceiptofDelivery
-  category: Reports
+  category: Cargo
   icon:
     sprite: Objects/Specific/Mail/mail_large.rsi
     state: icon
@@ -625,7 +640,7 @@
 - type: latheRecipe
   id: PrintedDocumentDNRRecipe
   result: PrintedDocumentDNR
-  category: Statements
+  category: Medical
   icon:
     sprite: Objects/Specific/Medical/Morgue/bodybags.rsi
     state: bag
@@ -637,10 +652,94 @@
 - type: latheRecipe
   id: PrintedDocumentMedicalReceiptRecipe
   result: PrintedDocumentMedicalReceipt
-  category: Reports
+  category: Medical
   icon:
     sprite: Objects/Specific/Medical/medical.rsi
     state: brutepack
+  completetime: 2
+  applyMaterialDiscount: false
+  materials:
+    SheetPrinter: 100
+
+- type: latheRecipe
+  id: PrintedDocumentChemicalRequestFormRecipe
+  result: PrintedDocumentChemicalRequestForm
+  category: Medical
+  icon:
+    sprite: Objects/Specific/Chemistry/beaker.rsi
+    state: beaker
+  completetime: 2
+  applyMaterialDiscount: false
+  materials:
+    SheetPrinter: 100
+
+- type: latheRecipe
+  id: PrintedDocumentJanitorialComplaintFormRecipe
+  result: PrintedDocumentJanitorialComplaintForm
+  category: Service
+  icon:
+    sprite: Objects/Specific/Janitorial/janitorial_cart.rsi
+    state: icon-cart
+  completetime: 2
+  applyMaterialDiscount: false
+  materials:
+    SheetPrinter: 100
+
+- type: latheRecipe
+  id: PrintedDocumentJanitorialReportRecipe
+  result: PrintedDocumentJanitorialReport
+  category: Service
+  icon:
+    sprite: Objects/Specific/Janitorial/mop.rsi
+    state: mop
+  completetime: 2
+  applyMaterialDiscount: false
+  materials:
+    SheetPrinter: 100
+
+- type: latheRecipe
+  id: PrintedDocumentPrankConsentFormRecipe
+  result: PrintedDocumentPrankConsentForm
+  category: Service
+  icon:
+    sprite: Objects/Fun/Instruments/otherinstruments.rsi
+    state: bike_horn
+  completetime: 2
+  applyMaterialDiscount: false
+  materials:
+    SheetPrinter: 100
+
+- type: latheRecipe
+  id: PrintedDocumentBotanyRequestFormRecipe
+  result: PrintedDocumentBotanyRequestForm
+  category: Service
+  icon:
+    sprite: Objects/Specific/Hydroponics/tobacco.rsi
+    state: produce
+  completetime: 2
+  applyMaterialDiscount: false
+  materials:
+    SheetPrinter: 100
+
+- type: latheRecipe
+  id: PrintedDocumentFoodAndBeveragesMenuRecipe
+  result: PrintedDocumentFoodAndBeveragesMenu
+  category: Service
+  icon:
+    sprite: Objects/Consumable/Food/bay_food.rsi
+    state: bigbiteburger
+  completetime: 2
+  applyMaterialDiscount: false
+  materials:
+    SheetPrinter: 100
+
+- type: latheRecipe
+  id: PrintedDocumentCloningReceiptRecipe
+  result: PrintedDocumentCloningReceipt
+  category: Medical
+  icon:
+    sprite: Structures/Machines/metempsychotic.rsi
+    state: cloning_idle
   completetime: 2
   applyMaterialDiscount: false
   materials:
