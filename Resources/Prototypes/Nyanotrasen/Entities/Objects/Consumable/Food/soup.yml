@@ -35,6 +35,7 @@
   - type: Tag
     tags:
       - ClothMade
+      - Soup
 #Tastes like cotton and broth
 
 - type: entity
@@ -67,6 +68,7 @@
   - type: Tag
     tags:
       - ClothMade # Mothic Food
+      - Soup
 
 - type: entity
   name: seed soup
@@ -96,6 +98,7 @@
   - type: Tag
     tags:
       - ClothMade # Mothic Food
+      - Soup
 
 - type: entity
   name: moth eyeball soup
@@ -119,6 +122,10 @@
             Quantity: 5
           - ReagentId: Vitamin
             Quantity: 3
+  - type: Tag
+    tags:
+    - Soup
+#   - ClothMade Consistent with the rest of the soups, why is this one missing tags? Is this supposed to be ClothMade?
 # Tastes like tomato, squirming.
 
 - type: entity
@@ -151,6 +158,7 @@
   - type: Tag
     tags:
       - ClothMade # Mothic Food
+      - Soup
 #Tastes like beans, cabbage and spicy sauce
 
 - type: entity
@@ -181,6 +189,7 @@
   - type: Tag
     tags:
       - ClothMade # Mothic Food
+      - Soup
 #Tastes like oats, sweet potato, carrot and parsnip
 
 - type: entity
@@ -212,6 +221,7 @@
   - type: Tag
     tags:
       - ClothMade # Mothic Food
+      - Soup
 #Tastes like oats, sweet potato, carrot and parsnip
 
 - type: entity
@@ -240,6 +250,7 @@
   - type: Tag
     tags:
       - ClothMade # Mothic Food
+      - Soup
 
 - type: entity
   name: cornmeal porridge
@@ -265,6 +276,7 @@
   - type: Tag
     tags:
       - ClothMade # Mothic Food
+      - Soup
 #Tastes like cornmeal.
 
 - type: entity
@@ -294,6 +306,7 @@
   - type: Tag
     tags:
       - ClothMade # Mothic Food
+      - Soup
 #Tastes like cornmeal, cheese, more cheese, lots of cheese.
 
 - type: entity
@@ -325,6 +338,7 @@
   - type: Tag
     tags:
       - ClothMade # Mothic Food
+      - Soup
 #Tastes like cornmeal, cheese, eggplant and tomato sauce
 
 - type: entity
@@ -359,3 +373,4 @@
   - type: Tag
     tags:
       - ClothMade # Mothic Food
+      - Soup
