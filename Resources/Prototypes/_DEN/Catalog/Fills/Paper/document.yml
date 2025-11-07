@@ -13,6 +13,41 @@
   components:
     - type: Paper
 
+- type: latheRecipe
+  id: Paper
+  result: Paper
+  completetime: 1
+  materials:
+    Paper: 10
+
+
+# Package of Office Paper
+- type: entity
+  id: PaperPackage
+  parent: BaseItem
+  components:
+  - type: Item
+    size: Small
+  - type: Material
+  - type: PhysicalComposition
+    materialComposition:
+      SheetPrinter: 3000
+  - type: Sprite
+    sprite: _DEN/Interface/Paper
+    layers:
+    - state: paperstack
+  - type: Tag
+    tags:
+    - Paper
+    - Document
+
+- type: latheRecipe
+  id: PaperPackage
+  result: PaperPackage
+  completetime: 2
+  materials:
+    Paper: 1000
+
 # Security Papers
 
 - type: entity
@@ -275,6 +310,14 @@
   components:
   - type: Paper
     content: doc-text-printer-order-recognizing-sentience-creature
+
+- type: entity
+  parent: PaperDyedEpi
+  id: PrintedDocumentCertificate
+  name: Certificate
+  components:
+  - type: Paper
+    content: doc-text-printer-certificate
 
 - type: entity
   parent: PaperDyedEpi
