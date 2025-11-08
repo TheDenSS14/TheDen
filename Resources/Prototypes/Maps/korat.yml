@@ -20,19 +20,19 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 - type: gameMap
-  id: Edge
-  mapName: 'Edge'
-  mapPath: /Maps/TheDen/edge.yml
+  id: Korat
+  mapName: 'Korat'
+  mapPath: /Maps/TheDen/korat.yml
   minPlayers: 5
   maxPlayers: 100 # The Den: we hit 80 and had no maps lmao
   stations:
-    Edge:
+    Korat:
       stationProto: StandardNanotrasenStation
       components:
         - type: StationEmergencyShuttle
           emergencyShuttlePath: /Maps/Shuttles/_DV/NTES_Vertex.yml
         - type: StationNameSetup
-          mapNameTemplate: '{0} Edge Station {1}'
+          mapNameTemplate: '{0} Korat {1}'
           nameGenerator:
             !type:NanotrasenNameGenerator
             prefixCreator: 'DV'
