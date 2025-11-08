@@ -7,7 +7,7 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 - type: entity
-  name: Generic rubber stamp
+  name: generic rubber stamp
   parent: BaseItem
   id: RubberStampBase
   description: A rubber stamp for stamping important documents.
@@ -31,7 +31,7 @@
     stealGroup: Stamp
 
 - type: entity
-  name: Alternate rubber stamp
+  name: alternate rubber stamp
   parent: RubberStampBase
   id: RubberStampBaseAlt
   abstract: true
@@ -46,7 +46,7 @@
         maxDistance: 5
 
 - type: entity
-  name: Captain's rubber stamp
+  name: captain's rubber stamp
   parent: RubberStampBase
   id: RubberStampCaptain
   suffix: DO NOT MAP
@@ -72,7 +72,7 @@
     state: stamp-centcom
 
 - type: entity
-  name: Chaplain's rubber stamp
+  name: chaplain's rubber stamp
   parent: RubberStampBase
   id: RubberStampChaplain
   suffix: DO NOT MAP
@@ -85,7 +85,7 @@
     state: stamp-chaplain
 
 - type: entity
-  name: Clown's rubber stamp
+  name: clown's rubber stamp
   parent: RubberStampBase
   id: RubberStampClown
   suffix: DO NOT MAP
@@ -101,7 +101,7 @@
       - ClownRubberStamp
 
 - type: entity
-  name: Chief Engineer's rubber stamp
+  name: chief engineer's rubber stamp
   parent: RubberStampBase
   id: RubberStampCE
   suffix: DO NOT MAP
@@ -114,7 +114,7 @@
     state: stamp-ce
 
 - type: entity
-  name: Chief Medical Officer's rubber stamp
+  name: chief medical officer's rubber stamp
   parent: RubberStampBase
   id: RubberStampCMO
   suffix: DO NOT MAP
@@ -127,7 +127,7 @@
     state: stamp-cmo
 
 - type: entity
-  name: Head of Personnel's rubber stamp
+  name: head of personnel's rubber stamp
   parent: RubberStampBase
   id: RubberStampHop
   suffix: DO NOT MAP
@@ -140,7 +140,7 @@
     state: stamp-hop
 
 - type: entity
-  name: Head of Security's rubber stamp
+  name: head of security's rubber stamp
   parent: RubberStampBase
   id: RubberStampHos
   suffix: DO NOT MAP
@@ -153,7 +153,7 @@
     state: stamp-hos
 
 - type: entity
-  name: Mime's rubber stamp
+  name: mime's rubber stamp
   parent: RubberStampBase
   id: RubberStampMime
   suffix: DO NOT MAP
@@ -167,7 +167,7 @@
     state: stamp-mime
 
 - type: entity
-  name: Logistics officer's rubber stamp # DeltaV - Logistics Department replacing Cargo
+  name: logistics officer's rubber stamp # DeltaV - Logistics Department replacing Cargo
   parent: RubberStampBase
   id: RubberStampQm
   suffix: DO NOT MAP
@@ -180,7 +180,7 @@
       state: stamp-qm
 
 - type: entity
-  name: Mystagogue's rubber stamp # DeltaV - Epistemics Department replacing Science
+  name: mystagogue's rubber stamp # DeltaV - Epistemics Department replacing Science
   parent: RubberStampBase
   id: RubberStampRd
   suffix: DO NOT MAP
@@ -193,7 +193,7 @@
       state: stamp-rd
 
 - type: entity
-  name: Trader's rubber stamp
+  name: trader's rubber stamp
   parent: RubberStampBase
   id: RubberStampTrader
   components:
@@ -205,7 +205,7 @@
     state: stamp-trader
 
 - type: entity
-  name: Syndicate rubber stamp
+  name: syndicate rubber stamp
   parent: RubberStampBase
   id: RubberStampSyndicate
   suffix: DO NOT MAP
@@ -218,7 +218,7 @@
     state: stamp-syndicate
 
 - type: entity
-  name: Warden's rubber stamp
+  name: warden's rubber stamp
   parent: RubberStampBase
   id: RubberStampWarden
   suffix: DO NOT MAP
@@ -255,7 +255,7 @@
     state: stamp-deny
 
 - type: entity
-  name: Detective's rubber stamp
+  name: detective's rubber stamp
   parent: RubberStampBase
   id: RubberStampDetective
   suffix: DO NOT MAP
@@ -268,7 +268,7 @@
     state: stamp-detective
 
 - type: entity
-  name: Blueshield's rubber stamp
+  name: blueshield's rubber stamp
   parent: RubberStampBase
   id: RubberStampBlueshield
   suffix: DO NOT MAP
