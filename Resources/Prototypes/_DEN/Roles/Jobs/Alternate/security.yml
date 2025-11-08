@@ -1,5 +1,6 @@
 # SPDX-FileCopyrightText: 2025 ASaltySeabass
 # SPDX-FileCopyrightText: 2025 Jakumba
+# SPDX-FileCopyrightText: 2025 XenoOutlier
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: MIT
@@ -12,6 +13,7 @@
   - job-name-alternate-security-director
   - job-name-alternate-security-chief
   - job-name-alternate-daimyo
+  - job-name-alternate-chief-constable
 
 - type: alternateJobTitle
   id: DefaultSecurityOfficer
@@ -21,6 +23,7 @@
   - job-name-alternate-peacekeeper
   - job-name-alternate-security-guard
   - job-name-alternate-nt-trooper
+  - job-name-alternate-constable
 
 - type: alternateJobTitle
   id: DefaultSeniorOfficer
@@ -29,6 +32,7 @@
   - job-name-alternate-ranger
   - job-name-alternate-senior-guard
   - job-name-alternate-senior-trooper
+  - job-name-alternate-sergeant
 
 - type: alternateJobTitle
   id: DefaultCorpsman
@@ -59,6 +63,7 @@
   - job-name-alternate-deputy-security-director
   - job-name-alternate-bailiff
   - job-name-alternate-marshal
+  - job-name-alternate-deputy-chief-constable
 
 - type: alternateJobTitle
   id: DefaultSecurityCadet
@@ -66,3 +71,12 @@
   titles:
   - job-name-alternate-junior-officer
   - job-name-alternate-security-trainee
+
+- type: alternateJobTitle
+  id: DefaultPrisonGuard
+  jobId: PrisonGuard
+  titles:
+  - job-name-alternate-officer-support-grade
+  - job-name-alternate-detention-officer
+  - job-name-alternate-corrections-officer
+  - job-name-alternate-enforcement-officer
