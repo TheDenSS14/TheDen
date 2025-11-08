@@ -561,3 +561,35 @@
   - type: Icon
     sprite: _DEN/Objects/Consumable/Drinks/plasmaflood.rsi
     state: icon
+
+- type: entity
+  parent: DrinkGlass
+  id: DrinkCherrySodaGlass
+  suffix: cherry soda
+  components:
+    - type: SolutionContainerManager
+      solutions:
+        drink:
+          maxVol: 30
+          reagents:
+            - ReagentId: CherrySoda
+              Quantity: 30
+    - type: Icon
+      sprite: _DEN/Objects/Consumable/Drinks/cherrysoda.rsi
+      state: icon
+
+- type: entity
+  parent: DrinkGlass
+  id: DrinkVodkaCheersGlass
+  suffix: vodka cheers
+  components:
+    - type: SolutionContainerManager
+      solutions:
+        drink:
+          maxVol: 30
+          reagents:
+            - ReagentId: VodkaCheers
+              Quantity: 30
+    - type: Icon
+      sprite: _DEN/Objects/Consumable/Drinks/vodkacheers.rsi
+      state: icon

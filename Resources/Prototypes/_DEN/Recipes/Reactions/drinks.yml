@@ -474,3 +474,23 @@
       amount: 1
   products:
     MilkChoco: 3
+
+- type: reaction
+  id: CherrySoda
+  reactants:
+    JuiceCherry:
+      amount: 1
+    SodaWater:
+      amount: 2
+  products:
+    CherrySoda: 3
+
+- type: reaction
+  id: VodkaCheers
+  reactants:
+    CherrySoda:
+      amount: 2
+    Vodka:
+      amount: 1
+  products:
+    VodkaCheers: 3
