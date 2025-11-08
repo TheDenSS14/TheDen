@@ -1,5 +1,6 @@
 # SPDX-FileCopyrightText: 2025 ASaltySeabass
 # SPDX-FileCopyrightText: 2025 Jakumba
+# SPDX-FileCopyrightText: 2025 XenoOutlier
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: MIT
@@ -22,6 +23,8 @@
   - job-name-alternate-cyborg-specialist
   - job-name-alternate-bionic-engineer
   - job-name-alternate-biomechanical-engineer
+  - job-name-alternate-ripperdoc
+  - job-name-alternate-cybernetics-specialist
 
 - type: alternateJobTitle
   id: DefaultResearchDirector
@@ -33,12 +36,6 @@
     - job-name-alternate-research-director
 
 - type: alternateJobTitle
-  id: DefaultForensicMantis
-  jobId: ForensicMantis
-  titles:
-    - job-name-alternate-inquisitor
-
-- type: alternateJobTitle
   id: DefaultChaplain
   jobId: Chaplain
   titles:
@@ -47,12 +44,17 @@
     - job-name-alternate-priestess
     - job-name-alternate-curate
     - job-name-alternate-officiant
+    - job-name-alternate-reverend
+    - job-name-alternate-shaman
 
 - type: alternateJobTitle
   id: DefaultSeniorResearcher
   jobId: SeniorResearcher
   titles:
     - job-name-alternate-mystic
+    - job-name-alternate-sage
+    - job-name-alternate-seer
+    - job-name-alternate-senior-research-fellow
 
 - type: alternateJobTitle
   id: DefaultLibrarian
@@ -61,6 +63,9 @@
     - job-name-alternate-librarian
     - job-name-alternate-scholar
     - job-name-alternate-archivist
+    - job-name-alternate-professor
+    - job-name-alternate-loremaster
+    - job-name-alternate-dungeon-master
 
 - type: alternateJobTitle
   id: DefaultResearchAssistant
@@ -69,3 +74,4 @@
   - job-name-alternate-lab-assistant
   - job-name-alternate-initiate
   - job-name-alternate-novitiate
+  - job-name-alternate-research-associate

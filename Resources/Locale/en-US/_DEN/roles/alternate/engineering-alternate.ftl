@@ -1,5 +1,6 @@
 # SPDX-FileCopyrightText: 2025 ASaltySeabass
 # SPDX-FileCopyrightText: 2025 Jakumba
+# SPDX-FileCopyrightText: 2025 XenoOutlier
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: MIT
@@ -37,3 +38,7 @@ job-name-alternate-senior-life-support-technician = Senior Life Support Technici
 job-name-alternate-senior-hull-specialist = Senior Hull Specialist
 job-name-alternate-senior-gas-refinement-specialist = Senior Gas Refinement Specialist
 job-name-alternate-senior-plasma-specialist = Senior Plasma Specialist
+
+# Chief Engineer
+job-name-alternate-chief-architect = Chief Architect
+job-name-alternate-senior-director-of-engineering = Senior Director of Engineering
