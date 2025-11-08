@@ -94,7 +94,8 @@ public sealed partial class PuddleSystem
         if (totalSplit == 0)
             return;
 
-        args.Handled = true;
+        if(!entity.Comp.AlsoMeleeAttack)
+            args.Handled = true;
 
         // First update the hit count so anything that is not reactive wont count towards the total!
         foreach (var hit in args.HitEntities)
