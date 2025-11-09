@@ -1,8 +1,3 @@
--- SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT <77995199+DEATHB4DEFEAT@users.noreply.github.com>
--- SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
---
--- SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
-
 local sprite = app.editor.sprite
 local cel = app.cel
 
@@ -35,8 +30,8 @@ diag:button{
         local selection = sprite.selection
         local image = cel.image:clone()
 
-        for x = 0, selection.bounds.width do
-            for y = 0, selection.bounds.height do
+        for x = 0, selection.bounds.width - 1 do
+            for y = 0, selection.bounds.height - 1 do
                 local xSel = x + selection.origin.x
                 local ySel = y + selection.origin.y
 
