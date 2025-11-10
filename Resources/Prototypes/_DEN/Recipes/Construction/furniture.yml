@@ -17,4 +17,21 @@
   placementMode: SnapgridCenter
   canBuildInImpassable: true
   conditions:
-    - !type:WallmountCondition
+  - !type:WallmountCondition
+
+- type: construction
+  id: WallMirrorRectangle
+  name: mirror
+  description: 'Mirror mirror on the wall, who''s the most robust of them all?'
+  graph: WallMirror
+  startNode: start
+  targetNode: MirrorRectangle
+  icon:
+    sprite: _DEN/Structures/Wallmounts/mirror_rectangle.rsi
+    state: mirror
+  objectType: Structure
+  category: construction-category-furniture
+  placementMode: SnapgridCenter
+  canBuildInImpassable: true
+  conditions:
+  - !type:WallmountCondition
