@@ -1,0 +1,16 @@
+- type: construction
+  id: BeachUmbrellaBlue
+  name: blue beach umbrella
+  description: A standing umbrella that blocks the sun and rain for those sitting underneath. Well, if there WAS sun and rain...
+  graph: BeachUmbrella
+  startNode: start
+  targetNode: BeachUmbrellaBlue
+  category: construction-category-furniture
+  objectType: Structure
+  placementMode: SnapgridBorder
+  canBuildInImpassable: false
+  icon:
+    sprite: _DEN/Structures/Decoration/umbrella.rsi
+    state: blue
+  conditions:
+  - !type:TileNotBlocked
