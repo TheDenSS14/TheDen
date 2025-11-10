@@ -110,6 +110,7 @@
   - type: Spillable
     solution: absorbed
     spillWhenThrown: false
+    alsoMeleeAttack: true
   - type: DrainableSolution
     solution: absorbed
   - type: Wieldable
@@ -181,6 +182,7 @@
     - type: Spillable
       solution: absorbed
       spillWhenThrown: false
+      alsoMeleeAttack: true
     - type: DrainableSolution
       solution: absorbed
     - type: Wieldable

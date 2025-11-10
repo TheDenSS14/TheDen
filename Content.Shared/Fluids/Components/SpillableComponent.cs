@@ -58,4 +58,10 @@ public sealed partial class SpillableComponent : Component
     /// </summary>
     [DataField]
     public bool SpillWhenThrown = true;
+
+    /// <summary>
+    ///     Should this item spill AND melee attack?
+    /// </summary>
+    [DataField]
+    public bool AlsoMeleeAttack = false;
 }
