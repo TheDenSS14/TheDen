@@ -327,6 +327,14 @@
   - type: Paper
     content: doc-text-mech-report
 
+- type: entity
+  parent: PaperDyedEpi
+  id: PrintedDocumentOracleRequest
+  name: ORACLE REQUEST FORM
+  components:
+  - type: Paper
+    content: doc-text-oracle-request
+
 # Engineering Papers
 - type: entity
   parent: Paper
@@ -763,3 +771,19 @@
   components:
   - type: Paper
     content: doc-text-printer-food-and-beverages-menu
+
+- type: entity
+  parent: PaperDyedService
+  id: PrintedDocumentDrinksMenu
+  name: Drinks Menu
+  components:
+  - type: Paper
+    content: doc-text-printer-drinks-menu
+
+- type: entity
+  parent: PaperDyedService
+  id: PrintedDocumentDessertMenu
+  name: Dessert Menu
+  components:
+  - type: Paper
+    content: doc-text-printer-dessert-menu
