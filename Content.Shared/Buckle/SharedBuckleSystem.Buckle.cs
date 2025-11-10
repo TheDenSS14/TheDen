@@ -248,6 +248,9 @@ public abstract partial class SharedBuckleSystem
         if (!Resolve(strapUid, ref strapComp, false))
             return false;
 
+        if(buckleUid == strapUid)
+            return false;
+
         // Does it pass the Whitelist
         if (_whitelistSystem.IsWhitelistFail(strapComp.Whitelist, buckleUid) ||
             _whitelistSystem.IsBlacklistPass(strapComp.Blacklist, buckleUid))
