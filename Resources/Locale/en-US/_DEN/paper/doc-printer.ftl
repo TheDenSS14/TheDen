@@ -1045,3 +1045,53 @@ doc-text-cloning-receipt =
     {"["}bold][color=#00BEF2]Events you should know about:[/color][/bold] [italic][form][/italic]
     ─────────────────────────────────────
     {"["}italic]Place for seals:[/italic]
+doc-text-oracle-request =
+    {" "}
+    {"["}color=#511057][head=1][bold]ORACLE REQUEST FORM[/bold][/head][/color]
+    ─────────────────────────────────────
+    {"["}color=#511057][bold]Author Name and Position:[/bold][/color] [italic][form][/italic]
+    {"["}color=#511057][check] [bold]I'm the Chaplain, or someone of similar rank.[/bold][/color]
+
+    {"["}color=#511057][bold]Requested Item:[/bold]
+    {"["}italic][form][/italic]
+    {"["}color=#511057][bold]Department of Requested Item:[/bold]
+    {"["}italic][form][/italic]
+    {"["}color=#511057][bold]Contraband Tier:[/bold][/color] [check] [bold]T0[/bold] [check] [bold]T1[/bold] [check] [bold]T2[/bold] [check] [bold]T3[/bold]
+
+    {"["}check] [color=#511057][bold]I understand that if I misuse or keep this item, this form is immediately null and void, and may be used as evidence for my arrest or further punishments.[/bold][/color]
+    ─────────────────────────────────────
+    {"["}italic]Place for seals[/italic]
+doc-text-printer-drinks-menu =
+    {" "}
+    {"["}color=#294225][head=1]Welcome to [form][/head][/color]
+    ─────────────────────────────────────
+    {"["}color=#294225][bold]Your Bartender today:[/bold][/color] [italic][signature][/italic]
+
+    {"["}color=#294225][bold]Drinks: [/bold]
+    {"["}bullet] [italic][form][/italic] [check] [bold]NA[/bold]
+    {"["}bullet] [italic][form][/italic] [check] [bold]NA[/bold]
+    {"["}bullet] [italic][form][/italic] [check] [bold]NA[/bold]
+    {"["}bullet] [italic][form][/italic] [check] [bold]NA[/bold]
+    {"["}color=#687F64][italic]*NA for non-alcoholic.[/italic][/color]
+
+    {"["}check] [bold][color=#294225]Ask about our specials![/bold][/color]
+    {"["}check] [bold][color=#294225]Ask us about deserts and treats![/bold][/color]
+    ─────────────────────────────────────
+    {"["}italic] Place for Seals [/italic]
+doc-text-printer-dessert-menu =
+    {" "}
+    {"["}color=#294225][head=1]Welcome to [form][/head][/color]
+    ─────────────────────────────────────
+    {"["}color=#294225][bold]Your Head Chef today:[/bold][/color] [italic][signature][/italic]
+
+    {"["}color=#294225][bold]Desserts: [/bold]
+    {"["}bullet] [italic][form][/italic] [check] [bold]MF[/bold] [check] [bold]UF[/bold]
+    {"["}bullet] [italic][form][/italic] [check] [bold]MF[/bold] [check] [bold]UF[/bold]
+    {"["}bullet] [italic][form][/italic] [check] [bold]MF[/bold] [check] [bold]UF[/bold][/color]
+
+    {"["}color=#687F64][italic]*MF for Moth Friendly, UF for Unathi Friendly for those differently digesting.[/italic][/color]
+
+    {"["}check] [bold][color=#294225]Ask about our specials![/bold][/color]
+    {"["}check] [bold][color=#294225]Ask us about deserts and treats![/bold][/color]
+    ─────────────────────────────────────
+    {"["}italic] Place for Seals [/italic]

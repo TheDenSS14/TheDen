@@ -744,3 +744,39 @@
   applyMaterialDiscount: false
   materials:
     SheetPrinter: 100
+
+- type: latheRecipe
+  id: PrintedDocumentOracleRequestRecipe
+  result: PrintedDocumentOracleRequest
+  category: Epistemics
+  icon:
+    sprite: Objects/Materials/materials.rsi
+    state: bluespace_2
+  completetime: 2
+  applyMaterialDiscount: false
+  materials:
+    SheetPrinter: 100
+
+- type: latheRecipe
+  id: PrintedDocumentDrinksMenuRecipe
+  result: PrintedDocumentDrinksMenu
+  category: Service
+  icon:
+    sprite: Objects/Consumable/Food/bay_food.rsi
+    state: shrimp-cocktail
+  completetime: 2
+  applyMaterialDiscount: false
+  materials:
+    SheetPrinter: 100
+
+- type: latheRecipe
+  id: PrintedDocumentDessertMenuRecipe
+  result: PrintedDocumentDessertMenu
+  category: Service
+  icon:
+    sprite: Objects/Consumable/Food/bay_food_custom.rsi
+    state: cakecustom_slice
+  completetime: 2
+  applyMaterialDiscount: false
+  materials:
+    SheetPrinter: 100
