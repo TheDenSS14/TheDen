@@ -173,3 +173,31 @@
     Steel: 100
     Glass: 100
     Plastic: 100
+
+# beautiful bureaucracy!
+- type: latheRecipe
+  id: RubberStampApproved
+  result: RubberStampApproved
+  category: Bureaucracy
+  completetime: 1
+  materials:
+    Wood: 200
+    Plastic: 100
+
+- type: latheRecipe
+  id: RubberStampDenied
+  result: RubberStampDenied
+  category: Bureaucracy
+  completetime: 1
+  materials:
+    Wood: 200
+    Plastic: 100
+
+- type: latheRecipe
+  id: RubberStampSyndicate
+  result: RubberStampSyndicate
+  category: Bureaucracy
+  completetime: 1
+  materials:
+    Wood: 200
+    Plastic: 100
