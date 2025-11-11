@@ -22,7 +22,7 @@
 - type: species
   id: Vox
   name: species-name-vox
-  roundStart: true # sad...
+  roundStart: true
   prototype: MobVox
   sprites: MobVoxSprites
   markingLimits: MobVoxMarkingLimits
@@ -72,8 +72,8 @@
       required: false
     Head:
       points: 2
-      required: false #imp
-    HeadSide: #imp
+      required: false # imp
+    HeadSide: # imp
       points: 2
       required: false
     Snout:
@@ -119,15 +119,15 @@
       points: 1 # den
       required: false
     Chest:
-      points: 1
+      points: 3 # Den
       required: false
     Overlay: # imp
       points: 4
       required: false
     Tail:
       points: 1
-      required: false #imp
-      #defaultMarkings: [ VoxTail ]
+      required: false # imp
+      # defaultMarkings: [ VoxTail ]
 
 - type: humanoidBaseSprite
   id: MobVoxEyes
@@ -156,7 +156,7 @@
 - type: humanoidBaseSprite
   id: MobVoxTorso
   baseSprite:
-    sprite: _Impstation/Mobs/Species/Vox/parts.rsi #imp
+    sprite: _Impstation/Mobs/Species/Vox/parts.rsi # imp
     state: torso
 
 - type: humanoidBaseSprite
