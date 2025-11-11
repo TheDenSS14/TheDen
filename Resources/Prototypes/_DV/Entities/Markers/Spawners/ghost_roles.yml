@@ -64,6 +64,9 @@
     rules: ghost-role-information-paradox-anomaly-rules
     mindRoles: 
     - MindRoleGhostRoleFreeAgent
+    requirements: 
+    - !type:CharacterOverallTimeRequirement
+      min: 36000 #Den - 10 hours
   - type: ParadoxAnomalySpawner
   - type: Sprite
     sprite: Markers/jobs.rsi

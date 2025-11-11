@@ -35,6 +35,11 @@
     - MindRoleGhostRoleTeamAntagonist
     raffle:
       settings: short
+    #Den
+    requirements: 
+    - !type:CharacterOverallTimeRequirement
+      min: 36000 #Den - 10 hours
+    #Den End
   - type: Sprite
     granularLayersRendering: true
     drawdepth: Mobs

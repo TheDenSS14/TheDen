@@ -17,7 +17,7 @@
   antagonist: true
   setPreference: false
   objective: roles-antag-space-ninja-objective
-  requirements:
-  - !type:CharacterOverallTimeRequirement # DeltaV - Playtime requirement
-    min: 14400 # floof - 4 hours
+  requirements: 
+  - !type:CharacterOverallTimeRequirement
+      min: 36000 #Den - 10 hours
   guides: [ SpaceNinja ]

@@ -76,6 +76,9 @@
   antagonist: true
   setPreference: false
   objective: roles-antag-sol-alliance-navy-deserter-objective
+  requirements: 
+    - !type:CharacterOverallTimeRequirement
+      min: 36000 #Den - 10 hours
 
 - type: entity
   parent: BaseMindRoleAntag
