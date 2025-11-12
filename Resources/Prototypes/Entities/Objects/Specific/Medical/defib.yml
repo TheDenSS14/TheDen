@@ -99,12 +99,18 @@
   parent: BaseDefibrillator
   suffix: One-Handed, Unpowered
   components:
+  - type: ContainerContainer
+    containers:
+      cell_slot: !type:ContainerSlot { }
+  - type: PowerCellSlot
+    cellSlotId: cell_slot
   - type: ItemSlots
     slots:
       cell_slot:
         name: power-cell-slot-component-slot-name-default
         startingItem: PowerCellMicroreactor
         disableEject: true
+        swap: false
   - type: PowerCellDraw
     useRate: 10
 
