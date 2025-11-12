@@ -37,6 +37,12 @@ public sealed partial class LanguageSystem : SharedLanguageSystem
 
         SubscribeLocalEvent<UniversalLanguageSpeakerComponent, MapInitEvent>((uid, _, _) => UpdateEntityLanguages(uid));
         SubscribeLocalEvent<UniversalLanguageSpeakerComponent, ComponentRemove>((uid, _, _) => UpdateEntityLanguages(uid));
+
+        // TheDen Start - The language used for Hypnoglossy, a roleplay variant of Psychomantic with its own prototype
+        SubscribeLocalEvent<PsychomandateSpeakerComponent, DetermineEntityLanguagesEvent>(OnDeterminePsychomandateLanguages);
+        SubscribeLocalEvent<PsychomandateSpeakerComponent, MapInitEvent>((uid, _, _) => UpdateEntityLanguages(uid));
+        SubscribeLocalEvent<PsychomandateSpeakerComponent, ComponentRemove>((uid, _, _) => UpdateEntityLanguages(uid));
+        // TheDen End
     }
 
     #region event handling
@@ -67,6 +73,12 @@ public sealed partial class LanguageSystem : SharedLanguageSystem
             ev.SpokenLanguages.Add(PsychomanticPrototype);
     }
 
+    private void OnDeterminePsychomandateLanguages(Entity<PsychomandateSpeakerComponent> entity, ref DetermineEntityLanguagesEvent ev) // TheDen
+    {
+        // All this just to Dune Voice people, god almighty
+        if (entity.Comp.Enabled)
+            ev.SpokenLanguages.Add(PsychomandatePrototype);
+    }
 
     private void OnClientSetLanguage(LanguagesSetMessage message, EntitySessionEventArgs args)
     {
@@ -87,6 +99,7 @@ public sealed partial class LanguageSystem : SharedLanguageSystem
     public bool CanUnderstand(Entity<LanguageSpeakerComponent?> ent, ProtoId<LanguagePrototype> language, Entity<LanguageSpeakerComponent?>? target = null)
     {
         if (language == PsychomanticPrototype
+            || language == PsychomandatePrototype // TheDen
             || language == UniversalPrototype)
             return true;
 

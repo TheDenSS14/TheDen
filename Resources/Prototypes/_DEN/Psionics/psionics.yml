@@ -1,0 +1,19 @@
+- type: psionicPower # Requires Hypnotic Gaze and Xenoglossy, then you can take this power to combine them into a "Psychomandate" language
+  id: HypnoglossyPower # Like Voice from Dune, it's an instant hypnotic command instead of a slow, lasting hypnosis
+  name: Hypnoglossy
+  initializeFunctions:
+    - !type:AddPsionicPowerComponents
+      components:
+        - type: PsychomandateSpeaker
+    - !type:PsionicFeedbackPopup
+    - !type:PsionicFeedbackSelfChat
+      feedbackMessage: hypnoglossy-power-initialization-feedback
+    - !type:AddPsionicAssayFeedback
+      assayFeedback: hypnoglossy-power-metapsionic-feedback
+  removalFunctions:
+    - !type:RemovePsionicPowerComponents
+      components:
+        - type: PsychomandateSpeaker
+    - !type:RemoveAssayFeedback
+      assayFeedback: hypnoglossy-power-metapsionic-feedback
+  powerSlotCost: 0 # Neither hypnosis nor xenoglossy take a slot, since they're just for roleplay, so this shouldn't either

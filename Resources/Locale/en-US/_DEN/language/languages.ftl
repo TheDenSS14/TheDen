@@ -20,3 +20,6 @@ language-Aural-description =
     The songlike language of ancient thaven society, known for its fluid rhythm, melodic tones, and dense vocalizations. It's often described by outsiders as speaking in tongues.
     Naturally resonant underwater, exposure to Aural has been reported to trigger strange sensory effects in non-thaven listeners - most commonly a soft tingling behind the ears.
     Though hauntingly beautiful, it is notoriously difficult to learn; thaven polyglots often switch languages mid-conversation to spare others from butchering the sound.
+
+language-Psychomandate-name = Psychomandate
+language-Psychomandate-description = Psychomantic infused with the speaker's will, bypassing reason to evoke reflexive obedience in vulnerable minds.

@@ -34,14 +34,25 @@ public abstract class SharedLanguageSystem : EntitySystem
     public static readonly string PsychomanticPrototype = "Psychomantic";
 
     /// <summary>
-    /// A cached instance of <see cref="PsychomanticPrototype"/>
+    /// TheDen - The language used for Hypnoglossy, a roleplay variant of Psychomantic with its own prototype
     /// </summary>
-    public static LanguagePrototype Psychomantic { get; private set; } = default!;
+    [ValidatePrototypeId<LanguagePrototype>]
+    public static readonly string PsychomandatePrototype = "Psychomandate";
 
     /// <summary>
     ///     A cached instance of <see cref="UniversalPrototype"/>
     /// </summary>
     public static LanguagePrototype Universal { get; private set; } = default!;
+
+    /// <summary>
+    ///     A cached instance of <see cref="PsychomanticPrototype"/>
+    /// </summary>
+    public static LanguagePrototype Psychomantic { get; private set; } = default!;
+
+    /// <summary>
+    /// TheDen - A cached instance of <see cref="PsychomandatePrototype"/>
+    /// </summary>
+    public static LanguagePrototype Psychomandate { get; private set; } = default!;
 
     [Dependency] protected readonly IPrototypeManager _prototype = default!;
     [Dependency] protected readonly SharedGameTicker _ticker = default!;
@@ -51,6 +62,8 @@ public abstract class SharedLanguageSystem : EntitySystem
         Universal = _prototype.Index<LanguagePrototype>("Universal");
          // Initialize the Psychomantic prototype
         Psychomantic = _prototype.Index<LanguagePrototype>(PsychomanticPrototype);
+         // Initialize the Psychomandate prototype
+        Psychomandate = _prototype.Index<LanguagePrototype>(PsychomandatePrototype);
     }
 
     public LanguagePrototype? GetLanguagePrototype(ProtoId<LanguagePrototype> id)

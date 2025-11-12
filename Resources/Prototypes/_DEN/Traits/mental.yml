@@ -1,0 +1,56 @@
+- type: trait
+  id: HypnoglossyPower # Requires Hypnotic Gaze and Xenoglossy, then you can take this power to combine them into a "Psychomandate" language
+  category: Mental # Like Voice from Dune, it's an instant hypnotic command instead of a slow, lasting hypnosis
+  points: 0 # Roleplay traits with no mechanical advantages should never cost points
+  requirements:
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - StationAi
+        - Borg
+        - MedicalBorg
+    - !type:CharacterLogicAndRequirement
+      requirements:
+        - !type:CharacterTraitRequirement
+          traits:
+            - HypnoticGaze
+        - !type:CharacterTraitRequirement
+          traits:
+            - XenoglossyPower
+    - !type:CharacterLogicOrRequirement
+      requirements:
+        - !type:CharacterSpeciesRequirement
+          species:
+            - Shadowkin # Innate Psionics
+        - !type:CharacterTraitRequirement
+          traits:
+            - LatentPsychic
+            - NaturalTelepath
+        - !type:CharacterJobRequirement
+          jobs:
+            - Librarian
+            - Chaplain
+            - ForensicMantis
+            - ResearchDirector
+    - !type:CharacterLogicOrRequirement
+      requirements:
+        - !type:CharacterSpeciesRequirement
+          inverted: true
+          species:
+            - IPC
+        - !type:CharacterTraitRequirement
+          traits:
+            - AnomalousPositronics
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - ShadowkinBlackeye
+  functions:
+    - !type:TraitAddPsionics
+      psionicPowers:
+        - HypnoglossyPower
+    - !type:TraitPushDescription
+      descriptionExtensions:
+        - description: examine-hypnoglossy-message
+          fontSize: 12
+          requireDetailRange: true
