@@ -13,4 +13,7 @@ public sealed partial class SurgeryTargetComponent : Component
 {
     [DataField]
     public bool CanOperate = true;
+
+    [DataField]
+    public bool CanOperateOn = true;
 }

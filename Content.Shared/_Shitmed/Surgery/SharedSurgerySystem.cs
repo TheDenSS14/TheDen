@@ -38,6 +38,8 @@ using Robust.Shared.Network;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
 using Content.Shared.Body.Organ;
+using Content.Shared.Movement.Pulling.Components;
+
 
 namespace Content.Shared._Shitmed.Medical.Surgery;
 
@@ -381,7 +383,12 @@ public abstract partial class SharedSurgerySystem : EntitySystem
 
     private List<EntityUid> GetTools(EntityUid surgeon)
     {
-        return _hands.EnumerateHeld(surgeon).ToList();
+        var heldTools = _hands.EnumerateHeld(surgeon).ToList();
+
+        if (TryComp<PullerComponent>(surgeon, out var pullerComponent) && pullerComponent.Pulling is not null)
+            heldTools.Add(pullerComponent.Pulling.Value);
+
+        return heldTools;
     }
 
     public bool IsLyingDown(EntityUid entity, EntityUid user)

@@ -33,6 +33,8 @@ using Content.Shared.Popups;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Toolshed.TypeParsers;
 using System.Linq;
+using Content.Shared.Silicons.Borgs.Components;
+
 
 namespace Content.Shared._Shitmed.Medical.Surgery;
 
@@ -175,8 +177,8 @@ public abstract partial class SharedSurgerySystem
         //if (!HasComp<ForcedSleepingComponent>(args.Body))
         //    //RaiseLocalEvent(args.Body, new MoodEffectEvent("SurgeryPain"));
         // No mood on Goob :(
-        if (!_inventory.TryGetSlotEntity(args.User, "gloves", out var _)
-            || !_inventory.TryGetSlotEntity(args.User, "mask", out var _))
+        if (!HasComp<BorgChassisComponent>(args.User) && (!_inventory.TryGetSlotEntity(args.User, "gloves", out var _)
+            || !_inventory.TryGetSlotEntity(args.User, "mask", out var _)))
         {
             if (!HasComp<SanitizedComponent>(args.User))
             {

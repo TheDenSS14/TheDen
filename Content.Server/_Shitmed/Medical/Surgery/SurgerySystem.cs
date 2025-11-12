@@ -129,6 +129,9 @@ public sealed class SurgerySystem : SharedSurgerySystem
             || !HasComp<SurgeryTargetComponent>(args.Target))
             return;
 
+        if(!Comp<SurgeryTargetComponent>(args.Target).CanOperateOn)
+            return;
+
         var user = args.User;
         var target = args.Target;
 

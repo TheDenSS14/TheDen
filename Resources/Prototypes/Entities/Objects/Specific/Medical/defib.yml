@@ -98,6 +98,15 @@
   id: DefibrillatorOneHandedUnpowered
   parent: BaseDefibrillator
   suffix: One-Handed, Unpowered
+  components:
+  - type: ItemSlots
+    slots:
+      cell_slot:
+        name: power-cell-slot-component-slot-name-default
+        startingItem: PowerCellMicroreactor
+        disableEject: true
+  - type: PowerCellDraw
+    useRate: 10
 
 - type: entity
   id: DefibrillatorCompact
