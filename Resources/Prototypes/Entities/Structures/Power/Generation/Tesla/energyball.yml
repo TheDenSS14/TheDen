@@ -10,6 +10,7 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 - type: entity
+  parent: BaseObjectVerbsCuteness # DEN: Add interaction verb parent. I guess
   id: BaseEnergyBall
   abstract: true
   components:

@@ -18,6 +18,7 @@
 # SPDX-License-Identifier: MIT
 
 - type: entity
+  parent: BaseObjectVerbsCuteness # DEN: Add interaction verb parent
   id: SingularityGenerator
   name: gravitational singularity generator
   description: An Odd Device which produces a Gravitational Singularity when set up.

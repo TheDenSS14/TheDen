@@ -25,6 +25,7 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 - type: entity
+  parent: BaseObjectVerbsCuteness # DEN: Add interaction verb parent. I guess
   id: Singularity
   name: gravitational singularity
   description: A mesmerizing swirl of darkness that sucks in everything. If it's moving towards you, run.

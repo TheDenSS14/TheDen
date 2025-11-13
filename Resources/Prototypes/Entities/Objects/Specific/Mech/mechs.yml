@@ -26,6 +26,7 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 - type: entity
+  parent: BaseObjectVerbsCuteness # DEN: Add interaction verb parent
   id: BaseMech
   save: false
   abstract: true
