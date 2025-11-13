@@ -38,8 +38,8 @@
     TailOversuit: MobHumanoidAnyMarking
     Head: MobMothHead
     Face: MobHumanoidAnyMarking
-    Hair: MobHumanoidAnyMarking
-    FacialHair: MobHumanoidAnyMarking
+    Hair: MobHumanoidAnyMarking # Den - Hair for moths
+    FacialHair: MobHumanoidAnyMarking # Den - Hair for moths
     Snout: MobHumanoidAnyMarking
     Underwear: MobHumanoidAnyMarking
     Undershirt: MobHumanoidAnyMarking
@@ -65,13 +65,13 @@
 
 - type: markingPoints
   id: MobMothMarkingLimits
-  onlyWhitelisted: false
+  onlyWhitelisted: false # Den - Unrestricted Hair for moths
   points:
     Hair:
-      points: 1
+      points: 1 # Den - Hair for moths
       required: false
     FacialHair:
-      points: 1
+      points: 1 # Den - Hair for moths
       required: false
     Tail:
       points: 1
