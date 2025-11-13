@@ -72,7 +72,7 @@
 
 - type: entity
   name: mining drill
-  parent: [ BaseObjectVerbsCommon, aseSalvageSpecialistContraband, BaseItem ] # DEN: Add interaction verb parent
+  parent: [ BaseObjectVerbsCommon, BaseSalvageSpecialistContraband, BaseItem ] # DEN: Add interaction verb parent
   id: MiningDrill
   description: Powerful tool used to quickly drill through rocks.
   components:
