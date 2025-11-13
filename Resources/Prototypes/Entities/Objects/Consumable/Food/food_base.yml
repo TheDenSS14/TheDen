@@ -21,7 +21,7 @@
 # Base component for consumable food
 #
 - type: entity
-  parent: BaseItem
+  parent: [BaseObjectVerbsEdible, BaseItem] # DEN: Add interaction verb parent
   id: FoodBase
   abstract: true
   components:
@@ -33,10 +33,6 @@
   - type: Sprite
   - type: StaticPrice
     price: 0
-  - type: InteractionVerbs
-    allowedVerbs:
-    - KissObject
-    - LickObject
 
 # This base type is used to cover all of the "obvious" things that should be doable to open-package food.
 # Practically this means injection.
@@ -55,6 +51,7 @@
 # usable by any food that can be opened
 # handles appearance with states "icon" and "icon-open"
 - type: entity
+  parent: BaseObjectVerbsEdible # DEN: Add interaction verb parent
   id: FoodOpenableBase
   abstract: true
   components:
@@ -70,7 +67,3 @@
           True: {state: "icon-open"}
           False: {state: "icon"}
   - type: Openable
-  - type: InteractionVerbs
-    allowedVerbs:
-    - KissObject
-    - LickObject

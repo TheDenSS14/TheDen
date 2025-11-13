@@ -36,7 +36,7 @@
 
 - type: entity
   name: Sword
-  parent: [ BaseSalvageSpecialistSecurityContraband, BaseItem ]
+  parent: [ BaseObjectVerbsCommon, BaseSalvageSpecialistSecurityContraband, BaseItem ] # DEN: Add interaction verb parent
   id: BaseSword
   description: A sharp sword.
   abstract: true
@@ -53,11 +53,6 @@
   - type: Utensil
     types:
       - Knife
-  - type: InteractionVerbs
-    allowedVerbs:
-    - HugObject
-    - KissObject
-    - LickObject
 
 - type: entity
   name: captain's sabre

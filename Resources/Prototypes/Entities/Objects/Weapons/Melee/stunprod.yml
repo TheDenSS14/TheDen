@@ -18,7 +18,7 @@
 
 - type: entity
   name: stun prod
-  parent: [ BaseImprovisedContraband, BaseItem ]
+  parent: [ BaseImprovisedContraband, BaseItem, BaseObjectVerbsCommon ] # DEN: Add interaction verb parent
   id: Stunprod
   description: A stun prod for illegal incapacitation.
   components:
@@ -92,8 +92,3 @@
   - type: Construction
     graph: makeshiftstunprod
     node: msstunprod
-  - type: InteractionVerbs
-    allowedVerbs:
-    - HugObject
-    - KissObject
-    - LickObject

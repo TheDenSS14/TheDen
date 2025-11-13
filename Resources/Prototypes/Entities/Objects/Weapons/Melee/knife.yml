@@ -44,7 +44,7 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 - type: entity
-  parent: BaseItem
+  parent: [BaseObjectVerbsCommon, BaseItem] # DEN: Add interaction verb parent
   id: BaseKnife
   abstract: true
   components:
@@ -91,11 +91,6 @@
       path: /Audio/Medical/Surgery/scalpel1.ogg
     endSound:
       path: /Audio/Medical/Surgery/scalpel2.ogg
-  - type: InteractionVerbs
-    allowedVerbs:
-    - HugObject
-    - KissObject
-    - LickObject
 
 - type: entity
   name: kitchen knife

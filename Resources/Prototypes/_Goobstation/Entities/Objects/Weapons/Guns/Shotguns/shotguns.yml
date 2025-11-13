@@ -6,7 +6,8 @@
 - type: entity
   name: antelope # Saiga-12 reference (saiga is a genus of antelopes)
   # Don't parent to BaseWeaponShotgun because it differs significantly
-  parent: [BaseItem, BaseGunWieldable, BaseSecurityContraband]
+  # DEN: Add interaction verb parent
+  parent: [BaseObjectVerbsCommon, BaseItem, BaseGunWieldable, BaseSecurityContraband]
   id: WeaponShotgunAntelope
   description: A mag-fed shotgun designed for neutralizing threats and keeping criminals at bay with overwhelming force.
   suffix: DO NOT MAP # This should be made obtainable at some point.
@@ -88,9 +89,3 @@
         Blunt: 2.5
   - type: DamageOtherOnHit
     staminaCost: 9.5
-  - type: InteractionVerbs
-    allowedVerbs:
-    - HugObject
-    - KissObject
-    - LickObject
-    # DEN

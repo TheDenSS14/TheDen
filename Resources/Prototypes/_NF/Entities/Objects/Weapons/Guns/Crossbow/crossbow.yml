@@ -7,7 +7,7 @@
 - type: entity
   id: BaseCrossbow
   name: crossbow
-  parent: BaseItem
+  parent: [BaseObjectVerbsCommon, BaseItem] # DEN: Add interaction verb parent
   description: The original rooty tooty point and shooty.
   abstract: true
   components:
@@ -110,11 +110,6 @@
       collection: MetalThud
   - type: DamageOtherOnHit
     staminaCost: 5
-  - type: InteractionVerbs
-    allowedVerbs:
-    - HugObject
-    - KissObject
-    - LickObject
   - type: ItemSlots
     slots:
       projectiles:

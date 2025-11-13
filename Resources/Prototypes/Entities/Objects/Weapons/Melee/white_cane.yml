@@ -14,7 +14,7 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 - type: entity
-  parent: BaseItem
+  parent: [BaseObjectVerbsCommon, BaseItem] # DEN: Add interaction verb parent
   id: WhiteCane
   name: white cane
   description: This isn't for you. It's for the people who can't figure out you're blind when you ask if logistics is the bar. # DeltaV - Logistics Department replacing Cargo
@@ -47,8 +47,3 @@
         Blunt: 1
   - type: UseDelay
     delay: 1
-  - type: InteractionVerbs
-    allowedVerbs:
-    - HugObject
-    - KissObject
-    - LickObject

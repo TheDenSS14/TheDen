@@ -9,8 +9,7 @@
 
 # DEN: Make abstract and move the wieldable component out. This should not break anything.
 - type: entity
-  parent: BaseItem
-  id: CaneBase
+  parent: [BaseObjectVerbsCommon, BaseItem] # DEN: Add interaction verb parent
   abstract: true
   name: cane
   description: A wooden cane.
@@ -34,11 +33,6 @@
     damage: 5
   - type: UseDelay
     delay: 1
-  - type: InteractionVerbs
-    allowedVerbs:
-    - HugObject
-    - KissObject
-    - LickObject
   - type: HeldSupportStanding
   - type: HeldLegSupport
     walkSpeedPenaltyReduction: 0.5
@@ -61,7 +55,7 @@
 
 - type: entity
   name: cane blade
-  parent: [ BaseRivalCompanyContraband, BaseItem ]
+  parent: [ BaseObjectVerbsCommon, BaseRivalCompanyContraband, BaseItem ] # DEN: Add interaction verb parent
   id: CaneBlade
   description: A sharp blade with a cane shaped hilt.
   components:
@@ -84,11 +78,6 @@
     tags:
       - CaneBlade
   - type: DisarmMalus
-  - type: InteractionVerbs
-    allowedVerbs:
-    - HugObject
-    - KissObject
-    - LickObject
 
 - type: entity
   parent: CaneWieldableBase

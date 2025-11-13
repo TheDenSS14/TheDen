@@ -38,7 +38,7 @@
 
 - type: entity
   name: BaseWeaponLauncher
-  parent: BaseItem
+  parent: [BaseObjectVerbsCommon, BaseItem] # DEN: Add interaction verb parent
   id: BaseWeaponLauncher
   description: A rooty tooty point and shooty.
   abstract: true
@@ -72,11 +72,6 @@
   - type: DamageOtherOnHit
     staminaCost: 14
   - type: Execution
-  - type: InteractionVerbs
-    allowedVerbs:
-    - HugObject
-    - KissObject
-    - LickObject
 
 - type: entity
   name: china lake

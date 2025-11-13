@@ -37,7 +37,7 @@
 
 - type: entity
   name: fireaxe
-  parent: [ BaseEngineeringContraband, BaseItem ]
+  parent: [ BaseObjectVerbsCommon, BaseEngineeringContraband, BaseItem ] # DEN: Add interaction verb parent
   id: FireAxe
   description: A versatile tool, capable of prying open airlocks and tearing through windows.
   components:
@@ -107,11 +107,6 @@
   - type: SurgeryTool
     startSound:
       path: /Audio/Medical/Surgery/saw.ogg
-  - type: InteractionVerbs
-    allowedVerbs:
-    - HugObject
-    - KissObject
-    - LickObject
 
 - type: entity
   id: FireAxeFlaming

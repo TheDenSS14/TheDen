@@ -24,7 +24,7 @@
 
 - type: entity
   name: pickaxe
-  parent: [ BaseSalvageSpecialistContraband, BaseItem ]
+  parent: [ BaseObjectVerbsCommon, BaseSalvageSpecialistContraband, BaseItem ] # DEN: Add interaction verb parent
   id: Pickaxe
   description: Notched to perfection, for jamming it into rocks.
   components:
@@ -69,15 +69,10 @@
     sprite: Objects/Weapons/Melee/pickaxe.rsi
     storedRotation: -45
   - type: UseDelay
-  - type: InteractionVerbs
-    allowedVerbs:
-    - HugObject
-    - KissObject
-    - LickObject
 
 - type: entity
   name: mining drill
-  parent: [ BaseSalvageSpecialistContraband, BaseItem ]
+  parent: [ BaseObjectVerbsCommon, aseSalvageSpecialistContraband, BaseItem ] # DEN: Add interaction verb parent
   id: MiningDrill
   description: Powerful tool used to quickly drill through rocks.
   components:
@@ -112,11 +107,6 @@
         Structural: 15
   - type: ThrowingAngle
     angle: 270
-  - type: InteractionVerbs
-    allowedVerbs:
-    - HugObject
-    - KissObject
-    - LickObject
 
 - type: entity
   name: diamond tipped mining drill
@@ -148,7 +138,7 @@
 
 - type: entity
   abstract: true
-  parent: [ BaseSalvageSpecialistContraband, BaseItem ]
+  parent: [ BaseObjectVerbsCommon, BaseSalvageSpecialistContraband, BaseItem ] # DEN: Add interaction verb parent
   id: BaseWeaponCrusher # Crusher? But I...
   name: crusher
   description: An early design of the proto-kinetic accelerator.
@@ -159,11 +149,6 @@
     color: "#ffeead"
     enabled: false
     radius: 4
-  - type: InteractionVerbs
-    allowedVerbs:
-    - HugObject
-    - KissObject
-    - LickObject
 #  - type: PressureDamageChange # Lavaland Change: Pressure damage change for kinetic weapons
 
 - type: entity

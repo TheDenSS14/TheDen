@@ -19,7 +19,7 @@
 
 - type: entity
   name: BaseWeaponHeavyMachineGun
-  parent: BaseItem
+  parent: [BaseObjectVerbsCommon, BaseItem] # DEN: Add interaction verb parent
   id: BaseWeaponHeavyMachineGun
   description: Spray and pray
   abstract: true
@@ -56,11 +56,6 @@
       collection: MetalThud
   - type: DamageOtherOnHit
     staminaCost: 16
-  - type: InteractionVerbs
-    allowedVerbs:
-    - HugObject
-    - KissObject
-    - LickObject
 
 - type: entity
   name: minigun

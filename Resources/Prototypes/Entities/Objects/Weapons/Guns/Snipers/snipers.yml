@@ -40,7 +40,7 @@
 
 - type: entity
   name: BaseWeaponSniper
-  parent: BaseItem
+  parent: [BaseObjectVerbsCommon, BaseItem] # DEN: Add interaction verb parent
   id: BaseWeaponSniper
   description: A rooty tooty point and shooty.
   abstract: true
@@ -98,11 +98,6 @@
         Blunt: 2.5
   - type: DamageOtherOnHit
     staminaCost: 7.5
-  - type: InteractionVerbs
-    allowedVerbs:
-    - HugObject
-    - KissObject
-    - LickObject
 
 - type: entity
   name: Kardashev-Mosin

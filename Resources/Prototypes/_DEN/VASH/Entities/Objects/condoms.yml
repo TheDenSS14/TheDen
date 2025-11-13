@@ -4,7 +4,7 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 - type: entity #copied from Entities/Objects/Misc/monkeycubes.yml
-  parent: BaseItem
+  parent: [BaseObjectVerbsLewd, BaseItem]
   name: wrapped condom
   suffix: Wrapped
   id: CondomWrapped
@@ -23,13 +23,9 @@
   - type: Sprite
     sprite: _DEN/VASH/Objects/condoms.rsi
     state: condom
-  - type: InteractionVerbs
-    allowedVerbs:
-    - KissObject
-    - LickObject
 
 - type: entity #copied from Entities/Objects/Specific/rehydrateable.yml
-  parent: BaseItem
+  parent: [BaseObjectVerbsLewd, BaseItem]
   id: CondomUnwrapped
   name: condom
   description: Have fun!
@@ -46,9 +42,5 @@
     state: condomout
   - type: EmitSoundOnUse
     sound: /Audio/Effects/Fluids/blood2.ogg # I don't feel confident trying to find a rubber sound free of copyright. This should be just fine. -KC
-  - type: InteractionVerbs # For the weirdos. -KC
-    allowedVerbs:
-    - KissObject
-    - LickObject
 # when consulted with the council, it was frowned upon to make the condom a container, mostly from the consent violations it could/would cause. -KC
 # when consulted with the council, leaving behind a used condom was frowned upon, so it just vanishes. -KC
