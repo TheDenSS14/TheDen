@@ -89,7 +89,7 @@
 
 - type: entity
   id: VendingMachine
-  parent: BaseMachinePowered
+  parent: [BaseMachinePowered, BaseObjectVerbsCuteness] # DEN: Add interaction verb parent
   name: vending machine
   description: Just add capitalism!
   abstract: true

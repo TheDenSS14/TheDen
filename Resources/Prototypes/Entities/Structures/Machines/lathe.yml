@@ -306,7 +306,7 @@
 
 - type: entity
   id: BaseLathe
-  parent: [ BaseMachinePowered, ConstructibleMachine ]
+  parent: [ BaseMachinePowered, ConstructibleMachine, BaseObjectVerbsCuteness ] # DEN: Add interaction verb parent
   abstract: true
   name: lathe
   components:

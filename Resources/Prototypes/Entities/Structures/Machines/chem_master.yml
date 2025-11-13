@@ -44,7 +44,7 @@
 
 - type: entity
   id: ChemMaster
-  parent: [ BaseMachinePowered, ConstructibleMachine ]
+  parent: [ BaseMachinePowered, ConstructibleMachine, BaseObjectVerbsCuteness ] # DEN: Add interaction verb parent
   name: ChemMaster 4000
   description: An industrial grade chemical manipulator with pill and bottle production included.
   placement:

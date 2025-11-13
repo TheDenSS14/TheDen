@@ -13,7 +13,7 @@
 
 - type: entity
   id: MachineFlatpacker
-  parent: [ BaseMachinePowered, ConstructibleMachine, BaseMaterialSiloUtilizer ]
+  parent: [ BaseMachinePowered, ConstructibleMachine, BaseMaterialSiloUtilizer, BaseObjectVerbsCuteness ] # DEN: Add interaction verb parent
   name: Flatpacker 1001
   description: An industrial machine used for expediting machine construction across the station.
   components:

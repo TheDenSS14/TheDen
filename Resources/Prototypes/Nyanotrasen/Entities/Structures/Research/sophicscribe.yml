@@ -12,7 +12,7 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 - type: entity
-  parent: BaseStructure
+  parent: [BaseStructure, BaseObjectVerbsCuteness] # DEN: Add interaction verb parent
   id: SophicScribe
   name: Sophia
   description: Latest reports on the Noösphere!

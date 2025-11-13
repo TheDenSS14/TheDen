@@ -26,7 +26,11 @@
 - type: entity
   abstract: true
   id: PortableGeneratorBase
-  parent: [ BaseMachine, SmallConstructibleMachine, StructureWheeled]
+  parent:
+  - BaseMachine
+  - SmallConstructibleMachine
+  - StructureWheeled
+  - BaseObjectVerbsCuteness # DEN: Add interaction verb parent
   components:
     # Basic properties
     - type: Transform

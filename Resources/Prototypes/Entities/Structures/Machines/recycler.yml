@@ -27,7 +27,7 @@
 
 - type: entity
   id: Recycler
-  parent: BaseMachinePowered
+  parent: [BaseMachinePowered, BaseObjectVerbsCuteness] # DEN: Add interaction verb parent
   name: recycler
   description: A large crushing machine used to recycle small items inefficiently. There are lights on the side.
   components:
