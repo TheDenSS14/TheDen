@@ -10,6 +10,7 @@
 # DEN: Make abstract and move the wieldable component out. This should not break anything.
 - type: entity
   parent: [BaseObjectVerbsCommon, BaseItem] # DEN: Add interaction verb parent
+  id: CaneBase
   abstract: true
   name: cane
   description: A wooden cane.
