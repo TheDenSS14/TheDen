@@ -48,7 +48,7 @@
   id: KitchenMicrowaveUpstream
   suffix: Upstream
 # End of Harmony Change
-  parent: [ BaseMachinePowered, SmallConstructibleMachine, BaseObjectVerbsCuteness ] # DEN: Add interaction verb parent
+  parent: [ BaseMachinePowered, SmallConstructibleMachine ]
   name: microwave
   categories: [ HideSpawnMenu ] # Harmony Change: Hides Upstream Microwave Prototypes from the spawn menu
   description: It's magic.
@@ -161,6 +161,13 @@
   - type: GuideHelp
     guides:
     - Chef
+  - type: InteractionVerbs # DEN: Add interaction verbs
+    allowedVerbs:
+    - KnockOn
+    - HugObject
+    - PetObject
+    - KissObject
+    - LickObject
 
 - type: entity
 # Start of Harmony Change: Updates ID to be used as a parent and adds upstream suffix
