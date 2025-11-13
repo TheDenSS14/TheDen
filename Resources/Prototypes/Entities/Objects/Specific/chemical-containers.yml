@@ -1,23 +1,23 @@
-# SPDX-FileCopyrightText: 2023 Chris <HoofedEar@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2023 CrigCrag <137215465+CrigCrag@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2023 Fahasor <70820551+Fahasor@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2023 IProduceWidgets <107586145+IProduceWidgets@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2023 deltanedas <39013340+deltanedas@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2023 freeman2651 <104049107+freeman2651@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2023 lzk <124214523+lzk228@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT <77995199+DEATHB4DEFEAT@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 Debug <49997488+DebugOk@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 Errant <35878406+Errant-4@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 Kevin Zheng <kevinz5000@gmail.com>
-# SPDX-FileCopyrightText: 2024 Nairod <110078045+nairodian@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 Tayrtahn <tayrtahn@gmail.com>
-# SPDX-FileCopyrightText: 2024 liltenhead <104418166+liltenhead@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 sleepyyapril <flyingkarii@gmail.com>
-# SPDX-FileCopyrightText: 2024 themias <89101928+themias@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 EctoplasmIsGood <109397347+EctoplasmIsGood@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 NeLepus <l3pusp3pus@gmail.com>
-# SPDX-FileCopyrightText: 2025 Rosycup <178287475+Rosycup@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Chris
+# SPDX-FileCopyrightText: 2023 CrigCrag
+# SPDX-FileCopyrightText: 2023 Fahasor
+# SPDX-FileCopyrightText: 2023 IProduceWidgets
+# SPDX-FileCopyrightText: 2023 deltanedas
+# SPDX-FileCopyrightText: 2023 freeman2651
+# SPDX-FileCopyrightText: 2023 lzk
+# SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT
+# SPDX-FileCopyrightText: 2024 Debug
+# SPDX-FileCopyrightText: 2024 Errant
+# SPDX-FileCopyrightText: 2024 Kevin Zheng
+# SPDX-FileCopyrightText: 2024 Nairod
+# SPDX-FileCopyrightText: 2024 Tayrtahn
+# SPDX-FileCopyrightText: 2024 liltenhead
+# SPDX-FileCopyrightText: 2024 sleepyyapril
+# SPDX-FileCopyrightText: 2024 themias
+# SPDX-FileCopyrightText: 2025 EctoplasmIsGood
+# SPDX-FileCopyrightText: 2025 NeLepus
+# SPDX-FileCopyrightText: 2025 Rosycup
+# SPDX-FileCopyrightText: 2025 TheLuggage05
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -32,7 +32,7 @@
         beaker:
           maxVol: 200
     - type: Sprite
-      sprite: Objects/Specific/Chemistry/jug.rsi
+      sprite: _Impstation/Objects/Specific/Chemistry/jug.rsi # imp
       layers:
         - state: jug
         - state: jug1
@@ -40,7 +40,7 @@
           visible: false
     - type: Item
       size: Normal
-      sprite: Objects/Specific/Chemistry/jug.rsi
+      sprite: _Impstation/Objects/Specific/Chemistry/jug.rsi # imp
     - type: MixableSolution
       solution: beaker
     - type: RefillableSolution
@@ -67,7 +67,7 @@
       solution: beaker
     - type: Appearance
     - type: SolutionContainerVisuals
-      maxFillLevels: 6
+      maxFillLevels: 8 # imp
       fillBaseName: jug
       inHandsMaxFillLevels: 5
       inHandsFillBaseName: -fill-

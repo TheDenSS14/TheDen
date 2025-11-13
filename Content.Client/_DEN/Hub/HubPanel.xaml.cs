@@ -111,11 +111,17 @@ public sealed partial class HubPanel : PanelContainer
         // it's either https:// or http://. this is enforced.
         // ReSharper disable once ConvertIfStatementToConditionalTernaryExpression ugly
         if (formerAddress.StartsWith(HttpsString))
-            startPos = HttpsString.Length + 1;
-        else
             startPos = HttpsString.Length;
+        else
+            startPos = HttpsString.Length - 1;
 
         var newAddress = formerAddress.Substring(startPos);
+
+        if (!newAddress.Contains("://"))
+        {
+            newAddress = "udp://" + newAddress;
+        }
+        
         return newAddress;
     }
 
