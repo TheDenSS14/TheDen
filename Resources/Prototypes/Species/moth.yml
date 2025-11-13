@@ -38,6 +38,8 @@
     TailOversuit: MobHumanoidAnyMarking
     Head: MobMothHead
     Face: MobHumanoidAnyMarking
+    Hair: MobHumanoidAnyMarking
+    FacialHair: MobHumanoidAnyMarking
     Snout: MobHumanoidAnyMarking
     Underwear: MobHumanoidAnyMarking
     Undershirt: MobHumanoidAnyMarking
@@ -63,13 +65,13 @@
 
 - type: markingPoints
   id: MobMothMarkingLimits
-  onlyWhitelisted: true
+  onlyWhitelisted: false
   points:
     Hair:
-      points: 0
+      points: 1
       required: false
     FacialHair:
-      points: 0
+      points: 1
       required: false
     Tail:
       points: 1
