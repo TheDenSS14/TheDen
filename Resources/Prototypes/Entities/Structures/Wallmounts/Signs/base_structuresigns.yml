@@ -13,6 +13,7 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 - type: entity
+  parent: BaseObjectVerbsCutenessWall # DEN: Add interaction verb parent
   id: BaseSign
   name: base sign
   abstract: true

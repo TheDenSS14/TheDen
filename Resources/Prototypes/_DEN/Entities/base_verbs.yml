@@ -45,3 +45,13 @@
     - PetObject
     - KissObject
     - LickObject
+
+- type: entity
+  abstract: true
+  id: BaseObjectVerbsCutenessWall # not huggable
+  components:
+  - type: InteractionVerbs
+    allowedVerbs:
+    - PetObject
+    - KissObject
+    - LickObject
