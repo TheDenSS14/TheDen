@@ -8,7 +8,7 @@
 - type: entity
   id: Jukebox
   name: jukebox
-  parent: [ BaseMachinePowered, ConstructibleMachine, BaseObjectVerbsCuteness ] # DEN: Add interaction verb parent
+  parent: [ BaseMachinePowered, ConstructibleMachine ]
   description: A machine capable of playing a wide variety of tunes. Enjoyment not guaranteed.
   components:
   - type: StationAiWhitelist

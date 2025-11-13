@@ -7,7 +7,7 @@
 # Autodocs
 
 - type: entity
-  parent: [ConstructibleMachine, BaseMachinePowered, BaseObjectVerbsCuteness] # DEN: Add interaction verb parent
+  parent: [ConstructibleMachine, BaseMachinePowered]
   id: Autodoc
   name: Autodoc Mk.XIV
   description: A programmable robotic surgeon capable of automatically operating on patients.
