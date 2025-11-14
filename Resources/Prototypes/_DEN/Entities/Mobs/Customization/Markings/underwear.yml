@@ -11,9 +11,9 @@
   parent: BaseUnderwearSocks
   id: UnderwearSocksAnkle
   # what fucking ever man
-  layering:
-    ankle-left: LFoot
-    ankle-right: RFoot
+  # layering:
+  #   ankle-left: LFoot
+  #   ankle-right: RFoot
   colorLinks:
     ankle-left: ankle-right
   sprites:
@@ -33,11 +33,11 @@
       tips-right:
         type: !type:SimpleColoring
             color: "#999999"
-  layering:
-    ankle-left: LFoot
-    ankle-right: RFoot
-    tips-left: LFoot
-    tips-right: RFoot
+  # layering:
+  #   ankle-left: LFoot
+  #   ankle-right: RFoot
+  #   tips-left: LFoot
+  #   tips-right: RFoot
   colorLinks:
     ankle-left: ankle-right
     tips-left: tips-right
@@ -54,9 +54,9 @@
 - type: marking
   parent: BaseUnderwearSocks
   id: UnderwearSocksQuarter
-  layering:
-    quarter-left: LFoot
-    quarter-right: RFoot
+  # layering:
+  #   quarter-left: LFoot
+  #   quarter-right: RFoot
   colorLinks:
     quarter-left: quarter-right
   sprites:
@@ -76,11 +76,11 @@
       tips-right:
         type: !type:SimpleColoring
             color: "#999999"
-  layering:
-    quarter-left: LFoot
-    quarter-right: RFoot
-    tips-left: LFoot
-    tips-right: RFoot
+  # layering:
+  #   quarter-left: LFoot
+  #   quarter-right: RFoot
+  #   tips-left: LFoot
+  #   tips-right: RFoot
   colorLinks:
     quarter-left: quarter-right
     tips-left: tips-right
@@ -97,9 +97,9 @@
 - type: marking
   parent: BaseUnderwearSocks
   id: UnderwearSocksKnee
-  layering:
-    knee-left: LFoot
-    knee-right: RFoot
+  # layering:
+  #   knee-left: LFoot
+  #   knee-right: RFoot
   colorLinks:
     knee-left: knee-right
   sprites:
@@ -122,13 +122,13 @@
       tips-right:
         type: !type:SimpleColoring
             color: "#999999"
-  layering:
-    knee-left: LFoot
-    knee-right: RFoot
-    stripes-knee-left: LFoot
-    stripes-knee-right: RFoot
-    tips-left: LFoot
-    tips-right: RFoot
+  # layering:
+  #   knee-left: LFoot
+  #   knee-right: RFoot
+  #   stripes-knee-left: LFoot
+  #   stripes-knee-right: RFoot
+  #   tips-left: LFoot
+  #   tips-right: RFoot
   colorLinks:
     knee-left: knee-right
     stripes-knee-left: stripes-knee-right
@@ -150,9 +150,9 @@
 - type: marking
   parent: BaseUnderwearSocks
   id: UnderwearSocksThigh
-  layering:
-    thigh-left: LFoot
-    thigh-right: RFoot
+  # layering:
+  #   thigh-left: LFoot
+  #   thigh-right: RFoot
   colorLinks:
     thigh-left: thigh-right
   sprites:
@@ -175,13 +175,13 @@
       tips-right:
         type: !type:SimpleColoring
             color: "#999999"
-  layering:
-    thigh-left: LFoot
-    thigh-right: RFoot
-    stripes-thigh-left: LFoot
-    stripes-thigh-right: RFoot
-    tips-left: LFoot
-    tips-right: RFoot
+  # layering:
+  #   thigh-left: LFoot
+  #   thigh-right: RFoot
+  #   stripes-thigh-left: LFoot
+  #   stripes-thigh-right: RFoot
+  #   tips-left: LFoot
+  #   tips-right: RFoot
   colorLinks:
     thigh-left: thigh-right
     stripes-thigh-left: stripes-thigh-right
