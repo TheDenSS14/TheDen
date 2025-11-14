@@ -1,0 +1,103 @@
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+[log]
+path = "logs"
+format = "log_%(date)s-%(time)s.txt"
+enabled = true
+
+[net]
+tickrate = 30
+# do not touch
+port = 1212
+# Currently debugging net issues, these are commented out for now
+# sendbuffersize = 262142
+# receivebuffersize = 262142
+sendbuffersize = 524284
+
+[status]
+enabled = true
+
+[infolinks]
+discord = "https://denstation.net/discord"
+github = "https://denstation.net/github"
+bug_report = "https://denstation.net/github"
+
+[server]
+id = "salvation"
+content_id = "salvation"
+
+[game]
+hostname = "The Den"
+desc = "The Den is an 18+, furry-welcoming, medium roleplay server focusing on giving you the freedom to comfortably develop your character's story. We offer SOPs, laws, and server rules that trust in your ability to roleplay, focusing entirely on the comfort, safety, and the stories our players make where we can."
+soft_max_players = 80
+auto_eat_drinks = true
+auto_eat_food = true
+loadouts_points = 30
+traits_default_points = 20
+traits_max = 25
+defaultpreset = "irregular-extended"
+lobbyduration = 360
+maxcharacterslots = 100
+
+[hub]
+# Set to true to show this server on the public server list
+# Before enabling this, read: https://docs.spacestation14.io/hosts/hub-rules
+advertise = true
+# Comma-separated list of tags, useful for categorizing your server.
+tags = "18+,lang:en-US,rp:med,region:am_n_e,no_tag_infer"
+# Comma-separated list of URLs of hub servers to advertise to.
+hub_urls = ""
+
+[whitelist]
+enabled = true
+
+[admin]
+see_own_notes = true
+deadmin_on_join = true
+new_player_threshold = 600
+use_discord_role_color = true
+use_discord_role_name = true
+bwoink_use_admin_ooc_color = true
+
+[events]
+ramping_average_chaos = 0.65
+ramping_average_end_time = 60
+
+[ghost]
+respawn_max_players = 120
+allow_same_character = true
+
+[build]
+fork_id = "theden"
+
+[vote]
+autovote_enabled = true
+
+[shuttle]
+arrivals_planet = false
+recall_turning_point = 0
+auto_call_extension_time = 60
+
+[ic]
+restricted_names = false
+
+[chat]
+max_message_length = 30000
+
+[loki]
+enabled = true
+name = "theden"
+address = "http://localhost:3100"
+
+[metrics]
+enabled = true
+host = "localhost"
+port = 9091
+
+[atmos]
+space_wind = false
+
+[reclaimer]
+allow_gibbing = false

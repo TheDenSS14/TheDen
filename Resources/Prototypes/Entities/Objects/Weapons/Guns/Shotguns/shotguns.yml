@@ -43,11 +43,11 @@
 # SPDX-FileCopyrightText: 2025 VMSolidus
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: entity
   name: BaseWeaponShotgun
-  parent: BaseItem
+  parent: [BaseObjectVerbsCommon, BaseItem] # DEN: Add interaction verb parent
   id: BaseWeaponShotgun
   description: A rooty tooty point and shooty.
   abstract: true
@@ -109,11 +109,6 @@
         Blunt: 2.5
   - type: DamageOtherOnHit
     staminaCost: 9.5
-  - type: InteractionVerbs
-    allowedVerbs:
-    - HugObject
-    - KissObject
-    - LickObject
 
 - type: entity
   name: Bulldog

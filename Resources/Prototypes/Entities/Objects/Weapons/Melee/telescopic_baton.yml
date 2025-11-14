@@ -2,13 +2,14 @@
 # SPDX-FileCopyrightText: 2024 Skubman
 # SPDX-FileCopyrightText: 2024 dge21
 # SPDX-FileCopyrightText: 2025 MajorMoth
+# SPDX-FileCopyrightText: 2025 portfiend
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: entity
   id: TelescopicBaton
-  parent: [ BaseCommandContraband, BaseItem ]
+  parent: [ BaseObjectVerbsCommon, BaseCommandContraband, BaseItem ] # DEN: Add interaction verb parent
   name: telescopic baton
   description: A compact and harmless personal defense weapon. Sturdy enough to knock the feet out from under attackers.
   components:
@@ -64,11 +65,6 @@
         enum.TelescopicBatonVisuals.Layer:
           True: { state: icon }
           False: { state: icon-off }
-  - type: InteractionVerbs
-    allowedVerbs:
-    - HugObject
-    - KissObject
-    - LickObject
 
 - type: entity
   parent: TelescopicBaton

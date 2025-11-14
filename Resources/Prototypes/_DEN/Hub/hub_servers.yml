@@ -4,21 +4,21 @@
 
 - type: hubServer
   id: salvation
-  connectionString: "https://denstation.net/salvation"
+  connectionString: "http://51.222.244.125:1212"
   displayName: hub-server-salvation-name
 
 - type: hubServer
   id: eternity
-  connectionString: "https://denstation.net/eternity"
+  connectionString: "http://51.222.244.125:1215"
   displayName: hub-server-eternity-name
   canConnect: false
 
 - type: hubServer
   id: damnation
-  connectionString: "https://denstation.net/damnation"
+  connectionString: "http://51.222.244.125:1213"
   displayName: hub-server-damnation-name
 
 - type: hubServer
   id: mapping
-  connectionString: "https://denstation.net/mapping"
+  connectionString: "http://51.222.244.125:1214"
   displayName: hub-server-mapping-name

@@ -60,7 +60,7 @@
 
 - type: entity
   id: BaseWeaponBattery
-  parent: BaseItem
+  parent: [BaseObjectVerbsCommon, BaseItem] # DEN: Add interaction verb parent
   abstract: true
   components:
   - type: Sprite
@@ -115,15 +115,10 @@
   - type: SurgeryTool
     endSound:
       path: /Audio/Weapons/Guns/Gunshots/laser.ogg
-  - type: InteractionVerbs
-    allowedVerbs:
-    - HugObject
-    - KissObject
-    - LickObject
 
 - type: entity
   id: BaseWeaponPowerCell
-  parent: BaseItem
+  parent: [BaseObjectVerbsCommon, BaseItem] # DEN: Add interaction verb parent
   abstract: true
   components:
   - type: Sprite
@@ -179,11 +174,6 @@
   - type: SurgeryTool
     endSound:
       path: /Audio/Weapons/Guns/Gunshots/laser.ogg
-  - type: InteractionVerbs
-    allowedVerbs:
-    - HugObject
-    - KissObject
-    - LickObject
 
 - type: entity
   id: BaseWeaponBatterySmall

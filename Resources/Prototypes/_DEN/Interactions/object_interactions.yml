@@ -1,8 +1,9 @@
-# SPDX-FileCopyrightText: 2025 MajorMoth <61519600+MajorMoth@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 Rosycup <178287475+Rosycup@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 MajorMoth
+# SPDX-FileCopyrightText: 2025 Rosycup
+# SPDX-FileCopyrightText: 2025 portfiend
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 #add compenents to the items or their bases like this
 #- type: InteractionVerbs
@@ -49,7 +50,7 @@
 - type: Interaction
   id: KissObject
   parent: BaseHands
-  priority: -13
+  priority: -14
   delay: 0.4
   action:
     !type:MoodAction
@@ -61,7 +62,7 @@
 - type: Interaction
   id: LickObject
   parent: BaseHands
-  priority: -14
+  priority: -13
   delay: 0.7
   action:
     !type:MoodAction

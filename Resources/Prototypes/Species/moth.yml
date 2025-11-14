@@ -11,6 +11,7 @@
 # SPDX-FileCopyrightText: 2025 BloodfiendishOperator
 # SPDX-FileCopyrightText: 2025 Jakumba
 # SPDX-FileCopyrightText: 2025 Skubman
+# SPDX-FileCopyrightText: 2025 Tyler Nguyen
 # SPDX-FileCopyrightText: 2025 VMSolidus
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
@@ -38,6 +39,8 @@
     TailOversuit: MobHumanoidAnyMarking
     Head: MobMothHead
     Face: MobHumanoidAnyMarking
+    Hair: MobHumanoidAnyMarking # Den - Hair for moths
+    FacialHair: MobHumanoidAnyMarking # Den - Hair for moths
     Snout: MobHumanoidAnyMarking
     Underwear: MobHumanoidAnyMarking
     Undershirt: MobHumanoidAnyMarking
@@ -63,13 +66,13 @@
 
 - type: markingPoints
   id: MobMothMarkingLimits
-  onlyWhitelisted: true
+  onlyWhitelisted: false # Den - Unrestricted Hair for moths
   points:
     Hair:
-      points: 0
+      points: 1 # Den - Hair for moths
       required: false
     FacialHair:
-      points: 0
+      points: 1 # Den - Hair for moths
       required: false
     Tail:
       points: 1

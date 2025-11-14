@@ -40,11 +40,12 @@
 # SPDX-FileCopyrightText: 2025 MajorMoth
 # SPDX-FileCopyrightText: 2025 Rosycup
 # SPDX-FileCopyrightText: 2025 Sir Warock
+# SPDX-FileCopyrightText: 2025 portfiend
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: entity
-  parent: BaseItem
+  parent: [BaseObjectVerbsCommon, BaseItem] # DEN: Add interaction verb parent
   id: BaseKnife
   abstract: true
   components:
@@ -91,11 +92,6 @@
       path: /Audio/Medical/Surgery/scalpel1.ogg
     endSound:
       path: /Audio/Medical/Surgery/scalpel2.ogg
-  - type: InteractionVerbs
-    allowedVerbs:
-    - HugObject
-    - KissObject
-    - LickObject
 
 - type: entity
   name: kitchen knife
