@@ -19,6 +19,8 @@
 # SPDX-FileCopyrightText: 2024 shamp
 # SPDX-FileCopyrightText: 2025 EctoplasmIsGood
 # SPDX-FileCopyrightText: 2025 Eris
+# SPDX-FileCopyrightText: 2025 Vanessa
+# SPDX-FileCopyrightText: 2025 portfiend
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
@@ -30,6 +32,7 @@
   name: survival-title
   showInVote: true # secret # DeltaV - Me when the survival. Used for periapsis.
   highDanger: true
+  minPlayers: 40 # DEN: Minimum population for high-danger presets to account for lack of security
   description: survival-description
   rules:
     - RampingStationEventScheduler
