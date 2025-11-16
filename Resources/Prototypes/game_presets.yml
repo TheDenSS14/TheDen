@@ -124,6 +124,7 @@
   name: secret-title
   showInVote: true
   highDanger: true
+  minPlayers: 40 # DEN: Minimum population for high-danger presets to account for lack of security
   description: secret-description
   rules:
     - Secret
@@ -171,6 +172,7 @@
   description: traitor-description
   showInVote: true
   highDanger: true
+  minPlayers: 40 # DEN: Minimum population for high-danger presets to account for lack of security
   rules:
     - Traitor
     - SubGamemodesRule
