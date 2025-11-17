@@ -155,7 +155,7 @@
   parent: [ ClothingUniformSkirtBase, ClothingUniformFoldableBase ]
   id: ClothingUniformJumpskirtVirology
   name: virology jumpskirt
-  description: It's made of a special fiber that gives special protection against biohazards. It has a virologist rank stripe on it.
+  description: It's made of a special fiber that gives special protection against biohazards. It has a virologist rank stripe on it. Do not be afraid, you are the cure.
   components:
   - type: Sprite
     sprite: Clothing/Uniforms/Jumpskirt/virology.rsi
@@ -340,9 +340,9 @@
   description: It's got a plus on it, that's a good thing right?
   components:
   - type: Sprite
-    sprite: Clothing/Uniforms/Jumpskirt/paramedic.rsi
+    sprite: _DEN/Clothing/Uniforms/Jumpskirt/paramedic.rsi
   - type: Clothing
-    sprite: Clothing/Uniforms/Jumpskirt/paramedic.rsi
+    sprite: _DEN/Clothing/Uniforms/Jumpskirt/paramedic.rsi
 
 - type: entity
   parent: [ClothingUniformBase, ClothingUniformRollableBase] # Added Rollable Sprite

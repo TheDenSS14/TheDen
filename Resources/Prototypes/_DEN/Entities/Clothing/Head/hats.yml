@@ -62,3 +62,100 @@
     sprite: _DEN/Clothing/Head/Hats/beret_colorable.rsi
   - type: Clothing
     sprite: _DEN/Clothing/Head/Hats/beret_colorable.rsi
+
+- type: entity
+  parent: ClothingHeadHatBeret
+  id: ClothingHeadHatParamedicBeret
+  name: paramedic beret
+  decription: "A beret worn by emergency medical technicians and the like, adorned with a white cross."
+  components:
+  - type: Sprite
+    sprite: _DEN/Clothing/Head/Hats/beret_paramedic.rsi
+  - type: Clothing
+    sprite: _DEN/Clothing/Head/Hats/beret_paramedic.rsi
+
+# siren beret start
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatParamedicSirenBeret
+  name: salvation shako
+  description: "A noisy beret used to indicate a medical emergency response. Requires batteries. Not actually a shako."
+  components:
+  - type: Sprite
+    sprite: _DEN/Clothing/Head/Hats/beret_paramedic_siren.rsi
+    layers:
+      - state: icon
+      - state: icon-light
+        visible: false
+        shader: unshaded
+        map: [ "light" ]
+  - type: Appearance
+  - type: Clothing
+    sprite: _DEN/Clothing/Head/Hats/beret_paramedic_siren.rsi
+    equippedPrefix: off
+  - type: ItemToggle
+    predictable: false
+    onUse: false
+    soundActivate:
+      path: /Audio/Items/flashlight_on.ogg
+    soundDeactivate:
+      path: /Audio/Items/flashlight_off.ogg
+    soundFailToActivate:
+      path: /Audio/Machines/button.ogg
+  - type: ItemToggleActiveSound
+    activeSound:
+      path: /Audio/_Impstation/Effects/Vehicle/ambulancesiren.ogg
+      params:
+        volume: -3
+  - type: UseDelay
+    delay: 1.0
+  - type: ToggleClothing
+    action: ActionToggleSalvationShako
+  - type: ItemTogglePointLight
+  - type: ToggleableVisuals
+    spriteLayer: light
+    clothingVisuals:
+      head:
+      - state: on-equipped-HELMET
+  - type: PointLight
+    enabled: false
+    radius: 1.4
+    energy: 2
+    color: deepskyblue
+    netsync: false
+    mask: /Textures/Effects/LightMasks/double_cone.png
+  - type: RotatingLight
+    speed: 360
+  - type: PowerCellSlot
+    cellSlotId: cell_slot
+  - type: ContainerContainer
+    containers:
+      cell_slot: !type:ContainerSlot
+  - type: ItemSlots
+    slots:
+      cell_slot:
+        name: power-cell-slot-component-slot-name-default
+        startingItem: PowerCellSmall
+  - type: PowerCellDraw
+    drawRate: 1
+  - type: ToggleCellDraw
+
+- type: entity
+  parent: ClothingHeadHatParamedicSiren
+  id: ClothingHeadHatParamedicSirenEmpty
+  suffix: Empty
+  components:
+  - type: ItemSlots
+    slots:
+      cell_slot:
+        name: power-cell-slot-component-slot-name-default
+
+- type: entity
+  id: ActionToggleSalvationShako
+  name: Toggle Salvation Shako
+  description: Turn the siren on or off.
+  components:
+  - type: InstantAction
+    itemIconStyle: BigItem
+    event: !type:ToggleActionEvent
+# siren beret end
