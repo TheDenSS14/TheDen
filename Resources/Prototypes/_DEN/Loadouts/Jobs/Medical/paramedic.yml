@@ -43,3 +43,17 @@
       - Medical
   items:
     - ClothingHeadHatParamedicSirenBeret
+
+- type: loadout
+  id: LoadoutMedicalOuterParamedicWB
+  category: JobsMedicalParamedic
+  cost: 0
+  exclusive: true
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutParamedicOuter
+  - !type:CharacterDepartmentRequirement
+    departments:
+      - Medical
+  items:
+    - ClothingOuterCoatParamedicWB
