@@ -165,3 +165,19 @@
   parent: [ ClothingUniformBaseFlipped, ClothingUniformJumpsuitMilitaryBrat ]
   id: ClothingUniformJumpsuitMilitaryBratFlipped
   name: military brat's cargo pants
+
+- type: entity
+  parent: ClothingUniformBaseFlippable
+  id: ClothingUniformJumpsuitBlackTurtleneckShorts
+  name: black turtleneck shorts
+  description: A simple black turtleneck with shorts. Perfect for any wannabe spy.
+  components:
+  - type: Sprite
+    sprite: _DEN/Clothing/Uniforms/Jumpsuit/blackturtleneckshorts.rsi
+  - type: Clothing
+    sprite: _DEN/Clothing/Uniforms/Jumpsuit/blackturtleneckshorts.rsi
+
+- type: entity
+  parent: [ ClothingUniformBaseFlipped, ClothingUniformJumpsuitBlackTurtleneck ]
+  id: ClothingUniformJumpsuitBlackTurtleneckShortsFlipped
+  name: black turtleneck shorts
