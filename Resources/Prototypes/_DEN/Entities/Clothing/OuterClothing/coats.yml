@@ -19,3 +19,14 @@
     sprite: _DEN/Clothing/OuterClothing/Coats/technicolor_beige.rsi
   - type: Clothing
     sprite: _DEN/Clothing/OuterClothing/Coats/technicolor_beige.rsi
+
+- type: entity
+  parent: ClothingOuterStorageFoldableBase
+  id: ClothingOuterCoatTechnicolorWhite
+  name: white technicolor jacket
+  description: A stylish retro jacket, white with rainbow-colored stripes.
+  components:
+  - type: Sprite
+    sprite: _DEN/Clothing/OuterClothing/Coats/technicolor_white.rsi
+  - type: Clothing
+    sprite: _DEN/Clothing/OuterClothing/Coats/technicolor_white.rsi
