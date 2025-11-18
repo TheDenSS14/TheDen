@@ -5,16 +5,22 @@
 
 - type: marking
   id: WingsDragon
-  bodyPart: Wings
+  bodyPart: Chest
   markingCategory: Wings
   speciesRestriction: [Reptilian]
+  layering:
+    # This actually helps. Thanks Floof
+    dragon-front: TailBehind
+    dragon-back: TailOversuit
   sprites:
   - sprite: _SimpleStation/Mobs/Customization/wings64x34.rsi
-    state: dragon
+    state: dragon-front
+  - sprite: _SimpleStation/Mobs/Customization/wings64x34.rsi
+    state: dragon-back
 
 - type: marking
   id: WingsDragonTwotone
-  bodyPart: Wings
+  bodyPart: Chest
   markingCategory: Wings
   speciesRestriction: [Reptilian]
   sprites:
