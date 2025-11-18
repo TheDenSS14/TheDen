@@ -74,6 +74,8 @@
   category: JobsMedicalChemist
   cost: 0
   requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutChemistEquipment
     - !type:CharacterJobRequirement
       jobs:
         - Chemist
