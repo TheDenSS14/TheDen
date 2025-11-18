@@ -30,3 +30,14 @@
     sprite: _DEN/Clothing/OuterClothing/Coats/technicolor_white.rsi
   - type: Clothing
     sprite: _DEN/Clothing/OuterClothing/Coats/technicolor_white.rsi
+
+- type: entity
+  parent: ClothingOuterStorageBase
+  id: ClothingOuterCoatSweaterVest
+  name: sweater vest
+  description: This sleeveless knit sweater will make you either look like a geek or a golfer. It's still cute, though.
+  components:
+  - type: Sprite
+    sprite: _DEN/Clothing/OuterClothing/Coats/sweater_vest.rsi
+  - type: Clothing
+    sprite: _DEN/Clothing/OuterClothing/Coats/sweater_vest.rsi
