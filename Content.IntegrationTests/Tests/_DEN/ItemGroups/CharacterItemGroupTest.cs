@@ -23,13 +23,14 @@ public sealed class CharacterItemGroupTest
         var server = pair.Server;
         var client = pair.Client;
         var serverCompFac = server.ResolveDependency<IComponentFactory>();
-        var failingPrototypes = new List<string>();
+        var failingPrototypes = new Dictionary<string, string>();
 
-        Assert.Multiple(() =>
-        {
-            foreach (var loadout in server.ProtoMan.EnumeratePrototypes<LoadoutPrototype>())
-                IsInGroup(loadout.ID, loadout.Requirements, "loadout", server.ProtoMan);
-        });
+        foreach (var loadout in server.ProtoMan.EnumeratePrototypes<LoadoutPrototype>())
+            IsInGroup(loadout.ID, loadout.Requirements, "loadout", ref failingPrototypes, server.ProtoMan);
+
+        Assert.That(failingPrototypes, Is.Empty,
+            $"The following loadouts do not exist in a required CharacterItemGroup:\n"
+            + string.Join("\n  ", failingPrototypes));
 
         await pair.CleanReturnAsync();
     }
@@ -44,13 +45,14 @@ public sealed class CharacterItemGroupTest
         var server = pair.Server;
         var client = pair.Client;
         var serverCompFac = server.ResolveDependency<IComponentFactory>();
-        var failingPrototypes = new List<string>();
+        var failingPrototypes = new Dictionary<string, string>();
 
-        Assert.Multiple(() =>
-        {
-            foreach (var trait in server.ProtoMan.EnumeratePrototypes<TraitPrototype>())
-                IsInGroup(trait.ID, trait.Requirements, "trait", server.ProtoMan);
-        });
+        foreach (var trait in server.ProtoMan.EnumeratePrototypes<TraitPrototype>())
+            IsInGroup(trait.ID, trait.Requirements, "trait", ref failingPrototypes, server.ProtoMan);
+
+        Assert.That(failingPrototypes, Is.Empty,
+            $"The following traits do not exist in a required CharacterItemGroup:\n"
+            + string.Join("\n  ", failingPrototypes));
 
         await pair.CleanReturnAsync();
     }
@@ -65,38 +67,45 @@ public sealed class CharacterItemGroupTest
         var server = pair.Server;
         var client = pair.Client;
         var serverCompFac = server.ResolveDependency<IComponentFactory>();
-        var failingPrototypes = new List<string>();
+        var failingPrototypes = new Dictionary<string, List<string>>();
 
-        Assert.Multiple(() =>
+        foreach (var itemGroup in server.ProtoMan.EnumeratePrototypes<CharacterItemGroupPrototype>())
         {
-            foreach (var itemGroup in server.ProtoMan.EnumeratePrototypes<CharacterItemGroupPrototype>())
+            var failed = new List<string>();
+
+            foreach (var item in itemGroup.Items)
             {
-                foreach (var item in itemGroup.Items)
+                var prototypeId = item.ID;
+                IPrototype prototype = item.Type switch
                 {
-                    var prototypeId = item.ID;
-                    IPrototype prototype = item.Type switch
-                    {
-                        "loadout" => server.ProtoMan.TryIndex<LoadoutPrototype>(prototypeId, out var loadout) ? loadout : null,
-                        "trait" => server.ProtoMan.TryIndex<TraitPrototype>(prototypeId, out var trait) ? trait : null,
-                        _ => throw new ArgumentOutOfRangeException(item.Type)
-                    };
+                    "loadout" => server.ProtoMan.TryIndex<LoadoutPrototype>(prototypeId, out var loadout) ? loadout : null,
+                    "trait" => server.ProtoMan.TryIndex<TraitPrototype>(prototypeId, out var trait) ? trait : null,
+                    _ => throw new ArgumentOutOfRangeException(item.Type)
+                };
 
-                    // just gonna ignore invalid ids really. whatever
-                    if (prototype is null)
-                        continue;
+                // just gonna ignore invalid ids really. whatever
+                if (prototype is null)
+                    continue;
 
-                    var requirements = prototype switch
-                    {
-                        LoadoutPrototype loadout => loadout.Requirements,
-                        TraitPrototype trait => trait.Requirements,
-                        _ => throw new ArgumentOutOfRangeException(prototype.GetType().ToString())
-                    };
+                var requirements = prototype switch
+                {
+                    LoadoutPrototype loadout => loadout.Requirements,
+                    TraitPrototype trait => trait.Requirements,
+                    _ => throw new ArgumentOutOfRangeException(prototype.GetType().ToString())
+                };
 
-                    Assert.That(requirements.OfType<CharacterItemGroupRequirement>().Any(req => req.Group == itemGroup.ID),
-                        $"{prototypeId} ({item.Type}) lacks a CharacterItemGroupRequirement for group {itemGroup.ID}!");
-                }
+                if (!requirements.OfType<CharacterItemGroupRequirement>().Any(req => req.Group == itemGroup.ID))
+                    failed.Add($"{prototype.ID} ({item.Type})");
             }
-        });
+
+            if (failed.Count > 0)
+                failingPrototypes.Add(itemGroup.ID, failed);
+        }
+
+        Assert.That(failingPrototypes, Is.Empty,
+            "The following CharacterItemGroups have items that lack requirements:\n"
+            + string.Join("\n  ", failingPrototypes
+                .Select(kvp => $"{kvp.Key}: {string.Join(", ", kvp.Value)}")));
 
         await pair.CleanReturnAsync();
     }
@@ -104,6 +113,7 @@ public sealed class CharacterItemGroupTest
     private static void IsInGroup(string id,
         List<CharacterRequirement> requirements,
         string itemType,
+        ref Dictionary<string, string> failingPrototypes,
         IPrototypeManager protoMan)
     {
         foreach (var groupRequirement in requirements.OfType<CharacterItemGroupRequirement>())
@@ -114,9 +124,8 @@ public sealed class CharacterItemGroupTest
             if (!groupExists)
                 continue;
 
-            Assert.That(itemGroup.Items.Any(item => item.Type == "loadout" && item.ID == id),
-                $"{id} ({itemType}) has CharacterItemGroupRequirement {itemGroup.ID},"
-                + $"but the item group lacks this {itemType}!");
+            if (!itemGroup.Items.Any(item => item.Type == "loadout" && item.ID == id))
+                failingPrototypes.Add(id, groupRequirement.Group);
         }
     }
 }
