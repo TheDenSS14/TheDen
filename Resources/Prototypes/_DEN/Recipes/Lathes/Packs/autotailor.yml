@@ -1,5 +1,6 @@
 - type: latheRecipePack
   parent:
+  - AutotailorStaticBedsheets
   - AutotailorStaticCarpets
   - AutotailorStaticHead
   - AutotailorStaticUniforms
@@ -38,6 +39,26 @@
   - CarpetPurple
   - CarpetCyan
   - CarpetWhite
+
+## Bedsheets
+
+- type: latheRecipePack
+  id: AutotailorStaticBedsheets
+  recipes:
+  - BedsheetBlue
+  - BedsheetYellow
+  - BedsheetOrange
+  - BedsheetGreen
+  - BedsheetNT
+  - BedsheetRed
+  - BedsheetUSA
+  - BedsheetBrown
+  - BedsheetBlack
+  - BedsheetPurple
+  - BedsheetGrey
+  - BedsheetWhite
+  - BedsheetRainbow
+  - BedsheetCosmos
 
 ## Uniforms
 

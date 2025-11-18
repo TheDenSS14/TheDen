@@ -8,6 +8,13 @@
 
 - type: latheRecipe
   abstract: true
+  id: BaseBedsheet
+  completetime: 4
+  materials:
+    Cloth: 500
+
+- type: latheRecipe
+  abstract: true
   parent: BaseJumpsuitRecipe
   id: BaseJumpsuitGenericRecipe
   category: ColoredUniforms
