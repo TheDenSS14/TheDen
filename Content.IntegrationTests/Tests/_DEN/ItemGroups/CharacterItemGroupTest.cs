@@ -1,0 +1,122 @@
+using System.Collections.Generic;
+using System.Linq;
+using Content.Shared.Clothing.Loadouts.Prototypes;
+using Content.Shared.Customization.Systems;
+using Content.Shared.Prototypes;
+using Content.Shared.Traits;
+using Robust.Shared.GameObjects;
+using Robust.Shared.Prototypes;
+
+namespace Content.IntegrationTests.Tests._DEN.ItemGroups;
+
+[TestFixture]
+[TestOf(typeof(CharacterItemGroupPrototype))]
+public sealed class CharacterItemGroupTest
+{
+    /// <summary>
+    /// Check if all loadouts that have CharacterItemGroupRequirements are also in the required group.
+    /// </summary>
+    [Test]
+    public async Task LoadoutsInRequiredItemGroup()
+    {
+        await using var pair = await PoolManager.GetServerClient();
+        var server = pair.Server;
+        var client = pair.Client;
+        var serverCompFac = server.ResolveDependency<IComponentFactory>();
+        var failingPrototypes = new List<string>();
+
+        Assert.Multiple(() =>
+        {
+            foreach (var loadout in server.ProtoMan.EnumeratePrototypes<LoadoutPrototype>())
+                IsInGroup(loadout.ID, loadout.Requirements, "loadout", server.ProtoMan);
+        });
+
+        await pair.CleanReturnAsync();
+    }
+
+    /// <summary>
+    /// Check if all traits that have CharacterItemGroupRequirements are also in the required group.
+    /// </summary>
+    [Test]
+    public async Task TraitsInRequiredItemGroup()
+    {
+        await using var pair = await PoolManager.GetServerClient();
+        var server = pair.Server;
+        var client = pair.Client;
+        var serverCompFac = server.ResolveDependency<IComponentFactory>();
+        var failingPrototypes = new List<string>();
+
+        Assert.Multiple(() =>
+        {
+            foreach (var trait in server.ProtoMan.EnumeratePrototypes<TraitPrototype>())
+                IsInGroup(trait.ID, trait.Requirements, "trait", server.ProtoMan);
+        });
+
+        await pair.CleanReturnAsync();
+    }
+
+    /// <summary>
+    /// Check if all items in CharacterItemGroupPrototypes require the group as well.
+    /// </summary>
+    [Test]
+    public async Task ItemsInGroupHaveRequirement()
+    {
+        await using var pair = await PoolManager.GetServerClient();
+        var server = pair.Server;
+        var client = pair.Client;
+        var serverCompFac = server.ResolveDependency<IComponentFactory>();
+        var failingPrototypes = new List<string>();
+
+        Assert.Multiple(() =>
+        {
+            foreach (var itemGroup in server.ProtoMan.EnumeratePrototypes<CharacterItemGroupPrototype>())
+            {
+                foreach (var item in itemGroup.Items)
+                {
+                    var prototypeId = item.ID;
+                    IPrototype prototype = item.Type switch
+                    {
+                        "loadout" => server.ProtoMan.TryIndex<LoadoutPrototype>(prototypeId, out var loadout) ? loadout : null,
+                        "trait" => server.ProtoMan.TryIndex<TraitPrototype>(prototypeId, out var trait) ? trait : null,
+                        _ => throw new ArgumentOutOfRangeException(item.Type)
+                    };
+
+                    // just gonna ignore invalid ids really. whatever
+                    if (prototype is null)
+                        continue;
+
+                    var requirements = prototype switch
+                    {
+                        LoadoutPrototype loadout => loadout.Requirements,
+                        TraitPrototype trait => trait.Requirements,
+                        _ => throw new ArgumentOutOfRangeException(prototype.GetType().ToString())
+                    };
+
+                    Assert.That(requirements.OfType<CharacterItemGroupRequirement>().Any(req => req.Group == itemGroup.ID),
+                        $"{prototypeId} ({item.Type}) lacks a CharacterItemGroupRequirement for group {itemGroup.ID}!");
+                }
+            }
+        });
+
+        await pair.CleanReturnAsync();
+    }
+
+    private static void IsInGroup(string id,
+        List<CharacterRequirement> requirements,
+        string itemType,
+        IPrototypeManager protoMan)
+    {
+        foreach (var groupRequirement in requirements.OfType<CharacterItemGroupRequirement>())
+        {
+            var groupExists = protoMan.TryIndex(groupRequirement.Group, out var itemGroup);
+            Assert.That(groupExists, $"CharacterItemGroup with ID {groupRequirement.Group} does not exist!");
+
+            if (!groupExists)
+                continue;
+
+            Assert.That(itemGroup.Items.Any(item => item.Type == "loadout" && item.ID == id),
+                $"{id} ({itemType}) has CharacterItemGroupRequirement {itemGroup.ID},"
+                + $"but the item group lacks this {itemType}!");
+        }
+    }
+}
