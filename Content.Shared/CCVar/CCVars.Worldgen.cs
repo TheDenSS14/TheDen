@@ -10,10 +10,11 @@ namespace Content.Shared.CCVar;
 public sealed partial class CCVars
 {
     /// <summary>
-    ///     Whether or not world generation is enabled.
+    ///     Whether or not world generation is enabled
+    ///     DEN - changed to true, ensures 'roids spawn in spacee
     /// </summary>
     public static readonly CVarDef<bool> WorldgenEnabled =
-        CVarDef.Create("worldgen.enabled", false, CVar.SERVERONLY);
+        CVarDef.Create("worldgen.enabled", true, CVar.SERVERONLY);
 
     /// <summary>
     ///     The worldgen config to use.
