@@ -58,9 +58,13 @@ loadout-name-LoadoutItemCaneWalkingFoldable = folding cane (colorable)
 loadout-name-LoadoutItemCaneWalkingQuad = quad cane (colorable)
 
 loadout-name-LoadoutServiceItemGoldenPlunger = golden plunger
+loadout-name-LoadoutSpaceCash1000 = spesos [1000]
 
 character-item-group-LoadoutPrescriptions = Prescription Medications
 character-item-group-LoadoutPrescriptionPainkiller = Painkillers
 character-item-group-LoadoutPrescriptionAnxiolytic = Anxiolytics
 character-item-group-LoadoutPrescriptionAntidepressant = Antidepressants
 character-item-group-LoadoutCostumeBundles = Costume Bundles
+
+# ??? good enough i guess
+character-item-group-LoadoutMagicMirrors = Hair Styling Tools

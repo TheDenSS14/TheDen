@@ -45,8 +45,9 @@
 // SPDX-FileCopyrightText: 2025 Simon
 // SPDX-FileCopyrightText: 2025 sleepyyapril
 //
-// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+// SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
+using Content.Server._DEN.Hub;
 using Content.Server._Floof.Consent;
 using Content.Server.Acz;
 using Content.Server.Administration;
@@ -207,6 +208,9 @@ namespace Content.Server.Entry
                 IoCManager.Resolve<IEntitySystemManager>().GetEntitySystem<GameTicker>().PostInitialize();
                 IoCManager.Resolve<IBanManager>().Initialize();
                 IoCManager.Resolve<IConnectionManager>().PostInit();
+//                IoCManager.Resolve<MultiServerKickManager>().Initialize();
+                IoCManager.Resolve<CVarControlManager>().Initialize();
+                IoCManager.Resolve<HubManager>().Initialize(); // DEN
             }
         }
 

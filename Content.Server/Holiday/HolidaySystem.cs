@@ -1,12 +1,11 @@
-// SPDX-FileCopyrightText: 2021 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2021 Vera Aguilera Puerto <6766154+Zumorica@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2021 Vera Aguilera Puerto <gradientvera@outlook.com>
-// SPDX-FileCopyrightText: 2022 mirrorcult <lunarautomaton6@gmail.com>
-// SPDX-FileCopyrightText: 2022 wrexbe <81056464+wrexbe@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2023 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
-// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2021 DrSmugleaf
+// SPDX-FileCopyrightText: 2021 Vera Aguilera Puerto
+// SPDX-FileCopyrightText: 2022 mirrorcult
+// SPDX-FileCopyrightText: 2022 wrexbe
+// SPDX-FileCopyrightText: 2023 Nemanja
+// SPDX-FileCopyrightText: 2024 Leon Friedrich
+// SPDX-FileCopyrightText: 2024 Pieter-Jan Briers
+// SPDX-FileCopyrightText: 2025 sleepyyapril
 //
 // SPDX-License-Identifier: MIT
 
@@ -16,6 +15,7 @@ using Content.Server.GameTicking;
 using Content.Shared.CCVar;
 using Content.Shared.Holiday;
 using Robust.Shared.Configuration;
+using Robust.Shared.Map.Events;
 using Robust.Shared.Prototypes;
 
 namespace Content.Server.Holiday
@@ -38,6 +38,7 @@ namespace Content.Server.Holiday
             Subs.CVar(_configManager, CCVars.HolidaysEnabled, OnHolidaysEnableChange);
             SubscribeLocalEvent<GameRunLevelChangedEvent>(OnRunLevelChanged);
             SubscribeLocalEvent<HolidayVisualsComponent, ComponentInit>(OnVisualsInit);
+            SubscribeLocalEvent<BeforeEntityReadEvent>(OnBeforeRead);
         }
 
         public void RefreshCurrentHolidays()
@@ -127,6 +128,22 @@ namespace Content.Server.Holiday
                 break;
             }
         }
+
+        // Frontier: holiday-themed entity replacement
+        private void OnBeforeRead(BeforeEntityReadEvent ev)
+        {
+            foreach (var holiday in _currentHolidays)
+            {
+                if (holiday.EntityReplacements is { } replacements)
+                {
+                    foreach (var (original, replacement) in replacements)
+                    {
+                        ev.RenamedPrototypes.TryAdd(original, replacement);
+                    }
+                }
+            }
+        }
+        // End Frontier
     }
 
     /// <summary>

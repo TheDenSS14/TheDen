@@ -1,34 +1,21 @@
-# SPDX-FileCopyrightText: 2023 Debug <49997488+DebugOk@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2023 Ed <96445749+TheShuEd@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT <77995199+DEATHB4DEFEAT@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 I.K <45953835+notquitehadouken@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 Skubman <ba.fallaria@gmail.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Debug
+# SPDX-FileCopyrightText: 2023 Ed
+# SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT
+# SPDX-FileCopyrightText: 2024 I.K
+# SPDX-FileCopyrightText: 2024 Skubman
+# SPDX-FileCopyrightText: 2025 portfiend
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 - type: entity
   id: BarberScissors
   name: barber scissors
-  description: is able to reshape the hairstyle of any crew cut to your liking.
-  parent: BaseItem
+  parent: BaseHandheldMagicMirror # DEN: Move magic mirror components into separate prototype
   components:
   - type: Sprite
     sprite: Objects/Tools/scissors.rsi
     state: icon
-  - type: MagicMirror
-    addSlotTime: 20
-    removeSlotTime: 20
-    selectSlotTime: 20
-    changeSlotTime: 20
-  - type: ActivatableUI
-    key: enum.MagicMirrorUiKey.Key
-    inHandsOnly: true
-    requireActiveHand: true
-  - type: UserInterface
-    interfaces:
-      enum.MagicMirrorUiKey.Key:
-        type: MagicMirrorBoundUserInterface
   - type: MeleeWeapon
     wideAnimationRotation: -135
     attackRate: 1

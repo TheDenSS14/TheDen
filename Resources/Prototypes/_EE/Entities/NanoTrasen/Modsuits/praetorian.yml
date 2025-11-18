@@ -1,11 +1,14 @@
+# SPDX-FileCopyrightText: 2025 ASaltySeabass
+# SPDX-FileCopyrightText: 2025 Sir Warock
 # SPDX-FileCopyrightText: 2025 juniwoofs
+# SPDX-FileCopyrightText: 2025 sheepie
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 # The Modsuit Itself, This is just a ERT modsuit
 - type: entity
-  parent: ClothingModsuitStandard
+  parent: [ BaseBlueshieldOfficerContraband, ClothingModsuitStandard ] #TheDen Contraband Parents
   id: ClothingModsuitPraetorian
   name: Praetorian modsuit control
   description: The main controller for a Praetorian modsuit.

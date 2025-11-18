@@ -1,4 +1,6 @@
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Jakumba
+# SPDX-FileCopyrightText: 2025 beck
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -24,6 +26,19 @@
   components:
   - type: ConfirmableAction
     popup: replicator-levelup-confirm
+
+- type: entity
+  id: ActionReplicatorUpgrade1
+  parent: BaseReplicatorLevelupAction
+  name: Downgrade (Replicator)
+  description: Shed nanites. Reconfigure.
+  components:
+  - type: InstantAction
+    itemIconStyle: NoItem
+    icon: _Impstation/Interface/Actions/replicator_level1.png
+    useDelay: 20
+    event: !type:ReplicatorUpgradeActionEvent
+      nextStage: MobReplicator
 
 - type: entity
   id: ActionReplicatorUpgrade2

@@ -1,6 +1,6 @@
-# SPDX-FileCopyrightText: 2024 portfiend <109661617+portfiend@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 MajorMoth <61519600+MajorMoth@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 portfiend
+# SPDX-FileCopyrightText: 2025 MajorMoth
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -23,6 +23,8 @@ phrase-location-left = left
 phrase-location-right = right
 phrase-location-top = top
 phrase-location-bottom = bottom
+phrase-location-up = up
+phrase-location-down = down
 
 ## compass
 phrase-location-north = north

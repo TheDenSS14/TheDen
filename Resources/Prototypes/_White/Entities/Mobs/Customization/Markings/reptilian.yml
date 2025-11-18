@@ -1,5 +1,6 @@
-# SPDX-FileCopyrightText: 2025 Rosycup <178287475+Rosycup@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Rosycup
+# SPDX-FileCopyrightText: 2025 mart
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -54,7 +55,7 @@
   id: SnakeLargeTail
   bodyPart: Tail
   markingCategory: Tail
-  speciesRestriction: [Reptilian, SlimePerson]
+  speciesRestriction: [Reptilian, SlimePerson, IPC]
   sprites:
     - sprite: _White/Mobs/Customization/reptilian_64x32.rsi
       state: snake_large

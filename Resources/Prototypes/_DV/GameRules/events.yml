@@ -9,7 +9,7 @@
 # SPDX-FileCopyrightText: 2025 Rosycup
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 - type: entity
   id: XenoVents
@@ -58,8 +58,6 @@
     minimumPlayers: 1
     duration: 30
   - type: VentCrittersRule
-    specialEntries:
-      - id: MobXeno
     table: !type:GroupSelector # DeltaV: EntityTable instead of spawn entries
       children:
       - id: MobXeno

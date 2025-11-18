@@ -1,3 +1,4 @@
+# SPDX-FileCopyrightText: 2025 Jakumba
 # SPDX-FileCopyrightText: 2025 portfiend
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
@@ -8,26 +9,32 @@
 - type: accessLevel
   id: EventWorker
   name: id-card-access-level-event-worker
+  canAddToIdCard: false
 
 - type: accessLevel
   id: EventCommand
   name: id-card-access-level-event-command
+  canAddToIdCard: false
 
 - type: accessLevel
   id: EventMedical
   name: id-card-access-level-event-medical
+  canAddToIdCard: false
 
 - type: accessLevel
   id: EventSecurity
   name: id-card-access-level-event-security
+  canAddToIdCard: false
 
 - type: accessLevel
   id: EventService
   name: id-card-access-level-event-service
+  canAddToIdCard: false
 
 - type: accessLevel
   id: EventVIP
   name: id-card-access-level-event-vip
+  canAddToIdCard: false
 
 - type: accessGroup
   id: Event

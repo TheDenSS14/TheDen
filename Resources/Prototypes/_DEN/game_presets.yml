@@ -1,4 +1,5 @@
 # SPDX-FileCopyrightText: 2025 Vanessa
+# SPDX-FileCopyrightText: 2025 portfiend
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
@@ -21,6 +22,7 @@
   description: high-danger-description
   showInVote: true
   highDanger: true
+  minPlayers: 40
   rules:
     - HighDangerRule
 
@@ -31,6 +33,7 @@
   name: roundstart-antags-title
   showInVote: true
   highDanger: true
+  minPlayers: 40
   description: roundstart-antags-description
   rules:
     - BasicRoundstartVariation
@@ -39,3 +42,13 @@
     - SubGamemodesRule
     - LavalandStormScheduler # Lavaland Change
     - IrregularExtendedStationEventScheduler
+
+- type: gamePreset
+  id: Eternity
+  alias:
+  - eternity
+  - roseisacutiepatootie
+  name: eternity-title
+  description: eternity-description
+  supportedMaps: EternityMapPool
+  rules: []

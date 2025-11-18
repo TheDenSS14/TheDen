@@ -41,7 +41,7 @@
 #Normal windoors
 - type: entity
   id: BaseWindoor
-  parent: BaseStructure
+  parent: [BaseObjectVerbsStructure, BaseStructure] # DEN: Add interaction verb parent
   abstract: true
   placement:
     mode: SnapgridCenter
@@ -196,10 +196,6 @@
   - type: StaticPrice
     price: 100
   - type: PryUnpowered
-  - type: InteractionVerbs
-    allowedVerbs:
-    - KnockOn
-    - LickObject
 
 - type: entity
   id: BaseSecureWindoor

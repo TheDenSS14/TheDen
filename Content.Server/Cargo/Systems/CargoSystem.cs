@@ -16,7 +16,7 @@
 // SPDX-FileCopyrightText: 2025 Falcon
 // SPDX-FileCopyrightText: 2025 sleepyyapril
 //
-// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+// SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 using Content.Server.Cargo.Components;
 using Content.Server.DeviceLinking.Systems;
@@ -41,6 +41,7 @@ using Robust.Shared.Map;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
 using Robust.Shared.Random;
+using Content.Shared._DEN.ServerContent;
 
 namespace Content.Server.Cargo.Systems;
 
@@ -73,6 +74,7 @@ public sealed partial class CargoSystem : SharedCargoSystem
     [Dependency] private readonly IComponentFactory _factory = default!;
     [Dependency] private readonly MapLoaderSystem _mapLoader = default!;
     [Dependency] private readonly SharedIdCardSystem _idCardSystem = default!;
+    [Dependency] private readonly ServerSelectiveContentManager _serverSelective = default!; // DEN
 
     private EntityQuery<TransformComponent> _xformQuery;
     private EntityQuery<CargoSellBlacklistComponent> _blacklistQuery;

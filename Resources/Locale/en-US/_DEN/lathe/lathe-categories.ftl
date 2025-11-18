@@ -1,4 +1,5 @@
 # SPDX-FileCopyrightText: 2025 Blitz
+# SPDX-FileCopyrightText: 2025 DoctorJado
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 # SPDX-FileCopyrightText: 2025 wheelwrightt
 #
@@ -13,4 +14,4 @@ lathe-category-loadout-jumpsuits = Uniforms (Cosmetic)
 lathe-category-loadout-dresses = Uniforms (Dress)
 lathe-category-hygiene-products = Hygiene Products
 lathe-category-air-tanks = Air Tanks
-
+lathe-category-bureaucracy = Bureaucracy Tools

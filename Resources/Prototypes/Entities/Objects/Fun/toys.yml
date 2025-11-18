@@ -96,7 +96,7 @@
 # A "squeaky toy" is just a toy that squeaks. They lack stashes as well. Plushies are made of fabric and all.
 
 - type: entity
-  parent: BaseItem
+  parent: [BaseObjectVerbsCuteness, BaseItem] # DEN: Add interaction verb parent
   id: BaseSqueakyToy
   abstract: true
   components:
@@ -132,12 +132,6 @@
   - type: DamageOtherOnHit
   - type: StaticPrice
     price: 5
-  - type: InteractionVerbs
-    allowedVerbs:
-      - HugObject
-      - PetObject
-      - KissObject
-      - LickObject
 
 ## Plushies
 

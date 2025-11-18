@@ -27,6 +27,8 @@
 // SPDX-FileCopyrightText: 2024 Mr. 27
 // SPDX-FileCopyrightText: 2024 Pieter-Jan Briers
 // SPDX-FileCopyrightText: 2024 metalgearsloth
+// SPDX-FileCopyrightText: 2025 Dirius77
+// SPDX-FileCopyrightText: 2025 DoctorJado
 // SPDX-FileCopyrightText: 2025 Falcon
 // SPDX-FileCopyrightText: 2025 Lyndomen
 // SPDX-FileCopyrightText: 2025 Spatison
@@ -37,8 +39,7 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
-using System.Linq;
-using System.Text.RegularExpressions;
+using Content.Shared._CD.Records; // CD - Character Records
 using Content.Shared.CCVar;
 using Content.Shared.Clothing.Loadouts.Prototypes;
 using Content.Shared.Clothing.Loadouts.Systems;
@@ -54,7 +55,8 @@ using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Serialization;
 using Robust.Shared.Utility;
-using Content.Shared._CD.Records; // CD - Character Records
+using System.Linq;
+using System.Text.RegularExpressions;
 
 namespace Content.Shared.Preferences;
 
@@ -78,6 +80,9 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
         },
     };
 
+    [DataField]
+    private Dictionary<string, string> _jobTitles = new();
+
     /// Antags we have opted in to
     [DataField]
     private HashSet<string> _antagPreferences = new();
@@ -86,11 +91,21 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
     [DataField]
     private HashSet<string> _traitPreferences = new();
 
+
     /// <see cref="_loadoutPreferences"/>
     public HashSet<LoadoutPreference> LoadoutPreferences => _loadoutPreferences;
 
     [DataField]
     private HashSet<LoadoutPreference> _loadoutPreferences = new();
+
+    [DataField]
+    public Dictionary<string, HashSet<LoadoutPreference>> JobLoadouts = new();
+
+    [DataField]
+    public Dictionary<string, HashSet<string>> JobTraits = new();
+
+    [DataField]
+    public string LastJobLoadout = "";
 
     [DataField]
     public string Name { get; set; } = "John Doe";
@@ -177,6 +192,8 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
     /// <see cref="_jobPriorities"/>
     public IReadOnlyDictionary<string, JobPriority> JobPriorities => _jobPriorities;
 
+    public IReadOnlyDictionary<string, string> JobTitles => _jobTitles;
+
     /// <see cref="_antagPreferences"/>
     public IReadOnlySet<string> AntagPreferences => _antagPreferences;
 
@@ -218,6 +235,10 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
         HumanoidCharacterAppearance appearance,
         SpawnPriorityPreference spawnPriority,
         Dictionary<string, JobPriority> jobPriorities,
+        Dictionary<string, HashSet<LoadoutPreference>> jobLoadouts,
+        Dictionary<string, HashSet<string>> jobTraits,
+        string lastJobLoadout,
+        Dictionary<string, string> jobTitles, // DEN - Alternate job titles
         ClothingPreference clothing,
         BackpackPreference backpack,
         PreferenceUnavailableMode preferenceUnavailable,
@@ -249,7 +270,11 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
         CyborgName = cyborgName;
         Appearance = appearance;
         SpawnPriority = spawnPriority;
+        _jobTitles = jobTitles;
         _jobPriorities = jobPriorities;
+        JobLoadouts = jobLoadouts;
+        JobTraits = jobTraits;
+        LastJobLoadout = lastJobLoadout;
         Clothing = clothing;
         Backpack = backpack;
         PreferenceUnavailable = preferenceUnavailable;
@@ -286,6 +311,10 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
             other.Appearance.Clone(),
             other.SpawnPriority,
             new Dictionary<string, JobPriority>(other.JobPriorities),
+            new Dictionary<string, HashSet<LoadoutPreference>>(other.JobLoadouts),
+            new Dictionary<string, HashSet<string>>(other.JobTraits),
+            other.LastJobLoadout,
+            new(other.JobTitles),
             other.Clothing,
             other.Backpack,
             other.PreferenceUnavailable,
@@ -451,6 +480,23 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
         return new(this) { _jobPriorities = dictionary };
     }
 
+    public HumanoidCharacterProfile WithJobTitles(Dictionary<string, string> jobTitles) =>
+        new(this) { _jobTitles = jobTitles };
+
+    public HumanoidCharacterProfile WithJobTitle(string jobId, string jobTitle)
+    {
+        var dictionary = new Dictionary<string, string>(_jobTitles);
+
+        // ReSharper disable once CanSimplifyDictionaryRemovingWithSingleCall
+        if (dictionary.ContainsKey(jobId))
+            dictionary.Remove(jobId);
+
+        if (!string.IsNullOrWhiteSpace(jobTitle) && jobTitle != jobId)
+            dictionary[jobId] = jobTitle;
+
+        return new(this) { _jobTitles = dictionary };
+    }
+
     public HumanoidCharacterProfile WithPreferenceUnavailable(PreferenceUnavailableMode mode) =>
         new(this) { PreferenceUnavailable = mode };
     public HumanoidCharacterProfile WithAntagPreferences(IEnumerable<string> antagPreferences) =>
@@ -541,9 +587,18 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
             && PreferenceUnavailable == other.PreferenceUnavailable
             && SpawnPriority == other.SpawnPriority
             && _jobPriorities.SequenceEqual(other._jobPriorities)
+            && _jobTitles.SequenceEqual(other._jobTitles)
             && _antagPreferences.SequenceEqual(other._antagPreferences)
             && _traitPreferences.SequenceEqual(other._traitPreferences)
             && _loadoutPreferences.SequenceEqual(other._loadoutPreferences)
+            && (JobLoadouts.Count == other.JobLoadouts.Count &&
+                JobLoadouts.All(kvp =>
+                    other.JobLoadouts.TryGetValue(kvp.Key, out var set) &&
+                    kvp.Value.SetEquals(set)))
+            && (JobTraits.Count == other.JobTraits.Count &&
+                JobTraits.All(kvp =>
+                    other.JobTraits.TryGetValue(kvp.Key, out var otherSet) &&
+                    kvp.Value.SetEquals(otherSet)))
             && Appearance.MemberwiseEquals(other.Appearance)
             && FlavorText == other.FlavorText
             && NsfwFlavorText == other.NsfwFlavorText
@@ -696,6 +751,11 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
                 _ => false
             }));
 
+        var titles = new Dictionary<string, string>(
+            JobTitles
+                .Where(t => prototypeManager.TryIndex<JobPrototype>(t.Key, out var job) && job.SetPreference &&
+                    t.Value != job.ID));
+
         var antags = AntagPreferences
             .Where(id => prototypeManager.TryIndex<AntagPrototype>(id, out var antag) && antag.SetPreference)
             .Distinct()
@@ -728,6 +788,13 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
             _jobPriorities.Add(job, priority);
         }
 
+        _jobTitles.Clear();
+
+        foreach (var (job, title) in titles)
+        {
+            _jobTitles.Add(job, title);
+        }
+
         PreferenceUnavailable = prefsUnavailableMode;
 
         _antagPreferences.Clear();
@@ -754,7 +821,12 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
         var namingSystem = IoCManager.Resolve<IEntitySystemManager>().GetEntitySystem<NamingSystem>();
         return namingSystem.GetName(species, gender);
     }
-
+    public string GetHighestPriorityJob()
+    {
+        return JobPriorities.Any()
+            ? JobPriorities.MaxBy(kvp => kvp.Value).Key
+            : SharedGameTicker.FallbackOverflowJob;
+    }
     public override bool Equals(object? obj)
     {
         return ReferenceEquals(this, obj) || obj is HumanoidCharacterProfile other && MemberwiseEquals(other);
@@ -767,6 +839,8 @@ public sealed partial class HumanoidCharacterProfile : ICharacterProfile
         hashCode.Add(_antagPreferences);
         hashCode.Add(_traitPreferences);
         hashCode.Add(_loadoutPreferences);
+        hashCode.Add(JobLoadouts);
+        hashCode.Add(JobTraits);
         hashCode.Add(Name);
         hashCode.Add(FlavorText);
         hashCode.Add(Species);

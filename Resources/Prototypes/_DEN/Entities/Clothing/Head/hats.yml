@@ -3,7 +3,7 @@
 # SPDX-FileCopyrightText: 2025 Skubman
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: entity
   parent: ClothingHeadBase
@@ -53,3 +53,12 @@
     sprite: _DEN/Clothing/Head/Hats/aacap.rsi
   - type: Clothing
     sprite: _DEN/Clothing/Head/Hats/aacap.rsi
+
+- type: entity
+  parent: ClothingHeadHatBeret
+  id: ClothingHeadHatBeretWhite
+  components:
+  - type: Sprite
+    sprite: _DEN/Clothing/Head/Hats/beret_colorable.rsi
+  - type: Clothing
+    sprite: _DEN/Clothing/Head/Hats/beret_colorable.rsi

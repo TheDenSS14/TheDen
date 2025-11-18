@@ -1,20 +1,21 @@
-// SPDX-FileCopyrightText: 2019 ShadowCommander <10494922+ShadowCommander@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2019 Víctor Aguilera Puerto <6766154+Zumorica@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2019 ZelteHonor <gabrieldionbouchard@gmail.com>
-// SPDX-FileCopyrightText: 2021 Acruid <shatter66@gmail.com>
-// SPDX-FileCopyrightText: 2021 Paul <ritter.paul1+git@googlemail.com>
-// SPDX-FileCopyrightText: 2021 Visne <39844191+Visne@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2022 Paul Ritter <ritter.paul1@googlemail.com>
-// SPDX-FileCopyrightText: 2022 mirrorcult <lunarautomaton6@gmail.com>
-// SPDX-FileCopyrightText: 2022 wrexbe <81056464+wrexbe@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2023 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2023 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT <77995199+DEATHB4DEFEAT@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2019 ShadowCommander
+// SPDX-FileCopyrightText: 2019 Víctor Aguilera Puerto
+// SPDX-FileCopyrightText: 2019 ZelteHonor
+// SPDX-FileCopyrightText: 2021 Acruid
+// SPDX-FileCopyrightText: 2021 Paul
+// SPDX-FileCopyrightText: 2021 Visne
+// SPDX-FileCopyrightText: 2022 Paul Ritter
+// SPDX-FileCopyrightText: 2022 mirrorcult
+// SPDX-FileCopyrightText: 2022 wrexbe
+// SPDX-FileCopyrightText: 2023 DrSmugleaf
+// SPDX-FileCopyrightText: 2023 metalgearsloth
+// SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT
+// SPDX-FileCopyrightText: 2024 Nemanja
+// SPDX-FileCopyrightText: 2025 sleepyyapril
 //
-// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+// SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
+using Content.Shared._DEN.ServerContent;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype.Array;
@@ -23,7 +24,8 @@ using Robust.Shared.Utility;
 namespace Content.Shared.Cargo.Prototypes
 {
     [Prototype]
-    public sealed partial class CargoProductPrototype : IPrototype, IInheritingPrototype
+    // DEN: Allow selectively omitting cargo products from servers based on content ID
+    public sealed partial class CargoProductPrototype : IPrototype, IInheritingPrototype, IServerSelectivePrototype
     {
         /// <inheritdoc />
         [ParentDataField(typeof(AbstractPrototypeIdArraySerializer<CargoProductPrototype>))]
@@ -111,5 +113,17 @@ namespace Content.Shared.Cargo.Prototypes
         /// </summary>
         [DataField]
         public string Group { get; private set; } = "market";
+
+        // DEN start: Allow selectively omitting cargo products from servers based on content ID
+
+        /// <summary>
+        /// Server content IDs that will want to exclude this prototype.
+        /// They will visually show up as disabled in the cargo UI, and the server will not process them.
+        /// This deos not affect "forced orders", such as the cargo gifts gamerule.
+        /// </summary>
+        [DataField]
+        public HashSet<string>? ExcludedServers { get; } = null;
+
+        // End DEN
     }
 }

@@ -1,9 +1,9 @@
-# SPDX-FileCopyrightText: 2024 Milon <milonpl.git@proton.me>
-# SPDX-FileCopyrightText: 2024 SolStar <44028047+ewokswagger@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 Rosycup <178287475+Rosycup@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Milon
+# SPDX-FileCopyrightText: 2024 SolStar
+# SPDX-FileCopyrightText: 2025 Rosycup
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: entity
   id: BaseStationStockMarket
@@ -31,7 +31,7 @@
       currentPrice: 30
 
 - type: entity
-  id: BaseStationCaptainState
+  id: BaseStationAutomaticSpareId
   abstract: true
   components:
-  - type: CaptainState
+  - type: AutomaticSpareId

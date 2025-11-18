@@ -1,4 +1,5 @@
 # SPDX-FileCopyrightText: 2025 Falcon
+# SPDX-FileCopyrightText: 2025 Jakumba
 # SPDX-FileCopyrightText: 2025 Shaman
 # SPDX-FileCopyrightText: 2025 Solaris
 # SPDX-FileCopyrightText: 2025 sleepyyapril
@@ -73187,8 +73188,6 @@ entities:
       pos: 35.5,32.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 16607
 - proto: GasVentScrubber
@@ -73211,8 +73210,6 @@ entities:
       pos: -18.5,38.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 17949
     - type: AtmosPipeColor
@@ -74058,8 +74055,6 @@ entities:
       pos: -16.5,34.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 17949
     - type: AtmosPipeColor
@@ -74194,8 +74189,6 @@ entities:
     - type: AtmosPipeColor
       color: '#990000FF'
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 16607
 - proto: GasVolumePump

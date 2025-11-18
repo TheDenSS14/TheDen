@@ -14,12 +14,13 @@
 # SPDX-FileCopyrightText: 2024 Skubman
 # SPDX-FileCopyrightText: 2024 Squishy77
 # SPDX-FileCopyrightText: 2024 lzk
+# SPDX-FileCopyrightText: 2025 ASaltySeabass
 # SPDX-FileCopyrightText: 2025 Falcon
 # SPDX-FileCopyrightText: 2025 Jakumba
 # SPDX-FileCopyrightText: 2025 MajorMoth
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 - type: entity
   parent: BaseItem
@@ -165,7 +166,7 @@
         name: power-cell-slot-component-slot-name-default
 
 - type: entity
-  parent: [ BaseSecurityContraband, BaseItem ] # Den - Remove powercell requirement
+  parent: [ BaseSecurityBlueshieldOfficerContraband, BaseItem ] # Den - Remove powercell requirement
   id: HoloprojectorSecurity
   name: holobarrier projector
   description: Creates a solid but fragile holographic barrier.

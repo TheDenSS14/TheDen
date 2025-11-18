@@ -1,0 +1,22 @@
+# SPDX-FileCopyrightText: 2025 portfiend
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
+# Ported and edited from Hyperstation (SS13).
+
+- type: marking
+  id: IPCHeadRound
+  bodyPart: Head
+  markingCategory: Head
+  speciesRestriction: [IPC]
+  coloring:
+    default:
+      type:
+        !type:SkinColoring
+      fallbackTypes:
+      - !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+  - sprite: _DEN/Mobs/Customization/IPC/ipc_heads.rsi
+    state: round

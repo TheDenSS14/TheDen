@@ -1,4 +1,9 @@
-﻿# Selectable Set Example
+# SPDX-FileCopyrightText: 2025 Falcon
+# SPDX-FileCopyrightText: 2025 Jakumba
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+# Selectable Set Example
 - type: selectableSet
   id: RCDSelectorExample
   name: selectable-set-rcd-name
@@ -211,3 +216,19 @@
     - MagazineRifle
     - GrenadeStinger
     - GrenadeStinger
+
+# ERT Janitor
+- type: selectableSet
+  id: ERTJanitorLoadout1
+  name: ert-janitor-loadout-1-name
+  description: ert-janitor-loadout-1-desc
+  sprite:
+    sprite: Objects/Tools/bucket.rsi
+    state: icon
+  content:
+    - WeaponLauncherHydra
+    - CleanadeGrenadeBox
+    - TrashBag
+    - CleanerGrenade
+    - CleanerGrenade
+    - CleanerGrenade

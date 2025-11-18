@@ -1,4 +1,5 @@
-// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 beck
+// SPDX-FileCopyrightText: 2025 sleepyyapril
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -6,6 +7,7 @@
 // all credit for the core gameplay concepts and a lot of the core functionality of the code goes to the folks over at Goob, but I re-wrote enough of it to justify putting it in our filestructure.
 // the original Bingle PR can be found here: https://github.com/Goob-Station/Goob-Station/pull/1519
 
+using Content.Server._Impstation.Administration.Components;
 using Content.Server.Actions;
 using Content.Server.Emp;
 using Content.Server.Ghost.Roles.Events;
@@ -20,6 +22,7 @@ using Content.Shared.Interaction.Events;
 using Content.Shared.Inventory;
 using Content.Shared.Mind.Components;
 using Content.Shared.Mobs;
+using Content.Shared.Mobs.Systems;
 using Content.Shared.Pinpointer;
 using Content.Shared.Popups;
 using Robust.Server.GameObjects;
@@ -39,6 +42,8 @@ public sealed class ReplicatorSystem : EntitySystem
     [Dependency] private readonly StunSystem _stun = default!;
     [Dependency] private readonly InventorySystem _inventory = default!;
     [Dependency] private readonly PinpointerSystem _pinpointer = default!;
+    [Dependency] private readonly SharedReplicatorNestSystem _replicatorNest = default!;
+    [Dependency] private readonly MobStateSystem _mobState = default!;
 
     public override void Initialize()
     {
@@ -76,7 +81,7 @@ public sealed class ReplicatorSystem : EntitySystem
 
     private void OnMindRemoved(Entity<ReplicatorComponent> ent, ref MindRemovedMessage args)
     {
-        // remove all the actions when the mind is removed. 
+        // remove all the actions when the mind is removed.
         foreach (var action in ent.Comp.Actions)
         {
             QueueDel(action);
@@ -105,7 +110,13 @@ public sealed class ReplicatorSystem : EntitySystem
         // then set that nest's spawned minions to our saved list of related replicators.
         // while we're in here, we might as well update all their pinpointers.
         HashSet<EntityUid> newMinions = [];
-        foreach (var (uid, comp) in ent.Comp.RelatedReplicators)
+        HashSet<(EntityUid, ReplicatorComponent)> livingReplicators = [];
+        var query = EntityQueryEnumerator<ReplicatorComponent>();
+        while (query.MoveNext(out var uid, out var comp))
+        {
+            livingReplicators.Add((uid, comp));
+        }
+        foreach (var (uid, comp) in livingReplicators)
         {
             newMinions.Add(uid);
 
@@ -125,6 +136,12 @@ public sealed class ReplicatorSystem : EntitySystem
 
         // remove queen status from this replicator
         ent.Comp.Queen = false;
+
+        // remove the Crown
+        if (HasComp<ReplicatorSignComponent>(ent))
+            RemComp<ReplicatorSignComponent>(ent);
+
+        _replicatorNest.ForceUpgrade(ent, ent.Comp.FirstStage);
 
         // then we need to remove the action, to ensure it can't be used infinitely.
         QueueDel(args.Action);
@@ -165,21 +182,26 @@ public sealed class ReplicatorSystem : EntitySystem
         if (!TryComp<CombatModeComponent>(ent, out var combat))
             return;
 
-        // visual indicator that the replicator is aggressive. 
+        // visual indicator that the replicator is aggressive.
         _appearance.SetData(ent, ReplicatorVisuals.Combat, combat.IsInCombatMode);
     }
 
     private void OnMobStateChanged(Entity<ReplicatorComponent> ent, ref MobStateChangedEvent args)
     {
-        if (args.NewMobState != MobState.Critical || args.NewMobState != MobState.Dead)
+        if (_mobState.IsAlive(ent))
             return;
 
         _appearance.SetData(ent, ReplicatorVisuals.Combat, false);
 
-        if (ent.Comp.Queen && ent.Comp.MyNest == null)
+        if (ent.Comp.Queen)
         {
-            foreach (var (uid, comp) in ent.Comp.RelatedReplicators)
-                _popup.PopupEntity(Loc.GetString(comp.QueenDiedMessage), uid, uid, PopupType.LargeCaution);
+            RemComp<ReplicatorSignComponent>(ent);
+            // notify all living replicators that they are likely orphaned.
+            var query = EntityQueryEnumerator<ReplicatorComponent>();
+            while (query.MoveNext(out var uid, out var replicatorComp))
+            {
+                _popup.PopupEntity(Loc.GetString(replicatorComp.QueenDiedMessage), uid, uid, PopupType.LargeCaution);
+            }
         }
     }
 

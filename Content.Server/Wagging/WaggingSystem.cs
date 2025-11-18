@@ -1,11 +1,10 @@
-// SPDX-FileCopyrightText: 2024 ArchPigeon <bookmaster3@gmail.com>
-// SPDX-FileCopyrightText: 2024 FoxxoTrystan <45297731+FoxxoTrystan@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 Krunklehorn <42424291+Krunklehorn@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 Morb <14136326+Morb0@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 sleepyyapril <flyingkarii@gmail.com>
+// SPDX-FileCopyrightText: 2024 ArchPigeon
+// SPDX-FileCopyrightText: 2024 FoxxoTrystan
+// SPDX-FileCopyrightText: 2024 Krunklehorn
+// SPDX-FileCopyrightText: 2024 Morb
+// SPDX-FileCopyrightText: 2025 sleepyyapril
 //
-// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+// SPDX-License-Identifier: AGPL-3.0-or-later
 
 using Content.Server.Actions;
 using Content.Server.Humanoid;
@@ -73,6 +72,7 @@ public sealed class WaggingSystem : EntitySystem
             return false;
 
         wagging.Wagging = !wagging.Wagging;
+        _actions.SetToggled(wagging.ActionEntity, wagging.Wagging);
 
         for (var idx = 0; idx < markings.Count; idx++) // Animate all possible tails
         {

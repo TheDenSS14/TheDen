@@ -15,11 +15,12 @@
 # SPDX-FileCopyrightText: 2024 BonkTrauma
 # SPDX-FileCopyrightText: 2024 ScarKy0
 # SPDX-FileCopyrightText: 2024 VMSolidus
+# SPDX-FileCopyrightText: 2025 ASaltySeabass
 # SPDX-FileCopyrightText: 2025 Blitz
 # SPDX-FileCopyrightText: 2025 MajorMoth
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 - type: entity
   abstract: true
@@ -65,7 +66,7 @@
     - state: cargo_label
 
 - type: entity
-  parent: EncryptionKey
+  parent: [ BaseCentcommDignitaryContraband, EncryptionKey ] #TheDen Contraband Parent
   id: EncryptionKeyCentCom
   name: central command encryption key
   description: An encryption key used by captain's bosses.
@@ -80,7 +81,7 @@
     - state: nano_label
 
 - type: entity
-  parent: EncryptionKey
+  parent: [ BaseCentcommCommandDignitaryContraband, EncryptionKey ] #TheDen Contraband Parent
   id: EncryptionKeyStationMaster
   name: station master encryption key
   description: An encryption key used by station's bosses.

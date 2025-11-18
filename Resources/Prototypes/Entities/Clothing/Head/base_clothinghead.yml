@@ -67,6 +67,13 @@
     tags:
       - ClothMade
       - WhitelistChameleon
+  # DEN
+  - type: Butcherable
+    butcheringType: Knife
+    spawned:
+    - id: MaterialCloth1
+      amount: 1
+  #DEN
 
 - type: entity
   abstract: true

@@ -1,6 +1,12 @@
+# SPDX-FileCopyrightText: 2024 BombasterDS
+# SPDX-FileCopyrightText: 2024 Cojoke
+# SPDX-FileCopyrightText: 2025 portfiend
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 - type: entity
   id: Mannequin
-  parent: [BaseStructureDynamic, StripableInventoryBase]
+  parent: [BaseStructureDynamic, StripableInventoryBase, BaseObjectVerbsCuteness] # DEN: Add interaction verb parent
   name: mannequin
   description: It can wear any clothing with style.
   components:

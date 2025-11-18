@@ -39,3 +39,15 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutHead
+
+- type: loadout
+  id: LoadoutHeadBeretWhite
+  category: Head
+  cost: 1
+  exclusive: true
+  customColorTint: true
+  items:
+  - ClothingHeadHatBeretWhite
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutHead

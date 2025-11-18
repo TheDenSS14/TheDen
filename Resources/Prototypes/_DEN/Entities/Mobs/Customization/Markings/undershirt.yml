@@ -1,0 +1,110 @@
+# SPDX-FileCopyrightText: 2025 Shaman
+# SPDX-FileCopyrightText: 2025 pocl v
+# SPDX-FileCopyrightText: 2025 portfiend
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: marking
+  id: UndershirtCropped
+  bodyPart: Undershirt
+  markingCategory: Undershirt
+  invertSpeciesRestriction: True
+  speciesRestriction: [Plasmamen, Thaven, Vox] # TheDen - Thaven
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Undershirt/cropped.rsi
+    state: croppedundershirt
+
+# Note - the masc ones aren't sex-restricted because some people might prefer that look
+
+- type: marking
+  abstract: true
+  parent: BaseUndershirt
+  id: BaseUndershirtButtonUp
+  coloring:
+    default:
+      type: !type:SimpleColoring
+          color: "#FFFFFF"
+    layers:
+      undershirt-buttons:
+        type: !type:SimpleColoring
+            color: "#AAAAAA"
+      undershirt-collar:
+        type: !type:SimpleColoring
+            color: "#AAAAAA"
+
+- type: marking
+  parent: BaseUndershirtButtonUp
+  id: UndershirtButtonUp
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Undershirt/buttonup.rsi
+    state: undershirt
+  - sprite: _DEN/Mobs/Customization/Undershirt/buttonup.rsi
+    state: undershirt-buttons
+  - sprite: _DEN/Mobs/Customization/Undershirt/buttonup.rsi
+    state: undershirt-collar
+
+- type: marking
+  parent: BaseUndershirtButtonUp
+  id: UndershirtButtonUpFem
+  sexRestriction: [Male]
+  invertSexRestriction: true
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Undershirt/buttonup_fem.rsi
+    state: undershirt
+  - sprite: _DEN/Mobs/Customization/Undershirt/buttonup_fem.rsi
+    state: undershirt-buttons
+  - sprite: _DEN/Mobs/Customization/Undershirt/buttonup_fem.rsi
+    state: undershirt-collar
+
+- type: marking
+  parent: BaseUndershirtButtonUp
+  id: UndershirtButtonUpPartial
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Undershirt/buttonup_partial.rsi
+    state: undershirt
+  - sprite: _DEN/Mobs/Customization/Undershirt/buttonup_partial.rsi
+    state: undershirt-buttons
+  - sprite: _DEN/Mobs/Customization/Undershirt/buttonup_partial.rsi
+    state: undershirt-collar
+
+- type: marking
+  parent: BaseUndershirtButtonUp
+  id: UndershirtButtonUpPartialFem
+  sexRestriction: [Male]
+  invertSexRestriction: true
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Undershirt/buttonup_partial_fem.rsi
+    state: undershirt
+  - sprite: _DEN/Mobs/Customization/Undershirt/buttonup_partial_fem.rsi
+    state: undershirt-buttons
+  - sprite: _DEN/Mobs/Customization/Undershirt/buttonup_partial_fem.rsi
+    state: undershirt-collar
+
+- type: marking
+  parent: BaseUndershirtButtonUp
+  id: UndershirtButtonUpOpen
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Undershirt/buttonup_open.rsi
+    state: undershirt
+  - sprite: _DEN/Mobs/Customization/Undershirt/buttonup_open.rsi
+    state: undershirt-buttons
+  - sprite: _DEN/Mobs/Customization/Undershirt/buttonup_open.rsi
+    state: undershirt-collar
+
+- type: marking
+  parent: BaseUndershirtButtonUp
+  id: UndershirtButtonUpOpenFem
+  sexRestriction: [Male]
+  invertSexRestriction: true
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Undershirt/buttonup_open_fem.rsi
+    state: undershirt
+  - sprite: _DEN/Mobs/Customization/Undershirt/buttonup_open_fem.rsi
+    state: undershirt-buttons
+  - sprite: _DEN/Mobs/Customization/Undershirt/buttonup_open_fem.rsi
+    state: undershirt-collar

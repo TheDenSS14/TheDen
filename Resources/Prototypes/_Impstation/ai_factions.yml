@@ -1,0 +1,48 @@
+# SPDX-FileCopyrightText: 2025 Jakumba
+# SPDX-FileCopyrightText: 2025 beck
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+# dinos will kill everything. dinos are the apex predator. dinos will rule the world
+- type: npcFaction
+  id: Dino
+  hostile:
+    - Dragon
+    - NanoTrasen
+    - Mouse
+    - Passive
+    - PetsNT
+    - SimpleHostile
+    - SimpleNeutral
+    - Syndicate
+    - Xeno
+    - Zombie
+    - Revolutionary
+    - Changeling
+
+- type: npcFaction
+  id: Penguin
+  hostile:
+  - Dragon
+
+# Initial infected should be ignored by zombies
+- type: npcFaction
+  id: InitialInfectedIgnore
+
+- type: npcFaction
+  id: Replicator
+  hostile:
+  - NanoTrasen
+  - Dragon
+  - Mouse
+  - Passive
+  - PetsNT
+  - SimpleHostile
+  - SimpleNeutral
+  - Syndicate
+  - Xeno
+  - Zombie
+  - Revolutionary
+  - Changeling
+  - Dino
+  - Penguin

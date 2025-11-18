@@ -1,19 +1,20 @@
-// SPDX-FileCopyrightText: 2022 Eoin Mcloughlin <helloworld@eoinrul.es>
-// SPDX-FileCopyrightText: 2022 Flipp Syder <76629141+vulppine@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2022 Paul Ritter <ritter.paul1@googlemail.com>
-// SPDX-FileCopyrightText: 2022 Vera Aguilera Puerto <6766154+Zumorica@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2022 eoineoineoin <eoin.mcloughlin+gh@gmail.com>
-// SPDX-FileCopyrightText: 2022 mirrorcult <lunarautomaton6@gmail.com>
-// SPDX-FileCopyrightText: 2022 vulppine <vulppine@gmail.com>
-// SPDX-FileCopyrightText: 2022 wrexbe <81056464+wrexbe@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2023 Ilya246 <57039557+Ilya246@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2023 TemporalOroboros <TemporalOroboros@gmail.com>
-// SPDX-FileCopyrightText: 2023 c4llv07e <38111072+c4llv07e@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
-// SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 Eoin Mcloughlin
+// SPDX-FileCopyrightText: 2022 Flipp Syder
+// SPDX-FileCopyrightText: 2022 Paul Ritter
+// SPDX-FileCopyrightText: 2022 Vera Aguilera Puerto
+// SPDX-FileCopyrightText: 2022 eoineoineoin
+// SPDX-FileCopyrightText: 2022 mirrorcult
+// SPDX-FileCopyrightText: 2022 vulppine
+// SPDX-FileCopyrightText: 2022 wrexbe
+// SPDX-FileCopyrightText: 2023 Ilya246
+// SPDX-FileCopyrightText: 2023 TemporalOroboros
+// SPDX-FileCopyrightText: 2023 c4llv07e
+// SPDX-FileCopyrightText: 2024 Pieter-Jan Briers
+// SPDX-FileCopyrightText: 2024 metalgearsloth
+// SPDX-FileCopyrightText: 2025 AvianMaiden
+// SPDX-FileCopyrightText: 2025 sleepyyapril
 //
-// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+// SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 using Content.Client.Atmos.Monitor.UI.Widgets;
 using Content.Client.Message;
@@ -156,8 +157,8 @@ public sealed partial class AirAlarmWindow : FancyWindow
                 if (!_pumps.TryGetValue(addr, out var pumpControl))
                 {
                     var control= new PumpControl(pump, addr);
-                    control.PumpDataChanged += AtmosDeviceDataChanged!.Invoke;
-					control.PumpDataCopied += AtmosDeviceDataCopied!.Invoke;
+                    control.PumpDataChanged += AtmosDeviceDataChanged;
+					control.PumpDataCopied += AtmosDeviceDataCopied;
                     _pumps.Add(addr, control);
                     CVentContainer.AddChild(control);
                 }
@@ -171,8 +172,8 @@ public sealed partial class AirAlarmWindow : FancyWindow
                 if (!_scrubbers.TryGetValue(addr, out var scrubberControl))
                 {
                     var control = new ScrubberControl(scrubber, addr);
-                    control.ScrubberDataChanged += AtmosDeviceDataChanged!.Invoke;
-					control.ScrubberDataCopied += AtmosDeviceDataCopied!.Invoke;
+                    control.ScrubberDataChanged += AtmosDeviceDataChanged;
+					control.ScrubberDataCopied += AtmosDeviceDataCopied;
                     _scrubbers.Add(addr, control);
                     CScrubberContainer.AddChild(control);
                 }
@@ -187,6 +188,7 @@ public sealed partial class AirAlarmWindow : FancyWindow
                 {
                     var control = new SensorInfo(sensor, addr);
                     control.OnThresholdUpdate += AtmosAlarmThresholdChanged;
+                    control.SensorDataCopied += AtmosDeviceDataCopied;
                     _sensors.Add(addr, control);
                     CSensorContainer.AddChild(control);
                 }

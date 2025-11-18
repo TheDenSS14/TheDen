@@ -4,6 +4,7 @@
 # SPDX-FileCopyrightText: 2025 Shaman
 # SPDX-FileCopyrightText: 2025 Tabitha
 # SPDX-FileCopyrightText: 2025 Tanix
+# SPDX-FileCopyrightText: 2025 crekulon
 # SPDX-FileCopyrightText: 2025 foxcurl
 # SPDX-FileCopyrightText: 2025 portfiend
 # SPDX-FileCopyrightText: 2025 sheepie
@@ -107,3 +108,19 @@ trait-name-Chittin = Chittin
 trait-description-Chittin =
     A language consisting of clicks, buzzes, and some variety of harsh insect sounds.
     Most of what makes up their speech comes from their antennae, making it a near-impossible language for those without to learn.
+
+trait-name-RemoveSpeciesLanguage = No Species Language
+trait-description-RemoveSpeciesLanguage =
+    You cannot speak or understand your species' cultural language - only Tau-Ceti Basic.
+
+trait-name-RemoveSpeciesLanguageLight = No Species Language (Light)
+trait-description-RemoveSpeciesLanguageLight =
+    You cannot speak your species' cultural language, but you can still understand them.
+
+trait-name-MusicMachine = Music Machine
+trait-description-MusicMachine =
+    You possess an inbuilt synthesizer module, allowing you to sing in a handful of distinct electronic tones. It even comes with a drum machine.
+
+trait-name-IPCSinger = Singer (Synth)
+trait-description-IPCSinger =
+    Your electronic voice can be repurposed to sing simple melodies. Gives you a built in Synth Lead singing option.

@@ -1,0 +1,67 @@
+# SPDX-FileCopyrightText: 2025 portfiend
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  abstract: true
+  parent: BaseItem
+  id: BaseHandheldMagicMirror
+  description: Used to reshape someone's hair style and color to your liking.
+  components:
+  - type: Sprite
+    sprite: Objects/Tools/scissors.rsi
+    state: icon
+  - type: MagicMirror
+    addSlotTime: 20
+    removeSlotTime: 20
+    selectSlotTime: 20
+    changeSlotTime: 20
+  - type: ActivatableUI
+    key: enum.MagicMirrorUiKey.Key
+    inHandsOnly: true
+    requireActiveHand: true
+  - type: UserInterface
+    interfaces:
+      enum.MagicMirrorUiKey.Key:
+        type: MagicMirrorBoundUserInterface
+
+- type: entity
+  parent: BaseHandheldMagicMirror
+  id: HandheldMirrorGold
+  name: handheld mirror
+  suffix: gold
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Tools/mirror_gold.rsi
+  - type: MeleeWeapon
+    wideAnimationRotation: -135
+    attackRate: 1
+    soundHit:
+      collection: MetalThud
+    damage:
+      types:
+        Blunt: 4
+
+- type: entity
+  parent: HandheldMirrorGold
+  id: HandheldMirrorGray
+  suffix: gray
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Tools/mirror_gray.rsi
+
+- type: entity
+  parent: BaseHandheldMagicMirror
+  id: HairComb
+  name: hair comb
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Tools/comb.rsi
+  - type: MeleeWeapon
+    wideAnimationRotation: -135
+    attackRate: 1
+    soundHit:
+      collection: WeakHit
+    damage:
+      types:
+        Blunt: 0

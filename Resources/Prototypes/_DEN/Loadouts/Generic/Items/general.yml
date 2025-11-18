@@ -1,0 +1,143 @@
+# SPDX-FileCopyrightText: 2025 Blitz
+# SPDX-FileCopyrightText: 2025 Rosycup
+# SPDX-FileCopyrightText: 2025 Savante-Sam
+# SPDX-FileCopyrightText: 2025 Shaman
+# SPDX-FileCopyrightText: 2025 Tabitha
+# SPDX-FileCopyrightText: 2025 portfiend
+# SPDX-FileCopyrightText: 2025 sleepyyapril
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+
+# Other
+
+- type: loadout
+  id: LoadoutNetworkConfigurator
+  category: GeneralItems
+  cost: 0
+  items:
+    - NetworkConfigurator
+
+- type: loadout
+  id: LoadoutCentcommPin
+  category: GeneralItems
+  cost: 0
+  requirements:
+  - !type:CharacterAdminRequirement
+  items:
+  - ClothingNeckCentCommPin
+
+- type: loadout
+  id: LoadoutClicker
+  category: GeneralItems
+  cost: 0
+  canBeHeirloom: true
+  items:
+    - Clicker
+
+- type: loadout
+  id: LoadoutTailorsKnife
+  category: GeneralItems
+  cost: 1
+  canBeHeirloom: true
+  items:
+    - TailorsKnife
+
+- type: loadout
+  id: LoadoutNapsack
+  category: GeneralItems
+  cost: 3
+  items:
+  - ClothingBackpackNapsack
+
+- type: loadout
+  id: LoadoutClothingHandsSentimentalRing
+  category: GeneralItems
+  cost: 0
+  canBeHeirloom: true
+  customColorTint: true
+  items:
+    - ClothingHandsSentimentalRing
+
+- type: loadout
+  id: LoadoutClothingNeckSentimentalCollar
+  category: GeneralItems
+  cost: 0
+  canBeHeirloom: true
+  customColorTint: true
+  items:
+    - ClothingNeckSentimentalCollar
+
+- type: loadout
+  id: LoadoutClothingNeckHeavyShackles
+  category: GeneralItems
+  cost: 0
+  canBeHeirloom: true
+  customColorTint: true
+  items:
+    - ClothingNeckHeavyShackles
+
+- type: loadout
+  id: LoadoutUtilityKnife
+  category: GeneralItems
+  cost: 2
+  canBeHeirloom: true
+  items:
+    - UtilityKnife
+
+- type: loadout
+  id: LoadoutItemCigsStinky # Den - Introduction to Stinky Steve's Weed Emporium
+  category: GeneralItems
+  cost: 1 # Same price as Dan's, which just feels right
+  items:
+    - CigPackJoint
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSmokes
+
+- type: loadout
+  id: LoadoutSpectralLocator
+  category: GeneralItems
+  cost: 0
+  items:
+    - SpectralLocator
+
+- type: loadout
+  id: LoadoutTapeRecorder
+  category: GeneralItems
+  cost: 1
+  items:
+    - TapeRecorderFilled
+
+- type: loadout
+  id: LoadoutItemBarberScissorsAltMirrorGold # the ID is like this for sorting order purposes
+  category: GeneralItems
+  canBeHeirloom: true
+  cost: 4
+  items:
+  - HandheldMirrorGold
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutMagicMirrors
+
+- type: loadout
+  id: LoadoutItemBarberScissorsAltMirrorGray
+  category: GeneralItems
+  canBeHeirloom: true
+  cost: 4
+  items:
+  - HandheldMirrorGray
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutMagicMirrors
+
+- type: loadout
+  id: LoadoutItemBarberScissorsAltComb
+  category: GeneralItems
+  canBeHeirloom: true
+  customColorTint: true
+  cost: 4
+  items:
+  - HairComb
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutMagicMirrors
