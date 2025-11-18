@@ -56,14 +56,23 @@
 # SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: entity
-  save: false
-  name: Urisst' Mzhand
-  parent: [BaseMobSpeciesOrganic, StorableSpecies] # TheDen
-  id: BaseMobReptilian
   abstract: true
+  parent: ReptilianSpeciesLayers
+  id: BaseReptilianAppearance
   components:
   - type: HumanoidAppearance
     species: Reptilian
+
+
+- type: entity
+  save: false
+  name: Urisst' Mzhand
+  parent: [ BaseMobSpeciesOrganicCustom, BaseReptilianAppearance, StorableSpecies ] # TheDen
+  id: BaseMobReptilian
+  abstract: true
+  components:
+#  - type: HumanoidAppearance
+#    species: Reptilian
   - type: Hunger
   - type: Puller
     needsHands: false
@@ -149,13 +158,13 @@
 
 
 - type: entity
-  parent: BaseSpeciesDummy
+  parent: [ BaseReptilianAppearance, BaseSpeciesDummy ]
   id: MobReptilianDummy
   categories: [ HideSpawnMenu ]
   description: A dummy reptilian meant to be used in character setup.
   components:
-  - type: HumanoidAppearance
-    species: Reptilian
+#  - type: HumanoidAppearance
+#    species: Reptilian
   - type: Inventory
     speciesId: reptilian
     femaleDisplacements:
