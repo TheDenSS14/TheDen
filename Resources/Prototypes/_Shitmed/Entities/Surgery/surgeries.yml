@@ -395,8 +395,8 @@
   components:
   - type: SurgeryPartCondition
     part: Torso
-    
-# Floof - M3739 - #1194 - Begin Changes    
+
+# Floof - M3739 - #1194 - Begin Changes
 - type: entity
   parent: SurgeryRemoveBrain
   id: SurgeryRemoveCoreTorso
@@ -441,7 +441,7 @@
   - type: SurgeryPartCondition
     part: Torso
 
-# Floof - M3739 - #1194 - Begin Changes      
+# Floof - M3739 - #1194 - Begin Changes
 - type: entity
   parent: SurgeryInsertBrain
   id: SurgeryInsertCoreTorso
@@ -657,61 +657,6 @@
     inverse: true
     reattaching: true
     slotId: eyes
-
-- type: entity
-  parent: SurgeryBase
-  id: SurgeryLobotomize
-  name: Lobotomize
-  categories: [ HideSpawnMenu ]
-  components:
-  - type: Surgery
-    requirement: SurgeryOpenIncision
-    steps:
-    - SurgeryStepLobotomize
-    - SurgeryStepCloseIncision
-  - type: SurgeryOrganCondition
-    organ:
-    - type: Brain
-    slotId: brain
-  - type: SurgeryOrganOnAddCondition
-    components:
-      brain:
-        - type: OhioAccent
-        - type: RatvarianLanguage
-        - type: Clumsy
-          gunShootFailDamage: # Placeholder values to be able to initialize the component
-            types:
-              Blunt: 0
-    inverse: true
-  - type: SurgeryPartCondition
-    part: Head
-
-- type: entity
-  parent: SurgeryBase
-  id: SurgeryMendBrainTissue
-  name: Mend brain tissue
-  categories: [ HideSpawnMenu ]
-  components:
-  - type: Surgery
-    requirement: SurgeryOpenIncision
-    steps:
-    - SurgeryStepMendBrainTissue
-    - SurgeryStepCloseIncision
-  - type: SurgeryOrganCondition
-    organ:
-    - type: Brain
-    slotId: brain
-  - type: SurgeryOrganOnAddCondition
-    components:
-      brain:
-        - type: OhioAccent
-        - type: RatvarianLanguage
-        - type: Clumsy
-          gunShootFailDamage:
-            types:
-              Blunt: 0
-  - type: SurgeryPartCondition
-    part: Head
 
 # Fluff/Joke Surgeries
 
