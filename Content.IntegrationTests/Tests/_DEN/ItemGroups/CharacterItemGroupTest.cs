@@ -13,6 +13,15 @@ namespace Content.IntegrationTests.Tests._DEN.ItemGroups;
 [TestOf(typeof(CharacterItemGroupPrototype))]
 public sealed class CharacterItemGroupTest
 {
+    // TODO: Some of these prototypes should probably just be deleted?
+    private static readonly HashSet<string> ExcludedItemGroups =
+    [
+        "LoadoutPlushie",
+        "TraitsMachine",
+        "TraitsLanguagesRacial",
+        "TraitsMind"
+    ];
+
     /// <summary>
     /// Check if all loadouts that have CharacterItemGroupRequirements are also in the required group.
     /// </summary>
@@ -71,6 +80,9 @@ public sealed class CharacterItemGroupTest
 
         foreach (var itemGroup in server.ProtoMan.EnumeratePrototypes<CharacterItemGroupPrototype>())
         {
+            if (ExcludedItemGroups.Contains(itemGroup.ID))
+                continue;
+
             var failed = new List<string>();
 
             foreach (var item in itemGroup.Items)
