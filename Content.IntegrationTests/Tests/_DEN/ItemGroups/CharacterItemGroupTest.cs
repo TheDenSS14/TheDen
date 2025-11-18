@@ -26,7 +26,7 @@ public sealed class CharacterItemGroupTest
         var failingPrototypes = new Dictionary<string, string>();
 
         foreach (var loadout in server.ProtoMan.EnumeratePrototypes<LoadoutPrototype>())
-            IsInGroup(loadout.ID, loadout.Requirements, "loadout", ref failingPrototypes, server.ProtoMan);
+            IsInGroup(loadout.ID, loadout.Requirements, ref failingPrototypes, server.ProtoMan);
 
         Assert.That(failingPrototypes, Is.Empty,
             $"The following loadouts do not exist in a required CharacterItemGroup:\n"
@@ -48,7 +48,7 @@ public sealed class CharacterItemGroupTest
         var failingPrototypes = new Dictionary<string, string>();
 
         foreach (var trait in server.ProtoMan.EnumeratePrototypes<TraitPrototype>())
-            IsInGroup(trait.ID, trait.Requirements, "trait", ref failingPrototypes, server.ProtoMan);
+            IsInGroup(trait.ID, trait.Requirements, ref failingPrototypes, server.ProtoMan);
 
         Assert.That(failingPrototypes, Is.Empty,
             $"The following traits do not exist in a required CharacterItemGroup:\n"
@@ -112,10 +112,11 @@ public sealed class CharacterItemGroupTest
 
     private static void IsInGroup(string id,
         List<CharacterRequirement> requirements,
-        string itemType,
         ref Dictionary<string, string> failingPrototypes,
         IPrototypeManager protoMan)
     {
+        var failed = new List<string>();
+
         foreach (var groupRequirement in requirements.OfType<CharacterItemGroupRequirement>())
         {
             var groupExists = protoMan.TryIndex(groupRequirement.Group, out var itemGroup);
@@ -125,7 +126,10 @@ public sealed class CharacterItemGroupTest
                 continue;
 
             if (!itemGroup.Items.Any(item => item.Type == "loadout" && item.ID == id))
-                failingPrototypes.Add(id, groupRequirement.Group);
+                failed.Add(groupRequirement.Group);
         }
+
+        if (failed.Count > 0)
+            failingPrototypes.Add(id, string.Join(", ", failed));
     }
 }
