@@ -136,3 +136,15 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutUniformsCivilian
+
+- type: loadout
+  id: LoadoutClothingUniformSkirtColorable
+  category: Uniform
+  cost: 0
+  exclusive: true
+  customColorTint: true
+  items:
+  - ClothingUniformSkirtColorable
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutUniformsCivilian

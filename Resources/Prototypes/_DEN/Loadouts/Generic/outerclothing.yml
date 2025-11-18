@@ -71,3 +71,44 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutOuter
+
+- type: loadout
+  id: LoadoutClothingOuterCoatTechnicolorBlack
+  category: Outer
+  cost: 0
+  items:
+  - ClothingOuterCoatTechnicolorBlack
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutOuter
+
+- type: loadout
+  id: LoadoutClothingOuterCoatTechnicolorBeige
+  category: Outer
+  cost: 0
+  items:
+  - ClothingOuterCoatTechnicolorBeige
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutOuter
+
+- type: loadout
+  id: LoadoutClothingOuterCoatTechnicolorWhite
+  category: Outer
+  cost: 0
+  items:
+  - ClothingOuterCoatTechnicolorWhite
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutOuter
+
+- type: loadout
+  id: LoadoutClothingOuterCoatSweaterVest
+  category: Outer
+  cost: 0
+  customColorTint: true
+  items:
+  - ClothingOuterCoatSweaterVest
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutOuter
