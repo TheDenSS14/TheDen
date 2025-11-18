@@ -35,7 +35,7 @@ public sealed class CharacterItemGroupTest
         var failingPrototypes = new Dictionary<string, string>();
 
         foreach (var loadout in server.ProtoMan.EnumeratePrototypes<LoadoutPrototype>())
-            IsInGroup(loadout.ID, loadout.Requirements, ref failingPrototypes, server.ProtoMan);
+            IsInGroup(loadout.ID, loadout.Requirements, ref failingPrototypes,"loadout", server.ProtoMan);
 
         Assert.That(failingPrototypes, Is.Empty,
             $"The following loadouts do not exist in a required CharacterItemGroup:\n"
@@ -57,7 +57,7 @@ public sealed class CharacterItemGroupTest
         var failingPrototypes = new Dictionary<string, string>();
 
         foreach (var trait in server.ProtoMan.EnumeratePrototypes<TraitPrototype>())
-            IsInGroup(trait.ID, trait.Requirements, ref failingPrototypes, server.ProtoMan);
+            IsInGroup(trait.ID, trait.Requirements, ref failingPrototypes, "trait", server.ProtoMan);
 
         Assert.That(failingPrototypes, Is.Empty,
             $"The following traits do not exist in a required CharacterItemGroup:\n"
@@ -125,6 +125,7 @@ public sealed class CharacterItemGroupTest
     private static void IsInGroup(string id,
         List<CharacterRequirement> requirements,
         ref Dictionary<string, string> failingPrototypes,
+        string itemType,
         IPrototypeManager protoMan)
     {
         var failed = new List<string>();
@@ -137,7 +138,7 @@ public sealed class CharacterItemGroupTest
             if (!groupExists)
                 continue;
 
-            if (!itemGroup.Items.Any(item => item.Type == "loadout" && item.ID == id))
+            if (!itemGroup.Items.Any(item => item.Type == itemType && item.ID == id))
                 failed.Add(groupRequirement.Group);
         }
 
