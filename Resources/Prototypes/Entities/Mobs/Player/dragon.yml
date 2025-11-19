@@ -341,9 +341,19 @@
     understands:
     - TauCetiBasic
     - Aural
+  # DEN
   - type: Emoting # TheDen - Let them emote
   - type: BodyEmotes # TheDen
     soundsId: GeneralBodyEmotes
+  - type: InventorySlots
+  - type: Inventory
+    templateId: dragon
+  - type: Loadout
+    prototypes:
+    - StartingGearDragonBase
+  - type: Hands
+    showInHands:  false
+  # DEN
 
 - type: entity
   parent: BaseMobDragon
