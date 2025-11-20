@@ -36,7 +36,7 @@ public sealed partial class DevourSystem : SharedDevourSystem
 
         SubscribeLocalEvent<DevourerComponent, DevourDoAfterEvent>(OnDoAfter);
         SubscribeLocalEvent<DevourerComponent, BeingGibbedEvent>(OnGibContents);
-        SubscribeLocalEvent<DragonUnrottingComponent, MobStateChangedEvent>(OnMobStateChanged);
+        SubscribeLocalEvent<RottingImmuneComponent, MobStateChangedEvent>(OnMobStateChanged);
     }
 
     private void OnDoAfter(EntityUid uid, DevourerComponent component, DevourDoAfterEvent args)
@@ -77,7 +77,7 @@ public sealed partial class DevourSystem : SharedDevourSystem
             AudioSystem.PlayPvs(component.SoundDevour, uid);
 
         if (args.Args.Target is not null && !args.AllowDevouring)
-            EnsureComp<DragonUnrottingComponent>(args.Args.Target.Value);
+            EnsureComp<RottingImmuneComponent>(args.Args.Target.Value);
     }
 
     private void OnGibContents(EntityUid uid, DevourerComponent component, ref BeingGibbedEvent args)

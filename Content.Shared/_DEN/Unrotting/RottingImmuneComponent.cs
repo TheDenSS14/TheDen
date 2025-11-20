@@ -12,4 +12,4 @@ namespace Content.Shared._DEN.Unrotting;
 /// This is used for preventing rot.
 /// </summary>
 [RegisterComponent, NetworkedComponent]
-public sealed partial class DragonUnrottingComponent : Component;
+public sealed partial class RottingImmuneComponent : Component;
