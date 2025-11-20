@@ -10,6 +10,8 @@
   id: DefaultRuleset
   name: guide-entry-rules
   text: "/ServerInfo/Guidebook/ServerRules/DefaultRuleset.xml"
+  children: # DEN: I'M PUTTING THIS AS A CHILD SO AS TO NOT CLUTTER THE GUIDEBOOK
+  - EternityRuleset
 
 - type: guideEntry
   id: SpaceLaw
