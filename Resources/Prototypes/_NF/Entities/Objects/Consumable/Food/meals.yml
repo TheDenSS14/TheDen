@@ -121,7 +121,7 @@
 
 - type: entity
   name: greek salad
-  parent: FoodBowlBase
+  parent: FoodBowlSaladBase # DEN - SALAD...
   id: FoodSaladGreek
   description: This is the salad everyone is eating in those commercials.
   components:
@@ -154,7 +154,7 @@
 
 - type: entity
   name: avocado salad
-  parent: FoodBowlBase
+  parent: FoodBowlSaladBase # DEN - SALAD...
   id: FoodSaladAvocado
   description: You were so close to making guacamole. So close.
   components:
@@ -184,7 +184,7 @@
     tags:
     - Vegetable
     - Fruit
-  
+
 - type: entity
   name: poached pears
   parent: FoodBowlBase

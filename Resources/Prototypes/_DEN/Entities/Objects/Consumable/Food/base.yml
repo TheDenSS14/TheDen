@@ -1,0 +1,7 @@
+- type: entity
+  abstract: true
+  parent: FoodBowlBase
+  id: FoodBowlSaladBase
+  components:
+  - type: Food
+    utensil: Fork
