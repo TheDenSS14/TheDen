@@ -1,7 +1,6 @@
-# SPDX-FileCopyrightText: 2024 Tabitha <64847293+KyuPolaris@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 portfiend <109661617+portfiend@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <flyingkarii@gmail.com>
+# SPDX-FileCopyrightText: 2024 Tabitha
+# SPDX-FileCopyrightText: 2025 portfiend
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -71,3 +70,44 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutOuter
+
+- type: loadout
+  id: LoadoutClothingOuterCoatTechnicolorBlack
+  category: Outer
+  cost: 0
+  items:
+  - ClothingOuterCoatTechnicolorBlack
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutOuter
+
+- type: loadout
+  id: LoadoutClothingOuterCoatTechnicolorBeige
+  category: Outer
+  cost: 0
+  items:
+  - ClothingOuterCoatTechnicolorBeige
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutOuter
+
+- type: loadout
+  id: LoadoutClothingOuterCoatTechnicolorWhite
+  category: Outer
+  cost: 0
+  items:
+  - ClothingOuterCoatTechnicolorWhite
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutOuter
+
+- type: loadout
+  id: LoadoutClothingOuterCoatSweaterVest
+  category: Outer
+  cost: 0
+  customColorTint: true
+  items:
+  - ClothingOuterCoatSweaterVest
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutOuter
