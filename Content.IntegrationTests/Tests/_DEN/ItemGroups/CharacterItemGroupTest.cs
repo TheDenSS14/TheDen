@@ -35,11 +35,16 @@ public sealed class CharacterItemGroupTest
         var failingPrototypes = new Dictionary<string, string>();
 
         foreach (var loadout in server.ProtoMan.EnumeratePrototypes<LoadoutPrototype>())
-            IsInGroup(loadout.ID, loadout.Requirements, ref failingPrototypes,"loadout", server.ProtoMan);
+            IsInGroup(loadout.ID, loadout.Requirements, ref failingPrototypes, "loadout", server.ProtoMan);
+
+        var failuresByItemGroup = failingPrototypes
+            .GroupBy(kvp => kvp.Value)
+            .Select(group => $"{group.Key}: [{string.Join(", ", group.Select(kvp => kvp.Key))}]")
+            .ToList();
 
         Assert.That(failingPrototypes, Is.Empty,
             $"The following loadouts do not exist in a required CharacterItemGroup:\n"
-            + string.Join("\n  ", failingPrototypes));
+            + string.Join("\n  ", failuresByItemGroup));
 
         await pair.CleanReturnAsync();
     }
@@ -59,9 +64,14 @@ public sealed class CharacterItemGroupTest
         foreach (var trait in server.ProtoMan.EnumeratePrototypes<TraitPrototype>())
             IsInGroup(trait.ID, trait.Requirements, ref failingPrototypes, "trait", server.ProtoMan);
 
+        var failuresByItemGroup = failingPrototypes
+            .GroupBy(kvp => kvp.Value)
+            .Select(group => $"{group.Key}: [{string.Join(", ", group.Select(kvp => kvp.Key))}]")
+            .ToList();
+
         Assert.That(failingPrototypes, Is.Empty,
             $"The following traits do not exist in a required CharacterItemGroup:\n"
-            + string.Join("\n  ", failingPrototypes));
+            + string.Join("\n  ", failuresByItemGroup));
 
         await pair.CleanReturnAsync();
     }
