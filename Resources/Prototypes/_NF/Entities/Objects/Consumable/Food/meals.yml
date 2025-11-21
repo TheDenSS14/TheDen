@@ -251,7 +251,7 @@
 
 - type: entity
   name: basic noodles
-  parent: FoodBowlBase
+  parent: FoodBowlNoodlesBase # DEN: NOODLES...
   id: FoodMealBasicNoodles
   description: A simple ramen bowl of noodles and broth. Yum!
   components:
@@ -276,7 +276,7 @@
 
 - type: entity
   name: miso noodles
-  parent: FoodBowlBase
+  parent: FoodBowlNoodlesBase # DEN: NOODLES...
   id: FoodMealMisoNoodles
   description: Miso, or fermented bean paste, broth with scallion and egg. Robust!
   components:
@@ -309,7 +309,7 @@
 
 - type: entity
   name: shio noodles
-  parent: FoodBowlBase
+  parent: FoodBowlNoodlesBase # DEN: NOODLES...
   id: FoodMealShioNoodles
   description: Sea salt broth with corn and seaweed. Light!
   components:
@@ -341,7 +341,7 @@
 
 - type: entity
   name: shoyu noodles
-  parent: FoodBowlBase
+  parent: FoodBowlNoodlesBase # DEN: NOODLES...
   id: FoodMealShoyuNoodles
   description: Soy sauce broth with corn, egg, and pork. Salty!
   components:
@@ -375,7 +375,7 @@
 
 - type: entity
   name: spicy noodles
-  parent: FoodBowlBase
+  parent: FoodBowlNoodlesBase # DEN: NOODLES...
   id: FoodMealSpicyNoodles
   description: A not-so-simple ramen bowl of noodles, broth, and tofu. Hot!
   components:
@@ -408,7 +408,7 @@
 
 - type: entity
   name: tonkatsu noodles
-  parent: FoodBowlBase
+  parent: FoodBowlNoodlesBase # DEN: NOODLES...
   id: FoodMealTonkatsuNoodles
   description: Pork bone broth with garlic and pork. Rich!
   components:
