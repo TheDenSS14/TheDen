@@ -36,4 +36,4 @@ marking-UnderwearLeggings = Leggings
 marking-UnderwearLeggings-base = Leggings
 
 marking-UnderwearSocksStockings = Stockings
-marking-UnderwearSocksStockings-stockings = Stocking
+marking-UnderwearSocksStockings-stockings-right = Stockings
