@@ -34,3 +34,6 @@ marking-UnderwearSocksThighStripes-tips-right = Tip
 
 marking-UnderwearLeggings = Leggings
 marking-UnderwearLeggings-base = Leggings
+
+marking-UnderwearSocksStockings = Stockings
+marking-UnderwearSocksStockings-stockings = Stocking

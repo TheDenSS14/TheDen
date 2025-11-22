@@ -10,13 +10,18 @@
 - type: marking
   parent: BaseUnderwearSocks
   id: UnderwearSocksAnkle
-  # what fucking ever man
-  # layering:
-  #   ankle-left: LFoot
-  #   ankle-right: RFoot
+  layering:
+    base-left: LFoot
+    base-right: RFoot
   colorLinks:
     ankle-left: ankle-right
+    base-right: ankle-right
+    base-left: ankle-right
   sprites:
+  - sprite: _DEN/Mobs/Customization/Underwear/socks.rsi
+    state: base-left
+  - sprite: _DEN/Mobs/Customization/Underwear/socks.rsi
+    state: base-right
   - sprite: _DEN/Mobs/Customization/Underwear/socks.rsi
     state: ankle-left
   - sprite: _DEN/Mobs/Customization/Underwear/socks.rsi
@@ -33,15 +38,21 @@
       tips-right:
         type: !type:SimpleColoring
             color: "#999999"
-  # layering:
-  #   ankle-left: LFoot
-  #   ankle-right: RFoot
-  #   tips-left: LFoot
-  #   tips-right: RFoot
+  layering:
+    ankle-left: LFoot
+    ankle-right: RFoot
+    tips-left: LFoot
+    tips-right: RFoot
   colorLinks:
     ankle-left: ankle-right
+    base-right: ankle-right
+    base-left: ankle-right
     tips-left: tips-right
   sprites:
+  - sprite: _DEN/Mobs/Customization/Underwear/socks.rsi
+    state: base-left
+  - sprite: _DEN/Mobs/Customization/Underwear/socks.rsi
+    state: base-right
   - sprite: _DEN/Mobs/Customization/Underwear/socks.rsi
     state: ankle-left
   - sprite: _DEN/Mobs/Customization/Underwear/socks.rsi
@@ -54,12 +65,18 @@
 - type: marking
   parent: BaseUnderwearSocks
   id: UnderwearSocksQuarter
-  # layering:
-  #   quarter-left: LFoot
-  #   quarter-right: RFoot
+  layering:
+    base-left: LFoot
+    base-right: RFoot
   colorLinks:
     quarter-left: quarter-right
+    base-right: quarter-right
+    base-left: quarter-right
   sprites:
+  - sprite: _DEN/Mobs/Customization/Underwear/socks.rsi
+    state: base-left
+  - sprite: _DEN/Mobs/Customization/Underwear/socks.rsi
+    state: base-right
   - sprite: _DEN/Mobs/Customization/Underwear/socks.rsi
     state: quarter-left
   - sprite: _DEN/Mobs/Customization/Underwear/socks.rsi
@@ -76,15 +93,21 @@
       tips-right:
         type: !type:SimpleColoring
             color: "#999999"
-  # layering:
-  #   quarter-left: LFoot
-  #   quarter-right: RFoot
-  #   tips-left: LFoot
-  #   tips-right: RFoot
+  layering:
+    base-left: LFoot
+    base-right: RFoot
+    tips-left: LFoot
+    tips-right: RFoot
   colorLinks:
     quarter-left: quarter-right
     tips-left: tips-right
+    base-right: quarter-right
+    base-left: quarter-right
   sprites:
+  - sprite: _DEN/Mobs/Customization/Underwear/socks.rsi
+    state: base-left
+  - sprite: _DEN/Mobs/Customization/Underwear/socks.rsi
+    state: base-right
   - sprite: _DEN/Mobs/Customization/Underwear/socks.rsi
     state: quarter-left
   - sprite: _DEN/Mobs/Customization/Underwear/socks.rsi
@@ -97,12 +120,18 @@
 - type: marking
   parent: BaseUnderwearSocks
   id: UnderwearSocksKnee
-  # layering:
-  #   knee-left: LFoot
-  #   knee-right: RFoot
+  layering:
+    base-left: LFoot
+    base-right: RFoot
   colorLinks:
     knee-left: knee-right
+    base-right: knee-right
+    base-left: knee-right
   sprites:
+  - sprite: _DEN/Mobs/Customization/Underwear/socks.rsi
+    state: base-left
+  - sprite: _DEN/Mobs/Customization/Underwear/socks.rsi
+    state: base-right
   - sprite: _DEN/Mobs/Customization/Underwear/socks.rsi
     state: knee-left
   - sprite: _DEN/Mobs/Customization/Underwear/socks.rsi
@@ -122,18 +151,22 @@
       tips-right:
         type: !type:SimpleColoring
             color: "#999999"
-  # layering:
-  #   knee-left: LFoot
-  #   knee-right: RFoot
-  #   stripes-knee-left: LFoot
-  #   stripes-knee-right: RFoot
-  #   tips-left: LFoot
-  #   tips-right: RFoot
+  layering:
+    base-left: LFoot
+    base-right: RFoot
+    tips-left: LFoot
+    tips-right: RFoot
   colorLinks:
     knee-left: knee-right
     stripes-knee-left: stripes-knee-right
     tips-left: tips-right
+    base-right: knee-right
+    base-left: knee-right
   sprites:
+  - sprite: _DEN/Mobs/Customization/Underwear/socks.rsi
+    state: base-left
+  - sprite: _DEN/Mobs/Customization/Underwear/socks.rsi
+    state: base-right
   - sprite: _DEN/Mobs/Customization/Underwear/socks.rsi
     state: knee-left
   - sprite: _DEN/Mobs/Customization/Underwear/socks.rsi
@@ -150,12 +183,18 @@
 - type: marking
   parent: BaseUnderwearSocks
   id: UnderwearSocksThigh
-  # layering:
-  #   thigh-left: LFoot
-  #   thigh-right: RFoot
+  layering:
+    base-left: LFoot
+    base-right: RFoot
   colorLinks:
     thigh-left: thigh-right
+    base-right: thigh-right
+    base-left: thigh-right
   sprites:
+  - sprite: _DEN/Mobs/Customization/Underwear/socks.rsi
+    state: base-left
+  - sprite: _DEN/Mobs/Customization/Underwear/socks.rsi
+    state: base-right
   - sprite: _DEN/Mobs/Customization/Underwear/socks.rsi
     state: thigh-left
   - sprite: _DEN/Mobs/Customization/Underwear/socks.rsi
@@ -175,18 +214,22 @@
       tips-right:
         type: !type:SimpleColoring
             color: "#999999"
-  # layering:
-  #   thigh-left: LFoot
-  #   thigh-right: RFoot
-  #   stripes-thigh-left: LFoot
-  #   stripes-thigh-right: RFoot
-  #   tips-left: LFoot
-  #   tips-right: RFoot
+  layering:
+    base-left: LFoot
+    base-right: RFoot
+    tips-left: LFoot
+    tips-right: RFoot
   colorLinks:
     thigh-left: thigh-right
     stripes-thigh-left: stripes-thigh-right
     tips-left: tips-right
+    base-right: thigh-right
+    base-left: thigh-right
   sprites:
+  - sprite: _DEN/Mobs/Customization/Underwear/socks.rsi
+    state: base-left
+  - sprite: _DEN/Mobs/Customization/Underwear/socks.rsi
+    state: base-right
   - sprite: _DEN/Mobs/Customization/Underwear/socks.rsi
     state: thigh-left
   - sprite: _DEN/Mobs/Customization/Underwear/socks.rsi
@@ -206,3 +249,27 @@
   sprites:
   - sprite: _DEN/Mobs/Customization/Underwear/leggings.rsi
     state: base
+
+- type: marking
+  parent: BaseUnderwearSocks
+  id: UnderwearSocksStockings
+  layering:
+    stockings-base-left: LFoot
+    stockings-base-right: RFoot
+  colorLinks:
+    stockings-left: stockings-right
+    stockings-base-right: stockings-right
+    stockings-base-left: stockings-right
+    stockings-base-torso: stockings-right
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Underwear/socks.rsi
+    state: stockings-base-left
+  - sprite: _DEN/Mobs/Customization/Underwear/socks.rsi
+    state: stockings-base-right
+  - sprite: _DEN/Mobs/Customization/Underwear/socks.rsi
+    state: stockings-base-torso
+  - sprite: _DEN/Mobs/Customization/Underwear/socks.rsi
+    state: stockings-left
+  - sprite: _DEN/Mobs/Customization/Underwear/socks.rsi
+    state: stockings-right
+
