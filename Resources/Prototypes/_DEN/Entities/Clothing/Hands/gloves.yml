@@ -53,3 +53,16 @@
     slots:
     - GLOVES
     - NECK
+
+- type: entity
+  parent: ClothingHandsGlovesNitrile
+  id: ClothingHandsGlovesNitrileBlack
+  name: black nitrile gloves
+  description: High-quality black nitrile gloves. They do a good job hiding those food grease stains on your hands.
+  components:
+  - type: Sprite
+    sprite: _DEN/Clothing/Hands/Gloves/black_nitrile.rsi
+  - type: Clothing
+    sprite: _DEN/Clothing/Hands/Gloves/black_nitrile.rsi
+  - type: Fiber
+    fiberColor: fibers-black
