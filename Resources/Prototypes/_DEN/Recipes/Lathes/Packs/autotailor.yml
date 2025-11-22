@@ -1,0 +1,373 @@
+- type: latheRecipePack
+  parent:
+  - AutotailorStaticBedsheets
+  - AutotailorStaticCarpets
+  - AutotailorStaticHead
+  - AutotailorStaticUniforms
+  id: AutotailorStaticDen
+
+- type: latheRecipePack
+  parent:
+  - AutotailorStaticEnvirohelms
+  - AutotailorStaticEnviroslacksHelms
+  id: AutotailorStaticHead
+
+- type: latheRecipePack
+  parent:
+  - AutotailorStaticBasicJumpsuits
+  - AutotailorStaticDresses
+  - AutotailorStaticEnvirosuits
+  - AutotailorStaticEnviroslacks
+  - AutotailorStaticGenericUniforms
+  - AutotailorStaticKimonos
+  - AutotailorStaticNuclearUniforms
+  - AutotailorStaticSchoolUniforms
+  - AutotailorStaticSuits
+  id: AutotailorStaticUniforms
+
+## Carpets
+
+- type: latheRecipePack
+  id: AutotailorStaticCarpets
+  recipes:
+  - Carpet
+  - CarpetBlack
+  - CarpetPink
+  - CarpetBlue
+  - CarpetGreen
+  - CarpetOrange
+  - CarpetPurple
+  - CarpetCyan
+  - CarpetWhite
+
+## Bedsheets
+
+- type: latheRecipePack
+  id: AutotailorStaticBedsheets
+  recipes:
+  - BedsheetBlue
+  - BedsheetYellow
+  - BedsheetOrange
+  - BedsheetGreen
+  - BedsheetNT
+  - BedsheetRed
+  - BedsheetUSA
+  - BedsheetBrown
+  - BedsheetBlack
+  - BedsheetPurple
+  - BedsheetGrey
+  - BedsheetWhite
+  - BedsheetRainbow
+  - BedsheetCosmos
+
+## Uniforms
+
+- type: latheRecipePack
+  id: AutotailorStaticBasicJumpsuits
+  recipes:
+  - ClothingUniformJumpsuitColorGrey
+  - ClothingUniformJumpskirtColorGrey
+  - ClothingUniformJumpsuitColorWhite
+  - ClothingUniformJumpskirtColorWhite
+  - ClothingUniformJumpsuitColorBlack
+  - ClothingUniformJumpskirtColorBlack
+  - ClothingUniformJumpsuitColorBlue
+  - ClothingUniformJumpskirtColorBlue
+  - ClothingUniformJumpsuitColorDarkBlue
+  - ClothingUniformJumpskirtColorDarkBlue
+  - ClothingUniformJumpsuitColorTeal
+  - ClothingUniformJumpskirtColorTeal
+  - ClothingUniformJumpsuitColorGreen
+  - ClothingUniformJumpskirtColorGreen
+  - ClothingUniformJumpsuitColorDarkGreen
+  - ClothingUniformJumpskirtColorDarkGreen
+  - ClothingUniformJumpsuitColorOrange
+  - ClothingUniformJumpskirtColorOrange
+  - ClothingUniformJumpsuitColorPink
+  - ClothingUniformJumpskirtColorPink
+  - ClothingUniformJumpsuitColorRed
+  - ClothingUniformJumpskirtColorRed
+  - ClothingUniformJumpsuitColorYellow
+  - ClothingUniformJumpskirtColorYellow
+  - ClothingUniformJumpsuitColorPurple
+  - ClothingUniformJumpskirtColorPurple
+  - ClothingUniformJumpsuitColorLightBrown
+  - ClothingUniformJumpskirtColorLightBrown
+  - ClothingUniformJumpsuitColorBrown
+  - ClothingUniformJumpskirtColorBrown
+  - ClothingUniformJumpsuitColorMaroon
+  - ClothingUniformJumpskirtColorMaroon
+  - ClothingUniformColorRainbow
+
+- type: latheRecipePack
+  id: AutotailorStaticGenericUniforms
+  recipes:
+  - ClothingUniformJumpsuitFlannel
+  - ClothingUniformJumpsuitCasualBlue
+  - ClothingUniformJumpskirtCasualBlue
+  - ClothingUniformJumpsuitCasualPurple
+  - ClothingUniformJumpskirtCasualPurple
+  - ClothingUniformJumpsuitCasualRed
+  - ClothingUniformJumpskirtCasualRed
+  - ClothingUniformJumpsuitTshirtJeans
+  - ClothingUniformJumpsuitTshirtJeansGray
+  - ClothingUniformJumpsuitTshirtJeansPeach
+  - ClothingUniformJumpsuitJeansGreen
+  - ClothingUniformJumpsuitJeansRed
+  - ClothingUniformJumpsuitJeansBrown
+  - ClothingUniformJumpsuitLostTourist
+  - ClothingUniformJumpsuitHawaiBlack
+  - ClothingUniformJumpsuitHawaiBlue
+  - ClothingUniformJumpsuitHawaiRed
+  - ClothingUniformJumpsuitHawaiYellow
+  - ClothingUniformJumpsuitSuitAmish
+  - ClothingUniformJumpsuitSuitAristocratic
+  - ClothingUniformJumpsuitSuitAristocraticTuxedo
+  - ClothingUniformJumpsuitAscetic
+  - ClothingUniformJumpsuitBarber
+  - ClothingUniformJumpsuitSuitBlueBlazer
+  - ClothingUniformJumpsuitDisheveled
+  - ClothingUniformJumpsuitSuitRegal
+  - ClothingUniformJumpsuitSuitRegalTuxedo
+  - ClothingUniformJumpsuitRippedPunk
+  - ClothingUniformJumpsuitSailor
+  - ClothingUniformJumpsuitSuitStriped
+  - ClothingUniformJumpsuitTrackpants
+  - ClothingUniformJumpsuitTurtleneckGrey
+  - ClothingUniformJumpsuitSuitVictorianRedBlack
+  - ClothingUniformJumpsuitSuitVictorianRedVest
+  - ClothingUniformJumpsuitSuitVictorianVest
+  - ClothingUniformJumpsuitWaiter
+  - ClothingUniformJumpskirtWaitress
+  - ClothingUniformJumpsuitYogaGymBra
+  - ClothingUniformJumpsuitBlackTurtleneck
+  - ClothingUniformJumpsuitBlackTurtleneckFlipped
+  # These might be from N14, but it's hard to tell due to bad namespacing.
+  - ClothingUniformJumpsuitCheckered
+  - ClothingUniformJumpsuitCowboyBrown
+  - ClothingUniformJumpsuitCowboyGrey
+  - ClothingUniformJumpsuitOliveSweater
+  - ClothingUniformJumpsuitLightBlueShirt
+  - ClothingUniformJumpsuitFlannelJeans
+  - ClothingUniformJumpsuitFlannelBlackJeans
+  - ClothingUniformJumpsuitFlannelKhakis
+  - ClothingUniformJumpsuitFlannelBlackKhakis
+  # End possibly N14 list items.
+  - ClothingUniformJumpskirtTacticalMaid
+  - ClothingUniformJumpskirtJanimaid
+  - ClothingUniformJumpskirtJanimaidmini
+  - ClothingUniformJumpsuitTacticool
+  - ClothingUniformJumpskirtTacticool
+  - ClothingUniformReotaSuit
+  - ClothingUniformLoinClothBlack
+  - ClothingUniformLoinClothWhite
+  - ClothingUniformThongPlain
+  - ClothingUniformStripedThongPurple
+  - ClothingUniformStripedThongRainbow
+  - ClothingUniformThongCoder
+  - ClothingUniformThongCoderValid
+  - ClothingUniformThongBee
+  - ClothingUniformBlueFancyLad
+
+- type: latheRecipePack
+  id: AutotailorStaticNuclearUniforms
+  recipes:
+  - ClothingUniformJumpsuitSuitRolledSleeves
+  - ClothingUniformJumpsuitBartenderGrey
+  - ClothingUniformJumpsuitFlannelOveralls
+  - ClothingUniformJumpsuitCamouflageShirt
+  - ClothingUniformJumpsuitDesertUniform
+  - ClothingUniformJumpsuitLumberjack
+  - ClothingUniformJumpsuitGreyShirt
+
+- type: latheRecipePack
+  id: AutotailorStaticKimonos
+  recipes:
+  - ClothingUniformJumpskirtKimonoColor
+  - ClothingUniformJumpsuitKimono
+  - ClothingKimonoBlue
+  - ClothingKimonoPink
+  - ClothingKimonoPurple
+  - ClothingKimonoSky
+  - ClothingKimonoGreen
+
+- type: latheRecipePack
+  id: AutotailorStaticSchoolUniforms
+  recipes:
+  - ClothingUniformSchoolGakuranBlack
+  - UniformSchoolgirlBlack
+  - UniformSchoolgirlBlue
+  - UniformSchoolgirlCyan
+  - UniformSchoolgirlGreen
+  - UniformSchoolgirlOrange
+  - UniformSchoolgirlPink
+  - UniformSchoolgirlPurple
+  - UniformSchoolgirlRed
+  - UniformSchoolgirlDusk
+  - UniformSchoolgirlBlazerTan
+
+- type: latheRecipePack
+  id: AutotailorStaticSuits
+  recipes:
+  - ClothingUniformJumpsuitSuitBlack
+  - ClothingUniformJumpsuitSuitBlackAlt
+  - ClothingUniformJumpsuitSuitBlackMob
+  - ClothingUniformJumpsuitSuitBrown
+  - ClothingUniformJumpsuitSuitBrownAlt
+  - ClothingUniformJumpsuitSuitBrownMob
+  - ClothingUniformJumpsuitSuitWhite
+  - ClothingUniformJumpsuitSuitWhiteAlt
+  - ClothingUniformJumpsuitSuitWhiteMob
+
+- type: latheRecipePack
+  id: AutotailorStaticDresses
+  recipes:
+  - ClothingUniformJumpskirtBlackElegantDress
+  - ClothingUniformJumpskirtBlueElegantDress
+  - ClothingUniformJumpskirtBlueTurtleneckDress
+  - ClothingUniformJumpskirtCyanStripedDress
+  - ClothingUniformJumpskirtDressAsymmetric
+  - ClothingUniformJumpskirtDressBlackAndGold
+  - ClothingUniformJumpskirtDressBlackTango
+  - ClothingUniformJumpskirtDressBlackTangoAlt
+  - ClothingUniformJumpskirtDressBlueSundress
+  - ClothingUniformJumpskirtDressCheongsamBlue
+  - ClothingUniformJumpskirtDressCheongsamGreen
+  - ClothingUniformJumpskirtDressCheongsamPurple
+  - ClothingUniformJumpskirtDressCheongsamRed
+  - ClothingUniformJumpskirtDressCheongsamWhite
+  - ClothingUniformJumpskirtDressClub
+  - ClothingUniformJumpskirtDressCoveter
+  - ClothingUniformJumpskirtDressEvening
+  - ClothingUniformJumpskirtDressFire
+  - ClothingUniformJumpskirtDressFlamenco
+  - ClothingUniformJumpskirtDressFlowergirl
+  - ClothingUniformJumpskirtDressFluffy
+  - ClothingUniformJumpskirtDressFormalRed
+  - ClothingUniformJumpskirtDressGothic
+  - ClothingUniformJumpskirtDressLacyGown
+  - ClothingUniformJumpskirtDressLong
+  - ClothingUniformJumpskirtDressLongFlared
+  - ClothingUniformJumpskirtDressLongSleeve
+  - ClothingUniformJumpskirtDressMidi
+  - ClothingUniformJumpskirtDressOpenShoulder
+  - ClothingUniformJumpskirtDressOrange
+  - ClothingUniformJumpskirtDressRedSwept
+  - ClothingUniformJumpskirtDressSariGreen
+  - ClothingUniformJumpskirtDressSariRed
+  - ClothingUniformJumpskirtDressShort
+  - ClothingUniformJumpskirtDressSleeveless
+  - ClothingUniformJumpskirtDressSpider
+  - ClothingUniformJumpskirtDressStriped
+  - ClothingUniformJumpskirtDressSundress
+  - ClothingUniformJumpskirtDressSundressWhite
+  - ClothingUniformJumpskirtDressTea
+  - ClothingUniformJumpskirtDressVictorianBlack
+  - ClothingUniformJumpskirtDressVictorianRed
+  - ClothingUniformJumpskirtDressYellow
+  - ClothingUniformJumpskirtDressYellowSwoop
+  - ClothingUniformJumpskirtGreenElegantDress
+  - ClothingUniformJumpskirtGreenStripedDress
+  - ClothingUniformJumpskirtGreenTurtleneckDress
+  - ClothingUniformJumpskirtOrangeStripedDress
+  - ClothingUniformJumpskirtPencilSkirtGymBra
+  - ClothingUniformJumpskirtDressPuffy
+  - ClothingUniformJumpskirtPinkStripedDress
+  - ClothingUniformJumpskirtPurpleElegantDress
+  - ClothingUniformJumpskirtPurpleTurtleneckDress
+  - ClothingUniformJumpskirtQipao
+  - ClothingUniformJumpskirtQipaoSlim
+  - ClothingUniformJumpskirtRedElegantDress
+  - ClothingUniformJumpskirtRedStripedDress
+  - ClothingUniformJumpskirtRedTurtleneckDress
+  - ClothingUniformJumpskirtSailor
+  - ClothingUniformJumpskirtSuitBlueBlazer
+  - ClothingUniformJumpskirtYellowOldDress
+  - ClothingUniformJumpskirtYellowTurtleneckDress
+  - ClothingUniformSwimsuitBlue
+  - ClothingUniformDressRed
+  - ClothingUniformRedDancersGarb
+  - ClothingUniformBandedDancersGarb
+  - ClothingUniformRedSidelessDress
+  - ClothingUniformPurpleNightclubDress
+  - ClothingUniformBlackPetticoatDress
+
+## Envirosuits
+
+- type: latheRecipePack
+  id: AutotailorStaticEnvirosuits
+  recipes:
+  - ClothingUniformEnvirosuit
+  - ClothingUniformEnvirosuitBlackPink
+  - ClothingUniformEnvirosuitBlackPinkAlt
+  - ClothingUniformEnvirosuitMartialGi
+  - ClothingUniformEnvirosuitSafari
+  - ClothingUniformEnvirosuitTrans
+  - ClothingUniformEnvirosuitAncientVoid
+  - ClothingHeadEnvirohelmAncientVoid
+  - ClothingUniformEnvirosuitColorWhite
+  - ClothingUniformEnvirosuitColorGrey
+  - ClothingUniformEnvirosuitColorBlack
+  - ClothingUniformEnvirosuitColorRed
+  - ClothingUniformEnvirosuitColorGreen
+  - ClothingUniformEnvirosuitColorDarkGreen
+  - ClothingUniformEnvirosuitColorBlue
+  - ClothingUniformEnvirosuitColorDarkBlue
+  - ClothingUniformEnvirosuitColorTeal
+  - ClothingUniformEnvirosuitColorMaroon
+  - ClothingUniformEnvirosuitColorPink
+  - ClothingUniformEnvirosuitColorYellow
+  - ClothingUniformEnvirosuitColorPurple
+  - ClothingUniformEnvirosuitColorOrange
+  - ClothingUniformEnvirosuitColorLightBrown
+  - ClothingUniformEnvirosuitColorBrown
+
+- type: latheRecipePack
+  id: AutotailorStaticEnviroslacks
+  recipes:
+  - ClothingUniformEnvirosuitEnviroslacks
+  - ClothingUniformEnvirosuitEnviroslacksNegative
+  - ClothingUniformEnvirosuitEnviroslacksColorRed
+  - ClothingUniformEnvirosuitEnviroslacksColorOrange
+  - ClothingUniformEnvirosuitEnviroslacksColorGreen
+  - ClothingUniformEnvirosuitEnviroslacksColorBlue
+  - ClothingUniformEnvirosuitEnviroslacksColorBrown
+  - ClothingUniformEnvirosuitEnviroslacksMNK
+  - ClothingUniformEnvirosuitEnviroslacksMNKAlt
+
+- type: latheRecipePack
+  id: AutotailorStaticEnvirohelms
+  recipes:
+  - ClothingHeadEnvirohelm
+  - ClothingHeadEnvirohelmBlackPink
+  - ClothingHeadEnvirohelmBlackPinkAlt
+  - ClothingHeadEnvirohelmMartialGi
+  - ClothingHeadEnvirohelmSafari
+  - ClothingHeadEnvirohelmTrans
+  - ClothingHeadEnvirohelmAncientVoid
+  - ClothingHeadEnvirohelmColorWhite
+  - ClothingHeadEnvirohelmColorGrey
+  - ClothingHeadEnvirohelmColorBlack
+  - ClothingHeadEnvirohelmColorRed
+  - ClothingHeadEnvirohelmColorGreen
+  - ClothingHeadEnvirohelmColorDarkGreen
+  - ClothingHeadEnvirohelmColorBlue
+  - ClothingHeadEnvirohelmColorDarkBlue
+  - ClothingHeadEnvirohelmColorTeal
+  - ClothingHeadEnvirohelmColorMaroon
+  - ClothingHeadEnvirohelmColorPink
+  - ClothingHeadEnvirohelmColorYellow
+  - ClothingHeadEnvirohelmColorPurple
+  - ClothingHeadEnvirohelmColorOrange
+  - ClothingHeadEnvirohelmColorLightBrown
+  - ClothingHeadEnvirohelmColorBrown
+
+- type: latheRecipePack
+  id: AutotailorStaticEnviroslacksHelms
+  recipes:
+  - ClothingHeadEnvirohelmEnviroslacksColorRed
+  - ClothingHeadEnvirohelmEnviroslacksColorOrange
+  - ClothingHeadEnvirohelmEnviroslacksColorGreen
+  - ClothingHeadEnvirohelmEnviroslacksColorBlue
+  - ClothingHeadEnvirohelmEnviroslacksMNK
+  - ClothingHeadEnvirohelmEnviroslacksMNKAlt
