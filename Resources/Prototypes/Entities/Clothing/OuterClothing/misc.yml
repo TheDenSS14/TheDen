@@ -135,6 +135,10 @@
     sprite: Clothing/OuterClothing/Misc/black_hoodie.rsi
   - type: Clothing
     sprite: Clothing/OuterClothing/Misc/black_hoodie.rsi
+  - type: Tag # DeltaV - It's a hoodie
+    tags:
+    - WhitelistChameleon
+    - Hoodie
 
 - type: entity
   parent: ClothingOuterBase
@@ -146,6 +150,10 @@
     sprite: Clothing/OuterClothing/Misc/grey_hoodie.rsi
   - type: Clothing
     sprite: Clothing/OuterClothing/Misc/grey_hoodie.rsi
+  - type: Tag # DeltaV - It's a hoodie
+    tags:
+    - WhitelistChameleon
+    - Hoodie
 
 - type: entity
   parent: ClothingOuterBase
@@ -178,6 +186,10 @@
   - type: TemperatureProtection
     heatingCoefficient: 1.1
     coolingCoefficient: 0.1
+  - type: Tag # DeltaV - It's a hoodie
+    tags:
+    - WhitelistChameleon
+    - Hoodie
 
 - type: entity
   parent: ClothingOuterBase

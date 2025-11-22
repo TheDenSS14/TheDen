@@ -1,0 +1,12 @@
+- type: entity
+  parent: BaseMindRoleAntag
+  id: MindRoleSkia
+  name: Skia Role
+  components:
+  - type: MindRole
+    roleType: SoloAntagonist
+    antagPrototype: Skia
+    exclusiveAntag: true
+  - type: SkiaRole
+  - type: RoleBriefing #TODO: put here, because it doesn't pull from skia.ftl. fun! Fix later.
+    briefing: "You are a Skia, a Shade of the Noösphere. You are bound to darkness and shadows, use the darkness to your advantage. Find your prey and reap their soul (kill them). Avoid ending the lives of innocents."

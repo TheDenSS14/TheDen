@@ -20,3 +20,20 @@
     modifiers:
       coefficients:
         Caustic: 0.25
+
+- type: entity
+  parent: ClothingOuterBaseToggleable
+  id: ClothingOuterHoodieSkia
+  name: skia hoodie
+  description: The robes worn by a shade.
+  components:
+  - type: Sprite
+    sprite: _DV/Clothing/OuterClothing/Misc/skia_hoodie.rsi
+  - type: Clothing
+    sprite: _DV/Clothing/OuterClothing/Misc/skia_hoodie.rsi
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHatHoodSkiaHood
+  - type: Tag
+    tags:
+    - Hoodie
+    - WhitelistChameleon
