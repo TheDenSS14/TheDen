@@ -129,16 +129,17 @@ public sealed class BloodCultRuleSystem : GameRuleSystem<BloodCultRuleComponent>
             cult.WinCondition = CultWinCondition.Win;
             _roundEnd.EndRound();
 
-            foreach (var ent in cult.Cultists)
-            {
-                if (Deleted(ent.Owner) || !TryComp(ent.Owner, out MindContainerComponent? mindContainer) ||
-                    !mindContainer.Mind.HasValue)
-                    continue;
+            // DEN - remove cultists exploding into gibs at round end
+            // foreach (var ent in cult.Cultists)
+            // {
+            //     if (Deleted(ent.Owner) || !TryComp(ent.Owner, out MindContainerComponent? mindContainer) ||
+            //         !mindContainer.Mind.HasValue)
+            //         continue;
 
-                var harvester = Spawn(cult.HarvesterPrototype, Transform(ent.Owner).Coordinates);
-                _mind.TransferTo(mindContainer.Mind.Value, harvester);
-                _body.GibBody(ent);
-            }
+            //     var harvester = Spawn(cult.HarvesterPrototype, Transform(ent.Owner).Coordinates);
+            //     _mind.TransferTo(mindContainer.Mind.Value, harvester);
+            //     _body.GibBody(ent);
+            // }
 
             return;
         }

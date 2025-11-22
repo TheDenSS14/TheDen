@@ -31,6 +31,7 @@ using Content.Server.EUI;
 using Content.Server.Ghost;
 using Content.Server.Popups;
 using Content.Server.PowerCell;
+using Content.Shared._DEN.Unrotting;
 using Content.Shared.Chat;
 using Content.Shared.Damage;
 using Content.Shared.DoAfter;
@@ -230,6 +231,8 @@ public sealed class DefibrillatorSystem : EntitySystem
                 damageableComponent.TotalDamage < threshold)
             {
                 _mobState.ChangeMobState(target, MobState.Critical, mob, uid);
+                // DEN - Remove rotting immunity if they have it
+                RemComp<RottingImmuneComponent>(target);
                 dead = false;
             }
 
