@@ -838,7 +838,7 @@
   - type: SolutionContainerManager
     solutions:
       food:
-        maxVol: 6
+        maxVol: 20 # DEN: 6 -> 20
         reagents:
         - ReagentId: Protein
           Quantity: 9
