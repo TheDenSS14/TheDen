@@ -14,7 +14,7 @@
   parent: BaseResearchAndDevelopmentPointSource
   id: GlimmerProber
   name: glimmer prober
-  description: Probes the noösphere to generate research points. Might be worth turning off if glimmer is a problem.
+  description: Probes the noosphere to generate research points. Might be worth turning off if Glimmer is a problem.
   components:
   - type: Psionic
     removable: false
@@ -107,7 +107,7 @@
   parent: BaseMachinePowered
   id: GlimmerDrain
   name: glimmer drain
-  description: Uses electricity to try and sort out the noösphere, reducing its level of entropy.
+  description: Uses electricity to try and sort out the noosphere, reducing its level of entropy.
   components:
   - type: Psionic
     removable: false
@@ -146,7 +146,7 @@
 - type: entity
   id: GlimmerDeviceFrame
   name: glimmer device frame
-  description: A frame for a glimmer drain or glimmer prober.
+  description: A frame for a Glimmer drain or Glimmer prober.
   placement:
     mode: SnapgridCenter
   components:

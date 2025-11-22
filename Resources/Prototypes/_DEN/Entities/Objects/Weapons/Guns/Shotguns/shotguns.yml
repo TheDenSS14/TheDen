@@ -7,9 +7,10 @@
 
 - type: entity
   name: soul-shatter
-  parent: BaseWeaponShotgun
+  parent: [BaseWeaponShotgun, BaseMantisContraband]
   id: WeaponShotgunSoulshatter
-  description: A flashy, pocket-sized shotgun with a marble style grip. Provides no tactical advantage. Uses 12 gauge shells.
+  suffix: DO NOT MAP # Mantes shouldn't get free lethals
+  description: "A gloomy sawn-off double barrel with an amaranth grip. Provides no tactical advantage. Uses 12 gauge shells."
   components:
   - type: Sprite
     sprite: _DEN/Objects/Weapons/Guns/Shotguns/soulshatter.rsi
@@ -25,7 +26,7 @@
     fireOnDropChance: 0.5
   - type: BallisticAmmoProvider
     capacity: 2
-    proto: null
+    proto: ShellSoulbreaker # Fine to start loaded since it's no longer mapped (mantis guns were repurposed, and this can be for admemes)
   - type: MeleeWeapon
     attackRate: 1.2
     damage:
@@ -33,6 +34,9 @@
         Blunt: 7.5
   - type: DamageOtherOnHit
     staminaCost: 6
+  - type: Tag
+    tags:
+    - MantisBeltStorable
 
 - type: entity
   name: antique energy shotgun

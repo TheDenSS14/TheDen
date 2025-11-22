@@ -69,3 +69,19 @@
         - Librarian
   items:
     - ClothingUniformBrownSuitSkirt
+
+# Eyes
+
+- type: loadout
+  id: LoadoutCatalogerEyesEpiGlassesVisor
+  category: JobsEpistemicsCataloger
+  cost: 3
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutCatalogerEquipment
+    - !type:CharacterJobRequirement
+      jobs:
+        - Librarian
+  items:
+    - ClothingEyesGlassesEpistemicsVisor

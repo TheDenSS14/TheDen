@@ -1,0 +1,66 @@
+- type: entity
+  parent: [BaseItem, BaseAntiPsionicWeapon, BaseMantisContraband] # Contraband so the mystagogue doesn't steal it
+  id: LanternMantis # If I parented it to Lantern, it would have a battery slot...
+  name: mantis lantern
+  description: "An ornate lantern housing an eidolite pyramid that draws energy from the noosphere. Its glow lingers in your vision, imprinting shapes you can't quite name, and its handle hangs easily on your back."
+  components:
+    - type: Sprite
+      sprite: _DEN/Objects/Tools/lanternmantis.rsi
+      layers:
+        - state: lantern
+        - state: lantern-on
+          shader: unshaded
+          visible: false
+          map: [ "light" ]
+    - type: Item
+      sprite: _DEN/Objects/Tools/lanternmantis.rsi
+      heldPrefix: off
+    - type: EtherealLight # Dims around ethereal entities
+    - type: PointLight
+      enabled: false
+      radius: 3.1
+      energy: 3 # 0.5 brighter than a normal lantern because it's a darker color
+      softness: 1.1
+      color: "#d9418d"
+      netsync: false
+    - type: Appearance
+    - type: ToggleableVisuals
+      spriteLayer: light
+    - type: ItemTogglePointLight
+    - type: ItemToggle
+      predictable: false
+      soundActivate:
+        path: /Audio/_DEN/Effects/crystalshimmer1.ogg
+        params:
+          volume: -6
+          variation: 0.05
+      soundDeactivate:
+        path: /Audio/_DEN/Effects/crystalshimmer2.ogg
+        params:
+          volume: -6
+          variation: 0.05
+    - type: StealTarget
+      stealGroup: LAMP # The moths are coming the moths are coming
+    - type: Clothing
+      sprite: _DEN/Objects/Tools/lanternmantis.rsi
+      equippedPrefix: off
+      quickEquip: false
+      slots:
+        - Belt
+        - suitStorage
+    - type: UnpoweredFlashlight # Powered by the noosphere
+    - type: MeleeWeapon # You can swing it like a weapon
+      attackRate: 0.6666
+      soundHit:
+        path: /Audio/Weapons/block_metal1.ogg
+        params:
+          volume: -4
+          variation: 0.05
+      damage:
+        types:
+          Blunt: 5 # 7.5 DPS (same as Crowbar), or 9.38 DPS against psions
+          Holy: 2.5 # 14.1 total DPS against psionic supernaturals
+    - type: Tag
+      tags:
+      - Flashlight
+      - MantisBeltStorable

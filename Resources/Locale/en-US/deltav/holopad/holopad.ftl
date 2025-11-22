@@ -24,8 +24,8 @@ holopad-epistemics-oracle = Epistemics - Oracle
 # Logistics
 holopad-logistics-front = Logistics - Front
 holopad-logistics-cargo-bay = Logistics - Cargo Bay
-holodpad-logistics-mailroom = Logistics - Mailroom
-holodpad-logistics-mailfront = Logistics - Mail Front
+holopad-logistics-mailroom = Logistics - Mailroom
+holopad-logistics-mailfront = Logistics - Mail Front
 holopad-logistics-salvage-bay = Logistics - Salvage Bay
 holopad-logistics-breakroom  = Logistics - Breakroom
 holopad-logistics-ats = Logistics - ATS

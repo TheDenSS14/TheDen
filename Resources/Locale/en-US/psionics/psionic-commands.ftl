@@ -4,10 +4,10 @@
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
-command-glimmershow-description = Show the current glimmer level.
+command-glimmershow-description = Show the current Glimmer level.
 command-glimmershow-help = No arguments.
 
-command-glimmerset-description = Set glimmer to a number.
+command-glimmerset-description = Set Glimmer to a number.
 command-glimmerset-help = glimmerset (integer)
 
 cmd-lspsionics-desc = List psionics.

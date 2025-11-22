@@ -1,0 +1,79 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-4.0",
+  "copyright": "By Sha-Seng (GitHub), caseback and casefront included for future use",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+    "states": [
+        {
+            "name": "caseback"
+        },
+        {
+            "name": "casefront"
+        },
+        {
+            "name": "light-off"
+        },
+        {
+            "name": "empty"
+        },
+        {
+            "name": "full"
+        },
+        {
+            "name": "open"
+        },
+        {
+            "name": "light-charging",
+            "delays": [
+                [
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1
+                ]
+            ]
+        },
+        {
+            "name": "light-charged",
+            "delays": [
+                [
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1
+                ]
+            ]
+        },
+        {
+            "name": "light-empty",
+            "delays": [
+                [
+                    0.15,
+                    0.15,
+                    0.15,
+                    0.15,
+                    0.15,
+                    0.15,
+                    0.15,
+                    0.15,
+                    0.15,
+                    0.15
+                ]
+            ]
+        }
+    ]
+}

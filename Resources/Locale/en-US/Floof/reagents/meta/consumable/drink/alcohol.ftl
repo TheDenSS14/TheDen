@@ -181,7 +181,7 @@ reagent-name-thewaterslide = the waterslide
 reagent-desc-thewaterslide = Charcoal not included for you, o naughty one.
 
 reagent-name-whiskeysour = whiskey sour
-reagent-desc-whiskeysour = Shelter from the Noöspheric Storm.
+reagent-desc-whiskeysour = Shelter from the noospheric storm.
 
 reagent-name-yeolhandy = ye ol handy
 reagent-desc-yeolhandy = The loner's choice, cold as their bed.

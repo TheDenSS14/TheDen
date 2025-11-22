@@ -1,0 +1,77 @@
+- type: entity
+  parent: [ClothingHandsInedibleBase, BaseFoldable, BaseAntiPsionicWeapon, BaseMantisContraband]
+  id: MantisMeleeFist
+  name: manifold
+  description: "A heavy mnemolith gauntlet designed for control rather than sheer lethality, capable of hurling foes back and, at times, deflecting incoming fire. Said to take its name from its capacity for folding men, and its clever design allows it to be worn on either hand. Deadly when wielded against psionic and otherworldly threats."
+  components:
+  - type: Foldable
+    canFoldInsideContainer: true
+    foldVerbText: fold-flip-verb
+    unfoldVerbText: fold-flip-verb
+  - type: FoldableClothing
+    foldedEquippedPrefix: flipped
+  - type: Sprite
+    sprite: _DEN/Objects/Weapons/Melee/mantisfist.rsi
+    state: icon
+  - type: Item
+    sprite: _DEN/Objects/Weapons/Melee/mantisfist.rsi
+    size: Normal
+  - type: Clothing
+    sprite: _DEN/Objects/Weapons/Melee/mantisfist.rsi
+  - type: MeleeWeapon
+    attackRate: .6666
+    range: 1.5
+    angle: 60
+    heavyRateModifier: 1 # Same speed
+    heavyRangeModifier: 1 # Same range
+    heavyDamageBaseModifier: 1 # Same damage
+    damage:
+      types:
+        Blunt: 8 # 12 DPS, or 15 DPS against psions (same as CombatKnife)
+        Holy: 4 # 22.5 total DPS against psionic supernaturals
+        Structural: 5
+    soundHit:
+      path: /Audio/_Impstation/Weapons/nullglove.ogg
+      params:
+        variation: 0.15
+    animation: WeaponArcSmash
+    mustBeEquippedToUse: true
+  - type: StaminaDamageOnHit
+    damage: 5
+  - type: MeleeThrowOnHit
+    speed: 5
+    lifetime: 0.05
+  - type: Reflect
+    reflectProb: .2
+    spread: 135
+  - type: Fiber
+    fiberColor: fibers-bluish
+    fiberMaterial: fibers-stony
+  - type: Tag
+    tags:
+    - WhitelistChameleon
+    - MantisFist
+    - MantisBeltStorable
+
+- type: entity
+  parent: [BaseRivalCompanyContraband, MantisMeleeFist] # Traitor version, loosely comparable to BaseBallBatHomeRun, but with a bit less damage and 66% the knockback
+  id: MantisMeleeFistDouble
+  name: twinned manifold
+  description: "Heavy mnemolith gauntlets forged through forbidden rituals, capable of hurling foes back and, at times, deflecting incoming fire. Said to take their name from their capacity for folding men. Deadly when wielded against psionic and otherworldly threats."
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Weapons/Melee/mantisfistdouble.rsi
+    state: icon
+  - type: Clothing
+    sprite: _DEN/Objects/Weapons/Melee/mantisfistdouble.rsi
+  - type: MeleeWeapon
+    angle: 90
+    bluntStaminaDamageFactor: 2.0
+    damage:
+      types:
+        Blunt: 14 # 21 DPS (same as CombatKnife), or 26.25 DPS against psions
+        Holy: 7 # 39.40 total DPS against psionic supernaturals
+  - type: MeleeThrowOnHit
+    speed: 20
+    lifetime: 5
+  - type: FingerprintMask # Both hands are covered, so they hide fingerprints

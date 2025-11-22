@@ -43,3 +43,19 @@
         - Chaplain
   items:
     - ClothingUniformFuneralSuitSkirt
+
+# Eyes
+
+- type: loadout
+  id: LoadoutChaplainEyesEpiGlassesVisor
+  category: JobsEpistemicsChaplain
+  cost: 3
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutChaplainEquipment
+    - !type:CharacterJobRequirement
+      jobs:
+        - Chaplain
+  items:
+    - ClothingEyesGlassesEpistemicsVisor

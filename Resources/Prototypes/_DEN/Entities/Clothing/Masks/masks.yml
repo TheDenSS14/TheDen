@@ -99,6 +99,40 @@
     hideOnToggle: true
 
 - type: entity
+  parent: ClothingMaskPullableBase
+  id: ClothingMaskMantisVeil
+  name: mantis veil
+  description: "A sheer veil ornamented with electrum hoops. Pairs well with your blindfold."
+  components:
+  - type: Item
+    size: Small
+  - type: Sprite
+    sprite: _DEN/Clothing/Mask/mantis_mask_veil.rsi
+  - type: Clothing
+    sprite: _DEN/Clothing/Mask/mantis_mask_veil.rsi
+  - type: BreathMask # It's like Dune and they have a breathing tube leading to their mouth, don't worry about it
+  - type: IngestionBlocker
+  - type: Tag
+    tags:
+    - WhitelistChameleon
+    - MantisBeltStorable
+    hideOnToggle: true
+
+- type: entity
+  parent: ClothingMaskMantisVeil
+  id: ClothingMaskMantisRitual
+  name: mantis ritual mask
+  description: "A faceless electrum mask used in certain esoteric rituals."
+  components:
+  - type: Sprite
+    sprite: _DEN/Clothing/Mask/mantis_mask_ritual.rsi
+  - type: Clothing
+    sprite: _DEN/Clothing/Mask/mantis_mask_ritual.rsi
+  - type: HideLayerClothing
+    slots:
+    - Snout
+
+- type: entity
   parent: ClothingMaskBase
   id: ClothingMaskKitsune
   name: kitsune mask

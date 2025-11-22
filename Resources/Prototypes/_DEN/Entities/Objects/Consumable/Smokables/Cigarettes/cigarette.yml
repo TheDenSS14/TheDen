@@ -1,0 +1,26 @@
+- type: entity
+  id: CigaretteMnemolith
+  parent: Cigarette
+  name: mnemolith cigarette
+  description: "The smoke clings to your thoughts, enhancing your awareness of the noosphere."
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Consumable/Smokeables/Cigarettes/cigarettemantis.rsi
+  - type: Item
+    sprite: _DEN/Objects/Consumable/Smokeables/Cigarettes/cigarettemantis.rsi
+  - type: SolutionContainerManager
+    solutions:
+      smokable:
+        maxVol: 30
+        reagents:
+          - ReagentId: Nicotine
+            Quantity: 10
+          - ReagentId: MnemolithReagent
+            Quantity: 10 # Controlled dosing, so 10u
+  - type: Extractable
+    grindableSolutionName: smokable
+  - type: Tag
+    tags:
+      - Cigarette
+      - Trash
+      - MantisBeltStorable

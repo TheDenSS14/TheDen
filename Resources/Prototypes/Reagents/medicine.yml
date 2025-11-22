@@ -89,7 +89,7 @@
   color: "#081a80"
   metabolisms:
     Medicine:
-      metabolismRate: 0.1
+      metabolismRate: 0.5 # TheDen - Updated so that 1u crypto is 20 seconds of insulation/suppression, before every tick just reset the timer to 5 minutes
       effects:
       - !type:GenericStatusEffect
         key: PsionicallyInsulated

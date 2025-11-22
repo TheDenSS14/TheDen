@@ -39,3 +39,344 @@
     proto: BulletDisablerSmg
     count: 5 # 2 shot stamina crit if you can land all the shots
     spread: 13
+
+# Mantis projectiles start
+# Muzzle flashes
+- type: entity
+  parent: MuzzleFlashEffect
+  id: MuzzleFlashEffectMantisCapgun
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    drawdepth: Effects
+    layers:
+    - sprite: _DEN/Objects/Weapons/Guns/Projectiles/mantis.rsi
+      state: muzzle_capgun
+      map: ["enum.EffectLayers.Unshaded"]
+      shader: unshaded
+  - type: PointLight
+    enabled: true
+    radius: 1.1
+    energy: 0.5
+    softness: 1.1
+    color: "#ffb869"
+
+- type: entity
+  parent: MuzzleFlashEffect
+  id: MuzzleFlashEffectMantisCrypto
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    drawdepth: Effects
+    layers:
+    - sprite: _DEN/Objects/Weapons/Guns/Projectiles/mantis.rsi
+      state: muzzle_crypto
+      map: ["enum.EffectLayers.Unshaded"]
+      shader: unshaded
+  - type: PointLight
+    enabled: true
+    radius: 1.1
+    energy: 0.5
+    softness: 1.1
+    color: "#6279f9"
+
+- type: entity
+  parent: MuzzleFlashEffect
+  id: MuzzleFlashEffectMantisHoly
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    drawdepth: Effects
+    layers:
+    - sprite: _DEN/Objects/Weapons/Guns/Projectiles/mantis.rsi
+      state: muzzle_holy
+      map: ["enum.EffectLayers.Unshaded"]
+      shader: unshaded
+  - type: PointLight
+    enabled: true
+    radius: 1.1
+    energy: 0.5
+    softness: 1.1
+    color: "#88b0d0"
+
+- type: entity
+  parent: MuzzleFlashEffect
+  id: MuzzleFlashEffectMantisLethal
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    drawdepth: Effects
+    layers:
+    - sprite: _DEN/Objects/Weapons/Guns/Projectiles/mantis.rsi
+      state: muzzle_lethal
+      map: ["enum.EffectLayers.Unshaded"]
+      shader: unshaded
+  - type: PointLight
+    enabled: true
+    radius: 1.1
+    energy: 0.5
+    softness: 1.1
+    color: "#44fbf7"
+
+# Capgun bullets
+- type: entity
+  parent: BaseBullet
+  id: BulletMantisCapgun
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Weapons/Guns/Projectiles/mantis.rsi
+    layers:
+    - state: bullet_capgun
+  - type: Ammo
+    muzzleFlash: MuzzleFlashEffectMantisCapgun # Big fiery flash
+  - type: Projectile
+    impactEffect: BulletImpactEffectMantisCapgun # Silly little sparkle
+    damage:
+      types:
+        Piercing: 0
+    soundHit:
+      path: /Audio/_DEN/Weapons/Guns/Hits/bwomp.ogg
+      params:
+        variation: 0.05
+
+- type: entity
+  parent: BulletMantisCapgun
+  id: BulletMantisCapgunSpread
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: ProjectileSpread
+    proto: BulletMantisCapgun
+    count: 6
+    spread: 15
+
+# Pistol bullets, the rest are parented to these with damage/transfer amounts adjusted
+# Initial piercing/holy damage values chosen by Juniwoofs
+- type: entity
+  parent: BaseBullet
+  id: BulletMantisCrypto
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Weapons/Guns/Projectiles/mantis.rsi
+    layers:
+    - state: bullet_crypto
+      shader: unshaded
+  - type: PointLight
+    enabled: true
+    radius: 1.1
+    energy: 0.5
+    softness: 1.1
+    color: "#6279f9"
+  - type: Ammo
+    muzzleFlash: MuzzleFlashEffectMantisCrypto
+  - type: Projectile
+    impactEffect: BulletImpactEffectMantisCrypto
+    damage:
+      types:
+        Piercing: 0
+    soundHit:
+      path: /Audio/_DEN/Weapons/Guns/Hits/hyposhot.ogg
+      params:
+        variation: 0.05
+  - type: ChemicalAmmo
+  - type: SolutionContainerManager
+    solutions:
+      ammo:
+        reagents:
+        - ReagentId: Cryptobiolin
+          Quantity: 5
+  - type: SolutionTransfer
+    maxTransferAmount: 5 # 5u of crypto disables psionics for 1m40s, and a full magazine of any mantis gun will disable psionics for 20m
+
+- type: entity
+  parent: BaseBullet
+  id: BulletMantisHoly
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Weapons/Guns/Projectiles/mantis.rsi
+    layers:
+    - state: bullet_holy
+      shader: unshaded
+  - type: PointLight
+    enabled: true
+    radius: 1.1
+    energy: 0.5
+    softness: 1.1
+    color: "#88b0d0"
+  - type: Ammo
+    muzzleFlash: MuzzleFlashEffectMantisHoly
+  - type: Projectile
+    impactEffect: BulletImpactEffectMantisHoly
+    damage:
+      types:
+        Holy: 10
+    soundHit:
+      path: /Audio/_DEN/Weapons/Guns/Hits/burnshot.ogg
+      params:
+        variation: 0.05
+
+- type: entity
+  parent: BaseBullet
+  id: BulletMantisLethal
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Weapons/Guns/Projectiles/mantis.rsi
+    layers:
+    - state: bullet_lethal
+      shader: unshaded
+  - type: PointLight
+    enabled: true
+    radius: 1.1
+    energy: 0.5
+    softness: 1.1
+    color: "#44fbf7"
+  - type: Ammo
+    muzzleFlash: MuzzleFlashEffectMantisLethal
+  - type: Projectile
+    impactEffect: BulletImpactEffectMantisLethal
+    damage:
+      types:
+        Piercing: 15
+    soundHit:
+      path: /Audio/Weapons/Guns/Hits/bullet_hit.ogg
+      params:
+        variation: 0.05
+
+# Revolver bullets
+- type: entity
+  parent: BulletMantisCrypto
+  id: BulletMantisCryptoRevolver
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      ammo:
+        reagents:
+        - ReagentId: Cryptobiolin
+          Quantity: 10
+  - type: SolutionTransfer
+    maxTransferAmount: 10 # 10u of crypto disables psionics for 3m20s, and a full magazine of any mantis gun will disable psionics for 20m
+
+- type: entity
+  parent: BulletMantisHoly
+  id: BulletMantisHolyRevolver
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Projectile
+    damage:
+      types:
+        Holy: 30
+
+- type: entity
+  parent: BulletMantisLethal
+  id: BulletMantisLethalRevolver
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Projectile
+    damage:
+      types:
+        Piercing: 36
+
+# Shotgun bullets
+- type: entity
+  parent: BulletMantisCrypto
+  id: BulletMantisCryptoShotgun
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      ammo:
+        reagents:
+        - ReagentId: Cryptobiolin
+          Quantity: 2
+  - type: SolutionTransfer
+    maxTransferAmount: 2 # 2u of crypto disables psionics for 40s, and a full magazine of any mantis gun will disable psionics for 20m
+
+- type: entity
+  parent: BulletMantisCryptoShotgun
+  id: BulletMantisCryptoSpread
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: ProjectileSpread
+    proto: BulletMantisCryptoShotgun
+    count: 6 # 12u of crypto disables psionics for 4m, and a full magazine of any mantis gun will disable psionics for 20m
+    spread: 15
+
+- type: entity
+  parent: BulletMantisHoly
+  id: BulletMantisHolyShotgun
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Projectile
+    damage:
+      types:
+        Holy: 8
+
+- type: entity
+  parent: BulletMantisHolyShotgun
+  id: BulletMantisHolySpread
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: ProjectileSpread
+    proto: BulletMantisHolyShotgun
+    count: 6
+    spread: 15
+
+- type: entity
+  parent: BulletMantisLethal
+  id: BulletMantisLethalShotgun
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Projectile
+    damage:
+      types:
+        Piercing: 9
+
+- type: entity
+  parent: BulletMantisLethalShotgun
+  id: BulletMantisLethalSpread
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: ProjectileSpread
+    proto: BulletMantisLethalShotgun
+    count: 6
+    spread: 15
+
+# Submachine gun bullets
+- type: entity
+  parent: BulletMantisCrypto
+  id: BulletMantisCryptoSubMachineGun
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      ammo:
+        reagents:
+        - ReagentId: Cryptobiolin
+          Quantity: 1.666
+  - type: SolutionTransfer
+    maxTransferAmount: 1.666 # 1.666u of crypto disables psionics for 33.3s, and a full magazine of any mantis gun will disable psionics for 20m
+
+- type: entity
+  parent: BulletMantisHoly
+  id: BulletMantisHolySubMachineGun
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Projectile
+    damage:
+      types:
+        Holy: 8
+
+- type: entity
+  parent: BulletMantisLethal
+  id: BulletMantisLethalSubMachineGun
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Projectile
+    damage:
+      types:
+        Piercing: 12
+# Mantis projectiles end

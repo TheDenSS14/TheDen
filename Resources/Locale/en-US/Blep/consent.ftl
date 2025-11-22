@@ -48,7 +48,7 @@ consent-MindSwap-desc = Should mind swap work on you?
 consent-MindSwap-no-consent = { CAPITALIZE(POSS-ADJ($target)) } mind rejects your advances.
 
 consent-MassMindSwap-name = Mass Mind Swap
-consent-MassMindSwap-desc = Should a mass mind swap from glimmer work on you?
+consent-MassMindSwap-desc = Should a mass mind swap from Glimmer work on you?
 
 consent-ChangelingTarget-name = Changeling Target
 consent-ChangelingTarget-desc = Should your body be allowed to be stolen by changelings?

@@ -29,9 +29,10 @@ alert-level-violet = Violet
 alert-level-violet-announcement = There is a serious viral outbreak, ongoing major death event, or there is another significant medical emergency. Crewmembers are advised to distance themselves from others and perform safety measures to prevent further spread.
 alert-level-violet-instructions = Crewmembers are advised to distance themselves from others and perform safety measures to prevent further spread.
 
+# TheDen - No psion is reporting for mindbreaking because of white alert
 alert-level-white = White
-alert-level-white-announcement = The station is suffering dangerously high levels of glimmer, there are several active psionic threats, or there is another significant epistemic emergency. Turn off all glimmer probers. Seek psionic insulation. Psychics should report for mindbreaking.
-alert-level-white-instructions = Crewmembers are advised to seek psionic insulation. Psychics should report for mindbreaking or golemization.
+alert-level-white-announcement = The station is suffering dangerously high levels of Glimmer, there are several active psionic threats, or there is another significant epistemic emergency. Turn off all Glimmer probers. Seek psionic insulation.
+alert-level-white-instructions = Crewmembers are advised to seek psionic insulation.
 
 alert-level-yellow = Yellow
 alert-level-yellow-announcement = There is a major issue with the atmospheric system, the station has suffered/is about to suffer significant damage, or there is another significant engineering emergency. Crewmembers are advised to stay away from the threat, and stay in their workplaces if necessary.

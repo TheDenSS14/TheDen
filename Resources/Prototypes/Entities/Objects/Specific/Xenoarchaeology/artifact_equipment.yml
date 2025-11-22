@@ -106,6 +106,7 @@
             Bounty: { state: bounty }
             CaptainsPaper: { state: captains_paper }
             Invoice: { state: invoice }
+            MantisPaper: { state: mantis_paper } # TheDen
         enum.StorageVisuals.Open:
           enum.PaperLabelVisuals.Layer:
             True: { offset: "0.0,0.3125" }

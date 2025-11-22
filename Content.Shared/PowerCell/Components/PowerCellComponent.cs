@@ -23,7 +23,12 @@ namespace Content.Shared.PowerCell;
 [RegisterComponent]
 public sealed partial class PowerCellComponent : Component
 {
-    public const int PowerCellVisualsLevels = 2;
+    /// <summary>
+    ///     How many visual levels a power cell uses to display charge.
+    ///     Defaults to 2 unless overridden.
+    /// </summary>
+    [DataField("levels")] // TheDen - Made this like MagazineVisualsComponent where it's variable instead of hardcoded to 2
+    public int Levels = 2;
 }
 
 [Serializable, NetSerializable]

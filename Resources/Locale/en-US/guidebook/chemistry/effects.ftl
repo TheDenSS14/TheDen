@@ -383,7 +383,7 @@ reagent-effect-guidebook-change-glimmer-reaction-effect =
     { $chance ->
         [1] Modifies
         *[other] modify
-    } the glimmer count by {$count} points
+    } the Glimmer count by {$count} points
 
 reagent-effect-guidebook-chem-remove-psionic =
     { $chance ->

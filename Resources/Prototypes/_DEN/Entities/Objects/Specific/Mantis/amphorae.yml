@@ -1,0 +1,51 @@
+- type: entity
+  parent: BaseAmphora
+  id: SomberElectrumAmphora
+  name: electrum amphora
+  description: "An electrum amphora with carved alabaster handles."
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Specific/Mantis/amphorae.rsi
+    state: electrumamphora
+  - type: Item
+    sprite: _DEN/Objects/Specific/Mantis/amphorae.rsi
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: Metallic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 300
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+    - trigger:
+        !type:DamageTrigger
+        damage: 25
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalGlassBreak
+      - !type:SpillBehavior
+        solution: jar
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          ScrapElectrum:
+            min: 2
+            max: 4
+  - type: DamageOnLand
+    damage:
+      types:
+        Blunt: 5
+  - type: DamageOtherOnHit
+    damage:
+      types:
+        Blunt: 5
+  - type: DamageOnHighSpeedImpact
+    minimumSpeed: 2
+    damage:
+      types:
+        Blunt: 5

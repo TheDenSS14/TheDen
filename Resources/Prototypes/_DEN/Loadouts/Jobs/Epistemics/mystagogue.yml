@@ -1,0 +1,15 @@
+# Eyes
+
+- type: loadout
+  id: LoadoutMystagogueEyesEpiGlassesVisor
+  category: JobsEpistemicsMystagogue
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMystagogueEquipment
+    - !type:CharacterJobRequirement
+      jobs:
+        - ResearchDirector
+  items:
+    - ClothingEyesGlassesEpistemicsVisor

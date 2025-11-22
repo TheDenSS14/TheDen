@@ -8,10 +8,11 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 - type: entity
-  parent: CombatKnife
+  parent: [CombatKnife, BaseAntiPsionicWeapon, BaseMantisContraband] # TheDen
   id: AntiPsychicKnife
-  name: anti-psychic knife
-  description: A special knife designed for killing psychics.
+  name: anti-psionic knife
+  suffix: DEPRECATED, SEE MANTISKNIFE
+  description: "A mnemolith knife made to counter psionic and otherworldly threats, but its archaic design lacks any feedback protection for the wielder. You'd better not miss." # TheDen
   components:
   - type: MeleeWeapon
     attackRate: .6666
@@ -22,11 +23,7 @@
   - type: StaminaDamageOnHit
     damage: 0
   - type: AntiPsionicWeapon
-    punish: false
-    modifiers:
-      coefficients:
-        Slash: 1.25
-        Holy: 1.2
+    punish: true # TheDen - Since I remade the knife entirely (see MantisMeleeKnife) this one gets punish again since it shouldn't even be findable
   - type: Sprite
     sprite: Nyanotrasen/Objects/Weapons/Melee/anti_psychic_knife.rsi
     state: icon
@@ -37,7 +34,9 @@
       sprite: Nyanotrasen/Objects/Weapons/Melee/anti_psychic_knife.rsi
   - type: Tag
     tags:
-    - ForensicBeltEquip
-    - HighRiskItem
-  - type: StealTarget
-    stealGroup: AntiPsychicKnife
+#    - ForensicBeltEquip
+    - MantisBeltStorable # TheDen - New tag for clarity
+    - Knife # Theden
+#    - HighRiskItem
+#  - type: StealTarget # TheDen - Non-mindshielded roles don't need steal targets
+#    stealGroup: AntiPsychicKnife

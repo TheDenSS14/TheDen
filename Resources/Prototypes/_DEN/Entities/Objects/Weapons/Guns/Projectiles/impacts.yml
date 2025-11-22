@@ -1,0 +1,81 @@
+# Mantis impacts start
+- type: entity
+  parent: BulletImpactEffect
+  id: BulletImpactEffectMantisCapgun
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: TimedDespawn
+    lifetime: 0.18
+  - type: Sprite
+    layers:
+    - sprite: _DEN/Objects/Weapons/Guns/Projectiles/mantis.rsi
+      state: impact_capgun
+      map: ["enum.EffectLayers.Unshaded"]
+      shader: unshaded
+  - type: PointLight
+    enabled: true
+    radius: 1.1
+    energy: 0.5
+    softness: 1.1
+    color: "#ffb869"
+
+- type: entity
+  parent: BulletImpactEffect
+  id: BulletImpactEffectMantisCrypto
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: TimedDespawn
+    lifetime: 0.18
+  - type: Sprite
+    layers:
+    - sprite: _DEN/Objects/Weapons/Guns/Projectiles/mantis.rsi
+      state: impact_crypto
+      map: ["enum.EffectLayers.Unshaded"]
+      shader: unshaded
+  - type: PointLight
+    enabled: true
+    radius: 1.1
+    energy: 0.5
+    softness: 1.1
+    color: "#6279f9"
+
+- type: entity
+  parent: BulletImpactEffect
+  id: BulletImpactEffectMantisHoly
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: TimedDespawn
+    lifetime: 0.18
+  - type: Sprite
+    layers:
+    - sprite: _DEN/Objects/Weapons/Guns/Projectiles/mantis.rsi
+      state: impact_holy
+      map: ["enum.EffectLayers.Unshaded"]
+      shader: unshaded
+  - type: PointLight
+    enabled: true
+    radius: 1.1
+    energy: 0.5
+    softness: 1.1
+    color: "#88b0d0"
+
+- type: entity
+  parent: BulletImpactEffect
+  id: BulletImpactEffectMantisLethal
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: TimedDespawn
+    lifetime: 0.18
+  - type: Sprite
+    layers:
+    - sprite: _DEN/Objects/Weapons/Guns/Projectiles/mantis.rsi
+      state: impact_lethal
+      map: ["enum.EffectLayers.Unshaded"]
+      shader: unshaded
+  - type: PointLight
+    enabled: true
+    radius: 1.1
+    energy: 0.5
+    softness: 1.1
+    color: "#44fbf7"
+# Mantis impacts end

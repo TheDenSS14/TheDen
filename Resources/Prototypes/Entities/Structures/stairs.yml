@@ -40,6 +40,9 @@
         !type:DamageTrigger
         damage: 50
       behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak # TheDen - It's weird they just disappear
       - !type:SpawnEntitiesBehavior
         spawn:
           SheetSteel1:
@@ -71,7 +74,7 @@
 - type: entity
   id: StairStageWhite
   parent: Stairs
-  suffix: White, stage 
+  suffix: White, stage
   components:
   - type: Sprite
     sprite: Structures/stairs.rsi

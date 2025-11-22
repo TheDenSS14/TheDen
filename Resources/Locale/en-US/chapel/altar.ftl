@@ -3,7 +3,8 @@
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
-altar-examine = [color=purple]This altar can be used to sacrifice Psionics.[/color]
+# TheDen - What the fuck man
+altar-examine = [color=purple]This altar can be used to sacrifice psions.[/color]
 altar-sacrifice-verb = Sacrifice
 
 altar-failure-reason-self = You can't sacrifice yourself!

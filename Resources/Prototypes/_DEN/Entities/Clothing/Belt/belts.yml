@@ -40,6 +40,51 @@
       - BeltSlotNotBelt
 
 - type: entity
+  parent: [ClothingBeltMantis, BaseFoldable]
+  id: ClothingBeltMantisAiry
+  name: airy mantis belt
+  description: "A finely-woven rope belt with loops to carry mantis equipment. The loose end can be tucked in, if you prefer clean lines."
+  components:
+  - type: Sprite
+    sprite: _DEN/Clothing/Belt/mantis_belt_airy.rsi
+  - type: Clothing
+    sprite: _DEN/Clothing/Belt/mantis_belt_airy.rsi
+  - type: Foldable
+    canFoldInsideContainer: true
+    foldVerbText: fold-verb
+    unfoldVerbText: unfold-verb
+  - type: FoldableClothing
+    foldedEquippedPrefix: folded
+
+- type: entity
+  parent: [ClothingBeltMantis, BaseFoldable]
+  id: ClothingBeltMantisDark
+  name: dark mantis belt
+  description: "A structured, layered sash designed to carry mantis equipment. The loose end can be tied on the other side, if it better suits your outfit."
+  components:
+  - type: Sprite
+    sprite: _DEN/Clothing/Belt/mantis_belt_dark.rsi
+  - type: Clothing
+    sprite: _DEN/Clothing/Belt/mantis_belt_dark.rsi
+  - type: Foldable
+    canFoldInsideContainer: true
+    foldVerbText: fold-flip-verb
+    unfoldVerbText: fold-flip-verb
+  - type: FoldableClothing
+    foldedEquippedPrefix: flipped
+
+- type: entity
+  parent: ClothingBeltMantis
+  id: ClothingBeltMantisOrnate
+  name: ornate mantis belt
+  description: "A thick band fastened by an electrum chain, with inner pockets designed to carry mantis equipment."
+  components:
+  - type: Sprite
+    sprite: _DEN/Clothing/Belt/mantis_belt_ornate.rsi
+  - type: Clothing
+    sprite: _DEN/Clothing/Belt/mantis_belt_ornate.rsi
+
+- type: entity
   parent: [ BaseBlueshieldOfficerContraband, ClothingBeltStorageBase ]
   id: ClothingBeltBSOWebbing
   name: blueshield webbing

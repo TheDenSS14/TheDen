@@ -1,0 +1,119 @@
+- type: entity
+  parent: [BaseSyringe, BaseMantisContraband] # Contraband so the mystagogue doesn't steal it
+  id: SyringeMantis
+  name: electrum syringe
+  description: "An electrum syringe with an eidolite barrel. Naturally antimicrobial."
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Specific/Chemistry/syringe.rsi
+    layers:
+      - state: mantis-syringe1
+        map: ["enum.SolutionContainerLayers.Fill"]
+        visible: false
+      - state: mantis-syringe_base0
+        map: ["enum.SolutionContainerLayers.Base"]
+  - type: Icon
+    sprite: _DEN/Objects/Specific/Chemistry/syringe.rsi
+    state: mantis-syringe_base0
+  - type: Item
+    size: Tiny
+    sprite: _DEN/Objects/Specific/Chemistry/syringe.rsi
+    heldPrefix: mantis
+  - type: SolutionContainerVisuals
+    maxFillLevels: 2
+    fillBaseName: mantis-syringe
+    inHandsMaxFillLevels: 3
+    inHandsFillBaseName: -fill-
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: Metallic # Metal shell
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 10
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: GlassBreak # There's still a crystal interior
+          params:
+            volume: -4
+      - !type:SpillBehavior { }
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          MaterialEidolite1:
+            min: 1
+            max: 1
+          ScrapElectrum:
+            min: 1
+            max: 1
+        transferForensics: true
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: PhysicalComposition
+    materialComposition:
+      MaterialEidolite1: 1
+      ScrapElectrum: 1
+  - type: Tag
+    tags:
+    - Syringe
+    - MantisBeltStorable
+    - MantisBoxChemicalsStorable
+
+- type: entity
+  parent: PillCanister
+  id: PillCanisterMantis
+  name: electrum pill canister
+  description: "A electrum pill canister with an eidolite window. Expensive for no reason."
+  components:
+  - type: Item
+    size: Tiny
+    sprite: _DEN/Objects/Specific/Chemistry/pills_canister.rsi
+    heldPrefix: mantis
+  - type: Sprite
+    sprite: _DEN/Objects/Specific/Chemistry/pills_canister.rsi
+    state: mantis-pill_canister
+  - type: Storage
+    grid:
+    - 0,0,4,1
+    quickInsert: true
+    areaInsert: true
+    areaInsertRadius: 1
+    storageInsertSound: /Audio/Effects/pill_insert.ogg
+    storageRemoveSound: /Audio/Effects/pill_remove.ogg
+  - type: Dumpable
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: Metallic # Metal shell
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 10
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: GlassBreak # There's still a crystal interior
+          params:
+            volume: -4
+      - !type:SpillBehavior { }
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          MaterialEidolite1:
+            min: 1
+            max: 1
+          ScrapElectrum:
+            min: 1
+            max: 1
+        transferForensics: true
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: PhysicalComposition
+    materialComposition:
+      MaterialEidolite1: 1
+      ScrapElectrum: 1
+  - type: Tag
+    tags:
+      - PillCanister
+      - MantisBeltStorable
+      - MantisBoxChemicalsStorable

@@ -1,0 +1,957 @@
+# GLOOMY HOLOPADS START - Designed to match the "somber" mantis tilesets, but they need to be useful for anyone, so I have to do all this sorry
+- type: entity
+  parent: Holopad
+  id: VeiledHolopad
+  name: veiled holopad
+  suffix:
+  description: "A gloomy holopad with an esoteric eye motif."
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Machines/somberholopad.rsi
+  - type: EtherealLight # Dims around ethereal entities
+  - type: PointLight
+    radius: 1.5
+    energy: 1.6
+    color: "#d9418d"
+  - type: Speech
+    speechVerb: Electricity # Crackles, buzzes, screeches since it's a weirder holopad
+    speechSounds: SyndieBorg # Identical to borg, only slightly deeper, same reason as above
+
+- type: entity
+  parent: HolopadLongRange
+  id: VeiledHolopadLongRange
+  name: veiled long-range holopad
+  description: "A gloomy holopad with an esoteric eye motif. On a long-range network."
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Machines/somberholopad.rsi
+  - type: EtherealLight # Dims around ethereal entities
+  - type: PointLight
+    radius: 1.5
+    energy: 1.6
+    color: "#d9418d"
+  - type: Speech
+    speechVerb: Electricity
+    speechSounds: SyndieBorg
+
+- type: entity
+  parent: HolopadUnlimitedRange
+  id: VeiledHolopadUnlimitedRange
+  name: veiled quantum-entangling holopad
+  description: "A gloomy holopad with an esoteric eye motif. On an extreme-range network."
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Machines/somberholopad.rsi
+  - type: EtherealLight # Dims around ethereal entities
+  - type: PointLight
+    radius: 1.5
+    energy: 1.6
+    color: "#d9418d"
+  - type: Speech
+    speechVerb: Electricity
+    speechSounds: SyndieBorg
+
+- type: entity
+  parent: HolopadBluespace
+  id: VeiledHolopadBluespace
+  name: veiled bluespace holopad
+  suffix: Unrestricted Range
+  description: "A gloomy holopad with an esoteric eye motif, utilizing experimental bluespace technology. Range is no longer a question."
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Machines/somberholopad.rsi
+  - type: EtherealLight # Dims around ethereal entities
+  - type: PointLight
+    radius: 1.5
+    energy: 1.6
+    color: "#d9418d"
+  - type: Speech
+    speechVerb: Electricity
+    speechSounds: SyndieBorg
+
+## Mapping prototypes
+# General
+- type: entity
+  parent: VeiledHolopad
+  id: VeiledHolopadGeneralTools
+  suffix: Tools
+  components:
+  - type: Label
+    currentLabel: holopad-general-tools
+
+- type: entity
+  parent: VeiledHolopad
+  id: VeiledHolopadGeneralCryosleep
+  suffix: Cryosleep
+  components:
+  - type: Label
+    currentLabel: holopad-general-cryosleep
+
+- type: entity
+  parent: VeiledHolopad
+  id: VeiledHolopadGeneralTheater
+  suffix: Theater
+  components:
+  - type: Label
+    currentLabel: holopad-general-theater
+
+- type: entity
+  parent: VeiledHolopad
+  id: VeiledHolopadGeneralDisposals
+  suffix: Disposals
+  components:
+  - type: Label
+    currentLabel: holopad-general-disposals
+
+- type: entity
+  parent: VeiledHolopad
+  id: VeiledHolopadGeneralEVAStorage
+  suffix: EVA Storage
+  components:
+  - type: Label
+    currentLabel: holopad-general-eva
+
+- type: entity
+  parent: VeiledHolopad
+  id: VeiledHolopadGeneralLounge
+  suffix: Lounge
+  components:
+  - type: Label
+    currentLabel: holopad-general-lounge
+
+- type: entity
+  parent: VeiledHolopad
+  id: VeiledHolopadGeneralArcade
+  suffix: Arcade
+  components:
+  - type: Label
+    currentLabel: holopad-general-arcade
+
+- type: entity
+  parent: VeiledHolopad
+  id: VeiledHolopadGeneralEvac
+  suffix: Evac
+  components:
+  - type: Label
+    currentLabel: holopad-general-evac
+
+- type: entity
+  parent: VeiledHolopad
+  id: VeiledHolopadGeneralArrivals
+  suffix: Arrivals
+  components:
+  - type: Label
+    currentLabel: holopad-general-arrivals
+
+- type: entity
+  parent: VeiledHolopad
+  id: VeiledHolopadGeneralPark
+  suffix: Park
+  components:
+  - type: Label
+    currentLabel: holopad-general-park
+
+- type: entity
+  parent: VeiledHolopad
+  id: VeiledHolopadGeneralVoxNitrogenLounge
+  suffix: Nitrogen Lounge
+  components:
+  - type: Label
+    currentLabel: holopad-general-nitrogen-lounge
+
+- type: entity
+  parent: VeiledHolopad
+  id: VeiledHolopadGeneralShipyardDock
+  suffix: Shipyard Dock
+  components:
+  - type: Label
+    currentLabel: holopad-general-shipyard-dock
+
+# Command
+- type: entity
+  parent: VeiledHolopad
+  id: VeiledHolopadCommandBridge
+  suffix: Bridge
+  components:
+  - type: Label
+    currentLabel: holopad-command-bridge
+
+- type: entity
+  parent: VeiledHolopad
+  id: VeiledHolopadCommandVault
+  suffix: Vault
+  components:
+  - type: Label
+    currentLabel: holopad-command-vault
+
+- type: entity
+  parent: VeiledHolopad
+  id: VeiledHolopadCommandBridgeHallway
+  suffix: Bridge Hallway
+  components:
+  - type: Label
+    currentLabel: holopad-command-bridge-hallway
+
+- type: entity
+  parent: VeiledHolopad
+  id: VeiledHolopadCommandMeetingRoom
+  suffix: Command Meeting
+  components:
+  - type: Label
+    currentLabel: holopad-command-meeting-room
+
+- type: entity
+  parent: VeiledHolopad
+  id: VeiledHolopadCommandLounge
+  suffix: Command Lounge
+  components:
+  - type: Label
+    currentLabel: holopad-command-lounge
+
+- type: entity
+  parent: VeiledHolopad
+  id: VeiledHolopadCommandCaptain
+  suffix: Captain
+  components:
+  - type: Label
+    currentLabel: holopad-command-captain
+
+- type: entity
+  parent: VeiledHolopad
+  id: VeiledHolopadCommandHop
+  suffix: HoP
+  components:
+  - type: Label
+    currentLabel: holopad-command-hop
+
+- type: entity
+  parent: VeiledHolopad
+  id: VeiledHolopadCommandCmo
+  suffix: CMO
+  components:
+  - type: Label
+    currentLabel: holopad-command-cmo
+
+- type: entity
+  parent: VeiledHolopad
+  id: VeiledHolopadCommandQm
+  suffix: LO
+  components:
+  - type: Label
+    currentLabel: holopad-command-lo
+
+- type: entity
+  parent: VeiledHolopad
+  id: VeiledHolopadCommandCe
+  suffix: CE
+  components:
+  - type: Label
+    currentLabel: holopad-command-ce
+
+- type: entity
+  parent: VeiledHolopad
+  id: VeiledHolopadCommandRd
+  suffix: Mysta
+  components:
+  - type: Label
+    currentLabel: holopad-command-mysta
+
+- type: entity
+  parent: VeiledHolopad
+  id: VeiledHolopadCommandHos
+  suffix: HoS
+  components:
+  - type: Label
+    currentLabel: holopad-command-hos
+
+- type: entity
+  parent: VeiledHolopad
+  id: VeiledHolopadJusticeCJ
+  suffix: Chief Justice
+  components:
+  - type: Label
+    currentLabel: holopad-command-cj
+
+- type: entity
+  parent: VeiledHolopad
+  id: VeiledHolopadCommandEvac
+  suffix: Command Evac
+  components:
+  - type: Label
+    currentLabel: holopad-command-evac
+
+# Science
+- type: entity
+  parent: VeiledHolopad
+  id: VeiledHolopadScienceAnomaly
+  suffix: Anomaly
+  components:
+  - type: Label
+    currentLabel: holopad-epistemics-anomaly
+
+- type: entity
+  parent: VeiledHolopad
+  id: VeiledHolopadScienceArtifact
+  suffix: Artifact
+  components:
+  - type: Label
+    currentLabel: holopad-epistemics-artifact
+
+- type: entity
+  parent: VeiledHolopad
+  id: VeiledHolopadScienceRobotics
+  suffix: Robotics
+  components:
+  - type: Label
+    currentLabel: holopad-epistemics-robotics
+
+- type: entity
+  parent: VeiledHolopad
+  id: VeiledHolopadScienceRnd
+  suffix: R&D
+  components:
+  - type: Label
+    currentLabel: holopad-epistemics-rnd
+
+- type: entity
+  parent: VeiledHolopad
+  id: VeiledHolopadScienceFront
+  suffix: Epi Front
+  components:
+  - type: Label
+    currentLabel: holopad-epistemics-front
+
+- type: entity
+  parent: VeiledHolopad
+  id: VeiledHolopadScienceBreakroom
+  suffix: Epi Breakroom
+  components:
+  - type: Label
+    currentLabel: holopad-epistemics-breakroom
+
+- type: entity
+  parent: VeiledHolopad
+  id: VeiledHolopadEpistemicsMantis
+  suffix: Mantis, Somber Set # The source of my suffering, labeled this way so it appears in "somber" searches for mappers
+  components: # Hopefully they can infer that the rest are called "veiled" if they want them
+  - type: Label # I specifically chose a word that appears alphabetically after standard holopads
+    currentLabel: holopad-epistemics-mantis
+
+- type: entity
+  parent: VeiledHolopad
+  id: VeiledHolopadEpistemicsOracle
+  suffix: Oracle
+  components:
+  - type: Label
+    currentLabel: holopad-epistemics-oracle
+
+# Medical
+- type: entity
+  parent: VeiledHolopad
+  id: VeiledHolopadMedicalMedbay
+  suffix: Medbay
+  components:
+  - type: Label
+    currentLabel: holopad-medical-medbay
+
+- type: entity
+  parent: VeiledHolopad
+  id: VeiledHolopadMedicalChemistry
+  suffix: Chemistry
+  components:
+  - type: Label
+    currentLabel: holopad-medical-chemistry
+
+- type: entity
+  parent: VeiledHolopad
+  id: VeiledHolopadMedicalCryopods
+  suffix: Cryopods
+  components:
+  - type: Label
+    currentLabel: holopad-medical-cryopods
+
+- type: entity
+  parent: VeiledHolopad
+  id: VeiledHolopadMedicalMorgue
+  suffix: Morgue
+  components:
+  - type: Label
+    currentLabel: holopad-medical-morgue
+
+- type: entity
+  parent: VeiledHolopad
+  id: VeiledHolopadMedicalSurgery
+  suffix: Surgery
+  components:
+  - type: Label
+    currentLabel: holopad-medical-surgery
+
+- type: entity
+  parent: VeiledHolopad
+  id: VeiledHolopadMedicalParamed
+  suffix: Paramedic
+  components:
+  - type: Label
+    currentLabel: holopad-medical-paramedic
+
+- type: entity
+  parent: VeiledHolopad
+  id: VeiledHolopadMedicalVirology
+  suffix: Virology
+  components:
+  - type: Label
+    currentLabel: holopad-medical-virology
+
+- type: entity
+  parent: VeiledHolopad
+  id: VeiledHolopadMedicalFront
+  suffix: Med Front
+  components:
+  - type: Label
+    currentLabel: holopad-medical-front
+
+- type: entity
+  parent: VeiledHolopad
+  id: VeiledHolopadMedicalBreakroom
+  suffix: Med Breakroom
+  components:
+  - type: Label
+    currentLabel: holopad-medical-breakroom
+
+- type: entity
+  parent: VeiledHolopad
+  id: VeiledHolopadMedicalOutpost
+  suffix: Outpost
+  components:
+  - type: Label
+    currentLabel: holopad-medical-outpost
+
+- type: entity
+  parent: VeiledHolopad
+  id: VeiledHolopadMedicalPsychologist
+  suffix: Psychologist
+  components:
+  - type: Label
+    currentLabel: holopad-medical-psychologist
+
+# Cargo
+- type: entity
+  parent: VeiledHolopad
+  id: VeiledHolopadCargoFront
+  suffix: Logistics Front
+  components:
+  - type: Label
+    currentLabel: holopad-logistics-front
+
+- type: entity
+  parent: VeiledHolopad
+  id: VeiledHolopadCargoBay
+  suffix: Cargo Bay
+  components:
+  - type: Label
+    currentLabel: holopad-logistics-cargo-bay
+
+- type: entity
+  parent: VeiledHolopad
+  id: VeiledHolopadCargoSalvageBay
+  suffix: Salvage Bay
+  components:
+  - type: Label
+    currentLabel: holopad-logistics-salvage-bay
+
+- type: entity
+  parent: VeiledHolopad
+  id: VeiledHolopadCargoBreakroom
+  suffix: Logistics Breakroom
+  components:
+  - type: Label
+    currentLabel: holopad-logistics-breakroom
+
+- type: entity
+  parent: VeiledHolopad
+  id: VeiledHolopadCargoMail
+  suffix: Mailroom
+  components:
+  - type: Label
+    currentLabel: holopad-logistics-mailroom
+
+- type: entity
+  parent: VeiledHolopad
+  id: VeiledHolopadCargoMailFront
+  suffix: Mail Front
+  components:
+  - type: Label
+    currentLabel: holopad-logistics-mailfront
+
+# Engineering
+- type: entity
+  parent: VeiledHolopad
+  id: VeiledHolopadEngineeringAtmosFront
+  suffix: Atmos Front
+  components:
+  - type: Label
+    currentLabel: holopad-engineering-atmos-front
+
+- type: entity
+  parent: VeiledHolopad
+  id: VeiledHolopadEngineeringAtmosMain
+  suffix: Atmos Main
+  components:
+  - type: Label
+    currentLabel: holopad-engineering-atmos-main
+
+- type: entity
+  parent: VeiledHolopad
+  id: VeiledHolopadEngineeringAtmosTeg
+  suffix: TEG
+  components:
+  - type: Label
+    currentLabel: holopad-engineering-atmos-teg
+
+- type: entity
+  parent: VeiledHolopad
+  id: VeiledHolopadEngineeringStorage
+  suffix: Engi Storage
+  components:
+  - type: Label
+    currentLabel: holopad-engineering-storage
+
+- type: entity
+  parent: VeiledHolopad
+  id: VeiledHolopadEngineeringBreakroom
+  suffix: Engi Breakroom
+  components:
+  - type: Label
+    currentLabel: holopad-engineering-breakroom
+
+- type: entity
+  parent: VeiledHolopad
+  id: VeiledHolopadEngineeringFront
+  suffix: Engi Front
+  components:
+  - type: Label
+    currentLabel: holopad-engineering-front
+
+- type: entity
+  parent: VeiledHolopad
+  id: VeiledHolopadEngineeringTelecoms
+  suffix: Telecoms
+  components:
+  - type: Label
+    currentLabel: holopad-engineering-telecoms
+
+- type: entity
+  parent: VeiledHolopad
+  id: VeiledHolopadEngineeringTechVault
+  suffix: Tech Vault
+  components:
+  - type: Label
+    currentLabel: holopad-engineering-tech-vault
+
+- type: entity
+  parent: VeiledHolopad
+  id: VeiledHolopadEngineeringParticleAccelerator
+  suffix: PA Control
+  components:
+  - type: Label
+    currentLabel: holopad-engineering-pa-control
+
+# Security
+- type: entity
+  parent: VeiledHolopad
+  id: VeiledHolopadSecurityFront
+  suffix: Sec Front
+  components:
+  - type: Label
+    currentLabel: holopad-security-front
+
+- type: entity
+  parent: VeiledHolopad
+  id: VeiledHolopadSecurityBrig
+  suffix: Brig
+  components:
+  - type: Label
+    currentLabel: holopad-security-brig
+
+- type: entity
+  parent: VeiledHolopad
+  id: VeiledHolopadSecurityWarden
+  suffix: Warden
+  components:
+  - type: Label
+    currentLabel: holopad-security-warden
+
+- type: entity
+  parent: VeiledHolopad
+  id: VeiledHolopadSecurityInterrogation
+  suffix: Interrogation
+  components:
+  - type: Label
+    currentLabel: holopad-security-interrogation
+
+- type: entity
+  parent: VeiledHolopad
+  id: VeiledHolopadSecurityBreakroom
+  suffix: Breakroom
+  components:
+  - type: Label
+    currentLabel: holopad-security-breakroom
+
+- type: entity
+  parent: VeiledHolopad
+  id: VeiledHolopadSecurityDetective
+  suffix: Detective
+  components:
+  - type: Label
+    currentLabel: holopad-security-detective
+
+- type: entity
+  parent: VeiledHolopad
+  id: VeiledHolopadSecurityPerma
+  suffix: Perma
+  components:
+  - type: Label
+    currentLabel: holopad-security-perma
+
+- type: entity
+  parent: VeiledHolopad
+  id: VeiledHolopadSecurityCourtroom
+  suffix: Courtroom
+  components:
+  - type: Label
+    currentLabel: holopad-security-courtroom
+
+- type: entity
+  parent: VeiledHolopad
+  id: VeiledHolopadSecurityArmory
+  suffix: Armory
+  components:
+  - type: Label
+    currentLabel: holopad-security-armory
+
+- type: entity
+  parent: VeiledHolopad
+  id: VeiledHolopadSecurityCorpsman
+  suffix: Corpsman
+  components:
+  - type: Label
+    currentLabel: holopad-security-corpsman
+
+#Justice
+- type: entity
+  parent: VeiledHolopad
+  id: VeiledHolopadSecurityLawyer
+  suffix: Attorney
+  components:
+  - type: Label
+    currentLabel: holopad-justice-attorney
+
+- type: entity
+  parent: VeiledHolopad
+  id: VeiledHolopadJusticeProsecutor
+  suffix: Prosecutor
+  components:
+  - type: Label
+    currentLabel: holopad-justice-prosecutor
+
+- type: entity
+  parent: VeiledHolopad
+  id: VeiledHolopadJusticeClerk
+  suffix: Clerk
+  components:
+  - type: Label
+    currentLabel: holopad-justice-clerk
+
+# Service
+- type: entity
+  parent: VeiledHolopad
+  id: VeiledHolopadServiceJanitor
+  suffix: Janitor
+  components:
+  - type: Label
+    currentLabel: holopad-service-janitor
+
+- type: entity
+  parent: VeiledHolopad
+  id: VeiledHolopadServiceBar
+  suffix: Bar
+  components:
+  - type: Label
+    currentLabel: holopad-service-bar
+
+- type: entity
+  parent: VeiledHolopad
+  id: VeiledHolopadServiceKitchen
+  suffix: Kitchen
+  components:
+  - type: Label
+    currentLabel: holopad-service-kitchen
+
+- type: entity
+  parent: VeiledHolopad
+  id: VeiledHolopadServiceBotany
+  suffix: Botany
+  components:
+  - type: Label
+    currentLabel: holopad-service-botany
+
+- type: entity
+  parent: VeiledHolopad
+  id: VeiledHolopadServiceChapel
+  suffix: Chapel
+  components:
+  - type: Label
+    currentLabel: holopad-service-chapel
+
+- type: entity
+  parent: VeiledHolopad
+  id: VeiledHolopadServiceLibrary
+  suffix: Library
+  components:
+  - type: Label
+    currentLabel: holopad-service-library
+
+- type: entity
+  parent: VeiledHolopad
+  id: VeiledHolopadServiceNewsroom
+  suffix: Newsroom
+  components:
+  - type: Label
+    currentLabel: holopad-service-newsroom
+
+- type: entity
+  parent: VeiledHolopad
+  id: VeiledHolopadServiceZookeeper
+  suffix: Zookeeper
+  components:
+  - type: Label
+    currentLabel: holopad-service-zookeeper
+
+- type: entity
+  parent: VeiledHolopad
+  id: VeiledHolopadServiceBoxer
+  suffix: Boxer
+  components:
+  - type: Label
+    currentLabel: holopad-service-boxer
+
+- type: entity
+  parent: VeiledHolopad
+  id: VeiledHolopadServiceClown
+  suffix: Clown
+  components:
+  - type: Label
+    currentLabel: holopad-service-clown
+
+- type: entity
+  parent: VeiledHolopad
+  id: VeiledHolopadServiceMusician
+  suffix: Musician
+  components:
+  - type: Label
+    currentLabel: holopad-service-musician
+
+- type: entity
+  parent: VeiledHolopad
+  id: VeiledHolopadServiceMime
+  suffix: Mime
+  components:
+  - type: Label
+    currentLabel: holopad-service-mime
+
+- type: entity
+  parent: VeiledHolopad
+  id: VeiledHolopadServiceToolroom
+  suffix: Service Toolroom
+  components:
+  - type: Label
+    currentLabel: holopad-service-toolroom
+
+- type: entity
+  parent: VeiledHolopad
+  id: VeiledHolopadServiceBarberShop
+  suffix: Barber Shop
+  components:
+  - type: Label
+    currentLabel: holopad-service-barber-shop
+
+# AI
+- type: entity
+  parent: VeiledHolopad
+  id: VeiledHolopadAiCore
+  suffix: AI Core
+  components:
+  - type: Label
+    currentLabel: holopad-ai-core
+
+- type: entity
+  parent: VeiledHolopad
+  id: VeiledHolopadAiMain
+  suffix: AI Main
+  components:
+  - type: Label
+    currentLabel: holopad-ai-main
+
+- type: entity
+  parent: VeiledHolopad
+  id: VeiledHolopadAiUpload
+  suffix: AI Upload
+  components:
+  - type: Label
+    currentLabel: holopad-ai-upload
+
+- type: entity
+  parent: VeiledHolopad
+  id: VeiledHolopadAiBackupPower
+  suffix: AI Backup Power
+  components:
+  - type: Label
+    currentLabel: holopad-ai-backup-power
+
+- type: entity
+  parent: VeiledHolopad
+  id: VeiledHolopadAiEntrance
+  suffix: AI Entrance
+  components:
+  - type: Label
+    currentLabel: holopad-ai-entrance
+
+- type: entity
+  parent: VeiledHolopad
+  id: VeiledHolopadAiChute
+  suffix: AI Chute
+  components:
+  - type: Label
+    currentLabel: holopad-ai-chute
+
+# Long Range
+- type: entity
+  parent: VeiledHolopadLongRange
+  id: VeiledHolopadCargoAts
+  suffix: ATS
+  components:
+  - type: Label
+    currentLabel: holopad-cargo-ats
+
+- type: entity
+  parent: VeiledHolopadLongRange
+  id: VeiledHolopadCommandBridgeLongRange
+  suffix: Station Bridge
+  components:
+  - type: Label
+    currentLabel: holopad-station-bridge
+
+- type: entity
+  parent: VeiledHolopadLongRange
+  id: VeiledHolopadCargoBayLongRange
+  suffix: Station Cargo Bay
+  components:
+  - type: Label
+    currentLabel: holopad-station-cargo-bay
+
+- type: entity
+  parent: VeiledHolopadLongRange
+  id: VeiledHolopadCargoShuttle
+  suffix: Cargo Shuttle
+  components:
+  - type: Label
+    currentLabel: holopad-cargo-shuttle
+
+- type: entity
+  parent: VeiledHolopadLongRange
+  id: VeiledHolopadCentCommEvacShuttle
+  suffix: Evac Shuttle
+  components:
+  - type: Label
+    currentLabel: holopad-centcomm-evac
+
+# Map Specific
+# For holopads that only fit specific maps. For example: Bagel has Clown, Mime and Musician merged into one.
+- type: entity
+  parent: VeiledHolopad
+  id: VeiledHolopadServiceClownMime
+  suffix: Clown/Mime
+  components:
+  - type: Label
+    currentLabel: holopad-service-clown-mime
+
+- type: entity
+  parent: VeiledHolopad
+  id: VeiledHolopadGeneralSpesscarTrack
+  suffix: Spesscar Track
+  components:
+  - type: Label
+    currentLabel: holopad-general-spesscar-track
+
+- type: entity
+  parent: VeiledHolopad
+  id: VeiledHolopadSecurityPermaKitchen
+  suffix: Perma Kitchen
+  components:
+  - type: Label
+    currentLabel: holopad-security-perma-kitchen
+
+- type: entity
+  parent: VeiledHolopad
+  id: VeiledHolopadSecurityPermaBotany
+  suffix: Perma Botany
+  components:
+  - type: Label
+    currentLabel: holopad-security-perma-botany
+
+- type: entity
+  parent: VeiledHolopad
+  id: VeiledHolopadSecurityPermaYardOne
+  suffix: Perma Yard One
+  components:
+  - type: Label
+    currentLabel: holopad-security-perma-yard-one
+
+- type: entity
+  parent: VeiledHolopad
+  id: VeiledHolopadSecurityPermaYardTwo
+  suffix: Perma Yard Two
+  components:
+  - type: Label
+    currentLabel: holopad-security-perma-yard-two
+
+- type: entity
+  parent: VeiledHolopad
+  id: VeiledHolopadSecurityPermaWorkshop
+  suffix: Perma Workshop
+  components:
+  - type: Label
+    currentLabel: holopad-security-perma-workshop
+
+- type: entity
+  parent: VeiledHolopad
+  id: VeiledHolopadSecurityPermaGuardComplex
+  suffix: Perma Guard Complex
+  components:
+  - type: Label
+    currentLabel: holopad-security-perma-guard-complex
+
+- type: entity
+  parent: VeiledHolopad
+  id: VeiledHolopadSecurityPermaMineshaft
+  suffix: Perma Mineshaft
+  components:
+  - type: Label
+    currentLabel: holopad-security-perma-mineshaft
+
+- type: entity
+  parent: VeiledHolopad
+  id: VeiledHolopadSecurityArena
+  suffix: Arena
+  components:
+  - type: Label
+    currentLabel: holopad-security-perma-arena
+
+- type: entity
+  parent: VeiledHolopad
+  id: VeiledHolopadSecurityGladiatorLounge
+  suffix: Gladiator Lounge
+  components:
+  - type: Label
+    currentLabel: holopad-security-perma-gladiator-lounge
+# SOMBER HOLOPADS END

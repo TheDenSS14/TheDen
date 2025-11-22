@@ -1,0 +1,159 @@
+- type: entity
+  parent: OfficeChairBase
+  id: SomberChairCushion
+  name: somber floor cushion
+  description: "A firm pillow to sit on, useful for meditation."
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Furniture/chairs.rsi
+    state: somberfloorcushion
+  - type: Damageable
+    damageModifierSet: Wood
+    damageContainer: Inorganic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 300
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+    - trigger:
+        !type:DamageTrigger
+        damage: 50
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/Items/Handling/cloth_drop.ogg
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          MaterialCloth:
+            min: 3
+            max: 5
+          ScrapElectrum:
+            min: 1
+            max: 1
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+
+- type: entity
+  parent: OfficeChairBase
+  id: SomberChairLeather
+  name: somber leather chair
+  description: "A plush leather office chair with electrum accents."
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Furniture/chairs.rsi
+    state: somberleather
+  - type: Damageable
+    damageModifierSet: Wood
+    damageContainer: Inorganic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 300
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+    - trigger:
+        !type:DamageTrigger
+        damage: 75
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: WoodDestroyHeavy
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          MaterialWoodPlank1:
+            min: 3
+            max: 3
+          ScrapElectrum:
+            min: 1
+            max: 3
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+
+- type: entity
+  parent: VehicleWheelchair
+  id: SomberChairLeatherMantis
+  name: mantis chair
+  description: "A plush leather office chair concealing strange mechanisms that let it compact into an electrum sphere. It hovers just above the ground and can be steered with psionic influence. Useful for mantes with mobility restrictions, or simply as versatile office furniture."
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Specific/Mantis/mantischair.rsi
+    state: vehicle
+  - type: Damageable
+    damageModifierSet: StrongMetallic
+    damageContainer: Inorganic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 300
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+    - trigger:
+        !type:DamageTrigger
+        damage: 75
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: WoodDestroyHeavy
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          MaterialWoodPlank1:
+            min: 3
+            max: 3
+          ScrapElectrum:
+            min: 3
+            max: 3
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+
+- type: entity
+  parent: SomberChairLeatherMantis
+  id: SomberChairLeatherMantisFolded
+  suffix: Folded
+  components:
+    - type: Foldable
+      folded: true
+
+- type: entity
+  parent: UnanchoredChairBase
+  id: SomberChairWood
+  name: somber wood chair
+  description: "An expensive chair made of gloomy, patterned wood with electrum accents."
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Furniture/chairs.rsi
+    state: somberwood
+  - type: Damageable
+    damageModifierSet: Wood
+    damageContainer: Inorganic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 300
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+    - trigger:
+        !type:DamageTrigger
+        damage: 75
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: WoodDestroy
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          MaterialWoodPlank1:
+            min: 3
+            max: 3
+          ScrapElectrum:
+            min: 1
+            max: 3
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]

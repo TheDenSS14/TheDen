@@ -10,10 +10,30 @@
   description: A commercialized alternative to homebrewed herbalism for recreational use. This one comes with pre-rolled joints.
   components:
   - type: Sprite
-    sprite: _DEN/Objects/Consumable/Smokables/Cigarettes/Packs/stinkyjoints.rsi
+    sprite: _DEN/Objects/Consumable/Smokeables/Cigarettes/Packs/stinkyjoints.rsi
   - type: Item
-    sprite: _DEN/Objects/Consumable/Smokables/Cigarettes/Packs/stinkyjoints.rsi
+    sprite: _DEN/Objects/Consumable/Smokeables/Cigarettes/Packs/stinkyjoints.rsi
   - type: StorageFill
     contents:
     - id: Joint
       amount: 10
+
+- type: entity
+  id: CigPackMantis
+  parent: CigPackBase
+  name: Mnemolith Cigarettes
+  description: "Cigarettes containing powdered mnemolith, used by mantes to heighten their extrasensory perception. Potential psychological impact aside, there are no known lasting effects."
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Consumable/Smokeables/Cigarettes/Packs/mantis.rsi
+  - type: Item
+    sprite: _DEN/Objects/Consumable/Smokeables/Cigarettes/Packs/mantis.rsi
+  - type: StorageFill
+    contents:
+    - id: CigaretteMnemolith
+      amount: 10
+  - type: Tag
+    tags:
+    - CigPack
+    - Trash
+    - MantisBeltStorable

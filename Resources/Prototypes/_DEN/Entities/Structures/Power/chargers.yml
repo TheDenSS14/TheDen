@@ -1,0 +1,40 @@
+- type: entity
+  parent: PowerCellRecharger
+  id: SomberPowerCellRecharger
+  name: somber orgone pyramid
+  suffix: Cell Recharger
+  description: "A meticulously crafted eidolite pyramid used to recharge power cells. Its facets are aligned with more geomantic intent than most people can grasp. Mantes insist it channels noospheric flow, though the tangle of wires inside suggests it might just be a normal cell recharger dressed up as an occult artifact. Either way, it works fine."
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Power/somber_cell_recharger.rsi
+  - type: Charger
+    chargeRate: 20 # This is the default value, I'm just putting it here for battery math
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: Metallic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 100
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+    - trigger:
+        !type:DamageTrigger
+        damage: 50
+      behaviors:
+      - !type:EmptyAllContainersBehaviour
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalGlassBreak
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          MaterialEdiolite1:
+            min: 3
+            max: 3
+          ScrapElectrum:
+            min: 1
+            max: 3

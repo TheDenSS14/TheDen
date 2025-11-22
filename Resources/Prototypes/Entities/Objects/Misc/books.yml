@@ -539,18 +539,20 @@
 - type: entity
   id: BookPsionicsGuidebook
   parent: BaseItem
-  name: psionics guidebook
-  description: A guidebook about Psionics written by Gunther P. Gunderaan.
+  name: dated psionics guidebook # TheDen - We really need to update this guidebook. Gunther's a real person and his lore was overwritten, hence the description
+  description: "A ragged old guidebook about psionics. Ostensibly written by someone named Gunther P. Gunderaan, but pages are missing and there are notes scribbled over the text. Is this information even still reliable?"
   components:
   - type: Sprite
     sprite: Objects/Misc/books.rsi
     layers:
     - state: paper
-    - state: cover_base
-      color: "#542485"
+    - state: cover_old # TheDen
+      color: "#533762"
     - state: decor_wingette_circle
-      color: "#be69f0"
+      color: "#6b5576"
     - state: icon_dna
+      color: "#6b5576"
+    - state: overlay_dirt
   - type: Tag
     tags:
     - Book

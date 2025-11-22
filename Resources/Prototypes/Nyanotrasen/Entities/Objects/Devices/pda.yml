@@ -119,17 +119,50 @@
     sprite: _DV/Objects/Devices/pda.rsi
     state: pda-martialartist
 
-- type: entity
+- type: entity # TheDen - Changed pretty much everything
   parent: BasePDA
   id: ForensicMantisPDA
   name: mantis PDA
-  description: Smells like illegal substances.
+  description: "This PDA marks its bearer as a member of the Outer Chamber—a mantis, the Greek word for \"seer.\" The eye on its display seems to track whoever dares to look back. Carried in a pocket, because you couldn't bear to hang this hunk of plastic on your belt."
   components:
+  - type: Item
+    sprite: _DEN/Objects/Devices/pda.rsi
+    heldPrefix: mantis
+  - type: Clothing
+    sprite: _DEN/Objects/Devices/pda.rsi
+    equippedPrefix: mantis
+  - type: Sprite
+    sprite: _DEN/Objects/Devices/pda.rsi
+    layers:
+    - map: [ "enum.PdaVisualLayers.Base" ]
+    - state: "mantis-light_overlay"
+      map: [ "enum.PdaVisualLayers.Flashlight" ]
+      shader: "unshaded"
+      visible: false
+    - state: "mantis-id_overlay"
+      map: [ "enum.PdaVisualLayers.IdLight" ]
+      shader: "unshaded"
+      visible: false
+  - type: PointLight
+    enabled: false
+    energy: 3
+    color: "#d9418d"
   - type: Pda
     id: ForensicMantisIDCard
-    state: pda-science
+    state: pda-mantis
+    penSlot:
+      startingItem: PenMantis
+      priority: -2
+      whitelist:
+        tags:
+        - Write
+  - type: PdaBorderColor
+    borderColor: "#3b3640"
+    accentVColor: "#431b57"
+    accentHColor: "#8c1c54"
   - type: Icon
-    state: pda-science
+    sprite: _DEN/Objects/Devices/pda.rsi
+    state: pda-mantis
   - type: CartridgeLoader
     preinstalled:
      - CrewManifestCartridge
@@ -138,3 +171,5 @@
      - GlimmerMonitorCartridge
      - NanoChatCartridge
      - PsiWatchCartridge
+  - type: GuideHelp
+    guides: [ MantisGuide ]

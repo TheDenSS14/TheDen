@@ -28,6 +28,8 @@
   - type: ContainerFill
     containers:
       board: [ DoorElectronicsMantis ]
+  - type: Sprite # TheDen
+    sprite: _DEN/Structures/Doors/Airlocks/Standard/mantis.rsi
 
 
 - type: entity
@@ -38,6 +40,8 @@
   - type: ContainerFill
     containers:
       board: [ DoorElectronicsMantis ]
+  - type: Sprite # TheDen
+    sprite: _DEN/Structures/Doors/Airlocks/Glass/mantis.rsi
 
 - type: entity
   parent: AirlockChiefJustice # The Den - airlocks resprite

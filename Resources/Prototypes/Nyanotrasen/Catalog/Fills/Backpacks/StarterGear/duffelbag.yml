@@ -5,15 +5,17 @@
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
-- type: entity
-  categories: [ HideSpawnMenu ]
-  parent: ClothingBackpackDuffelScience
-  id: ClothingBackpackDuffelMantisFilled
-  components:
-    - type: StorageFill
-      contents:
-      # - id: BoxForensicPad # DeltaV - Mantis is no longer a Detective
-      - id: HandLabeler
-      - id: PillMindbreakerToxin
-      - id: BoxFolderGrey
-      - id: RubberStampMantis
+#- type: entity
+#  categories: [ HideSpawnMenu ]
+#  parent: ClothingBackpackDuffelMantis # TheDen - Added custom sprites
+#  id: ClothingBackpackDuffelMantisFilled
+#  components:
+#    - type: StorageFill
+#      contents:
+#       - id: BoxForensicPad # DeltaV - Mantis is no longer a Detective
+#       - id: HandLabeler # TheDen - They have their own bureaucracy tools now
+#       - id: PillMindbreakerToxin # TheDen - Just get it from the loadout, we don't need extra mindbreaker around
+#       - id: BoxFolderGrey # TheDen - Their folder is in their locker now
+#       - id: RubberStampMantis # TheDen - It's in the folder now
+
+# TheDen - Okay, well nothing's left. Consider this to be deprecated due to our loadout system and locker contents. Leaving it for posterity.

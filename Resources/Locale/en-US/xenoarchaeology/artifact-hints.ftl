@@ -57,4 +57,4 @@ artifact-trigger-hint-examine = Examination
 artifact-trigger-hint-medical = Reaction with medicinal fluid
 
 # Psionic Effects
-artifact-effect-hint-psionic = Noöspheric disturbance
+artifact-effect-hint-psionic = Noospheric disturbance

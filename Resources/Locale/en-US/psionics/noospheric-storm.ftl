@@ -4,4 +4,4 @@
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
-station-event-noospheric-storm-announcement = Noöspheric storm detected. Psionic registries may need updating, and mantes should be on high alert.
+station-event-noospheric-storm-announcement = Noospheric storm detected. The psion registry may need updating, and mantes should be on high alert.

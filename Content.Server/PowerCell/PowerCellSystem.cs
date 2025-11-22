@@ -94,7 +94,7 @@ public sealed partial class PowerCellSystem : SharedPowerCellSystem
         }
 
         var frac = args.Charge / args.MaxCharge;
-        var level = (byte)ContentHelpers.RoundToNearestLevels(frac, 1, PowerCellComponent.PowerCellVisualsLevels);
+        var level = (byte)ContentHelpers.RoundToNearestLevels(frac, 1, component.Levels); // TheDen - Made this variable instead of hardcoded to 2
         _sharedAppearanceSystem.SetData(uid, PowerCellVisuals.ChargeLevel, level);
 
         // If this power cell is inside a cell-slot, inform that entity that the power has changed (for updating visuals n such).

@@ -44,4 +44,4 @@ has-no-consent = I cannot enter {POSS-ADJ($target)} mind.
 trait-name-HypnoticGaze = Hypnotic Gaze
 trait-description-HypnoticGaze =
     Within your eyes lies the ability to place others under your control. You are capable of placing others in a trance, regardless of
-    whether or not you possess any other notable psychic powers.
+    whether or not you possess any other notable psionic powers.

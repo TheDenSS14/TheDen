@@ -1,0 +1,27 @@
+- type: entity
+  parent: BaseScrap
+  id: ScrapElectrum
+  name: electrum scrap
+  description: "A broken fragment of forged electrum, a natural alloy of gold and silver. Once used to crown the monuments of ancient empires."
+  components:
+  - type: Item
+    sprite: _DEN/Objects/Materials/Scrap/generic.rsi
+    size: Small
+  - type: Sprite
+    layers:
+      - sprite: _DEN/Objects/Materials/Scrap/generic.rsi
+        state: electrum1
+        map: [ "enum.DamageStateVisualLayers.Base" ]
+  - type: RandomSprite
+    available:
+      - enum.DamageStateVisualLayers.Base:
+          electrum1: ""
+          electrum2: ""
+          electrum3: ""
+  - type: PhysicalComposition
+    materialComposition: # Considering the color, it should be more like 75% gold and 25% silver, but I don't want to give salvagers less than a bar of each
+      Gold: 100 # 1 sheet
+      Silver: 100 # 1 sheet
+  - type: Tag
+    tags:
+    - MantisBeltStorable # Why not, their gear is made of it

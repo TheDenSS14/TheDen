@@ -7,11 +7,12 @@
   - type: Tag
     tags:
     - Knife
-  - type: MeleeWeapon # You'd be better off punching them
+  - type: MeleeWeapon
     attackRate: 1
+    wideAnimationRotation: 180
     damage:
       types:
-        Slash: 1
+        Slash: 4
   - type: DisarmMalus
     malus: 0.225
   - type: ThrowingAngle
@@ -21,3 +22,103 @@
     state: icon
   - type: Item
     sprite: _DEN/Objects/Weapons/Melee/tailorsknife.rsi
+
+- type: entity
+  parent: [TailorsKnife, BaseAntiPsionicWeapon, BaseMantisContraband]
+  id: MantisTailorsKnife
+  name: ravel
+  description: "A mnemolith tailor's knife, presumably stolen from whoever designed your uniforms. You rat."
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Weapons/Melee/mantistailorsknife.rsi
+    state: icon
+  - type: Item
+    sprite: _DEN/Objects/Weapons/Melee/mantistailorsknife.rsi
+  - type: MeleeWeapon
+    attackRate: .6666
+    wideAnimationRotation: -180
+    damage:
+      types:
+        Slash: 4 # 6 DPS (same as Shiv), or 7.5 DPS against psions
+        Holy: 1.6 # 11.25 total DPS against psionic supernaturals
+  - type: EmbeddableProjectile
+    sound: /Audio/Weapons/pierce.ogg # Just a dull thunk since it does almost no damage
+  - type: Tag
+    tags:
+    - MantisBeltStorable
+    - Knife
+
+- type: entity
+  parent: [CombatKnife, BaseAntiPsionicWeapon, BaseMantisContraband]
+  id: MantisMeleeKnife
+  name: athame
+  description: "A mnemolith knife shaped like a claw, its back lined with swordbreaker teeth—though it remains unclear who, exactly, is drawing blades against mantes. The finger ring improves grip and allows for idle spinning tricks, though they serve no tactical purpose. Deadly when wielded against psionic and otherworldly threats."
+  components:
+  - type: ItemToggle # You can toggle spinning it around your finger, though it's just cosmetic
+    predictable: false
+    soundActivate:
+      path: /Audio/Effects/toss.ogg
+      params:
+        volume: -5
+        variation: 0.05
+    soundDeactivate:
+      path: /Audio/Effects/weak_hit2.ogg
+      params:
+        volume: -5
+        variation: 0.05
+  - type: UseDelay
+    delay: 1
+  - type: MeleeWeapon
+    attackRate: .6666
+    range: 1.5
+    angle: 40
+    wideAnimationRotation: -135
+    damage:
+      types:
+        Slash: 10 # 15 DPS (same as CombatKnife), or 18.75 DPS against psions
+        Holy: 5 # 28.13 total DPS against psionic supernaturals
+  - type: EmbeddableProjectile
+    sound: /Audio/Weapons/star_hit.ogg
+    removalTime: 2
+  - type: EmbedPassiveDamage
+  - type: Sprite
+    sprite: _DEN/Objects/Weapons/Melee/mantisknife.rsi
+    state: icon
+  - type: Item
+    storedRotation: 45
+    storedSprite:
+      state: icon
+      sprite: _DEN/Objects/Weapons/Melee/mantisknife.rsi # Same sprite, just rotated, because it looks wrong otherwise
+    sprite: _DEN/Objects/Weapons/Melee/mantisknife.rsi
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        map: [ "nospin" ]
+      - state: spinning-inhand-left
+        map: [ "spin" ]
+        visible: false
+      right:
+      - state: inhand-right
+        map: [ "nospin" ]
+      - state: spinning-inhand-right
+        map: [ "spin" ]
+        visible: false
+  - type: Appearance
+  - type: GenericVisualizer #TODO: FREEMODEL PLEASE GOD HELP ME - KNIFE DOESN'T SPIN WHEN YOU PRESS Z AND I WAS THROWING SHIT AT THE WALL HERE
+    visuals:
+      enum.ToggleableVisuals.Enabled:
+        on:
+          True: { visible: true }
+          False: { visible: false }
+        base:
+          True: { visible: false }
+          False: { visible: true }
+  - type: ThrowingAngle
+    angle: -135
+  - type: DisarmMalus
+    malus: 0.4
+  - type: Tag
+    tags:
+    - Knife
+    - MantisKnife
+    - MantisBeltStorable

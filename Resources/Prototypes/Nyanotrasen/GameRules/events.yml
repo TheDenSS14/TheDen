@@ -63,7 +63,7 @@
   categories: [ HideSpawnMenu ]
   components:
     - type: StationEvent
-      # Favor glimmer events just a little more than regular events.
+      # Favor Glimmer events just a little more than regular events.
       weight: 12
     - type: GlimmerEvent
 
@@ -124,7 +124,7 @@
     - type: GlimmerEvent
       minimumGlimmer: 900
       glimmerBurnLower: 750
-      glimmerBurnUpper: 950 # Unless epistemics badly f-d up, this will restore the glimmer balance for a while.
+      glimmerBurnUpper: 950 # Unless epistemics badly f-d up, this will restore the Glimmer balance for a while.
     - type: MassMindSwapRule
       isTemporary: true # Permanent mindswap is hell.
 

@@ -11,28 +11,81 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 - type: entity
-  parent: ClothingBeltStorageBase
+  parent: [ClothingBeltStorageBase, BaseMantisContraband]
   id: ClothingBeltMantis
-  name: mantis belt
-  description: Perfect for storing all of your equipment.
+  name: classic mantis belt # TheDen
+  description: "A structured, layered sash designed to carry mantis equipment. All the company would pay for prior to the mantis equipment refresh." # TheDen
   components:
   - type: Sprite
     sprite: Nyanotrasen/Clothing/Belt/mantis_belt.rsi
   - type: Clothing
     sprite: Nyanotrasen/Clothing/Belt/mantis_belt.rsi
-  - type: Storage
+  - type: Storage # TheDen
+    grid:
+    - 0,0,9,1
     whitelist:
       tags:
-        - Document
-        - Flashlight
-        - ForensicBeltEquip
-        - HandLabeler
-        - Sidearm
         - Folder
+        - Document
+        - Write
+        - HandLabeler
+        - Flashlight
+        - Syringe # TheDen
+        - Bottle # TheDen
+        - PillCanister # TheDen
+        - Pill # TheDen
+        - MantisBeltStorable # TheDen - Only to be used for mantis-specific items
+        # - ForensicBeltEquip # TheDen - The old name of the mantis belt's whitelist tag, now made more clear
+        # - Sidearm # TheDen - Only tagged mantis weapons will fit inside
       components:
         - AnomalyScanner
         - NodeScanner
         - Flash
+  - type: Appearance # TheDen - It has a sheath for MantisMeleeKnife or MantisMeleeCane (MantisMeleeFist is worn like a glove, and MantisMeleeGreatsword is intentionally excluded)
+  - type: ContainerContainer # TheDen - The rest of this item is our code
+    containers:
+      storagebase: !type:Container
+        ents: []
+      mantisknife: !type:ContainerSlot {}
+      mantiscane: !type:ContainerSlot {}
+  - type: ItemSlots
+    slots:
+      mantisknife:
+        name: clothing-belt-mantisknife
+        insertVerbText: sheath-insert-verb
+        ejectVerbText: sheath-eject-verb
+        insertSound: /Audio/Items/sheath.ogg
+        ejectSound: /Audio/Items/unsheath.ogg
+        whitelist:
+          tags:
+          - MantisKnife
+        priority: 4
+      mantiscane:
+        name: clothing-belt-mantiscane
+        insertVerbText: sheath-insert-verb
+        ejectVerbText: sheath-eject-verb
+        insertSound: /Audio/Items/sheath.ogg
+        ejectSound: /Audio/Items/unsheath.ogg
+        whitelist:
+          tags:
+          - MantisCane
+        priority: 3
+  - type: ItemMapper
+    mapLayers:
+      mantisknife:
+        whitelist:
+          tags:
+          - MantisKnife
+      mantiscane:
+        whitelist:
+          tags:
+          - MantisCane
+    sprite: _DEN/Clothing/Belt/belt_overlay.rsi
+  - type: Tag
+    tags:
+    - WhitelistChameleon
+  - type: GuideHelp
+    guides: [ MantisGuide ]
 
 - type: entity
   parent: ClothingBeltBase

@@ -4,8 +4,8 @@
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
-objective-condition-raise-glimmer-title = Ensure glimmer reaches {$target}Ψ.
-objective-condition-raise-glimmer-description = We need you to pump the noösphere surrounding the station to at least {$target}Ψ and keep it that way.
+objective-condition-raise-glimmer-title = Ensure Glimmer reaches {$target}Ψ.
+objective-condition-raise-glimmer-description = We need you to pump the noosphere surrounding the station to at least {$target}Ψ and keep it that way.
 objective-condition-become-psionic-title = Become psionic
 objective-condition-become-psionic-description = We need you to acquire psionics and keep them until your mission is complete.
 objective-condition-become-golem-title = Get golemized

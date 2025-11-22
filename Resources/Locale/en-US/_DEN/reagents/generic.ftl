@@ -1,0 +1,33 @@
+reagent-effect-mnemolith-1 = Your skin prickles, as though unseen eyes are on you.
+reagent-effect-mnemolith-2 = The air hums faintly, or is it only in your head?
+reagent-effect-mnemolith-3 = Your stomach twists with unease.
+reagent-effect-mnemolith-4 = You can feel thoughts brushing against yours.
+reagent-effect-mnemolith-5 = Something just moved at the edge of your vision.
+reagent-effect-mnemolith-6 = Your pulse pounds in your temples.
+reagent-effect-mnemolith-7 = Your memories feel rearranged, out of order.
+reagent-effect-mnemolith-8 = Every sound seems sharper, closer.
+reagent-effect-mnemolith-9 = The room feels crowded, though no one is near.
+reagent-effect-mnemolith-10 = You taste iron on your tongue.
+reagent-effect-mnemolith-11 = There's a whisper you can't quite hear.
+reagent-effect-mnemolith-12 = Your thoughts loop back on themselves, repeating.
+reagent-effect-mnemolith-13 = The air feels too thin, too thick - both at once.
+reagent-effect-mnemolith-14 = Something vast and cold tugs at your perception.
+reagent-effect-mnemolith-15 = You feel yourself being tallied, written down.
+reagent-effect-mnemolith-16 = The noosphere itself is staring directly at you.
+reagent-effect-mnemolith-17 = You are certain you are not alone.
+reagent-effect-mnemolith-18 = Every shadow hides intent.
+reagent-effect-mnemolith-19 = The world bends sideways.
+reagent-effect-mnemolith-20 = YOU ARE OBSERVED.
+
+reagent-overdose-mnemolith-overdose1 = YOUR SKULL IS SPLITTING APART.
+reagent-overdose-mnemolith-overdose2 = YOU HEAR YOUR NAME IN EVERY BREATH.
+reagent-overdose-mnemolith-overdose3 = SOMETHING IS CARVING WORDS INTO YOUR VISION.
+reagent-overdose-mnemolith-overdose4 = THE AIR AROUND YOU IS SCREAMING.
+reagent-overdose-mnemolith-overdose5 = SOMETHING ELSE IS THINKING FOR YOU.
+reagent-overdose-mnemolith-overdose6 = THE WALLS ARE BREATHING WITH YOU.
+reagent-overdose-mnemolith-overdose7 = HANDS YOU CANNOT SEE CLUTCH AT YOUR FACE.
+reagent-overdose-mnemolith-overdose8 = STRINGS PULL AT YOUR BONES.
+reagent-overdose-mnemolith-overdose9 = A THOUSAND EYES ARE OPENING ALL AROUND YOU.
+reagent-overdose-mnemolith-overdose10 = IT WILL REMEMBER YOU. IT WILL REMEMBER YOU.
+
+reagent-effect-mnemolith-fade = The weight drifts away...

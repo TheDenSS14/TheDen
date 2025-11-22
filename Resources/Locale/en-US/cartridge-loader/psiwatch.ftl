@@ -4,7 +4,7 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 psi-watch-program-name = PsiWatch
-psi-watch-title = PsiWatch 1.3
-psi-watch-no-entries = Nobody is registered. Why not enjoy a nice, cold brew?
+psi-watch-title = PsiWatch 1.4
+psi-watch-no-entries = Nobody is registered. Do your job.
 psi-watch-entry = {$name}, {$job}
 psi-watch-no-reason = [ERROR] No reason given?

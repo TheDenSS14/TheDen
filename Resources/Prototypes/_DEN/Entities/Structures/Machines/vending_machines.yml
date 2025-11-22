@@ -36,6 +36,134 @@
     pack: NanoMedInventoryEternity
 
 - type: entity
+  parent: VendingMachineWallmount
+  id: VendingMachineWallSomberMantis
+  name: mantis reliquary conduit
+  description: "An occult-machine interface through which mantes summon equipment from the Reliquary by thought alone."
+  components:
+  - type: VendingMachine
+    pack: MantisReliquaryInventory
+    offState: off
+    brokenState: broken
+    normalState: normal-unshaded
+    denyState: deny-unshaded
+    ejectState: eject-unshaded
+    soundVend: /Audio/_DEN/Effects/crystalshimmer4.ogg
+    soundDeny: /Audio/_DEN/Effects/crystalshimmer5.ogg
+    ejectDelay: 1.5 # Synced with animation and sound effect duration
+    denyDelay: 1.5
+  - type: Sprite
+    noRot: true
+    sprite: _DEN/Structures/Machines/VendingMachines/mantis.rsi
+    layers:
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.Base"]
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.BaseUnshaded"]
+      shader: unshaded
+    - state: panel
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+  - type: AccessReader
+    access: [["Mantis"]]
+  - type: GuideHelp
+    guides: [ MantisGuide ]
+  - type: PointLight
+    radius: 2.1
+    energy: 1.3
+    softness: 1.1
+    color: "#4dc4ff" # Mnemolith candles, psionic fire
+  - type: AmbientSound
+    volume: 0
+    range: 0
+    enabled: false
+    sound:
+      path: /Audio/Effects/silence.ogg # It has some wires inside, but it doesn't hum
+  # SentienceTarget seemed like a fun idea until I realized it would be in the mantis's bedroom...  Damn.  But look how cool I made it...
+#  - type: SentienceTarget
+#    flavorKind: station-event-random-sentience-flavor-mechanical
+#    weight: 1 # It's plugged into the noosphere, come on
+  - type: TypingIndicator
+    proto: mantis
+  - type: Speech
+    speechVerb: Electricity # Weirder than a robot (crackles, buzzes, screeches) if it's not speaking Psychomantic
+    speechSounds: Tenor # Like the Oracle otherwise
+  - type: Actions
+  - type: Psionic
+    removable: false
+    roller: false
+    assayFeedback:
+      - reliquary-feedback # I SEE YOU, INTERLOPER. YOUR THOUGHTS TRESPASS UPON SACRED MATRICES.
+    psychognomicDescriptors: # Not "old" or "demiurgic" like the Oracle or Sophia, it has a smaller, younger soul
+      - p-descriptor-mysterious
+      - p-descriptor-emanative
+  - type: InnatePsionicPowers
+    powersToAdd:
+      - XenoglossyPower
+      - TelepathyPower
+  - type: IntrinsicRadioReceiver
+  - type: IntrinsicRadioTransmitter
+    channels:
+    - Science
+  - type: ActiveRadio
+    channels:
+    - Science
+    - Common
+  - type: LanguageKnowledge
+    speaks:
+    - TauCetiBasic
+    understands:
+    - TauCetiBasic
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.1875,-0.28125,0.15625,0.25"
+        mask:
+        - MachineMask
+        layer:
+        - MachineLayer
+        density: 500
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: Metallic
+  - type: Destructible
+    thresholds:
+    - trigger: # If it gets nuked, it just disappears
+        !type:DamageTrigger
+        damage: 300
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+    - trigger: # If you destroy it, it drops scrap materials
+        !type:DamageTrigger
+        damage: 200
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalGlassBreak
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          ScrapElectrum:
+            min: 3
+            max: 5
+          MaterialMnemolith1:
+            min: 3
+            max: 5
+    - trigger: # If you break it, it shoots out items
+        !type:DamageTrigger
+        damage: 100
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalGlassBreak
+      - !type:DoActsBehavior
+        acts: ["Breakage"]
+      - !type:EjectVendorItems
+
+- type: entity
   parent: VendingMachineBoxingDrobe
   id: VendingMachineBoxingDrobeUnlocked
   suffix: Unlocked

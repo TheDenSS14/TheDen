@@ -662,16 +662,26 @@
       amount: 5
 
 - type: entity
-  suffix: Space drugs 15u
+  name: pill
+  suffix: LSD 15u # TheDen
   parent: Pill
   id: PillSpaceDrugs
+  description: "A potent psychedelic that may awaken psionic abilities in those with potential, coloquially called \"space drugs\"." # TheDen
   components:
-  - type: Label
-    currentLabel: space drugs 15u
+  - type: Label # TheDen
+    currentLabel: LSD 15u
+  - type: Sprite # TheDen - Space Drugs colored pill
+    sprite: _DEN/Objects/Specific/Chemistry/pills.rsi
+    state: spacedrugspill
+  - type: Item
+    size: Tiny
+    sprite: _DEN/Objects/Specific/Chemistry/pills.rsi
+    state: spacedrugspill
+    heldPrefix: spacedrugs
   - type: SolutionContainerManager
     solutions:
       food:
-        maxVol: 20
+        maxVol: 15 # TheDen
         reagents:
         - ReagentId: SpaceDrugs
           Quantity: 15
@@ -681,7 +691,7 @@
 - type: entity
   parent: PillCanister
   id: PillCanisterSpaceDrugs
-  suffix: Space Drugs, 5
+  suffix: space drugs, 5
   components:
   - type: Label
     currentLabel: LSD 15u

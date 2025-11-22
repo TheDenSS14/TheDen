@@ -1,0 +1,34 @@
+- type: entity
+  parent: Mirror
+  id: SomberMirror
+  name: somber electrum mirror
+  description: "A glossy electrum mirror with a polished mu-metal backing that prevents psionic scrying. A calm, private moment."
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/Wallmounts/mirror.rsi
+    state: sombermirror
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: Metallic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 300
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+    - trigger:
+        !type:DamageTrigger
+        damage: 50
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          ScrapElectrum:
+            min: 1
+            max: 3
+      - !type:PlaySoundBehavior
+        sound:
+          collection: GlassBreak

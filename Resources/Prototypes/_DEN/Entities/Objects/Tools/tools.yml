@@ -1,0 +1,27 @@
+
+
+- type: entity
+  parent: Wrench
+  id: WrenchMantis
+  name: electrum spanner
+  description: "An unusual wrench made of electrum and amaranth, given to mantes to anchor the graven chains of unruly psionic subjects."
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Tools/wrenchmantis.rsi
+    state: icon
+  - type: Item
+    sprite: _DEN/Objects/Tools/wrenchmantis.rsi
+    storedSprite:
+      sprite: _DEN/Objects/Tools/wrenchmantis.rsi
+      state: icon
+    storedRotation: 45
+  - type: PhysicalComposition
+    materialComposition:
+      ScrapElectrum: 1
+  - type: Tag
+    tags:
+    - Wrench
+    - MantisBeltStorable
+    - MantisBoxRestraintsStorable
+  - type: GuideHelp
+    guides: [ MantisGuide ]

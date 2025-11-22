@@ -1,0 +1,79 @@
+- type: entity
+  parent: Stairs
+  id: StairSomberAmaranth
+  name: somber amaranth stairs
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/stairs.rsi
+    state: stairs_somber_amaranth
+    drawdepth: FloorTiles
+
+- type: entity
+  parent: Stairs
+  id: StairSomberMnemolith
+  name: somber mnemolith stairs
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/stairs.rsi
+    state: stairs_somber_mnemolith
+    drawdepth: FloorTiles
+
+- type: entity
+  parent: Stairs
+  id: StairSomberSteel
+  name: somber steel stairs
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/stairs.rsi
+    state: stairs_somber_steel
+    drawdepth: FloorTiles
+
+- type: entity
+  parent: Stairs
+  id: StairSomberWood
+  name: somber wood stairs
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/stairs.rsi
+    state: stairs_somber_wood
+    drawdepth: FloorTiles
+
+- type: entity
+  parent: Stairs
+  id: StairStageSomberAmaranth
+  name: somber amaranth stage stairs
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/stairs.rsi
+    state: stairs_stage_somber_amaranth
+    drawdepth: FloorTiles
+
+- type: entity
+  parent: Stairs
+  id: StairStageSomberMnemolith
+  name: somber mnemolith stage stairs
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/stairs.rsi
+    state: stairs_stage_somber_mnemolith
+    drawdepth: FloorTiles
+
+- type: entity
+  parent: Stairs
+  id: StairStageSomberSteel
+  name: somber steel stage stairs
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/stairs.rsi
+    state: stairs_stage_somber_steel
+    drawdepth: FloorTiles
+
+- type: entity
+  parent: Stairs
+  id: StairStageSomberWood
+  name: somber wood stage stairs
+  components:
+  - type: Sprite
+    sprite: _DEN/Structures/stairs.rsi
+    state: stairs_stage_somber_wood
+    drawdepth: FloorTiles
