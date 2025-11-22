@@ -39,7 +39,7 @@
     - Meat
 
 - type: entity
-  name: lasagne
+  name: lasagne slice # DEN: lasagne -> lasagne slice
   parent: FoodMealBase
   id: FoodLasagneSlice
   description: A slice of meaty, cheesy lasagne.
@@ -66,3 +66,5 @@
   - type: Tag
     tags:
     - Meat
+  - type: Item # DEN: Make tiny
+    size: Tiny
