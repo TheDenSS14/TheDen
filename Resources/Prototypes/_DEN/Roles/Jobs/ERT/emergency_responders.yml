@@ -1,0 +1,27 @@
+#CBURN Unit Gear
+- type: job
+  id: ERTCBURN
+  name: job-name-cburn
+  description: job-description-cburn
+  playTimeTracker: JobCBURN
+  setPreference: false
+  startingGear: ERTCBURNGear
+  icon: "JobIconCBURN"
+  supervisors: job-supervisors-centcom
+  canBeAntag: false
+  special:
+  - !type:AddImplantSpecial
+    implants: [ CentCommImplant, BluespaceLifelineImplant ]
+  accessGroups:
+  - AllAccess
+  access:
+  - CentralCommand
+
+- type: startingGear
+  id: ERTCBURNGear
+  parent: BaseERTGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitColorBrown
+    outerClothing: ClothingOuterHardsuitCBURN
+    id: CBURNPDA
+    pocket2: ERTCBURNLoadoutSelector

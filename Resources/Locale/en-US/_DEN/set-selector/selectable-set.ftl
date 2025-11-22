@@ -19,7 +19,7 @@ ert-security-loadout-2-name = Combat Evolved
 ert-security-loadout-2-desc = A Pulse carbine, smoke, EMP and stinger grenades
 
 ert-security-loadout-3-name = Breach & Clear
-ert-security-loadout-3-desc = An Enforcer shotgun, extra drums of ammo and stinger grenades
+ert-security-loadout-3-desc = An MA-A49 shotgun, extra boxes of ammo and stinger grenades
 
 ert-engineer-loadout-2-name = Live Wire
 ert-engineer-loadout-2-desc = A Pulse carbine, tear gas & stinger grenades, with breaching charges
@@ -44,3 +44,6 @@ ert-medic-loadout-3-desc = A Lecter assault rifle, magazines and stinger grenade
 
 ert-janitor-loadout-1-name = Hazard Response
 ert-janitor-loadout-1-desc = Trashbags, a hydra grenade launcher and plenty of cleanades
+
+ert-cburn-loadout-1-name = Standard Issue
+ert-cburn-loadout-1-desc = The standard CBURN unit loadout, featuring the MA-A49 shotgun.

@@ -267,6 +267,11 @@ public abstract partial class SharedGunSystem
                 entity = component.Entities[^1];
 
                 args.Ammo.Add((entity, EnsureShootable(entity)));
+
+                if (!component.AutoCycle) //  Goobstation - do not remove spent ammo from the gun it doesn't autocycle
+                    break;
+
+
                 component.Entities.RemoveAt(component.Entities.Count - 1);
                 Containers.Remove(entity, component.Container);
             }
@@ -275,6 +280,15 @@ public abstract partial class SharedGunSystem
                 component.UnspawnedCount--;
                 entity = Spawn(component.Proto, args.Coordinates);
                 args.Ammo.Add((entity, EnsureShootable(entity)));
+
+                // Goobstation - put spent ammo back in the gun if it doesn't autocycle
+                if (!component.AutoCycle)
+                {
+                    component.Entities.Add(entity);
+                    Containers.Insert(entity, component.Container);
+
+                }
+                // Goobstation - end
             }
         }
 
