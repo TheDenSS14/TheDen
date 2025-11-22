@@ -3,7 +3,7 @@
 # SPDX-FileCopyrightText: 2025 Rosycup
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 - type: loadout
   id: LoadoutUniformJumpsuitLederhosen
@@ -158,3 +158,15 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutUniformsCivilian
+      
+- type: loadout
+  id: LoadoutClothingUniformSkirtColorable
+  category: Uniform
+  cost: 0
+  exclusive: true
+  customColorTint: true
+  items:
+  - ClothingUniformSkirtColorable
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutUniformsCivilian

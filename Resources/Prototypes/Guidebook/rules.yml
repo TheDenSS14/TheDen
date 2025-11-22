@@ -1,8 +1,8 @@
-# SPDX-FileCopyrightText: 2024 Chief-Engineer <119664036+Chief-Engineer@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 VMSolidus <evilexecutive@gmail.com>
-# SPDX-FileCopyrightText: 2024 sleepyyapril <flyingkarii@gmail.com>
-# SPDX-FileCopyrightText: 2025 Blu <79374236+BlueHNT@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Chief-Engineer
+# SPDX-FileCopyrightText: 2024 VMSolidus
+# SPDX-FileCopyrightText: 2024 sleepyyapril
+# SPDX-FileCopyrightText: 2025 Blu
+# SPDX-FileCopyrightText: 2025 portfiend
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -10,6 +10,8 @@
   id: DefaultRuleset
   name: guide-entry-rules
   text: "/ServerInfo/Guidebook/ServerRules/DefaultRuleset.xml"
+  children: # DEN: I'M PUTTING THIS AS A CHILD SO AS TO NOT CLUTTER THE GUIDEBOOK
+  - EternityRuleset
 
 - type: guideEntry
   id: SpaceLaw

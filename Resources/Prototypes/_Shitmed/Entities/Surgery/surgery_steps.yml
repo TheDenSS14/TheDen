@@ -1,12 +1,9 @@
-# SPDX-FileCopyrightText: 2024 Skubman <ba.fallaria@gmail.com>
-# SPDX-FileCopyrightText: 2024 gluesniffler <159397573+gluesniffler@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 gluesniffler <linebarrelerenthusiast@gmail.com>
-# SPDX-FileCopyrightText: 2024 sleepyyapril <flyingkarii@gmail.com>
-# SPDX-FileCopyrightText: 2024 sleepyyapril <***>
-# SPDX-FileCopyrightText: 2025 VMSolidus <evilexecutive@gmail.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Skubman
+# SPDX-FileCopyrightText: 2024 gluesniffler
+# SPDX-FileCopyrightText: 2024 sleepyyapril
+# SPDX-FileCopyrightText: 2025 VMSolidus
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: entity
   id: SurgeryStepBase
@@ -521,59 +518,6 @@
       types:
         Heat: -5
     sleepModifier: 2
-
-- type: entity
-  parent: SurgeryStepBase
-  id: SurgeryStepLobotomize
-  name: Lobotomize patient
-  categories: [ HideSpawnMenu ]
-  components:
-  - type: SurgeryStep
-    tool:
-    - type: Drill
-    addOrganOnAdd:
-      brain:
-        - type: OhioAccent
-        - type: RatvarianLanguage
-        - type: Clumsy
-          gunShootFailDamage:
-            types:
-              Blunt: 5
-              Piercing: 4
-            groups:
-              Burn: 3
-    duration: 5
-  - type: Sprite
-    sprite: _Shitmed/Objects/Specific/Medical/Surgery/drill.rsi
-    state: drill
-  - type: SurgeryStepEmoteEffect
-  - type: SurgeryDamageChangeEffect
-    damage:
-      types:
-        Piercing: 10
-
-- type: entity
-  parent: SurgeryStepBase
-  id: SurgeryStepMendBrainTissue
-  name: Mend brain tissue
-  categories: [ HideSpawnMenu ]
-  components:
-  - type: SurgeryStep
-    tool:
-    - type: Hemostat
-    duration: 4
-    removeOrganOnAdd:
-      brain:
-        - type: OhioAccent
-        - type: RatvarianLanguage
-        - type: Clumsy
-          gunShootFailDamage:
-            types:
-              Blunt: 0
-  - type: Sprite
-    sprite: _Shitmed/Objects/Specific/Medical/Surgery/hemostat.rsi
-    state: hemostat
-  - type: SurgeryStepEmoteEffect
 
 # The lengths I go to just for a joke... I HATE HARDCODING AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 # Maybe I should modify species prototypes to include tails and ears properly...
