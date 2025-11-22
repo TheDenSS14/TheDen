@@ -199,3 +199,10 @@
     state: stripes-thigh-right
   - sprite: _DEN/Mobs/Customization/Underwear/socks.rsi
     state: tips-right
+
+- type: marking
+  parent: [BaseSpeciesLegsStandard, BaseUnderpants]
+  id: UnderwearLeggings
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Underwear/leggings.rsi
+    state: base

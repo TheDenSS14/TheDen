@@ -26,7 +26,7 @@
   mapName: 'Asterisk'
   mapPath: /Maps/TheDen/asterisk.yml
   minPlayers: 0
-  maxPlayers: 60
+  maxPlayers: 40
   fallback: true
   stations:
     Asterisk:
@@ -63,6 +63,7 @@
             Musician: [ 1, 1 ]
             Janitor: [ 1, 2 ]
             Mime: [ 1, 1 ]
+            MartialArtist: [ 1, 2 ]
           #engineering
             ChiefEngineer: [ 1, 1 ]
             AtmosphericTechnician: [ 1, 1 ] #back by popular demand

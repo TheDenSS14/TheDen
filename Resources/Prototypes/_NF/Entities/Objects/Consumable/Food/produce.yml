@@ -1,5 +1,6 @@
-# SPDX-FileCopyrightText: 2024 RichardRahl123 <130261520+RichardRahl123@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 RichardRahl123
+# SPDX-FileCopyrightText: 2025 portfiend
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -126,6 +127,8 @@
     tags:
       - Fruit
       - Slice
+  - type: Item # DEN: Make tiny
+    size: Tiny
 
 - type: entity
   name: cucumber
@@ -192,6 +195,8 @@
     tags:
       - Vegetable
       - Slice
+  - type: Item # DEN: Make tiny
+    size: Tiny
 
 - type: entity
   name: pickle
@@ -262,6 +267,8 @@
     tags:
       - Vegetable
       - Slice
+  - type: Item # DEN: Make tiny
+    size: Tiny
 
 - type: entity
   name: honeycomb
