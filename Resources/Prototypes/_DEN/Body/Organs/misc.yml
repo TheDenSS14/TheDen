@@ -1,0 +1,21 @@
+# THIS IS UNUSED!!
+# I ONLY ADDED THIS FOR THE SAKE OF THE DEN RECIPE VIEWER,
+# WHICH REQUIRES AN ENTITY STOMACH PROTOTYPE TO EVALUATE DIETARY RESTRICTIONS
+- type: entity
+  id: OrganStrictVampiricStomach
+  parent: OrganAnimalStomach
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Metabolizer
+    maxReagents: 3
+    metabolizerTypes: [Vampiric]
+    groups:
+    - id: Food
+    - id: Drink
+  - type: Stomach
+    specialDigestible:
+      tags:
+      - Pill
+      - Crayon
+      - Paper
+      - VampireFood
