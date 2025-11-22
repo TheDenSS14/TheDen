@@ -1,8 +1,8 @@
-# SPDX-FileCopyrightText: 2023 Colin-Tel <113523727+Colin-Tel@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2023 Fluffiest Floofers <thebluewulf@gmail.com>
-# SPDX-FileCopyrightText: 2023 Ps3Moira <113228053+ps3moira@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 sleepyyapril <flyingkarii@gmail.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Colin-Tel
+# SPDX-FileCopyrightText: 2023 Fluffiest Floofers
+# SPDX-FileCopyrightText: 2023 Ps3Moira
+# SPDX-FileCopyrightText: 2024 sleepyyapril
+# SPDX-FileCopyrightText: 2025 portfiend
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -66,6 +66,8 @@
   - type: Tag
     tags:
       - ClothMade # Mothic Food
+  - type: Item # DEN: Make tiny
+    size: Tiny
 
 - type: entity
   name: green lasagne
@@ -130,6 +132,8 @@
   - type: Tag
     tags:
       - ClothMade # Mothic Food
+  - type: Item # DEN: Make tiny
+    size: Tiny
 #Tastes like cheese, pesto and pasta
 
 - type: entity
