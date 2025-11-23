@@ -59,6 +59,10 @@
   items:
     - type: loadout
       id: LoadoutServiceClownBedsheetClown
+    # DEN start: Fixing tests
+    - type: loadout
+      id: LoadoutServiceClownNeckRuffle
+    # End DEN
 
 - type: characterItemGroup
   id: LoadoutClownMask
@@ -66,6 +70,12 @@
   items:
     - type: loadout
       id: LoadoutServiceClownMaskSexy
+    # DEN start
+    - type: loadout
+      id: LoadoutServiceClownNose
+    - type: loadout
+      id: LoadoutServiceClownMaskAncient
+    # End DEN
 
 - type: characterItemGroup
   id: LoadoutClownOuter
@@ -93,3 +103,7 @@
       id: LoadoutServiceClownOutfitJester
     - type: loadout
       id: LoadoutServiceClownOutfitJesterAlt
+    # DEN start: Fixing tests
+    - type: loadout
+      id: LoadoutServiceClownOutfitCircus
+    # End DEN

@@ -54,6 +54,10 @@
       id: LoadoutMedicalEyesCorpsmanEyepatchHudMedical
     - type: loadout
       id: LoadoutClothingEyesCorpsmanHudMedPrescription
+    # DEN start: Fixing tests
+    - type: loadout
+      id: LoadoutCorpsmanMedicalGlasses
+    # End DEN
 
 - type: characterItemGroup
   id: LoadoutCorpsmanGloves
@@ -115,8 +119,8 @@
   maxItems: 1
   items:
     - type: loadout
-      id: LoadoutClothingUniformJumpsuitCorpsman
+      id: LoadoutUniformJumpsuitCorpsman # DEN: Fix tests
     - type: loadout
-      id: LoadoutClothingUniformJumpskirtCorpsman
+      id: LoadoutUniformJumpskirtCorpsman # DEN: Fix tests
     - type: loadout
-      id: LoadoutClothingUniformJumpsuitCorpsmanSummer
+      id: LoadoutUniformJumpsuitCorpsmanSummer # DEN: Fix tests

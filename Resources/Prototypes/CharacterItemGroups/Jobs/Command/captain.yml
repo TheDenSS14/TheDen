@@ -81,6 +81,10 @@
   items:
     - type: loadout
       id: LoadoutCaptainEyesSunglasses
+    # DEN start: Fixing tests
+    - type: loadout
+      id: CaptainVisor
+    # End DEN
 
 - type: characterItemGroup
   id: LoadoutCaptainGloves
@@ -92,6 +96,10 @@
       id: LoadoutCaptainGlovesInspection
     - type: loadout
       id: LoadoutClothingHandsCaptainWarmers
+    # DEN start: Fixing tests
+    - type: loadout
+      id: CaptainFlightGloves
+    # End DEN
 
 - type: characterItemGroup
   id: LoadoutCaptainHead
@@ -103,6 +111,10 @@
       id: LoadoutCommandCapHatCapcap
     - type: loadout
       id: LoadoutCommandCapHatBeret
+    # DEN start: Fixing tests
+    - type: loadout
+      id: CaptainCrusherCap
+    # End DEN
 
 - type: characterItemGroup
   id: LoadoutCaptainId
@@ -125,6 +137,10 @@
       id: LoadoutCaptainNeckGoldMedal
     - type: loadout
       id: LoadoutCommandCapCollar
+    # DEN start: Fixing tests
+    - type: loadout
+      id: CaptainGreatcoat
+    # End DEN
 
 - type: characterItemGroup
   id: LoadoutCaptainMask
@@ -149,6 +165,10 @@
       id: LoadoutCaptainOuterDogi
     - type: loadout
       id: LoadoutCaptainOuterLongCoat
+    # DEN start: Fixing tests
+    - type: loadout
+      id: CaptainRepeller
+    # End DEN
 
 - type: characterItemGroup
   id: LoadoutCaptainShoes
@@ -164,6 +184,10 @@
       id: LoadoutCaptainShoesCombat
     - type: loadout
       id: LoadoutClothingUnderSocksCaptain
+    # DEN start: Fixing tests
+    - type: loadout
+      id: CaptainJumpBoots
+    # End DEN
 
 - type: characterItemGroup
   id: LoadoutCaptainUniforms
@@ -179,3 +203,7 @@
       id: LoadoutCommandCapJumpskirtFormal
     - type: loadout
       id: LoadoutClothingUniformCaptainThong
+    # DEN start: Fixing tests
+    - type: loadout
+      id: CaptainEveningAttire
+    # End DEN

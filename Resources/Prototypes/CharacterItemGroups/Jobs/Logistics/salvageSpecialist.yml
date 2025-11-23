@@ -11,7 +11,7 @@
   maxItems: 1
   items:
     - type: loadout
-      id: LoadoutBackpackSalvage
+      id: LoadoutSalvageBackpackBackpack # DEN: Fix tests
     - type: loadout
       id: LoadoutSalvageBackpackSatchel
     - type: loadout
@@ -123,3 +123,9 @@
   items:
     - type: loadout
       id: LoadoutSalvageSpecialistUniformSuit
+    # DEN start: Fixing tests
+    - type: loadout
+      id: LoadoutSalvageSpecialistUniformSalvageSpecialistOveralls
+    - type: loadout
+      id: LoadoutSalvageSpecialistUniformSalvageOperator
+    # End DEN

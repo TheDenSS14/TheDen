@@ -38,6 +38,10 @@
   items:
     - type: loadout
       id: LoadoutDetectiveGloves
+    # DEN start: Fixing tests
+    - type: loadout
+      id: LoadoutClothingHandsDetectiveWarmers
+    # End DEN
 
 #- type: characterItemGroup
 #  id: LoadoutDetectiveHead
@@ -69,6 +73,10 @@
       id: LoadoutOuterVestDetective
     - type: loadout
       id: LoadoutOuterCoatOpenCoatDetective
+    # DEN start: Fixing tests
+    - type: loadout
+      id: LoadoutClothingOuterOpenCoatDetective
+    # End DEN
 
 - type: characterItemGroup
   id: LoadoutDetectiveShoes
@@ -90,7 +98,7 @@
     - type: loadout
       id: LoadoutUniformJumpskirtDetectiveGrey
     - type: loadout
-      id: LoadoutUniformJumpsuitNanotrasenDetective
+      id: LoadoutClothingUniformJumpsuitNanotrasenDetective # DEN: Fix tests
     - type: loadout
       id: LoadoutClothingUniformDetectiveThong
     - type: loadout # DEN
