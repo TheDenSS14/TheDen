@@ -10,9 +10,9 @@
   speciesRestriction: [Reptilian]
   layering:
     # This actually helps. Thanks Floof
-    dragon-front: Chest
+    dragon-front: TailBehind
     dragon-front-side: Tail
-    dragon-back: TailOversuit
+    dragon-back: BackWings
 #    `dragon-back: Wings`
 #    The dragon-back is originally rendered on wings(moth) layer. If you want to have bags seen: TailOversuit.
 #    This is done for balancing purposes (Cannot hide bags for Unathi.)
@@ -34,10 +34,10 @@
   markingCategory: Wings
   speciesRestriction: [Reptilian]
   layering:
-    dragon-front: Wings
+    dragon-front: TailBehind
     dragon-front-side: Tail
     dragon-back: BackWings
-    dragon-inner-front: Wings
+    dragon-inner-front: TailBehind
     dragon-inner-frontsides: Tail
     dragon-inner-back: BackWings
   colorLinks:

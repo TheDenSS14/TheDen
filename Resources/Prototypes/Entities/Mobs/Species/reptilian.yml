@@ -56,18 +56,9 @@
 # SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: entity
-  abstract: true
-  parent: ReptilianSpeciesLayers
-  id: BaseReptilianAppearance
-  components:
-  - type: HumanoidAppearance
-    species: Reptilian
-
-
-- type: entity
   save: false
   name: Urisst' Mzhand
-  parent: [ BaseMobSpeciesOrganicCustom, BaseReptilianAppearance, StorableSpecies ] # TheDen
+  parent: [ BaseMobSpeciesOrganic, StorableSpecies ] # TheDen
   id: BaseMobReptilian
   abstract: true
   components:
@@ -158,7 +149,7 @@
 
 
 - type: entity
-  parent: [ BaseReptilianAppearance, BaseSpeciesDummy ]
+  parent: BaseSpeciesDummy
   id: MobReptilianDummy
   categories: [ HideSpawnMenu ]
   description: A dummy reptilian meant to be used in character setup.
