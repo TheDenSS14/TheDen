@@ -35,9 +35,7 @@
   category: TraitsSpeechAccents
   slots: 0
   points: 0
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: TraitsAccents
+  # DEN: No trait group requirement, does not contribute to accent limit
   functions:
     - !type:TraitAddComponent
       components:

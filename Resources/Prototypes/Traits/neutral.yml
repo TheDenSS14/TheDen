@@ -36,8 +36,7 @@
         - StationAi
         - Borg
         - MedicalBorg
-    - !type:CharacterItemGroupRequirement
-      group: TraitsAccents
+  # DEN: No trait group requirement, does not contribute to accent limit
   functions:
     - !type:TraitAddComponent
       components:
