@@ -58,12 +58,12 @@
 - type: entity
   save: false
   name: Urisst' Mzhand
-  parent: [ BaseMobSpeciesOrganic, StorableSpecies ] # TheDen
+  parent: [BaseMobSpeciesOrganic, StorableSpecies] # TheDen
   id: BaseMobReptilian
   abstract: true
   components:
-#  - type: HumanoidAppearance
-#    species: Reptilian
+  - type: HumanoidAppearance
+    species: Reptilian
   - type: Hunger
   - type: Puller
     needsHands: false
@@ -154,8 +154,8 @@
   categories: [ HideSpawnMenu ]
   description: A dummy reptilian meant to be used in character setup.
   components:
-#  - type: HumanoidAppearance
-#    species: Reptilian
+  - type: HumanoidAppearance
+    species: Reptilian
   - type: Inventory
     speciesId: reptilian
     femaleDisplacements:
