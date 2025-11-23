@@ -60,3 +60,13 @@
   requirements:
   - !type:CharacterItemGroupRequirement
     group: LoadoutLewdPills
+
+- type: loadout
+  id: LoadoutSexLube
+  category: ItemsLewd
+  cost: 1
+  items:
+  - SexLube
+  requirements:
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutVASH

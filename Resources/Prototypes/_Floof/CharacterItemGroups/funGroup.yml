@@ -28,6 +28,8 @@
     id: LoadoutLiner
   - type: loadout
     id: LoadoutPad
+  - type: loadout # DEN: add lube to loadouts :)
+    id: LoadoutSexLube
 
 # If you are ever going to add more: open regex101; in list mode, find "id: (.+)", replace with "- type: loadout\n  id: $1\n", paste the result here
 - type: characterItemGroup
