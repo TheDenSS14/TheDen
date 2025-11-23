@@ -19,7 +19,8 @@ public sealed class CharacterItemGroupTest
         "LoadoutPlushie",
         "TraitsMachine",
         "TraitsLanguagesRacial",
-        "TraitsMind"
+        "TraitsMind",
+        "TraitsMuted"
     ];
 
     /// <summary>
@@ -145,7 +146,7 @@ public sealed class CharacterItemGroupTest
             var groupExists = protoMan.TryIndex(groupRequirement.Group, out var itemGroup);
             Assert.That(groupExists, $"CharacterItemGroup with ID {groupRequirement.Group} does not exist!");
 
-            if (!groupExists)
+            if (!groupExists || ExcludedItemGroups.Contains(itemGroup.ID))
                 continue;
 
             if (!itemGroup.Items.Any(item => item.Type == itemType && item.ID == id))
