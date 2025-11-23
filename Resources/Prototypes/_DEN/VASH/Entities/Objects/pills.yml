@@ -1,9 +1,10 @@
 # SPDX-FileCopyrightText: 2025 Forzii
 # SPDX-FileCopyrightText: 2025 KekaniCreates
 # SPDX-FileCopyrightText: 2025 pocl v
+# SPDX-FileCopyrightText: 2025 portfiend
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 - type: entity
   name: phil's popup
@@ -34,7 +35,7 @@
   - type: SolutionContainerManager
     solutions:
       food:
-        maxVol: 1
+        maxVol: 5
         reagents:
         - ReagentId: Sugar #Just a placeholder, as we don't have pregnancy.
           Quantity: 4 # den edit

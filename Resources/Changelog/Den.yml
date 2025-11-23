@@ -14493,3 +14493,106 @@ Entries:
   id: 1420
   time: '2025-11-16T23:03:54.0000000+00:00'
   url: https://github.com/TheDenSS14/TheDen/pull/2040
+- author: portfiend
+  changes:
+    - type: Remove
+      message: >-
+        The "lobotomy" and "mend brain tissue" surgeries have been removed, as
+        well as the "lobotomy" AAC tablet phrase - as per direction vote.
+  id: 1421
+  time: '2025-11-18T14:08:41.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/2054
+- author: Jakumba
+  changes:
+    - type: Tweak
+      message: Asteroids will spawn in space on round start again. Yay!
+  id: 1422
+  time: '2025-11-18T17:30:55.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/2055
+- author: portfiend
+  changes:
+    - type: Add
+      message: >-
+        A new "leggings" underwear marking and grayscale variants of the
+        "button-up shirt" undershirts can be found in the Markings tab.
+    - type: Add
+      message: >-
+        Some new clothing has been added to loadouts: technicolor jackets in
+        black, white, and beige, a simple skirt, a sweater vest, and a folded
+        collar.
+  id: 1423
+  time: '2025-11-19T19:41:44.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/2056
+- author: sleepyyapril
+  changes:
+    - type: Remove
+      message: Removed the cobra gland from being obtainable.
+  id: 1424
+  time: '2025-11-20T17:08:10.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/2060
+- author: GreggTheFather
+  changes:
+    - type: Add
+      message: Added Meridian, so it may be mapped via the Mapping Server to finish
+    - type: Tweak
+      message: Tweaked Manta and Baikal, small fixes.
+  id: 1425
+  time: '2025-11-21T01:42:34.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/2062
+- author: Zilanthros
+  changes:
+    - type: Add
+      message: Perpetuity Map File
+    - type: Add
+      message: Perpetuity Map Prototype File
+  id: 1426
+  time: '2025-11-21T23:26:13.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/2064
+- author: portfiend
+  changes:
+    - type: Add
+      message: >-
+        Welcome to volume 3 of Chef Tweaks. Don't you guys miss when I used to
+        be a chef main? Haha. I know I do.
+    - type: Add
+      message: >-
+        Chefs now get a set of food-safe black nitrile gloves (distinct from the
+        ones medical staff get), available through loadouts and the ChefDrobe.
+    - type: Add
+      message: All bowl food items are now capable of having condiments added to them.
+    - type: Tweak
+      message: The ChefVend now starts with two cheese wheels, up from one.
+    - type: Tweak
+      message: >-
+        Muffins and sausages now take 10 seconds to cook in the microwave,
+        instead of 15 seconds.
+    - type: Tweak
+      message: >-
+        Blood tomato soup is slightly more nutritious. French onion soup is WAY
+        more nutritious.
+    - type: Tweak
+      message: >-
+        Salads are now eaten with forks. Noodles can now be eaten with either
+        forks or spoons. (Chopsticks count as forks, technically, so now you can
+        also eat noodles with chopsticks!)
+    - type: Tweak
+      message: >-
+        Some sliceable foods and produce have had their slices made "tiny" in
+        the inventory: baked rice, lasagne, green lasagne, avocado and carp
+        sushi, dough and raw croissants, avocadoes, cucumbers, pickles,
+        pomegranates, onions, red onions, pineapples, cheese, chevre, and tofu.
+    - type: Tweak
+      message: >-
+        The glass bowl that's used to make ice cream has been renamed to "ice
+        cream bowl". Slices of lasagne have been renamed to "lasagne slice".
+    - type: Fix
+      message: >-
+        Many food items with maximum reagent volumes lower than their reagent
+        contents have been fixed. This, in practice, makes a handful of food
+        items more nutritious now than they were before (as otherwise it'd have
+        been cut off by the max volume); some examples include various soups,
+        salads, a couple burgers, and some miscellaneous other shit I don't feel
+        like naming.
+  id: 1427
+  time: '2025-11-22T19:43:16.0000000+00:00'
+  url: https://github.com/TheDenSS14/TheDen/pull/2065
