@@ -209,6 +209,23 @@
   - !type:TileNotBlocked
 
 - type: construction
+  name: white lounge chair
+  id: ChairBeachLoungeWhite
+  graph: ChairBeachLounge
+  startNode: start
+  targetNode: white
+  category: construction-category-furniture
+  description: For sitting back, relaxing, and soaking in the solar lamp radiation.
+  icon:
+    sprite: _DEN/Structures/Furniture/lounge_chair.rsi
+    state: white
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+  - !type:TileNotBlocked
+
+- type: construction
   name: yellow lounge chair
   id: ChairBeachLoungeYellow
   graph: ChairBeachLounge
