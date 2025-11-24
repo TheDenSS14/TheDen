@@ -94,6 +94,14 @@
       - material: Cloth
         amount: 2
         doAfter: 1
+    - to: white
+      steps:
+      - material: Steel
+        amount: 1
+        doAfter: 1
+      - material: Cloth
+        amount: 2
+        doAfter: 1
     - to: yellow
       steps:
       - material: Steel
@@ -245,6 +253,20 @@
         doAfter: 1
   - node: teal
     entity: ChairBeachLoungeTeal
+    edges:
+    - to: start
+      completed:
+      - !type:SpawnPrototype
+        prototype: SheetSteel1
+        amount: 1
+      - !type:SpawnPrototype
+        prototype: MaterialCloth1
+        amount: 2
+      steps:
+      - tool: Screwing
+        doAfter: 1
+  - node: white
+    entity: ChairBeachLoungeWhite
     edges:
     - to: start
       completed:

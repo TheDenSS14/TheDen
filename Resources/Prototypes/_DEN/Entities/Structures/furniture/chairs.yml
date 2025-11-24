@@ -124,6 +124,16 @@
 
 - type: entity
   parent: BaseChairBeachLounge
+  id: ChairBeachLoungeWhite
+  suffix: white
+  components:
+  - type: Sprite
+    state: white
+  - type: Construction
+    node: white
+
+- type: entity
+  parent: BaseChairBeachLounge
   id: ChairBeachLoungeYellow
   suffix: yellow
   components:
