@@ -4,11 +4,13 @@
   abstract: true
   parent: ChairBase
   id: BaseChairBeachLounge
-  name: beach lounge chair
+  name: beach chair
   description: For sitting back, relaxing, and soaking in the solar lamp radiation.
   components:
   - type: Sprite
     sprite: _DEN/Structures/Furniture/lounge_chair.rsi
+  - type: Construction
+    graph: ChairBeachLounge
 
 - type: entity
   parent: BaseChairBeachLounge
@@ -17,6 +19,8 @@
   components:
   - type: Sprite
     state: beige
+  - type: Construction
+    node: beige
 
 - type: entity
   parent: BaseChairBeachLounge
@@ -25,6 +29,8 @@
   components:
   - type: Sprite
     state: black
+  - type: Construction
+    node: black
 
 - type: entity
   parent: BaseChairBeachLounge
@@ -33,6 +39,8 @@
   components:
   - type: Sprite
     state: blue
+  - type: Construction
+    node: blue
 
 - type: entity
   parent: BaseChairBeachLounge
@@ -41,6 +49,8 @@
   components:
   - type: Sprite
     state: brown
+  - type: Construction
+    node: brown
 
 - type: entity
   parent: BaseChairBeachLounge
@@ -49,6 +59,8 @@
   components:
   - type: Sprite
     state: gray
+  - type: Construction
+    node: gray
 
 - type: entity
   parent: BaseChairBeachLounge
@@ -57,6 +69,8 @@
   components:
   - type: Sprite
     state: green
+  - type: Construction
+    node: green
 
 - type: entity
   parent: BaseChairBeachLounge
@@ -65,6 +79,8 @@
   components:
   - type: Sprite
     state: orange
+  - type: Construction
+    node: orange
 
 - type: entity
   parent: BaseChairBeachLounge
@@ -73,6 +89,8 @@
   components:
   - type: Sprite
     state: pink
+  - type: Construction
+    node: pink
 
 - type: entity
   parent: BaseChairBeachLounge
@@ -81,6 +99,8 @@
   components:
   - type: Sprite
     state: purple
+  - type: Construction
+    node: purple
 
 - type: entity
   parent: BaseChairBeachLounge
@@ -89,6 +109,8 @@
   components:
   - type: Sprite
     state: red
+  - type: Construction
+    node: red
 
 - type: entity
   parent: BaseChairBeachLounge
@@ -97,6 +119,8 @@
   components:
   - type: Sprite
     state: teal
+  - type: Construction
+    node: teal
 
 - type: entity
   parent: BaseChairBeachLounge
@@ -105,3 +129,5 @@
   components:
   - type: Sprite
     state: yellow
+  - type: Construction
+    node: yellow
