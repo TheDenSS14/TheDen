@@ -222,7 +222,7 @@ ghost-role-information-skeleton-biker-name = Skeleton Biker
 ghost-role-information-skeleton-biker-description = Ride around on your sweet ride.
 
 ghost-role-information-closet-skeleton-name = Closet Skeleton
-ghost-role-information-closet-skeleton-description = Wreak havoc! You are a primordial force with no allegiance. Live happily with the crew or wage sweet skeletal war.
+ghost-role-information-closet-skeleton-description = You are a primordial force with no allegiance. Live happily with the crew or be a skeletal problem. Antagonistic actions should be kept to the level of a nuisance, not a major threat.
 
 ghost-role-information-onestar-mecha-name = Onestar Mecha
 ghost-role-information-onestar-mecha-description = You are an experimental mecha created by who-knows-what, all you know is that you have weapons and you detect fleshy moving targets nearby...
@@ -371,8 +371,11 @@ ghost-role-information-artifact-name = Sentient Artifact
 ghost-role-information-artifact-description =
       Enact your eldritch whims.
       Forcibly activate your nodes for good or for evil.
+      Antagonistic actions should be kept to the level of a nuisance, not a major threat.
+      Hostility in an isolated area is acceptable but do not roam around the station causing mass casualties.
 
 ghost-role-information-silicon-rules = Obey your laws. You are a {role-type-free-agent-name} if you are not currently bound by any laws.
+                                       Antagonistic actions should be kept to the level of a nuisance, not a major threat.
                                        You don't remember any of your previous life, and you don't remember anything you learned as a ghost.
                                        You are allowed to remember knowledge about the game in general, such as how to cook, how to use objects, etc.
                                        You are absolutely [color=red]NOT[/color] allowed to remember, say, the name, appearance, etc. of your previous character.
