@@ -1,5 +1,6 @@
-# SPDX-FileCopyrightText: 2025 Rosycup <178287475+Rosycup@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Rosycup
+# SPDX-FileCopyrightText: 2025 portfiend
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -39,7 +40,7 @@
     - Meat
 
 - type: entity
-  name: lasagne
+  name: lasagne slice # DEN: lasagne -> lasagne slice
   parent: FoodMealBase
   id: FoodLasagneSlice
   description: A slice of meaty, cheesy lasagne.
@@ -66,3 +67,5 @@
   - type: Tag
     tags:
     - Meat
+  - type: Item # DEN: Make tiny
+    size: Tiny

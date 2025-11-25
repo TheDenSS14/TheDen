@@ -1,3 +1,4 @@
+# SPDX-FileCopyrightText: 2025 Aikakakah
 # SPDX-FileCopyrightText: 2025 portfiend
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
@@ -34,3 +35,6 @@ marking-UnderwearSocksThighStripes-tips-right = Tip
 
 marking-UnderwearLeggings = Leggings
 marking-UnderwearLeggings-base = Leggings
+
+marking-UnderwearSocksStockings = Stockings
+marking-UnderwearSocksStockings-stockings-right = Stockings

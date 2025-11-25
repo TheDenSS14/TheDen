@@ -1,0 +1,21 @@
+# SPDX-FileCopyrightText: 2025 portfiend
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  abstract: true
+  parent: FoodBowlBase
+  id: FoodBowlSaladBase
+  components:
+  - type: Food
+    utensil: Fork
+
+- type: entity
+  abstract: true
+  parent: FoodBowlBase
+  id: FoodBowlNoodlesBase
+  components:
+  - type: Food
+    utensil:
+    - Fork
+    - Spoon

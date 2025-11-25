@@ -6,7 +6,7 @@
 # SPDX-FileCopyrightText: 2025 portfiend
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 - type: entity
   abstract: true
@@ -372,9 +372,6 @@
         prob: 0.50
         orGroup: Prize
       - id: PlushieAbductor
-        prob: 0.50
-        orGroup: Prize
-      - id: PlushieGrim
         prob: 0.50
         orGroup: Prize
       - id: PlushieDignifiedVulp

@@ -32,12 +32,12 @@
 # SPDX-FileCopyrightText: 2025 portfiend
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 # When adding new food also add to random spawner located in Resources\Prototypes\Entities\Markers\Spawners\Random\Food_Drinks\food_meal.yml
 
 - type: entity
-  parent: FoodBase
+  parent: FoodInjectableBase # DEN: Make injectable
   id: FoodBowlBase
   abstract: true
   components:
@@ -134,7 +134,7 @@
 
 - type: entity
   name: aesir salad
-  parent: FoodBowlBase
+  parent: FoodBowlSaladBase # DEN - SALAD...
   id: FoodSaladAesir
   description: Probably too incredible for mortals to fully enjoy.
   components:
@@ -148,7 +148,7 @@
   - type: SolutionContainerManager
     solutions:
       food:
-        maxVol: 15
+        maxVol: 30 # DEN: 15 -> 30
         reagents:
         - ReagentId: Nutriment
           Quantity: 8
@@ -163,7 +163,7 @@
 
 - type: entity
   name: herb salad
-  parent: FoodBowlBase
+  parent: FoodBowlSaladBase # DEN - SALAD...
   id: FoodSaladHerb
   description: A tasty salad with apples on top.
   components:
@@ -191,7 +191,7 @@
 
 - type: entity
   name: valid salad
-  parent: FoodBowlBase
+  parent: FoodBowlSaladBase # DEN - SALAD...
   id: FoodSaladValid
   description: It's just an herb salad with meatballs and fried potato slices. Nothing suspicious about it.
   components:
@@ -224,7 +224,7 @@
 
 - type: entity
   name: coleslaw
-  parent: FoodBowlBase
+  parent: FoodBowlSaladBase # DEN - SALAD...
   id: FoodSaladColeslaw
   description: Shredded cabbage and red onions dressed with a vinaigrette.
   components:
@@ -255,7 +255,7 @@
 
 - type: entity
   name: caesar salad
-  parent: FoodBowlBase
+  parent: FoodBowlSaladBase # DEN - SALAD...
   id: FoodSaladCaesar
   description: A simple yet flavorful salad of onions, lettuce, croutons, and shreds of cheese dressed in oil. Comes with a slice of pita bread!
   components:
@@ -285,7 +285,7 @@
 
 - type: entity
   name: kimchi salad
-  parent: FoodBowlBase
+  parent: FoodBowlSaladBase # DEN - SALAD...
   id: FoodSaladKimchi
   description: It really is just a spicy salad.
   components:
@@ -316,7 +316,7 @@
 
 - type: entity
   name: fruit salad
-  parent: FoodBowlBase
+  parent: FoodBowlSaladBase # DEN - SALAD...
   id: FoodSaladFruit
   description: Your standard fruit salad.
   components:
@@ -343,7 +343,7 @@
 
 - type: entity
   name: jungle salad
-  parent: FoodBowlBase
+  parent: FoodBowlSaladBase # DEN - SALAD...
   id: FoodSaladJungle
   description: Exotic fruits in a bowl.
   components:
@@ -371,7 +371,7 @@
 
 - type: entity
   name: citrus salad
-  parent: FoodBowlBase
+  parent: FoodBowlSaladBase # DEN - SALAD...
   id: FoodSaladCitrus
   description: Citrus overload!
   components:
@@ -399,7 +399,7 @@
 
 - type: entity
   name: salad of eden
-  parent: FoodBowlBase
+  parent: FoodBowlSaladBase # DEN - SALAD...
   id: FoodSaladEden
   description: A salad brimming with untapped potential.
   components:
@@ -651,7 +651,7 @@
   - type: SolutionContainerManager
     solutions:
       food:
-        maxVol: 12
+        maxVol: 30 # DEN: 12 -> 30
         reagents:
         - ReagentId: Nutriment
           Quantity: 7
@@ -680,7 +680,7 @@
   - type: SolutionContainerManager
     solutions:
       food:
-        maxVol: 12
+        maxVol: 20 # DEN: 12 -> 20
         reagents:
         - ReagentId: Nutriment
           Quantity: 1
@@ -707,10 +707,10 @@
   - type: SolutionContainerManager
     solutions:
       food:
-        maxVol: 12
+        maxVol: 25 # DEN: 12 -> 30
         reagents:
         - ReagentId: Nutriment
-          Quantity: 3
+          Quantity: 8 # DEN: 3 -> 8
         - ReagentId: Iron
           Quantity: 10
         - ReagentId: Blood
@@ -762,7 +762,7 @@
   - type: SolutionContainerManager
     solutions:
       food:
-        maxVol: 12
+        maxVol: 30 # DEN: 12 -> 30
         reagents:
         - ReagentId: Nutriment
           Quantity: 2
@@ -788,7 +788,7 @@
   - type: SolutionContainerManager
     solutions:
       food:
-        maxVol: 12
+        maxVol: 30 # DEN: 12 -> 30
         reagents:
         - ReagentId: Nutriment
           Quantity: 5
@@ -815,7 +815,7 @@
   - type: SolutionContainerManager
     solutions:
       food:
-        maxVol: 12
+        maxVol: 30 # DEN: 12 -> 30
         reagents:
         - ReagentId: Nutriment
           Quantity: 5
@@ -1144,7 +1144,7 @@
   - type: SolutionContainerManager
     solutions:
       food:
-        maxVol: 15
+        maxVol: 30 # DEN: 15 -> 30
         reagents:
           - ReagentId: Nutriment
             Quantity: 15
@@ -1198,12 +1198,12 @@
   - type: SolutionContainerManager
     solutions:
       food:
-        maxVol: 10
+        maxVol: 30 # DEN: 10 -> 30
         reagents:
           - ReagentId: Nutriment
-            Quantity: 1
+            Quantity: 10 # DEN: 1 -> 10
           - ReagentId: Vitamin
-            Quantity: 5
+            Quantity: 10 # DEN: 5 -> 10
           - ReagentId: Allicin
             Quantity: 5
   - type: Tag # DEN - Moth edible
@@ -1279,7 +1279,7 @@
   - type: SolutionContainerManager
     solutions:
       food:
-        maxVol: 15
+        maxVol: 20 # DEN: 15 -> 20
         reagents:
           - ReagentId: Nutriment
             Quantity: 6
@@ -1372,7 +1372,7 @@
   - type: SolutionContainerManager
     solutions:
       food:
-        maxVol: 45
+        maxVol: 65 # DEN: 45 -> 65
         reagents:
           - ReagentId: Nutriment
             Quantity: 25
