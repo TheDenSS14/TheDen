@@ -123,24 +123,26 @@ public sealed class KillPersonConditionSystem : EntitySystem
         {
             foreach (var mind in markedList)
             {
-                if (!TryComp<MarkedComponent>(mind.Comp.CurrentEntity, out var targetMarked)
-                    || targetMarked.TargetType.HasFlag(ObjectiveTypes.TraitorNonTargetable))
+                if (TryComp<MarkedComponent>(mind.Comp.CurrentEntity, out var markedComp)
+                    && markedComp.TargetType == ObjectiveTypes.TraitorNonTargetable)
                 {
                     markedList.Remove(mind);
                 }
             }
         }
+
         if (objType.HasFlag(ObjectiveTypes.TraitorTeach))//Culls from the list of all alive minds anyone that hasn't opted into teach targetting.
         {
             foreach (var mind in markedList)
             {
-                if (TryComp<MarkedComponent>(mind.Comp.CurrentEntity, out var targetMarked)
-                    && targetMarked.TargetType.HasFlag(ObjectiveTypes.TraitorNonTargetable))
+                if (TryComp<MarkedComponent>(mind.Comp.CurrentEntity, out var markedComp)
+                    && markedComp.TargetType == ObjectiveTypes.TraitorNonTargetable)
                 {
                     markedList.Remove(mind);
                 }
             }
         }
+
         return markedList;
     }
     private void OnHeadAssigned(EntityUid uid, PickRandomHeadComponent comp, ref ObjectiveAssignedEvent args)
