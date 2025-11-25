@@ -4,6 +4,7 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MITs
 
 thief-role-greeting-human-deltav =
+    Important! Read before playing:
     You have an urge to steal something today.
     You want something interesting, but you're after the thrill of the heist, not material value.
     You only want to steal one item, or a collection of unimportant but similar items.

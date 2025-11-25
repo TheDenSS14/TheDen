@@ -46,7 +46,7 @@ ghost-role-component-default-rules = All normal rules apply unless an administra
                                      You are allowed to remember knowledge about the game in general, such as how to cook, how to use objects, etc.
                                      You are absolutely [color=red]NOT[/color] allowed to remember, say, the name, appearance, etc. of your previous character.
 ghost-role-information-freeagent-rules = You are a [color=yellow][bold]Free Agent[/bold][/color]. You are free to act as either an antagonist or a non-antagonist.
-                                         Antagonistic actions should be kept to the level of a nuisance, not a major threat.
+                                         Important! [color=red]Read before playing:[/color] Antagonistic actions should be kept to the level of a nuisance, not a major threat.
                                          You don't remember any of your previous life, and you don't remember anything you learned as a ghost.
                                          You are allowed to remember knowledge about the game in general, such as how to cook, how to use objects, etc.
                                          You are absolutely [color=red]NOT[/color] allowed to remember, say, the name, appearance, etc. of your previous character.
@@ -371,11 +371,11 @@ ghost-role-information-artifact-name = Sentient Artifact
 ghost-role-information-artifact-description =
       Enact your eldritch whims.
       Forcibly activate your nodes for good or for evil.
-      Antagonistic actions should be kept to the level of a nuisance, not a major threat.
+      Important![color=red] Read before playing:[/color] Antagonistic actions should be kept to the level of a nuisance, not a major threat.
       Hostility in an isolated area is acceptable but do not roam around the station causing mass casualties.
 
 ghost-role-information-silicon-rules = Obey your laws. You are a {role-type-free-agent-name} if you are not currently bound by any laws.
-                                       Antagonistic actions should be kept to the level of a nuisance, not a major threat.
+                                       Important![color=red] Read before playing:[/color] Antagonistic actions should be kept to the level of a nuisance, not a major threat, unless laws explicitly state otherwise.
                                        You don't remember any of your previous life, and you don't remember anything you learned as a ghost.
                                        You are allowed to remember knowledge about the game in general, such as how to cook, how to use objects, etc.
                                        You are absolutely [color=red]NOT[/color] allowed to remember, say, the name, appearance, etc. of your previous character.
