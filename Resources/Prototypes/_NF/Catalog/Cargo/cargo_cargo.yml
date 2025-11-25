@@ -1,0 +1,31 @@
+# SPDX-FileCopyrightText: 2025 Jakumba
+# SPDX-FileCopyrightText: 2025 Whatstone
+# SPDX-FileCopyrightText: 2025 dustylens
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+# The combination of the cargo mech and a forklift certificate for the meme
+- type: entity
+  id: MechEmuCargoListing
+  name: Emu PLU
+  categories: [HideSpawnMenu]
+  components:
+  - type: Sprite
+    sprite: _NF/Objects/Specific/Mech/mecha.rsi
+    state: emu
+  - type: EntityTableSpawner
+    offset: 0
+    table: !type:AllSelector
+      children:
+      - id: MechEmuCargo
+
+- type: cargoProduct
+  id: MechEmu
+  icon:
+    sprite: _NF/Objects/Specific/Mech/mecha.rsi
+    state: emu
+  product: MechEmuCargoListing
+  cost: 5000
+  category: cargoproduct-category-name-cargo
+  description: An old mech with an integral forklift, useful for moving trade crates.
+  group: market

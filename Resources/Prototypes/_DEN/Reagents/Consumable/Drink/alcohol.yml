@@ -1,5 +1,6 @@
 # SPDX-FileCopyrightText: 2025 Eightballll
 # SPDX-FileCopyrightText: 2025 TheOneTrueWolfio
+# SPDX-FileCopyrightText: 2025 Winter
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -932,4 +933,61 @@
 #        showInChat: true
 #        force: true
 #        probability: 0.35
+  fizziness: 0.5
+
+- type: reagent
+  id: CherrySoda
+  name: reagent-name-cherrysoda
+  parent: BaseAlcohol
+  desc: reagent-desc-cherrysoda
+  physicalDesc: reagent-physical-desc-fizzy
+  flavor: cherry
+  color: "#a80111"
+  metamorphicSprite:
+    sprite: _DEN/Objects/Consumable/Drinks/cherrysoda.rsi
+    state: icon_empty
+  metamorphicMaxFillLevels: 6
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: false
+  metabolisms:
+    Drink:
+      effects:
+        - !type:SatiateThirst
+          factor: 2
+  # commented out until gasp is an emote.
+  #      - !type:Emote
+  #        emote: Gasp
+  #        showInChat: true
+  #        force: true
+  #        probability: 0.35
+  fizziness: 0.5
+
+- type: reagent
+  id: VodkaCheers
+  name: reagent-name-vodkacheers
+  parent: BaseAlcohol
+  desc: reagent-desc-vodkacheers
+  physicalDesc: reagent-physical-desc-fizzy
+  flavor: vodkacheers
+  color: "#b90112"
+  metamorphicSprite:
+    sprite: _DEN/Objects/Consumable/Drinks/vodkacheers.rsi
+    state: icon_empty
+  metamorphicMaxFillLevels: 6
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: false
+  metabolisms:
+    Drink:
+      effects:
+        - !type:SatiateThirst
+          factor: 1
+        - !type:AdjustReagent
+          reagent: Ethanol
+          amount: 0.1
+  # commented out until gasp is an emote.
+  #      - !type:Emote
+  #        emote: Gasp
+  #        showInChat: true
+  #        force: true
+  #        probability: 0.35
   fizziness: 0.5

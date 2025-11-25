@@ -1,10 +1,7 @@
-// SPDX-FileCopyrightText: 2024 gluesniffler <159397573+gluesniffler@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 gluesniffler <linebarrelerenthusiast@gmail.com>
-// SPDX-FileCopyrightText: 2024 sleepyyapril <flyingkarii@gmail.com>
-// SPDX-FileCopyrightText: 2024 sleepyyapril <***>
-// SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 gluesniffler
+// SPDX-FileCopyrightText: 2024 sleepyyapril
 //
-// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+// SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 using Content.Server.Atmos.Rotting;
 using Content.Server.Body.Systems;
@@ -127,6 +124,9 @@ public sealed class SurgerySystem : SharedSurgerySystem
         if (!args.CanInteract
             || !args.CanAccess
             || !HasComp<SurgeryTargetComponent>(args.Target))
+            return;
+
+        if(!Comp<SurgeryTargetComponent>(args.Target).CanOperateOn)
             return;
 
         var user = args.User;

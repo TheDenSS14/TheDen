@@ -32,12 +32,13 @@
 # SPDX-FileCopyrightText: 2025 MajorMoth
 # SPDX-FileCopyrightText: 2025 Rosycup
 # SPDX-FileCopyrightText: 2025 marc-pelletier
+# SPDX-FileCopyrightText: 2025 portfiend
 #
 # SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: entity
   name: fireaxe
-  parent: [ BaseEngineeringContraband, BaseItem ]
+  parent: [ BaseObjectVerbsCommon, BaseEngineeringContraband, BaseItem ] # DEN: Add interaction verb parent
   id: FireAxe
   description: A versatile tool, capable of prying open airlocks and tearing through windows.
   components:
@@ -107,11 +108,6 @@
   - type: SurgeryTool
     startSound:
       path: /Audio/Medical/Surgery/saw.ogg
-  - type: InteractionVerbs
-    allowedVerbs:
-    - HugObject
-    - KissObject
-    - LickObject
 
 - type: entity
   id: FireAxeFlaming

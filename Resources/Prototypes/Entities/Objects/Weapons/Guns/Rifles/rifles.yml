@@ -29,11 +29,11 @@
 # SPDX-FileCopyrightText: 2025 Skubman
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: entity
   name: BaseWeaponRifle
-  parent: [BaseItem, BaseGunWieldable]
+  parent: [BaseObjectVerbsCommon, BaseItem, BaseGunWieldable] # DEN: Add interaction verb parent
   id: BaseWeaponRifle
   description: A rooty tooty point and shooty.
   abstract: true
@@ -104,11 +104,6 @@
         Blunt: 2.5
   - type: DamageOtherOnHit
     staminaCost: 7.5
-  - type: InteractionVerbs
-    allowedVerbs:
-    - HugObject
-    - KissObject
-    - LickObject
 
 - type: entity
   name: AK-104

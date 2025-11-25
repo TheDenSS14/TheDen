@@ -1,4 +1,5 @@
 // SPDX-FileCopyrightText: 2025 portfiend
+// SPDX-FileCopyrightText: 2025 sleepyyapril
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -22,4 +23,11 @@ public sealed class DenCCVars
     /// </summary>
     public static readonly CVarDef<string> ServerContentId =
         CVarDef.Create("server.content_id", string.Empty, CVar.NOTIFY | CVar.REPLICATED | CVar.SERVER);
+
+    /// <summary>
+    /// For the custom hub in the lobby, how long should the server wait between refreshes?
+    /// Note that this is equivalent to the number of servers listed in the prototypes as HTTP requests.
+    /// </summary>
+    public static readonly CVarDef<int> LobbyRefreshServersInterval =
+        CVarDef.Create("lobby.refresh_servers_interval", 30, CVar.REPLICATED | CVar.SERVER);
 }
