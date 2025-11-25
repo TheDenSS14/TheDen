@@ -4,6 +4,8 @@
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
+# meals
+
 - type: microwaveMealRecipe
   id: RecipeLasagne
   name: lasagne recipe
@@ -16,6 +18,17 @@
     FoodMeat: 1
 
 - type: microwaveMealRecipe
+  id: RecipePigBlanket
+  name: pig in a blanket recipe
+  result: FoodMealPigblanket
+  time: 10
+  solids:
+    FoodCroissantRaw: 1
+    FoodMeatSausage: 1
+
+# snacks
+
+- type: microwaveMealRecipe
   id: RecipeTirggel
   name: tirggel recipe
   result: FoodBakedTirggel
@@ -25,12 +38,3 @@
     Sugar: 5
     Water: 5
     Flour: 5
-
-- type: microwaveMealRecipe
-  id: RecipePigBlanket
-  name: pig in a blanket recipe
-  result: FoodMealPigblanket
-  time: 10
-  solids:
-    FoodCroissantRaw: 1
-    FoodMeatSausage: 1
