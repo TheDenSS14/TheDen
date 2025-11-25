@@ -1,9 +1,9 @@
-# SPDX-FileCopyrightText: 2024 fox <daytimer253@gmail.com>
-# SPDX-FileCopyrightText: 2025 KekaniCreates <87507256+KekaniCreates@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 Rosycup <178287475+Rosycup@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 fox
+# SPDX-FileCopyrightText: 2025 KekaniCreates
+# SPDX-FileCopyrightText: 2025 Rosycup
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: characterItemGroup
   id: LoadoutFun
@@ -28,6 +28,8 @@
     id: LoadoutLiner
   - type: loadout
     id: LoadoutPad
+  - type: loadout # DEN: add lube to loadouts :)
+    id: LoadoutSexLube
 
 # If you are ever going to add more: open regex101; in list mode, find "id: (.+)", replace with "- type: loadout\n  id: $1\n", paste the result here
 - type: characterItemGroup
