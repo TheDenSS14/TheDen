@@ -5,10 +5,13 @@
   description: What some people think when they hear the words "blood pudding".
   components:
   - type: Sprite
+    sprite: _DEN/Objects/Consumable/Food/Baked/pie.rsi
     layers:
-    - state: tin
-    - sprite: _DEN/Objects/Consumable/Food/Baked/pie.rsi
-      state: bloodcustard
+    - sprite: Objects/Consumable/Food/Baked/pie.rsi
+      state: tin
+    - state: bloodcustard
+  - type: Item
+    heldPrefix: bloodcustard
   - type: FlavorProfile
     flavors:
     - sweet
