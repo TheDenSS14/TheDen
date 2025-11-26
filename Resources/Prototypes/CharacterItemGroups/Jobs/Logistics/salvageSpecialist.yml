@@ -1,9 +1,11 @@
 # SPDX-FileCopyrightText: 2024 VMSolidus
+# SPDX-FileCopyrightText: 2025 Blitz
 # SPDX-FileCopyrightText: 2025 BlitzTheSquishy
 # SPDX-FileCopyrightText: 2025 Rosycup
+# SPDX-FileCopyrightText: 2025 portfiend
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 # Salvage Specialist
 - type: characterItemGroup
@@ -11,7 +13,7 @@
   maxItems: 1
   items:
     - type: loadout
-      id: LoadoutBackpackSalvage
+      id: LoadoutSalvageBackpackBackpack # DEN: Fix tests
     - type: loadout
       id: LoadoutSalvageBackpackSatchel
     - type: loadout
@@ -123,3 +125,9 @@
   items:
     - type: loadout
       id: LoadoutSalvageSpecialistUniformSuit
+    # DEN start: Fixing tests
+    - type: loadout
+      id: LoadoutSalvageSpecialistUniformSalvageSpecialistOveralls
+    - type: loadout
+      id: LoadoutSalvageSpecialistUniformSalvageOperator
+    # End DEN

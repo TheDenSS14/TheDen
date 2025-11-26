@@ -5,7 +5,7 @@
 # SPDX-FileCopyrightText: 2025 portfiend
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: characterItemGroup
   id: LoadoutNeck
@@ -189,6 +189,16 @@
       id: LoadoutBedsheetRainbow
     - type: loadout
       id: LoadoutNeckVetCone
+    # DEN start: Fixing tests
+    - type: loadout
+      id: LoadoutNeckNeckerchiefColorable
+    - type: loadout
+      id: LoadoutItemsNeckRedHood
+    - type: loadout
+      id: LoadoutItemsNeckShockCollar
+    - type: loadout
+      id: LoadoutNeckScarfStripedLightBlue
+    # End DEN
     # TheDen - Below
     - type: loadout
       id: LoadoutNeckCowBellCollar
@@ -229,6 +239,16 @@
     - type: loadout
       id: LoadoutNeckScarfStripedAroace
     - type: loadout
+      id: LoadoutNeckCloakBi
+    - type: loadout
       id: LoadoutNeckNeckScarfWrapped
+    - type: loadout
+      id: LoadoutNeckTallitWhiteBlue
+    - type: loadout
+      id: LoadoutNeckTallitBlackGold
+    - type: loadout
+      id: LoadoutNeckTallitWhiteBlack
+    - type: loadout
+      id: LoadoutNeckTallitBlackWhite
     - type: loadout
       id: LoadoutClothingNeckFoldedCollar

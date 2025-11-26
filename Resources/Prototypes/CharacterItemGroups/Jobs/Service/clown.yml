@@ -1,8 +1,9 @@
 # SPDX-FileCopyrightText: 2024 VMSolidus
 # SPDX-FileCopyrightText: 2025 Blitz
+# SPDX-FileCopyrightText: 2025 portfiend
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 # Clown
 - type: characterItemGroup
@@ -59,6 +60,10 @@
   items:
     - type: loadout
       id: LoadoutServiceClownBedsheetClown
+    # DEN start: Fixing tests
+    - type: loadout
+      id: LoadoutServiceClownNeckRuffle
+    # End DEN
 
 - type: characterItemGroup
   id: LoadoutClownMask
@@ -66,6 +71,12 @@
   items:
     - type: loadout
       id: LoadoutServiceClownMaskSexy
+    # DEN start
+    - type: loadout
+      id: LoadoutServiceClownNose
+    - type: loadout
+      id: LoadoutServiceClownMaskAncient
+    # End DEN
 
 - type: characterItemGroup
   id: LoadoutClownOuter
@@ -93,3 +104,7 @@
       id: LoadoutServiceClownOutfitJester
     - type: loadout
       id: LoadoutServiceClownOutfitJesterAlt
+    # DEN start: Fixing tests
+    - type: loadout
+      id: LoadoutServiceClownOutfitCircus
+    # End DEN

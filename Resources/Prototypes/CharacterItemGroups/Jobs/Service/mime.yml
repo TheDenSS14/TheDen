@@ -1,8 +1,10 @@
 # SPDX-FileCopyrightText: 2024 VMSolidus
 # SPDX-FileCopyrightText: 2025 Blitz
+# SPDX-FileCopyrightText: 2025 Shaman
+# SPDX-FileCopyrightText: 2025 portfiend
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 # Mime
 - type: characterItemGroup
@@ -74,6 +76,10 @@
       id: LoadoutServiceMimeMaskScared
     - type: loadout
       id: LoadoutServiceMimeMaskSexy
+    # DEN start: Fixing tests
+    - type: loadout
+      id: LoadoutServiceMimeMask
+    # End DEN
 
 - type: characterItemGroup
   id: LoadoutMimeOuter

@@ -2,6 +2,7 @@
 # SPDX-FileCopyrightText: 2025 BlitzTheSquishy
 # SPDX-FileCopyrightText: 2025 TheLuggage05
 # SPDX-FileCopyrightText: 2025 Timfa
+# SPDX-FileCopyrightText: 2025 portfiend
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
@@ -20,9 +21,9 @@
   maxItems: 1
   items:
     - type: loadout
-      id: LoadoutClothingHeadsetAltCentcom
+      id: LoadoutClothingHeadsetAltCentCom # DEN: Fix tests
     - type: loadout
-      id: LoadoutClothingHeadsetCentcom
+      id: LoadoutClothingHeadsetCentCom # DEN: Fix tests
 
 - type: characterItemGroup
   id: LoadoutNanorepHead

@@ -32,7 +32,7 @@
 # SPDX-FileCopyrightText: 2025 portfiend
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 # When adding new food also add to random spawner located in Resources\Prototypes\Entities\Markers\Spawners\Random\Food_Drinks\food_meal.yml
 
@@ -713,12 +713,13 @@
           Quantity: 8 # DEN: 3 -> 8
         - ReagentId: Iron
           Quantity: 10
-        - ReagentId: Blood
+        - ReagentId: CookedBlood # DEN: Use cooked blood
           Quantity: 5
   - type: Tag
     tags:
     - Fruit
     - Soup
+    - VampireFood # DEN
 
 - type: entity
   name: wing fang chu

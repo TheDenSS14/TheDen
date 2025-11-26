@@ -2,11 +2,13 @@
 // SPDX-FileCopyrightText: 2024 Errant
 // SPDX-FileCopyrightText: 2024 FoxxoTrystan
 // SPDX-FileCopyrightText: 2024 flyingkarii
+// SPDX-FileCopyrightText: 2025 Blitz
 // SPDX-FileCopyrightText: 2025 BlitzTheSquishy
 // SPDX-FileCopyrightText: 2025 Memeji Dankiri
+// SPDX-FileCopyrightText: 2025 oberonics
 // SPDX-FileCopyrightText: 2025 sleepyyapril
 //
-// SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+// SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 using Content.Server.CriminalRecords.Systems;
 using Content.Server.GameTicking;
