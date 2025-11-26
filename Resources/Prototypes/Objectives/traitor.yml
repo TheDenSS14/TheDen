@@ -126,7 +126,7 @@
   categories: [HideSpawnMenu]
   parent: [BaseTraitorObjective, BaseKillObjective]
   id: KillRandomPersonObjective
-  description: Ensure they learn what death feels like; it does not matter if they are revived.
+  description: Permanently or not ensure they learn what death feels like; it does not matter if they are revived.
   components:
   - type: Objective
     difficulty: 1.75

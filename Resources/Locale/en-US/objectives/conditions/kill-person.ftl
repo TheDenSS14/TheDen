@@ -5,4 +5,4 @@
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
-objective-condition-kill-person-title = Teach {$targetName}, {CAPITALIZE($job)} a lesson
+objective-condition-kill-person-title = Kill {$targetName}, {CAPITALIZE($job)}.
