@@ -46,6 +46,16 @@
   - Cutlet
   - Fish
 
+- type: foodSequenceElement
+  id: Liverwurst
+  name: food-sequence-content-liverwurst
+  sprites:
+  - sprite: _DEN/Objects/Consumable/Food/sausage.rsi
+    state: liverwurst-slice
+  tags:
+  - Meat
+  - Slice
+
 # Burger patty sprites
 
 - type: foodSequenceElement

@@ -101,3 +101,66 @@
     entries:
       Burger: FishCutletBurger
       Taco: FishCutlet
+
+- type: entity
+  parent: FoodMeatBase
+  id: FoodMeatLiverSausage
+  name: liverwurst
+  description: Sausage made from liver, soft enough to spread like a paste.
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Consumable/Food/sausage.rsi
+    state: liverwurst
+  - type: Item
+    size: Small
+  - type: SliceableFood
+    count: 3
+    slice: FoodMeatLiverSausageSlice
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 6
+        - ReagentId: Protein
+          Quantity: 6
+  - type: FlavorProfile
+    flavors:
+    - creamy
+    - meaty
+  - type: Tag
+    tags:
+    - Cooked
+    - Meat
+
+- type: entity
+  parent: FoodMeatBase
+  id: FoodMeatLiverSausageSlice
+  name: slice of liverwurst
+  description: Sausage made from liver, soft enough to spread like a paste.
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Consumable/Food/sausage.rsi
+    state: liverwurst-slice
+  - type: Item
+    size: Tiny
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 2
+        - ReagentId: Protein
+          Quantity: 2
+  - type: Tag
+    tags:
+    - Cooked
+    - Meat
+    - Slice
+  - type: FlavorProfile
+    flavors:
+    - creamy
+    - meaty
+  - type: FoodSequenceElement
+    entries:
+      Burger: Liverwurst

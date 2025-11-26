@@ -38,6 +38,30 @@
     Blood: 15
     Cream: 10
 
+# sorry but im not adding a recipe for every kind of liver
+
+- type: microwaveMealRecipe
+  id: RecipeLiverSausageAnimal
+  name: liverwurst recipe
+  result: FoodMeatLiverSausage
+  time: 10
+  reagents:
+    TableSalt: 5
+  solids:
+    FoodSausageCasing: 1
+    OrganAnimalLiver: 1
+
+- type: microwaveMealRecipe
+  id: RecipeLiverSausageHuman
+  name: liverwurst recipe
+  result: FoodMeatLiverSausage
+  time: 10
+  reagents:
+    TableSalt: 5
+  solids:
+    FoodSausageCasing: 1
+    OrganHumanLiver: 1
+
 # snacks
 
 - type: microwaveMealRecipe
