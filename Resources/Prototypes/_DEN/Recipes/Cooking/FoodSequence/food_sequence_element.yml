@@ -12,6 +12,15 @@
   tags:
   - Tofu
 
+- type: foodSequenceElement
+  id: FriedEgg
+  name: food-sequence-content-fried-egg
+  sprites:
+  - sprite: _DEN/Objects/Consumable/Food/burger_sequence.rsi
+    state: friedegg
+  tags:
+  - Meat
+
 # Meat
 
 # NOTE: Fish does not have the "meat" tag as I do not consider it very interchangeable with regular meat.

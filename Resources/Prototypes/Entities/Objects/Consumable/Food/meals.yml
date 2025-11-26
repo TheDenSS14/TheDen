@@ -457,7 +457,7 @@
   - type: SolutionContainerManager
     solutions:
       food:
-        maxVol: 15 # DEN: 10 -> 15
+        maxVol: 12 # DEN: 10 -> 15
         reagents:
         - ReagentId: Protein # DEN: 2 nutriment -> 6 protein
           Quantity: 6
@@ -468,6 +468,9 @@
   - type: Tag
     tags:
     - Meat
+  - type: FoodSequenceElement # DEN - Make fried eggs burger ingredients
+    entries:
+      Burger: FriedEgg
 # Tastes like egg, salt, pepper.
 
 - type: entity
