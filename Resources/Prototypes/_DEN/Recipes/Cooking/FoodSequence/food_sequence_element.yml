@@ -56,6 +56,18 @@
   - Meat
   - Slice
 
+- type: foodSequenceElement
+  id: BlackPudding
+  name: food-sequence-content-black-pudding
+  sprites:
+  - sprite: _DEN/Objects/Consumable/Food/sausage.rsi
+    state: blackpudding-slice
+  tags:
+  # not adding the vampirefood tag to this  because then it would make burgers vampire-edible
+  # regardless of contents as long as it has 1 slice of black pudding
+  - Meat
+  - Slice
+
 # Burger patty sprites
 
 - type: foodSequenceElement

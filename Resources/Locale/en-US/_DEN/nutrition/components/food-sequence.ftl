@@ -6,6 +6,7 @@ food-sequence-ingredient-list = {CAPITALIZE(SUBJECT($entity))} contains {$ingred
 food-sequence-content-fish = fish
 food-sequence-content-fried-egg = egg
 food-sequence-content-liverwurst = liver
+food-sequence-content-black-pudding = blood
 
 # cotton burger
 food-sequence-cotton-burger-content-plushie-abductor = abductor
