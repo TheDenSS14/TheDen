@@ -457,10 +457,10 @@
   - type: SolutionContainerManager
     solutions:
       food:
-        maxVol: 10
+        maxVol: 15 # DEN: 10 -> 15
         reagents:
-        - ReagentId: Nutriment
-          Quantity: 2
+        - ReagentId: Protein # DEN: 2 nutriment -> 6 protein
+          Quantity: 6
         - ReagentId: TableSalt
           Quantity: 1
         - ReagentId: Blackpepper
