@@ -1,0 +1,35 @@
+- type: entity
+  parent: FoodBowlBase
+  id: FoodSoupDinuguan # filipino blood stew!
+  name: dinuguan
+  description: A savory, meaty, blood-based stew. Sometimes called "chocolate meat" due to its rich, dark brown color.
+  components:
+  - type: FlavorProfile
+    flavors:
+    - metallic
+    - meaty
+    - tangy
+    - spicy
+  - type: Sprite
+    layers:
+    - state: bowl
+    - sprite: _DEN/Objects/Consumable/Food/bowl.rsi
+      state: dinuguan
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 30
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 4
+        - ReagentId: Protein
+          Quantity: 4
+        - ReagentId: Vitamin
+          Quantity: 8
+        - ReagentId: CookedBlood
+          Quantity: 8
+  - type: Tag
+    tags:
+    - Meat
+    - Soup
+    - VampireFood

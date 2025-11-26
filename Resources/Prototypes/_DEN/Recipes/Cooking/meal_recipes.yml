@@ -39,6 +39,19 @@
     Cream: 10
     Egg: 6
 
+- type: microwaveMealRecipe
+  id: RecipeDinuguanSoup
+  name: dinuguan recipe
+  result: FoodSoupDinuguan
+  time: 10
+  reagents:
+    Blood: 15
+    Vinegar: 5
+  solids:
+    FoodBowlBig: 1
+    FoodChiliPepper: 1
+    FoodMeat: 1
+
 # sorry but im not adding a recipe for every kind of liver
 
 - type: microwaveMealRecipe
