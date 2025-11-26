@@ -83,6 +83,9 @@
 
 # Red blood, except cooked through - does not add uncooked animal proteins
 # (ergo, doesn't make humans sick), but it also still restores and regenerates vampiric characters.
+#
+# I am NOT adding a recipe to heat up blood to make cooked blood,
+# because then blood would cook in peoples' bloodstreams when they overheat.
 - type: reagent
   parent: Blood
   id: CookedBlood
