@@ -1,0 +1,64 @@
+- type: entity
+  parent: FoodPieBase
+  id: FoodPieBloodCustard
+  name: blood custard pie
+  description: What some people think when they hear the words "blood pudding".
+  components:
+  - type: Sprite
+    layers:
+    - state: tin
+    - sprite: _DEN/Objects/Consumable/Food/Baked/pie.rsi
+      state: bloodcustard
+  - type: FlavorProfile
+    flavors:
+    - sweet
+    - creamy
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 20
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 6
+        - ReagentId: CookedBlood
+          Quantity: 5
+        - ReagentId: Vitamin
+          Quantity: 5
+  - type: SliceableFood
+    slice: FoodPieBloodCustardSlice
+  - type: Tag
+    tags:
+    - Pie
+    - VampireFood
+    - ReptilianFood # yeah ill be nice
+
+- type: entity
+  parent: FoodPieSliceBase
+  id: FoodPieBloodCustardSlice
+  name: slice of blood custard pie
+  description: What some people think when they hear the words "blood pudding".
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Consumable/Food/Baked/pie.rsi
+    state: bloodcustard-slice
+  - type: FlavorProfile
+    flavors:
+      - sweet
+      - creamy
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 6
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 1.5
+        - ReagentId: CookedBlood
+          Quantity: 1.25
+        - ReagentId: Vitamin
+          Quantity: 1.25
+  - type: Tag
+    tags:
+    - Pie
+    - Slice
+    - VampireFood
+    - ReptilianFood # yeah ill be nice

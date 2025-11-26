@@ -26,6 +26,18 @@
     FoodCroissantRaw: 1
     FoodMeatSausage: 1
 
+- type: microwaveMealRecipe
+  id: RecipeBloodCustardPie
+  name: blood custard pie recipe
+  result: FoodPieBloodCustard
+  time: 15
+  solids:
+    FoodDoughPie: 1
+    FoodPlateTin: 1
+  reagents:
+    Blood: 15
+    Cream: 10
+
 # snacks
 
 - type: microwaveMealRecipe
