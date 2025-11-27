@@ -1,0 +1,10 @@
+- type: entity
+  id: AutotailorMachineCircuitboard
+  parent: BaseMachineCircuitboard
+  name: autotailor machine board
+  components:
+  - type: MachineBoard
+    prototype: UniformPrinter
+    requirements:
+      MatterBin: 1
+      Manipulator: 2

@@ -110,18 +110,14 @@
 ## Recipes
 # Jumpsuits/skirts
 - type: latheRecipe
+  parent: BaseJumpsuitGenericRecipe # DEN - Add inheritance
   id: ClothingUniformJumpsuitColorGrey # Tide
   result: ClothingUniformJumpsuitColorGrey
-  completetime: 4
-  materials:
-    Cloth: 300
 
 - type: latheRecipe
+  parent: BaseJumpsuitGenericRecipe # DEN - Add inheritance
   id: ClothingUniformJumpskirtColorGrey
   result: ClothingUniformJumpskirtColorGrey
-  completetime: 4
-  materials:
-    Cloth: 300
 
 - type: latheRecipe
   id: ClothingUniformJumpsuitBartender
@@ -547,11 +543,9 @@
     Cloth: 300
 
 - type: latheRecipe
+  parent: BaseJumpsuitGenericRecipe # DEN - Add inheritance
   id: ClothingUniformJumpskirtColorLightBrown #Librarian
   result: ClothingUniformJumpskirtColorLightBrown
-  completetime: 4
-  materials:
-    Cloth: 300
 
 - type: latheRecipe
   id: ClothingUniformJumpsuitMedicalDoctor
@@ -1384,69 +1378,52 @@
   completetime: 2
   materials:
     Cloth: 200
+
 # Carpets
 - type: latheRecipe
+  parent: BaseCarpetRecipe # DEN - Add inheritance for category / material consistency
   id: Carpet
   result: FloorCarpetItemRed
-  completetime: 1
-  materials:
-    Cloth: 100
 
 - type: latheRecipe
+  parent: BaseCarpetRecipe # DEN - Add inheritance for category / material consistency
   id: CarpetBlack
   result: FloorCarpetItemBlack
-  completetime: 1
-  materials:
-    Cloth: 100
 
 - type: latheRecipe
+  parent: BaseCarpetRecipe # DEN - Add inheritance for category / material consistency
   id: CarpetPink
   result: FloorCarpetItemPink
-  completetime: 1
-  materials:
-    Cloth: 100
 
 - type: latheRecipe
+  parent: BaseCarpetRecipe # DEN - Add inheritance for category / material consistency
   id: CarpetBlue
   result: FloorCarpetItemBlue
-  completetime: 1
-  materials:
-    Cloth: 100
 
 - type: latheRecipe
+  parent: BaseCarpetRecipe # DEN - Add inheritance for category / material consistency
   id: CarpetGreen
   result: FloorCarpetItemGreen
-  completetime: 1
-  materials:
-    Cloth: 100
 
 - type: latheRecipe
+  parent: BaseCarpetRecipe # DEN - Add inheritance for category / material consistency
   id: CarpetOrange
   result: FloorCarpetItemOrange
-  completetime: 1
-  materials:
-    Cloth: 100
 
 - type: latheRecipe
+  parent: BaseCarpetRecipe # DEN - Add inheritance for category / material consistency
   id: CarpetPurple
   result: FloorCarpetItemPurple
-  completetime: 1
-  materials:
-    Cloth: 100
 
 - type: latheRecipe
+  parent: BaseCarpetRecipe # DEN - Add inheritance for category / material consistency
   id: CarpetCyan
   result: FloorCarpetItemCyan
-  completetime: 1
-  materials:
-    Cloth: 100
 
 - type: latheRecipe
+  parent: BaseCarpetRecipe # DEN - Add inheritance for category / material consistency
   id: CarpetWhite
   result: FloorCarpetItemWhite
-  completetime: 1
-  materials:
-    Cloth: 100
 
 # Floofstation - Collars
 - type: latheRecipe
