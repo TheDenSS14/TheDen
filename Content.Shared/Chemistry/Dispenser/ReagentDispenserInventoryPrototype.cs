@@ -17,6 +17,7 @@
 using Content.Shared.Chemistry.Reagent;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization;
+using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype.Array;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype.List;
 
 namespace Content.Shared.Chemistry.Dispenser
@@ -28,9 +29,19 @@ namespace Content.Shared.Chemistry.Dispenser
     /// machines define their inventory.
     /// </summary>
     [Serializable, NetSerializable, Prototype("reagentDispenserInventory")]
-    public sealed partial class ReagentDispenserInventoryPrototype : IPrototype
+    public sealed partial class ReagentDispenserInventoryPrototype : IPrototype, IInheritingPrototype // DEN: Make inheriting
     {
+        // DEN start: Make inheriting
+        [ParentDataField(typeof(AbstractPrototypeIdArraySerializer<ReagentDispenserInventoryPrototype>))]
+        public string[]? Parents { get; }
+
+        [NeverPushInheritance]
+        [AbstractDataField]
+        public bool Abstract { get; }
+        // End DEN
+
         [DataField("inventory", customTypeSerializer: typeof(PrototypeIdListSerializer<EntityPrototype>))]
+        [AlwaysPushInheritance] // DEN - Allow partial inheritance of inventory
         public List<string> Inventory = new();
 
         [ViewVariables, IdDataField]
