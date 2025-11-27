@@ -231,8 +231,13 @@ public sealed class DefibrillatorSystem : EntitySystem
                 damageableComponent.TotalDamage < threshold)
             {
                 _mobState.ChangeMobState(target, MobState.Critical, mob, uid);
+
                 // DEN - Remove rotting immunity if they have it
-                RemComp<RottingImmuneComponent>(target);
+                if (TryComp<RottingImmuneComponent>(target, out var rottingImmunity) && rottingImmunity.RemoveOnRevive)
+                {
+                    RemComp<RottingImmuneComponent>(target);
+                }
+
                 dead = false;
             }
 

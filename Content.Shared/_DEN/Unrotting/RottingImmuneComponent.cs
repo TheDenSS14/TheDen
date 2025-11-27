@@ -12,4 +12,8 @@ namespace Content.Shared._DEN.Unrotting;
 /// This is used for preventing rot.
 /// </summary>
 [RegisterComponent, NetworkedComponent]
-public sealed partial class RottingImmuneComponent : Component;
+public sealed partial class RottingImmuneComponent : Component
+{
+    [DataField("removeOnRevive")]
+    public bool RemoveOnRevive = true;
+}

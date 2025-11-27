@@ -25,6 +25,7 @@ using Content.Shared.Mobs;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Psionics.Glimmer;
 using Content.Server.Popups;
+using Content.Shared._DEN.Unrotting;
 
 namespace Content.Server.Abilities.Psionics;
 
@@ -164,6 +165,12 @@ public sealed class RevivifyPowerSystem : EntitySystem
             return;
 
         _mobState.ChangeMobState(args.Target.Value, MobState.Critical, mob, uid);
+
+        // DEN - Remove rotting immunity if they have it
+        if (TryComp<RottingImmuneComponent>(args.Target.Value, out var rottingImmunity) && rottingImmunity.RemoveOnRevive)
+        {
+            RemComp<RottingImmuneComponent>(args.Target.Value);
+        }
     }
 
     // This would be the same thing as OnDoAfter, except that here the target isn't nullable, so I have to reuse code with different arguments.
