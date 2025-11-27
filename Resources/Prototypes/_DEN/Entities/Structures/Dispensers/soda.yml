@@ -1,0 +1,7 @@
+- type: entity
+  parent: SodaDispenser
+  id: SodaDispenserExtended
+  suffix: Filled, Extended
+  components:
+  - type: ReagentDispenser
+    pack: SodaDispenserInventoryExtended
