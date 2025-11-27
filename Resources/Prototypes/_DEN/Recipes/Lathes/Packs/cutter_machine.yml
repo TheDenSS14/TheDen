@@ -1,4 +1,5 @@
 # SPDX-FileCopyrightText: 2025 deltanedas
+# SPDX-FileCopyrightText: 2025 portfiend
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
@@ -7,6 +8,7 @@
 # There are existing packs for some of these recipes, and some which have items that don't exist. I'm sorry.
 
 - type: latheRecipePack
+  parent: CutterMachineStaticDen
   id: CutterMachineStaticAwfulDen
   recipes:
   - FloorTileItemDark
@@ -71,3 +73,9 @@
   - FloorTileItemArcadeBlue
   - FloorTileItemArcadeBlue2
   - FloorTileItemArcadeRed
+
+- type: latheRecipePack
+  id: CutterMachineStaticDen
+  recipes:
+  - FloorTileItemPool
+  - FloorTileItemPoolDark

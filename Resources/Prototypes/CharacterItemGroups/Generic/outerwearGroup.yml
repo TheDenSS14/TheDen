@@ -9,7 +9,7 @@
 # SPDX-FileCopyrightText: 2025 portfiend
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: characterItemGroup
   id: LoadoutOuter
@@ -182,7 +182,27 @@
       id: ClothingOuterSuitWitchRobes
     - type: loadout
       id: ClothingOuterCoatExpensive
-    # TheDen - Below
+    # DEN start: fixing tests
+    - type: loadout
+      id: LoadoutOuterPlagueSuit
+    - type: loadout
+      id: LoadoutOuterCoatLab
+    - type: loadout
+      id: LoadoutClothingOuterCyberJacketYellow
+    - type: loadout
+      id: LoadoutClothingOuterCyberJacketColorable
+    - type: loadout
+      id: LoadoutOuterRedRacoon
+    - type: loadout
+      id: LoadoutClothingOuterCyberJacketPurple
+    - type: loadout
+      id: LoadoutClothingOuterMarsHoodie
+    - type: loadout
+      id: LoadoutClothingOuterPlainOveralls
+    - type: loadout
+      id: LoadoutOuterCoatExpensive
+    # End DEN
+    # TheDen - New additions below
     - type: loadout
       id: LoadoutClothingOuterShackles
     - type: loadout

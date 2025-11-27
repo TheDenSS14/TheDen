@@ -1,9 +1,11 @@
 # SPDX-FileCopyrightText: 2024 VMSolidus
+# SPDX-FileCopyrightText: 2025 Blitz
 # SPDX-FileCopyrightText: 2025 BlitzTheSquishy
 # SPDX-FileCopyrightText: 2025 Rosycup
+# SPDX-FileCopyrightText: 2025 portfiend
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 # Cargo Technician
 #- type: characterItemGroup
@@ -78,3 +80,9 @@
       id: LoadoutCargoTechnicianUniformSkirtLight
     - type: loadout
       id: LoadoutCargoTechnicianUniformSkirtDark
+    # DEN start: Fixing tests
+    - type: loadout
+      id: LoadoutCargoTechnicianUniformSkirt
+    - type: loadout
+      id: LoadoutCargoTechnicianUniformSuit
+    # End DEN
