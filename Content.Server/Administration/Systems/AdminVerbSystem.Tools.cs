@@ -37,12 +37,14 @@ using Content.Server.Stack;
 using Content.Server.Station.Components;
 using Content.Server.Station.Systems;
 using Content.Server.Weapons.Ranged.Systems;
+using Content.Shared._DEN.Unrotting;
 using Content.Shared._Impstation.Thaven.Components; // Imp
 using Content.Shared.Access;
 using Content.Shared.Access.Components;
 using Content.Shared.Access.Systems;
 using Content.Shared.Administration;
 using Content.Shared.Atmos;
+using Content.Shared.Atmos.Rotting;
 using Content.Shared.Construction.Components;
 using Content.Shared.Damage;
 using Content.Shared.Damage.Components;
@@ -813,6 +815,26 @@ public sealed partial class AdminVerbSystem
             args.Verbs.Add(giveMoods);
         }
         // Imp end
+
+        // Den start
+        if (TryComp<PerishableComponent>(args.Target, out var perishable))
+        {
+            Verb pauseRotting = new()
+            {
+                Text = "Pause Decay",
+                Category = VerbCategory.Tricks,
+                Icon = new SpriteSpecifier.Rsi(new ResPath("Interface/Alerts/human_dead.rsi"), "dead"),
+                Act = () =>
+                {
+                    EnsureComp<RottingImmuneComponent>(args.Target);
+                },
+                Impact = LogImpact.Medium,
+                Message = Loc.GetString("admin-trick-pause-rotting-description"),
+                Priority = (int) TricksVerbPriorities.PauseRotting
+            };
+
+            args.Verbs.Add(pauseRotting);
+        }
     }
 
     private void RefillEquippedTanks(EntityUid target, Gas plasma)
@@ -960,5 +982,7 @@ public sealed partial class AdminVerbSystem
         SetBulletAmount = -29,
         AddRandomMood = -30,
         AddCustomMood = -31,
+
+        PauseRotting = -32,
     }
 }
