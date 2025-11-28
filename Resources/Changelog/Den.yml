@@ -1430,7 +1430,7 @@ Entries:
       message: >-
         Added the Soul-Shatter, a unique double barrel shotgun issued to
         Mantises intended for use in Code White scenarios against hostile
-        psionics. 
+        psionics.
   id: 120
   time: '2025-01-22T23:19:43.0000000+00:00'
   url: https://github.com/TheDenSS14/TheDen/pull/187
@@ -4256,7 +4256,7 @@ Entries:
     - type: Tweak
       message: >-
         Uses the storage's existing savedlocations to storage the item's
-        position when it is taken out, and thus retrieved when reinserted. 
+        position when it is taken out, and thus retrieved when reinserted.
   id: 387
   time: '2025-05-19T01:41:48.0000000+00:00'
   url: https://github.com/TheDenSS14/TheDen/pull/552
@@ -4519,7 +4519,7 @@ Entries:
     - type: Add
       message: >-
         Added Resomi (prototypes & textures, too many to list; new markings/hair
-        courtesy of Chlymerine) 
+        courtesy of Chlymerine)
   id: 416
   time: '2025-05-25T14:07:08.0000000+00:00'
   url: https://github.com/TheDenSS14/TheDen/pull/484
@@ -4597,7 +4597,7 @@ Entries:
     - type: Fix
       message: >-
         Standardized the naming convention of prefilled syringes. Should be
-        consistent across the board now. 
+        consistent across the board now.
   id: 422
   time: '2025-05-27T05:53:01.0000000+00:00'
   url: https://github.com/TheDenSS14/TheDen/pull/596
@@ -5044,7 +5044,7 @@ Entries:
     - type: Add
       message: >-
         You can now adjust others' suit sensors if they are incapacitated.
-        (cuffed, crit, etc.) 
+        (cuffed, crit, etc.)
   id: 470
   time: '2025-06-04T15:23:44.0000000+00:00'
   url: https://github.com/TheDenSS14/TheDen/pull/665
@@ -5388,7 +5388,7 @@ Entries:
       message: >-
         Removed the check for incapacitation on changing another person's
         coords. You're now free to come up to people and force their coords on.
-        (or off, you rascal) 
+        (or off, you rascal)
   id: 504
   time: '2025-06-08T06:58:33.0000000+00:00'
   url: https://github.com/TheDenSS14/TheDen/pull/704
@@ -5540,7 +5540,7 @@ Entries:
     - type: Tweak
       message: >-
         Rearranged the layout of the height/width sliders in the character
-        creator for a smoother experience. 
+        creator for a smoother experience.
   id: 521
   time: '2025-06-09T16:13:45.0000000+00:00'
   url: https://github.com/TheDenSS14/TheDen/pull/734
@@ -5862,7 +5862,7 @@ Entries:
     - type: Add
       message: >-
         Added factorio like automation, including upgrade kits and robotic arms
-        found in the engineering techfab. 
+        found in the engineering techfab.
     - type: Tweak
       message: Mime PDAs are now silent.
   id: 554
@@ -5873,11 +5873,11 @@ Entries:
     - type: Tweak
       message: >-
         The entire "species" section of the guidebook has been drastically
-        reorganized. It is now alphabetized. 
+        reorganized. It is now alphabetized.
     - type: Tweak
       message: >-
         Species guidebook articles have been rewritten to put gameplay traits
-        front and center. 
+        front and center.
     - type: Add
       message: Species lore has been moved to sub-documents.
     - type: Add
@@ -6066,7 +6066,7 @@ Entries:
       message: >-
         The Denu! A new menu located next to the chat filter button with various
         buttons, including a typing toggle, automatic chat formatting, and color
-        sliders for said formatting. 
+        sliders for said formatting.
   id: 573
   time: '2025-06-16T01:57:06.0000000+00:00'
   url: https://github.com/TheDenSS14/TheDen/pull/810
@@ -6251,7 +6251,7 @@ Entries:
     - type: Add
       message: >-
         Ported insulated atmos gloves - they are resprited insulated gloves.
-        Extra drip is always good. 
+        Extra drip is always good.
     - type: Tweak
       message: >-
         Ported a bunch of mechanical/technical changes to the SM, along with
@@ -6305,7 +6305,7 @@ Entries:
       message: >-
         Teddy bears, smiley guys, smiley balls, weird alien UFO thing and, by
         popular request, a new Ovinia plushie are now available! You can find
-        them in all the places you'd expect to find plushies. 
+        them in all the places you'd expect to find plushies.
   id: 596
   time: '2025-06-20T11:07:46.0000000+00:00'
   url: https://github.com/TheDenSS14/TheDen/pull/838
@@ -6430,7 +6430,7 @@ Entries:
       message: >-
         Bluespace gas transportation has been ported from funky. It allows for
         pipeless transfer of gases, normalizing their temperature in the
-        process. No more hauling 47 cans of gas back and forth. 
+        process. No more hauling 47 cans of gas back and forth.
     - type: Tweak
       message: >-
         Electrolyzers now produce at a higher rate but with a much higher power
@@ -6441,7 +6441,7 @@ Entries:
       message: >-
         Thermomachines now have 4 tiers, and are capable of much greater heating
         and cooling. They are spread across new researches now, with the basic
-        thermomachine board moved to roundstart recipes in the imprinter. 
+        thermomachine board moved to roundstart recipes in the imprinter.
     - type: Add
       message: >-
         Atmospherics Exotech, a new unlockable research, has been added.
@@ -6519,7 +6519,7 @@ Entries:
     - type: Add
       message: >-
         Ported the Chester revamp. It's a magazine-fed lever-action shotgun now.
-        CentComm save us all. 
+        CentComm save us all.
     - type: Add
       message: >-
         Added handheld command monitor for Blueshield Officer. It is able to
@@ -6626,7 +6626,7 @@ Entries:
       message: >-
         Fixed PowerCellSystem.Draw.cs so that things no longer draw 1/60th of
         the power they were intended to. This will affect things like portable
-        monitors, anomaly locators, etc. 
+        monitors, anomaly locators, etc.
     - type: Fix
       message: Fixed speed boots not actually requiring a power cell to function.
     - type: Tweak
@@ -6667,7 +6667,7 @@ Entries:
     - type: Add
       message: >-
         "Adapted Balance" and "Sustained Balance" traits have also been added,
-        allowing you to stand up and walk even if you have a missing leg. 
+        allowing you to stand up and walk even if you have a missing leg.
     - type: Add
       message: >-
         Five new canes (colorable version of original, anatomical grip, folding,
@@ -6728,7 +6728,7 @@ Entries:
         Tweaked the minibomb and exploding pen. Minbomb now deals much more
         damage without gibbing and can be linked to a remote. The exploding pen
         has different damage proportions and cannot link to a remote anymore.
-        See PR for details. 
+        See PR for details.
   id: 635
   time: '2025-06-28T13:21:48.0000000+00:00'
   url: https://github.com/TheDenSS14/TheDen/pull/881
@@ -6844,7 +6844,7 @@ Entries:
     - type: Fix
       message: >-
         Gave the arachnic language it's [Arachnic] prefix tag like other
-        languages. 
+        languages.
   id: 647
   time: '2025-06-30T22:52:25.0000000+00:00'
   url: https://github.com/TheDenSS14/TheDen/pull/878
@@ -7540,7 +7540,7 @@ Entries:
     - type: Tweak
       message: >-
         Changed name and description for janitorial winter boots and added
-        noslip 
+        noslip
   id: 714
   time: '2025-07-12T07:17:09.0000000+00:00'
   url: https://github.com/TheDenSS14/TheDen/pull/1030
@@ -7703,7 +7703,7 @@ Entries:
     - type: Add
       message: >-
         Bots now have emotes (your usual pings, buzzes, and whirrs that all
-        silicons have) and pAI vocal sounds. 
+        silicons have) and pAI vocal sounds.
     - type: Remove
       message: Plantbots can no longer see diagnostic health bars for other robots.
   id: 731
@@ -7931,7 +7931,7 @@ Entries:
     - type: Fix
       message: >-
         The amount of traits, trait points and loadout points on release and
-        debug/tool builds is the same now. 
+        debug/tool builds is the same now.
   id: 753
   time: '2025-07-16T07:00:54.0000000+00:00'
   url: https://github.com/TheDenSS14/TheDen/pull/1089
@@ -8088,7 +8088,7 @@ Entries:
     - type: Add
       message: >-
         Gives all loadouts (that Adrian didn't touch) long coats if one was
-        available. 
+        available.
     - type: Tweak
       message: >-
         Enables some items from specialist roles to be opened to the entire
@@ -8542,7 +8542,7 @@ Entries:
     - type: Fix
       message: >-
         Firelocks will now function properly, preventing spacing/fires from
-        spreading. 
+        spreading.
   id: 819
   time: '2025-07-22T06:14:22.0000000+00:00'
   url: https://github.com/TheDenSS14/TheDen/pull/1186
@@ -9128,7 +9128,7 @@ Entries:
     - type: Add
       message: >-
         A guidebook entry on sequence cooking can be found under the Chef
-        section. 
+        section.
     - type: Add
       message: >-
         You can now examine food sequences (sequential burgers, tacos, skewers)
@@ -9479,7 +9479,7 @@ Entries:
     - type: Tweak
       message: >-
         Removed Surgery Speed Modifiers from Roles and moved them to sterile
-        gloves. 
+        gloves.
   id: 918
   time: '2025-08-08T09:30:17.0000000+00:00'
   url: https://github.com/TheDenSS14/TheDen/pull/1303
@@ -9684,7 +9684,7 @@ Entries:
     - type: Tweak
       message: >-
         Cryopods will ignore this trait. Otherwise, you are barred from
-        Cryogenics. 
+        Cryogenics.
   id: 939
   time: '2025-08-10T12:00:19.0000000+00:00'
   url: https://github.com/TheDenSS14/TheDen/pull/1370
@@ -9842,7 +9842,7 @@ Entries:
       message: >-
         Added the NSFW content detail descriptions. Please make sure if you want
         to see NSFW descriptions, you set the consent to on. Also, you are to
-        move ANY NSFW content to the Not Safe for Work tab under description. 
+        move ANY NSFW content to the Not Safe for Work tab under description.
   id: 956
   time: '2025-08-12T22:38:12.0000000+00:00'
   url: https://github.com/TheDenSS14/TheDen/pull/1413
@@ -12466,7 +12466,7 @@ Entries:
     - type: Add
       message: >-
         A bunch of stuff now (hopefully) has correct contraband status, which is
-        viewable when examining. 
+        viewable when examining.
   id: 1218
   time: '2025-09-24T22:26:25.0000000+00:00'
   url: https://github.com/TheDenSS14/TheDen/pull/1785
@@ -13115,7 +13115,7 @@ Entries:
     - type: Fix
       message: >-
         The RPD will no longer show RCD popups when selecting things or with
-        charge updates. 
+        charge updates.
   id: 1283
   time: '2025-10-18T04:57:58.0000000+00:00'
   url: https://github.com/TheDenSS14/TheDen/pull/1874
@@ -13649,7 +13649,7 @@ Entries:
     - type: Add
       message: >-
         Unathi now have four new markings: floppy ears, cheek tufts, furred
-        tail, and short (recolorable) horns. 
+        tail, and short (recolorable) horns.
   id: 1335
   time: '2025-10-25T04:23:30.0000000+00:00'
   url: https://github.com/TheDenSS14/TheDen/pull/1939
@@ -13774,7 +13774,7 @@ Entries:
     - type: Fix
       message: >-
         fixed the job priority bug where if you edited any priority for any job,
-        the job set to 'high' would be set to 'medium' regardless. 
+        the job set to 'high' would be set to 'medium' regardless.
   id: 1348
   time: '2025-10-28T14:22:59.0000000+00:00'
   url: https://github.com/TheDenSS14/TheDen/pull/1934
@@ -14234,7 +14234,7 @@ Entries:
     - type: Add
       message: >-
         Added departmental categories to the document printer for more efficient
-        bureaucracy. 
+        bureaucracy.
     - type: Tweak
       message: Tweaked formatting for all documents to make them more consistent.
   id: 1393
@@ -14407,7 +14407,7 @@ Entries:
     - type: Tweak
       message: >-
         Added a minimum 10 hour time requirement to antagonists. No more first
-        shift traitors 
+        shift traitors
   id: 1412
   time: '2025-11-14T10:34:37.0000000+00:00'
   url: https://github.com/TheDenSS14/TheDen/pull/2027
@@ -14802,8 +14802,8 @@ Entries:
       message: charger was upgraded to turbo charger in botany
     - type: Tweak
       message: >-
-        fax machines have been renamed and verified [Bridge, Cargo, Library,
-        Medical, Psychology, Security]
+        fax machines have been renamed and verified (Bridge, Cargo, Library,
+        Medical, Psychology, Security)
     - type: Tweak
       message: removed unused reclaimer in disposals
     - type: Tweak
@@ -14838,7 +14838,7 @@ Entries:
       message: southside window to Kitchen, adjusted lighting, apc & air alarm
     - type: Add
       message: >-
-        placed rack and materials [30 steel, glass, plastic sheets] to cargo for
+        placed rack and materials (30 steel, glass, plastic sheets) to cargo for
         smooth round start
     - type: Add
       message: placed daw to musician’s office and public bar
