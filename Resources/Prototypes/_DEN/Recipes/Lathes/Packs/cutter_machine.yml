@@ -75,6 +75,7 @@
   - FloorTileItemArcadeRed
 
 - type: latheRecipePack
+  parent: [CutterMachineStaticCarpetsDen]
   id: CutterMachineStaticDen
   recipes:
   - FloorTileItemPool
@@ -99,3 +100,16 @@
   - FloorTileItemWoodChessLight
   - FloorTileItemWoodChessRed
   # End Corvax tiles
+
+- type: latheRecipePack
+  id: CutterMachineStaticCarpetsDen
+  recipes:
+  - Carpet
+  - CarpetBlack
+  - CarpetPink
+  - CarpetBlue
+  - CarpetGreen
+  - CarpetOrange
+  - CarpetPurple
+  - CarpetCyan
+  - CarpetWhite
