@@ -54,14 +54,14 @@
 - type: entity
   parent: DrinkGlass
   id: DrinkGenderFluidGlass
-  suffix: GenderFluid
+  suffix: gender fluid
   components:
   - type: SolutionContainerManager
     solutions:
       drink:
         maxVol: 30
         reagents:
-        - ReagentId: GenderFluid
+        - ReagentId: Genderfluid
           Quantity: 30
   - type: Icon
     sprite: _Impstation/Objects/Consumable/Drinks/Metamorphic/genderfluid.rsi
@@ -69,8 +69,21 @@
 
 - type: entity
   parent: DrinkGlass
+  id: DrinkRoseJuiceGlass
+  suffix: rose water
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 30
+        reagents:
+        - ReagentId: JuiceRose
+          Quantity: 30
+
+- type: entity
+  parent: DrinkGlass
   id: DrinkPinkRoseGlass
-  suffix: PinkRose
+  suffix: pink rose
   components:
   - type: SolutionContainerManager
     solutions:
@@ -86,7 +99,7 @@
 - type: entity
   parent: DrinkGlass
   id: DrinkLaFleuretteGlass
-  suffix: LaFleurette
+  suffix: lafleurette
   components:
   - type: SolutionContainerManager
     solutions:
@@ -102,7 +115,7 @@
 - type: entity
   parent: DrinkGlass
   id: DrinkRomanceDeadGlass
-  suffix: RomanceDead
+  suffix: romance is dead
   components:
   - type: SolutionContainerManager
     solutions:
@@ -118,7 +131,7 @@
 - type: entity
   parent: DrinkGlass
   id: DrinkRomanceDeadNotGlass
-  suffix: RomanceDeadNot
+  suffix: romance isn't dead
   components:
   - type: SolutionContainerManager
     solutions:
@@ -134,7 +147,7 @@
 - type: entity
   parent: DrinkGlass
   id: DrinkRoseMilkGlass
-  suffix: RoseMilk
+  suffix: rose milk
   components:
   - type: SolutionContainerManager
     solutions:
