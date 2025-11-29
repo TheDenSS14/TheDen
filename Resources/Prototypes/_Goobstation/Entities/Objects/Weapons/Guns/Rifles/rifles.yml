@@ -124,8 +124,14 @@
   - type: Clothing
     sprite: _Goobstation/Objects/Weapons/Guns/Rifles/wspr.rsi
   - type: Gun
-    fireRate: 5.5
-    projectileSpeed: 35
+    availableModes:
+    - FullAuto
+    - Burst
+    selectedMode: Burst
+    burstFireRate: 16
+    burstCooldown: 0.5
+    fireRate: 8
+    projectileSpeed: 15
     soundGunshot:
       path: /Audio/_Goobstation/Weapons/Guns/Gunshots/bwuh.ogg
       params:
