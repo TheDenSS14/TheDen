@@ -89,12 +89,12 @@
     - MASK
   - type: Produce
     seedId: rose
-#  - type: Extractable
-#    grindableSolutionName: food
-#    juiceSolution:
-#      reagents:
-#      - ReagentId: JuiceRose
-#        Quantity: 10
+  - type: Extractable
+    grindableSolutionName: food
+    juiceSolution:
+      reagents:
+      - ReagentId: JuiceRose
+        Quantity: 10
   - type: FlavorProfile
     flavors:
       - rose

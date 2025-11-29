@@ -3,3 +3,5 @@ reagent-physical-desc-clear = clear
 
 reagent-physical-desc-shimmering-blood = nacreous
 reagent-physical-desc-thavenbad = unpleasant
+
+reagent-physical-desc-floral = floral

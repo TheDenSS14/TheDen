@@ -16,7 +16,7 @@
         - ReagentId: ThavenBad
           Quantity: 30
   - type: Icon
-    sprite: _Impstation/Objects/Consumable/Drinks/thavenbadglass.rsi
+    sprite: _Impstation/Objects/Consumable/Drinks/Metamorphic/thavenbadglass.rsi
     state: icon
 
 - type: entity
@@ -32,7 +32,7 @@
         - ReagentId: FeverDream
           Quantity: 30
   - type: Icon
-    sprite: _Impstation/Objects/Consumable/Drinks/feverdream.rsi
+    sprite: _Impstation/Objects/Consumable/Drinks/Metamorphic/feverdream.rsi
     state: icon
 
 - type: entity
@@ -50,3 +50,99 @@
   - type: Icon
     sprite: Objects/Consumable/Drinks/thin_glass.rsi
     state: icon_empty #i think literally every other glass rsi has an 'icon' state except this one which is fucked
+
+- type: entity
+  parent: DrinkGlass
+  id: DrinkGenderFluidGlass
+  suffix: GenderFluid
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 30
+        reagents:
+        - ReagentId: GenderFluid
+          Quantity: 30
+  - type: Icon
+    sprite: _Impstation/Objects/Consumable/Drinks/Metamorphic/genderfluid.rsi
+    state: icon
+
+- type: entity
+  parent: DrinkGlass
+  id: DrinkPinkRoseGlass
+  suffix: PinkRose
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 30
+        reagents:
+        - ReagentId: PinkRose
+          Quantity: 30
+  - type: Icon
+    sprite: _Impstation/Objects/Consumable/Drinks/Metamorphic/pinkrose.rsi
+    state: icon
+
+- type: entity
+  parent: DrinkGlass
+  id: DrinkLaFleuretteGlass
+  suffix: LaFleurette
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 30
+        reagents:
+        - ReagentId: LaFleurette
+          Quantity: 30
+  - type: Icon
+    sprite: _Impstation/Objects/Consumable/Drinks/Metamorphic/lafleurette.rsi
+    state: icon
+
+- type: entity
+  parent: DrinkGlass
+  id: DrinkRomanceDeadGlass
+  suffix: RomanceDead
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 30
+        reagents:
+        - ReagentId: RomanceDead
+          Quantity: 30
+  - type: Icon
+    sprite: _Impstation/Objects/Consumable/Drinks/Metamorphic/romancedead.rsi
+    state: icon
+
+- type: entity
+  parent: DrinkGlass
+  id: DrinkRomanceDeadNotGlass
+  suffix: RomanceDeadNot
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 30
+        reagents:
+        - ReagentId: RomanceDeadNot
+          Quantity: 30
+  - type: Icon
+    sprite: _Impstation/Objects/Consumable/Drinks/Metamorphic/romancedeadnot.rsi
+    state: icon
+
+- type: entity
+  parent: DrinkGlass
+  id: DrinkRoseMilkGlass
+  suffix: RoseMilk
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 30
+        reagents:
+        - ReagentId: RoseMilk
+          Quantity: 30
+  - type: Icon
+    sprite: _Impstation/Objects/Consumable/Drinks/Metamorphic/rosemilk.rsi
+    state: icon

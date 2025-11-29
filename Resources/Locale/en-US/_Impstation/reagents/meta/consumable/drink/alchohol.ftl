@@ -7,3 +7,18 @@ reagent-desc-thavenbad = A traditional thaven delicacy. It's considered an honor
 
 reagent-name-cottonbool = cotton bool
 reagent-desc-cottonbool = A modern take on a Mothrine classic that's sure to cause a buzzz.
+
+reagent-name-pink-rose = pink rose
+reagent-desc-pink-rose = An herbal and floral delight.
+
+reagent-name-la-fleurette = la fleurette
+reagent-desc-la-fleurette = Pink and classy.
+
+reagent-name-romance-dead = romance is dead
+reagent-desc-romance-dead = A reminder of how fleeting love can be.
+
+reagent-name-romance-deadnot = romance isn't dead
+reagent-desc-romance-deadnot = A reminder of how perpetual love can be.
+
+reagent-name-rose-milk = rose milk
+reagent-desc-rose-milk = Pink and refreshing!

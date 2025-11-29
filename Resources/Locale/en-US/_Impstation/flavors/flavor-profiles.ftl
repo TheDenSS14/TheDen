@@ -15,3 +15,4 @@ flavor-complex-shimmeringblood = sweet and slightly creamy
 flavor-complex-feverdream = like you're losing your mind
 flavor-complex-thavenbad = like you need to pretend you like it
 flavor-complex-cottonbool = like an angry cloud
+flavor-complex-rose = like a garden in the summer
